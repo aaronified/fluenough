@@ -29,6 +29,8 @@ schema: 1
 kind: "path"
 id: "hi-path"
 language: "hi"
+# The gender classes a noun's gender is one of (#512; DECK-FORMAT.md, Card data).
+genders: ["m", "f"]
 # The decks that need the alphabet: a learner who learns without it
 # skips them.
 alphabet:

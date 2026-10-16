@@ -59,7 +59,7 @@ KINDS = {"vocab", "grammar", "facts", "themes", "numbers", "path", "sounds", "sc
 THEMES_KEYS = {"schema", "kind", "description", "themes"}
 # A language's path (ADR-0013), one per language learnt (ADR-0036).
 PATH_KEYS = {"schema", "kind", "id", "language", "description", "units", "alphabet",
-             "regions"}
+             "regions", "genders"}
 # Ends a path's unit to take decks the path does not list (#22).
 WILDCARD = "*"
 SOUNDS_KEYS = {"schema", "kind", "id", "language", "description", "contrasts"}
@@ -103,7 +103,8 @@ HEADER_KEYS = {
 CARD_KEYS = {
     "id", "target", "native", "reading", "ipa", "alt_target", "alt_native",
     "pos", "gender", "tags", "notes", "audio", "examples", "modes", "pair",
-    "picture", "phrasebook", "bases", "rules", "wiktionary",
+    "picture", "phrasebook", "bases", "rules", "wiktionary", "register", "frequency",
+    "audio_credit", "image", "image_credit",
 }
 # A ref lists a card written in another deck (ADR-0018). It may give its own
 # native-side fields; what the card is in the language learned stays the
@@ -113,7 +114,7 @@ REF_KEYS = {
     "examples", "modes", "wiktionary",
 }
 PATTERN_KEYS = {"name", "slot_name", "slots", "prompt", "entries", "notes"}
-FACT_KEYS = {"id", "text", "contrast", "tags", "source"}
+FACT_KEYS = {"id", "text", "contrast", "tags", "source", "cards"}
 PASSAGE_KEYS = {"id", "title", "sentences", "source", "theme", "questions", "glossary"}
 SENTENCE_KEYS = {"text", "reading", "ipa"}
 QUESTION_KEYS = {"id", "prompt", "options", "answer"}
@@ -136,19 +137,69 @@ LAYER_HEADER_KEYS = {"schema", "id", "kind", "core", "native", "name",
 CORE_KINDS = ("vocab", "grammar", "rules")
 CORE_CARD_KEYS = {"id", "target", "reading", "ipa", "alt_target", "pos",
                   "gender", "tags", "audio", "examples", "modes", "picture",
-                  "notes", "phrasebook", "bases", "rules"}
+                  "notes", "phrasebook", "bases", "rules", "register", "frequency",
+                  "synonyms", "antonyms", "collocations", "confusables", "forms",
+                  "senses", "audio_credit", "image", "image_credit"}
 CORE_REF_KEYS = {"ref", "reading", "ipa", "tags", "modes", "examples", "notes"}
+# A set card (DECK-FORMAT.md, Set cards; #506, #515): a closed group shown
+# together before its members are drilled. It is a card of a vocab core,
+# `kind: "set"`, its members named by ref, or for a rules table, a rule and
+# one fixed value of the table, the members coming from the table ("Rule +
+# axis", owner, 2026-10-16). Its name and explanation are in each layer.
+SET_KEYS = {"id", "kind", "members", "shown"}
+# A set of one slot across the words (`{ rule, person: ... }`) names the rows
+# its card shows, `shown`, a few the deck chooses; its Full list shows every
+# row of the course (owner, 2026-10-16, #515: "A few curated verbs should be
+# good enough").
+SET_MEMBER_KEYS = {"ref"}
+LAYER_SET_KEYS = {"native", "explanation"}
+# A set needs at least this many members: one card alone is no group.
+MIN_SET_MEMBERS = 2
 CORE_EXAMPLE_KEYS = {"target", "reading", "ipa", "bases", "source"}
 # A word card has at least this many examples (owner, #506: "At least 2").
 MIN_EXAMPLES = 2
-# The languages whose examples are filled in (#511). In these, a word card
-# with fewer than MIN_EXAMPLES examples is an error; in any other, nothing is
-# reported yet. A language is added here when its fill issue is closed.
+# The languages filled in (#511, #512). In these, a word card with fewer than
+# MIN_EXAMPLES examples is an error, and so is a noun with no gender where the
+# language's path lists gender classes; in any other, neither is reported
+# yet. A language is added here when its fill issue is closed.
 FILLED_LANGUAGES: set[str] = set()
+# Card data (DECK-FORMAT.md, Card data; #513, #514, #516, #517). Each item
+# list is a core card's, each item with an id by which each layer gives its
+# text; an item is a card of the language by `ref`, or a word written in
+# full with its reading.
+# Every item may take `ipa` and `source` (owner, 2026-10-15, #506: "Yes,
+# all items may take ipa and source").
+ITEM_KEYS = {
+    "synonyms": {"id", "word", "ref", "reading", "ipa", "source"},
+    "antonyms": {"id", "word", "ref", "reading", "ipa", "source"},
+    "collocations": {"id", "word", "ref", "reading", "ipa", "source"},
+    "confusables": {"id", "word", "ref", "reading", "ipa", "kind", "source"},
+    "forms": {"id", "kind", "word", "reading", "ipa", "source"},
+}
+CARD_DATA = (*ITEM_KEYS, "senses")
+CONFUSABLE_KINDS = ("form", "word", "sound", "mark")
+FORM_KINDS = ("plural", "oblique", "oblique-plural", "feminine", "masculine", "other")
+REGISTERS = ("formal", "neutral", "informal", "slang", "offensive")
+SENSE_KEYS = {"id", "pos", "examples", "source"}
+FREQUENCY_KEYS = {"rank", "source"}
+# A confusable on a sentence put in order is a wrong tile: it has 2 to 3
+# (owner, #506: "2–3, never a needed tile").
+CONFUSABLE_TILES = range(2, 4)
+# A card's own recording (#518) and image (#523), shipped with the deck:
+# the field, its folder in the language's directory, and the file's ending.
+# Each file is named by its card's id and carries its credit in
+# `<field>_credit`.
+MEDIA = {"audio": ("audio", ".opus"), "image": ("images", ".webp")}
+MEDIA_CREDIT_KEYS = {"source", "license", "credit"}
+# The licences a recording or an image may have to ship in a CC BY-SA 4.0
+# deck (ADR-0040): CC0, the public domain, CC BY and CC BY-SA 2.0 to 4.0,
+# ported versions too (`CC-BY-SA-3.0-DE`). GFDL alone, NC and ND cannot.
+MEDIA_LICENSE_RE = re.compile(r"CC0-1\.0|public-domain|CC-BY(?:-SA)?-(?:2\.0|2\.5|3\.0|4\.0)"
+                              r"(?:-[A-Z]{2,3})?")
 # What a native language gives a card: never written in a core.
 NATIVE_SIDE = ("native", "alt_native", "wiktionary")
 LAYER_ENTRY_KEYS = {"native", "alt_native", "notes", "examples", "bases",
-                    "wiktionary"}
+                    "wiktionary", *CARD_DATA}
 CORE_ENTRY_KEYS = {"lemma", "key", "forms", "reading", "readings", "ipa", "ipas"}
 LAYER_PATTERN_KEYS = {"name", "slot_name", "prompt", "slots", "entries", "notes"}
 TABLE_KEYS = {"applies_to", "slots", "rows"}
@@ -297,6 +348,7 @@ class CardDef:
     vocab: bool = False        # written in a vocab deck, core or layer
     reading: bool = False      # it has a reading
     in_core: bool = False      # written in a core: its layers give natives
+    is_set: bool = False       # a set card: never a ref's, a pair's or a base's card
 
 
 @dataclass
@@ -336,6 +388,12 @@ class TableInfo:
     excepted: list[str]
     rows: list[str]            # the rows' words, card ids
     script: str
+    forms: dict[str, set[str]] = field(default_factory=dict)  # each row's cells
+    slots: list[str] = field(default_factory=list)  # the table's slot keys, in order
+    # Each row's slots that have a form, by the row's word.
+    row_slots: dict[str, set[str]] = field(default_factory=dict)
+    # Each rule's slots, by rule id, for the sets that name a rule.
+    rule_slots: dict[str, list[str]] = field(default_factory=dict)
 
 
 @dataclass
@@ -372,6 +430,9 @@ class PathPlan:
     marks: dict[str, int]      # milestone -> the unit it is on, when in order
     end: int                   # the last unit up to B1
     regions: list[str] | None = None   # its region ids; None without regions
+    # Its gender classes (#512); [] for a language without gender, None when
+    # the path does not list them.
+    genders: list[str] | None = None
 
 
 @dataclass
@@ -419,14 +480,28 @@ class Report:
     part: str | None = None
     core_id: str | None = None
     infos: list[str] = field(default_factory=list)
-    # Pair notes' partners, (ref, where, i), and bases' cards, (ref, where,
-    # the base's place, such as `bases[0]`), each checked across files.
+    # Pair notes' partners, (ref, where, i), and the cards bases, card data
+    # and facts name, (ref, where, the field, such as `bases[0].ref`), each
+    # checked across files.
     note_refs: list[tuple[str, str, int]] = field(default_factory=list)
     base_refs: list[tuple[str, str, str]] = field(default_factory=list)
+    # A confusable by ref on a sentence put in order: (ref, where, its place,
+    # the tiles the answer needs), so that the card it names is no needed tile.
+    tile_refs: list[tuple[str, str, str, list[str]]] = field(default_factory=list)
+    # Each form a core card gives, (card id, where, its place, its word), for
+    # the warning on a form a rules table has already (#517).
+    card_forms: list[tuple[str, str, str, str]] = field(default_factory=list)
+    # A facts file's language, for the cards its facts name (#516).
+    facts_lang: str | None = None
     # The rule ids a card's `rules` names: (rule id, where).
     card_rules: list[tuple[str, str]] = field(default_factory=list)
     # The regions a note names: (region id, where, the note's place).
     note_regions: list[tuple[str, str, int]] = field(default_factory=list)
+    # The recordings and images its cards name (#518, #523), as paths in the
+    # repository: `decks/hi/audio/hi-0001.opus`.
+    media: list[str] = field(default_factory=list)
+    # Each noun card's gender, or None without one: (gender, where) (#512).
+    noun_genders: list[tuple[str | None, str]] = field(default_factory=list)
     # A layer: the ids of its core's cards and refs whose entry gives native.
     translated: set[str] | None = None
     # A core: the ids of its cards and refs, in order, each marked written.
@@ -453,6 +528,9 @@ class Report:
     # A rules core: its rules, (id, where), and its table.
     rules_defined: list[tuple[str, str]] = field(default_factory=list)
     table: TableInfo | None = None
+    # A core's set cards (DECK-FORMAT.md, Set cards): (id, where, members),
+    # their members checked across files.
+    sets: list[tuple[str, str, object]] = field(default_factory=list)
     # A layer of a rules core: the rule ids it gives, of the core's.
     layer_rules: list[str] = field(default_factory=list)
     # A path: its units and B1 plan.
@@ -563,6 +641,11 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
     id_re = card_id_re(lang)
     core = form == "core"
 
+    if _is_set(card):
+        r.error(where, "a set card is written in a vocab core, kind: \"set\", its "
+                       "name and explanation in each layer (DECK-FORMAT.md, Set cards)")
+        return
+
     if "ref" in card and form != "layer":
         check_ref(r, idx, card, seen, id_re, form=form, lang=lang, script=script)
         return
@@ -606,6 +689,9 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
             r.error(where, 'pair: in a core file a pair note names the partner, '
                            '{ kind: "pair", ref: ... }; Hear takes its sound-alike '
                            'from there')
+        elif unknown in CARD_DATA:
+            r.error(where, f"{unknown} is written on a core card, its text in each "
+                           f"layer (DECK-FORMAT.md, Card data)")
         else:
             r.error(where, f"unknown field {unknown!r}")
 
@@ -640,12 +726,31 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
             _check_str_list(r, where, key, card[key])
 
     _check_optional_text(r, where, card, "gender")
+    if card.get("pos") == "noun":
+        gender = card.get("gender")
+        r.noun_genders.append((gender if isinstance(gender, str) else None, where))
     notes = check_notes(r, where, card.get("notes"), cid, lang, script, core=core)
     _check_optional_text(r, where, card, "audio")
+    for field in MEDIA:
+        check_media(r, where, card, field, cid, lang)
 
     pos = card.get("pos")
     if pos is not None and pos not in POS:
         r.error(where, f"pos must be one of {sorted(POS)}, got {pos!r}")
+
+    if "register" in card and card["register"] not in REGISTERS:
+        r.error(where, f"register must be one of {', '.join(REGISTERS)}, got "
+                       f"{card['register']!r}")
+    if "frequency" in card:
+        _check_frequency(r, where, card["frequency"])
+    target = card.get("target")
+    if core and _is_str(target):
+        tiles = _tiles(target) if _rearranges(target, pos) else None
+        for key in ITEM_KEYS:
+            if key in card:
+                check_items(r, where, key, card[key], cid, target, lang, script, tiles)
+        if "senses" in card:
+            check_senses(r, where, card["senses"], cid, lang, script)
 
     _check_modes(r, where, card.get("modes"))
 
@@ -912,12 +1017,14 @@ def check_bases(r: Report, where: str, prefix: str, bases: object,
                 core: bool) -> list[dict]:
     """A card's or an example's `bases`: the base word of each derived word
     in its text, by the card that teaches it or written in full (ADR-0036).
-    Returns the well-formed entries."""
-    if bases is None:
+    A card whose word is its own root says `bases: self` (#513). Returns the
+    well-formed entries."""
+    if bases is None or (bases == "self" and not prefix):
         return []
     if not isinstance(bases, list):
         r.error(where, f"{prefix}bases must be a list of {{ word, ref }} or "
-                       f"{{ word, base, reading }}")
+                       f"{{ word, base, reading }}"
+                       + ("" if prefix else ', or "self" for a word that is its own root'))
         return []
     of = "the target" if not prefix else f"{prefix}target"
     words = {_key(w) for w in _words(text)} if text is not None else None
@@ -952,7 +1059,7 @@ def check_bases(r: Report, where: str, prefix: str, bases: object,
             elif ref == cid:
                 r.error(where, f"{p}.ref names the card itself")
             else:
-                r.base_refs.append((ref, where, p))
+                r.base_refs.append((ref, where, f"{p}.ref"))
             for key in ("reading", "ipa", "meaning", "wiktionary"):
                 if key in base:
                     r.error(where, f"{p}.{key} is only for a base written in full")
@@ -978,6 +1085,236 @@ def check_bases(r: Report, where: str, prefix: str, bases: object,
         if word is not None:
             found.append(base)
     return found
+
+
+def _rearranges(target: str, pos: object) -> bool:
+    """Whether a card is produced by putting its words in order, as the
+    app's `Card.rearranges` decides: three words or more, or a phrase of
+    two or more."""
+    words = [w for w in target.split()
+             if any(unicodedata.category(c)[0] == "L" for c in w)]
+    return len(words) >= 3 or (pos == "phrase" and len(words) >= 2)
+
+
+def _tiles(text: str) -> list[str]:
+    """The tiles of [text] to put in order, as the app's `tilesOf` makes
+    them: each word in lowercase, the marks at its edges tiles of their
+    own."""
+    tiles: list[str] = []
+    for word in text.split():
+        if not any(unicodedata.category(c)[0] == "L" for c in word):
+            continue
+        a, b = 0, len(word)
+        while a < b and unicodedata.category(word[a])[0] not in "LMN":
+            a += 1
+        while b > a and unicodedata.category(word[b - 1])[0] not in "LMN":
+            b -= 1
+        tiles += [*word[:a], word[a:b].lower(), *word[b:]]
+    return [t for t in tiles if t]
+
+
+def _lang_dir(path: Path, lang: str) -> Path:
+    """The language's directory a deck file is in: its own, or, for a
+    layer in decks/<lang>/<native>/, its parent."""
+    return path.parent if path.parent.name == lang else path.parent.parent
+
+
+def check_media(r: Report, where: str, card: dict, field: str, cid: str | None,
+                lang: str) -> None:
+    """A card's own recording or image shipped with the deck (#518, #523):
+    `decks/<lang>/<folder>/<card id><ending>`, the file there, and its
+    credit, `{ source, license, credit }`, beside it in `<field>_credit`.
+    `audio` may still be an asset path or a URL, with no credit."""
+    folder, ending = MEDIA[field]
+    value = card.get(field)
+    credit_key = f"{field}_credit"
+    shipped = _is_str(value) and value.startswith("decks/")
+    if field != "audio" and value is not None and not shipped:
+        r.error(where, f"{field} must be decks/{lang}/{folder}/<card id>{ending}, "
+                       f"got {value!r}")
+    if shipped and cid is not None:
+        wanted = f"decks/{lang}/{folder}/{cid}{ending}"
+        if value != wanted:
+            r.error(where, f"{field} must be {wanted}: the file is named by its card, "
+                           f"got {value!r}")
+        elif not (_lang_dir(r.path, lang) / folder / f"{cid}{ending}").is_file():
+            r.error(where, f"{field} {value} has no file")
+        else:
+            r.media.append(value)
+        if credit_key not in card:
+            r.error(where, f"{credit_key} is required with {field}: the file's "
+                           f"{{ source, license, credit }}")
+    if credit_key not in card:
+        return
+    credit = card[credit_key]
+    if not shipped:
+        r.error(where, f"{credit_key} is only for a file shipped with the deck, "
+                       f"{field}: decks/{lang}/{folder}/<card id>{ending}")
+        return
+    if not isinstance(credit, dict):
+        r.error(where, f"{credit_key} must be {{ source, license, credit }}")
+        return
+    for unknown in sorted(set(credit) - MEDIA_CREDIT_KEYS, key=str):
+        r.error(where, f"{credit_key}: unknown field {unknown!r}")
+    for key in sorted(MEDIA_CREDIT_KEYS):
+        if not _is_str(credit.get(key)):
+            r.error(where, f"{credit_key}.{key} is required and must be a non-empty "
+                           f"string")
+    licence = credit.get("license")
+    if _is_str(licence) and not MEDIA_LICENSE_RE.fullmatch(licence):
+        r.error(where, f"{credit_key}.license {licence!r} cannot ship in a CC BY-SA "
+                       f"4.0 deck: CC0-1.0, public-domain, or CC-BY or CC-BY-SA 2.0 "
+                       f"to 4.0, such as CC-BY-SA-4.0")
+
+
+def check_media_across(reports: list[Report]) -> list[str]:
+    """Every recording and image in a language's folders is a file a card
+    names (#518, #523), so nothing ships that no card plays or shows.
+    Checked for a language whose deck files are all being validated."""
+    given = {rep.path.resolve() for rep in reports}
+    named: dict[Path, set[str]] = {}
+    for rep in reports:
+        if rep.lang_code is None:
+            continue
+        d = _lang_dir(rep.path, rep.lang_code).resolve()
+        named.setdefault(d, set()).update(rep.media)
+    problems: list[str] = []
+    for d in sorted(named):
+        if any(p.resolve() not in given for p in _yaml_files(d)):
+            continue
+        for field, (folder, ending) in MEDIA.items():
+            for f in sorted((d / folder).glob("*")) if (d / folder).is_dir() else []:
+                rel = f"decks/{d.name}/{folder}/{f.name}"
+                if f.suffix != ending:
+                    problems.append(f"{rel}: a card's {field} file ends in {ending}")
+                elif rel not in named[d]:
+                    problems.append(f"{rel}: no card names it as its {field}; remove "
+                                    f"it, or name it on the card {f.stem}")
+    return problems
+
+
+def _check_frequency(r: Report, where: str, value: object) -> None:
+    """A card's frequency (#516): its rank in a count of the language, and
+    where it was counted."""
+    if not isinstance(value, dict):
+        r.error(where, "frequency must be { rank, source }")
+        return
+    for unknown in sorted(set(value) - FREQUENCY_KEYS, key=str):
+        r.error(where, f"frequency: unknown field {unknown!r}")
+    rank = value.get("rank")
+    if isinstance(rank, bool) or not isinstance(rank, int) or rank < 1:
+        r.error(where, f"frequency.rank must be a whole number from 1, got {rank!r}")
+    if not _is_str(value.get("source")):
+        r.error(where, "frequency.source is required: where the rank was counted")
+
+
+def _check_item_id(r: Report, where: str, p: str, iid: object, ids: set[str]) -> None:
+    """An item's id, by which each layer gives its text: unique in its list."""
+    if not _is_key(iid):
+        r.error(where, f"{p}.id must start with a letter and match [a-z0-9-]+, and "
+                       f"not be a YAML 1.1 boolean word, got {iid!r}")
+    elif iid in ids:
+        r.error(where, f"{p}.id {iid!r} is used twice")
+    else:
+        ids.add(iid)
+
+
+def check_items(r: Report, where: str, key: str, items: object, cid: str | None,
+                target: str, lang: str, script: str, tiles: list[str] | None) -> None:
+    """A core card's synonyms, antonyms, collocations, confusables or forms
+    (DECK-FORMAT.md, Card data). Each has an id; a form is a word, any other
+    item a card of the language by `ref` or a word written in full, with its
+    reading in a script that needs one. On a sentence put in order
+    ([tiles]), confusables are wrong tiles: 2 to 3, none a tile the answer
+    needs."""
+    if not isinstance(items, list) or not items:
+        r.error(where, f"{key} must be a non-empty list; leave it out when there is none")
+        return
+    ids: set[str] = set()
+    id_re = card_id_re(lang)
+    kinds = {"forms": FORM_KINDS, "confusables": CONFUSABLE_KINDS}.get(key)
+    for i, item in enumerate(items):
+        p = f"{key}[{i}]"
+        if not isinstance(item, dict):
+            r.error(where, f"{p} must be a mapping")
+            continue
+        for unknown in sorted(set(item) - ITEM_KEYS[key], key=str):
+            r.error(where, f"{p}: unknown field {unknown!r}")
+        _check_item_id(r, where, p, item.get("id"), ids)
+        if kinds is not None and item.get("kind") not in kinds:
+            r.error(where, f"{p}.kind must be one of {', '.join(kinds)}, got "
+                           f"{item.get('kind')!r}")
+        for k in ("reading", "ipa", "source"):
+            if k in item and not _is_str(item[k]):
+                r.error(where, f"{p}.{k} must be a non-empty string or omitted")
+        if "ref" in item:
+            ref = item["ref"]
+            if "word" in item:
+                r.error(where, f"{p} gives word or ref, not both")
+            elif not _is_str(ref) or not id_re.fullmatch(ref):
+                r.error(where, f"{p}.ref must be the id of a {lang} card, got {ref!r}")
+            elif ref == cid:
+                r.error(where, f"{p}.ref names the card itself")
+            else:
+                r.base_refs.append((ref, where, f"{p}.ref"))
+                if key == "confusables" and tiles is not None:
+                    r.tile_refs.append((ref, where, p, tiles))
+            for k in ("reading", "ipa"):
+                if k in item:
+                    r.error(where, f"{p}.{k} is only for a word written in full")
+            continue
+        word = item.get("word")
+        if not _is_str(word):
+            r.error(where, f"{p} needs word" + ("" if key == "forms" else " or ref"))
+            continue
+        if word != unicodedata.normalize("NFC", word):
+            r.error(where, f"{p}.word is not NFC-normalised")
+        if (script not in NO_READING and item.get("kind") != "mark"
+                and not _is_str(item.get("reading"))):
+            r.error(where, f"{p}: no reading, but script is {script!r}; give the "
+                           f"word's reading")
+        if key == "forms":
+            if word == target:
+                r.error(where, f"{p}.word is the card's own target")
+            elif cid is not None:
+                r.card_forms.append((cid, where, p, word))
+        elif key == "confusables" and tiles is not None and word.lower() in tiles:
+            r.error(where, f"{p}.word {word!r} is a tile the answer needs; a "
+                           f"confusable is a wrong tile")
+    if key == "confusables" and tiles is not None and len(items) not in CONFUSABLE_TILES:
+        r.error(where, f"confusables: a sentence put in order has 2 to 3, as wrong "
+                       f"tiles; got {len(items)}")
+
+
+def check_senses(r: Report, where: str, senses: object, cid: str | None,
+                 lang: str, script: str) -> None:
+    """A core card's senses (#517): each an id, by which each layer gives
+    its meaning, and its own examples, each with its reading in a script
+    that needs one."""
+    if not isinstance(senses, list) or not senses:
+        r.error(where, "senses must be a non-empty list; leave it out when there is none")
+        return
+    ids: set[str] = set()
+    for i, sense in enumerate(senses):
+        p = f"senses[{i}]"
+        if not isinstance(sense, dict):
+            r.error(where, f"{p} must be a mapping")
+            continue
+        for unknown in sorted(set(sense) - SENSE_KEYS, key=str):
+            r.error(where, f"{p}: unknown field {unknown!r}")
+        _check_item_id(r, where, p, sense.get("id"), ids)
+        if "pos" in sense and sense["pos"] not in POS:
+            r.error(where, f"{p}.pos must be one of {sorted(POS)}, got {sense['pos']!r}")
+        if "source" in sense and not _is_str(sense["source"]):
+            r.error(where, f"{p}.source must be a non-empty string or omitted")
+        examples = sense.get("examples")
+        _check_examples(r, f"{where}: {p}", examples, form="core", cid=cid, lang=lang,
+                        script=script)
+        for j, ex in enumerate(examples if isinstance(examples, list) else []):
+            if (isinstance(ex, dict) and script not in NO_READING
+                    and not _is_str(ex.get("reading"))):
+                r.error(where, f"{p}.examples[{j}]: no reading, but script is "
+                               f"{script!r}")
 
 
 PICTURES = Path(__file__).resolve().parent.parent / "assets" / "pictures"
@@ -1422,8 +1759,9 @@ def _code_error(value: object) -> str:
     return f"got {value!r}"
 
 
-def check_facts(r: Report, facts: object) -> None:
+def check_facts(r: Report, facts: object, lang: str | None = None) -> None:
     """A language's daily facts. See "Facts files" in docs/DECK-FORMAT.md."""
+    r.facts_lang = lang
     if not isinstance(facts, list) or not facts:
         r.error("facts", "must be a non-empty list")
         return
@@ -1483,6 +1821,8 @@ def check_facts(r: Report, facts: object) -> None:
         if "tags" in fact:
             _check_str_list(r, where, "tags", fact["tags"])
         _check_optional_text(r, where, fact, "source")
+        if "cards" in fact:
+            _check_fact_cards(r, where, fact["cards"], lang or "xx")
 
     if universal < MIN_FACTS:
         r.error("facts", f"needs at least {MIN_FACTS} facts without a contrast, "
@@ -1492,6 +1832,22 @@ def check_facts(r: Report, facts: object) -> None:
             r.warn("facts", f"only {count} facts without a contrast have {code!r} "
                             f"text, so learners with that interface language get "
                             f"{count} daily facts, not {MIN_FACTS}")
+
+
+def _check_fact_cards(r: Report, where: str, cards: object, lang: str) -> None:
+    """The cards a fact is about (#516), by id, each checked across files to
+    be a card of the language."""
+    id_re = card_id_re(lang)
+    if not isinstance(cards, list) or not cards:
+        r.error(where, f"cards must be a non-empty list of {lang} card ids")
+        return
+    for k, cid in enumerate(cards):
+        if not _is_str(cid) or not id_re.fullmatch(cid):
+            r.error(where, f"cards[{k}] must be the id of a {lang} card, got {cid!r}")
+        elif cid in cards[:k]:
+            r.error(where, f"cards lists {cid} twice")
+        else:
+            r.base_refs.append((cid, where, f"cards[{k}]"))
 
 
 # --- Transliteration in prose ------------------------------------------------
@@ -1525,7 +1881,7 @@ _SCRIPT_BLOCK = {"devanagari": 0x0900, "bengali": 0x0980, "gurmukhi": 0x0A00,
 _WORD_KEYS = {"id", "key", "target", "reading", "readings", "ipa", "ipas",
               "term", "example", "letters", "letter", "forms", "alternatives",
               "answer", "answers", "accept", "equivalents", "words", "tiles",
-              "source", "scheme", "audio",
+              "source", "scheme", "audio", "image",
               # The B1 format's (ADR-0036): a base's word, a card or a rule
               # named by id.
               "word", "base", "ref", "core", "except", "rules", "part", "region"}
@@ -1786,7 +2142,8 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
         for key in ("cards", "pattern"):
             if key in raw:
                 r.error(key, "a facts file uses facts, not cards or a pattern")
-        check_facts(r, raw.get("facts"))
+        code = lang.get("code") if isinstance(lang, dict) else None
+        check_facts(r, raw.get("facts"), code if _is_str(code) else None)
     elif kind == "reading":
         for key in ("cards", "pattern", "facts"):
             if key in raw:
@@ -2253,7 +2610,10 @@ def validate_core(r: Report, raw: dict, path: Path) -> None:
         else:
             seen: set[str] = set()
             for i, card in enumerate(cards):
-                check_card(r, i, card, seen, script, lc, form="core")
+                if _is_set(card):
+                    check_set_card(r, i, card, seen, lc)
+                else:
+                    check_card(r, i, card, seen, script, lc, form="core")
             r.core_cards = [(cid, c.written) for cid, c in _core_index(raw, lc).items()]
     elif kind == "grammar":
         if "pattern" not in raw:
@@ -2263,6 +2623,139 @@ def validate_core(r: Report, raw: dict, path: Path) -> None:
     elif kind == "rules":
         check_rules_core(r, raw, lc, script)
     _check_review_tags(r, raw)
+
+
+def _is_set(card: object) -> bool:
+    """Whether [card], an item of a deck's cards, is a set card."""
+    return isinstance(card, dict) and card.get("kind") == "set"
+
+
+def _set_ids(core: dict) -> set[str]:
+    """The ids of a core's set cards."""
+    cards = core.get("cards")
+    return {c["id"] for c in cards if _is_set(c) and _is_str(c.get("id"))} \
+        if isinstance(cards, list) else set()
+
+
+def check_set_card(r: Report, idx: int, card: dict, seen: set[str], lang: str) -> None:
+    """A set card of a vocab core (DECK-FORMAT.md, Set cards): its id, a card
+    id, permanent; its members, by ref, or a rule and one fixed value of its
+    table. It has no question data: it is taught, never asked."""
+    where = f"cards[{idx}]"
+    cid = card.get("id")
+    if not _is_str(cid) or not card_id_re(lang).fullmatch(cid):
+        r.error(where, f"id must be {lang}- and at least four digits, such as "
+                       f"{lang}-0001, got {cid!r}")
+        cid = None
+    else:
+        where = f"card {cid}"
+        if cid in seen:
+            r.error(where, "duplicate card id")
+        seen.add(cid)
+        r.card_defs[cid] = CardDef(path=r.path, natives=set(), words=[], in_core=True,
+                                   is_set=True)
+    for unknown in sorted(set(card) - SET_KEYS, key=str):
+        r.error(where, f"a set card has only id, kind, members and shown, its name "
+                       f"and explanation in each layer; got {unknown!r}")
+    members = card.get("members")
+    shown = card.get("shown")
+    if isinstance(members, list):
+        refs = _set_refs(r, f"{where}.members", members, lang, cid, "member")
+        if len(members) < MIN_SET_MEMBERS:
+            r.error(f"{where}.members", f"a set has at least {MIN_SET_MEMBERS} members, "
+                                        f"got {len(members)}")
+        if "shown" in card:
+            r.error(f"{where}.shown", "only a set of one slot across the words names "
+                                      "the rows its card shows; a set by refs shows "
+                                      "its members")
+        if cid is not None:
+            r.sets.append((cid, where, refs))
+    elif isinstance(members, dict):
+        rule = members.get("rule")
+        axes = [k for k in members if k != "rule"]
+        ok = True
+        if not _is_str(rule) or not (rule_id_re(lang).fullmatch(rule)
+                                     or (ID_RE.fullmatch(rule)
+                                         and rule.startswith(f"{lang}-"))):
+            r.error(f"{where}.members", f"rule must name a rule, such as "
+                                        f"{lang}-rule-past, or a rules core, such as "
+                                        f"{lang}-grammar-past, got {rule!r}")
+            ok = False
+        if len(axes) != 1 or not all(isinstance(k, str) and KEY_RE.fullmatch(k)
+                                     for k in axes):
+            r.error(f"{where}.members", "a rule's set fixes one value of its table "
+                                        "beside rule, as { rule: ..., verb: \"...\" } "
+                                        "or { rule: ..., person: \"...\" }, got "
+                                        f"{sorted(map(str, axes))}")
+            ok = False
+        elif not _is_str(members[axes[0]]):
+            r.error(f"{where}.members.{axes[0]}", "must be non-empty text")
+            ok = False
+        rows: list[str] = []
+        if ok:
+            # A part of speech fixes a row; any other key a slot, whose card
+            # shows the rows the deck chose.
+            if axes[0] in POS:
+                if "shown" in card:
+                    r.error(f"{where}.shown", "only a set of one slot across the words "
+                                              "names the rows its card shows; this set "
+                                              "shows every form of its row")
+            elif not isinstance(shown, list):
+                r.error(f"{where}.shown", f'is required: the rows its card shows, a few '
+                                          f'of the table\'s, as [{{ ref: "{lang}-0001" }}, '
+                                          f"...]; its Full list shows every row")
+            else:
+                rows = _set_refs(r, f"{where}.shown", shown, lang, None, "row")
+                if len(shown) < MIN_SET_MEMBERS:
+                    r.error(f"{where}.shown", f"a set shows at least {MIN_SET_MEMBERS} "
+                                              f"rows, got {len(shown)}")
+        if ok and cid is not None:
+            r.sets.append((cid, where, (rule, axes[0], members[axes[0]], rows)))
+    else:
+        r.error(f"{where}.members", f'is required: a list of {{ ref: "{lang}-0001" }}, '
+                                    f"or {{ rule, and one value of its table }}")
+
+
+def _set_refs(r: Report, where: str, items: list, lang: str, cid: str | None,
+              what: str) -> list[str]:
+    """A set card's list of `{ ref }`, its members or the rows it shows: each
+    a card id of the language, once, and not the set itself."""
+    refs: list[str] = []
+    for i, m in enumerate(items):
+        mwhere = f"{where}[{i}]"
+        if not isinstance(m, dict) or set(m) != SET_MEMBER_KEYS:
+            r.error(mwhere, f'must be {{ ref: "{lang}-0001" }}, a card of the '
+                            f"language, got {m!r}")
+            continue
+        ref = m["ref"]
+        if not _is_str(ref) or not card_id_re(lang).fullmatch(ref):
+            r.error(mwhere, f"ref must be a {lang} card id, got {ref!r}")
+        elif ref == cid:
+            r.error(mwhere, "a set is not a member of itself")
+        elif ref in refs:
+            r.error(mwhere, f"{ref} is a {what} already")
+        else:
+            refs.append(ref)
+    return refs
+
+
+def _check_layer_set(r: Report, where: str, entry: object) -> None:
+    """A layer's entry for a set card of its core: its name, `native`, and
+    its explanation, both text in this language."""
+    if not isinstance(entry, dict):
+        r.error(where, "must be a mapping")
+        return
+    for unknown in sorted(set(entry) - LAYER_SET_KEYS, key=str):
+        r.error(where, f"a set card's entry gives native, its name, and explanation; "
+                       f"got {unknown!r}")
+    for key in ("native", "explanation"):
+        value = entry.get(key)
+        if isinstance(value, bool):
+            r.error(where, f"{key} parsed as the boolean {value!r} -- YAML read a "
+                           f"bare true or false as a bool. Quote the value.")
+        elif not _is_str(value):
+            r.error(where, f"{key} is required: without it the set is not taught "
+                           f"from this language")
 
 
 def check_rules_core(r: Report, raw: dict, lang: str, script: str) -> None:
@@ -2322,6 +2815,8 @@ def check_rules_core(r: Report, raw: dict, lang: str, script: str) -> None:
                 r.error("table.slots", "slots contains duplicates")
         rows = table.get("rows")
         words: list[str] = []
+        cells: dict[str, set[str]] = {}
+        row_slots: dict[str, set[str]] = {}
         if not isinstance(rows, list) or not rows:
             r.error("table.rows", "must be a non-empty list of rows")
             rows = []
@@ -2355,6 +2850,9 @@ def check_rules_core(r: Report, raw: dict, lang: str, script: str) -> None:
             forms = row.get("forms")
             if not slots or not _check_forms(r, where, forms, slots):
                 continue
+            cells[word] = {f for v in forms.values()
+                           for f in (v if isinstance(v, list) else [v]) if _is_str(f)}
+            row_slots[word] = {k for k, v in forms.items() if v is not None}
             if script not in NO_READING and "readings" not in row:
                 r.error(where, f"readings is required: the script is {script!r}")
             check_pattern_readings(r, where, row, forms, slots)
@@ -2365,7 +2863,8 @@ def check_rules_core(r: Report, raw: dict, lang: str, script: str) -> None:
                 r.warn(where, "has one form only, so its grammar questions cannot "
                               "offer a choice")
         r.table = TableInfo(pos_list, tags_list, excepted,
-                            list(dict.fromkeys(words)), script)
+                            list(dict.fromkeys(words)), script, cells, slots,
+                            row_slots=row_slots)
 
     rules = raw.get("rules")
     if not isinstance(rules, list) or not rules:
@@ -2394,6 +2893,8 @@ def check_rules_core(r: Report, raw: dict, lang: str, script: str) -> None:
                 ids.add(rid)
                 r.rules_defined.append((rid, where))
         rule_slots = rule.get("slots")
+        if r.table is not None and _is_str(rid) and isinstance(rule_slots, list):
+            r.table.rule_slots[rid] = [s for s in rule_slots if isinstance(s, str)]
         if (not isinstance(rule_slots, list) or not rule_slots
                 or not all(isinstance(s, str) for s in rule_slots)):
             r.error(where, "slots must be a non-empty list of the table's slots")
@@ -2421,6 +2922,22 @@ class _CoreCard:
     bases: list[str]                 # its inline bases' words
     has_notes: bool
     has_examples: bool
+    # Its card data's items by field, each id with the text a layer owes it
+    # ("meaning", "why", "label"), or None when the layer may leave it out.
+    items: dict[str, dict[str, str | None]] = field(default_factory=dict)
+    # Its senses: each id with its examples, as in [examples].
+    senses: dict[str, dict[str, list[str]]] = field(default_factory=dict)
+
+
+def _owed(key: str, item: dict) -> str | None:
+    """The text a layer owes a core card's item (DECK-FORMAT.md, Card data):
+    a word's meaning, a confusable's why, the label of a form of kind
+    other."""
+    if key == "confusables":
+        return "why"
+    if key == "forms":
+        return "label" if item.get("kind") == "other" else None
+    return "meaning" if "ref" not in item else None
 
 
 def _inline_words(bases: object) -> list[str]:
@@ -2436,7 +2953,7 @@ def _core_index(core: dict, lang: str) -> dict[str, _CoreCard]:
     id_re = card_id_re(lang)
     cards = core.get("cards")
     for card in cards if isinstance(cards, list) else []:
-        if not isinstance(card, dict):
+        if not isinstance(card, dict) or _is_set(card):
             continue
         written = "ref" not in card
         cid = card.get("id") if written else card.get("ref")
@@ -2452,10 +2969,21 @@ def _core_index(core: dict, lang: str) -> dict[str, _CoreCard]:
         for ex in card.get("examples") if isinstance(card.get("examples"), list) else []:
             if isinstance(ex, dict) and _is_str(ex.get("target")):
                 examples.setdefault(ex["target"], _inline_words(ex.get("bases")))
+        items = {key: {i["id"]: _owed(key, i) for i in card[key]
+                       if isinstance(i, dict) and _is_str(i.get("id"))}
+                 for key in ITEM_KEYS if written and isinstance(card.get(key), list)}
+        senses = {
+            sense["id"]: {ex["target"]: _inline_words(ex.get("bases"))
+                          for ex in (sense.get("examples") or [])
+                          if isinstance(ex, dict) and _is_str(ex.get("target"))}
+            for sense in (card.get("senses") if written and isinstance(card.get("senses"),
+                                                                      list) else [])
+            if isinstance(sense, dict) and _is_str(sense.get("id"))
+            and isinstance(sense.get("examples") or [], list)}
         found[cid] = _CoreCard(
             written, notes, examples,
             _inline_words(card.get("bases")) if written else [],
-            bool(card.get("notes")), bool(card.get("examples")))
+            bool(card.get("notes")), bool(card.get("examples")), items, senses)
     return found
 
 
@@ -2576,6 +3104,7 @@ def _check_layer_cards(r: Report, raw: dict, core: dict, core_path: Path,
         cards = {}
     index = _core_index(core, lang)
     r.core_cards = [(cid, c.written) for cid, c in index.items()]
+    sets = _set_ids(core)
     translated: set[str] = set()
     given: dict[str, tuple[set[str], set[str]]] = {}
     seen: set[str] = set(index)
@@ -2584,6 +3113,9 @@ def _check_layer_cards(r: Report, raw: dict, core: dict, core_path: Path,
         if not isinstance(cid, str):
             continue
         where = f"cards.{cid}"
+        if cid in sets:
+            _check_layer_set(r, where, entry)
+            continue
         known = index.get(cid)
         if known is None:
             if not id_re.fullmatch(cid):
@@ -2595,7 +3127,8 @@ def _check_layer_cards(r: Report, raw: dict, core: dict, core_path: Path,
             else:
                 check_card(r, i, entry, seen, script, lang, form="layer", key=cid)
             continue
-        gives, notes, examples = _check_layer_entry(r, where, cid, entry, known, nname)
+        gives, notes, examples = _check_layer_entry(r, where, cid, entry, known, nname,
+                                                    lang)
         if gives:
             translated.add(cid)
         given[cid] = (notes, examples)
@@ -2608,7 +3141,8 @@ def _check_layer_cards(r: Report, raw: dict, core: dict, core_path: Path,
     scratch.deck_kind = "vocab"
     core_cards = core.get("cards") if isinstance(core.get("cards"), list) else []
     for i, card in enumerate(core_cards):
-        check_card(scratch, i, card, set(), script, lang, form="core")
+        if not _is_set(card):
+            check_card(scratch, i, card, set(), script, lang, form="core")
     for c in scratch.cards:
         if c.id not in translated:
             continue
@@ -2626,7 +3160,7 @@ def _check_layer_cards(r: Report, raw: dict, core: dict, core_path: Path,
 
 
 def _check_layer_entry(r: Report, where: str, cid: str, entry: object,
-                       known: _CoreCard, nname: str
+                       known: _CoreCard, nname: str, lang: str
                        ) -> tuple[bool, set[str], set[str]]:
     """A layer's entry for a card or ref of its core. Returns whether it
     gives a native, and the note ids and example targets it gives text to."""
@@ -2681,52 +3215,12 @@ def _check_layer_entry(r: Report, where: str, cid: str, entry: object,
                               f"{nname} do not see it")
 
     examples: set[str] = set()
-    named: set[str] = set()
-    if "examples" in entry:
-        ewhere = f"{where}.examples"
-        value = entry["examples"]
-        if not known.written and not known.has_examples:
-            r.error(ewhere, f"the core lists {cid} by ref without examples; give them "
-                            f"in the core's ref")
-        elif not isinstance(value, dict):
-            r.error(ewhere, "a mapping of an example's target, as the core writes it, "
-                            "to its translation")
-        else:
-            for target, tr in value.items():
-                if not isinstance(target, str):
-                    continue
-                named.add(target)
-                if target != unicodedata.normalize("NFC", target):
-                    r.error(ewhere, f"key {target!r} is not NFC-normalised")
-                if target not in known.examples:
-                    r.error(f"{ewhere}.{target}", "the core card has no example with "
-                                                  "this target")
-                    continue
-                twhere = f"{ewhere}.{target}"
-                bases: set[str] = set()
-                if isinstance(tr, dict):
-                    for unknown in sorted(set(tr) - {"native", "bases"}, key=str):
-                        r.error(twhere, f"unknown field {unknown!r}")
-                    if not _is_str(tr.get("native")):
-                        r.error(twhere, "native is required: the example's translation")
-                        continue
-                    if "bases" in tr:
-                        bases = _check_layer_bases(r, f"{twhere}.bases", tr["bases"],
-                                                   known.examples[target])
-                elif not _is_str(tr):
-                    r.error(twhere, "must be the example's translation, or "
-                                    "{ native, bases }")
-                    continue
-                examples.add(target)
-                for word in known.examples[target]:
-                    if word not in bases:
-                        r.warn(where, f"the inline base {word!r} has no meaning here; "
-                                      f"it is shown without one")
-    if shown:
-        for target in known.examples:
-            if target not in named:
-                r.warn(where, f"example {target!r} has no translation here, so it is "
-                              f"not shown")
+    if "examples" in entry and not known.written and not known.has_examples:
+        r.error(f"{where}.examples", f"the core lists {cid} by ref without examples; "
+                                     f"give them in the core's ref")
+    elif "examples" in entry or shown:
+        examples = _check_layer_examples(r, where, "examples", entry.get("examples"),
+                                         known.examples, shown)
 
     bases = set()
     if "bases" in entry:
@@ -2736,7 +3230,146 @@ def _check_layer_entry(r: Report, where: str, cid: str, entry: object,
             if word not in bases:
                 r.warn(where, f"the inline base {word!r} has no meaning here; it is "
                               f"shown without one")
+    for key in CARD_DATA:
+        if key in entry and not known.written:
+            r.error(f"{where}.{key}", f"the core lists {cid} by ref; its {key} are on "
+                                      f"the card where it is written")
+    if known.written:
+        for key in ITEM_KEYS:
+            if key in entry or key in known.items:
+                _check_layer_items(r, where, key, entry.get(key),
+                                   known.items.get(key, {}), shown)
+        if "senses" in entry or known.senses:
+            _check_layer_senses(r, where, entry.get("senses"), known.senses, shown, lang)
     return gives, notes, examples
+
+
+def _check_layer_examples(r: Report, where: str, path: str, value: object,
+                          known: dict[str, list[str]], shown: bool) -> set[str]:
+    """A layer's translations of a core text's examples, by target: text, or
+    `{ native, bases }`. Returns the targets translated."""
+    examples: set[str] = set()
+    named: set[str] = set()
+    ewhere = f"{where}.{path}"
+    if value is not None and not isinstance(value, dict):
+        r.error(ewhere, "a mapping of an example's target, as the core writes it, "
+                        "to its translation")
+    for target, tr in value.items() if isinstance(value, dict) else []:
+        if not isinstance(target, str):
+            continue
+        named.add(target)
+        if target != unicodedata.normalize("NFC", target):
+            r.error(ewhere, f"key {target!r} is not NFC-normalised")
+        if target not in known:
+            r.error(f"{ewhere}.{target}", "the core card has no example with this target")
+            continue
+        twhere = f"{ewhere}.{target}"
+        bases: set[str] = set()
+        if isinstance(tr, dict):
+            for unknown in sorted(set(tr) - {"native", "bases"}, key=str):
+                r.error(twhere, f"unknown field {unknown!r}")
+            if not _is_str(tr.get("native")):
+                r.error(twhere, "native is required: the example's translation")
+                continue
+            if "bases" in tr:
+                bases = _check_layer_bases(r, f"{twhere}.bases", tr["bases"], known[target])
+        elif not _is_str(tr):
+            r.error(twhere, "must be the example's translation, or { native, bases }")
+            continue
+        examples.add(target)
+        for word in known[target]:
+            if word not in bases:
+                r.warn(where, f"the inline base {word!r} has no meaning here; it is "
+                              f"shown without one")
+    if shown:
+        for target in known:
+            if target not in named:
+                r.warn(where, f"example {target!r} has no translation here, so it is "
+                              f"not shown")
+    return examples
+
+
+def _check_layer_items(r: Report, where: str, key: str, value: object,
+                       items: dict[str, str | None], shown: bool) -> None:
+    """A layer's text for a core card's items of [key], by id: a word's
+    meaning (a collocation's may be `{ native, note }`), a confusable's
+    `{ why }`, a form's line. A word with no meaning, a confusable with no
+    why, is warned of; a form of kind other with no label is an error."""
+    iwhere = f"{where}.{key}"
+    given: set[str] = set()
+    if value is not None and not isinstance(value, dict):
+        r.error(iwhere, f"a mapping of the core item's id to its text")
+    for iid, text in value.items() if isinstance(value, dict) else []:
+        twhere = f"{iwhere}.{iid}"
+        if iid not in items:
+            r.error(twhere, f"the core card has no {key} item {iid!r}")
+            continue
+        if key == "confusables":
+            if not isinstance(text, dict) or set(text) != {"why"} or not _is_str(text["why"]):
+                r.error(twhere, "must be { why: ... }, why it is wrong")
+                continue
+        elif key == "collocations" and isinstance(text, dict):
+            for unknown in sorted(set(text) - {"native", "note"}, key=str):
+                r.error(twhere, f"unknown field {unknown!r}")
+            if not _is_str(text.get("native")) or ("note" in text
+                                                    and not _is_str(text["note"])):
+                r.error(twhere, "must be its meaning, or { native, note }, each text")
+                continue
+        elif not _is_str(text):
+            r.error(twhere, "must be non-empty text")
+            continue
+        given.add(iid)
+    if not shown:
+        return
+    for iid, owed in items.items():
+        if owed is None or iid in given:
+            continue
+        if owed == "label":
+            r.error(iwhere, f"{iid!r} is a form of kind other: give its label here")
+        else:
+            r.warn(where, f"{key} {iid!r} has no {owed} here")
+
+
+def _check_layer_senses(r: Report, where: str, value: object,
+                        senses: dict[str, dict[str, list[str]]], shown: bool,
+                        lang: str) -> None:
+    """A layer's senses of a core card (#517), by id: `{ native, examples }`.
+    A sense with no native here is warned of, and is an error once the
+    language is filled in; two senses with one native are warned of."""
+    swhere = f"{where}.senses"
+    natives: dict[str, str] = {}
+    if value is not None and not isinstance(value, dict):
+        r.error(swhere, "a mapping of the core sense's id to { native, examples }")
+    for sid, sense in value.items() if isinstance(value, dict) else []:
+        twhere = f"{swhere}.{sid}"
+        if sid not in senses:
+            r.error(twhere, f"the core card has no sense {sid!r}")
+            continue
+        if not isinstance(sense, dict):
+            r.error(twhere, "must be { native, examples }")
+            continue
+        for unknown in sorted(set(sense) - {"native", "examples"}, key=str):
+            r.error(twhere, f"unknown field {unknown!r}")
+        if not _is_str(sense.get("native")):
+            r.error(twhere, "native is required: the sense's meaning")
+            continue
+        natives[sid] = sense["native"]
+        _check_layer_examples(r, where, f"senses.{sid}.examples", sense.get("examples"),
+                              senses[sid], shown)
+    if not shown:
+        return
+    for sid in senses:
+        if sid in natives or sid in (value if isinstance(value, dict) else {}):
+            continue
+        if lang in FILLED_LANGUAGES:
+            r.error(swhere, f"sense {sid!r} has no native here; {lang} is filled in")
+        else:
+            r.warn(where, f"sense {sid!r} has no native here")
+    seen: dict[str, str] = {}
+    for sid, native in natives.items():
+        if native in seen:
+            r.warn(where, f"senses {seen[native]!r} and {sid!r} have the same native")
+        seen.setdefault(native, sid)
 
 
 def _check_layer_bases(r: Report, where: str, value: object,
@@ -3251,6 +3884,7 @@ def check_path_file(r: Report, raw: dict, path: Path) -> None:
         r.error("id", f"is {path_id!r} but the filename stem is {path.stem!r}")
     _check_optional_text(r, "root", raw, "description")
     regions = check_regions(r, raw)
+    genders = check_genders(r, raw)
     if not isinstance(units, list) or not units:
         r.error("units", "must be a non-empty list")
         return
@@ -3327,7 +3961,7 @@ def check_path_file(r: Report, raw: dict, path: Path) -> None:
     if lang_ok:
         r.course_path = (lang, listed)
         r.plan = PathPlan(lang, parsed, [d for d in alphabet if isinstance(d, str)],
-                          has_plan, marks, end, regions)
+                          has_plan, marks, end, regions, genders)
 
 
 def check_regions(r: Report, raw: dict) -> list[str] | None:
@@ -3372,6 +4006,29 @@ def check_regions(r: Report, raw: dict) -> list[str] | None:
         if "en" not in name:
             r.error(f"{where}.name", 'has no "en"')
     return ids
+
+
+def check_genders(r: Report, raw: dict) -> list[str] | None:
+    """A language's gender classes (#512), such as ["m", "f"]: what a noun's
+    `gender` may be. An empty list says the language has none. Returns
+    them, or None when the path lists none."""
+    if "genders" not in raw:
+        return None
+    genders = raw["genders"]
+    if not isinstance(genders, list):
+        r.error("genders", 'must be a list of the language\'s gender classes, such '
+                           'as ["m", "f"], or [] for a language without gender')
+        return []
+    classes: list[str] = []
+    for i, value in enumerate(genders):
+        if not _is_str(value) or value != value.strip():
+            r.error(f"genders[{i}]", f"must be a class name, quoted text with no "
+                                     f"spaces around it, got {value!r}")
+        elif value in classes:
+            r.error(f"genders[{i}]", f"{value!r} is listed twice")
+        else:
+            classes.append(value)
+    return classes
 
 
 def _check_passages(r: Report, where: str, i: int, key: str, value: object,
@@ -3789,7 +4446,8 @@ class _Language:
         self.given = [rep for rep in ctx.reports if _lang_of(rep) == code]
         self.dirs = _unique_dirs(ROOT / "decks" / code, *(
             rep.path.parent.parent if rep.part == "layer" else rep.path.parent
-            for rep in self.given))
+            for rep in self.given), *(
+            rep.path.parent for rep in ctx.reports if rep.facts_lang == code))
         self._files: list[Report] | None = None
         self._path: list[Report | None] | None = None
         self._defs: dict[str, CardDef] | None = None
@@ -4018,8 +4676,9 @@ def check_cards_across(reports: list[Report]) -> list[str]:
 
     def find(rep: Report, cid: str) -> CardDef | None:
         found = defs.get(cid)
-        if found is None and rep.lang_code is not None:
-            found = ctx.lang(rep.lang_code).file_defs().get(cid)
+        code = rep.lang_code or rep.facts_lang
+        if found is None and code is not None:
+            found = ctx.lang(code).file_defs().get(cid)
         return found
 
     for rep in reports:
@@ -4027,6 +4686,10 @@ def check_cards_across(reports: list[Report]) -> list[str]:
             found = find(rep, rid)
             if found is None:
                 problems.append(f"{rep.path}: {where}: no deck writes card {rid}")
+                continue
+            if found.is_set:
+                problems.append(f"{rep.path}: {where}: {rid} is a set card, taught in "
+                                f"its own deck and never listed by ref")
                 continue
             # A ref to a card its own deck writes is refused within the deck.
             natives = ctx.lang(rep.lang_code).natives_of(rid, found) \
@@ -4049,8 +4712,14 @@ def check_cards_across(reports: list[Report]) -> list[str]:
                                 f"{ref}, which no deck writes")
         for ref, where, place in rep.base_refs:
             if find(rep, ref) is None:
-                problems.append(f"{rep.path}: {where}: {place}.ref names card {ref}, "
+                problems.append(f"{rep.path}: {where}: {place} names card {ref}, "
                                 f"which no deck writes")
+        for ref, where, place, tiles in rep.tile_refs:
+            found = find(rep, ref)
+            if found is not None and found.target.lower() in tiles:
+                problems.append(f"{rep.path}: {where}: {place}.ref names {ref}, "
+                                f"{found.target!r}, a tile the answer needs; a "
+                                f"confusable is a wrong tile")
     return problems
 
 
@@ -4292,6 +4961,68 @@ def counts_as_word(card: object, deck_kind: str) -> bool:
 
 def _languages(reports: list[Report]) -> list[str]:
     return sorted({code for rep in reports if (code := _lang_of(rep)) is not None})
+
+
+def check_sets_across(reports: list[Report]) -> list[str]:
+    """A set card's members (DECK-FORMAT.md, Set cards): each ref a card of
+    the language that is not a set; a rule's set a rule or rules core of the
+    language, and the value it fixes a row of its table, by the word's
+    target or id, under a part of speech of its rows, or else a slot of the
+    table and of the rule."""
+    ctx = _context(reports)
+    problems: list[str] = []
+    for rep in reports:
+        if rep.lang_code is None or not rep.sets:
+            continue
+        lang = ctx.lang(rep.lang_code)
+        defs = lang.defs()
+        tables = [(o.core_id, o.table) for o in lang.all()
+                  if o.part == "core" and o.table is not None]
+        for cid, where, members in rep.sets:
+            at = f"{rep.path}: {where}"
+            if isinstance(members, list):
+                for i, ref in enumerate(members):
+                    d = defs.get(ref)
+                    if d is None:
+                        problems.append(f"{at}: members names card {ref}, which no deck "
+                                        f"writes")
+                    elif d.is_set:
+                        problems.append(f"{at}: members names {ref}, a set card; a "
+                                        f"set's members are cards that are asked")
+                continue
+            rule, axis, value, shown = members
+            found = [(core_id, t) for core_id, t in tables
+                     if rule == core_id or rule in t.rule_slots]
+            if not found:
+                problems.append(f"{at}: members.rule names {rule}, which no rules deck "
+                                f"of {rep.lang_code} defines")
+                continue
+            core_id, t = found[0]
+            slots = t.slots if rule == core_id else t.rule_slots[rule]
+            if axis in t.pos:
+                rows = [w for w in t.rows
+                        if w == value or (w in defs and defs[w].target == value)]
+                if not rows:
+                    problems.append(f"{at}: members.{axis}: {value!r} is no row of "
+                                    f"{core_id}; give a row's word, as its card writes "
+                                    f"it, or its id")
+            elif axis in POS:
+                problems.append(f"{at}: members.{axis}: {core_id}'s rows are "
+                                f"{', '.join(t.pos)}, not {axis}")
+            elif value not in slots:
+                problems.append(f"{at}: members.{axis}: {value!r} is not a slot of "
+                                f"{rule}; a value that is not a row's word is a slot, "
+                                f"one of {slots}, or use a part of speech of its rows "
+                                f"({', '.join(t.pos)}) as the key")
+            else:
+                for i, row in enumerate(shown):
+                    if row not in t.rows:
+                        problems.append(f"{at}: shown[{i}]: {row} is no row of "
+                                        f"{core_id}")
+                    elif value not in t.row_slots.get(row, set()):
+                        problems.append(f"{at}: shown[{i}]: {row} has no {value} form "
+                                        f"in {core_id}")
+    return problems
 
 
 def check_layers_across(reports: list[Report]) -> list[str]:
@@ -4552,6 +5283,23 @@ def warn_base_stems_across(reports: list[Report]) -> None:
                                       f"form takes (DECK-FORMAT.md, \"Base words\")")
 
 
+def warn_forms_across(reports: list[Report]) -> None:
+    """Warns on a card's form that a rules table of its language has as a
+    cell of the card's row: the table is the source of its forms (#517)."""
+    ctx = _context(reports)
+    for rep in reports:
+        if not rep.card_forms or rep.lang_code is None:
+            continue
+        cells: dict[str, set[str]] = {}
+        for other in ctx.lang(rep.lang_code).all():
+            for word, forms in (other.table.forms if other.table else {}).items():
+                cells.setdefault(word, set()).update(forms)
+        for cid, where, place, word in rep.card_forms:
+            if word in cells.get(cid, set()):
+                rep.warn(where, f"{place}.word {word!r} is a cell of {cid}'s row in a "
+                                f"rules table, the source of its forms")
+
+
 def check_phrasebook_across(reports: list[Report]) -> list[str]:
     """A course's phrasebook: 15 to 25 cards, counted per course, and, where
     its path has a B1 plan, taught in the path's first unit."""
@@ -4805,6 +5553,36 @@ def check_regions_across(reports: list[Report]) -> list[str]:
     return problems
 
 
+def check_genders_across(reports: list[Report]) -> list[str]:
+    """A noun's gender is one of its language's classes, which its path
+    lists (#512, "Nouns only"); a noun with none is an error once the
+    language is filled in. A language whose path lists no classes is not
+    checked, and other parts of speech never are."""
+    ctx = _context(reports)
+    problems: list[str] = []
+    for rep in reports:
+        if not rep.noun_genders or rep.lang_code is None:
+            continue
+        path = ctx.lang(rep.lang_code).path()
+        if path is None or path.plan.genders is None:
+            continue
+        code, classes = rep.lang_code, path.plan.genders
+        listed = ", ".join(classes)
+        for gender, where in rep.noun_genders:
+            if gender is None:
+                if classes and code in FILLED_LANGUAGES:
+                    problems.append(f"{rep.path}: {where}: a noun has a gender once "
+                                    f"{code} is filled in, one of {listed} "
+                                    f"(DECK-FORMAT.md, Card data)")
+            elif not classes:
+                problems.append(f"{rep.path}: {where}: gender {gender!r}, but {code} "
+                                f"has no gender classes; leave gender out")
+            elif gender not in classes:
+                problems.append(f"{rep.path}: {where}: gender {gender!r} is not a "
+                                f"class of {code}; its path lists {listed}")
+    return problems
+
+
 def collect(target: Path) -> list[Path]:
     if target.is_file():
         return [target]
@@ -4867,10 +5645,13 @@ def main(argv: list[str]) -> int:
               + check_reading_across(reports) + check_icons_across(reports)
               + check_rules_across(reports) + check_notes_across(reports)
               + check_bases_across(reports) + check_phrasebook_across(reports)
-              + check_plans_across(reports) + check_regions_across(reports))
+              + check_plans_across(reports) + check_regions_across(reports)
+              + check_genders_across(reports) + check_media_across(reports)
+              + check_sets_across(reports))
     for problem in across:
         print(f"error: {problem}")
     warn_base_stems_across(reports)
+    warn_forms_across(reports)
 
     failed = 0
     warned = 0

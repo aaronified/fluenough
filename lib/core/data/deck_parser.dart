@@ -2,6 +2,7 @@ import 'package:yaml/yaml.dart';
 
 import '../models/author.dart';
 import '../models/card.dart';
+import '../models/card_set.dart';
 import '../models/deck.dart';
 import '../models/drill_mode.dart';
 import '../models/grammar_pattern.dart';
@@ -141,14 +142,19 @@ const _cardFields = {
   'tags',
   'notes',
   'audio',
+  'audio_credit',
   'examples',
   'modes',
   'pair',
   'picture',
+  'image',
+  'image_credit',
   'phrasebook',
   'bases',
   'rules',
   'wiktionary',
+  'register',
+  'frequency',
   // A reviewer's proposed change (ADR-0038), read by [proposalsIn].
   'proposed',
   // Who checked the card (#449), read by [checkedByIn].
@@ -221,18 +227,42 @@ const _coreCardFields = {
   'gender',
   'tags',
   'audio',
+  'audio_credit',
   'examples',
   'modes',
   'picture',
+  'image',
+  'image_credit',
   'notes',
   'phrasebook',
   'bases',
   'rules',
+  'register',
+  'frequency',
+  // Card data (DECK-FORMAT.md, Card data): the fields of [_itemFields].
+  'synonyms',
+  'antonyms',
+  'collocations',
+  'confusables',
+  'forms',
+  'senses',
   // A reviewer's proposed change (ADR-0038), read by [proposalsIn].
   'proposed',
   // Who checked the card (#449), read by [checkedByIn].
   'checked_by',
 };
+
+/// A core card's item lists (DECK-FORMAT.md, Card data), and each item's
+/// fields: a card by `ref`, or a word written in full. Every item may take
+/// `ipa` and `source` (owner, 2026-10-15, #506).
+const _itemFields = <String, Set<String>>{
+  'synonyms': {'id', 'word', 'ref', 'reading', 'ipa', 'source'},
+  'antonyms': {'id', 'word', 'ref', 'reading', 'ipa', 'source'},
+  'collocations': {'id', 'word', 'ref', 'reading', 'ipa', 'source'},
+  'confusables': {'id', 'word', 'ref', 'reading', 'ipa', 'kind', 'source'},
+  'forms': {'id', 'kind', 'word', 'reading', 'ipa', 'source'},
+};
+const _senseFields = {'id', 'pos', 'examples', 'source'};
 const _coreRefFields = {
   'ref',
   'reading',
@@ -249,11 +279,20 @@ const _coreRefFields = {
 const _coreExampleFields = {'target', 'reading', 'ipa', 'bases', 'source'};
 const _layerEntryFields = {
   'native',
+  // A set card's explanation (DECK-FORMAT.md, Set cards).
+  'explanation',
   'alt_native',
   'notes',
   'examples',
   'bases',
   'wiktionary',
+  // Card data (DECK-FORMAT.md, Card data): the fields of [_itemFields].
+  'synonyms',
+  'antonyms',
+  'collocations',
+  'confusables',
+  'forms',
+  'senses',
   // A reviewer's proposed change (ADR-0038), read by [proposalsIn].
   'proposed',
   // Who checked the card (#449), read by [checkedByIn].
@@ -705,6 +744,13 @@ class _Reader {
     YamlNode? key,
   }) {
     final fields = this.fields(node, path);
+    if (_isSet(node)) {
+      fail(
+        fields.keyNode('kind'),
+        '$path: a set card is written in a vocab core, kind: "set", its name '
+        'and explanation in each layer (DECK-FORMAT.md, Set cards)',
+      );
+    }
     fields.allowOnly(key == null ? _cardFields : _layerCardFields);
 
     final idNode = key ?? fields.require('id');
@@ -716,6 +762,7 @@ class _Reader {
     seen[id] = idNode;
 
     final notes = this.notes(fields.node('notes'), '$path.notes');
+    final ownRoot = isOwnRoot(fields.node('bases'));
     return Card(
       id: id,
       deckId: deckId,
@@ -730,6 +777,10 @@ class _Reader {
       tags: fields.strings('tags'),
       notes: notes,
       audio: fields.optionalString('audio'),
+      audioCredit: mediaCredit(
+        fields.node('audio_credit'),
+        '$path.audio_credit',
+      ),
       examples: examples(fields.node('examples'), '$path.examples'),
       modes: modes(fields.node('modes'), '$path.modes'),
       // Pair notes are the one source of pairs (DECK-FORMAT.md, Notes); a
@@ -738,11 +789,53 @@ class _Reader {
           fields.optionalString('pair', allowEmpty: false) ??
           notes.where((n) => n.kind == NoteKind.pair).firstOrNull?.ref,
       picture: fields.optionalString('picture', allowEmpty: false),
+      image: fields.optionalString('image', allowEmpty: false),
+      imageCredit: mediaCredit(
+        fields.node('image_credit'),
+        '$path.image_credit',
+      ),
       phrasebook: mark(fields, 'phrasebook', path, _phrasebookRule),
-      bases: bases(fields.node('bases'), '$path.bases', core: false),
+      bases: ownRoot
+          ? const <CardBase>[]
+          : bases(fields.node('bases'), '$path.bases', core: false),
       rules: ruleIds(fields.node('rules'), '$path.rules'),
       wiktionary: mark(fields, 'wiktionary', path, _wiktionaryRule),
+      ownRoot: ownRoot,
+      register: fields.optionalString('register', allowEmpty: false),
+      frequency: frequency(fields.node('frequency'), '$path.frequency'),
     );
+  }
+
+  /// Whether a card's `bases` says its word is its own root, `self` (#513).
+  bool isOwnRoot(YamlNode? node) => node != null && _value(node) == 'self';
+
+  /// Where a card's recording or image came from (#518, #523): `{ source,
+  /// license, credit }`.
+  MediaCredit? mediaCredit(YamlNode? node, String path) {
+    if (node == null) return null;
+    final fields = this.fields(node, path);
+    fields.allowOnly(const {'source', 'license', 'credit'});
+    return MediaCredit(
+      source: fields.string('source'),
+      license: fields.string('license'),
+      credit: fields.string('credit'),
+    );
+  }
+
+  /// A card's frequency (#516): `{ rank, source }`.
+  CardFrequency? frequency(YamlNode? node, String path) {
+    if (node == null) return null;
+    final fields = this.fields(node, path);
+    fields.allowOnly(const {'rank', 'source'});
+    final rankNode = fields.require('rank');
+    final rank = _value(rankNode);
+    if (rank is! int || rank < 1) {
+      fail(
+        rankNode,
+        '$path.rank must be a whole number from 1, got ${_describe(rankNode)}',
+      );
+    }
+    return CardFrequency(rank: rank, source: fields.string('source'));
   }
 
   List<CardExample> examples(YamlNode? node, String path) {
@@ -1331,7 +1424,9 @@ class _Reader {
     final seen = <String, YamlNode>{};
     return List<CoreCard>.unmodifiable(<CoreCard>[
       for (final (i, item) in list(node, 'cards').indexed)
-        if (item is YamlMap && item.nodes.containsKey('ref'))
+        if (_isSet(item))
+          coreSet(item, 'cards[$i]', seen)
+        else if (item is YamlMap && item.nodes.containsKey('ref'))
           coreRef(item, 'cards[$i]', seen)
         else
           coreCard(item, 'cards[$i]', seen),
@@ -1371,6 +1466,7 @@ class _Reader {
       );
     }
     fields.allowOnly(_coreCardFields);
+    final ownRoot = isOwnRoot(fields.node('bases'));
     return CoreWritten(
       id: id,
       target: fields.string('target'),
@@ -1381,14 +1477,200 @@ class _Reader {
       gender: fields.optionalString('gender'),
       tags: fields.strings('tags'),
       audio: fields.optionalString('audio'),
+      audioCredit: mediaCredit(
+        fields.node('audio_credit'),
+        '$path.audio_credit',
+      ),
       examples: coreExamples(fields.node('examples'), '$path.examples'),
       modes: modes(fields.node('modes'), '$path.modes'),
       picture: fields.optionalString('picture', allowEmpty: false),
+      image: fields.optionalString('image', allowEmpty: false),
+      imageCredit: mediaCredit(
+        fields.node('image_credit'),
+        '$path.image_credit',
+      ),
       notes: coreNotes(fields.node('notes'), '$path.notes'),
       phrasebook: mark(fields, 'phrasebook', path, _phrasebookRule),
-      bases: bases(fields.node('bases'), '$path.bases', core: true),
+      bases: ownRoot
+          ? const <CardBase>[]
+          : bases(fields.node('bases'), '$path.bases', core: true),
       rules: ruleIds(fields.node('rules'), '$path.rules'),
+      ownRoot: ownRoot,
+      register: fields.optionalString('register', allowEmpty: false),
+      frequency: frequency(fields.node('frequency'), '$path.frequency'),
+      items: <String, List<CardItem>>{
+        for (final MapEntry(key: key, value: allowed) in _itemFields.entries)
+          if (fields.node(key) case final node?)
+            key: coreItems(node, '$path.$key', allowed),
+      },
+      senses: coreSenses(fields.node('senses'), '$path.senses'),
     );
+  }
+
+  /// A core card's items of one field (DECK-FORMAT.md, Card data), their
+  /// text being in each layer, by id.
+  List<CardItem> coreItems(YamlNode node, String path, Set<String> allowed) {
+    final ids = <String>{};
+    return List<CardItem>.unmodifiable(<CardItem>[
+      for (final (i, item) in list(node, path).indexed)
+        coreItem(item, '$path[$i]', allowed, ids),
+    ]);
+  }
+
+  CardItem coreItem(
+    YamlNode node,
+    String path,
+    Set<String> allowed,
+    Set<String> ids,
+  ) {
+    final fields = this.fields(node, path);
+    fields.allowOnly(allowed);
+    final idNode = fields.require('id');
+    final id = text(idNode, '$path.id');
+    if (!ids.add(id)) fail(idNode, '$path.id "$id" is used twice');
+    if (fields.has('ref') == fields.has('word')) {
+      fail(node, '$path gives word or ref, one of them');
+    }
+    return CardItem(
+      id: id,
+      ref: fields.has('ref')
+          ? this.id(fields.require('ref'), '$path.ref')
+          : null,
+      word: fields.optionalString('word', allowEmpty: false),
+      reading: fields.optionalString('reading', allowEmpty: false),
+      ipa: fields.optionalString('ipa', allowEmpty: false),
+      kind: fields.optionalString('kind', allowEmpty: false),
+      source: fields.optionalString('source', allowEmpty: false),
+    );
+  }
+
+  /// A core card's senses (#517), their meanings being in each layer, by id.
+  List<CoreSense> coreSenses(YamlNode? node, String path) {
+    if (node == null) return const <CoreSense>[];
+    final senses = <CoreSense>[];
+    final ids = <String>{};
+    for (final (i, item) in list(node, path).indexed) {
+      final where = '$path[$i]';
+      final fields = this.fields(item, where);
+      fields.allowOnly(_senseFields);
+      final idNode = fields.require('id');
+      final id = text(idNode, '$where.id');
+      if (!ids.add(id)) fail(idNode, '$where.id "$id" is used twice');
+      senses.add(
+        CoreSense(
+          id: id,
+          pos: fields.optionalString('pos', allowEmpty: false),
+          source: fields.optionalString('source', allowEmpty: false),
+          examples: coreExamples(fields.node('examples'), '$where.examples'),
+        ),
+      );
+    }
+    return List<CoreSense>.unmodifiable(senses);
+  }
+
+  /// A set card (DECK-FORMAT.md, Set cards): its id and its members, by
+  /// ref, or a rule and one fixed value of its table ("Rule + axis",
+  /// owner, 2026-10-16). Its name and explanation are in each layer.
+  CoreSet coreSet(YamlNode node, String path, Map<String, YamlNode> seen) {
+    final fields = this.fields(node, path);
+    final id = cardId(fields.require('id'), '$path.id', seen);
+    for (final key in fields.map.nodes.keys.cast<YamlNode>()) {
+      if (!const {'id', 'kind', 'members', 'shown'}.contains(_value(key))) {
+        fail(
+          key,
+          '$path: a set card has only id, kind, members and shown, its name '
+          'and explanation in each layer; got ${_describe(key)}',
+        );
+      }
+    }
+    final membersNode = fields.require('members');
+    final where = '$path.members';
+    final shownNode = fields.map.nodes['shown'];
+    if (membersNode is YamlMap) {
+      final ruleNode =
+          membersNode.nodes['rule'] ??
+          fail(membersNode, '$where: missing required field "rule"');
+      final rule = text(ruleNode, '$where.rule');
+      final axes = <(String, YamlNode, YamlNode)>[
+        for (final entry in keyed(membersNode, where, 'must be a mapping'))
+          if (entry.$1 != 'rule') entry,
+      ];
+      if (axes.length != 1) {
+        fail(
+          membersNode,
+          "$where: a rule's set fixes one value of its table beside rule, as "
+          '{ rule: ..., verb: "..." }',
+        );
+      }
+      final (axis, _, valueNode) = axes.single;
+      final fixed = SetRule(
+        rule: rule,
+        axis: axis,
+        value: text(valueNode, '$where.$axis'),
+      );
+      if (fixed.fixesRow) {
+        if (shownNode != null) {
+          fail(
+            shownNode,
+            '$path.shown: only a set of one slot across the words names the '
+            'rows its card shows; this set shows every form of its row',
+          );
+        }
+        return CoreSet(id: id, rule: fixed);
+      }
+      // One slot across the words: its card shows a few rows the deck
+      // chooses (owner, 2026-10-16, #515: "A few curated verbs should be
+      // good enough"), its Full list every row.
+      return CoreSet(
+        id: id,
+        rule: fixed,
+        shown: refList(
+          shownNode ??
+              fail(
+                fields.map,
+                '$path: missing required field "shown": the rows its card '
+                'shows, as [{ ref: "..." }, ...]',
+              ),
+          '$path.shown',
+          what: 'row',
+        ),
+      );
+    }
+    if (shownNode != null) {
+      fail(
+        shownNode,
+        '$path.shown: only a set of one slot across the words names the rows '
+        'its card shows; a set by refs shows its members',
+      );
+    }
+    return CoreSet(
+      id: id,
+      members: refList(membersNode, where, what: 'member', self: id),
+    );
+  }
+
+  /// A set card's list of `{ ref }`, its members or the rows it shows: at
+  /// least two, each once, none [self].
+  List<String> refList(
+    YamlNode node,
+    String where, {
+    required String what,
+    String? self,
+  }) {
+    final refs = <String>[];
+    for (final (i, item) in list(node, where).indexed) {
+      final member = fields(item, '$where[$i]');
+      member.allowOnly(const {'ref'});
+      final ref = id(member.require('ref'), '$where[$i].ref');
+      if (ref == self || refs.contains(ref)) {
+        fail(item, '$where[$i]: $ref is a $what already, or the set itself');
+      }
+      refs.add(ref);
+    }
+    if (refs.length < 2) {
+      fail(node, '$where: a set has at least 2 ${what}s');
+    }
+    return List<String>.unmodifiable(refs);
   }
 
   CoreRef coreRef(YamlNode node, String path, Map<String, YamlNode> seen) {
@@ -1773,6 +2055,9 @@ class _Reader {
     }
     return LayerEntry(
       native: fields.has('native') ? fields.string('native') : null,
+      explanation: fields.has('explanation')
+          ? fields.string('explanation')
+          : null,
       altNative: fields.has('alt_native') ? fields.strings('alt_native') : null,
       notes: fields.has('notes')
           ? layerTexts(
@@ -1790,8 +2075,67 @@ class _Reader {
       wiktionary: mark(fields, 'wiktionary', path, _wiktionaryRule)
           ? true
           : null,
+      items: <String, Map<String, LayerText>>{
+        for (final key in _itemFields.keys)
+          if (fields.node(key) case final node?)
+            key: layerItems(node, '$path.$key', key),
+      },
+      senses: fields.has('senses')
+          ? layerSenses(fields.require('senses'), '$path.senses')
+          : null,
       key: key,
     );
+  }
+
+  /// A layer's text for a core card's items of [field], by id: a
+  /// confusable's `{ why }`, a collocation's meaning or `{ native, note }`,
+  /// any other item's text.
+  Map<String, LayerText> layerItems(YamlNode node, String path, String field) {
+    final texts = <String, LayerText>{};
+    for (final (id, key, value) in keyed(
+      node,
+      path,
+      "a mapping of the core item's id to its text",
+    )) {
+      final where = '$path.$id';
+      if (field == 'confusables' ||
+          (field == 'collocations' && value is YamlMap)) {
+        final fields = this.fields(value, where);
+        final name = field == 'confusables' ? 'why' : 'native';
+        fields.allowOnly({name, if (field == 'collocations') 'note'});
+        texts[id] = LayerText(
+          text: fields.string(name),
+          note: fields.optionalString('note', allowEmpty: false),
+          key: key,
+          node: fields.require(name),
+        );
+      } else {
+        texts[id] = LayerText(text: text(value, where), key: key, node: value);
+      }
+    }
+    return Map<String, LayerText>.unmodifiable(texts);
+  }
+
+  /// A layer's senses of a core card (#517), by id: `{ native, examples }`.
+  Map<String, LayerSense> layerSenses(YamlNode node, String path) {
+    final senses = <String, LayerSense>{};
+    for (final (id, key, value) in keyed(
+      node,
+      path,
+      "a mapping of the core sense's id to { native, examples }",
+    )) {
+      final where = '$path.$id';
+      final fields = this.fields(value, where);
+      fields.allowOnly(const {'native', 'examples'});
+      senses[id] = LayerSense(
+        native: fields.string('native'),
+        examples: fields.has('examples')
+            ? layerExamples(fields.require('examples'), '$where.examples')
+            : const <String, LayerExample>{},
+        key: key,
+      );
+    }
+    return Map<String, LayerSense>.unmodifiable(senses);
   }
 
   /// A mapping of keys to text in the learner's language.
@@ -2464,6 +2808,12 @@ const _wiktionaryRule = 'true, or left out where Wiktionary has no entry';
 /// [text] with each placeholder replaced by the word it counts to, shown
 /// with its reading (DECK-FORMAT.md, Notes). One past [words] stays as written;
 /// the reader refuses it first.
+/// Whether [node], an item of a deck's cards, is a set card.
+bool _isSet(YamlNode node) =>
+    node is YamlMap &&
+    node.nodes['kind'] is YamlScalar &&
+    _value(node.nodes['kind']!) == 'set';
+
 String _filled(String text, List<NoteWord> words) =>
     text.replaceAllMapped(_placeholder, (m) {
       final n = int.tryParse(m[1]!);

@@ -1,5 +1,6 @@
 import 'author.dart';
 import 'card.dart';
+import 'card_set.dart';
 import 'grammar_pattern.dart';
 import 'proposal.dart';
 import 'reading.dart';
@@ -87,6 +88,7 @@ class Deck {
     this.rules = const <Rule>[],
     this.proposals = const <String, List<Proposal>>{},
     this.checkedBy = const <String, List<String>>{},
+    this.sets = const <CardSet>[],
   });
 
   final String id;
@@ -140,6 +142,10 @@ class Deck {
   /// has checked is not in it.
   final Map<String, List<String>> checkedBy;
 
+  /// Its set cards (DECK-FORMAT.md, Set cards), in order: taught only,
+  /// never in [cards], so never scheduled, asked or logged.
+  final List<CardSet> sets;
+
   int get cardCount => cards.length;
 
   /// This deck with [cards] in place of its own, and no refs left: a grammar
@@ -163,6 +169,7 @@ class Deck {
     rules: rules,
     proposals: proposals,
     checkedBy: checkedBy,
+    sets: sets,
   );
 
   @override

@@ -15,6 +15,7 @@ import '../../ui/widgets/target_text.dart';
 import 'cant_now.dart';
 import 'choice_tile.dart';
 import 'drill_session.dart';
+import 'set_drill.dart';
 import 'taught_details.dart';
 
 /// Multiple choice (ADR-0024), recorded as soon as an option is picked:
@@ -65,17 +66,20 @@ class ChoiceDrill extends StatelessWidget {
       progress: session.progress,
       onClose: onClose,
       needsSound: _hears && !answered,
-      card: switch (ask) {
-        Ask.chooseMeaning || Ask.chooseFormMeaning => _meaningCard(
-          context,
-          card,
-          language,
-          answered,
-        ),
-        Ask.hearAndChoose ||
-        Ask.hearMeaning => _heardCard(context, card, language, answered),
-        _ => _wordCard(context, card, language, answered),
-      },
+      card: <Widget>[
+        ...switch (ask) {
+          Ask.chooseMeaning || Ask.chooseFormMeaning => _meaningCard(
+            context,
+            card,
+            language,
+            answered,
+          ),
+          Ask.hearAndChoose ||
+          Ask.hearMeaning => _heardCard(context, card, language, answered),
+          _ => _wordCard(context, card, language, answered),
+        },
+        ...answeredSetList(context, session, answered: answered),
+      ],
       belowCard: <Widget>[
         Semantics(
           container: true,
@@ -221,7 +225,7 @@ class ChoiceDrill extends StatelessWidget {
           color: scheme.onSurfaceVariant,
         ),
       ),
-      if (card.picture != null) CardPicture(card, size: 88),
+      if (card.hasPicture) CardPicture(card, size: 88),
       Text(
         card.promptFor(session.item.mode),
         textAlign: TextAlign.center,
@@ -340,7 +344,7 @@ class _OptionMeaning extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final meaning = Text(card.native, style: style);
-    if (card.picture == null) return meaning;
+    if (!card.hasPicture) return meaning;
     return Row(
       children: <Widget>[
         CardPicture(card, size: 32),

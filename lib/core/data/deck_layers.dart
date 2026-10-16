@@ -81,13 +81,21 @@ class CoreWritten extends CoreCard {
     this.gender,
     this.tags = const <String>[],
     this.audio,
+    this.audioCredit,
     this.examples = const <CoreExample>[],
     this.modes = const <DrillMode>{},
     this.picture,
+    this.image,
+    this.imageCredit,
     this.notes = const <CoreNote>[],
     this.phrasebook = false,
     this.bases = const <CardBase>[],
     this.rules = const <String>[],
+    this.ownRoot = false,
+    this.register,
+    this.frequency,
+    this.items = const <String, List<CardItem>>{},
+    this.senses = const <CoreSense>[],
   }) : super(id);
 
   final String target;
@@ -98,15 +106,43 @@ class CoreWritten extends CoreCard {
   final String? gender;
   final List<String> tags;
   final String? audio;
+  final MediaCredit? audioCredit;
   final List<CoreExample> examples;
   final Set<DrillMode> modes;
   final String? picture;
+  final String? image;
+  final MediaCredit? imageCredit;
   final List<CoreNote> notes;
   final bool phrasebook;
 
   /// Its bases, an inline one without its meaning.
   final List<CardBase> bases;
   final List<String> rules;
+
+  // Card data (DECK-FORMAT.md, Card data).
+  final bool ownRoot;
+  final String? register;
+  final CardFrequency? frequency;
+
+  /// Its items by field (`synonyms`, `forms` and the rest), without their
+  /// text, which each layer gives by id.
+  final Map<String, List<CardItem>> items;
+  final List<CoreSense> senses;
+}
+
+/// A core card's sense (#517), its meaning being in each layer.
+class CoreSense {
+  const CoreSense({
+    required this.id,
+    this.pos,
+    this.source,
+    this.examples = const <CoreExample>[],
+  });
+
+  final String id;
+  final String? pos;
+  final String? source;
+  final List<CoreExample> examples;
 }
 
 /// A card a core lists by ref, written elsewhere in the language
@@ -128,6 +164,24 @@ class CoreRef extends CoreCard {
   final Set<DrillMode>? modes;
   final List<CoreExample>? examples;
   final List<CoreNote>? notes;
+}
+
+/// A set card a core writes (DECK-FORMAT.md, Set cards): its members, by
+/// card id or by a rule and one value of its table. Its name and
+/// explanation are each layer's.
+class CoreSet extends CoreCard {
+  const CoreSet({
+    required String id,
+    this.members = const <String>[],
+    this.rule,
+    this.shown = const <String>[],
+  }) : super(id);
+
+  final List<String> members;
+  final SetRule? rule;
+
+  /// A set of one slot across the words: the rows its card shows.
+  final List<String> shown;
 }
 
 /// A core card's example, its translation being in each layer.
@@ -265,14 +319,20 @@ class LayerEntry extends LayerCard {
   const LayerEntry({
     required YamlNode key,
     this.native,
+    this.explanation,
     this.altNative,
     this.notes,
     this.examples,
     this.bases,
     this.wiktionary,
+    this.items = const <String, Map<String, LayerText>>{},
+    this.senses,
   }) : super(key);
 
   final String? native;
+
+  /// A set card's explanation; null on any other card's entry.
+  final String? explanation;
   final List<String>? altNative;
 
   /// Note texts, by the core note's id.
@@ -284,6 +344,25 @@ class LayerEntry extends LayerCard {
   /// Inline bases' meanings, by word.
   final Map<String, LayerBase>? bases;
   final bool? wiktionary;
+
+  /// The text of the core card's items, by field and then by item id.
+  final Map<String, Map<String, LayerText>> items;
+
+  /// Its senses' meanings and translations, by sense id.
+  final Map<String, LayerSense>? senses;
+}
+
+/// What a layer gives a core card's sense (#517).
+class LayerSense {
+  const LayerSense({
+    required this.native,
+    required this.key,
+    this.examples = const <String, LayerExample>{},
+  });
+
+  final String native;
+  final Map<String, LayerExample> examples;
+  final YamlNode key;
 }
 
 /// A card only this layer has, written in full.
@@ -295,11 +374,19 @@ class LayerOnlyCard extends LayerCard {
 
 /// A text in the layer's language, and where it is.
 class LayerText {
-  const LayerText({required this.text, required this.key, required this.node});
+  const LayerText({
+    required this.text,
+    required this.key,
+    required this.node,
+    this.note,
+  });
 
   final String text;
   final YamlNode key;
   final YamlNode node;
+
+  /// A collocation's note beside its meaning (#517).
+  final String? note;
 }
 
 class LayerExample {
@@ -455,13 +542,14 @@ Deck mergeLayer(DeckCore core, DeckLayer layer, {required String source}) {
 
   var cards = const <Card>[];
   var refs = const <CardRef>[];
+  var sets = const <CardSet>[];
   GrammarPattern? pattern;
   RuleTable? table;
   var rules = const <Rule>[];
   final merge = _Merge(reader, core, layer);
   switch (core.kind) {
     case DeckKind.vocab:
-      (:cards, :refs) = merge.cards();
+      (:cards, :refs, :sets) = merge.cards();
     case DeckKind.grammar:
       pattern = merge.pattern();
     case DeckKind.rules:
@@ -505,6 +593,7 @@ Deck mergeLayer(DeckCore core, DeckLayer layer, {required String source}) {
       },
     ),
     checkedBy: mergedCheckedBy(core, layer),
+    sets: sets,
   );
 }
 
@@ -537,7 +626,7 @@ class _Merge {
   /// The core's cards the layer translates, then the layer's own; the
   /// core's refs, each with what the layer gives it (DECK-FORMAT.md, Core and
   /// layer files).
-  ({List<Card> cards, List<CardRef> refs}) cards() {
+  ({List<Card> cards, List<CardRef> refs, List<CardSet> sets}) cards() {
     final ids = <String>{for (final card in core.cards) card.id};
     for (final MapEntry(key: id, value: entry) in layer.cards.entries) {
       if (entry is LayerOnlyCard && ids.contains(id)) {
@@ -558,13 +647,23 @@ class _Merge {
 
     final cards = <Card>[];
     final refs = <CardRef>[];
+    final sets = <CardSet>[];
     // Every entry included before a ref, cards and refs, so that the
     // catalog puts the ref back in its place.
     var position = 0;
     for (final card in core.cards) {
       final entry = layer.cards[card.id] as LayerEntry?;
       final path = 'cards.${card.id}';
+      if (card is! CoreSet && entry?.explanation != null) {
+        reader.fail(
+          entry!.key,
+          '$path: explanation is only for a set card; a note goes in notes',
+        );
+      }
       switch (card) {
+        case CoreSet():
+          if (entry == null) continue;
+          sets.add(set(card, entry, path));
         case CoreWritten():
           if (entry == null) continue;
           final native =
@@ -587,6 +686,47 @@ class _Merge {
     return (
       cards: List<Card>.unmodifiable(cards),
       refs: List<CardRef>.unmodifiable(refs),
+      sets: List<CardSet>.unmodifiable(sets),
+    );
+  }
+
+  /// A set card as this layer teaches it: with its name, the entry's
+  /// `native`, and its explanation, both required.
+  CardSet set(CoreSet card, LayerEntry entry, String path) {
+    final name =
+        entry.native ??
+        reader.fail(
+          entry.key,
+          '$path: native is required: without it the set is not taught from '
+          '${layer.native.name}',
+        );
+    final explanation =
+        entry.explanation ??
+        reader.fail(
+          entry.key,
+          '$path: explanation is required: without it the set is not taught '
+          'from ${layer.native.name}',
+        );
+    if (entry.altNative != null ||
+        entry.notes != null ||
+        entry.examples != null ||
+        entry.bases != null ||
+        entry.wiktionary != null ||
+        entry.items.isNotEmpty ||
+        entry.senses != null) {
+      reader.fail(
+        entry.key,
+        "$path: a set card's entry gives native, its name, and explanation",
+      );
+    }
+    return CardSet(
+      id: card.id,
+      deckId: layer.id,
+      name: name,
+      explanation: explanation,
+      members: card.members,
+      rule: card.rule,
+      shown: card.shown,
     );
   }
 
@@ -606,17 +746,93 @@ class _Merge {
       tags: card.tags,
       notes: notes,
       audio: card.audio,
+      audioCredit: card.audioCredit,
       examples: examples(card.examples, entry.examples, '$path.examples'),
       modes: card.modes,
       // Pair notes are the one source of pairs in a core (DECK-FORMAT.md,
       // Notes).
       pair: notes.where((n) => n.kind == NoteKind.pair).firstOrNull?.ref,
       picture: card.picture,
+      image: card.image,
+      imageCredit: card.imageCredit,
       phrasebook: card.phrasebook,
       bases: bases(card.bases, entry.bases, '$path.bases'),
       rules: card.rules,
       wiktionary: entry.wiktionary ?? false,
+      ownRoot: card.ownRoot,
+      register: card.register,
+      frequency: card.frequency,
+      synonyms: items(card, entry, 'synonyms', path),
+      antonyms: items(card, entry, 'antonyms', path),
+      collocations: items(card, entry, 'collocations', path),
+      confusables: items(card, entry, 'confusables', path),
+      forms: items(card, entry, 'forms', path),
+      senses: senses(card.senses, entry.senses, '$path.senses'),
     );
+  }
+
+  /// The core card's items of [field], each with the layer's text, or none
+  /// where the layer gives it none.
+  List<CardItem> items(
+    CoreWritten card,
+    LayerEntry entry,
+    String field,
+    String path,
+  ) {
+    final items = card.items[field] ?? const <CardItem>[];
+    final texts = entry.items[field] ?? const <String, LayerText>{};
+    final ids = <String>{for (final item in items) item.id};
+    for (final MapEntry(key: id, value: text) in texts.entries) {
+      if (!ids.contains(id)) {
+        reader.fail(
+          text.key,
+          '$path.$field.$id: the core card has no $field item "$id"',
+        );
+      }
+    }
+    return List<CardItem>.unmodifiable(<CardItem>[
+      for (final item in items)
+        CardItem(
+          id: item.id,
+          ref: item.ref,
+          word: item.word,
+          reading: item.reading,
+          ipa: item.ipa,
+          kind: item.kind,
+          source: item.source,
+          text: texts[item.id]?.text,
+          note: texts[item.id]?.note,
+        ),
+    ]);
+  }
+
+  /// The core card's senses the layer gives a meaning, in the core's order.
+  List<CardSense> senses(
+    List<CoreSense> senses,
+    Map<String, LayerSense>? texts,
+    String path,
+  ) {
+    final ids = <String>{for (final sense in senses) sense.id};
+    for (final MapEntry(key: id, value: text) in (texts ?? const {}).entries) {
+      if (!ids.contains(id)) {
+        reader.fail(text.key, '$path.$id: the core card has no sense "$id"');
+      }
+    }
+    return List<CardSense>.unmodifiable(<CardSense>[
+      for (final sense in senses)
+        if (texts?[sense.id] case final text?)
+          CardSense(
+            id: sense.id,
+            native: text.native,
+            pos: sense.pos,
+            source: sense.source,
+            examples: examples(
+              sense.examples,
+              text.examples,
+              '$path.${sense.id}.examples',
+            ),
+          ),
+    ]);
   }
 
   /// A core ref as a [CardRef], resolved by the catalog as any ref is: its
@@ -637,6 +853,14 @@ class _Merge {
       );
     }
     bases(const <CardBase>[], entry?.bases, '$path.bases');
+    if (entry != null && (entry.items.isNotEmpty || entry.senses != null)) {
+      final field = entry.items.keys.firstOrNull ?? 'senses';
+      reader.fail(
+        entry.key,
+        '$path.$field: the core lists ${card.id} by ref; its $field are on the '
+        'card where it is written',
+      );
+    }
     return CardRef(
       id: card.id,
       position: position,

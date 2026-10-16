@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:flutter/foundation.dart';
 
@@ -124,6 +125,9 @@ class DeckDownloads extends ChangeNotifier {
   /// How many decks one write keeps, so that a download cut short keeps
   /// what came before it.
   static const int decksPerWrite = 10;
+
+  /// How many recordings and images one write keeps.
+  static const int mediaPerWrite = 50;
 
   static const String _indexNote = 'index.json';
   static const String _stateNote = 'state.json';
@@ -305,7 +309,7 @@ class DeckDownloads extends ChangeNotifier {
     final entry = _index?.language(language);
     if (entry == null) {
       return _onPhone.values.any(
-        (f) => f.language == language && !f.isLanguageFile,
+        (f) => f.language == language && !f.isLanguageFile && !f.isMedia,
       );
     }
     return entry
@@ -315,8 +319,9 @@ class DeckDownloads extends ChangeNotifier {
 
   /// Whether any deck of [language] is on the phone, whatever else is
   /// missing: whether it can be studied at all, offline.
-  bool hasDecks(String language) =>
-      _onPhone.values.any((f) => f.language == language && !f.isLanguageFile);
+  bool hasDecks(String language) => _onPhone.values.any(
+    (f) => f.language == language && !f.isLanguageFile && !f.isMedia,
+  );
 
   /// The files of [language] a learner who speaks [spoken] has yet to
   /// download, as the index lists them.
@@ -652,11 +657,16 @@ class DeckDownloads extends ChangeNotifier {
 
   /// [files] in writes of up to [decksPerWrite] decks, each deck's files
   /// (a core, its layers) together and the language's own files first, so
-  /// that every write leaves decks the catalog can read whole.
+  /// that every write leaves decks the catalog can read whole. The cards'
+  /// recordings and images come last, [mediaPerWrite] to a write.
   static List<List<IndexFile>> _batches(List<IndexFile> files) {
     final own = <IndexFile>[
       for (final f in files)
-        if (f.deck == null) f,
+        if (f.deck == null && !f.isMedia) f,
+    ];
+    final media = <IndexFile>[
+      for (final f in files)
+        if (f.isMedia) f,
     ];
     final byDeck = <String, List<IndexFile>>{};
     for (final f in files) {
@@ -678,6 +688,9 @@ class DeckDownloads extends ChangeNotifier {
       }
     }
     if (current.isNotEmpty) batches.add(current);
+    for (var i = 0; i < media.length; i += mediaPerWrite) {
+      batches.add(media.sublist(i, min(i + mediaPerWrite, media.length)));
+    }
     return batches;
   }
 
@@ -708,6 +721,9 @@ class DeckDownloads extends ChangeNotifier {
     List<String> remove,
   ) async {
     for (final MapEntry(key: file, value: bytes) in got.entries) {
+      // A recording or an image is checked by its hash alone: it is not
+      // a deck, and is never read as one.
+      if (file.isMedia) continue;
       final String text;
       try {
         text = utf8.decode(bytes);

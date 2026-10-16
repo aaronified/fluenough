@@ -8,6 +8,7 @@ import '../../ui/widgets/feedback_banner.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import 'drill_session.dart';
+import 'set_drill.dart';
 import 'input_mode_choice.dart';
 import 'taught_details.dart';
 
@@ -91,6 +92,7 @@ class RearrangeDrill extends StatelessWidget {
                 ? Speaker(onPlay: session.play, playing: session.playing)
                 : null,
           ),
+        ...answeredSetList(context, session, answered: answer != null),
       ],
       belowCard: <Widget>[
         if (answer == null && session.canTransliterate)

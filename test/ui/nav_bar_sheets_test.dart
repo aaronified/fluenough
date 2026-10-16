@@ -11,6 +11,8 @@ import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/models/card.dart';
+import 'package:fluenough/core/models/card_set.dart';
+import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/speech/speech_engine.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
@@ -22,6 +24,7 @@ import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_preset.dart';
 import 'package:fluenough/features/drill/drill_session.dart';
 import 'package:fluenough/features/drill/reading_fixture.dart';
+import 'package:fluenough/features/drill/set_drill.dart';
 import 'package:fluenough/features/gallery/gallery_page.dart';
 import 'package:fluenough/features/placement/gallery_entries.dart';
 import 'package:fluenough/features/review/review_sheets.dart';
@@ -266,6 +269,46 @@ sheets = <String, Future<void> Function(WidgetTester tester)>{
       ]),
     );
   },
+  'set_drill: the Full list': (tester) async {
+    final state = AppState.test();
+    await state.load();
+    const telugu = LanguageInfo(
+      code: 'te',
+      iso639_3: 'tel',
+      name: 'Telugu',
+      script: 'telugu',
+    );
+    final forms = <Card>[
+      for (var i = 0; i < 9; i++)
+        Card(
+          id: 'te-$i',
+          deckId: 'te-en-x',
+          target: 'తాగుతాను$i',
+          reading: 'tāgutānu$i',
+          native: 'form $i',
+        ),
+    ];
+    await openOn(
+      tester,
+      state,
+      (context) => showSetList(
+        context,
+        sets: <ResolvedSet>[
+          ResolvedSet(
+            set: const CardSet(
+              id: 'te-9',
+              deckId: 'te-en-x',
+              name: 'తాగు (tāgu), drink: every person',
+              explanation: '',
+            ),
+            members: forms,
+          ),
+        ],
+        language: telugu,
+        isKnown: (card) => card.id == 'te-0',
+      ),
+    );
+  },
   'language_card: taught from four': (tester) async {
     final app = AppState.test();
     await app.load();
@@ -311,6 +354,7 @@ void main() {
       'speech_test_sheet': 1,
       'adjust_section': 1,
       'language_card': 1,
+      'set_drill': 1,
     }, reason: 'a new sheet belongs in [sheets]');
   });
 
