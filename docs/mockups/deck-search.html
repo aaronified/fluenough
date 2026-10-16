@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Deck Search</title>
-<meta name="description" content="The Decks tab's one search for decks, units and words (#527), revised for the owner's answers: kind:, status: and tag: tokens as chips in the bar with dropdown comboboxes, the ✕ that clears then closes, “Search Hindi” for this course only, the travel tag in themes.yaml, and offers to add a course or a language you know for another script; Hindi and Bengali, light and dark, 1.4x.">
+<meta name="description" content="The Decks tab's one search for decks, units and words (#527), revised for the owner's answers: the tokens offered when the search opens, a token's values when one is picked, suggestions while typing; kind:, status: (not learnt, learning, learnt, forgetting, struggling, set aside) and theme: tokens as chips in the bar with dropdown comboboxes, the ✕ that clears then closes, “Search Hindi” for this course only, the travel tag in themes.yaml, and offers to add a course or, a row per language, a language you know for another script; Hindi and Bengali, light and dark, 1.4x.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&family=Noto+Sans+Tamil:wght@400;600&family=Noto+Sans+Gujarati:wght@400;600&display=swap">
@@ -121,7 +121,7 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 .caret{display:inline-block;width:2px;height:calc(22px*var(--t));background:var(--p);margin-left:1px;flex:none}
 /* the scrim over the path while nothing is typed: Material's scrim colour, black, at 32% */
 .scrim{position:absolute;inset:0;background:rgba(0,0,0,.32);z-index:1}
-/* tokens (#527): kind:, status: and tag: become InputChips inside the bar; the bar's line wraps and the bar grows */
+/* tokens (#527): kind:, status: and theme: become InputChips inside the bar; the bar's line wraps and the bar grows */
 .sbar{align-items:flex-start}
 .sbar>.mi{margin-top:16px}
 .sbar>.ibtn{margin-top:4px}
@@ -141,6 +141,17 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 .mit .tx{display:flex;flex-direction:column;min-width:0}
 .mit.sel{background:color-mix(in srgb,var(--onS) 10%,var(--sCont))}
 .mhead{padding:4px 12px 8px;color:var(--onSv)}
+/* a long list of values (theme:) scrolls inside the menu, which never reaches the tab bar */
+.menu{overflow:hidden}
+.menu.wide{width:296px;left:16px;max-height:416px}
+.mthumb{position:absolute;right:3px;top:8px;width:4px;height:96px;border-radius:2px;background:var(--onS);opacity:.42}
+/* suggestions while typing (#527): completions of what is typed, above the results */
+.sugl{display:flex;flex-direction:column;margin:0 -8px 4px;padding:0 0 4px;box-shadow:0 1px 0 var(--olv)}
+.sug{display:flex;align-items:center;gap:16px;min-height:48px;padding:0 0 0 16px}
+.sug>.mi{color:var(--onSv)}
+.sug .sgt{flex:1;min-width:0}
+.sug .sgt b{font-weight:700}
+.sug .ibtn{color:var(--onSv)}
 /* the kind chip on a result: an AssistChip, 32 high inside a 48 target; tapping it narrows to that kind */
 .khit{min-height:48px;min-width:48px;display:flex;align-items:center;justify-content:flex-end;flex:none;padding-left:4px}
 .kchip{min-height:calc(32px + 12px*(var(--t) - 1));border-radius:8px;border:1px solid var(--ol);display:flex;align-items:center;padding:4px 12px;color:var(--onSv);background:transparent}
@@ -206,7 +217,7 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 <body class="marks">
 <div class="wrap">
 <h1>Decks: one search for decks, units and words</h1>
-<p class="lede"><b>#527</b>, awaiting the owner's approval. The Decks tab's one search, typo-tolerant (SQLite FTS5), in place of the filter row (owner, 2026-10-16: “I just want people to quickly find stuff. The filters can be replaced by a fts5 search with typo tolerance and the kind can be a chip.”). This revision draws the owner's answers of 2026-10-16 on 0777b95: <b>three tokens</b>, <code>kind:</code>, <code>status:</code> and <code>tag:</code>, typed in the bar, open a <b>dropdown combobox</b> of their values and become <b>chips inside the search bar</b> (section 4); the <b>✕ clears, then closes</b>; the hint reads <b>“Search Hindi”</b> and the search covers this course only; the <code>travel</code> tag sits on the transport theme in <code>decks/themes.yaml</code>; and a query in a script that none of the learner's courses use offers to <b>add a course</b> written in it and to <b>add its language to the languages you know</b>. Kept from before: the close button sits in the search bar; with nothing typed the path still shows, darkened, and results start with the first letter; the search reads the transliteration or the target script; every card, set card, deck and unit is its own row. The language bar at the top is the one the owner chose for #528 (<code>language-bar.html</code>), edge-masked where its row does not fit. The learner learns Hindi, Bengali and Marathi, each from English; deck names, units and words are read from <code>decks/hi</code> and <code>decks/bn</code> on main (2026-10-16). Colours are Flutter's own <code>ColorScheme.fromSeed</code> output for the app's four seeds (<code>lib/ui/theme.dart</code>). The dashed outlines mark what changes and are not part of the app. The keyboard is not drawn. <span class="dec">Decided</span> is the owner's; <span class="prop">Proposed</span> waits for the owner and is listed in the decisions table at the end. Replaces 0777b95.</p>
+<p class="lede"><b>#527</b>, awaiting the owner's approval. The Decks tab's one search, typo-tolerant (SQLite FTS5), in place of the filter row (owner, 2026-10-16: “I just want people to quickly find stuff. The filters can be replaced by a fts5 search with typo tolerance and the kind can be a chip.”). This revision draws the owner's answers of 2026-10-16 on 65224c7: the search, once tapped, <b>offers the tokens</b> over the darkened path, a token picked offers its values, typing <b>replaces them with suggestions</b> and then results, and clearing the text offers the tokens again (section 1); <code>status:</code>'s values are <b>not learnt, learning, learnt, forgetting, struggling and set aside</b>, one per card, forgetting winning over learning (section 4); <b><code>theme:</code> replaces <code>tag:</code></b>, its values the themes in <code>decks/themes.yaml</code>; and a script with several languages gets <b>one row per language</b> to add to the languages you know (section 7). Kept from 65224c7 and 0777b95: <b>three tokens</b>, <code>kind:</code>, <code>status:</code> and <code>theme:</code>, typed in the bar, open a <b>dropdown combobox</b> of their values and become <b>chips inside the search bar</b> (section 4); the <b>✕ clears, then closes</b>; the hint reads <b>“Search Hindi”</b> and the search covers this course only; the <code>travel</code> tag sits on the transport theme in <code>decks/themes.yaml</code>; and a query in a script that none of the learner's courses use offers to <b>add a course</b> written in it and to <b>add its language to the languages you know</b>. Kept from before: the close button sits in the search bar; with nothing typed the path still shows, darkened, and results start with the first letter, under the suggestions; the search reads the transliteration or the target script; every card, set card, deck and unit is its own row. The language bar at the top is the one the owner chose for #528 (<code>language-bar.html</code>), edge-masked where its row does not fit. The learner learns Hindi, Bengali and Marathi, each from English; deck names, units and words are read from <code>decks/hi</code> and <code>decks/bn</code> on main (2026-10-16). Colours are Flutter's own <code>ColorScheme.fromSeed</code> output for the app's four seeds (<code>lib/ui/theme.dart</code>). The dashed outlines mark what changes and are not part of the app. The keyboard is not drawn. <span class="dec">Decided</span> is the owner's; <span class="prop">Proposed</span> waits for the owner and is listed in the decisions table at the end. Replaces 65224c7.</p>
 
 <div class="controls" role="group" aria-label="Theme">
  <fieldset><legend>Seed</legend>
@@ -231,15 +242,18 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 
 <section class="opt" id="open">
 <h2>1 · Opening the search, and clearing it</h2>
-<p>The search bar sits at the top of the path. A tap pins it under the language bar and opens the keyboard. While nothing is typed, the path stays where it was, <b>darkened by a scrim</b>, so the learner still sees where they are. The first letter typed replaces the path with results. Deleting every letter leaves the results area <b>blank</b>; the path comes back only when the search is closed. The <b>✕ at the bar's end clears, then closes</b>: with anything typed, its first tap clears it and leaves the bar empty (the last frame); a tap on the empty bar's ✕ closes the search, lowers the keyboard and brings the path back, undimmed.</p>
+<p>The search bar sits at the top of the path. A tap pins it under the language bar and opens the keyboard. While nothing is typed, the path stays where it was, <b>darkened by a scrim</b>, so the learner still sees where they are, and a menu under the bar <b>offers the tokens</b>, <code>kind:</code>, <code>status:</code> and <code>theme:</code>, each with a line on what it narrows to. <b>Picking a token offers its values</b>, in the same menu (section 4). The first letter typed hides the menu: the path gives way to <b>suggestions</b>, completions of what is typed (a token's name, a deck or unit name, a word the search knows), and under them the results. <b>Clearing every letter offers the tokens again</b>, over the darkened path, as when the search was first tapped. The <b>✕ at the bar's end clears, then closes</b>: with anything typed, its first tap clears it and leaves the bar empty (the last frame); a tap on the empty bar's ✕ closes the search, lowers the keyboard and brings the path back, undimmed.</p>
 <div class="frames" id="fr-open"></div>
 <ul>
 <li><span class="dec">Decided</span> The close button is in the search bar itself (“Search bar itself should hold the close search button”).</li>
-<li><span class="dec">Decided</span> Focused with nothing typed: the deck path still shows, darkened. Results appear once typing starts; with every letter deleted, a blank area is fine (owner, 2026-10-16).</li>
+<li><span class="dec">Decided</span> Focused with nothing typed: the deck path still shows, darkened (owner, 2026-10-16).</li>
+<li><span class="dec">Decided</span> “Also, when the search is selected, show the available tokens. When a token is selected show avaialble values. On typing, these will be hidden and replaced with type suggestions. Once all text is cleared, this can be shown again” (owner, 2026-10-16). This replaces the earlier “a blank area is fine” for a cleared search.</li>
+<li><span class="prop">Proposed</span> The tokens are offered in the combobox's own menu, headed “Narrow the search”, over the scrim, in the order kind, status, theme; a tap on one puts it in the bar, <code>kind:</code>, and opens its values. They are offered only on an empty bar: with a chip and no text, the bar shows the chip's results (section 4).</li>
+<li><span class="prop">Proposed</span> Suggestions: at most three, above the results, under a line: the token names that start with what is typed, then deck and unit names, then the words the search knows (section 10's <code>terms_vocab</code>), the commonest first; never what is typed itself, and none for a typo with no completion (“travl”, “numbrs”). The typed part is plain and the completion bold. A tap on a row searches it; its ↖ puts it in the bar to go on typing; a token name opens its values. A query in another script gets none.</li>
 <li><span class="prop">Proposed</span> The scrim is Material's scrim colour, black at 32%, over the path only; the language bar and the search bar stay bright. A tap on the scrim closes the search, as the ✕ does.</li>
 <li><span class="dec">Decided</span> The ✕ clears, then closes (“Clear, then close”, owner, 2026-10-16): the first tap clears the text, and a tap on the empty bar closes the search.</li>
 <li><span class="dec">Decided</span> The search covers the course shown in the bar, and its hint reads “Search Hindi” (“Yes, this course”, owner, 2026-10-16).</li>
-<li><span class="prop">Proposed</span> The ✕'s first tap clears the bar's chips with the text (section 4). Back closes the search at once, typed or not. Letters are also deleted with the keyboard. A swipe on the bar while searching runs the same search, chips and all, in the next course.</li>
+<li><span class="prop">Proposed</span> The ✕'s first tap clears the bar's chips with the text (section 4), and the tokens are offered again. Back closes the search at once, typed or not. Letters are also deleted with the keyboard. A swipe on the bar while searching runs the same search, chips and all, in the next course.</li>
 <li><span class="prop">Proposed</span> “Where I am” and Add deck are hidden while the search is open, and come back when it closes.</li>
 </ul>
 </section>
@@ -253,6 +267,7 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 <li><span class="dec">Decided</span> The tag lives on the theme: “Yes, themes.yaml” (owner, 2026-10-16). <code>decks/themes.yaml</code> gives <code>transport</code> the tag <code>travel</code>, and every deck of that theme carries it into the search. No deck file changes.</li>
 <li><span class="prop">Proposed</span> The field is <code>tags: ["travel"]</code> on the theme's line. <b>A build-time check</b>: 0.4.4's users download main's decks, so the released 0.4.3 reader must accept the new field (owner). Read 2026-10-16: 0.4.3's <code>parseThemes</code> (<code>lib/core/data/themes.dart</code> at <code>v0.4.3</code>) reads only <code>id</code> and <code>name</code> and ignores other keys, so it should; <code>tools/validate_decks.py</code> today rejects the field (“only an id and a name”) and must learn it. Before it lands on main, the 0.4.3 reader is run on the new file in a test.</li>
 <li><span class="prop">Proposed</span> A row found by a tag says so on a third line: “Tagged travel”. Rows found by their name come before rows found by a tag.</li>
+<li><span class="prop">Proposed</span> How “travl” still finds “Bus, auto, cab” now that the token is <code>theme:</code>, not <code>tag:</code> (section 4): the tag stays as decided, a word of the theme's in <code>decks/themes.yaml</code>, and is matched only as text. Each theme deck's search row holds its theme's tags in the <code>tags</code> column (section 10), and typed text is matched against it with the same trigrams and edit distance as names. A tag is not a token value and has no chip; <code>theme:</code> picks a theme by name.</li>
 <li><span class="prop">Proposed</span> Each row: its name; then the unit (with its name when the deck is not the unit's theme deck), its size and Done when done; then the kind chip. A coming unit says its level, Coming and its size, and does not open until its deck is written.</li>
 </ul>
 </section>
@@ -268,17 +283,28 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 </section>
 
 <section class="opt" id="tokens">
-<h2>4 · Tokens: <code>kind:</code>, <code>status:</code> and <code>tag:</code></h2>
-<p>Three tokens narrow the search. Typed as a name and a colon, <code>kind:</code>, <code>status:</code> or <code>tag:</code>, a token opens a <b>dropdown combobox</b> of its values under the bar. A value chosen turns the token into a <b>chip inside the search bar</b>, before the typed text. A tap on a chip opens its combobox again to change the value, and the ✕ on a chip removes it. Chips combine with each other and with text: <code>kind:grammar you</code> finds the grammar results for “you”, and <code>status:due</code> alone lists the course's due words. Where the chips and the text do not fit on one line, the bar's line wraps and the bar grows.</p>
+<h2>4 · Tokens: <code>kind:</code>, <code>status:</code> and <code>theme:</code></h2>
+<p>Three tokens narrow the search. Picked from the menu an empty bar offers (section 1), or typed as a name and a colon, <code>kind:</code>, <code>status:</code> or <code>theme:</code>, a token opens a <b>dropdown combobox</b> of its values under the bar. A value chosen turns the token into a <b>chip inside the search bar</b>, before the typed text. A tap on a chip opens its combobox again to change the value, and the ✕ on a chip removes it. Chips combine with each other and with text: <code>kind:grammar you</code> finds the grammar results for “you”, and <code>status:forgetting</code> alone lists the course's words with a review due. <code>status:</code> has six values, one per card: <b>not learnt, learning, learnt, forgetting, struggling and set aside</b>. <code>theme:</code>'s values are the themes in <code>decks/themes.yaml</code> that this course teaches. Where the chips and the text do not fit on one line, the bar's line wraps and the bar grows.</p>
 <div class="frames" id="fr-tokens"></div>
 <ul>
-<li><span class="dec">Decided</span> “Search bar needs token chips for deck/card kinds, and other similar flags. Like kind:.” The tokens are <code>kind:</code>, <code>status:</code> and <code>tag:</code>: “status:,tag:,These will show up as dropdown combobox” (owner, 2026-10-16). A token becomes a chip inside the bar, and its values come in a dropdown combobox, both while it is typed and when its chip is tapped to change it (#527).</li>
+<li><span class="dec">Decided</span> “Search bar needs token chips for deck/card kinds, and other similar flags. Like kind:.” The tokens are <code>kind:</code>, <code>status:</code> and <code>theme:</code>: “status:,tag:,These will show up as dropdown combobox”, then “Use theme instead of tag” (owner, 2026-10-16). A token becomes a chip inside the bar, and its values come in a dropdown combobox, both while it is typed and when its chip is tapped to change it (#527).</li>
 <li><span class="dec">Decided</span> Not chosen: <code>level:</code>, <code>in:</code>, <code>has:</code> and <code>coming:</code> (#527).</li>
-<li><span class="prop">Proposed</span> The values: <code>kind:</code> words, grammar, script, reading (section 10); <code>status:</code> new, learning, due, known, leech; <code>tag:</code> the theme tags in <code>decks/themes.yaml</code>, today only <code>travel</code>. Each value has a short line in the combobox, and the combobox narrows as letters follow the colon (<code>kind:gr</code> leaves Grammar). Enter or a space after a whole value (<code>kind:grammar </code>) makes the chip too.</li>
-<li><span class="prop">Proposed</span> A card's status is the first that holds: leech (set aside as a leech), new (not taught yet), due (due today, learning or not), learning (taught, not yet graduated), known. Decks, units and set cards have no status, so a <code>status:</code> chip leaves only word rows.</li>
-<li><span class="prop">Proposed</span> <code>tag:</code> keeps the decks and units whose theme has the tag, and the words taught in them.</li>
-<li><span class="prop">Proposed</span> One chip per token: choosing <code>kind:</code> again changes the chip's value. Chips sit in the order kind, status, tag. The chip reads its token and its value, “kind: Grammar”. With a chip and no text the hint is hidden, and the results are everything the chips allow, in path order. Backspace in an empty text removes the last chip. A chip being changed is outlined in the primary colour.</li>
-<li><span class="prop">Proposed</span> While a token is being typed, before a value is chosen, nothing else changes: the area under the combobox stays as it was (blank, here). A tap outside the combobox closes it and leaves the typed letters as text.</li>
+<li><span class="dec">Decided</span> <code>status:</code>'s values: “Card status: not learnt, learnt (when all skills are complete), learning (when all skills are not maxed), forgetting (when review is pending). Add anything i missed”, then “struggling,set aside”. A card that is both learning and forgetting: “Forgetting wins”; each card has one status (owner, 2026-10-16).</li>
+<li><span class="dec">Decided</span> <code>theme:</code> replaces <code>tag:</code>, and its values are the themes in <code>decks/themes.yaml</code> (“Use theme instead of tag”, owner, 2026-10-16).</li>
+<li><span class="prop">Proposed</span> The values: <code>kind:</code> words, grammar, script, reading (section 10); <code>status:</code> not learnt, learning, learnt, forgetting, struggling, set aside, typed <code>status:not-learnt</code> and <code>status:set-aside</code>; <code>theme:</code> the themes of <code>decks/themes.yaml</code> (30 on main) that the course has a theme deck for, in the file's order, each named as the file names it and with its unit as its line (18 in Hindi, 29 in Bengali); the menu shows about eight and scrolls. Each value has a short line in the combobox, and the combobox narrows as letters follow the colon (<code>kind:gr</code> leaves Grammar). Enter or a space after a whole value (<code>kind:grammar </code>) makes the chip too.</li>
+<li><span class="prop">Proposed</span> What each status is, from what the app keeps. A card has a schedule per skill (<code>DrillMode</code>, a <code>(card, mode)</code> pair: <code>lib/core/models/drill_mode.dart</code>), and its status reads the skills the learner has on that it takes (<code>AppState.drillableModes</code>, <code>lib/app/app_state.dart</code>):
+ <ul>
+ <li><b>Not learnt</b>: no skill has a schedule yet; <code>AppState.isTaught</code> is false.</li>
+ <li><b>Learning</b>: taught, and some skill has no schedule yet or an interval under 21 days. The owner's “not maxed”.</li>
+ <li><b>Learnt</b>: every skill has a schedule whose <code>FsrsState.intervalDays</code> is 21 or more, the interval at which a pair counts as remembered (<code>StudyHours.rememberedDays</code>, <code>lib/core/scheduling/study_hours.dart</code>, Anki's “mature”). The owner's “all skills are complete”. Stricter than a deck's Learned count, which counts a card once one review was remembered (<code>learnedIn</code>, <code>lib/app/memory_progress.dart</code>).</li>
+ <li><b>Forgetting</b>: a skill's review is due, <code>FsrsState.isDue(now)</code> (<code>lib/core/scheduling/fsrs.dart</code>). The owner's “review is pending”.</li>
+ <li><b>Struggling</b>: a skill is a leech, its <code>lapses</code> at or over <code>kLeechThreshold</code>, 5 (<code>lib/features/stats/leeches.dart</code>), as the Leeches page lists it.</li>
+ <li><b>Set aside</b>: a skill was set aside on the Leeches page, <code>LeechEffects.isSetAside</code> (<code>lib/core/models/leech_action.dart</code>); it is kept out of every session.</li>
+ </ul>
+ A card's one status is the first that holds, in the order set aside, struggling, forgetting, learning, learnt, not learnt. Decided: forgetting over learning; the rest of the order is Proposed. So a learnt card with a review due is forgetting, and a leech that is due is struggling. Decks, units and set cards have no status, so a <code>status:</code> chip leaves only word rows.</li>
+<li><span class="prop">Proposed</span> <code>theme:</code> keeps the theme's deck, shown as its unit, and the words taught in it; the unit's grammar decks are not the theme's and are left out.</li>
+<li><span class="prop">Proposed</span> One chip per token: choosing <code>kind:</code> again changes the chip's value. Chips sit in the order kind, status, theme. The chip reads its token and its value, “kind: Grammar”. With a chip and no text the hint is hidden, and the results are everything the chips allow, in path order. Backspace in an empty text removes the last chip. A chip being changed is outlined in the primary colour.</li>
+<li><span class="prop">Proposed</span> While a token is being typed, before a value is chosen, nothing else changes: the area under the combobox stays as it was, the darkened path on an empty bar. A tap outside the combobox closes it and leaves the typed letters as text.</li>
 <li><span class="prop">Proposed</span> The chips wrap onto a second line, and on a third, inside the bar, which grows; past three lines, the bar's line scrolls inside it. Each chip keeps its label on one line.</li>
 </ul>
 </section>
@@ -306,14 +332,15 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 
 <section class="opt" id="other">
 <h2>7 · A query in another script</h2>
-<p>Every letter typed has a Unicode script, and every course names its target script and the language it is taught from. When the query's script is neither, the search looks at the learner's other courses. If one uses that script, as its target or as its native script, the message offers to switch to it and says which it is. Devanagari is the script of both Hindi and Marathi, so both are listed. If none uses it, the second message shows, and offers to <b>add each course in the catalog</b> whose target script it is. Whenever the script is not yet one of the learner's native scripts, the message also offers to <b>add its language to the languages you know</b>.</p>
+<p>Every letter typed has a Unicode script, and every course names its target script and the language it is taught from. When the query's script is neither, the search looks at the learner's other courses. If one uses that script, as its target or as its native script, the message offers to switch to it and says which it is. Devanagari is the script of both Hindi and Marathi, so both are listed. If none uses it, the second message shows, and offers to <b>add each course in the catalog</b> whose target script it is. Whenever the script is not yet one of the learner's native scripts, the message also offers to <b>add its language to the languages you know</b>, one row for each language written in it.</p>
 <div class="frames" id="fr-other"></div>
 <ul>
 <li><span class="dec">Decided</span> The two messages: “script is not part of this course, do you want to switch to … Where target / native script is this?” and “script is not part of this course or any other that you are learning” (owner, 2026-10-16). Where more than one course uses the script, each is listed.</li>
 <li><span class="prop">Proposed</span> The texts: “This script is not part of this course.”, then “You typed in Devanagari.”, then a row per course, “Switch to Hindi?” and “Devanagari is its target script.”, with a Switch button. With none: “This script is not part of this course or any other you are learning.” and “You typed in the Tamil script.”, then the offers below.</li>
 <li><span class="dec">Decided</span> A script none of the learner's courses use: “Offer to add target courses, and also offer to add it to user's native languages. The second option is to be there for all scripts that are not yet a part of the native scripts.” (owner, 2026-10-16). Each catalog course whose target script it is gets “Add the Gujarati course”; and for every script not yet among the learner's native scripts, “Add Gujarati to the languages you know” is offered too, also under the Switch rows.</li>
 <li><span class="prop">Proposed</span> The course rows: “Add the Gujarati course” and “The Gujarati script is its target script.”, with an Add button that opens the language picker at that course to download it. Only the catalog's courses the learner does not have are offered, and only when no course of theirs uses the script; Tamil has no course in the catalog, so it gets only the second offer.</li>
-<li><span class="prop">Proposed</span> The languages-you-know row: where one language in <code>assets/languages.yaml</code> (about 35, #490) is written in the script, it is named, “Add Tamil to the languages you know”; where several are (Devanagari: Hindi, Marathi, Nepali and more; the Bengali script: Bengali and Assamese), the row reads “Add a language you know written in Devanagari” and its Add opens Languages you know at those languages. The learner's native scripts are the scripts of their languages you know: here English (Latin), and in the last frame Hindi too, so Devanagari gets no such row there.</li>
+<li><span class="dec">Decided</span> One row per language written in the script (“One row per language”, owner, 2026-10-16): Devanagari gets “Add Hindi to the languages you know”, “Add Marathi to the languages you know” and “Add Nepali to the languages you know”; the Bengali script gets Bengali and Assamese.</li>
+<li><span class="prop">Proposed</span> The languages-you-know rows: one for each language in <code>assets/languages.yaml</code> (about 35 once #490 lands; three on main today) written in the script, in that file's order, each with the line “Hindi is written in Devanagari.” and an Add button that adds it to Languages you know. They come after the Switch or course rows, in a group of their own, and a list too long for the screen scrolls like the results. The learner's native scripts are the scripts of their languages you know: here English (Latin), and in the last frame Hindi too, so Devanagari gets no such row there.</li>
 <li><span class="prop">Proposed</span> Switch shows that course on the bar and runs the same query there, so “पानी” in Bengali, switched to Hindi, gives section 6's first frame. Courses are listed in the bar's order.</li>
 <li><span class="prop">Proposed</span> The native case: every course on main is taught from English, so today a course's native script is Latin, which the search already reads. It shows once native layers ship (<code>docs/plans/native-layers.md</code>): the last frame's learner also learns Telugu taught from Hindi, whose native script is Devanagari.</li>
 <li><span class="prop">Proposed</span> The script is the one most of the query's letters are in; digits and punctuation have none and are ignored.</li>
@@ -342,6 +369,7 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 <pre><code>CREATE VIRTUAL TABLE search USING fts5(
   name, tags, word, reading, meaning,     -- what is searched
   kind UNINDEXED,                         -- words, grammar, script, reading, or empty for a sentence deck
+  theme UNINDEXED,                        -- the theme id(s), for theme:
   hit UNINDEXED, ref UNINDEXED,           -- unit, coming, deck, set or word, and its id
   lang UNINDEXED, path UNINDEXED,         -- the course, and the place on its path, for the order
   tokenize = 'trigram'
@@ -363,7 +391,8 @@ CREATE VIRTUAL TABLE terms_vocab USING fts5vocab(terms, 'row');</code></pre>
 <p><b>Order.</b> Decks and units first, then words. Names before tags. Within each: an exact whole-word match, then a match at a word's start, then inside a word, then trigram and edit-distance matches by the share held; then <code>bm25</code>; then the place on the path. Every hit is its own row; nothing is grouped.</p>
 <p><b>Short queries.</b> A query shorter than three letters has no trigram, so it is run as a <code>LIKE 'ap%'</code> on the same table, which SQLite answers by a scan; the table holds a few thousand rows per course, so this stays quick.</p>
 <p><b>Kinds.</b> The kind is read from what decks carry today, with no new deck field: <code>kind: "reading"</code> is Reading; <code>kind: "grammar"</code> or <code>"rules"</code>, or the <code>grammar</code> tag, is Grammar; the <code>script</code> tag is Script; a vocab deck with phrasebook cards, or with sentences for half its cards or more, is a sentence deck with no kind; every other deck is Words. A <code>kind:</code> chip narrows the query with <code>AND kind = ?</code>, a word row matching when any of its decks has that kind.</p>
-<p><b>Tokens.</b> The bar's text is read before the search: a word ending in a colon, <code>kind:</code>, <code>status:</code> or <code>tag:</code>, opens its combobox; whatever is not a token is the query. <code>kind:</code> and <code>tag:</code> narrow the FTS5 rows (<code>AND kind = ?</code>, <code>AND tags MATCH ?</code>). <code>status:</code> is not in the FTS5 table: it joins the word rows to the scheduler's cards by card id and keeps those in that status, computed as section 4 says. With chips and no text, the same narrowing runs over every row of the course, in path order.</p>
+<p><b>Tokens.</b> The bar's text is read before the search: a word ending in a colon, <code>kind:</code>, <code>status:</code> or <code>theme:</code>, opens its combobox; whatever is not a token is the query. <code>kind:</code> and <code>theme:</code> narrow the FTS5 rows (<code>AND kind = ?</code>, and for <code>theme:</code> a <code>theme UNINDEXED</code> column holding a deck row's theme id and, on a word row, its decks' themes). The theme's tags stay in the <code>tags</code> column, searched as text. <code>status:</code> is not in the FTS5 table: it joins the word rows to the scheduler's pairs by card id and keeps the cards in that status, computed as section 4 says.</p>
+<p><b>Suggestions.</b> While typing, the app asks <code>terms_vocab</code> for the terms that start with the last word typed (<code>WHERE term &gt;= ? AND term &lt; ?</code>, the commonest first), the deck and unit names for those that start with the whole text, and the token names; three are shown. They are drawn from the same table as the results, so a suggestion always finds something. With chips and no text, the same narrowing runs over every row of the course, in path order.</p>
 </div>
 </section>
 
@@ -377,24 +406,30 @@ CREATE VIRTUAL TABLE terms_vocab USING fts5vocab(terms, 'row');</code></pre>
 <tr><td data-h="#">3</td><td data-h="Decision">It finds “Decks, units and words”: deck and unit names, and every card's word, reading and meaning, so a word leads to its deck.</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
 <tr><td data-h="#">4</td><td data-h="Decision">The acceptance cases: “travel” or “travl” finds the travel deck, and also the transport deck “Bus, auto, cab”, through deck tags (“Yes, also transport”); “numbers” or “numbrs” the numbers decks; “you” the words for “you” and their set card.</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
 <tr><td data-h="#">5</td><td data-h="Decision">Cards, set cards and units are all separate rows; nothing is grouped by meaning or folded under a set card (“Don't group by meaning. Cards, sets, units, all separate.”).</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
-<tr><td data-h="#">6</td><td data-h="Decision">The close button is in the search bar. Focused with nothing typed, the path shows darkened; typing shows results; with every letter deleted the area is blank.</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
+<tr><td data-h="#">6</td><td data-h="Decision">The close button is in the search bar. Focused with nothing typed, the path shows darkened; typing shows results.</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
 <tr><td data-h="#">7</td><td data-h="Decision">The search reads the transliteration (Latin, which also searches the English meanings) or the target script. Another script shows “not part of this course”, offering each of the learner's courses that uses it and saying whether as its target or native script; or “not part of this course or any other that you are learning”.</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
 <tr><td data-h="#">8</td><td data-h="Decision">No Phrases kind: “Leave out phrases as that will otherwise confuse people”. Sentence and phrasebook decks show “Only under All”. It works from what the decks on main carry, with no new deck field (0.4.4).</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
 <tr><td data-h="#">9</td><td data-h="Decision">The language bar of #528 at the top, edge-masked where its row does not fit (“The language bar needs to be edgemasked still”).</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#528)</td></tr>
 <tr><td data-h="#">10</td><td data-h="Decision">The search covers the course shown in the bar, and its hint reads “Search Hindi” (“Yes, this course”).</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
 <tr><td data-h="#">11</td><td data-h="Decision">The <code>travel</code> tag goes on the transport theme in <code>decks/themes.yaml</code>, and no deck file changes (“Yes, themes.yaml”). The released 0.4.3 reader must accept the new field: tested before it lands on main.</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
 <tr><td data-h="#">12</td><td data-h="Decision">The ✕ clears, then closes (“Clear, then close”).</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
-<tr><td data-h="#">13</td><td data-h="Decision">Token chips in the bar: <code>kind:</code>, <code>status:</code> and <code>tag:</code>, whose values “will show up as dropdown combobox”, typed and when a chip is tapped; not <code>level:</code>, <code>in:</code>, <code>has:</code> or <code>coming:</code>.</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
+<tr><td data-h="#">13</td><td data-h="Decision">Token chips in the bar: <code>kind:</code>, <code>status:</code> and <code>theme:</code> (“Use theme instead of tag”), whose values “will show up as dropdown combobox”, typed and when a chip is tapped; not <code>level:</code>, <code>in:</code>, <code>has:</code> or <code>coming:</code>.</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
 <tr><td data-h="#">14</td><td data-h="Decision">A script none of the learner's courses use offers to add the catalog's courses with it as their target, and, for every script not yet among the learner's native scripts, to add its language to the languages you know.</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
-<tr><td data-h="#">15</td><td data-h="Decision">The ✕'s first tap clears the chips too; Back and a tap on the scrim close at once; the scrim is black at 32%; the floating buttons hide while the search is open. The tag's field is <code>tags: [...]</code>; a row found by a tag says “Tagged travel”, after the rows found by name.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
-<tr><td data-h="#">16</td><td data-h="Decision">The tokens' values and their lines; a card's status as section 4 orders it, none for decks, units and set cards; one chip per token, in the order kind, status, tag, reading “kind: Grammar”; a row's kind chip adds or changes the <code>kind:</code> chip; chips alone list everything they allow; Backspace removes the last chip; the bar wraps, three lines and then scrolls.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
-<tr><td data-h="#">17</td><td data-h="Decision">The add offers: “Add the Gujarati course” only when no course of the learner's uses the script; the languages-you-know row names one language, or opens Languages you know at the script's languages where several are written in it.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
-<tr><td data-h="#">18</td><td data-h="Decision">The kinds are Words, Grammar, Script and Reading, read as section 10 says. A sentence deck has no chip and shows only while no kind is chosen; sentence cards are not word results.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
-<tr><td data-h="#">19</td><td data-h="Decision">Results in two sections, “Decks and units” then “Words”, each headed with its count. A card in several decks is one row, named by the first; the order is whole word, word start, inside a word, then the path.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
-<tr><td data-h="#">20</td><td data-h="Decision">Narrowing is the bar's <code>kind:</code> chip; the narrowing row of 0777b95 is gone. The empty narrowed state offers “Remove kind: Reading”.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
-<tr><td data-h="#">21</td><td data-h="Decision">Typo tolerance: trigrams (half the query's pieces), then Damerau–Levenshtein over the known words (1 for up to 4 letters, 2 longer), Latin only. “Close matches for …” when nothing matched exactly; the matched part in bold. Diacritics fold on Latin letters only.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
-<tr><td data-h="#">22</td><td data-h="Decision">Another script: the texts of section 7; the query's script is that of most of its letters; Switch shows that course and runs the same query; the native case arrives with native layers.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
-<tr><td data-h="#">23</td><td data-h="Decision">Screen reader: a row reads its name, its line and “kind: Grammar, double tap the chip to show only Grammar”; the ✕ reads “Clear search” with anything typed and “Close search” on the empty bar; a Switch button reads “Switch to Hindi”, an Add button “Add the Gujarati course” or “Add Tamil to the languages you know”; a bar chip reads “kind: Grammar, double tap to change”, and its ✕ “Remove kind: Grammar”; the combobox is a list box whose items read their value, their line and “selected”; each section header is a heading.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="#">15</td><td data-h="Decision">Focused, the search offers the tokens; a token picked offers its values; typing hides them for suggestions, and clearing all text offers them again (“Also, when the search is selected, show the available tokens…”). This replaces “a blank area is fine” after a clear.</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
+<tr><td data-h="#">16</td><td data-h="Decision"><code>status:</code>'s values: not learnt, learning, learnt, forgetting, struggling and set aside, one per card; forgetting wins over learning (“Forgetting wins”).</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
+<tr><td data-h="#">17</td><td data-h="Decision"><code>theme:</code> replaces <code>tag:</code>, its values the themes in <code>decks/themes.yaml</code> (“Use theme instead of tag”).</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
+<tr><td data-h="#">18</td><td data-h="Decision">A script several languages are written in gets one row per language to add to the languages you know (“One row per language”).</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
+<tr><td data-h="#">19</td><td data-h="Decision">The ✕'s first tap clears the chips too; Back and a tap on the scrim close at once; the scrim is black at 32%; the floating buttons hide while the search is open. The tag's field is <code>tags: [...]</code>; a row found by a tag says “Tagged travel”, after the rows found by name.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="#">20</td><td data-h="Decision">The tokens' values and their lines; <code>status:</code>'s six as section 4 defines them from the app's skills (21 days as remembered, <code>isDue</code>, 5 lapses, set aside), in the order set aside, struggling, forgetting, learning, learnt, not learnt, none for decks, units and set cards; <code>theme:</code> the course's themes in the file's order, keeping the theme's deck and its words; one chip per token, in the order kind, status, theme, reading “kind: Grammar”; a row's kind chip adds or changes the <code>kind:</code> chip; chips alone list everything they allow; Backspace removes the last chip; the bar wraps, three lines and then scrolls.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="#">21</td><td data-h="Decision">The add offers: “Add the Gujarati course” only when no course of the learner's uses the script; the languages-you-know rows in the order of <code>assets/languages.yaml</code>, each adding its language, after the course rows.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="#">22</td><td data-h="Decision">The kinds are Words, Grammar, Script and Reading, read as section 10 says. A sentence deck has no chip and shows only while no kind is chosen; sentence cards are not word results.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="#">23</td><td data-h="Decision">Results in two sections, “Decks and units” then “Words”, each headed with its count. A card in several decks is one row, named by the first; the order is whole word, word start, inside a word, then the path.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="#">24</td><td data-h="Decision">Narrowing is the bar's <code>kind:</code> chip; the narrowing row of 0777b95 is gone. The empty narrowed state offers “Remove kind: Reading”.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="#">25</td><td data-h="Decision">Typo tolerance: trigrams (half the query's pieces), then Damerau–Levenshtein over the known words (1 for up to 4 letters, 2 longer), Latin only. “Close matches for …” when nothing matched exactly; the matched part in bold. Diacritics fold on Latin letters only.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="#">26</td><td data-h="Decision">Another script: the texts of section 7; the query's script is that of most of its letters; Switch shows that course and runs the same query; the native case arrives with native layers.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="#">27</td><td data-h="Decision">Screen reader: a row reads its name, its line and “kind: Grammar, double tap the chip to show only Grammar”; the ✕ reads “Clear search” with anything typed and “Close search” on the empty bar; a Switch button reads “Switch to Hindi”, an Add button “Add the Gujarati course” or “Add Tamil to the languages you know”; a bar chip reads “kind: Grammar, double tap to change”, and its ✕ “Remove kind: Grammar”; the combobox is a list box whose items read their value, their line and “selected”; on an empty bar the token menu is a list box named “Narrow the search” whose items read “kind:” and their line; a suggestion reads its text and “double tap to search”, and its ↖ “Put your in the search”; each section header is a heading.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="#">28</td><td data-h="Decision">The token menu on an empty bar, headed “Narrow the search”, only while there is no chip; suggestions: at most three above the results, token names then deck and unit names then known words, completions only, the completion in bold, a tap to search and ↖ to fill in; none for another script.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="#">29</td><td data-h="Decision">“travl” finds “Bus, auto, cab” through the decided travel tag as text in the <code>tags</code> column; a tag is no token value.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
 </tbody></table>
 </section>
 </div>
@@ -423,8 +458,12 @@ const cap1=(s)=>s[0].toUpperCase()+s.slice(1);
 const AT={hi:7,bn:9};
 /* coming units on main whose names the search finds: hi-path.yaml and bn-path.yaml, planned, between the A2 and B1 marks */
 const COMING=[{lang:'hi',id:'hi-travel',name:'Travel',level:'B1',words:55},{lang:'bn',id:'bn-travel',name:'Travel',level:'B1',words:55}];
-/* Proposed: a theme's tags in decks/themes.yaml, carried by every deck of that theme */
+/* Decided: the travel tag on the transport theme in decks/themes.yaml, carried by every deck of that theme */
 const THEME_TAGS={transport:['travel']};
+/* the themes in decks/themes.yaml on main, in the file's order: the theme: token's values (owner, 2026-10-16: "Use theme instead of tag") */
+const THEMES=[["first-words","First words"],["questions","Yes, no and questions"],["addressing","Addressing people"],["pronouns","Pronouns and people words"],["about-me","About me"],["family","Family"],["everyday-verbs","Everyday verbs"],["work","Work"],["numbers-1-20","Numbers 1–20"],["numbers-big","Tens and big numbers"],["market","Market"],["groceries","Groceries"],["food","Food and drink"],["transport","Bus, auto, cab"],["directions","Directions"],["body","The body"],["places","Places"],["location","Where things are"],["more-verbs","More verbs"],["home","Home and neighbourhood"],["things","Things around you"],["clothes","Clothes and colours"],["describing","Describing things and feelings"],["animals","Animals"],["quantities","How much and how many"],["time","Time and days"],["daily-life","A day"],["calendar","Months and years"],["eating-out","Eating out"],["help","Help"]];
+/* a deck's theme: its id is the course's code and the theme's id */
+const themeOf=(d)=>{const t=d.id.replace(/^[a-z]+-/,'');return THEMES.some(([id])=>id===t)?t:null};
 const tagsOf=(d)=>THEME_TAGS[d.id.replace(/^[a-z]+-/,'')]||[];
 
 /* ---------- kinds, from what decks carry today (#527) ---------- */
@@ -484,21 +523,38 @@ const WORDS={
   {w:'জলখাবার',r:'jôlkhābār',m:'breakfast; a light meal',decks:['bn-daily-life']},
  ],
 };
-/* Proposed: each card's status for the status: token (section 4), as this page's learner has them */
-const STATUS={
- hi:{'आप':'known','तुम':'due','तू':'due','धन्यवाद':'learning','भैया':'new','बेटा':'leech','चाचा':'new','जल':'known','पानी':'due'},
- bn:{'আপনি':'known','তুমি':'due','তুই':'learning','তোমরা':'new','আপনারা':'new','তোরা':'leech','ধন্যবাদ':'known','আসসালামু আলাইকুম':'known','ওয়ালাইকুম আসসালাম':'known','কাকু':'due','মাসিমা':'new','ভাই':'known','বোন':'known','কাকা':'leech','কটা':'due','কাছে':'learning','ছোট':'due','নিজে':'new','জল':'known','জলখাবার':'learning'},
+/* A card's one status (section 4), from what the app keeps for each of its skills (DrillMode, a (card, mode) pair):
+   pairs holds one entry per skill the learner has on that the card takes (AppState.drillableModes): null while that
+   skill has no schedule yet (AppState.isTaught is false while every one is null), else its FsrsState (iv: intervalDays,
+   due: isDue(now), lapses) and whether the Leeches page set it aside (LeechEffects.isSetAside).
+   Decided: forgetting wins over learning. Proposed: the rest of the order, and 21 days (StudyHours.rememberedDays) as "complete". */
+const REMEMBERED_DAYS=21,LEECH_LAPSES=5;
+function statusOf(pairs){
+ if(pairs.some(p=>p&&p.aside))return 'set-aside';
+ if(pairs.some(p=>p&&p.lapses>=LEECH_LAPSES))return 'struggling';
+ if(pairs.some(p=>p&&p.due))return 'forgetting';
+ if(pairs.every(p=>!p))return 'not-learnt';
+ if(pairs.every(p=>p&&p.iv>=REMEMBERED_DAYS))return 'learnt';
+ return 'learning';
+}
+/* this page's learner: each card's skills, as above (N0: no schedule yet; a pair is [interval days, due, lapses, set aside]) */
+const N0=null,P_=(iv,due=false,lapses=0,aside=false)=>({iv,due,lapses,aside});
+const PAIRS={
+ hi:{'आप':[P_(40),P_(25),P_(30)],'तुम':[P_(12,true),P_(30)],'तू':[P_(3,true),N0],'धन्यवाद':[P_(9),N0],'भैया':[N0,N0],'बेटा':[P_(1,true,6),P_(4)],'चाचा':[P_(2,false,5,true),P_(6)],'जल':[P_(22),P_(28)],'पानी':[P_(30,true),P_(26)]},
+ bn:{'আপনি':[P_(35),P_(24)],'তুমি':[P_(8,true),P_(21)],'তুই':[P_(6),N0],'তোমরা':[N0,N0],'আপনারা':[N0,N0],'তোরা':[P_(1,true,7),P_(3)],'ধন্যবাদ':[P_(50),P_(40)],'আসসালামু আলাইকুম':[P_(33),P_(23)],'ওয়ালাইকুম আসসালাম':[P_(31),P_(22)],'কাকু':[P_(10,true),P_(14)],'মাসিমা':[P_(2,false,5,true),N0],'ভাই':[P_(45),P_(30)],'বোন':[P_(26),P_(21)],'কাকা':[P_(2,false,6),P_(5)],'কটা':[P_(4,true),N0],'কাছে':[P_(5),P_(2)],'ছোট':[P_(15,true),P_(30)],'নিজে':[N0,N0],'জল':[P_(60),P_(42)],'জলখাবার':[P_(7),N0]},
 };
-for(const l in WORDS)WORDS[l].forEach(w=>{w.st=STATUS[l][w.w];if(!w.st)throw new Error('no status for '+w.w)});
+for(const l in WORDS)WORDS[l].forEach(w=>{const p=PAIRS[l][w.w];if(!p)throw new Error('no skills for '+w.w);w.st=statusOf(p)});
 /* the tokens (section 4) and their values, each with its line in the combobox */
-const TOKS=['kind','status','tag'];
-const THEME_NAMES={transport:'Bus, auto, cab'};
+const TOKS=['kind','status','theme'];
+const TOFFER={kind:'Words, Grammar, Script or Reading',status:'Not learnt, Learning, Learnt, Forgetting, Struggling or Set aside',theme:'A theme of the path, such as Family'};
 const TVALS={
  kind:KINDS.map(([v,l])=>({v,l,d:{words:'Word decks and their words',grammar:'Forms and rule tables',script:'Letters and their sounds',reading:'Reading passages'}[v]})),
- status:[['new','New','Not taught yet'],['learning','Learning','Taught, not yet learned'],['due','Due','Due for review today'],['known','Known','Learned, not due'],['leech','Leech','Keeps being forgotten']].map(([v,l,d])=>({v,l,d})),
- tag:[...new Set(Object.values(THEME_TAGS).flat())].map(v=>({v,l:v,d:Object.keys(THEME_TAGS).filter(t=>THEME_TAGS[t].includes(v)).map(t=>THEME_NAMES[t]).join(', ')})),
+ status:[['not-learnt','Not learnt','Not taught yet'],['learning','Learning','Taught; a skill not yet remembered'],['learnt','Learnt','Every skill remembered, none due'],['forgetting','Forgetting','A review is due'],['struggling','Struggling','Missed again and again'],['set-aside','Set aside','Kept out of sessions']].map(([v,l,d])=>({v,l,d})),
 };
-const TL=(k,v)=>TVALS[k].find(o=>o.v===v).l;
+/* theme:'s values: the file's themes this course teaches, in the file's order, each with its unit */
+const themeVals=(lang)=>THEMES.map(([v,l])=>({v,l,d:DECKS[lang].find(d=>d.id===`${lang}-${v}`)})).filter(o=>o.d).map(o=>({v:o.v,l:o.l,d:`Unit ${o.d.unit}`}));
+const TV=(k,lang)=>k==='theme'?themeVals(lang):TVALS[k];
+const TL=(k,v)=>k==='theme'?THEMES.find(t=>t[0]===v)[1]:TVALS[k].find(o=>o.v===v).l;
 /* the catalog's courses (decks/index.json on main), for "Add the … course" */
 const CATALOG=[{code:'as',name:'Assamese',icon:'অ',script:'Bengali'},{code:'bn',name:'Bengali',icon:'বা',script:'Bengali'},{code:'es',name:'Spanish',icon:'Es',script:'Latin'},{code:'gu',name:'Gujarati',icon:'ગુ',script:'Gujarati'},{code:'hi',name:'Hindi',icon:'हि',script:'Devanagari'},{code:'kn',name:'Kannada',icon:'ಕ',script:'Kannada'},{code:'mr',name:'Marathi',icon:'म',script:'Devanagari'},{code:'te',name:'Telugu',icon:'తె',script:'Telugu'}];
 /* languages one can know, by script (assets/languages.yaml, about 35, #490): those this page names */
@@ -592,12 +648,23 @@ function browse(lang){
  words.sort((a,b)=>a.unit-b.unit||(a.type==='set'?-1:0)-(b.type==='set'?-1:0));
  return {q:'',lang,script:'Latin',used:'',names,words,close:false,total:names.length+words.length};
 }
-/* the chips narrow the rows: kind: by kind; status: to the words in that status; tag: to the decks with the tag and their words */
+/* the chips narrow the rows: kind: by kind; status: to the words in that status; theme: to the theme's deck and its words */
 function applyTokens(res,t){let names=res.names,words=res.words;
  if(t.kind){names=names.filter(r=>r.kind===t.kind);words=words.filter(r=>r.type==='set'?r.kind===t.kind:wordKinds(r.w).has(t.kind))}
  if(t.status){names=[];words=words.filter(r=>r.type==='word'&&r.w.st===t.status)}
- if(t.tag){names=names.filter(r=>r.type!=='coming'&&tagsOf(r.d).includes(t.tag));words=words.filter(r=>r.type==='word'&&r.w.decks.some(id=>tagsOf(deck(id)).includes(t.tag)))}
+ if(t.theme){names=names.filter(r=>r.type!=='coming'&&themeOf(r.d)===t.theme);words=words.filter(r=>r.type==='word'&&r.w.decks.some(id=>themeOf(deck(id))===t.theme))}
  return {...res,names,words,tokens:t,shown:names.length+words.length};
+}
+/* suggestions while typing: completions of what is typed, at most 3: token names, then deck and unit names, then the
+   known words (the terms_vocab of section 10), the commonest first; never what is typed itself */
+function suggest(q,lang){const f=fold(q);if(!f)return [];const out=[],seen=new Set([f]);
+ const push=(kind,text)=>{const k=fold(text);if(seen.has(k))return;seen.add(k);out.push({kind,text})};
+ if(scriptOf(q)==='Latin'){
+  TOKS.forEach(t=>{if(`${t}:`.startsWith(f))push('token',`${t}:`)});
+  [...DECKS[lang].map(d=>d.name),...COMING.filter(c=>c.lang===lang).map(c=>c.name)].forEach(nm=>{if(fold(nm).startsWith(f))push('name',nm)});
+  Object.entries(vocab(lang)).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).forEach(([t])=>{if(t.startsWith(f))push('word',t)});
+ }else if(scriptOf(q)===LANGS[lang].script)WORDS[lang].forEach(w=>{if(w.w.startsWith(q))push('word',w.w)});
+ return out.slice(0,3);
 }
 /* what a frame shows: null while nothing is searched (only a token being typed, or nothing at all) */
 function compute({lang,courses=CA,q='',tokens={}}){
@@ -643,7 +710,7 @@ function pathView(lang,x14){
  return html;
 }
 const kchip=(k)=>k?`<span class="khit" data-tap data-k="${k}"><span class="kchip lM"><span class="one">${KN[k]}</span></span></span>`:`<span class="khit"><span class="bS v one">Sentences</span></span>`;
-function sizeOf(d){return d.kind==='grammar'?'Forms table':d.kind==='rules'?'Rule table':d.kind==='reading'?`${d.n} ${plural(d.n,'passage','passages')}`:d.script?`${d.n} letters`:isSentenceDeck(d)?`${d.se} sentences`:`${d.n-d.se} words`}
+function sizeOf(d){return d.kind==='grammar'?'Forms table':d.kind==='rules'?'Rule table':d.kind==='reading'?`${d.n} ${plural(d.n,'passage','passages')}`:d.script?`${d.n} letters`:isSentenceDeck(d)?`${d.se} sentences`:`${d.n-d.se} ${plural(d.n-d.se,'word','words')}`}
 function nameRow(r,q,narrow){
  let line;
  if(r.type==='coming')line=`${r.c.level} · Coming · ${r.c.words} words`;
@@ -673,51 +740,64 @@ function otherMsg(o){
  const sw=o.by.map(b=>{const L=LANGS[b.lang];const why=b.as==='target'?`${cap1(sn)} is its target script.`:`${cap1(sn)} is its native script: it is taught from ${FROM[b.from].name}.`;
   return row(`data-switch="${b.lang}" data-as="${b.as}"`,`<span class="cg" lang="${b.lang}" aria-hidden="true">${L.icon}</span>`,`Switch to ${L.name}?`,why,btn('Switch',`Switch to ${L.name}`))}).join('');
  const add=o.add.map(c=>row(`data-add-row="${c.code}"`,`<span class="cg" lang="${c.code}" aria-hidden="true">${c.icon}</span>`,`Add the ${c.name} course`,`${cap1(sn)} is its target script.`,btn('Add',`Add the ${c.name} course`),true)).join('');
- let know='';
- if(o.know){const one=o.know.length===1;const title=one?`Add ${o.know[0]} to the languages you know`:`Add a language you know written in ${sn}`;
-  const line=one?`${o.know[0]} is written in ${sn}.`:`${o.know.join(', ')} and others are written in ${sn}.`;
-  know=row(`data-know-row`,`<span class="cg" aria-hidden="true">${ic('person_add','mo')}</span>`,title,line,btn('Add',title),true)}
+ /* one row per language written in the script (owner, 2026-10-16: "One row per language") */
+ const know=(o.know||[]).map(k=>{const title=`Add ${k} to the languages you know`;
+  return row(`data-know-row="${k}"`,`<span class="cg" aria-hidden="true">${ic('person_add','mo')}</span>`,title,`${k} is written in ${sn}.`,btn('Add',title),true)}).join('');
  const head=o.by.length?'This script is not part of this course.':'This script is not part of this course or any other you are learning.';
  return `<div class="fmsg" data-other="${o.script}" data-by="${o.by.map(b=>`${b.lang}:${b.as}`).join(',')}" data-add="${o.add.map(c=>c.code).join(',')}" data-know="${(o.know||[]).join('+')}"><div class="fhead chg box"><span class="eic">${ic('translate')}</span><div class="tL lf">${head}</div><div class="bL v lf">You typed in ${sn}.</div></div>${sw||add?`<div class="grp">${sw}${add}</div>`:''}${know?`<div class="grp">${know}</div>`:''}</div>`;
 }
 /* a token chip in the bar: its body reopens the combobox, its ✕ removes it */
 const tokChip=(k,v,ed)=>`<span class="tok" data-tok="${k}" data-v="${v}"><span class="tokc lL${ed?' ed':''}"><span class="tokb" data-tap role="button" aria-label="${k}: ${TL(k,v)}, double tap to change"><span class="one"><span class="k">${k}:</span> ${TL(k,v)}</span></span><span class="tokx" data-tap role="button" aria-label="Remove ${k}: ${TL(k,v)}">${ic('close','m18')}</span></span></span>`;
-/* the dropdown combobox of a token's values */
-const menuHtml=(k,sel)=>`<div class="menu chg" role="listbox" data-menu="${k}" aria-label="${k} values">${TVALS[k].map(o=>`<div class="mit${o.v===sel?' sel':''}" role="option" data-tap data-v="${o.v}"${o.v===sel?' aria-selected="true"':''}>${o.v===sel?ic('check'):ic('','mo')}<span class="tx"><span class="bL one">${o.l}</span><span class="bS v">${o.d}</span></span></div>`).join('')}</div>`;
+/* the dropdown combobox of a token's values; with nothing typed, the same menu offers the tokens themselves */
+function menuHtml(k,sel,lang){
+ if(k==='tokens')return `<div class="menu chg" role="listbox" data-menu="tokens" aria-label="Tokens"><div class="mhead bS">Narrow the search</div>${TOKS.map(t=>`<div class="mit" role="option" data-tap data-v="${t}">${ic('filter_list')}<span class="tx"><span class="bL one">${t}:</span><span class="bS v">${TOFFER[t]}</span></span></div>`).join('')}</div>`;
+ const vals=TV(k,lang);const many=vals.length>6;
+ return `<div class="menu chg${k==='theme'?' wide':''}" role="listbox" data-menu="${k}" aria-label="${k} values">${vals.map(o=>`<div class="mit${o.v===sel?' sel':''}" role="option" data-tap data-v="${o.v}"${o.v===sel?' aria-selected="true"':''}>${o.v===sel?ic('check'):ic('','mo')}<span class="tx"><span class="bL one">${o.l}</span><span class="bS v">${o.d}</span></span></div>`).join('')}${many?'<span class="mthumb" aria-hidden="true"></span>':''}</div>`;
+}
+/* the suggestions block: a tap on a row searches it, its ↖ puts it in the bar to go on typing */
+const SICON={token:['filter_list',''],name:['style','mo'],word:['search','']};
+function suggHtml(list,q){if(!list.length)return '';const f=fold(q);
+ return `<div class="sugl chg box" data-sugg role="listbox" aria-label="Suggestions">${list.map(s=>{const t=s.text;const cut=fold(t).startsWith(f)?q.length:0;
+  return `<div class="sug" data-tap data-sug="${s.kind}" data-text="${t}" role="option">${ic(...SICON[s.kind])}<span class="bL lf one sgt">${t.slice(0,cut)}<b>${t.slice(cut)}</b></span><span class="ibtn lf" data-tap aria-label="Put ${t} in the search">${ic('north_west')}</span></div>`}).join('')}</div>`}
 const searchPill=(lang)=>`<div class="srch box"><span class="srin lf" data-tap>${ic('search')}<span class="bL one">Search ${LANGS[lang].name}</span></span></div>`;
-/* state: idle (the search closed), focus (open, nothing typed), cleared (letters typed, then all deleted), typed */
-function phone({lang,courses=CA,q='',tokens={},typing='',menu=null,sel=null,edit=null,state,x14=false,skip=''}){
- const any=!!(q||typing||Object.keys(tokens).length);state=state||(any?'typed':'focus');
+/* state: idle (the search closed), focus (open, no text and no chip: the dimmed path, and the tokens offered, or a
+   picked token's values), cleared (letters typed, then all deleted: the same as focus again), typed */
+function phone({lang,courses=CA,q='',tokens={},typing='',menu=null,sel=null,edit=null,state,x14=false,skip='',more=''}){
+ const any=!!(q||typing||Object.keys(tokens).length);const dim=!q&&!Object.keys(tokens).length;
+ state=state||(dim?'focus':'typed');
+ if((state==='focus'||state==='cleared')&&!typing&&!menu)menu='tokens';
  const top=`${stat()}${lbar(courses,lang)}`;
  const close=`<span class="ibtn lf" data-tap data-close aria-label="${any?'Clear search':'Close search'}">${ic('close')}</span>`;
  const chips=TOKS.filter(k=>tokens[k]).map(k=>tokChip(k,tokens[k],edit===k)).join('');
  const text=q||typing;
  const qh=chips+(text?`<span class="qt"><span class="one" lang="${scriptOf(text)==='Latin'?'en':lang}" data-text>${text}</span><span class="caret"></span></span>`:chips?`<span class="qt"><span class="caret"></span></span>`:`<span class="qt"><span class="caret"></span><span class="hint one" data-hint>Search ${LANGS[lang].name}</span></span>`);
- const bar=state==='idle'?'':`<div class="sbar chg" role="search">${ic('search')}<span class="q bL">${qh}</span>${menu?menuHtml(menu,sel):''}${close}</div>`;
+ const bar=state==='idle'?'':`<div class="sbar chg" role="search">${ic('search')}<span class="q bL">${qh}</span>${menu?menuHtml(menu,sel,lang):''}${close}</div>`;
  let body='',full=false,res=null,short=false,extra='';const narrow=tokens.kind||null;
  if(state==='idle')body=searchPill(lang)+pathView(lang,x14);
- else if(state==='focus'){body=`<div data-dim>${pathView(lang,x14)}</div>`;extra=`<div class="scrim chg" data-scrim></div>`}
- else if(state==='cleared'){body='';short=true}
+ else if(state==='focus'||state==='cleared'){body=`<div data-dim>${pathView(lang,x14)}</div>`;extra=`<div class="scrim chg" data-scrim></div>`}
  else if(!(res=compute({lang,courses,q,tokens}))){body='';short=true}
  else{short=true;
   if(res.other)body=otherMsg(res.other);
   else if(!res.total){full=true;body=`<div class="empty chg box" data-empty="none"><span class="eic">${ic('search_off','m32')}</span><div class="tL lf">Nothing found for “${q}”</div><div class="bL lf">The search looks in deck and unit names, and in each word, its reading and its meaning. Try fewer letters, or another word.</div></div>`}
   else if(narrow&&!res.shown){full=true;body=`<div class="empty chg box" data-empty="kind"><span class="eic">${ic('auto_stories','mo m32')}</span><div class="tL lf">No ${KN[narrow].toLowerCase()} results for “${q}”</div><div class="bL lf">${res.total} ${plural(res.total,'result','results')} of other kinds.</div><span class="fbtn lf" data-tap><span class="tM one">Remove kind: ${KN[narrow]}</span></span></div>`}
-  else body=results(res,narrow)}
+  else body=suggHtml(q?suggest(q,lang):[],q)+results(res,narrow)}
  const cline=res&&res.close&&res.total?`<div class="cline bM v chg" data-closeline>Close matches for “${q}”${res.used!==q?`: ${res.used}`:''}</div>`:'';
  const fabs=state==='idle'?`<div class="fabs"><span class="fab ter lf" data-tap>${ic('my_location')}<span class="lL one">Where I am</span></span><span class="sp"></span><span class="fab lf" data-tap>${ic('add')}<span class="lL one">Add deck</span></span></div>`:'';
  const key=courses===CB?'B':'A';
- const p=JSON.stringify({lang,courses:key,q,tokens,typing,menu,sel});
+ const p=JSON.stringify({lang,courses:key,q,tokens,typing,menu,sel}).replace(/'/g,'&#39;');
  return `<div class="ph${x14?' x14':''}" data-lang="${lang}" data-state="${state}" data-p='${p}'>${top}${bar}${cline}
- <div class="scroll"${full?' data-full':''}${skip?` data-skip="${skip}"`:''}${short?' data-short="1"':''}><div class="clip"><div class="content">${body}</div></div>${extra}</div>
+ <div class="scroll"${full?' data-full':''}${skip?` data-skip="${skip}"`:''}${more?` data-more="${more}"`:''}${short?' data-short="1"':''}><div class="clip"><div class="content">${body}</div></div>${extra}</div>
  ${fabs}${navb('Decks')}${nav3()}</div>`;
 }
 
 const OPEN_FRAMES=[
  ['Hindi · the search closed',()=>phone({lang:'hi',state:'idle'})],
- ['Hindi · tapped: nothing typed, the path darkened',()=>phone({lang:'hi'})],
- ['Bengali · tapped: nothing typed, the path darkened',()=>phone({lang:'bn'})],
- ['Hindi · “travl” cleared by the ✕ (or every letter deleted): one more tap on the ✕ closes',()=>phone({lang:'hi',state:'cleared'})],
+ ['Hindi · tapped: the path darkened, and the tokens offered',()=>phone({lang:'hi'})],
+ ['Bengali · tapped: the path darkened, and the tokens offered',()=>phone({lang:'bn'})],
+ ['Hindi · kind: picked: its values',()=>phone({lang:'hi',typing:'kind:',menu:'kind'})],
+ ['Hindi · “th” typed: suggestions, then results',()=>phone({lang:'hi',q:'th'})],
+ ['Bengali · “fa” typed: suggestions, then results',()=>phone({lang:'bn',q:'fa'})],
+ ['Hindi · “travl” cleared by the ✕ (or every letter deleted): the tokens again; one more tap on the ✕ closes',()=>phone({lang:'hi',state:'cleared'})],
 ];
 const TRAVEL_FRAMES=[
  ['Hindi · “travl”',()=>phone({lang:'hi',q:'travl'})],
@@ -732,11 +812,13 @@ const TOKEN_FRAMES=[
  ['Hindi · “kind:” typed: its combobox',()=>phone({lang:'hi',typing:'kind:',menu:'kind'})],
  ['Hindi · Grammar chosen, then “you”: kind:grammar you',()=>phone({lang:'hi',q:'you',tokens:{kind:'grammar'}})],
  ['Hindi · the kind: Grammar chip tapped: its combobox again',()=>phone({lang:'hi',q:'you',tokens:{kind:'grammar'},menu:'kind',sel:'grammar',edit:'kind'})],
- ['Hindi · status:due alone: the due words',()=>phone({lang:'hi',tokens:{status:'due'}})],
- ['Hindi · “tag:” typed: the theme tags',()=>phone({lang:'hi',typing:'tag:',menu:'tag'})],
- ['Hindi · kind:grammar, status:due and “you”: the chips wrap',()=>phone({lang:'hi',q:'you',tokens:{kind:'grammar',status:'due'}})],
+ ['Hindi · status: Forgetting alone: the words with a review due',()=>phone({lang:'hi',tokens:{status:'forgetting'}})],
+ ['Hindi · “theme:” typed: the course’s themes, from themes.yaml',()=>phone({lang:'hi',typing:'theme:',menu:'theme'})],
+ ['Hindi · theme: Bus, auto, cab alone',()=>phone({lang:'hi',tokens:{theme:'transport'}})],
+ ['Hindi · kind:grammar, status:forgetting and “you”: the chips wrap',()=>phone({lang:'hi',q:'you',tokens:{kind:'grammar',status:'forgetting'}})],
  ['Bengali · “status:” typed: its combobox',()=>phone({lang:'bn',typing:'status:',menu:'status'})],
- ['Bengali · status:leech and “you”',()=>phone({lang:'bn',q:'you',tokens:{status:'leech'}})],
+ ['Bengali · status:struggling and “you”',()=>phone({lang:'bn',q:'you',tokens:{status:'struggling'}})],
+ ['Bengali · status: Set aside alone',()=>phone({lang:'bn',tokens:{status:'set-aside'}})],
 ];
 const YOU_FRAMES=[
  ['Hindi · “you”',()=>phone({lang:'hi',q:'you'})],
@@ -753,7 +835,9 @@ const SCRIPT_FRAMES=[
 ];
 const OTHER_FRAMES=[
  ['Hindi · “জল”: the Bengali script, one course, and a language to know',()=>phone({lang:'hi',q:'জল'})],
- ['Bengali · “पानी”: Devanagari, two courses, and a language to know',()=>phone({lang:'bn',q:'पानी'})],
+ ['Bengali · “पानी”: Devanagari, two courses, and a row per language to know',()=>phone({lang:'bn',q:'पानी',more:'[data-know-row]'})],
+ ['Bengali · “पानी”, scrolled to the languages to know',()=>phone({lang:'bn',q:'पानी',skip:'[data-know-row]'})],
+ ['Hindi · “জল”, scrolled: Bengali and Assamese, a row each',()=>phone({lang:'hi',q:'জল',skip:'[data-know-row]'})],
  ['Hindi · “પાણી”: the Gujarati script, a course to add, and Gujarati',()=>phone({lang:'hi',q:'પાણી'})],
  ['Bengali · “தண்ணீர்”: the Tamil script, no course: Tamil to know',()=>phone({lang:'bn',q:'தண்ணீர்'})],
  ['Bengali · “पानी”, with Telugu taught from Hindi (planned)',()=>phone({lang:'bn',q:'पानी',courses:CB})],
@@ -763,11 +847,12 @@ const EMPTY_FRAMES=[
  ['Hindi · kind:reading and “numbrs”',()=>phone({lang:'hi',q:'numbrs',tokens:{kind:'reading'}})],
 ];
 const X14_FRAMES=[
- ['1.4x · Hindi · nothing typed, the path darkened',()=>phone({lang:'hi',x14:true})],
+ ['1.4x · Hindi · nothing typed: the path darkened, and the tokens offered',()=>phone({lang:'hi',x14:true})],
+ ['1.4x · Hindi · “th” typed: suggestions, then results',()=>phone({lang:'hi',q:'th',x14:true})],
  ['1.4x · Bengali · “you”, scrolled to the words',()=>phone({lang:'bn',q:'you',x14:true,skip:'.wsec'})],
  ['1.4x · Bengali · “पानी”, with Telugu taught from Hindi',()=>phone({lang:'bn',q:'पानी',courses:CB,x14:true})],
  ['1.4x · Hindi · “numbrs”',()=>phone({lang:'hi',q:'numbrs',x14:true})],
- ['1.4x · Hindi · kind:grammar, status:due and “you”: a chip to a line',()=>phone({lang:'hi',q:'you',tokens:{kind:'grammar',status:'due'},x14:true})],
+ ['1.4x · Hindi · kind:grammar, status:forgetting and “you”: a chip to a line',()=>phone({lang:'hi',q:'you',tokens:{kind:'grammar',status:'forgetting'},x14:true})],
  ['1.4x · Bengali · “status:” typed: its combobox',()=>phone({lang:'bn',typing:'status:',menu:'status',x14:true})],
  ['1.4x · Hindi · “પાણી”, scrolled to the offers: a course to add, and Gujarati',()=>phone({lang:'hi',q:'પાણી',x14:true,skip:'[data-add-row]'})],
 ];
@@ -848,7 +933,9 @@ function layoutProblems(){
   const inView=(el)=>{const r=el.getBoundingClientRect();return r.top>=Math.min(cr.top,pr.top)-0.5&&r.bottom<=cr.bottom+0.5};
   /* a frame scrolled down shows what is above it in another frame */
   const above=(el)=>sc&&sc.dataset.skip&&el.getBoundingClientRect().bottom<=cr.top+0.5;
-  ph.querySelectorAll('.chg').forEach(el=>{if(el.closest('.content')&&!inView(el)&&!above(el))bad.push(`${tag}: a changed part is out of view`)});
+  /* data-more: what the next frame scrolls to */
+  const below=(el)=>sc&&sc.dataset.more&&el.matches(sc.dataset.more)&&el.getBoundingClientRect().top>=cr.bottom-0.5;
+  ph.querySelectorAll('.chg').forEach(el=>{if(el.closest('.content')&&!inView(el)&&!above(el)&&!below(el))bad.push(`${tag}: a changed part is out of view`)});
   // the bar's row: where it does not fit, its cut end is masked
   ph.querySelectorAll('.lzone').forEach(z=>{const overR=z.scrollLeft+z.clientWidth<z.scrollWidth-0.5;const m=getComputedStyle(z).maskImage||getComputedStyle(z).webkitMaskImage;
    if(overR&&(!m||m==='none'))bad.push(`${tag}: the language bar is cut without its edge mask`);if(!overR&&!z.classList.contains('edgeL')&&m&&m!=='none')bad.push(`${tag}: an edge mask on a bar that fits`)});
@@ -907,12 +994,23 @@ const PAGE={
   const nu=search('numbrs','hi');need(applyTokens(nu,{kind:'grammar'}).shown===1&&applyTokens(nu,{kind:'reading'}).shown===0&&nu.total===3,'“numbrs” narrowing counts wrong');
   // the tokens: alone, with text, and combined
   const cw=(p)=>{const r=compute(p);return [...r.names.map(x=>x.name),...r.words.map(x=>x.type==='set'?'set':x.w.w)].join('|')};
-  need(cw({lang:'hi',tokens:{status:'due'}})==='तुम|तू|पानी',`status:due hi: ${cw({lang:'hi',tokens:{status:'due'}})}`);
+  need(cw({lang:'hi',tokens:{status:'forgetting'}})==='तुम|तू|पानी',`status:forgetting hi: ${cw({lang:'hi',tokens:{status:'forgetting'}})}`);
+  need(cw({lang:'hi',tokens:{status:'set-aside'}})==='चाचा'&&cw({lang:'bn',tokens:{status:'set-aside'}})==='মাসিমা','status:set-aside wrong');
+  need(cw({lang:'hi',tokens:{status:'not-learnt'}})==='भैया'&&cw({lang:'hi',tokens:{status:'learnt'}})==='आप|जल'&&cw({lang:'hi',tokens:{status:'learning'}})==='धन्यवाद'&&cw({lang:'hi',tokens:{status:'struggling'}})==='बेटा','the Hindi statuses');
+  // one status per card: forgetting wins over learning (owner); a learnt card with a review due is forgetting; a leech set aside is set aside
+  need(statusOf([{iv:3,due:true,lapses:0},null])==='forgetting'&&statusOf([{iv:30,due:true,lapses:0},{iv:40,due:false,lapses:0}])==='forgetting'&&statusOf([{iv:30},{iv:21}])==='learnt'&&statusOf([{iv:30},null])==='learning'&&statusOf([null,null])==='not-learnt'&&statusOf([{iv:1,due:true,lapses:5}])==='struggling'&&statusOf([{iv:1,lapses:6,aside:true}])==='set-aside','statusOf order wrong');
+  need(Object.values(WORDS).flat().every(w=>TVALS.status.some(o=>o.v===w.st)),'a card without one of the six statuses');
   need(cw({lang:'hi',q:'you',tokens:{kind:'grammar'}})==='Possessives: my, your|set|आप|तुम|तू',`kind:grammar you hi: ${cw({lang:'hi',q:'you',tokens:{kind:'grammar'}})}`);
-  need(cw({lang:'hi',q:'you',tokens:{kind:'grammar',status:'due'}})==='तुम|तू',`kind:grammar status:due you: ${cw({lang:'hi',q:'you',tokens:{kind:'grammar',status:'due'}})}`);
-  need(cw({lang:'bn',q:'you',tokens:{status:'leech'}})==='তোরা|কাকা',`status:leech you bn: ${cw({lang:'bn',q:'you',tokens:{status:'leech'}})}`);
-  need(cw({lang:'hi',tokens:{tag:'travel'}})==='Bus, auto, cab'&&cw({lang:'bn',tokens:{tag:'travel'}})==='Bus, auto, cab','tag:travel is not the transport unit');
-  need(compute({lang:'hi',q:''})===null&&TVALS.kind.length===4&&TVALS.status.length===5&&TVALS.tag.map(o=>o.v).join()==='travel','token values wrong');
+  need(cw({lang:'hi',q:'you',tokens:{kind:'grammar',status:'forgetting'}})==='तुम|तू',`kind:grammar status:forgetting you: ${cw({lang:'hi',q:'you',tokens:{kind:'grammar',status:'forgetting'}})}`);
+  need(cw({lang:'bn',q:'you',tokens:{status:'struggling'}})==='তোরা|কাকা',`status:struggling you bn: ${cw({lang:'bn',q:'you',tokens:{status:'struggling'}})}`);
+  need(cw({lang:'hi',tokens:{theme:'transport'}})==='Bus, auto, cab'&&cw({lang:'bn',tokens:{theme:'transport'}})==='Bus, auto, cab','theme:transport is not the transport unit');
+  need(cw({lang:'hi',tokens:{theme:'family'}})==='Family|चाचा'&&cw({lang:'bn',tokens:{theme:'family'}})==='Family|ভাই|বোন|কাকা','theme:family wrong');
+  need(compute({lang:'hi',q:''})===null&&TVALS.kind.length===4&&TVALS.status.map(o=>o.v).join()==='not-learnt,learning,learnt,forgetting,struggling,set-aside'&&TOKS.join()==='kind,status,theme','token values wrong');
+  need(THEMES.length===30&&themeVals('hi').every((o,i,a)=>!i||THEMES.findIndex(t=>t[0]===o.v)>THEMES.findIndex(t=>t[0]===a[i-1].v))&&themeVals('hi').some(o=>o.v==='transport')&&themeVals('bn').length>themeVals('hi').length,'theme values are not the file\'s themes in its order');
+  // the travel tag still finds the transport unit (decided), now that the token is theme:
+  need(tagsOf(deck('hi-transport')).includes('travel')&&!TOKS.includes('tag'),'the travel tag');
+  // suggestions: completions only, at most 3, token names first
+  need(suggest('st','hi')[0]?.text==='status:'&&suggest('th','hi')[0]?.text==='theme:'&&suggest('you','hi').every(s=>s.text.startsWith('you')&&s.text!=='you')&&suggest('helicoptr','hi').length===0&&suggest('','hi').length===0&&['hi','bn'].every(l=>['st','fa','you','travl','pani','पा'].every(q=>suggest(q,l).length<=3)),'suggestions wrong');
   // "you": the set card and every word, each its own row
   need(words('you','hi')==='set|आप|तुम|तू|धन्यवाद|भैया|बेटा|चाचा',`“you” hi words: ${words('you','hi')}`);
   need(words('you','bn').split('|').length===19&&words('you','bn').startsWith('set|আপনি|তুমি|তুই|তোমরা|আপনারা|তোরা|ধন্যবাদ'),`“you” bn words: ${words('you','bn')}`);
@@ -949,14 +1047,21 @@ const PAGE={
    if(ph.querySelector('.tabh'))bad.push(`${tag}: an old header`);
    // focus: the path still shows, under the scrim; nothing else
    const path=sc.querySelectorAll('.pnode');const scr=sc.querySelector('[data-scrim]');
-   if(st==='focus'){if(!path.length||!scr||!path[0].closest('[data-dim]'))bad.push(`${tag}: the path is not under the scrim`);
+   const dimSt=st==='focus'||st==='cleared';
+   if(dimSt){if(!path.length||!scr||!path[0].closest('[data-dim]'))bad.push(`${tag}: the path is not under the scrim`);
     const a=rgba(getComputedStyle(scr).backgroundColor);if(!(a[3]>0.2&&a[3]<=0.4&&a[0]===0))bad.push(`${tag}: the scrim is not a light darkening`);
     const r=scr.getBoundingClientRect(),s=sc.getBoundingClientRect();if(Math.abs(r.top-s.top)>0.5||Math.abs(r.bottom-s.bottom)>0.5)bad.push(`${tag}: the scrim does not cover the path`);
     if(ph.querySelector('.sbar').getBoundingClientRect().bottom>r.top+0.5)bad.push(`${tag}: the scrim covers the search bar`);
-    if(sc.querySelector('.row'))bad.push(`${tag}: results before typing`)}
+    if(sc.querySelector('.row,[data-sugg]'))bad.push(`${tag}: results before typing`);
+    // nothing typed: the tokens offered; a token picked: its values (owner, 2026-10-16); cleared: the tokens again
+    if((P.typing?P.menu!==P.typing.slice(0,-1):P.menu!=='tokens'))bad.push(`${tag}: with nothing typed, the tokens or a picked token's values are not offered`)}
    else if(path.length&&st!=='idle')bad.push(`${tag}: the path shows while typing`);
-   if(st!=='focus'&&scr)bad.push(`${tag}: a scrim while typing`);
-   if(st==='cleared'&&(sc.querySelector('.content').textContent.trim()||sc.querySelector('.content').children.length))bad.push(`${tag}: the cleared area is not blank`);
+   if(!dimSt&&scr)bad.push(`${tag}: a scrim while typing`);
+   // typing: the tokens give way to suggestions, completions of what is typed, then the results
+   if(st==='typed'&&q){if(P.menu==='tokens')bad.push(`${tag}: the tokens offered while typing`);
+    const want=sc.dataset.full===undefined&&!ph.querySelector('[data-other]')?suggest(q,l):[];const got=[...sc.querySelectorAll('[data-sug]')];
+    if(got.map(g=>g.dataset.text).join('|')!==want.map(w=>w.text).join('|'))bad.push(`${tag}: the suggestions are not ${want.map(w=>w.text).join(', ')||'none'}`);
+    const sg=sc.querySelector('[data-sugg]'),h=sc.querySelector('.sech');if(sg&&h&&(sg.compareDocumentPosition(h)&Node.DOCUMENT_POSITION_PRECEDING))bad.push(`${tag}: suggestions after the results`)}
    if(st!=='idle'&&ph.querySelector('.fabs'))bad.push(`${tag}: floating buttons while searching`);
    // nothing grouped: no row inside another, no folded rows
    if(ph.querySelector('.row .row,.mem,[data-folded]'))bad.push(`${tag}: rows are grouped`);
@@ -976,7 +1081,7 @@ const PAGE={
      const ms=ph.querySelectorAll('.menu');
      if(P.menu){const m=ms[0];
       if(ms.length!==1||!m.closest('.sbar'))bad.push(`${tag}: no combobox under the bar`);
-      else{if(m.dataset.menu!==P.menu||m.querySelectorAll('[role=option]').length!==TVALS[P.menu].length)bad.push(`${tag}: the combobox's values`);
+      else{if(m.dataset.menu!==P.menu||m.querySelectorAll('[role=option]').length!==(P.menu==='tokens'?TOKS.length:TV(P.menu,l).length))bad.push(`${tag}: the combobox's values`);
        const se=m.querySelectorAll('[aria-selected]');if(se.length!==(P.sel?1:0)||(P.sel&&se[0].dataset.v!==P.sel))bad.push(`${tag}: the combobox's chosen value`);
        if(P.typing&&P.typing!==P.menu+':')bad.push(`${tag}: the combobox is not the typed token's`);
        const mr=m.getBoundingClientRect(),sb=ph.querySelector('.sbar').getBoundingClientRect();if(mr.top<sb.bottom-0.5||mr.bottom>ph.querySelector('.navb').getBoundingClientRect().top-0.5)bad.push(`${tag}: the combobox is not between the bar and the tab bar`)}}
@@ -989,7 +1094,7 @@ const PAGE={
    if(r0.other){if(!msg||msg.dataset.by!==r0.other.by.map(b=>`${b.lang}:${b.as}`).join(','))bad.push(`${tag}: the other-script message is wrong`);
      if(r0.other.by.length&&ph.querySelectorAll('[data-switch] [data-tap]').length!==r0.other.by.length)bad.push(`${tag}: a course without its Switch button`);
      if(msg.dataset.add!==r0.other.add.map(c=>c.code).join(',')||ph.querySelectorAll('[data-add-row] [data-tap]').length!==r0.other.add.length)bad.push(`${tag}: the courses to add are wrong`);
-     if(msg.dataset.know!==(r0.other.know||[]).join('+')||ph.querySelectorAll('[data-know-row] [data-tap]').length!==(r0.other.know?1:0))bad.push(`${tag}: the language to know is wrong`);
+     if(msg.dataset.know!==(r0.other.know||[]).join('+')||ph.querySelectorAll('[data-know-row] [data-tap]').length!==(r0.other.know||[]).length||[...ph.querySelectorAll('[data-know-row]')].map(e=>e.dataset.knowRow).join('+')!==(r0.other.know||[]).join('+'))bad.push(`${tag}: not one row per language to know`);
      if(r0.other.add.length&&r0.other.by.length)bad.push(`${tag}: a course to add beside a course of theirs`);
     if(sc.querySelector('[data-row],[data-word],[data-set]'))bad.push(`${tag}: results beside the script message`);return}
    if(msg)bad.push(`${tag}: a script message for this course's script`);
@@ -1022,7 +1127,7 @@ function runCheck(){
  const all=[...new Set([...N,...L1.bad,...C1.bad])];
  const el=document.getElementById('check');el.classList.toggle('bad',all.length>0);
  el.textContent=all.length?`Self-check: ${all.length} problem(s). ${all.slice(0,14).join('; ')}`
-  :`Self-check: 0 problems. ${L1.frames} frames at 360 × 800 dp, 1x and 1.4x, Hindi and Bengali. Search: the results are drawn by this page's own run of the matcher in section 10 over the Hindi and Bengali deck names on main and the words it lists: in each course “travl” finds the coming Travel unit by name and then “Bus, auto, cab” by its theme's tag; “numbrs” the two numbers units (and in Hindi “Adjectives: gender and number”); “you” the set card and every word as its own row, 8 in Hindi and 19 in Bengali; “yuo” finds nothing by trigrams, falls back to “you” (distance 1) and shows the same rows; “पानी” and “pani” find पानी, “water” जल and पानी, “জল” and “jol” জল and জলখাবার, and never জুলাই; “জল” in Hindi offers Bengali (target), “पानी” in Bengali offers Hindi and Marathi (target) and, with the planned layer, Telugu (native), a Tamil or Gujarati query offers none of theirs, and a course's own script or Latin never shows the message; the offers: Gujarati and Kannada offer their catalog course and their language, Tamil only Tamil as a language you know, Devanagari Hindi, Marathi, Nepali and others, the Bengali script Bengali and Assamese, and Devanagari nothing once Hindi is a language the learner knows; “helicoptr” finds nothing. Tokens: status:due alone gives तुम, तू and पानी; kind:grammar with “you” the grammar deck “Possessives: my, your”, the set card, आप, तुम and तू; kind:grammar, status:due and “you” तुम and तू; status:leech with “you” in Bengali তোরা and কাকা; tag:travel “Bus, auto, cab”; each frame's chips are in the bar in the order kind, status, tag, each with a body and a ✕; the combobox shows every value of its token, the chosen one marked, between the bar and the tab bar; the hint shows only on an empty bar, and the ✕ reads Clear search until the bar is empty. Screens: the close button is the search bar's last part on every open frame and nowhere else; no narrowing row under the bar; with nothing typed the path shows under a black scrim of 32% that covers the path and not the bars, and stays readable (its Up next unit 1.5:1 or more off the darkened surface); typed, no path or scrim; cleared, a blank area; no floating buttons while searching; no row inside another; the language bar shows the course as its chip and the others as glyphs at 64%, edge-masked wherever its row is cut; every count matches its rows, every deck row is a deck on main under the kind its fields give, and every word shown holds what was searched. Layout: nothing sticks out or is cut in half, no sideways page scroll, labels stay on one line, every target is at least 48 × 48, nothing sits under the tab bar or the navigation bar. Contrast: ${C1.checked} text, glyph, icon and outline pairs across 4 seeds × light, dark and pure black meet WCAG (text and glyphs 4.5:1, the faded glyphs' lowest ${C1.glyphMin.toFixed(2)}:1; icons and outlines 3:1). Not counted: the path under the scrim, which is inactive while the search is open.`;
+  :`Self-check: 0 problems. ${L1.frames} frames at 360 × 800 dp, 1x and 1.4x, Hindi and Bengali. Search: the results are drawn by this page's own run of the matcher in section 10 over the Hindi and Bengali deck names on main and the words it lists: in each course “travl” finds the coming Travel unit by name and then “Bus, auto, cab” by its theme's tag; “numbrs” the two numbers units (and in Hindi “Adjectives: gender and number”); “you” the set card and every word as its own row, 8 in Hindi and 19 in Bengali; “yuo” finds nothing by trigrams, falls back to “you” (distance 1) and shows the same rows; “पानी” and “pani” find पानी, “water” जल and पानी, “জল” and “jol” জল and জলখাবার, and never জুলাই; “জল” in Hindi offers Bengali (target), “पानी” in Bengali offers Hindi and Marathi (target) and, with the planned layer, Telugu (native), a Tamil or Gujarati query offers none of theirs, and a course's own script or Latin never shows the message; the offers: Gujarati and Kannada offer their catalog course and their language, Tamil only Tamil as a language you know, Devanagari Hindi, Marathi, Nepali and others, the Bengali script Bengali and Assamese, and Devanagari nothing once Hindi is a language the learner knows; “helicoptr” finds nothing. Tokens: each card's status is computed from its skills by the order of section 4 (forgetting over learning, a learnt card with a review due forgetting, a due leech struggling, a set-aside one set aside), and every card has one of the six; status:forgetting alone gives तुम, तू and पानी, status:learnt आप and जल, status:learning धन्यवाद, status:not-learnt भैया, status:struggling बेटा, status:set-aside चाचा (and মাসিমা in Bengali); kind:grammar with “you” the grammar deck “Possessives: my, your”, the set card, आप, तुम and तू; kind:grammar, status:forgetting and “you” तुम and तू; status:struggling with “you” in Bengali তোরা and কাকা; theme:transport “Bus, auto, cab” in each course, and theme:family the Family unit and its words; theme:'s values are the 30 themes of decks/themes.yaml that the course teaches, in the file's order; the travel tag still finds the transport unit; each frame's chips are in the bar in the order kind, status, theme, each with a body and a ✕; the combobox shows every value of its token, the chosen one marked, between the bar and the tab bar; with nothing typed (and after a clear) the tokens kind:, status: and theme: are offered over the darkened path, and a picked token its values; typed, the token menu is gone and the suggestions are the page's own completions of the text, at most three, above the results, token names first (“th” offers theme:), none for “travl”, “numbrs” or another script; another script's languages to know are one row each; the hint shows only on an empty bar, and the ✕ reads Clear search until the bar is empty. Screens: the close button is the search bar's last part on every open frame and nowhere else; no narrowing row under the bar; with nothing typed the path shows under a black scrim of 32% that covers the path and not the bars, and stays readable (its Up next unit 1.5:1 or more off the darkened surface); typed, no path or scrim; cleared, the darkened path and the tokens again; no floating buttons while searching; no row inside another; the language bar shows the course as its chip and the others as glyphs at 64%, edge-masked wherever its row is cut; every count matches its rows, every deck row is a deck on main under the kind its fields give, and every word shown holds what was searched. Layout: nothing sticks out or is cut in half, no sideways page scroll, labels stay on one line, every target is at least 48 × 48, nothing sits under the tab bar or the navigation bar. Contrast: ${C1.checked} text, glyph, icon and outline pairs across 4 seeds × light, dark and pure black meet WCAG (text and glyphs 4.5:1, the faded glyphs' lowest ${C1.glyphMin.toFixed(2)}:1; icons and outlines 3:1). Not counted: the path under the scrim, which is inactive while the search is open.`;
  window.__check={problems:all,frames:L1.frames,pairs:C1.checked};
  if(marks)document.body.classList.add('marks');
  applyTheme(state());

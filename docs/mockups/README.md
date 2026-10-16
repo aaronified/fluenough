@@ -82,7 +82,18 @@ Proposed is listed in their decisions tables.
   accepts it; and a script none of the learner's courses use offers to add
   a catalog course written in it and, for any script not yet native, to add
   its language to the languages you know. It uses the #528 language bar,
-  edge-masked where its row does not fit. Hindi and Bengali, light and
+  edge-masked where its row does not fit. Revised again for the owner's
+  answers on 65224c7 (2026-10-16): opened with nothing typed, the search
+  offers the tokens over the darkened path, a picked token offers its
+  values, typing replaces them with suggestions (completions of what is
+  typed) above the results, and clearing all text offers the tokens again,
+  in place of the blank area; `status:` is not learnt, learning, learnt,
+  forgetting, struggling or set aside, one per card, forgetting winning
+  over learning, each defined from the app's skills, FSRS due, leeches and
+  set-aside; `theme:` replaces `tag:`, its values the themes in
+  `decks/themes.yaml`, while "travl" still finds "Bus, auto, cab" through
+  the travel tag; and a script several languages use gets one row per
+  language to add to the languages you know. Hindi and Bengali, light and
   dark, 1.4x, and a note on how FTS5 does it.
 ## Older: to be adapted (owner, 2026-10-12)
 
