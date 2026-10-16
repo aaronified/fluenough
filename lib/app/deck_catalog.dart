@@ -18,6 +18,7 @@ import '../core/data/number_rules_parser.dart';
 import '../core/data/pattern_expander.dart';
 import '../core/data/rule_expander.dart';
 import '../core/data/themes.dart';
+import '../core/decks/ipa_course.dart';
 import '../core/models/fact.dart';
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
@@ -238,6 +239,49 @@ class Catalog {
   final Map<String, ScriptGuide> scriptGuides;
 
   static final Catalog empty = Catalog(decks: const [], broken: const []);
+
+  /// Whether a deck of the IPA course is in it.
+  late final bool hasIpa = decks.any((e) => e.language.isIpa);
+
+  /// This catalog as the learner has it: the decks of the IPA course (a
+  /// language with `script: ipa`) cut to the cards in [scope] when they
+  /// learn [learned], and one left with none gone (ADR-0041). The same
+  /// catalog when nothing changes, so that every screen reads one list.
+  Catalog forIpa(
+    IpaScope scope,
+    Set<String> learned, {
+    Set<String> kept = const <String>{},
+  }) {
+    if (scope == IpaScope.whole) return this;
+    var changed = false;
+    final scoped = <DeckEntry>[];
+    for (final entry in decks) {
+      final deck = ipaDeckInScope(entry.deck, scope, learned, kept: kept);
+      if (identical(deck, entry.deck)) {
+        scoped.add(entry);
+        continue;
+      }
+      changed = true;
+      if (deck != null) {
+        scoped.add(
+          DeckEntry(path: entry.path, deck: deck, bundled: entry.bundled),
+        );
+      }
+    }
+    if (!changed) return this;
+    return Catalog(
+      decks: scoped,
+      broken: broken,
+      themes: themes,
+      facts: facts,
+      numberRules: numberRules,
+      paths: paths,
+      languagePaths: languagePaths,
+      sounds: sounds,
+      romanisations: romanisations,
+      scriptGuides: scriptGuides,
+    );
+  }
 
   /// In file order, which groups them by language directory, except that a
   /// course's decks come in teaching order, so that its new cards do too:

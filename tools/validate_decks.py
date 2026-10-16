@@ -49,10 +49,12 @@ SCRIPTS = {
     "latin", "cyrillic", "greek", "arabic", "hebrew",
     "devanagari", "bengali", "gujarati", "gurmukhi", "odia",
     "telugu", "tamil", "kannada", "malayalam", "sinhala",
-    "kana", "han", "hangul", "thai", "other",
+    "kana", "han", "hangul", "thai", "ipa", "other",
 }
-# Scripts whose cards need no reading: they are read as written.
-NO_READING = {"latin", "cyrillic", "greek"}
+# Scripts whose cards need no reading: they are read as written. The IPA
+# is a notation read as written, and the course about it is no language
+# with a romanisation (ADR-0041).
+NO_READING = {"latin", "cyrillic", "greek", "ipa"}
 SCRIPT_RE = re.compile(r"[a-z]+(?:-[a-z]+)*")
 KINDS = {"vocab", "grammar", "facts", "themes", "numbers", "path", "sounds", "script",
          "reading", "rules", "layer"}
@@ -83,7 +85,8 @@ ISO_PIECE_RE = re.compile(rf"[a-z{ISO15919_LETTERS}{ISO15919_MARKS}]+")
 # spaces between words.
 IPA_RE = re.compile(
     "[a-zæçðøħŋœθβχãẽĩõũɐ-ʯʰ-˿\u0300-\u036f ."
-    "\u02e5-\u02e9\u203f|\u2016\u2191\u2193]+")
+    "\u02e5-\u02e9\u203f|\u2016\u2191\u2193"
+    "\u01c0-\u01c3\u207f\u2c71\ua71c]+")
 CONTRAST_KEYS = {"id", "name", "pairs", "within_word"}
 SCRIPT_KEYS = {"schema", "kind", "id", "language", "name", "intro", "features"}
 FEATURE_KEYS = {"id", "name", "term", "reading", "ipa", "example", "text",
@@ -127,7 +130,8 @@ PASSAGE_KEYS = {"id", "title", "sentences", "source", "theme", "questions", "glo
 SENTENCE_KEYS = {"text", "reading", "ipa"}
 QUESTION_KEYS = {"id", "prompt", "options", "answer"}
 GLOSS_KEYS = {"word", "modern", "reading", "ipa", "meaning", "note"}
-EXAMPLE_KEYS = {"target", "native", "reading", "ipa", "bases", "source"}
+EXAMPLE_KEYS = {"target", "native", "reading", "ipa", "bases", "source",
+                "language", "sounds"}
 # A reading question has this many options, and a passage this many
 # questions (#98, ADR-0019).
 CHOICES = range(2, 5)
@@ -163,7 +167,8 @@ SET_MEMBER_KEYS = {"ref"}
 LAYER_SET_KEYS = {"native", "explanation"}
 # A set needs at least this many members: one card alone is no group.
 MIN_SET_MEMBERS = 2
-CORE_EXAMPLE_KEYS = {"target", "reading", "ipa", "bases", "source"}
+CORE_EXAMPLE_KEYS = {"target", "reading", "ipa", "bases", "source",
+                     "language", "sounds"}
 # A word card has at least this many examples (owner, #506: "At least 2").
 MIN_EXAMPLES = 2
 # The languages filled in (#511, #512). In these, a word card with fewer than
@@ -618,10 +623,16 @@ def check_langblock(r: Report, where: str, block: object, *, full: bool) -> None
     tts = block.get("tts")
     if tts is not None and (not _is_str(tts) or not BCP47_RE.fullmatch(tts)):
         r.error(where, f"tts must be a BCP-47 tag, got {tts!r}")
-    if full and tts is None:
+    # The IPA course has no voice of its own: each example is said in the
+    # voice of its own language (ADR-0041).
+    if full and tts is None and script != "ipa":
         r.warn(where, "no tts tag; the device will pick a default regional voice")
     if "rtl" in block and not isinstance(block["rtl"], bool):
         r.error(where, "rtl must be a boolean")
+    # `typed: false` marks a language whose answers cannot be typed, so
+    # production is asked by choosing (ADR-0041).
+    if "typed" in block and not isinstance(block["typed"], bool):
+        r.error(where, "typed must be a boolean")
     # A language's chip shows its icon: the first letter of its own name,
     # such as हि for Hindi (ADR-0027). A letter or two, no more.
     icon = block.get("icon")
@@ -1396,6 +1407,14 @@ def _check_examples(r: Report, where: str, examples: object, *,
             if key in ex and not _is_str(ex.get(key)):
                 r.error(where, f"examples[{j}].{key} must be a non-empty "
                                f"string or omitted")
+        # The language an example is in, when not the card's, and whether
+        # the card's letter has the card's sound in it (ADR-0041).
+        if "language" in ex and not (_is_str(ex["language"])
+                                     and LANG_RE.fullmatch(ex["language"])):
+            r.error(where, f"examples[{j}].language must be a 2-3 letter "
+                           f"language code, got {ex['language']!r}")
+        if "sounds" in ex and not isinstance(ex["sounds"], bool):
+            r.error(where, f"examples[{j}].sounds must be true or false")
         bases = check_bases(r, where, f"examples[{j}].", ex.get("bases"),
                             ex["target"], cid, lang, script, core=form == "core")
         found.append((j, ex["target"], bases))
@@ -5526,7 +5545,10 @@ def check_plans_across(reports: list[Report]) -> list[str]:
         lang = ctx.lang(code)
         if not plan.has_plan:
             core = lang.first_core()
-            if core is not None:
+            # The IPA course is no language taught towards a level: it has
+            # no B1 plan (ADR-0041).
+            if core is not None and not any(
+                    d.script == "ipa" for d in lang.all()):
                 problems.append(f"{rep.path}: units: {code} has core files ({core}), "
                                 f"so its path needs its B1 plan: the milestones A1, A2 "
                                 f"and B1, in that order")

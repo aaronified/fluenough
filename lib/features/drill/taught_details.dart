@@ -13,6 +13,7 @@ import '../decks/card_bases.dart';
 import '../decks/card_notes.dart';
 import '../review/alike_warning.dart';
 import 'drill_session.dart';
+import 'ipa_examples.dart';
 
 /// How [TaughtDetails] shows a word's reading.
 enum TaughtReading {
@@ -153,7 +154,11 @@ class TaughtDetails extends StatelessWidget {
                 fontSize: 14,
               ),
             ),
-          if (card.examples.isNotEmpty)
+          // An IPA card shows every example, each marked as sounding as the
+          // card says or not, and each with its own voice (ADR-0041).
+          if (card.examples.isNotEmpty && language.isIpa)
+            IpaExamples(card: card, language: language)
+          else if (card.examples.isNotEmpty)
             _Example(example: card.examples.first, language: language),
           ...warnings,
         ];
