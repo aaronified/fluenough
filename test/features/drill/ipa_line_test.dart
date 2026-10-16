@@ -16,7 +16,7 @@ import '../../support/harness.dart';
 
 /// The IPA line (ADR-0025, #533), as the owner placed it: under a word the
 /// question shows, from the start; with the answer once it is in where the
-/// word is the answer or is heard; under passages and in Inspect. Show IPA
+/// word is the answer or is heard; under passages and in Inspect. IPA pronunciations
 /// in Settings hides it everywhere.
 
 const String spanish = 'es-en-core-100';
@@ -153,7 +153,7 @@ void main() {
     expect(find.byType(IpaLine), findsNothing, reason: 'live');
   });
 
-  testWidgets('Show IPA off: no line on a card', (tester) async {
+  testWidgets('IPA pronunciations off: no line on a card', (tester) async {
     usePhone(tester);
     await pumpDrill(
       tester,
@@ -164,7 +164,7 @@ void main() {
     expect(find.byType(IpaLine), findsNothing);
   });
 
-  test('Show IPA is on by default', () {
+  test('IPA pronunciations is on by default', () {
     expect(SettingsNotifier().showIpa, isTrue);
   });
 

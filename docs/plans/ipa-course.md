@@ -49,7 +49,7 @@ Branch `wip/v032-ipa`, commit `d21d3df`, on origin:
 - The language block: `{ code: ipa, iso639_3: zxx, name: IPA, script: ipa,
   typed: false, icon: "ə" }`.
 
-The IPA line and the Settings > Learning > Show IPA switch (#533) are
+The IPA line and the Settings > Learning > IPA pronunciations switch (#533) are
 rebuilt on `main` from the drafts on `feat/ipa-line` (f5c8dba) and
 `wip/v032-ui` (41e5573, 65df57e), which are not merged: they conflict in 34
 files. The line sits on the drill's card, which scrolls, not in the fixed

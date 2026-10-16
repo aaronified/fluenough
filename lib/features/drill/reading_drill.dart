@@ -403,7 +403,7 @@ class _InLanguage extends StatelessWidget {
 }
 
 /// The passage, a sentence at a time: the text, its reading when
-/// Latin-letter readings is on, its IPA when Show IPA is, and with a voice,
+/// Latin-letter readings is on, its IPA when IPA pronunciations is, and with a voice,
 /// a button to hear it.
 class _PassageText extends StatelessWidget {
   const _PassageText({
@@ -540,7 +540,7 @@ class _WordsButton extends StatelessWidget {
 
 /// A passage's glossary: each older or unusual word as the passage writes
 /// it, today's form, its reading when Latin-letter readings is on, its IPA
-/// when Show IPA is, its meaning and any note, in the language the learner
+/// when IPA pronunciations is, its meaning and any note, in the language the learner
 /// speaks best of those given.
 class Glossary extends StatelessWidget {
   const Glossary({super.key, required this.passage, required this.language});

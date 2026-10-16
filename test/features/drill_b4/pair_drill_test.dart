@@ -12,6 +12,7 @@ import 'package:fluenough/features/gallery/gallery_entry.dart';
 import 'package:fluenough/features/gallery/gallery_page.dart';
 import 'package:fluenough/ui/widgets/feedback_banner.dart';
 import 'package:fluenough/ui/widgets/incoming.dart';
+import 'package:fluenough/ui/widgets/ipa_line.dart';
 import 'package:fluenough/ui/widgets/play_button.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 
@@ -49,6 +50,24 @@ Future<void> setCardScale(WidgetTester tester, double scale) async {
 }
 
 void main() {
+  testWidgets('each choice shows its IPA from the start, and the switch hides '
+      'it', (tester) async {
+    usePhone(tester);
+    final state = await pumpScreen(tester, const PairDrill(), state: pairOn());
+    for (final sound in <PairSound>[first.a, first.b]) {
+      expect(
+        find.descendant(
+          of: find.byType(IpaLine),
+          matching: find.text('/${sound.ipa}/'),
+        ),
+        findsOneWidget,
+      );
+    }
+    state.settings.showIpa = false;
+    await tester.pumpAndSettle();
+    expect(find.byType(IpaLine), findsNothing);
+  });
+
   testWidgets('play speaks the sound being asked, at the learner rate', (
     tester,
   ) async {
