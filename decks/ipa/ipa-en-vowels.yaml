@@ -1,0 +1,203 @@
+schema: 1
+id: ipa-en-vowels
+name: "The vowel chart"
+kind: vocab
+language: { code: ipa, iso639_3: zxx, name: IPA, script: ipa, typed: false, icon: "ə" }
+native:   { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+source: "Arranged after the IPA chart, 2020 revision, of the International Phonetic Association (https://www.internationalphoneticassociation.org/content/ipa-chart), and the Handbook of the International Phonetic Association (1999)"
+description: "The vowel chart is a map of the mouth: the tongue high to low, front to back, and where two vowels share a dot, spread lips on the left and rounded on the right. All 28 vowels, top row first."
+tags: [beginner, unreviewed]
+cards:
+  - id: ipa-0094
+    target: "i"
+    native: "ee as in see (close front unrounded vowel)"
+    notes: "The top left corner of the vowel chart: the tongue high and forward, the lips spread. The chart is a side view of the mouth facing left, with the tongue highest at the top, close, and the jaw lowest at the bottom, open. Spanish i and Hindi ई are i, and the long ई is written iː."
+    examples:
+      - { target: "తీపి", native: "sweet (Telugu)", language: te }
+      - { target: "vivir", native: "to live (Spanish)", language: es, ipa: "biˈbiɾ" }
+    tags: [hi, mr, gu, bn, as, te, kn, es, en]
+    modes: [recognition, production]
+  - id: ipa-0095
+    target: "y"
+    native: "ee with rounded lips (close front rounded vowel)"
+    notes: "Say i and round your lips without moving the tongue: French tu, German über. Where two vowels share a dot on the chart, the left one has spread lips and the right one rounded, so y sits just right of i. In the IPA y is always this vowel, never the y of yes, which is j."
+    modes: [recognition, production]
+  - id: ipa-0096
+    target: "ɨ"
+    native: "ee pulled back to the middle (close central unrounded vowel)"
+    notes: "A high vowel in the middle of the mouth, between i and ɯ: Russian ы, as in ты, you. The bar through the i marks it as central."
+    modes: [recognition, production]
+  - id: ipa-0097
+    target: "ʉ"
+    native: "oo pushed forward to the middle (close central rounded vowel)"
+    notes: "The rounded partner of ɨ: a u said with the tongue further forward. Many Australians and younger speakers in southern England say the oo of goose close to it. The bar through the u marks it as central."
+    modes: [recognition, production]
+  - id: ipa-0098
+    target: "ɯ"
+    native: "oo with spread lips (close back unrounded vowel)"
+    notes: "The tongue as for u, but with the lips spread. Its letter is a turned m. Korean ㅡ is ɯ, and Japanese u lies between ɯ and u."
+    modes: [recognition, production]
+  - id: ipa-0099
+    target: "u"
+    native: "oo as in food (close back rounded vowel)"
+    notes: "The top right corner: the tongue high and back, the lips rounded. Spanish u and Hindi ऊ are u, and the long ऊ is written uː. English food is close, though many English speakers say it further forward."
+    examples:
+      - { target: "आलू", native: "potato (Hindi)", language: hi }
+      - { target: "uno", native: "one (Spanish)", language: es, ipa: "ˈuno" }
+    tags: [hi, mr, gu, bn, as, te, kn, es, en]
+    modes: [recognition, production]
+  - id: ipa-0100
+    target: "ɪ"
+    native: "i as in sit (near-close near-front unrounded vowel)"
+    notes: "A little lower and more central than i: the vowel of English sit, against seat with i. Its letter is a small capital I; here, and in ʏ, the small capital means a little lower and more central. Hindi short इ is usually ɪ, as in दिन, day."
+    examples:
+      - { target: "दिन", native: "day (Hindi)", language: hi }
+      - { target: "sit", native: "sit (English)", language: en, ipa: "sɪt" }
+    tags: [hi, en]
+    modes: [recognition, production]
+  - id: ipa-0101
+    target: "ʏ"
+    native: "i as in sit with rounded lips (near-close near-front rounded vowel)"
+    notes: "ɪ with rounded lips, written as a small capital Y: German fünf, five. It sits just right of ɪ on the chart."
+    modes: [recognition, production]
+  - id: ipa-0102
+    target: "ʊ"
+    native: "u as in book (near-close near-back rounded vowel)"
+    notes: "A little lower and more central than u: the vowel of English book and put. Hindi short उ is usually ʊ, as in सुबह, morning. Its letter is the Latin upsilon, shaped like a horseshoe."
+    examples:
+      - { target: "सुबह", native: "morning (Hindi)", language: hi }
+      - { target: "book", native: "book (English)", language: en, ipa: "bʊk" }
+    tags: [hi, en]
+    modes: [recognition, production]
+  - id: ipa-0103
+    target: "e"
+    native: "e as in café (close-mid front unrounded vowel)"
+    notes: "A front vowel between i and the open a, with spread lips: Spanish e, as in mesa, and Hindi ए. English has it mostly as the start of the glide eɪ, in day. The close-mid row is the second from the top."
+    examples:
+      - { target: "mesa", native: "table (Spanish)", language: es, ipa: "ˈmesa" }
+      - { target: "एक", native: "one (Hindi)", language: hi }
+    tags: [hi, mr, gu, bn, as, te, kn, es, en]
+    modes: [recognition, production]
+  - id: ipa-0104
+    target: "ø"
+    native: "e with rounded lips (close-mid front rounded vowel)"
+    notes: "e said with rounded lips: French peu, German schön. Its letter is the slashed o of Danish and Norwegian, where it is a letter of the alphabet."
+    modes: [recognition, production]
+  - id: ipa-0105
+    target: "ɘ"
+    native: "e pulled back to the middle (close-mid central unrounded vowel)"
+    notes: "A vowel in the middle of the mouth, a little higher than ə, between e and ɤ. Its letter is e reversed, flipped left to right. Few languages have it as a vowel of its own."
+    modes: [recognition, production]
+  - id: ipa-0106
+    target: "ɵ"
+    native: "o pushed forward to the middle (close-mid central rounded vowel)"
+    notes: "The rounded partner of ɘ: an o said with the tongue further forward, as in Swedish full. Its letter is a barred o."
+    modes: [recognition, production]
+  - id: ipa-0107
+    target: "ɤ"
+    native: "o with spread lips (close-mid back unrounded vowel)"
+    notes: "The tongue as for o, but with the lips spread: Mandarin e, as in è, hungry, is close to it. Its letter is the ram's horns, which sits on the line; the gamma ɣ hangs below it."
+    modes: [recognition, production]
+  - id: ipa-0108
+    target: "o"
+    native: "o as in Spanish no (close-mid back rounded vowel)"
+    notes: "The back, rounded partner of e: Spanish o and Hindi ओ, a pure vowel with no glide. English go glides away from it, oʊ in American speech and əʊ in British."
+    examples:
+      - { target: "noche", native: "night (Spanish)", language: es, ipa: "ˈnotʃe" }
+      - { target: "दो", native: "two (Hindi)", language: hi }
+    tags: [hi, mr, gu, bn, as, te, kn, es]
+    modes: [recognition, production]
+  - id: ipa-0109
+    target: "ə"
+    native: "the a of about, weak and central (mid central vowel, schwa)"
+    notes: "The vowel in the very middle of the chart, with the tongue at rest: the a of English about. Its name is schwa and its letter is a turned e. Hindi, Marathi and Gujarati अ is ə, as in Hindi कल, while Bengali and Assamese say their অ as ɔ."
+    examples:
+      - { target: "कल", native: "tomorrow; yesterday (Hindi)", language: hi }
+      - { target: "about", native: "about (English)", language: en, ipa: "əˈbaʊt" }
+    tags: [core, hi, mr, gu, en]
+    modes: [recognition, production]
+  - id: ipa-0110
+    target: "ɛ"
+    native: "e as in bed (open-mid front unrounded vowel)"
+    notes: "Lower than e, the jaw a little more open: English bed, and Hindi ऐ, as in है, is. Its letter is the Greek epsilon. Gujarati and Assamese have both e and ɛ, and tell words apart by them."
+    examples:
+      - { target: "है", native: "is (Hindi)", language: hi }
+      - { target: "bed", native: "bed (English)", language: en, ipa: "bɛd" }
+    tags: [hi, gu, as, en]
+    modes: [recognition, production]
+  - id: ipa-0111
+    target: "œ"
+    native: "e as in bed with rounded lips (open-mid front rounded vowel)"
+    notes: "ɛ said with rounded lips: French sœur, sister, German Hölle. Its letter is the o-e ligature."
+    modes: [recognition, production]
+  - id: ipa-0112
+    target: "ɜ"
+    native: "the vowel of British bird (open-mid central unrounded vowel)"
+    notes: "A central vowel a little lower than ə: British English bird and nurse, written ɜː. American English colours it with r, ɝ. Its letter is a reversed epsilon."
+    tags: [en]
+    modes: [recognition, production]
+  - id: ipa-0113
+    target: "ɞ"
+    native: "the vowel of British bird with rounded lips (open-mid central rounded vowel)"
+    notes: "ɜ with rounded lips, one of the rarest vowels on the chart. Its letter is a reversed epsilon closed into a loop."
+    modes: [recognition, production]
+  - id: ipa-0114
+    target: "ʌ"
+    native: "u as in cup (open-mid back unrounded vowel)"
+    notes: "On the chart an open-mid back vowel with spread lips; English dictionaries use it for the vowel of cup and love, though most speakers now say it more centrally. Its letter is a turned v."
+    examples:
+      - { target: "cup", native: "cup (English)", language: en, ipa: "kʌp" }
+    tags: [en]
+    modes: [recognition, production]
+  - id: ipa-0115
+    target: "ɔ"
+    native: "aw as in law (open-mid back rounded vowel)"
+    notes: "A rounded back vowel, lower than o: Bengali and Assamese অ, as in Bengali দশ, ten, and Hindi औ in standard speech, as in और. Its letter is the open o, a c facing the other way."
+    examples:
+      - { target: "দশ", native: "ten (Bengali)", language: bn }
+      - { target: "और", native: "and; more (Hindi)", language: hi }
+    tags: [hi, gu, bn, as, en]
+    modes: [recognition, production]
+  - id: ipa-0116
+    target: "æ"
+    native: "a as in cat (near-open front unrounded vowel)"
+    notes: "Between ɛ and a, with the jaw nearly open: the vowel of English cat. Bengali says its এ as æ in many words, as in এক, one, and writes æ as ্যা in words such as হ্যাঁ, yes. Its letter, ash, joins a and e."
+    examples:
+      - { target: "এক", native: "one (Bengali)", language: bn }
+      - { target: "cat", native: "cat (English)", language: en, ipa: "kæt" }
+    tags: [bn, en]
+    modes: [recognition, production]
+  - id: ipa-0117
+    target: "ɐ"
+    native: "a short, central a (near-open central vowel)"
+    notes: "A central vowel just above fully open: Portuguese cama, bed, and the vowel many British speakers really say in cup. Its letter is a turned a."
+    modes: [recognition, production]
+  - id: ipa-0118
+    target: "a"
+    native: "a as in Spanish casa (open front unrounded vowel)"
+    notes: "The bottom left corner of the chart, though a is used for any open a in the middle of the mouth too: Spanish casa, Hindi आ, written aː, Telugu అ and ఆ. English has it as the start of the glides in my, aɪ, and now, aʊ."
+    examples:
+      - { target: "casa", native: "house (Spanish)", language: es, ipa: "ˈkasa" }
+      - { target: "ఆరు", native: "six (Telugu)", language: te }
+    tags: [hi, mr, gu, bn, as, te, kn, es, en]
+    modes: [recognition, production]
+  - id: ipa-0119
+    target: "ɶ"
+    native: "a with rounded lips (open front rounded vowel)"
+    notes: "The rounded partner of a, and one of the rarest vowels on the chart: it is there to complete the pattern of pairs. Its letter is a small capital OE ligature."
+    modes: [recognition, production]
+  - id: ipa-0120
+    target: "ɑ"
+    native: "a far back, as in father (open back unrounded vowel)"
+    notes: "The bottom right corner: an open a with the tongue pulled back, as in English father and spa. Its letter is the round-backed alpha, not the a with a hook of most typefaces. Some transcriptions of Hindi write आ as ɑː."
+    examples:
+      - { target: "spa", native: "spa (English)", language: en, ipa: "spɑː" }
+    tags: [en]
+    modes: [recognition, production]
+  - id: ipa-0121
+    target: "ɒ"
+    native: "o as in British hot (open back rounded vowel)"
+    notes: "ɑ with rounded lips: the vowel of British English hot and dog, where American English says ɑ. Its letter is a turned alpha. Many Assamese speakers say অ close to it."
+    tags: [en]
+    modes: [recognition, production]
