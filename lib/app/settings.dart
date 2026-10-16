@@ -36,6 +36,7 @@ class SettingsNotifier extends ChangeNotifier {
   SettingsNotifier({
     Set<Skill>? enabledSkills,
     this._showRomanisation = true,
+    this._showIpa = true,
     this._soundOn = true,
     this._autoplay = false,
     this._matchTapToHear = true,
@@ -81,6 +82,7 @@ class SettingsNotifier extends ChangeNotifier {
 
   Set<Skill> _enabledSkills;
   bool _showRomanisation;
+  bool _showIpa;
   bool _soundOn;
   bool _autoplay;
   bool _matchTapToHear;
@@ -522,6 +524,12 @@ class SettingsNotifier extends ChangeNotifier {
   set showRomanisation(bool value) =>
       _set(_showRomanisation, value, (v) => _showRomanisation = v);
 
+  /// Whether a word's IPA line, `/paːlu/`, shows where the deck gives one:
+  /// on the teach card, under a word the question shows, with the answer
+  /// once it is in, in passages and in Inspect (ADR-0025, #533).
+  bool get showIpa => _showIpa;
+  set showIpa(bool value) => _set(_showIpa, value, (v) => _showIpa = v);
+
   /// Sound for the whole app. Off, nothing is spoken, every speaker is
   /// greyed out, and listening is not drilled, as on a phone with no voice.
   bool get soundOn => _soundOn;
@@ -652,6 +660,7 @@ class SettingsNotifier extends ChangeNotifier {
       for (final s in Skill.values) isEnabled(s) ? s.name : '!${s.name}',
     ].join(','),
     'show_romanisation': '$_showRomanisation',
+    'show_ipa': '$_showIpa',
     'sound_on': '$_soundOn',
     'autoplay': '$_autoplay',
     'match_tap_to_hear': '$_matchTapToHear',
@@ -757,6 +766,7 @@ class SettingsNotifier extends ChangeNotifier {
       }
     }
     if (pick('show_romanisation', flag) case final v?) showRomanisation = v;
+    if (pick('show_ipa', flag) case final v?) showIpa = v;
     if (pick('sound_on', flag) case final v?) soundOn = v;
     if (pick('autoplay', flag) case final v?) autoplay = v;
     if (pick('match_tap_to_hear', flag) case final v?) matchTapToHear = v;

@@ -169,6 +169,7 @@ void main() {
         l10n.settingsRomanisationOn,
         l10n.settingsRomanisationOff,
       ),
+      (l10n.settingsIpa, l10n.settingsIpaOn, l10n.settingsIpaOff),
       (
         l10n.settingsAdjustAuto,
         l10n.settingsAdjustAutoOn,

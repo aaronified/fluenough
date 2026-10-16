@@ -13,6 +13,7 @@ import '../../ui/widgets/answer_field.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
 import '../../ui/widgets/incoming.dart';
+import '../../ui/widgets/ipa_line.dart';
 import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
@@ -300,7 +301,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
     );
   }
 
-  /// The prompt, the slot and, once answered, the table; with
+  /// The prompt, the slot and, once answered, the form's IPA and the table; with
   /// [readingFirst], for a language learned without its alphabet, the
   /// readings first.
   List<Widget> _card(
@@ -369,6 +370,11 @@ class _GrammarDrillState extends State<GrammarDrill> {
         ),
       ),
       if (answered) ...<Widget>[
+        // Only once answered, as hearing it: the form's IPA would give it
+        // away.
+        if (ipaToShow(context, cell.entry.ipas[cell.slot], target: cell.answer)
+            case final ipa?)
+          IpaLine(ipa, fontSize: 16),
         // Only once answered: hearing the form would give it away.
         ?speaker,
         Padding(
