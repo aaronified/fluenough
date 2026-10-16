@@ -14,6 +14,7 @@ When work is handed to subagents or workflows, pick the model by the job:
 | Writing decks | Sonnet |
 | Fan-outs and large reads | Haiku |
 | Fixing and coding | Opus |
+| Bug fixes | Sonnet, reviewed by Opus (owner, 2026-10-16) |
 | UI mockups | Opus (Sonnet was not enough, owner, 2026-10-12) |
 
 At most **two Opus agents run at the same time** (owner, 2026-10-09). The
