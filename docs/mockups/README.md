@@ -64,7 +64,10 @@ Proposed is listed in their decisions tables.
   the bar never shifts between the three screens (owner, 2026-10-16:
   "Only on progress we need an all button.fix it to the right (near
   debug) so that the top bar doesn't shift when changing between the 3
-  screens."). Drawn with 1, 2, 4 and 6 languages, before, during
+  screens."). Where the row does not fit, its ends fade out over 16 dp,
+  only on an end with more beyond it, and the row scrolls to keep the
+  chip clear of the fade (owner, 2026-10-16: "The language bar needs to
+  be edgemasked still"). Drawn with 1, 2, 4, 6 and 8 languages, before, during
   and after a swipe, the menu, Today, Decks (with the proposals' search
   bar, unchanged) and Progress, light, dark and pure black, 1.4x and
   TalkBack. It supersedes `language-swipe.html` and

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Language Bar</title>
-<meta name="description" content="The language bar on Today, Decks and Progress (#528): always folded, the shown language as its chip and the others as faded glyphs, the bug report button at the end; with 1, 2, 4 and 6 languages, a swipe, the menu of every language, light, dark and pure black, 1.4x text and TalkBack.">
+<meta name="description" content="The language bar on Today, Decks and Progress (#528): always folded, the shown language as its chip and the others as faded glyphs, the bug report button at the end; with 1, 2, 4, 6 and 8 languages, the edge mask where the row does not fit, a swipe, the menu of every language, light, dark and pure black, 1.4x text and TalkBack.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&family=Noto+Sans+Gujarati:wght@400;600&family=Noto+Sans+Kannada:wght@400;600&display=swap">
@@ -209,6 +209,16 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 .lbar{display:flex;align-items:center;height:56px;padding:0 4px;background:var(--s);position:relative;box-shadow:0 1px 0 var(--olv)}
 /* the whole bar but the bug button is one target: a tap opens the menu, a sideways drag changes the language */
 .lzone{flex:1;min-width:0;height:48px;display:flex;align-items:center;padding:0 4px;border-radius:24px;overflow:hidden}
+/* the edge mask (#528; owner, 2026-10-16: "The language bar needs to be edgemasked still"): where the row does not fit it
+   scrolls, and each end with more beyond it fades out over 16 dp, as a ShaderMask (BlendMode.dstIn, a LinearGradient)
+   over the row's scroll view would; an end with nothing beyond it, and a row that fits, are not faded */
+.lzone{--fade:16px;--fl:0px;--fr:0px}
+.lzone.fl{--fl:var(--fade)}
+.lzone.fr{--fr:var(--fade)}
+.lzone.fl,.lzone.fr{-webkit-mask-image:linear-gradient(to right,transparent 0,#000 var(--fl),#000 calc(100% - var(--fr)),transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 var(--fl),#000 calc(100% - var(--fr)),transparent 100%)}
+/* the page's own mark of the fade's 16 dp, never drawn in the app */
+.fband{border:1px dashed var(--page-acc);border-radius:4px;display:none}
+body.marks .fband{display:block}
 /* the shown language: the chip (FilterChip, selected), its glyph tile and name, no arrow */
 .lchip{flex:none;min-height:calc(32px + 12px*(var(--t) - 1));border-radius:10px;border:1px solid var(--sc);display:flex;align-items:center;gap:6px;padding:4px 11px 4px 7px;background:var(--sc);color:var(--onSc);white-space:nowrap}
 .lchip .glyph{background:var(--sLowest);color:var(--onS)}
@@ -287,6 +297,19 @@ td code,li code{font-size:13px}
 </ul>
 </section>
 
+<section class="opt" id="mask">
+<h2>1b · The edge mask, where the row does not fit</h2>
+<p>Eight languages, in the order added: हि (hi), বা (bā), తె (te), म (ma), ગુ (gu), ಕ (ka), অ (a) for Assamese and Es for Spanish. Whether they fit depends on the chip's name: at 1x they run past the zone by 5 to 29 dp, except with Hindi shown, whose short name lets them fit; at 1.4x by 8 to 57 dp. Where they do not fit, the row scrolls and an end with more beyond it fades out. The dashed boxes are the page's, over the 16 dp of each fade. At 1x the overflow is small, so the centred chip always takes the row to one end and only one end fades; both ends fade at 1.4x, and will at 1x once more languages come. With 6 languages everything fits, at 1x and at 1.4x (Kannada at 1.4x, the widest, leaves 1.5 dp), so no end is faded; the last two frames show a row that fits.</p>
+<div class="strips" id="st-mask"></div>
+<ul>
+<li><span class="dec">Decided</span> The bar is edge-masked (owner, 2026-10-16: “The language bar needs to be edgemasked still”): where the row of languages does not fit, its ends fade out, so it reads as a row that scrolls.</li>
+<li><span class="prop">Proposed</span> The fade is <b>16 dp</b> wide, from fully clear at the zone's edge to fully drawn 16 dp in, a straight gradient. It covers only the language zone (the chip and the glyphs), never the All slot or the bug button.</li>
+<li><span class="prop">Proposed</span> Only an end with more beyond it fades, as Flutter's <code>ShaderMask</code> over the row's scroll view does when the gradient follows the scroll position: at the first language only the right end fades, at the last only the left, in between both. A row that fits is not masked at all, so with 1 to 6 languages the bar is drawn exactly as in section 1.</li>
+<li><span class="prop">Proposed</span> The row scrolls to keep the chip in view, centred where the ends allow, so the chip is never under a fade and its name and glyph keep their full contrast; the self-check measures it. A swipe still changes the language (section 2), and the row slides with the chip; a finger does not scroll it freely. The menu reaches every language.</li>
+<li><span class="prop">Proposed</span> A glyph under a fade is drawn faded further; it is the sign that the row goes on, not something to read there, and it is read in full once the row scrolls to it or in the menu. TalkBack is unchanged: it reads the shown language and its place, “3 of 8 languages”.</li>
+</ul>
+</section>
+
 <section class="opt" id="swipe">
 <h2>2 · A swipe: before, during and after</h2>
 <p>Hindi shown, with two languages. A drag to the left goes to the next language, Bengali.</p>
@@ -316,6 +339,8 @@ td code,li code{font-size:13px}
 <h2 style="margin-top:28px">The bar does not shift between the three screens</h2>
 <p>Four languages, Bengali shown, on Today, Decks and Progress, then Progress with All on. The dashed lines are the page's, at the chip's edges, to show nothing moves; the self-check measures every glyph, the chip, the slot and the bug button on each frame and finds them in the same places.</p>
 <div class="frames" id="fr-same"></div>
+<p style="margin-top:20px">Eight languages, Bengali shown: the row scrolls the same way on all three screens, so the mask and every glyph sit in the same places too.</p>
+<div class="frames" id="fr-same8"></div>
 <ul>
 <li><span class="dec">Decided</span> The bar is on Today, Decks and Progress (#528).</li>
 <li><span class="dec">Decided</span> Decks' search bar at the top of the path, as drawn in the proposals (“Searchbar looked fine”). What it searches is <code>deck-search.html</code>'s (#527).</li>
@@ -350,6 +375,8 @@ td code,li code{font-size:13px}
 <tr><td data-h="What">The All slot on Today and Decks</td><td data-h="Drawn">Kept empty, 48 dp, so the chip and glyphs never move; empty on Progress too with one language</td><td data-h="Status"><span class="prop">Proposed</span></td></tr>
 <tr><td data-h="What">How All looks</td><td data-h="Drawn">The word “All”, faded off, filled on; the chip stays in place, outlined</td><td data-h="Status"><span class="prop">Proposed</span></td></tr>
 <tr><td data-h="What">All and the swipe</td><td data-h="Drawn">A swipe never lands on All; with All on it turns All off and moves as usual</td><td data-h="Status"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="What">Edge mask</td><td data-h="Drawn">Where the row does not fit, its ends fade out, so it reads as scrolling</td><td data-h="Status"><span class="dec">Decided</span> owner, 2026-10-16: “The language bar needs to be edgemasked still”</td></tr>
+<tr><td data-h="What">How the mask looks</td><td data-h="Drawn">16 dp linear fade, only on an end with more beyond it, none when the row fits; the row scrolls to keep the chip clear of the fades</td><td data-h="Status"><span class="prop">Proposed</span></td></tr>
 <tr><td data-h="What">Glyphs at 1.4x</td><td data-h="Drawn">Not scaled; the chip's name is</td><td data-h="Status"><span class="prop">Proposed</span></td></tr>
 <tr><td data-h="What">Swipe</td><td data-h="Drawn">On the bar only; next and previous language</td><td data-h="Status"><span class="dec">Decided</span> #528</td></tr>
 <tr><td data-h="What">Swipe feedback and ends</td><td data-h="Drawn">Next glyph to full alpha, a label naming it; no wrapping</td><td data-h="Status"><span class="prop">Proposed</span></td></tr>
@@ -463,10 +490,13 @@ const LANGS={
  mr:{code:'mr',name:'Marathi',icon:'म',tr:'ma'},
  gu:{code:'gu',name:'Gujarati',icon:'ગુ',tr:'gu'},
  kn:{code:'kn',name:'Kannada',icon:'ಕ',tr:'ka'},
+ as:{code:'as',name:'Assamese',icon:'অ',tr:'a'},
+ es:{code:'es',name:'Spanish',icon:'Es',tr:'Es'},
 };
 /* the languages, in the order they were added; All is not among them (Progress's own button) */
 const C1=['hi'],C2=['hi','bn'],C4=['hi','bn','te','mr'],C6=['hi','bn','te','mr','gu','kn'];
-const SETS={1:C1,2:C2,4:C4,6:C6};
+const C8=[...C6,'as','es'];
+const SETS={1:C1,2:C2,4:C4,6:C6,8:C8};
 const key=(c)=>c||'all';
 const unkey=(k)=>k==='all'?null:k;
 const nameOf=(c)=>c?LANGS[c].name:'All languages';
@@ -561,6 +591,21 @@ const SCREENS=[
  ['1.4x · Today, four languages, Hindi shown',()=>phone({screen:'today',ch:C4,shown:'hi',x14:true})],
  ['1.4x · Progress, two languages, Bengali shown',()=>phone({screen:'progress',ch:C2,shown:'bn',x14:true})],
 ];
+const MASK=[
+ ['Today or Decks · 8 languages, Bengali shown: the right end fades',strip('today',C8,'bn',false)],
+ ['Today or Decks · 8 languages, Assamese shown: the left end fades',strip('today',C8,'as',false)],
+ ['Today or Decks · 8 languages, Marathi shown, dragged toward Gujarati',strip('today',C8,'mr',false,{to:'gu'})],
+ ['Progress · 8 languages, Kannada shown, All on: the left end fades',strip('progress',C8,'kn',false,{all:true})],
+ ['1.4x · Progress, 8 languages, Marathi shown: both ends fade',strip('progress',C8,'mr',true)],
+ ['1.4x · Today or Decks, 8 languages, Gujarati shown: both ends fade',strip('today',C8,'gu',true)],
+ ['Today or Decks · 8 languages, Hindi shown: it fits, no mask',strip('today',C8,'hi',false)],
+ ['1.4x · Today or Decks, 6 languages, Kannada shown: it fits, no mask',strip('today',C6,'kn',true)],
+];
+const SAME8=[
+ ['Today · eight languages, Bengali shown',()=>phone({screen:'today',ch:C8,shown:'bn',o:{guide:true}})],
+ ['Decks · eight languages, Bengali shown',()=>phone({screen:'decks',ch:C8,shown:'bn',o:{guide:true}})],
+ ['Progress · eight languages, Bengali shown',()=>phone({screen:'progress',ch:C8,shown:'bn',o:{guide:true}})],
+];
 const SAME=[
  ['Today · four languages, Bengali shown',()=>phone({screen:'today',ch:C4,shown:'bn',o:{guide:true}})],
  ['Decks · four languages, Bengali shown',()=>phone({screen:'decks',ch:C4,shown:'bn',o:{guide:true}})],
@@ -572,7 +617,27 @@ const SAME=[
  ['TalkBack · Progress, focus on All',()=>phone({screen:'progress',ch:C4,shown:'bn',o:{tb:'[data-all]'}}),'TalkBack says: “All languages. Toggle button, not pressed. Double-tap to show every language\'s numbers together.”'],
  ];
 
+/* The row's scroll position: the chip centred where the ends allow (Proposed), then a fade on each end with more beyond
+   it. In the app the gradient follows the scroll view's position; here it is set from the same numbers. */
+const FADE=16;
+function scrollRows(){
+ document.querySelectorAll('.lzone').forEach(z=>{z.classList.remove('fl','fr');z.scrollLeft=0;
+  const max=z.scrollWidth-z.clientWidth;z.toggleAttribute('data-scrolls',max>0.5);if(max<=0.5)return;
+  const c=z.querySelector('.lchip');const s=Math.max(0,Math.min(max,c.offsetLeft+c.offsetWidth/2-z.clientWidth/2));
+  z.scrollLeft=s;const at=z.scrollLeft;
+  z.classList.toggle('fl',at>0.5);z.classList.toggle('fr',at<max-0.5)});
+}
+/* how much of the mask lets through over an element's whole width: 1 where it is clear of the fades */
+function maskAlpha(el){const z=el.closest('.lzone');if(!z)return 1;const zr=z.getBoundingClientRect(),r=el.getBoundingClientRect();
+ let a=1;if(z.classList.contains('fl'))a=Math.min(a,Math.max(0,Math.min(1,(r.left-zr.left)/FADE)));
+ if(z.classList.contains('fr'))a=Math.min(a,Math.max(0,Math.min(1,(zr.right-r.right)/FADE)));return a}
+/* whether an element in the row is scrolled into the zone at all */
+const inZone=(el)=>{const z=el.closest('.lzone');if(!z||el===z)return true;const zr=z.getBoundingClientRect(),r=el.getBoundingClientRect();return r.right>zr.left+0.5&&r.left<zr.right-0.5};
 function placeOverlays(){
+ document.querySelectorAll('.fband').forEach(f=>f.remove());
+ document.querySelectorAll('.lzone.fl,.lzone.fr').forEach(z=>{const top=z.closest('.top');const tr=top.getBoundingClientRect(),zr=z.getBoundingClientRect();
+  for(const side of ['fl','fr'])if(z.classList.contains(side)){const f=document.createElement('span');f.className='ann fband';
+   Object.assign(f.style,{left:((side==='fl'?zr.left:zr.right-FADE)-tr.left)+'px',top:(zr.top-tr.top)+'px',width:FADE+'px',height:zr.height+'px'});top.appendChild(f)}});
 document.querySelectorAll('.ph[data-guide]').forEach(ph=>{ph.querySelectorAll('.guide').forEach(g=>g.remove());const chip=ph.querySelector('.lchip');const pr=ph.getBoundingClientRect(),r=chip.getBoundingClientRect();
 for(const x of [r.left,r.right]){const g=document.createElement('span');g.className='guide';Object.assign(g.style,{left:(x-pr.left)+'px',right:'auto',top:'0px',height:'100%',width:'0',borderTop:'0',borderLeft:'1px dashed var(--page-acc)'});ph.appendChild(g)}});
  document.querySelectorAll('[data-tb]').forEach(f=>{const ph=f.closest('.ph');const b=ph.querySelector(f.dataset.tb);const pr=ph.getBoundingClientRect(),r=b.getBoundingClientRect();
@@ -591,11 +656,12 @@ function layoutProblems(){
  const bad=[];const frames=[...document.querySelectorAll('.ph,.strip')];
  frames.forEach(ph=>{const tag=tagOf(ph);
   const pr=ph.getBoundingClientRect();const sc=ph.querySelector('.scroll'),clip=sc?.querySelector('.clip');const cr=clip?clip.getBoundingClientRect():pr;
-  const shown=(el)=>!el.closest('.content')||visibleIn(el,cr);
+  const shown=(el)=>(!el.closest('.content')||visibleIn(el,cr))&&inZone(el);
   ph.querySelectorAll('*').forEach(el=>{if(el.closest('svg')&&el.tagName!=='svg')return;if(el.closest('.ann'))return;const r=el.getBoundingClientRect();if(!r.width||!r.height||!shown(el))return;
-   if(r.left<pr.left-0.5||r.right>pr.right+0.5)bad.push(`${tag}: ${el.className||el.tagName} sticks out sideways`);
+   // inside a row that scrolls, the zone clips its glyphs; the zone itself is held to the frame
+   if(!el.closest('.lzone[data-scrolls]')&&(r.left<pr.left-0.5||r.right>pr.right+0.5))bad.push(`${tag}: ${el.className||el.tagName} sticks out sideways`);
    if(!el.closest('.scroll')&&r.bottom>pr.bottom+0.5)bad.push(`${tag}: ${el.className||el.tagName} below the frame`);
-   if(el.scrollWidth>el.clientWidth+1&&getComputedStyle(el).overflowX!=='visible'&&!el.matches('.clip,.scroll,.ph,.strip,.mi'))bad.push(`${tag}: ${el.className} “${el.textContent.trim().slice(0,20)}” cut`);
+   if(el.scrollWidth>el.clientWidth+1&&getComputedStyle(el).overflowX!=='visible'&&!el.matches('.clip,.scroll,.ph,.strip,.mi,.lzone[data-scrolls]'))bad.push(`${tag}: ${el.className} “${el.textContent.trim().slice(0,20)}” cut`);
   });
   ph.querySelectorAll('.lchip,.fchip').forEach(el=>{if(el.scrollWidth>el.clientWidth+1)bad.push(`${tag}: “${el.textContent.trim()}” does not fit its chip`)});
   ph.querySelectorAll('.content .lf').forEach(el=>{const r=el.getBoundingClientRect();if(!r.height||r.bottom<=cr.top+0.5||r.top>=cr.bottom-0.5)return;
@@ -616,7 +682,7 @@ function layoutProblems(){
 /* Every visible text 4.5:1 (the bare glyphs and All included, at their alpha) and every icon 3:1 against what is really
    behind it, in 4 seeds × light, dark and pure black; the menu chips' outlines and the swipe label's edge 3:1 (WCAG 1.4.11). */
 function contrastProblems(){
- const bad=[];let checked=0,glyphMin=99;const cols=[...document.querySelectorAll('.fcol')];
+ const bad=[];let checked=0,glyphMin=99,underFade=0;const cols=[...document.querySelectorAll('.fcol')];
  const edge=(c,what,theme,ph)=>{checked++;if(c<3)bad.push(`${theme} ${tagOf(ph)}: ${what} ${c.toFixed(2)}:1`)};
  for(const seed of ['clay','forest','ocean','iris'])for(const th of THEMES){
   cols.forEach(col=>col.querySelector('.ph,.strip').setAttribute('style',varsFor(seed,th)));
@@ -628,8 +694,11 @@ function contrastProblems(){
     const isIcon=el.classList.contains('mi');
     if(!hasText&&!isIcon)return;
     if(el.closest('.content')&&!visibleIn(el,cr))return;
+    if(!inZone(el))return;
     const r=el.getBoundingClientRect();if(!r.width)return;
-    const cs=getComputedStyle(el);let fg=rgba(cs.color);let op=1;for(let e=el;e&&e!==ph;e=e.parentElement)op*=parseFloat(getComputedStyle(e).opacity);
+    // under the edge mask: the chip must stay clear of it (numbers() checks), a glyph under a fade is the sign of more and is counted apart
+    const ma=maskAlpha(el);if(ma<1&&el.classList.contains('lg')){underFade++;return}
+    const cs=getComputedStyle(el);let fg=rgba(cs.color);let op=ma;for(let e=el;e&&e!==ph;e=e.parentElement)op*=parseFloat(getComputedStyle(e).opacity);
     if(op<0.05)return;
     const bg=bgOf(el);fg=over([fg[0],fg[1],fg[2],fg[3]*op],bg);
     const need=isIcon?3:4.5;const c=ratio(fg,bg);checked++;
@@ -641,10 +710,10 @@ function contrastProblems(){
  ph.querySelectorAll('.lname').forEach(l=>{const under=ph.querySelector('.scroll')||ph;edge(ratio(bgOf(l),bgOf(under)),'label against the screen',theme,ph)});
   });
  }
- return {bad,checked,glyphMin};
+ return {bad,checked,glyphMin,underFade:underFade/12};
 }
 function numbers(){
- const bad=[];
+ const bad=[];let masked=0,both=0,one=0;
  document.querySelectorAll('.ph,.strip').forEach(ph=>{const tag=tagOf(ph);
   const b=ph.querySelector('.lbar');const n=+b.dataset.n;const ch=SETS[n];const shown=b.dataset.shown;const scr=b.dataset.screen;const allOn=b.dataset.allon!==undefined;const hasAll=scr==='progress'&&n>1;
   // 56 dp, at 1x and 1.4x
@@ -672,9 +741,19 @@ function numbers(){
    if(!g.classList.contains('to')&&Math.abs(rgba(cs.color)[3]-0.64)>0.005)bad.push(`${tag}: a glyph is not at 64% alpha`);
    const fs=parseFloat(cs.fontSize);if(fs!==18)bad.push(`${tag}: a glyph scales with text (${fs})`)});
   if([...b.querySelectorAll('.mi')].some(i=>/arrow_drop_down|expand_more|language/.test(i.textContent)))bad.push(`${tag}: a dropdown arrow or globe in the bar`);
-  // everything fits in the zone, before the bug button
-  const z=b.querySelector('[data-zone]');const zr=z.getBoundingClientRect();const last=z.lastElementChild.getBoundingClientRect();
-  if(last.right>zr.right-4+0.5)bad.push(`${tag}: the glyphs do not fit the bar`);
+  // the row fits in the zone, before the All slot, unmasked; or it scrolls, and only an end with more beyond it fades
+  const z=b.querySelector('[data-zone]');const zr=z.getBoundingClientRect();const max=z.scrollWidth-z.clientWidth;const over=max>0.5;
+  const fl=z.classList.contains('fl'),fr=z.classList.contains('fr');const mi=getComputedStyle(z).maskImage||getComputedStyle(z).webkitMaskImage||'none';
+  if(!over){const last=z.lastElementChild.getBoundingClientRect();if(last.right>zr.right-4+0.5)bad.push(`${tag}: the glyphs do not fit the bar`);
+   if(fl||fr||mi!=='none')bad.push(`${tag}: a row that fits is masked`)}
+  else{masked++;if(fl!==(z.scrollLeft>0.5)||fr!==(z.scrollLeft<max-0.5))bad.push(`${tag}: the mask is not on exactly the ends with more beyond them`);
+   if(!/linear-gradient/.test(mi))bad.push(`${tag}: a row that does not fit has no edge mask`);
+   if(Math.abs(parseFloat(getComputedStyle(z).getPropertyValue('--fade'))-FADE)>0.01)bad.push(`${tag}: the fade is not ${FADE} dp`);
+   if(fl&&fr)both++;else if(fl||fr)one++;
+   const c=z.querySelector('.lchip');const cr2=c.getBoundingClientRect();
+   if(cr2.left<zr.left+(fl?FADE:0)-0.5||cr2.right>zr.right-(fr?FADE:0)+0.5)bad.push(`${tag}: the chip is under the fade`);
+   if(maskAlpha(c)<1)bad.push(`${tag}: the mask fades the chip`);
+   const t=b.querySelector('.lg.to');if(t&&maskAlpha(t)<1)bad.push(`${tag}: the raised glyph is under the fade`)}
   // TalkBack: one button naming the shown language, next and previous as actions
   const i=ch.indexOf(shown);const acts=z.dataset.actions;
  const lab=z.getAttribute('aria-label');if(!lab.startsWith(`Language shown: ${nameOf(shown)}, ${i+1} of ${n} `))bad.push(`${tag}: TalkBack does not name the shown language`);
@@ -697,7 +776,10 @@ function numbers(){
    if(ph.dataset.screen==='today'&&!ph.querySelector('.greet'))bad.push(`${tag}: the greeting is lost`);
    if(ph.dataset.screen==='decks'&&ph.querySelector('.srin .one')?.textContent!=='Search units')bad.push(`${tag}: the search bar is not section 0's`)}
  });
- for(const n of [1,2,4,6])if(!document.querySelector(`.strip[data-n="${n}"]`))bad.push(`no bar with ${n} languages`);
+ if(!both||!one)bad.push('no row masked at both ends and at one end only');
+ if(!document.querySelector('.strip.x14 .lzone[data-scrolls]'))bad.push('no 1.4x row that scrolls');
+ window.__mask={masked:masked/3,both:both/3,one:one/3};
+ for(const n of [1,2,4,6,8])if(!document.querySelector(`.strip[data-n="${n}"]`))bad.push(`no bar with ${n} languages`);
 // no shift: the same languages and shown language put the chip, every glyph, the slot and the bug button in the same places on Today, Decks and Progress
 const groups={};document.querySelectorAll('.ph').forEach(ph=>{const k=`${ph.dataset.n}|${ph.dataset.shown}|${ph.classList.contains('x14')}|${ph.parentElement.dataset.th}`;(groups[k]=groups[k]||[]).push(ph)});
 let spanning=0,compared=0;
@@ -720,19 +802,19 @@ if(!document.querySelector('.strip[data-screen="progress"] [data-all]')||!docume
 function check(){
  const marksOn=document.body.classList.contains('marks');document.body.classList.remove('marks');
  document.querySelectorAll('.fcol').forEach(c=>c.hidden=false);
- fitFabs();fit();placeOverlays();
+ fitFabs();scrollRows();fit();placeOverlays();
  const N=numbers(),L1=layoutProblems(),C1=contrastProblems();
  const all=[...new Set([...N,...L1.bad,...C1.bad])];
  const el=document.getElementById('check');el.classList.toggle('bad',all.length>0);
  el.textContent=all.length?`Self-check: ${all.length} problem(s). ${all.slice(0,14).join('; ')}`
-  :`Self-check: 0 problems. ${L1.frames} frames (bars at 360 dp, phones at 360 × 800 dp) in light, dark and pure black, 1x and 1.4x, with 1, 2, 4 and 6 languages and Today, Decks and Progress. Every bar is 56 dp high and holds the languages as one button, the 48 dp All slot and the bug button, last; the slot holds All on Progress and is empty on Today and Decks; it shows every language in the order added, never All, the shown one as its chip (no arrow, no globe; outlined while All is on) and every other as its bare glyph, no tile or icon, at 64% alpha and not scaled at 1.4x; everything fits before the slot; TalkBack names the shown language with Next and Previous actions, never All. Mid-swipe the raised glyph is the next language and the label names it. Every menu lists every language in order and no All, each with its chip, the shown one filled and checked, opening under the bar. No shift: in ${window.__same.compared} frame pairs with the same languages, shown language, text size and theme (${window.__same.groups} of them across Today, Decks and Progress), the chip, every glyph, the All slot and the bug button sit at the same positions and sizes. Layout: nothing sticks out or is cut, no sideways page scroll, labels stay on one line, every target is at least 48 × 48, nothing sits under the tab bar or the 3-button navigation bar. Contrast: ${C1.checked} text, glyph, icon, outline and edge pairs across 4 seeds × light, dark and pure black meet WCAG (text and glyphs 4.5:1; icons, outlines and edges 3:1). The faded glyphs' lowest is ${C1.glyphMin.toFixed(2)}:1. Not counted: the finger and its trail, TalkBack's green focus box, which the system draws, and two lines of today's Today drawn unchanged (the lesson card's second line and the due card's minutes), reported apart in language-swipe.html.`;
+  :`Self-check: 0 problems. ${L1.frames} frames (bars at 360 dp, phones at 360 × 800 dp) in light, dark and pure black, 1x and 1.4x, with 1, 2, 4, 6 and 8 languages and Today, Decks and Progress. Every bar is 56 dp high and holds the languages as one button, the 48 dp All slot and the bug button, last; the slot holds All on Progress and is empty on Today and Decks; it shows every language in the order added, never All, the shown one as its chip (no arrow, no globe; outlined while All is on) and every other as its bare glyph, no tile or icon, at 64% alpha and not scaled at 1.4x; a row that fits before the slot is not masked, and each of the ${window.__mask.masked} rows that do not fit (${window.__mask.both} faded at both ends, ${window.__mask.one} at one) has the ${FADE} dp edge mask on exactly the ends with more beyond them, with the chip fully clear of it; TalkBack names the shown language with Next and Previous actions, never All. Mid-swipe the raised glyph is the next language and the label names it. Every menu lists every language in order and no All, each with its chip, the shown one filled and checked, opening under the bar. No shift: in ${window.__same.compared} frame pairs with the same languages, shown language, text size and theme (${window.__same.groups} of them across Today, Decks and Progress), the chip, every glyph, the All slot and the bug button sit at the same positions and sizes. Layout: nothing sticks out or is cut, no sideways page scroll, labels stay on one line, every target is at least 48 × 48, nothing sits under the tab bar or the 3-button navigation bar. Contrast: ${C1.checked} text, glyph, icon, outline and edge pairs across 4 seeds × light, dark and pure black meet WCAG (text and glyphs 4.5:1; icons, outlines and edges 3:1). The faded glyphs' lowest is ${C1.glyphMin.toFixed(2)}:1, and the chip, never under the mask, is measured at full contrast. Not held to 4.5:1: the ${Math.round(C1.underFade)} glyphs under an edge fade (counted once per frame), which are the sign that the row goes on and are read in full once it scrolls to them. Not counted: the finger and its trail, TalkBack's green focus box, which the system draws, and two lines of today's Today drawn unchanged (the lesson card's second line and the due card's minutes), reported apart in language-swipe.html.`;
  window.__check={problems:all,frames:L1.frames,pairs:C1.checked,glyphMin:C1.glyphMin};
  if(marksOn)document.body.classList.add('marks');
  applyTheme(state());
 }
 document.querySelectorAll('.controls input').forEach(i=>i.addEventListener('change',()=>{applyTheme(state());placeOverlays()}));
-renderFrames('st',STRIPS);renderFrames('fr-swipe',SWIPE);renderFrames('fr-menu',MENU);renderFrames('fr-screens',SCREENS);renderFrames('fr-same',SAME);renderFrames('fr-tb',TBF);
-applyTheme(state());
+renderFrames('st',STRIPS);renderFrames('fr-swipe',SWIPE);renderFrames('fr-menu',MENU);renderFrames('fr-screens',SCREENS);renderFrames('fr-same',SAME);renderFrames('st-mask',MASK);renderFrames('fr-same8',SAME8);renderFrames('fr-tb',TBF);
+applyTheme(state());scrollRows();placeOverlays();
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(check,check);else check();
 </script>
 </body>
