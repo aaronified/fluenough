@@ -10,6 +10,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
 import '../../ui/widgets/incoming.dart';
+import '../../ui/widgets/ipa_line.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import '../gallery/fixtures.dart';
@@ -264,6 +265,14 @@ class _PairOption extends StatelessWidget {
                 color: fg,
                 fontWeight: FontWeight.w600,
               ),
+            ),
+            // How it is said: the choice is shown, so this gives nothing away.
+            ListenableBuilder(
+              listenable: AppScope.read(context).settings,
+              builder: (context, _) =>
+                  ipaToShow(context, sound.ipa, target: sound.target) == null
+                  ? const SizedBox.shrink()
+                  : IpaLine(sound.ipa!, fontSize: 14),
             ),
           ],
         ),
