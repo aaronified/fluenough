@@ -25,6 +25,11 @@ approval.
 - `set-cards.html`: a set card in a lesson (#515): the whole closed group
   shown once, before its members, the known ones marked; then only the new
   members taught and asked. Hindi and Bengali, at 1x and 1.4x. Approved by the owner, 2026-10-13.
+  Approved 2026-10-16: Telugu verb forms both ways, back to back, in
+  cards of at most four (the nine forms of a verb, the request last, in
+  three parts of 3), each new form straight to its question, with a Full
+  list button on split sets and on an answered question, and long forms
+  breaking between syllables (owner, 2026-10-16, #515).
 
 ## Older: to be adapted (owner, 2026-10-12)
 
