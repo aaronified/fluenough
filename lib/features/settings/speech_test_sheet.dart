@@ -14,7 +14,7 @@ import '../../ui/widgets/target_text.dart';
 import '../decks/word_sheet.dart' show isRude;
 import 'settings_controls.dart';
 
-/// Opens the speaking test for [language] (docs/plans/voices-per-language.md).
+/// Opens the speaking test for [language].
 Future<void> showSpeechTest(BuildContext context, LanguageInfo language) =>
     showModalBottomSheet<void>(
       context: context,

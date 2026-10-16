@@ -98,6 +98,34 @@ The maintainer decided, on 2 October 2026:
 - No audio is stored. Only what the recogniser heard goes into the review
   log's `answer`, as typed answers do.
 
+## Trying again (#231)
+
+The owner asked (2026-10-05): "Pronunciation feedback (Rosetta Stone):
+record and compare via platform speech-to-text; pass/retry. if this does
+not exist, plan this". Decided with the owner and built:
+
+- **The first attempt counts** for the word's schedule. Retries are
+  practice, so a word that needed them comes back sooner.
+- **Try again** is offered after a wrong or an almost-right answer, as
+  often as the learner likes. A retry that passes says so, but changes
+  nothing.
+- The learner hears their own attempt, then the voice. Recordings stay in
+  memory and are never saved, as in the first-launch sound check. The
+  second take is recorded after the recogniser finishes, since both may not
+  use the microphone at once; nothing heard asks again, unrecorded.
+
+## The Voices page (owner, 2026-10-09)
+
+The owner asked: "In voices>languages page, merge the speaking and
+listening buttons, and add tests for both." Built as one card per
+language, with the voice choice (#123) folded in. Decided:
+
+- **The speaking test offers a word from the course to say, and also lets
+  the learner say anything,** shown as heard.
+- **A failed test shows the recogniser's error code in small print**
+  (`error_no_match`), and **every speech and voice error also goes to the
+  app log** (#162), so a report can say exactly what failed.
+
 ## Alternatives considered
 
 - **A plugin of our own,** about 200 lines of Kotlin in a local package. It

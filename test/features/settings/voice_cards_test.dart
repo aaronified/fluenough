@@ -20,7 +20,7 @@ import '../../support/harness.dart';
 import '../../support/review_fixture.dart';
 
 // One Voices card per language, with a test for hearing it and for
-// speaking it (docs/plans/voices-per-language.md).
+// speaking it.
 
 /// A phone tall enough for every bundled language's card.
 void _useTallPhone(WidgetTester tester, {double textScale = 1.0}) {

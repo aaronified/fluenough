@@ -51,3 +51,11 @@ speaker reviews every card before it ships, Telugu included.
   goes into the B1 format now; the Bengali and Telugu agents write the
   offensive decks and the warnings as part of their courses, shipping
   only once a speaker has reviewed them.
+
+## Register rules deferred here (owner, 2026-10-15, #517)
+
+> Defer both to the offensive-words work
+
+Both are built when the offensive-words ratings live in the repo:
+- **The validator check:** a card in the ratings must carry `register: "offensive"`.
+- **Register on rules-table cells:** cells gain a `register` field.

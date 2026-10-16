@@ -33,7 +33,8 @@ class InputModeChoice extends StatelessWidget {
       badge: IncomingBadgePlacement.below,
       child: Segmented<InputMode>(
         semanticLabel: l10n.drillInputModeGroup,
-        height: 44,
+        // The 48dp tap target, which 44 fell short of at small text.
+        height: 48,
         selected: session.transliterating
             ? InputMode.translit
             : InputMode.script,

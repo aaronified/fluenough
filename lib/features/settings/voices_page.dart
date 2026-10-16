@@ -18,9 +18,8 @@ import '../decks/word_sheet.dart' show isRude;
 import 'settings_controls.dart';
 import 'speech_test_sheet.dart';
 
-/// One card per language, for hearing it and for speaking it
-/// (docs/plans/voices-per-language.md), in the order the learner learns
-/// them: the languages the profile learns first.
+/// One card per language, for hearing it and for speaking it, in the order
+/// the learner learns them: the languages the profile learns first.
 ///
 /// Design screen `voices`. Each card has the language's name, icon and
 /// voice tag, then:

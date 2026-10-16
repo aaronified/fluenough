@@ -9,6 +9,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/card_picture.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
+import '../../ui/widgets/ipa_line.dart';
 import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
@@ -181,6 +182,9 @@ class ChoiceDrill extends StatelessWidget {
             ),
           ),
       ],
+      // How it is said: the word is shown, so this gives nothing away.
+      if (ipaToShow(context, card.ipa, target: card.target) case final ipa?)
+        IpaLine(ipa, fontSize: 16),
       // From the start: the word is shown anyway.
       ?_speaker(),
       // The word is on the card already: what its lesson showed under it.
