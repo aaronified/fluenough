@@ -1,0 +1,88 @@
+schema: 1
+id: "te-help"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+theme: "help"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-0360"
+    target: "సహాయం"
+    reading: "sahāyam"
+    ipa: "sahaːjam"
+    pos: "noun"
+  - id: "te-0361"
+    target: "సహాయం చేయండి!"
+    reading: "sahāyam cēyaṇḍi!"
+    ipa: "sahaːjam tʃeːjaɳɖi"
+    pos: "phrase"
+    tags: ["polite"]
+    bases:
+      - { word: "చేయండి", ref: "te-0621" }
+  - id: "te-0362"
+    target: "కాపాడండి!"
+    reading: "kāpāḍaṇḍi!"
+    ipa: "kaːpaːɖaɳɖi"
+    pos: "phrase"
+  - id: "te-0363"
+    target: "ఆగండి!"
+    reading: "āgaṇḍi!"
+    ipa: "aːɡaɳɖi"
+    pos: "phrase"
+    tags: ["polite"]
+  - id: "te-0364"
+    target: "పోలీసు"
+    reading: "pōlīsu"
+    ipa: "poːliːsu"
+    pos: "noun"
+    picture: "👮"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0365"
+    target: "డాక్టర్"
+    reading: "ḍākṭar"
+    ipa: "ɖaːkʈar"
+    pos: "noun"
+    picture: "🧑‍⚕"
+  - id: "te-0366"
+    target: "ఆసుపత్రి"
+    reading: "āsupatri"
+    ipa: "aːsupat̪ri"
+    pos: "noun"
+    picture: "🏥"
+  - id: "te-0367"
+    target: "మందు"
+    reading: "mandu"
+    ipa: "mand̪u"
+    pos: "noun"
+    picture: "💊"
+  - id: "te-0368"
+    target: "నొప్పి"
+    reading: "noppi"
+    ipa: "noppi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0369"
+    target: "నేను దారి తప్పిపోయాను."
+    reading: "nēnu dāri tappipōyānu."
+    ipa: "neːnu d̪aːri t̪appipoːjaːnu"
+    pos: "phrase"
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "తప్పిపోయాను", base: "తప్పిపోవడం", reading: "tappipōvaḍam" }
+  - id: "te-0370"
+    target: "నాకు అర్థం కాలేదు."
+    reading: "nāku artham kālēdu."
+    ipa: "naːku art̪ʰam kaːleːd̪u"
+    pos: "phrase"
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "అర్థం", base: "అర్థం", reading: "artham" }
+      - { word: "కాలేదు", ref: "te-0646" }
+  - id: "te-0371"
+    target: "బాత్‌రూమ్ ఎక్కడ?"
+    reading: "bātrūm ekkaḍa?"
+    ipa: "baːt̪ruːm ekkaɖa"
+    pos: "phrase"

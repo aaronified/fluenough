@@ -1,0 +1,89 @@
+schema: 1
+id: "te-grammar-can-must"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "grammar"]
+cards:
+  - id: "te-0492"
+    target: "నేను తెలుగు మాట్లాడగలను."
+    reading: "nēnu telugu māṭlāḍagalanu."
+    ipa: "neːnu t̪eluɡu maːʈlaːɖaɡalanu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "తెలుగు", base: "తెలుగు", reading: "telugu" }
+      - { word: "మాట్లాడగలను", ref: "te-0644" }
+  - id: "te-0493"
+    target: "మీరు రేపు రాగలరా?"
+    reading: "mīru rēpu rāgalarā?"
+    ipa: "miːru reːpu raːɡalaraː"
+    pos: "phrase"
+    bases:
+      - { word: "రాగలరా", ref: "te-0623" }
+  - id: "te-0494"
+    target: "నేను రాలేను."
+    reading: "nēnu rālēnu."
+    ipa: "neːnu raːleːnu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "రాలేను", ref: "te-0623" }
+  - id: "te-0495"
+    target: "నాకు ఈత వచ్చు."
+    reading: "nāku īta vaccu."
+    ipa: "naːku iːt̪a ʋatʃtʃu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "ఈత", base: "ఈత", reading: "īta" }
+      - { word: "వచ్చు", ref: "te-0623" }
+  - ref: "te-0143"
+  - id: "te-0496"
+    target: "మీరు లోపలికి రావచ్చు."
+    reading: "mīru lōpaliki rāvaccu."
+    ipa: "miːru loːpaliki raːʋatʃtʃu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "లోపలికి", ref: "te-0800" }
+      - { word: "రావచ్చు", ref: "te-0623" }
+  - id: "te-0497"
+    target: "ఇక్కడ ఫోటోలు తీయకూడదు."
+    reading: "ikkaḍa fōṭōlu tīyakūḍadu."
+    ipa: "ikkaɖa foːʈoːlu t̪iːjakuːɖad̪u"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఫోటోలు", ref: "te-0895" }
+      - { word: "తీయకూడదు", ref: "te-0836" }
+  - ref: "te-0377"
+  - id: "te-0498"
+    target: "మీరు రేపు రావాలి."
+    reading: "mīru rēpu rāvāli."
+    ipa: "miːru reːpu raːʋaːli"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "రావాలి", ref: "te-0623" }
+  - id: "te-0499"
+    target: "నేను వెళ్ళనక్కర్లేదు."
+    reading: "nēnu veḷḷanakkarlēdu."
+    ipa: "neːnu ʋeɭɭanakkarleːd̪u"
+    alt_target: ["నేను వెళ్ళక్కర్లేదు."]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "వెళ్ళనక్కర్లేదు", ref: "te-0622" }

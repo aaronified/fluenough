@@ -12,6 +12,16 @@ const _fields = {
   'intro',
   'features',
 };
+// A core's fields (#498): the text is in each layer.
+const _coreFields = {'schema', 'kind', 'part', 'id', 'language', 'features'};
+const _coreFeatureFields = {
+  'id',
+  'term',
+  'reading',
+  'ipa',
+  'example',
+  'letters',
+};
 const _featureFields = {
   'id',
   'name',
@@ -26,7 +36,16 @@ const _featureFields = {
 /// The script guide in [text], a `<code>-script.yaml` (#30, ADR-0016).
 /// Throws [DeckParseException] for a file that is not one, or is malformed,
 /// so that the catalog reports it like a broken deck.
-ScriptGuide parseScriptGuide(String text, {required String source}) {
+ScriptGuide parseScriptGuide(String text, {required String source}) =>
+    _parse(text, source: source, core: false);
+
+/// The core of a split script guide (`part: "core"`, #498): its letters,
+/// with no text. Its name, intro and each feature's name and text are
+/// empty until a layer gives them ([mergeScriptGuide]).
+ScriptGuide parseScriptGuideCore(String text, {required String source}) =>
+    _parse(text, source: source, core: true);
+
+ScriptGuide _parse(String text, {required String source, required bool core}) {
   DeckParseException bad(String message, [YamlNode? at]) => DeckParseException(
     message,
     source: source,
@@ -43,8 +62,17 @@ ScriptGuide parseScriptGuide(String text, {required String source}) {
   if (root is! YamlMap || root['kind'] != 'script') {
     throw bad('a script guide is a mapping with "kind: script"', root);
   }
+  if (core != (root['part'] == 'core')) {
+    throw bad(
+      core
+          ? 'a script guide core has part: "core"'
+          : 'a script guide with part: "core" is read as a core',
+      root,
+    );
+  }
+  final fields = core ? _coreFields : _fields;
   for (final key in root.nodes.keys.cast<YamlNode>()) {
-    if (!_fields.contains(key.value)) {
+    if (!fields.contains(key.value)) {
       throw bad('unknown field "${key.value}" in a script guide', key);
     }
   }
@@ -64,8 +92,9 @@ ScriptGuide parseScriptGuide(String text, {required String source}) {
     return value;
   }
 
-  final name = required(root, 'name', 'a script guide');
-  final intro = required(root, 'intro', 'a script guide');
+  final name = core ? '' : required(root, 'name', 'a script guide');
+  final intro = core ? '' : required(root, 'intro', 'a script guide');
+  final featureFields = core ? _coreFeatureFields : _featureFields;
   final list = root.nodes['features'];
   if (list is! YamlList || list.isEmpty) {
     throw bad('features must be a non-empty list', list ?? root);
@@ -75,7 +104,7 @@ ScriptGuide parseScriptGuide(String text, {required String source}) {
   for (final node in list.nodes) {
     if (node is! YamlMap) throw bad('a feature is a mapping', node);
     for (final key in node.nodes.keys.cast<YamlNode>()) {
-      if (!_featureFields.contains(key.value)) {
+      if (!featureFields.contains(key.value)) {
         throw bad('unknown field "${key.value}" in a feature', key);
       }
     }
@@ -113,12 +142,12 @@ ScriptGuide parseScriptGuide(String text, {required String source}) {
     features.add(
       ScriptFeature(
         id: id,
-        name: required(node, 'name', 'feature "$id"'),
+        name: core ? '' : required(node, 'name', 'feature "$id"'),
         term: term as String?,
         reading: reading as String?,
         ipa: ipa as String?,
         example: required(node, 'example', 'feature "$id"'),
-        text: required(node, 'text', 'feature "$id"'),
+        text: core ? '' : required(node, 'text', 'feature "$id"'),
         letters: letters,
       ),
     );

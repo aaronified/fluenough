@@ -1,0 +1,21 @@
+schema: 1
+id: "bn-en-grammar-nouns"
+kind: "layer"
+core: "bn-grammar-nouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nouns: the, plural and case"
+description: "-টা (-ṭā) for 'the', -গুলো (-gulo) for the plural, and the endings for 'of' and 'in'."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar"]
+pattern:
+  name: "Noun forms"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "boi": "book"
+    "bari": "house"
+    "ghor": "room"
+    "dokan": "shop"
+    "gari": "car"
+    "shohor": "city"
+  notes: "Bengali has no 'the': -টা (-ṭā) after a noun does its work, and -গুলো (-gulo) makes it plural. A noun ending in a consonant takes -এর (-er) and -এ (-e) (ঘরের (ghôrer), ঘরে (ghôre)). One ending in a vowel sign takes -র (-rô) and -তে (-te) (বাড়ির (bāṛir), বাড়িতে (bāṛite)), or -য় (-yô) after আ (ā) (ঢাকায় (ḍhākāy)). When a word ends in a full vowel letter, as বই (boi), ভাই (bhāi) and বউ (bou) do, 'of' is -য়ের (-yer) (বইয়ের (boiyer)) and 'in' is -য়ে (-ye) or -তে (-te) (বইয়ে (boiye), বইতে (boite)). People take -রা (-rā) for the plural: ছেলেরা (chelerā), the boys."

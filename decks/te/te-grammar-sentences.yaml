@@ -1,0 +1,103 @@
+schema: 1
+id: "te-grammar-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "te-0147"
+    target: "నేను విద్యార్థిని."
+    reading: "nēnu vidyārthini."
+    ipa: "neːnu ʋid̪jaːrt̪ʰini"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "విద్యార్థిని", ref: "te-0412" }
+  - id: "te-0148"
+    target: "ఇది నా ఇల్లు."
+    reading: "idi nā illu."
+    ipa: "id̪i naː illu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఇది", ref: "te-0600" }
+      - { word: "నా", ref: "te-0593" }
+  - id: "te-0149"
+    target: "నేను టీ తాగుతాను."
+    reading: "nēnu ṭī tāgutānu."
+    ipa: "neːnu ʈiː t̪aːɡut̪aːnu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "తాగుతాను", ref: "te-0625" }
+  - id: "te-0150"
+    target: "ఆమె తెలుగు నేర్చుకుంటోంది."
+    reading: "āme telugu nērcukuṇṭōndi."
+    ipa: "aːme t̪eluɡu neːrtʃukuɳʈoːnd̪i"
+    pos: "phrase"
+    bases:
+      - { word: "ఆమె", ref: "te-0596" }
+      - { word: "తెలుగు", base: "తెలుగు", reading: "telugu" }
+      - { word: "నేర్చుకుంటోంది", ref: "te-0645" }
+  - id: "te-0151"
+    target: "నాకు తెలుగు ఇష్టం."
+    reading: "nāku telugu iṣṭam."
+    ipa: "naːku t̪eluɡu iʂʈam"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "తెలుగు", base: "తెలుగు", reading: "telugu" }
+  - id: "te-0152"
+    target: "నాకు ఒక కారు ఉంది."
+    reading: "nāku oka kāru undi."
+    ipa: "naːku oka kaːru und̪i"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "ఒక", ref: "te-1034" }
+      - { word: "కారు", ref: "te-0879" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0153"
+    target: "నా దగ్గర డబ్బులు లేవు."
+    reading: "nā daggara ḍabbulu lēvu."
+    ipa: "naː d̪aɡɡara ɖabbulu leːʋu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నా", ref: "te-0593" }
+      - { word: "లేవు", ref: "te-0159" }
+  - id: "te-0154"
+    target: "ఇది బాగా లేదు."
+    reading: "idi bāgā lēdu."
+    ipa: "id̪i baːɡaː leːd̪u"
+    pos: "phrase"
+    bases:
+      - { word: "ఇది", ref: "te-0600" }
+      - { word: "బాగా", base: "బాగు", reading: "bāgu" }
+  - id: "te-0155"
+    target: "వెళ్ళకండి."
+    reading: "veḷḷakaṇḍi."
+    ipa: "ʋeɭɭakaɳɖi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0156"
+    target: "ఈరోజు చాలా వేడిగా ఉంది."
+    reading: "īrōju cālā vēḍigā undi."
+    ipa: "iːroːdʒu tʃaːlaː ʋeːɖiɡaː und̪i"
+    pos: "phrase"
+    bases:
+      - { word: "చాలా", ref: "te-1026" }
+      - { word: "వేడిగా", ref: "te-0505" }
+      - { word: "ఉంది", ref: "te-0633" }
