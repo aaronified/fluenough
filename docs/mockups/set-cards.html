@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Set Cards in a Lesson</title>
-<meta name="description" content="A set card in a lesson (#515): the whole closed group shown once before its members, the known ones marked, then only the new members drilled; Hindi and Bengali, at 1x and 1.4x. Revised 2026-10-16, awaiting approval: Telugu verb forms both ways, split cards and a Full list button.">
+<meta name="description" content="A set card in a lesson (#515): the whole closed group shown once before its members, the known ones marked, then only the new members drilled; Hindi and Bengali, at 1x and 1.4x. Approved 2026-10-16: Telugu verb forms both ways, split cards and a Full list button.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&display=swap">
@@ -155,8 +155,10 @@ code{font-size:13px}
 .split .m .ibtn,.sheet .m .ibtn{order:2;height:32px}
 .split .m .mn,.sheet .m .mn{order:3;flex-basis:100%;flex-direction:row;flex-wrap:wrap;align-items:center;column-gap:10px;row-gap:4px}
 /* the answered question: the chosen tile, the others quiet; the meaning under the word */
-/* a hero word wider than the card breaks between letters, as Flutter's Text does (తాగుతుంది (tāgutundi) at 1.4x) */
-.dcard[data-answered] .hero{overflow-wrap:anywhere;max-width:100%}
+/* a hero word wider than the card breaks between syllables (owner, 2026-10-16: "Break between syllables"):
+   a break opportunity between aksharas, none inside one (తాగుతుంది (tāgutundi) at 1.4x) */
+.hero{max-width:100%}
+.hero .ak{white-space:nowrap}
 .opt1.right{background:var(--pc);box-shadow:none}
 .opt1.right .mi,.opt1.right .bL{color:var(--onPc)}
 .opt1.quiet{box-shadow:inset 0 0 0 1px var(--olv)}
@@ -179,7 +181,7 @@ code{font-size:13px}
 <body>
 <div class="wrap">
 <h1>Set cards in a lesson (#515)</h1>
-<p><span class="rev">Revised 2026-10-16, awaiting approval</span> Sections 1 to 4 are as approved on 2026-10-13. New: verb forms both ways (section 5), the Full list button and its sheet (section 6), and decisions 9 to 14.</p>
+<p><span class="rev">Approved 2026-10-16</span> Sections 1 to 4 were approved on 2026-10-13. Verb forms both ways (section 5), the Full list button and its sheet (section 6), and decisions 9 to 14 were approved on 2026-10-16 (owner, #515: sections 5 and 6, “Approve”).</p>
 <p class="lede">A set card shows a closed group together, such as the three words for “you”, before its words are drilled one by one. It is <b>taught only</b>: shown once, in its lesson, before its members, never scheduled, asked or logged. It shows <b>the whole set</b>, the members the learner knows marked <b>Known</b>; the lesson then drills <b>only the new members</b> (owner, 2026-10-13, #506; <code>docs/DECK-FORMAT.md</code>, Set cards). Everything else on these screens is today's drill: the frame, the wave, the pill, the New card and the question. Decisions this mockup makes are marked <span class="prop">Proposed</span> and listed at the end.</p>
 
 <div class="controls" role="group" aria-label="Theme">
@@ -221,18 +223,18 @@ code{font-size:13px}
 </section>
 
 <section class="opt new-sec" id="s5">
-<span class="rev">Revised 2026-10-16, awaiting approval</span>
+<span class="rev">Approved 2026-10-16</span>
 <h2>5 · Verb forms, both ways, back to back (Telugu)</h2>
-<p>Owner, 2026-10-16 (#515): “Verb forms need set cards too.” and “Both ways are needed. Keep them back to back. However, do not have more than 3-4 things in one card. Divide them out in two, and let the user see the full list via a button on these (also present when practicing/reviewing after they answer)”. So one verb across the persons, తాగు (tāgu), drink, comes first, and straight after it one person across the verbs taught, అతను (atanu), he. The learner already knows the forms for I, we, you and they, and four verbs with అతను (atanu); the new forms are తాగుతాడు (tāgutāḍu), తాగుతుంది (tāgutundi) and చూస్తాడు (cūstāḍu). <span class="prop">Proposed</span> A set of more than four is divided evenly in two (eight forms as 4 and 4, six verbs as 3 and 3); each part is labelled “The set · 1 of 2” and is its own card of the lesson; the explanation repeats on each part; a part whose forms are all known is still shown, since the set is shown whole. Each part has a <b>Full list</b> button at its foot. The new forms are then taught and asked once each, even తాగుతాడు (tāgutāḍu), which is in both sets.</p>
+<p>Owner, 2026-10-16 (#515): “Verb forms need set cards too.” and “Both ways are needed. Keep them back to back. However, do not have more than 3-4 things in one card. Divide them out in two, and let the user see the full list via a button on these (also present when practicing/reviewing after they answer)”. So one verb across the persons, తాగు (tāgu), drink, comes first, and straight after it one person across the verbs taught, అతను (atanu), he. The members come in grammar order with the polite request in, last (“Grammar order, request in”), so the verb set has nine forms. Two parts would hold five, more than the owner's 3–4 a card, so the nine are divided in three parts of 3, each labelled “The set · 1 of 3”; the six verbs of the person set make two parts of 3. Each part is its own card of the lesson and repeats the explanation; a part whose forms are all known, as the first here, is “Still shown”. Each part has a <b>Full list</b> button in its header row, beside its label. The learner already knows the forms for I, we, you and they, and four verbs with అతను (atanu); the new forms are తాగుతాడు (tāgutāḍu), తాగుతుంది (tāgutundi), తాగండి (tāgaṇḍi) and చూస్తాడు (cūstāḍu). “Both sets, then drills”: each new form then goes “Straight to question”, with no New card, since the set card taught it, and is asked once, even తాగుతాడు (tāgutāḍu), which is in both sets. All four are asked in this lesson, more than the 3 cells a lesson asks (#414): “The cap is for per card, not set. Set can have whatever. And it will be taught together.” The cap applies only outside sets.</p>
 <ol class="seq" id="seq-te"></ol>
 <div class="frames" id="fr-te-verb"></div>
 <div class="frames" id="fr-te-person" style="margin-top:28px"></div>
 </section>
 
 <section class="opt new-sec" id="s6">
-<span class="rev">Revised 2026-10-16, awaiting approval</span>
+<span class="rev">Approved 2026-10-16</span>
 <h2>6 · The Full list, on a set card and after an answer</h2>
-<p><span class="prop">Proposed</span> <b>Full list</b> opens a bottom sheet with the whole set in the deck's order, each form marked New or Known as on the card, each row playing its form; the sheet closes with its close button, a swipe down or Back, and the lesson goes on where it was. On a question about a member of the set, in a lesson, in practice or in a review, the same button appears in the card only <b>once the learner has answered</b>, so it never gives the answer away. The Hindi and Bengali sets above fit on one card, so they have no button.</p>
+<p><b>Full list</b> opens a bottom sheet with the whole set in the deck's order, each form marked New or Known as on the card, each row playing its form; the sheet closes with its close button, a swipe down or Back, and the lesson goes on where it was. Only a split set has the button (owner, 2026-10-16: “Split sets only”), so the Hindi and Bengali sets above, which fit on one card, have none. On a question about a member of a split set, in a lesson, in practice or in a review, the same button appears in the card only <b>once the learner has answered</b>, so it never gives the answer away; for a form in both sets the sheet lists both (“Show both”). A long form on a question card breaks between syllables (“Break between syllables”): only between aksharas, never inside one, as తాగుతుంది (tāgutundi) does at 1.4x.</p>
 <div class="frames" id="fr-full"></div>
 </section>
 
@@ -249,17 +251,16 @@ code{font-size:13px}
 <tr><th>6</th><td data-h="Decision"><span class="prop">Proposed</span> Each new member then has its own New card and its first question, as today. The alternative is to skip its New card, since the set card showed it.</td><td data-h="Why">The New card holds what the set card leaves out: the note, the big speaker and the example.</td></tr>
 <tr><th>7</th><td data-h="Decision"><span class="prop">Proposed</span> At 1.4x text each row puts the word, its reading and the speaker on one line and the meaning and mark under them; the card scrolls, Continue stays in the foot.</td><td data-h="Why">A meaning such as “you (respectful)” keeps the row's width instead of wrapping word by word.</td></tr>
 <tr><th>8</th><td data-h="Decision">If every member is known, the lesson has no reason to show the set: <span class="prop">Proposed</span> it is not shown.</td><td data-h="Why">It is taught only, and there is nothing new to teach.</td></tr>
-<tr class="revrow"><th>9</th><td data-h="Decision"><span class="rev" style="margin:0 6px 0 0">Revised 2026-10-16, awaiting approval</span>Owner, 2026-10-16 (#515): “Verb forms need set cards too.”</td><td data-h="Why">The owner's.</td></tr>
-<tr class="revrow"><th>10</th><td data-h="Decision">Owner, 2026-10-16 (#515): “Both ways are needed. Keep them back to back. However, do not have more than 3-4 things in one card. Divide them out in two, and let the user see the full list via a button on these (also present when practicing/reviewing after they answer)”. One verb across the persons, then one person across the verbs; at most four members on a card; a Full list button on the parts, and on a question once answered.</td><td data-h="Why">The owner's.</td></tr>
-<tr class="revrow"><th>11</th><td data-h="Decision"><span class="prop">Proposed</span> A set of five to eight is divided evenly in two, in the deck's order (8 as 4 + 4, 6 as 3 + 3); each part is labelled “The set · 1 of 2”, counts as its own card of the lesson, and repeats the set's explanation; a part whose members are all known is still shown.</td><td data-h="Why">Two even halves keep each card to the owner's 3–4; showing every part keeps “the whole set” of decision 2.</td></tr>
-<tr class="revrow"><th>12</th><td data-h="Decision"><span class="prop">Proposed</span> Back to back: the verb across the persons first, then the person across the verbs, then each new form taught and asked once, in the order it first appears, even when it is in both sets. The polite request తాగండి (tāgaṇḍi) is not a person and is left out of the person set.</td><td data-h="Why">One verb shows the endings; one person then shows the same ending on every verb.</td></tr>
-<tr class="revrow"><th>13</th><td data-h="Decision"><span class="prop">Proposed</span> The button is a tonal “Full list” button at the foot of each part (48 dp, a list icon). It opens a modal bottom sheet: the set's name, how many forms and how many are new, every member as a row like the card's, and a close button. A set that fits on one card has no button.</td><td data-h="Why">The parts each show only half; the sheet shows the whole without leaving the lesson.</td></tr>
-<tr class="revrow"><th>14</th><td data-h="Decision"><span class="prop">Proposed</span> On a question about a set's member, in a lesson, practice or review, the same button appears in the card under the answer, only once answered. A form in two sets, such as తాగుతాడు (tāgutāḍu), lists both sets in the sheet, one after the other.</td><td data-h="Why">Before the answer the list would give the answer away.</td></tr>
+<tr class="revrow"><th>9</th><td data-h="Decision"><span class="rev" style="margin:0 6px 0 0">Approved 2026-10-16</span>Owner, 2026-10-16 (#515): “Verb forms need set cards too.” In the deck format, “Rule + axis”: a verb set names its rule and the fixed value, for example <code>{ rule: te-verb-present, verb: "<span lang="te">తాగు</span>" }</code> or <code>{ rule: …, person: "<span lang="te">అతను</span>" }</code>, and its members come from the rule's table.</td><td data-h="Why">The owner's.</td></tr>
+<tr class="revrow"><th>10</th><td data-h="Decision">Owner, 2026-10-16 (#515): “Both ways are needed. Keep them back to back. However, do not have more than 3-4 things in one card. Divide them out in two, and let the user see the full list via a button on these (also present when practicing/reviewing after they answer)”. One verb across the persons, then one person across the verbs; at most four members on a card; a Full list button on the parts, and on a question once answered. Sections 5 and 6: “Approve”.</td><td data-h="Why">The owner's.</td></tr>
+<tr class="revrow"><th>11</th><td data-h="Decision">Owner, 2026-10-16 (#515): at most 3–4 members on a card. A set too big for one card is divided into the fewest even parts of at most four, in the set's order: the nine forms of <span lang="te">తాగు</span> (tāgu) as three parts of 3, since two parts would hold five; the six verbs as 3 and 3. Each part is labelled “The set · 1 of 3”, counts as its own card of the lesson, and repeats the set's explanation. A part whose members are all known: “Still shown”.</td><td data-h="Why">The owner's. Every card keeps to 3–4, and the set is shown whole (decision 2).</td></tr>
+<tr class="revrow"><th>12</th><td data-h="Decision">Owner, 2026-10-16 (#515): “Both sets, then drills”: the verb across the persons first, then the person across the verbs, then the new forms. Member order: “Grammar order, request in”; the polite request <span lang="te">తాగండి</span> (tāgaṇḍi) is a member, last. A new verb form goes “Straight to question”: no New card of its own, since the set card taught it; new words keep decision 6. Each new form is asked once, in the order it first appears, even when it is in both sets. “The cap is for per card, not set. Set can have whatever. And it will be taught together.”: every new member of a set is asked in that lesson, and the #414 cap of 3 cells a lesson applies only outside sets (“Yes, outside sets”).</td><td data-h="Why">The owner's. One verb shows the endings; one person then shows the same ending on every verb.</td></tr>
+<tr class="revrow"><th>13</th><td data-h="Decision">Owner, 2026-10-16 (#515): “Split sets only”. The button is a tonal “Full list” button in each part's header row, at the end of the row that holds the part's label (48 dp, a list icon). It opens a modal bottom sheet: the set's name, how many forms and how many are new, every member as a row like the card's, and a close button. A set that fits on one card has no button.</td><td data-h="Why">The owner's. The parts each show only a third or a half; the sheet shows the whole without leaving the lesson.</td></tr>
+<tr class="revrow"><th>14</th><td data-h="Decision">Owner, 2026-10-16 (#515): on a question about a member of a split set, in a lesson, practice or review, the same button appears in the card under the answer, only once answered. A form in both sets, such as <span lang="te">తాగుతాడు</span> (tāgutāḍu): “Show both”, the sheet lists both sets, one after the other. A long form on the question card: “Break between syllables”; a line breaks only between aksharas, never inside one.</td><td data-h="Why">The owner's. Before the answer the list would give the answer away; a break inside an akshara would tear the syllable apart.</td></tr>
 </tbody></table>
 <ul>
-<li>Still open in <code>docs/DECK-FORMAT.md</code>, not drawn: how a card is placed in a closed group, whether the validator's warning becomes an error, and whether the learner can open a set card again from a card list or the course map.</li>
+<li>Still open in <code>docs/DECK-FORMAT.md</code>, not drawn: how a card that is not a verb form is placed in a closed group (a verb set names its rule and axis, decision 9), whether the validator's warning becomes an error, and whether the learner can open a set card again from a card list or the course map.</li>
 <li>Readings are based on ISO 15919. The words and meanings are the decks' (<code>decks/hi/en/hi-en-first-words.yaml</code>, <code>decks/bn/en/bn-en-pronouns.yaml</code>, and the Telugu forms from <code>decks/te/te-grammar-verb-present.yaml</code> with its English layer); the set explanations are examples of a layer's text.</li>
-<li>Still open, not drawn (revision of 2026-10-16): how a set card names verb forms, which are cells of a rule's table and not cards with ids; whether a new form gets its own New card or goes straight to its grammar question, as a rule's cells do; how a set with more new forms than the 3 cells a lesson asks (#414) is shown; whether a one-card set also gets the button.</li>
 </ul>
 </section>
 </div>
@@ -308,7 +309,8 @@ const TE={lang:'te',deck:'Verbs: I, you, he, she, we, they',total:12,sets:[
   {k:'tagu-miru',w:'తాగుతారు',r:'tāgutāru',m:'you drink (respectful)',known:true},
   {k:'tagu-atanu',w:'తాగుతాడు',r:'tāgutāḍu',m:'he drinks',known:false},
   {k:'tagu-ame',w:'తాగుతుంది',r:'tāgutundi',m:'she, it drinks',known:false},
-  {k:'tagu-vallu',w:'తాగుతారు',r:'tāgutāru',m:'they drink',known:true}]},
+  {k:'tagu-vallu',w:'తాగుతారు',r:'tāgutāru',m:'they drink',known:true},
+  {k:'tagu-please',w:'తాగండి',r:'tāgaṇḍi',m:'please drink',known:false}]},
  {id:'person',name:'అతను (atanu), he: every verb',exp:'One person, అతను (atanu), he, with each verb you know: every form ends in -ాడు (-āḍu).',members:[
   {k:'ceyu-atanu',w:'చేస్తాడు',r:'cēstāḍu',m:'he does',known:true},
   {k:'vellu-atanu',w:'వెళ్తాడు',r:'veḷtāḍu',m:'he goes',known:true},
@@ -317,14 +319,19 @@ const TE={lang:'te',deck:'Verbs: I, you, he, she, we, they',total:12,sets:[
   {k:'tagu-atanu',w:'తాగుతాడు',r:'tāgutāḍu',m:'he drinks',known:false},
   {k:'cudu-atanu',w:'చూస్తాడు',r:'cūstāḍu',m:'he sees',known:false}]}]};
 const MAXPER=4;
-/* A set of more than MAXPER members is divided evenly in two (Proposed), in the deck's order. */
-function partsOf(set){const n=set.members.length;if(n<=MAXPER)return [set.members];const h=Math.ceil(n/2);return [set.members.slice(0,h),set.members.slice(h)]}
-/* The Telugu lesson: every part of the verb set, then every part of the person set, then each new form taught and asked once. */
+/* A set of more than MAXPER members is divided into the fewest even parts of at most MAXPER, in its order (owner, 2026-10-16:
+   at most 3-4 a card): 9 as 3 + 3 + 3, since two parts would hold 5; 6 as 3 + 3. */
+function partsOf(set){const n=set.members.length,k=Math.ceil(n/MAXPER),out=[];let i=0;
+ for(let p=0;p<k;p++){const size=Math.floor(n/k)+(p<n%k?1:0);out.push(set.members.slice(i,i+size));i+=size}return out}
+/* The Telugu lesson: every part of the verb set, then every part of the person set, then each new form asked once,
+   straight to its question with no New card (owner, 2026-10-16: "Both sets, then drills", "Straight to question"). */
 function teLesson(){const seq=[];TE.sets.forEach(set=>partsOf(set).forEach((part,i,all)=>seq.push({k:'set',set,part,i,n:all.length})));
- const seen=new Set();TE.sets.forEach(set=>set.members.filter(m=>!m.known).forEach(m=>{if(seen.has(m.k))return;seen.add(m.k);seq.push({k:'teach',m},{k:'ask',m})}));
+ const seen=new Set();TE.sets.forEach(set=>set.members.filter(m=>!m.known).forEach(m=>{if(seen.has(m.k))return;seen.add(m.k);seq.push({k:'ask',m})}));
  while(seq.length<TE.total)seq.push({k:'rest'});return seq}
 const teNew=()=>{const seen=new Map();TE.sets.forEach(s=>s.members.forEach(m=>{if(!m.known&&!seen.has(m.k))seen.set(m.k,m)}));return [...seen.values()]};
 const setsWith=(k)=>TE.sets.filter(s=>s.members.some(m=>m.k===k));
+/* the Full list button only on a split set (owner, 2026-10-16: "Split sets only") */
+const splitWith=(k)=>setsWith(k).filter(s=>partsOf(s).length>1);
 
 /* ---------- drawing ---------- */
 const ic=(n,cls='')=>`<span class="mi ${cls}" aria-hidden="true">${n}</span>`;
@@ -339,6 +346,10 @@ function wave(value,pos,total){ // WavePainter: a primary sine to value, the sec
 const cookie=(size)=>{const n=9,R=size/2,amp=size*0.045;let d='';for(let i=0;i<=360;i+=3){const a=i*Math.PI/180,r=R-amp-amp*Math.cos(n*a);d+=`${i?'L':'M'}${(R+r*Math.cos(a)).toFixed(1)} ${(R+r*Math.sin(a)).toFixed(1)}`}
  const isz=Math.max(24,Math.round(size*0.32));
  return `<span class="cookie lf" data-tap role="button" aria-label="Play" style="width:${size}px;height:${size}px"><svg viewBox="0 0 ${size} ${size}"><path d="${d}Z"/></svg><span class="mi mo" aria-hidden="true" style="font-size:${isz}px;width:${isz}px;height:${isz}px">volume_up</span></span>`};
+/* aksharas: grapheme clusters, a virama joined to the consonant after it; a line may break only between them */
+function aksharas(w){const out=[];for(const {segment:g} of new Intl.Segmenter('te',{granularity:'grapheme'}).segment(w)){const prev=out[out.length-1];
+  if(prev&&/\u0C4D$/.test(prev)&&/^[\u0C15-\u0C39]/.test(g))out[out.length-1]+=g;else out.push(g)}return out}
+const heroText=(w)=>aksharas(w).map(a=>`<span class="ak">${a}</span>`).join('<wbr>');
 const heroSize=(w)=>{const g=[...new Intl.Segmenter().segment(w)].length;return g<=2?96:g<=5?64:48};
 const W=(L,w)=>`<span lang="${L.lang}">${w}</span>`;
 const wr=(L,m)=>`${W(L,m.w)} (${m.r})`;
@@ -399,7 +410,7 @@ function teNext(set,i,n){
  if(i<n-1){const rest=n===1?0:partsOf(set).slice(i+1).reduce((a,p)=>a+p.length,0);return `Next: the other ${rest} ${si===0?'forms of '+TW('తాగు')+' (tāgu)':'verbs'}.`}
  if(si<TE.sets.length-1)return `Next: ${TW('అతను')} (atanu), he, with each verb you know.`;
  const news=teNew().map(m=>`${TW(m.w)} (${m.r})`);
- return `Next: ${list(news)}, one at a time. You know the other forms already.`;
+ return `Next: a question on each new form, ${list(news)}. You know the other forms already.`;
 }
 function splitCard(set,i,n){
  const part=partsOf(set)[i];
@@ -424,10 +435,10 @@ const TEOPTS={'tagu-ame':['he drinks','she, it drinks','they drink','I drink']};
 function teAsk(m,answered){
  return `<div class="dcard" data-ask="${m.k}" data-answered="${answered}">
   <span class="lL v lf">What does it mean?</span>
-  <span class="hero lf" lang="te" style="--hs:${heroSize(m.w)}px">${m.w}</span>
+  <span class="hero lf" lang="te" style="--hs:${heroSize(m.w)}px" data-ak>${heroText(m.w)}</span>
   <span class="rd lf">${m.r}</span>
   ${cookie(64)}
-  ${answered?`<span class="mean lf">${m.m}</span>${setsWith(m.k).length?fullBtn(setsWith(m.k)[0]):''}`:''}</div>`;
+  ${answered?`<span class="mean lf">${m.m}</span>${splitWith(m.k).length?fullBtn(splitWith(m.k)[0]):''}`:''}</div>`;
 }
 const teOptions=(m,answered)=>`<div class="below" role="group" aria-label="Choices">${TEOPTS[m.k].map(o=>{const r=answered&&o===m.m;
  return `<span class="opt1 lf${answered?(r?' right':' quiet'):''}" data-tap role="button">${ic(r?'check_circle_outline':'radio_button_unchecked')}<span class="bL">${o}</span></span>`}).join('')}</div>`;
@@ -450,20 +461,22 @@ const FRAMES={
   ['3/9 · आप (āp), its first question · 1x',()=>frame(HI,posOf(HI,'ask','āp'),{screen:'ask',end:true,card:askCard(HI,memberOf(HI,'āp')),below:options(memberOf(HI,'āp'))})],
   ['5/9 · तू (tū), its first question · 1.4x',()=>frame(HI,posOf(HI,'ask','tū'),{screen:'ask',x14:true,card:askCard(HI,memberOf(HI,'tū')),below:options(memberOf(HI,'tū'))})]],
  'fr-te-verb':[
-  ['Telugu, the verb set, 1 of 2 · 1x',()=>frame(TE,teSetPos('verb',0),{screen:'set',card:splitCard(TE.sets[0],0,2),foot:cont()})],
-  ['Telugu, the verb set, 2 of 2 · 1x',()=>frame(TE,teSetPos('verb',1),{screen:'set',card:splitCard(TE.sets[0],1,2),foot:cont()})],
-  ['Telugu, the verb set, 2 of 2 · 1.4x, top',()=>frame(TE,teSetPos('verb',1),{screen:'set',x14:true,card:splitCard(TE.sets[0],1,2),foot:cont()})],
-  ['Telugu, the verb set, 2 of 2 · 1.4x, scrolled to its end',()=>frame(TE,teSetPos('verb',1),{screen:'set',x14:true,end:true,card:splitCard(TE.sets[0],1,2),foot:cont()})]],
+  ['Telugu, the verb set, 1 of 3, all known: still shown · 1x',()=>frame(TE,teSetPos('verb',0),{screen:'set',card:splitCard(TE.sets[0],0,3),foot:cont()})],
+  ['Telugu, the verb set, 2 of 3 · 1x',()=>frame(TE,teSetPos('verb',1),{screen:'set',card:splitCard(TE.sets[0],1,3),foot:cont()})],
+  ['Telugu, the verb set, 3 of 3, the request last · 1x',()=>frame(TE,teSetPos('verb',2),{screen:'set',card:splitCard(TE.sets[0],2,3),foot:cont()})],
+  ['Telugu, the verb set, 3 of 3 · 1.4x, top',()=>frame(TE,teSetPos('verb',2),{screen:'set',x14:true,card:splitCard(TE.sets[0],2,3),foot:cont()})],
+  ['Telugu, the verb set, 3 of 3 · 1.4x, scrolled to its end',()=>frame(TE,teSetPos('verb',2),{screen:'set',x14:true,end:true,card:splitCard(TE.sets[0],2,3),foot:cont()})]],
  'fr-te-person':[
   ['Telugu, the person set, 1 of 2 · 1x',()=>frame(TE,teSetPos('person',0),{screen:'set',card:splitCard(TE.sets[1],0,2),foot:cont()})],
   ['Telugu, the person set, 2 of 2 · 1x',()=>frame(TE,teSetPos('person',1),{screen:'set',card:splitCard(TE.sets[1],1,2),foot:cont()})],
   ['Telugu, the person set, 2 of 2 · 1.4x, scrolled to its end',()=>frame(TE,teSetPos('person',1),{screen:'set',x14:true,end:true,card:splitCard(TE.sets[1],1,2),foot:cont()})]],
  'fr-full':[
-  ['Full list, opened from the verb set · 1x',()=>withSheet(frame(TE,teSetPos('verb',0),{screen:'set',card:splitCard(TE.sets[0],0,2),foot:cont()}),[TE.sets[0]],92)],
-  ['Full list, opened from the verb set · 1.4x',()=>withSheet(frame(TE,teSetPos('verb',0),{screen:'set',x14:true,card:splitCard(TE.sets[0],0,2),foot:cont()}),[TE.sets[0]],92)],
-  [`${tePos('ask','tagu-ame')}/12 · తాగుతుంది (tāgutundi), before the answer: no button · 1x`,()=>frame(TE,tePos('ask','tagu-ame'),{screen:'ask',card:teAsk(teMem('tagu-ame'),false),below:teOptions(teMem('tagu-ame'),false)})],
+  ['Full list, opened from the verb set · 1x',()=>withSheet(frame(TE,teSetPos('verb',0),{screen:'set',card:splitCard(TE.sets[0],0,3),foot:cont()}),[TE.sets[0]],92)],
+  ['Full list, opened from the verb set · 1.4x',()=>withSheet(frame(TE,teSetPos('verb',0),{screen:'set',x14:true,card:splitCard(TE.sets[0],0,3),foot:cont()}),[TE.sets[0]],92)],
+  [`${tePos('ask','tagu-ame')}/12 · తాగుతుంది (tāgutundi), straight to its question, before the answer: no button · 1x`,()=>frame(TE,tePos('ask','tagu-ame'),{screen:'ask',card:teAsk(teMem('tagu-ame'),false),below:teOptions(teMem('tagu-ame'),false)})],
+  [`${tePos('ask','tagu-ame')}/12 · before the answer · 1.4x: the form breaks between syllables`,()=>frame(TE,tePos('ask','tagu-ame'),{screen:'ask',x14:true,card:teAsk(teMem('tagu-ame'),false),below:teOptions(teMem('tagu-ame'),false)})],
   [`${tePos('ask','tagu-ame')}/12 · answered: Full list in the card · 1x`,()=>frame(TE,tePos('ask','tagu-ame'),{screen:'answered',card:teAsk(teMem('tagu-ame'),true),below:teOptions(teMem('tagu-ame'),true),foot:fbOk()+cont()})],
-  ['Review, 4/20 · answered · 1.4x, scrolled to the button',()=>frame({...TE,total:20},4,{screen:'answered',x14:true,end:true,card:teAsk(teMem('tagu-ame'),true),below:teOptions(teMem('tagu-ame'),true),foot:fbOk()+cont()})],
+   ['Review, 4/20 · answered · 1.4x, scrolled to the button',()=>frame({...TE,total:20},4,{screen:'answered',x14:true,end:true,card:teAsk(teMem('tagu-ame'),true),below:teOptions(teMem('tagu-ame'),true),foot:fbOk()+cont()})],
   ['Review, 4/20 · Full list, opened after the answer · 1x',()=>withSheet(frame({...TE,total:20},4,{screen:'answered',card:teAsk(teMem('tagu-ame'),true),below:teOptions(teMem('tagu-ame'),true),foot:fbOk()+cont()}),[TE.sets[0]],92)]],
  'fr-bn':[
   ['Bengali set card · 1x',()=>frame(BN,1,{screen:'set',card:setCard(BN),foot:cont()})],
@@ -479,7 +492,6 @@ function seqHtml(L){const items=lessonOf(L).map((s,i)=>{const n=i+1;
  return items.join('')+known.join('')}
 function seqTe(){return teLesson().map((s,i)=>{const n=i+1;
   if(s.k==='set')return `<li>${n} · The set, ${s.set.id==='verb'?'one verb':'one person'}, ${s.i+1} of ${s.n}: ${s.part.map(m=>TW(m.w)).join(', ')}</li>`;
-  if(s.k==='teach')return `<li>${n} · New: ${TW(s.m.w)} (${s.m.r})</li>`;
   if(s.k==='ask')return `<li>${n} · Question: ${TW(s.m.w)} (${s.m.r})</li>`;
   return `<li>${n} · the lesson's other cards</li>`}).join('')}
 function render(){
@@ -575,7 +587,22 @@ function structureProblems(){
     if(parseInt(ph.querySelector('.pos').textContent)!==teSetPos(set.id,i))bad.push(`${tag}: at the wrong place in the lesson`)})})});
  // back to back: every part of the verb set, then every part of the person set, then the drills
  const kinds=seqT.map(s=>s.k==='set'?s.set.id:s.k).filter(k=>k!=='rest');
- if(kinds.slice(0,4).join()!=='verb,verb,person,person')bad.push('te: the two sets are not back to back at the start');
+  const nv=partsOf(TE.sets[0]).length,np=partsOf(TE.sets[1]).length;
+  if(kinds.slice(0,nv+np).join()!==[...Array(nv).fill('verb'),...Array(np).fill('person')].join())bad.push('te: the two sets are not back to back at the start');
+  if(seqT.slice(nv+np).some(s=>s.k==='set'))bad.push('te: a set part after the drills');
+  if(seqT.some(s=>s.k==='teach'))bad.push('te: a verb form has a New card');
+  if(nv!==3||partsOf(TE.sets[0]).some(p=>p.length!==3))bad.push('te: the nine forms of the verb set are not three parts of 3');
+  if(TE.sets[0].members[TE.sets[0].members.length-1].k!=='tagu-please')bad.push('te: the request is not last in the verb set');
+  if(!document.querySelector('[data-te-set="verb"][data-part="1/3"] .m')||document.querySelector('[data-te-set="verb"][data-part="1/3"] [data-known="false"]'))bad.push('te: the all-known part is not drawn');
+  document.querySelectorAll('[data-te-set] .phd').forEach(h=>{const ph=h.closest('.ph');if(h.querySelector('[data-full]')&&h.querySelector('[data-full]').getBoundingClientRect().top>h.querySelector('.lL').getBoundingClientRect().bottom+40)bad.push(`${tagOf(ph)}: the Full list button is not in the part's header row`)});
+  // a long form breaks only between aksharas: no akshara split over two lines; at 1.4x తాగుతుంది (tāgutundi) is drawn broken
+  let broken=0;document.querySelectorAll('.hero[data-ak]').forEach(h=>{const tag=tagOf(h.closest('.ph'));const aks=[...h.querySelectorAll('.ak')];
+   if(aks.map(a=>a.textContent).join('')!==h.textContent)bad.push(`${tag}: the hero is not whole aksharas`);
+   aks.forEach(a=>{if(a.getClientRects().length!==1)bad.push(`${tag}: the akshara ${a.textContent} breaks inside`)});
+   const tops=new Set(aks.map(a=>Math.round(a.getBoundingClientRect().top)));if(tops.size>1&&h.closest('.x14'))broken++});
+  if(!broken)bad.push('te: no long form drawn breaking between syllables at 1.4x');
+  // the button on a question only for a split set
+  document.querySelectorAll('[data-ask] [data-full]').forEach(b=>{if(partsOf(TE.sets.find(s=>s.id===b.dataset.full)).length<2)bad.push('te: a Full list button for a set on one card')});
  teNew().forEach(m=>{if(seqT.filter(s=>s.k==='ask'&&s.m.k===m.k).length!==1)bad.push(`te: new ${m.r} not asked exactly once`)});
  seqT.forEach(s=>{if(s.m&&s.m.known)bad.push(`te: known ${s.m.r} drilled`)});
  const lastNx=document.querySelector('[data-te-set="person"][data-part="2/2"] [data-next]')?.textContent||'';
@@ -647,7 +674,7 @@ function check(){
  const all=[...new Set([...S,...L1.bad,...C1.bad])];
  const el=document.getElementById('check');el.classList.toggle('bad',all.length>0);
  el.textContent=all.length?`Self-check: ${all.length} problem(s). ${all.slice(0,14).join('; ')}`
-  :`Self-check: 0 problems. ${L1.frames} frames at 360 × 800 dp. Revised 2026-10-16: the Telugu verb set and person set come back to back at the start of their lesson, each divided into parts of at most ${MAXPER} that hold the whole set in order, each part labelled and placed, with a Full list button; the sheet lists every member of its sets; a question shows the button only once answered; each new form is asked once. Plan: each set card shows every member in the deck's order, each marked New or Known in words, its row a 48 dp or larger target that plays the word; the line under it names the new members as next and the known ones as known; the set is card 1 of its lesson; only new members are taught and asked, after the set, at the positions the lesson gives them; the set card fits at 1x and is drawn at 1.4x (text measured at 1.4x). Layout: nothing sticks out or is cut, every content area at least 60% filled, the foot and Continue above the 3-button navigation bar, every target at least 48 × 48, no sideways scroll. Contrast: ${C1.checked} text, icon and outline pairs across 4 seeds × light, dark and pure black meet WCAG (text 4.5:1, icons and outlines 3:1).`;
+  :`Self-check: 0 problems. ${L1.frames} frames at 360 × 800 dp. Approved 2026-10-16: the Telugu verb set (nine forms, the request last, in three parts of 3) and person set come back to back at the start of their lesson, then the drills, each set divided into the fewest even parts of at most ${MAXPER} that hold the whole set in order, each part labelled and placed, an all-known part still shown, with a Full list button in its header row; the sheet lists every member of its sets; a question shows the button only once answered and only for a split set; each new form goes straight to its question, asked once; a long form breaks only between aksharas, drawn broken at 1.4x. Plan: each set card shows every member in the deck's order, each marked New or Known in words, its row a 48 dp or larger target that plays the word; the line under it names the new members as next and the known ones as known; the set is card 1 of its lesson; only new members are taught and asked, after the set, at the positions the lesson gives them; the set card fits at 1x and is drawn at 1.4x (text measured at 1.4x). Layout: nothing sticks out or is cut, every content area at least 60% filled, the foot and Continue above the 3-button navigation bar, every target at least 48 × 48, no sideways scroll. Contrast: ${C1.checked} text, icon and outline pairs across 4 seeds × light, dark and pure black meet WCAG (text 4.5:1, icons and outlines 3:1).`;
  window.__check={problems:all,frames:L1.frames,pairs:C1.checked};
  applyTheme(state());
 }
