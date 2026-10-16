@@ -13,22 +13,21 @@ import 'wave_progress.dart';
 /// 1. A 64 px header: close button, the progress wave, "3/8", and the
 ///    bug icon (ADR-0021).
 /// 2. A scrolling body: the skill's pill and the deck's name, then the
-///    [card] — a 40 px-cornered `surfaceContainerHigh` panel at least 300 px
-///    tall that grows to fill the space — then [belowCard], where the answer
-///    field and keyboard hint go.
+///    [card] — a 40 px-cornered `surfaceContainerHigh` panel as tall as its
+///    content — then [belowCard], where the answer field and keyboard hint
+///    go. The body scrolls only when the header, card and foot do not fit the
+///    screen together (#482).
 /// 3. A fixed foot: [feedback] above [actions].
 ///
 /// Recognition, production and listening (B1) and grammar and minimal pairs
 /// (B4) each fill the slots; nothing here knows about a mode's rules.
 ///
 /// The card's content is centred and should be a list of widgets; the frame
-/// spaces them 12 apart. Do not put a `LayoutBuilder` in [card] or
-/// [belowCard]: the body measures their intrinsic height to let the card fill
-/// the screen.
+/// spaces them 12 apart.
 ///
 /// While the keyboard is open ([keyboardOpen]) the frame is compact, so that
 /// the card stays in view above the answer field: the card has less padding
-/// and no minimum height, and the gaps are smaller. A drill with a typed
+/// and the gaps are smaller. A drill with a typed
 /// answer does its part, building a smaller card and leaving out what can
 /// wait until the keyboard closes.
 class DrillFrame extends StatelessWidget {
@@ -138,59 +137,45 @@ class DrillFrame extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: CustomScrollView(
-                slivers: <Widget>[
-                  SliverPadding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
-                      16,
-                      4,
-                      16,
-                      16,
-                    ),
-                    sliver: SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: <Widget>[
-                          Row(
-                            children: <Widget>[
-                              // Flexible, so that a long skill name in a
-                              // large text scale wraps inside the pill
-                              // rather than pushing the row off the screen.
-                              Flexible(child: ModePill(skill: skill)),
-                              const SizedBox(width: 8),
-                              Expanded(
-                                child: Text(
-                                  deckName,
-                                  style: theme.textTheme.bodyMedium!.copyWith(
-                                    color: scheme.onSurfaceVariant,
-                                    fontSize: 13,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: gap),
-                          // Always this one widget, so that the card's own
-                          // widgets, such as a speaker that played as it
-                          // appeared, keep their state as needsSound changes.
-                          Expanded(
-                            child: _NeedsSound(
-                              card: card,
-                              active: needsSound,
-                              compact: compact,
+              child: SingleChildScrollView(
+                padding: const EdgeInsetsDirectional.fromSTEB(16, 4, 16, 16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        // Flexible, so that a long skill name in a
+                        // large text scale wraps inside the pill
+                        // rather than pushing the row off the screen.
+                        Flexible(child: ModePill(skill: skill)),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            deckName,
+                            style: theme.textTheme.bodyMedium!.copyWith(
+                              color: scheme.onSurfaceVariant,
+                              fontSize: 13,
                             ),
                           ),
-                          if (below != null)
-                            for (final widget in below) ...<Widget>[
-                              SizedBox(height: gap),
-                              widget,
-                            ],
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ),
-                ],
+                    SizedBox(height: gap),
+                    // Always this one widget, so that the card's own
+                    // widgets, such as a speaker that played as it
+                    // appeared, keep their state as needsSound changes.
+                    _NeedsSound(
+                      card: card,
+                      active: needsSound,
+                      compact: compact,
+                    ),
+                    if (below != null)
+                      for (final widget in below) ...<Widget>[
+                        SizedBox(height: gap),
+                        widget,
+                      ],
+                  ],
+                ),
               ),
             ),
             Padding(
@@ -219,9 +204,9 @@ class DrillFrame extends StatelessWidget {
   }
 }
 
-/// The drill's card: at least 300 tall, 40 px corners, `surfaceContainerHigh`,
+/// The drill's card: as tall as its content, 40 px corners, `surfaceContainerHigh`,
 /// its children centred and 12 apart; [compact], while the keyboard is open,
-/// as short as its children, with less padding and 8 apart. [DrillFrame]
+/// with less padding and 8 apart. [DrillFrame]
 /// puts one in; use it on its own only in a preview.
 class DrillCard extends StatelessWidget {
   const DrillCard({super.key, required this.children, this.compact = false});
@@ -230,34 +215,25 @@ class DrillCard extends StatelessWidget {
   final bool compact;
 
   @override
-  Widget build(BuildContext context) => ConstrainedBox(
-    constraints: BoxConstraints(minHeight: compact ? 0 : 300),
-    child: DecoratedBox(
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.surfaceContainerHigh,
-        borderRadius: BorderRadius.circular(
-          compact ? AppRadii.card : AppRadii.drillCard,
-        ),
+  Widget build(BuildContext context) => DecoratedBox(
+    decoration: BoxDecoration(
+      color: Theme.of(context).colorScheme.surfaceContainerHigh,
+      borderRadius: BorderRadius.circular(
+        compact ? AppRadii.card : AppRadii.drillCard,
       ),
-      child: Padding(
-        padding: compact
-            ? const EdgeInsetsDirectional.symmetric(
-                horizontal: 16,
-                vertical: 12,
-              )
-            : const EdgeInsetsDirectional.symmetric(
-                horizontal: 20,
-                vertical: 28,
-              ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            for (var i = 0; i < children.length; i++) ...<Widget>[
-              if (i > 0) SizedBox(height: compact ? 8 : 12),
-              children[i],
-            ],
+    ),
+    child: Padding(
+      padding: compact
+          ? const EdgeInsetsDirectional.symmetric(horizontal: 16, vertical: 12)
+          : const EdgeInsetsDirectional.symmetric(horizontal: 20, vertical: 28),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          for (var i = 0; i < children.length; i++) ...<Widget>[
+            if (i > 0) SizedBox(height: compact ? 8 : 12),
+            children[i],
           ],
-        ),
+        ],
       ),
     ),
   );
