@@ -48,13 +48,12 @@ is ambiguous and gets only an IPA all of them agree on. Then it fills
   Sentences stay text-to-speech. A licence that cannot ship in a CC BY-SA
   4.0 deck is skipped and reported.
 - with `--images`, `image` on a card that has a `picture` (a concrete word,
-  ADR-0034), by the owner's order (#523: "Commons photo, then OpenMoji,
-  then Noto"): the Wikidata image (P18) of the one item the card's sense
-  names, else the one picture in the language's section of its Wiktionary
-  page, both from Wikimedia Commons, else OpenMoji's drawing of its
-  `picture` (CC BY-SA 4.0). It is shrunk to 256 pixels and converted to
-  WebP with `ffmpeg` at `decks/<lang>/images/<card id>.webp`, with its
-  `image_credit`. With none, the card keeps its Noto picture.
+  ADR-0034), by the owner's order (#523, 2026-10-16: "Wiktionary only"):
+  the one picture in the language's section of its Wiktionary page, from
+  Wikimedia Commons with its licence and credit checked, else OpenMoji's
+  drawing of its `picture` (CC BY-SA 4.0). It is shrunk to 256 pixels and
+  converted to WebP with `ffmpeg` at `decks/<lang>/images/<card id>.webp`,
+  with its `image_credit`. With none, the card keeps its Noto picture.
 
 Every item it adds names its `source` (owner: "Per item"): the entry's
 Wiktionary page and nothing else (owner, 2026-10-16, #518: "Link only").
@@ -786,7 +785,6 @@ def fetch_recording(sound: dict, out: Path) -> dict:
 
 # --- Images ---------------------------------------------------------------------
 
-WIKIDATA_API = "https://www.wikidata.org/w/api.php"
 WIKTIONARY_API = "https://en.wiktionary.org/w/api.php"
 # OpenMoji's drawings, 618 pixels square, by their emoji's code points, and
 # the page that credits one. The version is pinned, so that a run can be
@@ -813,22 +811,6 @@ def api(url: str, params: dict[str, str]) -> dict:
     data = json.loads(http_get(url + "?" + urllib.parse.urlencode(
         {**params, "format": "json"})))
     return data if isinstance(data, dict) else {}
-
-
-def wikidata_image(entry: dict, t: Target) -> str | None:
-    """The Commons file of the Wikidata item that the entry's sense of the
-    card's meaning names (its image, P18), when that sense names exactly
-    one item."""
-    items = {q for s in Importer.card_senses(t, entry) for q in s.get("wikidata") or []
-             if isinstance(q, str) and re.fullmatch(r"Q\d+", q)}
-    if len(items) != 1:
-        return None
-    claims = (api(WIKIDATA_API, {"action": "wbgetclaims", "entity": items.pop(),
-                                 "property": "P18"}).get("claims") or {}).get("P18") or []
-    names = [((c.get("mainsnak") or {}).get("datavalue") or {}).get("value")
-             for c in claims]
-    names = [n for n in names if isinstance(n, str)]
-    return names[0] if len(names) == 1 else None
 
 
 def wiktionary_image(word: str, language: str) -> str | None:
@@ -892,22 +874,20 @@ def openmoji_image(emoji: str, out: Path) -> dict:
 
 def fetch_image(t: Target, entry: dict | None, language: str, out: Path
                 ) -> tuple[str, dict]:
-    """A card's image, by the owner's order (#523: "Commons photo, then
-    OpenMoji, then Noto"): the Wikidata image of its sense, else the one
-    picture of its Wiktionary page's section, else OpenMoji's drawing of its
-    `picture`. Returns where it came from and its credit; raises where none
-    can ship, and the card keeps its Noto picture."""
+    """A card's image, by the owner's order (#523, 2026-10-16: "Wiktionary
+    only"): the one picture of its Wiktionary page's section, else
+    OpenMoji's drawing of its `picture`. Returns where it came from and its
+    credit; raises where none can ship, and the card keeps its Noto
+    picture."""
     problems: list[str] = []
     if entry is not None:
-        for kind, find in (("wikidata", lambda: wikidata_image(entry, t)),
-                           ("wiktionary", lambda: wiktionary_image(t.target, language))):
-            try:
-                name = find()
-                if name:
-                    return kind, commons_image(name, out)
-            except (ImportError_, OSError, ValueError,
-                    subprocess.CalledProcessError) as e:
-                problems.append(str(e))
+        try:
+            name = wiktionary_image(t.target, language)
+            if name:
+                return "wiktionary", commons_image(name, out)
+        except (ImportError_, OSError, ValueError,
+                subprocess.CalledProcessError) as e:
+            problems.append(str(e))
     try:
         return "openmoji", openmoji_image(t.card["picture"], out)
     except (ImportError_, OSError, subprocess.CalledProcessError) as e:
