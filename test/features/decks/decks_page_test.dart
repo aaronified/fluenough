@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
-import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/features/decks/broken_deck_tile.dart';
 import 'package:fluenough/features/decks/course_card.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
@@ -357,8 +356,10 @@ void main() {
     await tester.tap(find.byTooltip(l10n.decksSearchClose));
     await tester.pumpAndSettle();
     expect(find.byType(TextField), findsOneWidget);
-    expect(tester.widget<TextField>(find.byType(TextField)).controller!.text,
-        isEmpty);
+    expect(
+      tester.widget<TextField>(find.byType(TextField)).controller!.text,
+      isEmpty,
+    );
     expect(find.text(l10n.pathUpNext), findsOneWidget);
   });
 
