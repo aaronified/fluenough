@@ -61,17 +61,20 @@ Proposed is listed in their decisions tables.
 - `deck-search.html`: the Decks tab's one search for decks, units and
   words, in place of the filter row (#527; owner, 2026-10-16: "I just want
   people to quickly find stuff. The filters can be replaced by a fts5
-  search with typo tolerance and the kind can be a chip."). It finds deck
-  and unit names and every card's word, reading and meaning, forgives
-  typos, and groups the results, decks and units first, then words. Each
-  result has a kind chip (Words, Grammar, Script, Reading) that narrows
-  the search to that kind ("Both"), with a chip and a ✕ to go back.
-  Sentence decks have no chip and show only while no kind is chosen. It
-  draws the owner's three cases with a typo each: "travl" (the coming
-  Travel unit), "numbrs" (the numbers units) and "you" and "yuo" (the
-  words for "you" in Hindi and Bengali, under their set cards), then
-  nothing found, nothing of a kind, and 1.4x. A note shows how FTS5 does
-  it (a trigram index, then edit distance). It replaces `deck-filter.html`.
+  search with typo tolerance and the kind can be a chip."). Revised for the
+  owner's later answers (2026-10-16): the close button is in the search
+  bar; with nothing typed the path shows under a scrim, results start with
+  the first letter, and deleting every letter leaves a blank area; Latin
+  letters search the transliteration and the English meanings, and the
+  course's script searches the words; a query in another script says "This
+  script is not part of this course." and offers each of the learner's
+  courses that uses it as its target or native script (Devanagari: Hindi
+  and Marathi), or says it is not part of any; every card, set card, deck
+  and unit is its own row ("Don't group by meaning"); and "travl" also
+  finds "Bus, auto, cab" through its theme's tag ("Yes, also transport").
+  Each result has a kind chip that narrows the search ("Both"). It uses
+  the #528 language bar, edge-masked where its row does not fit. Hindi and
+  Bengali, light and dark, 1.4x, and a note on how FTS5 does it.
 ## Older: to be adapted (owner, 2026-10-12)
 
 Bring these up to the current app and plans, in the style of
