@@ -23,7 +23,7 @@ Future<AppState> fixture({
   );
 }
 
-/// The first fixture leech: el pan, es-en-core-100, production, 5 lapses.
+/// The first fixture leech: la leche, es-en-core-100, production, 5 lapses.
 Finder firstCard() => find.byType(LeechCard).first;
 
 Finder inFirst(Finder f) => find.descendant(of: firstCard(), matching: f);
@@ -42,8 +42,8 @@ void main() {
 
     expect(find.text(l10n.leechesIntro(kLeechThreshold)), findsOneWidget);
     expect(find.byType(LeechCard), findsNWidgets(2));
-    expect(inFirst(find.text('el pan')), findsOneWidget);
-    expect(inFirst(find.text('the bread')), findsOneWidget);
+    expect(inFirst(find.text('la leche')), findsOneWidget);
+    expect(inFirst(find.text('the milk')), findsOneWidget);
     expect(
       inFirst(find.text(l10n.leechesMeta(deck, l10n.skillProduction))),
       findsOneWidget,

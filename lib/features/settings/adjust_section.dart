@@ -11,7 +11,7 @@ import '../../ui/widgets/mode_pill.dart';
 import 'settings_controls.dart';
 
 /// Settings' "Adjust to me": FSRS fitted to the learner, per skill and
-/// language (`docs/plans/skill-model.md`; mockup
+/// language (ADR-0035; mockup
 /// `docs/mockups/adapted-to-you.html`, Settings).
 ///
 /// The row's Adjust button fits every skill that can be fitted now, with a
@@ -100,7 +100,8 @@ class AdjustSection extends StatelessWidget {
                 GroupedTile.toggle(
                   leading: const Icon(Icons.autorenew),
                   title: l10n.settingsAdjustAuto,
-                  subtitle: l10n.settingsAdjustAutoDesc,
+                  subtitleOn: l10n.settingsAdjustAutoOn,
+                  subtitleOff: l10n.settingsAdjustAutoOff,
                   value: state.settings.autoAdjust,
                   onChanged: (on) => state.settings.autoAdjust = on,
                 ),

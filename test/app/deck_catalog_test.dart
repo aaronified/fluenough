@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/app/deck_catalog.dart';
+import 'package:fluenough/app/repository_decks.dart';
+import 'package:fluenough/core/decks/deck_index.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:yaml/yaml.dart';
 
@@ -29,7 +31,8 @@ facts:
     text: { en: "Spanish has two verbs for to be." }
 ''';
 
-/// Line 10 has an unquoted `no`, the bug rule 2 is about.
+/// Line 10 has an unquoted `true`, the bug rule 2 is about. (A bare `no`
+/// is text, as YAML 1.2 reads it.)
 const String brokenDeck = '''
 schema: 1
 id: xx-broken
@@ -39,8 +42,8 @@ native: { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 cards:
   - id: xx-broken-0001
-    target: の
-    native: no
+    target: ほんとう
+    native: true
 ''';
 
 void main() {
@@ -50,24 +53,17 @@ void main() {
     late Catalog catalog;
 
     setUpAll(() async {
-      catalog = await DeckCatalog.bundled().load();
+      catalog = await DeckCatalog(RepositoryDeckSource()).load();
     });
 
-    test('every bundled deck file is listed and parses', () {
-      // The directories pubspec.yaml bundles. A directory left out, as
-      // decks/ja/ is for now, stays in the repository but not in the app.
-      final pubspec = loadYaml(File('pubspec.yaml').readAsStringSync());
-      final bundled = <String>{
-        for (final asset in pubspec['flutter']['assets'] as YamlList) '$asset',
-      };
-      final onDisk = Directory('decks')
-          .listSync(recursive: true)
-          .whereType<File>()
-          .map((f) => f.path.replaceAll(r'\', '/'))
-          .where(AssetDeckSource.isDeckPath)
-          .where(
-            (p) => bundled.contains(p.substring(0, p.lastIndexOf('/') + 1)),
-          )
+    test('every deck file the index lists is read and parses', () {
+      // What a phone that downloaded every language has (#210): the files
+      // decks/index.json lists. A language left out of it, as decks/ja/ is
+      // for now, stays in the repository but not in the app.
+      final index = DeckIndex.parse(
+        File('decks/index.json').readAsStringSync(),
+      );
+      final onDisk = index.filesByPath.keys
           // Facts, themes, number rules, course paths, sounds and
           // romanisation files sit beside the decks but are not decks.
           .where(
@@ -84,7 +80,45 @@ void main() {
           .toSet();
       expect(onDisk, isNotEmpty);
       expect(catalog.broken, isEmpty, reason: '${catalog.broken}');
-      expect(catalog.decks.map((d) => d.path).toSet(), onDisk);
+
+      // Each is a deck the catalog lists by its path, single-file or a
+      // layer merged with its core, or a core (ADR-0036). A core is not
+      // listed itself: it is merged into each of its layers, the files in
+      // a folder below it whose `core` names it, and one of them at least
+      // is listed.
+      final listed = catalog.decks.map((d) => d.path).toSet();
+      String folderOf(String path) => path.substring(0, path.lastIndexOf('/'));
+      String stemOf(String path) =>
+          path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'));
+      final header = <String, YamlMap>{
+        for (final path in onDisk)
+          path: loadYaml(File(path).readAsStringSync()) as YamlMap,
+      };
+      final cores = {
+        for (final path in onDisk)
+          if (header[path]!['part'] == 'core') path,
+      };
+      expect(cores, isNotEmpty);
+      expect(listed, onDisk.difference(cores));
+      for (final core in cores) {
+        final layers = listed.where(
+          (path) =>
+              header[path]!['kind'] == 'layer' &&
+              header[path]!['core'] == stemOf(core) &&
+              folderOf(folderOf(path)) == folderOf(core),
+        );
+        expect(layers, isNotEmpty, reason: '$core is in no deck listed');
+        for (final layer in layers) {
+          final deck = catalog.decks.singleWhere((d) => d.path == layer).deck;
+          // Merged: the deck has the core's language and its layer's id.
+          expect(deck.id, header[layer]!['id'], reason: layer);
+          expect(
+            deck.language.code,
+            header[core]!['language']['code'],
+            reason: layer,
+          );
+        }
+      }
     });
 
     test('each language with number decks has its number rules (#54)', () {
@@ -131,8 +165,8 @@ void main() {
       }
     });
 
-    test('every course has a path, which lists all its decks and only '
-        'them, and its decks come in that order (#117)', () {
+    test('every course has a path, built from its language\'s, which lists '
+        'all its decks and only them, in that order (#117, ADR-0036)', () {
       final byCourse = <String, List<String>>{};
       for (final d in catalog.decks) {
         byCourse
@@ -144,7 +178,28 @@ void main() {
         expect(ids, catalog.paths[course]!.deckIds.toList(), reason: course);
       }
       final hindi = catalog.byId('hi-en-addressing')!;
-      expect(catalog.pathOf(hindi)!.id, 'hi-en-path');
+      expect(catalog.pathOf(hindi)!.id, 'hi-path');
+      expect(catalog.pathOf(hindi)!.native, 'en');
+      expect(
+        catalog.languagePaths['hi']!.plan.first.decks,
+        contains('hi-first-words'),
+      );
+      // The regions of the two languages being written now (DECK-FORMAT.md,
+      // Regions).
+      expect(catalog.languagePaths['te']!.regions.map((r) => r.id), [
+        'telangana',
+        'coastal-andhra',
+        'rayalaseema',
+      ]);
+      expect(catalog.languagePaths['bn']!.regions.map((r) => r.id), [
+        'rarhi',
+        'vangiya',
+        'varendri',
+        'kamrupi',
+        'manbhumi',
+        'south-eastern',
+      ]);
+      expect(catalog.languagePaths['hi']!.regions, isEmpty);
       expect(
         catalog.pathOf(hindi)!.units[catalog.pathOf(hindi)!.unitOf(hindi.id)!],
         contains('hi-en-grammar-pronouns'),
@@ -260,10 +315,33 @@ void main() {
       expect(AssetDeckSource.isDeckPath('fonts/x.yaml'), isFalse);
     });
 
-    test('the asset manifest lists the bundled decks', () async {
+    test('the app bundles the theme list and no deck (#210)', () {
+      final pubspec = loadYaml(File('pubspec.yaml').readAsStringSync());
+      final assets = <String>[
+        for (final asset in pubspec['flutter']['assets'] as YamlList) '$asset',
+      ];
+      expect(assets.where((a) => a.startsWith('decks/')), <String>[
+        'decks/themes.yaml',
+      ]);
+      expect(assets, contains('assets/languages.yaml'));
+    });
+
+    test('the bundled assets hold the theme list', () async {
       final paths = await AssetDeckSource(rootBundle).list();
-      expect(paths, contains('decks/es/es-en-core-100.yaml'));
-      expect(paths.every(AssetDeckSource.isDeckPath), isTrue);
+      expect(paths, <String>['decks/themes.yaml']);
+    });
+
+    test('several sources read as one, the first winning', () async {
+      final sources = DeckSources(<DeckSource>[
+        MemoryDeckSource(const <String, String>{'decks/a.yaml': 'first'}),
+        MemoryDeckSource(const <String, String>{
+          'decks/a.yaml': 'second',
+          'decks/b.yaml': 'b',
+        }),
+      ]);
+      expect(await sources.list(), <String>['decks/a.yaml', 'decks/b.yaml']);
+      expect(await sources.read('decks/a.yaml'), 'first');
+      expect(await sources.read('decks/b.yaml'), 'b');
     });
   });
 
@@ -277,14 +355,19 @@ themes:
   - { id: help, name: "Help" }
 ''';
 
-    String deck(String id, {String? theme, String lang = 'hi'}) =>
+    String deck(
+      String id, {
+      String? theme,
+      String lang = 'hi',
+      String native = 'en',
+    }) =>
         '''
 schema: 1
 id: $id
 name: "$id"
 ${theme == null ? '' : 'theme: $theme'}
 language: { code: $lang, iso639_3: hin, name: Hindi, script: devanagari }
-native: { code: en, iso639_3: eng, name: English }
+native: { code: $native, iso639_3: eng, name: English }
 license: CC0-1.0
 cards:
   - id: $id-0001
@@ -331,12 +414,11 @@ cards:
           theme: 'first-words',
         ),
         'decks/hi/hi-en-market.yaml': deck('hi-en-market', theme: 'market'),
-        'decks/hi/hi-en-path.yaml': '''
+        'decks/hi/hi-path.yaml': '''
 schema: 1
 kind: path
-id: hi-en-path
+id: hi-path
 language: hi
-native: en
 units:
 $units''',
         'decks/ja/ja-en-kana.yaml': deck('ja-en-kana', lang: 'ja'),
@@ -346,9 +428,9 @@ $units''',
           'themes', () {
         final catalog = DeckCatalog.parseAll(
           files(
-            '  - [hi-en-first-words, hi-en-core]\n'
-            '  - [hi-en-help]\n'
-            '  - [hi-en-market]\n',
+            '  - [hi-first-words, hi-core]\n'
+            '  - [hi-help]\n'
+            '  - [hi-market]\n',
           ),
         );
         expect(catalog.broken, isEmpty);
@@ -370,7 +452,7 @@ $units''',
       test('a deck the path leaves out comes after it, and a deck it names '
           'that does not exist is ignored', () {
         final catalog = DeckCatalog.parseAll(
-          files('  - [hi-en-market, hi-en-gone]\n  - [hi-en-help]\n'),
+          files('  - [hi-market, hi-gone]\n  - [hi-help]\n'),
         );
         expect(catalog.decks.map((d) => d.id), [
           'hi-en-market',
@@ -384,7 +466,7 @@ $units''',
       test('a broken path is reported, and the course falls back to its '
           'themes', () {
         final catalog = DeckCatalog.parseAll(files('  - []\n'));
-        expect(catalog.broken.single.path, 'decks/hi/hi-en-path.yaml');
+        expect(catalog.broken.single.path, 'decks/hi/hi-path.yaml');
         expect(catalog.paths, isEmpty);
         expect(catalog.decks.map((d) => d.id).take(4), [
           'hi-en-first-words',
@@ -392,6 +474,64 @@ $units''',
           'hi-en-help',
           'hi-en-core',
         ]);
+      });
+
+      test('each course reads the one path through its own decks, a unit '
+          'with none of them coming for it', () {
+        final catalog = DeckCatalog.parseAll(<String, String>{
+          ...files(
+            '  - [hi-first-words, hi-core]\n'
+            '  - [hi-help]\n'
+            '  - [hi-market, "*"]\n',
+          ),
+          'decks/hi/hi-bn-market.yaml': deck(
+            'hi-bn-market',
+            native: 'bn',
+            theme: 'market',
+          ),
+          'decks/hi/hi-bn-extra.yaml': deck(
+            'hi-bn-extra',
+            native: 'bn',
+            theme: 'market',
+          ),
+        });
+        expect(catalog.broken, isEmpty);
+        expect(catalog.paths.keys.toSet(), {'hi/en', 'hi/bn'});
+        final bengali = catalog.paths['hi/bn']!;
+        expect(bengali.units, [
+          ['hi-bn-market', 'hi-bn-extra'],
+        ]);
+        expect(bengali.plan.map((u) => u.isComing), [true, true, false]);
+        expect(bengali.coveredUnits, 1);
+        expect(bengali.writtenUnits, 3);
+        expect(catalog.paths['hi/en']!.coveredUnits, 3);
+      });
+
+      test('a path still in the per-course form, or a second path, is '
+          'broken', () {
+        final perCourse = DeckCatalog.parseAll(<String, String>{
+          ...files('  - [hi-market]\n')..remove('decks/hi/hi-path.yaml'),
+          'decks/hi/hi-en-path.yaml':
+              'schema: 1\nkind: path\nid: hi-en-path\nlanguage: hi\n'
+              'native: en\nunits:\n  - [hi-en-market]\n',
+        });
+        expect(perCourse.broken.single.path, 'decks/hi/hi-en-path.yaml');
+        expect(
+          perCourse.broken.single.error.message,
+          contains('a path is one per language learnt'),
+        );
+        expect(perCourse.paths, isEmpty);
+        final twice = DeckCatalog.parseAll(<String, String>{
+          ...files('  - [hi-market]\n'),
+          'decks/hi/zz/hi-path.yaml':
+              'schema: 1\nkind: path\nid: hi-path\nlanguage: hi\n'
+              'units:\n  - [hi-help]\n',
+        });
+        expect(twice.broken.single.path, 'decks/hi/zz/hi-path.yaml');
+        expect(
+          twice.broken.single.error.message,
+          contains('hi already has a path'),
+        );
       });
     });
 

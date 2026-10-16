@@ -15,6 +15,7 @@ import '../core/models/romanisation.dart';
 import '../core/models/sound_contrasts.dart';
 import '../core/data/number_rules_parser.dart';
 import '../core/data/pattern_expander.dart';
+import '../core/data/rule_expander.dart';
 import '../core/data/themes.dart';
 import '../core/models/fact.dart';
 import '../core/models/card.dart';
@@ -24,9 +25,10 @@ import 'added_decks.dart';
 
 /// Where deck files come from: their paths, and each one's text.
 ///
-/// [AssetDeckSource] reads the decks bundled with the app. Deck downloads
-/// (`docs/plans/decks-from-github.md`) replace the catalog's source with the
-/// decks downloaded from the repository; nothing above it changes.
+/// [AssetDeckSource] reads what is bundled with the app, which is now only
+/// `decks/themes.yaml`; the decks themselves are downloaded from the
+/// repository (#210, ADR-0037) and read from `DownloadedDecks`, under the
+/// same paths. [DeckSources] reads both as one; nothing above it changes.
 abstract interface class DeckSource {
   /// Every deck file's path, sorted.
   Future<List<String>> list();
@@ -65,6 +67,34 @@ class AssetDeckSource implements DeckSource {
       (path.endsWith('.yaml') || path.endsWith('.yml'));
 }
 
+/// Several sources read as one: every path of each, and a path two list read
+/// from the first that lists it. The app reads its bundled theme list and
+/// its downloaded decks so.
+class DeckSources implements DeckSource {
+  DeckSources(this.sources);
+
+  final List<DeckSource> sources;
+  final Map<String, DeckSource> _owner = <String, DeckSource>{};
+
+  @override
+  Future<List<String>> list() async {
+    _owner.clear();
+    for (final source in sources) {
+      for (final path in await source.list()) {
+        _owner.putIfAbsent(path, () => source);
+      }
+    }
+    return _owner.keys.toList()..sort();
+  }
+
+  @override
+  Future<String> read(String path) {
+    final source = _owner[path];
+    if (source == null) throw StateError('no deck file at $path');
+    return source.read(path);
+  }
+}
+
 /// Deck files held in memory, keyed by path. For tests and the gallery.
 class MemoryDeckSource implements DeckSource {
   MemoryDeckSource(Map<String, String> files)
@@ -101,7 +131,8 @@ final class DeckEntry extends CatalogEntry {
 
   final Deck deck;
 
-  /// Whether the deck shipped with the app rather than being imported.
+  /// Whether the deck is one of the app's own, bundled or downloaded from
+  /// the repository (#210), rather than added by the learner from a file.
   final bool bundled;
 
   String get id => deck.id;
@@ -162,6 +193,7 @@ class Catalog {
     Map<String, FactsFile> facts = const <String, FactsFile>{},
     Map<String, NumberRules> numberRules = const <String, NumberRules>{},
     Map<String, CoursePath> paths = const <String, CoursePath>{},
+    Map<String, LanguagePath> languagePaths = const <String, LanguagePath>{},
     Map<String, SoundContrasts> sounds = const <String, SoundContrasts>{},
     Map<String, Romanisation> romanisations = const <String, Romanisation>{},
     Map<String, ScriptGuide> scriptGuides = const <String, ScriptGuide>{},
@@ -171,6 +203,7 @@ class Catalog {
        facts = Map<String, FactsFile>.unmodifiable(facts),
        numberRules = Map<String, NumberRules>.unmodifiable(numberRules),
        paths = Map<String, CoursePath>.unmodifiable(paths),
+       languagePaths = Map<String, LanguagePath>.unmodifiable(languagePaths),
        sounds = Map<String, SoundContrasts>.unmodifiable(sounds),
        romanisations = Map<String, Romanisation>.unmodifiable(romanisations),
        scriptGuides = Map<String, ScriptGuide>.unmodifiable(scriptGuides);
@@ -183,8 +216,13 @@ class Catalog {
   final Map<String, NumberRules> numberRules;
 
   /// Each course's curated path (#117, ADR-0013), by `CoursePath.course`,
-  /// such as `hi/en`. A course without a path file has none.
+  /// such as `hi/en`: its language's path as the course's learners are
+  /// taught it (ADR-0036). A course whose language has no path has none.
   final Map<String, CoursePath> paths;
+
+  /// Each language's path (ADR-0036), by language code, with its regions:
+  /// one per language learnt, shared by every native language.
+  final Map<String, LanguagePath> languagePaths;
 
   /// Each language's sound contrasts (#89, ADR-0015), by language code. A
   /// language without a sounds file has none.
@@ -251,10 +289,6 @@ class Catalog {
 class DeckCatalog {
   DeckCatalog(this.source, {this.added});
 
-  /// The decks bundled with the app, and those added to [added].
-  factory DeckCatalog.bundled([AssetBundle? bundle, DeckStore? added]) =>
-      DeckCatalog(AssetDeckSource(bundle), added: added);
-
   final DeckSource source;
 
   /// Where decks a learner adds are kept (#22), or null where none can be.
@@ -292,7 +326,7 @@ class DeckCatalog {
     var themes = const <DeckTheme>[];
     final facts = <String, FactsFile>{};
     final numberRules = <String, NumberRules>{};
-    final coursePaths = <String, CoursePath>{};
+    final languagePaths = <String, LanguagePath>{};
     final sounds = <String, SoundContrasts>{};
     final romanisations = <String, Romanisation>{};
     final scriptGuides = <String, ScriptGuide>{};
@@ -305,9 +339,35 @@ class DeckCatalog {
         (a, b) =>
             isAdded(a) != isAdded(b) ? (isAdded(a) ? 1 : -1) : a.compareTo(b),
       );
+    final headers = <String, ({String? kind, String? part})>{
+      for (final path in paths) path: _headerOf(files[path]!),
+    };
+    // A file a learner added is single-file (DECK-FORMAT.md, Adding your own
+    // deck): DeckParser.parse refuses a core or a layer among them.
+    bool isLayer(String path) =>
+        !isAdded(path) && headers[path]!.kind == 'layer';
+    bool isCore(String path) =>
+        !isAdded(path) && !isLayer(path) && headers[path]!.part == 'core';
+    // Cores first, so that a layer finds its core wherever the two sort
+    // (DECK-FORMAT.md, Core and layer files). A core is not shown: each of its
+    // layers is, merged with it.
+    final cores = <String, DeckCore>{};
+    final brokenCores = <String>{};
+    for (final path in paths.where(isCore)) {
+      try {
+        cores[path] = DeckParser.parseCore(
+          files[path]!,
+          source: path.split('/').last,
+        );
+      } on DeckParseException catch (e) {
+        broken.add(BrokenDeck(path: path, error: e));
+        brokenCores.add(path);
+      }
+    }
     for (final path in paths) {
       final text = files[path]!;
-      final kind = kindOf(text);
+      final kind = headers[path]!.kind;
+      if (isCore(path)) continue;
       if (kind == 'facts') {
         try {
           final file = parseFacts(text, source: path.split('/').last);
@@ -327,12 +387,19 @@ class DeckCatalog {
         continue;
       }
       if (kind == 'path') {
+        // One path per language learnt (ADR-0036): a second is broken.
         try {
-          final coursePath = parseCoursePath(
-            text,
-            source: path.split('/').last,
-          );
-          coursePaths.putIfAbsent(coursePath.course, () => coursePath);
+          final source = path.split('/').last;
+          final languagePath = parseLanguagePath(text, source: source);
+          final earlier = languagePaths[languagePath.language];
+          if (earlier != null) {
+            throw DeckParseException(
+              '${languagePath.language} already has a path, ${earlier.id}; '
+              'a language has one',
+              source: source,
+            );
+          }
+          languagePaths[languagePath.language] = languagePath;
         } on DeckParseException catch (e) {
           broken.add(BrokenDeck(path: path, error: e));
         }
@@ -375,7 +442,9 @@ class DeckCatalog {
       }
       Deck deck;
       try {
-        deck = DeckParser.parse(text, source: path.split('/').last);
+        deck = isLayer(path)
+            ? _merged(path, text, files, cores, brokenCores)
+            : DeckParser.parse(text, source: path.split('/').last);
       } on DeckParseException catch (e) {
         broken.add(BrokenDeck(path: path, error: e));
         continue;
@@ -407,8 +476,8 @@ class DeckCatalog {
         ),
       );
     }
-    final resolved = _withRefs(decks);
-    final placed = _placed(coursePaths, resolved);
+    final resolved = _withRules(_withRefs(decks));
+    final placed = _placed(_coursePaths(languagePaths, resolved), resolved);
     return Catalog(
       decks: _inTeachingOrder(resolved, themes, placed),
       broken: broken,
@@ -416,10 +485,95 @@ class DeckCatalog {
       facts: facts,
       numberRules: numberRules,
       paths: placed,
+      languagePaths: languagePaths,
       sounds: sounds,
       romanisations: romanisations,
       scriptGuides: scriptGuides,
     );
+  }
+
+  /// The layer at [path], whose text is [text], merged with its core: the
+  /// file `<core>.yaml` in the folder above the layer's (DECK-FORMAT.md, Core
+  /// and layer files).
+  static Deck _merged(
+    String path,
+    String text,
+    Map<String, String> files,
+    Map<String, DeckCore> cores,
+    Set<String> brokenCores,
+  ) {
+    final source = path.split('/').last;
+    final layer = DeckParser.parseLayer(text, source: source);
+    final folders = path.split('/')..removeLast();
+    final above = folders.isEmpty ? '' : (folders..removeLast()).join('/');
+    final corePath = '${above.isEmpty ? '' : '$above/'}${layer.core}.yaml';
+    final core = cores[corePath];
+    if (core != null) return mergeLayer(core, layer, source: source);
+    throw DeckParseException(
+      brokenCores.contains(corePath)
+          ? 'its core, ${layer.core}.yaml, could not be read'
+          : files.containsKey(corePath)
+          ? '${layer.core}.yaml is not a core: it has no part: "core"'
+          : "no core file ${layer.core}.yaml in ${above.isEmpty ? '.' : above}; "
+                "a layer's core is in the folder above it",
+      source: source,
+    );
+  }
+
+  /// [decks] with each rules deck's table expanded into its cells (spec
+  /// 4.6), once refs are resolved: a row's word is its card as a vocab deck
+  /// of the same native language teaches it, and a row with none is left
+  /// out.
+  static List<DeckEntry> _withRules(List<DeckEntry> decks) {
+    if (!decks.any((e) => e.deck.kind == DeckKind.rules)) return decks;
+    final taught = <String, Map<String, Card>>{};
+    for (final entry in decks) {
+      if (entry.deck.kind != DeckKind.vocab) continue;
+      final words = taught[entry.deck.native.code] ??= <String, Card>{};
+      for (final card in entry.deck.cards) {
+        words.putIfAbsent(card.id, () => card);
+      }
+    }
+    return <DeckEntry>[
+      for (final entry in decks)
+        if (entry.deck.kind != DeckKind.rules)
+          entry
+        else
+          DeckEntry(
+            path: entry.path,
+            deck: entry.deck.withCards(
+              expandRules(
+                entry.deck,
+                wordOf: (id) => taught[entry.deck.native.code]?[id],
+              ),
+            ),
+            bundled: entry.bundled,
+          ),
+    ];
+  }
+
+  /// Each course's path, by `CoursePath.course`: its language's path as a
+  /// learner from the course's native language is taught it, for every
+  /// course that has a deck. A core id becomes the course's deck where the
+  /// catalog holds it, merged or single-file, bundled or added.
+  static Map<String, CoursePath> _coursePaths(
+    Map<String, LanguagePath> paths,
+    List<DeckEntry> decks,
+  ) {
+    final ids = <String>{for (final e in decks) e.id};
+    final courses = <String, (String, String)>{
+      for (final e in decks)
+        '${e.language.code}/${e.deck.native.code}': (
+          e.language.code,
+          e.deck.native.code,
+        ),
+    };
+    return <String, CoursePath>{
+      for (final MapEntry(key: course, value: (language, native))
+          in courses.entries)
+        if (paths[language] case final path?)
+          course: path.forNative(native, exists: ids.contains),
+    };
   }
 
   /// Each course's path with the course's decks it does not list put where
@@ -449,11 +603,18 @@ class DeckCatalog {
   /// another language that gives no native, is left out; the validator
   /// refuses both.
   static List<DeckEntry> _withRefs(List<DeckEntry> decks) {
-    final written = <String, (Card, String)>{};
+    // Each card as each native language's decks write it: a core card is
+    // written once per layer that translates it, and a ref resolves through
+    // the one of its own native language when there is one (DECK-FORMAT.md,
+    // Core and layer files).
+    final written = <String, Map<String, Card>>{};
     for (final entry in decks) {
       if (entry.deck.kind != DeckKind.vocab) continue;
       for (final card in entry.deck.cards) {
-        written.putIfAbsent(card.id, () => (card, entry.deck.native.code));
+        (written[card.id] ??= <String, Card>{}).putIfAbsent(
+          entry.deck.native.code,
+          () => card,
+        );
       }
     }
     return <DeckEntry>[
@@ -469,7 +630,10 @@ class DeckCatalog {
     ];
   }
 
-  static List<Card> _resolved(Deck deck, Map<String, (Card, String)> written) {
+  static List<Card> _resolved(
+    Deck deck,
+    Map<String, Map<String, Card>> written,
+  ) {
     final refAt = <int, CardRef>{
       for (final ref in deck.refs) ref.position: ref,
     };
@@ -481,11 +645,12 @@ class DeckCatalog {
         cards.add(deck.cards[next++]);
         continue;
       }
-      if (written[ref.id] case (final card, final native)) {
+      if (written[ref.id] case final homes?) {
+        final own = homes[deck.native.code];
         final listed = ref.resolve(
-          card,
+          own ?? homes.values.first,
           deckId: deck.id,
-          sameNative: native == deck.native.code,
+          sameNative: own != null,
         );
         if (listed != null) cards.add(listed);
       }
@@ -544,13 +709,60 @@ class DeckCatalog {
   /// decks that are not decks, or null. Decided by the file's `kind`, not
   /// its name. Text that is not a YAML mapping has none; the parser then
   /// reports what is wrong.
-  static String? kindOf(String text) {
+  static String? kindOf(String text) => _headerOf(text).kind;
+
+  /// A file's `kind` and `part`, each null when it has none: a layer is
+  /// `kind: "layer"`, a core `part: "core"` (DECK-FORMAT.md, Core and layer
+  /// files).
+  static ({String? kind, String? part}) _headerOf(String text) {
     try {
       final root = loadYaml(text.startsWith('﻿') ? text.substring(1) : text);
       final kind = root is YamlMap ? root['kind'] : null;
-      return kind is String ? kind : null;
+      final part = root is YamlMap ? root['part'] : null;
+      return (
+        kind: kind is String ? kind : null,
+        part: part is String ? part : null,
+      );
     } catch (_) {
+      return (kind: null, part: null);
+    }
+  }
+
+  /// What is wrong with [text], the file at [path], read on its own as its
+  /// `kind` says, or null if nothing is. A downloaded file is checked so
+  /// before it replaces one on the phone (ADR-0037). A layer is read without
+  /// its core, which the catalog merges it with.
+  static String? checkFile(String path, String text) {
+    final source = path.split('/').last;
+    final header = _headerOf(text);
+    try {
+      switch (header.kind) {
+        case 'layer':
+          DeckParser.parseLayer(text, source: source);
+        case 'facts':
+          parseFacts(text, source: source);
+        case 'numbers':
+          parseNumberRules(text, source: source);
+        case 'path':
+          parseLanguagePath(text, source: source);
+        case 'romanisation':
+          parseRomanisation(text, source: source);
+        case 'sounds':
+          parseSounds(text, source: source);
+        case 'script':
+          parseScriptGuide(text, source: source);
+        case 'themes':
+          parseThemes(text, source: source);
+        default:
+          header.part == 'core'
+              ? DeckParser.parseCore(text, source: source)
+              : DeckParser.parse(text, source: source);
+      }
       return null;
+    } on DeckParseException catch (e) {
+      return e.toString();
+    } on Object catch (e) {
+      return '$source: $e';
     }
   }
 

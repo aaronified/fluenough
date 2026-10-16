@@ -131,6 +131,20 @@
   "@commonListSeparator": {
     "description": "Placed between items when the app lists several names in a row, such as the languages a profile learns: \"Hindi, Spanish\". Keep any spacing your language uses."
   },
+  "languageMenuAll": "All languages",
+  "@languageMenuAll": {
+    "description": "In the language menu at the top of Today, Decks and Progress: the choice that shows every language the learner learns together, rather than one."
+  },
+  "languageMenuLabel": "Language shown: {language}",
+  "@languageMenuLabel": {
+    "description": "Tooltip and screen-reader label of the language menu button at the top of Today, Decks, Progress and a deck's page. It chooses which language's lessons, decks and numbers the whole app shows. The placeholder is a language's name, such as \"Telugu\", or languageMenuAll.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
   "commonNotSavedTitle": "Progress isn’t being saved",
   "@commonNotSavedTitle": {
     "description": "Banner title while this version keeps reviews in memory only."
@@ -245,21 +259,53 @@
   "@skillPairDeckDesc": {
     "description": "Under Minimal pairs on a deck's screen."
   },
-  "skillRecognitionSettingsDesc": "See the word, choose or recall its meaning",
-  "@skillRecognitionSettingsDesc": {
-    "description": "Under the Recognition switch in Settings."
+  "skillRecognitionSettingsTitle": "Seen words",
+  "@skillRecognitionSettingsTitle": {
+    "description": "Title of a skill’s switch in Settings, in the learner’s words. The skill is recognition: the learner sees a word and recalls or chooses its meaning. Sentence case. Elsewhere the skill keeps its short name."
   },
-  "skillProductionSettingsDesc": "Chosen, put in order or typed, checked by the app",
-  "@skillProductionSettingsDesc": {
-    "description": "Under the Production switch in Settings."
+  "skillRecognitionSettingsOn": "See the word, recall its meaning",
+  "@skillRecognitionSettingsOn": {
+    "description": "Under a skill’s switch in Settings, while it is on. The skill is recognition: the learner sees a word and recalls or chooses its meaning. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
   },
-  "skillListeningSettingsDesc": "Needs a voice for the language",
-  "@skillListeningSettingsDesc": {
-    "description": "Under the Listening switch in Settings."
+  "skillRecognitionSettingsOff": "No see-the-word questions",
+  "@skillRecognitionSettingsOff": {
+    "description": "Under a skill’s switch in Settings, while it is off. The skill is recognition: the learner sees a word and recalls or chooses its meaning. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
-  "skillSpeakingSettingsDesc": "Said aloud, heard by your phone. Uses the microphone",
-  "@skillSpeakingSettingsDesc": {
-    "description": "Under the Speaking switch in Settings. Switching it on asks for the microphone."
+  "skillProductionSettingsTitle": "Written words",
+  "@skillProductionSettingsTitle": {
+    "description": "Title of a skill’s switch in Settings, in the learner’s words. The skill is production: the learner sees the meaning and writes the word, by choosing, putting tiles in order or typing. Sentence case. Elsewhere the skill keeps its short name."
+  },
+  "skillProductionSettingsOn": "See the meaning, write the word",
+  "@skillProductionSettingsOn": {
+    "description": "Under a skill’s switch in Settings, while it is on. The skill is production: the learner sees the meaning and writes the word, by choosing, putting tiles in order or typing. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "skillProductionSettingsOff": "No written answers",
+  "@skillProductionSettingsOff": {
+    "description": "Under a skill’s switch in Settings, while it is off. The skill is production: the learner sees the meaning and writes the word, by choosing, putting tiles in order or typing. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
+  },
+  "skillListeningSettingsTitle": "Heard words",
+  "@skillListeningSettingsTitle": {
+    "description": "Title of a skill’s switch in Settings, in the learner’s words. The skill is listening: the learner hears a word and gives its meaning. Sentence case. Elsewhere the skill keeps its short name."
+  },
+  "skillListeningSettingsOn": "Hear the word, give its meaning",
+  "@skillListeningSettingsOn": {
+    "description": "Under a skill’s switch in Settings, while it is on. The skill is listening: the learner hears a word and gives its meaning. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "skillListeningSettingsOff": "No listening questions",
+  "@skillListeningSettingsOff": {
+    "description": "Under a skill’s switch in Settings, while it is off. The skill is listening: the learner hears a word and gives its meaning. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
+  },
+  "skillSpeakingSettingsTitle": "Spoken words",
+  "@skillSpeakingSettingsTitle": {
+    "description": "Title of a skill’s switch in Settings, in the learner’s words. The skill is speaking: the learner says the word and the phone recognises it. Sentence case. Elsewhere the skill keeps its short name."
+  },
+  "skillSpeakingSettingsOn": "Say the word, your phone listens",
+  "@skillSpeakingSettingsOn": {
+    "description": "Under a skill’s switch in Settings, while it is on. The skill is speaking: the learner says the word and the phone recognises it. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "skillSpeakingSettingsOff": "No speaking questions. Switching on asks for the microphone",
+  "@skillSpeakingSettingsOff": {
+    "description": "Under a skill’s switch in Settings, while it is off. The skill is speaking: the learner says the word and the phone recognises it. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "settingsSpeakingRefused": "Speaking needs the microphone, so it stays off. Allow the microphone to switch it on.",
   "@settingsSpeakingRefused": {
@@ -311,17 +357,73 @@
       }
     }
   },
-  "skillGrammarSettingsDesc": "From pattern-table decks",
-  "@skillGrammarSettingsDesc": {
-    "description": "Under the Grammar switch in Settings."
+  "skillGrammarSettingsOn": "Understand a form of a word, and use the right one",
+  "@skillGrammarSettingsOn": {
+    "description": "Under a skill’s switch in Settings, while it is on. The skill is grammar: one switch for both grammar questions, understanding what a form of a word means and choosing or typing the right form. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "skillGrammarSettingsOff": "No grammar questions",
+  "@skillGrammarSettingsOff": {
+    "description": "Under a skill’s switch in Settings, while it is off. The skill is grammar: one switch for both grammar questions, understanding what a form of a word means and choosing or typing the right form. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "skillPairSettingsTitle": "Phonemic contrasts",
   "@skillPairSettingsTitle": {
     "description": "Title of the switch in Settings that turns the minimal-pairs skill on. Used in Settings only: everywhere else that skill is called skillPair, Minimal pairs. Switching it on lets the learner practise the sounds of the language they learn that the languages they speak do not have, and the differences between them. Sentence case, like the other Settings titles."
   },
-  "skillPairSettingsDesc": "Practise the sounds the languages you speak don’t have",
-  "@skillPairSettingsDesc": {
-    "description": "Under the Phonemic contrasts switch in Settings. Says what switching it on lets the learner practise: the sounds of the language they learn that the languages they speak (Settings, Languages I speak) do not have. One short line, no full stop."
+  "skillPairSettingsOn": "Practise the sounds the languages you know don’t have",
+  "@skillPairSettingsOn": {
+    "description": "Under a skill’s switch in Settings, while it is on. The skill is Phonemic contrasts: practice with the sounds of the language learned that the languages the learner knows (Languages I know) do not have. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "skillPairSettingsOff": "No practice with sounds your languages lack",
+  "@skillPairSettingsOff": {
+    "description": "Under a skill’s switch in Settings, while it is off. The skill is Phonemic contrasts: practice with the sounds of the language learned that the languages the learner knows (Languages I know) do not have. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsSkillNoVoice": "{line}. No voice for {languages} on this phone",
+  "@settingsSkillNoVoice": {
+    "description": "A skill switch’s line in Settings, when the phone has no voice for some of the languages learned. {line} is the switch’s line for its state, skillListeningSettingsOn or skillListeningSettingsOff, with no full stop; the languages are joined by commonListSeparator.",
+    "placeholders": {
+      "line": {
+        "type": "String",
+        "example": "Hear the word, give its meaning"
+      },
+      "languages": {
+        "type": "String",
+        "example": "Telugu, Bengali"
+      }
+    }
+  },
+  "settingsSkillNoRecogniser": "{line}. {languages} not recognised on this phone",
+  "@settingsSkillNoRecogniser": {
+    "description": "The Spoken words switch’s line in Settings, when the phone’s speech recogniser does not know some of the languages learned. {line} is skillSpeakingSettingsOn or skillSpeakingSettingsOff, with no full stop; the languages are joined by commonListSeparator.",
+    "placeholders": {
+      "line": {
+        "type": "String",
+        "example": "Say the word, your phone listens"
+      },
+      "languages": {
+        "type": "String",
+        "example": "Telugu, Bengali"
+      }
+    }
+  },
+  "settingsSkillAskedIn": "Asked in {language}",
+  "@settingsSkillAskedIn": {
+    "description": "In the dialog that turns a skill on or off per language, under a language whose switch is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "settingsSkillNotAskedIn": "Not asked in {language}",
+  "@settingsSkillNotAskedIn": {
+    "description": "In the dialog that turns a skill on or off per language, under a language whose switch is off. Shown while the switch is off: says what happens now, and changes the moment it is flipped.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
   },
   "profilesTitle": "Who’s practising?",
   "@profilesTitle": {
@@ -908,6 +1010,772 @@
   "@decksBrokenBadge": {
     "description": "Badge on a row for a deck file that failed to parse."
   },
+  "decksSearchOpen": "Search units",
+  "@decksSearchOpen": {
+    "description": "Tooltip of the search button on the Decks tab: opens a search across every course's units."
+  },
+  "decksSearchClose": "Close search",
+  "@decksSearchClose": {
+    "description": "Tooltip of the button that closes the search on the Decks tab and shows the path again."
+  },
+  "decksUnitSearchHint": "Search units in every course",
+  "@decksUnitSearchHint": {
+    "description": "Hint in the Decks tab's search field. A search finds units by their name, their decks' names, their theme or their language."
+  },
+  "decksCoursesLabel": "Courses",
+  "@decksCoursesLabel": {
+    "description": "What a screen reader calls the row of course chips on the Decks tab, one per language."
+  },
+  "decksCourseChipDue": "{language}, {count, plural, =1{1 due} other{{count} due}}",
+  "@decksCourseChipDue": {
+    "description": "What a screen reader hears for a course chip with reviews due: the language, then how many reviews are due in it.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      },
+      "count": {
+        "type": "int",
+        "example": "7"
+      }
+    }
+  },
+  "decksWhereIAm": "Where I am",
+  "@decksWhereIAm": {
+    "description": "Button floating over the Decks tab's path: scrolls the path back to the unit the learner is on."
+  },
+  "pathCourseProgress": "{done} of {total, plural, =1{1 unit} other{{total} units}} done",
+  "@pathCourseProgress": {
+    "description": "Line on the card at the top of a course's path: how many of its units are done.",
+    "placeholders": {
+      "done": {
+        "type": "int",
+        "example": "7"
+      },
+      "total": {
+        "type": "int",
+        "example": "29"
+      }
+    }
+  },
+  "pathUpdatesTitle": "Deck updates",
+  "@pathUpdatesTitle": {
+    "description": "Row on the course card: newer versions of the course's decks, downloaded on request. Updates the course's language as Settings > Deck downloads does (#464)."
+  },
+  "pathUpdatesBody": "Your progress is kept",
+  "@pathUpdatesBody": {
+    "description": "Second line of the deck updates row when an update waits: updating a deck keeps the learner's history."
+  },
+  "pathUpdatesButton": "Update",
+  "@pathUpdatesButton": {
+    "description": "Button on the deck updates row, shown when an update waits for the course's language."
+  },
+  "pathUpdatesUpToDate": "Up to date",
+  "@pathUpdatesUpToDate": {
+    "description": "Second line of the deck updates row on the course card when no update waits for the course's language."
+  },
+  "pathHoursTitle": "Hours left in the decks so far",
+  "@pathHoursTitle": {
+    "description": "Row on the course card: about how many hours of study are left in the course's decks written so far, not to the end of the course at B1. It grows as decks are added (#227)."
+  },
+  "pathHoursBody": "{left} · {spent}",
+  "@pathHoursBody": {
+    "description": "Second line of the hours row: the hours left (pathHoursLeft), then the hours spent (pathHoursSpent).",
+    "placeholders": {
+      "left": {
+        "type": "String",
+        "example": "About 140 hours left"
+      },
+      "spent": {
+        "type": "String",
+        "example": "12.4 hours spent so far"
+      }
+    }
+  },
+  "pathHoursLeft": "{hours, plural, =0{Nothing left to learn} =1{About 1 hour left} other{About {hours} hours left}}",
+  "@pathHoursLeft": {
+    "description": "About how many hours of study are left in the decks written so far, rounded up to whole hours. \"About\" because it changes as decks are added and as the learner's times change.",
+    "placeholders": {
+      "hours": {
+        "type": "int",
+        "example": "140"
+      }
+    }
+  },
+  "pathHoursSpent": "{hours} hours spent so far",
+  "@pathHoursSpent": {
+    "description": "Hours spent answering cards in this language, to one decimal place. Each answer counts for at most a minute.",
+    "placeholders": {
+      "hours": {
+        "type": "double",
+        "example": "12.4",
+        "format": "decimalPatternDigits",
+        "optionalParameters": {
+          "decimalDigits": 1
+        }
+      }
+    }
+  },
+  "pathUpNext": "Up next",
+  "@pathUpNext": {
+    "description": "Label over the unit the learner is on, on a course's path."
+  },
+  "pathUnitWords": "{count, plural, =1{1 word} other{{count} words}}",
+  "@pathUnitWords": {
+    "description": "Part of a unit's line on the path and in search: how many words it teaches.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "18"
+      }
+    }
+  },
+  "pathUnitRules": "{count, plural, =1{1 rule} other{{count} rules}}",
+  "@pathUnitRules": {
+    "description": "Part of a unit's line: how many grammar rules (tables) it teaches.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "pathUnitSentences": "{open}/{total} sentences",
+  "@pathUnitSentences": {
+    "description": "Part of a unit's line: how many of its sentences are open, out of all of them.",
+    "placeholders": {
+      "open": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "11"
+      }
+    }
+  },
+  "pathUnitLetters": "Script · {count, plural, =1{1 letter} other{{count} letters}}",
+  "@pathUnitLetters": {
+    "description": "A script unit's line on the path: how many letters it teaches.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "62"
+      }
+    }
+  },
+  "pathUnitPassages": "{count, plural, =1{1 reading passage} other{{count} reading passages}}",
+  "@pathUnitPassages": {
+    "description": "Part of a unit's line: how many passages it has to read.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "pathMetaJoin": "{first} · {rest}",
+  "@pathMetaJoin": {
+    "description": "Joins two parts of a line such as \"18 words · 2 rules\". Change the separator if your language uses another.",
+    "placeholders": {
+      "first": {
+        "type": "String",
+        "example": "18 words"
+      },
+      "rest": {
+        "type": "String",
+        "example": "2 rules"
+      }
+    }
+  },
+  "pathUnitNumber": "Unit {number}",
+  "@pathUnitNumber": {
+    "description": "A unit's place in its course, on the unit's screen.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "7"
+      }
+    }
+  },
+  "pathUnitDone": "Done",
+  "@pathUnitDone": {
+    "description": "What a screen reader hears of a unit on the path whose decks are all finished."
+  },
+  "pathUnitAhead": "Not started",
+  "@pathUnitAhead": {
+    "description": "What a screen reader hears of a unit on the path after the one the learner is on."
+  },
+  "pathUnitSemantics": "{title}, unit {number}, {status}. {meta}",
+  "@pathUnitSemantics": {
+    "description": "What a screen reader hears for a unit on the path: its name, its number, where it stands (Done, Up next, Not started) and its line.",
+    "placeholders": {
+      "title": {
+        "type": "String",
+        "example": "Family"
+      },
+      "number": {
+        "type": "int",
+        "example": "7"
+      },
+      "status": {
+        "type": "String",
+        "example": "Up next"
+      },
+      "meta": {
+        "type": "String",
+        "example": "18 words · 2 rules"
+      }
+    }
+  },
+  "pathComing": "Coming",
+  "@pathComing": {
+    "description": "Badge and status of a unit that is planned but not written yet."
+  },
+  "pathComingWords": "Coming · about {count} words",
+  "@pathComingWords": {
+    "description": "Line of a unit still being written: about how many words it will teach.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "60"
+      }
+    }
+  },
+  "pathFirstDeck": "First deck finished",
+  "@pathFirstDeck": {
+    "description": "A milestone on the path: every word of one deck learned."
+  },
+  "pathFirstDeckToGo": "Finish every word of one deck",
+  "@pathFirstDeckToGo": {
+    "description": "Under the first-deck milestone before it is earned: how to earn it."
+  },
+  "pathWordsLearned": "{count} words learned",
+  "@pathWordsLearned": {
+    "description": "A milestone on the path: this many of the course's words learned.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "100"
+      }
+    }
+  },
+  "pathWordsToGo": "{count, plural, =1{1 word to go} other{{count} words to go}}",
+  "@pathWordsToGo": {
+    "description": "Under a words milestone not earned yet: how many more words.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "21"
+      }
+    }
+  },
+  "pathRulesKnown": "{count} rules known",
+  "@pathRulesKnown": {
+    "description": "A milestone on the path: this many of the course's rules known, right on most recent answers.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "pathRulesToGo": "{count, plural, =1{1 rule to go} other{{count} rules to go}}",
+  "@pathRulesToGo": {
+    "description": "Under a rules milestone not earned yet: how many more rules.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "9"
+      }
+    }
+  },
+  "pathFirstPassage": "First passage read",
+  "@pathFirstPassage": {
+    "description": "A milestone on the path: the questions of one reading passage answered."
+  },
+  "pathFirstPassageToGo": "Read one story",
+  "@pathFirstPassageToGo": {
+    "description": "Under the first-passage milestone before it is earned: how to earn it."
+  },
+  "pathScriptLearned": "Script learned",
+  "@pathScriptLearned": {
+    "description": "A milestone on the path: the course's script units done."
+  },
+  "pathScriptToGo": "{count, plural, =1{1 script unit to go} other{{count} script units to go}}",
+  "@pathScriptToGo": {
+    "description": "Under the script milestone not earned yet: how many script units are left.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "pathEarnedOn": "Earned {date}",
+  "@pathEarnedOn": {
+    "description": "Under a milestone or achievement: the day it was earned.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "24 Sep"
+      }
+    }
+  },
+  "pathEarnedToday": "Earned today",
+  "@pathEarnedToday": {
+    "description": "Under a milestone or achievement earned today."
+  },
+  "pathEarned": "Earned",
+  "@pathEarned": {
+    "description": "Under a milestone or achievement earned on a day the review log does not tell, such as by placement."
+  },
+  "pathLevelA1": "Introduce yourself, ask about people and places",
+  "@pathLevelA1": {
+    "description": "What a learner can do at CEFR level A1, at the start of its part of a course's path."
+  },
+  "pathLevelA2": "Shop, ask the way, talk about your day",
+  "@pathLevelA2": {
+    "description": "What a learner can do at CEFR level A2, at the start of its part of the path."
+  },
+  "pathLevelB1": "Travel, describe plans, give reasons",
+  "@pathLevelB1": {
+    "description": "What a learner can do at CEFR level B1, at the start of its part of the path."
+  },
+  "pathLevelUnits": "{count, plural, =1{1 unit} other{{count} units}}",
+  "@pathLevelUnits": {
+    "description": "Part of a level's line on the path: how many units it has.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "13"
+      }
+    }
+  },
+  "pathLevelDone": "{count} done",
+  "@pathLevelDone": {
+    "description": "Part of a level's line on the path: how many of its units are done.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "7"
+      }
+    }
+  },
+  "pathLevelComing": "{count} coming",
+  "@pathLevelComing": {
+    "description": "Part of a level's line on the path: how many of its units are still being written.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "7"
+      }
+    }
+  },
+  "pathAchievement": "{level} achievement",
+  "@pathAchievement": {
+    "description": "An achievement on the path: reaching a CEFR level. The level is its code, such as A1.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A1"
+      }
+    }
+  },
+  "pathLevelReached": "{level} reached",
+  "@pathLevelReached": {
+    "description": "An achievement on the path once it is earned: the CEFR level reached.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A1"
+      }
+    }
+  },
+  "pathUnitsToGo": "{count, plural, =1{1 unit to go} other{{count} units to go}}",
+  "@pathUnitsToGo": {
+    "description": "Under a level achievement not earned yet: how many units are left.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "6"
+      }
+    }
+  },
+  "pathUnitsToGoComing": "{count, plural, =1{1 unit to go} other{{count} units to go}}, {coming} still being written",
+  "@pathUnitsToGoComing": {
+    "description": "Under a level achievement not earned yet, when some of its units are not written yet.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "12"
+      },
+      "coming": {
+        "type": "int",
+        "example": "7"
+      }
+    }
+  },
+  "pathBeyondTitle": "Beyond the course",
+  "@pathBeyondTitle": {
+    "description": "Heading at the end of a course's path: songs, films and books to choose by interest. Shown with \"Feature incoming\" until it is built (#215)."
+  },
+  "pathBeyondBody": "Optional. Pick by interest; nothing here holds back the path.",
+  "@pathBeyondBody": {
+    "description": "Under the \"Beyond the course\" heading."
+  },
+  "pathBeyondSong": "Song",
+  "@pathBeyondSong": {
+    "description": "Kind of a \"Beyond the course\" item: a song."
+  },
+  "pathBeyondFilm": "Film",
+  "@pathBeyondFilm": {
+    "description": "Kind of a \"Beyond the course\" item: a film."
+  },
+  "pathBeyondBook": "Book",
+  "@pathBeyondBook": {
+    "description": "Kind of a \"Beyond the course\" item: a book."
+  },
+  "pathOtherDecks": "Other decks",
+  "@pathOtherDecks": {
+    "description": "Heading under a course's path: the language's decks its path leaves out, each opening its own screen."
+  },
+  "pathBrokenFiles": "Files that couldn’t be read",
+  "@pathBrokenFiles": {
+    "description": "Heading under a course's path: deck files that failed to parse."
+  },
+  "unitReview": "Review",
+  "@unitReview": {
+    "description": "Button at the top end of a unit's screen: checks the unit's cards before they ship, for speakers who review decks."
+  },
+  "unitLettersKnown": "letters known",
+  "@unitLettersKnown": {
+    "description": "Under a number on a script unit's screen: how many of its letters are known."
+  },
+  "unitWordsKnown": "words known",
+  "@unitWordsKnown": {
+    "description": "Under a number on a unit's screen: how many of its words are known."
+  },
+  "unitRulesKnown": "rules known",
+  "@unitRulesKnown": {
+    "description": "Under a number on a unit's screen: how many of its rules are known."
+  },
+  "unitSentencesOpen": "sentences open",
+  "@unitSentencesOpen": {
+    "description": "Under a number on a unit's screen: how many of its sentences are open, that is, taught."
+  },
+  "unitFraction": "{count}/{total}",
+  "@unitFraction": {
+    "description": "A count out of a total on a unit's tile, such as 12/18.",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "12"
+      },
+      "total": {
+        "type": "String",
+        "example": "18"
+      }
+    }
+  },
+  "unitSectionWords": "{number} · Words",
+  "@unitSectionWords": {
+    "description": "Heading of a unit's words, numbered in the order the unit teaches them.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "unitSectionLetters": "{number} · Letters",
+  "@unitSectionLetters": {
+    "description": "Heading of a script unit's letters.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "unitSectionRules": "{number} · Rules",
+  "@unitSectionRules": {
+    "description": "Heading of a unit's grammar rules.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "unitSectionSentences": "{number} · Sentences",
+  "@unitSectionSentences": {
+    "description": "Heading of a unit's sentences.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "unitKnownMeans": "Known means right on {percent}% of recent answers",
+  "@unitKnownMeans": {
+    "description": "Beside the words heading: what \"Known\" means.",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "85"
+      }
+    }
+  },
+  "unitKnown": "Known",
+  "@unitKnown": {
+    "description": "Status of a word, rule or sentence answered right on most of its recent answers."
+  },
+  "unitLearning": "Learning {percent}%",
+  "@unitLearning": {
+    "description": "Status of a word, rule or sentence being learned: the share of its recent answers that were right.",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "64"
+      }
+    }
+  },
+  "unitNew": "New",
+  "@unitNew": {
+    "description": "Status of a word or rule never answered yet."
+  },
+  "unitNotOpen": "Not open yet",
+  "@unitNotOpen": {
+    "description": "Status of a sentence a lesson has not taught yet."
+  },
+  "unitShowAll": "Show all {count}",
+  "@unitShowAll": {
+    "description": "Button under a unit's first words: shows every one.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "18"
+      }
+    }
+  },
+  "unitShowFewer": "Show fewer",
+  "@unitShowFewer": {
+    "description": "Button under a unit's words once all show: shows the first few again."
+  },
+  "unitRuleShowTable": "Show the table",
+  "@unitRuleShowTable": {
+    "description": "Button on a rule: shows its table of forms."
+  },
+  "unitRuleHideTable": "Hide the table",
+  "@unitRuleHideTable": {
+    "description": "Button on a rule whose table shows: hides it."
+  },
+  "unitRuleWord": "Word",
+  "@unitRuleWord": {
+    "description": "Heading of the first column of a rule's table: the word each row inflects."
+  },
+  "unitRuleCells": "Each cell is a question.",
+  "@unitRuleCells": {
+    "description": "Under a rule's table: each form in it is asked in grammar drills."
+  },
+  "unitSentencesCount": "{open} of {total} open",
+  "@unitSentencesCount": {
+    "description": "Beside the sentences heading: how many of the unit's sentences are open.",
+    "placeholders": {
+      "open": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "11"
+      }
+    }
+  },
+  "unitSentencesNote": "A sentence opens when a lesson teaches it. Reviews never wait.",
+  "@unitSentencesNote": {
+    "description": "Under a unit's sentences."
+  },
+  "unitDecks": "Decks in this unit",
+  "@unitDecks": {
+    "description": "Heading of the list of a unit's decks, each opening its own screen."
+  },
+  "unitContinue": "Continue · {fresh} new, {due} due",
+  "@unitContinue": {
+    "description": "Button at the foot of a unit's screen: reviews its cards due, or teaches its next words. Says how many new words the next lesson teaches and how many reviews are due.",
+    "placeholders": {
+      "fresh": {
+        "type": "int",
+        "example": "5"
+      },
+      "due": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "unitNothingLeft": "Nothing new or due",
+  "@unitNothingLeft": {
+    "description": "The button at the foot of a unit's screen, off, when the unit has nothing new to teach and nothing due."
+  },
+  "unitOpenWord": "Opens its card",
+  "@unitOpenWord": {
+    "description": "What a screen reader hears after a word's row on a unit's screen: tapping it opens the word's card."
+  },
+  "cardBases": "{count, plural, =1{Base: {bases}} other{Bases: {bases}}}",
+  "@cardBases": {
+    "description": "On a word's card, after its meaning and notes: the base words of the card's inflected or derived words (the dictionary form and its meaning), so a learner sees where a form comes from. {bases} is one or more cardBase items joined by cardBasesJoin.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "1"
+      },
+      "bases": {
+        "type": "String",
+        "example": "जाना (jānā) · to go"
+      }
+    }
+  },
+  "cardBase": "{base} · {meaning}",
+  "@cardBase": {
+    "description": "One base word and its meaning on a card's base line, when it has no reading to show.",
+    "placeholders": {
+      "base": {
+        "type": "String",
+        "example": "ir"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "to go"
+      }
+    }
+  },
+  "cardBaseReading": "{base} ({reading})",
+  "@cardBaseReading": {
+    "description": "One base word and its reading on a card's base line, when the deck gives it no meaning yet.",
+    "placeholders": {
+      "base": {
+        "type": "String",
+        "example": "जाना"
+      },
+      "reading": {
+        "type": "String",
+        "example": "jānā"
+      }
+    }
+  },
+  "cardBaseReadingMeaning": "{base} ({reading}) · {meaning}",
+  "@cardBaseReadingMeaning": {
+    "description": "One base word, its reading in Latin letters and its meaning on a card's base line.",
+    "placeholders": {
+      "base": {
+        "type": "String",
+        "example": "जाना"
+      },
+      "reading": {
+        "type": "String",
+        "example": "jānā"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "to go"
+      }
+    }
+  },
+  "cardBasesJoin": "{first}, {rest}",
+  "@cardBasesJoin": {
+    "description": "Joins two base words on a card's base line. Change the separator if your language uses another.",
+    "placeholders": {
+      "first": {
+        "type": "String",
+        "example": "रहना (rahnā) · to live"
+      },
+      "rest": {
+        "type": "String",
+        "example": "होना (honā) · to be"
+      }
+    }
+  },
+  "wordSheetIpa": "/{ipa}/",
+  "@wordSheetIpa": {
+    "description": "How a word is said, in the IPA, on its card. The slashes mark IPA; keep them.",
+    "placeholders": {
+      "ipa": {
+        "type": "String",
+        "example": "kaːlam"
+      }
+    }
+  },
+  "wordSheetLine": "{id} · {state}",
+  "@wordSheetLine": {
+    "description": "Top line of a word's card on a unit's screen: its id and where the learner stands with it, as the word's row says it.",
+    "placeholders": {
+      "id": {
+        "type": "String",
+        "example": "te-0384"
+      },
+      "state": {
+        "type": "String",
+        "example": "Learning 58%"
+      }
+    }
+  },
+  "wordSheetLinePos": "{id} · {pos} · {state}",
+  "@wordSheetLinePos": {
+    "description": "Top line of a word's card on a unit's screen: its id, its part of speech as the deck gives it, and where the learner stands with it.",
+    "placeholders": {
+      "id": {
+        "type": "String",
+        "example": "te-0384"
+      },
+      "pos": {
+        "type": "String",
+        "example": "noun"
+      },
+      "state": {
+        "type": "String",
+        "example": "Learning 58%"
+      }
+    }
+  },
+  "wordSheetSoundsLike": "Sounds almost like {word} ({reading}), {meaning}. Take care when you say it.",
+  "@wordSheetSoundsLike": {
+    "description": "Warning on a word's card: another word sounds almost the same.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "కలం"
+      },
+      "reading": {
+        "type": "String",
+        "example": "kalam"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "pen"
+      }
+    }
+  },
+  "wordSheetSoundsLikeNoReading": "Sounds almost like {word}, {meaning}. Take care when you say it.",
+  "@wordSheetSoundsLikeNoReading": {
+    "description": "Warning on a word's card: another word, with no reading, sounds almost the same.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "pero"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "but"
+      }
+    }
+  },
+  "wordSheetSoundsLikeTitle": "Sounds like another word",
+  "@wordSheetSoundsLikeTitle": {
+    "description": "Heading of the warning on a word's card that another word sounds almost the same."
+  },
   "deckKindScript": "Script",
   "@deckKindScript": {
     "description": "A deck that teaches a writing system."
@@ -1055,6 +1923,28 @@
   "inspectQuestions": "Questions",
   "@inspectQuestions": {
     "description": "Inspect: a passage's questions, the right answer marked."
+  },
+  "inspectDifficulty": "How hard, for you",
+  "@inspectDifficulty": {
+    "description": "Inspect: heading over a card's difficulty in each skill it has been answered in, learned from the learner's own answers. Shown only when some skill has been answered."
+  },
+  "inspectDifficultyIn": "{mode, select, recognition{Recognition} production{Write} listening{Hear} speaking{Say} grammarUnderstood{Grammar understood} grammar{Grammar produced} reading{Reading} other{Other}}: {value} of 10, {lean, select, easier{easier} harder{harder} other{middling}}",
+  "@inspectDifficultyIn": {
+    "description": "Inspect: a card's difficulty in one skill, 1 the easiest and 10 the hardest, from the learner's own answers. mode is the skill (recognition, production, listening, speaking, grammarUnderstood, grammar or reading): production is Write, listening is Hear, speaking is Say, as the skills are named elsewhere; grammarUnderstood is choosing what a form means, grammar is giving the form. lean says which way the value leans: easier (1 to 4), harder (7 to 10), or other (5 or 6).",
+    "placeholders": {
+      "mode": {
+        "type": "String",
+        "example": "listening"
+      },
+      "value": {
+        "type": "int",
+        "example": "7"
+      },
+      "lean": {
+        "type": "String",
+        "example": "harder"
+      }
+    }
   },
   "deckScriptTips": "Tips: {guide}",
   "@deckScriptTips": {
@@ -1389,6 +2279,33 @@
   "@reportDeviceInfo": {
     "description": "Checkbox on a report, unticked until the reporter ticks it: adds the device details shown under it (app and system versions, screen size, text scale, languages)."
   },
+  "reportLog": "Attach the app log",
+  "@reportLog": {
+    "description": "Checkbox on a report, unticked until the reporter ticks it: attaches the app's own log as a file (#162)."
+  },
+  "reportLogSummary": "{count, plural, =1{1 line} other{{count} lines}} from the last 7 days at most: screens opened, decks loaded, fits run, imports, exports, warnings and errors. Never your answers or cards. The newest:",
+  "@reportLogSummary": {
+    "description": "Under Attach the app log: what the file holds, above its newest lines.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "120",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "reportLogEmpty": "The app log is empty, so there is nothing to attach.",
+  "@reportLogEmpty": {
+    "description": "Under Attach the app log, when the log holds nothing."
+  },
+  "reportLogSeeAll": "See the whole log",
+  "@reportLogSeeAll": {
+    "description": "Button under Attach the app log that opens the app log, to see all that would be attached."
+  },
+  "reportInMailAppNoLog": "Your mail app has the report, but the app log couldn’t be attached. You can export it from Settings > Logs and attach it yourself.",
+  "@reportInMailAppNoLog": {
+    "description": "Shown when the report reached the mail app without the app log, because the phone could not share the file."
+  },
   "reportGitHubTitle": "Report on GitHub",
   "@reportGitHubTitle": {
     "description": "Title of the sheet shown before a report opens GitHub's new-issue form."
@@ -1481,7 +2398,7 @@
       },
       "licence": {
         "type": "String",
-        "example": "CC0-1.0"
+        "example": "CC-BY-SA-4.0"
       }
     }
   },
@@ -1837,9 +2754,13 @@
   "@skillReadingDeckDesc": {
     "description": "Under Reading on a reading deck's screen."
   },
-  "skillReadingSettingsDesc": "Short passages, with questions",
-  "@skillReadingSettingsDesc": {
-    "description": "Under the Reading switch in Settings."
+  "skillReadingSettingsOn": "Read a short passage, answer questions",
+  "@skillReadingSettingsOn": {
+    "description": "Under a skill’s switch in Settings, while it is on. The skill is reading: short passages with questions. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "skillReadingSettingsOff": "No passages",
+  "@skillReadingSettingsOff": {
+    "description": "Under a skill’s switch in Settings, while it is off. The skill is reading: short passages with questions. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "skillListeningReadingDeckDesc": "Hear a passage, answer questions",
   "@skillListeningReadingDeckDesc": {
@@ -1981,6 +2902,38 @@
   "@settingsSources": {
     "description": "Row in Settings that opens the sources screen, and that screen's title: where the decks' texts come from."
   },
+  "sourcesDeckContent": "Deck content",
+  "@sourcesDeckContent": {
+    "description": "Heading on the Sources screen above the decks' licence and the projects credited."
+  },
+  "sourcesLicence": "Decks: CC BY-SA 4.0",
+  "@sourcesLicence": {
+    "description": "The decks' content licence, on the Sources screen and under Settings' Sources row when no deck names a source. CC BY-SA 4.0 is a licence name; keep it as is."
+  },
+  "sourcesLicenceLine": "Fluenough's decks are under the Creative Commons Attribution-ShareAlike 4.0 licence. You may share and adapt them, crediting their sources and keeping the same licence. The app itself is GPL-3.0.",
+  "@sourcesLicenceLine": {
+    "description": "The line under the licence row on the Sources screen: what the deck licence allows. Licence names stay as they are."
+  },
+  "sourcesCreditName": "{project, select, wiktionary{Wiktionary} commons{Wikimedia Commons} wikipedia{Wikipedia} tatoeba{Tatoeba} other{{project}}}",
+  "@sourcesCreditName": {
+    "description": "A project whose data the decks use, credited on the Sources screen. Project names stay as they are.",
+    "placeholders": {
+      "project": {
+        "type": "String",
+        "example": "wiktionary"
+      }
+    }
+  },
+  "sourcesCreditLine": "{project, select, wiktionary{Word data, under CC BY-SA 4.0} commons{Recordings of words, each under its own licence and with its speaker's credit} wikipedia{How often words are used, counted from each language's Wikipedia, under CC BY-SA} tatoeba{Example sentences, under CC BY 2.0 FR} other{{project}}}",
+  "@sourcesCreditLine": {
+    "description": "The line under a credited project on the Sources screen: what the decks take from it, and its licence. Licence names stay as they are.",
+    "placeholders": {
+      "project": {
+        "type": "String",
+        "example": "wiktionary"
+      }
+    }
+  },
   "settingsSourcesSummary": "{count, plural, =1{1 source} other{{count} sources}}",
   "@settingsSourcesSummary": {
     "description": "The line under Settings' Sources row: how many sources the decks name.",
@@ -2061,6 +3014,54 @@
   "@drillUnheardOther": {
     "description": "Speaking: any other recogniser error."
   },
+  "drillTryAgain": "Try again",
+  "@drillTryAgain": {
+    "description": "Speaking drill, after a wrong or almost-right answer: say the word again, as practice. Only the first answer is recorded (#231)."
+  },
+  "drillRetryPassed": "That’s it. Only your first try counts.",
+  "@drillRetryPassed": {
+    "description": "Speaking drill: a try again was right, after a first answer that was almost right and so scheduled as a pass. It changes nothing in the schedule; the first answer is the one recorded."
+  },
+  "drillRetryPassedSooner": "That’s it. Only your first try counts, so the word comes back a little sooner.",
+  "@drillRetryPassedSooner": {
+    "description": "Speaking drill: a try again was right, after a first answer that was wrong or Don't know. The first answer is the one recorded, a failure, so the word is scheduled sooner."
+  },
+  "drillRetryAlmost": "Almost. Only your first try counts.",
+  "@drillRetryAlmost": {
+    "description": "Speaking drill: a try again was almost right (the word, but an accent off), after a first answer that was almost right too. Nothing is recorded for it."
+  },
+  "drillRetryAlmostSooner": "Almost. Only your first try counts, so the word comes back a little sooner.",
+  "@drillRetryAlmostSooner": {
+    "description": "Speaking drill: a try again was almost right (the word, but an accent off), after a first answer that was wrong or Don't know, which is recorded, so the word is scheduled sooner."
+  },
+  "drillRetryPractice": "Practice only: your first try is the one that counts.",
+  "@drillRetryPractice": {
+    "description": "Speaking drill: under the result of a try again that was not right. Nothing is recorded for it."
+  },
+  "drillHearYourself": "Hear yourself",
+  "@drillHearYourself": {
+    "description": "Speaking drill, once answered: records the learner saying the word, plays it back, then plays the voice."
+  },
+  "drillHearYourselfRecording": "Say it now…",
+  "@drillHearYourselfRecording": {
+    "description": "Speaking drill: the Hear yourself button while it records the learner, for a few seconds."
+  },
+  "drillHearYourselfPlaying": "Playing yours, then the voice…",
+  "@drillHearYourselfPlaying": {
+    "description": "Speaking drill: the Hear yourself button while the learner's recording plays, then the voice."
+  },
+  "drillHearYourselfRefused": "Fluenough can’t use the microphone. Allow it in your phone’s settings, under Apps, Fluenough, Permissions.",
+  "@drillHearYourselfRefused": {
+    "description": "Speaking drill: Hear yourself could not record, because the microphone permission was refused."
+  },
+  "drillHearYourselfSilent": "Only silence was recorded. Is the microphone covered?",
+  "@drillHearYourselfSilent": {
+    "description": "Speaking drill: Hear yourself recorded nothing but silence."
+  },
+  "drillHearYourselfFailed": "Couldn’t record on this phone.",
+  "@drillHearYourselfFailed": {
+    "description": "Speaking drill: Hear yourself could not record, or could not play the recording back."
+  },
   "drillOnlineAsk": "Your phone can’t recognise {language} by itself. Recognise it online? What you say would go to your phone’s speech service.",
   "@drillOnlineAsk": {
     "description": "Speaking: the language has no on-device recogniser; asks before sending audio off the phone.",
@@ -2137,6 +3138,10 @@
   "drillChooseMeaning": "What does it mean?",
   "@drillChooseMeaning": {
     "description": "Multiple choice (ADR-0024): above a word in the language learned, whose meaning is chosen from the options under it."
+  },
+  "drillChooseForm": "Which form says this?",
+  "@drillChooseForm": {
+    "description": "Multiple choice (DECK-FORMAT.md, Rules decks): above a word and the meaning to express with it, like \"amma: with mother\", whose right form is chosen from the word's forms under it."
   },
   "drillChooseWord": "Which is it in {language}?",
   "@drillChooseWord": {
@@ -2863,13 +3868,41 @@
   "@settingsSectionLearning": {
     "description": "Settings section heading."
   },
-  "settingsRomanisation": "Show romanisation",
+  "settingsRomanisation": "Latin-letter readings",
   "@settingsRomanisation": {
-    "description": "Switch: show the reading line."
+    "description": "Switch: show a reading in Latin letters under words written in other scripts. Was “Latin-letter readings”. Also the label of the chip that shows readings on a passage."
   },
-  "settingsRomanisationDesc": "Reading line under non-Latin scripts",
-  "@settingsRomanisationDesc": {
-    "description": "Under Show romanisation."
+  "settingsRomanisationOn": "A Latin-letter reading under words in other scripts",
+  "@settingsRomanisationOn": {
+    "description": "Under Latin-letter readings, while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsRomanisationOff": "Only the script, no reading",
+  "@settingsRomanisationOff": {
+    "description": "Under Latin-letter readings, while it is off. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsAdult": "Adult content (18+)",
+  "@settingsAdult": {
+    "description": "Switch in Settings (#96): show rude and offensive words, which are otherwise hidden behind a warning. Off by default; switching it on asks the learner to confirm they are 18 or over. Other strings quote this name: keep them the same."
+  },
+  "settingsAdultOn": "Rude words and offensive cards are shown",
+  "@settingsAdultOn": {
+    "description": "Under Adult content (18+), while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsAdultOff": "Rude words stay hidden behind their warnings",
+  "@settingsAdultOff": {
+    "description": "Under Adult content (18+), while it is off. A warning is the notice on a word that sounds or looks like a rude one. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsAdultConfirmTitle": "Are you 18 or over?",
+  "@settingsAdultConfirmTitle": {
+    "description": "Title of the dialog shown as Adult content (18+) is switched on."
+  },
+  "settingsAdultConfirmBody": "Adult content shows rude and offensive words, so that you know one when you hear it and never use one by mistake. They can offend. Turn it on only if you are 18 or over.",
+  "@settingsAdultConfirmBody": {
+    "description": "Body of the dialog shown as Adult content (18+) is switched on."
+  },
+  "settingsAdultConfirm": "I’m 18 or over",
+  "@settingsAdultConfirm": {
+    "description": "Button in the dialog shown as Adult content (18+) is switched on: confirms the learner’s age and switches it on."
   },
   "settingsAlphabet": "Alphabets",
   "@settingsAlphabet": {
@@ -2893,9 +3926,27 @@
   "@settingsAlphabetTitle": {
     "description": "Title of the dialog with a switch per language: learn its alphabet, or Latin letters only."
   },
-  "settingsAlphabetEmpty": "No decks without the alphabet yet",
-  "@settingsAlphabetEmpty": {
-    "description": "Under a language in the Alphabets dialog whose course has nothing to teach without its alphabet."
+  "settingsAlphabetOn": "Learning the {script, select, devanagari{Devanagari} bengali{Bengali} gujarati{Gujarati} kannada{Kannada} telugu{Telugu} kana{kana} other{{language}}} script",
+  "@settingsAlphabetOn": {
+    "description": "In the Alphabets dialog, under a language whose switch is on. {script} is the deck files’ script code; other scripts take the language’s name. Shown while the switch is on: says what happens now, and changes the moment it is flipped.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "telugu"
+      },
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "settingsAlphabetOff": "Latin letters only; script decks skipped",
+  "@settingsAlphabetOff": {
+    "description": "In the Alphabets dialog, under a language whose switch is off. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsAlphabetOffEmpty": "Latin letters only. No decks without the alphabet yet",
+  "@settingsAlphabetOffEmpty": {
+    "description": "In the Alphabets dialog, under a language whose switch is off and whose course has nothing yet to teach without its alphabet. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "settingsSectionSound": "Sound",
   "@settingsSectionSound": {
@@ -2905,17 +3956,37 @@
   "@settingsSound": {
     "description": "Switch: sound for the whole app. Off, nothing is spoken and listening is skipped."
   },
-  "settingsSoundDesc": "Off, nothing is spoken and listening is skipped",
-  "@settingsSoundDesc": {
-    "description": "Under the Sound switch."
+  "settingsSoundOn": "Words are spoken; listening questions are asked",
+  "@settingsSoundOn": {
+    "description": "Under the Sound switch, while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsSoundOff": "Nothing is spoken; listening questions are skipped",
+  "@settingsSoundOff": {
+    "description": "Under the Sound switch, while it is off. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "settingsAutoplay": "Play words automatically",
   "@settingsAutoplay": {
     "description": "Switch: a card's word plays by itself as the card shows, or once it is answered when hearing it would give the answer away."
   },
-  "settingsAutoplayDesc": "As each card shows, or once you answer. Long-press any speaker to switch",
-  "@settingsAutoplayDesc": {
-    "description": "Under Play words automatically. A speaker is the play button on a drill card."
+  "settingsAutoplayOn": "Words play by themselves, as a card shows or once you answer",
+  "@settingsAutoplayOn": {
+    "description": "Under Play words automatically, while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsAutoplayOff": "Words play only when you tap the speaker",
+  "@settingsAutoplayOff": {
+    "description": "Under Play words automatically, while it is off. The speaker is the play button on a card. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsAutoplayOnSoundOff": "Nothing plays while sound is off; then words play by themselves",
+  "@settingsAutoplayOnSoundOff": {
+    "description": "Under Play words automatically, while it is on but the Sound switch is off, which greys it out: nothing plays now, and once sound is on words play by themselves."
+  },
+  "settingsAutoplayOffSoundOff": "Nothing plays while sound is off; then only when you tap the speaker",
+  "@settingsAutoplayOffSoundOff": {
+    "description": "Under Play words automatically, while it is off and the Sound switch is off too, which greys it out: nothing plays now, and once sound is on words play only from the speaker button on a card."
+  },
+  "settingsSkillSoundOff": "Skipped while sound is off",
+  "@settingsSkillSoundOff": {
+    "description": "Under a skill switch in Settings that needs sound (Heard words, Phonemic contrasts), while it is on but the Sound switch is off: its questions are skipped now."
   },
   "settingsSpeechRate": "Speech rate",
   "@settingsSpeechRate": {
@@ -2997,9 +4068,9 @@
   "@onboardingWelcomeBody": {
     "description": "First screen of the first launch, under the motto: what the app does, in one sentence. 'Drills' are short exercises on words and sentences; they are scheduled by spaced repetition."
   },
-  "onboardingWelcomeNote": "No account needed. Works offline.",
+  "onboardingWelcomeNote": "No account needed. Works offline once your language is downloaded.",
   "@onboardingWelcomeNote": {
-    "description": "First screen of the first launch, small print above Get started, beside an offline icon. Both are true: there is no sign-in, and nothing in the app needs the internet."
+    "description": "First screen of the first launch, small print above Get started, beside an offline icon. Both are true: there is no sign-in, and the app needs the internet to download a language's decks the first time it is chosen; after that it works offline."
   },
   "onboardingStart": "Get started",
   "@onboardingStart": {
@@ -3073,7 +4144,7 @@
   "@onboardingTourFactsTitle": {
     "description": "Tour slide 4, title: the daily fact on the Today tab."
   },
-  "onboardingTourFactsBody": "Most languages here come with a short fact each day, shown on Today in the languages you speak.",
+  "onboardingTourFactsBody": "Most languages here come with a short fact each day, shown on Today in the languages you know.",
   "@onboardingTourFactsBody": {
     "description": "Tour slide 4, body. 'Most' because not every language has facts yet. Leads into the next screen, which asks which languages the learner speaks."
   },
@@ -3163,7 +4234,7 @@
       }
     }
   },
-  "onboardingSpokenTitle": "Which languages do you already speak?",
+  "onboardingSpokenTitle": "Which languages do you already know?",
   "@onboardingSpokenTitle": {
     "description": "First-launch question: the languages the learner already knows, not the one they want to learn, which is asked separately. The same choice as the Settings screen spokenTitle."
   },
@@ -3181,7 +4252,7 @@
       },
       "row": {
         "type": "String",
-        "example": "Languages I speak"
+        "example": "Languages I know"
       }
     }
   },
@@ -3189,11 +4260,37 @@
   "@onboardingSpokenNeedOne": {
     "description": "First-launch question, just above the button while it is disabled: why it is."
   },
-  "spokenTitle": "Languages you speak",
-  "@spokenTitle": {
-    "description": "Title of the screen opened from Settings where the learner picks and ranks the languages they speak. The first launch asks the same question as onboardingSpokenTitle."
+  "knownReadsScript": "Do you read the {script, select, devanagari{Devanagari} bengali{Bengali} gujarati{Gujarati} kannada{Kannada} telugu{Telugu} latin{Latin} kana{kana} arabic{Arabic} other{{language}}} script?",
+  "@knownReadsScript": {
+    "description": "Question under a ticked language in Languages you know, on first launch and in Settings (#462), answered Yes or No; neither is chosen until the learner answers. {script} is the deck files’ script code; another script takes the language’s name. Reviewing a course needs both its scripts read.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "telugu"
+      },
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
   },
-  "spokenBody": "Tick every language you know. They decide which comparisons and daily facts you see.",
+  "knownScriptYes": "Yes",
+  "@knownScriptYes": {
+    "description": "Answer to knownReadsScript: the learner reads the script."
+  },
+  "knownScriptNo": "No",
+  "@knownScriptNo": {
+    "description": "Answer to knownReadsScript: the learner does not read the script."
+  },
+  "knownScriptsNeeded": "Say whether you read each language’s script to go on.",
+  "@knownScriptsNeeded": {
+    "description": "Above the button in Languages you know, on first launch and in Settings, while it is disabled because a ticked language's script question is unanswered (#462)."
+  },
+  "spokenTitle": "Languages you know",
+  "@spokenTitle": {
+    "description": "Title of the screen opened from Settings where the learner picks and ranks the languages they know, and says whether they read each one's script (#462). The first launch asks the same question as onboardingSpokenTitle. Was “Languages you speak”."
+  },
+  "spokenBody": "Tick every language you know, and say whether you read its script. They decide which comparisons and daily facts you see, and which decks you can review.",
   "@spokenBody": {
     "description": "Under the title of the spoken-languages screen opened from Settings: how to answer, and what the answer changes. How to rank them is the hint under the list (spokenRankHint), shown once two are ticked."
   },
@@ -3243,7 +4340,7 @@
       }
     }
   },
-  "settingsSpoken": "Languages I speak",
+  "settingsSpoken": "Languages I know",
   "@settingsSpoken": {
     "description": "Settings row that opens the spoken-languages screen."
   },
@@ -3262,6 +4359,380 @@
   "learnLoading": "Loading the courses…",
   "@learnLoading": {
     "description": "Screen-reader label while the courses load on the choose-what-to-learn screen."
+  },
+  "downloadsTaughtFrom": "Taught from {language}",
+  "@downloadsTaughtFrom": {
+    "description": "Under a language on the choose-what-to-learn screen, when none of the languages the learner speaks teaches it: its decks teach from this language instead (ADR-0037).",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "English"
+      }
+    }
+  },
+  "downloadsToDownload": "{size} to download",
+  "@downloadsToDownload": {
+    "description": "Under a language on the choose-what-to-learn screen that is not on the phone yet: how much choosing it downloads. {size} is a size such as 310 KB.",
+    "placeholders": {
+      "size": {
+        "type": "String",
+        "example": "310 KB"
+      }
+    }
+  },
+  "downloadsSizeKb": "{kb} KB",
+  "@downloadsSizeKb": {
+    "description": "A download size in kilobytes.",
+    "placeholders": {
+      "kb": {
+        "type": "int",
+        "example": "310"
+      }
+    }
+  },
+  "downloadsSizeMb": "{mb} MB",
+  "@downloadsSizeMb": {
+    "description": "A download size in megabytes, with one decimal.",
+    "placeholders": {
+      "mb": {
+        "type": "String",
+        "example": "1.2"
+      }
+    }
+  },
+  "downloadsIndexLoading": "Finding the courses…",
+  "@downloadsIndexLoading": {
+    "description": "Screen-reader label while the list of courses is read from GitHub on the choose-what-to-learn screen."
+  },
+  "downloadsIndexFailed": "Couldn’t get the list of courses",
+  "@downloadsIndexFailed": {
+    "description": "Title shown when the list of courses could not be read from GitHub. Followed by why, and a Try again button."
+  },
+  "downloadsOffline": "No connection. Fluenough downloads a language’s decks the first time you choose it; after that it works offline. Connect to the internet and try again.",
+  "@downloadsOffline": {
+    "description": "Why decks could not be downloaded: the phone is offline, or the connection broke."
+  },
+  "downloadsRateLimited": "GitHub has had too many requests from this network. Try again in a few minutes.",
+  "@downloadsRateLimited": {
+    "description": "Why decks could not be downloaded: GitHub limited requests from this network."
+  },
+  "downloadsBadFile": "A deck didn’t arrive whole. Try again.",
+  "@downloadsBadFile": {
+    "description": "Why decks could not be downloaded: a file did not match the list of decks, or was cut short."
+  },
+  "downloadsInvalid": "A deck on GitHub couldn’t be read, so nothing was changed. Try again later.",
+  "@downloadsInvalid": {
+    "description": "Why decks could not be downloaded: a file arrived whole but the app could not read it. The decks already on the phone are kept."
+  },
+  "downloadsStorage": "The phone couldn’t keep the decks. It may be full.",
+  "@downloadsStorage": {
+    "description": "Why decks could not be downloaded: writing them to the phone failed."
+  },
+  "downloadsAppTooOld": "These decks need a newer version of Fluenough. Update the app in Settings, then try again.",
+  "@downloadsAppTooOld": {
+    "description": "Why decks could not be downloaded: the list of decks is in a newer format than this version reads."
+  },
+  "downloadsNotOffered": "GitHub no longer offers this language.",
+  "@downloadsNotOffered": {
+    "description": "Why a language could not be downloaded: it is no longer in the list of decks."
+  },
+  "downloadsTitle": "Getting your decks",
+  "@downloadsTitle": {
+    "description": "Title of the screen that downloads the first decks of the languages chosen."
+  },
+  "downloadsBody": "Each language’s decks come from GitHub. You can start once its first five are in; the rest follow while you learn.",
+  "@downloadsBody": {
+    "description": "Explanation on the screen that downloads the first decks of the languages chosen."
+  },
+  "downloadsProgress": "{total, plural, =1{{done} of 1 file} other{{done} of {total} files}}",
+  "@downloadsProgress": {
+    "description": "How far a language's download has got, in files.",
+    "placeholders": {
+      "done": {
+        "type": "int",
+        "example": "3"
+      },
+      "total": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "downloadsReady": "Ready",
+  "@downloadsReady": {
+    "description": "A language whose first decks are on the phone, on the download screen."
+  },
+  "downloadsWaiting": "Waiting",
+  "@downloadsWaiting": {
+    "description": "A language waiting for another to finish downloading."
+  },
+  "downloadsChooseOther": "Choose other languages",
+  "@downloadsChooseOther": {
+    "description": "Button on the download screen, when it fails, that opens the choose-what-to-learn screen."
+  },
+  "downloadsCheckAppUpdate": "Check for an app update",
+  "@downloadsCheckAppUpdate": {
+    "description": "Quiet button under Try again wherever downloading decks or the list of courses failed and Settings cannot be reached: checks GitHub for a newer version of the app and offers it, as Settings' Check for updates does. A fault in the app itself can be what fails the downloads."
+  },
+  "downloadsKeepsFailing": "If this keeps happening, check for an app update or report it.",
+  "@downloadsKeepsFailing": {
+    "description": "Line shown once a deck download, or the list of courses, has failed three times in a row (Try again failed twice). Above Check for an app update and Report a problem."
+  },
+  "downloadsReportProblem": "Report a problem",
+  "@downloadsReportProblem": {
+    "description": "Button beside Check for an app update, once a download has failed again and again: opens a report from this screen, as the bug icon does."
+  },
+  "deckDownloadsRowDownloading": "Downloading decks…",
+  "@deckDownloadsRowDownloading": {
+    "description": "Second line of the deck updates row on the Decks tab's course card (#464) while the course's decks download or update."
+  },
+  "deckDownloadsCheck": "Check for deck updates",
+  "@deckDownloadsCheck": {
+    "description": "Row at the top of Languages I’m learning, opened from Settings, that checks GitHub for changed decks (#467)."
+  },
+  "deckDownloadsChecked": "Last checked {when}",
+  "@deckDownloadsChecked": {
+    "description": "Line under the check row: when GitHub was last asked. {when} is a date and time.",
+    "placeholders": {
+      "when": {
+        "type": "String",
+        "example": "9 Oct 2026, 09:00"
+      }
+    }
+  },
+  "deckDownloadsNeverChecked": "Not checked yet",
+  "@deckDownloadsNeverChecked": {
+    "description": "Line under the check row before GitHub was ever asked."
+  },
+  "deckDownloadsChecking": "Checking…",
+  "@deckDownloadsChecking": {
+    "description": "Line under the check row while GitHub is asked."
+  },
+  "deckDownloadsAuto": "Check automatically",
+  "@deckDownloadsAuto": {
+    "description": "Switch at the top of Languages I’m learning: look for deck updates by itself. On unless the learner turns it off."
+  },
+  "deckDownloadsAutoOn": "Checks GitHub for deck updates once a day, when the app opens",
+  "@deckDownloadsAutoOn": {
+    "description": "Under Check automatically, at the top of Languages I’m learning, while it is on. Says what happens now, and changes the moment it is flipped; each check is a request to GitHub, a website."
+  },
+  "deckDownloadsAutoOff": "Only when you tap Check for deck updates",
+  "@deckDownloadsAutoOff": {
+    "description": "Under Check automatically, at the top of Languages I’m learning, while it is off. Says what happens now, and changes the moment it is flipped."
+  },
+  "deckDownloadsUpdateAll": "Update all, {size}",
+  "@deckDownloadsUpdateAll": {
+    "description": "Button at the top of Languages I’m learning that downloads every waiting update. {size} is how much, such as 120 KB.",
+    "placeholders": {
+      "size": {
+        "type": "String",
+        "example": "120 KB"
+      }
+    }
+  },
+  "deckDownloadsUpdate": "Update",
+  "@deckDownloadsUpdate": {
+    "description": "Button on a language's row that downloads its waiting update."
+  },
+  "deckDownloadsRemove": "Remove",
+  "@deckDownloadsRemove": {
+    "description": "Button on a language's row that deletes its decks from the phone, after asking."
+  },
+  "deckDownloadsGetRest": "Download the rest",
+  "@deckDownloadsGetRest": {
+    "description": "Button on a language's row when some of its decks are still to download."
+  },
+  "deckDownloadsUpToDate": "Up to date · {size}",
+  "@deckDownloadsUpToDate": {
+    "description": "A downloaded language's line on its card in Languages I’m learning and on its course in Languages you review (#467). {size} is what it takes on the phone.",
+    "placeholders": {
+      "size": {
+        "type": "String",
+        "example": "310 KB"
+      }
+    }
+  },
+  "deckDownloadsWaiting": "Update waiting · {size} to download",
+  "@deckDownloadsWaiting": {
+    "description": "A language's line when an update is waiting.",
+    "placeholders": {
+      "size": {
+        "type": "String",
+        "example": "12 KB"
+      }
+    }
+  },
+  "deckDownloadsPartial": "Some decks still to download · {size} on the phone",
+  "@deckDownloadsPartial": {
+    "description": "A language's line when its first decks are in but not the rest.",
+    "placeholders": {
+      "size": {
+        "type": "String",
+        "example": "80 KB"
+      }
+    }
+  },
+  "deckDownloadsNotOffered": "No longer on GitHub, kept on this phone · {size}",
+  "@deckDownloadsNotOffered": {
+    "description": "A language's line when GitHub no longer offers it.",
+    "placeholders": {
+      "size": {
+        "type": "String",
+        "example": "310 KB"
+      }
+    }
+  },
+  "deckDownloadsNeedsNewerApp": "Some decks need a newer version of the app.",
+  "@deckDownloadsNeedsNewerApp": {
+    "description": "Added to a language's line when some of its decks are in a newer format than this version reads."
+  },
+  "deckDownloadsRemoveTitle": "Remove {language}?",
+  "@deckDownloadsRemoveTitle": {
+    "description": "Title of the dialog that asks before deleting a language's decks.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "deckDownloadsRemoveBody": "Its decks are deleted from this phone, and it leaves the languages you learn. Your progress is kept, and comes back if you download {language} again.",
+  "@deckDownloadsRemoveBody": {
+    "description": "Body of the dialog that asks before deleting a language's decks.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "deckDownloadsRemoveReviewBody": "Its decks are deleted from this phone. Your reviews are kept, and come back if you download {language} again.",
+  "@deckDownloadsRemoveReviewBody": {
+    "description": "Body of the Remove dialog for a language downloaded only for reviewing (#462), which is not one the learner learns.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "deckDownloadsRemoved": "{language} removed",
+  "@deckDownloadsRemoved": {
+    "description": "Toast after a language's decks are deleted.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "deckDownloadsUpdated": "Decks updated",
+  "@deckDownloadsUpdated": {
+    "description": "Toast after an update is downloaded."
+  },
+  "deckDownloadsProgressLabel": "Downloading {language}",
+  "@deckDownloadsProgressLabel": {
+    "description": "Screen-reader label of a language's download progress bar.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "deckUpdatePromptTitle": "Deck updates",
+  "@deckUpdatePromptTitle": {
+    "description": "Title of the dialog, at launch, that asks whether to download changed decks."
+  },
+  "deckUpdatePromptBody": "New or changed decks for {languages}, {size}. Update now? Your progress is kept.",
+  "@deckUpdatePromptBody": {
+    "description": "Body of the dialog that asks whether to download changed decks. {languages} is a list of language names; {size} how much it downloads.",
+    "placeholders": {
+      "languages": {
+        "type": "String",
+        "example": "Hindi, Telugu"
+      },
+      "size": {
+        "type": "String",
+        "example": "120 KB"
+      }
+    }
+  },
+  "deckUpdatePromptLater": "Not now",
+  "@deckUpdatePromptLater": {
+    "description": "Button that leaves a deck update waiting on its language's card in Languages I’m learning."
+  },
+  "deckUpdatePromptUpdate": "Update",
+  "@deckUpdatePromptUpdate": {
+    "description": "Button that downloads a deck update."
+  },
+  "nativeChoiceTitle": "Learn {language} from",
+  "@nativeChoiceTitle": {
+    "description": "Title of the question, and of the Settings row, choosing which of the languages the learner speaks a course is taught from (ADR-0036). Followed by the choices, each a language name.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "nativeChoiceBody": "{language} is taught from more than one of the languages you know. Each teaches its own share of the course so far; a part not yet written in yours is left out until it is. You can change this in Settings, and keep what you have learned.",
+  "@nativeChoiceBody": {
+    "description": "Under the question choosing which language a course is taught from.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "nativeChoiceCoverage": "{covered} of {total, plural, =1{1 unit} other{{total} units}} so far",
+  "@nativeChoiceCoverage": {
+    "description": "Under a language a course can be taught from: how many of the course's written units it teaches yet.",
+    "placeholders": {
+      "covered": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "34"
+      }
+    }
+  },
+  "nativeChoiceCoverageAll": "{total, plural, =1{The whole unit} other{All {total} units}}",
+  "@nativeChoiceCoverageAll": {
+    "description": "Under a language a course can be taught from, when it teaches every written unit of the course.",
+    "placeholders": {
+      "total": {
+        "type": "int",
+        "example": "34"
+      }
+    }
+  },
+  "nativeChoiceGroup": "Languages to learn {language} from",
+  "@nativeChoiceGroup": {
+    "description": "Screen-reader label of the group of choices.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "nativeChoiceNew": "{language} is now taught from more of the languages you know",
+  "@nativeChoiceNew": {
+    "description": "Today: a card shown once a language the learner speaks starts teaching a course they learn, until they choose which to learn from.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "nativeChoiceChoose": "Choose",
+  "@nativeChoiceChoose": {
+    "description": "Button on the Today card that opens the choice of which language a course is taught from."
   },
   "alphabetAskTitle": "Learn the {language} alphabet?",
   "@alphabetAskTitle": {
@@ -3455,9 +4926,19 @@
   "@settingsReminder": {
     "description": "Switch: a daily notification."
   },
-  "settingsReminderDesc": "Only when cards are due",
-  "@settingsReminderDesc": {
-    "description": "Under Daily reminder."
+  "settingsReminderOn": "A reminder at {time} on days with cards due",
+  "@settingsReminderOn": {
+    "description": "Under Daily reminder, while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped.",
+    "placeholders": {
+      "time": {
+        "type": "String",
+        "example": "7:30 PM"
+      }
+    }
+  },
+  "settingsReminderOff": "No reminders",
+  "@settingsReminderOff": {
+    "description": "Under Daily reminder, while it is off. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "settingsReminderTime": "Reminder time",
   "@settingsReminderTime": {
@@ -3467,9 +4948,13 @@
   "@settingsPinLock": {
     "description": "Switch: ask for a PIN."
   },
-  "settingsPinLockDesc": "Ask for a PIN when opening this profile",
-  "@settingsPinLockDesc": {
-    "description": "Under PIN lock."
+  "settingsPinLockOn": "This profile asks for its PIN when it opens",
+  "@settingsPinLockOn": {
+    "description": "Under PIN lock, while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsPinLockOff": "This profile opens without a PIN",
+  "@settingsPinLockOff": {
+    "description": "Under PIN lock, while it is off. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "settingsAdjust": "Adjust to me",
   "@settingsAdjust": {
@@ -3502,9 +4987,9 @@
       }
     }
   },
-  "settingsAdjusting": "Adjusting {language} {mode, select, recognition{seen words} production{written words} listening{heard words} speaking{spoken words} grammar{grammar} reading{passages} other{words}}… {current} of {total}",
+  "settingsAdjusting": "Adjusting {language} {mode, select, recognition{seen words} production{written words} listening{heard words} speaking{spoken words} grammarUnderstood{grammar understood} grammar{grammar used} reading{passages} other{words}}… {current} of {total}",
   "@settingsAdjusting": {
-    "description": "Under Adjust to me while fitting. language is a language name such as Hindi; mode is the skill (recognition, production, listening, speaking, grammar or reading), named by what the words were; current and total count the skills being fitted.",
+    "description": "Under Adjust to me while fitting. language is a language name such as Hindi; mode is the skill (recognition, production, listening, speaking, grammarUnderstood, grammar or reading), named by what the words were: grammarUnderstood is choosing what a form of a word means, grammar is giving the form; current and total count the skills being fitted.",
     "placeholders": {
       "language": {
         "type": "String",
@@ -3532,9 +5017,13 @@
   "@settingsAdjustAuto": {
     "description": "Switch: fit a skill again in the background once it has more answers."
   },
-  "settingsAdjustAutoDesc": "When a skill has 10% more answers",
-  "@settingsAdjustAutoDesc": {
-    "description": "Under Adjust automatically."
+  "settingsAdjustAutoOn": "Adjusts by itself when a skill has 10% more answers",
+  "@settingsAdjustAutoOn": {
+    "description": "Under Adjust automatically, while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsAdjustAutoOff": "Only when you tap Adjust",
+  "@settingsAdjustAutoOff": {
+    "description": "Under Adjust automatically, while it is off. Adjust is the button on the row above. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "settingsAdjustHelp": "Fits your reviews to how well you remember each skill. Worked out on this phone from your answers. Nothing is sent anywhere.",
   "@settingsAdjustHelp": {
@@ -3548,7 +5037,7 @@
   "@adjustedSubtitle": {
     "description": "Line under Adjusted to you."
   },
-  "adjustedFewer": "You remember {mode, select, recognition{seen words} production{written words} listening{heard words} speaking{spoken words} grammar{grammar} reading{passages} other{words}} well: fewer reviews",
+  "adjustedFewer": "You remember {mode, select, recognition{seen words} production{written words} listening{heard words} speaking{spoken words} grammarUnderstood{grammar you understand} grammar{grammar you use} reading{passages} other{words}} well: fewer reviews",
   "@adjustedFewer": {
     "description": "A skill the learner remembers better than the defaults assume. mode is the skill, named by what the words were.",
     "placeholders": {
@@ -3558,7 +5047,7 @@
       }
     }
   },
-  "adjustedMore": "{mode, select, recognition{Seen words slip} production{Written words slip} listening{Heard words slip} speaking{Spoken words slip} grammar{Grammar slips} reading{Passages slip} other{Words slip}} faster: more reviews",
+  "adjustedMore": "{mode, select, recognition{Seen words slip} production{Written words slip} listening{Heard words slip} speaking{Spoken words slip} grammarUnderstood{Grammar understood slips} grammar{Grammar used slips} reading{Passages slip} other{Words slip}} faster: more reviews",
   "@adjustedMore": {
     "description": "A skill the learner forgets faster than the defaults assume. 'Slip', never 'fade'.",
     "placeholders": {
@@ -3568,7 +5057,7 @@
       }
     }
   },
-  "adjustedSame": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammar{Grammar} reading{Passages} other{Words}}: about the same",
+  "adjustedSame": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammarUnderstood{Grammar understood} grammar{Grammar used} reading{Passages} other{Words}}: about the same",
   "@adjustedSame": {
     "description": "A skill whose schedule barely changed.",
     "placeholders": {
@@ -3578,7 +5067,7 @@
       }
     }
   },
-  "adjustedNotYet": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammar{Grammar} reading{Passages} other{Words}}: not adjusted yet",
+  "adjustedNotYet": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammarUnderstood{Grammar understood} grammar{Grammar used} reading{Passages} other{Words}}: not adjusted yet",
   "@adjustedNotYet": {
     "description": "A skill without enough answers to fit.",
     "placeholders": {
@@ -3670,7 +5159,7 @@
   "@howYouLearnLegendStart": {
     "description": "Legend of How you learn's bars: the tick is the gap every skill starts with."
   },
-  "paceSkillName": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammar{Grammar} reading{Passages} other{Words}}",
+  "paceSkillName": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammarUnderstood{Grammar understood} grammar{Grammar used} reading{Passages} other{Words}}",
   "@paceSkillName": {
     "description": "A skill's heading on How you learn, named by what the words were.",
     "placeholders": {
@@ -3680,7 +5169,7 @@
       }
     }
   },
-  "paceComesBack": "A {mode, select, recognition{seen word} production{written word} listening{heard word} speaking{spoken word} grammar{grammar question} reading{passage question} other{word}} you get right comes back in {days, plural, =1{1 day} other{{days} days}}, not {was}.",
+  "paceComesBack": "A {mode, select, recognition{seen word} production{written word} listening{heard word} speaking{spoken word} grammarUnderstood{form's meaning} grammar{form} reading{passage question} other{word}} you get right comes back in {days, plural, =1{1 day} other{{days} days}}, not {was}.",
   "@paceComesBack": {
     "description": "How you learn: days until a word of the skill answered right comes back now, and at the start.",
     "placeholders": {
@@ -3698,7 +5187,7 @@
       }
     }
   },
-  "paceComesBackSame": "A {mode, select, recognition{seen word} production{written word} listening{heard word} speaking{spoken word} grammar{grammar question} reading{passage question} other{word}} you get right comes back in {days, plural, =1{1 day} other{{days} days}}, as at the start.",
+  "paceComesBackSame": "A {mode, select, recognition{seen word} production{written word} listening{heard word} speaking{spoken word} grammarUnderstood{form's meaning} grammar{form} reading{passage question} other{word}} you get right comes back in {days, plural, =1{1 day} other{{days} days}}, as at the start.",
   "@paceComesBackSame": {
     "description": "How you learn: days until a word of the skill answered right comes back, the same as at the start.",
     "placeholders": {
@@ -3872,13 +5361,76 @@
   "@settingsSectionLogs": {
     "description": "Settings section heading, for the app's own log (#162)."
   },
-  "settingsAppLog": "App log",
-  "@settingsAppLog": {
-    "description": "Settings row: the app's own log of what it did and what went wrong (#162). Feature incoming."
+  "settingsLogAbout": "What the app did and what went wrong, kept on this phone for 7 days, to add to a report if you choose. Never your answers or cards.",
+  "@settingsLogAbout": {
+    "description": "Under the Logs section in Settings: what the app log holds (#162)."
   },
-  "settingsAppLogDesc": "What the app did and what went wrong, to add to a report",
-  "@settingsAppLogDesc": {
-    "description": "Subtitle of the App log row in Settings."
+  "settingsLogView": "View app log",
+  "@settingsLogView": {
+    "description": "Settings row that opens the app's own log (#162)."
+  },
+  "settingsLogViewDesc": "{count, plural, =0{Nothing logged yet} =1{1 line} other{{count} lines}}",
+  "@settingsLogViewDesc": {
+    "description": "Under View app log: how many lines the app log holds.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "120",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "settingsLogCopy": "Copy app log",
+  "@settingsLogCopy": {
+    "description": "Settings row that copies the app log as text."
+  },
+  "settingsLogCopied": "App log copied",
+  "@settingsLogCopied": {
+    "description": "SnackBar after the app log is copied."
+  },
+  "settingsLogExport": "Export app log",
+  "@settingsLogExport": {
+    "description": "Settings row that saves the app log as a file."
+  },
+  "settingsLogExportDesc": "Text file",
+  "@settingsLogExportDesc": {
+    "description": "Under Export app log: the kind of file it saves."
+  },
+  "settingsLogExportFailed": "Couldn’t save the app log",
+  "@settingsLogExportFailed": {
+    "description": "SnackBar when saving the app log fails."
+  },
+  "settingsLogClear": "Clear app log",
+  "@settingsLogClear": {
+    "description": "Settings row that deletes everything in the app log."
+  },
+  "settingsLogClearTitle": "Clear the app log?",
+  "@settingsLogClearTitle": {
+    "description": "Title of the dialog that asks before the app log is cleared."
+  },
+  "settingsLogClearBody": "Everything in it is deleted. Your progress and review log stay.",
+  "@settingsLogClearBody": {
+    "description": "Text of the dialog that asks before the app log is cleared."
+  },
+  "settingsLogClearConfirm": "Clear",
+  "@settingsLogClearConfirm": {
+    "description": "Button in the dialog that clears the app log."
+  },
+  "settingsLogCleared": "App log cleared",
+  "@settingsLogCleared": {
+    "description": "SnackBar after the app log is cleared."
+  },
+  "appLogTitle": "App log",
+  "@appLogTitle": {
+    "description": "Title of the page that shows the app's own log (#162)."
+  },
+  "appLogEmpty": "Nothing logged yet.",
+  "@appLogEmpty": {
+    "description": "Shown on the App log page when the log is empty."
+  },
+  "appLogLabel": "The app log, oldest first",
+  "@appLogLabel": {
+    "description": "Accessibility label of the list of log lines on the App log page."
   },
   "settingsExport": "Export review log",
   "@settingsExport": {
@@ -4136,9 +5688,13 @@
   "@settingsUpdateAuto": {
     "description": "Switch: check for updates by itself. Off unless the learner turns it on."
   },
-  "settingsUpdateAutoDesc": "Once a day, when the app opens. Each check asks GitHub.",
-  "@settingsUpdateAutoDesc": {
-    "description": "Under Check automatically. Says that each check is a request to GitHub, a website."
+  "settingsUpdateAutoOn": "Checks GitHub once a day, when the app opens",
+  "@settingsUpdateAutoOn": {
+    "description": "Under Check automatically, while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "settingsUpdateAutoOff": "Only when you tap Check for updates",
+  "@settingsUpdateAutoOff": {
+    "description": "Under Check automatically, while it is off. The quoted name must match settingsUpdateCheck. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "settingsReleaseNotes": "What’s new",
   "@settingsReleaseNotes": {
@@ -4188,9 +5744,9 @@
   "@releaseNotesLinkCopied": {
     "description": "SnackBar when nothing on the phone could open the releases page, so its address was copied instead."
   },
-  "settingsFooter": "Fluenough {version} · Free software, GPL-3.0 · Works fully offline",
+  "settingsFooter": "Fluenough {version} · Free software, GPL-3.0 · Works offline once decks are downloaded",
   "@settingsFooter": {
-    "description": "Footer of Settings.",
+    "description": "Footer of Settings. The app needs the internet only to download decks, to check for updates and to send a report; with its decks on the phone, it works offline.",
     "placeholders": {
       "version": {
         "type": "String",
@@ -4226,17 +5782,25 @@
   "@appearancePureBlack": {
     "description": "Switch under the theme choice: black backgrounds whenever the app is dark."
   },
-  "appearancePureBlackDesc": "Black backgrounds when the app is dark, for OLED screens",
-  "@appearancePureBlackDesc": {
-    "description": "Under Pure black. Applies with Dark, and with System when the phone is dark; OLED is a screen type."
+  "appearancePureBlackOn": "Dark mode uses black backgrounds",
+  "@appearancePureBlackOn": {
+    "description": "Under Pure black, while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "appearancePureBlackOff": "Dark mode uses dark grey backgrounds",
+  "@appearancePureBlackOff": {
+    "description": "Under Pure black, while it is off. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "appearanceWallpaper": "Wallpaper colours",
   "@appearanceWallpaper": {
     "description": "Switch: take colours from the wallpaper."
   },
-  "appearanceWallpaperDesc": "Use your phone’s Material You palette (Android 12+)",
-  "@appearanceWallpaperDesc": {
-    "description": "Under Wallpaper colours. Material You is a product name."
+  "appearanceWallpaperOn": "Colours follow your wallpaper",
+  "@appearanceWallpaperOn": {
+    "description": "Under Wallpaper colours, while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "appearanceWallpaperOff": "Fluenough’s own colours",
+  "@appearanceWallpaperOff": {
+    "description": "Under Wallpaper colours, while it is off. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
   "appearanceColour": "Colour",
   "@appearanceColour": {
@@ -4278,6 +5842,10 @@
   "@appearanceCardSizeHelp": {
     "description": "Under Card text size."
   },
+  "appearanceCardSizeAtLimit": "Your phone’s font size is already as large as the app goes, so cards can’t be made bigger.",
+  "@appearanceCardSizeAtLimit": {
+    "description": "Under Card text size, when the phone's own font size is at or above the app's 1.4x limit and the slider stops at 100%."
+  },
   "voicesTitle": "Voices",
   "@voicesTitle": {
     "description": "Title of the voices screen."
@@ -4304,17 +5872,17 @@
   "@voicesChecking": {
     "description": "Status while asking the phone."
   },
-  "voicesTest": "Test",
-  "@voicesTest": {
-    "description": "Button that speaks a sample."
+  "voicesPlay": "Play",
+  "@voicesPlay": {
+    "description": "Button on a language’s card on the Voices page: speaks a word from the course in the chosen voice."
   },
-  "voicesTestLabel": "Test {language} voice",
-  "@voicesTestLabel": {
-    "description": "Screen-reader label of Test.",
+  "voicesPlayLabel": "Play the {language} voice",
+  "@voicesPlayLabel": {
+    "description": "Screen-reader label of Play on a language’s card.",
     "placeholders": {
       "language": {
         "type": "String",
-        "example": "Hindi"
+        "example": "Telugu"
       }
     }
   },
@@ -4340,17 +5908,105 @@
   "@voicesInstallSteps": {
     "description": "How to install a voice. Android's own menu names vary by phone, so keep it general."
   },
+  "voicesOtherLanguages": "Other languages on this phone",
+  "@voicesOtherLanguages": {
+    "description": "Heading of the folded section on the Voices page that holds every language with decks on the phone that the learner does not learn, the languages only reviewed among them (#463)."
+  },
   "voicesCheckAgain": "Check again",
   "@voicesCheckAgain": {
     "description": "Button that asks the phone about voices again."
   },
-  "voicesSpeechHeading": "Recognising your speech",
-  "@voicesSpeechHeading": {
-    "description": "Heading of the speech-recognition section on the voices screen."
+  "voicesListening": "Listening",
+  "@voicesListening": {
+    "description": "Heading of the part of a language’s card on the Voices page about its voice: how the phone speaks it."
   },
-  "voicesSpeechIntro": "Speaking drills use your phone’s own speech recogniser. Where it can, it listens on the phone, and nothing you say leaves it.",
-  "@voicesSpeechIntro": {
-    "description": "Explanation of the speech-recognition section."
+  "voicesSpeakingPart": "Speaking",
+  "@voicesSpeakingPart": {
+    "description": "Heading of the part of a language’s card on the Voices page about recognising the learner’s speech in it."
+  },
+  "voicesVoice": "Voice",
+  "@voicesVoice": {
+    "description": "Label of the menu on a language’s card that chooses which of the phone’s voices speaks it."
+  },
+  "voicesVoiceDefault": "Phone default",
+  "@voicesVoiceDefault": {
+    "description": "In the voice menu: the voice the phone’s text-to-speech uses for the language unless one is chosen. The first choice, and the default."
+  },
+  "voicesVoiceOnline": "{name} · needs a connection",
+  "@voicesVoiceOnline": {
+    "description": "In the voice menu: a voice that speaks only with an internet connection. {name} is the phone’s name for the voice.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "te-in-x-tem-network"
+      }
+    }
+  },
+  "voicesInstallOne": "Install a voice",
+  "@voicesInstallOne": {
+    "description": "Button on a language’s card when the phone has no voice for it: explains how to install one, or opens the phone’s voice settings."
+  },
+  "voicesPlayFailed": "Couldn’t play it",
+  "@voicesPlayFailed": {
+    "description": "On a language’s card, when the phone’s voice gave an error as Play was tapped."
+  },
+  "voicesErrorCode": "Error code: {code}",
+  "@voicesErrorCode": {
+    "description": "Small print under a failed test on the Voices page: the phone’s own error code, for a report. Keep the code as it is.",
+    "placeholders": {
+      "code": {
+        "type": "String",
+        "example": "error_no_match"
+      }
+    }
+  },
+  "voicesSay": "Say something",
+  "@voicesSay": {
+    "description": "Button on a language’s card on the Voices page: opens a test of the phone’s speech recognition in that language."
+  },
+  "voicesSayLabel": "Say something in {language}",
+  "@voicesSayLabel": {
+    "description": "Screen-reader label of Say something, and the title of the speaking test.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "voicesSayIntro": "Say this word, or anything you like. It doesn’t count as practice.",
+  "@voicesSayIntro": {
+    "description": "Under the title of the speaking test on the Voices page."
+  },
+  "voicesSayWord": "Say this word",
+  "@voicesSayWord": {
+    "description": "Button in the speaking test: listens for the word shown."
+  },
+  "voicesSayAnything": "Say anything",
+  "@voicesSayAnything": {
+    "description": "Button in the speaking test: listens and shows whatever the phone heard."
+  },
+  "voicesAnotherWord": "Another word",
+  "@voicesAnotherWord": {
+    "description": "Button in the speaking test: shows another word from the course to say."
+  },
+  "voicesHeard": "Heard: {text}",
+  "@voicesHeard": {
+    "description": "Result of the speaking test: what the phone heard. {text} is in the language tested.",
+    "placeholders": {
+      "text": {
+        "type": "String",
+        "example": "నమస్కారం"
+      }
+    }
+  },
+  "voicesHeardMatch": "That’s the word",
+  "@voicesHeardMatch": {
+    "description": "Result of the speaking test, under what was heard: it matches the word asked for."
+  },
+  "voicesHeardNoMatch": "That isn’t the word",
+  "@voicesHeardNoMatch": {
+    "description": "Result of the speaking test, under what was heard: it does not match the word asked for."
   },
   "voicesSpeechOff": "Speaking is off. Switching it on asks for the microphone.",
   "@voicesSpeechOff": {
@@ -4364,13 +6020,21 @@
   "@voicesSpeechOnDevice": {
     "description": "Status: the phone recognises this language itself."
   },
-  "voicesSpeechOnlineOnly": "Only online. Allow it to send what you say to your phone’s speech service",
-  "@voicesSpeechOnlineOnly": {
-    "description": "Status: the phone recognises this language only online, not yet allowed. Beside a switch."
+  "voicesSpeechOnlyOnline": "This phone recognises it only online",
+  "@voicesSpeechOnlyOnline": {
+    "description": "Under the Speaking heading of a language’s card on the Voices page: the phone recognises this language only online. The Online recognition switch follows."
   },
-  "voicesSpeechOnline": "Heard online, as you allowed",
+  "voicesOnlineSwitch": "Online recognition",
+  "@voicesOnlineSwitch": {
+    "description": "Switch on a language’s card on the Voices page, under Speaking, for a language the phone recognises only online: whether what the learner says in it may be sent to the phone’s speech service. Not the same as switching speaking off."
+  },
+  "voicesSpeechOnlineOnly": "Off, so not heard. Switching it on sends what you say to your phone’s speech service",
+  "@voicesSpeechOnlineOnly": {
+    "description": "Under the Online recognition switch, while it is off: the language is recognised only online, so speaking in it is not heard. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
+  },
+  "voicesSpeechOnline": "What you say goes to your phone’s speech service to be heard",
   "@voicesSpeechOnline": {
-    "description": "Status: online recognition allowed for this language. Beside a switch to take it back."
+    "description": "Under the Online recognition switch, while it is on: speaking in this language is heard online. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
   },
   "voicesSpeechMissing": "Not recognised on this phone",
   "@voicesSpeechMissing": {
@@ -4387,5 +6051,1920 @@
   "localeOwnIso639_3": "eng",
   "@localeOwnIso639_3": {
     "description": "The ISO 639-3 code of THIS translation's language: hin, urd. Shown beside localeOwnName in the language picker. Not translated."
+  },
+  "reviewSettingsSection": "Reviewing",
+  "@reviewSettingsSection": {
+    "description": "Settings heading over Review decks, the rater code and How reviewing works (docs/plans/deck-browser.md)."
+  },
+  "reviewSettingsSwitch": "Review decks",
+  "@reviewSettingsSwitch": {
+    "description": "Settings switch that turns reviewer mode on: the reviewer checks cards and sends reviews by mail. The app calls this switch Review decks everywhere."
+  },
+  "reviewSettingsSwitchOn": "Check cards, then send your suggestions by mail",
+  "@reviewSettingsSwitchOn": {
+    "description": "Under Review decks, while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "reviewSettingsSwitchOff": "No reviewing on this phone. Switching on asks first",
+  "@reviewSettingsSwitchOff": {
+    "description": "Under Review decks, while it is off. Switching it on shows a dialog first. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
+  },
+  "reviewSettingsCode": "Your rater code",
+  "@reviewSettingsCode": {
+    "description": "Settings row label over the reviewer's rater code, FL-XXXX-XXXX-C."
+  },
+  "reviewSettingsCopy": "Copy code",
+  "@reviewSettingsCopy": {
+    "description": "Tooltip of the button that copies the rater code."
+  },
+  "reviewSettingsCopied": "Rater code copied",
+  "@reviewSettingsCopied": {
+    "description": "Shown once the rater code is copied."
+  },
+  "reviewSettingsToSend": "Reviews to send",
+  "@reviewSettingsToSend": {
+    "description": "Settings row that opens the send sheet listing every deck with reviews not sent yet."
+  },
+  "reviewSettingsSendAgain": "Send the last mail again",
+  "@reviewSettingsSendAgain": {
+    "description": "Settings row for when the review mail did not go: puts the decks the last mail carried back to send, and opens the send sheet."
+  },
+  "reviewSettingsSendAgainDesc": "{count, plural, =1{If it did not go, its deck waits to send again} other{If it did not go, its {count} decks wait to send again}}",
+  "@reviewSettingsSendAgainDesc": {
+    "description": "Under Send the last mail again: how many decks the last mail carried.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "reviewSettingsHelped": "Decks you helped build",
+  "@reviewSettingsHelped": {
+    "description": "Settings row listing the decks that list this reviewer's rater code among their reviewers."
+  },
+  "reviewSettingsHelpedDeck": "{deck} ({language})",
+  "@reviewSettingsHelpedDeck": {
+    "description": "One deck in the Decks you helped build row: the deck's name and its language.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Family"
+      },
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewSettingsHow": "How reviewing works",
+  "@reviewSettingsHow": {
+    "description": "Settings row, and the title of the sheet, that explains reviewing step by step."
+  },
+  "reviewSettingsLanguages": "Languages you review",
+  "@reviewSettingsLanguages": {
+    "description": "Settings row under Review decks: the languages this reviewer checks decks in; opens a choice."
+  },
+  "reviewSettingsLanguagesNone": "None chosen",
+  "@reviewSettingsLanguagesNone": {
+    "description": "Under Languages you review when the reviewer has unticked every language."
+  },
+  "reviewLanguagesBody": "Tick the courses you review, such as Bengali from English. What waits for review shows for them, and the path marks their units “To review”. You can review a course only if you know both languages and read both scripts.",
+  "@reviewLanguagesBody": {
+    "description": "Top of Languages you review (#462): what the ticks change, and who can review a course, a language taught from another."
+  },
+  "reviewPairName": "{target} from {native}",
+  "@reviewPairName": {
+    "description": "A course in Languages you review (#462): a language and the language its decks are taught from, such as “Bengali from English”.",
+    "placeholders": {
+      "target": {
+        "type": "String",
+        "example": "Bengali"
+      },
+      "native": {
+        "type": "String",
+        "example": "English"
+      }
+    }
+  },
+  "reviewPairUnknown": "You don’t know {language}",
+  "@reviewPairUnknown": {
+    "description": "Under a greyed course in Languages you review: why it cannot be ticked. {language} is the course's language, or the one it is taught from, that the reviewer has not ticked in Languages you know.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewPairNoScript": "You can’t read the {script, select, devanagari{Devanagari} bengali{Bengali} gujarati{Gujarati} kannada{Kannada} telugu{Telugu} latin{Latin} kana{kana} arabic{Arabic} other{{language}}} script",
+  "@reviewPairNoScript": {
+    "description": "Under a greyed course in Languages you review: why it cannot be ticked, a script the reviewer said in Languages you know they do not read. {script} is the deck files’ script code; another script takes the language’s name.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "telugu"
+      },
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewPairNotOnPhone": "Not on this phone · {size} to download",
+  "@reviewPairNotOnPhone": {
+    "description": "Under a course in Languages you review whose decks are not on the phone: ticking it offers the download. {size} is how much, such as 2.4 MB.",
+    "placeholders": {
+      "size": {
+        "type": "String",
+        "example": "2.4 MB"
+      }
+    }
+  },
+  "reviewScriptsGateTitle": "Tell us which scripts you read",
+  "@reviewScriptsGateTitle": {
+    "description": "Languages you review, until the reviewer has said in Languages you know whether they read each language's script (#462): no course can be ticked until then."
+  },
+  "reviewScriptsGateBody": "You can review a course only if you read both its scripts. Say which you read in Languages you know.",
+  "@reviewScriptsGateBody": {
+    "description": "Under reviewScriptsGateTitle."
+  },
+  "reviewOpenKnown": "Edit languages you know",
+  "@reviewOpenKnown": {
+    "description": "Button on Languages you review that opens Languages you know, where the reviewer ticks the languages they know and says which scripts they read."
+  },
+  "reviewDownloadTitle": "Download {language} to review it?",
+  "@reviewDownloadTitle": {
+    "description": "Dialog when the reviewer ticks a course whose decks are not on the phone, in Languages you review.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewDownloadBody": "Its decks take {size}. They are for reviewing only: {language} is not added to the languages you learn, and stays out of Today and your lessons.",
+  "@reviewDownloadBody": {
+    "description": "Body of reviewDownloadTitle. {size} is how much, such as 2.4 MB.",
+    "placeholders": {
+      "size": {
+        "type": "String",
+        "example": "2.4 MB"
+      },
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewDownload": "Download",
+  "@reviewDownload": {
+    "description": "Button in reviewDownloadTitle's dialog: downloads the language's decks for reviewing, and ticks the course."
+  },
+  "reviewPairsNone": "No courses to show yet. The list of courses comes from GitHub when you are online.",
+  "@reviewPairsNone": {
+    "description": "Languages you review when neither the list of courses nor any deck is on the phone."
+  },
+  "reviewSettingsWaiting": "Waiting for review",
+  "@reviewSettingsWaiting": {
+    "description": "Settings row under Review decks, and the title of its page: what still needs a native speaker in the reviewer's languages."
+  },
+  "reviewSettingsWaitingDesc": "{count, plural, =0{Nothing waiting in your languages} =1{1 deck waits for a native speaker} other{{count} decks wait for a native speaker}}",
+  "@reviewSettingsWaitingDesc": {
+    "description": "Under Waiting for review in Settings: how many decks in the reviewer's languages are not yet signed off.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "reviewWaitingIntro": "What still needs a native speaker in the languages you review. A deck waits until a native speaker signs it off.",
+  "@reviewWaitingIntro": {
+    "description": "At the top of the Waiting for review page."
+  },
+  "reviewWaitingNoLanguages": "You review no language yet. Choose the languages you review to see what waits in them.",
+  "@reviewWaitingNoLanguages": {
+    "description": "Waiting for review page, when the reviewer reviews no language."
+  },
+  "reviewWaitingChoose": "Choose languages",
+  "@reviewWaitingChoose": {
+    "description": "Button on the Waiting for review page that opens the choice of languages."
+  },
+  "reviewWaitingNothing": "Nothing waits for review in {language}",
+  "@reviewWaitingNothing": {
+    "description": "The one row of a language with nothing waiting.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewWaitingUnit": "Unit {number}: {title}",
+  "@reviewWaitingUnit": {
+    "description": "A unit of the path with a deck waiting for review.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "3"
+      },
+      "title": {
+        "type": "String",
+        "example": "Family"
+      }
+    }
+  },
+  "reviewWaitingCardsLeft": "{count, plural, =0{Every card checked: sign it off} =1{1 card left to check} other{{count} cards left to check}}",
+  "@reviewWaitingCardsLeft": {
+    "description": "How many cards of a deck or unit waiting for review the reviewer has left to check.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "reviewWaitingDeckCards": "{deck}: {count, plural, =0{every card checked} =1{1 card left} other{{count} cards left}}",
+  "@reviewWaitingDeckCards": {
+    "description": "One deck of a unit waiting for review, and its cards left to check.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Family words"
+      },
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "reviewWaitingFrom": "From {language}",
+  "@reviewWaitingFrom": {
+    "description": "A deck waiting for review outside the reviewer's course: the language it is taught from.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      }
+    }
+  },
+  "reviewWaitingUnrated": "{count, plural, =1{1 offensive word not yet rated} other{{count} offensive words not yet rated}}",
+  "@reviewWaitingUnrated": {
+    "description": "Row of a language on the Waiting for review page. The words are not named.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "reviewWaitingUnconfirmed": "{count, plural, =1{1 sound-alike or look-alike pair not yet confirmed} other{{count} sound-alike and look-alike pairs not yet confirmed}}",
+  "@reviewWaitingUnconfirmed": {
+    "description": "Row of a language on the Waiting for review page: words like a rude one whose pair the reviewer has not confirmed or rejected.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "reviewWaitingUnsent": "{count, plural, =1{1 deck reviewed, not sent} other{{count} decks reviewed, not sent}}",
+  "@reviewWaitingUnsent": {
+    "description": "Row of a language on the Waiting for review page; opens the send sheet.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "pathToReview": "To review",
+  "@pathToReview": {
+    "description": "Mark on a unit of the path, in reviewer mode, that has a deck no native speaker has signed off yet."
+  },
+  "reviewTurnOnTitle": "Review decks?",
+  "@reviewTurnOnTitle": {
+    "description": "Title of the dialog shown when turning Review decks on."
+  },
+  "reviewTurnOnBody": "You get a rater code, made on this phone. Send your reviews to Fluenough from your own mail, always from the same mail address.",
+  "@reviewTurnOnBody": {
+    "description": "First paragraph of the dialog shown when turning Review decks on."
+  },
+  "reviewTurnOnMany": "Review as many decks as you like, and send them together in one mail.",
+  "@reviewTurnOnMany": {
+    "description": "Second paragraph of the turn-on dialog: several decks go in one mail (owner, 2026-10-09)."
+  },
+  "reviewTurnOnPublic": "Rater codes are public, to thank you. Your mail address is not.",
+  "@reviewTurnOnPublic": {
+    "description": "Last paragraph of the turn-on dialog."
+  },
+  "reviewTurnOn": "Turn on",
+  "@reviewTurnOn": {
+    "description": "Button of the turn-on dialog that turns reviewing on."
+  },
+  "reviewHowGotIt": "Got it",
+  "@reviewHowGotIt": {
+    "description": "Button that closes How reviewing works."
+  },
+  "reviewGuideWhatTitle": "What reviewing is",
+  "@reviewGuideWhatTitle": {
+    "description": "Title of step 1 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideWhatBody": "Fluenough teaches from decks of cards: a word, how it is read, what it means, examples. Many decks were written without a native speaker and are marked unreviewed.",
+  "@reviewGuideWhatBody": {
+    "description": "First paragraph of step 1 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideWhatYou": "You are the check. You tell us which cards are right, which are wrong and what they should say, and how rude a word really sounds to native speakers. A review by a native speaker is the most useful thing anyone can give these decks.",
+  "@reviewGuideWhatYou": {
+    "description": "Second paragraph of step 1 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideCodeTitle": "Your code and languages",
+  "@reviewGuideCodeTitle": {
+    "description": "Title of step 2 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideCodeBody": "Turning on reviewing makes your rater code on this phone, like FL-XXXX-XXXX-C. Nothing is sent when you turn it on. You can copy the code from Settings.",
+  "@reviewGuideCodeBody": {
+    "description": "First paragraph of step 2 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). FL-XXXX-XXXX-C is the shape of a code, not words: keep it as it is."
+  },
+  "reviewGuideCodeLanguages": "Under Languages you review in Settings, tick the courses you review, such as Bengali from English. You can review a course only if you know both the language and the one it is taught from, and read both their scripts: say which in Languages you know. A course whose decks are not on your phone downloads for reviewing only; it is not added to the languages you learn. You can turn reviewing off whenever you like; your code is kept.",
+  "@reviewGuideCodeLanguages": {
+    "description": "Second paragraph of step 2 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Languages you review” must match reviewSettingsLanguages."
+  },
+  "reviewGuideToReviewTitle": "What “To review” shows",
+  "@reviewGuideToReviewTitle": {
+    "description": "Title of step 3 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “To review” must match pathToReview."
+  },
+  "reviewGuideToReviewBody": "Units on the learning path are marked To review when their deck is not yet signed off by a native speaker, in your languages.",
+  "@reviewGuideToReviewBody": {
+    "description": "First paragraph of step 3 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “To review” must match pathToReview."
+  },
+  "reviewGuideToReviewWaiting": "Waiting for review in Settings lists, per language, the units and decks still waiting, how many cards are left in each, the offensive words not yet rated, the sound-alike pairs not yet confirmed, and what you have reviewed but not sent.",
+  "@reviewGuideToReviewWaiting": {
+    "description": "Second paragraph of step 3 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Waiting for review” must match reviewSettingsWaiting."
+  },
+  "reviewGuideCheckTitle": "Check cards, then sign off",
+  "@reviewGuideCheckTitle": {
+    "description": "Title of step 4 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideCheckBody": "Open a unit and tap Review. Mark each card that is right with Looks right.",
+  "@reviewGuideCheckBody": {
+    "description": "First paragraph of step 4 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Review” must match unitReview, “Looks right” reviewLooksRight."
+  },
+  "reviewGuideCheckSignOff": "When every card is checked, Sign off becomes available. It says you checked the whole unit.",
+  "@reviewGuideCheckSignOff": {
+    "description": "Second paragraph of step 4 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Sign off” must match reviewSignOffReady."
+  },
+  "reviewGuideSuggestTitle": "Suggest, and answer proposals",
+  "@reviewGuideSuggestTitle": {
+    "description": "Title of step 5 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideSuggestBody": "If something is wrong, tap the card, choose Suggest a change, tap the pencil on a part (word, reading, IPA, meaning, notes), write your version and say why. A card keeps one suggestion of yours per part.",
+  "@reviewGuideSuggestBody": {
+    "description": "First paragraph of step 5 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Suggest a change” must match reviewSuggest."
+  },
+  "reviewGuideSuggestOthers": "Suggestions from other reviewers of your language show on the card. Accept one as written, Edit it into your own proposal, or Reject it. A rejection does not stop a change by itself; it tells the Fluenough team.",
+  "@reviewGuideSuggestOthers": {
+    "description": "Second paragraph of step 5 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). Accept, Edit and Reject must match reviewProposalAccept, reviewProposalEdit and reviewProposalReject."
+  },
+  "reviewGuideAdultTitle": "Offensive words and sound-alikes",
+  "@reviewGuideAdultTitle": {
+    "description": "Title of step 6 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideAdultBody": "Offensive words are never in a unit's ordinary review. Each language has its own Offensive words review, under Waiting for review, which you open only if you choose to. It first explains why they are in the app, then asks if you are 18 or over. Rate how offensive a word is to native speakers in general, from 1 to 9, not how it feels to you, and say where you speak the language. Words that sound or look like an offensive one are confirmed or rejected there too.",
+  "@reviewGuideAdultBody": {
+    "description": "First paragraph of step 6 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideAdultAlike": "For a sound-alike or look-alike pair you confirm, write a short care note, at most 40 letters, that learners will see.",
+  "@reviewGuideAdultAlike": {
+    "description": "Second paragraph of step 6 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). It is about checking a word that sounds or looks like a rude one."
+  },
+  "reviewGuideSendTitle": "Send several decks in one mail",
+  "@reviewGuideSendTitle": {
+    "description": "Title of step 7 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideSendBody": "Reviews stay on your phone until you send them. Tap Send review, leave the decks you want ticked, and your mail app opens with Fluenough’s address and one file per deck ready. Read the mail and send it yourself.",
+  "@reviewGuideSendBody": {
+    "description": "First paragraph of step 7 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Send review” must match reviewSend."
+  },
+  "reviewGuideSendKeep": "Do not change the mail’s subject or the files. They carry your code, language and deck, and the team reads those.",
+  "@reviewGuideSendKeep": {
+    "description": "Second paragraph of step 7 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideSendSame": "Send from the same mail address each time: your first mail ties your code to it, and a mail from another address is flagged for the team to check. If you change address, say so in the mail. If a mail did not go, use Send the last mail again in Settings.",
+  "@reviewGuideSendSame": {
+    "description": "Third paragraph of step 7 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Send the last mail again” must match reviewSettingsSendAgain."
+  },
+  "reviewGuidePublicTitle": "What is public, what is private",
+  "@reviewGuidePublicTitle": {
+    "description": "Title of step 8 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuidePublicBody": "Public: your rater code; the languages you reviewed, which the public issue list shows with your code; and your suggestions in the decks, which are public, with your code.",
+  "@reviewGuidePublicBody": {
+    "description": "First paragraph of step 8 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuidePublicPrivate": "Private: your mail address. It is never written to the public issues.",
+  "@reviewGuidePublicPrivate": {
+    "description": "Second paragraph of step 8 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideAgreeTitle": "How changes reach learners",
+  "@reviewGuideAgreeTitle": {
+    "description": "Title of step 9 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideAgreeBody": "Your suggestions go into the decks as proposed changes soon after your mail arrives, for other reviewers of the language to see. Learners never see a proposal.",
+  "@reviewGuideAgreeBody": {
+    "description": "First paragraph of step 9 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideAgreeCount": "{count, plural, =1{When one other reviewer accepts a change exactly as written, it goes to learners} other{When {count} other reviewers accept a change exactly as written, it goes to learners}}, usually within an hour or two, after the automatic checks pass. The Fluenough team sets this number, and may raise it later.",
+  "@reviewGuideAgreeCount": {
+    "description": "Second paragraph of step 9 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). count is how many reviewers other than the proposer must accept a change.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "reviewGuideAgreeMore": "If several proposals concern the same part of a card, the first to be agreed wins and the others are closed. The team can undo any change. Until the team has set up the review bot, your reviews are filed for the team to read.",
+  "@reviewGuideAgreeMore": {
+    "description": "Third paragraph of step 9 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideThanksTitle": "Thank you",
+  "@reviewGuideThanksTitle": {
+    "description": "Title of step 10 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same)."
+  },
+  "reviewGuideThanksBody": "When a deck you checked is updated, it lists your code, and its unit says it was checked by your code and how many others. Settings lists Decks you helped build.",
+  "@reviewGuideThanksBody": {
+    "description": "First paragraph of step 10 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same). “Decks you helped build” must match reviewSettingsHelped."
+  },
+  "reviewGuideThanksHelp": "Questions? Write to {address}, from the address you review with.",
+  "@reviewGuideThanksHelp": {
+    "description": "Second paragraph of step 10 of How reviewing works, the walkthrough that opens the first time reviewing is turned on (docs/REVIEWING.md says the same).",
+    "placeholders": {
+      "address": {
+        "type": "String",
+        "example": "fluenough@gmail.com"
+      }
+    }
+  },
+  "reviewGuidePosition": "Step {current} of {total}: {title}",
+  "@reviewGuidePosition": {
+    "description": "Read by a screen reader for the progress dots of How reviewing works, whenever the step changes.",
+    "placeholders": {
+      "current": {
+        "type": "int",
+        "example": "2"
+      },
+      "total": {
+        "type": "int",
+        "example": "10"
+      },
+      "title": {
+        "type": "String",
+        "example": "Your code and languages"
+      }
+    }
+  },
+  "reviewFirstTitle": "Turn on reviewing first",
+  "@reviewFirstTitle": {
+    "description": "Title of the dialog from a unit's Review button while reviewing is off."
+  },
+  "reviewFirstBody": "Reviewing is for {language} speakers who check units before they ship. Turn on “Review decks” in Settings and the app makes your rater code. Then come back here.",
+  "@reviewFirstBody": {
+    "description": "Body of the Turn on reviewing first dialog. The quoted name must match reviewSettingsSwitch.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewFirstNotNow": "Not now",
+  "@reviewFirstNotNow": {
+    "description": "Button that closes the Turn on reviewing first dialog."
+  },
+  "reviewFirstOpenSettings": "Open Settings",
+  "@reviewFirstOpenSettings": {
+    "description": "Button of the Turn on reviewing first dialog that goes to Settings."
+  },
+  "reviewThanksTitle": "Thanks for checking this unit",
+  "@reviewThanksTitle": {
+    "description": "On a unit whose decks list the reviewer's rater code, in place of the not-yet-checked notice."
+  },
+  "reviewThanksBy": "{count, plural, =0{Checked by {code}} =1{Checked by {code} and 1 other} other{Checked by {code} and {count} others}}",
+  "@reviewThanksBy": {
+    "description": "Under reviewThanksTitle: the reviewer's own code, and how many other reviewers the unit lists.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      },
+      "code": {
+        "type": "String",
+        "example": "FL-7K3M-Q9TD-6"
+      }
+    }
+  },
+  "cardCheckedBy": "{count, plural, =1{Checked by 1 speaker} other{Checked by {count} speakers}}",
+  "@cardCheckedBy": {
+    "description": "On a word's card and on its row in review: how many reviewers who speak the language signed the card off.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "reviewPageTitle": "Review · {unit}",
+  "@reviewPageTitle": {
+    "description": "Title of the screen that reviews a unit's cards.",
+    "placeholders": {
+      "unit": {
+        "type": "String",
+        "example": "Family"
+      }
+    }
+  },
+  "reviewPageProgress": "{done}/{total}",
+  "@reviewPageProgress": {
+    "description": "At the top end of the review screen: cards checked of all.",
+    "placeholders": {
+      "done": {
+        "type": "int",
+        "example": "12"
+      },
+      "total": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "reviewPageProgressLabel": "{done} of {total} cards checked",
+  "@reviewPageProgressLabel": {
+    "description": "Read by a screen reader for the review screen's progress.",
+    "placeholders": {
+      "done": {
+        "type": "int",
+        "example": "12"
+      },
+      "total": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "reviewPageInfo": "Mark each card that is right, or tap it to suggest a change. Nothing is sent until you tap Send review; it goes by mail with your rater code.",
+  "@reviewPageInfo": {
+    "description": "At the top of the review screen."
+  },
+  "reviewSectionCards": "{count, plural, =1{1 card} other{{count} cards}}",
+  "@reviewSectionCards": {
+    "description": "Beside a deck's name on the review screen.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "reviewSectionTally": "{right} right · {suggested} suggested",
+  "@reviewSectionTally": {
+    "description": "At the end of a deck's heading on the review screen.",
+    "placeholders": {
+      "right": {
+        "type": "int",
+        "example": "10"
+      },
+      "suggested": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "reviewRight": "Right",
+  "@reviewRight": {
+    "description": "A card's button on the review screen once it is marked right."
+  },
+  "reviewCheck": "Check",
+  "@reviewCheck": {
+    "description": "A card's button on the review screen before it is marked: tapping it marks it right."
+  },
+  "reviewSuggested": "Suggested",
+  "@reviewSuggested": {
+    "description": "A card's mark on the review screen once a change is suggested."
+  },
+  "reviewCheckFor": "Check {meaning}: mark it right",
+  "@reviewCheckFor": {
+    "description": "Read by a screen reader for a card's Check button on the review screen. Starts with the button's word, then names the card by its meaning.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "mother"
+      }
+    }
+  },
+  "reviewRightFor": "Right: {meaning}. Tap to take it back",
+  "@reviewRightFor": {
+    "description": "Read by a screen reader for a card's Right button on the review screen.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "mother"
+      }
+    }
+  },
+  "reviewSuggestedFor": "Suggested: {meaning}. Tap to change it",
+  "@reviewSuggestedFor": {
+    "description": "Read by a screen reader for a card's Suggested button on the review screen.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "mother"
+      }
+    }
+  },
+  "reviewRateFor": "Rate {meaning}",
+  "@reviewRateFor": {
+    "description": "Read by a screen reader for a rude word's Rate button on the review screen.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "idiot"
+      }
+    }
+  },
+  "reviewRatedFor": "Rated: {meaning}. Tap to change it",
+  "@reviewRatedFor": {
+    "description": "Read by a screen reader for a rude word's Rated button on the review screen.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "idiot"
+      }
+    }
+  },
+  "reviewOffensiveApart": "{count, plural, =1{1 offensive word in this unit is reviewed apart} other{{count} offensive words in this unit are reviewed apart}}, only when you choose to: under Offensive words in Waiting for review.",
+  "@reviewOffensiveApart": {
+    "description": "On a unit's review screen, in place of its offensive words, which never show there. The words are not named.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "reviewOffensiveTitle": "Offensive words",
+  "@reviewOffensiveTitle": {
+    "description": "Row of a language on the Waiting for review page that opens its offensive words, reviewed apart and only on purpose."
+  },
+  "reviewOffensiveNoneWaiting": "None waiting to be rated or checked",
+  "@reviewOffensiveNoneWaiting": {
+    "description": "Under Offensive words on the Waiting for review page, when every offensive word in a deck waiting for review is rated, and every word like one has its pair confirmed or rejected."
+  },
+  "reviewOffensivePageTitle": "Offensive words in {language}",
+  "@reviewOffensivePageTitle": {
+    "description": "Title of a language's Offensive words review.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewOffensiveWhyTitle": "Why offensive words are here",
+  "@reviewOffensiveWhyTitle": {
+    "description": "Heading of the first screen of the Offensive words review, shown before any word."
+  },
+  "reviewOffensiveWhyRange": "Offensive words are not all alike. Some are deeply offensive, the kind no newspaper would print. Others are mild, and some are fine between friends while from a stranger they insult.",
+  "@reviewOffensiveWhyRange": {
+    "description": "First screen of the Offensive words review, before any word: the range of offensiveness."
+  },
+  "reviewOffensiveWhyUnderstand": "Fluenough teaches them so that learners understand abuse when they hear it, and never say a word without knowing what it means. Learners only ever recognise them: they are never asked to type or say one.",
+  "@reviewOffensiveWhyUnderstand": {
+    "description": "First screen of the Offensive words review: why the words are taught."
+  },
+  "reviewOffensiveWhyCulture": "How strong a word is depends on the language and the culture. A word that is mild in one can be far stronger in another, even where it means the same, and speakers from different regions can disagree.",
+  "@reviewOffensiveWhyCulture": {
+    "description": "First screen of the Offensive words review: cultural differences in severity."
+  },
+  "reviewOffensiveWhyRate": "So native speakers rate them. Rate each word for how offensive it is to native speakers in general, from 1 to 9, not to you, and say where you speak the language. Several speakers rate every word, and the middle rating sets its level.",
+  "@reviewOffensiveWhyRate": {
+    "description": "First screen of the Offensive words review: what the reviewer is asked to do."
+  },
+  "reviewOffensiveWhyApart": "These words never appear in the ordinary review of a deck or unit, and nor does the offensive word an ordinary one sounds or looks like. They wait here until you choose to check them.",
+  "@reviewOffensiveWhyApart": {
+    "description": "First screen of the Offensive words review, last line, in a quieter style."
+  },
+  "reviewOffensiveNotNow": "Not now",
+  "@reviewOffensiveNotNow": {
+    "description": "Button on the first two screens of the Offensive words review: leaves without showing any word."
+  },
+  "reviewOffensiveAgeBody": "The next screen shows offensive words in {language}, written in full, some of them deeply offensive. Go on only if you are 18 or over.",
+  "@reviewOffensiveAgeBody": {
+    "description": "Second screen of the Offensive words review, under Are you 18 or over?, asked every time before the words show.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewOffensiveWordsInfo": "Rate each word for how offensive it is to native speakers in general, not to you. Tap a word to see it whole. Ratings are sent with your review, by mail.",
+  "@reviewOffensiveWordsInfo": {
+    "description": "Info line at the top of a language's offensive words, once the reviewer has confirmed their age."
+  },
+  "reviewOffensiveProgress": "{rated} of {total} rated",
+  "@reviewOffensiveProgress": {
+    "description": "How many offensive words are rated, in a language's Offensive words review: at the top, and under each deck's name.",
+    "placeholders": {
+      "rated": {
+        "type": "int",
+        "example": "2"
+      },
+      "total": {
+        "type": "int",
+        "example": "9"
+      }
+    }
+  },
+  "reviewOffensiveNone": "No offensive words in {language} yet.",
+  "@reviewOffensiveNone": {
+    "description": "A language's Offensive words review when its decks have none.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewOffensiveRegion": "Where you speak it: {region}",
+  "@reviewOffensiveRegion": {
+    "description": "Under a rated offensive word: the region the reviewer said they speak the language in, or Elsewhere.",
+    "placeholders": {
+      "region": {
+        "type": "String",
+        "example": "Telangana"
+      }
+    }
+  },
+  "reviewOffensivePairsTitle": "Words like an offensive one",
+  "@reviewOffensivePairsTitle": {
+    "description": "Heading in a language's Offensive words review, after the offensive words: ordinary words that sound or look like an offensive one, whose pair the reviewer confirms or rejects."
+  },
+  "reviewOffensivePairsInfo": "Each of these ordinary words sounds or looks like an offensive one. Learners are told to take care, and never shown the offensive word unless they choose to see it. Confirm a pair if the risk is real, or reject it.",
+  "@reviewOffensivePairsInfo": {
+    "description": "Info line under Words like an offensive one, in the Offensive words review."
+  },
+  "reviewOffensivePairsProgress": "{checked} of {total} checked",
+  "@reviewOffensivePairsProgress": {
+    "description": "Beside Words like an offensive one: how many of the pairs the reviewer has confirmed or rejected.",
+    "placeholders": {
+      "checked": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "reviewAlikeCheckShort": "Check",
+  "@reviewAlikeCheckShort": {
+    "description": "Button on a word like an offensive one, in the Offensive words review, before its pair is confirmed or rejected: opens Check this pair."
+  },
+  "reviewAlikeCheckedShort": "Checked",
+  "@reviewAlikeCheckedShort": {
+    "description": "Button on a word like an offensive one, in the Offensive words review, once its pair is confirmed or rejected: opens Check this pair again."
+  },
+  "reviewAlikeCheckFor": "Check the pair for {meaning}",
+  "@reviewAlikeCheckFor": {
+    "description": "Read by a screen reader for the Check button on a word like an offensive one. Starts with the button's word, then names the word by its meaning.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "widow"
+      }
+    }
+  },
+  "reviewAlikeCheckedFor": "Checked the pair for {meaning}. Tap to change it",
+  "@reviewAlikeCheckedFor": {
+    "description": "Read by a screen reader for the Checked button on a word like an offensive one.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "widow"
+      }
+    }
+  },
+  "reviewSignOff": "Sign off · {count} left",
+  "@reviewSignOff": {
+    "description": "Review screen button, disabled until every card is checked.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "reviewSignOffReady": "Sign off",
+  "@reviewSignOffReady": {
+    "description": "Review screen button once every card is checked: the reviewer vouches for the unit."
+  },
+  "reviewSignedOff": "Signed off",
+  "@reviewSignedOff": {
+    "description": "Review screen button once the unit is signed off."
+  },
+  "reviewSignedOffDone": "Signed off. Send your review when you are ready.",
+  "@reviewSignedOffDone": {
+    "description": "Shown once a unit is signed off."
+  },
+  "reviewSend": "Send review",
+  "@reviewSend": {
+    "description": "Button that opens the send sheet, on the review screen."
+  },
+  "reviewDecksWaiting": "{count, plural, =1{1 deck waiting to send} other{{count} decks waiting to send}}",
+  "@reviewDecksWaiting": {
+    "description": "Over the review screen's buttons, and under Reviews to send in Settings.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "reviewCardLine": "{id} · {state}",
+  "@reviewCardLine": {
+    "description": "Top line of a card in review: its id and where its review stands.",
+    "placeholders": {
+      "id": {
+        "type": "String",
+        "example": "te-0384"
+      },
+      "state": {
+        "type": "String",
+        "example": "Not reviewed"
+      }
+    }
+  },
+  "reviewCardLinePos": "{id} · {pos} · {state}",
+  "@reviewCardLinePos": {
+    "description": "Top line of a card in review: its id, its part of speech as the deck gives it, and where its review stands.",
+    "placeholders": {
+      "id": {
+        "type": "String",
+        "example": "te-0384"
+      },
+      "pos": {
+        "type": "String",
+        "example": "noun"
+      },
+      "state": {
+        "type": "String",
+        "example": "Not reviewed"
+      }
+    }
+  },
+  "reviewStateNot": "Not reviewed",
+  "@reviewStateNot": {
+    "description": "A card's review state."
+  },
+  "reviewStateRight": "Looks right",
+  "@reviewStateRight": {
+    "description": "A card's review state."
+  },
+  "reviewStateSuggested": "Suggested",
+  "@reviewStateSuggested": {
+    "description": "A card's review state."
+  },
+  "reviewLooksRight": "Looks right",
+  "@reviewLooksRight": {
+    "description": "Button on a card in review that marks it right."
+  },
+  "reviewSuggest": "Suggest a change",
+  "@reviewSuggest": {
+    "description": "Button on a card in review, and the title of its sheet."
+  },
+  "reviewSuggestOn": "Suggest a change to {word}",
+  "@reviewSuggestOn": {
+    "description": "Read by a screen reader for the pencil button on a card's row.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "daughter"
+      }
+    }
+  },
+  "reviewPartWord": "Word",
+  "@reviewPartWord": {
+    "description": "Part of a card: the word in the language learned."
+  },
+  "reviewPartReading": "Reading",
+  "@reviewPartReading": {
+    "description": "Part of a card: its romanisation."
+  },
+  "reviewPartIpa": "IPA",
+  "@reviewPartIpa": {
+    "description": "Part of a card: how it is said, in the IPA."
+  },
+  "reviewPartMeaning": "Meaning",
+  "@reviewPartMeaning": {
+    "description": "Part of a card: its meaning."
+  },
+  "reviewPartNotes": "Notes",
+  "@reviewPartNotes": {
+    "description": "Part of a card: its note."
+  },
+  "reviewPartExample": "Example",
+  "@reviewPartExample": {
+    "description": "Part of a card: its example sentence."
+  },
+  "reviewPartPicture": "Picture",
+  "@reviewPartPicture": {
+    "description": "Part of a card: its picture."
+  },
+  "reviewPartBase": "Base word",
+  "@reviewPartBase": {
+    "description": "Part of a card: the meaning of one of its base words (the dictionary form of an inflected word in it). Names the part where a suggestion replaces another."
+  },
+  "reviewPartBaseOf": "Base: {base}",
+  "@reviewPartBaseOf": {
+    "description": "In Suggest a change, the chip for the meaning of one base word of the card, the base named.",
+    "placeholders": {
+      "base": {
+        "type": "String",
+        "example": "जाना"
+      }
+    }
+  },
+  "reviewPartBaseOfWord": "Base of {word}: {base}",
+  "@reviewPartBaseOfWord": {
+    "description": "In Suggest a change, the chip for the meaning of one base word of the card when another of its words has the same base: the word as it stands in the card, then its base.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "गया"
+      },
+      "base": {
+        "type": "String",
+        "example": "जाना"
+      }
+    }
+  },
+  "reviewSuggestNow": "Now",
+  "@reviewSuggestNow": {
+    "description": "In Suggest a change, over what a part being edited says now."
+  },
+  "reviewSuggestNothing": "Nothing yet",
+  "@reviewSuggestNothing": {
+    "description": "When the chosen part of the card is empty."
+  },
+  "reviewSuggestYours": "Your suggestion",
+  "@reviewSuggestYours": {
+    "description": "In Suggest a change, the label of the field for the suggested text of one part, and the mark over a suggestion already kept on a part."
+  },
+  "reviewSuggestWhy": "Why",
+  "@reviewSuggestWhy": {
+    "description": "In Suggest a change, the label of the field for the reason, one for each part being edited."
+  },
+  "reviewSuggestNotSet": "not set",
+  "@reviewSuggestNotSet": {
+    "description": "In Suggest a change, in place of the value of a part the card has none for. A suggestion there adds one."
+  },
+  "reviewSuggestEditPart": "Suggest a change: {part}",
+  "@reviewSuggestEditPart": {
+    "description": "Read by a screen reader, and shown on a long press, for the pencil on one part in Suggest a change, which opens a field for that part.",
+    "placeholders": {
+      "part": {
+        "type": "String",
+        "example": "Meaning"
+      }
+    }
+  },
+  "reviewSuggestRemove": "Remove your suggestion: {part}",
+  "@reviewSuggestRemove": {
+    "description": "Read by a screen reader, and shown on a long press, for the button that drops the reviewer's suggestion on one part in Suggest a change.",
+    "placeholders": {
+      "part": {
+        "type": "String",
+        "example": "Meaning"
+      }
+    }
+  },
+  "reviewSuggestRemoved": "Your suggestion is removed when you save.",
+  "@reviewSuggestRemoved": {
+    "description": "In Suggest a change, on a part whose suggestion the reviewer has removed, before saving. Beside an Undo button."
+  },
+  "reviewSuggestDiscard": "Discard changes",
+  "@reviewSuggestDiscard": {
+    "description": "Read by a screen reader, and shown on a long press, for the close button at the top of Suggest a change, which closes it without saving."
+  },
+  "reviewSuggestSaveAll": "Save every change",
+  "@reviewSuggestSaveAll": {
+    "description": "Read by a screen reader, and shown on a long press, for the tick at the top of Suggest a change, which saves the suggestion on every part edited."
+  },
+  "reviewSuggestKept": "Kept on this phone until you send your review.",
+  "@reviewSuggestKept": {
+    "description": "Under the fields of Suggest a change."
+  },
+  "reviewProposalTitle": "Proposed change to the {part}",
+  "@reviewProposalTitle": {
+    "description": "Over another reviewer's proposed change on a card in review (ADR-0038).",
+    "placeholders": {
+      "part": {
+        "type": "String",
+        "example": "meaning"
+      }
+    }
+  },
+  "reviewProposalNew": "Proposed",
+  "@reviewProposalNew": {
+    "description": "Over the text a proposal would put in place of what the card says now."
+  },
+  "reviewProposalWhy": "Why: {why}",
+  "@reviewProposalWhy": {
+    "description": "The proposer's reason, under a proposed change.",
+    "placeholders": {
+      "why": {
+        "type": "String",
+        "example": "Less formal."
+      }
+    }
+  },
+  "reviewProposalBy": "Proposed by {code}. {count, plural, =0{No one has accepted it yet.} =1{Accepted by 1 reviewer.} other{Accepted by {count} reviewers.}}",
+  "@reviewProposalBy": {
+    "description": "Who proposed a change, and how many other reviewers have accepted it.",
+    "placeholders": {
+      "code": {
+        "type": "String",
+        "example": "FL-7K3M-Q9TD-6"
+      },
+      "count": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "reviewProposalYours": "You proposed this. Other reviewers decide. {count, plural, =0{No one has accepted it yet.} =1{Accepted by 1 reviewer.} other{Accepted by {count} reviewers.}}",
+  "@reviewProposalYours": {
+    "description": "On the reviewer's own proposed change, which they cannot answer.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "0"
+      }
+    }
+  },
+  "reviewProposalAccept": "Accept",
+  "@reviewProposalAccept": {
+    "description": "Button: accept another reviewer's proposed change as it is."
+  },
+  "reviewProposalEdit": "Edit",
+  "@reviewProposalEdit": {
+    "description": "Button: change another reviewer's proposed change into one of your own."
+  },
+  "reviewProposalReject": "Reject",
+  "@reviewProposalReject": {
+    "description": "Button: reject another reviewer's proposed change."
+  },
+  "reviewProposalAccepted": "You accept this change. It is sent with your review.",
+  "@reviewProposalAccepted": {
+    "description": "Under a proposed change the reviewer accepted."
+  },
+  "reviewProposalEdited": "You proposed your own change instead. It is sent with your review.",
+  "@reviewProposalEdited": {
+    "description": "Under a proposed change the reviewer edited into their own."
+  },
+  "reviewProposalRejected": "You reject this change. The Fluenough team is told when your review arrives.",
+  "@reviewProposalRejected": {
+    "description": "Under a proposed change the reviewer rejected."
+  },
+  "reviewProposalsWaiting": "{count, plural, =1{1 proposed change} other{{count} proposed changes}}",
+  "@reviewProposalsWaiting": {
+    "description": "On a card's row in review: changes other reviewers proposed, waiting for an answer.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "reviewSave": "Save",
+  "@reviewSave": {
+    "description": "Saves a suggestion, a rating or a pair check."
+  },
+  "reviewRudeLevel": "Level",
+  "@reviewRudeLevel": {
+    "description": "Row of a rude card: how offensive it is, as a band."
+  },
+  "reviewRudeType": "Type",
+  "@reviewRudeType": {
+    "description": "Row of a rude card: swear, slur, sexual or family insult."
+  },
+  "reviewRudeFriends": "Among friends",
+  "@reviewRudeFriends": {
+    "description": "Row of a rude card: whether it can be friendly among peers."
+  },
+  "reviewRudeRegion": "Region",
+  "@reviewRudeRegion": {
+    "description": "Row of a rude card: its region note."
+  },
+  "reviewRudeRegionNote": "{regions}: {note}",
+  "@reviewRudeRegionNote": {
+    "description": "A rude card's region note: the regions it names, joined, then the note's text, both from the deck.",
+    "placeholders": {
+      "regions": {
+        "type": "String",
+        "example": "Telangana · Rayalaseema"
+      },
+      "note": {
+        "type": "String",
+        "example": "Heard as a joke among friends here."
+      }
+    }
+  },
+  "reviewRudeNotSet": "Not set yet",
+  "@reviewRudeNotSet": {
+    "description": "A rude card's level, type, friendliness or region note when the deck does not give it yet."
+  },
+  "reviewRudeOnly": "Recognition only: learners are never asked to type or say it.",
+  "@reviewRudeOnly": {
+    "description": "Under a rude card in review."
+  },
+  "reviewRate": "Rate this word",
+  "@reviewRate": {
+    "description": "Button on a rude card in review, and the title of its sheet."
+  },
+  "reviewRated": "Rated {score} of 9",
+  "@reviewRated": {
+    "description": "On a rude card in review once rated.",
+    "placeholders": {
+      "score": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "reviewRateQuestion": "How offensive is this word to native speakers in general?",
+  "@reviewRateQuestion": {
+    "description": "The rating question (docs/plans/offensive-words.md): keep \"to native speakers in general\"."
+  },
+  "reviewRateLow": "1 Not at all",
+  "@reviewRateLow": {
+    "description": "Under the start of the 1 to 9 scale."
+  },
+  "reviewRateHigh": "9 Extremely",
+  "@reviewRateHigh": {
+    "description": "Under the end of the 1 to 9 scale."
+  },
+  "reviewRateScore": "{score} of 9",
+  "@reviewRateScore": {
+    "description": "Read by a screen reader for one step of the scale.",
+    "placeholders": {
+      "score": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "reviewRateNote": "Not how it feels to you: how native speakers around you hear it.",
+  "@reviewRateNote": {
+    "description": "Under the 1 to 9 scale."
+  },
+  "reviewRateWhere": "Where you speak {language}",
+  "@reviewRateWhere": {
+    "description": "Over the region chips.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewRateElsewhere": "Elsewhere",
+  "@reviewRateElsewhere": {
+    "description": "The last region chip, after the language's own regions."
+  },
+  "reviewRateFriendly": "Can it be friendly among friends?",
+  "@reviewRateFriendly": {
+    "description": "Over the Yes, No and Sometimes chips."
+  },
+  "reviewFriendlyYes": "Yes",
+  "@reviewFriendlyYes": {
+    "description": "Can it be friendly among friends: yes."
+  },
+  "reviewFriendlyNo": "No",
+  "@reviewFriendlyNo": {
+    "description": "Can it be friendly among friends: no."
+  },
+  "reviewFriendlySometimes": "Sometimes",
+  "@reviewFriendlySometimes": {
+    "description": "Can it be friendly among friends: sometimes."
+  },
+  "reviewAlikeSounds": "Sounds like {word} ({reading})",
+  "@reviewAlikeSounds": {
+    "description": "Title of a sound-alike pair in review: the rude word and its reading.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "వెధవ"
+      },
+      "reading": {
+        "type": "String",
+        "example": "vedhava"
+      }
+    }
+  },
+  "reviewAlikeSoundsNoReading": "Sounds like {word}",
+  "@reviewAlikeSoundsNoReading": {
+    "description": "Title of a sound-alike pair in review, for a word in Latin letters.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "puta"
+      }
+    }
+  },
+  "reviewAlikeLooks": "Looks like {word} ({reading})",
+  "@reviewAlikeLooks": {
+    "description": "Title of a look-alike pair in review: the rude word and its reading.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "వెధవ"
+      },
+      "reading": {
+        "type": "String",
+        "example": "vedhava"
+      }
+    }
+  },
+  "reviewAlikeLooksNoReading": "Looks like {word}",
+  "@reviewAlikeLooksNoReading": {
+    "description": "Title of a look-alike pair in review, for a word in Latin letters.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "puta"
+      }
+    }
+  },
+  "reviewAlikeSoundsAbout": "A rude word, found by the sound check. Learners are told to take care when speaking.",
+  "@reviewAlikeSoundsAbout": {
+    "description": "Under the title of a sound-alike pair in review."
+  },
+  "reviewAlikeLooksAbout": "A rude word, found by the writing check. Learners are told to take care when writing.",
+  "@reviewAlikeLooksAbout": {
+    "description": "Under the title of a look-alike pair in review."
+  },
+  "reviewAlikeCheck": "Check this pair",
+  "@reviewAlikeCheck": {
+    "description": "Button that opens a sound-alike or look-alike pair to confirm or reject."
+  },
+  "reviewAlikeReal": "Is this a real risk?",
+  "@reviewAlikeReal": {
+    "description": "Over Confirm and Reject."
+  },
+  "reviewAlikeConfirm": "Confirm",
+  "@reviewAlikeConfirm": {
+    "description": "The pair is a real risk."
+  },
+  "reviewAlikeReject": "Reject",
+  "@reviewAlikeReject": {
+    "description": "The pair is not a real risk."
+  },
+  "reviewAlikeConfirmed": "Pair confirmed",
+  "@reviewAlikeConfirmed": {
+    "description": "On a card in review once its pair is confirmed."
+  },
+  "reviewAlikeRejected": "Pair rejected",
+  "@reviewAlikeRejected": {
+    "description": "On a card in review once its pair is rejected."
+  },
+  "reviewAlikeCare": "Care note",
+  "@reviewAlikeCare": {
+    "description": "Label of the field for what learners should take care of, at most 40 letters."
+  },
+  "reviewAlikeCareHint": "Keep the long ā",
+  "@reviewAlikeCareHint": {
+    "description": "Hint in the empty care note field."
+  },
+  "reviewAlikeCareHelp": "Learners see this. Short and plain.",
+  "@reviewAlikeCareHelp": {
+    "description": "Under the care note field."
+  },
+  "reviewAlikeCareCount": "{count}/{limit} letters",
+  "@reviewAlikeCareCount": {
+    "description": "The care note's budget, counted as the reviewer types.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "30"
+      },
+      "limit": {
+        "type": "int",
+        "example": "40"
+      }
+    }
+  },
+  "reviewSendTitle": "Send reviews",
+  "@reviewSendTitle": {
+    "description": "Title of the send sheet."
+  },
+  "reviewSendBody": "One mail takes every deck you tick, a file for each. Your mail app opens with Fluenough’s address and the files filled in. Read it, then send it.",
+  "@reviewSendBody": {
+    "description": "At the top of the send sheet."
+  },
+  "reviewSendSame": "Send it from the mail address you always use. Your code is public, so the Fluenough team goes by the address too.",
+  "@reviewSendSame": {
+    "description": "In the send sheet, under reviewSendBody."
+  },
+  "reviewSendDeck": "{deck} ({language})",
+  "@reviewSendDeck": {
+    "description": "A deck in the send sheet: its name and language.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Family"
+      },
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "reviewSendDeckCount": "{count, plural, =0{Signed off} =1{1 card} other{{count} cards}}",
+  "@reviewSendDeckCount": {
+    "description": "Under a deck in the send sheet: how many card reviews it sends.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "reviewSendDeckSigned": "{count, plural, =1{1 card, signed off} other{{count} cards, signed off}}",
+  "@reviewSendDeckSigned": {
+    "description": "Under a signed-off deck in the send sheet.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "reviewSendButton": "{count, plural, =0{Send} =1{Send 1 deck} other{Send {count} decks}}",
+  "@reviewSendButton": {
+    "description": "Button of the send sheet.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "reviewSendNothing": "Nothing to send yet.",
+  "@reviewSendNothing": {
+    "description": "When there is no review to send."
+  },
+  "reviewSendOpened": "Your mail app is open. Send the mail from there. If it does not go, Settings can send it again.",
+  "@reviewSendOpened": {
+    "description": "Once the mail app has the review."
+  },
+  "reviewSendNoApp": "No mail app took the review. It stays on this phone.",
+  "@reviewSendNoApp": {
+    "description": "When no app on the phone took the mail."
+  },
+  "reviewSendFailed": "The review could not be shared. It stays on this phone.",
+  "@reviewSendFailed": {
+    "description": "When the phone's share failed."
+  },
+  "reviewMailBody": "Reviews from Fluenough {version}, rater code {code}.\n\n{decks}\n\nA file for each deck. Please send without changing the files. You can review several decks and send them together in one mail.",
+  "@reviewMailBody": {
+    "description": "Body of the review mail, for people only: the files are the record.",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "0.3.4"
+      },
+      "code": {
+        "type": "String",
+        "example": "FL-7K3M-Q9TD-6"
+      },
+      "decks": {
+        "type": "String",
+        "example": "• Family (te-family): 12 cards"
+      }
+    }
+  },
+  "reviewMailDeck": "• {deck} ({id}): {count, plural, =0{signed off} =1{1 card} other{{count} cards}}",
+  "@reviewMailDeck": {
+    "description": "One deck in the review mail's body.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Family"
+      },
+      "id": {
+        "type": "String",
+        "example": "te-family"
+      },
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "reviewMailDeckSigned": "• {deck} ({id}): {count, plural, =1{1 card, signed off} other{{count} cards, signed off}}",
+  "@reviewMailDeckSigned": {
+    "description": "One signed-off deck in the review mail's body.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Family"
+      },
+      "id": {
+        "type": "String",
+        "example": "te-family"
+      },
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "alikeCarefulSpeaking": "Careful when speaking",
+  "@alikeCarefulSpeaking": {
+    "description": "Title of the warning on a word that sounds like a rude word (docs/plans/offensive-words.md)."
+  },
+  "alikeCarefulWriting": "Careful when writing",
+  "@alikeCarefulWriting": {
+    "description": "Title of the warning on a word that looks like a rude word when written."
+  },
+  "alikeSpeakingRude": "Said slightly wrong, this sounds like a rude word.",
+  "@alikeSpeakingRude": {
+    "description": "The warning on a word that sounds like a rude word."
+  },
+  "alikeWritingRude": "Written slightly wrong, this looks like a rude word.",
+  "@alikeWritingRude": {
+    "description": "The warning on a word that looks like a rude word."
+  },
+  "alikeHidden": "The rude word shows only with adult content on.",
+  "@alikeHidden": {
+    "description": "Under the warning while adult content is off."
+  },
+  "reviewCardAbout": "{word} · {reading} · {meaning} · {id}",
+  "@reviewCardAbout": {
+    "description": "Under the title of Suggest a change, Rate this word and Check this pair: the card's word, its reading, its meaning and its id.",
+    "placeholders": {
+      "word": {"type": "String", "example": "కూతురు"},
+      "reading": {"type": "String", "example": "kūturu"},
+      "meaning": {"type": "String", "example": "daughter"},
+      "id": {"type": "String", "example": "te-0384"}
+    }
+  },
+  "reviewCardAboutNoReading": "{word} · {meaning} · {id}",
+  "@reviewCardAboutNoReading": {
+    "description": "As reviewCardAbout, for a word in Latin letters, which has no reading.",
+    "placeholders": {
+      "word": {"type": "String", "example": "la casa"},
+      "meaning": {"type": "String", "example": "the house"},
+      "id": {"type": "String", "example": "es-0001"}
+    }
+  },
+  "reviewRateShort": "Rate",
+  "@reviewRateShort": {
+    "description": "A rude word's button on the review screen before it is rated: opens Rate this word."
+  },
+  "reviewRatedShort": "Rated",
+  "@reviewRatedShort": {
+    "description": "A rude word's button on the review screen once rated: opens the rating again."
+  },
+  "pickerSettingsTitle": "Languages I’m learning",
+  "@pickerSettingsTitle": {
+    "description": "Title of the language picker opened from Settings, with a back arrow. The first launch's title is learnTitle."
+  },
+  "pickerSearchHint": "Search languages",
+  "@pickerSearchHint": {
+    "description": "Hint in the language picker's search field. It matches English names, a language's own name and its code."
+  },
+  "pickerClearSearch": "Clear search",
+  "@pickerClearSearch": {
+    "description": "Tooltip of the button that empties the language picker's search."
+  },
+  "pickerGroupLearning": "Learning · {count}",
+  "@pickerGroupLearning": {
+    "description": "Group heading in the language picker: the languages the learner has chosen, and how many.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerGroupAvailable": "Available · {count}",
+  "@pickerGroupAvailable": {
+    "description": "Group heading in the language picker: the languages not chosen, and how many.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerNoMatchTitle": "No language matches “{query}”",
+  "@pickerNoMatchTitle": {
+    "description": "Language picker, when the search matches no language. {query} is what was typed.",
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerNoMatchBody": "Check the spelling. Only languages with decks are listed.",
+  "@pickerNoMatchBody": {
+    "description": "Under pickerNoMatchTitle."
+  },
+  "pickerNameSeparator": " · ",
+  "@pickerNameSeparator": {
+    "description": "Between a language's English name and its own name on its card: “Telugu · తెలుగు”, and between parts of a line."
+  },
+  "pickerScript": "{script, select, devanagari{Devanagari script} bengali{Bengali script} gujarati{Gujarati script} kannada{Kannada script} telugu{Telugu script} latin{Latin script} kana{Kana} arabic{Arabic script} other{}}",
+  "@pickerScript": {
+    "description": "On a language's card, under its names: the script its decks write it in. {script} is the deck files' script code; an unknown one shows nothing.",
+    "placeholders": {
+      "script": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerWritten": "{percent}% of B1 written",
+  "@pickerWritten": {
+    "description": "On a language's card, the bold start of its course's completeness: how much of the course up to level B1 its decks have, the same for every learner. Worked out from the course's B1 plan.",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerGrammarTopics": "{total, plural, =1{{done} of 1 grammar topic} other{{done} of {total} grammar topics}}",
+  "@pickerGrammarTopics": {
+    "description": "On a language's card, after pickerWritten: how many of the grammar topics its B1 plan names are taught yet.",
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerCourseSize": "{count, plural, =1{Course size: 1 word} other{Course size: {count} words}}",
+  "@pickerCourseSize": {
+    "description": "On a language's card in place of pickerWritten, when its course has no B1 plan yet: how many words its decks teach.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerYou": "You: {percent}% of B1",
+  "@pickerYou": {
+    "description": "On the card of a language the learner learns: how far they are toward level B1, from the words they have learned. Never more than pickerWritten.",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerYouWords": "{count, plural, =1{You: 1 word learned} other{You: {count} words learned}}",
+  "@pickerYouWords": {
+    "description": "On the card of a language the learner learns whose course has no B1 plan: the words they have learned.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerTaughtFrom": "Taught from",
+  "@pickerTaughtFrom": {
+    "description": "On a language's card, before the languages its decks teach from, which follow as chips; and the heading of the choice among them."
+  },
+  "pickerTaughtFromLine": "Taught from {languages}",
+  "@pickerTaughtFromLine": {
+    "description": "What a screen reader says for a card's Taught from chips. {languages} is joined by commonListSeparator.",
+    "placeholders": {
+      "languages": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerNotYours": "Not one of your languages.",
+  "@pickerNotYours": {
+    "description": "Under a card's Taught from chips, when the course is taught from no language the learner speaks."
+  },
+  "pickerAlpha": "Alpha",
+  "@pickerAlpha": {
+    "description": "Tag on a language's card: its course is still being written up to level A1."
+  },
+  "pickerBeta": "Beta",
+  "@pickerBeta": {
+    "description": "Tag on a language's card: its course is written to A1, and still being written up to B1."
+  },
+  "pickerAlphaLabel": "Alpha: A1 is still being written",
+  "@pickerAlphaLabel": {
+    "description": "What a screen reader says for the Alpha tag."
+  },
+  "pickerBetaLabel": "Beta: A1 is written, B1 is still being written",
+  "@pickerBetaLabel": {
+    "description": "What a screen reader says for the Beta tag."
+  },
+  "pickerAlphaUnplannedLabel": "Alpha: its levels are not mapped out yet",
+  "@pickerAlphaUnplannedLabel": {
+    "description": "What a screen reader says for the Alpha tag of a course whose path has no level plan yet, so nothing says how much of A1 is written."
+  },
+  "pickerAlphaUnplannedNotice": "{language} is in alpha: its course has no level plan yet, so how far it goes is not known. Start with what is there. More decks arrive as they are written.",
+  "@pickerAlphaUnplannedNotice": {
+    "description": "Notice inside an Alpha course's card once it is chosen, when its path has no level plan yet.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerAlphaNotice": "{language} is in alpha: its first level, A1, is still being written. Start with what is there. More decks arrive as they are written.",
+  "@pickerAlphaNotice": {
+    "description": "Notice inside an Alpha course's card once it is chosen.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerOnPhone": "On the phone · {size}",
+  "@pickerOnPhone": {
+    "description": "On a language's card: its decks are on the phone, and the room they take, such as “304 KB”.",
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerNotOnPhone": "Not on the phone · {size}",
+  "@pickerNotOnPhone": {
+    "description": "On a language's card: its decks are not on the phone yet, and what choosing it downloads, such as “287 KB”.",
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerLearnScript": "Learn the {language} script",
+  "@pickerLearnScript": {
+    "description": "A switch inside a chosen language's card, on by default: learn the language with its script, or in Latin letters only.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerScriptDecks": "{count, plural, =1{Includes 1 deck on letters, spelling and reading.} other{Includes {count} decks on letters, spelling and reading.}}",
+  "@pickerScriptDecks": {
+    "description": "Under pickerLearnScript while it is on: what learning the script includes.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerScriptDecksSome": "Includes decks on letters, spelling and reading.",
+  "@pickerScriptDecksSome": {
+    "description": "Under pickerLearnScript while it is on, before the language's decks are on the phone and their number known."
+  },
+  "pickerScriptOff": "Latin letters only. Words show their reading first, and the script decks are left out.",
+  "@pickerScriptOff": {
+    "description": "Under pickerLearnScript while it is off."
+  },
+  "pickerStartWith": "You start with",
+  "@pickerStartWith": {
+    "description": "Inside a chosen card, before the first letters of the script with their readings."
+  },
+  "pickerLetter": "{letter}, {reading}",
+  "@pickerLetter": {
+    "description": "What a screen reader says for one of the first letters shown: the letter, then its reading.",
+    "placeholders": {
+      "letter": {
+        "type": "String"
+      },
+      "reading": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerLearnFrom": "Learn {language} from",
+  "@pickerLearnFrom": {
+    "description": "Title of the sheet that chooses which of the learner's languages a course is taught from, when there are more than three.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerChangeNative": "Change",
+  "@pickerChangeNative": {
+    "description": "Button beside the language a course is taught from, when there are more than three to choose from: opens the list."
+  },
+  "pickerDownloadDecks": "{total, plural, =1{{percent}% · {done} of 1 deck} other{{percent}% · {done} of {total} decks}}",
+  "@pickerDownloadDecks": {
+    "description": "Above a language's download bar: the share downloaded, by size, and how many of its decks are in.",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      },
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerDownloadSize": "{done} of {total}",
+  "@pickerDownloadSize": {
+    "description": "Above a language's download bar, at its end: how much is downloaded of how much, such as “60 of 287 KB”.",
+    "placeholders": {
+      "done": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerReadyAfter": "{count, plural, =1{Ready to start after 1 deck} other{Ready to start after {count} decks}}",
+  "@pickerReadyAfter": {
+    "description": "Under a language's download bar, below a mark where its first decks end: the language can be started once they are in.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerReady": "Ready to start. The rest keeps downloading.",
+  "@pickerReady": {
+    "description": "Under a language's download bar once its first decks are in."
+  },
+  "pickerDownloaded": "Every deck is on the phone.",
+  "@pickerDownloaded": {
+    "description": "Under a language's download bar once all of it is in."
+  },
+  "pickerDecksOnPhone": "{count, plural, =0{No decks are on the phone yet.} =1{1 deck is on the phone.} other{{count} decks are on the phone.}}",
+  "@pickerDecksOnPhone": {
+    "description": "After why a language's download stopped: how many of its decks are in.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerCancelledUnchosen": "{language}’s download stopped, and {language} is no longer chosen. Any of its decks that arrived stay on the phone: its card in Languages I’m learning can finish them.",
+  "@pickerCancelledUnchosen": {
+    "description": "Toast after a language's download is cancelled before its first decks are in: it is no longer chosen, and what arrived can be finished from its card in Languages I’m learning (#467).",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerAnnounceChosen": "{language} chosen, now under Learning",
+  "@pickerAnnounceChosen": {
+    "description": "Announced to a screen reader when a language is ticked in the picker and its card moves to the Learning group.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerAnnounceUnchosen": "{language} no longer chosen, now under Available",
+  "@pickerAnnounceUnchosen": {
+    "description": "Announced to a screen reader when a language is un-ticked in the picker and its card moves back to the Available group.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerCancelDownloadLabel": "Cancel the {language} download",
+  "@pickerCancelDownloadLabel": {
+    "description": "What a screen reader says for the Cancel button of a language's download in the picker.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerRetryDownloadLabel": "Try the {language} download again",
+  "@pickerRetryDownloadLabel": {
+    "description": "What a screen reader says for the Try again button of a language's failed download in the picker.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerNativeChoiceLabel": "Taught from {native}, change",
+  "@pickerNativeChoiceLabel": {
+    "description": "What a screen reader says for the row that shows which of the learner's languages a course is taught from, when there are more than three; tapping it opens the choice.",
+    "placeholders": {
+      "native": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerCancelled": "Stopped. The rest can be downloaded from its card in Languages I’m learning.",
+  "@pickerCancelled": {
+    "description": "Under a language's download bar after Cancel, once its first decks are in: the course works with what arrived."
+  },
+  "pickerAnnounceReady": "{language} is ready to start",
+  "@pickerAnnounceReady": {
+    "description": "Announced to a screen reader once, when a language's first decks are in.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerAnnounceDone": "{language} is downloaded",
+  "@pickerAnnounceDone": {
+    "description": "Announced to a screen reader once, when all of a language's decks are in.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerHintChoose": "Choose a language to go on.",
+  "@pickerHintChoose": {
+    "description": "Above Continue on first launch while no language is chosen."
+  },
+  "pickerHintNext": "Next, a short check for {languages}.",
+  "@pickerHintNext": {
+    "description": "Above Continue: what comes after it, placement for the newly chosen languages. {languages} is joined by commonListSeparator.",
+    "placeholders": {
+      "languages": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerHintWaiting": "{count, plural, =1{Waiting for the first deck of {languages}.} other{Waiting for the first {count} decks of {languages}.}}",
+  "@pickerHintWaiting": {
+    "description": "Above Continue, which is off while a newly chosen language's first decks download. {languages} is joined by commonListSeparator.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "languages": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerStopTitle": "Stop learning {language}?",
+  "@pickerStopTitle": {
+    "description": "Title of the dialog when the learner un-ticks a language they learn.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerStopBody": "Your progress is kept ({percent}% of B1), but its decks leave Today. You can add it again any time.",
+  "@pickerStopBody": {
+    "description": "Body of the stop-learning dialog, with the learner's progress toward B1.",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerStopBodyPlain": "Your progress is kept, but its decks leave Today. You can add it again any time.",
+  "@pickerStopBodyPlain": {
+    "description": "Body of the stop-learning dialog, for a course with no B1 plan."
+  },
+  "pickerStopConfirm": "Stop learning",
+  "@pickerStopConfirm": {
+    "description": "The stop-learning dialog's button that un-ticks the language."
+  },
+  "pickerNoConnection": "No connection.",
+  "@pickerNoConnection": {
+    "description": "Why a language's download stopped, before pickerDecksOnPhone: there is no network."
+  },
+  "pickerDownloadFailed": "{reason} {onPhone}",
+  "@pickerDownloadFailed": {
+    "description": "Under a language's stopped download bar: why it stopped, then how many of its decks are on the phone (pickerDecksOnPhone).",
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      },
+      "onPhone": {
+        "type": "String"
+      }
+    }
   }
 }

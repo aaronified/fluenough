@@ -6,6 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/features.dart';
+import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/system_settings.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
@@ -15,6 +16,7 @@ import 'package:fluenough/features/settings/gallery_entries.dart';
 import 'package:fluenough/features/settings/voices_page.dart';
 
 import '../../support/harness.dart';
+import 'support.dart';
 
 /// A [FixedTtsEngine] whose voices can change, and whose answers can be
 /// held back with [gate], to see "Checking…".
@@ -34,8 +36,12 @@ class _ChangingTts implements TtsEngine {
   Future<List<TtsVoice>> voicesFor(String bcp47) => _now.voicesFor(bcp47);
 
   @override
-  Future<void> speak(String text, {required String bcp47, double rate = 0.5}) =>
-      _now.speak(text, bcp47: bcp47, rate: rate);
+  Future<void> speak(
+    String text, {
+    required String bcp47,
+    double rate = 0.5,
+    String? voice,
+  }) => _now.speak(text, bcp47: bcp47, rate: rate, voice: voice);
 
   @override
   Future<void> stop() async {}
@@ -71,8 +77,53 @@ void main() {
     expect(find.text(l10n.voicesMissing), findsNWidgets(others));
 
     // Test only where there is a voice.
-    expect(find.bySemanticsLabel(l10n.voicesTestLabel(es.name)), findsOne);
-    expect(find.bySemanticsLabel(l10n.voicesTestLabel(hi.name)), findsNothing);
+    expect(find.bySemanticsLabel(l10n.voicesPlayLabel(es.name)), findsOne);
+    expect(find.bySemanticsLabel(l10n.voicesPlayLabel(hi.name)), findsNothing);
+    semantics.dispose();
+  });
+
+  testWidgets('the languages learned come first, as cards; every other '
+      'language on the phone, reviewed ones too, is folded under Other '
+      'languages on this phone (#463)', (tester) async {
+    usePhone(tester);
+    final semantics = tester.ensureSemantics();
+    final state = await pumpScreen(
+      tester,
+      const VoicesPage(),
+      state: AppState.test(
+        tts: FixedTtsEngine(const <String>{'es'}),
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: const <String>['es'],
+        )..reviewLanguages = const <String>{'hi'},
+      ),
+    );
+    await tester.pumpAndSettle();
+    final l10n = l10nOf(tester);
+    final es = _language(state, 'es');
+    final hi = _language(state, 'hi');
+    expect(state.languages.length, greaterThan(1));
+    expect(find.byType(LanguageVoiceCard), findsOneWidget);
+    expect(find.textContaining(es.name, findRichText: true), findsOneWidget);
+    expect(find.textContaining(hi.name, findRichText: true), findsNothing);
+    final others = find.text(l10n.voicesOtherLanguages);
+    expect(others, findsOneWidget);
+    expect(
+      tester.getSemantics(others),
+      isSemantics(hasExpandedState: true, isExpanded: false),
+    );
+
+    await tester.ensureVisible(others);
+    await tester.tap(others);
+    await tester.pumpAndSettle();
+    expect(
+      find.byType(LanguageVoiceCard, skipOffstage: false),
+      findsNWidgets(state.languages.length),
+    );
+    expect(
+      find.textContaining(hi.name, findRichText: true, skipOffstage: false),
+      findsOneWidget,
+    );
     semantics.dispose();
   });
 
@@ -90,7 +141,8 @@ void main() {
     final es = _language(state, 'es');
     state.settings.speechRate = 1.5;
 
-    await tester.tap(find.text(l10n.voicesTest));
+    await scrollTo(tester, find.text(l10n.voicesPlay));
+    await tester.tap(find.text(l10n.voicesPlay));
     await tester.pumpAndSettle();
 
     final spoken = tts.spoken.single;
@@ -115,7 +167,8 @@ void main() {
     final l10n = l10nOf(tester);
     expect(find.text(l10n.voicesInstalled(1)), findsOneWidget);
 
-    await tester.tap(find.text(l10n.voicesTest));
+    await scrollTo(tester, find.text(l10n.voicesPlay));
+    await tester.tap(find.text(l10n.voicesPlay));
     await tester.pumpAndSettle();
     expect(tts.spoken, isEmpty);
     expect(find.text(l10n.speakerSoundOff), findsOneWidget);
@@ -126,7 +179,7 @@ void main() {
   ) async {
     usePhone(tester);
     // Tall enough for every bundled language's row and what is under them.
-    tester.view.physicalSize = const Size(390 * 3, 3000 * 3);
+    tester.view.physicalSize = const Size(390 * 3, 8000 * 3);
     final tts = _ChangingTts();
     final state = await pumpScreen(
       tester,
@@ -136,7 +189,7 @@ void main() {
     final l10n = l10nOf(tester);
     final languages = state.languages.length;
     expect(find.text(l10n.voicesMissing), findsNWidgets(languages));
-    expect(find.text(l10n.voicesTest), findsNothing);
+    expect(find.text(l10n.voicesPlay), findsNothing);
 
     // The learner installs a Hindi voice and comes back.
     tts
@@ -162,14 +215,15 @@ void main() {
     expect(state.hasVoice(_language(state, 'hi')), isTrue);
     expect(find.text(l10n.voicesInstalled(1)), findsOneWidget);
     expect(find.text(l10n.voicesMissing), findsNWidgets(languages - 1));
-    expect(find.text(l10n.voicesTest), findsOneWidget);
+    expect(find.text(l10n.voicesPlay), findsOneWidget);
   });
 
   Future<void> tapInstall(WidgetTester tester, AppState state) async {
     usePhone(tester);
     // Tall enough for every bundled language's row and what is under them.
-    tester.view.physicalSize = const Size(390 * 3, 3000 * 3);
+    tester.view.physicalSize = const Size(390 * 3, 8000 * 3);
     await pumpScreen(tester, const VoicesPage(), state: state);
+    await scrollTo(tester, find.text(l10nOf(tester).voicesInstall));
     await tester.tap(find.text(l10nOf(tester).voicesInstall));
     await tester.pumpAndSettle();
   }
@@ -263,8 +317,13 @@ void main() {
       state: app,
     );
     final l10n = l10nOf(tester);
-    expect(find.text(l10n.voicesChecking), findsNWidgets(app.languages.length));
-    expect(find.text(l10n.voicesTest), findsNothing);
+    // The languages learned; the rest are folded (#463).
+    expect(find.byType(LanguageVoiceCard), findsWidgets);
+    expect(
+      find.text(l10n.voicesChecking),
+      findsNWidgets(find.byType(LanguageVoiceCard).evaluate().length),
+    );
+    expect(find.text(l10n.voicesPlay), findsNothing);
 
     await pumpScreen(
       tester,

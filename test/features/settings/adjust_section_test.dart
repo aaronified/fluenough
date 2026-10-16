@@ -162,7 +162,7 @@ void main() {
     usePhone(tester);
     final state = await pumpScreen(tester, const SettingsPage());
     final l10n = l10nOf(tester);
-    await scrollTo(tester, find.text(l10n.settingsAdjustAutoDesc));
+    await scrollTo(tester, find.text(l10n.settingsAdjustAutoOn));
 
     expect(state.settings.autoAdjust, isTrue);
     await tester.ensureVisible(find.text(l10n.settingsAdjustAuto));
@@ -170,6 +170,8 @@ void main() {
     await tester.tap(find.text(l10n.settingsAdjustAuto));
     await tester.pumpAndSettle();
     expect(state.settings.autoAdjust, isFalse);
+    expect(find.text(l10n.settingsAdjustAutoOff), findsOneWidget);
+    expect(find.text(l10n.settingsAdjustAutoOn), findsNothing);
   });
 
   testWidgets('the sheet shows a heading per language when there are several', (

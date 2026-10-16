@@ -2,8 +2,13 @@
 
 Written 2026-10-06. **Part of the settings redesign,** with
 `language-picker.md`, `settings-wording.md` and `voices-per-language.md`:
-last in the owner's order, after `skill-model.md`, `b1-plans.md` and deck
-downloads (`decks-from-github.md`).
+last in the owner's order, after the skill model (done), `b1-plans.md` and
+deck downloads ([ADR-0037](../adr/0037-decks-download-from-main.md)).
+
+**Built in #443 (closed #211).** Kept, not deleted: no ADR holds its
+decisions yet (the Alpha and Beta stages, the taught-from choice, the
+download progress, the completeness formula), so the "Decided" section
+below is where they live.
 
 ## What the owner asked
 
@@ -14,7 +19,7 @@ downloads (`decks-from-github.md`).
 > the script right there as well.
 
 Asked whether to build it or plan it: "plan it in a way that can adapt to
-the deck download feature" (`decks-from-github.md`). Then: "Language picker
+the deck download feature" ([ADR-0037](../adr/0037-decks-download-from-main.md)). Then: "Language picker
 will be built after the deck download feature."
 
 ## What exists
@@ -68,7 +73,7 @@ search and list guidance.
 
 ## Built on deck downloads
 
-It comes after `decks-from-github.md`, so it reads the deck index from the
+It comes after deck downloads (ADR-0037), so it reads the deck index from the
 start, with no version built on the bundled decks:
 
 - `LanguageCatalog` in `lib/core`, free of Flutter, lists `CatalogLanguage`
@@ -161,11 +166,35 @@ start, with no version built on the bundled decks:
   - a failure shows its reason and Try again resumes;
   - the screen-reader announcements happen once each.
 
-## To decide
+## Decided (owner, 2026-10-09)
 
-- **Learner progress:** show the learner's own progress on the card as
-  well, or only on Progress.
-- **A mockup first:** I can make a design to approve before building.
+- **Built now,** on the bundled decks, ready for deck downloads later
+  (the order above is changed: "Do the settings redesign here as well").
+- **A mockup first,** to approve before building.
+- **The mockup is approved** (owner, 2026-10-09: "The mockups look great",
+  `docs/mockups/language-picker.html`), with one change: "a language may
+  be available in more than 2 native languages ... It will not be there
+  anytime soon, but still." The "taught from" choice must not be a
+  two-way switch: up to three options can sit side by side; beyond that
+  it becomes a list (a radio list in a sheet), each with its coverage,
+  the learner's own languages first.
+- **Answers to the mockup's questions** (owner, 2026-10-09): a language
+  the learner already learns opens its course at once, and only a newly
+  chosen one goes through placement; "Learn the script" starts on; after
+  a cancelled download the rest comes from Settings > Deck downloads, the
+  course working with what arrived.
+- **Alpha and beta, not "Just started"** (owner, 2026-10-09: "It is not
+  'just started', start implies starting action by the learner. It is a
+  'beta deck', or alpha. I guess till A1, decks should be called alpha.
+  Post A1, they will be beta"). A course is tagged **Alpha** until every
+  A1 unit of its plan is written, **Beta** from then until every B1 unit
+  is written, and carries no tag after that.
+- **Both progresses on the card:** the course's completeness ("62% of B1
+  written") and, for a language the learner learns, their own ("You: 18%
+  of B1").
+- **One release with deck downloads** (owner, 2026-10-09: "After the
+  picker"): deck downloads (#440) ships in the same release as the picker,
+  not on its own.
 
 ## Estimate
 

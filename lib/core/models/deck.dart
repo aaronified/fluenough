@@ -1,7 +1,9 @@
 import 'author.dart';
 import 'card.dart';
 import 'grammar_pattern.dart';
+import 'proposal.dart';
 import 'reading.dart';
+import 'rule.dart';
 
 class LanguageInfo {
   const LanguageInfo({
@@ -59,9 +61,10 @@ class LanguageInfo {
   };
 }
 
-/// What a deck holds: cards, a pattern table that expands into cards, or
-/// passages with questions, which are its cards (#98, ADR-0019).
-enum DeckKind { vocab, grammar, reading }
+/// What a deck holds: cards, a pattern table that expands into cards,
+/// passages with questions, which are its cards (#98, ADR-0019), or a rules
+/// table, whose cells are its cards (DECK-FORMAT.md, Rules decks).
+enum DeckKind { vocab, grammar, reading, rules }
 
 class Deck {
   const Deck({
@@ -80,6 +83,10 @@ class Deck {
     this.source,
     this.theme,
     this.refs = const <CardRef>[],
+    this.table,
+    this.rules = const <Rule>[],
+    this.proposals = const <String, List<Proposal>>{},
+    this.checkedBy = const <String, List<String>>{},
   });
 
   final String id;
@@ -116,6 +123,23 @@ class Deck {
   /// catalog has every deck, and then folded into [cards] (ADR-0018).
   final List<CardRef> refs;
 
+  /// A rules deck's table; null for any other deck. A merged rules deck has
+  /// this set and [cards] empty until its cells are expanded.
+  final RuleTable? table;
+
+  /// A rules deck's rules that its layer gives, for the lesson's teach step:
+  /// a rule its layer leaves out is not taught, and its cells are not asked.
+  final List<Rule> rules;
+
+  /// What reviewers have proposed for its cards, by card id, waiting for
+  /// agreement (ADR-0038). Only reviewer mode shows them.
+  final Map<String, List<Proposal>> proposals;
+
+  /// The rater codes of the reviewers who signed each card off, by card id
+  /// (#449): its `checked_by`, which the review bot writes. A card no one
+  /// has checked is not in it.
+  final Map<String, List<String>> checkedBy;
+
   int get cardCount => cards.length;
 
   /// This deck with [cards] in place of its own, and no refs left: a grammar
@@ -135,8 +159,24 @@ class Deck {
     authors: authors,
     source: source,
     theme: theme,
+    table: table,
+    rules: rules,
+    proposals: proposals,
+    checkedBy: checkedBy,
   );
 
   @override
   String toString() => 'Deck($id, ${cards.length} cards)';
 }
+
+/// Whether [card], in a deck of [kind], counts as a word (DECK-FORMAT.md, The
+/// B1 plan): the words a unit plans and a course teaches. True for a card of a
+/// vocab deck that is not a phrasebook chunk nor a phrase, and is one word by
+/// [wordsForBases] or a noun, verb, adjective, adverb or pronoun of several
+/// words. Grammar and rules cells and reading questions are not words.
+bool countsAsWord(Card card, DeckKind kind) =>
+    kind == DeckKind.vocab &&
+    !card.phrasebook &&
+    card.pos != 'phrase' &&
+    (wordsForBases(card.target).length == 1 ||
+        const {'noun', 'verb', 'adj', 'adv', 'pronoun'}.contains(card.pos));

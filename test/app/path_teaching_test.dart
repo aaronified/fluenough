@@ -35,9 +35,15 @@ List<List<String>> unitIds(AppState state) => <List<String>>[
 DeckBadgeKind badgeOf(AppState state, String deckId) =>
     DeckBadge.forEntry(state, state.deckById(deckId)!).kind;
 
-/// A tiny course: three single-card decks of Hindi from [native], in a path
-/// of three units, [first] first.
-Map<String, String> tinyCourse({String native = 'en', String first = 'a'}) {
+/// A tiny course: three single-card decks of Hindi from [native], and, with
+/// [path], Hindi's path of three units, [first] first. The path is the
+/// language's, every course's (ADR-0036), so a second course of Hindi
+/// leaves it out.
+Map<String, String> tinyCourse({
+  String native = 'en',
+  String first = 'a',
+  bool path = true,
+}) {
   String deck(String name) =>
       '''
 schema: 1
@@ -56,15 +62,15 @@ cards:
   return <String, String>{
     for (final name in <String>['a', 'b', 'c'])
       'decks/hi/hi-$native-$name.yaml': deck(name),
-    'decks/hi/hi-$native-path.yaml':
-        '''
+    if (path)
+      'decks/hi/hi-path.yaml':
+          '''
 schema: 1
 kind: path
-id: hi-$native-path
+id: hi-path
 language: hi
-native: $native
 units:
-${[for (final name in order) '  - [hi-$native-$name]'].join('\n')}
+${[for (final name in order) '  - [hi-$name]'].join('\n')}
 ''',
   };
 }
@@ -79,7 +85,11 @@ void main() {
     await state.load();
     // Hindi starts with words and basic sentences, not its script.
     expect(unitIds(state), <List<String>>[
-      <String>['hi-en-first-words', 'hi-en-grammar-sentences'],
+      <String>[
+        'hi-en-phrasebook',
+        'hi-en-first-words',
+        'hi-en-grammar-sentences',
+      ],
       <String>['hi-en-sound-differences'],
     ]);
     final untaught = state.untaughtCards('hi');
@@ -103,7 +113,11 @@ void main() {
   test('a placed unit is skipped, and its decks read Done', () async {
     final state = learning(
       <String>['hi'],
-      placed: <String>{'hi-en-first-words', 'hi-en-grammar-sentences'},
+      placed: <String>{
+        'hi-en-phrasebook',
+        'hi-en-first-words',
+        'hi-en-grammar-sentences',
+      },
     );
     addTearDown(state.dispose);
     await state.load();
@@ -123,7 +137,7 @@ void main() {
 
     // Placement is a setting: changing it moves the window at once.
     state.settings.placedDecks = const <String>{};
-    expect(unitIds(state).first.first, 'hi-en-first-words');
+    expect(unitIds(state).first.first, 'hi-en-phrasebook');
   });
 
   test('a deck finished inside a pending unit reads Done, its unit-mate '
@@ -210,16 +224,24 @@ void main() {
     final everything = learning(const <String>[]);
     addTearDown(everything.dispose);
     await everything.load();
-    final starts = <String>[
-      for (final unit in everything.pendingUnits) unit.first.id,
+    final pending = <List<String>>[
+      for (final unit in everything.pendingUnits) [for (final e in unit) e.id],
     ];
-    // Two units for each of the eight courses. Bengali starts with words,
-    // then the sounds English lacks.
-    expect(
-      starts,
-      containsAll(<String>['bn-en-first-words', 'bn-en-sound-differences']),
-    );
-    expect(starts, contains('es-en-core-100'));
+    final starts = [for (final unit in pending) unit.first];
+    // Two units for each of the eight courses. Bengali starts with its
+    // phrasebook and first words (ADR-0036: the phrasebook is taught in
+    // the first unit), then the sounds English lacks.
+    final bengaliUnits = [
+      for (final unit in pending)
+        if (unit.first.startsWith('bn-')) unit,
+    ];
+    expect(bengaliUnits, hasLength(2));
+    expect(bengaliUnits.first.take(2), <String>[
+      'bn-en-phrasebook',
+      'bn-en-first-words',
+    ]);
+    expect(bengaliUnits.last.first, 'bn-en-sound-differences');
+    expect(starts, contains('es-en-phrasebook'));
     expect(starts, hasLength(16));
   });
 
@@ -229,8 +251,8 @@ void main() {
       <String>['hi'],
       spoken: <String>['bn', 'en'],
       decks: MemoryDeckSource(<String, String>{
-        ...tinyCourse(),
-        ...tinyCourse(native: 'bn', first: 'c'),
+        ...tinyCourse(first: 'c'),
+        ...tinyCourse(native: 'bn', path: false),
       }),
     );
     addTearDown(state.dispose);

@@ -20,7 +20,7 @@ name: Urdu (right-to-left fixture)
 kind: vocab
 language: { code: ur, iso639_3: urd, name: Urdu, script: arabic, rtl: true, tts: ur-PK }
 native:   { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
+license: CC-BY-SA-4.0
 tags: [fixture]
 
 cards:

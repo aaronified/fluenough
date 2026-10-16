@@ -21,13 +21,12 @@ answer from a session.
   source too: "all decks will still get transliteration from wikitionary or
   soemthing" (5 October). Wiktionary romanises each language in its own
   scheme, close to ISO 15919 for some languages and not for others. Its
-  romanisations would need converting to ISO 15919 as said, and checking
+  romanisations would need converting to the decks' readings (letters based
+  on ISO 15919's, as said, with the departures the README lists), and checking
   against the decks' readings. Readings made in the app are only for
   sentences the learner adds (`in-app-readings.md`).
-- **Licence:** Wiktionary is CC BY-SA 4.0; the decks are CC0. Every IPA
-  taken from it needs attribution, and those fields are share-alike. A deck
-  that takes any says so in its `license` and `source`, and the README says
-  which IPA comes from where.
+- **Licence:** Wiktionary is CC BY-SA 4.0, and so are the decks since
+  ADR-0040 (#510). Every IPA taken from it names its source, per item.
 
 ## Steps
 
@@ -48,8 +47,6 @@ answer from a session.
 
 ## To decide
 
-- Whether a deck may mix CC0 and CC BY-SA fields, or whether every deck
-  that takes Wiktionary IPA moves to CC BY-SA 4.0 as a whole.
 - What to do where Wiktionary gives several pronunciations: the first, or
   the one closest to the reading.
 

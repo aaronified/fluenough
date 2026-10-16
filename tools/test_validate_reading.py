@@ -13,6 +13,7 @@ import shutil
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 import validate_decks
 
@@ -23,7 +24,7 @@ name: "Probe"
 kind: reading
 language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
 native: { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
+license: CC-BY-SA-4.0
 source: "A book, in the public domain"
 """
 
@@ -137,9 +138,10 @@ class ReadingDeck(Reading):
             self.write(deck(questions=question('        prompt: { bn: "ভাত?" }\n'
                                                '        answer: true\n'))),
             "prompt needs en")
-        # A bare no reads as false, so the key is no language code.
+        # A bare false is a boolean, so the key is no language code. (A bare
+        # no is the string "no" to both the validator and the app, YAML 1.2.)
         self.assertRejected(
-            self.write(deck(questions=question('        prompt: { en: "A.", no: "B." }\n'
+            self.write(deck(questions=question('        prompt: { en: "A.", false: "B." }\n'
                                                '        answer: true\n'))),
             "boolean")
 
@@ -154,7 +156,7 @@ class ReadingDeck(Reading):
             self.write(deck(sentences='      - text: "সে যায়।"\n')),
             "reading is required")
         self.assertRejected(
-            self.write(deck(sentences='      - text: yes\n        reading: "x"\n')),
+            self.write(deck(sentences='      - text: true\n        reading: "x"\n')),
             "boolean")
         self.assertRejected(self.write(deck(sentences="      []\n")),
                             "sentences must be a non-empty list")
@@ -215,18 +217,18 @@ name: "Market"
 theme: market
 language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN }
 native: { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
+license: CC-BY-SA-4.0
 cards:
   - { id: bn-9001, target: "সে", native: "he, she", reading: "she" }
   - { id: bn-9002, target: "ভাত খায়", native: "eats rice", reading: "bhat khay" }
 """
 
-    def course(self, units: str = "  - [bn-en-market]\n  - [bn-en-reading-probe]\n"
+    def course(self, units: str = "  - [bn-market]\n  - [bn-reading-probe]\n"
                ) -> list[validate_decks.Report]:
         themes = self.write("schema: 1\nkind: themes\nthemes:\n"
                             "  - { id: market, name: \"Market\" }\n", "themes.yaml")
-        path = self.write("schema: 1\nkind: path\nid: bn-en-path\nlanguage: bn\n"
-                          f"native: en\nunits:\n{units}", "bn-en-path.yaml")
+        path = self.write("schema: 1\nkind: path\nid: bn-path\nlanguage: bn\n"
+                          f"units:\n{units}", "bn-path.yaml")
         words = self.write(self.WORDS, "bn-en-market.yaml")
         return [themes, path, words, self.write(deck())]
 
@@ -256,7 +258,7 @@ cards:
                             for p in problems), problems)
 
     def test_a_passage_comes_after_its_theme_on_the_path(self) -> None:
-        reports = self.course("  - [bn-en-reading-probe, bn-en-market]\n")
+        reports = self.course("  - [bn-reading-probe, bn-market]\n")
         validate_decks.check_reading_across(reports)
         self.assertTrue(any("put it in a later unit" in w for w in reports[-1].warnings),
                         reports[-1].warnings)
@@ -268,7 +270,10 @@ cards:
         self.course()
         (self.tmp / "pubspec.yaml").unlink(missing_ok=True)
         out = io.StringIO()
-        with contextlib.redirect_stdout(out):
+        # The probe course stands in for a language: the repository's own
+        # decks/bn, which now has cores and so needs its B1 plan, is not part of it.
+        with mock.patch.object(validate_decks, "ROOT", self.tmp), \
+                contextlib.redirect_stdout(out):
             code = validate_decks.main(["validate_decks.py", str(self.tmp)])
         self.assertEqual(code, 0, out.getvalue())
         self.assertIn("words appear in no bn-en deck", out.getvalue())

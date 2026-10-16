@@ -161,7 +161,9 @@ class _TypedDrillState extends State<TypedDrill> {
       ),
       if (card.picture != null) CardPicture(card, size: typing ? 56 : 88),
       Text(
-        card.native,
+        // The meaning; for a rules table's cell, its word first
+        // (DECK-FORMAT.md, Rules decks).
+        card.promptFor(_session.item.mode),
         textAlign: TextAlign.center,
         style:
             (typing

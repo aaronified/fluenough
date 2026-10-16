@@ -17,17 +17,19 @@ import '../../ui/widgets/mode_pill.dart';
 import '../../ui/widgets/pace_parts.dart';
 import '../../ui/widgets/report_button.dart';
 
-/// The order skills are listed in: Today's tiles', then passages.
+/// The order skills are listed in: Today's tiles', grammar understood
+/// before produced as on the Grammar tile, then passages.
 const List<DrillMode> _order = <DrillMode>[
   DrillMode.recognition,
   DrillMode.listening,
   DrillMode.speaking,
   DrillMode.production,
+  DrillMode.grammarUnderstood,
   DrillMode.grammar,
   DrillMode.reading,
 ];
 
-/// How you learn (`docs/plans/skill-model.md`, "Shown prominently"; mockup
+/// How you learn (ADR-0035, "Shown prominently"; mockup
 /// `docs/mockups/adapted-to-you.html`, screen 4): per skill, how fast the
 /// learner forgets beside how every skill starts.
 ///

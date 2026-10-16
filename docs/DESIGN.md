@@ -10,6 +10,7 @@ lib/
     grading/         answer normalisation and comparison
     tts/             TtsEngine interface (implementations may touch platform)
     data/            drift database, deck repository, review log
+    decks/           the deck index, SHA-256, fetching decks from GitHub
   features/          UI, one directory per screen area
     drill/  decks/  stats/  settings/
   ui/                theme, shared widgets
@@ -23,7 +24,7 @@ cheap to test.
 
 ## Data model
 
-Six tables, in one SQLite database per profile (`lib/core/data/database.dart`,
+Seven tables, in one SQLite database per profile (`lib/core/data/database.dart`,
 which also says how a migration is added). Times are stored as milliseconds
 since the epoch.
 
@@ -45,13 +46,13 @@ or deleted:
 
 ```
 id, ts, deck_id, card_id, mode, grade, elapsed_ms, answer_given,
-interval_before, interval_after, ease_before, ease_after,
-stability_after, difficulty_after
+interval_before, interval_after, stability_after, difficulty_after
 ```
 
 `stability_after` and `difficulty_after` came with migration 5 and are null
-on older rows. Rows from then on write `ease_after` as 0 and `ease_before` as
-null: SM-2's ease belongs to the rows written before.
+on older rows. Migration 6 dropped SM-2's `ease_before` and `ease_after` and
+kept every row (ADR-0033), so the log still replays by grade and time, which
+is all FSRS needs.
 
 Everything the app knows about a user's progress derives from this table. It is
 the only table whose loss would be irreparable, which makes it the only one
@@ -126,15 +127,62 @@ language-agnostic app must degrade gracefully on a device lacking a voice.
 
 ## Deck loading
 
-Bundled decks ship as Flutter assets. Imported decks are copied into the app's
-documents directory. Both go through one path:
+The app bundles no deck, only `decks/themes.yaml`. Decks are downloaded from
+the repository's `main` branch into `downloaded/` in the app's own storage,
+each under its repository path (#210,
+[ADR-0037](adr/0037-decks-download-from-main.md)); a learner's own decks are
+copied into `decks/` there. All go through one path:
 
 ```
+bundled themes + downloaded/ + added/  →  DeckSources  →  DeckCatalog
 YAML text → DeckParser → Deck → (grammar: PatternExpander) → List<Card> → cards table
 ```
 
 Parse failures are reported with file and line, never swallowed. A deck that
 fails to parse is skipped and surfaced in the UI; it must not take the app down.
+
+## Deck downloads
+
+```
+GitHub main                     the phone
+decks/index.json  ──fetch──▶    DeckDownloads ──check──▶ FileDownloadedDecks
+decks/<lang>/…    ──fetch──▶      size + SHA-256,         downloaded/decks/…
+                                  then DeckCatalog.checkFile  files.json, index.json, state.json
+```
+
+- **`lib/core/decks/`**, pure Dart: `DeckIndex` reads `decks/index.json`
+  and works out what a learner downloads (`filesFor`), what makes a
+  language ready (`firstFiles`: its own files and the first five decks of
+  its path), and what an update changes (`changesFor`, which keeps a file
+  GitHub dropped unless a new one takes its role). `DeckFetcher` gets a
+  file; `GitHubDeckFetcher` asks `raw.githubusercontent.com` with dart:io's
+  client and no token. `sha256Hex` hashes, with no package.
+- **`DeckDownloads`** (`lib/app/`) runs it: the first five decks, then the
+  rest in writes of ten decks; at most one check a day; the question, and
+  "Not now" remembered; removing a language. It says why a download
+  failed: offline, rate-limited, a file that does not match, one that does
+  not parse, a full phone, an index too new, a language no longer offered.
+  A batch with any bad file is not kept.
+- **`FileDownloadedDecks`** writes every file of a batch beside its place,
+  then moves each in, so no half file is ever read; a part-file left by a
+  crash is deleted at launch. It keeps what the index said of each file
+  (`files.json`), the last index, and its own state.
+- **`AppState`** reads the downloads before the catalog, then, in the
+  background, finishes downloads cut short and looks for updates.
+  `missingLanguages` sends the app to `DownloadPage` while a language the
+  learner learns has none of its first decks, as after updating from a
+  version that bundled them.
+- **Screens** (`lib/features/downloads/`): `DownloadPage`, the first decks
+  with their progress and Try again; the learn page's list, from the index,
+  which from Settings also checks for deck updates at its top and shows on
+  each downloaded language's card its size and state with Update and Remove
+  (#467), as Languages you review does for each course on the phone; and
+  `DeckUpdatePrompt`, the daily question. There is no separate Deck
+  downloads page.
+
+Progress is never part of a deck file. It is keyed by card id in the
+database, so replacing, removing and downloading decks again leaves it
+whole.
 
 ## Daily facts
 

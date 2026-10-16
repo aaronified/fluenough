@@ -1,0 +1,246 @@
+// Reviewer mode shows other reviewers' proposed changes on a card, with
+// Accept, Edit and Reject, and keeps the answer with the card's review
+// (ADR-0038). A learner never sees a proposal.
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+import 'package:fluenough/app/deck_catalog.dart';
+import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/core/models/card.dart' as model;
+import 'package:fluenough/core/models/deck.dart';
+import 'package:fluenough/core/models/proposal.dart';
+import 'package:fluenough/core/review/deck_review.dart';
+import 'package:fluenough/features/review/proposal_card.dart';
+import 'package:fluenough/features/review/review_page.dart';
+import 'package:fluenough/features/review/review_sheets.dart';
+
+import '../../support/harness.dart';
+import '../../support/review_fixture.dart';
+
+/// A phone tall enough for every card and sheet to be built.
+void useTallPhone(WidgetTester tester) {
+  usePhone(tester);
+  tester.view.physicalSize = const Size(390 * 3, 1600 * 3);
+}
+
+/// Two proposals on the plain word's meaning, "mother": one by another
+/// reviewer, one by this one; and one whose field has changed since.
+const proposed =
+    '[{ id: "aaaaaaaaaa", field: "native", now: "mother", text: "mum", '
+    'by: "$otherCode", date: "2026-10-09", why: "Less formal." }, '
+    '{ id: "bbbbbbbbbb", field: "native", now: "mother", text: "mom", '
+    'by: "$reviewerCode", date: "2026-10-09", accepted: ["$otherCode"] }, '
+    '{ id: "cccccccccc", field: "native", now: "mum", text: "mama", '
+    'by: "$otherCode", date: "2026-10-09" }]';
+
+Future<dynamic> open(WidgetTester tester) async {
+  useTallPhone(tester);
+  final state = await pumpScreen(
+    tester,
+    const ReviewPage(deckId: wordsDeck),
+    state: await reviewState(
+      proposed: proposed,
+      settings: SettingsNotifier(
+        spokenLanguages: const <String>['en'],
+        learningLanguages: const <String>['te'],
+        learningChosen: true,
+      )..raterCode = reviewerCode,
+      reviewing: true,
+    ),
+  );
+  return state;
+}
+
+void main() {
+  testWidgets('a card shows the proposals waiting on it; Accept and Reject '
+      'are kept with its review, and tapped again taken back', (tester) async {
+    final state = await open(tester);
+    final l10n = l10nOf(tester);
+    // The row says how many wait: not the outdated one.
+    expect(find.text(l10n.reviewProposalsWaiting(2)), findsOneWidget);
+
+    await tester.tap(find.text('mother'));
+    await tester.pumpAndSettle();
+    expect(find.byType(ProposalCard), findsNWidgets(2));
+    expect(
+      find.text(l10n.reviewProposalTitle(l10n.reviewPartMeaning)),
+      findsNWidgets(2),
+    );
+    expect(find.text('mum'), findsOneWidget);
+    expect(find.text('mama'), findsNothing);
+    expect(find.text(l10n.reviewProposalWhy('Less formal.')), findsOneWidget);
+    expect(find.text(l10n.reviewProposalBy(otherCode, 0)), findsOneWidget);
+    // This reviewer's own: no buttons, and who accepted it.
+    expect(find.text(l10n.reviewProposalYours(1)), findsOneWidget);
+    expect(find.text(l10n.reviewProposalAccept), findsOneWidget);
+
+    await tester.tap(find.text(l10n.reviewProposalAccept));
+    await tester.pumpAndSettle();
+    final words = state.deckById(wordsDeck)!;
+    final mother = words.cards.last;
+    final answer = state.reviewing.reviewOf(words, mother)!.answers.values;
+    expect(answer.single.id, 'aaaaaaaaaa');
+    expect(answer.single.verdict, ProposalVerdict.accept);
+    expect(answer.single.field, 'native');
+    expect(answer.single.text, 'mum');
+    expect(find.text(l10n.reviewProposalAccepted), findsOneWidget);
+    expect(state.reviewing.unsent.single.deckId, wordsDeck);
+
+    await tester.tap(find.text(l10n.reviewProposalReject));
+    await tester.pumpAndSettle();
+    expect(
+      state.reviewing.reviewOf(words, mother)!.answers['aaaaaaaaaa']!.verdict,
+      ProposalVerdict.reject,
+    );
+    expect(find.text(l10n.reviewProposalRejected), findsOneWidget);
+
+    await tester.tap(find.text(l10n.reviewProposalReject));
+    await tester.pumpAndSettle();
+    expect(state.reviewing.reviewOf(words, mother), isNull);
+  });
+
+  testWidgets('Edit opens Suggest a change with the proposal, and saving it '
+      'is the reviewer\'s own suggestion; the answer is "edit"', (
+    tester,
+  ) async {
+    final state = await open(tester);
+    final l10n = l10nOf(tester);
+    await tester.tap(find.text('mother'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(l10n.reviewProposalEdit));
+    await tester.pumpAndSettle();
+    expect(find.byType(SuggestSheet), findsOneWidget);
+    // Only the proposal's part is open, started from its text.
+    expect(find.byType(TextField), findsNWidgets(2));
+    final yours = find.byKey(SuggestSheet.textKey(CardPart.meaning));
+    expect(tester.widget<TextField>(yours).controller!.text, 'mum');
+    await tester.enterText(yours, 'mum, mother');
+    await tester.pumpAndSettle();
+    await tester.tap(find.byTooltip(l10n.reviewSuggestSaveAll));
+    await tester.pumpAndSettle();
+
+    final words = state.deckById(wordsDeck)!;
+    final review = state.reviewing.reviewOf(words, words.cards.last)!;
+    final suggestion = review.suggestions.single;
+    expect(suggestion.part, CardPart.meaning);
+    expect(suggestion.now, 'mother');
+    expect(suggestion.text, 'mum, mother');
+    expect(review.answers['aaaaaaaaaa']!.verdict, ProposalVerdict.edit);
+    expect(find.text(l10n.reviewProposalEdited), findsOneWidget);
+  });
+
+  testWidgets('Edit keeps a suggestion already on another part of the '
+      'card, and shows it there', (tester) async {
+    final state = await open(tester);
+    final l10n = l10nOf(tester);
+    final words = state.deckById(wordsDeck)!;
+    final mother = words.cards.last;
+    state.reviewing.suggest(words, mother, const <Suggestion>[
+      Suggestion(part: CardPart.notes, now: '', text: 'Said to elders.'),
+    ]);
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('mother'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(l10n.reviewProposalEdit));
+    await tester.pumpAndSettle();
+    expect(
+      find.descendant(
+        of: find.byType(SuggestSheet),
+        matching: find.text('Said to elders.'),
+      ),
+      findsOneWidget,
+    );
+    await tester.tap(find.byTooltip(l10n.reviewSuggestSaveAll));
+    await tester.pumpAndSettle();
+    final review = state.reviewing.reviewOf(words, mother)! as CardReview;
+    expect(
+      <(CardPart, String)>[
+        for (final s in review.suggestions) (s.part, s.text),
+      ],
+      <(CardPart, String)>[
+        (CardPart.meaning, 'mum'),
+        (CardPart.notes, 'Said to elders.'),
+      ],
+    );
+  });
+
+  testWidgets('Suggest a change on a card with no suggestion yet marks '
+      'none as yours', (tester) async {
+    await open(tester);
+    final l10n = l10nOf(tester);
+    await tester.tap(find.text('mother'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(l10n.reviewProposalEdit));
+    await tester.pumpAndSettle();
+    expect(find.byType(SuggestSheet), findsOneWidget);
+    // The label of the one field open, and no suggestion marked yours.
+    expect(find.text(l10n.reviewSuggestYours), findsOneWidget);
+    expect(find.byIcon(Icons.delete_outline), findsNothing);
+  });
+
+  testWidgets('without proposals a card shows none', (tester) async {
+    useTallPhone(tester);
+    await pumpScreen(
+      tester,
+      const ReviewPage(deckId: wordsDeck),
+      state: await reviewState(reviewing: true),
+    );
+    await tester.tap(find.text('mother'));
+    await tester.pumpAndSettle();
+    expect(find.byType(ProposalCard), findsNothing);
+  });
+
+  test('a proposal kept in another deck of the language is shown, once', () {
+    const te = LanguageInfo(code: 'te', iso639_3: 'tel', name: 'Telugu');
+    const en = LanguageInfo(code: 'en', iso639_3: 'eng', name: 'English');
+    const card = model.Card(
+      id: 'te-9902',
+      deckId: 'te-en-a',
+      target: 'అమ్మ',
+      native: 'mother',
+    );
+    Proposal proposal(String id, String now) => Proposal(
+      id: id,
+      card: 'te-9902',
+      field: ProposalField.native,
+      now: now,
+      text: 'mum',
+      by: otherCode,
+      date: '2026-10-09',
+    );
+    DeckEntry entry(String id, LanguageInfo language, List<Proposal> found) =>
+        DeckEntry(
+          path: 'decks/te/$id.yaml',
+          deck: Deck(
+            id: id,
+            name: id,
+            kind: DeckKind.vocab,
+            language: language,
+            native: en,
+            license: 'CC0-1.0',
+            cards: const <model.Card>[card],
+            proposals: <String, List<Proposal>>{'te-9902': found},
+          ),
+        );
+    final mine = entry('te-en-a', te, const <Proposal>[]);
+    final written = entry('te-en-b', te, <Proposal>[
+      proposal('aaaaaaaaaa', 'mother'),
+      proposal('bbbbbbbbbb', 'mum'),
+    ]);
+    final again = entry('te-en-c', te, <Proposal>[
+      proposal('aaaaaaaaaa', 'mother'),
+    ]);
+    const hi = LanguageInfo(code: 'hi', iso639_3: 'hin', name: 'Hindi');
+    final other = entry('hi-en-a', hi, <Proposal>[
+      proposal('cccccccccc', 'mother'),
+    ]);
+    expect(
+      waitingProposals(
+        <DeckEntry>[mine, written, again, other],
+        mine,
+        card,
+      ).map((p) => p.id),
+      <String>['aaaaaaaaaa'],
+    );
+  });
+}

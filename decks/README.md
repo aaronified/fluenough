@@ -6,40 +6,69 @@ Deck content, one YAML file per deck, organised by language code.
 decks/
   bn/  bn-en-first-words.yaml     one deck per theme in themes.yaml
        bn-en-questions.yaml …
-       bn-en-path.yaml            the order the course is taught in
+       bn-path.yaml               the order Bengali is taught in, from every language
   es/  es-en-core-100.yaml
        es-en-grammar-present-ar.yaml
-       es-en-path.yaml
+       es-path.yaml
   hi/  hi-en-first-words.yaml     one deck per theme in themes.yaml
        hi-en-questions.yaml …
-       hi-en-path.yaml
-  ja/  ja-en-hiragana.yaml        kept in the repository but not bundled in the app for now
-       ja-en-path.yaml
+       hi-path.yaml
+  ja/  ja-en-hiragana.yaml        kept in the repository but not offered in the app for now
+       ja-path.yaml
   te/  te-en-first-words.yaml     one deck per theme in themes.yaml; not yet checked by a Telugu speaker
        te-en-questions.yaml …
-       te-en-path.yaml
+       te-home.yaml               planned shape: a core, the Telugu side of a deck, for every learner
+       en/  te-en-home.yaml       planned shape: its English layer; merged, they are the deck te-en-home
+                                  (neither exists yet: the split tool, #397, has not run, and
+                                  te-en-home is a single file)
+       te-path.yaml               the path, by core id, with Telugu's regions
   mr/  mr-en-first-words.yaml     the same, for Marathi; not yet checked by a Marathi speaker
   kn/  kn-en-first-words.yaml     the same, for Kannada; not yet checked by a Kannada speaker
   gu/  gu-en-first-words.yaml     the same, for Gujarati; not yet checked by a Gujarati speaker
   as/  as-en-first-words.yaml     the same, for Assamese; not yet checked by an Assamese speaker
-  themes.yaml
+  themes.yaml                   the shared themes; the one file the app bundles
+  index.json                    what the app downloads, written by tools/deck_index.py
 ```
 
-**Every deck is on its course's path.** `<lang>-<native>-path.yaml` lists the
-course's decks in teaching order, in units, and the validator fails a deck
-left off it. See "Course paths" in the format specification.
+**A deck may be a core and its layers.** The core,
+`decks/<lang>/<lang>-<name>.yaml`, holds the language learnt; each layer,
+`decks/<lang>/<native>/<lang>-<native>-<name>.yaml`, holds one native
+language's meanings, notes and labels, and the two merged are the deck
+`<lang>-<native>-<name>`. Every deck in a B1 plan is split as its plan is
+written. See "Core and layer files" in the format specification.
+
+**Every deck is on its language's path.** `<lang>-path.yaml` lists the
+language's decks in teaching order, in units, by core id (`te-home` for
+`te-en-home`), once for every language it is taught from; each course reads
+it through its own decks, and a unit with none of them is "Coming" for that
+course. The validator fails a deck left off it. See "Paths" in the format
+specification.
 
 - Format specification: [../docs/DECK-FORMAT.md](../docs/DECK-FORMAT.md)
 - How to contribute one: [../CONTRIBUTING.md](../CONTRIBUTING.md)
 
-**Adding a language means adding its directory to `pubspec.yaml`.** A Flutter
-asset entry bundles only the files directly inside the directory it names, so
-`flutter.assets` needs one `- decks/<lang>/` line per language. Validating the
-whole of `decks/` — which is what CI does — fails if a directory holding decks
-has no entry, because the alternative is an app that builds and ships without
-that language in it. Validating a single deck or one language directory only
-checks what you pointed it at. `decks/ja/` is left out on purpose for now: it
-is listed in `NOT_BUNDLED` in `tools/validate_decks.py`, and still validated.
+**The app downloads these files; it does not bundle them** (#210, ADR-0037).
+`index.json` lists every language with its files, each with its size and
+SHA-256, and the app reads it from `main` on GitHub. Only `themes.yaml`
+ships inside the app. After changing anything here, write the index again
+and commit it with your change:
+
+```sh
+python3 tools/deck_index.py
+```
+
+Validating the whole of `decks/`, which is what CI does, fails while the
+index is out of date, because the app would then refuse the changed files.
+Validating a single deck or one language directory only checks what you
+pointed it at. `decks/ja/` is left out of the index on purpose for now: it is
+listed in `HIDDEN` in `tools/deck_index.py`, and still validated.
+
+**Reviewers change these files too** (ADR-0038). A native speaker's
+suggestion arrives as a `proposed` line on its card, written by the review
+bot, and when enough other reviewers accept it the bot writes it into the
+card and removes the line. Learners never see a proposal. Do not write or
+edit one by hand; to overrule one, delete its line or change the field.
+See "Proposals" in the format specification.
 
 Validate before committing — CI runs exactly this:
 
@@ -59,13 +88,24 @@ python3 tools/validate_decks.py decks/
   `contrast`. See "Facts files" in the format specification. CI checks a facts
   file when there is one; it does not yet require every language to have one.
 
+## A base whose stem changes
+
+When a card's `bases` word changes its stem in the inflected form, so the
+learner cannot see the link, the card's notes say so in one short line: for
+వచ్చింది (vaccindi), she came, "రావడం (rāvaḍam) changes its stem in the past:
+వచ్చ- (vacc-)." See "Base words" in the format specification.
+
 ## Romanising Indic languages
 
 A `reading` is there to help a learner say the word (#47). Each language
-writes every reading in **ISO 15919's letters, spelled as the word is said**,
-and says how in its `<code>-romanisation.yaml` ([ADR-0025](../docs/adr/0025-iso-15919-and-ipa.md)).
-The [README](../README.md#how-words-are-written-in-latin-letters-iso-15919)
-has the table; the common rules are in
+writes every reading in **letters based on ISO 15919's, spelled as the word is
+said**, and says how in its `<code>-romanisation.yaml`
+([ADR-0025](../docs/adr/0025-iso-15919-and-ipa.md)). It is not strict ISO 15919:
+the readings depart from it wherever a learner is better served. The
+[README](../README.md#how-words-are-written-in-latin-letters-iso-15919)
+has the table of letters and the
+[list of departures](../README.md#where-the-readings-depart-from-iso-15919);
+the common rules are in
 [the format specification](../docs/DECK-FORMAT.md#romanisation):
 
 - **Length is marked** where the language says it: పాలు is `pālu` and పలు
@@ -75,7 +115,7 @@ has the table; the common rules are in
 - **The schwa a speaker drops is not written:** कमल is `kamal`, सड़क is
   `saṛak`, not `kamala`, `saṛaka`.
 - **Aspiration is an `h`:** `kh`, `gh`, `ch`, `th`, `dh`, `ph`, `bh`, each one
-  sound. च is `c` and छ is `ch`, as in ISO 15919.
+  sound. च is `c` and छ is `ch`, as ISO 15919 writes them.
 - **A letter card for ङ or ञ on its own** reads `ṅa` or `ña`; Bengali's
   read `ṅô` and `ñô`, so that ঞ differs from ন.
 - **A grammar row whose lemma is English** has no `reading`; its forms do.
@@ -89,8 +129,8 @@ list says how its letters are typed (`c` as `ch`, `ś` as `sh`), and its
 `equivalents` the spellings learners also type for one sound, such as `ee`
 for `i`; grading treats them all as the decks' own.
 
-Assamese writes স, শ and ষ as `x` (*ôxôm*) and ও as `u` (*mur*), as it is
-said; `decks/as/as-romanisation.yaml` says so.
+Assamese writes স, শ and ষ as `x` (*ôxôm*) and the vowel sign ো as `u` (*mur*,
+*muk*), as it is said (the letter ও alone is `o`); `decks/as/as-romanisation.yaml` says so.
 
 Bengali's readings follow how it is said:
 
@@ -107,7 +147,9 @@ Bengali's readings follow how it is said:
 Tag a deck `unreviewed` when no native speaker has checked it. The app then
 says so on the deck's screen and asks speakers to report mistakes, and the
 deck's `description` should say so too. The Telugu decks carry it (#39), and
-so do the Marathi, Kannada, Gujarati and Assamese ones.
+so do the Marathi, Kannada, Gujarati and Assamese ones. Once a speaker has
+checked a deck, tag it `reviewed` instead: a deck is one or the other, and a
+file with a culture note must carry one of the two.
 
 ## Two rules that matter more than the rest
 
@@ -143,5 +185,7 @@ Never correct a quoted text: explain a difference in a note.
 ## Deck licences
 
 Each deck declares its own `license`, separate from the app's GPL-3.0. The
-decks here are CC0-1.0 (public domain). Contributed decks may use any licence
-permitting redistribution, declared in the file.
+decks here are `"CC-BY-SA-4.0"`, with attribution
+([ADR-0040](../docs/adr/0040-decks-are-cc-by-sa.md)); content once given as
+CC0 stays usable. Data taken from outside names its source per item. See
+[DECK-FORMAT.md, Licensing deck content](../docs/DECK-FORMAT.md#licensing-deck-content).

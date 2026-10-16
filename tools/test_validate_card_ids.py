@@ -29,7 +29,7 @@ id: {deck_id}
 name: Probe
 language: {{ code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES }}
 native: {{ code: {native}, iso639_3: {names[native]} }}
-license: CC0-1.0
+license: CC-BY-SA-4.0
 cards:
 {cards}"""
 
@@ -95,6 +95,9 @@ class CardIds(unittest.TestCase):
         partner = '  - id: es-9002\n    target: "pero"\n    native: "but"\n'
         self.assertEqual(self.across(es_en_a=vocab("es-en-a", paired),
                                      es_en_b=vocab("es-en-b", partner)), [])
+        # The language's files on disk beside a given file count (ADR-0036),
+        # so the partner's deck goes before the deck is checked without it.
+        (self.tmp / "es-en-b.yaml").unlink()
         problems = self.across(es_en_a=vocab("es-en-a", paired))
         self.assertEqual(len(problems), 1)
         self.assertIn("pair names card es-9002", problems[0])
@@ -166,7 +169,7 @@ name: Probe
 kind: grammar
 language: { code: es, iso639_3: spa, name: Spanish, script: latin, tts: es-ES }
 native: { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
+license: CC-BY-SA-4.0
 pattern:
   name: Present
   slot_name: person

@@ -44,10 +44,10 @@ final Map<Paced, (DrillMode, List<double>)> pacedFits =
       Paced.lost: (DrillMode.listening, <double>[...Fsrs.w]),
     };
 
-/// A Hindi learner whose first eight words were answered Good three days
-/// ago in Recognition, Hear and Write, so that they are due again, with a
-/// voice for Hindi; and [paced]'s skill fitted, or every skill in [also]
-/// too. Loaded. Its paces are worked out by [paceRunner].
+/// A Hindi learner whose first eight phrasebook words were answered Good
+/// three days ago in Recognition, Hear and Write, so that they are due again,
+/// with a voice for Hindi; and [paced]'s skill fitted, or every skill in
+/// [also] too. Loaded. Its paces are worked out by [paceRunner].
 Future<AppState> pacedLearner(
   Paced paced, {
   Set<Paced> also = const <Paced>{},
@@ -67,7 +67,7 @@ Future<AppState> pacedLearner(
   await base.load();
   final at = base.now().subtract(const Duration(days: 3));
   final progress = MemoryProgress();
-  for (final card in base.deckById('hi-en-first-words')!.cards.take(8)) {
+  for (final card in base.deckById('hi-en-phrasebook')!.cards.take(8)) {
     for (final mode in <DrillMode>[
       DrillMode.recognition,
       DrillMode.listening,

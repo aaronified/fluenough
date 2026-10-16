@@ -13,6 +13,9 @@ import '../models/drill_mode.dart';
 ///   practice asks (dictation), implies writing it in part (Cheng & Matthews
 ///   2018).
 ///
+/// - **Grammar,** understood or produced, implies nothing: no study gives
+///   a figure for a rule's forms (DECK-FORMAT.md, Rules decks).
+///
 /// Only a right answer implies anything: a miss in Write says little about
 /// Recognition, which is easier. A miss counts against its own skill alone.
 class SkillMap {
@@ -41,7 +44,14 @@ class SkillMap {
           formHeardIn.contains(deckId)
               ? const <DrillMode, double>{DrillMode.production: implied}
               : const <DrillMode, double>{DrillMode.recognition: implied},
+        // Grammar understood (a form's meaning chosen) and produced (the
+        // form chosen or typed) imply nothing, of each other or of a word's
+        // skills: the research finds grammar practice skill-specific
+        // (DeKeyser 1997; Shintani et al. 2013) and gives no figure for a
+        // rule's forms and their meanings (DECK-FORMAT.md, Rules decks). Should
+        // one appear, produced implying understood is one arm here, as Write's.
         DrillMode.recognition ||
+        DrillMode.grammarUnderstood ||
         DrillMode.grammar ||
         DrillMode.reading => const <DrillMode, double>{},
       };

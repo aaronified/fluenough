@@ -222,6 +222,16 @@ void main() {
       expect(FsrsFit.isPlausible(<double>[...Fsrs.w]..[3] = 101), isFalse);
       expect(FsrsFit.isPlausible(<double>[...Fsrs.w]..[20] = 0.1), isTrue);
       expect(FsrsFit.isPlausible(<double>[...Fsrs.w]..[20] = 0.8), isTrue);
+      expect(FsrsFit.isPlausible(<double>[...Fsrs.w, 1.0]), isFalse);
+      expect(FsrsFit.isPlausible(<double>[...Fsrs.w, ...Fsrs.w]), isFalse);
+      // The bounds are those training clips to, and only a hair of slack
+      // for a decimal that reads back as the float clipped to them.
+      expect(FsrsFit.isPlausible(<double>[...Fsrs.w]..[7] = 0.75), isTrue);
+      expect(FsrsFit.isPlausible(<double>[...Fsrs.w]..[7] = 0.7505), isFalse);
+      expect(FsrsFit.isPlausible(<double>[...Fsrs.w]..[19] = 0.01), isTrue);
+      expect(FsrsFit.isPlausible(<double>[...Fsrs.w]..[19] = 0.0099), isFalse);
+      expect(FsrsFit.isPlausible(<double>[...Fsrs.w]..[16] = 6.0001), isFalse);
+      expect(FsrsFit.isPlausible(<double>[...Fsrs.w]..[4] = 0.9999), isFalse);
     });
 
     test('clip bounds', () {
@@ -586,13 +596,24 @@ void main() {
     });
 
     test('a start that is not 21 values is refused', () {
-      expect(
-        () => FsrsFit.fit(
-          _Case.load('quick').histories,
-          start: Fsrs.w.sublist(1),
-        ),
-        throwsArgumentError,
-      );
+      final histories = _Case.load('quick').histories;
+      for (final start in [
+        Fsrs.w.sublist(1),
+        Fsrs.w.sublist(0, 20),
+        <double>[...Fsrs.w, 1.0],
+      ]) {
+        // Refused up front, naming the start, not a RangeError from deep
+        // inside the fit.
+        expect(
+          () => FsrsFit.fit(histories, start: start),
+          throwsA(
+            isA<ArgumentError>()
+                .having((e) => e is RangeError, 'is a RangeError', isFalse)
+                .having((e) => e.name, 'name', 'start'),
+          ),
+          reason: '${start.length} values',
+        );
+      }
     });
   });
 
@@ -733,6 +754,7 @@ const _windowAndStart = <String, double>{
   'window_quick': 2e-6,
   'window_no_first': 2e-6,
   'start_first_only': 2e-6,
+  'start_unsorted': 2e-6,
   'start_quick': 2e-6,
 };
 

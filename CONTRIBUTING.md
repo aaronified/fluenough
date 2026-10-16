@@ -8,11 +8,15 @@ contributions are often content rather than software.
 
 | You want to | Read |
 |---|---|
-| Add or fix deck content | This file, then [docs/DECK-FORMAT.md](docs/DECK-FORMAT.md) |
+| Add or fix deck content | [docs/DECK-FORMAT.md](docs/DECK-FORMAT.md) (and the licensing rule under *Contributing a deck* below) |
 | Write code | This file, then [AGENTS.md](AGENTS.md) |
 | Work with a coding agent | [AGENTS.md](AGENTS.md) — the rules that keep parallel work from colliding |
 | Understand why something is the way it is | [docs/adr/](docs/adr/) |
 | Set up the toolchain | [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) |
+
+**Start with an issue labelled `direct-code`.** It is fully decided: the
+owner's answers are in it and any mockup is approved, so you can build it as
+written without asking anything. For any other issue, ask first.
 
 **[AGENTS.md](AGENTS.md) is required reading before your first code change**,
 whether or not you use an agent. It carries the constraints that are easy to
@@ -22,14 +26,17 @@ break and expensive to undo.
 
 ## Licensing of contributions
 
-Fluenough is **GPL-3.0 with an App Store Distribution Exception** (see
-[LICENSE](LICENSE) and [LICENSE-EXCEPTION.md](LICENSE-EXCEPTION.md)). By
-opening a pull request you license your contribution under those same terms.
+Fluenough's code is **GPL-3.0 with an App Store Distribution Exception** (see
+[LICENSE](LICENSE) and [LICENSE-EXCEPTION.md](LICENSE-EXCEPTION.md)). Its
+decks are **CC BY-SA 4.0**, with attribution. By opening a pull request you
+license code under the first and deck content under the second
+([ADR-0040](docs/adr/0040-decks-are-cc-by-sa.md)). Content once given as
+CC0 stays usable, because CC0 allows it.
 
 **There is no CLA.** The exception is part of the project licence from the
 first commit rather than something maintainers grant separately, so you keep
 your copyright and there is nothing to sign. The reasoning is in
-[ADR-0003](docs/adr/0003-licence.md).
+[ADR-0003](docs/adr/0003-licence.md), carried over by ADR-0040.
 
 A consequence worth understanding: the licence cannot be changed later without
 the agreement of every contributor. That is deliberate. It means no one —
@@ -46,7 +53,10 @@ Roughly in order of how much they help right now.
 The most useful thing you can contribute, and it needs **no Flutter toolchain
 at all** — just a text editor and Python.
 
-The app ships with three starter decks. It needs many more, in many more
+The app offers decks for eight languages (Assamese, Bengali, Gujarati,
+Hindi, Kannada, Marathi, Spanish and Telugu), downloaded from this
+repository when a learner chooses one; Japanese is kept in the repository
+but not offered. It needs many more, in many more
 languages, and the people best placed to write a good Hungarian deck are not
 necessarily Flutter developers. That asymmetry is the whole reason the deck
 format is plain text validated by a standalone Python script.
@@ -97,82 +107,27 @@ If something here was confusing, that is a bug in this file.
 
 ## Contributing a deck
 
-### Setup
+Deck work follows [docs/DECK-FORMAT.md](docs/DECK-FORMAT.md). That file is
+the guide: where a deck goes, how cards, ids and paths work, and what makes a
+deck good. Agents building a deck use the `build-deck` skill at
+[.claude/skills/build-deck/SKILL.md](.claude/skills/build-deck/SKILL.md),
+which itself follows DECK-FORMAT.md.
 
-```sh
-git clone <your fork>
-cd fluenough
-pip install pyyaml        # the only dependency
-```
+Whatever the format says, two things are yours to check as a contributor:
 
-### Write it
+**You have the right to contribute the content under CC BY-SA 4.0.**
+Wordlists taken from textbooks or commercial courses are not acceptable,
+*even reworded*. Public domain frequency lists, Wiktionary (CC BY-SA 4.0),
+counts from Wikipedia (CC BY-SA), Tatoeba (CC BY 2.0 FR) and your own work
+are fine, and each item taken from outside names its source. The deck's
+`license` field is `"CC-BY-SA-4.0"`; see
+[Licensing deck content](docs/DECK-FORMAT.md#licensing-deck-content).
 
-1. Read [docs/DECK-FORMAT.md](docs/DECK-FORMAT.md). It is short.
-2. Create `decks/<language-code>/<deck-id>.yaml`. The deck id must equal the
-   filename stem.
-3. Start from an existing deck — [`decks/es/es-en-core-100.yaml`](decks/es/es-en-core-100.yaml)
-   for vocabulary, [`decks/es/es-en-grammar-present-ar.yaml`](decks/es/es-en-grammar-present-ar.yaml)
-   for a grammar pattern, [`decks/hi/hi-en-script-vowels.yaml`](decks/hi/hi-en-script-vowels.yaml)
-   for a non-Latin script.
-4. Add it to its course's path, `decks/<language-code>/<language>-<native>-path.yaml`,
-   in the unit it is taught with. A new course needs a path of its own. See
-   "Course paths" in the format specification.
-
-Converting an existing wordlist:
-
-```sh
-python3 tools/import_csv.py words.csv \
-    --id fr-core-100 --name "French Core" \
-    --language fr --language-name French --iso639-3 fra --tts fr-FR \
-    --license CC0-1.0 > decks/fr/fr-core-100.yaml
-```
-
-Then **read the generated card ids before committing.** They are permanent.
-
-### Validate it
-
-```sh
-python3 tools/validate_decks.py decks/
-```
-
-CI runs exactly this. Errors fail the build; warnings do not, but are usually
-worth fixing.
-
-### The four things reviewers check
-
-**You have the right to contribute the content.** Wordlists taken from
-textbooks or commercial courses are not acceptable, *even reworded* — a
-translated derivative of a copyrighted list is still a derivative. Public
-domain frequency lists, Wiktionary (CC-BY-SA-4.0), Tatoeba (CC-BY-2.0-FR) and
-your own work are all fine. Declare it in the deck's `license` field.
-
-**Bare values are quoted.** YAML turns `no`, `yes`, `on` and `off` into
-booleans. The hiragana `の` romanises to `no`. The validator catches this.
-
-**`language.tts` is set** where the language has meaningful regional variation
-— `pt-BR` versus `pt-PT`, `es-ES` versus `es-MX`. Without it, learners get
-whatever accent the device defaults to.
-
-**Card ids are new.** Never renumber, reuse, or remove-and-replace an existing
-one; they key every user's review history. To retire a card, delete it. A new
-card takes the language's next free id
-(`python3 tools/validate_decks.py --next-id fr`), and a word another deck of
-the language already teaches is listed with `ref:` rather than written again
-(see "A word in more than one deck" in docs/DECK-FORMAT.md).
-
-Non-Latin scripts also need `reading` on every card.
-
-### What makes a deck good
-
-Small and focused beats enormous. A hundred well-chosen cards with example
-sentences are worth more than a thousand bare word pairs.
-
-Prefer words a beginner will actually meet in their first months. Add `notes`
-where a word has a trap in it — grammatical gender that contradicts the
-ending, a false friend, a form that only exists in one region. Add `examples`
-for anything whose meaning depends on context.
-
-Frequency order is a good default when you are unsure what to include.
+**Run the tools before you push** (see the checklist under *Contributing
+code*): `python3 tools/deck_index.py`, then
+`python3 tools/validate_decks.py decks/`. They need PyYAML
+(`pip install pyyaml`). To turn a wordlist into a deck, use
+`tools/import_csv.py` (see `tools/README.md`).
 
 ---
 
@@ -186,8 +141,8 @@ went unrun for a while, so that is worth knowing rather than assuming. If
 `flutter analyze` reports an error on a fresh checkout, it is most likely your
 change rather than the design.
 
-Nobody has run it on a device yet, though, and the iOS folder has never been
-generated. See #17.
+It has since been built and run on Android phones for every release. Nobody
+has built it on macOS or Windows, or generated the iOS folder.
 
 **Open an issue before anything substantial**, and say which files you expect
 to touch. Several people are working on this in parallel, frequently with
@@ -199,6 +154,7 @@ agents, and that one sentence prevents most collisions. See
 ```sh
 flutter create . --org app --project-name fluenough --platforms=android,ios
 rm -f test/widget_test.dart   # generated boilerplate; references MyApp, not ours
+python3 tools/brand_android.py
 flutter pub get
 flutter test
 ```
@@ -226,6 +182,7 @@ in this codebase was decided, and the reasoning is written down.
 ### Before opening the pull request
 
 ```sh
+python3 tools/deck_index.py              # if decks changed
 python3 tools/validate_decks.py decks/   # if decks changed
 python3 tools/check_ui_strings.py lib/   # if you added a widget
 dart format lib test
@@ -237,8 +194,11 @@ flutter test
 
 ## Pull requests
 
-`main` is protected: every change needs a pull request, one approving review,
-and green CI. Branch before you start.
+`main` is protected: every change from a contributor needs a pull request,
+one approving review, and green CI. Branch before you start. A change to
+decks only needs the "Validate decks" job green. (The owner's own work goes
+straight to main; see [CLAUDE.md](CLAUDE.md). Contributors never create or
+push tags.)
 
 **One concern per pull request.** A change that adds a feature, refactors
 something and fixes formatting cannot be reviewed properly and conflicts with
@@ -263,8 +223,12 @@ The checklist in the pull request template is the definition of done.
 
 ## Review
 
-Every change gets human review, including agent-authored ones. Nobody merges
-their own pull request.
+Every contributor's change gets human review, including agent-authored ones.
+Nobody merges their own pull request.
+
+Reviewing decks in the app has its own rules: reviewers are bilingual, the
+meaning of a card never changes, and a new theme comes only by pull request.
+See [docs/REVIEWING.md](docs/REVIEWING.md).
 
 Expect review to be about *why* as much as *what*. If a change contradicts an
 ADR, that is a conversation before it is a diff — and if the decision does

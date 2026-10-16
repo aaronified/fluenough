@@ -21,6 +21,51 @@ every `ref` names a card another deck writes (ADR-0018), that a grammar deck
 supplies every slot for every entry — and that no value has been silently eaten by YAML's type resolution.
 That last one is the reason this exists: `native: no` on the hiragana `の`
 parses as the boolean `false`, and no reviewer reliably catches that by eye.
+It reads plain YAML values as the app does (YAML 1.2: a bare `no` is the text
+"no", only `true` and `false` are booleans), so the two never disagree.
+
+It also checks the B1 format (ADR-0036): cores (`part: "core"`) and their
+layers (`kind: "layer"`, in `decks/<lang>/<native>/`), rules decks, the
+phrasebook, typed notes, `bases`, `wiktionary`, and the language's path,
+one per language learnt (`<lang>-path.yaml`), by core id, with its B1 plan
+and its regions. Some of
+these read the language's other files from disk, so a file validated alone is
+checked against them. Lines marked `info` (a layer's coverage of its core, a
+plan's sizes) never fail the build. `tools/fixtures/b1/zz/` is a valid set in
+a made-up language, used by `test_validate_b1.py`.
+
+A card's `proposed` changes (ADR-0038) are taken out before any other
+check, so their text is never held to deck content's rules, and checked on
+their own: one line each, an id that is its facts' hash, a field the entry
+may give, a good rater code and date, and acceptances by other codes. An
+outdated proposal gets an `info` line. A card's `checked_by` (#449) is
+taken out the same way and checked to be a non-empty list of rater codes,
+none twice.
+
+## `deck_index.py`
+
+Writes `decks/index.json`, the list the app downloads decks from (#210,
+ADR-0037). Run it after changing anything under `decks/`, and commit the
+result with your change.
+
+```sh
+python3 tools/deck_index.py            # write it
+python3 tools/deck_index.py --check    # exit 1 if it is out of date
+```
+
+For each language it lists its name, own name, icon and script, whether it
+has script decks, the native languages it is taught from, its path's order,
+each unit's planned words and the words its decks have (counted as the
+validator counts them, for completeness toward B1), and every file with its
+path, size, SHA-256, schema, kind, and the native language and core id of a
+deck, how many proposals a file holds (`proposed`), and `content_sha256`,
+the file's hash without its proposals and `checked_by`, which a learner's
+phone compares (#444, #449). Languages in
+`HIDDEN` are left out; `decks/themes.yaml` stays bundled
+in the app. One file is one line, so a changed deck is a one-line diff.
+
+`validate_decks.py decks/` fails while the index is out of date, so CI keeps
+it current.
 
 ## `pictures.py`
 
@@ -34,6 +79,67 @@ git -C noto-emoji sparse-checkout set 2D/png/128
 python3 tools/pictures.py noto-emoji
 ```
 
+## `mail_to_issues.py`
+
+Turns the report mails the app sends to the Fluenough Gmail into GitHub
+issues (#160, ADR-0021). `.github/workflows/feedback-mail.yml` runs it hourly.
+Stdlib only.
+
+It reads the inbox over IMAP and takes only mails whose subject starts with
+`[Fluenough]`, as the app writes it. Each bug report and each piece of
+feedback not filed before becomes one issue, text only, and the mail gets
+the Gmail label `fluenough-filed` so that it is never filed twice. The
+sender's address is never written to the issue, `@mentions` are broken, and a
+screenshot or the app log stays in the mail, which the issue says it had.
+**Support mails are never made public:** one is skipped and left untouched in
+the inbox when its subject or its `Kind:` line says Support, read loosely
+(any case, with or without the colon).
+
+It needs two repository secrets, `FEEDBACK_GMAIL_ADDRESS` and
+`FEEDBACK_GMAIL_APP_PASSWORD` (a Gmail app password), and uses the
+workflow's own `GITHUB_TOKEN` for the issues. Without the two secrets it does
+nothing and says so. `python3 -m unittest discover -s tools -p test_mail_to_issues.py` tests
+it without a network.
+
+A review mail's issue names the rater code and the languages, counts the
+changes suggested and the proposals accepted and rejected, and lists each
+rejected proposal by id and card, labelled `proposal rejected`: never the
+text. Once the review bot is set up, the job then runs it (below). The
+rater code check is in `rater_codes.py`, shared with the validator.
+
+## `review_bot.py` and `proposals.py`
+
+The review bot (ADR-0038, #441), run by `mail_to_issues.py`. A filed review
+mail whose sender passed the check becomes one pull request that adds its
+suggestions as `proposed` lines on their cards and records its acceptances;
+a proposal accepted by `REVIEW_AGREEMENTS_NEEDED` other rater codes (a
+repository variable, 1 when unset) gets a pull request that writes it into
+the field and closes the other proposals on that field; proposals whose
+field has changed are closed as outdated. The review mail's PR also adds
+the reviewer's code to the `checked_by` of each card marked "Looks right",
+never twice, and tags a deck file `reviewed` once all its cards are
+checked (#449). Each PR is merged as soon as its
+checks pass. The mail gets the Gmail label `fluenough-proposed` once its PR
+is merged or closed.
+
+Every branch, `review-bot/…`, starts afresh from `main`, finds the card by
+id across the language, writes only if the field still says what the
+proposer saw, rewrites the index and validates the language before it is
+pushed. Branches are named after their mail or proposals, so a rerun finds
+its PR rather than opening another; a PR closed by the owner stays closed,
+and one whose checks fail stays open, labelled `review-bot: checks failed`.
+It logs rater codes, ids and counts, never an address or a suggestion.
+
+`proposals.py` makes every edit to a deck, one line at a time, and saves it
+only if the file then reads back as meant: a field written over several
+lines, or a card in flow style, is left for the owner.
+
+It needs a GitHub App's token (the secrets `FLUENOUGH_BOT_APP_ID` and
+`FLUENOUGH_BOT_PRIVATE_KEY`); without them it does nothing and says so.
+Setting it up: [docs/review-bot-setup.md](../docs/review-bot-setup.md).
+`test_review_bot.py` and `test_proposals.py` test it with fakes, without a
+network.
+
 ## `import_csv.py`
 
 Turns a CSV wordlist into a deck. `target` and `native` columns are required;
@@ -44,7 +150,7 @@ used when present. `front`/`back` work as aliases. List columns split on `|`.
 python3 tools/import_csv.py words.csv \
     --id es-en-food --name "Spanish food" \
     --language es --language-name Spanish --iso639-3 spa --tts es-ES \
-    --license CC0-1.0 > decks/es/es-en-food.yaml
+    --license CC-BY-SA-4.0 > decks/es/es-en-food.yaml
 
 python3 tools/validate_decks.py decks/es/es-en-food.yaml
 ```
@@ -74,3 +180,48 @@ python3 tools/brand_android.py
 
 Exit status is 0 on success, and 1 when `android/` is missing or its manifest
 or Gradle file is not the shape `flutter create` writes.
+
+## `check_release_version.py`
+
+Fails when a release tag and `pubspec.yaml`'s version differ (#141). The
+release workflow runs it before building, because the APK's versionName is
+the tag while the app reports `AppInfo.version`, which follows
+`pubspec.yaml`. Only the version name is compared; the `+build` part is
+ignored. Standard library only.
+
+```sh
+python3 tools/check_release_version.py v0.3.4             # reads ./pubspec.yaml
+python3 tools/check_release_version.py v0.3.4 pubspec.yaml
+```
+
+Exit status is 0 when they match, 1 when they differ or `pubspec.yaml` has no
+`version:` line, and 2 if the arguments are wrong or the file cannot be read.
+
+## `readme_fonts.py` and `make_gif.py`
+
+Remake the README's screenshots, `docs/screenshots/*.gif`: a slow scroll
+through four screens of a Bengali learner's phone. Not deck tools, and not
+run by CI: `readme_fonts.py` needs fontTools and `make_gif.py` Pillow
+(`pip install fonttools pillow`), with the Flutter SDK on `PATH`.
+
+A widget test draws text in boxes and turns font fallback off, so
+`readme_fonts.py` first merges the SDK's Roboto with static Noto Sans Bengali
+files (`NotoSansBengali-Regular.ttf`, `-SemiBold.ttf` and so on, from
+[notofonts/bengali](https://github.com/notofonts/bengali), OFL-1.1). Then
+`test/tools/readme_gifs_test.dart`, skipped unless `README_GIFS=1`, writes
+each screen's frames as PNGs, and `make_gif.py` turns each directory of
+frames into a looping GIF at 11 frames a second, one palette, under 1.5 MB
+(it narrows the GIF, then cuts colours, until it fits).
+
+```sh
+python3 tools/readme_fonts.py path/to/noto-bengali build/readme_fonts
+README_GIFS=1 README_GIFS_FONTS=build/readme_fonts \
+  flutter test test/tools/readme_gifs_test.dart
+for g in deck-path today progress review; do
+  python3 tools/make_gif.py build/readme_gifs/$g docs/screenshots/$g.gif
+done
+```
+
+The frames go to `build/readme_gifs/` (`README_GIFS_OUT` changes that). The
+learner, their three and a half weeks of reviews, and the clock are fixed, so
+a rerun changes a GIF only when the app's screens change.

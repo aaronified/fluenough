@@ -8,6 +8,7 @@ import 'package:fluenough/app/app_scope.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/memory_progress.dart';
+import 'package:fluenough/app/repository_decks.dart';
 import 'package:fluenough/app/routes.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
@@ -16,11 +17,28 @@ import 'package:fluenough/ui/theme.dart';
 /// Shared helpers for widget tests. Import from any test directory:
 /// `import '../support/harness.dart';` (adjust the depth).
 
+/// The height of Android's three-button navigation bar, in logical pixels.
+const double navBarHeight = 48;
+
 /// The design's phone: 390 × 844 logical pixels at 3×. Resets after the test.
-void usePhone(WidgetTester tester, {double textScale = 1.0}) {
+///
+/// [navBar] gives it Android's three-button navigation bar: 48 logical pixels
+/// at the bottom that the app draws under and must keep its content clear of
+/// (#489). Gesture navigation leaves far less, so it hides the same bug.
+void usePhone(
+  WidgetTester tester, {
+  double textScale = 1.0,
+  bool navBar = false,
+}) {
   tester.view
     ..physicalSize = const Size(390 * 3, 844 * 3)
     ..devicePixelRatio = 3;
+  if (navBar) {
+    const bar = FakeViewPadding(bottom: navBarHeight * 3);
+    tester.view
+      ..padding = bar
+      ..viewPadding = bar;
+  }
   tester.platformDispatcher.textScaleFactorTestValue = textScale;
   addTearDown(tester.view.reset);
   addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
@@ -60,6 +78,7 @@ Future<AppState> pumpScreen(
         darkTheme: AppTheme.dark(),
         themeMode: themeMode,
         onGenerateRoute: AppRoutes.onGenerateRoute,
+        builder: capTextScale,
         home: child,
       ),
     ),
@@ -103,10 +122,10 @@ double textStart(WidgetTester tester, Finder text, {double width = 390}) {
 AppLocalizations l10nOf(WidgetTester tester, [Finder? under]) =>
     AppLocalizations.of(tester.element(under ?? find.byType(Scaffold).first))!;
 
-/// The bundled decks, except that the first listing fails: a catalog that
-/// fails to load, then loads on "Try again" (`AppState.reload`).
+/// The repository's decks, except that the first listing fails: a catalog
+/// that fails to load, then loads on "Try again" (`AppState.reload`).
 class FailOnceDeckSource implements DeckSource {
-  final DeckSource _decks = AssetDeckSource();
+  final DeckSource _decks = RepositoryDeckSource();
   bool _failed = false;
 
   @override
@@ -172,4 +191,30 @@ Future<AppState> withDeckTaught(
     );
   }
   return build(progress);
+}
+
+/// Answers Yes to every script question Languages you know shows without
+/// an answer (#462), as a learner must before Continue.
+Future<void> answerScripts(WidgetTester tester) async {
+  final yes = AppLocalizations.of(tester.element(find.byType(Scaffold).first))!
+      .knownScriptYes;
+  final open = find.byWidgetPredicate(
+    (w) => w is SegmentedButton<bool> && w.selected.isEmpty,
+  );
+  for (var i = 0; i < 10 && open.evaluate().isNotEmpty; i++) {
+    final choice = open.first;
+    await tester.ensureVisible(choice);
+    await tester.pumpAndSettle();
+    await tester.tap(find.descendant(of: choice, matching: find.text(yes)));
+    await tester.pumpAndSettle();
+  }
+}
+
+/// Scrolls the first scrollable down until [finder] is built, if it ever
+/// is: the rank hint sits below the script questions.
+Future<void> scrollToFind(WidgetTester tester, Finder finder) async {
+  for (var i = 0; i < 10 && finder.evaluate().isEmpty; i++) {
+    await tester.drag(find.byType(Scrollable).first, const Offset(0, -200));
+    await tester.pumpAndSettle();
+  }
 }

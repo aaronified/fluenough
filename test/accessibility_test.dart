@@ -18,7 +18,10 @@ import 'package:fluenough/core/numbers/number_practice.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart' show Ask;
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
+import 'package:fluenough/features/decks/decks_page.dart';
 import 'package:fluenough/features/decks/import_page.dart';
+import 'package:fluenough/features/decks/path_fixture.dart';
+import 'package:fluenough/features/decks/unit_page.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_preset.dart';
 import 'package:fluenough/features/drill/recognition_drill.dart';
@@ -28,7 +31,12 @@ import 'package:fluenough/features/onboarding/tour_step.dart';
 import 'package:fluenough/features/profiles/new_profile_page.dart';
 import 'package:fluenough/features/profiles/profiles_page.dart';
 import 'package:fluenough/features/profiles/spoken_languages_page.dart';
+import 'package:fluenough/features/review/how_reviewing_works.dart';
+import 'package:fluenough/features/review/offensive_review_page.dart';
+import 'package:fluenough/features/review/review_page.dart';
+import 'package:fluenough/features/review/waiting_page.dart';
 import 'package:fluenough/features/settings/appearance_page.dart';
+import 'package:fluenough/features/settings/settings_page.dart';
 import 'package:fluenough/features/settings/sources_page.dart';
 import 'package:fluenough/features/settings/voices_page.dart';
 import 'package:fluenough/features/stats/how_you_learn_page.dart';
@@ -40,6 +48,7 @@ import 'package:fluenough/ui/widgets/target_text.dart';
 
 import 'support/harness.dart';
 import 'support/paced_learner.dart';
+import 'support/review_fixture.dart';
 
 /// Flutter's accessibility guidelines on every drill state (#26): tap targets
 /// big enough for a drill used fast, every tap target labelled, and text at
@@ -66,6 +75,50 @@ Map<String, String> quotedIn(WidgetTester tester, Finder finder) {
 FinderBase<SemanticsNode> readsOut(String text) => find.semantics.byPredicate(
   (node) => node.label.contains(text) || node.value.contains(text),
 );
+
+/// Taps [finder], scrolling the screen's list to it first.
+Future<void> tapShown(WidgetTester tester, Finder finder) async {
+  if (finder.evaluate().isEmpty) {
+    await tester.scrollUntilVisible(
+      finder,
+      300,
+      scrollable: find.byType(Scrollable).first,
+    );
+  }
+  await tester.ensureVisible(finder);
+  await tester.pumpAndSettle();
+  await tester.tap(finder);
+}
+
+/// Scrolls the screen's list, where a tap target is cut by the list's top
+/// edge, until that target is whole at the top. A screen that opens part
+/// way down a list, as the path opens at the unit up next, cuts the row
+/// above wherever it stops; the tap-target guidelines skip a node cut by
+/// the screen's edge for that reason, but not one cut by a list's edge
+/// below the app bar. Every target on the screen is still checked.
+Future<void> noTargetCutAtTop(WidgetTester tester) async {
+  final list = find.byWidgetPredicate(
+    (w) => w is Scrollable && w.axisDirection == AxisDirection.down,
+  );
+  if (list.evaluate().isEmpty) return;
+  final top = tester.getTopLeft(list.first).dy;
+  final targets = find.descendant(
+    of: list.first,
+    matching: find.byWidgetPredicate(
+      (w) => w is InkWell || (w is Semantics && w.properties.button == true),
+    ),
+  );
+  for (final element in targets.evaluate()) {
+    final box = element.renderObject;
+    if (box is! RenderBox || !box.hasSize) continue;
+    final rect = box.localToGlobal(Offset.zero) & box.size;
+    if (rect.top < top - 0.5 && rect.bottom > top + 0.5) {
+      await Scrollable.ensureVisible(element);
+      await tester.pumpAndSettle();
+      return;
+    }
+  }
+}
 
 void main() {
   group('deck content in an interface string is read in its language', () {
@@ -362,6 +415,111 @@ void main() {
   ];
   pages.addAll(firstLaunch);
 
+  // The Decks tab's path and a unit's screen (the owner's design), on the
+  // design's Telugu learner: levels, milestones and coming units, a search
+  // across courses, a unit part learned, and a word's card.
+  final pathScreens = <(String, Widget)>[
+    ('the path, toward B1', const DecksPage(planOf: PathFixtures.planOf)),
+    (
+      'the path, searched',
+      const DecksPage(planOf: PathFixtures.planOf, initialQuery: 'family'),
+    ),
+    (
+      'a unit',
+      const UnitPage(
+        deckId: PathFixtures.familyDeck,
+        plan: PathFixtures.telugu,
+      ),
+    ),
+    (
+      'a unit, a word\'s card open',
+      const UnitPage(
+        deckId: 'te-en-sound-differences',
+        plan: PathFixtures.telugu,
+        openWord: PathFixtures.soundAlikeCard,
+      ),
+    ),
+  ];
+  Future<AppState> teluguLearner() async {
+    final app = AppState.test();
+    await app.load();
+    return PathFixtures.state(app);
+  }
+
+  for (final themeMode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+    group('the path and a unit, ${themeMode.name} theme', () {
+      for (final (name, page) in pathScreens) {
+        testWidgets(name, (tester) async {
+          usePhone(tester);
+          final semantics = tester.ensureSemantics();
+          await pumpScreen(
+            tester,
+            page,
+            state: await teluguLearner(),
+            themeMode: themeMode,
+          );
+          await noTargetCutAtTop(tester);
+          await meetsEveryGuideline(tester);
+          semantics.dispose();
+        });
+      }
+    });
+  }
+
+  // In reviewer mode, each unit with a deck no native speaker has signed
+  // off carries "To review": every bundled Telugu deck is unreviewed.
+  for (final themeMode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+    testWidgets('the path in reviewer mode, its units marked To review, '
+        '${themeMode.name} theme', (tester) async {
+      usePhone(tester);
+      final semantics = tester.ensureSemantics();
+      final state = await teluguLearner();
+      state.reviewing.turnOn();
+      // Reviewing Telugu from English needs both known, both scripts read.
+      state.settings
+        ..spokenLanguages = const <String>['en', 'te']
+        ..scriptsRead = const <String, bool>{'en': true, 'te': true}
+        ..reviewLanguages = const <String>{'te'};
+      await pumpScreen(
+        tester,
+        const DecksPage(planOf: PathFixtures.planOf),
+        state: state,
+        themeMode: themeMode,
+      );
+      expect(find.text(l10nOf(tester).pathToReview), findsWidgets);
+      await meetsEveryGuideline(tester);
+      semantics.dispose();
+    });
+  }
+
+  group('the path and a unit at the largest font size, 2.0 on Android', () {
+    for (final (name, page) in pathScreens) {
+      testWidgets('$name: nothing clipped, targets still big enough', (
+        tester,
+      ) async {
+        usePhone(tester, textScale: 2.0);
+        final semantics = tester.ensureSemantics();
+        await pumpScreen(tester, page, state: await teluguLearner());
+        expect(tester.takeException(), isNull);
+        // The path opens with its current unit a third of the way down,
+        // which can leave a sliver of the unit above at the top edge: at
+        // the app's 1.4x cap, 2.6 high. A sliver is where the list
+        // stopped, not a target's size, so check from the top (#505).
+        for (final element in find.byType(Scrollable).evaluate()) {
+          final position =
+              (element as StatefulElement).state as ScrollableState;
+          if (position.position.axis == Axis.vertical) {
+            position.position.jumpTo(0);
+          }
+        }
+        await tester.pumpAndSettle();
+        await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+        await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+        semantics.dispose();
+      });
+    }
+  });
+
   group('at the largest font size, 2.0 on Android', () {
     for (final (name, page) in firstLaunch) {
       testWidgets('$name: nothing clipped, targets still big enough', (
@@ -439,7 +597,195 @@ void main() {
     });
   }
 
-  // Adjusted to you (docs/plans/skill-model.md): How you learn, and the
+  // Reviewer mode (docs/plans/deck-browser.md): Settings' Reviewing group
+  // and How reviewing works, a unit's review and each of its sheets, the
+  // rude-word rating and the pair check with adult content on, the send
+  // sheet, and the drill card's sound-alike warning.
+  final reviewScreens =
+      <
+        (
+          String,
+          Widget,
+          Future<void> Function(WidgetTester tester, AppState state)?,
+        )
+      >[
+        ('settings, reviewing on', const SettingsPage(), null),
+        (
+          'how reviewing works',
+          const SettingsPage(),
+          (tester, state) async {
+            await tapShown(tester, find.text(l10nOf(tester).reviewSettingsHow));
+          },
+        ),
+        ('review a unit', const ReviewPage(deckId: wordsDeck), null),
+        (
+          'review a unit, a card open',
+          const ReviewPage(deckId: wordsDeck),
+          (tester, state) async => tapShown(tester, find.text('mother')),
+        ),
+        (
+          'review a unit, suggest a change',
+          const ReviewPage(deckId: wordsDeck),
+          (tester, state) async {
+            await tapShown(tester, find.text('mother'));
+            await tester.pumpAndSettle();
+            await tapShown(
+              tester,
+              find.widgetWithText(OutlinedButton, l10nOf(tester).reviewSuggest),
+            );
+          },
+        ),
+        (
+          'review a unit, a word like a rude one, adult content on',
+          const ReviewPage(deckId: wordsDeck),
+          (tester, state) async {
+            state.settings.adultContent = true;
+            await tester.pumpAndSettle();
+            await tapShown(tester, find.text('widow'));
+          },
+        ),
+        (
+          'offensive words, why they are here',
+          const OffensiveReviewPage(language: 'te'),
+          null,
+        ),
+        (
+          'offensive words, the age question',
+          const OffensiveReviewPage(language: 'te'),
+          (tester, state) async =>
+              tapShown(tester, find.text(l10nOf(tester).commonContinue)),
+        ),
+        (
+          'offensive words, rating one',
+          const OffensiveReviewPage(language: 'te'),
+          (tester, state) async {
+            final l10n = l10nOf(tester);
+            await tapShown(tester, find.text(l10n.commonContinue));
+            await tester.pumpAndSettle();
+            await tapShown(tester, find.text(l10n.settingsAdultConfirm));
+            await tester.pumpAndSettle();
+            await tapShown(tester, find.text('idiot, good-for-nothing'));
+            await tester.pumpAndSettle();
+            await tapShown(tester, find.text(l10n.reviewRate));
+          },
+        ),
+        (
+          'offensive words, checking a pair',
+          const OffensiveReviewPage(language: 'te'),
+          (tester, state) async {
+            final l10n = l10nOf(tester);
+            await tapShown(tester, find.text(l10n.commonContinue));
+            await tester.pumpAndSettle();
+            await tapShown(tester, find.text(l10n.settingsAdultConfirm));
+            await tester.pumpAndSettle();
+            await tapShown(
+              tester,
+              find.widgetWithText(FilledButton, l10n.reviewAlikeCheckShort),
+            );
+          },
+        ),
+        (
+          'review a unit, the send sheet',
+          const ReviewPage(deckId: wordsDeck),
+          (tester, state) async {
+            final words = state.deckById(wordsDeck)!;
+            state.reviewing.markRight(words, words.cards.first);
+            await tester.pumpAndSettle();
+            await tapShown(tester, find.text(l10nOf(tester).reviewSend));
+          },
+        ),
+        (
+          'waiting for review, no language chosen',
+          const WaitingForReviewPage(),
+          null,
+        ),
+        (
+          'waiting for review, choosing the languages',
+          const WaitingForReviewPage(),
+          (tester, state) async =>
+              tapShown(tester, find.text(l10nOf(tester).reviewWaitingChoose)),
+        ),
+        (
+          'waiting for review in Telugu',
+          const WaitingForReviewPage(),
+          (tester, state) async {
+            state.settings.reviewLanguages = const <String>{'te'};
+          },
+        ),
+        // The reviewer guide as the walkthrough (#409): its first step, one
+        // with three paragraphs, and the last, which closes with Got it.
+        ('how reviewing works, first step', const HowReviewingWorks(), null),
+        (
+          'how reviewing works, sending in one mail',
+          HowReviewingWorks(
+            initialStep: reviewGuideSteps.indexWhere((s) => s.id == 'send'),
+          ),
+          null,
+        ),
+        (
+          'how reviewing works, last step',
+          HowReviewingWorks(initialStep: reviewGuideSteps.length - 1),
+          null,
+        ),
+        (
+          'a seen word like a rude one, answer shown',
+          DrillPage(
+            request: DrillRequest.deck(wordsDeck, skill: Skill.recognition),
+            preset: const DrillPreset(target: 'విధవ', reveal: true),
+          ),
+          null,
+        ),
+      ];
+
+  Future<void> pumpReview(
+    WidgetTester tester,
+    Widget page,
+    Future<void> Function(WidgetTester, AppState)? open, {
+    ThemeMode themeMode = ThemeMode.light,
+  }) async {
+    final state = await pumpScreen(
+      tester,
+      page,
+      state: await reviewState(reviewing: true),
+      themeMode: themeMode,
+    );
+    if (open != null) {
+      await open(tester, state);
+      await tester.pumpAndSettle();
+    }
+  }
+
+  for (final themeMode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+    group('reviewer mode, ${themeMode.name} theme', () {
+      for (final (name, page, open) in reviewScreens) {
+        testWidgets(name, (tester) async {
+          usePhone(tester);
+          final semantics = tester.ensureSemantics();
+          await pumpReview(tester, page, open, themeMode: themeMode);
+          await meetsEveryGuideline(tester);
+          semantics.dispose();
+        });
+      }
+    });
+  }
+
+  group('reviewer mode at the largest font size, 2.0 on Android', () {
+    for (final (name, page, open) in reviewScreens) {
+      testWidgets('$name: nothing clipped, targets still big enough', (
+        tester,
+      ) async {
+        usePhone(tester, textScale: 2.0);
+        final semantics = tester.ensureSemantics();
+        await pumpReview(tester, page, open);
+        expect(tester.takeException(), isNull);
+        await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+        await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+        semantics.dispose();
+      });
+    }
+  });
+
+  // Adjusted to you (ADR-0035): How you learn, and the
   // Today and Progress tabs, before any fit and after each kind of fit.
   group('adjusted to you', () {
     for (final paced in Paced.values) {
