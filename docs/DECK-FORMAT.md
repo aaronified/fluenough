@@ -998,7 +998,7 @@ Each item says where it lives, and each is built.
 - **Root word, synonyms and antonyms.** Built (#513); see [Root word,
   synonyms and antonyms](#root-word-synonyms-and-antonyms) below.
 - **Confusables.** Built (#514); see [Confusables](#confusables) below.
-- **Frequency.** Built, the field only (#516); see [Frequency](#frequency)
+- **Frequency.** Built, with its counting tool (#516); see [Frequency](#frequency)
   below.
 - **Facts naming cards.** Built (#516): a fact's `cards`, see
   [Facts files](#facts-files).
@@ -1156,7 +1156,7 @@ and in the layer `confusables: { "masc": { why: "चाय (cāy) is feminine, s
 
 ### Frequency
 
-Built, the field only (#516). `frequency` is optional: the word's rank in a
+Built (#516). `frequency` is optional: the word's rank in a
 count of its language's **Wikipedia** (owner, 2026-10-13: "Count from
 Wikipedia instead"), and where it was counted, named on the item (owner:
 "Per item"). It is a fact of the language, on a core's card or a
@@ -1167,7 +1167,11 @@ frequency: { rank: 412, source: "hi.wikipedia.org, 2026-10" }
 ```
 
 `rank` is a whole number from 1, the most frequent; `source` is required.
-The tool that counts the ranks is not built yet.
+**Never written by hand:** `tools/wikipedia_frequency.py` counts the words
+of the language's Wikipedia dump (`<lang>wiki-<date>-pages-articles.xml.bz2`),
+and gives each card whose target is one word its rank, with the source
+`"<lang>.wikipedia.org, <the dump's month>"`. A card that has a
+`frequency` keeps it, and a phrase gets none (see `tools/README.md`).
 
 ### Register, forms, collocations and senses
 
@@ -1285,7 +1289,8 @@ each new field lands with its check and its entry here, with tests.
 
 Answers from the owner, asked one at a time (#506). Each field group is
 built in its own issue in 0.5.0, after the relicensing (#510); all are
-built but the Wiktionary import (#518) and the frequency count (#516).
+built, and so are the Wiktionary import (#518) and the frequency count
+(#516).
 
 - **A word that is its own root:** `bases: self` (#513): built.
 - **`source` for Wiktionary and Tatoeba data:** "Per item". Each
@@ -1295,8 +1300,8 @@ built but the Wiktionary import (#518) and the frequency count (#516).
   classes is an error, and so is a missing gender once the language is
   filled in (#512): built, see [Gender](#gender).
 - **Frequency:** first "Leipzig Corpora lists", then, because Leipzig's
-  terms conflict, "Count from Wikipedia instead" (#516): the field is
-  built, the count is not.
+  terms conflict, "Count from Wikipedia instead" (#516): the field and
+  its count, `tools/wikipedia_frequency.py`, are built.
 - **Word data from Wiktionary:** "Yes, in 0.5.0". A tool imports from the
   kaikki.org extracts, naming the source per item (#518). IndoWordNet:
   "Don't use it".
