@@ -93,7 +93,7 @@ void main() {
     }
 
     await tapText(l10n.navSettings);
-    await tapText(l10n.settingsAppearance);
+    await tapText(l10n.settingsRowLook);
     expect(find.byType(AppearancePage), findsOneWidget);
 
     // Below the preview, which a longer first card makes taller.
@@ -123,9 +123,12 @@ void main() {
     expect(ModeColors.of(context).listening, ModeColors.lightHigh.listening);
     expect(
       find.text(
-        l10n.settingsAppearanceSummaryHigh(
-          l10n.appearanceThemeSystem,
-          l10n.appearanceSeedClay,
+        l10n.settingsSumLook(
+          l10n.settingsAppearanceSummaryHigh(
+            l10n.appearanceThemeSystem,
+            l10n.appearanceSeedClay,
+          ),
+          'English',
         ),
       ),
       findsOneWidget,

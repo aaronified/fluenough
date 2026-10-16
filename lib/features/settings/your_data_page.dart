@@ -7,7 +7,6 @@ import '../../app/memory_progress.dart';
 import '../../app/skill.dart';
 import '../../core/data/log_jsonl.dart';
 import '../../core/models/card.dart' as model;
-import '../../core/models/review_event.dart';
 import '../../core/scheduling/fsrs.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
@@ -275,7 +274,7 @@ class _Answer extends StatelessWidget {
       Rating.good => l10n.rateGood,
       Rating.easy => l10n.rateEasy,
     };
-    final outer = Radius.circular(AppRadii.card);
+    const outer = Radius.circular(AppRadii.card);
     return Padding(
       padding: const EdgeInsetsDirectional.only(bottom: 2),
       child: Material(
