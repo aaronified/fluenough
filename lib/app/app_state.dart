@@ -1073,12 +1073,16 @@ class AppState extends ChangeNotifier {
   final Map<String, bool> _voices = <String, bool>{};
 
   /// Whether the phone has a voice for [language], by its `ttsTag`.
-  VoiceStatus voiceStatus(LanguageInfo language) =>
-      switch (_voices[language.ttsTag]) {
-        true => VoiceStatus.available,
-        false => VoiceStatus.missing,
-        null => VoiceStatus.checking,
-      };
+  ///
+  /// The IPA has none, and nothing to check: its examples are said in their
+  /// own languages' voices (ADR-0041).
+  VoiceStatus voiceStatus(LanguageInfo language) => language.isIpa
+      ? VoiceStatus.missing
+      : switch (_voices[language.ttsTag]) {
+          true => VoiceStatus.available,
+          false => VoiceStatus.missing,
+          null => VoiceStatus.checking,
+        };
 
   bool hasVoice(LanguageInfo language) =>
       voiceStatus(language) == VoiceStatus.available;
