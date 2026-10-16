@@ -20,6 +20,7 @@ import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/stat_tile.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
+import '../review/review_waiting.dart' show reviewLanguagesOf;
 import 'deck_content.dart';
 import 'number_practice_tile.dart';
 import 'path_model.dart';
@@ -190,6 +191,10 @@ class _UnitPageState extends State<UnitPage> {
             ? DrillRequest(deckIds: ids)
             : lesson;
         var section = 0;
+        // Reviewing is for the languages the learner reviews, not those
+        // they are learning (#525).
+        final reviews = reviewLanguagesOf(state)
+            .any((l) => l.code == language.code);
         return Scaffold(
           appBar: AppBar(
             title: Text(
@@ -197,13 +202,13 @@ class _UnitPageState extends State<UnitPage> {
               style: Theme.of(context).textTheme.titleMedium,
             ),
             actions: <Widget>[
-              if (large)
+              if (reviews && large)
                 IconButton(
                   tooltip: l10n.unitReview,
                   icon: const Icon(Icons.fact_check_outlined),
                   onPressed: () => _review(context, state, language),
                 )
-              else
+              else if (reviews)
                 Padding(
                   padding: const EdgeInsetsDirectional.only(end: 4),
                   // Compact, to sit in the app bar: the theme's primary
