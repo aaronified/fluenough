@@ -317,7 +317,13 @@ themes:
       final state = await loaded();
       expect(state.currentProfile.id, Profile.defaultProfile.id);
       expect(state.currentProfile.name, isNull);
-      expect(state.profileDecks, hasLength(state.decks.length));
+      // Every language but the IPA course, which is learned only when
+      // chosen (ADR-0041).
+      expect(state.profileDecks, isNotEmpty);
+      expect(
+        state.profileDecks.map((e) => e.id),
+        state.decks.where((e) => !e.language.isIpa).map((e) => e.id),
+      );
     });
 
     test('creating adds, selecting switches and notifies', () async {

@@ -244,12 +244,16 @@ class Catalog {
   /// language with `script: ipa`) cut to the cards in [scope] when they
   /// learn [learned], and one left with none gone (ADR-0041). The same
   /// catalog when nothing changes, so that every screen reads one list.
-  Catalog forIpa(IpaScope scope, Set<String> learned) {
+  Catalog forIpa(
+    IpaScope scope,
+    Set<String> learned, {
+    Set<String> kept = const <String>{},
+  }) {
     if (scope == IpaScope.whole) return this;
     var changed = false;
     final scoped = <DeckEntry>[];
     for (final entry in decks) {
-      final deck = ipaDeckInScope(entry.deck, scope, learned);
+      final deck = ipaDeckInScope(entry.deck, scope, learned, kept: kept);
       if (identical(deck, entry.deck)) {
         scoped.add(entry);
         continue;
