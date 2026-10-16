@@ -88,8 +88,9 @@ language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari }
 native: { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 cards:
-  - { id: hi-0001, target: "पत्ता", native: "leaf", reading: "pattā", ipa: "pət̪ːaː", modes: [recognition] }
+  - { id: hi-0001, target: "पत्ता", native: "leaf", reading: "pattā", ipa: "pʰəɳ", modes: [recognition] }
   - { id: hi-0002, target: "कल", native: "tomorrow", reading: "kal", ipa: "kəl", modes: [recognition] }
+  - { id: hi-0003, target: "कली", native: "bud", reading: "kalī", ipa: "kaʎi", modes: [recognition] }
 ''',
 };
 

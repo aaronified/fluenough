@@ -8,6 +8,25 @@ import 'mode_pill.dart';
 import 'report_button.dart';
 import 'wave_progress.dart';
 
+/// A button the drill's page puts in every drill's header, beside the bug
+/// icon: the sounds of the card's word, which each kind of drill would
+/// otherwise have to build (ADR-0041).
+class DrillHeaderScope extends InheritedWidget {
+  const DrillHeaderScope({
+    super.key,
+    required this.action,
+    required super.child,
+  });
+
+  final Widget? action;
+
+  static Widget? of(BuildContext context) =>
+      context.dependOnInheritedWidgetOfExactType<DrillHeaderScope>()?.action;
+
+  @override
+  bool updateShouldNotify(DrillHeaderScope old) => true;
+}
+
 /// The layout every drill shares, from the design's drill screen:
 ///
 /// 1. A 64 px header: close button, the progress wave, "3/8", and the
@@ -132,6 +151,9 @@ class DrillFrame extends StatelessWidget {
                         ),
                       ),
                     ),
+                    // What the page puts in the header, such as the sounds
+                    // of the card's word (ADR-0041).
+                    ?DrillHeaderScope.of(context),
                     ReportButton(detail: reportDetail ?? deckName),
                   ],
                 ),

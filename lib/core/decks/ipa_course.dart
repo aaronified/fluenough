@@ -33,18 +33,31 @@ enum IpaScope {
 /// [learned], the codes of their languages: the one place cards are
 /// filtered by their tags against them, so that counts, lessons, finished
 /// decks and Inspect agree (ADR-0041).
-bool ipaCardInScope(Card card, IpaScope scope, Set<String> learned) =>
+///
+/// A card in [kept], such as one the learner has answered, is always in.
+bool ipaCardInScope(
+  Card card,
+  IpaScope scope,
+  Set<String> learned, {
+  Set<String> kept = const <String>{},
+}) =>
     scope == IpaScope.whole ||
+    kept.contains(card.id) ||
     card.tags.any((tag) => tag == ipaCoreTag || learned.contains(tag));
 
 /// [deck] as the learner has it, for [scope] and the languages [learned]: a
 /// deck of the IPA course with only its cards in scope, or the deck as it
 /// is; null for an IPA deck with none left, which is not on offer.
-Deck? ipaDeckInScope(Deck deck, IpaScope scope, Set<String> learned) {
-  if (deck.language.script != 'ipa' || scope == IpaScope.whole) return deck;
+Deck? ipaDeckInScope(
+  Deck deck,
+  IpaScope scope,
+  Set<String> learned, {
+  Set<String> kept = const <String>{},
+}) {
+  if (!deck.language.isIpa || scope == IpaScope.whole) return deck;
   final cards = <Card>[
     for (final card in deck.cards)
-      if (ipaCardInScope(card, scope, learned)) card,
+      if (ipaCardInScope(card, scope, learned, kept: kept)) card,
   ];
   if (cards.isEmpty) return null;
   return cards.length == deck.cards.length ? deck : deck.withCards(cards);

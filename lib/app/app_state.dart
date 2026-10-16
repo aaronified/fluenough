@@ -478,14 +478,32 @@ class AppState extends ChangeNotifier {
       for (final code in learningCodes)
         if (code != ipaLanguageCode) code,
     };
-    final key = '${scope.name}:${(learned.toList()..sort()).join(',')}';
+    // A card the learner has answered stays in their course, whatever its
+    // tags: it is scheduled (ADR-0041). Read again only when the log grows.
+    final answered = scope == IpaScope.whole ? 0 : progress.log.length;
+    final key =
+        '${scope.name}:${(learned.toList()..sort()).join(',')}:$answered:'
+        '${_ipaPinned.length}';
     if (!identical(_viewOf, _catalog) || _viewKey != key) {
       _viewOf = _catalog;
       _viewKey = key;
-      _scoped = _catalog.forIpa(scope, learned);
+      _scoped = _catalog.forIpa(
+        scope,
+        learned,
+        kept: <String>{
+          ..._ipaPinned,
+          if (scope != IpaScope.whole)
+            for (final k in progress.states.keys)
+              if (k.cardId.startsWith('$ipaLanguageCode-')) k.cardId,
+        },
+      );
     }
     return _scoped;
   }
+
+  /// The IPA cards of the "sounds of this word" session under way, which the
+  /// learner's course has while they are practised ([DrillRequest.sounds]).
+  final Set<String> _ipaPinned = <String>{};
 
   Catalog? _viewOf;
   String _viewKey = '';
@@ -1956,6 +1974,100 @@ class AppState extends ChangeNotifier {
             ? item.askedAs(Ask.hearAndChoose)
             : item,
     ];
+  }
+
+  // ---------------------------------------------------------------------------
+  // The sounds of a word (ADR-0041)
+
+  /// Whether the current profile learns the IPA course.
+  bool get learnsIpa => currentProfile.learns(ipaLanguageCode);
+
+  /// Adds the IPA course to the languages the current profile learns, with
+  /// the scope it has. A profile that learned every language, having chosen
+  /// none, keeps learning them: they are named, and the IPA with them.
+  void addIpaCourse() {
+    final codes = learningCodes.isEmpty
+        ? <String>[
+            for (final language in languages)
+              if (!language.isIpa) language.code,
+          ]
+        : learningCodes.toList();
+    if (!codes.contains(ipaLanguageCode)) codes.add(ipaLanguageCode);
+    setLearningLanguages(codes);
+  }
+
+  /// The IPA cards whose symbols occur in the IPA of [card], in the
+  /// course's order, as the course is taught from [courseNative]'s language,
+  /// or an empty list for a card with no IPA or while the IPA decks are not
+  /// on the phone. Of the whole chart, whichever scope the learner has: the
+  /// symbols of a word are what the word needs.
+  List<Card> soundsOfWord(Card card) {
+    final ipa = card.ipa;
+    if (ipa == null) return const <Card>[];
+    final native = courseNative(ipaLanguageCode);
+    final seen = <String>{};
+    final cards = <Card>[
+      for (final entry in _catalog.decks)
+        if (entry.language.isIpa &&
+            (native == null || entry.deck.native.code == native))
+          for (final c in entry.cards)
+            if (seen.add(c.id)) c,
+    ];
+    // A course taught from no language the learner speaks still has cards.
+    if (cards.isEmpty && native != null) {
+      for (final entry in _catalog.decks) {
+        if (entry.language.isIpa) {
+          cards.addAll(entry.cards.where((c) => seen.add(c.id)));
+        }
+      }
+    }
+    return ipaCardsFor(ipa, cards);
+  }
+
+  /// The session of "The sounds of this word" for [card], or null where
+  /// there are none to practise: its IPA cards, recorded in the IPA course.
+  DrillRequest? soundsOfWordRequest(Card card) {
+    final cards = soundsOfWord(card);
+    if (cards.isEmpty) return null;
+    return DrillRequest.sounds(<String>{for (final c in cards) c.id});
+  }
+
+  /// The learner's course has [ids], IPA cards, while they are practised,
+  /// whatever its scope ([DrillRequest.sounds]); [unpinIpaCards] ends it.
+  /// An answered card stays in the course of itself.
+  void pinIpaCards(Set<String> ids) {
+    _ipaPinned
+      ..clear()
+      ..addAll(ids);
+  }
+
+  void unpinIpaCards() => _ipaPinned.clear();
+
+  /// The items of the sounds session [request] asks for: each card taught,
+  /// checked and practised as a lesson does (ADR-0024), in the course's
+  /// order, every one of them, whatever it has been taught before.
+  List<SessionItem> soundsItems(DrillRequest request) {
+    final ids = request.cardIds ?? const <String>{};
+    pinIpaCards(ids);
+    final byId = <String, Card>{};
+    final native = courseNative(ipaLanguageCode);
+    for (final entry in decks) {
+      if (!entry.language.isIpa) continue;
+      for (final card in entry.cards) {
+        if (!ids.contains(card.id)) continue;
+        // One card, taught from the course's language where there is one.
+        if (!byId.containsKey(card.id) || entry.deck.native.code == native) {
+          byId[card.id] = card;
+        }
+      }
+    }
+    final modesOf = drillableModesNow();
+    return lessonPlan(
+      <Card>[for (final id in ids) ?byId[id]],
+      modesOf: modesOf,
+      canChoose: canChoose,
+      typed: isTyped,
+    );
   }
 
   /// The sets of the courses [picked] is taught in, as the learner sees

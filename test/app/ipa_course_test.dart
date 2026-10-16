@@ -154,4 +154,90 @@ void main() {
       expect(state.isTyped(state.deckById('hi-en-words')!.cards.first), isTrue);
     });
   });
+
+  group('the sounds of a word', () {
+    test('are the IPA cards whose symbols occur in its IPA, of the whole '
+        'chart whatever the scope', () async {
+      final state = ipaApp(<String>['hi', 'ipa']);
+      addTearDown(state.dispose);
+      await state.load();
+      final word = state.deckById('hi-en-words')!.cards.first;
+      expect(ids(state.soundsOfWord(word)), ['ipa-0005', 'ipa-0007']);
+      // A symbol of Spanish, which this learner does not learn.
+      final bud = state.deckById('hi-en-words')!.cards.last;
+      expect(ids(state.soundsOfWord(bud)), ['ipa-0006']);
+      expect(state.deckById('ipa-en-places')!.cards.map((c) => c.id), [
+        'ipa-0005',
+        'ipa-0007',
+      ]);
+    });
+
+    test('a card without an IPA has none', () async {
+      final state = ipaApp(<String>['hi', 'ipa']);
+      addTearDown(state.dispose);
+      await state.load();
+      final basics = state.deckById('ipa-en-basics')!.cards.first;
+      expect(state.soundsOfWord(basics), isEmpty);
+      expect(state.soundsOfWordRequest(basics), isNull);
+    });
+
+    test('are practised as a lesson, and the cards are the learner\'s while '
+        'they are, and once answered', () async {
+      final state = ipaApp(<String>['hi', 'ipa']);
+      addTearDown(state.dispose);
+      await state.load();
+      final bud = state.deckById('hi-en-words')!.cards.last;
+      final request = state.soundsOfWordRequest(bud)!;
+      expect(request.cardIds, {'ipa-0006'});
+      final items = state.soundsItems(request);
+      expect(items.map((i) => i.card.id), everyElement('ipa-0006'));
+      expect(items.first.ask, Ask.teach);
+      // Out of the scope's tags, in the course while it is practised.
+      expect(
+        state.deckById('ipa-en-places')!.cards.map((c) => c.id),
+        contains('ipa-0006'),
+      );
+      state.record(items[1], 4);
+      state.unpinIpaCards();
+      // Answered: recorded, scheduled, and so still in the course.
+      expect(
+        state.deckById('ipa-en-places')!.cards.map((c) => c.id),
+        contains('ipa-0006'),
+      );
+      expect(state.isTaught(items[1].card), isTrue);
+    });
+
+    test(
+      'a card not answered leaves the course when the session ends',
+      () async {
+        final state = ipaApp(<String>['hi', 'ipa']);
+        addTearDown(state.dispose);
+        await state.load();
+        final bud = state.deckById('hi-en-words')!.cards.last;
+        state.soundsItems(state.soundsOfWordRequest(bud)!);
+        state.unpinIpaCards();
+        expect(
+          state.deckById('ipa-en-places')!.cards.map((c) => c.id),
+          isNot(contains('ipa-0006')),
+        );
+      },
+    );
+
+    test('adding the course keeps what is learned, and a learner who chose '
+        'nothing keeps learning every language', () async {
+      final state = ipaApp(<String>['hi']);
+      addTearDown(state.dispose);
+      await state.load();
+      expect(state.learnsIpa, isFalse);
+      state.addIpaCourse();
+      expect(state.learnsIpa, isTrue);
+      expect(state.learningCodes, {'hi', 'ipa'});
+
+      final unchosen = ipaApp(<String>[]);
+      addTearDown(unchosen.dispose);
+      await unchosen.load();
+      unchosen.addIpaCourse();
+      expect(unchosen.learningCodes, {'hi', 'ipa'});
+    });
+  });
 }
