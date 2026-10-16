@@ -57,7 +57,9 @@ is ambiguous and gets only an IPA all of them agree on. Then it fills
   `image_credit`. With none, the card keeps its Noto picture.
 
 Every item it adds names its `source` (owner: "Per item"): the entry's
-page, and the dump's date, which pins the run so that it can be repeated.
+Wiktionary page and nothing else (owner, 2026-10-16, #518: "Link only").
+The dump's date and checksum, which pin the run so that it can be
+repeated, are in the report only.
 Readings are written by `tools/transcribe.py`, from Wiktionary's own
 romanisation as a hint. What it imports is semi-verified (owner,
 2026-10-13): reviewers check it, after the data Claude writes (#508).
@@ -420,15 +422,17 @@ class Fill:
 
 class Importer:
     def __init__(self, lang: Language, entries: dict[str, list[dict]],
-                 words: dict[str, Word], dump_date: str) -> None:
+                 words: dict[str, Word]) -> None:
         self.lang = lang
         self.entries = entries
         self.words = words
-        self.dump_date = dump_date
         self.report = Report(lang.code)
 
-    def source(self, word: str) -> str:
-        return f"{page(word)} (kaikki.org {self.dump_date})"
+    @staticmethod
+    def source(word: str) -> str:
+        """An item's `source`: the entry's page only (owner, 2026-10-16,
+        #518: "Link only")."""
+        return page(word)
 
     def ref_for(self, word: str, cid: str) -> str | None:
         ref = self.lang.taught.get(vd._key(word))
@@ -1063,7 +1067,7 @@ def run(code: str, dump: Path, decks: Path, dump_date: str, write: bool,
     lang = read_language(decks, code)
     wanted = {t.target for t in lang.targets}
     entries, words = read_dump(dump, wanted)
-    importer = Importer(lang, entries, words, dump_date)
+    importer = Importer(lang, entries, words)
     report = importer.report
     report.flow = lang.flow
     fills = {t.cid: importer.fill(t) for t in lang.targets}
