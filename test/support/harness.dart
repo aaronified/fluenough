@@ -223,7 +223,6 @@ Future<void> scrollToFind(WidgetTester tester, Finder finder) async {
 /// long word is given its breaks between aksharas (`breakableWord`, #515),
 /// which a line may wrap at.
 Finder findTarget(String text) => find.byWidgetPredicate(
-  (widget) =>
-      widget is Text && widget.data?.replaceAll('​', '') == text,
+  (widget) => widget is Text && widget.data?.replaceAll('​', '') == text,
   description: 'target "$text"',
 );
