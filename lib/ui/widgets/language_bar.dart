@@ -423,30 +423,28 @@ class _LanguageBarState extends State<LanguageBar> {
           },
           excludeSemantics: true,
           child: GestureDetector(
-                behavior: HitTestBehavior.opaque,
-                onHorizontalDragStart: (_) {
-                  _dragging = true;
-                  _drag = 0;
-                },
-                onHorizontalDragUpdate: (d) => _dragUpdate(d, codes, shown),
-                onHorizontalDragEnd: (d) => _dragEnd(d, state),
-                onHorizontalDragCancel: _dragCancel,
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(24),
-                  onTap: _toggleMenu,
-                  child: SizedBox(
-                    height: 48,
-                    child: Padding(
-                      padding: const EdgeInsetsDirectional.symmetric(
-                        horizontal: 4,
-                      ),
-                      child: Align(
-                        alignment: AlignmentDirectional.centerStart,
-                        child: row,
-                      ),
-                    ),
+            behavior: HitTestBehavior.opaque,
+            onHorizontalDragStart: (_) {
+              _dragging = true;
+              _drag = 0;
+            },
+            onHorizontalDragUpdate: (d) => _dragUpdate(d, codes, shown),
+            onHorizontalDragEnd: (d) => _dragEnd(d, state),
+            onHorizontalDragCancel: _dragCancel,
+            child: InkWell(
+              borderRadius: BorderRadius.circular(24),
+              onTap: _toggleMenu,
+              child: SizedBox(
+                height: 48,
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.symmetric(horizontal: 4),
+                  child: Align(
+                    alignment: AlignmentDirectional.centerStart,
+                    child: row,
                   ),
                 ),
+              ),
+            ),
           ),
         ),
       );
