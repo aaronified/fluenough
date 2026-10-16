@@ -3,11 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
-import 'package:fluenough/app/language_choice.dart';
-import 'package:fluenough/app/session.dart';
-import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/features/decks/broken_deck_tile.dart';
-import 'package:fluenough/features/decks/course_chips.dart';
+import 'package:fluenough/features/decks/course_card.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/decks/decks_page.dart';
 import 'package:fluenough/features/decks/import_page.dart';
@@ -86,29 +83,21 @@ cards:
 });
 
 void main() {
-  testWidgets('a chip per language, those the profile learns first, in its '
-      'order, each with its reviews due', (tester) async {
+  testWidgets('shows the course of the language the bar shows, with no '
+      'course chips (#528)', (tester) async {
     usePhone(tester);
     final state = await pumpDecks(tester, state: await teluguLearner());
-    final l10n = l10nOf(tester);
-    final chips = tester.widget<CourseChips>(find.byType(CourseChips));
-    expect(chips.languages.take(3).map((l) => l.code), ['te', 'hi', 'es']);
+    expect(state.shownLanguage, 'te');
+    expect(find.byType(FilterChip), findsNothing);
     expect(
-      chips.languages.map((l) => l.code).toSet(),
-      state.languages.map((l) => l.code).toSet(),
+      tester.widget<CourseCard>(find.byType(CourseCard)).view.language.code,
+      'te',
     );
-    expect(chips.selected, 'te');
-    final due = state
-        .buildSession(const DrillRequest.today(language: 'te'))
-        .due
-        .length;
-    expect(due, greaterThan(0));
-    expect(chips.due['te'], due);
-    // A language the profile does not learn has no count.
-    expect(chips.due.containsKey('bn'), isFalse);
+    state.showLanguage('hi');
+    await tester.pumpAndSettle();
     expect(
-      find.bySemanticsLabel(l10n.decksCourseChipDue('Telugu', due)),
-      findsOneWidget,
+      tester.widget<CourseCard>(find.byType(CourseCard)).view.language.code,
+      'hi',
     );
   });
 
@@ -185,11 +174,11 @@ void main() {
     expect(onScreen(tester, find.text(l10n.pathUpNext)), isTrue);
   });
 
-  testWidgets('a unit opens its screen; a course chip switches the path', (
+  testWidgets('a unit opens its screen; the language bar switches the path', (
     tester,
   ) async {
     usePhone(tester);
-    await pumpDecks(tester, state: await teluguLearner());
+    final state = await pumpDecks(tester, state: await teluguLearner());
     await tester.tap(find.text('Family'));
     await tester.pumpAndSettle();
     expect(
@@ -199,9 +188,8 @@ void main() {
     await tester.pageBack();
     await tester.pumpAndSettle();
 
-    await tester.tap(find.widgetWithText(FilterChip, 'Hindi'));
+    state.showLanguage('hi');
     await tester.pumpAndSettle();
-    expect(tester.widget<CourseChips>(find.byType(CourseChips)).selected, 'hi');
     final l10n = l10nOf(tester);
     expect(
       find.text(l10n.decksCourseHeading('Hindi', 'English')),
@@ -317,8 +305,8 @@ void main() {
     }
   });
 
-  testWidgets('search finds units across courses, by name, deck or '
-      'language, and opens them', (tester) async {
+  testWidgets('search finds units in the bar\'s course alone, by name, '
+      'deck or language, and opens them (#527, #528)', (tester) async {
     usePhone(tester);
     final state = await pumpDecks(
       tester,
@@ -326,29 +314,16 @@ void main() {
       page: const DecksPage(planOf: PathFixtures.planOf),
     );
     final l10n = l10nOf(tester);
-    await tester.tap(find.byTooltip(l10n.decksSearchOpen));
-    await tester.pumpAndSettle();
+    expect(state.shownLanguage, 'te');
 
+    // Only Telugu's Family, though other courses have one too.
     await search(tester, 'family');
-    final families = find.text('Family');
-    // Every course with a Family unit.
-    final courses = <String>{
-      for (final code in state.languages.map((l) => l.code))
-        if (state
-            .courseUnits(code)
-            .any((u) => u.any((e) => state.themeOf(e)?.id == 'family')))
-          code,
-    };
-    expect(families, findsNWidgets(courses.length));
-    // The Telugu one first, with its level, as the plan marks it.
+    expect(find.text('Family'), findsOneWidget);
     expect(find.textContaining('Telugu · A1 · '), findsOneWidget);
 
-    // A deck's name finds its unit; a language's name all its units.
+    // A Hindi deck is not found while the bar shows Telugu.
     await search(tester, 'parmesh');
-    expect(
-      find.text(state.deckById('hi-en-reading-panch-parmeshwar')!.deck.name),
-      findsOneWidget,
-    );
+    expect(find.text(l10n.decksEmptySearch), findsOneWidget);
     await search(tester, 'telugu health');
     expect(find.text('Health'), findsOneWidget);
     expect(find.text(l10n.pathComing), findsOneWidget);
@@ -366,28 +341,46 @@ void main() {
     await tester.pageBack();
     await tester.pumpAndSettle();
 
-    // Closing the search shows the path again.
+    // With the bar on Hindi, the search looks in Hindi's course.
+    state.showLanguage('hi');
+    await search(tester, 'parmesh');
+    expect(
+      find.text(state.deckById('hi-en-reading-panch-parmeshwar')!.deck.name),
+      findsOneWidget,
+    );
+    expect(find.textContaining('Telugu · '), findsNothing);
+
+    // Clearing the search shows the path again, under the field.
     await tester.tap(find.byTooltip(l10n.decksSearchClose));
     await tester.pumpAndSettle();
-    expect(find.byType(TextField), findsNothing);
+    expect(find.byType(TextField), findsOneWidget);
+    expect(
+      tester.widget<TextField>(find.byType(TextField)).controller!.text,
+      isEmpty,
+    );
     expect(find.text(l10n.pathUpNext), findsOneWidget);
   });
 
-  testWidgets('a unit of a language the profile does not learn says Start '
-      'in search', (tester) async {
+  testWidgets('Decks shows only the languages the learner learns (owner, '
+      '2026-10-16: "No, only my languages")', (tester) async {
     usePhone(tester);
-    await pumpDecks(
+    // Mira learns Marathi alone.
+    final state = await pumpDecks(
       tester,
-      // Under All languages: Mira learns one language, which the language
-      // menu shows by default, and then search finds only its units (#461).
-      state: AppState.test(
-        profiles: const [GalleryFixtures.mira],
-        settings: SettingsNotifier(languageChoice: LanguageChoice.all),
-      ),
+      state: AppState.test(profiles: const [GalleryFixtures.mira]),
       page: const DecksPage(initialQuery: 'family'),
     );
-    final l10n = l10nOf(tester);
-    expect(find.text(l10n.commonStartBadge), findsWidgets);
+    expect(state.languageChoices.map((l) => l.code), <String>['mr']);
+    expect(find.textContaining('Marathi · '), findsWidgets);
+    for (final language in state.languages) {
+      if (language.code == 'mr') continue;
+      expect(
+        find.textContaining('${language.name} · '),
+        findsNothing,
+        reason: language.name,
+      );
+    }
+    expect(find.text(l10nOf(tester).commonStartBadge), findsNothing);
   });
 
   testWidgets('a broken file is a row with its file, line and message, '
@@ -407,8 +400,6 @@ void main() {
       findsOneWidget,
     );
 
-    await tester.tap(find.byTooltip(l10n.decksSearchOpen));
-    await tester.pumpAndSettle();
     await search(tester, 'broken');
     expect(find.byType(BrokenDeckTile), findsOneWidget);
   });
@@ -442,12 +433,12 @@ void main() {
     );
     final l10n = l10nOf(tester);
     expect(find.text(l10n.commonDecksFailed), findsOneWidget);
-    expect(find.byType(CourseChips), findsNothing);
+    expect(find.byType(CourseCard), findsNothing);
 
     await tester.tap(find.text(l10n.commonRetry));
     await tester.pumpAndSettle();
     expect(state.status, CatalogStatus.ready);
     expect(find.text(l10n.commonDecksFailed), findsNothing);
-    expect(find.byType(CourseChips), findsOneWidget);
+    expect(find.byType(CourseCard), findsOneWidget);
   });
 }

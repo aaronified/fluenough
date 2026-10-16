@@ -98,7 +98,7 @@ void main() {
     );
     final body = issueBodyOf(url);
     expect(body, startsWith(l10n.reportIssuePrompt));
-    expect(body, endsWith('---\nScreen: /\nShowing: ${l10n.decksTitle}'));
+    expect(body, endsWith('---\nScreen: /\nShowing: Decks'));
   });
 
   testWidgets('ticked, the issue carries the device lines shown', (
@@ -122,7 +122,7 @@ void main() {
     await tester.tap(find.text(l10n.reportOpenGitHub));
     await tester.pumpAndSettle();
     final body = issueBodyOf(links.asked.single);
-    expect(body, contains('Showing: ${l10n.decksTitle}\n$shown'));
+    expect(body, contains('Showing: Decks\n$shown'));
     for (final key in <String>[
       'App',
       'System',
@@ -224,7 +224,7 @@ void main() {
     expect(find.text(l10n.reportGitHubTitle), findsNothing);
     final page = tester.widget<ReportPage>(find.byType(ReportPage));
     expect(page.request.screen, '/');
-    expect(page.request.detail, l10n.decksTitle);
+    expect(page.request.detail, 'Decks');
     expect(page.request.device['App'], startsWith('fluenough '));
   });
 

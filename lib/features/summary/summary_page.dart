@@ -28,7 +28,8 @@ const double _rowMaxScale = 1.5;
 ///
 /// After one language's part of Today, it is the break between languages:
 /// that language is done for today, and each other language with something
-/// left is offered next, one at a time.
+/// left is offered next, one at a time; starting one switches the language
+/// bar to it (#528).
 class SummaryPage extends StatelessWidget {
   const SummaryPage({super.key, required this.result});
 
@@ -49,10 +50,7 @@ class SummaryPage extends StatelessWidget {
     ].firstOrNull;
     final next = finished == null
         ? const <LanguageInfo>[]
-        : <LanguageInfo>[
-            for (final language in state.todayLanguages)
-              if (language.code != finished.code) language,
-          ];
+        : state.nextTodayLanguages(finished.code);
     // A lesson in the language just finished (ADR-0024), once no other
     // language is waiting for its reviews: today's, or another.
     final lesson = finished == null || next.isNotEmpty
@@ -132,10 +130,15 @@ class SummaryPage extends StatelessWidget {
                         for (final language in next)
                           FilledButton.tonal(
                             style: AppButtonStyles.secondary(context),
-                            onPressed: () => AppNavigator.nextDrill(
-                              context,
-                              DrillRequest.today(language: language.code),
-                            ),
+                            onPressed: () {
+                              // The bar follows: Today, Decks and Progress
+                              // show the language started (#528).
+                              state.showLanguage(language.code);
+                              AppNavigator.nextDrill(
+                                context,
+                                DrillRequest.today(language: language.code),
+                              );
+                            },
                             child: Text(
                               l10n.summaryStartLanguage(
                                 language.name,
