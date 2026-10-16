@@ -295,7 +295,8 @@ class Images(Case):
             "source": "https://commons.wikimedia.org/wiki/File:A house.jpg",
             "license": "CC-BY-SA-4.0", "credit": "A. Photographer"})
         self.assertTrue(any("section=4" in url for url in network.asked))
-        self.assertTrue(network.asked[-1].startswith("https://upload.wikimedia.org/thumb/"))
+        self.assertTrue(any(url.startswith("https://upload.wikimedia.org/thumb/")
+                            for url in network.asked))
         self.assertEqual((self.decks / "zz/images/zz-9001.webp").read_bytes(), b"converted")
         self.assertIn("Images by source: wiktionary 1.", out)
         self.assertEqual(vd.validate(self.decks / CORE).errors, [])
@@ -345,6 +346,85 @@ class Images(Case):
     def test_the_emoji_names(self) -> None:
         self.assertEqual(iw.emoji_hex("🏠"), ["1F3E0"])
         self.assertEqual(iw.emoji_hex("\u2764\ufe0f"), ["2764", "2764-FE0F"])
+
+
+def page_with(name: str, licence: str = "CC BY 2.0") -> Network:
+    """Every Wiktionary page with one picture, [name], under [licence]."""
+    return Network({
+        "prop=sections": SECTIONS,
+        "prop=images": json.dumps({"parse": {"images": [name]}}).encode(),
+        "commons.wikimedia.org/w/api.php": commons_reply(name, licence=licence),
+        "upload.wikimedia.org/thumb/": b"PNG",
+        "openmoji": b"PNG"})
+
+
+class Proposals(Case):
+    """A noun card without a picture (#523, owner, 2026-10-16: "Also mark
+    concrete", "Importer proposes"): its image is proposed in the report,
+    and written only once approved."""
+
+    run_images = Images.run_images
+
+    def test_proposed_not_written(self) -> None:
+        network = page_with("A building.jpg")
+        code, out, _ = self.run_images(network)
+        self.assertEqual(code, 0)
+        self.assertNotIn("image", self.card(CORE, "zz-9002"))
+        self.assertFalse((self.decks / "zz/images/zz-9002.webp").exists())
+        self.assertIn("## Image proposals", out)
+        self.assertIn("| zz-9002 | मकान | A building.jpg | CC-BY-2.0 | A. Speaker "
+                      "| https://commons.wikimedia.org/wiki/File:A building.jpg "
+                      "| https://en.wiktionary.org/wiki/मकान |", out)
+        # Only zz-9001's picture is downloaded, not the proposed one.
+        self.assertEqual(len([u for u in network.asked if "upload.wikimedia.org" in u]), 1)
+
+    def test_only_nouns_with_one_entry(self) -> None:
+        _, out, _ = self.run_images(page_with("A building.jpg"))
+        for cid in ("zz-9001", "zz-9003", "zz-9004", "zz-9005", "zz-9007"):
+            self.assertNotIn(f"| {cid} |", out)
+
+    def test_proposed_without_write(self) -> None:
+        network = page_with("A building.jpg")
+        with mock.patch.object(iw, "http_get", network), \
+                mock.patch.object(iw, "convert", fake_convert), \
+                mock.patch.object(iw.shutil, "which", return_value="/usr/bin/ffmpeg"):
+            _, out, _ = self.run_tool("--images", write=False)
+        self.assertIn("| zz-9002 | मकान | A building.jpg |", out)
+        self.assertFalse((self.decks / "zz/images").exists())
+
+    def test_a_picture_that_cannot_ship_is_not_proposed(self) -> None:
+        _, out, _ = self.run_images(page_with("A building.jpg", licence="GFDL"))
+        self.assertNotIn("## Image proposals", out)
+        self.assertIn("Pictures not proposed:", out)
+        self.assertIn("- zz-9002 मकान: A building.jpg: licence 'GFDL' cannot ship", out)
+
+    def test_approved_is_written(self) -> None:
+        code, out, _ = self.run_images(page_with("A building.jpg"), "--approve", "zz-9002")
+        self.assertEqual(code, 0)
+        building = self.card(CORE, "zz-9002")
+        self.assertEqual(building["image"], "decks/zz/images/zz-9002.webp")
+        self.assertEqual(building["image_credit"], {
+            "source": "https://commons.wikimedia.org/wiki/File:A building.jpg",
+            "license": "CC-BY-2.0", "credit": "A. Speaker"})
+        self.assertNotIn("picture", building)
+        self.assertNotIn("| zz-9002 |", out)
+        self.assertEqual(vd.validate(self.decks / CORE).errors, [])
+
+    def test_an_approval_that_fits_no_proposal(self) -> None:
+        _, out, _ = self.run_images(page_with("A building.jpg"), "--approve",
+                                    "zz-9001,zz-9004")
+        self.assertIn("Approved images not imported:", out)
+        self.assertIn("- zz-9001: not a noun card without a picture", out)
+        self.assertIn("- zz-9004: not a noun card without a picture", out)
+        self.assertNotIn("image", self.card(CORE, "zz-9004"))
+
+    def test_approve_needs_images_and_write(self) -> None:
+        for extra, write in ((("--approve", "zz-9002"), True),
+                             (("--images", "--approve", "zz-9002"), False)):
+            with mock.patch.object(iw.shutil, "which", return_value="/usr/bin/ffmpeg"):
+                code, _, err = self.run_tool(*extra, write=write)
+            self.assertEqual(code, 2)
+            self.assertIn("--approve needs --images and --write", err)
 
 
 class Licences(unittest.TestCase):

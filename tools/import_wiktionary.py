@@ -54,6 +54,11 @@ is ambiguous and gets only an IPA all of them agree on. Then it fills
   drawing of its `picture` (CC BY-SA 4.0). It is shrunk to 256 pixels and
   converted to WebP with `ffmpeg` at `decks/<lang>/images/<card id>.webp`,
   with its `image_credit`. With none, the card keeps its Noto picture.
+  A noun card without a `picture` gets no image: where its page has one
+  picture that can ship, the report proposes it (owner, 2026-10-16, #523:
+  "Also mark concrete", "Importer proposes"), and a reviewer approves each
+  before it lands. `--approve <card id>` (with `--images --write`) then
+  writes the approved cards' images.
 
 Every item it adds names its `source` (owner: "Per item"): the entry's
 Wiktionary page and nothing else (owner, 2026-10-16, #518: "Link only").
@@ -839,9 +844,9 @@ def convert_image(data: bytes, suffix: str, out: Path) -> None:
                  "-frames:v", "1", "-c:v", "libwebp", "-quality", "80", str(out)])
 
 
-def commons_image(name: str, out: Path) -> dict:
-    """Downloads a Commons file's 256-pixel rendering, converts it to WebP at
-    [out], and returns its credit."""
+def commons_picture(name: str) -> tuple[dict, str]:
+    """A Commons file's page, URL and credit, and its licence as the deck
+    writes it; raises where it cannot ship in a CC BY-SA 4.0 deck."""
     info = commons_file(name)
     licence = licence_id(info["licence"])
     if licence is None:
@@ -849,6 +854,13 @@ def commons_image(name: str, out: Path) -> dict:
                            f"BY-SA 4.0 deck")
     if not info["credit"]:
         raise ImportError_(f"{name}: Commons names no one to credit")
+    return info, licence
+
+
+def commons_image(name: str, out: Path) -> dict:
+    """Downloads a Commons file's 256-pixel rendering, converts it to WebP at
+    [out], and returns its credit."""
+    info, licence = commons_picture(name)
     url = info["thumb"] or info["url"]
     if not url:
         raise ImportError_(f"{name}: Commons gives no file")
@@ -893,6 +905,20 @@ def fetch_image(t: Target, entry: dict | None, language: str, out: Path
     except (ImportError_, OSError, subprocess.CalledProcessError) as e:
         problems.append(str(e))
     raise ImportError_("; ".join(problems))
+
+
+def image_proposal(t: Target, language: str) -> dict | None:
+    """The image the report proposes for a noun card without a `picture`
+    (#523: "Importer proposes"): the one picture of its Wiktionary page's
+    section, with its licence and credit checked. None where the page has
+    no single picture; raises where it has one that cannot ship. Nothing is
+    downloaded."""
+    name = wiktionary_image(t.target, language)
+    if not name:
+        return None
+    info, licence = commons_picture(name)
+    return {"cid": t.cid, "word": t.target, "file": name, "license": licence,
+            "credit": info["credit"], "commons": info["page"], "page": page(t.target)}
 
 
 # --- Editing the files ----------------------------------------------------------
@@ -962,6 +988,12 @@ class Report:
     # Images by where they came from, and the cards none could be found for.
     images_from: dict[str, int] = field(default_factory=dict)
     images_failed: list[str] = field(default_factory=list)
+    # Images proposed for noun cards without a picture, for a reviewer to
+    # approve (#523), the candidates that cannot ship, and the approved
+    # cards none was written for.
+    proposals: list[dict] = field(default_factory=list)
+    proposals_refused: list[str] = field(default_factory=list)
+    approved_failed: list[str] = field(default_factory=list)
     flow: list[str] = field(default_factory=list)
 
     def render(self, name: str, dump: Path, dump_sha: str, dump_date: str,
@@ -994,6 +1026,22 @@ class Report:
         if self.images_failed:
             lines += ["", "Images not imported (the card keeps its Noto picture):", ""]
             lines += [f"- {x}" for x in self.images_failed]
+        if self.approved_failed:
+            lines += ["", "Approved images not imported:", ""]
+            lines += [f"- {x}" for x in self.approved_failed]
+        if self.proposals:
+            lines += ["", "## Image proposals", "",
+                      "Noun cards without a `picture` whose Wiktionary page has one "
+                      "picture that can ship. None is written: a reviewer approves "
+                      "each, and `--images --write --approve <card id>` adds it.", "",
+                      "| Card | Word | Commons file | Licence | Credit | Commons page "
+                      "| Wiktionary page |", "|---|---|---|---|---|---|---|"]
+            lines += [f"| {p['cid']} | {p['word']} | {p['file']} | {p['license']} "
+                      f"| {p['credit']} | {p['commons']} | {p['page']} |"
+                      for p in self.proposals]
+        if self.proposals_refused:
+            lines += ["", "Pictures not proposed:", ""]
+            lines += [f"- {x}" for x in self.proposals_refused]
         lines += ["", "## Still missing", "",
                   "Cards still without the field, for the builder to write "
                   "(the build-deck skill) and reviewers to check.", ""]
@@ -1041,7 +1089,8 @@ LANGUAGE_NAMES = {"hi": "Hindi", "bn": "Bengali", "te": "Telugu", "mr": "Marathi
 
 
 def run(code: str, dump: Path, decks: Path, dump_date: str, write: bool,
-        audio: bool, images: bool = False) -> str:
+        audio: bool, images: bool = False, approve: frozenset[str] = frozenset()
+        ) -> str:
     if audio or images:
         ffmpeg()
     lang = read_language(decks, code)
@@ -1081,6 +1130,40 @@ def run(code: str, dump: Path, decks: Path, dump_date: str, write: bool,
         f.core.append(("picture", [f"    image: {q(f'decks/{code}/images/{t.cid}.webp')}",
                                    f"    image_credit: {flow_map(list(credit.items()))}"]))
         f.fields.append("image")
+    # Noun cards without a picture: proposed, never written unless approved
+    # (owner, 2026-10-16, #523: "Importer proposes").
+    approved: set[str] = set()
+    for t in lang.targets:
+        if not images or t.pos != "noun" or "picture" in t.card or "image" in t.card:
+            continue
+        f = fills[t.cid]
+        if f.entry is None:
+            continue
+        try:
+            proposal = image_proposal(t, lang.name)
+        except (ImportError_, OSError, ValueError) as e:
+            report.proposals_refused.append(f"{t.cid} {t.target}: {e}")
+            continue
+        if proposal is None:
+            continue
+        if t.cid not in approve or not write:
+            report.proposals.append(proposal)
+            continue
+        approved.add(t.cid)
+        out = decks / code / "images" / f"{t.cid}.webp"
+        try:
+            credit = commons_image(proposal["file"], out)
+        except (ImportError_, OSError, ValueError, subprocess.CalledProcessError) as e:
+            report.approved_failed.append(f"{t.cid} {t.target}: {e}")
+            continue
+        report.images_from["wiktionary"] = report.images_from.get("wiktionary", 0) + 1
+        f.core.append(("pos", [f"    image: {q(f'decks/{code}/images/{t.cid}.webp')}",
+                               f"    image_credit: {flow_map(list(credit.items()))}"]))
+        f.fields.append("image")
+    for cid in sorted(approve - approved):
+        report.approved_failed.append(
+            f"{cid}: not a noun card without a picture or image whose Wiktionary "
+            f"page has one picture that can ship")
     tally(report, lang.targets, fills, lang.genders, audio, images)
     if write:
         by_file: dict[Path, list[tuple[re.Pattern, int, list]]] = {}
@@ -1118,6 +1201,10 @@ def main(argv: list[str]) -> int:
     parser.add_argument("--images", action="store_true",
                         help="download and convert images for cards with a picture "
                              "(needs ffmpeg)")
+    parser.add_argument("--approve", action="append", default=[], metavar="CARD_ID",
+                        help="write the proposed image of these noun cards without a "
+                             "picture, once a reviewer has approved it (with --images "
+                             "--write; repeat it, or separate ids with commas)")
     parser.add_argument("--report", type=Path, help="write the report here")
     args = parser.parse_args(argv[1:])
     if not vd.LANG_RE.fullmatch(args.lang) or not (args.decks / args.lang).is_dir():
@@ -1126,13 +1213,17 @@ def main(argv: list[str]) -> int:
     if not args.dump.is_file():
         print(f"error: {args.dump} does not exist", file=sys.stderr)
         return 2
+    approve = frozenset(c.strip() for a in args.approve for c in a.split(",") if c.strip())
+    if approve and not (args.images and args.write):
+        print("error: --approve needs --images and --write", file=sys.stderr)
+        return 2
     date = args.dump_date or dt.date.fromtimestamp(args.dump.stat().st_mtime).isoformat()
     if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date):
         print(f"error: --dump-date must be YYYY-MM-DD, got {date!r}", file=sys.stderr)
         return 2
     try:
         text = run(args.lang, args.dump, args.decks, date, args.write, args.audio,
-                   args.images)
+                   args.images, approve)
     except ImportError_ as e:
         print(f"error: {e}", file=sys.stderr)
         return 2
