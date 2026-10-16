@@ -3219,6 +3219,26 @@
       }
     }
   },
+  "setRowNotLearnt": "{word}, {meaning}, not learnt yet. Play",
+  "@setRowNotLearnt": {
+    "description": "Screen reader label of a set member in a Full list of every verb of the course that the learner has not learnt yet, #515. {word} is the word with its reading, {meaning} its meaning.",
+    "placeholders": {
+      "word": { "type": "String" },
+      "meaning": { "type": "String" }
+    }
+  },
+  "setNotLearnt": "Not learnt yet",
+  "@setNotLearnt": {
+    "description": "Mark on a set member in a Full list of every verb of the course that the learner has not learnt yet, #515."
+  },
+  "setSheetLearnt": "{count, plural, =1{1 form · {learnt} learnt} other{{count} forms · {learnt} learnt}}",
+  "@setSheetLearnt": {
+    "description": "Under the title of a Full list of one form across every verb of the course, #515: how many forms, and how many of them the learner has learnt.",
+    "placeholders": {
+      "count": { "type": "int" },
+      "learnt": { "type": "int" }
+    }
+  },
   "setRowNew": "{word}, {meaning}, new. Play",
   "@setRowNew": {
     "description": "A screen reader's label for a new member's row on a set card (#515); tapping the row plays the word.",
@@ -3298,10 +3318,6 @@
         "example": "तुम (tum)"
       }
     }
-  },
-  "setKnownOthers": "You know the others already.",
-  "@setKnownOthers": {
-    "description": "After a split set card's Next line (#515), when the learner knows some members: they are not asked."
   },
   "setListPair": "{first} and {second}",
   "@setListPair": {

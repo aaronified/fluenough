@@ -174,10 +174,14 @@ class CoreSet extends CoreCard {
     required String id,
     this.members = const <String>[],
     this.rule,
+    this.shown = const <String>[],
   }) : super(id);
 
   final List<String> members;
   final SetRule? rule;
+
+  /// A set of one slot across the words: the rows its card shows.
+  final List<String> shown;
 }
 
 /// A core card's example, its translation being in each layer.
@@ -722,6 +726,7 @@ class _Merge {
       explanation: explanation,
       members: card.members,
       rule: card.rule,
+      shown: card.shown,
     );
   }
 
