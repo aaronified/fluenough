@@ -22,7 +22,11 @@ import '../../ui/widgets/snack.dart';
 /// its start is announced once instead, since the Download button that had
 /// the focus is gone.
 class UpdateSection extends StatelessWidget {
-  const UpdateSection({super.key});
+  const UpdateSection({super.key, this.heading = true});
+
+  /// Whether the group has its own heading: not on Settings' Updates page,
+  /// whose title names it.
+  final bool heading;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +35,7 @@ class UpdateSection extends StatelessWidget {
     return ListenableBuilder(
       listenable: settings,
       builder: (context, _) => GroupedList.settings(
-        header: l10n.settingsSectionUpdates,
+        header: heading ? l10n.settingsSectionUpdates : null,
         children: <Widget>[
           const UpdateCheckRow(),
           GroupedTile.toggle(
