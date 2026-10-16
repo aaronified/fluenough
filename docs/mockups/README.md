@@ -37,13 +37,20 @@ Built 2026-10-16 at the owner's request ("Both", "Yes, build them now").
 They are not spec until the owner approves them. Everything they mark
 Proposed is listed in their decisions tables.
 
-- `deck-filter.html`: the Decks tab with a filter for All, Words,
-  Phrases, Grammar and Reading (#527). All is today's path. The other
-  filters list that kind's decks in path order. Each deck is mapped from
-  what decks carry today (`kind`, the `grammar` tag, phrasebook cards and
-  sentence content), with every Bengali and Hindi deck's mapping listed.
-  It shows every filter, one language shown, 1.4x text and an empty
-  result (Spanish, Reading).
+- `deck-search.html`: the Decks tab's one search for decks, units and
+  words, in place of the filter row (#527; owner, 2026-10-16: "I just want
+  people to quickly find stuff. The filters can be replaced by a fts5
+  search with typo tolerance and the kind can be a chip."). It finds deck
+  and unit names and every card's word, reading and meaning, forgives
+  typos, and groups the results, decks and units first, then words. Each
+  result has a kind chip (Words, Grammar, Script, Reading) that narrows
+  the search to that kind ("Both"), with a chip and a ✕ to go back.
+  Sentence decks have no chip and show only while no kind is chosen. It
+  draws the owner's three cases with a typo each: "travl" (the coming
+  Travel unit), "numbrs" (the numbers units) and "you" and "yuo" (the
+  words for "you" in Hindi and Bengali, under their set cards), then
+  nothing found, nothing of a kind, and 1.4x. A note shows how FTS5 does
+  it (a trigram index, then edit distance). It replaces `deck-filter.html`.
 - `language-swipe.html`: a sideways swipe on the top row of Today, Decks
   and Progress changes the language shown, and the row's marks show the
   active one (#528). It shows before, during and after a swipe, with two
