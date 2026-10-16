@@ -64,7 +64,15 @@ void main() {
       final state = AppState.test();
       addTearDown(state.dispose);
       await state.load();
-      final decks = state.decks.where(state.canDrill).toList();
+      // The IPA course is learned only when chosen, and reads Start until
+      // then (ADR-0041).
+      final decks = state.decks
+          .where(
+            (e) =>
+                state.canDrill(e) &&
+                state.currentProfile.learns(e.language.code),
+          )
+          .toList();
       expect(decks, isNotEmpty);
       // Pending: in the first two units of its course's path (ADR-0013).
       DeckBadgeKind expected(DeckEntry entry) =>
