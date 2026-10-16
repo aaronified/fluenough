@@ -1,0 +1,85 @@
+schema: 1
+id: "ipa-retroflex"
+part: "core"
+kind: "vocab"
+language: { code: "ipa", iso639_3: "zxx", name: "IPA", script: "ipa", typed: false, icon: "ə" }
+license: "CC0-1.0"
+source: "Arranged after the IPA chart, 2020 revision, of the International Phonetic Association (https://www.internationalphoneticassociation.org/content/ipa-chart), and the Handbook of the International Phonetic Association (1999)"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ipa-0055"
+    target: "ʈʰ"
+    tags: ["hi", "mr", "gu", "bn", "te", "kn"]
+    examples:
+      - target: "आठ"
+        language: "hi"
+      - target: "મીઠું"
+        language: "gu"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0056"
+    target: "ɖʱ"
+    tags: ["hi", "mr", "gu", "bn", "te", "kn"]
+    examples:
+      - target: "ढाई"
+        language: "hi"
+      - target: "ঢাক"
+        language: "bn"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0057"
+    target: "ʂ"
+    tags: ["te", "kn"]
+    examples:
+      - target: "భాష"
+        language: "te"
+      - target: "ಭಾಷೆ"
+        language: "kn"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0058"
+    target: "ʐ"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0059"
+    target: "ɭ"
+    tags: ["mr", "gu", "te", "kn"]
+    examples:
+      - target: "पोळी"
+        language: "mr"
+      - target: "నీళ్ళు"
+        language: "te"
+      - target: "ಮಗಳು"
+        language: "kn"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0060"
+    target: "ɻ"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0061"
+    target: "ɽ"
+    tags: ["hi", "bn"]
+    examples:
+      - target: "सड़क"
+        language: "hi"
+      - target: "বাড়ি"
+        language: "bn"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0062"
+    target: "ɽʱ"
+    tags: ["hi"]
+    examples:
+      - target: "पढ़ना"
+        language: "hi"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
