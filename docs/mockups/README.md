@@ -51,12 +51,26 @@ Proposed is listed in their decisions tables.
   words for "you" in Hindi and Bengali, under their set cards), then
   nothing found, nothing of a kind, and 1.4x. A note shows how FTS5 does
   it (a trigram index, then edit distance). It replaces `deck-filter.html`.
-- `language-swipe.html`: a sideways swipe on the top row of Today, Decks
+- `language-bar.html`: the language bar the owner chose for Today, Decks
+  and Progress (#528; owner, 2026-10-16: "The folded top bar. No dropdown.
+  Instead of dots, use the glyphs (not filled icons, just the glyphs, alpha
+  passed). Show mockup. Searchbar looked fine"). Always folded, 56 dp: the
+  shown language as its chip, glyph and name, with no arrow; every other
+  choice as its bare glyph at 64% alpha (4.5:1 or more everywhere); the bug
+  report button at the end. A sideways swipe on the bar changes the
+  language, and a tap opens the menu of every language with its chip
+  (owner, 2026-10-16). Drawn with 1, 2, 4 and 6 languages, before, during
+  and after a swipe, the menu, Today, Decks (with the proposals' search
+  bar, unchanged) and Progress, light, dark and pure black, 1.4x and
+  TalkBack. It supersedes `language-swipe.html` and
+  `language-bar-proposals.html`.
+- `language-swipe.html`: superseded by `language-bar.html`. A sideways swipe on the top row of Today, Decks
   and Progress changes the language shown, and the row's marks show the
   active one (#528). It shows before, during and after a swipe, with two
   and with four languages, at 1.4x, and with the menu and TalkBack as the
   tap and screen-reader alternatives.
-- `language-bar-proposals.html`: four proposals (A to D) for a top bar on
+- `language-bar-proposals.html`: superseded by `language-bar.html` (the
+  owner chose D's folded bar, 2026-10-16). Four proposals (A to D) for a top bar on
   Today, Decks and Progress that holds only the language chips and the
   bug report button (owner, 2026-10-16: "Language chips is better. I was
   thinking a top bar only for the language and the debug button. Do 3-4
