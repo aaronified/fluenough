@@ -302,7 +302,8 @@ layer, nor `pair`: in a core a [pair note](#notes) names the partner, and
 the card's sound-alike is taken from it.
 
 **A set card,** `kind: "set"`, is the one other card a vocab core writes:
-`id`, `kind` and `members` only ([Set cards](#set-cards)).
+`id`, `kind`, `members` and, for a set of one slot across the words,
+`shown` only ([Set cards](#set-cards)).
 
 **A core example** is `{ target, reading?, ipa?, bases?, source? }`. Its
 translation is in each layer, keyed by its target, so two examples of one
@@ -1422,6 +1423,7 @@ and its members are the table's cells with that value:
   - id: "te-9402"
     kind: "set"
     members: { rule: "te-grammar-verb-present", person: "atanu" }
+    shown: [{ ref: "te-0301" }, { ref: "te-0302" }, { ref: "te-0305" }]
 ```
 
 - **`rule`** names a rule, such as `te-rule-present-third`, for its slots
@@ -1433,9 +1435,17 @@ and its members are the table's cells with that value:
   cells in slot order, one verb across the persons. Any other key
   (`person`, `case`) fixes a **slot**: its value is a slot key of the table
   (and of the rule, where `rule` names one), and the members are that
-  slot's cells in row order, one person across the verbs. A learner is
-  shown only the cells whose word they were taught ("one person across the
-  verbs taught").
+  slot's cells in row order, one person across the verbs.
+- **`shown`**, on a set of one slot across the words only, and required
+  there: the rows its card shows, a few the deck chooses, as
+  `[{ ref: "<the row's card id>" }]`, at least two, each once, in the order
+  the card shows them (owner, 2026-10-16, #515: "A few curated verbs should
+  be good enough. And a full list will show all verbs in the course, with
+  unlearnt ones as well, but marked as such (learnt ones sorted to be on
+  top)."). Its members are those rows' cells of the slot. Its **Full
+  list** shows every cell of the slot in the course, in the table's order:
+  the learnt ones first, then the ones this lesson teaches, then the rest,
+  marked **Not learnt yet**.
 - **Member order is the table's** (owner, 2026-10-16: "Grammar order,
   request in"): a row's cells come in slot order, so the polite request,
   the last slot, is the last member.
@@ -1472,13 +1482,23 @@ prose](#script-in-prose-always-with-its-reading)).
   first appears, even when it is in two sets.
 - **The Full list** (owner: "Split sets only"): a set split over two cards
   or more has a Full list button on each part. It opens the whole set in a
-  bottom sheet, each member marked as on the card. A question about a
-  member of a split set shows the same button once answered, in a lesson,
-  in practice and in review, never before; for a form in two sets the
-  sheet lists both ("Show both").
+  bottom sheet, each member marked as on the card. A set of one slot
+  across the words always has one: its card shows only its `shown` rows,
+  and its Full list every row of the course, as above. A question about a
+  member of a split set, or about any cell in a slot set's Full list,
+  shows the same button once answered, in a lesson, in practice and in
+  review, never before; for a form in two sets the sheet lists both
+  ("Show both").
+- **What is skipped is named** (owner, 2026-10-16: "Name them always"):
+  the line under a set's last part names the known members, each with its
+  reading, as "You know तुम (tum) already.", for a split set and for verb
+  forms too.
 - **Long words** on a question card break between syllables ("Break
   between syllables"): only between aksharas (grapheme clusters, a virama
-  joined to the consonant after it), never inside one.
+  joined to the consonant after it), never inside one, and only when the
+  word is wider than the card. A word in a joined script, such as Urdu's
+  Arabic script, is never broken: it shrinks until it fits ("Shrink Urdu
+  instead").
 
 **What the validator checks:** a set card only in a vocab core (a
 single-file deck or a layer's own card is refused), with only `id`,
@@ -1486,7 +1506,9 @@ single-file deck or a layer's own card is refused), with only `id`,
 set itself; across files, each ref a card of the language and not a set,
 and no deck listing a set card by ref; a rules set's `rule` a rule or rules
 core of the language, its value a row of the table under a part of speech
-of its rows, or else a slot of the table and the rule; and on each layer
+of its rows, or else a slot of the table and the rule; `shown` on a slot's
+set only, and required there, at least two refs, each once, each a row of
+the table with a form in that slot; and on each layer
 entry, `native` and `explanation`, and nothing else.
 
 **Every closed group** (owner) needs one, in each language where the group
