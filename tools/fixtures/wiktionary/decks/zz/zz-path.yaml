@@ -1,0 +1,11 @@
+# A language with no decks in the repository, written in Devanagari, for
+# tools/test_import_wiktionary.py: the import reads its genders.
+schema: 1
+kind: "path"
+id: "zz-path"
+language: "zz"
+genders: ["m", "f"]
+units:
+  - decks: ["zz-home"]
+    words: 7
+    milestone: "A1"

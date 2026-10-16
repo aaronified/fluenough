@@ -1,0 +1,40 @@
+# A core for tools/test_import_wiktionary.py, with Hindi words as the
+# language zz: what the Wiktionary import fills, and what it leaves alone.
+schema: 1
+id: "zz-home"
+part: "core"
+kind: "vocab"
+language: { code: "zz", iso639_3: "zzz", name: "Testlang", script: "devanagari", tts: "hi-IN", icon: "zz" }
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  - id: "zz-9001"
+    target: "घर"
+    reading: "ghar"
+    picture: "🏠"
+    pos: "noun"
+  - id: "zz-9002"
+    target: "मकान"
+    reading: "makān"
+    ipa: "məkaːn"
+    pos: "noun"
+    gender: "m"
+    synonyms:
+      - { id: "home", ref: "zz-9001" }
+  - id: "zz-9003"
+    target: "कल"
+    reading: "kal"
+    pos: "adv"
+  - id: "zz-9004"
+    target: "बड़ा"
+    reading: "baṛā"
+    pos: "adj"
+  - id: "zz-9005"
+    target: "है"
+    reading: "hai"
+    pos: "verb"
+  - { id: "zz-9006", target: "पानी", reading: "pānī", pos: "noun" }
+  - id: "zz-9007"
+    target: "रसोईघर"
+    reading: "rasōīghar"
+    pos: "noun"
