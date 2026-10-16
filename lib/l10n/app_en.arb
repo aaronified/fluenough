@@ -131,13 +131,63 @@
   "@commonListSeparator": {
     "description": "Placed between items when the app lists several names in a row, such as the languages a profile learns: \"Hindi, Spanish\". Keep any spacing your language uses."
   },
-  "languageMenuAll": "All languages",
-  "@languageMenuAll": {
-    "description": "In the language menu at the top of Today, Decks and Progress: the choice that shows every language the learner learns together, rather than one."
+  "languageBarLabel": "Language shown: {language}, {position} of {count, plural, =1{1 language} other{{count} languages}}",
+  "@languageBarLabel": {
+    "description": "What the screen reader says of the language bar at the top of Today, Decks and Progress: the language shown, and its place among the languages the learner learns, as in \"Language shown: Bengali, 2 of 4 languages\".",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      },
+      "position": {
+        "type": "int",
+        "example": "2"
+      },
+      "count": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "languageBarHint": "choose a language",
+  "@languageBarHint": {
+    "description": "The screen reader's hint for the language bar, after \"Double-tap to\": tapping it opens the menu of every language."
+  },
+  "languageBarNext": "Next language: {language}",
+  "@languageBarNext": {
+    "description": "A screen-reader action on the language bar, in place of a swipe: shows the next language the learner learns.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "languageBarPrevious": "Previous language: {language}",
+  "@languageBarPrevious": {
+    "description": "A screen-reader action on the language bar, in place of a swipe: shows the previous language the learner learns.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "languageBarAll": "All",
+  "@languageBarAll": {
+    "description": "The button on Progress's language bar, just before the bug report button, that counts every language's numbers together. Short: it sits in a 48 dp slot."
+  },
+  "languageBarAllLabel": "All languages",
+  "@languageBarAllLabel": {
+    "description": "What the screen reader calls Progress's All button, a toggle."
+  },
+  "languageBarAllHint": "show every language's numbers together",
+  "@languageBarAllHint": {
+    "description": "The screen reader's hint for Progress's All button, after \"Double-tap to\"."
   },
   "languageMenuLabel": "Language shown: {language}",
   "@languageMenuLabel": {
-    "description": "Tooltip and screen-reader label of the language menu button at the top of Today, Decks, Progress and a deck's page. It chooses which language's lessons, decks and numbers the whole app shows. The placeholder is a language's name, such as \"Telugu\", or languageMenuAll.",
+    "description": "Tooltip and screen-reader label of the language menu button at the top of a deck's or a unit's page, and what the screen reader says once the language bar at the top of Today, Decks and Progress shows another language. It names which language's lessons, decks and numbers the whole app shows. The placeholder is a language's name, such as \"Telugu\".",
     "placeholders": {
       "language": {
         "type": "String",
@@ -886,10 +936,6 @@
   "@todayFactBody": {
     "description": "Body of the daily fact card while it is not built yet."
   },
-  "decksTitle": "Decks",
-  "@decksTitle": {
-    "description": "Heading of the Decks tab."
-  },
   "decksSearchHint": "Search by deck, language or theme",
   "@decksSearchHint": {
     "description": "Placeholder and label of the deck search field. Each word searched for is matched on its own, so 'hindi market' finds Hindi's Market deck."
@@ -1010,35 +1056,13 @@
   "@decksBrokenBadge": {
     "description": "Badge on a row for a deck file that failed to parse."
   },
-  "decksSearchOpen": "Search units",
-  "@decksSearchOpen": {
-    "description": "Tooltip of the search button on the Decks tab: opens a search across every course's units."
-  },
   "decksSearchClose": "Close search",
   "@decksSearchClose": {
     "description": "Tooltip of the button that closes the search on the Decks tab and shows the path again."
   },
-  "decksUnitSearchHint": "Search units in every course",
+  "decksUnitSearchHint": "Search units in this course",
   "@decksUnitSearchHint": {
-    "description": "Hint in the Decks tab's search field. A search finds units by their name, their decks' names, their theme or their language."
-  },
-  "decksCoursesLabel": "Courses",
-  "@decksCoursesLabel": {
-    "description": "What a screen reader calls the row of course chips on the Decks tab, one per language."
-  },
-  "decksCourseChipDue": "{language}, {count, plural, =1{1 due} other{{count} due}}",
-  "@decksCourseChipDue": {
-    "description": "What a screen reader hears for a course chip with reviews due: the language, then how many reviews are due in it.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Telugu"
-      },
-      "count": {
-        "type": "int",
-        "example": "7"
-      }
-    }
+    "description": "Hint in the Decks tab's search field. A search finds units of the course of the language the language bar shows, by their name, their decks' names or their theme."
   },
   "decksWhereIAm": "Where I am",
   "@decksWhereIAm": {
@@ -3596,10 +3620,6 @@
   "@summaryEmpty": {
     "description": "Summary line when a session ended before any answer."
   },
-  "statsTitle": "Progress",
-  "@statsTitle": {
-    "description": "Heading of the Progress tab."
-  },
   "statsRangeGroup": "Time range",
   "@statsRangeGroup": {
     "description": "Screen-reader name of the range choice."
@@ -3617,14 +3637,6 @@
   "statsRangeAll": "All time",
   "@statsRangeAll": {
     "description": "The time range covering every review."
-  },
-  "statsLanguageGroup": "Language",
-  "@statsLanguageGroup": {
-    "description": "Screen-reader name of the row of language chips on Progress."
-  },
-  "statsLanguageAll": "All languages",
-  "@statsLanguageAll": {
-    "description": "Language chip on Progress that counts every language together."
   },
   "statsReviews": "Reviews",
   "@statsReviews": {

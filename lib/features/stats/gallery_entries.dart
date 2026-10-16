@@ -38,6 +38,17 @@ final List<GalleryEntry> statsGalleryEntries = <GalleryEntry>[
 /// design's own Progress and Leeches entries.
 final List<GalleryEntry> statsGalleryStates = <GalleryEntry>[
   GalleryEntry(
+    id: 'stats-all-languages',
+    section: GallerySection.progressAndSettings,
+    label: 'Progress, All on', // ui-literal-ok: debug-only gallery
+    note: 'Every language together, from the language bar', // ui-literal-ok: debug-only gallery
+    builder: (_) => const AppShell(),
+    state: (app) => _onProgress(
+      GalleryFixtures.state(app, features: FeatureRegistry.all())
+        ..settings.progressAll = true,
+    ),
+  ),
+  GalleryEntry(
     id: 'stats-incoming',
     section: GallerySection.progressAndSettings,
     label: 'Progress, as shipped', // ui-literal-ok: debug-only gallery

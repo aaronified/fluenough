@@ -7,13 +7,14 @@ import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../theme.dart';
 
-/// The language menu at the top of Today, Decks, Progress and a deck's or a
-/// unit's page (#461): which language the whole app shows, one of those the
-/// learner learns, or "All languages". Not on Settings, whose choices are
-/// not one language's.
+/// The language menu at the top of a deck's or a unit's page (#461): which
+/// language the whole app shows, one of those the learner learns. Today,
+/// Decks and Progress have the language bar instead (#528), and like it
+/// this offers no "All languages", which is Progress's alone. Not on
+/// Settings, whose choices are not one language's.
 ///
-/// A button with the shown language's glyph, or a globe for All, that opens
-/// a menu of the languages by name. Its tooltip and screen-reader label say
+/// A button with the shown language's glyph that opens a menu of the
+/// languages by name. Its tooltip and screen-reader label say
 /// which language is shown. Nothing shows while no language has a deck.
 ///
 /// The choice is kept in Settings (`SettingsNotifier.languageChoice`) and
@@ -34,9 +35,9 @@ class LanguageMenu extends StatelessWidget {
     if (choices.isEmpty) return const SizedBox.shrink();
     final shown = state.shownLanguage;
     final current = choices.where((l) => l.code == shown).firstOrNull;
-    final label = l10n.languageMenuLabel(current?.name ?? l10n.languageMenuAll);
+    final label = l10n.languageMenuLabel(current?.name ?? '');
 
-    void choose(String? code) {
+    void choose(String code) {
       state.showLanguage(code);
       final page = pageLanguage;
       if (page != null && !state.showsLanguage(page)) {
@@ -44,7 +45,7 @@ class LanguageMenu extends StatelessWidget {
       }
     }
 
-    MenuItemButton item(String? code, Widget text) => MenuItemButton(
+    MenuItemButton item(String code, Widget text) => MenuItemButton(
       leadingIcon: SizedBox.square(
         dimension: 24,
         child: code == shown ? const Icon(Icons.check) : null,
@@ -55,7 +56,6 @@ class LanguageMenu extends StatelessWidget {
 
     return MenuAnchor(
       menuChildren: <Widget>[
-        item(null, Text(l10n.languageMenuAll)),
         for (final language in choices)
           item(
             language.code,
@@ -79,9 +79,7 @@ class LanguageMenu extends StatelessWidget {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  if (current == null)
-                    const Icon(Icons.language)
-                  else
+                  if (current != null)
                     _Glyph(language: current, decks: state.decks),
                   const Icon(Icons.arrow_drop_down),
                 ],

@@ -30,27 +30,6 @@ approval.
   three parts of 3), each new form straight to its question, with a Full
   list button on split sets and on an answered question, and long forms
   breaking between syllables (owner, 2026-10-16, #515).
-- `language-bar.html`: the language bar the owner chose for Today, Decks
-  and Progress (#528; owner, 2026-10-16: "The folded top bar. No dropdown.
-  Instead of dots, use the glyphs (not filled icons, just the glyphs, alpha
-  passed). Show mockup. Searchbar looked fine"). Always folded, 56 dp: the
-  shown language as its chip, glyph and name, with no arrow; every other
-  choice as its bare glyph at 64% alpha (4.5:1 or more everywhere); the bug
-  report button at the end. A sideways swipe on the bar changes the
-  language, and a tap opens the menu of every language with its chip
-  (owner, 2026-10-16). All is a button on Progress only, fixed just
-  before the bug button, and its slot is kept empty on Today and Decks so
-  the bar never shifts between the three screens (owner, 2026-10-16:
-  "Only on progress we need an all button.fix it to the right (near
-  debug) so that the top bar doesn't shift when changing between the 3
-  screens."). Where the row does not fit, its ends fade out over 16 dp,
-  only on an end with more beyond it, and the row scrolls to keep the
-  chip clear of the fade (owner, 2026-10-16: "The language bar needs to
-  be edgemasked still"). Drawn with 1, 2, 4, 6 and 8 languages, before, during
-  and after a swipe, the menu, Today, Decks (with the proposals' search
-  bar, unchanged) and Progress, light, dark and pure black, 1.4x and
-  TalkBack. Approved by the owner, 2026-10-16 ("Approve"); it replaces the
-  earlier swipe mockup and the four bar proposals (in git history).
 - `deck-search.html`: the Decks tab's one search for decks, units and
   words, in place of the filter row (#527; owner, 2026-10-16: "I just want
   people to quickly find stuff. The filters can be replaced by a fts5
@@ -116,3 +95,7 @@ name them. They are in git at 19d200b
 - `adapted-to-you.html`, with its earlier versions `ambient.html`,
   `moment.html` and `story.html`: "Adjusted to you" (ADR-0035).
 - `language-picker.html`: the language picker (#443).
+- `language-bar.html`: the language bar on Today, Decks and Progress,
+  built in #528 and removed once built (owner, 2026-10-16: "Remove when
+  built"). It is in git history:
+  `git show 25522ea:docs/mockups/language-bar.html`.
