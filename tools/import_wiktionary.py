@@ -7,6 +7,7 @@ Usage:
     python3 tools/import_wiktionary.py hi Hindi.jsonl --write          # fill the decks
     python3 tools/import_wiktionary.py hi Hindi.jsonl --write --audio  # and recordings
     python3 tools/import_wiktionary.py hi Hindi.jsonl --write --images # and images
+    python3 tools/import_wiktionary.py hi Hindi.jsonl --write --images --approve hi-0419
     python3 tools/import_wiktionary.py hi Hindi.jsonl --decks /tmp/copy/decks --write \\
         --dump-date 2026-10-13 --report hi-report.md
 
