@@ -183,8 +183,12 @@ layers; the core does not change. Every deck in a [B1 plan](#the-b1-plan)
 is split into a core and its layers as the plan is written. A single-file
 deck stays valid in every form it has, and may use every new card field.
 [Rules decks](#rules-decks) exist only as a core and layers; reading decks
-stay single-file, since their questions are already keyed by language; a
-deck a learner adds in the app is single-file.
+stay single-file (owner, 2026-10-14: "Keep reading decks single-file"),
+since their questions are already keyed by language; a
+deck a learner adds in the app is single-file. A language's
+[script guide](#script-guides) and [sounds file](#sounds-files) are split
+the same way, into a core that keeps their letters and a layer per native
+language that keeps their text (#498).
 
 The ids in the examples below, `te-9001` and on, are made up. Take real ones
 from `python3 tools/validate_decks.py --next-id te`.
@@ -214,9 +218,12 @@ a core and layers; the app's parser refuses the same words.
   (`te-home`), does not change. Splitting `decks/te/te-en-home.yaml` into
   `decks/te/te-home.yaml` and `decks/te/en/te-en-home.yaml` keeps the deck id
   and every card id.
-- **Reserved names:** a core is never `<lang>-facts`, `<lang>-numbers`,
-  `<lang>-romanisation`, `<lang>-script`, `<lang>-sounds` or `<lang>-path`,
-  the files beside the decks.
+- **Reserved names:** a deck's core is never `<lang>-facts`,
+  `<lang>-numbers`, `<lang>-romanisation`, `<lang>-script`, `<lang>-sounds`
+  or `<lang>-path`, the files beside the decks. (The script guide and the
+  sounds file have cores of their own under those names: a layer whose
+  `core` is `<lang>-script` or `<lang>-sounds` is theirs, see
+  [Script guides](#script-guides) and [Sounds files](#sounds-files).)
 - **A core's name never starts with a native language's code,** nor with the
   name of a folder beside it: a core `te-en-x` would read as a deck of the
   `te-en` course. Nor is a core's id the id of any other file of the
@@ -286,12 +293,17 @@ The file sits in `decks/<language.code>/`. A core no layer names is warned
 of: no learner is taught it.
 
 **A core card** has the language side only. It may give `id`, `target`,
-`reading`, `ipa`, `alt_target`, `pos`, `gender`, `tags`, `audio`,
-`examples`, `modes`, `picture`, `notes` (the core form, below),
+`reading`, `ipa`, `alt_target`, `pos`, `gender`, `tags`, `audio` (with
+`audio_credit`), `examples`, `modes`, `picture`, `image` (with
+`image_credit`), `notes` (the core form, below),
 `phrasebook`, `bases` and `rules`. It may **not** give `native`,
 `alt_native` or `wiktionary`, which are the native language's and go in each
 layer, nor `pair`: in a core a [pair note](#notes) names the partner, and
 the card's sound-alike is taken from it.
+
+**A set card,** `kind: "set"`, is the one other card a vocab core writes:
+`id`, `kind`, `members` and, for a set of one slot across the words,
+`shown` only ([Set cards](#set-cards)).
 
 **A core example** is `{ target, reading?, ipa?, bases?, source? }`. Its
 translation is in each layer, keyed by its target, so two examples of one
@@ -398,6 +410,7 @@ readings against the core's language and its
 | `examples` | A mapping from a core example's `target`, exactly as the core writes it, to its translation: text, or `{ native, bases }`, where `bases` gives the example's inline bases their meanings as the card's `bases` below does. |
 | `bases` | A mapping from the `word` of one of the core card's inline bases to its meaning: text, or `{ meaning, wiktionary }` ([Base words](#base-words-bases)). |
 | `wiktionary` | `true` ([The Wiktionary link](#the-wiktionary-link)). |
+| `explanation` | Only on a [set card's](#set-cards) entry, which gives `native`, its name, and `explanation`, both required, and nothing else. |
 
 Anything else, `target`, `reading`, `ipa`, `pos`, `tags`, `modes` and the
 rest, is an error on such an entry: a layer cannot change the word.
@@ -478,12 +491,22 @@ checks the same deck:
 
 ### Splitting a deck
 
+`python3 tools/split_deck.py decks/te/te-en-home.yaml` does all of this
+(#397): it writes the core and the English layer, deletes the old file,
+and refuses to write a split that, merged back, would not be the old deck.
+`--check` tries it without writing. Run `python3 tools/deck_index.py` after
+it. By hand, or checking what the tool did:
+
 1. The core is `decks/<lang>/<lang>-<name>.yaml`, its id the old deck id
    without the native language: `te-en-home` gives `te-home`.
 2. The layer is `decks/<lang>/<native>/<old id>.yaml`, with the old id.
 3. **Every card id stays as it is.** A card the old deck wrote is written in
    the core, with its meaning, notes and translations in the layer; a ref
-   stays a ref.
+   stays a ref. A note written as text becomes a core note
+   `{ id: "n1", kind: "note" }`, its text the layer's `"n1"`. A card's
+   `pair`, which a core cannot give, becomes a pair note: the card's one
+   note when it names the partner, else a new note `"pair"` whose text names
+   the partner, its reading and its meaning.
 4. A grammar deck keeps every entry's `key` and the order of its slots, so
    its cells keep their ids.
 5. **The old file is deleted in the same change.** The validator refuses the
@@ -497,17 +520,20 @@ checks the same deck:
    the single-file deck had too. Once a language has a core, its path needs
    its [B1 plan](#the-b1-plan).
 
-**Where the split stands (2026-10-13).** Hindi, Marathi, Gujarati, Kannada,
-Assamese and Spanish are split. Bengali and Telugu are still partly
-single-file: about half their decks are cores and layers, and the rest stay
-`<lang>-en-*` files until #498 splits them ("All decks created for
-fluenough in the repo needs to be split", owner, 2026-10-12). Japanese
-(hidden) is wholly single-file. Each language's reading deck is
-single-file too: this guide says reading decks stay so, and the validator
-refuses a core of `kind: "reading"`, yet #498 lists them among the decks
-to split. **Open question for the owner:** do reading decks stay
-single-file, or does #498 give them a core and a layer (which needs a
-format change first)? A validator warning on a B1 deck still single-file
+**Where the split stands (2026-10-13).** Every vocab and grammar deck is
+a core and an English layer: Hindi, Marathi, Gujarati, Kannada, Assamese
+and Spanish with their B1 rewrite, and Bengali and Telugu by
+`tools/split_deck.py` (#498: "Change them via grep", owner, 2026-10-13).
+Japanese (hidden) stays single-file: a language with a core needs a
+[B1 plan](#the-b1-plan) in its path, and Japanese has none, so
+`ja-en-hiragana` is not split (owner, 2026-10-16, #498: "Keep
+single-file"). It stays as it is until Japanese is worked on again.
+Each language's script guide and sounds file are split too ("Split script
++ sounds", owner, 2026-10-13); its path, facts, numbers and romanisation
+files stay one file. **Reading decks stay single-file** (owner, 2026-10-14:
+"Keep reading decks single-file"): the validator refuses a core of
+`kind: "reading"`, and `tools/split_deck.py` leaves them alone. A
+validator warning on a B1 deck still single-file
 ([The B1 plan](#the-b1-plan)) is how a language's remaining decks show.
 
 ---
@@ -543,13 +569,19 @@ cards:
 | `alt_target` | no | Additional answers accepted in production drills. |
 | `alt_native` | no | Additional meanings accepted when the meaning is typed, in Hear (ADR-0034). |
 | `pos` | no | Part of speech: `noun`, `verb`, `adj`, `adv`, `pronoun`, `phrase`, `particle`, `other`. A [rules deck](#rules-decks) picks its rows by it, so give every word its own: a pronoun is `pronoun`, not `other`. |
-| `gender` | no | Grammatical gender, free text (`m`, `f`, `n`, `c`…). Per-language classes are decided but not yet checked: see [Card data](#card-data). |
+| `gender` | no | Grammatical gender, as text. On a noun it is one of its language's classes, which the language's path lists (`genders`): see [Gender](#gender). |
 | `tags` | no | Card-level tags. Drills can be filtered by tag. |
 | `notes` | no | Text, or a list of typed notes: see [Notes](#notes). Shown when the word is taught and after answering. |
-| `audio` | no | Asset path or URL overriding TTS for this card. |
+| `audio` | no | The card's own recording, played in place of text-to-speech: `"decks/hi/audio/hi-0001.opus"`, a file shipped with the deck, with its `audio_credit`. See [A card's own recording](#a-cards-own-recording-audio). |
+| `audio_credit` | with a shipped `audio` | `{ source, license, credit }`: the file it was made from, its licence and its speaker. |
+| `image` | no | The card's own image, shown where `picture` shows and in its place: `"decks/hi/images/hi-0001.webp"`, a file shipped with the deck, with its `image_credit`. See [A card's own image](#a-cards-own-image-image). |
+| `image_credit` | with `image` | `{ source, license, credit }`: the file it was made from, its licence, and whom to credit. |
 | `examples` | no | List of `{target, native}` sentence pairs; a word card has at least 2 once its language is filled in (see [Examples](#examples)). An example may also give its `reading`, `ipa`, [`bases`](#base-words-bases) and `source`. |
 | `phrasebook` | no | `true` on a survival phrase taught whole, first: see [The phrasebook](#the-phrasebook). Leave it out otherwise. |
-| `bases` | no | The base word of each inflected or derived word in the target and its examples: see [Base words](#base-words-bases). |
+| `bases` | no | The base word of each inflected or derived word in the target and its examples: see [Base words](#base-words-bases). `"self"` on a word that is its own root ([Card data](#root-word-synonyms-and-antonyms)). |
+| `register` | no | How formal or rude the word is: `"formal"`, `"neutral"`, `"informal"`, `"slang"` or `"offensive"`. See [Register, forms, collocations and senses](#register-forms-collocations-and-senses). |
+| `frequency` | no | `{ rank, source }`: the word's rank in a count of its language, and where it was counted. See [Frequency](#frequency). |
+| `synonyms`, `antonyms`, `collocations`, `confusables`, `forms`, `senses` | no | A core card's [card data](#card-data), its text in each layer by id. Not on a single-file card or a layer's own card. |
 | `rules` | no | On a sentence: the ids of the rules it uses, `["te-rule-ki"]`. See [Sentences and their rules](#sentences-and-their-rules-rules). |
 | `wiktionary` | no | `true` where the learner's language's Wiktionary has an entry for the target: see [The Wiktionary link](#the-wiktionary-link). |
 | `modes` | no | Which drills this card participates in. Defaults to all applicable, except that a `pos: phrase` card is not typed: it defaults to recognition, listening and speaking, and production by rearranging its words when it has two or more (ADR-0024). |
@@ -561,7 +593,7 @@ cards:
 In a [core and its layers](#core-and-layer-files), the core card gives
 every field above but `native`, `alt_native`, `wiktionary` and `pair`; the
 layer gives `native`, `alt_native` and `wiktionary`, and the texts of the
-core's notes and examples.
+core's notes, examples and card data.
 
 ### A note on `id`
 
@@ -878,6 +910,92 @@ the entry exists:
   for the language. A tool will mark them from Wiktionary's extracts; until
   then, check each one.
 
+### A card's own recording: `audio`
+
+Owner, 2026-10-13 (#518): "No stream, download and ship with deck". A card
+may have a recording of a person saying it, played in place of the phone's
+text-to-speech voice. It is an Opus file beside the deck, named by the
+card's id, and it downloads with the deck, so it plays offline:
+
+```yaml
+  - id: "hi-0001"
+    target: "घर"
+    audio: "decks/hi/audio/hi-0001.opus"
+    audio_credit: { source: "https://commons.wikimedia.org/wiki/File:Hi-घर.ogg", license: "CC-BY-SA-4.0", credit: "A. Speaker" }
+```
+
+- **Exactly the card's text** (owner: "If the phrase itself exists then the
+  sound can be used"). A recording is only ever of the word or phrase the
+  card teaches, never joined from recordings of its words. Sentences,
+  examples, and any card without its own recording are spoken by
+  text-to-speech ("Sentences will still be tts").
+- **The file** is `decks/<lang>/audio/<card id>.opus`, and `audio` names it
+  by that path. It belongs to the word: on a core card or a single-file
+  card, never in a layer, and a ref cannot give it. Every file in the
+  folder is named by its card; a file no card names is an error.
+- **`audio_credit`** is required with it: `source`, the file it was made
+  from (its Wikimedia Commons page); `license`, its licence as an SPDX-like
+  id; and `credit`, the speaker as the source credits them. The licence is
+  one that can ship in a CC BY-SA 4.0 deck
+  ([ADR-0040](adr/0040-decks-are-cc-by-sa.md)): `CC0-1.0`, `public-domain`,
+  or `CC-BY` or `CC-BY-SA` from 2.0 to 4.0, ported versions too
+  (`CC-BY-SA-3.0-DE`). GFDL alone, NC and ND cannot. The deck screen shows
+  each credit, and Settings' Sources screen each language's.
+- **Reviewers judge every recording** (owner: "All, reviewers judge"): one
+  that is not a native speaker, or not the word, is removed with its file.
+- **`tools/import_wiktionary.py`** fills it from the recordings Wiktionary
+  links, converted with `ffmpeg` (see `tools/README.md`).
+- An `audio` that is an asset path or a URL, with no credit, is still read,
+  but not played.
+
+### A card's own image: `image`
+
+Owner, 2026-10-13 (#523): "Oh, decks need images too". Delivery: "Yes,
+ship with the deck". Owner, 2026-10-16 (#523): the shape `image` and
+`image_credit`, "Approve"; where images come from, "Wiktionary only" (no
+Wikidata), in this order: the one picture in the language's section of the
+word's Wiktionary page, then OpenMoji, then the Noto picture. A card may
+have its own image, a picture from Wikimedia Commons or an
+[OpenMoji](https://openmoji.org) drawing (CC BY-SA 4.0), a WebP of about
+256 pixels beside the deck, named by the card's id:
+
+```yaml
+  - id: "hi-0419"
+    target: "मकान"
+    picture: "🏠"
+    image: "decks/hi/images/hi-0419.webp"
+    image_credit: { source: "https://openmoji.org/library/emoji-1F3E0/", license: "CC-BY-SA-4.0", credit: "OpenMoji" }
+```
+
+- **Only for a concrete word it shows exactly**, as [`picture`](#card-fields)
+  is ([ADR-0034](adr/0034-hear-say-write.md)): not for abstract words,
+  kinship, or near misses. A card with a `picture` is such a word. So is a
+  noun without one that a reviewer approves (owner, 2026-10-16, #523:
+  "Also mark concrete", and how: "Importer proposes"): the importer
+  proposes its image, and a reviewer approves each before it lands.
+- **The shape is `audio`'s** ([A card's own recording](#a-cards-own-recording-audio)):
+  the file is `decks/<lang>/images/<card id>.webp`, and `image` names it by
+  that path, on a core card or a single-file card, never in a layer or on a
+  ref. Every file in the folder is named by its card; a file no card names
+  is an error. **`image_credit`** is required with it, `{ source, license,
+  credit }`, with a licence that can ship in a CC BY-SA 4.0 deck, as for a
+  recording. `source` is the file's Commons page, or the OpenMoji page of
+  its emoji, and names it per item.
+- **The app** shows the image where `picture` shows, in its place, once it
+  is downloaded; without it, `picture`'s Noto Emoji drawing, which stays
+  bundled with the app. The deck screen credits each image, and Settings'
+  Sources screen each language's.
+- **Reviewers can flag a bad image,** and it is dropped with its file, as a
+  recording is (#508).
+- **`tools/import_wiktionary.py --images`** fills it, for a card that has a
+  `picture`: the one picture in the language's section of the word's
+  Wiktionary page, from Commons with its licence and credit checked, else
+  OpenMoji's drawing of the card's `picture`, converted with `ffmpeg`. For
+  a noun without a `picture` it writes nothing: its report proposes the
+  page's picture (the card, word, Commons file, licence, credit and pages),
+  and `--approve <card id>` writes it once a reviewer has approved it (see
+  `tools/README.md`).
+
 ### Sentences and their rules: `rules`
 
 A sentence names the rules it uses, by their ids:
@@ -925,61 +1043,28 @@ language ([Core and layer files](#core-and-layer-files)).
 
 ### The data a card carries
 
-Each item says where it lives. Every item is **Decided, not yet built** except
-where it says it exists.
+Each item says where it lives, and each is built.
 
-- **Meaning.** `native` (and `alt_native`): exists. A word's separate senses
-  stay in `usage` notes.
+- **Meaning.** `native` (and `alt_native`): exists. A word's separate
+  meanings can be its `senses` (#517).
 - **Reading and `ipa`.** Exist. Required for a non-Latin script (the reading).
 - **Examples.** Built (#511); see [Examples](#examples) below.
-- **Gender.** One field, `gender`, with per-language values (owner: "One
-  field, per-language values"; approved "Decided as listed"). Today `gender`
-  is free text; the closed lists are not yet checked:
-
-  | Language | Values |
-  |---|---|
-  | hi | `m`, `f` |
-  | mr, gu, kn | `m`, `f`, `n` |
-  | te | `mahat`, `amahat` |
-  | bn, as | none: the field is not used |
-
-  Spanish and Japanese are not decided (see [Still open](#card-data-still-open)).
-- **Root word, `bases`.** Exists for the words of a text ([Base words](#base-words-bases)).
-  Owner: a word card has its "Root word / base". Say in the card's notes when
-  its base word changes its stem. How a word that is its own root says so is
-  open. The word family is derived from `bases` across the language and is
-  never stored.
-- **Synonyms and antonyms.** Each is a list in the core, with the learner's
-  text in the layer. A word a card teaches is a `ref`; one no card teaches is
-  a `word` with its `reading`, and its meaning in the layer (owner: "Yes, with
-  reading + meaning"). The field names `synonyms` and `antonyms` are
-  proposed, not approved.
-- **Confusables**, the shared wrong alternatives (owner: "One shared list",
-  for word-order extra tiles, known mistakes and listening in context).
-  Mandatory on a sentence used for word order (owner: "Confusables on
-  word-order sentences"). Shape approved (owner, approval 3: "Approve as
-  proposed"): an `id`, a `word` or card `ref`, its `reading`, a `kind`
-  (`form`, `word`, `sound` or `mark`), and an optional `why` in the layer, by
-  id, as notes are:
-
-  ```yaml
-  confusables:
-    - { id: "masc", word: "पिया", reading: "piyā", kind: "form" }
-    - { id: "mark", word: "?", kind: "mark" }
-  ```
-  and in the layer `confusables: { "masc": { why: "चाय is feminine, so पी." } }`.
-  A card with none has them "Generated from card data" (owner): the engine
-  draws them from the same part of speech and theme, the pair partner, other
-  forms and words of the same root. Nothing is stored for them.
-- **Frequency.** Optional, from an open list (owner: "Yes, optional, from an
-  open list"). Which list is open.
-- **Facts naming cards.** A language fact can name cards (owner: "Yes, a
-  fact can name cards"), so it shows beside the words it is about. See
+- **Gender.** Built (#512); see [Gender](#gender) below.
+- **Root word, synonyms and antonyms.** Built (#513); see [Root word,
+  synonyms and antonyms](#root-word-synonyms-and-antonyms) below.
+- **Confusables.** Built (#514); see [Confusables](#confusables) below.
+- **Frequency.** Built, with its counting tool (#516); see [Frequency](#frequency)
+  below.
+- **Facts naming cards.** Built (#516): a fact's `cards`, see
   [Facts files](#facts-files).
+- **Register, forms, collocations and senses.** Built (#517); see
+  [Register, forms, collocations and senses](#register-forms-collocations-and-senses)
+  below.
 - **Learner-language text** of all the new data (a `why`, a synonym's
   meaning) lives in each native layer (owner: "In each native layer"), keyed
   by id as notes are.
-- **Picture, audio, `pair`, notes, the sounds file.** Exist, optional.
+- **Picture, image, audio, `pair`, notes, the sounds file.** Exist,
+  optional. A card's own image is [`image`](#a-cards-own-image-image) (#523).
   Phonemic contrasts come from a word's `ipa` and the sounds file, not from a
   field on the card.
 
@@ -1024,6 +1109,188 @@ Built (#511). Owner (#506): a word card has "At least 2" examples.
   ([plan](plans/question-engine.md)); the app reads the examples today but
   shows no new question from them.
 
+### Gender
+
+Built (#512). One field, `gender`, with per-language values (owner: "One
+field, per-language values"; approved "Decided as listed"; Spanish and
+Japanese "es m/f; ja none").
+
+- **The classes** are listed once per language, in its path file,
+  `decks/<lang>/<lang>-path.yaml` ([Paths](#paths)), as `genders`:
+
+  ```yaml
+  # decks/te/te-path.yaml
+  genders: ["mahat", "amahat"]
+  # decks/bn/bn-path.yaml: a language without gender
+  genders: []
+  ```
+
+  | Language | `genders` |
+  |---|---|
+  | hi | `["m", "f"]` |
+  | mr, gu, kn | `["m", "f", "n"]` |
+  | te | `["mahat", "amahat"]` |
+  | es | `["m", "f"]` |
+  | bn, as, ja | `[]`: the field is not used |
+
+  Each class is quoted text, listed once. The app reads them with the path.
+- **Nouns only** (owner: "Nouns only"). On a card with `pos: "noun"`, a
+  `gender` outside its language's classes is a validator **error**, and so
+  is any `gender` in a language with `[]`. A noun with no `gender` is an
+  error **once the language is filled in** (`FILLED_LANGUAGES` in
+  `tools/validate_decks.py`, as for [examples](#examples)), and nothing is
+  reported before. Other parts of speech are never checked, and nor is a
+  language whose path lists no `genders`. The nine paths list theirs.
+- **Where it is written.** `gender` is a fact of the language: on a core's
+  card or a single-file deck's, never in a layer's entry for a core card.
+
+### Root word, synonyms and antonyms
+
+Built (#513). The fields are "mandatory when available": the builder adds
+them, and their absence is never an error.
+
+- **A word that is its own root** says `bases: "self"` (owner, 2026-10-13),
+  on the card, never on an example. Any other card gives its root as
+  [Base words](#base-words-bases) says.
+- **`synonyms` and `antonyms`** (owner: "Approve these names") are lists on
+  a core card. Each item has an `id`, and names the card that teaches the
+  word, `ref`, when one exists; otherwise it gives the `word` with its
+  `reading` (owner: "Yes, with reading + meaning"). An item taken from
+  outside names its `source` (owner: "Per item"). The meaning of a `word`
+  is in each layer, by id; a `ref` takes its card's meaning.
+- **`ipa` and `source` on every item** (owner, 2026-10-15: "Yes, all items
+  may take ipa and source"): synonyms, antonyms, collocations, confusables
+  and forms all accept both. `ipa` is for a word written in full, as
+  `reading` is; a `ref` takes its card's.
+
+  ```yaml
+  # core
+  synonyms:
+    - { id: "abode", word: "निवास", reading: "nivās", source: "https://en.wiktionary.org/wiki/निवास" }
+  antonyms:
+    - { id: "out", ref: "hi-9002" }
+  # layer
+  synonyms: { "abode": "abode, dwelling" }
+  ```
+- **Checked when present:** each `id` starts with a letter, `[a-z0-9-]+`,
+  once in its list; an item gives `word` or `ref`, not both; a `ref` is a
+  card of the language, not the card itself; a `word` has its `reading` in
+  a script that needs one; `reading` and `ipa` are on a `word` only, never
+  on a `ref`; a layer key that is no item of the core card is an error, and
+  a `word` with no meaning in a layer is a warning.
+
+### Confusables
+
+Built (#514). `confusables` are the shared wrong alternatives (owner: "One
+shared list", for word-order extra tiles, known mistakes and listening in
+context). Shape (owner, approval 3: "Approve as proposed"): an `id`, a
+`word` or card `ref`, its `reading` where the script needs one, a `kind`
+(`form`, `word`, `sound` or `mark`), and an optional `why` in the layer, by
+id, as notes are. Like every item, it may also give `ipa` and `source`
+(owner, 2026-10-15):
+
+```yaml
+confusables:
+  - { id: "masc", word: "पिया", reading: "piyā", kind: "form" }
+  - { id: "mark", word: "?", kind: "mark" }
+```
+and in the layer `confusables: { "masc": { why: "चाय (cāy) is feminine, so पी (pī)." } }`.
+
+- **Mandatory when available,** on a sentence used for word order above all
+  (owner: "Confusables on word-order sentences"), but never an error when
+  absent. A card with none has them "Generated from card data" (owner): the
+  engine draws them from the same part of speech and theme, the pair
+  partner, other forms and words of the same root. Nothing is stored for
+  them.
+- **As word-order tiles** (owner: "2–3, never a needed tile"): on a card put
+  in order (three words or more, or a phrase of two or more), a card has 2
+  to 3, and none is a tile the answer needs; either is an error. A
+  missing `why` in a layer is a warning.
+- **Checked when present:** the ids, `word` or `ref` and the `ref` as for
+  [synonyms](#root-word-synonyms-and-antonyms); `kind` is one of the four;
+  a `word` other than a `mark` has its `reading` in a script that needs one.
+
+### Frequency
+
+Built (#516). `frequency` is optional: the word's rank in a
+count of its language's **Wikipedia** (owner, 2026-10-13: "Count from
+Wikipedia instead"), and where it was counted, named on the item (owner:
+"Per item"). It is a fact of the language, on a core's card or a
+single-file deck's.
+
+```yaml
+frequency: { rank: 412, source: "hi.wikipedia.org, 2026-10" }
+```
+
+`rank` is a whole number from 1, the most frequent; `source` is required.
+**Never written by hand:** `tools/wikipedia_frequency.py` counts the words
+of the language's Wikipedia dump (`<lang>wiki-<date>-pages-articles.xml.bz2`),
+and gives each card whose target is one word its rank, with the source
+`"<lang>.wikipedia.org, <the dump's month>"`. A card that has a
+`frequency` keeps it, and a phrase gets none (see `tools/README.md`).
+Words are ranked by their surface form: an inflected form is not counted
+with its lemma. The owner approved these choices on 2026-10-16 (#516):
+"Approve as built".
+
+### Register, forms, collocations and senses
+
+Built (#517), with the shapes the owner approved on 2026-10-13 ("Ok on the
+forms"; `register`, `collocations` and `senses`: "Approve as proposed").
+Each is a fact of the language on a core card, with its text in each layer
+by id, and none is ever an error when absent.
+
+- **`register`:** one of `"formal"`, `"neutral"`, `"informal"`, `"slang"`
+  and `"offensive"`. It has no layer text: why goes in a `usage` or
+  `behaviour` note. A layer cannot give it. It may also be written on a
+  single-file card.
+- **`forms`:** a word's inflected forms, `{ id, kind, word, reading, ipa?,
+  source? }`, `kind` one of `"plural"`, `"oblique"`, `"oblique-plural"`,
+  `"feminine"`, `"masculine"` and `"other"`. The `word` differs from the
+  target, and has its `reading` in a script that needs one. A layer may
+  give one line per id, and must for a form of kind `other`. A form a rules
+  table already has as a cell of the card's row is warned of: the table is
+  the source.
+- **`collocations`:** words the word often goes with, `{ id, word or ref,
+  reading?, ipa?, source? }`, checked as [synonyms](#root-word-synonyms-and-antonyms)
+  are. A layer gives a `word`'s meaning, as text or `{ native, note }`; a
+  `word` with none is warned of.
+- **`senses`:** separate meanings, `{ id, pos?, examples?, source? }`, each
+  example as a core card's (`target`, `reading`, `ipa`, `bases`), with its
+  `reading` in a script that needs one. A layer gives each `{ native,
+  examples? }`, its examples keyed by target as a card's are. A sense with
+  no `native` in a layer is a warning, and an error once the language is
+  filled in; two senses with the same `native` are warned of. The card's
+  own `native` stays its main meaning: senses add, never replace.
+
+```yaml
+# core
+- id: "hi-9201"
+  target: "लड़का"
+  reading: "laṛkā"
+  pos: "noun"
+  gender: "m"
+  register: "neutral"
+  forms:
+    - { id: "pl", kind: "plural", word: "लड़के", reading: "laṛke" }
+  collocations:
+    - { id: "good", word: "अच्छा", reading: "acchā" }
+  senses:
+    - id: "boy"
+      examples:
+        - { target: "लड़का घर पर है।", reading: "laṛkā ghar par hai." }
+# layer
+"hi-9201":
+  native: "boy"
+  forms: { "pl": "boys; also the form before a postposition" }
+  collocations: { "good": "good" }
+  senses:
+    "boy": { native: "boy", examples: { "लड़का घर पर है।": "The boy is at home." } }
+```
+
+Open: "a card in the offensive-words ratings must be `offensive`" is
+approved, but no ratings exist in the repository yet, so it is not checked;
+and a rules table's cell cannot carry a `register` yet.
+
 ### What applies to which card type
 
 M is mandatory, R recommended, O optional, `-` not applicable. Only the
@@ -1062,8 +1329,8 @@ pipeline yet again)."
 - **The validator enforces only what it can check:** the meaning, the
   reading, at least 2 examples on a word card, and gender on nouns in a
   language that has gender. These become **errors once a language is filled
-  in.** The 2 examples are built ([Examples](#examples)); the gender check
-  is **Decided, not yet built**.
+  in.** The 2 examples ([Examples](#examples)) and the gender check
+  ([Gender](#gender)) are built, and so is every field above.
 - **Data that is "mandatory when available" is never a validator error:**
   confusables, root word, synonyms, antonyms, minimal pairs and the rest. The
   validator cannot tell whether such data was available. The deck builder
@@ -1079,30 +1346,33 @@ each new field lands with its check and its entry here, with tests.
 
 ### Card data: decided on 2026-10-13
 
-Answers from the owner, asked one at a time (#506). All of them are
-**Decided, not yet built**. Each field group is built in its own issue in
-0.5.0, after the relicensing (#510).
+Answers from the owner, asked one at a time (#506). Each field group is
+built in its own issue in 0.5.0, after the relicensing (#510); all are
+built, and so are the Wiktionary import (#518) and the frequency count
+(#516).
 
-- **A word that is its own root:** `bases: self` (#513).
+- **A word that is its own root:** `bases: self` (#513): built.
 - **`source` for Wiktionary and Tatoeba data:** "Per item". Each
-  item taken from outside names its own source.
+  item taken from outside names its own source. For Wiktionary, "Link
+  only" (owner, 2026-10-16, #518): the entry's page,
+  `https://en.wiktionary.org/wiki/<word>`, with no dump date.
 - **Gender classes:** Spanish and Japanese are "es m/f; ja none". The
   validator checks "Nouns only": on a noun, a value outside the language's
   classes is an error, and so is a missing gender once the language is
-  filled in (#512).
+  filled in (#512): built, see [Gender](#gender).
 - **Frequency:** first "Leipzig Corpora lists", then, because Leipzig's
-  terms conflict, "Count from Wikipedia instead" (#516).
+  terms conflict, "Count from Wikipedia instead" (#516): the field and
+  its count, `tools/wikipedia_frequency.py`, are built.
 - **Word data from Wiktionary:** "Yes, in 0.5.0". A tool imports from the
   kaikki.org extracts, naming the source per item (#518). IndoWordNet:
   "Don't use it".
 - **Field names:** "Approve these names": `synonyms`, `antonyms` and
-  `frequency` on a card, and `cards` on a fact (#513, #516).
+  `frequency` on a card, and `cards` on a fact (#513, #516): built.
 - **Drafted fields:** all four are kept: `register`, `forms`,
-  `collocations` and `senses`. Their shapes still need the owner's approval
-  (#517).
+  `collocations` and `senses`, their shapes approved (#517): built.
 - **Confusables as word-order tiles:** "2–3, never a needed tile". One
   equal to a tile the answer needs is an error, and a missing "why" is a
-  warning (#514).
+  warning (#514): built.
 - **The relicensing ADR** is written "In the relicensing issue" (#510): ADR-0040, built.
 
 ---
@@ -1112,31 +1382,144 @@ Answers from the owner, asked one at a time (#506). All of them are
 Owner, 2026-10-13 (#506): "a language's grammar decks must cover adjectives,
 genders, pronouns, etc. not just as cards, but also together. like a card with
 "English has three articles, a, an, and the", and then drill each one
-separately in the same lesson."
+separately in the same lesson." Verb forms are a closed group too (owner,
+2026-10-16, #515: "Verb forms need set cards too."). The lesson is drawn in
+the approved mockup, [`docs/mockups/set-cards.html`](mockups/set-cards.html).
 
-**Decided, not yet built.** DECK-FORMAT does not allow a set card yet.
+A set card is a card of a **vocab core**, `kind: "set"`. Its id is a card id
+of the language, taken from `--next-id`, and permanent like any other. It
+has no question data of its own: it is **taught only**, shown in its lesson
+before its members, and never scheduled, asked or logged. Its members are
+ordinary cards, asked as they are.
 
-- **Shape** (approval 2: "Approve as proposed"): kind `set`; its members are
-  cards by id, `members: [{ ref: "<card id>" }]`; the explanation is text in
-  the layer, keyed by the set card's id, as a note is (for example "English
-  has three articles, a, an, and the"); closed groups are listed per
-  language. A set card is a card, so its id is permanent. It has no question
-  data of its own, and is never scheduled, asked or logged. Its members are
-  ordinary cards, asked as they are.
-- **Teach only** (owner): the set card is shown once, in its lesson, as the
-  introduction. Only its members are reviewed afterwards.
-- **Every closed group** (owner) needs one, in each language where the group
-  applies: articles, pronouns (by person, number and formality), genders,
-  cases and postpositions, demonstratives, question words, conjunctions,
-  days, months, number words 1-10 and colours. The validator warns when a
-  closed group in the B1 plan has members but no set card.
-- **Show the whole set; drill only new ones** (owner): every member is
-  shown, the known ones marked; only members not yet taught are drilled; a
-  known one is added only as review, when due.
+```yaml
+# decks/hi/hi-pronouns.yaml, a core
+cards:
+  - id: "hi-9301"
+    kind: "set"
+    members: [{ ref: "hi-0101" }, { ref: "hi-0102" }, { ref: "hi-0103" }]
+```
 
-Still open (**Proposed**): how a card is placed in a closed group (the
+```yaml
+# decks/hi/en/hi-en-pronouns.yaml, its layer
+cards:
+  "hi-9301":
+    native: "You: three words"
+    explanation: "Hindi has three words for you, from the most respectful to the most intimate."
+```
+
+**Members by ref.** `members` lists cards of the language by `ref`, in the
+order the set shows them: at least two, each once, none a set card. A ref
+names a card any deck of the language writes, as a ref does.
+
+**Members of a rules table: rule and axis** (owner, 2026-10-16: "Rule +
+axis"). A set of verb forms names a rule and one fixed value of its table,
+and its members are the table's cells with that value:
+
+```yaml
+  - id: "te-9401"
+    kind: "set"
+    members: { rule: "te-grammar-verb-present", verb: "తాగు" }
+  - id: "te-9402"
+    kind: "set"
+    members: { rule: "te-grammar-verb-present", person: "atanu" }
+    shown: [{ ref: "te-0301" }, { ref: "te-0302" }, { ref: "te-0305" }]
+```
+
+- **`rule`** names a rule, such as `te-rule-present-third`, for its slots
+  only, or a rules core, such as `te-grammar-verb-present`, for every slot
+  of its table.
+- **The one other key** fixes a value. A part of speech of the table's rows
+  (`verb`, `noun`) fixes a **row**: its value is the row's word, as its card
+  writes it (`తాగు`) or by its card id, and the members are that word's
+  cells in slot order, one verb across the persons. Any other key
+  (`person`, `case`) fixes a **slot**: its value is a slot key of the table
+  (and of the rule, where `rule` names one), and the members are that
+  slot's cells in row order, one person across the verbs.
+- **`shown`**, on a set of one slot across the words only, and required
+  there: the rows its card shows, a few the deck chooses, as
+  `[{ ref: "<the row's card id>" }]`, at least two, each once, in the order
+  the card shows them (owner, 2026-10-16, #515: "A few curated verbs should
+  be good enough. And a full list will show all verbs in the course, with
+  unlearnt ones as well, but marked as such (learnt ones sorted to be on
+  top)."). Its members are those rows' cells of the slot. Its **Full
+  list** shows every cell of the slot in the course, in the table's order:
+  the learnt ones first, then the ones this lesson teaches, then the rest,
+  marked **Not learnt yet**.
+- **Member order is the table's** (owner, 2026-10-16: "Grammar order,
+  request in"): a row's cells come in slot order, so the polite request,
+  the last slot, is the last member.
+
+**The layer** gives each set it teaches `native`, its name, shown at the
+top of the Full list, and `explanation`, the text on the set card, both
+required. A set card the layer gives no entry is not taught from its
+language. Nothing else goes on the entry. Its explanation keeps the
+transliteration of every word it quotes, as any prose does ([Script in
+prose](#script-in-prose-always-with-its-reading)).
+
+**In a lesson** (owner, 2026-10-13 and 2026-10-16, #515):
+
+- **Show the whole set; drill only new ones.** A set is shown when one of
+  the lesson's new cards is a member and it has a member not taught yet.
+  Every member is shown, the known ones marked **Known**, the others
+  **New**; a set with no new member is not shown.
+- **Taught together.** Every new member of a set is taught in that lesson,
+  however many: "The cap is for per card, not set. Set can have whatever.
+  And it will be taught together." The lesson's cap of three cells
+  (#414) holds only outside sets.
+- **At most four on a card.** A larger set is divided into the fewest even
+  parts of at most four, in its order: nine as 3 + 3 + 3, eight as 4 + 4,
+  six as 3 + 3. Each part is a card of the lesson, labelled "The set · 1
+  of 3", and repeats the explanation. A part whose members are all known
+  is still shown.
+- **Both sets, then drills.** Every set's parts come first: every row's
+  set (one verb across the persons) before every slot's (one person across
+  the verbs), even when a slot's set has a member picked first, and each
+  kind in the order its first member is reached. Then the drills.
+- **A new word** keeps its own New card and its first question. **A new
+  verb form** (a rules table's cell) goes straight to its question, with
+  no New card: the set card taught it. Each is asked once, in the order it
+  first appears, even when it is in two sets.
+- **The Full list** (owner: "Split sets only"): a set split over two cards
+  or more has a Full list button on each part. It opens the whole set in a
+  bottom sheet, each member marked as on the card. A set of one slot
+  across the words always has one: its card shows only its `shown` rows,
+  and its Full list every row of the course, as above. A question about a
+  member of a split set, or about any cell in a slot set's Full list,
+  shows the same button once answered, in a lesson, in practice and in
+  review, never before; for a form in two sets the sheet lists both
+  ("Show both").
+- **What is skipped is named** (owner, 2026-10-16: "Name them always"):
+  the line under a set's last part names the known members, each with its
+  reading, as "You know तुम (tum) already.", for a split set and for verb
+  forms too.
+- **Long words** on a question card break between syllables ("Break
+  between syllables"): only between aksharas (grapheme clusters, a virama
+  joined to the consonant after it), never inside one, and only when the
+  word is wider than the card. A word in a joined script, such as Urdu's
+  Arabic script, is never broken: it shrinks until it fits ("Shrink Urdu
+  instead").
+
+**What the validator checks:** a set card only in a vocab core (a
+single-file deck or a layer's own card is refused), with only `id`,
+`kind` and `members`; at least two members, each a `{ ref }` once, not the
+set itself; across files, each ref a card of the language and not a set,
+and no deck listing a set card by ref; a rules set's `rule` a rule or rules
+core of the language, its value a row of the table under a part of speech
+of its rows, or else a slot of the table and the rule; `shown` on a slot's
+set only, and required there, at least two refs, each once, each a row of
+the table with a form in that slot; and on each layer
+entry, `native` and `explanation`, and nothing else.
+
+**Every closed group** (owner) needs one, in each language where the group
+applies: articles, pronouns (by person, number and formality), genders,
+cases and postpositions, demonstratives, question words, conjunctions,
+days, months, number words 1-10, colours, and verb forms.
+
+Still open (**Proposed**): how a closed group of the B1 plan is listed, so
+that the validator can warn of one with members but no set card (the
 language file lists the groups by id and a set card names its group);
-whether the warning becomes an error per language; whether the learner can
+whether that warning becomes an error per language; whether the learner can
 open a set card again from a card list or the course map.
 
 ---
@@ -1506,7 +1889,9 @@ passages:
 ```
 
 A reading deck has the usual header, with `passages` in place of `cards`,
-and no `theme` of its own: each passage names the theme it follows.
+and no `theme` of its own: each passage names the theme it follows. It is
+one file, never a core and layers (owner, 2026-10-14: "Keep reading decks
+single-file"), with its text in every native language it is taught from.
 
 ### Passage fields
 
@@ -1645,6 +2030,7 @@ units:
 | `units` | yes | A non-empty list. Each unit is a non-empty list of core ids, which may end in the wildcard `"*"`, or a mapping (see [The B1 plan](#the-b1-plan)). |
 | `alphabet` | no | The core ids of the decks that need the alphabet: the script, spelling and reading decks. Each must be on the path. A learner who learns the language without its alphabet is not taught them. |
 | `regions` | no | The language's regions ([Regions](#regions)). |
+| `genders` | no | The language's gender classes, such as `["m", "f"]`, or `[]` for a language without gender: what a noun's `gender` may be ([Gender](#gender)). |
 | `description` | no | Free text. |
 
 **A deck's core id** is `<lang>-<name>`: a core's own id, a layer's core
@@ -2088,6 +2474,12 @@ downloads is listed in `decks/index.json`:
   in reviewer mode when `sha256` does (#444, #449). A deck's `tags` are
   not taken out, so a deck becoming `reviewed` is an update. Every
   download is still checked against `size` and `sha256`.
+- **`media`**: every [recording](#a-cards-own-recording-audio) and
+  [image](#a-cards-own-image-image) in the language's folders, with its
+  path, size, SHA-256 and `kind`, `"audio"` or `"image"`.
+  They are listed apart from `files`, so that an app too old to read them
+  passes them by, and the language's `size` counts them. They download
+  after the decks, and are checked against their hash alone.
 - **`bundled`**: `decks/themes.yaml`, which ships inside the app and is
   not downloaded.
 
@@ -2402,6 +2794,38 @@ Each contrast:
 | `pairs` | yes | A non-empty list of two different quoted strings, letters or signs, at most one of them empty (a sign there or not). |
 | `within_word` | no | `true`: a sign added or taken away counts only inside a word, for a language that drops a word's final vowel (Bengali, Hindi), where a vowel sign added at the end adds a syllable. Swaps always count. |
 
+**A core and its layers** (#498). The file may be split like a deck
+([Core and layer files](#core-and-layer-files)): the core keeps its path and
+id, `decks/bn/bn-sounds.yaml`, adds `part: "core"`, and leaves out the
+`description` and each contrast's `name`; each native language's layer,
+`decks/bn/en/bn-en-sounds.yaml`, gives them, keyed by contrast id:
+
+```yaml
+schema: 1
+kind: "sounds"
+part: "core"
+id: "bn-sounds"
+language: "bn"
+contrasts:
+  - id: "aspiration"
+    pairs: [["ক", "খ"], ["ব", "ভ"]]
+```
+
+```yaml
+schema: 1
+id: "bn-en-sounds"
+kind: "layer"
+core: "bn-sounds"
+native: { code: "en", iso639_3: "eng", name: "English" }
+contrasts:
+  "aspiration": "a breath after the consonant"
+```
+
+The layer's id is `<lang>-<native>-sounds`, and it gives `contrasts`, a
+name for every contrast of the core and no other, and may give
+`description`; nothing else. The app reads the English layer; which layer a
+learner from another language sees is not decided yet (#498).
+
 ## Script guides
 
 How a script works, before its letters ([ADR-0016](adr/0016-script-guides.md)):
@@ -2448,6 +2872,46 @@ Each feature:
 | `example` | yes | One letter or short word that shows it, drawn large. |
 | `text` | yes | What to look for, for a beginner from English. |
 | `letters` | no | More letters that share it, each quoted. |
+
+**A core and its layers** (#498). A guide may be split like a deck
+([Core and layer files](#core-and-layer-files)): the core keeps its path and
+id, `decks/bn/bn-script.yaml`, adds `part: "core"`, and leaves out `name`,
+`intro`, and each feature's `name` and `text`; each native language's
+layer, `decks/bn/en/bn-en-script.yaml`, gives them, keyed by feature id:
+
+```yaml
+schema: 1
+kind: "script"
+part: "core"
+id: "bn-script"
+language: "bn"
+features:
+  - id: "headline"
+    term: "মাত্রা"
+    reading: "mātrā"
+    example: "ক"
+    letters: ["ক", "ঘ", "ত", "ন"]
+```
+
+```yaml
+schema: 1
+id: "bn-en-script"
+kind: "layer"
+core: "bn-script"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "How Bengali script works"
+intro: "A few ideas come back in letter after letter."
+features:
+  "headline":
+    name: "The headline"
+    text: "Most letters hang from a line along the top."
+```
+
+The layer's id is `<lang>-<native>-script`. It gives `name`, `intro` and
+`features`, a `name` and `text` for every feature of the core and no other;
+nothing else. [Script in prose](#script-in-prose-always-with-its-reading)
+holds in its text. The app reads the English layer; which layer a learner
+from another language sees is not decided yet (#498).
 
 ## Facts files
 
@@ -2503,8 +2967,7 @@ fact carries its own text in every language it is written in. It has
 | `contrast` | no | A language code. Set it when the fact compares this language with that one, as the `bn` fact above does. Such a fact is shown only to learners who speak that language, and `text` must have an entry for it. |
 | `tags` | no | What the fact is about, e.g. `[script]`, `[pronunciation]`, `[grammar]`, `[history]`. |
 | `source` | no | Where the fact can be checked. Give one whenever the fact is not common knowledge. |
-
-**Decided, not yet built** (owner: "Yes, a fact can name cards"): a fact can name the cards it is about, so it shows beside them. See [Card data](#card-data).
+| `cards` | no | The cards the fact is about, by id, `["hi-0042"]` (owner: "Yes, a fact can name cards"; #516), so it can show beside them. Each is a card of the language, listed once. |
 
 ### Rules
 
@@ -2678,9 +3141,10 @@ lists, Wiktionary (CC BY-SA 4.0), counts from Wikipedia (CC BY-SA), Tatoeba
 (CC BY 2.0 FR, attribution per sentence) and original work. Recordings from
 Wikimedia Commons each keep their own licence and speaker credit.
 
-- **Data from outside names its source, per item** (owner: "Per item"). The
-  shape of the per-item `source` comes with the card data fields (#518);
-  until then, a deck's own `source` names a source the whole deck draws on.
+- **Data from outside names its source, per item** (owner: "Per item"). An
+  item has its own `source`: for Wiktionary, the entry's page and nothing
+  else (owner, 2026-10-16, #518: "Link only"). A deck's own `source` names
+  a source the whole deck draws on.
 - **CC0 content already given stays usable,** because CC0 allows it.
 - **The app credits the sources.** Settings, Sources names CC BY-SA 4.0 for
   deck content, and credits Wiktionary, Wikimedia Commons, Wikipedia and

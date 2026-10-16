@@ -1,0 +1,181 @@
+schema: 1
+id: "bn-grammar-conjunct-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "grammar"]
+cards:
+  - ref: "bn-0666"
+    modes: ["recognition", "production", "listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0677"
+    target: "কাজ করা"
+    reading: "kāj kôrā"
+    ipa: "kadʒ kɔra"
+    pos: "verb"
+  - id: "bn-0678"
+    target: "বাজার করা"
+    reading: "bājār kôrā"
+    ipa: "badʒar kɔra"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "বাজার", ref: "bn-1040" }
+  - ref: "bn-0660"
+    modes: ["recognition", "production", "listening", "speaking"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0679"
+    target: "ফোন করা"
+    reading: "phon kôrā"
+    ipa: "pʰon kɔra"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ফোন", ref: "bn-1152" }
+  - id: "bn-0680"
+    target: "গল্প করা"
+    reading: "gôlpo kôrā"
+    ipa: "ɡɔlpo kɔra"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "গল্প", base: "গল্প", reading: "gôlpo" }
+  - id: "bn-0681"
+    target: "বিশ্রাম করা"
+    reading: "bisrām kôrā"
+    ipa: "bisram kɔra"
+    alt_target: ["বিশ্রাম নেওয়া"]
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "বিশ্রাম", base: "বিশ্রাম", reading: "bisrām" }
+  - id: "bn-0682"
+    target: "ব্যায়াম করা"
+    reading: "bêyām kôrā"
+    ipa: "bæjam kɔra"
+    pos: "verb"
+    bases:
+      - { word: "ব্যায়াম", base: "ব্যায়াম", reading: "bêyām" }
+  - id: "bn-0683"
+    target: "পরিষ্কার করা"
+    reading: "poriśkār kôrā"
+    ipa: "poriʃkar kɔra"
+    pos: "verb"
+  - id: "bn-0684"
+    target: "বিয়ে করা"
+    reading: "biye kôrā"
+    ipa: "bije kɔra"
+    pos: "verb"
+    bases:
+      - { word: "বিয়ে", base: "বিয়ে", reading: "biye" }
+  - id: "bn-0685"
+    target: "জিজ্ঞেস করা"
+    reading: "jiggeś kôrā"
+    ipa: "dʒiɡɡeʃ kɔra"
+    alt_target: ["জিজ্ঞাসা করা"]
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "জিজ্ঞেস", base: "জিজ্ঞেস", reading: "jiggeś" }
+  - id: "bn-0686"
+    target: "শুরু করা"
+    reading: "śuru kôrā"
+    ipa: "ʃuru kɔra"
+    pos: "verb"
+    bases:
+      - { word: "শুরু", base: "শুরু", reading: "śuru" }
+  - id: "bn-0687"
+    target: "শেষ করা"
+    reading: "śeś kôrā"
+    ipa: "ʃeʃ kɔra"
+    pos: "verb"
+    bases:
+      - { word: "শেষ", base: "শেষ", reading: "śeś" }
+  - id: "bn-0688"
+    target: "ভুল করা"
+    reading: "bhul kôrā"
+    ipa: "bʱul kɔra"
+    pos: "verb"
+    bases:
+      - { word: "ভুল", ref: "bn-1244" }
+  - id: "bn-0689"
+    target: "ঠিক করা"
+    reading: "ṭhik kôrā"
+    ipa: "ʈʰik kɔra"
+    pos: "verb"
+    bases:
+      - { word: "ঠিক", ref: "bn-1243" }
+  - id: "bn-0690"
+    target: "সাহায্য করা"
+    reading: "śāhājjo kôrā"
+    ipa: "ʃaɦadʒdʒo kɔra"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0691"
+    target: "চেষ্টা করা"
+    reading: "ceśṭā kôrā"
+    ipa: "tʃeʃʈa kɔra"
+    pos: "verb"
+    bases:
+      - { word: "চেষ্টা", base: "চেষ্টা", reading: "ceśṭā" }
+  - id: "bn-0692"
+    target: "অপেক্ষা করা"
+    reading: "ôpekkhā kôrā"
+    ipa: "ɔpekkʰa kɔra"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "অপেক্ষা", base: "অপেক্ষা", reading: "ôpekkhā" }
+  - id: "bn-0693"
+    target: "পছন্দ করা"
+    reading: "pôchondo kôrā"
+    ipa: "pɔtʃʰond̪o kɔra"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0694"
+    target: "গান করা"
+    reading: "gān kôrā"
+    ipa: "ɡan kɔra"
+    alt_target: ["গান গাওয়া"]
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "গান", base: "গান", reading: "gān" }
+  - id: "bn-0695"
+    target: "রাগ করা"
+    reading: "rāg kôrā"
+    ipa: "raɡ kɔra"
+    pos: "verb"
+    bases:
+      - { word: "রাগ", ref: "bn-1249" }
+  - id: "bn-0696"
+    target: "মনে পড়া"
+    reading: "mône pôṛā"
+    ipa: "mɔne pɔɽa"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "মনে", base: "মন", reading: "môn" }
+  - id: "bn-0697"
+    target: "দেরি হওয়া"
+    reading: "deri hoā"
+    ipa: "d̪eri ɦoa"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "দেরি", base: "দেরি", reading: "deri" }
+      - { word: "হওয়া", ref: "bn-0874" }

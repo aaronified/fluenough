@@ -21,6 +21,8 @@ schema: 1
 kind: "path"
 id: "te-path"
 language: "te"
+# The gender classes a noun's gender is one of (#512; DECK-FORMAT.md, Card data).
+genders: ["mahat", "amahat"]
 # Where Telugu is spoken, for a rater's region and a card's region note
 # (ADR-0036): the three regions its dialects are usually grouped by. The
 # ids are permanent, as card ids are; rename a name, never an id. The app

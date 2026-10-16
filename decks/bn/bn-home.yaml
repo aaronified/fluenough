@@ -1,0 +1,176 @@
+schema: 1
+id: "bn-home"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+theme: "home"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-0594"
+    target: "ফ্ল্যাট"
+    reading: "phlêṭ"
+    ipa: "pʰlæʈ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0595"
+    target: "রান্নাঘর"
+    reading: "rānnāghor"
+    ipa: "rannaɡʱor"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0596"
+    target: "শোয়ার ঘর"
+    reading: "śoyār ghôr"
+    ipa: "ʃojar ɡʱɔr"
+    alt_target: ["শোবার ঘর"]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "শোয়ার", ref: "bn-1120" }
+  - id: "bn-0597"
+    target: "বসার ঘর"
+    reading: "bôśār ghôr"
+    ipa: "bɔʃar ɡʱɔr"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "বসার", ref: "bn-0884" }
+  - id: "bn-0598"
+    target: "বাথরুম"
+    reading: "bāthrum"
+    ipa: "bat̪ʰrum"
+    alt_target: ["স্নানঘর", "গোসলখানা"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0599"
+    target: "দরজা"
+    reading: "dôrjā"
+    ipa: "d̪ɔrdʒa"
+    pos: "noun"
+    picture: "🚪"
+  - id: "bn-0600"
+    target: "জানালা"
+    reading: "jānālā"
+    ipa: "dʒanala"
+    alt_target: ["জানলা"]
+    pos: "noun"
+    picture: "🪟"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0601"
+    target: "বারান্দা"
+    reading: "bārāndā"
+    ipa: "barand̪a"
+    pos: "noun"
+  - id: "bn-0602"
+    target: "ছাদ"
+    reading: "chād"
+    ipa: "tʃʰad̪"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0603"
+    target: "সিঁড়ি"
+    reading: "śim̐ṛi"
+    ipa: "ʃĩɽi"
+    pos: "noun"
+  - id: "bn-0604"
+    target: "তলা"
+    reading: "tôlā"
+    ipa: "t̪ɔla"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0605"
+    target: "চাবি"
+    reading: "cābi"
+    ipa: "tʃabi"
+    pos: "noun"
+    picture: "🔑"
+  - id: "bn-0606"
+    target: "বিছানা"
+    reading: "bichānā"
+    ipa: "bitʃʰana"
+    pos: "noun"
+    picture: "🛏"
+  - id: "bn-0607"
+    target: "চেয়ার"
+    reading: "ceyār"
+    ipa: "tʃejar"
+    pos: "noun"
+    picture: "🪑"
+  - id: "bn-0608"
+    target: "টেবিল"
+    reading: "ṭebil"
+    ipa: "ʈebil"
+    pos: "noun"
+  - id: "bn-0609"
+    target: "পাখা"
+    reading: "pākhā"
+    ipa: "pakʰa"
+    alt_target: ["ফ্যান"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0610"
+    target: "পাড়া"
+    reading: "pāṛā"
+    ipa: "paɽa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0611"
+    target: "প্রতিবেশী"
+    reading: "protibeśi"
+    ipa: "prot̪ibeʃi"
+    pos: "noun"
+  - id: "bn-0612"
+    target: "বাড়ির সামনে একটা পার্ক আছে।"
+    reading: "bāṛir śāmne ekṭā pārk āche."
+    ipa: "baɽir ʃamne ekʈa park atʃʰe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "বাড়ির", ref: "bn-0196" }
+      - { word: "একটা", ref: "bn-0202" }
+      - { word: "পার্ক", ref: "bn-1044" }
+      - { word: "আছে", base: "আছে", reading: "āche" }
+  - id: "bn-0613"
+    target: "আমাদের পাড়াটা খুব শান্ত।"
+    reading: "āmāder pāṛāṭā khub śānto."
+    ipa: "amad̪er paɽaʈa kʰub ʃant̪o"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আমাদের", ref: "bn-0834" }
+      - { word: "পাড়াটা", ref: "bn-0610" }
+      - { word: "শান্ত", ref: "bn-1239" }
+  - ref: "bn-0196"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0051"
+    target: "ঘর"
+    reading: "ghôr"
+    ipa: "ɡʱɔr"
+    pos: "noun"
+  - id: "bn-0615"
+    target: "আলো"
+    reading: "ālo"
+    ipa: "alo"
+    pos: "noun"
+  - id: "bn-0616"
+    target: "আলমারি"
+    reading: "ālmāri"
+    ipa: "almari"
+    pos: "noun"
+  - ref: "bn-0283"
+    notes:
+      - { id: "n1", kind: "note" }

@@ -1,0 +1,211 @@
+schema: 1
+id: "bn-family"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+theme: "family"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-0423"
+    target: "বাবা"
+    reading: "bābā"
+    ipa: "baba"
+    alt_target: ["আব্বা", "আব্বু"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0424"
+    target: "মা"
+    reading: "mā"
+    ipa: "ma"
+    alt_target: ["আম্মা", "আম্মু"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "bn-0186"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "bn-0181"
+    tags: []
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "bn-0182"
+    tags: []
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0425"
+    target: "বোন"
+    reading: "bon"
+    ipa: "bon"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0426"
+    target: "ছেলে"
+    reading: "chele"
+    ipa: "tʃʰele"
+    pos: "noun"
+  - id: "bn-0427"
+    target: "মেয়ে"
+    reading: "meye"
+    ipa: "meje"
+    pos: "noun"
+  - id: "bn-0428"
+    target: "স্বামী"
+    reading: "śāmi"
+    ipa: "ʃami"
+    alt_target: ["বর"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0429"
+    target: "স্ত্রী"
+    reading: "stri"
+    ipa: "st̪ri"
+    alt_target: ["বউ"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0430"
+    target: "ছেলেমেয়ে"
+    reading: "chelemeye"
+    ipa: "tʃʰelemeje"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0431"
+    target: "ঠাকুরদা"
+    reading: "ṭhākurdā"
+    ipa: "ʈʰakurd̪a"
+    alt_target: ["দাদু", "দাদা"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0432"
+    target: "ঠাকুমা"
+    reading: "ṭhākumā"
+    ipa: "ʈʰakuma"
+    alt_target: ["ঠাকুরমা", "দাদি"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0433"
+    target: "দাদু"
+    reading: "dādu"
+    ipa: "d̪ad̪u"
+    alt_target: ["দাদামশাই", "নানা"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0434"
+    target: "দিদিমা"
+    reading: "didimā"
+    ipa: "d̪id̪ima"
+    alt_target: ["দিদা", "নানি"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0435"
+    target: "কাকা"
+    reading: "kākā"
+    ipa: "kaka"
+    alt_target: ["কাকু", "চাচা"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0436"
+    target: "পিসি"
+    reading: "piśi"
+    ipa: "piʃi"
+    alt_target: ["পিসিমা", "ফুফু"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0437"
+    target: "মামা"
+    reading: "māmā"
+    ipa: "mama"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0438"
+    target: "মাসি"
+    reading: "māśi"
+    ipa: "maʃi"
+    alt_target: ["মাসিমা", "খালা"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0439"
+    target: "আমার এক ভাই আর দুই বোন আছে।"
+    reading: "āmār ek bhāi ār dui bon āche."
+    ipa: "amar ek bʱai ar d̪ui bon atʃʰe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আমার", ref: "bn-0833" }
+      - { word: "আছে", base: "আছে", reading: "āche" }
+  - id: "bn-0440"
+    target: "আপনার কি ভাইবোন আছে?"
+    reading: "āpnār ki bhāibon āche?"
+    ipa: "apnar ki bʱaibon atʃʰe"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আপনার", ref: "bn-0138" }
+      - { word: "ভাইবোন", base: "ভাইবোন", reading: "bhāibon" }
+      - { word: "আছে", base: "আছে", reading: "āche" }
+  - id: "bn-0441"
+    target: "আমি বিবাহিত।"
+    reading: "āmi bibāhito."
+    ipa: "ami bibaɦit̪o"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আমি", ref: "bn-0833" }
+      - { word: "বিবাহিত", base: "বিবাহিত", reading: "bibāhito" }
+  - ref: "bn-0197"
+  - id: "bn-0442"
+    target: "বাবা-মা"
+    reading: "bābā-mā"
+    ipa: "babama"
+    alt_target: ["মা-বাবা"]
+    pos: "noun"
+  - id: "bn-0443"
+    target: "আত্মীয়"
+    reading: "āttiyo"
+    ipa: "at̪t̪ijo"
+    pos: "noun"
+  - id: "bn-0444"
+    target: "জেঠু"
+    reading: "jeṭhu"
+    ipa: "dʒeʈʰu"
+    alt_target: ["জ্যাঠা", "বড় চাচা"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0445"
+    target: "শ্বশুর"
+    reading: "śośur"
+    ipa: "ʃoʃur"
+    pos: "noun"
+  - id: "bn-0446"
+    target: "শাশুড়ি"
+    reading: "śāśuṛi"
+    ipa: "ʃaʃuɽi"
+    pos: "noun"
+  - id: "bn-0447"
+    target: "নাতি"
+    reading: "nāti"
+    ipa: "nat̪i"
+    pos: "noun"
+  - id: "bn-0448"
+    target: "নাতনি"
+    reading: "nātni"
+    ipa: "nat̪ni"
+    alt_target: ["নাতনী"]
+    pos: "noun"

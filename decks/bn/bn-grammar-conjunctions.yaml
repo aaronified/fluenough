@@ -1,0 +1,112 @@
+schema: 1
+id: "bn-grammar-conjunctions"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar"]
+cards:
+  - id: "bn-0361"
+    target: "আর"
+    reading: "ār"
+    ipa: "ar"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0362"
+    target: "এবং"
+    reading: "eboṅ"
+    ipa: "eboŋ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0363"
+    target: "কিন্তু"
+    reading: "kintu"
+    ipa: "kint̪u"
+    pos: "other"
+  - id: "bn-0364"
+    target: "বা"
+    reading: "bā"
+    ipa: "ba"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0365"
+    target: "কারণ"
+    reading: "kāron"
+    ipa: "karon"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0366"
+    target: "তাই"
+    reading: "tāi"
+    ipa: "t̪ai"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0367"
+    target: "যে"
+    reading: "je"
+    ipa: "dʒe"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0368"
+    target: "যদি … তাহলে"
+    reading: "jodi... tāhole"
+    ipa: "dʒod̪i t̪aɦole"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "যদি", base: "যদি", reading: "jodi" }
+      - { word: "তাহলে", base: "তাহলে", reading: "tāhole" }
+  - id: "bn-0369"
+    target: "যখন … তখন"
+    reading: "jôkhon... tôkhon"
+    ipa: "dʒɔkʰon t̪ɔkʰon"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "যখন", base: "যখন", reading: "jôkhon" }
+      - { word: "তখন", base: "তখন", reading: "tôkhon" }
+  - id: "bn-0370"
+    target: "আমিও"
+    reading: "āmio"
+    ipa: "amio"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0711"
+    target: "তবে"
+    reading: "tôbe"
+    ipa: "t̪ɔbe"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0712"
+    target: "হয়তো"
+    reading: "hôyto"
+    ipa: "ɦɔjt̪o"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0713"
+    target: "বোধহয়"
+    reading: "bodhhoy"
+    ipa: "bod̪ʱɦoj"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0714"
+    target: "চা না কফি?"
+    reading: "cā nā kophi?"
+    ipa: "tʃa na kopʰi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "কফি", ref: "bn-0975" }

@@ -83,12 +83,23 @@ String indexFor(Map<String, String> files, {int version = 1}) {
   final names = <String, String>{};
   final natives = <String, Set<String>>{};
   final alphabets = <String>{};
+  final media = <String, List<Map<String, Object?>>>{};
   for (final path in files.keys.toList()..sort()) {
     final parts = path.split('/');
     if (parts.length < 3 || parts[0] != 'decks') continue;
     final code = parts[1];
     final text = files[path]!;
     final bytes = utf8.encode(text);
+    // A card's recording or image (#518, #523): listed under `media`.
+    if (parts.length == 4 && (parts[2] == 'audio' || parts[2] == 'images')) {
+      (media[code] ??= <Map<String, Object?>>[]).add(<String, Object?>{
+        'path': path,
+        'size': bytes.length,
+        'sha256': sha256Hex(bytes),
+        'kind': parts[2] == 'audio' ? 'audio' : 'image',
+      });
+      continue;
+    }
     final yaml = loadYaml(text);
     final header = yaml is YamlMap ? yaml : YamlMap();
     final kind = header['kind'] as String? ?? 'vocab';
@@ -163,6 +174,7 @@ String indexFor(Map<String, String> files, {int version = 1}) {
           'script_decks': alphabets.contains(code),
           'path': paths[code] ?? const <String>[],
           'files': languages[code],
+          'media': ?media[code],
         },
     ],
   });

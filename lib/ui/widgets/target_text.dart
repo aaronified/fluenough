@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
+import '../../core/models/aksharas.dart';
 import '../../core/models/deck.dart';
 import '../card_text_scale.dart';
 import '../theme.dart';
+import 'drill_frame.dart';
 
 /// Deck content in the deck's language: a card's target, a lemma, a leech.
 ///
@@ -21,6 +23,13 @@ import '../theme.dart';
 /// [TargetText.hero] sizes it as the design does — 96, 64 or 48 by length —
 /// and [TargetText.card] from a size it is given, both times the scale.
 /// Elsewhere, as in lists and menus, a plain [TargetText] keeps its size.
+///
+/// On a drill card, a long word in a script that needs a reading breaks
+/// across lines only between its aksharas, never inside one (owner,
+/// 2026-10-16, #515: "Break between syllables"): [breakableWord] gives the
+/// line breaker those places and no others. A screen reader reads the word
+/// as written. A long word in a joined script, such as Urdu, is never
+/// broken: it shrinks until it fits the line ("Shrink Urdu instead").
 class TargetText extends StatelessWidget {
   const TargetText(
     this.text, {
@@ -67,13 +76,14 @@ class TargetText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (_sizing == _Sizing.fixed) return _text(fontSize!);
+    if (_sizing == _Sizing.fixed) return _text(context, fontSize!);
     final settings = AppScope.of(context).settings;
     return ListenableBuilder(
       listenable: settings,
       builder: (context, _) {
         final scale = cardTextScaleOf(context, settings);
         return _text(
+          context,
           _sizing == _Sizing.hero
               ? TargetSizes.forText(text, scale: scale)
               : fontSize! * scale,
@@ -82,18 +92,60 @@ class TargetText extends StatelessWidget {
     );
   }
 
-  Widget _text(double size) => Text(
-    text,
-    textAlign: textAlign,
-    textDirection: language.rtl ? TextDirection.rtl : TextDirection.ltr,
-    locale: Locale(language.code),
-    style: TextStyle(
-      fontSize: size,
-      fontWeight: fontWeight,
-      color: color,
-      height: language.rtl ? TargetSizes.rtlHeight : TargetSizes.ltrHeight,
-    ),
-  );
+  Widget _text(BuildContext context, double base) {
+    var size = base;
+    var shown = text;
+    if (_sizing != _Sizing.fixed && _isOneWord) {
+      final room = MediaQuery.sizeOf(context).width - _cardMargins;
+      final width = _width(context, size);
+      if (width > room) {
+        if (hasAksharas(text)) {
+          shown = breakableWord(text);
+        } else if (isJoinedScript(text)) {
+          // Shrunk to fit, a hair under, so that rounding never wraps it.
+          size = size * room / width * 0.98;
+        }
+      }
+    }
+    return Text(
+      shown,
+      semanticsLabel: shown == text ? null : text,
+      textAlign: textAlign,
+      textDirection: language.rtl ? TextDirection.rtl : TextDirection.ltr,
+      locale: Locale(language.code),
+      style: TextStyle(
+        fontSize: size,
+        fontWeight: fontWeight,
+        color: color,
+        height: language.rtl ? TargetSizes.rtlHeight : TargetSizes.ltrHeight,
+      ),
+    );
+  }
+
+  /// Whether [text] is one word: a longer text breaks between its words.
+  bool get _isOneWord => !text.contains(RegExp(r'\s'));
+
+  /// How wide [text] is on one line at [size], scaled as the screen scales
+  /// text.
+  double _width(BuildContext context, double size) {
+    final painter = TextPainter(
+      text: TextSpan(
+        text: text,
+        style: TextStyle(fontSize: size, fontWeight: fontWeight),
+        locale: Locale(language.code),
+      ),
+      textDirection: language.rtl ? TextDirection.rtl : TextDirection.ltr,
+      textScaler: MediaQuery.textScalerOf(context),
+      maxLines: 1,
+    )..layout();
+    final width = painter.width;
+    painter.dispose();
+    return width;
+  }
+
+  /// The drill page's margins and the card's padding, both sides
+  /// ([DrillFrame]).
+  static const double _cardMargins = 2 * (16 + 20);
 }
 
 enum _Sizing { fixed, hero, card }

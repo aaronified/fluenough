@@ -1,0 +1,109 @@
+schema: 1
+id: "bn-addressing"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+theme: "addressing"
+tags: ["beginner"]
+cards:
+  - id: "bn-0181"
+    target: "দাদা"
+    reading: "dādā"
+    ipa: "d̪ad̪a"
+    alt_target: ["ভাই", "বড় ভাই"]
+    pos: "noun"
+    tags: ["honorific"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0182"
+    target: "দিদি"
+    reading: "didi"
+    ipa: "d̪id̪i"
+    alt_target: ["আপা"]
+    pos: "noun"
+    tags: ["honorific"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0183"
+    target: "কাকু"
+    reading: "kāku"
+    ipa: "kaku"
+    alt_target: ["কাকা", "চাচা"]
+    pos: "noun"
+    tags: ["honorific"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0184"
+    target: "মাসিমা"
+    reading: "māśimā"
+    ipa: "maʃima"
+    alt_target: ["কাকিমা", "খালা"]
+    pos: "noun"
+    tags: ["honorific"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0185"
+    target: "দাদু"
+    reading: "dādu"
+    ipa: "d̪ad̪u"
+    alt_target: ["দাদা", "নানা"]
+    pos: "noun"
+    tags: ["honorific"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0186"
+    target: "ভাই"
+    reading: "bhāi"
+    ipa: "bʱai"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0187"
+    target: "স্যার"
+    reading: "sêr"
+    ipa: "sær"
+    pos: "noun"
+    tags: ["honorific"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0188"
+    target: "ম্যাডাম"
+    reading: "mêḍām"
+    ipa: "mæɖam"
+    pos: "noun"
+    tags: ["honorific"]
+  - id: "bn-0189"
+    target: "বন্ধু"
+    reading: "bondhu"
+    ipa: "bond̪ʱu"
+    pos: "noun"
+  - id: "bn-0190"
+    target: "শুনছেন?"
+    reading: "śunchen?"
+    ipa: "ʃuntʃʰen"
+    pos: "phrase"
+    tags: ["polite"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0414"
+    target: "আপা"
+    reading: "āpā"
+    ipa: "apa"
+    alt_target: ["দিদি"]
+    pos: "noun"
+    tags: ["honorific"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "bn-0415"
+    target: "তপনদা, কেমন আছেন?"
+    reading: "tôpondā, kemon āchen?"
+    ipa: "t̪ɔpond̪a kemon atʃʰen"
+    alt_target: ["তপন ভাই, কেমন আছেন?"]
+    pos: "phrase"
+    tags: ["honorific"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "তপনদা", base: "তপন", reading: "tôpon" }
+      - { word: "আছেন", base: "আছে", reading: "āche" }
