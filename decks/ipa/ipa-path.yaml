@@ -12,25 +12,24 @@
 # chart, and the symbols of the languages the learner learns, chosen by the
 # language codes in each card's tags (and `core` for every learner).
 #
-# Every ipa-en deck is listed exactly once. See ADR-0013 and
+# Every ipa deck is listed, by its core id, exactly once. See ADR-0013 and
 # docs/DECK-FORMAT.md.
 schema: 1
 kind: path
-id: ipa-en-path
+id: ipa-path
 language: ipa
-native: en
 # No theme decks here, so no unit but the last can end in "*": a deck a
 # learner adds goes in the last unit.
 units:
-  - [ipa-en-basics]
-  - [ipa-en-familiar]
-  - [ipa-en-places]
-  - [ipa-en-breath]
-  - [ipa-en-retroflex]
-  - [ipa-en-fricatives]
-  - [ipa-en-liquids]
-  - [ipa-en-vowels]
-  - [ipa-en-diacritics]
-  - [ipa-en-rare]
-  - [ipa-en-narrow]
+  - [ipa-basics]
+  - [ipa-familiar]
+  - [ipa-places]
+  - [ipa-breath]
+  - [ipa-retroflex]
+  - [ipa-fricatives]
+  - [ipa-liquids]
+  - [ipa-vowels]
+  - [ipa-diacritics]
+  - [ipa-rare]
+  - [ipa-narrow]
   - ["*"]

@@ -1,0 +1,183 @@
+schema: 1
+id: "ipa-breath"
+part: "core"
+kind: "vocab"
+language: { code: "ipa", iso639_3: "zxx", name: "IPA", script: "ipa", typed: false, icon: "ə" }
+license: "CC0-1.0"
+source: "Arranged after the IPA chart, 2020 revision, of the International Phonetic Association (https://www.internationalphoneticassociation.org/content/ipa-chart), and the Handbook of the International Phonetic Association (1999)"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ipa-0038"
+    target: "ʰ"
+    tags: ["core", "hi", "mr", "gu", "bn", "as", "te", "kn"]
+    examples:
+      - target: "खिड़की"
+        language: "hi"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0039"
+    target: "ʱ"
+    tags: ["hi", "mr", "gu", "bn", "as", "te", "kn"]
+    examples:
+      - target: "ভাত"
+        language: "bn"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0040"
+    target: "pʰ"
+    tags: ["hi", "mr", "gu", "bn", "as", "te", "kn"]
+    examples:
+      - target: "চাফা"
+        language: "as"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0041"
+    target: "bʱ"
+    tags: ["hi", "mr", "gu", "bn", "as", "te", "kn"]
+    examples:
+      - target: "भाई"
+        language: "hi"
+      - target: "ভাত"
+        language: "as"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0042"
+    target: "t̪ʰ"
+    tags: ["hi", "mr", "gu", "bn", "te", "kn"]
+    examples:
+      - target: "পথ"
+        language: "bn"
+      - target: "के साथ"
+        language: "hi"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0043"
+    target: "d̪ʱ"
+    tags: ["hi", "mr", "gu", "bn", "te", "kn"]
+    examples:
+      - target: "दूध"
+        language: "hi"
+      - target: "ధర"
+        language: "te"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0044"
+    target: "tʰ"
+    tags: ["as"]
+    examples:
+      - target: "পথ"
+        language: "as"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0045"
+    target: "dʱ"
+    tags: ["as"]
+    examples:
+      - target: "ধুনীয়া"
+        language: "as"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0046"
+    target: "kʰ"
+    tags: ["hi", "mr", "gu", "bn", "as", "te", "kn"]
+    examples:
+      - target: "खाना"
+        language: "hi"
+      - target: "খুৰা"
+        language: "as"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0047"
+    target: "ɡʱ"
+    tags: ["hi", "mr", "gu", "bn", "as", "te", "kn"]
+    examples:
+      - target: "घर"
+        language: "hi"
+      - target: "घरी"
+        language: "mr"
+      - target: "ঘৰ"
+        language: "as"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0048"
+    target: "tʃ"
+    tags: ["hi", "mr", "gu", "bn", "te", "kn", "es", "en"]
+    examples:
+      - target: "चाय"
+        language: "hi"
+      - target: "leche"
+        language: "es"
+        ipa: "ˈletʃe"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0049"
+    target: "tʃʰ"
+    tags: ["hi", "mr", "gu", "bn", "te", "kn"]
+    examples:
+      - target: "छह"
+        language: "hi"
+      - target: "मछली"
+        language: "hi"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0050"
+    target: "dʒ"
+    tags: ["hi", "mr", "gu", "bn", "te", "kn", "en"]
+    examples:
+      - target: "आज"
+        language: "hi"
+      - target: "জল"
+        language: "bn"
+      - target: "jam"
+        language: "en"
+        ipa: "dʒæm"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0051"
+    target: "dʒʱ"
+    tags: ["hi", "mr", "gu", "bn", "te", "kn"]
+    examples:
+      - target: "ঝাল"
+        language: "bn"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0052"
+    target: "ts"
+    tags: ["mr"]
+    examples:
+      - target: "चार"
+        language: "mr"
+      - target: "चहा"
+        language: "mr"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0053"
+    target: "dz"
+    tags: ["mr"]
+    examples:
+      - target: "जवळ"
+        language: "mr"
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0054"
+    target: "t͡ʃ"
+    tags: ["hi", "mr", "gu", "bn", "te", "kn", "es", "en"]
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
