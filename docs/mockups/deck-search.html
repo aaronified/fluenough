@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Deck Filter</title>
-<meta name="description" content="The Decks tab with a filter for All, Words, Phrases, Grammar and Reading, from what decks carry today, with each filter state, one language shown, 1.4x text and an empty result (#527).">
+<title>Deck Search</title>
+<meta name="description" content="The Decks tab's one search for decks, units and words, typo-tolerant, with a kind chip on each result that narrows to that kind: travel, numbers and the words for you, nothing found, and 1.4x text (#527).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&display=swap">
@@ -16,15 +16,16 @@
 </style>
 <style>
 /* ===== The page around the phones (not the app) ===== */
-:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
-:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36;--page-code:#EEE9E6}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E;--page-code:#262120}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E;--page-code:#262120}
 *,*::before,*::after{box-sizing:border-box}
 html,body{overflow-x:hidden}
 body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",system-ui,sans-serif;line-height:1.5}
 .wrap{max-width:1500px;margin:0 auto;padding:28px 16px 72px}
 h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
 h2{font-size:20px;line-height:28px;margin:0 0 8px;font-weight:700}
+h3.pg{font-size:16px;line-height:24px;margin:20px 0 6px;font-weight:700}
 .lede{max-width:880px;color:var(--page-muted);margin:0 0 16px;font-size:15px}
 .controls{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;margin:0 0 10px;font-size:14px}
 .controls fieldset{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
@@ -47,6 +48,11 @@ th,td{border-bottom:1px solid var(--page-line);padding:10px 12px;text-align:left
 th{font-weight:700}
 .prop{display:inline-block;font-size:12px;line-height:16px;font-weight:700;padding:1px 8px;border-radius:8px;border:1px solid var(--page-acc);color:var(--page-acc);margin-right:6px}
 .dec{display:inline-block;font-size:12px;line-height:16px;font-weight:700;padding:1px 8px;border-radius:8px;border:1px solid var(--page-line);color:var(--page-fg);margin-right:6px}
+pre{max-width:880px;overflow-x:auto;background:var(--page-code);border:1px solid var(--page-line);border-radius:10px;padding:12px 14px;font-size:13px;line-height:19px;margin:0 0 16px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em}
+.note{max-width:880px;background:var(--page-card);border:1px solid var(--page-line);border-left:4px solid var(--page-acc);border-radius:10px;padding:14px 16px;margin:0 0 16px}
+.note p,.note li{color:var(--page-fg);font-size:15px;margin:0 0 8px}
+.note ol,.note ul{margin:0 0 8px;padding-left:22px}
 @media (max-width:700px){
   table,thead,tbody,tr,th,td{display:block}
   thead{display:none}
@@ -56,23 +62,17 @@ th{font-weight:700}
 }
 /* "Mark what changes": an outline outside the app's boxes, never part of the app */
 body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
-/* annotations over a frame (a finger, an arrow): the page's, not the app's */
-.ann{position:absolute;pointer-events:none;z-index:9}
-.finger{width:44px;height:44px;border-radius:22px;background:rgba(128,128,128,.35);border:2px solid rgba(255,255,255,.7);box-shadow:0 0 0 1px rgba(0,0,0,.35)}
-.trail{height:4px;border-radius:2px;background:linear-gradient(90deg,rgba(128,128,128,0),rgba(128,128,128,.6))}
 
 /* ===== The app: lib/ui/theme.dart (M3, Roboto, the design's heavier weights and radii) ===== */
 .ph{--t:1;--tn:1;width:360px;height:800px;flex:none;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
- background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali","Noto Sans Telugu",sans-serif;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",sans-serif;
  box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
-/* 1.4x text, the app's cap (#505): every text scales; glyph tiles (TextScaler.noScaling) and icons do not; NavigationBar labels clamp at 1.3x */
+/* 1.4x text, the app's cap (#505): every text scales; icons do not; NavigationBar labels clamp at 1.3x */
 .ph.x14{--t:1.4;--tn:1.3}
 .mi{font-family:"Material Icons";font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;direction:ltr;font-feature-settings:"liga";flex:none;width:24px;height:24px;overflow:hidden}
 .mo{font-family:"Material Icons Outlined"}
 .mr{font-family:"Material Icons Round"}
 .m18{font-size:18px;width:18px;height:18px}
-.m20{font-size:20px;width:20px;height:20px}
-.m22{font-size:22px;width:22px;height:22px}
 .m32{font-size:32px;width:32px;height:32px}
 .stat{height:28px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 20px 0 24px;font-size:14px;font-weight:500;color:var(--onS)}
 .stat .ic{display:flex;gap:4px;align-items:center}
@@ -83,6 +83,7 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 .clip{position:absolute;left:0;right:0;top:0;overflow:hidden}
 .thumb{position:absolute;right:3px;width:4px;border-radius:2px;background:var(--onS);opacity:.42}
 .ibtn{width:48px;height:48px;border-radius:24px;display:flex;align-items:center;justify-content:center;color:var(--onSv);flex:none}
+.ibtn.sel{background:var(--sc);color:var(--onSc)}
 /* text: size × the phone's text scale */
 .bL{font-size:calc(16px*var(--t));line-height:calc(24px*var(--t));letter-spacing:.5px}
 .bM{font-size:calc(14px*var(--t));line-height:calc(20px*var(--t));letter-spacing:.25px}
@@ -92,31 +93,28 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 .tS{font-size:calc(14px*var(--t));line-height:calc(20px*var(--t));font-weight:700;letter-spacing:.1px}
 .tM{font-size:calc(16px*var(--t));line-height:calc(24px*var(--t));font-weight:600;letter-spacing:.15px}
 .tL{font-size:calc(22px*var(--t));line-height:calc(28px*var(--t));font-weight:600}
-.secT{font-size:calc(18px*var(--t));line-height:calc(24px*var(--t));font-weight:600}
 .v{color:var(--onSv)}
 .one{white-space:nowrap}
 
-/* ---- a tab's header row (TabHeader, the Decks and Today headers) ---- */
+/* ---- the Decks header (TabHeader) ---- */
 .tabh{display:flex;align-items:center;padding:16px 12px 8px 24px;flex:none;position:relative}
 .tabh h3{flex:1;min-width:0;margin:0;font-weight:600;font-size:calc(32px*var(--t));line-height:calc(40px*var(--t))}
-.todayh{display:flex;align-items:center;min-height:72px;padding:0 16px 0 24px;flex:none;position:relative}
-.todayh .gr{flex:1;min-width:0;display:flex;flex-direction:column}
-.todayh h3{margin:0;font-weight:600;font-size:calc(24px*var(--t));line-height:calc(32px*var(--t))}
-.avatar{width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex:none}
-.avatar>span{width:44px;height:44px;border-radius:22px;background:var(--pc);color:var(--onPc);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px;line-height:1}
-/* LanguageMenu: a TextButton, 48 high, the glyph tile and arrow_drop_down */
+/* LanguageMenu: a TextButton, 48 high, a globe for All languages and arrow_drop_down */
 .lmenu{min-width:48px;height:48px;display:flex;align-items:center;padding:4px 2px 4px 8px;color:var(--onSv);border-radius:24px;flex:none;position:relative}
-.mglyph{min-width:28px;height:28px;padding:0 4px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;line-height:24px;background:var(--sc);color:var(--onSc);position:relative;overflow:hidden}
-/* chips (FilterChip): 32 high inside a 48 target */
-.chipsH{display:flex;gap:8px;padding:0 16px;overflow:hidden;white-space:nowrap}
+/* SearchBar (decks_page.dart): 56 high, surfaceContainerHigh, no elevation */
+.sbar{margin:0 16px 8px;min-height:56px;border-radius:28px;background:var(--sHigh);display:flex;align-items:center;gap:16px;padding:0 4px 0 16px;color:var(--onS);flex:none}
+.sbar .q{flex:1;min-width:0;display:flex;align-items:center}
+.sbar .hint{color:var(--onSv)}
+.caret{display:inline-block;width:2px;height:calc(22px*var(--t));background:var(--p);margin-left:1px;flex:none}
+/* the narrowing row: one selected chip with its ✕, and what is hidden (#527) */
+.nrow{display:flex;align-items:center;gap:8px;padding:0 16px 4px;flex:none}
 .fhit{min-height:48px;min-width:48px;display:flex;align-items:center;justify-content:center;flex:none}
-.fchip{min-height:calc(32px + 12px*(var(--t) - 1));border-radius:10px;border:1px solid var(--ol);display:flex;align-items:center;gap:6px;padding:5px 12px 5px 8px;color:var(--onSv)}
-.fchip.nock{padding-left:12px}
+.fchip{min-height:calc(32px + 12px*(var(--t) - 1));border-radius:10px;border:1px solid var(--ol);display:flex;align-items:center;gap:6px;padding:4px 8px 4px 12px;color:var(--onSv)}
 .fchip.on{background:var(--sc);border-color:var(--sc);color:var(--onSc)}
 .fchip.on .mi{color:var(--onSc)}
-.glyph{min-width:22px;height:22px;padding:0 4px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;line-height:22px;background:var(--sc);color:var(--onSc);flex:none}
-.fchip.on .glyph{background:var(--sLowest);color:var(--onS)}
-.duec{min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:var(--p);color:var(--onP);display:flex;align-items:center;justify-content:center;font-size:calc(11px*var(--t));line-height:calc(16px*var(--t));font-weight:800}
+/* the kind chip on a result: an AssistChip, 32 high inside a 48 target; tapping it narrows to that kind */
+.khit{min-height:48px;min-width:48px;display:flex;align-items:center;justify-content:flex-end;flex:none;padding-left:4px}
+.kchip{min-height:calc(32px + 12px*(var(--t) - 1));border-radius:8px;border:1px solid var(--ol);display:flex;align-items:center;padding:4px 12px;color:var(--onSv);background:transparent}
 /* NavigationBar */
 .navb{flex:none;height:80px;background:var(--sCont);display:flex;position:relative;z-index:3}
 .navb .d{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-width:0}
@@ -124,68 +122,44 @@ body.marks .chg{outline:2px dashed var(--page-acc);outline-offset:-2px}
 .navb .d.on .ind{background:var(--sc);color:var(--onSc)}
 .navb .nl{font-size:calc(12px*var(--tn));line-height:calc(16px*var(--tn));font-weight:600;letter-spacing:.5px;color:var(--onSv)}
 .navb .d.on .nl{color:var(--onS)}
-/* FloatingActionButton.extended: 56 high, 16 radius, primaryContainer; "Where I am" in tertiary */
+/* FloatingActionButton.extended: Add deck stays while searching; "Where I am" does not (decks_page.dart) */
 .fabs{position:absolute;left:16px;right:16px;bottom:144px;display:flex;align-items:center;z-index:2}
 .fabs .sp{flex:1}
 .fab{height:56px;border-radius:16px;display:flex;align-items:center;gap:8px;padding:0 20px 0 16px;background:var(--pc);color:var(--onPc);box-shadow:0 3px 6px rgba(0,0,0,.25)}
-.fab.ter{background:var(--ter);color:var(--onTer)}
 .fab.ic{width:56px;padding:0;justify-content:center}
-/* M3 menu (MenuAnchor) */
-.menu{position:absolute;z-index:6;min-width:200px;background:var(--sCont);border-radius:4px;padding:8px 0;box-shadow:0 3px 8px rgba(0,0,0,.3)}
-.menu .it{min-height:48px;display:flex;align-items:center;gap:12px;padding:0 12px;color:var(--onS)}
-.menu .it .ck{width:24px;height:24px;flex:none;color:var(--onSv)}
-/* GroupedList and DeckTile (lib/ui/widgets/grouped_list.dart, deck_tile.dart) */
+/* GroupedList (grouped_list.dart) and the search's rows (unit_search.dart, _HitTile) */
+.content{padding:4px 16px 120px}
+.lead{margin:4px 8px 12px}
+.cline{flex:none;padding:0 24px 8px}
+.sech{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin:12px 8px 8px}
 .grp{display:flex;flex-direction:column;gap:4px}
 .grp>.row{background:var(--sLow);border-radius:6px}
 .grp>.row:first-child{border-top-left-radius:24px;border-top-right-radius:24px}
 .grp>.row:last-child{border-bottom-left-radius:24px;border-bottom-right-radius:24px}
-.dtile{display:flex;align-items:center;gap:16px;padding:14px 16px}
-.dglyph{width:56px;height:56px;border-radius:18px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--sc);color:var(--onSc);font-size:24px;font-weight:600;line-height:1.2}
-.dtile .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
-.badge{min-width:32px;min-height:28px;max-width:120px;padding:4px 10px;border-radius:14px;display:flex;align-items:center;justify-content:center;text-align:center;flex:none}
-.badge.due{background:var(--p);color:var(--onP)}
-.badge.pend{background:var(--tc);color:var(--onTc)}
-.badge.nd{background:var(--sc);color:var(--onSc)}
-.badge.done{background:var(--sHighest);color:var(--onSv)}
-/* ---- the Decks tab (lib/features/decks/decks_page.dart) ---- */
-.ctl{flex:none;padding:0 0 8px}
-.ctl .chipsH+.chipsH{margin-top:0}
-.dk .content{padding:4px 16px 208px}
-/* the path (path_view.dart): nodes swaying across, joined by connectors */
-.pnode{display:block}
-.uwrap{display:flex;flex-direction:column;align-items:center}
-.upl{padding:4px 10px;border-radius:8px;background:var(--inv);color:var(--onInv);margin-bottom:6px}
-.un{width:100%;min-height:64px;border-radius:20px;padding:10px 14px 10px 10px;display:flex;align-items:center;gap:12px}
-.un.done{background:var(--sc);color:var(--onSc)}
-.un.next{background:var(--p);color:var(--onP);box-shadow:0 1px 3px rgba(0,0,0,.3)}
-.un.ahead{background:var(--sHigh);color:var(--onS);box-shadow:inset 0 0 0 1px var(--olv)}
-.un .lead{width:40px;height:40px;flex:none;border-radius:12px;display:flex;align-items:center;justify-content:center;background:color-mix(in srgb,currentColor 14%,transparent)}
-.un.next .lead{border-radius:20px}
-.un .num{font-size:16px;line-height:24px;font-weight:800}
-.un .tx{flex:1;min-width:0;display:flex;flex-direction:column}
-.un.ahead .meta{color:var(--onSv)}
-.conn{display:block;width:100%;height:28px}
-/* the kind filter (#527) */
-.fsum{margin:0 8px 12px}
+.rt{display:flex;align-items:center;gap:8px;min-height:64px;padding:10px 8px 10px 16px;position:relative}
+.rt .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.rt b{font-weight:800;color:var(--p);text-decoration:underline;text-underline-offset:3px}
+.wl{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.wl .w{font-size:calc(20px*var(--t));line-height:calc(28px*var(--t));font-weight:600}
+/* a set card's members, under it and drawn as its group */
+.row.mem .rt{padding-left:36px}
+.row.mem .rt::before{content:"";position:absolute;left:18px;top:10px;bottom:10px;width:3px;border-radius:2px;background:var(--ol)}
+.setic{width:24px;height:24px;color:var(--onSv)}
+.more .rt{min-height:56px}
 /* EmptyState (page_parts.dart) */
-.dk .scroll[data-full] .content{position:absolute;inset:0 0 112px 0;display:flex;align-items:center;justify-content:center;padding:0}
-.empty{display:flex;flex-direction:column;align-items:center;text-align:center;padding:32px}
+.scroll[data-full] .content{position:absolute;inset:0 0 112px 0;display:flex;align-items:center;justify-content:center;padding:0}
+.empty{display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 32px}
 .empty .eic{width:72px;height:72px;border-radius:24px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
 .empty .tL{margin-top:16px}
 .empty .bL{margin-top:8px;color:var(--onSv)}
 .fbtn{margin-top:20px;min-height:56px;border-radius:28px;padding:0 24px;display:flex;align-items:center;justify-content:center;background:var(--p);color:var(--onP)}
 .fbtn .tM{font-weight:700}
-.mapt td.f{font-weight:700;white-space:nowrap}
-.mapt td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
-.mapt tr.edge td{background:color-mix(in srgb,var(--page-acc) 10%,transparent)}
-details{max-width:1100px;margin:12px 0 0}
-summary{cursor:pointer;font-weight:600;font-size:14px;min-height:36px;display:flex;align-items:center}
 </style>
 </head>
 <body class="marks">
 <div class="wrap">
-<h1>Decks: a filter for words, phrases, grammar and reading</h1>
-<p class="lede"><b>#527</b>. A row of filter chips on the Decks tab: <b>All, Words, Phrases, Grammar, Reading</b> (owner, 2026-10-16). <b>All</b> is today's path, unchanged. Any other filter lists the course's decks of that kind in the order the path teaches them. It works from what the decks on main already carry: the deck's <code>kind</code>, its <code>grammar</code> tag, its phrasebook cards, and, for sentence decks, their content. There is no new deck field. Bengali and Hindi from English throughout; the deck names, counts and units are read from <code>decks/bn</code> and <code>decks/hi</code> on main (2026-10-16). Colours are Flutter's own <code>ColorScheme.fromSeed</code> output for the app's four seeds, as in <a href="session-result-and-hours.html">session-result-and-hours.html</a>. The dashed outlines mark what changes and are not part of the app. Anything marked <span class="prop">Proposed</span> is not decided yet and is listed in the decisions table at the end.</p>
+<h1>Decks: one search for decks, units and words</h1>
+<p class="lede"><b>#527</b>. The owner, 2026-10-16: “I just want people to quickly find stuff. The filters can be replaced by a fts5 search with typo tolerance and the kind can be a chip.” So the filter row is gone. The Decks tab's search, today a search of unit names (<code>unit_search.dart</code>), becomes one search of <b>decks, units and words</b>: deck and unit names, and every card's word, reading and meaning. It forgives typos. Results come in two groups, decks and units first, then words, and each result carries a <b>kind chip</b>: Words, Grammar, Script or Reading. Tapping a chip narrows the search to that kind (“Both”). The three cases the owner named are drawn exactly, each with a typo: “I may quickly need the travel deck or the numbers, or what the different you words are”. Hindi and Bengali from English; deck names, units and words are read from <code>decks/hi</code> and <code>decks/bn</code> on main (2026-10-16). Colours are Flutter's own <code>ColorScheme.fromSeed</code> output for the app's four seeds. The dashed outlines mark what changes and are not part of the app. Anything marked <span class="prop">Proposed</span> is not decided yet and is listed in the decisions table at the end. This replaces <code>deck-filter.html</code>, whose filters no longer apply.</p>
 
 <div class="controls" role="group" aria-label="Theme">
  <fieldset><legend>Seed</legend>
@@ -208,117 +182,305 @@ summary{cursor:pointer;font-weight:600;font-size:14px;min-height:36px;display:fl
 </div>
 <p id="check" role="status">Self-check runs once the fonts load…</p>
 
-<section class="opt" id="states">
-<h2>1 · Each filter, on a Bengali course</h2>
-<p>The learner learns Bengali, Hindi and Spanish, and is at unit 9 of Bengali, <i>Everyday verbs</i>. The menu at the top shows All languages, so the course chips are there, as today, and the filter row comes under them. <b>All</b> is selected when the tab opens and shows the path as it is now, opened at the unit up next. Choosing another filter lists that kind's decks, each on its own row as “Other decks” draws them, from the top. Choosing All again goes back to the path, at the unit up next.</p>
-<div class="frames" id="fr-states"></div>
+<section class="opt" id="travel">
+<h2>1 · “travl”: the travel deck</h2>
+<p>The learner learns Hindi and Bengali, and the menu at the top shows All languages. The search button opens the bar, as today, and the course chips step aside while it is open, since the search covers both courses. The hint says what it finds. Typing “travl” finds Travel in both courses. On main, Travel is a <b>coming</b> unit in each (planned <code>hi-travel</code> and <code>bn-travel</code>, 55 words, at B1): the deck is not written yet, so the row says Coming and does not open, as the coming units on the path do today. Once its deck is written, the same search opens it. The line under the bar says they are close matches, not exact ones; it stays there while the list scrolls.</p>
+<div class="frames" id="fr-travel"></div>
 <ul>
-<li><span class="prop">Proposed</span> A filtered list starts at the top, with one line saying how many decks it holds. Each row's second line gives the deck's unit on the path, so the order makes sense without the path. The badge is the deck's usual one (Done, Pending, Not done, or “9 due”).</li>
-<li><span class="prop">Proposed</span> “Where I am” is hidden while a filter other than All is on, since there is no path to scroll. Add deck stays.</li>
-<li><span class="prop">Proposed</span> The filter is kept per course while the app is open. Choosing another course chip keeps the chosen filter, and its list is that course's.</li>
+<li><span class="prop">Proposed</span> The course chips are hidden while the search is open. The menu still limits the search to one language when it shows one.</li>
+<li><span class="prop">Proposed</span> The hint: “Search decks, units and words”. With nothing typed, one line under the bar: “A deck, a unit, or a word in either language, its reading or its meaning.”</li>
+<li><span class="prop">Proposed</span> When no result holds what was typed exactly, a line under the bar says “Close matches for “travl””, and with the closest word when the search tried one (“Close matches for “yuo”: you”). The part of a name or meaning that matched is bold, underlined and in the primary colour.</li>
 </ul>
 </section>
 
-<section class="opt" id="one">
-<h2>2 · One language shown, and 1.4x text</h2>
-<p>While the menu at the top shows one language (#461), Decks has no course chips. The filter row then sits right under the header. At 1.4x, the app's cap, the five chips no longer fit across the screen, so the row scrolls sideways like the other chip rows. The chosen chip is always whole, and a chip cut at the edge shows there are more.</p>
-<div class="frames" id="fr-one"></div>
+<section class="opt" id="numbers">
+<h2>2 · “numbrs”: the numbers decks</h2>
+<p>“numbrs” finds the two numbers units of each course, Numbers 1–20 and Tens and big numbers, and the Hindi grammar table “Adjectives: gender and number”, which shares the same letters and so comes after them. The status that today's pill shows (Done, Not done) moves into the row's second line, so the kind chip has the row's end. Tapping the Grammar chip narrows the results to grammar: the chip moves up under the bar, selected, with a ✕ that brings everything back, and a line says how many results the narrowing hides.</p>
+<div class="frames" id="fr-numbers"></div>
+<ul>
+<li><span class="prop">Proposed</span> Each row: its name; then the language, the unit (with its name when the deck is not the unit's theme deck), its size and Done when done; then the kind chip. Coming units say Coming and their size.</li>
+<li><span class="prop">Proposed</span> Narrowing shows one selected chip under the bar, “Grammar” with a ✕, and “1 of 5 results”. The ✕, tapping the selected chip, or Back clears it; Back again closes the search. The kind chips on the rows still work, so the learner can switch to another kind straight away.</li>
+</ul>
+</section>
+
+<section class="opt" id="you">
+<h2>3 · “you”: the different words for you</h2>
+<p>“you” finds three decks whose names hold it (in “your” too), and then the words. The words for “you” come together under their <b>set card</b> (#506, #515; <code>set-cards.html</code>, approved), so the learner sees the whole group at once: Hindi आप (āp), तुम (tum), तू (tū), and Bengali আপনি (āpni), তুমি (tumi), তুই (tui). The Bengali plural words for “you” follow, then one row that folds the words that only contain “you”, such as “thank you” or “younger brother”. The second frame is the same list scrolled to the words. “yuo”, with the letters swapped, finds the same: no name or word holds those three letters together, so the search tries the closest known word, “you”, and says so.</p>
+<div class="frames" id="fr-you"></div>
+<ul>
+<li><span class="prop">Proposed</span> A word found in several decks is one row: its word and reading, its meaning, and the deck it is taught in first, with “and 1 more deck” or “and 2 more decks”. Its chip is that first deck's kind; a word card in a sentence deck counts as Words. Narrowed to a kind, a word shows when any of its decks is of that kind.</li>
+<li><span class="prop">Proposed</span> A set card is a row of its own, its members right under it, drawn as one group, in the order of the set card. A set shows whole whenever one of its members is found, so the words for “you” are never split. Set cards are decided but not yet built (<code>docs/DECK-FORMAT.md</code>, Set cards); until they are, the members show without the set row.</li>
+<li><span class="prop">Proposed</span> Order of the words: those whose meaning starts with the word typed, sets first, by course; then those with it as a whole word elsewhere; then those where it starts or sits inside a word, folded into “Show 17 more” (Hindi 4 and Bengali 13 on main, 2026-10-16).</li>
+<li><span class="prop">Proposed</span> Sentence decks and sentence cards: “Leave out phrases as that will otherwise confuse people”, and sentence decks show “Only under All”. So a sentence deck is found by its name, with no kind chip of its own, and only while no kind is chosen (“Things around you: sentences” below says Sentences where the chip would be). Sentence cards are not word results: “you” would otherwise bring 48 sentences such as “You listen.”</li>
+</ul>
 </section>
 
 <section class="opt" id="empty">
-<h2>3 · An empty result</h2>
-<p>Every Hindi and Bengali course has one reading deck. Spanish has none yet (its four decks are a phrasebook, a core word deck and two grammar tables), so its Reading filter is empty. The empty state says so in plain words and offers the way back.</p>
+<h2>4 · Nothing found, and nothing of that kind</h2>
+<p>When nothing is close enough, the empty state says so in plain words and says what the search looks in. When the results are there but none is of the chosen kind, it says that, and offers the way back to every kind.</p>
 <div class="frames" id="fr-empty"></div>
 <ul>
-<li><span class="prop">Proposed</span> Text: “No reading decks in Spanish yet”, then “Reading decks have passages to hear and read, with questions.” Button: “Show all decks”, which chooses All.</li>
-<li><span class="prop">Proposed</span> A filter chip is never greyed out or hidden when its list is empty. The row stays the same for every course, so it doesn't jump around.</li>
+<li><span class="prop">Proposed</span> Nothing found: “Nothing found for “helicoptr””, then “The search looks in deck and unit names, and in each word, its reading and its meaning. Try fewer letters, or another word.” No button.</li>
+<li><span class="prop">Proposed</span> Nothing of a kind: “No reading results for “numbrs””, then “5 results of other kinds.” and the button “Show every kind”, which clears the narrowing.</li>
 </ul>
 </section>
 
-<section class="opt" id="map">
-<h2>4 · How each deck maps, from what decks carry today</h2>
-<p>Each deck falls under exactly one filter. The rules are checked in this order, and the first that matches wins. Only the deck's existing fields are read: <code>kind</code>, <code>tags</code>, each card's <code>phrasebook</code> mark, and whether a card is a sentence by the app's own test (<code>isSentence</code> in <code>path_model.dart</code>: <code>pos: "phrase"</code>, or three words or more).</p>
-<table>
-<thead><tr><th>Order</th><th>Filter</th><th>A deck is here when</th><th>Examples (English names)</th></tr></thead>
-<tbody>
-<tr><td data-h="Order">1</td><th>Reading</th><td data-h="When"><code>kind: "reading"</code></td><td data-h="Examples">Reading: Sahaj Path, part 1; Reading: Panch Parmeshwar</td></tr>
-<tr><td data-h="Order">2</td><th>Grammar</th><td data-h="When"><code>kind: "grammar"</code> (a pattern table), <code>kind: "rules"</code> (a rule table), or a vocab deck tagged <code>grammar</code> (a grammar lesson written as sentences)</td><td data-h="Examples">Present tense; Verbs: I, you, he, she, we, they (a rule table); Basic sentences; Noun + করা (kôrā)</td></tr>
-<tr><td data-h="Order">3</td><th>Phrases</th><td data-h="When">any other vocab deck with phrasebook cards, or with sentences for half its cards or more</td><td data-h="Examples">Phrasebook: first phrases; Everyday verbs: sentences; A day</td></tr>
-<tr><td data-h="Order">4</td><th>Words</th><td data-h="When">every other vocab deck: themes, numbers, sounds, spellings and the script decks' letters</td><td data-h="Examples">Family; Tens and big numbers; Bengali vowels</td></tr>
-</tbody></table>
-<p style="margin-top:16px" id="map-counts"></p>
-<p>Highlighted rows are close calls: <span id="map-edges"></span>.</p>
-<details open><summary>Every Bengali deck (from English), in path order</summary><table class="mapt" id="map-bn"></table></details>
-<details><summary>Every Hindi deck (from English), in path order</summary><table class="mapt" id="map-hi"></table></details>
+<section class="opt" id="x14">
+<h2>5 · 1.4x text</h2>
+<p>At the app's cap, 1.4x (#505), the rows grow taller and their lines wrap; the kind chip keeps its line and the row's end, and the chip's label never wraps. The bar grows with its text.</p>
+<div class="frames" id="fr-x14"></div>
+</section>
+
+<section class="opt" id="fts">
+<h2>6 · How FTS5 does it <span class="prop">Proposed</span></h2>
+<p>A note for whoever builds it, not part of the screens. drift already bundles SQLite (<code>drift_flutter</code>, with <code>sqlite3_flutter_libs</code>), and that SQLite has FTS5. One FTS5 table holds a row per thing the search finds; the app fills it from the decks it has loaded, and fills it again when decks are added, updated or removed.</p>
+<pre><code>CREATE VIRTUAL TABLE search USING fts5(
+  name, word, reading, meaning,           -- what is searched
+  kind UNINDEXED,                         -- words, grammar, script, reading, or empty for a sentence deck
+  hit UNINDEXED, ref UNINDEXED,           -- unit, coming, deck, set or word, and its id
+  lang UNINDEXED, path UNINDEXED,         -- the course, and the place on its path, for the order
+  tokenize = 'trigram remove_diacritics 1'
+);
+-- a deck or unit row fills name; a word row fills word, reading and meaning
+-- (a pattern or rule table's entries: lemma, reading and gloss).
+-- A second, word-level index lists the words the search knows, for the fallback:
+CREATE VIRTUAL TABLE terms USING fts5(name, meaning, reading, tokenize = 'unicode61 remove_diacritics 2');
+CREATE VIRTUAL TABLE terms_vocab USING fts5vocab(terms, 'row');</code></pre>
+<div class="note">
+<p><b>Typo tolerance in two steps.</b></p>
+<ol>
+<li><b>Trigrams.</b> The trigram tokenizer cuts every name, word, reading and meaning into overlapping three-letter pieces. The query is cut the same way, and a row matches when it holds at least half of the query's pieces. “travl” is <code>tra rav avl</code>; “Travel” holds <code>tra</code> and <code>rav</code>, 2 of 3. “numbrs” is <code>num umb mbr brs</code>; “Numbers 1–20” holds <code>num</code> and <code>umb</code>, 2 of 4. The query is run as an OR of its pieces, and the share of pieces held is counted from the row's text. <code>remove_diacritics</code> lets “ap” find āp.</li>
+<li><b>Edit distance, when trigrams find nothing.</b> “yuo” is one piece, <code>yuo</code>, that no row holds. The search then looks in <code>terms_vocab</code> for the known words closest to each typed word, by Damerau–Levenshtein distance (a swap of two letters counts as one): at most 1 for words of up to 4 letters, 2 for longer ones, the closest first and then the most common. “yuo” is 1 from “you”, so the search runs again for “you” and says “Close matches for “yuo””.</li>
+</ol>
+<p><b>Order.</b> Decks and units first, then words. Within each: an exact whole-word match, then a match at a word's start (“your”), then inside a word (“younger”), then trigram and edit-distance matches by the share held; then FTS5's <code>bm25</code>, which puts a short name such as “Tens and big numbers” before a long one; then the course order and the place on the path. A word found in several decks is one row; its set card, if it has one, is put at the head of its group.</p>
+<p><b>Script and short queries.</b> Typing in Devanagari or Bengali script matches the word column the same way. A query shorter than three letters has no trigram, so it is run as a <code>LIKE 'āp%'</code> on the same table, which SQLite answers by a scan; the table holds a few thousand rows per course, so this stays quick.</p>
+<p><b>Kinds.</b> The kind is read from what decks carry today, with no new deck field: <code>kind: "reading"</code> is Reading; <code>kind: "grammar"</code> or <code>"rules"</code>, or the <code>grammar</code> tag, is Grammar; the <code>script</code> tag is Script; a vocab deck with phrasebook cards, or with sentences for half its cards or more, is a sentence deck with no kind; every other deck is Words. A chip narrows the query with <code>AND kind = ?</code>, a word row matching when any of its decks has that kind.</p>
+</div>
 </section>
 
 <section class="opt" id="decisions">
-<h2>5 · Decisions</h2>
+<h2>7 · Decisions</h2>
 <table>
 <thead><tr><th>#</th><th>Decision</th><th>Who</th></tr></thead>
 <tbody>
-<tr><td data-h="#">1</td><td data-h="Decision">The filters are “Words, Phrases, Grammar, Reading”, plus All. Phrases means the sentence and phrasebook decks. Grammar includes the rule tables.</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
-<tr><td data-h="#">2</td><td data-h="Decision">It works from what the decks on main carry: <code>kind</code>, and sentence decks by their content. No new deck field.</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527, 0.4.4)</td></tr>
-<tr><td data-h="#">3</td><td data-h="Decision">The filter is a row of chips (FilterChip, with the check mark like the Progress chips). It sits under the course chips, or under the header when one language is shown, and scrolls sideways when the chips don't fit.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
-<tr><td data-h="#">4</td><td data-h="Decision">All shows the path, unchanged. Any other filter shows a flat list of decks in path order, each row giving its unit.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
-<tr><td data-h="#">5</td><td data-h="Decision">The mapping rules in section 4, in that order. A vocab deck tagged <code>grammar</code> is Grammar, even when its cards are sentences.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
-<tr><td data-h="#">6</td><td data-h="Decision">A deck is a sentence deck when half its cards or more are sentences. This makes “A day” and Bengali's “First words” Phrases.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
-<tr><td data-h="#">7</td><td data-h="Decision">Script decks (letters) count as Words.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
-<tr><td data-h="#">8</td><td data-h="Decision">The second line of a row: “Unit 9 · 30 cards”, “Unit 9 · 23 sentences”, “Unit 7 · Forms table”, “Unit 11 · Rule table”, “Unit 33 · 8 passages”.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
-<tr><td data-h="#">9</td><td data-h="Decision">“Where I am” is hidden while a filter is on. The filter is kept per course while the app is open, and the row isn't shown during unit search.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
-<tr><td data-h="#">10</td><td data-h="Decision">Empty result: “No reading decks in Spanish yet”, a line about what those decks are, and “Show all decks”. Chips are never greyed out.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
-<tr><td data-h="#">11</td><td data-h="Decision">Screen reader: the row is named “Kind of deck”. Each chip reads its name and whether it is selected, and the list reads its count line first.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="#">1</td><td data-h="Decision">No filter row. One FTS5 search with typo tolerance replaces it: “I just want people to quickly find stuff. The filters can be replaced by a fts5 search with typo tolerance and the kind can be a chip.”</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
+<tr><td data-h="#">2</td><td data-h="Decision">The kind chip does both: each result shows its kind as a chip, and tapping the chip narrows the search to that kind (“Both”).</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
+<tr><td data-h="#">3</td><td data-h="Decision">It finds “Decks, units and words”: deck and unit names, and every card's word, reading and meaning, so a word leads to its deck.</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
+<tr><td data-h="#">4</td><td data-h="Decision">The acceptance cases: “travel” or “travl” finds the travel deck; “numbers” or “numbrs” the numbers decks; “you” the words for “you”, with their set card, together.</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
+<tr><td data-h="#">5</td><td data-h="Decision">No Phrases kind: “Leave out phrases as that will otherwise confuse people”. Sentence and phrasebook decks show “Only under All”.</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
+<tr><td data-h="#">6</td><td data-h="Decision">It works from what the decks on main carry, with no new deck field (0.4.4).</td><td data-h="Who"><span class="dec">Owner</span> 2026-10-16 (#527)</td></tr>
+<tr><td data-h="#">7</td><td data-h="Decision">The kinds are Words, Grammar, Script and Reading, read as section 6 says. A sentence deck has no chip and shows only while no kind is chosen; sentence cards are not word results.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="#">8</td><td data-h="Decision">Results in two groups, “Decks and units” then “Words”, each headed with its count. Rows give the language, unit, size and Done in their second line; the kind chip has the row's end.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="#">9</td><td data-h="Decision">A word is one row however many decks teach it, named by the first; a set card heads its members and shows whole when one member is found. Words that only contain the query fold into “Show N more”.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="#">10</td><td data-h="Decision">Narrowing: one selected chip under the bar with a ✕ and “1 of 5 results”; the ✕, the chip, or Back clears it. The empty narrowed state offers “Show every kind”.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="#">11</td><td data-h="Decision">Typo tolerance: trigrams (half the query's pieces), then Damerau–Levenshtein over the known words (1 for up to 4 letters, 2 longer). “Close matches for …” when nothing matched exactly; the matched part in bold.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="#">12</td><td data-h="Decision">The course chips are hidden while the search is open; the language menu still limits it. The search covers the courses the profile learns. Coming units are found by name and say Coming.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="#">13</td><td data-h="Decision">Texts: the hint “Search decks, units and words”; the empty states of section 4.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
+<tr><td data-h="#">14</td><td data-h="Decision">Screen reader: a row reads its name, its line and “kind: Grammar, double tap the chip to show only Grammar”; the narrowing chip reads “Showing only Grammar, double tap to show every kind”; each group header is a heading.</td><td data-h="Who"><span class="prop">Proposed</span></td></tr>
 </tbody></table>
 </section>
 </div>
 
 <script>
-/* ColorScheme.fromSeed for each ThemeSeed in lib/app/settings.dart, light and dark, contrast 0: the values of
-   languages-you-know.html, with tertiary, onTertiary, inverseSurface and onInverseSurface added from
-   material-color-utilities' SchemeTonalSpot, which reproduces every earlier value exactly. */
+/* ColorScheme.fromSeed for each ThemeSeed in lib/app/settings.dart, light and dark, contrast 0 (as in deck-filter.html,
+   now this page, and session-result-and-hours.html). */
 const SCHEMES={"forest-dark":{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLowest":"#0a0f0c","sLow":"#171d19","sCont":"#1b211d","sHigh":"#262b27","sHighest":"#313632","ol":"#8a938b","olv":"#404942","pc":"#085231","onPc":"#aef2c6","tc":"#224c58","onTc":"#bfe9f8","ter":"#a3cddc","onTer":"#033541","inv":"#dfe4dd","onInv":"#2c322d"},"forest-light":{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLowest":"#ffffff","sLow":"#f0f5ee","sCont":"#eaefe8","sHigh":"#e4eae3","sHighest":"#dfe4dd","ol":"#717972","olv":"#c0c9c0","pc":"#aef2c6","onPc":"#085231","tc":"#bfe9f8","onTc":"#224c58","ter":"#3b6471","onTer":"#ffffff","inv":"#2c322d","onInv":"#edf2eb"},"ocean-dark":{"p":"#a0cafd","onP":"#003258","sc":"#3b4858","onSc":"#d6e3f7","s":"#101418","onS":"#e1e2e8","onSv":"#c3c7cf","sLowest":"#0b0e13","sLow":"#191c20","sCont":"#1d2024","sHigh":"#272a2f","sHighest":"#32353a","ol":"#8d9199","olv":"#42474e","pc":"#184975","onPc":"#d1e4ff","tc":"#523f5f","onTc":"#f2daff","ter":"#d6bee5","onTer":"#3b2948","inv":"#e1e2e8","onInv":"#2e3135"},"ocean-light":{"p":"#35618e","onP":"#ffffff","sc":"#d6e3f7","onSc":"#3b4858","s":"#f8f9ff","onS":"#191c20","onSv":"#42474e","sLowest":"#ffffff","sLow":"#f2f3f9","sCont":"#eceef4","sHigh":"#e6e8ee","sHighest":"#e1e2e8","ol":"#73777f","olv":"#c3c7cf","pc":"#d1e4ff","onPc":"#184975","tc":"#f2daff","onTc":"#523f5f","ter":"#6b5778","onTer":"#ffffff","inv":"#2e3135","onInv":"#eff0f7"},"clay-dark":{"p":"#ffb59e","onP":"#55200d","sc":"#5d4037","onSc":"#ffdbd0","s":"#1a110f","onS":"#f1dfda","onSv":"#d8c2bc","sLowest":"#140c0a","sLow":"#231917","sCont":"#271d1b","sHigh":"#322825","sHighest":"#3d322f","ol":"#a08d87","olv":"#53433f","pc":"#723521","onPc":"#ffdbd0","tc":"#52461a","onTc":"#f4e2a7","ter":"#d7c68d","onTer":"#3a3005","inv":"#f1dfda","onInv":"#392e2b"},"clay-light":{"p":"#8f4c36","onP":"#ffffff","sc":"#ffdbd0","onSc":"#5d4037","s":"#fff8f6","onS":"#231917","onSv":"#53433f","sLowest":"#ffffff","sLow":"#fff1ed","sCont":"#fceae5","sHigh":"#f7e4df","sHighest":"#f1dfda","ol":"#85736e","olv":"#d8c2bc","pc":"#ffdbd0","onPc":"#723521","tc":"#f4e2a7","onTc":"#52461a","ter":"#6a5e2f","onTer":"#ffffff","inv":"#392e2b","onInv":"#ffede8"},"iris-dark":{"p":"#cfbdfe","onP":"#36265d","sc":"#4a4458","onSc":"#e8def8","s":"#141218","onS":"#e6e0e9","onSv":"#cac4cf","sLowest":"#0f0d13","sLow":"#1d1b20","sCont":"#211f24","sHigh":"#2b292f","sHighest":"#36343a","ol":"#948f99","olv":"#49454e","pc":"#4d3d75","onPc":"#e9ddff","tc":"#633b48","onTc":"#ffd9e3","ter":"#efb8c8","onTer":"#4a2532","inv":"#e6e0e9","onInv":"#322f35"},"iris-light":{"p":"#65558f","onP":"#ffffff","sc":"#e8def8","onSc":"#4a4458","s":"#fdf7ff","onS":"#1d1b20","onSv":"#49454e","sLowest":"#ffffff","sLow":"#f8f2fa","sCont":"#f2ecf4","sHigh":"#ece6ee","sHighest":"#e6e0e9","ol":"#7a757f","olv":"#cac4cf","pc":"#e9ddff","onPc":"#4d3d75","tc":"#ffd9e3","onTc":"#633b48","ter":"#7e5260","onTer":"#ffffff","inv":"#322f35","onInv":"#f5eff7"}};
 
 const DECKS={"hi":[{"id":"hi-phrasebook","name":"Phrasebook: first phrases","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":20,"pb":20,"se":16,"glyph":"न","unit":1},{"id":"hi-first-words","name":"First words","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":2,"pb":0,"se":0,"glyph":"आ","unit":1},{"id":"hi-grammar-sentences","name":"Basic sentences","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":10,"pb":0,"se":10,"glyph":"मैं","unit":1},{"id":"hi-sound-differences","name":"Sounds to tell apart","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":20,"pb":0,"se":0,"glyph":"प","unit":2},{"id":"hi-grammar-differences","name":"How Hindi grammar differs from English","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":16,"pb":0,"se":12,"glyph":"व","unit":3},{"id":"hi-questions","name":"Yes, no and questions","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":12,"pb":0,"se":2,"glyph":"हाँ","unit":4},{"id":"hi-grammar-questions","name":"Basic questions","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":10,"pb":0,"se":10,"glyph":"क्या","unit":4},{"id":"hi-addressing","name":"Addressing people","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":10,"pb":0,"se":1,"glyph":"भै","unit":5},{"id":"hi-grammar-pronouns","name":"Pronouns","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":27,"pb":0,"se":0,"glyph":"मैं","unit":5},{"id":"hi-about-me","name":"About me","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":8,"pb":0,"se":1,"glyph":"ना","unit":6},{"id":"hi-grammar-present","name":"Present tense","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":36,"pb":0,"se":0,"glyph":"जा","unit":6},{"id":"hi-grammar-possessives","name":"Possessives: my, your","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":27,"pb":0,"se":0,"glyph":"मैं","unit":6},{"id":"hi-family","name":"Family","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":26,"pb":0,"se":3,"glyph":"मा","unit":7},{"id":"hi-grammar-be","name":"To be: है (hai), था (thā), होगा (hōgā)","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":36,"pb":0,"se":0,"glyph":"हो","unit":7},{"id":"hi-work","name":"Work","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":23,"pb":0,"se":4,"glyph":"नौ","unit":8},{"id":"hi-grammar-demonstratives","name":"This and that","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":18,"pb":0,"se":0,"glyph":"h","unit":8},{"id":"hi-grammar-nouns","name":"Nouns: plural and oblique","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":24,"pb":0,"se":0,"glyph":"ल","unit":9},{"id":"hi-script-vowels","name":"Hindi vowels","kind":"vocab","grammarTag":false,"script":true,"pattern":false,"n":11,"pb":0,"se":0,"glyph":"अ","unit":10},{"id":"hi-script-consonants","name":"Hindi consonants","kind":"vocab","grammarTag":false,"script":true,"pattern":false,"n":37,"pb":0,"se":0,"glyph":"क","unit":10},{"id":"hi-script-reading","name":"First words to read","kind":"vocab","grammarTag":false,"script":true,"pattern":false,"n":15,"pb":0,"se":0,"glyph":"ज","unit":10},{"id":"hi-script-vowel-signs","name":"Hindi vowel signs","kind":"vocab","grammarTag":false,"script":true,"pattern":false,"n":24,"pb":0,"se":0,"glyph":"का","unit":11},{"id":"hi-script-conjuncts","name":"Hindi conjuncts","kind":"vocab","grammarTag":false,"script":true,"pattern":false,"n":17,"pb":0,"se":0,"glyph":"क्ष","unit":11},{"id":"hi-numbers-1-20","name":"Numbers 1–20","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":20,"pb":0,"se":0,"glyph":"ए","unit":12},{"id":"hi-numbers-big","name":"Tens and big numbers","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":85,"pb":0,"se":0,"glyph":"ती","unit":13},{"id":"hi-market","name":"Market","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":12,"pb":0,"se":3,"glyph":"कि","unit":14},{"id":"hi-grammar-articles","name":"No articles: a and the","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":6,"pb":0,"se":6,"glyph":"कि","unit":14},{"id":"hi-groceries","name":"Groceries","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":13,"pb":0,"se":0,"glyph":"स","unit":15},{"id":"hi-grammar-adjectives","name":"Adjectives: gender and number","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":12,"pb":0,"se":0,"glyph":"अ","unit":15},{"id":"hi-grammar-needs","name":"Need and want","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":10,"pb":0,"se":7,"glyph":"चा","unit":15},{"id":"hi-transport","name":"Bus, auto, cab","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":12,"pb":0,"se":4,"glyph":"ब","unit":16},{"id":"hi-grammar-postpositions","name":"Postpositions: in, on, from","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":12,"pb":0,"se":6,"glyph":"में","unit":16},{"id":"hi-directions","name":"Directions","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":13,"pb":0,"se":1,"glyph":"…","unit":17},{"id":"hi-grammar-continuous","name":"Present continuous","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":24,"pb":0,"se":0,"glyph":"क","unit":17},{"id":"hi-home","name":"Home and neighbourhood","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":24,"pb":0,"se":3,"glyph":"म","unit":18},{"id":"hi-time","name":"Time and days","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":18,"pb":0,"se":1,"glyph":"आ","unit":19,"milestone":"A1"},{"id":"hi-grammar-future","name":"Future tense","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":24,"pb":0,"se":0,"glyph":"जा","unit":19,"milestone":"A1"},{"id":"hi-daily-life","name":"A day","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":19,"pb":0,"se":12,"glyph":"उ","unit":20},{"id":"hi-grammar-conjunct-verbs","name":"Noun + करना (karnā)","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":16,"pb":0,"se":16,"glyph":"का","unit":20},{"id":"hi-calendar","name":"Months and years","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":15,"pb":0,"se":0,"glyph":"म","unit":21},{"id":"hi-grammar-past","name":"Past tense","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":36,"pb":0,"se":0,"glyph":"आ","unit":21},{"id":"hi-grammar-ne","name":"The ने (nē) construction","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":9,"pb":0,"se":8,"glyph":"मैं","unit":22},{"id":"hi-grammar-perfect","name":"Present perfect","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":48,"pb":0,"se":0,"glyph":"आ","unit":22},{"id":"hi-grammar-past-more","name":"Was doing, used to, had gone","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":36,"pb":0,"se":0,"glyph":"क","unit":23},{"id":"hi-grammar-compound-verbs","name":"Compound verbs","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":9,"pb":0,"se":9,"glyph":"खा","unit":23},{"id":"hi-eating-out","name":"Eating out","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":11,"pb":0,"se":3,"glyph":"खा","unit":24},{"id":"hi-grammar-conjunctions","name":"Joining words","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":10,"pb":0,"se":2,"glyph":"ले","unit":24},{"id":"hi-grammar-likes","name":"Likes and dislikes","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":11,"pb":0,"se":8,"glyph":"प","unit":24},{"id":"hi-help","name":"Help","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":6,"pb":0,"se":0,"glyph":"म","unit":25},{"id":"hi-grammar-irregular","name":"Irregular verbs","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":23,"pb":0,"se":0,"glyph":"क","unit":25},{"id":"hi-grammar-pitfalls","name":"Pitfalls","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":10,"pb":0,"se":10,"glyph":"मैं","unit":25},{"id":"hi-registers","name":"Formal words and everyday words","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":18,"pb":0,"se":0,"glyph":"प्र","unit":26},{"id":"hi-slang","name":"Slang","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":9,"pb":0,"se":1,"glyph":"या","unit":27},{"id":"hi-grammar-can-must","name":"Can, want to, have to","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":10,"pb":0,"se":9,"glyph":"स","unit":28},{"id":"hi-spelling","name":"Hindi spellings, old and new","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":11,"pb":0,"se":0,"glyph":"हि","unit":29},{"id":"hi-reading-panch-parmeshwar","name":"Reading: Panch Parmeshwar","kind":"reading","grammarTag":false,"script":false,"pattern":false,"n":5,"pb":0,"se":0,"glyph":"R","unit":30}],"bn":[{"id":"bn-phrasebook","name":"Phrasebook: first phrases","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":20,"pb":20,"se":20,"glyph":"শু","unit":1},{"id":"bn-first-words","name":"First words","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":24,"pb":0,"se":17,"glyph":"ন","unit":1},{"id":"bn-grammar-sentences","name":"Basic sentences","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":10,"pb":0,"se":10,"glyph":"আ","unit":1},{"id":"bn-sound-differences","name":"Sounds to tell apart","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":24,"pb":0,"se":0,"glyph":"ক","unit":2},{"id":"bn-grammar-differences","name":"How Bengali grammar differs from English","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":15,"pb":0,"se":4,"glyph":"আ","unit":3},{"id":"bn-questions","name":"Yes, no and questions","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":20,"pb":0,"se":3,"glyph":"হ্যাঁ","unit":4},{"id":"bn-grammar-questions","name":"Basic questions","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":10,"pb":0,"se":10,"glyph":"আ","unit":4},{"id":"bn-addressing","name":"Addressing people","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":12,"pb":0,"se":2,"glyph":"দা","unit":5},{"id":"bn-grammar-pronouns","name":"Pronouns and possessives","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":36,"pb":0,"se":0,"glyph":"আ","unit":5},{"id":"bn-pronouns","name":"Pronouns and people words","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":24,"pb":0,"se":0,"glyph":"আ","unit":6},{"id":"bn-grammar-pronoun-forms","name":"Pronouns: my, me, with me","kind":"rules","grammarTag":true,"script":false,"pattern":false,"n":69,"pb":0,"se":0,"glyph":"আ","unit":6},{"id":"bn-pronouns-sentences","name":"Pronouns: sentences","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":16,"pb":0,"se":16,"glyph":"ই","unit":6},{"id":"bn-about-me","name":"About me","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":18,"pb":0,"se":6,"glyph":"না","unit":7},{"id":"bn-grammar-present","name":"Present tense","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":60,"pb":0,"se":0,"glyph":"ক","unit":7},{"id":"bn-family","name":"Family","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":30,"pb":0,"se":3,"glyph":"বা","unit":8},{"id":"bn-grammar-be","name":"To be: আছে (āche), ছিল (chil), নয় (nôy)","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":18,"pb":0,"se":0,"glyph":"আ","unit":8},{"id":"bn-verbs","name":"Everyday verbs","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":30,"pb":0,"se":0,"glyph":"আ","unit":9},{"id":"bn-grammar-verb-present","name":"Verbs: I, you, he, she, we, they","kind":"rules","grammarTag":true,"script":false,"pattern":false,"n":509,"pb":0,"se":0,"glyph":"আ","unit":9},{"id":"bn-verbs-sentences","name":"Everyday verbs: sentences","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":23,"pb":0,"se":23,"glyph":"আ","unit":9},{"id":"bn-work","name":"Work","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":26,"pb":0,"se":5,"glyph":"চা","unit":10},{"id":"bn-grammar-demonstratives","name":"This, that and the one not here","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":39,"pb":0,"se":0,"glyph":"h","unit":10},{"id":"bn-grammar-noun-forms","name":"Nouns: more than one, of, in, to, from, with","kind":"rules","grammarTag":true,"script":false,"pattern":false,"n":1762,"pb":0,"se":0,"glyph":"জ","unit":11},{"id":"bn-noun-forms-sentences","name":"Noun forms: sentences","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":13,"pb":0,"se":13,"glyph":"ছে","unit":11},{"id":"bn-script-vowels","name":"Bengali vowels","kind":"vocab","grammarTag":false,"script":true,"pattern":false,"n":11,"pb":0,"se":0,"glyph":"অ","unit":12},{"id":"bn-script-consonants","name":"Bengali consonants","kind":"vocab","grammarTag":false,"script":true,"pattern":false,"n":39,"pb":0,"se":0,"glyph":"ক","unit":12},{"id":"bn-script-reading","name":"First words to read","kind":"vocab","grammarTag":false,"script":true,"pattern":false,"n":16,"pb":0,"se":0,"glyph":"ক","unit":12},{"id":"bn-script-vowel-signs","name":"Bengali vowel signs","kind":"vocab","grammarTag":false,"script":true,"pattern":false,"n":18,"pb":0,"se":0,"glyph":"কা","unit":13},{"id":"bn-script-conjuncts","name":"Bengali conjuncts","kind":"vocab","grammarTag":false,"script":true,"pattern":false,"n":25,"pb":0,"se":0,"glyph":"ক্ষ","unit":13},{"id":"bn-numbers-1-20","name":"Numbers 1–20","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":20,"pb":0,"se":0,"glyph":"এ","unit":14},{"id":"bn-numbers-big","name":"Tens and big numbers","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":93,"pb":0,"se":0,"glyph":"ত্রি","unit":15},{"id":"bn-market","name":"Market","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":23,"pb":0,"se":7,"glyph":"ক","unit":16},{"id":"bn-grammar-nouns","name":"Nouns: the, plural and case","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":24,"pb":0,"se":0,"glyph":"ব","unit":16},{"id":"bn-grammar-articles","name":"Classifiers: a and the","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":10,"pb":0,"se":9,"glyph":"ব","unit":16},{"id":"bn-groceries","name":"Groceries","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":24,"pb":0,"se":1,"glyph":"স","unit":17},{"id":"bn-grammar-gender-number","name":"No gender; plurals","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":6,"pb":0,"se":6,"glyph":"সে","unit":17},{"id":"bn-grammar-needs","name":"Need and want","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":10,"pb":0,"se":9,"glyph":"আ","unit":17},{"id":"bn-food","name":"Food and drink","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":59,"pb":0,"se":0,"glyph":"আ","unit":18},{"id":"bn-food-sentences","name":"Food and drink: sentences","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":12,"pb":0,"se":12,"glyph":"আ","unit":18},{"id":"bn-transport","name":"Bus, auto, cab","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":13,"pb":0,"se":4,"glyph":"বা","unit":19},{"id":"bn-grammar-postpositions","name":"Case endings and postpositions","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":21,"pb":0,"se":4,"glyph":"রা","unit":19},{"id":"bn-directions","name":"Directions","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":13,"pb":0,"se":1,"glyph":"…","unit":20},{"id":"bn-grammar-continuous","name":"Present continuous","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":24,"pb":0,"se":0,"glyph":"ক","unit":20},{"id":"bn-body","name":"The body","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":35,"pb":0,"se":0,"glyph":"মু","unit":21},{"id":"bn-body-sentences","name":"The body: sentences","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":11,"pb":0,"se":11,"glyph":"আ","unit":21},{"id":"bn-places","name":"Places","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":42,"pb":0,"se":0,"glyph":"স্কু","unit":22},{"id":"bn-location","name":"Where things are","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":14,"pb":0,"se":0,"glyph":"পা","unit":22},{"id":"bn-places-sentences","name":"Places: sentences","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":14,"pb":0,"se":14,"glyph":"স্কু","unit":22},{"id":"bn-more-verbs","name":"More verbs","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":25,"pb":0,"se":0,"glyph":"রাঁ","unit":23},{"id":"bn-more-verbs-sentences","name":"More verbs: sentences","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":16,"pb":0,"se":16,"glyph":"মা","unit":23},{"id":"bn-home","name":"Home and neighbourhood","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":25,"pb":0,"se":4,"glyph":"ফ্ল্যা","unit":24},{"id":"bn-grammar-adjectives","name":"Adjectives and comparison","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":30,"pb":0,"se":3,"glyph":"ভা","unit":24},{"id":"bn-things","name":"Things around you","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":32,"pb":0,"se":0,"glyph":"ব","unit":25},{"id":"bn-things-sentences","name":"Things around you: sentences","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":19,"pb":0,"se":19,"glyph":"এ","unit":25},{"id":"bn-clothes","name":"Clothes and colours","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":26,"pb":0,"se":0,"glyph":"কা","unit":26},{"id":"bn-clothes-sentences","name":"Clothes and colours: sentences","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":14,"pb":0,"se":14,"glyph":"আ","unit":26},{"id":"bn-describing","name":"Describing things and feelings","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":28,"pb":0,"se":0,"glyph":"ধ","unit":27},{"id":"bn-describing-sentences","name":"Describing things and feelings: sentences","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":19,"pb":0,"se":19,"glyph":"এ","unit":27},{"id":"bn-animals","name":"Animals","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":26,"pb":0,"se":0,"glyph":"গ","unit":28},{"id":"bn-animals-sentences","name":"Animals: sentences","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":14,"pb":0,"se":14,"glyph":"গ","unit":28},{"id":"bn-quantities","name":"Quantities","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":23,"pb":0,"se":0,"glyph":"অ","unit":29},{"id":"bn-quantities-sentences","name":"Quantities: sentences","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":18,"pb":0,"se":18,"glyph":"আ","unit":29},{"id":"bn-time","name":"Time and days","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":31,"pb":0,"se":4,"glyph":"আ","unit":30,"milestone":"A1"},{"id":"bn-grammar-future","name":"Future tense","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":24,"pb":0,"se":0,"glyph":"ক","unit":30,"milestone":"A1"},{"id":"bn-daily-life","name":"A day","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":20,"pb":0,"se":15,"glyph":"ঘু","unit":31},{"id":"bn-grammar-conjunct-verbs","name":"Noun + করা (kôrā)","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":23,"pb":0,"se":0,"glyph":"কা","unit":31},{"id":"bn-sadhu-cholito","name":"Older Bengali: sadhu and cholito","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":24,"pb":0,"se":1,"glyph":"ক","unit":32},{"id":"bn-reading-sahaj-path-1","name":"Reading: Sahaj Path, part 1","kind":"reading","grammarTag":false,"script":false,"pattern":false,"n":8,"pb":0,"se":0,"glyph":"R","unit":33},{"id":"bn-calendar","name":"Months and years","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":28,"pb":0,"se":1,"glyph":"মা","unit":34},{"id":"bn-grammar-past","name":"Past tense","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":24,"pb":0,"se":0,"glyph":"ক","unit":34},{"id":"bn-grammar-perfect","name":"Present perfect","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":48,"pb":0,"se":0,"glyph":"ক","unit":35},{"id":"bn-grammar-past-negative","name":"Didn't, haven't: -নি (-ni)","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":48,"pb":0,"se":0,"glyph":"ক","unit":35},{"id":"bn-grammar-past-more","name":"Was doing, had done, used to","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":54,"pb":0,"se":0,"glyph":"ক","unit":36},{"id":"bn-eating-out","name":"Eating out","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":13,"pb":0,"se":4,"glyph":"খা","unit":37},{"id":"bn-grammar-conjunctions","name":"Joining words","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":14,"pb":0,"se":3,"glyph":"আ","unit":37},{"id":"bn-grammar-likes","name":"Likes and dislikes","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":12,"pb":0,"se":10,"glyph":"আ","unit":37},{"id":"bn-help","name":"Help","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":22,"pb":0,"se":8,"glyph":"সা","unit":38},{"id":"bn-grammar-irregular","name":"Irregular verbs","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":24,"pb":0,"se":0,"glyph":"যা","unit":38},{"id":"bn-grammar-pitfalls","name":"Pitfalls","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":9,"pb":0,"se":9,"glyph":"আ","unit":38},{"id":"bn-slang","name":"Slang","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":2,"pb":0,"se":2,"glyph":"তা","unit":39},{"id":"bn-grammar-verb-classes","name":"The ten verb types","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":120,"pb":0,"se":0,"glyph":"প","unit":40},{"id":"bn-grammar-can-must","name":"Can, want to, have to","kind":"vocab","grammarTag":true,"script":false,"pattern":false,"n":11,"pb":0,"se":9,"glyph":"পা","unit":40},{"id":"bn-spelling","name":"Bengali spellings, old and new","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":16,"pb":0,"se":1,"glyph":"পা","unit":41}],"es":[{"id":"es-phrasebook","name":"Phrasebook: first phrases","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":15,"pb":15,"se":6,"glyph":"h","unit":1},{"id":"es-core-100","name":"Spanish Core","kind":"vocab","grammarTag":false,"script":false,"pattern":false,"n":26,"pb":0,"se":0,"glyph":"e","unit":1},{"id":"es-grammar-present-ar","name":"Spanish present tense, regular -ar verbs","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":30,"pb":0,"se":0,"glyph":"h","unit":2},{"id":"es-grammar-articles-gender","name":"Spanish articles and gender","kind":"grammar","grammarTag":true,"script":false,"pattern":true,"n":32,"pb":0,"se":0,"glyph":"l","unit":3}]};
 
+
 const plural=(n,one,other)=>n===1?one:other;
-/* ---------- units, as the path draws them ---------- */
-function units(lang){const m=new Map();for(const d of DECKS[lang]){if(!m.has(d.unit))m.set(d.unit,[]);m.get(d.unit).push(d)}return m}
-function unitTitle(ds){const th=ds.find(d=>d.kind==='vocab'&&!d.grammarTag&&!/sentences$/.test(d.id));return (th||ds[0]).name}
-function unitMeta(ds,status){
- if(ds.every(d=>d.script))return `Script · ${ds.reduce((t,d)=>t+d.n,0)} letters`;
- const rules=ds.filter(d=>d.kind==='grammar'||d.kind==='rules').length;
- const words=ds.filter(d=>d.kind==='vocab').reduce((t,d)=>t+d.n-d.se,0);
- const sent=ds.filter(d=>d.kind==='vocab').reduce((t,d)=>t+d.se,0);
- const pas=ds.filter(d=>d.kind==='reading').reduce((t,d)=>t+d.n,0);
- const open=status==='done'?sent:status==='next'?Math.floor(sent/3):0;
- return [words&&`${words} ${plural(words,'word','words')}`,rules&&`${rules} ${plural(rules,'rule','rules')}`,sent&&`${open}/${sent} sentences`,pas&&`${pas} reading ${plural(pas,'passage','passages')}`].filter(Boolean).join(' · ');
+const LANGS={hi:{code:'hi',name:'Hindi',icon:'हि'},bn:{code:'bn',name:'Bengali',icon:'বা'}};
+/* the profile learns Hindi, then Bengali; where it is in each: units before it are done */
+const COURSES=['hi','bn'];
+const AT={hi:7,bn:9};
+/* coming units on main whose names the search finds: hi-path.yaml and bn-path.yaml, planned, between the A2 and B1 marks */
+const COMING=[{lang:'hi',id:'hi-travel',name:'Travel',level:'B1',words:55},{lang:'bn',id:'bn-travel',name:'Travel',level:'B1',words:55}];
+
+/* ---------- kinds, from what decks carry today (#527) ---------- */
+const KINDS=[['words','Words'],['grammar','Grammar'],['script','Script'],['reading','Reading']];
+const KN=Object.fromEntries(KINDS);
+const isSentenceDeck=(d)=>d.kind==='vocab'&&!d.grammarTag&&!d.script&&(d.pb>0||(d.n>0&&d.se*2>=d.n));
+function kindOf(d){
+ if(d.kind==='reading')return 'reading';
+ if(d.kind==='grammar'||d.kind==='rules'||d.grammarTag)return 'grammar';
+ if(d.script)return 'script';
+ if(isSentenceDeck(d))return null;
+ return 'words';
 }
-const SWAY=[0.1,0.35,0.65,0.9,0.65,0.35];
-function pathView(lang,x14,from,to,at){
- const W=328,nw=Math.min(W*(x14?0.86:0.64),300);const U=units(lang);
- const cx=(i)=>nw/2+SWAY[i%SWAY.length]*(W-nw);
- let html='';let prev=null;
- for(let u=from;u<=to;u++){const ds=U.get(u);if(!ds)continue;const i=u-1;
-  const status=u<at?'done':u===at?'next':'ahead';
-  if(prev!==null){const a=cx(prev),b=cx(i);const behind=u<=at;
-   const d=`M${a.toFixed(1)} 0 C${a.toFixed(1)} 14 ${b.toFixed(1)} 14 ${b.toFixed(1)} 28`;
-   html+=`<svg class="conn" viewBox="0 0 ${W} 28" preserveAspectRatio="none" aria-hidden="true">${behind?`<path d="${d}" fill="none" stroke="var(--p)" stroke-width="4" stroke-linecap="round"/>`:`<path d="${d}" fill="none" stroke="var(--ol)" stroke-opacity=".6" stroke-width="4.4" stroke-linecap="round" stroke-dasharray="0.1 9"/>`}</svg>`}
-  prev=i;
-  const lead=status==='done'?ic('check','mr m22'):status==='next'?`<span class="mi mr" style="font-size:26px;width:26px;height:26px" aria-hidden="true">play_arrow</span>`:`<span class="num">${u}</span>`;
-  html+=`<div class="pnode box" style="margin-left:${Math.max(0,cx(i)-nw/2).toFixed(1)}px;width:${nw.toFixed(1)}px"><div class="uwrap">${status==='next'?'<span class="upl lM one lf">Up next</span>':''}<div class="un ${status}" data-tap role="button"><span class="lead">${lead}</span><span class="tx"><span class="tS lf">${unitTitle(ds)}</span><span class="bS meta lf">${unitMeta(ds,status)}</span></span></div></div></div>`;
+const deck=(id)=>{for(const l of COURSES){const d=DECKS[l].find(x=>x.id===id);if(d)return d}throw new Error('no deck '+id)};
+function unitDecks(lang,u){return DECKS[lang].filter(d=>d.unit===u)}
+function unitTitle(lang,u){const ds=unitDecks(lang,u);const th=ds.find(d=>d.kind==='vocab'&&!d.grammarTag&&!/sentences$/.test(d.id));return (th||ds[0]).name}
+
+/* ---------- the matcher this page proposes (section 6), run here to draw the results ---------- */
+const fold=(s)=>s.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase();
+function pieces(s){s=fold(s);const out=new Set();for(let i=0;i+3<=s.length;i++)out.add(s.slice(i,i+3));return out}
+function share(q,text){const p=pieces(q);if(!p.size)return 0;const t=pieces(text);let n=0;p.forEach(x=>{if(t.has(x))n++});return n/p.size}
+/* 0 an exact whole word, 1 at a word's start, 2 inside a word, 3 trigrams only */
+function tier(q,text){const t=fold(text),w=fold(q);const i=t.indexOf(w);if(i<0)return 3;
+ const re=new RegExp(`(^|[^\\p{L}])${w}($|[^\\p{L}])`,'u');if(re.test(t))return 0;
+ if(new RegExp(`(^|[^\\p{L}])${w}`,'u').test(t))return 1;return 2}
+function matches(q,text){return fold(text).includes(fold(q))||share(q,text)>=0.5}
+/* Damerau–Levenshtein (optimal string alignment) */
+function dl(a,b){const d=[];for(let i=0;i<=a.length;i++){d[i]=[i];for(let j=1;j<=b.length;j++)d[i][j]=i?0:j}
+ for(let i=1;i<=a.length;i++)for(let j=1;j<=b.length;j++){const c=a[i-1]===b[j-1]?0:1;d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+c);
+  if(i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])d[i][j]=Math.min(d[i][j],d[i-2][j-2]+1)}return d[a.length][b.length]}
+/* bold the letters a shared piece covers, or the exact match */
+function marked(q,text){const t=fold(text);const on=new Array(text.length).fill(false);const w=fold(q);let i=t.indexOf(w);
+ if(i>=0){for(let k=i;k<i+w.length;k++)on[k]=true}
+ else{const p=pieces(q);for(let k=0;k+3<=t.length;k++)if(p.has(t.slice(k,k+3)))for(let m=k;m<k+3;m++)on[m]=true}
+ let out='',open=false;[...text].forEach((ch,k)=>{if(on[k]&&!open){out+='<b>';open=true}if(!on[k]&&open){out+='</b>';open=false}out+=ch});if(open)out+='</b>';return out}
+
+/* The words for "you" on main, one row per word, its decks in path order (cards, and pattern-table entries by lemma).
+   Meanings are the vocab card's where there is one, else the table's gloss. */
+const SETS={
+ hi:{deck:'hi-grammar-pronouns',exp:'Hindi has three words for “you”, from the most respectful to the most intimate.',members:[
+  {w:'आप',r:'āp',m:'you (respectful)',decks:['hi-first-words','hi-grammar-pronouns','hi-grammar-possessives']},
+  {w:'तुम',r:'tum',m:'you, familiar',decks:['hi-grammar-pronouns','hi-grammar-possessives']},
+  {w:'तू',r:'tū',m:'you, intimate',decks:['hi-grammar-pronouns','hi-grammar-possessives']}]},
+ bn:{deck:'bn-pronouns',exp:'Bengali has three words for “you”, from the most respectful to the most intimate.',members:[
+  {w:'আপনি',r:'āpni',m:'you (respectful)',decks:['bn-first-words','bn-grammar-pronouns']},
+  {w:'তুমি',r:'tumi',m:'you (familiar)',decks:['bn-grammar-pronouns','bn-pronouns']},
+  {w:'তুই',r:'tui',m:'you (intimate)',decks:['bn-grammar-pronouns','bn-pronouns']}]},
+};
+const OTHERS=[
+ {lang:'bn',w:'তোমরা',r:'tomrā',m:'you, more than one (familiar)',decks:['bn-grammar-pronouns','bn-pronouns']},
+ {lang:'bn',w:'আপনারা',r:'āpnārā',m:'you, more than one (respectful)',decks:['bn-grammar-pronouns','bn-pronouns']},
+ {lang:'bn',w:'তোরা',r:'torā',m:'you all, intimate',decks:['bn-grammar-pronouns']},
+];
+/* the other non-sentence cards whose meaning holds "you" on main (2026-10-16), folded into one row: [meaning, deck] */
+const FOLDED=[
+ ['hi','thank you (formal)','hi-registers'],['hi','brother; to a man of about your age','hi-addressing'],['hi','child; how elders address a younger person','hi-addressing'],['hi','uncle (father\'s younger brother)','hi-family'],
+ ['bn','small; young','bn-grammar-adjectives'],['bn','oneself; myself, yourself, himself …','bn-pronouns'],['bn','thank you','bn-first-words'],['bn','hello (literally \'peace be upon you\')','bn-first-words'],['bn','and peace be upon you (the reply)','bn-first-words'],
+ ['bn','brother; younger brother','bn-family'],['bn','sister; younger sister','bn-family'],['bn','uncle (father\'s younger brother)','bn-family'],['bn','near; (to have on you)','bn-grammar-postpositions'],
+ ['bn','how many (things you count)','bn-questions'],['bn','uncle; to a man of your parents\' age','bn-addressing'],['bn','aunty; to a woman of your parents\' age','bn-addressing'],['bn','brother; to a younger man','bn-addressing'],
+];
+/* a word's chip: the kind of the deck it is taught in first, a sentence deck counting as Words for its word cards */
+const wordKind=(w)=>kindOf(deck(w.decks[0]))||'words';
+const wordKinds=(w)=>new Set(w.decks.map(id=>kindOf(deck(id))||'words'));
+
+/* everything a word row or name row can match, for the fallback's list of known words */
+function vocab(){const t=[];const add=(s)=>fold(s).split(/[^\p{L}]+/u).filter(x=>x.length>1).forEach(x=>t.push(x));
+ COURSES.forEach(l=>DECKS[l].forEach(d=>add(d.name)));COMING.forEach(c=>add(c.name));
+ Object.values(SETS).forEach(s=>s.members.forEach(m=>add(m.m)));OTHERS.forEach(o=>add(o.m));FOLDED.forEach(f=>add(f[1]));
+ const n={};t.forEach(x=>n[x]=(n[x]||0)+1);return n}
+
+function nameRows(q){
+ const rows=[];
+ for(const lang of COURSES){
+  for(const d of DECKS[lang]){if(!matches(q,d.name))continue;
+   const theme=unitTitle(lang,d.unit)===d.name;
+   rows.push({type:theme?'unit':'deck',lang,d,name:d.name,kind:kindOf(d),tier:tier(q,d.name),sh:share(q,d.name)});}
+  for(const c of COMING.filter(c=>c.lang===lang))if(matches(q,c.name))rows.push({type:'coming',lang,c,name:c.name,kind:'words',tier:tier(q,c.name),sh:share(q,c.name)});
  }
- return html;
+ /* a unit found by its title is one row, however many of its decks hold the name */
+ const seen=new Set();const out=rows.filter(r=>{const k=r.type==='deck'?r.d.id:`${r.lang}:${r.name}:${r.d?.unit??'c'}`;if(seen.has(k))return false;seen.add(k);return true});
+ out.sort((a,b)=>a.tier-b.tier||b.sh-a.sh||a.name.length-b.name.length||COURSES.indexOf(a.lang)-COURSES.indexOf(b.lang)||((a.d?.unit??99)-(b.d?.unit??99)));
+ return out;
+}
+/* the word results, grouped as section 3 draws them; only "you" has word results among this page's queries */
+function wordGroups(q){
+ const groups=[];let n=0;
+ for(const lang of COURSES){const s=SETS[lang];if(!s.members.some(m=>tier(q,m.m)<=1))continue;
+  groups.push({set:{lang,...s},members:s.members.map(m=>({lang,...m}))});n+=s.members.length}
+ const others=OTHERS.filter(o=>tier(q,o.m)<=1);n+=others.length;
+ const folded=FOLDED.filter(f=>fold(f[1]).includes(fold(q)));n+=folded.length;
+ return {groups,others,folded,n};
+}
+/* the search: trigrams first; if they find nothing, the closest known word */
+function search(q){
+ let used=q,close=false;
+ let names=nameRows(q),words=wordGroups(q);
+ if(!names.length&&!words.n){const V=vocab();const w=fold(q);const lim=w.length<=4?1:2;
+  const best=Object.entries(V).map(([t,c])=>[t,dl(w,t),c]).filter(x=>x[1]<=lim).sort((a,b)=>a[1]-b[1]||b[2]-a[2])[0];
+  if(best){used=best[0];names=nameRows(used);words=wordGroups(used)}}
+ const all=[...names.map(r=>r.name),...words.groups.flatMap(g=>g.members.map(m=>m.m)),...words.others.map(o=>o.m),...words.folded.map(f=>f[1])];
+ close=!all.some(t=>fold(t).includes(fold(q)));
+ return {q,used,names,words,close,total:names.length+words.n};
+}
+function narrowed(res,kind){
+ const names=res.names.filter(r=>r.kind===kind);
+ const groups=res.words.groups.filter(g=>g.members.some(m=>wordKinds(m).has(kind)));
+ const others=res.words.others.filter(o=>wordKinds(o).has(kind));
+ const folded=res.words.folded.filter(f=>(kindOf(deck(f[2]))||'words')===kind);
+ const n=groups.reduce((t,g)=>t+g.members.length,0)+others.length+folded.length;
+ return {...res,names,words:{groups,others,folded,n},kind,shown:names.length+n};
 }
 
-
-/* ---------- builders shared by every frame ---------- */
+/* ---------- builders ---------- */
 const ic=(n,cls='')=>`<span class="mi ${cls}" aria-hidden="true">${n}</span>`;
 const stat=()=>`<div class="stat"><span>9:41</span><span class="ic">${ic('signal_cellular_alt')}${ic('wifi')}${ic('battery_full')}</span></div>`;
 const nav3=()=>`<div class="nav3" aria-hidden="true"><svg viewBox="0 0 20 20"><rect x="3" y="3" width="14" height="14" rx="2"/></svg><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/></svg><svg viewBox="0 0 20 20"><path d="M16 2.5v15L4 10z"/></svg></div>`;
 const navb=(tab)=>`<div class="navb" aria-hidden="true">${[['home','Today'],['style','Decks'],['insert_chart','Progress'],['settings','Settings']].map(([i,l])=>`<span class="d${l===tab?' on':''}"><span class="ind">${ic(i,l===tab?'':'mo')}</span><span class="nl one lf">${l}</span></span>`).join('')}</div>`;
-const report=()=>`<span class="ibtn lf" data-tap aria-label="Report a problem">${ic('bug_report','mo')}</span>`;
-/* LanguageMenu: the shown language's glyph, or a globe for All */
-const menuBtn=(L,extra='')=>`<span class="lmenu lf" data-tap data-menu aria-label="Language shown: ${L?L.name:'All languages'}">${L?`<span class="mglyph" lang="${L.code}">${L.icon}</span>`:ic('language')}${ic('arrow_drop_down')}${extra}</span>`;
+const kchip=(k,narrow)=>k?`<span class="khit" data-tap data-k="${k}"><span class="kchip lM"><span class="one">${KN[narrow||k]}</span></span></span>`:`<span class="khit"><span class="bS v one">Sentences</span></span>`;
+function nameRow(r,q){
+ const L=LANGS[r.lang].name;let line;
+ if(r.type==='coming')line=`${L} · ${r.c.level} · Coming · ${r.c.words} words`;
+ else{const d=r.d,u=d.unit;const done=u<AT[r.lang]?' · Done':'';
+  const size=d.kind==='grammar'?'Forms table':d.kind==='rules'?'Rule table':d.kind==='reading'?`${d.n} ${plural(d.n,'passage','passages')}`:d.script?`${d.n} letters`:isSentenceDeck(d)?`${d.se} sentences`:`${d.n-d.se} words`;
+  line=r.type==='unit'?`${L} · Unit ${u} · ${size}${done}`:`${L} · Unit ${u}, ${unitTitle(r.lang,u)} · ${size}${done}`}
+ return `<div class="row box" data-tap data-row="${r.type}" data-name="${r.name}" data-lang="${r.lang}"><div class="rt"><span class="tx"><span class="tS lf">${marked(q,r.name)}</span><span class="bS v lf">${line}</span></span>${kchip(r.kind,null)}</div></div>`;
+}
+const where=(w)=>{const d=deck(w.decks[0]);const more=w.decks.length-1;return `${LANGS[d.id.slice(0,2)].name} · ${d.name}, unit ${d.unit}${more?` · and ${more} more ${plural(more,'deck','decks')}`:''}`};
+function wordRow(w,q,narrow,mem){
+ return `<div class="row box${mem?' mem':''}" data-tap data-word="${w.w}"><div class="rt"><span class="tx"><span class="wl lf"><span class="w" lang="${w.lang}">${w.w}</span><span class="bM v">${w.r}</span></span><span class="bM lf">${marked(q,w.m)}</span><span class="bS v lf">${where(w)}</span></span>${kchip(narrow?narrow:wordKind(w),null)}</div></div>`;
+}
+function setRow(s,q,narrow){
+ const d=deck(s.deck);
+ return `<div class="row box" data-tap data-set="${s.lang}"><div class="rt"><span class="tx"><span class="bS v lf one">${ic('workspaces','mo m18')} Set card</span><span class="tS lf" lang="${s.lang}">${s.members.map(m=>`${m.w} <span class="v" lang="en">(${m.r})</span>`).join(' · ')}</span><span class="bM lf">${s.exp}</span><span class="bS v lf">${LANGS[s.lang].name} · ${d.name}, unit ${d.unit}</span></span>${kchip(narrow||kindOf(d),null)}</div></div>`;
+}
+function results(res,{narrow}){
+ const q=res.used;let h='';
+ if(res.names.length)h+=`<div class="sech box" role="heading"><span class="tS lf">Decks and units</span><span class="bM v lf" data-n="names">${res.names.length}</span></div><div class="grp">${res.names.map(r=>nameRow(r,q)).join('')}</div>`;
+ const W=res.words;
+ if(W.n){h+=`<div class="sech box wsec" role="heading"><span class="tS lf">Words</span><span class="bM v lf" data-n="words">${W.n}</span></div><div class="grp">`;
+  W.groups.forEach(g=>{h+=setRow(g.set,q,narrow);g.members.forEach(m=>h+=wordRow(m,q,narrow,true))});
+  W.others.forEach(o=>h+=wordRow(o,q,narrow,false));
+  if(W.folded.length){const ex=W.folded.slice(0,3).map(f=>f[1].split(';')[0].replace(/ \(.*\)$/,'')).filter((x,i,a)=>a.indexOf(x)===i).join(', ');
+   h+=`<div class="row more box" data-tap data-folded="${W.folded.length}"><div class="rt"><span class="tx"><span class="tS lf">Show ${W.folded.length} more</span><span class="bS v lf">Words with “${q}” inside, such as ${ex}</span></span>${ic('expand_more')}</div></div>`}
+  h+='</div>'}
+ return h;
+}
+const menuBtn=()=>`<span class="lmenu lf" data-tap aria-label="Language shown: All languages">${ic('language')}${ic('arrow_drop_down')}</span>`;
+function searchPhone({q='',x14=false,narrow=null,skip='',short=false}){
+ const header=`<div class="tabh"><h3 class="lf">Decks</h3>${menuBtn()}<span class="ibtn sel lf" data-tap aria-label="Close search">${ic('close')}</span><span class="ibtn lf" data-tap aria-label="Report a problem">${ic('bug_report','mo')}</span></div>`;
+ const bar=`<div class="sbar chg" role="search">${ic('search')}<span class="q bL">${q?`<span class="one">${q}</span><span class="caret"></span>`:`<span class="caret"></span><span class="hint one">Search decks, units and words</span>`}</span></div>`;
+ let body='',full=false,res=null;
+ if(!q){body=`<div class="lead bM v lf chg">A deck, a unit, or a word in either language, its reading or its meaning.</div>`;short=true}
+ else{res=search(q);if(narrow)res=narrowed(res,narrow);
+  if(!res.total){full=true;body=`<div class="empty chg box" data-empty="none"><span class="eic">${ic('search_off','m32')}</span><div class="tL lf">Nothing found for “${q}”</div><div class="bL lf">The search looks in deck and unit names, and in each word, its reading and its meaning. Try fewer letters, or another word.</div></div>`}
+  else if(narrow&&!res.shown){full=true;body=`<div class="empty chg box" data-empty="kind"><span class="eic">${ic('auto_stories','mo m32')}</span><div class="tL lf">No ${KN[narrow].toLowerCase()} results for “${q}”</div><div class="bL lf">${res.total} ${plural(res.total,'result','results')} of other kinds.</div><span class="fbtn lf" data-tap><span class="tM one">Show every kind</span></span></div>`}
+  else body=results(res,{narrow})}
+ const nrow=narrow?`<div class="nrow chg" data-narrow="${narrow}"><span class="fhit lf" data-tap aria-label="Showing only ${KN[narrow]}. Show every kind"><span class="fchip on lL">${ic('check','m18')}<span class="one">${KN[narrow]}</span>${ic('close','m18')}</span></span><span class="bM v one" data-of>${res.shown} of ${res.total} results</span></div>`:'';
+ const fab=`<div class="fabs"><span class="sp"></span><span class="fab lf" data-tap>${ic('add')}<span class="lL one">Add deck</span></span></div>`;
+ return `<div class="ph${x14?' x14':''}" data-q="${q}"${narrow?` data-narrow="${narrow}"`:''}>${stat()}${header}${bar}${nrow}${res&&res.close&&res.total?`<div class="cline bM v chg" data-close>Close matches for “${q}”${res.used!==q?`: ${res.used}`:''}</div>`:''}
+ <div class="scroll"${full?' data-full':''}${skip?` data-skip="${skip}"`:''}${short?' data-short="1"':''}><div class="clip"><div class="content">${body}</div></div></div>
+ ${fab}${navb('Decks')}${nav3()}</div>`;
+}
+
+const TRAVEL_FRAMES=[
+ ['Search opened, nothing typed yet',()=>searchPhone({})],
+ ['“travl”: Travel in both courses, coming',()=>searchPhone({q:'travl',short:true})],
+];
+const NUMBER_FRAMES=[
+ ['“numbrs”: the numbers units, then a grammar table',()=>searchPhone({q:'numbrs',short:true})],
+ ['“numbrs”, the Grammar chip tapped',()=>searchPhone({q:'numbrs',narrow:'grammar',short:true})],
+];
+const YOU_FRAMES=[
+ ['“you”: decks and units first',()=>searchPhone({q:'you'})],
+ ['“you”: scrolled to the words',()=>searchPhone({q:'you',skip:'.wsec'})],
+ ['“yuo”: the same words, by the closest word',()=>searchPhone({q:'yuo',skip:'.wsec'})],
+ ['“you”, the Grammar chip tapped',()=>searchPhone({q:'you',narrow:'grammar'})],
+];
+const EMPTY_FRAMES=[
+ ['“helicoptr”: nothing found',()=>searchPhone({q:'helicoptr'})],
+ ['“numbrs”, narrowed to Reading: none of that kind',()=>searchPhone({q:'numbrs',narrow:'reading'})],
+];
+const X14_FRAMES=[
+ ['1.4x · “you”, scrolled to the words',()=>searchPhone({q:'you',x14:true,skip:'.wsec'})],
+ ['1.4x · “numbrs”',()=>searchPhone({q:'numbrs',x14:true})],
+ ['1.4x · “numbrs”, narrowed to Reading',()=>searchPhone({q:'numbrs',x14:true,narrow:'reading'})],
+];
 
 /* ---------- theme ---------- */
 const VARS=Object.keys(SCHEMES['forest-dark']);
@@ -338,7 +500,6 @@ function applyTheme({seed,mode,black}){
 function renderFrames(id,frames){
  document.getElementById(id).innerHTML=frames.flatMap(([cap,fn,note])=>['dark','light'].map(th=>`<div class="fcol" data-th="${th}"><span class="fcap">${cap} · <span class="th"></span></span>${fn()}${note?`<span class="fnote">${note}</span>`:''}</div>`)).join('');
 }
-
 /* A frame is a scroll position. The visible area ends above the first line or box the bottom edge would cut, as a list
    stopped between two rows does, and the scrollbar thumb shows there is more. data-skip scrolls that element to the top. */
 function fit(){
@@ -443,108 +604,6 @@ function runCheck(pageProblems,summary){
  if(marks)document.body.classList.add('marks');
  applyTheme(state());
 }
-
-/* ---------- languages: their own icons, from the decks ---------- */
-const LANGS={
- bn:{code:'bn',name:'Bengali',icon:'বা',iso:'ben'},
- hi:{code:'hi',name:'Hindi',icon:'हि',iso:'hin'},
- es:{code:'es',name:'Spanish',icon:'Es',iso:'spa'},
- te:{code:'te',name:'Telugu',icon:'తె',iso:'tel'},
-};
-/* the profile learns Bengali, Hindi and Spanish, in that order; the courses it does not learn follow */
-const COURSES=['bn','hi','es','te'];
-const DUE={bn:12,hi:4};
-/* where the learner is in each course: units before it done, it up next */
-const AT={bn:9,hi:7,es:1};
-
-/* ---------- the mapping (#527): one filter per deck, first rule that matches ---------- */
-const FILTERS=[['all','All'],['words','Words'],['phrases','Phrases'],['grammar','Grammar'],['reading','Reading']];
-const isSentenceDeck=(d)=>d.n>0&&d.se*2>=d.n;
-function filterOf(d){
- if(d.kind==='reading')return 'reading';
- if(d.kind==='grammar'||d.kind==='rules'||d.grammarTag)return 'grammar';
- if(d.pb>0||isSentenceDeck(d))return 'phrases';
- return 'words';
-}
-function why(d){
- if(d.kind==='reading')return 'kind: reading';
- if(d.kind==='grammar')return 'kind: grammar (pattern table)';
- if(d.kind==='rules')return 'kind: rules (rule table)';
- if(d.grammarTag)return `vocab, tagged grammar (${d.se} of ${d.n} sentences)`;
- if(d.pb>0)return `vocab, ${d.pb} phrasebook cards`;
- if(isSentenceDeck(d))return `vocab, ${d.se} of ${d.n} cards sentences`;
- if(d.script)return `vocab, tagged script (${d.n} letters)`;
- return `vocab, ${d.se} of ${d.n} cards sentences`;
-}
-/* a close call: a sentence share near the line, or a grammar lesson written as sentences */
-const edge=(d)=>d.kind==='vocab'&&!d.pb&&!d.grammarTag&&d.n>0&&d.se/d.n>=0.3&&d.se/d.n<0.8;
-function rowMeta(d){
- const u=`Unit ${d.unit}`;
- if(d.kind==='reading')return `${u} · ${d.n} ${plural(d.n,'passage','passages')}`;
- if(d.kind==='grammar')return `${u} · Forms table`;
- if(d.kind==='rules')return `${u} · Rule table`;
- if(d.pb>0)return `${u} · ${d.n} ${plural(d.n,'phrase','phrases')}`;
- if(filterOf(d)==='phrases'||d.grammarTag&&isSentenceDeck(d))return `${u} · ${d.se} ${plural(d.se,'sentence','sentences')}`;
- return `${u} · ${d.n} ${plural(d.n,'card','cards')}`;
-}
-function badgeOf(lang,d){
- const at=AT[lang];
- if(d.unit<at)return '<span class="badge done lL lf">Done</span>';
- if(d.unit===at)return '<span class="badge pend lL lf">Pending</span>';
- return '<span class="badge nd lL lf">Not done</span>';
-}
-const KIND_NAME={words:'word',phrases:'phrase',grammar:'grammar',reading:'reading'};
-
-/* ---------- the Decks tab ---------- */
-function courseChips(sel){
- return `<div class="chipsH" role="group" aria-label="Courses">${COURSES.map(c=>{const L=LANGS[c],on=c===sel,n=DUE[c];
-  return `<span class="fhit lf" data-tap><span class="fchip lL nock${on?' on':''}"><span class="glyph" lang="${c}">${L.icon}</span><span class="one">${L.name}</span>${n?`<span class="duec">${n}</span>`:''}</span></span>`}).join('')}</div>`;
-}
-function kindChips(sel,scrollTo){
- return `<div class="chipsH chg" role="group" aria-label="Kind of deck" data-kinds="${sel}"${scrollTo?` data-scroll-to="1"`:''}>${FILTERS.map(([k,l])=>{const on=k===sel;
-  return `<span class="fhit lf" data-tap data-kind="${k}"><span class="fchip lL${on?' on':' nock'}">${on?ic('check','m18'):''}<span class="one">${l}</span></span></span>`}).join('')}</div>`;
-}
-function listView(lang,kind){
- const ds=DECKS[lang].filter(d=>filterOf(d)===kind);const all=DECKS[lang].length;
- if(!ds.length)return emptyView(lang,kind);
- const L=LANGS[lang];
- return `<div class="fsum bM v lf chg" data-count="${ds.length}" data-kind="${kind}" data-lang="${lang}">${ds.length} ${KIND_NAME[kind]} ${plural(ds.length,'deck','decks')} of ${all}, in path order</div>
- <div class="grp">${ds.map(d=>`<div class="row box" data-tap data-deck="${d.id}"><div class="dtile"><span class="dglyph" lang="${lang}" aria-hidden="true">${d.glyph}</span><span class="tx"><span class="tM lf">${d.name}</span><span class="bM v lf">${rowMeta(d)}</span></span>${badgeOf(lang,d)}</div></div>`).join('')}</div>`;
-}
-function emptyView(lang,kind){
- const L=LANGS[lang];
- return `<div class="empty chg box" data-empty="${lang}-${kind}"><span class="eic">${ic('auto_stories','mo m32')}</span><div class="tL lf wd">No ${KIND_NAME[kind]} decks in ${L.name} yet</div><div class="bL lf wd">Reading decks have passages to hear and read, with questions.</div><span class="fbtn lf" data-tap><span class="tM one">Show all decks</span></span></div>`;
-}
-function decksPhone({lang,kind,x14=false,oneLang=false,skip=''}){
- const L=LANGS[lang];
- const header=`<div class="tabh"><h3 class="lf">Decks</h3>${menuBtn(oneLang?L:null)}<span class="ibtn lf" data-tap>${ic('search')}</span>${report()}</div>`;
- const body=kind==='all'?pathView(lang,x14,AT[lang]-2,AT[lang]+3,AT[lang]):listView(lang,kind);
- const fab=`<div class="fabs">${kind==='all'?`<span class="fab ter lf" data-tap>${ic('my_location')}<span class="lL one">Where I am</span></span>`:''}<span class="sp"></span><span class="fab lf" data-tap>${ic('add')}<span class="lL one">Add deck</span></span></div>`;
- const empty=!DECKS[lang].some(d=>kind!=='all'&&filterOf(d)===kind);
- return `<div class="ph dk${x14?' x14':''}" data-lang="${lang}" data-kind="${kind}">${stat()}${header}
- <div class="ctl">${oneLang?'':courseChips(lang)}${kindChips(kind)}</div>
- <div class="scroll"${empty&&kind!=='all'?' data-full':''}${skip?` data-skip="${skip}"`:''}><div class="clip"><div class="content">${body}</div></div></div>
- ${fab}${navb('Decks')}${nav3()}</div>`;
-}
-
-const STATE_FRAMES=[
- ['Bengali · All: the path, opened at the unit up next',()=>decksPhone({lang:'bn',kind:'all'})],
- ['Bengali · Words',()=>decksPhone({lang:'bn',kind:'words'})],
- ['Bengali · Phrases',()=>decksPhone({lang:'bn',kind:'phrases'})],
- ['Bengali · Grammar, rule tables included',()=>decksPhone({lang:'bn',kind:'grammar'})],
- ['Bengali · Reading',()=>decksPhone({lang:'bn',kind:'reading'})],
-];
-const ONE_FRAMES=[
- ['Hindi shown in the menu · Grammar',()=>decksPhone({lang:'hi',kind:'grammar',oneLang:true})],
- ['Hindi shown in the menu · Phrases',()=>decksPhone({lang:'hi',kind:'phrases',oneLang:true})],
- ['1.4x · Bengali · All',()=>decksPhone({lang:'bn',kind:'all',x14:true})],
- ['1.4x · Bengali · Grammar, the row scrolled to it',()=>decksPhone({lang:'bn',kind:'grammar',x14:true})],
-];
-const EMPTY_FRAMES=[
- ['Spanish · Reading: none yet',()=>decksPhone({lang:'es',kind:'reading'})],
- ['1.4x · Spanish · Reading',()=>decksPhone({lang:'es',kind:'reading',x14:true})],
-];
-
 /* the floating buttons: with their labels if both fit across, else icons alone, named by their tooltips (_Fab) */
 function fitFabs(){
  document.querySelectorAll('.fabs').forEach(f=>{f.querySelectorAll('.fab').forEach(b=>b.classList.remove('ic'));
@@ -554,46 +613,49 @@ function fitFabs(){
   if(need>f.clientWidth)f.querySelectorAll('.fab').forEach(b=>{b.classList.add('ic');b.querySelector('.lL').hidden=true;b.setAttribute('aria-label',b.querySelector('.lL').textContent)});
  });
 }
-/* a sideways row scrolled so that its chosen chip is whole, as the learner left it after tapping */
-function scrollRows(){
- document.querySelectorAll('.ph').forEach(ph=>{const pr=ph.getBoundingClientRect();
-  ph.querySelectorAll('.chipsH').forEach(row=>{row.style.transform='';const on=row.querySelector('.fchip.on');if(!on)return;
-   const r=on.closest('.fhit').getBoundingClientRect();const over=r.right-(pr.right-16);if(over>0){[...row.children].forEach(c=>c.style.transform=`translateX(${-over}px)`)}})});
-}
-
-function mapTables(){
- const cnt=(l)=>Object.fromEntries(FILTERS.slice(1).map(([k])=>[k,DECKS[l].filter(d=>filterOf(d)===k).length]));
- const c={bn:cnt('bn'),hi:cnt('hi'),es:cnt('es')};
- const line=(l)=>`${LANGS[l].name}: ${DECKS[l].length} decks = ${FILTERS.slice(1).map(([k,n])=>`${c[l][k]} ${n}`).join(' + ')}`;
- document.getElementById('map-counts').textContent=`${line('bn')}. ${line('hi')}. ${line('es')}. Every deck is in exactly one filter, so the four add up to All.`;
- const edges=[...DECKS.bn,...DECKS.hi].filter(edge);
- document.getElementById('map-edges').textContent=edges.map(d=>`${d.name} (${d.id.slice(0,2)==='bn'?'Bengali':'Hindi'}, ${d.se} of ${d.n} sentences: ${FILTERS.find(f=>f[0]===filterOf(d))[1]})`).join('; ');
- for(const l of ['bn','hi'])document.getElementById(`map-${l}`).innerHTML=`<thead><tr><th>Unit</th><th>Deck</th><th>Id</th><th>What it carries</th><th>Filter</th></tr></thead><tbody>${DECKS[l].map(d=>`<tr${edge(d)?' class="edge"':''}><td data-h="Unit" class="n">${d.unit}</td><td data-h="Deck">${d.name}</td><td data-h="Id"><code>${d.id}</code></td><td data-h="What it carries">${why(d)}</td><td data-h="Filter" class="f">${FILTERS.find(f=>f[0]===filterOf(d))[1]}</td></tr>`).join('')}</tbody>`;
-}
 
 const PAGE={
- numbers(){const bad=[];
-  for(const l of ['bn','hi','es']){const sum=FILTERS.slice(1).reduce((t,[k])=>t+DECKS[l].filter(d=>filterOf(d)===k).length,0);if(sum!==DECKS[l].length)bad.push(`${l}: filters do not add up to All`)}
-  if(!DECKS.bn.some(d=>d.kind==='rules'&&filterOf(d)==='grammar'))bad.push('a rule table is not under Grammar');
-  if(DECKS.bn.some(d=>d.pb>0&&filterOf(d)!=='phrases'))bad.push('a phrasebook deck is not under Phrases');
-  if(!DECKS.bn.filter(d=>/-sentences$/.test(d.id)&&!d.grammarTag).every(d=>filterOf(d)==='phrases'))bad.push('a Bengali sentence deck is not under Phrases');
-  if(DECKS.es.some(d=>filterOf(d)==='reading'))bad.push('Spanish has a reading deck: the empty example is wrong');
-  document.querySelectorAll('[data-count]').forEach(el=>{const n=DECKS[el.dataset.lang].filter(d=>filterOf(d)===el.dataset.kind).length;if(+el.dataset.count!==n||el.parentElement.querySelectorAll('[data-deck]').length!==n)bad.push(`${el.dataset.lang} ${el.dataset.kind}: list ≠ count`)});
-  document.querySelectorAll('.ph').forEach(ph=>{const k=ph.dataset.kind;const on=[...ph.querySelectorAll('[data-kinds] .fchip.on')].map(e=>e.closest('[data-kind]').dataset.kind);if(on.length!==1||on[0]!==k)bad.push(`${tagOf(ph)}: the chosen filter chip is not the one shown`);
-   if(ph.querySelectorAll('[data-kinds] .fhit').length!==5)bad.push(`${tagOf(ph)}: not five filter chips`);
-   if(ph.classList.contains('x14')){const fs=parseFloat(getComputedStyle(ph.querySelector('[data-kinds] .lL')).fontSize);if(Math.abs(fs-19.6)>0.1)bad.push(`${tagOf(ph)}: text not at 1.4x`)}});
+ numbers(){const bad=[];const need=(c,m)=>{if(!c)bad.push(m)};
+  // the owner's three cases, by the matcher of section 6
+  const tr=search('travl');need(tr.names.length===2&&tr.names.every(r=>r.type==='coming'&&r.name==='Travel'),'“travl” does not find Travel in both courses alone');
+  need(share('travl','Travel')>=0.5&&share('travl','Bus, auto, cab')<0.5,'“travl” trigram share wrong');need(tr.close,'“travl” is not marked close');
+  const nu=search('numbrs');const nn=nu.names.map(r=>`${r.lang}:${r.name}`).join('|');
+  need(nn==='hi:Numbers 1–20|bn:Numbers 1–20|hi:Tens and big numbers|bn:Tens and big numbers|hi:Adjectives: gender and number',`“numbrs” finds ${nn}`);
+  need(narrowed(nu,'grammar').shown===1&&narrowed(nu,'reading').shown===0,'“numbrs” narrowing counts wrong');
+  const yo=search('you');need(!yo.close,'“you” marked close');
+  need(yo.words.groups.length===2&&yo.words.groups.every(g=>g.members.length===3),'“you”: both sets with three members');
+  need(yo.names.map(r=>r.name).join('|')==='Things around you|Things around you: sentences|Verbs: I, you, he, she, we, they|Possessives: my, your',`“you” names: ${yo.names.map(r=>r.name).join('|')}`);
+  const yu=search('yuo');need(yu.used==='you'&&yu.close&&dl('yuo','you')===1&&!nameRows('yuo').length&&!wordGroups('yuo').n,'“yuo” does not fall back to “you”');
+  need(yu.total===yo.total,'“yuo” and “you” differ');
+  need(!search('helicoptr').total,'“helicoptr” finds something');
+  need(FOLDED.length===17&&FOLDED.filter(f=>f[0]==='hi').length===4,'folded count is not Hindi 4 + Bengali 13');
+  // every name row is a deck on main, under the kind its fields give; sentence decks carry no chip
+  document.querySelectorAll('[data-row]').forEach(el=>{const t=el.dataset.row;if(t==='coming')return;const d=DECKS[el.dataset.lang].find(x=>x.name===el.dataset.name);if(!d){bad.push(`no deck “${el.dataset.name}”`);return}
+   const ph=el.closest('.ph');const k=el.querySelector('[data-k]')?.dataset.k||null;if(!ph.dataset.narrow&&k!==kindOf(d))bad.push(`“${d.name}”: chip ${k}, kind ${kindOf(d)}`);
+   if(ph.dataset.narrow&&!k)bad.push(`a sentence deck shows while narrowed (${d.name})`)});
+  // each phone: one narrowing chip at most, the right one, and its counts as shown
+  document.querySelectorAll('.ph').forEach(ph=>{const n=ph.dataset.narrow;const rows=ph.querySelectorAll('.nrow');
+   if(n&&rows.length!==1)bad.push(`${tagOf(ph)}: no narrowing row`);if(!n&&rows.length)bad.push(`${tagOf(ph)}: a narrowing row without a kind`);
+   if(n)ph.querySelectorAll('[data-k]').forEach(c=>{if(c.textContent.trim()!==KN[n])bad.push(`${tagOf(ph)}: a ${c.textContent} chip while narrowed to ${KN[n]}`)});
+   const q=ph.dataset.q;if(q){const r=search(q);const nm=ph.querySelector('[data-n=names]');const shownN=n?narrowed(r,n):r;
+    if(nm&&+nm.textContent!==shownN.names.length)bad.push(`${tagOf(ph)}: names count`);const wd=ph.querySelector('[data-n=words]');if(wd&&+wd.textContent!==shownN.words.n)bad.push(`${tagOf(ph)}: words count`)}
+   if(ph.classList.contains('x14')){const fs=parseFloat(getComputedStyle(ph.querySelector('.sbar .bL')).fontSize);if(Math.abs(fs-22.4)>0.1)bad.push(`${tagOf(ph)}: text not at 1.4x`)}
+   // every meaning shown holds the word searched for
+   ph.querySelectorAll('[data-word]').forEach(w=>{const m=w.querySelectorAll('.tx>.bM')[0].textContent;const u=search(q).used;if(!fold(m).includes(u))bad.push(`${tagOf(ph)}: “${m}” lacks “${u}”`)});
+  });
   return bad},
  contrast(ph,theme,bad){let n=0;
-  // the path's dotted connector and the ahead node's edge are decoration; the up-next node against the surface 3:1
-  ph.querySelectorAll('.un.next').forEach(el=>{const c=ratio(bgOf(el),bgOf(el.closest('.content')));n++;if(c<3)bad.push(`${theme} ${tagOf(ph)}: up-next node ${c.toFixed(2)}:1`)});
+  // the kind chips' and the narrowing chip's outlines, 3:1 against the row behind them (WCAG 1.4.11)
+  ph.querySelectorAll('.kchip').forEach(el=>{const clip=ph.querySelector('.clip').getBoundingClientRect();if(!visibleIn(el,clip))return;const b=rgba(getComputedStyle(el).borderTopColor);const bg=bgOf(el.parentElement);const c=ratio(over(b,bg),bg);n++;
+   if(c<3)bad.push(`${theme} ${tagOf(ph)}: kind chip outline ${c.toFixed(2)}:1`)});
+  ph.querySelectorAll('.sbar').forEach(el=>{const c=ratio(bgOf(el),bgOf(el.parentElement));n++;if(c<1.1)bad.push(`${theme} ${tagOf(ph)}: the bar does not stand off the surface`)});
   return n},
 };
-function check(){document.querySelectorAll('.fcol').forEach(c=>c.hidden=false);fitFabs();scrollRows();runCheck(PAGE,(frames,pairs)=>`${frames} frames at 360 × 800 dp, 1x and 1.4x. Mapping: every Bengali, Hindi and Spanish deck on main falls under exactly one filter, and the four add up to All; the rule tables are under Grammar, the phrasebooks and every Bengali “: sentences” deck under Phrases; Spanish has no reading deck, so its empty state is real. Every list matches its count line, and the chosen chip is the one shown. Layout: nothing sticks out or is cut in half, no sideways page scroll, chip labels, badges and buttons stay on one line, every target is at least 48 × 48, the chosen chip of a sideways row is whole, nothing sits under the tab bar or the 3-button navigation bar. Contrast: ${pairs} text, icon and outline pairs across 4 seeds × light, dark and pure black all meet WCAG (text 4.5:1, icons and outlines 3:1). Not counted: the floating buttons cover the list's last rows until it is scrolled, as on today's path (the list keeps the same clearance at its end, #466).`)}
+function check(){document.querySelectorAll('.fcol').forEach(c=>c.hidden=false);fitFabs();runCheck(PAGE,(frames,pairs)=>`${frames} frames at 360 × 800 dp, 1x and 1.4x. Search: the results are drawn by this page's own run of the matcher in section 6 over every Hindi and Bengali deck name on main and the words for “you”: “travl” finds Travel in both courses (and not “Bus, auto, cab”), “numbrs” the four numbers units and then “Adjectives: gender and number”, “you” the four names and both sets of three, and “yuo” finds nothing by trigrams, falls back to “you” (distance 1) and shows the same results; “helicoptr” finds nothing. Every deck row is a deck on main under the kind its fields give, sentence decks carry no chip and never show while narrowed, narrowed rows show only the chosen kind, and every count matches its rows. Layout: nothing sticks out or is cut in half, no sideways page scroll, chips, buttons and one-line labels stay on one line, every target is at least 48 × 48, nothing sits under the tab bar or the navigation bar. Contrast: ${pairs} text, icon and outline pairs across 4 seeds × light, dark and pure black all meet WCAG (text 4.5:1, icons and outlines 3:1). Not counted: Add deck covers the list's end until it is scrolled, as today (#466).`)}
 document.querySelectorAll('.controls input').forEach(i=>i.addEventListener('change',()=>applyTheme(state())));
-renderFrames('fr-states',STATE_FRAMES);renderFrames('fr-one',ONE_FRAMES);renderFrames('fr-empty',EMPTY_FRAMES);mapTables();
+renderFrames('fr-travel',TRAVEL_FRAMES);renderFrames('fr-numbers',NUMBER_FRAMES);renderFrames('fr-you',YOU_FRAMES);renderFrames('fr-empty',EMPTY_FRAMES);renderFrames('fr-x14',X14_FRAMES);
 applyTheme(state());
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(check,check);else check();
-
 </script>
 </body>
 </html>
