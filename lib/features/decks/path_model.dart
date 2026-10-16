@@ -10,7 +10,7 @@ import 'word_mastery.dart';
 
 /// What the Decks tab and a unit's screen read out of a course's path, kept
 /// apart from the widgets so that it can be tested without pumping
-/// anything (docs/plans/path-redesign.md, the owner's design).
+/// anything (the owner's design).
 ///
 /// The path is read only through `AppState`'s course and unit API
 /// (`courseUnits`, `pathOf`, `isFinished`, `scriptLearned`), so that a

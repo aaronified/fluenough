@@ -98,6 +98,20 @@ The maintainer decided, on 2 October 2026:
 - No audio is stored. Only what the recogniser heard goes into the review
   log's `answer`, as typed answers do.
 
+## Trying again (#231)
+
+The owner asked (2026-10-05): "Pronunciation feedback (Rosetta Stone):
+record and compare via platform speech-to-text; pass/retry." Decided with
+the owner and built:
+
+- **The first attempt counts** for the word's schedule. Retries are
+  practice, so a word that needed them comes back sooner.
+- **Try again** is offered after a wrong or an almost-right answer, as
+  often as the learner likes. A retry that passes says so, but changes
+  nothing.
+- The learner hears their own attempt, then the voice. Recordings stay in
+  memory and are never saved, as in the first-launch sound check.
+
 ## Alternatives considered
 
 - **A plugin of our own,** about 200 lines of Kotlin in a local package. It

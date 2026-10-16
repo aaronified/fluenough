@@ -4,6 +4,9 @@ Written 2026-10-05.
 
 ## What the owner asked
 
+The course path itself is built to the owner's design (2026-10-09): "the
+decks need to be shown as slightly rounded rectangles", "a little playful".
+
 > wait, the milestones need to be awarded to the user like badges /
 > achievements. we need some gamification. add that as a plan as well. not
 > as aggressive as duolingo, but basic achievements and streak based
