@@ -85,7 +85,8 @@ ISO_PIECE_RE = re.compile(rf"[a-z{ISO15919_LETTERS}{ISO15919_MARKS}]+")
 # spaces between words.
 IPA_RE = re.compile(
     "[a-zæçðøħŋœθβχãẽĩõũɐ-ʯʰ-˿\u0300-\u036f ."
-    "\u02e5-\u02e9\u203f|\u2016\u2191\u2193]+")
+    "\u02e5-\u02e9\u203f|\u2016\u2191\u2193"
+    "\u01c0-\u01c3\u207f\u2c71\ua71c]+")
 CONTRAST_KEYS = {"id", "name", "pairs", "within_word"}
 SCRIPT_KEYS = {"schema", "kind", "id", "language", "name", "intro", "features"}
 FEATURE_KEYS = {"id", "name", "term", "reading", "ipa", "example", "text",
