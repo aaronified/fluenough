@@ -26,7 +26,7 @@ Decided with the owner:
 - **Any other sentence waits** until every word in it, by its base word, and
   every rule it uses are known.
 - **Known means mastered:** the learner recalls a word or rule right on
-  80–90% of their recent answers to it, as in mastery learning.
+  9 of their last 10 answers to it (90%, owner, 2026-10-16), as in mastery learning.
 - **Grammar is taught as rules,** starting with word forms, endings and
   postpositions, and conjunctions, practised across the words the learner
   knows.
@@ -208,13 +208,16 @@ Converted as each language's B1 plan is written:
    - a grammar question offering only forms of its own word;
    - lessons without the quota.
 
-## To decide
+## Decided, 2026-10-16 (#414)
 
-- **The exact mastery bar,** between 80% and 90%, and how many recent
-  answers it counts.
-- ~~How a rule makes its forms~~: every form listed per word (owner,
-  2026-10-09; see `b1-plans.md`).
-- **How many cells of a growing table** a lesson asks at once.
+- **The mastery bar:** "Make that 90% of 10". A word or rule is known when
+  9 of its last 10 answers are right.
+- **How a rule makes its forms:** "Stem + exceptions, checked", replacing
+  "every form listed per word" (2026-10-09; `b1-plans.md`).
+- **Cells of a growing table per lesson:** "3 per lesson".
+- **When:** still with the B1 plans ("Keep with B1 plans"), after the owner
+  said "We need to fix the paths" and "First two weeks" for when Telugu felt
+  lost.
 
 ## Estimate
 
