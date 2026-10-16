@@ -6,6 +6,7 @@ Usage:
     python3 tools/import_wiktionary.py hi Hindi.jsonl                  # report only
     python3 tools/import_wiktionary.py hi Hindi.jsonl --write          # fill the decks
     python3 tools/import_wiktionary.py hi Hindi.jsonl --write --audio  # and recordings
+    python3 tools/import_wiktionary.py hi Hindi.jsonl --write --images # and images
     python3 tools/import_wiktionary.py hi Hindi.jsonl --decks /tmp/copy/decks --write \\
         --dump-date 2026-10-13 --report hi-report.md
 
@@ -46,6 +47,14 @@ is ambiguous and gets only an IPA all of them agree on. Then it fills
   at `decks/<lang>/audio/<card id>.opus`, with its `audio_credit`.
   Sentences stay text-to-speech. A licence that cannot ship in a CC BY-SA
   4.0 deck is skipped and reported.
+- with `--images`, `image` on a card that has a `picture` (a concrete word,
+  ADR-0034), by the owner's order (#523: "Commons photo, then OpenMoji,
+  then Noto"): the Wikidata image (P18) of the one item the card's sense
+  names, else the one picture in the language's section of its Wiktionary
+  page, both from Wikimedia Commons, else OpenMoji's drawing of its
+  `picture` (CC BY-SA 4.0). It is shrunk to 256 pixels and converted to
+  WebP with `ffmpeg` at `decks/<lang>/images/<card id>.webp`, with its
+  `image_credit`. With none, the card keeps its Noto picture.
 
 Every item it adds names its `source` (owner: "Per item"): the entry's
 page, and the dump's date, which pins the run so that it can be repeated.
@@ -64,7 +73,7 @@ card by card, for the builder to write (the build-deck skill). Run
 after `--write`.
 
 Needs only Python 3.11+ and PyYAML, like the other deck tools; `--audio`
-needs `ffmpeg` on the PATH, and the network.
+and `--images` need `ffmpeg` on the PATH, and the network.
 """
 
 from __future__ import annotations
@@ -227,6 +236,9 @@ class Language:
     # card id, for refs and the words of examples.
     taught: dict[str, str]
     flow: list[str]
+    # The language's English name, as its decks and Wiktionary's headings
+    # give it: `Hindi`.
+    name: str = ""
 
 
 def read_language(decks: Path, code: str) -> Language:
@@ -236,6 +248,7 @@ def read_language(decks: Path, code: str) -> Language:
     targets: list[Target] = []
     taught: dict[str, str] = {}
     script = "latin"
+    name = ""
     flow: list[str] = []
     for core in sorted(folder.glob("*.yaml")):
         raw = vd._load_raw(core)
@@ -243,6 +256,7 @@ def read_language(decks: Path, code: str) -> Language:
             continue
         if isinstance(raw.get("language"), dict):
             script = raw["language"].get("script", script)
+            name = raw["language"].get("name", name)
         text = core.read_text(encoding="utf-8")
         for card in raw.get("cards") or []:
             if not isinstance(card, dict) or not vd._is_str(card.get("id")) \
@@ -269,7 +283,7 @@ def read_language(decks: Path, code: str) -> Language:
             if t.entry is not None and vd._is_str(t.entry.get("native")):
                 t.native = t.entry["native"]
     return Language(code, script, genders if isinstance(genders, list) else [],
-                    targets, taught, flow)
+                    targets, taught, flow, name if isinstance(name, str) else "")
 
 
 # --- Choosing a card's entry ------------------------------------------------
@@ -401,6 +415,7 @@ class Fill:
     layer: list[tuple[str | None, list[str]]] = field(default_factory=list)
     fields: list[str] = field(default_factory=list)
     audio: dict | None = None          # the recording to fetch
+    entry: dict | None = None          # the card's one entry, where it has one
 
 
 class Importer:
@@ -435,6 +450,7 @@ class Importer:
                 f.fields.append("ipa")
             return f
         r.matched.append(t)
+        f.entry = entry
         word = nfc(entry["word"])
         src = self.source(word)
 
@@ -764,6 +780,137 @@ def fetch_recording(sound: dict, out: Path) -> dict:
     return {"source": info["page"], "license": licence, "credit": info["credit"]}
 
 
+# --- Images ---------------------------------------------------------------------
+
+WIKIDATA_API = "https://www.wikidata.org/w/api.php"
+WIKTIONARY_API = "https://en.wiktionary.org/w/api.php"
+# OpenMoji's drawings, 618 pixels square, by their emoji's code points, and
+# the page that credits one. The version is pinned, so that a run can be
+# repeated.
+OPENMOJI_PNG = "https://cdn.jsdelivr.net/npm/openmoji@15.1.0/color/618x618/{}.png"
+OPENMOJI_PAGE = "https://openmoji.org/library/emoji-{}/"
+# The longest side of a card's image, in pixels (owner, #523: "for example to
+# 256 px WebP").
+IMAGE_SIZE = 256
+# Images on a Wiktionary page that are no picture of the word.
+NOT_A_PICTURE = re.compile(r"(?i)\b(?:wiktionary|wikipedia|commons|logo|icon|flag|map|"
+                           r"audio|speaker|nuvola|crystal)\b|\.svg$")
+
+
+def emoji_hex(emoji: str) -> list[str]:
+    """OpenMoji's names for [emoji]: its code points in hex, without the
+    variation selector, then with it."""
+    full = "-".join(f"{ord(c):04X}" for c in emoji)
+    bare = "-".join(f"{ord(c):04X}" for c in emoji if c != "\ufe0f")
+    return list(dict.fromkeys([bare, full]))
+
+
+def api(url: str, params: dict[str, str]) -> dict:
+    data = json.loads(http_get(url + "?" + urllib.parse.urlencode(
+        {**params, "format": "json"})))
+    return data if isinstance(data, dict) else {}
+
+
+def wikidata_image(entry: dict, t: Target) -> str | None:
+    """The Commons file of the Wikidata item that the entry's sense of the
+    card's meaning names (its image, P18), when that sense names exactly
+    one item."""
+    items = {q for s in Importer.card_senses(t, entry) for q in s.get("wikidata") or []
+             if isinstance(q, str) and re.fullmatch(r"Q\d+", q)}
+    if len(items) != 1:
+        return None
+    claims = (api(WIKIDATA_API, {"action": "wbgetclaims", "entity": items.pop(),
+                                 "property": "P18"}).get("claims") or {}).get("P18") or []
+    names = [((c.get("mainsnak") or {}).get("datavalue") or {}).get("value")
+             for c in claims]
+    names = [n for n in names if isinstance(n, str)]
+    return names[0] if len(names) == 1 else None
+
+
+def wiktionary_image(word: str, language: str) -> str | None:
+    """The one picture in the language's section of [word]'s Wiktionary
+    page, if it has exactly one."""
+    sections = (api(WIKTIONARY_API, {"action": "parse", "page": word,
+                                     "prop": "sections"}).get("parse") or {}).get(
+        "sections") or []
+    index = next((s.get("index") for s in sections
+                  if s.get("level") == "2" and s.get("line") == language), None)
+    if index is None:
+        return None
+    images = (api(WIKTIONARY_API, {"action": "parse", "page": word, "section": index,
+                                   "prop": "images"}).get("parse") or {}).get("images") or []
+    pictures = [i for i in images if isinstance(i, str) and not NOT_A_PICTURE.search(i)]
+    return pictures[0] if len(pictures) == 1 else None
+
+
+def convert_image(data: bytes, suffix: str, out: Path) -> None:
+    out.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory() as tmp:
+        src = Path(tmp) / ("in" + suffix)
+        src.write_bytes(data)
+        convert(["-i", str(src), "-vf",
+                 f"scale={IMAGE_SIZE}:{IMAGE_SIZE}:force_original_aspect_ratio=decrease",
+                 "-frames:v", "1", "-c:v", "libwebp", "-quality", "80", str(out)])
+
+
+def commons_image(name: str, out: Path) -> dict:
+    """Downloads a Commons file's 256-pixel rendering, converts it to WebP at
+    [out], and returns its credit."""
+    info = commons_file(name)
+    licence = licence_id(info["licence"])
+    if licence is None:
+        raise ImportError_(f"{name}: licence {info['licence']!r} cannot ship in a CC "
+                           f"BY-SA 4.0 deck")
+    if not info["credit"]:
+        raise ImportError_(f"{name}: Commons names no one to credit")
+    url = info["thumb"] or info["url"]
+    if not url:
+        raise ImportError_(f"{name}: Commons gives no file")
+    convert_image(http_get(url), Path(urllib.parse.urlparse(url).path).suffix.lower(), out)
+    return {"source": info["page"], "license": licence, "credit": info["credit"]}
+
+
+def openmoji_image(emoji: str, out: Path) -> dict:
+    """Downloads OpenMoji's drawing of [emoji], converts it to WebP at
+    [out], and returns its credit."""
+    last: Exception | None = None
+    for name in emoji_hex(emoji):
+        try:
+            data = http_get(OPENMOJI_PNG.format(name))
+        except OSError as e:
+            last = e
+            continue
+        convert_image(data, ".png", out)
+        return {"source": OPENMOJI_PAGE.format(name), "license": "CC-BY-SA-4.0",
+                "credit": "OpenMoji"}
+    raise ImportError_(f"OpenMoji has no drawing of {emoji}: {last}")
+
+
+def fetch_image(t: Target, entry: dict | None, language: str, out: Path
+                ) -> tuple[str, dict]:
+    """A card's image, by the owner's order (#523: "Commons photo, then
+    OpenMoji, then Noto"): the Wikidata image of its sense, else the one
+    picture of its Wiktionary page's section, else OpenMoji's drawing of its
+    `picture`. Returns where it came from and its credit; raises where none
+    can ship, and the card keeps its Noto picture."""
+    problems: list[str] = []
+    if entry is not None:
+        for kind, find in (("wikidata", lambda: wikidata_image(entry, t)),
+                           ("wiktionary", lambda: wiktionary_image(t.target, language))):
+            try:
+                name = find()
+                if name:
+                    return kind, commons_image(name, out)
+            except (ImportError_, OSError, ValueError,
+                    subprocess.CalledProcessError) as e:
+                problems.append(str(e))
+    try:
+        return "openmoji", openmoji_image(t.card["picture"], out)
+    except (ImportError_, OSError, subprocess.CalledProcessError) as e:
+        problems.append(str(e))
+    raise ImportError_("; ".join(problems))
+
+
 # --- Editing the files ----------------------------------------------------------
 
 def _block(lines: list[str], head: re.Pattern, indent: int) -> tuple[int, int] | None:
@@ -811,7 +958,7 @@ def apply(text: str, head: re.Pattern, indent: int,
 # --- The report ---------------------------------------------------------------
 
 FIELDS = ("ipa", "gender", "bases", "synonyms", "antonyms", "examples", "forms",
-          "senses", "wiktionary", "native", "audio")
+          "senses", "wiktionary", "native", "audio", "image")
 
 
 @dataclass
@@ -828,6 +975,9 @@ class Report:
     no_meaning: list[str] = field(default_factory=list)
     audio_found: int = 0
     audio_failed: list[str] = field(default_factory=list)
+    # Images by where they came from, and the cards none could be found for.
+    images_from: dict[str, int] = field(default_factory=dict)
+    images_failed: list[str] = field(default_factory=list)
     flow: list[str] = field(default_factory=list)
 
     def render(self, name: str, dump: Path, dump_sha: str, dump_date: str,
@@ -854,6 +1004,12 @@ class Report:
         if self.audio_failed:
             lines += ["", "Recordings not imported:", ""]
             lines += [f"- {x}" for x in self.audio_failed]
+        if self.images_from:
+            lines += ["", "Images by source: " + ", ".join(
+                f"{k} {v}" for k, v in sorted(self.images_from.items())) + "."]
+        if self.images_failed:
+            lines += ["", "Images not imported (the card keeps its Noto picture):", ""]
+            lines += [f"- {x}" for x in self.images_failed]
         lines += ["", "## Still missing", "",
                   "Cards still without the field, for the builder to write "
                   "(the build-deck skill) and reviewers to check.", ""]
@@ -865,7 +1021,7 @@ class Report:
 
 
 def tally(r: Report, targets: list[Target], fills: dict[str, Fill],
-          genders: list[str], audio: bool) -> None:
+          genders: list[str], audio: bool, images: bool) -> None:
     for t in targets:
         f = fills.get(t.cid, Fill())
         for k in f.fields:
@@ -887,6 +1043,9 @@ def tally(r: Report, targets: list[Target], fills: dict[str, Fill],
                 continue
             if k == "audio" and audio:
                 continue
+            # An image is only for a concrete word: a card with a picture.
+            if k == "image" and (images or "picture" not in t.card):
+                continue
             if k not in have:
                 r.missing.setdefault(k, []).append(label)
 
@@ -898,8 +1057,8 @@ LANGUAGE_NAMES = {"hi": "Hindi", "bn": "Bengali", "te": "Telugu", "mr": "Marathi
 
 
 def run(code: str, dump: Path, decks: Path, dump_date: str, write: bool,
-        audio: bool) -> str:
-    if audio:
+        audio: bool, images: bool = False) -> str:
+    if audio or images:
         ffmpeg()
     lang = read_language(decks, code)
     wanted = {t.target for t in lang.targets}
@@ -924,7 +1083,21 @@ def run(code: str, dump: Path, decks: Path, dump_date: str, write: bool,
         f.core.append(("ipa", [f"    audio: {q(f'decks/{code}/audio/{t.cid}.opus')}",
                                f"    audio_credit: {flow_map(list(credit.items()))}"]))
         f.fields.append("audio")
-    tally(report, lang.targets, fills, lang.genders, audio)
+    for t in lang.targets:
+        if not (images and write) or "picture" not in t.card or "image" in t.card:
+            continue
+        f = fills[t.cid]
+        out = decks / code / "images" / f"{t.cid}.webp"
+        try:
+            kind, credit = fetch_image(t, f.entry, lang.name, out)
+        except ImportError_ as e:
+            report.images_failed.append(f"{t.cid} {t.target}: {e}")
+            continue
+        report.images_from[kind] = report.images_from.get(kind, 0) + 1
+        f.core.append(("picture", [f"    image: {q(f'decks/{code}/images/{t.cid}.webp')}",
+                                   f"    image_credit: {flow_map(list(credit.items()))}"]))
+        f.fields.append("image")
+    tally(report, lang.targets, fills, lang.genders, audio, images)
     if write:
         by_file: dict[Path, list[tuple[re.Pattern, int, list]]] = {}
         for t in lang.targets:
@@ -958,6 +1131,9 @@ def main(argv: list[str]) -> int:
                         help="fill the decks; without it, only report")
     parser.add_argument("--audio", action="store_true",
                         help="download and convert recordings (needs ffmpeg)")
+    parser.add_argument("--images", action="store_true",
+                        help="download and convert images for cards with a picture "
+                             "(needs ffmpeg)")
     parser.add_argument("--report", type=Path, help="write the report here")
     args = parser.parse_args(argv[1:])
     if not vd.LANG_RE.fullmatch(args.lang) or not (args.decks / args.lang).is_dir():
@@ -971,7 +1147,8 @@ def main(argv: list[str]) -> int:
         print(f"error: --dump-date must be YYYY-MM-DD, got {date!r}", file=sys.stderr)
         return 2
     try:
-        text = run(args.lang, args.dump, args.decks, date, args.write, args.audio)
+        text = run(args.lang, args.dump, args.decks, date, args.write, args.audio,
+                   args.images)
     except ImportError_ as e:
         print(f"error: {e}", file=sys.stderr)
         return 2
