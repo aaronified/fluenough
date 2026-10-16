@@ -1606,16 +1606,17 @@ class _Reader {
     final fields = this.fields(node, path);
     final id = cardId(fields.require('id'), '$path.id', seen);
     for (final key in fields.map.nodes.keys.cast<YamlNode>()) {
-      if (!const {'id', 'kind', 'members'}.contains(_value(key))) {
+      if (!const {'id', 'kind', 'members', 'shown'}.contains(_value(key))) {
         fail(
           key,
-          '$path: a set card has only id, kind and members, its name and '
-          'explanation in each layer; got ${_describe(key)}',
+          '$path: a set card has only id, kind, members and shown, its name '
+          'and explanation in each layer; got ${_describe(key)}',
         );
       }
     }
     final membersNode = fields.require('members');
     final where = '$path.members';
+    final shownNode = fields.map.nodes['shown'];
     if (membersNode is YamlMap) {
       final ruleNode =
           membersNode.nodes['rule'] ??
@@ -1633,29 +1634,74 @@ class _Reader {
         );
       }
       final (axis, _, valueNode) = axes.single;
+      final fixed = SetRule(
+        rule: rule,
+        axis: axis,
+        value: text(valueNode, '$where.$axis'),
+      );
+      if (fixed.fixesRow) {
+        if (shownNode != null) {
+          fail(
+            shownNode,
+            '$path.shown: only a set of one slot across the words names the '
+            'rows its card shows; this set shows every form of its row',
+          );
+        }
+        return CoreSet(id: id, rule: fixed);
+      }
+      // One slot across the words: its card shows a few rows the deck
+      // chooses (owner, 2026-10-16, #515: "A few curated verbs should be
+      // good enough"), its Full list every row.
       return CoreSet(
         id: id,
-        rule: SetRule(
-          rule: rule,
-          axis: axis,
-          value: text(valueNode, '$where.$axis'),
+        rule: fixed,
+        shown: refList(
+          shownNode ??
+              fail(
+                fields.map,
+                '$path: missing required field "shown": the rows its card '
+                'shows, as [{ ref: "..." }, ...]',
+              ),
+          '$path.shown',
+          what: 'row',
         ),
       );
     }
+    if (shownNode != null) {
+      fail(
+        shownNode,
+        '$path.shown: only a set of one slot across the words names the rows '
+        'its card shows; a set by refs shows its members',
+      );
+    }
+    return CoreSet(
+      id: id,
+      members: refList(membersNode, where, what: 'member', self: id),
+    );
+  }
+
+  /// A set card's list of `{ ref }`, its members or the rows it shows: at
+  /// least two, each once, none [self].
+  List<String> refList(
+    YamlNode node,
+    String where, {
+    required String what,
+    String? self,
+  }) {
     final refs = <String>[];
-    for (final (i, item) in list(membersNode, where).indexed) {
-      final member = this.fields(item, '$where[$i]');
+    for (final (i, item) in list(node, where).indexed) {
+      final member = fields(item, '$where[$i]');
       member.allowOnly(const {'ref'});
-      final ref = this.id(member.require('ref'), '$where[$i].ref');
-      if (ref == id || refs.contains(ref)) {
-        fail(item, '$where[$i]: $ref is a member already, or the set itself');
+      final ref = id(member.require('ref'), '$where[$i].ref');
+      if (ref == self || refs.contains(ref)) {
+        fail(item, '$where[$i]: $ref is a $what already, or the set itself');
       }
       refs.add(ref);
     }
     if (refs.length < 2) {
-      fail(membersNode, '$where: a set has at least 2 members');
+      fail(node, '$where: a set has at least 2 ${what}s');
     }
-    return CoreSet(id: id, members: List<String>.unmodifiable(refs));
+    return List<String>.unmodifiable(refs);
   }
 
   CoreRef coreRef(YamlNode node, String path, Map<String, YamlNode> seen) {

@@ -28,7 +28,8 @@ import 'drill_frame.dart';
 /// across lines only between its aksharas, never inside one (owner,
 /// 2026-10-16, #515: "Break between syllables"): [breakableWord] gives the
 /// line breaker those places and no others. A screen reader reads the word
-/// as written.
+/// as written. A long word in a joined script, such as Urdu, is never
+/// broken: it shrinks until it fits the line ("Shrink Urdu instead").
 class TargetText extends StatelessWidget {
   const TargetText(
     this.text, {
@@ -91,10 +92,21 @@ class TargetText extends StatelessWidget {
     );
   }
 
-  Widget _text(BuildContext context, double size) {
-    final shown = _sizing != _Sizing.fixed && _tooWide(context, size)
-        ? breakableWord(text)
-        : text;
+  Widget _text(BuildContext context, double base) {
+    var size = base;
+    var shown = text;
+    if (_sizing != _Sizing.fixed && _isOneWord) {
+      final room = MediaQuery.sizeOf(context).width - _cardMargins;
+      final width = _width(context, size);
+      if (width > room) {
+        if (hasAksharas(text)) {
+          shown = breakableWord(text);
+        } else if (isJoinedScript(text)) {
+          // Shrunk to fit, a hair under, so that rounding never wraps it.
+          size = size * room / width * 0.98;
+        }
+      }
+    }
     return Text(
       shown,
       semanticsLabel: shown == text ? null : text,
@@ -110,26 +122,25 @@ class TargetText extends StatelessWidget {
     );
   }
 
-  /// Whether [text], one word in a script with aksharas, does not fit on a
-  /// line of the drill card at [size]: wider than the screen less the
-  /// page's margins and the card's padding. A word that fits is left whole,
-  /// as written.
-  bool _tooWide(BuildContext context, double size) {
-    if (!hasAksharas(text) || text.contains(RegExp(r'\s'))) return false;
-    final room = MediaQuery.sizeOf(context).width - _cardMargins;
+  /// Whether [text] is one word: a longer text breaks between its words.
+  bool get _isOneWord => !text.contains(RegExp(r'\s'));
+
+  /// How wide [text] is on one line at [size], scaled as the screen scales
+  /// text.
+  double _width(BuildContext context, double size) {
     final painter = TextPainter(
       text: TextSpan(
         text: text,
         style: TextStyle(fontSize: size, fontWeight: fontWeight),
         locale: Locale(language.code),
       ),
-      textDirection: TextDirection.ltr,
+      textDirection: language.rtl ? TextDirection.rtl : TextDirection.ltr,
       textScaler: MediaQuery.textScalerOf(context),
       maxLines: 1,
     )..layout();
-    final wide = painter.width > room;
+    final width = painter.width;
     painter.dispose();
-    return wide;
+    return width;
   }
 
   /// The drill page's margins and the card's padding, both sides

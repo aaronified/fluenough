@@ -38,7 +38,7 @@ const refSet = '''
 ''';
 
 /// One noun of the case table across its slots, and one slot across its
-/// nouns.
+/// nouns, its card showing the rows the deck chose.
 const ruleSets = '''
   - id: "zz-9202"
     kind: "set"
@@ -46,6 +46,7 @@ const ruleSets = '''
   - id: "zz-9203"
     kind: "set"
     members: { rule: "zz-rule-lo", case: "lo" }
+    shown: [{ ref: "zz-9004" }, { ref: "zz-9001" }]
 ''';
 
 String coreWith(String sets) => '$homeCore$sets';
@@ -102,12 +103,14 @@ CardSet ruleSet(
   String axis,
   String value, {
   String rule = 'te-grammar-verb-present',
+  List<String> shown = const <String>[],
 }) => CardSet(
   id: id,
   deckId: 'te-en-verbs',
   name: id,
   explanation: '',
   rule: SetRule(rule: rule, axis: axis, value: value),
+  shown: shown,
 );
 
 /// The rules of the core te-grammar-verb-present: one, here.
@@ -134,6 +137,8 @@ void main() {
         ('zz-grammar-case-endings', 'noun', 'అమ్మ', true),
       );
       expect(deck.sets[2].rule!.fixesRow, isFalse);
+      expect(deck.sets[2].shown, ['zz-9004', 'zz-9001']);
+      expect(deck.sets[1].shown, isEmpty);
       // A deck's set survives its cards being replaced, as refs resolve.
       expect(deck.withCards(const <Card>[]).sets, hasLength(3));
     });
@@ -185,7 +190,7 @@ void main() {
           coreWith('$refSet    target: "x"\n'),
           source: 'c.yaml',
         ),
-        fails('a set card has only id, kind and members'),
+        fails('a set card has only id, kind, members and shown'),
       );
       expect(
         () => DeckParser.parseCore(
@@ -208,6 +213,52 @@ void main() {
           source: 'c.yaml',
         ),
         fails("a rule's set fixes one value of its table"),
+      );
+    });
+
+    test('a slot across the words names the rows its card shows', () {
+      Object parse(String set) =>
+          DeckParser.parseCore(coreWith(set), source: 'c.yaml');
+      expect(
+        () => parse('''
+  - id: "zz-9203"
+    kind: "set"
+    members: { rule: "zz-rule-lo", case: "lo" }
+'''),
+        fails('missing required field "shown"'),
+      );
+      expect(
+        () => parse('''
+  - id: "zz-9203"
+    kind: "set"
+    members: { rule: "zz-rule-lo", case: "lo" }
+    shown: [{ ref: "zz-9004" }]
+'''),
+        fails('a set has at least 2 rows'),
+      );
+      expect(
+        () => parse('''
+  - id: "zz-9203"
+    kind: "set"
+    members: { rule: "zz-rule-lo", case: "lo" }
+    shown: [{ ref: "zz-9004" }, { ref: "zz-9004" }]
+'''),
+        fails('zz-9004 is a row already'),
+      );
+      expect(
+        () => parse('''
+  - id: "zz-9202"
+    kind: "set"
+    members: { rule: "zz-grammar-case-endings", noun: "అమ్మ" }
+    shown: [{ ref: "zz-9004" }, { ref: "zz-9001" }]
+'''),
+        fails('only a set of one slot across the words names the rows'),
+      );
+      expect(
+        () => parse(
+          '$refSet    shown: [{ ref: "zz-9004" }, { ref: "zz-9001" }]\n',
+        ),
+        fails('only a set of one slot across the words names the rows'),
       );
     });
 
@@ -279,6 +330,24 @@ cards:
         hasLength(2),
       );
       expect(setMembers(ruleSet('p', 'person', 'atanu'), cells), isEmpty);
+    });
+
+    test('a slot across the words shows its chosen rows on its card, and '
+        'every row in its Full list', () {
+      final set = resolveSet(
+        ruleSet('p', 'person', 'atanu', shown: ['te-cudu', 'te-none']),
+        cells,
+        ruleOf: rulesOf,
+      );
+      expect(set.members.map((c) => c.target), ['cudu-atanu']);
+      expect(set.all.map((c) => c.target), ['tagu-atanu', 'cudu-atanu']);
+      expect(set.hasFullList, isTrue);
+      expect(set.has(set.all.first), isFalse);
+      expect(set.lists(set.all.first), isTrue);
+      // A row's set shows every form, and has no Full list unless split.
+      final row = resolveSet(ruleSet('v', 'verb', 'tagu'), cells);
+      expect(row.all, row.members);
+      expect(row.hasFullList, isFalse);
     });
 
     test('refs in the set\'s order; a ref no card is left out', () {
@@ -523,7 +592,9 @@ cards:
         'అమ్మతో',
         'అమ్మ నుంచి',
       ]);
-      expect(sets[2].members.map((c) => c.target), ['ఇంట్లో', 'అమ్మలో']);
+      // The rows the deck chose, in its order; every row in the Full list.
+      expect(sets[2].members.map((c) => c.target), ['అమ్మలో', 'ఇంట్లో']);
+      expect(sets[2].all.map((c) => c.target), ['ఇంట్లో', 'అమ్మలో']);
     });
 
     test(
@@ -541,30 +612,15 @@ cards:
       },
     );
 
-    test('a slot across the words holds only the words taught', () async {
+    test('a question shows the Full list of a split set it is in, and of '
+        'a slot across the words', () async {
       final state = await loaded();
-      final byLo = state.courseSets('zz', 'en')[2];
-      expect(state.forLearner(byLo), isNull);
-      final home = state.deckById('zz-en-home')!;
-      state.record(
-        SessionItem(
-          card: home.cards.firstWhere((c) => c.id == 'zz-9001'),
-          mode: DrillMode.recognition,
-          state: null,
-        ),
-        4,
-      );
-      state.record(
-        SessionItem(
-          card: home.cards.firstWhere((c) => c.id == 'zz-9004'),
-          mode: DrillMode.recognition,
-          state: null,
-        ),
-        4,
-      );
-      expect(state.forLearner(byLo)!.members, hasLength(2));
-      // Neither set is split, so no question shows a Full list.
-      expect(state.splitSetsOf(byLo.members.first), isEmpty);
+      final sets = state.courseSets('zz', 'en');
+      final byLo = sets[2];
+      expect(state.fullListSetsOf(byLo.all.first), [byLo]);
+      // Neither other set is split, so no Full list.
+      expect(state.fullListSetsOf(sets[0].members.first), isEmpty);
+      expect(state.fullListSetsOf(sets[1].members.last), isEmpty);
     });
   });
 
@@ -579,6 +635,15 @@ cards:
       // Short words, and text with spaces, are left as they are.
       expect(breakableWord('తాగు'), 'తాగు');
       expect(breakableWord('ఇంటి నుంచి'), 'ఇంటి నుంచి');
+    });
+
+    test('a joined script never breaks between its letters', () {
+      // Urdu: it shrinks to fit instead ("Shrink Urdu instead").
+      expect(isJoinedScript('خوبصورت'), isTrue);
+      expect(hasAksharas('خوبصورت'), isFalse);
+      expect(breakableWord('خوبصورتیاں'), 'خوبصورتیاں');
+      expect(isJoinedScript('తాగుతుంది'), isFalse);
+      expect(isJoinedScript('beautiful'), isFalse);
     });
   });
 }
