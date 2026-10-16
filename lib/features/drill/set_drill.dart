@@ -17,11 +17,11 @@ import 'drill_session.dart';
 /// mockup `docs/mockups/set-cards.html`): a closed group's members together,
 /// before the lesson drills the new ones. On the drill's own card, labelled
 /// "The set" (or "The set · 2 of 3" for a part of a set too big for one
-/// card, with a Full list button beside it); the set's explanation; each
-/// member a row, its word over its reading, its meaning and its mark, New
-/// or Known, the whole row playing the word; and on the set's last part, a
-/// line saying what comes next and what is skipped. Continue goes on;
-/// nothing is recorded.
+/// card), with a Full list button beside it where the set has one; the
+/// set's explanation; each member a row, its word over its reading, its
+/// meaning and its mark, New or Known, the whole row playing the word; and
+/// on the set's last part, a line saying what comes next and naming the
+/// members it skips. Continue goes on; nothing is recorded.
 ///
 /// Build one per card (key it by the card's position).
 class SetDrill extends StatelessWidget {
@@ -55,7 +55,7 @@ class SetDrill extends StatelessWidget {
       progress: session.progress,
       onClose: onClose,
       card: <Widget>[
-        if (part.isSplit)
+        if (part.set.hasFullList)
           Row(
             children: <Widget>[
               Expanded(child: label),
@@ -64,6 +64,7 @@ class SetDrill extends StatelessWidget {
                 sets: <ResolvedSet>[part.set],
                 language: language,
                 isKnown: part.isKnown,
+                isNew: part.newIds.contains,
                 onPlay: session.playCard,
                 canPlay: session.canPlay,
               ),
@@ -84,7 +85,7 @@ class SetDrill extends StatelessWidget {
               SetMemberRow(
                 card: member,
                 language: language,
-                known: part.isKnown(member),
+                mark: part.isKnown(member) ? SetMark.known : SetMark.fresh,
                 onPlay: session.canPlay ? () => session.playCard(member) : null,
               ),
             ],
@@ -119,7 +120,9 @@ class SetDrill extends StatelessWidget {
 
 /// The line under a set's last part (the mockup's decision 5): what the
 /// lesson does next, the next set or the new members' questions, and which
-/// members it skips because the learner knows them.
+/// members it skips because the learner knows them, always named with
+/// their readings, for a split set and for verb forms too (owner,
+/// 2026-10-16, #515: "Name them always").
 String nextLine(AppLocalizations l10n, SetPart part) {
   final next = part.next;
   if (next != null) return l10n.setNextSet(next.set.name);
@@ -135,9 +138,8 @@ String nextLine(AppLocalizations l10n, SetPart part) {
       if (part.isKnown(member)) member,
   ];
   if (known.isEmpty) return line;
-  return part.isSplit || forms
-      ? '$line ${l10n.setKnownOthers}'
-      : '$line ${l10n.setKnownWords(joinWords(l10n, <String>[for (final c in known) shownWord(c)]))}';
+  final names = joinWords(l10n, <String>[for (final c in known) shownWord(c)]);
+  return '$line ${l10n.setKnownWords(names)}';
 }
 
 /// [card]'s word as interface prose quotes it: with its reading in
@@ -156,22 +158,28 @@ String joinWords(AppLocalizations l10n, List<String> words) {
   return l10n.setListPair(head, words.last);
 }
 
+/// How a set's member is marked: taught before, taught in this lesson, or,
+/// in a Full list of every verb of the course, not learnt yet (owner,
+/// 2026-10-16, #515: "with unlearnt ones as well, but marked as such").
+enum SetMark { known, fresh, notLearnt }
+
 /// One member of a set: its word over its reading, its meaning and its
-/// mark, New on a chip or Known with a check, a known word in the muted
-/// colour; the whole row plays the word, with a speaker at its end. The
-/// mark is a word, never colour alone.
+/// mark, New on a chip, Known with a check, or Not learnt yet in an
+/// outline, a known or unlearnt word in the muted colour; the whole row
+/// plays the word, with a speaker at its end. The mark is a word, never
+/// colour alone.
 class SetMemberRow extends StatelessWidget {
   const SetMemberRow({
     super.key,
     required this.card,
     required this.language,
-    required this.known,
+    required this.mark,
     this.onPlay,
   });
 
   final Card card;
   final LanguageInfo language;
-  final bool known;
+  final SetMark mark;
 
   /// Plays the word; null where the phone has no voice for it.
   final VoidCallback? onPlay;
@@ -183,36 +191,54 @@ class SetMemberRow extends StatelessWidget {
     final scheme = theme.colorScheme;
     final muted = scheme.onSurfaceVariant;
     final play = onPlay;
-    final mark = known
-        ? Row(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Icon(Icons.check_circle, size: 18, color: muted),
-              const SizedBox(width: 4),
-              Text(
-                l10n.setKnown,
-                style: theme.textTheme.labelLarge!.copyWith(color: muted),
-              ),
-            ],
-          )
-        : DecoratedBox(
-            decoration: BoxDecoration(
-              color: scheme.primaryContainer,
-              borderRadius: BorderRadius.circular(8),
+    final known = mark != SetMark.fresh;
+    final chip = switch (mark) {
+      SetMark.known => Row(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Icon(Icons.check_circle, size: 18, color: muted),
+          const SizedBox(width: 4),
+          Text(
+            l10n.setKnown,
+            style: theme.textTheme.labelLarge!.copyWith(color: muted),
+          ),
+        ],
+      ),
+      SetMark.notLearnt => DecoratedBox(
+        decoration: BoxDecoration(
+          border: Border.all(color: scheme.outline),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Padding(
+          padding: const EdgeInsetsDirectional.symmetric(
+            horizontal: 8,
+            vertical: 2,
+          ),
+          child: Text(
+            l10n.setNotLearnt,
+            style: theme.textTheme.labelLarge!.copyWith(color: muted),
+          ),
+        ),
+      ),
+      SetMark.fresh => DecoratedBox(
+        decoration: BoxDecoration(
+          color: scheme.primaryContainer,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Padding(
+          padding: const EdgeInsetsDirectional.symmetric(
+            horizontal: 8,
+            vertical: 2,
+          ),
+          child: Text(
+            l10n.setNew,
+            style: theme.textTheme.labelLarge!.copyWith(
+              color: scheme.onPrimaryContainer,
             ),
-            child: Padding(
-              padding: const EdgeInsetsDirectional.symmetric(
-                horizontal: 8,
-                vertical: 2,
-              ),
-              child: Text(
-                l10n.setNew,
-                style: theme.textTheme.labelLarge!.copyWith(
-                  color: scheme.onPrimaryContainer,
-                ),
-              ),
-            ),
-          );
+          ),
+        ),
+      ),
+    };
     final row = ConstrainedBox(
       constraints: const BoxConstraints(minHeight: 72),
       child: Padding(
@@ -255,7 +281,7 @@ class SetMemberRow extends StatelessWidget {
                           color: known ? muted : scheme.onSurface,
                         ),
                       ),
-                      mark,
+                      chip,
                     ],
                   ),
                 ],
@@ -275,9 +301,11 @@ class SetMemberRow extends StatelessWidget {
       button: play != null,
       excludeSemantics: true,
       onTap: play == null ? null : () => SpeakerActions.tap(context, play),
-      label: known
-          ? l10n.setRowKnown(word, card.native)
-          : l10n.setRowNew(word, card.native),
+      label: switch (mark) {
+        SetMark.known => l10n.setRowKnown(word, card.native),
+        SetMark.fresh => l10n.setRowNew(word, card.native),
+        SetMark.notLearnt => l10n.setRowNotLearnt(word, card.native),
+      },
       child: Material(
         color: scheme.surfaceContainerHighest,
         borderRadius: BorderRadius.circular(16),
@@ -293,16 +321,18 @@ class SetMemberRow extends StatelessWidget {
   }
 }
 
-/// The Full list button (owner, 2026-10-16: "Split sets only"): a tonal
-/// button with a list icon that opens the whole of [sets] in a bottom
-/// sheet. On a split set's card, in its header row; on a question about a
-/// member of a split set, once it is answered.
+/// The Full list button (owner, 2026-10-16: "Split sets only", and for a
+/// set of one person across the verbs, "a full list will show all verbs
+/// in the course"): a tonal button with a list icon that opens the whole
+/// of [sets] in a bottom sheet. On the set's card, in its header row; on a
+/// question about one of its members, once it is answered.
 class FullListButton extends StatelessWidget {
   const FullListButton({
     super.key,
     required this.sets,
     required this.language,
     required this.isKnown,
+    this.isNew,
     required this.onPlay,
     required this.canPlay,
   });
@@ -310,6 +340,11 @@ class FullListButton extends StatelessWidget {
   final List<ResolvedSet> sets;
   final LanguageInfo language;
   final bool Function(Card card) isKnown;
+
+  /// Whether a member not [isKnown] is taught in this lesson, and so New;
+  /// null where none is. In a set of one slot across the words, one that
+  /// is neither is marked not learnt.
+  final bool Function(Card card)? isNew;
   final Future<void> Function(Card card) onPlay;
   final bool canPlay;
 
@@ -323,6 +358,7 @@ class FullListButton extends StatelessWidget {
         sets: sets,
         language: language,
         isKnown: isKnown,
+        isNew: isNew,
         onPlay: canPlay ? onPlay : null,
       ),
       style: const ButtonStyle(
@@ -331,10 +367,7 @@ class FullListButton extends StatelessWidget {
       icon: const Icon(Icons.format_list_bulleted),
       label: Text(
         l10n.setFullList,
-        semanticsLabel: l10n.setFullListLabel(
-          first.members.length,
-          first.set.name,
-        ),
+        semanticsLabel: l10n.setFullListLabel(first.all.length, first.set.name),
       ),
     );
   }
@@ -342,15 +375,19 @@ class FullListButton extends StatelessWidget {
 
 /// Opens the Full list: a modal bottom sheet with [sets] whole, in the
 /// deck's order, each member marked as on the card and playing its word.
-/// One set is titled by its name, with how many members and how many new;
-/// a form in two sets lists both, one after the other ("Show both"). It
-/// closes with its close button, a swipe down or Back, and the lesson goes
-/// on where it was.
+/// A set of one slot across the words lists every cell of the course
+/// instead, the learnt ones on top, then this lesson's new ones, then the
+/// rest marked not learnt (owner, 2026-10-16, #515: "learnt ones sorted to
+/// be on top"). One set is titled by its name, with how many members and
+/// how many new (or learnt); a form in two sets lists both, one after the
+/// other ("Show both"). It closes with its close button, a swipe down or
+/// Back, and the lesson goes on where it was.
 Future<void> showSetList(
   BuildContext context, {
   required List<ResolvedSet> sets,
   required LanguageInfo language,
   required bool Function(Card card) isKnown,
+  bool Function(Card card)? isNew,
   Future<void> Function(Card card)? onPlay,
 }) => showModalBottomSheet<void>(
   context: context,
@@ -361,6 +398,7 @@ Future<void> showSetList(
     sets: sets,
     language: language,
     isKnown: isKnown,
+    isNew: isNew,
     onPlay: onPlay,
   ),
 );
@@ -370,13 +408,38 @@ class _SetListSheet extends StatelessWidget {
     required this.sets,
     required this.language,
     required this.isKnown,
+    this.isNew,
     this.onPlay,
   });
 
   final List<ResolvedSet> sets;
   final LanguageInfo language;
   final bool Function(Card card) isKnown;
+  final bool Function(Card card)? isNew;
   final Future<void> Function(Card card)? onPlay;
+
+  SetMark markOf(ResolvedSet set, Card card) {
+    if (isKnown(card)) return SetMark.known;
+    if (!set.set.acrossRows || (isNew?.call(card) ?? false)) {
+      return SetMark.fresh;
+    }
+    return SetMark.notLearnt;
+  }
+
+  /// [set]'s Full list in order: a set of one slot across the words with
+  /// its learnt cells first, then the new ones, then the unlearnt, each
+  /// group in the table's order; any other set as it is.
+  List<(Card, SetMark)> rowsOf(ResolvedSet set) {
+    final rows = <(Card, SetMark)>[
+      for (final card in set.all) (card, markOf(set, card)),
+    ];
+    if (!set.set.acrossRows) return rows;
+    return <(Card, SetMark)>[
+      for (final mark in SetMark.values)
+        for (final row in rows)
+          if (row.$2 == mark) row,
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -385,7 +448,8 @@ class _SetListSheet extends StatelessWidget {
     final scheme = theme.colorScheme;
     final one = sets.length == 1;
     final first = sets.first;
-    final fresh = first.members.where((m) => !isKnown(m)).length;
+    final count = first.all.length;
+    final fresh = first.all.where((m) => !isKnown(m)).length;
     final forms = first.set.rule != null;
     final play = onPlay;
     return DraggableScrollableSheet(
@@ -410,15 +474,11 @@ class _SetListSheet extends StatelessWidget {
                       ),
                       Text(
                         one
-                            ? forms
-                                  ? l10n.setSheetForms(
-                                      first.members.length,
-                                      fresh,
-                                    )
-                                  : l10n.setSheetWords(
-                                      first.members.length,
-                                      fresh,
-                                    )
+                            ? first.set.acrossRows
+                                  ? l10n.setSheetLearnt(count, count - fresh)
+                                  : forms
+                                  ? l10n.setSheetForms(count, fresh)
+                                  : l10n.setSheetWords(count, fresh)
                             : joinWords(l10n, <String>[
                                 for (final s in sets) s.set.name,
                               ]),
@@ -462,12 +522,14 @@ class _SetListSheet extends StatelessWidget {
                         style: theme.textTheme.titleSmall,
                       ),
                     ),
-                  for (final (i, member) in set.members.indexed) ...<Widget>[
+                  for (final (i, (member, mark)) in rowsOf(
+                    set,
+                  ).indexed) ...<Widget>[
                     if (i > 0) const SizedBox(height: 8),
                     SetMemberRow(
                       card: member,
                       language: language,
-                      known: isKnown(member),
+                      mark: mark,
                       onPlay: play == null ? null : () => play(member),
                     ),
                   ],
@@ -483,7 +545,8 @@ class _SetListSheet extends StatelessWidget {
 
 /// The Full list button on a question about [session]'s card, once it is
 /// [answered], when the card is a member of a set split over more than one
-/// card (owner, 2026-10-16): in a lesson, in practice and in review. Never
+/// card, or in the Full list of a set of one slot across the words (owner,
+/// 2026-10-16): in a lesson, in practice and in review. Never
 /// before the answer, which the list would give away; for a form in two
 /// such sets, the sheet lists both. None otherwise: spread it at the end of
 /// a drill's card.
@@ -494,7 +557,7 @@ List<Widget> answeredSetList(
 }) {
   if (!answered || session.item.setPart != null) return const <Widget>[];
   final state = AppScope.of(context);
-  final sets = state.splitSetsOf(session.item.card);
+  final sets = state.fullListSetsOf(session.item.card);
   if (sets.isEmpty) return const <Widget>[];
   return <Widget>[
     Center(

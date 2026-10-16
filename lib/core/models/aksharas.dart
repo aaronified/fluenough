@@ -1,5 +1,7 @@
 /// Where a long word may break across lines (owner, 2026-10-16, #515:
-/// "Break between syllables"): only between aksharas, never inside one.
+/// "Break between syllables"): only between aksharas, never inside one. A
+/// word in a joined script, such as Urdu, never breaks: it shrinks to fit
+/// ("Shrink Urdu instead").
 library;
 
 /// The viramas of the scripts that join a consonant to the next with one,
@@ -61,6 +63,16 @@ const String breakOpportunity = '​';
 bool hasAksharas(String text) => _brahmic.hasMatch(text);
 
 final RegExp _brahmic = RegExp(r'[\u0900-\u0DFF\u1000-\u109F]');
+
+/// Whether [text] is in a joined script, whose letters join the next
+/// within a word: Arabic script, as Urdu writes it. A word in it too long
+/// for its line shrinks to fit rather than break (owner, 2026-10-16,
+/// #515: "Shrink Urdu instead").
+bool isJoinedScript(String text) => _joined.hasMatch(text);
+
+final RegExp _joined = RegExp(
+  r'[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]',
+);
 
 /// [word] with a break opportunity between each of its aksharas, so that a
 /// word too long for its line breaks only there; text in a script without
