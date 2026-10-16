@@ -23,8 +23,9 @@ import 'path_view.dart';
 import 'unit_search.dart';
 import 'word_mastery.dart';
 
-/// The Decks tab: a course's path (the owner's design), chosen by the course chips, opening where the learner is; a
-/// search across every course's units; "Where I am" and Add deck.
+/// The Decks tab: a course's path (the owner's design), chosen by the
+/// course chips, opening where the learner is; a search across every
+/// course's units; "Where I am" and Add deck.
 ///
 /// Every language the catalog teaches has a chip, those the profile learns
 /// first, so that any course can be looked at and started, as before. While
