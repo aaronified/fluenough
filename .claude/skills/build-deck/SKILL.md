@@ -74,7 +74,8 @@ Before you start:
      single-file. See "Writing a B1 course", step 7, for what each part of a
      unit holds.
    - Every vocab and grammar deck is split (#498); only the reading decks
-     and Japanese's `ja-en-hiragana` (no B1 plan yet) are single-file. To split a single-file deck, run
+     (owner, 2026-10-14: "Keep reading decks single-file") and Japanese's
+     `ja-en-hiragana` (no B1 plan yet) are single-file. To split a single-file deck, run
      `python3 tools/split_deck.py <file>` ("Splitting a deck"), never by
      hand. A language's script guide and sounds file are a core and an
      English layer too ("Script guides", "Sounds files").
@@ -109,8 +110,12 @@ Before you start:
      `register`; `forms` (a label in the layer for kind `other`);
      `collocations`; `senses` (each with its `native` in the layer). Data
      taken from outside names its `source` per item, and any item may
-     give its `ipa` (a `word` only, never a `ref`). Leave out `frequency`
-     until the Wikipedia count is built.
+     give its `ipa` (a `word` only, never a `ref`). Never write
+     `frequency` by hand: `tools/wikipedia_frequency.py` writes it (step 6).
+   - A card's own `audio` and `image` ("A card's own recording", "A card's
+     own image") come only from `tools/import_wiktionary.py --audio
+     --images` (step 6), never by hand: an image only on a card with a
+     `picture`, a recording only of exactly the card's text.
 5. **Update the path.** Turn the planned unit into a written one exactly as
    "The B1 plan" says: `planned` becomes `decks` (core ids, ending in `"*"`)
    in the same change, keep `words` at least what the unit now counts, keep
@@ -119,7 +124,25 @@ Before you start:
    ("Writing a B1 course", step 2); theme ids are permanent. The first layer
    folder of a language needs its `pubspec.yaml` line, in a commit of its
    own ("Splitting a deck").
-6. **Check.** Run both until clean:
+6. **Fill from Wiktionary and Wikipedia** (semi-verified data, each item
+   naming its source; `tools/README.md`). Once the cards are written, fill
+   their empty fields from the language's kaikki.org extract
+   (`https://kaikki.org/dictionary/<Language>/`), then read the report: it
+   lists, card by card, what is still missing for you to write (a second
+   example, antonyms, confusables), and nothing it adds changes a meaning.
+
+   ```sh
+   python3 tools/import_wiktionary.py <lang> <Language>.jsonl --dump-date <YYYY-MM-DD>
+   python3 tools/import_wiktionary.py <lang> <Language>.jsonl --dump-date <YYYY-MM-DD> --write --report <lang>-report.md
+   ```
+
+   Add `--audio --images` where `ffmpeg` and the network are there. With a
+   Wikipedia dump of the language, write the ranks:
+
+   ```sh
+   python3 tools/wikipedia_frequency.py <lang> <lang>wiki-<date>-pages-articles.xml.bz2 --write
+   ```
+7. **Check.** Run both until clean:
 
    ```sh
    python3 tools/deck_index.py
@@ -128,7 +151,7 @@ Before you start:
 
    Errors block; read every warning and fix or explain it. Commit
    `decks/index.json` with the decks. Tools details: `tools/README.md`.
-7. **Ship.** Never create tags and never edit CHANGELOG.md. For the owner's
+8. **Ship.** Never create tags and never edit CHANGELOG.md. For the owner's
    work, push straight to main; a deck-only change needs only "Validate
    decks" green (CLAUDE.md). Contributors open a pull request on a branch
    `deck/<name>` ([CONTRIBUTING.md](../../../CONTRIBUTING.md), AGENTS.md
