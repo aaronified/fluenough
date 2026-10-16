@@ -183,7 +183,8 @@ layers; the core does not change. Every deck in a [B1 plan](#the-b1-plan)
 is split into a core and its layers as the plan is written. A single-file
 deck stays valid in every form it has, and may use every new card field.
 [Rules decks](#rules-decks) exist only as a core and layers; reading decks
-stay single-file, since their questions are already keyed by language; a
+stay single-file (owner, 2026-10-14: "Keep reading decks single-file"),
+since their questions are already keyed by language; a
 deck a learner adds in the app is single-file. A language's
 [script guide](#script-guides) and [sounds file](#sounds-files) are split
 the same way, into a core that keeps their letters and a layer per native
@@ -517,17 +518,16 @@ it. By hand, or checking what the tool did:
 a core and an English layer: Hindi, Marathi, Gujarati, Kannada, Assamese
 and Spanish with their B1 rewrite, and Bengali and Telugu by
 `tools/split_deck.py` (#498: "Change them via grep", owner, 2026-10-13).
-Japanese (hidden) is still single-file: a language with a core needs a
-[B1 plan](#the-b1-plan) in its path, and Japanese has none. **Open
-question for the owner:** write Japanese's B1 plan so that
-`ja-en-hiragana` can be split, or keep it single-file until then?
+Japanese (hidden) is still single-file: its `ja-en-hiragana` is to be split
+(#498; owner, 2026-10-14), but a language with a core needs a
+[B1 plan](#the-b1-plan) in its path, and Japanese has none. **Open question
+for the owner:** write Japanese's B1 plan so that `ja-en-hiragana` can be
+split, or let a language whose path has no B1 plan have a core?
 Each language's script guide and sounds file are split too ("Split script
 + sounds", owner, 2026-10-13); its path, facts, numbers and romanisation
-files stay one file. Each language's reading deck is still single-file:
-this guide says reading decks stay so, and the validator refuses a core of
-`kind: "reading"`, yet #498 lists them among the decks to split. **Open
-question for the owner:** do reading decks stay single-file, or does #498
-give them a core and a layer (which needs a format change first)? A
+files stay one file. **Reading decks stay single-file** (owner, 2026-10-14:
+"Keep reading decks single-file"): the validator refuses a core of
+`kind: "reading"`, and `tools/split_deck.py` leaves them alone. A
 validator warning on a B1 deck still single-file
 ([The B1 plan](#the-b1-plan)) is how a language's remaining decks show.
 
@@ -1710,7 +1710,9 @@ passages:
 ```
 
 A reading deck has the usual header, with `passages` in place of `cards`,
-and no `theme` of its own: each passage names the theme it follows.
+and no `theme` of its own: each passage names the theme it follows. It is
+one file, never a core and layers (owner, 2026-10-14: "Keep reading decks
+single-file"), with its text in every native language it is taught from.
 
 ### Passage fields
 
