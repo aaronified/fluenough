@@ -20,7 +20,6 @@ import 'package:fluenough/features/stats/stats_page.dart';
 import 'package:fluenough/features/today/lesson_card.dart';
 import 'package:fluenough/features/today/today_page.dart';
 import 'package:fluenough/ui/widgets/language_bar.dart';
-import 'package:fluenough/ui/widgets/language_menu.dart';
 import 'package:fluenough/ui/widgets/stat_tile.dart';
 
 import '../support/harness.dart';
@@ -137,7 +136,6 @@ void main() {
     expect(barIn(DecksPage), findsOneWidget);
     expect(barIn(StatsPage), findsOneWidget);
     expect(barIn(SettingsPage), findsNothing);
-    expect(find.byType(LanguageMenu, skipOffstage: false), findsNothing);
     for (final tab in ShellTab.values) {
       state.shellTab.value = tab;
       await tester.pumpAndSettle();
@@ -592,7 +590,13 @@ void main() {
       unawaited(open());
       await tester.pumpAndSettle();
       expect(find.byType(page), findsOneWidget);
-      expect(find.byType(LanguageMenu, skipOffstage: false), findsNothing);
+      expect(
+        find.descendant(
+          of: find.byType(page),
+          matching: find.byType(LanguageBar),
+        ),
+        findsNothing,
+      );
       await tester.pageBack();
       await tester.pumpAndSettle();
     }
