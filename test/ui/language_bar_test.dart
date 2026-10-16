@@ -12,6 +12,8 @@ import 'package:fluenough/app/shell_tab.dart';
 import 'package:fluenough/features/decks/course_card.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/decks/decks_page.dart';
+import 'package:fluenough/features/decks/inspect_page.dart';
+import 'package:fluenough/features/decks/unit_page.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/features/settings/settings_page.dart';
 import 'package:fluenough/features/stats/stats_page.dart';
@@ -577,39 +579,23 @@ void main() {
     });
   });
 
-  testWidgets('on a deck\'s page, the language menu offers no All, and '
-      'choosing another language goes back to the tabs', (tester) async {
+  testWidgets('a deck\'s, a unit\'s and Inspect\'s page belong to one deck, '
+      'so none has a language switcher (#526)', (tester) async {
     usePhone(tester);
-    final state = await pumpApp(tester, state: await aro());
-    final hindi = nameOf(state, 'hi');
-    final spanish = nameOf(state, 'es');
+    await pumpApp(tester, state: await aro());
     final context = tester.element(find.byType(TodayPage));
-    unawaited(AppNavigator.openDeck(context, 'hi-en-market'));
-    await tester.pumpAndSettle();
-    expect(find.byType(DeckDetailPage), findsOneWidget);
-    Future<void> choose(String name) async {
-      await tester.tap(find.byType(LanguageMenu).hitTestable());
+    for (final (open, page) in <(Future<void> Function(), Type)>[
+      (() => AppNavigator.openDeck(context, 'hi-en-market'), DeckDetailPage),
+      (() => AppNavigator.openUnit(context, 'hi-en-market'), UnitPage),
+      (() => AppNavigator.openInspect(context, 'hi-en-market'), InspectPage),
+    ]) {
+      unawaited(open());
       await tester.pumpAndSettle();
-      await tester.tap(
-        find.descendant(
-          of: find.byType(MenuItemButton),
-          matching: find.text(name),
-        ),
-      );
+      expect(find.byType(page), findsOneWidget);
+      expect(find.byType(LanguageMenu, skipOffstage: false), findsNothing);
+      await tester.pageBack();
       await tester.pumpAndSettle();
     }
-
-    await tester.tap(find.byType(LanguageMenu).hitTestable());
-    await tester.pumpAndSettle();
-    expect(find.byType(MenuItemButton), findsNWidgets(2));
-    await tester.tapAt(Offset.zero);
-    await tester.pumpAndSettle();
-
-    await choose(hindi);
-    expect(find.byType(DeckDetailPage), findsOneWidget);
-    await choose(spanish);
-    expect(find.byType(DeckDetailPage), findsNothing);
-    expect(state.shownLanguage, 'es');
   });
 
   group('accessibility', () {
