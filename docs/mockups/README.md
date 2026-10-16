@@ -72,9 +72,18 @@ Proposed is listed in their decisions tables.
   and Marathi), or says it is not part of any; every card, set card, deck
   and unit is its own row ("Don't group by meaning"); and "travl" also
   finds "Bus, auto, cab" through its theme's tag ("Yes, also transport").
-  Each result has a kind chip that narrows the search ("Both"). It uses
-  the #528 language bar, edge-masked where its row does not fit. Hindi and
-  Bengali, light and dark, 1.4x, and a note on how FTS5 does it.
+  Each result has a kind chip that narrows the search ("Both"). Revised
+  again for the owner's answers on 0777b95 (2026-10-16): `kind:`,
+  `status:` and `tag:` tokens open a dropdown combobox of their values and
+  become chips inside the bar, a result's kind chip adds `kind:`, and chips
+  combine with text; the ✕ clears, then closes; the hint is "Search
+  Hindi", this course only; the `travel` tag is on the transport theme in
+  `decks/themes.yaml`, with a build-time check that the 0.4.3 reader
+  accepts it; and a script none of the learner's courses use offers to add
+  a catalog course written in it and, for any script not yet native, to add
+  its language to the languages you know. It uses the #528 language bar,
+  edge-masked where its row does not fit. Hindi and Bengali, light and
+  dark, 1.4x, and a note on how FTS5 does it.
 ## Older: to be adapted (owner, 2026-10-12)
 
 Bring these up to the current app and plans, in the style of
