@@ -4,18 +4,16 @@ import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/routes.dart';
-import '../../app/session.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/deck_tile.dart';
 import '../../ui/widgets/grouped_list.dart';
-import '../../ui/widgets/language_menu.dart';
+import '../../ui/widgets/language_bar.dart';
+import '../../ui/widgets/language_glyph.dart';
 import '../../ui/widgets/page_parts.dart';
-import '../../ui/widgets/report_button.dart';
 import 'broken_deck_tile.dart';
 import 'course_card.dart';
-import 'course_chips.dart';
 import 'course_hours.dart';
 import 'number_practice_tile.dart';
 import 'path_model.dart';
@@ -23,31 +21,20 @@ import 'path_view.dart';
 import 'unit_search.dart';
 import 'word_mastery.dart';
 
-/// The Decks tab: a course's path (the owner's design), chosen by the
-/// course chips, opening where the learner is; a search across every
-/// course's units; "Where I am" and Add deck.
+/// The Decks tab: under the language bar (#528), the course of the
+/// language it shows, its path (the owner's design) opening where the
+/// learner is; the search above the path; "Where I am" and Add deck.
 ///
-/// Every language the catalog teaches has a chip, those the profile learns
-/// first, so that any course can be looked at and started, as before. While
-/// the language menu at the top shows one language (#461), only its course
-/// shows, with no chips. A unit on the path opens its screen; a deck the
-/// path leaves out opens its own, from the path or from "Other decks" under
-/// it.
+/// Only the languages the learner learns show (owner, 2026-10-16: "No,
+/// only my languages"). A unit on the path opens its screen; a deck the
+/// path leaves out opens its own, from the path or from "Other decks"
+/// under it.
 class DecksPage extends StatefulWidget {
-  const DecksPage({
-    super.key,
-    this.planOf,
-    this.initialLanguage,
-    this.initialQuery,
-  });
+  const DecksPage({super.key, this.planOf, this.initialQuery});
 
   /// Each course's plan, in place of [coursePlanOf]: the levels and units
   /// coming, which no path marks yet. For tests and the debug gallery.
   final CoursePlan Function(String language)? planOf;
-
-  /// The course shown first, by language code; by default the first the
-  /// profile learns.
-  final String? initialLanguage;
 
   /// A search to open with, for the debug gallery and tests.
   final String? initialQuery;
@@ -65,12 +52,8 @@ class _DecksPageState extends State<DecksPage> {
   late final TextEditingController _search = TextEditingController(
     text: widget.initialQuery ?? '',
   );
-  late bool _searching = widget.initialQuery != null;
   final ScrollController _scroll = ScrollController();
   final GlobalKey _upNext = GlobalKey();
-
-  /// The course chosen, by language code, or null for the default.
-  late String? _language = widget.initialLanguage;
 
   /// The course the path last opened at its unit up next, so that it opens
   /// there once, not on every rebuild.
@@ -83,43 +66,13 @@ class _DecksPageState extends State<DecksPage> {
     super.dispose();
   }
 
-  /// Every language the catalog teaches: those the profile learns first, in
-  /// the order the learner chose them, then the rest in the catalog's
-  /// order. While the language menu shows one language (#461), that one
-  /// alone.
-  List<LanguageInfo> _languages(AppState state) {
-    final all = state.languages;
-    final shown = state.shownLanguage;
-    if (shown != null) {
-      return <LanguageInfo>[
-        for (final l in all)
-          if (l.code == shown) l,
-      ];
-    }
-    final profile = state.currentProfile;
-    final order = <String>[
-      ...state.settings.learningLanguages,
-      ...?profile.languages,
-    ];
-    int rank(LanguageInfo l) {
-      final i = order.indexOf(l.code);
-      return i < 0 ? order.length : i;
-    }
-
-    final learned = <LanguageInfo>[
-      for (final l in all)
-        if (profile.learns(l.code)) l,
-    ];
-    final ranked = learned.indexed.toList()
-      ..sort((a, b) {
-        final byRank = rank(a.$2).compareTo(rank(b.$2));
-        return byRank != 0 ? byRank : a.$1.compareTo(b.$1);
-      });
-    return <LanguageInfo>[
-      for (final (_, l) in ranked) l,
-      ...all.where((l) => !profile.learns(l.code)),
-    ];
-  }
+  /// The languages whose courses the search looks in: the one the bar
+  /// shows. Until deck search (#527) it covers this course alone, as #527
+  /// decided ("Yes, this course").
+  List<LanguageInfo> _languages(AppState state) => <LanguageInfo>[
+    for (final language in state.languages)
+      if (language.code == state.shownLanguage) language,
+  ];
 
   /// The level holding the unit up next on the path shown, as (language,
   /// level), or null where there is none.
@@ -152,26 +105,47 @@ class _DecksPageState extends State<DecksPage> {
     );
   }
 
-  void _choose(String code) {
-    if (code == _language) return;
-    setState(() => _language = code);
-    if (_scroll.hasClients) _scroll.jumpTo(0);
-  }
+  /// The search field above the path (#528, as the approved mockup drew
+  /// it): always there, it finds units in the bar's course while it holds
+  /// a search.
+  Widget _searchField(AppLocalizations l10n) => Padding(
+    padding: const EdgeInsetsDirectional.only(bottom: 12),
+    // One screen-reader node, the bar's full 56 in height (#26), named by
+    // its hint even once the hint gives way to a search.
+    child: MergeSemantics(
+      child: Semantics(
+        label: _search.text.isEmpty ? null : l10n.decksUnitSearchHint,
+        child: SearchBar(
+          controller: _search,
+          hintText: l10n.decksUnitSearchHint,
+          leading: const Icon(Icons.search),
+          trailing: <Widget>[
+            if (_search.text.isNotEmpty)
+              IconButton(
+                tooltip: l10n.decksSearchClose,
+                icon: const Icon(Icons.close),
+                onPressed: () => setState(_search.clear),
+              ),
+          ],
+          elevation: const WidgetStatePropertyAll<double>(0),
+          constraints: const BoxConstraints(minHeight: 56),
+          padding: const WidgetStatePropertyAll<EdgeInsetsGeometry>(
+            EdgeInsetsDirectional.symmetric(horizontal: 16),
+          ),
+          onChanged: (_) => setState(() {}),
+        ),
+      ),
+    ),
+  );
 
-  void _toggleSearch() => setState(() {
-    _searching = !_searching;
-    if (!_searching) _search.clear();
-  });
+  bool get _searching => _search.text.trim().isNotEmpty;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
     final languages = _languages(state);
-    final current = languages.any((l) => l.code == _language)
-        ? _language
-        : null;
-    final code = current ?? languages.firstOrNull?.code;
+    final code = state.shownLanguage;
     final ready = state.status == CatalogStatus.ready && code != null;
 
     return Scaffold(
@@ -214,89 +188,10 @@ class _DecksPageState extends State<DecksPage> {
       ),
       body: SafeArea(
         bottom: false,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(24, 16, 12, 8),
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Semantics(
-                      header: true,
-                      child: Text(
-                        l10n.decksTitle,
-                        style: Theme.of(context).textTheme.headlineLarge,
-                      ),
-                    ),
-                  ),
-                  const LanguageMenu(),
-                  IconButton(
-                    tooltip: _searching
-                        ? l10n.decksSearchClose
-                        : l10n.decksSearchOpen,
-                    isSelected: _searching,
-                    icon: Icon(_searching ? Icons.close : Icons.search),
-                    onPressed: _toggleSearch,
-                  ),
-                  ReportButton(detail: l10n.decksTitle),
-                ],
-              ),
-            ),
-            if (_searching) ...<Widget>[
-              Padding(
-                padding: const EdgeInsetsDirectional.symmetric(
-                  horizontal: AppSizes.gutter,
-                ),
-                // One screen-reader node, the bar's full 56 in height (#26),
-                // named by its hint even once the hint gives way to a search.
-                child: MergeSemantics(
-                  child: Semantics(
-                    label: _search.text.isEmpty
-                        ? null
-                        : l10n.decksUnitSearchHint,
-                    child: SearchBar(
-                      controller: _search,
-                      autoFocus: widget.initialQuery == null,
-                      hintText: l10n.decksUnitSearchHint,
-                      leading: const Icon(Icons.search),
-                      elevation: const WidgetStatePropertyAll<double>(0),
-                      constraints: const BoxConstraints(minHeight: 56),
-                      padding: const WidgetStatePropertyAll<EdgeInsetsGeometry>(
-                        EdgeInsetsDirectional.symmetric(horizontal: 16),
-                      ),
-                      onChanged: (_) => setState(() {}),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 12),
-            ],
-            // One language shown, the menu names it: no chips to choose.
-            if (ready && state.shownLanguage == null) ...<Widget>[
-              ListenableBuilder(
-                listenable: state.progress,
-                builder: (context, _) => CourseChips(
-                  languages: languages,
-                  decks: state.decks,
-                  due: <String, int>{
-                    for (final language in languages)
-                      if (state.currentProfile.learns(language.code))
-                        language.code: state
-                            .buildSession(
-                              DrillRequest.today(language: language.code),
-                            )
-                            .due
-                            .length,
-                  },
-                  selected: code,
-                  onSelected: _choose,
-                ),
-              ),
-              const SizedBox(height: 8),
-            ],
-            Expanded(child: _body(context, state, languages, code)),
-          ],
+        child: LanguageBarFrame(
+          screen: LanguageBarScreen.decks,
+          reportDetail: 'Decks',
+          child: _body(context, state, languages, code),
         ),
       ),
     );
@@ -329,18 +224,12 @@ class _DecksPageState extends State<DecksPage> {
       case CatalogStatus.ready:
         break;
     }
-    if (_searching) {
-      return SearchResults(
-        query: _search.text,
-        languages: languages,
-        planOf: widget.planOf,
-      );
-    }
-    if (code == null) {
+    if (code == null && !_searching) {
       // No deck parsed: only broken files, if any.
       return ListView(
         padding: const EdgeInsetsDirectional.fromSTEB(16, 4, 16, 96),
         children: <Widget>[
+          _searchField(l10n),
           Padding(
             padding: const EdgeInsetsDirectional.symmetric(vertical: 32),
             child: Text(
@@ -361,22 +250,23 @@ class _DecksPageState extends State<DecksPage> {
         state.settings,
       ]),
       builder: (context, _) {
-        final view = courseView(
-          state,
-          code,
-          plan: widget.planOf?.call(code),
-          answers: RecentAnswers(state.progress.log),
-        );
-        if (view == null) return const SizedBox.shrink();
-        _currentLevel = switch (view.steps
+        final view = _searching || code == null
+            ? null
+            : courseView(
+                state,
+                code,
+                plan: widget.planOf?.call(code),
+                answers: RecentAnswers(state.progress.log),
+              );
+        _currentLevel = switch (view?.steps
             .whereType<LevelStep>()
             .where((l) => l.current)
             .firstOrNull) {
-          final level? => (code, level.level.label),
+          final level? => (code!, level.level.label),
           null => null,
         };
         // The level up next starts unfolded: _toUpNext unfolds it.
-        if (_openedAt != code) {
+        if (view != null && _openedAt != code) {
           _openedAt = code;
           WidgetsBinding.instance.addPostFrameCallback((_) {
             if (mounted) _toUpNext(animate: false);
@@ -395,44 +285,53 @@ class _DecksPageState extends State<DecksPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              CourseCard(
-                view: view,
-                glyph: languageGlyph(view.language, state.decks),
-                hours: courseHours(state, code),
-              ),
-              const SizedBox(height: 20),
-              CoursePathView(
-                view: view,
-                state: state,
-                upNextKey: _upNext,
-                onOpen: (unit) => unit.onPath
-                    ? AppNavigator.openUnit(context, unit.decks.first.id)
-                    : AppNavigator.openDeck(context, unit.decks.first.id),
-              ),
-              const SizedBox(height: 32),
-              const BeyondTheCourse(),
-              if (view.otherDecks.isNotEmpty) ...<Widget>[
-                const SizedBox(height: 24),
-                GroupedList(
-                  header: l10n.pathOtherDecks,
-                  outerRadius: AppRadii.card,
-                  gap: 4,
-                  children: <Widget>[
-                    for (final entry in view.otherDecks) ...<Widget>[
-                      DeckTile(
-                        entry: entry,
-                        badge: DeckBadge.forEntry(state, entry),
-                        onTap: () => AppNavigator.openDeck(context, entry.id),
-                      ),
-                      if (hasNumberPractice(state, entry))
-                        NumberPracticeTile(deck: entry),
-                    ],
-                  ],
+              _searchField(l10n),
+              if (_searching)
+                SearchResults(
+                  query: _search.text,
+                  languages: languages,
+                  planOf: widget.planOf,
+                )
+              else if (view != null) ...<Widget>[
+                CourseCard(
+                  view: view,
+                  glyph: languageGlyph(view.language, state.decks),
+                  hours: courseHours(state, code!),
                 ),
-              ],
-              if (state.brokenDecks.isNotEmpty) ...<Widget>[
-                const SizedBox(height: 24),
-                _BrokenFiles(files: state.brokenDecks),
+                const SizedBox(height: 20),
+                CoursePathView(
+                  view: view,
+                  state: state,
+                  upNextKey: _upNext,
+                  onOpen: (unit) => unit.onPath
+                      ? AppNavigator.openUnit(context, unit.decks.first.id)
+                      : AppNavigator.openDeck(context, unit.decks.first.id),
+                ),
+                const SizedBox(height: 32),
+                const BeyondTheCourse(),
+                if (view.otherDecks.isNotEmpty) ...<Widget>[
+                  const SizedBox(height: 24),
+                  GroupedList(
+                    header: l10n.pathOtherDecks,
+                    outerRadius: AppRadii.card,
+                    gap: 4,
+                    children: <Widget>[
+                      for (final entry in view.otherDecks) ...<Widget>[
+                        DeckTile(
+                          entry: entry,
+                          badge: DeckBadge.forEntry(state, entry),
+                          onTap: () => AppNavigator.openDeck(context, entry.id),
+                        ),
+                        if (hasNumberPractice(state, entry))
+                          NumberPracticeTile(deck: entry),
+                      ],
+                    ],
+                  ),
+                ],
+                if (state.brokenDecks.isNotEmpty) ...<Widget>[
+                  const SizedBox(height: 24),
+                  _BrokenFiles(files: state.brokenDecks),
+                ],
               ],
             ],
           ),

@@ -39,7 +39,7 @@ thing anyone can give these decks.
    scripts you read, no course can be ticked.
 5. A course whose decks are not on your phone asks to download them. They are
    for reviewing only: the language is not added to the languages you learn,
-   and stays out of Today, the language menu and your lessons. Each course on
+   and stays out of Today, the language bar and your lessons. Each course on
    your phone shows its size, whether an update is waiting, **Update** and
    **Remove**.
 

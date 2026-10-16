@@ -243,9 +243,8 @@ void main() {
     expect(drill.request.language, isNull, reason: 'one language');
   });
 
-  testWidgets('with several languages, Start begins with the first alone', (
-    tester,
-  ) async {
+  testWidgets('with several languages, Today is the language bar\'s alone, '
+      'and Start reviews it (#528)', (tester) async {
     usePhone(tester);
     final settings = SettingsNotifier(
       spokenLanguages: const <String>['en'],
@@ -259,13 +258,18 @@ void main() {
       ),
     );
     final l10n = l10nOf(tester);
-    expect(find.text(l10n.todayStartReview), findsNothing);
-    final bengali = state.todayLanguages.first;
-    expect(bengali.code, 'bn', reason: 'the order they were chosen in');
-    await tapVisible(tester, find.text(l10n.todayStartLanguage(bengali.name)));
+    expect(state.shownLanguage, 'bn', reason: 'the order they were chosen in');
+    expect(state.todayLanguages.map((l) => l.code), <String>['bn']);
+    await tapVisible(tester, find.text(l10n.todayStartReview));
     final drill = tester.widget<DrillPage>(find.byType(DrillPage));
-    expect(drill.request.language, 'bn');
     expect(drill.request.deckIds, isNull);
+    expect(
+      <String>{
+        for (final item in state.buildSession(drill.request).items)
+          state.deckOf(item.card)!.language.code,
+      },
+      <String>{'bn'},
+    );
   });
 
   testWidgets('Quick revision offers 5, 10, 15 and 20 words in place of '
@@ -288,7 +292,13 @@ void main() {
     expect(five.onPressed, isNull);
     // The fact of the day comes after it.
     final fact = find.textContaining(l10n.todayFactTitle);
-    await tester.scrollUntilVisible(fact.first, 200);
+    await tester.scrollUntilVisible(
+      fact.first,
+      200,
+      scrollable: find.byWidgetPredicate(
+        (w) => w is Scrollable && w.axisDirection == AxisDirection.down,
+      ),
+    );
     expect(
       tester.getTopLeft(fact.first).dy,
       greaterThan(tester.getTopLeft(find.text(l10n.todayRevisionTitle)).dy),
@@ -344,10 +354,10 @@ void main() {
     usePhone(tester);
     await pumpToday(
       tester,
-      state: await withReviewsDue(
+      state: (await withReviewsDue(
         (progress) => AppState.test(progress: progress),
         const <String>['es'],
-      ),
+      ))..showLanguage('es'),
     );
     final l10n = l10nOf(tester);
     final tile = find.bySemanticsLabel(
@@ -366,13 +376,13 @@ void main() {
     usePhone(tester);
     final state = await pumpToday(
       tester,
-      state: await withReviewsDue(
+      state: (await withReviewsDue(
         (progress) => AppState.test(
           tts: FixedTtsEngine(const <String>{'es', 'hi'}),
           progress: progress,
         ),
         const <String>['es', 'hi'],
-      ),
+      ))..showLanguage('es'),
     );
     final l10n = l10nOf(tester);
     expect(find.text(l10n.commonNoVoice), findsNothing);
