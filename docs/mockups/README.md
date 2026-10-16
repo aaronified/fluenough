@@ -94,7 +94,12 @@ Proposed is listed in their decisions tables.
   `decks/themes.yaml`, while "travl" still finds "Bus, auto, cab" through
   the travel tag; and a script several languages use gets one row per
   language to add to the languages you know. Hindi and Bengali, light and
-  dark, 1.4x, and a note on how FTS5 does it.
+  dark, 1.4x, and a note on how FTS5 does it. Approved by the owner,
+  2026-10-16 ("Approve"), with the decisions the page marks Proposed and
+  the last answers folded in: `theme:` offers only this course's themes
+  ("Only this course's"); the status order and the 21-day learnt line
+  stand ("Yes, both"); and the languages-you-know rows leave out languages
+  the learner already has a course in ("Leave them out").
 ## Older: to be adapted (owner, 2026-10-12)
 
 Bring these up to the current app and plans, in the style of
