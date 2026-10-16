@@ -183,9 +183,12 @@ class SearchResults extends StatelessWidget {
             ),
           );
         }
+        // Inside the Decks tab's own scrolling, under its search field
+        // (#528), which leaves room for the buttons floating over its end.
         return ListView(
-          // Clear of Add deck, which floats over the list's end.
-          padding: const EdgeInsetsDirectional.fromSTEB(16, 4, 16, 96),
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          padding: EdgeInsets.zero,
           children: <Widget>[
             if (hits.isNotEmpty)
               GroupedList(

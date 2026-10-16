@@ -62,7 +62,8 @@ wherever the table above allows it.
   exactly, never rewrite one without approval, and adapt the older ones.
   Each uses the app's real theme, light and dark, 1.4x text (the app's
   cap, #505), a contrast self-check, and Hindi and Bengali examples, and
-  is checked in Chromium.
+  is checked in Chromium. Remove a mockup once its feature is built
+  (owner, 2026-10-16: "Remove when built").
 - **Content.** Keep transliteration in deck prose, and say in a card's notes
   when its base word changes its stem (`docs/DECK-FORMAT.md`).
 - **Reviewers** are bilingual and the meaning of a card never changes; new
