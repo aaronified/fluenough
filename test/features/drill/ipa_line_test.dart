@@ -110,14 +110,17 @@ void main() {
     expect(find.byType(IpaLine), findsNothing);
   });
 
-  testWidgets('grammar: the form\'s IPA once answered', (tester) async {
+  testWidgets('grammar: the word\'s IPA, and the form\'s once answered', (
+    tester,
+  ) async {
     usePhone(tester);
     await pumpDrill(
       tester,
       DrillRequest.untaught(grammar, skill: Skill.grammar),
       preset: const DrillPreset(target: 'hablo'),
     );
-    expect(find.byType(IpaLine), findsNothing);
+    expect(ipaLine('/aˈblaɾ/'), findsOneWidget, reason: 'the word asked');
+    expect(ipaLine('/ˈablo/'), findsNothing, reason: 'the answer');
     await tester.enterText(find.byType(TextField), 'hablo');
     await tester.pump();
     await tester.tap(find.text(l10nOf(tester).drillCheck));

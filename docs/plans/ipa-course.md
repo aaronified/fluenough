@@ -49,19 +49,13 @@ Branch `wip/v032-ipa`, commit `d21d3df`, on origin:
 - The language block: `{ code: ipa, iso639_3: zxx, name: IPA, script: ipa,
   typed: false, icon: "ə" }`.
 
-Branch `feat/ipa-line`, on origin, shows each word's IPA on cards, with a
-Settings > Learning > Show IPA switch. It is not in 0.3.2. It is stacked on
-the ISO 15919 readings (#180) and an earlier head of the sound work (#182,
-233c660). Before its PR opens:
-
-- **It fails 3 tests.** With the IPA line, the near-miss feedback on a
-  production card overflows by 28 px at text size 2.0:
-  `drill_page_test.dart`, "at text scale 2.0 nothing overflows production,
-  near miss, card text at 1.0" and "… at 1.4", and `accessibility_test.dart`,
-  "at the largest font size, 2.0 on Android production, near miss".
-- #180 and #182 are merged (0.3.2), so rebase it onto `main` and run the full suite.
-- A grammar question does not show the IPA of the word it asks about; only
-  Inspect does.
+The IPA line and the Settings > Learning > Show IPA switch (#533) are
+rebuilt on `main` from the drafts on `feat/ipa-line` (f5c8dba) and
+`wip/v032-ui` (41e5573, 65df57e), which are not merged: they conflict in 34
+files. The line sits on the drill's card, which scrolls, not in the fixed
+feedback at its foot, where the draft overflowed on a production near miss.
+Nothing overflows at 1.4x, the app's cap (#505). A grammar question shows
+its word's IPA from the start and the form's once answered.
 
 The draft of the app side (`LanguageInfo.typed` and `scoped`,
 `CardExample.language`, and the `ipa` script needing no reading), and a
