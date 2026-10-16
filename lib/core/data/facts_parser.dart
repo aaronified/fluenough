@@ -73,6 +73,11 @@ FactsFile parseFacts(String text, {required String source}) {
     }
     final tags = node['tags'];
     final source = node['source'];
+    final cards = node['cards'];
+    if (cards != null &&
+        (cards is! YamlList || cards.any((id) => id is! String))) {
+      fail('fact "$id": cards must be a list of card ids', node);
+    }
     facts.add(
       Fact(
         id: id,
@@ -82,6 +87,9 @@ FactsFile parseFacts(String text, {required String source}) {
             ? List<String>.unmodifiable(tags.whereType<String>())
             : const <String>[],
         source: source is String ? source : null,
+        cards: cards is YamlList
+            ? List<String>.unmodifiable(cards.cast<String>())
+            : const <String>[],
       ),
     );
   }

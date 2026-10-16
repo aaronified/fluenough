@@ -12,11 +12,26 @@ const _fields = {
   'contrasts',
 };
 const _contrastFields = {'id', 'name', 'pairs', 'within_word'};
+// A core's fields (#498): the names and description are in each layer.
+const _coreFields = {'schema', 'kind', 'part', 'id', 'language', 'contrasts'};
+const _coreContrastFields = {'id', 'pairs', 'within_word'};
 
 /// The sound contrasts in [text], a `<code>-sounds.yaml` (#89, ADR-0015).
 /// Throws [DeckParseException] for a file that is not one, or is malformed,
 /// so that the catalog reports it like a broken deck.
-SoundContrasts parseSounds(String text, {required String source}) {
+SoundContrasts parseSounds(String text, {required String source}) =>
+    _parse(text, source: source, core: false);
+
+/// The core of a split sounds file (`part: "core"`, #498): its pairs, with
+/// each contrast's name empty until a layer gives it ([mergeSounds]).
+SoundContrasts parseSoundsCore(String text, {required String source}) =>
+    _parse(text, source: source, core: true);
+
+SoundContrasts _parse(
+  String text, {
+  required String source,
+  required bool core,
+}) {
   DeckParseException bad(String message, [YamlNode? at]) => DeckParseException(
     message,
     source: source,
@@ -33,8 +48,17 @@ SoundContrasts parseSounds(String text, {required String source}) {
   if (root is! YamlMap || root['kind'] != 'sounds') {
     throw bad('a sounds file is a mapping with "kind: sounds"', root);
   }
+  if (core != (root['part'] == 'core')) {
+    throw bad(
+      core
+          ? 'a sounds core has part: "core"'
+          : 'a sounds file with part: "core" is read as a core',
+      root,
+    );
+  }
+  final fields = core ? _coreFields : _fields;
   for (final key in root.nodes.keys.cast<YamlNode>()) {
-    if (!_fields.contains(key.value)) {
+    if (!fields.contains(key.value)) {
       throw bad('unknown field "${key.value}" in a sounds file', key);
     }
   }
@@ -55,7 +79,7 @@ SoundContrasts parseSounds(String text, {required String source}) {
   for (final node in list.nodes) {
     if (node is! YamlMap) throw bad('a contrast is a mapping', node);
     for (final key in node.nodes.keys.cast<YamlNode>()) {
-      if (!_contrastFields.contains(key.value)) {
+      if (!(core ? _coreContrastFields : _contrastFields).contains(key.value)) {
         throw bad('unknown field "${key.value}" in a contrast', key);
       }
     }
@@ -64,8 +88,8 @@ SoundContrasts parseSounds(String text, {required String source}) {
       throw bad('a contrast needs an id such as "aspiration"', node);
     }
     if (!ids.add(id)) throw bad('contrast "$id" is listed twice', node);
-    final name = node['name'];
-    if (name is! String || name.trim().isEmpty) {
+    final name = core ? '' : node['name'];
+    if (name is! String || !core && name.trim().isEmpty) {
       throw bad('contrast "$id" needs a name', node);
     }
     final within = node['within_word'] ?? false;

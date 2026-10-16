@@ -593,7 +593,7 @@ class DrillSession extends ChangeNotifier {
     _playing = true;
     notifyListeners();
     try {
-      await _state.speak(item.card.target, deck.language, slower: _slower);
+      await _state.speakCard(item.card, deck.language, slower: _slower);
     } finally {
       if (!_disposed && _index == playingIndex && _playing) {
         _playing = false;
@@ -602,10 +602,11 @@ class DrillSession extends ChangeNotifier {
     }
   }
 
-  /// Speaks [card]'s target once, at the learner's rate: a word tile of a
-  /// match, tapped while its speaker button is on (ADR-0032).
-  Future<void> playCard(Card card) => _state.speak(
-    card.target,
+  /// Speaks [card]'s target once, at the learner's rate, in its own
+  /// recording where it has one (#518): a word tile of a match, tapped
+  /// while its speaker button is on (ADR-0032).
+  Future<void> playCard(Card card) => _state.speakCard(
+    card,
     _state.deckOf(card)?.language ?? deck.language,
     slower: _slower,
   );
@@ -861,9 +862,10 @@ class DrillSession extends ChangeNotifier {
   /// Whether sound is on in Settings.
   bool get soundOn => _state.settings.soundOn;
 
-  /// On from a card being taught. Nothing is recorded: its questions are.
+  /// On from a card being taught, or a set shown. Nothing is recorded: its
+  /// questions are.
   void learnt() {
-    if (ask != Ask.teach) return;
+    if (!ask.onlyShows) return;
     _advance();
   }
 
@@ -1109,8 +1111,8 @@ class DrillSession extends ChangeNotifier {
   /// be heard at all, or whose online question the learner declined and has
   /// not since allowed.
   bool _drillable(SessionItem item) {
-    // A word is taught whatever comes of its questions.
-    if (item.ask == Ask.teach) return true;
+    // A word is taught, and a set shown, whatever comes of its questions.
+    if (item.ask.onlyShows) return true;
     if (item.mode == DrillMode.listening && !soundOn) return false;
     final itemSkill = Skill.of(item.mode);
     final language = _state.deckOf(item.card)?.language;

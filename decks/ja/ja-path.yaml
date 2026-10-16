@@ -7,6 +7,8 @@ schema: 1
 kind: path
 id: ja-path
 language: ja
+# No gender classes: a noun takes no gender (#512; DECK-FORMAT.md, Card data).
+genders: []
 # The decks that need the alphabet: a learner who learns without it
 # skips them.
 alphabet:

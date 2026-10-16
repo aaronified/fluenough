@@ -1,0 +1,84 @@
+schema: 1
+id: "te-grammar-pitfalls"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "te-0372"
+    target: "మనం వెళ్దాం."
+    reading: "manam veḷdām."
+    ipa: "manam ʋeɭd̪aːm"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "వెళ్దాం", ref: "te-0622" }
+  - id: "te-0373"
+    target: "మేము వెళ్తున్నాము."
+    reading: "mēmu veḷtunnāmu."
+    ipa: "meːmu ʋeɭt̪unnaːmu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "వెళ్తున్నాము", ref: "te-0622" }
+  - id: "te-0374"
+    target: "ఇది నీళ్ళు కాదు."
+    reading: "idi nīḷḷu kādu."
+    ipa: "id̪i niːɭɭu kaːd̪u"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఇది", ref: "te-0600" }
+  - id: "te-0375"
+    target: "నీళ్ళు లేవు."
+    reading: "nīḷḷu lēvu."
+    ipa: "niːɭɭu leːʋu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "లేవు", ref: "te-0159" }
+  - id: "te-0376"
+    target: "నాకు ఆకలిగా ఉంది."
+    reading: "nāku ākaligā undi."
+    ipa: "naːku aːkaliɡaː und̪i"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "ఆకలిగా", ref: "te-0966" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0377"
+    target: "నేను వెళ్ళాలి."
+    reading: "nēnu veḷḷāli."
+    ipa: "neːnu ʋeɭɭaːli"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "వెళ్ళాలి", ref: "te-0622" }
+  - id: "te-0378"
+    target: "మీరు కూర్చోండి."
+    reading: "mīru kūrcōṇḍi."
+    ipa: "miːru kuːrtʃoːɳɖi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "కూర్చోండి", ref: "te-0634" }
+  - id: "te-0379"
+    target: "రాము గారు వచ్చారు."
+    reading: "rāmu gāru vaccāru."
+    ipa: "raːmu ɡaːru ʋatʃtʃaːru"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "రాము", base: "రాము", reading: "rāmu" }
+      - { word: "వచ్చారు", ref: "te-0623" }

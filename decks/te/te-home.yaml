@@ -1,0 +1,155 @@
+schema: 1
+id: "te-home"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+theme: "home"
+tags: ["beginner", "unreviewed"]
+cards:
+  - ref: "te-0195"
+  - id: "te-0420"
+    target: "గది"
+    reading: "gadi"
+    ipa: "ɡad̪i"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0421"
+    target: "వంటిల్లు"
+    reading: "vaṇṭillu"
+    ipa: "ʋaɳʈillu"
+    alt_target: ["వంటగది"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0422"
+    target: "పడకగది"
+    reading: "paḍakagadi"
+    ipa: "paɖakaɡad̪i"
+    alt_target: ["పడక గది", "బెడ్‌రూమ్"]
+    pos: "noun"
+  - id: "te-0423"
+    target: "హాలు"
+    reading: "hālu"
+    ipa: "haːlu"
+    alt_target: ["హాల్"]
+    pos: "noun"
+  - id: "te-0424"
+    target: "బాత్‌రూమ్"
+    reading: "bātrūm"
+    ipa: "baːt̪ruːm"
+    alt_target: ["స్నానాల గది"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0425"
+    target: "తలుపు"
+    reading: "talupu"
+    ipa: "t̪alupu"
+    pos: "noun"
+    picture: "🚪"
+  - id: "te-0426"
+    target: "కిటికీ"
+    reading: "kiṭikī"
+    ipa: "kiʈikiː"
+    pos: "noun"
+    picture: "🪟"
+  - id: "te-0427"
+    target: "మెట్లు"
+    reading: "meṭlu"
+    ipa: "meʈlu"
+    pos: "noun"
+  - id: "te-0428"
+    target: "అంతస్తు"
+    reading: "antastu"
+    ipa: "ant̪ast̪u"
+    pos: "noun"
+  - id: "te-0429"
+    target: "తాళం చెవి"
+    reading: "tāḷam cevi"
+    ipa: "t̪aːɭam tʃeʋi"
+    alt_target: ["తాళంచెవి"]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "తాళం", ref: "te-0876" }
+      - { word: "చెవి", ref: "te-0733" }
+  - id: "te-0430"
+    target: "మంచం"
+    reading: "mañcam"
+    ipa: "maɲtʃam"
+    pos: "noun"
+    picture: "🛏"
+  - id: "te-0431"
+    target: "కుర్చీ"
+    reading: "kurcī"
+    ipa: "kurtʃiː"
+    pos: "noun"
+    picture: "🪑"
+  - id: "te-0432"
+    target: "బల్ల"
+    reading: "balla"
+    ipa: "balla"
+    alt_target: ["టేబుల్"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0433"
+    target: "ఫ్యాన్"
+    reading: "fyān"
+    ipa: "fjaːn"
+    pos: "noun"
+  - id: "te-0434"
+    target: "లైటు"
+    reading: "laiṭu"
+    ipa: "laiʈu"
+    alt_target: ["లైట్"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0435"
+    target: "ఇరుగుపొరుగు"
+    reading: "iruguporugu"
+    ipa: "iruɡuporuɡu"
+    alt_target: ["పొరుగువాళ్ళు"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0436"
+    target: "అద్దె"
+    reading: "adde"
+    ipa: "ad̪d̪e"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0437"
+    target: "ఫ్లాట్"
+    reading: "flāṭ"
+    ipa: "flaːʈ"
+    pos: "noun"
+  - id: "te-0438"
+    target: "వీధి"
+    reading: "vīdhi"
+    ipa: "ʋiːd̪ʱi"
+    pos: "noun"
+  - id: "te-0439"
+    target: "ఇంటి ముందు ఒక పార్కు ఉంది."
+    reading: "iṇṭi mundu oka pārku undi."
+    ipa: "iɳʈi mund̪u oka paːrku und̪i"
+    pos: "phrase"
+    bases:
+      - { word: "ఇంటి", ref: "te-0195" }
+      - { word: "ఒక", ref: "te-1034" }
+      - { word: "పార్కు", ref: "te-0772" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0440"
+    target: "మా వీధి చాలా ప్రశాంతంగా ఉంటుంది."
+    reading: "mā vīdhi cālā praśāntaṅgā uṇṭundi."
+    ipa: "maː ʋiːd̪ʱi tʃaːlaː praʃaːnt̪aŋɡaː uɳʈund̪i"
+    pos: "phrase"
+    bases:
+      - { word: "చాలా", ref: "te-1026" }
+      - { word: "ప్రశాంతంగా", base: "ప్రశాంతం", reading: "praśāntam" }
+      - { word: "ఉంటుంది", ref: "te-0633" }

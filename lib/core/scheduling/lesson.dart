@@ -116,10 +116,15 @@ List<LessonQuestion> lessonQuestions(Card card) {
 /// whether a choice question about it has enough options; one that has not
 /// is asked its mode's own way. A card no question can be asked of is left
 /// out, and one with a single mode is not in the exercise.
+///
+/// A card [straightToQuestion] says so of has no teaching card: a rules
+/// table's cell a set card taught (owner, 2026-10-16, #515: "Straight to
+/// question"). It is checked at once all the same.
 List<SessionItem> lessonPlan(
   List<Card> cards, {
   required Set<DrillMode> Function(Card card) modesOf,
   required bool Function(Card card, Ask ask) canChoose,
+  bool Function(Card card)? straightToQuestion,
 }) {
   final taught = <SessionItem>[];
   final exercise = <Difficulty, List<SessionItem>>{
@@ -147,11 +152,12 @@ List<SessionItem> lessonPlan(
     final checkAsk = check.ask == Ask.matchPairs
         ? Ask.chooseMeaning
         : check.ask;
-    taught
-      ..add(
+    if (!(straightToQuestion?.call(card) ?? false)) {
+      taught.add(
         SessionItem(card: card, mode: check.mode, state: null, ask: Ask.teach),
-      )
-      ..add(asked(check.mode, checkAsk));
+      );
+    }
+    taught.add(asked(check.mode, checkAsk));
     for (final q in questions) {
       if (q.mode == check.mode) continue;
       exercise[Difficulty.of(card)]!.add(
@@ -220,3 +226,12 @@ List<SessionItem> _matched(
 }
 
 final RegExp _letter = RegExp(r'\p{L}', unicode: true);
+
+/// How many cards [items], a lesson, teaches: those it shows a teaching card
+/// for, and the members its set cards taught that go straight to their
+/// question (#515).
+int lessonCardCount(List<SessionItem> items) => <String>{
+  for (final item in items)
+    if (item.ask == Ask.teach) item.card.id,
+  for (final item in items) ...?item.setPart?.newIds,
+}.length;

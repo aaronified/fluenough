@@ -114,6 +114,104 @@ class CardBase {
   final bool wiktionary;
 }
 
+/// An item of a card's data (DECK-FORMAT.md, Card data): a synonym or an
+/// antonym (#513), a confusable (#514), a form or a collocation (#517). It
+/// names a card of the language ([ref]) or is a word written in full
+/// ([word]) with its reading; its [text] is in the learner's language.
+class CardItem {
+  const CardItem({
+    required this.id,
+    this.ref,
+    this.word,
+    this.reading,
+    this.ipa,
+    this.kind,
+    this.source,
+    this.text,
+    this.note,
+  });
+
+  /// Unique among the card's items of its field; the layer names it by it.
+  final String id;
+
+  /// The card it names; null for a word written in full.
+  final String? ref;
+
+  /// The word written in full; null for an item given by [ref].
+  final String? word;
+
+  /// [word] romanised.
+  final String? reading;
+
+  /// [word] in the IPA.
+  final String? ipa;
+
+  /// A confusable's kind (`form`, `word`, `sound`, `mark`) or a form's
+  /// (`plural`, `oblique`, `oblique-plural`, `feminine`, `masculine`,
+  /// `other`); null for any other item.
+  final String? kind;
+
+  /// Where the item was taken from, named per item (#506).
+  final String? source;
+
+  /// Its text in the learner's language: a word's meaning, a confusable's
+  /// why, a form's line. Null when the layer gives none.
+  final String? text;
+
+  /// A collocation's note beside its meaning.
+  final String? note;
+}
+
+/// One of a word's separate meanings (#517), with its own examples. The
+/// card's [Card.native] stays its main meaning.
+class CardSense {
+  const CardSense({
+    required this.id,
+    required this.native,
+    this.pos,
+    this.source,
+    this.examples = const <CardExample>[],
+  });
+
+  final String id;
+
+  /// The sense's meaning in the learner's language.
+  final String native;
+  final String? pos;
+  final String? source;
+  final List<CardExample> examples;
+}
+
+/// Where a card's own recording or image came from (#518, #523): the file
+/// it was made from, its licence and whom to credit. Shown on the deck
+/// screen and the Sources screen.
+class MediaCredit {
+  const MediaCredit({
+    required this.source,
+    required this.license,
+    required this.credit,
+  });
+
+  /// The file it was made from, such as its Wikimedia Commons page.
+  final String source;
+
+  /// Its licence, such as `CC-BY-SA-4.0`.
+  final String license;
+
+  /// Whom to credit: the speaker, or the photographer.
+  final String credit;
+}
+
+/// A word's rank in a count of its language (#516), and where it was
+/// counted.
+class CardFrequency {
+  const CardFrequency({required this.rank, required this.source});
+
+  /// From 1, the most frequent.
+  final int rank;
+  final String source;
+}
+
 /// A card written in another deck, listed in this one by its id (ADR-0018).
 ///
 /// A card id names a word of the language learned, not a deck or a course,
@@ -160,11 +258,12 @@ class CardRef {
   /// [written] as this ref lists it in [deckId]. A deck taught from the
   /// language [written] was written for takes the card's own native-side
   /// fields where the ref gives none. A deck taught from another language
-  /// takes none of its notes, tags, alternative meanings, examples or
-  /// Wiktionary mark, and is null when the ref gives no [native]. The card's
-  /// [reading], [ipa] and [modes], which belong to the word, come across
-  /// either way unless the ref gives its own, and so do its phrasebook mark,
-  /// bases, rules and rule cell, which a ref cannot give.
+  /// takes none of its notes, tags, alternative meanings, examples, card
+  /// data with text (items and senses) or Wiktionary mark, and is null when
+  /// the ref gives no [native]. The card's [reading], [ipa] and [modes],
+  /// which belong to the word, come across either way unless the ref gives
+  /// its own, and so do its phrasebook mark, bases, rules, rule cell,
+  /// register and frequency, which a ref cannot give.
   Card? resolve(
     Card written, {
     required String deckId,
@@ -188,16 +287,28 @@ class CardRef {
       tags: tags ?? (sameNative ? written.tags : const <String>[]),
       notes: notes ?? (sameNative ? written.notes : const <CardNote>[]),
       audio: written.audio,
+      audioCredit: written.audioCredit,
       examples:
           examples ?? (sameNative ? written.examples : const <CardExample>[]),
       modes: modes ?? written.modes,
       pair: written.pair,
       picture: written.picture,
+      image: written.image,
+      imageCredit: written.imageCredit,
       phrasebook: written.phrasebook,
       bases: written.bases,
       rules: written.rules,
       wiktionary: wiktionary ?? (sameNative && written.wiktionary),
       rule: written.rule,
+      ownRoot: written.ownRoot,
+      register: written.register,
+      frequency: written.frequency,
+      synonyms: sameNative ? written.synonyms : const <CardItem>[],
+      antonyms: sameNative ? written.antonyms : const <CardItem>[],
+      collocations: sameNative ? written.collocations : const <CardItem>[],
+      confusables: sameNative ? written.confusables : const <CardItem>[],
+      forms: sameNative ? written.forms : const <CardItem>[],
+      senses: sameNative ? written.senses : const <CardSense>[],
     );
   }
 }
@@ -226,15 +337,27 @@ class Card {
     this.tags = const <String>[],
     this.notes = const <CardNote>[],
     this.audio,
+    this.audioCredit,
     this.examples = const <CardExample>[],
     this.modes = const <DrillMode>{},
     this.pair,
     this.picture,
+    this.image,
+    this.imageCredit,
     this.phrasebook = false,
     this.bases = const <CardBase>[],
     this.rules = const <String>[],
     this.wiktionary = false,
     this.rule,
+    this.ownRoot = false,
+    this.register,
+    this.frequency,
+    this.synonyms = const <CardItem>[],
+    this.antonyms = const <CardItem>[],
+    this.collocations = const <CardItem>[],
+    this.confusables = const <CardItem>[],
+    this.forms = const <CardItem>[],
+    this.senses = const <CardSense>[],
   });
 
   /// Stable for the life of the card. This is the key the user's entire review
@@ -280,8 +403,13 @@ class Card {
   /// [NoteKind.note].
   final List<CardNote> notes;
 
-  /// Asset path or URL overriding TTS for this card.
+  /// Its own recording, played in place of text-to-speech: a file shipped
+  /// with the deck, `decks/hi/audio/hi-0001.opus` (#518), downloaded with
+  /// it. An asset path or a URL is read too, and not played yet.
   final String? audio;
+
+  /// Where [audio] came from, when it is a file shipped with the deck.
+  final MediaCredit? audioCredit;
 
   final List<CardExample> examples;
 
@@ -298,6 +426,19 @@ class Card {
   /// from Noto Emoji ([picturePath]). A cue beside the meaning in Write, and
   /// beside each meaning Hear offers (ADR-0034).
   final String? picture;
+
+  /// Its own image, shown where [picture] is, and in its place: a photo
+  /// from Wikimedia Commons or an OpenMoji drawing, shipped with the deck,
+  /// `decks/hi/images/hi-0001.webp` (#523), downloaded with it. Without
+  /// the file on the phone, [picture] shows.
+  final String? image;
+
+  /// Where [image] came from.
+  final MediaCredit? imageCredit;
+
+  /// Whether the card shows a picture of what it means: [picture], or its
+  /// own [image].
+  bool get hasPicture => picture != null || image != null;
 
   /// Whether the card is one of the course's phrasebook chunks: taught whole
   /// in the first lessons, never held back, its words not counted as taught
@@ -316,6 +457,33 @@ class Card {
 
   /// For a rules table's cell, its rule and word; null for any other card.
   final RuleCell? rule;
+
+  // Card data (DECK-FORMAT.md, Card data), read for the question engine.
+
+  /// Whether the word is its own root, `bases: self` (#513).
+  final bool ownRoot;
+
+  /// How formal or rude the word is (#517): `formal`, `neutral`,
+  /// `informal`, `slang` or `offensive`.
+  final String? register;
+
+  final CardFrequency? frequency;
+
+  /// Words of like and of opposite meaning (#513).
+  final List<CardItem> synonyms;
+  final List<CardItem> antonyms;
+
+  /// Words it often goes with (#517).
+  final List<CardItem> collocations;
+
+  /// The shared wrong alternatives (#514).
+  final List<CardItem> confusables;
+
+  /// Its inflected forms (#517).
+  final List<CardItem> forms;
+
+  /// Its separate meanings (#517), each the layer gives a meaning.
+  final List<CardSense> senses;
 
   /// The drills this card can actually be used for, given whether the device
   /// has a voice for the language, and whether it can recognise speech in it.

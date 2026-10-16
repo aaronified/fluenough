@@ -1,0 +1,59 @@
+schema: 1
+id: "mr-en-script"
+kind: "layer"
+core: "mr-script"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "How Devanagari works for Marathi"
+intro: "Marathi is written in Devanagari, the script of Hindi and Sanskrit, in the style called Balbodh. It is built from a few ideas that come back in letter after letter. They look strange at first because English has none of them. Once you have seen them, the letters start to make sense."
+features:
+  "headline":
+    name: "The headline"
+    text: "Most letters hang from a line along the top, and in a word the lines join into one. Read along the top, not along a baseline as in English."
+  "headline-gap":
+    name: "A gap in the headline"
+    text: "In a few letters the line breaks, and the gap is what tells them from a look-alike: ध (dha) from घ (gha), and भ (bha) from म (ma)."
+  "stem":
+    name: "The standing line"
+    text: "Most letters have an upright line on the right. A letter drops it to become a half letter when it joins the next one: रस्ता (rastā), गप्पा (gappā)."
+  "rows":
+    name: "Rows of five"
+    text: "Most consonants come in five rows of five. Each row is made in about one place in the mouth: क (ka) at the back, च (ca) against the palate, ट (ṭa) with the tongue curled back, त (ta) on the teeth, प (pa) at the lips. The columns work the same way in every row: plain (क), with a breath (ख), voiced (ग), voiced with a breath (घ), and through the nose (ङ). ङ (ṅa) and ञ (ña) are rare: Marathi usually writes the dot ं (am̐) instead."
+  "inherent-vowel":
+    name: "The vowel you don't see"
+    text: "Every consonant carries a short a, said like the u of 'but', unless a sign changes it: क (ka) alone is ka."
+  "final-a":
+    name: "The last a usually isn't said"
+    text: "At the end of most words the carried a goes quiet: घर (ghar) is ghar, कमळ (kamaḷ) is kamal. After two joined consonants it stays: मित्र (mitra) is mitra. Inside long words it can go quiet too, so learn each word as it's said."
+  "vowel-signs":
+    name: "Vowels as signs on a letter"
+    text: "After a consonant a vowel is a sign on it, not a letter of its own. ि (i) is written before the consonant but said after it: you see ि (i) then क (ka), and say ki. े (e) and ै (ai) sit above, ु (u), ू (u) and ृ (ru) below, the rest after."
+  "two-sounds":
+    name: "च (ca) and ज (ja) have two sounds"
+    text: "Before i and e, and in words from Sanskrit, च (ca) and ज (ja) are the ch of 'church' and the j of 'judge'. Before a, o and u in most Marathi words they are ts and dz: चहा (cahā) is tsahaa, जग (jag) is dzag. The script does not show which, so learn it with the word."
+  "curled-l":
+    name: "ळ (ḷa), the curled-back l"
+    text: "Marathi has a second l, made with the tongue curled back, that Hindi lacks. It changes the word: काल (kāl) is yesterday, काळ (kāḷ) an age. It never starts a word."
+  "half-letters":
+    name: "Half letters"
+    text: "Two consonants with no vowel between them join. Usually the first is written as a half letter, without its standing line: रस्ता (rastā). क (ka) drops the hook on its right instead (क्क). Letters with no standing line stack, one above the other: द्ध (ddha), ट्ट (ṭṭa)."
+  "own-shapes":
+    name: "Joins with shapes of their own"
+    text: "A few joins look nothing like their parts: क्ष (kṣa) is क (ka) and ष (ṣa), त्र (tra) is त (ta) and र (ra), श्र (śra) is श (śa) and र (ra), and ज्ञ (dnya) is ज (ja) and ञ (ña), which Marathi says dny: ज्ञान (dnyān) is dnyan. क्ष (kṣa) and ज्ञ (dnya) count as letters of the Marathi alphabet."
+  "r-forms":
+    name: "र (ra) written as a stroke, a hook or an eyelash"
+    text: "Next to another consonant र (ra) isn't written in full. After it, it's a slanting stroke at its foot (प्र), or a small caret under ट (ṭa) and ड (ḍa) (ट्र (ṭra)). Before it, it's usually a small hook on top, the reph (सूर्य). In many Marathi words before य (ya) it is a small eyelash instead: दुसऱ्या (dusaryā)."
+  "english-vowels":
+    name: "Two vowels for English words"
+    text: "Marathi adds two vowels for English words, each with a small moon on top: ॲ (ê), the a of 'bat' (बॅग (bêg), bag), and ऑ (ô), the o of British 'hot' (ऑफिस (ôfis), office). English v is often written व्ह (vh): ड्रायव्हर (ḍrāyvar)."
+  "nasal-dot":
+    name: "The dot above"
+    text: "A dot above a letter, the anusvar, is the nasal that suits the next consonant: n in पंधरा (pandhrā), m in आंबा (āmbā). At the end of a word, in speech and in dialogue, it marks a nasal a: मुलं (mulam̐), children. Marathi rarely uses the moon and dot ँ (am̐) that Hindi has."
+  "halant":
+    name: "The mark that takes the vowel away"
+    text: "The small slanting stroke below a letter, ्, means no vowel after it. You'll rarely see it, because two consonants usually join instead."
+  "full-stop":
+    name: "A full stop, not a line"
+    text: "Hindi ends a sentence with a standing line, ।. Marathi uses the same full stop, comma and question mark as English."
+  "digits":
+    name: "Devanagari digits"
+    text: "Devanagari has its own digits, and Marathi uses them more than Hindi does: newspapers, calendars and many signs print them. ४ (4) is 4, though it looks like an 8, and १ (1) and ९ (9) look alike."

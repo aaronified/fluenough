@@ -127,8 +127,27 @@ pattern:
     var grammarDecks = 0;
     for (final file in files) {
       final text = file.readAsStringSync();
-      if (!text.contains('kind: grammar')) continue;
-      final deck = DeckParser.parse(text, source: file.path);
+      final Deck deck;
+      if (text.contains('kind: grammar')) {
+        deck = DeckParser.parse(text, source: file.path);
+      } else if (RegExp(
+            r'^core: "([a-z0-9-]+)"',
+            multiLine: true,
+          ).firstMatch(text)
+          case final m?) {
+        // A grammar core's layer, merged with its core (ADR-0036).
+        final core = File('${file.parent.parent.path}/${m.group(1)}.yaml');
+        final coreText = core.readAsStringSync();
+        if (!coreText.contains('kind: "grammar"')) continue;
+        final layer = DeckParser.parseLayer(text, source: file.path);
+        deck = mergeLayer(
+          DeckParser.parseCore(coreText, source: core.path),
+          layer,
+          source: file.path,
+        );
+      } else {
+        continue;
+      }
       grammarDecks++;
       for (final card in expandPattern(deck)) {
         expect(card.id, matches(RegExp(r'^[a-z0-9]+(-[a-z0-9]+)*$')));
