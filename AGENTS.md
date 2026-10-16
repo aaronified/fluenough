@@ -283,8 +283,9 @@ people fall into under time pressure.
 | deep | Adversarial review, correctness reasoning | Opus |
 
 For work done for the owner, the table in [CLAUDE.md](CLAUDE.md) decides
-instead: reviews and audits are Sonnet, and Opus is for fixing, coding and UI
-mockups, never more than two at once.
+instead: reviews and audits are Sonnet; small coding jobs and bug fixes are
+Sonnet, reviewed by Opus; Opus is for complex coding that touches several
+files and for UI mockups, never more than two at once.
 
 **One review before calling it done** (owner, 2026-10-12: the independent
 8/10 rating is dropped; "the review is enough"). A change gets one

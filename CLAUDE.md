@@ -13,9 +13,16 @@ When work is handed to subagents or workflows, pick the model by the job:
 | Docs, reviews and audits | Sonnet |
 | Writing decks | Sonnet |
 | Fan-outs and large reads | Haiku |
-| Fixing and coding | Opus |
-| Bug fixes | Sonnet, reviewed by Opus (owner, 2026-10-16) |
+| Small coding jobs and bug fixes | Sonnet, reviewed by Opus (owner, 2026-10-16) |
+| Complex coding that touches several files | Opus |
 | UI mockups | Opus (Sonnet was not enough, owner, 2026-10-12) |
+
+"All small coding jobs will be by sonnet from now on. Only complex ones that
+touch multiple files will be via opus." (owner, 2026-10-16)
+
+**Bug fixes are only for decks and reviews** (owner, 2026-10-16: "Don't do
+bugfixes that are not relevant to decks and reviews"). Others wait for a
+contributor.
 
 At most **two Opus agents run at the same time** (owner, 2026-10-09). The
 quota is shared: each Opus slot left unused buys 1.5 Sonnet agents, and each
