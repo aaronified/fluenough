@@ -97,6 +97,29 @@ void main() {
     expect(find.byType(Segmented<Object>), findsNothing);
   });
 
+  testWidgets('each range segment is a 48dp tap target, even at Android\'s '
+      'smallest text (#491)', (tester) async {
+    // At 0.85x the labels no longer push the segments past their minimum
+    // height, so the minimum is what the learner gets.
+    usePhone(tester, textScale: 0.85);
+    final semantics = tester.ensureSemantics();
+    await pumpScreen(tester, const StatsPage(), state: await fixture());
+    final l10n = l10nOf(tester);
+    for (final label in <String>[
+      l10n.statsRangeDays(7),
+      l10n.statsRangeDays(30),
+      l10n.statsRangeAll,
+    ]) {
+      final segment = find.ancestor(
+        of: find.text(label),
+        matching: find.byType(InkWell),
+      );
+      expect(tester.getSize(segment).height, greaterThanOrEqualTo(48));
+    }
+    await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+    semantics.dispose();
+  });
+
   testWidgets('the tiles are computed from the log, and follow the range', (
     tester,
   ) async {
