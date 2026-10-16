@@ -1201,7 +1201,8 @@ def main(argv: list[str]) -> int:
                         help="download and convert recordings (needs ffmpeg)")
     parser.add_argument("--images", action="store_true",
                         help="download and convert images for cards with a picture "
-                             "(needs ffmpeg)")
+                             "(needs ffmpeg), and propose images for nouns without "
+                             "one in the report")
     parser.add_argument("--approve", action="append", default=[], metavar="CARD_ID",
                         help="write the proposed image of these noun cards without a "
                              "picture, once a reviewer has approved it (with --images "
