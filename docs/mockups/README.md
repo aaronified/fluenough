@@ -25,6 +25,9 @@ approval.
 - `set-cards.html`: a set card in a lesson (#515): the whole closed group
   shown once, before its members, the known ones marked; then only the new
   members taught and asked. Hindi and Bengali, at 1x and 1.4x. Approved by the owner, 2026-10-13.
+  Revised 2026-10-16, awaiting approval: Telugu verb forms both ways,
+  back to back, in cards of at most four, with a Full list button on the
+  cards and on an answered question (owner, 2026-10-16, #515).
 
 ## Older: to be adapted (owner, 2026-10-12)
 
