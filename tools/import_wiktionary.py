@@ -180,7 +180,22 @@ def _gloss(sense: dict) -> str | None:
     if not glosses or not isinstance(glosses[-1], str):
         return None
     gloss = glosses[-1].strip().rstrip(".")
-    return gloss if 0 < len(gloss) <= 80 else None
+    return gloss if 0 < len(gloss) <= 80 and _latin(gloss) else None
+
+
+def _latin(text: str) -> bool:
+    """Whether [text] has no letter outside the Latin script: a gloss that
+    quotes a word of the language would need its reading beside it."""
+    return all(not unicodedata.category(c).startswith(("L", "M"))
+               or unicodedata.name(c, "").startswith(("LATIN", "COMBINING"))
+               for c in text)
+
+
+def _plain_word(word: str) -> bool:
+    """Whether [word] is only letters, marks, joiners, spaces and hyphens: not
+    a reconstruction, `*मार्ग`, or a word with a note in it."""
+    return bool(word.strip()) and all(
+        unicodedata.category(c)[0] in "LM" or c in " -\u200c\u200d" for c in word)
 
 
 def page(word: str) -> str:
@@ -499,7 +514,7 @@ class Importer:
                 continue
             word, roman = _split_word(item["word"])
             roman = item.get("roman") or roman
-            if word in own or re.search(r"[A-Za-z]", word) \
+            if word in own or re.search(r"[A-Za-z]", word) or not _plain_word(word) \
                     or any(w == word for w, _ in found):
                 continue
             found.append((word, roman))
@@ -523,6 +538,8 @@ class Importer:
             items.append(flow_map([*pairs, ("source", src)]))
             if known.gloss:
                 texts.append((q(iid), known.gloss))
+            else:
+                self.report.no_meaning.append(f"{t.cid} {key} {iid}")
         return items, texts
 
     @staticmethod
@@ -547,7 +564,8 @@ class Importer:
                 text = ex.get("text")
                 english = ex.get("english") or ex.get("translation")
                 if len(core) >= MAX_EXAMPLES or ex.get("type") == "quotation" \
-                        or not isinstance(text, str) or not isinstance(english, str):
+                        or not isinstance(text, str) or not isinstance(english, str) \
+                        or not _latin(english):
                     continue
                 text = nfc(text.strip())
                 if text in seen or re.search(r"[A-Za-z]", text):
@@ -601,6 +619,8 @@ class Importer:
                 if kind == "feminine" and ("oblique" in ftags or "plural" in ftags):
                     continue
                 word = nfc(word)
+                if not _plain_word(word):
+                    continue
                 if word == t.target:
                     done.add(kind)
                     continue
@@ -803,6 +823,9 @@ class Report:
     filled: dict[str, int] = field(default_factory=dict)
     missing: dict[str, list[str]] = field(default_factory=dict)
     examples_skipped: int = 0
+    # Synonyms and antonyms written as a word that Wiktionary gives no
+    # meaning for: the layer's text is still to write.
+    no_meaning: list[str] = field(default_factory=list)
     audio_found: int = 0
     audio_failed: list[str] = field(default_factory=list)
     flow: list[str] = field(default_factory=list)
@@ -825,6 +848,9 @@ class Report:
                       f"{self.examples_skipped}.",
                   f"Recordings Wiktionary links for exactly a card's text: "
                   f"{self.audio_found}."]
+        if self.no_meaning:
+            lines += ["", f"Synonyms and antonyms with no meaning in the English layer "
+                          f"yet ({len(self.no_meaning)}): {', '.join(self.no_meaning)}."]
         if self.audio_failed:
             lines += ["", "Recordings not imported:", ""]
             lines += [f"- {x}" for x in self.audio_failed]
