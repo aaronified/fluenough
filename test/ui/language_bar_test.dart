@@ -24,7 +24,7 @@ import 'package:fluenough/ui/widgets/stat_tile.dart';
 import '../support/harness.dart';
 
 /// The language bar at the top of Today, Decks and Progress (#528,
-/// docs/mockups/language-bar.html), on the design's Aro, who learns Hindi
+/// its approved mockup, in git history), on the design's Aro, who learns Hindi
 /// and Spanish, with twelve days of Spanish (and Marathi, which Aro does
 /// not learn) reviews.
 

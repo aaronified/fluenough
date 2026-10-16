@@ -171,7 +171,7 @@ class _Header extends StatelessWidget {
     final now = state.now();
     final locale = Localizations.localeOf(context).toLanguageTag();
     final profile = state.currentProfile;
-    // As docs/mockups/language-bar.html draws it: 24 from the start edge,
+    // As the #528 mockup drew it: 24 from the start edge,
     // 16 from the end, 8 above and 12 below.
     return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(24, 8, 16, 12),
