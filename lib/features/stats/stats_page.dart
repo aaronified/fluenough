@@ -10,8 +10,7 @@ import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/bar_row.dart';
 import '../../ui/widgets/incoming.dart';
-import '../../ui/widgets/language_chips.dart';
-import '../../ui/widgets/language_menu.dart';
+import '../../ui/widgets/language_bar.dart';
 import '../../ui/widgets/pace_parts.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/segmented.dart';
@@ -25,12 +24,9 @@ import 'stats_numbers.dart';
 /// Design screen `stats`. Every number is computed from the review log and
 /// the current scheduling states (`StatsNumbers`), none from the design.
 ///
-/// The numbers are one language's: a chip per language the log has reviews
-/// in names it, most recently reviewed first, and "All languages" after
-/// them counts every review together when there are several languages, or
-/// reviews whose language cannot be told. The tab opens on the first chip.
-/// While the language menu at the top shows one language (#461), the
-/// numbers are that language's, and there are no chips.
+/// The numbers are the language the language bar at the top shows (#528),
+/// or with the bar's All button on, every review together, those whose
+/// language cannot be told too.
 class StatsPage extends StatefulWidget {
   const StatsPage({super.key, this.initialRange = StatsRange.month});
 
@@ -44,24 +40,13 @@ class StatsPage extends StatefulWidget {
 class _StatsPageState extends State<StatsPage> {
   late StatsRange _range = widget.initialRange;
 
-  /// Whether the learner has chosen a language chip, and which: a code, or
-  /// null for All. Until they choose, the tab shows the language reviewed
-  /// last.
-  bool _chosen = false;
-  String? _language;
-
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
-    final header = TabHeader(
-      title: l10n.statsTitle,
-      actions: const <Widget>[LanguageMenu()],
-    );
 
     if (state.features.isIncoming(Feature.stats)) {
       return _Frame(
-        header: header,
         child: EmptyState(
           icon: Icons.insights_outlined,
           title: l10n.statsIncomingTitle,
@@ -75,95 +60,25 @@ class _StatsPageState extends State<StatsPage> {
     return ListenableBuilder(
       listenable: Listenable.merge(<Listenable>[state.progress, actions]),
       builder: (context, _) {
-        if (state.progress.log.isEmpty) {
+        final languageOf = languageLookupOf(state);
+        final language = state.progressLanguage;
+        final none = language == null
+            ? state.progress.log.isEmpty
+            : !state.progress.log.any((e) => languageOf(e.deckId) == language);
+        if (none) {
           return _Frame(
-            header: header,
             child: EmptyState(
               icon: Icons.insights_outlined,
               title: l10n.statsNoReviews,
             ),
           );
         }
-        final languageOf = languageLookupOf(state);
-        // One language shown in the menu at the top (#461): its numbers
-        // alone, with no chips to choose another.
-        if (state.shownLanguage case final shown?) {
-          if (!state.progress.log.any((e) => languageOf(e.deckId) == shown)) {
-            return _Frame(
-              header: header,
-              child: EmptyState(
-                icon: Icons.insights_outlined,
-                title: l10n.statsNoReviews,
-              ),
-            );
-          }
-          return _Frame(
-            header: header,
-            controls: Padding(
-              padding: const EdgeInsetsDirectional.only(top: 4, bottom: 8),
-              child: _RangeChoice(
-                range: _range,
-                onSelected: (range) => setState(() => _range = range),
-              ),
-            ),
-            child: _StatsBody(
-              state: state,
-              actions: actions,
-              range: _range,
-              language: shown,
-              languageOf: languageOf,
-            ),
-          );
-        }
-        final practised = practisedLanguages(
-          state.progress,
-          languages: state.languages,
-          languageOf: languageOf,
-        );
-        // All languages is offered beside two or more languages, or beside
-        // one when some reviews cannot be placed in any, so that every
-        // review is counted somewhere.
-        final several =
-            practised.length > 1 ||
-            (practised.isNotEmpty &&
-                state.progress.log.any((e) => languageOf(e.deckId) == null));
-        // A chosen language whose reviews can no longer be placed, its decks
-        // gone from the catalog, falls back to the first chip.
-        final language =
-            several &&
-                _chosen &&
-                (_language == null || practised.any((l) => l.code == _language))
-            ? _language
-            : practised.firstOrNull?.code;
         return _Frame(
-          header: header,
           controls: Padding(
             padding: const EdgeInsetsDirectional.only(top: 4, bottom: 8),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                if (practised.isNotEmpty) ...<Widget>[
-                  LanguageChips(
-                    languages: practised,
-                    decks: state.decks,
-                    semanticLabel: l10n.statsLanguageGroup,
-                    allLabel: several ? l10n.statsLanguageAll : null,
-                    // The language shown first is the first chip, on screen
-                    // whatever the width.
-                    allLast: true,
-                    selected: language,
-                    onSelected: (code) => setState(() {
-                      _chosen = true;
-                      _language = code;
-                    }),
-                  ),
-                  const SizedBox(height: 8),
-                ],
-                _RangeChoice(
-                  range: _range,
-                  onSelected: (range) => setState(() => _range = range),
-                ),
-              ],
+            child: _RangeChoice(
+              range: _range,
+              onSelected: (range) => setState(() => _range = range),
             ),
           ),
           child: _StatsBody(
@@ -192,6 +107,9 @@ class _RangeChoice extends StatelessWidget {
     return Padding(
       padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
       child: Segmented<StatsRange>(
+        // The 48dp tap target, which the default 40 falls short of when
+        // small text leaves the labels room to spare (#491).
+        height: 48,
         semanticLabel: l10n.statsRangeGroup,
         selected: range,
         onSelected: onSelected,
@@ -209,11 +127,11 @@ class _RangeChoice extends StatelessWidget {
   }
 }
 
-/// The tab's fixed title (and range choice) over its scrolling content.
+/// The language bar (#528) and the range choice, fixed over the tab's
+/// scrolling content.
 class _Frame extends StatelessWidget {
-  const _Frame({required this.header, required this.child, this.controls});
+  const _Frame({required this.child, this.controls});
 
-  final Widget header;
   final Widget? controls;
   final Widget child;
 
@@ -221,13 +139,11 @@ class _Frame extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
     body: SafeArea(
       bottom: false,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          header,
-          ?controls,
-          Expanded(child: child),
-        ],
+      child: LanguageBarFrame(
+        screen: LanguageBarScreen.progress,
+        reportDetail: 'Progress',
+        below: controls,
+        child: child,
       ),
     ),
   );
@@ -400,7 +316,13 @@ class _LeechesRow extends StatelessWidget {
     final scheme = theme.colorScheme;
     final incoming = isIncoming(context, Feature.leeches);
     final title = l10n.statsLeeches(count);
-    final fg = scheme.onErrorContainer;
+    // The error colour is for leeches there are; with none it is a plain card
+    // like the ones above it, not a problem that is not there (#500).
+    final hasLeeches = count > 0;
+    final fg = hasLeeches ? scheme.onErrorContainer : scheme.onSurface;
+    final subtitleFg = hasLeeches
+        ? scheme.onErrorContainer
+        : scheme.onSurfaceVariant;
     Widget dim(Widget child) =>
         incoming ? Opacity(opacity: kIncomingOpacity, child: child) : child;
 
@@ -427,7 +349,9 @@ class _LeechesRow extends StatelessWidget {
                       ),
                       Text(
                         l10n.statsLeechesSubtitle,
-                        style: theme.textTheme.bodyMedium!.copyWith(color: fg),
+                        style: theme.textTheme.bodyMedium!.copyWith(
+                          color: subtitleFg,
+                        ),
                       ),
                     ],
                   ),
@@ -446,7 +370,7 @@ class _LeechesRow extends StatelessWidget {
     );
 
     final tile = Material(
-      color: scheme.errorContainer,
+      color: hasLeeches ? scheme.errorContainer : scheme.surfaceContainerLow,
       borderRadius: BorderRadius.circular(AppRadii.group),
       clipBehavior: Clip.antiAlias,
       child: InkWell(

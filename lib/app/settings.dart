@@ -37,6 +37,7 @@ class SettingsNotifier extends ChangeNotifier {
   SettingsNotifier({
     Set<Skill>? enabledSkills,
     this._showRomanisation = true,
+    this._showIpa = true,
     this._soundOn = true,
     this._autoplay = false,
     this._matchTapToHear = true,
@@ -58,6 +59,7 @@ class SettingsNotifier extends ChangeNotifier {
     Set<String> speechOnline = const <String>{},
     Set<String> noAlphabet = const <String>{},
     this._languageChoice,
+    this._progressAll = false,
   }) : _enabledSkills = Set<Skill>.unmodifiable(
          enabledSkills ?? <Skill>{...Skill.values.where((s) => s.onByDefault)},
        ),
@@ -81,6 +83,7 @@ class SettingsNotifier extends ChangeNotifier {
 
   Set<Skill> _enabledSkills;
   bool _showRomanisation;
+  bool _showIpa;
   bool _soundOn;
   bool _autoplay;
   bool _matchTapToHear;
@@ -102,6 +105,7 @@ class SettingsNotifier extends ChangeNotifier {
   List<String> _spokenLanguages;
   List<String> _learningLanguages;
   String? _languageChoice;
+  bool _progressAll;
   Set<String> _placedDecks;
   bool _learningChosen;
   IpaScope _ipaScope = IpaScope.mine;
@@ -274,15 +278,23 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// The language the whole app shows (#461), as the menu at the top of
-  /// Today, Decks and Progress chose it: a code, [LanguageChoice.all] for
-  /// every language, or null before the learner has chosen, which shows
-  /// every language too. `AppState.shownLanguage` says what is shown.
+  /// The language the whole app shows (#461), as the language bar at the
+  /// top of Today, Decks and Progress chose it (#528): a code, or null
+  /// before the learner has chosen, which shows the first language. All,
+  /// stored before #528, is read as null with [progressAll] on.
+  /// `AppState.shownLanguage` says what is shown.
   String? get languageChoice => _languageChoice;
   set languageChoice(String? value) {
     if (value != null && !LanguageChoice.isValid(value)) return;
     _set(_languageChoice, value, (v) => _languageChoice = v);
   }
+
+  /// Whether Progress counts every language's reviews together, its All
+  /// button in the language bar (#528). Today and Decks always show the
+  /// [languageChoice]'s language; All is Progress's alone.
+  bool get progressAll => _progressAll;
+  set progressAll(bool value) =>
+      _set(_progressAll, value, (v) => _progressAll = v);
 
   /// The decks placement found the learner already knows (#117,
   /// ADR-0013), by id. A placed deck reads Done and is not taught by Today,
@@ -520,6 +532,12 @@ class SettingsNotifier extends ChangeNotifier {
   set showRomanisation(bool value) =>
       _set(_showRomanisation, value, (v) => _showRomanisation = v);
 
+  /// Whether a word's IPA line, `/paːlu/`, shows where the deck gives one:
+  /// on the teach card, under a word the question shows, with the answer
+  /// once it is in, in passages and in Inspect (ADR-0025, #533).
+  bool get showIpa => _showIpa;
+  set showIpa(bool value) => _set(_showIpa, value, (v) => _showIpa = v);
+
   /// Sound for the whole app. Off, nothing is spoken, every speaker is
   /// greyed out, and listening is not drilled, as on a phone with no voice.
   bool get soundOn => _soundOn;
@@ -650,6 +668,7 @@ class SettingsNotifier extends ChangeNotifier {
       for (final s in Skill.values) isEnabled(s) ? s.name : '!${s.name}',
     ].join(','),
     'show_romanisation': '$_showRomanisation',
+    'show_ipa': '$_showIpa',
     'sound_on': '$_soundOn',
     'autoplay': '$_autoplay',
     'match_tap_to_hear': '$_matchTapToHear',
@@ -673,6 +692,7 @@ class SettingsNotifier extends ChangeNotifier {
     // Not chosen yet is empty, which an older version never wrote and
     // reads as All languages.
     'language_choice': _languageChoice ?? '',
+    'progress_all': '$_progressAll',
     'placed_decks': (_placedDecks.toList()..sort()).join(','),
     'learning_chosen': '$_learningChosen',
     'ipa_scope': _ipaScope.name,
@@ -755,6 +775,7 @@ class SettingsNotifier extends ChangeNotifier {
       }
     }
     if (pick('show_romanisation', flag) case final v?) showRomanisation = v;
+    if (pick('show_ipa', flag) case final v?) showIpa = v;
     if (pick('sound_on', flag) case final v?) soundOn = v;
     if (pick('autoplay', flag) case final v?) autoplay = v;
     if (pick('match_tap_to_hear', flag) case final v?) matchTapToHear = v;
@@ -810,20 +831,28 @@ class SettingsNotifier extends ChangeNotifier {
       ];
     }
     // After the languages learned, so that one no longer learned is not
-    // shown. Missing, as from before #461, it stays All.
+    // shown. Missing, as from before #461, it is unchosen: the first.
     if (pick('language_choice', (t) => t) case final v?) {
       final learning = _learningLanguages;
-      languageChoice =
-          v.isEmpty ||
-              !LanguageChoice.isValid(v) ||
-              (v != LanguageChoice.all &&
-                  learning.isNotEmpty &&
-                  !learning.contains(v))
-          ? null
-          : v;
+      if (v == LanguageChoice.all) {
+        // All chosen before #528, when it was every screen's: the bar
+        // shows the first language, and Progress's All starts on (owner,
+        // 2026-10-16: "On for them"). A stored progress_all, read below,
+        // wins.
+        languageChoice = null;
+        progressAll = true;
+      } else {
+        languageChoice =
+            v.isEmpty ||
+                !LanguageChoice.isValid(v) ||
+                (learning.isNotEmpty && !learning.contains(v))
+            ? null
+            : v;
+      }
     }
     if (pick('learning_chosen', flag) case final v?) learningChosen = v;
     if (pick('ipa_scope', IpaScope.tryParse) case final v?) ipaScope = v;
+    if (pick('progress_all', flag) case final v?) progressAll = v;
     if (pick('paused_until', _parseJsonMap) case final v?) {
       for (final MapEntry(:key, :value) in v.entries) {
         final skill = Skill.values.asNameMap()[key];

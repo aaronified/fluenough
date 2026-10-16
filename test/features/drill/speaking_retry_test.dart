@@ -20,7 +20,7 @@ import 'package:fluenough/features/drill/speaking_practice.dart';
 import '../../support/harness.dart';
 
 /// Trying a pronunciation again, and hearing yourself then the voice
-/// (#231, docs/plans/pronunciation-retry.md): the first answer is the one
+/// (#231, ADR-0014): the first answer is the one
 /// recorded; a try again is graded and shown, never recorded.
 
 const String spanish = 'es-en-core-100';

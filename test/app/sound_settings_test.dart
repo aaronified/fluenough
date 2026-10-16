@@ -107,10 +107,12 @@ void main() {
           now: base.now().subtract(const Duration(days: 3)),
         );
       }
-      final state = await loaded(
-        FixedTtsEngine(const <String>{'es', 'hi'}),
-        progress: progress,
-      );
+      final state =
+          await loaded(
+              FixedTtsEngine(const <String>{'es', 'hi'}),
+              progress: progress,
+            )
+            ..showLanguage('es');
 
       bool listens(Iterable<SessionItem> items) =>
           items.any((i) => i.mode == DrillMode.listening);

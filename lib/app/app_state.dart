@@ -204,13 +204,19 @@ class AppState extends ChangeNotifier {
   /// in settings that shows another rebuilds every screen that reads this
   /// state (#461), as the catalog loading or the profile changing do.
   String? _lastShown;
+  bool _lastProgressAll = false;
 
-  void _rememberShown() => _lastShown = shownLanguage;
+  void _rememberShown() {
+    _lastShown = shownLanguage;
+    _lastProgressAll = progressShowsAll;
+  }
 
   void _languageShownChanged() {
     final shown = shownLanguage;
-    if (shown == _lastShown) return;
+    final all = progressShowsAll;
+    if (shown == _lastShown && all == _lastProgressAll) return;
     _lastShown = shown;
+    _lastProgressAll = all;
     notifyListeners();
   }
 
@@ -639,10 +645,10 @@ class AppState extends ChangeNotifier {
   /// Every language the catalog teaches, one per code.
   List<LanguageInfo> get languages => _view.languages;
 
-  /// The languages the language menu at the top of Today, Decks and
-  /// Progress offers (#461): those the profile learns that have decks, in
-  /// the order the learner chose them ([LanguageChoice.options]). "All
-  /// languages" is offered as well, and is not one of these.
+  /// The languages the language bar at the top of Today, Decks and
+  /// Progress offers (#461, #528): those the profile learns that have
+  /// decks, in the order the learner chose them ([LanguageChoice.options]).
+  /// Progress's All is not one of these.
   List<LanguageInfo> get languageChoices {
     final profile = currentProfile;
     final learned = <String, LanguageInfo>{
@@ -651,17 +657,19 @@ class AppState extends ChangeNotifier {
     };
     return <LanguageInfo>[
       for (final code in LanguageChoice.options(
-        learning: settings.learningLanguages,
+        // The learner's order: as chosen, else as the profile lists them.
+        learning: <String>[
+          ...<String>{...settings.learningLanguages, ...?profile.languages},
+        ],
         available: learned.keys,
       ))
         learned[code]!,
     ];
   }
 
-  /// The language the whole app shows, by code, or null for every
-  /// language (#461): the one chosen in the language menu while the
-  /// profile still learns it, else All; with only one language to show,
-  /// that one.
+  /// The language the whole app shows, by code (#461, #528): the one
+  /// chosen in the language bar while the profile still learns it, else
+  /// the first of [languageChoices]. Null only while there is none.
   String? get shownLanguage => LanguageChoice.shown(
     settings.languageChoice,
     <String>[for (final language in languageChoices) language.code],
@@ -671,10 +679,21 @@ class AppState extends ChangeNotifier {
   /// [shownLanguage].
   bool showsLanguage(String code) => LanguageChoice.shows(shownLanguage, code);
 
-  /// Shows only [code]'s content across the app, or with null, every
-  /// language's. Kept in Settings.
-  void showLanguage(String? code) =>
-      settings.languageChoice = code ?? LanguageChoice.all;
+  /// Shows only [code]'s content across the app. Kept in Settings. With
+  /// [allOff], as on Progress, it turns Progress's All off too (#528).
+  void showLanguage(String code, {bool allOff = false}) {
+    settings.languageChoice = code;
+    if (allOff) settings.progressAll = false;
+  }
+
+  /// Whether Progress counts every language together (#528): its All
+  /// button is on, and there is more than one language to count.
+  bool get progressShowsAll =>
+      settings.progressAll && languageChoices.length > 1;
+
+  /// The language whose numbers Progress shows, or null for every
+  /// language's together ([progressShowsAll]).
+  String? get progressLanguage => progressShowsAll ? null : shownLanguage;
 
   /// Loads the catalog, then checks which languages have a voice. Safe to
   /// call more than once; later calls wait on the first.
@@ -1352,6 +1371,17 @@ class AppState extends ChangeNotifier {
     ];
   }
 
+  /// The languages the summary after [finished]'s part of Today offers
+  /// next (#528): the others of [languageChoices], in their order, with
+  /// something left in their own session. Starting one switches the
+  /// language bar to it.
+  List<LanguageInfo> nextTodayLanguages(String finished) => <LanguageInfo>[
+    for (final language in languageChoices)
+      if (language.code != finished &&
+          buildSession(DrillRequest.today(language: language.code)).isNotEmpty)
+        language,
+  ];
+
   /// The queue for [request], built by [SessionQueue] from the catalog, the
   /// progress store, the settings, the feature registry and the voices.
   ///
@@ -1362,9 +1392,14 @@ class AppState extends ChangeNotifier {
   SessionQueue buildSession(DrillRequest request, {bool ignorePauses = false}) {
     final ids = request.deckIds;
     final language = request.language;
+    // A request that names a language takes its decks even while the bar
+    // shows another, as the summary offers the next language (#528).
     final decks = ids == null
         ? <DeckEntry>[
-            for (final entry in profileDecks)
+            for (final entry
+                in language == null
+                    ? profileDecks
+                    : _learnedDecks(onlyShown: false))
               if (language == null || entry.language.code == language) entry,
           ]
         : <DeckEntry>[

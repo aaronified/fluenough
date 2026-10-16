@@ -1,4 +1,6 @@
 import '../../app.dart';
+import '../../app/profile.dart';
+import '../../app/settings.dart';
 import '../gallery/fixtures.dart';
 import '../gallery/gallery_entry.dart';
 import 'today_fixtures.dart';
@@ -50,9 +52,36 @@ final List<GalleryEntry> todayGalleryStates = <GalleryEntry>[
     id: 'today-one-language',
     section: GallerySection.learn,
     label: 'Today, one language shown', // ui-literal-ok: debug-only gallery
-    note: 'The language menu on Spanish, of two', // ui-literal-ok: debug-only gallery
+    note: 'The language bar on Spanish, of two', // ui-literal-ok: debug-only gallery
     builder: (_) => const AppShell(),
     state: todayOneLanguageState,
+  ),
+  GalleryEntry(
+    id: 'today-eight-languages',
+    section: GallerySection.learn,
+    label: 'Today, eight languages', // ui-literal-ok: debug-only gallery
+    note: 'The language bar scrolls, its ends faded', // ui-literal-ok: debug-only gallery
+    builder: (_) => const AppShell(),
+    state: (app) => GalleryFixtures.state(
+      app,
+      // Aro, learning the languages chosen here rather than her two.
+      profiles: const <Profile>[Profile(id: 'aro', name: 'Aro')],
+      settings: SettingsNotifier(
+        spokenLanguages: const <String>['en'],
+        learningLanguages: const <String>[
+          'hi',
+          'bn',
+          'te',
+          'mr',
+          'gu',
+          'kn',
+          'as',
+          'es',
+        ],
+        learningChosen: true,
+        languageChoice: 'gu',
+      ),
+    ),
   ),
   GalleryEntry(
     id: 'today-no-voice',

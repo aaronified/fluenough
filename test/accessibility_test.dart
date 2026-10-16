@@ -487,6 +487,18 @@ void main() {
         themeMode: themeMode,
       );
       expect(find.text(l10nOf(tester).pathToReview), findsWidgets);
+      // The path's top, so that no unit is cut at the edge under the
+      // language bar (#528).
+      await tester.fling(
+        find
+            .byWidgetPredicate(
+              (w) => w is Scrollable && w.axisDirection == AxisDirection.down,
+            )
+            .first,
+        const Offset(0, 3000),
+        3000,
+      );
+      await tester.pumpAndSettle();
       await meetsEveryGuideline(tester);
       semantics.dispose();
     });
@@ -828,8 +840,14 @@ void main() {
               // The tiles and their marks on screen, to be measured.
               final marks = find.byType(PaceMark);
               if (paced.adjusts) {
-                await tester.ensureVisible(marks.first);
+                // The due card at the top, its tiles whole: with the
+                // language bar (#528) over the scrolling, bringing a mark
+                // to the top would cut its tile at the edge.
+                await Scrollable.ensureVisible(
+                  tester.element(find.byType(DueCard)),
+                );
                 await tester.pumpAndSettle();
+                expect(marks.hitTestable(), findsWidgets);
               }
             }
             await meetsEveryGuideline(tester);

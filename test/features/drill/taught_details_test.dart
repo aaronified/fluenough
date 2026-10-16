@@ -831,7 +831,14 @@ void main() {
           await question.answer(tester, rig, card, Outcome.wrong);
           expect(tester.takeException(), isNull);
 
-          final viewport = tester.getRect(find.byType(CustomScrollView));
+          final viewport = tester.getRect(
+            find
+                .descendant(
+                  of: find.byType(DrillFrame),
+                  matching: find.byType(SingleChildScrollView),
+                )
+                .first,
+          );
           double footTop() => question == recognition
               ? tester.getTopLeft(find.text(l10nOf(tester).drillRatePrompt)).dy
               : tester.getTopLeft(find.byType(FeedbackBanner)).dy;

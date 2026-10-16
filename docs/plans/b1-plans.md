@@ -151,10 +151,13 @@ them. The validator rejects a deck that leaves one out.
 
 ### Format details, settled 2026-10-09
 
-- **A rule's forms are listed for every word,** not made from a stem with
-  exceptions: exact for Telugu's oblique stems (ఇల్లు (illu) → ఇంట్లో
-  (iṇṭlō)), and the validator checks every taught word of the rule's kind
-  has its row (owner).
+- **A rule's forms are made from each word's stem, with exceptions listed,
+  and checked** (owner, 2026-10-16: "Stem + exceptions, checked", replacing
+  "listed for every word" of 2026-10-09). The rule gives the endings; a word
+  gives its stem (ఇల్లు (illu) → ఇంటి- (iṇṭi-), so ఇంట్లో (iṇṭlō)) and any
+  exceptions; the validator compares the generated forms with Wiktionary's
+  where they exist and flags mismatches, and checks every taught word of the
+  rule's kind has a stem.
 - **A layer's files live in `decks/<lang>/<native>/`,** the core in
   `decks/<lang>/` (owner).
 - **Notes about the language learnt** keep their language facts (the

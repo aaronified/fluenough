@@ -6,6 +6,7 @@ import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/ipa_line.dart';
 import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/target_text.dart';
 import '../decks/card_bases.dart';
@@ -38,7 +39,7 @@ enum TaughtReading {
 }
 
 /// What a word's lesson showed of it (ADR-0024), laid out as the teach card
-/// does: the word and its reading, its meaning, its notes, its base words
+/// does: the word, its reading and its IPA while IPA pronunciations is on, its meaning, its notes, its base words
 /// on one line ([BaseLine], #410) and its first example, 12 apart and
 /// centred. Its notes are every one but a pair note
 /// ([shownNotes]), whose text is the care note of the warning below.
@@ -99,8 +100,9 @@ class TaughtDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = AppScope.read(context);
     final settings = state.settings;
-    // Live, as the reading's line follows Latin-letter readings, and the
-    // warnings name a rude word only while adult content is on.
+    // Live, as the reading's line follows Latin-letter readings, the IPA's
+    // IPA pronunciations, and the warnings name a rude word only while adult content
+    // is on.
     return ListenableBuilder(
       listenable: settings,
       builder: (context, _) {
@@ -110,7 +112,13 @@ class TaughtDetails extends StatelessWidget {
         final notes = shownNotes(card);
         final bases = basesOf(state, card, language);
         final children = <Widget>[
-          if (word) ..._word(theme, showReading: _showsReading(settings)),
+          if (word) ...<Widget>[
+            ..._word(theme, showReading: _showsReading(settings)),
+            // How it is said, under the word and its reading (ADR-0025).
+            if (ipaToShow(context, card.ipa, target: card.target)
+                case final ipa?)
+              IpaLine(ipa, fontSize: 16),
+          ],
           if (meaning)
             Text(
               card.native,
@@ -207,8 +215,8 @@ class TaughtDetails extends StatelessWidget {
   }
 }
 
-/// An example sentence under the meaning: the target sentence, bold, over
-/// its translation.
+/// An example sentence under the meaning: the target sentence, bold, its
+/// IPA while IPA pronunciations is on, over its translation.
 class _Example extends StatelessWidget {
   const _Example({required this.example, required this.language});
 
@@ -240,6 +248,9 @@ class _Example extends StatelessWidget {
               fontSize: 16,
               color: scheme.onSurface,
             ),
+            if (ipaToShow(context, example.ipa, target: example.target)
+                case final ipa?)
+              IpaLine(ipa),
             const SizedBox(height: 2),
             Text(
               example.native,

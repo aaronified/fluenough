@@ -28,7 +28,9 @@ abstract final class GalleryFixtures {
   static const Profile aro = Profile(
     id: 'aro',
     name: 'Aro',
-    languages: <String>{'hi', 'es'},
+    // Spanish first: the language bar shows it (#528), as her reviews are
+    // Spanish.
+    languages: <String>{'es', 'hi'},
     shape: AvatarShape.cookie,
     tone: AvatarTone.primary,
     pin: '1234',

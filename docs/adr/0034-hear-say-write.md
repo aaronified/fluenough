@@ -128,7 +128,7 @@ Hear, Say and Write.
 
 The order the owner gave: the skill model, then the B1 plans, then deck
 downloads (ADR-0037), then the settings redesign
-(`language-picker.md`, `settings-wording.md`, `voices-per-language.md`).
+(`language-picker.md`, `settings-wording.md`; the Voices page is built).
 The skill model is done; `docs/ROADMAP.md` holds the order that remains.
 
 ### Terms (the owner's definitions)
