@@ -2,6 +2,7 @@ import 'package:yaml/yaml.dart';
 
 import '../models/author.dart';
 import '../models/card.dart';
+import '../models/card_set.dart';
 import '../models/deck.dart';
 import '../models/drill_mode.dart';
 import '../models/grammar_pattern.dart';
@@ -278,6 +279,8 @@ const _coreRefFields = {
 const _coreExampleFields = {'target', 'reading', 'ipa', 'bases', 'source'};
 const _layerEntryFields = {
   'native',
+  // A set card's explanation (DECK-FORMAT.md, Set cards).
+  'explanation',
   'alt_native',
   'notes',
   'examples',
@@ -741,6 +744,13 @@ class _Reader {
     YamlNode? key,
   }) {
     final fields = this.fields(node, path);
+    if (_isSet(node)) {
+      fail(
+        fields.keyNode('kind'),
+        '$path: a set card is written in a vocab core, kind: "set", its name '
+        'and explanation in each layer (DECK-FORMAT.md, Set cards)',
+      );
+    }
     fields.allowOnly(key == null ? _cardFields : _layerCardFields);
 
     final idNode = key ?? fields.require('id');
@@ -1414,7 +1424,9 @@ class _Reader {
     final seen = <String, YamlNode>{};
     return List<CoreCard>.unmodifiable(<CoreCard>[
       for (final (i, item) in list(node, 'cards').indexed)
-        if (item is YamlMap && item.nodes.containsKey('ref'))
+        if (_isSet(item))
+          coreSet(item, 'cards[$i]', seen)
+        else if (item is YamlMap && item.nodes.containsKey('ref'))
           coreRef(item, 'cards[$i]', seen)
         else
           coreCard(item, 'cards[$i]', seen),
@@ -1554,6 +1566,65 @@ class _Reader {
       );
     }
     return List<CoreSense>.unmodifiable(senses);
+  }
+
+  /// A set card (DECK-FORMAT.md, Set cards): its id and its members, by
+  /// ref, or a rule and one fixed value of its table ("Rule + axis",
+  /// owner, 2026-10-16). Its name and explanation are in each layer.
+  CoreSet coreSet(YamlNode node, String path, Map<String, YamlNode> seen) {
+    final fields = this.fields(node, path);
+    final id = cardId(fields.require('id'), '$path.id', seen);
+    for (final key in fields.map.nodes.keys.cast<YamlNode>()) {
+      if (!const {'id', 'kind', 'members'}.contains(_value(key))) {
+        fail(
+          key,
+          '$path: a set card has only id, kind and members, its name and '
+          'explanation in each layer; got ${_describe(key)}',
+        );
+      }
+    }
+    final membersNode = fields.require('members');
+    final where = '$path.members';
+    if (membersNode is YamlMap) {
+      final ruleNode =
+          membersNode.nodes['rule'] ??
+          fail(membersNode, '$where: missing required field "rule"');
+      final rule = text(ruleNode, '$where.rule');
+      final axes = <(String, YamlNode, YamlNode)>[
+        for (final entry in keyed(membersNode, where, 'must be a mapping'))
+          if (entry.$1 != 'rule') entry,
+      ];
+      if (axes.length != 1) {
+        fail(
+          membersNode,
+          "$where: a rule's set fixes one value of its table beside rule, as "
+          '{ rule: ..., verb: "..." }',
+        );
+      }
+      final (axis, _, valueNode) = axes.single;
+      return CoreSet(
+        id: id,
+        rule: SetRule(
+          rule: rule,
+          axis: axis,
+          value: text(valueNode, '$where.$axis'),
+        ),
+      );
+    }
+    final refs = <String>[];
+    for (final (i, item) in list(membersNode, where).indexed) {
+      final member = this.fields(item, '$where[$i]');
+      member.allowOnly(const {'ref'});
+      final ref = this.id(member.require('ref'), '$where[$i].ref');
+      if (ref == id || refs.contains(ref)) {
+        fail(item, '$where[$i]: $ref is a member already, or the set itself');
+      }
+      refs.add(ref);
+    }
+    if (refs.length < 2) {
+      fail(membersNode, '$where: a set has at least 2 members');
+    }
+    return CoreSet(id: id, members: List<String>.unmodifiable(refs));
   }
 
   CoreRef coreRef(YamlNode node, String path, Map<String, YamlNode> seen) {
@@ -1938,6 +2009,9 @@ class _Reader {
     }
     return LayerEntry(
       native: fields.has('native') ? fields.string('native') : null,
+      explanation: fields.has('explanation')
+          ? fields.string('explanation')
+          : null,
       altNative: fields.has('alt_native') ? fields.strings('alt_native') : null,
       notes: fields.has('notes')
           ? layerTexts(
@@ -2688,6 +2762,12 @@ const _wiktionaryRule = 'true, or left out where Wiktionary has no entry';
 /// [text] with each placeholder replaced by the word it counts to, shown
 /// with its reading (DECK-FORMAT.md, Notes). One past [words] stays as written;
 /// the reader refuses it first.
+/// Whether [node], an item of a deck's cards, is a set card.
+bool _isSet(YamlNode node) =>
+    node is YamlMap &&
+    node.nodes['kind'] is YamlScalar &&
+    _value(node.nodes['kind']!) == 'set';
+
 String _filled(String text, List<NoteWord> words) =>
     text.replaceAllMapped(_placeholder, (m) {
       final n = int.tryParse(m[1]!);

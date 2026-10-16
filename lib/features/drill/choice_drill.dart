@@ -15,6 +15,7 @@ import '../../ui/widgets/target_text.dart';
 import 'cant_now.dart';
 import 'choice_tile.dart';
 import 'drill_session.dart';
+import 'set_drill.dart';
 import 'taught_details.dart';
 
 /// Multiple choice (ADR-0024), recorded as soon as an option is picked:
@@ -65,17 +66,20 @@ class ChoiceDrill extends StatelessWidget {
       progress: session.progress,
       onClose: onClose,
       needsSound: _hears && !answered,
-      card: switch (ask) {
-        Ask.chooseMeaning || Ask.chooseFormMeaning => _meaningCard(
-          context,
-          card,
-          language,
-          answered,
-        ),
-        Ask.hearAndChoose ||
-        Ask.hearMeaning => _heardCard(context, card, language, answered),
-        _ => _wordCard(context, card, language, answered),
-      },
+      card: <Widget>[
+        ...switch (ask) {
+          Ask.chooseMeaning || Ask.chooseFormMeaning => _meaningCard(
+            context,
+            card,
+            language,
+            answered,
+          ),
+          Ask.hearAndChoose ||
+          Ask.hearMeaning => _heardCard(context, card, language, answered),
+          _ => _wordCard(context, card, language, answered),
+        },
+        ...answeredSetList(context, session, answered: answered),
+      ],
       belowCard: <Widget>[
         Semantics(
           container: true,

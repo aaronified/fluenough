@@ -8,6 +8,7 @@ import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import 'drill_session.dart';
+import 'set_drill.dart';
 import 'rating_buttons.dart';
 import 'taught_details.dart';
 
@@ -107,6 +108,7 @@ class RecognitionDrill extends StatelessWidget {
             word: false,
           ),
         ],
+        ...answeredSetList(context, session, answered: revealed),
       ],
       actions: revealed
           ? <Widget>[

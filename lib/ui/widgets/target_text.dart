@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
+import '../../core/models/aksharas.dart';
 import '../../core/models/deck.dart';
 import '../card_text_scale.dart';
 import '../theme.dart';
@@ -21,6 +22,12 @@ import '../theme.dart';
 /// [TargetText.hero] sizes it as the design does — 96, 64 or 48 by length —
 /// and [TargetText.card] from a size it is given, both times the scale.
 /// Elsewhere, as in lists and menus, a plain [TargetText] keeps its size.
+///
+/// On a drill card, a long word in a script that needs a reading breaks
+/// across lines only between its aksharas, never inside one (owner,
+/// 2026-10-16, #515: "Break between syllables"): [breakableWord] gives the
+/// line breaker those places and no others. A screen reader reads the word
+/// as written.
 class TargetText extends StatelessWidget {
   const TargetText(
     this.text, {
@@ -82,18 +89,24 @@ class TargetText extends StatelessWidget {
     );
   }
 
-  Widget _text(double size) => Text(
-    text,
-    textAlign: textAlign,
-    textDirection: language.rtl ? TextDirection.rtl : TextDirection.ltr,
-    locale: Locale(language.code),
-    style: TextStyle(
-      fontSize: size,
-      fontWeight: fontWeight,
-      color: color,
-      height: language.rtl ? TargetSizes.rtlHeight : TargetSizes.ltrHeight,
-    ),
-  );
+  Widget _text(double size) {
+    final shown = _sizing != _Sizing.fixed && language.needsReading
+        ? breakableWord(text)
+        : text;
+    return Text(
+      shown,
+      semanticsLabel: shown == text ? null : text,
+      textAlign: textAlign,
+      textDirection: language.rtl ? TextDirection.rtl : TextDirection.ltr,
+      locale: Locale(language.code),
+      style: TextStyle(
+        fontSize: size,
+        fontWeight: fontWeight,
+        color: color,
+        height: language.rtl ? TargetSizes.rtlHeight : TargetSizes.ltrHeight,
+      ),
+    );
+  }
 }
 
 enum _Sizing { fixed, hero, card }

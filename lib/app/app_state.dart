@@ -7,6 +7,7 @@ import '../core/data/course_path.dart';
 import '../core/feedback/report.dart';
 import '../core/logs/log_entry.dart';
 import '../core/models/card.dart';
+import '../core/models/card_set.dart';
 import '../core/models/deck.dart';
 import '../core/models/drill_mode.dart';
 import '../core/models/number_rules.dart';
@@ -30,10 +31,12 @@ import '../core/models/fact.dart';
 import '../core/scheduling/ability.dart';
 import '../core/scheduling/daily_fact.dart';
 import '../core/scheduling/lesson.dart';
+import '../core/scheduling/lesson_sets.dart';
 import 'added_decks.dart';
 import '../core/decks/deck_index.dart';
 import 'app_log.dart';
 import 'card_media.dart';
+import 'card_sets.dart';
 import 'deck_catalog.dart';
 import 'deck_downloads.dart';
 import 'deck_import.dart';
@@ -1840,6 +1843,11 @@ class AppState extends ChangeNotifier {
   /// passage: the questions about it, heard, then read. Otherwise it is up
   /// to nine words before the next passage, as [lessonItems] picks them,
   /// each taught, checked and practised ([lessonPlan]).
+  ///
+  /// A set card one of them is a member of (DECK-FORMAT.md, Set cards)
+  /// comes first, whole or in parts, with every new member of it taught in
+  /// the lesson, whatever the cap; a rules table's cell it taught goes
+  /// straight to its question ([lessonSets], #515).
   List<SessionItem> lessonFor(DrillRequest request) {
     final cards = untaughtCards(
       request.language!,
@@ -1862,18 +1870,48 @@ class AppState extends ChangeNotifier {
               SessionItem(card: question, mode: mode, state: null),
       ]);
     }
+    final picked = lessonItems(
+      cards.takeWhile((card) => card is! QuestionCard),
+    );
+    final modesOf = drillableModesNow();
+    final lesson = lessonSets(
+      picked,
+      sets: _lessonSets(picked),
+      isNew: (card) => !isTaught(card) && modesOf(card).isNotEmpty,
+      isKnown: isTaught,
+    );
     return <SessionItem>[
+      for (final part in lesson.parts)
+        SessionItem.set(part, DrillMode.recognition),
       for (final item in lessonPlan(
-        lessonItems(cards.takeWhile((card) => card is! QuestionCard)),
-        modesOf: drillableModes,
+        lesson.cards,
+        modesOf: modesOf,
         canChoose: (card, ask) => canChoose(
           card,
           ask == Ask.hearMeaning && hearsForm(card) ? Ask.hearAndChoose : ask,
         ),
+        straightToQuestion: (card) =>
+            card.rule != null && lesson.members.contains(card.id),
       ))
         item.ask == Ask.hearMeaning && hearsForm(item.card)
             ? item.askedAs(Ask.hearAndChoose)
             : item,
+    ];
+  }
+
+  /// The sets of the courses [picked] is taught in, as the learner sees
+  /// them with [picked] in the lesson.
+  List<ResolvedSet> _lessonSets(List<Card> picked) {
+    final courses = <(String, String)>{
+      for (final card in picked)
+        if (deckOf(card) case final entry?)
+          (entry.language.code, entry.deck.native.code),
+    };
+    final ids = <String>{for (final card in picked) card.id};
+    return <ResolvedSet>[
+      for (final (language, native) in courses)
+        for (final set in courseSets(language, native))
+          ?forLearner(set, also: ids),
     ];
   }
 

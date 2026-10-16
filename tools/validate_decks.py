@@ -5074,6 +5074,9 @@ def check_sets_across(reports: list[Report]) -> list[str]:
                     problems.append(f"{at}: members.{axis}: {value!r} is no row of "
                                     f"{core_id}; give a row's word, as its card writes "
                                     f"it, or its id")
+            elif axis in POS:
+                problems.append(f"{at}: members.{axis}: {core_id}'s rows are "
+                                f"{', '.join(t.pos)}, not {axis}")
             elif value not in slots:
                 problems.append(f"{at}: members.{axis}: {value!r} is not a slot of "
                                 f"{rule}; a value that is not a row's word is a slot, "
