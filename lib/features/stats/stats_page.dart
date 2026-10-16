@@ -192,6 +192,9 @@ class _RangeChoice extends StatelessWidget {
     return Padding(
       padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
       child: Segmented<StatsRange>(
+        // The 48dp tap target, which the default 40 falls short of when
+        // small text leaves the labels room to spare (#491).
+        height: 48,
         semanticLabel: l10n.statsRangeGroup,
         selected: range,
         onSelected: onSelected,
