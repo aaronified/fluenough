@@ -451,6 +451,15 @@ class DeckReview {
       if (!value.isEmpty && _unsent(value.at)) key: value,
   };
 
+  /// The card reviews that have been sent, by card id: those not changed
+  /// since the last send. Empty for a deck never sent.
+  Map<String, CardReview> get sentCards => sent == null
+      ? const <String, CardReview>{}
+      : <String, CardReview>{
+          for (final MapEntry(:key, :value) in cards.entries)
+            if (!value.isEmpty && !_unsent(value.at)) key: value,
+        };
+
   /// Whether a sign-off has not been sent yet.
   bool get unsentSignOff => signedOff != null && _unsent(signedOff!);
 
