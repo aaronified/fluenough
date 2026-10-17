@@ -107,6 +107,6 @@ void main() {
     // The noun table has a unit of its own in Hindi's B1 plan, with no theme
     // deck to lend one.
     expect(themes['hi-en-grammar-nouns'], isNull);
-    expect(themes['hi-en-grammar-articles']?.id, 'market');
+    expect(themes['hi-en-grammar-continuous']?.id, 'directions');
   });
 }
