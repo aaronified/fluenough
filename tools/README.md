@@ -191,7 +191,8 @@ English layer (only of words the course teaches), `forms`, `senses`, and
 `wiktionary: true` in the layer. Every item names its `source`, the
 Wiktionary page only, `https://en.wiktionary.org/wiki/<word>` (owner,
 2026-10-16, #518: "Link only"); the dump's date and checksum are in the
-report alone. The decks stay `unreviewed`: what it adds is semi-verified,
+report alone. The validator checks this shape: a `source` naming
+wiktionary.org must be exactly that page (owner, 2026-10-17). The decks stay `unreviewed`: what it adds is semi-verified,
 for reviewers to check (#508).
 
 ```sh
@@ -222,15 +223,20 @@ python3 tools/validate_decks.py decks/
   `image_credit`. With none, the card keeps its Noto picture. Images come
   from Wiktionary only, never Wikidata (owner, 2026-10-16, #523:
   "Wiktionary only").
-- **Image proposals**: a noun card without a `picture` gets no image from
+- **Image proposals**: a noun, verb or adjective card without a `picture` gets no image from
   `--images`. Where its Wiktionary section has one picture that can ship,
   the report's "Image proposals" table lists it: the card, word, Commons
   file, licence, credit, Commons page and Wiktionary page (owner,
   2026-10-16, #523: "Also mark concrete", "Importer proposes"). Only the
   lookups run, so this works without `--write` too, and no file is
   downloaded. A reviewer approves each; then `--images --write --approve
-  <card id>` (repeated, or ids separated by commas) writes those cards'
-  images. An approved id that is not such a card is listed in the report.
+  <card id>=<File name>` (repeated, or items separated by commas) writes
+  those cards' images. The approval pins the file (owner, 2026-10-16:
+  "Pin the file"): the table shows each proposal's file so it can be copied
+  as `hi-0419=File.jpg`, and it lands only if that is still the proposal's
+  file. A mismatch is listed in the report as not imported, naming both
+  files; a bare id is refused with an error. An approved id that is not
+  such a card is listed too. Approvals by mail come with #519.
 - A file whose licence cannot ship in a CC BY-SA 4.0 deck, or that names
   no one to credit, is skipped and listed in the report. Without `ffmpeg`
   on the PATH, `--audio` and `--images` stop with an error before anything

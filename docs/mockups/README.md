@@ -72,19 +72,25 @@ approval.
   ("Only this course's"); the status order and the 21-day learnt line
   stand ("Yes, both"); and the languages-you-know rows leave out languages
   the learner already has a course in ("Leave them out").
+- `reviewer-mode.html`: reviewer mode, adapted to today's app (owner,
+  2026-10-17: "Mockup first"). Waiting for review with Reviewed, not sent
+  and Reviewed and sent first, each sent suggestion Accepted, Rejected or
+  Waiting for a second review with no rater codes, then the languages
+  folded with their counts (#471); Suggest a change with a BASE card's
+  pencil, Add a base, Remove with Undo before ✓, and a Word change as a
+  new identity that keeps the old word as `alt_target` and goes as one
+  review (#476); PLACE, offering only the B1 plan's units and themes, the
+  meaning rule, and the reviewer rules and daily question count (default
+  10) in onboarding (#477); and every field of a card, with Flag this
+  recording alone and Wiktionary items marked semi-verified and placed
+  last (#508). Hindi and Bengali, light and dark, 1x and 1.4x. It replaces
+  the 2026-10-09 drafts, which are in git history
+  (`git show 6715716:docs/mockups/reviewer-mode.html`). Approved by the owner, 2026-10-17, with the decisions the page marks
+  Proposed ("The reviewer mode mockup looks fine. Build it.").
 
-## Older: to be adapted (owner, 2026-10-12)
+## Awaiting approval
 
-Bring these up to the current app and plans, in the style of
-`languages-you-know.html`: real theme colours, light and dark, 1.4x text (the app's cap, #505), a
-contrast self-check, and Hindi or Bengali examples. Until then, they are
-history, not spec.
-
-- `reviewer-mode.html` and `drafts/reviewer-mode-screens.js`: reviewer
-  mode. It needs the owner's 2026-10-09 notes (in
-  `docs/plans/reviewing-scope.md`), plus #476, #477 and #471.
-
-Order: after the current mockups (#486 and #227) and the Settings mockup.
+None.
 
 ## Deleted (owner, 2026-10-12)
 

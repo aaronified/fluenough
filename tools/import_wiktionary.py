@@ -7,7 +7,7 @@ Usage:
     python3 tools/import_wiktionary.py hi Hindi.jsonl --write          # fill the decks
     python3 tools/import_wiktionary.py hi Hindi.jsonl --write --audio  # and recordings
     python3 tools/import_wiktionary.py hi Hindi.jsonl --write --images # and images
-    python3 tools/import_wiktionary.py hi Hindi.jsonl --write --images --approve hi-0419
+    python3 tools/import_wiktionary.py hi Hindi.jsonl --write --images --approve hi-0419=File.jpg
     python3 tools/import_wiktionary.py hi Hindi.jsonl --decks /tmp/copy/decks --write \\
         --dump-date 2026-10-13 --report hi-report.md
 
@@ -55,11 +55,14 @@ is ambiguous and gets only an IPA all of them agree on. Then it fills
   drawing of its `picture` (CC BY-SA 4.0). It is shrunk to 256 pixels and
   converted to WebP with `ffmpeg` at `decks/<lang>/images/<card id>.webp`,
   with its `image_credit`. With none, the card keeps its Noto picture.
-  A noun card without a `picture` gets no image: where its page has one
-  picture that can ship, the report proposes it (owner, 2026-10-16, #523:
-  "Also mark concrete", "Importer proposes"), and a reviewer approves each
-  before it lands. `--approve <card id>` (with `--images --write`) then
-  writes the approved cards' images.
+  A noun, verb or adjective card without a `picture` gets no image: where
+  its page has one picture that can ship, the report proposes it (owner,
+  2026-10-16, #523: "Also mark concrete", "Importer proposes", "Nouns,
+  verbs, adjectives"), and a reviewer approves each before it lands.
+  `--approve <card id>=<File name>` (with `--images --write`) then writes
+  the approved cards' images. The approval pins the file ("Pin the file"):
+  it applies only while the proposal's file is that one, and a bare card id
+  is refused. Approvals by mail come with #519.
 
 Every item it adds names its `source` (owner: "Per item"): the entry's
 Wiktionary page and nothing else (owner, 2026-10-16, #518: "Link only").
@@ -922,6 +925,46 @@ def image_proposal(t: Target, language: str) -> dict | None:
             "credit": info["credit"], "commons": info["page"], "page": page(t.target)}
 
 
+# Parts of speech that get image proposals (#523, owner, 2026-10-16: "Nouns,
+# verbs, adjectives"), as the decks spell `pos` (docs/DECK-FORMAT.md).
+IMAGE_POS = frozenset({"noun", "verb", "adj"})
+
+
+# Splits a comma-separated `--approve` list only where the next item starts
+# with a card id and `=`, since Commons file names may hold commas.
+_APPROVAL_SPLIT = re.compile(r",\s*(?=[a-z]{2,3}-[A-Za-z0-9-]+=)")
+
+
+def same_file(a: str, b: str) -> bool:
+    """Whether two Commons file names are the same file, as Commons reads
+    them: a `File:` prefix is optional, `_` is a space, and the first letter's
+    case does not matter."""
+    def norm(x: str) -> str:
+        x = x.strip()
+        if x[:5].lower() == "file:":
+            x = x[5:].strip()
+        x = x.replace("_", " ")
+        return x[:1].upper() + x[1:]
+    return norm(a) == norm(b)
+
+
+def parse_approvals(items: list[str]) -> dict[str, str]:
+    """`--approve` items, `<card id>=<File name>` each, repeated or
+    comma-separated: the file is pinned ("Pin the file"). A bare id raises."""
+    out: dict[str, str] = {}
+    for item in (x.strip() for a in items for x in _APPROVAL_SPLIT.split(a)):
+        if not item:
+            continue
+        cid, eq, name = item.partition("=")
+        cid, name = cid.strip(), name.strip()
+        if not eq or not cid or not name:
+            raise ImportError_(
+                f"--approve {item!r} names no file: write <card id>=<File name>, "
+                f"as the report's proposals show it (a pinned file is required)")
+        out[cid] = name
+    return out
+
+
 # --- Editing the files ----------------------------------------------------------
 
 def _block(lines: list[str], head: re.Pattern, indent: int) -> tuple[int, int] | None:
@@ -1032,10 +1075,10 @@ class Report:
             lines += [f"- {x}" for x in self.approved_failed]
         if self.proposals:
             lines += ["", "## Image proposals", "",
-                      "Noun cards without a `picture` whose Wiktionary page has one "
+                      "Noun, verb and adjective cards without a `picture` whose Wiktionary page has one "
                       "picture that can ship. None is written: a reviewer approves "
-                      "each, and `--images --write --approve <card id>` adds it.", "",
-                      "| Card | Word | Commons file | Licence | Credit | Commons page "
+                      "each, and `--images --write --approve <card id>=<File>` adds it.", "",
+                      "| Card | Word | Commons file (approve as `id=File`) | Licence | Credit | Commons page "
                       "| Wiktionary page |", "|---|---|---|---|---|---|---|"]
             lines += [f"| {p['cid']} | {p['word']} | {p['file']} | {p['license']} "
                       f"| {p['credit']} | {p['commons']} | {p['page']} |"
@@ -1090,8 +1133,9 @@ LANGUAGE_NAMES = {"hi": "Hindi", "bn": "Bengali", "te": "Telugu", "mr": "Marathi
 
 
 def run(code: str, dump: Path, decks: Path, dump_date: str, write: bool,
-        audio: bool, images: bool = False, approve: frozenset[str] = frozenset()
+        audio: bool, images: bool = False, approve: dict[str, str] | None = None
         ) -> str:
+    approve = approve or {}
     if audio or images:
         ffmpeg()
     lang = read_language(decks, code)
@@ -1135,7 +1179,7 @@ def run(code: str, dump: Path, decks: Path, dump_date: str, write: bool,
     # (owner, 2026-10-16, #523: "Importer proposes").
     approved: set[str] = set()
     for t in lang.targets:
-        if not images or t.pos != "noun" or "picture" in t.card or "image" in t.card:
+        if not images or t.pos not in IMAGE_POS or "picture" in t.card or "image" in t.card:
             continue
         f = fills[t.cid]
         if f.entry is None:
@@ -1151,6 +1195,12 @@ def run(code: str, dump: Path, decks: Path, dump_date: str, write: bool,
             report.proposals.append(proposal)
             continue
         approved.add(t.cid)
+        if not same_file(approve[t.cid], proposal["file"]):
+            report.approved_failed.append(
+                f"{t.cid} {t.target}: approved {approve[t.cid]} but the proposal "
+                f"is {proposal['file']}")
+            report.proposals.append(proposal)
+            continue
         out = decks / code / "images" / f"{t.cid}.webp"
         try:
             credit = commons_image(proposal["file"], out)
@@ -1161,9 +1211,9 @@ def run(code: str, dump: Path, decks: Path, dump_date: str, write: bool,
         f.core.append(("pos", [f"    image: {q(f'decks/{code}/images/{t.cid}.webp')}",
                                f"    image_credit: {flow_map(list(credit.items()))}"]))
         f.fields.append("image")
-    for cid in sorted(approve - approved):
+    for cid in sorted(set(approve) - approved):
         report.approved_failed.append(
-            f"{cid}: not a noun card without a picture or image whose Wiktionary "
+            f"{cid}: not a noun, verb or adjective card without a picture or image whose Wiktionary "
             f"page has one picture that can ship")
     tally(report, lang.targets, fills, lang.genders, audio, images)
     if write:
@@ -1201,12 +1251,15 @@ def main(argv: list[str]) -> int:
                         help="download and convert recordings (needs ffmpeg)")
     parser.add_argument("--images", action="store_true",
                         help="download and convert images for cards with a picture "
-                             "(needs ffmpeg), and propose images for nouns without "
+                             "(needs ffmpeg), and propose images for nouns, verbs and adjectives without "
                              "one in the report")
-    parser.add_argument("--approve", action="append", default=[], metavar="CARD_ID",
-                        help="write the proposed image of these noun cards without a "
-                             "picture, once a reviewer has approved it (with --images "
-                             "--write; repeat it, or separate ids with commas)")
+    parser.add_argument("--approve", action="append", default=[], metavar="CARD_ID=FILE",
+                        help="write the proposed image of a noun, verb or adjective "
+                             "card without a picture, once a reviewer has approved it "
+                             "(with --images --write). The file is pinned: it lands "
+                             "only if it is the proposal's, as in hi-0419=File.jpg; a "
+                             "bare card id is refused. Repeat it, or separate items "
+                             "with commas (a comma inside a file name is kept)")
     parser.add_argument("--report", type=Path, help="write the report here")
     args = parser.parse_args(argv[1:])
     if not vd.LANG_RE.fullmatch(args.lang) or not (args.decks / args.lang).is_dir():
@@ -1215,7 +1268,11 @@ def main(argv: list[str]) -> int:
     if not args.dump.is_file():
         print(f"error: {args.dump} does not exist", file=sys.stderr)
         return 2
-    approve = frozenset(c.strip() for a in args.approve for c in a.split(",") if c.strip())
+    try:
+        approve = parse_approvals(args.approve)
+    except ImportError_ as e:
+        print(f"error: {e}", file=sys.stderr)
+        return 2
     if approve and not (args.images and args.write):
         print("error: --approve needs --images and --write", file=sys.stderr)
         return 2
