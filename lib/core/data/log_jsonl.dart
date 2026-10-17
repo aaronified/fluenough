@@ -191,6 +191,10 @@ abstract final class LogJsonl {
     if (card is! String || mode == null) {
       throw FormatException('line $n: card or mode is missing');
     }
+    // The script skills are worked out from the log, never logged (#556).
+    if (mode.isScript) {
+      throw FormatException('line $n: mode ${mode.name} is not a drill');
+    }
     return (cardId: card, mode: mode);
   }
 

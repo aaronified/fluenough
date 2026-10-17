@@ -110,11 +110,10 @@ Replayed replayReviews(
 
 /// Counts [review], an answer in a script deck, for the script skill
 /// [skills] says it feeds (#556), in [states], and for a review of the
-/// skill's own, in [events]. In full: the skill's pair is reviewed as the
-/// word skill's is, with the parameters of the script skill, so that
-/// the two schedules are never one. In part: a right answer moves the
-/// pair's stability as [implyReview] does, only where the pair has a
-/// state, and is no event of its own.
+/// skill's own, in [events]: the skill's pair is reviewed as the word
+/// skill's is, with the parameters of the script skill, so that the two
+/// schedules are never one. A leech reset or set-aside of the word skill's
+/// pair does not touch the script skills.
 void scriptReview(
   Map<ProgressKey, FsrsState> states,
   List<ReviewEvent> events,
@@ -127,36 +126,27 @@ void scriptReview(
   final chosen = parameters ?? SkillParameters.none;
   final key = (cardId: review.key.cardId, mode: target.skill);
   final before = states[key];
-  if (target.share >= 1) {
-    final after = Fsrs.next(
-      before,
-      review.grade,
-      now: review.at,
-      rated: review.answerGiven == null,
-      parameters: chosen.forPair(key),
-    );
-    states[key] = after;
-    events.add(
-      ReviewEvent(
-        at: review.at,
-        deckId: review.deckId,
-        cardId: key.cardId,
-        mode: key.mode,
-        grade: review.grade,
-        elapsed: review.elapsed,
-        answerGiven: review.answerGiven,
-        before: before,
-        after: after,
-      ),
-    );
-  } else if (before != null && review.grade >= Fsrs.passingGrade) {
-    states[key] = Fsrs.implied(
-      before,
-      target.share,
-      now: review.at,
-      parameters: chosen.forPair(key),
-    );
-  }
+  final after = Fsrs.next(
+    before,
+    review.grade,
+    now: review.at,
+    rated: review.answerGiven == null,
+    parameters: chosen.forPair(key),
+  );
+  states[key] = after;
+  events.add(
+    ReviewEvent(
+      at: review.at,
+      deckId: review.deckId,
+      cardId: key.cardId,
+      mode: key.mode,
+      grade: review.grade,
+      elapsed: review.elapsed,
+      answerGiven: review.answerGiven,
+      before: before,
+      after: after,
+    ),
+  );
 }
 
 /// Credits [review], if right, in part to each skill [skills] says it
