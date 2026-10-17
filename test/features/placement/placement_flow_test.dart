@@ -90,10 +90,10 @@ void main() {
     await pickLanguage(tester, 'hi');
     // The picker asks whether to learn the alphabet (#47, #211), on to start
     // with, so placement does not.
-    expect(find.text(l10n.pickerLearnScript(hindi)), findsOneWidget);
+    expect(find.text(l10n.pickerLearnScript('Devanagari')), findsOneWidget);
     await tester.tap(go);
     await tester.pumpAndSettle();
-    expect(find.text(l10n.alphabetAskTitle(hindi)), findsNothing);
+    expect(find.text(l10n.alphabetAskTitle(hindi, 'Devanagari')), findsNothing);
     expect(find.text(l10n.placementAskTitle(hindi)), findsOneWidget);
     expect(state.settings.learningChosen, isFalse, reason: 'nothing saved yet');
 
@@ -385,7 +385,7 @@ void main() {
     await flipScript(tester, 'hi');
     expect(find.text(l10n.pickerScriptOff), findsOneWidget);
     await tapText(tester, l10n.commonContinue);
-    expect(find.text(l10n.alphabetAskTitle(hindi)), findsNothing);
+    expect(find.text(l10n.alphabetAskTitle(hindi, 'Devanagari')), findsNothing);
     // Nothing is saved until the end.
     expect(state.settings.learnsAlphabet('hi'), isTrue);
     await tapText(tester, l10n.placementNew(hindi));
@@ -439,9 +439,9 @@ void main() {
     final l10n = l10nOf(tester);
     final spanish = nameOf(state, 'es');
     await pickLanguage(tester, 'es');
-    expect(find.text(l10n.pickerLearnScript(spanish)), findsNothing);
+    expect(find.text(l10n.pickerLearnScript('Latin')), findsNothing);
     await tapText(tester, l10n.commonContinue);
-    expect(find.text(l10n.alphabetAskTitle(spanish)), findsNothing);
+    expect(find.text(l10n.alphabetAskTitle(spanish, 'Latin')), findsNothing);
     expect(find.text(l10n.placementAskTitle(spanish)), findsOneWidget);
   });
 }

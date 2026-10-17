@@ -2672,13 +2672,13 @@
       }
     }
   },
-  "drillTypeInScript": "Type it in {language} script",
+  "drillTypeInScript": "Type it in {script}",
   "@drillTypeInScript": {
-    "description": "Label of the answer field, for a language in another script.",
+    "description": "Label of the answer field, for a language in another script. {script} is the script's own name, scriptName (#551), never the language's.",
     "placeholders": {
-      "language": {
+      "script": {
         "type": "String",
-        "example": "Hindi"
+        "example": "Devanagari"
       }
     }
   },
@@ -2726,13 +2726,13 @@
   "@drillInputModeGroup": {
     "description": "Screen-reader name of the script or transliteration choice."
   },
-  "drillInputScript": "{language} script",
+  "drillInputScript": "{script}",
   "@drillInputScript": {
-    "description": "Choice: type in the language's own script.",
+    "description": "Choice: type in the language's own script, named by its own name, scriptName (#551), never the language's.",
     "placeholders": {
-      "language": {
+      "script": {
         "type": "String",
-        "example": "Hindi"
+        "example": "Devanagari"
       }
     }
   },
@@ -4210,17 +4210,13 @@
   "@settingsAlphabetTitle": {
     "description": "Title of the dialog with a switch per language: learn its alphabet, or Latin letters only."
   },
-  "settingsAlphabetOn": "Learning the {script, select, devanagari{Devanagari} bengali{Bengali} gujarati{Gujarati} kannada{Kannada} telugu{Telugu} kana{kana} other{{language}}} script",
+  "settingsAlphabetOn": "Learning the {script} script",
   "@settingsAlphabetOn": {
-    "description": "In the Alphabets dialog, under a language whose switch is on. {script} is the deck files’ script code; other scripts take the language’s name. Shown while the switch is on: says what happens now, and changes the moment it is flipped.",
+    "description": "In the Alphabets dialog, under a language whose switch is on. {script} is the script's own name, scriptName (#551), never the language's. Shown while the switch is on: says what happens now, and changes the moment it is flipped.",
     "placeholders": {
       "script": {
         "type": "String",
-        "example": "telugu"
-      },
-      "language": {
-        "type": "String",
-        "example": "Telugu"
+        "example": "Devanagari"
       }
     }
   },
@@ -4544,17 +4540,23 @@
   "@onboardingSpokenNeedOne": {
     "description": "First-launch question, just above the button while it is disabled: why it is."
   },
-  "knownReadsScript": "Do you read the {script, select, devanagari{Devanagari} bengali{Bengali} gujarati{Gujarati} kannada{Kannada} telugu{Telugu} latin{Latin} kana{kana} arabic{Arabic} other{{language}}} script?",
-  "@knownReadsScript": {
-    "description": "The sheet's question in Languages you know (#462, #490) for a language with no question of its own in its script yet: an English fallback. {script} is the deck files’ script code; another script takes the language’s name. Reviewing a course needs both its scripts read.",
+  "scriptName": "{script, select, bengali{Eastern Nagari} devanagari{Devanagari} gurmukhi{Gurmukhi} shahmukhi{Shahmukhi} gujarati{Gujarati} odia{Odia} kannada{Kannada} telugu{Telugu} tamil{Tamil} malayalam{Malayalam} ol_chiki{Ol Chiki} arabic{Perso-Arabic} meitei_mayek{Meitei Mayek} latin{Latin} kana{Kana} other{}}",
+  "@scriptName": {
+    "description": "A script's own name, never a language's (owner, 2026-10-17, #551: \"All scripts should have their own names, not just inherit the language\"). {script} is the code in assets/languages.yaml and the deck files: bengali is Eastern Nagari, the script of Bengali, Assamese and Manipuri; arabic is Perso-Arabic; shahmukhi is the Perso-Arabic alphabet as Punjabi writes it. A code with no name here gives nothing, and the app then names the script after its language. Every sentence that names a script takes this.",
     "placeholders": {
       "script": {
         "type": "String",
-        "example": "telugu"
-      },
-      "language": {
+        "example": "bengali"
+      }
+    }
+  },
+  "knownReadsScript": "Do you read the {script} script?",
+  "@knownReadsScript": {
+    "description": "The sheet's question in Languages you know (#462, #490, #551) for a language written in one script, with no question of its own in that script yet: an English fallback. {script} is the script's own name, scriptName, never the language's: Eastern Nagari for Bengali and Assamese. Reviewing a course needs both its scripts read.",
+    "placeholders": {
+      "script": {
         "type": "String",
-        "example": "Telugu"
+        "example": "Eastern Nagari"
       }
     }
   },
@@ -4686,23 +4688,47 @@
       }
     }
   },
-  "knownCanReadFallback": "I can read the {language} script",
+  "knownCanReadFallback": "I can read the {script} script",
   "@knownCanReadFallback": {
-    "description": "Languages you know, the sheet: the answer of someone who reads the script, for a language with no sentence of its own in its script yet.",
+    "description": "Languages you know, the sheet: the answer of someone who reads a script, for a language with no sentence of its own in its script yet, and for each script of a language written in several (#551). {script} is the script's own name, scriptName, the same as in the question.",
     "placeholders": {
-      "language": {
+      "script": {
         "type": "String",
-        "example": "Telugu"
+        "example": "Eastern Nagari"
       }
     }
   },
-  "knownAnswerRead": "Can read the {language} script",
-  "@knownAnswerRead": {
-    "description": "Languages you know: under a chosen language, its answer.",
+  "knownReadsWhichScripts": "Which scripts do you read {language} in?",
+  "@knownReadsWhichScripts": {
+    "description": "The sheet's question in Languages you know for a language written in several scripts, such as Punjabi in Gurmukhi and Shahmukhi (#551). Under it, an answer per script to tick, knownCanReadFallback, then knownSpeakOnly.",
     "placeholders": {
       "language": {
         "type": "String",
-        "example": "Bengali"
+        "example": "Punjabi"
+      }
+    }
+  },
+  "knownScriptsDone": "Done",
+  "@knownScriptsDone": {
+    "description": "Button on the sheet of a language written in several scripts (#551): keeps the scripts ticked as those read. Waits for one to be ticked."
+  },
+  "knownAnswerRead": "Can read the {script} script",
+  "@knownAnswerRead": {
+    "description": "Languages you know: under a chosen language, its answer. {script} is the script's own name, scriptName (#551).",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Eastern Nagari"
+      }
+    }
+  },
+  "knownAnswerReadSeveral": "Can read {scripts}",
+  "@knownAnswerReadSeveral": {
+    "description": "Languages you know: under a chosen language written in several scripts, its answer when more than one of them is read (#551). {scripts} are the scripts' own names, joined by commonListSeparator.",
+    "placeholders": {
+      "scripts": {
+        "type": "String",
+        "example": "Gurmukhi, Shahmukhi"
       }
     }
   },
@@ -5124,13 +5150,17 @@
   "@nativeChoiceChoose": {
     "description": "Button on the Today card that opens the choice of which language a course is taught from."
   },
-  "alphabetAskTitle": "Learn the {language} alphabet?",
+  "alphabetAskTitle": "Learn {language} in the {script} script?",
   "@alphabetAskTitle": {
-    "description": "Asked for each language chosen to learn whose course has script decks, before placement.",
+    "description": "Asked for each language chosen to learn whose course has script decks, before placement. {script} is the script's own name, scriptName (#551).",
     "placeholders": {
       "language": {
         "type": "String",
         "example": "Hindi"
+      },
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
       }
     }
   },
@@ -6546,17 +6576,13 @@
       }
     }
   },
-  "reviewPairNoScript": "You can’t read the {script, select, devanagari{Devanagari} bengali{Bengali} gujarati{Gujarati} kannada{Kannada} telugu{Telugu} latin{Latin} kana{kana} arabic{Arabic} other{{language}}} script",
+  "reviewPairNoScript": "You can’t read the {script} script",
   "@reviewPairNoScript": {
-    "description": "Under a greyed course in Languages you review: why it cannot be ticked, a script the reviewer said in Languages you know they do not read. {script} is the deck files’ script code; another script takes the language’s name.",
+    "description": "Under a greyed course in Languages you review: why it cannot be ticked, a script the reviewer said in Languages you know they do not read. {script} is the script's own name, scriptName (#551), never the language's.",
     "placeholders": {
       "script": {
         "type": "String",
-        "example": "telugu"
-      },
-      "language": {
-        "type": "String",
-        "example": "Telugu"
+        "example": "Devanagari"
       }
     }
   },
@@ -8215,12 +8241,13 @@
   "@pickerNameSeparator": {
     "description": "Between a language's English name and its own name on its card: “Telugu · తెలుగు”, and between parts of a line."
   },
-  "pickerScript": "{script, select, devanagari{Devanagari script} bengali{Bengali script} gujarati{Gujarati script} kannada{Kannada script} telugu{Telugu script} latin{Latin script} kana{Kana} arabic{Arabic script} other{}}",
+  "pickerScript": "{script} script",
   "@pickerScript": {
-    "description": "On a language's card, under its names: the script its decks write it in. {script} is the deck files' script code; an unknown one shows nothing.",
+    "description": "On a language's card, under its names: the script its decks write it in. {script} is the script's own name, scriptName (#551); a script with no name shows nothing.",
     "placeholders": {
       "script": {
-        "type": "String"
+        "type": "String",
+        "example": "Devanagari"
       }
     }
   },
@@ -8345,12 +8372,13 @@
       }
     }
   },
-  "pickerLearnScript": "Learn the {language} script",
+  "pickerLearnScript": "Learn the {script} script",
   "@pickerLearnScript": {
-    "description": "A switch inside a chosen language's card, on by default: learn the language with its script, or in Latin letters only.",
+    "description": "A switch inside a chosen language's card, on by default: learn the language with its script, or in Latin letters only. {script} is the script's own name, scriptName (#551), never the language's.",
     "placeholders": {
-      "language": {
-        "type": "String"
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
       }
     }
   },

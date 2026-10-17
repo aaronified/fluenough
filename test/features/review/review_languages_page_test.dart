@@ -95,10 +95,7 @@ void main() {
     expect(tileOf(tester, 'Spanish', 'English').enabled, isFalse);
     expect(find.text(l10n.reviewPairUnknown('Spanish')), findsOneWidget);
     expect(tileOf(tester, 'Hindi', 'English').enabled, isFalse);
-    expect(
-      find.text(l10n.reviewPairNoScript('devanagari', 'Hindi')),
-      findsOneWidget,
-    );
+    expect(find.text(l10n.reviewPairNoScript('Devanagari')), findsOneWidget);
 
     state.settings.scriptsRead = const <String, bool>{'en': true, 'hi': true};
     await tester.pumpAndSettle();

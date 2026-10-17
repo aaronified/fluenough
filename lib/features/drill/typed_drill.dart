@@ -6,6 +6,7 @@ import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/card_picture.dart';
 import '../../ui/widgets/answer_field.dart';
@@ -274,7 +275,9 @@ class _TypedDrillState extends State<TypedDrill> {
     }
     if (translit) return l10n.drillTypeLatin(_exampleReading());
     return language.needsReading
-        ? l10n.drillTypeInScript(language.name)
+        ? l10n.drillTypeInScript(
+            l10n.scriptNameOr(language.script, language.name),
+          )
         : l10n.drillTypeIn(language.name);
   }
 
