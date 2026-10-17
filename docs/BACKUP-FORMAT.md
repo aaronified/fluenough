@@ -54,6 +54,9 @@ update. Each can be downloaded or restored from Recent backups.
 
 A restore reads and checks the whole file, and shows what it holds, before
 anything changes. It replaces the progress and settings the learner has,
-after asking, and keeps a copy of them first. Restoring is off in the
-shipped app until the owner decides how a restore may replace the
-append-only review log (AGENTS.md rule 9; asked on #470).
+after asking, and keeps a copy of them first. Replacing the append-only
+review log is the one logged exception to AGENTS.md rule 9 (owner,
+2026-10-17: "Logged exception"): in one transaction, the database empties
+`reviews` and `leech_actions`, writes the backup's, and appends to
+`restores` when it happened, which backup it was and the name of the copy
+kept first. A failure leaves the app as it was.
