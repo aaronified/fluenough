@@ -85,11 +85,7 @@ void main() {
     await state.load();
     // Hindi starts with words and basic sentences, not its script.
     expect(unitIds(state), <List<String>>[
-      <String>[
-        'hi-en-phrasebook',
-        'hi-en-first-words',
-        'hi-en-grammar-sentences',
-      ],
+      <String>['hi-en-phrasebook', 'hi-en-first-words'],
       <String>['hi-en-sound-differences'],
     ]);
     final untaught = state.untaughtCards('hi');
@@ -113,19 +109,15 @@ void main() {
   test('a placed unit is skipped, and its decks read Done', () async {
     final state = learning(
       <String>['hi'],
-      placed: <String>{
-        'hi-en-phrasebook',
-        'hi-en-first-words',
-        'hi-en-grammar-sentences',
-      },
+      placed: <String>{'hi-en-phrasebook', 'hi-en-first-words'},
     );
     addTearDown(state.dispose);
     await state.load();
     expect(unitIds(state).first, <String>['hi-en-sound-differences']);
-    expect(unitIds(state).last.first, 'hi-en-grammar-differences');
+    expect(unitIds(state).last.first, 'hi-en-questions');
     expect(badgeOf(state, 'hi-en-first-words'), DeckBadgeKind.done);
     expect(badgeOf(state, 'hi-en-sound-differences'), DeckBadgeKind.pending);
-    expect(badgeOf(state, 'hi-en-grammar-differences'), DeckBadgeKind.pending);
+    expect(badgeOf(state, 'hi-en-questions'), DeckBadgeKind.pending);
     expect(badgeOf(state, 'hi-en-market'), DeckBadgeKind.notDone);
     // A placed deck can still be studied, in a lesson of its own.
     expect(
@@ -145,15 +137,15 @@ void main() {
     final state = learning(<String>['hi']);
     addTearDown(state.dispose);
     await state.load();
-    final sentences = state.deckById('hi-en-grammar-sentences')!;
-    while (state.notStudiedIn(sentences) > 0) {
+    final phrasebook = state.deckById('hi-en-phrasebook')!;
+    while (state.notStudiedIn(phrasebook) > 0) {
       for (final item
-          in state.buildSession(DrillRequest.untaught(sentences.id)).items) {
+          in state.buildSession(DrillRequest.untaught(phrasebook.id)).items) {
         state.record(item, 5);
       }
     }
-    expect(unitIds(state).first, contains(sentences.id));
-    expect(badgeOf(state, sentences.id), DeckBadgeKind.done);
+    expect(unitIds(state).first, contains(phrasebook.id));
+    expect(badgeOf(state, phrasebook.id), DeckBadgeKind.done);
     expect(badgeOf(state, 'hi-en-first-words'), DeckBadgeKind.pending);
   });
 
