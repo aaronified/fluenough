@@ -269,6 +269,36 @@ void main() {
     });
   });
 
+  group('what is unfolded on Waiting for review is remembered', () {
+    test('per language, across a restart', () {
+      final settings = SettingsNotifier()
+        ..setWaitingLanguageOpen('te', true)
+        ..setWaitingLanguageOpen('hi', true)
+        ..setWaitingLanguageOpen('hi', false);
+      final again = SettingsNotifier()..restore(settings.toStored());
+      expect(again.isWaitingLanguageOpen('te'), isTrue);
+      expect(again.isWaitingLanguageOpen('hi'), isFalse);
+      expect(again.isWaitingLanguageOpen('bn'), isFalse);
+    });
+
+    testWidgets('a language stays unfolded when the page is opened again', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final state = await reviewerState();
+      await pumpScreen(tester, const WaitingForReviewPage(), state: state);
+      final l10n = l10nOf(tester);
+      expect(find.text(l10n.reviewOffensiveTitle), findsNothing);
+      await tester.tap(find.text('Telugu'));
+      await tester.pumpAndSettle();
+      expect(state.settings.isWaitingLanguageOpen('te'), isTrue);
+      // Away and back: a new page on the same state.
+      await pumpScreen(tester, const SizedBox(), state: state);
+      await pumpScreen(tester, const WaitingForReviewPage(), state: state);
+      expect(find.text(l10n.reviewOffensiveTitle), findsOneWidget);
+    });
+  });
+
   group('Reviewed, not sent', () {
     for (final scale in <double>[1.0, 1.4]) {
       for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
