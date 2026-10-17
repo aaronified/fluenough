@@ -971,9 +971,12 @@ have its own image, a picture from Wikimedia Commons or an
 - **Only for a concrete word it shows exactly**, as [`picture`](#card-fields)
   is ([ADR-0034](adr/0034-hear-say-write.md)): not for abstract words,
   kinship, or near misses. A card with a `picture` is such a word. So is a
-  noun without one that a reviewer approves (owner, 2026-10-16, #523:
-  "Also mark concrete", and how: "Importer proposes"): the importer
-  proposes its image, and a reviewer approves each before it lands.
+  noun, verb or adjective without one that a reviewer approves (owner,
+  2026-10-16, #523: "Also mark concrete", "Nouns, verbs, adjectives", and
+  how: "Importer proposes"): the importer proposes its image, and a
+  reviewer approves each before it lands. The approval names the card and
+  the file, `hi-0419=File.jpg` ("Pin the file"), so no other file can land;
+  approvals by mail come with #519.
 - **The shape is `audio`'s** ([A card's own recording](#a-cards-own-recording-audio)):
   the file is `decks/<lang>/images/<card id>.webp`, and `image` names it by
   that path, on a core card or a single-file card, never in a layer or on a
