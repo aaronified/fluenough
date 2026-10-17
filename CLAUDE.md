@@ -40,10 +40,11 @@ wherever the table above allows it.
 - **Pull requests for everything else** (owner, 2026-10-16: "Do use PRs for
   everything", replacing "Push straight to main" of 2026-10-11). Every other
   change goes through a pull request to main
-  (or to `decks-next`). Before opening it the checks pass: `flutter analyze`
-  clean, the full `flutter test` (read its "All tests passed" line, never a
-  truncated tail), the deck validator and the tools' tests, and one review
-  finds nothing blocking. The owner approves it in review; then merge it
+  (or to `decks-next`). Before it merges, CI's checks pass (`flutter
+  analyze`, the full `flutter test`, the deck validator and the tools'
+  tests) and one review finds nothing blocking. Never run the tests
+  locally (owner, 2026-10-17: "You should not run tests locally at all"):
+  commit, push, and read CI's result. The owner approves it in review; then merge it
   once CI is green (owner, 2026-10-16, on #529: "I have approved it in
   review. So you should be able to merge").
 - **Commit and push often** (owner, 2026-10-15: "Keep committing and pushing
