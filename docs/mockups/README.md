@@ -72,13 +72,6 @@ approval.
   ("Only this course's"); the status order and the 21-day learnt line
   stand ("Yes, both"); and the languages-you-know rows leave out languages
   the learner already has a course in ("Leave them out").
-
-## Awaiting approval
-
-Built to the issues' decisions; the choices they leave open are marked
-Proposed on the page and numbered in its last section, for the owner to
-approve one by one. Not spec until approved.
-
 - `reviewer-mode.html`: reviewer mode, adapted to today's app (owner,
   2026-10-17: "Mockup first"). Waiting for review with Reviewed, not sent
   and Reviewed and sent first, each sent suggestion Accepted, Rejected or
@@ -92,7 +85,12 @@ approve one by one. Not spec until approved.
   recording alone and Wiktionary items marked semi-verified and placed
   last (#508). Hindi and Bengali, light and dark, 1x and 1.4x. It replaces
   the 2026-10-09 drafts, which are in git history
-  (`git show 6715716:docs/mockups/reviewer-mode.html`).
+  (`git show 6715716:docs/mockups/reviewer-mode.html`). Approved by the owner, 2026-10-17, with the decisions the page marks
+  Proposed ("The reviewer mode mockup looks fine. Build it.").
+
+## Awaiting approval
+
+None.
 
 ## Deleted (owner, 2026-10-12)
 
