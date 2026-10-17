@@ -8,12 +8,14 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app.dart';
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/mail_share.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/shell_tab.dart';
 import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/core/models/deck.dart';
+import 'package:fluenough/core/review/deck_review.dart';
 import 'package:fluenough/core/numbers/number_practice.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart' show Ask;
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
@@ -34,6 +36,8 @@ import 'package:fluenough/features/profiles/spoken_languages_page.dart';
 import 'package:fluenough/features/review/how_reviewing_works.dart';
 import 'package:fluenough/features/review/offensive_review_page.dart';
 import 'package:fluenough/features/review/review_page.dart';
+import 'package:fluenough/features/review/reviewed_not_sent_page.dart';
+import 'package:fluenough/features/review/reviewed_sent_page.dart';
 import 'package:fluenough/features/review/waiting_page.dart';
 import 'package:fluenough/features/settings/appearance_page.dart';
 import 'package:fluenough/features/settings/activities_page.dart';
@@ -734,16 +738,43 @@ void main() {
           'waiting for review in Telugu',
           const WaitingForReviewPage(),
           (tester, state) async {
-            state.settings.reviewLanguages = const <String>{'te'};
+            state.settings
+              ..spokenLanguages = const <String>['en', 'te']
+              ..scriptsRead = const <String, bool>{'en': true, 'te': true}
+              ..reviewLanguages = const <String>{'te'};
           },
         ),
         (
           'waiting for review in Telugu, unfolded',
           const WaitingForReviewPage(),
           (tester, state) async {
-            state.settings.reviewLanguages = const <String>{'te'};
+            state.settings
+              ..spokenLanguages = const <String>['en', 'te']
+              ..scriptsRead = const <String, bool>{'en': true, 'te': true}
+              ..reviewLanguages = const <String>{'te'};
             await tester.pumpAndSettle();
             await tapShown(tester, find.text('Telugu'));
+          },
+        ),
+        (
+          'reviewed, not sent',
+          const ReviewedNotSentPage(),
+          (tester, state) async {
+            final words = state.deckById(wordsDeck)!;
+            state.reviewing.suggest(words, words.cards.last, const <Suggestion>[
+              Suggestion(
+                part: CardPart.meaning,
+                now: 'mother',
+                text: 'mum',
+                why: 'Less formal.',
+              ),
+            ]);
+            state.reviewing.markRight(words, words.cards.first);
+            await tester.pumpAndSettle();
+            await tapShown(
+              tester,
+              find.text(l10nOf(tester).reviewUnsentLooksRight(1)),
+            );
           },
         ),
         // The reviewer guide as the walkthrough (#409): its first step, one
@@ -796,6 +827,64 @@ void main() {
           usePhone(tester);
           final semantics = tester.ensureSemantics();
           await pumpReview(tester, page, open, themeMode: themeMode);
+          await meetsEveryGuideline(tester);
+          semantics.dispose();
+        });
+      }
+    });
+  }
+
+  // Reviewed and sent (#471): the states come from the deck files, so it
+  // needs a review sent from a phone whose deck holds a proposal.
+  for (final scale in <double>[1.0, 1.4]) {
+    for (final themeMode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+      testWidgets('reviewer mode: reviewed and sent, ${scale}x, '
+          '${themeMode.name} theme', (tester) async {
+        usePhone(tester, textScale: scale);
+        final semantics = tester.ensureSemantics();
+        final state = await reviewState(
+          proposed:
+              '[{ id: "aaaaaaaaaa", field: "native", now: "mother", '
+              'text: "mum", by: "$reviewerCode", date: "2026-10-09" }]',
+          reviewing: true,
+          share: FixedMailShare(),
+          settings: SettingsNotifier(
+            spokenLanguages: const <String>['en', 'te'],
+            learningLanguages: const <String>['te'],
+            learningChosen: true,
+          )..raterCode = reviewerCode,
+        );
+        final words = state.deckById(wordsDeck)!;
+        state.reviewing.suggest(words, words.cards.last, const <Suggestion>[
+          Suggestion(part: CardPart.meaning, now: 'mother', text: 'mum'),
+          Suggestion(part: CardPart.reading, now: 'ammaa', text: 'amma'),
+          Suggestion(part: CardPart.ipa, now: 'old', text: 'new'),
+          Suggestion(part: CardPart.picture, now: '', text: 'A mother.'),
+        ]);
+        await state.reviewing.send(state.reviewing.unsent, body: '');
+        await pumpScreen(
+          tester,
+          const ReviewedSentPage(),
+          state: state,
+          themeMode: themeMode,
+        );
+        expect(tester.takeException(), isNull);
+        expect(find.text(l10nOf(tester).reviewSentAccepted), findsWidgets);
+        await meetsEveryGuideline(tester);
+        semantics.dispose();
+      });
+    }
+  }
+
+  // The app's cap is 1.4x (#505; owner, 2026-10-17: only 1.4x is built for).
+  for (final themeMode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+    group('reviewer mode at 1.4x text, ${themeMode.name} theme', () {
+      for (final (name, page, open) in reviewScreens) {
+        testWidgets('$name: nothing clipped, guidelines met', (tester) async {
+          usePhone(tester, textScale: 1.4);
+          final semantics = tester.ensureSemantics();
+          await pumpReview(tester, page, open, themeMode: themeMode);
+          expect(tester.takeException(), isNull);
           await meetsEveryGuideline(tester);
           semantics.dispose();
         });
