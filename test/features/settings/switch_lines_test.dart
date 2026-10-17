@@ -325,7 +325,7 @@ void main() {
     }
   });
 
-  testWidgets('a skill, by language, and an alphabet, by language: each '
+  testWidgets('a skill, by language: each '
       'line before and after one tap', (tester) async {
     usePhone(tester);
     final state = await pumpScreen(
@@ -350,30 +350,6 @@ void main() {
     }
     await tester.tap(find.text(l10n.commonDone));
     await tester.pumpAndSettle();
-
-    await pumpScreen(tester, const LanguagesSettingsPage(), state: state);
-    final alphabets = find.text(l10n.settingsAlphabet);
-    await scrollTo(tester, alphabets);
-    await tester.tap(alphabets);
-    await tester.pumpAndSettle();
-    expect(
-      find.text(l10n.settingsAlphabetOn('telugu', telugu.name)),
-      findsOneWidget,
-    );
-    expect(
-      l10n.settingsAlphabetOn('telugu', 'Telugu'),
-      'Learning the Telugu script',
-    );
-    for (var i = 0; i < 2; i++) {
-      await _flip(
-        tester,
-        telugu.name,
-        on: l10n.settingsAlphabetOn(telugu.script, telugu.name),
-        off: state.courseUnits('te').isEmpty
-            ? l10n.settingsAlphabetOffEmpty
-            : l10n.settingsAlphabetOff,
-      );
-    }
   });
 
   testWidgets('a skill that needs a voice says, after its state, which '
@@ -470,7 +446,6 @@ void main() {
       final l10n = await AppLocalizations.delegate.load(const Locale('en'));
       for (final (page, label) in <(Widget, String)>[
         (const ActivitiesPage(), l10n.settingsSkillLanguages),
-        (const LanguagesSettingsPage(), l10n.settingsAlphabet),
       ]) {
         await pumpScreen(tester, page, state: _everythingOn());
         final opener = find.text(label).first;

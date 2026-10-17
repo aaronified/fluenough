@@ -178,7 +178,7 @@ void main() {
       await tester.tap(find.text(l10n.onboardingNext));
       await tester.pumpAndSettle();
     }
-    expect(find.text(l10n.knownAnswerRead('Bengali')), findsOneWidget);
+    expect(find.text(l10n.knownAnswerRead('Eastern Nagari')), findsOneWidget);
     expect(state.settings.spokenLanguages, ['en'], reason: 'not saved');
   });
 

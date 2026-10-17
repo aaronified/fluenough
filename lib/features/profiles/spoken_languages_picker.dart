@@ -2,10 +2,29 @@ import 'package:flutter/material.dart';
 
 import '../../core/data/spoken_languages.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/script_name.dart';
 
-/// What a learner answers on a language's sheet: reads its script, speaks
-/// it only, or takes it out of the list.
+/// What a learner answers on a language's sheet: reads its script, or
+/// some of its scripts, speaks it only, or takes it out of the list.
 enum KnownAnswer { reads, speaksOnly, remove }
+
+/// The sheet's answer, with the scripts read (#551).
+@immutable
+class KnownReply {
+  const KnownReply.reads(this.scripts) : answer = KnownAnswer.reads;
+  const KnownReply.speaksOnly()
+    : answer = KnownAnswer.speaksOnly,
+      scripts = const <String>[];
+  const KnownReply.remove()
+    : answer = KnownAnswer.remove,
+      scripts = const <String>[];
+
+  final KnownAnswer answer;
+
+  /// The scripts read, as `assets/languages.yaml` names them; empty unless
+  /// [answer] is [KnownAnswer.reads].
+  final List<String> scripts;
+}
 
 /// Languages you know (#53, #462, #490): one screen, used on the first
 /// launch and in Settings, which add only the chrome around it.
@@ -25,7 +44,7 @@ class SpokenLanguagesPicker extends StatefulWidget {
     this.header,
     this.footer,
     this.readsScript = const <String, bool>{},
-    this.onScriptChanged,
+    this.onScriptsChanged,
     this.locales,
   });
 
@@ -40,12 +59,13 @@ class SpokenLanguagesPicker extends StatefulWidget {
   /// Null reads [asset].
   final List<SpokenLanguage>? choices;
 
-  /// Whether the learner reads each language's script, by code (#462).
+  /// Whether the learner reads each language's scripts (#462, #551): by
+  /// [SpokenLanguage.readKey], its own script under its code.
   final Map<String, bool> readsScript;
 
-  /// Called with a language's code and whether its script is read, when the
-  /// sheet answers.
-  final void Function(String code, bool reads)? onScriptChanged;
+  /// Called with every answer, as [readsScript] keeps them, when a sheet
+  /// answers.
+  final ValueChanged<Map<String, bool>>? onScriptsChanged;
 
   /// The phone's languages, as (language, country), for the top picks. Null
   /// reads the platform's.
@@ -118,35 +138,40 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
 
   /// Opens [language]'s sheet and applies the answer.
   Future<void> _ask(SpokenLanguage language) async {
-    final answer = await showModalBottomSheet<KnownAnswer>(
+    final reply = await showModalBottomSheet<KnownReply>(
       context: context,
       isScrollControlled: true,
       useSafeArea: true,
       showDragHandle: true,
       builder: (_) => KnownLanguageSheet(
         language: language,
-        current: _chosen.contains(language.code) ? _reads[language.code] : null,
+        current: _chosen.contains(language.code)
+            ? language.scriptsReadIn(_reads)
+            : null,
         chosen: _chosen.contains(language.code),
       ),
     );
-    if (answer == null || !mounted) return;
+    if (reply == null || !mounted) return;
     setState(() {
-      if (answer == KnownAnswer.remove) {
+      final others = <String, bool>{
+        for (final e in _reads.entries)
+          if (readKeyLanguage(e.key) != language.code) e.key: e.value,
+      };
+      if (reply.answer == KnownAnswer.remove) {
         _chosen = <String>[
           for (final c in _chosen)
             if (c != language.code) c,
         ];
-        _reads = <String, bool>{
-          for (final e in _reads.entries)
-            if (e.key != language.code) e.key: e.value,
-        };
+        _reads = others;
       } else {
-        final reads = answer == KnownAnswer.reads;
         if (!_chosen.contains(language.code)) {
           _chosen = <String>[..._chosen, language.code];
         }
-        _reads = <String, bool>{..._reads, language.code: reads};
-        widget.onScriptChanged?.call(language.code, reads);
+        _reads = <String, bool>{
+          ...others,
+          ...language.readAnswers(reply.scripts),
+        };
+        widget.onScriptsChanged?.call(_reads);
       }
     });
     widget.onChanged(_chosen);
@@ -331,7 +356,7 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
   Widget _row(AppLocalizations l10n, SpokenLanguage language) {
     final theme = Theme.of(context);
     final on = _chosen.contains(language.code);
-    final reads = _reads[language.code];
+    final reads = language.scriptsReadIn(_reads);
     final same = language.ownName == language.name;
     return ListTile(
       key: ValueKey<String>('lang-${language.code}'),
@@ -340,13 +365,7 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
           ? Text.rich(_ownNameMarked(l10n, language))
           : Text(language.name),
       subtitle: on
-          ? (reads == null
-                ? null
-                : Text(
-                    reads
-                        ? l10n.knownAnswerRead(language.name)
-                        : l10n.knownAnswerSpeak(language.name),
-                  ))
+          ? (reads == null ? null : Text(_answer(l10n, language, reads)))
           : same
           ? null
           : Text.rich(
@@ -359,6 +378,23 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
       onTap: () => _ask(language),
     );
   }
+}
+
+/// A chosen language's answer, under it: the scripts read, by their own
+/// names, or "Can only speak".
+String _answer(
+  AppLocalizations l10n,
+  SpokenLanguage language,
+  List<String> reads,
+) {
+  String name(String script) => l10n.scriptNameOr(script, language.name);
+  return switch (reads) {
+    [] => l10n.knownAnswerSpeak(language.name),
+    [final one] => l10n.knownAnswerRead(name(one)),
+    _ => l10n.knownAnswerReadSeveral(
+      reads.map(name).join(l10n.commonListSeparator),
+    ),
+  };
 }
 
 /// A group's label on the 24 px line, with a note at its end.
@@ -407,8 +443,13 @@ class _Heading extends StatelessWidget {
 /// language's own script, with no translation, and marked with its language
 /// so a screen reader reads them in its voice: being able to read the
 /// answer is the test. The other answer is English. Neither is called Yes or
-/// No. A language with no sentences of its own yet asks in English.
-class KnownLanguageSheet extends StatelessWidget {
+/// No. A language with no sentences of its own yet asks in English, naming
+/// the script by its own name (#551).
+///
+/// A language written in several scripts, such as Punjabi in Gurmukhi and
+/// Shahmukhi, asks which of them are read (#551): one answer to tick per
+/// script, and Done, or "I can only speak it" in one tap.
+class KnownLanguageSheet extends StatefulWidget {
   const KnownLanguageSheet({
     super.key,
     required this.language,
@@ -418,31 +459,49 @@ class KnownLanguageSheet extends StatelessWidget {
 
   final SpokenLanguage language;
 
-  /// The answer given before: true reads the script, false speaks only;
+  /// The answer given before: the scripts read, empty for "speaks only";
   /// null none.
-  final bool? current;
+  final List<String>? current;
 
   /// Whether the language is already in the list: it can then be removed.
   final bool chosen;
 
   @override
+  State<KnownLanguageSheet> createState() => _KnownLanguageSheetState();
+}
+
+class _KnownLanguageSheetState extends State<KnownLanguageSheet> {
+  /// The scripts ticked, for a language written in several.
+  late final Set<String> _ticked = <String>{...?widget.current};
+
+  @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    final own = language.asksInOwnScript;
+    final language = widget.language;
+    final current = widget.current;
+    final several = language.hasSeveralScripts;
+    final own = !several && language.asksInOwnScript;
     final locale = Locale(language.code);
-    final question = own
+    String name(String? script) => l10n.scriptNameOr(script, language.name);
+    final ownScripts = several && language.asksScriptsInOwnScript;
+    final question = several
+        ? (ownScripts
+              ? language.scriptsQuestion!
+              : l10n.knownReadsWhichScripts(language.name))
+        : own
         ? language.scriptQuestion!
-        : l10n.knownReadsScript(language.script ?? '', language.name);
+        : l10n.knownReadsScript(name(language.script));
     final read = own
         ? language.scriptCanRead!
-        : l10n.knownCanReadFallback(language.name);
+        : l10n.knownCanReadFallback(name(language.script));
+    void pop(KnownReply reply) => Navigator.of(context).pop(reply);
     Widget option({
       required Key key,
       required Widget text,
       required IconData icon,
       required bool selected,
-      required KnownAnswer answer,
+      required KnownReply reply,
     }) => ListTile(
       key: key,
       minVerticalPadding: 12,
@@ -450,7 +509,7 @@ class KnownLanguageSheet extends StatelessWidget {
       title: text,
       trailing: Icon(selected ? Icons.radio_button_checked : icon),
       selected: selected,
-      onTap: () => Navigator.of(context).pop(answer),
+      onTap: () => pop(reply),
     );
 
     return MediaQuery(
@@ -465,27 +524,72 @@ class KnownLanguageSheet extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
+              // The language the sheet is about, as its list row names it,
+              // read before the question.
+              Padding(
+                key: const ValueKey<String>('know-language'),
+                padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 4),
+                child: Text.rich(
+                  language.ownName == language.name
+                      ? TextSpan(text: language.name)
+                      : _ownNameMarked(l10n, language),
+                  style: theme.textTheme.bodyMedium!.copyWith(
+                    color: theme.colorScheme.onSurfaceVariant,
+                  ),
+                ),
+              ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 12),
                 child: Semantics(
                   header: true,
                   namesRoute: true,
                   child: Text.rich(
-                    TextSpan(text: question, locale: own ? locale : null),
+                    TextSpan(
+                      text: question,
+                      locale: own || ownScripts ? locale : null,
+                    ),
                     style: theme.textTheme.titleLarge,
                   ),
                 ),
               ),
-              option(
-                key: const ValueKey<String>('know-read'),
-                text: Text.rich(
-                  TextSpan(text: read, locale: own ? locale : null),
-                  style: theme.textTheme.bodyLarge,
+              if (several)
+                for (final script in language.scripts)
+                  CheckboxListTile(
+                    key: ValueKey<String>('know-script-$script'),
+                    contentPadding: const EdgeInsetsDirectional.only(
+                      start: 24,
+                      end: 12,
+                    ),
+                    controlAffinity: ListTileControlAffinity.trailing,
+                    title: Text.rich(
+                      TextSpan(
+                        text:
+                            language.canReadIn(script) ??
+                            l10n.knownCanReadFallback(name(script)),
+                        locale: language.canReadIn(script) != null
+                            ? locale
+                            : null,
+                      ),
+                      style: theme.textTheme.bodyLarge,
+                    ),
+                    value: _ticked.contains(script),
+                    onChanged: (on) => setState(
+                      () => on ?? false
+                          ? _ticked.add(script)
+                          : _ticked.remove(script),
+                    ),
+                  )
+              else
+                option(
+                  key: const ValueKey<String>('know-read'),
+                  text: Text.rich(
+                    TextSpan(text: read, locale: own ? locale : null),
+                    style: theme.textTheme.bodyLarge,
+                  ),
+                  icon: Icons.menu_book_outlined,
+                  selected: current?.isNotEmpty ?? false,
+                  reply: KnownReply.reads(<String>[language.script ?? '']),
                 ),
-                icon: Icons.menu_book_outlined,
-                selected: current == true,
-                answer: KnownAnswer.reads,
-              ),
               option(
                 key: const ValueKey<String>('know-speak'),
                 text: Text(
@@ -493,27 +597,45 @@ class KnownLanguageSheet extends StatelessWidget {
                   style: theme.textTheme.bodyLarge,
                 ),
                 icon: Icons.record_voice_over_outlined,
-                selected: current == false,
-                answer: KnownAnswer.speaksOnly,
+                selected: current?.isEmpty ?? false,
+                reply: const KnownReply.speaksOnly(),
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16, 4, 16, 8),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
-                    if (chosen)
-                      TextButton(
-                        key: const ValueKey<String>('know-remove'),
-                        onPressed: () =>
-                            Navigator.of(context).pop(KnownAnswer.remove),
-                        child: Text(l10n.knownRemove(language.name)),
+                    Expanded(
+                      child: Align(
+                        alignment: AlignmentDirectional.centerStart,
+                        child: widget.chosen
+                            ? TextButton(
+                                key: const ValueKey<String>('know-remove'),
+                                onPressed: () => pop(const KnownReply.remove()),
+                                child: Text(l10n.knownRemove(language.name)),
+                              )
+                            : null,
                       ),
-                    const Spacer(),
+                    ),
                     TextButton(
                       key: const ValueKey<String>('know-cancel'),
                       onPressed: () => Navigator.of(context).pop(),
                       child: Text(l10n.commonCancel),
                     ),
+                    if (several) ...<Widget>[
+                      const SizedBox(width: 8),
+                      FilledButton(
+                        key: const ValueKey<String>('know-done'),
+                        onPressed: _ticked.isEmpty
+                            ? null
+                            : () => pop(
+                                KnownReply.reads(<String>[
+                                  for (final s in language.scripts)
+                                    if (_ticked.contains(s)) s,
+                                ]),
+                              ),
+                        child: Text(l10n.knownScriptsDone),
+                      ),
+                    ],
                   ],
                 ),
               ),

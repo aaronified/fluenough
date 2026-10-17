@@ -8,6 +8,7 @@ import '../../app/routes.dart';
 import '../../core/data/spoken_languages.dart';
 import '../../core/review/review_pairs.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/script_name.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
@@ -191,8 +192,9 @@ class _ReviewLanguagesPageState extends State<ReviewLanguagesPage> {
     final spoken = state.settings.spokenLanguages;
     final target = name(pair.target);
     final onPhone = _onPhone(state, pair);
-    String script(String code) =>
-        l10n.reviewPairNoScript(_scriptOf(state, code) ?? '', name(code));
+    String script(String code) => l10n.reviewPairNoScript(
+      l10n.scriptNameOr(_scriptOf(state, code), name(code)),
+    );
     final line = switch (block) {
       PairBlock.scriptsUnanswered => null,
       PairBlock.unknownTarget => l10n.reviewPairUnknown(target),
