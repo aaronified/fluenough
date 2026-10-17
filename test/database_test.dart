@@ -47,8 +47,8 @@ void main() {
         kind: kind,
       );
 
-  test('opens at version 7 with its seven tables', () async {
-    expect(db.schemaVersion, 7);
+  test('opens at version 8 with its eight tables', () async {
+    expect(db.schemaVersion, 8);
     final tables = await db
         .customSelect(
           "SELECT name FROM sqlite_master WHERE type = 'table' "
@@ -62,6 +62,7 @@ void main() {
       'decks',
       'fsrs_parameters',
       'leech_actions',
+      'restores',
       'reviews',
       'settings',
     ]);
@@ -291,6 +292,32 @@ void main() {
     final rows = await upgraded.fsrsParametersDao.all();
     expect(rows, hasLength(1));
     expect(rows.single.language, 'hi');
+  });
+
+  test('a version 7 database gets restores, append-only, and keeps its '
+      'reviews', () async {
+    final dir = Directory.systemTemp.createTempSync('fluenough');
+    addTearDown(() => dir.deleteSync(recursive: true));
+    final file = File('${dir.path}/seven.sqlite');
+
+    final old = AppDatabase(NativeDatabase(file));
+    await old.reviewsDao.append(review());
+    await old.customStatement('DROP TABLE restores');
+    await old.customStatement('PRAGMA user_version = 7');
+    await old.close();
+
+    final upgraded = AppDatabase(NativeDatabase(file));
+    addTearDown(upgraded.close);
+    expect(await upgraded.reviewsDao.all(), hasLength(1));
+    expect(await upgraded.restoresDao.all(), isEmpty);
+    final triggers = await upgraded
+        .customSelect(
+          "SELECT name FROM sqlite_master WHERE type = 'trigger' "
+          "AND tbl_name = 'restores' ORDER BY name",
+        )
+        .map((r) => r.read<String>('name'))
+        .get();
+    expect(triggers, <String>['restores_no_delete', 'restores_no_update']);
   });
 
   test('fsrs_parameters: one row per language and skill, replaced by the '

@@ -8,6 +8,8 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app.dart';
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/backup_files.dart';
+import 'package:fluenough/app/features.dart';
 import 'package:fluenough/app/mail_share.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
@@ -58,6 +60,7 @@ import 'package:fluenough/features/today/due_card.dart';
 import 'package:fluenough/ui/widgets/pace_parts.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 
+import 'support/backup_fixture.dart';
 import 'support/harness.dart';
 import 'support/paced_learner.dart';
 import 'support/review_fixture.dart';
@@ -875,6 +878,88 @@ void main() {
       });
     }
   }
+
+  // Backup and restore (#470): Your data with its Recent backups, the
+  // restore sheet, and the sheet for a file from a newer Fluenough, as
+  // shipped, with restore on (owner, 2026-10-17). Bengali and Hindi
+  // progress, as in the mockup.
+  group('backup and restore', () {
+    const restoreOn = FeatureRegistry.shipped();
+    for (final scale in <double>[1.0, 1.4]) {
+      for (final themeMode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+        final where = '${themeMode.name} theme, ${scale}x text';
+
+        testWidgets('Your data and Recent backups, $where', (tester) async {
+          usePhone(tester, textScale: scale);
+          tester.view.physicalSize = const Size(390 * 3, 5000 * 3);
+          final semantics = tester.ensureSemantics();
+          final app = await stateWithBackups(features: restoreOn);
+          await pumpScreen(
+            tester,
+            const YourDataPage(),
+            state: app.state,
+            themeMode: themeMode,
+          );
+          expect(tester.takeException(), isNull);
+          expect(
+            find.text(l10nOf(tester).settingsBackupMadeByYou('Sep 28')),
+            findsOneWidget,
+          );
+          await meetsEveryGuideline(tester);
+          semantics.dispose();
+        });
+
+        testWidgets('the restore sheet, $where', (tester) async {
+          usePhone(tester, textScale: scale);
+          tester.view.physicalSize = const Size(390 * 3, 5000 * 3);
+          final semantics = tester.ensureSemantics();
+          final app = await stateWithBackups(features: restoreOn);
+          await pumpScreen(
+            tester,
+            const YourDataPage(),
+            state: app.state,
+            themeMode: themeMode,
+          );
+          final l10n = l10nOf(tester);
+          await tester.tap(
+            scale > 1.3
+                ? find.byTooltip(l10n.settingsBackupRestore).first
+                : find.text(l10n.settingsBackupRestore).first,
+          );
+          await tester.pumpAndSettle();
+          expect(tester.takeException(), isNull);
+          expect(find.text(l10n.settingsRestoreTitle), findsOneWidget);
+          expect(
+            find.text(l10n.settingsRestoreProgressIn(6, 'Bengali and Hindi')),
+            findsOneWidget,
+          );
+          await meetsEveryGuideline(tester);
+          semantics.dispose();
+        });
+
+        testWidgets('the sheet for a file from a newer Fluenough, $where', (
+          tester,
+        ) async {
+          usePhone(tester, textScale: scale);
+          final semantics = tester.ensureSemantics();
+          final files = FixedBackupFiles()..toOpen = newerFile('0.7.0');
+          await pumpScreen(
+            tester,
+            const YourDataPage(),
+            state: AppState.test(features: restoreOn, backupFiles: files),
+            themeMode: themeMode,
+          );
+          final l10n = l10nOf(tester);
+          await tapShown(tester, find.text(l10n.settingsDataRestore));
+          await tester.pumpAndSettle();
+          expect(tester.takeException(), isNull);
+          expect(find.text(l10n.settingsRestoreNewerTitle), findsOneWidget);
+          await meetsEveryGuideline(tester);
+          semantics.dispose();
+        });
+      }
+    }
+  });
 
   // The app's cap is 1.4x (#505; owner, 2026-10-17: only 1.4x is built for).
   for (final themeMode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {

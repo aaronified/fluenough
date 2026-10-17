@@ -92,6 +92,15 @@ class UpdateCheckRow extends StatelessWidget {
     );
   }
 
+  /// [line], and under it, when the backup made with the download failed,
+  /// that the update goes on without it (#470).
+  static String _withBackupNote(
+    String line,
+    UpdateChecker updates,
+    AppLocalizations l10n,
+  ) =>
+      updates.backupFailed ? '$line\n${l10n.settingsUpdateBackupFailed}' : line;
+
   Widget _checkRow(BuildContext context, UpdateChecker updates) {
     final l10n = AppLocalizations.of(context)!;
     final current = updates.current;
@@ -148,7 +157,11 @@ class UpdateCheckRow extends StatelessWidget {
         icon: Icons.downloading,
         iconColor: Theme.of(context).colorScheme.primary,
         title: l10n.settingsUpdateDownloading(latest),
-        subtitle: l10n.settingsUpdatePercent(updates.percent),
+        subtitle: _withBackupNote(
+          l10n.settingsUpdatePercent(updates.percent),
+          updates,
+          l10n,
+        ),
         progress: updates.percent / 100,
         live: false,
         actions: <Widget>[
@@ -162,7 +175,11 @@ class UpdateCheckRow extends StatelessWidget {
         icon: Icons.install_mobile,
         iconColor: Theme.of(context).colorScheme.primary,
         title: l10n.settingsUpdateInstalling(latest),
-        subtitle: l10n.settingsUpdateInstallingDesc,
+        subtitle: _withBackupNote(
+          l10n.settingsUpdateInstallingDesc,
+          updates,
+          l10n,
+        ),
         actions: <Widget>[
           TextButton(
             onPressed: updates.checkAndInstall,
