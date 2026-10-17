@@ -1,5 +1,5 @@
 /// What became of a suggestion the reviewer sent (#471,
-/// docs/plans/waiting-for-review-layout.md), worked out from the deck files
+/// the reviewer mode mockup, section 1), worked out from the deck files
 /// on the phone alone: the phone keeps what was sent, not the review bot's
 /// answer, so it reads the deck.
 ///
