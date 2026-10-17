@@ -865,6 +865,8 @@ void main() {
       // It is, from its card in Languages I'm learning (#467).
       await tester.tap(find.text(l10n.navSettings));
       await tester.pumpAndSettle();
+      await tester.tap(find.text(l10n.settingsRowLanguages));
+      await tester.pumpAndSettle();
       final page = find.text(l10n.settingsLearn);
       await tester.ensureVisible(page);
       await tester.pumpAndSettle();
