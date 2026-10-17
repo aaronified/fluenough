@@ -3,12 +3,19 @@ import 'package:flutter/material.dart';
 import '../../core/data/spoken_languages.dart';
 import '../../l10n/app_localizations.dart';
 
-/// The languages a learner speaks, ticked and ranked (#53), as one
-/// reorderable list: the first launch's question and the Settings screen.
+/// What a learner answers on a language's sheet: reads its script, speaks
+/// it only, or takes it out of the list.
+enum KnownAnswer { reads, speaksOnly, remove }
+
+/// Languages you know (#53, #462, #490): one screen, used on the first
+/// launch and in Settings, which add only the chrome around it.
 ///
-/// Every row keeps one geometry, ticked or not: the checkbox's box on the
-/// 24 px line, the name on 72. A ticked row adds its rank and a drag handle
-/// at the end, so ticking never moves a name.
+/// From the top: a search, the chosen languages (best known first, the
+/// order they were chosen in), a few top picks from the phone's language and
+/// region, then every language grouped by family, folded by default.
+/// Tapping a language opens a bottom sheet that answers the language and
+/// whether its script is read in one tap (approved design:
+/// `docs/mockups/languages-you-know.html`).
 class SpokenLanguagesPicker extends StatefulWidget {
   const SpokenLanguagesPicker({
     super.key,
@@ -19,31 +26,35 @@ class SpokenLanguagesPicker extends StatefulWidget {
     this.footer,
     this.readsScript = const <String, bool>{},
     this.onScriptChanged,
+    this.locales,
   });
 
   static const String asset = 'assets/languages.yaml';
 
-  /// The ticked codes, best known first.
+  /// The chosen codes, best known first.
   final List<String> initial;
 
-  /// Called with the ticked codes, best known first, after every change.
+  /// Called with the chosen codes, best known first, after every change.
   final ValueChanged<List<String>> onChanged;
 
   /// Null reads [asset].
   final List<SpokenLanguage>? choices;
 
   /// Whether the learner reads each language's script, by code (#462).
-  /// A ticked language with a script and no answer shows its switch on.
   final Map<String, bool> readsScript;
 
-  /// Called with a language's code and its script switch's new value.
-  /// Null shows no script switches.
+  /// Called with a language's code and whether its script is read, when the
+  /// sheet answers.
   final void Function(String code, bool reads)? onScriptChanged;
+
+  /// The phone's languages, as (language, country), for the top picks. Null
+  /// reads the platform's.
+  final List<(String, String?)>? locales;
 
   /// Scrolls with the list, above it.
   final Widget? header;
 
-  /// Scrolls with the list, below it and the rank hint.
+  /// Scrolls with the list, below it.
   final Widget? footer;
 
   @override
@@ -51,21 +62,20 @@ class SpokenLanguagesPicker extends StatefulWidget {
 }
 
 class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
-  /// Drives the scrollbar, which shows there is more below when large text
-  /// pushes the list past the screen.
   final ScrollController _scroll = ScrollController();
+  final TextEditingController _search = TextEditingController();
 
   List<SpokenLanguage>? _choices;
-  List<String> _order = const <String>[];
-  Set<String> _ticked = const <String>{};
-
-  /// The script switches, kept here so that they move at once wherever the
-  /// owner does not rebuild this picker.
+  List<String> _chosen = const <String>[];
   late Map<String, bool> _reads = <String, bool>{...widget.readsScript};
+
+  /// The families open, by id. Every family starts folded.
+  final Set<String> _open = <String>{};
 
   @override
   void initState() {
     super.initState();
+    _search.addListener(() => setState(() {}));
     if (widget.choices case final given?) _init(given);
   }
 
@@ -78,6 +88,7 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
   @override
   void dispose() {
     _scroll.dispose();
+    _search.dispose();
     super.dispose();
   }
 
@@ -94,30 +105,59 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
   }
 
   void _init(List<SpokenLanguage> choices) {
-    final current = widget.initial;
-    final codes = [for (final c in choices) c.code];
+    final codes = {for (final c in choices) c.code};
     _choices = choices;
-    _ticked = {
-      for (final code in current)
+    _chosen = <String>[
+      for (final code in widget.initial)
         if (codes.contains(code)) code,
-    };
-    _order = [
-      for (final code in current)
-        if (codes.contains(code)) code,
-      for (final code in codes)
-        if (!current.contains(code)) code,
     ];
   }
 
-  List<String> get _ranked => [
-    for (final code in _order)
-      if (_ticked.contains(code)) code,
-  ];
+  SpokenLanguage _language(String code) =>
+      _choices!.firstWhere((c) => c.code == code);
 
-  void _change(void Function() change) {
-    setState(change);
-    widget.onChanged(_ranked);
+  /// Opens [language]'s sheet and applies the answer.
+  Future<void> _ask(SpokenLanguage language) async {
+    final answer = await showModalBottomSheet<KnownAnswer>(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      showDragHandle: true,
+      builder: (_) => KnownLanguageSheet(
+        language: language,
+        current: _chosen.contains(language.code) ? _reads[language.code] : null,
+        chosen: _chosen.contains(language.code),
+      ),
+    );
+    if (answer == null || !mounted) return;
+    setState(() {
+      if (answer == KnownAnswer.remove) {
+        _chosen = <String>[
+          for (final c in _chosen)
+            if (c != language.code) c,
+        ];
+        _reads = <String, bool>{
+          for (final e in _reads.entries)
+            if (e.key != language.code) e.key: e.value,
+        };
+      } else {
+        final reads = answer == KnownAnswer.reads;
+        if (!_chosen.contains(language.code)) {
+          _chosen = <String>[..._chosen, language.code];
+        }
+        _reads = <String, bool>{..._reads, language.code: reads};
+        widget.onScriptChanged?.call(language.code, reads);
+      }
+    });
+    widget.onChanged(_chosen);
   }
+
+  List<(String, String?)> _phoneLocales() =>
+      widget.locales ??
+      <(String, String?)>[
+        for (final l in WidgetsBinding.instance.platformDispatcher.locales)
+          (l.languageCode, l.countryCode),
+      ];
 
   @override
   Widget build(BuildContext context) {
@@ -126,200 +166,361 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
       return const Center(child: CircularProgressIndicator());
     }
     final l10n = AppLocalizations.of(context)!;
-    final ranked = _ranked;
-    final still = MediaQuery.disableAnimationsOf(context);
-    final hint = ranked.length < 2
-        ? const SizedBox(width: double.infinity)
-        : Semantics(
-            liveRegion: true,
-            child: PickerNote(
-              icon: Icons.drag_handle,
-              text: MediaQuery.accessibleNavigationOf(context)
-                  ? l10n.spokenRankHintActions
-                  : l10n.spokenRankHint,
+    final theme = Theme.of(context);
+    final query = _search.text.trim();
+    final families = <String>[];
+    for (final c in choices) {
+      final f = c.family ?? 'other';
+      if (!families.contains(f)) families.add(f);
+    }
+    List<SpokenLanguage> inFamily(String f) => <SpokenLanguage>[
+      for (final c in choices)
+        if ((c.family ?? 'other') == f) c,
+    ]..sort((a, b) => a.name.compareTo(b.name));
+
+    final body = <Widget>[];
+    if (query.isNotEmpty) {
+      var any = false;
+      for (final f in families) {
+        final all = inFamily(f);
+        final hits = <SpokenLanguage>[
+          for (final c in all)
+            if (c.matches(query)) c,
+        ];
+        if (hits.isEmpty) continue;
+        any = true;
+        body.add(
+          _Heading(
+            l10n.knownFamily(f),
+            note: l10n.knownSearchMatches(hits.length, all.length),
+          ),
+        );
+        body.addAll(<Widget>[for (final c in hits) _row(l10n, c)]);
+      }
+      if (!any) {
+        body.add(
+          Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(24, 16, 24, 16),
+            child: Text(
+              l10n.knownSearchNone(query),
+              style: theme.textTheme.bodyLarge,
+            ),
+          ),
+        );
+      }
+    } else {
+      if (_chosen.isNotEmpty) {
+        body
+          ..add(
+            _Heading(
+              l10n.knownYourLanguages,
+              note: l10n.knownYourLanguagesNote,
+            ),
+          )
+          ..addAll(<Widget>[for (final c in _chosen) _row(l10n, _language(c))]);
+      }
+      final picks = topPicksFor(_phoneLocales(), choices);
+      if (picks.isNotEmpty) {
+        body
+          ..add(_Heading(l10n.knownTopPicks))
+          ..add(
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 8),
+              child: Wrap(
+                spacing: 8,
+                runSpacing: 4,
+                children: <Widget>[
+                  for (final code in picks) _chip(_language(code)),
+                ],
+              ),
             ),
           );
+      }
+      body.add(_Heading(l10n.knownAllLanguages, note: l10n.knownByFamily));
+      for (final f in families) {
+        final languages = inFamily(f);
+        final open = _open.contains(f);
+        body.add(_familyRow(l10n, f, languages.length, open));
+        if (open) {
+          body.addAll(<Widget>[for (final c in languages) _row(l10n, c)]);
+        }
+      }
+    }
+
     return Scrollbar(
       controller: _scroll,
       thumbVisibility: true,
-      child: ReorderableListView(
-        scrollController: _scroll,
-        header: widget.header,
-        footer: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            // Not AnimatedSize at Duration.zero: it asserts.
-            if (still)
-              hint
-            else
-              AnimatedSize(
-                duration: Durations.medium1,
-                curve: Easing.emphasizedDecelerate,
-                alignment: AlignmentDirectional.topStart,
-                child: hint,
-              ),
-            ?widget.footer,
-            const SizedBox(height: 16),
-          ],
-        ),
-        onReorderItem: (from, to) => _change(() {
-          final order = List<String>.of(_order);
-          order.insert(to, order.removeAt(from));
-          _order = order;
-        }),
+      child: ListView(
+        controller: _scroll,
         children: <Widget>[
-          for (final (i, code) in _order.indexed)
-            _row(
-              context,
-              choices.firstWhere((c) => c.code == code),
-              rank: ranked.indexOf(code) + 1,
-              of: ranked.length,
-              index: i,
+          ?widget.header,
+          Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 8),
+            child: TextField(
+              key: const ValueKey<String>('known-search'),
+              controller: _search,
+              textInputAction: TextInputAction.search,
+              decoration: InputDecoration(
+                labelText: l10n.knownSearchHint,
+                prefixIcon: const Icon(Icons.search),
+                suffixIcon: query.isEmpty
+                    ? null
+                    : IconButton(
+                        tooltip: MaterialLocalizations.of(context)
+                            .clearButtonTooltip,
+                        icon: const Icon(Icons.close),
+                        onPressed: _search.clear,
+                      ),
+                border: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(28)),
+                ),
+              ),
             ),
+          ),
+          ...body,
+          ?widget.footer,
+          const SizedBox(height: 16),
         ],
       ),
     );
   }
 
-  /// [rank] is 1-based; 0 when not ticked.
-  Widget _row(
-    BuildContext context,
-    SpokenLanguage language, {
-    required int rank,
-    required int of,
-    required int index,
-  }) {
+  Widget _chip(SpokenLanguage language) {
+    final on = _chosen.contains(language.code);
+    return ActionChip(
+      key: ValueKey<String>('pick-${language.code}'),
+      avatar: on ? const Icon(Icons.check) : null,
+      label: Text(language.name),
+      onPressed: () => _ask(language),
+    );
+  }
+
+  Widget _familyRow(AppLocalizations l10n, String id, int count, bool open) {
+    final name = l10n.knownFamily(id);
+    void toggle() => setState(() => open ? _open.remove(id) : _open.add(id));
+    return Semantics(
+      button: true,
+      excludeSemantics: true,
+      label: open
+          ? l10n.knownFamilyExpanded(name, count)
+          : l10n.knownFamilyCollapsed(name, count),
+      onTap: toggle,
+      child: ListTile(
+        key: ValueKey<String>('family-$id'),
+        contentPadding: const EdgeInsetsDirectional.only(start: 24, end: 16),
+        title: Text(name),
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Text(
+              l10n.knownFamilyCount(count),
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+              ),
+            ),
+            const SizedBox(width: 8),
+            Icon(open ? Icons.expand_less : Icons.expand_more),
+          ],
+        ),
+        onTap: toggle,
+      ),
+    );
+  }
+
+  /// A language: English name and own name; once chosen, its answer.
+  Widget _row(AppLocalizations l10n, SpokenLanguage language) {
+    final theme = Theme.of(context);
+    final on = _chosen.contains(language.code);
+    final reads = _reads[language.code];
+    final same = language.ownName == language.name;
+    return ListTile(
+      key: ValueKey<String>('lang-${language.code}'),
+      contentPadding: const EdgeInsetsDirectional.only(start: 24, end: 16),
+      title: on && !same
+          ? Text.rich(_ownNameMarked(l10n, language))
+          : Text(language.name),
+      subtitle: on
+          ? (reads == null
+                ? null
+                : Text(
+                    reads
+                        ? l10n.knownAnswerRead(language.name)
+                        : l10n.knownAnswerSpeak(language.name),
+                  ))
+          : same
+          ? null
+          : Text.rich(
+              TextSpan(text: language.ownName, locale: Locale(language.code)),
+            ),
+      trailing: Icon(
+        on ? Icons.edit_outlined : Icons.add_circle_outline,
+        color: on ? theme.colorScheme.primary : null,
+      ),
+      onTap: () => _ask(language),
+    );
+  }
+}
+
+/// A group's label on the 24 px line, with a note at its end.
+class _Heading extends StatelessWidget {
+  const _Heading(this.text, {this.note});
+
+  final String text;
+  final String? note;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Padding(
+      padding: const EdgeInsetsDirectional.fromSTEB(24, 16, 24, 4),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.baseline,
+        textBaseline: TextBaseline.alphabetic,
+        children: <Widget>[
+          Expanded(
+            child: Semantics(
+              header: true,
+              child: Text(
+                text,
+                style: theme.textTheme.titleSmall!.copyWith(
+                  color: theme.colorScheme.primary,
+                ),
+              ),
+            ),
+          ),
+          if (note != null)
+            Text(
+              note!,
+              style: theme.textTheme.bodySmall!.copyWith(
+                color: theme.colorScheme.onSurfaceVariant,
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+}
+
+/// The bottom sheet that answers a language and its script in one tap.
+///
+/// The question and the "I can read it" answer are written only in the
+/// language's own script, with no translation, and marked with its language
+/// so a screen reader reads them in its voice: being able to read the
+/// answer is the test. The other answer is English. Neither is called Yes or
+/// No. A language with no sentences of its own yet asks in English.
+class KnownLanguageSheet extends StatelessWidget {
+  const KnownLanguageSheet({
+    super.key,
+    required this.language,
+    required this.current,
+    required this.chosen,
+  });
+
+  final SpokenLanguage language;
+
+  /// The answer given before: true reads the script, false speaks only;
+  /// null none.
+  final bool? current;
+
+  /// Whether the language is already in the list: it can then be removed.
+  final bool chosen;
+
+  @override
+  Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    final scheme = theme.colorScheme;
-    final ticked = rank > 0;
-    final onScript = widget.onScriptChanged;
-    final script = language.script;
-    final tile = CheckboxListTile(
-      controlAffinity: ListTileControlAffinity.leading,
-      // The checkbox is shrink-wrapped to 40 px with its 18 px box centred:
-      // 13 + 11 puts the box on the 24 px line, and 13 + 40 + 19 puts every
-      // name on 72. test/features/profiles/spoken_languages_page_test.dart
-      // holds both.
-      contentPadding: const EdgeInsetsDirectional.only(start: 13, end: 8),
-      horizontalTitleGap: 19,
-      value: ticked,
-      onChanged: (on) => _change(() {
-        final next = Set<String>.of(_ticked);
-        on == true ? next.add(language.code) : next.remove(language.code);
-        _ticked = next;
-      }),
-      title: Text.rich(_ownNameMarked(l10n, language)),
-      secondary: !ticked
-          ? null
-          : Row(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Semantics(
-                  label: l10n.spokenRankSemantics(rank, of),
-                  child: ExcludeSemantics(
-                    child: Container(
-                      constraints: const BoxConstraints(
-                        minWidth: 28,
-                        minHeight: 28,
-                      ),
-                      padding: const EdgeInsetsDirectional.symmetric(
-                        horizontal: 8,
-                      ),
-                      decoration: ShapeDecoration(
-                        shape: const StadiumBorder(),
-                        color: scheme.primary,
-                      ),
-                      // Factors of 1: centred, but only as tall as the digit.
-                      child: Align(
-                        widthFactor: 1,
-                        heightFactor: 1,
-                        child: Text(
-                          l10n.spokenRank(rank),
-                          style: theme.textTheme.labelLarge!.copyWith(
-                            color: scheme.onPrimary,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                ReorderableDragStartListener(
-                  index: index,
-                  // A tap on the handle must not untick the row.
-                  child: GestureDetector(
-                    behavior: HitTestBehavior.opaque,
-                    excludeFromSemantics: true,
-                    onTap: () {},
-                    child: SizedBox.square(
-                      dimension: 48,
-                      child: Icon(
-                        Icons.drag_handle,
-                        color: scheme.onSurfaceVariant,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+    final own = language.asksInOwnScript;
+    final locale = Locale(language.code);
+    final question = own
+        ? language.scriptQuestion!
+        : l10n.knownReadsScript(language.script ?? '', language.name);
+    final read = own
+        ? language.scriptCanRead!
+        : l10n.knownCanReadFallback(language.name);
+    Widget option({
+      required Key key,
+      required Widget text,
+      required IconData icon,
+      required bool selected,
+      required KnownAnswer answer,
+    }) => ListTile(
+      key: key,
+      minVerticalPadding: 12,
+      contentPadding: const EdgeInsetsDirectional.symmetric(horizontal: 24),
+      title: text,
+      trailing: Icon(selected ? Icons.radio_button_checked : icon),
+      selected: selected,
+      onTap: () => Navigator.of(context).pop(answer),
     );
-    if (!ticked || onScript == null) {
-      return KeyedSubtree(key: ValueKey<String>(language.code), child: tile);
-    }
-    // Under the ticked language, on the name's 72 px line: whether its
-    // script is read, which reviewing needs (#462). Asked, never assumed:
-    // neither answer is chosen until the learner chooses one.
-    final answer = _reads[language.code];
-    return Column(
-      key: ValueKey<String>(language.code),
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: <Widget>[
-        tile,
-        Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(72, 0, 24, 12),
+
+    return MediaQuery(
+      // The sheet's text grows at most one and a half times, so the question
+      // and both answers stay in view at the largest text size.
+      data: MediaQuery.of(context).copyWith(
+        textScaler: MediaQuery.textScalerOf(context).clamp(maxScaleFactor: 1.5),
+      ),
+      child: SafeArea(
+        child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            spacing: 8,
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Text(
-                l10n.knownReadsScript(script ?? '', language.name),
-                style: theme.textTheme.bodyMedium,
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 12),
+                child: Semantics(
+                  header: true,
+                  namesRoute: true,
+                  child: Text.rich(
+                    TextSpan(text: question, locale: own ? locale : null),
+                    style: theme.textTheme.titleLarge,
+                  ),
+                ),
               ),
-              SegmentedButton<bool>(
-                key: ValueKey<String>('script-${language.code}'),
-                emptySelectionAllowed: true,
-                showSelectedIcon: false,
-                segments: <ButtonSegment<bool>>[
-                  ButtonSegment<bool>(
-                    value: true,
-                    label: Text(l10n.knownScriptYes),
-                  ),
-                  ButtonSegment<bool>(
-                    value: false,
-                    label: Text(l10n.knownScriptNo),
-                  ),
-                ],
-                selected: <bool>{?answer},
-                onSelectionChanged: (picked) {
-                  // Tapping the chosen answer again keeps it: an answer,
-                  // once given, is changed, never taken back.
-                  if (picked.isEmpty) return;
-                  final reads = picked.single;
-                  setState(
-                    () => _reads = <String, bool>{
-                      ..._reads,
-                      language.code: reads,
-                    },
-                  );
-                  onScript(language.code, reads);
-                },
+              option(
+                key: const ValueKey<String>('know-read'),
+                text: Text.rich(
+                  TextSpan(text: read, locale: own ? locale : null),
+                  style: theme.textTheme.bodyLarge,
+                ),
+                icon: Icons.menu_book_outlined,
+                selected: current == true,
+                answer: KnownAnswer.reads,
+              ),
+              option(
+                key: const ValueKey<String>('know-speak'),
+                text: Text(
+                  l10n.knownSpeakOnly(language.name),
+                  style: theme.textTheme.bodyLarge,
+                ),
+                icon: Icons.record_voice_over_outlined,
+                selected: current == false,
+                answer: KnownAnswer.speaksOnly,
+              ),
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(16, 4, 16, 8),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    if (chosen)
+                      TextButton(
+                        key: const ValueKey<String>('know-remove'),
+                        onPressed: () =>
+                            Navigator.of(context).pop(KnownAnswer.remove),
+                        child: Text(l10n.knownRemove(language.name)),
+                      ),
+                    const Spacer(),
+                    TextButton(
+                      key: const ValueKey<String>('know-cancel'),
+                      onPressed: () => Navigator.of(context).pop(),
+                      child: Text(l10n.commonCancel),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
         ),
-      ],
+      ),
     );
   }
 }

@@ -12,13 +12,14 @@ import 'package:fluenough/app/shell_tab.dart';
 import 'package:fluenough/features/decks/course_card.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/decks/decks_page.dart';
+import 'package:fluenough/features/decks/inspect_page.dart';
+import 'package:fluenough/features/decks/unit_page.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/features/settings/settings_page.dart';
 import 'package:fluenough/features/stats/stats_page.dart';
 import 'package:fluenough/features/today/lesson_card.dart';
 import 'package:fluenough/features/today/today_page.dart';
 import 'package:fluenough/ui/widgets/language_bar.dart';
-import 'package:fluenough/ui/widgets/language_menu.dart';
 import 'package:fluenough/ui/widgets/stat_tile.dart';
 
 import '../support/harness.dart';
@@ -135,7 +136,6 @@ void main() {
     expect(barIn(DecksPage), findsOneWidget);
     expect(barIn(StatsPage), findsOneWidget);
     expect(barIn(SettingsPage), findsNothing);
-    expect(find.byType(LanguageMenu, skipOffstage: false), findsNothing);
     for (final tab in ShellTab.values) {
       state.shellTab.value = tab;
       await tester.pumpAndSettle();
@@ -577,39 +577,29 @@ void main() {
     });
   });
 
-  testWidgets('on a deck\'s page, the language menu offers no All, and '
-      'choosing another language goes back to the tabs', (tester) async {
+  testWidgets('a deck\'s, a unit\'s and Inspect\'s page belong to one deck, '
+      'so none has a language switcher (#526)', (tester) async {
     usePhone(tester);
-    final state = await pumpApp(tester, state: await aro());
-    final hindi = nameOf(state, 'hi');
-    final spanish = nameOf(state, 'es');
+    await pumpApp(tester, state: await aro());
     final context = tester.element(find.byType(TodayPage));
-    unawaited(AppNavigator.openDeck(context, 'hi-en-market'));
-    await tester.pumpAndSettle();
-    expect(find.byType(DeckDetailPage), findsOneWidget);
-    Future<void> choose(String name) async {
-      await tester.tap(find.byType(LanguageMenu).hitTestable());
+    for (final (open, page) in <(Future<void> Function(), Type)>[
+      (() => AppNavigator.openDeck(context, 'hi-en-market'), DeckDetailPage),
+      (() => AppNavigator.openUnit(context, 'hi-en-market'), UnitPage),
+      (() => AppNavigator.openInspect(context, 'hi-en-market'), InspectPage),
+    ]) {
+      unawaited(open());
       await tester.pumpAndSettle();
-      await tester.tap(
+      expect(find.byType(page), findsOneWidget);
+      expect(
         find.descendant(
-          of: find.byType(MenuItemButton),
-          matching: find.text(name),
+          of: find.byType(page),
+          matching: find.byType(LanguageBar),
         ),
+        findsNothing,
       );
+      await tester.pageBack();
       await tester.pumpAndSettle();
     }
-
-    await tester.tap(find.byType(LanguageMenu).hitTestable());
-    await tester.pumpAndSettle();
-    expect(find.byType(MenuItemButton), findsNWidgets(2));
-    await tester.tapAt(Offset.zero);
-    await tester.pumpAndSettle();
-
-    await choose(hindi);
-    expect(find.byType(DeckDetailPage), findsOneWidget);
-    await choose(spanish);
-    expect(find.byType(DeckDetailPage), findsNothing);
-    expect(state.shownLanguage, 'es');
   });
 
   group('accessibility', () {

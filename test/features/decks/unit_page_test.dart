@@ -33,6 +33,28 @@ Future<AppState> teluguLearner() async {
   return PathFixtures.state(app);
 }
 
+/// The same learner, who also knows Telugu and reads its script, and
+/// reviews it (#525): the one who is offered Review.
+Future<AppState> teluguReviewer() async {
+  final app = await teluguLearner();
+  app.settings
+    ..spokenLanguages = const <String>['en', 'te']
+    ..scriptsRead = const <String, bool>{'en': true, 'te': true}
+    ..reviewLanguages = const <String>{'te'};
+  return app;
+}
+
+/// One who knows Telugu but not the course's other language, English: the
+/// course is not one they can review (#525).
+Future<AppState> teluguOnlyReviewer() async {
+  final app = await teluguLearner();
+  app.settings
+    ..spokenLanguages = const <String>['te']
+    ..scriptsRead = const <String, bool>{'te': true}
+    ..reviewLanguages = const <String>{'te'};
+  return app;
+}
+
 /// Family's number on the Telugu path: its unit's place in the course.
 int familyNumber(AppState state) =>
     state
@@ -111,9 +133,9 @@ void main() {
       find.text(l10n.decksCourseHeading('Telugu', 'English')),
       findsOneWidget,
     );
-    // The bug icon stays, and Review is at the top end.
+    // The bug icon stays; Review is not offered to one learning Telugu.
     expect(find.byType(ReportButton), findsWidgets);
-    expect(find.text(l10n.unitReview), findsOneWidget);
+    expect(find.text(l10n.unitReview), findsNothing);
   });
 
   testWidgets('without a plan, no level is shown', (tester) async {
@@ -369,13 +391,38 @@ void main() {
     expect(button.onPressed, isNull);
   });
 
+  testWidgets('Review is offered for a language the learner reviews, not '
+      'for one they are learning (#525)', (tester) async {
+    for (final large in <bool>[false, true]) {
+      usePhone(tester, textScale: large ? 1.6 : 1.0);
+      for (final (learner, offered) in <(AppState, bool)>[
+        (await teluguLearner(), false),
+        (await teluguReviewer(), true),
+        (await teluguOnlyReviewer(), false),
+      ]) {
+        await pumpScreen(
+          tester,
+          const UnitPage(deckId: 'te-en-family'),
+          state: learner,
+        );
+        final l10n = l10nOf(tester);
+        expect(
+          find.text(l10n.unitReview).evaluate().isNotEmpty ||
+              find.byTooltip(l10n.unitReview).evaluate().isNotEmpty,
+          offered,
+          reason: 'large=$large offered=$offered',
+        );
+      }
+    }
+  });
+
   testWidgets('Review, with reviewing off, says to turn it on in Settings '
       'first, and goes there', (tester) async {
     usePhone(tester);
     final state = await pumpScreen(
       tester,
       const UnitPage(deckId: 'te-en-family'),
-      state: await teluguLearner(),
+      state: await teluguReviewer(),
     );
     final l10n = l10nOf(tester);
     await tester.tap(find.text(l10n.unitReview));
@@ -400,7 +447,7 @@ void main() {
     await pumpScreen(
       tester,
       const UnitPage(deckId: 'te-en-family'),
-      state: await teluguLearner(),
+      state: await teluguReviewer(),
     );
     final l10n = l10nOf(tester);
     final button = find.ancestor(
@@ -425,7 +472,7 @@ void main() {
     tester,
   ) async {
     usePhone(tester);
-    final learner = await teluguLearner();
+    final learner = await teluguReviewer();
     learner.reviewing.turnOn();
     await pumpScreen(
       tester,

@@ -4522,9 +4522,9 @@
   "@onboardingSpokenTitle": {
     "description": "First-launch question: the languages the learner already knows, not the one they want to learn, which is asked separately. The same choice as the Settings screen spokenTitle."
   },
-  "onboardingSpokenBody": "Tick each one you know. Today’s facts are written in them, and some compare the language you’re learning with one of them.",
+  "onboardingSpokenBody": "They decide your daily facts and which decks you can review.",
   "@onboardingSpokenBody": {
-    "description": "Under that question: how to answer, and what the answer is used for."
+    "description": "Under that question: what the answer is used for."
   },
   "onboardingSpokenPrivacy": "Kept on this phone, never sent to us. You can change it any time in {settings}, under “{row}”.",
   "@onboardingSpokenPrivacy": {
@@ -4540,13 +4540,13 @@
       }
     }
   },
-  "onboardingSpokenNeedOne": "Tick at least one language to go on.",
+  "onboardingSpokenNeedOne": "Choose at least one language to go on.",
   "@onboardingSpokenNeedOne": {
     "description": "First-launch question, just above the button while it is disabled: why it is."
   },
   "knownReadsScript": "Do you read the {script, select, devanagari{Devanagari} bengali{Bengali} gujarati{Gujarati} kannada{Kannada} telugu{Telugu} latin{Latin} kana{kana} arabic{Arabic} other{{language}}} script?",
   "@knownReadsScript": {
-    "description": "Question under a ticked language in Languages you know, on first launch and in Settings (#462), answered Yes or No; neither is chosen until the learner answers. {script} is the deck files’ script code; another script takes the language’s name. Reviewing a course needs both its scripts read.",
+    "description": "The sheet's question in Languages you know (#462, #490) for a language with no question of its own in its script yet: an English fallback. {script} is the deck files’ script code; another script takes the language’s name. Reviewing a course needs both its scripts read.",
     "placeholders": {
       "script": {
         "type": "String",
@@ -4558,25 +4558,13 @@
       }
     }
   },
-  "knownScriptYes": "Yes",
-  "@knownScriptYes": {
-    "description": "Answer to knownReadsScript: the learner reads the script."
-  },
-  "knownScriptNo": "No",
-  "@knownScriptNo": {
-    "description": "Answer to knownReadsScript: the learner does not read the script."
-  },
-  "knownScriptsNeeded": "Say whether you read each language’s script to go on.",
-  "@knownScriptsNeeded": {
-    "description": "Above the button in Languages you know, on first launch and in Settings, while it is disabled because a ticked language's script question is unanswered (#462)."
-  },
   "spokenTitle": "Languages you know",
   "@spokenTitle": {
     "description": "Title of the screen opened from Settings where the learner picks and ranks the languages they know, and says whether they read each one's script (#462). The first launch asks the same question as onboardingSpokenTitle. Was “Languages you speak”."
   },
-  "spokenBody": "Tick every language you know, and say whether you read its script. They decide which comparisons and daily facts you see, and which decks you can review.",
+  "spokenBody": "They decide your daily facts and which decks you can review.",
   "@spokenBody": {
-    "description": "Under the title of the spoken-languages screen opened from Settings: how to answer, and what the answer changes. How to rank them is the hint under the list (spokenRankHint), shown once two are ticked."
+    "description": "Under the title of the Languages you know screen opened from Settings: what the answer changes."
   },
   "spokenOption": "{name} · {ownName}",
   "@spokenOption": {
@@ -4592,37 +4580,155 @@
       }
     }
   },
-  "spokenRank": "{rank}",
-  "@spokenRank": {
-    "description": "The rank shown beside a ticked language, 1 for the one known best.",
+  "knownSearchHint": "Search languages",
+  "@knownSearchHint": {
+    "description": "Languages you know: the search field's hint and label."
+  },
+  "knownYourLanguages": "Your languages",
+  "@knownYourLanguages": {
+    "description": "Languages you know: heading above the chosen languages."
+  },
+  "knownYourLanguagesNote": "best known first",
+  "@knownYourLanguagesNote": {
+    "description": "Languages you know: beside that heading; the first chosen is the one known best."
+  },
+  "knownTopPicks": "Top picks",
+  "@knownTopPicks": {
+    "description": "Languages you know: heading above a few languages chosen from the phone's language and region."
+  },
+  "knownAllLanguages": "All languages",
+  "@knownAllLanguages": {
+    "description": "Languages you know: heading above the language families."
+  },
+  "knownByFamily": "by family",
+  "@knownByFamily": {
+    "description": "Languages you know: beside that heading."
+  },
+  "knownFamily": "{family, select, indo_aryan{Indo-Aryan} dravidian{Dravidian} tibeto_burman{Tibeto-Burman} austroasiatic{Austroasiatic} germanic{Germanic} other{Other languages}}",
+  "@knownFamily": {
+    "description": "Languages you know: a language family's name. {family} is the id in assets/languages.yaml.",
     "placeholders": {
-      "rank": {
-        "type": "int",
-        "example": "1"
+      "family": {
+        "type": "String",
+        "example": "dravidian"
       }
     }
   },
-  "spokenRankHint": "Drag by the handle to put the one you know best at the top. Today’s facts show it first.",
-  "@spokenRankHint": {
-    "description": "Under the spoken-language list once two or more are ticked, on first launch and in Settings: how to rank them, and what the rank does."
-  },
-  "spokenRankHintActions": "Use a language’s move actions to put the one you know best at the top. Today’s facts show it first.",
-  "@spokenRankHintActions": {
-    "description": "The same hint while a screen reader is on, which offers move actions instead of dragging."
-  },
-  "spokenRankSemantics": "Ranked {rank} of {count}",
-  "@spokenRankSemantics": {
-    "description": "Not shown: what a screen reader says for the number beside a ticked language, after its name. 1 is the language known best.",
+  "knownFamilyCount": "{count, plural, =1{1 language} other{{count} languages}}",
+  "@knownFamilyCount": {
+    "description": "Languages you know: how many languages a family holds, beside its name.",
     "placeholders": {
-      "rank": {
+      "count": {
         "type": "int",
-        "example": "1"
+        "example": "24"
+      }
+    }
+  },
+  "knownFamilyCollapsed": "{family}, {count, plural, =1{1 language} other{{count} languages}}, collapsed",
+  "@knownFamilyCollapsed": {
+    "description": "Not shown: what a screen reader says for a folded family's row.",
+    "placeholders": {
+      "family": {
+        "type": "String",
+        "example": "Indo-Aryan"
       },
       "count": {
         "type": "int",
-        "example": "2"
+        "example": "24"
       }
     }
+  },
+  "knownFamilyExpanded": "{family}, {count, plural, =1{1 language} other{{count} languages}}, expanded",
+  "@knownFamilyExpanded": {
+    "description": "Not shown: what a screen reader says for an open family's row.",
+    "placeholders": {
+      "family": {
+        "type": "String",
+        "example": "Indo-Aryan"
+      },
+      "count": {
+        "type": "int",
+        "example": "24"
+      }
+    }
+  },
+  "knownSearchMatches": "{matches} of {total}",
+  "@knownSearchMatches": {
+    "description": "Languages you know: while searching, beside a family's name: how many of its languages match.",
+    "placeholders": {
+      "matches": {
+        "type": "int",
+        "example": "2"
+      },
+      "total": {
+        "type": "int",
+        "example": "24"
+      }
+    }
+  },
+  "knownSearchNone": "No language matches “{query}”.",
+  "@knownSearchNone": {
+    "description": "Languages you know: when the search finds nothing.",
+    "placeholders": {
+      "query": {
+        "type": "String",
+        "example": "xyz"
+      }
+    }
+  },
+  "knownSpeakOnly": "I can only speak {language}",
+  "@knownSpeakOnly": {
+    "description": "Languages you know, the sheet: the answer of someone who speaks the language but does not read its script. Always in English, never Yes or No.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "knownCanReadFallback": "I can read the {language} script",
+  "@knownCanReadFallback": {
+    "description": "Languages you know, the sheet: the answer of someone who reads the script, for a language with no sentence of its own in its script yet.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "knownAnswerRead": "Can read the {language} script",
+  "@knownAnswerRead": {
+    "description": "Languages you know: under a chosen language, its answer.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      }
+    }
+  },
+  "knownAnswerSpeak": "Can only speak {language}",
+  "@knownAnswerSpeak": {
+    "description": "Languages you know: under a chosen language, its answer.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "knownRemove": "Remove {language}",
+  "@knownRemove": {
+    "description": "Languages you know, the sheet of a chosen language: takes it out of the list.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      }
+    }
+  },
+  "knownSave": "Save",
+  "@knownSave": {
+    "description": "Languages you know, opened from Settings: the button that keeps the answers. The first launch has Continue instead."
   },
   "settingsSpoken": "Languages I know",
   "@settingsSpoken": {
