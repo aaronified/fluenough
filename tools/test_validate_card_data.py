@@ -385,5 +385,57 @@ class Senses(Case):
                           f"filled in", self.layer_errors())
 
 
+class WiktionarySourceShape(Case):
+    """A source naming wiktionary.org is the entry's page only (owner,
+    2026-10-16, #518: "Link only"; 2026-10-17: "Wiktionary source shape")."""
+
+    def put_source(self, source: str) -> None:
+        self.setUp()
+        self.core(HOUSE, synonyms=[{"id": "abode", "word": "నివాసం",
+                                    "reading": "nivāsaṃ", "source": source}])
+
+    def test_the_importers_own_output_passes(self) -> None:
+        try:
+            import import_wiktionary
+        except ImportError:
+            self.skipTest("import_wiktionary is not importable")
+        for word in ("నివాసం", "ice cream"):
+            with self.subTest(word=word):
+                self.put_source(import_wiktionary.Importer.source(word))
+                self.assertNoError(CORE, "source")
+
+    def test_the_old_dump_date_form_fails(self) -> None:
+        self.put_source("https://en.wiktionary.org/wiki/నివాసం (kaikki.org 2026-10-01)")
+        errors = self.errors(CORE)
+        self.assertTrue(any(
+            e.startswith(f"card {HOUSE}: synonyms[0].source") and "'abode'" in e
+            and "https://en.wiktionary.org/wiki/<word>" in e for e in errors), errors)
+
+    def test_other_wrong_forms_fail(self) -> None:
+        for bad in ("http://en.wiktionary.org/wiki/నివాసం",
+                    "https://hi.wiktionary.org/wiki/నివాసం",
+                    "https://en.wiktionary.org/wiki/",
+                    "https://en.wiktionary.org/wiki/నివాసం#Telugu",
+                    "https://en.wiktionary.org/wiki/నివాసం?action=raw"):
+            with self.subTest(bad=bad):
+                self.put_source(bad)
+                self.assertTrue(any("names Wiktionary" in e for e in self.errors(CORE)))
+
+    def test_every_kind_of_item_is_checked(self) -> None:
+        bad = "https://en.wiktionary.org/wiki/x#y"
+        self.core(HOUSE, senses=[{"id": "s", "source": bad}])
+        self.assertTrue(any("senses[0].source" in e for e in self.errors(CORE)))
+        self.setUp()
+        self.core(HOUSE, examples=[{"target": "ఇల్లు.", "reading": "illu.", "source": bad}])
+        self.assertTrue(any("examples[0].source" in e for e in self.errors(CORE)))
+
+    def test_a_source_not_naming_wiktionary_is_unaffected(self) -> None:
+        for ok in ("Wiktionary", "https://tatoeba.org/en/sentences/show/1#x",
+                   "Own work (2026-10-01)"):
+            with self.subTest(ok=ok):
+                self.put_source(ok)
+                self.assertNoError(CORE, "source")
+
+
 if __name__ == "__main__":
     unittest.main()

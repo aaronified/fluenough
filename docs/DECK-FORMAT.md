@@ -3207,5 +3207,7 @@ Wikimedia Commons each keep their own licence and speaker credit.
   Tatoeba when a deck's source names them.
 - **The validator accepts any SPDX identifier** in `license`, so a deck a
   learner adds from a file may carry its own. It does not yet check that an
-  item taken from a source carries its attribution: that check comes with
-  the per-item `source` (open, #518).
+  item taken from a source carries its attribution. It does check the
+  shape of a `source` that names Wiktionary: exactly
+  `https://en.wiktionary.org/wiki/<word>`, nothing after the word (owner,
+  2026-10-17: "Wiktionary source shape").
