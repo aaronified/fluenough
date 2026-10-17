@@ -104,12 +104,14 @@ class SettingsPage extends StatelessWidget {
     required String line,
     required String route,
     Feature? feature,
+    bool opensWhileIncoming = false,
   }) => GroupedTile(
     leading: Icon(icon),
     title: title,
     subtitle: line,
     trailing: const Icon(Icons.chevron_right),
     feature: feature,
+    opensWhileIncoming: opensWhileIncoming,
     onTap: () => AppNavigator.openSettingsPage(context, route),
   );
 
@@ -196,6 +198,7 @@ class SettingsPage extends StatelessWidget {
             : l10n.settingsReminderOff,
         route: AppRoutes.settingsReminders,
         feature: Feature.reminder,
+        opensWhileIncoming: true,
       ),
       _row(
         context,

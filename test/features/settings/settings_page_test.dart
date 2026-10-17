@@ -148,8 +148,9 @@ void main() {
       }
     });
 
-    testWidgets('Reminders is incoming, with its badge, and says so when '
-        'tapped; with the feature on it opens its page', (tester) async {
+    testWidgets('Reminders is incoming, with its badge, and still opens its '
+        'page, whose controls are incoming (mockup decision 1a); with the '
+        'feature on it opens its page', (tester) async {
       usePhone(tester);
       final semantics = tester.ensureSemantics();
       await pumpScreen(tester, const SettingsPage());
@@ -162,11 +163,17 @@ void main() {
       expect(find.text(l10n.incomingBadge), findsWidgets);
       await tester.tap(node, warnIfMissed: false);
       await tester.pumpAndSettle();
-      expect(find.text(l10n.incomingSnackBar), findsOneWidget);
-      expect(find.byType(RemindersPage), findsNothing);
+      expect(find.text(l10n.incomingSnackBar), findsNothing);
+      expect(find.byType(RemindersPage), findsOneWidget);
+      expect(
+        find.descendant(
+          of: find.byType(RemindersPage),
+          matching: find.text(l10n.incomingBadge),
+        ),
+        findsWidgets,
+      );
       semantics.dispose();
 
-      await clearSnackBars(tester);
       await pumpScreen(
         tester,
         const SettingsPage(),
