@@ -3,6 +3,7 @@ import '../../app/memory_progress.dart';
 import '../../app/skill.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
+import '../../core/models/drill_mode.dart';
 
 /// Finds a card by its id, as [deckId] lists it if that deck still does,
 /// or else as the first deck listing it does; null if no deck does. Retired
@@ -112,6 +113,7 @@ class StatsNumbers {
     required this.longestStreak,
     required this.learned,
     required this.bySkill,
+    required this.scriptSkills,
     required this.weakestTags,
     required this.heatmap,
   });
@@ -132,6 +134,14 @@ class StatsNumbers {
             for (final e in progress.log)
               if (deckFilter(e.deckId)) e,
           ];
+    // The script skills' reviews, derived from the script decks' answers
+    // (#556): counted in their own rows, never in the totals above.
+    final scriptLog = deckFilter == null
+        ? progress.scriptLog
+        : <ReviewEvent>[
+            for (final e in progress.scriptLog)
+              if (deckFilter(e.deckId)) e,
+          ];
     final today = dateOnly(now);
     final from = range.days == null ? null : addDays(today, 1 - range.days!);
     bool inRange(DateTime at) => from == null || !at.isBefore(from);
@@ -140,6 +150,14 @@ class StatsNumbers {
       for (final e in log)
         if (inRange(e.at)) e,
     ];
+
+    final script = <DrillMode, List<int>>{};
+    for (final e in scriptLog) {
+      if (!inRange(e.at)) continue;
+      final s = script.putIfAbsent(e.mode, () => <int>[0, 0]);
+      s[0] += e.passed ? 1 : 0;
+      s[1]++;
+    }
 
     final skills = <Skill, List<int>>{};
     final tags = <String, List<int>>{};
@@ -191,6 +209,13 @@ class StatsNumbers {
         for (final skill in Skill.values)
           if (skills[skill] case final t?) skill: Tally(t[0], t[1]),
       },
+      scriptSkills: <DrillMode, Tally>{
+        for (final mode in const <DrillMode>[
+          DrillMode.readScript,
+          DrillMode.writeScript,
+        ])
+          if (script[mode] case final t?) mode: Tally(t[0], t[1]),
+      },
       weakestTags: <String, Tally>{
         for (final entry in weakest.take(tagCount))
           entry.key: Tally(entry.value[0], entry.value[1]),
@@ -220,6 +245,13 @@ class StatsNumbers {
   /// Correct answers per skill, for the skills practised in the range, in
   /// [Skill] order.
   final Map<Skill, Tally> bySkill;
+
+  /// Correct answers for each script skill, Read script then Write script,
+  /// that has answers in the range (#556): taken from the answers to the
+  /// script decks, which count in the word skills too. A skill without
+  /// answers has no row, so a language in Latin script, or a learner who
+  /// reads the script already, shows neither.
+  final Map<DrillMode, Tally> scriptSkills;
 
   /// The tags with the lowest share remembered in the range, weakest first.
   /// Tags come from the cards' decks.

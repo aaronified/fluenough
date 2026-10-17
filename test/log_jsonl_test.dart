@@ -157,6 +157,18 @@ void main() {
       );
     });
 
+    test('a review in a script skill, which is never logged', () {
+      expect(
+        () => LogJsonl.decode(
+          withLine(
+            '{"type":"review",${good.replaceFirst('recognition', 'readScript')},'
+            '"grade":3,"elapsed_ms":0}',
+          ),
+        ),
+        failsWith('line 2: mode readScript is not a drill'),
+      );
+    });
+
     test('a review missing what it needs', () {
       expect(
         () =>

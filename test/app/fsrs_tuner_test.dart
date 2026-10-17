@@ -12,6 +12,7 @@ import 'package:fluenough/core/scheduling/fsrs_fit.dart';
 import 'package:fluenough/core/scheduling/replay.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
 import 'package:fluenough/core/scheduling/skill_fit.dart';
+import 'package:fluenough/core/scheduling/skill_map.dart';
 
 import '../support/fit_learner.dart';
 
@@ -69,6 +70,32 @@ void main() {
     tuner.afterReview(event);
     return event;
   }
+
+  group('the script skills (#556)', () {
+    const hiWriteScript = (language: 'hi', mode: DrillMode.writeScript);
+
+    test('are fitted on their own, from the script decks\' answers', () async {
+      final p = progressOf(learner('hi'))
+        ..skills = const SkillMap(scriptDecks: <String>{'deck'});
+      expect(p.scriptLog, isNotEmpty);
+      final runner = Recording();
+      final tuner = FsrsTuner(
+        progress: p,
+        clock: () => now,
+        runner: runner.call,
+      );
+      expect(tuner.canAdjust, isTrue);
+      final results = (await tuner.adjustAll())!;
+      expect(
+        results.map((r) => r.key),
+        unorderedEquals(<Object>[hiWrite, hiWriteScript]),
+      );
+      expect(
+        runner.jobs.map((j) => j.key),
+        unorderedEquals(<Object>[hiWrite, hiWriteScript]),
+      );
+    });
+  });
 
   group('Adjust to me', () {
     test('fits every skill that can be, and says so of the rest', () async {

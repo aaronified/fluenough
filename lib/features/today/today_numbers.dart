@@ -82,12 +82,17 @@ TodayPace? todayPaceOf(AppState state, {bool onScreen = true}) {
   final language = state.shownLanguage;
   final learned = <SkillPace>[
     for (final p in paces.values)
-      if (profile.learns(p.key.language) &&
+      // The script skills are not drilled, so Today does not count them.
+      if (!p.key.mode.isScript &&
+          profile.learns(p.key.language) &&
           (language == null || p.key.language == language))
         p,
   ];
   final shown = learned.isEmpty && language == null
-      ? paces.values.toList()
+      ? <SkillPace>[
+          for (final p in paces.values)
+            if (!p.key.mode.isScript) p,
+        ]
       : learned;
   final all = SkillFit.together(shown);
   return (

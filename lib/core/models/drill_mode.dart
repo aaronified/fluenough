@@ -8,7 +8,9 @@
 /// The skill model (ADR-0034) keeps four schedules per word:
 /// **Recognition** ([recognition]), **Hear** ([listening]), **Say**
 /// ([speaking]) and **Write** ([production]); and grammar's two, understood
-/// ([grammarUnderstood]) and produced ([grammar]). The names are stored in
+/// ([grammarUnderstood]) and produced ([grammar]). The two script skills,
+/// [readScript] and [writeScript] (#556), are scheduled too but are worked
+/// out from the log, not asked. The names are stored in
 /// the review log, which is never rewritten, so they stay as they were.
 enum DrillMode {
   /// Recognition: shown the target, choose or recall the meaning. A skill
@@ -50,7 +52,27 @@ enum DrillMode {
   /// Say: shown the meaning, say the target. Graded from what the phone's
   /// speech recogniser heard, so it needs one for the language (#89,
   /// ADR-0014).
-  speaking;
+  speaking,
+
+  /// Read script: recognising a script's letters and conjuncts (#556). Not a
+  /// drill and never in the review log: a skill derived from the answers
+  /// to the script decks, replayed from the log (`SkillMap.scriptOf`), with
+  /// a schedule and a fit of its own. Last, so that it never moves a mode
+  /// stored by index.
+  readScript,
+
+  /// Write script: forming or typing a script's letters and conjuncts
+  /// (#556). Derived like [readScript].
+  writeScript;
+
+  /// Whether this is a script skill ([readScript], [writeScript]): derived
+  /// from script-deck answers, never drilled and never logged.
+  bool get isScript => this == readScript || this == writeScript;
+
+  /// The modes a card is drilled in: every mode but the script skills.
+  static final List<DrillMode> drills = List<DrillMode>.unmodifiable(
+    values.where((mode) => !mode.isScript),
+  );
 
   /// Whether the app grades this mode itself.
   ///
