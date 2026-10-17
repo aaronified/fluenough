@@ -6,9 +6,7 @@ import 'package:fluenough/core/data/database.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
 import 'package:fluenough/core/scheduling/replay.dart';
-import 'package:fluenough/core/scheduling/skill_fit.dart';
 import 'package:fluenough/core/scheduling/skill_map.dart';
-import 'package:fluenough/core/scheduling/skill_parameters.dart';
 
 /// Reading and writing the script are skills of their own (#556; owner,
 /// 2026-10-17: "Both" and "Rebuild from the log"): the answers to the script
