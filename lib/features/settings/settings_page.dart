@@ -293,6 +293,8 @@ class _ProfileCard extends StatelessWidget {
         clipBehavior: Clip.antiAlias,
         child: InkWell(
           onTap: open,
+          // The card's own node, above, carries the name and the tap.
+          excludeFromSemantics: true,
           child: Padding(
             padding: const EdgeInsetsDirectional.all(16),
             child: Column(

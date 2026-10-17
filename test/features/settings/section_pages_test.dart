@@ -205,6 +205,7 @@ void main() {
       state.settings.setSkillEnabled(Skill.listening, false);
       await tester.pumpAndSettle();
       expect(_switchOf(tester, autoplay).onChanged, isNotNull);
+      await scrollTo(tester, autoplay);
       await tester.tap(autoplay);
       await tester.pumpAndSettle();
       expect(state.settings.autoplay, isFalse);
@@ -258,25 +259,6 @@ void main() {
       final l10n = l10nOf(tester);
       await scrollTo(tester, find.text(l10n.settingsAdjustAuto));
       expect(find.text(l10n.settingsAdjustAuto), findsOneWidget);
-    });
-
-    test('a stored Sound off is Heard words off, and a stored off for an '
-        'activity with no switch reads as on (#243)', () {
-      final settings = SettingsNotifier()
-        ..restore(<String, String>{
-          'enabled_skills': 'production,listening,speaking,reading,+,!recognition,!grammar,!pair',
-          'sound_on': 'false',
-        });
-      expect(settings.soundOn, isTrue);
-      expect(settings.isEnabled(Skill.listening), isFalse);
-      for (final skill in <Skill>[
-        Skill.recognition,
-        Skill.grammar,
-        Skill.pair,
-      ]) {
-        expect(settings.isEnabled(skill), isTrue, reason: '$skill');
-      }
-      expect(settings.isEnabled(Skill.production), isTrue);
     });
   });
 

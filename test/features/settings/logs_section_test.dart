@@ -115,6 +115,7 @@ void main() {
       'bug icon, and Copy, Export and Clear in a bottom bar', (tester) async {
     final (:log, files: _) = await _pump(tester);
     final l10n = l10nOf(tester);
+    expect(find.byType(ReportButton), findsOneWidget);
     final first = tester.getTopLeft(find.text(log.entries.first.line));
     final last = tester.getTopLeft(find.text(log.entries.last.line));
     expect(first.dy, lessThan(last.dy));
