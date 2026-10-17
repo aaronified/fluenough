@@ -195,7 +195,8 @@ class ReadingReviews(unittest.TestCase):
         files = [review_file([
             suggestion("zz-9201", "meaning", "milk", " cow's milk ", "Why not"),
             suggestion("zz-9201", "example", "x", "y"),
-            # A base word's meaning (#410) is left for the owner too.
+            # A base word's meaning as a review file had it before #476 is
+            # read as a proposal on that base, filled in from the deck.
             {"card": "zz-9201", "at": "2026-10-09T09:40:00.000Z",
              "suggestion": {"part": "base", "word": "w", "now": "x", "text": "y"}},
             {"card": "zz-9202", "at": "2026-10-09T09:40:00.000Z", "proposals": [
@@ -205,13 +206,14 @@ class ReadingReviews(unittest.TestCase):
             ]},
         ]), review_file([suggestion("zz-9201", "word", "a", "b")], code=BOB)]
         review = rb.read_review(files, ALICE)
-        self.assertEqual(len(review.suggestions), 1)
+        self.assertEqual(len(review.suggestions), 2)
         s = review.suggestions[0]
         self.assertEqual((s.lang, s.deck), ("zz", "zz-en-extra"))
         self.assertEqual(s.proposal, pr.Proposal("zz-9201", "native", "milk",
                                                  "cow's milk", ALICE, "2026-10-09",
                                                  "Why not"))
-        self.assertEqual(review.left, 2)
+        self.assertEqual(review.suggestions[1].proposal.field, pr.BASES)
+        self.assertEqual(review.left, 1)
         self.assertEqual(review.accepts, [("zz", "aaaaaaaaaa", "t")])
         self.assertEqual(review.rejects, [("zz", "bbbbbbbbbb", "zz-9202")])
         self.assertEqual(review.edits, 1)

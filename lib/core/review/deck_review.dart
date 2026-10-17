@@ -12,11 +12,94 @@ import 'dart:convert';
 /// The part of a card a suggestion is about, as "Suggest a change" offers
 /// them. The names are written to the review file, so they are permanent.
 ///
-/// [base] is the meaning of one of the card's base words written in full
-/// (its `bases`, #410): the [Suggestion] names which by its [Suggestion.word].
-/// A base given by ref takes its meaning from the card it names, so a
-/// change to that meaning is suggested on that card.
-enum CardPart { word, reading, ipa, meaning, notes, example, picture, base }
+/// [base] is one of the card's base words (its `bases`, #410, #476): the
+/// [Suggestion] names which by its [Suggestion.word], and says by its
+/// [Suggestion.action] whether it is added, changed or removed. One from
+/// before #476 has no action: it changes the meaning of a base written in
+/// full, and its [Suggestion.now] and [Suggestion.text] are that meaning.
+///
+/// [alt] is the card's accepted alternative answers, "Also heard"
+/// (`alt_target`), one a line: suggested with a change to the [word], to
+/// keep the old word as one (#476).
+enum CardPart {
+  word,
+  reading,
+  ipa,
+  meaning,
+  notes,
+  example,
+  picture,
+  base,
+  alt,
+}
+
+/// What a suggestion on a base does (#476). The names are written to the
+/// review file, so they are permanent.
+enum BaseAction { add, edit, remove }
+
+/// A base word as a suggestion gives it: written in full, its [base] form,
+/// [reading] and [meaning], or by [ref], the card that teaches it. The word
+/// of the target it explains is the suggestion's [Suggestion.word].
+class BaseForm {
+  const BaseForm({this.base, this.reading, this.meaning, this.ref, this.link});
+
+  final String? base;
+  final String? reading;
+  final String? meaning;
+
+  /// The id of the card that teaches the base, which then gives its form,
+  /// reading and meaning.
+  final String? ref;
+
+  /// False when the base form is another card's word and the reviewer
+  /// chose not to link it, so that the review bot writes it in full; null
+  /// otherwise.
+  final bool? link;
+
+  bool get byRef => ref != null;
+
+  Map<String, Object?> toJson() => <String, Object?>{
+    if (ref case final r?)
+      'ref': r
+    else ...<String, Object?>{
+      'base': ?base,
+      'reading': ?reading,
+      'meaning': ?meaning,
+      if (link == false) 'link': false,
+    },
+  };
+
+  static BaseForm? fromJson(Object? json) {
+    if (json is! Map) return null;
+    String? text(String key) => switch (json[key]) {
+      final String t when t.trim().isNotEmpty => t,
+      _ => null,
+    };
+    final ref = text('ref');
+    final base = text('base');
+    if (ref == null && base == null) return null;
+    return ref != null
+        ? BaseForm(ref: ref)
+        : BaseForm(
+            base: base,
+            reading: text('reading'),
+            meaning: text('meaning'),
+            link: json['link'] == false ? false : null,
+          );
+  }
+
+  @override
+  bool operator ==(Object other) =>
+      other is BaseForm &&
+      other.base == base &&
+      other.reading == reading &&
+      other.meaning == meaning &&
+      other.ref == ref &&
+      other.link == link;
+
+  @override
+  int get hashCode => Object.hash(base, reading, meaning, ref, link);
+}
 
 /// Whether a rude word can be friendly among peers, as a rater says
 /// (docs/plans/offensive-words.md).
@@ -35,6 +118,9 @@ class Suggestion {
     required this.text,
     this.why = '',
     this.word,
+    this.action,
+    this.was,
+    this.base,
   });
 
   final CardPart part;
@@ -43,6 +129,17 @@ class Suggestion {
   /// card's target: the key the layer gives its meaning by. Null for any
   /// other part.
   final String? word;
+
+  /// For a [CardPart.base] suggestion since #476, whether the base is
+  /// added, changed or removed; null for one from before, which changes a
+  /// base's meaning only.
+  final BaseAction? action;
+
+  /// The base as it was, for a base changed or removed.
+  final BaseForm? was;
+
+  /// The base as suggested, for a base added or changed.
+  final BaseForm? base;
 
   /// What the part said when the suggestion was made, so that the file
   /// stands on its own if the deck changes.
@@ -57,6 +154,9 @@ class Suggestion {
   Map<String, Object?> toJson() => <String, Object?>{
     'part': part.name,
     'word': ?word,
+    'action': ?action?.name,
+    'was': ?was?.toJson(),
+    'base': ?base?.toJson(),
     'now': now,
     'text': text,
     if (why.isNotEmpty) 'why': why,
@@ -73,12 +173,29 @@ class Suggestion {
     if (part == CardPart.base && (word is! String || word.isEmpty)) {
       return null;
     }
+    final isBase = part == CardPart.base;
+    final action = isBase
+        ? BaseAction.values.asNameMap()[json['action']]
+        : null;
+    if (isBase && json['action'] != null && action == null) return null;
+    final was = action == null ? null : BaseForm.fromJson(json['was']);
+    final base = action == null ? null : BaseForm.fromJson(json['base']);
+    final complete = switch (action) {
+      null => true,
+      BaseAction.add => base != null,
+      BaseAction.edit => base != null && was != null,
+      BaseAction.remove => was != null,
+    };
+    if (!complete) return null;
     return Suggestion(
       part: part,
       now: now,
       text: text,
       why: why is String ? why : '',
-      word: part == CardPart.base ? word as String : null,
+      word: isBase ? word as String : null,
+      action: action,
+      was: action == BaseAction.add ? null : was,
+      base: action == BaseAction.remove ? null : base,
     );
   }
 }
