@@ -48,7 +48,9 @@ A word change sent with base, alternative, note, reading or IPA changes
 on the same card makes those proposals tied to it (`with:`, #476): they
 are never applied on their own, and the word's agreement PR applies them
 with it, so the card is never half-changed. A tied proposal whose word
-proposal is gone is closed as outdated.
+proposal is gone is closed as outdated. When one tied to an agreed word no
+longer applies, no PR is opened: the word waits with it, logged, for the
+owner.
 
 A base proposal (#476) adds, changes or removes one of a card's `bases`,
 written by tools/proposals.py line by line in the core and its layer; a
@@ -707,6 +709,10 @@ class Built:
 Build = Callable[[Path], Built | None]
 
 
+class _NotWhole(Exception):
+    """A word change cannot go in with everything it brought (#476)."""
+
+
 class Bot:
     def __init__(self, git: Git, github: GitHub, threshold: int,
                  log: Callable[[str], None] = print,
@@ -865,6 +871,14 @@ class Bot:
             if found is None or found[1].date != proposal.date \
                     or len(found[1].accepted) < self.threshold:
                 return None
+            if found[1].field == "target":
+                broken = self._tied_broken(root, lang, found[1])
+                if broken:
+                    self.log(f"{found[1].card}: the agreed word `{pid}` waits: "
+                             f"what it brought no longer applies ("
+                             + ", ".join(f"`{o.id}` on {o.field}" for o in broken)
+                             + "); left for the owner (#476).")
+                    return None
             applied = pr.apply(root, lang, pid)
             if applied.outcome != "applied":
                 return None
@@ -878,7 +892,13 @@ class Bot:
                 lines.append("- Closed as outdated with it: " + ", ".join(
                     f"`{o.id}` by {o.by}" for o in applied.closed))
             if p.field == "target" and applied.entry is not None:
-                lines += self._with_word(root, lang, applied.entry, p)
+                try:
+                    lines += self._with_word(root, lang, applied.entry, p)
+                except _NotWhole as failed:
+                    # The checkout is thrown away: no PR, and the word waits.
+                    self.log(f"{p.card}: the agreed word `{pid}` waits: "
+                             f"{failed}; left for the owner (#476).")
+                    return None
             lines += ["", FOOTER]
             return Built(
                 title=f"Apply the agreed change to {p.card} ({p.field})",
@@ -886,6 +906,14 @@ class Bot:
                 labels=[LABEL, KIND_LABELS["apply"]],
                 langs=[lang])
         return self.job(apply_branch(proposal), build)
+
+    @staticmethod
+    def _tied_broken(root: Path, lang: str, word: pr.Proposal) -> list[pr.Proposal]:
+        """The proposals tied to [word] (#476) that no longer apply as
+        proposed: the card would change only in part."""
+        return [o for e in pr.entries(root, lang, word.card)
+                for o in e.proposals()
+                if o.tied == word.id and not pr.holds(root, lang, e, o)]
 
     def _agreed_with(self, entry: pr.Entry, name: str) -> pr.Proposal | None:
         """The agreed proposal on [entry]'s field [name] that goes first,
@@ -907,13 +935,13 @@ class Bot:
         brought: set[str] = set()
         for o in tied:
             done = pr.apply(root, lang, o.id)
-            if done.outcome == "applied":
-                lines.append(f"- Applied with it, from the same review: `{o.id}` "
-                             f"on {o.field}")
-                brought.add(o.field)
-            else:
-                lines.append(f"- From the same review, left for the owner "
-                             f"({done.outcome}): `{o.id}` on {o.field}")
+            if done.outcome != "applied":
+                # All or nothing: never the word without what it brought.
+                raise _NotWhole(f"`{o.id}` on {o.field} could not be applied "
+                                f"({done.outcome})")
+            lines.append(f"- Applied with it, from the same review: `{o.id}` "
+                         f"on {o.field}")
+            brought.add(o.field)
         fresh = next((e for e in pr.entries(root, lang, entry.card)
                       if e.path == entry.path and e.form == entry.form), None)
         if fresh is None:
@@ -989,7 +1017,11 @@ class Bot:
         wanted: set[str] = set()
         for lang in pr.languages(root):
             found = pr.all_proposals(root, lang)
-            stale = {p.id: p for _, p in pr.outdated(root, lang)}
+            present = {p.id for _, p in found}
+            # One tied to a word still waiting is not closed: the word waits
+            # with it, for the owner, rather than going in without it.
+            stale = {p.id: p for _, p in pr.outdated(root, lang)
+                     if not (p.tied and p.tied in present)}
             groups: dict[tuple, list[pr.Proposal]] = {}
             for e, p in found:
                 # One tied to a change to the word goes in with that word.

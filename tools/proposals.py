@@ -562,18 +562,29 @@ class _Text:
                 found = i
         self._set_item(BASES, found, items, head, item)
 
-    def set_meaning(self, word: str, meaning: str | None) -> None:
+    def set_meaning(self, word: str, meaning: str | None, keep_mark: bool = False) -> None:
         """A layer's meaning for the base [word], `"word": "meaning"`, in
-        place of the one there or added last; removed when None."""
+        place of the one there or added last; removed when None. One
+        written as `{ meaning, wiktionary }` stays so, its Wiktionary mark
+        kept when [keep_mark] says the base's form and reading are."""
         head, items = self._block(BASES)
         found = None
+        old = None
         for i in items:
             parsed = self._parsed(i)
             if not (isinstance(parsed, dict) and len(parsed) == 1):
                 raise Unsupported("a base's meaning not written on one line")
             if word in parsed:
-                found = i
-        item = None if meaning is None else f"{_quoted(word)}: {_quoted(meaning)}"
+                found, old = i, parsed[word]
+        if meaning is None:
+            item = None
+        elif isinstance(old, dict):
+            fields = [f"meaning: {_quoted(meaning)}"]
+            if keep_mark and isinstance(old.get("wiktionary"), bool):
+                fields.append(f"wiktionary: {'true' if old['wiktionary'] else 'false'}")
+            item = f"{_quoted(word)}: {{ {', '.join(fields)} }}"
+        else:
+            item = f"{_quoted(word)}: {_quoted(meaning)}"
         self._set_item(BASES, found, items, head, item)
 
     def ready(self, check) -> str:
@@ -657,6 +668,9 @@ def _meaning_only(root: Path, lang: str, deck: str, p: Proposal) -> Proposal:
         return p
     if not all(isinstance(b, dict) and set(b) == {"word", "meaning"}
                and all(isinstance(v, str) for v in b.values()) for b in (old, new)):
+        return p
+    if not new["meaning"].strip():
+        # No meaning to write: left for the owner, never a base without one.
         return p
     found = []
     for e in entries(root, lang, p.card):
@@ -848,7 +862,11 @@ def _apply_base(root: Path, lang: str, entry: Entry, p: Proposal, gone: set[str]
         core_edit = _Text(core)
         core_edit.set_base(word, line)
         edits.append((core_edit, lambda e: _item_of(e, word) == item))
-        own.set_meaning(word, meaning)
+        was = _item_of(core, word)
+        same = was is not None and item is not None and "ref" not in item \
+            and was.get("base") == item.get("base") \
+            and was.get("reading") == item.get("reading")
+        own.set_meaning(word, meaning, keep_mark=same)
         if meaning is None:
             for other in entries(root, lang, entry.card):
                 if other.form == "layer" and other.core == entry.core \

@@ -217,6 +217,42 @@ class Proposals(unittest.TestCase):
         self.assertEqual(self.text(self.layer), layer.replace('"నేను": "I"', '"నేను": "I, me"'))
         self.assert_valid(self.core, self.layer)
 
+    def marked(self) -> None:
+        """The split deck, its layer's meaning written with a Wiktionary mark."""
+        self.split()
+        layer = self.text(self.layer).replace(
+            '"నేను": "I"', '"నేను": { meaning: "I", wiktionary: true }')
+        self.layer.write_text(layer, encoding="utf-8")
+        self.assert_valid(self.core, self.layer)
+
+    def test_a_meaning_change_keeps_the_wiktionary_mark(self) -> None:
+        self.marked()
+        s = base_suggestion("zz-9002", "edit", "నేను", was=self.I,
+                            base={**self.I, "meaning": "I, me"})
+        self.assertEqual(self.apply(self.proposal(s, cid="zz-9002"), "zz-en-home").outcome,
+                         "applied")
+        self.assertIn('      "నేను": { meaning: "I, me", wiktionary: true }\n',
+                      self.text(self.layer))
+        self.assert_valid(self.core, self.layer)
+
+    def test_a_new_form_or_reading_drops_the_wiktionary_mark(self) -> None:
+        self.marked()
+        s = base_suggestion("zz-9002", "edit", "నేను", was=self.I,
+                            base={**self.I, "reading": "nenu"})
+        self.assertEqual(self.apply(self.proposal(s, cid="zz-9002"), "zz-en-home").outcome,
+                         "applied")
+        self.assertIn('      "నేను": { meaning: "I" }\n', self.text(self.layer))
+        self.assert_valid(self.core, self.layer)
+
+    def test_an_old_mail_with_no_meaning_is_left_for_the_owner(self) -> None:
+        before = self.text()
+        for blank in ("", "   "):
+            p = pr.Proposal("zz-9301", *facts({"part": "base", "word": "అమ్మ",
+                                               "now": "mum", "text": blank}),
+                            ALICE, "2026-10-17")
+            self.assertEqual(len(self.propose(p).unsupported), 1)
+        self.assertEqual(self.text(), before)
+
     def test_removed_in_a_split_deck_every_layer_loses_its_meaning(self) -> None:
         self.split()
         other = self.root / "decks" / "zz" / "xx" / "zz-xx-home.yaml"
@@ -375,6 +411,25 @@ class Bot(BotBase):
         self.accept("m2", BOB, "zz-9301", word)
         self.bot.sweep()
         self.assertIn('    reading: "āvu paalu"\n', self.phrases())
+
+    def test_a_word_whose_tied_base_no_longer_applies_waits_whole(self) -> None:
+        self.send("m1", ALICE, self.word_change())
+        word = next(p for p in self.on_main() if p.field == "target")
+        self.accept("m2", BOB, "zz-9301", word)
+        # The owner changes the old base on main: its removal is outdated.
+        path = self.git.main / "decks/zz/zz-en-phrases.yaml"
+        path.write_text(self.phrases().replace('meaning: "mum"', 'meaning: "mama"'),
+                        encoding="utf-8")
+        self.wiki = None
+        self.assertEqual(self.bot.sweep()["applied"], 0)
+        self.assertEqual([p for p in self.github.prs if "apply" in p["head"]["ref"]], [])
+        text = self.phrases()
+        self.assertIn('target: "అమ్మ పాలు"', text)
+        self.assertNotIn("    alt_target: [", text)
+        # Nothing it brought is closed: the word waits with it, logged.
+        self.assertEqual(len(self.on_main()), 4)
+        self.assertTrue(any("waits" in line and word.id in line for line in self.logged),
+                        self.logged)
 
     def test_tied_proposals_whose_word_is_gone_are_closed(self) -> None:
         self.send("m1", ALICE, self.word_change())
