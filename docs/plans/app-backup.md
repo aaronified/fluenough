@@ -184,5 +184,13 @@ depends on #204.
 - Zip dependency versus a single JSON file with the log embedded as lines.
   A zip is cleaner; a JSON file avoids a package. Decide at build time by
   what is already in `pubspec.yaml`.
+- **How a restore may replace the review log** (asked 2026-10-17, on
+  #470). "Replace, by default" above means deleting the learner's
+  `reviews` and `leech_actions` rows, but those tables are append-only
+  (AGENTS.md rule 9) and the database refuses to delete from them. Options:
+  a one-off, logged exception to rule 9 for a confirmed restore (a copy of
+  what is replaced is always kept first); restore only into an empty log;
+  or merge instead of replace. Until answered, the backup ships and
+  restoring is built and tested but off (`Feature.localRestore`).
 - ~~Whether the reviewer code is exported.~~ Decided (owner, 2026-10-11):
   yes, it is included.
