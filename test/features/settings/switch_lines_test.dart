@@ -356,19 +356,16 @@ void main() {
     await scrollTo(tester, alphabets);
     await tester.tap(alphabets);
     await tester.pumpAndSettle();
+    expect(find.text(l10n.settingsAlphabetOn('Telugu')), findsOneWidget);
     expect(
-      find.text(l10n.settingsAlphabetOn('telugu', telugu.name)),
-      findsOneWidget,
-    );
-    expect(
-      l10n.settingsAlphabetOn('telugu', 'Telugu'),
+      l10n.settingsAlphabetOn(l10n.scriptName('telugu')),
       'Learning the Telugu script',
     );
     for (var i = 0; i < 2; i++) {
       await _flip(
         tester,
         telugu.name,
-        on: l10n.settingsAlphabetOn(telugu.script, telugu.name),
+        on: l10n.settingsAlphabetOn('Telugu'),
         off: state.courseUnits('te').isEmpty
             ? l10n.settingsAlphabetOffEmpty
             : l10n.settingsAlphabetOff,

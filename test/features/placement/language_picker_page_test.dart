@@ -367,7 +367,7 @@ void main() {
         find.textContaining(l10n.pickerGrammarTopics(2, 3)),
         findsOneWidget,
       );
-      expect(find.text(l10n.pickerScript('telugu')), findsOneWidget);
+      expect(find.text(l10n.pickerScript('Telugu')), findsOneWidget);
       expect(find.text('Telugu · తెలుగు'), findsOneWidget);
     });
 

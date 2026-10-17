@@ -5,9 +5,13 @@
 #
 #   code, iso639_3  the code decks use, and its ISO 639-3 code
 #   name, own_name  its English name, and its name for itself (in its script)
-#   script          the script its courses are written in, as deck files name
-#                   it (`latin`, `bengali`): Languages you know asks whether
-#                   the learner reads it, and the review-pair rule compares it
+#   scripts         the scripts it is written in, as deck files name them
+#                   (`latin`, `bengali`), its own first: the one its courses
+#                   are written in, which the review-pair rule compares (#551).
+#                   Languages you know asks which of them the learner reads.
+#                   A script's name is the app's (`bengali` is Eastern
+#                   Nagari), never the language's: see `scriptName` in
+#                   lib/l10n/app_en.arb, where a new script is named too.
 #   family          indo_aryan, dravidian, tibeto_burman, austroasiatic or
 #                   germanic: the folded group it is listed in
 #   script_question, script_can_read
@@ -18,41 +22,41 @@
 schema: 1
 kind: languages
 languages:
-  - { code: "en", iso639_3: "eng", name: "English", own_name: "English", script: "latin", family: "germanic",
+  - { code: "en", iso639_3: "eng", name: "English", own_name: "English", scripts: ["latin"], family: "germanic",
       script_question: "Can you read the English script?", script_can_read: "I can read the English script" }
-  - { code: "bn", iso639_3: "ben", name: "Bengali", own_name: "বাংলা", script: "bengali", family: "indo_aryan",
+  - { code: "bn", iso639_3: "ben", name: "Bengali", own_name: "বাংলা", scripts: ["bengali"], family: "indo_aryan",
       script_question: "আপনি কি বাংলা লিপি পড়তে পারেন?", script_can_read: "আমি বাংলা লিপি পড়তে পারি" }
-  - { code: "hi", iso639_3: "hin", name: "Hindi", own_name: "हिन्दी", script: "devanagari", family: "indo_aryan",
+  - { code: "hi", iso639_3: "hin", name: "Hindi", own_name: "हिन्दी", scripts: ["devanagari"], family: "indo_aryan",
       script_question: "क्या आपको हिंदी लिपि पढ़नी आती है?", script_can_read: "मुझे हिंदी लिपि पढ़नी आती है" }
-  - { code: "as", iso639_3: "asm", name: "Assamese", own_name: "অসমীয়া", script: "bengali", family: "indo_aryan" }
-  - { code: "brx", iso639_3: "brx", name: "Bodo", own_name: "बड़ो", script: "devanagari", family: "tibeto_burman" }
-  - { code: "doi", iso639_3: "doi", name: "Dogri", own_name: "डोगरी", script: "devanagari", family: "indo_aryan" }
-  - { code: "gu", iso639_3: "guj", name: "Gujarati", own_name: "ગુજરાતી", script: "gujarati", family: "indo_aryan" }
-  - { code: "kn", iso639_3: "kan", name: "Kannada", own_name: "ಕನ್ನಡ", script: "kannada", family: "dravidian" }
-  - { code: "ks", iso639_3: "kas", name: "Kashmiri", own_name: "کٲشُر", script: "arabic", family: "indo_aryan" }
-  - { code: "kok", iso639_3: "kok", name: "Konkani", own_name: "कोंकणी", script: "devanagari", family: "indo_aryan" }
-  - { code: "mai", iso639_3: "mai", name: "Maithili", own_name: "मैथिली", script: "devanagari", family: "indo_aryan" }
-  - { code: "ml", iso639_3: "mal", name: "Malayalam", own_name: "മലയാളം", script: "malayalam", family: "dravidian" }
-  - { code: "mni", iso639_3: "mni", name: "Manipuri", own_name: "মৈতৈলোন্", script: "bengali", family: "tibeto_burman" }
-  - { code: "mr", iso639_3: "mar", name: "Marathi", own_name: "मराठी", script: "devanagari", family: "indo_aryan" }
-  - { code: "ne", iso639_3: "npi", name: "Nepali", own_name: "नेपाली", script: "devanagari", family: "indo_aryan" }
-  - { code: "or", iso639_3: "ory", name: "Odia", own_name: "ଓଡ଼ିଆ", script: "odia", family: "indo_aryan" }
-  - { code: "pa", iso639_3: "pan", name: "Punjabi", own_name: "ਪੰਜਾਬੀ", script: "gurmukhi", family: "indo_aryan" }
-  - { code: "sa", iso639_3: "san", name: "Sanskrit", own_name: "संस्कृतम्", script: "devanagari", family: "indo_aryan" }
-  - { code: "sat", iso639_3: "sat", name: "Santali", own_name: "ᱥᱟᱱᱛᱟᱲᱤ", script: "ol_chiki", family: "austroasiatic" }
-  - { code: "sd", iso639_3: "snd", name: "Sindhi", own_name: "سنڌي", script: "arabic", family: "indo_aryan" }
-  - { code: "ta", iso639_3: "tam", name: "Tamil", own_name: "தமிழ்", script: "tamil", family: "dravidian" }
-  - { code: "te", iso639_3: "tel", name: "Telugu", own_name: "తెలుగు", script: "telugu", family: "dravidian" }
-  - { code: "ur", iso639_3: "urd", name: "Urdu", own_name: "اردو", script: "arabic", family: "indo_aryan" }
-  - { code: "bho", iso639_3: "bho", name: "Bhojpuri", own_name: "भोजपुरी", script: "devanagari", family: "indo_aryan" }
-  - { code: "tcy", iso639_3: "tcy", name: "Tulu", own_name: "ತುಳು", script: "kannada", family: "dravidian" }
-  - { code: "raj", iso639_3: "raj", name: "Rajasthani", own_name: "राजस्थानी", script: "devanagari", family: "indo_aryan" }
-  - { code: "mag", iso639_3: "mag", name: "Magahi", own_name: "मगही", script: "devanagari", family: "indo_aryan" }
-  - { code: "hne", iso639_3: "hne", name: "Chhattisgarhi", own_name: "छत्तीसगढ़ी", script: "devanagari", family: "indo_aryan" }
-  - { code: "awa", iso639_3: "awa", name: "Awadhi", own_name: "अवधी", script: "devanagari", family: "indo_aryan" }
-  - { code: "bgc", iso639_3: "bgc", name: "Haryanvi", own_name: "हरियाणवी", script: "devanagari", family: "indo_aryan" }
-  - { code: "kfy", iso639_3: "kfy", name: "Kumaoni", own_name: "कुमाऊँनी", script: "devanagari", family: "indo_aryan" }
-  - { code: "gbm", iso639_3: "gbm", name: "Garhwali", own_name: "गढ़वळि", script: "devanagari", family: "indo_aryan" }
-  - { code: "lus", iso639_3: "lus", name: "Mizo", own_name: "Mizo ṭawng", script: "latin", family: "tibeto_burman" }
-  - { code: "kha", iso639_3: "kha", name: "Khasi", own_name: "Ka Ktien Khasi", script: "latin", family: "austroasiatic" }
-  - { code: "gom", iso639_3: "gom", name: "Goan Konkani", own_name: "Konknni", script: "latin", family: "indo_aryan" }
+  - { code: "as", iso639_3: "asm", name: "Assamese", own_name: "অসমীয়া", scripts: ["bengali"], family: "indo_aryan" }
+  - { code: "brx", iso639_3: "brx", name: "Bodo", own_name: "बड़ो", scripts: ["devanagari"], family: "tibeto_burman" }
+  - { code: "doi", iso639_3: "doi", name: "Dogri", own_name: "डोगरी", scripts: ["devanagari"], family: "indo_aryan" }
+  - { code: "gu", iso639_3: "guj", name: "Gujarati", own_name: "ગુજરાતી", scripts: ["gujarati"], family: "indo_aryan" }
+  - { code: "kn", iso639_3: "kan", name: "Kannada", own_name: "ಕನ್ನಡ", scripts: ["kannada"], family: "dravidian" }
+  - { code: "ks", iso639_3: "kas", name: "Kashmiri", own_name: "کٲشُر", scripts: ["arabic", "devanagari"], family: "indo_aryan" }
+  - { code: "kok", iso639_3: "kok", name: "Konkani", own_name: "कोंकणी", scripts: ["devanagari", "kannada", "malayalam"], family: "indo_aryan" }
+  - { code: "mai", iso639_3: "mai", name: "Maithili", own_name: "मैथिली", scripts: ["devanagari"], family: "indo_aryan" }
+  - { code: "ml", iso639_3: "mal", name: "Malayalam", own_name: "മലയാളം", scripts: ["malayalam"], family: "dravidian" }
+  - { code: "mni", iso639_3: "mni", name: "Manipuri", own_name: "মৈতৈলোন্", scripts: ["bengali", "meitei_mayek"], family: "tibeto_burman" }
+  - { code: "mr", iso639_3: "mar", name: "Marathi", own_name: "मराठी", scripts: ["devanagari"], family: "indo_aryan" }
+  - { code: "ne", iso639_3: "npi", name: "Nepali", own_name: "नेपाली", scripts: ["devanagari"], family: "indo_aryan" }
+  - { code: "or", iso639_3: "ory", name: "Odia", own_name: "ଓଡ଼ିଆ", scripts: ["odia"], family: "indo_aryan" }
+  - { code: "pa", iso639_3: "pan", name: "Punjabi", own_name: "ਪੰਜਾਬੀ", scripts: ["gurmukhi", "shahmukhi"], family: "indo_aryan" }
+  - { code: "sa", iso639_3: "san", name: "Sanskrit", own_name: "संस्कृतम्", scripts: ["devanagari"], family: "indo_aryan" }
+  - { code: "sat", iso639_3: "sat", name: "Santali", own_name: "ᱥᱟᱱᱛᱟᱲᱤ", scripts: ["ol_chiki", "latin", "devanagari", "bengali"], family: "austroasiatic" }
+  - { code: "sd", iso639_3: "snd", name: "Sindhi", own_name: "سنڌي", scripts: ["arabic", "devanagari"], family: "indo_aryan" }
+  - { code: "ta", iso639_3: "tam", name: "Tamil", own_name: "தமிழ்", scripts: ["tamil"], family: "dravidian" }
+  - { code: "te", iso639_3: "tel", name: "Telugu", own_name: "తెలుగు", scripts: ["telugu"], family: "dravidian" }
+  - { code: "ur", iso639_3: "urd", name: "Urdu", own_name: "اردو", scripts: ["arabic"], family: "indo_aryan" }
+  - { code: "bho", iso639_3: "bho", name: "Bhojpuri", own_name: "भोजपुरी", scripts: ["devanagari"], family: "indo_aryan" }
+  - { code: "tcy", iso639_3: "tcy", name: "Tulu", own_name: "ತುಳು", scripts: ["kannada"], family: "dravidian" }
+  - { code: "raj", iso639_3: "raj", name: "Rajasthani", own_name: "राजस्थानी", scripts: ["devanagari"], family: "indo_aryan" }
+  - { code: "mag", iso639_3: "mag", name: "Magahi", own_name: "मगही", scripts: ["devanagari"], family: "indo_aryan" }
+  - { code: "hne", iso639_3: "hne", name: "Chhattisgarhi", own_name: "छत्तीसगढ़ी", scripts: ["devanagari"], family: "indo_aryan" }
+  - { code: "awa", iso639_3: "awa", name: "Awadhi", own_name: "अवधी", scripts: ["devanagari"], family: "indo_aryan" }
+  - { code: "bgc", iso639_3: "bgc", name: "Haryanvi", own_name: "हरियाणवी", scripts: ["devanagari"], family: "indo_aryan" }
+  - { code: "kfy", iso639_3: "kfy", name: "Kumaoni", own_name: "कुमाऊँनी", scripts: ["devanagari"], family: "indo_aryan" }
+  - { code: "gbm", iso639_3: "gbm", name: "Garhwali", own_name: "गढ़वळि", scripts: ["devanagari"], family: "indo_aryan" }
+  - { code: "lus", iso639_3: "lus", name: "Mizo", own_name: "Mizo ṭawng", scripts: ["latin"], family: "tibeto_burman" }
+  - { code: "kha", iso639_3: "kha", name: "Khasi", own_name: "Ka Ktien Khasi", scripts: ["latin"], family: "austroasiatic" }
+  - { code: "gom", iso639_3: "gom", name: "Goan Konkani", own_name: "Konknni", scripts: ["latin"], family: "indo_aryan" }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/features.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/script_name.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/segmented.dart';
 import '../../ui/widgets/target_text.dart';
@@ -47,7 +48,9 @@ class InputModeChoice extends StatelessWidget {
         options: <SegmentOption<InputMode>>[
           SegmentOption<InputMode>(
             value: InputMode.script,
-            label: l10n.drillInputScript(language.name),
+            label: l10n.drillInputScript(
+              l10n.scriptNameOr(language.script, language.name),
+            ),
             leading: TargetText(
               session.deck.glyph,
               language: language,

@@ -34,9 +34,7 @@ class _SpokenLanguagesPageState extends State<SpokenLanguagesPage> {
   void _save() {
     final settings = AppScope.read(context).settings;
     settings
-      ..scriptsRead = <String, bool>{
-        for (final code in _ranked) code: ?_scripts[code],
-      }
+      ..scriptsRead = readAnswersOf(_ranked, _scripts)
       ..spokenLanguages = _ranked;
     Navigator.of(context).pop();
   }
@@ -59,9 +57,7 @@ class _SpokenLanguagesPageState extends State<SpokenLanguagesPage> {
               choices: widget.choices,
               onChanged: (ranked) => setState(() => _ranked = ranked),
               readsScript: _scripts,
-              onScriptChanged: (code, reads) => setState(
-                () => _scripts = <String, bool>{..._scripts, code: reads},
-              ),
+              onScriptsChanged: (answers) => setState(() => _scripts = answers),
               header: Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(24, 8, 24, 16),
                 child: Text(
