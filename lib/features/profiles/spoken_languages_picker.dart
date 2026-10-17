@@ -486,8 +486,9 @@ class _KnownLanguageSheetState extends State<KnownLanguageSheet> {
     String name(String? script) => l10n.scriptNameOr(script, language.name);
     final ownScripts = several && language.asksScriptsInOwnScript;
     final question = several
-        ? (language.scriptsQuestion ??
-              l10n.knownReadsWhichScripts(language.name))
+        ? (ownScripts
+              ? language.scriptsQuestion!
+              : l10n.knownReadsWhichScripts(language.name))
         : own
         ? language.scriptQuestion!
         : l10n.knownReadsScript(name(language.script));
@@ -563,9 +564,9 @@ class _KnownLanguageSheetState extends State<KnownLanguageSheet> {
                     title: Text.rich(
                       TextSpan(
                         text:
-                            language.scriptCanReadFor[script] ??
+                            language.canReadIn(script) ??
                             l10n.knownCanReadFallback(name(script)),
-                        locale: language.scriptCanReadFor.containsKey(script)
+                        locale: language.canReadIn(script) != null
                             ? locale
                             : null,
                       ),

@@ -169,6 +169,24 @@ void main() {
       }
     });
 
+    test('every non-Latin entry but en, bn and hi is unchecked, so English is '
+        'asked; en, bn and hi use their own texts (#552)', () {
+      for (final l in languages) {
+        final own = <String>{'en', 'bn', 'hi'}.contains(l.code);
+        if (own) {
+          expect(l.scriptTextUnchecked, isFalse, reason: l.code);
+          expect(l.asksInOwnScript, isTrue, reason: l.code);
+        } else if (l.script != 'latin') {
+          expect(l.scriptTextUnchecked, isTrue, reason: l.code);
+          expect(l.asksInOwnScript, isFalse, reason: l.code);
+          expect(l.asksScriptsInOwnScript, isFalse, reason: l.code);
+          for (final s in l.scripts) {
+            expect(l.canReadIn(s), isNull, reason: '${l.code} $s');
+          }
+        }
+      }
+    });
+
     test('a script is named as the deck files name it', () {
       final used = <String>{
         for (final f in Directory('decks').listSync(recursive: true))
@@ -311,6 +329,12 @@ void main() {
               '  - { code: en, iso639_3: eng, name: E, own_name: E, '
               'scripts: [latin, kana], script_can_read: { latin: "R" } }\n',
           'come together',
+        ),
+        (
+          'kind: languages\nlanguages:\n'
+              '  - { code: en, iso639_3: eng, name: E, own_name: E, '
+              'script_text: "checked" }\n',
+          'script_text',
         ),
         (
           'kind: languages\nlanguages:\n'
@@ -607,28 +631,52 @@ void main() {
       }
     });
 
-    testWidgets(
-      'the Assamese sheet asks in Assamese, naming the script Eastern '
-      'Nagari (#552)',
-      (tester) async {
-        usePhone(tester);
-        await openPage(tester);
-        await tester.enterText(
-          find.byKey(const ValueKey<String>('known-search')),
-          'Assamese',
-        );
-        await tester.pumpAndSettle();
-        await tester.tap(find.byKey(const ValueKey<String>('lang-as')));
-        await tester.pumpAndSettle();
-        const question = 'আপুনি পূব নাগৰী লিপি পঢ়িব পাৰেনে?';
-        const read = 'মই পূব নাগৰী লিপি পঢ়িব পাৰোঁ';
-        expect(find.text(question), findsOneWidget);
-        expect(find.text(read), findsOneWidget);
-        expect(markedAs(tester, find.text(question)), const Locale('as'));
-        expect(find.textContaining('Do you read'), findsNothing);
-        expect(find.textContaining('I can read the'), findsNothing);
-      },
-    );
+    testWidgets('the unchecked Assamese texts are not shown: the sheet asks in '
+        'English, naming the script Eastern Nagari (#552)', (tester) async {
+      usePhone(tester);
+      await openPage(tester);
+      await tester.enterText(
+        find.byKey(const ValueKey<String>('known-search')),
+        'Assamese',
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const ValueKey<String>('lang-as')));
+      await tester.pumpAndSettle();
+      expect(find.text('Do you read the Eastern Nagari script?'), findsOne);
+      expect(find.text('I can read the Eastern Nagari script'), findsOne);
+      expect(find.textContaining('আপুনি'), findsNothing);
+    });
+
+    testWidgets('a checked multi-script entry (no script_text) asks in its own '
+        'script, heading and rows (#552)', (tester) async {
+      usePhone(tester);
+      await pumpScreen(
+        tester,
+        SpokenLanguagesPage(
+          choices: parseSpokenLanguages(
+            'kind: languages\nlanguages:\n'
+            '  - { code: "pa", iso639_3: "pan", name: "Punjabi", '
+            'own_name: "ਪੰਜਾਬੀ", scripts: ["gurmukhi", "shahmukhi"], '
+            'scripts_question: "ਕਿਹੜੀਆਂ ਲਿਪੀਆਂ?", script_can_read: { '
+            'gurmukhi: "ਗੁਰਮੁਖੀ ਪੜ੍ਹਨੀ ਆਉਂਦੀ ਹੈ" } }\n',
+          ),
+        ),
+        state: AppState.test(settings: SettingsNotifier()),
+      );
+      await tester.enterText(
+        find.byKey(const ValueKey<String>('known-search')),
+        'Punjabi',
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const ValueKey<String>('lang-pa')));
+      await tester.pumpAndSettle();
+      final heading = find.text('ਕਿਹੜੀਆਂ ਲਿਪੀਆਂ?');
+      expect(heading, findsOneWidget);
+      expect(markedAs(tester, heading), const Locale('pa'));
+      expect(find.text('ਗੁਰਮੁਖੀ ਪੜ੍ਹਨੀ ਆਉਂਦੀ ਹੈ'), findsOneWidget);
+      // The script with no text of its own is asked in English.
+      expect(find.text('I can read the Shahmukhi script'), findsOneWidget);
+    });
 
     testWidgets('a chosen language reopens its sheet, marked, and can be '
         'removed; Cancel changes nothing', (tester) async {
@@ -805,13 +853,13 @@ void main() {
         'as',
         'Assamese',
         'Assamese · অসমীয়া',
-        'আপুনি পূব নাগৰী লিপি পঢ়িব পাৰেনে?',
+        'Do you read the Eastern Nagari script?',
       ),
       (
         'pa',
         'Punjabi',
         'Punjabi · ਪੰਜਾਬੀ',
-        'ਤੁਸੀਂ ਪੰਜਾਬੀ ਕਿਹੜੀਆਂ ਲਿਪੀਆਂ ਵਿੱਚ ਪੜ੍ਹ ਸਕਦੇ ਹੋ?',
+        'Which scripts do you read Punjabi in?',
       ),
     ]) {
       for (final scale in <double>[1.0, 1.4]) {
@@ -892,17 +940,14 @@ void main() {
         );
         final l10n = l10nOf(tester);
         await openPunjabi(tester);
-        // Written in Punjabi's own script, marked as Punjabi, with no
-        // English in the heading or the rows (#552).
-        const heading = 'ਤੁਸੀਂ ਪੰਜਾਬੀ ਕਿਹੜੀਆਂ ਲਿਪੀਆਂ ਵਿੱਚ ਪੜ੍ਹ ਸਕਦੇ ਹੋ?';
-        expect(find.text(heading), findsOne);
-        expect(markedAs(tester, find.text(heading)), const Locale('pa'));
-        expect(find.textContaining('Which scripts'), findsNothing);
-        expect(find.textContaining('I can read the'), findsNothing);
+        // Unchecked texts are not shown: English, naming each script by
+        // its own name (#552).
+        expect(find.text('Which scripts do you read Punjabi in?'), findsOne);
+        expect(find.textContaining('ਤੁਸੀਂ'), findsNothing);
         final sheet = tester.getRect(find.byType(BottomSheet));
         for (final (key, text) in <(String, String)>[
-          ('know-script-gurmukhi', 'ਮੈਨੂੰ ਗੁਰਮੁਖੀ ਲਿਪੀ ਪੜ੍ਹਨੀ ਆਉਂਦੀ ਹੈ'),
-          ('know-script-shahmukhi', 'ਮੈਨੂੰ ਸ਼ਾਹਮੁਖੀ ਲਿਪੀ ਪੜ੍ਹਨੀ ਆਉਂਦੀ ਹੈ'),
+          ('know-script-gurmukhi', 'I can read the Gurmukhi script'),
+          ('know-script-shahmukhi', 'I can read the Shahmukhi script'),
           ('know-speak', 'I can only speak Punjabi'),
           ('know-cancel', l10n.commonCancel),
           ('know-done', l10n.knownScriptsDone),

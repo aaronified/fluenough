@@ -26,9 +26,17 @@
 #                   own first script (#552). A script with no answer is
 #                   asked in English.
 #
+#   script_text     optional: `"unchecked"` marks an entry's texts above as
+#                   written by Claude (#552), not by a speaker. They are kept,
+#                   but until a speaker checks them the sheet asks in English,
+#                   naming the script by its own name (owner, 2026-10-17:
+#                   "English for all unchecked"). A speaker who has checked
+#                   and corrected the texts removes the mark; an entry with no
+#                   `script_text` uses its texts (en, bn and hi do).
+#
 # The texts marked "Claude-written" were written by Claude (#552), not by a
 # speaker: each is to be checked by a speaker of the language, as deck text
-# is, and corrected here. The marked entries are the ones not yet checked.
+# is, and corrected here.
 schema: 1
 kind: languages
 languages:
@@ -39,69 +47,69 @@ languages:
   - { code: "hi", iso639_3: "hin", name: "Hindi", own_name: "हिन्दी", scripts: ["devanagari"], family: "indo_aryan",
       script_question: "क्या आपको हिंदी लिपि पढ़नी आती है?", script_can_read: "मुझे हिंदी लिपि पढ़नी आती है" }
   - { code: "as", iso639_3: "asm", name: "Assamese", own_name: "অসমীয়া", scripts: ["bengali"], family: "indo_aryan",
-      script_question: "আপুনি পূব নাগৰী লিপি পঢ়িব পাৰেনে?", script_can_read: "মই পূব নাগৰী লিপি পঢ়িব পাৰোঁ" }  # Claude-written, for a speaker to check (#552)
+      script_question: "আপুনি পূব নাগৰী লিপি পঢ়িব পাৰেনে?", script_can_read: "মই পূব নাগৰী লিপি পঢ়িব পাৰোঁ", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "brx", iso639_3: "brx", name: "Bodo", own_name: "बड़ो", scripts: ["devanagari"], family: "tibeto_burman",
-      script_question: "नों देवनागरी लिपि फरायनो हागोन ला?", script_can_read: "आं देवनागरी लिपि फरायनो हागोन" }  # Claude-written, for a speaker to check (#552)
+      script_question: "नों देवनागरी लिपि फरायनो हागोन ला?", script_can_read: "आं देवनागरी लिपि फरायनो हागोन", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "doi", iso639_3: "doi", name: "Dogri", own_name: "डोगरी", scripts: ["devanagari"], family: "indo_aryan",
-      script_question: "के तुसेंगी देवनागरी लिपि पढ़नी औंदी ऐ?", script_can_read: "मिगी देवनागरी लिपि पढ़नी औंदी ऐ" }  # Claude-written, for a speaker to check (#552)
+      script_question: "के तुसेंगी देवनागरी लिपि पढ़नी औंदी ऐ?", script_can_read: "मिगी देवनागरी लिपि पढ़नी औंदी ऐ", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "gu", iso639_3: "guj", name: "Gujarati", own_name: "ગુજરાતી", scripts: ["gujarati"], family: "indo_aryan",
-      script_question: "શું તમે ગુજરાતી લિપિ વાંચી શકો છો?", script_can_read: "હું ગુજરાતી લિપિ વાંચી શકું છું" }  # Claude-written, for a speaker to check (#552)
+      script_question: "શું તમે ગુજરાતી લિપિ વાંચી શકો છો?", script_can_read: "હું ગુજરાતી લિપિ વાંચી શકું છું", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "kn", iso639_3: "kan", name: "Kannada", own_name: "ಕನ್ನಡ", scripts: ["kannada"], family: "dravidian",
-      script_question: "ನೀವು ಕನ್ನಡ ಲಿಪಿಯನ್ನು ಓದಬಲ್ಲಿರಾ?", script_can_read: "ನಾನು ಕನ್ನಡ ಲಿಪಿಯನ್ನು ಓದಬಲ್ಲೆ" }  # Claude-written, for a speaker to check (#552)
+      script_question: "ನೀವು ಕನ್ನಡ ಲಿಪಿಯನ್ನು ಓದಬಲ್ಲಿರಾ?", script_can_read: "ನಾನು ಕನ್ನಡ ಲಿಪಿಯನ್ನು ಓದಬಲ್ಲೆ", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "ks", iso639_3: "kas", name: "Kashmiri", own_name: "کٲشُر", scripts: ["arabic", "devanagari"], family: "indo_aryan",
       scripts_question: "توٚہہِ کوٚن لِپِیَن منٛز ہیکِو کٲشُر پَرُن؟",
-      script_can_read: { arabic: "بہٕ ہیکہٕ فارسی-عربی لِپی پَرُن", devanagari: "بہٕ ہیکہٕ دیوناگری لِپی پَرُن" } }  # Claude-written, for a speaker to check (#552)
+      script_can_read: { arabic: "بہٕ ہیکہٕ فارسی-عربی لِپی پَرُن", devanagari: "بہٕ ہیکہٕ دیوناگری لِپی پَرُن" }, script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "kok", iso639_3: "kok", name: "Konkani", own_name: "कोंकणी", scripts: ["devanagari", "kannada", "malayalam"], family: "indo_aryan",
       scripts_question: "तुमी कोंकणी खंयच्या लिपींनी वाचूं शकता?",
-      script_can_read: { devanagari: "म्हाका देवनागरी लिपी वाचपाक येता", kannada: "म्हाका कन्नड लिपी वाचपाक येता", malayalam: "म्हाका मलयाळम लिपी वाचपाक येता" } }  # Claude-written, for a speaker to check (#552)
+      script_can_read: { devanagari: "म्हाका देवनागरी लिपी वाचपाक येता", kannada: "म्हाका कन्नड लिपी वाचपाक येता", malayalam: "म्हाका मलयाळम लिपी वाचपाक येता" }, script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "mai", iso639_3: "mai", name: "Maithili", own_name: "मैथिली", scripts: ["devanagari"], family: "indo_aryan",
-      script_question: "की अहाँ देवनागरी लिपि पढ़ि सकैत छी?", script_can_read: "हम देवनागरी लिपि पढ़ि सकैत छी" }  # Claude-written, for a speaker to check (#552)
+      script_question: "की अहाँ देवनागरी लिपि पढ़ि सकैत छी?", script_can_read: "हम देवनागरी लिपि पढ़ि सकैत छी", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "ml", iso639_3: "mal", name: "Malayalam", own_name: "മലയാളം", scripts: ["malayalam"], family: "dravidian",
-      script_question: "നിങ്ങൾക്ക് മലയാളം ലിപി വായിക്കാൻ അറിയാമോ?", script_can_read: "എനിക്ക് മലയാളം ലിപി വായിക്കാൻ അറിയാം" }  # Claude-written, for a speaker to check (#552)
+      script_question: "നിങ്ങൾക്ക് മലയാളം ലിപി വായിക്കാൻ അറിയാമോ?", script_can_read: "എനിക്ക് മലയാളം ലിപി വായിക്കാൻ അറിയാം", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "mni", iso639_3: "mni", name: "Manipuri", own_name: "মৈতৈলোন্", scripts: ["bengali", "meitei_mayek"], family: "tibeto_burman",
       scripts_question: "নহাক্না মৈতৈলোন্ করি করি লিপিদা পাবা ঙম্মগা?",
-      script_can_read: { bengali: "ঐনা পূর্ব নাগরী লিপি পাবা ঙম্মি", meitei_mayek: "ঐনা মীতৈ মায়েক লিপি পাবা ঙম্মি" } }  # Claude-written, for a speaker to check (#552)
+      script_can_read: { bengali: "ঐনা পূর্ব নাগরী লিপি পাবা ঙম্মি", meitei_mayek: "ঐনা মীতৈ মায়েক লিপি পাবা ঙম্মি" }, script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "mr", iso639_3: "mar", name: "Marathi", own_name: "मराठी", scripts: ["devanagari"], family: "indo_aryan",
-      script_question: "तुम्हाला देवनागरी लिपी वाचता येते का?", script_can_read: "मला देवनागरी लिपी वाचता येते" }  # Claude-written, for a speaker to check (#552)
+      script_question: "तुम्हाला देवनागरी लिपी वाचता येते का?", script_can_read: "मला देवनागरी लिपी वाचता येते", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "ne", iso639_3: "npi", name: "Nepali", own_name: "नेपाली", scripts: ["devanagari"], family: "indo_aryan",
-      script_question: "के तपाईं देवनागरी लिपि पढ्न सक्नुहुन्छ?", script_can_read: "म देवनागरी लिपि पढ्न सक्छु" }  # Claude-written, for a speaker to check (#552)
+      script_question: "के तपाईं देवनागरी लिपि पढ्न सक्नुहुन्छ?", script_can_read: "म देवनागरी लिपि पढ्न सक्छु", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "or", iso639_3: "ory", name: "Odia", own_name: "ଓଡ଼ିଆ", scripts: ["odia"], family: "indo_aryan",
-      script_question: "ଆପଣ ଓଡ଼ିଆ ଲିପି ପଢ଼ି ପାରିବେ କି?", script_can_read: "ମୁଁ ଓଡ଼ିଆ ଲିପି ପଢ଼ି ପାରେ" }  # Claude-written, for a speaker to check (#552)
+      script_question: "ଆପଣ ଓଡ଼ିଆ ଲିପି ପଢ଼ି ପାରିବେ କି?", script_can_read: "ମୁଁ ଓଡ଼ିଆ ଲିପି ପଢ଼ି ପାରେ", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "pa", iso639_3: "pan", name: "Punjabi", own_name: "ਪੰਜਾਬੀ", scripts: ["gurmukhi", "shahmukhi"], family: "indo_aryan",
       scripts_question: "ਤੁਸੀਂ ਪੰਜਾਬੀ ਕਿਹੜੀਆਂ ਲਿਪੀਆਂ ਵਿੱਚ ਪੜ੍ਹ ਸਕਦੇ ਹੋ?",
-      script_can_read: { gurmukhi: "ਮੈਨੂੰ ਗੁਰਮੁਖੀ ਲਿਪੀ ਪੜ੍ਹਨੀ ਆਉਂਦੀ ਹੈ", shahmukhi: "ਮੈਨੂੰ ਸ਼ਾਹਮੁਖੀ ਲਿਪੀ ਪੜ੍ਹਨੀ ਆਉਂਦੀ ਹੈ" } }  # Claude-written, for a speaker to check (#552)
+      script_can_read: { gurmukhi: "ਮੈਨੂੰ ਗੁਰਮੁਖੀ ਲਿਪੀ ਪੜ੍ਹਨੀ ਆਉਂਦੀ ਹੈ", shahmukhi: "ਮੈਨੂੰ ਸ਼ਾਹਮੁਖੀ ਲਿਪੀ ਪੜ੍ਹਨੀ ਆਉਂਦੀ ਹੈ" }, script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "sa", iso639_3: "san", name: "Sanskrit", own_name: "संस्कृतम्", scripts: ["devanagari"], family: "indo_aryan",
-      script_question: "किं भवान् देवनागरीलिपिं पठितुं शक्नोति?", script_can_read: "अहं देवनागरीलिपिं पठितुं शक्नोमि" }  # Claude-written, for a speaker to check (#552)
+      script_question: "किं भवान् देवनागरीलिपिं पठितुं शक्नोति?", script_can_read: "अहं देवनागरीलिपिं पठितुं शक्नोमि", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "sat", iso639_3: "sat", name: "Santali", own_name: "ᱥᱟᱱᱛᱟᱲᱤ", scripts: ["ol_chiki", "latin", "devanagari", "bengali"], family: "austroasiatic",
       scripts_question: "ᱟᱢ ᱪᱚᱠ ᱪᱚᱠ ᱞᱤᱯᱤ ᱛᱮ ᱥᱟᱱᱛᱟᱲᱤ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱜ ᱠᱟᱱᱟ?",
-      script_can_read: { ol_chiki: "ᱤᱧ ᱚᱞ ᱪᱤᱠᱤ ᱞᱤᱯᱤ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱜ ᱠᱟᱱᱟ", latin: "ᱤᱧ ᱞᱟᱛᱤᱱ ᱞᱤᱯᱤ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱜ ᱠᱟᱱᱟ", devanagari: "ᱤᱧ ᱫᱮᱵᱚᱱᱟᱜᱚᱨᱤ ᱞᱤᱯᱤ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱜ ᱠᱟᱱᱟ", bengali: "ᱤᱧ ᱯᱩᱨᱵᱤ ᱱᱟᱜᱨᱤ ᱞᱤᱯᱤ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱜ ᱠᱟᱱᱟ" } }  # Claude-written, for a speaker to check (#552)
+      script_can_read: { ol_chiki: "ᱤᱧ ᱚᱞ ᱪᱤᱠᱤ ᱞᱤᱯᱤ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱜ ᱠᱟᱱᱟ", latin: "ᱤᱧ ᱞᱟᱛᱤᱱ ᱞᱤᱯᱤ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱜ ᱠᱟᱱᱟ", devanagari: "ᱤᱧ ᱫᱮᱵᱚᱱᱟᱜᱚᱨᱤ ᱞᱤᱯᱤ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱜ ᱠᱟᱱᱟ", bengali: "ᱤᱧ ᱯᱩᱨᱵᱤ ᱱᱟᱜᱨᱤ ᱞᱤᱯᱤ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱜ ᱠᱟᱱᱟ" }, script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "sd", iso639_3: "snd", name: "Sindhi", own_name: "سنڌي", scripts: ["arabic", "devanagari"], family: "indo_aryan",
       scripts_question: "ڇا توهان سنڌي ڪهڙين لپين ۾ پڙهي سگهو ٿا؟",
-      script_can_read: { arabic: "مون کي فارسي-عربي لپي پڙهڻ اچي ٿي", devanagari: "مون کي ديوناگري لپي پڙهڻ اچي ٿي" } }  # Claude-written, for a speaker to check (#552)
+      script_can_read: { arabic: "مون کي فارسي-عربي لپي پڙهڻ اچي ٿي", devanagari: "مون کي ديوناگري لپي پڙهڻ اچي ٿي" }, script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "ta", iso639_3: "tam", name: "Tamil", own_name: "தமிழ்", scripts: ["tamil"], family: "dravidian",
-      script_question: "உங்களால் தமிழ் எழுத்துமுறையைப் படிக்க முடியுமா?", script_can_read: "என்னால் தமிழ் எழுத்துமுறையைப் படிக்க முடியும்" }  # Claude-written, for a speaker to check (#552)
+      script_question: "உங்களால் தமிழ் எழுத்துமுறையைப் படிக்க முடியுமா?", script_can_read: "என்னால் தமிழ் எழுத்துமுறையைப் படிக்க முடியும்", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "te", iso639_3: "tel", name: "Telugu", own_name: "తెలుగు", scripts: ["telugu"], family: "dravidian",
-      script_question: "మీరు తెలుగు లిపిని చదవగలరా?", script_can_read: "నేను తెలుగు లిపిని చదవగలను" }  # Claude-written, for a speaker to check (#552)
+      script_question: "మీరు తెలుగు లిపిని చదవగలరా?", script_can_read: "నేను తెలుగు లిపిని చదవగలను", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "ur", iso639_3: "urd", name: "Urdu", own_name: "اردو", scripts: ["arabic"], family: "indo_aryan",
-      script_question: "کیا آپ کو فارسی-عربی رسم الخط پڑھنا آتا ہے؟", script_can_read: "مجھے فارسی-عربی رسم الخط پڑھنا آتا ہے" }  # Claude-written, for a speaker to check (#552)
+      script_question: "کیا آپ کو فارسی-عربی رسم الخط پڑھنا آتا ہے؟", script_can_read: "مجھے فارسی-عربی رسم الخط پڑھنا آتا ہے", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "bho", iso639_3: "bho", name: "Bhojpuri", own_name: "भोजपुरी", scripts: ["devanagari"], family: "indo_aryan",
-      script_question: "का रउआ देवनागरी लिपि पढ़ सकत बानी?", script_can_read: "हम देवनागरी लिपि पढ़ सकत बानी" }  # Claude-written, for a speaker to check (#552)
+      script_question: "का रउआ देवनागरी लिपि पढ़ सकत बानी?", script_can_read: "हम देवनागरी लिपि पढ़ सकत बानी", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "tcy", iso639_3: "tcy", name: "Tulu", own_name: "ತುಳು", scripts: ["kannada"], family: "dravidian",
-      script_question: "ಈರ್ ಕನ್ನಡ ಲಿಪಿನ್ ಓದುಲೆ ಆಪುಂಡಾ?", script_can_read: "ಏನ್ ಕನ್ನಡ ಲಿಪಿನ್ ಓದುಲೆ ಆಪುಂಡು" }  # Claude-written, for a speaker to check (#552)
+      script_question: "ಈರ್ ಕನ್ನಡ ಲಿಪಿನ್ ಓದುಲೆ ಆಪುಂಡಾ?", script_can_read: "ಏನ್ ಕನ್ನಡ ಲಿಪಿನ್ ಓದುಲೆ ಆಪುಂಡು", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "raj", iso639_3: "raj", name: "Rajasthani", own_name: "राजस्थानी", scripts: ["devanagari"], family: "indo_aryan",
-      script_question: "कांई आप देवनागरी लिपि पढ़ सको हो?", script_can_read: "म्हैं देवनागरी लिपि पढ़ सकूं हूं" }  # Claude-written, for a speaker to check (#552)
+      script_question: "कांई आप देवनागरी लिपि पढ़ सको हो?", script_can_read: "म्हैं देवनागरी लिपि पढ़ सकूं हूं", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "mag", iso639_3: "mag", name: "Magahi", own_name: "मगही", scripts: ["devanagari"], family: "indo_aryan",
-      script_question: "की अपने देवनागरी लिपि पढ़ सकऽ हथिन?", script_can_read: "हम देवनागरी लिपि पढ़ सकऽ ही" }  # Claude-written, for a speaker to check (#552)
+      script_question: "की अपने देवनागरी लिपि पढ़ सकऽ हथिन?", script_can_read: "हम देवनागरी लिपि पढ़ सकऽ ही", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "hne", iso639_3: "hne", name: "Chhattisgarhi", own_name: "छत्तीसगढ़ी", scripts: ["devanagari"], family: "indo_aryan",
-      script_question: "का आप देवनागरी लिपि पढ़ सकथौ?", script_can_read: "मैं देवनागरी लिपि पढ़ सकथौं" }  # Claude-written, for a speaker to check (#552)
+      script_question: "का आप देवनागरी लिपि पढ़ सकथौ?", script_can_read: "मैं देवनागरी लिपि पढ़ सकथौं", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "awa", iso639_3: "awa", name: "Awadhi", own_name: "अवधी", scripts: ["devanagari"], family: "indo_aryan",
-      script_question: "का आप देवनागरी लिपि पढ़ि सकत हैं?", script_can_read: "हम देवनागरी लिपि पढ़ि सकित है" }  # Claude-written, for a speaker to check (#552)
+      script_question: "का आप देवनागरी लिपि पढ़ि सकत हैं?", script_can_read: "हम देवनागरी लिपि पढ़ि सकित है", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "bgc", iso639_3: "bgc", name: "Haryanvi", own_name: "हरियाणवी", scripts: ["devanagari"], family: "indo_aryan",
-      script_question: "के आप देवनागरी लिपि पढ़ सको सो?", script_can_read: "मैं देवनागरी लिपि पढ़ सकूँ सूँ" }  # Claude-written, for a speaker to check (#552)
+      script_question: "के आप देवनागरी लिपि पढ़ सको सो?", script_can_read: "मैं देवनागरी लिपि पढ़ सकूँ सूँ", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "kfy", iso639_3: "kfy", name: "Kumaoni", own_name: "कुमाऊँनी", scripts: ["devanagari"], family: "indo_aryan",
-      script_question: "के आप देवनागरी लिपि पढ़ सकछा?", script_can_read: "मैं देवनागरी लिपि पढ़ सकनूं" }  # Claude-written, for a speaker to check (#552)
+      script_question: "के आप देवनागरी लिपि पढ़ सकछा?", script_can_read: "मैं देवनागरी लिपि पढ़ सकनूं", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "gbm", iso639_3: "gbm", name: "Garhwali", own_name: "गढ़वळि", scripts: ["devanagari"], family: "indo_aryan",
-      script_question: "क्या आप देवनागरी लिपि पढ़ सकदन?", script_can_read: "मि देवनागरी लिपि पढ़ सकदु" }  # Claude-written, for a speaker to check (#552)
+      script_question: "क्या आप देवनागरी लिपि पढ़ सकदन?", script_can_read: "मि देवनागरी लिपि पढ़ सकदु", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "lus", iso639_3: "lus", name: "Mizo", own_name: "Mizo ṭawng", scripts: ["latin"], family: "tibeto_burman" }
   - { code: "kha", iso639_3: "kha", name: "Khasi", own_name: "Ka Ktien Khasi", scripts: ["latin"], family: "austroasiatic" }
   - { code: "gom", iso639_3: "gom", name: "Goan Konkani", own_name: "Konknni", scripts: ["latin"], family: "indo_aryan" }
