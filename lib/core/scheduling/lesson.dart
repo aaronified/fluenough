@@ -68,7 +68,10 @@ typedef LessonQuestion = ({DrillMode mode, Ask ask});
 /// is produced: its form's meaning chosen, then its form chosen among its
 /// word's, each where its row has the options; with none, it is typed. A
 /// pattern deck's grammar cell is typed.
-List<LessonQuestion> lessonQuestions(Card card) {
+///
+/// A card of a language that is not [typed], as the IPA's, is produced by
+/// choosing the word, whatever its difficulty: nothing is typed.
+List<LessonQuestion> lessonQuestions(Card card, {bool typed = true}) {
   if (card.rule != null) {
     return <LessonQuestion>[
       if (card.choosesMeaning)
@@ -98,7 +101,11 @@ List<LessonQuestion> lessonQuestions(Card card) {
     Difficulty.hard => <LessonQuestion>[
       (
         mode: DrillMode.production,
-        ask: card.rearranges ? Ask.rearrange : Ask.own,
+        ask: card.rearranges
+            ? Ask.rearrange
+            : typed
+            ? Ask.own
+            : Ask.chooseWord,
       ),
       (mode: DrillMode.speaking, ask: Ask.own),
       (mode: DrillMode.listening, ask: Ask.hearMeaning),
@@ -120,11 +127,15 @@ List<LessonQuestion> lessonQuestions(Card card) {
 /// A card [straightToQuestion] says so of has no teaching card: a rules
 /// table's cell a set card taught (owner, 2026-10-16, #515: "Straight to
 /// question"). It is checked at once all the same.
+///
+/// A card [typed] says is not typed is never asked for a typed answer: its
+/// production is chosen.
 List<SessionItem> lessonPlan(
   List<Card> cards, {
   required Set<DrillMode> Function(Card card) modesOf,
   required bool Function(Card card, Ask ask) canChoose,
   bool Function(Card card)? straightToQuestion,
+  bool Function(Card card)? typed,
 }) {
   final taught = <SessionItem>[];
   final exercise = <Difficulty, List<SessionItem>>{
@@ -133,7 +144,7 @@ List<SessionItem> lessonPlan(
   for (final card in cards) {
     final modes = modesOf(card);
     final questions = <LessonQuestion>[
-      for (final q in lessonQuestions(card))
+      for (final q in lessonQuestions(card, typed: typed?.call(card) ?? true))
         if (modes.contains(q.mode)) q,
     ];
     if (questions.isEmpty) continue;

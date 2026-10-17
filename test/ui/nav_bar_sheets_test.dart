@@ -13,6 +13,7 @@ import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/card_set.dart';
 import 'package:fluenough/core/models/deck.dart';
+import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/speech/speech_engine.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
@@ -27,6 +28,7 @@ import 'package:fluenough/features/drill/reading_fixture.dart';
 import 'package:fluenough/features/drill/set_drill.dart';
 import 'package:fluenough/features/gallery/gallery_page.dart';
 import 'package:fluenough/features/placement/gallery_entries.dart';
+import 'package:fluenough/features/profiles/spoken_languages_picker.dart';
 import 'package:fluenough/features/review/review_sheets.dart';
 import 'package:fluenough/features/review/review_words.dart';
 import 'package:fluenough/features/review/send_reviews_sheet.dart';
@@ -328,6 +330,36 @@ sheets = <String, Future<void> Function(WidgetTester tester)>{
     await tester.tap(change);
     await tester.pumpAndSettle();
   },
+  'spoken_languages_picker: a language I know': (tester) async {
+    final state = AppState.test();
+    await state.load();
+    const bengali = SpokenLanguage(
+      code: 'bn',
+      iso639_3: 'ben',
+      name: 'Bengali',
+      ownName: 'বাংলা',
+      script: 'bengali',
+      family: 'indo_aryan',
+      scriptQuestion: 'আপনি কি বাংলা লিপি পড়তে পারেন?',
+      scriptCanRead: 'আমি বাংলা লিপি পড়তে পারি',
+    );
+    // As the picker opens it.
+    await openOn(
+      tester,
+      state,
+      (context) => showModalBottomSheet<KnownAnswer>(
+        context: context,
+        isScrollControlled: true,
+        useSafeArea: true,
+        showDragHandle: true,
+        builder: (_) => const KnownLanguageSheet(
+          language: bengali,
+          current: true,
+          chosen: true,
+        ),
+      ),
+    );
+  },
 };
 
 void main() {
@@ -355,6 +387,7 @@ void main() {
       'adjust_section': 1,
       'language_card': 1,
       'set_drill': 1,
+      'spoken_languages_picker': 1,
     }, reason: 'a new sheet belongs in [sheets]');
   });
 

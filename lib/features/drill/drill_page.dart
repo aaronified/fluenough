@@ -11,6 +11,7 @@ import '../../core/models/reading.dart';
 import '../../core/models/script_guide.dart';
 import '../../core/scheduling/session_queue.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/widgets/drill_frame.dart' show DrillHeaderScope;
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../script/script_guide_page.dart';
@@ -23,6 +24,7 @@ import 'rearrange_drill.dart';
 import 'reading_drill.dart';
 import 'recognition_drill.dart';
 import 'set_drill.dart';
+import 'sounds_of_word.dart';
 import 'speaking_drill.dart';
 import 'teach_drill.dart';
 import 'typed_drill.dart';
@@ -59,6 +61,10 @@ class DrillPage extends StatefulWidget {
 class _DrillPageState extends State<DrillPage> {
   DrillSession? _session;
 
+  /// The app, kept from initState: a sounds session's IPA cards are let go
+  /// of in [dispose], where the tree can no longer be read.
+  late final AppState _app;
+
   /// The script guides to show before the session (#30, ADR-0016), in
   /// turn: one for each language with script cards in it whose guide is
   /// unseen, in the order the session reaches them.
@@ -75,7 +81,7 @@ class _DrillPageState extends State<DrillPage> {
   @override
   void initState() {
     super.initState();
-    final state = AppScope.read(context);
+    final state = _app = AppScope.read(context);
     // `load` also waits for the voice check, which decides whether
     // listening cards are in the queue. It is safe to call again.
     _await(state, state.load());
@@ -114,6 +120,15 @@ class _DrillPageState extends State<DrillPage> {
       if (items.isEmpty) return;
       _session = DrillSession(state: state, items: items, recorded: false)
         ..addListener(_onSession);
+      return;
+    }
+    // The sounds of a word: its IPA cards, each taught, checked and
+    // practised, and recorded in the IPA course (ADR-0041).
+    if (request.cardIds != null) {
+      final items = state.soundsItems(request);
+      if (items.isEmpty) return;
+      _items = items;
+      _begin(state);
       return;
     }
     // A preset keeps each item asked its own way, but for its first.
@@ -196,6 +211,7 @@ class _DrillPageState extends State<DrillPage> {
 
   @override
   void dispose() {
+    if (widget.request.cardIds != null) _app.unpinIpaCards();
     _session
       ?..removeListener(_onSession)
       ..dispose();
@@ -288,71 +304,76 @@ class _DrillPageState extends State<DrillPage> {
         onPopInvokedWithResult: (didPop, _) {
           if (!didPop) _confirmEnd();
         },
-        child: switch (session.item.mode) {
-          // A reading question, read or heard (#98).
-          _ when session.item.card is QuestionCard => ReadingDrill(
-            key: ValueKey<(int, bool)>((
-              session.position,
-              session.showsPassage,
-            )),
-            session: session,
-            onClose: _close,
-          ),
-          // A lesson teaching a word, and the questions asked another way
-          // than the mode's own (ADR-0024).
-          // A set card, or one part of it (#515).
-          _ when session.ask == Ask.showSet => SetDrill(
-            key: ValueKey<int>(session.position),
-            session: session,
-            onClose: _close,
-          ),
-          _ when session.ask == Ask.teach => TeachDrill(
-            key: ValueKey<int>(session.position),
-            session: session,
-            onClose: _close,
-          ),
-          _ when session.ask.chooses => ChoiceDrill(
-            key: ValueKey<int>(session.position),
-            session: session,
-            onClose: _close,
-          ),
-          _ when session.ask == Ask.matchPairs => MatchDrill(
-            key: ValueKey<int>(session.position),
-            session: session,
-            onClose: _close,
-          ),
-          _ when session.ask == Ask.rearrange => RearrangeDrill(
-            key: ValueKey<int>(session.position),
-            session: session,
-            onClose: _close,
-          ),
-          DrillMode.recognition => RecognitionDrill(
-            key: ValueKey<int>(session.position),
-            session: session,
-            onClose: _close,
-          ),
-          // A pattern deck's cell, with its table; a rules table's cell
-          // typed is a typed word, its word and meaning the prompt (spec
-          // 4.6).
-          DrillMode.grammar when session.item.card.rule == null =>
-            GrammarDrill.live(
-              key: ValueKey<int>(session.position),
-              session: session,
-              onClose: _close,
-            ),
-          DrillMode.speaking => SpeakingDrill(
-            key: ValueKey<int>(session.position),
-            session: session,
-            onClose: _close,
-          ),
-          _ => TypedDrill(
-            key: ValueKey<int>(session.position),
-            session: session,
-            onClose: _close,
-            initialText: session.position == 1 ? widget.preset?.typed : null,
-          ),
-        },
+        child: DrillHeaderScope(
+          action: SoundsOfWordButton(card: session.item.card),
+          child: _drill(session),
+        ),
       ),
     );
+  }
+
+  /// The drill for the session's current item.
+  Widget _drill(DrillSession session) {
+    return switch (session.item.mode) {
+      // A reading question, read or heard (#98).
+      _ when session.item.card is QuestionCard => ReadingDrill(
+        key: ValueKey<(int, bool)>((session.position, session.showsPassage)),
+        session: session,
+        onClose: _close,
+      ),
+      // A lesson teaching a word, and the questions asked another way
+      // than the mode's own (ADR-0024).
+      // A set card, or one part of it (#515).
+      _ when session.ask == Ask.showSet => SetDrill(
+        key: ValueKey<int>(session.position),
+        session: session,
+        onClose: _close,
+      ),
+      _ when session.ask == Ask.teach => TeachDrill(
+        key: ValueKey<int>(session.position),
+        session: session,
+        onClose: _close,
+      ),
+      _ when session.ask.chooses => ChoiceDrill(
+        key: ValueKey<int>(session.position),
+        session: session,
+        onClose: _close,
+      ),
+      _ when session.ask == Ask.matchPairs => MatchDrill(
+        key: ValueKey<int>(session.position),
+        session: session,
+        onClose: _close,
+      ),
+      _ when session.ask == Ask.rearrange => RearrangeDrill(
+        key: ValueKey<int>(session.position),
+        session: session,
+        onClose: _close,
+      ),
+      DrillMode.recognition => RecognitionDrill(
+        key: ValueKey<int>(session.position),
+        session: session,
+        onClose: _close,
+      ),
+      // A pattern deck's cell, with its table; a rules table's cell
+      // typed is a typed word, its word and meaning the prompt (spec
+      // 4.6).
+      DrillMode.grammar when session.item.card.rule == null =>
+        GrammarDrill.live(
+          key: ValueKey<int>(session.position),
+          session: session,
+          onClose: _close,
+        ),
+      DrillMode.speaking => SpeakingDrill(
+        key: ValueKey<int>(session.position),
+        session: session,
+        onClose: _close,
+      ),
+      _ => TypedDrill(
+        key: ValueKey<int>(session.position),
+        session: session,
+        onClose: _close,
+        initialText: session.position == 1 ? widget.preset?.typed : null,
+      ),
+    };
   }
 }
