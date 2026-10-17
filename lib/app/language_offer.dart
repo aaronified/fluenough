@@ -203,3 +203,46 @@ extension LanguageOffer on AppState {
     );
   }
 }
+
+/// The script test (#554), as the language picker reads it of the app.
+extension ScriptLessons on AppState {
+  /// [language]'s script lessons in its course from [native], or the course
+  /// it is learned from: the decks its path marks as needing the alphabet
+  /// that teach the script itself, in path order. Not its spelling or
+  /// reading decks, which teach words. Empty while its decks are not on the
+  /// phone.
+  List<DeckEntry> scriptLessons(String language, {String? native}) {
+    final path = languagePathOf(language);
+    final from = native ?? courseNative(language);
+    if (path == null || path.alphabet.isEmpty || from == null) {
+      return const <DeckEntry>[];
+    }
+    return <DeckEntry>[
+      for (final unit in path.plan)
+        for (final core in unit.decks)
+          if (path.alphabet.contains(core))
+            if (deckById(path.deckFor(from, core)) case final entry?
+                when entry.isScript)
+              entry,
+    ];
+  }
+
+  /// Whether [language]'s script lessons are skipped: each placed, as a
+  /// passed script test places them.
+  bool scriptLessonsSkipped(String language, {String? native}) {
+    final lessons = scriptLessons(language, native: native);
+    return lessons.isNotEmpty && lessons.every(isPlaced);
+  }
+
+  /// Skips [language]'s script lessons, placing them as known, after a
+  /// passed script test; or, after a failed one, teaches them again.
+  void skipScriptLessons(String language, bool skip, {String? native}) {
+    final ids = <String>{
+      for (final entry in scriptLessons(language, native: native)) entry.id,
+    };
+    final placed = settings.placedDecks;
+    settings.placedDecks = skip
+        ? <String>{...placed, ...ids}
+        : placed.difference(ids);
+  }
+}
