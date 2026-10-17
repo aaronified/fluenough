@@ -378,10 +378,39 @@ class Proposals(Case):
         # Only zz-9001's picture is downloaded, not the proposed one.
         self.assertEqual(len([u for u in network.asked if "upload.wikimedia.org" in u]), 1)
 
-    def test_only_nouns_with_one_entry(self) -> None:
+    def test_nouns_verbs_and_adjectives(self) -> None:
+        """"Nouns, verbs, adjectives" (owner, 2026-10-16): zz-9004 is an
+        adjective and zz-9005 a verb; a card with a picture or an adverb
+        gets none."""
         _, out, _ = self.run_images(page_with("A building.jpg"))
-        for cid in ("zz-9001", "zz-9003", "zz-9004", "zz-9005", "zz-9007"):
+        for cid in ("zz-9002", "zz-9004", "zz-9005"):
+            self.assertIn(f"| {cid} |", out)
+        for cid in ("zz-9001", "zz-9003"):
             self.assertNotIn(f"| {cid} |", out)
+
+    def test_a_pronoun_gets_no_proposal(self) -> None:
+        dump = self.tmp / "Testlang.jsonl"
+        rows = [json.loads(x) for x in DUMP.read_text(encoding="utf-8").splitlines()]
+        for row in rows:
+            if row["word"] == "मकान":
+                row["pos"] = "pron"
+        dump.write_text("\n".join(json.dumps(x, ensure_ascii=False) for x in rows),
+                        encoding="utf-8")
+        core = self.decks / CORE
+        core.write_text(core.read_text(encoding="utf-8").replace(
+            'target: "मकान"\n    reading: "makān"\n    ipa: "məkaːn"\n    pos: "noun"',
+            'target: "मकान"\n    reading: "makān"\n    ipa: "məkaːn"\n    pos: "pronoun"'),
+            encoding="utf-8")
+        self.assertEqual(self.card(CORE, "zz-9002")["pos"], "pronoun")
+        argv = ["import_wiktionary.py", "zz", str(dump), "--decks", str(self.decks),
+                "--dump-date", "2026-10-13", "--images"]
+        out = io.StringIO()
+        with mock.patch.object(iw, "http_get", page_with("A building.jpg")), \
+                mock.patch.object(iw.shutil, "which", return_value="/usr/bin/ffmpeg"), \
+                contextlib.redirect_stdout(out):
+            self.assertEqual(iw.main(argv), 0)
+        self.assertNotIn("| zz-9002 |", out.getvalue())
+        self.assertIn("| zz-9004 |", out.getvalue())
 
     def test_proposed_without_write(self) -> None:
         network = page_with("A building.jpg")
@@ -399,7 +428,8 @@ class Proposals(Case):
         self.assertIn("- zz-9002 मकान: A building.jpg: licence 'GFDL' cannot ship", out)
 
     def test_approved_is_written(self) -> None:
-        code, out, _ = self.run_images(page_with("A building.jpg"), "--approve", "zz-9002")
+        code, out, _ = self.run_images(page_with("A building.jpg"),
+                                    "--approve", "zz-9002=A building.jpg")
         self.assertEqual(code, 0)
         building = self.card(CORE, "zz-9002")
         self.assertEqual(building["image"], "decks/zz/images/zz-9002.webp")
@@ -412,15 +442,40 @@ class Proposals(Case):
 
     def test_an_approval_that_fits_no_proposal(self) -> None:
         _, out, _ = self.run_images(page_with("A building.jpg"), "--approve",
-                                    "zz-9001,zz-9004")
+                                    "zz-9001=A building.jpg,zz-9003=A building.jpg")
         self.assertIn("Approved images not imported:", out)
-        self.assertIn("- zz-9001: not a noun card without a picture", out)
-        self.assertIn("- zz-9004: not a noun card without a picture", out)
-        self.assertNotIn("image", self.card(CORE, "zz-9004"))
+        self.assertIn("- zz-9001: not a noun, verb or adjective card without a picture", out)
+        self.assertIn("- zz-9003: not a noun, verb or adjective card without a picture", out)
+        self.assertNotIn("image", self.card(CORE, "zz-9003"))
+
+    def test_an_approval_pins_the_file(self) -> None:
+        code, out, _ = self.run_images(page_with("A building.jpg"),
+                                       "--approve", "zz-9002=Another.jpg")
+        self.assertEqual(code, 0)
+        self.assertNotIn("image", self.card(CORE, "zz-9002"))
+        self.assertFalse((self.decks / "zz/images/zz-9002.webp").exists())
+        self.assertIn("Approved images not imported:", out)
+        self.assertIn("- zz-9002 मकान: approved Another.jpg but the proposal is "
+                      "A building.jpg", out)
+        self.assertIn("| zz-9002 | मकान | A building.jpg |", out)
+
+    def test_a_bare_id_is_refused(self) -> None:
+        for item in ("zz-9002", "zz-9002=", "=A building.jpg"):
+            code, _, err = self.run_images(page_with("A building.jpg"), "--approve", item)
+            self.assertEqual(code, 2)
+            self.assertIn("a pinned file is required", err)
+            self.assertNotIn("image", self.card(CORE, "zz-9002"))
+
+    def test_verbs_and_adjectives_are_approved(self) -> None:
+        code, _, _ = self.run_images(page_with("A big.jpg"), "--approve",
+                                     "zz-9004=A big.jpg", "--approve", "zz-9005=A big.jpg")
+        self.assertEqual(code, 0)
+        for cid in ("zz-9004", "zz-9005"):
+            self.assertEqual(self.card(CORE, cid)["image"], f"decks/zz/images/{cid}.webp")
 
     def test_approve_needs_images_and_write(self) -> None:
-        for extra, write in ((("--approve", "zz-9002"), True),
-                             (("--images", "--approve", "zz-9002"), False)):
+        for extra, write in ((("--approve", "zz-9002=A building.jpg"), True),
+                             (("--images", "--approve", "zz-9002=A building.jpg"), False)):
             with mock.patch.object(iw.shutil, "which", return_value="/usr/bin/ffmpeg"):
                 code, _, err = self.run_tool(*extra, write=write)
             self.assertEqual(code, 2)
@@ -469,6 +524,25 @@ class Arguments(Case):
         code, _, err = self.run_tool("--dump-date", "13/10/2026", write=False)
         self.assertEqual(code, 2)
         self.assertIn("--dump-date must be YYYY-MM-DD", err)
+
+
+class ApprovalParsingTest(unittest.TestCase):
+    """`--approve` lists and file names, as reviewers paste them (#523)."""
+
+    def test_a_comma_in_a_file_name_is_kept(self) -> None:
+        self.assertEqual(
+            iw.parse_approvals(["hi-0419=Apple, red.jpg,hi-0420=Tea.jpg"]),
+            {"hi-0419": "Apple, red.jpg", "hi-0420": "Tea.jpg"})
+
+    def test_repeated_and_comma_separated_items(self) -> None:
+        self.assertEqual(
+            iw.parse_approvals(["hi-0419=A.jpg", "ipa-0001=B.png, bn-12=C.jpg"]),
+            {"hi-0419": "A.jpg", "ipa-0001": "B.png", "bn-12": "C.jpg"})
+
+    def test_file_names_compare_as_commons_reads_them(self) -> None:
+        self.assertTrue(iw.same_file("File:Red_apple.jpg", "Red apple.jpg"))
+        self.assertTrue(iw.same_file("red apple.jpg", "Red_apple.jpg"))
+        self.assertFalse(iw.same_file("Red apple.jpg", "Green apple.jpg"))
 
 
 if __name__ == "__main__":
