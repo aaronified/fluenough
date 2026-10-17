@@ -32,9 +32,14 @@ wherever the table above allows it.
 
 ## How the owner works (owner, 2026-10-11)
 
-- **Pull requests for everything** (owner, 2026-10-16: "Do use PRs for
-  everything", replacing "Push straight to main" of 2026-10-11). Every
-  change, documentation included, goes through a pull request to main
+- **Docs straight to main** (owner, 2026-10-17: "Docs go straight to main,
+  no PR"). A change to documentation only (Markdown such as `docs/`,
+  `CLAUDE.md`, `AGENTS.md`, the READMEs and the skills) is pushed straight to
+  main, with no pull request and no review. A change that touches code, a
+  deck, `decks/index.json` or the CHANGELOG is not docs only.
+- **Pull requests for everything else** (owner, 2026-10-16: "Do use PRs for
+  everything", replacing "Push straight to main" of 2026-10-11). Every other
+  change goes through a pull request to main
   (or to `decks-next`). Before opening it the checks pass: `flutter analyze`
   clean, the full `flutter test` (read its "All tests passed" line, never a
   truncated tail), the deck validator and the tools' tests, and one review
