@@ -18,7 +18,8 @@ import '../../ui/widgets/pace_parts.dart';
 import '../../ui/widgets/report_button.dart';
 
 /// The order skills are listed in: Today's tiles', grammar understood
-/// before produced as on the Grammar tile, then passages.
+/// before produced as on the Grammar tile, then passages, then the script
+/// skills (#556).
 const List<DrillMode> _order = <DrillMode>[
   DrillMode.recognition,
   DrillMode.listening,
@@ -27,6 +28,8 @@ const List<DrillMode> _order = <DrillMode>[
   DrillMode.grammarUnderstood,
   DrillMode.grammar,
   DrillMode.reading,
+  DrillMode.readScript,
+  DrillMode.writeScript,
 ];
 
 /// How you learn (ADR-0035, "Shown prominently"; mockup

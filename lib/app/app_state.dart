@@ -920,11 +920,16 @@ class AppState extends ChangeNotifier {
   /// means, so that a right answer there implies Write, not Recognition
   /// (ADR-0034).
   void _mapSkills() {
+    final scriptDecks = <String>{
+      for (final entry in decks)
+        if (needsAlphabet(entry)) entry.id,
+    };
+    // The decks listed under `alphabet:` in a path are also the script
+    // skills' (#556): their answers make Read script and Write script,
+    // rebuilt from the log whenever the decks are read.
     progress.skills = SkillMap(
-      formHeardIn: <String>{
-        for (final entry in decks)
-          if (needsAlphabet(entry)) entry.id,
-      },
+      formHeardIn: scriptDecks,
+      scriptDecks: scriptDecks,
     );
   }
 
@@ -1949,7 +1954,7 @@ class AppState extends ChangeNotifier {
 
   /// Whether [card] has been taught: some skill of it has been drilled.
   bool isTaught(Card card) =>
-      DrillMode.values.any((mode) => progress.stateOf(card.id, mode) != null);
+      DrillMode.drills.any((mode) => progress.stateOf(card.id, mode) != null);
 
   /// The modes [card] can be drilled in now: those it takes, switched on
   /// and not paused, by ear only with a voice and sound on and by mouth

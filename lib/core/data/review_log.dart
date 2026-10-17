@@ -277,8 +277,7 @@ class ReviewLog {
         }
       });
 
-  Future<({List<ReviewEvent> events, Map<ProgressKey, FsrsState> states})>
-  _replay(SkillParameters? parameters) async => replayReviews(
+  Future<Replayed> _replay(SkillParameters? parameters) async => replayReviews(
     await reviews(),
     effects: LeechEffects(await _actions()),
     parameters: parameters,

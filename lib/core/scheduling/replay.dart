@@ -14,6 +14,14 @@ typedef LoggedReview = ({
   String? answerGiven,
 });
 
+/// What [replayReviews] gives.
+typedef Replayed = ({
+  List<ReviewEvent> events,
+  Map<ProgressKey, FsrsState> states,
+  List<ReviewEvent> scriptEvents,
+  Map<ProgressKey, FsrsState> scriptStates,
+});
+
 /// Replays [reviews], in the order given, through [Fsrs.next]: every review
 /// with its pair's state before and after it, and each pair's state at the
 /// end (ADR-0005).
@@ -28,10 +36,17 @@ typedef LoggedReview = ({
 /// Without, each pair is its own reviews alone: what the database's
 /// `card_states` caches.
 ///
+/// With [skills] that name script decks, the answers in them also make the
+/// script skills (#556, [scriptReview]): their reviews, [scriptEvents], and
+/// their states, [scriptStates], kept apart from the word skills' because
+/// they are never drilled or logged. Replaying the whole log rebuilds them,
+/// so a learner with script-deck answers from before the skills existed
+/// has them as if they had always been kept.
+///
 /// Each pair is scheduled with the parameters [parameters] gives its skill
 /// in its language: the same for the whole log, so that the replay is
 /// deterministic, and gives what recording each review with them gave.
-({List<ReviewEvent> events, Map<ProgressKey, FsrsState> states}) replayReviews(
+Replayed replayReviews(
   Iterable<LoggedReview> reviews, {
   LeechEffects effects = LeechEffects.none,
   SkillMap? skills,
@@ -41,6 +56,8 @@ typedef LoggedReview = ({
   final states = <ProgressKey, FsrsState>{};
   final restarted = <ProgressKey>{};
   final events = <ReviewEvent>[];
+  final scriptStates = <ProgressKey, FsrsState>{};
+  final scriptEvents = <ReviewEvent>[];
   for (final review in reviews) {
     final key = review.key;
     final resetAt = effects.resetAt(key);
@@ -58,6 +75,13 @@ typedef LoggedReview = ({
     states[key] = after;
     if (skills != null) {
       implyReview(states, skills, review, parameters: chosen);
+      scriptReview(
+        scriptStates,
+        scriptEvents,
+        skills,
+        review,
+        parameters: chosen,
+      );
     }
     events.add(
       ReviewEvent(
@@ -76,7 +100,63 @@ typedef LoggedReview = ({
   for (final key in effects.resets.keys) {
     if (!restarted.contains(key)) states.remove(key);
   }
-  return (events: events, states: states);
+  return (
+    events: events,
+    states: states,
+    scriptEvents: scriptEvents,
+    scriptStates: scriptStates,
+  );
+}
+
+/// Counts [review], an answer in a script deck, for the script skill
+/// [skills] says it feeds (#556), in [states], and for a review of the
+/// skill's own, in [events]. In full: the skill's pair is reviewed as the
+/// word skill's is, with the parameters of the script skill, so that
+/// the two schedules are never one. In part: a right answer moves the
+/// pair's stability as [implyReview] does, only where the pair has a
+/// state, and is no event of its own.
+void scriptReview(
+  Map<ProgressKey, FsrsState> states,
+  List<ReviewEvent> events,
+  SkillMap skills,
+  LoggedReview review, {
+  SkillParameters? parameters,
+}) {
+  final target = skills.scriptOf(review.key.mode, review.deckId);
+  if (target == null) return;
+  final chosen = parameters ?? SkillParameters.none;
+  final key = (cardId: review.key.cardId, mode: target.skill);
+  final before = states[key];
+  if (target.share >= 1) {
+    final after = Fsrs.next(
+      before,
+      review.grade,
+      now: review.at,
+      rated: review.answerGiven == null,
+      parameters: chosen.forPair(key),
+    );
+    states[key] = after;
+    events.add(
+      ReviewEvent(
+        at: review.at,
+        deckId: review.deckId,
+        cardId: key.cardId,
+        mode: key.mode,
+        grade: review.grade,
+        elapsed: review.elapsed,
+        answerGiven: review.answerGiven,
+        before: before,
+        after: after,
+      ),
+    );
+  } else if (before != null && review.grade >= Fsrs.passingGrade) {
+    states[key] = Fsrs.implied(
+      before,
+      target.share,
+      now: review.at,
+      parameters: chosen.forPair(key),
+    );
+  }
 }
 
 /// Credits [review], if right, in part to each skill [skills] says it

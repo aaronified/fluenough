@@ -16,14 +16,43 @@ import '../models/drill_mode.dart';
 /// - **Grammar,** understood or produced, implies nothing: no study gives
 ///   a figure for a rule's forms (DECK-FORMAT.md, Rules decks).
 ///
+/// - **Script decks (#556, owner, 2026-10-17: "Both").** An answer in a deck
+///   that teaches the alphabet counts for the word skill it was asked in,
+///   as above, and also for a script skill of its own: Recognition for
+///   Read script and Write for Write script in full, and in part Hear
+///   (what was heard, written) for Write script and Say for Read script,
+///   by the same share as the word skills. [scriptOf] says which.
+///
 /// Only a right answer implies anything: a miss in Write says little about
 /// Recognition, which is easier. A miss counts against its own skill alone.
 class SkillMap {
-  const SkillMap({this.formHeardIn = const <String>{}});
+  const SkillMap({
+    this.formHeardIn = const <String>{},
+    this.scriptDecks = const <String>{},
+  });
 
   /// The decks where hearing asks for what was heard rather than what it
   /// means: those that teach the alphabet.
   final Set<String> formHeardIn;
+
+  /// The decks listed under `alphabet:` in their language's path: the
+  /// script decks, whose answers also feed the script skills (#556).
+  final Set<String> scriptDecks;
+
+  /// The script skill an answer in [mode], in [deckId], counts for, and the
+  /// share of a review it counts for: 1 is a review of its own, less is
+  /// credit in part (as [impliedBy]). Null for an answer outside the script
+  /// decks, and for a mode that says nothing of the script.
+  ({DrillMode skill, double share})? scriptOf(DrillMode mode, String deckId) {
+    if (!scriptDecks.contains(deckId)) return null;
+    return switch (mode) {
+      DrillMode.recognition => (skill: DrillMode.readScript, share: 1.0),
+      DrillMode.production => (skill: DrillMode.writeScript, share: 1.0),
+      DrillMode.speaking => (skill: DrillMode.readScript, share: implied),
+      DrillMode.listening => (skill: DrillMode.writeScript, share: implied),
+      _ => null,
+    };
+  }
 
   /// How much a right answer counts for a skill it implies, against its
   /// own. No study gives the fraction; this is the ratio of the transfer
@@ -53,15 +82,22 @@ class SkillMap {
         DrillMode.recognition ||
         DrillMode.grammarUnderstood ||
         DrillMode.grammar ||
-        DrillMode.reading => const <DrillMode, double>{},
+        DrillMode.reading ||
+        DrillMode.readScript ||
+        DrillMode.writeScript => const <DrillMode, double>{},
       };
 
   @override
   bool operator ==(Object other) =>
       other is SkillMap &&
       other.formHeardIn.length == formHeardIn.length &&
-      other.formHeardIn.containsAll(formHeardIn);
+      other.formHeardIn.containsAll(formHeardIn) &&
+      other.scriptDecks.length == scriptDecks.length &&
+      other.scriptDecks.containsAll(scriptDecks);
 
   @override
-  int get hashCode => Object.hashAllUnordered(formHeardIn);
+  int get hashCode => Object.hash(
+    Object.hashAllUnordered(formHeardIn),
+    Object.hashAllUnordered(scriptDecks),
+  );
 }
