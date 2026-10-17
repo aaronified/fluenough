@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:typed_data';
 
 import 'package:flutter_test/flutter_test.dart';
 
@@ -11,20 +10,7 @@ import 'package:fluenough/core/updates/apk_install.dart';
 import 'package:fluenough/core/updates/release_check.dart';
 import 'package:fluenough/features/settings/settings_fixtures.dart';
 
-/// A store that cannot write, as with a full disk.
-class _FullStore implements BackupStore {
-  @override
-  Future<StoredBackup> add(AppBackup backup) => throw StateError('disk full');
-
-  @override
-  Future<List<StoredBackup>> list() async => const <StoredBackup>[];
-
-  @override
-  Future<Uint8List> read(StoredBackup backup) => throw StateError('none');
-
-  @override
-  Future<void> delete(StoredBackup backup) async {}
-}
+import '../support/backup_fixture.dart';
 
 final String _newer = SettingsFixtures.newerVersion;
 
@@ -97,7 +83,7 @@ void main() {
   });
 
   test('a failed backup never blocks the update, and says it failed', () async {
-    final (state, installer) = app(store: _FullStore());
+    final (state, installer) = app(store: FullBackupStore());
     await state.updates.checkAndInstall();
     await pumpEventQueue();
     expect(installer.asked, hasLength(1));
@@ -106,7 +92,7 @@ void main() {
   });
 
   test('a new download forgets the last one\'s failure', () async {
-    final (state, _) = app(store: _FullStore());
+    final (state, _) = app(store: FullBackupStore());
     await state.updates.checkAndInstall();
     await pumpEventQueue();
     expect(state.updates.backupFailed, isTrue);
