@@ -94,6 +94,8 @@ every card in the shipped decks, then deletes the old.
    golden, only for an intended change:
    `python3 tools/snapshot_ask_pin.py`, then `UPDATE_ASK_PIN=1 flutter test
    test/core/scheduling/ask_pin_test.dart`; never in a deck pull request.
+   `test/features/decks/decks_page_test.dart` reads the same copy for
+   Telugu's path numbers (#567), so a refresh updates those too.
 2. **The registry, with the agnostic types.** Add `QuestionType` and move
    `chooseMeaning`, `chooseWord`, `hearAndChoose`, `matchPairs`, typed
    production and listening, and speaking into it. `reviewAsks` (#9) asks
