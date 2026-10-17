@@ -53,15 +53,9 @@ void main() {
       ));
     });
 
-    test('say and hear feed them in part', () {
-      expect(map.scriptOf(DrillMode.speaking, script), (
-        skill: DrillMode.readScript,
-        share: SkillMap.implied,
-      ));
-      expect(map.scriptOf(DrillMode.listening, script), (
-        skill: DrillMode.writeScript,
-        share: SkillMap.implied,
-      ));
+    test('say and hear feed neither: the owner gave no other feed', () {
+      expect(map.scriptOf(DrillMode.speaking, script), isNull);
+      expect(map.scriptOf(DrillMode.listening, script), isNull);
     });
 
     test('a deck outside the script decks, or grammar, feeds none', () {
@@ -131,26 +125,6 @@ void main() {
         review(DrillMode.recognition, 4, day, deck: words),
       ], skills: map);
       expect(replayed.scriptStates, isEmpty);
-    });
-
-    test('Say adds to Read script in part, only once it has a state', () {
-      final later = day.add(const Duration(days: 2));
-      final started = replayReviews(<LoggedReview>[
-        review(DrillMode.recognition, 4, day),
-        review(DrillMode.speaking, 4, later),
-      ], skills: map);
-      final alone = replayReviews(<LoggedReview>[
-        review(DrillMode.recognition, 4, day),
-      ], skills: map);
-      expect(
-        started.scriptStates[read]!.stability,
-        greaterThan(alone.scriptStates[read]!.stability),
-      );
-      expect(started.scriptEvents, hasLength(1));
-      final notStarted = replayReviews(<LoggedReview>[
-        review(DrillMode.speaking, 4, day),
-      ], skills: map);
-      expect(notStarted.scriptStates, isEmpty);
     });
 
     test('each skill is scheduled with its own fit', () {
