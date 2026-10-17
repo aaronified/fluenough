@@ -66,11 +66,11 @@ void main() {
     'a unit\'s content: words, sentences, and a grammar deck as a rule',
     () async {
       final state = await loaded();
-      final family = state
+      final market = state
           .courseUnits('te')
-          .firstWhere((u) => u.any((e) => e.id == 'te-en-family'));
-      final content = UnitContent(family);
-      expect(content.rules.map((e) => e.id), ['te-en-grammar-be']);
+          .firstWhere((u) => u.any((e) => e.id == 'te-en-market'));
+      final content = UnitContent(market);
+      expect(content.rules.map((e) => e.id), ['te-en-grammar-nouns']);
       expect(content.words, isNotEmpty);
       expect(content.sentences, isNotEmpty);
       expect(content.words.where(isSentence), isEmpty);
@@ -84,7 +84,7 @@ void main() {
           .courseUnits('te')
           .firstWhere((u) => u.any((e) => e.id == 'te-en-script-vowels'));
       expect(UnitContent(vowels).isScript, isTrue);
-      expect(unitTitle(state, family), 'Family');
+      expect(unitTitle(state, market), 'Market');
     },
   );
 
@@ -394,7 +394,7 @@ void main() {
       'its own screen', () async {
     final state = await loaded();
     final unit = unitOfDeck(state, 'te-en-grammar-be')!;
-    expect(unit.decks.map((e) => e.id), ['te-en-family', 'te-en-grammar-be']);
+    expect(unit.decks.map((e) => e.id), ['te-en-grammar-be']);
     expect(
       unitOfDeck(state, 'te-en-grammar-be', plan: PathFixtures.telugu)!.level,
       CefrLevel.a1,
