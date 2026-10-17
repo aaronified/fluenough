@@ -95,6 +95,12 @@ contributor can then build it as written, without asking anything. Remove
 the label if a new question comes up, and add it when the last one is
 answered.
 
+Keep some simple `direct-code` issues for contributors (owner, 2026-10-17:
+"You can keep some simple direct-code issues for the contributor as
+well"). Leave them the small, self-contained ones, such as a UI bug or a
+one-screen tweak. The deck and review work, and anything a deck build
+waits on, is built here.
+
 ## Dependencies are marked, never assumed (owner, 2026-10-12)
 
 When one issue needs another done first, record it on GitHub: set "blocked
