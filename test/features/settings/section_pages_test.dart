@@ -628,6 +628,8 @@ void main() {
       expect(find.text(l10n.settingsDataLogShowing(10, 60)), findsOneWidget);
       // Export still saves all 60.
       final export = find.text(l10n.settingsExportDesc(60));
+      await tester.fling(find.byType(ListView), const Offset(0, 4000), 4000);
+      await tester.pumpAndSettle();
       await scrollTo(tester, export);
       expect(export, findsOneWidget);
     });
