@@ -3028,8 +3028,10 @@ fact carries its own text in every language it is written in. It has
 - **At least 30 facts without a `contrast`.** These are true whatever the
   learner speaks, a month of one fact a day, and the
   validator fails a file with fewer. Facts with a `contrast` are extra.
-- **Write every fact in every language a learner can say they speak
-  (`assets/languages.yaml`: English, Bengali and Hindi), English first.**
+- **Write every fact in English, Bengali and Hindi, English first.** A
+  learner can say they know any language in `assets/languages.yaml`, but
+  only these three have facts so far; one who knows none of the three sees
+  no fact card, and a language is added there without writing facts.
   English, and any other language a fact is written in, gets a warning when
   fewer than 30 contrast-free facts are written in it, since its learners see
   only that many.

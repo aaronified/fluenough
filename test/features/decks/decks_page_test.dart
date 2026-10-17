@@ -174,6 +174,66 @@ void main() {
     expect(onScreen(tester, find.text(l10n.pathUpNext)), isTrue);
   });
 
+  for (final (upTo, level, scale) in <(String, String, double)>[
+    (PathFixtures.familyDeck, 'A1', 1.0),
+    ('te-en-help', 'A2', 1.0),
+    ('te-en-help', 'A2', 1.4),
+  ]) {
+    testWidgets('Where I am unfolds the level holding the unit up next '
+        '($upTo at ${scale}x) and leaves it fully visible, clear of the '
+        'floating buttons (#488)', (tester) async {
+      usePhone(tester, textScale: scale);
+      final app = await teluguLearner(upTo: upTo);
+      await pumpDecks(tester, state: app);
+      final l10n = l10nOf(tester);
+      // Opens on the unit; the learner folds its level and scrolls off.
+      final header = find.ancestor(
+        of: find.text(level),
+        matching: find.byType(LevelHeader),
+      );
+      await tester.ensureVisible(header);
+      await tester.pumpAndSettle();
+      await tester.tap(header);
+      await tester.pumpAndSettle();
+      expect(app.settings.isLevelCollapsed('te', level), isTrue);
+      await tester.drag(downward.first, const Offset(0, 8000));
+      await tester.pumpAndSettle();
+
+      await tester.tap(fab('where-i-am'));
+      await tester.pumpAndSettle();
+      expect(app.settings.isLevelCollapsed('te', level), isFalse);
+      final unit = tester.getRect(
+        find.ancestor(
+          of: find.text(l10n.pathUpNext),
+          matching: find.byWidgetPredicate(
+            (w) => w.runtimeType.toString() == '_UnitNode',
+          ),
+        ),
+      );
+      final fabTop = tester.getRect(fab('add-deck')).top;
+      final listTop = tester.getRect(downward.first).top;
+      expect(unit.top, greaterThanOrEqualTo(listTop));
+      expect(unit.bottom, lessThanOrEqualTo(fabTop));
+    });
+  }
+
+  testWidgets('Where I am goes to the up next unit of the language the bar '
+      'shows (#488)', (tester) async {
+    usePhone(tester);
+    final app = await teluguLearner();
+    await pumpDecks(tester, state: app);
+    final l10n = l10nOf(tester);
+    app.showLanguage('hi');
+    await tester.pumpAndSettle();
+    await tester.drag(downward.first, const Offset(0, -4000));
+    await tester.pumpAndSettle();
+    await tester.tap(fab('where-i-am'));
+    await tester.pumpAndSettle();
+    final unit = tester.getRect(find.text(l10n.pathUpNext));
+    expect(unit.top, greaterThan(tester.getRect(downward.first).top));
+    expect(unit.bottom, lessThan(tester.getRect(fab('add-deck')).top));
+  });
+
   testWidgets('a unit opens its screen; the language bar switches the path', (
     tester,
   ) async {

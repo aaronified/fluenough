@@ -79,8 +79,7 @@ void main() {
   Future<void> finish(WidgetTester tester) async {
     final l10n = l10nOf(tester);
     await tap(tester, find.text(l10n.onboardingNext));
-    await tap(tester, find.text(l10n.spokenOption('English', 'English')));
-    await answerScripts(tester);
+    await knowLanguage(tester, 'English');
     await tap(tester, find.text(l10n.commonContinue));
   }
 

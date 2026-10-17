@@ -91,24 +91,23 @@ void main() {
     expect(find.text(l10n.onboardingSpokenTitle), findsOneWidget);
     // What the answer is for, where it is kept, and where to change it.
     expect(find.text(l10n.onboardingSpokenBody), findsOneWidget);
-    expect(
-      find.text(
-        l10n.onboardingSpokenPrivacy(l10n.navSettings, l10n.settingsSpoken),
-      ),
-      findsOneWidget,
+    final privacy = find.text(
+      l10n.onboardingSpokenPrivacy(l10n.navSettings, l10n.settingsSpoken),
     );
+    await scrollToFind(tester, privacy);
+    expect(privacy, findsOneWidget);
+    await tester.drag(find.byType(Scrollable).first, const Offset(0, 2000));
+    await tester.pumpAndSettle();
     expect(find.byType(WaveProgress), findsNothing, reason: 'one question');
     expect(find.text(l10n.onboardingSpokenNeedOne), findsOneWidget);
     final go = find.widgetWithText(FilledButton, l10n.commonContinue);
     expect(tester.widget<FilledButton>(go).onPressed, isNull);
-    await tester.tap(find.text(l10n.spokenOption('Hindi', 'हिन्दी')));
-    await tester.pumpAndSettle();
+    // Choosing Hindi asks, in one tap, whether its script is read (#462,
+    // #490), which nothing assumes.
+    await knowLanguage(tester, 'Hindi');
     expect(find.text(l10n.onboardingSpokenNeedOne), findsNothing);
     expect(settings.spokenLanguages, isEmpty, reason: 'nothing saved yet');
-    // Then whether Hindi's script is read (#462), which nothing assumes.
-    expect(tester.widget<FilledButton>(go).onPressed, isNull);
-    expect(find.text(l10n.knownScriptsNeeded), findsOneWidget);
-    await answerScripts(tester);
+    expect(tester.widget<FilledButton>(go).onPressed, isNotNull);
 
     await tester.tap(go);
     await tester.pumpAndSettle();
@@ -168,8 +167,7 @@ void main() {
       OnboardingFlow(startAt: 'spoken', choices: choices),
     );
     final l10n = l10nOf(tester);
-    await tester.tap(find.text(l10n.spokenOption('Bengali', 'বাংলা')));
-    await tester.pump();
+    await knowLanguage(tester, 'Bengali');
     await tester.tap(find.byType(BackButton));
     await tester.pumpAndSettle();
     expect(find.text(l10n.onboardingSoundTitle), findsOneWidget);
@@ -180,7 +178,7 @@ void main() {
       await tester.tap(find.text(l10n.onboardingNext));
       await tester.pumpAndSettle();
     }
-    expect(find.text(l10n.spokenRank(1)), findsOneWidget);
+    expect(find.text(l10n.knownAnswerRead('Bengali')), findsOneWidget);
     expect(state.settings.spokenLanguages, ['en'], reason: 'not saved');
   });
 
@@ -311,9 +309,7 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.text(l10n.onboardingNext)); // the sound check
     await tester.pumpAndSettle();
-    await tester.tap(find.text(l10n.spokenOption('Hindi', 'हिन्दी')));
-    await tester.pumpAndSettle();
-    await answerScripts(tester);
+    await knowLanguage(tester, 'Hindi');
     await tester.tap(find.text(l10n.commonContinue));
     await tester.pumpAndSettle();
     expect(tester.takeException(), isNull);
@@ -409,7 +405,10 @@ void main() {
       find.bySemanticsLabel(l10n.onboardingQuestionPosition(1, 2)),
       findsOneWidget,
     );
-    await answerScripts(tester);
+    await tester.tap(find.byKey(const ValueKey<String>('lang-bn')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const ValueKey<String>('know-read')));
+    await tester.pumpAndSettle();
     await tester.tap(find.text(l10n.onboardingNext));
     await tester.pumpAndSettle();
     expect(
