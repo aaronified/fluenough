@@ -18,6 +18,7 @@ import sys
 import unicodedata
 import datetime
 import hashlib
+import json
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -2235,21 +2236,46 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
 # A change a reviewer proposed to one field of a card, kept on the card in
 # the file that holds the field until enough other reviewers accept it.
 
-PROPOSAL_KEYS = {"id", "field", "now", "text", "by", "date", "why", "accepted"}
+PROPOSAL_KEYS = {"id", "field", "now", "text", "by", "date", "why", "with", "accepted"}
 PROPOSAL_REQUIRED = ("id", "field", "now", "text", "by", "date")
 PROPOSAL_ID_RE = re.compile(r"[0-9a-f]{10}")
 DATE_RE = re.compile(r"[0-9]{4}-[0-9]{2}-[0-9]{2}")
 # The fields a proposal may change, by where the card's entry is: a card a
 # single-file deck writes, a ref there, a core's card or ref, a layer's
 # entry for its core's card, or a card only the layer has.
+#
+# `bases` is one base word (#476): added, changed or removed, its `now`
+# and `text` each one line of JSON, `{"word", "base", "reading",
+# "meaning"}` or `{"word", "ref"}`, "" for none. It goes on the entry that
+# holds the base's meaning, a layer's for a core's card, and the review bot
+# writes the core's line with it. `alt_target` is the accepted
+# alternatives, its `now` and `text` JSON lists.
 PROPOSAL_FIELDS = {
-    "single": ("target", "reading", "ipa", "native", "notes"),
+    "single": ("target", "reading", "ipa", "native", "notes", "bases", "alt_target"),
     "ref": ("native", "reading", "ipa", "notes"),
-    "core": ("target", "reading", "ipa", "notes"),
+    "core": ("target", "reading", "ipa", "notes", "alt_target"),
     "core-ref": ("reading", "ipa", "notes"),
-    "layer": ("native",),
-    "layer-own": ("target", "reading", "ipa", "native", "notes"),
+    "layer": ("native", "bases"),
+    "layer-own": ("target", "reading", "ipa", "native", "notes", "bases", "alt_target"),
 }
+# The fields whose `now` and `text` are JSON, not the field's own text.
+PROPOSAL_JSON_FIELDS = ("bases", "alt_target")
+
+
+def _proposal_json_ok(name: str, value: str) -> bool:
+    """Whether [value] is a `now` or `text` a proposal on [name], one of
+    PROPOSAL_JSON_FIELDS, may have."""
+    if name == "bases" and value == "":
+        return True
+    try:
+        parsed = json.loads(value)
+    except ValueError:
+        return False
+    if name == "alt_target":
+        return isinstance(parsed, list) and all(_is_str(a) for a in parsed)
+    return isinstance(parsed, dict) and _is_str(parsed.get("word")) \
+        and (_is_str(parsed.get("ref")) or _is_str(parsed.get("base"))) \
+        and all(isinstance(v, str) for v in parsed.values())
 
 
 def proposal_id(card: str, field_name: str, now: str, text: str, by: str) -> str:
@@ -2331,10 +2357,25 @@ def check_proposals(r: Report, found: list[Proposed]) -> None:
             if not isinstance(now, str):
                 r.error(where, f"now must be text, the field as the proposer saw "
                                f"it (\"\" when it had none), got {now!r}")
-            if not _is_str(text):
+            if name in PROPOSAL_JSON_FIELDS:
+                for key, value in (("now", now), ("text", text)):
+                    if isinstance(value, str) and not _proposal_json_ok(name, value) \
+                            and not (key == "now" and value == "" and name == "alt_target"):
+                        r.error(where, f"{key} of a proposal on {name} must be one line "
+                                       f"of JSON as the review bot writes it, got {value!r}")
+                if not isinstance(text, str) or (name != "bases" and not text):
+                    r.error(where, f"text must be text, got {text!r}")
+                elif text == now:
+                    r.error(where, "text is what the field said already")
+            elif not _is_str(text):
                 r.error(where, f"text must be non-empty text, got {text!r}")
             elif isinstance(now, str) and text == now:
                 r.error(where, "text is what the field said already")
+            tied = item.get("with")
+            if tied is not None and (not isinstance(tied, str)
+                                     or not PROPOSAL_ID_RE.fullmatch(tied)):
+                r.error(where, f"with must be the id of the change to the card's word "
+                               f"it came with, ten hex digits, got {tied!r}")
             code = rater_code(by)
             if code is None or code != by:
                 r.error(where, f"by must be a rater code, FL-XXXX-XXXX-C, got {by!r}")
@@ -2364,7 +2405,8 @@ def check_proposals(r: Report, found: list[Proposed]) -> None:
                                "and by); a proposal is never edited, only "
                                "removed")
             elif isinstance(now, str) and isinstance(name, str) \
-                    and name in allowed and p.entry.get(name, "") != now:
+                    and name in allowed and name not in PROPOSAL_JSON_FIELDS \
+                    and p.entry.get(name, "") != now:
                 r.info(where, f"proposal {pid} is outdated: the {name} no longer "
                               f"says what it was proposed against")
 

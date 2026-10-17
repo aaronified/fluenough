@@ -44,6 +44,16 @@ text, which reaches only the decks. The one exception is an agreement that
 changes a card's word: the reading and IPA the bot works out for it are
 listed with their source, for the owner to check (#468).
 
+A word change sent with base, alternative, note, reading or IPA changes
+on the same card makes those proposals tied to it (`with:`, #476): they
+are never applied on their own, and the word's agreement PR applies them
+with it, so the card is never half-changed. A tied proposal whose word
+proposal is gone is closed as outdated.
+
+A base proposal (#476) adds, changes or removes one of a card's `bases`,
+written by tools/proposals.py line by line in the core and its layer; a
+base form that is another card's word becomes a `ref` to it.
+
 An agreed word change brings the reading and IPA with it (owner, #468):
 an agreed proposal on the card's reading or IPA is applied in the same PR;
 a field none changes is worked out, the reading by tools/transcribe.py
@@ -128,8 +138,7 @@ class Review:
     # The cards signed off, marked "Looks right": (language, deck, card).
     checks: list[tuple[str, str, str]] = field(default_factory=list)
     edits: int = 0
-    # Suggestions on a part the bot does not write: an example, a picture,
-    # a base word's meaning.
+    # Suggestions on a part the bot does not write: an example, a picture.
     left: int = 0
     # Review files dropped for a language that is not a language code.
     dropped: int = 0
@@ -149,6 +158,65 @@ def card_suggestions(c: dict) -> list[dict]:
     since #468, several, one a part, under "suggestions"."""
     many = c.get("suggestions") if isinstance(c.get("suggestions"), list) else []
     return [s for s in [c.get("suggestion"), *many] if isinstance(s, dict)]
+
+
+# The parts a change to the card's word brings with it (#476): sent in one
+# review with the word, they are proposed tied to it, and applied with it
+# once it is agreed. The meaning is never one: it does not change with the
+# word (docs/plans/reviewing-scope.md, rule 2).
+TIED_PARTS = ("reading", "ipa", "notes", "base", "alt")
+
+
+def _base_json(base: object, word: str) -> str | None:
+    """A base of a review file's suggestion, `was` or `base`, as the JSON a
+    proposal on it starts from: "" for none, None when it is not a base.
+    `"link": false` is kept, for tools/proposals.py to read."""
+    if base is None:
+        return ""
+    if not isinstance(base, dict):
+        return None
+    out = {k: base[k] for k in pr.BASE_ORDER if isinstance(base.get(k), str)}
+    out["word"] = word
+    if base.get("link") is False:
+        out["link"] = False
+    return json.dumps(out, ensure_ascii=False)
+
+
+def suggestion_facts(s: dict) -> tuple[str, str, str] | None:
+    """A review file's suggestion as the field a proposal changes, and its
+    `now` and `text`; None for a part the bot does not write.
+
+    A base (#476) carries `action` ("add", "edit" or "remove"), its `word`
+    in the target, and the base as it was (`was`) and as suggested
+    (`base`). One from before #476 has no `action`: its `now` and `text`
+    are the meaning of the base for `word`, and tools/proposals.py fills in
+    the rest from the deck. Also heard (`alt`) has the card's alternatives
+    as they were and as suggested, one a line."""
+    part, now, text = s.get("part"), s.get("now"), s.get("text")
+    if not isinstance(now, str) or not isinstance(text, str):
+        return None
+    if part == "base":
+        word = s.get("word")
+        if not isinstance(word, str) or not word.strip():
+            return None
+        action = s.get("action")
+        if action is None:
+            return (pr.BASES, json.dumps({"word": word, "meaning": now}, ensure_ascii=False),
+                    json.dumps({"word": word, "meaning": text.strip()}, ensure_ascii=False))
+        if action not in ("add", "edit", "remove"):
+            return None
+        was = _base_json(s.get("was") if action != "add" else None, word)
+        to = _base_json(s.get("base") if action != "remove" else None, word)
+        if was is None or to is None or (action != "add" and not was) \
+                or (action != "remove" and not to):
+            return None
+        return pr.BASES, was, to
+    if part == "alt":
+        def lines(t: str) -> list[str]:
+            return [l.strip() for l in t.split("\n") if l.strip()]
+        return pr.ALT, pr.alt_text(lines(now)), pr.alt_text(lines(text))
+    name = pr.FIELD_OF_PART.get(part)
+    return None if name is None else (name, now, text.strip())
 
 
 def read_review(files: list[dict], code: str) -> Review:
@@ -174,16 +242,21 @@ def read_review(files: list[dict], code: str) -> Review:
             if c.get("looks_right") is True and "suggestion" not in c \
                     and not c.get("suggestions"):
                 out.checks.append((lang, deck, card))
-            for s in card_suggestions(c):
-                name = pr.FIELD_OF_PART.get(s.get("part"))
-                now, text, why = s.get("now"), s.get("text"), s.get("why", "")
-                if name is None or not isinstance(now, str) \
-                        or not isinstance(text, str):
+            found = [(s, suggestion_facts(s)) for s in card_suggestions(c)]
+            # A change to the word goes first, and what it brings is tied to
+            # it (#476).
+            word = next((pr.Proposal(card, f[0], f[1], f[2], code, date)
+                         for _, f in found if f is not None and f[0] == "target"), None)
+            found.sort(key=lambda sf: sf[1] is None or sf[1][0] != "target")
+            for s, facts in found:
+                why = s.get("why", "")
+                if facts is None:
                     out.left += 1
-                else:
-                    out.suggestions.append(pr.Suggestion(lang, deck, pr.Proposal(
-                        card, name, now, text.strip(), code, date,
-                        why.strip() if isinstance(why, str) else "")))
+                    continue
+                tied = word.id if word is not None and s.get("part") in TIED_PARTS else ""
+                out.suggestions.append(pr.Suggestion(lang, deck, pr.Proposal(
+                    card, *facts, code, date,
+                    why.strip() if isinstance(why, str) else "", tied=tied)))
             answers = c.get("proposals") if isinstance(c.get("proposals"), list) else []
             for a in answers:
                 if not isinstance(a, dict) or not isinstance(a.get("id"), str):
@@ -828,13 +901,26 @@ class Bot:
         its reading and IPA with it, and works out the fields none of them
         changes (owner, #468). The PR body's lines saying what was done."""
         lines: list[str] = []
+        # What the word's own review brought with it (#476), agreed with it.
+        tied = [o for e in pr.entries(root, lang, entry.card)
+                for o in e.proposals() if o.tied == p.id]
+        brought: set[str] = set()
+        for o in tied:
+            done = pr.apply(root, lang, o.id)
+            if done.outcome == "applied":
+                lines.append(f"- Applied with it, from the same review: `{o.id}` "
+                             f"on {o.field}")
+                brought.add(o.field)
+            else:
+                lines.append(f"- From the same review, left for the owner "
+                             f"({done.outcome}): `{o.id}` on {o.field}")
         fresh = next((e for e in pr.entries(root, lang, entry.card)
                       if e.path == entry.path and e.form == entry.form), None)
         if fresh is None:
             return lines
         wanted = []
         for name in AUTO_FIELDS:
-            if not fresh.may_change(name):
+            if not fresh.may_change(name) or name in brought:
                 continue
             agreed = self._agreed_with(fresh, name)
             if agreed is not None:
@@ -906,6 +992,9 @@ class Bot:
             stale = {p.id: p for _, p in pr.outdated(root, lang)}
             groups: dict[tuple, list[pr.Proposal]] = {}
             for e, p in found:
+                # One tied to a change to the word goes in with that word.
+                if p.tied:
+                    continue
                 if p.id not in stale and len(p.accepted) >= self.threshold:
                     groups.setdefault((str(e.path), p.card, p.field), []).append(p)
             # Words first: an agreed reading or IPA goes in with an agreed

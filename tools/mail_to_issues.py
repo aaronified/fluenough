@@ -59,8 +59,9 @@ which stays in the inbox for the next run: filing it unchecked would leave
 it unlabelled, and filed again an hour later. No address and no record's
 body is ever printed: the job's log is public, so it says counts only.
 
-A review's issue also counts the changes it suggests and the proposals
-it accepts and rejects, and names each rejected proposal by id and card,
+A review's issue also counts the changes it suggests, those to base words
+by kind (added, changed, removed; #476), and the proposals it accepts and
+rejects, and names each rejected proposal by id and card,
 marked "proposal rejected": a rejection only flags the change to the owner
 (ADR-0038).
 
@@ -283,6 +284,25 @@ def review_counts(files: list[dict]) -> tuple[int, int, list[tuple[str, str]]]:
     return suggested, accepted, rejected
 
 
+def base_counts(files: list[dict]) -> tuple[int, int, int]:
+    """How many of the changes [files] suggest add, change and remove a
+    base word (#476). A change from before #476, to a base's meaning only,
+    has no `action` and counts as a change. No text."""
+    counts = {"add": 0, "edit": 0, "remove": 0}
+    for f in files:
+        cards = f.get("cards") if isinstance(f.get("cards"), list) else []
+        for c in cards:
+            if not isinstance(c, dict):
+                continue
+            many = c.get("suggestions") if isinstance(c.get("suggestions"), list) else []
+            for s in [c.get("suggestion"), *many]:
+                if isinstance(s, dict) and s.get("part") == "base":
+                    action = s.get("action", "edit")
+                    if action in counts:
+                        counts[action] += 1
+    return counts["add"], counts["edit"], counts["remove"]
+
+
 def review_issue_from(
         message: email.message.Message,
         check: Callable[[str], str | None] | None = None) -> dict | None:
@@ -338,6 +358,10 @@ def review_issue_from(
         body.append(f"- Changes suggested: {suggested}\n"
                     f"- Proposals accepted: {accepted}\n"
                     f"- Proposals rejected: {len(rejected)}")
+    added, changed, removed = base_counts(files)
+    if added or changed or removed:
+        body.append(f"- Base words: {added} added, {changed} changed, "
+                    f"{removed} removed")
     if rejected:
         marks.append(REJECTED)
         body.append("**Proposals rejected:** "
