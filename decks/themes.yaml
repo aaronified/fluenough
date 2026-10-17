@@ -1,5 +1,6 @@
-# The shared theme path (ADR-0010). Every course teaches its themes in this
-# order, each with its own words, though it need not have every theme yet. A theme deck names its theme by id,
+# The shared themes (ADR-0010): their ids and names. Each course teaches
+# them in its own path's order (decks/<lang>/<lang>-path.yaml), each with its
+# own words, though it need not have every theme yet. A theme deck names its theme by id,
 # and ids are permanent, like card ids.
 schema: 1
 kind: themes

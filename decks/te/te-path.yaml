@@ -5,18 +5,34 @@
 # This is also Telugu's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"): every
 # unit from the first words to B1, written or planned, with its size in
 # words, its grammar topics, the three milestones, and for each planned unit
-# its listening and reading passages. The existing units keep their places
-# and ids; the units written for A1 are placed among them where their words
-# and rules are first needed. A2 and B1 units stay planned until a deck is
-# written: the course teaches them as "Coming" until then. Sizes follow the
-# plan's levels (about 700, 900 and 1,200 words; low confidence) and are
-# one number for every native language. A theme named here that
+# its listening and reading passages. A2 and B1 units stay planned until a
+# deck is written: the course teaches them as "Coming" until then. Sizes
+# follow the plan's levels (about 700, 900 and 1,200 words; low confidence)
+# and are one number for every native language. A theme named here that
 # decks/themes.yaml does not list yet is added to it with its first deck.
 #
-# First a few words and basic sentences, the sounds the learner's language
-# lacks and how Telugu grammar differs from it; then themes, each with the
-# grammar that goes with it; the script comes after the first themes, before
-# the rest. Every deck of Telugu is listed exactly once.
+# The order follows docs/plans/words-rules-sentences.md (owner, 2026-10-07,
+# and 2026-10-17: "build the path files for all present languages via an
+# opus agent, as per our current path design"):
+# 1. the phrasebook, taught whole from the first lesson;
+# 2. the first word units;
+# 3. the script, after the first six units ("After units 4-6"); a learner
+#    who already reads it skips it (#554);
+# 4. a core of about 200 common words in themed units, before the large
+#    tables ("Yes, smaller (~200)");
+# 5. rules as forms: noun endings, postpositions and conjunctions first,
+#    then pronoun and verb forms, practised on the words already known;
+# 6. sentences, each after its words and rules; then the other themes,
+#    each its words, then its rules, then its sentences.
+#
+# The core's order is by judgement, most common first: everyday verbs,
+# the common adverbs and function words (planned), how much and how many,
+# describing words, time, where things are, more verbs. It was meant to
+# come from Wikipedia's counts (tools/wikipedia_frequency.py, #516), but
+# no Telugu Wikipedia dump could be fetched here (2026-10-17): order the
+# core again from the counts once they are written.
+#
+# Every deck of Telugu is listed exactly once.
 schema: 1
 kind: "path"
 id: "te-path"
@@ -47,108 +63,163 @@ alphabet:
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
-  - decks: ["te-phrasebook", "te-first-words", "te-grammar-sentences", "*"]
+  # 1. The phrasebook, taught whole from the first lesson.
+  - decks: ["te-phrasebook", "te-first-words", "*"]
     words: 6
-    grammar: ["sentences"]
+  # 2. The first word units.
   - decks: ["te-sound-differences"]
     words: 10
-  - decks: ["te-grammar-differences"]
-    words: 6
-    grammar: ["differences"]
-  - decks: ["te-questions", "te-grammar-questions", "*"]
+  - decks: ["te-questions", "*"]
     words: 11
-    grammar: ["questions"]
-  - decks: ["te-addressing", "te-grammar-pronouns", "*"]
-    words: 11
-    grammar: ["pronouns"]
-  - decks: ["te-pronouns", "te-grammar-pronoun-forms", "te-pronouns-sentences", "*"]
-    words: 22
-    grammar: ["pronoun-gen", "pronoun-dat", "pronoun-acc", "pronoun-with"]
+  - decks: ["te-addressing", "te-pronouns", "*"]
+    words: 33
+  - decks: ["te-family", "*"]
+    words: 25
+  - decks: ["te-numbers-1-20", "*"]
+    words: 20
+  # 3. The script, after the first six units (#554: skipped by a learner
+  # who already reads it).
+  - ["te-script-vowels", "te-script-consonants", "te-script-reading"]
+  - ["te-script-vowel-signs", "te-script-conjuncts"]
+  # 4. The core: about 200 common words, most common first (by judgement
+  # until the Wikipedia counts are written, #516).
+  - decks: ["te-about-me", "*"]
+    words: 7
+  - decks: ["te-verbs", "*"]
+    words: 33
+  - planned: { id: "te-adverbs", theme: "adverbs", words: 50 }
+    listening_passages:
+      - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
+    reading_passages:
+      - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
+  - decks: ["te-quantities", "*"]
+    words: 30
+  - decks: ["te-describing", "*"]
+    words: 40
+  - decks: ["te-time", "*"]
+    words: 18
+  - decks: ["te-location", "*"]
+    words: 14
+  - decks: ["te-more-verbs", "*"]
+    words: 32
+  # 5. Rules as forms, practised on the words known: noun endings and
+  # conjunctions first, then pronoun and verb forms. The postpositions deck
+  # is fixed phrases still, so it waits below for its words.
+  - decks: ["te-grammar-noun-forms"]
+    words: 0
+    grammar: ["plural", "lo", "ki", "to", "nunci", "ni"]
+  - decks: ["te-grammar-conjunctions"]
+    words: 8
+    grammar: ["conjunctions"]
+  - decks: ["te-grammar-pronouns", "te-grammar-pronoun-forms"]
+    words: 0
+    grammar: ["pronouns", "pronoun-gen", "pronoun-dat", "pronoun-acc", "pronoun-with"]
+  - decks: ["te-grammar-be"]
+    words: 0
+    grammar: ["be"]
+  - decks: ["te-grammar-verb-present"]
+    words: 0
+    grammar: ["present-first", "present-second", "present-third"]
+  - decks: ["te-grammar-demonstratives"]
+    words: 0
+    grammar: ["demonstratives"]
+  # 6. Sentences, each after its words and rules; then the other A1
+  # themes, each its words, its rules, then its sentences.
+  - decks: ["te-work", "*"]
+    words: 19
+  - decks: ["te-numbers-big", "*"]
+    words: 13
+  - decks: ["te-food", "*"]
+    words: 64
+  - decks: ["te-groceries", "te-grammar-needs", "*"]
+    words: 16
+    grammar: ["needs"]
+  - decks: ["te-market", "te-grammar-nouns", "*"]
+    words: 7
+    grammar: ["nouns"]
+  - decks: ["te-pronouns-sentences"]
+    words: 0
     listening_passages:
       - { id: "introducing-friends", text: { "en": "Introducing two friends: who is who, he and she" } }
     reading_passages:
       - { id: "name-tags", text: { "en": "Name tags at a meeting: who is who and what they do" } }
-  - decks: ["te-about-me", "*"]
-    words: 7
-  - decks: ["te-family", "te-grammar-be", "*"]
-    words: 25
-    grammar: ["be"]
-  - decks: ["te-verbs", "te-grammar-verb-present", "te-verbs-sentences", "*"]
-    words: 33
-    grammar: ["present-first", "present-second", "present-third"]
+  - decks: ["te-verbs-sentences"]
+    words: 0
     listening_passages:
       - { id: "morning-at-home", text: { "en": "A family member says what she does every morning" } }
     reading_passages:
       - { id: "note-on-the-fridge", text: { "en": "A short note: what to eat and drink" } }
-  - decks: ["te-work", "te-grammar-demonstratives", "*"]
-    words: 19
-    grammar: ["demonstratives"]
-  - decks: ["te-grammar-noun-forms", "te-noun-forms-sentences"]
+  - decks: ["te-noun-forms-sentences"]
     words: 0
-    grammar: ["plural", "lo", "ki", "to", "nunci", "ni"]
     listening_passages:
       - { id: "which-way-home", text: { "en": "Two people say where they go, with whom, and where from" } }
     reading_passages:
       - { id: "class-notice", text: { "en": "A class notice: where, with whom and when" } }
-  - ["te-script-vowels", "te-script-consonants", "te-script-reading"]
-  - ["te-script-vowel-signs", "te-script-conjuncts"]
-  - decks: ["te-numbers-1-20", "*"]
-    words: 20
-  - decks: ["te-numbers-big", "*"]
-    words: 13
-  - decks: ["te-market", "te-grammar-nouns", "te-grammar-articles", "*"]
-    words: 7
-    grammar: ["nouns", "articles"]
-  - decks: ["te-groceries", "te-grammar-gender-number", "te-grammar-needs", "*"]
-    words: 16
-    grammar: ["gender-number", "needs"]
-  - decks: ["te-food", "te-food-sentences", "*"]
-    words: 64
+  - decks: ["te-grammar-questions"]
+    words: 0
+    grammar: ["questions"]
+  - decks: ["te-grammar-likes"]
+    words: 2
+    grammar: ["likes"]
+  - decks: ["te-grammar-sentences"]
+    words: 0
+    grammar: ["sentences"]
+  - decks: ["te-food-sentences"]
+    words: 0
     listening_passages:
       - { id: "at-the-tiffin-stall", text: { "en": "Ordering breakfast at a tiffin stall" } }
     reading_passages:
       - { id: "menu-board", text: { "en": "A menu board with dishes and prices" } }
-  - decks: ["te-transport", "te-grammar-postpositions", "*"]
-    words: 10
-    grammar: ["postpositions"]
   - decks: ["te-directions", "te-grammar-continuous", "*"]
     words: 12
     grammar: ["continuous"]
+  - decks: ["te-transport", "*"]
+    words: 8
   - decks: ["te-body", "te-body-sentences", "*"]
     words: 28
     listening_passages:
       - { id: "where-it-hurts", text: { "en": "Pointing to where it hurts" } }
     reading_passages:
       - { id: "exercise-poster", text: { "en": "A poster of simple exercises" } }
-  - decks: ["te-places", "te-location", "te-places-sentences", "*"]
-    words: 56
+  - decks: ["te-places", "te-places-sentences", "*"]
+    words: 42
     listening_passages:
       - { id: "town-walk", text: { "en": "A guide names the places on a short walk through town" } }
     reading_passages:
       - { id: "map-labels", text: { "en": "Labels on a simple town map" } }
-  - decks: ["te-more-verbs", "te-more-verbs-sentences", "*"]
-    words: 32
-    listening_passages:
-      - { id: "kitchen-instructions", text: { "en": "Someone tells a helper what to do in the kitchen" } }
-    reading_passages:
-      - { id: "how-to-card", text: { "en": "A short how-to card for making tea" } }
-  - decks: ["te-home", "te-grammar-adjectives", "*"]
-    words: 29
-    grammar: ["adjectives"]
-  - decks: ["te-things", "te-things-sentences", "*"]
+  - decks: ["te-things", "*"]
     words: 39
+  - decks: ["te-home", "*"]
+    words: 19
+  - decks: ["te-things-sentences", "te-more-verbs-sentences"]
+    words: 0
     listening_passages:
       - { id: "packing-a-bag", text: { "en": "Two people pack a bag for a trip" } }
+      - { id: "kitchen-instructions", text: { "en": "Someone tells a helper what to do in the kitchen" } }
     reading_passages:
       - { id: "lost-property-list", text: { "en": "A lost-property list at a bus station" } }
+      - { id: "how-to-card", text: { "en": "A short how-to card for making tea" } }
+  - decks: ["te-quantities-sentences", "te-grammar-differences"]
+    words: 6
+    grammar: ["differences"]
+    listening_passages:
+      - { id: "how-much-how-many", text: { "en": "Asking how much and how many at a stall" } }
+    reading_passages:
+      - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
+  - decks: ["te-grammar-postpositions"]
+    words: 2
+    grammar: ["postpositions"]
+  - decks: ["te-grammar-adjectives", "te-grammar-articles", "te-grammar-gender-number"]
+    words: 10
+    grammar: ["articles", "gender-number", "adjectives"]
   - decks: ["te-clothes", "te-clothes-sentences", "*"]
     words: 26
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a shirt's colour and size in a shop" } }
     reading_passages:
       - { id: "shop-sign", text: { "en": "A clothes shop's sign with its offers" } }
-  - decks: ["te-describing", "te-describing-sentences", "*"]
-    words: 40
+  - decks: ["te-describing-sentences"]
+    words: 0
     listening_passages:
       - { id: "how-do-you-feel", text: { "en": "A friend asks how you feel, and you answer" } }
     reading_passages:
@@ -159,16 +230,12 @@ units:
       - { id: "animals-on-the-farm", text: { "en": "A child names the animals on a farm" } }
     reading_passages:
       - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
-  - decks: ["te-quantities", "te-quantities-sentences", "*"]
-    words: 30
-    listening_passages:
-      - { id: "how-much-how-many", text: { "en": "Asking how much and how many at a stall" } }
-    reading_passages:
-      - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
-  - decks: ["te-time", "te-grammar-future", "*"]
-    words: 18
+  - decks: ["te-grammar-future"]
+    words: 0
     grammar: ["future"]
     milestone: "A1"
+  # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
+  # then its sentences.
   - decks: ["te-daily-life", "te-grammar-negative", "*"]
     words: 8
     grammar: ["negative"]
@@ -190,9 +257,9 @@ units:
       - { id: "festival-plans", text: { "en": "Neighbours plan a festival day together" } }
     reading_passages:
       - { id: "festival-invitation", text: { "en": "An invitation to a festival meal" } }
-  - decks: ["te-grammar-past-more", "te-grammar-conjunct-verbs"]
-    words: 3
-    grammar: ["past-more", "conjunct-verbs"]
+  - decks: ["te-grammar-past-more"]
+    words: 0
+    grammar: ["past-more"]
   - planned: { id: "te-shopping", theme: "shopping", words: 55 }
     listening_passages:
       - { id: "bargaining", text: { "en": "Bargaining politely for a bag" } }
@@ -206,9 +273,8 @@ units:
       - { id: "a-cold", text: { "en": "Telling a friend you have a cold and a fever" } }
     reading_passages:
       - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
-  - decks: ["te-eating-out", "te-grammar-conjunctions", "te-grammar-likes", "*"]
-    words: 19
-    grammar: ["conjunctions", "likes"]
+  - decks: ["te-eating-out", "*"]
+    words: 9
   - planned: { id: "te-cooking", theme: "cooking", words: 50 }
     listening_passages:
       - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes a dish" } }
@@ -222,6 +288,9 @@ units:
   - decks: ["te-help", "te-grammar-irregular", "te-grammar-pitfalls", "*"]
     words: 6
     grammar: ["irregular", "pitfalls"]
+  - decks: ["te-grammar-conjunct-verbs"]
+    words: 3
+    grammar: ["conjunct-verbs"]
   - planned: { id: "te-school", theme: "school", words: 55 }
     listening_passages:
       - { id: "school-day", text: { "en": "A child describes the school day" } }
@@ -277,11 +346,6 @@ units:
       - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
     reading_passages:
       - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
-  - planned: { id: "te-adverbs", theme: "adverbs", words: 50 }
-    listening_passages:
-      - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
-    reading_passages:
-      - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
   - planned: { id: "te-workplace", theme: "workplace", words: 50 }
     listening_passages:
       - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }
@@ -293,6 +357,7 @@ units:
     reading_passages:
       - { id: "telugu-states-map", text: { "en": "A map caption: the Telugu-speaking states" } }
     milestone: "A2"
+  # B1: the themes and grammar of the CEFR's B1.
   - decks: ["te-registers"]
     words: 17
   - planned: { id: "te-grammar-verbal-participle", grammar: "verbal-participle" }
@@ -471,6 +536,7 @@ units:
     reading_passages:
       - { id: "formal-letter", text: { "en": "A formal letter and its closing" } }
     milestone: "B1"
+  # After B1: spelling, and the first reader.
   - ["te-spelling"]
   - ["te-reading-diddubatu"]
   - ["*"]
