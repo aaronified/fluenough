@@ -16,6 +16,8 @@ import '../features/profiles/spoken_languages_page.dart';
 import '../features/report/report_page.dart';
 import '../features/review/offensive_review_page.dart';
 import '../features/review/review_page.dart';
+import '../features/review/reviewed_not_sent_page.dart';
+import '../features/review/reviewed_sent_page.dart';
 import '../features/review/waiting_page.dart';
 import '../features/script/script_guide_page.dart';
 import '../features/settings/app_log_page.dart';
@@ -126,6 +128,12 @@ abstract final class AppRoutes {
   /// What waits for review in the reviewer's languages.
   static const String waitingForReview = '/waiting-for-review';
 
+  /// The reviews kept on this phone, not sent yet, grouped by deck (#471).
+  static const String reviewedNotSent = '/reviewed-not-sent';
+
+  /// What became of the suggestions the reviewer sent (#471).
+  static const String reviewedSent = '/reviewed-sent';
+
   /// A language's offensive words, reviewed apart and only on purpose
   /// (docs/plans/deck-browser.md). Argument: the language's code, a
   /// [String].
@@ -167,6 +175,8 @@ abstract final class AppRoutes {
       inspect when args is String => InspectPage(deckId: args),
       review when args is String => ReviewPage(deckId: args),
       waitingForReview => const WaitingForReviewPage(),
+      reviewedNotSent => const ReviewedNotSentPage(),
+      reviewedSent => const ReviewedSentPage(),
       offensiveReview when args is String => OffensiveReviewPage(
         language: args,
       ),
@@ -202,6 +212,14 @@ abstract final class AppNavigator {
   /// What waits for review in the reviewer's languages.
   static Future<void> openWaitingForReview(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.waitingForReview);
+
+  /// The reviews not sent yet, by deck.
+  static Future<void> openReviewedNotSent(BuildContext context) =>
+      Navigator.of(context).pushNamed(AppRoutes.reviewedNotSent);
+
+  /// What became of the suggestions sent.
+  static Future<void> openReviewedSent(BuildContext context) =>
+      Navigator.of(context).pushNamed(AppRoutes.reviewedSent);
 
   /// [language]'s Offensive words review, which explains why the words
   /// are there and asks the reviewer's age before showing any.

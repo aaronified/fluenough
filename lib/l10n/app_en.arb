@@ -6718,15 +6718,239 @@
       }
     }
   },
-  "reviewWaitingUnsent": "{count, plural, =1{1 deck reviewed, not sent} other{{count} decks reviewed, not sent}}",
-  "@reviewWaitingUnsent": {
-    "description": "Row of a language on the Waiting for review page; opens the send sheet.",
+  "reviewYoursHeading": "Your reviews",
+  "@reviewYoursHeading": {
+    "description": "Heading of the group at the top of Waiting for review that holds what the reviewer has reviewed, sent or not."
+  },
+  "reviewLanguagesHeading": "Languages you review",
+  "@reviewLanguagesHeading": {
+    "description": "Heading over the languages on Waiting for review, each a folded group."
+  },
+  "reviewUnsentTitle": "Reviewed, not sent",
+  "@reviewUnsentTitle": {
+    "description": "Row on Waiting for review, and the title of the page it opens: the reviews kept on this phone, not sent yet."
+  },
+  "reviewUnsentCount": "{decks, plural, =1{1 deck} other{{decks} decks}}, {cards, plural, =1{1 card} other{{cards} cards}}, not sent",
+  "@reviewUnsentCount": {
+    "description": "Under Reviewed, not sent: how many decks and cards wait to be sent.",
+    "placeholders": {
+      "decks": {
+        "type": "int",
+        "example": "3"
+      },
+      "cards": {
+        "type": "int",
+        "example": "28"
+      }
+    }
+  },
+  "reviewUnsentNone": "Nothing waits to be sent",
+  "@reviewUnsentNone": {
+    "description": "Under Reviewed, not sent, when every review is sent."
+  },
+  "reviewUnsentIntro": "Kept on this phone until you send them. Tap a card to change or drop a suggestion.",
+  "@reviewUnsentIntro": {
+    "description": "At the top of the Reviewed, not sent page."
+  },
+  "reviewUnsentLooksRight": "{count, plural, =1{1 card looks right} other{{count} cards look right}}",
+  "@reviewUnsentLooksRight": {
+    "description": "One folded row of a deck on the Reviewed, not sent page: the cards marked Looks right.",
     "placeholders": {
       "count": {
         "type": "int",
-        "example": "2"
+        "example": "19"
       }
     }
+  },
+  "reviewUnsentOther": "{count, plural, =1{1 more card with a rating or an answer} other{{count} more cards with a rating or an answer}}",
+  "@reviewUnsentOther": {
+    "description": "Row of a deck on the Reviewed, not sent page: cards reviewed with a rating, a pair check or an answer to a proposal, not shown here.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "reviewUnsentSignedOff": "Signed off",
+  "@reviewUnsentSignedOff": {
+    "description": "Row of a deck on the Reviewed, not sent page whose sign-off is not sent yet."
+  },
+  "reviewDeckHeader": "{language} · {deck}",
+  "@reviewDeckHeader": {
+    "description": "Heading of a deck's group on the Reviewed, not sent and Reviewed and sent pages.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      },
+      "deck": {
+        "type": "String",
+        "example": "Phrasebook: first phrases"
+      }
+    }
+  },
+  "reviewYoursNow": "Now",
+  "@reviewYoursNow": {
+    "description": "Label over what a card says now, under a suggestion."
+  },
+  "reviewYoursYours": "Yours",
+  "@reviewYoursYours": {
+    "description": "Label over the text the reviewer suggested."
+  },
+  "reviewYoursWhy": "Why",
+  "@reviewYoursWhy": {
+    "description": "Label over the reviewer's reason for a suggestion."
+  },
+  "reviewSentTitle": "Reviewed and sent",
+  "@reviewSentTitle": {
+    "description": "Row on Waiting for review, and the title of the page it opens: what became of the suggestions the reviewer sent."
+  },
+  "reviewSentCount": "{decks, plural, =1{1 deck sent} other{{decks} decks sent}}",
+  "@reviewSentCount": {
+    "description": "Under Reviewed and sent: how many decks were sent.",
+    "placeholders": {
+      "decks": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "reviewSentWaitingCount": "{count} waiting for a second review",
+  "@reviewSentWaitingCount": {
+    "description": "Under Reviewed and sent, after the decks sent: how many suggestions wait for a second review.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "reviewSentNone": "Nothing sent yet",
+  "@reviewSentNone": {
+    "description": "Under Reviewed and sent, when nothing has been sent."
+  },
+  "reviewSentIntro": "What became of the suggestions you sent. Other reviewers decide: you see how many accepted, never who.",
+  "@reviewSentIntro": {
+    "description": "At the top of the Reviewed and sent page."
+  },
+  "reviewSentNoSuggestions": "None of your sent reviews had a suggestion.",
+  "@reviewSentNoSuggestions": {
+    "description": "On the Reviewed and sent page when decks were sent but held no suggestion."
+  },
+  "reviewSentTallyAccepted": "{count} accepted",
+  "@reviewSentTallyAccepted": {
+    "description": "Tally line of the Reviewed and sent page.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "reviewSentTallyRejected": "{count} rejected",
+  "@reviewSentTallyRejected": {
+    "description": "Tally line of the Reviewed and sent page.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "reviewSentTallyWaiting": "{count} waiting",
+  "@reviewSentTallyWaiting": {
+    "description": "Tally line of the Reviewed and sent page.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "reviewSentTallyUnknown": "{count} not known",
+  "@reviewSentTallyUnknown": {
+    "description": "Tally line of the Reviewed and sent page: suggestions whose state this phone cannot tell.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "reviewSentAccepted": "Accepted",
+  "@reviewSentAccepted": {
+    "description": "State of a sent suggestion that is in the deck."
+  },
+  "reviewSentAcceptedLine": "It is in the deck now",
+  "@reviewSentAcceptedLine": {
+    "description": "Under Accepted. The phone does not know since when."
+  },
+  "reviewSentRejected": "Rejected",
+  "@reviewSentRejected": {
+    "description": "State of a sent suggestion that was not taken. Neutral, not an error."
+  },
+  "reviewSentRejectedLine": "The card says something else now",
+  "@reviewSentRejectedLine": {
+    "description": "Under Rejected."
+  },
+  "reviewSentWaiting": "Waiting for a second review",
+  "@reviewSentWaiting": {
+    "description": "State of a sent suggestion that still needs acceptances."
+  },
+  "reviewSentWaitingLine": "{count, plural, =0{Enough reviewers have accepted it; the deck update comes next} =1{1 more acceptance needed} other{{count} more acceptances needed}}",
+  "@reviewSentWaitingLine": {
+    "description": "Under Waiting for a second review. Never names a reviewer.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "reviewSentUnknown": "Not known on this phone",
+  "@reviewSentUnknown": {
+    "description": "State of a sent suggestion whose outcome the phone cannot tell."
+  },
+  "reviewSentUnknownOwner": "The owner decides this part, so the phone cannot show its state",
+  "@reviewSentUnknownOwner": {
+    "description": "Under Not known on this phone, for an example, a picture, a base word or Also heard."
+  },
+  "reviewSentUnknownDeck": "It is not in the decks on this phone yet. Update the decks to see",
+  "@reviewSentUnknownDeck": {
+    "description": "Under Not known on this phone, when the deck on the phone has neither the suggestion nor a change."
+  },
+  "reviewSentSuggestionTitle": "{part} · {word}",
+  "@reviewSentSuggestionTitle": {
+    "description": "Title of a sent suggestion: its part and the card's word.",
+    "placeholders": {
+      "part": {
+        "type": "String",
+        "example": "Meaning"
+      },
+      "word": {
+        "type": "String",
+        "example": "নমস্কার"
+      }
+    }
+  },
+  "reviewLanguageCounts": "{decks, plural, =1{1 deck} other{{decks} decks}}, {cards, plural, =1{1 card} other{{cards} cards}} to check",
+  "@reviewLanguageCounts": {
+    "description": "Under a language's name, folded, on Waiting for review.",
+    "placeholders": {
+      "decks": {
+        "type": "int",
+        "example": "12"
+      },
+      "cards": {
+        "type": "int",
+        "example": "418"
+      }
+    }
+  },
+  "reviewLanguageNothing": "Nothing to check",
+  "@reviewLanguageNothing": {
+    "description": "Under a language's name, folded, when no deck waits."
   },
   "pathToReview": "To review",
   "@pathToReview": {
