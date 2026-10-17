@@ -1,5 +1,5 @@
-// Pins which Ask a review chooses today, for every card of every bundled
-// deck and every skill (docs/plans/question-engine.md, step 1). It is the
+// Pins which Ask a review chooses today, for every card of the frozen deck
+// copy and every skill (docs/plans/question-engine.md, step 1). It is the
 // safety net for the question engine's later steps: a step that is meant to
 // change nothing must leave test/goldens/asks_pinned.txt as it is.
 //
@@ -13,16 +13,30 @@
 // Match pairs depends on the four items asked together, so a lone item is
 // never recorded as matched; that grouping is not pinned here.
 //
-// Regenerate after an intended change, or after the path's unit order moves
-// (the alphabet list decides hearsForm, "hf" below):
+// The decks are a frozen copy under test/fixtures/ask_pin/, not decks/, so
+// that this fails only when CODE changes which ask is chosen, and a deck-only
+// pull request, which merges without Flutter checks (#524), cannot break it
+// (owner, 2026-10-17: "Frozen deck copy"). The copy is three whole languages,
+// not all nine, to stay near 1 MB: te has every card shape (vocabulary,
+// grammar, rules cells, numbers, script and sound cards, layers), ipa is not
+// typed, and es is a Latin-script language. Whole languages, because cards
+// refer to their path and their sibling decks.
+//
+// Refresh the copy and the golden only for an intended change: new decks or
+// a new card shape the pin should cover, or the path's unit order moving
+// (the alphabet list decides hearsForm, "hf" below). Never in a deck pull
+// request.
+//   python3 tools/snapshot_ask_pin.py
 //   UPDATE_ASK_PIN=1 flutter test test/core/scheduling/ask_pin_test.dart
-// Without it the test compares and fails showing the first differences.
+// Without the variable the test compares and fails showing the first
+// differences. It refuses to write when CI is set.
 
 import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/repository_decks.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/numbers/number_practice.dart';
@@ -31,6 +45,9 @@ import 'package:fluenough/core/scheduling/lesson.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
 
 const String goldenPath = 'test/goldens/asks_pinned.txt';
+
+/// The frozen copy's root: it holds decks/ and decks/index.json.
+const String decksRoot = 'test/fixtures/ask_pin';
 
 const List<String> states = <String>['new', 'recall', 'missed', 'known'];
 
@@ -57,7 +74,7 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   test('today\'s asks, for every card and skill, are as pinned', () async {
-    final app = AppState.test();
+    final app = AppState.test(decks: RepositoryDeckSource(decksRoot));
     await app.load();
 
     String askOf(Card card, DrillMode mode, FsrsState? state, bool recall) {
@@ -152,7 +169,9 @@ void main() {
 
     final out = StringBuffer()
       ..writeln('# Pinned asks (test/core/scheduling/ask_pin_test.dart).')
-      ..writeln('# Regenerate: UPDATE_ASK_PIN=1 flutter test <that file>')
+      ..writeln(
+        '# Regenerate (see that file): UPDATE_ASK_PIN=1 flutter test <that file>',
+      )
       ..writeln('# Card line: card-id signature pools')
       ..writeln(
         '# pools: distinct options for chooseMeaning/chooseWord, or for '
@@ -173,6 +192,11 @@ void main() {
 
     final file = File(goldenPath);
     if (Platform.environment['UPDATE_ASK_PIN'] == '1') {
+      if (Platform.environment.containsKey('CI')) {
+        fail('refusing to write $goldenPath when CI is set');
+      }
+      // ignore: avoid_print
+      print('UPDATE_ASK_PIN=1: writing $goldenPath');
       file.createSync(recursive: true);
       file.writeAsStringSync(text);
       return;
