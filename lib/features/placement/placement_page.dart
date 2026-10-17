@@ -8,6 +8,7 @@ import '../../app/deck_catalog.dart';
 import '../../app/placement.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/target_text.dart';
@@ -314,7 +315,10 @@ class _Alphabet extends StatelessWidget {
       padding: const EdgeInsetsDirectional.all(AppSizes.gutter),
       children: <Widget>[
         Text(
-          l10n.alphabetAskTitle(language.name),
+          l10n.alphabetAskTitle(
+            language.name,
+            l10n.scriptNameOr(language.script, language.name),
+          ),
           style: theme.textTheme.headlineSmall,
         ),
         const SizedBox(height: 12),

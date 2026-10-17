@@ -8,11 +8,13 @@ import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/deck_downloads.dart';
 import '../../app/language_offer.dart';
+import '../../app/script_test.dart';
 import '../../core/data/spoken_languages.dart';
 import '../../core/decks/deck_index.dart' show decksBeforeReady;
 import '../../core/decks/ipa_course.dart';
 import '../../core/decks/language_catalog.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
@@ -25,6 +27,7 @@ import '../profiles/spoken_languages_picker.dart';
 import 'language_card.dart';
 import 'language_download.dart';
 import 'placement_page.dart';
+import 'script_test_page.dart';
 
 /// The languages the learner learns (#211, `docs/plans/language-picker.md`
 /// and its approved mockup): asked on first launch, after the languages
@@ -52,6 +55,7 @@ class LanguagePickerPage extends StatefulWidget {
     this.initialQuery = '',
     this.initialChosen = const <String>{},
     this.initialScript = const <String, bool>{},
+    this.spokenList,
   });
 
   /// On first launch there is nothing to go back to, and finishing goes on
@@ -67,6 +71,10 @@ class LanguagePickerPage extends StatefulWidget {
   final String initialQuery;
   final Set<String> initialChosen;
   final Map<String, bool> initialScript;
+
+  /// The languages a learner can speak, from `assets/languages.yaml`, for
+  /// the scripts each is written in (#554). Null reads them from there.
+  final List<SpokenLanguage>? spokenList;
 
   @override
   State<LanguagePickerPage> createState() => _LanguagePickerPageState();
@@ -118,6 +126,15 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
   late final Map<String, bool> _script = <String, bool>{
     ...widget.initialScript,
   };
+
+  /// Whether each newly chosen language's script test was passed (#554):
+  /// saved with the rest, its script lessons then placed as known.
+  final Map<String, bool> _scriptPassed = <String, bool>{};
+
+  /// The languages a learner can speak, for the scripts each is written in.
+  late List<SpokenLanguage> _spokenList =
+      widget.spokenList ?? const <SpokenLanguage>[];
+  bool _listAsked = false;
 
   /// The language each newly chosen one is learned from, where the learner
   /// had a choice.
@@ -184,17 +201,28 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    if (widget.ownNames != null || _ownNames.isNotEmpty) return;
+    if (_listAsked || widget.spokenList != null) {
+      if (widget.ownNames == null && _ownNames.isEmpty) {
+        _ownNames = <String, String>{
+          for (final l in _spokenList) l.code: l.ownName,
+        };
+      }
+      return;
+    }
+    _listAsked = true;
     DefaultAssetBundle.of(context)
         .loadString(SpokenLanguagesPicker.asset)
         .then(parseSpokenLanguages)
         .then((languages) {
           if (!mounted) return;
-          setState(
-            () => _ownNames = <String, String>{
-              for (final l in languages) l.code: l.ownName,
-            },
-          );
+          setState(() {
+            _spokenList = languages;
+            if (widget.ownNames == null) {
+              _ownNames = <String, String>{
+                for (final l in languages) l.code: l.ownName,
+              };
+            }
+          });
         }, onError: (Object _) {});
   }
 
@@ -510,13 +538,19 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     // Back to the first route first: from Settings that is the app; on
     // first launch it is this page, which saving then swaps for the app.
     Navigator.of(context).popUntil((route) => route.isFirst);
-    settings
-      ..placedDecks = <String>{
-        for (final id in settings.placedDecks)
-          if (!replaced.contains(id)) id,
-        for (final ids in placed.values) ...ids,
+    settings.placedDecks = <String>{
+      for (final id in settings.placedDecks)
+        if (!replaced.contains(id)) id,
+      for (final ids in placed.values) ...ids,
+    };
+    // A passed script test places the script lessons, whatever placement
+    // found (#554).
+    for (final code in chosen) {
+      if ((_scriptPassed[code] ?? false) && settings.learnsAlphabet(code)) {
+        state.skipScriptLessons(code, true);
       }
-      ..learningChosen = true;
+    }
+    settings.learningChosen = true;
     state.setLearningLanguages(chosen);
   }
 
@@ -916,6 +950,64 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     return active || _downloadShown.contains(code);
   }
 
+  /// The script test's offer on [language]'s card (#554), for a learner who
+  /// reads its script through another language they know; null for anyone
+  /// else, and for a language whose script is its own, such as Telugu to a
+  /// reader of Bengali.
+  Widget? _scriptTest(
+    BuildContext context,
+    AppState state,
+    CatalogLanguage language, {
+    required bool learns,
+    String? native,
+  }) {
+    final script = language.script;
+    if (script == null) return null;
+    final code = language.code;
+    final readers = scriptReaders(_spokenList, state.settings.scriptsRead);
+    final names = <String, String>{for (final l in _spokenList) l.code: l.name};
+    final through = <String>[
+      for (final reader in readers[script] ?? const <String>[])
+        if (reader != code) names[reader] ?? reader,
+    ];
+    if (through.isEmpty) return null;
+    final l10n = AppLocalizations.of(context)!;
+    final lessons = state.scriptLessons(code, native: native);
+    final scriptName = l10n.scriptNameOr(script, language.name);
+    return ScriptTestOffer(
+      key: ValueKey<String>('script-test-$code'),
+      language: language.name,
+      script: scriptName,
+      through: through,
+      ownLetters: <String, ScriptLetter>{
+        for (final entry in lessons)
+          for (final card in entry.cards)
+            if (card.tags.contains(ownLetterTag))
+              card.target: (letter: card.target, reading: card.reading),
+      }.values.toList(),
+      skipped: learns
+          ? state.scriptLessonsSkipped(code, native: native)
+          : _scriptPassed[code] ?? false,
+      onTake: lessons.isEmpty
+          ? null
+          : () async {
+              final passed = await Navigator.of(context).push<bool>(
+                MaterialPageRoute<bool>(
+                  settings: const RouteSettings(name: '/script-test'),
+                  builder: (_) =>
+                      ScriptTestPage(script: scriptName, lessons: lessons),
+                ),
+              );
+              if (passed == null || !mounted) return;
+              if (learns) {
+                state.skipScriptLessons(code, passed, native: native);
+              } else {
+                setState(() => _scriptPassed[code] = passed);
+              }
+            },
+    );
+  }
+
   Widget _card(
     BuildContext context,
     AppState state,
@@ -961,6 +1053,29 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
             },
           ),
         ),
+      // A language already learned: its script switch is the setting itself
+      // (#555), the one place to change it after the first choice.
+      if (learns && language.scriptDecks)
+        ListenableBuilder(
+          listenable: state.settings,
+          builder: (context, _) => Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              ScriptChoice(
+                language: language,
+                on: state.settings.learnsAlphabet(code),
+                onChanged: (on) => state.settings.setLearnsAlphabet(code, on),
+                preview: state.scriptPreview(code),
+              ),
+              if (state.settings.learnsAlphabet(code))
+                if (_scriptTest(context, state, language, learns: true)
+                    case final offer?) ...<Widget>[
+                  const SizedBox(height: 16),
+                  offer,
+                ],
+            ],
+          ),
+        ),
       if (ticked && !learns) ...<Widget>[
         if (language.scriptDecks)
           ScriptChoice(
@@ -968,6 +1083,14 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
             on: _script[code] ?? true,
             onChanged: (on) => setState(() => _script[code] = on),
             preview: state.scriptPreview(code),
+          ),
+        if (language.scriptDecks && (_script[code] ?? true))
+          ?_scriptTest(
+            context,
+            state,
+            language,
+            learns: false,
+            native: chosenNative,
           ),
         if (chosenNative != null)
           NativeChoiceField(

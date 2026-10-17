@@ -95,11 +95,13 @@ class OnboardingAnswers extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Whether the learner reads each language's script, by code (#462).
+  /// Whether the learner reads each language's scripts (#462, #551), by
+  /// [SpokenLanguage.readKey].
   Map<String, bool> get scripts => _scripts;
   Map<String, bool> _scripts = const <String, bool>{};
-  void setReadsScript(String code, bool reads) {
-    _scripts = <String, bool>{..._scripts, code: reads};
+  void setScriptsRead(Map<String, bool> answers) {
+    if (mapEquals(answers, _scripts)) return;
+    _scripts = Map<String, bool>.unmodifiable(answers);
     notifyListeners();
   }
 
@@ -123,9 +125,7 @@ class OnboardingAnswers extends ChangeNotifier {
       }
     }
     state.settings
-      ..scriptsRead = <String, bool>{
-        for (final code in _spoken) code: ?_scripts[code],
-      }
+      ..scriptsRead = readAnswersOf(_spoken, _scripts)
       ..spokenLanguages = _spoken;
   }
 }
