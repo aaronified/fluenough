@@ -156,21 +156,15 @@ class _YourReviews extends StatelessWidget {
 /// names the language and counts the decks and cards to check, with an arrow
 /// and, for a screen reader, whether it is expanded (#471). Unfolded, it
 /// holds what waits in it, or that nothing does.
-class _Language extends StatefulWidget {
+class _Language extends StatelessWidget {
   const _Language({super.key, required this.waiting});
 
   final WaitingLanguage waiting;
 
   @override
-  State<_Language> createState() => _LanguageState();
-}
-
-class _LanguageState extends State<_Language> {
-  bool _open = false;
-
-  @override
   Widget build(BuildContext context) {
-    final waiting = widget.waiting;
+    final settings = AppScope.of(context).settings;
+    final unfolded = settings.isWaitingLanguageOpen(waiting.language.code);
     final l10n = AppLocalizations.of(context)!;
     final language = waiting.language;
     // What waits in the Offensive words review, counted, never named.
@@ -186,7 +180,7 @@ class _LanguageState extends State<_Language> {
 
     final decks = waiting.allDecks.toList();
     final fold = GroupedTile(
-      expanded: _open,
+      expanded: unfolded,
       leading: const Icon(Icons.translate_outlined),
       title: language.name,
       subtitle: decks.isEmpty
@@ -195,13 +189,14 @@ class _LanguageState extends State<_Language> {
               decks.length,
               decks.fold<int>(0, (n, d) => n + d.left),
             ),
-      trailing: Icon(_open ? Icons.expand_less : Icons.expand_more),
-      onTap: () => setState(() => _open = !_open),
+      trailing: Icon(unfolded ? Icons.expand_less : Icons.expand_more),
+      onTap: () =>
+          settings.setWaitingLanguageOpen(waiting.language.code, !unfolded),
     );
     return GroupedList.settings(
       children: <Widget>[
         fold,
-        if (_open) ..._rows(context, l10n, waiting, offensive, open),
+        if (unfolded) ..._rows(context, l10n, waiting, offensive, open),
       ],
     );
   }
