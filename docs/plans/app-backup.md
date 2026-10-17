@@ -97,6 +97,30 @@ A plain zip of text files, so a backup outlives the app, like the log.
   get a stuck user going (retry, update); a restore there is a different
   decision and needs the confirmation. Keep one place, Settings.
 
+## Replacing the review log
+
+Asked on #470 (2026-10-17): "How may a restore replace the review log?",
+since replacing means deleting the learner's `reviews` and `leech_actions`
+rows, which are append-only (AGENTS.md rule 9). The owner's answer:
+
+> Logged exception
+
+(owner, 2026-10-17)
+
+So a restore is the one exception to rule 9, and only a restore the learner
+has confirmed, after the app has kept a copy of what it replaces:
+
+- `AppDatabase.replaceLog` is the only way in. In one transaction it drops
+  each table's delete trigger for its own `DELETE` and creates it again at
+  once, so the guard is back before the backup's rows are written; then the
+  backup's log goes in, and a row is appended to `restores`. A failure rolls
+  back everything, the triggers included.
+- `restores` (migration 8) is the log of the exception: when, the backup's
+  date, kind and app version, whether it came from a file, the name of the
+  kept copy, and the review count before and after. Append-only and guarded
+  like `reviews`, and never cleared by a restore.
+- `Feature.localRestore` is on.
+
 ## Automatic backup on app update
 
 Owner, 2026-10-11: "The app backup should also run automatically when app
@@ -181,8 +205,11 @@ depends on #204.
 
 ## Open questions
 
-- Zip dependency versus a single JSON file with the log embedded as lines.
-  A zip is cleaner; a JSON file avoids a package. Decide at build time by
-  what is already in `pubspec.yaml`.
+- ~~Zip dependency versus a single JSON file with the log embedded as
+  lines.~~ Decided at build time, as this said: a zip, written and read by
+  `lib/core/backup/zip_files.dart` with no new package.
 - ~~Whether the reviewer code is exported.~~ Decided (owner, 2026-10-11):
   yes, it is included.
+- ~~How a restore may replace the review log.~~ Decided (owner,
+  2026-10-17, asked "How may a restore replace the review log?"):
+  "Logged exception". See "Replacing the review log" above.

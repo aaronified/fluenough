@@ -193,7 +193,17 @@ before you start.
 
 `reviews` is an **append-only log** — never update or delete a row in it. It is
 the only table whose loss is irreparable; everything else can be rebuilt from
-it. See [ADR-0005](docs/adr/0005-scheduling.md).
+it. See [ADR-0005](docs/adr/0005-scheduling.md). `leech_actions` is
+append-only in the same way.
+
+There is **one exception**, and only one (owner, 2026-10-17: "Logged
+exception"): a restore from a backup that the learner has confirmed, after
+the app has kept a copy of what it replaces, empties `reviews` and
+`leech_actions` and writes the backup's in their place. It goes only
+through `AppDatabase.replaceLog`, in one transaction with the import, and
+appends a row to the append-only `restores` table saying when, from which
+backup, and where the kept copy is. Nothing else may call it, and no other
+code path may delete from or update these tables.
 
 ### 10. No user-visible string is a literal in a widget.
 

@@ -8,6 +8,7 @@ import 'app/app_info.dart';
 import 'app/added_decks.dart';
 import 'app/app_log.dart';
 import 'app/app_state.dart';
+import 'app/backup_store.dart';
 import 'app/deck_catalog.dart';
 import 'app/deck_downloads.dart';
 import 'app/downloaded_decks.dart';
@@ -84,6 +85,9 @@ Future<void> main() async {
         releaseNotes: GitHubReleaseNotes(
           userAgent: 'fluenough/${AppInfo.version}',
         ),
+        // Backups, kept in the app's own storage, which an update leaves
+        // alone (#470).
+        backupStore: FileBackupStore(Directory('${files.path}/backups')),
         installer: OtaApkInstaller(),
         downloads: FileDownloadStore(Directory('${files.path}/ota_update')),
       ),

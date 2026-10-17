@@ -3,12 +3,14 @@ import 'package:drift/drift.dart';
 import '../models/drill_mode.dart';
 import '../models/leech_action.dart';
 import 'daos.dart';
+import 'restore_record.dart';
 import 'tables/card_states.dart';
 import 'tables/cards.dart';
 import 'tables/converters.dart';
 import 'tables/decks.dart';
 import 'tables/fsrs_parameters.dart';
 import 'tables/leech_actions.dart';
+import 'tables/restores.dart';
 import 'tables/reviews.dart';
 import 'tables/settings.dart';
 
@@ -46,6 +48,7 @@ part 'database.g.dart';
     Settings,
     LeechActions,
     FsrsParameters,
+    Restores,
   ],
   daos: [
     DecksDao,
@@ -55,6 +58,7 @@ part 'database.g.dart';
     SettingsDao,
     LeechActionsDao,
     FsrsParametersDao,
+    RestoresDao,
   ],
 )
 class AppDatabase extends _$AppDatabase {
@@ -70,8 +74,14 @@ class AppDatabase extends _$AppDatabase {
   ///    kept (owner, 2026-10-09).
   /// 7: `fsrs_parameters`, FSRS fitted to the learner per language and
   ///    skill (ADR-0035).
+  /// 8: `restores`, append-only: each restore that replaced the review log
+  ///    (#470).
   @override
-  int get schemaVersion => 7;
+  int get schemaVersion => currentSchemaVersion;
+
+  /// [schemaVersion], for what needs it without a database: a backup says
+  /// which schema it was made under (#470).
+  static const int currentSchemaVersion = 8;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -79,6 +89,7 @@ class AppDatabase extends _$AppDatabase {
       await m.createAll();
       await _appendOnly('reviews');
       await _appendOnly('leech_actions');
+      await _appendOnly('restores');
     },
     onUpgrade: (m, from, to) async {
       if (from < 2) await m.createTable(settings);
@@ -129,6 +140,17 @@ class AppDatabase extends _$AppDatabase {
         ).get();
         if (exists.isEmpty) await m.createTable(fsrsParameters);
       }
+      if (from < 8) {
+        // Once, as in step 5: the table and its triggers in one step.
+        final exists = await customSelect(
+          "SELECT name FROM sqlite_master WHERE type = 'table' "
+          "AND name = 'restores'",
+        ).get();
+        if (exists.isEmpty) {
+          await m.createTable(restores);
+          await _appendOnly('restores');
+        }
+      }
     },
   );
 
@@ -137,11 +159,60 @@ class AppDatabase extends _$AppDatabase {
   /// review log's triggers are `reviews_no_update` and `reviews_no_delete`.
   Future<void> _appendOnly(String table) async {
     for (final action in const <String>['UPDATE', 'DELETE']) {
-      await customStatement(
-        'CREATE TRIGGER ${table}_no_${action.toLowerCase()} '
-        'BEFORE $action ON $table '
-        "BEGIN SELECT RAISE(ABORT, '$table is append-only'); END",
-      );
+      await _guard(table, action);
     }
   }
+
+  Future<void> _guard(String table, String action) => customStatement(
+    'CREATE TRIGGER ${table}_no_${action.toLowerCase()} '
+    'BEFORE $action ON $table '
+    "BEGIN SELECT RAISE(ABORT, '$table is append-only'); END",
+  );
+
+  /// The one exception to `reviews` and `leech_actions` being append-only
+  /// (AGENTS.md rule 9; owner, 2026-10-17: "Logged exception"): a restore
+  /// the learner has confirmed, after a copy of what it replaces has been
+  /// kept, empties both, and [refill] writes the backup's in their place.
+  ///
+  /// All in one transaction, with [restore] appended to `restores`, which
+  /// counts the reviews before and after. Each table's delete trigger is
+  /// dropped only for its own `DELETE` and created again at once, so the
+  /// guard is back before [refill] runs; nothing else can delete a row, and
+  /// a failure anywhere rolls everything back, the triggers included.
+  /// Nothing but a restore calls this.
+  Future<T> replaceLog<T>(RestoreRecord restore, Future<T> Function() refill) =>
+      transaction(() async {
+        final before = await _reviewCount();
+        for (final table in <TableInfo<Table, Object?>>[
+          reviews,
+          leechActions,
+        ]) {
+          final name = table.actualTableName;
+          await customStatement('DROP TRIGGER ${name}_no_delete');
+          await customUpdate(
+            'DELETE FROM $name',
+            updates: {table},
+            updateKind: UpdateKind.delete,
+          );
+          await _guard(name, 'DELETE');
+        }
+        final result = await refill();
+        await into(restores).insert(
+          RestoresCompanion.insert(
+            ts: restore.at,
+            backupCreatedAt: restore.backupCreatedAt,
+            backupKind: restore.backupKind,
+            backupAppVersion: restore.backupAppVersion,
+            fromFile: restore.fromFile,
+            keptCopy: restore.keptCopy,
+            reviewsBefore: before,
+            reviewsAfter: await _reviewCount(),
+          ),
+        );
+        return result;
+      });
+
+  Future<int> _reviewCount() async => (await customSelect(
+    'SELECT COUNT(*) AS n FROM reviews',
+  ).getSingle()).read<int>('n');
 }

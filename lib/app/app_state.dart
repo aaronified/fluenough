@@ -51,6 +51,9 @@ import 'memory_progress.dart';
 import 'pacing.dart';
 import 'profile.dart';
 import 'repository_decks.dart';
+import 'backup_files.dart';
+import 'backup_store.dart';
+import 'backups.dart';
 import 'reviewing.dart';
 import 'session.dart';
 import 'settings.dart';
@@ -158,6 +161,8 @@ class AppState extends ChangeNotifier {
     this.features = const FeatureRegistry.shipped(),
     this._clock = DateTime.now,
     this.logFiles = const PickerLogFiles(),
+    this._backupFiles = const PickerBackupFiles(),
+    this._backupStore,
     this.deckFiles = const PickerDeckFiles(),
     this.links = const LauncherLinks(),
     this.systemSettings = const NullSystemSettings(),
@@ -258,6 +263,8 @@ class AppState extends ChangeNotifier {
     FeatureRegistry features = const FeatureRegistry.shipped(),
     DateTime? now,
     LogFiles logFiles = const PickerLogFiles(),
+    BackupFiles backupFiles = const PickerBackupFiles(),
+    BackupStore? backupStore,
     DeckFiles deckFiles = const PickerDeckFiles(),
     DeckStore? addedDecks,
     LinkOpener? links,
@@ -292,6 +299,8 @@ class AppState extends ChangeNotifier {
       features: features,
       clock: () => fixed,
       logFiles: logFiles,
+      backupFiles: backupFiles,
+      backupStore: backupStore ?? MemoryBackupStore(),
       deckFiles: deckFiles,
       links: links ?? FixedLinks(),
       systemSettings: systemSettings,
@@ -334,6 +343,42 @@ class AppState extends ChangeNotifier {
 
   /// Where the review log's backup is saved and read from (#20).
   final LogFiles logFiles;
+
+  final BackupFiles _backupFiles;
+  final BackupStore? _backupStore;
+
+  /// Backing up and restoring the whole app, and the backups kept on the
+  /// phone (#470). Has its own notifier.
+  late final Backups backups = Backups(
+    settings: settings,
+    progress: progress,
+    store: _backupStore ?? MemoryBackupStore(),
+    files: _backupFiles,
+    clock: _clock,
+    log: log,
+    languagesOnPhone: () => deckDownloads?.languagesOnPhone ?? <String>{},
+    restored: _downloadRestored,
+  );
+
+  /// After a restore, the languages the backup lists that are not on the
+  /// phone download, one after another, with the usual progress.
+  void _downloadRestored(List<String> languages) {
+    final downloads = deckDownloads;
+    if (downloads == null) return;
+    unawaited(() async {
+      for (final code in languages) {
+        if (_disposed) return;
+        if (downloads.languagesOnPhone.contains(code)) continue;
+        try {
+          await downloadLanguage(code);
+        } on Object catch (e) {
+          log.warning(
+            'Restored language $code not downloaded: ${e.runtimeType}',
+          );
+        }
+      }
+    }());
+  }
 
   /// Where a deck to add is read from, and its template saved to (#22).
   final DeckFiles deckFiles;
@@ -381,6 +426,7 @@ class AppState extends ChangeNotifier {
     clock: _clock,
     installer: _installer,
     downloads: _downloads,
+    backUp: (version) => backups.keep(BackupKind.update, forVersion: version),
   );
   final ReleaseCheckEngine _releases;
 
