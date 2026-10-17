@@ -47,8 +47,8 @@ void main() {
     }
   });
 
-  test('all right passes; one wrong passes; two wrong fail', () {
-    for (final wrong in <int>[0, 1, 2]) {
+  test('all right passes; one wrong fails', () {
+    for (final wrong in <int>[0, 1]) {
       final test = ScriptTest(lessons('as'), random: Random(3));
       var missed = 0;
       while (!test.isFinished) {
@@ -61,7 +61,7 @@ void main() {
           test.answer(q.card.native);
         }
       }
-      expect(test.passed, wrong < 2, reason: '$wrong wrong');
+      expect(test.passed, wrong == 0, reason: '$wrong wrong');
       expect(test.right, 8 - wrong);
     }
   });
