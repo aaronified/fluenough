@@ -113,7 +113,8 @@ class _LanguageBarState extends State<LanguageBar> {
   final ScrollController _row = ScrollController();
   final GlobalKey _scrollKey = GlobalKey();
   final GlobalKey _rowKey = GlobalKey();
-  final GlobalKey _chipKey = GlobalKey();
+  final GlobalKey _stackKey = GlobalKey();
+  final Map<String, GlobalKey> _itemKeys = <String, GlobalKey>{};
   final MenuController _menu = MenuController();
   final OverlayPortalController _labelPortal = OverlayPortalController();
   final LayerLink _link = LayerLink();
@@ -135,6 +136,16 @@ class _LanguageBarState extends State<LanguageBar> {
 
   /// How far the row gives at an end, where there is no language to go to.
   double _give = 0;
+
+  /// Each language's place in the row, measured after layout, for the
+  /// selection to slide between.
+  Map<String, Rect> _rects = const <String, Rect>{};
+
+  /// How far a swipe has taken the selection toward [_target], 0 to 1: it
+  /// follows the finger, and a swipe past a third of the bar commits.
+  double _progress = 0;
+
+  GlobalKey _keyFor(String code) => _itemKeys.putIfAbsent(code, GlobalKey.new);
 
   /// The language the label under the bar names, and whether it shows.
   String? _labelCode;
@@ -190,8 +201,10 @@ class _LanguageBarState extends State<LanguageBar> {
     final forward = (_drag < 0) != _rtl;
     final next = LanguageChoice.step(at, codes, forward ? 1 : -1);
     final target = _drag.abs() >= 8 ? next : null;
+    final commitAt = (context.size?.width ?? 300) / 3;
     setState(() {
       _target = target;
+      _progress = target == null ? 0 : (_drag.abs() / commitAt).clamp(0.0, 1.0);
       _give = next == null ? (_drag * 0.25).clamp(-12.0, 12.0) : 0;
     });
     if (target != null) {
@@ -213,6 +226,7 @@ class _LanguageBarState extends State<LanguageBar> {
       _dragging = false;
       _drag = 0;
       _target = null;
+      _progress = 0;
       _give = 0;
     });
     final language = state.languageChoices
@@ -230,6 +244,7 @@ class _LanguageBarState extends State<LanguageBar> {
       _dragging = false;
       _drag = 0;
       _target = null;
+      _progress = 0;
       _give = 0;
     });
     _hideLabel();
@@ -238,10 +253,13 @@ class _LanguageBarState extends State<LanguageBar> {
   /// After layout: scrolls the row to keep the chip centred where the ends
   /// allow, and sets which ends fade.
   void _afterLayout(String? shown) {
-    if (!mounted || !_row.hasClients || _dragging) return;
+    if (!mounted) return;
+    _measure();
+    if (!_row.hasClients || _dragging) return;
     final position = _row.position;
     if (!position.hasContentDimensions) return;
-    final chip = _chipKey.currentContext?.findRenderObject() as RenderBox?;
+    final chip =
+        _itemKeys[shown]?.currentContext?.findRenderObject() as RenderBox?;
     final row = _rowKey.currentContext?.findRenderObject() as RenderBox?;
     if (chip != null && row != null && chip.attached && row.attached) {
       final centre = chip
@@ -277,6 +295,29 @@ class _LanguageBarState extends State<LanguageBar> {
     }
     _centredOn = shown;
     _setFades();
+  }
+
+  /// Measures where each language sits in the row, for the selection.
+  void _measure() {
+    final stack = _stackKey.currentContext?.findRenderObject() as RenderBox?;
+    if (stack == null || !stack.attached || !stack.hasSize) return;
+    final rects = <String, Rect>{};
+    for (final MapEntry(:key, :value) in _itemKeys.entries) {
+      final box = value.currentContext?.findRenderObject() as RenderBox?;
+      if (box == null || !box.attached || !box.hasSize) continue;
+      rects[key] = box.localToGlobal(Offset.zero, ancestor: stack) & box.size;
+    }
+    bool same(Rect? a, Rect? b) =>
+        a != null &&
+        b != null &&
+        (a.left - b.left).abs() < 0.5 &&
+        (a.top - b.top).abs() < 0.5 &&
+        (a.width - b.width).abs() < 0.5 &&
+        (a.height - b.height).abs() < 0.5;
+    final changed =
+        rects.length != _rects.length ||
+        rects.entries.any((e) => !same(e.value, _rects[e.key]));
+    if (changed) setState(() => _rects = rects);
   }
 
   void _setFades() {
@@ -319,20 +360,34 @@ class _LanguageBarState extends State<LanguageBar> {
     if (choices.isNotEmpty && at >= 0) {
       final next = at + 1 < choices.length ? choices[at + 1] : null;
       final previous = at > 0 ? choices[at - 1] : null;
+      // The selection is drawn behind the row, so it can slide with the
+      // finger toward the language a swipe would show (owner, 2026-10-17:
+      // "The selection rectangle should move with my gesture in real
+      // time"), as a Material tab indicator follows a swipe.
+      final from = _rects[shown];
+      final to = _target == null ? null : _rects[_target];
+      final selection = from == null
+          ? null
+          : (to == null ? from : Rect.lerp(from, to, _progress)!);
+      final slides = !allOn && selection != null;
       final items = <Widget>[
         for (final language in choices)
           if (language.code == shown)
             LanguageBarChip(
-              key: _chipKey,
+              key: _keyFor(language.code),
               language: language,
               glyph: languageGlyph(language, state.decks),
               selected: !allOn,
+              filled: !slides,
             )
           else
-            _BareGlyph(
-              glyph: languageGlyph(language, state.decks),
-              language: language,
-              full: language.code == _target,
+            KeyedSubtree(
+              key: _keyFor(language.code),
+              child: _BareGlyph(
+                glyph: languageGlyph(language, state.decks),
+                language: language,
+                full: language.code == _target,
+              ),
             ),
       ];
       Widget row = NotificationListener<Notification>(
@@ -350,7 +405,27 @@ class _LanguageBarState extends State<LanguageBar> {
                 : const Duration(milliseconds: 200),
             curve: Curves.easeOut,
             transform: Matrix4.translationValues(_give, 0, 0),
-            child: Row(key: _rowKey, children: items),
+            child: Stack(
+              key: _stackKey,
+              children: <Widget>[
+                if (slides)
+                  AnimatedPositioned.fromRect(
+                    key: const ValueKey<String>('language-bar-selection'),
+                    rect: selection,
+                    duration: _dragging
+                        ? Duration.zero
+                        : const Duration(milliseconds: 200),
+                    curve: Curves.easeOut,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: scheme.secondaryContainer,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                  ),
+                Row(key: _rowKey, children: items),
+              ],
+            ),
           ),
         ),
       );
@@ -557,11 +632,16 @@ class LanguageBarChip extends StatelessWidget {
     required this.language,
     required this.glyph,
     required this.selected,
+    this.filled = true,
   });
 
   final LanguageInfo language;
   final String glyph;
   final bool selected;
+
+  /// Whether the chip draws its own fill while [selected]. On the bar the
+  /// sliding selection behind the row draws it instead.
+  final bool filled;
 
   @override
   Widget build(BuildContext context) {
@@ -575,9 +655,11 @@ class LanguageBarChip extends StatelessWidget {
       constraints: BoxConstraints(minHeight: 32 + 12 * (scale - 1)),
       padding: const EdgeInsetsDirectional.fromSTEB(7, 4, 11, 4),
       decoration: BoxDecoration(
-        color: selected ? scheme.secondaryContainer : null,
+        color: selected && filled ? scheme.secondaryContainer : null,
         border: Border.all(
-          color: selected ? scheme.secondaryContainer : scheme.outline,
+          color: selected
+              ? (filled ? scheme.secondaryContainer : Colors.transparent)
+              : scheme.outline,
         ),
         borderRadius: BorderRadius.circular(10),
       ),

@@ -20,6 +20,7 @@ import 'package:fluenough/features/stats/stats_page.dart';
 import 'package:fluenough/features/today/lesson_card.dart';
 import 'package:fluenough/features/today/today_page.dart';
 import 'package:fluenough/ui/widgets/language_bar.dart';
+import 'package:fluenough/ui/widgets/language_glyph.dart';
 import 'package:fluenough/ui/widgets/stat_tile.dart';
 
 import '../support/harness.dart';
@@ -248,6 +249,64 @@ void main() {
     await tester.pump(const Duration(milliseconds: 1500));
     await tester.pumpAndSettle();
     expect(label, findsNothing);
+  });
+
+  testWidgets('the selection follows the finger toward the next language, '
+      'and goes back when the swipe is let go short (owner, 2026-10-17)', (
+    tester,
+  ) async {
+    usePhone(tester);
+    final state = learner(const <String>['hi', 'bn'], choice: 'hi');
+    await pumpApp(tester, state: state);
+    final selection = find.byKey(
+      const ValueKey<String>('language-bar-selection'),
+    );
+    final glyph = state.languages.singleWhere((l) => l.code == 'bn').icon!;
+    final start = tester.getRect(selection);
+    final gesture = await tester.startGesture(tester.getCenter(zone()));
+    await gesture.moveBy(const Offset(-20, 0));
+    await gesture.moveBy(const Offset(-20, 0));
+    await tester.pump();
+    final early = tester.getRect(selection);
+    await gesture.moveBy(const Offset(-40, 0));
+    await tester.pump();
+    final later = tester.getRect(selection);
+    final target = tester.getRect(glyphOnBar(glyph));
+    // It moves with every step of the finger, toward the next glyph.
+    expect(early.center.dx, greaterThan(start.center.dx));
+    expect(later.center.dx, greaterThan(early.center.dx));
+    expect(later.center.dx, lessThan(target.right));
+    // Let go short of a third of the bar: it goes back, nothing changes.
+    await gesture.up();
+    await tester.pumpAndSettle();
+    expect(state.shownLanguage, 'hi');
+    expect(tester.getRect(selection).center.dx, closeTo(start.center.dx, 1));
+  });
+
+  testWidgets('a glyph is a rounded square on the chip and in the label, '
+      'never stretched (owner, 2026-10-17)', (tester) async {
+    usePhone(tester);
+    final state = learner(const <String>['hi', 'bn'], choice: 'hi');
+    await pumpApp(tester, state: state);
+    final onBar = find.descendant(
+      of: find.byType(LanguageBar),
+      matching: find.byType(LanguageGlyphTile),
+    );
+    expect(tester.getSize(onBar.first).height, 24);
+    final gesture = await tester.startGesture(tester.getCenter(zone()));
+    await gesture.moveBy(const Offset(-20, 0));
+    await gesture.moveBy(const Offset(-60, 0));
+    await tester.pump();
+    final label = find.byKey(const ValueKey<String>('language-bar-label'));
+    final tile = find.descendant(
+      of: label,
+      matching: find.byType(LanguageGlyphTile),
+    );
+    expect(tester.getSize(tile).height, 24);
+    // The label is one line high, not the screen's height.
+    expect(tester.getSize(label).height, lessThan(48));
+    await gesture.up();
+    await tester.pumpAndSettle();
   });
 
   testWidgets('a tap opens the menu of every language with its chip, the '
