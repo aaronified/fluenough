@@ -92,6 +92,25 @@ class SpokenLanguage {
   }
 }
 
+/// The scripts [answers] says the learner reads, each with the languages,
+/// by code and in [all]'s order, that it was said for (#554). A script read
+/// for one language is read for every language written in it: whoever reads
+/// Eastern Nagari (`bengali`) through Bengali reads it for Assamese too. A
+/// language [all] gives no script names none.
+Map<String, List<String>> scriptReaders(
+  List<SpokenLanguage> all,
+  Map<String, bool> answers,
+) {
+  final readers = <String, List<String>>{};
+  for (final language in all) {
+    for (final script in language.scriptsReadIn(answers) ?? const <String>[]) {
+      if (script.isEmpty) continue;
+      readers.putIfAbsent(script, () => <String>[]).add(language.code);
+    }
+  }
+  return readers;
+}
+
 /// The language code a key of `scripts_read` belongs to: the key itself,
 /// or what comes before `:` (see [SpokenLanguage.readKey]).
 String readKeyLanguage(String key) => key.split(':').first;
