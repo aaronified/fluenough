@@ -5,27 +5,42 @@
 # This is also Gujarati's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"): every
 # unit from the first words to B1, written or planned, with its size in
 # words, its grammar topics, the three milestones, and for each planned unit
-# its listening and reading passages, described in English. It follows the
-# other Indian-language plans unit for unit where Gujarati has the same
-# unit, so that the courses line up; Gujarati's own grammar (gender and
-# number, the negative, adjectives, past-more, conjunct and compound verbs,
-# can and must) stays in the units of the decks that teach it, and the
-# perfect, which Gujarati has no deck for yet, is planned. A unit
-# with no deck yet is planned: the course teaches it as "Coming" until a
-# deck is written. Sizes follow the plan's levels (about 700, 900 and 1,200
-# words; low confidence) and are one number for every native language. A
-# written unit's size is what its decks hold today, and is raised as they
-# grow. A theme named here that decks/themes.yaml does not list yet is
-# added to it with its first deck.
+# its listening and reading passages. A unit with no deck yet is planned:
+# the course teaches it as "Coming" until a deck is written. Sizes follow
+# the plan's levels (about 700, 900 and 1,200 words; low confidence) and are
+# one number for every native language; a written unit's size is what its
+# decks hold today. A theme named here that decks/themes.yaml does not list
+# yet is added to it with its first deck.
 #
-# First a few words and basic sentences, the sounds the learner's language
-# lacks and how Gujarati grammar differs from it; then themes, each with the
-# grammar that goes with it; the script comes after the first themes, before
-# the rest. The grammar follows the Indo-Aryan order of
-# docs/plans/language-paths-scheme.md: be, postpositions, the present,
-# gender agreement, the oblique, the past, the perfect, compound and
-# conjunct verbs, then the subjunctive, the relative-correlative clauses
-# and the rest of B1. Every deck of Gujarati is listed exactly once.
+# The order follows docs/plans/words-rules-sentences.md (owner, 2026-10-07,
+# and 2026-10-17: "build the path files for all present languages via an
+# opus agent, as per our current path design"):
+# 1. the phrasebook, taught whole from the first lesson;
+# 2. the first word units;
+# 3. the script, after the first six units ("After units 4-6"); a
+#    learner who already reads it skips it (#554);
+# 4. a core of about 200 common words in themed units, before the large
+#    tables ("Yes, smaller (~200)");
+# 5. rules as forms: noun endings, postpositions and conjunctions first,
+#    then pronoun and verb forms, practised on the words already known;
+# 6. sentences, each after its words and rules; then the other themes,
+#    each its words, then its rules, then its sentences.
+# Gujarati's grammar keeps the Indo-Aryan order of
+# docs/plans/language-paths-scheme.md within each level: be,
+# postpositions, the present, gender agreement, the oblique, the past,
+# the perfect, compound and conjunct verbs, then the subjunctive, the
+# relative-correlative clauses and the rest of B1.
+#
+# The core's order is by judgement, most common first:
+# about me, everyday verbs (planned), the common adverbs and function
+# words (planned), how much and how many (planned), describing words
+# (planned), time, more verbs (planned), work.
+# It was meant to come from Wikipedia's counts
+# (tools/wikipedia_frequency.py, #516), but
+# no Gujarati Wikipedia dump could be fetched here (2026-10-17):
+# order the core again from the counts once they are written.
+#
+# Every deck of Gujarati is listed exactly once.
 schema: 1
 kind: "path"
 id: "gu-path"
@@ -45,64 +60,116 @@ alphabet:
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
-  - decks: ["gu-phrasebook", "gu-first-words", "gu-grammar-sentences", "*"]
+  # 1. The phrasebook, taught whole from the first lesson.
+  - decks: ["gu-phrasebook", "gu-first-words", "*"]
     words: 1
-    grammar: ["sentences"]
+  # 2. The first word units.
   - decks: ["gu-sound-differences"]
     words: 16
-  - decks: ["gu-grammar-differences"]
-    words: 7
-    grammar: ["differences"]
-  - decks: ["gu-questions", "gu-grammar-questions", "*"]
+  - decks: ["gu-questions", "*"]
     words: 9
-    grammar: ["questions"]
-  - decks: ["gu-addressing", "gu-grammar-pronouns", "*"]
+  - decks: ["gu-addressing", "*"]
     words: 12
-    grammar: ["pronouns"]
   - planned: { id: "gu-pronouns", theme: "pronouns", words: 24 }
     listening_passages:
       - { id: "who-is-who", text: { "en": "Pointing out who is who at a family gathering: he, she, they" } }
     reading_passages:
       - { id: "seating-chart", text: { "en": "A seating chart for a wedding lunch, with names and who is related to whom" } }
-  - decks: ["gu-about-me", "gu-grammar-continuous", "*"]
-    words: 3
-    grammar: ["continuous"]
-  - decks: ["gu-family", "gu-grammar-be", "*"]
+  - decks: ["gu-family", "*"]
     words: 25
-    grammar: ["be"]
+  # 3. The script, after the first six units (#554: skipped by a learner
+  # who already reads it).
+  - ["gu-script-vowels", "gu-script-consonants", "gu-script-reading"]
+  - ["gu-script-vowel-signs", "gu-script-conjuncts"]
+  # Numbers 1–20 follow the script, so it comes after the first six units.
+  - decks: ["gu-numbers-1-20", "*"]
+    words: 21
+  # 4. The core: about 200 common words, most common first (by judgement
+  # until the Wikipedia counts are written, #516).
+  - decks: ["gu-about-me", "*"]
+    words: 3
   - planned: { id: "gu-verbs", theme: "everyday-verbs", words: 30 }
     listening_passages:
       - { id: "morning-routine", text: { "en": "A mother says what each person in the house does in the morning" } }
     reading_passages:
       - { id: "fridge-note", text: { "en": "A note on the fridge: what to eat, what to drink and where things are" } }
-  - decks: ["gu-work", "gu-grammar-demonstratives", "*"]
+  - planned: { id: "gu-adverbs", theme: "adverbs", words: 45 }
+    listening_passages:
+      - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
+    reading_passages:
+      - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
+  - planned: { id: "gu-quantities", theme: "quantities", words: 23 }
+    listening_passages:
+      - { id: "at-the-grocers", text: { "en": "Asking how much and how many at a grocer's" } }
+    reading_passages:
+      - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
+  - planned: { id: "gu-describing", theme: "describing", words: 28 }
+    listening_passages:
+      - { id: "how-are-you-feeling", text: { "en": "A friend asks how you feel today, and you answer" } }
+    reading_passages:
+      - { id: "postcard-from-the-hills", text: { "en": "A short postcard: the weather and the food" } }
+  - decks: ["gu-time", "*"]
+    words: 22
+  - planned: { id: "gu-more-verbs", theme: "more-verbs", words: 25 }
+    listening_passages:
+      - { id: "kitchen-help", text: { "en": "Someone tells a helper what to do in the kitchen" } }
+    reading_passages:
+      - { id: "how-to-make-tea", text: { "en": "A short card on how to make tea" } }
+  - decks: ["gu-work", "*"]
     words: 15
-    grammar: ["demonstratives"]
+  # 5. Rules as forms, practised on the words known: noun forms and
+  # conjunctions first, then pronoun and verb forms. The postpositions deck
+  # is fixed phrases still, so it waits below for its words.
   - decks: ["gu-grammar-nouns"]
     words: 0
     grammar: ["nouns"]
-  - ["gu-script-vowels", "gu-script-consonants", "gu-script-reading"]
-  - ["gu-script-vowel-signs", "gu-script-conjuncts"]
-  - decks: ["gu-numbers-1-20", "*"]
-    words: 21
+  - decks: ["gu-grammar-conjunctions"]
+    words: 8
+    grammar: ["conjunctions"]
+  - decks: ["gu-grammar-pronouns"]
+    words: 0
+    grammar: ["pronouns"]
+  - decks: ["gu-grammar-be"]
+    words: 0
+    grammar: ["be"]
+  - decks: ["gu-grammar-continuous"]
+    words: 0
+    grammar: ["continuous"]
+  - decks: ["gu-grammar-demonstratives"]
+    words: 0
+    grammar: ["demonstratives"]
+  - decks: ["gu-grammar-adjectives"]
+    words: 0
+    grammar: ["adjectives"]
+  # 6. Sentences, each after its words and rules; then the other A1
+  # themes, each its words, its rules, then its sentences.
   - decks: ["gu-numbers-big", "*"]
     words: 97
-  - decks: ["gu-market", "gu-grammar-articles", "*"]
-    words: 6
-    grammar: ["articles"]
-  - decks: ["gu-groceries", "gu-grammar-gender-number", "gu-grammar-needs", "*"]
-    words: 17
-    grammar: ["gender-number", "needs"]
   - planned: { id: "gu-food", theme: "food", words: 59 }
     listening_passages:
       - { id: "at-the-sweet-shop", text: { "en": "Choosing sweets and snacks at a sweet shop" } }
     reading_passages:
       - { id: "menu-card", text: { "en": "A restaurant menu card with dishes and prices" } }
-  - decks: ["gu-transport", "gu-grammar-postpositions", "*"]
-    words: 11
-    grammar: ["postpositions"]
+  - decks: ["gu-groceries", "*"]
+    words: 17
+  - decks: ["gu-market", "*"]
+    words: 6
+  - decks: ["gu-grammar-questions"]
+    words: 0
+    grammar: ["questions"]
+  - decks: ["gu-grammar-likes"]
+    words: 0
+    grammar: ["likes"]
+  - decks: ["gu-grammar-sentences"]
+    words: 0
+    grammar: ["sentences"]
+  - decks: ["gu-grammar-differences"]
+    words: 7
+    grammar: ["differences"]
   - decks: ["gu-directions", "*"]
     words: 10
+  - decks: ["gu-transport", "*"]
+    words: 8
   - planned: { id: "gu-body", theme: "body", words: 35 }
     listening_passages:
       - { id: "at-the-doctors", text: { "en": "Telling a doctor where it hurts" } }
@@ -113,43 +180,38 @@ units:
       - { id: "walk-to-the-market", text: { "en": "A neighbour names the places you pass on the way to the market" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Signs along a street: pharmacy, school, bank, temple" } }
-  - planned: { id: "gu-more-verbs", theme: "more-verbs", words: 25 }
-    listening_passages:
-      - { id: "kitchen-help", text: { "en": "Someone tells a helper what to do in the kitchen" } }
-    reading_passages:
-      - { id: "how-to-make-tea", text: { "en": "A short card on how to make tea" } }
-  - decks: ["gu-home", "gu-grammar-adjectives", "*"]
-    words: 20
-    grammar: ["adjectives"]
   - planned: { id: "gu-things", theme: "things", words: 32 }
     listening_passages:
       - { id: "packing-for-a-trip", text: { "en": "Two people pack a bag for a trip to the hills" } }
     reading_passages:
       - { id: "lost-property-list", text: { "en": "A lost-property list at a railway station" } }
+  - decks: ["gu-home", "*"]
+    words: 20
+  - decks: ["gu-grammar-postpositions"]
+    words: 3
+    grammar: ["postpositions"]
+  - decks: ["gu-grammar-needs"]
+    words: 0
+    grammar: ["needs"]
+  - decks: ["gu-grammar-articles", "gu-grammar-gender-number"]
+    words: 0
+    grammar: ["articles", "gender-number"]
   - planned: { id: "gu-clothes", theme: "clothes", words: 26 }
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
     reading_passages:
       - { id: "shop-offer-sign", text: { "en": "A clothes shop's sign with its offers" } }
-  - planned: { id: "gu-describing", theme: "describing", words: 28 }
-    listening_passages:
-      - { id: "how-are-you-feeling", text: { "en": "A friend asks how you feel today, and you answer" } }
-    reading_passages:
-      - { id: "postcard-from-the-hills", text: { "en": "A short postcard: the weather and the food" } }
   - planned: { id: "gu-animals", theme: "animals", words: 26 }
     listening_passages:
       - { id: "village-visit", text: { "en": "A child names the animals seen on a visit to a village" } }
     reading_passages:
       - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
-  - planned: { id: "gu-quantities", theme: "quantities", words: 23 }
-    listening_passages:
-      - { id: "at-the-grocers", text: { "en": "Asking how much and how many at a grocer's" } }
-    reading_passages:
-      - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
-  - decks: ["gu-time", "gu-grammar-future", "*"]
-    words: 22
+  - decks: ["gu-grammar-future"]
+    words: 0
     grammar: ["future"]
     milestone: "A1"
+  # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
+  # then its sentences.
   - decks: ["gu-daily-life", "gu-grammar-negative", "*"]
     words: 18
     grammar: ["negative"]
@@ -189,9 +251,8 @@ units:
       - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
     reading_passages:
       - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
-  - decks: ["gu-eating-out", "gu-grammar-conjunctions", "gu-grammar-likes", "*"]
-    words: 18
-    grammar: ["conjunctions", "likes"]
+  - decks: ["gu-eating-out", "*"]
+    words: 10
   - planned: { id: "gu-cooking", theme: "cooking", words: 50 }
     listening_passages:
       - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes a dish" } }
@@ -265,11 +326,6 @@ units:
       - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
     reading_passages:
       - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
-  - planned: { id: "gu-adverbs", theme: "adverbs", words: 45 }
-    listening_passages:
-      - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
-    reading_passages:
-      - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
   - planned: { id: "gu-workplace", theme: "workplace", words: 45 }
     listening_passages:
       - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }
@@ -281,6 +337,7 @@ units:
     reading_passages:
       - { id: "gujarati-states-map", text: { "en": "A map caption: the Gujarati-speaking states" } }
     milestone: "A2"
+  # B1: the themes and grammar of the CEFR's B1.
   - decks: ["gu-registers"]
     words: 12
   - planned: { id: "gu-health", theme: "health", words: 55 }
@@ -484,6 +541,7 @@ units:
     reading_passages:
       - { id: "formal-letter", text: { "en": "A formal letter and its closing" } }
     milestone: "B1"
+  # After B1: spelling, and the first reader.
   - ["gu-spelling"]
   - ["gu-reading-keri"]
   - ["*"]
