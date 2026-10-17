@@ -229,7 +229,7 @@ class SessionQueue {
       );
       SessionItem? mostOverdue;
       SessionItem? firstNew;
-      for (final mode in DrillMode.values) {
+      for (final mode in DrillMode.drills) {
         if (!allowed.contains(mode) || !modes.contains(mode)) continue;
         if (isSetAside?.call(card, mode) ?? false) continue;
         final state = stateOf(card, mode);

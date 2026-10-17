@@ -5,6 +5,7 @@ import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/features.dart';
 import '../../app/routes.dart';
+import '../../core/models/drill_mode.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
@@ -258,13 +259,21 @@ class _StatsBody extends StatelessWidget {
         const SizedBox(height: 16),
         // One skills section: the bars, then How you learn, which says
         // what the learner's answers have done to each skill's pace.
-        if (numbers.bySkill.isNotEmpty)
+        if (numbers.bySkill.isNotEmpty || numbers.scriptSkills.isNotEmpty)
           StatsSection(
             title: l10n.statsBySkill,
             children: <Widget>[
               for (final MapEntry(key: skill, value: tally)
                   in numbers.bySkill.entries)
                 bar(skill.label(l10n), tally),
+              for (final MapEntry(key: mode, value: tally)
+                  in numbers.scriptSkills.entries)
+                bar(
+                  mode == DrillMode.readScript
+                      ? l10n.skillReadScript
+                      : l10n.skillWriteScript,
+                  tally,
+                ),
               howYouLearn,
             ],
           )

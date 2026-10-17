@@ -355,8 +355,8 @@ void main() {
       }
       // Every mode is some skill's, and one skill's only.
       final covered = [for (final skill in Skill.values) ...skill.modes];
-      expect(covered.toSet(), DrillMode.values.toSet());
-      expect(covered, hasLength(DrillMode.values.length));
+      expect(covered.toSet(), DrillMode.drills.toSet());
+      expect(covered, hasLength(DrillMode.drills.length));
     });
   });
 

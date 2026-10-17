@@ -39,7 +39,7 @@ class SkillDifficulty {
     String cardId,
     FsrsState? Function(String cardId, DrillMode mode) stateOf,
   ) => <SkillDifficulty>[
-    for (final mode in DrillMode.values)
+    for (final mode in DrillMode.drills)
       if (stateOf(cardId, mode) case final state?)
         SkillDifficulty(mode, state.difficulty),
   ];

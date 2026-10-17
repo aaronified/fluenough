@@ -908,9 +908,9 @@ class _Reader {
       fail(node, "$path: grammarUnderstood is only for a rules table's cells");
     }
     // Only a reading deck's questions are read; a card has nothing to read.
-    if (mode == null || mode == DrillMode.reading) {
+    if (mode == null || mode == DrillMode.reading || mode.isScript) {
       final modes = <String>[
-        for (final m in DrillMode.values)
+        for (final m in DrillMode.drills)
           if (m != DrillMode.reading && m != DrillMode.grammarUnderstood)
             m.name,
       ];

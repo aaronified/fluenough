@@ -82,7 +82,7 @@ class FsrsTuner extends ChangeNotifier {
   /// Whether some skill holds enough answers to fit (`FsrsFit.gate`):
   /// until then "Adjust to me" waits.
   bool get canAdjust {
-    final log = progress.log;
+    final log = progress.skillLog;
     if (_canAdjustAt != log.length) {
       final now = _clock();
       _canAdjust = _histories(log).values.any((h) => SkillFit.canFit(h, now));
@@ -99,7 +99,7 @@ class FsrsTuner extends ChangeNotifier {
   Future<List<SkillFitResult>?> adjustAll() async {
     if (_busy) return null;
     final now = _clock();
-    final histories = _histories(progress.log);
+    final histories = _histories(progress.skillLog);
     final studied = progress.parameters.lastStudied;
     final keys = histories.keys.toList()
       ..sort((a, b) {
@@ -152,10 +152,20 @@ class FsrsTuner extends ChangeNotifier {
   /// when last looked at, too, so that a fit that gives nothing, and so
   /// stores nothing, is not tried again after every answer.
   void afterReview(ReviewEvent event) {
-    final key = skillOf(event.key);
-    final log = progress.log;
-    if (_countedAt == log.length - 1 && log.isNotEmpty) {
-      _counts[key] = (_counts[key] ?? 0) + 1;
+    // The skills this answer counts in full for: its own, and in a script
+    // deck the script skill too (#556), each with its own count and fit.
+    final own = skillOf(event.key);
+    final script = progress.skills.scriptOf(event.mode, event.deckId);
+    final keys = <SkillKey>[
+      own,
+      if (script != null && script.share >= 1)
+        (language: own.language, mode: script.skill),
+    ];
+    final log = progress.skillLog;
+    if (_countedAt == log.length - keys.length && log.isNotEmpty) {
+      for (final key in keys) {
+        _counts[key] = (_counts[key] ?? 0) + 1;
+      }
     } else {
       _counts.clear();
       for (final e in log) {
@@ -164,7 +174,15 @@ class FsrsTuner extends ChangeNotifier {
       }
     }
     _countedAt = log.length;
-    if (_busy) return;
+    for (final key in keys) {
+      if (_busy) return;
+      _refitIfGrown(key, log);
+    }
+  }
+
+  /// Refits [key] in the background if it has grown enough since its last
+  /// fit ([afterReview]).
+  void _refitIfGrown(SkillKey key, List<ReviewEvent> log) {
     final count = _counts[key] ?? 0;
     final fitted = progress.parameters.fitted[key];
     final now = _clock();
@@ -219,6 +237,8 @@ class FsrsTuner extends ChangeNotifier {
     return result;
   }
 
+  /// The histories of every skill in [log], which holds the script skills'
+  /// reviews too ([ProgressQueries.skillLog]).
   Map<SkillKey, SkillHistory> _histories(
     List<ReviewEvent> log, {
     SkillKey? only,
