@@ -25,7 +25,11 @@ import 'review_languages_page.dart';
 ///
 /// Turning reviewing off keeps the code and the reviews.
 class ReviewSection extends StatelessWidget {
-  const ReviewSection({super.key});
+  const ReviewSection({super.key, this.heading = true});
+
+  /// Whether the group has its own heading: not on Settings' Reviewing
+  /// page, whose title names it.
+  final bool heading;
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +65,7 @@ class ReviewSection extends StatelessWidget {
             l10n.reviewSettingsHelpedDeck(entry.deck.name, entry.language.name),
     ];
     return GroupedList.settings(
-      header: l10n.reviewSettingsSection,
+      header: heading ? l10n.reviewSettingsSection : null,
       children: <Widget>[
         GroupedTile.toggle(
           leading: const Icon(Icons.rate_review_outlined),

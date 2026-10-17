@@ -341,7 +341,7 @@
   "@skillListeningSettingsOn": {
     "description": "Under a skill’s switch in Settings, while it is on. The skill is listening: the learner hears a word and gives its meaning. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
   },
-  "skillListeningSettingsOff": "No listening questions",
+  "skillListeningSettingsOff": "No listening questions. Words still play when you tap a speaker",
   "@skillListeningSettingsOff": {
     "description": "Under a skill’s switch in Settings, while it is off. The skill is listening: the learner hears a word and gives its meaning. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
@@ -6144,7 +6144,7 @@
       }
     }
   },
-  "appearanceTitle": "Appearance",
+  "appearanceTitle": "Look and language",
   "@appearanceTitle": {
     "description": "Title of the appearance screen."
   },
@@ -8405,5 +8405,337 @@
         "type": "String"
       }
     }
+  },
+  "settingsRowLanguages": "Your languages",
+  "@settingsRowLanguages": {
+    "description": "A row of the Settings tab, and the title of the page it opens: the languages known and learned, readings, 18+, alphabets and sources."
+  },
+  "settingsRowActivities": "Activities and memory",
+  "@settingsRowActivities": {
+    "description": "A row of the Settings tab, and its page: the switch per activity, speech, and Adjust to me."
+  },
+  "settingsRowLook": "Look and language",
+  "@settingsRowLook": {
+    "description": "A row of the Settings tab, and its page: theme, colours, card text size and the app language."
+  },
+  "settingsRowReviewing": "Reviewing",
+  "@settingsRowReviewing": {
+    "description": "A row of the Settings tab, and its page: reviewing decks for the project."
+  },
+  "settingsRowDecks": "Your decks",
+  "@settingsRowDecks": {
+    "description": "A row of the Settings tab, and its page: the decks the learner added."
+  },
+  "settingsRowReminders": "Reminders",
+  "@settingsRowReminders": {
+    "description": "A row of the Settings tab, and its page: the daily reminder."
+  },
+  "settingsRowData": "Your data",
+  "@settingsRowData": {
+    "description": "A row of the Settings tab, and its page: backup and restore, and the review log."
+  },
+  "settingsRowLog": "App log",
+  "@settingsRowLog": {
+    "description": "A row of the Settings tab that opens the app log."
+  },
+  "settingsRowUpdates": "Updates",
+  "@settingsRowUpdates": {
+    "description": "A row of the Settings tab, and its page: checking for and installing a newer version."
+  },
+  "settingsRowProfiles": "Profiles and privacy",
+  "@settingsRowProfiles": {
+    "description": "The title of the page the profile card opens: profiles, the PIN lock and deleting the profile."
+  },
+  "settingsSumActivitiesAllOn": "All on",
+  "@settingsSumActivitiesAllOn": {
+    "description": "Under Activities and memory on the Settings tab, when every activity with a switch is on."
+  },
+  "settingsSumActivitiesSomeOff": "{count} off · Seen words always on",
+  "@settingsSumActivitiesSomeOff": {
+    "description": "Under Activities and memory on the Settings tab, when some activities are switched off.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsSumLook": "{appearance} · {language}",
+  "@settingsSumLook": {
+    "description": "Under Look and language on the Settings tab: the theme and colour, then the app language.",
+    "placeholders": {
+      "appearance": {
+        "type": "String"
+      },
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsSumReviewingOn": "On",
+  "@settingsSumReviewingOn": {
+    "description": "Under Reviewing on the Settings tab, while reviewing is on."
+  },
+  "settingsSumReviewingOff": "Off",
+  "@settingsSumReviewingOff": {
+    "description": "Under Reviewing on the Settings tab, while reviewing is off."
+  },
+  "settingsSumDecks": "{count, plural, =0{No decks of your own} =1{1 deck of your own} other{{count} decks of your own}}",
+  "@settingsSumDecks": {
+    "description": "Under Your decks on the Settings tab: how many decks the learner added.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsSumRemindersOn": "Daily at {time}",
+  "@settingsSumRemindersOn": {
+    "description": "Under Reminders on the Settings tab, while the reminder is on. time is a time of day.",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsSumData": "{count, plural, =0{No reviews in your log yet} =1{1 review in your log} other{{count} reviews in your log}}",
+  "@settingsSumData": {
+    "description": "Under Your data on the Settings tab: the size of the review log.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsSumLog": "{count, plural, =0{No lines} =1{1 line} other{{count} lines}}",
+  "@settingsSumLog": {
+    "description": "Under App log on the Settings tab: how many lines the log holds.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsProfileCardLabel": "{summary}. Opens Profiles and privacy",
+  "@settingsProfileCardLabel": {
+    "description": "What a screen reader says for the profile card on the Settings tab. summary is the name and what is learned, for example You, Learning Bengali, Hindi.",
+    "placeholders": {
+      "summary": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsActivitiesAlwaysAsked": "Seen words, grammar, matching pairs, choosing answers and phonemic contrasts are always asked, so a lesson always has questions.",
+  "@settingsActivitiesAlwaysAsked": {
+    "description": "Under the activity switches in Settings: the activities that have no switch."
+  },
+  "settingsDecksUpload": "Upload a deck",
+  "@settingsDecksUpload": {
+    "description": "A row on Your decks: pick a deck file to check and add."
+  },
+  "settingsDecksUploadDesc": "Pick a file; it is checked before it is added",
+  "@settingsDecksUploadDesc": {
+    "description": "Under Upload a deck."
+  },
+  "settingsDecksTemplate": "Get a template",
+  "@settingsDecksTemplate": {
+    "description": "A row on Your decks: save a template of a deck to fill in."
+  },
+  "settingsDecksTemplateDesc": "A single deck, or a full language: a deck and its path",
+  "@settingsDecksTemplateDesc": {
+    "description": "Under Get a template."
+  },
+  "settingsDecksGroup": "{language} › from {native}",
+  "@settingsDecksGroup": {
+    "description": "A heading on Your decks above the decks of one language taught from one other language.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      },
+      "native": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsDecksCards": "{count, plural, =1{1 card} other{{count} cards}}",
+  "@settingsDecksCards": {
+    "description": "Under a deck of the learner’s own on Your decks.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsDecksOpen": "Open",
+  "@settingsDecksOpen": {
+    "description": "A button on a deck of the learner’s own on Your decks: opens the deck."
+  },
+  "settingsDecksSend": "Send it to us",
+  "@settingsDecksSend": {
+    "description": "A button on a deck of the learner’s own on Your decks: sends the deck to the project to check and add for everyone."
+  },
+  "settingsDecksRemove": "Remove",
+  "@settingsDecksRemove": {
+    "description": "A button on a deck of the learner’s own on Your decks: removes it, after asking. Shown in the error colour."
+  },
+  "settingsDecksNone": "No decks of your own yet. Upload one, and it appears here.",
+  "@settingsDecksNone": {
+    "description": "On Your decks when the learner has added no deck."
+  },
+  "settingsDecksAbout": "We check it, and add it to Fluenough for everyone.",
+  "@settingsDecksAbout": {
+    "description": "A line on Your decks about what happens to a deck that is sent."
+  },
+  "settingsRemindersLanguages": "Languages",
+  "@settingsRemindersLanguages": {
+    "description": "A row on Reminders: which learned languages the reminder counts."
+  },
+  "settingsRemindersLanguagesDesc": "All the languages you learn",
+  "@settingsRemindersLanguagesDesc": {
+    "description": "Under the Languages row on Reminders."
+  },
+  "settingsRemindersAbout": "One reminder a day, only on days with cards due, at the time you pick.",
+  "@settingsRemindersAbout": {
+    "description": "A line under the reminder rows on Reminders."
+  },
+  "settingsDataBackup": "Backup and restore",
+  "@settingsDataBackup": {
+    "description": "A heading on Your data above backing up and restoring."
+  },
+  "settingsDataBackupIntro": "One file holds your progress, your settings, your rater code and the languages you downloaded. Their decks download again after a restore.",
+  "@settingsDataBackupIntro": {
+    "description": "A line under the Backup and restore heading on Your data."
+  },
+  "settingsDataBackupNow": "Back up now",
+  "@settingsDataBackupNow": {
+    "description": "A row on Your data: saves a backup file."
+  },
+  "settingsDataBackupNowDesc": "Saves one file, where you choose, and keeps a copy here",
+  "@settingsDataBackupNowDesc": {
+    "description": "Under Back up now."
+  },
+  "settingsDataRestore": "Restore from a file",
+  "@settingsDataRestore": {
+    "description": "A row on Your data: restores from a backup file."
+  },
+  "settingsDataRestoreDesc": "Shows what is in it before anything changes",
+  "@settingsDataRestoreDesc": {
+    "description": "Under Restore from a file."
+  },
+  "settingsDataCloud": "Cloud",
+  "@settingsDataCloud": {
+    "description": "A heading on Your data above the cloud rows."
+  },
+  "settingsDataConnect": "Connect a cloud",
+  "@settingsDataConnect": {
+    "description": "A row on Your data: connects a cloud service to send backups to."
+  },
+  "settingsDataConnectDesc": "Dropbox, Box, Google Drive, OneDrive or Nextcloud. Set up once",
+  "@settingsDataConnectDesc": {
+    "description": "Under Connect a cloud."
+  },
+  "settingsDataRecent": "Recent backups",
+  "@settingsDataRecent": {
+    "description": "A heading on Your data above the last backups kept on the phone, and the row that stands for them."
+  },
+  "settingsDataRecentDesc": "The last five, with Download, Send to cloud and Restore",
+  "@settingsDataRecentDesc": {
+    "description": "Under the Recent backups row."
+  },
+  "settingsDataRecentNote": "The last five are kept on this phone, whatever made them: you, an app update, or a restore.",
+  "@settingsDataRecentNote": {
+    "description": "A note on Your data under Recent backups."
+  },
+  "settingsDataBackupPrivacy": "A backup holds your whole learning history and your rater code. It leaves this phone only if you share it or send it to the cloud you chose.",
+  "@settingsDataBackupPrivacy": {
+    "description": "A note on Your data about what a backup holds."
+  },
+  "settingsDataLog": "Review log",
+  "@settingsDataLog": {
+    "description": "A heading on Your data above the review log."
+  },
+  "settingsDataLogIntro": "{count, plural, =0{Every answer you give will be listed here, newest first. Your progress is worked out from it.} =1{Every answer you gave, newest first: 1 in all. Your progress is worked out from it.} other{Every answer you gave, newest first: {count} in all. Your progress is worked out from it.}}",
+  "@settingsDataLogIntro": {
+    "description": "A line under the Review log heading on Your data.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsDataLogEntry": "{meaning} · {activity} · {time}",
+  "@settingsDataLogEntry": {
+    "description": "A review in the log on Your data, under the word: its meaning, the activity and the time.",
+    "placeholders": {
+      "meaning": {
+        "type": "String"
+      },
+      "activity": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsProfilesHeading": "Profiles",
+  "@settingsProfilesHeading": {
+    "description": "A heading on Profiles and privacy."
+  },
+  "settingsProfilesYou": "Learning {languages} · name and shape",
+  "@settingsProfilesYou": {
+    "description": "Under You on Profiles and privacy.",
+    "placeholders": {
+      "languages": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsProfilesSwitch": "Switch profile",
+  "@settingsProfilesSwitch": {
+    "description": "A row on Profiles and privacy: opens the profile picker."
+  },
+  "settingsProfilesSwitchDesc": "Who’s practising?",
+  "@settingsProfilesSwitchDesc": {
+    "description": "Under Switch profile."
+  },
+  "settingsProfilesAdd": "Add profile",
+  "@settingsProfilesAdd": {
+    "description": "A row on Profiles and privacy: adds a profile."
+  },
+  "settingsProfilesAddDesc": "With its own languages and progress",
+  "@settingsProfilesAddDesc": {
+    "description": "Under Add profile."
+  },
+  "settingsProfilesPrivacy": "Privacy",
+  "@settingsProfilesPrivacy": {
+    "description": "A heading on Profiles and privacy above the PIN lock."
+  },
+  "settingsProfilesAbout": "Profiles, and the PIN that locks one, come in 0.6.0 (#204).",
+  "@settingsProfilesAbout": {
+    "description": "A line on Profiles and privacy."
+  },
+  "settingsLogActionsLabel": "App log actions",
+  "@settingsLogActionsLabel": {
+    "description": "What a screen reader says for the bar of Copy, Export and Clear on the app log."
+  },
+  "settingsDataToday": "Today",
+  "@settingsDataToday": {
+    "description": "A day heading in the review log on Your data."
+  },
+  "settingsDataYesterday": "Yesterday",
+  "@settingsDataYesterday": {
+    "description": "A day heading in the review log on Your data."
+  },
+  "appLogCopy": "Copy",
+  "@appLogCopy": {
+    "description": "Word under the icon of the app log's Copy action, in its bottom bar. Its tooltip is settingsLogCopy."
+  },
+  "appLogExport": "Export",
+  "@appLogExport": {
+    "description": "Word under the icon of the app log's Export action, in its bottom bar. Its tooltip is settingsLogExport."
+  },
+  "appLogClear": "Clear",
+  "@appLogClear": {
+    "description": "Word under the icon of the app log's Clear action, in its bottom bar, in the error colour. Its tooltip is settingsLogClear."
   }
 }

@@ -77,6 +77,7 @@ Future<void> openLearning(WidgetTester tester) async {
   final l10n = l10nOf(tester);
   await tester.tap(find.text(l10n.navSettings));
   await tester.pumpAndSettle();
+  await tapText(tester, l10n.settingsRowLanguages);
   await tapText(tester, l10n.settingsLearn);
   expect(find.byType(LanguagePickerPage), findsOneWidget);
 }
@@ -358,6 +359,7 @@ cards:
       final l10n = l10nOf(tester);
       await tester.tap(find.text(l10n.navSettings));
       await tester.pumpAndSettle();
+      await tapText(tester, l10n.settingsRowLanguages);
       await tapText(tester, l10n.settingsLearn);
       expect(find.byType(LanguagePickerPage), findsOneWidget);
       await pickLanguage(tester, 'hi');

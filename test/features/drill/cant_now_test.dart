@@ -15,7 +15,7 @@ import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/drill/cant_now.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_session.dart';
-import 'package:fluenough/features/settings/settings_page.dart';
+import 'package:fluenough/features/settings/activities_page.dart';
 import 'package:fluenough/ui/skill_visuals.dart';
 import 'package:fluenough/ui/widgets/grouped_list.dart';
 
@@ -377,7 +377,7 @@ cards:
     ) async {
       usePhone(tester);
       final state = soundState();
-      await pumpScreen(tester, const SettingsPage(), state: state);
+      await pumpScreen(tester, const ActivitiesPage(), state: state);
       final l10n = l10nOf(tester);
       await tester.scrollUntilVisible(
         find.text(l10n.cantNowPause).first,
@@ -398,10 +398,10 @@ cards:
         Skill.listening,
         until: noon.add(const Duration(hours: 1)),
       );
-      await pumpScreen(tester, const SettingsPage(), state: state);
+      await pumpScreen(tester, const ActivitiesPage(), state: state);
       final l10n = l10nOf(tester);
       final until = MaterialLocalizations.of(
-        tester.element(find.byType(SettingsPage)),
+        tester.element(find.byType(ActivitiesPage)),
       ).formatTimeOfDay(const TimeOfDay(hour: 13, minute: 0));
       await tester.scrollUntilVisible(
         find.text(l10n.settingsPausedUntil(until)),
@@ -418,7 +418,7 @@ cards:
     ) async {
       usePhone(tester);
       final state = soundState();
-      await pumpScreen(tester, const SettingsPage(), state: state);
+      await pumpScreen(tester, const ActivitiesPage(), state: state);
       final l10n = l10nOf(tester);
       final rows = find.text(l10n.settingsSkillLanguages);
       await tester.scrollUntilVisible(

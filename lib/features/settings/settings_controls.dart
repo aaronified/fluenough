@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../../app/features.dart';
+import '../../ui/theme.dart';
 import '../../ui/widgets/incoming.dart';
 
 // Settings rows are `GroupedTile`s. These are the two controls Settings and
@@ -17,6 +18,32 @@ TextStyle settingsHelpStyle(ThemeData theme) =>
       height: 18 / 13,
       color: theme.colorScheme.onSurfaceVariant,
     );
+
+/// A group's heading, in the design's label style: a page that holds several
+/// groups and lines between them draws its own, since `GroupedList` puts its
+/// heading directly over its rows.
+class SettingsHeading extends StatelessWidget {
+  const SettingsHeading(this.text, {super.key});
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Padding(
+      padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
+      child: Semantics(
+        header: true,
+        child: Text(
+          text,
+          style: theme.textTheme.groupLabel.copyWith(
+            color: theme.colorScheme.primary,
+          ),
+        ),
+      ),
+    );
+  }
+}
 
 /// A slider with its name and value above it, and an optional help line:
 /// "Speech rate", "Card text size".
