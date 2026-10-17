@@ -229,3 +229,21 @@ Converted as each language's B1 plan is written:
 | Content per language: phrasebook, rules, tagging | 4–8 each |
 
 Confidence: medium for the app; low for content.
+
+## Script and word core, from the Anki comparison (owner, 2026-10-17)
+
+Asked where the script goes in every path: "After units 4-6". The script
+decks follow the phrasebook and the first word units, within the first two
+weeks; a learner who already reads the script skips them (#554).
+
+Asked whether a frequency-ordered word core comes before the big grammar
+tables: "Yes, smaller (~200)". About 200 common words, ordered by frequency
+(the Wikipedia counts, #516), in themed units before the large tables, so the
+tables use words the learner knows.
+
+Every path is rebuilt to this design: phrasebook, the first word units, the
+script, the ~200-word core, then rules as forms and set cards, with sentences
+waiting until their words and rules are known (owner, 2026-10-17: "build the
+path files for all present languages via an opus agent, as per our current
+path design").
+

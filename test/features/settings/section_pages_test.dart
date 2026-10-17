@@ -595,6 +595,45 @@ void main() {
       expect(find.text(l10n.settingsDataLogIntro(2)), findsOneWidget);
     });
 
+    testWidgets('the log shows the last 10 answers, up to 50 when expanded '
+        '(owner, 2026-10-17)', (tester) async {
+      usePhone(tester);
+      final progress = MemoryProgress();
+      for (var i = 0; i < 60; i++) {
+        progress.record(
+          deckId: 'hi-en-market',
+          cardId: 'hi-0231',
+          mode: DrillMode.production,
+          grade: 4,
+          now: DateTime(2026, 9, 20, 8).add(Duration(minutes: i)),
+        );
+      }
+      await pumpScreen(
+        tester,
+        const YourDataPage(),
+        state: AppState.test(progress: progress),
+      );
+      final l10n = l10nOf(tester);
+      final more = find.byKey(const ValueKey<String>('review-log-more'));
+      await scrollTo(tester, more);
+      expect(find.text(l10n.settingsDataLogShowing(10, 60)), findsOneWidget);
+      expect(find.text(l10n.settingsDataLogMore(50)), findsOneWidget);
+      await tester.tap(more);
+      await tester.pumpAndSettle();
+      await scrollTo(tester, more);
+      expect(find.text(l10n.settingsDataLogShowing(50, 60)), findsOneWidget);
+      await tester.tap(find.text(l10n.settingsDataLogFewer));
+      await tester.pumpAndSettle();
+      await scrollTo(tester, more);
+      expect(find.text(l10n.settingsDataLogShowing(10, 60)), findsOneWidget);
+      // Export still saves all 60.
+      final export = find.text(l10n.settingsExportDesc(60));
+      await tester.fling(find.byType(ListView), const Offset(0, 4000), 4000);
+      await tester.pumpAndSettle();
+      await scrollTo(tester, export);
+      expect(export, findsOneWidget);
+    });
+
     testWidgets('Export saves the log as the profile\'s file', (tester) async {
       usePhone(tester);
       final files = _FakeLogFiles();
