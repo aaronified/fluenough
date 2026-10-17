@@ -142,8 +142,10 @@ Before you start:
 
    Add `--audio --images` where `ffmpeg` and the network are there. Images
    come from the word's Wiktionary page, then OpenMoji, never Wikidata. A
-   noun without a `picture` gets none: the report's "Image proposals" lists
-   its candidate, and a reviewer approves each before it lands. Each item's
+   noun, verb or adjective without a `picture` gets none: the report's
+   "Image proposals" lists its candidate, and a reviewer approves each
+   before it lands, as `--approve <card id>=<File name>` (the file is
+   pinned; mail-bot approvals come with #519). Each item's
    `source` is its Wiktionary page only. With a
    Wikipedia dump of the language, write the ranks:
 
