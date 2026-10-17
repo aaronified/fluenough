@@ -6,6 +6,7 @@ import 'package:flutter/material.dart' hide Card;
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/backups.dart';
 import 'package:fluenough/app/features.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
@@ -33,10 +34,12 @@ import 'package:fluenough/features/review/review_sheets.dart';
 import 'package:fluenough/features/review/review_words.dart';
 import 'package:fluenough/features/review/send_reviews_sheet.dart';
 import 'package:fluenough/features/settings/adjust_section.dart';
+import 'package:fluenough/features/settings/restore_sheet.dart';
 import 'package:fluenough/features/settings/speech_test_sheet.dart';
 import 'package:fluenough/ui/theme.dart';
 import 'package:fluenough/ui/widgets/report_button.dart';
 
+import '../support/backup_fixture.dart';
 import '../support/harness.dart';
 import '../support/nav_bar_walk.dart';
 import '../support/picker.dart';
@@ -271,6 +274,23 @@ sheets = <String, Future<void> Function(WidgetTester tester)>{
       ]),
     );
   },
+  'restore_sheet: what a backup holds, before a restore': (tester) => openOn(
+    tester,
+    AppState.test(),
+    (context) => showRestoreSheet(
+      context,
+      backup: fixtureBackup(at: DateTime(2026, 9, 28, 18, 40), reviews: 6),
+      name: 'Made by you, Sep 28',
+    ),
+  ),
+  'restore_sheet: a file from a newer Fluenough': (tester) => openOn(
+    tester,
+    AppState.test(),
+    (context) => showNewerBackupSheet(
+      context,
+      newer: const NewerBackupException(version: 2, appVersion: '0.7.0'),
+    ),
+  ),
   'set_drill: the Full list': (tester) async {
     final state = AppState.test();
     await state.load();
@@ -416,6 +436,7 @@ void main() {
       'language_card': 1,
       'set_drill': 1,
       'spoken_languages_picker': 1,
+      'restore_sheet': 2,
     }, reason: 'a new sheet belongs in [sheets]');
   });
 
