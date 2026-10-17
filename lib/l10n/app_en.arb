@@ -2810,6 +2810,14 @@
   "@skillReading": {
     "description": "A skill: reading passages and answering questions about them (#98)."
   },
+  "skillReadScript": "Read script",
+  "@skillReadScript": {
+    "description": "A skill: recognising a script's letters and conjuncts, worked out from the answers to the script decks (#556). Shown on Progress."
+  },
+  "skillWriteScript": "Write script",
+  "@skillWriteScript": {
+    "description": "A skill: forming or typing a script's letters and conjuncts, worked out from the answers to the script decks (#556). Shown on Progress."
+  },
   "skillReadingDeckDesc": "Read a passage, answer questions",
   "@skillReadingDeckDesc": {
     "description": "Under Reading on a reading deck's screen."
@@ -5367,7 +5375,7 @@
       }
     }
   },
-  "settingsAdjusting": "Adjusting {language} {mode, select, recognition{seen words} production{written words} listening{heard words} speaking{spoken words} grammarUnderstood{grammar understood} grammar{grammar used} reading{passages} other{words}}… {current} of {total}",
+  "settingsAdjusting": "Adjusting {language} {mode, select, recognition{seen words} production{written words} listening{heard words} speaking{spoken words} grammarUnderstood{grammar understood} grammar{grammar used} reading{passages} readScript{reading the script} writeScript{writing the script} other{words}}… {current} of {total}",
   "@settingsAdjusting": {
     "description": "Under Adjust to me while fitting. language is a language name such as Hindi; mode is the skill (recognition, production, listening, speaking, grammarUnderstood, grammar or reading), named by what the words were: grammarUnderstood is choosing what a form of a word means, grammar is giving the form; current and total count the skills being fitted.",
     "placeholders": {
@@ -5417,7 +5425,7 @@
   "@adjustedSubtitle": {
     "description": "Line under Adjusted to you."
   },
-  "adjustedFewer": "You remember {mode, select, recognition{seen words} production{written words} listening{heard words} speaking{spoken words} grammarUnderstood{grammar you understand} grammar{grammar you use} reading{passages} other{words}} well: fewer reviews",
+  "adjustedFewer": "You remember {mode, select, recognition{seen words} production{written words} listening{heard words} speaking{spoken words} grammarUnderstood{grammar you understand} grammar{grammar you use} reading{passages} readScript{letters you read} writeScript{letters you write} other{words}} well: fewer reviews",
   "@adjustedFewer": {
     "description": "A skill the learner remembers better than the defaults assume. mode is the skill, named by what the words were.",
     "placeholders": {
@@ -5427,7 +5435,7 @@
       }
     }
   },
-  "adjustedMore": "{mode, select, recognition{Seen words slip} production{Written words slip} listening{Heard words slip} speaking{Spoken words slip} grammarUnderstood{Grammar understood slips} grammar{Grammar used slips} reading{Passages slip} other{Words slip}} faster: more reviews",
+  "adjustedMore": "{mode, select, recognition{Seen words slip} production{Written words slip} listening{Heard words slip} speaking{Spoken words slip} grammarUnderstood{Grammar understood slips} grammar{Grammar used slips} reading{Passages slip} readScript{Letters you read slip} writeScript{Letters you write slip} other{Words slip}} faster: more reviews",
   "@adjustedMore": {
     "description": "A skill the learner forgets faster than the defaults assume. 'Slip', never 'fade'.",
     "placeholders": {
@@ -5437,7 +5445,7 @@
       }
     }
   },
-  "adjustedSame": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammarUnderstood{Grammar understood} grammar{Grammar used} reading{Passages} other{Words}}: about the same",
+  "adjustedSame": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammarUnderstood{Grammar understood} grammar{Grammar used} reading{Passages} readScript{Reading the script} writeScript{Writing the script} other{Words}}: about the same",
   "@adjustedSame": {
     "description": "A skill whose schedule barely changed.",
     "placeholders": {
@@ -5447,7 +5455,7 @@
       }
     }
   },
-  "adjustedNotYet": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammarUnderstood{Grammar understood} grammar{Grammar used} reading{Passages} other{Words}}: not adjusted yet",
+  "adjustedNotYet": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammarUnderstood{Grammar understood} grammar{Grammar used} reading{Passages} readScript{Reading the script} writeScript{Writing the script} other{Words}}: not adjusted yet",
   "@adjustedNotYet": {
     "description": "A skill without enough answers to fit.",
     "placeholders": {
@@ -5539,7 +5547,7 @@
   "@howYouLearnLegendStart": {
     "description": "Legend of How you learn's bars: the tick is the gap every skill starts with."
   },
-  "paceSkillName": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammarUnderstood{Grammar understood} grammar{Grammar used} reading{Passages} other{Words}}",
+  "paceSkillName": "{mode, select, recognition{Seen words} production{Written words} listening{Heard words} speaking{Spoken words} grammarUnderstood{Grammar understood} grammar{Grammar used} reading{Passages} readScript{Read script} writeScript{Write script} other{Words}}",
   "@paceSkillName": {
     "description": "A skill's heading on How you learn, named by what the words were.",
     "placeholders": {
@@ -5549,7 +5557,7 @@
       }
     }
   },
-  "paceComesBack": "A {mode, select, recognition{seen word} production{written word} listening{heard word} speaking{spoken word} grammarUnderstood{form's meaning} grammar{form} reading{passage question} other{word}} you get right comes back in {days, plural, =1{1 day} other{{days} days}}, not {was}.",
+  "paceComesBack": "A {mode, select, recognition{seen word} production{written word} listening{heard word} speaking{spoken word} grammarUnderstood{form's meaning} grammar{form} reading{passage question} readScript{letter you read} writeScript{letter you write} other{word}} you get right comes back in {days, plural, =1{1 day} other{{days} days}}, not {was}.",
   "@paceComesBack": {
     "description": "How you learn: days until a word of the skill answered right comes back now, and at the start.",
     "placeholders": {
@@ -5567,7 +5575,7 @@
       }
     }
   },
-  "paceComesBackSame": "A {mode, select, recognition{seen word} production{written word} listening{heard word} speaking{spoken word} grammarUnderstood{form's meaning} grammar{form} reading{passage question} other{word}} you get right comes back in {days, plural, =1{1 day} other{{days} days}}, as at the start.",
+  "paceComesBackSame": "A {mode, select, recognition{seen word} production{written word} listening{heard word} speaking{spoken word} grammarUnderstood{form's meaning} grammar{form} reading{passage question} readScript{letter you read} writeScript{letter you write} other{word}} you get right comes back in {days, plural, =1{1 day} other{{days} days}}, as at the start.",
   "@paceComesBackSame": {
     "description": "How you learn: days until a word of the skill answered right comes back, the same as at the start.",
     "placeholders": {

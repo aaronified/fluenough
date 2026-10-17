@@ -47,7 +47,7 @@ extension CardSets on AppState {
 
   /// Whether the card [id] has been taught: some mode of it reviewed.
   bool taughtId(String id) =>
-      DrillMode.values.any((mode) => progress.stateOf(id, mode) != null);
+      DrillMode.drills.any((mode) => progress.stateOf(id, mode) != null);
 
   /// The sets whose Full list [card]'s question shows once answered: a
   /// set split over more than one card that [card] is a member of (owner,

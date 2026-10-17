@@ -56,6 +56,10 @@ enum Skill {
     // 2026-10-08) and its switch (DECK-FORMAT.md, Rules decks).
     DrillMode.grammarUnderstood || DrillMode.grammar => Skill.grammar,
     DrillMode.speaking => Skill.speaking,
+    // The script skills are not drills: they wear the word skill they are
+    // the script's counterpart of, where a pill is drawn (#556).
+    DrillMode.readScript => Skill.recognition,
+    DrillMode.writeScript => Skill.production,
   };
 
   /// Whether drilling this skill needs a voice for the language.
