@@ -41,11 +41,11 @@ schema: 1
 kind: languages
 languages:
   - { code: "en", iso639_3: "eng", name: "English", own_name: "English", scripts: ["latin"], family: "germanic",
-      script_question: "Can you read the English script?", script_can_read: "I can read the English script" }
+      script_question: "Can you read the Latin script?", script_can_read: "I can read the Latin script" }
   - { code: "bn", iso639_3: "ben", name: "Bengali", own_name: "বাংলা", scripts: ["bengali"], family: "indo_aryan",
-      script_question: "আপনি কি বাংলা লিপি পড়তে পারেন?", script_can_read: "আমি বাংলা লিপি পড়তে পারি" }
+      script_question: "আপনি কি পূর্ব নাগরী লিপি পড়তে পারেন?", script_can_read: "আমি পূর্ব নাগরী লিপি পড়তে পারি" }
   - { code: "hi", iso639_3: "hin", name: "Hindi", own_name: "हिन्दी", scripts: ["devanagari"], family: "indo_aryan",
-      script_question: "क्या आपको हिंदी लिपि पढ़नी आती है?", script_can_read: "मुझे हिंदी लिपि पढ़नी आती है" }
+      script_question: "क्या आपको देवनागरी लिपि पढ़नी आती है?", script_can_read: "मुझे देवनागरी लिपि पढ़नी आती है" }
   - { code: "as", iso639_3: "asm", name: "Assamese", own_name: "অসমীয়া", scripts: ["bengali"], family: "indo_aryan",
       script_question: "আপুনি পূব নাগৰী লিপি পঢ়িব পাৰেনে?", script_can_read: "মই পূব নাগৰী লিপি পঢ়িব পাৰোঁ", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "brx", iso639_3: "brx", name: "Bodo", own_name: "बड़ो", scripts: ["devanagari"], family: "tibeto_burman",
