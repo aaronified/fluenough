@@ -13,6 +13,7 @@ import '../review/alike_warning.dart';
 import '../review/review_words.dart';
 import 'card_bases.dart';
 import 'card_notes.dart';
+import '../drill/ipa_examples.dart';
 import 'card_top_line.dart';
 import 'checked_by_line.dart';
 import 'path_model.dart' show isSentence;
@@ -168,7 +169,10 @@ class WordSheet extends StatelessWidget {
               const SizedBox(height: 12),
               BaseLine(bases: bases, language: language),
             ],
-            if (example != null) ...<Widget>[
+            if (example != null && language.isIpa) ...<Widget>[
+              const SizedBox(height: 16),
+              IpaExamples(card: card, language: language),
+            ] else if (example != null) ...<Widget>[
               const SizedBox(height: 16),
               Semantics(
                 container: true,
