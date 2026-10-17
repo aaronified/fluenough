@@ -17,8 +17,8 @@ const String ownLetterTag = 'own-letter';
 /// what it is, from its script decks' own meanings. Every letter tagged
 /// [ownLetterTag] is asked, first in no fixed order, then the decks' other
 /// cards one deck at a time, so that vowels, consonants, vowel signs and
-/// conjuncts each come up, until [size] questions in all. It is passed with
-/// every own letter right and at most one other answer wrong. Nothing here
+/// conjuncts each come up, until [size] questions in all. It is passed only
+/// with every answer right (owner, 2026-10-17: "All 8 right"). Nothing here
 /// is recorded as a review.
 class ScriptTest {
   ScriptTest(this.decks, {Random? random, this.size = 8})
@@ -37,7 +37,6 @@ class ScriptTest {
   late final List<PlacementQuestion> _questions;
   int _asked = 0;
   int _wrong = 0;
-  bool _ownWrong = false;
 
   /// Every question, in the order asked.
   List<PlacementQuestion> get questions => _questions;
@@ -53,19 +52,16 @@ class ScriptTest {
   /// The question to answer, or null once [isFinished].
   PlacementQuestion? get question => isFinished ? null : _questions[_asked];
 
-  /// Whether the test was passed: every own letter right, and at most one
-  /// other answer wrong. Only meaningful once [isFinished].
-  bool get passed => _questions.isNotEmpty && !_ownWrong && _wrong <= 1;
+  /// Whether the test was passed: every answer right. Only meaningful once
+  /// [isFinished].
+  bool get passed => _questions.isNotEmpty && _wrong == 0;
 
   /// Answers the current [question] with [chosen], or null for "I don't
   /// know", and moves on.
   void answer(String? chosen) {
     final q = question;
     if (q == null) return;
-    if (!q.isRight(chosen)) {
-      _wrong++;
-      if (q.card.tags.contains(ownLetterTag)) _ownWrong = true;
-    }
+    if (!q.isRight(chosen)) _wrong++;
     _asked++;
   }
 
