@@ -239,6 +239,14 @@ void main() {
 
     test('a fit of a script skill reschedules it alone', () async {
       final progress = learner();
+      // A second review: a pair's first does not depend on the parameters.
+      progress.record(
+        deckId: script,
+        cardId: 'hi-0001',
+        mode: DrillMode.recognition,
+        grade: 4,
+        now: day.add(const Duration(days: 3)),
+      );
       final before = progress.scriptStates[read]!.stability;
       final word = progress.states[recognition]!.stability;
       await progress.putFitted(
