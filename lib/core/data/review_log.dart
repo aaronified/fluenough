@@ -9,6 +9,7 @@ import '../scheduling/skill_parameters.dart';
 import 'card_state_repository.dart';
 import 'log_jsonl.dart';
 import 'database.dart';
+import 'restore_record.dart';
 
 /// The review log, and the scheduling state it drives, in the database
 /// (docs/DESIGN.md, "The review cycle"; ADR-0005).
@@ -16,7 +17,8 @@ import 'database.dart';
 /// Recording a review appends it to `reviews` and updates `card_states` in
 /// one transaction: both, or neither, so the log stays authoritative. The
 /// state can always be rebuilt from the log alone ([rebuildStates]). There is
-/// no way here to change or remove a review (AGENTS.md rule 9).
+/// no way here to change or remove a review (AGENTS.md rule 9), except the
+/// one exception that rule names: a confirmed restore ([replaceAll]).
 class ReviewLog {
   ReviewLog(this._db);
 
@@ -194,26 +196,68 @@ class ReviewLog {
       final isFresh = <String>{for (final r in fresh) reviewIdentity(r)};
       for (final event in merged.events) {
         if (!isFresh.contains(reviewIdentity(logged(event)))) continue;
-        await _db.reviewsDao.append(
-          ReviewsCompanion.insert(
-            ts: event.at,
-            deckId: event.deckId,
-            cardId: event.cardId,
-            mode: event.mode,
-            grade: event.grade,
-            elapsedMs: event.elapsed.inMilliseconds,
-            answerGiven: Value(event.answerGiven),
-            intervalBefore: Value(event.before?.intervalDays),
-            intervalAfter: event.after.intervalDays,
-            stabilityAfter: Value(event.after.stability),
-            difficultyAfter: Value(event.after.difficulty),
-          ),
-        );
+        await _append(event);
       }
     }
     await _rebuild(parameters);
     return (added: fresh.length, fitted: parameters.fitted);
   });
+
+  /// Restores a backup (#470): the log, the leech actions and the fitted
+  /// parameters become [reviews], [leechActions] and [fitted], and
+  /// `card_states` is rebuilt from them, in one transaction, with [restore]
+  /// kept in `restores`. Through [AppDatabase.replaceLog], the one exception
+  /// to the log being append-only (AGENTS.md rule 9): only for a restore
+  /// the learner has confirmed, after a copy of what it replaces is kept.
+  /// A failure leaves everything as it was.
+  ///
+  /// Each review's interval, stability and difficulty columns are what
+  /// replaying the restored log gives, as for a merge ([importAll]).
+  Future<void> replaceAll(
+    List<LoggedReview> reviews,
+    List<LeechAction> leechActions, {
+    Map<SkillKey, FittedParameters> fitted =
+        const <SkillKey, FittedParameters>{},
+    required RestoreRecord restore,
+  }) => _db.replaceLog(restore, () async {
+    for (final a in actionsInTimeOrder(leechActions)) {
+      await _db.leechActionsDao.append(a);
+    }
+    await _db.delete(_db.fsrsParameters).go();
+    final all = inTimeOrder(reviews);
+    final parameters = SkillParameters(
+      fitted: fitted,
+      lastStudied: SkillParameters.lastStudiedIn(all.map(_studied)),
+    );
+    for (final MapEntry(:key, :value) in fitted.entries) {
+      await _putFitted(key, value);
+    }
+    final replayed = replayReviews(
+      all,
+      effects: LeechEffects(await _actions()),
+      parameters: parameters,
+    );
+    for (final event in replayed.events) {
+      await _append(event);
+    }
+    await _rebuild(parameters);
+  });
+
+  Future<void> _append(ReviewEvent event) => _db.reviewsDao.append(
+    ReviewsCompanion.insert(
+      ts: event.at,
+      deckId: event.deckId,
+      cardId: event.cardId,
+      mode: event.mode,
+      grade: event.grade,
+      elapsedMs: event.elapsed.inMilliseconds,
+      answerGiven: Value(event.answerGiven),
+      intervalBefore: Value(event.before?.intervalDays),
+      intervalAfter: event.after.intervalDays,
+      stabilityAfter: Value(event.after.stability),
+      difficultyAfter: Value(event.after.difficulty),
+    ),
+  );
 
   /// Appends [action] and brings its pair's state in `card_states` in line
   /// with it, in one transaction. No review is touched.

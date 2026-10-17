@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 
 import '../core/data/log_jsonl.dart';
+import '../core/data/restore_record.dart';
 import '../core/models/drill_mode.dart';
 import '../core/models/leech_action.dart';
 import '../core/models/review_event.dart';
@@ -9,6 +10,7 @@ import '../core/scheduling/fsrs.dart';
 import '../core/scheduling/skill_map.dart';
 import '../core/scheduling/skill_parameters.dart';
 
+export '../core/data/restore_record.dart' show RestoreRecord;
 export '../core/models/leech_action.dart';
 export '../core/models/review_event.dart';
 export '../core/scheduling/skill_parameters.dart'
@@ -87,12 +89,16 @@ abstract interface class ProgressStore implements Listenable {
   /// Replaces everything: the log, the leech actions and the fitted
   /// parameters become [reviews], [leechActions] and [fitted], and every
   /// state is rebuilt from them. For restoring a backup (#470), which
-  /// replaces what the learner has. A store that cannot replace its log
-  /// throws, and keeps what it had.
+  /// replaces what the learner has, once they have confirmed it and a copy
+  /// of what it replaces is kept: the one exception to the log being
+  /// append-only (AGENTS.md rule 9). A store that keeps its log keeps
+  /// [restore] with it, in the same transaction. A store that cannot
+  /// replace its log throws, and keeps what it had.
   Future<void> replaceAll(
     List<LoggedReview> reviews,
     List<LeechAction> leechActions, {
     Map<SkillKey, FittedParameters> fitted,
+    required RestoreRecord restore,
   });
 }
 
@@ -284,6 +290,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     List<LeechAction> leechActions, {
     Map<SkillKey, FittedParameters> fitted =
         const <SkillKey, FittedParameters>{},
+    required RestoreRecord restore,
   }) async {
     _parameters = SkillParameters(fitted: fitted);
     _replace(inTimeOrder(reviews), actionsInTimeOrder(leechActions));
