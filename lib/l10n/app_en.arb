@@ -8662,6 +8662,31 @@
       }
     }
   },
+  "settingsDataLogShowing": "{shown, plural, =1{Your last answer, of {total}. Export saves them all.} other{Your last {shown} answers, of {total}. Export saves them all.}}",
+  "@settingsDataLogShowing": {
+    "description": "Under the review log on Your data, when it shows only the newest answers: how many it shows and how many there are.",
+    "placeholders": {
+      "shown": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsDataLogMore": "Show up to {count}",
+  "@settingsDataLogMore": {
+    "description": "A button under the review log on Your data that shows more of the newest answers.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsDataLogFewer": "Show fewer",
+  "@settingsDataLogFewer": {
+    "description": "A button under the review log on Your data that goes back to the newest few answers."
+  },
   "settingsDataLogEntry": "{meaning} · {activity} · {time}",
   "@settingsDataLogEntry": {
     "description": "A review in the log on Your data, under the word: its meaning, the activity and the time.",
