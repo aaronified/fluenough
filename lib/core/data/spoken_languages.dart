@@ -42,7 +42,11 @@ class SpokenLanguage {
   /// language's code, as every answer before #551 was kept, so that an old
   /// "reads" means its own script; any other under `code:script`.
   String readKey(String script) =>
-      script == this.script ? code : '$code:$script';
+      script == (this.script ?? '') ? code : '$code:$script';
+
+  /// The scripts asked about: [scripts], or for a language the list gives
+  /// none, one unnamed, `''`, kept under its code.
+  List<String> get _asked => scripts.isEmpty ? const <String>[''] : scripts;
 
   /// The scripts of [scripts] that [answers] says are read, in their
   /// order; null when the language has not been answered. Empty is "I can
@@ -50,7 +54,7 @@ class SpokenLanguage {
   List<String>? scriptsReadIn(Map<String, bool> answers) {
     if (!answers.containsKey(code)) return null;
     return <String>[
-      for (final s in scripts)
+      for (final s in _asked)
         if (answers[readKey(s)] ?? false) s,
     ];
   }
@@ -59,10 +63,7 @@ class SpokenLanguage {
   /// read: one per script, each read or not.
   Map<String, bool> readAnswers(Iterable<String> read) {
     final set = read.toSet();
-    return <String, bool>{
-      if (scripts.isEmpty) code: set.isNotEmpty,
-      for (final s in scripts) readKey(s): set.contains(s),
-    };
+    return <String, bool>{for (final s in _asked) readKey(s): set.contains(s)};
   }
 
   /// The group it is listed in, folded by default (`indo_aryan`,

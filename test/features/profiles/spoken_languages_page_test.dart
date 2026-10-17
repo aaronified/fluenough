@@ -249,6 +249,10 @@ void main() {
       expect(old.first.script, 'bengali');
       expect(old.last.scripts, isEmpty);
       expect(old.last.script, isNull);
+      // A language with no script listed is still answered under its code.
+      expect(old.last.readAnswers(['']), <String, bool>{'en': true});
+      expect(old.last.scriptsReadIn(const <String, bool>{'en': true}), ['']);
+      expect(old.last.scriptsReadIn(const <String, bool>{'en': false}), []);
     });
 
     test('a malformed list is refused with where it is wrong', () {
