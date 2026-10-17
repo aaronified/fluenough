@@ -1,0 +1,20 @@
+schema: 1
+id: "te-en-grammar-nouns"
+kind: "layer"
+core: "te-grammar-nouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nouns: plural and case"
+description: "The plural, and the endings for 'in', 'to' and 'from', often on a changed stem. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Noun forms"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "illu": "house"
+    "pustakam": "book"
+    "dukaanam": "shop"
+    "gadi": "room"
+    "bassu": "bus"
+  notes: "-లు (-lu) makes a plural. Before an ending, many nouns take an oblique stem: ఇల్లు (illu) becomes ఇంటి- (iṇṭi-) (ఇంటికి (iṇṭiki), to the house), and a noun in -ం (am) takes -ఆని- (-āni-) (పుస్తకానికి (pustakāniki))."

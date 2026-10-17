@@ -1,0 +1,159 @@
+schema: 1
+id: "ipa-retroflex"
+part: "core"
+kind: "vocab"
+language: { code: "ipa", iso639_3: "zxx", name: "IPA", script: "ipa", typed: false, icon: "ə" }
+license: "CC-BY-SA-4.0"
+source: "Arranged after the IPA chart, 2020 revision, of the International Phonetic Association (https://www.internationalphoneticassociation.org/content/ipa-chart), and the Handbook of the International Phonetic Association (1999)"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ipa-0055"
+    target: "ʈʰ"
+    tags: ["hi", "mr", "gu", "bn", "te", "kn"]
+    examples:
+      - target: "आठ"
+        language: "hi"
+        reading: "āṭh"
+        ipa: "aːʈʰ"
+      - target: "મીઠું"
+        language: "gu"
+        reading: "miṭhum̐"
+        ipa: "miʈʰũ"
+      - target: "टमाटर"
+        language: "hi"
+        reading: "ṭamāṭar"
+        ipa: "ʈəmaːʈər"
+        sounds: false
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0056"
+    target: "ɖʱ"
+    tags: ["hi", "mr", "gu", "bn", "te", "kn"]
+    examples:
+      - target: "ढाई"
+        language: "hi"
+        reading: "ḍhāī"
+        ipa: "ɖʱaːiː"
+      - target: "ঢাক"
+        language: "bn"
+        reading: "ḍhāk"
+        ipa: "ɖʱak"
+      - target: "डॉक्टर"
+        language: "hi"
+        reading: "ḍôkṭar"
+        ipa: "ɖɔkʈər"
+        sounds: false
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0057"
+    target: "ʂ"
+    tags: ["te", "kn"]
+    examples:
+      - target: "భాష"
+        language: "te"
+        reading: "bhāṣa"
+        ipa: "bʱaːʂa"
+      - target: "ಭಾಷೆ"
+        language: "kn"
+        reading: "bhāṣe"
+        ipa: "bʱaːʂe"
+      - target: "शाम"
+        language: "hi"
+        reading: "śām"
+        ipa: "ʃaːm"
+        sounds: false
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+  - id: "ipa-0058"
+    target: "ʐ"
+    examples:
+      - target: "жук"
+        language: "ru"
+        reading: "žuk"
+        ipa: "ʐuk"
+      - target: "zebra"
+        language: "en"
+        ipa: "ˈzɛbrə"
+        sounds: false
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0059"
+    target: "ɭ"
+    tags: ["mr", "gu", "te", "kn"]
+    examples:
+      - target: "पोळी"
+        language: "mr"
+        reading: "poḷi"
+        ipa: "poɭi"
+      - target: "నీళ్ళు"
+        language: "te"
+        reading: "nīḷḷu"
+        ipa: "niːɭɭu"
+      - target: "ಮಗಳು"
+        language: "kn"
+        reading: "magaḷu"
+        ipa: "maɡaɭu"
+      - target: "साल"
+        language: "hi"
+        reading: "sāl"
+        ipa: "saːl"
+        sounds: false
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0060"
+    target: "ɻ"
+    examples:
+      - target: "தமிழ்"
+        language: "ta"
+        reading: "tamiḻ"
+        ipa: "t̪amiɻ"
+      - target: "red"
+        language: "en"
+        ipa: "ɹɛd"
+        sounds: false
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+  - id: "ipa-0061"
+    target: "ɽ"
+    tags: ["hi", "bn"]
+    examples:
+      - target: "सड़क"
+        language: "hi"
+        reading: "saṛak"
+        ipa: "səɽək"
+      - target: "বাড়ি"
+        language: "bn"
+        reading: "bāṛi"
+        ipa: "baɽi"
+      - target: "रात"
+        language: "hi"
+        reading: "rāt"
+        ipa: "raːt̪"
+        sounds: false
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0062"
+    target: "ɽʱ"
+    tags: ["hi"]
+    examples:
+      - target: "पढ़ना"
+        language: "hi"
+        reading: "paṛhnā"
+        ipa: "pəɽʱnaː"
+      - target: "ढाई"
+        language: "hi"
+        reading: "ḍhāī"
+        ipa: "ɖʱaːiː"
+        sounds: false
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }

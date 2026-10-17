@@ -1,0 +1,63 @@
+# How Telugu script works: the recurring features a learner from English
+# misses, shown before the first letters and from a script deck's Tips.
+# See ADR-0016 and docs/DECK-FORMAT.md.
+schema: 1
+kind: "script"
+part: "core"
+id: "te-script"
+language: "te"
+features:
+  - id: "tick"
+    term: "తలకట్టు"
+    reading: "talakaṭṭu"
+    ipa: "t̪alakaʈʈu"
+    example: "క"
+    letters: ["క", "గ", "చ", "త", "న"]
+  - id: "rounds"
+    example: "ఠ"
+    letters: ["ఒ", "ర", "ఠ", "ద", "బ"]
+  - id: "breath-mark"
+    example: "ఫ"
+    letters: ["ప", "ఫ", "బ", "భ", "డ", "ఢ"]
+  - id: "inherent-vowel"
+    example: "క"
+    letters: ["క", "కల", "తల"]
+  - id: "vowel-signs"
+    term: "గుణింతాలు"
+    reading: "guṇintālu"
+    ipa: "ɡuɳint̪aːlu"
+    example: "కి"
+    letters: ["కా", "కి", "కు", "కె", "కొ"]
+  - id: "long-stroke"
+    term: "దీర్ఘం"
+    reading: "dīrgham"
+    ipa: "d̪iːrɡʱam"
+    example: "కీ"
+    letters: ["క", "కా", "కి", "కీ", "కె", "కే", "కొ", "కో"]
+  - id: "pollu"
+    term: "పొల్లు"
+    reading: "pollu"
+    ipa: "pollu"
+    example: "క్"
+    letters: ["క్", "ర్", "న్"]
+  - id: "vattu"
+    term: "వత్తు"
+    reading: "vattu"
+    ipa: "ʋat̪t̪u"
+    example: "స్త"
+    letters: ["స్త", "ప్ర", "క్ష", "వ్య"]
+  - id: "doubled"
+    term: "ద్విత్వం"
+    reading: "dvitvam"
+    ipa: "d̪ʋit̪ʋam"
+    example: "అమ్మ"
+    letters: ["క్క", "త్త", "న్న", "మ్మ", "ల్ల"]
+  - id: "sunna"
+    term: "సున్న"
+    reading: "sunna"
+    ipa: "sunna"
+    example: "కం"
+    letters: ["కం", "పుస్తకం"]
+  - id: "digits"
+    example: "౩"
+    letters: ["౦", "౧", "౨", "౩", "౪", "౫", "౬", "౭", "౮", "౯"]

@@ -1,0 +1,497 @@
+schema: 1
+id: te-en-reading-diddubatu
+name: "Reading: Diddubatu"
+kind: reading
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN, icon: "తె" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Diddubatu, by Gurajada Apparao (1910), in the public domain"
+description: "Five scenes from Gurajada Apparao's short story Diddubatu (1910), quoted letter for letter from the printing in Gurujadalu (2012), with questions and the older words explained. The story is told in the bookish Telugu of its day and its people talk the spoken Telugu of 1910: the glossary gives today's forms. The half-nasal ఁ (a) is not said today and is left out of the romanisation. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [reading, advanced, unreviewed]
+passages:
+  - id: te-diddubatu-01
+    title: "The door"
+    source: "Gurujadalu (MaNaSu Foundation, 2012), page 525"
+    sentences:
+      - text: "“తలుపు! తలుపు!”"
+        reading: "'talupu! talupu!'"
+        ipa: "t̪alupu t̪alupu"
+      - text: "తలుపు తెరవఁబడలేదు."
+        reading: "talupu teravabaḍalēdu."
+        ipa: "t̪alupu t̪eraʋabaɖaleːd̪u"
+      - text: "ఒక నిమిష మతఁడూరుకొనెను."
+        reading: "oka nimiṣa mataḍūrukonenu."
+        ipa: "oka nimiʂa mat̪aɖuːrukonenu"
+      - text: "గదిలోని గడియారము టింగుమని ఒంటిగంట కొట్టినది."
+        reading: "gadilōni gaḍiyāramu ṭiṅgumani oṇṭigaṇṭa koṭṭinadi."
+        ipa: "ɡad̪iloːni ɡaɖijaːramu ʈiŋɡumani oɳʈiɡaɳʈa koʈʈinad̪i"
+    glossary:
+      - word: "తెరవఁబడలేదు"
+        modern: "తెరవబడలేదు"
+        reading: "teravabaḍalēdu"
+        ipa: "t̪eraʋabaɖaleːd̪u"
+        meaning: { en: "was not opened" }
+        note: { en: "the half-nasal ఁ (a) is no longer written; in speech, తలుపు తెరుచుకోలేదు (talupu terucukōlēdu), the door didn't open" }
+      - word: "నిమిష మతఁడూరుకొనెను"
+        modern: "నిమిషం అతను ఊరుకున్నాడు"
+        reading: "nimiṣam atanu ūrukunnāḍu"
+        ipa: "nimiʂam at̪anu uːrukunnaːɖu"
+        meaning: { en: "for a minute he kept still" }
+        note: { en: "bookish: నిమిషము (nimiṣamu), అతఁడు (ataḍu) and ఊరుకొనెను (ūrukonenu) run together" }
+      - word: "గదిలోని"
+        modern: "గదిలోని"
+        reading: "gadilōni"
+        ipa: "ɡad̪iloːni"
+        meaning: { en: "in the room" }
+      - word: "గడియారము"
+        modern: "గడియారం"
+        reading: "gaḍiyāram"
+        ipa: "ɡaɖijaːram"
+        meaning: { en: "clock" }
+        note: { en: "the bookish ending -ము (-mu) is -ం (am) today" }
+      - word: "టింగుమని"
+        modern: "టింగుమని"
+        reading: "ṭiṅgumani"
+        ipa: "ʈiŋɡumani"
+        meaning: { en: "with a ting: the chime of the clock" }
+      - word: "ఒంటిగంట"
+        modern: "ఒంటిగంట"
+        reading: "oṇṭigaṇṭa"
+        ipa: "oɳʈiɡaɳʈa"
+        meaning: { en: "one o'clock" }
+      - word: "కొట్టినది"
+        modern: "కొట్టింది"
+        reading: "koṭṭindi"
+        ipa: "koʈʈind̪i"
+        meaning: { en: "struck" }
+        note: { en: "the bookish past" }
+    questions:
+      - id: te-0559
+        prompt: { en: "What time does the clock strike?" }
+        options:
+          - { en: "Two o'clock" }
+          - { en: "One o'clock" }
+          - { en: "Midnight" }
+        answer: 2
+      - id: te-0560
+        prompt: { en: "Someone opens the door at once." }
+        answer: false
+  - id: te-diddubatu-02
+    title: "Where is Amma?"
+    source: "Gurujadalu (MaNaSu Foundation, 2012), page 526"
+    sentences:
+      - text: "“మీ అమ్మేదిరా?”"
+        reading: "'mī ammēdirā?'"
+        ipa: "miː ammeːd̪iraː"
+      - text: "“మా యమ్మా? యింటున్నది బాబూ”."
+        reading: "'mā yammā? yiṇṭunnadi bābū'."
+        ipa: "maː jammaː jiɳʈunnad̪i baːbuː"
+      - text: "“మీ అమ్మ కాదురా; బుద్ధిహీనుఁడా, నా భార్యా”"
+        reading: "'mī amma kādurā; buddhihīnuḍā, nā bhāryā'"
+        ipa: "miː amma kaːd̪uraː bud̪d̪ʱihiːnuɖaː naː bʱaːrjaː"
+      - text: "“అమ్మగారా? యెక్కడుంటారు బాబూ? పడుకున్నారు”"
+        reading: "'ammagārā? yekkaḍuṇṭāru bābū? paḍukunnāru'"
+        ipa: "ammaɡaːraː jekkaɖuɳʈaːru baːbuː paɖukunnaːru"
+      - text: "“యింట్లోనే లేదు”."
+        reading: "'yiṇṭlōnē lēdu'."
+        ipa: "jiɳʈloːneː leːd̪u"
+    glossary:
+      - word: "అమ్మేదిరా"
+        modern: "అమ్మ ఏదిరా"
+        reading: "amma ēdirā"
+        ipa: "amma eːd̪iraː"
+        meaning: { en: "where's amma?" }
+        note: { en: "-రా (-rā) is how one talks to a boy or a man one need not be formal with" }
+      - word: "యమ్మా"
+        modern: "అమ్మా"
+        reading: "ammā"
+        ipa: "ammaː"
+        meaning: { en: "my mother?" }
+        note: { en: "మా (mā) + అమ్మ (amma): a y joins the two vowels" }
+      - word: "యింటున్నది"
+        modern: "ఇంట్లో ఉంది"
+        reading: "iṇṭlō undi"
+        ipa: "iɳʈloː und̪i"
+        meaning: { en: "she's at home" }
+        note: { en: "spoken forms run together" }
+      - word: "బాబూ"
+        modern: "బాబూ"
+        reading: "bābū"
+        ipa: "baːbuː"
+        meaning: { en: "sir: how a servant addresses his master" }
+      - word: "బుద్ధిహీనుఁడా"
+        modern: "బుద్ధిహీనుడా"
+        reading: "buddhihīnuḍā"
+        ipa: "bud̪d̪ʱihiːnuɖaː"
+        meaning: { en: "you fool; literally 'you without sense'" }
+      - word: "అమ్మగారా"
+        modern: "అమ్మగారా"
+        reading: "ammagārā"
+        ipa: "ammaɡaːraː"
+        meaning: { en: "the mistress? అమ్మగారు (ammagāru) is the lady of the house" }
+      - word: "యెక్కడుంటారు"
+        modern: "ఎక్కడ ఉంటారు"
+        reading: "ekkaḍa uṇṭāru"
+        ipa: "ekkaɖa uɳʈaːru"
+        meaning: { en: "where would she be?" }
+        note: { en: "the respectful plural, for the mistress" }
+      - word: "పడుకున్నారు"
+        modern: "పడుకున్నారు"
+        reading: "paḍukunnāru"
+        ipa: "paɖukunnaːru"
+        meaning: { en: "she's asleep; literally 'she has lain down'" }
+      - word: "యింట్లోనే"
+        modern: "ఇంట్లోనే"
+        reading: "iṇṭlōnē"
+        ipa: "iɳʈloːneː"
+        meaning: { en: "in the house at all" }
+    questions:
+      - id: te-0561
+        prompt: { en: "Who does Ramudu first think 'your amma' means?" }
+        options:
+          - { en: "Gopalarao's mother" }
+          - { en: "His own mother" }
+          - { en: "Gopalarao's sister" }
+        answer: 2
+      - id: te-0562
+        prompt: { en: "Ramudu thinks the mistress is asleep." }
+        answer: true
+      - id: te-0563
+        prompt: { en: "What does Gopalarao tell Ramudu about his wife?" }
+        options:
+          - { en: "She is in the kitchen" }
+          - { en: "She is asleep in her room" }
+          - { en: "She is not in the house" }
+        answer: 3
+  - id: te-diddubatu-03
+    title: "What happened, Rama?"
+    source: "Gurujadalu (MaNaSu Foundation, 2012), page 526"
+    sentences:
+      - text: "కుర్చీ పయి కూచుని “రామా యేమాయెరా?” యని దైన్యముతో ననెను."
+        reading: "kurcī payi kūcuni 'rāmā yēmāyerā?' yani dainyamutō nanenu."
+        ipa: "kurtʃiː paji kuːtʃuni raːmaː jeːmaːjeraː jani d̪ainjamut̪oː nanenu"
+      - text: "“యేటో మాయలా వుంది బాబూ”"
+        reading: "'yēṭō māyalā vundi bābū'"
+        ipa: "jeːʈoː maːjalaː ʋund̪i baːbuː"
+      - text: "“పుట్టింటికి వెళ్లియుండునా?”"
+        reading: "'puṭṭiṇṭiki veḷliyuṇḍunā?'"
+        ipa: "puʈʈiɳʈiki ʋeɭlijuɳɖunaː"
+      - text: "“అంత వారు కారనా? బాబూ కోపగించితే చెప్పలేను గాని ఆడారు చదువు నేరిస్తే యేటౌతది?”"
+        reading: "'anta vāru kāranā? bābū kōpagiñcitē ceppalēnu gāni āḍāru caduvu nēristē yēṭautadi?'"
+        ipa: "ant̪a ʋaːru kaːranaː baːbuː koːpaɡiɲtʃit̪eː tʃeppaleːnu ɡaːni aːɖaːru tʃad̪uʋu neːrist̪eː jeːʈaut̪ad̪i"
+    glossary:
+      - word: "పయి"
+        modern: "పైన"
+        reading: "paina"
+        ipa: "paina"
+        meaning: { en: "on" }
+      - word: "కూచుని"
+        modern: "కూర్చుని"
+        reading: "kūrcuni"
+        ipa: "kuːrtʃuni"
+        meaning: { en: "sitting down" }
+        note: { en: "also said కూచుని (kūcuni)" }
+      - word: "యేమాయెరా"
+        modern: "ఏమైందిరా"
+        reading: "ēmaindirā"
+        ipa: "eːmaind̪iraː"
+        meaning: { en: "what has happened?" }
+      - word: "యని"
+        modern: "అని"
+        reading: "ani"
+        ipa: "ani"
+        meaning: { en: "saying: it closes a quote" }
+      - word: "దైన్యముతో"
+        modern: "దైన్యంతో"
+        reading: "dainyantō"
+        ipa: "d̪ainjant̪oː"
+        meaning: { en: "miserably, helplessly" }
+      - word: "ననెను"
+        modern: "అన్నాడు"
+        reading: "annāḍu"
+        ipa: "annaːɖu"
+        meaning: { en: "he said" }
+        note: { en: "the bookish past అనెను (anenu), joined to the word before" }
+      - word: "యేటో"
+        modern: "ఏమిటో"
+        reading: "ēmiṭō"
+        ipa: "eːmiʈoː"
+        meaning: { en: "who knows what" }
+        note: { en: "a spoken form" }
+      - word: "మాయలా"
+        modern: "మాయలా"
+        reading: "māyalā"
+        ipa: "maːjalaː"
+        meaning: { en: "like magic: a mystery" }
+      - word: "వుంది"
+        modern: "ఉంది"
+        reading: "undi"
+        ipa: "und̪i"
+        meaning: { en: "it is" }
+        note: { en: "older print often writes a v- before u" }
+      - word: "పుట్టింటికి"
+        modern: "పుట్టింటికి"
+        reading: "puṭṭiṇṭiki"
+        ipa: "puʈʈiɳʈiki"
+        meaning: { en: "to her parents' home; పుట్టిల్లు (puṭṭillu) is the house one was born in" }
+      - word: "వెళ్లియుండునా"
+        modern: "వెళ్ళి ఉంటుందా"
+        reading: "veḷḷi uṇṭundā"
+        ipa: "ʋeɭɭi uɳʈund̪aː"
+        meaning: { en: "could she have gone?" }
+      - word: "కోపగించితే"
+        modern: "కోప్పడితే"
+        reading: "kōppaḍitē"
+        ipa: "koːppaɖit̪eː"
+        meaning: { en: "if you get angry" }
+      - word: "ఆడారు"
+        modern: "ఆడవాళ్ళు"
+        reading: "āḍavāḷḷu"
+        ipa: "aːɖaʋaːɭɭu"
+        meaning: { en: "women" }
+        note: { en: "a spoken form" }
+      - word: "నేరిస్తే"
+        modern: "నేర్చుకుంటే"
+        reading: "nērcukuṇṭē"
+        ipa: "neːrtʃukuɳʈeː"
+        meaning: { en: "if they learn" }
+      - word: "యేటౌతది"
+        modern: "ఏమవుతుంది"
+        reading: "ēmavutundi"
+        ipa: "eːmaʋut̪und̪i"
+        meaning: { en: "what will come of it?" }
+        note: { en: "a spoken form" }
+    questions:
+      - id: te-0564
+        prompt: { en: "Gopalarao wonders whether his wife has gone to her parents' home." }
+        answer: true
+      - id: te-0565
+        prompt: { en: "What does Ramudu blame?" }
+        options:
+          - { en: "Gopalarao's temper" }
+          - { en: "Women learning to read" }
+          - { en: "The neighbours" }
+        answer: 2
+      - id: te-0566
+        prompt: { en: "Ramudu says it is a mystery to him." }
+        answer: true
+  - id: te-diddubatu-04
+    title: "I am a beast"
+    source: "Gurujadalu (MaNaSu Foundation, 2012), page 527"
+    sentences:
+      - text: "ఉత్తరము ముగించి “నేను పశువును” అని గోపాలరావు అనెను."
+        reading: "uttaramu mugiñci 'nēnu paśuvunu' ani gōpālarāvu anenu."
+        ipa: "ut̪t̪aramu muɡiɲtʃi neːnu paʃuʋunu ani ɡoːpaːlaraːʋu anenu"
+      - text: "“అదేటి బాబు ఆలా శలవిస్తారు?”"
+        reading: "'adēṭi bābu ālā śalavistāru?'"
+        ipa: "ad̪eːʈi baːbu aːlaː ʃalaʋist̪aːru"
+      - text: "“శుద్ధ పశువును!”"
+        reading: "'śuddha paśuvunu!'"
+        ipa: "ʃud̪d̪ʱa paʃuʋunu"
+      - text: "రాముఁడు అతి ప్రయత్నముచే నవ్వు ఆచుకొనెను."
+        reading: "rāmuḍu ati prayatnamucē navvu ācukonenu."
+        ipa: "raːmuɖu at̪i prajat̪namutʃeː naʋʋu aːtʃukonenu"
+      - text: "“గుణవతి, విద్యానిధి, వినయ సంపన్నురాలు, నా చెడు బుద్ధికి తగిన శాస్తి చేసినది”."
+        reading: "'guṇavati, vidyānidhi, vinaya sampannurālu, nā ceḍu buddhiki tagina śāsti cēsinadi'."
+        ipa: "ɡuɳaʋat̪i ʋid̪jaːnid̪ʱi ʋinaja sampannuraːlu naː tʃeɖu bud̪d̪ʱiki t̪aɡina ʃaːst̪i tʃeːsinad̪i"
+      - text: "“యేటి చేసినారు బాబూ?”"
+        reading: "'yēṭi cēsināru bābū?'"
+        ipa: "jeːʈi tʃeːsinaːru baːbuː"
+    glossary:
+      - word: "ఉత్తరము"
+        modern: "ఉత్తరం"
+        reading: "uttaram"
+        ipa: "ut̪t̪aram"
+        meaning: { en: "the letter (his wife's)" }
+      - word: "ముగించి"
+        modern: "ముగించి"
+        reading: "mugiñci"
+        ipa: "muɡiɲtʃi"
+        meaning: { en: "having finished" }
+      - word: "పశువును"
+        modern: "పశువును"
+        reading: "paśuvunu"
+        ipa: "paʃuʋunu"
+        meaning: { en: "I am a beast; పశువు (paśuvu) is an animal, a brute" }
+      - word: "అనెను"
+        modern: "అన్నాడు"
+        reading: "annāḍu"
+        ipa: "annaːɖu"
+        meaning: { en: "said" }
+        note: { en: "the bookish past" }
+      - word: "అదేటి"
+        modern: "అదేమిటి"
+        reading: "adēmiṭi"
+        ipa: "ad̪eːmiʈi"
+        meaning: { en: "what's that? why" }
+        note: { en: "a spoken form" }
+      - word: "శలవిస్తారు"
+        modern: "సెలవిస్తారు"
+        reading: "selavistāru"
+        ipa: "selaʋist̪aːru"
+        meaning: { en: "do you say: a servant's polite word for his master's speaking" }
+      - word: "శుద్ధ"
+        modern: "శుద్ధ"
+        reading: "śuddha"
+        ipa: "ʃud̪d̪ʱa"
+        meaning: { en: "pure; utter" }
+      - word: "ప్రయత్నముచే"
+        modern: "ప్రయత్నంతో"
+        reading: "prayatnantō"
+        ipa: "prajat̪nant̪oː"
+        meaning: { en: "with an effort" }
+      - word: "ఆచుకొనెను"
+        modern: "ఆపుకున్నాడు"
+        reading: "āpukunnāḍu"
+        ipa: "aːpukunnaːɖu"
+        meaning: { en: "held back" }
+        note: { en: "the bookish past" }
+      - word: "గుణవతి"
+        modern: "గుణవతి"
+        reading: "guṇavati"
+        ipa: "ɡuɳaʋat̪i"
+        meaning: { en: "a woman of good character" }
+      - word: "విద్యానిధి"
+        modern: "విద్యానిధి"
+        reading: "vidyānidhi"
+        ipa: "ʋid̪jaːnid̪ʱi"
+        meaning: { en: "a treasury of learning" }
+      - word: "వినయ సంపన్నురాలు"
+        modern: "వినయ సంపన్నురాలు"
+        reading: "vinaya sampannurālu"
+        ipa: "ʋinaja sampannuraːlu"
+        meaning: { en: "rich in modesty" }
+      - word: "శాస్తి"
+        modern: "శాస్తి"
+        reading: "śāsti"
+        ipa: "ʃaːst̪i"
+        meaning: { en: "a punishment; a lesson" }
+      - word: "చేసినది"
+        modern: "చేసింది"
+        reading: "cēsindi"
+        ipa: "tʃeːsind̪i"
+        meaning: { en: "she did" }
+        note: { en: "the bookish past" }
+      - word: "యేటి"
+        modern: "ఏమిటి"
+        reading: "ēmiṭi"
+        ipa: "eːmiʈi"
+        meaning: { en: "what" }
+        note: { en: "a spoken form" }
+      - word: "చేసినారు"
+        modern: "చేశారు"
+        reading: "cēśāru"
+        ipa: "tʃeːʃaːru"
+        meaning: { en: "did she do (respectful)" }
+    questions:
+      - id: te-0567
+        prompt: { en: "What does Gopalarao call himself after reading the letter?" }
+        options:
+          - { en: "A thief" }
+          - { en: "A king" }
+          - { en: "A beast" }
+        answer: 3
+      - id: te-0568
+        prompt: { en: "Ramudu laughs out loud." }
+        answer: false
+      - id: te-0569
+        prompt: { en: "Gopalarao says his wife has taught him the lesson he deserved." }
+        answer: true
+  - id: te-diddubatu-05
+    title: "Laughter under the cot"
+    source: "Gurujadalu (MaNaSu Foundation, 2012), page 528"
+    sentences:
+      - text: "“ఓరి వెధవా!” అని గోపాలరావు కోపముతో కుర్చీ నుండి లేచి నిలిచెను."
+        reading: "'ōri vedhavā!' ani gōpālarāvu kōpamutō kurcī nuṇḍi lēci nilicenu."
+        ipa: "oːri ʋed̪ʱaʋaː ani ɡoːpaːlaraːʋu koːpamut̪oː kurtʃiː nuɳɖi leːtʃi nilitʃenu"
+      - text: "ఊసవలే రాముడు వెలి కెగసెను."
+        reading: "ūsavalē rāmuḍu veli kegasenu."
+        ipa: "uːsaʋaleː raːmuɖu ʋeli keɡasenu"
+      - text: "అంతట మంచము క్రింద నుండి అమృత నిష్యందిని యగు కలకల నగవును కరకంకణముల హృద్యారావమును విననయ్యెను."
+        reading: "antaṭa mañcamu krinda nuṇḍi amruta niṣyandini yagu kalakala nagavunu karakaṅkaṇamula hrudyārāvamunu vinanayyenu."
+        ipa: "ant̪aʈa maɲtʃamu krind̪a nuɳɖi amrut̪a niʂjand̪ini jaɡu kalakala naɡaʋunu karakaŋkaɳamula hrud̪jaːraːʋamunu ʋinanajjenu"
+    glossary:
+      - word: "ఓరి వెధవా"
+        modern: "ఓరి వెధవా"
+        reading: "ōri vedhavā"
+        ipa: "oːri ʋed̪ʱaʋaː"
+        meaning: { en: "you rascal!" }
+      - word: "కోపముతో"
+        modern: "కోపంతో"
+        reading: "kōpantō"
+        ipa: "koːpant̪oː"
+        meaning: { en: "in anger" }
+      - word: "లేచి నిలిచెను"
+        modern: "లేచి నిలబడ్డాడు"
+        reading: "lēci nilabaḍḍāḍu"
+        ipa: "leːtʃi nilabaɖɖaːɖu"
+        meaning: { en: "got up and stood" }
+        note: { en: "the bookish past" }
+      - word: "ఊసవలే"
+        modern: "ఊసలా"
+        reading: "ūsalā"
+        ipa: "uːsalaː"
+        meaning: { en: "like a winged termite: in a flash" }
+        note: { en: "ఊస (ūsa) is the winged termite that swarms out after rain; వలె (vale), like" }
+      - word: "వెలి కెగసెను"
+        modern: "బయటికి ఎగిరాడు"
+        reading: "bayaṭiki egirāḍu"
+        ipa: "bajaʈiki eɡiraːɖu"
+        meaning: { en: "shot outside" }
+        note: { en: "bookish: వెలికి ఎగసెను (veliki egasenu), run together" }
+      - word: "అంతట"
+        modern: "అప్పుడు"
+        reading: "appuḍu"
+        ipa: "appuɖu"
+        meaning: { en: "then" }
+      - word: "మంచము క్రింద"
+        modern: "మంచం కింద"
+        reading: "mañcam kinda"
+        ipa: "maɲtʃam kind̪a"
+        meaning: { en: "from under the cot" }
+      - word: "అమృత నిష్యందిని యగు"
+        modern: "అమృతం కురిపించే"
+        reading: "amrutam kuripiñcē"
+        ipa: "amrut̪am kuripiɲtʃeː"
+        meaning: { en: "pouring nectar" }
+        note: { en: "bookish: యగు (yagu), being" }
+      - word: "నగవును"
+        modern: "నవ్వు"
+        reading: "navvu"
+        ipa: "naʋʋu"
+        meaning: { en: "laughter" }
+        note: { en: "నగవు (nagavu) is an older word for నవ్వు (navvu)" }
+      - word: "కరకంకణముల"
+        modern: "చేతి గాజుల"
+        reading: "cēti gājula"
+        ipa: "tʃeːt̪i ɡaːdʒula"
+        meaning: { en: "of the bangles on her wrists" }
+      - word: "హృద్యారావమును"
+        modern: "హృద్యారావం"
+        reading: "hrudyārāvam"
+        ipa: "hrud̪jaːraːʋam"
+        meaning: { en: "a sound that delights the heart" }
+      - word: "విననయ్యెను"
+        modern: "వినిపించింది"
+        reading: "vinipiñcindi"
+        ipa: "ʋinipiɲtʃind̪i"
+        meaning: { en: "could be heard" }
+        note: { en: "the bookish past" }
+    questions:
+      - id: te-0570
+        prompt: { en: "Gopalarao gets up from his chair in anger." }
+        answer: true
+      - id: te-0571
+        prompt: { en: "What is heard from under the cot?" }
+        options:
+          - { en: "Laughter and the jingle of bangles" }
+          - { en: "Crying" }
+          - { en: "A song" }
+        answer: 1
+      - id: te-0572
+        prompt: { en: "Who, it turns out, was under the cot all along?" }
+        options:
+          - { en: "Ramudu's mother" }
+          - { en: "Kamalini, Gopalarao's wife" }
+          - { en: "A cat" }
+        answer: 2
