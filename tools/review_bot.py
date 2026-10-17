@@ -95,7 +95,8 @@ FAILED_LABEL = "review-bot: checks failed"
 THRESHOLD = "REVIEW_AGREEMENTS_NEEDED"
 # The checks branch protection requires on `main`: the job names in
 # .github/workflows/ci.yml. Other check runs on a commit do not gate a merge.
-REQUIRED_CHECKS = ("Validate decks", "Analyse and test", "Build debug APK")
+REQUIRED_CHECKS = ("Validate decks", "Analyse and test", "Build debug APK",
+                   "Released app reads the decks")
 # How long a PR's head may go without any required check before the log
 # says so.
 CHECKS_LATE = datetime.timedelta(hours=1)

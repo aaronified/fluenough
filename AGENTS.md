@@ -306,7 +306,7 @@ large feature branch that sits open for a week.
 ## Branches, commits, pull requests
 
 `main` is protected. As a contributor you cannot push to it directly: every
-change goes through a pull request that needs one approving review, all three
+change goes through a pull request that needs one approving review, all four
 CI jobs green, and every review conversation resolved. Force pushes and branch
 deletion are refused. Work on a branch from the start. (An agent's work for
 the owner goes through a pull request too, except a change to documentation
