@@ -89,8 +89,8 @@ Releases next, by GitHub milestone (owner, 2026-10-11):
 
 | Release | What |
 |---|---|
-| 0.4.4 | Released now (owner, 2026-10-16): the card data on `decks-next` (#512–#518, #523, set cards #515), the language bar (#528), deck and review fixes (#479, #482, #488, #525, #526) and contributor fixes (#491); 0.4.3 users see deck errors until they update ("Accept the break") |
-| 0.5.0 | The deck and review pipeline, to reach B1 in the major Indian languages (owner, 2026-10-16): splits (#498); the path fix (#416, #417, #418); review pipeline (#476, #477, #471), daily questions (#519) and the question engine (#522); deck search (#527); bugs (#478, #483, #486, #487, #492, #500); minor changes (#475, #469, #227, #484, #490); backup (#470, #473) |
+| 0.4.4 | Released 2026-10-17: set cards (#515) and the first card data from `decks-next` (#512), the language bar (#528), IPA pronunciations (#533) and the IPA course (#534), Languages I know (#490), Settings as section pages (#496), deck and review fixes (#479, #482, #525, #526) and contributor fixes (#491, #500); 0.4.3 users see deck errors until they update ("Accept the break") |
+| 0.5.0 | The deck and review pipeline, to reach B1 in the major Indian languages (owner, 2026-10-16): splits (#498); the rest of the card data (#513, #514, #516, #517, #518, #523; owner, 2026-10-17); the path fix (#416, #417, #418); review pipeline (#476, #477, #471), daily questions (#519) and the question engine (#522); deck search (#527); bugs (#478, #483, #486, #487, #492); minor changes (#475, #469, #227, #484); backup (#470, #473) |
 | 0.6.0 | Profiles (#204, #97); reminders (#90) |
 | 0.7.0 | Placement v2 (#481); onboarding journey (#474); daily commitment (#485) |
 
