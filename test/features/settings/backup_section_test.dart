@@ -18,20 +18,16 @@ import '../../support/backup_fixture.dart';
 import '../../support/harness.dart';
 import 'support.dart';
 
-/// The shipped registry with restore on, as it will be once the owner has
-/// said how a restore may replace the log.
-const FeatureRegistry _restoreOn = FeatureRegistry.only(<Feature>{
-  ...Feature.available,
-  Feature.localRestore,
-});
+/// The shipped registry, in which restore is on (owner, 2026-10-17:
+/// "Logged exception").
+const FeatureRegistry _restoreOn = FeatureRegistry.shipped();
 
 void main() {
-  test('local backup ships; restore waits on the owner, and the cloud on '
-      '#112', () {
+  test('local backup and restore ship; the cloud waits on #112', () {
     expect(Feature.localBackup.issue, 470);
     expect(Feature.available, contains(Feature.localBackup));
     expect(Feature.localRestore.issue, 470);
-    expect(Feature.available, isNot(contains(Feature.localRestore)));
+    expect(Feature.available, contains(Feature.localRestore));
     expect(Feature.cloudBackup.issue, 112);
     expect(Feature.available, isNot(contains(Feature.cloudBackup)));
   });
@@ -66,18 +62,15 @@ void main() {
     }
   });
 
-  testWidgets('Back up now is live; Restore from a file and Connect a cloud '
-      'read as incoming, and tapping one only says so', (tester) async {
+  testWidgets('Back up now and Restore from a file are live; Connect a '
+      'cloud reads as incoming, and tapping it only says so', (tester) async {
     usePhone(tester);
     final semantics = tester.ensureSemantics();
     final state = await pumpScreen(tester, const YourDataPage());
     final l10n = l10nOf(tester);
     final before = state.settings.toStored();
 
-    for (final title in <String>[
-      l10n.settingsDataRestore,
-      l10n.settingsDataConnect,
-    ]) {
+    for (final title in <String>[l10n.settingsDataConnect]) {
       final node = find.bySemanticsLabel(l10n.incomingSemanticsLabel(title));
       await scrollTo(tester, node);
       expect(node, findsOneWidget, reason: title);
@@ -86,12 +79,16 @@ void main() {
       expect(find.text(l10n.incomingSnackBar), findsOneWidget, reason: title);
       await clearSnackBars(tester);
     }
-    expect(
-      find.bySemanticsLabel(
-        l10n.incomingSemanticsLabel(l10n.settingsDataBackupNow),
-      ),
-      findsNothing,
-    );
+    for (final live in <String>[
+      l10n.settingsDataBackupNow,
+      l10n.settingsDataRestore,
+    ]) {
+      expect(
+        find.bySemanticsLabel(l10n.incomingSemanticsLabel(live)),
+        findsNothing,
+        reason: live,
+      );
+    }
     expect(state.settings.toStored(), before);
     semantics.dispose();
   });
