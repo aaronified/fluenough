@@ -11,7 +11,7 @@ import 'package:fluenough/app/update_checker.dart';
 import 'package:fluenough/core/updates/apk_install.dart';
 import 'package:fluenough/core/updates/release_check.dart';
 import 'package:fluenough/features/settings/settings_fixtures.dart';
-import 'package:fluenough/features/settings/settings_page.dart';
+import 'package:fluenough/features/settings/updates_page.dart';
 import 'package:fluenough/features/settings/update_section.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/widgets/grouped_list.dart';
@@ -49,7 +49,7 @@ Future<_Fakes> _pump(
   final installer = FixedApkInstaller(events, gate: installGate);
   final state = await pumpScreen(
     tester,
-    const SettingsPage(),
+    const UpdatesPage(),
     state: AppState.test(releases: engine, links: links, installer: installer),
     themeMode: themeMode,
   );
@@ -98,25 +98,6 @@ ValueGetter<String?> _clipboard(WidgetTester tester) {
 }
 
 void main() {
-  testWidgets('Updates sits just above the version line, after backup', (
-    tester,
-  ) async {
-    await _pump(tester, const LatestRelease(AppInfo.version));
-    final l10n = l10nOf(tester);
-    final heading = find.text(l10n.settingsSectionUpdates);
-    final footer = find.text(l10n.settingsFooter(AppInfo.version));
-    await scrollTo(tester, footer);
-    expect(heading, findsOneWidget);
-    expect(
-      tester.getTopLeft(footer).dy,
-      greaterThan(tester.getBottomLeft(_autoRow(l10n)).dy),
-    );
-    expect(
-      tester.getTopLeft(heading).dy,
-      greaterThan(tester.getBottomLeft(find.text(l10n.settingsBackupHelp)).dy),
-    );
-  });
-
   testWidgets('before a check it says which version this is, and asks '
       'nothing until tapped', (tester) async {
     final fakes = await _pump(tester, const LatestRelease(AppInfo.version));
@@ -312,7 +293,7 @@ void main() {
     final state = AppState.test(releases: engine, installer: installer);
     // The dot from before this launch; no check has run since.
     state.settings.latestRelease = _newer;
-    await pumpScreen(tester, const SettingsPage(), state: state);
+    await pumpScreen(tester, const UpdatesPage(), state: state);
     final l10n = l10nOf(tester);
     await _tap(tester, find.text(l10n.settingsUpdateDownload));
     expect(engine.checks, 1);
@@ -353,7 +334,7 @@ void main() {
     final engine = FixedReleaseCheck(const LatestRelease(AppInfo.version));
     final state = AppState.test(releases: engine);
     state.settings.latestRelease = _newer;
-    await pumpScreen(tester, const SettingsPage(), state: state);
+    await pumpScreen(tester, const UpdatesPage(), state: state);
     final l10n = l10nOf(tester);
     await scrollTo(tester, find.text(l10n.settingsUpdateDownload));
     expect(find.text(l10n.settingsUpdateAvailable(_newer)), findsOneWidget);

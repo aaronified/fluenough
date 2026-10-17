@@ -10,7 +10,7 @@ import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/scheduling/replay.dart';
 import 'package:fluenough/core/scheduling/skill_fit.dart';
 import 'package:fluenough/features/settings/adjust_section.dart';
-import 'package:fluenough/features/settings/settings_page.dart';
+import 'package:fluenough/features/settings/activities_page.dart';
 import 'package:fluenough/features/stats/how_you_learn_page.dart';
 
 import '../../support/fit_learner.dart';
@@ -63,7 +63,7 @@ void main() {
     tester,
   ) async {
     usePhone(tester);
-    await pumpScreen(tester, const SettingsPage());
+    await pumpScreen(tester, const ActivitiesPage());
     final l10n = l10nOf(tester);
     await scrollTo(tester, find.text(l10n.settingsAdjustHelp));
 
@@ -87,7 +87,7 @@ void main() {
         return SkillFit.run(job);
       },
     );
-    await pumpScreen(tester, const SettingsPage(), state: state);
+    await pumpScreen(tester, const ActivitiesPage(), state: state);
     final l10n = l10nOf(tester);
     await scrollTo(tester, find.text(l10n.settingsAdjustHelp));
 
@@ -160,7 +160,7 @@ void main() {
     tester,
   ) async {
     usePhone(tester);
-    final state = await pumpScreen(tester, const SettingsPage());
+    final state = await pumpScreen(tester, const ActivitiesPage());
     final l10n = l10nOf(tester);
     await scrollTo(tester, find.text(l10n.settingsAdjustAutoOn));
 

@@ -9,7 +9,7 @@ import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_preset.dart';
 import 'package:fluenough/features/drill/drill_session.dart';
-import 'package:fluenough/features/settings/settings_page.dart';
+import 'package:fluenough/features/settings/languages_page.dart';
 import 'package:fluenough/features/today/today_page.dart';
 import 'package:fluenough/ui/widgets/deck_tile.dart';
 import 'package:fluenough/ui/widgets/grouped_list.dart';
@@ -202,7 +202,7 @@ void main() {
     usePhone(tester);
     final state = await pumpScreen(
       tester,
-      const SettingsPage(),
+      const LanguagesSettingsPage(),
       state: AppState.test(
         settings: SettingsNotifier(
           spokenLanguages: const <String>['en'],

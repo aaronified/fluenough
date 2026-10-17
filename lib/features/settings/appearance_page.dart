@@ -12,9 +12,11 @@ import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/card_text_scale.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/app_language_picker.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/segmented.dart';
+import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
 import 'settings_controls.dart';
@@ -197,6 +199,29 @@ class AppearancePage extends StatelessWidget {
                       l10n.commonPercent(math.min(_step(v), cardMax)),
                   onChanged: (v) =>
                       settings.cardTextScale = math.min(_step(v), cardMax),
+                ),
+              ),
+              const SizedBox(height: 24),
+              // The language of the app's own words (owner, 2026-10-12): one
+              // more row here, with no page of its own. Until #46 there is
+              // only English, and no setting to hold another choice.
+              _Block(
+                child: GroupedTile(
+                  leading: const Icon(Icons.translate),
+                  title: l10n.settingsAppLanguage,
+                  feature: Feature.uiLanguage,
+                  padding: const EdgeInsetsDirectional.symmetric(
+                    horizontal: 20,
+                    vertical: 12,
+                  ),
+                  trailing: AppLanguagePicker(
+                    onChanged: (locale) => showAppSnackBar(
+                      context,
+                      l10n.settingsAppLanguageChanged(
+                        AppLanguagePicker.ownName(locale),
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ],

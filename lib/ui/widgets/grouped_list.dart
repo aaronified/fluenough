@@ -170,6 +170,7 @@ class GroupedTile extends StatelessWidget {
     this.trailing,
     this.onTap,
     this.feature,
+    this.opensWhileIncoming = false,
     this.titleColor,
     this.selected = false,
     this.padding = defaultPadding,
@@ -200,6 +201,7 @@ class GroupedTile extends StatelessWidget {
   }) : subtitle = null,
        trailing = null,
        onTap = null,
+       opensWhileIncoming = false,
        selected = false,
        trailingGap = 16,
        _toggle = (value: value, onChanged: onChanged);
@@ -237,6 +239,11 @@ class GroupedTile extends StatelessWidget {
   /// The feature this row belongs to, or null for a row that is always live.
   final Feature? feature;
 
+  /// While [feature] is incoming, [onTap] still opens its page, which marks
+  /// its own controls incoming: Reminders (the Settings mockup, decision 1a).
+  /// Otherwise an incoming row only says so.
+  final bool opensWhileIncoming;
+
   /// The title's colour, and the leading icon's, such as `error` for "Delete
   /// this profile", or `onSurfaceVariant` for a skill the phone cannot do.
   final Color? titleColor;
@@ -261,7 +268,9 @@ class GroupedTile extends StatelessWidget {
       return IncomingNode(
         label: title,
         child: InkWell(
-          onTap: () => showIncomingSnackBar(context),
+          onTap: opensWhileIncoming && onTap != null
+              ? onTap
+              : () => showIncomingSnackBar(context),
           child: _row(context, incoming: true),
         ),
       );
