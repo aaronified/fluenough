@@ -248,7 +248,9 @@ units:
   - decks: ["te-calendar", "te-grammar-past", "*"]
     words: 15
     grammar: ["past"]
-  - planned: { id: "te-grammar-ordinals", grammar: "ordinals" }
+  - decks: ["te-grammar-ordinals"]
+    words: 0
+    grammar: ["ordinals"]
     listening_passages:
       - { id: "birthday-dates", text: { "en": "People say their birthdays and anniversaries" } }
     reading_passages:
