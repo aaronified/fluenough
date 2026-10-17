@@ -1,12 +1,17 @@
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
+import '../../app/reviewing.dart' show Reviewing;
 import '../../core/decks/deck_index.dart' show IndexLanguage;
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
+import '../../core/models/proposal.dart';
 import '../../core/review/deck_review.dart';
+import '../../core/review/sent_state.dart';
 import '../../core/review/review_pairs.dart';
 import '../decks/path_model.dart' show unitTitle;
 import '../decks/unreviewed_notice.dart';
+import 'proposal_card.dart' show partOf;
+import 'review_sheets.dart' show partText;
 import 'review_words.dart';
 
 /// What is waiting for review, in the reviewer's languages
@@ -18,8 +23,12 @@ import 'review_words.dart';
 /// which are reviewed apart and only on purpose (owner, 2026-10-10), and
 /// how many are not yet rated, and the sound-alike and look-alike pairs
 /// not yet confirmed, which that review checks too, since a pair names its
-/// rude word; and what the reviewer has reviewed but not sent. Read from the decks and the reviews on this
-/// phone, not kept: it changes as the reviewer reviews.
+/// rude word. Read from the decks and the reviews on this phone, not kept:
+/// it changes as the reviewer reviews.
+///
+/// What the reviewer has reviewed, sent or not, is not per language: it is
+/// the "Your reviews" group above them (#471), read by [sentSuggestionsOf]
+/// and the reviews' own `unsent`.
 
 /// What [state]'s reviewer has said about themselves (#462): the languages
 /// they know, and whether they read each one's script.
@@ -118,7 +127,6 @@ class WaitingLanguage {
     this.decks = const <WaitingDeck>[],
     this.unrated = const <WaitingCard>[],
     this.unconfirmed = const <WaitingCard>[],
-    this.unsent = const <DeckReview>[],
     this.offensive = 0,
     this.pairs = 0,
   });
@@ -153,9 +161,6 @@ class WaitingLanguage {
   /// word, or a word like one.
   bool get hasOffensiveReview => offensive > 0 || pairs > 0;
 
-  /// Its decks this reviewer has reviewed and not sent.
-  final List<DeckReview> unsent;
-
   /// Every deck waiting, in the path's units or not.
   Iterable<WaitingDeck> get allDecks =>
       units.expand((u) => u.decks).followedBy(decks);
@@ -164,11 +169,7 @@ class WaitingLanguage {
   /// may still be listed beside it, saying none of its words wait: it is
   /// opened on purpose, whether or not anything waits in it.
   bool get isEmpty =>
-      units.isEmpty &&
-      decks.isEmpty &&
-      unrated.isEmpty &&
-      unconfirmed.isEmpty &&
-      unsent.isEmpty;
+      units.isEmpty && decks.isEmpty && unrated.isEmpty && unconfirmed.isEmpty;
 }
 
 /// What waits for review in [language]. The adult content setting changes
@@ -246,10 +247,6 @@ WaitingLanguage waitingIn(AppState state, LanguageInfo language) {
     decks: others,
     unrated: unrated,
     unconfirmed: unconfirmed,
-    unsent: <DeckReview>[
-      for (final deck in state.reviewing.unsent)
-        if (deck.language == code) deck,
-    ],
     offensive: offensive,
     pairs: pairs,
   );
@@ -269,4 +266,58 @@ bool unitToReview(AppState state, List<DeckEntry> unit) {
         awaitsReview(state, deck) &&
         hasOrdinaryCards(deck),
   );
+}
+
+/// A suggestion the reviewer sent, with where it stands.
+typedef SentSuggestion = ({
+  DeckReview review,
+  DeckEntry? deck,
+  String cardId,
+  Card? card,
+  Suggestion suggestion,
+  SentState state,
+});
+
+/// Every suggestion this reviewer has sent, deck by deck in the order the
+/// decks were first reviewed, and each deck's cards in review order, with
+/// its state worked out from the deck files on the phone (#471). A deck or
+/// card gone from the phone is kept, its state not known.
+List<SentSuggestion> sentSuggestionsOf(AppState state) {
+  final code = '${state.reviewing.code ?? ''}';
+  final out = <SentSuggestion>[];
+  for (final review in state.reviewing.reviews.decks.values) {
+    if (review.sent == null) continue;
+    final deck = state.deckById(review.deckId);
+    for (final MapEntry(key: cardId, value: cardReview)
+        in review.sentCards.entries) {
+      final card = deck?.cards.where((c) => c.id == cardId).firstOrNull;
+      for (final s in cardReview.suggestions) {
+        final field = proposalFieldOf(s.part);
+        final current = card == null || field == null
+            ? null
+            : partText(card, partOf(field)) ?? '';
+        out.add((
+          review: review,
+          deck: deck,
+          cardId: cardId,
+          card: card,
+          suggestion: s,
+          state: sentStateOf(
+            suggestion: s,
+            current: current,
+            proposals: card == null || deck == null
+                ? const <Proposal>[]
+                : <Proposal>[
+                    for (final d in state.decks)
+                      if (d.language.code == deck.language.code)
+                        ...?d.deck.proposals[card.id],
+                  ],
+            code: code.isEmpty ? null : code,
+            agreementsNeeded: Reviewing.agreementsNeeded,
+          ),
+        ));
+      }
+    }
+  }
+  return out;
 }

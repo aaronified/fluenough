@@ -116,6 +116,7 @@ class SettingsNotifier extends ChangeNotifier {
   Set<String> _speechUnsupported = const <String>{};
   Set<String> _scriptGuidesSeen = const <String>{};
   Map<String, Set<String>> _collapsedLevels = const <String, Set<String>>{};
+  Set<String> _waitingOpen = const <String>{};
   Map<Skill, DateTime> _pausedUntil = const <Skill, DateTime>{};
   Map<Skill, Set<String>> _offFor = const <Skill, Set<String>>{};
   Map<String, DateTime> _factsShown = const <String, DateTime>{};
@@ -458,6 +459,19 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Whether the reviewer unfolded [language] on Waiting for review (#471).
+  /// Folded by default; what is unfolded is remembered.
+  bool isWaitingLanguageOpen(String language) =>
+      _waitingOpen.contains(language);
+
+  void setWaitingLanguageOpen(String language, bool open) {
+    if (_waitingOpen.contains(language) == open) return;
+    final next = Set<String>.of(_waitingOpen);
+    open ? next.add(language) : next.remove(language);
+    _waitingOpen = Set<String>.unmodifiable(next);
+    notifyListeners();
+  }
+
   /// Forgets what listens found, so that the next ones find out again.
   void forgetFoundSpeech() {
     if (_speechNotOnDevice.isEmpty && _speechUnsupported.isEmpty) return;
@@ -708,6 +722,7 @@ class SettingsNotifier extends ChangeNotifier {
       for (final MapEntry(:key, :value) in _collapsedLevels.entries)
         key: value.toList()..sort(),
     }),
+    'waiting_open': (_waitingOpen.toList()..sort()).join(','),
     'paused_until': jsonEncode(<String, int>{
       for (final MapEntry(:key, :value) in _pausedUntil.entries)
         key.name: value.millisecondsSinceEpoch,
@@ -900,6 +915,13 @@ class SettingsNotifier extends ChangeNotifier {
     if (pick('script_guides_seen', (t) => t) case final v?) {
       for (final code in v.split(',')) {
         if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) markScriptGuideSeen(code);
+      }
+    }
+    if (pick('waiting_open', (t) => t) case final v?) {
+      for (final code in v.split(',')) {
+        if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) {
+          setWaitingLanguageOpen(code, true);
+        }
       }
     }
     if (pick('collapsed_levels', _parseJsonMap) case final v?) {

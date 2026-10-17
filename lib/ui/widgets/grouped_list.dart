@@ -173,6 +173,7 @@ class GroupedTile extends StatelessWidget {
     this.opensWhileIncoming = false,
     this.titleColor,
     this.selected = false,
+    this.expanded,
     this.padding = defaultPadding,
     this.leadingGap = 16,
     this.trailingGap = 16,
@@ -199,6 +200,7 @@ class GroupedTile extends StatelessWidget {
     this.padding = defaultPadding,
     this.leadingGap = 16,
   }) : subtitle = null,
+       expanded = null,
        trailing = null,
        onTap = null,
        opensWhileIncoming = false,
@@ -251,6 +253,10 @@ class GroupedTile extends StatelessWidget {
   /// Draws the row in `secondaryContainer`: the chosen import source.
   final bool selected;
 
+  /// For a row that folds and unfolds what is under it, whether it is
+  /// unfolded now, which a screen reader announces; null for any other row.
+  final bool? expanded;
+
   final EdgeInsetsGeometry padding;
 
   /// Between [leading] and the text.
@@ -290,6 +296,7 @@ class GroupedTile extends StatelessWidget {
       return MergeSemantics(
         child: Semantics(
           button: true,
+          expanded: expanded,
           child: InkWell(onTap: onTap, child: _row(context)),
         ),
       );
