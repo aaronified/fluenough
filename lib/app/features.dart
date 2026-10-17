@@ -42,8 +42,8 @@ enum Feature {
   // Backing up to one file on the phone, the recent list, and the backup an
   // app update makes (#470, docs/BACKUP-FORMAT.md).
   localBackup(470),
-  // Restoring from a backup. Off until the owner decides how a restore may
-  // replace the append-only review log (#470).
+  // Restoring from a backup: replaces the append-only review log, the one
+  // logged exception to AGENTS.md rule 9 (owner, 2026-10-17, #470).
   localRestore(470),
 
   // Adding decks.
@@ -118,6 +118,7 @@ enum Feature {
     Feature.logExport,
     Feature.logImport,
     Feature.localBackup,
+    Feature.localRestore,
     Feature.importFile,
     Feature.voiceSettingsLink,
     Feature.feedbackMail,

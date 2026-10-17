@@ -22,8 +22,9 @@ import 'settings_controls.dart';
 /// download, and the copy a restore keeps of what it replaced. Each has
 /// Download, Send to cloud and Restore. The cloud waits for #112
 /// (`Feature.cloudBackup`): its rows and each backup's Send to cloud are
-/// incoming. Restore waits for the owner's answer on how it may replace the
-/// append-only review log (`Feature.localRestore`).
+/// incoming. Restore (`Feature.localRestore`) replaces the append-only
+/// review log once the learner confirms: the one logged exception to
+/// AGENTS.md rule 9 (owner, 2026-10-17).
 class BackupSection extends StatefulWidget {
   const BackupSection({super.key});
 

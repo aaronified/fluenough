@@ -880,14 +880,11 @@ void main() {
   }
 
   // Backup and restore (#470): Your data with its Recent backups, the
-  // restore sheet, and the sheet for a file from a newer Fluenough, with
-  // restore on as it will ship once the owner has answered. Bengali and
-  // Hindi progress, as in the mockup.
+  // restore sheet, and the sheet for a file from a newer Fluenough, as
+  // shipped, with restore on (owner, 2026-10-17). Bengali and Hindi
+  // progress, as in the mockup.
   group('backup and restore', () {
-    const restoreOn = FeatureRegistry.only(<Feature>{
-      ...Feature.available,
-      Feature.localRestore,
-    });
+    const restoreOn = FeatureRegistry.shipped();
     for (final scale in <double>[1.0, 1.4]) {
       for (final themeMode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
         final where = '${themeMode.name} theme, ${scale}x text';
