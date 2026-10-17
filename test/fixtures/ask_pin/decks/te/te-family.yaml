@@ -1,0 +1,168 @@
+schema: 1
+id: "te-family"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+theme: "family"
+tags: ["beginner", "unreviewed"]
+cards:
+  - ref: "te-0196"
+  - id: "te-0380"
+    target: "తల్లిదండ్రులు"
+    reading: "tallidaṇḍrulu"
+    ipa: "t̪allid̪aɳɖrulu"
+    alt_target: ["అమ్మానాన్నలు"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0381"
+    target: "నాన్న"
+    reading: "nānna"
+    ipa: "naːnna"
+    alt_target: ["నాన్నగారు", "తండ్రి"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "te-0059"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "te-0061"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "te-0181"
+  - ref: "te-0060"
+  - ref: "te-0182"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0382"
+    target: "అన్నదమ్ములు"
+    reading: "annadammulu"
+    ipa: "annad̪ammulu"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0383"
+    target: "కొడుకు"
+    reading: "koḍuku"
+    ipa: "koɖuku"
+    pos: "noun"
+  - id: "te-0384"
+    target: "కూతురు"
+    reading: "kūturu"
+    ipa: "kuːt̪uru"
+    alt_target: ["కుమార్తె"]
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0385"
+    target: "భర్త"
+    reading: "bharta"
+    ipa: "bʱart̪a"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0386"
+    target: "భార్య"
+    reading: "bhārya"
+    ipa: "bʱaːrja"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0387"
+    target: "పిల్లలు"
+    reading: "pillalu"
+    ipa: "pillalu"
+    pos: "noun"
+  - id: "te-0388"
+    target: "తాత"
+    reading: "tāta"
+    ipa: "t̪aːt̪a"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0389"
+    target: "నానమ్మ"
+    reading: "nānamma"
+    ipa: "naːnamma"
+    pos: "noun"
+  - id: "te-0390"
+    target: "అమ్మమ్మ"
+    reading: "ammamma"
+    ipa: "ammamma"
+    pos: "noun"
+  - ref: "te-0187"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0391"
+    target: "పెదనాన్న"
+    reading: "pedanānna"
+    ipa: "ped̪anaːnna"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0392"
+    target: "మామయ్య"
+    reading: "māmayya"
+    ipa: "maːmajja"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - ref: "te-0062"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0393"
+    target: "పిన్ని"
+    reading: "pinni"
+    ipa: "pinni"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0394"
+    target: "మామగారు"
+    reading: "māmagāru"
+    ipa: "maːmaɡaːru"
+    pos: "noun"
+  - id: "te-0395"
+    target: "అత్తగారు"
+    reading: "attagāru"
+    ipa: "at̪t̪aɡaːru"
+    pos: "noun"
+  - id: "te-0396"
+    target: "బంధువు"
+    reading: "bandhuvu"
+    ipa: "band̪ʱuʋu"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0397"
+    target: "నాకు ఇద్దరు తమ్ముళ్ళు ఉన్నారు."
+    reading: "nāku iddaru tammuḷḷu unnāru."
+    ipa: "naːku id̪d̪aru t̪ammuɭɭu unnaːru"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "ఇద్దరు", base: "ఇద్దరు", reading: "iddaru" }
+      - { word: "తమ్ముళ్ళు", ref: "te-0181" }
+      - { word: "ఉన్నారు", ref: "te-0633" }
+  - id: "te-0398"
+    target: "మీకు అన్నదమ్ములు ఉన్నారా?"
+    reading: "mīku annadammulu unnārā?"
+    ipa: "miːku annad̪ammulu unnaːraː"
+    pos: "phrase"
+    bases:
+      - { word: "మీకు", ref: "te-0136" }
+      - { word: "ఉన్నారా", ref: "te-0633" }
+  - id: "te-0399"
+    target: "నాకు పెళ్ళైంది."
+    reading: "nāku peḷḷaindi."
+    ipa: "naːku peɭɭaind̪i"
+    alt_target: ["నాకు పెళ్లయింది.", "నాకు పెళ్ళయింది."]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "పెళ్ళైంది", base: "పెళ్ళి", reading: "peḷḷi" }

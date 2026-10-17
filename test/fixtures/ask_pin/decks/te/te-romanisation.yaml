@@ -1,0 +1,41 @@
+# How Telugu readings are written, and the spellings a learner may type for
+# the same sound (#47). See "Romanisation" in docs/DECK-FORMAT.md.
+schema: 1
+kind: romanisation
+id: te-romanisation
+language: te
+scheme: "Based on ISO 15919's letters, spelled as said, and departing from the standard where a learner is better served (ADR-0025; the README lists the departures): ā ī ū for the long vowels, and e and ē, o and ō for the short and the long e and o (nēnu, kōṭa); ai and au; ṭ ṭh ḍ ḍh ṇ for the retroflex row and t th d dh n for the row on the teeth; ḷ for ళ; c for చ and ch for ఛ; ś for శ and ṣ for ష; ñ for ఞ; r for ఱ; ru for ఋ; the sunna ం as the nasal said (aṇḍu, kālam), and the half nasal ఁ, no longer said, left out. A final u is kept (unnāru). A typed answer needs none of the marks."
+standard: "ISO 15919"
+# How a reading's letters are typed, read from the left, longest first:
+# each reading is spelled so before an answer is compared with it.
+typed:
+  - ["ṅkh", "nkh"]
+  - ["ṅgh", "ngh"]
+  - ["ṅk", "nk"]
+  - ["ṅg", "ng"]
+  - ["ṅ", "ng"]
+  - ["ñch", "nchh"]
+  - ["ñc", "nch"]
+  - ["ñjh", "njh"]
+  - ["ñj", "nj"]
+  - ["ñ", "ny"]
+  - ["cch", "chh"]
+  - ["cc", "cch"]
+  - ["ch", "chh"]
+  - ["c", "ch"]
+  - ["ś", "sh"]
+  - ["ṣ", "sh"]
+  - ["m̐", "n"]
+  - ["ṁ", "n"]
+  - ["k͟h", "kh"]
+equivalents:
+  - ["a", "aa"]
+  - ["i", "ee", "ii"]
+  - ["u", "oo", "uu"]
+  - ["e", "ae"]
+  - ["v", "w"]
+  - ["sh", "s"]
+  - ["t", "th"]
+  - ["d", "dh"]
+  - ["cch", "chch"]
+  - ["ph", "f"]

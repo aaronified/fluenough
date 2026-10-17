@@ -1,0 +1,49 @@
+# How the IPA works: the recurring ideas behind its symbols, shown before
+# the first card and from a deck's Tips. See ADR-0016 and
+# docs/DECK-FORMAT.md. Arranged after the IPA chart, 2020 revision, and the
+# Handbook of the International Phonetic Association (1999).
+schema: 1
+kind: "script"
+part: "core"
+id: "ipa-script"
+language: "ipa"
+features:
+  - id: "one-sound"
+    example: "ʃ"
+    letters: ["ʃ", "j", "c", "x", "ŋ"]
+  - id: "slashes"
+    example: "/ /"
+    letters: ["/ /", "[ ]"]
+  - id: "rows"
+    example: "p"
+    letters: ["p", "m", "r", "ɾ", "f", "ɬ", "ɹ", "l"]
+  - id: "columns"
+    example: "k"
+    letters: ["p", "t", "ʈ", "c", "k", "q", "ʔ"]
+  - id: "voicing"
+    example: "z"
+    letters: ["p", "b", "f", "v", "s", "z", "k", "ɡ"]
+  - id: "retroflex-hook"
+    example: "ʈ"
+    letters: ["ʈ", "ɖ", "ɳ", "ʂ", "ʐ", "ɭ", "ɻ", "ɽ"]
+  - id: "turned"
+    example: "ə"
+    letters: ["ə", "ɐ", "ɹ", "ɯ", "ʌ", "ʁ", "ɥ", "ʎ"]
+  - id: "small-capitals"
+    example: "ɢ"
+    letters: ["ɢ", "ɴ", "ʀ", "ʟ", "ʙ", "ɪ", "ʏ"]
+  - id: "top-hook"
+    example: "ɓ"
+    letters: ["ɓ", "ɗ", "ʄ", "ɠ", "ʛ"]
+  - id: "superscripts"
+    example: "kʰ"
+    letters: ["ʰ", "ʱ", "ʲ", "ʷ", "ⁿ", "ˡ"]
+  - id: "marks"
+    example: "ã"
+    letters: ["t̪", "ã", "n̩", "n̥"]
+  - id: "between"
+    example: "aː"
+    letters: ["aː", "iː", "ˈ", "ˌ", "."]
+  - id: "vowel-chart"
+    example: "i"
+    letters: ["i", "y", "u", "e", "o", "ə", "a", "ɑ"]
