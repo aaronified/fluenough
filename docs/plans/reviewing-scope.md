@@ -1,6 +1,6 @@
 # Plan: what reviewing covers, and how reviewers change cards
 
-Written 2026-10-11, for 0.6.0 (moved from 0.5.0 by the owner). Tracks #476 and #477.
+Written 2026-10-11, for 0.5.0 (owner, 2026-10-16: "we must get the deck and review pipeline ready in this week's 0.5.0 build"). Tracks #476 and #477.
 
 ## What the owner asked
 
