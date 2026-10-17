@@ -387,22 +387,18 @@ void main() {
   testWidgets('search finds units in the bar\'s course alone, by name, '
       'deck or language, and opens them (#527, #528)', (tester) async {
     usePhone(tester);
-    final state = await pumpDecks(
+    await pumpDecks(
       tester,
-      state: await teluguLearner(),
+      state: await teluguLearner(decks: frozenDecks),
       page: const DecksPage(planOf: PathFixtures.planOf),
     );
     final l10n = l10nOf(tester);
-    expect(state.shownLanguage, 'te');
 
     // Only Telugu's Family, though other courses have one too.
     await search(tester, 'family');
     expect(find.text('Family'), findsOneWidget);
     expect(find.textContaining('Telugu · A1 · '), findsOneWidget);
 
-    // A Hindi deck is not found while the bar shows Telugu.
-    await search(tester, 'parmesh');
-    expect(find.text(l10n.decksEmptySearch), findsOneWidget);
     await search(tester, 'telugu health');
     expect(find.text('Health'), findsOneWidget);
     expect(find.text(l10n.pathComing), findsOneWidget);
@@ -419,6 +415,20 @@ void main() {
     );
     await tester.pageBack();
     await tester.pumpAndSettle();
+  });
+
+  testWidgets('search looks in the course of the language the bar shows, '
+      'and clearing it shows the path again (#528)', (tester) async {
+    usePhone(tester);
+    final state = await pumpDecks(tester, state: await teluguLearner());
+    final l10n = l10nOf(tester);
+    expect(state.shownLanguage, 'te');
+    await search(tester, 'family');
+    expect(find.textContaining('Telugu · A1 · '), findsOneWidget);
+
+    // A Hindi deck is not found while the bar shows Telugu.
+    await search(tester, 'parmesh');
+    expect(find.text(l10n.decksEmptySearch), findsOneWidget);
 
     // With the bar on Hindi, the search looks in Hindi's course.
     state.showLanguage('hi');
