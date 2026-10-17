@@ -3,11 +3,13 @@ import 'package:drift/drift.dart';
 import '../models/drill_mode.dart';
 import '../models/leech_action.dart';
 import 'database.dart';
+import 'restore_record.dart';
 import 'tables/card_states.dart';
 import 'tables/cards.dart';
 import 'tables/decks.dart';
 import 'tables/fsrs_parameters.dart';
 import 'tables/leech_actions.dart';
+import 'tables/restores.dart';
 import 'tables/reviews.dart';
 import 'tables/settings.dart';
 
@@ -156,4 +158,30 @@ class FsrsParametersDao extends DatabaseAccessor<AppDatabase>
   /// Adds [row], or replaces the one for its language and mode.
   Future<void> put(FsrsParametersCompanion row) =>
       into(fsrsParameters).insertOnConflictUpdate(row);
+}
+
+/// The restores that replaced the review log (#470). It can only read
+/// them: a restore is kept by [AppDatabase.replaceLog], in the transaction
+/// that replaces the log, and the schema refuses any change to one.
+@DriftAccessor(tables: [Restores])
+class RestoresDao extends DatabaseAccessor<AppDatabase>
+    with _$RestoresDaoMixin {
+  RestoresDao(super.attachedDatabase);
+
+  /// Every restore, oldest first.
+  Future<List<RestoreRecord>> all() async => <RestoreRecord>[
+    for (final row in await (select(
+      restores,
+    )..orderBy([(r) => OrderingTerm.asc(r.id)])).get())
+      RestoreRecord(
+        at: row.ts,
+        backupCreatedAt: row.backupCreatedAt,
+        backupKind: row.backupKind,
+        backupAppVersion: row.backupAppVersion,
+        fromFile: row.fromFile,
+        keptCopy: row.keptCopy,
+        reviewsBefore: row.reviewsBefore,
+        reviewsAfter: row.reviewsAfter,
+      ),
+  ];
 }

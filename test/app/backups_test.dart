@@ -26,6 +26,7 @@ class _FailingProgress extends MemoryProgress {
     List<LeechAction> leechActions, {
     Map<SkillKey, FittedParameters> fitted =
         const <SkillKey, FittedParameters>{},
+    required RestoreRecord restore,
   }) => throw StateError('disk full');
 }
 
@@ -81,7 +82,7 @@ void main() {
       expect(backup.settings, a.state.settings.toStored());
       expect(backup.settings['rater_code'], 'FL-7K3M-Q9TD-6');
       expect(backup.appVersion, isNotEmpty);
-      expect(backup.schemaVersion, 7);
+      expect(backup.schemaVersion, 8);
       final back = AppBackup.decode(backup.encode());
       expect(back.settings, a.state.settings.toStored());
       expect(back.reviews.single.key.cardId, 'hi-0231');
@@ -217,6 +218,14 @@ void main() {
             source.reviews,
             source.leechActions,
             fitted: source.fitted,
+            restore: RestoreRecord(
+              at: _now,
+              backupCreatedAt: source.createdAt,
+              backupKind: source.kind.name,
+              backupAppVersion: source.appVersion,
+              fromFile: true,
+              keptCopy: 'reference',
+            ),
           );
           await other.state.backups.restore(backup, fromFile: true);
           final progress = other.state.progress;

@@ -150,14 +150,27 @@ class Backups extends ChangeNotifier {
   /// A [fromFile] backup is kept as it was read. Then the languages it
   /// lists download again.
   ///
+  /// Called only once the learner has confirmed. Replacing the log is the
+  /// one exception to it being append-only (AGENTS.md rule 9; owner,
+  /// 2026-10-17: "Logged exception"), so the database keeps a record of
+  /// it: when, from which backup, and the name of the copy kept first.
+  ///
   /// Throws, with the app as it was, if the copy cannot be kept or the log
   /// cannot be replaced.
   Future<void> restore(AppBackup backup, {required bool fromFile}) async {
-    await keep(BackupKind.restore);
+    final copy = await keep(BackupKind.restore);
     await progress.replaceAll(
       backup.reviews,
       backup.leechActions,
       fitted: backup.fitted,
+      restore: RestoreRecord(
+        at: _clock(),
+        backupCreatedAt: backup.createdAt,
+        backupKind: backup.kind.name,
+        backupAppVersion: backup.appVersion,
+        fromFile: fromFile,
+        keptCopy: copy.id,
+      ),
     );
     final defaults = SettingsNotifier();
     final stored = <String, String>{...defaults.toStored(), ...backup.settings};
