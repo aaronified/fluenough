@@ -1,3 +1,5 @@
+import '../core/decks/ipa_course.dart';
+
 /// The avatar shapes a profile can pick, drawn by `ProfileAvatar`.
 enum AvatarShape { cookie, clover, flower, sunny }
 
@@ -51,8 +53,11 @@ class Profile {
 
   bool get isLocked => pin != null;
 
-  /// Whether this profile learns the language with BCP-47 [code].
-  bool learns(String code) => languages == null || languages!.contains(code);
+  /// Whether this profile learns the language with BCP-47 [code]. The IPA
+  /// course is learned only when chosen: a profile that learns "every
+  /// language" does not have it (ADR-0041).
+  bool learns(String code) =>
+      languages == null ? code != ipaLanguageCode : languages!.contains(code);
 
   Profile copyWith({
     String? name,

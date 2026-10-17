@@ -2078,8 +2078,11 @@ class Compatibility(unittest.TestCase):
         # A language that has written its B1 plan prints its info lines by
         # design (a course's coverage, the plan's sizes): leave those files
         # out, and check the decks that are still today's.
+        # So does a course written as a core and layers, which has no plan
+        # when it is no language taught to a level, as the IPA course.
         planned = {p.parent.name for p in (validate_decks.ROOT / "decks").glob("*/*-path.yaml")
-                   if "milestone:" in p.read_text(encoding="utf-8")}
+                   if "milestone:" in p.read_text(encoding="utf-8")
+                   or any(p.parent.glob("*/*.yaml"))}
         kept: list[str] = []
         skipping = False
         for x in lines:

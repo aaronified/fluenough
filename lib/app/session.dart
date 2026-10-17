@@ -16,6 +16,7 @@ class DrillRequest {
     this.lesson = false,
     this.language,
     this.limit,
+    this.cardIds,
   });
 
   /// Today's review: every deck the current profile learns, in every skill
@@ -75,9 +76,18 @@ class DrillRequest {
   const DrillRequest.reviseSkill(Skill skill)
     : this(revise: true, skill: skill);
 
+  /// The sounds of a word (ADR-0041): the IPA course's cards [cardIds], in
+  /// their order, each taught, checked and practised as a lesson does. Every
+  /// answer is recorded in the IPA course and scheduled with the rest of it.
+  const DrillRequest.sounds(Set<String> cardIds) : this(cardIds: cardIds);
+
   /// The decks to draw from, or null for every deck the current profile
   /// learns.
   final Set<String>? deckIds;
+
+  /// The IPA cards of a "sounds of this word" session, by id and in order;
+  /// null for any other session.
+  final Set<String>? cardIds;
 
   /// One skill only, or null for every skill the learner has switched on.
   final Skill? skill;
@@ -127,7 +137,7 @@ class DrillRequest {
       'skills: ${skills?.map((s) => s.name)}, '
       'tags: $tags, newOnly: $newOnly, numbers: $numbers, '
       'untaught: $untaught, revise: $revise, lesson: $lesson, '
-      'language: $language, limit: $limit)';
+      'language: $language, limit: $limit, cards: $cardIds)';
 }
 
 /// One answer in a finished session, for the summary.

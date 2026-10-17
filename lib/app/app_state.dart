@@ -37,6 +37,7 @@ import '../core/decks/deck_index.dart';
 import 'app_log.dart';
 import 'card_media.dart';
 import 'card_sets.dart';
+import '../core/decks/ipa_course.dart';
 import 'deck_catalog.dart';
 import 'deck_downloads.dart';
 import 'deck_import.dart';
@@ -471,7 +472,61 @@ class AppState extends ChangeNotifier {
   Object? get loadError => _loadError;
 
   /// Every deck that parsed, in path order. Empty until loaded.
-  List<DeckEntry> get decks => _catalog.decks;
+  List<DeckEntry> get decks => _view.decks;
+
+  /// The catalog as the learner has it: the IPA course's decks cut to the
+  /// cards of their [ipaScope] for the languages they learn, so that the
+  /// counts, lessons, finished decks and Inspect read one list
+  /// (ADR-0041).
+  Catalog get _view {
+    // Nothing to cut where no IPA deck is on the phone, the usual case.
+    if (!_catalog.hasIpa) return _catalog;
+    final scope = settings.ipaScope;
+    final learned = <String>{
+      for (final code in learningCodes)
+        if (code != ipaLanguageCode) code,
+    };
+    // A card the learner has answered stays in their course, whatever its
+    // tags: it is scheduled (ADR-0041). Read again only when the log grows.
+    final answered = scope == IpaScope.whole ? 0 : progress.log.length;
+    if (!identical(_viewOf, _catalog) ||
+        _viewScope != scope ||
+        !setEquals(_viewLearned, learned) ||
+        _viewAnswered != answered ||
+        _viewPinned != _ipaPinVersion) {
+      _viewOf = _catalog;
+      _viewScope = scope;
+      _viewLearned = learned;
+      _viewAnswered = answered;
+      _viewPinned = _ipaPinVersion;
+      _scoped = _catalog.forIpa(
+        scope,
+        learned,
+        kept: <String>{
+          ..._ipaPinned,
+          if (scope != IpaScope.whole)
+            for (final k in progress.states.keys)
+              if (k.cardId.startsWith('$ipaLanguageCode-')) k.cardId,
+        },
+      );
+    }
+    return _scoped;
+  }
+
+  Catalog? _viewOf;
+  IpaScope _viewScope = IpaScope.mine;
+  Set<String> _viewLearned = const <String>{};
+  int _viewAnswered = -1;
+  int _viewPinned = -1;
+  Catalog _scoped = Catalog.empty;
+
+  /// Which of the IPA course the learner has (ADR-0041).
+  IpaScope get ipaScope => settings.ipaScope;
+
+  /// The IPA cards of the "sounds of this word" session under way, which the
+  /// learner's course has while they are practised ([DrillRequest.sounds]).
+  final Set<String> _ipaPinned = <String>{};
+  int _ipaPinVersion = 0;
 
   /// Every deck file that did not parse, for the "couldn't read" rows.
   List<BrokenDeck> get brokenDecks => _catalog.broken;
@@ -537,7 +592,7 @@ class AppState extends ChangeNotifier {
     return today;
   }
 
-  DeckEntry? deckById(String id) => _catalog.byId(id);
+  DeckEntry? deckById(String id) => _view.byId(id);
 
   /// The path of [entry]'s course (ADR-0013), or null if it has none.
   CoursePath? pathOf(DeckEntry entry) => _catalog.pathOf(entry);
@@ -549,7 +604,7 @@ class AppState extends ChangeNotifier {
       _catalog.languagePaths[language];
 
   /// The deck a card came from.
-  DeckEntry? deckOf(Card card) => _catalog.byId(card.deckId);
+  DeckEntry? deckOf(Card card) => _view.byId(card.deckId);
 
   /// The decks in the languages the current profile learns, and of those,
   /// only the [shownLanguage]'s while one is chosen (#461): what Today
@@ -588,7 +643,7 @@ class AppState extends ChangeNotifier {
   }
 
   /// Every language the catalog teaches, one per code.
-  List<LanguageInfo> get languages => _catalog.languages;
+  List<LanguageInfo> get languages => _view.languages;
 
   /// The languages the language bar at the top of Today, Decks and
   /// Progress offers (#461, #528): those the profile learns that have
@@ -1037,12 +1092,16 @@ class AppState extends ChangeNotifier {
   final Map<String, bool> _voices = <String, bool>{};
 
   /// Whether the phone has a voice for [language], by its `ttsTag`.
-  VoiceStatus voiceStatus(LanguageInfo language) =>
-      switch (_voices[language.ttsTag]) {
-        true => VoiceStatus.available,
-        false => VoiceStatus.missing,
-        null => VoiceStatus.checking,
-      };
+  ///
+  /// The IPA has none, and nothing to check: its examples are said in their
+  /// own languages' voices (ADR-0041).
+  VoiceStatus voiceStatus(LanguageInfo language) => language.isIpa
+      ? VoiceStatus.missing
+      : switch (_voices[language.ttsTag]) {
+          true => VoiceStatus.available,
+          false => VoiceStatus.missing,
+          null => VoiceStatus.checking,
+        };
 
   bool hasVoice(LanguageInfo language) =>
       voiceStatus(language) == VoiceStatus.available;
@@ -1055,10 +1114,35 @@ class AppState extends ChangeNotifier {
   bool canSpeak(LanguageInfo language) =>
       settings.soundOn && hasVoice(language);
 
+  /// Every language the app can say a word in: those the decks teach and
+  /// those they teach from, one per code, the IPA, which has no voice, left
+  /// out. An IPA card's examples are said in these (ADR-0041).
+  List<LanguageInfo> get voiceLanguages {
+    final found = <String, LanguageInfo>{};
+    for (final entry in decks) {
+      if (entry.language.script != 'ipa') {
+        found.putIfAbsent(entry.language.code, () => entry.language);
+      }
+    }
+    for (final entry in decks) {
+      found.putIfAbsent(entry.deck.native.code, () => entry.deck.native);
+    }
+    return List<LanguageInfo>.unmodifiable(found.values);
+  }
+
+  /// The language with [code], as the decks name it, or null when none does:
+  /// what an example in that language is said in.
+  LanguageInfo? languageByCode(String code) {
+    for (final language in voiceLanguages) {
+      if (language.code == code) return language;
+    }
+    return null;
+  }
+
   /// Asks the engine about every catalog language again, for when the
   /// learner has been off to install a voice.
   Future<void> refreshVoices() async {
-    for (final language in languages) {
+    for (final language in voiceLanguages) {
       final tag = language.ttsTag;
       try {
         _voices[tag] = await _tts.isLanguageAvailable(tag);
@@ -1732,7 +1816,13 @@ class AppState extends ChangeNotifier {
     ),
     hearsForm: (item) => hearsForm(item.card),
     recallsFirst: (item) => recallsFirst(item.card, item.mode),
+    typed: (item) => isTyped(item.card),
   );
+
+  /// Whether an answer about [card] can be typed: false for the IPA
+  /// (`typed: false` in its language block), whose production is chosen
+  /// (ADR-0041).
+  bool isTyped(Card card) => deckOf(card)?.language.typed ?? true;
 
   /// The ability layer (ADR-0034), rebuilt when the log grows.
   Abilities get abilities {
@@ -1927,11 +2017,110 @@ class AppState extends ChangeNotifier {
         ),
         straightToQuestion: (card) =>
             card.rule != null && lesson.members.contains(card.id),
+        typed: isTyped,
       ))
         item.ask == Ask.hearMeaning && hearsForm(item.card)
             ? item.askedAs(Ask.hearAndChoose)
             : item,
     ];
+  }
+
+  // ---------------------------------------------------------------------------
+  // The sounds of a word (ADR-0041)
+
+  /// Whether the current profile learns the IPA course.
+  bool get learnsIpa => currentProfile.learns(ipaLanguageCode);
+
+  /// Adds the IPA course to the languages the current profile learns, with
+  /// the scope it has. A profile that learned every language, having chosen
+  /// none, keeps learning them: they are named, and the IPA with them.
+  void addIpaCourse() {
+    final codes = learningCodes.isEmpty
+        ? <String>[
+            for (final language in languages)
+              if (!language.isIpa) language.code,
+          ]
+        : learningCodes.toList();
+    if (!codes.contains(ipaLanguageCode)) codes.add(ipaLanguageCode);
+    setLearningLanguages(codes);
+  }
+
+  /// The IPA cards whose symbols occur in the IPA of [card], in the
+  /// course's order, as the course is taught from [courseNative]'s language,
+  /// or an empty list for a card with no IPA or while the IPA decks are not
+  /// on the phone. Of the whole chart, whichever scope the learner has: the
+  /// symbols of a word are what the word needs.
+  List<Card> soundsOfWord(Card card) {
+    final ipa = card.ipa;
+    if (ipa == null) return const <Card>[];
+    final native = courseNative(ipaLanguageCode);
+    final seen = <String>{};
+    final cards = <Card>[
+      for (final entry in _catalog.decks)
+        if (entry.language.isIpa &&
+            (native == null || entry.deck.native.code == native))
+          for (final c in entry.cards)
+            if (seen.add(c.id)) c,
+    ];
+    // A course taught from no language the learner speaks still has cards.
+    if (cards.isEmpty && native != null) {
+      for (final entry in _catalog.decks) {
+        if (entry.language.isIpa) {
+          cards.addAll(entry.cards.where((c) => seen.add(c.id)));
+        }
+      }
+    }
+    return ipaCardsFor(ipa, cards);
+  }
+
+  /// The session of "The sounds of this word" for [card], or null where
+  /// there are none to practise: its IPA cards, recorded in the IPA course.
+  DrillRequest? soundsOfWordRequest(Card card) {
+    final cards = soundsOfWord(card);
+    if (cards.isEmpty) return null;
+    return DrillRequest.sounds(<String>{for (final c in cards) c.id});
+  }
+
+  /// The learner's course has [ids], IPA cards, while they are practised,
+  /// whatever its scope ([DrillRequest.sounds]); [unpinIpaCards] ends it.
+  /// An answered card stays in the course of itself.
+  void pinIpaCards(Set<String> ids) {
+    _ipaPinned
+      ..clear()
+      ..addAll(ids);
+    _ipaPinVersion++;
+  }
+
+  void unpinIpaCards() {
+    _ipaPinned.clear();
+    _ipaPinVersion++;
+  }
+
+  /// The items of the sounds session [request] asks for: each card taught,
+  /// checked and practised as a lesson does (ADR-0024), in the course's
+  /// order, every one of them, whatever it has been taught before.
+  List<SessionItem> soundsItems(DrillRequest request) {
+    final ids = request.cardIds ?? const <String>{};
+    pinIpaCards(ids);
+    final byId = <String, Card>{};
+    final native = courseNative(ipaLanguageCode);
+    for (final entry in decks) {
+      if (!entry.language.isIpa) continue;
+      for (final card in entry.cards) {
+        if (!ids.contains(card.id)) continue;
+        // One card, taught from the course's language where there is one.
+        if (!byId.containsKey(card.id) || entry.deck.native.code == native) {
+          byId[card.id] = card;
+        }
+      }
+    }
+    final modesOf = drillableModesNow();
+    return lessonPlan(
+      <Card>[for (final id in ids) ?byId[id]],
+      modesOf: modesOf,
+      canChoose: canChoose,
+      typed: isTyped,
+    );
   }
 
   /// The sets of the courses [picked] is taught in.

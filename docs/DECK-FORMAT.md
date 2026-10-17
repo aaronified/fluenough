@@ -124,9 +124,10 @@ Common to every kind.
 | `code` | yes | BCP-47 primary subtag, e.g. `es`, `ja`, `pt`. This is the tag voices and the app key on. |
 | `iso639_3` | yes | Three-letter ISO 639-3 code, e.g. `spa`, `jpn`, `hin`, `eng`. It names the language unambiguously, including languages with no two-letter code, and sits beside `code` rather than replacing it. |
 | `name` | yes | English name of the language. |
-| `script` | yes | A lowercase script name. The validator knows `latin`, `cyrillic`, `greek`, `arabic`, `hebrew`, `devanagari`, `bengali`, `gujarati`, `gurmukhi`, `odia`, `telugu`, `tamil`, `kannada`, `malayalam`, `sinhala`, `kana`, `han`, `hangul`, `thai` and `other`. Any other name is accepted with a warning ([ADR-0009](adr/0009-scripts-are-open.md)). Every script but `latin`, `cyrillic` and `greek` expects a `reading` on each card. |
+| `script` | yes | A lowercase script name. The validator knows `latin`, `cyrillic`, `greek`, `arabic`, `hebrew`, `devanagari`, `bengali`, `gujarati`, `gurmukhi`, `odia`, `telugu`, `tamil`, `kannada`, `malayalam`, `sinhala`, `kana`, `han`, `hangul`, `thai`, `ipa` and `other`. Any other name is accepted with a warning ([ADR-0009](adr/0009-scripts-are-open.md)). Every script but `latin`, `cyrillic`, `greek` and `ipa` expects a `reading` on each card. `ipa` is for [the IPA course](#the-ipa-course) alone. |
 | `tts` | no | BCP-47 tag handed to the TTS engine, e.g. `es-ES`, `pt-BR`. Defaults to `code`. Omitting it on a language with major regional variation is a mistake. |
 | `rtl` | no | `true` for right-to-left scripts. Defaults to `false`. |
+| `typed` | no | `false` for a language whose answers cannot be typed: its production is asked by choosing the word among others, in reviews, in lessons and in the check of a hard word, never by typing. Defaults to `true`. Only [the IPA course](#the-ipa-course) is `false`. |
 | `icon` | no | What the language's chip shows: the first letter of its own name, as `"हि"` for Hindi or `"Es"` for Spanish ([ADR-0027](adr/0027-language-icons.md)). Give the same one on every deck of the language; the validator checks that they agree. Without one, a chip shows the first letter of the language's first card. |
 
 ### `native`
@@ -576,7 +577,7 @@ cards:
 | `audio_credit` | with a shipped `audio` | `{ source, license, credit }`: the file it was made from, its licence and its speaker. |
 | `image` | no | The card's own image, shown where `picture` shows and in its place: `"decks/hi/images/hi-0001.webp"`, a file shipped with the deck, with its `image_credit`. See [A card's own image](#a-cards-own-image-image). |
 | `image_credit` | with `image` | `{ source, license, credit }`: the file it was made from, its licence, and whom to credit. |
-| `examples` | no | List of `{target, native}` sentence pairs; a word card has at least 2 once its language is filled in (see [Examples](#examples)). An example may also give its `reading`, `ipa`, [`bases`](#base-words-bases) and `source`. |
+| `examples` | no | List of `{target, native}` sentence pairs; a word card has at least 2 once its language is filled in (see [Examples](#examples)). An example may also give its `reading`, `ipa`, [`bases`](#base-words-bases), `source`, and, for [the IPA course](#the-ipa-course), its `language` and whether it `sounds`. |
 | `phrasebook` | no | `true` on a survival phrase taught whole, first: see [The phrasebook](#the-phrasebook). Leave it out otherwise. |
 | `bases` | no | The base word of each inflected or derived word in the target and its examples: see [Base words](#base-words-bases). `"self"` on a word that is its own root ([Card data](#root-word-synonyms-and-antonyms)). |
 | `register` | no | How formal or rude the word is: `"formal"`, `"neutral"`, `"informal"`, `"slang"` or `"offensive"`. See [Register, forms, collocations and senses](#register-forms-collocations-and-senses). |
@@ -1095,6 +1096,21 @@ Built (#511). Owner (#506): a word card has "At least 2" examples.
       examples:
         "घर बड़ा है।": "The house is big."
         "मेरा घर यहाँ है।": "My house is here."
+  ```
+- **`language` and `sounds`, for the IPA.** An example is in the card's
+  language unless it gives its own `language`, a language code such as
+  `"en"`: an IPA card takes its examples from several languages, and the
+  app says each in that language's voice. `sounds` is a boolean, `true`
+  when left out: `false` says that the card's letter is *not* said with the
+  card's sound in this word, and what it is said as goes in the example's
+  translation. Both are on the core's example, as a single-file deck's
+  example writes them. See [the IPA course](#the-ipa-course).
+
+  ```yaml
+  # the card of ɒ, in a core
+  examples:
+    - { target: "hot", language: "en", ipa: "hɒt" }                   # sounds
+    - { target: "go", language: "en", sounds: false, ipa: "ɡəʊ" }      # does not
   ```
 - **At least 2 on a word card** (a word card as in [Notes](#notes)): fewer
   is a validator **error once the language is filled in**, and nothing is
@@ -2000,6 +2016,44 @@ and when.
   three words or more is produced that way too.
 - **Grammar decks are not themes.** A course's path places them beside the
   theme decks they go with.
+
+## The IPA course
+
+The IPA is taught like a language
+([ADR-0041](adr/0041-the-ipa-course.md)), as a core and layers in
+`decks/ipa/`, and offered in the list of languages. Its language block is
+
+```yaml
+language: { code: "ipa", iso639_3: "zxx", name: "IPA", script: "ipa", typed: false, icon: "ə" }
+```
+
+- **Cards.** A card is a symbol: its `target` is the symbol (`ɒ`, `pʰ`,
+  `ː`), its meaning says what it is. The ids are `ipa-0001` on, permanent
+  like any other. The language has no `tts` tag and its cards no `reading`:
+  it is not spoken, and its examples are said in their own languages.
+- **Examples, by one rule.** Every symbol has at least two examples, one
+  where a letter is said with the symbol's sound and one where the same
+  letter is not (`sounds: false`, saying in its translation what it is said
+  as instead), each with its `language`, in any language the app has, or
+  another where the app's languages lack the sound. The card shows which is
+  which. The sound is optional: an example in a language the phone has no
+  voice for is shown without a speaker.
+- **Tags.** Each card's tags are the languages that use the sound, by code,
+  and `core` for the symbols every learner needs. They decide the
+  learner's **"IPA: my languages"** course, the symbols of the languages
+  they learn; **"IPA: whole chart"** has every card. The two are one
+  course and share progress.
+- **Order.** Symbols learners mix up are adjacent in a deck: ɒ and ɔ, ʈ and
+  t̪, ɪ and i, ɾ and r.
+- **Answers.** A card's production is chosen, never typed (`typed: false`).
+- **The path** has no B1 plan: the IPA is no language taught to a level, so
+  its `ipa-path.yaml` lists its decks in order, and the validator asks for
+  no milestones on it.
+- **A card's sounds.** Every card of every language that has an `ipa` has a
+  button, "The sounds of this word", which opens a recorded session of the
+  IPA cards whose symbols occur in that `ipa`: a card's `target`, found in
+  the word's transcription. So an IPA card's `target` is exactly the
+  symbol as it is written in a transcription.
 
 ## Paths
 
