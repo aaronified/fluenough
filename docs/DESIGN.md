@@ -74,6 +74,13 @@ each fit starts from the one before, so it cannot be rebuilt from `reviews`.
 A pair is scheduled with its skill's set in its language, else that skill's
 set in the language studied most recently, else the defaults.
 
+**`restores`** — each restore that replaced the review log (migration 8,
+#470): when, the backup's date, kind and app version, whether it came from
+a file, the name of the copy of what was replaced, and the review count
+before and after. A confirmed restore is the one exception to `reviews` and
+`leech_actions` being append-only (AGENTS.md rule 9), and this is its
+log: append-only and guarded like them, and never cleared.
+
 **Backup.** Settings → Export review log writes both logs, and the fitted
 parameters, as one JSONL file, and Import merges such a file back, adding
 only the reviews not already there and rebuilding `card_states` from the
