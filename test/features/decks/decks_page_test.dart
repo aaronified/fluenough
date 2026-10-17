@@ -121,7 +121,7 @@ void main() {
       findsOneWidget,
     );
     expect(
-      find.bySemanticsLabel(RegExp('^Work, unit 22, ${l10n.pathUnitAhead}')),
+      find.bySemanticsLabel(RegExp('^Work, unit 23, ${l10n.pathUnitAhead}')),
       findsOneWidget,
     );
     // Milestones: the first deck finished, words learned, the script.
@@ -315,7 +315,7 @@ void main() {
     expect(find.text(l10n.pathLevelB1), findsOneWidget);
     expect(find.byType(AchievementMark), findsNWidgets(3));
     expect(find.text(l10n.pathAchievement('A1')), findsOneWidget);
-    expect(find.text(l10n.pathUnitsToGo(19)), findsOneWidget);
+    expect(find.text(l10n.pathUnitsToGo(20)), findsOneWidget);
     expect(find.text(l10n.pathUnitsToGoComing(13, 7)), findsOneWidget);
     expect(find.text('Health'), findsOneWidget);
     expect(find.text(l10n.pathComingWords(60)), findsWidgets);
@@ -341,7 +341,7 @@ void main() {
     expect(find.text(l10n.pathLevelReached('A1')), findsOneWidget);
     expect(find.text(l10n.pathAchievement('A2')), findsOneWidget);
     expect(
-      find.bySemanticsLabel(RegExp('^Market, unit 26, ${l10n.pathUpNext}')),
+      find.bySemanticsLabel(RegExp('^Market, unit 27, ${l10n.pathUpNext}')),
       findsOneWidget,
     );
   });
