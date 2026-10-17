@@ -34,19 +34,25 @@ class LanguageGlyphTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ExcludeSemantics(
+    // A rounded square of a fixed height, wider only for a glyph that needs
+    // it. Never stretched to its parent's height: not in the bar's chip, and
+    // not in the label under the bar (owner, 2026-10-17).
     child: Container(
-      constraints: const BoxConstraints(minWidth: 22, minHeight: 22),
+      height: 24,
+      constraints: const BoxConstraints(minWidth: 24),
       padding: const EdgeInsetsDirectional.symmetric(horizontal: 4),
-      alignment: Alignment.center,
       decoration: BoxDecoration(
         color: background,
-        borderRadius: BorderRadius.circular(7),
+        borderRadius: BorderRadius.circular(6),
       ),
-      child: Text(
-        glyph,
-        locale: Locale(language.code),
-        textScaler: TextScaler.noScaling,
-        style: TextStyle(fontSize: 14, height: 22 / 14, color: foreground),
+      child: Center(
+        widthFactor: 1,
+        child: Text(
+          glyph,
+          locale: Locale(language.code),
+          textScaler: TextScaler.noScaling,
+          style: TextStyle(fontSize: 14, height: 22 / 14, color: foreground),
+        ),
       ),
     ),
   );

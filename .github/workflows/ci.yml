@@ -34,6 +34,38 @@ jobs:
       # a rule aimed at parallel agents cannot rest on a checklist box.
       - run: python3 tools/check_ui_strings.py lib/
 
+  # Phones download decks from main, so a deck change reaches every installed
+  # app at once, but each app reads only its own release's format: 0.4.3
+  # refused main's decks once they were split (#524). This reads the change's
+  # decks with the latest release's own code, as its downloader does.
+  release-reader:
+    name: Released app reads the decks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Check out the latest release, with this change's decks
+        run: |
+          tag=$(git tag --list 'v*' --sort=-v:refname | head -n 1)
+          echo "Latest release: $tag"
+          git worktree add release "$tag"
+          rm -rf release/decks
+          cp -r decks release/decks
+          mkdir -p release/test/release_reader
+          cp tools/release_reader/release_reader_test.dart release/test/release_reader/
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+      - name: Read the decks with the release's code
+        working-directory: release
+        run: |
+          flutter pub get
+          dart run build_runner build
+          flutter test test/release_reader/
+
   app:
     name: Analyse and test
     runs-on: ubuntu-latest
