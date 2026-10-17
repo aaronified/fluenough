@@ -274,7 +274,8 @@ units:
   - decks: ["te-grammar-compound-verbs"]
     words: 9
     grammar: ["compound-verbs"]
-  - planned: { id: "te-illness", theme: "illness", words: 50 }
+  - decks: ["te-illness", "*"]
+    words: 51
     listening_passages:
       - { id: "a-cold", text: { "en": "Telling a friend you have a cold and a fever" } }
     reading_passages:
