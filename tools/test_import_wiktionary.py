@@ -526,5 +526,24 @@ class Arguments(Case):
         self.assertIn("--dump-date must be YYYY-MM-DD", err)
 
 
+class ApprovalParsingTest(unittest.TestCase):
+    """`--approve` lists and file names, as reviewers paste them (#523)."""
+
+    def test_a_comma_in_a_file_name_is_kept(self) -> None:
+        self.assertEqual(
+            iw.parse_approvals(["hi-0419=Apple, red.jpg,hi-0420=Tea.jpg"]),
+            {"hi-0419": "Apple, red.jpg", "hi-0420": "Tea.jpg"})
+
+    def test_repeated_and_comma_separated_items(self) -> None:
+        self.assertEqual(
+            iw.parse_approvals(["hi-0419=A.jpg", "ipa-0001=B.png, bn-12=C.jpg"]),
+            {"hi-0419": "A.jpg", "ipa-0001": "B.png", "bn-12": "C.jpg"})
+
+    def test_file_names_compare_as_commons_reads_them(self) -> None:
+        self.assertTrue(iw.same_file("File:Red_apple.jpg", "Red apple.jpg"))
+        self.assertTrue(iw.same_file("red apple.jpg", "Red_apple.jpg"))
+        self.assertFalse(iw.same_file("Red apple.jpg", "Green apple.jpg"))
+
+
 if __name__ == "__main__":
     unittest.main()

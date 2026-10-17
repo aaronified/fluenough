@@ -930,11 +930,29 @@ def image_proposal(t: Target, language: str) -> dict | None:
 IMAGE_POS = frozenset({"noun", "verb", "adj"})
 
 
+# Splits a comma-separated `--approve` list only where the next item starts
+# with a card id and `=`, since Commons file names may hold commas.
+_APPROVAL_SPLIT = re.compile(r",\s*(?=[a-z]{2,3}-[A-Za-z0-9-]+=)")
+
+
+def same_file(a: str, b: str) -> bool:
+    """Whether two Commons file names are the same file, as Commons reads
+    them: a `File:` prefix is optional, `_` is a space, and the first letter's
+    case does not matter."""
+    def norm(x: str) -> str:
+        x = x.strip()
+        if x[:5].lower() == "file:":
+            x = x[5:].strip()
+        x = x.replace("_", " ")
+        return x[:1].upper() + x[1:]
+    return norm(a) == norm(b)
+
+
 def parse_approvals(items: list[str]) -> dict[str, str]:
     """`--approve` items, `<card id>=<File name>` each, repeated or
     comma-separated: the file is pinned ("Pin the file"). A bare id raises."""
     out: dict[str, str] = {}
-    for item in (x.strip() for a in items for x in a.split(",")):
+    for item in (x.strip() for a in items for x in _APPROVAL_SPLIT.split(a)):
         if not item:
             continue
         cid, eq, name = item.partition("=")
@@ -1177,7 +1195,7 @@ def run(code: str, dump: Path, decks: Path, dump_date: str, write: bool,
             report.proposals.append(proposal)
             continue
         approved.add(t.cid)
-        if approve[t.cid] != proposal["file"]:
+        if not same_file(approve[t.cid], proposal["file"]):
             report.approved_failed.append(
                 f"{t.cid} {t.target}: approved {approve[t.cid]} but the proposal "
                 f"is {proposal['file']}")
@@ -1241,7 +1259,7 @@ def main(argv: list[str]) -> int:
                              "(with --images --write). The file is pinned: it lands "
                              "only if it is the proposal's, as in hi-0419=File.jpg; a "
                              "bare card id is refused. Repeat it, or separate items "
-                             "with commas")
+                             "with commas (a comma inside a file name is kept)")
     parser.add_argument("--report", type=Path, help="write the report here")
     args = parser.parse_args(argv[1:])
     if not vd.LANG_RE.fullmatch(args.lang) or not (args.decks / args.lang).is_dir():
