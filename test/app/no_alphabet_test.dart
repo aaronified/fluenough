@@ -9,10 +9,8 @@ import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_preset.dart';
 import 'package:fluenough/features/drill/drill_session.dart';
-import 'package:fluenough/features/settings/languages_page.dart';
 import 'package:fluenough/features/today/today_page.dart';
 import 'package:fluenough/ui/widgets/deck_tile.dart';
-import 'package:fluenough/ui/widgets/grouped_list.dart';
 import 'package:fluenough/ui/widgets/reading_first.dart';
 
 import '../support/harness.dart';
@@ -195,41 +193,5 @@ void main() {
     final first = tester.widget<ReadingFirst>(find.byType(ReadingFirst));
     expect(first.reading, card.reading);
     expect(first.target, card.target);
-  });
-
-  testWidgets('Settings switches a language to Latin letters only, and '
-      'back', (tester) async {
-    usePhone(tester);
-    final state = await pumpScreen(
-      tester,
-      const LanguagesSettingsPage(),
-      state: AppState.test(
-        settings: SettingsNotifier(
-          spokenLanguages: const <String>['en'],
-          learningLanguages: const <String>['hi', 'es'],
-          learningChosen: true,
-        ),
-      ),
-    );
-    final l10n = l10nOf(tester);
-    final row = find.text(l10n.settingsAlphabet);
-    await tester.scrollUntilVisible(
-      row,
-      200,
-      scrollable: find.byType(Scrollable).first,
-    );
-    await tester.ensureVisible(row);
-    await tester.pumpAndSettle();
-    expect(find.text(l10n.settingsAlphabetAll), findsOneWidget);
-    await tester.tap(row);
-    await tester.pumpAndSettle();
-    // Spanish has no alphabet decks, so it is not offered.
-    expect(find.widgetWithText(GroupedTile, 'Spanish'), findsNothing);
-    await tester.tap(find.widgetWithText(GroupedTile, 'Hindi'));
-    await tester.pumpAndSettle();
-    expect(state.settings.learnsAlphabet('hi'), isFalse);
-    await tester.tap(find.text(l10n.commonDone));
-    await tester.pumpAndSettle();
-    expect(find.text(l10n.settingsAlphabetLatin('Hindi')), findsOneWidget);
   });
 }

@@ -89,10 +89,13 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byType(SuggestSheet), findsOneWidget);
     for (final part in CardPart.values) {
-      // A base word's meaning has a card a base; this card has none.
+      // A base word has a card a base; this card has none. Also heard
+      // shows once a new word is suggested (#476).
       expect(
         find.byTooltip(l10n.reviewSuggestEditPart(partName(l10n, part))),
-        part == CardPart.base ? findsNothing : findsOneWidget,
+        part == CardPart.base || part == CardPart.alt
+            ? findsNothing
+            : findsOneWidget,
       );
     }
     // No field until a pencil is tapped, and Save waits for a change.
