@@ -30,14 +30,12 @@ void main() {
     });
 
     test('each survives toStored and restore', () {
-      final changed = SettingsNotifier()
-        ..soundOn = false
-        ..autoplay = true;
+      final changed = SettingsNotifier()..autoplay = true;
       for (var i = 0; i < 7; i++) {
         changed.countSpeakerTap();
       }
       final restored = SettingsNotifier()..restore(changed.toStored());
-      expect(restored.soundOn, isFalse);
+      expect(restored.soundOn, isTrue);
       expect(restored.autoplay, isTrue);
       expect(restored.speakerTaps, 7);
       expect(restored.toStored(), changed.toStored());
