@@ -5,7 +5,7 @@ import 'package:fluenough/app/mail_share.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/features/review/how_reviewing_works.dart';
 import 'package:fluenough/features/review/send_reviews_sheet.dart';
-import 'package:fluenough/features/settings/settings_page.dart';
+import 'package:fluenough/features/settings/reviewing_page.dart';
 
 import '../../support/harness.dart';
 import '../../support/review_fixture.dart';
@@ -23,7 +23,7 @@ void main() {
     useTallPhone(tester);
     final state = await pumpScreen(
       tester,
-      const SettingsPage(),
+      const ReviewingPage(),
       state: await reviewState(),
     );
     final l10n = l10nOf(tester);
@@ -89,7 +89,7 @@ void main() {
     );
     final state = await pumpScreen(
       tester,
-      const SettingsPage(),
+      const ReviewingPage(),
       state: await reviewState(reviewing: true),
     );
     final l10n = l10nOf(tester);
@@ -104,7 +104,7 @@ void main() {
     tester,
   ) async {
     useTallPhone(tester);
-    await pumpScreen(tester, const SettingsPage(), state: await reviewState());
+    await pumpScreen(tester, const ReviewingPage(), state: await reviewState());
     final l10n = l10nOf(tester);
     await tester.tap(find.text(l10n.reviewSettingsHow));
     await tester.pumpAndSettle();
@@ -117,7 +117,7 @@ void main() {
     useTallPhone(tester);
     final state = await pumpScreen(
       tester,
-      const SettingsPage(),
+      const ReviewingPage(),
       state: await reviewState(),
     );
     final l10n = l10nOf(tester);
@@ -147,7 +147,7 @@ void main() {
     final rude = state.deckById(rudeDeck)!;
     state.reviewing.markRight(words, words.cards.first);
     state.reviewing.markRight(rude, rude.cards.first);
-    await pumpScreen(tester, const SettingsPage(), state: state);
+    await pumpScreen(tester, const ReviewingPage(), state: state);
     final l10n = l10nOf(tester);
     expect(find.text(l10n.reviewSettingsToSend), findsOneWidget);
     expect(find.text(l10n.reviewDecksWaiting(2)), findsOneWidget);
@@ -163,7 +163,7 @@ void main() {
     final words = state.deckById(wordsDeck)!;
     state.reviewing.markRight(words, words.cards.first);
     await state.reviewing.send(state.reviewing.unsent, body: '');
-    await pumpScreen(tester, const SettingsPage(), state: state);
+    await pumpScreen(tester, const ReviewingPage(), state: state);
     final l10n = l10nOf(tester);
     expect(find.text(l10n.reviewSettingsToSend), findsNothing);
     expect(find.text(l10n.reviewSettingsSendAgainDesc(1)), findsOneWidget);
@@ -180,7 +180,7 @@ void main() {
     useTallPhone(tester);
     await pumpScreen(
       tester,
-      const SettingsPage(),
+      const ReviewingPage(),
       state: await reviewState(
         authors: const <String>[reviewerCode],
         settings: SettingsNotifier(

@@ -12,7 +12,7 @@ import 'package:fluenough/core/updates/release_check.dart';
 import 'package:fluenough/core/updates/release_notes.dart';
 import 'package:fluenough/features/settings/release_notes_page.dart';
 import 'package:fluenough/features/settings/settings_fixtures.dart';
-import 'package:fluenough/features/settings/settings_page.dart';
+import 'package:fluenough/features/settings/updates_page.dart';
 import 'package:fluenough/features/settings/update_section.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 
@@ -117,7 +117,7 @@ Future<void> _openFromSettings(
   usePhone(tester);
   await pumpScreen(
     tester,
-    const SettingsPage(),
+    const UpdatesPage(),
     state: AppState.test(releaseNotes: engine, links: links),
   );
   final row = find.text(l10nOf(tester).settingsReleaseNotes);
@@ -177,7 +177,7 @@ void main() {
       usePhone(tester);
       await pumpScreen(
         tester,
-        const SettingsPage(),
+        const UpdatesPage(),
         state: AppState.test(releaseNotes: engine),
       );
       final l10n = l10nOf(tester);
@@ -222,7 +222,7 @@ void main() {
       await tester.pageBack();
       await tester.pumpAndSettle();
       expect(find.byType(ReleaseNotesPage), findsNothing);
-      expect(find.byType(SettingsPage), findsOneWidget);
+      expect(find.byType(UpdatesPage), findsOneWidget);
     });
   });
 
@@ -575,7 +575,7 @@ void main() {
       usePhone(tester, textScale: 2.0);
       await pumpScreen(
         tester,
-        const SettingsPage(),
+        const UpdatesPage(),
         state: AppState.test(releaseNotes: _listing(gate: Completer<void>())),
       );
       final row = find.text(l10nOf(tester).settingsReleaseNotes);

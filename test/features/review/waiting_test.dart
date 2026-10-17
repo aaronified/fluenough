@@ -11,7 +11,7 @@ import 'package:fluenough/features/review/review_page.dart';
 import 'package:fluenough/features/review/review_waiting.dart';
 import 'package:fluenough/features/review/send_reviews_sheet.dart';
 import 'package:fluenough/features/review/waiting_page.dart';
-import 'package:fluenough/features/settings/settings_page.dart';
+import 'package:fluenough/features/settings/reviewing_page.dart';
 
 import '../../support/harness.dart';
 import '../../support/review_fixture.dart';
@@ -391,7 +391,7 @@ cards:
       useTallPhone(tester);
       await pumpScreen(
         tester,
-        const SettingsPage(),
+        const ReviewingPage(),
         state: await reviewer(spoken: const <String>['te', 'en']),
       );
       final l10n = l10nOf(tester);
@@ -412,7 +412,7 @@ cards:
       useTallPhone(tester);
       final state = await pumpScreen(
         tester,
-        const SettingsPage(),
+        const ReviewingPage(),
         state: await reviewer(spoken: const <String>['te', 'en']),
       );
       final l10n = l10nOf(tester);
@@ -436,7 +436,7 @@ cards:
       useTallPhone(tester);
       await pumpScreen(
         tester,
-        const SettingsPage(),
+        const ReviewingPage(),
         state: await reviewState(),
       );
       final l10n = l10nOf(tester);

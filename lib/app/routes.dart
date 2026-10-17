@@ -19,7 +19,15 @@ import '../features/review/review_page.dart';
 import '../features/review/waiting_page.dart';
 import '../features/script/script_guide_page.dart';
 import '../features/settings/app_log_page.dart';
+import '../features/settings/activities_page.dart';
 import '../features/settings/appearance_page.dart';
+import '../features/settings/languages_page.dart';
+import '../features/settings/profiles_privacy_page.dart';
+import '../features/settings/reminders_page.dart';
+import '../features/settings/reviewing_page.dart';
+import '../features/settings/updates_page.dart';
+import '../features/settings/your_data_page.dart';
+import '../features/settings/your_decks_page.dart';
 import '../features/settings/release_notes_page.dart';
 import '../features/settings/sources_page.dart';
 import '../features/settings/voices_page.dart';
@@ -62,7 +70,22 @@ abstract final class AppRoutes {
   /// language code, a [String], for that language's only; none for every
   /// language learned.
   static const String howYouLearn = '/how-you-learn';
+
+  /// Look and language: the appearance page, with the app language.
   static const String appearance = '/appearance';
+
+  /// The pages the Settings tab lists, one per row (docs/mockups/
+  /// settings.html).
+  static const String settingsLanguages = '/settings/languages';
+  static const String settingsActivities = '/settings/activities';
+  static const String settingsReviewing = '/settings/reviewing';
+  static const String settingsDecks = '/settings/decks';
+  static const String settingsReminders = '/settings/reminders';
+  static const String settingsData = '/settings/data';
+  static const String settingsUpdates = '/settings/updates';
+
+  /// Profiles and privacy, opened from the profile card.
+  static const String settingsProfiles = '/settings/profiles';
   static const String spokenLanguages = '/spoken-languages';
   static const String learnLanguages = '/learn-languages';
   static const String voices = '/voices';
@@ -121,6 +144,14 @@ abstract final class AppRoutes {
       leeches => LeechesPage(language: args is String ? args : null),
       howYouLearn => HowYouLearnPage(language: args is String ? args : null),
       appearance => const AppearancePage(),
+      settingsLanguages => const LanguagesSettingsPage(),
+      settingsActivities => const ActivitiesPage(),
+      settingsReviewing => const ReviewingPage(),
+      settingsDecks => const YourDecksPage(),
+      settingsReminders => const RemindersPage(),
+      settingsData => const YourDataPage(),
+      settingsUpdates => const UpdatesPage(),
+      settingsProfiles => const ProfilesPrivacyPage(),
       spokenLanguages => const SpokenLanguagesPage(),
       learnLanguages => const LanguagePickerPage(),
       voices => const VoicesPage(),
@@ -218,6 +249,10 @@ abstract final class AppNavigator {
 
   static Future<void> openAppearance(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.appearance);
+
+  /// One of the pages the Settings tab lists, by its route name.
+  static Future<void> openSettingsPage(BuildContext context, String route) =>
+      Navigator.of(context).pushNamed(route);
 
   static Future<void> openSpokenLanguages(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.spokenLanguages);

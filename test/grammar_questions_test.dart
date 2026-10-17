@@ -517,27 +517,22 @@ void main() {
       );
     });
 
-    test(
-      'grammar switched off before this update stays off for both',
-      () async {
-        final settings = SettingsNotifier();
-        settings.restore(<String, String>{
-          'enabled_skills': '+,recognition,production,listening,!speaking,!grammar,reading,pair',
-        });
-        final state = await loaded(settings: settings);
-        expect(settings.isEnabled(Skill.grammar), isFalse);
-        expect(
-          state.sessionModes,
-          isNot(contains(DrillMode.grammarUnderstood)),
-        );
-        expect(
-          state.sessionItems(
-            const DrillRequest(deckIds: {rulesDeck}, untaught: true),
-          ),
-          isEmpty,
-        );
-      },
-    );
+    test('grammar switched off before this update is on again, for both '
+        'schedules (#243, Decision 9)', () async {
+      final settings = SettingsNotifier();
+      settings.restore(<String, String>{
+        'enabled_skills': '+,recognition,production,listening,!speaking,!grammar,reading,pair',
+      });
+      final state = await loaded(settings: settings);
+      expect(settings.isEnabled(Skill.grammar), isTrue);
+      expect(
+        state.sessionModes,
+        containsAll(<DrillMode>[
+          DrillMode.grammarUnderstood,
+          DrillMode.grammar,
+        ]),
+      );
+    });
 
     test('a request for Grammar asks grammar understood too', () async {
       final state = await loaded();

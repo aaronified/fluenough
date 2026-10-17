@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/features/decks/word_sheet.dart';
 import 'package:fluenough/features/review/review_page.dart';
-import 'package:fluenough/features/settings/settings_page.dart';
+import 'package:fluenough/features/settings/languages_page.dart';
 import 'package:fluenough/ui/widgets/grouped_list.dart';
 
 import '../../support/harness.dart';
@@ -36,7 +36,7 @@ void main() {
   testWidgets('switching it on asks once for the learner\'s age; Cancel '
       'keeps it off; switching it off asks nothing', (tester) async {
     usePhone(tester);
-    final state = await pumpScreen(tester, const SettingsPage());
+    final state = await pumpScreen(tester, const LanguagesSettingsPage());
     final l10n = l10nOf(tester);
     final row = _adultRow(l10n.settingsAdult);
     await scrollTo(tester, row);
