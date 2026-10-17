@@ -3,7 +3,6 @@ import 'dart:typed_data';
 
 import '../data/log_jsonl.dart';
 import '../models/leech_action.dart';
-import '../scheduling/fsrs_fit.dart';
 import '../scheduling/replay.dart';
 import '../scheduling/skill_parameters.dart';
 import 'zip_files.dart';
@@ -36,6 +35,31 @@ class NewerBackupException implements Exception {
 
   @override
   String toString() => 'backup format $version is newer than this app reads';
+}
+
+/// What a backup's manifest says of it, read without its log: enough to
+/// name it in Recent backups.
+class BackupInfo {
+  const BackupInfo({
+    required this.appVersion,
+    required this.createdAt,
+    required this.kind,
+    required this.forVersion,
+    required this.reviews,
+  });
+
+  final String appVersion;
+  final DateTime createdAt;
+  final BackupKind kind;
+  final String? forVersion;
+
+  /// How many reviews the log holds.
+  final int reviews;
+
+  /// The manifest of the backup file [bytes]. Throws what
+  /// [AppBackup.decode] throws for a file it would refuse.
+  static BackupInfo peek(List<int> bytes) =>
+      AppBackup._manifestOf(ZipFiles.decode(bytes)).info;
 }
 
 /// The whole app's backup (#470; docs/BACKUP-FORMAT.md): the review log,
@@ -163,25 +187,82 @@ class AppBackup {
   /// ignored.
   static AppBackup decode(List<int> bytes) {
     final files = ZipFiles.decode(bytes);
-    Map<String, Object?> object(String name, {bool required = false}) {
-      final raw = files[name];
-      if (raw == null) {
-        if (required) throw FormatException('not a backup file: no $name');
-        return const <String, Object?>{};
-      }
-      final Object? decoded;
+    final (:manifest, :info) = _manifestOf(files);
+    final logBytes = files['log.jsonl'];
+    final String log;
+    if (logBytes == null) {
+      log = LogJsonl.encode(const <LoggedReview>[], const <LeechAction>[]);
+    } else {
       try {
-        decoded = jsonDecode(utf8.decode(raw));
+        log = utf8.decode(logBytes);
       } on FormatException {
-        throw FormatException('$name is damaged');
+        throw const FormatException('log.jsonl is damaged');
       }
-      if (decoded is! Map<String, Object?>) {
-        throw FormatException('$name is damaged');
-      }
-      return decoded;
     }
+    final settings = <String, String>{
+      for (final part in <String>['settings.json', 'reviewer.json'])
+        for (final MapEntry(:key, :value) in _object(files, part).entries)
+          if (value is String) key: value,
+    };
+    final languages = _object(files, 'downloads.json')['languages'];
+    final schema = manifest['schemaVersion'];
+    final backup = AppBackup(
+      appVersion: info.appVersion,
+      schemaVersion: schema is int ? schema : 0,
+      createdAt: info.createdAt,
+      log: log,
+      settings: settings,
+      downloads: <String>[
+        if (languages is List)
+          for (final code in languages)
+            if (code is String) code,
+      ],
+      kind: info.kind,
+      forVersion: info.forVersion,
+    );
+    // A log that does not read fails here, before anything is changed.
+    backup.reviews;
+    return backup;
+  }
 
-    final manifest = object('manifest.json', required: true);
+  /// This backup as another [kind], made now: the copy a restore keeps of
+  /// a file it was given.
+  AppBackup copyAs(BackupKind kind, DateTime at) => AppBackup(
+    appVersion: appVersion,
+    schemaVersion: schemaVersion,
+    createdAt: at,
+    log: log,
+    settings: settings,
+    downloads: downloads,
+    kind: kind,
+  );
+
+  static Map<String, Object?> _object(
+    Map<String, Uint8List> files,
+    String name, {
+    bool required = false,
+  }) {
+    final raw = files[name];
+    if (raw == null) {
+      if (required) throw FormatException('not a backup file: no $name');
+      return const <String, Object?>{};
+    }
+    final Object? decoded;
+    try {
+      decoded = jsonDecode(utf8.decode(raw));
+    } on FormatException {
+      throw FormatException('$name is damaged');
+    }
+    if (decoded is! Map<String, Object?>) {
+      throw FormatException('$name is damaged');
+    }
+    return decoded;
+  }
+
+  static ({Map<String, Object?> manifest, BackupInfo info}) _manifestOf(
+    Map<String, Uint8List> files,
+  ) {
+    final manifest = _object(files, 'manifest.json', required: true);
     if (manifest['format'] != format) {
       throw const FormatException('not a Fluenough backup');
     }
@@ -196,43 +277,18 @@ class AppBackup {
         appVersion: app is String ? app : null,
       );
     }
-    final logBytes = files['log.jsonl'];
-    final String log;
-    if (logBytes == null) {
-      log = LogJsonl.encode(const <LoggedReview>[], const <LeechAction>[]);
-    } else {
-      try {
-        log = utf8.decode(logBytes);
-      } on FormatException {
-        throw const FormatException('log.jsonl is damaged');
-      }
-    }
-    final settings = <String, String>{
-      for (final part in <String>['settings.json', 'reviewer.json'])
-        for (final MapEntry(:key, :value) in object(part).entries)
-          if (value is String) key: value,
-    };
-    final languages = object('downloads.json')['languages'];
     final created = DateTime.tryParse('${manifest['createdAt']}');
-    final schema = manifest['schemaVersion'];
-    final kind = BackupKind.values.asNameMap()[manifest['kind']];
     final forVersion = manifest['forVersion'];
-    final backup = AppBackup(
-      appVersion: app is String ? app : '',
-      schemaVersion: schema is int ? schema : 0,
-      createdAt: created?.toLocal() ?? DateTime.fromMillisecondsSinceEpoch(0),
-      log: log,
-      settings: settings,
-      downloads: <String>[
-        if (languages is List)
-          for (final code in languages)
-            if (code is String) code,
-      ],
-      kind: kind ?? BackupKind.you,
-      forVersion: forVersion is String ? forVersion : null,
+    final reviews = manifest['reviews'];
+    return (
+      manifest: manifest,
+      info: BackupInfo(
+        appVersion: app is String ? app : '',
+        createdAt: created?.toLocal() ?? DateTime.fromMillisecondsSinceEpoch(0),
+        kind: BackupKind.values.asNameMap()[manifest['kind']] ?? BackupKind.you,
+        forVersion: forVersion is String ? forVersion : null,
+        reviews: reviews is int ? reviews : 0,
+      ),
     );
-    // A log that does not read fails here, before anything is changed.
-    backup.reviews;
-    return backup;
   }
 }

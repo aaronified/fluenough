@@ -86,7 +86,10 @@ Uint8List file(Map<String, String?> overrides) {
 String manifestWith(Map<String, Object?> changes) {
   final files = ZipFiles.decode(make().encode());
   final m = jsonDecode(utf8.decode(files['manifest.json']!)) as Map;
-  return jsonEncode(<String, Object?>{...m, ...changes});
+  return jsonEncode(<String, Object?>{
+    ...m.cast<String, Object?>(),
+    ...changes,
+  });
 }
 
 void main() {
