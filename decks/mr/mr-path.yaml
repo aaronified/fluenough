@@ -5,27 +5,42 @@
 # This is also Marathi's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"): every
 # unit from the first words to B1, written or planned, with its size in
 # words, its grammar topics, the three milestones, and for each planned unit
-# its listening and reading passages, described in English. It follows the
-# other Indian-language plans unit for unit where Marathi has the same
-# unit, so that the courses line up; Marathi's own grammar (gender and
-# number, the negative, adjectives, past-more, conjunct and compound verbs,
-# can and must) stays in the units of the decks that teach it, and the
-# perfect, which Marathi has no deck for yet, is planned. A unit
-# with no deck yet is planned: the course teaches it as "Coming" until a
-# deck is written. Sizes follow the plan's levels (about 700, 900 and 1,200
-# words; low confidence) and are one number for every native language. A
-# written unit's size is what its decks hold today, and is raised as they
-# grow. A theme named here that decks/themes.yaml does not list yet is
-# added to it with its first deck.
+# its listening and reading passages. A unit with no deck yet is planned:
+# the course teaches it as "Coming" until a deck is written. Sizes follow
+# the plan's levels (about 700, 900 and 1,200 words; low confidence) and are
+# one number for every native language; a written unit's size is what its
+# decks hold today. A theme named here that decks/themes.yaml does not list
+# yet is added to it with its first deck.
 #
-# First a few words and basic sentences, the sounds the learner's language
-# lacks and how Marathi grammar differs from it; then themes, each with the
-# grammar that goes with it; the script comes after the first themes, before
-# the rest. The grammar follows the Indo-Aryan order of
-# docs/plans/language-paths-scheme.md: be, postpositions, the present,
-# gender agreement, the oblique, the past, the perfect, compound and
-# conjunct verbs, then the subjunctive, the relative-correlative clauses
-# and the rest of B1. Every deck of Marathi is listed exactly once.
+# The order follows docs/plans/words-rules-sentences.md (owner, 2026-10-07,
+# and 2026-10-17: "build the path files for all present languages via an
+# opus agent, as per our current path design"):
+# 1. the phrasebook, taught whole from the first lesson;
+# 2. the first word units;
+# 3. the script, after the first six units ("After units 4-6"); a
+#    learner who already reads it skips it (#554);
+# 4. a core of about 200 common words in themed units, before the large
+#    tables ("Yes, smaller (~200)");
+# 5. rules as forms: noun endings, postpositions and conjunctions first,
+#    then pronoun and verb forms, practised on the words already known;
+# 6. sentences, each after its words and rules; then the other themes,
+#    each its words, then its rules, then its sentences.
+# Marathi's grammar keeps the Indo-Aryan order of
+# docs/plans/language-paths-scheme.md within each level: be,
+# postpositions, the present, gender agreement, the oblique, the past,
+# the perfect, compound and conjunct verbs, then the subjunctive, the
+# relative-correlative clauses and the rest of B1.
+#
+# The core's order is by judgement, most common first:
+# about me, everyday verbs (planned), the common adverbs and function
+# words (planned), how much and how many (planned), describing words
+# (planned), time, more verbs (planned), work.
+# It was meant to come from Wikipedia's counts
+# (tools/wikipedia_frequency.py, #516), but
+# no Marathi Wikipedia dump could be fetched here (2026-10-17):
+# order the core again from the counts once they are written.
+#
+# Every deck of Marathi is listed exactly once.
 schema: 1
 kind: "path"
 id: "mr-path"
@@ -45,65 +60,119 @@ alphabet:
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
-  - decks: ["mr-phrasebook", "mr-first-words", "mr-grammar-sentences", "*"]
-    words: 2
-    grammar: ["sentences"]
+  # 1. The phrasebook, taught whole from the first lesson.
+  - decks: ["mr-phrasebook", "mr-first-words", "*"]
+    words: 1
+  # 2. The first word units.
   - decks: ["mr-sound-differences"]
-    words: 20
-  - decks: ["mr-grammar-differences"]
-    words: 5
-    grammar: ["differences"]
-  - decks: ["mr-questions", "mr-grammar-questions", "*"]
-    words: 9
-    grammar: ["questions"]
-  - decks: ["mr-addressing", "mr-grammar-pronouns", "*"]
+    words: 17
+  - decks: ["mr-questions", "*"]
+    words: 8
+  - decks: ["mr-addressing", "*"]
     words: 14
-    grammar: ["pronouns"]
   - planned: { id: "mr-pronouns", theme: "pronouns", words: 24 }
     listening_passages:
       - { id: "who-is-who", text: { "en": "Pointing out who is who at a family gathering: he, she, they" } }
     reading_passages:
       - { id: "seating-chart", text: { "en": "A seating chart for a wedding lunch, with names and who is related to whom" } }
-  - decks: ["mr-about-me", "mr-grammar-present", "*"]
+  - decks: ["mr-family", "*"]
+    words: 22
+  # 3. The script, after the first six units (#554: skipped by a learner
+  # who already reads it).
+  - ["mr-script-vowels", "mr-script-consonants", "mr-script-reading"]
+  - ["mr-script-vowel-signs", "mr-script-conjuncts"]
+  # Numbers 1–20 follow the script, so it comes after the first six units.
+  - decks: ["mr-numbers-1-20", "*"]
+    words: 20
+  # 4. The core: about 200 common words, most common first (by judgement
+  # until the Wikipedia counts are written, #516).
+  - decks: ["mr-about-me", "*"]
     words: 9
-    grammar: ["present"]
-  - decks: ["mr-family", "mr-grammar-be", "*"]
-    words: 23
-    grammar: ["be"]
   - planned: { id: "mr-verbs", theme: "everyday-verbs", words: 30 }
     listening_passages:
       - { id: "morning-routine", text: { "en": "A mother says what each person in the house does in the morning" } }
     reading_passages:
       - { id: "fridge-note", text: { "en": "A note on the fridge: what to eat, what to drink and where things are" } }
-  - decks: ["mr-work", "mr-grammar-demonstratives", "*"]
-    words: 19
-    grammar: ["demonstratives"]
+  - planned: { id: "mr-adverbs", theme: "adverbs", words: 45 }
+    listening_passages:
+      - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
+    reading_passages:
+      - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
+  - planned: { id: "mr-quantities", theme: "quantities", words: 23 }
+    listening_passages:
+      - { id: "at-the-grocers", text: { "en": "Asking how much and how many at a grocer's" } }
+    reading_passages:
+      - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
+  - planned: { id: "mr-describing", theme: "describing", words: 28 }
+    listening_passages:
+      - { id: "how-are-you-feeling", text: { "en": "A friend asks how you feel today, and you answer" } }
+    reading_passages:
+      - { id: "postcard-from-the-hills", text: { "en": "A short postcard: the weather and the food" } }
+  - decks: ["mr-time", "*"]
+    words: 22
+  - planned: { id: "mr-more-verbs", theme: "more-verbs", words: 25 }
+    listening_passages:
+      - { id: "kitchen-help", text: { "en": "Someone tells a helper what to do in the kitchen" } }
+    reading_passages:
+      - { id: "how-to-make-tea", text: { "en": "A short card on how to make tea" } }
+  - decks: ["mr-work", "*"]
+    words: 16
+  # 5. Rules as forms, practised on the words known: noun forms,
+  # postpositions and conjunctions first, then pronoun and verb forms.
   - decks: ["mr-grammar-nouns"]
     words: 0
     grammar: ["nouns"]
-  - ["mr-script-vowels", "mr-script-consonants", "mr-script-reading"]
-  - ["mr-script-vowel-signs", "mr-script-conjuncts"]
-  - decks: ["mr-numbers-1-20", "*"]
-    words: 20
+  - decks: ["mr-grammar-postpositions"]
+    words: 13
+    grammar: ["postpositions"]
+  - decks: ["mr-grammar-conjunctions"]
+    words: 9
+    grammar: ["conjunctions"]
+  - decks: ["mr-grammar-pronouns"]
+    words: 0
+    grammar: ["pronouns"]
+  - decks: ["mr-grammar-be"]
+    words: 0
+    grammar: ["be"]
+  - decks: ["mr-grammar-present"]
+    words: 0
+    grammar: ["present"]
+  - decks: ["mr-grammar-demonstratives"]
+    words: 0
+    grammar: ["demonstratives"]
+  - decks: ["mr-grammar-adjectives"]
+    words: 0
+    grammar: ["adjectives"]
+  # 6. Sentences, each after its words and rules; then the other A1
+  # themes, each its words, its rules, then its sentences.
   - decks: ["mr-numbers-big", "*"]
     words: 97
-  - decks: ["mr-market", "mr-grammar-articles", "*"]
-    words: 13
-    grammar: ["articles"]
-  - decks: ["mr-groceries", "mr-grammar-gender-number", "mr-grammar-needs", "*"]
-    words: 29
-    grammar: ["gender-number", "needs"]
   - planned: { id: "mr-food", theme: "food", words: 59 }
     listening_passages:
       - { id: "at-the-sweet-shop", text: { "en": "Choosing sweets and snacks at a sweet shop" } }
     reading_passages:
       - { id: "menu-card", text: { "en": "A restaurant menu card with dishes and prices" } }
-  - decks: ["mr-transport", "mr-grammar-postpositions", "*"]
-    words: 22
-    grammar: ["postpositions"]
+  - decks: ["mr-groceries", "*"]
+    words: 18
+  - decks: ["mr-market", "*"]
+    words: 10
+  - decks: ["mr-grammar-questions"]
+    words: 0
+    grammar: ["questions"]
+  - decks: ["mr-grammar-likes"]
+    words: 2
+    grammar: ["likes"]
+  - decks: ["mr-grammar-sentences"]
+    words: 0
+    grammar: ["sentences"]
+  - decks: ["mr-grammar-differences"]
+    words: 5
+    grammar: ["differences"]
   - decks: ["mr-directions", "mr-grammar-continuous", "*"]
     words: 13
     grammar: ["continuous"]
+  - decks: ["mr-transport", "*"]
+    words: 9
   - planned: { id: "mr-body", theme: "body", words: 35 }
     listening_passages:
       - { id: "at-the-doctors", text: { "en": "Telling a doctor where it hurts" } }
@@ -114,43 +183,35 @@ units:
       - { id: "walk-to-the-market", text: { "en": "A neighbour names the places you pass on the way to the market" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Signs along a street: pharmacy, school, bank, temple" } }
-  - planned: { id: "mr-more-verbs", theme: "more-verbs", words: 25 }
-    listening_passages:
-      - { id: "kitchen-help", text: { "en": "Someone tells a helper what to do in the kitchen" } }
-    reading_passages:
-      - { id: "how-to-make-tea", text: { "en": "A short card on how to make tea" } }
-  - decks: ["mr-home", "mr-grammar-adjectives", "*"]
-    words: 21
-    grammar: ["adjectives"]
   - planned: { id: "mr-things", theme: "things", words: 32 }
     listening_passages:
       - { id: "packing-for-a-trip", text: { "en": "Two people pack a bag for a trip to the hills" } }
     reading_passages:
       - { id: "lost-property-list", text: { "en": "A lost-property list at a railway station" } }
+  - decks: ["mr-home", "*"]
+    words: 19
+  - decks: ["mr-grammar-needs"]
+    words: 4
+    grammar: ["needs"]
+  - decks: ["mr-grammar-articles", "mr-grammar-gender-number"]
+    words: 10
+    grammar: ["articles", "gender-number"]
   - planned: { id: "mr-clothes", theme: "clothes", words: 26 }
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
     reading_passages:
       - { id: "shop-offer-sign", text: { "en": "A clothes shop's sign with its offers" } }
-  - planned: { id: "mr-describing", theme: "describing", words: 28 }
-    listening_passages:
-      - { id: "how-are-you-feeling", text: { "en": "A friend asks how you feel today, and you answer" } }
-    reading_passages:
-      - { id: "postcard-from-the-hills", text: { "en": "A short postcard: the weather and the food" } }
   - planned: { id: "mr-animals", theme: "animals", words: 26 }
     listening_passages:
       - { id: "village-visit", text: { "en": "A child names the animals seen on a visit to a village" } }
     reading_passages:
       - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
-  - planned: { id: "mr-quantities", theme: "quantities", words: 23 }
-    listening_passages:
-      - { id: "at-the-grocers", text: { "en": "Asking how much and how many at a grocer's" } }
-    reading_passages:
-      - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
-  - decks: ["mr-time", "mr-grammar-future", "*"]
-    words: 22
+  - decks: ["mr-grammar-future"]
+    words: 0
     grammar: ["future"]
     milestone: "A1"
+  # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
+  # then its sentences.
   - decks: ["mr-daily-life", "mr-grammar-negative", "*"]
     words: 12
     grammar: ["negative"]
@@ -190,9 +251,8 @@ units:
       - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
     reading_passages:
       - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
-  - decks: ["mr-eating-out", "mr-grammar-conjunctions", "mr-grammar-likes", "*"]
-    words: 24
-    grammar: ["conjunctions", "likes"]
+  - decks: ["mr-eating-out", "*"]
+    words: 13
   - planned: { id: "mr-cooking", theme: "cooking", words: 50 }
     listening_passages:
       - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes a dish" } }
@@ -266,11 +326,6 @@ units:
       - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
     reading_passages:
       - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
-  - planned: { id: "mr-adverbs", theme: "adverbs", words: 45 }
-    listening_passages:
-      - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
-    reading_passages:
-      - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
   - planned: { id: "mr-workplace", theme: "workplace", words: 45 }
     listening_passages:
       - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }
@@ -282,8 +337,9 @@ units:
     reading_passages:
       - { id: "maharashtra-and-neighbours", text: { "en": "A map caption: Maharashtra and its neighbouring states" } }
     milestone: "A2"
+  # B1: the themes and grammar of the CEFR's B1.
   - decks: ["mr-registers"]
-    words: 17
+    words: 12
   - planned: { id: "mr-health", theme: "health", words: 55 }
     listening_passages:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
@@ -312,7 +368,7 @@ units:
     reading_passages:
       - { id: "readers-letters", text: { "en": "Two short letters to a newspaper" } }
   - decks: ["mr-grammar-can-must"]
-    words: 1
+    words: 0
     grammar: ["can-must"]
   - planned: { id: "mr-grammar-subjunctive", grammar: "subjunctive" }
     listening_passages:
@@ -485,6 +541,7 @@ units:
     reading_passages:
       - { id: "formal-letter", text: { "en": "A formal letter and its closing" } }
     milestone: "B1"
+  # After B1: spelling, and the first reader.
   - ["mr-spelling"]
   - ["mr-reading-sunitacha-ravivar"]
   - ["*"]
