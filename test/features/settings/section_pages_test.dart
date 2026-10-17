@@ -544,17 +544,16 @@ void main() {
       }
     });
 
-    testWidgets('back up, restore, the cloud and recent backups are '
-        'incoming and inert', (tester) async {
+    // Back up now and Recent backups are built (#470); restore waits on
+    // the owner, and the cloud on #112.
+    testWidgets('restore and the cloud are incoming and inert', (tester) async {
       usePhone(tester);
       final semantics = tester.ensureSemantics();
       await pumpScreen(tester, const YourDataPage());
       final l10n = l10nOf(tester);
       await _expectIncoming(tester, <String>[
-        l10n.settingsDataBackupNow,
         l10n.settingsDataRestore,
         l10n.settingsDataConnect,
-        l10n.settingsDataRecent,
       ]);
       semantics.dispose();
     });
