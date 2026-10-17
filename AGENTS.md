@@ -311,7 +311,8 @@ CI jobs green, and every review conversation resolved. Force pushes and branch
 deletion are refused. Work on a branch from the start. (An agent's work for
 the owner goes through a pull request too, except a change to documentation
 only, which the owner has pushed straight to main: see [CLAUDE.md](CLAUDE.md).
-A change to decks only needs "Validate decks" green.)
+A change to decks only needs "Validate decks" and "Released app reads the
+decks" green.)
 
 Never create or push git tags; the owner tags releases.
 
