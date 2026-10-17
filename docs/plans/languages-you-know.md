@@ -34,7 +34,11 @@ changes, the owner approves a new version first.
   Magahi, Chhattisgarhi, Awadhi, Haryanvi, Kumaoni, Garhwali, Mizo, Khasi and
   Goan Konkani: about 35 in all, listed in #490.
 - Each entry in `assets/languages.yaml` has:
-  - `code`, `iso639_3`, `name`, `own_name`, `script` and `family`;
+  - `code`, `iso639_3`, `name`, `own_name`, `scripts` and `family`;
+    `scripts` lists the scripts it is written in, its own first (#551):
+    Punjabi's are Gurmukhi and Shahmukhi, and the sheet asks which of
+    them the learner reads. A script is named by its own name, never the
+    language's: `bengali` is Eastern Nagari;
   - the sheet's two own-script sentences, `script_question` and
     `script_can_read`, written by a speaker of the language.
 - A language with no facts file shows no daily facts. Nothing else changes.

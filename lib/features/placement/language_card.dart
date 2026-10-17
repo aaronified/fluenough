@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../app/language_offer.dart';
 import '../../core/decks/language_catalog.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
 
 /// One language in the language picker (#211, the approved mockup
@@ -120,7 +121,8 @@ class _Summary extends StatelessWidget {
       color: scheme.onSurfaceVariant,
     );
     final progress = card.progress;
-    final script = l10n.pickerScript(language.script ?? '');
+    final scriptName = l10n.scriptName(language.script ?? '');
+    final script = scriptName.isEmpty ? '' : l10n.pickerScript(scriptName);
     final stage = progress?.stage;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -504,7 +506,9 @@ class ScriptChoice extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        l10n.pickerLearnScript(language.name),
+                        l10n.pickerLearnScript(
+                          l10n.scriptNameOr(language.script, language.name),
+                        ),
                         style: theme.textTheme.titleMedium!.copyWith(
                           fontWeight: FontWeight.w600,
                         ),

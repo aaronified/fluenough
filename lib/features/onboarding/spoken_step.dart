@@ -18,7 +18,7 @@ final OnboardingStep spokenStep = OnboardingStep(
       choices: at.choices,
       onChanged: (ranked) => at.answers.spoken = ranked,
       readsScript: at.answers.scripts,
-      onScriptChanged: at.answers.setReadsScript,
+      onScriptsChanged: at.answers.setScriptsRead,
       header: QuestionHeading(
         title: l10n.onboardingSpokenTitle,
         body: l10n.onboardingSpokenBody,

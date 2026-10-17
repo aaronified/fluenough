@@ -338,28 +338,56 @@ sheets = <String, Future<void> Function(WidgetTester tester)>{
       iso639_3: 'ben',
       name: 'Bengali',
       ownName: 'বাংলা',
-      script: 'bengali',
+      scripts: <String>['bengali'],
       family: 'indo_aryan',
-      scriptQuestion: 'আপনি কি বাংলা লিপি পড়তে পারেন?',
-      scriptCanRead: 'আমি বাংলা লিপি পড়তে পারি',
+      scriptQuestion: 'আপনি কি পূর্ব নাগরী লিপি পড়তে পারেন?',
+      scriptCanRead: 'আমি পূর্ব নাগরী লিপি পড়তে পারি',
     );
     // As the picker opens it.
     await openOn(
       tester,
       state,
-      (context) => showModalBottomSheet<KnownAnswer>(
+      (context) => showModalBottomSheet<KnownReply>(
         context: context,
         isScrollControlled: true,
         useSafeArea: true,
         showDragHandle: true,
         builder: (_) => const KnownLanguageSheet(
           language: bengali,
-          current: true,
+          current: <String>['bengali'],
           chosen: true,
         ),
       ),
     );
   },
+  'spoken_languages_picker: a language in several scripts (#551)':
+      (tester) async {
+        final state = AppState.test();
+        await state.load();
+        const punjabi = SpokenLanguage(
+          code: 'pa',
+          iso639_3: 'pan',
+          name: 'Punjabi',
+          ownName: 'ਪੰਜਾਬੀ',
+          scripts: <String>['gurmukhi', 'shahmukhi'],
+          family: 'indo_aryan',
+        );
+        await openOn(
+          tester,
+          state,
+          (context) => showModalBottomSheet<KnownReply>(
+            context: context,
+            isScrollControlled: true,
+            useSafeArea: true,
+            showDragHandle: true,
+            builder: (_) => const KnownLanguageSheet(
+              language: punjabi,
+              current: <String>['gurmukhi'],
+              chosen: true,
+            ),
+          ),
+        );
+      },
 };
 
 void main() {

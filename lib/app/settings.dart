@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart' show ThemeMode, TimeOfDay;
 import 'package:flutter/foundation.dart';
 
+import '../core/data/spoken_languages.dart';
 import '../core/decks/ipa_course.dart';
 import '../core/review/deck_review.dart';
 import '../core/review/rater_code.dart';
@@ -198,8 +199,10 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Whether the learner reads each language's script, by code, as they
-  /// said in Languages you know (#462). A language they know but have not
+  /// Whether the learner reads each language's scripts, as they said in
+  /// Languages you know (#462, #551): its own script under its code, as
+  /// every answer before #551 was kept, and any other under `code:script`
+  /// (`SpokenLanguage.readKey`). A language they know but have not
   /// answered for is missing; until every one is answered, no pair can be
   /// reviewed.
   Map<String, bool> get scriptsRead => _scriptsRead;
@@ -955,10 +958,9 @@ class SettingsNotifier extends ChangeNotifier {
             };
     }
     if (pick('scripts_read', _parseJsonMap) case final v?) {
-      final code = RegExp(r'^[a-z]{2,3}$');
       scriptsRead = <String, bool>{
         for (final MapEntry(:key, :value) in v.entries)
-          if (code.hasMatch(key) && value is bool) key: value,
+          if (readKeyPattern.hasMatch(key) && value is bool) key: value,
       };
     }
     if (pick('course_natives', _parseJsonMap) case final v?) {

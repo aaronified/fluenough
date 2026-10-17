@@ -5,6 +5,7 @@ import '../../app/app_state.dart';
 import '../../app/routes.dart';
 import '../../app/settings.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/script_name.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../placement/native_choice.dart';
 import 'settings_section_page.dart';
@@ -176,8 +177,7 @@ class LanguagesSettingsPage extends StatelessWidget {
                       GroupedTile.toggle(
                         title: language.name,
                         subtitleOn: l10n.settingsAlphabetOn(
-                          language.script,
-                          language.name,
+                          l10n.scriptNameOr(language.script, language.name),
                         ),
                         subtitleOff: state.courseUnits(language.code).isEmpty
                             ? l10n.settingsAlphabetOffEmpty
