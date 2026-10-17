@@ -961,6 +961,18 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
             },
           ),
         ),
+      // A language already learned: its script switch is the setting itself
+      // (#555), the one place to change it after the first choice.
+      if (learns && language.scriptDecks)
+        ListenableBuilder(
+          listenable: state.settings,
+          builder: (context, _) => ScriptChoice(
+            language: language,
+            on: state.settings.learnsAlphabet(code),
+            onChanged: (on) => state.settings.setLearnsAlphabet(code, on),
+            preview: state.scriptPreview(code),
+          ),
+        ),
       if (ticked && !learns) ...<Widget>[
         if (language.scriptDecks)
           ScriptChoice(
