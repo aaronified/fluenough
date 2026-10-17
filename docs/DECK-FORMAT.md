@@ -571,7 +571,7 @@ cards:
 | `alt_native` | no | Additional meanings accepted when the meaning is typed, in Hear (ADR-0034). |
 | `pos` | no | Part of speech: `noun`, `verb`, `adj`, `adv`, `pronoun`, `phrase`, `particle`, `other`. A [rules deck](#rules-decks) picks its rows by it, so give every word its own: a pronoun is `pronoun`, not `other`. |
 | `gender` | no | Grammatical gender, as text. On a noun it is one of its language's classes, which the language's path lists (`genders`): see [Gender](#gender). |
-| `tags` | no | Card-level tags. Drills can be filtered by tag. |
+| `tags` | no | Card-level tags. Drills can be filtered by tag. In a script deck, `own-letter` marks a letter the language adds to, or writes differently from, a script it shares with other languages: Assamese ৰ (rô) and ৱ (wô) in Eastern Nagari. The app's script test, which lets a learner who reads the shared script skip the course's script lessons, always asks these (#554). |
 | `notes` | no | Text, or a list of typed notes: see [Notes](#notes). Shown when the word is taught and after answering. |
 | `audio` | no | The card's own recording, played in place of text-to-speech: `"decks/hi/audio/hi-0001.opus"`, a file shipped with the deck, with its `audio_credit`. See [A card's own recording](#a-cards-own-recording-audio). |
 | `audio_credit` | with a shipped `audio` | `{ source, license, credit }`: the file it was made from, its licence and its speaker. |
