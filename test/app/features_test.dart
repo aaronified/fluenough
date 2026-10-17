@@ -41,7 +41,8 @@ void main() {
   test('this version ships the drills, speaking and reading among them, '
       'answers in Latin letters, saved progress, '
       'appearance but for wallpaper colours, stats, leeches, daily facts, '
-      'the log backup, backing up to a file, adding a deck from a file, opening the phone\'s '
+      'the log backup, backing up to a file and restoring from one, '
+      'adding a deck from a file, opening the phone\'s '
       'voice settings, reports by mail, the app log, deck updates and the '
       'hours left in the decks', () {
     expect(Feature.available, {
@@ -63,6 +64,7 @@ void main() {
       Feature.logExport,
       Feature.logImport,
       Feature.localBackup,
+      Feature.localRestore,
       Feature.importFile,
       Feature.voiceSettingsLink,
       Feature.feedbackMail,
