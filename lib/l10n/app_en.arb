@@ -5962,9 +5962,9 @@
       }
     }
   },
-  "settingsUpdateAvailableDesc": "You have {version}. It downloads here, then Android asks you to install it.",
+  "settingsUpdateAvailableDesc": "You have {version}. A backup is made as it downloads, then Android asks you to install it.",
   "@settingsUpdateAvailableDesc": {
-    "description": "Under Version … is available. version is this app's version. The app downloads the new version itself, then opens Android's installer.",
+    "description": "Under Version … is available. version is this app's version. The app downloads the new version itself, making a backup of the app as the download starts, then opens Android's installer.",
     "placeholders": {
       "version": {
         "type": "String",
@@ -8945,11 +8945,11 @@
   "@settingsDataRecent": {
     "description": "A heading on Your data above the last backups kept on the phone, and the row that stands for them."
   },
-  "settingsDataRecentDesc": "The last five, with Download, Send to cloud and Restore",
+  "settingsDataRecentDesc": "No backups yet. Back up now makes the first.",
   "@settingsDataRecentDesc": {
-    "description": "Under the Recent backups row."
+    "description": "The line on Your data under the Recent backups heading while no backup is kept on the phone."
   },
-  "settingsDataRecentNote": "The last five are kept on this phone, whatever made them: you, an app update, or a restore.",
+  "settingsDataRecentNote": "The last five are kept on this phone, whatever made them: you, an app update, or a restore. Download saves a copy in your phone's Downloads; Send to cloud copies it to the cloud you connect.",
   "@settingsDataRecentNote": {
     "description": "A note on Your data under Recent backups."
   },
@@ -9070,5 +9070,222 @@
   "appLogClear": "Clear",
   "@appLogClear": {
     "description": "Word under the icon of the app log's Clear action, in its bottom bar, in the error colour. Its tooltip is settingsLogClear."
+  },
+  "settingsBackupMadeByYou": "Made by you, {date}",
+  "@settingsBackupMadeByYou": {
+      "description": "A backup in Recent backups that the learner made with Back up now. date is a short date such as Dec 2.",
+      "placeholders": {
+          "date": {
+              "type": "String"
+          }
+      }
+  },
+  "settingsBackupBeforeUpdate": "Before updating to {version}, {date}",
+  "@settingsBackupBeforeUpdate": {
+      "description": "A backup in Recent backups that the app made as the download of an app update began. version is the version being downloaded; date is a short date.",
+      "placeholders": {
+          "version": {
+              "type": "String"
+          },
+          "date": {
+              "type": "String"
+          }
+      }
+  },
+  "settingsBackupBeforeRestore": "Before restoring, {date}",
+  "@settingsBackupBeforeRestore": {
+      "description": "A backup in Recent backups: the copy of what a restore was about to replace. date is a short date.",
+      "placeholders": {
+          "date": {
+              "type": "String"
+          }
+      }
+  },
+  "settingsBackupFromFile": "Restored from a file, {date}",
+  "@settingsBackupFromFile": {
+      "description": "A backup in Recent backups: a file the learner restored from, kept as it was read. date is a short date.",
+      "placeholders": {
+          "date": {
+              "type": "String"
+          }
+      }
+  },
+  "settingsBackupReviews": "{count, plural, =0{No reviews} =1{1 review} other{{count} reviews}}",
+  "@settingsBackupReviews": {
+      "description": "Under a backup in Recent backups: how many reviews its log holds.",
+      "placeholders": {
+          "count": {
+              "type": "int"
+          }
+      }
+  },
+  "settingsBackupDownload": "Download",
+  "@settingsBackupDownload": {
+      "description": "A backup's action in Recent backups: saves a copy of the file where the learner chooses. Short: it sits under an icon."
+  },
+  "settingsBackupSendToCloud": "Send to cloud",
+  "@settingsBackupSendToCloud": {
+      "description": "A backup's action in Recent backups: copies it to the connected cloud. Short: it sits under an icon."
+  },
+  "settingsBackupRestore": "Restore",
+  "@settingsBackupRestore": {
+      "description": "A backup's action in Recent backups: opens the restore sheet. Short: it sits under an icon."
+  },
+  "settingsBackupSaved": "Saved {file}",
+  "@settingsBackupSaved": {
+      "description": "Toast after a backup was saved to a file the learner chose.",
+      "placeholders": {
+          "file": {
+              "type": "String"
+          }
+      }
+  },
+  "settingsDataBackedUp": "Backup saved. A copy is kept here too.",
+  "@settingsDataBackedUp": {
+      "description": "Toast after Back up now saved the file."
+  },
+  "settingsDataBackupFailed": "The backup could not be made.",
+  "@settingsDataBackupFailed": {
+      "description": "Toast when Back up now or Download failed."
+  },
+  "settingsDataRestorePick": "Choose a backup to restore",
+  "@settingsDataRestorePick": {
+      "description": "Title of the system file picker that Restore from a file opens."
+  },
+  "settingsDataRestoreNotBackup": "That is not a Fluenough backup, or it is damaged. Nothing has changed.",
+  "@settingsDataRestoreNotBackup": {
+      "description": "Toast when the file picked to restore from is not a readable backup."
+  },
+  "settingsDataRestoreFailed": "The restore could not finish. Nothing has changed.",
+  "@settingsDataRestoreFailed": {
+      "description": "Toast when a restore stopped part-way and the app was left as it was."
+  },
+  "settingsDataRestored": "Restored. Your decks download again.",
+  "@settingsDataRestored": {
+      "description": "Toast after a restore finished."
+  },
+  "settingsRestoreTitle": "Restore this backup?",
+  "@settingsRestoreTitle": {
+      "description": "Title of the sheet shown before a backup is restored."
+  },
+  "settingsRestoreMade": "Made",
+  "@settingsRestoreMade": {
+      "description": "Label in the restore sheet: when the backup was made."
+  },
+  "settingsRestoreMadeAt": "{date}, {time}",
+  "@settingsRestoreMadeAt": {
+      "description": "In the restore sheet: when the backup was made.",
+      "placeholders": {
+          "date": {
+              "type": "String"
+          },
+          "time": {
+              "type": "String"
+          }
+      }
+  },
+  "settingsRestoreBy": "By",
+  "@settingsRestoreBy": {
+      "description": "Label in the restore sheet: the app version that made the backup."
+  },
+  "settingsRestoreByApp": "Fluenough {version}",
+  "@settingsRestoreByApp": {
+      "description": "In the restore sheet: the app version that made the backup.",
+      "placeholders": {
+          "version": {
+              "type": "String"
+          }
+      }
+  },
+  "settingsRestoreProgress": "Progress",
+  "@settingsRestoreProgress": {
+      "description": "Label in the restore sheet: what the backup's log holds."
+  },
+  "settingsRestoreProgressIn": "{count, plural, =0{No reviews yet} =1{1 review in {languages}} other{{count} reviews in {languages}}}",
+  "@settingsRestoreProgressIn": {
+      "description": "In the restore sheet: how many reviews the backup holds and the languages the learner was learning. languages is a list such as Bengali and Hindi.",
+      "placeholders": {
+          "count": {
+              "type": "int"
+          },
+          "languages": {
+              "type": "String"
+          }
+      }
+  },
+  "settingsRestoreProgressOnly": "{count, plural, =0{No reviews yet} =1{1 review} other{{count} reviews}}",
+  "@settingsRestoreProgressOnly": {
+      "description": "In the restore sheet: how many reviews the backup holds, when it names no language.",
+      "placeholders": {
+          "count": {
+              "type": "int"
+          }
+      }
+  },
+  "settingsRestoreAlso": "Also",
+  "@settingsRestoreAlso": {
+      "description": "Label in the restore sheet: the other things the backup holds."
+  },
+  "settingsRestoreAlsoText": "Your settings, the languages you know, and your rater code",
+  "@settingsRestoreAlsoText": {
+      "description": "In the restore sheet: what else is restored."
+  },
+  "settingsRestoreNotRestored": "Not restored, will be downloaded",
+  "@settingsRestoreNotRestored": {
+      "description": "Label in the restore sheet: the decks, which a backup never holds."
+  },
+  "settingsRestoreDecks": "{languages} decks",
+  "@settingsRestoreDecks": {
+      "description": "In the restore sheet: the languages whose decks download after the restore. languages is a list such as Bengali and Hindi.",
+      "placeholders": {
+          "languages": {
+              "type": "String"
+          }
+      }
+  },
+  "settingsRestoreWarning": "Your progress and settings on this phone are replaced. A copy of them is kept first, in Recent backups.",
+  "@settingsRestoreWarning": {
+      "description": "Warning in the restore sheet, with an alert icon."
+  },
+  "settingsRestoreConfirm": "Replace and restore",
+  "@settingsRestoreConfirm": {
+      "description": "The restore sheet's button, in the error colour: replaces everything with the backup."
+  },
+  "settingsRestoreNewerTitle": "This backup is from a newer Fluenough",
+  "@settingsRestoreNewerTitle": {
+      "description": "Title of the sheet shown when the backup file was made by a newer app."
+  },
+  "settingsRestoreNewerBody": "It was made by Fluenough {made}, and this is {current}. Update the app, then restore it. Nothing has changed.",
+  "@settingsRestoreNewerBody": {
+      "description": "Body of that sheet. made is the newer version, current this one.",
+      "placeholders": {
+          "made": {
+              "type": "String"
+          },
+          "current": {
+              "type": "String"
+          }
+      }
+  },
+  "settingsRestoreNewerBodyUnknown": "It was made by a newer Fluenough, and this is {current}. Update the app, then restore it. Nothing has changed.",
+  "@settingsRestoreNewerBodyUnknown": {
+      "description": "Body of that sheet when the file does not say which version made it. current is this version.",
+      "placeholders": {
+          "current": {
+              "type": "String"
+          }
+      }
+  },
+  "settingsRestoreNewerClose": "Close",
+  "@settingsRestoreNewerClose": {
+      "description": "The newer-backup sheet's button that closes it."
+  },
+  "settingsRestoreNewerCheck": "Check for updates",
+  "@settingsRestoreNewerCheck": {
+      "description": "The newer-backup sheet's button that checks for an app update."
+  },
+  "settingsUpdateBackupFailed": "The backup could not be made. The update goes on without it.",
+  "@settingsUpdateBackupFailed": {
+      "description": "Under the downloading update row when the backup made with the download failed."
   }
 }

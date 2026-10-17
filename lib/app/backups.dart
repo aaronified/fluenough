@@ -10,7 +10,7 @@ import 'memory_progress.dart';
 import 'settings.dart';
 
 export '../core/backup/app_backup.dart'
-    show AppBackup, BackupKind, NewerBackupException;
+    show AppBackup, BackupInfo, BackupKind, NewerBackupException;
 export 'backup_store.dart' show StoredBackup;
 
 /// Backing up and restoring the whole app (#470; docs/BACKUP-FORMAT.md):
