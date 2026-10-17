@@ -737,6 +737,15 @@ void main() {
             state.settings.reviewLanguages = const <String>{'te'};
           },
         ),
+        (
+          'waiting for review in Telugu, unfolded',
+          const WaitingForReviewPage(),
+          (tester, state) async {
+            state.settings.reviewLanguages = const <String>{'te'};
+            await tester.pumpAndSettle();
+            await tapShown(tester, find.text('Telugu'));
+          },
+        ),
         // The reviewer guide as the walkthrough (#409): its first step, one
         // with three paragraphs, and the last, which closes with Got it.
         ('how reviewing works, first step', const HowReviewingWorks(), null),
