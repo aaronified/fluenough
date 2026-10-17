@@ -561,7 +561,7 @@ class _KnownLanguageSheetState extends State<KnownLanguageSheet> {
                   ),
                   icon: Icons.menu_book_outlined,
                   selected: current?.isNotEmpty ?? false,
-                  reply: KnownReply.reads(<String>[?language.script]),
+                  reply: KnownReply.reads(<String>[language.script ?? '']),
                 ),
               option(
                 key: const ValueKey<String>('know-speak'),
