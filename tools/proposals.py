@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import json
 import re
+import unicodedata
 import sys
 from dataclasses import dataclass, field, replace
 from pathlib import Path
@@ -35,9 +36,10 @@ import validate_decks as vd  # noqa: E402
 import yaml  # noqa: E402
 
 # The part of a card a review's suggestion names (lib/core/review/
-# deck_review.dart, CardPart) and the field it is in the deck. An example,
-# a picture or a base word's meaning (`base`, with the base's `word`) is
-# left for the owner.
+# deck_review.dart, CardPart) and the field it is in the deck. An example
+# or a picture is left for the owner. A base (`base`, #476) and the
+# accepted alternatives (`alt`, "Also heard") are read by the review bot
+# into the fields BASES and ALT below.
 FIELD_OF_PART = {
     "word": "target",
     "reading": "reading",
@@ -46,7 +48,61 @@ FIELD_OF_PART = {
     "notes": "notes",
 }
 # The order fields are written in, for a field the card did not have.
-FIELD_ORDER = ("id", "ref", "target", "reading", "ipa", "native")
+FIELD_ORDER = ("id", "ref", "target", "reading", "ipa", "alt_target", "native")
+
+# A proposal on one of a card's base words (#476): its `now` is the base as
+# it is, and its `text` the base as proposed, each one line of JSON (see
+# base_text), "" for none: an add has no `now`, a removal no `text`. The
+# base is named by its `word`, the word as it stands in the target, so a
+# card can have one proposal a base, and rivals are on the same word.
+BASES = "bases"
+# A proposal on the accepted alternatives, `alt_target`: its `now` and
+# `text` are the lists as one line of JSON (see alt_text).
+ALT = "alt_target"
+# The keys of a base in a proposal, in the order they are written.
+BASE_ORDER = ("word", "ref", "base", "reading", "meaning")
+
+
+def base_text(base: dict | None) -> str:
+    """[base] as a proposal's `now` or `text`: one line of JSON with the
+    keys of BASE_ORDER that it has as text, in that order; "" for none."""
+    if not base:
+        return ""
+    kept = {k: base[k].strip() for k in BASE_ORDER
+            if isinstance(base.get(k), str) and base[k].strip()}
+    if "ref" in kept:
+        kept = {"word": kept.get("word", ""), "ref": kept["ref"]}
+    return json.dumps(kept, ensure_ascii=False)
+
+
+def read_base(text: str) -> dict | None:
+    """A base as base_text writes it, or None: "" or not a base, which has
+    its word and either a ref or a base form."""
+    if not text:
+        return None
+    try:
+        base = json.loads(text)
+    except ValueError:
+        return None
+    if not isinstance(base, dict) or not isinstance(base.get("word"), str) \
+            or not base["word"].strip():
+        return None
+    if not isinstance(base.get("ref"), str) and not isinstance(base.get("base"), str):
+        return None
+    return base
+
+
+def base_word(p: Proposal) -> str | None:
+    """The word of the target [p], a proposal on a base, is about."""
+    found = read_base(p.text) or read_base(p.now)
+    return found["word"] if found else None
+
+
+def alt_text(items: object) -> str:
+    """A card's `alt_target`, as a proposal on it says it: a JSON list of
+    text, "[]" for none."""
+    items = items if isinstance(items, list) else []
+    return json.dumps([i for i in items if isinstance(i, str)], ensure_ascii=False)
 
 
 @dataclass(frozen=True)
@@ -60,6 +116,10 @@ class Proposal:
     date: str
     why: str = ""
     accepted: tuple[str, ...] = ()
+    # The id of the change to the card's word this one came with (#476),
+    # or "": it is applied with that word, in its PR, once the word is
+    # agreed, and never on its own. Not one of the facts the id is made of.
+    tied: str = ""
 
     @property
     def id(self) -> str:
@@ -74,6 +134,8 @@ class Proposal:
                  f"by: {q(self.by)}", f"date: {q(self.date)}"]
         if self.why:
             parts.append(f"why: {q(self.why)}")
+        if self.tied:
+            parts.append(f"with: {q(self.tied)}")
         if self.accepted:
             parts.append(f"accepted: [{', '.join(q(a) for a in self.accepted)}]")
         return "- { " + ", ".join(parts) + " }"
@@ -88,11 +150,13 @@ class Proposal:
         if not all(isinstance(v, str) for v in values):
             return None
         why = item.get("why", "")
+        tied = item.get("with", "")
         accepted = item.get("accepted", [])
         if not isinstance(why, str) or not isinstance(accepted, list) \
+                or not isinstance(tied, str) \
                 or not all(isinstance(a, str) for a in accepted):
             return None
-        p = Proposal(card, *values, why=why, accepted=tuple(accepted))
+        p = Proposal(card, *values, why=why, accepted=tuple(accepted), tied=tied)
         return p if item.get("id") == p.id else None
 
 
@@ -115,6 +179,10 @@ class Entry:
     def may_change(self, name: str) -> bool:
         if name not in vd.PROPOSAL_FIELDS[self.form]:
             return False
+        if name == BASES:
+            # A card that is its own root (`bases: "self"`) has none to
+            # change; nor does a layer's entry for a core it cannot find.
+            return isinstance(self.data.get("bases"), (list, dict, type(None)))
         return name != "notes" or isinstance(self.data.get("notes"), (str, type(None)))
 
     def proposals(self) -> list[Proposal]:
@@ -193,6 +261,87 @@ def find(root: Path, lang: str, pid: str) -> tuple[Entry, Proposal] | None:
     return None
 
 
+# --- A card's bases, as a proposal sees them (#476) -------------------------
+
+def core_entry(root: Path, lang: str, entry: Entry) -> Entry | None:
+    """The entry that writes [entry]'s bases: itself, or for a layer's entry
+    its core's card, written there in full."""
+    if entry.form in ("single", "layer-own", "core"):
+        return entry
+    if entry.form != "layer" or entry.core is None:
+        return None
+    return next((e for e in entries(root, lang, entry.card)
+                 if e.deck == entry.core and e.form == "core"), None)
+
+
+def _layer_meaning(entry: Entry, word: str) -> str | None:
+    found = entry.data.get("bases")
+    value = found.get(word) if isinstance(found, dict) else None
+    if isinstance(value, dict):
+        value = value.get("meaning")
+    return value if isinstance(value, str) else None
+
+
+def base_of(root: Path, lang: str, entry: Entry, word: str) -> dict | None:
+    """[entry]'s base for [word] as one dict: its core's item, and for a
+    layer the meaning the layer gives it. None when it has none."""
+    core = core_entry(root, lang, entry)
+    items = core.data.get("bases") if core is not None else None
+    if not isinstance(items, list):
+        return None
+    item = next((b for b in items if isinstance(b, dict) and b.get("word") == word), None)
+    if item is None:
+        return None
+    base = dict(item)
+    if entry.form == "layer" and "ref" not in base:
+        meaning = _layer_meaning(entry, word)
+        base.pop("meaning", None)
+        if meaning is not None:
+            base["meaning"] = meaning
+    return base
+
+
+def now_of(root: Path, lang: str, entry: Entry, p: Proposal) -> str:
+    """What [p]'s field says on [entry] now, as a proposal says it."""
+    if p.field == BASES:
+        word = base_word(p)
+        return base_text(base_of(root, lang, entry, word)) if word else ""
+    if p.field == ALT:
+        return alt_text(entry.data.get(ALT))
+    value = entry.value(p.field)
+    return value if isinstance(value, str) else ""
+
+
+def holds(root: Path, lang: str, entry: Entry, p: Proposal) -> bool:
+    """Whether [p] can go on [entry]: the entry may change its field, and
+    the field says what the proposer saw."""
+    return entry.may_change(p.field) and now_of(root, lang, entry, p) == p.now
+
+
+def rivals_of(entry: Entry, p: Proposal) -> list[Proposal]:
+    """The other proposals on [entry] that change what [p] changes: its
+    field, and for a base, the same word."""
+    word = base_word(p) if p.field == BASES else None
+    return [o for o in entry.proposals() if o.field == p.field and o.id != p.id
+            and (p.field != BASES or base_word(o) == word)]
+
+
+def card_for_form(root: Path, lang: str, form: str, card: str) -> str | None:
+    """The one card of [lang] other than [card] whose word is [form], or
+    None: no card, or several."""
+    want = unicodedata.normalize("NFC", form.strip())
+    found = {e.card for e in entries(root, lang)
+             if e.form in ("single", "core", "layer-own") and e.card != card
+             and isinstance(e.data.get("target"), str)
+             and unicodedata.normalize("NFC", e.data["target"].strip()) == want}
+    return found.pop() if len(found) == 1 else None
+
+
+def card_exists(root: Path, lang: str, card: str) -> bool:
+    return any(e.form in ("single", "core", "layer-own")
+               for e in entries(root, lang, card))
+
+
 # --- Editing a file's text ----------------------------------------------------
 
 def _quoted(text: str) -> str:
@@ -264,7 +413,23 @@ class _Text:
         return j
 
     def set_field(self, name: str, text: str) -> None:
-        line = f"{' ' * self.fi}{name}: {_quoted(text)}\n"
+        self._set_line(name, _quoted(text))
+
+    def set_list(self, name: str, items: list[str]) -> None:
+        """Field [name] as a list of text on one line, `name: ["a", "b"]`;
+        removed when [items] is empty."""
+        if items:
+            self._set_line(name, f"[{', '.join(_quoted(i) for i in items)}]")
+            return
+        i = self._key_line(name)
+        if i is not None:
+            if self._block_end(i) != i + 1:
+                raise Unsupported(f"{name} is written over several lines")
+            del self.lines[i]
+            self.end -= 1
+
+    def _set_line(self, name: str, rendered: str) -> None:
+        line = f"{' ' * self.fi}{name}: {rendered}\n"
         i = self._key_line(name)
         if i is not None:
             if self._block_end(i) != i + 1:
@@ -332,11 +497,104 @@ class _Text:
             del self.lines[head]
             self.end -= 1
 
-    def save(self, check) -> None:
-        """Writes the lines, if the file then reads as [check] expects of
-        the entry: check(entry or None) is True."""
+    # A field written as a block of one-line items: a card's `bases` list
+    # (`- { word: … }`) or a layer's `bases` mapping (`"word": "meaning"`).
+
+    def _block(self, name: str) -> tuple[int | None, list[int]]:
+        """The line of field [name] and its item lines. Unsupported when
+        the field is written on its own line ("self", a flow list)."""
+        head = self._key_line(name)
+        if head is None:
+            return None, []
+        bare = re.compile(rf"^ {{{self.fi}}}[\"']?{re.escape(name)}[\"']?\s*:\s*(#.*)?$")
+        if not bare.match(self.lines[head].rstrip("\r\n")):
+            raise Unsupported(f"{name} is not written as a block")
+        return head, [i for i in range(head + 1, self._block_end(head))
+                      if not _blank(self.lines[i])]
+
+    def _parsed(self, i: int) -> object:
+        try:
+            return yaml.load(self.lines[i].strip(), Loader=vd.DeckLoader)
+        except yaml.YAMLError as error:
+            raise Unsupported("an item not written on one line") from error
+
+    def _new_block(self, name: str, item: str) -> None:
+        """Adds field [name] with its one [item] line, last among the
+        card's fields, before who checked it and its proposals."""
+        at = [i for i in (self._key_line("checked_by"), self._key_line("proposed"))
+              if i is not None]
+        where = min(at) if at else self.end
+        self.lines[where:where] = [f"{' ' * self.fi}{name}:\n",
+                                   f"{' ' * (self.fi + 2)}{item}\n"]
+        self.end += 2
+
+    def _set_item(self, name: str, i: int | None, items: list[int], head: int | None,
+                  item: str | None) -> None:
+        if item is None:
+            if i is None:
+                return
+            del self.lines[i]
+            self.end -= 1
+            if len(items) == 1:
+                del self.lines[head]
+                self.end -= 1
+        elif i is not None:
+            self.lines[i] = f"{' ' * _indent(self.lines[i])}{item}\n"
+        elif head is not None:
+            indent = _indent(self.lines[items[0]]) if items else self.fi + 2
+            self.lines.insert((items[-1] if items else head) + 1, f"{' ' * indent}{item}\n")
+            self.end += 1
+        else:
+            self._new_block(name, item)
+
+    def set_base(self, word: str, item: str | None) -> None:
+        """The card's base for [word] written as [item], one line
+        `- { word: … }`, in place of the one there or added last; removed
+        when [item] is None, with `bases:` once it has none."""
+        head, items = self._block(BASES)
+        found = None
+        for i in items:
+            parsed = self._parsed(i)
+            if not (isinstance(parsed, list) and len(parsed) == 1
+                    and isinstance(parsed[0], dict)):
+                raise Unsupported("a base not written on one line")
+            if parsed[0].get("word") == word:
+                found = i
+        self._set_item(BASES, found, items, head, item)
+
+    def set_meaning(self, word: str, meaning: str | None, keep_mark: bool = False) -> None:
+        """A layer's meaning for the base [word], `"word": "meaning"`, in
+        place of the one there or added last; removed when None. One
+        written as `{ meaning, wiktionary }` stays so, its Wiktionary mark
+        kept when [keep_mark] says the base's form and reading are."""
+        head, items = self._block(BASES)
+        found = None
+        old = None
+        for i in items:
+            parsed = self._parsed(i)
+            if not (isinstance(parsed, dict) and len(parsed) == 1):
+                raise Unsupported("a base's meaning not written on one line")
+            if word in parsed:
+                found, old = i, parsed[word]
+        if meaning is None:
+            item = None
+        elif isinstance(old, dict):
+            fields = [f"meaning: {_quoted(meaning)}"]
+            if keep_mark and isinstance(old.get("wiktionary"), bool):
+                fields.append(f"wiktionary: {'true' if old['wiktionary'] else 'false'}")
+            item = f"{_quoted(word)}: {{ {', '.join(fields)} }}"
+        else:
+            item = f"{_quoted(word)}: {_quoted(meaning)}"
+        self._set_item(BASES, found, items, head, item)
+
+    def ready(self, check) -> str:
+        """The file's text with the edits, if it reads as [check] expects of
+        the entry and no other card has changed."""
         text = "".join(self.lines)
-        raw = yaml.load(text, Loader=vd.DeckLoader)
+        try:
+            raw = yaml.load(text, Loader=vd.DeckLoader)
+        except yaml.YAMLError as error:
+            raise Unsupported("the edit does not parse") from error
         found = [e for e in _entries_in(self.entry.path, raw)
                  if e.card == self.entry.card and e.form == self.entry.form]
         if len(found) != 1 or not check(found[0]):
@@ -346,7 +604,12 @@ class _Text:
                   if e.card != self.entry.card]
         if [(e.card, e.data) for e in others] != [(e.card, e.data) for e in before]:
             raise Unsupported("the edit changed another card")
-        self.entry.path.write_text(text, encoding="utf-8")
+        return text
+
+    def save(self, check) -> None:
+        """Writes the lines, if the file then reads as [check] expects of
+        the entry: check(entry or None) is True."""
+        self.entry.path.write_text(self.ready(check), encoding="utf-8")
 
 
 # --- What the bot does ----------------------------------------------------------
@@ -389,14 +652,79 @@ def home(root: Path, lang: str, deck: str, p: Proposal) -> Entry | None:
     """The entry a proposal goes on: the one nearest its deck that holds
     the field as the proposer saw it. None when none does: the card is
     gone, or the field has changed since."""
-    found = [e for e in entries(root, lang, p.card)
-             if e.may_change(p.field) and e.value(p.field) == p.now]
+    found = [e for e in entries(root, lang, p.card) if holds(root, lang, e, p)]
     return min(found, key=lambda e: _rank(e, deck, lang), default=None)
+
+
+def _meaning_only(root: Path, lang: str, deck: str, p: Proposal) -> Proposal:
+    """[p] as a review file from before #476 has it, a change to the
+    meaning of the base for a word only, `{"word", "meaning"}` on each
+    side, with the rest of that base filled in from the entry nearest
+    [deck] whose base for the word has that meaning. [p] as it is when it
+    is not one, or no entry has the base."""
+    try:
+        old, new = json.loads(p.now), json.loads(p.text)
+    except ValueError:
+        return p
+    if not all(isinstance(b, dict) and set(b) == {"word", "meaning"}
+               and all(isinstance(v, str) for v in b.values()) for b in (old, new)):
+        return p
+    if not new["meaning"].strip():
+        # No meaning to write: left for the owner, never a base without one.
+        return p
+    found = []
+    for e in entries(root, lang, p.card):
+        base = base_of(root, lang, e, old["word"]) if e.may_change(BASES) else None
+        if base and "ref" not in base and base.get("meaning") == old["meaning"]:
+            found.append((_rank(e, deck, lang), base))
+    if not found:
+        return p
+    base = min(found, key=lambda f: f[0])[1]
+    return replace(p, now=base_text(base),
+                   text=base_text({**base, "meaning": new["meaning"]}))
+
+
+def resolve_base(root: Path, lang: str, p: Proposal, deck: str = "") -> Proposal | None:
+    """[p], a proposal on a base, as it is written: its `now` and `text` as
+    base_text writes them, and an added base whose form is the word of one
+    other card of the language given as a `ref` to it, unless the reviewer
+    chose not to link it (`"link": false`). None when it is not a good one:
+    no base on either side, the same on both, or a ref to no card or to the
+    card itself."""
+    p = _meaning_only(root, lang, deck, p)
+    old, new = read_base(p.now), read_base(p.text)
+    if (p.now and old is None) or (p.text and new is None) or (old is None and new is None):
+        return None
+    if old is not None and new is not None and old["word"] != new["word"]:
+        return None
+    if old is None and new is not None and not isinstance(new.get("ref"), str) \
+            and new.get("link") is not False:
+        ref = card_for_form(root, lang, new["base"], p.card)
+        if ref is not None:
+            new = {"word": new["word"], "ref": ref}
+    if new is not None and isinstance(new.get("ref"), str) \
+            and (new["ref"] == p.card or not card_exists(root, lang, new["ref"])):
+        return None
+    now, text = base_text(old), base_text(new)
+    if now == text:
+        return None
+    return replace(p, now=now, text=text)
 
 
 def propose(root: Path, suggestion: Suggestion, result: Proposed) -> None:
     p = suggestion.proposal
-    if p.by in p.accepted or p.text == p.now or not p.text.strip():
+    if p.tied and find(root, suggestion.lang, p.tied) is None:
+        # Its change to the word was not proposed: the card has changed
+        # since, or the same word was proposed already by another.
+        result.outdated.append(p)
+        return
+    if p.field == BASES:
+        written = resolve_base(root, suggestion.lang, p, suggestion.deck)
+        if written is None or p.by in p.accepted:
+            result.unsupported.append(p)
+            return
+        p = written
+    elif p.by in p.accepted or p.text == p.now or not p.text.strip():
         result.unsupported.append(p)
         return
     if find(root, suggestion.lang, p.id) is not None:
@@ -457,19 +785,111 @@ def apply(root: Path, lang: str, pid: str) -> Applied:
     if found is None:
         return Applied("missing")
     entry, p = found
-    if not entry.may_change(p.field) or entry.value(p.field) != p.now:
+    if not holds(root, lang, entry, p):
         return Applied("outdated", p)
-    rivals = [o for o in entry.proposals() if o.field == p.field and o.id != pid]
+    rivals = rivals_of(entry, p)
+    gone = {o.id for o in (p, *rivals)}
     try:
-        edit = _Text(entry)
-        edit.set_field(p.field, p.text)
-        for o in (p, *rivals):
-            edit.remove(o.id)
-        edit.save(lambda e: e.value(p.field) == p.text
-                  and not any(o.field == p.field for o in e.proposals()))
-    except Unsupported:
+        if p.field == BASES:
+            _apply_base(root, lang, entry, p, gone)
+        else:
+            edit = _Text(entry)
+            if p.field == ALT:
+                edit.set_list(ALT, json.loads(p.text))
+            else:
+                edit.set_field(p.field, p.text)
+            for o in gone:
+                edit.remove(o)
+            edit.save(lambda e: now_of(root, lang, e, p) == p.text
+                      and not any(o.id in gone for o in e.proposals()))
+    except (Unsupported, ValueError):
         return Applied("unsupported", p)
     return Applied("applied", p, rivals, entry)
+
+
+def _base_item(old: dict | None, new: dict, written_meaning: bool) -> dict:
+    """The core's item for the base [new], from the base it replaces: its
+    IPA and Wiktionary mark kept while its form and reading are."""
+    if isinstance(new.get("ref"), str):
+        return {"word": new["word"], "ref": new["ref"]}
+    item = {"word": new["word"], "base": new["base"]}
+    if new.get("reading"):
+        item["reading"] = new["reading"]
+    same = old is not None and old.get("base") == new["base"] \
+        and old.get("reading") == new.get("reading")
+    if same and isinstance(old.get("ipa"), str):
+        item["ipa"] = old["ipa"]
+    if written_meaning and new.get("meaning"):
+        item["meaning"] = new["meaning"]
+    if written_meaning and same and isinstance(old.get("wiktionary"), bool):
+        item["wiktionary"] = old["wiktionary"]
+    return item
+
+
+def _flow(item: dict) -> str:
+    """[item] as one line of a list, `- { word: "…", … }`, its text quoted."""
+    def value(v: object) -> str:
+        return ("true" if v else "false") if isinstance(v, bool) else _quoted(str(v))
+    return "- { " + ", ".join(f"{k}: {value(v)}" for k, v in item.items()) + " }"
+
+
+def _item_of(e: Entry, word: str) -> dict | None:
+    items = e.data.get("bases")
+    if not isinstance(items, list):
+        return None
+    return next((b for b in items if isinstance(b, dict) and b.get("word") == word), None)
+
+
+def _apply_base(root: Path, lang: str, entry: Entry, p: Proposal, gone: set[str]) -> None:
+    """Writes [p], a proposal on a base, line by line: the core's item and,
+    for a layer, its meaning there. A base removed, or now given by ref,
+    loses its meaning in every layer of the core, which would otherwise
+    name a base the core no longer writes in full. Every file is checked
+    before any is written."""
+    old, new = read_base(p.now), read_base(p.text)
+    word = (new or old)["word"]
+    core = core_entry(root, lang, entry)
+    if core is None:
+        raise Unsupported("the card's core entry is not found")
+    split = entry.form == "layer"
+    item = None if new is None else _base_item(_item_of(core, word), new, not split)
+    line = None if item is None else _flow(item)
+    meaning = new.get("meaning") if new is not None and item is not None \
+        and "ref" not in item else None
+    edits: list[tuple[_Text, object]] = []
+    own = _Text(entry)
+    if split:
+        core_edit = _Text(core)
+        core_edit.set_base(word, line)
+        edits.append((core_edit, lambda e: _item_of(e, word) == item))
+        was = _item_of(core, word)
+        same = was is not None and item is not None and "ref" not in item \
+            and was.get("base") == item.get("base") \
+            and was.get("reading") == item.get("reading")
+        own.set_meaning(word, meaning, keep_mark=same)
+        if meaning is None:
+            for other in entries(root, lang, entry.card):
+                if other.form == "layer" and other.core == entry.core \
+                        and other.path != entry.path \
+                        and _layer_meaning(other, word) is not None:
+                    edit = _Text(other)
+                    edit.set_meaning(word, None)
+                    edits.append((edit, lambda e: _layer_meaning(e, word) is None))
+    else:
+        own.set_base(word, line)
+    for o in gone:
+        own.remove(o)
+
+    def done(e: Entry) -> bool:
+        if any(o.id in gone for o in e.proposals()):
+            return False
+        if split:
+            return _layer_meaning(e, word) == meaning
+        return _item_of(e, word) == item
+    edits.insert(0, (own, done))
+    texts = [(edit.entry.path, edit.ready(check)) for edit, check in edits]
+    for path, text in texts:
+        path.write_text(text, encoding="utf-8")
 
 
 def fill(entry: Entry, values: dict[str, str]) -> bool:
@@ -491,9 +911,11 @@ def fill(entry: Entry, values: dict[str, str]) -> bool:
 
 def outdated(root: Path, lang: str) -> list[tuple[Entry, Proposal]]:
     """The proposals whose field no longer says what they were proposed
-    against."""
-    return [(e, p) for e, p in all_proposals(root, lang)
-            if not e.may_change(p.field) or e.value(p.field) != p.now]
+    against, and those tied to a change to the word that is gone (#476)."""
+    found = all_proposals(root, lang)
+    ids = {p.id for _, p in found}
+    return [(e, p) for e, p in found
+            if not holds(root, lang, e, p) or (p.tied and p.tied not in ids)]
 
 
 def close(root: Path, lang: str, pids: list[str]) -> list[Proposal]:

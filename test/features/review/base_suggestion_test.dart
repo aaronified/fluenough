@@ -14,9 +14,9 @@ import '../../support/harness.dart';
 import '../../support/review_fixture.dart';
 
 /// A reviewer sees a card's base words with their meanings, which agents
-/// wrote (#445), and can suggest a change to the meaning of one written in
-/// full (#410). A base by ref takes its meaning from the card it names, so
-/// it has no card here.
+/// wrote (#445), and can suggest a change to one (#410), its form, reading
+/// and meaning since #476. A base by ref has its box too, its form, reading
+/// and meaning those of the card it names.
 
 /// The plain word's bases: one written in full, one by ref to the word
 /// that sounds like a rude one.
@@ -58,18 +58,19 @@ void main() {
     await tester.tap(find.widgetWithText(OutlinedButton, l10n.reviewSuggest));
     await tester.pumpAndSettle();
     expect(find.byType(SuggestSheet), findsOneWidget);
-    // One card for the base written in full, its name in capitals but the
-    // base as the deck writes it; none for the base by ref.
+    // A box for each base, its name in capitals but the base as the deck
+    // writes it: the one by ref is named by the card it names (#476).
     final name = l10n.reviewPartBaseOf('అమ్మ');
     expect(find.text(name.toUpperCase()), findsOneWidget);
     expect(
       find.text(l10n.reviewPartBaseOf('విధవ').toUpperCase()),
-      findsNothing,
+      findsOneWidget,
     );
+    expect(find.text(l10n.reviewBaseByCard('widow', alikeCard)), findsOne);
 
     await tester.tap(find.byTooltip(l10n.reviewSuggestEditPart(name)));
     await tester.pumpAndSettle();
-    // Now shows the meaning, and the field starts from it.
+    // Now shows the base, and its fields start from it.
     expect(
       find.descendant(
         of: find.byType(MergeSemantics),
@@ -77,12 +78,21 @@ void main() {
       ),
       findsOneWidget,
     );
-    final text = find.byKey(SuggestSheet.textKey(CardPart.base, word: 'అమ్మ'));
-    expect(tester.widget<TextField>(text).controller!.text, 'mum');
+    String field(String f) => tester
+        .widget<TextField>(find.byKey(SuggestSheet.baseKey('అమ్మ', f)))
+        .controller!
+        .text;
+    expect(
+      <String>[field('form'), field('reading'), field('meaning')],
+      <String>['అమ్మ', 'amma', 'mum'],
+    );
     final save = find.byTooltip(l10n.reviewSuggestSaveAll);
-    await tester.enterText(text, 'mother');
     await tester.enterText(
-      find.byKey(SuggestSheet.whyKey(CardPart.base, word: 'అమ్మ')),
+      find.byKey(SuggestSheet.baseKey('అమ్మ', 'meaning')),
+      'mother',
+    );
+    await tester.enterText(
+      find.byKey(SuggestSheet.baseKey('అమ్మ', 'why')),
       'Mum is informal',
     );
     await tester.pumpAndSettle();
@@ -97,11 +107,19 @@ void main() {
         .single;
     expect(suggestion.part, CardPart.base);
     expect(suggestion.word, 'అమ్మ');
-    expect(suggestion.now, 'mum');
-    expect(suggestion.text, 'mother');
+    expect(suggestion.action, BaseAction.edit);
+    expect(
+      suggestion.was,
+      const BaseForm(base: 'అమ్మ', reading: 'amma', meaning: 'mum'),
+    );
+    expect(
+      suggestion.base,
+      const BaseForm(base: 'అమ్మ', reading: 'amma', meaning: 'mother'),
+    );
     expect(suggestion.why, 'Mum is informal');
 
-    // The review file carries which base, so it stands on its own.
+    // The review file carries which base and what it does, so it stands on
+    // its own.
     final file = jsonDecode(
       ReviewFile.encode(
         state.reviewing.reviews.of(wordsDeck)!,
@@ -114,14 +132,26 @@ void main() {
     expect(card['suggestion'], <String, Object?>{
       'part': 'base',
       'word': 'అమ్మ',
-      'now': 'mum',
-      'text': 'mother',
+      'action': 'edit',
+      'was': <String, Object?>{
+        'base': 'అమ్మ',
+        'reading': 'amma',
+        'meaning': 'mum',
+      },
+      'base': <String, Object?>{
+        'base': 'అమ్మ',
+        'reading': 'amma',
+        'meaning': 'mother',
+      },
+      'now': l10n.cardBaseReadingMeaning('అమ్మ', 'amma', 'mum'),
+      'text': l10n.cardBaseReadingMeaning('అమ్మ', 'amma', 'mother'),
       'why': 'Mum is informal',
     });
   });
 
-  testWidgets('opened again, the base shows the suggestion on it, and a '
-      'change to another part keeps it', (tester) async {
+  testWidgets('opened again, the base shows the suggestion on it, one kept '
+      'before #476 read as a change to the base, and a change to another '
+      'part keeps it', (tester) async {
     useTallPhone(tester);
     final state = await reviewState(reviewing: true, bases: bases);
     final words = state.deckById(wordsDeck)!;
@@ -153,13 +183,11 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.byTooltip(l10n.reviewSuggestSaveAll));
     await tester.pumpAndSettle();
-    expect(
-      <String>[
-        for (final s in state.reviewing.reviewOf(words, mother)!.suggestions)
-          s.text,
-      ],
-      <String>['mother dear', 'mother'],
-    );
+    final saved = state.reviewing.reviewOf(words, mother)!.suggestions;
+    expect(saved.first.text, 'mother dear');
+    expect(saved.last.action, BaseAction.edit);
+    expect(saved.last.base!.meaning, 'mother');
+    expect(saved.last.was!.meaning, 'mum');
   });
 
   testWidgets('two words with the same base and meaning show one base, '
@@ -205,7 +233,7 @@ void main() {
     await tester.tap(find.byTooltip(l10n.reviewSuggestEditPart(second)));
     await tester.pumpAndSettle();
     await tester.enterText(
-      find.byKey(SuggestSheet.textKey(CardPart.base, word: 'అమ్మా')),
+      find.byKey(SuggestSheet.baseKey('అమ్మా', 'meaning')),
       'mother',
     );
     await tester.pumpAndSettle();
@@ -220,8 +248,8 @@ void main() {
         .single;
     expect(suggestion.part, CardPart.base);
     expect(suggestion.word, 'అమ్మా');
-    expect(suggestion.now, 'mum');
-    expect(suggestion.text, 'mother');
+    expect(suggestion.was!.meaning, 'mum');
+    expect(suggestion.base!.meaning, 'mother');
     handle.dispose();
   });
 
