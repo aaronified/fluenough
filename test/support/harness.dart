@@ -193,25 +193,28 @@ Future<AppState> withDeckTaught(
   return build(progress);
 }
 
-/// Answers Yes to every script question Languages you know shows without
-/// an answer (#462), as a learner must before Continue.
-Future<void> answerScripts(WidgetTester tester) async {
-  final yes = AppLocalizations.of(tester.element(find.byType(Scaffold).first))!
-      .knownScriptYes;
-  final open = find.byWidgetPredicate(
-    (w) => w is SegmentedButton<bool> && w.selected.isEmpty,
+/// Chooses [name] on Languages you know: finds it with the search, taps its
+/// row and answers its sheet, [reads] its script or speaks only (#490).
+Future<void> knowLanguage(
+  WidgetTester tester,
+  String name, {
+  bool reads = true,
+}) async {
+  await tester.enterText(
+    find.byKey(const ValueKey<String>('known-search')),
+    name,
   );
-  for (var i = 0; i < 10 && open.evaluate().isNotEmpty; i++) {
-    final choice = open.first;
-    await tester.ensureVisible(choice);
-    await tester.pumpAndSettle();
-    await tester.tap(find.descendant(of: choice, matching: find.text(yes)));
-    await tester.pumpAndSettle();
-  }
+  await tester.pumpAndSettle();
+  await tester.tap(find.widgetWithText(ListTile, name).first);
+  await tester.pumpAndSettle();
+  await tester.tap(
+    find.byKey(ValueKey<String>(reads ? 'know-read' : 'know-speak')),
+  );
+  await tester.pumpAndSettle();
 }
 
 /// Scrolls the first scrollable down until [finder] is built, if it ever
-/// is: the rank hint sits below the script questions.
+/// is: a note sits at the foot of the list.
 Future<void> scrollToFind(WidgetTester tester, Finder finder) async {
   for (var i = 0; i < 10 && finder.evaluate().isEmpty; i++) {
     await tester.drag(find.byType(Scrollable).first, const Offset(0, -200));

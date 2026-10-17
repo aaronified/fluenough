@@ -15,12 +15,12 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/bottom_actions.dart';
 import '../../ui/widgets/deck_tile.dart';
 import '../../ui/widgets/grouped_list.dart';
-import '../../ui/widgets/language_menu.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/stat_tile.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
+import '../review/review_waiting.dart' show pairOf, reviewPairsOf;
 import 'deck_content.dart';
 import 'number_practice_tile.dart';
 import 'path_model.dart';
@@ -191,6 +191,9 @@ class _UnitPageState extends State<UnitPage> {
             ? DrillRequest(deckIds: ids)
             : lesson;
         var section = 0;
+        // Reviewing is for a course whose two languages the learner knows
+        // (and reads), not for one they are learning (#525).
+        final reviews = reviewPairsOf(state).contains(pairOf(first));
         return Scaffold(
           appBar: AppBar(
             title: Text(
@@ -198,13 +201,13 @@ class _UnitPageState extends State<UnitPage> {
               style: Theme.of(context).textTheme.titleMedium,
             ),
             actions: <Widget>[
-              if (large)
+              if (reviews && large)
                 IconButton(
                   tooltip: l10n.unitReview,
                   icon: const Icon(Icons.fact_check_outlined),
                   onPressed: () => _review(context, state, language),
                 )
-              else
+              else if (reviews)
                 Padding(
                   padding: const EdgeInsetsDirectional.only(end: 4),
                   // Compact, to sit in the app bar: the theme's primary
@@ -225,7 +228,6 @@ class _UnitPageState extends State<UnitPage> {
                     label: Text(l10n.unitReview),
                   ),
                 ),
-              LanguageMenu(pageLanguage: language.code),
               ReportButton(detail: decks.map((e) => e.id).join(', ')),
             ],
           ),

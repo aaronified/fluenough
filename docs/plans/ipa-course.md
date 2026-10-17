@@ -65,35 +65,55 @@ the skill model and the support mails (#432, #433), and `LanguageInfo` on
 `main` has no `typed` or `scoped`. The app side is still to be written; the
 next free ADR number is 0037.
 
+## Decided with the owner, 2026-10-16
+
+Plan item 4's two open points are answered ("Yes, recorded"; "Show, offer to
+add"):
+
+- The answers given through "The sounds of this word" button are recorded:
+  they count as IPA course practice and are scheduled.
+- The button shows for a learner who is not learning the IPA, and tapping it
+  first offers to add the course.
+
+The app side, plan items 1 (the example field), 3 and 4, is built on
+`wip/ipa-course` and described in
+[ADR-0041](../adr/0041-the-ipa-course.md) and DECK-FORMAT.md, "The IPA
+course". The content, items 1 (the examples), 2 and 5, is not.
+
+## Content, done 2026-10-16 (items 1 and 2)
+
+The eleven decks, the path, the script guide and the facts are in the current
+format (cores and an English layer, ids kept, every scalar quoted, every
+script word in prose followed by its reading).
+
+- **Examples.** Every card has a `language` on each example and at least one
+  where the symbol's letter is not said with its sound (`sounds: false`,
+  what it is said as instead in the layer). Another language is used where
+  the app's languages lack the sound (German, French, Polish, Welsh, Zulu,
+  Vietnamese, Swedish, Arabic and others). Example IPA of Indian-language
+  words comes from `tools/transcribe.py`.
+- **Order.** Confusable symbols are adjacent in each deck: ɒ ɔ ɑ, ʈ t̪ and
+  ɖ d̪, ɪ i, ɾ r, e ɛ, ʃ ɕ, θ ð, and the narrow marks in pairs.
+  `tools/test_ipa_course.py` checks the ids, both kinds of example and the
+  adjacency.
+- **Checks.** The validator's `ipa` letters now take the click letters, ⱱ, ꜜ
+  and ⁿ.
+- **For a speaker's check (item 5).** A second note on the card says what is
+  doubtful: Hindi h and ɦ; r and ɾ; ɲ and ŋ; ts and dz for Telugu; ʂ for
+  Marathi; Assamese ɛ, ʊ and ɒ; and the example words for ɢ, ɴ, ɻ, ʕ, ɰ, ʍ,
+  ʀ, ʙ, ɺ, ɤ, n̥, b̤, ĕ, ʄ, the Yoruba tone and the Irish t.
+
+## Open questions
+
+27 symbols have no example yet where a letter is said with the sound; each
+has the example where it is not, and a note saying one is wanted. They are
+the lip flick ⱱ, ʟ, ɘ, ɞ, ɶ, ˑ, ʘ, ǂ, ɠ, ʛ, sʼ, ʜ, ʢ, ʡ, ꜜ, a̰, ɔ̹, ɔ̜, e̠, ë, e̽, t̼,
+e̝, e̘, e̙, t̺ and t̻. I did not invent words. Which language and word do you
+want for each? (A speaker or phonetician is needed.)
+
 ## What is left
 
-1. **Examples, by the new rule.** Every symbol has at least two examples:
-   - one where a letter is said with the symbol's sound;
-   - one where the same letter is not, with what it is said as instead.
-
-   Both carry a speaker. Use another language where the app's languages
-   lack the sound. This needs a field on an example, such as
-   `sounds: false`, and a line on the card that says which is which.
-2. **Confusable symbols side by side.** Order each deck so that symbols
-   learners mix up are adjacent: ɒ and ɔ, ʈ and t̪, ɪ and i, ɾ and r.
-3. **The app:**
-   - `pubspec.yaml` lists `decks/ipa/`; the validator stops warning about
-     a missing tts tag for `script: ipa`.
-   - Two entries in the languages list, one language: a per-language
-     setting, "my languages" or "whole chart". Cards are filtered by their
-     tags against the languages being learned, in one place, so that
-     counts, lessons, finished decks and Inspect agree.
-   - Production asked by choosing when `typed: false`: in reviews, in
-     lessons, and for the hard words' check.
-   - An IPA card plays its examples in their languages' voices,
-     preferring the languages being learned.
-4. **The button on every card**, "The sounds of this word": it opens a
-   session of the IPA cards whose symbols occur in the card's `ipa`. To
-   decide: whether those answers are recorded in the IPA course, and
-   whether the button shows for a learner who is not learning the IPA.
-5. **Review:** an independent rating, and a speaker's check of the tags
-   the content agent was least sure of: Hindi h and ɦ; r and ɾ; ŋ and ɲ;
-   ts and dz in Telugu; ʂ in Marathi; Assamese ɛ, ʊ and ɒ.
+Item 5: an independent rating, and the speaker's check above.
 
 ## Estimate
 

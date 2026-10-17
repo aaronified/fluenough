@@ -13,7 +13,6 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/bottom_actions.dart';
 import '../../ui/widgets/deck_tile.dart';
-import '../../ui/widgets/language_menu.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
@@ -138,7 +137,6 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
                   icon: const Icon(Icons.delete_outline),
                   onPressed: () => _confirmRemove(entry),
                 ),
-              LanguageMenu(pageLanguage: entry.language.code),
               ReportButton(detail: entry.id),
             ],
           ),

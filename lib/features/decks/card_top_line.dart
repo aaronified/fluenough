@@ -6,6 +6,7 @@ import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/speaker.dart';
+import '../drill/sounds_of_word.dart';
 
 /// The top line of a card's sheet, as the designs draw it: [text], such as
 /// "te-0384 · noun · Learning 58%", then a speaker that says the word, and
@@ -50,6 +51,7 @@ class CardTopLine extends StatelessWidget {
             onPlay: () => state.speakCard(card, language),
             label: l10n.drillPlay,
           ),
+        SoundsOfWordButton(card: card),
         ReportButton(detail: report),
       ],
     );
