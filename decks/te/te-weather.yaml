@@ -1,0 +1,978 @@
+schema: 1
+id: "te-weather"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "weather"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-1063"
+    target: "వాతావరణం"
+    reading: "vātāvaraṇam"
+    ipa: "ʋaːt̪aːʋaraɳam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఈ రోజు వాతావరణం బాగుంది."
+        reading: "ī rōju vātāvaraṇam bāgundi."
+        ipa: "iː roːdʒu ʋaːt̪aːʋaraɳam baːɡund̪i"
+        bases:
+          - { word: "బాగుంది", base: "బాగు", reading: "bāgu" }
+      - target: "రేపటి వాతావరణం ఎలా ఉంటుంది?"
+        reading: "rēpaṭi vātāvaraṇam elā uṇṭundi?"
+        ipa: "reːpaʈi ʋaːt̪aːʋaraɳam elaː uɳʈund̪i"
+        bases:
+          - { word: "రేపటి", ref: "te-0307" }
+          - { word: "ఉంటుంది", ref: "te-0633" }
+  - id: "te-1064"
+    target: "ఆకాశం"
+    reading: "ākāśam"
+    ipa: "aːkaːʃam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఆకాశంలో మేఘాలు ఉన్నాయి."
+        reading: "ākāśamlō mēghālu unnāyi."
+        ipa: "aːkaːʃamloː meːɡʱaːlu unnaːji"
+        bases:
+          - { word: "ఆకాశంలో", base: "ఆకాశం", reading: "ākāśam" }
+          - { word: "మేఘాలు", ref: "te-1065" }
+          - { word: "ఉన్నాయి", ref: "te-0633" }
+      - target: "ఆకాశం నిండా మేఘాలు."
+        reading: "ākāśam niṇḍā mēghālu."
+        ipa: "aːkaːʃam niɳɖaː meːɡʱaːlu"
+        bases:
+          - { word: "నిండా", ref: "te-0957" }
+          - { word: "మేఘాలు", ref: "te-1065" }
+  - id: "te-1065"
+    target: "మేఘం"
+    reading: "mēgham"
+    ipa: "meːɡʱam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఆకాశంలో ఒక మేఘం ఉంది."
+        reading: "ākāśamlō oka mēgham undi."
+        ipa: "aːkaːʃamloː oka meːɡʱam und̪i"
+        bases:
+          - { word: "ఆకాశంలో", base: "ఆకాశం", reading: "ākāśam" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "మేఘం కదులుతోంది."
+        reading: "mēgham kadulutōndi."
+        ipa: "meːɡʱam kad̪ulut̪oːnd̪i"
+        bases:
+          - { word: "కదులుతోంది", base: "కదులు", reading: "kadulu" }
+  - id: "te-1066"
+    target: "మబ్బు"
+    reading: "mabbu"
+    ipa: "mabbu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఆకాశంలో మబ్బు ఉంది."
+        reading: "ākāśamlō mabbu undi."
+        ipa: "aːkaːʃamloː mabbu und̪i"
+        bases:
+          - { word: "ఆకాశంలో", base: "ఆకాశం", reading: "ākāśam" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "మబ్బు చీకటిగా ఉంది."
+        reading: "mabbu cīkaṭigā undi."
+        ipa: "mabbu tʃiːkaʈiɡaː und̪i"
+        bases:
+          - { word: "చీకటిగా", ref: "te-1097" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-1067"
+    target: "వర్షం"
+    reading: "varṣam"
+    ipa: "ʋarʂam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఈ రోజు వర్షం పడుతోంది."
+        reading: "ī rōju varṣam paḍutōndi."
+        ipa: "iː roːdʒu ʋarʂam paɖut̪oːnd̪i"
+        bases:
+          - { word: "పడుతోంది", ref: "te-1103" }
+      - target: "రేపు వర్షం వస్తుందా?"
+        reading: "rēpu varṣam vastundā?"
+        ipa: "reːpu ʋarʂam ʋast̪und̪aː"
+        bases:
+          - { word: "వస్తుందా", base: "రా", reading: "rā" }
+  - id: "te-1068"
+    target: "వాన"
+    reading: "vāna"
+    ipa: "ʋaːna"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "వాన వచ్చింది."
+        reading: "vāna vaccindi."
+        ipa: "ʋaːna ʋatʃtʃind̪i"
+        bases:
+          - { word: "వచ్చింది", base: "వచ్చు", reading: "vaccu" }
+      - target: "వాన ఆగింది."
+        reading: "vāna āgindi."
+        ipa: "ʋaːna aːɡind̪i"
+        bases:
+          - { word: "ఆగింది", base: "ఆగు", reading: "āgu" }
+  - id: "te-1069"
+    target: "చినుకు"
+    reading: "cinuku"
+    ipa: "tʃinuku"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "చినుకులు పడుతున్నాయి."
+        reading: "cinukulu paḍutunnāyi."
+        ipa: "tʃinukulu paɖut̪unnaːji"
+        bases:
+          - { word: "చినుకులు", base: "చినుకు", reading: "cinuku" }
+          - { word: "పడుతున్నాయి", ref: "te-1103" }
+      - target: "ఒక చినుకు పడింది."
+        reading: "oka cinuku paḍindi."
+        ipa: "oka tʃinuku paɖind̪i"
+        bases:
+          - { word: "పడింది", ref: "te-1103" }
+  - id: "te-1070"
+    target: "జల్లు"
+    reading: "jallu"
+    ipa: "dʒallu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "సాయంత్రం జల్లు పడింది."
+        reading: "sāyantram jallu paḍindi."
+        ipa: "saːjant̪ram dʒallu paɖind̪i"
+        bases:
+          - { word: "సాయంత్రం", base: "సాయంత్రం", reading: "sāyantram" }
+          - { word: "పడింది", ref: "te-1103" }
+      - target: "చిన్న జల్లు వచ్చింది."
+        reading: "cinna jallu vaccindi."
+        ipa: "tʃinna dʒallu ʋatʃtʃind̪i"
+        bases:
+          - { word: "చిన్న", base: "చిన్న", reading: "cinna" }
+          - { word: "వచ్చింది", base: "వచ్చు", reading: "vaccu" }
+  - id: "te-1071"
+    target: "కుండపోత"
+    reading: "kuṇḍapōta"
+    ipa: "kuɳɖapoːt̪a"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "రాత్రి కుండపోత వర్షం పడింది."
+        reading: "rātri kuṇḍapōta varṣam paḍindi."
+        ipa: "raːt̪ri kuɳɖapoːt̪a ʋarʂam paɖind̪i"
+        bases:
+          - { word: "పడింది", ref: "te-1103" }
+      - target: "కుండపోత వాన వచ్చింది."
+        reading: "kuṇḍapōta vāna vaccindi."
+        ipa: "kuɳɖapoːt̪a ʋaːna ʋatʃtʃind̪i"
+        bases:
+          - { word: "వచ్చింది", base: "వచ్చు", reading: "vaccu" }
+  - id: "te-1072"
+    target: "తుఫాను"
+    reading: "tuphānu"
+    ipa: "t̪upʰaːnu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "తుఫాను రేపు వస్తుంది."
+        reading: "tuphānu rēpu vastundi."
+        ipa: "t̪upʰaːnu reːpu ʋast̪und̪i"
+        bases:
+          - { word: "వస్తుంది", base: "రా", reading: "rā" }
+      - target: "సముద్రంలో తుఫాను ఉంది."
+        reading: "samudramlō tuphānu undi."
+        ipa: "samud̪ramloː t̪upʰaːnu und̪i"
+        bases:
+          - { word: "సముద్రంలో", base: "సముద్రం", reading: "samudram" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-1073"
+    target: "సుడిగాలి"
+    reading: "suḍigāli"
+    ipa: "suɖiɡaːli"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "సుడిగాలికి చెట్లు ఊగాయి."
+        reading: "suḍigāliki ceṭlu ūgāyi."
+        ipa: "suɖiɡaːliki tʃeʈlu uːɡaːji"
+        bases:
+          - { word: "సుడిగాలికి", base: "సుడిగాలి", reading: "suḍigāli" }
+          - { word: "చెట్లు", base: "చెట్టు", reading: "ceṭṭu" }
+          - { word: "ఊగాయి", base: "ఊగు", reading: "ūgu" }
+      - target: "అది సుడిగాలి."
+        reading: "adi suḍigāli."
+        ipa: "ad̪i suɖiɡaːli"
+  - id: "te-1074"
+    target: "వడగాలి"
+    reading: "vaḍagāli"
+    ipa: "ʋaɖaɡaːli"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఎండకాలంలో వడగాలులు వీస్తాయి."
+        reading: "eṇḍakālamlō vaḍagālulu vīstāyi."
+        ipa: "eɳɖakaːlamloː ʋaɖaɡaːlulu ʋiːst̪aːji"
+        bases:
+          - { word: "ఎండకాలంలో", base: "ఎండకాలం", reading: "eṇḍakālam" }
+          - { word: "వడగాలులు", base: "వడగాలి", reading: "vaḍagāli" }
+          - { word: "వీస్తాయి", ref: "te-1105" }
+      - target: "వడగాలి చాలా వేడిగా ఉంది."
+        reading: "vaḍagāli cālā vēḍigā undi."
+        ipa: "ʋaɖaɡaːli tʃaːlaː ʋeːɖiɡaː und̪i"
+        bases:
+          - { word: "వేడిగా", ref: "te-0505" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-1075"
+    target: "ఉరుము"
+    reading: "urumu"
+    ipa: "urumu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఉరుము వినిపిస్తోంది."
+        reading: "urumu vinipistōndi."
+        ipa: "urumu ʋinipist̪oːnd̪i"
+        bases:
+          - { word: "వినిపిస్తోంది", base: "వినిపించు", reading: "vinipiñcu" }
+      - target: "మెరుపు తర్వాత ఉరుము వచ్చింది."
+        reading: "merupu tarvāta urumu vaccindi."
+        ipa: "merupu t̪arʋaːt̪a urumu ʋatʃtʃind̪i"
+        bases:
+          - { word: "వచ్చింది", base: "వచ్చు", reading: "vaccu" }
+  - id: "te-1076"
+    target: "మెరుపు"
+    reading: "merupu"
+    ipa: "merupu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఆకాశంలో మెరుపు కనిపించింది."
+        reading: "ākāśamlō merupu kanipiñcindi."
+        ipa: "aːkaːʃamloː merupu kanipiɲtʃind̪i"
+        bases:
+          - { word: "ఆకాశంలో", base: "ఆకాశం", reading: "ākāśam" }
+          - { word: "కనిపించింది", base: "కనిపించు", reading: "kanipiñcu" }
+      - target: "మెరుపు మెరిసింది."
+        reading: "merupu merisindi."
+        ipa: "merupu merisind̪i"
+        bases:
+          - { word: "మెరిసింది", base: "మెరియు", reading: "meriyu" }
+  - id: "te-1077"
+    target: "గాలి"
+    reading: "gāli"
+    ipa: "ɡaːli"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఈ రోజు గాలి చల్లగా ఉంది."
+        reading: "ī rōju gāli callagā undi."
+        ipa: "iː roːdʒu ɡaːli tʃallaɡaː und̪i"
+        bases:
+          - { word: "చల్లగా", ref: "te-0506" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "చల్లని గాలి వీస్తోంది."
+        reading: "callani gāli vīstōndi."
+        ipa: "tʃallani ɡaːli ʋiːst̪oːnd̪i"
+        bases:
+          - { word: "వీస్తోంది", ref: "te-1105" }
+  - id: "te-1078"
+    target: "ఎండ"
+    reading: "eṇḍa"
+    ipa: "eɳɖa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఎండ చాలా ఉంది."
+        reading: "eṇḍa cālā undi."
+        ipa: "eɳɖa tʃaːlaː und̪i"
+        bases:
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "ఎండలో నడవకు."
+        reading: "eṇḍalō naḍavaku."
+        ipa: "eɳɖaloː naɖaʋaku"
+        bases:
+          - { word: "ఎండలో", base: "ఎండ", reading: "eṇḍa" }
+          - { word: "నడవకు", base: "నడు", reading: "naḍu" }
+  - id: "te-1079"
+    target: "సూర్యుడు"
+    reading: "sūryuḍu"
+    ipa: "suːrjuɖu"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "సూర్యుడు ఉదయించాడు."
+        reading: "sūryuḍu udayiñcāḍu."
+        ipa: "suːrjuɖu ud̪ajiɲtʃaːɖu"
+        bases:
+          - { word: "ఉదయించాడు", base: "ఉదయించు", reading: "udayiñcu" }
+      - target: "సూర్యుడు చాలా వేడిగా ఉన్నాడు."
+        reading: "sūryuḍu cālā vēḍigā unnāḍu."
+        ipa: "suːrjuɖu tʃaːlaː ʋeːɖiɡaː unnaːɖu"
+        bases:
+          - { word: "వేడిగా", ref: "te-0505" }
+          - { word: "ఉన్నాడు", ref: "te-0633" }
+  - id: "te-1080"
+    target: "సూర్యోదయం"
+    reading: "sūryōdayam"
+    ipa: "suːrjoːd̪ajam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "సూర్యోదయం అయింది."
+        reading: "sūryōdayam ayindi."
+        ipa: "suːrjoːd̪ajam ajind̪i"
+        bases:
+          - { word: "అయింది", base: "అవు", reading: "avu" }
+      - target: "సూర్యోదయంలో చల్లగా ఉంటుంది."
+        reading: "sūryōdayamlō callagā uṇṭundi."
+        ipa: "suːrjoːd̪ajamloː tʃallaɡaː uɳʈund̪i"
+        bases:
+          - { word: "సూర్యోదయంలో", base: "సూర్యోదయం", reading: "sūryōdayam" }
+          - { word: "చల్లగా", ref: "te-0506" }
+          - { word: "ఉంటుంది", ref: "te-0633" }
+  - id: "te-1081"
+    target: "సూర్యాస్తమయం"
+    reading: "sūryāstamayam"
+    ipa: "suːrjaːst̪amajam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "సూర్యాస్తమయం అయింది."
+        reading: "sūryāstamayam ayindi."
+        ipa: "suːrjaːst̪amajam ajind̪i"
+        bases:
+          - { word: "అయింది", base: "అవు", reading: "avu" }
+      - target: "సూర్యాస్తమయం అందంగా ఉంది."
+        reading: "sūryāstamayam andaṅgā undi."
+        ipa: "suːrjaːst̪amajam and̪aŋɡaː und̪i"
+        bases:
+          - { word: "అందంగా", base: "అందం", reading: "andam" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-1082"
+    target: "చంద్రుడు"
+    reading: "candruḍu"
+    ipa: "tʃand̪ruɖu"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఆకాశంలో చంద్రుడు ఉన్నాడు."
+        reading: "ākāśamlō candruḍu unnāḍu."
+        ipa: "aːkaːʃamloː tʃand̪ruɖu unnaːɖu"
+        bases:
+          - { word: "ఆకాశంలో", base: "ఆకాశం", reading: "ākāśam" }
+          - { word: "ఉన్నాడు", ref: "te-0633" }
+      - target: "రాత్రి చంద్రుడు కనిపించాడు."
+        reading: "rātri candruḍu kanipiñcāḍu."
+        ipa: "raːt̪ri tʃand̪ruɖu kanipiɲtʃaːɖu"
+        bases:
+          - { word: "కనిపించాడు", base: "కనిపించు", reading: "kanipiñcu" }
+  - id: "te-1083"
+    target: "నక్షత్రం"
+    reading: "nakṣatram"
+    ipa: "nakʂat̪ram"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "రాత్రి ఆకాశంలో నక్షత్రాలు మెరుస్తున్నాయి."
+        reading: "rātri ākāśamlō nakṣatrālu merustunnāyi."
+        ipa: "raːt̪ri aːkaːʃamloː nakʂat̪raːlu merust̪unnaːji"
+        bases:
+          - { word: "ఆకాశంలో", base: "ఆకాశం", reading: "ākāśam" }
+          - { word: "నక్షత్రాలు", base: "నక్షత్రం", reading: "nakṣatram" }
+          - { word: "మెరుస్తున్నాయి", base: "మెరియు", reading: "meriyu" }
+      - target: "ఒక నక్షత్రం కనిపించింది."
+        reading: "oka nakṣatram kanipiñcindi."
+        ipa: "oka nakʂat̪ram kanipiɲtʃind̪i"
+        bases:
+          - { word: "కనిపించింది", base: "కనిపించు", reading: "kanipiñcu" }
+  - id: "te-1084"
+    target: "నీరు"
+    reading: "nīru"
+    ipa: "niːru"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "వేడి నీరు తాగండి."
+        reading: "vēḍi nīru tāgaṇḍi."
+        ipa: "ʋeːɖi niːru t̪aːɡaɳɖi"
+        bases:
+          - { word: "వేడి", ref: "te-0505" }
+          - { word: "తాగండి", base: "తాగు", reading: "tāgu" }
+      - target: "చెరువులో నీరు ఉంది."
+        reading: "ceruvulō nīru undi."
+        ipa: "tʃeruʋuloː niːru und̪i"
+        bases:
+          - { word: "చెరువులో", ref: "te-1085" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-1085"
+    target: "చెరువు"
+    reading: "ceruvu"
+    ipa: "tʃeruʋu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "వర్షానికి చెరువు నిండింది."
+        reading: "varṣāniki ceruvu niṇḍindi."
+        ipa: "ʋarʂaːniki tʃeruʋu niɳɖind̪i"
+        bases:
+          - { word: "వర్షానికి", ref: "te-1067" }
+          - { word: "నిండింది", ref: "te-0957" }
+      - target: "ఊళ్ళో చెరువు ఉంది."
+        reading: "ūḷḷō ceruvu undi."
+        ipa: "uːɭɭoː tʃeruʋu und̪i"
+        bases:
+          - { word: "ఊళ్ళో", base: "ఊరు", reading: "ūru" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-1086"
+    target: "వరద"
+    reading: "varada"
+    ipa: "ʋarad̪a"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "వర్షం వల్ల వరద వచ్చింది."
+        reading: "varṣam valla varada vaccindi."
+        ipa: "ʋarʂam ʋalla ʋarad̪a ʋatʃtʃind̪i"
+        bases:
+          - { word: "వల్ల", base: "వల్ల", reading: "valla" }
+          - { word: "వచ్చింది", base: "వచ్చు", reading: "vaccu" }
+      - target: "వరదలో ఇళ్ళు మునిగాయి."
+        reading: "varadalō iḷḷu munigāyi."
+        ipa: "ʋarad̪aloː iɭɭu muniɡaːji"
+        bases:
+          - { word: "వరదలో", base: "వరద", reading: "varada" }
+          - { word: "ఇళ్ళు", base: "ఇల్లు", reading: "illu" }
+          - { word: "మునిగాయి", base: "మునుగు", reading: "munugu" }
+  - id: "te-1087"
+    target: "కరువు"
+    reading: "karuvu"
+    ipa: "karuʋu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఈ ఏడాది కరువు వచ్చింది."
+        reading: "ī ēḍādi karuvu vaccindi."
+        ipa: "iː eːɖaːd̪i karuʋu ʋatʃtʃind̪i"
+        bases:
+          - { word: "ఏడాది", base: "ఏడాది", reading: "ēḍādi" }
+          - { word: "వచ్చింది", base: "వచ్చు", reading: "vaccu" }
+      - target: "కరువు వల్ల పంటలు ఎండిపోయాయి."
+        reading: "karuvu valla paṇṭalu eṇḍipōyāyi."
+        ipa: "karuʋu ʋalla paɳʈalu eɳɖipoːjaːji"
+        bases:
+          - { word: "వల్ల", base: "వల్ల", reading: "valla" }
+          - { word: "పంటలు", base: "పంట", reading: "paṇṭa" }
+          - { word: "ఎండిపోయాయి", base: "ఎండిపోవు", reading: "eṇḍipōvu" }
+  - id: "te-1088"
+    target: "వేసవి"
+    reading: "vēsavi"
+    ipa: "ʋeːsaʋi"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "వేసవిలో ఎండ ఎక్కువ."
+        reading: "vēsavilō eṇḍa ekkuva."
+        ipa: "ʋeːsaʋiloː eɳɖa ekkuʋa"
+        bases:
+          - { word: "వేసవిలో", base: "వేసవి", reading: "vēsavi" }
+          - { word: "ఎక్కువ", ref: "te-1029" }
+      - target: "వేసవిలో వేడిమి ఎక్కువ."
+        reading: "vēsavilō vēḍimi ekkuva."
+        ipa: "ʋeːsaʋiloː ʋeːɖimi ekkuʋa"
+        bases:
+          - { word: "వేసవిలో", base: "వేసవి", reading: "vēsavi" }
+          - { word: "ఎక్కువ", ref: "te-1029" }
+  - id: "te-1089"
+    target: "వర్షాకాలం"
+    reading: "varṣākālam"
+    ipa: "ʋarʂaːkaːlam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "వర్షాకాలంలో చెరువులు నిండుతాయి."
+        reading: "varṣākālamlō ceruvulu niṇḍutāyi."
+        ipa: "ʋarʂaːkaːlamloː tʃeruʋulu niɳɖut̪aːji"
+        bases:
+          - { word: "వర్షాకాలంలో", base: "వర్షాకాలం", reading: "varṣākālam" }
+          - { word: "చెరువులు", base: "చెరువు", reading: "ceruvu" }
+          - { word: "నిండుతాయి", ref: "te-0957" }
+      - target: "వర్షాకాలం వచ్చింది."
+        reading: "varṣākālam vaccindi."
+        ipa: "ʋarʂaːkaːlam ʋatʃtʃind̪i"
+        bases:
+          - { word: "వచ్చింది", base: "వచ్చు", reading: "vaccu" }
+  - id: "te-1090"
+    target: "శీతాకాలం"
+    reading: "śītākālam"
+    ipa: "ʃiːt̪aːkaːlam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "శీతాకాలంలో చలి ఎక్కువ."
+        reading: "śītākālamlō cali ekkuva."
+        ipa: "ʃiːt̪aːkaːlamloː tʃali ekkuʋa"
+        bases:
+          - { word: "శీతాకాలంలో", base: "శీతాకాలం", reading: "śītākālam" }
+          - { word: "ఎక్కువ", ref: "te-1029" }
+      - target: "శీతాకాలంలో మంచు ఉంటుంది."
+        reading: "śītākālamlō mañcu uṇṭundi."
+        ipa: "ʃiːt̪aːkaːlamloː maɲtʃu uɳʈund̪i"
+        bases:
+          - { word: "శీతాకాలంలో", base: "శీతాకాలం", reading: "śītākālam" }
+          - { word: "ఉంటుంది", ref: "te-0633" }
+  - id: "te-1091"
+    target: "వేడిమి"
+    reading: "vēḍimi"
+    ipa: "ʋeːɖimi"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "వేడిమి భరించలేను."
+        reading: "vēḍimi bhariñcalēnu."
+        ipa: "ʋeːɖimi bʱariɲtʃaleːnu"
+        bases:
+          - { word: "భరించలేను", base: "భరించు", reading: "bhariñcu" }
+      - target: "ఈ వేడిమిలో నీరు తాగు."
+        reading: "ī vēḍimilō nīru tāgu."
+        ipa: "iː ʋeːɖimiloː niːru t̪aːɡu"
+        bases:
+          - { word: "వేడిమిలో", base: "వేడిమి", reading: "vēḍimi" }
+          - { word: "తాగు", base: "తాగు", reading: "tāgu" }
+  - id: "te-1092"
+    target: "తేమ"
+    reading: "tēma"
+    ipa: "t̪eːma"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఈ రోజు తేమ ఎక్కువ."
+        reading: "ī rōju tēma ekkuva."
+        ipa: "iː roːdʒu t̪eːma ekkuʋa"
+        bases:
+          - { word: "ఎక్కువ", ref: "te-1029" }
+      - target: "తేమ వల్ల చెమట వస్తుంది."
+        reading: "tēma valla cemaṭa vastundi."
+        ipa: "t̪eːma ʋalla tʃemaʈa ʋast̪und̪i"
+        bases:
+          - { word: "వల్ల", base: "వల్ల", reading: "valla" }
+          - { word: "చెమట", base: "చెమట", reading: "cemaṭa" }
+          - { word: "వస్తుంది", base: "రా", reading: "rā" }
+  - id: "te-1093"
+    target: "పొగమంచు"
+    reading: "pogamañcu"
+    ipa: "poɡamaɲtʃu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఉదయం పొగమంచు ఉంది."
+        reading: "udayam pogamañcu undi."
+        ipa: "ud̪ajam poɡamaɲtʃu und̪i"
+        bases:
+          - { word: "ఉదయం", base: "ఉదయం", reading: "udayam" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "పొగమంచులో జాగ్రత్తగా నడవండి."
+        reading: "pogamañculō jāgrattagā naḍavaṇḍi."
+        ipa: "poɡamaɲtʃuloː dʒaːɡrat̪t̪aɡaː naɖaʋaɳɖi"
+        bases:
+          - { word: "పొగమంచులో", base: "పొగమంచు", reading: "pogamañcu" }
+          - { word: "జాగ్రత్తగా", base: "జాగ్రత్త", reading: "jāgratta" }
+          - { word: "నడవండి", base: "నడు", reading: "naḍu" }
+  - id: "te-1094"
+    target: "మంచు"
+    reading: "mañcu"
+    ipa: "maɲtʃu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "పర్వతాల మీద మంచు ఉంది."
+        reading: "parvatāla mīda mañcu undi."
+        ipa: "parʋat̪aːla miːd̪a maɲtʃu und̪i"
+        bases:
+          - { word: "పర్వతాల", base: "పర్వతం", reading: "parvatam" }
+          - { word: "మీద", base: "మీద", reading: "mīda" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "ఉదయం గడ్డిపై మంచు ఉంది."
+        reading: "udayam gaḍḍipai mañcu undi."
+        ipa: "ud̪ajam ɡaɖɖipai maɲtʃu und̪i"
+        bases:
+          - { word: "ఉదయం", base: "ఉదయం", reading: "udayam" }
+          - { word: "గడ్డిపై", base: "గడ్డి", reading: "gaḍḍi" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-1095"
+    target: "ఆవిరి"
+    reading: "āviri"
+    ipa: "aːʋiri"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "వేడి నీటి నుండి ఆవిరి వస్తోంది."
+        reading: "vēḍi nīṭi nuṇḍi āviri vastōndi."
+        ipa: "ʋeːɖi niːʈi nuɳɖi aːʋiri ʋast̪oːnd̪i"
+        bases:
+          - { word: "వేడి", ref: "te-0505" }
+          - { word: "నీటి", ref: "te-1084" }
+          - { word: "నుండి", base: "నుండి", reading: "nuṇḍi" }
+          - { word: "వస్తోంది", base: "రా", reading: "rā" }
+      - target: "టీ నుండి ఆవిరి వస్తోంది."
+        reading: "ṭī nuṇḍi āviri vastōndi."
+        ipa: "ʈiː nuɳɖi aːʋiri ʋast̪oːnd̪i"
+        bases:
+          - { word: "టీ", base: "టీ", reading: "ṭī" }
+          - { word: "నుండి", base: "నుండి", reading: "nuṇḍi" }
+          - { word: "వస్తోంది", base: "రా", reading: "rā" }
+  - id: "te-1096"
+    target: "ఉష్ణోగ్రత"
+    reading: "uṣṇōgrata"
+    ipa: "uʂɳoːɡrat̪a"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఉష్ణోగ్రత ఎంత?"
+        reading: "uṣṇōgrata enta?"
+        ipa: "uʂɳoːɡrat̪a ent̪a"
+        bases:
+          - { word: "ఎంత", ref: "te-0166" }
+      - target: "ఉష్ణోగ్రత పెరిగింది."
+        reading: "uṣṇōgrata perigindi."
+        ipa: "uʂɳoːɡrat̪a periɡind̪i"
+        bases:
+          - { word: "పెరిగింది", base: "పెరుగు", reading: "perugu" }
+  - id: "te-1097"
+    target: "చీకటి"
+    reading: "cīkaṭi"
+    ipa: "tʃiːkaʈi"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "చీకటి పడింది."
+        reading: "cīkaṭi paḍindi."
+        ipa: "tʃiːkaʈi paɖind̪i"
+        bases:
+          - { word: "పడింది", ref: "te-1103" }
+      - target: "రాత్రి చీకటిలో వర్షం పడుతోంది."
+        reading: "rātri cīkaṭilō varṣam paḍutōndi."
+        ipa: "raːt̪ri tʃiːkaʈiloː ʋarʂam paɖut̪oːnd̪i"
+        bases:
+          - { word: "చీకటిలో", base: "చీకటి", reading: "cīkaṭi" }
+          - { word: "పడుతోంది", ref: "te-1103" }
+  - id: "te-1098"
+    target: "చల్లదనం"
+    reading: "calladanam"
+    ipa: "tʃallad̪anam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "వర్షం తర్వాత చల్లదనం వచ్చింది."
+        reading: "varṣam tarvāta calladanam vaccindi."
+        ipa: "ʋarʂam t̪arʋaːt̪a tʃallad̪anam ʋatʃtʃind̪i"
+        bases:
+          - { word: "వచ్చింది", base: "వచ్చు", reading: "vaccu" }
+      - target: "సాయంత్రం చల్లదనం ఉంది."
+        reading: "sāyantram calladanam undi."
+        ipa: "saːjant̪ram tʃallad̪anam und̪i"
+        bases:
+          - { word: "సాయంత్రం", base: "సాయంత్రం", reading: "sāyantram" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-1099"
+    target: "రెయిన్‌కోట్"
+    reading: "reyinkōṭ"
+    ipa: "rejinkoːʈ"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "వర్షంలో రెయిన్‌కోట్ వేసుకో."
+        reading: "varṣamlō reyinkōṭ vēsukō."
+        ipa: "ʋarʂamloː rejinkoːʈ ʋeːsukoː"
+        bases:
+          - { word: "వర్షంలో", base: "వర్షం", reading: "varṣam" }
+          - { word: "వేసుకో", base: "వేసుకొను", reading: "vēsukonu" }
+      - target: "నా దగ్గర రెయిన్‌కోట్ ఉంది."
+        reading: "nā daggara reyinkōṭ undi."
+        ipa: "naː d̪aɡɡara rejinkoːʈ und̪i"
+        bases:
+          - { word: "నా", base: "నేను", reading: "nēnu" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-1100"
+    target: "మేఘావృతమైన"
+    reading: "mēghāvrutamaina"
+    ipa: "meːɡʱaːʋrut̪amaina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఈ రోజు ఆకాశం మేఘావృతంగా ఉంది."
+        reading: "ī rōju ākāśam mēghāvrutaṅgā undi."
+        ipa: "iː roːdʒu aːkaːʃam meːɡʱaːʋrut̪aŋɡaː und̪i"
+        bases:
+          - { word: "మేఘావృతంగా", base: "మేఘావృతం", reading: "mēghāvrutam" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "మేఘావృతమైన రోజు."
+        reading: "mēghāvrutamaina rōju."
+        ipa: "meːɡʱaːʋrut̪amaina roːdʒu"
+  - id: "te-1101"
+    target: "తడిసిన"
+    reading: "taḍisina"
+    ipa: "t̪aɖisina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "వర్షంలో తడిసిన బట్టలు ఆరబెట్టు."
+        reading: "varṣamlō taḍisina baṭṭalu ārabeṭṭu."
+        ipa: "ʋarʂamloː t̪aɖisina baʈʈalu aːrabeʈʈu"
+        bases:
+          - { word: "వర్షంలో", base: "వర్షం", reading: "varṣam" }
+          - { word: "ఆరబెట్టు", base: "ఆరబెట్టు", reading: "ārabeṭṭu" }
+      - target: "తడిసిన గొడుగు అక్కడ ఉంది."
+        reading: "taḍisina goḍugu akkaḍa undi."
+        ipa: "t̪aɖisina ɡoɖuɡu akkaɖa und̪i"
+        bases:
+          - { word: "అక్కడ", ref: "te-0303" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-1102"
+    target: "తేమగా"
+    reading: "tēmagā"
+    ipa: "t̪eːmaɡaː"
+    pos: "adj"
+    bases:
+      - { word: "తేమగా", ref: "te-1092" }
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఈ రోజు గాలి తేమగా ఉంది."
+        reading: "ī rōju gāli tēmagā undi."
+        ipa: "iː roːdʒu ɡaːli t̪eːmaɡaː und̪i"
+        bases:
+          - { word: "గాలి", ref: "te-1077" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "తేమగా ఉన్నప్పుడు చెమట వస్తుంది."
+        reading: "tēmagā unnappuḍu cemaṭa vastundi."
+        ipa: "t̪eːmaɡaː unnappuɖu tʃemaʈa ʋast̪und̪i"
+        bases:
+          - { word: "ఉన్నప్పుడు", ref: "te-0633" }
+          - { word: "చెమట", base: "చెమట", reading: "cemaṭa" }
+          - { word: "వస్తుంది", base: "రా", reading: "rā" }
+  - id: "te-1103"
+    target: "పడు"
+    reading: "paḍu"
+    ipa: "paɖu"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "వర్షం పడుతోంది."
+        reading: "varṣam paḍutōndi."
+        ipa: "ʋarʂam paɖut̪oːnd̪i"
+        bases:
+          - { word: "పడుతోంది", base: "పడు", reading: "paḍu" }
+      - target: "చినుకులు పడ్డాయి."
+        reading: "cinukulu paḍḍāyi."
+        ipa: "tʃinukulu paɖɖaːji"
+        bases:
+          - { word: "చినుకులు", ref: "te-1069" }
+          - { word: "పడ్డాయి", base: "పడు", reading: "paḍu" }
+  - id: "te-1104"
+    target: "కురియు"
+    reading: "kuriyu"
+    ipa: "kuriju"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "వర్షం బాగా కురిసింది."
+        reading: "varṣam bāgā kurisindi."
+        ipa: "ʋarʂam baːɡaː kurisind̪i"
+        bases:
+          - { word: "బాగా", base: "బాగా", reading: "bāgā" }
+          - { word: "కురిసింది", base: "కురియు", reading: "kuriyu" }
+      - target: "ఆకాశం నుండి వాన కురుస్తోంది."
+        reading: "ākāśam nuṇḍi vāna kurustōndi."
+        ipa: "aːkaːʃam nuɳɖi ʋaːna kurust̪oːnd̪i"
+        bases:
+          - { word: "ఆకాశం", ref: "te-1064" }
+          - { word: "నుండి", base: "నుండి", reading: "nuṇḍi" }
+          - { word: "కురుస్తోంది", base: "కురియు", reading: "kuriyu" }
+  - id: "te-1105"
+    target: "వీచు"
+    reading: "vīcu"
+    ipa: "ʋiːtʃu"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఈ రాత్రి గాలి బలంగా వీచింది."
+        reading: "ī rātri gāli balaṅgā vīcindi."
+        ipa: "iː raːt̪ri ɡaːli balaŋɡaː ʋiːtʃind̪i"
+        bases:
+          - { word: "రాత్రి", ref: "te-0312" }
+          - { word: "బలంగా", base: "బలం", reading: "balam" }
+          - { word: "వీచింది", base: "వీచు", reading: "vīcu" }
+      - target: "గాలి వీచినప్పుడు చల్లగా ఉంటుంది."
+        reading: "gāli vīcinappuḍu callagā uṇṭundi."
+        ipa: "ɡaːli ʋiːtʃinappuɖu tʃallaɡaː uɳʈund̪i"
+        bases:
+          - { word: "వీచినప్పుడు", base: "వీచు", reading: "vīcu" }
+          - { word: "చల్లగా", ref: "te-0506" }
+          - { word: "ఉంటుంది", ref: "te-0633" }
+  - id: "te-1106"
+    target: "కాయు"
+    reading: "kāyu"
+    ipa: "kaːju"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఎండ బాగా కాస్తోంది."
+        reading: "eṇḍa bāgā kāstōndi."
+        ipa: "eɳɖa baːɡaː kaːst̪oːnd̪i"
+        bases:
+          - { word: "బాగా", base: "బాగా", reading: "bāgā" }
+          - { word: "కాస్తోంది", base: "కాయు", reading: "kāyu" }
+      - target: "ఈ రోజు ఎండ కాస్తోంది."
+        reading: "ī rōju eṇḍa kāstōndi."
+        ipa: "iː roːdʒu eɳɖa kaːst̪oːnd̪i"
+        bases:
+          - { word: "కాస్తోంది", base: "కాయు", reading: "kāyu" }
+  - id: "te-1107"
+    target: "తడియు"
+    reading: "taḍiyu"
+    ipa: "t̪aɖiju"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "వానలో తడిశాను."
+        reading: "vānalō taḍiśānu."
+        ipa: "ʋaːnaloː t̪aɖiʃaːnu"
+        bases:
+          - { word: "వానలో", base: "వాన", reading: "vāna" }
+          - { word: "తడిశాను", base: "తడియు", reading: "taḍiyu" }
+      - target: "తడియకుండా ఉండు."
+        reading: "taḍiyakuṇḍā uṇḍu."
+        ipa: "t̪aɖijakuɳɖaː uɳɖu"
+        bases:
+          - { word: "తడియకుండా", base: "తడియు", reading: "taḍiyu" }
+          - { word: "ఉండు", ref: "te-0633" }

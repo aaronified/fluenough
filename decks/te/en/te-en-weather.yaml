@@ -1,0 +1,568 @@
+schema: 1
+id: "te-en-weather"
+kind: "layer"
+core: "te-weather"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Weather"
+description: "Words for the weather: rain, wind, sun, cloud, the seasons and how the weather feels. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "te-1063":
+    native: "weather"
+    notes:
+      "n1": "Also the word for the climate of a place over a whole season."
+    examples:
+      "ఈ రోజు వాతావరణం బాగుంది.":
+        native: "The weather is good today."
+        bases:
+          "బాగుంది": { meaning: "good" }
+      "రేపటి వాతావరణం ఎలా ఉంటుంది?": "How will tomorrow's weather be?"
+  "te-1064":
+    native: "sky"
+    notes:
+      "n1": "Also the word for the heavens above."
+    examples:
+      "ఆకాశంలో మేఘాలు ఉన్నాయి.":
+        native: "There are clouds in the sky."
+        bases:
+          "ఆకాశంలో": { meaning: "sky" }
+      "ఆకాశం నిండా మేఘాలు.": "The sky is full of clouds."
+  "te-1065":
+    native: "cloud (formal)"
+    notes:
+      "n1": "The formal word. In speech మబ్బు (mabbu) is more common."
+    examples:
+      "ఆకాశంలో ఒక మేఘం ఉంది.":
+        native: "There is one cloud in the sky."
+        bases:
+          "ఆకాశంలో": { meaning: "sky" }
+      "మేఘం కదులుతోంది.":
+        native: "The cloud is moving."
+        bases:
+          "కదులుతోంది": { meaning: "to move" }
+  "te-1066":
+    native: "cloud (in speech)"
+    notes:
+      "n1": "In speech for a cloud. The formal word is మేఘం (mēgham)."
+    examples:
+      "ఆకాశంలో మబ్బు ఉంది.":
+        native: "There is a cloud in the sky."
+        bases:
+          "ఆకాశంలో": { meaning: "sky" }
+      "మబ్బు చీకటిగా ఉంది.": "The sky is dark with cloud."
+  "te-1067":
+    native: "rain"
+    notes:
+      "n1": "Rain, the falling water. The season of rain is వర్షాకాలం (varṣākālam). The forms of వస్తుంది (vastundi), will come, take their stem from రా (rā)."
+    examples:
+      "ఈ రోజు వర్షం పడుతోంది.": "It is raining today."
+      "రేపు వర్షం వస్తుందా?":
+        native: "Will it rain tomorrow?"
+        bases:
+          "వస్తుందా": { meaning: "to come" }
+  "te-1068":
+    native: "rain (in speech)"
+    notes:
+      "n1": "The everyday word for rain in speech. The formal word is వర్షం (varṣam)."
+    examples:
+      "వాన వచ్చింది.":
+        native: "The rain has come."
+        bases:
+          "వచ్చింది": { meaning: "to come" }
+      "వాన ఆగింది.":
+        native: "The rain has stopped."
+        bases:
+          "ఆగింది": { meaning: "to stop" }
+  "te-1069":
+    native: "a drop of rain; drizzle"
+    notes:
+      "n1": "A small drop, or a light rain that only wets the ground."
+    examples:
+      "చినుకులు పడుతున్నాయి.":
+        native: "Drops of rain are falling."
+        bases:
+          "చినుకులు": { meaning: "drop of rain" }
+      "ఒక చినుకు పడింది.": "One drop of rain fell."
+  "te-1070":
+    native: "shower"
+    notes:
+      "n1": "A short shower of rain, often sudden and brief."
+    examples:
+      "సాయంత్రం జల్లు పడింది.":
+        native: "There was a shower in the evening."
+        bases:
+          "సాయంత్రం": { meaning: "evening" }
+      "చిన్న జల్లు వచ్చింది.":
+        native: "A small shower came."
+        bases:
+          "చిన్న": { meaning: "small" }
+          "వచ్చింది": { meaning: "to come" }
+  "te-1071":
+    native: "heavy downpour"
+    notes:
+      "n1": "Literally a pot emptied out: a very heavy downpour."
+    examples:
+      "రాత్రి కుండపోత వర్షం పడింది.": "There was a heavy downpour at night."
+      "కుండపోత వాన వచ్చింది.":
+        native: "A heavy downpour came."
+        bases:
+          "వచ్చింది": { meaning: "to come" }
+  "te-1072":
+    native: "storm"
+    notes:
+      "n1": "A strong storm, at sea or on land. The forms of వస్తుంది (vastundi), will come, take their stem from రా (rā)."
+    examples:
+      "తుఫాను రేపు వస్తుంది.":
+        native: "A storm will come tomorrow."
+        bases:
+          "వస్తుంది": { meaning: "to come" }
+      "సముద్రంలో తుఫాను ఉంది.":
+        native: "There is a storm at sea."
+        bases:
+          "సముద్రంలో": { meaning: "sea" }
+  "te-1073":
+    native: "whirlwind"
+    notes:
+      "n1": "A wind that turns round and round, with dust and leaves."
+    examples:
+      "సుడిగాలికి చెట్లు ఊగాయి.":
+        native: "The trees swayed in the whirlwind."
+        bases:
+          "సుడిగాలికి": { meaning: "whirlwind" }
+          "చెట్లు": { meaning: "tree" }
+          "ఊగాయి": { meaning: "to sway" }
+      "అది సుడిగాలి.": "That is a whirlwind."
+  "te-1074":
+    native: "hot wind (heatwave)"
+    notes:
+      "n1": "A dry, very hot wind in summer that is bad for the health."
+    examples:
+      "ఎండకాలంలో వడగాలులు వీస్తాయి.":
+        native: "In summer hot winds blow."
+        bases:
+          "ఎండకాలంలో": { meaning: "summer" }
+          "వడగాలులు": { meaning: "hot wind" }
+      "వడగాలి చాలా వేడిగా ఉంది.": "The hot wind is very hot."
+  "te-1075":
+    native: "thunder"
+    notes:
+      "n1": "The sound after lightning. The lightning itself is మెరుపు (merupu)."
+    examples:
+      "ఉరుము వినిపిస్తోంది.":
+        native: "Thunder can be heard."
+        bases:
+          "వినిపిస్తోంది": { meaning: "to be heard" }
+      "మెరుపు తర్వాత ఉరుము వచ్చింది.":
+        native: "After the lightning, thunder came."
+        bases:
+          "వచ్చింది": { meaning: "to come" }
+  "te-1076":
+    native: "lightning"
+    notes:
+      "n1": "The flash in the sky. The sound that follows it is ఉరుము (urumu)."
+    examples:
+      "ఆకాశంలో మెరుపు కనిపించింది.":
+        native: "Lightning was seen in the sky."
+        bases:
+          "ఆకాశంలో": { meaning: "sky" }
+          "కనిపించింది": { meaning: "to be seen" }
+      "మెరుపు మెరిసింది.":
+        native: "The lightning flashed."
+        bases:
+          "మెరిసింది": { meaning: "to flash" }
+  "te-1077":
+    native: "wind; air"
+    notes:
+      "n1": "The same word means both the wind and the air we breathe."
+    examples:
+      "ఈ రోజు గాలి చల్లగా ఉంది.": "The wind is cold today."
+      "చల్లని గాలి వీస్తోంది.": "A cool wind is blowing."
+  "te-1078":
+    native: "sunshine; the sun's heat"
+    notes:
+      "n1": "Also the sunshine itself, and the heat that comes with it."
+    examples:
+      "ఎండ చాలా ఉంది.": "It is very sunny."
+      "ఎండలో నడవకు.":
+        native: "Do not walk in the sun."
+        bases:
+          "ఎండలో": { meaning: "sunshine" }
+          "నడవకు": { meaning: "to walk" }
+  "te-1079":
+    native: "sun"
+    notes:
+      "n1": "Spoken of as a he, as the sun is in Telugu."
+    examples:
+      "సూర్యుడు ఉదయించాడు.":
+        native: "The sun has risen."
+        bases:
+          "ఉదయించాడు": { meaning: "to rise" }
+      "సూర్యుడు చాలా వేడిగా ఉన్నాడు.": "The sun is very hot."
+  "te-1080":
+    native: "sunrise"
+    notes:
+      "n1": "From సూర్యుడు (sūryuḍu), the sun, and ఉదయం (udayam), rising."
+    examples:
+      "సూర్యోదయం అయింది.":
+        native: "The sun has risen."
+        bases:
+          "అయింది": { meaning: "to become" }
+      "సూర్యోదయంలో చల్లగా ఉంటుంది.":
+        native: "It is cool at sunrise."
+        bases:
+          "సూర్యోదయంలో": { meaning: "sunrise" }
+  "te-1081":
+    native: "sunset"
+    notes:
+      "n1": "From సూర్యుడు (sūryuḍu), the sun, and అస్తమయం (astamayam), setting."
+    examples:
+      "సూర్యాస్తమయం అయింది.":
+        native: "The sunset has come."
+        bases:
+          "అయింది": { meaning: "to become" }
+      "సూర్యాస్తమయం అందంగా ఉంది.":
+        native: "The sunset is beautiful."
+        bases:
+          "అందంగా": { meaning: "beauty" }
+  "te-1082":
+    native: "moon"
+    notes:
+      "n1": "Spoken of as a he, as the moon is in Telugu."
+    examples:
+      "ఆకాశంలో చంద్రుడు ఉన్నాడు.":
+        native: "The moon is in the sky."
+        bases:
+          "ఆకాశంలో": { meaning: "sky" }
+      "రాత్రి చంద్రుడు కనిపించాడు.":
+        native: "The moon was seen at night."
+        bases:
+          "కనిపించాడు": { meaning: "to be seen" }
+  "te-1083":
+    native: "star"
+    notes:
+      "n1": "The plural is నక్షత్రాలు (nakṣatrālu), stars."
+    examples:
+      "రాత్రి ఆకాశంలో నక్షత్రాలు మెరుస్తున్నాయి.":
+        native: "Stars are shining in the night sky."
+        bases:
+          "ఆకాశంలో": { meaning: "sky" }
+          "నక్షత్రాలు": { meaning: "star" }
+          "మెరుస్తున్నాయి": { meaning: "to shine" }
+      "ఒక నక్షత్రం కనిపించింది.":
+        native: "One star was seen."
+        bases:
+          "కనిపించింది": { meaning: "to be seen" }
+  "te-1084":
+    native: "water"
+    notes:
+      "n1": "In speech నీళ్ళు (nīḷḷu) is the everyday word for water."
+    examples:
+      "వేడి నీరు తాగండి.":
+        native: "Drink hot water."
+        bases:
+          "తాగండి": { meaning: "to drink" }
+      "చెరువులో నీరు ఉంది.": "There is water in the pond."
+  "te-1085":
+    native: "pond; tank"
+    notes:
+      "n1": "A tank or pond that holds rain water; a village lake."
+    examples:
+      "వర్షానికి చెరువు నిండింది.": "After the rain the pond filled up."
+      "ఊళ్ళో చెరువు ఉంది.":
+        native: "There is a pond in the village."
+        bases:
+          "ఊళ్ళో": { meaning: "village" }
+  "te-1086":
+    native: "flood"
+    notes:
+      "n1": "Flood water, when a river or the rain overflows."
+    examples:
+      "వర్షం వల్ల వరద వచ్చింది.":
+        native: "Because of the rain a flood came."
+        bases:
+          "వల్ల": { meaning: "because of" }
+          "వచ్చింది": { meaning: "to come" }
+      "వరదలో ఇళ్ళు మునిగాయి.":
+        native: "In the flood the houses sank."
+        bases:
+          "వరదలో": { meaning: "flood" }
+          "ఇళ్ళు": { meaning: "house" }
+          "మునిగాయి": { meaning: "to sink" }
+  "te-1087":
+    native: "drought"
+    notes:
+      "n1": "A year with too little rain, when the crops fail."
+    examples:
+      "ఈ ఏడాది కరువు వచ్చింది.":
+        native: "A drought came this year."
+        bases:
+          "ఏడాది": { meaning: "year" }
+          "వచ్చింది": { meaning: "to come" }
+      "కరువు వల్ల పంటలు ఎండిపోయాయి.":
+        native: "Because of the drought the crops dried up."
+        bases:
+          "వల్ల": { meaning: "because of" }
+          "పంటలు": { meaning: "crop" }
+          "ఎండిపోయాయి": { meaning: "to dry up" }
+  "te-1088":
+    native: "summer"
+    notes:
+      "n1": "The hot season, before the rains."
+    examples:
+      "వేసవిలో ఎండ ఎక్కువ.":
+        native: "In summer there is a lot of sun."
+        bases:
+          "వేసవిలో": { meaning: "summer" }
+      "వేసవిలో వేడిమి ఎక్కువ.":
+        native: "In summer the heat is great."
+        bases:
+          "వేసవిలో": { meaning: "summer" }
+  "te-1089":
+    native: "rainy season; monsoon"
+    notes:
+      "n1": "The monsoon: the months of rain."
+    examples:
+      "వర్షాకాలంలో చెరువులు నిండుతాయి.":
+        native: "In the rainy season the ponds fill up."
+        bases:
+          "వర్షాకాలంలో": { meaning: "rainy season" }
+          "చెరువులు": { meaning: "pond" }
+      "వర్షాకాలం వచ్చింది.":
+        native: "The rainy season has come."
+        bases:
+          "వచ్చింది": { meaning: "to come" }
+  "te-1090":
+    native: "winter"
+    notes:
+      "n1": "The cold season. In speech చలికాలం (calikālam) is also said."
+    examples:
+      "శీతాకాలంలో చలి ఎక్కువ.":
+        native: "In winter the cold is great."
+        bases:
+          "శీతాకాలంలో": { meaning: "winter" }
+      "శీతాకాలంలో మంచు ఉంటుంది.":
+        native: "In winter there is frost."
+        bases:
+          "శీతాకాలంలో": { meaning: "winter" }
+  "te-1091":
+    native: "heat (of the weather)"
+    notes:
+      "n1": "The heat of the weather. The adjective hot is వేడి (vēḍi)."
+    examples:
+      "వేడిమి భరించలేను.":
+        native: "I cannot bear the heat."
+        bases:
+          "భరించలేను": { meaning: "to bear" }
+      "ఈ వేడిమిలో నీరు తాగు.":
+        native: "Drink water in this heat."
+        bases:
+          "వేడిమిలో": { meaning: "heat" }
+          "తాగు": { meaning: "to drink" }
+  "te-1092":
+    native: "humidity; moisture"
+    notes:
+      "n1": "The moisture in the air that makes a day feel sticky. The forms of వస్తుంది (vastundi), will come, take their stem from రా (rā)."
+    examples:
+      "ఈ రోజు తేమ ఎక్కువ.": "Humidity is high today."
+      "తేమ వల్ల చెమట వస్తుంది.":
+        native: "Because of humidity you sweat."
+        bases:
+          "వల్ల": { meaning: "because of" }
+          "చెమట": { meaning: "sweat" }
+          "వస్తుంది": { meaning: "to come" }
+  "te-1093":
+    native: "fog"
+    notes:
+      "n1": "Fog, thick in the early morning."
+    examples:
+      "ఉదయం పొగమంచు ఉంది.":
+        native: "There is fog in the morning."
+        bases:
+          "ఉదయం": { meaning: "morning" }
+      "పొగమంచులో జాగ్రత్తగా నడవండి.":
+        native: "Walk carefully in the fog."
+        bases:
+          "పొగమంచులో": { meaning: "fog" }
+          "జాగ్రత్తగా": { meaning: "care" }
+          "నడవండి": { meaning: "to walk" }
+  "te-1094":
+    native: "snow; frost; dew"
+    notes:
+      "n1": "Snow on the hills, or the dew and frost on the grass."
+    examples:
+      "పర్వతాల మీద మంచు ఉంది.":
+        native: "There is snow on the mountains."
+        bases:
+          "పర్వతాల": { meaning: "mountain" }
+          "మీద": { meaning: "on" }
+      "ఉదయం గడ్డిపై మంచు ఉంది.":
+        native: "In the morning there is dew on the grass."
+        bases:
+          "ఉదయం": { meaning: "morning" }
+          "గడ్డిపై": { meaning: "grass" }
+  "te-1095":
+    native: "steam; vapour"
+    notes:
+      "n1": "Steam from hot water, or vapour in the air. The forms of వస్తుంది (vastundi), will come, take their stem from రా (rā)."
+    examples:
+      "వేడి నీటి నుండి ఆవిరి వస్తోంది.":
+        native: "Steam is coming from hot water."
+        bases:
+          "నుండి": { meaning: "from" }
+          "వస్తోంది": { meaning: "to come" }
+      "టీ నుండి ఆవిరి వస్తోంది.":
+        native: "Steam is coming from the tea."
+        bases:
+          "టీ": { meaning: "tea" }
+          "నుండి": { meaning: "from" }
+          "వస్తోంది": { meaning: "to come" }
+  "te-1096":
+    native: "temperature"
+    notes:
+      "n1": "Ask for its value with ఎంత (enta), how much."
+    examples:
+      "ఉష్ణోగ్రత ఎంత?": "What is the temperature?"
+      "ఉష్ణోగ్రత పెరిగింది.":
+        native: "The temperature has gone up."
+        bases:
+          "పెరిగింది": { meaning: "to rise" }
+  "te-1097":
+    native: "darkness"
+    notes:
+      "n1": "The dark of the night, when there is no light."
+    examples:
+      "చీకటి పడింది.": "It has become dark."
+      "రాత్రి చీకటిలో వర్షం పడుతోంది.":
+        native: "It is raining in the dark of the night."
+        bases:
+          "చీకటిలో": { meaning: "darkness" }
+  "te-1098":
+    native: "coolness"
+    notes:
+      "n1": "The coolness after rain or in the shade."
+    examples:
+      "వర్షం తర్వాత చల్లదనం వచ్చింది.":
+        native: "After the rain there came coolness."
+        bases:
+          "వచ్చింది": { meaning: "to come" }
+      "సాయంత్రం చల్లదనం ఉంది.":
+        native: "In the evening there is coolness."
+        bases:
+          "సాయంత్రం": { meaning: "evening" }
+  "te-1099":
+    native: "raincoat"
+    notes:
+      "n1": "A word taken from English and used as it is."
+    examples:
+      "వర్షంలో రెయిన్‌కోట్ వేసుకో.":
+        native: "Put on a raincoat in the rain."
+        bases:
+          "వర్షంలో": { meaning: "rain" }
+          "వేసుకో": { meaning: "to put on" }
+      "నా దగ్గర రెయిన్‌కోట్ ఉంది.":
+        native: "I have a raincoat."
+        bases:
+          "నా": { meaning: "I" }
+  "te-1100":
+    native: "cloudy"
+    notes:
+      "n1": "From మేఘం (mēgham), a cloud, with the sense of being covered."
+    examples:
+      "ఈ రోజు ఆకాశం మేఘావృతంగా ఉంది.":
+        native: "The sky is cloudy today."
+        bases:
+          "మేఘావృతంగా": { meaning: "cloudy" }
+      "మేఘావృతమైన రోజు.": "A cloudy day."
+  "te-1101":
+    native: "soaked; wet from rain"
+    notes:
+      "n1": "From తడియు (taḍiyu), to get wet: the form that describes a thing already wet."
+    examples:
+      "వర్షంలో తడిసిన బట్టలు ఆరబెట్టు.":
+        native: "Dry the clothes soaked in the rain."
+        bases:
+          "వర్షంలో": { meaning: "rain" }
+          "ఆరబెట్టు": { meaning: "to dry" }
+      "తడిసిన గొడుగు అక్కడ ఉంది.": "The soaked umbrella is there."
+  "te-1102":
+    native: "humid; muggy"
+    notes:
+      "n1": "From తేమ (tēma), humidity: the adjective form. The forms of వస్తుంది (vastundi), will come, take their stem from రా (rā)."
+    examples:
+      "ఈ రోజు గాలి తేమగా ఉంది.": "The air is humid today."
+      "తేమగా ఉన్నప్పుడు చెమట వస్తుంది.":
+        native: "When it is humid you sweat."
+        bases:
+          "చెమట": { meaning: "sweat" }
+          "వస్తుంది": { meaning: "to come" }
+  "te-1103":
+    native: "to fall; to come down (of rain)"
+    notes:
+      "n1": "For rain: వర్షం పడుతోంది (varṣam paḍutōndi), it is raining."
+    examples:
+      "వర్షం పడుతోంది.":
+        native: "It is raining."
+        bases:
+          "పడుతోంది": { meaning: "to fall" }
+      "చినుకులు పడ్డాయి.":
+        native: "Drops of rain fell."
+        bases:
+          "పడ్డాయి": { meaning: "to fall" }
+  "te-1104":
+    native: "to pour down (of rain)"
+    notes:
+      "n1": "Of rain, and a little more formal than పడు (paḍu)."
+    examples:
+      "వర్షం బాగా కురిసింది.":
+        native: "It rained heavily."
+        bases:
+          "బాగా": { meaning: "well" }
+          "కురిసింది": { meaning: "to pour down" }
+      "ఆకాశం నుండి వాన కురుస్తోంది.":
+        native: "Rain is pouring from the sky."
+        bases:
+          "నుండి": { meaning: "from" }
+          "కురుస్తోంది": { meaning: "to pour down" }
+  "te-1105":
+    native: "to blow (of wind)"
+    notes:
+      "n1": "Of the wind: గాలి వీస్తోంది (gāli vīstōndi), the wind is blowing."
+    examples:
+      "ఈ రాత్రి గాలి బలంగా వీచింది.":
+        native: "The wind blew strongly last night."
+        bases:
+          "బలంగా": { meaning: "strength" }
+          "వీచింది": { meaning: "to blow" }
+      "గాలి వీచినప్పుడు చల్లగా ఉంటుంది.":
+        native: "When the wind blows it is cool."
+        bases:
+          "వీచినప్పుడు": { meaning: "to blow" }
+  "te-1106":
+    native: "to shine hot (of the sun)"
+    notes:
+      "n1": "Of the sun: ఎండ కాస్తోంది (enda kāstōndi), the sun is shining hot."
+    examples:
+      "ఎండ బాగా కాస్తోంది.":
+        native: "The sun is shining strongly."
+        bases:
+          "బాగా": { meaning: "well" }
+          "కాస్తోంది": { meaning: "to shine hot" }
+      "ఈ రోజు ఎండ కాస్తోంది.":
+        native: "The sun is shining today."
+        bases:
+          "కాస్తోంది": { meaning: "to shine hot" }
+  "te-1107":
+    native: "to get wet"
+    notes:
+      "n1": "To get wet with rain or water."
+    examples:
+      "వానలో తడిశాను.":
+        native: "I got wet in the rain."
+        bases:
+          "వానలో": { meaning: "rain" }
+          "తడిశాను": { meaning: "to get wet" }
+      "తడియకుండా ఉండు.":
+        native: "Stay dry, do not get wet."
+        bases:
+          "తడియకుండా": { meaning: "to get wet" }

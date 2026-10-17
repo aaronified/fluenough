@@ -1,0 +1,57 @@
+schema: 1
+id: "te-en-reading-weather"
+name: "Reading: the weather"
+kind: reading
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN, icon: "తె" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+description: "Two short texts about the weather: a radio forecast and a message to a friend about the monsoon. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [reading, beginner, unreviewed]
+passages:
+  - id: "te-weather-forecast"
+    title: "A radio forecast"
+    sentences:
+      - text: "ఈ రోజు ఆకాశం మేఘావృతంగా ఉంటుంది."
+        reading: "ī rōju ākāśam mēghāvrutaṅgā uṇṭundi."
+        ipa: "iː roːdʒu aːkaːʃam meːɡʱaːʋrut̪aŋɡaː uɳʈund̪i"
+      - text: "సాయంత్రం వర్షం పడుతుంది."
+        reading: "sāyantram varṣam paḍutundi."
+        ipa: "saːjant̪ram ʋarʂam paɖut̪und̪i"
+      - text: "రేపు ఉదయం గాలి బలంగా ఉంటుంది."
+        reading: "rēpu udayam gāli balaṅgā uṇṭundi."
+        ipa: "reːpu ud̪ajam ɡaːli balaŋɡaː uɳʈund̪i"
+    questions:
+      - id: "te-1108"
+        prompt: { en: "The sky will be cloudy today." }
+        answer: true
+      - id: "te-1109"
+        prompt: { en: "When will it rain?" }
+        options:
+          - { en: "In the morning" }
+          - { en: "In the evening" }
+        answer: 2
+  - id: "te-weather-message"
+    title: "A message to a friend about the monsoon"
+    sentences:
+      - text: "ఇక్కడ వర్షాకాలం వచ్చింది."
+        reading: "ikkaḍa varṣākālam vaccindi."
+        ipa: "ikkaɖa ʋarʂaːkaːlam ʋatʃtʃind̪i"
+      - text: "ప్రతి రోజు వాన పడుతోంది."
+        reading: "prati rōju vāna paḍutōndi."
+        ipa: "prat̪i roːdʒu ʋaːna paɖut̪oːnd̪i"
+      - text: "చెరువులో నీరు ఉంది."
+        reading: "ceruvulō nīru undi."
+        ipa: "tʃeruʋuloː niːru und̪i"
+      - text: "నా దగ్గర రెయిన్‌కోట్ ఉంది."
+        reading: "nā daggara reyinkōṭ undi."
+        ipa: "naː d̪aɡɡara rejinkoːʈ und̪i"
+    questions:
+      - id: "te-1110"
+        prompt: { en: "The monsoon has come to the writer's town." }
+        answer: true
+      - id: "te-1111"
+        prompt: { en: "What does the writer have?" }
+        options:
+          - { en: "A raincoat" }
+          - { en: "A hat" }
+        answer: 1
