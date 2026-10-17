@@ -71,6 +71,18 @@ checked the whole unit.
   a change**, tap the pencil on a part (word, reading, IPA, meaning, notes),
   write your version and say why. Edit as many parts as you like, then tap
   the tick to save them all. A card keeps one suggestion of yours per part.
+- **Base words.** Each base word has its own box. Its pencil changes the
+  base's form, reading and meaning; its delete button removes it, with
+  **Undo** until you tap the tick. **Add a base** adds one for a word of the
+  card that has none. When the base's form is the word of another card,
+  you can link that card instead. Each base change has its own why.
+- **A new word.** You may replace a card's word with a better or more common
+  one. The card keeps its id and its meaning, so learners keep their
+  progress. The sheet then lists what hung on the old word: **Replace the
+  bases** removes the old bases and opens one for the new word, the old
+  word stays an accepted answer unless you untick it, and the notes and
+  example are marked **Check**. All of it is sent as one review, and goes
+  into the deck together once the new word is agreed.
 - **Others' proposals.** Suggestions from other reviewers of your language show
   on the card with **Accept**, **Edit** and **Reject**. Accept it as written,
   Edit it into your own proposal, or Reject it. A rejection does not stop a
