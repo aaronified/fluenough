@@ -219,6 +219,7 @@ void main() {
     final bengali = nameOf(state, 'bn');
     await tapText(tester, l10n.navSettings);
     expect(find.text(nameOf(state, 'hi')), findsWidgets);
+    await tapText(tester, l10n.settingsRowLanguages);
     await tapText(tester, l10n.settingsLearn);
 
     expect(find.text(l10n.pickerSettingsTitle), findsOneWidget);
@@ -234,6 +235,7 @@ void main() {
     expect(state.settings.placedDecks, hindiUnit);
 
     // Taking a language off asks first, and places nothing.
+    await tapText(tester, l10n.settingsRowLanguages);
     await tapText(tester, l10n.settingsLearn);
     await pickLanguage(tester, 'bn');
     expect(find.text(l10n.pickerStopTitle(bengali)), findsOneWidget);
@@ -317,6 +319,7 @@ void main() {
     final l10n = l10nOf(tester);
     final hindi = nameOf(state, 'hi');
     await tapText(tester, l10n.navSettings);
+    await tapText(tester, l10n.settingsRowLanguages);
     await tapText(tester, l10n.settingsLearn);
     await scrollToInPicker(tester, languageCard('bn'));
     expect(isPicked(tester, 'bn'), isTrue);
@@ -357,6 +360,7 @@ void main() {
     final l10n = l10nOf(tester);
     final hindi = nameOf(state, 'hi');
     await tapText(tester, l10n.navSettings);
+    await tapText(tester, l10n.settingsRowLanguages);
     await tapText(tester, l10n.settingsLearn);
     await pickLanguage(tester, 'hi');
     await tapText(tester, l10n.commonContinue);

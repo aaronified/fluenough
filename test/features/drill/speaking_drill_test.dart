@@ -227,6 +227,7 @@ void main() {
     final l10n = l10nOf(tester);
     await tapText(tester, l10n.navSettings);
     expect(find.byType(SettingsPage), findsOneWidget);
+    await tapText(tester, l10n.settingsRowActivities);
     expect(speech.starts, 0);
     await tapText(tester, l10n.skillSpeakingSettingsTitle);
     expect(speech.starts, 1);
@@ -244,6 +245,7 @@ void main() {
     );
     final l10n = l10nOf(tester);
     await tapText(tester, l10n.navSettings);
+    await tapText(tester, l10n.settingsRowActivities);
     await tapText(tester, l10n.skillSpeakingSettingsTitle);
     expect(state.settings.isEnabled(Skill.speaking), isTrue);
     expect(state.speechReady, isTrue);

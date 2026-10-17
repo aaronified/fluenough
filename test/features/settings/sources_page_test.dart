@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/features/drill/reading_fixture.dart';
-import 'package:fluenough/features/settings/settings_page.dart';
+import 'package:fluenough/features/settings/languages_page.dart';
 import 'package:fluenough/features/settings/sources_page.dart';
 import 'package:fluenough/ui/widgets/grouped_list.dart';
 
@@ -69,7 +69,7 @@ void main() {
     usePhone(tester);
     await pumpScreen(
       tester,
-      const SettingsPage(),
+      const LanguagesSettingsPage(),
       state: AppState.test(decks: readingFixtureDecks()),
     );
     final l10n = l10nOf(tester);
@@ -104,33 +104,24 @@ void main() {
     expect(find.byType(SourcesPage), findsNothing);
   });
 
-  testWidgets('the Sources row is the last in Learning, not in Logs (#469)', (
-    tester,
-  ) async {
+  testWidgets('the Sources row is the last on Your languages, not on the '
+      'tab or in the app log (#469)', (tester) async {
     usePhone(tester);
     await pumpScreen(
       tester,
-      const SettingsPage(),
+      const LanguagesSettingsPage(),
       state: AppState.test(decks: readingFixtureDecks()),
     );
     final l10n = l10nOf(tester);
-    GroupedList section(String header) => tester.widget<GroupedList>(
-      find.byWidgetPredicate((w) => w is GroupedList && w.header == header),
-    );
-    final learning = section(l10n.settingsSectionLearning).children;
-    expect((learning.last as GroupedTile).title, l10n.settingsSources);
-    final logs = section(l10n.settingsSectionLogs).children;
-    expect(
-      logs.whereType<GroupedTile>().map((t) => t.title),
-      isNot(contains(l10n.settingsSources)),
-    );
+    final rows = tester.widget<GroupedList>(find.byType(GroupedList)).children;
+    expect((rows.last as GroupedTile).title, l10n.settingsSources);
   });
 
   testWidgets('the row counts the sources, in every language', (tester) async {
     usePhone(tester);
     await pumpScreen(
       tester,
-      const SettingsPage(),
+      const LanguagesSettingsPage(),
       state: AppState.test(
         decks: MemoryDeckSource(<String, String>{
           'decks/bn/bn-en-words.yaml': vocab(
@@ -160,7 +151,7 @@ void main() {
     usePhone(tester);
     await pumpScreen(
       tester,
-      const SettingsPage(),
+      const LanguagesSettingsPage(),
       state: AppState.test(decks: readingFixtureDecks()),
     );
     final l10n = l10nOf(tester);
@@ -202,7 +193,7 @@ void main() {
     await tester.pageBack();
     await tester.pumpAndSettle();
     expect(find.byType(SourcesPage), findsNothing);
-    expect(find.byType(SettingsPage), findsOneWidget);
+    expect(find.byType(LanguagesSettingsPage), findsOneWidget);
   });
 
   testWidgets('the page has a row per language, each source a line', (
@@ -261,7 +252,7 @@ void main() {
     usePhone(tester);
     await pumpScreen(
       tester,
-      const SettingsPage(),
+      const LanguagesSettingsPage(),
       state: AppState.test(
         decks: MemoryDeckSource(<String, String>{
           'decks/es/es-en-more.yaml': vocab('es-en-more', 'es', 'Spanish'),

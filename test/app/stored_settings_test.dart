@@ -14,7 +14,6 @@ void changeAll(SettingsNotifier s) {
     ..setSkillEnabled(Skill.listening, false)
     ..showRomanisation = false
     ..showIpa = false
-    ..soundOn = false
     ..autoplay = true
     ..matchTapToHear = false
     ..countSpeakerTap()
@@ -82,7 +81,14 @@ void main() {
     expect(s.showRomanisation, defaults.showRomanisation);
     expect(s.showIpa, defaults.showIpa);
     // Reading is newer than a list with no marks, so it keeps its default.
-    expect(s.enabledSkills, {Skill.recognition, Skill.reading});
+    // Seen words, grammar and matching pairs have no switch, so they are
+    // always on (#243).
+    expect(s.enabledSkills, {
+      Skill.recognition,
+      Skill.grammar,
+      Skill.reading,
+      Skill.pair,
+    });
     expect(s.learningLanguages, ['hi', 'bn']);
     expect(s.placedDecks, {'hi-en-market'});
     expect(s.autoUpdateCheck, isFalse);
@@ -173,6 +179,34 @@ void main() {
       ..restore(const <String, String>{'enabled_skills': '+,recognition'});
     expect(later.isEnabled(Skill.listening), isTrue);
     expect(later.isEnabled(Skill.recognition), isTrue);
+  });
+
+  test('a stored off for an activity with no switch reads as on, and a '
+      'stored Sound off is Heard words off (#243, Decision 9)', () {
+    final s = SettingsNotifier()
+      ..restore(const <String, String>{
+        'enabled_skills': '+,!recognition,production,listening,speaking,!grammar,reading,!pair',
+        'sound_on': 'false',
+      });
+    for (final skill in <Skill>[Skill.recognition, Skill.grammar, Skill.pair]) {
+      expect(s.isEnabled(skill), isTrue, reason: '$skill');
+      expect(skill.hasSwitch, isFalse);
+    }
+    expect(s.isEnabled(Skill.listening), isFalse);
+    // No other choice changes.
+    expect(s.isEnabled(Skill.production), isTrue);
+    expect(s.isEnabled(Skill.speaking), isTrue);
+    expect(s.isEnabled(Skill.reading), isTrue);
+    expect(s.soundOn, isTrue);
+    expect(s.toStored()['sound_on'], 'true');
+    // Stored again, it stays as migrated.
+    final again = SettingsNotifier()..restore(s.toStored());
+    expect(again.isEnabled(Skill.listening), isFalse);
+    expect(again.isEnabled(Skill.grammar), isTrue);
+    // Sound on changes nothing about Heard words.
+    final on = SettingsNotifier()
+      ..restore(const <String, String>{'sound_on': 'true'});
+    expect(on.isEnabled(Skill.listening), isTrue);
   });
 
   test('settings persist across closing and reopening the database', () async {

@@ -39,11 +39,18 @@ enum Feature {
   logExport(20),
   logImport(20),
   cloudBackup(112),
+  // Backing up and restoring one file on the phone, and its recent list
+  // (docs/plans/app-backup.md).
+  localBackup(470),
 
   // Adding decks.
   importFile(22),
   importUrl(22),
   importCsv(0),
+  // Your decks: the template in two formats, and sending a deck to the
+  // project (#495).
+  deckTemplates(495),
+  deckSend(495),
 
   // Feedback: support, bug reports and feedback by mail. Until it is on,
   // every report button opens a new GitHub issue instead.

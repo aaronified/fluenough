@@ -8,7 +8,12 @@ import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/speech/speech_engine.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/settings/appearance_page.dart';
-import 'package:fluenough/features/settings/settings_page.dart';
+import 'package:fluenough/features/settings/activities_page.dart';
+import 'package:fluenough/features/settings/languages_page.dart';
+import 'package:fluenough/features/settings/profiles_privacy_page.dart';
+import 'package:fluenough/features/settings/reminders_page.dart';
+import 'package:fluenough/features/settings/reviewing_page.dart';
+import 'package:fluenough/features/settings/updates_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/skill_visuals.dart';
 import 'package:fluenough/ui/widgets/grouped_list.dart';
@@ -138,20 +143,19 @@ void _expectEveryLineChanges(List<GroupedTile> switches) {
 }
 
 void main() {
-  testWidgets('each switch in Settings: its line before and after one tap', (
-    tester,
-  ) async {
+  testWidgets('each switch on Activities and memory: its line before and '
+      'after one tap', (tester) async {
     usePhone(tester);
     final state = await pumpScreen(
       tester,
-      const SettingsPage(),
+      const ActivitiesPage(),
       state: _everythingOn(),
     );
     final l10n = l10nOf(tester);
 
-    for (final skill in Skill.values) {
+    for (final skill in Skill.values.where((s) => s.hasSwitch)) {
       final title = skill.settingsLabel(l10n);
-      // Flipped twice, so that the next switch finds Settings as it was.
+      // Flipped twice, so that the next switch finds the page as it was.
       for (var i = 0; i < 2; i++) {
         await _flip(
           tester,
@@ -163,41 +167,45 @@ void main() {
     }
     expect(state.settings.isEnabled(Skill.speaking), isFalse);
 
-    final pairs = <(String, String, String)>[
+    for (final (title, on, off) in <(String, String, String)>[
+      (
+        l10n.settingsAutoplay,
+        l10n.settingsAutoplayOn,
+        l10n.settingsAutoplayOff,
+      ),
+      (
+        l10n.settingsAdjustAuto,
+        l10n.settingsAdjustAutoOn,
+        l10n.settingsAdjustAutoOff,
+      ),
+    ]) {
+      for (var i = 0; i < 2; i++) {
+        await _flip(tester, title, on: on, off: off);
+      }
+    }
+  });
+
+  testWidgets('each switch on Your languages: its line before and after one '
+      'tap', (tester) async {
+    usePhone(tester);
+    await pumpScreen(
+      tester,
+      const LanguagesSettingsPage(),
+      state: _everythingOn(),
+    );
+    final l10n = l10nOf(tester);
+    for (final (title, on, off) in <(String, String, String)>[
       (
         l10n.settingsRomanisation,
         l10n.settingsRomanisationOn,
         l10n.settingsRomanisationOff,
       ),
       (l10n.settingsIpa, l10n.settingsIpaOn, l10n.settingsIpaOff),
-      (
-        l10n.settingsAdjustAuto,
-        l10n.settingsAdjustAutoOn,
-        l10n.settingsAdjustAutoOff,
-      ),
-      (
-        l10n.settingsAutoplay,
-        l10n.settingsAutoplayOn,
-        l10n.settingsAutoplayOff,
-      ),
-      (l10n.settingsSound, l10n.settingsSoundOn, l10n.settingsSoundOff),
-      (
-        l10n.settingsReminder,
-        l10n.settingsReminderOn(_time(tester, 19, 30)),
-        l10n.settingsReminderOff,
-      ),
-      (
-        l10n.settingsUpdateAuto,
-        l10n.settingsUpdateAutoOn,
-        l10n.settingsUpdateAutoOff,
-      ),
-    ];
-    for (final (title, on, off) in pairs) {
+    ]) {
       for (var i = 0; i < 2; i++) {
         await _flip(tester, title, on: on, off: off);
       }
     }
-
     for (var i = 0; i < 2; i++) {
       await _flip(
         tester,
@@ -207,6 +215,31 @@ void main() {
         confirm: l10n.settingsAdultConfirm,
       );
     }
+  });
+
+  testWidgets('the reminder, updates and reviewing switches: their lines '
+      'before and after one tap', (tester) async {
+    usePhone(tester);
+    await pumpScreen(tester, const RemindersPage(), state: _everythingOn());
+    final l10n = l10nOf(tester);
+    for (var i = 0; i < 2; i++) {
+      await _flip(
+        tester,
+        l10n.settingsReminder,
+        on: l10n.settingsReminderOn(_time(tester, 19, 30)),
+        off: l10n.settingsReminderOff,
+      );
+    }
+    await pumpScreen(tester, const UpdatesPage(), state: _everythingOn());
+    for (var i = 0; i < 2; i++) {
+      await _flip(
+        tester,
+        l10n.settingsUpdateAuto,
+        on: l10n.settingsUpdateAutoOn,
+        off: l10n.settingsUpdateAutoOff,
+      );
+    }
+    await pumpScreen(tester, const ReviewingPage(), state: _everythingOn());
     for (var i = 0; i < 2; i++) {
       await _flip(
         tester,
@@ -222,7 +255,7 @@ void main() {
     usePhone(tester);
     final state = await pumpScreen(
       tester,
-      const SettingsPage(),
+      const RemindersPage(),
       state: _everythingOn(),
     );
     final l10n = l10nOf(tester);
@@ -244,7 +277,7 @@ void main() {
     for (final locked in <bool>[false, true]) {
       await pumpScreen(
         tester,
-        SettingsPage(key: UniqueKey()),
+        ProfilesPrivacyPage(key: UniqueKey()),
         state: AppState.test(
           features: FeatureRegistry.all(),
           profiles: <Profile>[
@@ -297,7 +330,7 @@ void main() {
     usePhone(tester);
     final state = await pumpScreen(
       tester,
-      const SettingsPage(),
+      const ActivitiesPage(),
       state: _everythingOn(),
     );
     final l10n = l10nOf(tester);
@@ -318,6 +351,7 @@ void main() {
     await tester.tap(find.text(l10n.commonDone));
     await tester.pumpAndSettle();
 
+    await pumpScreen(tester, const LanguagesSettingsPage(), state: state);
     final alphabets = find.text(l10n.settingsAlphabet);
     await scrollTo(tester, alphabets);
     await tester.tap(alphabets);
@@ -347,7 +381,7 @@ void main() {
     usePhone(tester);
     final state = await pumpScreen(
       tester,
-      const SettingsPage(),
+      const ActivitiesPage(),
       state: AppState.test(tts: FixedTtsEngine(const <String>{'es'})),
     );
     final l10n = l10nOf(tester);
@@ -369,75 +403,9 @@ void main() {
     );
   });
 
-  testWidgets('with Sound off, Play words automatically and the skills that '
-      'need sound say that nothing plays, rather than what would', (
-    tester,
-  ) async {
-    usePhone(tester);
-    final state = await pumpScreen(
-      tester,
-      const SettingsPage(),
-      state: _everythingOn(),
-    );
-    final l10n = l10nOf(tester);
-    state.settings.autoplay = true;
-    await tester.pumpAndSettle();
-    await _flip(
-      tester,
-      l10n.settingsSound,
-      on: l10n.settingsSoundOn,
-      off: l10n.settingsSoundOff,
-    );
-    expect(state.settings.soundOn, isFalse);
-
-    final autoplay = _switchRow(l10n.settingsAutoplay);
-    await scrollTo(tester, autoplay);
-    expect(tester.widget<GroupedTile>(autoplay).toggleValue, isTrue);
-    expect(
-      tester.widget<GroupedTile>(autoplay).line,
-      l10n.settingsAutoplayOnSoundOff,
-    );
-    state.settings.autoplay = false;
-    await tester.pumpAndSettle();
-    expect(
-      tester.widget<GroupedTile>(autoplay).line,
-      l10n.settingsAutoplayOffSoundOff,
-    );
-    expect(find.text(l10n.settingsAutoplayOff), findsNothing);
-
-    // Both say the same while on, so each is checked by its own row.
-    for (final skill in Skill.values.where((s) => s.needsVoice)) {
-      final row = _switchRow(skill.settingsLabel(l10n));
-      await scrollTo(tester, row);
-      await tester.ensureVisible(row);
-      await tester.pumpAndSettle();
-      expect(tester.widget<GroupedTile>(row).toggleValue, isTrue);
-      expect(
-        tester.widget<GroupedTile>(row).line,
-        l10n.settingsSkillSoundOff,
-        reason: skill.name,
-      );
-      await tester.tap(row);
-      await tester.pumpAndSettle();
-      expect(
-        tester.widget<GroupedTile>(row).line,
-        skill.settingsOff(l10n),
-        reason: skill.name,
-      );
-      await tester.tap(row);
-      await tester.pumpAndSettle();
-    }
-    expect(find.text(Skill.listening.settingsOn(l10n)), findsNothing);
-    // Sound back on: the lines say what plays again.
-    state.settings.soundOn = true;
-    await tester.pumpAndSettle();
-    await scrollTo(tester, autoplay);
-    expect(tester.widget<GroupedTile>(autoplay).line, l10n.settingsAutoplayOff);
-  });
-
   testWidgets('Languages I speak shows the languages chosen', (tester) async {
     usePhone(tester);
-    final state = await pumpScreen(tester, const SettingsPage());
+    final state = await pumpScreen(tester, const LanguagesSettingsPage());
     final l10n = l10nOf(tester);
     state.settings.spokenLanguages = const <String>['bn', 'en'];
     await tester.pumpAndSettle();
@@ -454,29 +422,35 @@ void main() {
   });
 
   group('no switch keeps the same line in both states', () {
-    testWidgets('in Settings', (tester) async {
-      usePhone(tester);
-      await pumpScreen(tester, const SettingsPage(), state: _everythingOn());
-      final l10n = l10nOf(tester);
-      final switches = await _everySwitch(tester);
-      // Every skill, readings, adjusting, sound, playing, the reminder, the
-      // PIN, reviewing and updates, at least.
-      expect(
-        switches.map((t) => t.title),
-        containsAll(<String>[
-          for (final skill in Skill.values) skill.settingsLabel(l10n),
-          l10n.settingsRomanisation,
-          l10n.settingsAdult,
+    testWidgets('on every page of Settings', (tester) async {
+      final pages = <Widget, List<String> Function(AppLocalizations)>{
+        const ActivitiesPage(): (l10n) => <String>[
+          for (final skill in Skill.values.where((s) => s.hasSwitch))
+            skill.settingsLabel(l10n),
           l10n.settingsAdjustAuto,
-          l10n.settingsSound,
           l10n.settingsAutoplay,
-          l10n.settingsReminder,
-          l10n.settingsPinLock,
-          l10n.reviewSettingsSwitch,
-          l10n.settingsUpdateAuto,
-        ]),
-      );
-      _expectEveryLineChanges(switches);
+        ],
+        const LanguagesSettingsPage(): (l10n) => <String>[
+          l10n.settingsRomanisation,
+          l10n.settingsIpa,
+          l10n.settingsAdult,
+        ],
+        const RemindersPage(): (l10n) => <String>[l10n.settingsReminder],
+        const ProfilesPrivacyPage(): (l10n) => <String>[l10n.settingsPinLock],
+        const ReviewingPage(): (l10n) => <String>[l10n.reviewSettingsSwitch],
+        const UpdatesPage(): (l10n) => <String>[l10n.settingsUpdateAuto],
+      };
+      for (final MapEntry(key: page, value: titles) in pages.entries) {
+        usePhone(tester);
+        await pumpScreen(tester, page, state: _everythingOn());
+        final switches = await _everySwitch(tester);
+        expect(
+          switches.map((t) => t.title),
+          containsAll(titles(l10nOf(tester))),
+          reason: '${page.runtimeType}',
+        );
+        _expectEveryLineChanges(switches);
+      }
     });
 
     testWidgets('in Appearance', (tester) async {
@@ -493,12 +467,13 @@ void main() {
 
     testWidgets('in the per-language dialogs', (tester) async {
       usePhone(tester);
-      await pumpScreen(tester, const SettingsPage(), state: _everythingOn());
-      final l10n = l10nOf(tester);
-      for (final opener in <Finder>[
-        find.text(l10n.settingsSkillLanguages).first,
-        find.text(l10n.settingsAlphabet),
+      final l10n = await AppLocalizations.delegate.load(const Locale('en'));
+      for (final (page, label) in <(Widget, String)>[
+        (const ActivitiesPage(), l10n.settingsSkillLanguages),
+        (const LanguagesSettingsPage(), l10n.settingsAlphabet),
       ]) {
+        await pumpScreen(tester, page, state: _everythingOn());
+        final opener = find.text(label).first;
         await scrollTo(tester, opener);
         await tester.tap(opener);
         await tester.pumpAndSettle();

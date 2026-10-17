@@ -7,7 +7,7 @@ import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/features/placement/native_choice.dart';
 import 'package:fluenough/features/placement/placement_page.dart';
-import 'package:fluenough/features/settings/settings_page.dart';
+import 'package:fluenough/features/settings/languages_page.dart';
 import 'package:fluenough/features/today/today_page.dart';
 
 import '../../support/harness.dart';
@@ -142,7 +142,7 @@ void main() {
       chosen: true,
       decks: hindi(bengali: const <String>{'a', 'b'}),
     );
-    await pumpScreen(tester, const SettingsPage(), state: state);
+    await pumpScreen(tester, const LanguagesSettingsPage(), state: state);
     final l10n = l10nOf(tester);
     final row = find.text(l10n.nativeChoiceTitle('Hindi'));
     await tester.ensureVisible(row);

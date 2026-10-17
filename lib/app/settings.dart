@@ -768,15 +768,23 @@ class SettingsNotifier extends ChangeNotifier {
       for (final skill in Skill.values) {
         if (names.contains(skill.name)) {
           setSkillEnabled(skill, true);
-        } else if (names.contains('!${skill.name}') ||
-            (!marked && skill != Skill.reading)) {
+        } else if (skill.hasSwitch &&
+            (names.contains('!${skill.name}') ||
+                (!marked && skill != Skill.reading))) {
+          // An activity with no switch is always asked (#243, Decision 9):
+          // a stored off for it reads as on.
           setSkillEnabled(skill, false);
         }
       }
     }
     if (pick('show_romanisation', flag) case final v?) showRomanisation = v;
     if (pick('show_ipa', flag) case final v?) showIpa = v;
-    if (pick('sound_on', flag) case final v?) soundOn = v;
+    // Settings has no Sound switch any more (#243, Decision 9): Sound off was
+    // a way to skip listening, so a stored off reads as Heard words off. The
+    // key stays readable and is written as on from now.
+    if (pick('sound_on', flag) case false) {
+      setSkillEnabled(Skill.listening, false);
+    }
     if (pick('autoplay', flag) case final v?) autoplay = v;
     if (pick('match_tap_to_hear', flag) case final v?) matchTapToHear = v;
     if (pick('speaker_taps', int.tryParse) case final v? when v >= 0) {
