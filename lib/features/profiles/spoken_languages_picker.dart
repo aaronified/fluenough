@@ -484,8 +484,11 @@ class _KnownLanguageSheetState extends State<KnownLanguageSheet> {
     final own = !several && language.asksInOwnScript;
     final locale = Locale(language.code);
     String name(String? script) => l10n.scriptNameOr(script, language.name);
+    final ownScripts = several && language.asksScriptsInOwnScript;
     final question = several
-        ? l10n.knownReadsWhichScripts(language.name)
+        ? (ownScripts
+              ? language.scriptsQuestion!
+              : l10n.knownReadsWhichScripts(language.name))
         : own
         ? language.scriptQuestion!
         : l10n.knownReadsScript(name(language.script));
@@ -521,13 +524,30 @@ class _KnownLanguageSheetState extends State<KnownLanguageSheet> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
+              // The language the sheet is about, as its list row names it,
+              // read before the question.
+              Padding(
+                key: const ValueKey<String>('know-language'),
+                padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 4),
+                child: Text.rich(
+                  language.ownName == language.name
+                      ? TextSpan(text: language.name)
+                      : _ownNameMarked(l10n, language),
+                  style: theme.textTheme.bodyMedium!.copyWith(
+                    color: theme.colorScheme.onSurfaceVariant,
+                  ),
+                ),
+              ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 12),
                 child: Semantics(
                   header: true,
                   namesRoute: true,
                   child: Text.rich(
-                    TextSpan(text: question, locale: own ? locale : null),
+                    TextSpan(
+                      text: question,
+                      locale: own || ownScripts ? locale : null,
+                    ),
                     style: theme.textTheme.titleLarge,
                   ),
                 ),
@@ -541,8 +561,15 @@ class _KnownLanguageSheetState extends State<KnownLanguageSheet> {
                       end: 12,
                     ),
                     controlAffinity: ListTileControlAffinity.trailing,
-                    title: Text(
-                      l10n.knownCanReadFallback(name(script)),
+                    title: Text.rich(
+                      TextSpan(
+                        text:
+                            language.canReadIn(script) ??
+                            l10n.knownCanReadFallback(name(script)),
+                        locale: language.canReadIn(script) != null
+                            ? locale
+                            : null,
+                      ),
                       style: theme.textTheme.bodyLarge,
                     ),
                     value: _ticked.contains(script),

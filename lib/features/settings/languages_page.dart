@@ -5,7 +5,6 @@ import '../../app/app_state.dart';
 import '../../app/routes.dart';
 import '../../app/settings.dart';
 import '../../l10n/app_localizations.dart';
-import '../../ui/script_name.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../placement/native_choice.dart';
 import 'settings_section_page.dart';
@@ -13,7 +12,7 @@ import 'sources_page.dart';
 import '../../core/models/deck.dart';
 
 /// Settings' Your languages page: the languages known and learned, the
-/// readings, IPA and adult content switches, the alphabets, the language an
+/// readings, IPA and adult content switches, the language an
 /// ambiguous course is learned from, and the sources the decks name.
 ///
 /// What the Learning section held before the Settings tab became a list of
@@ -76,14 +75,6 @@ class LanguagesSettingsPage extends StatelessWidget {
           value: settings.adultContent,
           onChanged: (on) => _setAdult(context, settings, on),
         ),
-        if (_withAlphabet(state).isNotEmpty)
-          GroupedTile(
-            leading: const Icon(Icons.abc),
-            title: l10n.settingsAlphabet,
-            subtitle: _alphabetLine(l10n, state),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () => _chooseAlphabets(context, state),
-          ),
         // "Learn Telugu from", for each course more than one of the
         // languages the learner speaks teaches (ADR-0036).
         for (final language in _withNatives(state))
@@ -132,74 +123,6 @@ class LanguagesSettingsPage extends StatelessWidget {
       for (final code in state.settings.spokenLanguages) names[code] ?? code,
     ].join(l10n.commonListSeparator);
   }
-
-  /// A switch's row in a dialog: no room at the sides, the dialog has it.
-  static const EdgeInsetsGeometry _dialogRow = EdgeInsetsDirectional.symmetric(
-    vertical: 10,
-  );
-
-  /// The languages the profile learns whose course has decks that need the
-  /// alphabet.
-  static List<LanguageInfo> _withAlphabet(AppState state) => <LanguageInfo>[
-    for (final language in state.languages)
-      if (state.currentProfile.learns(language.code) &&
-          state.hasAlphabet(language.code))
-        language,
-  ];
-
-  /// "Learning every alphabet", or the languages learned in Latin letters.
-  String _alphabetLine(AppLocalizations l10n, AppState state) {
-    final latin = <String>[
-      for (final language in _withAlphabet(state))
-        if (!state.settings.learnsAlphabet(language.code)) language.name,
-    ];
-    return latin.isEmpty
-        ? l10n.settingsAlphabetAll
-        : l10n.settingsAlphabetLatin(latin.join(l10n.commonListSeparator));
-  }
-
-  /// A switch per language: its alphabet, or Latin letters only.
-  Future<void> _chooseAlphabets(BuildContext context, AppState state) =>
-      showDialog<void>(
-        context: context,
-        builder: (context) {
-          final l10n = AppLocalizations.of(context)!;
-          final settings = state.settings;
-          return AlertDialog(
-            title: Text(l10n.settingsAlphabetTitle),
-            content: ListenableBuilder(
-              listenable: settings,
-              builder: (context, _) => SingleChildScrollView(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    for (final language in _withAlphabet(state))
-                      GroupedTile.toggle(
-                        title: language.name,
-                        subtitleOn: l10n.settingsAlphabetOn(
-                          l10n.scriptNameOr(language.script, language.name),
-                        ),
-                        subtitleOff: state.courseUnits(language.code).isEmpty
-                            ? l10n.settingsAlphabetOffEmpty
-                            : l10n.settingsAlphabetOff,
-                        padding: _dialogRow,
-                        value: settings.learnsAlphabet(language.code),
-                        onChanged: (on) =>
-                            settings.setLearnsAlphabet(language.code, on),
-                      ),
-                  ],
-                ),
-              ),
-            ),
-            actions: <Widget>[
-              TextButton(
-                onPressed: () => Navigator.of(context).pop(),
-                child: Text(l10n.commonDone),
-              ),
-            ],
-          );
-        },
-      );
 
   /// Adult content asks the learner to confirm their age as it is switched
   /// on (#96), and is off again at once, hiding every rude word.

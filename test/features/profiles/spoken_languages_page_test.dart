@@ -148,6 +148,45 @@ void main() {
       expect(hi.scriptCanRead, 'मुझे देवनागरी लिपि पढ़नी आती है');
     });
 
+    test('every language not written in Latin has both texts of its sheet, '
+        'in its own first script (#552)', () {
+      for (final l in languages.where((l) => l.script != 'latin')) {
+        final script = l.script!;
+        if (l.hasSeveralScripts) {
+          expect(l.scriptsQuestion, isNotNull, reason: l.code);
+          expect(inScript(l.scriptsQuestion!, script), isTrue, reason: l.code);
+          for (final s in l.scripts) {
+            final text = l.scriptCanReadFor[s];
+            expect(text, isNotNull, reason: '${l.code} $s');
+            expect(inScript(text!, script), isTrue, reason: '${l.code} $s');
+          }
+        } else {
+          expect(l.scriptQuestion, isNotNull, reason: l.code);
+          expect(l.scriptCanRead, isNotNull, reason: l.code);
+          expect(inScript(l.scriptQuestion!, script), isTrue, reason: l.code);
+          expect(inScript(l.scriptCanRead!, script), isTrue, reason: l.code);
+        }
+      }
+    });
+
+    test('every non-Latin entry but en, bn and hi is unchecked, so English is '
+        'asked; en, bn and hi use their own texts (#552)', () {
+      for (final l in languages) {
+        final own = <String>{'en', 'bn', 'hi'}.contains(l.code);
+        if (own) {
+          expect(l.scriptTextUnchecked, isFalse, reason: l.code);
+          expect(l.asksInOwnScript, isTrue, reason: l.code);
+        } else if (l.script != 'latin') {
+          expect(l.scriptTextUnchecked, isTrue, reason: l.code);
+          expect(l.asksInOwnScript, isFalse, reason: l.code);
+          expect(l.asksScriptsInOwnScript, isFalse, reason: l.code);
+          for (final s in l.scripts) {
+            expect(l.canReadIn(s), isNull, reason: '${l.code} $s');
+          }
+        }
+      }
+    });
+
     test('a script is named as the deck files name it', () {
       final used = <String>{
         for (final f in Directory('decks').listSync(recursive: true))
@@ -278,6 +317,24 @@ void main() {
               '  - { code: en, iso639_3: eng, name: E, own_name: E, '
               'script_question: "Q?" }\n',
           'come together',
+        ),
+        (
+          'kind: languages\nlanguages:\n'
+              '  - { code: en, iso639_3: eng, name: E, own_name: E, '
+              'scripts_question: "Q?", script_can_read: { latin: "R" } }\n',
+          'only for several scripts',
+        ),
+        (
+          'kind: languages\nlanguages:\n'
+              '  - { code: en, iso639_3: eng, name: E, own_name: E, '
+              'scripts: [latin, kana], script_can_read: { latin: "R" } }\n',
+          'come together',
+        ),
+        (
+          'kind: languages\nlanguages:\n'
+              '  - { code: en, iso639_3: eng, name: E, own_name: E, '
+              'script_text: "checked" }\n',
+          'script_text',
         ),
         (
           'kind: languages\nlanguages:\n'
@@ -536,8 +593,8 @@ void main() {
       });
     });
 
-    testWidgets('a language with no sentences of its own yet is asked in '
-        'English, naming its script by the script\'s own name (#551)', (
+    testWidgets('a language with no sentences of its own is asked in '
+        'English, naming its script by the script\'s own name (#551, #552)', (
       tester,
     ) async {
       usePhone(tester);
@@ -545,30 +602,18 @@ void main() {
       final l10n = l10nOf(tester);
       for (final (name, code, question, read)
           in <(String, String, String, String)>[
+            // A language with no texts of its own: the Latin ones.
             (
-              'Telugu',
-              'te',
-              'Do you read the Telugu script?',
-              'I can read the Telugu script',
-            ),
-            // Not "the Bengali script", nor "the Assamese script".
-            (
-              'Assamese',
-              'as',
-              'Do you read the Eastern Nagari script?',
-              'I can read the Eastern Nagari script',
+              'Mizo',
+              'lus',
+              'Do you read the Latin script?',
+              'I can read the Latin script',
             ),
             (
-              'Santali',
-              'sat',
-              'Which scripts do you read Santali in?',
-              'I can read the Ol Chiki script',
-            ),
-            (
-              'Urdu',
-              'ur',
-              'Do you read the Perso-Arabic script?',
-              'I can read the Perso-Arabic script',
+              'Khasi',
+              'kha',
+              'Do you read the Latin script?',
+              'I can read the Latin script',
             ),
           ]) {
         await tester.enterText(
@@ -584,6 +629,53 @@ void main() {
         await tester.tap(find.byKey(const ValueKey<String>('know-cancel')));
         await tester.pumpAndSettle();
       }
+    });
+
+    testWidgets('the unchecked Assamese texts are not shown: the sheet asks in '
+        'English, naming the script Eastern Nagari (#552)', (tester) async {
+      usePhone(tester);
+      await openPage(tester);
+      await tester.enterText(
+        find.byKey(const ValueKey<String>('known-search')),
+        'Assamese',
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const ValueKey<String>('lang-as')));
+      await tester.pumpAndSettle();
+      expect(find.text('Do you read the Eastern Nagari script?'), findsOne);
+      expect(find.text('I can read the Eastern Nagari script'), findsOne);
+      expect(find.textContaining('আপুনি'), findsNothing);
+    });
+
+    testWidgets('a checked multi-script entry (no script_text) asks in its own '
+        'script, heading and rows (#552)', (tester) async {
+      usePhone(tester);
+      await pumpScreen(
+        tester,
+        SpokenLanguagesPage(
+          choices: parseSpokenLanguages(
+            'kind: languages\nlanguages:\n'
+            '  - { code: "pa", iso639_3: "pan", name: "Punjabi", '
+            'own_name: "ਪੰਜਾਬੀ", scripts: ["gurmukhi", "shahmukhi"], '
+            'scripts_question: "ਕਿਹੜੀਆਂ ਲਿਪੀਆਂ?", script_can_read: { '
+            'gurmukhi: "ਗੁਰਮੁਖੀ ਪੜ੍ਹਨੀ ਆਉਂਦੀ ਹੈ" } }\n',
+          ),
+        ),
+        state: AppState.test(settings: SettingsNotifier()),
+      );
+      await tester.enterText(
+        find.byKey(const ValueKey<String>('known-search')),
+        'Punjabi',
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const ValueKey<String>('lang-pa')));
+      await tester.pumpAndSettle();
+      final heading = find.text('ਕਿਹੜੀਆਂ ਲਿਪੀਆਂ?');
+      expect(heading, findsOneWidget);
+      expect(markedAs(tester, heading), const Locale('pa'));
+      expect(find.text('ਗੁਰਮੁਖੀ ਪੜ੍ਹਨੀ ਆਉਂਦੀ ਹੈ'), findsOneWidget);
+      // The script with no text of its own is asked in English.
+      expect(find.text('I can read the Shahmukhi script'), findsOneWidget);
     });
 
     testWidgets('a chosen language reopens its sheet, marked, and can be '
@@ -755,6 +847,65 @@ void main() {
     });
   });
 
+  group('the sheet names its language (#553)', () {
+    for (final (code, query, name, asks) in <(String, String, String, String)>[
+      (
+        'as',
+        'Assamese',
+        'Assamese · অসমীয়া',
+        'Do you read the Eastern Nagari script?',
+      ),
+      (
+        'pa',
+        'Punjabi',
+        'Punjabi · ਪੰਜਾਬੀ',
+        'Which scripts do you read Punjabi in?',
+      ),
+    ]) {
+      for (final scale in <double>[1.0, 1.4]) {
+        for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+          testWidgets('$query: "$name" above the question; at ${scale}x, '
+              '${mode.name}', (tester) async {
+            usePhone(tester, textScale: scale, navBar: true);
+            final semantics = tester.ensureSemantics();
+            await pumpScreen(
+              tester,
+              const SpokenLanguagesPage(),
+              state: AppState.test(settings: SettingsNotifier()),
+              themeMode: mode,
+            );
+            await tester.enterText(
+              find.byKey(const ValueKey<String>('known-search')),
+              query,
+            );
+            await tester.pumpAndSettle();
+            await tester.tap(find.byKey(ValueKey<String>('lang-$code')));
+            await tester.pumpAndSettle();
+            final sheet = find.byType(BottomSheet);
+            final line = find.descendant(of: sheet, matching: find.text(name));
+            expect(line, findsOneWidget);
+            final rect = tester.getRect(line);
+            final box = tester.getRect(sheet);
+            expect(rect.top, greaterThanOrEqualTo(box.top));
+            expect(rect.right, lessThanOrEqualTo(box.right));
+            // Above the question.
+            final question = tester.getRect(
+              find.descendant(of: sheet, matching: find.text(asks)),
+            );
+            expect(rect.bottom, lessThanOrEqualTo(question.top));
+            // A screen reader hears the language first.
+            expect(tester.getSemantics(line), matchesSemantics(label: name));
+            final nodes = tester.getSemantics(
+              find.byKey(const ValueKey<String>('know-language')),
+            );
+            expect(nodes.rect.top, lessThan(question.top));
+            semantics.dispose();
+          });
+        }
+      }
+    }
+  });
+
   group('a language written in several scripts (#551)', () {
     Future<void> openPunjabi(WidgetTester tester) async {
       await tester.enterText(
@@ -789,7 +940,10 @@ void main() {
         );
         final l10n = l10nOf(tester);
         await openPunjabi(tester);
+        // Unchecked texts are not shown: English, naming each script by
+        // its own name (#552).
         expect(find.text('Which scripts do you read Punjabi in?'), findsOne);
+        expect(find.textContaining('ਤੁਸੀਂ'), findsNothing);
         final sheet = tester.getRect(find.byType(BottomSheet));
         for (final (key, text) in <(String, String)>[
           ('know-script-gurmukhi', 'I can read the Gurmukhi script'),
@@ -839,6 +993,44 @@ void main() {
         });
       });
     }
+
+    test('a language with no texts of its own has none to show, so the sheet '
+        'falls back to English (#552)', () {
+      final l = parseSpokenLanguages(
+        'kind: languages\nlanguages:\n'
+        '  - { code: "pa", iso639_3: "pan", name: "Punjabi", own_name: "P", '
+        'scripts: ["gurmukhi", "shahmukhi"] }\n',
+      ).single;
+      expect(l.asksScriptsInOwnScript, isFalse);
+      expect(l.asksInOwnScript, isFalse);
+      expect(l.scriptCanReadFor, isEmpty);
+    });
+
+    testWidgets('an entry with no texts is asked in English, heading and '
+        'rows (#552)', (tester) async {
+      usePhone(tester);
+      await pumpScreen(
+        tester,
+        SpokenLanguagesPage(
+          choices: parseSpokenLanguages(
+            'kind: languages\nlanguages:\n'
+            '  - { code: "pa", iso639_3: "pan", name: "Punjabi", '
+            'own_name: "ਪੰਜਾਬੀ", scripts: ["gurmukhi", "shahmukhi"] }\n',
+          ),
+        ),
+        state: AppState.test(settings: SettingsNotifier()),
+      );
+      await tester.enterText(
+        find.byKey(const ValueKey<String>('known-search')),
+        'Punjabi',
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const ValueKey<String>('lang-pa')));
+      await tester.pumpAndSettle();
+      expect(find.text('Which scripts do you read Punjabi in?'), findsOne);
+      expect(find.text('I can read the Gurmukhi script'), findsOneWidget);
+      expect(find.text('I can read the Shahmukhi script'), findsOneWidget);
+    });
 
     testWidgets('reopens with the scripts read ticked, and both read show '
         'both', (tester) async {
