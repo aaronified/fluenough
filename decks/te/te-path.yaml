@@ -265,7 +265,8 @@ units:
   - decks: ["te-grammar-past-more"]
     words: 0
     grammar: ["past-more"]
-  - planned: { id: "te-shopping", theme: "shopping", words: 55 }
+  - decks: ["te-shopping", "*"]
+    words: 55
     listening_passages:
       - { id: "bargaining", text: { "en": "Bargaining politely for a bag" } }
     reading_passages:
