@@ -2595,13 +2595,34 @@ Each is one line:
 | Field | Notes |
 |---|---|
 | `id` | Ten hex digits: the start of the SHA-256 of the card id, `field`, `now`, `text` and `by`, joined by U+001F. The validator checks it, so a proposal is never edited, only removed. |
-| `field` | `target`, `reading`, `ipa`, `native` or `notes`, as the entry may give it. A note is proposed only where `notes` is plain text. |
+| `field` | `target`, `reading`, `ipa`, `native`, `notes`, `bases` or `alt_target`, as the entry may give it. A note is proposed only where `notes` is plain text. |
 | `now` | The field's text when the reviewer proposed the change, `""` if the card had none. |
 | `text` | The new text. Not checked as deck content until it is applied. |
 | `by` | The proposer's rater code, `FL-XXXX-XXXX-C`. |
 | `date` | `"YYYY-MM-DD"`, quoted: the day of the review. |
 | `why` | Optional: the reviewer's reason. |
+| `with` | Optional: the `id` of the change to the card's `target` this one came with (#476). |
 | `accepted` | Optional: the rater codes that accepted it verbatim, none of them the proposer's. |
+
+**Base words and alternatives (#476).** A proposal on `bases` adds, changes
+or removes one base: its `now` and `text` are the base before and after,
+each one line of JSON, `{"word": "শুভ", "base": "শুভ", "reading": "śubho",
+"meaning": "auspicious; good"}` or `{"word": "সকাল", "ref": "bn-0318"}`,
+and `""` for none (an added base has no `now`, a removed one no `text`).
+It sits where the base's meaning is: a layer's entry for a core's card, the
+card itself otherwise. Applied, the bot rewrites the base's one line in
+the core's `bases` and its meaning's line in the layer; a base removed, or
+now given by ref, loses its meaning in every layer of the core. An added
+base whose form is the word of another card of the language becomes a
+`ref` to it, unless the reviewer unlinked it. A proposal on `alt_target`
+has the list before and after as JSON, `["শুভ সকাল!"]`, `"[]"` for none.
+
+**A new word for a card (#476).** A change to `target` sent with changes to
+the same card's bases, alternatives, notes, reading or IPA makes those
+proposals carry `with:` its id. They are never applied on their own: when
+the word is agreed, one PR applies it and them, so the card is never
+half-changed. The card's `id` never changes. A proposal whose `with` names
+a proposal that is gone is outdated.
 
 Once `REVIEW_AGREEMENTS_NEEDED` reviewers have accepted a proposal (1 by
 default), the bot writes `text` into the field and removes the proposal and
