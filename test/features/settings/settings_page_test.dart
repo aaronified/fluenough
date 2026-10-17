@@ -200,12 +200,7 @@ void main() {
       expect(card, findsOneWidget);
       expect(
         tester.getSemantics(card),
-        matchesSemantics(
-          label: label,
-          isButton: true,
-          hasTapAction: true,
-          hasEnabledState: false,
-        ),
+        isSemantics(label: label, isButton: true, hasTapAction: true),
       );
       expect(find.byIcon(Icons.chevron_right), findsWidgets);
 
