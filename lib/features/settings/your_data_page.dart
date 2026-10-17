@@ -44,18 +44,35 @@ class YourDataPage extends StatelessWidget {
   }
 }
 
-/// The page's list. Built lazily: the log can hold thousands of answers.
-class _Body extends StatelessWidget {
+/// The page's list. The log shows the newest [_Body.fewRows] answers, or up
+/// to [_Body.manyRows] once expanded (owner, 2026-10-17: "It should show last
+/// 10 rows, and be expandable upto 50 rows. The log export anyway does export
+/// all logs").
+class _Body extends StatefulWidget {
   const _Body({required this.state});
 
   final AppState state;
+
+  static const int fewRows = 10;
+  static const int manyRows = 50;
+
+  @override
+  State<_Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<_Body> {
+  bool _expanded = false;
+
+  AppState get state => widget.state;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final log = state.progress.log;
     // Newest first, grouped by calendar day.
-    final events = <ReviewEvent>[...log]..sort((a, b) => b.at.compareTo(a.at));
+    final all = <ReviewEvent>[...log]..sort((a, b) => b.at.compareTo(a.at));
+    final limit = _expanded ? _Body.manyRows : _Body.fewRows;
+    final events = all.take(limit).toList();
     final cards = <String, model.Card>{
       for (final entry in state.decks)
         for (final card in entry.cards) '${entry.id}\u0000${card.id}': card,
@@ -117,6 +134,35 @@ class _Body extends StatelessWidget {
           ),
       ],
     ];
+    final bottom = <Widget>[
+      if (all.length > events.length || _expanded) ...<Widget>[
+        const SizedBox(height: 16),
+        Padding(
+          padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
+          child: Text(
+            l10n.settingsDataLogShowing(events.length, all.length),
+            style: help,
+          ),
+        ),
+        if (all.length > _Body.fewRows)
+          Align(
+            alignment: AlignmentDirectional.centerStart,
+            child: TextButton(
+              key: const ValueKey<String>('review-log-more'),
+              onPressed: () => setState(() => _expanded = !_expanded),
+              child: Text(
+                _expanded
+                    ? l10n.settingsDataLogFewer
+                    : l10n.settingsDataLogMore(
+                        all.length < _Body.manyRows
+                            ? all.length
+                            : _Body.manyRows,
+                      ),
+              ),
+            ),
+          ),
+      ],
+    ];
     return ListView.builder(
       padding: const EdgeInsetsDirectional.fromSTEB(
         16,
@@ -124,9 +170,12 @@ class _Body extends StatelessWidget {
         16,
         24,
       ).clearingSystemBar(context),
-      itemCount: top.length + items.length,
+      itemCount: top.length + items.length + bottom.length,
       itemBuilder: (context, i) {
         if (i < top.length) return top[i];
+        if (i >= top.length + items.length) {
+          return bottom[i - top.length - items.length];
+        }
         final item = items[i - top.length];
         if (item.event case final event?) {
           return _Answer(

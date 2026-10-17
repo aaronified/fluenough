@@ -11,7 +11,7 @@ When work is handed to subagents or workflows, pick the model by the job:
 | Job | Model |
 |---|---|
 | Docs, reviews and audits | Sonnet |
-| Writing decks | Sonnet |
+| Writing decks | Haiku at low effort, reviewed by Sonnet at medium effort (owner, 2026-10-17) |
 | Fan-outs and large reads | Haiku |
 | Small coding jobs and bug fixes | Sonnet, reviewed by Opus (owner, 2026-10-16) |
 | Complex coding that touches several files | Opus |
