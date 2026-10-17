@@ -197,7 +197,8 @@ flutter test
 `main` is protected: every change from a contributor needs a pull request,
 one approving review, and green CI. Branch before you start. A change to
 decks only needs the "Validate decks" job green. (Work done for the owner
-uses pull requests too; see [CLAUDE.md](CLAUDE.md). Contributors never create
+uses pull requests too, except documentation only, which goes straight to
+main; see [CLAUDE.md](CLAUDE.md). Contributors never create
 or push tags.)
 
 **One concern per pull request.** A change that adds a feature, refactors
