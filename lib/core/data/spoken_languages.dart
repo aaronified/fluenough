@@ -11,6 +11,8 @@ class SpokenLanguage {
     this.family,
     this.scriptQuestion,
     this.scriptCanRead,
+    this.scriptsQuestion,
+    this.scriptCanReadFor = const <String, String>{},
   });
 
   /// The same code decks use for `native.code`, such as `bn`.
@@ -83,6 +85,20 @@ class SpokenLanguage {
   /// Whether the sheet asks in the language's own script: both sentences
   /// are there.
   bool get asksInOwnScript => scriptQuestion != null && scriptCanRead != null;
+
+  /// For a language written in several scripts, the sheet's heading,
+  /// "Which scripts do you read Punjabi in?", in its own first script, or
+  /// null (the sheet then asks in English) (#552).
+  final String? scriptsQuestion;
+
+  /// For a language written in several scripts, the "I can read it" answer
+  /// of each script, by script key, in the language's own first script. A
+  /// script with none is answered in English (#552).
+  final Map<String, String> scriptCanReadFor;
+
+  /// Whether the sheet's heading for several scripts is in the language's
+  /// own script.
+  bool get asksScriptsInOwnScript => scriptsQuestion != null;
 
   /// Whether [query] is in its English name or its own name, ignoring case.
   bool matches(String query) {
@@ -187,6 +203,35 @@ List<String> _scripts(Object? item, int i) {
   return List<String>.unmodifiable(list.cast<String>());
 }
 
+/// An entry's `script_can_read`: one sentence, or for a language written in
+/// several scripts a map from script key to sentence (#552).
+(String?, Map<String, String>) _canRead(
+  Object? item,
+  int i,
+  List<String> scripts,
+) {
+  final value = item is YamlMap ? item['script_can_read'] : null;
+  if (value is! YamlMap) {
+    return (_optional(item, 'script_can_read', i), const <String, String>{});
+  }
+  if (scripts.length < 2) {
+    throw FormatException(
+      'languages[$i]: script_can_read is a map only for several scripts',
+    );
+  }
+  final map = <String, String>{};
+  for (final MapEntry(:key, :value) in value.entries) {
+    if (key is! String ||
+        !scripts.contains(key) ||
+        value is! String ||
+        value.trim().isEmpty) {
+      throw FormatException('languages[$i]: script_can_read is malformed');
+    }
+    map[key] = value.trim();
+  }
+  return (null, Map<String, String>.unmodifiable(map));
+}
+
 final _code = RegExp(r'^[a-z]{2,3}$');
 final _iso = RegExp(r'^[a-z]{3}$');
 
@@ -218,10 +263,18 @@ List<SpokenLanguage> parseSpokenLanguages(String text) {
     if (!seen.add(code)) {
       throw FormatException('languages[$i]: $code is listed twice');
     }
-    if ((item['script_question'] == null) !=
-        (item['script_can_read'] == null)) {
+    final scripts = _scripts(item, i);
+    final (canRead, canReadFor) = _canRead(item, i, scripts);
+    final several = canReadFor.isNotEmpty;
+    final scriptsQuestion = _optional(item, 'scripts_question', i);
+    if (several
+        ? (scriptsQuestion == null || item['script_question'] != null)
+        : (scriptsQuestion != null ||
+              (item['script_question'] == null) !=
+                  (item['script_can_read'] == null))) {
       throw FormatException(
-        'languages[$i]: script_question and script_can_read come together',
+        'languages[$i]: script_question and script_can_read come together '
+        '(scripts_question and a script_can_read map, for several scripts)',
       );
     }
     languages.add(
@@ -232,8 +285,10 @@ List<SpokenLanguage> parseSpokenLanguages(String text) {
         ownName: field('own_name'),
         family: _optional(item, 'family', i, _script),
         scriptQuestion: _optional(item, 'script_question', i),
-        scriptCanRead: _optional(item, 'script_can_read', i),
-        scripts: _scripts(item, i),
+        scriptCanRead: canRead,
+        scriptsQuestion: scriptsQuestion,
+        scriptCanReadFor: canReadFor,
+        scripts: scripts,
       ),
     );
   }
