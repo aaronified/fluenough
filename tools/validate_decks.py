@@ -566,6 +566,24 @@ class Report:
         self.infos.append(f"{where}: {msg}")
 
 
+# A source that names Wiktionary is the entry's page and nothing else (owner,
+# 2026-10-16, #518: "Link only"; 2026-10-17: "Wiktionary source shape").
+WIKTIONARY_SOURCE_RE = re.compile(r"https://en\.wiktionary\.org/wiki/[^\s#?/][^\s#?]*")
+
+
+def _check_source_shape(r: Report, where: str, p: str, value: object,
+                        item_id: object = None) -> None:
+    """Any `source` naming wiktionary.org must be exactly
+    `https://en.wiktionary.org/wiki/<word>`: no dump date, query or fragment."""
+    if not isinstance(value, str) or "wiktionary.org" not in value.lower():
+        return
+    if WIKTIONARY_SOURCE_RE.fullmatch(value):
+        return
+    r.error(where, f"{p}.source {value!r} (item {item_id!r}) names Wiktionary but is "
+                   f"not its page only: expected https://en.wiktionary.org/wiki/<word>, "
+                   f"with a word and nothing after it (no dump date, query or fragment)")
+
+
 def _is_str(v: object) -> bool:
     return isinstance(v, str) and v.strip() != ""
 
@@ -1004,6 +1022,7 @@ def check_notes(r: Report, where: str, notes: object, cid: str | None,
                            f"be checked")
         elif "source" in note and not _is_str(source):
             r.error(where, f"{p}.source must be text, got {source!r}")
+        _check_source_shape(r, where, p, source, note.get("id"))
         if "region" in note:
             check_note_regions(r, where, p, i, note["region"])
         words = check_note_words(r, where, f"{p}.words", note.get("words"), script)
@@ -1175,6 +1194,7 @@ def check_media(r: Report, where: str, card: dict, field: str, cid: str | None,
         return
     for unknown in sorted(set(credit) - MEDIA_CREDIT_KEYS, key=str):
         r.error(where, f"{credit_key}: unknown field {unknown!r}")
+    _check_source_shape(r, where, credit_key, credit.get("source"), field)
     for key in sorted(MEDIA_CREDIT_KEYS):
         if not _is_str(credit.get(key)):
             r.error(where, f"{credit_key}.{key} is required and must be a non-empty "
@@ -1266,6 +1286,7 @@ def check_items(r: Report, where: str, key: str, items: object, cid: str | None,
         for k in ("reading", "ipa", "source"):
             if k in item and not _is_str(item[k]):
                 r.error(where, f"{p}.{k} must be a non-empty string or omitted")
+        _check_source_shape(r, where, p, item.get("source"), item.get("id"))
         if "ref" in item:
             ref = item["ref"]
             if "word" in item:
@@ -1326,6 +1347,7 @@ def check_senses(r: Report, where: str, senses: object, cid: str | None,
             r.error(where, f"{p}.pos must be one of {sorted(POS)}, got {sense['pos']!r}")
         if "source" in sense and not _is_str(sense["source"]):
             r.error(where, f"{p}.source must be a non-empty string or omitted")
+        _check_source_shape(r, where, p, sense.get("source"), sense.get("id"))
         examples = sense.get("examples")
         _check_examples(r, f"{where}: {p}", examples, form="core", cid=cid, lang=lang,
                         script=script)
@@ -1407,6 +1429,7 @@ def _check_examples(r: Report, where: str, examples: object, *,
             if key in ex and not _is_str(ex.get(key)):
                 r.error(where, f"examples[{j}].{key} must be a non-empty "
                                f"string or omitted")
+        _check_source_shape(r, where, f"examples[{j}]", ex.get("source"), f"#{j}")
         # The language an example is in, when not the card's, and whether
         # the card's letter has the card's sound in it (ADR-0041).
         if "language" in ex and not (_is_str(ex["language"])
@@ -1848,6 +1871,7 @@ def check_facts(r: Report, facts: object, lang: str | None = None) -> None:
         if "tags" in fact:
             _check_str_list(r, where, "tags", fact["tags"])
         _check_optional_text(r, where, fact, "source")
+        _check_source_shape(r, where, "fact", fact.get("source"), fact.get("id"))
         if "cards" in fact:
             _check_fact_cards(r, where, fact["cards"], lang or "xx")
 
@@ -3747,6 +3771,7 @@ def check_passages(r: Report, passages: object, script: str, lang: str
         if not _is_str(passage.get("title")):
             r.error(where, "title is required")
         _check_optional_text(r, where, passage, "source")
+        _check_source_shape(r, where, "passage", passage.get("source"), passage.get("id"))
         theme = passage.get("theme")
         if theme is not None and (not _is_str(theme) or not ID_RE.fullmatch(theme)):
             r.error(where, f"theme must be a theme id from decks/themes.yaml, got {theme!r}")

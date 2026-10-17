@@ -191,7 +191,8 @@ English layer (only of words the course teaches), `forms`, `senses`, and
 `wiktionary: true` in the layer. Every item names its `source`, the
 Wiktionary page only, `https://en.wiktionary.org/wiki/<word>` (owner,
 2026-10-16, #518: "Link only"); the dump's date and checksum are in the
-report alone. The decks stay `unreviewed`: what it adds is semi-verified,
+report alone. The validator checks this shape: a `source` naming
+wiktionary.org must be exactly that page (owner, 2026-10-17). The decks stay `unreviewed`: what it adds is semi-verified,
 for reviewers to check (#508).
 
 ```sh
