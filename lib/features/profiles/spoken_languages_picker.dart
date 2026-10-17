@@ -521,6 +521,20 @@ class _KnownLanguageSheetState extends State<KnownLanguageSheet> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
+              // The language the sheet is about, as its list row names it,
+              // read before the question.
+              Padding(
+                key: const ValueKey<String>('know-language'),
+                padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 4),
+                child: Text.rich(
+                  language.ownName == language.name
+                      ? TextSpan(text: language.name)
+                      : _ownNameMarked(l10n, language),
+                  style: theme.textTheme.bodyMedium!.copyWith(
+                    color: theme.colorScheme.onSurfaceVariant,
+                  ),
+                ),
+              ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 12),
                 child: Semantics(
