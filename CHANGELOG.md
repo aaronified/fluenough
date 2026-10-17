@@ -7,6 +7,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.4] - 2026-10-17
+
+The decks on GitHub are now split further, their script guides and sounds files included, and carry new card data, which 0.4.3 cannot read, so 0.4.3 gets no more deck updates: update to 0.4.4. Your progress is kept by card id, and no card id changed.
+
+### Added
+
+- The language bar on Today, Decks and Progress (#528): one top bar holding the languages you learn and the bug report button. The language shown is a chip; every other language is its own glyph. Swipe sideways on the bar to change language, or tap it for the menu of every language. Progress alone has All, fixed beside the bug button, so the bar does not shift between the three screens.
+- Set cards (#515): a closed group, such as a verb's forms or the pronouns, is shown whole once before its members, with the ones you know marked. Then only the new members are taught and asked, in cards of at most four. The Full list is a button on these cards, during lessons and in reviews once you have answered.
+- Card data in the decks, from decks-next: gender classes, root words, synonyms and antonyms, confusables, frequency, register and senses where a deck has them, and the tools that check them (#512, #513, #514, #516, #517, #518, #523; partly done).
+- IPA pronunciations (#533): each word's IPA under it on drill cards, the teach card, passages, Inspect, grammar questions and the pair drill. A switch in Settings, "IPA pronunciations", turns it off; it is on by default. A word's own sheet always shows its IPA.
+- The IPA course (#534): one card for each IPA symbol and diacritic, 179 in all, with examples from real languages, both what a symbol sounds like and what it does not, and confusable symbols side by side. It is asked by choosing, never by typing. The language picker offers it twice, as the whole chart or only the sounds of your languages, and the two share one progress. "The sounds of this word", on a word's card, practises the symbols in that word's IPA. A learner not learning the IPA is first asked whether to add it. The decks are CC BY-SA 4.0.
+- Languages I know (#490): a screen of its own with 35 languages, searchable, with top picks and language families folded until opened. Choosing a language asks whether you read its script, in that script where a speaker has written the question.
+- Settings is redrawn (#496): the tab is your profile card and one row per section, each saying what is set, and each section is a page of its own. The sections are Your languages, Activities and memory, Look and language, Reviewing, Your decks, Reminders, Your data, App log and Updates. Your data holds backup and restore with the review log, fully expanded. Profiles and privacy opens from the profile card. What the app does not do yet (reminders, the app's language, local and cloud backup, profiles, the PIN lock, deck templates, sending a deck) is drawn and marked "Feature incoming".
+
+### Changed
+
+- Activities that are always asked have no switch any more: Seen words, Grammar, Matching pairs, Choosing answers and Phonemic contrasts. A learner who had switched any of them off finds it on again. The Sound switch is gone. The phone's volume mutes the app, and Heard words off skips listening; a learner who had Sound off finds Heard words off.
+- Review is offered for a course only when you speak both its language and the language it is taught from (#525).
+- A deck's page, a unit's page and Inspect have no language switcher, as each belongs to one deck (#526).
+- Lesson and review cards fit the screen without scrolling (#482).
+- The review bot writes Wiktionary's IPA in each deck's own style, Hindi first (#479).
+
+### Fixed
+
+- Progress: "No leeches" is a plain card, no longer in the error colour (#500).
+- Progress's range control, and the drill's choice between the script and Latin letters, are 48 dp tap targets at every text size (#491).
+
+## [0.4.0] to [0.4.3] - 2026-10-10 to 2026-10-11
+
 ### Added
 
 - The README shows the app: four short GIFs, each a slow scroll through one screen of a Bengali learner's phone (the deck path, Today, Progress, and reviewing a unit), in `docs/screenshots/`. `test/tools/readme_gifs_test.dart`, skipped unless `README_GIFS=1`, captures them with real fonts, and `tools/make_gif.py` assembles them; `tools/README.md` has the commands.
