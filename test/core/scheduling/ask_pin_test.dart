@@ -26,7 +26,6 @@ import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/numbers/number_practice.dart';
-import 'package:fluenough/core/scheduling/ask.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
 import 'package:fluenough/core/scheduling/lesson.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
