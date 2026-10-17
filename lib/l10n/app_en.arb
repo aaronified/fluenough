@@ -8359,6 +8359,136 @@
   "@pickerScriptOff": {
     "description": "Under pickerLearnScript while it is off."
   },
+  "scriptTestOffer": "You already read {script}, through {languages}. Pass a short test of its letters to skip the {language} script lessons.",
+  "@scriptTestOffer": {
+    "description": "Inside a chosen language's card, under pickerLearnScript while it is on, when the learner reads the language's script through another language they know (#554). {languages} names those languages, joined by the list separator.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Eastern Nagari"
+      },
+      "languages": {
+        "type": "String",
+        "example": "Bengali"
+      },
+      "language": {
+        "type": "String",
+        "example": "Assamese"
+      }
+    }
+  },
+  "scriptTestOwnLetters": "The test always asks the letters {language} adds: {letters}.",
+  "@scriptTestOwnLetters": {
+    "description": "After scriptTestOffer: the language's own letters, those it adds to the shared script, each with its reading.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Assamese"
+      },
+      "letters": {
+        "type": "String",
+        "example": "ৰ (rô), ৱ (wô)"
+      }
+    }
+  },
+  "scriptTestLetter": "{letter} ({reading})",
+  "@scriptTestLetter": {
+    "description": "One of the letters in scriptTestOwnLetters: the letter, then its reading.",
+    "placeholders": {
+      "letter": {
+        "type": "String",
+        "example": "ৰ"
+      },
+      "reading": {
+        "type": "String",
+        "example": "rô"
+      }
+    }
+  },
+  "scriptTestTake": "Take the script test",
+  "@scriptTestTake": {
+    "description": "Button after scriptTestOffer: opens the script test."
+  },
+  "scriptTestWaiting": "The test opens once the script decks are on the phone.",
+  "@scriptTestWaiting": {
+    "description": "After scriptTestOffer, in place of its button, while the language's decks are still downloading."
+  },
+  "scriptTestSkippedNote": "Script test passed: the {language} script lessons are skipped.",
+  "@scriptTestSkippedNote": {
+    "description": "Inside a language's card, under pickerLearnScript, once its script test is passed.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Assamese"
+      }
+    }
+  },
+  "scriptTestRetake": "Take the test again",
+  "@scriptTestRetake": {
+    "description": "Button after scriptTestSkippedNote, or on a failed test's result: the script test again."
+  },
+  "scriptTestTitle": "How well do you know {script}?",
+  "@scriptTestTitle": {
+    "description": "The script test's title. {script} is the script's own name, scriptName (#551).",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Eastern Nagari"
+      }
+    }
+  },
+  "scriptTestProgress": "Question {number} of {total}",
+  "@scriptTestProgress": {
+    "description": "Above each question of the script test.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "scriptTestQuestion": "What is this?",
+  "@scriptTestQuestion": {
+    "description": "Under the letter or conjunct each question of the script test shows."
+  },
+  "scriptTestPassed": "{right} of {total} right. You know it: the {language} script lessons are skipped.",
+  "@scriptTestPassed": {
+    "description": "The script test's result, passed.",
+    "placeholders": {
+      "right": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      },
+      "language": {
+        "type": "String",
+        "example": "Assamese"
+      }
+    }
+  },
+  "scriptTestFailed": "{right} of {total} right, so the {language} script lessons stay. The letters {language} adds are taught with them.",
+  "@scriptTestFailed": {
+    "description": "The script test's result, not passed: every answer right is needed.",
+    "placeholders": {
+      "right": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      },
+      "language": {
+        "type": "String",
+        "example": "Assamese"
+      }
+    }
+  },
+  "scriptTestDone": "Done",
+  "@scriptTestDone": {
+    "description": "Button on the script test's result: back to the language's card."
+  },
   "pickerStartWith": "You start with",
   "@pickerStartWith": {
     "description": "Inside a chosen card, before the first letters of the script with their readings."
