@@ -69,6 +69,9 @@ wherever the table above allows it.
   cap, #505), a contrast self-check, and Hindi and Bengali examples, and
   is checked in Chromium. Remove a mockup once its feature is built
   (owner, 2026-10-16: "Remove when built").
+- **Text size: 1.4x only** (owner, 2026-10-17: "We are now only building
+  for 1.4x text"). The app caps text at 1.4x (#505), so layouts, layout
+  tests and bug reports go up to 1.4x; a phone set to 2x is drawn at 1.4x.
 - **Content.** Keep transliteration in deck prose, and say in a card's notes
   when its base word changes its stem (`docs/DECK-FORMAT.md`).
 - **Reviewers** are bilingual and the meaning of a card never changes; new
