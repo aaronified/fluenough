@@ -22,6 +22,12 @@
 // typed, and es is a Latin-script language. Whole languages, because cards
 // refer to their path and their sibling decks.
 //
+// Two tests share this copy: this one, and test/features/decks/
+// decks_page_test.dart, whose Telugu path numbers (a unit's number, "N units
+// to go") would otherwise change with every deck pull request that adds a
+// unit (#567). Refreshing the copy changes those numbers too: update them
+// there when you do.
+//
 // Refresh the copy and the golden only for an intended change: new decks or
 // a new card shape the pin should cover, or the path's unit order moving
 // (the alphabet list decides hearsForm, "hf" below). Never in a deck pull

@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
+import 'package:fluenough/app/repository_decks.dart';
 import 'package:fluenough/features/decks/broken_deck_tile.dart';
 import 'package:fluenough/features/decks/course_card.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
@@ -24,9 +25,21 @@ Future<AppState> pumpDecks(
   DecksPage page = const DecksPage(),
 }) => pumpScreen(tester, page, state: state);
 
-/// The design's Telugu learner, with Family up next.
-Future<AppState> teluguLearner({String upTo = PathFixtures.familyDeck}) async {
-  final app = AppState.test();
+/// The frozen deck copy that the ask pin (#568) also reads, shared so that
+/// no second copy is kept: [teluguLearner] reads it where a test pins a
+/// number from Telugu's path (a unit's number, "N units to go"), which every
+/// deck pull request that adds a unit would otherwise change (#567). It is
+/// refreshed only on purpose, with tools/snapshot_ask_pin.py, and then these
+/// numbers are updated with it. The other tests read the live decks.
+final DeckSource frozenDecks = RepositoryDeckSource('test/fixtures/ask_pin');
+
+/// The design's Telugu learner, with Family up next. With [decks] the frozen
+/// copy, the path is the one that copy holds.
+Future<AppState> teluguLearner({
+  String upTo = PathFixtures.familyDeck,
+  DeckSource? decks,
+}) async {
+  final app = AppState.test(decks: decks);
   await app.load();
   return PathFixtures.state(app, upTo: upTo);
 }
@@ -105,7 +118,7 @@ void main() {
     tester,
   ) async {
     usePhone(tester);
-    await pumpDecks(tester, state: await teluguLearner());
+    await pumpDecks(tester, state: await teluguLearner(decks: frozenDecks));
     final l10n = l10nOf(tester);
     // Scrolled to where the learner is: Family, up next.
     expect(onScreen(tester, find.text(l10n.pathUpNext)), isTrue);
@@ -121,7 +134,7 @@ void main() {
       findsOneWidget,
     );
     expect(
-      find.bySemanticsLabel(RegExp('^Work, unit 23, ${l10n.pathUnitAhead}')),
+      find.bySemanticsLabel(RegExp('^Work, unit 22, ${l10n.pathUnitAhead}')),
       findsOneWidget,
     );
     // Milestones: the first deck finished, words learned, the script.
@@ -147,7 +160,7 @@ void main() {
     // Past the units that hold the rules, so that some are known.
     final state = await pumpDecks(
       tester,
-      state: await teluguLearner(upTo: 'te-en-work'),
+      state: await teluguLearner(upTo: 'te-en-work', decks: frozenDecks),
     );
     final l10n = l10nOf(tester);
     final rules = courseView(state, 'te')!.steps
@@ -306,7 +319,7 @@ void main() {
     usePhone(tester);
     await pumpDecks(
       tester,
-      state: await teluguLearner(),
+      state: await teluguLearner(decks: frozenDecks),
       page: const DecksPage(planOf: PathFixtures.planOf),
     );
     final l10n = l10nOf(tester);
@@ -315,7 +328,7 @@ void main() {
     expect(find.text(l10n.pathLevelB1), findsOneWidget);
     expect(find.byType(AchievementMark), findsNWidgets(3));
     expect(find.text(l10n.pathAchievement('A1')), findsOneWidget);
-    expect(find.text(l10n.pathUnitsToGo(20)), findsOneWidget);
+    expect(find.text(l10n.pathUnitsToGo(19)), findsOneWidget);
     expect(find.text(l10n.pathUnitsToGoComing(13, 7)), findsOneWidget);
     expect(find.text('Health'), findsOneWidget);
     expect(find.text(l10n.pathComingWords(60)), findsWidgets);
@@ -334,14 +347,14 @@ void main() {
     usePhone(tester);
     await pumpDecks(
       tester,
-      state: await teluguLearner(upTo: 'te-en-market'),
+      state: await teluguLearner(upTo: 'te-en-market', decks: frozenDecks),
       page: const DecksPage(planOf: PathFixtures.planOf),
     );
     final l10n = l10nOf(tester);
     expect(find.text(l10n.pathLevelReached('A1')), findsOneWidget);
     expect(find.text(l10n.pathAchievement('A2')), findsOneWidget);
     expect(
-      find.bySemanticsLabel(RegExp('^Market, unit 27, ${l10n.pathUpNext}')),
+      find.bySemanticsLabel(RegExp('^Market, unit 26, ${l10n.pathUpNext}')),
       findsOneWidget,
     );
   });

@@ -10,6 +10,10 @@ fails only when code changes how asks are chosen, never when a deck changes
 (#522). Run it, then regenerate the golden, only for an intended change to
 the pin; never as part of a deck pull request. See the test's header.
 
+Two tests read the copy: ask_pin_test.dart and, for the Telugu path's unit
+numbers, test/features/decks/decks_page_test.dart (#567). A refresh moves
+those numbers: update them in the same change.
+
 Needs only Python 3.11+, like the other deck tools. The fixture is not a
 shipped deck: the validator and deck_index.py read decks/ only.
 """
