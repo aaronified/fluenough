@@ -192,6 +192,21 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
     return imported.added;
   }
 
+  /// Not built: `reviews` and `leech_actions` are append-only, and SQLite
+  /// itself refuses to delete from them (AGENTS.md rule 9), so a restore
+  /// that replaces everything has no way in yet. How it should get one is
+  /// the owner's decision, asked on #470; until then this throws, and
+  /// `Feature.localRestore` is off so that no screen reaches it.
+  @override
+  Future<void> replaceAll(
+    List<LoggedReview> reviews,
+    List<LeechAction> leechActions, {
+    Map<SkillKey, FittedParameters> fitted =
+        const <SkillKey, FittedParameters>{},
+  }) => throw UnsupportedError(
+    'The review log is append-only; replacing it waits on #470',
+  );
+
   /// Completes once every review recorded so far is in the database.
   /// Throws the first write that failed, if one did.
   Future<void> flush() async {

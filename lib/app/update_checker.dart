@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 
 import '../core/updates/apk_install.dart';
@@ -43,6 +45,10 @@ enum UpdateStatus {
 /// GitHub, whatever it answered, counts towards the day; one that could not
 /// reach it does not, so the next launch tries again.
 ///
+/// A download starts a backup of the app too, in parallel (#470), so that
+/// what the update does to the app can be undone; if the backup fails, the
+/// update goes on and [backupFailed] says so.
+///
 /// An install downloads the APK into the app's own storage as
 /// [apkFileName] and records its version in [settings]. The first launch
 /// at that version or later deletes the file. Until then it is kept: a
@@ -54,6 +60,7 @@ class UpdateChecker extends ChangeNotifier {
     required this._clock,
     this._installer = const NullApkInstaller(),
     this._downloads = const NullDownloadStore(),
+    this._backUp,
     this.current = AppInfo.version,
   });
 
@@ -74,6 +81,9 @@ class UpdateChecker extends ChangeNotifier {
   final ApkInstaller _installer;
   final DownloadStore _downloads;
 
+  /// Starts a backup of the app, for the version about to download (#470).
+  final Future<void> Function(String version)? _backUp;
+
   UpdateStatus _status = UpdateStatus.idle;
   ReleaseCheckFailure? _failure;
   InstallFailure? _installFailure;
@@ -83,6 +93,7 @@ class UpdateChecker extends ChangeNotifier {
   Future<void>? _installing;
   bool _cancelling = false;
   bool _disposed = false;
+  bool _backupFailed = false;
 
   UpdateStatus get status => _status == UpdateStatus.idle && updateAvailable
       ? UpdateStatus.available
@@ -94,6 +105,10 @@ class UpdateChecker extends ChangeNotifier {
   /// Why the last install stopped, when [status] is
   /// [UpdateStatus.installFailed].
   InstallFailure? get installFailure => _installFailure;
+
+  /// Whether the backup made with this download failed. The update goes on
+  /// without it: a failed backup never blocks an update.
+  bool get backupFailed => _backupFailed;
 
   /// How much of the download is done, from 0 to 100.
   int get percent => _percent;
@@ -180,7 +195,13 @@ class UpdateChecker extends ChangeNotifier {
     _percent = 0;
     _installFailure = null;
     _cancelling = false;
+    _backupFailed = false;
     notifyListeners();
+    final backUp = _backUp;
+    if (backUp != null) {
+      // At the same moment as the download, in parallel with it (#470).
+      unawaited(_backup(backUp, version));
+    }
     final events = _installer.install(
       AppLinks.latestApk,
       fileName: apkFileName,
@@ -212,6 +233,19 @@ class UpdateChecker extends ChangeNotifier {
         _installFailure = InstallFailure.download;
         _status = UpdateStatus.installFailed;
       }
+      notifyListeners();
+    }
+  }
+
+  Future<void> _backup(
+    Future<void> Function(String version) backUp,
+    String version,
+  ) async {
+    try {
+      await backUp(version);
+    } on Object {
+      if (_disposed) return;
+      _backupFailed = true;
       notifyListeners();
     }
   }

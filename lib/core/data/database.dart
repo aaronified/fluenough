@@ -71,7 +71,11 @@ class AppDatabase extends _$AppDatabase {
   /// 7: `fsrs_parameters`, FSRS fitted to the learner per language and
   ///    skill (ADR-0035).
   @override
-  int get schemaVersion => 7;
+  int get schemaVersion => currentSchemaVersion;
+
+  /// [schemaVersion], for what needs it without a database: a backup says
+  /// which schema it was made under (#470).
+  static const int currentSchemaVersion = 7;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(

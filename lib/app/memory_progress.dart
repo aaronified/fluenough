@@ -83,6 +83,17 @@ abstract interface class ProgressStore implements Listenable {
     List<LeechAction> leechActions, {
     Map<SkillKey, FittedParameters> fitted,
   });
+
+  /// Replaces everything: the log, the leech actions and the fitted
+  /// parameters become [reviews], [leechActions] and [fitted], and every
+  /// state is rebuilt from them. For restoring a backup (#470), which
+  /// replaces what the learner has. A store that cannot replace its log
+  /// throws, and keeps what it had.
+  Future<void> replaceAll(
+    List<LoggedReview> reviews,
+    List<LeechAction> leechActions, {
+    Map<SkillKey, FittedParameters> fitted,
+  });
 }
 
 /// Progress held in memory: an FSRS state per `(card, mode)` and the
@@ -265,6 +276,17 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
       actions,
     );
     return fresh.length;
+  }
+
+  @override
+  Future<void> replaceAll(
+    List<LoggedReview> reviews,
+    List<LeechAction> leechActions, {
+    Map<SkillKey, FittedParameters> fitted =
+        const <SkillKey, FittedParameters>{},
+  }) async {
+    _parameters = SkillParameters(fitted: fitted);
+    _replace(inTimeOrder(reviews), actionsInTimeOrder(leechActions));
   }
 
   /// Everything replaced by [events], [leechActions] and the [fitted]
