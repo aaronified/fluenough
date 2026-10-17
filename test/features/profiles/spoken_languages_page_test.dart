@@ -141,11 +141,11 @@ void main() {
         expect(inScript(l.scriptCanRead!, l.script!), isTrue, reason: l.code);
       }
       final bn = languages.firstWhere((l) => l.code == 'bn');
-      expect(bn.scriptQuestion, 'আপনি কি বাংলা লিপি পড়তে পারেন?');
-      expect(bn.scriptCanRead, 'আমি বাংলা লিপি পড়তে পারি');
+      expect(bn.scriptQuestion, 'আপনি কি পূর্ব নাগরী লিপি পড়তে পারেন?');
+      expect(bn.scriptCanRead, 'আমি পূর্ব নাগরী লিপি পড়তে পারি');
       final hi = languages.firstWhere((l) => l.code == 'hi');
-      expect(hi.scriptQuestion, 'क्या आपको हिंदी लिपि पढ़नी आती है?');
-      expect(hi.scriptCanRead, 'मुझे हिंदी लिपि पढ़नी आती है');
+      expect(hi.scriptQuestion, 'क्या आपको देवनागरी लिपि पढ़नी आती है?');
+      expect(hi.scriptCanRead, 'मुझे देवनागरी लिपि पढ़नी आती है');
     });
 
     test('a script is named as the deck files name it', () {
@@ -476,16 +476,16 @@ void main() {
             (
               'Bengali',
               'bn',
-              'আপনি কি বাংলা লিপি পড়তে পারেন?',
-              'আমি বাংলা লিপি পড়তে পারি',
+              'আপনি কি পূর্ব নাগরী লিপি পড়তে পারেন?',
+              'আমি পূর্ব নাগরী লিপি পড়তে পারি',
               'I can only speak Bengali',
               'Can read the Eastern Nagari script',
             ),
             (
               'Hindi',
               'hi',
-              'क्या आपको हिंदी लिपि पढ़नी आती है?',
-              'मुझे हिंदी लिपि पढ़नी आती है',
+              'क्या आपको देवनागरी लिपि पढ़नी आती है?',
+              'मुझे देवनागरी लिपि पढ़नी आती है',
               'I can only speak Hindi',
               'Can only speak Hindi',
             ),
