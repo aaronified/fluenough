@@ -497,26 +497,16 @@ class _LanguageBarState extends State<LanguageBar> {
                   _choose(state, previous),
           },
           excludeSemantics: true,
-          child: GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            onHorizontalDragStart: (_) {
-              _dragging = true;
-              _drag = 0;
-            },
-            onHorizontalDragUpdate: (d) => _dragUpdate(d, codes, shown),
-            onHorizontalDragEnd: (d) => _dragEnd(d, state),
-            onHorizontalDragCancel: _dragCancel,
-            child: InkWell(
-              borderRadius: BorderRadius.circular(24),
-              onTap: _toggleMenu,
-              child: SizedBox(
-                height: 48,
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.symmetric(horizontal: 4),
-                  child: Align(
-                    alignment: AlignmentDirectional.centerStart,
-                    child: row,
-                  ),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(24),
+            onTap: _toggleMenu,
+            child: SizedBox(
+              height: 48,
+              child: Padding(
+                padding: const EdgeInsetsDirectional.symmetric(horizontal: 4),
+                child: Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: row,
                 ),
               ),
             ),
@@ -525,7 +515,7 @@ class _LanguageBarState extends State<LanguageBar> {
       );
     }
 
-    final bar = Container(
+    Widget bar = Container(
       height: 56,
       padding: const EdgeInsetsDirectional.symmetric(horizontal: 4),
       decoration: BoxDecoration(
@@ -556,6 +546,23 @@ class _LanguageBarState extends State<LanguageBar> {
         ],
       ),
     );
+
+    // The swipe works the same wherever it starts on the bar: on a glyph,
+    // the chip, the space between, the edges or the buttons (owner,
+    // 2026-10-17: "It should be consistent").
+    if (choices.length > 1 && at >= 0) {
+      bar = GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onHorizontalDragStart: (_) {
+          _dragging = true;
+          _drag = 0;
+        },
+        onHorizontalDragUpdate: (d) => _dragUpdate(d, codes, shown),
+        onHorizontalDragEnd: (d) => _dragEnd(d, state),
+        onHorizontalDragCancel: _dragCancel,
+        child: bar,
+      );
+    }
 
     return OverlayPortal(
       controller: _labelPortal,

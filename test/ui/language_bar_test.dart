@@ -283,6 +283,35 @@ void main() {
     expect(tester.getRect(selection).center.dx, closeTo(start.center.dx, 1));
   });
 
+  // The swipe works the same wherever it starts on the bar (owner,
+  // 2026-10-17: "It should be consistent").
+  for (final where in <String>['glyph', 'chip', 'between', 'edge', 'low']) {
+    testWidgets('a swipe from the bar\'s $where shows the next language', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final state = learner(const <String>['hi', 'bn', 'te'], choice: 'hi');
+      await pumpApp(tester, state: state);
+      final bar = tester.getRect(find.byType(LanguageBar).first);
+      final glyph = state.languages.singleWhere((l) => l.code == 'bn').icon!;
+      final at = switch (where) {
+        'glyph' => tester.getCenter(glyphOnBar(glyph)),
+        'chip' => tester.getCenter(find.byType(LanguageBarChip).first),
+        'between' => Offset(bar.width * 0.6, bar.center.dy),
+        'edge' => Offset(bar.left + 2, bar.center.dy),
+        _ => Offset(bar.width * 0.6, bar.bottom - 2),
+      };
+      final gesture = await tester.startGesture(at);
+      for (var i = 0; i < 8; i++) {
+        await gesture.moveBy(const Offset(-20, 0));
+        await tester.pump(const Duration(milliseconds: 16));
+      }
+      await gesture.up();
+      await tester.pumpAndSettle();
+      expect(state.shownLanguage, 'bn');
+    });
+  }
+
   testWidgets('a glyph is a rounded square on the chip and in the label, '
       'never stretched (owner, 2026-10-17)', (tester) async {
     usePhone(tester);
