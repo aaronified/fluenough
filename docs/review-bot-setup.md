@@ -42,9 +42,10 @@ have it.
 ## 3. Let it past the approval rule, and only that
 
 The App may merge without an approving review. It must still wait for the
-three required checks, which the bot waits for too: `Validate decks`,
-`Analyse and test` and `Build debug APK`, by name. Other checks on a
-commit do not hold a bot PR back. If none of the three has started on a
+four required checks, which the bot waits for too: `Validate decks`,
+`Analyse and test`, `Build debug APK` and `Released app reads the decks`
+(#524), by name. Other checks on a commit do not hold a bot PR back. If
+none of the four has started on a
 bot PR an hour after it was last pushed, the log says so each run.
 
 **With a classic branch protection rule** (Settings > Branches):
@@ -53,8 +54,8 @@ bot PR an hour after it was last pushed, the log says so each run.
 2. Under **Require a pull request before merging**, tick **Allow
    specified actors to bypass required pull requests**, and add
    `fluenough-review-bot`.
-3. Leave **Require status checks to pass before merging** as it is, with
-   the three checks. Leave **Do not allow bypassing the above settings**
+3. Under **Require status checks to pass before merging**, keep the three
+   checks and add `Released app reads the decks` (#524). Leave **Do not allow bypassing the above settings**
    unticked: ticked, it overrides the bypass list.
 4. **Save changes.**
 

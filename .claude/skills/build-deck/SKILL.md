@@ -163,7 +163,8 @@ Before you start:
    `decks/index.json` with the decks. Tools details: `tools/README.md`.
 8. **Ship.** Never create tags. For the owner's work, open a pull request
    (owner, 2026-10-16: "Do use PRs for everything"); a deck-only change
-   needs only "Validate decks" green (CLAUDE.md). Contributors open a pull request on a branch
+   needs only "Validate decks" and "Released app reads the decks" green
+   (CLAUDE.md). Contributors open a pull request on a branch
    `deck/<name>` ([CONTRIBUTING.md](../../../CONTRIBUTING.md), AGENTS.md
    "Branches, commits, pull requests"). Get one independent review (Sonnet)
    before finishing; no extra passes. Say what you verified.
