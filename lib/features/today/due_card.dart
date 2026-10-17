@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -25,6 +27,13 @@ const double _twoColumnMaxScale = 1.5;
 /// shortens to its arrow and one word ("Fewer"); the strip and the screen
 /// reader keep the full words.
 const double _shortMarkScale = 1.3;
+
+/// What a skill tile spends beside its name when its pill, name and count
+/// share a line: its side padding, the small pill, and the gaps either
+/// side of the name.
+const double _tilePadding = 24;
+const double _pillWidth = 36;
+const double _tileGap = 10;
 
 /// Today's first card: how many words are due and roughly how long they take,
 /// the four skills, and Start review. Or, with nothing due, "All done".
@@ -222,9 +231,20 @@ class _SkillGrid extends StatelessWidget {
   final TodayNumbers numbers;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) => LayoutBuilder(
+    builder: (context, constraints) => _grid(context, constraints.maxWidth),
+  );
+
+  Widget _grid(BuildContext context, double width) {
     final scale = MediaQuery.textScalerOf(context).scale(100) / 100;
     final pace = numbers.pace;
+    // Two to a row, and a name that does not fit beside its pill and count
+    // in a tile that wide: every tile stacks its name under them, as the
+    // tiles with marks do, instead of cutting it short (#478).
+    final stacked =
+        pace == null &&
+        scale <= _twoColumnMaxScale &&
+        !_namesFit(context, (width - 8) / 2);
     final tiles = <Widget>[
       for (final MapEntry(key: skill, value: count) in numbers.bySkill.entries)
         _SkillTile(
@@ -234,6 +254,7 @@ class _SkillGrid extends StatelessWidget {
           revisable: numbers.revisable[skill] ?? 0,
           noVoice: skill.needsVoice && numbers.noVoice,
           marked: pace != null,
+          stacked: stacked,
           mark: pace?.marks[skill],
           // Kept level with the tile beside it; alone in its row, a tile
           // needs no empty line.
@@ -270,6 +291,57 @@ class _SkillGrid extends StatelessWidget {
       ],
     );
   }
+
+  /// Whether every tile's name fits on one line beside its pill and its
+  /// count (or icon) in a tile [tileWidth] wide, at the text size in force.
+  bool _namesFit(BuildContext context, double tileWidth) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final locale = Localizations.localeOf(context).toLanguageTag();
+    final direction = Directionality.of(context);
+    final scaler = MediaQuery.textScalerOf(context);
+    final nameStyle = theme.textTheme.bodyMedium!.copyWith(
+      fontWeight: FontWeight.w600,
+    );
+    final countStyle = theme.textTheme.bodyMedium!.copyWith(
+      fontWeight: FontWeight.w700,
+    );
+    double measure(String text, TextStyle style) {
+      final painter = TextPainter(
+        text: TextSpan(text: text, style: style),
+        textDirection: direction,
+        textScaler: scaler,
+        maxLines: 1,
+      )..layout();
+      final width = painter.width;
+      painter.dispose();
+      return width;
+    }
+
+    for (final MapEntry(key: skill, value: count) in numbers.bySkill.entries) {
+      final noVoice = skill.needsVoice && numbers.noVoice;
+      var name = measure(skill.label(l10n), nameStyle);
+      if (noVoice) {
+        name = math.max(
+          name,
+          measure(l10n.commonNoVoice, theme.textTheme.bodySmall!),
+        );
+      }
+      final trailing = isIncoming(context, skill.feature)
+          ? 18.0
+          : noVoice
+          ? 20.0
+          : measure(
+              NumberFormat.decimalPattern(locale).format(count),
+              countStyle,
+            );
+      if (_tilePadding + _pillWidth + 2 * _tileGap + name + trailing >
+          tileWidth) {
+        return false;
+      }
+    }
+    return true;
+  }
 }
 
 /// One skill: its pill, its name, and how many of today's cards drill it.
@@ -291,6 +363,7 @@ class _SkillTile extends StatelessWidget {
     required this.revisable,
     required this.noVoice,
     this.marked = false,
+    this.stacked = false,
     this.mark,
     this.keepMarkLine = true,
     this.shortMark = false,
@@ -301,6 +374,10 @@ class _SkillTile extends StatelessWidget {
   /// Whether the tiles show the learner's pace: then each keeps a line
   /// under its name for a [mark], which an adjusted skill fills.
   final bool marked;
+
+  /// Whether the pill and count sit above the name, which is the layout
+  /// [marked] tiles have, for a name that would not fit beside them.
+  final bool stacked;
   final PaceDirection? mark;
 
   /// Whether a tile with no [mark] keeps the line for one.
@@ -415,7 +492,7 @@ class _SkillTile extends StatelessWidget {
               ],
             ),
           ),
-          if (moved != null || keepMarkLine)
+          if (moved != null || (marked && keepMarkLine))
             Padding(
               padding: const EdgeInsetsDirectional.only(top: 2),
               child: ConstrainedBox(
@@ -464,7 +541,7 @@ class _SkillTile extends StatelessWidget {
     final opacity = count == 0 && !incoming && !noVoice
         ? _emptyTileOpacity
         : 1.0;
-    final body = marked
+    final body = marked || stacked
         ? _markedBody(context, name, trailing, opacity: opacity)
         : Opacity(
             opacity: opacity,
