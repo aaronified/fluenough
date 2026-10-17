@@ -85,7 +85,7 @@ class ReviewedSentPage extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(4, 4, 4, 12),
-                child: Text(tally, style: theme.textTheme.titleMedium),
+                child: Text(tally, style: theme.textTheme.bodyMedium),
               ),
               for (final group in byDeck.values)
                 Padding(

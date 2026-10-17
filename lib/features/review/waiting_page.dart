@@ -195,7 +195,14 @@ class _Language extends StatelessWidget {
     );
     return GroupedList.settings(
       children: <Widget>[
-        fold,
+        // Unfolded, the header is drawn a step darker, as in the mockup.
+        if (unfolded)
+          Material(
+            color: Theme.of(context).colorScheme.surfaceContainer,
+            child: fold,
+          )
+        else
+          fold,
         if (unfolded) ..._rows(context, l10n, waiting, offensive, open),
       ],
     );
