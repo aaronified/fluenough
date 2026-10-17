@@ -111,15 +111,17 @@ void main() {
     expect(onScreen(tester, find.text(l10n.pathUpNext)), isTrue);
     expect(onScreen(tester, find.text('Family')), isTrue);
     expect(
-      find.bySemanticsLabel(RegExp('^Family, unit 8, ${l10n.pathUpNext}')),
+      find.bySemanticsLabel(RegExp('^Family, unit 5, ${l10n.pathUpNext}')),
       findsOneWidget,
     );
     expect(
-      find.bySemanticsLabel(RegExp('^About me, unit 7, ${l10n.pathUnitDone}')),
+      find.bySemanticsLabel(
+        RegExp('^Addressing people, unit 4, ${l10n.pathUnitDone}'),
+      ),
       findsOneWidget,
     );
     expect(
-      find.bySemanticsLabel(RegExp('^Work, unit 10, ${l10n.pathUnitAhead}')),
+      find.bySemanticsLabel(RegExp('^Work, unit 22, ${l10n.pathUnitAhead}')),
       findsOneWidget,
     );
     // Milestones: the first deck finished, words learned, the script.
@@ -142,7 +144,11 @@ void main() {
   testWidgets('further down: rules known and the first passage read, '
       'each with what is left', (tester) async {
     usePhone(tester);
-    final state = await pumpDecks(tester, state: await teluguLearner());
+    // Past the units that hold the rules, so that some are known.
+    final state = await pumpDecks(
+      tester,
+      state: await teluguLearner(upTo: 'te-en-work'),
+    );
     final l10n = l10nOf(tester);
     final rules = courseView(state, 'te')!.steps
         .whereType<MilestoneStep>()
@@ -309,8 +315,8 @@ void main() {
     expect(find.text(l10n.pathLevelB1), findsOneWidget);
     expect(find.byType(AchievementMark), findsNWidgets(3));
     expect(find.text(l10n.pathAchievement('A1')), findsOneWidget);
-    expect(find.text(l10n.pathUnitsToGo(8)), findsOneWidget);
-    expect(find.text(l10n.pathUnitsToGoComing(12, 7)), findsOneWidget);
+    expect(find.text(l10n.pathUnitsToGo(19)), findsOneWidget);
+    expect(find.text(l10n.pathUnitsToGoComing(13, 7)), findsOneWidget);
     expect(find.text('Health'), findsOneWidget);
     expect(find.text(l10n.pathComingWords(60)), findsWidgets);
     // A coming unit cannot be opened.
@@ -335,7 +341,7 @@ void main() {
     expect(find.text(l10n.pathLevelReached('A1')), findsOneWidget);
     expect(find.text(l10n.pathAchievement('A2')), findsOneWidget);
     expect(
-      find.bySemanticsLabel(RegExp('^Market, unit 16, ${l10n.pathUpNext}')),
+      find.bySemanticsLabel(RegExp('^Market, unit 26, ${l10n.pathUpNext}')),
       findsOneWidget,
     );
   });

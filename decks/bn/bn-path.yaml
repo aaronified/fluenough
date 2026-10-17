@@ -5,24 +5,43 @@
 # This is also Bengali's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"): every
 # unit from the first words to B1, written or planned, with its size in
 # words, its grammar topics, the three milestones, and for each planned unit
-# its listening and reading passages, described in English. The existing
-# units keep their places and ids; the units written for A1 are placed among
-# them where their words and rules are first needed. A2 and B1 units stay
-# planned until a deck is written: the course teaches them as "Coming" until
-# then. Sizes follow the plan's levels (about 700, 900 and 1,200 words; low
-# confidence) and are one number for every native language. A theme named
-# here that decks/themes.yaml does not list yet is added to it with its
-# first deck.
+# its listening and reading passages. A unit with no deck yet is planned:
+# the course teaches it as "Coming" until a deck is written. Sizes follow
+# the plan's levels (about 700, 900 and 1,200 words; low confidence) and are
+# one number for every native language; a written unit's size is what its
+# decks hold today. A theme named here that decks/themes.yaml does not list
+# yet is added to it with its first deck.
 #
-# First a few words and basic sentences, the sounds the learner's language
-# lacks and how Bengali grammar differs from it; then themes, each with the
-# grammar that goes with it; the script comes after the first themes, before
-# the rest. The grammar follows the Indo-Aryan order of
-# docs/plans/language-paths-scheme.md, less the gender agreement and the
-# ergative Bengali does not have, and with the classifiers it adds: be,
-# postpositions, the present, the case endings, the past, compound and
-# conjunct verbs, then the relative-correlative clauses and the rest of
-# B1. Every deck of Bengali is listed exactly once.
+# The order follows docs/plans/words-rules-sentences.md (owner, 2026-10-07,
+# and 2026-10-17: "build the path files for all present languages via an
+# opus agent, as per our current path design"):
+# 1. the phrasebook, taught whole from the first lesson;
+# 2. the first word units;
+# 3. the script, after the first six units ("After units 4-6"); a
+#    learner who already reads it skips it (#554);
+# 4. a core of about 200 common words in themed units, before the large
+#    tables ("Yes, smaller (~200)");
+# 5. rules as forms: noun endings, postpositions and conjunctions first,
+#    then pronoun and verb forms, practised on the words already known;
+# 6. sentences, each after its words and rules; then the other themes,
+#    each its words, then its rules, then its sentences.
+# Bengali's grammar keeps the Indo-Aryan order of
+# docs/plans/language-paths-scheme.md within each level, less the
+# gender agreement and the ergative Bengali does not have, and with the
+# classifiers it adds: be, postpositions, the present, the case
+# endings, the past, compound and conjunct verbs, then the
+# relative-correlative clauses and the rest of B1.
+#
+# The core's order is by judgement, most common first:
+# about me, everyday verbs, the common adverbs and function words
+# (planned), how much and how many, describing words, time, where things
+# are, more verbs.
+# It was meant to come from Wikipedia's counts
+# (tools/wikipedia_frequency.py, #516), but
+# no Bengali Wikipedia dump could be fetched here (2026-10-17):
+# order the core again from the counts once they are written.
+#
+# Every deck of Bengali is listed exactly once.
 schema: 1
 kind: "path"
 id: "bn-path"
@@ -63,109 +82,167 @@ alphabet:
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
-  - decks: ["bn-phrasebook", "bn-first-words", "bn-grammar-sentences", "*"]
+  # 1. The phrasebook, taught whole from the first lesson.
+  - decks: ["bn-phrasebook", "bn-first-words", "*"]
     words: 7
-    grammar: ["sentences"]
+  # 2. The first word units.
   - decks: ["bn-sound-differences"]
     words: 24
-  - decks: ["bn-grammar-differences"]
-    words: 3
-    grammar: ["differences"]
-  - decks: ["bn-questions", "bn-grammar-questions", "*"]
+  - decks: ["bn-questions", "*"]
     words: 17
-    grammar: ["questions"]
-  - decks: ["bn-addressing", "bn-grammar-pronouns", "*"]
-    words: 10
-    grammar: ["pronouns"]
-  - decks: ["bn-pronouns", "bn-grammar-pronoun-forms", "bn-pronouns-sentences", "*"]
-    words: 24
-    grammar: ["pronoun-gen", "pronoun-obj", "pronoun-with"]
+  - decks: ["bn-addressing", "bn-pronouns", "*"]
+    words: 34
+  - decks: ["bn-family", "*"]
+    words: 27
+  - decks: ["bn-numbers-1-20", "*"]
+    words: 20
+  # 3. The script, after the first six units (#554: skipped by a learner
+  # who already reads it).
+  - ["bn-script-vowels", "bn-script-consonants", "bn-script-reading"]
+  - ["bn-script-vowel-signs", "bn-script-conjuncts"]
+  # 4. The core: about 200 common words, most common first (by judgement
+  # until the Wikipedia counts are written, #516).
+  - decks: ["bn-about-me", "*"]
+    words: 12
+  - decks: ["bn-verbs", "*"]
+    words: 30
+  - planned: { id: "bn-adverbs", theme: "adverbs", words: 45 }
+    listening_passages:
+      - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
+    reading_passages:
+      - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
+  - decks: ["bn-quantities", "*"]
+    words: 23
+  - decks: ["bn-describing", "*"]
+    words: 28
+  - decks: ["bn-time", "*"]
+    words: 27
+  - decks: ["bn-location", "*"]
+    words: 14
+  - decks: ["bn-more-verbs", "*"]
+    words: 25
+  # 5. Rules as forms, practised on the words known: noun endings,
+  # postpositions and conjunctions first, then pronoun and verb forms.
+  - decks: ["bn-grammar-noun-forms"]
+    words: 0
+    grammar: ["plural", "gen", "loc", "ke", "theke", "sathe"]
+  - decks: ["bn-grammar-postpositions"]
+    words: 17
+    grammar: ["postpositions"]
+  - decks: ["bn-grammar-conjunctions"]
+    words: 11
+    grammar: ["conjunctions"]
+  - decks: ["bn-grammar-pronouns", "bn-grammar-pronoun-forms"]
+    words: 0
+    grammar: ["pronouns", "pronoun-gen", "pronoun-obj", "pronoun-with"]
+  - decks: ["bn-grammar-be"]
+    words: 0
+    grammar: ["be"]
+  - decks: ["bn-grammar-present", "bn-grammar-verb-present"]
+    words: 0
+    grammar: ["present", "present-first", "present-second", "present-third", "polite-request"]
+  - decks: ["bn-grammar-demonstratives"]
+    words: 0
+    grammar: ["demonstratives"]
+  - decks: ["bn-grammar-adjectives"]
+    words: 27
+    grammar: ["adjectives"]
+  # 6. Sentences, each after its words and rules; then the other A1
+  # themes, each its words, its rules, then its sentences.
+  - decks: ["bn-work", "*"]
+    words: 21
+  - decks: ["bn-numbers-big", "*"]
+    words: 93
+  - decks: ["bn-food", "*"]
+    words: 59
+  - decks: ["bn-groceries", "*"]
+    words: 23
+  - decks: ["bn-market", "bn-grammar-nouns", "*"]
+    words: 16
+    grammar: ["nouns"]
+  - decks: ["bn-pronouns-sentences"]
+    words: 0
     listening_passages:
       - { id: "who-is-who", text: { "en": "Pointing out who is who at a family gathering: he, she, they" } }
     reading_passages:
       - { id: "seating-chart", text: { "en": "A seating chart for a wedding lunch, with names and who is related to whom" } }
-  - decks: ["bn-about-me", "bn-grammar-present", "*"]
-    words: 12
-    grammar: ["present"]
-  - decks: ["bn-family", "bn-grammar-be", "*"]
-    words: 27
-    grammar: ["be"]
-  - decks: ["bn-verbs", "bn-grammar-verb-present", "bn-verbs-sentences", "*"]
-    words: 30
-    grammar: ["present-first", "present-second", "present-third", "polite-request"]
+  - decks: ["bn-verbs-sentences"]
+    words: 0
     listening_passages:
       - { id: "morning-routine", text: { "en": "A mother says what each person in the house does in the morning" } }
     reading_passages:
       - { id: "fridge-note", text: { "en": "A note on the fridge: what to eat, what to drink and where things are" } }
-  - decks: ["bn-work", "bn-grammar-demonstratives", "*"]
-    words: 21
-    grammar: ["demonstratives"]
-  - decks: ["bn-grammar-noun-forms", "bn-noun-forms-sentences"]
+  - decks: ["bn-noun-forms-sentences"]
     words: 0
-    grammar: ["plural", "gen", "loc", "ke", "theke", "sathe"]
     listening_passages:
       - { id: "way-to-school", text: { "en": "Two children say where they go, with whom, and where from" } }
     reading_passages:
       - { id: "school-notice", text: { "en": "A school notice: where to meet, with whom and from when" } }
-  - ["bn-script-vowels", "bn-script-consonants", "bn-script-reading"]
-  - ["bn-script-vowel-signs", "bn-script-conjuncts"]
-  - decks: ["bn-numbers-1-20", "*"]
-    words: 20
-  - decks: ["bn-numbers-big", "*"]
-    words: 93
-  - decks: ["bn-market", "bn-grammar-nouns", "bn-grammar-articles", "*"]
-    words: 17
-    grammar: ["nouns", "articles"]
-  - decks: ["bn-groceries", "bn-grammar-gender-number", "bn-grammar-needs", "*"]
-    words: 24
-    grammar: ["gender-number", "needs"]
-  - decks: ["bn-food", "bn-food-sentences", "*"]
-    words: 59
+  - decks: ["bn-grammar-questions"]
+    words: 0
+    grammar: ["questions"]
+  - decks: ["bn-grammar-likes"]
+    words: 2
+    grammar: ["likes"]
+  - decks: ["bn-grammar-sentences"]
+    words: 0
+    grammar: ["sentences"]
+  - decks: ["bn-food-sentences"]
+    words: 0
     listening_passages:
       - { id: "at-the-sweet-shop", text: { "en": "Choosing sweets and snacks at a sweet shop" } }
     reading_passages:
       - { id: "menu-card", text: { "en": "A restaurant menu card with dishes and prices" } }
-  - decks: ["bn-transport", "bn-grammar-postpositions", "*"]
-    words: 26
-    grammar: ["postpositions"]
   - decks: ["bn-directions", "bn-grammar-continuous", "*"]
     words: 12
     grammar: ["continuous"]
+  - decks: ["bn-transport", "*"]
+    words: 9
   - decks: ["bn-body", "bn-body-sentences", "*"]
     words: 35
     listening_passages:
       - { id: "at-the-doctors", text: { "en": "Telling a doctor where it hurts" } }
     reading_passages:
       - { id: "stretching-chart", text: { "en": "A chart of simple morning stretches" } }
-  - decks: ["bn-places", "bn-location", "bn-places-sentences", "*"]
-    words: 56
+  - decks: ["bn-places", "bn-places-sentences", "*"]
+    words: 42
     listening_passages:
       - { id: "walk-to-the-market", text: { "en": "A neighbour names the places you pass on the way to the market" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Signs along a street: pharmacy, school, bank, temple" } }
-  - decks: ["bn-more-verbs", "bn-more-verbs-sentences", "*"]
-    words: 25
-    listening_passages:
-      - { id: "kitchen-help", text: { "en": "Someone tells a helper what to do in the kitchen" } }
-    reading_passages:
-      - { id: "how-to-make-tea", text: { "en": "A short card on how to make tea" } }
-  - decks: ["bn-home", "bn-grammar-adjectives", "*"]
-    words: 48
-    grammar: ["adjectives"]
-  - decks: ["bn-things", "bn-things-sentences", "*"]
+  - decks: ["bn-things", "*"]
     words: 32
+  - decks: ["bn-home", "*"]
+    words: 21
+  - decks: ["bn-things-sentences", "bn-more-verbs-sentences"]
+    words: 0
     listening_passages:
       - { id: "packing-for-a-trip", text: { "en": "Two people pack a bag for a trip to the hills" } }
+      - { id: "kitchen-help", text: { "en": "Someone tells a helper what to do in the kitchen" } }
     reading_passages:
       - { id: "lost-property-list", text: { "en": "A lost-property list at a railway station" } }
+      - { id: "how-to-make-tea", text: { "en": "A short card on how to make tea" } }
+  - decks: ["bn-grammar-needs"]
+    words: 1
+    grammar: ["needs"]
+  - decks: ["bn-quantities-sentences", "bn-grammar-differences"]
+    words: 3
+    grammar: ["differences"]
+    listening_passages:
+      - { id: "at-the-grocers", text: { "en": "Asking how much and how many at a grocer's" } }
+    reading_passages:
+      - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
+  - decks: ["bn-grammar-articles", "bn-grammar-gender-number"]
+    words: 1
+    grammar: ["articles", "gender-number"]
   - decks: ["bn-clothes", "bn-clothes-sentences", "*"]
     words: 26
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
     reading_passages:
       - { id: "shop-offer-sign", text: { "en": "A clothes shop's sign with its offers" } }
-  - decks: ["bn-describing", "bn-describing-sentences", "*"]
-    words: 28
+  - decks: ["bn-describing-sentences"]
+    words: 0
     listening_passages:
       - { id: "how-are-you-feeling", text: { "en": "A friend asks how you feel today, and you answer" } }
     reading_passages:
@@ -176,16 +253,12 @@ units:
       - { id: "village-visit", text: { "en": "A child names the animals seen on a visit to a village" } }
     reading_passages:
       - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
-  - decks: ["bn-quantities", "bn-quantities-sentences", "*"]
-    words: 23
-    listening_passages:
-      - { id: "at-the-grocers", text: { "en": "Asking how much and how many at a grocer's" } }
-    reading_passages:
-      - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
-  - decks: ["bn-time", "bn-grammar-future", "*"]
-    words: 27
+  - decks: ["bn-grammar-future"]
+    words: 0
     grammar: ["future"]
     milestone: "A1"
+  # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
+  # then its sentences.
   - decks: ["bn-daily-life", "bn-grammar-conjunct-verbs", "*"]
     words: 26
     grammar: ["conjunct-verbs"]
@@ -231,9 +304,8 @@ units:
       - { id: "what-just-happened", text: { "en": "A neighbour tells what suddenly happened: fell down, sat down, went away" } }
     reading_passages:
       - { id: "small-accident-news", text: { "en": "A short news item about a small accident on the road" } }
-  - decks: ["bn-eating-out", "bn-grammar-conjunctions", "bn-grammar-likes", "*"]
-    words: 22
-    grammar: ["conjunctions", "likes"]
+  - decks: ["bn-eating-out", "*"]
+    words: 9
   - planned: { id: "bn-cooking", theme: "cooking", words: 50 }
     listening_passages:
       - { id: "fish-curry-aloud", text: { "en": "A grandmother says how she cooks a fish curry" } }
@@ -307,11 +379,6 @@ units:
       - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
     reading_passages:
       - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
-  - planned: { id: "bn-adverbs", theme: "adverbs", words: 45 }
-    listening_passages:
-      - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
-    reading_passages:
-      - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
   - planned: { id: "bn-workplace", theme: "workplace", words: 45 }
     listening_passages:
       - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }
@@ -323,6 +390,7 @@ units:
     reading_passages:
       - { id: "map-caption", text: { "en": "A map caption: West Bengal and Bangladesh" } }
     milestone: "A2"
+  # B1: the themes and grammar of the CEFR's B1.
   - decks: ["bn-slang"]
     words: 0
   - planned: { id: "bn-health", theme: "health", words: 55 }
@@ -519,5 +587,6 @@ units:
     reading_passages:
       - { id: "formal-letter", text: { "en": "A formal letter and its closing" } }
     milestone: "B1"
+  # After B1: spelling.
   - ["bn-spelling"]
   - ["*"]

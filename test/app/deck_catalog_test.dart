@@ -136,7 +136,7 @@ void main() {
     });
 
     test('includes the known decks, in path order, each course\'s theme '
-        'decks in theme order', () {
+        'decks in its path\'s order', () {
       final ids = catalog.decks.map((d) => d.id).toList();
       expect(
         ids,
@@ -149,21 +149,27 @@ void main() {
       final paths = catalog.decks.map((d) => d.path).toList();
       expect(paths.toSet(), hasLength(paths.length));
 
-      final path = [for (final t in catalog.themes) t.id];
+      // The order a course teaches its themes in is its path's, which
+      // decks/themes.yaml only names (the paths put the script after the
+      // first six units and the core before the large tables).
       final courses = <String, List<String>>{};
       for (final d in catalog.decks) {
         final theme = d.deck.theme;
         if (theme == null) continue;
         courses
-            .putIfAbsent('${d.language.code}-${d.deck.native.code}', () => [])
+            .putIfAbsent('${d.language.code}/${d.deck.native.code}', () => [])
             .add(theme);
       }
-      expect(courses, contains('hi-en'));
+      expect(courses, contains('hi/en'));
       for (final MapEntry(key: course, value: themes) in courses.entries) {
-        expect(themes, [
-          for (final t in path)
-            if (themes.contains(t)) t,
-        ], reason: course);
+        final order = catalog.paths[course]!.deckIds.toList();
+        final byPath = [
+          for (final d in catalog.decks)
+            if ('${d.language.code}/${d.deck.native.code}' == course &&
+                d.deck.theme != null)
+              d,
+        ]..sort((x, y) => order.indexOf(x.id).compareTo(order.indexOf(y.id)));
+        expect(themes, [for (final d in byPath) d.deck.theme], reason: course);
       }
     });
 
@@ -203,8 +209,10 @@ void main() {
       ]);
       expect(catalog.languagePaths['hi']!.regions, isEmpty);
       expect(
-        catalog.pathOf(hindi)!.units[catalog.pathOf(hindi)!.unitOf(hindi.id)!],
-        contains('hi-en-grammar-pronouns'),
+        catalog.pathOf(hindi)!.units[catalog
+            .pathOf(hindi)!
+            .unitOf('hi-en-grammar-pronouns')!],
+        contains('hi-en-grammar-possessives'),
       );
     });
 
