@@ -122,6 +122,105 @@ void main() {
     );
   });
 
+  test('a base added, changed or removed (#476) reads back with its forms, '
+      'and one missing its form is not read', () {
+    const was = BaseForm(base: 'शुभ', reading: 'śubh', meaning: 'good');
+    final suggestions = <Suggestion>[
+      const Suggestion(
+        part: CardPart.base,
+        word: 'आया',
+        action: BaseAction.edit,
+        was: BaseForm(base: 'आना', reading: 'ānā', meaning: 'to come'),
+        base: BaseForm(base: 'आना', reading: 'ānā', meaning: 'to arrive'),
+        now: 'आना (ānā) · to come',
+        text: 'आना (ānā) · to arrive',
+        why: 'Also arrive.',
+      ),
+      const Suggestion(
+        part: CardPart.base,
+        word: 'সকাল',
+        action: BaseAction.add,
+        base: BaseForm(ref: 'bn-0318'),
+        now: '',
+        text: 'সকাল',
+      ),
+      const Suggestion(
+        part: CardPart.base,
+        word: 'पाल',
+        action: BaseAction.add,
+        base: BaseForm(base: 'पाल', reading: 'pāl', link: false),
+        now: '',
+        text: 'पाल',
+      ),
+      const Suggestion(
+        part: CardPart.base,
+        word: 'शुभ',
+        action: BaseAction.remove,
+        was: was,
+        now: 'शुभ',
+        text: '',
+      ),
+      const Suggestion(part: CardPart.alt, now: '', text: 'शुभ सकाल!'),
+    ];
+    final json = jsonDecode(
+      jsonEncode(<Object?>[for (final s in suggestions) s.toJson()]),
+    ) as List<Object?>;
+    expect(json[0], <String, Object?>{
+      'part': 'base',
+      'word': 'आया',
+      'action': 'edit',
+      'was': <String, Object?>{
+        'base': 'आना',
+        'reading': 'ānā',
+        'meaning': 'to come',
+      },
+      'base': <String, Object?>{
+        'base': 'आना',
+        'reading': 'ānā',
+        'meaning': 'to arrive',
+      },
+      'now': 'आना (ānā) · to come',
+      'text': 'आना (ānā) · to arrive',
+      'why': 'Also arrive.',
+    });
+    expect((json[1]! as Map)['base'], <String, Object?>{'ref': 'bn-0318'});
+    expect((json[2]! as Map)['base'], <String, Object?>{
+      'base': 'पाल',
+      'reading': 'pāl',
+      'link': false,
+    });
+    final back = json.map(Suggestion.fromJson).toList();
+    for (final (i, s) in suggestions.indexed) {
+      expect(back[i]!.part, s.part);
+      expect(back[i]!.action, s.action);
+      expect(back[i]!.was, s.was);
+      expect(back[i]!.base, s.base);
+      expect(back[i]!.text, s.text);
+    }
+    // An add without its base, or a removal without the base it removes,
+    // is not one.
+    expect(
+      Suggestion.fromJson(<String, Object?>{
+        'part': 'base',
+        'word': 'x',
+        'action': 'add',
+        'now': '',
+        'text': 'x',
+      }),
+      isNull,
+    );
+    expect(
+      Suggestion.fromJson(<String, Object?>{
+        'part': 'base',
+        'word': 'x',
+        'action': 'remove',
+        'now': 'x',
+        'text': '',
+      }),
+      isNull,
+    );
+  });
+
   test('a change that leaves nothing removes the card', () {
     final reviews = marked().withCard(
       'te-family',

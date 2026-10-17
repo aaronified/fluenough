@@ -7442,6 +7442,196 @@
   "@reviewSuggestKept": {
     "description": "Under the fields of Suggest a change."
   },
+  "reviewSuggestRule": "Say it better, never say something else: the meaning never changes.",
+  "@reviewSuggestRule": {
+    "description": "A one-line reminder at the top of Suggest a change, under the card's line, of the reviewer's rule that a card's meaning never changes (docs/plans/reviewing-scope.md, rule 2)."
+  },
+  "reviewSuggestBases": "Base words",
+  "@reviewSuggestBases": {
+    "description": "In the panel shown when a reviewer suggests a new word for a card: the heading over what is said of the card's base words."
+  },
+  "reviewPartAlt": "Also heard",
+  "@reviewPartAlt": {
+    "description": "The name of a part in Suggest a change: the card's accepted alternative answers, other ways the word is said that are also right."
+  },
+  "reviewBaseRemove": "Remove the base {base}",
+  "@reviewBaseRemove": {
+    "description": "Read by a screen reader, and shown on a long press, for the delete button on a base word's box in Suggest a change, which marks the base to be removed.",
+    "placeholders": {
+      "base": {
+        "type": "String",
+        "example": "শুভ"
+      }
+    }
+  },
+  "reviewBaseRemoved": "Removed when you save.",
+  "@reviewBaseRemoved": {
+    "description": "In Suggest a change, under a base word the reviewer has marked to be removed, struck through, before saving. Beside an Undo button."
+  },
+  "reviewBaseForm": "Base form",
+  "@reviewBaseForm": {
+    "description": "The label of the field for a base word's own form, the word as a dictionary lists it, in Suggest a change."
+  },
+  "reviewBaseFor": "{meaning} · for {word}",
+  "@reviewBaseFor": {
+    "description": "Under a base word in Suggest a change: its meaning, and the word of the card it explains, when that word is not the base itself.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "to come"
+      },
+      "word": {
+        "type": "String",
+        "example": "आया"
+      }
+    }
+  },
+  "reviewBaseByCard": "{meaning} · card {id}",
+  "@reviewBaseByCard": {
+    "description": "Under a base word in Suggest a change that is taught by another card: its meaning, and that card's id.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "morning"
+      },
+      "id": {
+        "type": "String",
+        "example": "bn-0318"
+      }
+    }
+  },
+  "reviewBaseAdd": "Add a base",
+  "@reviewBaseAdd": {
+    "description": "A text button after a card's base words in Suggest a change, which opens a box for a new base word."
+  },
+  "reviewBaseNew": "A new base",
+  "@reviewBaseNew": {
+    "description": "The name of the box for a new base word in Suggest a change."
+  },
+  "reviewBaseNewRemove": "Remove the new base",
+  "@reviewBaseNewRemove": {
+    "description": "Read by a screen reader, and shown on a long press, for the delete button on the box of a new base word in Suggest a change, which drops it."
+  },
+  "reviewBaseWhich": "Which word does it explain?",
+  "@reviewBaseWhich": {
+    "description": "In the box for a new base word in Suggest a change, above a chip for each word of the card that has no base yet."
+  },
+  "reviewBaseLink": "Link the card {word} ({reading}), {meaning} · {id}",
+  "@reviewBaseLink": {
+    "description": "A checkbox in Suggest a change, shown when a base word's form is the word of another card: ticked, the base is given by that card, which teaches it.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "সকাল"
+      },
+      "reading": {
+        "type": "String",
+        "example": "śôkāl"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "morning"
+      },
+      "id": {
+        "type": "String",
+        "example": "bn-0318"
+      }
+    }
+  },
+  "reviewBaseLinkNoReading": "Link the card {word}, {meaning} · {id}",
+  "@reviewBaseLinkNoReading": {
+    "description": "As reviewBaseLink, for a card without a reading.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "casa"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "house"
+      },
+      "id": {
+        "type": "String",
+        "example": "es-0123"
+      }
+    }
+  },
+  "reviewIdentityTitle": "A new word for this card",
+  "@reviewIdentityTitle": {
+    "description": "The title of the panel under the Word box in Suggest a change, shown when the reviewer suggests a new word for a card."
+  },
+  "reviewIdentityKeeps": "It keeps its id, {id}, and its meaning, “{meaning}”, so learners keep their progress. Check what hung on the old word:",
+  "@reviewIdentityKeeps": {
+    "description": "In the panel shown when a reviewer suggests a new word for a card, under its title.",
+    "placeholders": {
+      "id": {
+        "type": "String",
+        "example": "bn-0813"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "Good morning!"
+      }
+    }
+  },
+  "reviewIdentityBases": "{count, plural, =1{{bases} no longer fits.} other{{bases} no longer fit.}}",
+  "@reviewIdentityBases": {
+    "description": "In the panel shown when a reviewer suggests a new word for a card, under Base words: the card's bases, which hung on the old word.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "1"
+      },
+      "bases": {
+        "type": "String",
+        "example": "শুভ (śubho)"
+      }
+    }
+  },
+  "reviewIdentityReplace": "Replace the bases",
+  "@reviewIdentityReplace": {
+    "description": "A text button in the panel shown when a reviewer suggests a new word for a card: it marks each old base to be removed and opens a new base for the new word."
+  },
+  "reviewIdentityKeepAlt": "Keep {word} as an accepted answer",
+  "@reviewIdentityKeepAlt": {
+    "description": "A checkbox, ticked at first, in the panel shown when a reviewer suggests a new word for a card: the old word stays an answer learners may give.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "শুভ সকাল!"
+      }
+    }
+  },
+  "reviewIdentityCheckThem": "Check them below.",
+  "@reviewIdentityCheckThem": {
+    "description": "In the panel shown when a reviewer suggests a new word for a card, under Notes: the notes may name the old word."
+  },
+  "reviewIdentityCheckIt": "Check it below.",
+  "@reviewIdentityCheckIt": {
+    "description": "In the panel shown when a reviewer suggests a new word for a card, under Example: the example may use the old word."
+  },
+  "reviewIdentityNone": "None on this card: nothing to check.",
+  "@reviewIdentityNone": {
+    "description": "In the panel shown when a reviewer suggests a new word for a card, under a part the card does not have."
+  },
+  "reviewIdentityFollow": "The reading and IPA are filled in when the word is agreed, unless you suggest them. All of this is sent as one review.",
+  "@reviewIdentityFollow": {
+    "description": "The last line of the panel shown when a reviewer suggests a new word for a card."
+  },
+  "reviewCheckTag": "Check",
+  "@reviewCheckTag": {
+    "description": "A small tag on a part of Suggest a change that may need changing after a new word for the card: its bases, notes, example and accepted answers."
+  },
+  "reviewAltOld": "{word}, the old word",
+  "@reviewAltOld": {
+    "description": "A checkbox in the Also heard box of Suggest a change, once a new word is suggested: ticked, the old word stays an accepted answer.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "শুভ সকাল!"
+      }
+    }
+  },
   "reviewProposalTitle": "Proposed change to the {part}",
   "@reviewProposalTitle": {
     "description": "Over another reviewer's proposed change on a card in review (ADR-0038).",
@@ -8649,6 +8839,31 @@
         "type": "int"
       }
     }
+  },
+  "settingsDataLogShowing": "{shown, plural, =1{Your last answer, of {total}. Export saves them all.} other{Your last {shown} answers, of {total}. Export saves them all.}}",
+  "@settingsDataLogShowing": {
+    "description": "Under the review log on Your data, when it shows only the newest answers: how many it shows and how many there are.",
+    "placeholders": {
+      "shown": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsDataLogMore": "Show up to {count}",
+  "@settingsDataLogMore": {
+    "description": "A button under the review log on Your data that shows more of the newest answers.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsDataLogFewer": "Show fewer",
+  "@settingsDataLogFewer": {
+    "description": "A button under the review log on Your data that goes back to the newest few answers."
   },
   "settingsDataLogEntry": "{meaning} · {activity} · {time}",
   "@settingsDataLogEntry": {
