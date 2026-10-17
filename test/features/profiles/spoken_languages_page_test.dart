@@ -755,6 +755,65 @@ void main() {
     });
   });
 
+  group('the sheet names its language (#553)', () {
+    for (final (code, query, name, asks) in <(String, String, String, String)>[
+      (
+        'as',
+        'Assamese',
+        'Assamese · অসমীয়া',
+        'Do you read the Eastern Nagari script?',
+      ),
+      (
+        'pa',
+        'Punjabi',
+        'Punjabi · ਪੰਜਾਬੀ',
+        'Which scripts do you read Punjabi in?',
+      ),
+    ]) {
+      for (final scale in <double>[1.0, 1.4]) {
+        for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+          testWidgets('$query: "$name" above the question; at ${scale}x, '
+              '${mode.name}', (tester) async {
+            usePhone(tester, textScale: scale, navBar: true);
+            final semantics = tester.ensureSemantics();
+            await pumpScreen(
+              tester,
+              const SpokenLanguagesPage(),
+              state: AppState.test(settings: SettingsNotifier()),
+              themeMode: mode,
+            );
+            await tester.enterText(
+              find.byKey(const ValueKey<String>('known-search')),
+              query,
+            );
+            await tester.pumpAndSettle();
+            await tester.tap(find.byKey(ValueKey<String>('lang-$code')));
+            await tester.pumpAndSettle();
+            final sheet = find.byType(BottomSheet);
+            final line = find.descendant(of: sheet, matching: find.text(name));
+            expect(line, findsOneWidget);
+            final rect = tester.getRect(line);
+            final box = tester.getRect(sheet);
+            expect(rect.top, greaterThanOrEqualTo(box.top));
+            expect(rect.right, lessThanOrEqualTo(box.right));
+            // Above the question.
+            final question = tester.getRect(
+              find.descendant(of: sheet, matching: find.text(asks)),
+            );
+            expect(rect.bottom, lessThanOrEqualTo(question.top));
+            // A screen reader hears the language first.
+            expect(tester.getSemantics(line), matchesSemantics(label: name));
+            final nodes = tester.getSemantics(
+              find.byKey(const ValueKey<String>('know-language')),
+            );
+            expect(nodes.rect.top, lessThan(question.top));
+            semantics.dispose();
+          });
+        }
+      }
+    }
+  });
+
   group('a language written in several scripts (#551)', () {
     Future<void> openPunjabi(WidgetTester tester) async {
       await tester.enterText(
