@@ -1,0 +1,85 @@
+schema: 1
+id: "te-grammar-adjectives"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "grammar"]
+cards:
+  - id: "te-0500"
+    target: "మంచి"
+    reading: "mañci"
+    ipa: "maɲtʃi"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0501"
+    target: "చెడ్డ"
+    reading: "ceḍḍa"
+    ipa: "tʃeɖɖa"
+    pos: "adj"
+  - id: "te-0502"
+    target: "పెద్ద"
+    reading: "pedda"
+    ipa: "ped̪d̪a"
+    pos: "adj"
+  - id: "te-0503"
+    target: "చిన్న"
+    reading: "cinna"
+    ipa: "tʃinna"
+    pos: "adj"
+  - id: "te-0504"
+    target: "కొత్త"
+    reading: "kotta"
+    ipa: "kot̪t̪a"
+    pos: "adj"
+  - ref: "te-0112"
+  - id: "te-0505"
+    target: "వేడి"
+    reading: "vēḍi"
+    ipa: "ʋeːɖi"
+    pos: "adj"
+  - id: "te-0506"
+    target: "చల్లని"
+    reading: "callani"
+    ipa: "tʃallani"
+    pos: "adj"
+  - id: "te-0507"
+    target: "అందమైన"
+    reading: "andamaina"
+    ipa: "and̪amaina"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0508"
+    target: "శుభ్రమైన"
+    reading: "śubhramaina"
+    ipa: "ʃubʱramaina"
+    pos: "adj"
+  - id: "te-0509"
+    target: "ఇది మంచి పుస్తకం."
+    reading: "idi mañci pustakam."
+    ipa: "id̪i maɲtʃi pust̪akam"
+    pos: "phrase"
+    bases:
+      - { word: "ఇది", ref: "te-0600" }
+      - { word: "పుస్తకం", ref: "te-0865" }
+  - id: "te-0510"
+    target: "ఈ గది పెద్దగా ఉంది."
+    reading: "ī gadi peddagā undi."
+    ipa: "iː ɡad̪i ped̪d̪aɡaː und̪i"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "పెద్దగా", ref: "te-0502" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-0511"
+    target: "కాఫీ చాలా వేడిగా ఉంది."
+    reading: "kāfī cālā vēḍigā undi."
+    ipa: "kaːfiː tʃaːlaː ʋeːɖiɡaː und̪i"
+    pos: "phrase"
+    bases:
+      - { word: "చాలా", ref: "te-1026" }
+      - { word: "వేడిగా", ref: "te-0505" }
+      - { word: "ఉంది", ref: "te-0633" }
