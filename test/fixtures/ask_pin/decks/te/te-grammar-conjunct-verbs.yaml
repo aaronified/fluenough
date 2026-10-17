@@ -1,0 +1,124 @@
+schema: 1
+id: "te-grammar-conjunct-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "grammar"]
+cards:
+  - id: "te-0479"
+    target: "పని చేయడం"
+    reading: "pani cēyaḍam"
+    ipa: "pani tʃeːjaɖam"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "చేయడం", ref: "te-0621" }
+  - id: "te-0480"
+    target: "ఫోన్ చేయడం"
+    reading: "fōn cēyaḍam"
+    ipa: "foːn tʃeːjaɖam"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఫోన్", ref: "te-0872" }
+      - { word: "చేయడం", ref: "te-0621" }
+  - id: "te-0481"
+    target: "సహాయం చేయడం"
+    reading: "sahāyam cēyaḍam"
+    ipa: "sahaːjam tʃeːjaɖam"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "చేయడం", ref: "te-0621" }
+  - id: "te-0482"
+    target: "పెళ్ళి చేసుకోవడం"
+    reading: "peḷḷi cēsukōvaḍam"
+    ipa: "peɭɭi tʃeːsukoːʋaɖam"
+    alt_target: ["పెళ్లి చేసుకోవడం"]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "పెళ్ళి", base: "పెళ్ళి", reading: "peḷḷi" }
+      - { word: "చేసుకోవడం", base: "చేసుకోవడం", reading: "cēsukōvaḍam" }
+  - id: "te-0483"
+    target: "ప్రయత్నం చేయడం"
+    reading: "prayatnam cēyaḍam"
+    ipa: "prajat̪nam tʃeːjaɖam"
+    alt_target: ["ప్రయత్నించడం"]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ప్రయత్నం", base: "ప్రయత్నం", reading: "prayatnam" }
+      - { word: "చేయడం", ref: "te-0621" }
+  - id: "te-0484"
+    target: "ఖర్చు పెట్టడం"
+    reading: "kharcu peṭṭaḍam"
+    ipa: "kʰartʃu peʈʈaɖam"
+    alt_target: ["ఖర్చు చేయడం"]
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఖర్చు", base: "ఖర్చు", reading: "kharcu" }
+      - { word: "పెట్టడం", ref: "te-0830" }
+  - id: "te-0485"
+    target: "శుభ్రం చేయడం"
+    reading: "śubhram cēyaḍam"
+    ipa: "ʃubʱram tʃeːjaɖam"
+    pos: "phrase"
+    bases:
+      - { word: "శుభ్రం", base: "శుభ్రం", reading: "śubhram" }
+      - { word: "చేయడం", ref: "te-0621" }
+  - id: "te-0486"
+    target: "ప్రయాణం చేయడం"
+    reading: "prayāṇam cēyaḍam"
+    ipa: "prajaːɳam tʃeːjaɖam"
+    pos: "phrase"
+    bases:
+      - { word: "ప్రయాణం", base: "ప్రయాణం", reading: "prayāṇam" }
+      - { word: "చేయడం", ref: "te-0621" }
+  - id: "te-0487"
+    target: "మొదలు పెట్టడం"
+    reading: "modalu peṭṭaḍam"
+    ipa: "mod̪alu peʈʈaɖam"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "మొదలు", base: "మొదలు", reading: "modalu" }
+      - { word: "పెట్టడం", ref: "te-0830" }
+  - id: "te-0488"
+    target: "ఆలస్యం చేయడం"
+    reading: "ālasyam cēyaḍam"
+    ipa: "aːlasjam tʃeːjaɖam"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఆలస్యం", base: "ఆలస్యం", reading: "ālasyam" }
+      - { word: "చేయడం", ref: "te-0621" }
+  - id: "te-0489"
+    target: "భయపడడం"
+    reading: "bhayapaḍaḍam"
+    ipa: "bʱajapaɖaɖam"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-0490"
+    target: "కష్టపడడం"
+    reading: "kaṣṭapaḍaḍam"
+    ipa: "kaʂʈapaɖaɖam"
+    pos: "noun"
+  - id: "te-0491"
+    target: "ఇష్టపడడం"
+    reading: "iṣṭapaḍaḍam"
+    ipa: "iʂʈapaɖaɖam"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }

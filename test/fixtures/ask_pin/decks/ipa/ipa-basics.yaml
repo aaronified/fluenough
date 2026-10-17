@@ -1,0 +1,110 @@
+schema: 1
+id: "ipa-basics"
+part: "core"
+kind: "vocab"
+language: { code: "ipa", iso639_3: "zxx", name: "IPA", script: "ipa", typed: false, icon: "ə" }
+license: "CC-BY-SA-4.0"
+source: "Arranged after the IPA chart, 2020 revision, of the International Phonetic Association (https://www.internationalphoneticassociation.org/content/ipa-chart), and the Handbook of the International Phonetic Association (1999)"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ipa-0001"
+    target: "/ /"
+    tags: ["core"]
+    examples:
+      - target: "cat"
+        language: "en"
+        ipa: "kæt"
+      - target: "pin"
+        language: "en"
+        ipa: "pʰɪn"
+        sounds: false
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0002"
+    target: "[ ]"
+    tags: ["core"]
+    examples:
+      - target: "pin"
+        language: "en"
+        ipa: "pʰɪn"
+      - target: "cat"
+        language: "en"
+        ipa: "kæt"
+        sounds: false
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0003"
+    target: "ˈ"
+    tags: ["core", "es", "en"]
+    examples:
+      - target: "término"
+        language: "es"
+        ipa: "ˈteɾmino"
+      - target: "terminó"
+        language: "es"
+        ipa: "teɾmiˈno"
+      - target: "about"
+        language: "en"
+        ipa: "əˈbaʊt"
+      - target: "the"
+        language: "en"
+        ipa: "ðə"
+        sounds: false
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0004"
+    target: "ˌ"
+    tags: ["core", "en"]
+    examples:
+      - target: "Japanese"
+        language: "en"
+        ipa: "ˌdʒæpəˈniːz"
+      - target: "about"
+        language: "en"
+        ipa: "əˈbaʊt"
+        sounds: false
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0005"
+    target: "ː"
+    tags: ["core", "hi", "te", "kn", "en"]
+    examples:
+      - target: "కాలం"
+        language: "te"
+        reading: "kālam"
+        ipa: "kaːlam"
+      - target: "काम"
+        language: "hi"
+        reading: "kām"
+        ipa: "kaːm"
+      - target: "కలం"
+        language: "te"
+        reading: "kalam"
+        ipa: "kalam"
+        sounds: false
+      - target: "कम"
+        language: "hi"
+        reading: "kam"
+        ipa: "kəm"
+        sounds: false
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ipa-0006"
+    target: "."
+    tags: ["core"]
+    examples:
+      - target: "día"
+        language: "es"
+        ipa: "ˈdi.a"
+      - target: "aire"
+        language: "es"
+        ipa: "ˈai̯ɾe"
+        sounds: false
+    modes: ["recognition", "production"]
+    notes:
+      - { id: "n1", kind: "note" }
