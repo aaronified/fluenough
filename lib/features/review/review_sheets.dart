@@ -1308,7 +1308,8 @@ class _SuggestSheetState extends State<SuggestSheet> {
 
   /// One part: its name in small capitals, what it says now, and the
   /// reviewer's suggestion on it, or its own fields while edited. [check]
-  /// tags the notes and example, which may name the old word.
+  /// tags the notes and example, when the card has them: they may name the
+  /// old word.
   Widget _partCard(BuildContext context, _Part p, {bool check = false}) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
@@ -1341,6 +1342,7 @@ class _SuggestSheetState extends State<SuggestSheet> {
       actions: <Widget>[
         if (edit == null &&
             check &&
+            now != null &&
             (p.part == CardPart.notes || p.part == CardPart.example))
           const CheckTag(),
         if (edit == null)
