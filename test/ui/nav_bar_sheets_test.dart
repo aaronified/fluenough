@@ -340,8 +340,8 @@ sheets = <String, Future<void> Function(WidgetTester tester)>{
       ownName: 'বাংলা',
       scripts: <String>['bengali'],
       family: 'indo_aryan',
-      scriptQuestion: 'আপনি কি বাংলা লিপি পড়তে পারেন?',
-      scriptCanRead: 'আমি বাংলা লিপি পড়তে পারি',
+      scriptQuestion: 'আপনি কি পূর্ব নাগরী লিপি পড়তে পারেন?',
+      scriptCanRead: 'আমি পূর্ব নাগরী লিপি পড়তে পারি',
     );
     // As the picker opens it.
     await openOn(
