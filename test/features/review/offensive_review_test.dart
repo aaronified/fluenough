@@ -154,6 +154,8 @@ void main() {
         ),
       );
       final l10n = l10nOf(tester);
+      await tester.tap(find.text('Telugu'));
+      await tester.pumpAndSettle();
       await tester.tap(find.text(l10n.reviewOffensiveTitle));
       await tester.pumpAndSettle();
       expect(find.byType(OffensiveReviewPage), findsOneWidget);
