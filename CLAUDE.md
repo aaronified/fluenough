@@ -76,7 +76,8 @@ wherever the table above allows it.
   when its base word changes its stem (`docs/DECK-FORMAT.md`).
 - **Reviewers** are bilingual and the meaning of a card never changes; new
   themes come only by pull request (`docs/plans/reviewing-scope.md`).
-- **CI.** "Validate decks" is the only check a deck-only change needs.
+- **CI.** A deck-only change needs only "Validate decks" and "Released app
+  reads the decks" green (#524, owner, 2026-10-17).
 - **Budget.** Tokens are limited: one review per change, no extra
   verification passes, and no new work unless the owner asks for it.
 
