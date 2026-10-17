@@ -49,10 +49,14 @@ You can turn reviewing off whenever you like. Your code is kept.
 
 - Units on the learning path are marked **To review** when their deck is not
   yet signed off by a native speaker, in your languages.
-- **Waiting for review** in Settings lists, per language, the units and decks
-  still waiting, how many cards are left in each, the offensive words not yet
-  rated, the sound-alike pairs not yet confirmed, and what you have reviewed
-  but not sent.
+- **Waiting for review** in Settings has three parts. **Reviewed, not sent**
+  opens your cards and suggestions, by deck. **Reviewed and sent** opens each
+  suggestion's state: Accepted, Rejected or Waiting for a second review, with
+  a count such as "1 more acceptance needed" and never a rater code. Then each
+  language you review, folded until you tap it, with the decks and cards left
+  to check in its header; unfolded, it lists the units and decks still
+  waiting, the offensive words not yet rated and the sound-alike pairs not yet
+  confirmed. What you unfold is remembered.
 
 ## Check cards, then sign off
 
