@@ -255,7 +255,8 @@ units:
       - { id: "birthday-dates", text: { "en": "People say their birthdays and anniversaries" } }
     reading_passages:
       - { id: "event-calendar", text: { "en": "A calendar of events: the first, second and third week" } }
-  - planned: { id: "te-festivals", theme: "festivals", words: 40 }
+  - decks: ["te-festivals", "*"]
+    words: 40
     listening_passages:
       - { id: "festival-plans", text: { "en": "Neighbours plan a festival day together" } }
     reading_passages:
