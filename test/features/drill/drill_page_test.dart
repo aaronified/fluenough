@@ -264,7 +264,7 @@ void main() {
     );
     final l10n = l10nOf(tester);
 
-    expect(find.text(l10n.drillTypeInScript('Hindi')), findsOneWidget);
+    expect(find.text(l10n.drillTypeInScript('Devanagari')), findsOneWidget);
 
     // Below the fold on a phone: the body scrolls, as the design's does.
     await tester.ensureVisible(find.text(l10n.drillGetHeliboard));
