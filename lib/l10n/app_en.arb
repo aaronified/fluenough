@@ -4188,46 +4188,6 @@
   "@settingsAdultConfirm": {
     "description": "Button in the dialog shown as Adult content (18+) is switched on: confirms the learner’s age and switches it on."
   },
-  "settingsAlphabet": "Alphabets",
-  "@settingsAlphabet": {
-    "description": "Settings row: which languages are learned with their alphabet, and which in Latin letters only."
-  },
-  "settingsAlphabetAll": "Learning every alphabet",
-  "@settingsAlphabetAll": {
-    "description": "Under Alphabets, when no language is learned in Latin letters only."
-  },
-  "settingsAlphabetLatin": "Latin letters only: {languages}",
-  "@settingsAlphabetLatin": {
-    "description": "Under Alphabets: the languages learned without their alphabet, joined by commonListSeparator.",
-    "placeholders": {
-      "languages": {
-        "type": "String",
-        "example": "Hindi, Telugu"
-      }
-    }
-  },
-  "settingsAlphabetTitle": "Learn the alphabet",
-  "@settingsAlphabetTitle": {
-    "description": "Title of the dialog with a switch per language: learn its alphabet, or Latin letters only."
-  },
-  "settingsAlphabetOn": "Learning the {script} script",
-  "@settingsAlphabetOn": {
-    "description": "In the Alphabets dialog, under a language whose switch is on. {script} is the script's own name, scriptName (#551), never the language's. Shown while the switch is on: says what happens now, and changes the moment it is flipped.",
-    "placeholders": {
-      "script": {
-        "type": "String",
-        "example": "Devanagari"
-      }
-    }
-  },
-  "settingsAlphabetOff": "Latin letters only; script decks skipped",
-  "@settingsAlphabetOff": {
-    "description": "In the Alphabets dialog, under a language whose switch is off. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
-  },
-  "settingsAlphabetOffEmpty": "Latin letters only. No decks without the alphabet yet",
-  "@settingsAlphabetOffEmpty": {
-    "description": "In the Alphabets dialog, under a language whose switch is off and whose course has nothing yet to teach without its alphabet. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
-  },
   "settingsSectionSound": "Sound",
   "@settingsSectionSound": {
     "description": "Settings section heading."

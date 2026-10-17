@@ -713,8 +713,8 @@ void main() {
       final l10n = l10nOf(tester);
       expect(
         inCard('hi', find.byType(Switch)),
-        findsNothing,
-        reason: 'nothing to ask of a language learned',
+        findsOneWidget,
+        reason: 'only its script switch (#555), no question to answer',
       );
       await tester.tap(continueButton(l10n));
       await tester.pumpAndSettle();
