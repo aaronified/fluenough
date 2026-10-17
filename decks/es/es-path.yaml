@@ -1,27 +1,50 @@
 # The order Spanish is taught in, one unit per line, from every language
 # it is taught from: each deck is named by its core id, and a learner
-# from English is taught es-en-core-100 for es-core-100 (ADR-0013, ADR-0036).
+# from English is taught es-en-home for es-home (ADR-0013, ADR-0036).
 #
 # This is also Spanish's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"): every
 # unit from the first words to B1, written or planned, with its size in
 # words, its grammar topics, the three milestones, and for each planned unit
-# its listening and reading passages, described in English. A unit with no
-# deck yet is planned: the course teaches it as "Coming" until a deck is
-# written. Sizes follow the plan's levels (about 700, 900 and 1,200 words;
-# low confidence) and are one number for every native language. A written
-# unit's size is what its decks hold today, and is raised as they grow. A
-# theme named here that decks/themes.yaml does not list yet is added to it
-# with its first deck.
+# its listening and reading passages. A unit with no deck yet is planned:
+# the course teaches it as "Coming" until a deck is written. Sizes follow
+# the plan's levels (about 700, 900 and 1,200 words; low confidence) and are
+# one number for every native language; a written unit's size is what its
+# decks hold today. A theme named here that decks/themes.yaml does not list
+# yet is added to it with its first deck.
 #
-# The order is the Romance order of docs/plans/language-paths-scheme.md:
-# sounds, greetings, numbers, articles and gender, the two verbs "to be",
-# the regular present, the irregular present, prepositions, object
-# pronouns, reflexives, the past (perfective and imperfective), the future
-# and the conditional, the subjunctive, and the compound tenses. Spanish
-# has three decks today, the phrasebook, the core vocabulary and the
-# regular -ar present; the rest is planned. Which Spanish to teach (Latin American or Spain) is
-# still open (docs/plans/language-paths.md); the plan names nothing that
-# differs between them. Every deck of Spanish is listed exactly once.
+# The order follows docs/plans/words-rules-sentences.md (owner, 2026-10-07,
+# and 2026-10-17: "build the path files for all present languages via an
+# opus agent, as per our current path design"):
+# 1. the phrasebook, taught whole from the first lesson;
+# 2. the first word units;
+# 3. no script units: the language is written in Latin letters;
+# 4. a core of about 200 common words in themed units, before the large
+#    tables ("Yes, smaller (~200)");
+# 5. rules as forms: articles and gender, prepositions, then the verb
+#    forms, practised on the words already known;
+# 6. sentences, each after its words and rules; then the other themes,
+#    each its words, then its rules, then its sentences.
+# Spanish's grammar keeps the Romance order of
+# docs/plans/language-paths-scheme.md within each level: articles and
+# gender, prepositions, the two verbs "to be", the regular present,
+# the irregular present, object pronouns, reflexives, the past
+# (perfective and imperfective), the future and the conditional, the
+# subjunctive, and the compound tenses. Spanish has four decks today,
+# the phrasebook, the core vocabulary, articles and gender, and the
+# regular -ar present; the rest is planned. Which Spanish to teach
+# (Latin American or Spain) is still open (docs/plans/language-paths.md);
+# the plan names nothing that differs between them.
+#
+# The core's order is by judgement, most common first:
+# about me (planned), the core words written today, everyday verbs
+# (planned), the common adverbs and function words (planned), how much
+# and how many (planned), describing words (planned).
+# It was meant to come from Wikipedia's counts
+# (tools/wikipedia_frequency.py, #516), but
+# no Spanish Wikipedia dump could be fetched here (2026-10-17):
+# order the core again from the counts once they are written.
+#
+# Every deck of Spanish is listed exactly once.
 schema: 1
 kind: "path"
 id: "es-path"
@@ -31,19 +54,15 @@ genders: ["m", "f"]
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
-  - decks: ["es-phrasebook", "es-core-100"]
-    words: 26
-  - decks: ["es-grammar-present-ar"]
+  # 1. The phrasebook, taught whole from the first lesson.
+  - decks: ["es-phrasebook"]
     words: 0
-    grammar: ["present-ar"]
-  - decks: ["es-grammar-articles-gender"]
-    words: 0
-    grammar: ["articles-gender"]
-  - planned: { id: "es-numbers-1-20", theme: "numbers-1-20", words: 20 }
+  # 2. The first word units.
+  - planned: { id: "es-questions", theme: "questions", words: 15 }
     listening_passages:
-      - { id: "counting-aloud", text: { "en": "Counting objects aloud, from one to twenty" } }
+      - { id: "asking-around", text: { "en": "Asking who, what, where and when at a station" } }
     reading_passages:
-      - { id: "room-numbers", text: { "en": "Room numbers on a row of doors" } }
+      - { id: "tourist-leaflet", text: { "en": "A leaflet answering the questions a visitor asks" } }
   - planned: { id: "es-addressing", theme: "addressing", words: 15 }
     listening_passages:
       - { id: "meeting-a-neighbour", text: { "en": "Greeting a neighbour and an older stranger, tú and usted" } }
@@ -54,36 +73,76 @@ units:
       - { id: "who-is-who", text: { "en": "Pointing out who is who at a family gathering: he, she, they" } }
     reading_passages:
       - { id: "seating-chart", text: { "en": "A seating chart for a party, with names and who sits where" } }
-  - planned: { id: "es-grammar-ser-estar", grammar: "ser-estar" }
-    listening_passages:
-      - { id: "who-and-how", text: { "en": "Saying who someone is and how they are today" } }
-    reading_passages:
-      - { id: "introduction-card", text: { "en": "A short card introducing a person: who they are, where they are from, how they feel" } }
-  - planned: { id: "es-about-me", theme: "about-me", words: 25 }
-    listening_passages:
-      - { id: "introducing-yourself", text: { "en": "Introducing yourself to a new classmate" } }
-    reading_passages:
-      - { id: "registration-form", text: { "en": "A simple registration form: name, age, country, language" } }
   - planned: { id: "es-family", theme: "family", words: 30 }
     listening_passages:
       - { id: "my-family", text: { "en": "Someone describes the people in a family photo" } }
     reading_passages:
       - { id: "family-tree", text: { "en": "A small family tree with names and relations" } }
-  - planned: { id: "es-questions", theme: "questions", words: 15 }
+  - planned: { id: "es-numbers-1-20", theme: "numbers-1-20", words: 20 }
     listening_passages:
-      - { id: "asking-around", text: { "en": "Asking who, what, where and when at a station" } }
+      - { id: "counting-aloud", text: { "en": "Counting objects aloud, from one to twenty" } }
     reading_passages:
-      - { id: "tourist-leaflet", text: { "en": "A leaflet answering the questions a visitor asks" } }
+      - { id: "room-numbers", text: { "en": "Room numbers on a row of doors" } }
+  # 3. No script units: Spanish is written in Latin letters.
+  # 4. The core: about 200 common words, most common first (by judgement
+  # until the Wikipedia counts are written, #516).
+  - planned: { id: "es-about-me", theme: "about-me", words: 25 }
+    listening_passages:
+      - { id: "introducing-yourself", text: { "en": "Introducing yourself to a new classmate" } }
+    reading_passages:
+      - { id: "registration-form", text: { "en": "A simple registration form: name, age, country, language" } }
+  - decks: ["es-core-100"]
+    words: 26
   - planned: { id: "es-everyday-verbs", theme: "everyday-verbs", words: 40 }
     listening_passages:
       - { id: "morning-routine", text: { "en": "A mother says what each person in the house does in the morning" } }
     reading_passages:
       - { id: "fridge-note", text: { "en": "A note on the fridge: what to eat, what to drink and where things are" } }
+  - planned: { id: "es-adverbs", theme: "adverbs", words: 35 }
+    listening_passages:
+      - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
+    reading_passages:
+      - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
+  - planned: { id: "es-quantities", theme: "quantities", words: 30 }
+    listening_passages:
+      - { id: "at-the-grocers", text: { "en": "Asking how much and how many at a grocer's" } }
+    reading_passages:
+      - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
+  - planned: { id: "es-describing", theme: "describing", words: 40 }
+    listening_passages:
+      - { id: "how-are-you-feeling", text: { "en": "A friend asks how you feel today, and you answer" } }
+    reading_passages:
+      - { id: "postcard-from-the-coast", text: { "en": "A short postcard: the weather and the food" } }
+  # 5. Rules as forms, practised on the words known: articles and gender
+  # and prepositions first, then the verb forms.
+  - decks: ["es-grammar-articles-gender"]
+    words: 0
+    grammar: ["articles-gender"]
+  - planned: { id: "es-grammar-prepositions", grammar: "prepositions" }
+    listening_passages:
+      - { id: "where-is-it", text: { "en": "Saying where things are: in, on, under, next to" } }
+    reading_passages:
+      - { id: "room-description", text: { "en": "A short description of a room and where its furniture is" } }
+  - planned: { id: "es-grammar-ser-estar", grammar: "ser-estar" }
+    listening_passages:
+      - { id: "who-and-how", text: { "en": "Saying who someone is and how they are today" } }
+    reading_passages:
+      - { id: "introduction-card", text: { "en": "A short card introducing a person: who they are, where they are from, how they feel" } }
+  - decks: ["es-grammar-present-ar"]
+    words: 0
+    grammar: ["present-ar"]
   - planned: { id: "es-grammar-present-er-ir", grammar: "present-er-ir" }
     listening_passages:
       - { id: "what-we-eat", text: { "en": "Friends say what they eat, drink and where they live" } }
     reading_passages:
       - { id: "lunch-notes", text: { "en": "Short notes about who eats, drinks and lives where" } }
+  - planned: { id: "es-grammar-present-irregular", grammar: "present-irregular" }
+    listening_passages:
+      - { id: "what-do-you-have", text: { "en": "Saying what you have, what you do and where you go" } }
+    reading_passages:
+      - { id: "weekly-plan", text: { "en": "A weekly plan for a household: who goes where and does what" } }
+  # 6. Then the other A1 themes, each its words, its rules, then its
+  # sentences.
   - planned: { id: "es-work", theme: "work", words: 40 }
     listening_passages:
       - { id: "what-do-you-do", text: { "en": "Two people ask each other what they do for a living" } }
@@ -109,11 +168,6 @@ units:
       - { id: "ordering-a-meal", text: { "en": "Choosing dishes from a menu" } }
     reading_passages:
       - { id: "menu-card", text: { "en": "A restaurant menu card with dishes and prices" } }
-  - planned: { id: "es-grammar-present-irregular", grammar: "present-irregular" }
-    listening_passages:
-      - { id: "what-do-you-have", text: { "en": "Saying what you have, what you do and where you go" } }
-    reading_passages:
-      - { id: "weekly-plan", text: { "en": "A weekly plan for a household: who goes where and does what" } }
   - planned: { id: "es-transport", theme: "transport", words: 40 }
     listening_passages:
       - { id: "bus-stop", text: { "en": "Asking which bus goes to the centre" } }
@@ -124,11 +178,6 @@ units:
       - { id: "asking-the-way", text: { "en": "Asking the way to the station and being told" } }
     reading_passages:
       - { id: "simple-map", text: { "en": "A simple map with a route in words" } }
-  - planned: { id: "es-grammar-prepositions", grammar: "prepositions" }
-    listening_passages:
-      - { id: "where-is-it", text: { "en": "Saying where things are: in, on, under, next to" } }
-    reading_passages:
-      - { id: "room-description", text: { "en": "A short description of a room and where its furniture is" } }
   - planned: { id: "es-body", theme: "body", words: 35 }
     listening_passages:
       - { id: "at-the-doctors", text: { "en": "Telling a doctor where it hurts" } }
@@ -160,6 +209,8 @@ units:
     reading_passages:
       - { id: "emergency-numbers", text: { "en": "A card of emergency numbers and what to say" } }
     milestone: "A1"
+  # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
+  # then its sentences.
   - planned: { id: "es-daily-life", theme: "daily-life", words: 40 }
     listening_passages:
       - { id: "a-normal-day", text: { "en": "Someone talks through an ordinary day" } }
@@ -180,11 +231,6 @@ units:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
     reading_passages:
       - { id: "shop-offer-sign", text: { "en": "A clothes shop's sign with its offers" } }
-  - planned: { id: "es-describing", theme: "describing", words: 40 }
-    listening_passages:
-      - { id: "how-are-you-feeling", text: { "en": "A friend asks how you feel today, and you answer" } }
-    reading_passages:
-      - { id: "postcard-from-the-coast", text: { "en": "A short postcard: the weather and the food" } }
   - planned: { id: "es-grammar-adjective-agreement", grammar: "adjective-agreement" }
     listening_passages:
       - { id: "a-big-red-house", text: { "en": "Describing a house and the people in it" } }
@@ -195,11 +241,6 @@ units:
       - { id: "a-farm-visit", text: { "en": "A child names the animals seen on a visit to a farm" } }
     reading_passages:
       - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
-  - planned: { id: "es-quantities", theme: "quantities", words: 30 }
-    listening_passages:
-      - { id: "at-the-grocers", text: { "en": "Asking how much and how many at a grocer's" } }
-    reading_passages:
-      - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
   - planned: { id: "es-weather", theme: "weather", words: 40 }
     listening_passages:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain and wind" } }
@@ -310,11 +351,6 @@ units:
       - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
     reading_passages:
       - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
-  - planned: { id: "es-adverbs", theme: "adverbs", words: 35 }
-    listening_passages:
-      - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
-    reading_passages:
-      - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
   - planned: { id: "es-grammar-por-para", grammar: "por-para" }
     listening_passages:
       - { id: "for-whom-and-why", text: { "en": "Saying what something is for, who it is for and why" } }
@@ -331,6 +367,7 @@ units:
     reading_passages:
       - { id: "spanish-speaking-map", text: { "en": "A map caption: where Spanish is spoken" } }
     milestone: "A2"
+  # B1: the themes and grammar of the CEFR's B1.
   - planned: { id: "es-health", theme: "health", words: 55 }
     listening_passages:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }

@@ -27,10 +27,10 @@ import 'package:fluenough/ui/widgets/speaker.dart';
 import '../../support/harness.dart';
 
 /// The design's Telugu learner, with Family under way.
-Future<AppState> teluguLearner() async {
+Future<AppState> teluguLearner({String upTo = PathFixtures.familyDeck}) async {
   final app = AppState.test();
   await app.load();
-  return PathFixtures.state(app);
+  return PathFixtures.state(app, upTo: upTo);
 }
 
 /// The same learner, who also knows Telugu and reads its script, and
@@ -120,9 +120,9 @@ void main() {
     );
     final l10n = l10nOf(tester);
     expect(find.text('A1'), findsOneWidget);
-    // Family is the eighth unit of Telugu's path.
-    expect(familyNumber(state), 8);
-    expect(find.text(l10n.pathUnitNumber(8)), findsOneWidget);
+    // Family is the fifth unit of Telugu's path.
+    expect(familyNumber(state), 5);
+    expect(find.text(l10n.pathUnitNumber(5)), findsOneWidget);
     expect(find.text('Family'), findsOneWidget);
     expect(
       find.text(state.deckById('te-en-family')!.deck.description!),
@@ -175,11 +175,11 @@ void main() {
     useTallPhone(tester);
     final state = await pumpScreen(
       tester,
-      const UnitPage(deckId: 'te-en-family'),
-      state: await teluguLearner(),
+      const UnitPage(deckId: 'te-en-directions'),
+      state: await teluguLearner(upTo: 'te-en-directions'),
     );
     final l10n = l10nOf(tester);
-    final content = UnitContent(unitOfDeck(state, 'te-en-family')!.decks);
+    final content = UnitContent(unitOfDeck(state, 'te-en-directions')!.decks);
     final answers = RecentAnswers(state.progress.log);
     final known = content.words
         .where((c) => answers.of(c.id).level == MasteryLevel.known)
@@ -223,12 +223,12 @@ void main() {
     useTallPhone(tester);
     final state = await pumpScreen(
       tester,
-      const UnitPage(deckId: 'te-en-family'),
+      const UnitPage(deckId: 'te-en-grammar-be'),
       state: await teluguLearner(),
     );
     final l10n = l10nOf(tester);
     final rule = state.deckById('te-en-grammar-be')!;
-    expect(find.text(l10n.unitSectionRules(2)), findsOneWidget);
+    expect(find.text(l10n.unitSectionRules(1)), findsOneWidget);
     expect(find.text(rule.deck.name), findsWidgets);
     final show = find.text(l10n.unitRuleShowTable);
     await tester.scrollUntilVisible(show, 200, scrollable: downward.first);
@@ -251,16 +251,20 @@ void main() {
     useTallPhone(tester);
     final state = await pumpScreen(
       tester,
-      const UnitPage(deckId: 'te-en-pronouns'),
+      const UnitPage(deckId: 'te-en-grammar-pronoun-forms'),
       state: await teluguLearner(),
     );
     final l10n = l10nOf(tester);
     final rules = state.deckById('te-en-grammar-pronoun-forms')!;
-    final content = UnitContent(unitOfDeck(state, 'te-en-pronouns')!.decks);
-    expect(content.rules, [rules]);
+    final content = UnitContent(
+      unitOfDeck(state, 'te-en-grammar-pronoun-forms')!.decks,
+    );
+    // The unit holds the pronouns' rule and the forms' table.
+    expect(content.rules, [state.deckById('te-en-grammar-pronouns')!, rules]);
     expect(content.words.where((c) => c.rule != null), isEmpty);
     expect(find.text(rules.deck.name), findsWidgets);
-    final show = find.text(l10n.unitRuleShowTable);
+    // The forms' table is the unit's second rule.
+    final show = find.text(l10n.unitRuleShowTable).last;
     await tester.scrollUntilVisible(show, 200, scrollable: downward.first);
     await tester.tap(show);
     await tester.pumpAndSettle();
@@ -319,7 +323,7 @@ void main() {
       state: await teluguLearner(),
     );
     final l10n = l10nOf(tester);
-    final ids = <String>{'te-en-family', 'te-en-grammar-be'};
+    final ids = <String>{'te-en-family'};
     final due = state.buildSession(DrillRequest(deckIds: ids)).due.length;
     expect(due, greaterThan(0));
     final fresh = state
@@ -332,7 +336,7 @@ void main() {
     await tester.tap(continueButton);
     await tester.pumpAndSettle();
     final drill = tester.widget<DrillPage>(find.byType(DrillPage));
-    expect(drill.request.deckIds, <String>{'te-en-family', 'te-en-grammar-be'});
+    expect(drill.request.deckIds, <String>{'te-en-family'});
     expect(drill.request.lesson, isFalse);
   });
 
