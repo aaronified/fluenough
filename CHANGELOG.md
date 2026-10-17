@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.4.4] - 2026-10-17
 
-The decks on GitHub are now split into a core and a layer per native language, which 0.4.3 cannot read, so 0.4.3 gets no more deck updates: update to 0.4.4. Your progress is kept by card id, and no card id changed.
+The decks on GitHub are now split further, their script guides and sounds files included, and carry new card data, which 0.4.3 cannot read, so 0.4.3 gets no more deck updates: update to 0.4.4. Your progress is kept by card id, and no card id changed.
 
 ### Added
 
