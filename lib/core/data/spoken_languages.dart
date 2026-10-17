@@ -13,6 +13,7 @@ class SpokenLanguage {
     this.scriptCanRead,
     this.scriptsQuestion,
     this.scriptCanReadFor = const <String, String>{},
+    this.scriptTextUnchecked = false,
   });
 
   /// The same code decks use for `native.code`, such as `bn`.
@@ -84,7 +85,13 @@ class SpokenLanguage {
 
   /// Whether the sheet asks in the language's own script: both sentences
   /// are there.
-  bool get asksInOwnScript => scriptQuestion != null && scriptCanRead != null;
+  bool get asksInOwnScript =>
+      !scriptTextUnchecked && scriptQuestion != null && scriptCanRead != null;
+
+  /// Whether the texts above were written by Claude and no speaker has
+  /// checked them (`script_text: "unchecked"`, #552). They are kept, but the
+  /// sheet asks in English until a speaker removes the mark.
+  final bool scriptTextUnchecked;
 
   /// For a language written in several scripts, the sheet's heading,
   /// "Which scripts do you read Punjabi in?", in its own first script, or
@@ -98,7 +105,13 @@ class SpokenLanguage {
 
   /// Whether the sheet's heading for several scripts is in the language's
   /// own script.
-  bool get asksScriptsInOwnScript => scriptsQuestion != null;
+  bool get asksScriptsInOwnScript =>
+      !scriptTextUnchecked && scriptsQuestion != null;
+
+  /// The own-script "I can read it" answer for [script] of a language
+  /// written in several, or null: none written, or not yet checked.
+  String? canReadIn(String script) =>
+      scriptTextUnchecked ? null : scriptCanReadFor[script];
 
   /// Whether [query] is in its English name or its own name, ignoring case.
   bool matches(String query) {
@@ -232,6 +245,17 @@ List<String> _scripts(Object? item, int i) {
   return (null, Map<String, String>.unmodifiable(map));
 }
 
+/// Whether an entry's `script_text` says `unchecked` (#552). No other value
+/// is known.
+bool _unchecked(Object? item, int i) {
+  final value = item is YamlMap ? item['script_text'] : null;
+  if (value == null) return false;
+  if (value != 'unchecked') {
+    throw FormatException('languages[$i]: script_text is malformed');
+  }
+  return true;
+}
+
 final _code = RegExp(r'^[a-z]{2,3}$');
 final _iso = RegExp(r'^[a-z]{3}$');
 
@@ -285,6 +309,7 @@ List<SpokenLanguage> parseSpokenLanguages(String text) {
         ownName: field('own_name'),
         family: _optional(item, 'family', i, _script),
         scriptQuestion: _optional(item, 'script_question', i),
+        scriptTextUnchecked: _unchecked(item, i),
         scriptCanRead: canRead,
         scriptsQuestion: scriptsQuestion,
         scriptCanReadFor: canReadFor,
