@@ -9,6 +9,7 @@ import 'package:fluenough/core/review/deck_review.dart';
 import 'package:fluenough/features/decks/decks_page.dart';
 import 'package:fluenough/features/review/review_page.dart';
 import 'package:fluenough/features/review/review_waiting.dart';
+import 'package:fluenough/features/review/reviewed_not_sent_page.dart';
 import 'package:fluenough/features/review/send_reviews_sheet.dart';
 import 'package:fluenough/features/review/waiting_page.dart';
 import 'package:fluenough/features/settings/reviewing_page.dart';
@@ -99,7 +100,7 @@ void main() {
       expect(waiting.unrated.map((c) => c.card.id), [rudeCard]);
       expect(waiting.offensive, 1);
       expect(waiting.unconfirmed.map((c) => c.card.id), [alikeCard]);
-      expect(waiting.unsent, isEmpty);
+      expect(state.reviewing.unsent, isEmpty);
       expect(waiting.isEmpty, isFalse);
     });
 
@@ -121,7 +122,7 @@ void main() {
       expect(waiting.unrated, isEmpty);
       expect(waiting.offensive, 1);
       expect(waiting.unconfirmed, isEmpty);
-      expect(waiting.unsent.map((d) => d.deckId).toSet(), {
+      expect(state.reviewing.unsent.map((d) => d.deckId).toSet(), {
         wordsDeck,
         rudeDeck,
       });
@@ -282,6 +283,8 @@ cards:
       final l10n = l10nOf(tester);
       expect(find.text(l10n.reviewSettingsWaiting), findsOneWidget);
       expect(find.text('Telugu'), findsOneWidget);
+      await tester.tap(find.text('Telugu'));
+      await tester.pumpAndSettle();
       expect(
         find.text(l10n.reviewWaitingUnit(1, 'Family words')),
         findsOneWidget,
@@ -309,11 +312,10 @@ cards:
       );
       expect(find.textContaining('వెధవ'), findsNothing);
       expect(find.textContaining('idiot'), findsNothing);
-      expect(find.text(l10n.reviewWaitingUnsent(1)), findsNothing);
     });
 
-    testWidgets('a unit opens its review; what waits to send opens the send '
-        'sheet', (tester) async {
+    testWidgets('a unit opens its review; Reviewed, not sent opens its page, '
+        'whose bar sends the review', (tester) async {
       usePhone(tester);
       final state = await pumpScreen(
         tester,
@@ -324,13 +326,19 @@ cards:
       final words = state.deckById(wordsDeck)!;
       state.reviewing.markRight(words, words.cards.last);
       await tester.pumpAndSettle();
-      expect(find.text(l10n.reviewWaitingUnsent(1)), findsOneWidget);
-      await tester.tap(find.text(l10n.reviewWaitingUnsent(1)));
+      await tester.tap(find.text(l10n.reviewUnsentTitle));
+      await tester.pumpAndSettle();
+      expect(find.byType(ReviewedNotSentPage), findsOneWidget);
+      await tester.tap(find.text(l10n.reviewSend));
       await tester.pumpAndSettle();
       expect(find.byType(SendReviewsSheet), findsOneWidget);
       await tester.tapAt(const Offset(10, 10));
       await tester.pumpAndSettle();
+      await tester.pageBack();
+      await tester.pumpAndSettle();
 
+      await tester.tap(find.text('Telugu'));
+      await tester.pumpAndSettle();
       await tester.tap(find.text(l10n.reviewWaitingUnit(1, 'Family words')));
       await tester.pumpAndSettle();
       expect(find.byType(ReviewPage), findsOneWidget);
@@ -348,6 +356,8 @@ cards:
       await state.reviewing.send(state.reviewing.unsent, body: '');
       await pumpScreen(tester, const WaitingForReviewPage(), state: state);
       final l10n = l10nOf(tester);
+      await tester.tap(find.text('Telugu'));
+      await tester.pumpAndSettle();
       expect(find.text(l10n.reviewWaitingNothing('Telugu')), findsOneWidget);
       expect(find.text(l10n.reviewWaitingUnrated(1)), findsNothing);
       // The language's offensive words can still be opened, on purpose.
@@ -377,6 +387,8 @@ cards:
       await tester.pumpAndSettle();
       expect(state.settings.reviewPairs, <String>{'te/en'});
       await tester.pageBack();
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Telugu'));
       await tester.pumpAndSettle();
       expect(
         find.text(l10n.reviewWaitingUnit(1, 'Family words')),

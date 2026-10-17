@@ -105,6 +105,11 @@ well"). Leave them the small, self-contained ones, such as a UI bug or a
 one-screen tweak. The deck and review work, and anything a deck build
 waits on, is built here.
 
+Only the Telugu and Bengali decks are built here in full (owner,
+2026-10-17: "You will only build the telugu and bengali decks in full.
+Other decks will then be marked as direct-code"; on when: "Now"). The
+other courses' decks (#420) are `direct-code`, for contributors.
+
 ## Dependencies are marked, never assumed (owner, 2026-10-12)
 
 When one issue needs another done first, record it on GitHub: set "blocked
