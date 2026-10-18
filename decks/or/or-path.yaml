@@ -283,21 +283,29 @@ units:
       - { id: "a-summer-lunch", text: { "en": "A family sits down to a summer lunch of pakhāḷa, water rice, and fried fish" } }
     reading_passages:
       - { id: "menu-board", text: { "en": "A menu board with dishes and prices" } }
-  # or-grammar-needs joins this unit.
+  # or-grammar-needs follows this unit.
   - planned: { id: "or-groceries", theme: "groceries", words: 16 }
-    grammar: ["needs"]
     listening_passages:
       - { id: "what-we-need", text: { "en": "Two people say what they need from the shop" } }
     reading_passages:
       - { id: "grocery-list", text: { "en": "A grocery list" } }
-  # or-grammar-nouns joins this unit: the bare noun, with no gender and no
+  - planned: { id: "or-grammar-needs", grammar: "needs" }
+    listening_passages:
+      - { id: "needs-heard", text: { "en": "A short exchange that uses needs, after the groceries unit" } }
+    reading_passages:
+      - { id: "needs-read", text: { "en": "A short text that uses needs, after the groceries unit" } }
+  # or-grammar-nouns follows this unit: the bare noun, with no gender and no
   # article.
   - planned: { id: "or-market", theme: "market", words: 8 }
-    grammar: ["nouns"]
     listening_passages:
       - { id: "at-the-market", text: { "en": "Buying vegetables at a market" } }
     reading_passages:
       - { id: "market-board", text: { "en": "A market stall's board" } }
+  - planned: { id: "or-grammar-nouns", grammar: "nouns" }
+    listening_passages:
+      - { id: "nouns-heard", text: { "en": "A short exchange that uses nouns, after the market unit" } }
+    reading_passages:
+      - { id: "nouns-read", text: { "en": "A short text that uses nouns, after the market unit" } }
   - planned: { id: "or-grammar-questions", grammar: "questions", words: 0 }
     listening_passages:
       - { id: "asking-a-stranger", text: { "en": "Asking a stranger short questions" } }
@@ -315,13 +323,17 @@ units:
       - { id: "introducing-friends", text: { "en": "Introducing two friends: who is who, and what they do" } }
     reading_passages:
       - { id: "a-short-diary", text: { "en": "A few lines about a day: who did what, and where" } }
-  # or-grammar-continuous joins this unit.
+  # or-grammar-continuous follows this unit.
   - planned: { id: "or-directions", theme: "directions", words: 12 }
-    grammar: ["continuous"]
     listening_passages:
       - { id: "turn-left", text: { "en": "Directions to a temple: left, right and straight on" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Street signs and an arrow board" } }
+  - planned: { id: "or-grammar-continuous", grammar: "continuous" }
+    listening_passages:
+      - { id: "continuous-heard", text: { "en": "A short exchange that uses continuous, after the directions unit" } }
+    reading_passages:
+      - { id: "continuous-read", text: { "en": "A short text that uses continuous, after the directions unit" } }
   - planned: { id: "or-transport", theme: "transport", words: 9 }
     listening_passages:
       - { id: "auto-fare", text: { "en": "Agreeing a fare with an auto driver" } }
@@ -382,27 +394,35 @@ units:
       - { id: "weekend-plan", text: { "en": "A plan for the weekend" } }
     milestone: "A1"
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
-  # then its sentences. or-grammar-negative joins the first unit: na before
+  # then its sentences. or-grammar-negative follows the first unit: na before
   # the verb, nāhim̐ after it, and the fused negative present, jāuni, "I do
   # not go".
   - planned: { id: "or-daily-life", theme: "daily-life", words: 9 }
-    grammar: ["negative"]
     listening_passages:
       - { id: "a-day", text: { "en": "Someone tells their day, and what they do not do" } }
     reading_passages:
       - { id: "daily-routine", text: { "en": "A child's daily routine on a chart" } }
+  - planned: { id: "or-grammar-negative", grammar: "negative" }
+    listening_passages:
+      - { id: "negative-heard", text: { "en": "A short exchange that uses negative, after the daily life unit" } }
+    reading_passages:
+      - { id: "negative-read", text: { "en": "A short text that uses negative, after the daily life unit" } }
   - planned: { id: "or-weather", theme: "weather", words: 45 }
     listening_passages:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain and wind" } }
     reading_passages:
       - { id: "weather-message", text: { "en": "A message to a friend about the monsoon" } }
-  # or-grammar-past joins this unit.
+  # or-grammar-past follows this unit.
   - planned: { id: "or-calendar", theme: "calendar", words: 16 }
-    grammar: ["past"]
     listening_passages:
       - { id: "what-i-did", text: { "en": "Saying what you did last week" } }
     reading_passages:
       - { id: "wall-calendar", text: { "en": "A wall calendar with its months and holidays" } }
+  - planned: { id: "or-grammar-past", grammar: "past" }
+    listening_passages:
+      - { id: "past-heard", text: { "en": "A short exchange that uses past, after the calendar unit" } }
+    reading_passages:
+      - { id: "past-read", text: { "en": "A short text that uses past, after the calendar unit" } }
   - planned: { id: "or-grammar-ordinals", grammar: "ordinals" }
     listening_passages:
       - { id: "which-floor", text: { "en": "Finding a flat: the first floor, the second, the third" } }
@@ -461,13 +481,22 @@ units:
       - { id: "which-is-better", text: { "en": "Two friends compare two phones" } }
     reading_passages:
       - { id: "two-cities", text: { "en": "A short text comparing Cuttack and Bhubaneswar" } }
-  # or-grammar-irregular and or-grammar-pitfalls join this unit.
+  # or-grammar-irregular and or-grammar-pitfalls follow this unit.
   - planned: { id: "or-help", theme: "help", words: 7 }
-    grammar: ["irregular", "pitfalls"]
     listening_passages:
       - { id: "asking-for-help", text: { "en": "Asking a passer-by for help" } }
     reading_passages:
       - { id: "help-desk-sign", text: { "en": "A help desk sign" } }
+  - planned: { id: "or-grammar-irregular", grammar: "irregular" }
+    listening_passages:
+      - { id: "irregular-heard", text: { "en": "A short exchange that uses irregular, after the help unit" } }
+    reading_passages:
+      - { id: "irregular-read", text: { "en": "A short text that uses irregular, after the help unit" } }
+  - planned: { id: "or-grammar-pitfalls", grammar: "pitfalls" }
+    listening_passages:
+      - { id: "pitfalls-heard", text: { "en": "A short exchange that uses pitfalls, after the help unit" } }
+    reading_passages:
+      - { id: "pitfalls-read", text: { "en": "A short text that uses pitfalls, after the help unit" } }
   - planned: { id: "or-grammar-conjunct-verbs", grammar: "conjunct-verbs", words: 4 }
     listening_passages:
       - { id: "doing-a-favour", text: { "en": "Asking someone to do a favour or make a call" } }
