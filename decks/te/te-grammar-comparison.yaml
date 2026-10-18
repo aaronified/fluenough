@@ -14,8 +14,8 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { target: "ఇది దాని కంటే పెద్దది.", reading: "idi dāni kaṇṭē peddadi.", ipa: "id̪i d̪aːni kaɳʈeː ped̪d̪ad̪i" }
-      - { target: "అతను ఆమె కంటే చిన్నవాడు.", reading: "atanu āme kaṇṭē cinnavāḍu.", ipa: "at̪anu aːme kaɳʈeː tʃinːaʋaːɖu" }
+      - { target: "ఇది దాని కంటే పెద్దది.", reading: "idi dāni kaṇṭē peddadi.", ipa: "id̪i d̪aːni kaɳʈeː ped̪d̪ad̪i", bases: [ { word: "దాని", ref: "te-0599" }, { word: "పెద్దది", ref: "te-0502" } ] }
+      - { target: "అతను ఆమె కంటే చిన్నవాడు.", reading: "atanu āme kaṇṭē cinnavāḍu.", ipa: "at̪anu aːme kaɳʈeː tʃinːaʋaːɖu", bases: [ { word: "చిన్నవాడు", ref: "te-0503" } ] }
     bases: "self"
   - id: "te-1701"
     target: "కన్నా"
@@ -25,8 +25,8 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { target: "ఇది దాని కన్నా చిన్నది.", reading: "idi dāni kannā cinnadi.", ipa: "id̪i d̪aːni kan̪naː tʃinːad̪i" }
-      - { target: "అది దీని కన్నా ఎక్కువ.", reading: "adi dīni kannā ekkuva.", ipa: "ad̪i d̪iːni kan̪naː ekkuʋa" }
+      - { target: "ఇది దాని కన్నా చిన్నది.", reading: "idi dāni kannā cinnadi.", ipa: "id̪i d̪aːni kan̪naː tʃinːad̪i", bases: [ { word: "దాని", ref: "te-0599" }, { word: "చిన్నది", ref: "te-0503" } ] }
+      - { target: "అది దీని కన్నా ఎక్కువ.", reading: "adi dīni kannā ekkuva.", ipa: "ad̪i d̪iːni kan̪naː ekkuʋa", bases: [ { word: "దీని", ref: "te-0600" } ] }
     bases: "self"
   - id: "te-1702"
     target: "అన్నిటికంటే"
@@ -36,8 +36,8 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { target: "ఇది అన్నిటికంటే పెద్దది.", reading: "idi anniṭikaṇṭē peddadi.", ipa: "id̪i an̪n̪it̪ikaɳʈeː ped̪d̪ad̪i" }
-      - { target: "ఇది అన్నిటికంటే మంచిది.", reading: "idi anniṭikaṇṭē mañcidi.", ipa: "id̪i an̪n̪it̪ikaɳʈeː mant͡ʃid̪i" }
+      - { target: "ఇది అన్నిటికంటే పెద్దది.", reading: "idi anniṭikaṇṭē peddadi.", ipa: "id̪i an̪n̪it̪ikaɳʈeː ped̪d̪ad̪i", bases: [ { word: "పెద్దది", ref: "te-0502" } ] }
+      - { target: "ఇది అన్నిటికంటే మంచిది.", reading: "idi anniṭikaṇṭē mañcidi.", ipa: "id̪i an̪n̪it̪ikaɳʈeː mant͡ʃid̪i", bases: [ { word: "మంచిది", ref: "te-0500" } ] }
     bases: "self"
   - id: "te-1703"
     target: "మరింత"
@@ -47,8 +47,8 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { target: "ఇది మరింత పెద్దది.", reading: "idi marinta peddadi.", ipa: "id̪i marint̪a ped̪d̪ad̪i" }
-      - { target: "ఇది మరింత మంచిది.", reading: "idi marinta mañcidi.", ipa: "id̪i marint̪a mant͡ʃid̪i" }
+      - { target: "ఇది మరింత పెద్దది.", reading: "idi marinta peddadi.", ipa: "id̪i marint̪a ped̪d̪ad̪i", bases: [ { word: "పెద్దది", ref: "te-0502" } ] }
+      - { target: "ఇది మరింత మంచిది.", reading: "idi marinta mañcidi.", ipa: "id̪i marint̪a mant͡ʃid̪i", bases: [ { word: "మంచిది", ref: "te-0500" } ] }
     bases: "self"
   - id: "te-1704"
     target: "ఒకే"
@@ -59,7 +59,7 @@ cards:
       - { id: "n1", kind: "note" }
     examples:
       - { target: "ఇది ఒకే పుస్తకం.", reading: "idi oke pustakam.", ipa: "id̪i oke pust̪akam" }
-      - { target: "ఇవి ఒకే పుస్తకాలు.", reading: "ivi oke pustakālu.", ipa: "iʋi oke pust̪aːkaːlu" }
+      - { target: "ఇవి ఒకే పుస్తకాలు.", reading: "ivi oke pustakālu.", ipa: "iʋi oke pust̪aːkaːlu", bases: [ { word: "పుస్తకాలు", ref: "te-0865" } ] }
     bases: "self"
   - id: "te-1705"
     target: "సమానంగా"
@@ -71,8 +71,8 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { target: "ఈ రెండు పుస్తకాలు సమానంగా మంచివి.", reading: "ī reṇḍu pustakālu samānaṅgā mañcivi.", ipa: "iː ɾenɖu pust̪aːkaːlu samaːnaŋɡaː mant͡ʃiʋi" }
-      - { target: "ఇద్దరూ సమానంగా మంచివారు.", reading: "iddarū samānaṅgā mañcivāru.", ipa: "idd̪aruː samaːnaŋɡaː mant͡ʃiʋaːru" }
+      - { target: "ఈ రెండు పుస్తకాలు సమానంగా మంచివి.", reading: "ī reṇḍu pustakālu samānaṅgā mañcivi.", ipa: "iː ɾenɖu pust̪aːkaːlu samaːnaŋɡaː mant͡ʃiʋi", bases: [ { word: "పుస్తకాలు", ref: "te-0865" }, { word: "మంచివి", ref: "te-0500" } ] }
+      - { target: "ఇద్దరూ సమానంగా మంచివారు.", reading: "iddarū samānaṅgā mañcivāru.", ipa: "idd̪aruː samaːnaŋɡaː mant͡ʃiʋaːru", bases: [ { word: "ఇద్దరూ", base: "ఇద్దరు", reading: "iddaru" } ] }
   - ref: "te-1029"
   - ref: "te-1030"
   - ref: "te-0346"
