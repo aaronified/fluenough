@@ -562,7 +562,8 @@ units:
       - { id: "police-complaint", text: { "en": "Making a complaint at a police station" } }
     reading_passages:
       - { id: "rights-leaflet", text: { "en": "A leaflet on a tenant's rights" } }
-  - planned: { id: "te-verbs-4", theme: "verbs-4", words: 70 }
+  - decks: ["te-verbs-4", "*"]
+    words: 70
     listening_passages:
       - { id: "a-long-story", text: { "en": "A story told in a sequence of events" } }
     reading_passages:
