@@ -1,0 +1,806 @@
+schema: 1
+id: "te-adjectives-2"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "adjectives-2"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-2800"
+    target: "విశాలమైన"
+    reading: "viśālamaina"
+    ipa: "ʋiʃaːlamaina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    antonyms:
+      - { id: "a1", ref: "te-2801" }
+    examples:
+      - target: "ఇది విశాలమైన గది."
+        reading: "idi viśālamaina gadi."
+        bases:
+          - { word: "ఇది", ref: "te-0600" }
+          - { word: "గది", ref: "te-0420" }
+      - target: "నాకు విశాలమైన ఇల్లు కావాలి."
+        reading: "nāku viśālamaina illu kāvāli."
+        bases:
+          - { word: "నాకు", ref: "te-0593" }
+          - { word: "ఇల్లు", ref: "te-0195" }
+          - { word: "కావాలి", ref: "te-0460" }
+  - id: "te-2801"
+    target: "ఇరుకైన"
+    reading: "irukaina"
+    ipa: "irukaina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    antonyms:
+      - { id: "a1", ref: "te-2800" }
+    examples:
+      - target: "ఇది చాలా ఇరుకైన గది."
+        reading: "idi cālā irukaina gadi."
+        bases:
+          - { word: "ఇది", ref: "te-0600" }
+          - { word: "చాలా", ref: "te-1026" }
+          - { word: "గది", ref: "te-0420" }
+      - target: "ఇరుకైన వీధిలో ఇల్లు ఉంది."
+        reading: "irukaina vīdhilō illu undi."
+        bases:
+          - { word: "వీధిలో", ref: "te-0438" }
+          - { word: "ఇల్లు", ref: "te-0195" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-2802"
+    target: "ప్రకాశవంతమైన"
+    reading: "prakāśavantamaina"
+    ipa: "prakaːʃaʋant̪amaina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    antonyms:
+      - { id: "a1", ref: "te-2803" }
+    examples:
+      - target: "ఈ గది చాలా ప్రకాశవంతంగా ఉంది."
+        reading: "ī gadi cālā prakāśavantaṅgā undi."
+        bases:
+          - { word: "ఈ", ref: "te-0607" }
+          - { word: "గది", ref: "te-0420" }
+          - { word: "చాలా", ref: "te-1026" }
+          - { word: "ప్రకాశవంతంగా", base: "ప్రకాశవంతమైన", reading: "prakāśavantamaina" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "నాకు ప్రకాశవంతమైన గది కావాలి."
+        reading: "nāku prakāśavantamaina gadi kāvāli."
+        bases:
+          - { word: "నాకు", ref: "te-0593" }
+          - { word: "గది", ref: "te-0420" }
+          - { word: "కావాలి", ref: "te-0460" }
+  - id: "te-2803"
+    target: "చీకటి"
+    reading: "cīkaṭi"
+    ipa: "tʃiːkaʈi"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    antonyms:
+      - { id: "a1", ref: "te-2802" }
+    examples:
+      - target: "ఇది చీకటి గది."
+        reading: "idi cīkaṭi gadi."
+        bases:
+          - { word: "ఇది", ref: "te-0600" }
+          - { word: "గది", ref: "te-0420" }
+      - target: "ఈ వంటగది చీకటిగా ఉంది."
+        reading: "ī vaṇṭagadi cīkaṭigā undi."
+        bases:
+          - { word: "ఈ", ref: "te-0607" }
+          - { word: "వంటగది", base: "వంటగది", reading: "vaṇṭagadi" }
+          - { word: "చీకటిగా", base: "చీకటి", reading: "cīkaṭi" }
+          - { word: "ఉంది", ref: "te-0633" }
+    senses:
+      - { id: "dark", pos: "adj", source: "https://en.wiktionary.org/wiki/చీకటి" }
+      - { id: "hidden", pos: "adj", source: "https://en.wiktionary.org/wiki/చీకటి" }
+  - id: "te-2804"
+    target: "నిశ్శబ్దమైన"
+    reading: "niśśabdamaina"
+    ipa: "niʃʃabd̪amaina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఇది నిశ్శబ్దమైన ఇల్లు."
+        reading: "idi niśśabdamaina illu."
+        bases:
+          - { word: "ఇది", ref: "te-0600" }
+          - { word: "ఇల్లు", ref: "te-0195" }
+      - target: "ఈ వీధి చాలా నిశ్శబ్దంగా ఉంది."
+        reading: "ī vīdhi cālā niśśabdaṅgā undi."
+        bases:
+          - { word: "ఈ", ref: "te-0607" }
+          - { word: "వీధి", ref: "te-0438" }
+          - { word: "చాలా", ref: "te-1026" }
+          - { word: "నిశ్శబ్దంగా", base: "నిశ్శబ్దమైన", reading: "niśśabdamaina" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-2805"
+    target: "సురక్షితమైన"
+    reading: "surakṣitamaina"
+    ipa: "surakʂit̪amaina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఇది సురక్షితమైన ప్రాంతం."
+        reading: "idi surakṣitamaina prāntaṁ."
+        bases:
+          - { word: "ఇది", ref: "te-0600" }
+          - { word: "ప్రాంతం", base: "ప్రాంతం", reading: "prāntaṁ" }
+      - target: "ఈ ఇంట్లో తలుపులు సురక్షితంగా ఉన్నాయి."
+        reading: "ī iṇṭlō talupulu surakṣitaṅgā unnāyi."
+        bases:
+          - { word: "ఈ", ref: "te-0607" }
+          - { word: "ఇంట్లో", ref: "te-0195" }
+          - { word: "తలుపులు", ref: "te-0425" }
+          - { word: "సురక్షితంగా", base: "సురక్షితమైన", reading: "surakṣitamaina" }
+          - { word: "ఉన్నాయి", ref: "te-0633" }
+  - id: "te-2806"
+    target: "సౌకర్యవంతమైన"
+    reading: "saukaryavantamaina"
+    ipa: "saukarjaʋant̪amaina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఇది సౌకర్యవంతమైన మంచం."
+        reading: "idi saukaryavantamaina mañcaṁ."
+        bases:
+          - { word: "ఇది", ref: "te-0600" }
+          - { word: "మంచం", ref: "te-0430" }
+      - target: "ఈ గదిలో ఉండడం సౌకర్యంగా ఉంది."
+        reading: "ī gadilō uṇḍaḍam saukaryaṅgā undi."
+        bases:
+          - { word: "ఈ", ref: "te-0607" }
+          - { word: "గదిలో", ref: "te-0420" }
+          - { word: "ఉండడం", ref: "te-0633" }
+          - { word: "సౌకర్యంగా", base: "సౌకర్యం", reading: "saukaryaṁ" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-2807"
+    target: "అమర్చిన"
+    reading: "amarcina"
+    ipa: "amartʃina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఇది అమర్చిన గది."
+        reading: "idi amarcina gadi."
+        bases:
+          - { word: "ఇది", ref: "te-0600" }
+          - { word: "గది", ref: "te-0420" }
+      - target: "అమర్చిన ఇల్లు అద్దెకు ఉంది."
+        reading: "amarcina illu addeku undi."
+        bases:
+          - { word: "ఇల్లు", ref: "te-0195" }
+          - { word: "అద్దెకు", ref: "te-0436" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-2808"
+    target: "తాజా"
+    reading: "tājā"
+    ipa: "t̪aːdʒaː"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "తాజా గాలి ఉంది."
+        reading: "tājā gāli undi."
+        bases:
+          - { word: "గాలి", ref: "te-1118" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "ఈ గదిలో తాజా గాలి వస్తుంది."
+        reading: "ī gadilō tājā gāli vastundi."
+        bases:
+          - { word: "ఈ", ref: "te-0607" }
+          - { word: "గదిలో", ref: "te-0420" }
+          - { word: "గాలి", ref: "te-1118" }
+          - { word: "వస్తుంది", base: "వచ్చు", reading: "vaccu" }
+  - id: "te-2809"
+    target: "దూరమైన"
+    reading: "dūramaina"
+    ipa: "d̪uːramaina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    antonyms:
+      - { id: "a1", ref: "te-2810" }
+    examples:
+      - target: "ఇది దూరమైన ప్రాంతం."
+        reading: "idi dūramaina prāntaṁ."
+        bases:
+          - { word: "ఇది", ref: "te-0600" }
+          - { word: "ప్రాంతం", base: "ప్రాంతం", reading: "prāntaṁ" }
+      - target: "ఆసుపత్రి చాలా దూరంగా ఉంది."
+        reading: "āsupatri cālā dūraṅgā undi."
+        bases:
+          - { word: "ఆసుపత్రి", ref: "te-0366" }
+          - { word: "చాలా", ref: "te-1026" }
+          - { word: "దూరంగా", base: "దూరమైన", reading: "dūramaina" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-2810"
+    target: "దగ్గరి"
+    reading: "daggari"
+    ipa: "d̪aɡɡari"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    antonyms:
+      - { id: "a1", ref: "te-2809" }
+    examples:
+      - target: "దగ్గరి పాఠశాల ఉంది."
+        reading: "daggari pāṭhaśāla undi."
+        bases:
+          - { word: "పాఠశాల", ref: "te-1800" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "ఇల్లు బజారుకు దగ్గరగా ఉంది."
+        reading: "illu bajāruku daggaragā undi."
+        bases:
+          - { word: "ఇల్లు", ref: "te-0195" }
+          - { word: "బజారుకు", ref: "te-1416" }
+          - { word: "దగ్గరగా", base: "దగ్గరి", reading: "daggari" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-2811"
+    target: "ప్రత్యేకమైన"
+    reading: "pratyēkamaina"
+    ipa: "prat̪jeːkamaina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఈ ఇంటికి ప్రత్యేకమైన ప్రవేశం ఉంది."
+        reading: "ī iṇṭiki pratyēkamaina praveśaṁ undi."
+        bases:
+          - { word: "ఈ", ref: "te-0607" }
+          - { word: "ఇంటికి", ref: "te-0195" }
+          - { word: "ప్రవేశం", ref: "te-0547" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "నాకు ప్రత్యేకమైన వంటగది కావాలి."
+        reading: "nāku pratyēkamaina vaṇṭagadi kāvāli."
+        bases:
+          - { word: "నాకు", ref: "te-0593" }
+          - { word: "వంటగది", base: "వంటగది", reading: "vaṇṭagadi" }
+          - { word: "కావాలి", ref: "te-0460" }
+  - id: "te-2812"
+    target: "ఆధునికమైన"
+    reading: "ādhunikamaina"
+    ipa: "aːd̪ʱunikamaina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    antonyms:
+      - { id: "a1", ref: "te-2813" }
+    examples:
+      - target: "ఇది ఆధునికమైన ఇల్లు."
+        reading: "idi ādhunikamaina illu."
+        bases:
+          - { word: "ఇది", ref: "te-0600" }
+          - { word: "ఇల్లు", ref: "te-0195" }
+      - target: "ఈ భవనం ఆధునికంగా ఉంది."
+        reading: "ī bhavanaṁ ādhunikaṅgā undi."
+        bases:
+          - { word: "ఈ", ref: "te-0607" }
+          - { word: "భవనం", base: "భవనం", reading: "bhavanaṁ" }
+          - { word: "ఆధునికంగా", base: "ఆధునికమైన", reading: "ādhunikamaina" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-2813"
+    target: "పాతకాలపు"
+    reading: "pātakālapu"
+    ipa: "paːt̪akaːlapu"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    antonyms:
+      - { id: "a1", ref: "te-2812" }
+    examples:
+      - target: "ఇది పాతకాలపు ఇల్లు."
+        reading: "idi pātakālapu illu."
+        bases:
+          - { word: "ఇది", ref: "te-0600" }
+          - { word: "ఇల్లు", ref: "te-0195" }
+      - target: "ఈ గదిలో పాతకాలపు ఫ్యాన్ ఉంది."
+        reading: "ī gadilō pātakālapu phyān undi."
+        bases:
+          - { word: "ఈ", ref: "te-0607" }
+          - { word: "గదిలో", ref: "te-0420" }
+          - { word: "ఫ్యాన్", ref: "te-0433" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-2814"
+    target: "సుందరమైన"
+    reading: "sundaramaina"
+    ipa: "sund̪aramaina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    synonyms:
+      - { id: "s1", ref: "te-0507" }
+    examples:
+      - target: "ఇది సుందరమైన ప్రదేశం."
+        reading: "idi sundaramaina pradēśaṁ."
+        bases:
+          - { word: "ఇది", ref: "te-0600" }
+          - { word: "ప్రదేశం", base: "ప్రదేశం", reading: "pradēśaṁ" }
+      - target: "ఈ వీధి చాలా సుందరంగా ఉంది."
+        reading: "ī vīdhi cālā sundaraṅgā undi."
+        bases:
+          - { word: "ఈ", ref: "te-0607" }
+          - { word: "వీధి", ref: "te-0438" }
+          - { word: "చాలా", ref: "te-1026" }
+          - { word: "సుందరంగా", base: "సుందరమైన", reading: "sundaramaina" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-2815"
+    target: "నమ్మకమైన"
+    reading: "nammakamaina"
+    ipa: "nammakamaina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఆయన నమ్మకమైన యజమాని."
+        reading: "āyana nammakamaina yajamāni."
+        bases:
+          - { word: "ఆయన", ref: "te-0597" }
+          - { word: "యజమాని", base: "యజమాని", reading: "yajamāni" }
+      - target: "ఆమె నమ్మకమైన వ్యక్తి."
+        reading: "āme nammakamaina vyakti."
+        bases:
+          - { word: "ఆమె", ref: "te-0596" }
+          - { word: "వ్యక్తి", base: "వ్యక్తి", reading: "vyakti" }
+    synonyms:
+      - { id: "nammakamayina", word: "నమ్మకమయిన", reading: "nammakamayina", source: "https://en.wiktionary.org/wiki/నమ్మకమైన" }
+  - id: "te-2816"
+    target: "నిజాయితీగల"
+    reading: "nijāyitīgala"
+    ipa: "nidʒaːjit̪iːɡala"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "మా యజమాని నిజాయితీగల వ్యక్తి."
+        reading: "mā yajamāni nijāyitīgala vyakti."
+        bases:
+          - { word: "మా", ref: "te-0077" }
+          - { word: "యజమాని", base: "యజమాని", reading: "yajamāni" }
+          - { word: "వ్యక్తి", base: "వ్యక్తి", reading: "vyakti" }
+      - target: "ఆయన నిజాయితీగల మనిషి."
+        reading: "āyana nijāyitīgala maniṣi."
+        bases:
+          - { word: "ఆయన", ref: "te-0597" }
+          - { word: "మనిషి", base: "మనిషి", reading: "maniṣi" }
+  - id: "te-2817"
+    target: "కఠినమైన"
+    reading: "kaṭhinamaina"
+    ipa: "kaʈʰinamaina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    antonyms:
+      - { id: "a1", ref: "te-2818" }
+    examples:
+      - target: "కఠినమైన నియమాలు ఉన్నాయి."
+        reading: "kaṭhinamaina niyamālu unnāyi."
+        bases:
+          - { word: "నియమాలు", base: "నియమం", reading: "niyamaṁ" }
+          - { word: "ఉన్నాయి", ref: "te-0633" }
+      - target: "ఈ యజమాని కఠినంగా ఉంటాడు."
+        reading: "ī yajamāni kaṭhinaṅgā uṇṭāḍu."
+        bases:
+          - { word: "ఈ", ref: "te-0607" }
+          - { word: "యజమాని", base: "యజమాని", reading: "yajamāni" }
+          - { word: "కఠినంగా", base: "కఠినమైన", reading: "kaṭhinamaina" }
+          - { word: "ఉంటాడు", ref: "te-0633" }
+  - id: "te-2818"
+    target: "దయగల"
+    reading: "dayagala"
+    ipa: "d̪ajaɡala"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    antonyms:
+      - { id: "a1", ref: "te-2817" }
+    examples:
+      - target: "ఆమె దయగల మనిషి."
+        reading: "āme dayagala maniṣi."
+        bases:
+          - { word: "ఆమె", ref: "te-0596" }
+          - { word: "మనిషి", base: "మనిషి", reading: "maniṣi" }
+      - target: "మా ఇంటి యజమాని చాలా దయగలవారు."
+        reading: "mā iṇṭi yajamāni cālā dayagalavāru."
+        bases:
+          - { word: "మా", ref: "te-0077" }
+          - { word: "ఇంటి", ref: "te-0195" }
+          - { word: "యజమాని", base: "యజమాని", reading: "yajamāni" }
+          - { word: "చాలా", ref: "te-1026" }
+          - { word: "దయగలవారు", base: "దయగల", reading: "dayagala" }
+  - id: "te-2819"
+    target: "స్నేహపూర్వకమైన"
+    reading: "snēhapūrvakamaina"
+    ipa: "sneːhapuːrʋakamaina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఇరుగుపొరుగు వాళ్లు స్నేహపూర్వకంగా ఉంటారు."
+        reading: "irugu-porugu vāḷlu snēhapūrvakaṅgā uṇṭāru."
+        bases:
+          - { word: "ఇరుగుపొరుగు", ref: "te-0435" }
+          - { word: "వాళ్లు", base: "వాళ్లు", reading: "vāḷlu" }
+          - { word: "స్నేహపూర్వకంగా", base: "స్నేహపూర్వకమైన", reading: "snēhapūrvakamaina" }
+          - { word: "ఉంటారు", ref: "te-0633" }
+      - target: "మా యజమాని స్నేహపూర్వకమైన వ్యక్తి."
+        reading: "mā yajamāni snēhapūrvakamaina vyakti."
+        bases:
+          - { word: "మా", ref: "te-0077" }
+          - { word: "యజమాని", base: "యజమాని", reading: "yajamāni" }
+          - { word: "వ్యక్తి", base: "వ్యక్తి", reading: "vyakti" }
+  - id: "te-2820"
+    target: "సరసమైన"
+    reading: "sarasamaina"
+    ipa: "sarasamaina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    antonyms:
+      - { id: "a1", ref: "te-1427" }
+    examples:
+      - target: "ఇది సరసమైన ధర."
+        reading: "idi sarasamaina dhara."
+        bases:
+          - { word: "ఇది", ref: "te-0600" }
+          - { word: "ధర", ref: "te-0240" }
+      - target: "సరసమైన అద్దె దొరికింది."
+        reading: "sarasamaina adde dorikindi."
+        bases:
+          - { word: "అద్దె", ref: "te-0436" }
+          - { word: "దొరికింది", base: "దొరుకు", reading: "dorugu" }
+  - id: "te-2821"
+    target: "ఖచ్చితమైన"
+    reading: "khaccitamaina"
+    ipa: "kʰatʃtʃit̪amaina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఖచ్చితమైన తేదీ చెప్పండి."
+        reading: "khaccitamaina tēdī ceppaṇḍi."
+        bases:
+          - { word: "తేదీ", ref: "te-0327" }
+          - { word: "చెప్పండి", base: "చెప్పు", reading: "ceppu" }
+      - target: "నెలకు ఖచ్చితమైన అద్దె ఎంత?"
+        reading: "nelaku khaccitamaina adde enta?"
+        bases:
+          - { word: "నెలకు", ref: "te-0325" }
+          - { word: "అద్దె", ref: "te-0436" }
+          - { word: "ఎంత", ref: "te-0166" }
+  - id: "te-2822"
+    target: "నెలవారీ"
+    reading: "nelavārī"
+    ipa: "nelaʋaːriː"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "నెలవారీ అద్దె ఎంత?"
+        reading: "nelavārī adde enta?"
+        bases:
+          - { word: "అద్దె", ref: "te-0436" }
+          - { word: "ఎంత", ref: "te-0166" }
+      - target: "నెలవారీ అద్దె చెల్లించాలి."
+        reading: "nelavārī adde cellñcāli."
+        bases:
+          - { word: "అద్దె", ref: "te-0436" }
+          - { word: "చెల్లించాలి", base: "చెల్లించు", reading: "cellñcu" }
+  - id: "te-2823"
+    target: "ముందస్తు"
+    reading: "mundastu"
+    ipa: "mund̪ast̪u"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ముందస్తు చెల్లింపు ఉంది."
+        reading: "mundastu cellimpu undi."
+        bases:
+          - { word: "చెల్లింపు", ref: "te-1415" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "ముందస్తు చెల్లింపు ఎంత?"
+        reading: "mundastu cellimpu enta?"
+        bases:
+          - { word: "చెల్లింపు", ref: "te-1415" }
+          - { word: "ఎంత", ref: "te-0166" }
+  - id: "te-2824"
+    target: "వేరే"
+    reading: "vēre"
+    ipa: "ʋeːreː"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "వేరే గది ఉందా?"
+        reading: "vēre gadi undā?"
+        bases:
+          - { word: "గది", ref: "te-0420" }
+          - { word: "ఉందా", ref: "te-0633" }
+      - target: "ఇది వేరే ఇల్లు."
+        reading: "idi vēre illu."
+        bases:
+          - { word: "ఇది", ref: "te-0600" }
+          - { word: "ఇల్లు", ref: "te-0195" }
+  - id: "te-2825"
+    target: "ఒంటరి"
+    reading: "oṇṭari"
+    ipa: "oɳʈari"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఒంటరి వ్యక్తికి మాత్రమే ఇల్లు."
+        reading: "oṇṭari vyaktiki mātramē illu."
+        bases:
+          - { word: "వ్యక్తికి", base: "వ్యక్తి", reading: "vyakti" }
+          - { word: "మాత్రమే", ref: "te-1033" }
+          - { word: "ఇల్లు", ref: "te-0195" }
+      - target: "అతను ఒంటరిగా ఉంటాడు."
+        reading: "atanu oṇṭarigā uṇṭāḍu."
+        bases:
+          - { word: "అతను", ref: "te-0595" }
+          - { word: "ఒంటరిగా", base: "ఒంటరి", reading: "oṇṭari" }
+          - { word: "ఉంటాడు", ref: "te-0633" }
+  - id: "te-2826"
+    target: "శాకాహారి"
+    reading: "śākāhāri"
+    ipa: "ʃaːkaːhaːri"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఈ యజమాని శాకాహారి."
+        reading: "ī yajamāni śākāhāri."
+        bases:
+          - { word: "ఈ", ref: "te-0607" }
+          - { word: "యజమాని", base: "యజమాని", reading: "yajamāni" }
+      - target: "శాకాహారి వాళ్లకు మాత్రమే ఇల్లు."
+        reading: "śākāhāri vāḷlaku mātramē illu."
+        bases:
+          - { word: "వాళ్లకు", base: "వాళ్లు", reading: "vāḷlu" }
+          - { word: "మాత్రమే", ref: "te-1033" }
+          - { word: "ఇల్లు", ref: "te-0195" }
+  - id: "te-2827"
+    target: "మాంసాహారి"
+    reading: "māṁsāhāri"
+    ipa: "maːmsaːhaːri"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "నేను మాంసాహారిని."
+        reading: "nēnu māṁsāhārini."
+        bases:
+          - { word: "నేను", ref: "te-0593" }
+          - { word: "మాంసాహారిని", base: "మాంసాహారి", reading: "māṁsāhāri" }
+      - target: "అతను మాంసాహారి."
+        reading: "atanu māṁsāhāri."
+        bases:
+          - { word: "అతను", ref: "te-0595" }
+  - id: "te-2828"
+    target: "సొంత"
+    reading: "sonta"
+    ipa: "sont̪a"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "నాకు సొంత ఇల్లు ఉంది."
+        reading: "nāku sonta illu undi."
+        bases:
+          - { word: "నాకు", ref: "te-0593" }
+          - { word: "ఇల్లు", ref: "te-0195" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "సొంత వంటగది కావాలి."
+        reading: "sonta vaṇṭagadi kāvāli."
+        bases:
+          - { word: "వంటగది", base: "వంటగది", reading: "vaṇṭagadi" }
+          - { word: "కావాలి", ref: "te-0460" }
+  - id: "te-2829"
+    target: "ముఖ్యమైన"
+    reading: "mukhyamaina"
+    ipa: "mukʰjamaina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఇది ముఖ్యమైన విషయం."
+        reading: "idi mukhyamaina viṣayaṁ."
+        bases:
+          - { word: "ఇది", ref: "te-0600" }
+          - { word: "విషయం", base: "విషయం", reading: "viṣayaṁ" }
+      - target: "అద్దె ఒప్పందం ముఖ్యమైనది."
+        reading: "adde oppandaṁ mukhyamainadi."
+        bases:
+          - { word: "అద్దె", ref: "te-0436" }
+          - { word: "ఒప్పందం", base: "ఒప్పందం", reading: "oppandaṁ" }
+          - { word: "ముఖ్యమైనది", base: "ముఖ్యమైన", reading: "mukhyamaina" }
+  - id: "te-2830"
+    target: "అవసరమైన"
+    reading: "avasaramaina"
+    ipa: "aʋasaramaina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఇది అవసరమైన వస్తువు."
+        reading: "idi avasaramaina vastuvu."
+        bases:
+          - { word: "ఇది", ref: "te-0600" }
+          - { word: "వస్తువు", ref: "te-0890" }
+      - target: "ఈ పత్రాలు అవసరమైనవి."
+        reading: "ī patrālu avasaramainavi."
+        bases:
+          - { word: "ఈ", ref: "te-0607" }
+          - { word: "పత్రాలు", base: "పత్రం", reading: "patraṁ" }
+          - { word: "అవసరమైనవి", base: "అవసరమైన", reading: "avasaramaina" }
+  - id: "te-2831"
+    target: "వెలిసిన"
+    reading: "velisina"
+    ipa: "ʋelisina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఇది వెలిసిన గోడ."
+        reading: "idi velisina gōḍa."
+        bases:
+          - { word: "ఇది", ref: "te-0600" }
+          - { word: "గోడ", ref: "te-2112" }
+      - target: "ఈ కర్టెన్ వెలిసిన రంగులో ఉంది."
+        reading: "ī kartēn velisina raṅgulō undi."
+        bases:
+          - { word: "ఈ", ref: "te-0607" }
+          - { word: "కర్టెన్", base: "కర్టెన్", reading: "kartēn" }
+          - { word: "రంగులో", ref: "te-0927" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-2832"
+    target: "పగిలిన"
+    reading: "pagilina"
+    ipa: "paɡilina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "పగిలిన అద్దం ఉంది."
+        reading: "pagilina addaṁ undi."
+        bases:
+          - { word: "అద్దం", ref: "te-0883" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "పగిలిన కిటికీ మార్చాలి."
+        reading: "pagilina kiṭīki mārcāli."
+        bases:
+          - { word: "కిటికీ", ref: "te-0426" }
+          - { word: "మార్చాలి", base: "మార్చు", reading: "mārcu" }
+  - id: "te-2833"
+    target: "విరిగిన"
+    reading: "virigina"
+    ipa: "ʋiriɡina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "విరిగిన కుర్చీ ఉంది."
+        reading: "virigina kurcī undi."
+        bases:
+          - { word: "కుర్చీ", ref: "te-0431" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "విరిగిన తలుపు మార్చాలి."
+        reading: "virigina talupu mārcāli."
+        bases:
+          - { word: "తలుపు", ref: "te-0425" }
+          - { word: "మార్చాలి", base: "మార్చు", reading: "mārcu" }
+  - id: "te-2834"
+    target: "పనిచేసే"
+    reading: "panicēsē"
+    ipa: "panitʃeːseː"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    antonyms:
+      - { id: "a1", ref: "te-2835" }
+    examples:
+      - target: "పనిచేసే ఫ్యాన్ ఉంది."
+        reading: "panicēsē phyān undi."
+        bases:
+          - { word: "ఫ్యాన్", ref: "te-0433" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "నాకు పనిచేసే కుళాయి కావాలి."
+        reading: "nāku panicēsē kuḷāyi kāvāli."
+        bases:
+          - { word: "నాకు", ref: "te-0593" }
+          - { word: "కుళాయి", base: "కుళాయి", reading: "kuḷāyi" }
+          - { word: "కావాలి", ref: "te-0460" }
+  - id: "te-2835"
+    target: "పాడైన"
+    reading: "pāḍaina"
+    ipa: "paːɖaina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    antonyms:
+      - { id: "a1", ref: "te-2834" }
+    examples:
+      - target: "పాడైన తలుపు ఉంది."
+        reading: "pāḍaina talupu undi."
+        bases:
+          - { word: "తలుపు", ref: "te-0425" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "పాడైన గోడ ఇంకా ఉంది."
+        reading: "pāḍaina gōḍa iṅkā undi."
+        bases:
+          - { word: "గోడ", ref: "te-2112" }
+          - { word: "ఇంకా", ref: "te-0346" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - ref: "te-0502"
+  - ref: "te-0503"
+  - ref: "te-0508"
+  - ref: "te-0506"
+  - ref: "te-0505"
+  - ref: "te-0504"
+  - ref: "te-1430"
+  - ref: "te-0954"
+  - ref: "te-0955"
+  - ref: "te-0956"
+  - ref: "te-0958"
+  - ref: "te-0959"
+  - ref: "te-0962"
+  - ref: "te-0960"
+  - ref: "te-0961"
+  - ref: "te-0945"
+  - ref: "te-0500"
+  - ref: "te-0501"
+  - ref: "te-1429"
+  - ref: "te-1029"
+  - ref: "te-1032"
+  - ref: "te-0957"
+  - ref: "te-1049"
+  - ref: "te-1050"
