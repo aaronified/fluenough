@@ -1,0 +1,658 @@
+# The order French is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner
+# from English is taught fr-en-home for fr-home (ADR-0013, ADR-0036).
+#
+# This is also French's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"): every
+# unit from the first words to B1, written or planned, with its size in
+# words, its grammar topics, the three milestones, and for each planned unit
+# its listening and reading passages. A unit with no deck yet is planned:
+# the course teaches it as "Coming" until a deck is written. No deck of
+# French is written yet, so every unit is planned. Sizes follow the plan's
+# levels (about 700, 900 and 1,200 words; low confidence): French is tier I
+# (docs/plans/language-paths-scheme.md, x1.0), so they are not scaled. They
+# are one number for every native language. A theme named here that
+# decks/themes.yaml does not list yet is added to it with its first deck.
+#
+# The order follows docs/plans/words-rules-sentences.md (owner, 2026-10-07,
+# and 2026-10-17: "build the path files for all present languages via an
+# opus agent, as per our current path design"):
+# 1. the phrasebook, taught whole from the first lesson;
+# 2. the first word units, the sound differences first: the scheme asks
+#    French for a "heavy pronunciation step (silent letters, liaison)";
+# 3. no script units: French is written in Latin letters. Its accents and
+#    silent letters go in the script guide (fr-script.yaml), and its
+#    sounds in the sounds file (fr-sounds.yaml), when they are written;
+# 4. a core of about 200 common words in themed units, before the large
+#    tables ("Yes, smaller (~200)");
+# 5. rules as forms: articles and gender (with elision), the one verb "to
+#    be" and "to have", the regular present, negation and questions,
+#    prepositions and their contractions, then the other verb forms,
+#    practised on the words already known;
+# 6. sentences, each after its words and rules; then the other themes,
+#    each its words, then its rules, then its sentences.
+# French's grammar keeps the Romance order of
+# docs/plans/language-paths-scheme.md within each level, with the
+# scheme's French adjustments: a single "to be" (etre, taught with avoir,
+# which the compound past needs), and no ser/estar step. So: articles and
+# gender, to be and to have, the regular present, the irregular present,
+# prepositions, object pronouns (with y and en), reflexives, the past
+# (passe compose and imparfait), the future and the conditional, the
+# subjunctive, and the compound tenses. French adds the partitive, the
+# near future (aller + infinitive), the two auxiliaries of the passe
+# compose, and, for reading, the passe simple at B1.
+#
+# The core's order is by judgement, most common first: about me, everyday
+# verbs, the common adverbs and function words, how much and how many,
+# describing words, where things are, more verbs. It was meant to come
+# from Wikipedia's counts (tools/wikipedia_frequency.py, #516): order the
+# core again from the counts once they are written.
+#
+# Every deck of French is listed exactly once.
+schema: 1
+kind: "path"
+id: "fr-path"
+language: "fr"
+# The gender classes a noun's gender is one of (#512; DECK-FORMAT.md, Card data).
+genders: ["m", "f"]
+# Where French is spoken, for a rater's region and a card's region note
+# (ADR-0036): the main varieties with their own norms of sound and word,
+# each named with example places so that a rater can place themselves.
+# France, Belgium, Switzerland and Quebec each have their own dictionaries
+# of usage; Acadian French differs enough from Quebec's to stand apart;
+# Africa, where most of French's speakers now live, is grouped as West
+# Africa, Central Africa and the Maghreb, since usage differs most between
+# those. France is one region: whether its south (Midi) stands apart is
+# for a native reviewer. Low confidence on the grouping: a native reviewer
+# checks this list before any rating names a region. The ids are
+# permanent, as card ids are; rename a name, never an id. The app adds
+# "Elsewhere" after them (the Caribbean, the Indian Ocean, Louisiana,
+# Luxembourg and the rest).
+regions:
+  - id: "france"
+    name: { "en": "France (Paris, Lyon, Marseille, Lille, Toulouse)" }
+  - id: "belgium"
+    name: { "en": "Belgium (Brussels, Wallonia: Liège, Namur, Charleroi)" }
+  - id: "switzerland"
+    name: { "en": "Switzerland (Romandy: Geneva, Lausanne, Neuchâtel, Fribourg)" }
+  - id: "quebec"
+    name: { "en": "Quebec and the rest of Canada's Laurentian French (Montreal, Quebec City, Ottawa)" }
+  - id: "acadia"
+    name: { "en": "Acadia (New Brunswick, Nova Scotia, Prince Edward Island)" }
+  - id: "west-africa"
+    name: { "en": "West Africa (Senegal, Côte d'Ivoire, Mali, Burkina Faso, Guinea, Benin, Togo)" }
+  - id: "central-africa"
+    name: { "en": "Central Africa (Cameroon, DR Congo, Republic of the Congo, Gabon)" }
+  - id: "maghreb"
+    name: { "en": "The Maghreb (Morocco, Algeria, Tunisia)" }
+# "*" takes decks a learner adds (#22): one of a unit's theme at the
+# bottom of that unit, any other in the last unit.
+units:
+  # 1. The phrasebook, taught whole from the first lesson, with the first
+  # words beside it: fr-phrasebook (15-25 survival phrases, which count no
+  # words) and fr-first-words when written.
+  - planned: { id: "fr-phrasebook", theme: "first-words", words: 15 }
+    listening_passages:
+      - { id: "first-greetings", text: { "en": "Greeting a neighbour in the morning and the evening: bonjour, bonsoir, au revoir" } }
+    reading_passages:
+      - { id: "phrase-card", text: { "en": "A pocket card of survival phrases" } }
+  # 2. The first word units, the sound differences first.
+  - planned: { id: "fr-sound-differences", theme: "sound-differences", words: 16 }
+    listening_passages:
+      - { id: "nasal-and-plain", text: { "en": "Pairs of words told apart by one sound: a nasal vowel or not, u or ou (bon and beau, dessus and dessous)" } }
+    reading_passages:
+      - { id: "silent-letters-list", text: { "en": "A list of everyday words whose last letters are not said" } }
+  - planned: { id: "fr-questions", theme: "questions", words: 15 }
+    listening_passages:
+      - { id: "asking-around", text: { "en": "Asking who, what, where and when at a station" } }
+    reading_passages:
+      - { id: "tourist-leaflet", text: { "en": "A leaflet answering the questions a visitor asks" } }
+  - planned: { id: "fr-addressing", theme: "addressing", words: 15 }
+    listening_passages:
+      - { id: "meeting-a-neighbour", text: { "en": "Greeting a neighbour and an older stranger, tu and vous" } }
+    reading_passages:
+      - { id: "name-badges", text: { "en": "Name badges at a meeting with titles and surnames: Monsieur, Madame" } }
+  - planned: { id: "fr-pronouns", theme: "pronouns", words: 20 }
+    listening_passages:
+      - { id: "who-is-who", text: { "en": "Pointing out who is who at a family gathering: he, she, they" } }
+    reading_passages:
+      - { id: "seating-chart", text: { "en": "A seating chart for a party, with names and who sits where" } }
+  - planned: { id: "fr-family", theme: "family", words: 30 }
+    listening_passages:
+      - { id: "my-family", text: { "en": "Someone describes the people in a family photo" } }
+    reading_passages:
+      - { id: "family-tree", text: { "en": "A small family tree with names and relations" } }
+  - planned: { id: "fr-numbers-1-20", theme: "numbers-1-20", words: 20 }
+    listening_passages:
+      - { id: "counting-aloud", text: { "en": "Counting objects aloud, from one to twenty" } }
+    reading_passages:
+      - { id: "room-numbers", text: { "en": "Room numbers on a row of doors" } }
+  # 3. No script units: French is written in Latin letters.
+  # 4. The core: about 200 common words, most common first (by judgement
+  # until the Wikipedia counts are written, #516).
+  - planned: { id: "fr-about-me", theme: "about-me", words: 25 }
+    listening_passages:
+      - { id: "introducing-yourself", text: { "en": "Introducing yourself to a new classmate" } }
+    reading_passages:
+      - { id: "registration-form", text: { "en": "A simple registration form: name, age, country, language" } }
+  - planned: { id: "fr-everyday-verbs", theme: "everyday-verbs", words: 40 }
+    listening_passages:
+      - { id: "morning-routine", text: { "en": "A mother says what each person in the house does in the morning" } }
+    reading_passages:
+      - { id: "fridge-note", text: { "en": "A note on the fridge: what to eat, what to drink and where things are" } }
+  - planned: { id: "fr-adverbs", theme: "adverbs", words: 35 }
+    listening_passages:
+      - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
+    reading_passages:
+      - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
+  - planned: { id: "fr-quantities", theme: "quantities", words: 25 }
+    listening_passages:
+      - { id: "at-the-grocers", text: { "en": "Asking how much and how many at a grocer's" } }
+    reading_passages:
+      - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
+  - planned: { id: "fr-describing", theme: "describing", words: 40 }
+    listening_passages:
+      - { id: "how-are-you-feeling", text: { "en": "A friend asks how you feel today, and you answer" } }
+    reading_passages:
+      - { id: "postcard-from-the-coast", text: { "en": "A short postcard: the weather and the food" } }
+  - planned: { id: "fr-location", theme: "location", words: 20 }
+    listening_passages:
+      - { id: "where-did-i-put-it", text: { "en": "Looking for keys: here, there, inside, outside, near, far" } }
+    reading_passages:
+      - { id: "note-for-a-guest", text: { "en": "A note for a guest saying where things are in the flat" } }
+  - planned: { id: "fr-more-verbs", theme: "more-verbs", words: 30 }
+    listening_passages:
+      - { id: "a-saturday", text: { "en": "Friends say what they do on a Saturday" } }
+    reading_passages:
+      - { id: "to-do-list", text: { "en": "A short to-do list for the day" } }
+  # 5. Rules as forms, practised on the words known: articles and gender
+  # first, then the verbs to be and to have, the present, negation and
+  # questions, and the prepositions.
+  - planned: { id: "fr-grammar-articles-gender", grammar: ["articles-gender", "elision"] }
+    listening_passages:
+      - { id: "le-or-la", text: { "en": "Naming things in a kitchen with le, la, l' and les, un and une" } }
+    reading_passages:
+      - { id: "shop-labels", text: { "en": "Labels on the shelves of a small shop" } }
+  - planned: { id: "fr-grammar-etre-avoir", grammar: ["etre", "avoir"] }
+    listening_passages:
+      - { id: "who-and-what-they-have", text: { "en": "Saying who someone is and what they have" } }
+    reading_passages:
+      - { id: "introduction-card", text: { "en": "A short card introducing a person: who they are, where they are from, what they have" } }
+  - planned: { id: "fr-grammar-present-er", grammar: "present-er" }
+    listening_passages:
+      - { id: "what-we-like", text: { "en": "Friends say what they like, where they live and what they speak" } }
+    reading_passages:
+      - { id: "pen-pal-letter", text: { "en": "A short letter to a pen pal" } }
+  - planned: { id: "fr-grammar-negation", grammar: "ne-pas" }
+    listening_passages:
+      - { id: "no-thank-you", text: { "en": "Saying what you do not eat, do not like and do not have" } }
+    reading_passages:
+      - { id: "house-rules", text: { "en": "A short list of house rules: no smoking, no shoes" } }
+  - planned: { id: "fr-grammar-questions", grammar: ["est-ce-que", "inversion"] }
+    listening_passages:
+      - { id: "three-ways-to-ask", text: { "en": "The same question asked three ways: by the voice, with est-ce que, and turned round" } }
+    reading_passages:
+      - { id: "interview-questions", text: { "en": "The questions of a short magazine interview" } }
+  - planned: { id: "fr-grammar-prepositions", grammar: ["prepositions", "au-du-contractions"] }
+    listening_passages:
+      - { id: "where-is-it", text: { "en": "Saying where things are and where you go: to the market, from the station" } }
+    reading_passages:
+      - { id: "room-description", text: { "en": "A short description of a room and where its furniture is" } }
+  - planned: { id: "fr-grammar-present-ir-re", grammar: ["present-ir", "present-re"] }
+    listening_passages:
+      - { id: "finishing-and-waiting", text: { "en": "Saying when you finish work and who you wait for" } }
+    reading_passages:
+      - { id: "lunch-notes", text: { "en": "Short notes about who finishes, sells and waits for what" } }
+  - planned: { id: "fr-grammar-present-irregular", grammar: "present-irregular" }
+    listening_passages:
+      - { id: "what-do-you-do-today", text: { "en": "Saying what you do, where you go and what you can and want to do" } }
+    reading_passages:
+      - { id: "weekly-plan", text: { "en": "A weekly plan for a household: who goes where and does what" } }
+  # 6. Then the other A1 themes, each its words, its rules, then its
+  # sentences.
+  - planned: { id: "fr-work", theme: "work", words: 30 }
+    listening_passages:
+      - { id: "what-do-you-do", text: { "en": "Two people ask each other what they do for a living" } }
+    reading_passages:
+      - { id: "business-card", text: { "en": "A business card and a short job description" } }
+  - planned: { id: "fr-grammar-possessives", grammar: "possessives" }
+    listening_passages:
+      - { id: "whose-is-it", text: { "en": "Sorting out whose bag, coat and keys are whose" } }
+    reading_passages:
+      - { id: "family-email", text: { "en": "A short email about my brother, my sister and their children" } }
+  - planned: { id: "fr-numbers-big", theme: "numbers-big", words: 35 }
+    listening_passages:
+      - { id: "big-numbers", text: { "en": "Hearing prices, years and phone numbers, with soixante-dix and quatre-vingts" } }
+    reading_passages:
+      - { id: "price-tags", text: { "en": "Price tags and a bus-route number board" } }
+  - planned: { id: "fr-market", theme: "market", words: 35 }
+    listening_passages:
+      - { id: "at-the-market", text: { "en": "Buying fruit and vegetables at a market stall" } }
+    reading_passages:
+      - { id: "market-price-board", text: { "en": "A price board at a market" } }
+  - planned: { id: "fr-groceries", theme: "groceries", words: 35 }
+    listening_passages:
+      - { id: "shopping-list-aloud", text: { "en": "Two people go through a shopping list" } }
+    reading_passages:
+      - { id: "shopping-list", text: { "en": "A handwritten shopping list" } }
+  - planned: { id: "fr-grammar-partitive", grammar: "partitive" }
+    listening_passages:
+      - { id: "some-bread-some-milk", text: { "en": "Asking for some bread, some water and no more sugar" } }
+    reading_passages:
+      - { id: "breakfast-order", text: { "en": "A hotel breakfast order form" } }
+  - planned: { id: "fr-food", theme: "food", words: 50 }
+    listening_passages:
+      - { id: "ordering-a-meal", text: { "en": "Choosing dishes from a menu" } }
+    reading_passages:
+      - { id: "menu-card", text: { "en": "A restaurant menu card with dishes and prices" } }
+  - planned: { id: "fr-transport", theme: "transport", words: 30 }
+    listening_passages:
+      - { id: "bus-stop", text: { "en": "Asking which bus goes to the centre" } }
+    reading_passages:
+      - { id: "timetable", text: { "en": "A bus and metro timetable" } }
+  - planned: { id: "fr-directions", theme: "directions", words: 30 }
+    listening_passages:
+      - { id: "asking-the-way", text: { "en": "Asking the way to the station and being told" } }
+    reading_passages:
+      - { id: "simple-map", text: { "en": "A simple map with a route in words" } }
+  - planned: { id: "fr-body", theme: "body", words: 30 }
+    listening_passages:
+      - { id: "at-the-doctors", text: { "en": "Telling a doctor where it hurts" } }
+    reading_passages:
+      - { id: "stretching-chart", text: { "en": "A chart of simple morning stretches" } }
+  - planned: { id: "fr-places", theme: "places", words: 35 }
+    listening_passages:
+      - { id: "walk-to-the-market", text: { "en": "A neighbour names the places you pass on the way to the market" } }
+    reading_passages:
+      - { id: "street-signs", text: { "en": "Signs along a street: pharmacy, school, bank, church" } }
+  - planned: { id: "fr-grammar-demonstratives", grammar: "demonstratives" }
+    listening_passages:
+      - { id: "this-one-or-that-one", text: { "en": "Choosing between this shop and that one, this street and these houses" } }
+    reading_passages:
+      - { id: "guided-walk", text: { "en": "A leaflet for a short guided walk: this square, this church" } }
+  - planned: { id: "fr-home", theme: "home", words: 35 }
+    listening_passages:
+      - { id: "a-flat-tour", text: { "en": "A tour of a flat, room by room" } }
+    reading_passages:
+      - { id: "flat-advert", text: { "en": "A short advert for a flat to rent" } }
+  - planned: { id: "fr-time", theme: "time", words: 30 }
+    listening_passages:
+      - { id: "what-time-is-it", text: { "en": "Asking and telling the time" } }
+    reading_passages:
+      - { id: "opening-hours", text: { "en": "The opening hours on a shop door" } }
+  - planned: { id: "fr-grammar-futur-proche", grammar: "futur-proche" }
+    listening_passages:
+      - { id: "plans-for-the-weekend", text: { "en": "Saying what you are going to do this weekend" } }
+    reading_passages:
+      - { id: "invitation-note", text: { "en": "A note inviting a friend, with plans for the day" } }
+  - planned: { id: "fr-help", theme: "help", words: 20 }
+    listening_passages:
+      - { id: "lost-in-the-city", text: { "en": "Asking for help when lost" } }
+    reading_passages:
+      - { id: "emergency-numbers", text: { "en": "A card of emergency numbers and what to say" } }
+    milestone: "A1"
+  # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
+  # then its sentences.
+  - planned: { id: "fr-daily-life", theme: "daily-life", words: 40 }
+    listening_passages:
+      - { id: "a-normal-day", text: { "en": "Someone talks through an ordinary day" } }
+    reading_passages:
+      - { id: "daily-timetable", text: { "en": "A timetable for a day: wake, work, eat, sleep" } }
+  - planned: { id: "fr-grammar-reflexives", grammar: "reflexives" }
+    listening_passages:
+      - { id: "getting-ready", text: { "en": "Saying what you do to yourself in the morning: wake up, wash, dress" } }
+    reading_passages:
+      - { id: "morning-checklist", text: { "en": "A checklist for getting ready in the morning" } }
+  - planned: { id: "fr-calendar", theme: "calendar", words: 35 }
+    listening_passages:
+      - { id: "making-a-date", text: { "en": "Fixing a day and a time with a friend" } }
+    reading_passages:
+      - { id: "wall-calendar", text: { "en": "A wall calendar with appointments" } }
+  - planned: { id: "fr-clothes", theme: "clothes", words: 35 }
+    listening_passages:
+      - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
+    reading_passages:
+      - { id: "shop-offer-sign", text: { "en": "A clothes shop's sign with its offers" } }
+  - planned: { id: "fr-grammar-adjective-agreement", grammar: ["adjective-agreement", "adjective-position"] }
+    listening_passages:
+      - { id: "a-big-red-house", text: { "en": "Describing a house and the people in it" } }
+    reading_passages:
+      - { id: "holiday-flat-ad", text: { "en": "An advert describing a flat for the holidays" } }
+  - planned: { id: "fr-animals", theme: "animals", words: 35 }
+    listening_passages:
+      - { id: "a-farm-visit", text: { "en": "A child names the animals seen on a visit to a farm" } }
+    reading_passages:
+      - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
+  - planned: { id: "fr-weather", theme: "weather", words: 40 }
+    listening_passages:
+      - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain and wind" } }
+    reading_passages:
+      - { id: "weather-message", text: { "en": "A message to a friend about the weather" } }
+  - planned: { id: "fr-grammar-passe-compose-avoir", grammar: "passe-compose-avoir" }
+    listening_passages:
+      - { id: "what-i-did-yesterday", text: { "en": "Saying what you did yesterday" } }
+    reading_passages:
+      - { id: "yesterday-diary", text: { "en": "A short diary entry about yesterday" } }
+  - planned: { id: "fr-things", theme: "things", words: 45 }
+    listening_passages:
+      - { id: "packing-for-a-trip", text: { "en": "Two people pack a bag for a trip" } }
+    reading_passages:
+      - { id: "lost-property-list", text: { "en": "A lost-property list at a railway station" } }
+  - planned: { id: "fr-shopping", theme: "shopping", words: 40 }
+    listening_passages:
+      - { id: "asking-the-price", text: { "en": "Asking about price and size at a shop" } }
+    reading_passages:
+      - { id: "price-list", text: { "en": "A shop's price list and its offers" } }
+  - planned: { id: "fr-grammar-object-pronouns", grammar: ["direct-object-pronouns", "indirect-object-pronouns"] }
+    listening_passages:
+      - { id: "give-it-to-me", text: { "en": "Asking someone to pass, give and show things" } }
+    reading_passages:
+      - { id: "short-requests", text: { "en": "Short written requests that use le, la, lui and leur" } }
+  - planned: { id: "fr-eating-out", theme: "eating-out", words: 40 }
+    listening_passages:
+      - { id: "booking-a-table", text: { "en": "Booking a table and ordering" } }
+    reading_passages:
+      - { id: "restaurant-bill", text: { "en": "A restaurant bill and a tip" } }
+  - planned: { id: "fr-cooking", theme: "cooking", words: 40 }
+    listening_passages:
+      - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes a dish" } }
+    reading_passages:
+      - { id: "recipe-card", text: { "en": "A recipe card with its steps" } }
+  - planned: { id: "fr-grammar-pronouns-y-en", grammar: ["pronoun-y", "pronoun-en"] }
+    listening_passages:
+      - { id: "how-many-do-you-want", text: { "en": "At a bakery: how many do you want? I'll take three of them" } }
+    reading_passages:
+      - { id: "recipe-questions", text: { "en": "Questions and answers under a recipe: do you go there, do you need some" } }
+  - planned: { id: "fr-school", theme: "school", words: 40 }
+    listening_passages:
+      - { id: "school-day", text: { "en": "A child describes the school day" } }
+    reading_passages:
+      - { id: "class-timetable", text: { "en": "A school timetable" } }
+  - planned: { id: "fr-hobbies", theme: "hobbies", words: 40 }
+    listening_passages:
+      - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends" } }
+    reading_passages:
+      - { id: "club-poster", text: { "en": "A poster for a sports and music club" } }
+  - planned: { id: "fr-grammar-comparison", grammar: "comparison" }
+    listening_passages:
+      - { id: "which-is-better", text: { "en": "Two friends compare two phones" } }
+    reading_passages:
+      - { id: "two-cities", text: { "en": "A short text comparing two cities" } }
+  - planned: { id: "fr-illness", theme: "illness", words: 40 }
+    listening_passages:
+      - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
+    reading_passages:
+      - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
+  - planned: { id: "fr-grammar-imperatives", grammar: "imperatives" }
+    listening_passages:
+      - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
+    reading_passages:
+      - { id: "signs-and-rules", text: { "en": "Signs saying what to do and what not to do" } }
+  - planned: { id: "fr-chores", theme: "chores", words: 35 }
+    listening_passages:
+      - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
+    reading_passages:
+      - { id: "chore-list", text: { "en": "A weekly chore list on the wall" } }
+  - planned: { id: "fr-appearance", theme: "appearance", words: 40 }
+    listening_passages:
+      - { id: "describing-a-friend", text: { "en": "Describing a friend to someone who will meet them at the station" } }
+    reading_passages:
+      - { id: "lost-and-found-notice", text: { "en": "A lost-and-found notice describing a bag" } }
+  - planned: { id: "fr-grammar-passe-compose-etre", grammar: "passe-compose-etre" }
+    listening_passages:
+      - { id: "a-busy-weekend", text: { "en": "Telling where you went, when you arrived and when you left last weekend" } }
+    reading_passages:
+      - { id: "trip-postcard", text: { "en": "A postcard about a weekend trip" } }
+  - planned: { id: "fr-verbs-3", theme: "verbs-3", words: 45 }
+    listening_passages:
+      - { id: "a-busy-day", text: { "en": "Someone lists everything they did in a day" } }
+    reading_passages:
+      - { id: "diary-entry", text: { "en": "A short diary entry" } }
+  - planned: { id: "fr-phone", theme: "phone", words: 35 }
+    listening_passages:
+      - { id: "phone-call", text: { "en": "A phone call to arrange a meeting" } }
+    reading_passages:
+      - { id: "text-messages", text: { "en": "A few text messages between friends" } }
+  - planned: { id: "fr-grammar-venir-de", grammar: "venir-de" }
+    listening_passages:
+      - { id: "just-arrived", text: { "en": "Saying what has just happened: I have just arrived, she has just left" } }
+    reading_passages:
+      - { id: "quick-updates", text: { "en": "Quick messages about what someone has just done" } }
+  - planned: { id: "fr-journey", theme: "journey", words: 45 }
+    listening_passages:
+      - { id: "ticket-counter", text: { "en": "Buying a train ticket at the counter" } }
+    reading_passages:
+      - { id: "train-timetable", text: { "en": "A train timetable and a platform notice" } }
+  - planned: { id: "fr-grammar-imparfait", grammar: "imparfait" }
+    listening_passages:
+      - { id: "when-i-was-small", text: { "en": "Telling what you used to do when you were small" } }
+    reading_passages:
+      - { id: "childhood-note", text: { "en": "A short note remembering a childhood summer" } }
+  - planned: { id: "fr-nature", theme: "nature", words: 40 }
+    listening_passages:
+      - { id: "walk-by-the-river", text: { "en": "Two people describe a walk by the river at dusk" } }
+    reading_passages:
+      - { id: "park-signs", text: { "en": "Signs in a park" } }
+  - planned: { id: "fr-adjectives-2", theme: "adjectives-2", words: 40 }
+    listening_passages:
+      - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
+    reading_passages:
+      - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
+  - planned: { id: "fr-grammar-negation-more", grammar: ["ne-jamais", "ne-rien", "ne-personne", "ne-plus"] }
+    listening_passages:
+      - { id: "never-again", text: { "en": "Saying you never, no longer, nothing and nobody" } }
+    reading_passages:
+      - { id: "complaint-note", text: { "en": "A short note complaining that nothing works and nobody answers" } }
+  - planned: { id: "fr-workplace", theme: "workplace", words: 40 }
+    listening_passages:
+      - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }
+    reading_passages:
+      - { id: "office-notice", text: { "en": "An office notice about a meeting" } }
+  - planned: { id: "fr-geography", theme: "geography", words: 40 }
+    listening_passages:
+      - { id: "where-french-is-spoken", text: { "en": "Naming regions and cities of the French-speaking world" } }
+    reading_passages:
+      - { id: "francophone-map", text: { "en": "A map caption: where French is spoken" } }
+    milestone: "A2"
+  # B1: the themes and grammar of the CEFR's B1.
+  - planned: { id: "fr-health", theme: "health", words: 55 }
+    listening_passages:
+      - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
+    reading_passages:
+      - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
+  - planned: { id: "fr-grammar-passe-compose-imparfait", grammar: "passe-compose-imparfait" }
+    listening_passages:
+      - { id: "it-was-raining-when", text: { "en": "Telling a story: it was raining when the bus arrived" } }
+    reading_passages:
+      - { id: "holiday-story", text: { "en": "A short story about a holiday, with what was going on and what happened" } }
+  - planned: { id: "fr-feelings", theme: "feelings", words: 55 }
+    listening_passages:
+      - { id: "a-hard-week", text: { "en": "A friend says how the week made them feel" } }
+    reading_passages:
+      - { id: "letter-to-a-friend", text: { "en": "A letter to a friend about worries and hopes" } }
+  - planned: { id: "fr-grammar-future", grammar: "futur-simple" }
+    listening_passages:
+      - { id: "next-year", text: { "en": "Saying what will happen next year" } }
+    reading_passages:
+      - { id: "horoscope-column", text: { "en": "A short horoscope column" } }
+  - planned: { id: "fr-news", theme: "news", words: 55 }
+    listening_passages:
+      - { id: "radio-news", text: { "en": "A short radio news bulletin" } }
+    reading_passages:
+      - { id: "headline-list", text: { "en": "A list of newspaper headlines" } }
+  - planned: { id: "fr-opinions", theme: "opinions", words: 50 }
+    listening_passages:
+      - { id: "agreeing-and-disagreeing", text: { "en": "Two friends agree and disagree politely over coffee" } }
+    reading_passages:
+      - { id: "readers-letters", text: { "en": "Two short letters to a newspaper" } }
+  - planned: { id: "fr-grammar-conditional", grammar: "conditionnel-present" }
+    listening_passages:
+      - { id: "what-would-you-do", text: { "en": "Saying what you would do in another situation" } }
+    reading_passages:
+      - { id: "polite-requests", text: { "en": "Polite requests written with the conditional: je voudrais, pourriez-vous" } }
+  - planned: { id: "fr-travel", theme: "travel", words: 55 }
+    listening_passages:
+      - { id: "hotel-booking", text: { "en": "Booking a hotel room over the phone" } }
+    reading_passages:
+      - { id: "itinerary", text: { "en": "A two-day trip itinerary" } }
+  - planned: { id: "fr-grammar-relative-pronouns", grammar: ["qui-que", "ou-relative"] }
+    listening_passages:
+      - { id: "the-man-who-came", text: { "en": "Describing people and places by what happened: the one who came, the town where we met" } }
+    reading_passages:
+      - { id: "shop-reviews", text: { "en": "Short reviews of a shop and its staff" } }
+  - planned: { id: "fr-services", theme: "services", words: 45 }
+    listening_passages:
+      - { id: "at-the-post-office", text: { "en": "Sending a parcel at the post office counter" } }
+    reading_passages:
+      - { id: "bank-form", text: { "en": "A simple bank form" } }
+  - planned: { id: "fr-government", theme: "government", words: 40 }
+    listening_passages:
+      - { id: "at-the-office", text: { "en": "Asking an officer which document is needed" } }
+    reading_passages:
+      - { id: "form-instructions", text: { "en": "Instructions on an application form" } }
+  - planned: { id: "fr-grammar-subjunctive-present", grammar: "subjonctif-present" }
+    listening_passages:
+      - { id: "wishes-and-advice", text: { "en": "Friends make wishes and give advice: I want you to come, you must rest" } }
+    reading_passages:
+      - { id: "friendly-advice", text: { "en": "A friendly note that suggests what to do and what to hope for" } }
+  - planned: { id: "fr-technology", theme: "technology", words: 50 }
+    listening_passages:
+      - { id: "fixing-a-phone", text: { "en": "Asking a shop to fix a phone" } }
+    reading_passages:
+      - { id: "app-instructions", text: { "en": "Instructions inside a phone app" } }
+  - planned: { id: "fr-careers", theme: "careers", words: 50 }
+    listening_passages:
+      - { id: "job-interview", text: { "en": "A short job interview" } }
+    reading_passages:
+      - { id: "job-advert", text: { "en": "A job advert" } }
+  - planned: { id: "fr-grammar-subjunctive-uses", grammar: "subjonctif-uses" }
+    listening_passages:
+      - { id: "doubts-and-hopes", text: { "en": "Saying what you doubt, fear or are glad of" } }
+    reading_passages:
+      - { id: "opinion-notes", text: { "en": "Short notes of opinion that use il faut que and bien que" } }
+  - planned: { id: "fr-environment", theme: "environment", words: 50 }
+    listening_passages:
+      - { id: "recycling-talk", text: { "en": "Neighbours talk about recycling and the heat" } }
+    reading_passages:
+      - { id: "clean-up-notice", text: { "en": "A notice for a neighbourhood clean-up" } }
+  - planned: { id: "fr-cinema", theme: "cinema", words: 55 }
+    listening_passages:
+      - { id: "after-the-film", text: { "en": "Friends talk about a film they saw" } }
+    reading_passages:
+      - { id: "film-review", text: { "en": "A short film review" } }
+  - planned: { id: "fr-grammar-reported-speech", grammar: "discours-indirect" }
+    listening_passages:
+      - { id: "he-said-that", text: { "en": "Telling someone what a third person said" } }
+    reading_passages:
+      - { id: "message-thread", text: { "en": "A message thread passing on what someone said" } }
+  - planned: { id: "fr-arts", theme: "arts", words: 45 }
+    listening_passages:
+      - { id: "a-music-class", text: { "en": "A teacher explains a music class" } }
+    reading_passages:
+      - { id: "exhibition-notice", text: { "en": "A notice for an art exhibition" } }
+  - planned: { id: "fr-history", theme: "history", words: 45 }
+    listening_passages:
+      - { id: "a-castle-visit", text: { "en": "A guide tells the story of an old castle" } }
+    reading_passages:
+      - { id: "museum-card", text: { "en": "A museum card about a ruler" } }
+  - planned: { id: "fr-grammar-plus-que-parfait", grammar: "plus-que-parfait" }
+    listening_passages:
+      - { id: "it-had-already-happened", text: { "en": "Saying what had already happened when something else began" } }
+    reading_passages:
+      - { id: "police-report", text: { "en": "A short report of what had happened before" } }
+  - planned: { id: "fr-festivals", theme: "festivals", words: 40 }
+    listening_passages:
+      - { id: "festival-days", text: { "en": "Neighbours plan the days of a festival together" } }
+    reading_passages:
+      - { id: "festival-invitation", text: { "en": "An invitation to a festival meal" } }
+  - planned: { id: "fr-weddings", theme: "weddings", words: 40 }
+    listening_passages:
+      - { id: "wedding-plans", text: { "en": "Relatives plan a wedding" } }
+    reading_passages:
+      - { id: "wedding-card", text: { "en": "A wedding invitation card" } }
+  - planned: { id: "fr-grammar-si-clauses", grammar: "si-clauses" }
+    listening_passages:
+      - { id: "rain-plans", text: { "en": "A friend's plans if it rains, and what they would do if they could" } }
+    reading_passages:
+      - { id: "late-train", text: { "en": "A message: if the train is late" } }
+  - planned: { id: "fr-sports", theme: "sports", words: 40 }
+    listening_passages:
+      - { id: "football-talk", text: { "en": "Friends talk about a football match" } }
+    reading_passages:
+      - { id: "match-report", text: { "en": "A short match report" } }
+  - planned: { id: "fr-relationships", theme: "relationships", words: 45 }
+    listening_passages:
+      - { id: "neighbours-and-friends", text: { "en": "Talking about neighbours and old friends" } }
+    reading_passages:
+      - { id: "thank-you-note", text: { "en": "A thank-you note to a neighbour" } }
+  - planned: { id: "fr-grammar-passive", grammar: ["passive", "on-impersonal"] }
+    listening_passages:
+      - { id: "it-was-done", text: { "en": "Saying what is done or was done, with on and with the passive" } }
+    reading_passages:
+      - { id: "notice-board", text: { "en": "A notice board with announcements" } }
+  - planned: { id: "fr-housing", theme: "housing", words: 40 }
+    listening_passages:
+      - { id: "renting-a-flat", text: { "en": "Asking an owner about a flat to rent" } }
+    reading_passages:
+      - { id: "rental-terms", text: { "en": "The terms of a rental" } }
+  - planned: { id: "fr-emergencies", theme: "emergencies", words: 35 }
+    listening_passages:
+      - { id: "calling-for-help", text: { "en": "Calling for help after an accident" } }
+    reading_passages:
+      - { id: "safety-notice", text: { "en": "A safety notice in a building" } }
+  - planned: { id: "fr-grammar-gerondif", grammar: "gerondif" }
+    listening_passages:
+      - { id: "while-walking", text: { "en": "Saying what you do while doing something else: listening while walking" } }
+    reading_passages:
+      - { id: "safety-tips", text: { "en": "Safety tips: by slowing down, while crossing" } }
+  - planned: { id: "fr-law", theme: "law", words: 35 }
+    listening_passages:
+      - { id: "police-complaint", text: { "en": "Making a complaint at a police station" } }
+    reading_passages:
+      - { id: "rights-leaflet", text: { "en": "A leaflet on a tenant's rights" } }
+  - planned: { id: "fr-verbs-4", theme: "verbs-4", words: 60 }
+    listening_passages:
+      - { id: "a-long-story", text: { "en": "A story told in a sequence of events" } }
+    reading_passages:
+      - { id: "short-story", text: { "en": "A short story with a turn" } }
+  - planned: { id: "fr-grammar-relative-pronouns-2", grammar: ["dont", "lequel"] }
+    listening_passages:
+      - { id: "the-book-i-told-you-about", text: { "en": "Talking about the book I told you about and the friend I travelled with" } }
+    reading_passages:
+      - { id: "classified-ads", text: { "en": "Classified ads that describe what is offered and what it is for" } }
+  - planned: { id: "fr-abstract-words", theme: "abstract-words", words: 55 }
+    listening_passages:
+      - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
+    reading_passages:
+      - { id: "opinion-column", text: { "en": "A short opinion column" } }
+  - planned: { id: "fr-money", theme: "money", words: 45 }
+    listening_passages:
+      - { id: "at-the-bank", text: { "en": "Opening an account at a bank counter" } }
+    reading_passages:
+      - { id: "bill-and-receipt", text: { "en": "A bill and a receipt" } }
+  - planned: { id: "fr-grammar-conditionnel-passe", grammar: "conditionnel-passe" }
+    listening_passages:
+      - { id: "i-would-have-come", text: { "en": "Saying what you would have done, and regrets: I should have left earlier" } }
+    reading_passages:
+      - { id: "advice-column", text: { "en": "A short advice column" } }
+  - planned: { id: "fr-literature", theme: "literature", words: 50 }
+    listening_passages:
+      - { id: "a-poem-read-aloud", text: { "en": "A teacher reads a short poem and explains it" } }
+    reading_passages:
+      - { id: "book-blurb", text: { "en": "The back-cover blurb of a novel" } }
+  - planned: { id: "fr-grammar-passe-simple", grammar: "passe-simple-reading" }
+    listening_passages:
+      - { id: "a-tale-read-aloud", text: { "en": "A folk tale read aloud: il était une fois, and what the hero did" } }
+    reading_passages:
+      - { id: "fairy-tale-page", text: { "en": "A page of a fairy tale in the passé simple, to read and not to speak" } }
+  - planned: { id: "fr-verbs-5", theme: "verbs-5", words: 45 }
+    listening_passages:
+      - { id: "what-happened-next", text: { "en": "Telling a long story with every step in order" } }
+    reading_passages:
+      - { id: "newspaper-feature", text: { "en": "A newspaper feature with a short interview" } }
+  - planned: { id: "fr-grammar-formal-address", grammar: "formal-register" }
+    listening_passages:
+      - { id: "addressing-an-elder", text: { "en": "Speaking to an elder, a stranger and a friend: vous and tu" } }
+    reading_passages:
+      - { id: "formal-letter", text: { "en": "A formal letter and its closing" } }
+    milestone: "B1"
+  - ["*"]
