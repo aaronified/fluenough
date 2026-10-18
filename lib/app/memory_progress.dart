@@ -35,6 +35,19 @@ abstract interface class ProgressStore implements Listenable {
   /// Every review, oldest first. Append-only: nothing is ever removed.
   List<ReviewEvent> get log;
 
+  /// The states of the script skills, Read script and Write script (#556),
+  /// by card: worked out from the answers to the script decks in [log]
+  /// (`SkillMap.scriptOf`), not stored, and so rebuilt for a learner whose
+  /// answers are older than the skills. Apart from [states] because they
+  /// are never drilled: nothing is due in them.
+  Map<ProgressKey, FsrsState> get scriptStates;
+
+  /// The script skills' reviews, oldest first, one for each script-deck
+  /// answer that counts in full for one: derived like [scriptStates], and
+  /// not in [log], so that no count of answers, streak or day's work
+  /// counts them twice. [ProgressQueries.skillLog] joins the two.
+  List<ReviewEvent> get scriptLog;
+
   /// Records a review: runs [Fsrs.next] on the pair's state, with the
   /// parameters that schedule its skill ([parameters]), appends the event,
   /// and returns it. Call it the moment the answer is given.
@@ -137,11 +150,15 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
       .._parameters = parameters
       .._log.addAll(replayed.events)
       .._states.addAll(replayed.states)
+      .._scriptLog.addAll(replayed.scriptEvents)
+      .._scriptStates.addAll(replayed.scriptStates)
       .._leechActions.addAll(actions);
   }
 
   final Map<ProgressKey, FsrsState> _states = <ProgressKey, FsrsState>{};
   final List<ReviewEvent> _log = <ReviewEvent>[];
+  final Map<ProgressKey, FsrsState> _scriptStates = <ProgressKey, FsrsState>{};
+  final List<ReviewEvent> _scriptLog = <ReviewEvent>[];
   final List<LeechAction> _leechActions = <LeechAction>[];
   SkillMap _skills = const SkillMap();
   SkillParameters _parameters = SkillParameters.none;
@@ -185,6 +202,13 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
   List<ReviewEvent> get log => List<ReviewEvent>.unmodifiable(_log);
 
   @override
+  Map<ProgressKey, FsrsState> get scriptStates =>
+      Map<ProgressKey, FsrsState>.unmodifiable(_scriptStates);
+
+  @override
+  List<ReviewEvent> get scriptLog => List<ReviewEvent>.unmodifiable(_scriptLog);
+
+  @override
   ReviewEvent record({
     required String deckId,
     required String cardId,
@@ -216,6 +240,13 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     );
     _states[key] = after;
     implyReview(_states, _skills, logged(event), parameters: _parameters);
+    scriptReview(
+      _scriptStates,
+      _scriptLog,
+      _skills,
+      logged(event),
+      parameters: _parameters,
+    );
     _log.add(event);
     // A language studied now may become another's baseline: when that
     // changes which set schedules a pair, every state is replayed with the
@@ -252,6 +283,12 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     _states
       ..clear()
       ..addAll(replayed.states);
+    _scriptStates
+      ..clear()
+      ..addAll(replayed.scriptStates);
+    _scriptLog
+      ..clear()
+      ..addAll(replayed.scriptEvents);
     notifyListeners();
     return action;
   }
@@ -326,6 +363,12 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     _states
       ..clear()
       ..addAll(replayed.states);
+    _scriptStates
+      ..clear()
+      ..addAll(replayed.scriptStates);
+    _scriptLog
+      ..clear()
+      ..addAll(replayed.scriptEvents);
     _leechActions
       ..clear()
       ..addAll(actions);
@@ -343,6 +386,11 @@ extension ProgressQueries on ProgressStore {
     actionsInTimeOrder(leechActions),
     fitted: parameters.fitted,
   );
+
+  /// Every review of every skill, the script skills' (#556) after the
+  /// word skills': what a skill's pace and fit are worked out from. [log]
+  /// alone is what the learner did, answer by answer.
+  List<ReviewEvent> get skillLog => <ReviewEvent>[...log, ...scriptLog];
 
   /// What the leech actions add up to: which pairs are reset or set aside.
   LeechEffects get leechEffects => LeechEffects(leechActions);

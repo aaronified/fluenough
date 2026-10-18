@@ -83,6 +83,12 @@ wherever the table above allows it.
 - **Budget.** Tokens are limited: one review per change, no extra
   verification passes, and no new work unless the owner asks for it.
 
+## Decks before 0.6.0 (owner, 2026-10-18)
+
+"Do not start work on 0.6.0 at all before the full deck work, across all
+languages." No 0.6.0 issue is started, planned in code, or built until the
+deck work is done.
+
 ## Repositories off limits (owner, 2026-10-12)
 
 `homelab-stacks` is not part of this work. Never clone or download it, never
@@ -107,10 +113,28 @@ well"). Leave them the small, self-contained ones, such as a UI bug or a
 one-screen tweak. The deck and review work, and anything a deck build
 waits on, is built here.
 
-Only the Telugu and Bengali decks are built here in full (owner,
-2026-10-17: "You will only build the telugu and bengali decks in full.
-Other decks will then be marked as direct-code"; on when: "Now"). The
-other courses' decks (#420) are `direct-code`, for contributors.
+Every language's path and decks are built here (owner, 2026-10-18: "We
+will build the paths for every language that we want here. This is to be
+a repository of world's languages. The tower of babel, is to rise
+again."). This replaces the 2026-10-17 rule that only Telugu and Bengali
+were built here; the other courses' decks (#420) and the new courses'
+paths are no longer left to contributors.
+
+**Deck priority** (owner, 2026-10-18). Decks are built to B1 in this order:
+1. Telugu, 2. Bengali, 3. Spanish, 4. Marathi, 5. Kannada, 6. Assamese,
+7. Chinese, 8. Hindustani, 9. Japanese, 10. Korean. "Once these decks are
+done till B1 and we have added the movies songs books parts, we can
+finally start advertising the app." Other languages' paths and decks
+follow.
+
+**Hindustani** is one course (owner, 2026-10-18: "Hindi and Urdu should be
+combined as we should not care about socipolitics over linguistics"; chose
+"One course, two scripts"). The `hi` course and its card ids stay; it is
+renamed Hindustani, teaches the shared colloquial vocabulary, and offers
+Devanagari or the Perso-Arabic (Urdu)
+script as the learner's script, as Punjabi offers
+Gurmukhi or Shahmukhi. Sanskrit- and Persian-leaning synonyms go on the
+card. The Urdu path (#602) is folded into it.
 
 ## Dependencies are marked, never assumed (owner, 2026-10-12)
 

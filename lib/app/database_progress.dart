@@ -63,6 +63,12 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
   List<ReviewEvent> get log => _memory.log;
 
   @override
+  Map<ProgressKey, FsrsState> get scriptStates => _memory.scriptStates;
+
+  @override
+  List<ReviewEvent> get scriptLog => _memory.scriptLog;
+
+  @override
   List<LeechAction> get leechActions => _memory.leechActions;
 
   /// Kept in memory only: `card_states` caches each pair's own reviews, and

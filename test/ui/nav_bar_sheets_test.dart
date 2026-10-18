@@ -264,7 +264,7 @@ sheets = <String, Future<void> Function(WidgetTester tester)>{
       state,
       (context) => showAdjustedSheet(context, state, [
         for (final language in <String>['hi', 'bn'])
-          for (final mode in DrillMode.values)
+          for (final mode in DrillMode.drills)
             (
               key: (language: language, mode: mode),
               fitted: null,

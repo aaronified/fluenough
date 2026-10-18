@@ -81,7 +81,12 @@ part, the bot filling in a changed word's reading and IPA).
 
 ## Being built
 
-Nothing is in progress. The next work is in "In order" below.
+The decks, to B1, in the owner's order (2026-10-18): Telugu, Bengali,
+Spanish, Marathi, Kannada, Assamese, Chinese, Hindustani (Hindi and Urdu as
+one course, in Devanagari or
+Perso-Arabic script), Japanese, Korean. With these and
+books, films and songs (#215) done, the app is advertised. Telugu is being
+built now.
 
 ## In order
 
@@ -91,8 +96,8 @@ Releases next, by GitHub milestone (owner, 2026-10-11):
 |---|---|
 | 0.4.4 | Released 2026-10-17: set cards (#515) and the first card data from `decks-next` (#512), the language bar (#528), IPA pronunciations (#533) and the IPA course (#534), Languages I know (#490), Settings as section pages (#496), deck and review fixes (#479, #482, #525, #526) and contributor fixes (#491, #500); 0.4.3 users see deck errors until they update ("Accept the break") |
 | 0.4.5 | Dropped (owner, 2026-10-17: "Leave it. We go 0.5 directly"). The Wiktionary source check (#518) is on main; card images (#523) moved to 0.5.0 |
-| 0.5.0 | The deck and review pipeline, to reach B1 in the major Indian languages (owner, 2026-10-16). Open: the path fix (#416, #417, #418); review pipeline (#477, #508, #519); the question engine (#522, step 1 done in #568); deck search (#527); facts on cards (#546); card images (#523); an "All tags" page (#499); bugs (#483, #486, #487, #492, #556), contributors' bug fixes included (owner, 2026-10-17); minor changes (#475, #227, #484); backup (#470, local backup and restore done in #569; #112; junk-data cleanup #493). Done: #471, #476, #478, #469, #473, the script work #551–#555 |
-| 0.6.0 | Profiles (#204, #97); reminders (#90) |
+| 0.5.0 | Cut 2026-10-18 (owner: "Cut the release now"): backup and restore (#470), Read script and Write script (#556), facts on cards (#546), Waiting for review (#471), base words in Suggest a change (#476), the path rebuild (#562), the script work (#551–#555), the Recognition tile (#478). Everything still open moved to 0.6.0 (owner, 2026-10-18) |
+| 0.6.0 | Moved from 0.5.0 (owner, 2026-10-18), in order: the path fix (#416, #417, #418); review pipeline (#477, #508, #519); the question engine (#522, step 1 done in #568); card images (#523), deck search (#527), All tags (#499), a "Toward B1" bar per skill (#575, mockup first); bugs (#483, #486, #487, #492); minor (#475, #227, #484); backup (#470, #112, #493). Then profiles (#204, #97); reminders (#90); Your decks (#495) |
 | 0.7.0 | Placement v2 (#481); onboarding journey (#474); daily commitment (#485) |
 
 The numbered milestones below are the longer tracks.
