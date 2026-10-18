@@ -1019,8 +1019,14 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
           _failedRuns[code]?.count ?? 1,
     ];
 
-    Widget row(CatalogLanguage language, {required bool learningGroup}) {
-      final tile = _row(context, state, language, query, learningGroup);
+    // A language can be in "Popular" and its family at once: each row's key
+    // names its group, as keys in one list must differ.
+    Widget row(
+      CatalogLanguage language, {
+      required bool learningGroup,
+      String group = 'listed',
+    }) {
+      final tile = _row(context, state, language, query, learningGroup, group);
       return learningGroup
           ? KeyedSubtree(
               key: _cardKeys.putIfAbsent(language.key, GlobalKey.new),
@@ -1052,7 +1058,8 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
             l10n.pickerGroupPopular(popular.length),
             note: l10n.pickerPopularNote,
           ),
-          for (final language in popular) row(language, learningGroup: false),
+          for (final language in popular)
+            row(language, learningGroup: false, group: 'popular'),
         ],
         PickerHeading(l10n.knownAllLanguages, note: l10n.knownByFamily),
         for (final family in families) ...<Widget>[
@@ -1338,6 +1345,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     CatalogLanguage language,
     String query,
     bool learningGroup,
+    String group,
   ) {
     final spoken = state.settings.spokenLanguages;
     final code = language.code;
@@ -1354,7 +1362,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         : null;
     return LanguageRow(
       key: ValueKey<String>(
-        learningGroup ? 'language-${language.key}' : 'listed-${language.key}',
+        learningGroup ? 'language-${language.key}' : '$group-${language.key}',
       ),
       language: language,
       chosen: ticked,
