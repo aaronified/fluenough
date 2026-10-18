@@ -1,0 +1,837 @@
+# The order Lojban is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner
+# from English is taught jbo-en-home for jbo-home (ADR-0013, ADR-0036).
+#
+# This is also Lojban's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"):
+# every unit from the first words to B1, with its size in words, its
+# grammar topics, the three milestones, and for each planned unit its
+# listening and reading passages. No Lojban deck is written yet, so every
+# unit is planned: the course teaches each as "Coming" until its deck is
+# written. One size for every native language.
+#
+# What a word is, in Lojban. The language has four kinds of word:
+# - gismu, the about 1,350 root predicates (klama, citka, prenu), each
+#   with a fixed place structure: klama is "x1 goes to x2 from x3 by
+#   route x4 using x5";
+# - cmavo, the structure words (lo, cu, mi, pu, .ui), grouped by grammar
+#   into selma'o (LE, KOhA, PU, UI);
+# - lujvo, compounds built from the gismu's rafsi (short combining forms):
+#   bavlamdei, "tomorrow", from balvi, lamji and djedi;
+# - cmevla, names, which end in a consonant and a pause (la .djan.); with
+#   fu'ivla, predicates borrowed from other languages (spageti).
+# A unit's words are its gismu and its cmavo, and the lujvo and fu'ivla
+# that are learnt as words: a lujvo whose meaning or place structure the
+# learner cannot build from its parts by the lujvo rules (bavlamdei,
+# jbobau). A lujvo the learner
+# builds from known gismu by those rules, with the places the rules give
+# it, is practised in the rules' tables and counts no word, as Esperanto's
+# affixed words do (eo-path.yaml).
+#
+# The sizes are honest, not the plan's. The plan's levels are about 700,
+# 900 and 1,200 words (owner, 2026-10-09; low confidence). Lojban's whole
+# root vocabulary is about 1,350 gismu and a few hundred common cmavo, so
+# a B1 plan of about 2,800 words cannot be filled from roots. This plan
+# teaches about 1,050 gismu, 430 cmavo and 650 lujvo and fu'ivla learnt as
+# words, about 100 of them names and borrowings: 666, 725 and 850 words a
+# level, 2,241 in all. That is inside the validator's warning bounds
+# (half to one and a half times each level, 2,000-3,500 in all) only
+# because established lujvo are counted as words; counting gismu and cmavo
+# alone, the total would be about 1,500 and warned of. The owner is asked
+# which to count (#582). These figures are estimates by judgement; no
+# Lojban frequency count was fetched here (tools/wikipedia_frequency.py,
+# #516: jbo.wikipedia is small).
+#
+# Lojban is on no FSI list, so its tier in docs/plans/language-paths-scheme.md
+# is not set. Its grammar is regular and has no exceptions, but its words
+# have few cognates a learner from English recognises (each gismu is a
+# blend of Mandarin, English, Hindi, Spanish, Russian and Arabic), and
+# its logic is unlike any natural language's. Tier II or III (x1.5) is a
+# guess, for pacing only; the sizes above are bounded by the lexicon, not
+# by the tier. To confirm with the owner.
+#
+# The order follows docs/plans/words-rules-sentences.md (owner, 2026-10-07,
+# and 2026-10-17: "build the path files for all present languages via an
+# opus agent, as per our current path design"):
+# 1. the phrasebook, taught whole from the first lesson;
+# 2. the first word units: the sounds first, then how the grammar differs
+#    (a predicate and its places, in place of nouns and verbs), then five
+#    themes;
+# 3. no script units: Lojban is written in Latin letters, six vowels
+#    (a e i o u y) and seventeen consonants (b c d f g j k l m n p r s t v
+#    x z), with the apostrophe (said as h, between vowels), the period (a
+#    pause, before a word that starts with a vowel and after a name) and
+#    the comma (a syllable break). These are taught in the sounds unit and
+#    the script guide (jbo-script.yaml), not in alphabet decks, so the path
+#    has no `alphabet`. Zbalermorna, Lojban's own script in the private use
+#    area (UCSUR), is a later option, not part of this plan;
+# 4. a core of about 200 common words in themed units, before the large
+#    tables ("Yes, smaller (~200)");
+# 5. rules as forms, practised on the words already known;
+# 6. sentences, each after its words and rules; then the other themes,
+#    each its words, then its rules, then its sentences.
+#
+# Lojban's grammar has no section of its own in
+# docs/plans/language-paths-scheme.md. It follows the constructed-language
+# pattern of Esperanto's (2.15): the sounds and the word shapes first,
+# then the system the rest is built on, then word building. Its order:
+# 1. the gismu and their place structures: the bridi (selbri and sumti),
+#    cu, lo ... ku, zo'e, the place tags fa fe fi fo fu, and conversion
+#    with se te ve xe, each a table over every gismu known;
+# 2. the cmavo by selma'o, as each is needed: COI and DOI (addressing),
+#    KOhA (pronouns), PA (numbers), LE and LA (descriptions and names), NA
+#    (negation), PU (the first tense), FAhA and VA (space), NOI (relative
+#    clauses), BAI (modal tags);
+# 3. lujvo building, as rules over the gismu known, from their rafsi:
+#    the rafsi of each gismu, the joining rules and hyphen letters, then
+#    the places a lujvo takes;
+# 4. the logical connectives: A (.e .a .o .u) between sumti, JA (je ja jo
+#    ju) in tanru, GIhA between bridi tails, .ije between sentences, then
+#    forethought (ge ... gi) and the non-logical JOI;
+# 5. tense in full: ZI and VA, ZEhA, ROI, the ZAhO event contours, and
+#    intervals;
+# 6. the attitudinals: UI indicators, their scale (nai, cu'i, sai, ru'e),
+#    then evidentials and discursives;
+# 7. the abstractions: nu and du'u at A2, ka, ni and si'o at B1, then the
+#    rest of NU.
+# Grammar topic ids are ASCII and write the apostrophe as h, as Lojban's
+# own URLs and file names do: zohe for zo'e, gihe for gi'e. Topic names
+# are not shown to learners.
+#
+# Lojban has no grammatical gender, so `genders` is empty. nakni (male)
+# and fetsi (female) are gismu like any other, and a lujvo such as
+# nakybe'e is built by rule, not by a gender class.
+#
+# Lojban has no regional dialects: one baseline, set by The Complete
+# Lojban Language (1997) and the baselined gismu and cmavo lists, spoken
+# by a small community spread over many countries and met mostly online.
+# What differs between speakers is the accent of their first language
+# and, more, which proposals beyond the baseline (xorlo, now in use, and
+# the experimental cmavo) they accept: a matter of usage, not of region.
+# A region question ("Where you speak Lojban") would not group raters by
+# anything their answers share, as in Esperanto's path (PR #598). The
+# path lists no `regions` (the validator refuses an empty list), and the
+# app asks no region question. To confirm with the owner (#582).
+#
+# The core's order is by judgement, most common first: about me, everyday
+# predicates, time and frequency words, how much and how many, describing
+# words, where things are, more predicates. It was meant to come from
+# Wikipedia's counts (tools/wikipedia_frequency.py, #516); no Lojban dump
+# was fetched here (2026-10-18): order the core again from the counts, or
+# from a corpus count of the community's texts, once one is written.
+#
+# A planned unit holds one core id. Where a written unit will hold more
+# than one deck, the others are named in a comment over the unit they
+# join; a theme's sentence deck, jbo-<theme>-sentences, joins its theme's
+# unit once written.
+#
+# Every deck of Lojban is listed exactly once.
+schema: 1
+kind: "path"
+id: "jbo-path"
+language: "jbo"
+# The gender classes a noun's gender is one of (#512; DECK-FORMAT.md, Card
+# data): none, since Lojban has no grammatical gender.
+genders: []
+# "*" takes decks a learner adds (#22): one of a unit's theme at the
+# bottom of that unit, any other in the last unit.
+units:
+  # 1. The phrasebook, taught whole from the first lesson: coi, co'o,
+  # ki'e, je'e, .e'o, .u'u, mi'e, do mo, mi na jimpe.
+  # jbo-first-words joins it when written.
+  - planned: { id: "jbo-phrasebook", theme: "first-words", words: 10 }
+    listening_passages:
+      - { id: "first-coi", text: { "en": "coi, ki'e and co'o: greeting someone on a voice chat of Lojban speakers, thanking them and leaving" } }
+    reading_passages:
+      - { id: "chat-greetings", text: { "en": "The first lines of a chat room: coi rodo, mi'e la .alis., and the replies" } }
+  # 2. The first word units. The sounds first: c said as in "ship", j as
+  # in "measure", x as in Scottish "loch", the apostrophe said h and only
+  # between vowels, y the neutral vowel of "sofa", the tapped or trilled
+  # r, the diphthongs ai ei oi au, and the stress always on the next-to-
+  # last syllable, a y syllable not counted. Then the pause: the period
+  # before every word that starts with a vowel (.i, .ui) and after every
+  # name (la .djan.), and the comma inside a word. Every word is read as
+  # written.
+  - planned: { id: "jbo-sound-differences", grammar: ["sound-differences", "penultimate-stress", "pauses"], words: 12 }
+    listening_passages:
+      - { id: "sounds-alike", text: { "en": "Pairs said one after the other: cinta and sinta, ja'i and jai, xu and ku, .ui and .u'i" } }
+    reading_passages:
+      - { id: "letters-and-pauses", text: { "en": "A short list of everyday words with the apostrophe, the period and y, each said the way it is written" } }
+  # How the grammar differs from English's: no nouns and no verbs, but
+  # predicates with numbered places; a sentence is a bridi, its selbri and
+  # its sumti; tense is optional; the order x1 cu selbri x2 x3.
+  - planned: { id: "jbo-grammar-differences", grammar: ["bridi", "place-structure"] }
+    listening_passages:
+      - { id: "mi-klama", text: { "en": "A teacher fills the places of klama one at a time: mi klama, mi klama lo zarci, mi klama lo zarci lo zdani" } }
+    reading_passages:
+      - { id: "place-chart", text: { "en": "A chart of klama's five places, x1 to x5, with a word in each" } }
+  # xu, ma, mo, xo and the answers go'i and na go'i.
+  - planned: { id: "jbo-questions", theme: "questions", words: 12 }
+    listening_passages:
+      - { id: "asking-around", text: { "en": "Asking who, what and how many with ma, mo and xo, and answering go'i" } }
+    reading_passages:
+      - { id: "question-card", text: { "en": "A card of short questions a newcomer asks, each with its answer" } }
+  # COI and DOI, the vocatives: coi, co'o, doi, fi'i, re'i, mu'o, be'e,
+  # ju'i, je'e, ki'e, ta'a, nu'e; and the names that follow la and doi.
+  - planned: { id: "jbo-addressing", theme: "addressing", words: 15 }
+    listening_passages:
+      - { id: "meeting-a-speaker", text: { "en": "Greeting a new speaker, giving your name with mi'e and asking theirs" } }
+    reading_passages:
+      - { id: "name-badges", text: { "en": "Name badges at a meeting, each a name in Lojban spelling with its pauses" } }
+  # KOhA: mi, do, mi'o, mi'a, ma'a, do'o, ti, ta, tu, ko'a to ko'u, ri, ra,
+  # ru; and prenu, nanmu, ninmu, verba, nakni, fetsi.
+  - planned: { id: "jbo-pronouns", theme: "pronouns", words: 25 }
+    listening_passages:
+      - { id: "who-is-who", text: { "en": "Pointing out who is who at a family gathering: ti, ta and tu, mi and do" } }
+    reading_passages:
+      - { id: "seating-chart", text: { "en": "A seating chart for a party, with names and who sits where" } }
+  # The family's gismu: mamta, patfu, bersa, tixnu, bruna, mensi, tamne,
+  # rirni, speni, famti, dzena. Their lujvo (e.g. for grandparents) are
+  # built in A2's lujvo rules and counted there as forms.
+  - planned: { id: "jbo-family", theme: "family", words: 25 }
+    listening_passages:
+      - { id: "my-family", text: { "en": "Someone describes the people in a family photo, each with its place: x1 is the mother of x2" } }
+    reading_passages:
+      - { id: "family-tree", text: { "en": "A small family tree with names and relations" } }
+  # PA: no, pa, re, ci, vo, mu, xa, ze, bi, so; bigger numbers are digit
+  # strings (pano is ten, pare twelve, reno twenty).
+  - planned: { id: "jbo-numbers-1-20", theme: "numbers-1-20", words: 12 }
+    listening_passages:
+      - { id: "counting-aloud", text: { "en": "Counting objects aloud, from one to twenty, digit by digit" } }
+    reading_passages:
+      - { id: "room-numbers", text: { "en": "Room numbers on a row of doors, written as digits and as Lojban words" } }
+  # 3. No script units: Lojban is written in Latin letters.
+  # 4. The core: about 200 common words, most common first (by judgement
+  # until a count is written, #516).
+  - planned: { id: "jbo-about-me", theme: "about-me", words: 25 }
+    listening_passages:
+      - { id: "introducing-yourself", text: { "en": "Introducing yourself to a new member of a Lojban chat: name, home, languages" } }
+    reading_passages:
+      - { id: "registration-form", text: { "en": "A simple registration form: cmene, xabju, bangu" } }
+  # The commonest gismu, each with its places: klama, citka, pinxe,
+  # viska, tirna, tavla, cusku, djuno, jimpe, djica, nelci, gasnu, zbasu,
+  # dunda, lebna, ponse, sipna, tadni, ctuca, gunka.
+  - planned: { id: "jbo-everyday-verbs", theme: "everyday-verbs", words: 45 }
+    listening_passages:
+      - { id: "morning-routine", text: { "en": "A mother says what each person in the house does in the morning" } }
+    reading_passages:
+      - { id: "fridge-note", text: { "en": "A note on the fridge: what to eat, what to drink and where things are" } }
+  # Lojban has no adverbs as a word class. This unit's words are the
+  # cmavo English says with adverbs: the tenses pu, ca, ba, the distances
+  # zi, za, zu, the frequencies roi, reroi, so'iroi, and ji'a, ku'i, za'u.
+  # Their grammar comes in A1 and A2's tense rules.
+  - planned: { id: "jbo-adverbs", theme: "adverbs", words: 25 }
+    listening_passages:
+      - { id: "how-often", text: { "en": "Saying when and how often things are done: pu, ca, ba, roi" } }
+    reading_passages:
+      - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
+  # The quantifiers of PA: ro, su'o, so'i, so'u, so'a, piro, pisu'o, du'e,
+  # mo'a, rau; and klani, mutce, cmalu.
+  - planned: { id: "jbo-quantities", theme: "quantities", words: 25 }
+    listening_passages:
+      - { id: "at-the-grocers", text: { "en": "Asking how much and how many at a grocer's" } }
+    reading_passages:
+      - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
+  # Property gismu: barda, cmalu, melbi, xamgu, xlali, glare, lenku,
+  # clani, tordu, sutra, masno, nandu, frili, cnino, slabu, gleki, badri.
+  - planned: { id: "jbo-describing", theme: "describing", words: 45 }
+    listening_passages:
+      - { id: "how-are-you-feeling", text: { "en": "A friend asks how you feel today, and you answer" } }
+    reading_passages:
+      - { id: "postcard-from-the-coast", text: { "en": "A short postcard: the weather and the food" } }
+  # FAhA and VA: zu'a, ri'u, ga'u, ni'a, ne'a, ne'i, be'a, ca'u, ti'a, vi,
+  # va, vu; and nenri, sruri, crane, trixe.
+  - planned: { id: "jbo-location", theme: "location", words: 25 }
+    listening_passages:
+      - { id: "where-are-my-keys", text: { "en": "Looking for keys: here, there, in, on, under, beside" } }
+    reading_passages:
+      - { id: "room-description", text: { "en": "A short description of a room and where its furniture is" } }
+  - planned: { id: "jbo-more-verbs", theme: "more-verbs", words: 35 }
+    listening_passages:
+      - { id: "after-work", text: { "en": "Two friends say what they do after work" } }
+    reading_passages:
+      - { id: "weekly-plan", text: { "en": "A weekly plan for a household: who goes where and does what" } }
+  # 5. Rules as forms, practised on the words known. First the word shapes:
+  # a brivla (CVCCV or CCVCV, a gismu) from a cmavo (CV, CVV) from a cmevla
+  # (ending in a consonant), the way a reader tells a word's class from its
+  # letters.
+  - planned: { id: "jbo-grammar-word-shapes", grammar: ["brivla-shape", "cmavo-shape", "cmevla-shape"] }
+    listening_passages:
+      - { id: "which-kind-of-word", text: { "en": "A teacher reads words aloud and the class says gismu, cmavo or name" } }
+    reading_passages:
+      - { id: "word-shape-chart", text: { "en": "A chart of known words sorted by their shape: CVCCV, CCVCV, CV, CVV, and names" } }
+  # The bridi in full: lo ... ku over every gismu known, cu, and zo'e for
+  # a place left empty.
+  - planned: { id: "jbo-grammar-descriptions", grammar: ["lo-ku", "cu", "zohe"] }
+    listening_passages:
+      - { id: "the-goer", text: { "en": "Turning predicates into things: lo klama, the goer; lo zarci, the market; lo se citka, the food" } }
+    reading_passages:
+      - { id: "label-cards", text: { "en": "Labels on things in a room, each lo and a known gismu" } }
+  # The place tags FA, over every gismu known: fa, fe, fi, fo, fu, to fill
+  # places out of order.
+  - planned: { id: "jbo-grammar-place-tags", grammar: ["fa-fe-fi-fo-fu"] }
+    listening_passages:
+      - { id: "out-of-order", text: { "en": "The same sentence of klama said in three orders with fa, fe and fi, all meaning the same" } }
+    reading_passages:
+      - { id: "place-tag-notes", text: { "en": "Short notes that fill only the third or fourth place of a known gismu" } }
+  # SE conversion, a table over every gismu known: se, te, ve and xe swap
+  # the first place with the second to fifth (se dunda, a gift; te dunda,
+  # a receiver). A form is null where the gismu has no such place.
+  - planned: { id: "jbo-grammar-conversion", grammar: ["se", "te", "ve", "xe"] }
+    listening_passages:
+      - { id: "giver-and-gift", text: { "en": "A child names lo dunda, lo se dunda and lo te dunda at a birthday" } }
+    reading_passages:
+      - { id: "conversion-chart", text: { "en": "A chart of known gismu with their se, te, ve and xe forms, and what each names" } }
+  # NA and the first questions: na, na'e, xu, and the answers go'i, na
+  # go'i, je'e.
+  - planned: { id: "jbo-grammar-negation-questions", grammar: ["na", "nahe", "xu-gohi"] }
+    listening_passages:
+      - { id: "yes-or-no", text: { "en": "Asking xu questions and answering go'i and na go'i" } }
+    reading_passages:
+      - { id: "quiz-card", text: { "en": "A short yes-or-no quiz on a café table" } }
+  # The first tense, PU, optional in Lojban: pu, ca, ba.
+  - planned: { id: "jbo-grammar-tense-pu-ca-ba", grammar: ["pu", "ca", "ba"] }
+    listening_passages:
+      - { id: "before-now-after", text: { "en": "Saying what you did, do and will do, and that the same bridi without a tense can mean any" } }
+    reading_passages:
+      - { id: "status-messages", text: { "en": "Short status messages: who is where, doing what, and when" } }
+  # 6. Then the other A1 themes, each its words, its rules, then its
+  # sentences.
+  - planned: { id: "jbo-work", theme: "work", words: 30 }
+    listening_passages:
+      - { id: "what-do-you-do", text: { "en": "Two people ask each other what they do for a living" } }
+    reading_passages:
+      - { id: "business-card", text: { "en": "A business card and a short job description" } }
+  # Few new cmavo (ki'o, pi, ni'u, ma'u); the rest is digit strings.
+  - planned: { id: "jbo-numbers-big", theme: "numbers-big", words: 10 }
+    listening_passages:
+      - { id: "big-numbers", text: { "en": "Hearing prices, years and phone numbers digit by digit" } }
+    reading_passages:
+      - { id: "price-tags", text: { "en": "Price tags and a bus-route number board" } }
+  # A number on a sumti (re lo prenu), ordinals with moi and the count of
+  # a set with mei.
+  - planned: { id: "jbo-grammar-numbers", grammar: ["quantified-sumti", "moi-ordinals"] }
+    listening_passages:
+      - { id: "first-second-third", text: { "en": "A race is announced: who came pamoi, remoi and cimoi" } }
+    reading_passages:
+      - { id: "floor-guide", text: { "en": "A floor guide in a building: the first floor, the second floor" } }
+  - planned: { id: "jbo-market", theme: "market", words: 30 }
+    listening_passages:
+      - { id: "at-the-market", text: { "en": "Buying fruit and vegetables at a market stall: lo vecnu, lo te vecnu, lo jdima" } }
+    reading_passages:
+      - { id: "market-price-board", text: { "en": "A price board at a market" } }
+  - planned: { id: "jbo-groceries", theme: "groceries", words: 30 }
+    listening_passages:
+      - { id: "shopping-list-aloud", text: { "en": "Two people go through a shopping list" } }
+    reading_passages:
+      - { id: "shopping-list", text: { "en": "A handwritten shopping list" } }
+  # The food gismu (cidja, rectu, nanba, ladru, djacu, tcati, ckafi,
+  # grute, plise, badna) and the fu'ivla for foods no gismu names.
+  - planned: { id: "jbo-food", theme: "food", words: 40 }
+    listening_passages:
+      - { id: "ordering-a-meal", text: { "en": "Choosing dishes from a menu" } }
+    reading_passages:
+      - { id: "menu-card", text: { "en": "A restaurant menu card with dishes and prices" } }
+  # LE and LA: la before a name, la with a gismu as a name (la cribe),
+  # and le, the described, against lo.
+  - planned: { id: "jbo-grammar-names", grammar: ["la-names", "le-lo"] }
+    listening_passages:
+      - { id: "a-dog-called-bear", text: { "en": "A child introduces a dog named la cribe, and says lo cribe means any bear" } }
+    reading_passages:
+      - { id: "guest-list", text: { "en": "A guest list of names in Lojban spelling, each after la" } }
+  - planned: { id: "jbo-transport", theme: "transport", words: 25 }
+    listening_passages:
+      - { id: "bus-stop", text: { "en": "Asking which bus goes to the centre: the fifth place of klama" } }
+    reading_passages:
+      - { id: "timetable", text: { "en": "A bus and tram timetable" } }
+  - planned: { id: "jbo-directions", theme: "directions", words: 20 }
+    listening_passages:
+      - { id: "asking-the-way", text: { "en": "Asking the way to the station and being told" } }
+    reading_passages:
+      - { id: "simple-map", text: { "en": "A simple map with a route in words" } }
+  # FAhA and VA as spatial tenses on a bridi: ne'i, zu'a, ri'u, vi, va, vu.
+  - planned: { id: "jbo-grammar-space-tense", grammar: ["faha", "vi-va-vu"] }
+    listening_passages:
+      - { id: "where-it-is", text: { "en": "Saying where things happen: vi, va, vu, ne'i, zu'a" } }
+    reading_passages:
+      - { id: "museum-plan", text: { "en": "A museum plan: what is beside, above and behind what" } }
+  - planned: { id: "jbo-body", theme: "body", words: 35 }
+    listening_passages:
+      - { id: "at-the-doctors", text: { "en": "Telling a doctor where it hurts" } }
+    reading_passages:
+      - { id: "stretching-chart", text: { "en": "A chart of simple morning stretches" } }
+  - planned: { id: "jbo-places", theme: "places", words: 35 }
+    listening_passages:
+      - { id: "walk-to-the-market", text: { "en": "A neighbour names the places you pass on the way to the market" } }
+    reading_passages:
+      - { id: "street-signs", text: { "en": "Signs along a street: pharmacy, school, bank, post office" } }
+  # The first tanru: two predicates, the first modifying the second
+  # (melbi zdani, a beautiful house). Grouping with bo and ke comes in A2.
+  - planned: { id: "jbo-grammar-tanru", grammar: ["tanru"] }
+    listening_passages:
+      - { id: "pretty-house", text: { "en": "A child builds two-word tanru from known gismu: barda zdani, sutra karce" } }
+    reading_passages:
+      - { id: "tanru-labels", text: { "en": "Shop signs that are two-word tanru, each with what it means" } }
+  - planned: { id: "jbo-home", theme: "home", words: 35 }
+    listening_passages:
+      - { id: "a-flat-tour", text: { "en": "A tour of a flat, room by room" } }
+    reading_passages:
+      - { id: "flat-advert", text: { "en": "A short advert for a flat to rent" } }
+  # NOI: poi (restrictive) and noi (incidental), with ke'a and ku'o.
+  - planned: { id: "jbo-grammar-relative-clauses", grammar: ["poi", "noi", "keha"] }
+    listening_passages:
+      - { id: "the-one-who", text: { "en": "Describing people by what they do: lo prenu poi klama, the person who goes" } }
+    reading_passages:
+      - { id: "lost-cat-notice", text: { "en": "A notice about a lost cat that lives in a red house" } }
+  - planned: { id: "jbo-time", theme: "time", words: 25 }
+    listening_passages:
+      - { id: "what-time-is-it", text: { "en": "Asking and telling the time" } }
+    reading_passages:
+      - { id: "opening-hours", text: { "en": "The opening hours on a shop door" } }
+  # ko, the imperative pronoun, and requests with .e'o and .e'u.
+  - planned: { id: "jbo-grammar-imperative", grammar: ["ko-imperative"] }
+    listening_passages:
+      - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class: ko zutse, ko tirna, ko ciska" } }
+    reading_passages:
+      - { id: "signs-and-rules", text: { "en": "Signs saying what to do and what not to do" } }
+  - planned: { id: "jbo-help", theme: "help", words: 15 }
+    listening_passages:
+      - { id: "lost-in-the-city", text: { "en": "Asking for help when lost" } }
+    reading_passages:
+      - { id: "emergency-numbers", text: { "en": "A card of emergency numbers and what to say" } }
+    milestone: "A1"
+  # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
+  # then its sentences.
+  - planned: { id: "jbo-daily-life", theme: "daily-life", words: 35 }
+    listening_passages:
+      - { id: "a-normal-day", text: { "en": "Someone talks through an ordinary day" } }
+    reading_passages:
+      - { id: "daily-timetable", text: { "en": "A timetable for a day: wake, work, eat, sleep" } }
+  # Grouping in tanru: bo, ke ... ke'e, and co (the modified first).
+  - planned: { id: "jbo-grammar-tanru-grouping", grammar: ["bo", "ke-kehe", "co"] }
+    listening_passages:
+      - { id: "pretty-little-girl", text: { "en": "Three tanru of the same words grouped three ways, and what each means" } }
+    reading_passages:
+      - { id: "grouping-chart", text: { "en": "A chart of three-word tanru with and without bo and ke" } }
+  - planned: { id: "jbo-calendar", theme: "calendar", words: 25 }
+    listening_passages:
+      - { id: "making-a-date", text: { "en": "Fixing a day and a time with a friend" } }
+    reading_passages:
+      - { id: "wall-calendar", text: { "en": "A wall calendar with appointments" } }
+  # Lujvo, as rules over the gismu known. First the rafsi: each gismu's
+  # short forms, CVC, CVV and CCV, and its four-letter form, a table with
+  # a null where a gismu lacks one; then joining two rafsi into a lujvo
+  # (bangu and lojbo: jbobau).
+  - planned: { id: "jbo-grammar-rafsi", grammar: ["rafsi", "lujvo-joining"] }
+    listening_passages:
+      - { id: "short-forms", text: { "en": "A teacher gives a gismu and the class gives its short rafsi: bangu, bau; zdani, zda" } }
+    reading_passages:
+      - { id: "rafsi-chart", text: { "en": "A chart of known gismu and their rafsi" } }
+  - planned: { id: "jbo-clothes", theme: "clothes", words: 30 }
+    listening_passages:
+      - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
+    reading_passages:
+      - { id: "shop-offer-sign", text: { "en": "A clothes shop's sign with its offers" } }
+  # The logical connectives between sumti, A: .e, .a, .o, .u, with na and
+  # nai on either side (.enai, na.e) and the question ji.
+  - planned: { id: "jbo-grammar-connectives-sumti", grammar: ["a-connectives", "connective-negation"] }
+    listening_passages:
+      - { id: "tea-or-coffee", text: { "en": "Offering tea .a coffee, and being told: tea .e coffee, or neither" } }
+    reading_passages:
+      - { id: "truth-table-card", text: { "en": "A card showing .e, .a, .o and .u, each with a short example" } }
+  # Animals: gismu, and fu'ivla for animals no gismu names.
+  - planned: { id: "jbo-animals", theme: "animals", words: 35 }
+    listening_passages:
+      - { id: "a-farm-visit", text: { "en": "A child names the animals seen on a visit to a farm" } }
+    reading_passages:
+      - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
+  - planned: { id: "jbo-weather", theme: "weather", words: 30 }
+    listening_passages:
+      - { id: "weather-forecast", text: { "en": "A forecast: sun, rain and wind" } }
+    reading_passages:
+      - { id: "weather-message", text: { "en": "A message to a friend about the weather" } }
+  # The hyphen letters: r and n between rafsi, y after a consonant-final
+  # four-letter rafsi, and which rafsi may end a lujvo.
+  - planned: { id: "jbo-grammar-lujvo-hyphens", grammar: ["hyphen-r-n", "hyphen-y", "lujvo-final-rafsi"] }
+    listening_passages:
+      - { id: "building-words", text: { "en": "Two speakers build new lujvo from known gismu and say where the r, n or y goes" } }
+    reading_passages:
+      - { id: "new-words-list", text: { "en": "A list of lujvo built from known gismu, each split into its rafsi" } }
+  - planned: { id: "jbo-things", theme: "things", words: 40 }
+    listening_passages:
+      - { id: "packing-for-a-trip", text: { "en": "Two people pack a bag for a trip" } }
+    reading_passages:
+      - { id: "lost-property-list", text: { "en": "A lost-property list at a railway station" } }
+  # Tense in time, beyond PU: ZI (zi, za, zu), ZEhA (ze'i, ze'a, ze'u) and
+  # ROI (paroi, reroi).
+  - planned: { id: "jbo-grammar-tense-distance", grammar: ["zi-za-zu", "zehi-zeha-zehu", "roi"] }
+    listening_passages:
+      - { id: "long-ago", text: { "en": "Saying how long ago, for how long and how many times: puzu, ze'u, reroi" } }
+    reading_passages:
+      - { id: "diary-and-plan", text: { "en": "A diary line for yesterday and a plan for tomorrow" } }
+  - planned: { id: "jbo-shopping", theme: "shopping", words: 35 }
+    listening_passages:
+      - { id: "asking-the-price", text: { "en": "Asking about price and size at a shop" } }
+    reading_passages:
+      - { id: "price-list", text: { "en": "A shop's price list and its offers" } }
+  # Possession and loose association: pe, ne, po, po'e, and a sumti
+  # inside a description (lo mi karce).
+  - planned: { id: "jbo-grammar-possession", grammar: ["pe-ne", "po-pohe", "lo-mi-sumti"] }
+    listening_passages:
+      - { id: "whose-is-it", text: { "en": "Sorting out whose bag, whose book and whose keys are on a table" } }
+    reading_passages:
+      - { id: "lost-property-tags", text: { "en": "Name tags on lost things: lo mi bevri, lo do cukta" } }
+  - planned: { id: "jbo-eating-out", theme: "eating-out", words: 30 }
+    listening_passages:
+      - { id: "booking-a-table", text: { "en": "Booking a table and ordering" } }
+    reading_passages:
+      - { id: "restaurant-bill", text: { "en": "A restaurant bill and a tip" } }
+  - planned: { id: "jbo-cooking", theme: "cooking", words: 30 }
+    listening_passages:
+      - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes a dish" } }
+    reading_passages:
+      - { id: "recipe-card", text: { "en": "A recipe card with its steps" } }
+  # The UI attitudinals as words: .ui, .oi, .ua, .ue, .ii, .au, .a'o,
+  # .e'e, .o'u, .u'u, .i'e, .uu, .ie and their kin.
+  - planned: { id: "jbo-attitudinals", theme: "attitudinals", words: 40 }
+    listening_passages:
+      - { id: "a-day-of-feelings", text: { "en": "A friend tells a day with an attitudinal on every sentence: .ui, .oi, .ua" } }
+    reading_passages:
+      - { id: "chat-reactions", text: { "en": "A chat thread where each reply is mostly attitudinals" } }
+  # Their scale and intensity: nai, cu'i, sai, ru'e, cai; and their scope,
+  # on a whole sentence or on one word.
+  - planned: { id: "jbo-grammar-attitudinals", grammar: ["attitudinal-scale", "attitudinal-intensity", "attitudinal-scope"] }
+    listening_passages:
+      - { id: "happy-or-not", text: { "en": "One attitudinal said with sai, ru'e, cu'i and nai, and how each changes it" } }
+    reading_passages:
+      - { id: "feelings-scale", text: { "en": "A chart of attitudinals from nai through cu'i to cai" } }
+  - planned: { id: "jbo-school", theme: "school", words: 35 }
+    listening_passages:
+      - { id: "school-day", text: { "en": "A child describes the school day" } }
+    reading_passages:
+      - { id: "class-timetable", text: { "en": "A school timetable" } }
+  # The first abstractions, NU: nu (an event) and du'u (a proposition),
+  # closed by kei.
+  - planned: { id: "jbo-grammar-abstractions-nu-duhu", grammar: ["nu-kei", "duhu"] }
+    listening_passages:
+      - { id: "i-like-swimming", text: { "en": "Saying what you like doing and what you know: mi nelci lo nu limna, mi djuno lo du'u" } }
+    reading_passages:
+      - { id: "wish-list", text: { "en": "A wish list, each line mi djica lo nu" } }
+  - planned: { id: "jbo-hobbies", theme: "hobbies", words: 35 }
+    listening_passages:
+      - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends" } }
+    reading_passages:
+      - { id: "club-poster", text: { "en": "A poster for a sports and music club" } }
+  # Modal tags, BAI: pi'o, mu'i, ri'a, gau, bau, ka'a, ti'i, and fi'o
+  # with any gismu to add a place it lacks.
+  - planned: { id: "jbo-grammar-modal-tags", grammar: ["bai-tags", "fiho"] }
+    listening_passages:
+      - { id: "with-what", text: { "en": "Saying with what, why and in which language things were done: pi'o, mu'i, bau" } }
+    reading_passages:
+      - { id: "repair-notes", text: { "en": "Notes in a workshop: what was fixed, with which tool and why" } }
+  - planned: { id: "jbo-illness", theme: "illness", words: 30 }
+    listening_passages:
+      - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
+    reading_passages:
+      - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
+  # The logical connectives in tanru, JA: je, ja, jo, ju, and jonai.
+  - planned: { id: "jbo-grammar-connectives-tanru", grammar: ["ja-connectives"] }
+    listening_passages:
+      - { id: "big-and-red", text: { "en": "Describing a thing as barda je xunre, and asking ji" } }
+    reading_passages:
+      - { id: "product-label", text: { "en": "A product label: cheap and good, small or light" } }
+  - planned: { id: "jbo-chores", theme: "chores", words: 25 }
+    listening_passages:
+      - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
+    reading_passages:
+      - { id: "chore-list", text: { "en": "A weekly chore list on the wall" } }
+  - planned: { id: "jbo-appearance", theme: "appearance", words: 30 }
+    listening_passages:
+      - { id: "describing-a-friend", text: { "en": "Describing a friend to someone who will meet them at the station" } }
+    reading_passages:
+      - { id: "lost-and-found-notice", text: { "en": "A lost-and-found notice describing a bag" } }
+  # The event contours, ZAhO: co'a, co'u, mo'u, de'a, di'a, ca'o, pu'o,
+  # ba'o, za'o.
+  - planned: { id: "jbo-grammar-event-contours", grammar: ["zaho"] }
+    listening_passages:
+      - { id: "it-starts", text: { "en": "A concert: the music co'a starts, ca'o goes on and co'u stops" } }
+    reading_passages:
+      - { id: "progress-board", text: { "en": "A project board: not started, in progress, finished" } }
+  - planned: { id: "jbo-verbs-3", theme: "verbs-3", words: 45 }
+    listening_passages:
+      - { id: "a-busy-day", text: { "en": "Someone lists everything they did in a day" } }
+    reading_passages:
+      - { id: "diary-entry", text: { "en": "A short diary entry" } }
+  - planned: { id: "jbo-phone", theme: "phone", words: 25 }
+    listening_passages:
+      - { id: "phone-call", text: { "en": "A phone call to arrange a meeting" } }
+    reading_passages:
+      - { id: "text-messages", text: { "en": "A few text messages between friends" } }
+  - planned: { id: "jbo-journey", theme: "journey", words: 35 }
+    listening_passages:
+      - { id: "ticket-counter", text: { "en": "Buying a train ticket at the counter" } }
+    reading_passages:
+      - { id: "train-timetable", text: { "en": "A train timetable and a platform notice" } }
+  # The connectives between bridi: GIhA (gi'e, gi'a, gi'o, gi'u) on
+  # bridi tails, and .ije, .ija between sentences.
+  - planned: { id: "jbo-grammar-connectives-bridi", grammar: ["giha-connectives", "ijek"] }
+    listening_passages:
+      - { id: "because-and-but", text: { "en": "Saying what you did and what you did not: mi citka gi'e pinxe" } }
+    reading_passages:
+      - { id: "excuse-note", text: { "en": "A short note explaining why someone could not come" } }
+  - planned: { id: "jbo-nature", theme: "nature", words: 40 }
+    listening_passages:
+      - { id: "walk-by-the-river", text: { "en": "Two people describe a walk by the river at dusk" } }
+    reading_passages:
+      - { id: "park-signs", text: { "en": "Signs in a park" } }
+  - planned: { id: "jbo-adjectives-2", theme: "adjectives-2", words: 35 }
+    listening_passages:
+      - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
+    reading_passages:
+      - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
+  - planned: { id: "jbo-workplace", theme: "workplace", words: 30 }
+    listening_passages:
+      - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }
+    reading_passages:
+      - { id: "office-notice", text: { "en": "An office notice about a meeting" } }
+  # Countries, peoples and languages: the gismu that name cultures (merko,
+  # glico, xispo, jungo, xindo), lujvo with gugde and bangu, and names.
+  - planned: { id: "jbo-geography", theme: "geography", words: 30 }
+    listening_passages:
+      - { id: "where-speakers-live", text: { "en": "Speakers on a call say which countries and cities they come from" } }
+    reading_passages:
+      - { id: "world-map-caption", text: { "en": "A map caption naming countries, their peoples and their languages" } }
+    milestone: "A2"
+  # B1: the themes and grammar of the CEFR's B1.
+  - planned: { id: "jbo-health", theme: "health", words: 40 }
+    listening_passages:
+      - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
+    reading_passages:
+      - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
+  # More abstractions: ka with ce'u (a property), ni (an amount) and si'o
+  # (an idea).
+  - planned: { id: "jbo-grammar-abstractions-ka-ni", grammar: ["ka-cehu", "ni", "siho"] }
+    listening_passages:
+      - { id: "how-tall", text: { "en": "Comparing people by a property and an amount: lo ka clani, lo ni clani" } }
+    reading_passages:
+      - { id: "quality-poster", text: { "en": "A school poster on kindness and honesty, each a ka abstraction" } }
+  - planned: { id: "jbo-feelings", theme: "feelings", words: 40 }
+    listening_passages:
+      - { id: "a-hard-week", text: { "en": "A friend says how the week made them feel" } }
+    reading_passages:
+      - { id: "letter-to-a-friend", text: { "en": "A letter to a friend about worries and hopes" } }
+  # Evidentials (ja'o, ca'e, ba'a, pe'i, za'a, su'a, ti'e, ka'u) and
+  # discursives (ku'i, ji'a, si'a, sa'e, ji'u).
+  - planned: { id: "jbo-grammar-evidentials", grammar: ["evidentials", "discursives"] }
+    listening_passages:
+      - { id: "how-do-you-know", text: { "en": "Saying how you know: you saw it, heard it, think it or expect it" } }
+    reading_passages:
+      - { id: "rumour-thread", text: { "en": "A message thread where each claim is marked ti'e, za'a or pe'i" } }
+  - planned: { id: "jbo-news", theme: "news", words: 40 }
+    listening_passages:
+      - { id: "radio-news", text: { "en": "A short news bulletin" } }
+    reading_passages:
+      - { id: "headline-list", text: { "en": "A list of headlines" } }
+  - planned: { id: "jbo-opinions", theme: "opinions", words: 40 }
+    listening_passages:
+      - { id: "agreeing-and-disagreeing", text: { "en": "Two friends agree and disagree politely over coffee" } }
+    reading_passages:
+      - { id: "readers-letters", text: { "en": "Two short letters to a magazine" } }
+  # Forethought connectives: ge ... gi, ga ... gi, ganai ... gi, go ...
+  # gi, and gu'e ... gi in tanru.
+  - planned: { id: "jbo-grammar-forethought", grammar: ["ge-gi", "ganai-gi"] }
+    listening_passages:
+      - { id: "if-then", text: { "en": "Stating rules of a game: ganai it rains gi we stay in" } }
+    reading_passages:
+      - { id: "house-rules", text: { "en": "A list of house rules, each both, either or if" } }
+  - planned: { id: "jbo-travel", theme: "travel", words: 40 }
+    listening_passages:
+      - { id: "hotel-booking", text: { "en": "Booking a room with a host over the phone" } }
+    reading_passages:
+      - { id: "itinerary", text: { "en": "A two-day trip itinerary" } }
+  # The non-logical connectives, JOI: joi (a mass), ce (a set), jo'u
+  # (together), fa'u (respectively), ce'o (a sequence).
+  - planned: { id: "jbo-grammar-non-logical", grammar: ["joi", "ce-ceho", "johu-fahu"] }
+    listening_passages:
+      - { id: "carrying-the-table", text: { "en": "Two people carry a table together: lo nanmu joi lo ninmu" } }
+    reading_passages:
+      - { id: "team-list", text: { "en": "A team list: who works together, in what order, and who does what respectively" } }
+  - planned: { id: "jbo-services", theme: "services", words: 35 }
+    listening_passages:
+      - { id: "at-the-post-office", text: { "en": "Sending a parcel at the post office counter" } }
+    reading_passages:
+      - { id: "bank-form", text: { "en": "A simple bank form" } }
+  # Indirect questions: du'u with kau (mi djuno lo du'u ma kau klama).
+  - planned: { id: "jbo-grammar-indirect-questions", grammar: ["duhu-kau"] }
+    listening_passages:
+      - { id: "i-dont-know-who", text: { "en": "Saying what you do not know: who came, where and when" } }
+    reading_passages:
+      - { id: "faq-page", text: { "en": "A short page of questions a newcomer asks" } }
+  - planned: { id: "jbo-government", theme: "government", words: 30 }
+    listening_passages:
+      - { id: "at-the-office", text: { "en": "Asking an officer which document is needed" } }
+    reading_passages:
+      - { id: "form-instructions", text: { "en": "Instructions on an application form" } }
+  # Mostly lujvo and fu'ivla: Lojban has few gismu for modern things.
+  - planned: { id: "jbo-technology", theme: "technology", words: 35 }
+    listening_passages:
+      - { id: "fixing-a-phone", text: { "en": "Asking a shop to fix a phone" } }
+    reading_passages:
+      - { id: "app-instructions", text: { "en": "Instructions inside a phone app" } }
+  # The places of a lujvo: the jvajvo default from its last gismu, the
+  # places it drops, and a seljvajvo whose places are its own.
+  - planned: { id: "jbo-grammar-lujvo-places", grammar: ["jvajvo-places"] }
+    listening_passages:
+      - { id: "whose-places", text: { "en": "A teacher fills the places of a new lujvo and asks which come from which gismu" } }
+    reading_passages:
+      - { id: "lujvo-definitions", text: { "en": "Dictionary-style definitions of known lujvo, each with its numbered places" } }
+  - planned: { id: "jbo-careers", theme: "careers", words: 35 }
+    listening_passages:
+      - { id: "job-interview", text: { "en": "A short job interview" } }
+    reading_passages:
+      - { id: "job-advert", text: { "en": "A job advert" } }
+  # Quotation: zo (one word), lu ... li'u (Lojban text), zoi (other
+  # languages), and la'e lu'e (the referent and the symbol).
+  - planned: { id: "jbo-grammar-quotes", grammar: ["zo", "lu-lihu", "zoi"] }
+    listening_passages:
+      - { id: "what-does-it-mean", text: { "en": "Asking what a word means: zo klama cu mo" } }
+    reading_passages:
+      - { id: "glossary-page", text: { "en": "A glossary page quoting words with zo and phrases with lu ... li'u" } }
+  - planned: { id: "jbo-environment", theme: "environment", words: 35 }
+    listening_passages:
+      - { id: "recycling-talk", text: { "en": "Neighbours talk about recycling and the heat" } }
+    reading_passages:
+      - { id: "clean-up-notice", text: { "en": "A notice for a neighbourhood clean-up" } }
+  # Reported speech: what was said as lo se cusku, and sedu'u.
+  - planned: { id: "jbo-grammar-reported-speech", grammar: ["reported-speech"] }
+    listening_passages:
+      - { id: "he-said-that", text: { "en": "Telling someone what a third person said" } }
+    reading_passages:
+      - { id: "message-thread", text: { "en": "A message thread passing on what someone said" } }
+  - planned: { id: "jbo-cinema", theme: "cinema", words: 30 }
+    listening_passages:
+      - { id: "after-the-film", text: { "en": "Friends talk about a film they saw" } }
+    reading_passages:
+      - { id: "film-review", text: { "en": "A short film review" } }
+  # The other descriptors: lo'i (a set), loi (a mass), lo'e (the
+  # typical), and tu'a, raising a sumti to an abstraction.
+  - planned: { id: "jbo-grammar-descriptors", grammar: ["lohi-loi-lohe", "tuha"] }
+    listening_passages:
+      - { id: "all-the-dogs", text: { "en": "Talking about dogs as a set, as a mass and as the typical dog" } }
+    reading_passages:
+      - { id: "encyclopedia-entry", text: { "en": "A short encyclopedia entry on an animal, written with lo'e" } }
+  - planned: { id: "jbo-arts", theme: "arts", words: 30 }
+    listening_passages:
+      - { id: "a-music-class", text: { "en": "A teacher explains a music class" } }
+    reading_passages:
+      - { id: "exhibition-notice", text: { "en": "A notice for an art exhibition" } }
+  - planned: { id: "jbo-history", theme: "history", words: 30 }
+    listening_passages:
+      - { id: "a-castle-visit", text: { "en": "A guide tells the story of an old castle" } }
+    reading_passages:
+      - { id: "museum-card", text: { "en": "A museum card about a ruler" } }
+  # Tense intervals and compound tenses: puzi, ze'a pu, ca lo nu, and a
+  # tense as a sumti tag (ba lo nu do klama).
+  - planned: { id: "jbo-grammar-tense-intervals", grammar: ["compound-tenses", "tense-sumti-tags"] }
+    listening_passages:
+      - { id: "after-you-come", text: { "en": "Saying what happens before, during and after another event" } }
+    reading_passages:
+      - { id: "event-programme", text: { "en": "A day's programme: what happens during and after each talk" } }
+  - planned: { id: "jbo-festivals", theme: "festivals", words: 25 }
+    listening_passages:
+      - { id: "festival-days", text: { "en": "Neighbours plan the days of a festival together" } }
+    reading_passages:
+      - { id: "festival-invitation", text: { "en": "An invitation to a festival meal" } }
+  # Making names and borrowing words: a name in Lojban spelling ending in
+  # a consonant (Alice, la .alis.), and fu'ivla, borrowed predicates
+  # (spageti, the four stages and the rafsi prefix).
+  - planned: { id: "jbo-grammar-names-borrowings", grammar: ["cmevla-making", "fuhivla"] }
+    listening_passages:
+      - { id: "lojbanise-a-name", text: { "en": "Speakers turn their own names into Lojban names and say them with their pauses" } }
+    reading_passages:
+      - { id: "menu-of-loans", text: { "en": "A café menu of borrowed food words spelled the Lojban way" } }
+  - planned: { id: "jbo-sports", theme: "sports", words: 25 }
+    listening_passages:
+      - { id: "football-talk", text: { "en": "Friends talk about a football match" } }
+    reading_passages:
+      - { id: "match-report", text: { "en": "A short match report" } }
+  - planned: { id: "jbo-relationships", theme: "relationships", words: 35 }
+    listening_passages:
+      - { id: "neighbours-and-friends", text: { "en": "Talking about neighbours and old friends" } }
+    reading_passages:
+      - { id: "thank-you-note", text: { "en": "A thank-you note to a neighbour" } }
+  # The scope of negation: naku and its place in the prenex, and the
+  # scalar negators na'e, to'e, no'e over known gismu.
+  - planned: { id: "jbo-grammar-negation-scope", grammar: ["naku", "tohe-nohe"] }
+    listening_passages:
+      - { id: "not-all", text: { "en": "Saying not everyone came, and no one came, and the difference" } }
+    reading_passages:
+      - { id: "opposites-chart", text: { "en": "A chart of known gismu with their na'e, to'e and no'e forms" } }
+  - planned: { id: "jbo-housing", theme: "housing", words: 30 }
+    listening_passages:
+      - { id: "renting-a-flat", text: { "en": "Asking an owner about a flat to rent" } }
+    reading_passages:
+      - { id: "rental-terms", text: { "en": "The terms of a rental" } }
+  - planned: { id: "jbo-emergencies", theme: "emergencies", words: 25 }
+    listening_passages:
+      - { id: "calling-for-help", text: { "en": "Calling for help after an accident" } }
+    reading_passages:
+      - { id: "safety-notice", text: { "en": "A safety notice in a building" } }
+  # The prenex and the variables da, de, di: su'o da poi ... zo'u.
+  - planned: { id: "jbo-grammar-prenex", grammar: ["prenex-zohu", "da-de-di"] }
+    listening_passages:
+      - { id: "someone-somewhere", text: { "en": "Saying there is someone who knows: su'o da zo'u da djuno" } }
+    reading_passages:
+      - { id: "logic-puzzle", text: { "en": "A short logic puzzle written with da and de" } }
+  - planned: { id: "jbo-law", theme: "law", words: 30 }
+    listening_passages:
+      - { id: "police-complaint", text: { "en": "Making a complaint at a police station" } }
+    reading_passages:
+      - { id: "rights-leaflet", text: { "en": "A leaflet on a tenant's rights" } }
+  - planned: { id: "jbo-verbs-4", theme: "verbs-4", words: 45 }
+    listening_passages:
+      - { id: "a-long-story", text: { "en": "A story told in a sequence of events" } }
+    reading_passages:
+      - { id: "short-story", text: { "en": "A short story with a turn" } }
+  - planned: { id: "jbo-abstract-words", theme: "abstract-words", words: 40 }
+    listening_passages:
+      - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
+    reading_passages:
+      - { id: "opinion-column", text: { "en": "A short opinion column" } }
+  # The rest of NU: jei (truth), li'i (experience), pu'u (process), za'i
+  # (state), zu'o (activity), mu'e (point event).
+  - planned: { id: "jbo-grammar-abstractions-more", grammar: ["jei", "lihi", "puhu-zahi-zuho-muhe"] }
+    listening_passages:
+      - { id: "the-experience", text: { "en": "Talking about a journey as an event, a process, a state and an experience" } }
+    reading_passages:
+      - { id: "essay-paragraph", text: { "en": "A paragraph of an essay that names each kind of abstraction" } }
+  - planned: { id: "jbo-money", theme: "money", words: 30 }
+    listening_passages:
+      - { id: "at-the-bank", text: { "en": "Opening an account at a bank counter" } }
+    reading_passages:
+      - { id: "bill-and-receipt", text: { "en": "A bill and a receipt" } }
+  - planned: { id: "jbo-literature", theme: "literature", words: 30 }
+    listening_passages:
+      - { id: "a-poem-read-aloud", text: { "en": "A teacher reads a short Lojban poem and explains it" } }
+    reading_passages:
+      - { id: "book-blurb", text: { "en": "The back-cover blurb of a translated book" } }
+  # Numbers as sumti: li and me'o, and mei (a set of so many).
+  - planned: { id: "jbo-grammar-number-sumti", grammar: ["li", "mei"] }
+    listening_passages:
+      - { id: "two-plus-two", text: { "en": "Doing simple sums aloud with li, and naming a group of three as cimei" } }
+    reading_passages:
+      - { id: "score-sheet", text: { "en": "A score sheet with totals and teams" } }
+  - planned: { id: "jbo-verbs-5", theme: "verbs-5", words: 40 }
+    listening_passages:
+      - { id: "what-happened-next", text: { "en": "Telling a long story with every step in order" } }
+    reading_passages:
+      - { id: "newspaper-feature", text: { "en": "A newspaper feature with a short interview" } }
+  # The speakers' community: the Logical Language Group, the baseline and
+  # its proposals, jbovlaste, the chat rooms, la .uitcion., translated
+  # books and the gismu's six source languages.
+  - planned: { id: "jbo-language-community", theme: "language-community", words: 35 }
+    listening_passages:
+      - { id: "on-the-call", text: { "en": "Speakers from several countries meet on a voice call and say how they learnt Lojban" } }
+    reading_passages:
+      - { id: "community-page", text: { "en": "A page of the community's site: the dictionary, the chat rooms and the books" } }
+    milestone: "B1"
+  - ["*"]
