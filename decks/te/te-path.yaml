@@ -319,7 +319,8 @@ units:
       - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
     reading_passages:
       - { id: "signs-and-rules", text: { "en": "Signs saying what to do and not to do" } }
-  - planned: { id: "te-chores", theme: "chores", words: 45 }
+  - decks: ["te-chores", "*"]
+    words: 45
     listening_passages:
       - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
     reading_passages:
