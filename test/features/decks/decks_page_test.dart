@@ -271,7 +271,7 @@ void main() {
     await tester.pumpAndSettle();
     final l10n = l10nOf(tester);
     expect(
-      find.text(l10n.decksCourseHeading('Hindi', 'English')),
+      find.text(l10n.decksCourseHeading('Hindustani', 'English')),
       findsOneWidget,
     );
   });

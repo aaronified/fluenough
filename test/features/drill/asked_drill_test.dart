@@ -162,7 +162,7 @@ void main() {
       );
       final l10n = l10nOf(tester);
       final card = cardOf(state, hindi, 'नमस्कार');
-      expect(find.text(l10n.drillChooseWord('Hindi')), findsOneWidget);
+      expect(find.text(l10n.drillChooseWord('Hindustani')), findsOneWidget);
       expect(find.text(card.native), findsOneWidget);
       await tapText(tester, card.reading!);
       final event = state.progress.log.single;

@@ -97,7 +97,7 @@ Future<void> _tap(WidgetTester tester, Finder finder) async {
 Future<AppLocalizations> _openTest(WidgetTester tester, AppState state) async {
   await pumpScreen(tester, const VoicesPage(), state: state);
   final l10n = l10nOf(tester);
-  await _tap(tester, find.bySemanticsLabel(l10n.voicesSayLabel('Hindi')));
+  await _tap(tester, find.bySemanticsLabel(l10n.voicesSayLabel('Hindustani')));
   expect(find.byType(SpeechTestSheet), findsOneWidget);
   return l10n;
 }
@@ -124,7 +124,7 @@ void main() {
     expect(find.text(l10n.voicesSpeakingPart), findsNWidgets(voiced));
     // No second list for speech below the voices.
     expect(find.text('Recognising your speech'), findsNothing);
-    final hindi = _card('Hindi');
+    final hindi = _card('Hindustani');
     expect(
       find.descendant(of: hindi, matching: find.text(l10n.voicesPlay)),
       findsOneWidget,
@@ -259,7 +259,7 @@ void main() {
     final l10n = await _openTest(tester, state);
     final hi = _language(state, 'hi');
     final word = speechTestWords(state, hi).first;
-    expect(find.text(l10n.voicesSayLabel('Hindi')), findsOneWidget);
+    expect(find.text(l10n.voicesSayLabel('Hindustani')), findsOneWidget);
     expect(find.text(word.target), findsOneWidget);
     expect(find.text(word.reading!), findsOneWidget);
 
@@ -318,7 +318,7 @@ void main() {
           'not recognised, even online',
           SpeechFailure.unsupported,
           'error_language_not_supported',
-          (l) => l.drillUnheardUnsupported('Hindi'),
+          (l) => l.drillUnheardUnsupported('Hindustani'),
         ),
       ]) {
     testWidgets('a failed test, $name, says why in the drill\'s words with '
@@ -354,7 +354,7 @@ void main() {
     final l10n = l10nOf(tester);
     // The online switch is in the card, its line the state.
     final online = find.descendant(
-      of: _card('Hindi'),
+      of: _card('Hindustani'),
       matching: find.byWidgetPredicate(
         (w) => w is GroupedTile && w.toggleValue != null,
       ),
@@ -365,12 +365,15 @@ void main() {
       l10n.voicesSpeechOnlineOnly,
     );
 
-    await _tap(tester, find.bySemanticsLabel(l10n.voicesSayLabel('Hindi')));
+    await _tap(
+      tester,
+      find.bySemanticsLabel(l10n.voicesSayLabel('Hindustani')),
+    );
     speech.next = const <SpeechAlternative>[SpeechAlternative('नमस्ते')];
     await _tap(tester, find.text(l10n.voicesSayAnything));
     expect(speech.listens, isEmpty);
-    expect(find.text(l10n.drillOnlineAsk('Hindi')), findsOneWidget);
-    await _tap(tester, find.text(l10n.drillOnlineAllow('Hindi')));
+    expect(find.text(l10n.drillOnlineAsk('Hindustani')), findsOneWidget);
+    await _tap(tester, find.text(l10n.drillOnlineAllow('Hindustani')));
     expect(state.settings.allowsOnlineSpeech('hi'), isTrue);
     expect(speech.listens.single.onDevice, isFalse);
     expect(
@@ -396,7 +399,7 @@ void main() {
     final state = await _speaking(speech);
     await pumpScreen(tester, const VoicesPage(), state: state);
     final l10n = l10nOf(tester);
-    final hindi = _card('Hindi');
+    final hindi = _card('Hindustani');
     final online = tester.widget<GroupedTile>(
       find.descendant(
         of: hindi,
@@ -460,7 +463,10 @@ void main() {
     await tester.pumpAndSettle();
     expect(speech.stops, 0);
 
-    await _tap(tester, find.bySemanticsLabel(l10n.voicesSayLabel('Hindi')));
+    await _tap(
+      tester,
+      find.bySemanticsLabel(l10n.voicesSayLabel('Hindustani')),
+    );
     await _tap(tester, find.text(l10n.voicesSayAnything));
     expect(speech.listens, hasLength(1));
     expect(find.text(l10n.drillHearingHint), findsOneWidget);
@@ -481,7 +487,7 @@ void main() {
     final l10n = await _openTest(tester, state);
     await _tap(tester, find.text(l10n.voicesSayAnything));
     expect(state.speechStatus(hi), SpeechStatus.onlineOnly);
-    expect(find.text(l10n.drillOnlineAsk('Hindi')), findsOneWidget);
+    expect(find.text(l10n.drillOnlineAsk('Hindustani')), findsOneWidget);
     expect(
       state.log.text,
       contains('Speech error: hi-IN notOnDevice error_language_unavailable'),
@@ -495,7 +501,7 @@ void main() {
     final state = await _speaking(speech, on: false);
     await pumpScreen(tester, const VoicesPage(), state: state);
     final l10n = l10nOf(tester);
-    final hindi = _card('Hindi');
+    final hindi = _card('Hindustani');
     expect(
       find.descendant(of: hindi, matching: find.text(l10n.voicesSpeechOff)),
       findsOneWidget,
@@ -538,7 +544,10 @@ void main() {
 
         await check('cards');
         final l10n = l10nOf(tester);
-        await _tap(tester, find.bySemanticsLabel(l10n.voicesSayLabel('Hindi')));
+        await _tap(
+          tester,
+          find.bySemanticsLabel(l10n.voicesSayLabel('Hindustani')),
+        );
         await check('test');
         speech.next = const <SpeechAlternative>[SpeechAlternative('नमस्ते')];
         await _tap(tester, find.text(l10n.voicesSayWord));

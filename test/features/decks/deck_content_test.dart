@@ -86,15 +86,15 @@ void main() {
     final words = state.deckById('hi-en-first-words')!;
     expect(deckMatches(words, ''), isTrue);
     expect(deckMatches(words, 'FIRST'), isTrue);
-    expect(deckMatches(words, 'hindi'), isTrue);
+    expect(deckMatches(words, 'hindustani'), isTrue);
     expect(deckMatches(words, 'spanish'), isFalse);
   });
 
   test('every word of a search must match something about the deck', () {
     final nouns = state.deckById('hi-en-grammar-nouns')!;
     final also = <String>['Market', 'Grammar'];
-    expect(deckMatches(nouns, 'hindi market', also: also), isTrue);
-    expect(deckMatches(nouns, '  Market   HINDI ', also: also), isTrue);
+    expect(deckMatches(nouns, 'hindustani market', also: also), isTrue);
+    expect(deckMatches(nouns, '  Market   HINDUSTANI ', also: also), isTrue);
     expect(deckMatches(nouns, 'grammar', also: also), isTrue);
     expect(deckMatches(nouns, 'bengali market', also: also), isFalse);
     expect(deckMatches(nouns, 'hindi transport', also: also), isFalse);
