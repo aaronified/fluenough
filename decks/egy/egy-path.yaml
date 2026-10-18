@@ -1,0 +1,622 @@
+# The order Egyptian is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner from
+# English is taught egy-en-gods for egy-gods (ADR-0013, ADR-0036).
+#
+# This is also Egyptian's plan to its last level (docs/DECK-FORMAT.md, "The
+# B1 plan"): every unit to the last milestone, with its size in words, its
+# grammar topics, the three milestones, and each unit's listening and
+# reading passages. No Egyptian deck is written yet, so every unit is
+# planned: the course teaches each as "Coming" until its deck is written.
+#
+# The language code is ISO 639-3 `egy`, Egyptian (Ancient), which covers
+# every stage of the language before Coptic (`cop`).
+#
+# Middle Egyptian, the classical stage (#585): the language of the Middle
+# Kingdom (about 2000-1650 BCE), kept as the language of monuments, hymns
+# and funerary texts long after Late Egyptian replaced it in speech. Its
+# literature (Sinuhe, the Eloquent Peasant, the Shipwrecked Sailor, the
+# Instructions) is what Egyptology teaches first, and its grammar is the
+# one the standard grammars (Gardiner, Allen) describe. The stage is for the
+# owner to confirm (#585, question 1): Old Egyptian, Late Egyptian and
+# Demotic are the alternatives, and Coptic is a separate language (`cop`).
+#
+# A reading course, not a speaking one. Egyptian has had no speakers since
+# Coptic stopped being spoken, a few centuries ago, and its writing leaves
+# out the vowels: what Middle Egyptian sounded like is reconstructed only in
+# part, from Coptic and from foreign spellings. A CEFR B1 of daily life does
+# not apply. The format names the milestones A1, A2 and B1, and the plan
+# keeps those names, but here they mean three reading levels:
+#
+# - A1, "Signs and offering formulae" (450 words): read the offering
+#   formula (ḥtp-dj-nswt, an offering that the king gives) on a Middle
+#   Kingdom stela, the gods, titles and names it names, about 150 signs (the
+#   uniliterals, the common biliterals and triliterals, the phonetic
+#   complements and determinatives), the noun and its gender, the suffix
+#   pronouns, the adverbial and nominal sentences and the sḏm.f. The level
+#   ends with a whole offering stela read with a sign list beside it.
+# - A2, "Stelae and autobiographies" (650 more, 1,100 in all): read Middle
+#   Kingdom stelae, tomb autobiographies, building and boundary inscriptions
+#   and simple administrative texts without help: about 350 signs, the
+#   sḏm.n.f, negation, the dependent pronouns, the infinitive, participles
+#   and relative forms, the passive, and then the pseudoparticiple. The
+#   level ends with the autobiography of a Middle Kingdom official.
+# - B1, "Literary texts" (900 more, 2,000 in all): read passages of Middle
+#   Egyptian literature in hieroglyphic transcription with a glossary: the
+#   Story of Sinuhe, the Eloquent Peasant, the Shipwrecked Sailor, the
+#   Instructions, the tales of Papyrus Westcar, hymns, Coffin Texts,
+#   medical and letter texts, about 500 signs. The level ends with Sinuhe's
+#   homecoming read without a translation.
+#
+# The sizes are lemmas (dictionary words), by judgement and of low
+# confidence: the formulaic stelae need fewer words than the plan's usual
+# 700, literary texts more. The three levels are within the validator's
+# ranges (half to one and a half times 700, 900 and 1,200), and the 2,000
+# in all is the bottom of its 2,000-3,500. As Sumerian's (#583), they are
+# not scaled by tier: FSI has no figure for an ancient language.
+#
+# The order follows docs/plans/words-rules-sentences.md and the path design
+# of 2026-10-17:
+# 1. the phrasebook, here the offering formula and its fixed phrases,
+#    taught whole (ḥtp-dj-nswt, an offering that the king gives; prt-ḫrw, a
+#    voice offering; mꜣꜥ-ḫrw, true of voice);
+# 2. the first word units, read in transliteration;
+# 3. the script after them (sign sets, below), skipped by a learner who
+#    reads in transliteration only (#554, ADR-0023);
+# 4. a core of about 200 common words in themed units;
+# 5. rules as forms: the noun and its gender, the genitive, the suffix
+#    pronouns, the prepositions, the adverbial and nominal sentences, then
+#    the verb (sḏm.f, sḏm.n.f, participles and relative forms, then the
+#    pseudoparticiple);
+# 6. sentences, each after its words and rules; then the other themes.
+#
+# Hieroglyphs. A sign is a phonogram (a uniliteral, one consonant: 𓈖 (n);
+# a biliteral, two: 𓏠 (mn); a triliteral, three: 𓄤 (nfr)), a logogram
+# (a word, with a stroke: 𓉐𓏤 (pr), house), or a determinative, an unspoken
+# sign at a word's end that classes it (𓀀 a man, 𓁐 a woman, 𓊖 a town).
+# A phonetic complement repeats a sign's last consonants as uniliterals
+# (𓄤𓆑𓂋, nfr with f and r). Signs are named by Gardiner's sign list
+# (G1, the vulture, ꜣ; M17, the reed, j; D21, the mouth, r). They are taught
+# in eight sets, each a script unit, each after the units whose words use
+# them: four in A1 (about 150 signs), two in A2 (about 200 more), two in B1
+# (about 150 more), about 500 in all, by judgement. They count no words.
+# The first set also teaches how signs are read: arranged in quadrats
+# (square groups), written right to left, left to right or in columns, and
+# read towards the faces of the people and animals.
+#
+# Readings are the Egyptological transliteration (nfr, ḥtp, ꜥnḫ, ḏd), with
+# the Egyptological "e" vocalisation beside it for reading aloud (nefer,
+# hetep, ankh, djed): an e between consonants, ꜣ and ꜥ said as a, j as i, w
+# as u. The vocalisation is a teaching convention, not a reconstruction,
+# and the cards say so. The transliteration follows the conventions of the
+# Thesaurus Linguae Aegyptiae and Allen's Middle Egyptian: ꜣ, j, y, ꜥ, w,
+# b, p, f, m, n, r, h, ḥ, ḫ, ẖ, z, s, š, q, k, g, t, ṯ, d, ḏ, with q, not ḳ,
+# and j, not ꞽ (the owner's question 3, #585). Neither is ISO 15919, and the
+# romanisation format cannot hold them yet (the pull request names the
+# gap).
+#
+# Passages. Every passage is a real ancient text, or a few lines of one,
+# graded from an offering formula to a literary tale, never a text written
+# for the course. Each names the corpus its edition comes from: the
+# Thesaurus Linguae Aegyptiae (TLA, the Berlin-Brandenburg and Saxon
+# academies) for every passage here, since it holds Middle Egyptian
+# stelae, autobiographies and literature with transliteration and
+# translation. Ramses Online (Liège) is a corpus of Late Egyptian, the
+# stage after this one, so no passage names it. Their licences are an open
+# question for the owner (#510, #585): the texts are ancient, but an
+# edition's transliteration and translation may be under copyright. A
+# listening passage is the same kind of text read aloud by a scholar in the
+# Egyptological vocalisation: there is no speaker and no voice, so whether
+# any audio is recorded is for the owner to decide.
+#
+# Egyptian has two genders, masculine and feminine, the feminine marked by
+# the ending -t (sn, brother; snt, sister). Adjectives, the suffix pronouns
+# (.f, his; .s, her), the demonstratives and the participles agree with
+# them. It also has a dual (snwj, two brothers), which is a number, not a
+# gender.
+#
+# No `regions`. The app asks a rater "Where you speak Egyptian", and nobody
+# does; the reviewer is an Egyptologist, not a speaker, so a region answer
+# would group raters by nothing their answers share. Egyptian's real
+# variation is by period (Old, Middle and Late Egyptian, Demotic) and by
+# register (the monumental and the literary), not by a place a reader is
+# from. A region's id is permanent, and naming periods as regions would
+# misuse the field. A card's note gives its period or register instead,
+# and the validator refuses an empty `regions: []`, so the field is left
+# out.
+#
+# A planned unit holds one core id. A theme's sentence deck,
+# egy-<theme>-sentences, joins its theme's unit once written.
+#
+# Every deck of Egyptian is listed exactly once.
+schema: 1
+kind: "path"
+id: "egy-path"
+language: "egy"
+# The genders a noun's gender is one of (#512; DECK-FORMAT.md, Card data):
+# masculine and feminine.
+genders: ["m", "f"]
+# "*" takes decks a learner adds (#22): one of a unit's theme at the
+# bottom of that unit, any other in the last unit.
+units:
+  # A1, "Signs and offering formulae".
+  #
+  # 1. The phrasebook: the offering formula and the phrases of stelae,
+  # taught whole: ḥtp-dj-nswt (an offering that the king gives), prt-ḫrw
+  # (a voice offering), t ḥnqt (bread and beer), ḫꜣ m (a thousand of), n kꜣ n
+  # (for the ka of), jmꜣḫw (the honoured one), mꜣꜥ-ḫrw (true of voice), ꜥnḫ
+  # wḏꜣ snb (life, prosperity, health), nb ꜣbḏw (lord of Abydos).
+  - planned: { id: "egy-phrasebook", theme: "first-words", words: 20 }
+    listening_passages:
+      - { id: "offering-formula-aloud", text: { "en": "The offering formula of a Middle Kingdom stela read aloud: an offering that the king gives to Osiris, lord of Abydos (TLA)" } }
+    reading_passages:
+      - { id: "offering-formula-line", text: { "en": "The first line of a Middle Kingdom offering stela, in transliteration with its translation (TLA)" } }
+  # 2. Transliteration and the Egyptological vocalisation: the 25
+  # consonants, ꜣ (aleph), j, ꜥ (ayin), ḥ, ḫ, ẖ, š, q (also written ḳ), ṯ
+  # and ḏ; the dots of suffixes (sḏm.f), the hyphens of compounds; and
+  # reading aloud with an e between consonants (nfr, nefer). In place of a
+  # living language's sound-differences unit.
+  - planned: { id: "egy-transliteration", grammar: ["transliteration", "egyptological-vocalisation"], words: 0 }
+    listening_passages:
+      - { id: "names-vocalised", text: { "en": "A scholar reads names aloud in the Egyptological vocalisation: Imenemhat, Senusret, Sinuhe, Hathor (TLA)" } }
+    reading_passages:
+      - { id: "one-line-three-ways", text: { "en": "One line of a stela in transliteration, in the Egyptological vocalisation and in translation, side by side (TLA)" } }
+  # 3. The gods: nṯr, nṯrt, Wsjr (Osiris), Jnpw (Anubis), Rꜥ, Ḥr (Horus),
+  # Ptḥ, Jmn (Amun), Ḥwt-Ḥr (Hathor), Ꜣst (Isis), Mntw (Montu); their
+  # epithets: ḫntj-jmntjw (foremost of the westerners).
+  - planned: { id: "egy-gods", theme: "gods", words: 40 }
+    listening_passages:
+      - { id: "gods-of-the-offering", text: { "en": "The gods named in offering formulae, each with its epithet: Osiris, Anubis, Ptah-Sokar (TLA)" } }
+    reading_passages:
+      - { id: "anubis-on-his-hill", text: { "en": "The offering formula to Anubis, he who is on his hill, lord of the sacred land (TLA)" } }
+  # 4. Kingship: nswt, bjtj, ḥm (majesty), nb tꜣwj (lord of the Two Lands),
+  # sꜣ Rꜥ (son of Re), ḥqꜣ, ṯꜣtj (vizier), the five royal names.
+  - planned: { id: "egy-kingship", theme: "kingship", words: 35 }
+    listening_passages:
+      - { id: "royal-titulary", text: { "en": "The titulary of Senusret I read aloud, from the Horus name to the son of Re (TLA)" } }
+    reading_passages:
+      - { id: "cartouche-and-titles", text: { "en": "A king's two cartouches with the titles before them, from a temple doorway of the Twelfth Dynasty (TLA)" } }
+  # 5. Family: jt, mwt, sꜣ, sꜣt, sn, snt, ḥmt, hj, ms (child); the
+  # filiation of stelae (ms n, born of).
+  - planned: { id: "egy-family", theme: "family", words: 30 }
+    listening_passages:
+      - { id: "born-of", text: { "en": "A family listed on a stela: his son, his daughter, his wife, born of the lady of the house (TLA)" } }
+    reading_passages:
+      - { id: "family-register", text: { "en": "The lower register of a Middle Kingdom stela, each relative with name and filiation (TLA)" } }
+  # 6. Numbers 1 to 20: wꜥ, snwj, ḫmtw, fdw, djw, sjsw, sfḫw, ḫmnw, psḏw,
+  # mḏw; the strokes and the sign for ten.
+  - planned: { id: "egy-numbers-1-20", theme: "numbers-1-20", words: 20 }
+    listening_passages:
+      - { id: "counting-offerings", text: { "en": "Offerings counted aloud from an offering list: ten loaves, two jars (TLA)" } }
+    reading_passages:
+      - { id: "offering-list-numbers", text: { "en": "An offering list from a Middle Kingdom coffin, its numbers read (TLA)" } }
+  # 7. The uniliterals, after the first six units: how hieroglyphs are read
+  # (quadrats, direction, reading towards the faces), and the 25 one-
+  # consonant signs in Gardiner's order of the alphabet: G1 (ꜣ), M17 (j),
+  # M17 doubled and Z4 (y), D36 (ꜥ), G43 and Z7 (w), D58 (b), Q3 (p), I9
+  # (f), G17 (m), N35 (n), D21 (r), O4 (h), V28 (ḥ), Aa1 (ḫ), F32 (ẖ), O34
+  # (z), S29 (s), N37 (š), N29 (q), V31 (k), W11 (g), X1 (t), V13 (ṯ), D46
+  # (d), I10 (ḏ).
+  - planned: { id: "egy-signs-uniliterals", grammar: "script-uniliterals", words: 0 }
+    listening_passages:
+      - { id: "spelling-names", text: { "en": "Royal and private names spelled sign by sign, each uniliteral named and given its sound (TLA)" } }
+    reading_passages:
+      - { id: "names-in-hieroglyphs", text: { "en": "Five names from Middle Kingdom stelae in hieroglyphs, read with the uniliterals (TLA)" } }
+  # 8. The biliterals: about 50 two-consonant signs of the first units, such
+  # as Y5 (mn), O1 (pr), V30 (nb), G39 (sꜣ), M23 (sw), D4 (jr), U1 (mꜣ).
+  - planned: { id: "egy-signs-biliterals", grammar: "script-biliterals", words: 0 }
+    listening_passages:
+      - { id: "two-sounds-one-sign", text: { "en": "Words of the offering formula read aloud, each with the biliteral that writes two of its sounds (TLA)" } }
+    reading_passages:
+      - { id: "formula-in-hieroglyphs", text: { "en": "The offering formula in hieroglyphs, read with the uniliterals and biliterals taught (TLA)" } }
+  # 9 to 15. The core: about 200 common words, most common first by
+  # judgement (the TLA's corpus counts may order it again).
+  # Everyday verbs: jr (do), ḏd (say), rḫ (know), mꜣꜣ (see), rdj (give), jj
+  # (come), šm (go), sḏm (hear), wnm (eat), swr (drink).
+  - planned: { id: "egy-everyday-verbs", theme: "everyday-verbs", words: 40 }
+    listening_passages:
+      - { id: "i-did", text: { "en": "The verbs of an official's deeds heard: I did, I said, I gave, I came (TLA)" } }
+    reading_passages:
+      - { id: "deed-lines", text: { "en": "Lines from Middle Kingdom stelae, each telling one thing the owner did (TLA)" } }
+  - planned: { id: "egy-describing", theme: "describing", words: 30 }
+    listening_passages:
+      - { id: "good-and-great", text: { "en": "Adjectives heard: nfr (good), ꜥꜣ (great), wr (great), nḏs (small), mꜣw (new), ḏsr (holy) (TLA)" } }
+    reading_passages:
+      - { id: "epithet-strings", text: { "en": "Strings of epithets after a god's or a king's name in Middle Kingdom inscriptions (TLA)" } }
+  - planned: { id: "egy-places", theme: "places", words: 35 }
+    listening_passages:
+      - { id: "towns-of-egypt", text: { "en": "Places read aloud: Kmt (Egypt), Ꜣbḏw (Abydos), Wꜣst (Thebes), Mn-nfr (Memphis), the West (TLA)" } }
+    reading_passages:
+      - { id: "lord-of-abydos", text: { "en": "Lines naming a god and the town he is lord of, from stelae of Abydos (TLA)" } }
+  - planned: { id: "egy-things", theme: "things", words: 35 }
+    listening_passages:
+      - { id: "good-things", text: { "en": "The things of the offering formula: alabaster, linen, incense, oil, every good and pure thing (TLA)" } }
+    reading_passages:
+      - { id: "every-good-thing", text: { "en": "The end of the offering formula: every good and pure thing on which a god lives (TLA)" } }
+  - planned: { id: "egy-time", theme: "time", words: 25 }
+    listening_passages:
+      - { id: "day-and-eternity", text: { "en": "Time heard: hrw (day), grḥ (night), rnpt (year), ḏt and nḥḥ (eternity) (TLA)" } }
+    reading_passages:
+      - { id: "for-ever-and-ever", text: { "en": "Lines that end with for ever and ever, ḏt nḥḥ, from stelae and temple walls (TLA)" } }
+  - planned: { id: "egy-body", theme: "body", words: 30 }
+    listening_passages:
+      - { id: "body-in-epithets", text: { "en": "Body words in epithets: one whom his lord loves in his heart, with skilled fingers (TLA)" } }
+    reading_passages:
+      - { id: "heart-and-hand", text: { "en": "Lines of autobiographies using jb (heart), ḥꜣtj (heart), ꜥ (arm), rmn (shoulder), ḥr (face) (TLA)" } }
+  - planned: { id: "egy-pronouns", theme: "pronouns", words: 10 }
+    listening_passages:
+      - { id: "i-am", text: { "en": "An official speaks of himself, jnk (I), in the opening of an autobiography (TLA)" } }
+    reading_passages:
+      - { id: "who-and-what", text: { "en": "Short lines with jn-m (who), ptr (what) and nb (every), from tales (TLA)" } }
+  # 16. The triliterals, about 30 three-consonant signs (F35 nfr, S34 ꜥnḫ,
+  # R4 ḥtp, R8 nṯr, P8 ḫrw), and the phonetic complements that spell out a
+  # sign's last consonants.
+  - planned: { id: "egy-signs-triliterals", grammar: ["script-triliterals", "phonetic-complements"], words: 0 }
+    listening_passages:
+      - { id: "nefer-with-f-and-r", text: { "en": "Words heard and spelled: nfr written with F35 and its complements f and r, ꜥnḫ with S34 and n and ḫ (TLA)" } }
+    reading_passages:
+      - { id: "life-and-peace", text: { "en": "The words of the core written with triliterals and their complements, from a stela (TLA)" } }
+  # 17. The determinatives and logograms: about 40 signs, such as A1 (man),
+  # B1 (woman), A40 (god), O49 (town), N25 (foreign land), Y1 (papyrus
+  # roll, the abstract), D40 (forceful arm), A2 (hand to mouth), the
+  # plural strokes, and the stroke Z1 that marks a logogram.
+  - planned: { id: "egy-signs-determinatives", grammar: ["script-determinatives", "script-logograms"], words: 0 }
+    listening_passages:
+      - { id: "unspoken-signs", text: { "en": "Names and words read aloud while their determinatives are named and left unspoken: a man, a woman, a town (TLA)" } }
+    reading_passages:
+      - { id: "stela-in-hieroglyphs", text: { "en": "The offering formula and names of a stela in hieroglyphs, its determinatives found and named (TLA)" } }
+  # 18 to 24. Rules as forms, practised on the words known: the noun first,
+  # then the pronouns and the two non-verbal sentences, then the verb.
+  - planned: { id: "egy-grammar-nouns", grammar: ["noun-gender", "plural", "dual"], words: 0 }
+    listening_passages:
+      - { id: "brother-and-sister", text: { "en": "Nouns heard in their genders and numbers: sn, snt, snw, snwj (brother, sister, brothers, two brothers) (TLA)" } }
+    reading_passages:
+      - { id: "feminine-t", text: { "en": "Names and titles from stelae, the feminine -t and the plural strokes found (TLA)" } }
+  - planned: { id: "egy-grammar-genitive", grammar: ["direct-genitive", "indirect-genitive", "adjective-agreement"], words: 0 }
+    listening_passages:
+      - { id: "lord-of-the-two-lands", text: { "en": "The genitive heard: nb tꜣwj (lord of the Two Lands), the direct, and kꜣ n nṯr (the ka of the god), with n (TLA)" } }
+    reading_passages:
+      - { id: "title-strings", text: { "en": "Titles that are genitives, from a Middle Kingdom official's stela (TLA)" } }
+  - planned: { id: "egy-grammar-suffix-pronouns", grammar: "suffix-pronouns", words: 0 }
+    listening_passages:
+      - { id: "his-son-her-house", text: { "en": "Suffix pronouns heard on nouns: sꜣ.f (his son), pr.s (her house), jt.j (my father), nb.n (our lord) (TLA)" } }
+    reading_passages:
+      - { id: "my-lord", text: { "en": "Lines of autobiographies with the suffix pronouns of the owner and his lord (TLA)" } }
+  - planned: { id: "egy-grammar-prepositions", grammar: "prepositions", words: 0 }
+    listening_passages:
+      - { id: "in-to-from", text: { "en": "Prepositions heard: m (in), n (to, for), r (towards), ḥr (on), ḫr (with), ḫnt (before), mj (like) (TLA)" } }
+    reading_passages:
+      - { id: "where-the-offering-goes", text: { "en": "The offering formula's prepositional phrases taken apart: to Osiris, for the ka of, in Abydos (TLA)" } }
+  - planned: { id: "egy-grammar-adverbial", grammar: ["adverbial-sentence", "jw-and-mk"], words: 0 }
+    listening_passages:
+      - { id: "he-is-in-the-house", text: { "en": "Adverbial sentences heard: jw.f m pr (he is in the house), mk wj m-bꜣḥ.k (look, I am before you) (TLA)" } }
+    reading_passages:
+      - { id: "where-he-is", text: { "en": "Lines of tales whose sentences tell where someone is, with jw and mk (TLA)" } }
+  - planned: { id: "egy-grammar-nominal", grammar: ["nominal-sentence", "independent-pronouns", "pw-sentence"], words: 0 }
+    listening_passages:
+      - { id: "i-am-an-official", text: { "en": "Nominal sentences heard: jnk sr (I am an official), nṯr pw (it is a god) (TLA)" } }
+    reading_passages:
+      - { id: "who-he-is", text: { "en": "The self-presentation at the start of an autobiography: I was one who ... (TLA)" } }
+  - planned: { id: "egy-grammar-sdmf", grammar: "sdm-f", words: 0 }
+    listening_passages:
+      - { id: "may-he-give", text: { "en": "The sḏm.f heard in the offering formula: dj.f prt-ḫrw (may he give a voice offering) (TLA)" } }
+    reading_passages:
+      - { id: "sdmf-in-the-formula", text: { "en": "The verbs of the offering formula and its wishes, each a sḏm.f taken apart (TLA)" } }
+  # 25 to 27. The other A1 themes, each its words, then its sentences.
+  - planned: { id: "egy-offerings", theme: "offerings", words: 40 }
+    listening_passages:
+      - { id: "thousand-of-bread", text: { "en": "The voice offering heard: a thousand of bread, a thousand of beer, of oxen and fowl (TLA)" } }
+    reading_passages:
+      - { id: "offering-table", text: { "en": "The inscription around an offering table: what is laid on it and for whom (TLA)" } }
+  # Titles: ḥꜣtj-ꜥ (count), ḫtmtj-bjtj (seal-bearer of the king), smr
+  # wꜥtj (sole companion), jmj-rꜣ (overseer), sš (scribe), wꜥb (priest).
+  - planned: { id: "egy-titles", theme: "titles", words: 35 }
+    listening_passages:
+      - { id: "count-and-companion", text: { "en": "An official's titles read aloud, from count and seal-bearer to overseer of the priests (TLA)" } }
+    reading_passages:
+      - { id: "false-door-titles", text: { "en": "The titles on a false door or a stela, ranked from the highest (TLA)" } }
+  # Personal and royal names: Jmn-m-ḥꜣt, Z-n-Wsrt, Sꜣ-nht (Sinuhe), names
+  # that are sentences (the god is gracious).
+  - planned: { id: "egy-names", theme: "names", words: 25 }
+    listening_passages:
+      - { id: "whole-stela", text: { "en": "A whole Middle Kingdom offering stela read aloud, from the formula to the family (TLA)" } }
+    reading_passages:
+      - { id: "abydos-stela", text: { "en": "A complete Middle Kingdom stela from Abydos in hieroglyphs, read with a sign list (TLA)" } }
+    milestone: "A1"
+  # A2, "Stelae and autobiographies".
+  # The tomb and the afterlife: jz (tomb), qrs (burial), ꜣbd, bꜣ, kꜣ, ꜣḫ,
+  # ẖrt-nṯr (the necropolis), jmnt (the West), the ideal burial.
+  - planned: { id: "egy-funerary", theme: "funerary", words: 50 }
+    listening_passages:
+      - { id: "good-burial", text: { "en": "The wishes for a good burial heard: that he be buried in the West after a good old age (TLA)" } }
+    reading_passages:
+      - { id: "appeal-to-the-living", text: { "en": "The appeal to the living: O you who live on earth, who pass by this stela (TLA)" } }
+  - planned: { id: "egy-grammar-sdmnf", grammar: "sdm-n-f", words: 0 }
+    listening_passages:
+      - { id: "i-did-it", text: { "en": "The sḏm.n.f heard against the sḏm.f: jr.n.j (I did), dj.n.j (I gave) (TLA)" } }
+    reading_passages:
+      - { id: "past-deeds", text: { "en": "The narrative of an autobiography, its past deeds told with the sḏm.n.f (TLA)" } }
+  - planned: { id: "egy-grammar-negation", grammar: ["negation", "nn-and-n"], words: 0 }
+    listening_passages:
+      - { id: "i-did-not", text: { "en": "Negation heard: n jr.j (I did not do), nn wn (there is not), n sp (never) (TLA)" } }
+    reading_passages:
+      - { id: "never-did-wrong", text: { "en": "An official's denials of wrongdoing, from an autobiography (TLA)" } }
+  # 31. The signs of inscriptions, about 100: cartouches and royal signs,
+  # honorific transposition (the god's or king's name written first), the
+  # signs of titles, number signs to a million.
+  - planned: { id: "egy-signs-inscriptions", grammar: ["script-inscriptions", "honorific-transposition"], words: 0 }
+    listening_passages:
+      - { id: "written-first-read-last", text: { "en": "Names and titles read aloud whose god or king is written first and read in its place: Jmn-m-ḥꜣt (TLA)" } }
+    reading_passages:
+      - { id: "temple-doorway", text: { "en": "A Twelfth Dynasty temple inscription in hieroglyphs, its royal signs and cartouches read (TLA)" } }
+  - planned: { id: "egy-administration", theme: "administration", words: 45 }
+    listening_passages:
+      - { id: "the-account", text: { "en": "The words of accounts heard: received, delivered, the rest, the total (TLA)" } }
+    reading_passages:
+      - { id: "temple-account", text: { "en": "A short account from the Middle Kingdom temple archive of El-Lahun (TLA)" } }
+  - planned: { id: "egy-numbers-big", theme: "numbers-big", words: 30 }
+    listening_passages:
+      - { id: "hundreds-and-thousands", text: { "en": "Large numbers heard: hundred, thousand, ten thousand, a hundred thousand, a million (TLA)" } }
+    reading_passages:
+      - { id: "expedition-numbers", text: { "en": "The numbers of an expedition's men, from a Wadi Hammamat inscription (TLA)" } }
+  - planned: { id: "egy-grammar-numerals", grammar: ["numerals", "ordinals"], words: 0 }
+    listening_passages:
+      - { id: "how-many", text: { "en": "Numbers heard after their nouns, and the ordinals: the second time, the third month (TLA)" } }
+    reading_passages:
+      - { id: "dates-and-counts", text: { "en": "Dates and counts from Middle Kingdom stelae, each numeral taken apart (TLA)" } }
+  - planned: { id: "egy-building", theme: "building", words: 40 }
+    listening_passages:
+      - { id: "made-as-his-monument", text: { "en": "The building formula heard: he made it as his monument for his father (TLA)" } }
+    reading_passages:
+      - { id: "building-inscription", text: { "en": "A Twelfth Dynasty building inscription of a temple (TLA)" } }
+  - planned: { id: "egy-animals", theme: "animals", words: 45 }
+    listening_passages:
+      - { id: "cattle-counted", text: { "en": "Cattle, goats and fowl counted for an estate, from a tomb's scenes (TLA)" } }
+    reading_passages:
+      - { id: "tomb-scene-captions", text: { "en": "The captions of herding and fowling scenes in a Middle Kingdom tomb (TLA)" } }
+  - planned: { id: "egy-food", theme: "food", words: 40 }
+    listening_passages:
+      - { id: "bread-and-beer", text: { "en": "Food heard in an offering list: bread, beer, figs, wine, milk (TLA)" } }
+    reading_passages:
+      - { id: "offering-list", text: { "en": "A full offering list from a Middle Kingdom coffin (TLA)" } }
+  - planned: { id: "egy-grammar-dependent-pronouns", grammar: ["dependent-pronouns", "imperative"], words: 0 }
+    listening_passages:
+      - { id: "give-it-to-me", text: { "en": "Dependent pronouns and the imperative heard: mk wj (look at me), jmj n.j sw (give it to me) (TLA)" } }
+    reading_passages:
+      - { id: "commands-in-tales", text: { "en": "Commands and their answers from the tales of Papyrus Westcar (TLA)" } }
+  # The river: jtrw (the river), ḥꜥpj (the inundation), dpt (boat), ḫdj
+  # (sail north), ḫntj (sail south), mrjjt (the riverbank).
+  - planned: { id: "egy-river", theme: "river", words: 40 }
+    listening_passages:
+      - { id: "sailing-north", text: { "en": "Sailing on the Nile heard: going north with the current, south with the wind (TLA)" } }
+    reading_passages:
+      - { id: "boat-journey", text: { "en": "An official's journey by boat to Abydos, from his stela (TLA)" } }
+  - planned: { id: "egy-grammar-infinitive", grammar: ["infinitive", "pseudoverbal-construction"], words: 0 }
+    listening_passages:
+      - { id: "he-is-going", text: { "en": "The infinitive heard, and ḥr with it: jw.f ḥr šmt (he is going) (TLA)" } }
+    reading_passages:
+      - { id: "scene-captions", text: { "en": "Tomb captions built on the infinitive: bringing cattle, catching fowl (TLA)" } }
+  - planned: { id: "egy-work", theme: "work", words: 40 }
+    listening_passages:
+      - { id: "craftsmen", text: { "en": "Workers heard: the scribe, the sculptor, the farmer, the boatman (TLA)" } }
+    reading_passages:
+      - { id: "sculptor-stela", text: { "en": "The stela of the sculptor Irtysen, on his skill (TLA)" } }
+  - planned: { id: "egy-grammar-participles", grammar: "participles", words: 0 }
+    listening_passages:
+      - { id: "one-who-did", text: { "en": "Participles heard: jr (one who does), jrr (one who does often), mrjj (one who is loved) (TLA)" } }
+    reading_passages:
+      - { id: "participle-epithets", text: { "en": "An official's epithets built of participles, from an autobiography (TLA)" } }
+  # The calendar: the three seasons ꜣḫt, prt and šmw, the months, ḥꜣt-sp
+  # (regnal year), the festivals.
+  - planned: { id: "egy-calendar", theme: "calendar", words: 35 }
+    listening_passages:
+      - { id: "year-month-day", text: { "en": "Dates heard: regnal year 9, third month of the inundation, day 1 (TLA)" } }
+    reading_passages:
+      - { id: "dated-stela", text: { "en": "The date at the head of a Middle Kingdom stela (TLA)" } }
+  - planned: { id: "egy-grammar-relative-forms", grammar: ["relative-forms", "ntj-relative"], words: 0 }
+    listening_passages:
+      - { id: "what-he-did", text: { "en": "Relative forms heard: jrt.n.f (what he did), and ntj (who, which): ntj m pr (who is in the house) (TLA)" } }
+    reading_passages:
+      - { id: "which-his-lord-loved", text: { "en": "Lines of autobiographies built on relative forms: what my lord praised (TLA)" } }
+  # 45. Sign groups and spellings, about 100 signs: abbreviated and
+  # defective writings, signs with several values, the spellings of the
+  # commonest verbs.
+  - planned: { id: "egy-signs-spellings", grammar: ["script-spellings", "script-polyphony"], words: 0 }
+    listening_passages:
+      - { id: "one-sign-two-readings", text: { "en": "Signs with two readings heard, each in its word: the eye as jr and as the eye (TLA)" } }
+    reading_passages:
+      - { id: "autobiography-in-hieroglyphs", text: { "en": "Ten lines of an autobiography in hieroglyphs (TLA)" } }
+  - planned: { id: "egy-warfare", theme: "warfare", words: 45 }
+    listening_passages:
+      - { id: "the-campaign", text: { "en": "A campaign heard: his majesty went south to overthrow Kush (TLA)" } }
+    reading_passages:
+      - { id: "semna-stela", text: { "en": "The boundary stela of Senusret III at Semna (TLA)" } }
+  # Foreign lands: ḫꜣst (hill country), Ꜣmw (Asiatics), Rṯnw (Retjenu), Kꜣš
+  # (Kush), Ṯḥnw (Libya), the Sinai of the mines.
+  - planned: { id: "egy-foreign-lands", theme: "foreign-lands", words: 35 }
+    listening_passages:
+      - { id: "lands-beyond", text: { "en": "The foreign lands named in Middle Kingdom inscriptions, read aloud (TLA)" } }
+    reading_passages:
+      - { id: "sinai-expedition", text: { "en": "An expedition inscription from Serabit el-Khadim in Sinai (TLA)" } }
+  - planned: { id: "egy-location", theme: "location", words: 30 }
+    listening_passages:
+      - { id: "before-and-behind", text: { "en": "Place words heard: m-bꜣḥ (before), ḥꜣ (behind), m-ẖnw (inside), r-gs (beside) (TLA)" } }
+    reading_passages:
+      - { id: "field-boundary", text: { "en": "The boundaries of a field or estate, from a Middle Kingdom document (TLA)" } }
+  - planned: { id: "egy-grammar-passive", grammar: ["passive", "sdm-tw-f"], words: 0 }
+    listening_passages:
+      - { id: "it-was-done", text: { "en": "The passive heard: jr.tw (it is done), rdj (it was given) (TLA)" } }
+    reading_passages:
+      - { id: "i-was-appointed", text: { "en": "An official's appointments told in the passive: I was made overseer (TLA)" } }
+  # The virtues of the autobiography: I gave bread to the hungry, clothes to
+  # the naked.
+  - planned: { id: "egy-qualities", theme: "qualities", words: 40 }
+    listening_passages:
+      - { id: "bread-to-the-hungry", text: { "en": "The virtues of an official heard: I gave bread to the hungry and clothes to the naked (TLA)" } }
+    reading_passages:
+      - { id: "ideal-official", text: { "en": "The list of an official's virtues from his autobiography (TLA)" } }
+  - planned: { id: "egy-adverbs", theme: "adverbs", words: 35 }
+    listening_passages:
+      - { id: "then-and-there", text: { "en": "Adverbs heard: ꜥꜣ (here), jm (there), ḏr-ꜥ (long ago), m-ḫt (afterwards), r-ꜣw (entirely) (TLA)" } }
+    reading_passages:
+      - { id: "as-never-before", text: { "en": "Lines that set a deed against all before it: never was the like done (TLA)" } }
+  - planned: { id: "egy-more-verbs", theme: "more-verbs", words: 50 }
+    listening_passages:
+      - { id: "more-deeds", text: { "en": "More verbs of deeds heard: I built, I dug, I counted, I protected (TLA)" } }
+    reading_passages:
+      - { id: "nomarch-deeds", text: { "en": "A nomarch's deeds from the tomb of Amenemhat at Beni Hasan (TLA)" } }
+  - planned: { id: "egy-grammar-pseudoparticiple", grammar: "pseudoparticiple", words: 0 }
+    listening_passages:
+      - { id: "he-is-come", text: { "en": "The pseudoparticiple (stative) heard: jw.f jj.w (he has come), ꜥnḫ.tj (alive) (TLA)" } }
+    reading_passages:
+      - { id: "state-lines", text: { "en": "Lines of tales and stelae whose verbs describe a state, each ending taken apart (TLA)" } }
+  - planned: { id: "egy-home", theme: "home", words: 25 }
+    listening_passages:
+      - { id: "house-and-garden", text: { "en": "A house and its garden heard: the gate, the pool, the trees, the storeroom (TLA)" } }
+    reading_passages:
+      - { id: "house-will", text: { "en": "A Middle Kingdom will that leaves a house to a wife, from El-Lahun (TLA)" } }
+  - planned: { id: "egy-clothes", theme: "clothes", words: 25 }
+    listening_passages:
+      - { id: "linen", text: { "en": "Linen and clothing heard from an offering list: fine linen, the kilt, the sandals (TLA)" } }
+    reading_passages:
+      - { id: "official-autobiography", text: { "en": "The autobiography of a Middle Kingdom official, read without a translation (TLA)" } }
+    milestone: "A2"
+  # B1, "Literary texts", read in hieroglyphic transcription.
+  # Travel: Sinuhe's flight, wḏj (set out), ḫpj (travel), ḥrj (flee), the
+  # desert, thirst.
+  - planned: { id: "egy-travel", theme: "travel", words: 60 }
+    listening_passages:
+      - { id: "sinuhe-flees", text: { "en": "Sinuhe hears of the old king's death and flees, from the Story of Sinuhe (TLA)" } }
+    reading_passages:
+      - { id: "sinuhe-thirst", text: { "en": "Sinuhe's thirst in the desert and his rescue, from the Story of Sinuhe (TLA)" } }
+  - planned: { id: "egy-grammar-contingent", grammar: ["sdm-jn-f", "sdm-hr-f", "sdm-ka-f"], words: 0 }
+    listening_passages:
+      - { id: "then-he-said", text: { "en": "The contingent forms heard: ḏd.jn.f (then he said), sḏm.ḫr.f (then he hears) (TLA)" } }
+    reading_passages:
+      - { id: "westcar-narrative", text: { "en": "Narrative lines of Papyrus Westcar told with ḏd.jn and its kin (TLA)" } }
+  - planned: { id: "egy-sea", theme: "sea", words: 55 }
+    listening_passages:
+      - { id: "the-storm", text: { "en": "The storm and the wreck, from the Tale of the Shipwrecked Sailor (TLA)" } }
+    reading_passages:
+      - { id: "island-of-the-ka", text: { "en": "The sailor alone on the island, from the Tale of the Shipwrecked Sailor (TLA)" } }
+  # 59. Literary hieratic in transcription, about 80 signs: the forms that
+  # hieratic gives hieroglyphic transcriptions, and the verse points.
+  - planned: { id: "egy-signs-hieratic", grammar: ["script-hieratic-transcription", "verse-points"], words: 0 }
+    listening_passages:
+      - { id: "verse-by-verse", text: { "en": "A literary passage read verse by verse, as its red verse points divide it (TLA)" } }
+    reading_passages:
+      - { id: "sinuhe-in-hieroglyphs", text: { "en": "Ten verses of Sinuhe in hieroglyphic transcription (TLA)" } }
+  - planned: { id: "egy-speech", theme: "speech", words: 55 }
+    listening_passages:
+      - { id: "the-snake-speaks", text: { "en": "The great snake questions the sailor, from the Shipwrecked Sailor (TLA)" } }
+    reading_passages:
+      - { id: "who-brought-you", text: { "en": "The snake's speech and the sailor's answer, from the Shipwrecked Sailor (TLA)" } }
+  - planned: { id: "egy-grammar-emphatic", grammar: ["emphatic-sentence", "nominal-verb-forms"], words: 0 }
+    listening_passages:
+      - { id: "it-is-for-x-that", text: { "en": "Emphatic sentences heard, the verb set back and its adverb stressed: it is to Egypt that I came (TLA)" } }
+    reading_passages:
+      - { id: "emphatic-lines", text: { "en": "Lines of the Eloquent Peasant whose stress falls on the adverb, taken apart (TLA)" } }
+  # Justice and maat: mꜣꜥt, jsft (wrong), the scales, the judge.
+  - planned: { id: "egy-justice", theme: "justice", words: 60 }
+    listening_passages:
+      - { id: "peasant-robbed", text: { "en": "The peasant is robbed on the road, from the Eloquent Peasant (TLA)" } }
+    reading_passages:
+      - { id: "first-petition", text: { "en": "The peasant's first petition to the high steward, from the Eloquent Peasant (TLA)" } }
+  - planned: { id: "egy-feelings", theme: "feelings", words: 60 }
+    listening_passages:
+      - { id: "heart-glad", text: { "en": "Feelings heard in literary lines: a glad heart, fear in the body, weeping (TLA)" } }
+    reading_passages:
+      - { id: "sinuhe-fear", text: { "en": "Sinuhe describes his fear before the king, from the Story of Sinuhe (TLA)" } }
+  - planned: { id: "egy-grammar-subordinate", grammar: ["virtual-relative-clauses", "circumstantial-clauses"], words: 0 }
+    listening_passages:
+      - { id: "as-he-was-sailing", text: { "en": "Clauses with no word to join them heard: a man whose name is ..., as he was sailing (TLA)" } }
+    reading_passages:
+      - { id: "unmarked-clauses", text: { "en": "Lines of the Shipwrecked Sailor with circumstantial and virtual relative clauses (TLA)" } }
+  - planned: { id: "egy-nature", theme: "nature", words: 55 }
+    listening_passages:
+      - { id: "land-of-yaa", text: { "en": "The land of Yaa and its figs, grapes and barley, from the Story of Sinuhe (TLA)" } }
+    reading_passages:
+      - { id: "sun-and-field", text: { "en": "The sun, the fields and the creatures praised in a Middle Kingdom hymn (TLA)" } }
+  # Instructions: the teachings of Ptahhotep, of Amenemhat, of Kheti.
+  - planned: { id: "egy-instructions", theme: "instructions", words: 60 }
+    listening_passages:
+      - { id: "do-not-be-proud", text: { "en": "Do not be proud of your knowledge, from the Instruction of Ptahhotep (TLA)" } }
+    reading_passages:
+      - { id: "be-a-scribe", text: { "en": "Be a scribe, from the Teaching of Kheti (the Satire of the Trades) (TLA)" } }
+  - planned: { id: "egy-grammar-particles", grammar: ["particles", "enclitics"], words: 0 }
+    listening_passages:
+      - { id: "indeed-and-then", text: { "en": "Particles heard: jsṯ, ḥr-ntt, ḥꜣ, js and grt, each giving a line its tone (TLA)" } }
+    reading_passages:
+      - { id: "teaching-maxims", text: { "en": "Maxims of Ptahhotep whose particles are taken apart (TLA)" } }
+  - planned: { id: "egy-hymns", theme: "hymns", words: 60 }
+    listening_passages:
+      - { id: "hymn-to-the-nile", text: { "en": "The opening of the Hymn to Hapy, the inundation (TLA)" } }
+    reading_passages:
+      - { id: "hymns-to-senusret", text: { "en": "One of the hymns to Senusret III from El-Lahun (TLA)" } }
+  - planned: { id: "egy-netherworld", theme: "netherworld", words: 60 }
+    listening_passages:
+      - { id: "coffin-spell", text: { "en": "A Coffin Texts spell for not dying a second time (TLA)" } }
+    reading_passages:
+      - { id: "declaration-of-innocence", text: { "en": "Lines of the declaration of innocence, Book of the Dead chapter 125, in its Middle Egyptian (TLA)" } }
+  - planned: { id: "egy-grammar-negative-verbs", grammar: ["sdmt-f", "negative-verbs"], words: 0 }
+    listening_passages:
+      - { id: "before-he-came", text: { "en": "The sḏmt.f and the negative verbs heard: n sḏmt.f (before he heard), tm (not), jmj (do not) (TLA)" } }
+    reading_passages:
+      - { id: "do-not-lines", text: { "en": "Prohibitions and before-clauses from the Instructions (TLA)" } }
+  # Magic and medicine: ḥkꜣ (magic), rꜣ (spell), swnw (physician), the
+  # cases of the medical papyri.
+  - planned: { id: "egy-magic", theme: "magic", words: 55 }
+    listening_passages:
+      - { id: "the-magician-djedi", text: { "en": "The magician Djedi before King Khufu, from Papyrus Westcar (TLA)" } }
+    reading_passages:
+      - { id: "protective-spell", text: { "en": "A spell to protect a child, from a Middle Kingdom magical papyrus (TLA)" } }
+  - planned: { id: "egy-health", theme: "health", words: 50 }
+    listening_passages:
+      - { id: "the-physician", text: { "en": "A physician's examination heard: if you examine a man with a wound in his head (TLA)" } }
+    reading_passages:
+      - { id: "medical-case", text: { "en": "A case of the Edwin Smith surgical papyrus: examination, diagnosis and treatment (TLA)" } }
+  - planned: { id: "egy-tales", theme: "tales", words: 60 }
+    listening_passages:
+      - { id: "the-wax-crocodile", text: { "en": "The wax crocodile, from the tales of Papyrus Westcar (TLA)" } }
+    reading_passages:
+      - { id: "rowing-girls", text: { "en": "King Sneferu and the rowing girls, from Papyrus Westcar (TLA)" } }
+  - planned: { id: "egy-grammar-cleft", grammar: ["cleft-sentence", "participial-statement"], words: 0 }
+    listening_passages:
+      - { id: "it-is-i-who", text: { "en": "Cleft sentences heard: jn ḥm.f rdj jr.t(w).f (it is his majesty who had it done) (TLA)" } }
+    reading_passages:
+      - { id: "who-did-it", text: { "en": "Lines of tales and inscriptions that stress who did a thing (TLA)" } }
+  # Letters: the Heqanakht letters and the letters to the dead.
+  - planned: { id: "egy-letters", theme: "letters", words: 50 }
+    listening_passages:
+      - { id: "heqanakht-orders", text: { "en": "Heqanakht orders his household about the barley, from the Heqanakht letters (TLA)" } }
+    reading_passages:
+      - { id: "letter-to-the-dead", text: { "en": "A letter to the dead, written on a bowl (TLA)" } }
+  # 76. The last signs, about 70: rarer signs of literature and the
+  # Coffin Texts, and signs left out of or added to spellings.
+  - planned: { id: "egy-signs-rare", grammar: "script-rare-signs", words: 0 }
+    listening_passages:
+      - { id: "rare-signs-named", text: { "en": "Rarer signs named and read, each in the line of literature it comes from (TLA)" } }
+    reading_passages:
+      - { id: "peasant-in-hieroglyphs", text: { "en": "Ten verses of the Eloquent Peasant in hieroglyphic transcription (TLA)" } }
+  - planned: { id: "egy-society", theme: "society", words: 55 }
+    listening_passages:
+      - { id: "the-land-upside-down", text: { "en": "The land turned upside down, from the Admonitions of Ipuwer (TLA)" } }
+    reading_passages:
+      - { id: "teaching-of-amenemhat", text: { "en": "The king warns his son of those he trusted, from the Teaching of Amenemhat (TLA)" } }
+  - planned: { id: "egy-lament", theme: "lament", words: 55 }
+    listening_passages:
+      - { id: "death-is-before-me", text: { "en": "Death is before me today, from the Dialogue of a Man and his Ba (TLA)" } }
+    reading_passages:
+      - { id: "khakheperreseneb", text: { "en": "The complaints of Khakheperreseneb, on words that have been said (TLA)" } }
+  - planned: { id: "egy-grammar-literary", grammar: ["parallelism", "literary-style"], words: 0 }
+    listening_passages:
+      - { id: "parallel-verses", text: { "en": "Parallel verses heard, the way Middle Egyptian poetry pairs its lines (TLA)" } }
+    reading_passages:
+      - { id: "two-manuscripts", text: { "en": "One passage of Sinuhe in two manuscripts, its spellings and words compared (TLA)" } }
+  # Fate and homecoming: Sinuhe's return and burial.
+  - planned: { id: "egy-fate", theme: "fate", words: 50 }
+    listening_passages:
+      - { id: "the-kings-letter", text: { "en": "The king's letter calling Sinuhe home, from the Story of Sinuhe (TLA)" } }
+    reading_passages:
+      - { id: "sinuhe-homecoming", text: { "en": "Sinuhe's homecoming and his tomb, read without a translation (TLA)" } }
+    milestone: "B1"
+  - ["*"]
