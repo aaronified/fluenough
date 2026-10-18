@@ -18,7 +18,7 @@
 #                   optional: the sheet's question and its "I can read it"
 #                   answer, written in the language's own script by a speaker
 #                   of it, never put together from parts. Without them the
-#                   sheet asks in English, a fallback until they are written.
+#                   sheet asks in English only, until they are written.
 #   scripts_question, script_can_read (a map)
 #                   for a language written in several scripts, the sheet's
 #                   heading ("Which scripts do you read X in?") and one
@@ -27,12 +27,14 @@
 #                   asked in English.
 #
 #   script_text     optional: `"unchecked"` marks an entry's texts above as
-#                   written by Claude (#552), not by a speaker. They are kept,
-#                   but until a speaker checks them the sheet asks in English,
-#                   naming the script by its own name (owner, 2026-10-17:
-#                   "English for all unchecked"). A speaker who has checked
-#                   and corrected the texts removes the mark; an entry with no
-#                   `script_text` uses its texts (en, bn and hi do).
+#                   written by Claude (#552), not by a speaker: not yet
+#                   checked by a speaker. It no longer hides them. The sheet
+#                   shows every language's own-script texts, checked or not,
+#                   each with its English under it, and marks nothing
+#                   (owner, 2026-10-18: "The script questions are still in
+#                   latin script. Why! Fix this right away"; this replaces
+#                   2026-10-17's "English for all unchecked"). A speaker who
+#                   has checked and corrected the texts removes the mark.
 #
 # The texts marked "Claude-written" were written by Claude (#552), not by a
 # speaker: each is to be checked by a speaker of the language, as deck text
