@@ -984,8 +984,6 @@
     - "target": "ఆ అమ్మకందారు మంచి మనిషి."
       "reading": "ā ammakandāru mañci maniṣi."
       "ipa": "aː ammakand̪aːru maɲtʃi maniʂi"
-      "bases":
-      - { "word": "మనిషి", "base": "మనిషి", "reading": "maniṣi" }
     - "target": "అమ్మకందారులు ధర తగ్గించడానికి ఒప్పుకున్నారు."
       "reading": "ammakandārulu dhara taggiñcaḍāniki oppukunnāru."
       "ipa": "ammakand̪aːrulu d̪ʱara t̪aɡɡiɲtʃaɖaːniki oppukunnaːru"
@@ -1085,6 +1083,7 @@
       "bases":
       - { "word": "లీటర్లు", "base": "లీటరు", "reading": "līṭaru" }
       - { "word": "కావాలి", "ref": "te-0646" }
+      - { "word": "నాకు", "ref": "te-0593" }
     - "target": "ఈ డబ్బాలో ఎన్ని లీటర్లు ఉంటాయి?"
       "reading": "ī ḍabbālō enni līṭarlu uṇṭāyi?"
       "ipa": "iː ɖabbaːloː enni liːʈarlu uɳʈaːji"
@@ -1109,7 +1108,6 @@
       "reading": "ī vastuvuku oka ēḍādi hāmī undi."
       "ipa": "iː ʋast̪uʋuku oka eːɖaːd̪i haːmiː und̪i"
       "bases":
-      - { "word": "ఏడాది", "base": "ఏడాది", "reading": "ēḍādi" }
       - { "word": "వస్తువుకు", "ref": "te-0890" }
       - { "word": "ఉంది", "ref": "te-0633" }
     - "target": "అమ్మకందారు హామీ ఇచ్చాడు."
@@ -1177,7 +1175,6 @@
       "kind": "usage"
       "words":
       - { "word": "తగ్గింపు కూపన్", "reading": "taggimpu kūpan" }
-    - { "id": "n2", "kind": "note" }
     "examples":
     - "target": "ఈ కూపన్ ఇంకా చెల్లుతుందా?"
       "reading": "ī kūpan iṅkā cellutundā?"
@@ -1188,7 +1185,6 @@
       "reading": "kūpan cūpistē reṇḍu śātaṁ taggimpu vastundi."
       "ipa": "kuːpan tʃuːpist̪eː reɳɖu ʃaːt̪am t̪aɡɡimpu ʋast̪und̪i"
       "bases":
-      - { "word": "శాతం", "base": "శాతం", "reading": "śātaṁ" }
       - { "word": "చూపిస్తే", "ref": "te-0842" }
       - { "word": "వస్తుంది", "ref": "te-0623" }
   - id: "te-1465"
@@ -1236,6 +1232,7 @@
       "bases":
       - { "word": "మీటర్ల", "base": "మీటరు", "reading": "mīṭaru" }
       - { "word": "కావాలి", "ref": "te-0646" }
+      - { "word": "నాకు", "ref": "te-0593" }
     - "target": "ఈ బట్ట మీటరు ఎంత?"
       "reading": "ī baṭṭa mīṭaru enta?"
       "ipa": "iː baʈʈa miːʈaru ent̪a"
@@ -1258,6 +1255,7 @@
       "bases":
       - { "word": "చెప్పులు", "base": "చెప్పు", "reading": "ceppu" }
       - { "word": "కావాలి", "ref": "te-0646" }
+      - { "word": "నాకు", "ref": "te-0593" }
     - "target": "ఈ జత బూట్లు సరిపోతాయా?"
       "reading": "ī jata būṭlu saripōtāyā?"
       "ipa": "iː dʒat̪a buːʈlu saripoːt̪aːjaː"
@@ -1265,9 +1263,12 @@
       - { "word": "బూట్లు", "base": "బూటు", "reading": "būṭu" }
       - { "word": "సరిపోతాయా", "base": "సరిపోవడం", "reading": "saripōvaḍaṁ" }
     synonyms:
+      - { id: "doyi", word: "దోయి", reading: "dōyi", source: "https://en.wiktionary.org/wiki/జత" }
+      - { id: "syn2", word: "కవ", reading: "kava", source: "https://en.wiktionary.org/wiki/జత" }
       - { id: "janta", word: "జంట", reading: "jaṇṭa", source: "https://en.wiktionary.org/wiki/జత" }
       - { id: "jodu", word: "జోడు", reading: "jōḍu", source: "https://en.wiktionary.org/wiki/జత" }
     senses:
+      - { id: "pair", pos: "noun", source: "https://en.wiktionary.org/wiki/జత" }
       - { id: "set", pos: "noun", source: "https://en.wiktionary.org/wiki/జత" }
   - id: "te-1468"
     "target": "సెట్"
@@ -1369,6 +1370,7 @@
       "ipa": "ʋaːpasu koːsam rasiːd̪u iʋʋaɳɖi"
       "bases":
       - { "word": "ఇవ్వండి", "ref": "te-0630" }
+      - { "word": "కోసం", "base": "కోసం", "reading": "kōsaṁ" }
   - id: "te-1472"
     "target": "వారంటీ"
     "reading": "vāraṇṭī"
@@ -1459,12 +1461,14 @@
       "ipa": "naːku paːʋu kiloː bijjam iʋʋaɳɖi"
       "bases":
       - { "word": "ఇవ్వండి", "ref": "te-0630" }
+      - { "word": "నాకు", "ref": "te-0593" }
     - "target": "పావు గంట ఆగండి."
       "reading": "pāvu gaṇṭa āgaṇḍi."
       "ipa": "paːʋu ɡaɳʈa aːɡaɳɖi"
       "bases":
       - { "word": "ఆగండి", "ref": "te-0648" }
     senses:
+      - { id: "fourth", pos: "noun", source: "https://en.wiktionary.org/wiki/పావు" }
       - { id: "pawn", pos: "noun", source: "https://en.wiktionary.org/wiki/పావు" }
   - id: "te-1476"
     "target": "గ్రాము"
@@ -1484,17 +1488,9 @@
       "ipa": "ʋand̪a ɡraːmulu ent̪a"
       "bases":
       - { "word": "గ్రాములు", "base": "గ్రాము", "reading": "grāmu" }
-    - "target": "ఒక కిలో బదులు ఐదు వందల గ్రాములు తీసుకోండి."
-      "reading": "oka kilō badulu aidu vandala grāmulu tīsukōṇḍi."
-      "ipa": "oka kiloː bad̪ulu aid̪u ʋand̪ala ɡraːmulu t̪iːsukoːɳɖi"
+    - "target": "అర కిలో బదులు ఐదు వందల గ్రాములు తీసుకోండి."
+      "reading": "ara kilō badulu aidu vandala grāmulu tīsukōṇḍi."
+      "ipa": "ara kiloː bad̪ulu aid̪u ʋand̪ala ɡraːmulu t̪iːsukoːɳɖi"
       "bases":
-      - "word": "బదులు"
-        "base": "బదులు"
-        "reading": "badulu"
-      - "word": "గ్రాములు"
-        "base": "గ్రాము"
-        "reading": "grāmu"
-      - "word": "వందల"
-        "ref": "te-0228"
-      - "word": "తీసుకోండి"
-        "ref": "te-0631"
+      - { "word": "వందల", "ref": "te-0228" }
+      - { "word": "తీసుకోండి", "ref": "te-0631" }
