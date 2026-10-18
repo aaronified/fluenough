@@ -1,0 +1,533 @@
+schema: 1
+id: "te-nature"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "nature"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-2600"
+    target: "చెట్టు"
+    reading: "ceṭṭu"
+    ipa: "t͡ɕeʈːu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "చెట్లు", reading: "ceṭlu" }] }
+    examples:
+      - { target: "ఇక్కడ చెట్టు ఉంది.", reading: "ikkaḍa ceṭṭu undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది చెట్టు.", reading: "idi ceṭṭu." }
+    synonyms:
+      - { id: "mranu", word: "మ్రాను", reading: "mrānu", source: "https://en.wiktionary.org/wiki/చెట్టు" }
+      - { id: "padapamu", word: "పాదపము", reading: "pādapamu", source: "https://en.wiktionary.org/wiki/చెట్టు" }
+      - { id: "vrksamu", word: "వృక్షము", reading: "vrukṣamu", source: "https://en.wiktionary.org/wiki/చెట్టు" }
+      - { id: "sakhi", word: "శాఖి", reading: "śākhi", source: "https://en.wiktionary.org/wiki/చెట్టు" }
+  - id: "te-2601"
+    target: "ఆకు"
+    reading: "āku"
+    ipa: "aːku"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ఆకులు", reading: "ākulu" }] }
+    examples:
+      - { target: "ఇక్కడ ఆకు ఉంది.", reading: "ikkaḍa āku undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది ఆకు.", reading: "idi āku." }
+    synonyms:
+      - { id: "patramu", word: "పత్రము", reading: "patramu", source: "https://en.wiktionary.org/wiki/ఆకు" }
+    senses:
+      - { id: "leaf", pos: "noun", source: "https://en.wiktionary.org/wiki/ఆకు" }
+      - { id: "paper", pos: "noun", source: "https://en.wiktionary.org/wiki/ఆకు" }
+  - id: "te-2602"
+    target: "కొమ్మ"
+    reading: "komma"
+    ipa: "komːa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "కొమ్మలు", reading: "kommalu" }] }
+    examples:
+      - { target: "ఇక్కడ కొమ్మ ఉంది.", reading: "ikkaḍa komma undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది కొమ్మ.", reading: "idi komma." }
+    synonyms:
+      - { id: "sakha", word: "శాఖ", reading: "śākha", source: "https://en.wiktionary.org/wiki/కొమ్మ" }
+  - id: "te-2603"
+    target: "వేరు"
+    reading: "vēru"
+    ipa: "ʋeːɾu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "వేర్లు", reading: "vērlu" }] }
+    examples:
+      - { target: "ఇక్కడ వేరు ఉంది.", reading: "ikkaḍa vēru undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది వేరు.", reading: "idi vēru." }
+    synonyms:
+      - { id: "modalu", word: "మొదలు", reading: "modalu", source: "https://en.wiktionary.org/wiki/వేరు" }
+      - { id: "mulamu", word: "మూలము", reading: "mūlamu", source: "https://en.wiktionary.org/wiki/వేరు" }
+  - id: "te-2604"
+    target: "విత్తనం"
+    reading: "vittanam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "విత్తనాలు", reading: "vittanālu" }] }
+    examples:
+      - { target: "ఇక్కడ విత్తనం ఉంది.", reading: "ikkaḍa vittanam undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది విత్తనం.", reading: "idi vittanam." }
+  - id: "te-2605"
+    target: "రాయి"
+    reading: "rāyi"
+    ipa: "ɾaːji"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "రాళ్ళు", reading: "rāḷḷu" }] }
+    examples:
+      - { target: "ఇక్కడ రాయి ఉంది.", reading: "ikkaḍa rāyi undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది రాయి.", reading: "idi rāyi." }
+  - id: "te-2606"
+    target: "బండ"
+    reading: "banda"
+    ipa: "baɳɖa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "బండలు", reading: "bandalu" }] }
+    examples:
+      - { target: "ఇక్కడ బండ ఉంది.", reading: "ikkaḍa banda undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది బండ.", reading: "idi banda." }
+    senses:
+      - { id: "rock", pos: "noun", source: "https://en.wiktionary.org/wiki/బండ" }
+  - id: "te-2607"
+    target: "ఇసుక"
+    reading: "isuka"
+    ipa: "isuka"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ఇక్కడ ఇసుక ఉంది.", reading: "ikkaḍa isuka undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది ఇసుక.", reading: "idi isuka." }
+  - id: "te-2608"
+    target: "మట్టి"
+    reading: "maṭṭi"
+    ipa: "maʈːi"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ఇక్కడ మట్టి ఉంది.", reading: "ikkaḍa maṭṭi undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది మట్టి.", reading: "idi maṭṭi." }
+    synonyms:
+      - { id: "mannu", word: "మన్ను", reading: "mannu", source: "https://en.wiktionary.org/wiki/మట్టి" }
+      - { id: "nela", ref: "te-2610", source: "https://en.wiktionary.org/wiki/మట్టి" }
+  - id: "te-2609"
+    target: "భూమి"
+    reading: "bhūmi"
+    ipa: "bʱuːmi"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ఇక్కడ భూమి ఉంది.", reading: "ikkaḍa bhūmi undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది భూమి.", reading: "idi bhūmi." }
+    synonyms:
+      - { id: "nela", ref: "te-2610", source: "https://en.wiktionary.org/wiki/భూమి" }
+      - { id: "acala", word: "అచల", reading: "acala", source: "https://en.wiktionary.org/wiki/భూమి" }
+      - { id: "avani", word: "అవని", reading: "avani", source: "https://en.wiktionary.org/wiki/భూమి" }
+      - { id: "urvi", word: "ఉర్వి", reading: "urvi", source: "https://en.wiktionary.org/wiki/భూమి" }
+  - id: "te-2610"
+    target: "నేల"
+    reading: "nēla"
+    ipa: "neːla"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ఇక్కడ నేల ఉంది.", reading: "ikkaḍa nēla undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది నేల.", reading: "idi nēla." }
+    synonyms:
+      - { id: "pudami", word: "పుడమి", reading: "puḍami", source: "https://en.wiktionary.org/wiki/నేల" }
+      - { id: "bhumi", ref: "te-2609", source: "https://en.wiktionary.org/wiki/నేల" }
+      - { id: "mannu", word: "మన్ను", reading: "mannu", source: "https://en.wiktionary.org/wiki/నేల" }
+      - { id: "matti", ref: "te-2608", source: "https://en.wiktionary.org/wiki/నేల" }
+    senses:
+      - { id: "land", pos: "noun", source: "https://en.wiktionary.org/wiki/నేల" }
+      - { id: "earth", pos: "noun", source: "https://en.wiktionary.org/wiki/నేల" }
+      - { id: "soil", pos: "noun", source: "https://en.wiktionary.org/wiki/నేల" }
+  - id: "te-2611"
+    target: "నీడ"
+    reading: "nīḍa"
+    ipa: "niːɖa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ఇక్కడ నీడ ఉంది.", reading: "ikkaḍa nīḍa undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది నీడ.", reading: "idi nīḍa." }
+    synonyms:
+      - { id: "irulu", word: "ఇరులు", reading: "irulu", source: "https://en.wiktionary.org/wiki/నీడ" }
+      - { id: "chaya", word: "ఛాయ", reading: "chāya", source: "https://en.wiktionary.org/wiki/నీడ" }
+    senses:
+      - { id: "shade", pos: "noun", source: "https://en.wiktionary.org/wiki/నీడ" }
+      - { id: "image", pos: "noun", source: "https://en.wiktionary.org/wiki/నీడ" }
+  - id: "te-2612"
+    target: "చెరువు"
+    reading: "cheruvu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "చెరువులు", reading: "cheruvulu" }] }
+    examples:
+      - { target: "ఇక్కడ చెరువు ఉంది.", reading: "ikkaḍa cheruvu undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది చెరువు.", reading: "idi cheruvu." }
+    synonyms:
+      - { id: "kolanu", ref: "te-2613", source: "https://en.wiktionary.org/wiki/చెరువు" }
+      - { id: "gunta", word: "గుంట", reading: "guṇṭa", source: "https://en.wiktionary.org/wiki/చెరువు" }
+  - id: "te-2613"
+    target: "కొలను"
+    reading: "kolanu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "కొలనులు", reading: "kolanulu" }] }
+    examples:
+      - { target: "ఇక్కడ కొలను ఉంది.", reading: "ikkaḍa kolanu undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది కొలను.", reading: "idi kolanu." }
+  - id: "te-2614"
+    target: "బావి"
+    reading: "bāvi"
+    ipa: "baːʋi"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "బావులు", reading: "bāvulu" }] }
+    examples:
+      - { target: "ఇక్కడ బావి ఉంది.", reading: "ikkaḍa bāvi undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది బావి.", reading: "idi bāvi." }
+    synonyms:
+      - { id: "nuyyi", word: "నుయ్యి", reading: "nuyyi", source: "https://en.wiktionary.org/wiki/బావి" }
+      - { id: "kupamu", word: "కూపము", reading: "kūpamu", source: "https://en.wiktionary.org/wiki/బావి" }
+    senses:
+      - { id: "well", pos: "noun", source: "https://en.wiktionary.org/wiki/బావి" }
+      - { id: "tank", pos: "noun", source: "https://en.wiktionary.org/wiki/బావి" }
+      - { id: "spring", pos: "noun", source: "https://en.wiktionary.org/wiki/బావి" }
+      - { id: "pit", pos: "noun", source: "https://en.wiktionary.org/wiki/బావి" }
+  - id: "te-2615"
+    target: "జలపాతం"
+    reading: "jalapātam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "జలపాతాలు", reading: "jalapātālu" }] }
+    examples:
+      - { target: "ఇక్కడ జలపాతం ఉంది.", reading: "ikkaḍa jalapātam undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది జలపాతం.", reading: "idi jalapātam." }
+  - id: "te-2616"
+    target: "లోయ"
+    reading: "lōya"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "లోయలు", reading: "lōyalu" }] }
+    examples:
+      - { target: "ఇక్కడ లోయ ఉంది.", reading: "ikkaḍa lōya undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది లోయ.", reading: "idi lōya." }
+    senses:
+      - { id: "valley", pos: "noun", source: "https://en.wiktionary.org/wiki/లోయ" }
+      - { id: "pit", pos: "noun", source: "https://en.wiktionary.org/wiki/లోయ" }
+  - id: "te-2617"
+    target: "ద్వీపం"
+    reading: "dvīpam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ద్వీపాలు", reading: "dvīpālu" }] }
+    examples:
+      - { target: "ఇక్కడ ద్వీపం ఉంది.", reading: "ikkaḍa dvīpam undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది ద్వీపం.", reading: "idi dvīpam." }
+  - id: "te-2618"
+    target: "పర్వతం"
+    reading: "parvatam"
+    ipa: "paɾʋat̪am̃"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "పర్వతాలు", reading: "parvatālu" }] }
+    examples:
+      - { target: "ఇక్కడ పర్వతం ఉంది.", reading: "ikkaḍa parvatam undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది పర్వతం.", reading: "idi parvatam." }
+  - id: "te-2619"
+    target: "అగ్నిపర్వతం"
+    reading: "agniparvatam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "అగ్నిపర్వతాలు", reading: "agniparvatālu" }] }
+    examples:
+      - { target: "ఇక్కడ అగ్నిపర్వతం ఉంది.", reading: "ikkaḍa agniparvatam undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది అగ్నిపర్వతం.", reading: "idi agniparvatam." }
+  - id: "te-2620"
+    target: "గుట్ట"
+    reading: "guṭṭa"
+    ipa: "ɡuʈːa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "గుట్టలు", reading: "guṭṭalu" }] }
+    examples:
+      - { target: "ఇక్కడ గుట్ట ఉంది.", reading: "ikkaḍa guṭṭa undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది గుట్ట.", reading: "idi guṭṭa." }
+    synonyms:
+      - { id: "konda", ref: "te-0785", source: "https://en.wiktionary.org/wiki/గుట్ట" }
+      - { id: "gubbali", word: "గుబ్బలి", reading: "gubbali", source: "https://en.wiktionary.org/wiki/గుట్ట" }
+    senses:
+      - { id: "hill", pos: "noun", source: "https://en.wiktionary.org/wiki/గుట్ట" }
+      - { id: "heap", pos: "noun", source: "https://en.wiktionary.org/wiki/గుట్ట" }
+  - id: "te-2621"
+    target: "నక్షత్రం"
+    reading: "nakṣatram"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "నక్షత్రాలు", reading: "nakṣatrālu" }] }
+    examples:
+      - { target: "ఇక్కడ నక్షత్రం ఉంది.", reading: "ikkaḍa nakṣatram undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది నక్షత్రం.", reading: "idi nakṣatram." }
+  - id: "te-2622"
+    target: "గడ్డి"
+    reading: "gaḍḍi"
+    ipa: "ɡaɖːi"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ఇక్కడ గడ్డి ఉంది.", reading: "ikkaḍa gaḍḍi undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది గడ్డి.", reading: "idi gaḍḍi." }
+    synonyms:
+      - { id: "kasavu", word: "కసవు", reading: "kasavu", source: "https://en.wiktionary.org/wiki/గడ్డి" }
+      - { id: "kavanu", word: "కవను", reading: "kavanu", source: "https://en.wiktionary.org/wiki/గడ్డి" }
+      - { id: "pulu", word: "పులు", reading: "pulu", source: "https://en.wiktionary.org/wiki/గడ్డి" }
+      - { id: "puri", word: "పూరి", reading: "pūri", source: "https://en.wiktionary.org/wiki/గడ్డి" }
+    senses:
+      - { id: "grass", pos: "noun", source: "https://en.wiktionary.org/wiki/గడ్డి" }
+  - id: "te-2623"
+    target: "పచ్చిక"
+    reading: "paccika"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "పచ్చికలు", reading: "paccikalu" }] }
+    examples:
+      - { target: "ఇక్కడ పచ్చిక ఉంది.", reading: "ikkaḍa paccika undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది పచ్చిక.", reading: "idi paccika." }
+  - id: "te-2624"
+    target: "మంచు"
+    reading: "mañcu"
+    ipa: "maɲt͡ɕu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ఇక్కడ మంచు ఉంది.", reading: "ikkaḍa mañcu undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది మంచు.", reading: "idi mañcu." }
+    senses:
+      - { id: "snow", pos: "noun", source: "https://en.wiktionary.org/wiki/మంచు" }
+      - { id: "dew", pos: "noun", source: "https://en.wiktionary.org/wiki/మంచు" }
+  - id: "te-2625"
+    target: "వాగు"
+    reading: "vāgu"
+    ipa: "ʋaːɡu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "వాగులు", reading: "vāgulu" }] }
+    examples:
+      - { target: "ఇక్కడ వాగు ఉంది.", reading: "ikkaḍa vāgu undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది వాగు.", reading: "idi vāgu." }
+  - id: "te-2626"
+    target: "గుహ"
+    reading: "guha"
+    ipa: "ɡuha"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "గుహలు", reading: "guhalu" }] }
+    examples:
+      - { target: "ఇక్కడ గుహ ఉంది.", reading: "ikkaḍa guha undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది గుహ.", reading: "idi guha." }
+    synonyms:
+      - { id: "gavi", word: "గవి", reading: "gavi", source: "https://en.wiktionary.org/wiki/గుహ" }
+      - { id: "goba", word: "గొబ", reading: "goba", source: "https://en.wiktionary.org/wiki/గుహ" }
+      - { id: "dari", word: "దరి", reading: "dari", source: "https://en.wiktionary.org/wiki/గుహ" }
+  - id: "te-2627"
+    target: "ఎడారి"
+    reading: "eḍāri"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ఎడారులు", reading: "eḍārulu" }] }
+    examples:
+      - { target: "ఇక్కడ ఎడారి ఉంది.", reading: "ikkaḍa eḍāri undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది ఎడారి.", reading: "idi eḍāri." }
+  - id: "te-2628"
+    target: "అరణ్యం"
+    reading: "araṇyam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "అరణ్యాలు", reading: "araṇyālu" }] }
+    examples:
+      - { target: "ఇక్కడ అరణ్యం ఉంది.", reading: "ikkaḍa araṇyam undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది అరణ్యం.", reading: "idi araṇyam." }
+  - id: "te-2629"
+    target: "ప్రకృతి"
+    reading: "prakṛti"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ఇక్కడ ప్రకృతి ఉంది.", reading: "ikkaḍa prakṛti undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది ప్రకృతి.", reading: "idi prakṛti." }
+    senses:
+      - { id: "nature", pos: "noun", source: "https://en.wiktionary.org/wiki/ప్రకృతి" }
+  - id: "te-2630"
+    target: "కాయ"
+    reading: "kāya"
+    ipa: "kaːja"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "కాయలు", reading: "kāyalu" }] }
+    examples:
+      - { target: "ఇక్కడ కాయ ఉంది.", reading: "ikkaḍa kāya undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది కాయ.", reading: "idi kāya." }
+    senses:
+      - { id: "unripe", pos: "noun", source: "https://en.wiktionary.org/wiki/కాయ" }
+      - { id: "anything", pos: "noun", source: "https://en.wiktionary.org/wiki/కాయ" }
+      - { id: "pimple", pos: "noun", source: "https://en.wiktionary.org/wiki/కాయ" }
+  - id: "te-2631"
+    target: "కలప"
+    reading: "kalapa"
+    ipa: "kalapa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ఇక్కడ కలప ఉంది.", reading: "ikkaḍa kalapa undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది కలప.", reading: "idi kalapa." }
+  - id: "te-2632"
+    target: "పొద"
+    reading: "poda"
+    ipa: "pod̪a"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "పొదలు", reading: "podalu" }] }
+    examples:
+      - { target: "ఇక్కడ పొద ఉంది.", reading: "ikkaḍa poda undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది పొద.", reading: "idi poda." }
+  - id: "te-2633"
+    target: "మైదానం"
+    reading: "maidānam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "మైదానాలు", reading: "maidānālu" }] }
+    examples:
+      - { target: "ఇక్కడ మైదానం ఉంది.", reading: "ikkaḍa maidānam undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది మైదానం.", reading: "idi maidānam." }
+  - id: "te-2634"
+    target: "పుట్ట"
+    reading: "puṭṭa"
+    ipa: "puʈːa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "పుట్టలు", reading: "puṭṭalu" }] }
+    examples:
+      - { target: "ఇక్కడ పుట్ట ఉంది.", reading: "ikkaḍa puṭṭa undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది పుట్ట.", reading: "idi puṭṭa." }
+    synonyms:
+      - { id: "valmikamu", word: "వల్మీకము", reading: "valmīkamu", source: "https://en.wiktionary.org/wiki/పుట్ట" }
+  - id: "te-2635"
+    target: "తుఫాను"
+    reading: "tuphānu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "తుఫానులు", reading: "tuphānulu" }] }
+    examples:
+      - { target: "ఇక్కడ తుఫాను ఉంది.", reading: "ikkaḍa tuphānu undi.", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - { target: "ఇది తుఫాను.", reading: "idi tuphānu." }
+    senses:
+      - { id: "storm", pos: "noun", source: "https://en.wiktionary.org/wiki/తుఫాను" }
+      - { id: "hurricane", pos: "noun", source: "https://en.wiktionary.org/wiki/తుఫాను" }
+  - ref: "te-0785"
+  - ref: "te-0784"
+  - ref: "te-0794"
+  - ref: "te-0783"
+  - ref: "te-0786"
+  - ref: "te-0782"
+  - ref: "te-0781"
+  - ref: "te-1114"
+  - ref: "te-1129"
+  - ref: "te-1130"
+  - ref: "te-1116"
+  - ref: "te-1118"
+  - ref: "te-1115"
+  - ref: "te-1117"
+  - ref: "te-1311"
+  - ref: "te-1903"
+  - ref: "te-0995"
+  - ref: "te-1616"
+  - ref: "te-0772"
