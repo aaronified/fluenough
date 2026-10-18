@@ -70,35 +70,7 @@ cards:
       - { id: "love", pos: "noun", source: "https://en.wiktionary.org/wiki/ఆశ" }
       - { id: "desire", pos: "noun", source: "https://en.wiktionary.org/wiki/ఆశ" }
       - { id: "hope", pos: "noun", source: "https://en.wiktionary.org/wiki/ఆశ" }
-  - id: "te-3302"
-    target: "ఆనందం"
-    reading: "ānandam"
-    ipa: "aːnand̪am"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    synonyms:
-      - { id: "s1", ref: "te-0970" }
-    antonyms:
-      - { id: "a1", ref: "te-0971" }
-    notes:
-      - { id: "n1", kind: "usage", words: [{ word: "ఆనందంగా", reading: "ānandaṅgā" }] }
-      - { id: "n2", kind: "note" }
-    examples:
-      - target: "పెళ్లిలో అందరికీ ఆనందం కలిగింది."
-        reading: "peḷlilō andarikī ānandam kaligindi."
-        ipa: "peɭliloː and̪arikiː aːnand̪am kaliɡind̪i"
-        bases:
-          - { word: "పెళ్లిలో", base: "పెళ్లి", reading: "peḷli" }
-          - { word: "అందరికీ", base: "అందరు", reading: "andaru" }
-          - { word: "కలిగింది", base: "కలగడం", reading: "kalagaḍam" }
-      - target: "పిల్లల నవ్వులు నాకు ఎంతో ఆనందాన్ని ఇస్తాయి."
-        reading: "pillala navvulu nāku entō ānandānni istāyi."
-        ipa: "pillala naʋʋulu naːku ent̪oː aːnand̪aːnni ist̪aːji"
-        bases:
-          - { word: "నవ్వులు", base: "నవ్వు", reading: "navvu" }
-          - { word: "ఆనందాన్ని", base: "ఆనందం", reading: "ānandam" }
-          - { word: "ఇస్తాయి", base: "ఇవ్వడం", reading: "ivvaḍam" }
+  - ref: "te-1318"
   - id: "te-3303"
     target: "విచారం"
     reading: "vicāram"
@@ -327,30 +299,7 @@ cards:
       - { id: "disgust", pos: "noun", source: "https://en.wiktionary.org/wiki/విసుగు" }
       - { id: "boredom", pos: "noun", source: "https://en.wiktionary.org/wiki/విసుగు" }
       - { id: "weariness", pos: "noun", source: "https://en.wiktionary.org/wiki/విసుగు" }
-  - id: "te-3312"
-    target: "ఉత్సాహం"
-    reading: "utsāham"
-    ipa: "ut̪saːham"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "usage", words: [{ word: "ఉత్సాహంతో", reading: "utsāhantō" }] }
-      - { id: "n2", kind: "note" }
-    examples:
-      - target: "కొత్త ఉద్యోగంలో చేరడానికి ఆయనకు ఎంతో ఉత్సాహం."
-        reading: "kotta udyōgamlō cēraḍāniki āyanaku entō utsāham."
-        ipa: "kot̪t̪a ud̪joːɡamloː tʃeːraɖaːniki aːjanaku ent̪oː ut̪saːham"
-        bases:
-          - { word: "ఉద్యోగంలో", base: "ఉద్యోగం", reading: "udyōgam" }
-          - { word: "చేరడానికి", base: "చేరడం", reading: "cēraḍam" }
-          - { word: "ఆయనకు", base: "ఆయన", reading: "āyana" }
-      - target: "పిల్లలు పండుగ ఉత్సాహంతో పరిగెత్తారు."
-        reading: "pillalu paṇḍuga utsāhantō parigettāru."
-        ipa: "pillalu paɳɖuɡa ut̪saːhant̪oː pariɡet̪t̪aːru"
-        bases:
-          - { word: "ఉత్సాహంతో", base: "ఉత్సాహం", reading: "utsāham" }
-          - { word: "పరిగెత్తారు", base: "పరిగెత్తడం", reading: "parigettaḍam" }
+  - ref: "te-1322"
   - id: "te-3313"
     target: "కృతజ్ఞత"
     reading: "krutajñata"
@@ -398,29 +347,7 @@ cards:
           - { word: "వచ్చాక", base: "రావడం", reading: "rāvaḍam" }
           - { word: "మనసులో", base: "మనసు", reading: "manasu" }
           - { word: "వచ్చింది", base: "రావడం", reading: "rāvaḍam" }
-  - id: "te-3315"
-    target: "ఒత్తిడి"
-    reading: "ottiḍi"
-    ipa: "ot̪t̪iɖi"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "usage", words: [{ word: "ఒత్తిడితో", reading: "ottiḍitō" }] }
-    examples:
-      - target: "పరీక్షల ముందు విద్యార్థులకు ఒత్తిడి ఎక్కువ."
-        reading: "parīkṣala mundu vidyārthulaku ottiḍi ekkuva."
-        ipa: "pariːkʂala mund̪u ʋid̪jaːrt̪ʰulaku ot̪t̪iɖi ekkuʋa"
-        bases:
-          - { word: "పరీక్షల", base: "పరీక్ష", reading: "parīkṣa" }
-          - { word: "విద్యార్థులకు", base: "విద్యార్థి", reading: "vidyārthi" }
-      - target: "ఒత్తిడిని తగ్గించడానికి కొంచెం నడుద్దాం."
-        reading: "ottiḍini taggiñcaḍāniki koñcem naḍuddām."
-        ipa: "ot̪t̪iɖini t̪aɡɡiɲtʃaɖaːniki koɲtʃem naɖud̪d̪aːm"
-        bases:
-          - { word: "ఒత్తిడిని", base: "ఒత్తిడి", reading: "ottiḍi" }
-          - { word: "తగ్గించడానికి", base: "తగ్గించడం", reading: "taggiñcaḍam" }
-          - { word: "నడుద్దాం", base: "నడవడం", reading: "naḍavaḍam" }
+  - ref: "te-3222"
   - id: "te-3316"
     target: "దుఃఖం"
     reading: "duḥkham"
@@ -1045,92 +972,10 @@ cards:
         bases:
           - { word: "ఉండటంతో", base: "ఉండడం", reading: "uṇḍaḍam" }
           - { word: "ఉన్నారు", base: "ఉండడం", reading: "uṇḍaḍam" }
-  - id: "te-3343"
-    target: "భయపడడం"
-    reading: "bhayapaḍaḍam"
-    ipa: "bʱajapaɖaɖam"
-    pos: "verb"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "usage", words: [{ word: "భయపడకు", reading: "bhayapaḍaku" }] }
-    examples:
-      - target: "ఎవరూ లేని చోటుకి వెళ్ళాలంటే నేను భయపడతాను."
-        reading: "evarū lēni cōṭuki veḷḷālaṇṭē nēnu bhayapaḍatānu."
-        ipa: "eʋaruː leːni tʃoːʈuki ʋeɭɭaːlaɳʈeː neːnu bʱajapaɖat̪aːnu"
-        bases:
-          - { word: "వెళ్ళాలంటే", base: "వెళ్ళడం", reading: "veḷḷaḍam" }
-          - { word: "భయపడతాను", base: "భయపడడం", reading: "bhayapaḍaḍam" }
-      - target: "నువ్వు భయపడకు, నేను నీతో ఉన్నాను."
-        reading: "nuvvu bhayapaḍaku, nēnu nītō unnānu."
-        ipa: "nuʋʋu bʱajapaɖaku neːnu niːt̪oː unnaːnu"
-        bases:
-          - { word: "భయపడకు", base: "భయపడడం", reading: "bhayapaḍaḍam" }
-          - { word: "నీతో", base: "నువ్వు", reading: "nuvvu" }
-          - { word: "ఉన్నాను", base: "ఉండడం", reading: "uṇḍaḍam" }
-  - id: "te-3344"
-    target: "ఏడవడం"
-    reading: "ēḍavaḍam"
-    ipa: "eːɖaʋaɖam"
-    pos: "verb"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "usage", words: [{ word: "ఏడవకు", reading: "ēḍavaku" }] }
-      - { id: "n2", kind: "note" }
-    examples:
-      - target: "చిన్న పిల్లవాడు ఆకలికి ఏడుస్తున్నాడు."
-        reading: "cinna pillavāḍu ākaliki ēḍustunnāḍu."
-        ipa: "tʃinna pillaʋaːɖu aːkaliki eːɖust̪unnaːɖu"
-        bases:
-          - { word: "ఏడుస్తున్నాడు", base: "ఏడవడం", reading: "ēḍavaḍam" }
-      - target: "ఆ సినిమా చూసి ఆమె ఏడ్చేసింది."
-        reading: "ā sinimā cūsi āme ēḍcēsindi."
-        ipa: "aː sinimaː tʃuːsi aːme eːɖtʃeːsind̪i"
-        bases:
-          - { word: "చూసి", base: "చూడడం", reading: "cūḍaḍam" }
-          - { word: "ఏడ్చేసింది", base: "ఏడవడం", reading: "ēḍavaḍam" }
-  - id: "te-3345"
-    target: "నవ్వడం"
-    reading: "navvaḍam"
-    ipa: "naʋʋaɖam"
-    pos: "verb"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "usage", words: [{ word: "నవ్వుతూ", reading: "navvutū" }] }
-    examples:
-      - target: "అతని జోకు విని అందరూ నవ్వారు."
-        reading: "atani jōku vini andarū navvāru."
-        ipa: "at̪ani dʒoːku ʋini and̪aruː naʋʋaːru"
-        bases:
-          - { word: "జోకు", base: "జోకు", reading: "jōku" }
-          - { word: "విని", base: "వినడం", reading: "vinaḍam" }
-          - { word: "నవ్వారు", base: "నవ్వడం", reading: "navvaḍam" }
-      - target: "ఆమె నవ్వుతూ తలుపు తీసింది."
-        reading: "āme navvutū talupu tīsindi."
-        ipa: "aːme naʋʋut̪uː t̪alupu t̪iːsind̪i"
-        bases:
-          - { word: "నవ్వుతూ", base: "నవ్వడం", reading: "navvaḍam" }
-          - { word: "తీసింది", base: "తీయడం", reading: "tīyaḍam" }
-  - id: "te-3346"
-    target: "బాధపడడం"
-    reading: "bādhapaḍaḍam"
-    ipa: "baːd̪ʱapaɖaɖam"
-    pos: "verb"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "usage", words: [{ word: "బాధపడకు", reading: "bādhapaḍaku" }] }
-    examples:
-      - target: "నేను అతని మాటలకి బాధపడతాను."
-        reading: "nēnu atani māṭalaki bādhapaḍatānu."
-        ipa: "neːnu at̪ani maːʈalaki baːd̪ʱapaɖat̪aːnu"
-        bases:
-          - { word: "మాటలకి", base: "మాట", reading: "māṭa" }
-          - { word: "బాధపడతాను", base: "బాధపడడం", reading: "bādhapaḍaḍam" }
-      - target: "నా వల్ల నువ్వు బాధపడ్డావా?"
-        reading: "nā valla nuvvu bādhapaḍḍāvā?"
-        ipa: "naː ʋalla nuʋʋu baːd̪ʱapaɖɖaːʋaː"
-        bases:
-          - { word: "నా", base: "నేను", reading: "nēnu" }
-          - { word: "బాధపడ్డావా", base: "బాధపడడం", reading: "bādhapaḍaḍam" }
+  - ref: "te-2317"
+  - ref: "te-0823"
+  - ref: "te-0822"
+  - ref: "te-1539"
   - id: "te-3347"
     target: "సిగ్గుపడడం"
     reading: "siggupaḍaḍam"
@@ -1194,28 +1039,7 @@ cards:
         bases:
           - { word: "కంగారుపడకండి", base: "కంగారుపడడం", reading: "kaṅgārupaḍaḍam" }
           - { word: "రాలేదు", base: "రావడం", reading: "rāvaḍam" }
-  - id: "te-3350"
-    target: "నమ్మడం"
-    reading: "nammaḍam"
-    ipa: "nammaɖam"
-    pos: "verb"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "usage", words: [{ word: "నమ్మండి", reading: "nammaṇḍi" }] }
-      - { id: "n2", kind: "note" }
-    examples:
-      - target: "నేను నిన్ను పూర్తిగా నమ్ముతాను."
-        reading: "nēnu ninnu pūrtigā nammutānu."
-        ipa: "neːnu ninnu puːrt̪iɡaː nammut̪aːnu"
-        bases:
-          - { word: "నిన్ను", base: "నువ్వు", reading: "nuvvu" }
-          - { word: "నమ్ముతాను", base: "నమ్మడం", reading: "nammaḍam" }
-      - target: "అతని మాటలు నమ్మవద్దు."
-        reading: "atani māṭalu nammavaddu."
-        ipa: "at̪ani maːʈalu nammaʋad̪d̪u"
-        bases:
-          - { word: "మాటలు", base: "మాట", reading: "māṭa" }
-          - { word: "నమ్మవద్దు", base: "నమ్మడం", reading: "nammaḍam" }
+  - ref: "te-0844"
   - id: "te-3351"
     target: "ఆనందించడం"
     reading: "ānandiñcaḍam"
