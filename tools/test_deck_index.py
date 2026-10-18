@@ -127,6 +127,21 @@ class DeckIndex(unittest.TestCase):
         codes = [lang["code"] for lang in self.index()["languages"]]
         self.assertNotIn("ja", codes)
 
+    def test_a_language_with_no_written_deck_is_left_out(self) -> None:
+        zz = self.tmp / "decks" / "zz"
+        zz.mkdir()
+        (zz / "zz-path.yaml").write_text(
+            "schema: 1\nkind: path\nid: zz-path\nlanguage: zz\n"
+            "units:\n  - planned: { id: \"zz-health\", theme: \"health\", words: 60 }\n", encoding="utf-8")
+        codes = [lang["code"] for lang in self.index()["languages"]]
+        self.assertNotIn("zz", codes)
+        self.assertIn("es", codes)
+
+    def test_a_language_with_one_written_deck_is_listed(self) -> None:
+        shutil.copytree(B1, self.tmp / "decks" / "zz")
+        codes = [lang["code"] for lang in self.index()["languages"]]
+        self.assertIn("zz", codes)
+
     def test_a_core_and_its_layers(self) -> None:
         shutil.copytree(B1, self.tmp / "decks" / "zz")
         zz = self.language(self.index(), "zz")
