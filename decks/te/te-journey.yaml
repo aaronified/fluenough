@@ -1,0 +1,1113 @@
+schema: 1
+id: "te-journey"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+theme: "journey"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-2500"
+    target: "రైలు"
+    reading: "railu"
+    ipa: "railu"
+    pos: "noun"
+    gender: "amahat"
+    picture: "🚆"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "రైలు టికెట్", reading: "railu ṭikeṭ" }] }
+    examples:
+      - target: "నేను రైలులో వెళ్తాను."
+        reading: "nēnu railulō veḷtānu."
+        ipa: "neːnu railuloː ʋeɭtaːnu"
+        bases:
+          - { word: "రైలులో", base: "రైలు", reading: "railu" }
+          - { word: "వెళ్తాను", ref: "te-0622" }
+      - target: "రైలు ఇప్పుడే వస్తుంది."
+        reading: "railu ippuḍē vastundi."
+        ipa: "railu ippuɖeː ʋəstund̪i"
+        bases:
+          - { word: "వస్తుంది", ref: "te-0623" }
+    bases: "self"
+    synonyms:
+      - { id: "syn1", word: "పొగబండి", reading: "pogabaṇḍi", source: "https://en.wiktionary.org/wiki/రైలు" }
+    senses:
+      - { id: "rail", pos: "noun", source: "https://en.wiktionary.org/wiki/రైలు" }
+      - { id: "railway", pos: "noun", source: "https://en.wiktionary.org/wiki/రైలు" }
+  - id: "te-2501"
+    target: "ప్లాట్‌ఫామ్"
+    reading: "plāṭphām"
+    ipa: "pl̪aːʈpʰaːm"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ప్లాట్‌ఫామ్ నంబర్ ఎంత?", reading: "plāṭphām nambar enta?" }] }
+    examples:
+      - target: "రైలు ప్లాట్‌ఫామ్ నుంచి కదిలింది."
+        reading: "railu plāṭphām nuñci kadilindi."
+        ipa: "railu pl̪aːʈpʰaːm nun̪ʧi kəðilind̪i"
+        bases:
+          - { word: "కదిలింది", base: "కదలడం", reading: "kadalaḍaṁ" }
+      - target: "ప్లాట్‌ఫామ్ మీద చాలా మంది ఉన్నారు."
+        reading: "plāṭphām mīda cālā mandi unnāru."
+        ipa: "pl̪aːʈpʰaːm miːd̪ə tʃaːlaː mənd̪i unnaːru"
+        bases:
+          - { word: "ఉన్నారు", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+  - id: "te-2502"
+    target: "టైమ్‌టేబుల్"
+    reading: "ṭaimṭēbul"
+    ipa: "ʈaimʈeːbul"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "టైమ్‌టేబుల్ చూడండి", reading: "ṭaimṭēbul cūḍaṇḍi" }] }
+    examples:
+      - target: "టైమ్‌టేబుల్ చూడండి."
+        reading: "ṭaimṭēbul cūḍaṇḍi."
+        ipa: "ʈaimʈeːbul tʃuːɖaɳɖi"
+        bases:
+          - { word: "చూడండి", base: "చూడడం", reading: "cūḍaḍaṁ" }
+      - target: "రైలు సమయం టైమ్‌టేబుల్‌లో చూశాను."
+        reading: "railu samayaṁ ṭaimṭēbullō cūśānu."
+        ipa: "railu səmjəm ʈaimʈeːbulloː tʃuːʃaːnu"
+        bases:
+          - { word: "టైమ్‌టేబుల్‌లో", base: "టైమ్‌టేబుల్", reading: "ṭaimṭēbul" }
+          - { word: "చూశాను", base: "చూడడం", reading: "cūḍaḍaṁ" }
+  - id: "te-2503"
+    target: "ప్రయాణం"
+    reading: "prayāṇaṁ"
+    ipa: "prəjaːɳəm"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "మంచి ప్రయాణం!", reading: "manci prayāṇaṁ!" }] }
+    examples:
+      - target: "ప్రయాణం చాలా పొడవుగా ఉంది."
+        reading: "prayāṇaṁ cālā poḍavugā undi."
+        ipa: "prəjaːɳəm tʃaːlaː poɖəʋugaː und̪i"
+        bases:
+          - { word: "పొడవుగా", base: "పొడవు", reading: "poḍavu" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - target: "ప్రయాణంలో నేను పుస్తకం చదివాను."
+        reading: "prayāṇaṁlō nēnu pustakaṁ cadivānu."
+        ipa: "prəjaːɳəmloː neːnu pustəkəm tʃəd̪iʋaːnu"
+        bases:
+          - { word: "ప్రయాణంలో", base: "ప్రయాణం", reading: "prayāṇaṁ" }
+          - { word: "చదివాను", base: "చదవడం", reading: "cadavaḍaṁ" }
+    bases: "self"
+  - id: "te-2504"
+    target: "ప్రయాణికుడు"
+    reading: "prayāṇikuḍu"
+    ipa: "prəjaːɳikuɖu"
+    pos: "noun"
+    gender: "mahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ప్రయాణికురాలు", reading: "prayāṇikurālu" }] }
+    examples:
+      - target: "ప్రయాణికులు రైలు ఎక్కుతున్నారు."
+        reading: "prayāṇikulu railu ekkutunnāru."
+        ipa: "prəjaːɳikulu railu ekkut̪unnaːru"
+        bases:
+          - { word: "ప్రయాణికులు", base: "ప్రయాణికుడు", reading: "prayāṇikuḍu" }
+          - { word: "ఎక్కుతున్నారు", ref: "te-0827" }
+      - target: "ఆ ప్రయాణికుడు టికెట్ చూపించాడు."
+        reading: "ā prayāṇikuḍu ṭikeṭ cūpinciṇḍu."
+        ipa: "aː prəjaːɳikuɖu ʈikeʈ tʃuːpiɲʧaːɖu"
+        bases:
+          - { word: "చూపించాడు", ref: "te-0842" }
+    bases: "self"
+  - id: "te-2505"
+    target: "పాస్‌పోర్ట్"
+    reading: "pāspōrṭ"
+    ipa: "paːspoːʈ"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "పాస్‌పోర్ట్ చూపించండి", reading: "pāspōrṭ cūpiñcaṇḍi" }] }
+    examples:
+      - target: "మీ పాస్‌పోర్ట్ ఇవ్వండి."
+        reading: "mī pāspōrṭ ivvaṇḍi."
+        ipa: "miː paːspoːʈ ʋiʋʋaɳɖi"
+        bases:
+          - { word: "ఇవ్వండి", base: "ఇవ్వడం", reading: "ivvaḍaṁ" }
+      - target: "నా బ్యాగ్‌లో పాస్‌పోర్ట్ పెట్టాను."
+        reading: "nā byāglō pāspōrṭ peṭṭānu."
+        ipa: "naː bjaːgloː paːspoːʈ pɛʈːaːnu"
+        bases:
+          - { word: "బ్యాగ్‌లో", base: "బ్యాగ్", reading: "byāg" }
+          - { word: "పెట్టాను", base: "పెట్టడం", reading: "peṭṭaḍaṁ" }
+  - id: "te-2506"
+    target: "బ్యాగ్"
+    reading: "byāg"
+    ipa: "bjaːg"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    picture: "👜"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "చేతి బ్యాగ్", reading: "cēti byāg" }] }
+    examples:
+      - target: "నా బ్యాగ్ ఎక్కడ ఉంది?"
+        reading: "nā byāg ekkaḍa undi?"
+        ipa: "naː bjaːg ekkɖa und̪i"
+        bases:
+          - { word: "ఎక్కడ", ref: "te-0162" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - target: "నా బ్యాగ్ ఎక్కడ పెట్టాను?"
+        reading: "nā byāg ekkaḍa peṭṭānu?"
+        ipa: "naː bjaːg ekkɖa peʈːaːnu"
+        bases:
+          - { word: "ఎక్కడ", ref: "te-0162" }
+          - { word: "పెట్టాను", base: "పెట్టడం", reading: "peṭṭaḍaṁ" }
+  - id: "te-2507"
+    target: "ఓడ"
+    reading: "ōḍa"
+    ipa: "oːɖa"
+    pos: "noun"
+    gender: "amahat"
+    picture: "🚢"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఓడ ప్రయాణం", reading: "ōḍa prayāṇaṁ" }] }
+    examples:
+      - target: "మేము ఓడలో వెళ్తాము."
+        reading: "mēmu ōḍalō veḷtāmu."
+        ipa: "meːmu oːɖaloː ʋeɭtaːmu"
+        bases:
+          - { word: "ఓడలో", base: "ఓడ", reading: "ōḍa" }
+          - { word: "వెళ్తాము", ref: "te-0622" }
+      - target: "ఓడ ఎప్పుడు బయలుదేరుతుంది?"
+        reading: "ōḍa eppuḍu bayaludēruṭundi?"
+        ipa: "oːɖa eppɖu bəjəlud̪eːruʈund̪i"
+        bases:
+          - { word: "బయలుదేరుతుంది", ref: "te-2301" }
+    bases: "self"
+  - id: "te-2508"
+    target: "పడవ"
+    reading: "paḍava"
+    ipa: "pəɖəʋa"
+    pos: "noun"
+    gender: "amahat"
+    picture: "⛵"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "పడవ ప్రయాణం", reading: "paḍava prayāṇaṁ" }] }
+    examples:
+      - target: "ఆ పడవ చాలా చిన్నది."
+        reading: "ā paḍava cālā cinnadi."
+        ipa: "aː pəɖəʋa tʃaːlaː tʃinːəd̪i"
+        bases:
+          - { word: "చిన్నది", base: "చిన్న", reading: "cinna" }
+      - target: "మేము పడవలో నది దాటాము."
+        reading: "mēmu paḍavalō nadi dāṭāmu."
+        ipa: "meːmu pəɖəʋaloː nəd̪i d̪aːʈaːmu"
+        bases:
+          - { word: "పడవలో", base: "పడవ", reading: "paḍava" }
+          - { word: "దాటాము", base: "దాటడం", reading: "dāṭaḍaṁ" }
+    bases: "self"
+    synonyms:
+      - { id: "botu", word: "బోటు", reading: "bōṭu", source: "https://en.wiktionary.org/wiki/పడవ" }
+  - id: "te-2509"
+    target: "విమానం"
+    reading: "vimānaṁ"
+    ipa: "ʋimaːnəm"
+    pos: "noun"
+    gender: "amahat"
+    picture: "✈️"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "విమానం ఎక్కండి", reading: "vimānaṁ ekkaṇḍi" }] }
+    examples:
+      - target: "విమానం రేపు బయలుదేరుతుంది."
+        reading: "vimānaṁ rēpu bayaludēruṭundi."
+        ipa: "ʋimaːnəm reːpu bəjəlud̪eːruʈund̪i"
+        bases:
+          - { word: "బయలుదేరుతుంది", ref: "te-2301" }
+      - target: "విమానాశ్రయంలో విమానం ఎక్కాను."
+        reading: "vimānāśrayaṁlō vimānaṁ ekkānu."
+        ipa: "ʋimaːnaːʃrəjəmloː ʋimaːnəm ekkaːnu"
+        bases:
+          - { word: "విమానాశ్రయంలో", ref: "te-0776" }
+          - { word: "ఎక్కాను", ref: "te-0827" }
+    bases: "self"
+  - id: "te-2510"
+    target: "రిజర్వేషన్"
+    reading: "rijarvēṣan"
+    ipa: "ridʒərʋeːʂən"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "రిజర్వేషన్ చేయండి", reading: "rijarvēṣan cēyaṇḍi" }] }
+    examples:
+      - target: "ఈ రైలులో రిజర్వేషన్ దొరికిందా?"
+        reading: "ī railulō rijarvēṣan dorikindā?"
+        ipa: "iː railuloː ridʒərʋeːʂən d̪orikind̪aː"
+        bases:
+          - { word: "రైలులో", base: "రైలు", reading: "railu" }
+          - { word: "దొరికిందా", base: "దొరకడం", reading: "dorakaḍaṁ" }
+      - target: "రిజర్వేషన్ ఎప్పుడు చేయాలి?"
+        reading: "rijarvēṣan eppuḍu cēyāli?"
+        ipa: "ridʒərʋeːʂən eppɖu tʃeːjaːli"
+        bases:
+          - { word: "చేయాలి", base: "చేయడం", reading: "cēyaḍaṁ" }
+  - id: "te-2511"
+    target: "మ్యాప్"
+    reading: "myāp"
+    ipa: "mjaːp"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    picture: "🗺️"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "మ్యాప్ చూడండి", reading: "myāp cūḍaṇḍi" }] }
+    examples:
+      - target: "ఈ మ్యాప్‌లో స్టేషన్ ఎక్కడ?"
+        reading: "ī myāplō sṭēṣan ekkaḍa?"
+        ipa: "iː mjaːploː sʈeːʂən ekkɖa"
+        bases:
+          - { word: "మ్యాప్‌లో", base: "మ్యాప్", reading: "myāp" }
+          - { word: "స్టేషన్", ref: "te-0279" }
+          - { word: "ఎక్కడ", ref: "te-0162" }
+      - target: "నాకు ఒక మ్యాప్ కావాలి."
+        reading: "nāku oka myāp kāvāli."
+        ipa: "naːku oka mjaːp kaːʋaːli"
+        bases:
+          - { word: "కావాలి", base: "కావడం", reading: "kāvaḍaṁ" }
+  - id: "te-2512"
+    target: "పెట్రోల్"
+    reading: "peṭrōl"
+    ipa: "peʈroːl"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "పెట్రోల్ బంకు", reading: "peṭrōl baṅku" }] }
+    examples:
+      - target: "పెట్రోల్ అయిపోయింది!"
+        reading: "peṭrōl ayipōyindi!"
+        ipa: "peʈroːl əjipoːjind̪i"
+        bases:
+          - { word: "అయిపోయింది", base: "అయిపోవడం", reading: "ayipōvaḍaṁ" }
+      - target: "పెట్రోల్ బంకు ఎక్కడ ఉంది?"
+        reading: "peṭrōl baṅku ekkaḍa undi?"
+        ipa: "peʈroːl bəŋku ekkɖa und̪i"
+        bases:
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+  - id: "te-2513"
+    target: "నిష్క్రమణ"
+    reading: "niṣkramaṇa"
+    ipa: "niʂkrəmənə"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "నిష్క్రమణ ఎటు ఉంది?"
+        reading: "niṣkramaṇa ēṭu undi?"
+        ipa: "niʂkrəmənə eːʈu und̪i"
+        bases:
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - target: "ఈ తలుపు నిష్క్రమణ కాదు."
+        reading: "ī talupu niṣkramaṇa kādu."
+        ipa: "iː t̪aluːpu niʂkrəmənə kaːd̪u"
+        bases:
+          - { word: "తలుపు", base: "తలుపు", reading: "talupu" }
+          - { word: "కాదు", base: "అవడం", reading: "avaḍaṁ" }
+  - id: "te-2514"
+    target: "మెట్రో"
+    reading: "meṭrō"
+    ipa: "meʈroː"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    picture: "🚇"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "మెట్రో స్టేషన్", reading: "meṭrō sṭēṣan" }] }
+    examples:
+      - target: "మెట్రో త్వరగా వెళ్తుంది."
+        reading: "meṭrō tvaragā veḷtundi."
+        ipa: "meʈroː tʋəɾəgaː ʋeɭt̪und̪i"
+        bases:
+          - { word: "వెళ్తుంది", ref: "te-0622" }
+      - target: "మెట్రో ఎక్కడ ఆగుతుంది?"
+        reading: "meṭrō ekkaḍa āguntundi?"
+        ipa: "meʈroː ekkɖa aːgunt̪und̪i"
+        bases:
+          - { word: "ఆగుతుంది", ref: "te-0648" }
+  - id: "te-2515"
+    target: "కండక్టర్"
+    reading: "kaṇḍaktar"
+    ipa: "kəɳɖəktər"
+    pos: "noun"
+    bases: "self"
+    gender: "mahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "కండక్టర్ టికెట్ ఇచ్చాడు."
+        reading: "kaṇḍaktar ṭikeṭ iccāḍu."
+        ipa: "kəɳɖəktər ʈikeʈ itʃtʃaːɖu"
+        bases:
+          - { word: "ఇచ్చాడు", base: "ఇవ్వడం", reading: "ivvaḍaṁ" }
+      - target: "కండక్టర్‌ని ఒక ప్రశ్న అడిగాను."
+        reading: "kaṇḍaktarni oka praśna aḍigānu."
+        ipa: "kəɳɖəktərni oka prəʃnə ədiɡaːnu"
+        bases:
+          - { word: "కండక్టర్‌ని", base: "కండక్టర్", reading: "kaṇḍaktar" }
+          - { word: "అడిగాను", base: "అడగడం", reading: "aḍagaḍaṁ" }
+  - id: "te-2516"
+    target: "బోగీ"
+    reading: "bōgī"
+    ipa: "boːgiː"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    picture: "🚃"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "బోగీ నంబర్", reading: "bōgī nambar" }] }
+    examples:
+      - target: "ఈ బోగీలో ఖాళీ సీట్లు లేవు."
+        reading: "ī bōgīlō khāḷī sīṭlu lēvu."
+        ipa: "iː boːgiːloː kʰaːɭiː siːʈluː leːʋu"
+        bases:
+          - { word: "బోగీలో", base: "బోగీ", reading: "bōgī" }
+          - { word: "సీట్లు", base: "సీటు", reading: "sīṭu" }
+          - { word: "లేవు", base: "లేదు", reading: "lēdu" }
+      - target: "రైలు బోగీలు చాలా పొడవుగా ఉన్నాయి."
+        reading: "railu bōgīlu cālā poḍavugā unnāyi."
+        ipa: "railu boːgiːlu tʃaːlaː poɖəʋugaː unnaːji"
+        bases:
+          - { word: "బోగీలు", base: "బోగీ", reading: "bōgī" }
+          - { word: "పొడవుగా", base: "పొడవు", reading: "poḍavu" }
+          - { word: "ఉన్నాయి", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+  - id: "te-2517"
+    target: "బెర్త్"
+    reading: "bert"
+    ipa: "bert"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "లోయర్ బెర్త్", reading: "lōyar bert" }] }
+    examples:
+      - target: "నాకు పైన బెర్త్ ఇవ్వండి."
+        reading: "nāku paina bert ivvaṇḍi."
+        ipa: "naːku pəinə bert ʋiʋʋaɳɖi"
+        bases:
+          - { word: "ఇవ్వండి", base: "ఇవ్వడం", reading: "ivvaḍaṁ" }
+      - target: "రాత్రి బెర్త్‌లో పడుకున్నాను."
+        reading: "rātri bertlō paḍukunnānu."
+        ipa: "raːt̪ri bertloː pəɖukunnaːnu"
+        bases:
+          - { word: "బెర్త్‌లో", base: "బెర్త్", reading: "bert" }
+          - { word: "పడుకున్నాను", base: "పడుకోవడం", reading: "paḍukōvaḍaṁ" }
+  - id: "te-2518"
+    target: "గమ్యం"
+    reading: "gamyaṁ"
+    ipa: "gəmjəm"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "గమ్యం చేరాము", reading: "gamyaṁ cērāmu" }] }
+    examples:
+      - target: "మా గమ్యం హైదరాబాద్."
+        reading: "mā gamyaṁ haidarābād."
+        ipa: "maː gəmjəm haid̪əraːbaːd"
+      - target: "గమ్యానికి ఎంత సేపు పడుతుంది?"
+        reading: "gamyāniki enta sēpu paḍutundi?"
+        ipa: "gəmjaːnik̪i ent̪ə seːpu pəɖut̪und̪i"
+        bases:
+          - { word: "గమ్యానికి", base: "గమ్యం", reading: "gamyaṁ" }
+          - { word: "పడుతుంది", ref: "te-0839" }
+  - id: "te-2519"
+    target: "మార్గం"
+    reading: "mārgaṁ"
+    ipa: "maːrgəm"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఈ మార్గం", reading: "ī mārgaṁ" }] }
+    examples:
+      - target: "ఈ మార్గంలో బస్సులు వెళ్తాయి."
+        reading: "ī mārgaṁlō bassulu veḷtāyi."
+        ipa: "iː maːrgəmloː bəssulu ʋeɭtaːji"
+        bases:
+          - { word: "మార్గంలో", base: "మార్గం", reading: "mārgaṁ" }
+          - { word: "బస్సులు", ref: "te-0271" }
+          - { word: "వెళ్తాయి", ref: "te-0622" }
+      - target: "ఈ మార్గం నాకు తెలియదు."
+        reading: "ī mārgaṁ nāku teliyadu."
+        ipa: "iː maːrgəm naːku teliɟəd̪u"
+        bases:
+          - { word: "తెలియదు", base: "తెలియడం", reading: "teliyaḍaṁ" }
+    bases: "self"
+  - id: "te-2520"
+    target: "సొరంగం"
+    reading: "sorangaṁ"
+    ipa: "sorəŋgəm"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "సొరంగం లోపల", reading: "sorangaṁ lōpala" }] }
+    examples:
+      - target: "రైలు సొరంగంలోకి వెళ్ళింది."
+        reading: "railu sorangaṁlōki veḷḷindi."
+        ipa: "railu sorəŋgəmloːki ʋeɭɭind̪i"
+        bases:
+          - { word: "సొరంగంలోకి", base: "సొరంగం", reading: "sorangaṁ" }
+          - { word: "వెళ్ళింది", ref: "te-0622" }
+      - target: "సొరంగం చీకటిగా ఉంది."
+        reading: "sorangaṁ cīkaṭigā undi."
+        ipa: "sorəŋgəm tʃiːkəʈigaː und̪i"
+        bases:
+          - { word: "చీకటిగా", base: "చీకటి", reading: "cīkaṭi" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+  - id: "te-2521"
+    target: "రహదారి"
+    reading: "rahadāri"
+    ipa: "rəhəd̪aːri"
+    pos: "noun"
+    gender: "amahat"
+    picture: "🛣️"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "జాతీయ రహదారి", reading: "jātīya rahadāri" }] }
+    examples:
+      - target: "ఈ రహదారి హైదరాబాద్‌కి వెళ్తుందా?"
+        reading: "ī rahadāri haidarābādki veḷtundā?"
+        ipa: "iː rəhəd̪aːri haid̪əraːbaːdki ʋeɭt̪und̪aː"
+        bases:
+          - { word: "హైదరాబాద్‌కి", base: "హైదరాబాద్", reading: "haidarābād" }
+          - { word: "వెళ్తుందా", ref: "te-0622" }
+      - target: "ఈ రహదారిపై వాహనాలు వేగంగా వెళ్తాయి."
+        reading: "ī rahadāripai vāhanālu vēgaṅgā veḷtāyi."
+        ipa: "iː rəhəd̪aːripəi ʋaːhənaːlu ʋeːgəŋgaː ʋeɭt̪aːji"
+        bases:
+          - { word: "రహదారిపై", base: "రహదారి", reading: "rahadāri" }
+          - { word: "వాహనాలు", base: "వాహనం", reading: "vāhanaṁ" }
+          - { word: "వేగంగా", ref: "te-0964" }
+          - { word: "వెళ్తాయి", ref: "te-0622" }
+    bases: "self"
+    synonyms:
+      - { id: "dari", word: "దారి", reading: "dāri", source: "https://en.wiktionary.org/wiki/రహదారి" }
+      - { id: "trova", word: "త్రోవ", reading: "trōva", source: "https://en.wiktionary.org/wiki/రహదారి" }
+      - { id: "bata", word: "బాట", reading: "bāṭa", source: "https://en.wiktionary.org/wiki/రహదారి" }
+      - { id: "roddu", word: "రోడ్డు", reading: "rōḍḍu", source: "https://en.wiktionary.org/wiki/రహదారి" }
+    senses:
+      - { id: "road", pos: "noun", source: "https://en.wiktionary.org/wiki/రహదారి" }
+      - { id: "highway", pos: "noun", source: "https://en.wiktionary.org/wiki/రహదారి" }
+  - id: "te-2522"
+    target: "ట్రాఫిక్"
+    reading: "ṭrāphik"
+    ipa: "ʈraːfik"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    picture: "🚦"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ట్రాఫిక్ జామ్", reading: "ṭrāphik jām" }] }
+    examples:
+      - target: "ట్రాఫిక్ వల్ల బస్సు ఆలస్యమైంది."
+        reading: "ṭrāphik valla bassu ālasyamaindi."
+        ipa: "ʈraːfik ʋəlːə bəssu aːləsjəməind̪i"
+        bases:
+          - { word: "బస్సు", ref: "te-0271" }
+          - { word: "ఆలస్యమైంది", base: "ఆలస్యమవడం", reading: "ālasyamavaḍaṁ" }
+      - target: "ట్రాఫిక్‌లో ఆలస్యం అయింది."
+        reading: "ṭrāphiklō ālasyaṁ ayindi."
+        ipa: "ʈraːfikloː aːləsjəm əjind̪i"
+        bases:
+          - { word: "ట్రాఫిక్‌లో", base: "ట్రాఫిక్", reading: "ṭrāphik" }
+          - { word: "అయింది", base: "అవడం", reading: "avaḍaṁ" }
+  - id: "te-2523"
+    target: "సిగ్నల్"
+    reading: "signal"
+    ipa: "signəl"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఎరుపు సిగ్నల్", reading: "erupu signal" }] }
+    examples:
+      - target: "సిగ్నల్ ఎరుపు రంగులో ఉంది."
+        reading: "signal erupu raṅgulō undi."
+        ipa: "signəl ɛrupu rəŋgulloː und̪i"
+        bases:
+          - { word: "రంగులో", base: "రంగు", reading: "raṅgu" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - target: "సిగ్నల్ పచ్చగా మారింది."
+        reading: "signal paccagā mārindi."
+        ipa: "signəl pətʃtʃəgaː maːrind̪i"
+        bases:
+          - { word: "పచ్చగా", base: "పచ్చ", reading: "pacca" }
+          - { word: "మారింది", base: "మారడం", reading: "māraḍaṁ" }
+  - id: "te-2524"
+    target: "చెక్‌ఇన్"
+    reading: "cekin"
+    ipa: "ʧekin"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "చెక్‌ఇన్ చేయండి", reading: "cekin cēyaṇḍi" }] }
+    examples:
+      - target: "చెక్‌ఇన్ ఎప్పుడు మొదలవుతుంది?"
+        reading: "cekin eppuḍu modalavutundi?"
+        ipa: "ʧekin eppɖu moðəlaʋut̪und̪i"
+        bases:
+          - { word: "మొదలవుతుంది", base: "మొదలవడం", reading: "modalavaḍaṁ" }
+      - target: "చెక్‌ఇన్ కౌంటర్ ఎక్కడ ఉంది?"
+        reading: "cekin kauṇṭar ekkaḍa undi?"
+        ipa: "ʧekin kauɳʈər ekkɖa und̪i"
+        bases:
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+  - id: "te-2525"
+    target: "ఆలస్యం"
+    reading: "ālasyaṁ"
+    ipa: "aːləsjəm"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఆలస్యానికి క్షమించండి", reading: "ālasyāniki kṣamiñcaṇḍi" }] }
+    examples:
+      - target: "ఎందుకు ఈ ఆలస్యం?"
+        reading: "enduku ī ālasyaṁ?"
+        ipa: "end̪ukuː iː aːləsjəm"
+      - target: "ఆలస్యానికి క్షమించండి."
+        reading: "ālasyāniki kṣamiñcaṇḍi."
+        ipa: "aːləsjaːnik̪i kʂəmiɲʧəɳɖi"
+        bases:
+          - { word: "ఆలస్యానికి", base: "ఆలస్యం", reading: "ālasyaṁ" }
+          - { word: "క్షమించండి", base: "క్షమించడం", reading: "kṣamiñcaḍaṁ" }
+    bases: "self"
+  - id: "te-2526"
+    target: "పర్సు"
+    reading: "parsu"
+    ipa: "pərsu"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    picture: "👛"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "నా పర్సు", reading: "nā parsu" }] }
+    examples:
+      - target: "పర్సు పోయింది!"
+        reading: "parsu pōyindi!"
+        ipa: "pərsu poːjind̪i"
+        bases:
+          - { word: "పోయింది", base: "పోవడం", reading: "pōvaḍaṁ" }
+      - target: "పర్సులో డబ్బులు ఉన్నాయి."
+        reading: "parsulō dabbulu unnāyi."
+        ipa: "pərsuloː dəbbulu unnaːji"
+        bases:
+          - { word: "పర్సులో", base: "పర్సు", reading: "parsu" }
+          - { word: "డబ్బులు", ref: "te-0242" }
+          - { word: "ఉన్నాయి", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+  - id: "te-2527"
+    target: "గేటు"
+    reading: "gēṭu"
+    ipa: "geːʈu"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "గేటు నంబర్", reading: "gēṭu nambar" }] }
+    examples:
+      - target: "గేటు నంబర్ ఐదు."
+        reading: "gēṭu nambar aidu."
+        ipa: "geːʈu nəmbər əid̪u"
+      - target: "గేటు ఎప్పుడు తెరుస్తారు?"
+        reading: "gēṭu eppuḍu terustāru?"
+        ipa: "geːʈu eppɖu ʈerust̪aːru"
+        bases:
+          - { word: "తెరుస్తారు", base: "తెరవడం", reading: "teravaḍaṁ" }
+    bases: "self"
+  - id: "te-2528"
+    target: "బస్ స్టాప్"
+    reading: "bas sṭāp"
+    ipa: "bəs sʈaːp"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    picture: "🚏"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "తర్వాతి బస్ స్టాప్", reading: "tarvāti bas sṭāp" }] }
+    examples:
+      - target: "ఇది బస్ స్టాప్ కాదు."
+        reading: "idi bas sṭāp kādu."
+        ipa: "id̪i bəs sʈaːp kaːd̪u"
+        bases:
+          - { word: "కాదు", base: "అవడం", reading: "avaḍaṁ" }
+      - target: "బస్ స్టాప్ దగ్గర ఆగండి."
+        reading: "bas sṭāp daggara āgaṇḍi."
+        ipa: "bəs sʈaːp d̪əggərə aːgəɳɖi"
+        bases:
+          - { word: "ఆగండి", ref: "te-0648" }
+  - id: "te-2529"
+    target: "రద్దీ"
+    reading: "raddī"
+    ipa: "rəddiː"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "రద్దీ సమయం", reading: "raddī samayaṁ" }] }
+    examples:
+      - target: "ఉదయం రద్దీ ఎలా ఉంటుంది?"
+        reading: "udayaṁ raddī elā uṇṭundi?"
+        ipa: "ud̪əjəm rəddiː eləː ʊnʈund̪i"
+        bases:
+          - { word: "ఉంటుంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - target: "రద్దీ తగ్గింది."
+        reading: "raddī taggindi."
+        ipa: "rəddiː təggind̪i"
+        bases:
+          - { word: "తగ్గింది", base: "తగ్గడం", reading: "taggaḍaṁ" }
+  - id: "te-2530"
+    target: "కౌంటర్"
+    reading: "kauṇṭar"
+    ipa: "kauɳʈər"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "టికెట్ కౌంటర్", reading: "ṭikeṭ kauṇṭar" }] }
+    examples:
+      - target: "టికెట్ కౌంటర్ ఎక్కడ?"
+        reading: "ṭikeṭ kauṇṭar ekkaḍa?"
+        ipa: "ʈikeʈ kauɳʈər ekkɖa"
+        bases:
+          - { word: "ఎక్కడ", ref: "te-0162" }
+      - target: "కౌంటర్ మూసేశారు."
+        reading: "kauṇṭar mūsēśāru."
+        ipa: "kauɳʈər muːseːʃaːru"
+        bases:
+          - { word: "మూసేశారు", base: "మూసివేయడం", reading: "mūsivēyaḍaṁ" }
+  - id: "te-2531"
+    target: "క్యూ"
+    reading: "kyū"
+    ipa: "kjuː"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "క్యూలో నిలబడండి", reading: "kyūlō nilabaṇḍi" }] }
+    examples:
+      - target: "క్యూలో నిలబడండి."
+        reading: "kyūlō nilabaṇḍi."
+        ipa: "kjuːloː nilәbəɳɖi"
+        bases:
+          - { word: "క్యూలో", base: "క్యూ", reading: "kyū" }
+          - { word: "నిలబడండి", base: "నిలబడడం", reading: "nilabaḍaṁ" }
+      - target: "క్యూ కదులుతోంది."
+        reading: "kyū kadulutōndi."
+        ipa: "kjuː kəðuluːt̪oːnd̪i"
+        bases:
+          - { word: "కదులుతోంది", base: "కదలడం", reading: "kadalaḍaṁ" }
+  - id: "te-2532"
+    target: "కూలీ"
+    reading: "kūlī"
+    ipa: "kuːliː"
+    pos: "noun"
+    gender: "mahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "కూలీ బ్యాగ్ మోశాడు."
+        reading: "kūlī byāg mōśāḍu."
+        ipa: "kuːliː bjaːg moːʃaːɖu"
+        bases:
+          - { word: "మోశాడు", base: "మోయడం", reading: "mōyaḍaṁ" }
+      - target: "కూలీ ఎంత తీసుకుంటాడు?"
+        reading: "kūlī enta tīsukuṇṭāḍu?"
+        ipa: "kuːliː ent̪ə tiːsukunʈaːɖu"
+        bases:
+          - { word: "తీసుకుంటాడు", base: "తీసుకోవడం", reading: "tīsukōvaḍaṁ" }
+    bases: "self"
+    synonyms:
+      - { id: "syn1", word: "కూలివాడు", reading: "kūlivāḍu", source: "https://en.wiktionary.org/wiki/కూలీ" }
+      - { id: "syn2", word: "కూలిమనిషి", reading: "kūlimaniṣi", source: "https://en.wiktionary.org/wiki/కూలీ" }
+  - id: "te-2533"
+    target: "ఇంజిన్"
+    reading: "iñjin"
+    ipa: "iɲʤin"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఇంజిన్ డ్రైవర్", reading: "iñjin ḍraivar" }] }
+    examples:
+      - target: "ఇంజిన్ పెద్ద శబ్దం చేసింది."
+        reading: "iñjin pedda śabdaṁ cēsindi."
+        ipa: "iɲʤin pəd̪d̪ə ʃəbd̪əm tʃeːsind̪i"
+        bases:
+          - { word: "చేసింది", base: "చేయడం", reading: "cēyaḍaṁ" }
+      - target: "ఇంజిన్ ఆగిపోయింది."
+        reading: "iñjin āgipōyindi."
+        ipa: "iɲʤin aːgipoːjind̪i"
+        bases:
+          - { word: "ఆగిపోయింది", base: "ఆగిపోవడం", reading: "āgipōvaḍaṁ" }
+  - id: "te-2534"
+    target: "తిరుగు ప్రయాణం"
+    reading: "tirugu prayāṇaṁ"
+    ipa: "tirugu prəjaːɳəm"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "తిరుగు ప్రయాణం ఎప్పుడు?", reading: "tirugu prayāṇaṁ eppuḍu?" }] }
+    examples:
+      - target: "మేము ఆదివారం తిరుగు ప్రయాణం అవుతాము."
+        reading: "mēmu ādivāraṁ tirugu prayāṇaṁ avutāmu."
+        ipa: "meːmu aːd̪iʋaːrəm tirugu prəjaːɳəm əʋut̪aːmu"
+        bases:
+          - { word: "అవుతాము", base: "అవడం", reading: "avaḍaṁ" }
+      - target: "తిరుగు ప్రయాణంలో వర్షం పడింది."
+        reading: "tirugu prayāṇaṁlō varṣaṁ paḍindi."
+        ipa: "tirugu prəjaːɳəmloː ʋərʂəm pəɖind̪i"
+        bases:
+          - { word: "తిరుగు ప్రయాణంలో", base: "తిరుగు ప్రయాణం", reading: "tirugu prayāṇaṁ" }
+          - { word: "పడింది", ref: "te-0839" }
+  - id: "te-2535"
+    target: "బుక్ చేయడం"
+    reading: "buk cēyaḍaṁ"
+    ipa: "bukʧeːjəɖəm"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "బుక్ చేశాను", reading: "buk cēśānu" }] }
+    examples:
+      - target: "నేను టికెట్ బుక్ చేశాను."
+        reading: "nēnu ṭikeṭ buk cēśānu."
+        ipa: "neːnu ʈikeʈ bukʧeːʃaːnu"
+        bases:
+          - { word: "టికెట్", ref: "te-0280" }
+          - { word: "చేశాను", ref: "te-0621" }
+      - target: "హోటల్ గది బుక్ చేయండి."
+        reading: "hōṭal gadi buk cēyaṇḍi."
+        ipa: "hoːʈəl gəd̪i bukʧeːjəɳɖi"
+        bases:
+          - { word: "హోటల్", ref: "te-0775" }
+          - { word: "చేయండి", ref: "te-0621" }
+  - id: "te-2537"
+    target: "తిరిగి రావడం"
+    reading: "tirigi rāvaḍaṁ"
+    ipa: "tirigi raːʋəɖəm"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "తిరిగి వస్తాను", reading: "tirigi vastānu" }] }
+    examples:
+      - target: "నేను రేపు తిరిగి వస్తాను."
+        reading: "nēnu rēpu tirigi vastānu."
+        ipa: "neːnu reːpu tirigi ʋəstaːnu"
+        bases:
+          - { word: "వస్తాను", ref: "te-0623" }
+      - target: "రైలు ఎప్పుడు తిరిగి వెళ్తుంది?"
+        reading: "railu eppuḍu tirigi veḷtundi?"
+        ipa: "railu eppɖu tirigi ʋeɭt̪und̪i"
+        bases:
+          - { word: "వెళ్తుంది", ref: "te-0622" }
+  - id: "te-2538"
+    target: "రద్దు చేయడం"
+    reading: "raddu cēyaḍaṁ"
+    ipa: "rəddu tʃeːjəɖəm"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "రద్దు చేశారు", reading: "raddu cēśāru" }] }
+    examples:
+      - target: "రైలు రద్దు చేశారు."
+        reading: "railu raddu cēśāru."
+        ipa: "railu rəddu tʃeːʃaːru"
+        bases:
+          - { word: "చేశారు", ref: "te-0621" }
+      - target: "నా టికెట్ రద్దు చేయాలి."
+        reading: "nā ṭikeṭ raddu cēyāli."
+        ipa: "naː ʈikeʈ rəddu tʃeːjaːli"
+        bases:
+          - { word: "చేయాలి", base: "చేయడం", reading: "cēyaḍaṁ" }
+  - id: "te-2539"
+    target: "త్వరగా"
+    reading: "tvaragā"
+    ipa: "tʋərəgaː"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "త్వరగా రండి", reading: "tvaragā raṇḍi" }] }
+    examples:
+      - target: "త్వరగా రండి."
+        reading: "tvaragā raṇḍi."
+        ipa: "tʋərəgaː rəɳɖi"
+        bases:
+          - { word: "రండి", ref: "te-0623" }
+      - target: "మేము త్వరగా బయలుదేరాము."
+        reading: "mēmu tvaragā bayaludērāmu."
+        ipa: "meːmu tʋərəgaː bəjəluɖeːraːmu"
+        bases:
+          - { word: "బయలుదేరాము", ref: "te-2301" }
+    bases: "self"
+  - id: "te-2540"
+    target: "ఆలస్యంగా"
+    reading: "ālasyaṅgā"
+    ipa: "aːləsjəŋgaː"
+    pos: "adv"
+    bases:
+      - { word: "ఆలస్యంగా", base: "ఆలస్యం", reading: "ālasyaṁ" }
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఆలస్యంగా వచ్చాను", reading: "ālasyaṅgā vaccānu" }] }
+    examples:
+      - target: "రైలు ఆలస్యంగా వస్తోంది."
+        reading: "railu ālasyaṅgā vastōndi."
+        ipa: "railu aːləsjəŋgaː ʋəstoːnd̪i"
+        bases:
+          - { word: "వస్తోంది", ref: "te-0623" }
+      - target: "మీరు ఆలస్యంగా వచ్చారు."
+        reading: "mīru ālasyaṅgā vaccāru."
+        ipa: "miːru aːləsjəŋgaː ʋəttʃtʃaːru"
+        bases:
+          - { word: "వచ్చారు", ref: "te-0623" }
+  - id: "te-2541"
+    target: "సమీపంలో"
+    reading: "samīpanlō"
+    ipa: "səmiːpənloː"
+    pos: "adv"
+    bases:
+      - { word: "సమీపంలో", base: "సమీపం", reading: "samīpaṁ" }
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఇక్కడ సమీపంలో", reading: "ikkaḍa samīpanlō" }] }
+    examples:
+      - target: "బస్టాండ్ సమీపంలో హోటల్ ఉంది."
+        reading: "bassṭāṇḍ samīpanlō hōṭal undi."
+        ipa: "bəsʈaːɳɖ səmiːpənloː hoːʈəl und̪i"
+        bases:
+          - { word: "బస్టాండ్", ref: "te-0777" }
+          - { word: "హోటల్", ref: "te-0775" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - target: "ఇల్లు స్టేషన్ సమీపంలో ఉంది."
+        reading: "illu sṭēṣan samīpanlō undi."
+        ipa: "illu sʈeːʂən səmiːpənloː und̪i"
+        bases:
+          - { word: "స్టేషన్", ref: "te-0279" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+  - id: "te-2543"
+    target: "ఒక టికెట్ ఇవ్వండి."
+    reading: "oka ṭikeṭ ivvaṇḍi."
+    ipa: "oka ʈikeʈ ʋiʋʋaɳɖi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఇవ్వండి", base: "ఇవ్వడం", reading: "ivvaḍaṁ" }
+      - { word: "టికెట్", ref: "te-0280" }
+  - id: "te-2544"
+    target: "ఏ ప్లాట్‌ఫామ్?"
+    reading: "ē plāṭphām?"
+    ipa: "eː pl̪aːʈpʰaːm"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ప్లాట్‌ఫామ్", ref: "te-2501" }
+  - id: "te-2545"
+    target: "రైలు ఎప్పుడు వస్తుంది?"
+    reading: "railu eppuḍu vastundi?"
+    ipa: "railu eppɖu ʋəstund̪i"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "వస్తుంది", ref: "te-0623" }
+  - id: "te-2546"
+    target: "ఈ రైలు ఎక్కడికి వెళ్తుంది?"
+    reading: "ī railu ekkaḍiki veḷtundi?"
+    ipa: "iː railu ekkɖiki ʋeɭt̪und̪i"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఎక్కడికి", ref: "te-0162" }
+      - { word: "వెళ్తుంది", ref: "te-0622" }
+  - id: "te-2547"
+    target: "మీ టికెట్ చూపించండి."
+    reading: "mī ṭikeṭ cūpiñcaṇḍi."
+    ipa: "miː ʈikeʈ tʃuːpiɲʧəɳɖi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "చూపించండి", base: "చూపించడం", reading: "cūpiñcaḍaṁ" }
+  - id: "te-2548"
+    target: "రైలు ఆలస్యంగా వస్తోంది."
+    reading: "railu ālasyaṅgā vastōndi."
+    ipa: "railu aːləsjəŋgaː ʋəstoːnd̪i"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఆలస్యంగా", ref: "te-2540" }
+      - { word: "వస్తోంది", ref: "te-0623" }
+  - id: "te-2549"
+    target: "ఈ సీటు ఖాళీగా ఉందా?"
+    reading: "ī sīṭu khāḷīgā undā?"
+    ipa: "iː siːʈu kʰaːɭiːgaː und̪aː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "సీటు", ref: "te-0281" }
+      - { word: "ఖాళీగా", ref: "te-0956" }
+      - { word: "ఉందా", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+  - id: "te-2550"
+    target: "బండి ఎంత సేపు ఆగుతుంది?"
+    reading: "baṇḍi enta sēpu āguntundi?"
+    ipa: "bəɳɖi ent̪ə seːpu aːgunt̪und̪i"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఆగుతుంది", ref: "te-0648" }
+      - { word: "సేపు", base: "సేపు", reading: "sēpu" }
+  - id: "te-2551"
+    target: "ఈ బస్సు హైదరాబాద్ వెళ్తుందా?"
+    reading: "ī bassu haidarābād veḷtundā?"
+    ipa: "iː bəssu haid̪əraːbaːd ʋeɭt̪und̪aː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "బస్సు", ref: "te-0271" }
+      - { word: "వెళ్తుందా", ref: "te-0622" }
+  - id: "te-2552"
+    target: "నా పర్సు కనిపించడం లేదు."
+    reading: "nā parsu kanipiñcaḍaṁ lēdu."
+    ipa: "naː pərsu kənipiɲʧəɖəm leːd̪u"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "కనిపించడం", base: "కనిపించడం", reading: "kanipiñcaḍaṁ" }
+  - id: "te-2553"
+    target: "బరువు"
+    reading: "baruvu"
+    ipa: "bəruʋu"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఎంత బరువు?", reading: "enta baruvu?" }] }
+    examples:
+      - target: "సామాను బరువు ఎంత?"
+        reading: "sāmānu baruvu enta?"
+        ipa: "saːmaːnu bəruʋu ent̪ə"
+        bases:
+          - { word: "సామాను", ref: "te-0891" }
+      - target: "బ్యాగ్ బరువు ఇరవై కిలోలు."
+        reading: "byāg baruvu iravai kilōlu."
+        ipa: "bjaːg bəruʋu irəʋəi kiloːlu"
+        bases:
+          - { word: "కిలోలు", ref: "te-0248" }
+    bases: "self"
+    senses:
+      - { id: "weight", pos: "noun", source: "https://en.wiktionary.org/wiki/బరువు" }
+      - { id: "load", pos: "noun", source: "https://en.wiktionary.org/wiki/బరువు" }
+      - { id: "responsibility", pos: "noun", source: "https://en.wiktionary.org/wiki/బరువు" }
+  - id: "te-2554"
+    target: "తిరుగు టికెట్"
+    reading: "tirugu ṭikeṭ"
+    ipa: "tirugu ʈikeʈ"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "తిరుగు టికెట్ కావాలి", reading: "tirugu ṭikeṭ kāvāli" }] }
+    examples:
+      - target: "నాకు తిరుగు టికెట్ కావాలి."
+        reading: "nāku tirugu ṭikeṭ kāvāli."
+        ipa: "naːku tirugu ʈikeʈ kaːʋaːli"
+        bases:
+          - { word: "కావాలి", base: "కావడం", reading: "kāvaḍaṁ" }
+      - target: "తిరుగు టికెట్ ఎంత?"
+        reading: "tirugu ṭikeṭ enta?"
+        ipa: "tirugu ʈikeʈ ent̪ə"
+  - id: "te-2555"
+    target: "ఓవర్‌బ్రిడ్జ్"
+    reading: "ōvarbrij"
+    ipa: "oːʋərbridʒ"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ఓవర్‌బ్రిడ్జ్ మీదుగా వెళ్ళండి."
+        reading: "ōvarbrij mīduguā veḷḷaṇḍi."
+        ipa: "oːʋərbridʒ miːd̪ugaː ʋeɭɭəɳɖi"
+        bases:
+          - { word: "వెళ్ళండి", ref: "te-0622" }
+      - target: "ఓవర్‌బ్రిడ్జ్ ఎక్కండి, తర్వాత కిందకి దిగండి."
+        reading: "ōvarbrij ekkaṇḍi, tarvāta kindaki digaṇḍi."
+        ipa: "oːʋərbridʒ ekkəɳɖi t̪ərʋaːt̪aː kindəki d̪igəɳɖi"
+        bases:
+          - { word: "ఎక్కండి", ref: "te-0827" }
+          - { word: "దిగండి", ref: "te-0828" }
+  - id: "te-2556"
+    target: "లైన్"
+    reading: "lain"
+    ipa: "lain"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "లైన్ దాటకండి."
+        reading: "lain dāṭakaṇḍi."
+        ipa: "lain d̪aːʈəkəɳɖi"
+        bases:
+          - { word: "దాటకండి", base: "దాటడం", reading: "dāṭaḍaṁ" }
+      - target: "రైలు లైన్ పక్కన ఆడుకోకండి."
+        reading: "railu lain pakkana āḍukōkaṇḍi."
+        ipa: "railu lain pəkːənə aːɖukoːkəɳɖi"
+        bases:
+          - { word: "పక్కన", ref: "te-0803" }
+          - { word: "ఆడుకోకండి", base: "ఆడుకోవడం", reading: "āḍukōvaḍaṁ" }
+  - id: "te-2557"
+    target: "ప్రయాణ సమయం"
+    reading: "prayāṇa samayaṁ"
+    ipa: "prəjaːɳə səməjəm"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ప్రయాణ సమయం ఎంత?", reading: "prayāṇa samayaṁ enta?" }] }
+    examples:
+      - target: "ప్రయాణ సమయం రెండు గంటలు."
+        reading: "prayāṇa samayaṁ reṇḍu gaṇṭalu."
+        ipa: "prəjaːɳə səməjəm rendu gənʈəlu"
+        bases:
+          - { word: "గంటలు", ref: "te-0313" }
+      - target: "ప్రయాణ సమయం తగ్గింది."
+        reading: "prayāṇa samayaṁ taggindi."
+        ipa: "prəjaːɳə səməjəm təggind̪i"
+        bases:
+          - { word: "తగ్గింది", base: "తగ్గడం", reading: "taggaḍaṁ" }
+  - id: "te-2558"
+    target: "అదనపు చార్జీ"
+    reading: "adanapu cārjī"
+    ipa: "ədənəpu tʃaːrdʒiː"
+    pos: "noun"
+    bases: "self"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "అదనపు చార్జీ ఉందా?", reading: "adanapu cārjī undā?" }] }
+    examples:
+      - target: "ఈ టికెట్‌కి అదనపు చార్జీ చెల్లించాలా?"
+        reading: "ī ṭikeṭki adanapu cārjī celliñcālā?"
+        ipa: "iː ʈikeʈki ədənəpu tʃaːrdʒiː tʃelliɲʧaːlaː"
+        bases:
+          - { word: "టికెట్‌కి", ref: "te-0280" }
+          - { word: "చెల్లించాలా", base: "చెల్లించడం", reading: "celliñcaḍaṁ" }
+      - target: "అదనపు చార్జీ ఎందుకు?"
+        reading: "adanapu cārjī enduku?"
+        ipa: "ədənəpu tʃaːrdʒiː end̪ukuː"
