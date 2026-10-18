@@ -271,20 +271,28 @@ units:
       - { id: "at-the-tea-shop", text: { "en": "Ordering tea and a snack at a tea shop" } }
     reading_passages:
       - { id: "menu-board", text: { "en": "A menu board with dishes and prices" } }
-  # ml-grammar-needs joins this unit.
+  # ml-grammar-needs follows this unit.
   - planned: { id: "ml-groceries", theme: "groceries", words: 16 }
-    grammar: ["needs"]
     listening_passages:
       - { id: "what-we-need", text: { "en": "Two people say what they need from the shop" } }
     reading_passages:
       - { id: "grocery-list", text: { "en": "A grocery list" } }
-  # ml-grammar-nouns joins this unit.
+  - planned: { id: "ml-grammar-needs", grammar: "needs" }
+    listening_passages:
+      - { id: "needs-heard", text: { "en": "A short exchange that uses needs, after the groceries unit" } }
+    reading_passages:
+      - { id: "needs-read", text: { "en": "A short text that uses needs, after the groceries unit" } }
+  # ml-grammar-nouns follows this unit.
   - planned: { id: "ml-market", theme: "market", words: 7 }
-    grammar: ["noun-classes"]
     listening_passages:
       - { id: "at-the-market", text: { "en": "Buying fish and vegetables at a market" } }
     reading_passages:
       - { id: "market-board", text: { "en": "A market stall's board" } }
+  - planned: { id: "ml-grammar-nouns", grammar: "noun-classes" }
+    listening_passages:
+      - { id: "noun-classes-heard", text: { "en": "A short exchange that uses noun classes, after the market unit" } }
+    reading_passages:
+      - { id: "noun-classes-read", text: { "en": "A short text that uses noun classes, after the market unit" } }
   - planned: { id: "ml-grammar-questions", grammar: "questions", words: 0 }
     listening_passages:
       - { id: "asking-the-way", text: { "en": "Asking a stranger short questions" } }
@@ -302,13 +310,17 @@ units:
       - { id: "introducing-friends", text: { "en": "Introducing two friends: who is who, he and she" } }
     reading_passages:
       - { id: "a-short-diary", text: { "en": "A few lines about a day: who did what, and where" } }
-  # ml-grammar-continuous joins this unit.
+  # ml-grammar-continuous follows this unit.
   - planned: { id: "ml-directions", theme: "directions", words: 12 }
-    grammar: ["continuous"]
     listening_passages:
       - { id: "turn-left", text: { "en": "Directions to a temple: left, right and straight on" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Street signs and an arrow board" } }
+  - planned: { id: "ml-grammar-continuous", grammar: "continuous" }
+    listening_passages:
+      - { id: "continuous-heard", text: { "en": "A short exchange that uses continuous, after the directions unit" } }
+    reading_passages:
+      - { id: "continuous-read", text: { "en": "A short text that uses continuous, after the directions unit" } }
   - planned: { id: "ml-transport", theme: "transport", words: 8 }
     listening_passages:
       - { id: "auto-fare", text: { "en": "Agreeing a fare with an auto driver" } }
@@ -373,13 +385,17 @@ units:
       - { id: "weekend-plan", text: { "en": "A plan for the weekend" } }
     milestone: "A1"
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
-  # then its sentences. ml-grammar-negative joins the first unit.
+  # then its sentences. ml-grammar-negative follows the first unit.
   - planned: { id: "ml-daily-life", theme: "daily-life", words: 8 }
-    grammar: ["negative"]
     listening_passages:
       - { id: "a-day", text: { "en": "Someone tells their day, and what they do not do" } }
     reading_passages:
       - { id: "daily-routine", text: { "en": "A child's daily routine on a chart" } }
+  - planned: { id: "ml-grammar-negative", grammar: "negative" }
+    listening_passages:
+      - { id: "negative-heard", text: { "en": "A short exchange that uses negative, after the daily life unit" } }
+    reading_passages:
+      - { id: "negative-read", text: { "en": "A short text that uses negative, after the daily life unit" } }
   - planned: { id: "ml-grammar-sandhi", grammar: "sandhi", words: 0 }
     listening_passages:
       - { id: "run-together", text: { "en": "Short sentences said fast, then word by word" } }
@@ -390,13 +406,17 @@ units:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain and wind" } }
     reading_passages:
       - { id: "weather-message", text: { "en": "A message to a friend about the monsoon" } }
-  # ml-grammar-past joins this unit.
+  # ml-grammar-past follows this unit.
   - planned: { id: "ml-calendar", theme: "calendar", words: 15 }
-    grammar: ["past"]
     listening_passages:
       - { id: "what-i-did", text: { "en": "Saying what you did last week" } }
     reading_passages:
       - { id: "wall-calendar", text: { "en": "A wall calendar with its months and holidays" } }
+  - planned: { id: "ml-grammar-past", grammar: "past" }
+    listening_passages:
+      - { id: "past-heard", text: { "en": "A short exchange that uses past, after the calendar unit" } }
+    reading_passages:
+      - { id: "past-read", text: { "en": "A short text that uses past, after the calendar unit" } }
   - planned: { id: "ml-grammar-verb-classes", grammar: "verb-classes", words: 0 }
     listening_passages:
       - { id: "yesterday-at-home", text: { "en": "A family says what each of them did yesterday" } }
@@ -452,13 +472,22 @@ units:
       - { id: "which-is-better", text: { "en": "Two friends compare two phones" } }
     reading_passages:
       - { id: "two-cities", text: { "en": "A short text comparing two cities" } }
-  # ml-grammar-irregular and ml-grammar-pitfalls join this unit.
+  # ml-grammar-irregular and ml-grammar-pitfalls follow this unit.
   - planned: { id: "ml-help", theme: "help", words: 6 }
-    grammar: ["irregular", "pitfalls"]
     listening_passages:
       - { id: "asking-for-help", text: { "en": "Asking a passer-by for help" } }
     reading_passages:
       - { id: "help-desk-sign", text: { "en": "A help desk sign" } }
+  - planned: { id: "ml-grammar-irregular", grammar: "irregular" }
+    listening_passages:
+      - { id: "irregular-heard", text: { "en": "A short exchange that uses irregular, after the help unit" } }
+    reading_passages:
+      - { id: "irregular-read", text: { "en": "A short text that uses irregular, after the help unit" } }
+  - planned: { id: "ml-grammar-pitfalls", grammar: "pitfalls" }
+    listening_passages:
+      - { id: "pitfalls-heard", text: { "en": "A short exchange that uses pitfalls, after the help unit" } }
+    reading_passages:
+      - { id: "pitfalls-read", text: { "en": "A short text that uses pitfalls, after the help unit" } }
   - planned: { id: "ml-grammar-conjunct-verbs", grammar: "conjunct-verbs", words: 3 }
     listening_passages:
       - { id: "doing-a-favour", text: { "en": "Asking someone to do a favour or make a call" } }
