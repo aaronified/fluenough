@@ -1,0 +1,344 @@
+schema: 1
+id: "te-en-housing"
+kind: "layer"
+core: "te-housing"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Housing and renting"
+description: "Renting a flat or a room, the rent and the deposit, the parts of a building, and the things in a home. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "te-5700":
+    native: "apartment"
+    notes:
+      "n1": "Everyday speech also uses ఫ్లాట్ (flāṭ) for one flat in a block."
+    examples:
+      "ఈ అపార్ట్‌మెంట్‌లో మూడు గదులు ఉన్నాయి.":
+        native: "This apartment has three rooms."
+        bases:
+          "అపార్ట్‌మెంట్‌లో": { meaning: "apartment" }
+          "గదులు": { meaning: "room" }
+          "ఉన్నాయి": { meaning: "to be; to exist (of things)" }
+      "నా స్నేహితుడు కొత్త అపార్ట్‌మెంట్ కొన్నాడు.":
+        native: "My friend bought a new apartment."
+        bases:
+          "కొన్నాడు": { meaning: "to buy" }
+  "te-5701":
+    native: "landlord; house owner"
+    wiktionary: true
+    notes:
+      "n1": "The owner of the house or flat you rent. At work, యజమాని (yajamāni) can also mean the employer."
+    examples:
+      "యజమాని ఫోన్ చేశారు.":
+        native: "The owner called."
+        bases:
+          "చేశారు": { meaning: "to do" }
+      "యజమాని అద్దెను పెంచారు.":
+        native: "The landlord has raised the rent."
+        bases:
+          "అద్దెను": { meaning: "rent" }
+          "పెంచారు": { meaning: "to raise; to increase" }
+    senses:
+      "patron": { native: "patron of a yajna" }
+      "master": { native: "master, lord, boss" }
+      "owner": { native: "owner, proprietor" }
+  "te-5702":
+    native: "tenant"
+    notes:
+      "n1": "A person, so mahat. Its plural is అద్దెదారులు (addedārulu)."
+    examples:
+      "అద్దెదారు నెల ప్రారంభంలో అద్దె చెల్లించాలి.":
+        native: "The tenant must pay the rent at the start of the month."
+        bases:
+          "ప్రారంభంలో": { meaning: "start; beginning" }
+          "చెల్లించాలి": { meaning: "to pay" }
+      "నేను ఈ ఇంట్లో అద్దెదారుగా ఉంటాను.":
+        native: "I will live in this house as a tenant."
+        bases:
+          "ఇంట్లో": { meaning: "house" }
+          "అద్దెదారుగా": { meaning: "tenant" }
+          "ఉంటాను": { meaning: "to stay; to live" }
+  "te-5703":
+    native: "deposit"
+    notes:
+      "n1": "Money paid up front and given back when you move out."
+    examples:
+      "డిపాజిట్ డబ్బు ఎప్పుడు తిరిగి ఇస్తారు?":
+        native: "When will they give back the deposit?"
+        bases:
+          "ఇస్తారు": { meaning: "to give" }
+      "మూడు నెలల అద్దె డిపాజిట్‌గా ఇచ్చాను.":
+        native: "I paid three months' rent as a deposit."
+        bases:
+          "నెలల": { meaning: "month" }
+          "డిపాజిట్‌గా": { meaning: "deposit" }
+          "ఇచ్చాను": { meaning: "to give" }
+  "te-5704":
+    native: "advance (money paid early)"
+    notes:
+      "n1": "Money paid before it is due."
+    examples:
+      "అడ్వాన్స్ డబ్బు ముందుగానే ఇవ్వాలి.":
+        native: "The advance money must be paid early."
+        bases:
+          "ముందుగానే": { meaning: "in advance; early" }
+          "ఇవ్వాలి": { meaning: "to give" }
+      "నేను అడ్వాన్స్ చెల్లించాను.":
+        native: "I paid the advance."
+        bases:
+          "చెల్లించాను": { meaning: "to pay" }
+  "te-5705":
+    native: "electricity"
+    notes:
+      "n1": "Spoken Telugu often says కరెంట్ (kareṇṭ)."
+    examples:
+      "కరెంటు బిల్లు నెలకు ఎంత వస్తుంది?":
+        native: "How much does the electricity bill come to per month?"
+        bases:
+          "నెలకు": { meaning: "month" }
+          "వస్తుంది": { meaning: "to come" }
+      "కరెంటు పోయింది.":
+        native: "The electricity has gone off."
+        bases:
+          "పోయింది": { meaning: "to go" }
+  "te-5706":
+    native: "water"
+    wiktionary: true
+    notes:
+      "n1": "In speech, నీళ్లు (nīḷḷu) is more common, and used in the plural."
+    examples:
+      "ఈ ఇంట్లో నీరు బాగా వస్తుంది.":
+        native: "The water supply is good in this house."
+        bases:
+          "ఇంట్లో": { meaning: "house" }
+          "వస్తుంది": { meaning: "to come" }
+      "నీరు వేడిగా ఉంది.":
+        native: "The water is warm."
+        bases:
+          "వేడిగా": { meaning: "hot; heat" }
+          "ఉంది": { meaning: "to be; to exist" }
+    synonyms: { "ambuvu": "water", "arnamu": "water", "udakamu": "water", "ganga": "the river Ganga" }
+    senses:
+      "water": { native: "water, as in the substance" }
+      "fluid": { native: "fluid" }
+      "urine": { native: "urine" }
+  "te-5707":
+    native: "balcony"
+    notes:
+      "n1": "A balcony is outside a flat on an upper floor; a verandah is a covered porch by the door."
+    examples:
+      "బాల్కనీలో కూర్చుని టీ తాగుతాను.":
+        native: "I sit on the balcony and drink tea."
+        bases:
+          "బాల్కనీలో": { meaning: "balcony" }
+          "కూర్చుని": { meaning: "to sit" }
+          "తాగుతాను": { meaning: "to drink" }
+      "బాల్కనీ నుంచి పార్కు కనిపిస్తుంది.":
+        native: "You can see the park from the balcony."
+        bases:
+          "కనిపిస్తుంది": { meaning: "to be visible" }
+  "te-5708":
+    native: "verandah; porch"
+    notes:
+      "n1": "A covered porch in front of a house. For an upper balcony, see బాల్కనీ (bālkanī)."
+    examples:
+      "వరండాలో కుర్చీలు ఉన్నాయి.":
+        native: "There are chairs on the verandah."
+        bases:
+          "వరండాలో": { meaning: "verandah" }
+          "కుర్చీలు": { meaning: "chair" }
+          "ఉన్నాయి": { meaning: "to be; to exist (of things)" }
+      "వర్షం వస్తే వరండాలో కూర్చోవచ్చు.":
+        native: "If it rains, we can sit on the verandah."
+        bases:
+          "వస్తే": { meaning: "to come" }
+          "వరండాలో": { meaning: "verandah" }
+          "కూర్చోవచ్చు": { meaning: "to sit" }
+  "te-5709":
+    native: "roof; ceiling"
+    wiktionary: true
+    notes:
+      "n1": "The roof outside, or the ceiling inside a room: the context tells which."
+    examples:
+      "పైకప్పు నుంచి నీరు కారుతోంది.":
+        native: "Water is leaking from the roof."
+        bases:
+          "కారుతోంది": { meaning: "to leak; to drip" }
+      "గది పైకప్పు చాలా ఎత్తుగా ఉంది.":
+        native: "The ceiling of the room is very high."
+        bases:
+          "ఎత్తుగా": { meaning: "high; tall" }
+          "ఉంది": { meaning: "to be; to exist" }
+    senses:
+      "roof": { native: "roof, thatch" }
+      "ceiling": { native: "ceiling" }
+  "te-5710":
+    native: "lift; elevator"
+    notes:
+      "n1": "The lift in a building. Plural లిఫ్ట్‌లు (liphṭlu)."
+    examples:
+      "లిఫ్ట్ పాడైపోయింది.":
+        native: "The lift has broken down."
+        bases:
+          "పాడైపోయింది": { meaning: "to break down" }
+      "ఏడో అంతస్తుకి లిఫ్ట్‌లో వెళ్దాం.":
+        native: "Let's take the lift to the seventh floor."
+        bases:
+          "అంతస్తుకి": { meaning: "floor; storey" }
+          "లిఫ్ట్‌లో": { meaning: "lift" }
+          "వెళ్దాం": { meaning: "to go" }
+  "te-5711":
+    native: "watchman; security guard"
+    notes:
+      "n1": "A person, so mahat. Plural వాచ్‌మన్‌లు (vācmanlu)."
+    examples:
+      "వాచ్‌మన్ గేటు దగ్గర ఉన్నారు.":
+        native: "The watchman is near the gate."
+        bases:
+          "ఉన్నారు": { meaning: "to be; to exist (of people)" }
+      "అపార్ట్‌మెంట్ వాచ్‌మన్ పేరు రాము.":
+        native: "The apartment watchman's name is Ramu."
+  "te-5712":
+    native: "bulb"
+    notes:
+      "n1": "The light bulb. The switch on the wall is స్విచ్ (svic)."
+    examples:
+      "గదిలో బల్బు మార్చాలి.":
+        native: "The bulb in the room has to be changed."
+        bases:
+          "గదిలో": { meaning: "room" }
+          "మార్చాలి": { meaning: "to change; to replace" }
+      "ఈ బల్బు చాలా ప్రకాశంగా ఉంది.":
+        native: "This bulb is very bright."
+        bases:
+          "ప్రకాశంగా": { meaning: "bright" }
+          "ఉంది": { meaning: "to be; to exist" }
+  "te-5713":
+    native: "cupboard; cabinet"
+    notes:
+      "n1": "A cupboard for clothes and things. Clothes are బట్టలు (baṭṭalu)."
+    examples:
+      "అల్మారాలో బట్టలు ఉన్నాయి.":
+        native: "There are clothes in the cupboard."
+        bases:
+          "అల్మారాలో": { meaning: "cupboard" }
+          "బట్టలు": { meaning: "cloth; clothes" }
+          "ఉన్నాయి": { meaning: "to be; to exist (of things)" }
+      "అల్మారా తలుపు విరిగింది.":
+        native: "The cupboard door has broken."
+        bases:
+          "విరిగింది": { meaning: "to break" }
+  "te-5714":
+    native: "hostel"
+    notes:
+      "n1": "A place to stay, often for students or workers, where a room and meals are often given together."
+    examples:
+      "నేను కాలేజీ హాస్టల్‌లో ఉంటాను.":
+        native: "I stay in a college hostel."
+        bases:
+          "హాస్టల్‌లో": { meaning: "hostel" }
+          "ఉంటాను": { meaning: "to stay; to live" }
+      "హాస్టల్ భోజనం బాగుంది.":
+        native: "The hostel food is good."
+        bases:
+          "బాగుంది": { meaning: "to be good; to be fine" }
+  "te-5715":
+    native: "residence; home"
+    wiktionary: true
+    notes:
+      "n1": "A formal word for a home or the place where one lives."
+    examples:
+      "ఇది మా కుటుంబ నివాసం.":
+        native: "This is our family home."
+      "ఆ ప్రాంతంలో చాలా నివాసాలు ఉన్నాయి.":
+        native: "There are many homes in that area."
+        bases:
+          "ప్రాంతంలో": { meaning: "area; region" }
+          "నివాసాలు": { meaning: "residence; home" }
+          "ఉన్నాయి": { meaning: "to be; to exist (of things)" }
+  "te-5716":
+    native: "lease"
+    notes:
+      "n1": "The written agreement to rent a place for a set time."
+    examples:
+      "లీజు ఒప్పందం ఒక సంవత్సరానికి.":
+        native: "The lease is for one year."
+        bases:
+          "సంవత్సరానికి": { meaning: "year" }
+      "లీజు గడువు ముగిసింది.":
+        native: "The lease has run out."
+        bases:
+          "ముగిసింది": { meaning: "to end; to finish" }
+  "te-5717":
+    native: "parking"
+    notes:
+      "n1": "A place to park a vehicle."
+    examples:
+      "ఇంటి ముందు పార్కింగ్ ఉంది.":
+        native: "There is parking in front of the house."
+        bases:
+          "ఇంటి": { meaning: "house" }
+          "ఉంది": { meaning: "to be; to exist" }
+      "బండి పార్కింగ్ ఎక్కడ చేయాలి?":
+        native: "Where should I park the vehicle?"
+        bases:
+          "చేయాలి": { meaning: "to do" }
+  "te-5718":
+    native: "broker; agent"
+    notes:
+      "n1": "A person who finds a flat or a house for you and takes a commission. Plural బ్రోకర్‌లు (brōkarlu)."
+    examples:
+      "బ్రోకర్ ద్వారా ఇల్లు చూశాను.":
+        native: "I saw the house through a broker."
+        bases:
+          "చూశాను": { meaning: "to see" }
+      "బ్రోకర్ కమిషన్ ఎంత తీసుకుంటాడు?":
+        native: "How much commission does the broker take?"
+        bases:
+          "తీసుకుంటాడు": { meaning: "to take" }
+  "te-5719":
+    native: "accommodation; lodging"
+    wiktionary: true
+    notes:
+      "n1": "A place to stay, with food or facilities. Plural వసతులు (vasatulu)."
+    examples:
+      "ఈ ఊళ్ళో వసతి దొరకడం కష్టం.":
+        native: "It is hard to find accommodation in this town."
+        bases:
+          "ఊళ్ళో": { meaning: "village; town" }
+      "హాస్టల్‌లో వసతి, భోజనం రెండూ ఉన్నాయి.":
+        native: "The hostel has both lodging and food."
+        bases:
+          "హాస్టల్‌లో": { meaning: "hostel" }
+          "ఉన్నాయి": { meaning: "to be; to exist (of things)" }
+    senses:
+      "convenience": { native: "convenience, commodiousness" }
+      "house": { native: "a house, dwelling" }
+      "camping": { native: "camping place" }
+  "te-5720":
+    native: "switch"
+    notes:
+      "n1": "The switch on the wall that turns a light or a fan on and off."
+    examples:
+      "లైట్ స్విచ్ ఎక్కడ ఉంది?":
+        native: "Where is the light switch?"
+        bases:
+          "ఉంది": { meaning: "to be; to exist" }
+      "స్విచ్ ఆఫ్ చేయి.":
+        native: "Switch it off."
+        bases:
+          "చేయి": { meaning: "to do" }
+  "te-5721":
+    native: "clean"
+    notes:
+      "n1": "The adjective. The adverb is శుభ్రంగా (śubhraṅgā), cleanly."
+    examples:
+      "మా ఇల్లు చాలా శుభ్రంగా ఉంటుంది.":
+        native: "Our house always stays very clean."
+        bases:
+          "శుభ్రంగా": { meaning: "clean" }
+          "ఉంటుంది": { meaning: "to stay; to be" }
+      "వంటగది శుభ్రంగా లేదు.":
+        native: "The kitchen is not clean."
+        bases:
+          "శుభ్రంగా": { meaning: "clean" }
