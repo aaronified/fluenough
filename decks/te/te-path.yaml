@@ -394,7 +394,8 @@ units:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
     reading_passages:
       - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
-  - planned: { id: "te-feelings", theme: "feelings", words: 60 }
+  - decks: ["te-feelings"]
+    words: 60
     listening_passages:
       - { id: "a-hard-week", text: { "en": "A friend says how the week made them feel" } }
     reading_passages:
