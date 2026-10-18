@@ -216,13 +216,13 @@ void main() {
       );
       expect(find.text(l10n.settingsRestoreByApp('0.5.0')), findsOneWidget);
       expect(
-        find.text(l10n.settingsRestoreProgressIn(6, 'Bengali and Hindi')),
+        find.text(l10n.settingsRestoreProgressIn(6, 'Bengali and Hindustani')),
         findsOneWidget,
       );
       expect(find.text(l10n.settingsRestoreAlsoText), findsOneWidget);
       expect(find.text(l10n.settingsRestoreNotRestored), findsOneWidget);
       expect(
-        find.text(l10n.settingsRestoreDecks('Bengali and Hindi')),
+        find.text(l10n.settingsRestoreDecks('Bengali and Hindustani')),
         findsOneWidget,
       );
       expect(find.text(l10n.settingsRestoreWarning), findsOneWidget);
@@ -290,7 +290,7 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.text(l10n.settingsRestoreTitle), findsOneWidget);
       expect(
-        find.text(l10n.settingsRestoreProgressIn(4, 'Hindi')),
+        find.text(l10n.settingsRestoreProgressIn(4, 'Hindustani')),
         findsOneWidget,
       );
       expect(state.progress.log, isEmpty, reason: 'nothing before the ok');
