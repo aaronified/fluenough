@@ -1,0 +1,518 @@
+schema: 1
+id: "te-en-opinions"
+kind: "layer"
+core: "te-opinions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Opinions: agree, disagree, praise and criticize"
+description: "Words for giving and judging opinions: opinion, truth and lies, right and wrong, good and bad, doubt, approval, advice and decisions; the verbs to think, disagree, praise, criticize and guess; and the words for yes, no, maybe and definitely. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "te-3600":
+    native: "opinion; view"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'in my opinion'."
+    examples:
+      "నీ అభిప్రాయం ఏమిటి?":
+        native: "What is your opinion?"
+        bases:
+          "నీ": { meaning: "your (you)" }
+      "ఆ సినిమా గురించి నా అభిప్రాయం మారింది.":
+        native: "My opinion about that film has changed."
+        bases:
+          "నా": { meaning: "my (I)" }
+          "మారింది": { meaning: "to change" }
+  "te-3601":
+    native: "thought; idea"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'a good idea'."
+    examples:
+      "అది మంచి ఆలోచన!":
+        native: "That is a good idea!"
+      "అతని ఆలోచనలు ఎప్పుడూ కొత్తగానే ఉంటాయి.":
+        native: "His ideas are always new."
+        bases:
+          "అతని": { meaning: "his (he)" }
+          "ఆలోచనలు": { meaning: "ideas; thoughts" }
+          "కొత్తగానే": { meaning: "new" }
+          "ఉంటాయి": { meaning: "to be" }
+  "te-3602":
+    native: "truth; true"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'really'."
+    examples:
+      "అది నిజం కాదు.":
+        native: "That is not true."
+      "ఇది నిజమేనా?":
+        native: "Is this true?"
+        bases:
+          "నిజమేనా": { meaning: "true" }
+  "te-3603":
+    native: "lie; untruth"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'to tell a lie'."
+    examples:
+      "అతను ఎప్పుడూ అబద్ధం చెప్పడు.":
+        native: "He never tells lies."
+        bases:
+          "చెప్పడు": { meaning: "to tell" }
+      "నువ్వు అబద్ధం ఎందుకు చెప్పావు?":
+        native: "Why did you tell a lie?"
+        bases:
+          "చెప్పావు": { meaning: "to tell" }
+  "te-3604":
+    native: "justice; fairness"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'fairly'."
+    examples:
+      "ఇది న్యాయం కాదు.":
+        native: "This is not fair."
+      "న్యాయం కోసం అందరూ కలిసి పోరాడాలి.":
+        native: "Everyone should fight together for justice."
+        bases:
+          "అందరూ": { meaning: "everyone" }
+          "పోరాడాలి": { meaning: "to fight" }
+  "te-3605":
+    native: "injustice; unfairness"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'to wrong someone'."
+    examples:
+      "అతను నాకు అన్యాయం చేశాడు.":
+        native: "He wronged me."
+        bases:
+          "నాకు": { meaning: "me (I)" }
+          "చేశాడు": { meaning: "to do" }
+      "ఈ నిర్ణయం అందరికీ అన్యాయంగా ఉంది.":
+        native: "This decision is unfair to everyone."
+        bases:
+          "అందరికీ": { meaning: "everyone" }
+          "అన్యాయంగా": { meaning: "unfair" }
+          "ఉంది": { meaning: "to be" }
+  "te-3606":
+    native: "wonderful; amazing"
+    notes:
+      "n1": "{1} is 'Wonderful!'."
+    examples:
+      "ఈ సినిమా అద్భుతంగా ఉంది.":
+        native: "This film is wonderful."
+        bases:
+          "అద్భుతంగా": { meaning: "wonderfully" }
+          "ఉంది": { meaning: "to be" }
+      "ఆ దృశ్యం చాలా అద్భుతం.":
+        native: "That view is very wonderful."
+  "te-3607":
+    native: "value; worth"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'valuable'."
+    examples:
+      "ఈ పుస్తకానికి చాలా విలువ ఉంది.":
+        native: "This book has a lot of value."
+        bases:
+          "పుస్తకానికి": { meaning: "book" }
+          "ఉంది": { meaning: "to be" }
+      "మన మాటకు విలువ ఇవ్వాలి.":
+        native: "We should give value to our words."
+        bases:
+          "మన": { meaning: "our (we)" }
+          "మాటకు": { meaning: "word; speech" }
+          "ఇవ్వాలి": { meaning: "to give" }
+    synonyms: { "vela": "price, value, cost, rate", "mulyamu": "price, value" }
+  "te-3608":
+    native: "doubt"
+    notes:
+      "n1": "{1} is 'doubtfully'."
+    examples:
+      "నాకు ఇంకా సందేహం ఉంది.":
+        native: "I still have doubts."
+        bases:
+          "నాకు": { meaning: "me (I)" }
+          "ఉంది": { meaning: "to be" }
+      "ఆ మాట విని అతనికి సందేహం వచ్చింది.":
+        native: "On hearing that, he began to doubt."
+        bases:
+          "విని": { meaning: "to hear" }
+          "అతనికి": { meaning: "him (he)" }
+          "వచ్చింది": { meaning: "to come" }
+  "te-3609":
+    native: "suspicion; doubt"
+    notes:
+      "n1": "{1} is 'to become suspicious'."
+    examples:
+      "అతని మాటల్లో నాకు అనుమానం కలిగింది.":
+        native: "His words made me suspicious."
+        bases:
+          "అతని": { meaning: "his (he)" }
+          "మాటల్లో": { meaning: "words" }
+          "నాకు": { meaning: "me (I)" }
+          "కలిగింది": { meaning: "to arise" }
+      "నేను చెప్పేది నిజమని నీకు అనుమానమా?":
+        native: "Do you doubt that what I say is true?"
+        bases:
+          "చెప్పేది": { meaning: "to say" }
+          "నిజమని": { meaning: "true" }
+          "నీకు": { meaning: "you" }
+  "te-3610":
+    native: "meaning; sense"
+    notes:
+      "n1": "{1} is 'to be understood'."
+    examples:
+      "ఈ పదానికి అర్థం ఏమిటి?":
+        native: "What is the meaning of this word?"
+        bases:
+          "పదానికి": { meaning: "word" }
+      "నీ మాటలకు అర్థం లేదు.":
+        native: "Your words make no sense."
+        bases:
+          "నీ": { meaning: "your (you)" }
+          "మాటలకు": { meaning: "words" }
+  "te-3611":
+    native: "advice"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'to give advice'."
+    examples:
+      "నా సలహా వినండి.":
+        native: "Listen to my advice."
+        bases:
+          "నా": { meaning: "my (I)" }
+          "వినండి": { meaning: "to listen" }
+      "డాక్టర్ సలహా మేరకు ఇంటికి వెళ్ళాడు.":
+        native: "On the doctor's advice he went home."
+        bases:
+          "ఇంటికి": { meaning: "house" }
+          "వెళ్ళాడు": { meaning: "to go" }
+    senses:
+      "advice": { native: "advice, counsel, counselling" }
+      "pointer": { native: "pointer, tip, suggestion" }
+      "proposal": { native: "proposal" }
+  "te-3612":
+    native: "decision"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'to make a decision'."
+    examples:
+      "ఈ నిర్ణయం నాకు నచ్చలేదు.":
+        native: "I don't like this decision."
+        bases:
+          "నాకు": { meaning: "me (I)" }
+          "నచ్చలేదు": { meaning: "to like" }
+      "మనం కలిసి ఒక నిర్ణయం తీసుకుందాం.":
+        native: "Let's make a decision together."
+        bases:
+          "మనం": { meaning: "we" }
+          "తీసుకుందాం": { meaning: "to take" }
+  "te-3613":
+    native: "argument; debate"
+    notes:
+      "n1": "{1} is 'to argue'."
+    examples:
+      "వాళ్ళిద్దరి మధ్య వాదన జరిగింది.":
+        native: "An argument broke out between the two of them."
+        bases:
+          "వాళ్ళిద్దరి": { meaning: "the two of them" }
+          "జరిగింది": { meaning: "to happen" }
+      "ఈ వాదనలో నేను గెలిచాను.":
+        native: "I won this argument."
+        bases:
+          "వాదనలో": { meaning: "argument" }
+          "గెలిచాను": { meaning: "to win" }
+  "te-3614":
+    native: "discussion"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'to discuss'."
+    examples:
+      "ఈ అంశంపై అందరూ చర్చ చేశారు.":
+        native: "Everyone discussed this topic."
+        bases:
+          "అంశంపై": { meaning: "topic" }
+          "అందరూ": { meaning: "everyone" }
+          "చేశారు": { meaning: "to do" }
+      "సమావేశంలో చర్చ బాగా జరిగింది.":
+        native: "The discussion went well at the meeting."
+        bases:
+          "సమావేశంలో": { meaning: "meeting" }
+          "జరిగింది": { meaning: "to happen" }
+  "te-3615":
+    native: "approval; assent"
+    notes:
+      "n1": "{1} is 'to give approval'."
+    examples:
+      "నా ప్రతిపాదనకు అతని ఆమోదం లభించింది.":
+        native: "My proposal received his approval."
+        bases:
+          "నా": { meaning: "my (I)" }
+          "ప్రతిపాదనకు": { meaning: "proposal" }
+          "అతని": { meaning: "his (he)" }
+          "లభించింది": { meaning: "to be obtained" }
+      "ఆ పథకానికి ప్రభుత్వ ఆమోదం ఉంది.":
+        native: "That scheme has government approval."
+        bases:
+          "పథకానికి": { meaning: "scheme" }
+          "ఉంది": { meaning: "to be" }
+  "te-3616":
+    native: "praise; compliment"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'to praise'."
+    examples:
+      "అతని పని అందరి ప్రశంసలు పొందింది.":
+        native: "His work earned everyone's praise."
+        bases:
+          "అతని": { meaning: "his (he)" }
+          "అందరి": { meaning: "everyone's" }
+          "ప్రశంసలు": { meaning: "praise" }
+          "పొందింది": { meaning: "to get" }
+      "ఆమె ప్రశంసలు విని సిగ్గుపడింది.":
+        native: "She felt shy on hearing the praise."
+        bases:
+          "ప్రశంసలు": { meaning: "praise" }
+          "విని": { meaning: "to hear" }
+          "సిగ్గుపడింది": { meaning: "to feel shy" }
+  "te-3617":
+    native: "criticism; critique"
+    notes:
+      "n1": "{1} is 'to criticize'."
+    examples:
+      "అతని విమర్శలను అంగీకరించాను.":
+        native: "I accepted his criticism."
+        bases:
+          "అతని": { meaning: "his (he)" }
+          "విమర్శలను": { meaning: "criticism" }
+          "అంగీకరించాను": { meaning: "to accept" }
+      "ఈ విమర్శ నిర్మాణాత్మకంగా ఉంది.":
+        native: "This criticism is constructive."
+        bases:
+          "నిర్మాణాత్మకంగా": { meaning: "constructive" }
+          "ఉంది": { meaning: "to be" }
+  "te-3618":
+    native: "loss; harm"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'to cause harm'."
+    examples:
+      "ఈ నిర్ణయం వల్ల మనకు నష్టం కలుగుతుంది.":
+        native: "This decision will cause us a loss."
+        bases:
+          "మనకు": { meaning: "us (we)" }
+          "కలుగుతుంది": { meaning: "to arise" }
+      "అందులో మనకు ఏ నష్టమూ లేదు.":
+        native: "There is no loss to us in it."
+        bases:
+          "అందులో": { meaning: "in that" }
+          "మనకు": { meaning: "us (we)" }
+          "నష్టమూ": { meaning: "loss" }
+  "te-3619":
+    native: "benefit; profit"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'pros and cons'."
+    examples:
+      "ఈ పని వల్ల మనకు లాభం ఏంటి?":
+        native: "What is the benefit of this work for us?"
+        bases:
+          "మనకు": { meaning: "us (we)" }
+      "ఈ పథకంతో రైతులకు చాలా లాభం కలిగింది.":
+        native: "This scheme has been very beneficial to farmers."
+        bases:
+          "పథకంతో": { meaning: "scheme" }
+          "రైతులకు": { meaning: "farmer" }
+          "కలిగింది": { meaning: "to arise" }
+  "te-3620":
+    native: "to express an opinion; to be of the view"
+    notes:
+      "n1": "{1} means 'having expressed an opinion'."
+    examples:
+      "అతను ఈ సినిమా బాగుందని అభిప్రాయపడ్డాడు.":
+        native: "He expressed the opinion that this film is good."
+        bases:
+          "బాగుందని": { meaning: "good" }
+          "అభిప్రాయపడ్డాడు": { meaning: "to express an opinion" }
+      "నిపుణులు ఈ పద్ధతి మంచిదని అభిప్రాయపడుతున్నారు.":
+        native: "Experts are of the opinion that this method is good."
+        bases:
+          "నిపుణులు": { meaning: "expert" }
+          "మంచిదని": { meaning: "good" }
+          "అభిప్రాయపడుతున్నారు": { meaning: "to express an opinion" }
+  "te-3621":
+    native: "to praise; to appreciate"
+    notes:
+      "n1": "{1} means 'having praised'."
+    examples:
+      "మీ పనిని అందరూ మెచ్చుకున్నారు.":
+        native: "Everyone appreciated your work."
+        bases:
+          "మీ": { meaning: "your (you, polite)" }
+          "పనిని": { meaning: "work" }
+          "అందరూ": { meaning: "everyone" }
+          "మెచ్చుకున్నారు": { meaning: "to praise" }
+      "ఆమె నా చిత్రాన్ని బాగుందని మెచ్చుకుంది.":
+        native: "She praised my painting as good."
+        bases:
+          "నా": { meaning: "my (I)" }
+          "చిత్రాన్ని": { meaning: "picture" }
+          "బాగుందని": { meaning: "good" }
+          "మెచ్చుకుంది": { meaning: "to praise" }
+  "te-3622":
+    native: "to criticize"
+    notes:
+      "n1": "{1} means 'having criticized'."
+    examples:
+      "అతను నా పనిని కఠినంగా విమర్శించాడు.":
+        native: "He criticized my work harshly."
+        bases:
+          "నా": { meaning: "my (I)" }
+          "పనిని": { meaning: "work" }
+          "కఠినంగా": { meaning: "harshly" }
+          "విమర్శించాడు": { meaning: "to criticize" }
+      "విమర్శించే ముందు అందరూ ఆలోచించాలి.":
+        native: "Everyone should think before criticizing."
+        bases:
+          "విమర్శించే": { meaning: "to criticize" }
+          "అందరూ": { meaning: "everyone" }
+          "ఆలోచించాలి": { meaning: "to think" }
+  "te-3623":
+    native: "to guess; to imagine"
+    notes:
+      "n1": "{1} means 'unimaginable'."
+    examples:
+      "ఫలితం ఎలా ఉంటుందో ఊహించడం కష్టం.":
+        native: "It is hard to guess what the result will be."
+        bases:
+          "ఉంటుందో": { meaning: "to be" }
+      "నేను ఊహించినట్లే జరిగింది.":
+        native: "It happened just as I had guessed."
+        bases:
+          "ఊహించినట్లే": { meaning: "to guess" }
+          "జరిగింది": { meaning: "to happen" }
+  "te-3624":
+    native: "to disagree"
+    notes:
+      "n1": "{1} is 'I am disagreeing'."
+    examples:
+      "నేను ఈ అభిప్రాయంతో విభేదిస్తాను.":
+        native: "I disagree with this view."
+        bases:
+          "అభిప్రాయంతో": { meaning: "view" }
+          "విభేదిస్తాను": { meaning: "to disagree" }
+      "వాళ్ళు మా మాటతో విభేదించారు.":
+        native: "They disagreed with what we said."
+        bases:
+          "మా": { meaning: "our (we)" }
+          "మాటతో": { meaning: "word; speech" }
+          "విభేదించారు": { meaning: "to disagree" }
+  "te-3625":
+    native: "difference of opinion; disagreement"
+    notes:
+      "n1": "{1} is 'differences of opinion'."
+    examples:
+      "మా ఇద్దరి మధ్య అభిప్రాయభేదం ఉంది.":
+        native: "There is a difference of opinion between the two of us."
+        bases:
+          "మా": { meaning: "our (we)" }
+          "ఇద్దరి": { meaning: "two" }
+          "ఉంది": { meaning: "to be" }
+      "ఈ విషయంలో అభిప్రాయభేదాలు తొలగిపోయాయి.":
+        native: "Differences of opinion on this matter have been cleared up."
+        bases:
+          "విషయంలో": { meaning: "matter" }
+          "అభిప్రాయభేదాలు": { meaning: "disagreement" }
+          "తొలగిపోయాయి": { meaning: "to be removed" }
+  "te-3626":
+    native: "right; correct; suitable"
+    notes:
+      "n1": "{1} is 'the right one'."
+    examples:
+      "నీ సమాధానం సరైనదేనా?":
+        native: "Is your answer correct?"
+        bases:
+          "నీ": { meaning: "your (you)" }
+          "సరైనదేనా": { meaning: "right" }
+      "ఇది సరైన నిర్ణయమే అని నేను అనుకుంటున్నాను.":
+        native: "I think this is the right decision."
+        bases:
+          "అనుకుంటున్నాను": { meaning: "to think" }
+  "te-3627":
+    native: "important"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'especially'."
+    examples:
+      "ఇది చాలా ముఖ్యమైన విషయం.":
+        native: "This is a very important matter."
+        bases:
+          "ముఖ్యమైన": { meaning: "important" }
+      "మన ఆరోగ్యం ముఖ్యం.":
+        native: "Our health is important."
+        bases:
+          "మన": { meaning: "our (we)" }
+  "te-3628":
+    native: "best; excellent"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'the best method'."
+    examples:
+      "ఇది ఉత్తమమైన పద్ధతి.":
+        native: "This is the best method."
+        bases:
+          "ఉత్తమమైన": { meaning: "best" }
+      "మీ సలహా ఉత్తమంగా ఉంది.":
+        native: "Your advice is excellent."
+        bases:
+          "మీ": { meaning: "your (you, polite)" }
+          "ఉత్తమంగా": { meaning: "excellent" }
+          "ఉంది": { meaning: "to be" }
+  "te-3629":
+    native: "reasonable; fitting"
+    notes:
+      "n1": "{1} is 'reasonably'."
+    examples:
+      "నీ వాదన సమంజసంగా ఉంది.":
+        native: "Your argument is reasonable."
+        bases:
+          "నీ": { meaning: "your (you)" }
+          "సమంజసంగా": { meaning: "reasonable" }
+          "ఉంది": { meaning: "to be" }
+      "ఆ ధరలు సమంజసమే అని నేను అంగీకరిస్తాను.":
+        native: "I accept that those prices are reasonable."
+        bases:
+          "ధరలు": { meaning: "price" }
+          "సమంజసమే": { meaning: "reasonable" }
+          "అంగీకరిస్తాను": { meaning: "to accept" }
+  "te-3630":
+    native: "possible"
+    notes:
+      "n1": "{1} means 'certainly possible'."
+    examples:
+      "ఇది ఈ రోజే సాధ్యమా?":
+        native: "Is it possible today itself?"
+        bases:
+          "సాధ్యమా": { meaning: "possible" }
+      "ఎవరికైనా ఇది సాధ్యమే.":
+        native: "It is possible for anyone."
+        bases:
+          "ఎవరికైనా": { meaning: "anyone" }
+          "సాధ్యమే": { meaning: "possible" }
+  "te-3631":
+    native: "impossible"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'impossible' (before a noun)."
+    examples:
+      "అతనికి ఇది అసాధ్యం అనిపించింది.":
+        native: "This seemed impossible to him."
+        bases:
+          "అతనికి": { meaning: "him (he)" }
+          "అనిపించింది": { meaning: "to seem" }
+      "అన్నీ అసాధ్యం అని ఎందుకు అనుకుంటావు?":
+        native: "Why do you think everything is impossible?"
+        bases:
+          "అన్నీ": { meaning: "all" }
+          "అనుకుంటావు": { meaning: "to think" }
