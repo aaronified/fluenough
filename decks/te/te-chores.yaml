@@ -188,29 +188,7 @@ cards:
         ipa: "aː buʈʈa ettaɳɖi"
         bases:
           - { word: "ఎత్తండి", base: "ఎత్తడం", reading: "ettaḍam" }
-  - id: "te-2109"
-    target: "పాత్ర"
-    reading: "pātra"
-    ipa: "paːtra"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "usage", words: [{ word: "పాత్రలు", reading: "pātralu" }, { word: "పాత్రలు సర్దండి", reading: "pātralu sardaṇḍi" }] }
-    examples:
-      - target: "అమ్మ పాత్రలు కడుగుతుంది."
-        reading: "amma pātralu kaḍugutundi."
-        ipa: "ammaː paːtraluː kaɖuɡutundi"
-        bases:
-          - { word: "కడుగుతుంది", base: "కడగడం", reading: "kaḍagaḍam" }
-      - target: "పాత్రలు సర్దండి."
-        reading: "pātralu sardaṇḍi."
-        ipa: "paːtraluː sardaɳɖi"
-        bases:
-          - { word: "సర్దండి", base: "సర్దడం", reading: "sardaḍam" }
-    senses:
-      - { id: "bowl", pos: "noun", source: "https://en.wiktionary.org/wiki/పాత్ర" }
-      - { id: "role", pos: "noun", source: "https://en.wiktionary.org/wiki/పాత్ర" }
+  - ref: "te-1604"
   - id: "te-2110"
     target: "బుట్ట"
     reading: "buṭṭa"
@@ -272,55 +250,8 @@ cards:
           - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍam" }
     synonyms:
       - { id: "kudyamu", word: "కుడ్యము", reading: "kuḍyamu", source: "https://en.wiktionary.org/wiki/గోడ" }
-  - id: "te-2113"
-    target: "నేల"
-    reading: "nēla"
-    ipa: "neːlaː"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "usage", words: [{ word: "నేలలు", reading: "nēlalu" }, { word: "నేలను", reading: "nēlanu" }] }
-    examples:
-      - target: "నేల శుభ్రంగా ఉంది."
-        reading: "nēla śubhraṅgā undi."
-        ipa: "neːlaː ʃubʱrəŋɡaː und̪i"
-        bases:
-          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍam" }
-      - target: "నేలను తుడవండి."
-        reading: "nēlanu tuḍavaṇḍi."
-        ipa: "neːlanu tuɖaʋaɳɖi"
-        bases:
-          - { word: "తుడవండి", base: "తుడవడం", reading: "tuḍavaḍam" }
-    synonyms:
-      - { id: "pudami", word: "పుడమి", reading: "puḍami", source: "https://en.wiktionary.org/wiki/నేల" }
-      - { id: "bhumi", word: "భూమి", reading: "bhūmi", source: "https://en.wiktionary.org/wiki/నేల" }
-      - { id: "mannu", word: "మన్ను", reading: "mannu", source: "https://en.wiktionary.org/wiki/నేల" }
-      - { id: "matti", word: "మట్టి", reading: "maṭṭi", source: "https://en.wiktionary.org/wiki/నేల" }
-    senses:
-      - { id: "land", pos: "noun", source: "https://en.wiktionary.org/wiki/నేల" }
-      - { id: "earth", pos: "noun", source: "https://en.wiktionary.org/wiki/నేల" }
-      - { id: "soil", pos: "noun", source: "https://en.wiktionary.org/wiki/నేల" }
-  - id: "te-2114"
-    target: "కుండ"
-    reading: "kuṇḍa"
-    ipa: "kuɳɖa"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "usage", words: [{ word: "కుండలు", reading: "kuṇḍalu" }, { word: "కుండలో", reading: "kuṇḍalō" }] }
-    examples:
-      - target: "కుండలో నీళ్లు ఉన్నాయి."
-        reading: "kuṇḍalō nīḷḷu unnāyi."
-        ipa: "kuɳɖaloː niːɭɭu unnaːji"
-        bases:
-          - { word: "ఉన్నాయి", base: "ఉండడం", reading: "uṇḍaḍam" }
-      - target: "కుండ ఖాళీ చేయండి."
-        reading: "kuṇḍa khāḷī cēyaṇḍi."
-        ipa: "kuɳɖa kʰaːliː tʃeːjaɳɖi"
-        bases:
-          - { word: "చేయండి", base: "చేయడం", reading: "cēyaḍam" }
+  - ref: "te-2610"
+  - ref: "te-1605"
   - id: "te-2115"
     target: "చెంబు"
     reading: "cembu"
@@ -343,33 +274,7 @@ cards:
           - { word: "కడగండి", base: "కడగడం", reading: "kaḍagaḍam" }
     senses:
       - { id: "cup", pos: "noun", source: "https://en.wiktionary.org/wiki/చెంబు" }
-  - id: "te-2116"
-    target: "నీరు"
-    reading: "nīru"
-    ipa: "niːru"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "usage", words: [{ word: "నీళ్లు", reading: "nīḷḷu" }, { word: "నీటిలో", reading: "nīṭilō" }] }
-    examples:
-      - target: "నీళ్లు ఉన్నాయా?"
-        reading: "nīḷḷu unnāyā?"
-        ipa: "niːɭɭu unnaːjaː"
-        bases:
-          - { word: "ఉన్నాయా", base: "ఉండడం", reading: "uṇḍaḍam" }
-      - target: "గిన్నెలో నీళ్లు పోయండి."
-        reading: "ginnelō nīḷḷu pōyaṇḍi."
-        ipa: "ɡinnelo: niːɭɭu poːjaɳɖi"
-        bases:
-          - { word: "పోయండి", base: "పోయడం", reading: "pōyaḍam" }
-    synonyms:
-      - { id: "ambuvu", word: "అంబువు", reading: "ambuvu", source: "https://en.wiktionary.org/wiki/నీరు" }
-      - { id: "arnamu", word: "అర్ణము", reading: "arṇamu", source: "https://en.wiktionary.org/wiki/నీరు" }
-      - { id: "udakamu", word: "ఉదకము", reading: "udakamu", source: "https://en.wiktionary.org/wiki/నీరు" }
-    senses:
-      - { id: "water", pos: "noun", source: "https://en.wiktionary.org/wiki/నీరు" }
-      - { id: "fluid", pos: "noun", source: "https://en.wiktionary.org/wiki/నీరు" }
+  - ref: "te-1132"
   - id: "te-2117"
     target: "ఇంటి పని"
     reading: "iṇṭi pani"
