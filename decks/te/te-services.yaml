@@ -1,0 +1,571 @@
+"schema": 1
+"id": "te-services"
+"part": "core"
+"kind": "vocab"
+"language": { "code": "te", "iso639_3": "tel", "name": "Telugu", "script": "telugu", "tts": "te-IN", "icon": "తె" }
+"license": "CC-BY-SA-4.0"
+"theme": "services"
+"tags": ["beginner", "unreviewed"]
+"cards":
+  - id: "te-3900"
+    target: "ఖాతా"
+    reading: "khātā"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ఈ ఖాతాలో డబ్బు ఉంది."
+        reading: "ī khātālō ḍabbu undi."
+        bases:
+          - { word: "ఖాతాలో", base: "ఖాతా", reading: "khātālō" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṃ" }
+      - target: "ఖాతా నంబరు చెప్పండి."
+        reading: "khātā nambaru ceppaṇḍi."
+        bases:
+          - { word: "చెప్పండి", base: "చెప్పడం", reading: "ceppaḍaṃ" }
+  - id: "te-3901"
+    target: "ఏటీఎం"
+    reading: "ēṭīeṃ"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ఏటీఎం ఎక్కడ ఉంది?"
+        reading: "ēṭīeṃ ekkaḍa undi?"
+        bases:
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṃ" }
+      - target: "ఏటీఎంలో డబ్బు తీసుకున్నాను."
+        reading: "ēṭīeṃlō ḍabbu tīsukunnānu."
+        bases:
+          - { word: "ఏటీఎంలో", base: "ఏటీఎం", reading: "ēṭīeṃlō" }
+          - { word: "తీసుకున్నాను", base: "తీసుకోవడం", reading: "tīsukōvaḍaṃ" }
+  - id: "te-3902"
+    target: "స్టాంపు"
+    reading: "stāṃpu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ఈ కవరుకు స్టాంపు అంటించండి."
+        reading: "ī kavaruku stāṃpu aṇṭin̄caṇḍi."
+        bases:
+          - { word: "కవరుకు", base: "కవరు", reading: "kavaruku" }
+          - { word: "అంటించండి", base: "అంటించడం", reading: "aṇṭin̄caḍaṃ" }
+      - target: "ఒక స్టాంపు ఎంత?"
+        reading: "oka stāṃpu enta?"
+  - id: "te-3903"
+    target: "పార్శిల్"
+    reading: "pārśil"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "పార్శిల్ రేపు వస్తుంది."
+        reading: "pārśil rēpu vastundi."
+        bases:
+          - { word: "వస్తుంది", base: "రావడం", reading: "rāvaḍaṃ" }
+      - target: "ఈ పార్శిల్ చిరునామాకు పంపండి."
+        reading: "ī pārśil cirunāmāku pampaṇḍi."
+        bases:
+          - { word: "చిరునామాకు", base: "చిరునామా", reading: "cirunāmāku" }
+          - { word: "పంపండి", base: "పంపడం", reading: "pampaḍaṃ" }
+  - id: "te-3904"
+    target: "చిరునామా"
+    reading: "cirunāmā"
+    ipa: "t͡ɕiɾunaːmaː"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "చిరునామా ఏమిటి?"
+        reading: "cirunāmā ēmiṭi?"
+      - target: "చిరునామా ఈ ఫారంలో రాయండి."
+        reading: "cirunāmā ī phāraṃlō rāyaṇḍi."
+        bases:
+          - { word: "ఫారంలో", base: "ఫారం", reading: "phāraṃlō" }
+          - { word: "రాయండి", base: "రాయడం", reading: "rāyaḍaṃ" }
+    synonyms:
+      - { id: "paivilasamu", word: "పైవిలాసము", reading: "paivilāsamu", source: "https://en.wiktionary.org/wiki/చిరునామా" }
+  - id: "te-3905"
+    target: "ఫారం"
+    reading: "phāraṃ"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ఈ ఫారం నింపండి."
+        reading: "ī phāraṃ nimpaṇḍi."
+        bases:
+          - { word: "నింపండి", base: "నింపడం", reading: "nimpaḍaṃ" }
+      - target: "ఈ ఫారం ఎక్కడ దొరుకుతుంది?"
+        reading: "ī phāraṃ ekkaḍa dorukutundi?"
+        bases:
+          - { word: "దొరుకుతుంది", base: "దొరకడం", reading: "dorakaḍaṃ" }
+  - id: "te-3906"
+    target: "సేవ"
+    reading: "sēva"
+    ipa: "seːʋa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ఈ సేవకు రుసుము ఎంత?"
+        reading: "ī sēvaku rusumu enta?"
+        bases:
+          - { word: "సేవకు", base: "సేవ", reading: "sēvaku" }
+      - target: "వాళ్ళు మంచి సేవ ఇచ్చారు."
+        reading: "vāḷḷu manci sēva iccāru."
+        bases:
+          - { word: "ఇచ్చారు", base: "ఇవ్వడం", reading: "ivvaḍaṃ" }
+    synonyms:
+      - { id: "susrusa", word: "శుశ్రూష", reading: "śuśrūṣa", source: "https://en.wiktionary.org/wiki/సేవ" }
+      - { id: "pani", word: "పని", reading: "pani", source: "https://en.wiktionary.org/wiki/సేవ" }
+      - { id: "koluvu", word: "కొలువు", reading: "koluvu", source: "https://en.wiktionary.org/wiki/సేవ" }
+      - { id: "udigamu", word: "ఊడిగము", reading: "ūḍigamu", source: "https://en.wiktionary.org/wiki/సేవ" }
+    senses:
+      - { id: "service", pos: "noun", source: "https://en.wiktionary.org/wiki/సేవ" }
+      - { id: "servitude", pos: "noun", source: "https://en.wiktionary.org/wiki/సేవ" }
+      - { id: "homage", pos: "noun", source: "https://en.wiktionary.org/wiki/సేవ" }
+      - { id: "reverence", pos: "noun", source: "https://en.wiktionary.org/wiki/సేవ" }
+  - id: "te-3907"
+    target: "మరమ్మతు"
+    reading: "marammatu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ఫ్రిజ్ మరమ్మతు చేయాలి."
+        reading: "phrij marammatu cēyāli."
+        bases:
+          - { word: "చేయాలి", base: "చేయడం", reading: "cēyaḍaṃ" }
+      - target: "మరమ్మతు ఎప్పుడు అవుతుంది?"
+        reading: "marammatu eppuḍu avutundi?"
+        bases:
+          - { word: "అవుతుంది", base: "అవడం", reading: "avaḍaṃ" }
+  - id: "te-3908"
+    target: "ఇస్త్రీ"
+    reading: "istrī"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ఈ చొక్కాకు ఇస్త్రీ చేయండి."
+        reading: "ī cokkāku istrī cēyaṇḍi."
+        bases:
+          - { word: "చొక్కాకు", base: "చొక్కా", reading: "cokkāku" }
+          - { word: "చేయండి", base: "చేయడం", reading: "cēyaḍaṃ" }
+      - target: "ఇస్త్రీ బట్టలు రేపు ఇస్తాను."
+        reading: "istrī baṭṭalu rēpu istānu."
+        bases:
+          - { word: "బట్టలు", base: "బట్ట", reading: "baṭṭa" }
+          - { word: "ఇస్తాను", base: "ఇవ్వడం", reading: "ivvaḍaṃ" }
+  - id: "te-3909"
+    target: "దర్జీ"
+    reading: "darjī"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "దర్జీ ఈ చొక్కాను కుట్టాడు."
+        reading: "darjī ī cokkānu kuṭṭāḍu."
+        bases:
+          - { word: "చొక్కాను", base: "చొక్కా", reading: "cokkānu" }
+          - { word: "కుట్టాడు", base: "కుట్టడం", reading: "kuṭṭaḍaṃ" }
+      - target: "దర్జీ పని బాగా చేస్తాడు."
+        reading: "darjī pani bāgā cēstāḍu."
+        bases:
+          - { word: "చేస్తాడు", base: "చేయడం", reading: "cēyaḍaṃ" }
+    synonyms:
+      - { id: "tailaru", word: "టైలరు", reading: "ṭailaru", source: "https://en.wiktionary.org/wiki/దర్జీ" }
+  - id: "te-3910"
+    target: "క్షౌరశాల"
+    reading: "kṣauraśāla"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "క్షౌరశాల ఈ వీధిలో ఉంది."
+        reading: "kṣauraśāla ī vīdhilō undi."
+        bases:
+          - { word: "వీధిలో", base: "వీధి", reading: "vīdhilō" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṃ" }
+      - target: "క్షౌరశాలలో జుట్టు కత్తిరించాను."
+        reading: "kṣauraśālalō juṭṭu kattirin̄cānu."
+        bases:
+          - { word: "క్షౌరశాలలో", base: "క్షౌరశాల", reading: "kṣauraśālalō" }
+          - { word: "కత్తిరించాను", base: "కత్తిరించడం", reading: "kattirin̄caḍaṃ" }
+  - id: "te-3911"
+    target: "మంగలి"
+    reading: "maṅgali"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "మంగలి ఎప్పుడు వస్తాడు?"
+        reading: "maṅgali eppuḍu vastāḍu?"
+        bases:
+          - { word: "వస్తాడు", base: "రావడం", reading: "rāvaḍaṃ" }
+      - target: "మంగలి దుకాణం ఎక్కడ ఉంది?"
+        reading: "maṅgali dukāṇaṃ ekkaḍa undi?"
+        bases:
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṃ" }
+  - id: "te-3912"
+    target: "అప్పు"
+    reading: "appu"
+    ipa: "apːu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "బ్యాంకు నుంచి అప్పు తీసుకున్నాడు."
+        reading: "bāṅku nuṃchi appu tīsukunnāḍu."
+        bases:
+          - { word: "తీసుకున్నాడు", base: "తీసుకోవడం", reading: "tīsukōvaḍaṃ" }
+      - target: "అప్పు ఎంత ఉంది?"
+        reading: "appu enta undi?"
+        bases:
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṃ" }
+    synonyms:
+      - { id: "aruvu", word: "అరువు", reading: "aruvu", source: "https://en.wiktionary.org/wiki/అప్పు" }
+      - { id: "rnamu", word: "ఋణము", reading: "ruṇamu", source: "https://en.wiktionary.org/wiki/అప్పు" }
+  - id: "te-3913"
+    target: "వడ్డీ"
+    reading: "vaḍḍī"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ఈ ఖాతాకు వడ్డీ ఎంత?"
+        reading: "ī khātāku vaḍḍī enta?"
+        bases:
+          - { word: "ఖాతాకు", base: "ఖాతా", reading: "khātāku" }
+      - target: "వడ్డీ నెలకు ఒకసారి ఇస్తారు."
+        reading: "vaḍḍī nelaku okasāri istāru."
+        bases:
+          - { word: "నెలకు", base: "నెల", reading: "nelaku" }
+          - { word: "ఇస్తారు", base: "ఇవ్వడం", reading: "ivvaḍaṃ" }
+  - id: "te-3914"
+    target: "క్రెడిట్ కార్డు"
+    reading: "kreḍiṭ kārḍu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "క్రెడిట్ కార్డు ఉందా?"
+        reading: "kreḍiṭ kārḍu undā?"
+        bases:
+          - { word: "ఉందా", base: "ఉండడం", reading: "uṇḍaḍaṃ" }
+      - target: "క్రెడిట్ కార్డుతో చెల్లించవచ్చా?"
+        reading: "kreḍiṭ kārḍutō cellin̄cavaccā?"
+        bases:
+          - { word: "కార్డుతో", base: "కార్డు", reading: "kārḍu" }
+          - { word: "చెల్లించవచ్చా", base: "చెల్లించడం", reading: "cellin̄caḍaṃ" }
+  - id: "te-3915"
+    target: "డెబిట్ కార్డు"
+    reading: "ḍebiṭ kārḍu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "డెబిట్ కార్డు ఇక్కడ పెట్టండి."
+        reading: "ḍebiṭ kārḍu ikkaḍa peṭṭaṇḍi."
+        bases:
+          - { word: "పెట్టండి", base: "పెట్టడం", reading: "peṭṭaḍaṃ" }
+      - target: "డెబిట్ కార్డు పాడైపోయింది."
+        reading: "ḍebiṭ kārḍu pāḍaipōyindi."
+        bases:
+          - { word: "పాడైపోయింది", base: "పాడైపోవడం", reading: "pāḍaipōvaḍaṃ" }
+  - id: "te-3916"
+    target: "ఖర్చు"
+    reading: "kharcu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ఈ మరమ్మతుకు ఖర్చు ఎంత?"
+        reading: "ī marammatuku kharcu enta?"
+        bases:
+          - { word: "మరమ్మతుకు", base: "మరమ్మతు", reading: "marammatuku" }
+      - target: "ఖర్చు యాభై రూపాయలు."
+        reading: "kharcu yābhai rūpāyalu."
+        bases:
+          - { word: "రూపాయలు", base: "రూపాయి", reading: "rūpāyi" }
+  - id: "te-3917"
+    target: "వినియోగదారుడు"
+    reading: "viniyōgadāruḍu"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "వినియోగదారుడు ఫారం నింపాడు."
+        reading: "viniyōgadāruḍu phāraṃ nimpāḍu."
+        bases:
+          - { word: "నింపాడు", base: "నింపడం", reading: "nimpaḍaṃ" }
+      - target: "వినియోగదారులకు మంచి సేవ ఇవ్వాలి."
+        reading: "viniyōgadārulaku manci sēva ivvāli."
+        bases:
+          - { word: "వినియోగదారులకు", base: "వినియోగదారుడు", reading: "viniyōgadārulaku" }
+          - { word: "ఇవ్వాలి", base: "ఇవ్వడం", reading: "ivvāli" }
+  - id: "te-3918"
+    target: "కార్యాలయం"
+    reading: "kāryālayaṃ"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "కార్యాలయం ఉదయం తొమ్మిదికి తెరుస్తారు."
+        reading: "kāryālayaṃ udayaṃ tommidiki terustāru."
+        bases:
+          - { word: "తొమ్మిదికి", base: "తొమ్మిది", reading: "tommidiki" }
+          - { word: "తెరుస్తారు", base: "తెరవడం", reading: "teravaḍaṃ" }
+      - target: "కార్యాలయంలో ఫోన్ చేయండి."
+        reading: "kāryālayaṃlō phōn cēyaṇḍi."
+        bases:
+          - { word: "కార్యాలయంలో", base: "కార్యాలయం", reading: "kāryālayaṃlō" }
+          - { word: "చేయండి", base: "చేయడం", reading: "cēyaḍaṃ" }
+  - id: "te-3919"
+    target: "రిజిస్ట్రేషన్"
+    reading: "rijisṭrēṣan"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "రిజిస్ట్రేషన్ ఎక్కడ చేయాలి?"
+        reading: "rijisṭrēṣan ekkaḍa cēyāli?"
+        bases:
+          - { word: "చేయాలి", base: "చేయడం", reading: "cēyaḍaṃ" }
+      - target: "రిజిస్ట్రేషన్ రుసుము ఎంత?"
+        reading: "rijisṭrēṣan rusumu enta?"
+  - id: "te-3920"
+    target: "గుర్తింపు కార్డు"
+    reading: "gurtiṃpu kārḍu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "గుర్తింపు కార్డు చూపించండి."
+        reading: "gurtiṃpu kārḍu cūpin̄caṇḍi."
+        bases:
+          - { word: "చూపించండి", base: "చూపించడం", reading: "cūpin̄caḍaṃ" }
+      - target: "గుర్తింపు కార్డు మర్చిపోయాను."
+        reading: "gurtiṃpu kārḍu marcipōyānu."
+        bases:
+          - { word: "మర్చిపోయాను", base: "మర్చిపోవడం", reading: "marcipōvaḍaṃ" }
+  - id: "te-3921"
+    target: "సర్టిఫికెట్"
+    reading: "sarṭipikeṭ"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "దయచేసి సర్టిఫికెట్ ఇవ్వండి."
+        reading: "dayacēsi sarṭipikeṭ ivvaṇḍi."
+        bases:
+          - { word: "ఇవ్వండి", base: "ఇవ్వడం", reading: "ivvaḍaṃ" }
+      - target: "సర్టిఫికెట్ ఎప్పుడు వస్తుంది?"
+        reading: "sarṭipikeṭ eppuḍu vastundi?"
+        bases:
+          - { word: "వస్తుంది", base: "రావడం", reading: "rāvaḍaṃ" }
+  - id: "te-3922"
+    target: "లైసెన్సు"
+    reading: "laisensu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "డ్రైవింగ్ లైసెన్సు పోయింది."
+        reading: "ḍrivin̄g laisensu pōyindi."
+        bases:
+          - { word: "పోయింది", base: "పోవడం", reading: "pōvaḍaṃ" }
+      - target: "లైసెన్సు ఫీజు ఎంత?"
+        reading: "laisensu phīju enta?"
+  - id: "te-3923"
+    target: "కొరియర్"
+    reading: "koriyar"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "కొరియర్ ఈ రోజు వస్తుంది."
+        reading: "koriyar ī rōju vastundi."
+        bases:
+          - { word: "వస్తుంది", base: "రావడం", reading: "rāvaḍaṃ" }
+      - target: "కొరియర్ ద్వారా పంపవచ్చా?"
+        reading: "koriyar dvārā paṃpavaccā?"
+        bases:
+          - { word: "పంపవచ్చా", base: "పంపడం", reading: "pampaḍaṃ" }
+  - id: "te-3924"
+    target: "డబ్బు"
+    reading: "ḍabbu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "దగ్గర డబ్బు లేదు."
+        reading: "daggara ḍabbu lēdu."
+        bases:
+          - { word: "లేదు", base: "ఉండడం", reading: "uṇḍaḍaṃ" }
+      - target: "డబ్బు ఎక్కడ పెట్టాను?"
+        reading: "ḍabbu ekkaḍa peṭṭānu?"
+        bases:
+          - { word: "పెట్టాను", base: "పెట్టడం", reading: "peṭṭaḍaṃ" }
+  - id: "te-3925"
+    target: "పిన్"
+    reading: "pin"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "పిన్ నంబరు మర్చిపోయాను."
+        reading: "pin nambaru marcipōyānu."
+        bases:
+          - { word: "మర్చిపోయాను", base: "మర్చిపోవడం", reading: "marcipōvaḍaṃ" }
+      - target: "పిన్ ఎవరికీ చెప్పకండి."
+        reading: "pin evarikī ceppakaṇḍi."
+        bases:
+          - { word: "ఎవరికీ", base: "ఎవరు", reading: "evarikī" }
+          - { word: "చెప్పకండి", base: "చెప్పడం", reading: "ceppaḍaṃ" }
+  - id: "te-3926"
+    target: "వేలిముద్ర"
+    reading: "vēlimudra"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ఇక్కడ వేలిముద్ర వేయండి."
+        reading: "ikkaḍa vēlimudra vēyaṇḍi."
+        bases:
+          - { word: "వేయండి", base: "వేయడం", reading: "vēyaḍaṃ" }
+      - target: "వేలిముద్ర తీసుకున్నారు."
+        reading: "vēlimudra tīsukunnāru."
+        bases:
+          - { word: "తీసుకున్నారు", base: "తీసుకోవడం", reading: "tīsukōvaḍaṃ" }
+  - id: "te-3927"
+    target: "బిల్లు"
+    reading: "billu"
+    ipa: "bilːu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "బిల్లు ఎంత అయింది?"
+        reading: "billu enta ayindi?"
+        bases:
+          - { word: "అయింది", base: "అవడం", reading: "avaḍaṃ" }
+      - target: "బిల్లు కట్టండి."
+        reading: "billu kaṭṭaṇḍi."
+        bases:
+          - { word: "కట్టండి", base: "కట్టడం", reading: "kaṭṭaḍaṃ" }
+  - id: "te-3928"
+    target: "చెక్కు"
+    reading: "cekku"
+    ipa: "t͡ɕekːu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ఈ చెక్కు బ్యాంకులో ఇవ్వండి."
+        reading: "ī cekku bāṅkulō ivvaṇḍi."
+        bases:
+          - { word: "బ్యాంకులో", base: "బ్యాంకు", reading: "bāṅkulō" }
+          - { word: "ఇవ్వండి", base: "ఇవ్వడం", reading: "ivvaḍaṃ" }
+      - target: "చెక్కు మీద పేరు రాయండి."
+        reading: "cekku mīda pēru rāyaṇḍi."
+        bases:
+          - { word: "రాయండి", base: "రాయడం", reading: "rāyaḍaṃ" }
+  - id: "te-3929"
+    target: "పాస్‌బుక్"
+    reading: "pāsbuk"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "పాస్‌బుక్ అప్‌డేట్ చేయండి."
+        reading: "pāsbuk apḍēṭ cēyaṇḍi."
+        bases:
+          - { word: "చేయండి", base: "చేయడం", reading: "cēyaḍaṃ" }
+      - target: "పాస్‌బుక్ ఇంట్లో ఉంది."
+        reading: "pāsbuk iṇṭlō undi."
+        bases:
+          - { word: "ఇంట్లో", base: "ఇల్లు", reading: "iṇṭlō" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṃ" }
+  - ref: "te-0770"
+  - ref: "te-1409"
+  - ref: "te-0771"
+  - ref: "te-3034"
+  - ref: "te-2921"
+  - ref: "te-0190"
+  - ref: "te-1420"
+  - ref: "te-2915"
+  - ref: "te-1407"
+  - ref: "te-0736"
+  - ref: "te-3205"
+  - ref: "te-2530"
+  - ref: "te-2531"
+  - ref: "te-2912"
+  - ref: "te-3514"
+  - ref: "te-2505"
+  - ref: "te-1083"
+  - ref: "te-1832"
+  - ref: "te-0429"
+  - ref: "te-0240"
