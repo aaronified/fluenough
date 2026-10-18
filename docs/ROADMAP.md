@@ -81,7 +81,12 @@ part, the bot filling in a changed word's reading and IPA).
 
 ## Being built
 
-Nothing is in progress. The next work is in "In order" below.
+The decks, to B1, in the owner's order (2026-10-18): Telugu, Bengali,
+Spanish, Marathi, Kannada, Assamese, Chinese, Hindustani (Hindi and Urdu as
+one course, in Devanagari or
+Perso-Arabic script), Japanese, Korean. With these and
+books, films and songs (#215) done, the app is advertised. Telugu is being
+built now.
 
 ## In order
 
