@@ -94,12 +94,12 @@ void main() {
     final l10n = l10nOf(tester);
     expect(tileOf(tester, 'Spanish', 'English').enabled, isFalse);
     expect(find.text(l10n.reviewPairUnknown('Spanish')), findsOneWidget);
-    expect(tileOf(tester, 'Hindi', 'English').enabled, isFalse);
+    expect(tileOf(tester, 'Hindustani', 'English').enabled, isFalse);
     expect(find.text(l10n.reviewPairNoScript('Devanagari')), findsOneWidget);
 
     state.settings.scriptsRead = const <String, bool>{'en': true, 'hi': true};
     await tester.pumpAndSettle();
-    expect(tileOf(tester, 'Hindi', 'English').enabled, isTrue);
+    expect(tileOf(tester, 'Hindustani', 'English').enabled, isTrue);
     expect(find.text(l10n.reviewPairUnknown('Spanish')), findsOneWidget);
   });
 
@@ -111,7 +111,7 @@ void main() {
     await pumpScreen(tester, const ReviewLanguagesPage(), state: app);
     final l10n = l10nOf(tester);
     expect(find.text(l10n.reviewScriptsGateTitle), findsOneWidget);
-    expect(tileOf(tester, 'Hindi', 'English').enabled, isFalse);
+    expect(tileOf(tester, 'Hindustani', 'English').enabled, isFalse);
     expect(tileOf(tester, 'Spanish', 'English').enabled, isFalse);
 
     await tester.tap(find.text(l10n.reviewOpenKnown));
@@ -134,9 +134,9 @@ void main() {
     );
     final l10n = l10nOf(tester);
     expect(state.deckDownloads!.languagesOnPhone, isNot(contains('hi')));
-    await tester.tap(pairTile('Hindi', 'English'));
+    await tester.tap(pairTile('Hindustani', 'English'));
     await tester.pumpAndSettle();
-    expect(find.text(l10n.reviewDownloadTitle('Hindi')), findsOneWidget);
+    expect(find.text(l10n.reviewDownloadTitle('Hindustani')), findsOneWidget);
     await tester.tap(find.text(l10n.reviewDownload));
     await tester.pumpAndSettle();
 
@@ -170,7 +170,7 @@ void main() {
     await tester.tap(find.text(l10n.deckDownloadsRemove));
     await tester.pumpAndSettle();
     expect(
-      find.text(l10n.deckDownloadsRemoveReviewBody('Hindi')),
+      find.text(l10n.deckDownloadsRemoveReviewBody('Hindustani')),
       findsOneWidget,
     );
     await tester.tap(find.text(l10n.deckDownloadsRemove).last);
@@ -195,7 +195,7 @@ void main() {
       state: app,
     );
     expect(tileOf(tester, 'Spanish', 'English').value, isFalse);
-    await tester.tap(pairTile('Hindi', 'English'));
+    await tester.tap(pairTile('Hindustani', 'English'));
     await tester.pumpAndSettle();
     expect(state.settings.reviewPairs, <String>{'es/en', 'hi/en'});
   });

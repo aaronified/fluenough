@@ -124,7 +124,7 @@ void main() {
         .buildSession(const DrillRequest.today(language: 'hi'))
         .length;
     expect(next, greaterThan(0));
-    final start = find.text(l10n.summaryStartLanguage('Hindi', next));
+    final start = find.text(l10n.summaryStartLanguage('Hindustani', next));
     await tester.ensureVisible(start);
     await tester.tap(start);
     await tester.pumpAndSettle();

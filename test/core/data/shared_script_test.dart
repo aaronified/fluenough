@@ -46,4 +46,19 @@ void main() {
       'shahmukhi': <String>['pa'],
     });
   });
+
+  test('Hindustani read in the Perso-Arabic script only (#623): the answer is kept '
+      'under hi:perso_arabic', () {
+    final hi = all.firstWhere((l) => l.code == 'hi');
+    expect(hi.name, 'Hindustani');
+    expect(hi.scripts, <String>['devanagari', 'perso_arabic']);
+    expect(hi.readKey('perso_arabic'), 'hi:perso_arabic');
+    expect(readKeyPattern.hasMatch('hi:perso_arabic'), isTrue);
+    final answers = hi.readAnswers(<String>['perso_arabic']);
+    expect(answers, <String, bool>{'hi': false, 'hi:perso_arabic': true});
+    expect(hi.scriptsReadIn(answers), <String>['perso_arabic']);
+    expect(scriptReaders(all, answers), <String, List<String>>{
+      'perso_arabic': <String>['hi'],
+    });
+  });
 }

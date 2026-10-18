@@ -1,4 +1,4 @@
-# The order Hindi is taught in, one unit per line, from every language
+# The order Hindustani is taught in, one unit per line, from every language
 # it is taught from: each deck is named by its core id, and a learner
 # from English is taught hi-en-home for hi-home (ADR-0013, ADR-0036).
 #
@@ -40,7 +40,25 @@
 # no Hindi Wikipedia dump could be fetched here (2026-10-17):
 # order the core again from the counts once they are written.
 #
-# Every deck of Hindi is listed exactly once.
+# Hindustani: Hindi and Urdu as one course (owner, 2026-10-18: "Hindi and
+# Urdu should be combined as we should not care about socipolitics over
+# linguistics"; #623). The `hi` course and its card ids stay. It teaches the
+# shared colloquial vocabulary, with the Sanskrit-leaning and the
+# Persian-leaning synonyms on the card, and offers two scripts: Devanagari
+# and the Perso-Arabic script, written right to left in the Nastaliq style
+# (`perso_arabic` in the app, `perso-arabic` in a deck; Urdu names it nothing else). The plan of the closed Urdu
+# path (#602) is folded in below as planned units:
+# - the Perso-Arabic script units, after the Devanagari ones (3);
+# - Persian word-building (A2) and Arabic roots and plurals (B1), the two
+#   places where the loan patterns need a unit of their own;
+# - what is Urdu's own, against Hindi's model, as the comments over the
+#   units it bears on.
+# No Perso-Arabic deck is written, and a card does not yet hold a second
+# spelling (#623), so these units stay planned and `alphabet` lists only
+# written decks. When the decks are written, the script units become lists
+# of them, as Devanagari's are.
+#
+# Every deck of Hindustani is listed exactly once.
 schema: 1
 kind: "path"
 id: "hi-path"
@@ -63,7 +81,12 @@ units:
   # 1. The phrasebook, taught whole from the first lesson.
   - decks: ["hi-phrasebook", "hi-first-words", "*"]
     words: 2
-  # 2. The first word units.
+  # 2. The first word units. The sounds unit drills, beside the aspirates
+  # and the retroflex row, the five sounds that come from Persian and
+  # Arabic: q against k, kh (k͟h) against kh, ġ against g, z against j and
+  # f against ph. Devanagari writes them with a nukta (क़ ख़ ग़ ज़ फ़); the
+  # Perso-Arabic script has a letter for each (ق خ غ ز ف), as in خدا حافظ
+  # (k͟hudā hāfiz).
   - decks: ["hi-sound-differences"]
     words: 20
   - decks: ["hi-questions", "*"]
@@ -81,6 +104,30 @@ units:
   # who already reads it).
   - ["hi-script-vowels", "hi-script-consonants", "hi-script-reading"]
   - ["hi-script-vowel-signs", "hi-script-conjuncts"]
+  # The Perso-Arabic script (#623, from #602), for a learner who chooses it;
+  # one who already reads it skips it (#554). Written right to left, in the
+  # Nastaliq style. The first unit teaches the letters and their joining
+  # forms: most letters take an initial, a medial, a final and an alone
+  # form, as ب (b) does in بات (bāt) and کتاب (kitāb), and nine join only to
+  # the letter before them (ا د ڈ ذ ر ڑ ز ژ و).
+  - planned: { id: "hi-script-perso-arabic-letters", grammar: ["script-letters", "joining-forms"], words: 0 }
+    listening_passages:
+      - { id: "letter-names", text: { "en": "The letters said in order, alif to baṛī ye" } }
+    reading_passages:
+      - { id: "shop-signs", text: { "en": "Short shop signs in Nastaliq, one word each" } }
+  # The second unit teaches the vowels: the short vowels are left unwritten,
+  # so کتاب (kitāb) is written k-t-ā-b, and their marks, زبر (zabar, a),
+  # زیر (zer, i) and پیش (peś, u), appear only in teaching texts; the long
+  # vowels are written with ا (ā), و (ū, ō, au), ی (ī) and ے (ē, ai). It
+  # also teaches ں (nūn ġunna) for a nasal vowel, ھ (do-cashmī he) for the
+  # aspirates against ہ (h), ء (hamza), ع (ʿain), the doubling mark ّ
+  # (taśdīd), and the izafat: the -e- that joins two Persian words, written
+  # with a zer, وزیرِ اعظم (vazīr-e aʿzam, "prime minister").
+  - planned: { id: "hi-script-perso-arabic-vowels", grammar: ["short-vowels", "script-marks", "izafat"], words: 0 }
+    listening_passages:
+      - { id: "guess-the-vowel", text: { "en": "Words read aloud whose short vowels are not written" } }
+    reading_passages:
+      - { id: "street-names", text: { "en": "Street and road names with the izafat, as on a city map" } }
   # Numbers 1–20 follow the script, so it comes after the first six units.
   - decks: ["hi-numbers-1-20", "*"]
     words: 20
@@ -231,6 +278,17 @@ units:
       - { id: "festival-days", text: { "en": "Neighbours plan the days of a festival together" } }
     reading_passages:
       - { id: "festival-invitation", text: { "en": "An invitation to a festival meal" } }
+  # Persian word-building (from #602): بے- (bē-, "without"), نا- (nā-,
+  # "un-"), -دار (-dār, "holder": دکاندار (dukāndār, "shopkeeper")), -خانہ
+  # (-k͟hāna, "house of": ڈاکخانہ (ḍākk͟hāna, "post office")), the abstract
+  # -ی (-ī), the izafat as grammar, and the Persian "and", -o-, in pairs
+  # such as صبح و شام (subh-o-śām, "morning and evening"). Each card gives
+  # the Hindi-leaning word beside it where there is one.
+  - planned: { id: "hi-grammar-persian-words", grammar: ["persian-affixes", "persian-compounds"], words: 12 }
+    listening_passages:
+      - { id: "shopkeepers-and-houses", text: { "en": "Naming people and places by what they hold: shopkeeper, post office, library" } }
+    reading_passages:
+      - { id: "office-doors", text: { "en": "Signs on the doors of a government office" } }
   - decks: ["hi-grammar-ne", "hi-grammar-perfect"]
     words: 0
     grammar: ["ne", "perfect"]
@@ -336,6 +394,17 @@ units:
   # B1: the themes and grammar of the CEFR's B1.
   - decks: ["hi-registers"]
     words: 17
+  # Arabic roots and plurals (from #602): one root's family, علم (ʿilm,
+  # "knowledge"), عالم (ʿālim, "scholar"), معلوم (maʿlūm, "known"), تعلیم
+  # (taʿlīm, "education"); the plural -ات (-āt), کاغذات (kāġazāt, "papers");
+  # and the broken plural, خبر (k͟habar, "news") and اخبار (ak͟hbār,
+  # "newspaper"). The registers unit above sets these Perso-Arabic words of
+  # formal speech beside the everyday words Hindustani shares.
+  - planned: { id: "hi-grammar-arabic-words", grammar: ["arabic-roots", "arabic-plurals"], words: 15 }
+    listening_passages:
+      - { id: "one-root-many-words", text: { "en": "A teacher shows how knowledge, scholar, known and education share a root" } }
+    reading_passages:
+      - { id: "newspaper-plurals", text: { "en": "Headlines with papers, events and newspapers in their Arabic plurals" } }
   - planned: { id: "hi-health", theme: "health", words: 55 }
     listening_passages:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
