@@ -288,13 +288,17 @@ units:
       - { id: "at-the-dhaba", text: { "en": "Ordering a meal at a roadside dhaba" } }
     reading_passages:
       - { id: "menu-card", text: { "en": "A dhaba's menu card with dishes and prices" } }
-  # pa-grammar-needs joins this unit.
+  # pa-grammar-needs follows this unit.
   - planned: { id: "pa-groceries", theme: "groceries", words: 15 }
-    grammar: ["needs"]
     listening_passages:
       - { id: "what-we-need", text: { "en": "Two people say what they need from the shop" } }
     reading_passages:
       - { id: "grocery-list", text: { "en": "A grocery list" } }
+  - planned: { id: "pa-grammar-needs", grammar: "needs" }
+    listening_passages:
+      - { id: "needs-heard", text: { "en": "A short exchange that uses needs, after the groceries unit" } }
+    reading_passages:
+      - { id: "needs-read", text: { "en": "A short text that uses needs, after the groceries unit" } }
   - planned: { id: "pa-market", theme: "market", words: 9 }
     listening_passages:
       - { id: "at-the-market", text: { "en": "Buying vegetables at a market" } }
@@ -322,13 +326,17 @@ units:
       - { id: "easy-to-mix-up", text: { "en": "Two words that are easy to mix up, each said in a sentence" } }
     reading_passages:
       - { id: "mix-up-note", text: { "en": "A note in which one word is used in its two senses" } }
-  # pa-grammar-continuous joins this unit.
+  # pa-grammar-continuous follows this unit.
   - planned: { id: "pa-directions", theme: "directions", words: 12 }
-    grammar: ["continuous"]
     listening_passages:
       - { id: "turn-left", text: { "en": "Directions to a gurdwara: left, right and straight on" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Street signs and an arrow board" } }
+  - planned: { id: "pa-grammar-continuous", grammar: "continuous" }
+    listening_passages:
+      - { id: "continuous-heard", text: { "en": "A short exchange that uses continuous, after the directions unit" } }
+    reading_passages:
+      - { id: "continuous-read", text: { "en": "A short text that uses continuous, after the directions unit" } }
   - planned: { id: "pa-transport", theme: "transport", words: 8 }
     listening_passages:
       - { id: "auto-fare", text: { "en": "Agreeing a fare with an auto driver" } }
@@ -380,24 +388,32 @@ units:
   # then its sentences. The past, then its ergative ਨੇ (ne), compound and
   # conjunct verbs, as the scheme orders them.
   - planned: { id: "pa-daily-life", theme: "daily-life", words: 8 }
-    grammar: ["negative"]
     listening_passages:
       - { id: "a-normal-day", text: { "en": "Someone describes a normal day, and what they do not do" } }
     reading_passages:
       - { id: "day-planner", text: { "en": "A page of a day planner" } }
+  - planned: { id: "pa-grammar-negative", grammar: "negative" }
+    listening_passages:
+      - { id: "negative-heard", text: { "en": "A short exchange that uses negative, after the daily life unit" } }
+    reading_passages:
+      - { id: "negative-read", text: { "en": "A short text that uses negative, after the daily life unit" } }
   - planned: { id: "pa-weather", theme: "weather", words: 45 }
     listening_passages:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, fog and rain" } }
     reading_passages:
       - { id: "weather-message", text: { "en": "A message to a friend about the winter fog" } }
-  # pa-grammar-past joins this unit: the past of being, ਸੀ (sī), and the
+  # pa-grammar-past follows this unit: the past of being, ਸੀ (sī), and the
   # past of verbs that take no object, ਗਿਆ (giā), ਆਇਆ (āiā).
   - planned: { id: "pa-calendar", theme: "calendar", words: 15 }
-    grammar: ["past"]
     listening_passages:
       - { id: "last-week", text: { "en": "Saying where you went last week, day by day" } }
     reading_passages:
       - { id: "wall-calendar", text: { "en": "A wall calendar with holidays marked" } }
+  - planned: { id: "pa-grammar-past", grammar: "past" }
+    listening_passages:
+      - { id: "past-heard", text: { "en": "A short exchange that uses past, after the calendar unit" } }
+    reading_passages:
+      - { id: "past-read", text: { "en": "A short text that uses past, after the calendar unit" } }
   - planned: { id: "pa-grammar-ordinals", grammar: "ordinals" }
     listening_passages:
       - { id: "which-floor", text: { "en": "Finding a flat: the first floor, the second, the third" } }
@@ -445,13 +461,22 @@ units:
       - { id: "which-is-better", text: { "en": "Two friends compare two phones" } }
     reading_passages:
       - { id: "two-cities", text: { "en": "A short text comparing Amritsar and Ludhiana" } }
-  # pa-grammar-irregular and pa-grammar-pitfalls join this unit.
+  # pa-grammar-irregular and pa-grammar-pitfalls follow this unit.
   - planned: { id: "pa-help", theme: "help", words: 6 }
-    grammar: ["irregular", "pitfalls"]
     listening_passages:
       - { id: "asking-for-help", text: { "en": "Asking a passer-by for help" } }
     reading_passages:
       - { id: "help-desk-sign", text: { "en": "A help desk's sign" } }
+  - planned: { id: "pa-grammar-irregular", grammar: "irregular" }
+    listening_passages:
+      - { id: "irregular-heard", text: { "en": "A short exchange that uses irregular, after the help unit" } }
+    reading_passages:
+      - { id: "irregular-read", text: { "en": "A short text that uses irregular, after the help unit" } }
+  - planned: { id: "pa-grammar-pitfalls", grammar: "pitfalls" }
+    listening_passages:
+      - { id: "pitfalls-heard", text: { "en": "A short exchange that uses pitfalls, after the help unit" } }
+    reading_passages:
+      - { id: "pitfalls-read", text: { "en": "A short text that uses pitfalls, after the help unit" } }
   - planned: { id: "pa-grammar-conjunct-verbs", grammar: "conjunct-verbs", words: 3 }
     listening_passages:
       - { id: "doing-and-becoming", text: { "en": "Saying what was cleaned, started and finished" } }
