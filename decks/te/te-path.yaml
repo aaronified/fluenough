@@ -582,7 +582,9 @@ units:
       - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
     reading_passages:
       - { id: "opinion-column", text: { "en": "A short opinion column" } }
-  - planned: { id: "te-grammar-honorifics", grammar: "honorifics" }
+  - decks: ["te-grammar-honorifics", "*"]
+    words: 0
+    grammar: ["honorifics"]
     listening_passages:
       - { id: "addressing-an-elder", text: { "en": "Speaking to an elder, a stranger and a friend" } }
     reading_passages:
