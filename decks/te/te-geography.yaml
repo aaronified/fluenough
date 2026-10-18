@@ -18,7 +18,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ప్రపంచ పటం", reading: "prapañca paṭam" }] }
     examples:
-      - { target: "ప్రపంచం చాలా పెద్దది.", reading: "prapañcam cālā peddadi.", ipa: "prapaɲtʃam tʃaːlaː ped̪d̪ad̪i" }
+      - {"target": "ప్రపంచం చాలా పెద్దది.", "reading": "prapañcam cālā peddadi.", "ipa": "prapaɲtʃam tʃaːlaː ped̪d̪ad̪i", "bases": [{"word": "పెద్దది", "ref": "te-0502"}]}
       - { target: "ఈ ప్రపంచంలో చాలా దేశాలు ఉన్నాయి.", reading: "ī prapañcamlō cālā dēśālu unnāyi.", ipa: "iː prapaɲtʃamloː tʃaːlaː d̪eːʃaːlu unnaːji", bases: [{ word: "ప్రపంచంలో", base: "ప్రపంచం", reading: "prapañcam" }, { word: "దేశాలు", base: "దేశం", reading: "dēśam" }, { word: "ఉన్నాయి", base: "ఉండడం", reading: "uṇḍaḍam" }] }
   - id: "te-3001"
     target: "ఖండం"
@@ -43,7 +43,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "భూమి", reading: "bhūmi" }] }
     examples:
       - { target: "బడిలో భూగోళం చూశాను.", reading: "baḍilō bhūgōḷam cūśānu.", ipa: "baɖiloː bʱuːɡoːɭam tʃuːʃaːnu", bases: [{ word: "బడిలో", base: "బడి", reading: "baḍi" }, { word: "చూశాను", base: "చూడడం", reading: "cūḍaḍam" }] }
-      - { target: "భూగోళం గుండ్రంగా ఉంటుంది.", reading: "bhūgōḷam guṇḍraṅgā uṇṭundi.", ipa: "bʱuːɡoːɭam ɡuɳɖraŋɡaː uɳʈund̪i", bases: [{ word: "ఉంటుంది", base: "ఉండడం", reading: "uṇḍaḍam" }] }
+      - {"target": "భూగోళం గుండ్రంగా ఉంటుంది.", "reading": "bhūgōḷam guṇḍraṅgā uṇṭundi.", "ipa": "bʱuːɡoːɭam ɡuɳɖraŋɡaː uɳʈund̪i", "bases": [{"word": "ఉంటుంది", "base": "ఉండడం", "reading": "uṇḍaḍam"}, {"word": "గుండ్రంగా", "base": "గుండ్రం", "reading": "guṇḍram"}]}
   - id: "te-3003"
     target: "పటం"
     reading: "paṭam"
@@ -55,7 +55,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "పటంలో", reading: "paṭamlō" }] }
     examples:
       - { target: "పటంలో నగరం ఎక్కడ ఉంది?", reading: "paṭamlō nagaram ekkaḍa undi?", ipa: "paʈamloː naɡaram ekkaɖa und̪i", bases: [{ word: "పటంలో", base: "పటం", reading: "paṭam" }, { word: "ఉంది", ref: "te-0633" }] }
-      - { target: "ఈ పటం జాగ్రత్తగా చూశాను.", reading: "ī paṭam jāgrattagā cūśānu.", ipa: "iː paʈam dʒaːɡrat̪t̪aɡaː tʃuːʃaːnu", bases: [{ word: "చూశాను", base: "చూడడం", reading: "cūḍaḍam" }] }
+      - {"target": "ఈ పటం జాగ్రత్తగా చూశాను.", "reading": "ī paṭam jāgrattagā cūśānu.", "ipa": "iː paʈam dʒaːɡrat̪t̪aɡaː tʃuːʃaːnu", "bases": [{"word": "చూశాను", "base": "చూడడం", "reading": "cūḍaḍam"}, {"word": "జాగ్రత్తగా", "base": "జాగ్రత్త", "reading": "jāgratta"}]}
   - id: "te-3004"
     target: "దిక్కు"
     reading: "dikku"
@@ -145,7 +145,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "సముద్ర తీరం", reading: "samudra tīram" }] }
     examples:
-      - { target: "మేము తీరం వెంట నడిచాము.", reading: "mēmu tīram veṇṭa naḍicāmu.", ipa: "meːmu t̪iːram ʋeɳʈa naɖitʃaːmu", bases: [{ word: "నడిచాము", base: "నడవడం", reading: "naḍavaḍam" }] }
+      - {"target": "మేము తీరం వెంట నడిచాము.", "reading": "mēmu tīram veṇṭa naḍicāmu.", "ipa": "meːmu t̪iːram ʋeɳʈa naɖitʃaːmu", "bases": [{"word": "నడిచాము", "base": "నడవడం", "reading": "naḍavaḍam"}, {"word": "వెంట", "base": "వెంట", "reading": "veṇṭa"}]}
       - { target: "ఈ తీరం చాలా అందంగా ఉంది.", reading: "ī tīram cālā andaṅgā undi.", ipa: "iː t̪iːram tʃaːlaː and̪aŋɡaː und̪i", bases: [{ word: "ఉంది", ref: "te-0633" }] }
   - id: "te-3010"
     target: "ద్వీపకల్పం"
@@ -157,7 +157,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "భారత ద్వీపకల్పం", reading: "bhārata dvīpakalpam" }] }
     examples:
-      - { target: "ఈ ద్వీపకల్పం మూడు వైపులా నీటితో చుట్టుముట్టి ఉంది.", reading: "ī dvīpakalpam mūḍu vaipulā nīṭitō cuṭṭumuṭṭi undi.", ipa: "iː d̪ʋiːpakalpam muːɖu ʋaipulaː niːʈit̪oː tʃuʈʈumuʈʈi und̪i", bases: [{ word: "నీటితో", base: "నీరు", reading: "nīru" }, { word: "చుట్టుముట్టి", base: "చుట్టుముట్టడం", reading: "cuṭṭumuṭṭaḍam" }, { word: "ఉంది", ref: "te-0633" }] }
+      - {"target": "ఈ ద్వీపకల్పం మూడు వైపులా నీటితో చుట్టుముట్టి ఉంది.", "reading": "ī dvīpakalpam mūḍu vaipulā nīṭitō cuṭṭumuṭṭi undi.", "ipa": "iː d̪ʋiːpakalpam muːɖu ʋaipulaː niːʈit̪oː tʃuʈʈumuʈʈi und̪i", "bases": [{"word": "నీటితో", "base": "నీరు", "reading": "nīru"}, {"word": "చుట్టుముట్టి", "base": "చుట్టుముట్టడం", "reading": "cuṭṭumuṭṭaḍam"}, {"word": "ఉంది", "ref": "te-0633"}, {"word": "వైపులా", "ref": "te-0807"}]}
       - { target: "ఈ ద్వీపకల్పంలో చాలా ఊళ్ళు ఉన్నాయి.", reading: "ī dvīpakalpamlō cālā ūḷḷu unnāyi.", ipa: "iː d̪ʋiːpakalpamloː tʃaːlaː uːɭɭu unnaːji", bases: [{ word: "ద్వీపకల్పంలో", base: "ద్వీపకల్పం", reading: "dvīpakalpam" }, { word: "ఊళ్ళు", base: "ఊరు", reading: "ūru" }, { word: "ఉన్నాయి", base: "ఉండడం", reading: "uṇḍaḍam" }] }
   - id: "te-3011"
     target: "పట్టణం"
@@ -169,8 +169,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "పట్టణంలో", reading: "paṭṭaṇamlō" }] }
     examples:
-      - { target: "పట్టణం చిన్నది కానీ చాలా శుభ్రంగా ఉంది.", reading: "paṭṭaṇam cinnadi kānī cālā śubhraṅgā undi.", ipa: "paʈʈaɳam tʃinnad̪i kaːniː tʃaːlaː ʃubʱraŋɡaː und̪i", bases: [{ word: "ఉంది", ref: "te-0633" }] }
-      - { target: "మేము వారం రోజులు పట్టణంలో ఉన్నాము.", reading: "mēmu vāram rōjulu paṭṭaṇamlō unnāmu.", ipa: "meːmu ʋaːram roːdʒulu paʈʈaɳamloː unnaːmu", bases: [{ word: "పట్టణంలో", base: "పట్టణం", reading: "paṭṭaṇam" }, { word: "ఉన్నాము", base: "ఉండడం", reading: "uṇḍaḍam" }] }
+      - {"target": "పట్టణం చిన్నది కానీ చాలా శుభ్రంగా ఉంది.", "reading": "paṭṭaṇam cinnadi kānī cālā śubhraṅgā undi.", "ipa": "paʈʈaɳam tʃinnad̪i kaːniː tʃaːlaː ʃubʱraŋɡaː und̪i", "bases": [{"word": "ఉంది", "ref": "te-0633"}, {"word": "చిన్నది", "ref": "te-0503"}, {"word": "శుభ్రంగా", "ref": "te-5721"}]}
+      - {"target": "మేము వారం రోజులు పట్టణంలో ఉన్నాము.", "reading": "mēmu vāram rōjulu paṭṭaṇamlō unnāmu.", "ipa": "meːmu ʋaːram roːdʒulu paʈʈaɳamloː unnaːmu", "bases": [{"word": "పట్టణంలో", "base": "పట్టణం", "reading": "paṭṭaṇam"}, {"word": "ఉన్నాము", "base": "ఉండడం", "reading": "uṇḍaḍam"}, {"word": "రోజులు", "ref": "te-0316"}]}
   - id: "te-3012"
     target: "ప్రాంతం"
     reading: "prāntam"
@@ -196,7 +196,7 @@ cards:
       - { id: "pattana", word: "పట్టణ", reading: "paṭṭaṇa" }
     examples:
       - { target: "గ్రామీణ ప్రాంతాల్లో బస్సులు తక్కువ.", reading: "grāmīṇa prāntāllō bassulu takkuva.", ipa: "ɡraːmiːɳa praːnt̪aːlloː bassulu t̪akkuʋa", bases: [{ word: "ప్రాంతాల్లో", base: "ప్రాంతం", reading: "prāntam" }, { word: "బస్సులు", base: "బస్సు", reading: "bassu" }] }
-      - { target: "గ్రామీణ జీవితం ప్రశాంతంగా ఉంటుంది.", reading: "grāmīṇa jīvitam praśāntaṅgā uṇṭundi.", ipa: "ɡraːmiːɳa dʒiːʋit̪am praʃaːnt̪aŋɡaː uɳʈund̪i", bases: [{ word: "ఉంటుంది", base: "ఉండడం", reading: "uṇḍaḍam" }] }
+      - {"target": "గ్రామీణ జీవితం ప్రశాంతంగా ఉంటుంది.", "reading": "grāmīṇa jīvitam praśāntaṅgā uṇṭundi.", "ipa": "ɡraːmiːɳa dʒiːʋit̪am praʃaːnt̪aŋɡaː uɳʈund̪i", "bases": [{"word": "ఉంటుంది", "base": "ఉండడం", "reading": "uṇḍaḍam"}, {"word": "జీవితం", "base": "జీవితం", "reading": "jīvitam"}]}
   - id: "te-3014"
     target: "జనాభా"
     reading: "janābhā"
@@ -219,7 +219,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "అక్షాంశ రేఖ", reading: "akṣāmśa rēkha" }] }
     examples:
-      - { target: "పటంలో అక్షాంశ రేఖలు ఉన్నాయి.", reading: "paṭamlō akṣāmśa rēkhalu unnāyi.", ipa: "paʈamloː akʂaːmʃa reːkʰalu unnaːji", bases: [{ word: "పటంలో", base: "పటం", reading: "paṭam" }, { word: "రేఖలు", base: "రేఖ", reading: "rēkha" }, { word: "ఉన్నాయి", base: "ఉండడం", reading: "uṇḍaḍam" }] }
+      - {"target": "పటంలో అక్షాంశ రేఖలు ఉన్నాయి.", "reading": "paṭamlō akṣāmśa rēkhalu unnāyi.", "ipa": "paʈamloː akʂaːmʃa reːkʰalu unnaːji", "bases": [{"word": "పటంలో", "base": "పటం", "reading": "paṭam"}, {"word": "రేఖలు", "base": "రేఖ", "reading": "rēkha"}, {"word": "ఉన్నాయి", "base": "ఉండడం", "reading": "uṇḍaḍam"}, {"word": "అక్షాంశ", "base": "అక్షాంశం", "reading": "akṣāmśam"}]}
       - { target: "ఈ నగరం అక్షాంశం ఎంత?", reading: "ī nagaram akṣāmśam enta?", ipa: "iː naɡaram akʂaːmʃam ent̪a" }
   - id: "te-3016"
     target: "రేఖాంశం"
@@ -231,7 +231,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "అక్షాంశ రేఖాంశాలు", reading: "akṣāmśa rēkhāmśālu" }] }
     examples:
-      - { target: "అక్షాంశం అడ్డంగా, రేఖాంశం నిలువుగా ఉంటాయి.", reading: "akṣāmśam aḍḍaṅgā, rēkhāmśam niluvugā uṇṭāyi.", ipa: "akʂaːmʃam aɖɖaŋɡaː reːkʰaːmʃam niluʋuɡaː uɳʈaːji", bases: [{ word: "ఉంటాయి", base: "ఉండడం", reading: "uṇḍaḍam" }] }
+      - {"target": "అక్షాంశం అడ్డంగా, రేఖాంశం నిలువుగా ఉంటాయి.", "reading": "akṣāmśam aḍḍaṅgā, rēkhāmśam niluvugā uṇṭāyi.", "ipa": "akʂaːmʃam aɖɖaŋɡaː reːkʰaːmʃam niluʋuɡaː uɳʈaːji", "bases": [{"word": "ఉంటాయి", "base": "ఉండడం", "reading": "uṇḍaḍam"}, {"word": "అడ్డంగా", "base": "అడ్డం", "reading": "aḍḍam"}, {"word": "నిలువుగా", "base": "నిలువు", "reading": "niluvu"}]}
       - { target: "ఫోన్‌లో రేఖాంశం చూశాను.", reading: "phōnlō rēkhāmśam cūśānu.", ipa: "pʰoːnloː reːkʰaːmʃam tʃuːʃaːnu", bases: [{ word: "ఫోన్‌లో", base: "ఫోను", reading: "phōnu" }, { word: "చూశాను", base: "చూడడం", reading: "cūḍaḍam" }] }
   - id: "te-3017"
     target: "లోతు"
@@ -261,7 +261,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "వెడల్పైన రోడ్డు", reading: "veḍalpaina rōḍḍu" }] }
     examples:
       - { target: "ఈ రోడ్డు వెడల్పు ఎంత?", reading: "ī rōḍḍu veḍalpu enta?", ipa: "iː roːɖɖu ʋeɖalpu ent̪a" }
-      - { target: "నది వెడల్పుగా ఉంది.", reading: "nadi veḍalpugā undi.", ipa: "nad̪i ʋeɖalpuɡaː und̪i", bases: [{ word: "ఉంది", ref: "te-0633" }] }
+      - {"target": "నది వెడల్పుగా ఉంది.", "reading": "nadi veḍalpugā undi.", "ipa": "nad̪i ʋeɖalpuɡaː und̪i", "bases": [{"word": "ఉంది", "ref": "te-0633"}, {"word": "వెడల్పుగా", "base": "వెడల్పు", "reading": "veḍalpu"}]}
   - id: "te-3019"
     target: "పీఠభూమి"
     reading: "pīṭhabhūmi"
@@ -272,7 +272,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "పీఠభూములు", reading: "pīṭhabhūmulu" }] }
     examples:
-      - { target: "డెక్కన్ పీఠభూమి పెద్దది.", reading: "ḍekkan pīṭhabhūmi peddadi.", ipa: "ɖekkan piːʈʰabʱuːmi ped̪d̪ad̪i" }
+      - {"target": "డెక్కన్ పీఠభూమి పెద్దది.", "reading": "ḍekkan pīṭhabhūmi peddadi.", "ipa": "ɖekkan piːʈʰabʱuːmi ped̪d̪ad̪i", "bases": [{"word": "డెక్కన్", "base": "డెక్కన్", "reading": "ḍekkan"}, {"word": "పెద్దది", "ref": "te-0502"}]}
       - { target: "పీఠభూమి మీద చల్లగా ఉంటుంది.", reading: "pīṭhabhūmi mīda callagā uṇṭundi.", ipa: "piːʈʰabʱuːmi miːd̪a tʃallaɡaː uɳʈund̪i", bases: [{ word: "ఉంటుంది", base: "ఉండడం", reading: "uṇḍaḍam" }] }
   - id: "te-3020"
     target: "ఒడ్డు"
@@ -359,7 +359,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ఢిల్లీ నగరం", reading: "ḍhillī nagaram" }] }
     examples:
-      - { target: "ఢిల్లీ భారతదేశ రాజధాని.", reading: "ḍhillī bhāratadēśa rājadhāni.", ipa: "ɖʱilliː bʱaːrat̪ad̪eːʃa raːdʒad̪ʱaːni" }
+      - {"target": "ఢిల్లీ భారతదేశ రాజధాని.", "reading": "ḍhillī bhāratadēśa rājadhāni.", "ipa": "ɖʱilliː bʱaːrat̪ad̪eːʃa raːdʒad̪ʱaːni", "bases": [{"word": "భారతదేశ", "ref": "te-3022"}]}
       - { target: "ఢిల్లీలో చలి ఎక్కువ.", reading: "ḍhillīlō cali ekkuva.", ipa: "ɖʱilliːloː tʃali ekkuʋa", bases: [{ word: "ఢిల్లీలో", base: "ఢిల్లీ", reading: "ḍhillī" }] }
   - id: "te-3027"
     target: "బెంగళూరు"
@@ -372,7 +372,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "బెంగళూరు నగరం", reading: "beṅgaḷūru nagaram" }] }
     examples:
       - { target: "బెంగళూరు కర్ణాటక రాజధాని.", reading: "beṅgaḷūru karṇāṭaka rājadhāni.", ipa: "beŋɡaɭuːru karɳaːʈaka raːdʒad̪ʱaːni" }
-      - { target: "నా స్నేహితుడు బెంగళూరులో పని చేస్తాడు.", reading: "nā snēhituḍu beṅgaḷūrulō pani cēstāḍu.", ipa: "naː sneːhit̪uɖu beŋɡaɭuːruloː pani tʃeːst̪aːɖu", bases: [{ word: "బెంగళూరులో", base: "బెంగళూరు", reading: "beṅgaḷūru" }, { word: "చేస్తాడు", base: "చేయడం", reading: "cēyaḍam" }] }
+      - {"target": "నా స్నేహితుడు బెంగళూరులో పని చేస్తాడు.", "reading": "nā snēhituḍu beṅgaḷūrulō pani cēstāḍu.", "ipa": "naː sneːhit̪uɖu beŋɡaɭuːruloː pani tʃeːst̪aːɖu", "bases": [{"word": "బెంగళూరులో", "base": "బెంగళూరు", "reading": "beṅgaḷūru"}, {"word": "చేస్తాడు", "base": "చేయడం", "reading": "cēyaḍam"}, {"word": "నా", "ref": "te-0593"}]}
   - id: "te-3028"
     target: "కర్ణాటక"
     reading: "karṇāṭaka"
@@ -383,7 +383,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "కర్ణాటక రాష్ట్రం", reading: "karṇāṭaka rāṣṭram" }] }
     examples:
-      - { target: "కర్ణాటక దక్షిణ భారతదేశంలో ఉంది.", reading: "karṇāṭaka dakṣiṇa bhāratadēśamlō undi.", ipa: "karɳaːʈaka d̪akʂiɳa bʱaːrat̪ad̪eːʃamloː und̪i", bases: [{ word: "భారతదేశంలో", base: "భారతదేశం", reading: "bhāratadēśam" }, { word: "ఉంది", ref: "te-0633" }] }
+      - {"target": "కర్ణాటక దక్షిణ భారతదేశంలో ఉంది.", "reading": "karṇāṭaka dakṣiṇa bhāratadēśamlō undi.", "ipa": "karɳaːʈaka d̪akʂiɳa bʱaːrat̪ad̪eːʃamloː und̪i", "bases": [{"word": "భారతదేశంలో", "base": "భారతదేశం", "reading": "bhāratadēśam"}, {"word": "ఉంది", "ref": "te-0633"}, {"word": "దక్షిణ", "ref": "te-3005"}]}
       - { target: "కర్ణాటకలో కాఫీ బాగా పండుతుంది.", reading: "karṇāṭakalō kāphī bāgā paṇḍutundi.", ipa: "karɳaːʈakaloː kaːpʰiː baːɡaː paɳɖut̪und̪i", bases: [{ word: "కర్ణాటకలో", base: "కర్ణాటక", reading: "karṇāṭaka" }, { word: "పండుతుంది", base: "పండడం", reading: "paṇḍaḍam" }] }
   - id: "te-3029"
     target: "తమిళనాడు"
@@ -396,7 +396,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "తమిళనాడు రాష్ట్రం", reading: "tamiḷanāḍu rāṣṭram" }] }
     examples:
       - { target: "చెన్నై తమిళనాడు రాజధాని.", reading: "cennai tamiḷanāḍu rājadhāni.", ipa: "tʃennai t̪amiɭanaːɖu raːdʒad̪ʱaːni" }
-      - { target: "మేము తమిళనాడు నుండి వచ్చాము.", reading: "mēmu tamiḷanāḍu nuṇḍi vaccāmu.", ipa: "meːmu t̪amiɭanaːɖu nuɳɖi ʋatʃtʃaːmu", bases: [{ word: "వచ్చాము", base: "రావడం", reading: "rāvaḍam" }] }
+      - {"target": "మేము తమిళనాడు నుండి వచ్చాము.", "reading": "mēmu tamiḷanāḍu nuṇḍi vaccāmu.", "ipa": "meːmu t̪amiɭanaːɖu nuɳɖi ʋatʃtʃaːmu", "bases": [{"word": "వచ్చాము", "base": "రావడం", "reading": "rāvaḍam"}, {"word": "నుండి", "base": "నుండి", "reading": "nuṇḍi"}]}
   - id: "te-3030"
     target: "ఆఫ్రికా"
     reading: "āphrikā"
@@ -408,7 +408,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "ఆఫ్రికా ఖండం", reading: "āphrikā khaṇḍam" }] }
     examples:
       - { target: "ఆఫ్రికాలో ఎండ ఎక్కువ.", reading: "āphrikālō eṇḍa ekkuva.", ipa: "aːpʰrikaːloː eɳɖa ekkuʋa", bases: [{ word: "ఆఫ్రికాలో", base: "ఆఫ్రికా", reading: "āphrikā" }] }
-      - { target: "ఆఫ్రికా ఖండంలో అనేక భాషలు ఉన్నాయి.", reading: "āphrikā khaṇḍamlō anēka bhāṣalu unnāyi.", ipa: "aːpʰrikaː kʰaɳɖamloː aneːka bʱaːʂalu unnaːji", bases: [{ word: "ఖండంలో", base: "ఖండం", reading: "khaṇḍam" }, { word: "భాషలు", base: "భాష", reading: "bhāṣa" }, { word: "ఉన్నాయి", base: "ఉండడం", reading: "uṇḍaḍam" }] }
+      - {"target": "ఆఫ్రికా ఖండంలో అనేక భాషలు ఉన్నాయి.", "reading": "āphrikā khaṇḍamlō anēka bhāṣalu unnāyi.", "ipa": "aːpʰrikaː kʰaɳɖamloː aneːka bʱaːʂalu unnaːji", "bases": [{"word": "ఖండంలో", "base": "ఖండం", "reading": "khaṇḍam"}, {"word": "భాషలు", "base": "భాష", "reading": "bhāṣa"}, {"word": "ఉన్నాయి", "base": "ఉండడం", "reading": "uṇḍaḍam"}, {"word": "అనేక", "base": "అనేకం", "reading": "anēkam"}]}
   - id: "te-3031"
     target: "ఆసియా"
     reading: "āsiyā"
@@ -419,7 +419,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ఆసియా ఖండం", reading: "āsiyā khaṇḍam" }] }
     examples:
-      - { target: "ఆసియా అతి పెద్ద ఖండం.", reading: "āsiyā ati pedda khaṇḍam.", ipa: "aːsijaː at̪i ped̪d̪a kʰaɳɖam" }
+      - {"target": "ఆసియా అతి పెద్ద ఖండం.", "reading": "āsiyā ati pedda khaṇḍam.", "ipa": "aːsijaː at̪i ped̪d̪a kʰaɳɖam", "bases": [{"word": "అతి", "base": "అతి", "reading": "ati"}]}
       - { target: "భారతదేశం ఆసియాలో ఉంది.", reading: "bhāratadēśam āsiyālō undi.", ipa: "bʱaːrat̪ad̪eːʃam aːsijaːloː und̪i", bases: [{ word: "ఆసియాలో", base: "ఆసియా", reading: "āsiyā" }, { word: "ఉంది", ref: "te-0633" }] }
   - id: "te-3032"
     target: "యూరప్"
@@ -431,7 +431,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "యూరప్ ఖండం", reading: "yūrap khaṇḍam" }] }
     examples:
-      - { target: "యూరప్‌లో చలికాలం పొడవుగా ఉంటుంది.", reading: "yūraplō calikālam poḍavugā uṇṭundi.", ipa: "juːraploː tʃalikaːlam poɖaʋuɡaː uɳʈund̪i", bases: [{ word: "యూరప్‌లో", base: "యూరప్", reading: "yūrap" }, { word: "ఉంటుంది", base: "ఉండడం", reading: "uṇḍaḍam" }] }
+      - {"target": "యూరప్‌లో చలికాలం పొడవుగా ఉంటుంది.", "reading": "yūraplō calikālam poḍavugā uṇṭundi.", "ipa": "juːraploː tʃalikaːlam poɖaʋuɡaː uɳʈund̪i", "bases": [{"word": "యూరప్‌లో", "base": "యూరప్", "reading": "yūrap"}, {"word": "ఉంటుంది", "base": "ఉండడం", "reading": "uṇḍaḍam"}, {"word": "పొడవుగా", "ref": "te-2205"}]}
       - { target: "నేను యూరప్ చూడాలనుకుంటున్నాను.", reading: "nēnu yūrap cūḍālanukuṇṭunnānu.", ipa: "neːnu juːrap tʃuːɖaːlanukuɳʈunnaːnu", bases: [{ word: "చూడాలనుకుంటున్నాను", base: "చూడాలనుకోవడం", reading: "cūḍālanukōvaḍam" }] }
   - id: "te-3033"
     target: "అమెరికా"
@@ -443,7 +443,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "అమెరికా సంయుక్త రాష్ట్రాలు", reading: "amerikā samyukta rāṣṭrālu" }] }
     examples:
-      - { target: "అమెరికా ఉత్తర అమెరికా ఖండంలో ఉంది.", reading: "amerikā uttara amerikā khaṇḍamlō undi.", ipa: "amerikaː ut̪t̪ara amerikaː kʰaɳɖamloː und̪i", bases: [{ word: "ఖండంలో", base: "ఖండం", reading: "khaṇḍam" }, { word: "ఉంది", ref: "te-0633" }] }
+      - {"target": "అమెరికా ఉత్తర అమెరికా ఖండంలో ఉంది.", "reading": "amerikā uttara amerikā khaṇḍamlō undi.", "ipa": "amerikaː ut̪t̪ara amerikaː kʰaɳɖamloː und̪i", "bases": [{"word": "ఖండంలో", "base": "ఖండం", "reading": "khaṇḍam"}, {"word": "ఉంది", "ref": "te-0633"}, {"word": "ఉత్తర", "ref": "te-3034"}]}
       - { target: "అమెరికాలో ఇంగ్లీషు మాట్లాడతారు.", reading: "amerikālō iṅglīṣu māṭlāḍatāru.", ipa: "amerikaːloː iŋɡliːʂu maːʈlaːɖat̪aːru", bases: [{ word: "అమెరికాలో", base: "అమెరికా", reading: "amerikā" }, { word: "మాట్లాడతారు", base: "మాట్లాడడం", reading: "māṭlāḍaḍam" }] }
   - id: "te-3034"
     target: "ఉత్తరం"
@@ -458,7 +458,7 @@ cards:
       - { id: "dakshinam", word: "దక్షిణం", reading: "dakṣiṇam" }
     examples:
       - { target: "ఉత్తరం ఏ వైపు?", reading: "uttaram ē vaipu?", ipa: "ut̪t̪aram eː ʋaipu" }
-      - { target: "గాలి ఉత్తరం నుండి వీస్తోంది.", reading: "gāli uttaram nuṇḍi vīstōndi.", ipa: "ɡaːli ut̪t̪aram nuɳɖi ʋiːst̪oːnd̪i", bases: [{ word: "వీస్తోంది", base: "వీయడం", reading: "vīyaḍam" }] }
+      - {"target": "గాలి ఉత్తరం నుండి వీస్తోంది.", "reading": "gāli uttaram nuṇḍi vīstōndi.", "ipa": "ɡaːli ut̪t̪aram nuɳɖi ʋiːst̪oːnd̪i", "bases": [{"word": "వీస్తోంది", "base": "వీయడం", "reading": "vīyaḍam"}, {"word": "నుండి", "base": "నుండి", "reading": "nuṇḍi"}]}
   - id: "te-3035"
     target: "ఆంధ్రప్రదేశ్"
     reading: "āndhrapradēś"
@@ -481,8 +481,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "తెలంగాణ రాష్ట్రం", reading: "telaṅgāṇa rāṣṭram" }] }
     examples:
-      - { target: "తెలంగాణలో వర్షాలు ఈ నెలలో మొదలవుతాయి.", reading: "telaṅgāṇalō varṣālu ī nelalō modalavutāyi.", ipa: "t̪elaŋɡaːɳaloː ʋarʂaːlu iː nelaloː mod̪alaʋut̪aːji", bases: [{ word: "తెలంగాణలో", base: "తెలంగాణ", reading: "telaṅgāṇa" }, { word: "మొదలవుతాయి", base: "మొదలవడం", reading: "modalavaḍam" }] }
-      - { target: "మా స్నేహితురాలు తెలంగాణ నుండి వచ్చింది.", reading: "mā snēhiturālu telaṅgāṇa nuṇḍi vaccindi.", ipa: "maː sneːhit̪uraːlu t̪elaŋɡaːɳa nuɳɖi ʋatʃtʃind̪i", bases: [{ word: "వచ్చింది", base: "రావడం", reading: "rāvaḍam" }] }
+      - {"target": "తెలంగాణలో వర్షాలు ఈ నెలలో మొదలవుతాయి.", "reading": "telaṅgāṇalō varṣālu ī nelalō modalavutāyi.", "ipa": "t̪elaŋɡaːɳaloː ʋarʂaːlu iː nelaloː mod̪alaʋut̪aːji", "bases": [{"word": "తెలంగాణలో", "base": "తెలంగాణ", "reading": "telaṅgāṇa"}, {"word": "మొదలవుతాయి", "base": "మొదలవడం", "reading": "modalavaḍam"}, {"word": "వర్షాలు", "ref": "te-1116"}, {"word": "నెలలో", "ref": "te-0325"}]}
+      - {"target": "మా స్నేహితురాలు తెలంగాణ నుండి వచ్చింది.", "reading": "mā snēhiturālu telaṅgāṇa nuṇḍi vaccindi.", "ipa": "maː sneːhit̪uraːlu t̪elaŋɡaːɳa nuɳɖi ʋatʃtʃind̪i", "bases": [{"word": "వచ్చింది", "base": "రావడం", "reading": "rāvaḍam"}, {"word": "నుండి", "base": "నుండి", "reading": "nuṇḍi"}]}
   - id: "te-3037"
     target: "గోదావరి"
     reading: "gōdāvari"
@@ -494,7 +494,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "గోదావరి నది", reading: "gōdāvari nadi" }] }
     examples:
       - { target: "గోదావరి చాలా పొడవైన నది.", reading: "gōdāvari cālā poḍavaina nadi.", ipa: "ɡoːd̪aːʋari tʃaːlaː poɖaʋaina nad̪i" }
-      - { target: "గోదావరి ఒడ్డున రైతులు వరి పండిస్తారు.", reading: "gōdāvari oḍḍuna raitulu vari paṇḍistāru.", ipa: "ɡoːd̪aːʋari oɖɖuna rait̪ulu ʋari paɳɖist̪aːru", bases: [{ word: "ఒడ్డున", base: "ఒడ్డు", reading: "oḍḍu" }, { word: "పండిస్తారు", base: "పండించడం", reading: "paṇḍiñcaḍam" }] }
+      - {"target": "గోదావరి ఒడ్డున రైతులు వరి పండిస్తారు.", "reading": "gōdāvari oḍḍuna raitulu vari paṇḍistāru.", "ipa": "ɡoːd̪aːʋari oɖɖuna rait̪ulu ʋari paɳɖist̪aːru", "bases": [{"word": "ఒడ్డున", "base": "ఒడ్డు", "reading": "oḍḍu"}, {"word": "పండిస్తారు", "base": "పండించడం", "reading": "paṇḍiñcaḍam"}, {"word": "రైతులు", "ref": "te-0408"}]}
   - id: "te-3038"
     target: "కృష్ణా"
     reading: "kṛṣṇā"
@@ -518,7 +518,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "డెల్టా ప్రాంతం", reading: "ḍelṭā prāntam" }] }
     examples:
       - { target: "డెల్టాలో వరి పండుతుంది.", reading: "ḍelṭālō vari paṇḍutundi.", ipa: "ɖelʈaːloː ʋari paɳɖut̪und̪i", bases: [{ word: "డెల్టాలో", base: "డెల్టా", reading: "ḍelṭā" }, { word: "పండుతుంది", base: "పండడం", reading: "paṇḍaḍam" }] }
-      - { target: "డెల్టా భూమి చాలా సారవంతం.", reading: "ḍelṭā bhūmi cālā sāravantam.", ipa: "ɖelʈaː bʱuːmi tʃaːlaː saːraʋant̪am" }
+      - {"target": "డెల్టా భూమి చాలా సారవంతం.", "reading": "ḍelṭā bhūmi cālā sāravantam.", "ipa": "ɖelʈaː bʱuːmi tʃaːlaː saːraʋant̪am", "bases": [{"word": "సారవంతం", "base": "సారవంతం", "reading": "sāravantam"}]}
   - id: "te-3040"
     target: "ప్రవాహం"
     reading: "pravāham"
@@ -529,7 +529,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "నీటి ప్రవాహం", reading: "nīṭi pravāham" }] }
     examples:
-      - { target: "ఈ ప్రవాహం ఎటు వెళ్తోంది?", reading: "ī pravāham eṭu veḷtōndi?", ipa: "iː praʋaːham eʈu ʋeɭt̪oːnd̪i", bases: [{ word: "వెళ్తోంది", base: "వెళ్లడం", reading: "veḷlaḍam" }] }
+      - {"target": "ఈ ప్రవాహం ఎటు వెళ్తోంది?", "reading": "ī pravāham eṭu veḷtōndi?", "ipa": "iː praʋaːham eʈu ʋeɭt̪oːnd̪i", "bases": [{"word": "వెళ్తోంది", "base": "వెళ్లడం", "reading": "veḷlaḍam"}, {"word": "ఎటు", "base": "ఎటు", "reading": "eṭu"}]}
       - { target: "నది ప్రవాహం వేగంగా ఉంది.", reading: "nadi pravāham vēgaṅgā undi.", ipa: "nad̪i praʋaːham ʋeːɡaŋɡaː und̪i", bases: [{ word: "ఉంది", ref: "te-0633" }] }
   - ref: "te-0199"
   - ref: "te-0058"
