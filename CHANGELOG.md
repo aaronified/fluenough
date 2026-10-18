@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Hindi and Urdu are one course, Hindustani (#623): the `hi` course and its card ids stay, and it is named Hindustani wherever the app shows a language. Languages I know offers its two scripts, Devanagari and Perso-Arabic, as it does for Punjabi; knowing Hindustani never hides it from Languages I'm learning. The Urdu path's script units and loan-word units are planned in its path.
+
 ## [0.5.0] - 2026-10-18
 
 The app's database moves to version 8 (a log of restores). A backup made by 0.5.0 that holds a fitted script skill cannot be restored by 0.4.4 or older, and going back to an older version after updating is not supported. Your progress is kept by card id, and no card id changed.
