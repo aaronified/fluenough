@@ -83,6 +83,12 @@ wherever the table above allows it.
 - **Budget.** Tokens are limited: one review per change, no extra
   verification passes, and no new work unless the owner asks for it.
 
+## Decks before 0.6.0 (owner, 2026-10-18)
+
+"Do not start work on 0.6.0 at all before the full deck work, across all
+languages." No 0.6.0 issue is started, planned in code, or built until the
+deck work is done.
+
 ## Repositories off limits (owner, 2026-10-12)
 
 `homelab-stacks` is not part of this work. Never clone or download it, never
