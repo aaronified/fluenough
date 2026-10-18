@@ -29,7 +29,6 @@ cards:
           "ఉంది": { meaning: "to be; to exist" }
     senses:
       "history": { native: "history, tale, story, account, narrative" }
-      "behavior": { native: "behavior, conduct" }
   "te-5101":
     native: "king"
     wiktionary: true
@@ -47,7 +46,7 @@ cards:
         bases:
           "ఎక్కడ": { meaning: "where" }
           "ఉన్నాడు": { meaning: "to be; to exist" }
-    synonyms: { "redu": "king, ruler", "elika": "ruler, king, prince", "dora": "a chief, baron, lord, master, owner", "rayadu": "king" }
+    synonyms: { "redu": "king, ruler", "elika": "ruler, king, prince", "rayadu": "king" }
   "te-5102":
     native: "queen"
     wiktionary: true
@@ -94,12 +93,15 @@ cards:
           "మౌర్య": { meaning: "Maurya" }
           "భారతదేశంలో": { meaning: "India" }
           "ఉండేది": { meaning: "to be; to exist" }
-      "అశోకుడు ఒక గొప్ప చక్రవర్తి.":
-        native: "Ashoka was a great emperor."
+      "సామ్రాజ్యం కూలిపోయిన తర్వాత చిన్న రాజ్యాలు వచ్చాయి.":
+        native: "After the empire collapsed, small kingdoms came up."
         bases:
-          "అశోకుడు": { meaning: "Ashoka" }
-          "ఒక": { meaning: "one; a" }
-          "గొప్ప": { meaning: "great" }
+          "కూలిపోయిన":
+            meaning: "to collapse"
+          "రాజ్యాలు":
+            meaning: "kingdom"
+          "వచ్చాయి":
+            meaning: "to come"
   "te-5105":
     native: "emperor"
     wiktionary: true
@@ -116,24 +118,6 @@ cards:
           "ఆ": { meaning: "that" }
           "పేరు": { meaning: "name" }
           "ఏమిటి": { meaning: "what" }
-  "te-5106":
-    native: "fort"
-    wiktionary: true
-    notes:
-      "n1": "Used in 'fort wall'."
-    examples:
-      "ఈ కోట చాలా పాతది.":
-        native: "This fort is very old."
-        bases:
-          "ఈ": { meaning: "this" }
-          "చాలా": { meaning: "very; many" }
-          "పాతది": { meaning: "old" }
-      "మేము కోటను చూశాం.":
-        native: "We saw the fort."
-        bases:
-          "మేము": { meaning: "we" }
-          "కోటను": { meaning: "fort" }
-          "చూశాం": { meaning: "to see" }
   "te-5107":
     native: "palace"
     notes:
@@ -213,27 +197,6 @@ cards:
           "ఊరు": { meaning: "town; village" }
           "చాలా": { meaning: "very; many" }
           "మారింది": { meaning: "to change" }
-  "te-5111":
-    native: "year"
-    wiktionary: true
-    notes:
-      "n1": "Used in 'last year'."
-    examples:
-      "ఈ మ్యూజియం గత సంవత్సరం తెరిచారు.":
-        native: "This museum was opened last year."
-        bases:
-          "ఈ": { meaning: "this" }
-          "గత": { meaning: "last; past" }
-          "తెరిచారు": { meaning: "to open" }
-      "ఒక సంవత్సరంలో మేము రెండు పుస్తకాలు చదివాం.":
-        native: "In one year we read two books."
-        bases:
-          "ఒక": { meaning: "one; a" }
-          "సంవత్సరంలో": { meaning: "year" }
-          "మేము": { meaning: "we" }
-          "రెండు": { meaning: "two" }
-          "పుస్తకాలు": { meaning: "book" }
-          "చదివాం": { meaning: "to read; to study" }
   "te-5112":
     native: "ancient"
     notes:
@@ -325,25 +288,6 @@ cards:
           "రోజున": { meaning: "day" }
           "దేవాలయాన్ని": { meaning: "temple" }
           "అలంకరించారు": { meaning: "to decorate" }
-  "te-5117":
-    native: "country"
-    wiktionary: true
-    notes:
-      "n1": "Often said with 'our'."
-    examples:
-      "మన దేశం చాలా పురాతనమైనది.":
-        native: "Our country is very ancient."
-        bases:
-          "మన": { meaning: "our" }
-          "చాలా": { meaning: "very; many" }
-          "పురాతనమైనది": { meaning: "ancient" }
-      "ఈ దేశంలో అనేక రాజవంశాలు పాలించాయి.":
-        native: "Many dynasties ruled in this country."
-        bases:
-          "ఈ": { meaning: "this" }
-          "దేశంలో": { meaning: "country" }
-          "అనేక": { meaning: "many" }
-          "పాలించాయి": { meaning: "to rule" }
   "te-5118":
     native: "leader"
     wiktionary: true
@@ -396,25 +340,6 @@ cards:
           "రాజవంశాల": { meaning: "dynasty" }
           "మనకు": { meaning: "we (including you)" }
           "తెలియాలి": { meaning: "to be known" }
-  "te-5121":
-    native: "capital"
-    wiktionary: true
-    notes:
-      "n1": "The capital city of a country."
-    examples:
-      "ఢిల్లీ భారతదేశ రాజధాని.":
-        native: "Delhi is the capital of India."
-        bases:
-          "ఢిల్లీ": { meaning: "Delhi" }
-          "భారతదేశ": { meaning: "India" }
-      "రాజధానికి ఈ రోడ్డు నుంచి వెళ్లవచ్చు.":
-        native: "You can go to the capital by this road."
-        bases:
-          "రాజధానికి": { meaning: "capital" }
-          "ఈ": { meaning: "this" }
-          "రోడ్డు": { meaning: "road" }
-          "నుంచి": { meaning: "from" }
-          "వెళ్లవచ్చు": { meaning: "to go" }
   "te-5122":
     native: "rule; administration"
     notes:
@@ -466,25 +391,6 @@ cards:
           "విప్లవ": { meaning: "revolution" }
           "ప్రాణాలు": { meaning: "life" }
           "ఇచ్చారు": { meaning: "to give" }
-  "te-5125":
-    native: "treaty; agreement"
-    wiktionary: true
-    notes:
-      "n1": "Also used for any agreement."
-    examples:
-      "రెండు దేశాలు ఒక ఒప్పందం చేసుకున్నాయి.":
-        native: "The two countries signed an agreement."
-        bases:
-          "రెండు": { meaning: "two" }
-          "ఒక": { meaning: "one; a" }
-          "చేసుకున్నాయి": { meaning: "to make for oneself" }
-      "ఆ ఒప్పందం ప్రకారం కోట మనకు దక్కింది.":
-        native: "According to that agreement, the fort came to us."
-        bases:
-          "ఆ": { meaning: "that" }
-          "ప్రకారం": { meaning: "according to" }
-          "మనకు": { meaning: "we (including you)" }
-          "దక్కింది": { meaning: "to fall to one's share" }
   "te-5126":
     native: "warrior"
     notes:
@@ -538,44 +444,6 @@ cards:
           "ఆ": { meaning: "that" }
           "యుగంలో": { meaning: "age" }
           "నివసించారు": { meaning: "to live; to reside" }
-  "te-5129":
-    native: "culture"
-    wiktionary: true
-    notes:
-      "n1": "Used in 'Indian culture'."
-    examples:
-      "భారత సంస్కృతి చాలా వైవిధ్యమైనది.":
-        native: "Indian culture is very diverse."
-        bases:
-          "భారత": { meaning: "Indian" }
-          "చాలా": { meaning: "very; many" }
-          "వైవిధ్యమైనది": { meaning: "varied" }
-      "సంస్కృతి గురించి ఒక పుస్తకం చదివాను.":
-        native: "I read a book about culture."
-        bases:
-          "గురించి": { meaning: "about" }
-          "ఒక": { meaning: "one; a" }
-          "పుస్తకం": { meaning: "book" }
-          "చదివాను": { meaning: "to read; to study" }
-  "te-5130":
-    native: "tradition"
-    notes:
-      "n1": "Used for a custom passed down."
-    examples:
-      "ఈ పండుగ ఒక పాత సంప్రదాయం.":
-        native: "This festival is an old tradition."
-        bases:
-          "ఈ": { meaning: "this" }
-          "పండుగ": { meaning: "festival" }
-          "ఒక": { meaning: "one; a" }
-          "పాత": { meaning: "old" }
-      "మా కుటుంబంలో ఈ సంప్రదాయం కొనసాగుతోంది.":
-        native: "In our family this tradition continues."
-        bases:
-          "మా": { meaning: "our" }
-          "కుటుంబంలో": { meaning: "family" }
-          "ఈ": { meaning: "this" }
-          "కొనసాగుతోంది": { meaning: "to continue" }
   "te-5131":
     native: "inscription; edict"
     notes:
@@ -663,26 +531,6 @@ cards:
         bases:
           "తర్వాత": { meaning: "after" }
           "వదిలారు": { meaning: "to leave behind" }
-  "te-5136":
-    native: "time; period"
-    wiktionary: true
-    notes:
-      "n1": "Used in 'a long time'."
-    examples:
-      "ఆ కాలంలో ఈ నగరం చాలా పెద్దది.":
-        native: "In that period this city was very big."
-        bases:
-          "ఆ": { meaning: "that" }
-          "కాలంలో": { meaning: "time" }
-          "ఈ": { meaning: "this" }
-          "నగరం": { meaning: "city" }
-          "చాలా": { meaning: "very; many" }
-          "పెద్దది": { meaning: "big" }
-      "ఎంత కాలం గడిచింది?":
-        native: "How much time has passed?"
-        bases:
-          "ఎంత": { meaning: "how much" }
-          "గడిచింది": { meaning: "to pass (of time)" }
   "te-5137":
     native: "weapon"
     wiktionary: true
