@@ -219,7 +219,6 @@
     synonyms:
       - { id: "rogamu", word: "రోగము", reading: "rōgamu", source: "https://en.wiktionary.org/wiki/వ్యాధి" }
     senses:
-      - { id: "quality", pos: "noun", source: "https://en.wiktionary.org/wiki/వ్యాధి" }
       - { id: "physical", pos: "noun", source: "https://en.wiktionary.org/wiki/వ్యాధి" }
   - id: "te-1508"
     "target": "ఆరోగ్యం"
@@ -328,8 +327,6 @@
             "base": "ఉండడం"
             "reading": "uṇḍaḍaṁ"
     senses:
-      - { id: "measure", pos: "noun", source: "https://en.wiktionary.org/wiki/మాత్ర" }
-      - { id: "short", pos: "noun", source: "https://en.wiktionary.org/wiki/మాత్ర" }
       - { id: "pill", pos: "noun", source: "https://en.wiktionary.org/wiki/మాత్ర" }
   - id: "te-1512"
     "target": "సిరప్"
@@ -433,7 +430,7 @@
             "reading": "rāvaḍaṁ"
   - id: "te-1516"
     "target": "క్లినిక్"
-    "reading": "kliniks"
+    "reading": "klinik"
     "pos": "noun"
     "gender": "amahat"
     "bases": "self"
@@ -442,13 +439,13 @@
         "kind": "note"
     "examples":
       - "target": "క్లినిక్ ఎక్కడ ఉంది?"
-        "reading": "kliniks ekkaḍa undi?"
+        "reading": "klinik ekkaḍa undi?"
         "bases":
           - "word": "ఉంది"
             "base": "ఉండడం"
             "reading": "uṇḍaḍaṁ"
       - "target": "ఈ క్లినిక్ ఉదయం తెరుస్తారు."
-        "reading": "ī kliniks udayaṁ terustāru."
+        "reading": "ī klinik udayaṁ terustāru."
         "bases":
           - "word": "తెరుస్తారు"
             "base": "తెరవడం"
@@ -506,7 +503,6 @@
     ipa: "ʋiɕɾaːn̪t̪i"
     synonyms:
       - { id: "ubusu", word: "ఉబుసు", reading: "ubusu", source: "https://en.wiktionary.org/wiki/విశ్రాంతి" }
-      - { id: "syn3", word: "ఊరట", reading: "ūraṭa", source: "https://en.wiktionary.org/wiki/విశ్రాంతి" }
   - id: "te-1519"
     "target": "దుప్పటి"
     "reading": "duppaṭi"
@@ -539,7 +535,6 @@
             "base": "ఇవ్వడం"
             "reading": "ivvaḍaṁ"
     senses:
-      - { id: "garment", pos: "noun", source: "https://en.wiktionary.org/wiki/దుప్పటి" }
       - { id: "bedspread", pos: "noun", source: "https://en.wiktionary.org/wiki/దుప్పటి" }
   - id: "te-1520"
     "target": "ఉష్ణోగ్రత"
@@ -580,7 +575,6 @@
     ipa: "t͡ɕikit̪sa"
     senses:
       - { id: "treatment", pos: "noun", source: "https://en.wiktionary.org/wiki/చికిత్స" }
-      - { id: "medical", pos: "noun", source: "https://en.wiktionary.org/wiki/చికిత్స" }
   - id: "te-1522"
     "target": "నర్సు"
     "reading": "narsu"
@@ -763,7 +757,12 @@
     "target": "జబ్బు పడడం"
     "reading": "jabbu paḍaḍaṁ"
     "pos": "verb"
-    "bases": "self"
+    "bases":
+      - "word": "జబ్బు"
+        "base": "జబ్బు"
+        "reading": "jabbu"
+      - "word": "పడడం"
+        "ref": "te-0839"
     "notes":
       - id: "n1"
         "kind": "note"
@@ -784,7 +783,9 @@
     "target": "చూపించుకోవడం"
     "reading": "cūpiñcukōvaḍaṁ"
     "pos": "verb"
-    "bases": "self"
+    "bases":
+      - "word": "చూపించుకోవడం"
+        "ref": "te-0626"
     "notes":
       - id: "n1"
         "kind": "note"
@@ -832,7 +833,11 @@
     "target": "విశ్రాంతి తీసుకోవడం"
     "reading": "viśrāṁti tīsukōvaḍaṁ"
     "pos": "verb"
-    "bases": "self"
+    "bases":
+      - "word": "విశ్రాంతి"
+        "ref": "te-1518"
+      - "word": "తీసుకోవడం"
+        "ref": "te-0631"
     "notes":
       - id: "n1"
         "kind": "note"
@@ -967,7 +972,7 @@
             "base": "కారడం"
             "reading": "kāraḍaṁ"
       - "target": "ఈ జలుబుకు ముక్కు కారుతుంది."
-        "reading": "ī jalubuku mukku kāruṭundi."
+        "reading": "ī jalubuku mukku kārutundi."
         "bases":
           - "word": "జలుబుకు"
             "base": "జలుబు"
@@ -1012,7 +1017,9 @@
     "target": "బాధపడడం"
     "reading": "bādhapaḍaḍaṁ"
     "pos": "verb"
-    "bases": "self"
+    "bases":
+      - "word": "బాధపడడం"
+        "ref": "te-0971"
     "notes":
       - id: "n1"
         "kind": "note"
@@ -1024,7 +1031,7 @@
             "base": "బాధపడడం"
             "reading": "bādhapaḍaḍaṁ"
       - "target": "పిల్లవాడు రాత్రంతా బాధపడ్డాడు."
-        "reading": "pillavāḍu rāttrantā bādhapaḍḍāḍu."
+        "reading": "pillavāḍu rātrantā bādhapaḍḍāḍu."
         "bases":
           - "word": "బాధపడ్డాడు"
             "base": "బాధపడడం"
