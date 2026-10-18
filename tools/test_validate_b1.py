@@ -833,6 +833,26 @@ class Phrasebook(B1Case):
                           f"phrasebook cards; a course's phrasebook has 15 to 25 "
                           f"(zy-bn-words)", "../zy")
 
+    def test_a_course_with_no_written_deck_has_no_phrasebook_size(self) -> None:
+        # A path and a script deck, no written deck: not held to 15 to 25.
+        zx = self.tmp / "zx"
+        zx.mkdir()
+        (zx / "zx-path.yaml").write_text(dump({
+            "schema": 1, "kind": "path", "id": "zx-path", "language": "zx",
+            "alphabet": ["zx-letters"], "units": [
+                {"decks": ["zx-letters"], "words": 1, "milestone": "A1"},
+                {"planned": {"id": "zx-home", "theme": "home", "words": 60}}]}),
+            encoding="utf-8")
+        letters = single("zx-en-letters", cards=[
+            {"id": "zx-9701", "target": "అ", "reading": "a", "native": "a"}])
+        letters["language"] = dict(LANGUAGE, code="zx")
+        (zx / "zx-en-letters.yaml").write_text(dump(letters), encoding="utf-8")
+        self.assertNotAcross("phrasebook:", "../zx")
+        # With a written deck, the size holds again.
+        self.phrasebook_of(0)
+        self.assertAcross(f"{self.p(PATH)}: phrasebook: the zz-en course has 0 phrasebook "
+                          f"cards; a course's phrasebook has 15 to 25 (none)")
+
     def test_a_bengali_layers_phrasebook_counts_for_bengali_learners_only(self) -> None:
         bn = dict(BENGALI_HOME, cards=dict(BENGALI_HOME["cards"], **{
             "zz-9150": {"target": "అమ్మ!", "reading": "amma!", "pos": "phrase",
