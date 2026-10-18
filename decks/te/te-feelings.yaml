@@ -132,12 +132,13 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "ఆశ్చర్యంగా", reading: "āścaryaṅgā" }] }
       - { id: "n2", kind: "note" }
     examples:
-      - target: "నీ ఫోన్ చూసి నాకు నిజంగా ఆశ్చర్యం."
-        reading: "nī phōn cūsi nāku nijaṅgā āścaryam."
-        ipa: "niː pʰoːn tʃuːsi naːku nidʒaŋɡaː aːʃtʃarjam"
+      - target: "అతను అంత త్వరగా రావడం నాకు ఆశ్చర్యం."
+        reading: "atanu anta tvaragā rāvaḍam nāku āścaryam."
+        ipa: "at̪anu ant̪a t̪ʋaraɡaː raːʋaɖam naːku aːʃtʃarjam"
         bases:
-          - { word: "నీ", base: "నువ్వు", reading: "nuvvu" }
-          - { word: "చూసి", base: "చూడడం", reading: "cūḍaḍam" }
+          - { word: "అంత", base: "అంత", reading: "anta" }
+          - { word: "త్వరగా", base: "త్వరగా", reading: "tvaragā" }
+          - { word: "రావడం", base: "రావడం", reading: "rāvaḍam" }
       - target: "ఆయన ఆశ్చర్యంతో కళ్ళు పెద్దవి చేశారు."
         reading: "āyana āścaryantō kaḷḷu peddavi cēśāru."
         ipa: "aːjana aːʃtʃarjant̪oː kaɭɭu ped̪d̪aʋi tʃeːʃaːru"
@@ -268,7 +269,6 @@ cards:
           - { word: "అసూయతో", base: "అసూయ", reading: "asūya" }
           - { word: "అతని", base: "అతడు", reading: "ataḍu" }
           - { word: "మాట్లాడింది", base: "మాట్లాడడం", reading: "māṭlāḍaḍam" }
-    antonyms:
     senses:
       - { id: "envy", pos: "noun", source: "https://en.wiktionary.org/wiki/అసూయ" }
       - { id: "jealousy", pos: "noun", source: "https://en.wiktionary.org/wiki/అసూయ" }
@@ -461,11 +461,11 @@ cards:
         bases:
           - { word: "వాళ్ళ", base: "వాళ్ళు", reading: "vāḷḷu" }
           - { word: "ఉంది", ref: "te-0633" }
-      - target: "నా స్నేహాన్ని అతను ఎప్పుడూ కాపాడుకున్నాడు."
-        reading: "nā snēhānni atanu eppuḍū kāpāḍukunnāḍu."
-        ipa: "naː sneːhaːnni at̪anu eppuɖuː kaːpaːɖukunnaːɖu"
+      - target: "మా స్నేహాన్ని అతను ఎప్పుడూ కాపాడుకున్నాడు."
+        reading: "mā snēhānni atanu eppuḍū kāpāḍukunnāḍu."
+        ipa: "maː sneːhaːnni at̪anu eppuɖuː kaːpaːɖukunnaːɖu"
         bases:
-          - { word: "నా", base: "నేను", reading: "nēnu" }
+          - { word: "మా", base: "మేము", reading: "mēmu" }
           - { word: "స్నేహాన్ని", base: "స్నేహం", reading: "snēham" }
           - { word: "కాపాడుకున్నాడు", base: "కాపాడుకోవడం", reading: "kāpāḍukōvaḍam" }
   - id: "te-3321"
@@ -699,11 +699,11 @@ cards:
           - { word: "నడవాలంటే", base: "నడవడం", reading: "naḍavaḍam" }
           - { word: "ఉంటుంది", base: "ఉండడం", reading: "uṇḍaḍam" }
           - { word: "ఒంటరిగా", base: "ఒంటరి", reading: "oṇṭari" }
-      - target: "కుక్క దగ్గరికి వస్తే పిల్లవాడు భయంగా వెళ్ళిపోయాడు."
-        reading: "kukka daggariki vastē pillavāḍu bhayaṅgā veḷḷipōyāḍu."
-        ipa: "kukka d̪aɡɡariki ʋast̪eː pillaʋaːɖu bʱajaŋɡaː ʋeɭɭipoːjaːɖu"
+      - target: "కుక్క దగ్గరికి రాగానే పిల్లవాడు భయంగా వెళ్ళిపోయాడు."
+        reading: "kukka daggariki rāgānē pillavāḍu bhayaṅgā veḷḷipōyāḍu."
+        ipa: "kukka d̪aɡɡariki raːɡaːneː pillaʋaːɖu bʱajaŋɡaː ʋeɭɭipoːjaːɖu"
         bases:
-          - { word: "వస్తే", base: "రావడం", reading: "rāvaḍam" }
+          - { word: "రాగానే", base: "రావడం", reading: "rāvaḍam" }
           - { word: "వెళ్ళిపోయాడు", base: "వెళ్ళిపోవడం", reading: "veḷḷipōvaḍam" }
   - id: "te-3331"
     target: "సిగ్గుగా"
@@ -737,12 +737,13 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "గర్వంగా ఉంది", reading: "garvaṅgā undi" }] }
     examples:
-      - target: "తల్లిదండ్రులు తమ కూతురిని చూసి గర్వంగా చెప్పారు."
-        reading: "tallidaṇḍrulu tama kūturini cūsi garvaṅgā ceppāru."
-        ipa: "t̪allid̪aɳɖrulu t̪ama kuːt̪urini tʃuːsi ɡarʋaŋɡaː tʃeppaːru"
+      - target: "తల్లిదండ్రులు కూతురి విజయం గురించి గర్వంగా చెప్పారు."
+        reading: "tallidaṇḍrulu kūturi vijayam guriñci garvaṅgā ceppāru."
+        ipa: "t̪allid̪aɳɖrulu kuːt̪uri ʋidʒajam ɡuriɲtʃi ɡarʋaŋɡaː tʃeppaːru"
         bases:
-          - { word: "కూతురిని", base: "కూతురు", reading: "kūturu" }
-          - { word: "చూసి", base: "చూడడం", reading: "cūḍaḍam" }
+          - { word: "కూతురి", base: "కూతురు", reading: "kūturu" }
+          - { word: "విజయం", base: "విజయం", reading: "vijayam" }
+          - { word: "గురించి", base: "గురించి", reading: "guriñci" }
           - { word: "చెప్పారు", base: "చెప్పడం", reading: "ceppaḍam" }
       - target: "నేను ఆ ఊరికి చెందినవాడినని గర్వంగా ఉంది."
         reading: "nēnu ā ūriki cendinavāḍinani garvaṅgā undi."
@@ -751,30 +752,7 @@ cards:
           - { word: "ఊరికి", base: "ఊరు", reading: "ūru" }
           - { word: "చెందినవాడినని", base: "చెందడం", reading: "cendaḍam" }
           - { word: "ఉంది", ref: "te-0633" }
-  - id: "te-3333"
-    target: "ఒంటరిగా"
-    reading: "oṇṭarigā"
-    ipa: "oɳʈariɡaː"
-    pos: "adj"
-    bases:
-      - { word: "ఒంటరిగా", base: "ఒంటరి", reading: "oṇṭari" }
-    notes:
-      - { id: "n1", kind: "usage", words: [{ word: "ఒంటరిగా", reading: "oṇṭarigā" }] }
-    examples:
-      - target: "ఆమె ఇంట్లో ఒంటరిగా ఉంటుంది."
-        reading: "āme iṇṭlō oṇṭarigā uṇṭundi."
-        ipa: "aːme iɳʈloː oɳʈariɡaː uɳʈund̪i"
-        bases:
-          - { word: "ఇంట్లో", base: "ఇల్లు", reading: "illu" }
-          - { word: "ఉంటుంది", base: "ఉండడం", reading: "uṇḍaḍam" }
-      - target: "ఇంత పెద్ద ఊరిలో ఒంటరిగా నడవడం కష్టంగా ఉంది."
-        reading: "inta pedda ūrilō oṇṭarigā naḍavaḍam kaṣṭaṅgā undi."
-        ipa: "int̪a ped̪d̪a uːriloː oɳʈariɡaː naɖaʋaɖam kaʂʈaŋɡaː und̪i"
-        bases:
-          - { word: "ఊరిలో", base: "ఊరు", reading: "ūru" }
-          - { word: "నడవడం", base: "నడవడం", reading: "naḍavaḍam" }
-          - { word: "కష్టంగా", base: "కష్టం", reading: "kaṣṭam" }
-          - { word: "ఉంది", ref: "te-0633" }
+  - ref: "te-1096"
   - id: "te-3334"
     target: "ఆత్రుతగా"
     reading: "ātrutagā"
