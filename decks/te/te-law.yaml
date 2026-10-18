@@ -1,0 +1,357 @@
+schema: 1
+id: "te-law"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+theme: "law"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-6000"
+    target: "చట్టం"
+    reading: "caṭṭaṁ"
+    ipa: "tʃaʈʈam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ఈ చట్టం అందరికీ వర్తిస్తుంది.", reading: "ī caṭṭaṁ andarikī vartistundi.", ipa: "iː tʃaʈʈam andarikiː ʋartistund̪i", bases: [{ word: "వర్తిస్తుంది", base: "వర్తించడం", reading: "vartiñcaḍaṁ" }] }
+      - { target: "చట్టం ప్రకారం ఇది తప్పు.", reading: "caṭṭaṁ prakāraṁ idi tappu.", ipa: "tʃaʈʈam prakaːram id̪i t̪appu" }
+  - id: "te-6001"
+    target: "కోర్టు"
+    reading: "kōrṭu"
+    ipa: "koːrʈu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "కోర్టు రేపు తీర్పు ఇస్తుంది.", reading: "kōrṭu rēpu tīrpu istundi.", ipa: "koːrʈu reːpu t̪iːrpu istund̪i", bases: [{ word: "ఇస్తుంది", base: "ఇవ్వడం", reading: "ivvaḍaṁ" }] }
+      - { target: "మేము కోర్టులో సాక్ష్యం చెప్పాము.", reading: "mēmu kōrṭulō sākṣyaṁ ceppāmu.", ipa: "meːmu koːrʈuloː saːkʂjam tʃeppaːmu", bases: [{ word: "కోర్టులో", base: "కోర్టు", reading: "kōrṭu" }, { word: "చెప్పాము", base: "చెప్పడం", reading: "ceppaḍaṁ" }] }
+  - id: "te-6002"
+    target: "న్యాయమూర్తి"
+    reading: "nyāyamūrti"
+    ipa: "njaːjamuːrt̪i"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "న్యాయమూర్తి గారు కేసును వాయిదా వేశారు.", reading: "nyāyamūrti gāru kēsunu vāyidā vēśāru.", ipa: "njaːjamuːrt̪i gaːru keːsunu ʋaːjid̪aː ʋeːʃaːru", bases: [{ word: "కేసును", base: "కేసు", reading: "kēsu" }, { word: "వేశారు", base: "వేయడం", reading: "vēyaḍaṁ" }] }
+      - { target: "న్యాయమూర్తి ప్రశ్నలు అడిగారు.", reading: "nyāyamūrti praśnalu aḍigāru.", ipa: "njaːjamuːrt̪i praʃnalu aɖiɡaːru", bases: [{ word: "ప్రశ్నలు", base: "ప్రశ్న", reading: "praśna" }, { word: "అడిగారు", base: "అడగడం", reading: "aḍagaḍaṁ" }] }
+  - id: "te-6003"
+    target: "న్యాయవాది"
+    reading: "nyāyavādi"
+    ipa: "njaːjaʋaːd̪i"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "నా న్యాయవాది కేసు గురించి వివరంగా చెప్పారు.", reading: "nā nyāyavādi kēsu gurinci vivaraṅgā ceppāru.", ipa: "naː njaːjaʋaːd̪i keːsu gurint͡ʃi ʋiʋaraŋɡaː tʃeppaːru", bases: [{ word: "వివరంగా", base: "వివరం", reading: "vivaraṁ" }, { word: "చెప్పారు", base: "చెప్పడం", reading: "ceppaḍaṁ" }] }
+      - { target: "మంచి న్యాయవాదిని పెట్టుకోవాలి.", reading: "manci nyāyavādini peṭṭukōvāli.", ipa: "mant͡ʃi njaːjaʋaːd̪ini peʈʈukoːʋaːli", bases: [{ word: "న్యాయవాదిని", base: "న్యాయవాది", reading: "nyāyavādi" }, { word: "పెట్టుకోవాలి", base: "పెట్టుకోవడం", reading: "peṭṭukōvaḍaṁ" }] }
+  - id: "te-6004"
+    target: "ఫిర్యాదు"
+    reading: "phiryādu"
+    ipa: "pʰirjaːd̪u"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "నేను పోలీసులకు ఫిర్యాదు చేశాను.", reading: "nēnu pōlīsulaku phiryādu cēśānu.", ipa: "neːnu poːliːsulaku pʰirjaːd̪u tʃeːʃaːnu", bases: [{ word: "పోలీసులకు", base: "పోలీసు", reading: "pōlīsu" }, { word: "చేశాను", base: "చేయడం", reading: "cēyaḍaṁ" }] }
+      - { target: "ఆయన ఫిర్యాదు రాతపూర్వకంగా ఇచ్చారు.", reading: "āyana phiryādu rātapūrvakaṅgā iccāru.", ipa: "aːjan̪a pʰirjaːd̪u raːt̪apuːrʋakaŋɡaː itʃtʃaːru", bases: [{ word: "రాతపూర్వకంగా", base: "రాతపూర్వకం", reading: "rātapūrvakaṁ" }, { word: "ఇచ్చారు", base: "ఇవ్వడం", reading: "ivvaḍaṁ" }] }
+  - id: "te-6005"
+    target: "నేరం"
+    reading: "nēraṁ"
+    ipa: "neːram"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ఇది చిన్న నేరం కాదు.", reading: "idi cinna nēraṁ kādu.", ipa: "id̪i t͡ʃinna neːram kaːd̪u" }
+      - { target: "అతడు నేరం ఒప్పుకోలేదు.", reading: "ataḍu nēraṁ oppukōlēdu.", ipa: "at̪aɖu neːram opːukoːleːd̪u", bases: [{ word: "ఒప్పుకోలేదు", base: "ఒప్పుకోవడం", reading: "oppukōvaḍaṁ" }] }
+  - id: "te-6006"
+    target: "శిక్ష"
+    reading: "śikṣa"
+    ipa: "ʃikʂa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ఈ నేరానికి కఠిన శిక్ష ఉంటుంది.", reading: "ī nērāniki kaṭhina śikṣa uṇṭundi.", ipa: "iː neːraːniki kaʈʰina ʃikʂa uɳʈund̪i", bases: [{ word: "నేరానికి", base: "నేరం", reading: "nēraṁ" }, { word: "ఉంటుంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }] }
+      - { target: "అతడు శిక్షను తప్పించుకున్నాడు.", reading: "ataḍu śikṣanu tappiñcukunnāḍu.", ipa: "at̪aɖu ʃikʂanu t̪appint͡ʃukun̪n̪aːɖu", bases: [{ word: "శిక్షను", base: "శిక్ష", reading: "śikṣa" }, { word: "తప్పించుకున్నాడు", base: "తప్పించుకోవడం", reading: "tappiñcukōvaḍaṁ" }] }
+  - id: "te-6007"
+    target: "జైలు"
+    reading: "jailu"
+    ipa: "d͡ʒailu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "అతడు మూడు సంవత్సరాలు జైలులో ఉన్నాడు.", reading: "ataḍu mūḍu saṁvatsarālu jailulō unnāḍu.", ipa: "at̪aɖu muːɖu samʋat̪saraːlu d͡ʒailuloː unnaːɖu", bases: [{ word: "సంవత్సరాలు", base: "సంవత్సరం", reading: "saṁvatsaraṁ" }, { word: "జైలులో", base: "జైలు", reading: "jailu" }, { word: "ఉన్నాడు", base: "ఉండడం", reading: "uṇḍaḍaṁ" }] }
+      - { target: "జైలు నుంచి విడుదల అయ్యాడు.", reading: "jailu nuñci viḍudala ayyāḍu.", ipa: "d͡ʒailu nuɲt͡ʃi ʋiɖud̪alaː ajːaːɖu", bases: [{ word: "అయ్యాడు", base: "అవ్వడం", reading: "avvaḍaṁ" }] }
+  - id: "te-6008"
+    target: "బెయిల్"
+    reading: "beyil"
+    ipa: "bejil"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "కోర్టు బెయిల్ మంజూరు చేసింది.", reading: "kōrṭu beyil mañjūru cēsindi.", ipa: "koːrʈu bejil mand͡ʒuːru tʃeːsind̪i", bases: [{ word: "చేసింది", base: "చేయడం", reading: "cēyaḍaṁ" }] }
+      - { target: "బెయిల్ కోసం డబ్బు కట్టాలి.", reading: "beyil kōsaṁ ḍabbu kaṭṭāli.", ipa: "bejil koːsam d̪abːu kaʈʈaːli", bases: [{ word: "కట్టాలి", base: "కట్టడం", reading: "kaṭṭaḍaṁ" }] }
+  - id: "te-6009"
+    target: "సాక్షి"
+    reading: "sākṣi"
+    ipa: "saːkʂi"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "సాక్షి కోర్టులో నిజం చెప్పాలి.", reading: "sākṣi kōrṭulō nijaṁ ceppāli.", ipa: "saːkʂi koːrʈuloː nid͡ʒam t͡ʃeppaːli", bases: [{ word: "కోర్టులో", base: "కోర్టు", reading: "kōrṭu" }, { word: "చెప్పాలి", base: "చెప్పడం", reading: "ceppaḍaṁ" }] }
+      - { target: "ఆ సంఘటనకు ఇద్దరు సాక్షులు ఉన్నారు.", reading: "ā saṅghaṭanaku iddaru sākṣulu unnāru.", ipa: "aː sanɡʱaʈanaku iddaru saːkʂulu unnaːru", bases: [{ word: "సాక్షులు", base: "సాక్షి", reading: "sākṣi" }, { word: "ఉన్నారు", base: "ఉండడం", reading: "uṇḍaḍaṁ" }] }
+  - id: "te-6010"
+    target: "హక్కు"
+    reading: "hakku"
+    ipa: "hakku"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ప్రతి పౌరుడికి ఓటు హక్కు ఉంటుంది.", reading: "prati pauruḍiki ōṭu hakku uṇṭundi.", ipa: "prat̪i pauruɖiki oːʈu hakku uɳʈund̪i", bases: [{ word: "పౌరుడికి", base: "పౌరుడు", reading: "pauruḍu" }, { word: "ఉంటుంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }] }
+      - { target: "మీకు మాట్లాడే హక్కు ఉంది.", reading: "mīku māṭlāḍē hakku undi.", ipa: "miːku maːʈlaːɖeː hakku und̪i", bases: [{ word: "మాట్లాడే", base: "మాట్లాడడం", reading: "māṭlāḍaḍaṁ" }, { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }] }
+  - id: "te-6011"
+    target: "కేసు"
+    reading: "kēsu"
+    ipa: "keːsu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ఆ కేసు ఆరు నెలలుగా నడుస్తోంది.", reading: "ā kēsu āru nelalugā naḍustōndi.", ipa: "aː keːsu aːru nelaluɡaː naɖust̪oːnd̪i", bases: [{ word: "నెలలుగా", base: "నెల", reading: "nela" }, { word: "నడుస్తోంది", base: "నడవడం", reading: "naḍavaḍaṁ" }] }
+      - { target: "పోలీసులు కొత్త కేసు నమోదు చేశారు.", reading: "pōlīsulu kotta kēsu namōdu cēśāru.", ipa: "poːliːsulu kot̪t̪a keːsu namoːd̪u tʃeːʃaːru", bases: [{ word: "పోలీసులు", base: "పోలీసు", reading: "pōlīsu" }, { word: "చేశారు", base: "చేయడం", reading: "cēyaḍaṁ" }] }
+  - id: "te-6012"
+    target: "తీర్పు"
+    reading: "tīrpu"
+    ipa: "t̪iːrpu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "తీర్పు వినడానికి అందరూ వచ్చారు.", reading: "tīrpu vinaḍāniki andarū vaccāru.", ipa: "t̪iːrpu ʋinaɖaːniki and̪aruː ʋatʃtʃaːru", bases: [{ word: "వినడానికి", base: "వినడం", reading: "vinaḍaṁ" }, { word: "వచ్చారు", base: "రావడం", reading: "rāvaḍaṁ" }] }
+      - { target: "కోర్టు తీర్పు అందరికీ నచ్చలేదు.", reading: "kōrṭu tīrpu andarikī nacchalēdu.", ipa: "koːrʈu t̪iːrpu and̪arikiː natʃtʃaleːd̪u", bases: [{ word: "నచ్చలేదు", base: "నచ్చడం", reading: "naccaḍaṁ" }] }
+  - id: "te-6013"
+    target: "నేరస్థుడు"
+    reading: "nērasthuḍu"
+    ipa: "neːrast̪ʰuɖu"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "పోలీసులు నేరస్థుడిని పట్టుకున్నారు.", reading: "pōlīsulu nērasthuḍini paṭṭukunnāru.", ipa: "poːliːsulu neːrast̪ʰuɖini paʈʈukun̪n̪aːru", bases: [{ word: "పోలీసులు", base: "పోలీసు", reading: "pōlīsu" }, { word: "నేరస్థుడిని", base: "నేరస్థుడు", reading: "nērasthuḍu" }, { word: "పట్టుకున్నారు", base: "పట్టుకోవడం", reading: "paṭṭukōvaḍaṁ" }] }
+      - { target: "అతడు పెద్ద నేరస్థుడు కాదు.", reading: "ataḍu pedda nērasthuḍu kādu.", ipa: "at̪aɖu peddə neːrast̪ʰuɖu kaːd̪u" }
+  - id: "te-6014"
+    target: "బాధితుడు"
+    reading: "bādhituḍu"
+    ipa: "baːd̪ʱit̪uɖu"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "బాధితుడు పోలీస్ స్టేషన్‌కు వెళ్లాడు.", reading: "bādhituḍu pōlīs sṭēṣanku veḷlāḍu.", ipa: "baːd̪ʱit̪uɖu poːliːs sʈeːʂanku ʋeɭlaːɖu", bases: [{ word: "వెళ్లాడు", base: "వెళ్ళడం", reading: "veḷḷaḍaṁ" }] }
+      - { target: "బాధితుడికి న్యాయం జరగాలి.", reading: "bādhituḍiki nyāyaṁ jaragāli.", ipa: "baːd̪ʱit̪uɖiki njaːjam d͡ʒarɡaːli", bases: [{ word: "బాధితుడికి", base: "బాధితుడు", reading: "bādhituḍu" }, { word: "జరగాలి", base: "జరగడం", reading: "jaragaḍaṁ" }] }
+  - id: "te-6015"
+    target: "సాక్ష్యం"
+    reading: "sākṣyaṁ"
+    ipa: "saːkʂjam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "మా దగ్గర బలమైన సాక్ష్యం ఉంది.", reading: "mā daggara balamaina sākṣyaṁ undi.", ipa: "maː d̪aggaɾa balamaina saːkʂjam und̪i", bases: [{ word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }] }
+      - { target: "ఈ సాక్ష్యం సరిపోదు.", reading: "ī sākṣyaṁ saripōdu.", ipa: "iː saːkʂjam saripoːd̪u", bases: [{ word: "సరిపోదు", base: "సరిపోవడం", reading: "saripōvaḍaṁ" }] }
+  - id: "te-6016"
+    target: "దావా"
+    reading: "dāvā"
+    ipa: "d̪aːʋaː"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ఆయన యజమానిపై దావా వేశారు.", reading: "āyana yajamānipai dāvā vēśāru.", ipa: "aːjan̪a jad͡ʒamaːnipai d̪aːʋaː ʋeːʃaːru", bases: [{ word: "యజమానిపై", base: "యజమాని", reading: "yajamāni" }, { word: "వేశారు", base: "వేయడం", reading: "vēyaḍaṁ" }] }
+      - { target: "దావా ఖర్చు చాలా ఎక్కువ.", reading: "dāvā kharcu cālā ekkuva.", ipa: "d̪aːʋaː kʰart͡ʃu t͡ʃaːlaː ekːuʋa" }
+  - id: "te-6017"
+    target: "జరిమానా"
+    reading: "jarimānā"
+    ipa: "d͡ʒarimaːnaː"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ట్రాఫిక్ నియమాలు ఉల్లంఘిస్తే జరిమానా ఉంటుంది.", reading: "ṭrāphik niyamālu ullaṅghistē jarimānā uṇṭundi.", ipa: "ʈraːpʰik nijamaːlu ullaŋɡʱisteː d͡ʒarimaːnaː uɳʈund̪i", bases: [{ word: "నియమాలు", base: "నియమం", reading: "niyamaṁ" }, { word: "ఉల్లంఘిస్తే", base: "ఉల్లంఘించడం", reading: "ullaṅghiñcaḍaṁ" }, { word: "ఉంటుంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }] }
+      - { target: "అతడు వెయ్యి రూపాయలు జరిమానా కట్టాడు.", reading: "ataḍu veyyi rūpāyalu jarimānā kaṭṭāḍu.", ipa: "at̪aɖu ʋejːi ruːpaːjalu d͡ʒarimaːnaː kaʈʈaːɖu", bases: [{ word: "రూపాయలు", base: "రూపాయి", reading: "rūpāyi" }, { word: "కట్టాడు", base: "కట్టడం", reading: "kaṭṭaḍaṁ" }] }
+  - id: "te-6018"
+    target: "అరెస్టు"
+    reading: "aresṭu"
+    ipa: "aɾesʈu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "పోలీసులు అతడిని అరెస్టు చేశారు.", reading: "pōlīsulu ataḍini aresṭu cēśāru.", ipa: "poːliːsulu at̪aɖini aɾesʈu tʃeːʃaːru", bases: [{ word: "పోలీసులు", base: "పోలీసు", reading: "pōlīsu" }, { word: "అతడిని", base: "అతడు", reading: "ataḍu" }, { word: "చేశారు", base: "చేయడం", reading: "cēyaḍaṁ" }] }
+      - { target: "అరెస్టు వారెంట్ ఇంటికి వచ్చింది.", reading: "aresṭu vārenṭ iṇṭiki vaccindi.", ipa: "aɾesʈu ʋaːɾent iɳʈiki ʋatʃtʃind̪i", bases: [{ word: "ఇంటికి", base: "ఇల్లు", reading: "illu" }, { word: "వచ్చింది", base: "రావడం", reading: "rāvaḍaṁ" }] }
+  - id: "te-6019"
+    target: "ఉల్లంఘన"
+    reading: "ullaṅghana"
+    ipa: "ullaŋɡʱana"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ఇది చట్టం ఉల్లంఘన.", reading: "idi caṭṭaṁ ullaṅghana.", ipa: "id̪i t͡ʃaʈʈam ullaŋɡʱana" }
+      - { target: "మీ హక్కుల ఉల్లంఘన జరిగింది.", reading: "mī hakkula ullaṅghana jarigindi.", ipa: "miː hakːula ullaŋɡʱana d͡ʒarigind̪i", bases: [{ word: "హక్కుల", base: "హక్కు", reading: "hakku" }, { word: "జరిగింది", base: "జరగడం", reading: "jaragaḍaṁ" }] }
+  - id: "te-6020"
+    target: "విచారణ"
+    reading: "vicāraṇa"
+    ipa: "ʋit͡ʃaːraɳa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "విచారణ రెండు గంటలు సాగింది.", reading: "vicāraṇa reṇḍu gaṇṭalu sāgindi.", ipa: "ʋit͡ʃaːraɳa reɳɖu ɡaɳʈalu saːɡind̪i", bases: [{ word: "గంటలు", base: "గంట", reading: "gaṇṭa" }, { word: "సాగింది", base: "సాగడం", reading: "sāgaḍaṁ" }] }
+      - { target: "పోలీసులు విచారణ మొదలుపెట్టారు.", reading: "pōlīsulu vicāraṇa modalupeṭṭāru.", ipa: "poːliːsulu ʋit͡ʃaːraɳa modalupeʈʈaːru", bases: [{ word: "పోలీసులు", base: "పోలీసు", reading: "pōlīsu" }, { word: "మొదలుపెట్టారు", base: "మొదలుపెట్టడం", reading: "modalupeṭṭaḍaṁ" }] }
+  - id: "te-6021"
+    target: "పిటిషన్"
+    reading: "piṭiṣan"
+    ipa: "piʈiʂan"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "మేము కోర్టులో పిటిషన్ దాఖలు చేశాము.", reading: "mēmu kōrṭulō piṭiṣan dākhalu cēśāmu.", ipa: "meːmu koːrʈuloː piʈiʂan d̪aːkʰalu tʃeːʃaːmu", bases: [{ word: "కోర్టులో", base: "కోర్టు", reading: "kōrṭu" }, { word: "చేశాము", base: "చేయడం", reading: "cēyaḍaṁ" }] }
+      - { target: "పిటిషన్‌పై నిర్ణయం ఇంకా రాలేదు.", reading: "piṭiṣanpai nirṇayaṁ iṅkā rālēdu.", ipa: "piʈiʂanpai nirɳajam iŋkaː raːleːd̪u", bases: [{ word: "రాలేదు", base: "రావడం", reading: "rāvaḍaṁ" }] }
+  - id: "te-6022"
+    target: "స్వేచ్ఛ"
+    reading: "svēccha"
+    ipa: "sʋeːtʃtʃʰa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ప్రతి మనిషికి స్వేచ్ఛ ఉండాలి.", reading: "prati maniṣiki svēccha uṇḍāli.", ipa: "prat̪i maniʂiki sʋeːtʃtʃʰa uɳɖaːli", bases: [{ word: "ఉండాలి", base: "ఉండడం", reading: "uṇḍaḍaṁ" }] }
+      - { target: "పత్రికా స్వేచ్ఛ చాలా ముఖ్యం.", reading: "patrikā svēccha cālā mukhyaṁ.", ipa: "pat̪rikaː sʋeːtʃtʃʰa t͡ʃaːlaː mukʰjam" }
+  - id: "te-6023"
+    target: "సమానత్వం"
+    reading: "samānatvaṁ"
+    ipa: "samaːnat̪ʋam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "చట్టం ముందు అందరూ సమానమే.", reading: "caṭṭaṁ mundu andarū samānamē.", ipa: "t͡ʃaʈʈam mund̪u and̪aruː samaːnameː", bases: [{ word: "సమానమే", base: "సమానం", reading: "samānaṁ" }] }
+      - { target: "స్త్రీ పురుష సమానత్వం ముఖ్యమైన విషయం.", reading: "strī puruṣa samānatvaṁ mukhyamaina viṣayaṁ.", ipa: "st̪riː puruʂa samaːnat̪ʋam mukʰjamaina ʋiʂajam", bases: [{ word: "ముఖ్యమైన", base: "ముఖ్యం", reading: "mukhyaṁ" }] }
+  - id: "te-6024"
+    target: "రుజువు"
+    reading: "rujuvu"
+    ipa: "rud͡ʒuʋu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "నీ దగ్గర రుజువు ఉందా?", reading: "nī daggara rujuvu undā?", ipa: "niː d̪aggaɾa rud͡ʒuʋu und̪aː", bases: [{ word: "ఉందా", base: "ఉండడం", reading: "uṇḍaḍaṁ" }] }
+      - { target: "ఈ పత్రం ఆయన నిజాయితీకి రుజువు.", reading: "ī patraṁ āyana nijāyitīki rujuvu.", ipa: "iː pat̪ram aːjan̪a nid͡ʒaːjiːtiːki rud͡ʒuʋu", bases: [{ word: "నిజాయితీకి", base: "నిజాయితీ", reading: "nijāyitī" }] }
+  - id: "te-6025"
+    target: "అనుమానితుడు"
+    reading: "anumānituḍu"
+    ipa: "anumaːnit̪uɖu"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "పోలీసులు ముగ్గురు అనుమానితులను ప్రశ్నించారు.", reading: "pōlīsulu mugguru anumānitulanu praśniñcāru.", ipa: "poːliːsulu muɡɡuru anumaːnit̪ulanu praʃnint͡ʃaːru", bases: [{ word: "పోలీసులు", base: "పోలీసు", reading: "pōlīsu" }, { word: "అనుమానితులను", base: "అనుమానితుడు", reading: "anumānituḍu" }, { word: "ప్రశ్నించారు", base: "ప్రశ్నించడం", reading: "praśniñcaḍaṁ" }] }
+      - { target: "ఆ అనుమానితుడు పారిపోయాడు.", reading: "ā anumānituḍu pāripōyāḍu.", ipa: "aː anumaːnit̪uɖu paːripoːjaːɖu", bases: [{ word: "పారిపోయాడు", base: "పారిపోవడం", reading: "pāripōvaḍaṁ" }] }
+  - id: "te-6026"
+    target: "పౌరుడు"
+    reading: "pauruḍu"
+    ipa: "pauruɖu"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ప్రతి పౌరుడు చట్టాన్ని గౌరవించాలి.", reading: "prati pauruḍu caṭṭānni gauraviñcāli.", ipa: "prat̪i pauruɖu t͡ʃaʈʈaːnni gauraʋint͡ʃaːli", bases: [{ word: "చట్టాన్ని", base: "చట్టం", reading: "caṭṭaṁ" }, { word: "గౌరవించాలి", base: "గౌరవించడం", reading: "gauraviñcaḍaṁ" }] }
+      - { target: "ఆయన భారతీయ పౌరుడు.", reading: "āyana bhāratīya pauruḍu.", ipa: "aːjan̪a bʱaːrat̪iːja pauruɖu" }
+  - id: "te-6027"
+    target: "ఖైదీ"
+    reading: "khaidī"
+    ipa: "kʰaid̪iː"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ఖైదీ జైలు గదిలో ఒంటరిగా ఉన్నాడు.", reading: "khaidī jailu gadilō oṇṭarigā unnāḍu.", ipa: "kʰaid̪iː d͡ʒailu ɡad̪iloː onʈarigaː unnaːɖu", bases: [{ word: "గదిలో", base: "గది", reading: "gadi" }, { word: "ఒంటరిగా", base: "ఒంటరి", reading: "oṇṭari" }, { word: "ఉన్నాడు", base: "ఉండడం", reading: "uṇḍaḍaṁ" }] }
+      - { target: "ఖైదీలకు ఉదయం ఆహారం ఇస్తారు.", reading: "khaidīlaku udayaṁ āhāraṁ istāru.", ipa: "kʰaid̪iːlaku ud̪ajam aːɦaːram ist̪aːru", bases: [{ word: "ఖైదీలకు", base: "ఖైదీ", reading: "khaidī" }, { word: "ఇస్తారు", base: "ఇవ్వడం", reading: "ivvaḍaṁ" }] }
+  - ref: "te-0364"
+  - ref: "te-0406"
+  - ref: "te-3604"
+  - ref: "te-5142"
+  - ref: "te-4300"
+  - ref: "te-4314"
+  - ref: "te-2909"
+  - ref: "te-2910"
+  - ref: "te-2912"
+  - ref: "te-2914"
+  - ref: "te-2921"
+  - ref: "te-0436"
