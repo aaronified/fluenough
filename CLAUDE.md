@@ -113,10 +113,12 @@ well"). Leave them the small, self-contained ones, such as a UI bug or a
 one-screen tweak. The deck and review work, and anything a deck build
 waits on, is built here.
 
-Only the Telugu and Bengali decks are built here in full (owner,
-2026-10-17: "You will only build the telugu and bengali decks in full.
-Other decks will then be marked as direct-code"; on when: "Now"). The
-other courses' decks (#420) are `direct-code`, for contributors.
+Every language's path and decks are built here (owner, 2026-10-18: "We
+will build the paths for every language that we want here. This is to be
+a repository of world's languages. The tower of babel, is to rise
+again."). This replaces the 2026-10-17 rule that only Telugu and Bengali
+were built here; the other courses' decks (#420) and the new courses'
+paths are no longer left to contributors.
 
 ## Dependencies are marked, never assumed (owner, 2026-10-12)
 
