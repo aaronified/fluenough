@@ -27,15 +27,16 @@ cards:
     notes:
       - { "id": "n1", "kind": "behaviour", "words": [{ "word": "కడుక్కుంటాను", "reading": "kaḍukkuṇṭānu" }, { "word": "కడుక్కోండి", "reading": "kaḍukkōṇḍi" }] }
     examples:
-      - target: "నేను ఉదయం కడుక్కుంటాను."
-        reading: "nēnu udayam kaḍukkuṇṭānu."
-        ipa: "neːnu ud̪ajam kaɖukkuɳʈaːnu"
+      - target: "నేను ఉదయం ముఖం కడుక్కుంటాను."
+        reading: "nēnu udayam mukhaṁ kaḍukkuṇṭānu."
+        ipa: "neːnu ud̪ajam mukʰam kaɖukkuɳʈaːnu"
         bases:
           - { "word": "కడుక్కుంటాను", "base": "కడుక్కోవడం", "reading": "kaḍukkuṇṭānu" }
-      - target: "అతను ఇప్పుడు కడుక్కుంటాడు."
-        reading: "atanu ippuḍu kaḍukkuṇṭāḍu."
-        ipa: "at̪anu ippuɖu kaɖukkuɳʈaːɖu"
+      - target: "అతను ఇప్పుడు చేతులు కడుక్కుంటాడు."
+        reading: "atanu ippuḍu cētulu kaḍukkuṇṭāḍu."
+        ipa: "at̪anu ippuɖu tʃeːt̪ulu kaɖukkuɳʈaːɖu"
         bases:
+          - { "word": "చేతులు", "base": "చేయి", "reading": "cēyi" }
           - { "word": "కడుక్కుంటాడు", "base": "కడుక్కోవడం", "reading": "kaḍukkuṇṭāḍu" }
   - id: "te-2301"
     target: "బయలుదేరడం"
@@ -114,10 +115,11 @@ cards:
         bases:
           - { "word": "పళ్ళు", "base": "పన్ను", "reading": "paḷḷu" }
           - { "word": "తోముకుంటాను", "base": "తోముకోవడం", "reading": "tōmukuṇṭānu" }
-      - target: "వాళ్ళు రాత్రి తోముకుంటారు."
-        reading: "vāḷḷu rātri tōmukuṇṭāru."
-        ipa: "ʋaːɭɭu raːt̪ri t̪oːmukuɳʈaːru"
+      - target: "వాళ్ళు రాత్రి పళ్ళు తోముకుంటారు."
+        reading: "vāḷḷu rātri paḷḷu tōmukuṇṭāru."
+        ipa: "ʋaːɭɭu raːt̪ri paɭɭu t̪oːmukuɳʈaːru"
         bases:
+          - { "word": "పళ్ళు", "base": "పన్ను", "reading": "paḷḷu" }
           - { "word": "తోముకుంటారు", "base": "తోముకోవడం", "reading": "tōmukuṇṭāru" }
   - id: "te-2305"
     target: "దువ్వుకోవడం"
@@ -147,17 +149,16 @@ cards:
     notes:
       - { "id": "n1", "kind": "behaviour", "words": [{ "word": "కట్టుకుంటాను", "reading": "kaṭṭukuṇṭānu" }, { "word": "కట్టుకోండి", "reading": "kaṭṭukōṇḍi" }] }
     examples:
-      - target: "నేను చొక్కా కట్టుకుంటాను."
-        reading: "nēnu cokkā kaṭṭukuṇṭānu."
-        ipa: "neːnu tʃokkaː kaʈʈukuɳʈaːnu"
+      - target: "నేను పంచె కట్టుకుంటాను."
+        reading: "nēnu pañce kaṭṭukuṇṭānu."
+        ipa: "neːnu paɲtʃe kaʈʈukuɳʈaːnu"
         bases:
           - { "word": "కట్టుకుంటాను", "base": "కట్టుకోవడం", "reading": "kaṭṭukuṇṭānu" }
-      - target: "చలిగా ఉంది. స్వెటర్ కట్టుకోండి."
-        reading: "caligā undi. sveṭar kaṭṭukōṇḍi."
-        ipa: "tʃaliɡaː und̪i sʋeʈar kaʈʈukoːɳɖi"
+      - target: "అమ్మ రోజూ చీర కట్టుకుంటుంది."
+        reading: "amma rōjū cīra kaṭṭukuṇṭundi."
+        ipa: "ammaː roːdʒuː tʃiːra kaʈʈukuɳʈundi"
         bases:
-          - { "word": "చలిగా", "base": "చలి", "reading": "caligā" }
-          - { "word": "కట్టుకోండి", "base": "కట్టుకోవడం", "reading": "kaṭṭukōṇḍi" }
+          - { "word": "కట్టుకుంటుంది", "base": "కట్టుకోవడం", "reading": "kaṭṭukuṇṭundi" }
   - id: "te-2307"
     target: "వేసుకోవడం"
     reading: "vēsukōvaḍam"
@@ -833,12 +834,12 @@ cards:
     notes:
       - { "id": "n1", "kind": "behaviour", "words": [{ "word": "అంగీకరిస్తాను", "reading": "aṅgīkaristānu" }, { "word": "అంగీకరించండి", "reading": "aṅgīkariñcaṇḍi" }] }
     examples:
-      - target: "నేను మీ మాటతో అంగీకరిస్తాను."
-        reading: "nēnu mī māṭatō aṅgīkaristānu."
-        ipa: "neːnu miː maːʈat̪oː aŋɡiːkarist̪aːnu"
+      - target: "నేను మీ మాటకు అంగీకరిస్తాను."
+        reading: "nēnu mī māṭaku aṅgīkaristānu."
+        ipa: "neːnu miː maːʈaku aŋɡiːkarist̪aːnu"
         bases:
           - { "word": "మీ", "base": "మీరు", "reading": "mī" }
-          - { "word": "మాటతో", "base": "మాట", "reading": "māṭatō" }
+          - { "word": "మాటకు", "base": "మాట", "reading": "māṭa" }
           - { "word": "అంగీకరిస్తాను", "base": "అంగీకరించడం", "reading": "aṅgīkaristānu" }
       - target: "ఆమె ప్రతిపాదన అంగీకరిస్తుంది."
         reading: "āme pratipādana aṅgīkaristundi."
