@@ -88,6 +88,8 @@ approval.
   (`git show 6715716:docs/mockups/reviewer-mode.html`). Approved by the owner, 2026-10-17, with the decisions the page marks
   Proposed ("The reviewer mode mockup looks fine. Build it.").
 
+## Awaiting approval
+
 - `languages-learning.html`: Languages I'm learning redone in line with
   Languages I know (#626; owner, 2026-10-18, "Sonnet mockup"): plain rows
   with the own name, B1 written, the learner's progress and the Alpha, Beta
@@ -99,10 +101,6 @@ approval.
   also on Progress) and course details; Continue stays. Light and dark, 1x
   and 1.4x. **Awaiting the owner's approval**; the page lists what is
   proposed.
-
-## Awaiting approval
-
-None.
 
 ## Deleted (owner, 2026-10-12)
 
