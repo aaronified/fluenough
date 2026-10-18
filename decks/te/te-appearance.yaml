@@ -72,7 +72,7 @@
     - "id": "n1"
       "kind": "usage"
       "words":
-      - { "word": "ప్రకృతి అందం", "reading": "prakruti andam" }
+      - { "word": "ప్రకృతి అందం", "reading": "prakṛti andam" }
     "examples":
     - "target": "ఈ ఊరి అందం చాలా బాగుంది."
       "reading": "ī ūri andam cālā bāgundi."
@@ -134,7 +134,6 @@
       - { "word": "ఉంది", "base": "ఉండడం", "reading": "uṇḍaḍam" }
     senses:
       - { id: "height", pos: "noun", source: "https://en.wiktionary.org/wiki/ఎత్తు" }
-      - { id: "weight", pos: "noun", source: "https://en.wiktionary.org/wiki/ఎత్తు" }
   - id: "te-2205"
     "target": "పొడవు"
     "reading": "poḍavu"
@@ -439,8 +438,6 @@
       - { "word": "అతని", "base": "అతను", "reading": "atanu" }
       - { "word": "నల్లగా", "base": "నలుపు", "reading": "nalupu" }
       - { "word": "ఉంది", "base": "ఉండడం", "reading": "uṇḍaḍam" }
-    synonyms:
-      - { id: "nida", word: "నీడ", reading: "nīḍa", source: "https://en.wiktionary.org/wiki/ఛాయ" }
   - id: "te-2217"
     "target": "యువతి"
     "reading": "yuvati"
@@ -672,7 +669,8 @@
     "reading": "balamaina"
     "ipa": "balamaina"
     "pos": "adj"
-    "bases": "self"
+    "bases":
+      - { "word": "బలమైన", "base": "బలం", "reading": "balam" }
     "notes":
     - "id": "n1"
       "kind": "usage"
@@ -697,7 +695,8 @@
     "reading": "curukaina"
     "ipa": "tʃurukaina"
     "pos": "adj"
-    "bases": "self"
+    "bases":
+      - { "word": "చురుకైన", "base": "చురుకు", "reading": "curuku" }
     "notes":
     - "id": "n1"
       "kind": "usage"
@@ -720,7 +719,8 @@
     "reading": "ākarṣaṇīyamaina"
     "ipa": "aːkarʂaɳiːjamaina"
     "pos": "adj"
-    "bases": "self"
+    "bases":
+      - { "word": "ఆకర్షణీయమైన", "base": "ఆకర్షణ", "reading": "ākarṣaṇa" }
     "notes":
     - "id": "n1"
       "kind": "usage"

@@ -547,12 +547,12 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - target: "అతను రాజీనామా ఇచ్చారు."
-        reading: "atanu rājīnāmā iccāru."
-        ipa: "at̪anu raːdʒiːnaːmaː itʃtʃaːru."
+      - target: "అతను రాజీనామా ఇచ్చాడు."
+        reading: "atanu rājīnāmā iccāḍu."
+        ipa: "at̪anu raːdʒiːnaːmaː itʃtʃaːɖu."
         bases:
           - { word: "అతను", base: "అతడు", reading: "ataḍu" }
-          - { word: "ఇచ్చారు", ref: "te-0630" }
+          - { word: "ఇచ్చాడు", ref: "te-0630" }
       - target: "రాజీనామా ఆమోదించారు."
         reading: "rājīnāmā āmōdiñcāru."
         ipa: "raːdʒiːnaːmaː aːmoːd̪ɪɲtʃaːru."
@@ -628,7 +628,8 @@ cards:
     reading: "mukhyamaina"
     ipa: "mukʰjamaina"
     pos: "adj"
-    bases: "self"
+    bases:
+      - { word: "ముఖ్యమైన", base: "ముఖ్యం", reading: "mukhyam" }
     notes:
       - { id: "n1", kind: "note" }
     examples:
@@ -683,7 +684,7 @@ cards:
           - { word: "మీకు", base: "మీరు", reading: "mīru" }
           - { word: "తెలియజేస్తాను", ref: "te-2930" }
       - target: "దయచేసి ఇమెయిల్‌లో తెలియజేయండి."
-        reading: "dayacēsi imeyil‌lō teliyajēyaṇḍi."
+        reading: "dayacēsi imeyillō teliyajēyaṇḍi."
         ipa: "d̪ajat͡ʃeːsi imeːjilloː t̪eliɪjad͡ʒeːjaɳɖi."
         bases:
           - { word: "ఇమెయిల్‌లో", ref: "te-2409" }
