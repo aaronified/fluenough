@@ -1,0 +1,372 @@
+schema: 1
+id: "te-grammar-imperatives"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "grammar"]
+cards:
+  - id: "te-2000"
+    target: "రా."
+    reading: "rā."
+    ipa: "raː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "రా", ref: "te-0623" }
+  - id: "te-2001"
+    target: "ఇక్కడ రా."
+    reading: "ikkaḍa rā."
+    ipa: "ikkaɖa raː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఇక్కడ", ref: "te-0302" }
+      - { word: "రా", ref: "te-0623" }
+  - id: "te-2002"
+    target: "వెళ్ళు."
+    reading: "veḷḷu."
+    ipa: "ʋeɭɭu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "వెళ్ళు", ref: "te-0622" }
+  - id: "te-2003"
+    target: "ఇప్పుడు వెళ్ళు."
+    reading: "ippuḍu veḷḷu."
+    ipa: "ippuɖu ʋeɭɭu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఇప్పుడు", ref: "te-0309" }
+      - { word: "వెళ్ళు", ref: "te-0622" }
+  - id: "te-2004"
+    target: "కూర్చో."
+    reading: "kūrcō."
+    ipa: "kuːrtʃoː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "కూర్చో", ref: "te-0634" }
+  - id: "te-2005"
+    target: "ఇక్కడ కూర్చో."
+    reading: "ikkaḍa kūrcō."
+    ipa: "ikkaɖa kuːrtʃoː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఇక్కడ", ref: "te-0302" }
+      - { word: "కూర్చో", ref: "te-0634" }
+  - id: "te-2006"
+    target: "తిను."
+    reading: "tinu."
+    ipa: "t̪inu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "తిను", ref: "te-0624" }
+  - id: "te-2007"
+    target: "ఇది తిను."
+    reading: "idi tinu."
+    ipa: "id̪i t̪inu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఇది", ref: "te-0600" }
+      - { word: "తిను", ref: "te-0624" }
+  - id: "te-2008"
+    target: "నీళ్ళు తాగు."
+    reading: "nīḷḷu tāgu."
+    ipa: "niːɭɭu t̪aːɡu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నీళ్ళు", ref: "te-0341" }
+      - { word: "తాగు", ref: "te-0625" }
+  - id: "te-2009"
+    target: "టీ తాగు."
+    reading: "ṭī tāgu."
+    ipa: "ʈiː t̪aːɡu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "టీ", ref: "te-0342" }
+      - { word: "తాగు", ref: "te-0625" }
+  - id: "te-2010"
+    target: "చూడు."
+    reading: "cūḍu."
+    ipa: "tʃuːɖu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "చూడు", ref: "te-0626" }
+  - id: "te-2011"
+    target: "విను."
+    reading: "vinu."
+    ipa: "ʋinu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "విను", ref: "te-0627" }
+  - id: "te-2012"
+    target: "నెమ్మదిగా చెప్పు."
+    reading: "nemmadigā ceppu."
+    ipa: "nemmad̪igaː tʃeppu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నెమ్మదిగా", ref: "te-0965" }
+      - { word: "చెప్పు", ref: "te-0628" }
+  - id: "te-2013"
+    target: "నాకు చెప్పు."
+    reading: "nāku ceppu."
+    ipa: "naːku tʃeppu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "చెప్పు", ref: "te-0628" }
+  - id: "te-2014"
+    target: "నాకు ఇవ్వు."
+    reading: "nāku ivvu."
+    ipa: "naːku iʋʋu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "ఇవ్వు", ref: "te-0630" }
+  - id: "te-2015"
+    target: "పుస్తకం తీసుకో."
+    reading: "pustakaṁ tīsukō."
+    ipa: "pust̪akam t̪iːsukoː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "పుస్తకం", ref: "te-0865" }
+      - { word: "తీసుకో", ref: "te-0631" }
+  - id: "te-2016"
+    target: "ఫోన్ తీసుకురా."
+    reading: "fōn tīsukurā."
+    ipa: "foːn t̪iːsukuraː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఫోన్", ref: "te-0872" }
+      - { word: "తీసుకురా", ref: "te-0632" }
+  - id: "te-2017"
+    target: "ఉండు."
+    reading: "uṇḍu."
+    ipa: "uɳɖu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఉండు", ref: "te-0633" }
+  - id: "te-2018"
+    target: "ఇక్కడ ఉండు."
+    reading: "ikkaḍa uṇḍu."
+    ipa: "ikkaɖa uɳɖu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఇక్కడ", ref: "te-0302" }
+      - { word: "ఉండు", ref: "te-0633" }
+  - id: "te-2019"
+    target: "నిద్రపో."
+    reading: "nidrapō."
+    ipa: "nid̪rapoː"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నిద్రపో", ref: "te-0640" }
+  - id: "te-2020"
+    target: "ఆడు."
+    reading: "āḍu."
+    ipa: "aːɖu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఆడు", ref: "te-0637" }
+  - id: "te-2021"
+    target: "పుస్తకం చదువు."
+    reading: "pustakaṁ caduvu."
+    ipa: "pust̪akam tʃad̪uʋu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "పుస్తకం", ref: "te-0865" }
+      - { word: "చదువు", ref: "te-0638" }
+  - id: "te-2022"
+    target: "ఇక్కడ రాయి."
+    reading: "ikkaḍa rāyi."
+    ipa: "ikkaɖa raːji"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఇక్కడ", ref: "te-0302" }
+      - { word: "రాయి", ref: "te-0639" }
+  - id: "te-2023"
+    target: "నిలబడు."
+    reading: "nilabaḍu."
+    ipa: "nilabaɖu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నిలబడు", ref: "te-0635" }
+  - id: "te-2024"
+    target: "నెమ్మదిగా నడువు."
+    reading: "nemmadigā naḍuvu."
+    ipa: "nemmad̪igaː naɖuʋu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నెమ్మదిగా", ref: "te-0965" }
+      - { word: "నడువు", ref: "te-0636" }
+  - id: "te-2025"
+    target: "వెళ్ళకు."
+    reading: "veḷḷaku."
+    ipa: "ʋeɭɭaku"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "వెళ్ళకు", ref: "te-0622" }
+  - id: "te-2026"
+    target: "తినకు."
+    reading: "tinaku."
+    ipa: "t̪inaku"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "తినకు", ref: "te-0624" }
+  - id: "te-2027"
+    target: "ఇప్పుడు వెళ్ళకు."
+    reading: "ippuḍu veḷḷaku."
+    ipa: "ippuɖu ʋeɭɭaku"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఇప్పుడు", ref: "te-0309" }
+      - { word: "వెళ్ళకు", ref: "te-0622" }
+  - id: "te-2028"
+    target: "ఆడకు."
+    reading: "āḍaku."
+    ipa: "aːɖaku"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఆడకు", ref: "te-0637" }
+  - id: "te-2029"
+    target: "చెప్పకు."
+    reading: "ceppaku."
+    ipa: "tʃeppaku"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "చెప్పకు", ref: "te-0628" }
+  - id: "te-2030"
+    target: "రండి."
+    reading: "raṇḍi."
+    ipa: "ɾaɳɖi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "రండి", ref: "te-0623" }
+  - ref: "te-0660"
+  - id: "te-2032"
+    target: "దయచేసి వెళ్ళండి."
+    reading: "dayacēsi veḷḷaṇḍi."
+    ipa: "d̪ajat͡ʃeːsi ʋeɭɭaɳɖi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "దయచేసి", ref: "te-0546" }
+      - { word: "వెళ్ళండి", ref: "te-0622" }
+  - id: "te-2033"
+    target: "దయచేసి చెప్పండి."
+    reading: "dayacēsi ceppaṇḍi."
+    ipa: "d̪ajat͡ʃeːsi tʃeppaɳɖi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "దయచేసి", ref: "te-0546" }
+      - { word: "చెప్పండి", ref: "te-0628" }
+  - id: "te-2034"
+    target: "నీళ్ళు తాగండి."
+    reading: "nīḷḷu tāgaṇḍi."
+    ipa: "niːɭɭu t̪aːɡaɳɖi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నీళ్ళు", ref: "te-0341" }
+      - { word: "తాగండి", ref: "te-0625" }
+  - id: "te-2035"
+    target: "తినండి."
+    reading: "tinaṇḍi."
+    ipa: "t̪inaɳɖi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "తినండి", ref: "te-0624" }
+  - id: "te-2036"
+    target: "తినకండి."
+    reading: "tinakaṇḍi."
+    ipa: "t̪inakaɳɖi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "తినకండి", ref: "te-0624" }
+  - id: "te-2037"
+    target: "ఇక్కడ ఆడకండి."
+    reading: "ikkaḍa āḍakaṇḍi."
+    ipa: "ikkaɖa aːɖakaɳɖi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఇక్కడ", ref: "te-0302" }
+      - { word: "ఆడకండి", ref: "te-0637" }
+  - id: "te-2038"
+    target: "ఫోటోలు తీయకండి."
+    reading: "fōṭōlu tīyakaṇḍi."
+    ipa: "foːʈoːlu t̪iːjakaɳɖi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఫోటోలు", ref: "te-0895" }
+      - { word: "తీయకండి", ref: "te-0836" }

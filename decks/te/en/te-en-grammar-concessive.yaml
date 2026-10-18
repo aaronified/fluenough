@@ -1,0 +1,17 @@
+schema: 1
+id: "te-en-grammar-concessive"
+kind: "layer"
+core: "te-grammar-concessive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Even if: -ినా (-inā)"
+description: "A verb's past stem with -ినా (-inā) says that something happens anyway, or even if a condition holds: 'even if it rains', 'although I ate'. The same form works for every person. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "concessive": "even if or although (someone) does it"
+rules:
+  "te-rule-concessive":
+    name: "-ినా (-inā): even if, although"
+    explanation: "{1} is added to a verb's past stem to say 'even if' or 'although': {2} is 'even if it comes' (the ending is added to the past stem, so 'come' becomes వచ్చినా (vaccinā)), {3} is 'even if I ate' and {4} is 'even if there is money'. The form is the same for every person: the rest of the sentence shows who is doing it. Where the past stem ends in -ని (-ni), as in తిని (tini) for 'having eaten', the ending becomes -న్నా (-nnā): తిన్నా (tinnā). ఉండు (uṇḍu) becomes ఉన్నా (unnā)."
