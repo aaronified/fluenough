@@ -7,6 +7,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-10-18
+
+The app's database moves to version 8 (a log of restores). A backup made by 0.5.0 that holds a fitted script skill cannot be restored by 0.4.4 or older, and going back to an older version after updating is not supported. Your progress is kept by card id, and no card id changed.
+
+### Added
+
+- Backup and restore (#470): Your data → Back up now saves a backup file where you choose and keeps a copy; Recent backups lists the copies, each with Download and Restore; Restore from a file reads a backup, shows what it holds, and replaces your progress only after you confirm. A copy of what is replaced is always kept first, and each restore is logged. A backup from a newer Fluenough is refused, naming its version.
+- Read script and Write script (#556): two skills of their own for each language with its own script, from your answers to the script lessons, each with its own schedule, a row on Progress and a line in How you learn. Past answers count: the skills are worked out from your review log.
+- Facts on cards (#546): a word's sheet, and its card in a unit, ends with the facts that name it. The daily fact prefers one about a word you are studying.
+- Waiting for review (#471): your reviews first, those not sent and those sent with their state, then each language folded with its unreviewed counts.
+- Suggest a change (#476): change, add and remove a card's base words; a new word goes as one review.
+- Telugu: the adverbs unit, 50 words (how well, how often, when, how much, where), with a listening and a reading passage.
+- Your data: the review log shows the last 10 answers, and up to 50.
+
+### Changed
+
+- Every course's path is rebuilt (#562): a phrasebook, the first words, the script after the first units, a core of about 200 common words, then rules, then sentences.
+- Scripts have their own names (#551, #559): Eastern Nagari, not "Bengali script", and a language can have several. Languages I know asks whether you read a script in that script (#552, #563) and names the language it is about (#553, #560); Languages I'm learning has a switch to learn each language's script, by its name (#555, #561). A script you read for one language counts for every language written in it, and a short test skips the script lessons (#554).
+- The language bar's selection follows your swipe, with rounded glyphs and a one-line label (#550).
+
+### Fixed
+
+- Today: the skill tiles stack when a name will not fit, so "Recognition" is no longer cut (#478, #564).
+
 ## [0.4.4] - 2026-10-17
 
 The decks on GitHub are now split further, their script guides and sounds files included, and carry new card data, which 0.4.3 cannot read, so 0.4.3 gets no more deck updates: update to 0.4.4. Your progress is kept by card id, and no card id changed.
