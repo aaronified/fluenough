@@ -38,7 +38,13 @@ changes, the owner approves a new version first.
     `scripts` lists the scripts it is written in, its own first (#551):
     Punjabi's are Gurmukhi and Shahmukhi, and the sheet asks which of
     them the learner reads. A script is named by its own name, never the
-    language's: `bengali` is Eastern Nagari;
+    language's: `bengali` is Eastern Nagari. Hindustani (`hi`, Hindi and
+    Urdu as one course, #623) has `devanagari` and `perso_arabic` (the
+    Perso-Arabic script, taught in Nastaliq; owner, 2026-10-18: "Urdu doesnt
+    really name it anything"). The id is written with an underscore in the
+    app, as `ol_chiki` is, because an ICU select key cannot hold a hyphen;
+    a learner who speaks Hindustani but reads only one script can still
+    learn it for the other (owner, 2026-10-18);
   - the sheet's two own-script sentences, `script_question` and
     `script_can_read`, written by a speaker of the language.
 - A language with no facts file shows no daily facts. Nothing else changes.

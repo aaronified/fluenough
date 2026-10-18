@@ -667,7 +667,7 @@ void main() {
       expect(isPicked(tester, 'hi'), isTrue);
 
       await pickLanguage(tester, 'hi');
-      expect(find.text(l10n.pickerStopTitle('Hindi')), findsOneWidget);
+      expect(find.text(l10n.pickerStopTitle('Hindustani')), findsOneWidget);
       await tester.tap(find.text(l10n.commonCancel));
       await tester.pumpAndSettle();
       expect(isPicked(tester, 'hi'), isTrue);
@@ -770,28 +770,30 @@ void main() {
       );
       expect(canContinue(tester, l10n), isFalse);
       expect(
-        find.text(l10n.pickerHintWaiting(decksBeforeReady, 'Hindi')),
+        find.text(l10n.pickerHintWaiting(decksBeforeReady, 'Hindustani')),
         findsOneWidget,
       );
       expect(tester.takeAnnouncements(), <Matcher>[
-        isAccessibilityAnnouncement(l10n.pickerAnnounceChosen('Hindi')),
-        isAccessibilityAnnouncement(l10n.deckDownloadsProgressLabel('Hindi')),
+        isAccessibilityAnnouncement(l10n.pickerAnnounceChosen('Hindustani')),
+        isAccessibilityAnnouncement(
+          l10n.deckDownloadsProgressLabel('Hindustani'),
+        ),
       ]);
       // Its Cancel says whose download it stops.
       expect(
         inCard(
           'hi',
-          find.bySemanticsLabel(l10n.pickerCancelDownloadLabel('Hindi')),
+          find.bySemanticsLabel(l10n.pickerCancelDownloadLabel('Hindustani')),
         ),
         findsOneWidget,
       );
       // A course with no level plan yet: Alpha, without saying A1 is
       // unfinished.
       expect(
-        inCard('hi', find.text(l10n.pickerAlphaUnplannedNotice('Hindi'))),
+        inCard('hi', find.text(l10n.pickerAlphaUnplannedNotice('Hindustani'))),
         findsOneWidget,
       );
-      expect(find.text(l10n.pickerAlphaNotice('Hindi')), findsNothing);
+      expect(find.text(l10n.pickerAlphaNotice('Hindustani')), findsNothing);
 
       remote.release(firstFiles(state));
       await tester.pumpAndSettle();
@@ -799,9 +801,9 @@ void main() {
       expect(now().decks, greaterThanOrEqualTo(decksBeforeReady));
       expect(inCard('hi', find.text(l10n.pickerReady)), findsOneWidget);
       expect(canContinue(tester, l10n), isTrue);
-      expect(find.text(l10n.pickerHintNext('Hindi')), findsOneWidget);
+      expect(find.text(l10n.pickerHintNext('Hindustani')), findsOneWidget);
       expect(tester.takeAnnouncements(), <Matcher>[
-        isAccessibilityAnnouncement(l10n.pickerAnnounceReady('Hindi')),
+        isAccessibilityAnnouncement(l10n.pickerAnnounceReady('Hindustani')),
       ]);
 
       final before = now().decks;
@@ -817,7 +819,7 @@ void main() {
       expect(now().decks, now().totalDecks);
       expect(inCard('hi', find.text(l10n.pickerDownloaded)), findsOneWidget);
       expect(tester.takeAnnouncements(), <Matcher>[
-        isAccessibilityAnnouncement(l10n.pickerAnnounceDone('Hindi')),
+        isAccessibilityAnnouncement(l10n.pickerAnnounceDone('Hindustani')),
       ]);
 
       await tester.tap(continueButton(l10n));
@@ -852,7 +854,7 @@ void main() {
       // The course starts with what arrived.
       await tester.tap(continueButton(l10n));
       await tester.pumpAndSettle();
-      await tester.tap(find.text(l10n.placementNew('Hindi')));
+      await tester.tap(find.text(l10n.placementNew('Hindustani')));
       await tester.pumpAndSettle();
       await tester.tap(find.text(l10n.placementDone));
       await tester.pumpAndSettle();
@@ -896,7 +898,10 @@ void main() {
       expect(canContinue(tester, l10n), isFalse);
       // Its card closed, so a toast, which a screen reader announces, says
       // where the rest comes from.
-      expect(find.text(l10n.pickerCancelledUnchosen('Hindi')), findsOneWidget);
+      expect(
+        find.text(l10n.pickerCancelledUnchosen('Hindustani')),
+        findsOneWidget,
+      );
       await tester.pump(const Duration(seconds: 5));
       await tester.pumpAndSettle();
     });
@@ -943,14 +948,16 @@ void main() {
       );
       expect(canContinue(tester, l10n), isFalse);
       expect(tester.takeAnnouncements(), <Matcher>[
-        isAccessibilityAnnouncement(l10n.pickerAnnounceChosen('Hindi')),
-        isAccessibilityAnnouncement(l10n.deckDownloadsProgressLabel('Hindi')),
+        isAccessibilityAnnouncement(l10n.pickerAnnounceChosen('Hindustani')),
+        isAccessibilityAnnouncement(
+          l10n.deckDownloadsProgressLabel('Hindustani'),
+        ),
         isAccessibilityAnnouncement(l10n.downloadsOffline),
       ]);
       expect(
         inCard(
           'hi',
-          find.bySemanticsLabel(l10n.pickerRetryDownloadLabel('Hindi')),
+          find.bySemanticsLabel(l10n.pickerRetryDownloadLabel('Hindustani')),
         ),
         findsOneWidget,
       );
@@ -963,8 +970,8 @@ void main() {
       expect(state.deckDownloads!.failureOf('hi'), isNull);
       expect(canContinue(tester, l10n), isTrue);
       expect(tester.takeAnnouncements(), <Matcher>[
-        isAccessibilityAnnouncement(l10n.pickerAnnounceReady('Hindi')),
-        isAccessibilityAnnouncement(l10n.pickerAnnounceDone('Hindi')),
+        isAccessibilityAnnouncement(l10n.pickerAnnounceReady('Hindustani')),
+        isAccessibilityAnnouncement(l10n.pickerAnnounceDone('Hindustani')),
       ]);
       handle.dispose();
     });
