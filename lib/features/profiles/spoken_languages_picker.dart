@@ -572,7 +572,7 @@ class _KnownLanguageSheetState extends State<KnownLanguageSheet> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 12),
+                padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 8),
                 child: Semantics(
                   header: true,
                   namesRoute: true,
@@ -592,6 +592,7 @@ class _KnownLanguageSheetState extends State<KnownLanguageSheet> {
                 for (final script in language.scripts)
                   CheckboxListTile(
                     key: ValueKey<String>('know-script-$script'),
+                    minVerticalPadding: 4,
                     contentPadding: const EdgeInsetsDirectional.only(
                       start: 24,
                       end: 12,
@@ -739,8 +740,9 @@ class _OwnAndEnglish extends StatelessWidget {
           style: ownStyle,
         ),
         if (showEnglish) ...<Widget>[
-          const SizedBox(height: 2),
-          Text(english, style: englishStyle),
+          // Tight, so the sheet stays on screen at 1.4x text: a snugger line
+          // height, not a smaller size.
+          Text(english, style: englishStyle.copyWith(height: 1.25)),
         ],
       ],
     );
