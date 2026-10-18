@@ -14,7 +14,7 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { target: "ఇది అది కంటే పెద్దది.", reading: "idi adi kaṇṭē peddadi.", ipa: "id̪i ad̪i kaɳʈeː ped̪d̪ad̪i" }
+      - { target: "ఇది దాని కంటే పెద్దది.", reading: "idi dāni kaṇṭē peddadi.", ipa: "id̪i d̪aːni kaɳʈeː ped̪d̪ad̪i" }
       - { target: "అతను ఆమె కంటే చిన్నవాడు.", reading: "atanu āme kaṇṭē cinnavāḍu.", ipa: "at̪anu aːme kaɳʈeː tʃinːaʋaːɖu" }
     bases: "self"
   - id: "te-1701"
@@ -25,19 +25,19 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { target: "ఇది అది కన్నా చిన్నది.", reading: "idi adi kannā cinnadi.", ipa: "id̪i ad̪i kan̪naː tʃinːad̪i" }
-      - { target: "అది ఇది కన్నా ఎక్కువ.", reading: "adi idi kannā ekkuva.", ipa: "ad̪i id̪i kan̪naː ekkuʋa" }
+      - { target: "ఇది దాని కన్నా చిన్నది.", reading: "idi dāni kannā cinnadi.", ipa: "id̪i d̪aːni kan̪naː tʃinːad̪i" }
+      - { target: "అది దీని కన్నా ఎక్కువ.", reading: "adi dīni kannā ekkuva.", ipa: "ad̪i d̪iːni kan̪naː ekkuʋa" }
     bases: "self"
   - id: "te-1702"
     target: "అన్నిటికంటే"
-    reading: "aṇṇiṭikaṇṭē"
-    ipa: "aɳɳit̪ikaɳʈeː"
+    reading: "anniṭikaṇṭē"
+    ipa: "an̪n̪it̪ikaɳʈeː"
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { target: "ఇది అన్నిటికంటే పెద్దది.", reading: "idi aṇṇiṭikaṇṭē peddadi.", ipa: "id̪i aɳɳit̪ikaɳʈeː ped̪d̪ad̪i" }
-      - { target: "ఇది అన్నిటికంటే మంచిది.", reading: "idi aṇṇiṭikaṇṭē mancidi.", ipa: "id̪i aɳɳit̪ikaɳʈeː mant͡ʃid̪i" }
+      - { target: "ఇది అన్నిటికంటే పెద్దది.", reading: "idi anniṭikaṇṭē peddadi.", ipa: "id̪i an̪n̪it̪ikaɳʈeː ped̪d̪ad̪i" }
+      - { target: "ఇది అన్నిటికంటే మంచిది.", reading: "idi anniṭikaṇṭē mañcidi.", ipa: "id̪i an̪n̪it̪ikaɳʈeː mant͡ʃid̪i" }
     bases: "self"
   - id: "te-1703"
     target: "మరింత"
@@ -48,7 +48,7 @@ cards:
       - { id: "n1", kind: "note" }
     examples:
       - { target: "ఇది మరింత పెద్దది.", reading: "idi marinta peddadi.", ipa: "id̪i marint̪a ped̪d̪ad̪i" }
-      - { target: "ఇది మరింత మంచిది.", reading: "idi marinta mancidi.", ipa: "id̪i marint̪a mant͡ʃid̪i" }
+      - { target: "ఇది మరింత మంచిది.", reading: "idi marinta mañcidi.", ipa: "id̪i marint̪a mant͡ʃid̪i" }
     bases: "self"
   - id: "te-1704"
     target: "ఒకే"
@@ -66,11 +66,13 @@ cards:
     reading: "samānaṅgā"
     ipa: "samaːnaŋɡaː"
     pos: "adv"
+    bases:
+      - { word: "సమానంగా", base: "సమాన", reading: "samāna" }
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { target: "ఈ రెండు పుస్తకాలు సమానంగా మంచివి.", reading: "ī reṇḍu pustakālu samānaṅgā mancivi.", ipa: "iː ɾenɖu pust̪aːkaːlu samaːnaŋɡaː mant͡ʃiʋi" }
-      - { target: "ఇద్దరూ సమానంగా మంచివారు.", reading: "iddarū samānaṅgā mancivāru.", ipa: "idd̪aruː samaːnaŋɡaː mant͡ʃiʋaːru" }
+      - { target: "ఈ రెండు పుస్తకాలు సమానంగా మంచివి.", reading: "ī reṇḍu pustakālu samānaṅgā mañcivi.", ipa: "iː ɾenɖu pust̪aːkaːlu samaːnaŋɡaː mant͡ʃiʋi" }
+      - { target: "ఇద్దరూ సమానంగా మంచివారు.", reading: "iddarū samānaṅgā mañcivāru.", ipa: "idd̪aruː samaːnaŋɡaː mant͡ʃiʋaːru" }
   - ref: "te-1029"
   - ref: "te-1030"
   - ref: "te-0346"
@@ -79,9 +81,9 @@ cards:
   - ref: "te-0503"
   - ref: "te-0500"
   - id: "te-1706"
-    target: "ఇది అది కంటే పెద్దది."
-    reading: "idi adi kaṇṭē peddadi."
-    ipa: "id̪i ad̪i kaɳʈeː ped̪d̪ad̪i"
+    target: "ఇది దాని కంటే పెద్దది."
+    reading: "idi dāni kaṇṭē peddadi."
+    ipa: "id̪i d̪aːni kaɳʈeː ped̪d̪ad̪i"
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
@@ -90,11 +92,11 @@ cards:
       - { id: "more", ref: "te-1029", kind: "word" }
     bases:
       - { word: "ఇది", ref: "te-0600" }
-      - { word: "అది", ref: "te-0599" }
+      - { word: "దాని", ref: "te-0599" }
       - { word: "పెద్దది", ref: "te-0502" }
   - id: "te-1707"
     target: "ఈ పుస్తకం ఆ పుస్తకం కంటే మంచిది."
-    reading: "ī pustakam ā pustakam kaṇṭē mancidi."
+    reading: "ī pustakam ā pustakam kaṇṭē mañcidi."
     ipa: "iː pust̪akam aː pust̪akam kaɳʈeː mant͡ʃid̪i"
     pos: "phrase"
     notes:
@@ -133,24 +135,24 @@ cards:
       - { word: "తింటాడు", ref: "te-0624" }
   - id: "te-1710"
     target: "అన్నిటికంటే ఇది మంచిది."
-    reading: "aṇṇiṭikaṇṭē idi mancidi."
-    ipa: "aɳɳit̪ikaɳʈeː id̪i mant͡ʃid̪i"
+    reading: "anniṭikaṇṭē idi mañcidi."
+    ipa: "an̪n̪it̪ikaɳʈeː id̪i mant͡ʃid̪i"
     pos: "phrase"
     bases:
       - { word: "ఇది", ref: "te-0600" }
       - { word: "మంచిది", ref: "te-0500" }
   - id: "te-1711"
-    target: "ఇది అది కంటే తక్కువ."
-    reading: "idi adi kaṇṭē takkuva."
-    ipa: "id̪i ad̪i kaɳʈeː takkuʋa"
+    target: "ఇది దాని కంటే తక్కువ."
+    reading: "idi dāni kaṇṭē takkuva."
+    ipa: "id̪i d̪aːni kaɳʈeː takkuʋa"
     pos: "phrase"
     bases:
       - { word: "ఇది", ref: "te-0600" }
-      - { word: "అది", ref: "te-0599" }
+      - { word: "దాని", ref: "te-0599" }
       - { word: "తక్కువ", ref: "te-1030" }
   - id: "te-1712"
     target: "ఇది ఇంకా మంచిది."
-    reading: "idi iṅkā mancidi."
+    reading: "idi iṅkā mañcidi."
     ipa: "id̪i iŋkaː mant͡ʃid̪i"
     pos: "phrase"
     bases:
@@ -167,7 +169,7 @@ cards:
       - { word: "పెద్దది", ref: "te-0502" }
   - id: "te-1714"
     target: "ఈ రెండు పుస్తకాలు సమానంగా మంచివి."
-    reading: "ī reṇḍu pustakālu samānaṅgā mancivi."
+    reading: "ī reṇḍu pustakālu samānaṅgā mañcivi."
     ipa: "iː ɾenɖu pust̪aːkaːlu samaːnaŋɡaː mant͡ʃiʋi"
     pos: "phrase"
     notes:
