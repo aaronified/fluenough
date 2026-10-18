@@ -511,7 +511,8 @@ units:
       - { id: "a-fort-visit", text: { "en": "A guide tells the story of a fort" } }
     reading_passages:
       - { id: "museum-card", text: { "en": "A museum card about a ruler" } }
-  - planned: { id: "te-weddings", theme: "weddings", words: 50 }
+  - decks: ["te-weddings", "*"]
+    words: 50
     listening_passages:
       - { id: "wedding-plans", text: { "en": "Relatives plan a wedding" } }
     reading_passages:
