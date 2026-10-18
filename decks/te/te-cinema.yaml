@@ -61,6 +61,9 @@
       - "target": "నా హీరో మా అన్నయ్య."
         "reading": "nā hīrō mā annayya."
         "ipa": "naː hiːroː maː annajja"
+    senses:
+      - { id: "male", pos: "noun", source: "https://en.wiktionary.org/wiki/హీరో" }
+      - { id: "hero", pos: "noun", source: "https://en.wiktionary.org/wiki/హీరో" }
   - id: "te-4801"
     "target": "హీరోయిన్"
     "reading": "hīrōyin"
@@ -89,6 +92,9 @@
           - "word": "పాడింది"
             "base": "పాడడం"
             "reading": "pāḍaḍam"
+    senses:
+      - { id: "female", pos: "noun", source: "https://en.wiktionary.org/wiki/హీరోయిన్" }
+      - { id: "heroine", pos: "noun", source: "https://en.wiktionary.org/wiki/హీరోయిన్" }
   - id: "te-4802"
     "target": "నటుడు"
     "reading": "naṭuḍu"
@@ -113,6 +119,8 @@
       - "target": "అతను ఒక మంచి నటుడు."
         "reading": "atanu oka mañci naṭuḍu."
         "ipa": "at̪anu oka maɲtʃi naʈuɖu"
+    antonyms:
+      - { id: "nati", ref: "te-4803", source: "https://en.wiktionary.org/wiki/నటుడు" }
   - id: "te-4803"
     "target": "నటి"
     "reading": "naṭi"
@@ -140,6 +148,8 @@
           - "word": "సినిమాలో"
             "base": "సినిమా"
             "reading": "sinimā"
+    antonyms:
+      - { id: "natudu", ref: "te-4802", source: "https://en.wiktionary.org/wiki/నటి" }
   - id: "te-4804"
     "target": "దర్శకుడు"
     "reading": "darśakuḍu"
@@ -167,6 +177,8 @@
           - "word": "చెప్పాడు"
             "base": "చెప్పడం"
             "reading": "ceppaḍam"
+    antonyms:
+      - { id: "darsakuralu", word: "దర్శకురాలు", reading: "darśakurālu", source: "https://en.wiktionary.org/wiki/దర్శకుడు" }
   - id: "te-4805"
     "target": "నిర్మాత"
     "reading": "nirmāta"
@@ -191,6 +203,11 @@
           - "word": "తీస్తున్నాడు"
             "base": "తీయడం"
             "reading": "tīyaḍam"
+    synonyms:
+      - { id: "nirmincuvadu", word: "నిర్మించువాడు", reading: "nirmiñcuvāḍu", source: "https://en.wiktionary.org/wiki/నిర్మాత" }
+    senses:
+      - { id: "who", pos: "noun", source: "https://en.wiktionary.org/wiki/నిర్మాత" }
+      - { id: "producer", pos: "noun", source: "https://en.wiktionary.org/wiki/నిర్మాత" }
   - id: "te-4806"
     "target": "ప్రేక్షకుడు"
     "reading": "prēkṣakuḍu"
@@ -678,6 +695,8 @@
           - "word": "చేసింది"
             "base": "చేయడం"
             "reading": "cēyaḍam"
+    synonyms:
+      - { id: "gayakuralu", word: "గాయకురాలు", reading: "gāyakurālu", source: "https://en.wiktionary.org/wiki/గాయని" }
   - id: "te-4822"
     "target": "పాటల రచయిత"
     "reading": "pāṭala racayita"
@@ -771,6 +790,8 @@
           - "word": "నచ్చింది"
             "base": "నచ్చడం"
             "reading": "naccaḍam"
+    synonyms:
+      - { id: "samapti", word: "సమాప్తి", reading: "samāpti", source: "https://en.wiktionary.org/wiki/ముగింపు" }
   - id: "te-4825"
     "target": "ప్రారంభం"
     "reading": "prārambham"
@@ -832,6 +853,9 @@
           - "word": "వచ్చింది"
             "base": "రావడం"
             "reading": "rāvaḍam"
+    senses:
+      - { id: "leaving", pos: "noun", source: "https://en.wiktionary.org/wiki/విడుదల" }
+      - { id: "independence", pos: "noun", source: "https://en.wiktionary.org/wiki/విడుదల" }
   - id: "te-4827"
     "target": "రివ్యూ"
     "reading": "rivyū"
@@ -903,6 +927,9 @@
           - "word": "వచ్చాయి"
             "base": "రావడం"
             "reading": "rāvaḍam"
+    synonyms:
+      - { id: "nayanajalamu", word: "నయనజలము", reading: "nayanajalamu", source: "https://en.wiktionary.org/wiki/కన్నీరు" }
+      - { id: "asruvu", word: "అశ్రువు", reading: "aśruvu", source: "https://en.wiktionary.org/wiki/కన్నీరు" }
   - id: "te-4829"
     "target": "బాక్సాఫీస్"
     "reading": "bāksāphīs"
