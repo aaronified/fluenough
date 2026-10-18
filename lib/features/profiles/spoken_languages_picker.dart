@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../core/data/spoken_languages.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
+import '../../ui/widgets/report_button.dart';
 
 /// What a learner answers on a language's sheet: reads its script, or
 /// some of its scripts, speaks it only, or takes it out of the list.
@@ -439,12 +440,13 @@ class _Heading extends StatelessWidget {
 
 /// The bottom sheet that answers a language and its script in one tap.
 ///
-/// The question and the "I can read it" answer are written only in the
-/// language's own script, with no translation, and marked with its language
-/// so a screen reader reads them in its voice: being able to read the
-/// answer is the test. The other answer is English. Neither is called Yes or
-/// No. A language with no sentences of its own yet asks in English, naming
-/// the script by its own name (#551).
+/// The question and the "I can read it" answer are written in the
+/// language's own script, whether or not a speaker has checked them
+/// (owner, 2026-10-18), marked with its language so a screen reader reads
+/// them in its voice, with the English under each, so a learner who only
+/// speaks the language still understands. The other answer is English.
+/// Neither is called Yes or No. A language with no sentences of its own yet
+/// asks in English, naming the script by its own name (#551).
 ///
 /// A language written in several scripts, such as Punjabi in Gurmukhi and
 /// Shahmukhi, asks which of them are read (#551): one answer to tick per
@@ -485,16 +487,17 @@ class _KnownLanguageSheetState extends State<KnownLanguageSheet> {
     final locale = Locale(language.code);
     String name(String? script) => l10n.scriptNameOr(script, language.name);
     final ownScripts = several && language.asksScriptsInOwnScript;
-    final question = several
-        ? (ownScripts
-              ? language.scriptsQuestion!
-              : l10n.knownReadsWhichScripts(language.name))
-        : own
-        ? language.scriptQuestion!
+    // English is kept below an own-script text, so a learner who only
+    // speaks the language still understands it. English itself has none.
+    final below = language.code != 'en';
+    final englishQuestion = several
+        ? l10n.knownReadsWhichScripts(language.name)
         : l10n.knownReadsScript(name(language.script));
-    final read = own
-        ? language.scriptCanRead!
-        : l10n.knownCanReadFallback(name(language.script));
+    final ownQuestion = several
+        ? (ownScripts ? language.scriptsQuestion : null)
+        : (own ? language.scriptQuestion : null);
+    final englishRead = l10n.knownCanReadFallback(name(language.script));
+    final ownRead = own ? language.scriptCanRead : null;
     void pop(KnownReply reply) => Navigator.of(context).pop(reply);
     Widget option({
       required Key key,
@@ -526,29 +529,62 @@ class _KnownLanguageSheetState extends State<KnownLanguageSheet> {
             children: <Widget>[
               // The language the sheet is about, as its list row names it,
               // read before the question.
-              Padding(
-                key: const ValueKey<String>('know-language'),
-                padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 4),
-                child: Text.rich(
-                  language.ownName == language.name
-                      ? TextSpan(text: language.name)
-                      : _ownNameMarked(l10n, language),
-                  style: theme.textTheme.bodyMedium!.copyWith(
-                    color: theme.colorScheme.onSurfaceVariant,
+              Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Padding(
+                      key: const ValueKey<String>('know-language'),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                        24,
+                        0,
+                        24,
+                        4,
+                      ),
+                      child: Text.rich(
+                        language.ownName == language.name
+                            ? TextSpan(text: language.name)
+                            : _ownNameMarked(l10n, language),
+                        style: theme.textTheme.bodyMedium!.copyWith(
+                          color: theme.colorScheme.onSurfaceVariant,
+                        ),
+                      ),
+                    ),
                   ),
-                ),
+                  // Texts no speaker has checked can be reported (owner,
+                  // 2026-10-18: "Just a simple bug icon will suffice.").
+                  if (language.scriptTextUnchecked)
+                    Padding(
+                      padding: const EdgeInsetsDirectional.only(end: 12),
+                      child: IconButton(
+                        key: const ValueKey<String>('know-report'),
+                        tooltip: l10n.knownReportMistake,
+                        icon: const Icon(Icons.bug_report_outlined),
+                        constraints: const BoxConstraints(
+                          minWidth: 48,
+                          minHeight: 48,
+                        ),
+                        onPressed: () => ReportButton.open(
+                          context,
+                          detail: knownReportDetail(language),
+                        ),
+                      ),
+                    ),
+                ],
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 12),
                 child: Semantics(
                   header: true,
                   namesRoute: true,
-                  child: Text.rich(
-                    TextSpan(
-                      text: question,
-                      locale: own || ownScripts ? locale : null,
+                  child: _OwnAndEnglish(
+                    own: ownQuestion,
+                    english: englishQuestion,
+                    showEnglish: below,
+                    locale: locale,
+                    ownStyle: theme.textTheme.titleLarge!,
+                    englishStyle: theme.textTheme.bodyMedium!.copyWith(
+                      color: theme.colorScheme.onSurfaceVariant,
                     ),
-                    style: theme.textTheme.titleLarge,
                   ),
                 ),
               ),
@@ -561,16 +597,15 @@ class _KnownLanguageSheetState extends State<KnownLanguageSheet> {
                       end: 12,
                     ),
                     controlAffinity: ListTileControlAffinity.trailing,
-                    title: Text.rich(
-                      TextSpan(
-                        text:
-                            language.canReadIn(script) ??
-                            l10n.knownCanReadFallback(name(script)),
-                        locale: language.canReadIn(script) != null
-                            ? locale
-                            : null,
+                    title: _OwnAndEnglish(
+                      own: language.canReadIn(script),
+                      english: l10n.knownCanReadFallback(name(script)),
+                      showEnglish: below,
+                      locale: locale,
+                      ownStyle: theme.textTheme.bodyLarge!,
+                      englishStyle: theme.textTheme.bodyMedium!.copyWith(
+                        color: theme.colorScheme.onSurfaceVariant,
                       ),
-                      style: theme.textTheme.bodyLarge,
                     ),
                     value: _ticked.contains(script),
                     onChanged: (on) => setState(
@@ -582,9 +617,15 @@ class _KnownLanguageSheetState extends State<KnownLanguageSheet> {
               else
                 option(
                   key: const ValueKey<String>('know-read'),
-                  text: Text.rich(
-                    TextSpan(text: read, locale: own ? locale : null),
-                    style: theme.textTheme.bodyLarge,
+                  text: _OwnAndEnglish(
+                    own: ownRead,
+                    english: englishRead,
+                    showEnglish: below,
+                    locale: locale,
+                    ownStyle: theme.textTheme.bodyLarge!,
+                    englishStyle: theme.textTheme.bodyMedium!.copyWith(
+                      color: theme.colorScheme.onSurfaceVariant,
+                    ),
                   ),
                   icon: Icons.menu_book_outlined,
                   selected: current?.isNotEmpty ?? false,
@@ -643,6 +684,65 @@ class _KnownLanguageSheetState extends State<KnownLanguageSheet> {
           ),
         ),
       ),
+    );
+  }
+}
+
+/// What a report of a language's own-script texts says, so a speaker can
+/// say which is wrong and give the right wording: the language's code, and
+/// each text with what it is. Not interface text.
+String knownReportDetail(SpokenLanguage language) {
+  final lines = <String>[
+    'Languages you know: ${language.code}',
+    if (language.hasSeveralScripts) ...<String>[
+      'scripts question: ${language.scriptsQuestion}',
+      for (final script in language.scripts)
+        if (language.canReadIn(script) != null)
+          'can read ($script): ${language.canReadIn(script)}',
+    ] else ...<String>[
+      'question: ${language.scriptQuestion}',
+      'can read: ${language.scriptCanRead}',
+    ],
+  ];
+  return lines.join('\n');
+}
+
+/// A text in a language's own script, marked as that language, with its
+/// English under it in smaller text. With no own text it is the English
+/// alone, in the main style.
+class _OwnAndEnglish extends StatelessWidget {
+  const _OwnAndEnglish({
+    required this.own,
+    required this.english,
+    required this.showEnglish,
+    required this.locale,
+    required this.ownStyle,
+    required this.englishStyle,
+  });
+
+  final String? own;
+  final String english;
+  final bool showEnglish;
+  final Locale locale;
+  final TextStyle ownStyle;
+  final TextStyle englishStyle;
+
+  @override
+  Widget build(BuildContext context) {
+    final own = this.own;
+    if (own == null) return Text(english, style: ownStyle);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text.rich(
+          TextSpan(text: own, locale: locale),
+          style: ownStyle,
+        ),
+        if (showEnglish) ...<Widget>[
+          const SizedBox(height: 2),
+          Text(english, style: englishStyle),
+        ],
+      ],
     );
   }
 }
