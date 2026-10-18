@@ -14,6 +14,7 @@ import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/features/onboarding/onboarding_flow.dart';
 import 'package:fluenough/features/profiles/spoken_languages_page.dart';
 import 'package:fluenough/features/profiles/spoken_languages_picker.dart';
+import 'package:fluenough/features/report/report_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/script_name.dart';
 
@@ -169,20 +170,24 @@ void main() {
       }
     });
 
-    test('every non-Latin entry but en, bn and hi is unchecked, so English is '
-        'asked; en, bn and hi use their own texts (#552)', () {
+    test('an entry marked unchecked still shows its own texts: only en, bn and '
+        'hi are checked, and every entry with texts asks in its own script '
+        '(owner, 2026-10-18)', () {
       for (final l in languages) {
-        final own = <String>{'en', 'bn', 'hi'}.contains(l.code);
-        if (own) {
-          expect(l.scriptTextUnchecked, isFalse, reason: l.code);
-          expect(l.asksInOwnScript, isTrue, reason: l.code);
-        } else if (l.script != 'latin') {
-          expect(l.scriptTextUnchecked, isTrue, reason: l.code);
-          expect(l.asksInOwnScript, isFalse, reason: l.code);
-          expect(l.asksScriptsInOwnScript, isFalse, reason: l.code);
+        final checked = <String>{'en', 'bn', 'hi'}.contains(l.code);
+        expect(
+          l.scriptTextUnchecked,
+          !checked && l.script != 'latin',
+          reason: l.code,
+        );
+        if (l.script == 'latin' && !checked) continue;
+        if (l.hasSeveralScripts) {
+          expect(l.asksScriptsInOwnScript, isTrue, reason: l.code);
           for (final s in l.scripts) {
-            expect(l.canReadIn(s), isNull, reason: '${l.code} $s');
+            expect(l.canReadIn(s), isNotNull, reason: '${l.code} $s');
           }
+        } else {
+          expect(l.asksInOwnScript, isTrue, reason: l.code);
         }
       }
     });
@@ -524,12 +529,13 @@ void main() {
     });
 
     testWidgets('a tap opens the sheet, which asks in the language\'s own '
-        'script only, and one tap answers language and script', (tester) async {
+        'script with the English under it, and one tap answers language and '
+        'script', (tester) async {
       usePhone(tester);
       final state = await openPage(tester);
       final l10n = l10nOf(tester);
-      for (final (name, code, question, read, speak, answered)
-          in <(String, String, String, String, String, String)>[
+      for (final (name, code, question, read, speak, answered, english)
+          in <(String, String, String, String, String, String, String)>[
             (
               'Bengali',
               'bn',
@@ -537,6 +543,7 @@ void main() {
               'আমি পূর্ব নাগরী লিপি পড়তে পারি',
               'I can only speak Bengali',
               'Can read the Eastern Nagari script',
+              'Eastern Nagari',
             ),
             (
               'Hindi',
@@ -545,6 +552,7 @@ void main() {
               'मुझे देवनागरी लिपि पढ़नी आती है',
               'I can only speak Hindi',
               'Can only speak Hindi',
+              'Devanagari',
             ),
           ]) {
         await tester.enterText(
@@ -555,14 +563,14 @@ void main() {
         await tester.tap(find.byKey(ValueKey<String>('lang-$code')));
         await tester.pumpAndSettle();
         // The question and "can read" are in the language's own script,
-        // marked as that language, with no English under either.
+        // marked as that language, with the English under each.
         expect(find.text(question), findsOneWidget);
         expect(find.text(read), findsOneWidget);
         expect(markedAs(tester, find.text(question)), Locale(code));
         expect(markedAs(tester, find.text(read)), Locale(code));
         expect(find.text(speak), findsOneWidget);
-        expect(find.textContaining('script?'), findsNothing);
-        expect(find.textContaining('I can read the'), findsNothing);
+        expect(find.text('Do you read the $english script?'), findsOne);
+        expect(find.text('I can read the $english script'), findsOne);
         // Never Yes or No.
         expect(find.text('Yes'), findsNothing);
         expect(find.text('No'), findsNothing);
@@ -631,8 +639,8 @@ void main() {
       }
     });
 
-    testWidgets('the unchecked Assamese texts are not shown: the sheet asks in '
-        'English, naming the script Eastern Nagari (#552)', (tester) async {
+    testWidgets('the unchecked Assamese texts are shown, with the English '
+        'under them (owner, 2026-10-18)', (tester) async {
       usePhone(tester);
       await openPage(tester);
       await tester.enterText(
@@ -642,9 +650,11 @@ void main() {
       await tester.pumpAndSettle();
       await tester.tap(find.byKey(const ValueKey<String>('lang-as')));
       await tester.pumpAndSettle();
+      final own = find.text('আপুনি পূব নাগৰী লিপি পঢ়িব পাৰেনে?');
+      expect(own, findsOne);
+      expect(markedAs(tester, own), const Locale('as'));
       expect(find.text('Do you read the Eastern Nagari script?'), findsOne);
       expect(find.text('I can read the Eastern Nagari script'), findsOne);
-      expect(find.textContaining('আপুনি'), findsNothing);
     });
 
     testWidgets('a checked multi-script entry (no script_text) asks in its own '
@@ -847,6 +857,133 @@ void main() {
     });
   });
 
+  group(
+    'the sheet asks in the own script, English below (owner, 2026-10-18)',
+    () {
+      for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+        testWidgets('Kannada at 1.4x text, ${mode.name}: the own-script '
+            'question with the English below, then both answers', (
+          tester,
+        ) async {
+          usePhone(tester, textScale: 1.4, navBar: true);
+          await pumpScreen(
+            tester,
+            const SpokenLanguagesPage(),
+            state: AppState.test(settings: SettingsNotifier()),
+            themeMode: mode,
+          );
+          final l10n = l10nOf(tester);
+          await tester.enterText(
+            find.byKey(const ValueKey<String>('known-search')),
+            'Kannada',
+          );
+          await tester.pumpAndSettle();
+          await tester.tap(find.byKey(const ValueKey<String>('lang-kn')));
+          await tester.pumpAndSettle();
+          final sheet = find.byType(BottomSheet);
+          final box = tester.getRect(sheet);
+          final own = find.text('ನೀವು ಕನ್ನಡ ಲಿಪಿಯನ್ನು ಓದಬಲ್ಲಿರಾ?');
+          final english = find.text('Do you read the Kannada script?');
+          expect(own, findsOneWidget);
+          expect(english, findsOneWidget);
+          expect(markedAs(tester, own), const Locale('kn'));
+          expect(
+            tester.getRect(own).bottom,
+            lessThanOrEqualTo(tester.getRect(english).top),
+          );
+          final read = find.byKey(const ValueKey<String>('know-read'));
+          expect(
+            find.descendant(
+              of: read,
+              matching: find.text('ನಾನು ಕನ್ನಡ ಲಿಪಿಯನ್ನು ಓದಬಲ್ಲೆ'),
+            ),
+            findsOneWidget,
+          );
+          expect(
+            find.descendant(
+              of: read,
+              matching: find.text('I can read the Kannada script'),
+            ),
+            findsOneWidget,
+          );
+          // A learner who only speaks Kannada picks the English answer.
+          expect(
+            find.descendant(
+              of: find.byKey(const ValueKey<String>('know-speak')),
+              matching: find.text(l10n.knownSpeakOnly('Kannada')),
+            ),
+            findsOneWidget,
+          );
+          for (final f in <Finder>[own, english, read]) {
+            final rect = tester.getRect(f);
+            expect(rect.top, greaterThanOrEqualTo(box.top));
+            expect(rect.right, lessThanOrEqualTo(box.right));
+            expect(rect.left, greaterThanOrEqualTo(box.left));
+            expect(rect.bottom, lessThanOrEqualTo(844 - navBarHeight));
+          }
+        });
+      }
+    },
+  );
+
+  group('Report a mistake on unchecked texts (owner, 2026-10-18)', () {
+    for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+      testWidgets('Kannada, unchecked: a bug icon of 48 dp opens the report '
+          'with the language and the texts; at 1.4x, ${mode.name}', (
+        tester,
+      ) async {
+        usePhone(tester, textScale: 1.4, navBar: true);
+        await pumpScreen(
+          tester,
+          const SpokenLanguagesPage(),
+          state: AppState.test(settings: SettingsNotifier()),
+          themeMode: mode,
+        );
+        final l10n = l10nOf(tester);
+        await tester.enterText(
+          find.byKey(const ValueKey<String>('known-search')),
+          'Kannada',
+        );
+        await tester.pumpAndSettle();
+        await tester.tap(find.byKey(const ValueKey<String>('lang-kn')));
+        await tester.pumpAndSettle();
+        final icon = find.byKey(const ValueKey<String>('know-report'));
+        expect(icon, findsOneWidget);
+        expect(find.byTooltip(l10n.knownReportMistake), findsOneWidget);
+        final rect = tester.getRect(icon);
+        expect(rect.width, greaterThanOrEqualTo(48));
+        expect(rect.height, greaterThanOrEqualTo(48));
+        expect(
+          rect.right,
+          lessThanOrEqualTo(tester.getRect(find.byType(BottomSheet)).right),
+        );
+        await tester.tap(icon);
+        await tester.pumpAndSettle();
+        final detail = tester
+            .widget<ReportPage>(find.byType(ReportPage))
+            .request
+            .detail!;
+        expect(detail, contains('kn'));
+        expect(detail, contains('question: ನೀವು ಕನ್ನಡ ಲಿಪಿಯನ್ನು ಓದಬಲ್ಲಿರಾ?'));
+        expect(detail, contains('can read: ನಾನು ಕನ್ನಡ ಲಿಪಿಯನ್ನು ಓದಬಲ್ಲೆ'));
+      });
+    }
+
+    testWidgets('Bengali, checked: no bug icon', (tester) async {
+      usePhone(tester);
+      await openPage(tester);
+      await tester.enterText(
+        find.byKey(const ValueKey<String>('known-search')),
+        'Bengali',
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const ValueKey<String>('lang-bn')));
+      await tester.pumpAndSettle();
+      expect(find.byKey(const ValueKey<String>('know-read')), findsOneWidget);
+      expect(find.byKey(const ValueKey<String>('know-report')), findsNothing);
+    });
+  });
+
   group('the sheet names its language (#553)', () {
     for (final (code, query, name, asks) in <(String, String, String, String)>[
       (
@@ -940,10 +1077,10 @@ void main() {
         );
         final l10n = l10nOf(tester);
         await openPunjabi(tester);
-        // Unchecked texts are not shown: English, naming each script by
-        // its own name (#552).
+        // The unchecked texts are shown, with English under them, naming
+        // each script by its own name (#552, owner, 2026-10-18).
         expect(find.text('Which scripts do you read Punjabi in?'), findsOne);
-        expect(find.textContaining('ਤੁਸੀਂ'), findsNothing);
+        expect(find.textContaining('ਤੁਸੀਂ'), findsOneWidget);
         final sheet = tester.getRect(find.byType(BottomSheet));
         for (final (key, text) in <(String, String)>[
           ('know-script-gurmukhi', 'I can read the Gurmukhi script'),
