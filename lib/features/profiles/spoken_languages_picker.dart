@@ -581,7 +581,7 @@ class _KnownLanguageSheetState extends State<KnownLanguageSheet> {
                     english: englishQuestion,
                     showEnglish: below,
                     locale: locale,
-                    ownStyle: theme.textTheme.titleLarge!,
+                    ownStyle: theme.textTheme.titleMedium!,
                     englishStyle: theme.textTheme.bodyMedium!.copyWith(
                       color: theme.colorScheme.onSurfaceVariant,
                     ),
@@ -603,7 +603,9 @@ class _KnownLanguageSheetState extends State<KnownLanguageSheet> {
                       english: l10n.knownCanReadFallback(name(script)),
                       showEnglish: below,
                       locale: locale,
-                      ownStyle: theme.textTheme.bodyLarge!,
+                      // Body size, set apart from the English by its colour:
+                      // a larger own-script text pushed Done off screen at 1.4x.
+                      ownStyle: theme.textTheme.bodyMedium!,
                       englishStyle: theme.textTheme.bodyMedium!.copyWith(
                         color: theme.colorScheme.onSurfaceVariant,
                       ),
