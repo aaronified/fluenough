@@ -57,7 +57,9 @@ HIDDEN = {
 # the theme list. The spoken languages live in assets/, not here.
 BUNDLED = {"decks/themes.yaml"}
 
-# Kinds of file that hold no deck: one of each per language at most.
+# Kinds of file that hold no deck: one of each per language at most. A
+# language whose files are all of these has no written deck, and is left
+# out of the index.
 NOT_DECKS = {"path", "facts", "numbers", "romanisation", "sounds", "script"}
 
 
@@ -231,6 +233,10 @@ def build(reports: list[vd.Report] | None = None) -> dict:
         lang = ctx.lang(code)
         block = _language_block(files)
         entries = [_file_entry(p, by_path.get(p.resolve())) for p in files]
+        # A course with a path but no written deck is not offered: the
+        # app would list it empty. It appears once its first deck lands.
+        if all(e["kind"] in NOT_DECKS for e in entries):
+            continue
         natives = lang.natives()
         path_rep = lang.path()
         plan = path_rep.plan if path_rep is not None else None
