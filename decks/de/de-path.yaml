@@ -1,0 +1,666 @@
+# The order German is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner
+# from English is taught de-en-home for de-home (ADR-0013, ADR-0036).
+#
+# This is also German's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"): every
+# unit from the first words to B1, with its size in words, its grammar
+# topics, the three milestones, and for each planned unit its listening and
+# reading passages. No German deck is written yet, so every unit is
+# planned: the course teaches each as "Coming" until its deck is written.
+# Sizes follow the plan's levels (about 700, 900 and 1,200 words; low
+# confidence) and are one number for every native language. German is FSI
+# category II (docs/plans/language-paths.md: 900 hours, x1.5): the tier
+# stretches the days a level takes, not the words in it, and the Goethe and
+# telc word lists for A1, A2 and B1 (about 650, 1,300 and 2,400 words in)
+# agree with the plan's sizes. A theme named here that decks/themes.yaml
+# does not list yet is added to it with its first deck.
+#
+# The order follows docs/plans/words-rules-sentences.md (owner, 2026-10-07,
+# and 2026-10-17: "build the path files for all present languages via an
+# opus agent, as per our current path design"):
+# 1. the phrasebook, taught whole from the first lesson;
+# 2. the first word units;
+# 3. no script units: German is written in Latin letters. Its four extra
+#    letters, ä ö ü and ß, are taught in the script guide (de-script.yaml)
+#    and the sounds unit, not in alphabet decks, so `alphabet` is empty;
+# 4. a core of about 200 common words in themed units, before the large
+#    tables ("Yes, smaller (~200)");
+# 5. rules as forms: articles and gender, noun plurals, sein and haben, the
+#    present, verb-second order, negation, then the cases, practised on the
+#    words already known;
+# 6. sentences, each after its words and rules; then the other themes,
+#    each its words, then its rules, then its sentences.
+# German's grammar keeps the Germanic order of
+# docs/plans/language-paths-scheme.md within each level: articles and
+# gender, verb-second order, the present, modals, separable verbs, the
+# perfect, subordinate clause order, the passive; with German's
+# adjustments, "4 cases after articles; adjective endings late". So the
+# nominative and accusative come in A1 after the articles, the dative in
+# A1 with the prepositions, the two-way prepositions in A2, the genitive
+# in B1; the adjective endings close A2, and the endings with no article
+# and the weak nouns come in B1.
+#
+# The course teaches the standard German of Germany. Austrian and Swiss
+# standard words (Jänner, Paradeiser, Velo, grüezi) are given in region
+# notes on the cards that differ, and gathered in B1's last unit,
+# de-varieties. Which standard to teach is to confirm with the owner and a
+# native reviewer.
+#
+# The core's order is by judgement, most common first: about me, everyday
+# verbs, the common adverbs and function words, how much and how many,
+# describing words, where things are, more verbs. It was meant to come from
+# Wikipedia's counts (tools/wikipedia_frequency.py, #516); no German
+# Wikipedia dump was fetched here (2026-10-18): order the core again from
+# the counts once they are written.
+#
+# A planned unit holds one core id. Where a written unit will hold more
+# than one deck, as Telugu's do, the others are named in a comment over
+# the unit they join; a theme's sentence deck, de-<theme>-sentences, joins
+# its theme's unit once written.
+#
+# Every deck of German is listed exactly once.
+schema: 1
+kind: "path"
+id: "de-path"
+language: "de"
+# The gender classes a noun's gender is one of (#512; DECK-FORMAT.md, Card
+# data): masculine der, feminine die and neuter das. A plural takes no
+# gender of its own.
+genders: ["m", "f", "n"]
+# Where German is spoken, for a rater's region and a card's region note
+# (ADR-0036): Germany in its three dialect areas (Low German in the north,
+# Central German, Upper German in the south), then Austria and Switzerland,
+# whose standard German has words and forms of its own. Each is named with
+# example cities so that a rater can place themselves. Low confidence at
+# the edges (Berlin, Vorarlberg, South Tyrol, Liechtenstein, Luxembourg and
+# eastern Belgium): a native reviewer checks this list before any rating
+# names a region. The ids are permanent, as card ids are; rename a name,
+# never an id. The app adds "Elsewhere" after them.
+regions:
+  - id: "germany-north"
+    name: { "en": "Northern Germany (Hamburg, Bremen, Hanover, Kiel, Rostock)" }
+  - id: "germany-central"
+    name: { "en": "Central Germany (Cologne, Frankfurt, Leipzig, Dresden, Berlin)" }
+  - id: "germany-south"
+    name: { "en": "Southern Germany (Munich, Stuttgart, Nuremberg, Freiburg)" }
+  - id: "austria"
+    name: { "en": "Austria (Vienna, Graz, Linz, Innsbruck)" }
+  - id: "switzerland"
+    name: { "en": "Switzerland (Zurich, Bern, Basel, Lucerne)" }
+# "*" takes decks a learner adds (#22): one of a unit's theme at the
+# bottom of that unit, any other in the last unit.
+units:
+  # 1. The phrasebook, taught whole from the first lesson.
+  # de-first-words joins it when written.
+  - planned: { id: "de-phrasebook", theme: "first-words", words: 10 }
+    listening_passages:
+      - { id: "first-hello", text: { "en": "Hallo, danke and tschüss: greeting a shopkeeper and leaving" } }
+    reading_passages:
+      - { id: "door-signs", text: { "en": "Signs on doors: open, closed, push, pull" } }
+  # 2. The first word units. The sounds English lacks first: ü and ö, the
+  # two sounds of ch, the long and short vowels, and the final -b, -d and -g
+  # said as p, t and k.
+  - planned: { id: "de-sound-differences", grammar: "sound-differences", words: 12 }
+    listening_passages:
+      - { id: "sounds-alike", text: { "en": "Pairs said one after the other: schon and schön, Mutter and Mütter, Stadt and Staat" } }
+    reading_passages:
+      - { id: "umlaut-words", text: { "en": "A short list of everyday words spelled with ä, ö, ü and ß" } }
+  - planned: { id: "de-questions", theme: "questions", words: 15 }
+    listening_passages:
+      - { id: "asking-around", text: { "en": "Asking who, what, where and when at a station" } }
+    reading_passages:
+      - { id: "tourist-leaflet", text: { "en": "A leaflet answering the questions a visitor asks" } }
+  - planned: { id: "de-addressing", theme: "addressing", words: 15 }
+    listening_passages:
+      - { id: "du-or-sie", text: { "en": "Greeting a neighbour's child with du and an older stranger with Sie" } }
+    reading_passages:
+      - { id: "name-badges", text: { "en": "Name badges at a meeting, with Herr, Frau and surnames" } }
+  - planned: { id: "de-pronouns", theme: "pronouns", words: 20 }
+    listening_passages:
+      - { id: "who-is-who", text: { "en": "Pointing out who is who at a family gathering: he, she, they" } }
+    reading_passages:
+      - { id: "seating-chart", text: { "en": "A seating chart for a party, with names and who sits where" } }
+  - planned: { id: "de-family", theme: "family", words: 30 }
+    listening_passages:
+      - { id: "my-family", text: { "en": "Someone describes the people in a family photo" } }
+    reading_passages:
+      - { id: "family-tree", text: { "en": "A small family tree with names and relations" } }
+  - planned: { id: "de-numbers-1-20", theme: "numbers-1-20", words: 20 }
+    listening_passages:
+      - { id: "counting-aloud", text: { "en": "Counting objects aloud, from one to twenty" } }
+    reading_passages:
+      - { id: "room-numbers", text: { "en": "Room numbers on a row of doors" } }
+  # 3. No script units: German is written in Latin letters.
+  # 4. The core: about 200 common words, most common first (by judgement
+  # until the Wikipedia counts are written, #516).
+  - planned: { id: "de-about-me", theme: "about-me", words: 25 }
+    listening_passages:
+      - { id: "introducing-yourself", text: { "en": "Introducing yourself to a new classmate" } }
+    reading_passages:
+      - { id: "registration-form", text: { "en": "A simple registration form: name, age, country, language" } }
+  - planned: { id: "de-everyday-verbs", theme: "everyday-verbs", words: 40 }
+    listening_passages:
+      - { id: "morning-routine", text: { "en": "A father says what each person in the house does in the morning" } }
+    reading_passages:
+      - { id: "fridge-note", text: { "en": "A note on the fridge: what to eat, what to drink and where things are" } }
+  - planned: { id: "de-adverbs", theme: "adverbs", words: 35 }
+    listening_passages:
+      - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
+    reading_passages:
+      - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
+  - planned: { id: "de-quantities", theme: "quantities", words: 25 }
+    listening_passages:
+      - { id: "at-the-bakery", text: { "en": "Asking how much and how many at a bakery counter" } }
+    reading_passages:
+      - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
+  - planned: { id: "de-describing", theme: "describing", words: 40 }
+    listening_passages:
+      - { id: "how-are-you-feeling", text: { "en": "A friend asks how you feel today, and you answer" } }
+    reading_passages:
+      - { id: "postcard-from-the-sea", text: { "en": "A short postcard from the Baltic coast: the weather and the food" } }
+  - planned: { id: "de-location", theme: "location", words: 15 }
+    listening_passages:
+      - { id: "where-are-my-keys", text: { "en": "Looking for keys: here, there, inside, outside, above, below" } }
+    reading_passages:
+      - { id: "room-description", text: { "en": "A short description of a room and where its furniture is" } }
+  - planned: { id: "de-more-verbs", theme: "more-verbs", words: 25 }
+    listening_passages:
+      - { id: "after-work", text: { "en": "Two friends say what they do after work" } }
+    reading_passages:
+      - { id: "weekly-plan", text: { "en": "A weekly plan for a household: who goes where and does what" } }
+  # 5. Rules as forms, practised on the words known: the articles and
+  # gender, the plural, then the verb forms and the word order, then the
+  # first two cases.
+  - planned: { id: "de-grammar-articles-gender", grammar: ["articles-gender", "nominative"] }
+    listening_passages:
+      - { id: "der-die-das", text: { "en": "Naming things around a kitchen with der, die and das" } }
+    reading_passages:
+      - { id: "labelled-picture", text: { "en": "A labelled picture of a room, each word with its article" } }
+  - planned: { id: "de-grammar-plural", grammar: "plural" }
+    listening_passages:
+      - { id: "one-and-many", text: { "en": "Counting things in a shop: one apple, two apples, one book, three books" } }
+    reading_passages:
+      - { id: "stock-list", text: { "en": "A shop's stock list with how many of each" } }
+  - planned: { id: "de-grammar-sein-haben", grammar: ["sein", "haben"] }
+    listening_passages:
+      - { id: "who-and-what", text: { "en": "Saying who someone is, how they are and what they have" } }
+    reading_passages:
+      - { id: "introduction-card", text: { "en": "A short card introducing a person: who they are, where they are from, what they have" } }
+  # de-pronouns-sentences and de-verbs-sentences join this unit.
+  - planned: { id: "de-grammar-present", grammar: "present-regular" }
+    listening_passages:
+      - { id: "what-we-do", text: { "en": "Friends say where they live, what they learn and what they play" } }
+    reading_passages:
+      - { id: "lunch-notes", text: { "en": "Short notes about who works, who cooks and who lives where" } }
+  - planned: { id: "de-grammar-present-irregular", grammar: "present-stem-change" }
+    listening_passages:
+      - { id: "what-do-you-eat", text: { "en": "Saying what you eat, read, see and take: isst, liest, sieht, nimmt" } }
+    reading_passages:
+      - { id: "menu-choices", text: { "en": "Short notes of who eats and drinks what at a café" } }
+  - planned: { id: "de-grammar-word-order", grammar: ["verb-second", "verb-first-questions"] }
+    listening_passages:
+      - { id: "today-i-work", text: { "en": "Saying what happens today, tomorrow and at the weekend: the verb comes second" } }
+    reading_passages:
+      - { id: "diary-week", text: { "en": "A week in a diary, each line starting with a day" } }
+  - planned: { id: "de-grammar-negation", grammar: ["nicht", "kein"] }
+    listening_passages:
+      - { id: "no-thanks", text: { "en": "Saying no: no time, no money, not today, not hungry" } }
+    reading_passages:
+      - { id: "not-included", text: { "en": "A holiday flat's list of what is and is not included" } }
+  - planned: { id: "de-grammar-accusative", grammar: "accusative" }
+    listening_passages:
+      - { id: "i-need-a", text: { "en": "Saying what you need, want and buy: einen Tisch, eine Lampe, ein Bett" } }
+    reading_passages:
+      - { id: "moving-list", text: { "en": "A list of what to buy for a new flat" } }
+  - planned: { id: "de-grammar-possessives", grammar: "possessives" }
+    listening_passages:
+      - { id: "whose-is-it", text: { "en": "Sorting out whose bag, whose coat and whose keys" } }
+    reading_passages:
+      - { id: "lost-items-note", text: { "en": "A note about things left behind and whose they are" } }
+  # 6. Then the other A1 themes, each its words, its rules, then its
+  # sentences.
+  - planned: { id: "de-work", theme: "work", words: 35 }
+    listening_passages:
+      - { id: "what-do-you-do", text: { "en": "Two people ask each other what they do for a living" } }
+    reading_passages:
+      - { id: "business-card", text: { "en": "A business card and a short job description" } }
+  - planned: { id: "de-numbers-big", theme: "numbers-big", words: 35 }
+    listening_passages:
+      - { id: "big-numbers", text: { "en": "Hearing prices, years and phone numbers, with the ones before the tens" } }
+    reading_passages:
+      - { id: "price-tags", text: { "en": "Price tags in euros and a bus-route number board" } }
+  - planned: { id: "de-market", theme: "market", words: 40 }
+    listening_passages:
+      - { id: "at-the-market", text: { "en": "Buying fruit and vegetables at a weekly market stall" } }
+    reading_passages:
+      - { id: "market-price-board", text: { "en": "A price board at a market" } }
+  - planned: { id: "de-groceries", theme: "groceries", words: 40 }
+    listening_passages:
+      - { id: "shopping-list-aloud", text: { "en": "Two people go through a shopping list" } }
+    reading_passages:
+      - { id: "shopping-list", text: { "en": "A handwritten shopping list" } }
+  # de-food-sentences joins this unit.
+  - planned: { id: "de-food", theme: "food", words: 55 }
+    listening_passages:
+      - { id: "ordering-a-meal", text: { "en": "Choosing dishes from a menu" } }
+    reading_passages:
+      - { id: "menu-card", text: { "en": "A restaurant menu card with dishes and prices" } }
+  - planned: { id: "de-grammar-modals", grammar: "modal-verbs" }
+    listening_passages:
+      - { id: "can-must-may", text: { "en": "Saying what you can, must, want and may do today" } }
+    reading_passages:
+      - { id: "house-rules", text: { "en": "The house rules of a youth hostel" } }
+  - planned: { id: "de-transport", theme: "transport", words: 35 }
+    listening_passages:
+      - { id: "tram-stop", text: { "en": "Asking which tram goes to the main station" } }
+    reading_passages:
+      - { id: "timetable", text: { "en": "A bus and U-Bahn timetable" } }
+  - planned: { id: "de-directions", theme: "directions", words: 30 }
+    listening_passages:
+      - { id: "asking-the-way", text: { "en": "Asking the way to the station and being told" } }
+    reading_passages:
+      - { id: "simple-map", text: { "en": "A simple map with a route in words" } }
+  - planned: { id: "de-grammar-dative", grammar: "dative" }
+    listening_passages:
+      - { id: "giving-presents", text: { "en": "Saying who gives what to whom at a birthday" } }
+    reading_passages:
+      - { id: "gift-list", text: { "en": "A list of presents and who they are for" } }
+  - planned: { id: "de-grammar-prepositions", grammar: ["prepositions-accusative", "prepositions-dative"] }
+    listening_passages:
+      - { id: "with-the-bus", text: { "en": "Saying how and with whom you travel: mit dem Bus, für meine Mutter" } }
+    reading_passages:
+      - { id: "route-note", text: { "en": "A note on how to get to a friend's flat" } }
+  - planned: { id: "de-body", theme: "body", words: 30 }
+    listening_passages:
+      - { id: "at-the-doctors", text: { "en": "Telling a doctor where it hurts" } }
+    reading_passages:
+      - { id: "stretching-chart", text: { "en": "A chart of simple morning stretches" } }
+  - planned: { id: "de-places", theme: "places", words: 40 }
+    listening_passages:
+      - { id: "walk-to-the-bakery", text: { "en": "A neighbour names the places you pass on the way to the bakery" } }
+    reading_passages:
+      - { id: "street-signs", text: { "en": "Signs along a street: pharmacy, school, bank, church" } }
+  - planned: { id: "de-home", theme: "home", words: 40 }
+    listening_passages:
+      - { id: "a-flat-tour", text: { "en": "A tour of a flat, room by room" } }
+    reading_passages:
+      - { id: "flat-advert", text: { "en": "A short advert for a flat to rent" } }
+  - planned: { id: "de-grammar-conjunctions", grammar: "coordinating-conjunctions" }
+    listening_passages:
+      - { id: "and-but-or", text: { "en": "Joining two things you do: und, aber, oder, denn" } }
+    reading_passages:
+      - { id: "short-email", text: { "en": "A short email joining plans with and, but and because" } }
+  - planned: { id: "de-time", theme: "time", words: 30 }
+    listening_passages:
+      - { id: "what-time-is-it", text: { "en": "Asking and telling the time, with halb and Viertel" } }
+    reading_passages:
+      - { id: "opening-hours", text: { "en": "The opening hours on a shop door" } }
+  - planned: { id: "de-grammar-separable-verbs", grammar: "separable-verbs" }
+    listening_passages:
+      - { id: "getting-up", text: { "en": "Saying when you get up, go out and come back: the prefix goes to the end" } }
+    reading_passages:
+      - { id: "day-plan", text: { "en": "A day's plan with times: aufstehen, einkaufen, anrufen" } }
+  - planned: { id: "de-help", theme: "help", words: 20 }
+    listening_passages:
+      - { id: "lost-in-the-city", text: { "en": "Asking for help when lost" } }
+    reading_passages:
+      - { id: "emergency-numbers", text: { "en": "A card of emergency numbers and what to say" } }
+    milestone: "A1"
+  # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
+  # then its sentences.
+  - planned: { id: "de-daily-life", theme: "daily-life", words: 50 }
+    listening_passages:
+      - { id: "a-normal-day", text: { "en": "Someone talks through an ordinary day" } }
+    reading_passages:
+      - { id: "daily-timetable", text: { "en": "A timetable for a day: wake, work, eat, sleep" } }
+  - planned: { id: "de-grammar-reflexives", grammar: "reflexive-verbs" }
+    listening_passages:
+      - { id: "getting-ready", text: { "en": "Saying what you do to yourself in the morning: wake up, wash, dress" } }
+    reading_passages:
+      - { id: "morning-checklist", text: { "en": "A checklist for getting ready in the morning" } }
+  - planned: { id: "de-calendar", theme: "calendar", words: 35 }
+    listening_passages:
+      - { id: "making-a-date", text: { "en": "Fixing a day and a time with a friend" } }
+    reading_passages:
+      - { id: "wall-calendar", text: { "en": "A wall calendar with appointments" } }
+  - planned: { id: "de-grammar-perfect-haben", grammar: ["perfect-haben", "participle-regular"] }
+    listening_passages:
+      - { id: "what-i-did-yesterday", text: { "en": "Saying what you did yesterday: ich habe gekocht, gearbeitet, gespielt" } }
+    reading_passages:
+      - { id: "yesterday-diary", text: { "en": "A short diary entry about yesterday" } }
+  - planned: { id: "de-clothes", theme: "clothes", words: 45 }
+    listening_passages:
+      - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
+    reading_passages:
+      - { id: "shop-offer-sign", text: { "en": "A clothes shop's sign with its offers" } }
+  - planned: { id: "de-grammar-perfect-sein", grammar: ["perfect-sein", "participle-irregular"] }
+    listening_passages:
+      - { id: "a-busy-weekend", text: { "en": "Telling where you went and what you saw last weekend" } }
+    reading_passages:
+      - { id: "trip-postcard", text: { "en": "A postcard about a weekend trip" } }
+  - planned: { id: "de-animals", theme: "animals", words: 35 }
+    listening_passages:
+      - { id: "a-farm-visit", text: { "en": "A child names the animals seen on a visit to a farm" } }
+    reading_passages:
+      - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
+  - planned: { id: "de-weather", theme: "weather", words: 45 }
+    listening_passages:
+      - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain, wind and snow in the Alps" } }
+    reading_passages:
+      - { id: "weather-message", text: { "en": "A message to a friend about the weather" } }
+  - planned: { id: "de-grammar-two-way-prepositions", grammar: ["two-way-prepositions", "position-verbs"] }
+    listening_passages:
+      - { id: "where-does-it-go", text: { "en": "Moving into a flat: where things stand and where to put them" } }
+    reading_passages:
+      - { id: "moving-instructions", text: { "en": "A note to the movers saying where each thing goes" } }
+  - planned: { id: "de-things", theme: "things", words: 50 }
+    listening_passages:
+      - { id: "packing-for-a-trip", text: { "en": "Two people pack a bag for a trip" } }
+    reading_passages:
+      - { id: "lost-property-list", text: { "en": "A lost-property list at a railway station" } }
+  - planned: { id: "de-shopping", theme: "shopping", words: 50 }
+    listening_passages:
+      - { id: "asking-the-price", text: { "en": "Asking about price and size at a shop" } }
+    reading_passages:
+      - { id: "price-list", text: { "en": "A shop's price list and its offers" } }
+  - planned: { id: "de-grammar-pronoun-cases", grammar: ["pronouns-accusative", "pronouns-dative"] }
+    listening_passages:
+      - { id: "give-it-to-me", text: { "en": "Asking someone to pass, give and show things: gib es mir" } }
+    reading_passages:
+      - { id: "short-requests", text: { "en": "Short written requests that use mich, mir, ihn and ihm" } }
+  - planned: { id: "de-eating-out", theme: "eating-out", words: 40 }
+    listening_passages:
+      - { id: "booking-a-table", text: { "en": "Booking a table and ordering" } }
+    reading_passages:
+      - { id: "restaurant-bill", text: { "en": "A restaurant bill and a tip" } }
+  - planned: { id: "de-cooking", theme: "cooking", words: 45 }
+    listening_passages:
+      - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes a dish" } }
+    reading_passages:
+      - { id: "recipe-card", text: { "en": "A recipe card with its steps" } }
+  - planned: { id: "de-grammar-imperative", grammar: "imperative" }
+    listening_passages:
+      - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class, to one pupil and to all" } }
+    reading_passages:
+      - { id: "signs-and-rules", text: { "en": "Signs saying what to do and what not to do" } }
+  - planned: { id: "de-school", theme: "school", words: 45 }
+    listening_passages:
+      - { id: "school-day", text: { "en": "A child describes the school day" } }
+    reading_passages:
+      - { id: "class-timetable", text: { "en": "A school timetable" } }
+  - planned: { id: "de-hobbies", theme: "hobbies", words: 50 }
+    listening_passages:
+      - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends" } }
+    reading_passages:
+      - { id: "club-poster", text: { "en": "A poster for a sports and music club" } }
+  - planned: { id: "de-grammar-comparison", grammar: "comparison" }
+    listening_passages:
+      - { id: "which-is-better", text: { "en": "Two friends compare two phones" } }
+    reading_passages:
+      - { id: "two-cities", text: { "en": "A short text comparing two cities" } }
+  - planned: { id: "de-illness", theme: "illness", words: 40 }
+    listening_passages:
+      - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
+    reading_passages:
+      - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
+  - planned: { id: "de-grammar-subordinate-clauses", grammar: ["verb-final", "weil-dass-wenn"] }
+    listening_passages:
+      - { id: "why-i-stayed-home", text: { "en": "Saying why you stayed at home: weil, dass and wenn send the verb to the end" } }
+    reading_passages:
+      - { id: "excuse-note", text: { "en": "A note excusing a child from school, giving the reason" } }
+  - planned: { id: "de-chores", theme: "chores", words: 35 }
+    listening_passages:
+      - { id: "cleaning-day", text: { "en": "Flatmates share the cleaning" } }
+    reading_passages:
+      - { id: "chore-list", text: { "en": "A weekly cleaning rota on the wall of a shared flat" } }
+  - planned: { id: "de-appearance", theme: "appearance", words: 40 }
+    listening_passages:
+      - { id: "describing-a-friend", text: { "en": "Describing a friend to someone who will meet them at the station" } }
+    reading_passages:
+      - { id: "lost-and-found-notice", text: { "en": "A lost-and-found notice describing a bag" } }
+  - planned: { id: "de-grammar-past-common", grammar: "simple-past-common" }
+    listening_passages:
+      - { id: "when-i-was-small", text: { "en": "Telling where you were, what you had and what you could do as a child: war, hatte, konnte" } }
+    reading_passages:
+      - { id: "childhood-note", text: { "en": "A short note remembering a childhood summer" } }
+  - planned: { id: "de-verbs-3", theme: "verbs-3", words: 55 }
+    listening_passages:
+      - { id: "a-busy-day", text: { "en": "Someone lists everything they did in a day" } }
+    reading_passages:
+      - { id: "diary-entry", text: { "en": "A short diary entry" } }
+  - planned: { id: "de-phone", theme: "phone", words: 35 }
+    listening_passages:
+      - { id: "phone-call", text: { "en": "A phone call to arrange a meeting" } }
+    reading_passages:
+      - { id: "text-messages", text: { "en": "A few text messages between friends" } }
+  - planned: { id: "de-journey", theme: "journey", words: 50 }
+    listening_passages:
+      - { id: "ticket-counter", text: { "en": "Buying a train ticket at the counter" } }
+    reading_passages:
+      - { id: "train-timetable", text: { "en": "A train timetable and a platform notice" } }
+  - planned: { id: "de-grammar-adjective-endings", grammar: ["adjective-endings-definite", "adjective-endings-indefinite"] }
+    listening_passages:
+      - { id: "the-red-jacket", text: { "en": "Choosing between the red jacket and a blue one in a shop" } }
+    reading_passages:
+      - { id: "holiday-flat-ad", text: { "en": "An advert describing a flat for the holidays" } }
+  - planned: { id: "de-nature", theme: "nature", words: 40 }
+    listening_passages:
+      - { id: "walk-in-the-forest", text: { "en": "Two people describe a walk in the forest by a lake" } }
+    reading_passages:
+      - { id: "park-signs", text: { "en": "Signs in a nature park" } }
+  - planned: { id: "de-adjectives-2", theme: "adjectives-2", words: 45 }
+    listening_passages:
+      - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
+    reading_passages:
+      - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
+  - planned: { id: "de-workplace", theme: "workplace", words: 40 }
+    listening_passages:
+      - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }
+    reading_passages:
+      - { id: "office-notice", text: { "en": "An office notice about a meeting" } }
+  - planned: { id: "de-geography", theme: "geography", words: 35 }
+    listening_passages:
+      - { id: "where-german-is-spoken", text: { "en": "Naming the countries, regions and cities where German is spoken" } }
+    reading_passages:
+      - { id: "german-speaking-map", text: { "en": "A map caption: Germany, Austria, Switzerland and their neighbours" } }
+    milestone: "A2"
+  # B1: the themes and grammar of the CEFR's B1.
+  - planned: { id: "de-health", theme: "health", words: 55 }
+    listening_passages:
+      - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
+    reading_passages:
+      - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
+  - planned: { id: "de-grammar-genitive", grammar: ["genitive", "prepositions-genitive"] }
+    listening_passages:
+      - { id: "my-brothers-car", text: { "en": "Saying whose things they are, and what happened during and despite the rain" } }
+    reading_passages:
+      - { id: "house-history", text: { "en": "A plaque on the history of a town's oldest house" } }
+  - planned: { id: "de-feelings", theme: "feelings", words: 55 }
+    listening_passages:
+      - { id: "a-hard-week", text: { "en": "A friend says how the week made them feel" } }
+    reading_passages:
+      - { id: "letter-to-a-friend", text: { "en": "A letter to a friend about worries and hopes" } }
+  - planned: { id: "de-grammar-future", grammar: "future" }
+    listening_passages:
+      - { id: "next-year", text: { "en": "Saying what will happen next year" } }
+    reading_passages:
+      - { id: "horoscope-column", text: { "en": "A short horoscope column" } }
+  - planned: { id: "de-news", theme: "news", words: 55 }
+    listening_passages:
+      - { id: "radio-news", text: { "en": "A short radio news bulletin" } }
+    reading_passages:
+      - { id: "headline-list", text: { "en": "A list of newspaper headlines" } }
+  - planned: { id: "de-opinions", theme: "opinions", words: 50 }
+    listening_passages:
+      - { id: "agreeing-and-disagreeing", text: { "en": "Two friends agree and disagree politely over coffee" } }
+    reading_passages:
+      - { id: "readers-letters", text: { "en": "Two short letters to a newspaper" } }
+  - planned: { id: "de-grammar-konjunktiv-ii", grammar: ["konjunktiv-ii", "wuerde-form"] }
+    listening_passages:
+      - { id: "what-would-you-do", text: { "en": "Saying what you would do and wish: ich würde, ich hätte gern, ich wäre" } }
+    reading_passages:
+      - { id: "polite-requests", text: { "en": "Polite requests written with könnten and würden" } }
+  - planned: { id: "de-travel", theme: "travel", words: 55 }
+    listening_passages:
+      - { id: "hotel-booking", text: { "en": "Booking a hotel room over the phone" } }
+    reading_passages:
+      - { id: "itinerary", text: { "en": "A two-day trip itinerary" } }
+  - planned: { id: "de-grammar-relative-clauses", grammar: "relative-clauses" }
+    listening_passages:
+      - { id: "the-man-who-came", text: { "en": "Describing people by what they did: the one who came, the one we met" } }
+    reading_passages:
+      - { id: "shop-reviews", text: { "en": "Short reviews of a shop and its staff" } }
+  - planned: { id: "de-services", theme: "services", words: 45 }
+    listening_passages:
+      - { id: "at-the-post-office", text: { "en": "Sending a parcel at the post office counter" } }
+    reading_passages:
+      - { id: "bank-form", text: { "en": "A simple bank form" } }
+  - planned: { id: "de-government", theme: "government", words: 40 }
+    listening_passages:
+      - { id: "registering-an-address", text: { "en": "Registering a new address at the town office" } }
+    reading_passages:
+      - { id: "form-instructions", text: { "en": "Instructions on an application form" } }
+  - planned: { id: "de-grammar-passive", grammar: ["passive-present", "passive-past"] }
+    listening_passages:
+      - { id: "it-was-done", text: { "en": "Saying what is done or was done, without saying by whom: wird gebaut, wurde repariert" } }
+    reading_passages:
+      - { id: "notice-board", text: { "en": "A notice board with announcements of works in a building" } }
+  - planned: { id: "de-technology", theme: "technology", words: 50 }
+    listening_passages:
+      - { id: "fixing-a-phone", text: { "en": "Asking a shop to fix a phone" } }
+    reading_passages:
+      - { id: "app-instructions", text: { "en": "Instructions inside a phone app" } }
+  - planned: { id: "de-careers", theme: "careers", words: 50 }
+    listening_passages:
+      - { id: "job-interview", text: { "en": "A short job interview" } }
+    reading_passages:
+      - { id: "job-advert", text: { "en": "A job advert" } }
+  - planned: { id: "de-grammar-zu-infinitive", grammar: ["zu-infinitive", "um-zu"] }
+    listening_passages:
+      - { id: "plans-and-purposes", text: { "en": "Saying what you plan to do and why: ich habe vor, um zu lernen" } }
+    reading_passages:
+      - { id: "course-advert", text: { "en": "An advert for an evening course and what it is for" } }
+  - planned: { id: "de-environment", theme: "environment", words: 50 }
+    listening_passages:
+      - { id: "recycling-talk", text: { "en": "Neighbours talk about sorting rubbish and the bottle deposit" } }
+    reading_passages:
+      - { id: "clean-up-notice", text: { "en": "A notice for a neighbourhood clean-up" } }
+  - planned: { id: "de-cinema", theme: "cinema", words: 50 }
+    listening_passages:
+      - { id: "after-the-film", text: { "en": "Friends talk about a film they saw" } }
+    reading_passages:
+      - { id: "film-review", text: { "en": "A short film review" } }
+  - planned: { id: "de-grammar-simple-past", grammar: "simple-past" }
+    listening_passages:
+      - { id: "a-fairy-tale", text: { "en": "A short fairy tale told in the simple past" } }
+    reading_passages:
+      - { id: "newspaper-report", text: { "en": "A short newspaper report of an event" } }
+  - planned: { id: "de-arts", theme: "arts", words: 45 }
+    listening_passages:
+      - { id: "a-music-class", text: { "en": "A teacher explains a music class" } }
+    reading_passages:
+      - { id: "exhibition-notice", text: { "en": "A notice for an art exhibition" } }
+  - planned: { id: "de-history", theme: "history", words: 45 }
+    listening_passages:
+      - { id: "a-castle-visit", text: { "en": "A guide tells the story of an old castle on the Rhine" } }
+    reading_passages:
+      - { id: "museum-card", text: { "en": "A museum card about a ruler" } }
+  - planned: { id: "de-grammar-pluperfect", grammar: "pluperfect" }
+    listening_passages:
+      - { id: "it-had-already-happened", text: { "en": "Saying what had already happened when something else began" } }
+    reading_passages:
+      - { id: "police-report", text: { "en": "A short report of what had happened before" } }
+  - planned: { id: "de-festivals", theme: "festivals", words: 40 }
+    listening_passages:
+      - { id: "christmas-market", text: { "en": "Friends plan a visit to a Christmas market and Carnival" } }
+    reading_passages:
+      - { id: "festival-invitation", text: { "en": "An invitation to a town festival" } }
+  - planned: { id: "de-weddings", theme: "weddings", words: 40 }
+    listening_passages:
+      - { id: "wedding-plans", text: { "en": "Relatives plan a wedding" } }
+    reading_passages:
+      - { id: "wedding-card", text: { "en": "A wedding invitation card" } }
+  - planned: { id: "de-grammar-adjective-endings-zero", grammar: ["adjective-endings-zero", "n-declension"] }
+    listening_passages:
+      - { id: "fresh-bread", text: { "en": "A baker's advert with fresh bread and good coffee; a student and his neighbour" } }
+    reading_passages:
+      - { id: "small-ads", text: { "en": "Small ads in a newspaper: furnished room, cheap bicycle" } }
+  - planned: { id: "de-sports", theme: "sports", words: 40 }
+    listening_passages:
+      - { id: "football-talk", text: { "en": "Friends talk about a football match" } }
+    reading_passages:
+      - { id: "match-report", text: { "en": "A short match report" } }
+  - planned: { id: "de-relationships", theme: "relationships", words: 45 }
+    listening_passages:
+      - { id: "neighbours-and-friends", text: { "en": "Talking about neighbours and old friends" } }
+    reading_passages:
+      - { id: "thank-you-note", text: { "en": "A thank-you note to a neighbour" } }
+  - planned: { id: "de-grammar-two-part-conjunctions", grammar: "two-part-conjunctions" }
+    listening_passages:
+      - { id: "either-or", text: { "en": "Choosing a holiday: either the sea or the mountains, neither too hot nor too cold" } }
+    reading_passages:
+      - { id: "holiday-brochure", text: { "en": "A holiday brochure offering both city and countryside" } }
+  - planned: { id: "de-housing", theme: "housing", words: 40 }
+    listening_passages:
+      - { id: "renting-a-flat", text: { "en": "Asking a landlord about a flat to rent" } }
+    reading_passages:
+      - { id: "rental-terms", text: { "en": "The terms of a rental" } }
+  - planned: { id: "de-emergencies", theme: "emergencies", words: 35 }
+    listening_passages:
+      - { id: "calling-for-help", text: { "en": "Calling for help after an accident" } }
+    reading_passages:
+      - { id: "safety-notice", text: { "en": "A safety notice in a building" } }
+  - planned: { id: "de-grammar-indirect-questions", grammar: "indirect-questions" }
+    listening_passages:
+      - { id: "do-you-know-whether", text: { "en": "Asking politely: do you know whether the train is late, where the exit is" } }
+    reading_passages:
+      - { id: "information-desk-faq", text: { "en": "Questions and answers at an information desk" } }
+  - planned: { id: "de-law", theme: "law", words: 35 }
+    listening_passages:
+      - { id: "police-complaint", text: { "en": "Making a complaint at a police station" } }
+    reading_passages:
+      - { id: "rights-leaflet", text: { "en": "A leaflet on a tenant's rights" } }
+  - planned: { id: "de-verbs-4", theme: "verbs-4", words: 60 }
+    listening_passages:
+      - { id: "a-long-story", text: { "en": "A story told in a sequence of events" } }
+    reading_passages:
+      - { id: "short-story", text: { "en": "A short story with a turn" } }
+  - planned: { id: "de-grammar-verbs-prepositions", grammar: ["verbs-with-prepositions", "da-wo-compounds"] }
+    listening_passages:
+      - { id: "waiting-for", text: { "en": "Saying what you wait for, think of and are interested in: worauf, darauf" } }
+    reading_passages:
+      - { id: "interview-answers", text: { "en": "Short answers in an interview about what people care about" } }
+  - planned: { id: "de-abstract-words", theme: "abstract-words", words: 55 }
+    listening_passages:
+      - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
+    reading_passages:
+      - { id: "opinion-column", text: { "en": "A short opinion column" } }
+  - planned: { id: "de-money", theme: "money", words: 45 }
+    listening_passages:
+      - { id: "at-the-bank", text: { "en": "Opening an account at a bank counter" } }
+    reading_passages:
+      - { id: "bill-and-receipt", text: { "en": "A bill and a receipt" } }
+  - planned: { id: "de-grammar-reported-speech", grammar: "konjunktiv-i" }
+    listening_passages:
+      - { id: "he-said-that", text: { "en": "A news reader passes on what a minister said" } }
+    reading_passages:
+      - { id: "reported-item", text: { "en": "A newspaper item reporting what someone said, with sei and habe" } }
+  - planned: { id: "de-literature", theme: "literature", words: 50 }
+    listening_passages:
+      - { id: "a-poem-read-aloud", text: { "en": "A teacher reads a short poem and explains it" } }
+    reading_passages:
+      - { id: "book-blurb", text: { "en": "The back-cover blurb of a novel" } }
+  - planned: { id: "de-verbs-5", theme: "verbs-5", words: 45 }
+    listening_passages:
+      - { id: "what-happened-next", text: { "en": "Telling a long story with every step in order" } }
+    reading_passages:
+      - { id: "newspaper-feature", text: { "en": "A newspaper feature with a short interview" } }
+  # Austrian and Swiss standard words and greetings, gathered: Jänner and
+  # Januar, Paradeiser and Tomate, Velo and Fahrrad, grüß Gott and grüezi.
+  - planned: { id: "de-varieties", theme: "varieties", words: 40 }
+    listening_passages:
+      - { id: "vienna-and-zurich", text: { "en": "A shopkeeper in Vienna and one in Zurich greet a customer and sell the same things" } }
+    reading_passages:
+      - { id: "two-menus", text: { "en": "A café menu in Vienna and one in Bern, side by side" } }
+    milestone: "B1"
+  - ["*"]

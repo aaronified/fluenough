@@ -1,0 +1,448 @@
+# The order Mycenaean Greek is taught in, one unit per line, from every
+# language it is taught from: each deck is named by its core id, and a
+# learner from English is taught gmy-en-<name> for gmy-<name> (ADR-0013,
+# ADR-0036).
+#
+# This is also Mycenaean Greek's B1 plan (docs/DECK-FORMAT.md, "The B1
+# plan"): every unit from the first words to B1, planned, with its size in
+# words, its grammar topics, the three milestones, and for each unit its
+# listening and reading passages. No deck of Mycenaean Greek is written
+# yet, so every unit is planned: the course teaches it as "Coming" until a
+# deck is written. A theme named here that decks/themes.yaml does not list
+# yet is added to it with its first deck.
+#
+# What survives (#584). Mycenaean Greek is known only from Linear B
+# administrative tablets and a few painted jars, from Knossos, Pylos,
+# Thebes, Mycenae and a few other sites (Chania, Tiryns, Midea), about
+# 1450 to 1200 BCE. The corpus is a few thousand tablets, most of them
+# short lists and inventories of people, livestock, textiles, metals and
+# offerings. No literature, letters or connected prose survive. So this is
+# a READING course in the language of the tablets, never a conversational
+# one: the "levels" below are reading levels, defined by what a learner can
+# read, not by CEFR's speaking descriptors (#584, question 3 to the owner).
+#
+# - A1: read a one-line tablet entry: a name or title, a logogram and a
+#   numeral; restore its Greek by the spelling rules; know the first
+#   nouns' case forms.
+# - A2: read a whole tablet of several entries, with its heading and total,
+#   and a short set (a series) of tablets; consonant stems, the cases
+#   (instrumental in -pi, the allative in -de), the dual, adjective
+#   agreement and the common verb forms.
+# - B1: read the long and famous tablets (Pylos Ta, Tn 316, Ep 704, the
+#   o-ka tablets, Jn 829) from an edition, with its editorial signs,
+#   scribal hands and uncertain readings, and say what is certain and what
+#   is reconstructed.
+#
+# Readings. Every word has two: the standard transliteration of its signs,
+# hyphenated by syllable (pa-te), and its normalised Greek, reconstructed
+# (patēr). Both are reconstructions of a kind: sign values come from the
+# decipherment (Ventris, 1952), and the Greek behind the spelling is a
+# scholar's restoration, sometimes disputed (pa-te is patēr "father" or
+# pantes "all"). Every card marks its normalised form as reconstructed. The
+# format has one `reading`; where the second goes is a gap the pull request
+# names. Pronunciation is reconstructed too: there is no text-to-speech
+# voice, and no native audio.
+#
+# Sizes. The plan's levels are about 700, 900 and 1,200 words (low
+# confidence). Mycenaean Greek cannot reach them: its interpreted
+# vocabulary, outside personal names, is perhaps a thousand words, many
+# known from one tablet, and Wiktionary's extract (kaikki.org, 2026-10-18)
+# holds 481 headwords. So this path plans an honest course of about 730
+# words, about 240, 265 and 225 a level, counting place names, gods' names
+# and the commonest personal names, which the tablets are full of and a
+# reader must know. The validator warns of each level and of the total
+# outside its range; the warnings stand, and the owner decides (#584).
+# Sizes are one number for every native language.
+#
+# The order follows docs/plans/words-rules-sentences.md (owner, 2026-10-07,
+# and 2026-10-17: "build the path files for all present languages via an
+# opus agent, as per our current path design"), fitted to a reading course:
+# 1. the phrasebook, taught whole from the first lesson: not survival
+#    phrases, which the language has none of, but the tablets' fixed
+#    formulae (to-so, "so much"; o-u-di-do-si, "they do not give"), read in
+#    transliteration;
+# 2. the first word units, read in transliteration: the spelling rules
+#    first, since every word must be restored from its spelling, then the
+#    palace's titles, the family and the livestock;
+# 3. the script, after the first word units ("After units 4-6"), in three
+#    parts in the order the tablets need them: the syllabograms (about 87
+#    signs, in three units), then the logograms (people and animals, then
+#    commodities), then the numerals and the signs of weight and measure.
+#    A learner who reads only the transliteration, as many scholars work,
+#    skips them (#554);
+# 4. a core of about 200 words in themed units, most common on the tablets
+#    first (by judgement: there is no frequency count of the corpus here);
+# 5. rules as forms: the o-stem and a-stem nouns, the particles, the
+#    present tense, practised on the words already known; then the
+#    consonant stems, the cases, the dual, adjectives and the other verb
+#    forms, each with the themes that need them;
+# 6. sentences, each after its words and rules: here a "sentence" is a
+#    tablet entry. Each theme gets its sentences deck when written
+#    (gmy-<theme>-sentences, named in no unit yet: a planned unit holds one
+#    id), and each unit's reading passage is a real tablet, graded.
+#
+# The passages. Each unit's reading passage is a real tablet or a short set
+# of them, graded from one-line entries to the long tablets. Tablet
+# numbers follow the standard sigla (site, series, number: PY Ta 641). The
+# texts are taken from the editions: The Knossos Tablets (KN), The Pylos
+# Tablets (PY), Thèbes, fouilles de la Cadmée (TH), and the Mycenae and
+# Tiryns corpora, checked against DAMOS (Database of Mycenaean at Oslo).
+# Which edition of each, and the licences of the editions and of DAMOS,
+# are open questions for the owner: nothing is copied until they are
+# answered. Each listening passage is the same kind of text read aloud in
+# the reconstructed pronunciation, by a scholar if audio is decided; there
+# is no text-to-speech voice (#584).
+#
+# Every deck of Mycenaean Greek is listed exactly once.
+schema: 1
+kind: "path"
+id: "gmy-path"
+language: "gmy"
+# The gender classes a noun's gender is one of (#512; DECK-FORMAT.md, Card
+# data): masculine, feminine and neuter, as later Greek has them. The
+# tablets show them in agreement (ne-wo, ne-wa; ki-ti-me-na ko-to-na) and
+# in the logograms' sex marks (male and female sheep, men and women).
+genders: ["m", "f", "n"]
+# No regions. A region is where a rater speaks the language, and a card's
+# region note names one (DECK-FORMAT.md, Regions): there are no speakers to
+# place. The find sites (Knossos, Pylos, Thebes, Mycenae) differ in
+# vocabulary and in a few scribal spellings, but those differences are of
+# archives and scribes, not of dialects a rater belongs to; a card notes
+# its site in a usage note instead. So the path lists none, and the app
+# asks no region question. To confirm with the reviewer.
+#
+# No alphabet list yet. The validator accepts in `alphabet` only decks on
+# the path, and a planned unit has no deck. The planned script units (the
+# syllabograms, logograms and numerals) join the list as each is written.
+#
+# "*" takes decks a learner adds (#22): one of a unit's theme at the
+# bottom of that unit, any other in the last unit.
+#
+# Script units not written yet. The format has no planned form for an
+# alphabet unit, which counts neither words nor grammar: a planned unit is
+# a theme, which counts words, or a grammar topic. So each planned script
+# unit is planned as a grammar unit of 0 words with a topic named
+# script-..., as Mandarin's and Japanese's paths do; when its deck is
+# written it becomes a plain list unit, its deck goes into alphabet, and
+# its topic leaves the grammar count.
+units:
+  # ------------------------------------------------------------------
+  # A1: read a one-line tablet entry. About 240 words.
+  # ------------------------------------------------------------------
+  # 1. The phrasebook: the tablets' fixed formulae, taught whole from the
+  # first lesson (15-25 of them, which count no words), with the first
+  # words beside them: wa-na-ka (wanax, king), da-mo (dāmos, the people),
+  # po-ti-ni-ja (potnia, mistress), pa-te (patēr, father). gmy-first-words
+  # joins this unit when written.
+  - planned: { id: "gmy-phrasebook", theme: "first-words", words: 10 }
+    listening_passages:
+      - { id: "formulae-aloud", text: { "en": "The commonest tablet formulae read aloud in the reconstructed pronunciation: to-so (toson, so much), o-u-di-do-si (ou didonsi, they do not give), a-pu-do-si (apudosis, delivery)" } }
+    reading_passages:
+      - { id: "first-heading", text: { "en": "A tablet's heading and its total, in transliteration: a place name, to-so (so much) and a number" } }
+  # 2. The first word units, read in transliteration: the spelling rules
+  # first. Linear B writes open syllables only, so readers restore the
+  # Greek: final consonants are dropped (pa-te for patēr), and so are l, r,
+  # m, n and s before a consonant (pa-ka-na for phasgana, swords).
+  - planned: { id: "gmy-spelling", grammar: ["open-syllables", "dropped-final-consonants", "dropped-cluster-consonants"] }
+    listening_passages:
+      - { id: "spelled-and-said", text: { "en": "Each word read twice: as its signs are spelled (pa-te) and as its Greek is restored (patēr)" } }
+    reading_passages:
+      - { id: "restore-the-greek", text: { "en": "Ten short words from the tablets in transliteration, with their Greek to restore: ka-ko (khalkos, bronze), ko-to-na (ktoinā, plot of land)" } }
+  # What the script does not mark: one r-series for r and l, no aspiration
+  # and no voicing but for d, the labiovelars (q-series), and the glides j
+  # and w.
+  - planned: { id: "gmy-spelling-sounds", grammar: ["r-for-r-and-l", "unmarked-aspiration-and-voice", "labiovelars", "glides-and-diphthongs"] }
+    listening_passages:
+      - { id: "lost-sounds", text: { "en": "The sounds of Mycenaean that later Greek lost or changed, read aloud: the labiovelar kw in qe (kwe, and), and w in wo-no (woinos, wine)" } }
+    reading_passages:
+      - { id: "one-sign-many-sounds", text: { "en": "A list of words where one sign stands for several sounds: ka for ka, kha and ga; ra for ra and la" } }
+  # Homographs: one spelling, more than one Greek word. They stand in for
+  # the minimal pairs of a spoken course.
+  - planned: { id: "gmy-sound-differences", theme: "sound-differences", words: 12 }
+    listening_passages:
+      - { id: "same-spelling-two-words", text: { "en": "Pairs of words spelled alike and said differently: pa-te as patēr (father) and pantes (all)" } }
+    reading_passages:
+      - { id: "which-word-is-it", text: { "en": "Short tablet entries where the context tells which word a spelling stands for" } }
+  - planned: { id: "gmy-palace", theme: "palace", words: 20 }
+    listening_passages:
+      - { id: "who-is-who-at-pylos", text: { "en": "The palace's ranks read aloud: wa-na-ka (wanax, king), ra-wa-ke-ta (lāwāgetās, leader of the people), e-qe-ta (hekwetās, follower)" } }
+    reading_passages:
+      - { id: "py-er-312", text: { "en": "PY Er 312: the estates (te-me-no, temenos) of the wanax and the lawagetas, with their seed grain" } }
+  - planned: { id: "gmy-family", theme: "family", words: 12 }
+    listening_passages:
+      - { id: "mothers-and-children", text: { "en": "A list of women with their girls and boys, ko-wa (korwai) and ko-wo (korwoi), read aloud" } }
+    reading_passages:
+      - { id: "py-aa-women", text: { "en": "PY Aa series: groups of working women with their children, by place" } }
+  - planned: { id: "gmy-animals", theme: "animals", words: 18 }
+    listening_passages:
+      - { id: "herds-and-herders", text: { "en": "Herders and their herds read aloud: po-me (poimēn, shepherd), qo-u-ko-ro (gwoukolos, cowherd), i-qo (hikkwos, horse)" } }
+    reading_passages:
+      - { id: "kn-ca-895", text: { "en": "KN Ca 895: horses, foals (po-lo, pōloi) and asses, counted by logogram" } }
+  # 3. The script, after the first word units: the syllabograms in three
+  # units, then the logograms, then the numerals and measures. Unicode
+  # Linear B Syllabary (U+10000-1007F), Linear B Ideograms (U+10080-100FF)
+  # and Aegean Numbers (U+10100-1013F), drawn in a bundled font.
+  - planned: { id: "gmy-script-syllabograms-1", grammar: ["script-vowels-and-d-to-n"] }
+    listening_passages:
+      - { id: "signs-aloud-1", text: { "en": "The five vowel signs and the d-, j-, k-, m- and n-series read aloud, sign by sign" } }
+    reading_passages:
+      - { id: "sign-chart-1", text: { "en": "A chart of the first signs with words from the earlier units spelled in them: da-mo, ko-wo, ma-te" } }
+  - planned: { id: "gmy-script-syllabograms-2", grammar: ["script-p-to-z"] }
+    listening_passages:
+      - { id: "signs-aloud-2", text: { "en": "The p-, q-, r-, s-, t-, w- and z-series read aloud, sign by sign" } }
+    reading_passages:
+      - { id: "sign-chart-2", text: { "en": "The words of the first units, wa-na-ka, po-ti-ni-ja and qo-u-ko-ro, read in Linear B signs" } }
+  - planned: { id: "gmy-script-syllabograms-3", grammar: ["script-doublets-and-unread-signs"] }
+    listening_passages:
+      - { id: "signs-aloud-3", text: { "en": "The doublets and complex signs read aloud: a2 (ha), a3 (ai), au, dwe, nwa, pte, ra2 (rya), two" } }
+    reading_passages:
+      - { id: "sign-chart-3", text: { "en": "Words spelled with doublets and complex signs, and the numbered signs whose values are not known (*18, *47, *63)" } }
+  - planned: { id: "gmy-script-logograms-1", grammar: ["script-logograms-people-animals"] }
+    listening_passages:
+      - { id: "logograms-named-1", text: { "en": "The logograms for man, woman, sheep, goat, pig, ox and horse named aloud, with their male and female marks" } }
+    reading_passages:
+      - { id: "kn-d-first-lines", text: { "en": "KN D series: first lines of the Knossos sheep tablets, a shepherd's name and his rams and ewes" } }
+  - planned: { id: "gmy-script-logograms-2", grammar: ["script-logograms-commodities", "script-ligatures-and-adjuncts"] }
+    listening_passages:
+      - { id: "logograms-named-2", text: { "en": "The logograms for grain, olives, wine, oil, figs, wool, cloth, bronze and gold named aloud" } }
+    reading_passages:
+      - { id: "py-ma-dues", text: { "en": "PY Ma series: six commodities owed by each town, written as logograms and numbers" } }
+  - planned: { id: "gmy-script-numerals-measures", grammar: ["script-numerals", "script-weights-and-measures"] }
+    listening_passages:
+      - { id: "counting-on-a-tablet", text: { "en": "Totals read aloud from tablets: units, tens, hundreds and thousands, and weights and measures" } }
+    reading_passages:
+      - { id: "kn-da-totals", text: { "en": "KN Da-Dg series: flocks of sheep, their totals and the sheep owed (o, ophelos)" } }
+  # 4. The core: about 200 words, most common on the tablets first (by
+  # judgement).
+  - planned: { id: "gmy-numbers", theme: "numbers-1-20", words: 10 }
+    listening_passages:
+      - { id: "number-words", text: { "en": "The number words the tablets show, mostly inside compounds: ti-ri-po (tripos, three-footed), qe-to-ro-we (kwetrōwes, four-handled)" } }
+    reading_passages:
+      - { id: "py-ta-641", text: { "en": "PY Ta 641: tripods and cups with three and four handles, the tablet that confirmed the decipherment" } }
+  - planned: { id: "gmy-quantities", theme: "quantities", words: 12 }
+    listening_passages:
+      - { id: "so-much-and-all", text: { "en": "to-so and to-sa (so much, so many), pa-te (pantes, all) and o-pe-ro (ophelos, owed) in tablet totals" } }
+    reading_passages:
+      - { id: "py-ma-owed", text: { "en": "PY Ma series: what was delivered (a-pu-do-si) and what is still owed (o-pe-ro)" } }
+  - planned: { id: "gmy-everyday-verbs", theme: "everyday-verbs", words: 15 }
+    listening_passages:
+      - { id: "holds-and-gives", text: { "en": "The commonest verbs in short entries: e-ke (ekhei, holds), di-do-si (didonsi, they give), de-ka-sa-to (dexato, received)" } }
+    reading_passages:
+      - { id: "py-eb-holdings", text: { "en": "PY Eb series: who holds which plot of land at pa-ki-ja-ne (Sphagianes)" } }
+  - planned: { id: "gmy-food", theme: "food", words: 30 }
+    listening_passages:
+      - { id: "rations-read-out", text: { "en": "Rations read out: si-to (sitos, grain), e-ra-wo (elaiwon, olive oil), wo-no (woinos, wine), me-ri (meli, honey)" } }
+    reading_passages:
+      - { id: "my-ge-spices", text: { "en": "MY Ge series: spices from Mycenae, ku-mi-no (kumīnon, cumin), ko-ri-ja-do-no (koriandron, coriander), sa-sa-ma (sēsama, sesame)" } }
+  - planned: { id: "gmy-clothes", theme: "clothes", words: 25 }
+    listening_passages:
+      - { id: "cloth-and-wool", text: { "en": "Textiles named aloud: pa-wo (pharwos, cloth), ki-to (khitōn, tunic), te-pa (a heavy cloth), we-a2-no (heanos, fine cloth)" } }
+    reading_passages:
+      - { id: "kn-ld-textiles", text: { "en": "KN Ld series: bundles of finished cloth, with their colours and borders" } }
+  - planned: { id: "gmy-places", theme: "places", words: 30 }
+    listening_passages:
+      - { id: "place-names", text: { "en": "The great places named aloud: pu-ro (Pulos), ko-no-so (Knōsos), a-mi-ni-so (Amnīsos), ku-do-ni-ja (Kudōniā, Chania), pa-i-to (Phaistos)" } }
+    reading_passages:
+      - { id: "kn-fp-1", text: { "en": "KN Fp 1: a month's olive oil sent to gods and places, among them a-mi-ni-so (Amnisos) and da-da-re-jo-de (to the Daidaleion)" } }
+  - planned: { id: "gmy-describing", theme: "describing", words: 25 }
+    listening_passages:
+      - { id: "new-and-old", text: { "en": "Describing words in entries: ne-wo (newos, new), pa-ra-jo (palaios, old), me-zo (mezōn, larger), re-u-ko (leukos, white)" } }
+    reading_passages:
+      - { id: "kn-sd-chariots", text: { "en": "KN Sd series: chariots, painted, inlaid and fitted, or not yet" } }
+  - planned: { id: "gmy-time", theme: "time", words: 12 }
+    listening_passages:
+      - { id: "this-year-last-year", text: { "en": "Time in the tablets: za-we-te (tāwetes, this year), pe-ru-si-nu-wo (perusinwos, last year's), me-no (mēnos, of the month)" } }
+    reading_passages:
+      - { id: "last-years-wool", text: { "en": "Entries of wool and sheep marked as this year's or last year's" } }
+  - planned: { id: "gmy-location", theme: "location", words: 10 }
+    listening_passages:
+      - { id: "at-the-hands-of", text: { "en": "The prepositions in entries: pa-ro (paro, from, at the hands of), e-pi (epi, on), o-pi (opi, over), me-ta (meta, with)" } }
+    reading_passages:
+      - { id: "received-from", text: { "en": "Deliveries received from named people: pa-ro with a name in the dative" } }
+  # 5. Rules as forms, practised on the words known: the nouns' forms
+  # first, then the particles, then the verb.
+  - planned: { id: "gmy-grammar-o-stems", grammar: ["o-stem-nominative", "o-stem-genitive-ojo", "o-stem-dative", "o-stem-plural"] }
+    listening_passages:
+      - { id: "a-name-in-four-cases", text: { "en": "One o-stem noun read in its forms: do-e-ro (doelos, slave), do-e-ro-jo (doeloio), do-e-ro-i (doeloihi)" } }
+    reading_passages:
+      - { id: "slave-of-the-god", text: { "en": "PY Eb and Ep entries naming te-o-jo do-e-ro (theoio doelos, slave of the god)" } }
+  - planned: { id: "gmy-grammar-a-stems", grammar: ["a-stem-nominative", "a-stem-genitive", "a-stem-dative", "a-stem-plural"] }
+    listening_passages:
+      - { id: "mistress-in-her-forms", text: { "en": "po-ti-ni-ja (potnia, mistress) in its forms, read aloud with the gods it names" } }
+    reading_passages:
+      - { id: "kn-gg-702", text: { "en": "KN Gg 702: honey to all the gods and to the mistress of the labyrinth (da-pu2-ri-to-jo po-ti-ni-ja)" } }
+  - planned: { id: "gmy-grammar-particles", grammar: ["enclitic-qe", "introductory-o", "negation-ou"] }
+    listening_passages:
+      - { id: "and-thus-not", text: { "en": "Entries with -qe (kwe, and), o- (hō, thus) and o-u- (ou, not), read aloud" } }
+    reading_passages:
+      - { id: "they-do-not-give", text: { "en": "Entries that end o-u-di-do-si (ou didonsi, they do not give): what a place was let off" } }
+  - planned: { id: "gmy-grammar-verb-present", grammar: ["present-third-singular", "present-third-plural"] }
+    listening_passages:
+      - { id: "holds-hold", text: { "en": "e-ke (ekhei, holds) beside e-ko-si (ekhonsi, they hold), and di-do-si (didonsi, they give)" } }
+    reading_passages:
+      - { id: "py-un-718", text: { "en": "PY Un 718: what four givers, among them the people and the lawagetas, give to Poseidon" } }
+    milestone: "A1"
+  # ------------------------------------------------------------------
+  # A2: read a whole tablet and a short series. About 265 words more.
+  # ------------------------------------------------------------------
+  - planned: { id: "gmy-work", theme: "work", words: 40 }
+    listening_passages:
+      - { id: "trades-of-the-palace", text: { "en": "The palace's trades named aloud: ka-ke-u (khalkeus, smith), ke-ra-me-u (kerameus, potter), te-ko-to-ne (tektones, carpenters), e-re-ta (eretai, rowers)" } }
+    reading_passages:
+      - { id: "py-ab-rations", text: { "en": "PY Ab series: rations of grain and figs for groups of women by trade" } }
+  - planned: { id: "gmy-grammar-consonant-stems", grammar: ["consonant-stems", "eu-stems", "s-stems"] }
+    listening_passages:
+      - { id: "smith-in-his-forms", text: { "en": "ka-ke-u (khalkeus, smith) in its forms: ka-ke-we (khalkēwes, smiths), ka-ke-wo (khalkēwos, of the smith)" } }
+    reading_passages:
+      - { id: "py-jn-smiths", text: { "en": "PY Jn series: bronze allotted to smiths, ta-ra-si-ja (talansia, the weighed-out allotment), and smiths without one" } }
+  - planned: { id: "gmy-land", theme: "land", words: 25 }
+    listening_passages:
+      - { id: "kinds-of-land", text: { "en": "Kinds of land read aloud: ki-ti-me-na ko-to-na (ktimenā ktoinā, private plot), ke-ke-me-na (kekeimenā, communal land), o-na-to (onāton, lease)" } }
+    reading_passages:
+      - { id: "py-eo-leases", text: { "en": "PY Eo and En series: a landholder's plot and the people who lease parts of it, with their seed grain" } }
+  - planned: { id: "gmy-grammar-cases", grammar: ["instrumental-pi", "dative-locative", "allative-de", "ablative-then"] }
+    listening_passages:
+      - { id: "to-and-from-places", text: { "en": "Places with their endings: pu-ro-de (Pulonde, to Pylos), and nouns in -pi (-phi, with), read aloud" } }
+    reading_passages:
+      - { id: "inlaid-with", text: { "en": "PY Ta entries in the instrumental: furniture inlaid with ivory and blue glass (e-re-pa-te, ku-wa-no-qe)" } }
+  - planned: { id: "gmy-gods", theme: "gods", words: 25 }
+    listening_passages:
+      - { id: "the-gods-named", text: { "en": "The gods of the tablets named aloud: di-wo (Diwos, of Zeus), e-ra (Hērā), po-se-da-o (Poseidāōn), e-ma-a2 (Hermāhās), di-wo-nu-so (Diwonusos)" } }
+    reading_passages:
+      - { id: "kn-v-52", text: { "en": "KN V 52: Athana Potnia, Enyalios, Paiawon and Poseidon in one short list" } }
+  - planned: { id: "gmy-things", theme: "things", words: 25 }
+    listening_passages:
+      - { id: "vessels-named", text: { "en": "Vessels named aloud: di-pa (depas, cup), ti-ri-po (tripos, tripod), a-pi-po-re-we (amphiphorēwes, jars), pi-a2-ra (phialai, bowls)" } }
+    reading_passages:
+      - { id: "py-ta-vessels", text: { "en": "PY Ta series: the vessels and tools of the inventory, with what each is made of" } }
+  - planned: { id: "gmy-grammar-dual", grammar: ["dual"] }
+    listening_passages:
+      - { id: "two-of-them", text: { "en": "Duals read aloud: ti-ri-po-de (tripode, two tripods), qe-to-ro-we and ti-ri-o-we (cups with four and three handles)" } }
+    reading_passages:
+      - { id: "pairs-of-wheels", text: { "en": "PY Sa series: wheels, counted in pairs" } }
+  - planned: { id: "gmy-home", theme: "home", words: 25 }
+    listening_passages:
+      - { id: "tables-and-chairs", text: { "en": "Furniture named aloud: to-pe-za (torpeza, table), to-no (thornos, chair), ta-ra-nu (thrānus, footstool), e-ka-ra (eskhara, hearth)" } }
+    reading_passages:
+      - { id: "py-ta-furniture", text: { "en": "PY Ta series: tables, chairs and footstools, with their inlays of ivory, gold and blue glass" } }
+  - planned: { id: "gmy-metals", theme: "metals", words: 20 }
+    listening_passages:
+      - { id: "bronze-and-gold", text: { "en": "Metals named aloud: ka-ko (khalkos, bronze), ku-ru-so (khrusos, gold), a-ku-ro (arguros, silver), and things made of them" } }
+    reading_passages:
+      - { id: "py-jn-829", text: { "en": "PY Jn 829: temple bronze collected from the officials of the sixteen districts, for ships' points and spears" } }
+  - planned: { id: "gmy-grammar-adjectives", grammar: ["adjective-agreement", "material-adjectives", "comparatives"] }
+    listening_passages:
+      - { id: "bronze-and-golden", text: { "en": "Adjectives of material read aloud with their nouns: ka-ke-ja (khalkeiā, of bronze), e-re-pa-te-jo (elephanteios, of ivory)" } }
+    reading_passages:
+      - { id: "bigger-and-smaller", text: { "en": "Cups listed as me-zo-e (mezoes, larger) and me-wi-jo-e (meiwoes, smaller)" } }
+  - planned: { id: "gmy-more-verbs", theme: "more-verbs", words: 20 }
+    listening_passages:
+      - { id: "more-verbs-aloud", text: { "en": "More verbs of the tablets: e-u-ke-to (eukhetoi, declares), te-ke (thēke, set), a-ke-re (agerei, collects), o-wi-de (hō wide, thus saw)" } }
+    reading_passages:
+      - { id: "py-ta-711", text: { "en": "PY Ta 711: the opening of the inventory, made when the king appointed a da-mo-ko-ro (dāmokoros)" } }
+  - planned: { id: "gmy-grammar-verb-forms", grammar: ["aorist", "infinitive-ehen", "middle-voice"] }
+    listening_passages:
+      - { id: "gave-and-to-hold", text: { "en": "Verb forms read aloud: do-ke (dōke, gave), a-pe-do-ke (apedōke, paid), e-ke-e (ekhehen, to hold), e-u-ke-to (eukhetoi, declares)" } }
+    reading_passages:
+      - { id: "py-ma-paid", text: { "en": "PY Ma entries: what a town paid (a-pe-do-ke) and what it is let off" } }
+  - planned: { id: "gmy-arms", theme: "arms", words: 30 }
+    listening_passages:
+      - { id: "chariots-and-swords", text: { "en": "War gear named aloud: i-qi-ja (hikkwiā, chariot), a-mo (harmo, wheel), to-ra-ke (thōrākes, corslets), pa-ka-na (phasgana, swords), e-ke-a (enkhea, spears)" } }
+    reading_passages:
+      - { id: "kn-sc-armour", text: { "en": "KN Sc series: a man's chariot, his corslet and his horses, one line each" } }
+  - planned: { id: "gmy-grammar-participles", grammar: ["perfect-participle-active", "participle-passive-mena"] }
+    listening_passages:
+      - { id: "fitted-and-bound", text: { "en": "Participles read aloud: a-ra-ru-ja (ararwia, fitted), de-de-me-no (dedemenō, bound), te-tu-ko-wo-a (tetukhwoha, finished)" } }
+    reading_passages:
+      - { id: "kn-so-wheels", text: { "en": "KN So series: wheels described as fitted, bound with bronze or of willow" } }
+  - planned: { id: "gmy-names", theme: "names", words: 40 }
+    listening_passages:
+      - { id: "common-names", text: { "en": "The commonest men's and women's names of the tablets, read aloud with how each is formed" } }
+    reading_passages:
+      - { id: "py-an-1", text: { "en": "PY An 1: rowers (e-re-ta) to go to Pleuron, listed by the towns that send them" } }
+  - planned: { id: "gmy-calendar", theme: "calendar", words: 15 }
+    listening_passages:
+      - { id: "months-and-feasts", text: { "en": "Month names and feast days read aloud: po-ro-wi-to-jo (Plōwistoio, the sailing month), di-pi-si-jo (Dipsioi, the thirsty ones)" } }
+    reading_passages:
+      - { id: "kh-gq-5", text: { "en": "KH Gq 5: honey from Chania for Zeus and Dionysus" } }
+    milestone: "A2"
+  # ------------------------------------------------------------------
+  # B1: read the long tablets from an edition. About 225 words more.
+  # ------------------------------------------------------------------
+  - planned: { id: "gmy-grammar-word-formation", grammar: ["agent-nouns", "ethnic-adjectives-ijo", "feminine-ja", "compounds"] }
+    listening_passages:
+      - { id: "how-words-are-made", text: { "en": "Words made from words, read aloud: ka-ke-u (khalkeus, smith), a-ke-ti-ri-ja (askētriai, finishers), ko-no-si-ja (Knōsiai, women of Knossos)" } }
+    reading_passages:
+      - { id: "py-aa-ethnics", text: { "en": "PY Aa entries naming women by where they came from: mi-ra-ti-ja (Milātiai, of Miletus), ki-ni-di-ja (Knidiai, of Knidos)" } }
+  - planned: { id: "gmy-crafts", theme: "crafts", words: 30 }
+    listening_passages:
+      - { id: "perfume-workshop", text: { "en": "The perfume workshop named aloud: a-re-pa-zo-o (aleiphazoos, unguent boiler), ku-pa-ro (kuparos, galingale), po-ni-ki-jo (phoinikion, a red dye)" } }
+    reading_passages:
+      - { id: "py-fr-oil", text: { "en": "PY Fr series: scented oil sent to gods and shrines" } }
+  - planned: { id: "gmy-grammar-relative", grammar: ["relative-jo", "correlatives"] }
+    listening_passages:
+      - { id: "as-follows", text: { "en": "Headings with o-, jo- and to-so read aloud: how a tablet says 'as follows' and 'so much'" } }
+    reading_passages:
+      - { id: "py-ep-704", text: { "en": "PY Ep 704: the priestess e-ri-ta declares she holds land for the god, and the people say it is a lease" } }
+  - planned: { id: "gmy-geography", theme: "geography", words: 35 }
+    listening_passages:
+      - { id: "two-provinces", text: { "en": "The kingdom of Pylos read aloud: its two provinces, this side of the mountain Aigolaion and beyond it (de-we-ro-a3-ko-ra-i-ja, pe-ra3-ko-ra-i-ja), and their districts" } }
+    reading_passages:
+      - { id: "py-cn-608", text: { "en": "PY Cn 608: fattened pigs owed by the nine districts of the near province" } }
+  - planned: { id: "gmy-grammar-prepositions", grammar: ["prepositions-with-dative", "preverbs"] }
+    listening_passages:
+      - { id: "on-under-with", text: { "en": "Prepositions and verbs that take them read aloud: e-pi, o-pi, u-po, me-ta, pa-ro, and a-pu-do-si (apudosis, from apo and didōmi)" } }
+    reading_passages:
+      - { id: "py-ta-decorations", text: { "en": "PY Ta entries with their decorations: o-pi-ke-re-mi-ni-ja (opikelemnia, on the frame) and o-pi-ke-wi-ri-je-u" } }
+  - planned: { id: "gmy-military", theme: "military", words: 30 }
+    listening_passages:
+      - { id: "watchers-of-the-coast", text: { "en": "The coastguard tablets' words read aloud: o-u-ru-to (hō wruntoi, thus they guard), o-pi-a2-ra (opihala, the coast), e-pi-ko-wo (epikowoi, watchers)" } }
+    reading_passages:
+      - { id: "py-an-657", text: { "en": "PY An 657: the first of the o-ka tablets, commanders and their men set to watch the coast" } }
+  - planned: { id: "gmy-grammar-verb-forms-2", grammar: ["future", "athematic-verbs", "passive-forms"] }
+    listening_passages:
+      - { id: "will-give", text: { "en": "Future and athematic verbs read aloud: do-se-so-si (dōsonsi, they will give), di-do-si (didonsi, they give), te-ke (thēke, set)" } }
+    reading_passages:
+      - { id: "will-be-given", text: { "en": "PY Jn 829 read again for its verb: do-se-so-si (dōsonsi, they will give), the bronze still to come" } }
+  - planned: { id: "gmy-religion", theme: "religion", words: 30 }
+    listening_passages:
+      - { id: "shrines-and-offerings", text: { "en": "Shrines, offerings and cult people read aloud: po-si-da-i-jo (Posidāion, Poseidon's shrine), do-ra (dōra, gifts), i-je-re-ja (hiereia, priestess)" } }
+    reading_passages:
+      - { id: "py-tn-316", text: { "en": "PY Tn 316: gold vessels and people brought to the gods at Pylos in the month po-ro-wi-to" } }
+  - planned: { id: "gmy-dues", theme: "dues", words: 25 }
+    listening_passages:
+      - { id: "what-is-owed", text: { "en": "Words of the palace's accounts read aloud: a-pu-do-si (apudosis, delivery), o-pe-ro (ophelos, owed), e-re-u-te-ro (eleutheros, free of dues)" } }
+    reading_passages:
+      - { id: "py-na-flax", text: { "en": "PY Na series: flax owed by places, and what each is let off" } }
+  - planned: { id: "gmy-grammar-abbreviations", grammar: ["acrophonic-abbreviations", "transaction-signs"] }
+    listening_passages:
+      - { id: "one-sign-for-a-word", text: { "en": "Single signs that stand for a word, read aloud in full: o for o-pe-ro (ophelos, owed), pa for pa-ra-jo (palaios, old)" } }
+    reading_passages:
+      - { id: "kn-dk-wool", text: { "en": "KN Dk and Dl series: sheep and wool with their abbreviations for owed, old and young" } }
+  - planned: { id: "gmy-peoples", theme: "peoples", words: 25 }
+    listening_passages:
+      - { id: "far-away-names", text: { "en": "Names of foreign places and people read aloud: a-ra-si-jo (Alasios, of Cyprus), a3-ku-pi-ti-jo (Aiguptios, Egyptian), ra-mi-ni-ja (Lamniai, women of Lemnos)" } }
+    reading_passages:
+      - { id: "th-of-wool", text: { "en": "TH Of series: wool given out at Thebes to women and places" } }
+  - planned: { id: "gmy-adjectives-2", theme: "adjectives-2", words: 25 }
+    listening_passages:
+      - { id: "more-describing", text: { "en": "More describing words read aloud: colours, sizes and finishes of cloth, vessels and chariots" } }
+    reading_passages:
+      - { id: "my-oe-wool", text: { "en": "MY Oe series: wool from the House of the Oil Merchant at Mycenae" } }
+  - planned: { id: "gmy-verbs-3", theme: "verbs-3", words: 25 }
+    listening_passages:
+      - { id: "more-verbs-3", text: { "en": "The rarer verbs of the long tablets read aloud, each with its line" } }
+    reading_passages:
+      - { id: "th-fq-barley", text: { "en": "TH Fq series: barley given out day by day at Thebes, to people and animals" } }
+  - planned: { id: "gmy-grammar-editions", grammar: ["editorial-signs", "scribal-hands", "uncertain-readings"] }
+    listening_passages:
+      - { id: "reading-a-broken-line", text: { "en": "A broken tablet line read aloud, saying which signs are certain, which are damaged and which are restored" } }
+    reading_passages:
+      - { id: "edition-page", text: { "en": "A tablet as an edition prints it, with its brackets, dotted signs, erasures and scribe's number, and DAMOS's record of it" } }
+  - planned: { id: "gmy-grammar-dialect", grammar: ["normal-and-special-mycenaean", "mycenaean-and-later-greek"] }
+    listening_passages:
+      - { id: "then-and-later", text: { "en": "Mycenaean words beside their later Greek: qa-si-re-u (gwasileus) and basileus, wa-na-ka (wanax) and anax" } }
+    reading_passages:
+      - { id: "py-ta-whole", text: { "en": "The PY Ta series read whole: the inventory from Ta 711 to its last tablet" } }
+    milestone: "B1"
+  - ["*"]
