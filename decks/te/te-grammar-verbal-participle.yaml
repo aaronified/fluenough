@@ -1,0 +1,502 @@
+schema: 1
+id: "te-grammar-verbal-participle"
+part: "core"
+kind: "rules"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["te-0247", "te-0282", "te-0297", "te-0460", "te-0463", "te-0474", "te-0532", "te-0651", "te-1047", "te-1146", "te-1147", "te-1148", "te-1149", "te-1150"]
+  slots: ["having", "without"]
+  rows:
+    - word: "te-0441"
+      forms: { "having": "లేచి", "without": "లేవకుండా" }
+      readings: { "having": "lēci", "without": "lēvakuṇḍā" }
+    - word: "te-0450"
+      forms: { "having": "పడుకొని", "without": "పడుకోకుండా" }
+      readings: { "having": "paḍukoni", "without": "paḍukōkuṇḍā" }
+    - word: "te-0621"
+      forms: { "having": "చేసి", "without": "చేయకుండా" }
+      readings: { "having": "cēsi", "without": "cēyakuṇḍā" }
+    - word: "te-0622"
+      forms: { "having": "వెళ్ళి", "without": "వెళ్ళకుండా" }
+      readings: { "having": "veḷḷi", "without": "veḷḷakuṇḍā" }
+    - word: "te-0623"
+      forms: { "having": "వచ్చి", "without": "రాకుండా" }
+      readings: { "having": "vacci", "without": "rākuṇḍā" }
+    - word: "te-0624"
+      forms: { "having": "తిని", "without": "తినకుండా" }
+      readings: { "having": "tini", "without": "tinakuṇḍā" }
+    - word: "te-0625"
+      forms: { "having": "తాగి", "without": "తాగకుండా" }
+      readings: { "having": "tāgi", "without": "tāgakuṇḍā" }
+    - word: "te-0626"
+      forms: { "having": "చూసి", "without": "చూడకుండా" }
+      readings: { "having": "cūsi", "without": "cūḍakuṇḍā" }
+    - word: "te-0627"
+      forms: { "having": "విని", "without": "వినకుండా" }
+      readings: { "having": "vini", "without": "vinakuṇḍā" }
+    - word: "te-0628"
+      forms: { "having": "చెప్పి", "without": "చెప్పకుండా" }
+      readings: { "having": "ceppi", "without": "ceppakuṇḍā" }
+    - word: "te-0629"
+      forms: { "having": "అడిగి", "without": "అడగకుండా" }
+      readings: { "having": "aḍigi", "without": "aḍagakuṇḍā" }
+    - word: "te-0630"
+      forms: { "having": "ఇచ్చి", "without": "ఇవ్వకుండా" }
+      readings: { "having": "icci", "without": "ivvakuṇḍā" }
+    - word: "te-0631"
+      forms: { "having": "తీసుకొని", "without": "తీసుకోకుండా" }
+      readings: { "having": "tīsukoni", "without": "tīsukōkuṇḍā" }
+    - word: "te-0632"
+      forms: { "having": "తెచ్చి", "without": "తేకుండా" }
+      readings: { "having": "tecci", "without": "tēkuṇḍā" }
+    - word: "te-0633"
+      forms: { "having": "ఉండి", "without": "ఉండకుండా" }
+      readings: { "having": "uṇḍi", "without": "uṇḍakuṇḍā" }
+    - word: "te-0634"
+      forms: { "having": "కూర్చొని", "without": "కూర్చోకుండా" }
+      readings: { "having": "kūrconi", "without": "kūrcōkuṇḍā" }
+    - word: "te-0635"
+      forms: { "having": "నిలబడి", "without": "నిలబడకుండా" }
+      readings: { "having": "nilabaḍi", "without": "nilabaḍakuṇḍā" }
+    - word: "te-0636"
+      forms: { "having": "నడిచి", "without": "నడవకుండా" }
+      readings: { "having": "naḍici", "without": "naḍavakuṇḍā" }
+    - word: "te-0637"
+      forms: { "having": "ఆడి", "without": "ఆడకుండా" }
+      readings: { "having": "āḍi", "without": "āḍakuṇḍā" }
+    - word: "te-0638"
+      forms: { "having": "చదివి", "without": "చదవకుండా" }
+      readings: { "having": "cadivi", "without": "cadavakuṇḍā" }
+    - word: "te-0639"
+      forms: { "having": "రాసి", "without": "రాయకుండా" }
+      readings: { "having": "rāsi", "without": "rāyakuṇḍā" }
+    - word: "te-0640"
+      forms: { "having": "నిద్రపోయి", "without": "నిద్రపోకుండా" }
+      readings: { "having": "nidrapōyi", "without": "nidrapōkuṇḍā" }
+    - word: "te-0641"
+      forms: { "having": "కొని", "without": "కొనకుండా" }
+      readings: { "having": "koni", "without": "konakuṇḍā" }
+    - word: "te-0642"
+      forms: { "having": "అమ్మి", "without": "అమ్మకుండా" }
+      readings: { "having": "ammi", "without": "ammakuṇḍā" }
+    - word: "te-0643"
+      forms: { "having": "వండి", "without": "వండకుండా" }
+      readings: { "having": "vaṇḍi", "without": "vaṇḍakuṇḍā" }
+    - word: "te-0644"
+      forms: { "having": "మాట్లాడి", "without": "మాట్లాడకుండా" }
+      readings: { "having": "māṭlāḍi", "without": "māṭlāḍakuṇḍā" }
+    - word: "te-0645"
+      forms: { "having": "నేర్చుకొని", "without": "నేర్చుకోకుండా" }
+      readings: { "having": "nērcukoni", "without": "nērcukōkuṇḍā" }
+    - word: "te-0646"
+      forms: { "having": "అయి", "without": "కాకుండా" }
+      readings: { "having": "ayi", "without": "kākuṇḍā" }
+    - word: "te-0647"
+      forms: { "having": "తెలుసుకొని", "without": "తెలుసుకోకుండా" }
+      readings: { "having": "telusukoni", "without": "telusukōkuṇḍā" }
+    - word: "te-0648"
+      forms: { "having": "ఆగి", "without": "ఆగకుండా" }
+      readings: { "having": "āgi", "without": "āgakuṇḍā" }
+    - word: "te-0649"
+      forms: { "having": "కలిసి", "without": "కలవకుండా" }
+      readings: { "having": "kalisi", "without": "kalavakuṇḍā" }
+    - word: "te-0650"
+      forms: { "having": "పంపి", "without": "పంపకుండా" }
+      readings: { "having": "pampi", "without": "pampakuṇḍā" }
+    - word: "te-0821"
+      forms: { "having": "పాడి", "without": "పాడకుండా" }
+      readings: { "having": "pāḍi", "without": "pāḍakuṇḍā" }
+    - word: "te-0822"
+      forms: { "having": "నవ్వి", "without": "నవ్వకుండా" }
+      readings: { "having": "navvi", "without": "navvakuṇḍā" }
+    - word: "te-0823"
+      forms: { "having": "ఏడ్చి", "without": "ఏడవకుండా" }
+      readings: { "having": "ēḍci", "without": "ēḍavakuṇḍā" }
+    - word: "te-0824"
+      forms: { "having": "కడిగి", "without": "కడగకుండా" }
+      readings: { "having": "kaḍigi", "without": "kaḍagakuṇḍā" }
+    - word: "te-0825"
+      forms: { "having": "తెరిచి", "without": "తెరవకుండా" }
+      readings: { "having": "terici", "without": "teravakuṇḍā" }
+    - word: "te-0826"
+      forms: { "having": "మూసి", "without": "మూయకుండా" }
+      readings: { "having": "mūsi", "without": "mūyakuṇḍā" }
+    - word: "te-0827"
+      forms: { "having": "ఎక్కి", "without": "ఎక్కకుండా" }
+      readings: { "having": "ekki", "without": "ekkakuṇḍā" }
+    - word: "te-0828"
+      forms: { "having": "దిగి", "without": "దిగకుండా" }
+      readings: { "having": "digi", "without": "digakuṇḍā" }
+    - word: "te-0829"
+      forms: { "having": "పట్టుకొని", "without": "పట్టుకోకుండా" }
+      readings: { "having": "paṭṭukoni", "without": "paṭṭukōkuṇḍā" }
+    - word: "te-0830"
+      forms: { "having": "పెట్టి", "without": "పెట్టకుండా" }
+      readings: { "having": "peṭṭi", "without": "peṭṭakuṇḍā" }
+    - word: "te-0831"
+      forms: { "having": "ఉంచి", "without": "ఉంచకుండా" }
+      readings: { "having": "uñci", "without": "uñcakuṇḍā" }
+    - word: "te-0832"
+      forms: { "having": "నేర్పి", "without": "నేర్పకుండా" }
+      readings: { "having": "nērpi", "without": "nērpakuṇḍā" }
+    - word: "te-0833"
+      forms: { "having": "మర్చిపోయి", "without": "మర్చిపోకుండా" }
+      readings: { "having": "marcipōyi", "without": "marcipōkuṇḍā" }
+    - word: "te-0834"
+      forms: { "having": "ఆలోచించి", "without": "ఆలోచించకుండా" }
+      readings: { "having": "ālōciñci", "without": "ālōciñcakuṇḍā" }
+    - word: "te-0835"
+      forms: { "having": "వెతికి", "without": "వెతకకుండా" }
+      readings: { "having": "vetiki", "without": "vetakakuṇḍā" }
+    - word: "te-0836"
+      forms: { "having": "తీసి", "without": "తీయకుండా" }
+      readings: { "having": "tīsi", "without": "tīyakuṇḍā" }
+    - word: "te-0837"
+      forms: { "having": "వేసి", "without": "వేయకుండా" }
+      readings: { "having": "vēsi", "without": "vēyakuṇḍā" }
+    - word: "te-0838"
+      forms: { "having": "కొట్టి", "without": "కొట్టకుండా" }
+      readings: { "having": "koṭṭi", "without": "koṭṭakuṇḍā" }
+    - word: "te-0839"
+      forms: { "having": "పడి", "without": "పడకుండా" }
+      readings: { "having": "paḍi", "without": "paḍakuṇḍā" }
+    - word: "te-0840"
+      forms: { "having": "ఆపి", "without": "ఆపకుండా" }
+      readings: { "having": "āpi", "without": "āpakuṇḍā" }
+    - word: "te-0841"
+      forms: { "having": "తిరిగి", "without": "తిరగకుండా" }
+      readings: { "having": "tirigi", "without": "tiragakuṇḍā" }
+    - word: "te-0842"
+      forms: { "having": "చూపించి", "without": "చూపించకుండా" }
+      readings: { "having": "cūpiñci", "without": "cūpiñcakuṇḍā" }
+    - word: "te-0843"
+      forms: { "having": "పరిగెత్తి", "without": "పరిగెత్తకుండా" }
+      readings: { "having": "parigetti", "without": "parigettakuṇḍā" }
+    - word: "te-0844"
+      forms: { "having": "నమ్మి", "without": "నమ్మకుండా" }
+      readings: { "having": "nammi", "without": "nammakuṇḍā" }
+    - word: "te-0845"
+      forms: { "having": "ఎగిరి", "without": "ఎగరకుండా" }
+      readings: { "having": "egiri", "without": "egarakuṇḍā" }
+    - word: "te-0846"
+      forms: { "having": "ఈది", "without": "ఈదకుండా" }
+      readings: { "having": "īdi", "without": "īdakuṇḍā" }
+    - word: "te-0847"
+      forms: { "having": "కోసి", "without": "కోయకుండా" }
+      readings: { "having": "kōsi", "without": "kōyakuṇḍā" }
+    - word: "te-0848"
+      forms: { "having": "లాగి", "without": "లాగకుండా" }
+      readings: { "having": "lāgi", "without": "lāgakuṇḍā" }
+    - word: "te-0849"
+      forms: { "having": "పిలిచి", "without": "పిలవకుండా" }
+      readings: { "having": "pilici", "without": "pilavakuṇḍā" }
+    - word: "te-0850"
+      forms: { "having": "కలిపి", "without": "కలపకుండా" }
+      readings: { "having": "kalipi", "without": "kalapakuṇḍā" }
+    - word: "te-0851"
+      forms: { "having": "నింపి", "without": "నింపకుండా" }
+      readings: { "having": "nimpi", "without": "nimpakuṇḍā" }
+    - word: "te-0852"
+      forms: { "having": "తుడిచి", "without": "తుడవకుండా" }
+      readings: { "having": "tuḍici", "without": "tuḍavakuṇḍā" }
+    - word: "te-1339"
+      forms: { "having": "పంచుకొని", "without": "పంచుకోకుండా" }
+      readings: { "having": "pañcukoni", "without": "pañcukōkuṇḍā" }
+    - word: "te-1400"
+      forms: { "having": "బేరమాడి", "without": "బేరమాడకుండా" }
+      readings: { "having": "bēramāḍi", "without": "bēramāḍakuṇḍā" }
+    - word: "te-1401"
+      forms: { "having": "చెల్లించి", "without": "చెల్లించకుండా" }
+      readings: { "having": "celliñci", "without": "celliñcakuṇḍā" }
+    - word: "te-1402"
+      forms: { "having": "తగ్గించి", "without": "తగ్గించకుండా" }
+      readings: { "having": "taggiñci", "without": "taggiñcakuṇḍā" }
+    - word: "te-1403"
+      forms: { "having": "ఎంచుకొని", "without": "ఎంచుకోకుండా" }
+      readings: { "having": "eñcukoni", "without": "eñcukōkuṇḍā" }
+    - word: "te-1404"
+      forms: { "having": "తిరిగి ఇచ్చి", "without": "తిరిగి ఇవ్వకుండా" }
+      readings: { "having": "tirigi icci", "without": "tirigi ivvakuṇḍā" }
+    - word: "te-1405"
+      forms: { "having": "ప్రయత్నించి", "without": "ప్రయత్నించకుండా" }
+      readings: { "having": "prayatniñci", "without": "prayatniñcakuṇḍā" }
+    - word: "te-1529"
+      forms: { "having": "జబ్బు పడి", "without": "జబ్బు పడకుండా" }
+      readings: { "having": "jabbu paḍi", "without": "jabbu paḍakuṇḍā" }
+    - word: "te-1530"
+      forms: { "having": "చూపించుకొని", "without": "చూపించుకోకుండా" }
+      readings: { "having": "cūpiñcukoni", "without": "cūpiñcukōkuṇḍā" }
+    - word: "te-1531"
+      forms: { "having": "తగ్గి", "without": "తగ్గకుండా" }
+      readings: { "having": "taggi", "without": "taggakuṇḍā" }
+    - word: "te-1532"
+      forms: { "having": "విశ్రాంతి తీసుకొని", "without": "విశ్రాంతి తీసుకోకుండా" }
+      readings: { "having": "viśrānti tīsukoni", "without": "viśrānti tīsukōkuṇḍā" }
+    - word: "te-1533"
+      forms: { "having": "తీసుకొని", "without": "తీసుకోకుండా" }
+      readings: { "having": "tīsukoni", "without": "tīsukōkuṇḍā" }
+    - word: "te-1534"
+      forms: { "having": "దగ్గి", "without": "దగ్గకుండా" }
+      readings: { "having": "daggi", "without": "daggakuṇḍā" }
+    - word: "te-1535"
+      forms: { "having": "తుమ్మి", "without": "తుమ్మకుండా" }
+      readings: { "having": "tummi", "without": "tummakuṇḍā" }
+    - word: "te-1536"
+      forms: { "having": "కోలుకొని", "without": "కోలుకోకుండా" }
+      readings: { "having": "kōlukoni", "without": "kōlukōkuṇḍā" }
+    - word: "te-1537"
+      forms: { "having": "కారి", "without": "కారకుండా" }
+      readings: { "having": "kāri", "without": "kārakuṇḍā" }
+    - word: "te-1538"
+      forms: { "having": "చేర్చి", "without": "చేర్చకుండా" }
+      readings: { "having": "cērci", "without": "cērcakuṇḍā" }
+    - word: "te-1539"
+      forms: { "having": "బాధపడి", "without": "బాధపడకుండా" }
+      readings: { "having": "bādhapaḍi", "without": "bādhapaḍakuṇḍā" }
+    - word: "te-1621"
+      forms: { "having": "ఉడకబెట్టి", "without": "ఉడకబెట్టకుండా" }
+      readings: { "having": "uḍakabeṭṭi", "without": "uḍakabeṭṭakuṇḍā" }
+    - word: "te-1622"
+      forms: { "having": "వేయించి", "without": "వేయించకుండా" }
+      readings: { "having": "vēyiñci", "without": "vēyiñcakuṇḍā" }
+    - word: "te-1623"
+      forms: { "having": "కలిపి", "without": "కలపకుండా" }
+      readings: { "having": "kalipi", "without": "kalapakuṇḍā" }
+    - word: "te-1914"
+      forms: { "having": "వాయించి", "without": "వాయించకుండా" }
+      readings: { "having": "vāyiñci", "without": "vāyiñcakuṇḍā" }
+    - word: "te-1915"
+      forms: { "having": "గీసి", "without": "గీయకుండా" }
+      readings: { "having": "gīsi", "without": "gīyakuṇḍā" }
+    - word: "te-1923"
+      forms: { "having": "గెలిచి", "without": "గెలవకుండా" }
+      readings: { "having": "gelici", "without": "gelavakuṇḍā" }
+    - word: "te-2100"
+      forms: { "having": "ఊడ్చి", "without": "ఊడ్వకుండా" }
+      readings: { "having": "ūḍci", "without": "ūḍvakuṇḍā" }
+    - word: "te-2101"
+      forms: { "having": "ఉతికి", "without": "ఉతకకుండా" }
+      readings: { "having": "utiki", "without": "utakakuṇḍā" }
+    - word: "te-2102"
+      forms: { "having": "ఆరేసి", "without": "ఆరేయకుండా" }
+      readings: { "having": "ārēsi", "without": "ārēyakuṇḍā" }
+    - word: "te-2103"
+      forms: { "having": "ఇస్త్రీ చేసి", "without": "ఇస్త్రీ చేయకుండా" }
+      readings: { "having": "istrī cēsi", "without": "istrī cēyakuṇḍā" }
+    - word: "te-2104"
+      forms: { "having": "తరిగి", "without": "తరగకుండా" }
+      readings: { "having": "tarigi", "without": "taragakuṇḍā" }
+    - word: "te-2105"
+      forms: { "having": "ఉడికించి", "without": "ఉడికించకుండా" }
+      readings: { "having": "uḍikiñci", "without": "uḍikiñcakuṇḍā" }
+    - word: "te-2106"
+      forms: { "having": "సర్ది", "without": "సర్దకుండా" }
+      readings: { "having": "sardi", "without": "sardakuṇḍā" }
+    - word: "te-2107"
+      forms: { "having": "పారేసి", "without": "పారేయకుండా" }
+      readings: { "having": "pārēsi", "without": "pārēyakuṇḍā" }
+    - word: "te-2108"
+      forms: { "having": "ఎత్తి", "without": "ఎత్తకుండా" }
+      readings: { "having": "etti", "without": "ettakuṇḍā" }
+    - word: "te-1151"
+      forms: { "having": "చల్లబడి", "without": "చల్లబడకుండా" }
+      readings: { "having": "callabaḍi", "without": "callabaḍakuṇḍā" }
+    - word: "te-1152"
+      forms: { "having": "ఆగిపోయి", "without": "ఆగిపోకుండా" }
+      readings: { "having": "āgipōyi", "without": "āgipōkuṇḍā" }
+    - word: "te-2300"
+      forms: { "having": "కడుక్కొని", "without": "కడుక్కోకుండా" }
+      readings: { "having": "kaḍukkoni", "without": "kaḍukkōkuṇḍā" }
+    - word: "te-2301"
+      forms: { "having": "బయలుదేరి", "without": "బయలుదేరకుండా" }
+      readings: { "having": "bayaludēri", "without": "bayaludērakuṇḍā" }
+    - word: "te-2302"
+      forms: { "having": "లేపి", "without": "లేపకుండా" }
+      readings: { "having": "lēpi", "without": "lēpakuṇḍā" }
+    - word: "te-2303"
+      forms: { "having": "మేల్కొని", "without": "మేల్కోకుండా" }
+      readings: { "having": "mēlkoni", "without": "mēlkōkuṇḍā" }
+    - word: "te-2304"
+      forms: { "having": "తోముకొని", "without": "తోముకోకుండా" }
+      readings: { "having": "tōmukoni", "without": "tōmukōkuṇḍā" }
+    - word: "te-2305"
+      forms: { "having": "దువ్వుకొని", "without": "దువ్వుకోకుండా" }
+      readings: { "having": "duvvukoni", "without": "duvvukōkuṇḍā" }
+    - word: "te-2306"
+      forms: { "having": "కట్టుకొని", "without": "కట్టుకోకుండా" }
+      readings: { "having": "kaṭṭukoni", "without": "kaṭṭukōkuṇḍā" }
+    - word: "te-2307"
+      forms: { "having": "వేసుకొని", "without": "వేసుకోకుండా" }
+      readings: { "having": "vēsukoni", "without": "vēsukōkuṇḍā" }
+    - word: "te-2308"
+      forms: { "having": "ఎదురుచూసి", "without": "ఎదురుచూడకుండా" }
+      readings: { "having": "edurucūsi", "without": "edurucūḍakuṇḍā" }
+    - word: "te-2309"
+      forms: { "having": "ముగించి", "without": "ముగించకుండా" }
+      readings: { "having": "mugiñci", "without": "mugiñcakuṇḍā" }
+    - word: "te-2310"
+      forms: { "having": "మొదలుపెట్టి", "without": "మొదలుపెట్టకుండా" }
+      readings: { "having": "modalupeṭṭi", "without": "modalupeṭṭakuṇḍā" }
+    - word: "te-2311"
+      forms: { "having": "ఆడుకొని", "without": "ఆడుకోకుండా" }
+      readings: { "having": "āḍukoni", "without": "āḍukōkuṇḍā" }
+    - word: "te-2312"
+      forms: { "having": "పెంచి", "without": "పెంచకుండా" }
+      readings: { "having": "peñci", "without": "peñcakuṇḍā" }
+    - word: "te-2313"
+      forms: { "having": "నడిపి", "without": "నడపకుండా" }
+      readings: { "having": "naḍipi", "without": "naḍapakuṇḍā" }
+    - word: "te-2314"
+      forms: { "having": "గుర్తుంచుకొని", "without": "గుర్తుంచుకోకుండా" }
+      readings: { "having": "gurtuñcukoni", "without": "gurtuñcukōkuṇḍā" }
+    - word: "te-2315"
+      forms: { "having": "వివరించి", "without": "వివరించకుండా" }
+      readings: { "having": "vivariñci", "without": "vivariñcakuṇḍā" }
+    - word: "te-2316"
+      forms: { "having": "తిట్టి", "without": "తిట్టకుండా" }
+      readings: { "having": "tiṭṭi", "without": "tiṭṭakuṇḍā" }
+    - word: "te-2317"
+      forms: { "having": "భయపడి", "without": "భయపడకుండా" }
+      readings: { "having": "bhayapaḍi", "without": "bhayapaḍakuṇḍā" }
+    - word: "te-2318"
+      forms: { "having": "దాచి", "without": "దాచకుండా" }
+      readings: { "having": "dāci", "without": "dācakuṇḍā" }
+    - word: "te-2319"
+      forms: { "having": "విసిరి", "without": "విసరకుండా" }
+      readings: { "having": "visiri", "without": "visarakuṇḍā" }
+    - word: "te-2320"
+      forms: { "having": "ఊది", "without": "ఊదకుండా" }
+      readings: { "having": "ūdi", "without": "ūdakuṇḍā" }
+    - word: "te-2321"
+      forms: { "having": "తడిసి", "without": "తడవకుండా" }
+      readings: { "having": "taḍisi", "without": "taḍavakuṇḍā" }
+    - word: "te-2322"
+      forms: { "having": "కప్పుకొని", "without": "కప్పుకోకుండా" }
+      readings: { "having": "kappukoni", "without": "kappukōkuṇḍā" }
+    - word: "te-2323"
+      forms: { "having": "ఆవులించి", "without": "ఆవులించకుండా" }
+      readings: { "having": "āvuliñci", "without": "āvuliñcakuṇḍā" }
+    - word: "te-2324"
+      forms: { "having": "చదువుకొని", "without": "చదువుకోకుండా" }
+      readings: { "having": "caduvukoni", "without": "caduvukōkuṇḍā" }
+    - word: "te-2325"
+      forms: { "having": "రాసుకొని", "without": "రాసుకోకుండా" }
+      readings: { "having": "rāsukoni", "without": "rāsukōkuṇḍā" }
+    - word: "te-2326"
+      forms: { "having": "పంపించి", "without": "పంపించకుండా" }
+      readings: { "having": "pampiñci", "without": "pampiñcakuṇḍā" }
+    - word: "te-2327"
+      forms: { "having": "వాడి", "without": "వాడకుండా" }
+      readings: { "having": "vāḍi", "without": "vāḍakuṇḍā" }
+    - word: "te-2328"
+      forms: { "having": "బోధించి", "without": "బోధించకుండా" }
+      readings: { "having": "bōdhiñci", "without": "bōdhiñcakuṇḍā" }
+    - word: "te-2329"
+      forms: { "having": "మెచ్చుకొని", "without": "మెచ్చుకోకుండా" }
+      readings: { "having": "meccukoni", "without": "meccukōkuṇḍā" }
+    - word: "te-2330"
+      forms: { "having": "అరిచి", "without": "అరవకుండా" }
+      readings: { "having": "arici", "without": "aravakuṇḍā" }
+    - word: "te-2331"
+      forms: { "having": "మడిచి", "without": "మడవకుండా" }
+      readings: { "having": "maḍici", "without": "maḍavakuṇḍā" }
+    - word: "te-2332"
+      forms: { "having": "చుట్టి", "without": "చుట్టకుండా" }
+      readings: { "having": "cuṭṭi", "without": "cuṭṭakuṇḍā" }
+    - word: "te-2333"
+      forms: { "having": "విప్పి", "without": "విప్పకుండా" }
+      readings: { "having": "vippi", "without": "vippakuṇḍā" }
+    - word: "te-2334"
+      forms: { "having": "కట్టి", "without": "కట్టకుండా" }
+      readings: { "having": "kaṭṭi", "without": "kaṭṭakuṇḍā" }
+    - word: "te-2335"
+      forms: { "having": "వదిలి", "without": "వదలకుండా" }
+      readings: { "having": "vadili", "without": "vadalakuṇḍā" }
+    - word: "te-2336"
+      forms: { "having": "తిప్పి", "without": "తిప్పకుండా" }
+      readings: { "having": "tippi", "without": "tippakuṇḍā" }
+    - word: "te-2337"
+      forms: { "having": "నొక్కి", "without": "నొక్కకుండా" }
+      readings: { "having": "nokki", "without": "nokkakuṇḍā" }
+    - word: "te-2338"
+      forms: { "having": "కొలిచి", "without": "కొలవకుండా" }
+      readings: { "having": "kolici", "without": "kolavakuṇḍā" }
+    - word: "te-2339"
+      forms: { "having": "లెక్కపెట్టి", "without": "లెక్కపెట్టకుండా" }
+      readings: { "having": "lekkapeṭṭi", "without": "lekkapeṭṭakuṇḍā" }
+    - word: "te-2340"
+      forms: { "having": "అంగీకరించి", "without": "అంగీకరించకుండా" }
+      readings: { "having": "aṅgīkariñci", "without": "aṅgīkariñcakuṇḍā" }
+    - word: "te-2341"
+      forms: { "having": "తిరస్కరించి", "without": "తిరస్కరించకుండా" }
+      readings: { "having": "tiraskariñci", "without": "tiraskariñcakuṇḍā" }
+    - word: "te-2342"
+      forms: { "having": "నిర్ణయించి", "without": "నిర్ణయించకుండా" }
+      readings: { "having": "nirṇayiñci", "without": "nirṇayiñcakuṇḍā" }
+    - word: "te-2343"
+      forms: { "having": "ప్రారంభించి", "without": "ప్రారంభించకుండా" }
+      readings: { "having": "prārambhiñci", "without": "prārambhiñcakuṇḍā" }
+    - word: "te-2344"
+      forms: { "having": "గుర్తించి", "without": "గుర్తించకుండా" }
+      readings: { "having": "gurtiñci", "without": "gurtiñcakuṇḍā" }
+    - word: "te-2345"
+      forms: { "having": "అనుకొని", "without": "అనుకోకుండా" }
+      readings: { "having": "anukoni", "without": "anukōkuṇḍā" }
+    - word: "te-2346"
+      forms: { "having": "ప్రేమించి", "without": "ప్రేమించకుండా" }
+      readings: { "having": "prēmiñci", "without": "prēmiñcakuṇḍā" }
+    - word: "te-2347"
+      forms: { "having": "మార్చి", "without": "మార్చకుండా" }
+      readings: { "having": "mārci", "without": "mārcakuṇḍā" }
+    - word: "te-2348"
+      forms: { "having": "మారి", "without": "మారకుండా" }
+      readings: { "having": "māri", "without": "mārakuṇḍā" }
+    - word: "te-2349"
+      forms: { "having": "సంపాదించి", "without": "సంపాదించకుండా" }
+      readings: { "having": "sampādiñci", "without": "sampādiñcakuṇḍā" }
+    - word: "te-2350"
+      forms: { "having": "ఖర్చుపెట్టి", "without": "ఖర్చుపెట్టకుండా" }
+      readings: { "having": "kharcupeṭṭi", "without": "kharcupeṭṭakuṇḍā" }
+    - word: "te-2351"
+      forms: { "having": "సాధించి", "without": "సాధించకుండా" }
+      readings: { "having": "sādhiñci", "without": "sādhiñcakuṇḍā" }
+    - word: "te-2352"
+      forms: { "having": "ఒప్పుకొని", "without": "ఒప్పుకోకుండా" }
+      readings: { "having": "oppukoni", "without": "oppukōkuṇḍā" }
+    - word: "te-2353"
+      forms: { "having": "చేరుకొని", "without": "చేరుకోకుండా" }
+      readings: { "having": "cērukoni", "without": "cērukōkuṇḍā" }
+    - word: "te-2354"
+      forms: { "having": "పరీక్షించి", "without": "పరీక్షించకుండా" }
+      readings: { "having": "parīkṣiñci", "without": "parīkṣiñcakuṇḍā" }
+    - word: "te-2355"
+      forms: { "having": "వెలిగించి", "without": "వెలిగించకుండా" }
+      readings: { "having": "veligiñci", "without": "veligiñcakuṇḍā" }
+    - word: "te-2356"
+      forms: { "having": "ఆర్పి", "without": "ఆర్పకుండా" }
+      readings: { "having": "ārpi", "without": "ārpakuṇḍā" }
+    - word: "te-2357"
+      forms: { "having": "కొనసాగించి", "without": "కొనసాగించకుండా" }
+      readings: { "having": "konasāgiñci", "without": "konasāgiñcakuṇḍā" }
+    - word: "te-2358"
+      forms: { "having": "పొంది", "without": "పొందకుండా" }
+      readings: { "having": "pondi", "without": "pondakuṇḍā" }
+    - word: "te-2359"
+      forms: { "having": "జాగ్రత్తపడి", "without": "జాగ్రత్తపడకుండా" }
+      readings: { "having": "jāgrattapaḍi", "without": "jāgrattapaḍakuṇḍā" }
+    - word: "te-2360"
+      forms: { "having": "సర్దుకొని", "without": "సర్దుకోకుండా" }
+      readings: { "having": "sardukoni", "without": "sardukōkuṇḍā" }
+rules:
+  - id: "te-rule-verbal-participle"
+    slots: ["having"]
+    words: [{ word: "-ి", reading: "-i" }, { word: "తిని ఇంటికి వెళ్ళాను", reading: "tini iṇṭiki veḷḷānu" }, { word: "అడిగి తెలుసుకోండి", reading: "aḍigi telusukōṇḍi" }]
+  - id: "te-rule-verbal-participle-without"
+    slots: ["without"]
+    words: [{ word: "-కుండా", reading: "-kuṇḍā" }, { word: "తినకుండా", reading: "tinakuṇḍā" }, { word: "చేయకుండా", reading: "cēyakuṇḍā" }, { word: "రాకుండా", reading: "rākuṇḍā" }, { word: "ఏమీ తినకుండా బయటకు వెళ్ళాడు", reading: "ēmī tinakuṇḍā bayaṭaku veḷḷāḍu" }]
