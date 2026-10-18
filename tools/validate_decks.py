@@ -96,6 +96,8 @@ FEATURE_KEYS = {"id", "name", "term", "reading", "ipa", "example", "text",
 # layer per native language (#498): the core keeps the letters, the layer
 # the text a learner reads.
 GUIDE_KINDS = ("script", "sounds")
+# Kinds of file that are not a written deck (as tools/deck_index.py NOT_DECKS).
+NOT_DECK_KINDS = {"path", "facts", "numbers", "romanisation", "sounds", "script"}
 GUIDE_LAYER_KEYS = {
     "script": {"schema", "id", "kind", "core", "native", "name", "intro", "features"},
     "sounds": {"schema", "id", "kind", "core", "native", "description", "contrasts"},
@@ -5527,7 +5529,12 @@ def check_phrasebook_across(reports: list[Report]) -> list[str]:
         if n == 0 and not has_plan:
             continue
         lo, hi = PHRASEBOOK_SIZE
-        if not lo <= n <= hi:
+        # A course with no written deck yet (a path, and perhaps its script
+        # layer) is not held to the size: it has nothing to take cards from.
+        alphabet = set(path.plan.alphabet) if path is not None else set()
+        written = any(rep.deck_kind not in NOT_DECK_KINDS and rep.listed_as not in alphabet
+                      for rep in decks.values())
+        if written and not lo <= n <= hi:
             teaching = [d for d in order if d in cards_of
                         and any(c.phrasebook for c in cards_of[d].values())]
             file = path.path if path is not None and path.path.resolve() in given \
