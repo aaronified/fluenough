@@ -1,0 +1,783 @@
+# The order Odia is taught in, one unit per line, from every language it
+# is taught from: each deck is named by its core id, and a learner from
+# English is taught or-en-home for or-home (ADR-0013, ADR-0036).
+#
+# This is Odia's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"; issue #352),
+# written before any Odia deck: every unit from the first words to B1 is
+# planned, with its size in words, its grammar topics, the three milestones
+# and its listening and reading passages. The course teaches every unit as
+# "Coming" until its first deck is written; the unit's `planned` then turns
+# into `decks` in the same change. Sizes follow the plan's levels (about
+# 700, 900 and 1,200 words; low confidence) and are one number for every
+# native language. Odia is tier IV (1,100 hours; not on the FSI list, the
+# tier inferred from typology: docs/plans/language-paths-scheme.md); the
+# tier sets the pacing, in days, not the words a level needs, so the sizes
+# are Bengali's and Assamese's. A theme named here that decks/themes.yaml
+# does not list yet is added to it with its first deck.
+#
+# A planned unit names one core id. Where a unit will hold more than one
+# deck, as Bengali's do, the comment above it names the others: they join
+# the unit when they are written. Sentence decks have no theme, so they are
+# not planned units of their own: each joins the unit named in its comment,
+# after its words and rules.
+#
+# The order follows docs/plans/words-rules-sentences.md (owner, 2026-10-07,
+# and 2026-10-17: "build the path files for all present languages via an
+# opus agent, as per our current path design"), Bengali's and Assamese's
+# paths as the closest models, and the Indo-Aryan order of
+# docs/plans/language-paths-scheme.md, less the gender agreement and the
+# ergative Odia does not have ("No grammatical gender (natural/lexical
+# only); skip ergative"), and with the classifiers it adds, as Bengali and
+# Assamese do: be, postpositions, the present, the case endings, the past,
+# the conjunctive participle, compound and conjunct verbs, then the
+# subjunctive, the relative-correlative clauses and the rest of B1:
+# 1. the phrasebook, taught whole from the first lesson;
+# 2. the first word units;
+# 3. the script, after the first six units ("After units 4-6"); a learner
+#    who already reads it skips it (#554);
+# 4. a core of about 200 common words in themed units ("Yes, smaller
+#    (~200)"), by judgement, most common first, until Odia Wikipedia's
+#    counts are written (tools/wikipedia_frequency.py, #516);
+# 5. rules as forms: noun endings (the plural, the case endings), the
+#    postpositions and conjunctions, then pronoun and verb forms, practised
+#    on known words;
+# 6. sentences, each after its words and rules; then the other themes, each
+#    its words, its rules, then its sentences.
+#
+# What is Odia's own, against Bengali's and Assamese's models:
+# - The sounds unit drills ଳ (ḷa) against ଲ (la), ଡ଼ (ṛa) against ଡ (ḍa),
+#   the retroflex against the dental (ଟ (ṭa), ତ (ta)), the aspirates, and
+#   the inherent vowel, which Odia keeps at a word's end: ଘର (ghara,
+#   "house") has two syllables, where Bengali's ঘর (ghor) has one.
+# - The script (Odia, #551) is taught in two units: the letters, then the
+#   vowel signs with the conjuncts, such as କ୍ଷ (kṣa), the ya-phalā and
+#   the ra-phalā, and the signs ଁ (candrabindu), ଂ (anusvāra) and ୍
+#   (hasanta).
+# - The case endings, on the noun or its plural: -ମାନେ (-māne) for people
+#   and -ଗୁଡ଼ିକ (-guṛika) for things, -କୁ (-ku) for the object and the
+#   dative, -ର (-ra) for the genitive (-ଙ୍କ (-ṅka) for the plural and the
+#   honorific), -ରେ (-re) for the locative and the instrument, -ରୁ (-ru)
+#   for the ablative, and ସହିତ (sahita) or ସାଙ୍ଗରେ (sāṅgare), "with".
+# - The pronouns' three honorific levels, which the verb agrees with: ତୁ
+#   (tu, intimate), ତୁମେ (tume, familiar) and ଆପଣ (āpaṇa, polite); in the
+#   third person ସେ (se) takes a plain or an honorific verb. ଆମେ (āme,
+#   "we") also serves for "I" in much speech. They come with the pronoun
+#   forms in A1, again with the imperatives in A2, and in full in B1's
+#   honorifics.
+# - Be: ଅଛି (achi) for being somewhere, ଅଟେ (aṭe) or nothing for being
+#   something, and their negatives ନାହିଁ (nāhim̐) and ନୁହେଁ (nuhem̐).
+# - The classifiers ଟା (ṭā), ଟି (ṭi), ଜଣ (jaṇa) and ଖଣ୍ଡ (khaṇḍa), with
+#   the plural's split between people and things, take the place of
+#   Bengali's gender and number unit (gender-number).
+# - The conjunctive participle in -ଇ (-i), ଖାଇ (khāi, "having eaten"),
+#   comes before the compound verbs, which are built on it: ଖାଇଦେବା
+#   (khāi debā).
+# - The past continuous in -ଉଥିଲା (-uthilā) is also the habitual past
+#   ("was doing", "used to do"), so one unit teaches both, where Bengali's
+#   path has two.
+#
+# No Odia deck is written yet, so the path lists no deck and `alphabet` is
+# empty: the validator takes only written decks there. When the script
+# decks are written, `alphabet` lists or-script-vowels,
+# or-script-consonants, or-script-reading, or-script-vowel-signs,
+# or-script-conjuncts, or-spelling and the first reader, and the two script
+# units become lists of them, as Bengali's are. Until then each script unit
+# is planned with grammar topics, since a planned unit names a theme or a
+# grammar topic. Spelling and the first reader come after B1, as Bengali's
+# do; they are added to the path when written, since nothing is planned
+# after B1.
+schema: 1
+kind: "path"
+id: "or-path"
+language: "or"
+# No gender classes: a noun takes no gender, and neither verbs nor
+# adjectives agree in gender (#512; DECK-FORMAT.md, Card data; the scheme's
+# "No grammatical gender (natural/lexical only)"). Natural gender is in the
+# words themselves, such as ପୁଅ (pua, "son") and ଝିଅ (jhia, "daughter"),
+# and a few borrowed feminine forms in -ଈ (-ī) do not change the verb. What
+# the grammar does track is people against things (the plural -ମାନେ
+# (-māne) against -ଗୁଡ଼ିକ (-guṛika), the classifier ଜଣ (jaṇa) for people)
+# and the honorific level; neither is a gender class, so they are taught as
+# grammar topics and not listed here, as Bengali's and Assamese's are not.
+genders: []
+# Where Odia is spoken, for a rater's region and a card's region note
+# (ADR-0036): its main dialect areas, each named with example districts so
+# that a rater who does not know the terms can place themselves. The
+# standard, the speech of the coastal and central districts (Mughalbandi),
+# comes first. Western Odia, Sambalpuri or Kosli, is listed as a dialect
+# area, since it is widely counted one and Odia is its written standard,
+# though many of its speakers call it a language of its own; Desia, the
+# Odia of the Koraput hills, is listed beside it. Low confidence at each
+# area's edges: a native reviewer checks this list before any rating names
+# a region. The ids are permanent, as card ids are; rename a name, never an
+# id. The app adds "Elsewhere" after them.
+regions:
+  - id: "coastal"
+    name: { "en": "Coastal and central, the standard (Cuttack, Puri, Khordha, Bhubaneswar)" }
+  - id: "northern"
+    name: { "en": "Northern, Baleswari (Balasore, Bhadrak, Mayurbhanj, and Odia-speaking Medinipur)" }
+  - id: "southern"
+    name: { "en": "Southern, Ganjami (Ganjam, Gajapati, and Odia-speaking Srikakulam)" }
+  - id: "western"
+    name: { "en": "Western, Sambalpuri or Kosli (Sambalpur, Bargarh, Bolangir, Kalahandi)" }
+  - id: "south-western"
+    name: { "en": "South-western, Desia (Koraput, Rayagada, Nabarangpur)" }
+# The decks that need the alphabet: empty until the script decks are
+# written (see above).
+alphabet: []
+units:
+  # 1. The phrasebook, taught whole from the first lesson. or-first-words
+  # joins this unit.
+  - planned: { id: "or-phrasebook", theme: "first-words", words: 8 }
+    listening_passages:
+      - { id: "first-meeting", text: { "en": "Two people greet each other with namaskar and say their names" } }
+    reading_passages:
+      - { id: "welcome-card", text: { "en": "A welcome card: hello, thank you and please" } }
+  # 2. The first word units.
+  - planned: { id: "or-sound-differences", grammar: "sound-differences", words: 10 }
+    listening_passages:
+      - { id: "sound-pairs", text: { "en": "Pairs of words that differ in one sound, said slowly" } }
+    reading_passages:
+      - { id: "sound-pairs-list", text: { "en": "A list of word pairs with their readings" } }
+  - planned: { id: "or-questions", theme: "questions", words: 11 }
+    listening_passages:
+      - { id: "yes-or-no", text: { "en": "Short questions answered with yes and no" } }
+    reading_passages:
+      - { id: "question-cards", text: { "en": "Cards with who, what, where and when" } }
+  # or-addressing joins this unit.
+  - planned: { id: "or-pronouns", theme: "pronouns", words: 30 }
+    listening_passages:
+      - { id: "three-yous", text: { "en": "Speaking to a younger cousin, a friend and an elder: the three words for you" } }
+    reading_passages:
+      - { id: "who-to-call-what", text: { "en": "A short list of people and how to address them" } }
+  - planned: { id: "or-family", theme: "family", words: 25 }
+    listening_passages:
+      - { id: "family-photo", text: { "en": "Someone names the people in a family photo" } }
+    reading_passages:
+      - { id: "family-tree", text: { "en": "A family tree with its labels" } }
+  - planned: { id: "or-numbers-1-20", theme: "numbers-1-20", words: 20 }
+    listening_passages:
+      - { id: "phone-number", text: { "en": "Someone reads out a phone number" } }
+    reading_passages:
+      - { id: "price-tags", text: { "en": "Price tags on small things" } }
+  # 3. The script, after the first six units (#554: skipped by a learner
+  # who already reads it). or-script-consonants and or-script-reading join
+  # the first; or-script-conjuncts joins the second.
+  - planned: { id: "or-script-vowels", grammar: "script-letters", words: 0 }
+    listening_passages:
+      - { id: "letter-names", text: { "en": "The vowels and consonants said in order" } }
+    reading_passages:
+      - { id: "first-signs", text: { "en": "Short words on shop signs, letter by letter" } }
+  - planned: { id: "or-script-vowel-signs", grammar: ["script-vowel-signs", "script-conjuncts"], words: 0 }
+    listening_passages:
+      - { id: "syllable-rows", text: { "en": "One consonant with each vowel sign, said in a row" } }
+    reading_passages:
+      - { id: "name-boards", text: { "en": "Name boards with joined letters, such as kṣa, and the nasal signs" } }
+  # 4. The core: about 200 common words, most common first (by judgement
+  # until the Wikipedia counts are written, #516).
+  - planned: { id: "or-about-me", theme: "about-me", words: 8 }
+    listening_passages:
+      - { id: "introducing-myself", text: { "en": "Someone says their name, home town and work" } }
+    reading_passages:
+      - { id: "profile-card", text: { "en": "A short profile card" } }
+  - planned: { id: "or-verbs", theme: "everyday-verbs", words: 32 }
+    listening_passages:
+      - { id: "morning-routine", text: { "en": "A mother says what each person in the house does in the morning" } }
+    reading_passages:
+      - { id: "to-do-list", text: { "en": "A short to-do list" } }
+  - planned: { id: "or-adverbs", theme: "adverbs", words: 50 }
+    listening_passages:
+      - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
+    reading_passages:
+      - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
+  - planned: { id: "or-quantities", theme: "quantities", words: 28 }
+    listening_passages:
+      - { id: "a-little-more", text: { "en": "Asking for a little more and a little less" } }
+    reading_passages:
+      - { id: "shopping-amounts", text: { "en": "A shopping list with amounts" } }
+  - planned: { id: "or-describing", theme: "describing", words: 38 }
+    listening_passages:
+      - { id: "big-and-small", text: { "en": "Describing things: big, small, hot and cold" } }
+    reading_passages:
+      - { id: "for-sale-note", text: { "en": "A note describing something for sale" } }
+  - planned: { id: "or-time", theme: "time", words: 18 }
+    listening_passages:
+      - { id: "what-time", text: { "en": "Asking and telling the time" } }
+    reading_passages:
+      - { id: "opening-hours", text: { "en": "A shop's opening hours" } }
+  - planned: { id: "or-location", theme: "location", words: 14 }
+    listening_passages:
+      - { id: "where-is-it", text: { "en": "Saying where things are in a room" } }
+    reading_passages:
+      - { id: "room-labels", text: { "en": "Labels: on, under, inside and near" } }
+  - planned: { id: "or-more-verbs", theme: "more-verbs", words: 30 }
+    listening_passages:
+      - { id: "helping-out", text: { "en": "Asking someone to bring, give and keep things" } }
+    reading_passages:
+      - { id: "house-rules", text: { "en": "A short list of house rules" } }
+  # 5. Rules as forms, practised on the words known: noun endings,
+  # postpositions and conjunctions first, then pronoun and verb forms. The
+  # topics are the plural (-māne for people, -guṛika for things) and the
+  # endings -ku, -ra (-ṅka), -re, -ru, and sahita or sāṅgare, "with".
+  - planned: { id: "or-grammar-noun-forms", grammar: ["plural", "ku", "ra", "re", "ru", "sahita"], words: 0 }
+    listening_passages:
+      - { id: "which-way-home", text: { "en": "Two people say where they go, with whom, and where from" } }
+    reading_passages:
+      - { id: "class-notice", text: { "en": "A class notice: where, with whom and when" } }
+  - planned: { id: "or-grammar-postpositions", grammar: "postpositions", words: 6 }
+    listening_passages:
+      - { id: "by-bus-for-whom", text: { "en": "Saying how and for whom things are done: by bus, for mother, near the temple" } }
+    reading_passages:
+      - { id: "route-note", text: { "en": "A note on how to reach a house: past, behind and near" } }
+  - planned: { id: "or-grammar-conjunctions", grammar: "conjunctions", words: 8 }
+    listening_passages:
+      - { id: "this-and-that", text: { "en": "Choosing this or that, and saying but and so" } }
+    reading_passages:
+      - { id: "two-plans", text: { "en": "A note with two plans joined by and, or and but" } }
+  # or-grammar-pronouns joins this unit. The honorific levels are tu,
+  # tume and āpaṇa, and se with a plain or an honorific verb.
+  - planned: { id: "or-grammar-pronoun-forms", grammar: ["pronouns", "honorific-levels", "pronoun-gen", "pronoun-obj"], words: 0 }
+    listening_passages:
+      - { id: "whose-is-it", text: { "en": "Asking whose things are whose, to a friend and to an elder" } }
+    reading_passages:
+      - { id: "we-and-you", text: { "en": "A message to a group: we, all of us, and you" } }
+  # Be: achi for being somewhere, aṭe or nothing for being something;
+  # nāhim̐ and nuhem̐ for their negatives.
+  - planned: { id: "or-grammar-be", grammar: ["be", "be-negative"], words: 0 }
+    listening_passages:
+      - { id: "who-and-where", text: { "en": "Saying who someone is and where they are, and who they are not" } }
+    reading_passages:
+      - { id: "is-there", text: { "en": "A note: what there is at home and what there is not" } }
+  # or-grammar-present joins this unit: the present in each person and each
+  # honorific level.
+  - planned: { id: "or-grammar-verb-present", grammar: ["present", "present-first", "present-second", "present-third"], words: 0 }
+    listening_passages:
+      - { id: "morning-at-home", text: { "en": "A family member says what she does every morning" } }
+    reading_passages:
+      - { id: "note-on-the-fridge", text: { "en": "A short note: what to eat and drink" } }
+  - planned: { id: "or-grammar-demonstratives", grammar: "demonstratives", words: 0 }
+    listening_passages:
+      - { id: "this-one-that-one", text: { "en": "Pointing at things: this one, that one, which one" } }
+    reading_passages:
+      - { id: "shop-labels", text: { "en": "Labels in a shop: this here, that there" } }
+  - planned: { id: "or-grammar-adjectives", grammar: "adjectives", words: 10 }
+    listening_passages:
+      - { id: "a-new-house", text: { "en": "A friend describes a new house: new, big, clean and bright" } }
+    reading_passages:
+      - { id: "house-advert", text: { "en": "A short advert for a house" } }
+  # 6. Sentences, each after its words and rules; then the other A1
+  # themes, each its words, its rules, then its sentences.
+  - planned: { id: "or-work", theme: "work", words: 19 }
+    listening_passages:
+      - { id: "what-do-you-do", text: { "en": "People say what work they do" } }
+    reading_passages:
+      - { id: "name-tags", text: { "en": "Name tags at a meeting: who is who and what they do" } }
+  - planned: { id: "or-numbers-big", theme: "numbers-big", words: 14 }
+    listening_passages:
+      - { id: "how-much-is-it", text: { "en": "Prices said aloud at a stall" } }
+    reading_passages:
+      - { id: "bill", text: { "en": "A shop bill with its total" } }
+  # or-food-sentences joins this unit.
+  - planned: { id: "or-food", theme: "food", words: 64 }
+    listening_passages:
+      - { id: "a-summer-lunch", text: { "en": "A family sits down to a summer lunch of pakhāḷa, water rice, and fried fish" } }
+    reading_passages:
+      - { id: "menu-board", text: { "en": "A menu board with dishes and prices" } }
+  # or-grammar-needs follows this unit.
+  - planned: { id: "or-groceries", theme: "groceries", words: 16 }
+    listening_passages:
+      - { id: "what-we-need", text: { "en": "Two people say what they need from the shop" } }
+    reading_passages:
+      - { id: "grocery-list", text: { "en": "A grocery list" } }
+  - planned: { id: "or-grammar-needs", grammar: "needs" }
+    listening_passages:
+      - { id: "needs-heard", text: { "en": "A short exchange that uses needs, after the groceries unit" } }
+    reading_passages:
+      - { id: "needs-read", text: { "en": "A short text that uses needs, after the groceries unit" } }
+  # or-grammar-nouns follows this unit: the bare noun, with no gender and no
+  # article.
+  - planned: { id: "or-market", theme: "market", words: 8 }
+    listening_passages:
+      - { id: "at-the-market", text: { "en": "Buying vegetables at a market" } }
+    reading_passages:
+      - { id: "market-board", text: { "en": "A market stall's board" } }
+  - planned: { id: "or-grammar-nouns", grammar: "nouns" }
+    listening_passages:
+      - { id: "nouns-heard", text: { "en": "A short exchange that uses nouns, after the market unit" } }
+    reading_passages:
+      - { id: "nouns-read", text: { "en": "A short text that uses nouns, after the market unit" } }
+  - planned: { id: "or-grammar-questions", grammar: "questions", words: 0 }
+    listening_passages:
+      - { id: "asking-a-stranger", text: { "en": "Asking a stranger short questions" } }
+    reading_passages:
+      - { id: "a-form-to-fill", text: { "en": "A short form: name, age and where you live" } }
+  - planned: { id: "or-grammar-likes", grammar: "likes", words: 2 }
+    listening_passages:
+      - { id: "what-do-you-like", text: { "en": "Friends say what they like and do not like" } }
+    reading_passages:
+      - { id: "likes-poll", text: { "en": "A poll of favourite foods" } }
+  # or-pronouns-sentences, or-verbs-sentences and or-noun-forms-sentences
+  # join this unit.
+  - planned: { id: "or-grammar-sentences", grammar: "sentences", words: 0 }
+    listening_passages:
+      - { id: "introducing-friends", text: { "en": "Introducing two friends: who is who, and what they do" } }
+    reading_passages:
+      - { id: "a-short-diary", text: { "en": "A few lines about a day: who did what, and where" } }
+  # or-grammar-continuous follows this unit.
+  - planned: { id: "or-directions", theme: "directions", words: 12 }
+    listening_passages:
+      - { id: "turn-left", text: { "en": "Directions to a temple: left, right and straight on" } }
+    reading_passages:
+      - { id: "street-signs", text: { "en": "Street signs and an arrow board" } }
+  - planned: { id: "or-grammar-continuous", grammar: "continuous" }
+    listening_passages:
+      - { id: "continuous-heard", text: { "en": "A short exchange that uses continuous, after the directions unit" } }
+    reading_passages:
+      - { id: "continuous-read", text: { "en": "A short text that uses continuous, after the directions unit" } }
+  - planned: { id: "or-transport", theme: "transport", words: 9 }
+    listening_passages:
+      - { id: "auto-fare", text: { "en": "Agreeing a fare with an auto driver" } }
+    reading_passages:
+      - { id: "bus-board", text: { "en": "The destination board on a bus" } }
+  # or-body-sentences joins this unit.
+  - planned: { id: "or-body", theme: "body", words: 30 }
+    listening_passages:
+      - { id: "where-it-hurts", text: { "en": "Telling a doctor where it hurts" } }
+    reading_passages:
+      - { id: "exercise-poster", text: { "en": "A poster of simple morning stretches" } }
+  # or-places-sentences joins this unit.
+  - planned: { id: "or-places", theme: "places", words: 48 }
+    listening_passages:
+      - { id: "town-walk", text: { "en": "A neighbour names the places on the way to the market" } }
+    reading_passages:
+      - { id: "map-labels", text: { "en": "Labels on a simple town map" } }
+  - planned: { id: "or-things", theme: "things", words: 38 }
+    listening_passages:
+      - { id: "packing-a-bag", text: { "en": "Two people pack a bag for a trip to Puri" } }
+    reading_passages:
+      - { id: "lost-property-list", text: { "en": "A lost-property list at a railway station" } }
+  # or-things-sentences and or-more-verbs-sentences join this unit.
+  - planned: { id: "or-home", theme: "home", words: 20 }
+    listening_passages:
+      - { id: "kitchen-instructions", text: { "en": "Someone tells a helper what to do in the kitchen" } }
+    reading_passages:
+      - { id: "how-to-card", text: { "en": "A short card on how to make tea" } }
+  # or-quantities-sentences joins this unit.
+  - planned: { id: "or-grammar-differences", grammar: "differences", words: 5 }
+    listening_passages:
+      - { id: "how-much-how-many", text: { "en": "Asking how much and how many at a stall" } }
+    reading_passages:
+      - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
+  # In place of Bengali's gender and number unit: the classifiers ṭā, ṭi,
+  # jaṇa and khaṇḍa, and the plural's split between people and things.
+  - planned: { id: "or-grammar-classifiers", grammar: ["classifiers", "number-animacy"], words: 6 }
+    listening_passages:
+      - { id: "two-people-three-things", text: { "en": "Counting people and things: two people, three mangoes, one sheet of paper" } }
+    reading_passages:
+      - { id: "class-photo", text: { "en": "A caption under a class photo: how many boys, girls and teachers" } }
+  # or-clothes-sentences and or-describing-sentences join this unit.
+  - planned: { id: "or-clothes", theme: "clothes", words: 27 }
+    listening_passages:
+      - { id: "choosing-a-sari", text: { "en": "Choosing a colour and a size in a clothes shop" } }
+    reading_passages:
+      - { id: "shop-sign", text: { "en": "A clothes shop's sign with its offers" } }
+  # or-animals-sentences joins this unit.
+  - planned: { id: "or-animals", theme: "animals", words: 30 }
+    listening_passages:
+      - { id: "village-visit", text: { "en": "A child names the animals seen on a visit to a village" } }
+    reading_passages:
+      - { id: "zoo-board", text: { "en": "A zoo board at Nandankanan with each animal and what it eats" } }
+  - planned: { id: "or-grammar-future", grammar: "future", words: 0 }
+    listening_passages:
+      - { id: "tomorrows-plans", text: { "en": "Friends say what they will do tomorrow" } }
+    reading_passages:
+      - { id: "weekend-plan", text: { "en": "A plan for the weekend" } }
+    milestone: "A1"
+  # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
+  # then its sentences. or-grammar-negative follows the first unit: na before
+  # the verb, nāhim̐ after it, and the fused negative present, jāuni, "I do
+  # not go".
+  - planned: { id: "or-daily-life", theme: "daily-life", words: 9 }
+    listening_passages:
+      - { id: "a-day", text: { "en": "Someone tells their day, and what they do not do" } }
+    reading_passages:
+      - { id: "daily-routine", text: { "en": "A child's daily routine on a chart" } }
+  - planned: { id: "or-grammar-negative", grammar: "negative" }
+    listening_passages:
+      - { id: "negative-heard", text: { "en": "A short exchange that uses negative, after the daily life unit" } }
+    reading_passages:
+      - { id: "negative-read", text: { "en": "A short text that uses negative, after the daily life unit" } }
+  - planned: { id: "or-weather", theme: "weather", words: 45 }
+    listening_passages:
+      - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain and wind" } }
+    reading_passages:
+      - { id: "weather-message", text: { "en": "A message to a friend about the monsoon" } }
+  # or-grammar-past follows this unit.
+  - planned: { id: "or-calendar", theme: "calendar", words: 16 }
+    listening_passages:
+      - { id: "what-i-did", text: { "en": "Saying what you did last week" } }
+    reading_passages:
+      - { id: "wall-calendar", text: { "en": "A wall calendar with its months and holidays" } }
+  - planned: { id: "or-grammar-past", grammar: "past" }
+    listening_passages:
+      - { id: "past-heard", text: { "en": "A short exchange that uses past, after the calendar unit" } }
+    reading_passages:
+      - { id: "past-read", text: { "en": "A short text that uses past, after the calendar unit" } }
+  - planned: { id: "or-grammar-ordinals", grammar: "ordinals" }
+    listening_passages:
+      - { id: "which-floor", text: { "en": "Finding a flat: the first floor, the second, the third" } }
+    reading_passages:
+      - { id: "event-calendar", text: { "en": "A calendar of events: the first, second and third week" } }
+  - planned: { id: "or-festivals", theme: "festivals", words: 40 }
+    listening_passages:
+      - { id: "festival-plans", text: { "en": "Neighbours plan the days of Raja, the swing festival, together" } }
+    reading_passages:
+      - { id: "rath-yatra-notice", text: { "en": "A notice for the chariot festival in Puri: the day, the route and the rules" } }
+  # or-grammar-past-negative joins this unit.
+  - planned: { id: "or-grammar-perfect", grammar: ["perfect", "past-negative"] }
+    listening_passages:
+      - { id: "what-has-happened", text: { "en": "A neighbour says what has already been done and what is still left" } }
+    reading_passages:
+      - { id: "checklist-done", text: { "en": "A ticked checklist: what has been done and what has not" } }
+  - planned: { id: "or-shopping", theme: "shopping", words: 55 }
+    listening_passages:
+      - { id: "bargaining", text: { "en": "Bargaining politely at a market stall" } }
+    reading_passages:
+      - { id: "price-list", text: { "en": "A shop's price list and its offers" } }
+  - planned: { id: "or-grammar-past-more", grammar: "past-more" }
+    listening_passages:
+      - { id: "had-already", text: { "en": "Saying what had already happened" } }
+    reading_passages:
+      - { id: "missed-meeting", text: { "en": "A message about a missed meeting" } }
+  - planned: { id: "or-illness", theme: "illness", words: 50 }
+    listening_passages:
+      - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
+    reading_passages:
+      - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
+  # The conjunctive participle in -i, khāi, "having eaten", before the
+  # compound verbs built on it.
+  - planned: { id: "or-grammar-conjunctive", grammar: "conjunctive" }
+    listening_passages:
+      - { id: "what-i-did-today", text: { "en": "Telling a day as one chain of actions" } }
+    reading_passages:
+      - { id: "travel-diary", text: { "en": "A travel diary that chains what happened" } }
+  - planned: { id: "or-grammar-compound-verbs", grammar: "compound-verbs", words: 8 }
+    listening_passages:
+      - { id: "it-got-done", text: { "en": "Saying a thing is finished, or done for someone else" } }
+    reading_passages:
+      - { id: "finished-list", text: { "en": "A list of jobs, each ticked off" } }
+  - planned: { id: "or-eating-out", theme: "eating-out", words: 10 }
+    listening_passages:
+      - { id: "ordering-a-meal", text: { "en": "Ordering a meal at a roadside hotel" } }
+    reading_passages:
+      - { id: "restaurant-bill", text: { "en": "A restaurant bill" } }
+  - planned: { id: "or-cooking", theme: "cooking", words: 50 }
+    listening_passages:
+      - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes dalma" } }
+    reading_passages:
+      - { id: "recipe-card", text: { "en": "A recipe card with its steps" } }
+  - planned: { id: "or-grammar-comparison", grammar: "comparison" }
+    listening_passages:
+      - { id: "which-is-better", text: { "en": "Two friends compare two phones" } }
+    reading_passages:
+      - { id: "two-cities", text: { "en": "A short text comparing Cuttack and Bhubaneswar" } }
+  # or-grammar-irregular and or-grammar-pitfalls follow this unit.
+  - planned: { id: "or-help", theme: "help", words: 7 }
+    listening_passages:
+      - { id: "asking-for-help", text: { "en": "Asking a passer-by for help" } }
+    reading_passages:
+      - { id: "help-desk-sign", text: { "en": "A help desk sign" } }
+  - planned: { id: "or-grammar-irregular", grammar: "irregular" }
+    listening_passages:
+      - { id: "irregular-heard", text: { "en": "A short exchange that uses irregular, after the help unit" } }
+    reading_passages:
+      - { id: "irregular-read", text: { "en": "A short text that uses irregular, after the help unit" } }
+  - planned: { id: "or-grammar-pitfalls", grammar: "pitfalls" }
+    listening_passages:
+      - { id: "pitfalls-heard", text: { "en": "A short exchange that uses pitfalls, after the help unit" } }
+    reading_passages:
+      - { id: "pitfalls-read", text: { "en": "A short text that uses pitfalls, after the help unit" } }
+  - planned: { id: "or-grammar-conjunct-verbs", grammar: "conjunct-verbs", words: 4 }
+    listening_passages:
+      - { id: "doing-a-favour", text: { "en": "Asking someone to do a favour or make a call" } }
+    reading_passages:
+      - { id: "office-tasks", text: { "en": "A list of office tasks to do" } }
+  - planned: { id: "or-school", theme: "school", words: 55 }
+    listening_passages:
+      - { id: "school-day", text: { "en": "A child describes the school day" } }
+    reading_passages:
+      - { id: "class-timetable", text: { "en": "A school timetable" } }
+  - planned: { id: "or-hobbies", theme: "hobbies", words: 55 }
+    listening_passages:
+      - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends" } }
+    reading_passages:
+      - { id: "club-poster", text: { "en": "A poster for a sports and music club" } }
+  # The imperative at each honorific level: kar, kara and karantu.
+  - planned: { id: "or-grammar-imperatives", grammar: "imperatives" }
+    listening_passages:
+      - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class, and a pupil asks an elder politely" } }
+    reading_passages:
+      - { id: "signs-and-rules", text: { "en": "Signs saying what to do and what not to do" } }
+  # One form, -uthilā, for "was doing" and "used to do".
+  - planned: { id: "or-grammar-past-continuous", grammar: ["past-continuous", "habitual-past"] }
+    listening_passages:
+      - { id: "when-i-was-small", text: { "en": "Telling what you used to do when you were small, and what you were doing when the lights went out" } }
+    reading_passages:
+      - { id: "power-cut-story", text: { "en": "A short story of an evening during a power cut" } }
+  - planned: { id: "or-chores", theme: "chores", words: 45 }
+    listening_passages:
+      - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
+    reading_passages:
+      - { id: "chore-list", text: { "en": "A weekly chore list on the wall" } }
+  - planned: { id: "or-appearance", theme: "appearance", words: 55 }
+    listening_passages:
+      - { id: "describing-a-friend", text: { "en": "Describing a friend to someone who will meet them at the station" } }
+    reading_passages:
+      - { id: "lost-and-found", text: { "en": "A lost-and-found notice describing a bag" } }
+  - planned: { id: "or-verbs-3", theme: "verbs-3", words: 65 }
+    listening_passages:
+      - { id: "a-busy-day", text: { "en": "Someone lists everything they did in a day" } }
+    reading_passages:
+      - { id: "diary-entry", text: { "en": "A short diary entry" } }
+  - planned: { id: "or-phone", theme: "phone", words: 45 }
+    listening_passages:
+      - { id: "phone-call", text: { "en": "A phone call to arrange a meeting" } }
+    reading_passages:
+      - { id: "text-messages", text: { "en": "A few text messages between friends" } }
+  - planned: { id: "or-journey", theme: "journey", words: 60 }
+    listening_passages:
+      - { id: "ticket-counter", text: { "en": "Buying a train ticket at the counter" } }
+    reading_passages:
+      - { id: "train-timetable", text: { "en": "A train timetable and a platform notice" } }
+  - planned: { id: "or-nature", theme: "nature", words: 55 }
+    listening_passages:
+      - { id: "by-chilika-lake", text: { "en": "Two people describe a boat ride on Chilika lake at dusk" } }
+    reading_passages:
+      - { id: "park-signs", text: { "en": "Signs in a park" } }
+  - planned: { id: "or-adjectives-2", theme: "adjectives-2", words: 60 }
+    listening_passages:
+      - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
+    reading_passages:
+      - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
+  - planned: { id: "or-workplace", theme: "workplace", words: 50 }
+    listening_passages:
+      - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }
+    reading_passages:
+      - { id: "office-notice", text: { "en": "An office notice about a meeting" } }
+  - planned: { id: "or-geography", theme: "geography", words: 50 }
+    listening_passages:
+      - { id: "where-in-india", text: { "en": "Naming the states and cities of India, and Odisha's neighbours" } }
+    reading_passages:
+      - { id: "odisha-map", text: { "en": "A map caption: Odisha's districts, from the coast to the western hills" } }
+    milestone: "A2"
+  # B1: the themes and grammar of the CEFR's B1. The first unit is the
+  # registers: the written forms of formal Odia beside the spoken ones
+  # taught so far. or-slang joins it.
+  - planned: { id: "or-registers", grammar: "registers", words: 25 }
+    listening_passages:
+      - { id: "news-and-chat", text: { "en": "The same news read on the radio, then told to a friend" } }
+    reading_passages:
+      - { id: "written-notice", text: { "en": "A written notice and how it would be said aloud" } }
+  - planned: { id: "or-health", theme: "health", words: 55 }
+    listening_passages:
+      - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
+    reading_passages:
+      - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
+  - planned: { id: "or-feelings", theme: "feelings", words: 55 }
+    listening_passages:
+      - { id: "a-hard-week", text: { "en": "A friend says how the week made them feel" } }
+    reading_passages:
+      - { id: "letter-to-a-friend", text: { "en": "A letter to a friend about worries and hopes" } }
+  # The relative-correlative clause: je ... se.
+  - planned: { id: "or-grammar-relative", grammar: "relative" }
+    listening_passages:
+      - { id: "the-man-who-came", text: { "en": "Describing people by what they did: the one who came, the one who left" } }
+    reading_passages:
+      - { id: "shop-reviews", text: { "en": "Short reviews of a shop and its staff" } }
+  - planned: { id: "or-news", theme: "news", words: 55 }
+    listening_passages:
+      - { id: "radio-news", text: { "en": "A short radio news bulletin" } }
+    reading_passages:
+      - { id: "headline-list", text: { "en": "A list of newspaper headlines" } }
+  - planned: { id: "or-opinions", theme: "opinions", words: 50 }
+    listening_passages:
+      - { id: "agreeing-and-disagreeing", text: { "en": "Two friends agree and disagree politely over tea" } }
+    reading_passages:
+      - { id: "readers-letters", text: { "en": "Two short letters to a newspaper" } }
+  # or-grammar-verb-classes joins this unit.
+  - planned: { id: "or-grammar-can-must", grammar: ["can-must", "verb-classes"] }
+    listening_passages:
+      - { id: "can-you-come", text: { "en": "Asking if someone can come, and saying what must be done" } }
+    reading_passages:
+      - { id: "permit-rules", text: { "en": "A notice: what you may and must do" } }
+  # The optative in -u: se āsu, "let him come".
+  - planned: { id: "or-grammar-subjunctive", grammar: "subjunctive" }
+    listening_passages:
+      - { id: "making-suggestions", text: { "en": "Friends make suggestions and wishes: let us go, may it go well" } }
+    reading_passages:
+      - { id: "friendly-advice", text: { "en": "A friendly note that suggests what to do and what to hope for" } }
+  - planned: { id: "or-grammar-conditional", grammar: "conditional" }
+    listening_passages:
+      - { id: "rain-plans", text: { "en": "A friend's plans if it rains" } }
+    reading_passages:
+      - { id: "late-train", text: { "en": "A message: if the train is late" } }
+  - planned: { id: "or-travel", theme: "travel", words: 55 }
+    listening_passages:
+      - { id: "hotel-booking", text: { "en": "Booking a hotel room in Puri over the phone" } }
+    reading_passages:
+      - { id: "itinerary", text: { "en": "A two-day trip itinerary: Konark and Puri" } }
+  - planned: { id: "or-services", theme: "services", words: 45 }
+    listening_passages:
+      - { id: "at-the-post-office", text: { "en": "Sending a parcel at the post office counter" } }
+    reading_passages:
+      - { id: "bank-form", text: { "en": "A simple bank form" } }
+  - planned: { id: "or-government", theme: "government", words: 45 }
+    listening_passages:
+      - { id: "at-the-office", text: { "en": "Asking an officer which document is needed" } }
+    reading_passages:
+      - { id: "form-instructions", text: { "en": "Instructions on an application form" } }
+  - planned: { id: "or-grammar-purpose", grammar: "purpose" }
+    listening_passages:
+      - { id: "why-are-you-going", text: { "en": "Saying what you are going somewhere to do" } }
+    reading_passages:
+      - { id: "course-advert", text: { "en": "An advert for a course: what it is for" } }
+  - planned: { id: "or-technology", theme: "technology", words: 50 }
+    listening_passages:
+      - { id: "fixing-a-phone", text: { "en": "Asking a shop to fix a phone" } }
+    reading_passages:
+      - { id: "app-instructions", text: { "en": "Instructions inside a phone app" } }
+  - planned: { id: "or-careers", theme: "careers", words: 50 }
+    listening_passages:
+      - { id: "job-interview", text: { "en": "A short job interview" } }
+    reading_passages:
+      - { id: "job-advert", text: { "en": "A job advert" } }
+  - planned: { id: "or-grammar-before-after", grammar: "before-after" }
+    listening_passages:
+      - { id: "order-of-events", text: { "en": "Saying what happens before and after what" } }
+    reading_passages:
+      - { id: "event-schedule", text: { "en": "A schedule of an event day" } }
+  - planned: { id: "or-environment", theme: "environment", words: 50 }
+    listening_passages:
+      - { id: "after-the-cyclone", text: { "en": "Neighbours talk about the cyclone warning and the shelters" } }
+    reading_passages:
+      - { id: "clean-up-notice", text: { "en": "A notice for a neighbourhood clean-up" } }
+  - planned: { id: "or-agriculture", theme: "agriculture", words: 50 }
+    listening_passages:
+      - { id: "a-farmer-talks", text: { "en": "A farmer talks about the season's paddy" } }
+    reading_passages:
+      - { id: "market-prices", text: { "en": "A crop price board at a market" } }
+  - planned: { id: "or-grammar-while", grammar: "while" }
+    listening_passages:
+      - { id: "doing-two-things", text: { "en": "Saying what people do while doing something else" } }
+    reading_passages:
+      - { id: "a-day-on-the-bus", text: { "en": "A short story of a bus ride" } }
+  - planned: { id: "or-cinema", theme: "cinema", words: 50 }
+    listening_passages:
+      - { id: "after-the-film", text: { "en": "Friends talk about an Odia film they saw" } }
+    reading_passages:
+      - { id: "film-review", text: { "en": "A short film review" } }
+  - planned: { id: "or-arts", theme: "arts", words: 45 }
+    listening_passages:
+      - { id: "a-dance-class", text: { "en": "A teacher explains an Odissi dance class" } }
+    reading_passages:
+      - { id: "exhibition-notice", text: { "en": "A notice for a pattachitra painting exhibition" } }
+  - planned: { id: "or-grammar-causative", grammar: "causative" }
+    listening_passages:
+      - { id: "having-things-done", text: { "en": "Asking someone to get things done: have it made, have it repaired" } }
+    reading_passages:
+      - { id: "service-request", text: { "en": "A written service request" } }
+  - planned: { id: "or-history", theme: "history", words: 45 }
+    listening_passages:
+      - { id: "a-temple-visit", text: { "en": "A guide tells the story of the Sun Temple at Konark" } }
+    reading_passages:
+      - { id: "museum-card", text: { "en": "A museum card about the Kalinga war" } }
+  - planned: { id: "or-weddings", theme: "weddings", words: 40 }
+    listening_passages:
+      - { id: "wedding-plans", text: { "en": "Relatives plan a wedding" } }
+    reading_passages:
+      - { id: "wedding-card", text: { "en": "A wedding invitation card" } }
+  - planned: { id: "or-grammar-concessive", grammar: "concessive" }
+    listening_passages:
+      - { id: "even-though", text: { "en": "Saying something happened even though it was hard" } }
+    reading_passages:
+      - { id: "a-hard-choice", text: { "en": "A short text about a hard choice" } }
+  - planned: { id: "or-sports", theme: "sports", words: 40 }
+    listening_passages:
+      - { id: "hockey-talk", text: { "en": "Friends talk about a hockey match in Bhubaneswar" } }
+    reading_passages:
+      - { id: "match-report", text: { "en": "A short match report" } }
+  - planned: { id: "or-relationships", theme: "relationships", words: 40 }
+    listening_passages:
+      - { id: "neighbours-and-friends", text: { "en": "Talking about neighbours and old friends" } }
+    reading_passages:
+      - { id: "thank-you-note", text: { "en": "A thank-you note to a neighbour" } }
+  - planned: { id: "or-grammar-indefinites", grammar: "indefinites" }
+    listening_passages:
+      - { id: "someone-somewhere", text: { "en": "Talking about someone, something and somewhere" } }
+    reading_passages:
+      - { id: "lost-property-notice", text: { "en": "A notice about something someone lost" } }
+  - planned: { id: "or-housing", theme: "housing", words: 40 }
+    listening_passages:
+      - { id: "renting-a-flat", text: { "en": "Asking an owner about a flat to rent" } }
+    reading_passages:
+      - { id: "rental-terms", text: { "en": "The terms of a rental" } }
+  - planned: { id: "or-emergencies", theme: "emergencies", words: 40 }
+    listening_passages:
+      - { id: "calling-for-help", text: { "en": "Calling for help after an accident" } }
+    reading_passages:
+      - { id: "safety-notice", text: { "en": "A safety notice in a building" } }
+  # The emphatic particles: -hi, "only, indeed", and -to.
+  - planned: { id: "or-grammar-emphasis", grammar: "emphasis" }
+    listening_passages:
+      - { id: "only-this-one", text: { "en": "Insisting on one choice" } }
+    reading_passages:
+      - { id: "advert-slogans", text: { "en": "Short advert slogans" } }
+  - planned: { id: "or-law", theme: "law", words: 35 }
+    listening_passages:
+      - { id: "police-complaint", text: { "en": "Making a complaint at a police station" } }
+    reading_passages:
+      - { id: "rights-leaflet", text: { "en": "A leaflet on a tenant's rights" } }
+  - planned: { id: "or-verbs-4", theme: "verbs-4", words: 60 }
+    listening_passages:
+      - { id: "a-long-story", text: { "en": "A story told in a sequence of events" } }
+    reading_passages:
+      - { id: "short-story", text: { "en": "A short story with a turn" } }
+  - planned: { id: "or-grammar-passive", grammar: "passive" }
+    listening_passages:
+      - { id: "it-was-done", text: { "en": "Saying what was done, without saying by whom" } }
+    reading_passages:
+      - { id: "notice-board", text: { "en": "A notice board with announcements" } }
+  - planned: { id: "or-abstract-words", theme: "abstract-words", words: 50 }
+    listening_passages:
+      - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
+    reading_passages:
+      - { id: "opinion-column", text: { "en": "A short opinion column" } }
+  - planned: { id: "or-money", theme: "money", words: 40 }
+    listening_passages:
+      - { id: "at-the-bank", text: { "en": "Opening an account at a bank counter" } }
+    reading_passages:
+      - { id: "bill-and-receipt", text: { "en": "A bill and a receipt" } }
+  # Reported speech with the quotative boli.
+  - planned: { id: "or-grammar-reported-speech", grammar: "reported-speech" }
+    listening_passages:
+      - { id: "she-said", text: { "en": "Telling someone what a third person said on the phone" } }
+    reading_passages:
+      - { id: "message-relay", text: { "en": "A message thread passing on what someone said" } }
+  - planned: { id: "or-literature", theme: "literature", words: 45 }
+    listening_passages:
+      - { id: "a-poem-read-aloud", text: { "en": "A teacher reads a short poem and explains it" } }
+    reading_passages:
+      - { id: "book-blurb", text: { "en": "The back-cover blurb of a novel" } }
+  - planned: { id: "or-verbs-5", theme: "verbs-5", words: 45 }
+    listening_passages:
+      - { id: "what-happened-next", text: { "en": "Telling a long story with every step in order" } }
+    reading_passages:
+      - { id: "newspaper-feature", text: { "en": "A newspaper feature with a short interview" } }
+  # The honorific verbs and words in full, at every level.
+  - planned: { id: "or-grammar-honorifics", grammar: "honorifics" }
+    listening_passages:
+      - { id: "addressing-an-elder", text: { "en": "Speaking to an elder, a stranger and a friend" } }
+    reading_passages:
+      - { id: "formal-letter", text: { "en": "A formal letter and its closing" } }
+    milestone: "B1"
+  - ["*"]
