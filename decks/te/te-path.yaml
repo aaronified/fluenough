@@ -544,7 +544,8 @@ units:
       - { id: "renting-a-flat", text: { "en": "Asking an owner about a flat to rent" } }
     reading_passages:
       - { id: "rental-terms", text: { "en": "The terms of a rental" } }
-  - planned: { id: "te-emergencies", theme: "emergencies", words: 40 }
+  - decks: ["te-emergencies", "*"]
+    words: 40
     listening_passages:
       - { id: "calling-for-help", text: { "en": "Calling for help after an accident" } }
     reading_passages:
