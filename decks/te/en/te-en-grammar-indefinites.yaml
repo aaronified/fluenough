@@ -13,26 +13,58 @@ cards:
     notes:
       "n1": "ఎవరో (evarō) is ఎవరు (evaru), who, with -ఓ (-ō) added: 'someone'. ఎవరైనా (evarainā) is 'anyone'."
     examples:
-      "ఎవరో తలుపు తట్టారు.": "Someone knocked on the door."
-      "నా పుస్తకం ఎవరో తీసుకెళ్ళారు.": "Someone took my book away."
+      "ఎవరో తలుపు తట్టారు.":
+        native: "Someone knocked on the door."
+        bases:
+          "తలుపు": { meaning: "door" }
+          "తట్టారు": { meaning: "to knock" }
+      "నా పుస్తకం ఎవరో తీసుకెళ్ళారు.":
+        native: "Someone took my book away."
+        bases:
+          "నా": { meaning: "my (from I)" }
+          "పుస్తకం": { meaning: "book" }
   "te-5601":
     native: "something; some"
     notes:
       "n1": "ఏదో (ēdō) is ఏది (ēdi), which one, with -ఓ (-ō): 'something'. Before a noun it means 'some'."
     examples:
-      "అతను ఏదో చెప్పాలనుకున్నాడు.": "He wanted to say something."
-      "గదిలో ఏదో శబ్దం వినిపించింది.": "A sound was heard in the room."
+      "అతను ఏదో చెప్పాలనుకున్నాడు.":
+        native: "He wanted to say something."
+        bases:
+          "అతను": { meaning: "he" }
+          "చెప్పాలనుకున్నాడు": { meaning: "to say" }
+      "గదిలో ఏదో శబ్దం వినిపించింది.":
+        native: "A sound was heard in the room."
+        bases:
+          "గదిలో": { meaning: "room" }
+          "శబ్దం": { meaning: "sound; noise" }
   "te-5602":
     native: "anything; any; whatever"
     notes:
       "n1": "ఏదైనా (ēdainā) is ఏది (ēdi) with -ఐనా (-ainā): 'anything' or 'whatever'. It is the same ending as ఎవరైనా (evarainā), anyone."
     examples:
-      "నీకు ఏదైనా కావాలా?": "Do you want anything?"
-      "ఏదైనా తినడానికి ఇవ్వండి.": "Give me something to eat, anything at all."
+      "నీకు ఏదైనా కావాలా?":
+        native: "Do you want anything?"
+        bases:
+          "నీకు": { meaning: "you" }
+          "కావాలా": { meaning: "to want; to need" }
+      "ఏదైనా తినడానికి ఇవ్వండి.":
+        native: "Give me something to eat, anything at all."
+        bases:
+          "తినడానికి": { meaning: "to eat" }
+          "ఇవ్వండి": { meaning: "to give" }
   "te-5604":
     native: "nothing; none"
     notes:
       "n1": "ఏదీ (ēdī) is ఏది (ēdi) with -ఈ (-ī). With a negative verb such as లేదు (lēdu) or కాదు (kādu), it means 'nothing' or 'none'."
     examples:
-      "ఈ పెట్టెలో ఏదీ లేదు.": "There is nothing in this box."
-      "అతని మాటల్లో ఏదీ నిజం కాదు.": "None of what he said is true."
+      "ఈ పెట్టెలో ఏదీ లేదు.":
+        native: "There is nothing in this box."
+        bases:
+          "ఈ": { meaning: "this" }
+          "పెట్టెలో": { meaning: "box" }
+      "అతని మాటల్లో ఏదీ నిజం కాదు.":
+        native: "None of what he said is true."
+        bases:
+          "అతని": { meaning: "his (from he)" }
+          "మాటల్లో": { meaning: "word; speech" }
