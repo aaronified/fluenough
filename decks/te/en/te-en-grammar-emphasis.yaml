@@ -1,0 +1,114 @@
+schema: 1
+id: "te-en-grammar-emphasis"
+kind: "layer"
+core: "te-grammar-emphasis"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Emphasis: only, even, actually, definitely"
+description: "Small words that add emphasis: మాత్రం (mātram, only; for one), అయినా (ayinā, even so; even though), అసలు (asalu, at all; actually), ఇదే (idē, exactly this), కదా (kadā, isn't it?), ఎంతో (ento, very), ఇప్పుడే (ippuḍē, right now) and తప్పకుండా (tappakuṇḍā, for sure). Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  "te-5900":
+    native: "only; just; (but) for one"
+    examples:
+      "అందరూ వచ్చారు, నేను మాత్రం రాలేదు.":
+        native: "Everyone came, but I alone did not come."
+        bases:
+          "వచ్చారు":
+            meaning: "to come (they came)"
+          "రాలేదు":
+            meaning: "to come (did not come)"
+      "ఒక్క మాట మాత్రం చెప్పు.":
+        native: "Just tell me one word."
+        bases:
+          "చెప్పు":
+            meaning: "to tell; to say"
+    notes:
+      "n1": "Put it after the word it limits: నేను మాత్రం (nēnu mātram), I alone. Use it to set one thing against others."
+  "te-5901":
+    native: "even so; still; even though"
+    examples:
+      "అతను ధనవంతుడు అయినా సంతోషంగా లేడు.":
+        native: "He is rich, yet he is not happy."
+      "చాలా ఆలస్యమైంది, అయినా వెళ్దాం.":
+        native: "It is very late, but let's go anyway."
+        bases:
+          "వెళ్దాం":
+            meaning: "let us go"
+    notes:
+      "n1": "It comes after the first clause and says 'in spite of that': చాలా ఆలస్యమైంది, అయినా వెళ్దాం (cālā ālasyamaindi, ayinā veḷdāṁ), it is very late, but let's go."
+  "te-5902":
+    native: "at all; actually; really"
+    examples:
+      "అసలు ఇది నా తప్పు కాదు.":
+        native: "This is not my fault at all."
+      "అసలు నిజం ఏమిటి?":
+        native: "What is the real truth, then?"
+    notes:
+      "n1": "With a negative (కాదు, kādu) it means 'not at all': అసలు కాదు (asalu kādu), not at all. Without one it asks for the real facts."
+  "te-5903":
+    native: "exactly this; this very one"
+    examples:
+      "నాకు కావాల్సింది ఇదే.":
+        native: "This is exactly what I need."
+      "ఇదే మంచి సమయం.":
+        native: "This is the right time."
+    notes:
+      "n1": "The ే (-ē) at the end of ఇది (idi, this) makes it 'this very one'. The same -ే works after other words: అతనే (atanē), he himself."
+  "te-5904":
+    native: "isn't it?; right?; don't you think?"
+    examples:
+      "ఈ రోజు చల్లగా ఉంది కదా?":
+        native: "It is cold today, isn't it?"
+        bases:
+          "ఉంది":
+            meaning: "to be; to have"
+      "నువ్వు రేపు వస్తావు కదా?":
+        native: "You'll come tomorrow, right?"
+        bases:
+          "వస్తావు":
+            meaning: "to come (you will come)"
+    notes:
+      "n1": "A tag at the end of a sentence to ask for agreement. It is not used to answer a question: it asks the listener to confirm."
+  "te-5905":
+    native: "very; a lot; so"
+    examples:
+      "ఈ సినిమా ఎంతో బాగుంది.":
+        native: "This film is very good."
+      "నాకు ఎంతో ఆనందంగా ఉంది.":
+        native: "I am very happy."
+        bases:
+          "ఉంది":
+            meaning: "to be; to have"
+    notes:
+      "n1": "It comes before the adjective or the adverb it strengthens: ఎంతో బాగుంది (entō bāgundi), very good."
+  "te-5906":
+    native: "right now; just now; at once"
+    examples:
+      "ఇప్పుడే వస్తాను.":
+        native: "I'll come right now."
+        bases:
+          "వస్తాను":
+            meaning: "to come (I will come)"
+      "అతను ఇప్పుడే వెళ్ళాడు.":
+        native: "He has just left."
+        bases:
+          "వెళ్ళాడు":
+            meaning: "to go (he went)"
+    notes:
+      "n1": "ఇప్పుడు (ippuḍu, now) with the -ే (-ē) is 'right now' or 'just now', as in ఇప్పుడే వస్తాను (ippuḍē vastānu), I'll be right back."
+  "te-5907":
+    native: "for sure; definitely; without fail"
+    examples:
+      "రేపు తప్పకుండా రండి.":
+        native: "Come tomorrow without fail."
+        bases:
+          "రండి":
+            meaning: "to come (please come)"
+      "నేను తప్పకుండా పరీక్షకు వెళ్తాను.":
+        native: "I will definitely go to the exam."
+        bases:
+          "వెళ్తాను":
+            meaning: "to go (I will go)"
+    notes:
+      "n1": "It stresses that something will certainly happen: తప్పకుండా వస్తాను (tappakuṇḍā vastānu), I will surely come."
