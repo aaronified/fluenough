@@ -1,0 +1,728 @@
+# The order Proto-Indo-European is taught in, one unit per line, from every
+# language it is taught from: each deck is named by its core id, and a
+# learner from English is taught ine-en-family for ine-family (ADR-0013,
+# ADR-0036).
+#
+# This is also Proto-Indo-European's plan to its last level
+# (docs/DECK-FORMAT.md, "The B1 plan"): every unit to the last milestone,
+# with its size in words, its grammar topics, the three milestones, and each
+# unit's listening and reading passages. No deck is written yet, so every
+# unit is planned: the course teaches each as "Coming" until its deck is
+# written.
+#
+# The code. ISO 639-3 has no code for Proto-Indo-European: it leaves out
+# reconstructed languages. Wiktionary and Glottolog-style lists write
+# `ine-pro`, a private extension of `ine`, but the format's language code is
+# two or three letters (LANG_RE and CODE_RE in tools/validate_decks.py, and
+# card ids such as ine-0001), so `ine-pro` cannot be used. The course takes
+# `ine`, the ISO 639-2 and 639-5 code for the Indo-European languages as a
+# group, which is what Wiktionary's `ine-pro` is built on. It is not an ISO
+# 639-3 code, and the `iso639_3` a deck's language block needs is an open
+# question for the owner (#586).
+#
+# A reading course of a reconstructed language (#586). Proto-Indo-European
+# was spoken, by most estimates, somewhere between about 4500 and 2500 BCE,
+# and was never written. Every word in this course is a reconstruction:
+# scholars infer it by comparing the languages descended from it (Sanskrit,
+# Avestan, Hittite, Greek, Latin, Gothic, Old Irish, Old Church Slavonic,
+# Tocharian, Armenian, Albanian, Lithuanian), and mark it with an asterisk,
+# *ph₂tḗr, because no one ever saw it written. There are no texts, no
+# speakers and no recordings, and a CEFR B1 of daily life does not apply. The
+# format names the milestones A1, A2 and B1, and the plan keeps those names,
+# but here they mean three reading levels:
+#
+# - A1, "Roots and nouns" (400 words): read single reconstructions and the
+#   cognate sets they are built from; the notation (laryngeals, the three
+#   rows of dorsals, syllabic resonants, accent); roots and ablaut; the
+#   thematic noun in its eight cases; the verb "to be" and the thematic
+#   present. The level ends with the first sentence of Schleicher's fable.
+# - A2, "Verbs and the fable" (500 more, 900 in all): the athematic nouns,
+#   the dual, the pronouns, the laryngeals' effects on the daughter
+#   languages, the verb's three stems (present, aorist, perfect), the middle
+#   voice and the moods. The level ends with the whole of Schleicher's fable
+#   in one modern version, and its 1868 original set beside it.
+# - B1, "Formulae and compositions" (600 more, 1,500 in all): the poetic
+#   formulae reconstructed from Vedic, Homeric and Germanic verse, the
+#   sound laws that lead to each of the course's other languages, the
+#   accent-and-ablaut classes, derivation and compounds, relative clauses,
+#   and Anatolian. The level ends with "The king and the god" read without
+#   a translation.
+#
+# The sizes are honest, not the plan's usual ones. Wiktionary's
+# Reconstruction namespace, as kaikki.org extracts it (2026-10-03), has
+# 1,802 distinct Proto-Indo-European forms, 1,288 of them roots; the
+# well-established ones, with cognates in several branches that every
+# handbook accepts, number only in the hundreds, and with their securest
+# derivatives in the low thousands. So the course plans 1,500 words in all:
+# A1 and A2 teach the securest vocabulary (kin terms, numerals, body parts,
+# common verbal roots), and B1 the words found in fewer branches, each card
+# saying which branches attest it. Each level is within the validator's
+# range (half to one and a half times 700, 900 and 1,200; B1 is at its
+# bottom), but the 1,500 in all is below its 2,000 to 3,500, and the
+# validator will warn of it. That warning is meant: to reach 2,000 the
+# course would have to teach reconstructions most scholars doubt. A "word"
+# here is a lemma, a root or a reconstructed word built on one: *ǵenh₁-
+# (beget) and *ǵénh₁os (kin) are two.
+#
+# The order follows docs/plans/words-rules-sentences.md and the path design
+# of 2026-10-17:
+# 1. the phrasebook, here the reconstructed poetic formulae, taught whole;
+# 2. the first word units, the securest vocabulary;
+# 3. the notation after them (below), in place of a script;
+# 4. a core of about 200 common words in themed units;
+# 5. rules as forms: roots and ablaut, the noun's cases, then pronoun and
+#    verb forms;
+# 6. sentences, each after its words and rules; then the other themes.
+#
+# The notation. Proto-Indo-European has no script: it is written in a
+# scholarly notation of Latin letters with diacritics, subscripts and
+# superscripts, which the course teaches as its script units. They count no
+# words. The notation the plan proposes is Fortson's (Indo-European Language
+# and Culture, 2nd ed., 2010), which is also, near enough, Wiktionary's:
+# - the asterisk, which marks a form as reconstructed: *h₂ówis, sheep;
+# - three laryngeals, h₁ h₂ h₃, and H for one whose identity is unknown
+#   (*suHnús, son);
+# - three rows of dorsals: palatovelars ḱ ǵ ǵʰ (*ḱm̥tóm, hundred), plain
+#   velars k g gʰ, and labiovelars kʷ gʷ gʷʰ (*kʷékʷlos, wheel);
+# - three series of stops: voiceless (p t), plain voiced (b d) and voiced
+#   aspirated (bʰ dʰ gʰ), as traditionally reconstructed; the glottalic
+#   theory is named, not taught;
+# - syllabic resonants r̥ l̥ m̥ n̥ (*wĺ̥kʷos, wolf; *déḱm̥t, ten), and y/i,
+#   w/u as one sound each;
+# - the accent, an acute on the stressed vowel (*ph₂tḗr), and the long
+#   vowels with a macron (ē, ō).
+# Which reference to follow is an open question for the owner (#586,
+# question 1): reconstructions differ by scholar. Fortson is the proposal,
+# for a learner's textbook; Ringe (From Proto-Indo-European to
+# Proto-Germanic, 2nd ed., 2017) is close to it; Beekes (Comparative
+# Indo-European Linguistics, 2nd ed., 2011) writes the laryngeals and
+# palatovelars differently (h₁ h₂ h₃ but k̑ ĝ, and the a-vowel denied).
+# LIV² (verbal roots) and NIL (nominal forms) are the reference lists to
+# check a card against. The chosen reference is named in every deck.
+#
+# Readings. A card's target is the reconstruction in the notation, which is
+# Latin letters, so no reading is needed and none is ISO 15919. No IPA is
+# planned: the laryngeals' and the voiced aspirates' phonetic values are
+# themselves hypotheses, so an IPA would be a guess presented as data. The
+# notation unit says what each letter is thought to have sounded like.
+#
+# Ablaut grades. Every root is taught with its grades, from the first
+# grammar unit: the e-grade (*ǵénh₁os, kin), the o-grade (*ǵónh₁os), the
+# zero grade (*ǵn̥h₁tós, born) and the lengthened grades (*pṓds, foot,
+# beside *ped-).
+#
+# Cognates. Because Proto-Indo-European explains Sanskrit, Greek, Latin and
+# Germanic, every unit links to the course's other languages: Hindi,
+# Bengali, Spanish, German, French and Greek. *dwóh₁ (two) is दो (do) in
+# Hindi, দুই (dui) in Bengali, dos, deux, zwei, and δύο (dýo); *h₁nómn̥
+# (name) is नाम (nām), নাম (nām), nombre, nom, Name and όνομα (ónoma). The
+# format has no field for a cognate yet (see the pull request's gaps): until
+# it has, a card's notes give its cognates.
+#
+# Passages. Proto-Indo-European has no texts. Every passage is one of
+# three kinds, and each says which:
+# - a reconstruction read beside the attested daughter forms it is built
+#   from (Sanskrit, Greek, Latin, Gothic, Hittite), which are real ancient
+#   texts;
+# - a modern composition: Schleicher's fable, "The sheep and the horses"
+#   (1868, and its later versions by Hirt, Lehmann and Zgusta, Adams,
+#   Kortlandt, Lühr and Byrd), "The king and the god" (Sen, Hamp and others,
+#   1994, revised by Byrd), or a short sentence composed for the course;
+#   never presented as an ancient text;
+# - a reconstructed poetic formula, such as *ḱléwos ń̥dʰgʷʰitom
+#   (imperishable fame), from Vedic śrávas ákṣitam and Homeric kléos
+#   áphthiton, named as a reconstruction from two or more traditions.
+# Schleicher's 1868 version is out of copyright; the later versions are
+# modern works whose licences are an open question (#510, #586), so a deck
+# may need its own version written to the chosen reference, citing theirs.
+# A listening passage is the same text read aloud by a scholar in a
+# reconstructed pronunciation: there is no speaker and no voice, so whether
+# any audio is recorded is for the owner to decide (#586).
+#
+# Proto-Indo-European, as it is usually reconstructed for the stage before
+# the non-Anatolian languages split, has three genders: masculine, feminine
+# and neuter. Behind them is an older split, animate against inanimate
+# (neuter), which Hittite and the other Anatolian languages keep as common
+# against neuter; the feminine, in *-eh₂, grew later. `genders` holds the
+# three, as for Marathi; the gender grammar unit teaches the older split,
+# and a card's note names it where it matters. To confirm with the reviewer.
+#
+# No `regions`. The app asks a rater "Where you speak Proto-Indo-European",
+# and nobody does; the reviewer is an Indo-Europeanist, not a speaker. The
+# language's variation is by stage (Early PIE, with Anatolian; Late PIE,
+# the usual teaching stage) and by branch, never by a place a reader is
+# from, and a region's id is permanent. A card's note gives its stage or the
+# branches that attest it instead, and the validator refuses an empty
+# `regions: []`, so the field is left out.
+#
+# A planned unit holds one core id. A theme's sentence deck,
+# ine-<theme>-sentences, joins its theme's unit once written.
+#
+# Every deck of Proto-Indo-European is listed exactly once.
+schema: 1
+kind: "path"
+id: "ine-path"
+language: "ine"
+# The genders a noun's gender is one of (#512; DECK-FORMAT.md, Card data):
+# masculine, feminine and neuter, with the older animate and inanimate
+# split behind them (above).
+genders: ["m", "f", "n"]
+# "*" takes decks a learner adds (#22): one of a unit's theme at the
+# bottom of that unit, any other in the last unit.
+units:
+  # A1, "Roots and nouns".
+  #
+  # 1. The phrasebook: reconstructed poetic formulae, taught whole, each
+  # marked as a reconstruction from two or more traditions: *ḱléwos
+  # ń̥dʰgʷʰitom (imperishable fame), *dyḗws ph₂tḗr (father sky: Vedic
+  # dyaúṣ pitā́, Greek Zeû páter, Latin Iuppiter), *wiHróm péḱu (men and
+  # livestock), *gʷʰént h₁ógʷʰim (he slew the serpent), *h₁ésti (is), and
+  # the fable's title, *h₂ówis h₁éḱwōs-kʷe (the sheep and the horses).
+  - planned: { id: "ine-phrasebook", theme: "first-words", words: 15 }
+    listening_passages:
+      - { id: "formulae-read-aloud", text: { "en": "The formulae read aloud in a reconstructed pronunciation: imperishable fame, father sky, he slew the serpent (a modern reading)" } }
+    reading_passages:
+      - { id: "imperishable-fame", text: { "en": "Imperishable fame in two ancient traditions: a line of the Rigveda with śrávas ákṣitam and a line of the Iliad with kléos áphthiton, and the reconstruction *ḱléwos ń̥dʰgʷʰitom built from them" } }
+  # 2. Reconstruction and its notation: the comparative method, cognate
+  # sets, regular sound correspondences, the asterisk. In place of a living
+  # language's sound-differences unit. Father: पिता (pitā), পিতা (pitā),
+  # padre, père, Vater, πατέρας (patéras), from *ph₂tḗr.
+  - planned: { id: "ine-reconstruction", grammar: ["comparative-method", "asterisk-notation"], words: 0 }
+    listening_passages:
+      - { id: "father-in-six-languages", text: { "en": "Father said in Hindi, Bengali, Spanish, French, German and Greek, then the reconstruction *ph₂tḗr they lead back to" } }
+    reading_passages:
+      - { id: "a-cognate-table", text: { "en": "A table of cognates for father, mother and brother in Sanskrit, Greek, Latin and Gothic, and the reconstruction each column gives" } }
+  # 3. Family: *ph₂tḗr, *méh₂tēr, *bʰréh₂tēr, *swésōr, *suHnús, *dʰugh₂tḗr,
+  # *népōts, *h₂éwh₂os, *snusós, *ǵénh₁os. Brother: भाई (bhāī), ভাই (bhāi),
+  # frère, Bruder.
+  - planned: { id: "ine-family", theme: "family", words: 35 }
+    listening_passages:
+      - { id: "kin-terms-heard", text: { "en": "The kin terms read aloud, each after its Sanskrit, Greek and Latin cognates" } }
+    reading_passages:
+      - { id: "kin-cognate-sets", text: { "en": "Cognate sets for sister and daughter: Sanskrit svásar and duhitár, Greek thugátēr, Gothic swistar and dauhtar, and their reconstructions" } }
+  # 4. The body: *ḱérd (heart), *h₃ókʷs (eye), *h₃dónts (tooth), *pṓds
+  # (foot), *ǵénu (knee), *dn̥ǵʰwéh₂s (tongue), *h₁ésh₂r̥ (blood). Tooth:
+  # दाँत (dā̃t), দাঁত (dā̃t), diente, dent, Zahn, δόντι (dónti).
+  - planned: { id: "ine-body", theme: "body", words: 35 }
+    listening_passages:
+      - { id: "tooth-and-foot", text: { "en": "Tooth and foot heard in six living languages and then reconstructed, a lesson in the lengthened grade" } }
+    reading_passages:
+      - { id: "heart-cognates", text: { "en": "The cognates of *ḱérd: Greek kardía, Latin cor, Gothic hairtō, Hittite kēr, and why Sanskrit hṛ́d- is harder to fit" } }
+  # 5. Numbers: *óynos, *dwóh₁, *tréyes, *kʷetwóres, *pénkʷe, *swéḱs,
+  # *septḿ̥, *h₁oḱtṓw, *h₁néwn̥, *déḱm̥t, *wídḱm̥ti (twenty). The teens are
+  # not securely reconstructed, so the unit is smaller than its theme.
+  # Seven: सात (sāt), সাত (sāt), siete, sept, sieben, επτά (eptá).
+  - planned: { id: "ine-numbers-1-20", theme: "numbers-1-20", words: 15 }
+    listening_passages:
+      - { id: "counting-to-ten", text: { "en": "Counting from one to ten in a reconstructed pronunciation, each number after its Hindi and Spanish descendant" } }
+    reading_passages:
+      - { id: "numeral-table", text: { "en": "The numerals one to ten in Sanskrit, Greek, Latin, Gothic and Lithuanian, set beside their reconstructions" } }
+  # 6. Animals: *h₂ówis (sheep), *h₁éḱwos (horse), *gʷṓws (cow), *ḱwṓ
+  # (dog), *wĺ̥kʷos (wolf), *h₂ŕ̥tḱos (bear), *súHs (pig), *mūs (mouse).
+  # Cow: गाय (gāy), Kuh, βους (vous).
+  - planned: { id: "ine-animals", theme: "animals", words: 35 }
+    listening_passages:
+      - { id: "flock-and-herd", text: { "en": "Animals named in short sentences composed for the course: the sheep, the horse, the cow, the dog (a modern composition)" } }
+    reading_passages:
+      - { id: "horse-cognates", text: { "en": "The horse in Sanskrit áśva-, Avestan aspa-, Greek híppos, Latin equus and Old Irish ech, and the reconstruction *h₁éḱwos" } }
+  # 7. The notation, after the first six units: the three series of stops
+  # (p t, b d, bʰ dʰ gʰ), the three rows of dorsals (ḱ ǵ ǵʰ, k g gʰ, kʷ gʷ
+  # gʷʰ), and centum against satem: *ḱm̥tóm (hundred) as Latin centum and
+  # Sanskrit śatám, Hindi सौ (sau), Spanish ciento, Greek εκατό (ekató).
+  - planned: { id: "ine-notation-stops", grammar: ["stop-series", "dorsals", "centum-satem"], words: 0 }
+    listening_passages:
+      - { id: "three-dorsals", text: { "en": "The three rows of dorsals heard in a reconstructed pronunciation: ḱ, k and kʷ, in *ḱm̥tóm (hundred), *krewh₂ (raw flesh) and *kʷékʷlos (wheel)" } }
+    reading_passages:
+      - { id: "centum-satem-table", text: { "en": "Hundred in Latin, Greek, Gothic, Sanskrit, Avestan and Lithuanian, sorted into the centum and satem branches" } }
+  # 8. The notation's other letters: the laryngeals h₁ h₂ h₃ and H, the
+  # syllabic resonants r̥ l̥ m̥ n̥, y/i and w/u, and the accent. Wolf,
+  # *wĺ̥kʷos: Sanskrit vṛ́ka-, Greek lúkos, Spanish lobo.
+  - planned: { id: "ine-notation-laryngeals", grammar: ["laryngeals", "syllabic-resonants", "accent-notation"], words: 0 }
+    listening_passages:
+      - { id: "unknown-sounds", text: { "en": "What the laryngeals and the syllabic resonants may have sounded like, with the uncertainty said aloud" } }
+    reading_passages:
+      - { id: "one-root-four-notations", text: { "en": "The same five reconstructions as Fortson, Beekes, Ringe and Wiktionary write them, side by side" } }
+  # 9 to 15. The core: about 200 common words, the securest first.
+  # Pronouns: *h₁eǵ (I), *tuH (you), *wéy (we), *yūs (you all), *só, *séh₂,
+  # *tód (that), *kʷís, *kʷíd (who, what). Who: Spanish quién, French qui.
+  - planned: { id: "ine-pronouns", theme: "pronouns", words: 15 }
+    listening_passages:
+      - { id: "i-and-you", text: { "en": "I and you in short sentences composed for the course, each after its Sanskrit and Latin cognate (a modern composition)" } }
+    reading_passages:
+      - { id: "pronoun-cognates", text: { "en": "I and you in Sanskrit, Greek, Latin, Gothic and Hittite, and what their differences tell about the reconstruction" } }
+  # Everyday verbs, as roots: *h₁es- (be), *h₁ey- (go), *gʷem- (come),
+  # *bʰer- (carry), *h₁ed- (eat), *peh₃- (drink), *steh₂- (stand), *sed-
+  # (sit), *deh₃- (give), *dʰeh₁- (put), *ǵneh₃- (know), *weyd- (see).
+  # Know: जानना (jānnā), জানা (jānā), conocer, connaître, kennen.
+  - planned: { id: "ine-everyday-verbs", theme: "everyday-verbs", words: 40 }
+    listening_passages:
+      - { id: "roots-in-use", text: { "en": "Everyday roots heard in third-person forms in short sentences composed for the course: he carries, she gives, they eat (a modern composition)" } }
+    reading_passages:
+      - { id: "give-cognates", text: { "en": "The root *deh₃- in Sanskrit dádāti, Greek dídōmi, Latin dō, and in Hindi dān and Spanish dar" } }
+  # Describing: *néwos (new), *h₁rudʰrós (red), *meǵh₂- (great), *h₁su-
+  # (good), *sénos (old), *h₂yuh₁n̥ḱós (young), *swéh₂dus (sweet), *gʷréh₂us
+  # (heavy). New: नया (nayā), nuevo, neuf, neu, νέος (néos).
+  - planned: { id: "ine-describing", theme: "describing", words: 35 }
+    listening_passages:
+      - { id: "new-and-old", text: { "en": "Describing words heard in short phrases composed for the course: a new house, an old man, a sweet honey (a modern composition)" } }
+    reading_passages:
+      - { id: "sweet-cognates", text: { "en": "The cognates of *swéh₂dus: Sanskrit svādú-, Greek hēdús, Latin suāvis, English sweet" } }
+  # Nature: *dyḗws (sky, day), *séh₂wl̥ (sun), *méh₁n̥s (moon, month),
+  # *h₂stḗr (star), *nébʰos (cloud), *wódr̥ (water), *h₁ógʷnis (fire),
+  # *dʰéǵʰōm (earth), *snóygʷʰos (snow), *h₂éwsōs (dawn). Water: Greek
+  # νερό (neró) is not its descendant, but ύδωρ (ýdor) is.
+  - planned: { id: "ine-nature", theme: "nature", words: 40 }
+    listening_passages:
+      - { id: "sky-and-earth", text: { "en": "Sky, earth, sun and moon heard in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "dawn-goddess", text: { "en": "Dawn as word and goddess: Vedic Uṣás, Greek Ēṓs, Latin Aurōra, and the reconstruction *h₂éwsōs" } }
+  # Time: *nókʷts (night), *h₁yeh₁r (year), *wétos (year), *nu (now),
+  # *h₂eyw- (life, age). Night: noche, nuit, Nacht, νύχτα (nýchta).
+  - planned: { id: "ine-time", theme: "time", words: 20 }
+    listening_passages:
+      - { id: "day-and-night", text: { "en": "Day and night, now and then, heard in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "night-cognates", text: { "en": "Night in Sanskrit nákt-, Greek núx, Latin nox, Gothic nahts and Hittite nekuz, and the reconstruction *nókʷts" } }
+  # Things: *wĺ̥h₂neh₂ (wool), *néh₂us (ship), *dóru (tree, wood), *h₂éyos
+  # (copper, ore; again in metals), *h₂éḱmō (stone).
+  - planned: { id: "ine-things", theme: "things", words: 30 }
+    listening_passages:
+      - { id: "wool-and-wood", text: { "en": "Things named in short sentences composed for the course: wool, wood, a ship, copper (a modern composition)" } }
+    reading_passages:
+      - { id: "tree-and-true", text: { "en": "One root, two meanings: *dóru (tree, wood) and the words for firm and true that grew from it, in Sanskrit, Greek and English" } }
+  # 16 to 22. Rules as forms, practised on the words known.
+  # Roots and ablaut: the root shape CeC, the e, o, zero and lengthened
+  # grades, and the suffix and ending around a root.
+  - planned: { id: "ine-grammar-roots", grammar: ["root-structure", "ablaut"], words: 0 }
+    listening_passages:
+      - { id: "five-grades", text: { "en": "One root heard in its five grades: *ǵénh₁os, *ǵónh₁os, *ǵn̥h₁tós and their kin" } }
+    reading_passages:
+      - { id: "ablaut-in-daughters", text: { "en": "Ablaut surviving in living languages: English sing, sang, sung and Greek leípō, léloipa, élipon" } }
+  # The thematic noun, *wĺ̥kʷos, in the nominative, accusative and vocative.
+  - planned: { id: "ine-grammar-thematic", grammar: ["thematic-nouns", "nominative", "accusative", "vocative"], words: 0 }
+    listening_passages:
+      - { id: "the-wolf-sees", text: { "en": "The wolf as subject, object and the one addressed, in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "wolf-paradigm", text: { "en": "The singular of *wĺ̥kʷos set beside Sanskrit vṛ́kas and Greek lúkos, case by case" } }
+  # The other five cases: genitive, ablative, dative, locative,
+  # instrumental. Sanskrit keeps all eight; Greek, Latin and German fewer.
+  - planned: { id: "ine-grammar-cases", grammar: ["genitive", "ablative", "dative", "locative", "instrumental"], words: 0 }
+    listening_passages:
+      - { id: "of-from-to-in-with", text: { "en": "The five other cases heard in short sentences composed for the course: of the house, from the house, in the house (a modern composition)" } }
+    reading_passages:
+      - { id: "eight-cases", text: { "en": "The eight cases of the thematic noun beside Sanskrit's eight, Latin's six and German's four, and what each daughter merged" } }
+  # Gender and the neuter: the animate and inanimate split, the neuter's
+  # one form for nominative and accusative, and the feminine in *-eh₂.
+  - planned: { id: "ine-grammar-gender", grammar: ["gender", "neuter", "eh2-stems"], words: 0 }
+    listening_passages:
+      - { id: "yoke-and-mare", text: { "en": "Neuters and feminines heard: *yugóm (yoke) and *h₁éḱweh₂ (mare), in short phrases composed for the course" } }
+    reading_passages:
+      - { id: "hittite-two-genders", text: { "en": "Hittite's common and neuter genders, and the feminine that the other branches added" } }
+  # The athematic verb "to be": *h₁ésmi, *h₁ési, *h₁ésti, *h₁sénti, and the
+  # primary endings. Is: Spanish es, French est, German ist.
+  - planned: { id: "ine-grammar-be", grammar: ["athematic-present", "primary-endings"], words: 0 }
+    listening_passages:
+      - { id: "i-am-you-are", text: { "en": "To be heard in all its persons, then Sanskrit ásmi, ási, ásti and Greek eimí, eî, estí" } }
+    reading_passages:
+      - { id: "be-paradigm", text: { "en": "The present of *h₁es- set beside Sanskrit, Greek, Latin, Gothic and Hittite, and the zero grade of the plural" } }
+  # The thematic present: *bʰéreti (carries), *bʰéronti. Spanish -ferir,
+  # Greek φέρνω (férno), English bear.
+  - planned: { id: "ine-grammar-thematic-present", grammar: "thematic-present", words: 0 }
+    listening_passages:
+      - { id: "he-carries", text: { "en": "The thematic present of *bʰer- heard in every person, in short sentences composed for the course" } }
+    reading_passages:
+      - { id: "carry-paradigm", text: { "en": "The present of *bʰer- set beside Sanskrit bhárati, Greek phérei, Latin fert and Gothic baíriþ" } }
+  # Sentences: verb last, the clitics *-kʷe (and) and *-wē (or), and *ne
+  # (not). And: Latin -que, Greek τε (te), Sanskrit ca.
+  - planned: { id: "ine-grammar-sentences", grammar: ["word-order", "clitic-conjunctions", "negation"], words: 0 }
+    listening_passages:
+      - { id: "sheep-and-horses", text: { "en": "Short sentences with and, or and not, composed for the course in the chosen reference's grammar (a modern composition)" } }
+    reading_passages:
+      - { id: "que-and-ca", text: { "en": "The enclitic and in Latin senātus populusque, Sanskrit -ca and Greek te, and its reconstruction *-kʷe" } }
+  # 23 to 26. The other A1 themes, each its words, then its sentences.
+  # Gods: *déywos (god: देव (dev), দেব (deb), Spanish dios, French dieu),
+  # *dyḗws ph₂tḗr, *h₂éwsōs, *h₁yaǵ- (worship).
+  - planned: { id: "ine-gods", theme: "gods", words: 25 }
+    listening_passages:
+      - { id: "father-sky", text: { "en": "Father sky in four traditions, Dyaúṣ pitā́, Zeû páter, Iuppiter and the reconstruction *dyḗws ph₂tḗr" } }
+    reading_passages:
+      - { id: "god-cognates", text: { "en": "The cognates of *déywos: Sanskrit devá-, Latin deus, Lithuanian diẽvas, Old Norse tívar, and the Hindi and Spanish words for god" } }
+  # Home: *dṓm (house), *dʰwór (door), *wíḱs (settlement), *pótis (master),
+  # *h₂éǵros (field). Door: द्वार (dvār), Tür, θύρα (thýra).
+  - planned: { id: "ine-home", theme: "home", words: 30 }
+    listening_passages:
+      - { id: "the-house", text: { "en": "House, door and hearth in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "master-of-the-house", text: { "en": "The master of the house: Sanskrit dámpati-, Greek despótēs, and the reconstruction *dems pótis" } }
+  # Food: *médʰu (mead, honey: मधु (madhu), মধু (madhu), Met), *mélit
+  # (honey), *mélǵ- (milk), *séh₂ls (salt), *ǵr̥h₂nóm (grain), *h₁ed- (eat).
+  - planned: { id: "ine-food", theme: "food", words: 30 }
+    listening_passages:
+      - { id: "milk-and-honey", text: { "en": "Milk, honey, salt and grain in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "fable-opening", text: { "en": "The first sentence of Schleicher's fable, a sheep that had no wool saw horses, in one modern version with a glossary (a modern composition, 1868 and later)" } }
+    milestone: "A1"
+  # A2, "Verbs and the fable".
+  - planned: { id: "ine-more-verbs", theme: "more-verbs", words: 60 }
+    listening_passages:
+      - { id: "fable-verbs", text: { "en": "The verbs of Schleicher's fable heard alone: see, carry, say, shear, make (a modern composition)" } }
+    reading_passages:
+      - { id: "see-cognates", text: { "en": "The root *weyd- in Sanskrit véda, Greek oîda and idéa, Latin vidēre, English wit, and Spanish ver" } }
+  # Athematic nouns: root nouns (*pṓds, *dṓm), r-stems (*ph₂tḗr), n-stems
+  # (*h₁nómn̥), s-stems (*ǵénh₁os).
+  - planned: { id: "ine-grammar-athematic-nouns", grammar: ["root-nouns", "r-stems", "n-stems", "s-stems"], words: 0 }
+    listening_passages:
+      - { id: "father-and-name", text: { "en": "Father, name and foot heard in their cases, in short phrases composed for the course" } }
+    reading_passages:
+      - { id: "name-cognates", text: { "en": "The n-stem *h₁nómn̥ in Sanskrit nā́ma, Greek ónoma, Latin nōmen and Gothic namō, and in Hindi and Bengali nām" } }
+  # i- and u-stems: *h₂ówis, *h₁ógʷnis, *suHnús.
+  - planned: { id: "ine-grammar-i-u-stems", grammar: ["i-stems", "u-stems"], words: 0 }
+    listening_passages:
+      - { id: "sheep-and-son", text: { "en": "The sheep and the son heard in their cases, in short phrases composed for the course" } }
+    reading_passages:
+      - { id: "fire-cognates", text: { "en": "The i-stem *h₁ógʷnis in Sanskrit agní-, Latin ignis and Lithuanian ugnìs, and the Hindi word āg" } }
+  # Farming: *h₂erh₃- (plough), *yugóm (yoke: जुआ (juā), yugo, Joch, ζυγός
+  # (zygós)), *séh₁- (sow), *melh₂- (grind), *péḱu (livestock), *kʷékʷlos
+  # (wheel: चक्र (cakra), κύκλος (kýklos)), *wéǵʰ- (carry by wagon).
+  - planned: { id: "ine-agriculture", theme: "agriculture", words: 45 }
+    listening_passages:
+      - { id: "yoke-and-wheel", text: { "en": "Ploughing, sowing and the wagon in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "wheel-cognates", text: { "en": "The wheel and the wagon: *kʷékʷlos, *rótHos and *wéǵʰ-, and what their cognates say about when the language was spoken" } }
+  # The dual, and the plural: *dwóh₁ h₁éḱwoh₁ (two horses).
+  - planned: { id: "ine-grammar-dual", grammar: ["dual", "plural"], words: 0 }
+    listening_passages:
+      - { id: "two-horses", text: { "en": "One horse, two horses, many horses: the singular, dual and plural heard in short phrases composed for the course" } }
+    reading_passages:
+      - { id: "dual-in-daughters", text: { "en": "The dual in Vedic Mitrā́váruṇā and Homeric Greek, and how Hindi, Spanish and German lost it" } }
+  - planned: { id: "ine-grammar-pronoun-forms", grammar: ["personal-pronouns", "demonstratives", "interrogatives"], words: 0 }
+    listening_passages:
+      - { id: "this-and-that", text: { "en": "The demonstrative *só, *séh₂, *tód and the interrogative *kʷís heard in their cases" } }
+    reading_passages:
+      - { id: "so-sa-tad", text: { "en": "The demonstrative in Sanskrit sá, sā́, tád, Greek ho, hē, tó and Gothic sa, sō, þata, set beside *só, *séh₂, *tód" } }
+  # Society: *h₃rḗǵs (king: राजा (rājā), রাজা (rājā), rey, roi), *ǵʰóstis
+  # (guest, stranger), *wiḱpótis (clan lord), *tewteh₂ (people), *h₂nḗr
+  # (man), *gʷénh₂ (woman).
+  - planned: { id: "ine-society", theme: "society", words: 45 }
+    listening_passages:
+      - { id: "king-and-guest", text: { "en": "King, guest and people in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "king-cognates", text: { "en": "The king in Sanskrit rā́j-, Latin rēx and Old Irish rí, and the Hindi, Spanish and French words they lead to" } }
+  # The laryngeals' effects: colouring (h₂e as a, h₃e as o), lengthening
+  # (eH as ē, ā, ō), vocalisation between consonants (*ph₂tḗr as Sanskrit
+  # pitár-, Greek patḗr), aspiration in Indo-Iranian, and Hittite ḫ.
+  - planned: { id: "ine-grammar-laryngeal-effects", grammar: ["laryngeal-colouring", "laryngeal-lengthening", "laryngeal-vocalisation"], words: 0 }
+    listening_passages:
+      - { id: "why-pita-and-pater", text: { "en": "Why Hindi says pitā and Spanish padre with an a: the laryngeal in *ph₂tḗr, explained aloud" } }
+    reading_passages:
+      - { id: "hittite-h", text: { "en": "Hittite ḫ where the laryngeal theory predicted a lost sound: ḫāraš (eagle), pāḫḫur (fire), set beside their cognates" } }
+  # Crafts: *teḱs- (fashion, build), *webʰ- (weave), *wes- (wear),
+  # *h₂éyos (copper), *rótHos (wheel, chariot).
+  - planned: { id: "ine-crafts", theme: "crafts", words: 40 }
+    listening_passages:
+      - { id: "weaving-and-building", text: { "en": "Weaving, building and making in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "fashioning-words", text: { "en": "The root *teḱs- in Sanskrit tákṣati, Greek téktōn and Latin texere, and the poet as a fashioner of words" } }
+  # The verb's three stems, and what each means: present (ongoing), aorist
+  # (complete), perfect (state).
+  - planned: { id: "ine-grammar-verb-stems", grammar: ["present-stem", "aorist-stem", "perfect-stem"], words: 0 }
+    listening_passages:
+      - { id: "one-root-three-stems", text: { "en": "One root heard as present, aorist and perfect, with the difference in meaning explained" } }
+    reading_passages:
+      - { id: "stems-in-greek", text: { "en": "The three stems of Greek leípō and Sanskrit ric-, set beside their reconstructions" } }
+  # The aorist: root aorist (*gʷémt), s-aorist, the secondary endings and
+  # the augment *h₁é-.
+  - planned: { id: "ine-grammar-aorist", grammar: ["root-aorist", "s-aorist", "secondary-endings", "augment"], words: 0 }
+    listening_passages:
+      - { id: "he-came", text: { "en": "He came, he saw, he made: aorists heard in short sentences composed for the course" } }
+    reading_passages:
+      - { id: "augment-in-daughters", text: { "en": "The augment in Sanskrit ábharat and Greek éphere, and the branches that do not have it" } }
+  # Feelings and the mind: *men- (think: मन (man), mente), *bʰeyh₂- (fear),
+  # *lewbʰ- (love, desire), *h₁ish₂- (wish).
+  - planned: { id: "ine-feelings", theme: "feelings", words: 35 }
+    listening_passages:
+      - { id: "mind-and-heart", text: { "en": "Thinking, fearing and loving in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "mind-cognates", text: { "en": "The root *men- in Sanskrit mánas and mántra, Greek ménos, Latin mēns and Spanish mente" } }
+  # The perfect: reduplication, the o-grade, and the endings *-h₂e, *-th₂e,
+  # *-e: *wóyde (he knows, Greek oîde, Sanskrit véda).
+  - planned: { id: "ine-grammar-perfect", grammar: ["perfect", "reduplication"], words: 0 }
+    listening_passages:
+      - { id: "he-knows", text: { "en": "The perfect *wóyde, he knows, heard in every person beside Greek oîda and Sanskrit véda" } }
+    reading_passages:
+      - { id: "perfect-in-german", text: { "en": "The perfect's descendants: the Germanic preterite-presents, German weiß and English wot" } }
+  # Large numbers and ordinals: *ḱm̥tóm (hundred), *próh₃- (first), the
+  # ordinals in *-o-.
+  - planned: { id: "ine-numbers-big", theme: "numbers-big", words: 15 }
+    listening_passages:
+      - { id: "hundreds", text: { "en": "Twenty, hundred and the ordinals heard, and the thousand that cannot be reconstructed for the whole family" } }
+    reading_passages:
+      - { id: "ordinal-cognates", text: { "en": "First, third and tenth in Sanskrit, Greek and Latin, and their reconstructions" } }
+  # The middle voice: *-or, *-toy; Greek and Sanskrit keep it.
+  - planned: { id: "ine-grammar-middle", grammar: "middle-voice", words: 0 }
+    listening_passages:
+      - { id: "for-oneself", text: { "en": "Active and middle heard side by side: he carries, he carries for himself" } }
+    reading_passages:
+      - { id: "middle-in-daughters", text: { "en": "The middle in Greek phéretai, Sanskrit bhárate and the Latin deponent sequitur" } }
+  # Movement: *h₁ey- (go), *pónteh₂s (path), *sekʷ- (follow), *h₂eǵ-
+  # (drive), *srew- (flow): the verbs of going.
+  - planned: { id: "ine-journey", theme: "journey", words: 40 }
+    listening_passages:
+      - { id: "on-the-path", text: { "en": "Going, driving, following and crossing in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "path-cognates", text: { "en": "The path *pónteh₂s in Sanskrit pánthās, Greek póntos (sea) and Latin pōns (bridge)" } }
+  # Present types: nasal infix (*yunégti, joins), reduplicated (*dídeh₃ti),
+  # *-ske-, *-ye-, and the causative *-éye-.
+  - planned: { id: "ine-grammar-present-types", grammar: ["nasal-infix", "reduplicated-present", "ske-present", "causative"], words: 0 }
+    listening_passages:
+      - { id: "joins-and-gives", text: { "en": "Presents of several types heard: he joins, he gives, he asks, he makes sit" } }
+    reading_passages:
+      - { id: "nasal-infix-latin", text: { "en": "The nasal infix in Latin iungō beside iugum, and Sanskrit yunákti beside yugám" } }
+  # War and strife: *gʷʰen- (strike, slay), *h₁ógʷʰis (serpent), *wiHrós
+  # (man, hero), *h₁rewdʰ- (red, blood).
+  - planned: { id: "ine-warfare", theme: "warfare", words: 35 }
+    listening_passages:
+      - { id: "strike-and-slay", text: { "en": "Striking and slaying in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "slay-cognates", text: { "en": "The root *gʷʰen- in Sanskrit hánti, Hittite kuenzi and Greek phónos" } }
+  # Adjectives: agreement, and comparison in *-yos- and *-tero-.
+  - planned: { id: "ine-grammar-adjectives", grammar: ["adjective-agreement", "comparison"], words: 0 }
+    listening_passages:
+      - { id: "sweeter", text: { "en": "Sweet, sweeter, sweetest heard, then Greek hēdíōn and Sanskrit svā́dīyas" } }
+    reading_passages:
+      - { id: "comparative-cognates", text: { "en": "The comparative *-yos- and *-tero- in Sanskrit, Greek, Latin and English" } }
+  # Adverbs, particles and preverbs: *h₁en (in), *upo (under), *upér
+  # (over), *pro (forth), *h₂epo (away), *h₁epi (on), *nu (now), *-kʷe.
+  - planned: { id: "ine-adverbs", theme: "adverbs", words: 40 }
+    listening_passages:
+      - { id: "in-over-under", text: { "en": "Preverbs and adverbs heard in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "upo-uper", text: { "en": "Under and over: Sanskrit úpa and upári, Greek hupó and hupér, Latin sub and super, German über" } }
+  # The moods: imperative (*bʰére, carry!), subjunctive (*-e-), optative
+  # (*-yeh₁-, *-ih₁-).
+  - planned: { id: "ine-grammar-moods", grammar: ["imperative", "subjunctive", "optative"], words: 0 }
+    listening_passages:
+      - { id: "carry-it", text: { "en": "Commands, wishes and the subjunctive heard in short sentences composed for the course" } }
+    reading_passages:
+      - { id: "optative-in-daughters", text: { "en": "The optative in Sanskrit bháret and Greek phéroi, and the Latin subjunctive sim from *h₁sih₁m̥" } }
+  # Clothing: *wes- (wear: Latin vestis, Spanish vestir), *yeh₃s- (gird),
+  # colours.
+  - planned: { id: "ine-clothes", theme: "clothes", words: 25 }
+    listening_passages:
+      - { id: "wool-garment", text: { "en": "Wearing, girding and the colours of wool in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "wear-cognates", text: { "en": "The root *wes- in Sanskrit vas-, Greek hénnūmi, Latin vestis and Gothic wasjan" } }
+  # Speech: *wekʷ- (speak), *wékʷos (word), *h₁nómn̥ (name), *ḱlew- (hear),
+  # *ḱléwos (fame), *ǵʰew- (call), *preḱ- (ask: Hindi पूछना (pūchnā),
+  # German fragen).
+  - planned: { id: "ine-speech", theme: "speech", words: 40 }
+    listening_passages:
+      - { id: "word-and-fame", text: { "en": "Speaking, asking, hearing and fame in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "voice-cognates", text: { "en": "The root *wekʷ- in Sanskrit vác-, Greek épos, Latin vōx and Spanish voz" } }
+  # Places: *h₂ébōl (apple, only in the north-west), *mori (sea), *h₂ep-
+  # (water, river), *gʷerH- (mountain), *pl̥h₁- (fortified place).
+  - planned: { id: "ine-places", theme: "places", words: 40 }
+    listening_passages:
+      - { id: "sea-and-mountain", text: { "en": "Sea, river, mountain and fort in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "homeland-words", text: { "en": "What the shared words for sea, snow, beech and salmon are said to show about where the language was spoken, and why each argument is disputed" } }
+  # Law and order: *h₂r̥tós (fitting, right: Sanskrit ṛtá-), *h₁óytos (oath),
+  # *yéwos (law: Latin iūs, Spanish justo), *dʰeh₁- (set down).
+  - planned: { id: "ine-law", theme: "law", words: 40 }
+    listening_passages:
+      - { id: "oath-and-order", text: { "en": "Oath, right and order in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "two-fables", text: { "en": "Schleicher's fable whole, in one modern version with a glossary, and his 1868 original beside it: what changed and why (modern compositions)" } }
+    milestone: "A2"
+  # B1, "Formulae and compositions".
+  # Poetic formulae: *ḱléwos ń̥dʰgʷʰitom, *wékʷos teḱs- (fashion words),
+  # *h₁nómn̥ dʰeh₁- (give a name), *wésu dótor (giver of goods).
+  - planned: { id: "ine-poetics", theme: "poetics", words: 50 }
+    listening_passages:
+      - { id: "formula-and-line", text: { "en": "Reconstructed formulae heard, each followed by the Vedic and Homeric lines that keep it" } }
+    reading_passages:
+      - { id: "fashioning-speech", text: { "en": "The poet as a fashioner of words, from Vedic vácāṃsi takṣ- and Pindar's tékton of song, and the reconstruction *wékʷos teḱs-" } }
+  # Participles and verbal nouns: *-nt- (*bʰéronts, carrying), *-wos-
+  # (perfect), *-mh₁no- (middle), *-tó- (*ǵn̥h₁tós, born), *-tu- and *-ti-.
+  - planned: { id: "ine-grammar-participles", grammar: ["participles", "verbal-nouns"], words: 0 }
+    listening_passages:
+      - { id: "carrying-and-born", text: { "en": "Participles heard: carrying, having seen, born, in short phrases composed for the course" } }
+    reading_passages:
+      - { id: "participle-cognates", text: { "en": "The participle in *-tó- in Sanskrit jātá-, Latin nātus and Spanish nacido" } }
+  # Religion: *ǵʰew- (pour a libation), *h₁yaǵ- (worship), *ḱwen-tó- (holy),
+  # *seh₂k- (sacred), *ḱred-dʰeh₁- (believe: श्रद्धा (śraddhā), Latin
+  # crēdō, Spanish creer).
+  - planned: { id: "ine-religion", theme: "religion", words: 45 }
+    listening_passages:
+      - { id: "to-believe", text: { "en": "Believing, worshipping and pouring in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "heart-set", text: { "en": "To believe as to set one's heart: Sanskrit śrád dhā-, Latin crēdō, Old Irish cretid, and the reconstruction *ḱréd dʰeh₁-" } }
+  # The accent-and-ablaut classes: acrostatic, proterokinetic,
+  # hysterokinetic, amphikinetic; the r/n heteroclites (*wódr̥, *udéns).
+  - planned: { id: "ine-grammar-accent-classes", grammar: ["accent-ablaut-classes", "heteroclitics"], words: 0 }
+    listening_passages:
+      - { id: "moving-accent", text: { "en": "The accent heard moving through a paradigm: *ph₂tḗr, *ph₂trés, *ph₂téres" } }
+    reading_passages:
+      - { id: "water-heteroclite", text: { "en": "Water as r and n: Hittite wātar, wetenaš, Greek húdōr, húdatos, English water and Latin unda" } }
+  # Derivation and compounds: the suffixes *-tér, *-ti-, *-mn̥, *-tro-,
+  # *-eh₂, and the compounds of the bahuvrīhi and tatpuruṣa types.
+  - planned: { id: "ine-grammar-derivation", grammar: ["nominal-suffixes", "compounds"], words: 0 }
+    listening_passages:
+      - { id: "word-building", text: { "en": "Words built from one root heard: giver, gift, giving" } }
+    reading_passages:
+      - { id: "compound-names", text: { "en": "Compound names with *ḱléwos: Greek Periklês and Sophoklês, Sanskrit Śrutaśravas, Slavic Vladislav" } }
+  # Metals: *h₂éyos (copper, ore), *h₂r̥ǵn̥tóm (silver: Latin argentum,
+  # French argent), and why no word for iron is shared.
+  - planned: { id: "ine-metals", theme: "metals", words: 25 }
+    listening_passages:
+      - { id: "copper-and-silver", text: { "en": "Copper, silver and gold heard, with what each word says about the age of the language" } }
+    reading_passages:
+      - { id: "silver-cognates", text: { "en": "Silver in Sanskrit rajatá-, Avestan ərəzata-, Latin argentum and Old Irish airget, and the reconstruction *h₂r̥ǵn̥tóm" } }
+  # Relative clauses and subordination: the relative *yós, the correlative.
+  - planned: { id: "ine-grammar-relative-clauses", grammar: ["relative-clauses", "correlatives"], words: 0 }
+    listening_passages:
+      - { id: "who-and-he", text: { "en": "The relative and its correlative heard: the one who, he, in short sentences composed for the course" } }
+    reading_passages:
+      - { id: "jo-so", text: { "en": "The relative-correlative in Sanskrit yás ... sá and in Hindi jo ... vah, and its reconstruction" } }
+  # Wealth and exchange: *wésu (goods), *dṓnom (gift: दान (dān), Spanish
+  # don), *mey- (exchange), *ǵʰóstis (guest, the giver's other).
+  - planned: { id: "ine-wealth", theme: "wealth", words: 40 }
+    listening_passages:
+      - { id: "gift-and-guest", text: { "en": "Gifts, goods and exchange in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "giver-of-goods", text: { "en": "The giver of goods: Vedic dā́tā vásūnām and Homeric dōtēr eáōn, and the formula reconstructed from them" } }
+  # Sound laws to Indo-Iranian, and so to Hindi and Bengali: satem, the
+  # merger of e, o and a, the ruki rule, Brugmann's law. Ten: दस (das),
+  # দশ (daś).
+  - planned: { id: "ine-grammar-indo-iranian", grammar: ["indo-iranian-sound-laws", "ruki-rule"], words: 0 }
+    listening_passages:
+      - { id: "to-hindi", text: { "en": "Five reconstructions followed through Sanskrit to Hindi and Bengali, heard step by step" } }
+    reading_passages:
+      - { id: "sanskrit-to-hindi", text: { "en": "A table of reconstructions, their Sanskrit forms and their Hindi and Bengali descendants: ten, seven, name, know" } }
+  # Sound laws to Greek: the laryngeals as three vowels, s as h, the
+  # labiovelars as p, t or k.
+  - planned: { id: "ine-grammar-greek", grammar: "greek-sound-laws", words: 0 }
+    listening_passages:
+      - { id: "to-greek", text: { "en": "Five reconstructions followed to Ancient and Modern Greek, heard step by step" } }
+    reading_passages:
+      - { id: "three-vowels", text: { "en": "Greek's three vowels for the three laryngeals: títhēmi, hístāmi, dídōmi, from *dʰeh₁-, *steh₂-, *deh₃-" } }
+  # Sound laws to Latin, and so to Spanish and French.
+  - planned: { id: "ine-grammar-italic", grammar: "italic-sound-laws", words: 0 }
+    listening_passages:
+      - { id: "to-spanish", text: { "en": "Five reconstructions followed through Latin to Spanish and French, heard step by step" } }
+    reading_passages:
+      - { id: "latin-to-romance", text: { "en": "A table of reconstructions, their Latin forms and their Spanish and French descendants: father, night, new, hundred" } }
+  # Sound laws to Germanic, and so to German: Grimm's law and Verner's law.
+  - planned: { id: "ine-grammar-germanic", grammar: ["grimm-law", "verner-law"], words: 0 }
+    listening_passages:
+      - { id: "to-german", text: { "en": "Five reconstructions followed through Proto-Germanic to German and English, heard step by step" } }
+    reading_passages:
+      - { id: "grimm-table", text: { "en": "Grimm's law in a table: Latin pater, tres, cornu against German Vater, drei, Horn" } }
+  # Health and the body's states: *gʷeyh₃- (live), *mer- (die), *h₂eyw-
+  # (life force), *solh₂- (whole), *dʰgʷʰey- (perish).
+  - planned: { id: "ine-health", theme: "health", words: 35 }
+    listening_passages:
+      - { id: "live-and-die", text: { "en": "Living, dying and being whole in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "live-cognates", text: { "en": "The root *gʷeyh₃- in Sanskrit jīvá-, Greek bíos, Latin vīvus and Spanish vivo" } }
+  # Anatolian: Hittite, the first branch to split; laryngeals as ḫ, two
+  # genders, no feminine, and the verb's ḫi- and mi-conjugations.
+  - planned: { id: "ine-grammar-anatolian", grammar: ["anatolian", "early-pie"], words: 0 }
+    listening_passages:
+      - { id: "hittite-heard", text: { "en": "A Hittite sentence read aloud in its reconstructed pronunciation, and what it keeps of the parent language" } }
+    reading_passages:
+      - { id: "hittite-bread", text: { "en": "The Hittite sentence that showed Hrozný the language was Indo-European: nu NINDA-an ezzateni wātar-ma ekuteni, you will eat bread and drink water" } }
+  # The seasons: *ǵʰéyōm (winter: Sanskrit himá-, the Himalaya), *wésr̥
+  # (spring), *sem- (summer), *h₁yeh₁r.
+  - planned: { id: "ine-seasons", theme: "seasons", words: 25 }
+    listening_passages:
+      - { id: "winter-and-spring", text: { "en": "Winter, spring and summer in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "winter-cognates", text: { "en": "Winter in Sanskrit himá-, Greek kheimṓn, Latin hiems and Hittite gimmant-, and the name Himalaya" } }
+  # Myth: the dragon-slaying formula *(h₁e) gʷʰent h₁ógʷʰim, the thunder
+  # god, the divine twins.
+  - planned: { id: "ine-myth", theme: "myth", words: 45 }
+    listening_passages:
+      - { id: "slaying-the-serpent", text: { "en": "He slew the serpent: Vedic áhann áhim and the reconstructed formula, read aloud (Watkins's reconstruction)" } }
+    reading_passages:
+      - { id: "indra-and-vritra", text: { "en": "A line of the Rigveda on Indra slaying Vṛtra, set beside the reconstructed formula *gʷʰént h₁ógʷʰim" } }
+  # Kingship: *h₃rḗǵs, *h₃reǵ- (stretch, rule, straighten), *wiḱpótis, the
+  # king's justice.
+  - planned: { id: "ine-kingship", theme: "kingship", words: 40 }
+    listening_passages:
+      - { id: "king-who-wanted-a-son", text: { "en": "The opening of The king and the god read aloud, a king who had no son (a modern composition, 1994 and later)" } }
+    reading_passages:
+      - { id: "rule-and-straight", text: { "en": "The root *h₃reǵ- in Latin rēx, regere and rectus, Sanskrit rā́j- and English right" } }
+  # Clitics and word order: Wackernagel's law (clitics second), preverbs
+  # and tmesis.
+  - planned: { id: "ine-grammar-syntax", grammar: ["second-position-clitics", "tmesis"], words: 0 }
+    listening_passages:
+      - { id: "clitic-second", text: { "en": "Sentences with clitics in second place heard, in short sentences composed for the course" } }
+    reading_passages:
+      - { id: "tmesis-in-homer", text: { "en": "Preverbs apart from their verbs in Homer and the Rigveda, and the reconstructed order they point to" } }
+  # Names: personal names made of two words (*ḱléwos, *wésu), and the gods'
+  # names.
+  - planned: { id: "ine-names", theme: "names", words: 30 }
+    listening_passages:
+      - { id: "names-heard", text: { "en": "Names with their reconstructed parts heard: famous, good, of the gods" } }
+    reading_passages:
+      - { id: "name-meanings", text: { "en": "Ten personal names from Sanskrit, Greek, Celtic, Germanic and Slavic, each read as a two-part reconstruction" } }
+  # Hospitality: *ǵʰóstis (guest: Latin hostis, German Gast), *pótis (host),
+  # *mey- (exchange), *h₁ed- (feast).
+  - planned: { id: "ine-hospitality", theme: "hospitality", words: 35 }
+    listening_passages:
+      - { id: "guest-and-host", text: { "en": "Guest and host in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "guest-or-enemy", text: { "en": "Guest and enemy from one word: Latin hostis and hospes, Gothic gasts and English guest" } }
+  # Numeral forms: the cases of one to four, the indeclinable five to ten.
+  - planned: { id: "ine-grammar-numerals", grammar: "numeral-forms", words: 0 }
+    listening_passages:
+      - { id: "three-horses", text: { "en": "Numbers with nouns heard: three horses, of four sheep, in short phrases composed for the course" } }
+    reading_passages:
+      - { id: "declined-numbers", text: { "en": "Three and four in their cases in Sanskrit and Greek, and the indeclinable five" } }
+  # Qualities: *h₁su- (good), *dus- (bad: Greek dus-, Sanskrit duṣ-),
+  # *h₂ḱrós (sharp), *bʰerǵʰ- (high), *dlh₁ǵʰós (long).
+  - planned: { id: "ine-qualities", theme: "qualities", words: 40 }
+    listening_passages:
+      - { id: "good-and-bad", text: { "en": "Good, bad, high and long in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "good-and-bad-prefixes", text: { "en": "The prefixes *h₁su- and *dus- in Sanskrit su- and duṣ-, Greek eu- and dus-, and English words such as euphony" } }
+  # Trees and plants: *pérkʷus (oak), *bʰeh₂ǵós (beech), *bʰerHǵós
+  # (birch), and *wóyh₁nom (wine), found only in the south.
+  - planned: { id: "ine-plants", theme: "plants", words: 50 }
+    listening_passages:
+      - { id: "oak-and-birch", text: { "en": "Trees and plants in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "beech-argument", text: { "en": "The beech argument: why *bʰeh₂ǵós was taken to place the homeland, and why its meaning shifts from branch to branch" } }
+  # Land and settlement: *wíḱs (settlement), *pl̥h₁- (fort), *h₂éǵros
+  # (field), *teg- (cover, roof), *ters- (dry land).
+  - planned: { id: "ine-land", theme: "land", words: 40 }
+    listening_passages:
+      - { id: "fort-and-field", text: { "en": "Land, settlement, fort and field in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "settlement-cognates", text: { "en": "The settlement *wíḱs in Sanskrit víś-, Greek oîkos, Latin vīcus and the English place names in -wick" } }
+  # Abstract words: *mn̥tís (thought), *ǵn̥h₃tís (knowledge), *dʰh₁tís
+  # (placing), the abstracts in *-ti- and *-tu-.
+  - planned: { id: "ine-abstract-words", theme: "abstract-words", words: 40 }
+    listening_passages:
+      - { id: "thought-and-knowledge", text: { "en": "Thought, knowledge and memory in short sentences composed for the course (a modern composition)" } }
+    reading_passages:
+      - { id: "mind-words", text: { "en": "The abstract *mn̥tís in Sanskrit matí-, Latin mēns, mentis and English mind" } }
+  # More verbs: the rest of the securest verbal roots, with their present
+  # types (LIV²'s most widely attested).
+  - planned: { id: "ine-verbs-3", theme: "verbs-3", words: 60 }
+    listening_passages:
+      - { id: "the-king-and-the-god", text: { "en": "The king and the god read aloud whole, in one modern version (a modern composition, 1994 and later)" } }
+    reading_passages:
+      - { id: "reconstructions-compared", text: { "en": "One sentence of the fable in the versions of Schleicher, Hirt, Lehmann and Zgusta, and Byrd: how the reconstruction changed in 150 years (modern compositions)" } }
+  # Reading reconstructions as scholars write them: the notations of
+  # Fortson, Beekes, Ringe and Wiktionary, the question marks and the
+  # disputed forms.
+  - planned: { id: "ine-grammar-reading", grammar: ["reconstruction-variants", "certainty"], words: 0 }
+    listening_passages:
+      - { id: "how-sure", text: { "en": "How sure is a reconstruction: three words heard, one certain, one likely, one disputed, and why" } }
+    reading_passages:
+      - { id: "king-and-god-unaided", text: { "en": "The king and the god read without a translation, in one modern version (a modern composition, 1994 and later)" } }
+    milestone: "B1"
+  - ["*"]
