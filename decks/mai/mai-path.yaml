@@ -318,21 +318,29 @@ units:
       - { id: "fish-and-makhana", text: { "en": "A family sits down to a meal of rice, fish curry and makhana, fox nuts" } }
     reading_passages:
       - { id: "menu-board", text: { "en": "A menu board with dishes and prices" } }
-  # mai-grammar-needs joins this unit: चाही (cāhī), "is needed".
+  # mai-grammar-needs follows this unit: चाही (cāhī), "is needed".
   - planned: { id: "mai-groceries", theme: "groceries", words: 16 }
-    grammar: ["needs"]
     listening_passages:
       - { id: "what-we-need", text: { "en": "Two people say what they need from the shop" } }
     reading_passages:
       - { id: "grocery-list", text: { "en": "A grocery list" } }
-  # mai-grammar-nouns joins this unit: the bare noun, with no gender on
+  - planned: { id: "mai-grammar-needs", grammar: "needs" }
+    listening_passages:
+      - { id: "needs-heard", text: { "en": "A short exchange that uses needs, after the groceries unit" } }
+    reading_passages:
+      - { id: "needs-read", text: { "en": "A short text that uses needs, after the groceries unit" } }
+  # mai-grammar-nouns follows this unit: the bare noun, with no gender on
   # things and no article.
   - planned: { id: "mai-market", theme: "market", words: 8 }
-    grammar: ["nouns"]
     listening_passages:
       - { id: "at-the-market", text: { "en": "Buying vegetables at a market" } }
     reading_passages:
       - { id: "market-board", text: { "en": "A market stall's board" } }
+  - planned: { id: "mai-grammar-nouns", grammar: "nouns" }
+    listening_passages:
+      - { id: "nouns-heard", text: { "en": "A short exchange that uses nouns, after the market unit" } }
+    reading_passages:
+      - { id: "nouns-read", text: { "en": "A short text that uses nouns, after the market unit" } }
   # की (kī, "what"), के (ke, "who"), कतय (katay, "where"), कहिया (kahiyā,
   # "when"), किएक (kiek, "why"), कोना (konā, "how").
   - planned: { id: "mai-grammar-questions", grammar: "questions", words: 0 }
@@ -353,14 +361,18 @@ units:
       - { id: "introducing-friends", text: { "en": "Introducing two friends: who is who, and what they do" } }
     reading_passages:
       - { id: "a-short-diary", text: { "en": "A few lines about a day: who did what, and where" } }
-  # mai-grammar-continuous joins this unit: देखि रहल छी (dekhi rahal chī),
+  # mai-grammar-continuous follows this unit: देखि रहल छी (dekhi rahal chī),
   # "I am looking".
   - planned: { id: "mai-directions", theme: "directions", words: 12 }
-    grammar: ["continuous"]
     listening_passages:
       - { id: "turn-left", text: { "en": "Directions to a temple: left, right and straight on" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Street signs and an arrow board" } }
+  - planned: { id: "mai-grammar-continuous", grammar: "continuous" }
+    listening_passages:
+      - { id: "continuous-heard", text: { "en": "A short exchange that uses continuous, after the directions unit" } }
+    reading_passages:
+      - { id: "continuous-read", text: { "en": "A short text that uses continuous, after the directions unit" } }
   - planned: { id: "mai-transport", theme: "transport", words: 9 }
     listening_passages:
       - { id: "rickshaw-fare", text: { "en": "Agreeing a fare with a rickshaw driver" } }
@@ -424,28 +436,36 @@ units:
       - { id: "weekend-plan", text: { "en": "A plan for the weekend" } }
     milestone: "A1"
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
-  # then its sentences. mai-grammar-negative joins the first unit: नहि
+  # then its sentences. mai-grammar-negative follows the first unit: नहि
   # (nahi) before the verb, नै (nai) in speech.
   - planned: { id: "mai-daily-life", theme: "daily-life", words: 9 }
-    grammar: ["negative"]
     listening_passages:
       - { id: "a-day", text: { "en": "Someone tells their day, and what they do not do" } }
     reading_passages:
       - { id: "daily-routine", text: { "en": "A child's daily routine on a chart" } }
+  - planned: { id: "mai-grammar-negative", grammar: "negative" }
+    listening_passages:
+      - { id: "negative-heard", text: { "en": "A short exchange that uses negative, after the daily life unit" } }
+    reading_passages:
+      - { id: "negative-read", text: { "en": "A short text that uses negative, after the daily life unit" } }
   - planned: { id: "mai-weather", theme: "weather", words: 45 }
     listening_passages:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain and wind" } }
     reading_passages:
       - { id: "weather-message", text: { "en": "A message to a friend about the monsoon" } }
-  # mai-grammar-past joins this unit: the past in -ल (-l), with no
+  # mai-grammar-past follows this unit: the past in -ल (-l), with no
   # ergative: देखलहुँ (dekhalahũ, "I saw"), देखलक (dekhalak, "he saw"),
   # देखलनि (dekhalani, "he saw", honoured).
   - planned: { id: "mai-calendar", theme: "calendar", words: 16 }
-    grammar: ["past"]
     listening_passages:
       - { id: "what-i-did", text: { "en": "Saying what you did last week" } }
     reading_passages:
       - { id: "wall-calendar", text: { "en": "A wall calendar with its months and holidays" } }
+  - planned: { id: "mai-grammar-past", grammar: "past" }
+    listening_passages:
+      - { id: "past-heard", text: { "en": "A short exchange that uses past, after the calendar unit" } }
+    reading_passages:
+      - { id: "past-read", text: { "en": "A short text that uses past, after the calendar unit" } }
   - planned: { id: "mai-grammar-ordinals", grammar: "ordinals" }
     listening_passages:
       - { id: "which-floor", text: { "en": "Finding a flat: the first floor, the second, the third" } }
@@ -515,15 +535,24 @@ units:
       - { id: "which-is-better", text: { "en": "Two friends compare two phones" } }
     reading_passages:
       - { id: "two-cities", text: { "en": "A short text comparing Darbhanga and Janakpur" } }
-  # mai-grammar-irregular and mai-grammar-pitfalls join this unit: जाएब
+  # mai-grammar-irregular and mai-grammar-pitfalls follow this unit: जाएब
   # (jāeb) and गेल (gel), होएब (hoeb) and भेल (bhel), करब (karab) and
   # कएलक (kaelak).
   - planned: { id: "mai-help", theme: "help", words: 7 }
-    grammar: ["irregular", "pitfalls"]
     listening_passages:
       - { id: "asking-for-help", text: { "en": "Asking a passer-by for help" } }
     reading_passages:
       - { id: "help-desk-sign", text: { "en": "A help desk sign" } }
+  - planned: { id: "mai-grammar-irregular", grammar: "irregular" }
+    listening_passages:
+      - { id: "irregular-heard", text: { "en": "A short exchange that uses irregular, after the help unit" } }
+    reading_passages:
+      - { id: "irregular-read", text: { "en": "A short text that uses irregular, after the help unit" } }
+  - planned: { id: "mai-grammar-pitfalls", grammar: "pitfalls" }
+    listening_passages:
+      - { id: "pitfalls-heard", text: { "en": "A short exchange that uses pitfalls, after the help unit" } }
+    reading_passages:
+      - { id: "pitfalls-read", text: { "en": "A short text that uses pitfalls, after the help unit" } }
   - planned: { id: "mai-grammar-conjunct-verbs", grammar: "conjunct-verbs", words: 4 }
     listening_passages:
       - { id: "doing-a-favour", text: { "en": "Asking someone to do a favour or make a call" } }
