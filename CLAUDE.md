@@ -131,7 +131,8 @@ follow.
 combined as we should not care about socipolitics over linguistics"; chose
 "One course, two scripts"). The `hi` course and its card ids stay; it is
 renamed Hindustani, teaches the shared colloquial vocabulary, and offers
-Devanagari or Nastaliq as the learner's script, as Punjabi offers
+Devanagari or the Perso-Arabic (Urdu)
+script as the learner's script, as Punjabi offers
 Gurmukhi or Shahmukhi. Sanskrit- and Persian-leaning synonyms go on the
 card. The Urdu path (#602) is folded into it.
 
