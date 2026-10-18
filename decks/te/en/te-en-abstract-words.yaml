@@ -1,0 +1,420 @@
+schema: 1
+id: "te-en-abstract-words"
+kind: "layer"
+core: "te-abstract-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Abstract words: ideas, values, feelings and duty"
+description: "Abstract nouns for ideas and values: knowledge, education, reason, method, truth, honesty, effort, development, unity, duty, ability, influence, relationship and ethics. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "te-6300":
+    native: "knowledge; wisdom"
+    wiktionary: true
+    notes:
+      "n1": "{1} means ‘with knowledge’."
+    examples:
+      "పుస్తకాలు చదివితే జ్ఞానం పెరుగుతుంది.":
+        native: "If you read books, your knowledge grows."
+        bases:
+          "పుస్తకాలు": { meaning: "books" }
+          "చదివితే": { meaning: "if one reads" }
+          "పెరుగుతుంది": { meaning: "to grow" }
+      "ఆయనకు ఆ విషయంలో చాలా జ్ఞానం ఉంది.":
+        native: "He has a lot of knowledge about that subject."
+        bases:
+          "ఆయనకు": { meaning: "he" }
+          "విషయంలో": { meaning: "matter; subject" }
+          "ఉంది": { meaning: "to be; to have" }
+  "te-6301":
+    native: "education; schooling"
+    wiktionary: true
+    notes:
+      "n1": "{1} means ‘along with education’."
+    examples:
+      "పిల్లలకు మంచి విద్య అవసరం.":
+        native: "Children need good education."
+        bases:
+          "పిల్లలకు": { meaning: "children" }
+      "అతను విద్య కోసం ఊరు విడిచి వెళ్ళాడు.":
+        native: "He left his village to get an education."
+        bases:
+          "విడిచి": { meaning: "having left" }
+          "వెళ్ళాడు": { meaning: "went" }
+    antonyms: { "avidya": "ignorance, want of learning" }
+  "te-6302":
+    native: "chance; opportunity"
+    wiktionary: true
+    notes:
+      "n1": "{1} means ‘there is no chance’."
+    examples:
+      "ఈ ఉద్యోగానికి అవకాశం దొరికింది.":
+        native: "I got a chance for this job."
+        bases:
+          "ఉద్యోగానికి": { meaning: "job" }
+          "దొరికింది": { meaning: "to get; to be found" }
+      "మళ్ళీ ఒక అవకాశం ఇవ్వండి.":
+        native: "Please give me one more chance."
+        bases:
+          "ఇవ్వండి": { meaning: "to give" }
+  "te-6303":
+    native: "reason; cause"
+    wiktionary: true
+    notes:
+      "n1": "{1} means ‘without a reason’."
+    examples:
+      "ఆలస్యం కావడానికి కారణం ఏమిటి?":
+        native: "What is the reason for the delay?"
+        bases:
+          "కావడానికి": { meaning: "to become" }
+      "అతను రాకపోవడానికి కారణం వర్షం.":
+        native: "The reason he did not come was the rain."
+        bases:
+          "రాకపోవడానికి": { meaning: "to come" }
+  "te-6304":
+    native: "method; way"
+    wiktionary: true
+    notes:
+      "n1": "{1} means ‘in this way’."
+    examples:
+      "ఈ పద్ధతిలో పని చేస్తే సమయం ఆదా అవుతుంది.":
+        native: "If you work this way, time is saved."
+        bases:
+          "పద్ధతిలో": { meaning: "method" }
+          "చేస్తే": { meaning: "if one does" }
+          "అవుతుంది": { meaning: "to become" }
+      "నేను కొత్త పద్ధతి నేర్చుకున్నాను.":
+        native: "I learned a new method."
+        bases:
+          "నేర్చుకున్నాను": { meaning: "learned" }
+    senses:
+      "manner": { native: "manner, scale, mode, rate, custom, method, scheme, system" }
+  "te-6305":
+    native: "truth"
+    wiktionary: true
+    notes:
+      "n1": "{1} means ‘truly; honestly’."
+    examples:
+      "అతను చెప్పింది సత్యం.":
+        native: "What he said is the truth."
+        bases:
+          "చెప్పింది": { meaning: "said" }
+      "సత్యం ఎప్పటికీ గెలుస్తుంది.":
+        native: "The truth always wins."
+        bases:
+          "గెలుస్తుంది": { meaning: "to win" }
+  "te-6306":
+    native: "feeling; idea; meaning"
+    wiktionary: true
+    notes:
+      "n1": "{1} means ‘a good feeling’."
+    examples:
+      "ఈ పాటలో గొప్ప భావం ఉంది.":
+        native: "There is a deep feeling in this song."
+        bases:
+          "పాటలో": { meaning: "song" }
+          "ఉంది": { meaning: "to be; to have" }
+      "ఆ మాటకు అసలు భావం ఏమిటో చెప్పండి.":
+        native: "Tell me what that word really means."
+        bases:
+          "మాటకు": { meaning: "word" }
+          "ఏమిటో": { meaning: "what it is" }
+          "చెప్పండి": { meaning: "to say" }
+  "te-6307":
+    native: "honesty"
+    notes:
+      "n1": "{1} means ‘honestly’."
+    examples:
+      "అతని నిజాయితీకి అందరూ గౌరవం ఇస్తారు.":
+        native: "Everyone respects his honesty."
+        bases:
+          "అతని": { meaning: "he" }
+          "నిజాయితీకి": { meaning: "honesty" }
+          "ఇస్తారు": { meaning: "to give" }
+      "అతను నిజాయితీగా మాట్లాడాడు.":
+        native: "He spoke honestly."
+        bases:
+          "నిజాయితీగా": { meaning: "honesty" }
+          "మాట్లాడాడు": { meaning: "spoke" }
+  "te-6308":
+    native: "effort; attempt"
+    wiktionary: true
+    notes:
+      "n1": "{1} means ‘in an attempt’."
+    examples:
+      "ఆమె ఉద్యోగం కోసం గట్టి ప్రయత్నం చేసింది.":
+        native: "She made a strong effort to get the job."
+        bases:
+          "చేసింది": { meaning: "did" }
+      "ఈ ప్రయత్నంలో నేను విజయం సాధించాను.":
+        native: "I succeeded in this attempt."
+        bases:
+          "ప్రయత్నంలో": { meaning: "effort" }
+          "సాధించాను": { meaning: "to achieve" }
+  "te-6309":
+    native: "development; progress; growth"
+    wiktionary: true
+    notes:
+      "n1": "{1} means ‘a developed country’."
+    examples:
+      "ఈ ఊరిలో రోడ్ల అభివృద్ధి జరుగుతోంది.":
+        native: "Road development is going on in this town."
+        bases:
+          "ఊరిలో": { meaning: "town" }
+          "రోడ్ల": { meaning: "road" }
+          "జరుగుతోంది": { meaning: "to happen" }
+      "దేశ అభివృద్ధికి విద్య ముఖ్యం.":
+        native: "Education is important for the country's development."
+        bases:
+          "దేశ": { meaning: "country" }
+          "అభివృద్ధికి": { meaning: "development" }
+    senses:
+      "increase": { native: "increase, augmentation, growth, development" }
+      "improvement": { native: "improvement, progress" }
+  "te-6310":
+    native: "weakness"
+    wiktionary: true
+    notes:
+      "n1": "{1} means ‘his weakness’."
+    examples:
+      "అది అతని బలహీనత.":
+        native: "That is his weakness."
+        bases:
+          "అతని": { meaning: "he" }
+      "బలహీనత ఉందని ఒప్పుకోవడం మంచిది.":
+        native: "It is good to admit that there is a weakness."
+        bases:
+          "ఉందని": { meaning: "that there is" }
+    synonyms: { "balahinamu": "the condition of being weak - weakness" }
+  "te-6311":
+    native: "beauty"
+    wiktionary: true
+    notes:
+      "n1": "{1} means ‘with beauty’."
+    examples:
+      "ఈ కోట సౌందర్యం చూడదగినది.":
+        native: "The beauty of this fort is worth seeing."
+        bases:
+          "చూడదగినది": { meaning: "worth seeing" }
+      "ప్రకృతి సౌందర్యాన్ని ఆస్వాదించాం.":
+        native: "We enjoyed the beauty of nature."
+        bases:
+          "సౌందర్యాన్ని": { meaning: "beauty" }
+          "ఆస్వాదించాం": { meaning: "enjoyed" }
+  "te-6312":
+    native: "faith; trust; belief"
+    wiktionary: true
+    notes:
+      "n1": "{1} means ‘with trust’."
+    examples:
+      "నాకు నా స్నేహితుల మీద విశ్వాసం ఉంది.":
+        native: "I have trust in my friends."
+        bases:
+          "స్నేహితుల": { meaning: "friends" }
+          "ఉంది": { meaning: "to be; to have" }
+      "దేవుడి మీద అతనికి గట్టి విశ్వాసం.":
+        native: "He has strong faith in God."
+        bases:
+          "దేవుడి": { meaning: "god" }
+          "అతనికి": { meaning: "he" }
+  "te-6313":
+    native: "difference; gap"
+    notes:
+      "n1": "{1} means ‘this difference’."
+    examples:
+      "రెండింటి మధ్య పెద్ద వ్యత్యాసం ఉంది.":
+        native: "There is a big difference between the two."
+        bases:
+          "రెండింటి": { meaning: "two" }
+          "ఉంది": { meaning: "to be; to have" }
+      "ఈ రెండు ఫోన్ల మధ్య వ్యత్యాసం ఏమిటి?":
+        native: "What is the difference between these two phones?"
+        bases:
+          "ఫోన్ల": { meaning: "phones" }
+  "te-6314":
+    native: "unity"
+    notes:
+      "n1": "{1} means ‘with unity’."
+    examples:
+      "ఐక్యత ఉంటే ఏ పనైనా సాధ్యమే.":
+        native: "If there is unity, any work is possible."
+        bases:
+          "ఉంటే": { meaning: "if there is" }
+      "గ్రామస్థుల ఐక్యత అందరికీ ఆదర్శం.":
+        native: "The unity of the villagers is an example for everyone."
+        bases:
+          "గ్రామస్థుల": { meaning: "villagers" }
+          "అందరికీ": { meaning: "everyone" }
+  "te-6315":
+    native: "intention; purpose; aim"
+    notes:
+      "n1": "{1} means ‘a good intention’."
+    examples:
+      "అతని ఉద్దేశం మంచిదే, కానీ పద్ధతి సరికాదు.":
+        native: "His intention is good, but his method is not right."
+        bases:
+          "అతని": { meaning: "he" }
+      "నా ఉద్దేశం మిమ్మల్ని బాధపెట్టడం కాదు.":
+        native: "I did not mean to hurt you."
+        bases:
+          "మిమ్మల్ని": { meaning: "you" }
+  "te-6316":
+    native: "duty; responsibility"
+    notes:
+      "n1": "{1} means ‘one's duty’."
+    examples:
+      "ప్రతి పౌరుడి కర్తవ్యం ఓటు వేయడం.":
+        native: "It is every citizen's duty to vote."
+        bases:
+          "పౌరుడి": { meaning: "citizen" }
+      "ఇది నా కర్తవ్యం అని అనుకుంటాను.":
+        native: "I think it is my duty."
+        bases:
+          "అనుకుంటాను": { meaning: "to think" }
+  "te-6317":
+    native: "ability; capacity"
+    wiktionary: true
+    notes:
+      "n1": "{1} means ‘a capable person’."
+    examples:
+      "అతనికి పని చేసే సామర్థ్యం ఉంది.":
+        native: "He has the ability to work."
+        bases:
+          "అతనికి": { meaning: "he" }
+          "చేసే": { meaning: "that does" }
+          "ఉంది": { meaning: "to be; to have" }
+      "ఈ యంత్రం సామర్థ్యాన్ని తెలుసుకోవాలి.":
+        native: "We must know the capacity of this machine."
+        bases:
+          "సామర్థ్యాన్ని": { meaning: "capacity" }
+          "తెలుసుకోవాలి": { meaning: "to find out" }
+    senses:
+      "ability": { native: "ability, power, force, energy, strength" }
+  "te-6318":
+    native: "influence; effect"
+    wiktionary: true
+    notes:
+      "n1": "{1} means ‘under the influence of’."
+    examples:
+      "సినిమాల ప్రభావం పిల్లల మీద ఎక్కువగా ఉంటుంది.":
+        native: "The influence of films is strong on children."
+        bases:
+          "సినిమాల": { meaning: "films" }
+          "పిల్లల": { meaning: "children" }
+          "ఉంటుంది": { meaning: "to be" }
+      "అతని మాటలు నా మీద మంచి ప్రభావం చూపాయి.":
+        native: "His words had a good effect on me."
+        bases:
+          "అతని": { meaning: "he" }
+          "మాటలు": { meaning: "words" }
+          "చూపాయి": { meaning: "showed" }
+  "te-6319":
+    native: "progress; advance"
+    notes:
+      "n1": "{1} means ‘in progress’."
+    examples:
+      "పనిలో మంచి పురోగతి కనిపిస్తోంది.":
+        native: "Good progress is visible in the work."
+        bases:
+          "పనిలో": { meaning: "work" }
+          "కనిపిస్తోంది": { meaning: "to be seen" }
+      "ప్రాజెక్టు పురోగతి ప్రతి వారం చెప్పండి.":
+        native: "Report the progress of the project every week."
+        bases:
+          "చెప్పండి": { meaning: "to say" }
+  "te-6320":
+    native: "relation; connection; relationship"
+    wiktionary: true
+    notes:
+      "n1": "{1} means ‘there is no connection’."
+    examples:
+      "ఈ రెండు విషయాలకు సంబంధం లేదు.":
+        native: "These two matters have no connection."
+        bases:
+          "విషయాలకు": { meaning: "matters" }
+      "అతనికి మా కుటుంబంతో మంచి సంబంధం ఉంది.":
+        native: "He has a good relationship with our family."
+        bases:
+          "అతనికి": { meaning: "he" }
+          "కుటుంబంతో": { meaning: "family" }
+          "ఉంది": { meaning: "to be; to have" }
+  "te-6321":
+    native: "practice; exercise"
+    wiktionary: true
+    notes:
+      "n1": "{1} means ‘daily practice’."
+    examples:
+      "రోజూ తెలుగు అభ్యాసం చేస్తాను.":
+        native: "I practice Telugu every day."
+        bases:
+          "చేస్తాను": { meaning: "I do" }
+      "నిరంతర అభ్యాసం వల్ల మెరుగవుతారు.":
+        native: "Through constant practice you will improve."
+        bases:
+          "మెరుగవుతారు": { meaning: "will improve" }
+  "te-6322":
+    native: "ethics; morality"
+    notes:
+      "n1": "{1} means ‘moral values’."
+    examples:
+      "నైతికత గురించి పిల్లలకు నేర్పాలి.":
+        native: "Children must be taught about morality."
+        bases:
+          "పిల్లలకు": { meaning: "children" }
+          "నేర్పాలి": { meaning: "to teach" }
+      "అతనికి బలమైన నైతికత ఉంది.":
+        native: "He has a strong sense of morality."
+        bases:
+          "అతనికి": { meaning: "he" }
+          "ఉంది": { meaning: "to be; to have" }
+  "te-6323":
+    antonyms: { "adharmam": "unrighteousness; injustice" }
+    native: "dharma; righteousness; duty"
+    wiktionary: true
+    notes:
+      "n1": "{1} means ‘righteously’."
+    examples:
+      "పేదలకు సాయం చేయడం ధర్మం.":
+        native: "Helping the poor is a duty."
+        bases:
+          "పేదలకు": { meaning: "poor" }
+      "ఆ రాజు ధర్మంగా పాలించాడు.":
+        native: "That king ruled righteously."
+        bases:
+          "ధర్మంగా": { meaning: "righteousness" }
+          "పాలించాడు": { meaning: "ruled" }
+  "te-6324":
+    native: "limit; limitation"
+    notes:
+      "n1": "{1} means ‘time limit’."
+    examples:
+      "ఈ పరీక్షకు సమయ పరిమితి ఒక గంట.":
+        native: "The time limit for this test is one hour."
+        bases:
+          "పరీక్షకు": { meaning: "test" }
+      "ప్రతి మనిషికీ కొన్ని పరిమితులు ఉంటాయి.":
+        native: "Every person has some limits."
+        bases:
+          "మనిషికీ": { meaning: "person" }
+          "పరిమితులు": { meaning: "limits" }
+          "ఉంటాయి": { meaning: "to be" }
+  "te-6325":
+    native: "imagination; guess"
+    wiktionary: true
+    notes:
+      "n1": "{1} means ‘according to a guess’."
+    examples:
+      "అతని ఊహ నిజమైంది.":
+        native: "His guess came true."
+        bases:
+          "అతని": { meaning: "he" }
+          "నిజమైంది": { meaning: "came true" }
+      "ఊహలతో ఏమీ జరగదు.":
+        native: "Nothing happens with mere imagination."
+        bases:
+          "ఊహలతో": { meaning: "imagination" }
+          "జరగదు": { meaning: "to happen" }
+    synonyms: { "ancana": "guess, conjecture", "ujja": "guess, conjecture", "ujjayimpu": "guess, conjecture" }
+    senses:
+      "guess": { native: "guess, supposition, conjecture" }
+      "idea": { native: "idea, contrivance, imagination" }
