@@ -91,16 +91,21 @@ approval.
 ## Awaiting approval
 
 - `languages-learning.html`: Languages I'm learning redone in line with
-  Languages I know (#626; owner, 2026-10-18, "Sonnet mockup"): plain rows
-  with the own name, B1 written, the learner's progress and the Alpha, Beta
-  or Complete tag, with Update and Remove on the row and "Check for deck
-  updates" and "Update all" at the top; a Popular section; a bottom sheet
-  per language with Learn this language or Stop learning, script details
-  (switch, script picker, shared script progress), placement (new language:
-  find my level or start at the beginning; learned: a Find my level button,
-  also on Progress) and course details; Continue stays. Light and dark, 1x
-  and 1.4x. **Awaiting the owner's approval**; the page lists what is
-  proposed.
+  Languages I know (#626; owner, 2026-10-18, "Sonnet mockup"), revised for
+  the owner's review of 2026-10-18: short rows with far less whitespace,
+  grouped by the same families in the same order as Languages I know; "Check
+  for deck updates" and "Update all" in one row at the top; on a learned row
+  one row of buttons, Update only as "Update available" when an update
+  exists, and Remove as a red x icon; a Popular section; a bottom sheet per
+  language whose "Learn this language" (or "Stop learning") is fixed at the
+  bottom, outside the scroll, and leads to two screens with Back: which
+  scripts to learn (one option per script) and where to start (each chosen
+  script placed separately from the language, #481). A learned language
+  keeps Find my level (also on Progress) and its course details on the
+  first screen. Hindustani (#623) with Devanagari and Perso-Arabic,
+  including a learner who knows it in Devanagari and learns it just for the
+  Perso-Arabic script. Light and dark, 1x and 1.4x. **Awaiting the owner's
+  approval**; the page lists what is proposed.
 
 ## Deleted (owner, 2026-10-12)
 
