@@ -37,10 +37,18 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - target: "సేద్యానికి చాలా ఓపిక కావాలి."
-        reading: "sēdyāniki cālā ōpika kāvāli."
-        bases:
-          - { word: "కావాలి", base: "కావడం", reading: "kāvaḍaṁ" }
+      - "target": "సేద్యానికి చాలా ఓపిక కావాలి."
+        "reading": "sēdyāniki cālā ōpika kāvāli."
+        "bases":
+          - "word": "కావాలి"
+            "base": "కావడం"
+            "reading": "kāvaḍaṁ"
+          - "word": "సేద్యానికి"
+            "base": "సేద్యం"
+            "reading": "sēdyam"
+          - "word": "ఓపిక"
+            "base": "ఓపిక"
+            "reading": "ōpika"
       - target: "ఈ భూమి సేద్యానికి మంచిది."
         reading: "ī bhūmi sēdyāniki mañcidi."
         bases:
@@ -127,10 +135,15 @@ cards:
         reading: "nāru ippuḍē nāṭāli."
         bases:
           - { word: "నాటాలి", base: "నాటడం", reading: "nāṭaḍaṁ" }
-      - target: "నారు పచ్చగా ఉంది."
-        reading: "nāru paccagā undi."
-        bases:
-          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - "target": "నారు పచ్చగా ఉంది."
+        "reading": "nāru paccagā undi."
+        "bases":
+          - "word": "ఉంది"
+            "base": "ఉండడం"
+            "reading": "uṇḍaḍaṁ"
+          - "word": "పచ్చగా"
+            "base": "పచ్చ"
+            "reading": "pacca"
     senses:
       - { id: "tender", pos: "noun", source: "https://en.wiktionary.org/wiki/నారు" }
       - { id: "young", pos: "noun", source: "https://en.wiktionary.org/wiki/నారు" }
@@ -144,10 +157,15 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "మొలకలు", reading: "molakalu" }] }
     examples:
-      - target: "విత్తనం నుంచి మొలక వచ్చింది."
-        reading: "vittanam nuñci molaka vaccindi."
-        bases:
-          - { word: "వచ్చింది", base: "రావడం", reading: "rāvaḍaṁ" }
+      - "target": "విత్తనం నుంచి మొలక వచ్చింది."
+        "reading": "vittanam nuñci molaka vaccindi."
+        "bases":
+          - "word": "వచ్చింది"
+            "base": "రావడం"
+            "reading": "rāvaḍaṁ"
+          - "word": "నుంచి"
+            "base": "నుంచి"
+            "reading": "nuñci"
       - target: "రెండు రోజుల్లో మొలకలు కనిపిస్తాయి."
         reading: "reṇḍu rōjullō molakalu kanipistāyi."
         bases:
@@ -206,11 +224,18 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "తెగుళ్ళు", reading: "teguḷḷu" }] }
     examples:
-      - target: "ఈ ఏడాది పత్తికి తెగులు వచ్చింది."
-        reading: "ī ēḍādi pattiki tegulu vaccindi."
-        bases:
-          - { word: "పత్తికి", base: "పత్తి", reading: "patti" }
-          - { word: "వచ్చింది", base: "రావడం", reading: "rāvaḍaṁ" }
+      - "target": "ఈ ఏడాది పత్తికి తెగులు వచ్చింది."
+        "reading": "ī ēḍādi pattiki tegulu vaccindi."
+        "bases":
+          - "word": "పత్తికి"
+            "base": "పత్తి"
+            "reading": "patti"
+          - "word": "వచ్చింది"
+            "base": "రావడం"
+            "reading": "rāvaḍaṁ"
+          - "word": "ఏడాది"
+            "base": "ఏడాది"
+            "reading": "ēḍādi"
       - target: "ఆకులపై తెగులు కనిపిస్తే మందు వేయాలి."
         reading: "ākulapai tegulu kanipistē mandu vēyāli."
         bases:
@@ -250,10 +275,15 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "మందు", reading: "mandu" }] }
     examples:
-      - target: "పురుగుమందు జాగ్రత్తగా వాడాలి."
-        reading: "purugumandu jāgrattagā vāḍāli."
-        bases:
-          - { word: "వాడాలి", base: "వాడడం", reading: "vāḍaḍaṁ" }
+      - "target": "పురుగుమందు జాగ్రత్తగా వాడాలి."
+        "reading": "purugumandu jāgrattagā vāḍāli."
+        "bases":
+          - "word": "వాడాలి"
+            "base": "వాడడం"
+            "reading": "vāḍaḍaṁ"
+          - "word": "జాగ్రత్తగా"
+            "base": "జాగ్రత్త"
+            "reading": "jāgratta"
       - target: "పురుగుమందు పిల్లలకు దూరంగా పెట్టండి."
         reading: "purugumandu pillalaku dūrangā peṭṭaṇḍi."
         bases:
@@ -273,12 +303,23 @@ cards:
         bases:
           - { word: "మిడతలు", base: "మిడత", reading: "miḍata" }
           - { word: "తినేశాయి", base: "తినేయడం", reading: "tinēyaḍaṁ" }
-      - target: "మిడతల దండు ఊరి మీదికి వచ్చింది."
-        reading: "miḍatala daṇḍu ūri mīdiki vaccindi."
-        bases:
-          - { word: "మిడతల", base: "మిడత", reading: "miḍata" }
-          - { word: "ఊరి", base: "ఊరు", reading: "ūru" }
-          - { word: "వచ్చింది", base: "రావడం", reading: "rāvaḍaṁ" }
+      - "target": "మిడతల దండు ఊరి మీదికి వచ్చింది."
+        "reading": "miḍatala daṇḍu ūri mīdiki vaccindi."
+        "bases":
+          - "word": "మిడతల"
+            "base": "మిడత"
+            "reading": "miḍata"
+          - "word": "ఊరి"
+            "base": "ఊరు"
+            "reading": "ūru"
+          - "word": "వచ్చింది"
+            "base": "రావడం"
+            "reading": "rāvaḍaṁ"
+          - "word": "దండు"
+            "base": "దండు"
+            "reading": "daṇḍu"
+          - "word": "మీదికి"
+            "ref": "te-0805"
   - id: "te-4613"
     target: "గింజ"
     reading: "giñja"
@@ -289,10 +330,15 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "గింజలు", reading: "giñjalu" }] }
     examples:
-      - target: "ఒక్క గింజ కూడా వృథా చేయకు."
-        reading: "okka giñja kūḍā vṛthā cēyaku."
-        bases:
-          - { word: "చేయకు", base: "చేయడం", reading: "cēyaḍaṁ" }
+      - "target": "ఒక్క గింజ కూడా వృథా చేయకు."
+        "reading": "okka giñja kūḍā vṛthā cēyaku."
+        "bases":
+          - "word": "చేయకు"
+            "base": "చేయడం"
+            "reading": "cēyaḍaṁ"
+          - "word": "వృథా"
+            "base": "వృథా"
+            "reading": "vruthā"
       - target: "ఈ పొలంలో గింజలు బాగా పండాయి."
         reading: "ī polamlō giñjalu bāgā paṇḍāyi."
         bases:
@@ -328,11 +374,18 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "గోదాములు", reading: "gōdāmulu" }] }
     examples:
-      - target: "గోదాములో ధాన్యం నిల్వ ఉంది."
-        reading: "gōdāmulō dhānyam nilva undi."
-        bases:
-          - { word: "గోదాములో", base: "గోదాము", reading: "gōdāmu" }
-          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - "target": "గోదాములో ధాన్యం నిల్వ ఉంది."
+        "reading": "gōdāmulō dhānyam nilva undi."
+        "bases":
+          - "word": "గోదాములో"
+            "base": "గోదాము"
+            "reading": "gōdāmu"
+          - "word": "ఉంది"
+            "base": "ఉండడం"
+            "reading": "uṇḍaḍaṁ"
+          - "word": "నిల్వ"
+            "base": "నిల్వ"
+            "reading": "nilva"
       - target: "రైతులు పంటను గోదాముకు తీసుకెళ్తారు."
         reading: "raitulu paṇṭanu gōdāmuku tīsukeḷtāru."
         bases:
@@ -365,11 +418,18 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - target: "ఈ సారి ఎకరాకు మంచి దిగుబడి వచ్చింది."
-        reading: "ī sāri ekarāku mañci digubaḍi vaccindi."
-        bases:
-          - { word: "ఎకరాకు", base: "ఎకరం", reading: "ekaraṁ" }
-          - { word: "వచ్చింది", base: "రావడం", reading: "rāvaḍaṁ" }
+      - "target": "ఈ సారి ఎకరాకు మంచి దిగుబడి వచ్చింది."
+        "reading": "ī sāri ekarāku mañci digubaḍi vaccindi."
+        "bases":
+          - "word": "ఎకరాకు"
+            "base": "ఎకరం"
+            "reading": "ekaraṁ"
+          - "word": "వచ్చింది"
+            "base": "రావడం"
+            "reading": "rāvaḍaṁ"
+          - "word": "సారి"
+            "base": "సారి"
+            "reading": "sāri"
       - target: "వర్షం లేకపోవడంతో దిగుబడి తగ్గింది."
         reading: "varṣam lēkapōvaḍantō digubaḍi taggindi."
         bases:
@@ -390,11 +450,18 @@ cards:
         bases:
           - { word: "చలికాలంలో", base: "చలికాలం", reading: "calikālam" }
           - { word: "వేస్తారు", base: "వేయడం", reading: "vēyaḍaṁ" }
-      - target: "గోధుమపిండితో చపాతీలు చేస్తారు."
-        reading: "gōdhumapiṇḍitō capātīlu cēstāru."
-        bases:
-          - { word: "గోధుమపిండితో", base: "గోధుమపిండి", reading: "gōdhumapiṇḍi" }
-          - { word: "చేస్తారు", base: "చేయడం", reading: "cēyaḍaṁ" }
+      - "target": "గోధుమపిండితో చపాతీలు చేస్తారు."
+        "reading": "gōdhumapiṇḍitō capātīlu cēstāru."
+        "bases":
+          - "word": "గోధుమపిండితో"
+            "base": "గోధుమపిండి"
+            "reading": "gōdhumapiṇḍi"
+          - "word": "చేస్తారు"
+            "base": "చేయడం"
+            "reading": "cēyaḍaṁ"
+          - "word": "చపాతీలు"
+            "base": "చపాతీ"
+            "reading": "capātī"
   - id: "te-4619"
     target: "వరి"
     reading: "vari"
@@ -426,11 +493,18 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "పత్తి చేను", reading: "patti cēnu" }] }
     examples:
-      - target: "పత్తి పంటకు ఈ ఏడాది మంచి ధర ఉంది."
-        reading: "patti paṇṭaku ī ēḍādi mañci dhara undi."
-        bases:
-          - { word: "పంటకు", base: "పంట", reading: "paṇṭa" }
-          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - "target": "పత్తి పంటకు ఈ ఏడాది మంచి ధర ఉంది."
+        "reading": "patti paṇṭaku ī ēḍādi mañci dhara undi."
+        "bases":
+          - "word": "పంటకు"
+            "base": "పంట"
+            "reading": "paṇṭa"
+          - "word": "ఉంది"
+            "base": "ఉండడం"
+            "reading": "uṇḍaḍaṁ"
+          - "word": "ఏడాది"
+            "base": "ఏడాది"
+            "reading": "ēḍādi"
       - target: "అమ్మ పత్తితో దిండు చేసింది."
         reading: "amma pattitō diṇḍu cēsindi."
         bases:
@@ -493,10 +567,15 @@ cards:
           - { word: "కంకులు", base: "కంకి", reading: "kaṅki" }
           - { word: "కాల్చుకుని", base: "కాల్చుకోవడం", reading: "kālcukōvaḍaṁ" }
           - { word: "తిన్నారు", base: "తినడం", reading: "tinaḍaṁ" }
-      - target: "ఈ సారి మొక్కజొన్న పంట బాగా వచ్చింది."
-        reading: "ī sāri mokkajonna paṇṭa bāgā vaccindi."
-        bases:
-          - { word: "వచ్చింది", base: "రావడం", reading: "rāvaḍaṁ" }
+      - "target": "ఈ సారి మొక్కజొన్న పంట బాగా వచ్చింది."
+        "reading": "ī sāri mokkajonna paṇṭa bāgā vaccindi."
+        "bases":
+          - "word": "వచ్చింది"
+            "base": "రావడం"
+            "reading": "rāvaḍaṁ"
+          - "word": "సారి"
+            "base": "సారి"
+            "reading": "sāri"
   - id: "te-4624"
     target: "శనగ"
     reading: "śanaga"
@@ -574,10 +653,15 @@ cards:
           - { word: "పెరట్లో", base: "పెరడు", reading: "peraḍu" }
           - { word: "చెట్లు", base: "చెట్టు", reading: "ceṭṭu" }
           - { word: "పెరిగాయి", base: "పెరగడం", reading: "peragaḍaṁ" }
-      - target: "అరటి గెల ధర ఈ రోజు పెరిగింది."
-        reading: "araṭi gela dhara ī rōju perigindi."
-        bases:
-          - { word: "పెరిగింది", base: "పెరగడం", reading: "peragaḍaṁ" }
+      - "target": "అరటి గెల ధర ఈ రోజు పెరిగింది."
+        "reading": "araṭi gela dhara ī rōju perigindi."
+        "bases":
+          - "word": "పెరిగింది"
+            "base": "పెరగడం"
+            "reading": "peragaḍaṁ"
+          - "word": "గెల"
+            "base": "గెల"
+            "reading": "gela"
     senses:
       - { id: "banana", pos: "noun", source: "https://en.wiktionary.org/wiki/అరటి" }
       - { id: "plant", pos: "noun", source: "https://en.wiktionary.org/wiki/అరటి" }
@@ -654,10 +738,15 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - target: "నీటిపారుదల వల్ల పంట బాగా పండింది."
-        reading: "nīṭipārudala valla paṇṭa bāgā paṇḍindi."
-        bases:
-          - { word: "పండింది", base: "పండడం", reading: "paṇḍaḍaṁ" }
+      - "target": "నీటిపారుదల వల్ల పంట బాగా పండింది."
+        "reading": "nīṭipārudala valla paṇṭa bāgā paṇḍindi."
+        "bases":
+          - "word": "పండింది"
+            "base": "పండడం"
+            "reading": "paṇḍaḍaṁ"
+          - "word": "వల్ల"
+            "base": "వల్ల"
+            "reading": "valla"
       - target: "బావి నీరు నీటిపారుదలకు ఉపయోగపడుతుంది."
         reading: "bāvi nīru nīṭipārudalaku upayōgapaḍutundi."
         bases:
@@ -717,11 +806,18 @@ cards:
         bases:
           - { word: "మార్కెట్లో", base: "మార్కెట్", reading: "mārkeṭ" }
           - { word: "కొంటున్నాడు", base: "కొనడం", reading: "konaḍaṁ" }
-      - target: "వ్యాపారులు రైతులకు మంచి ధర ఇవ్వాలి."
-        reading: "vyāpārulu raitulaku mañci dhara ivvāli."
-        bases:
-          - { word: "రైతులకు", base: "రైతు", reading: "raitu" }
-          - { word: "ఇవ్వాలి", base: "ఇవ్వడం", reading: "ivvaḍaṁ" }
+      - "target": "వ్యాపారులు రైతులకు మంచి ధర ఇవ్వాలి."
+        "reading": "vyāpārulu raitulaku mañci dhara ivvāli."
+        "bases":
+          - "word": "రైతులకు"
+            "base": "రైతు"
+            "reading": "raitu"
+          - "word": "ఇవ్వాలి"
+            "base": "ఇవ్వడం"
+            "reading": "ivvaḍaṁ"
+          - "word": "వ్యాపారులు"
+            "base": "వ్యాపారి"
+            "reading": "vyāpāri"
     synonyms:
       - { id: "beragadu", word: "బేరగాడు", reading: "bēragāḍu", source: "https://en.wiktionary.org/wiki/వ్యాపారి" }
   - id: "te-4635"
@@ -729,21 +825,38 @@ cards:
     reading: "gorrela kāpari"
     pos: "noun"
     gender: "mahat"
-    bases: "self"
+    bases: [{"word": "గొర్రెల", "ref": "te-0993"}, {"word": "కాపరి", "base": "కాపరి", "reading": "kāpari"}]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "కాపరులు", reading: "kāparulu" }] }
     examples:
-      - target: "గొర్రెల కాపరి ఉదయం గొర్రెలను మేతకు తీసుకెళ్ళాడు."
-        reading: "gorrela kāpari udayaṁ gorrelanu mētaku tīsukeḷḷāḍu."
-        bases:
-          - { word: "గొర్రెలను", base: "గొర్రె", reading: "gorre" }
-          - { word: "మేతకు", base: "మేత", reading: "mēta" }
-          - { word: "తీసుకెళ్ళాడు", base: "తీసుకెళ్ళడం", reading: "tīsukeḷḷaḍaṁ" }
-      - target: "ఆ కాపరికి గొర్రెలు ఇరవై ఉన్నాయి."
-        reading: "ā kāpariki gorrelu iravai unnāyi."
-        bases:
-          - { word: "కాపరికి", base: "కాపరి", reading: "kāpari" }
-          - { word: "ఉన్నాయి", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - "target": "గొర్రెల కాపరి ఉదయం గొర్రెలను మేతకు తీసుకెళ్ళాడు."
+        "reading": "gorrela kāpari udayaṁ gorrelanu mētaku tīsukeḷḷāḍu."
+        "bases":
+          - "word": "గొర్రెలను"
+            "base": "గొర్రె"
+            "reading": "gorre"
+          - "word": "మేతకు"
+            "base": "మేత"
+            "reading": "mēta"
+          - "word": "తీసుకెళ్ళాడు"
+            "base": "తీసుకెళ్ళడం"
+            "reading": "tīsukeḷḷaḍaṁ"
+          - "word": "గొర్రెల"
+            "ref": "te-0993"
+          - "word": "కాపరి"
+            "base": "కాపరి"
+            "reading": "kāpari"
+      - "target": "ఆ కాపరికి గొర్రెలు ఇరవై ఉన్నాయి."
+        "reading": "ā kāpariki gorrelu iravai unnāyi."
+        "bases":
+          - "word": "కాపరికి"
+            "base": "కాపరి"
+            "reading": "kāpari"
+          - "word": "ఉన్నాయి"
+            "base": "ఉండడం"
+            "reading": "uṇḍaḍaṁ"
+          - "word": "గొర్రెలు"
+            "ref": "te-0993"
   - ref: "te-0781"
   - ref: "te-0408"
   - ref: "te-4512"
