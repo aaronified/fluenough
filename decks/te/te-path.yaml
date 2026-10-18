@@ -440,7 +440,8 @@ units:
       - { id: "at-the-bank", text: { "en": "Opening an account at a bank counter" } }
     reading_passages:
       - { id: "bank-form", text: { "en": "A simple bank form" } }
-  - planned: { id: "te-government", theme: "government", words: 45 }
+  - decks: ["te-government", "*"]
+    words: 45
     listening_passages:
       - { id: "at-the-office", text: { "en": "Asking an officer which document is needed" } }
     reading_passages:
