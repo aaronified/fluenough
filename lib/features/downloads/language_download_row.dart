@@ -127,7 +127,15 @@ class LanguageDownloadActions extends StatelessWidget {
         ),
       if (onPhone)
         TextButton(
-          onPressed: busy ? null : () => _remove(context, state),
+          onPressed: busy
+              ? null
+              : () => removeLanguageAsking(
+                  context,
+                  state,
+                  code: code,
+                  name: name,
+                  onRemoved: onRemoved,
+                ),
           child: Text(l10n.deckDownloadsRemove),
         ),
     ];
@@ -150,37 +158,159 @@ class LanguageDownloadActions extends StatelessWidget {
       ],
     );
   }
+}
 
-  Future<void> _remove(BuildContext context, AppState state) async {
-    final l10n = AppLocalizations.of(context)!;
-    // A language only reviewed leaves no course behind.
-    final learned = state.learningCodes.contains(code);
-    final sure = await showDialog<bool>(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(l10n.deckDownloadsRemoveTitle(name)),
-        content: Text(
-          learned
-              ? l10n.deckDownloadsRemoveBody(name)
-              : l10n.deckDownloadsRemoveReviewBody(name),
-        ),
-        actions: <Widget>[
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(false),
-            child: Text(l10n.commonCancel),
-          ),
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(true),
-            child: Text(l10n.deckDownloadsRemove),
-          ),
-        ],
+/// Asks, then removes [code]'s decks from the phone, and says so. A
+/// language only reviewed leaves no course behind.
+Future<void> removeLanguageAsking(
+  BuildContext context,
+  AppState state, {
+  required String code,
+  required String name,
+  VoidCallback? onRemoved,
+}) async {
+  final l10n = AppLocalizations.of(context)!;
+  final learned = state.learningCodes.contains(code);
+  final sure = await showDialog<bool>(
+    context: context,
+    builder: (context) => AlertDialog(
+      title: Text(l10n.deckDownloadsRemoveTitle(name)),
+      content: Text(
+        learned
+            ? l10n.deckDownloadsRemoveBody(name)
+            : l10n.deckDownloadsRemoveReviewBody(name),
       ),
-    );
-    if (sure != true) return;
-    await state.removeLanguage(code);
-    onRemoved?.call();
-    if (context.mounted) {
-      showAppSnackBar(context, l10n.deckDownloadsRemoved(name));
+      actions: <Widget>[
+        TextButton(
+          onPressed: () => Navigator.of(context).pop(false),
+          child: Text(l10n.commonCancel),
+        ),
+        TextButton(
+          onPressed: () => Navigator.of(context).pop(true),
+          child: Text(l10n.deckDownloadsRemove),
+        ),
+      ],
+    ),
+  );
+  if (sure != true) return;
+  await state.removeLanguage(code);
+  onRemoved?.call();
+  if (context.mounted) {
+    showAppSnackBar(context, l10n.deckDownloadsRemoved(name));
+  }
+}
+
+/// A learned language's row of buttons in Languages I'm learning (#626),
+/// all in one line: its size and state, "Update available" only while an
+/// update waits, Try again or Download the rest when it needs one, and
+/// Remove as a red cross. While it downloads, a bar above.
+class LanguageRowActions extends StatelessWidget {
+  const LanguageRowActions({
+    super.key,
+    required this.code,
+    required this.name,
+    this.onRemoved,
+  });
+
+  final String code;
+
+  /// Its English name, for the remove dialog and the cross's label.
+  final String name;
+
+  /// Called once it is removed, which also stops it being learned.
+  final VoidCallback? onRemoved;
+
+  @override
+  Widget build(BuildContext context) {
+    final state = AppScope.of(context);
+    final downloads = state.deckDownloads;
+    if (downloads == null || !hasDownloadRow(downloads, code)) {
+      return const SizedBox.shrink();
     }
+    return ListenableBuilder(
+      listenable: downloads,
+      builder: (context, _) => _build(context, state, downloads),
+    );
+  }
+
+  Widget _build(BuildContext context, AppState state, DeckDownloads downloads) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final spoken = state.settings.spokenLanguages;
+    final status = downloads.stateOf(code, spoken);
+    final progress = downloads.progressOf(code);
+    final onPhone = downloads.languagesOnPhone.contains(code);
+    final busy = downloads.isDownloading(code) || downloads.updating;
+    final waiting = status == LanguageDownloadState.updateWaiting;
+    // An update waiting is said by its button; the line keeps the size.
+    final line = waiting
+        ? formatSize(l10n, downloads.sizeOnPhone(code))
+        : languageDownloadLine(l10n, downloads, code, spoken);
+    final retry =
+        status == LanguageDownloadState.failed ||
+        status == LanguageDownloadState.partial;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        if (progress != null)
+          Padding(
+            padding: const EdgeInsetsDirectional.only(bottom: 4),
+            child: LinearProgressIndicator(
+              value: progress.totalBytes == 0
+                  ? null
+                  : progress.bytes / progress.totalBytes,
+              semanticsLabel: l10n.deckDownloadsProgressLabel(name),
+            ),
+          ),
+        Row(
+          children: <Widget>[
+            Expanded(
+              child: Text(
+                line,
+                style: theme.textTheme.bodyMedium!.copyWith(
+                  color: theme.colorScheme.onSurfaceVariant,
+                ),
+              ),
+            ),
+            if (waiting)
+              TextButton.icon(
+                icon: const Icon(Icons.download, size: 20),
+                onPressed: busy
+                    ? null
+                    : () => runDeckUpdate(context, downloads, <String>[code]),
+                label: Text(l10n.pickerUpdateAvailable),
+              ),
+            if (retry)
+              TextButton(
+                onPressed: busy
+                    ? null
+                    : () => onPhone
+                          ? downloads.retry(code, spoken)
+                          : state.downloadLanguage(code),
+                child: Text(
+                  status == LanguageDownloadState.failed
+                      ? l10n.commonRetry
+                      : l10n.deckDownloadsGetRest,
+                ),
+              ),
+            if (onPhone)
+              IconButton(
+                key: ValueKey<String>('remove-$code'),
+                tooltip: l10n.pickerRemoveLabel(name),
+                icon: Icon(Icons.close, color: theme.colorScheme.error),
+                onPressed: busy
+                    ? null
+                    : () => removeLanguageAsking(
+                        context,
+                        state,
+                        code: code,
+                        name: name,
+                        onRemoved: onRemoved,
+                      ),
+              ),
+          ],
+        ),
+      ],
+    );
   }
 }
