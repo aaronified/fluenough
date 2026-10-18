@@ -1,0 +1,137 @@
+schema: 1
+id: "te-grammar-indefinites"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "te-5600"
+    target: "ఎవరో"
+    reading: "evarō"
+    ipa: "eʋaroː"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఎవరో", ref: "te-0161" }
+    examples:
+      - target: "ఎవరో తలుపు తట్టారు."
+        reading: "evarō talupu taṭṭāru."
+        ipa: "eʋaroː t̪alupu t̪aʈʈaːru"
+        bases:
+          - { word: "ఎవరో", ref: "te-5600" }
+          - { word: "తలుపు", base: "తలుపు", reading: "talupu" }
+          - { word: "తట్టారు", base: "తట్టు", reading: "taṭṭu" }
+      - target: "నా పుస్తకం ఎవరో తీసుకెళ్ళారు."
+        reading: "nā pustakam evarō tīsukeḷḷāru."
+        ipa: "naː pust̪akam eʋaroː t̪iːsukeɭɭaːru"
+        bases:
+          - { word: "నా", base: "నేను", reading: "nēnu" }
+          - { word: "పుస్తకం", base: "పుస్తకం", reading: "pustakam" }
+          - { word: "ఎవరో", ref: "te-5600" }
+  - id: "te-5601"
+    target: "ఏదో"
+    reading: "ēdō"
+    ipa: "eːd̪oː"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఏదో", base: "ఏది", reading: "ēdi" }
+    examples:
+      - target: "అతను ఏదో చెప్పాలనుకున్నాడు."
+        reading: "atanu ēdō ceppālanukunnāḍu."
+        ipa: "at̪anu eːd̪oː tʃeppaːlanukunnaːɖu"
+        bases:
+          - { word: "అతను", base: "అతను", reading: "atanu" }
+          - { word: "ఏదో", ref: "te-5601" }
+          - { word: "చెప్పాలనుకున్నాడు", base: "చెప్పు", reading: "ceppu" }
+      - target: "గదిలో ఏదో శబ్దం వినిపించింది."
+        reading: "gadilō ēdō śabdam vinipiñcindi."
+        ipa: "ɡad̪iloː eːd̪oː ʃabd̪am ʋinipiɲtʃind̪i"
+        bases:
+          - { word: "గదిలో", base: "గది", reading: "gadi" }
+          - { word: "ఏదో", ref: "te-5601" }
+          - { word: "శబ్దం", base: "శబ్దం", reading: "śabdam" }
+  - id: "te-5602"
+    target: "ఏదైనా"
+    reading: "ēdainā"
+    ipa: "eːd̪ainaː"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఏదైనా", base: "ఏది", reading: "ēdi" }
+    examples:
+      - target: "నీకు ఏదైనా కావాలా?"
+        reading: "nīku ēdainā kāvālā?"
+        ipa: "niːku eːd̪ainaː kaːʋaːlaː"
+        bases:
+          - { word: "నీకు", base: "నువ్వు", reading: "nuvvu" }
+          - { word: "ఏదైనా", ref: "te-5602" }
+          - { word: "కావాలా", base: "కావాలి", reading: "kāvāli" }
+      - target: "ఏదైనా తినడానికి ఇవ్వండి."
+        reading: "ēdainā tinaḍāniki ivvaṇḍi."
+        ipa: "eːd̪ainaː t̪inaɖaːniki iʋʋaɳɖi"
+        bases:
+          - { word: "ఏదైనా", ref: "te-5602" }
+          - { word: "తినడానికి", base: "తినడం", reading: "tinaḍam" }
+          - { word: "ఇవ్వండి", base: "ఇవ్వు", reading: "ivvu" }
+  - id: "te-5603"
+    target: "ఎవరూ"
+    reading: "evarū"
+    ipa: "eʋaruː"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఎవరూ", ref: "te-0161" }
+    examples:
+      - target: "ఇంట్లో ఎవరూ లేరు."
+        reading: "iṇṭlō evarū lēru."
+        ipa: "iɳʈloː eʋaruː leːru"
+        bases:
+          - { word: "ఇంట్లో", base: "ఇల్లు", reading: "illu" }
+          - { word: "ఎవరూ", ref: "te-5603" }
+          - { word: "లేరు", base: "లేరు", reading: "lēru" }
+      - target: "వర్షంలో ఎవరూ బయటకు రాలేదు."
+        reading: "varṣamlō evarū bayaṭaku rālēdu."
+        ipa: "ʋarʂamloː eʋaruː bajaʈaku raːleːd̪u"
+        bases:
+          - { word: "వర్షంలో", base: "వర్షం", reading: "varṣam" }
+          - { word: "ఎవరూ", ref: "te-5603" }
+          - { word: "బయటకు", base: "బయట", reading: "bayaṭa" }
+  - id: "te-5604"
+    target: "ఏదీ"
+    reading: "ēdī"
+    ipa: "eːd̪iː"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఏదీ", base: "ఏది", reading: "ēdi" }
+    examples:
+      - target: "ఈ పెట్టెలో ఏదీ లేదు."
+        reading: "ī peṭṭelō ēdī lēdu."
+        ipa: "iː peʈʈeloː eːd̪iː leːd̪u"
+        bases:
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "పెట్టెలో", base: "పెట్టె", reading: "peṭṭe" }
+          - { word: "ఏదీ", ref: "te-5604" }
+      - target: "అతని మాటల్లో ఏదీ నిజం కాదు."
+        reading: "atani māṭallō ēdī nijam kādu."
+        ipa: "at̪ani maːʈalloː eːd̪iː nidʒam kaːd̪u"
+        bases:
+          - { word: "అతని", base: "అతను", reading: "atanu" }
+          - { word: "మాటల్లో", base: "మాట", reading: "māṭa" }
+          - { word: "ఏదీ", ref: "te-5604" }
+  - ref: "te-1112"
+  - ref: "te-1075"
+  - ref: "te-1076"
+  - ref: "te-1037"
+  - ref: "te-1039"
+  - ref: "te-1104"
+  - ref: "te-1105"
+  - ref: "te-0611"
+  - ref: "te-0453"
