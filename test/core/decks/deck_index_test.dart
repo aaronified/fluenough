@@ -90,13 +90,39 @@ void main() {
       }
     });
 
-    test('lists every language folder but the hidden ones', () {
-      final folders = <String>[
-        for (final dir in Directory('decks').listSync())
-          if (dir is Directory) dir.path.split('/').last,
-      ]..remove('ja');
-      expect(index.languages.map((l) => l.code).toSet(), folders.toSet());
-    });
+    test(
+      'lists every language folder with a written deck, but the hidden ones',
+      () {
+        // tools/deck_index.py leaves out a course of only these kinds of file.
+        const notDecks = <String>{
+          'path',
+          'facts',
+          'numbers',
+          'romanisation',
+          'sounds',
+          'script',
+        };
+        final kind = RegExp(
+          r'''^["']?kind["']?\s*:\s*["']?([A-Za-z0-9-]+)''',
+          multiLine: true,
+        );
+        bool hasWrittenDeck(Directory dir) => dir
+            .listSync(recursive: true)
+            .whereType<File>()
+            .where((f) => f.path.endsWith('.yaml'))
+            .any(
+              (f) => !notDecks.contains(
+                kind.firstMatch(f.readAsStringSync())?.group(1) ?? 'vocab',
+              ),
+            );
+        final folders = <String>[
+          for (final dir in Directory('decks').listSync())
+            if (dir is Directory && hasWrittenDeck(dir))
+              dir.path.split('/').last,
+        ]..remove('ja');
+        expect(index.languages.map((l) => l.code).toSet(), folders.toSet());
+      },
+    );
 
     test('leaves out the bundled theme list', () {
       expect(index.filesByPath.keys, isNot(contains('decks/themes.yaml')));
