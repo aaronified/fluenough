@@ -1,0 +1,163 @@
+schema: 1
+id: "te-grammar-honorifics"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "grammar"]
+cards:
+  - ref: "te-0136"
+  - ref: "te-0594"
+  - ref: "te-0183"
+  - ref: "te-0185"
+  - ref: "te-0186"
+  - id: "te-6400"
+    target: "మీరు ఎలా ఉన్నారు?"
+    reading: "mīru elā unnāru?"
+    ipa: "miːru elaː unnaːru"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "మీరు", ref: "te-0136" }
+      - { word: "ఉన్నారు", ref: "te-0633" }
+  - id: "te-6401"
+    target: "నువ్వు ఎలా ఉన్నావు?"
+    reading: "nuvvu elā unnāvu?"
+    ipa: "nuʋʋu elaː unnaːʋu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నువ్వు", ref: "te-0594" }
+      - { word: "ఉన్నావు", ref: "te-0633" }
+  - id: "te-6402"
+    target: "రాము గారు, రండి."
+    reading: "rāmu gāru, raṇḍi."
+    ipa: "raːmu ɡaːru raɳɖi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "గారు", ref: "te-0183" }
+      - { word: "రండి", ref: "te-0623" }
+  - id: "te-6403"
+    target: "సార్, కూర్చోండి."
+    reading: "sār, kūrcōṇḍi."
+    ipa: "saːr kuːrtʃoːɳɖi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "సార్", ref: "te-0185" }
+      - { word: "కూర్చోండి", ref: "te-0634" }
+  - id: "te-6404"
+    target: "మేడమ్, చెప్పండి."
+    reading: "mēḍam, ceppaṇḍi."
+    ipa: "meːɖam tʃeppaɳɖi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "మేడమ్", ref: "te-0186" }
+      - { word: "చెప్పండి", ref: "te-0628" }
+  - id: "te-6405"
+    target: "ఇక్కడ కూర్చోండి."
+    reading: "ikkaḍa kūrcōṇḍi."
+    ipa: "ikkaɖa kuːrtʃoːɳɖi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఇక్కడ", ref: "te-0302" }
+      - { word: "కూర్చోండి", ref: "te-0634" }
+  - id: "te-6406"
+    target: "మీరు ఏం తింటారు?"
+    reading: "mīru ēm tiṇṭāru?"
+    ipa: "miːru eːm t̪iɳʈaːru"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "మీరు", ref: "te-0136" }
+      - { word: "తింటారు", ref: "te-0624" }
+  - id: "te-6407"
+    target: "నువ్వు ఏం తింటావు?"
+    reading: "nuvvu ēm tiṇṭāvu?"
+    ipa: "nuʋʋu eːm t̪iɳʈaːʋu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నువ్వు", ref: "te-0594" }
+      - { word: "తింటావు", ref: "te-0624" }
+  - id: "te-6408"
+    target: "మీ పేరు ఏమిటి?"
+    reading: "mī pēru ēmiṭi?"
+    ipa: "miː peːru eːmiʈi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "మీరు", ref: "te-0136" }
+  - id: "te-6409"
+    target: "నీ పేరు ఏమిటి?"
+    reading: "nī pēru ēmiṭi?"
+    ipa: "niː peːru eːmiʈi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నువ్వు", ref: "te-0594" }
+  - id: "te-6410"
+    target: "మీరు ఎక్కడ ఉంటారు?"
+    reading: "mīru ekkaḍa uṇṭāru?"
+    ipa: "miːru ekkaɖa uɳʈaːru"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "మీరు", ref: "te-0136" }
+      - { word: "ఉంటారు", ref: "te-0633" }
+  - id: "te-6411"
+    target: "నువ్వు ఎక్కడ ఉంటావు?"
+    reading: "nuvvu ekkaḍa uṇṭāvu?"
+    ipa: "nuʋʋu ekkaɖa uɳʈaːʋu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నువ్వు", ref: "te-0594" }
+      - { word: "ఉంటావు", ref: "te-0633" }
+  - id: "te-6412"
+    target: "మీరు నాకు చెప్పండి."
+    reading: "mīru nāku ceppaṇḍi."
+    ipa: "miːru naːku tʃeppaɳɖi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "మీరు", ref: "te-0136" }
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "చెప్పండి", ref: "te-0628" }
+  - id: "te-6413"
+    target: "సార్, నీళ్ళు తాగండి."
+    reading: "sār, nīḷḷu tāgaṇḍi."
+    ipa: "saːr niːɭɭu t̪aːɡaɳɖi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "సార్", ref: "te-0185" }
+      - { word: "నీళ్ళు", ref: "te-0341" }
+      - { word: "తాగండి", ref: "te-0625" }
+  - id: "te-6414"
+    target: "మేడమ్, సరేనండి."
+    reading: "mēḍam, sarēnaṇḍi."
+    ipa: "meːɖam sareːnaɳɖi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "మేడమ్", ref: "te-0186" }
+      - { word: "సరేనండి", ref: "te-0184" }
