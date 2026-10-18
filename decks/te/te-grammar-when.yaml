@@ -1,0 +1,159 @@
+schema: 1
+id: "te-grammar-when"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "te-2700"
+    target: "నేను చిన్నప్పుడు బడికి వెళ్ళేవాడిని."
+    reading: "nēnu cinnappuḍu baḍiki veḷḷēvāḍini."
+    ipa: "neːnu tʃinːappuɖu baɖiki ʋeɭɭeːʋaːɖini"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "చిన్నప్పుడు", ref: "te-0503" }
+      - { word: "బడికి", ref: "te-0764" }
+      - { word: "వెళ్ళేవాడిని", ref: "te-0622" }
+    confusables:
+      - { id: "c1", word: "వెళ్ళినప్పుడు", reading: "veḷḷinappuḍu", kind: "form" }
+      - { id: "c2", word: "ఎందుకు", reading: "enduku", kind: "word" }
+  - id: "te-2701"
+    target: "వచ్చినప్పుడు నాకు ఫోన్ చేయండి."
+    reading: "vaccinappuḍu nāku fōn cēyaṇḍi."
+    ipa: "ʋatʃtʃinappuɖu naːku foːn tʃeːjaɳɖi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "వచ్చినప్పుడు", ref: "te-0623" }
+      - { word: "నాకు", ref: "te-0593" }
+      - { word: "చేయండి", ref: "te-0621" }
+    confusables:
+      - { id: "c1", word: "వచ్చేటప్పుడు", reading: "vaccēṭappuḍu", kind: "form" }
+      - { id: "c2", word: "ఇప్పుడు", reading: "ippuḍu", kind: "word" }
+  - id: "te-2702"
+    target: "గంట కొట్టినప్పుడు ఈ పని చేయండి."
+    reading: "gaṇṭa koṭṭinappuḍu ī pani cēyaṇḍi."
+    ipa: "gaɳʈa koʈʈinappuɖu iː pani tʃeːjaɳɖi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "కొట్టినప్పుడు", ref: "te-0838" }
+      - { word: "పని", ref: "te-0197" }
+      - { word: "చేయండి", ref: "te-0621" }
+    confusables:
+      - { id: "c1", word: "కొట్టేటప్పుడు", reading: "koṭṭēṭappuḍu", kind: "form" }
+      - { id: "c2", word: "అవును", reading: "avunu", kind: "word" }
+  - id: "te-2703"
+    target: "నేను తింటున్నప్పుడు అమ్మ వచ్చింది."
+    reading: "nēnu tiṇṭunnappuḍu amma vaccindi."
+    ipa: "neːnu t̪iɳʈunnappuɖu ammaː ʋatʃtʃindi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "తింటున్నప్పుడు", ref: "te-0624" }
+      - { word: "అమ్మ", ref: "te-0059" }
+      - { word: "వచ్చింది", ref: "te-0623" }
+    confusables:
+      - { id: "c1", word: "తిన్నప్పుడు", reading: "tinnappuḍu", kind: "form" }
+      - { id: "c2", word: "ఇక్కడ", reading: "ikkaḍa", kind: "word" }
+  - id: "te-2704"
+    target: "నేను పని చేసేటప్పుడు టీ తాగుతాను."
+    reading: "nēnu pani cēsēṭappuḍu ṭī tāgutānu."
+    ipa: "neːnu pani tʃeːseːʈappuɖu tiː taːɡut̪aːnu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "పని", ref: "te-0197" }
+      - { word: "చేసేటప్పుడు", ref: "te-0621" }
+      - { word: "తాగుతాను", ref: "te-0625" }
+    confusables:
+      - { id: "c1", word: "చేసినప్పుడు", reading: "cēsinappuḍu", kind: "form" }
+      - { id: "c2", word: "ఎందుకు", reading: "enduku", kind: "word" }
+  - id: "te-2705"
+    target: "అమ్మ వచ్చేటప్పుడు నేను ఇంట్లో ఉంటాను."
+    reading: "amma vaccēṭappuḍu nēnu iṇṭlō uṇṭānu."
+    ipa: "ammaː ʋatʃtʃeːʈappuɖu neːnu iɳʈloː uɳʈaːnu"
+    pos: "phrase"
+    bases:
+      - { word: "అమ్మ", ref: "te-0059" }
+      - { word: "వచ్చేటప్పుడు", ref: "te-0623" }
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "ఇంట్లో", ref: "te-0195" }
+      - { word: "ఉంటాను", ref: "te-0633" }
+    confusables:
+      - { id: "c1", word: "వచ్చినప్పుడు", reading: "vaccinappuḍu", kind: "form" }
+      - { id: "c2", word: "ఇప్పుడు", reading: "ippuḍu", kind: "word" }
+  - id: "te-2706"
+    target: "బడికి వెళ్ళేటప్పుడు తలుపు మూయండి."
+    reading: "baḍiki veḷḷēṭappuḍu talupu mūyaṇḍi."
+    ipa: "baɖiki ʋeɭɭeːʈappuɖu t̪aluːpu muːjaɳɖi"
+    pos: "phrase"
+    bases:
+      - { word: "బడికి", ref: "te-0764" }
+      - { word: "వెళ్ళేటప్పుడు", ref: "te-0622" }
+      - { word: "తలుపు", ref: "te-0425" }
+      - { word: "మూయండి", ref: "te-0826" }
+    confusables:
+      - { id: "c1", word: "వెళ్ళినప్పుడు", reading: "veḷḷinappuḍu", kind: "form" }
+      - { id: "c2", word: "అవును", reading: "avunu", kind: "word" }
+  - id: "te-2707"
+    target: "వర్షం పడినప్పుడు ఇంట్లో ఉండండి."
+    reading: "varṣaṁ paḍinappuḍu iṇṭlō uṇḍaṇḍi."
+    ipa: "ʋarʂam paɖinappuɖu iɳʈloː uɳɖaɳɖi"
+    pos: "phrase"
+    bases:
+      - { word: "పడినప్పుడు", ref: "te-0839" }
+      - { word: "ఇంట్లో", ref: "te-0195" }
+      - { word: "ఉండండి", ref: "te-0633" }
+    confusables:
+      - { id: "c1", word: "పడుతున్నప్పుడు", reading: "paḍutunnappuḍu", kind: "form" }
+      - { id: "c2", word: "ఇక్కడ", reading: "ikkaḍa", kind: "word" }
+  - id: "te-2708"
+    target: "నేను తినేటప్పుడు టీవీ చూడను."
+    reading: "nēnu tinēṭappuḍu ṭīvī cūḍanu."
+    ipa: "neːnu t̪ineːʈappuɖu tiːʋiː tʃuːɖanu"
+    pos: "phrase"
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "తినేటప్పుడు", ref: "te-0624" }
+      - { word: "చూడను", ref: "te-0626" }
+    confusables:
+      - { id: "c1", word: "తిన్నప్పుడు", reading: "tinnappuḍu", kind: "form" }
+      - { id: "c2", word: "ఇప్పుడు", reading: "ippuḍu", kind: "word" }
+  - id: "te-2709"
+    target: "ఆమె వెళ్ళినప్పుడు తలుపు మూసింది."
+    reading: "āme veḷḷinappuḍu talupu mūsindi."
+    ipa: "aːme ʋeɭɭinappuɖu t̪aluːpu muːsind̪i"
+    pos: "phrase"
+    bases:
+      - { word: "ఆమె", ref: "te-0596" }
+      - { word: "వెళ్ళినప్పుడు", ref: "te-0622" }
+      - { word: "తలుపు", ref: "te-0425" }
+      - { word: "మూసింది", ref: "te-0826" }
+    confusables:
+      - { id: "c1", word: "వెళ్తున్నప్పుడు", reading: "veltunnappuḍu", kind: "form" }
+      - { id: "c2", word: "ఎందుకు", reading: "enduku", kind: "word" }
+  - id: "te-2710"
+    target: "బడిలో గంట కొట్టినప్పుడు అతను ఇంటికి వెళ్తాడు."
+    reading: "baḍilō gaṇṭa koṭṭinappuḍu atanu iṇṭiki veḷtāḍu."
+    ipa: "baɖiloː gaɳʈa koʈʈinappuɖu at̪anu iɳʈiki ʋeɭt̪aːɖu"
+    pos: "phrase"
+    bases:
+      - { word: "బడిలో", ref: "te-0764" }
+      - { word: "కొట్టినప్పుడు", ref: "te-0838" }
+      - { word: "అతను", ref: "te-0595" }
+      - { word: "ఇంటికి", ref: "te-0195" }
+      - { word: "వెళ్తాడు", ref: "te-0622" }
+    confusables:
+      - { id: "c1", word: "కొట్టేటప్పుడు", reading: "koṭṭēṭappuḍu", kind: "form" }
+      - { id: "c2", word: "ఇవాళ", reading: "ivāḷa", kind: "word" }
