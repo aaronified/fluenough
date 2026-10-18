@@ -1,0 +1,1241 @@
+schema: 1
+id: "te-feelings"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "feelings"
+tags: ["beginner", "unreviewed"]
+cards:
+  - ref: "te-0966"
+  - ref: "te-0967"
+  - ref: "te-0968"
+  - ref: "te-0969"
+  - ref: "te-0970"
+  - ref: "te-0971"
+  - ref: "te-0972"
+  - ref: "te-0973"
+  - id: "te-3300"
+    target: "ప్రేమ"
+    reading: "prēma"
+    ipa: "preːma"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ప్రేమతో", reading: "prēmatō" }] }
+    examples:
+      - target: "అమ్మ పిల్లలపై ఎంతో ప్రేమ చూపిస్తుంది."
+        reading: "amma pillalapai entō prēma cūpistundi."
+        ipa: "amma pillalapai ent̪oː preːma tʃuːpist̪und̪i"
+        bases:
+          - { word: "పిల్లలపై", base: "పిల్లలు", reading: "pillalu" }
+          - { word: "చూపిస్తుంది", base: "చూపించడం", reading: "cūpiñcaḍam" }
+      - target: "ఈ ఊరి మీద నాకు ప్రేమ పెరిగింది."
+        reading: "ī ūri mīda nāku prēma perigindi."
+        ipa: "iː uːri miːd̪a naːku preːma periɡind̪i"
+        bases:
+          - { word: "ఊరి", base: "ఊరు", reading: "ūru" }
+          - { word: "పెరిగింది", base: "పెరగడం", reading: "peragaḍam" }
+    synonyms:
+      - { id: "kurimi", word: "కూరిమి", reading: "kūrimi", source: "https://en.wiktionary.org/wiki/ప్రేమ" }
+      - { id: "gadili", word: "గాదిలి", reading: "gādili", source: "https://en.wiktionary.org/wiki/ప్రేమ" }
+  - id: "te-3301"
+    target: "ఆశ"
+    reading: "āśa"
+    ipa: "aːʃa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఆశతో", reading: "āśatō" }] }
+    examples:
+      - target: "రేపు వర్షం పడుతుందని ఆశ ఉంది."
+        reading: "rēpu varṣam paḍutundani āśa undi."
+        ipa: "reːpu ʋarʂam paɖut̪und̪ani aːʃa und̪i"
+        bases:
+          - { word: "పడుతుందని", base: "పడడం", reading: "paḍaḍam" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "మా అమ్మ ఆశలు నెరవేరాయి."
+        reading: "mā amma āśalu neravērāyi."
+        ipa: "maː amma aːʃalu neraʋeːraːji"
+        bases:
+          - { word: "ఆశలు", base: "ఆశ", reading: "āśa" }
+          - { word: "నెరవేరాయి", base: "నెరవేరడం", reading: "neravēraḍam" }
+    antonyms:
+      - { id: "nirasa", ref: "te-3323", source: "https://en.wiktionary.org/wiki/ఆశ" }
+    senses:
+      - { id: "love", pos: "noun", source: "https://en.wiktionary.org/wiki/ఆశ" }
+      - { id: "desire", pos: "noun", source: "https://en.wiktionary.org/wiki/ఆశ" }
+      - { id: "hope", pos: "noun", source: "https://en.wiktionary.org/wiki/ఆశ" }
+  - id: "te-3302"
+    target: "ఆనందం"
+    reading: "ānandam"
+    ipa: "aːnand̪am"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    synonyms:
+      - { id: "s1", ref: "te-0970" }
+    antonyms:
+      - { id: "a1", ref: "te-0971" }
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఆనందంగా", reading: "ānandaṅgā" }] }
+      - { id: "n2", kind: "note" }
+    examples:
+      - target: "పెళ్లిలో అందరికీ ఆనందం కలిగింది."
+        reading: "peḷlilō andarikī ānandam kaligindi."
+        ipa: "peɭliloː and̪arikiː aːnand̪am kaliɡind̪i"
+        bases:
+          - { word: "పెళ్లిలో", base: "పెళ్లి", reading: "peḷli" }
+          - { word: "అందరికీ", base: "అందరు", reading: "andaru" }
+          - { word: "కలిగింది", base: "కలగడం", reading: "kalagaḍam" }
+      - target: "పిల్లల నవ్వులు నాకు ఎంతో ఆనందాన్ని ఇస్తాయి."
+        reading: "pillala navvulu nāku entō ānandānni istāyi."
+        ipa: "pillala naʋʋulu naːku ent̪oː aːnand̪aːnni ist̪aːji"
+        bases:
+          - { word: "నవ్వులు", base: "నవ్వు", reading: "navvu" }
+          - { word: "ఆనందాన్ని", base: "ఆనందం", reading: "ānandam" }
+          - { word: "ఇస్తాయి", base: "ఇవ్వడం", reading: "ivvaḍam" }
+  - id: "te-3303"
+    target: "విచారం"
+    reading: "vicāram"
+    ipa: "ʋitʃaːram"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    antonyms:
+      - { id: "a1", ref: "te-0970" }
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "విచారంగా", reading: "vicāraṅgā" }] }
+      - { id: "n2", kind: "note" }
+    examples:
+      - target: "ఆ వార్త వినగానే అతనికి విచారం వచ్చింది."
+        reading: "ā vārta vinagānē ataniki vicāram vaccindi."
+        ipa: "aː ʋaːrt̪a ʋinaɡaːneː at̪aniki ʋitʃaːram ʋatʃtʃind̪i"
+        bases:
+          - { word: "వినగానే", base: "వినడం", reading: "vinaḍam" }
+          - { word: "అతనికి", base: "అతడు", reading: "ataḍu" }
+          - { word: "వచ్చింది", base: "రావడం", reading: "rāvaḍam" }
+      - target: "ఆ సినిమా ముగింపు చూసి విచారంతో బయటకు వచ్చాం."
+        reading: "ā sinimā mugimpu cūsi vicārantō bayaṭaku vaccām."
+        ipa: "aː sinimaː muɡimpu tʃuːsi ʋitʃaːrant̪oː bajaʈaku ʋatʃtʃaːm"
+        bases:
+          - { word: "చూసి", base: "చూడడం", reading: "cūḍaḍam" }
+          - { word: "విచారంతో", base: "విచారం", reading: "vicāram" }
+          - { word: "బయటకు", base: "బయట", reading: "bayaṭa" }
+          - { word: "వచ్చాం", base: "రావడం", reading: "rāvaḍam" }
+  - id: "te-3304"
+    target: "ఆందోళన"
+    reading: "āndōḷana"
+    ipa: "aːnd̪oːɭana"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఆందోళనతో", reading: "āndōḷanatō" }] }
+    examples:
+      - target: "పరీక్ష ఫలితాల గురించి ఆందోళనగా ఉంది."
+        reading: "parīkṣa phalitāla guriñci āndōḷanagā undi."
+        ipa: "pariːkʂa pʰalit̪aːla ɡuriɲtʃi aːnd̪oːɭanaɡaː und̪i"
+        bases:
+          - { word: "ఫలితాల", base: "ఫలితం", reading: "phalitam" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "ఆమె ఆందోళనను దాచలేకపోయింది."
+        reading: "āme āndōḷananu dācalēkapōyindi."
+        ipa: "aːme aːnd̪oːɭananu d̪aːtʃaleːkapoːjind̪i"
+        bases:
+          - { word: "ఆందోళనను", base: "ఆందోళన", reading: "āndōḷana" }
+          - { word: "దాచలేకపోయింది", base: "దాచడం", reading: "dācaḍam" }
+  - id: "te-3305"
+    target: "ఆశ్చర్యం"
+    reading: "āścaryam"
+    ipa: "aːʃtʃarjam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఆశ్చర్యంగా", reading: "āścaryaṅgā" }] }
+      - { id: "n2", kind: "note" }
+    examples:
+      - target: "నీ ఫోన్ చూసి నాకు నిజంగా ఆశ్చర్యం."
+        reading: "nī phōn cūsi nāku nijaṅgā āścaryam."
+        ipa: "niː pʰoːn tʃuːsi naːku nidʒaŋɡaː aːʃtʃarjam"
+        bases:
+          - { word: "నీ", base: "నువ్వు", reading: "nuvvu" }
+          - { word: "చూసి", base: "చూడడం", reading: "cūḍaḍam" }
+      - target: "ఆయన ఆశ్చర్యంతో కళ్ళు పెద్దవి చేశారు."
+        reading: "āyana āścaryantō kaḷḷu peddavi cēśāru."
+        ipa: "aːjana aːʃtʃarjant̪oː kaɭɭu ped̪d̪aʋi tʃeːʃaːru"
+        bases:
+          - { word: "ఆశ్చర్యంతో", base: "ఆశ్చర్యం", reading: "āścaryam" }
+          - { word: "కళ్ళు", base: "కన్ను", reading: "kannu" }
+          - { word: "పెద్దవి", base: "పెద్ద", reading: "pedda" }
+          - { word: "చేశారు", base: "చేయడం", reading: "cēyaḍam" }
+  - id: "te-3306"
+    target: "సిగ్గు"
+    reading: "siggu"
+    ipa: "siɡɡu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "సిగ్గుతో", reading: "siggutō" }] }
+    examples:
+      - target: "అతనికి అందరి ముందు మాట్లాడాలంటే సిగ్గు."
+        reading: "ataniki andari mundu māṭlāḍālaṇṭē siggu."
+        ipa: "at̪aniki and̪ari mund̪u maːʈlaːɖaːlaɳʈeː siɡɡu"
+        bases:
+          - { word: "అందరి", base: "అందరు", reading: "andaru" }
+          - { word: "మాట్లాడాలంటే", base: "మాట్లాడడం", reading: "māṭlāḍaḍam" }
+      - target: "ఆ పొగడ్తకు నేను సిగ్గుతో నవ్వేశాను."
+        reading: "ā pogaḍtaku nēnu siggutō navvēśānu."
+        ipa: "aː poɡaɖt̪aku neːnu siɡɡut̪oː naʋʋeːʃaːnu"
+        bases:
+          - { word: "పొగడ్తకు", base: "పొగడ్త", reading: "pogaḍta" }
+          - { word: "నవ్వేశాను", base: "నవ్వడం", reading: "navvaḍam" }
+    synonyms:
+      - { id: "lajja", word: "లజ్జ", reading: "lajja", source: "https://en.wiktionary.org/wiki/సిగ్గు" }
+  - id: "te-3307"
+    target: "ధైర్యం"
+    reading: "dhairyam"
+    ipa: "d̪ʱairjam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    antonyms:
+      - { id: "a1", ref: "te-0973" }
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ధైర్యంతో", reading: "dhairyantō" }] }
+      - { id: "n2", kind: "note" }
+    examples:
+      - target: "అతనికి ఆ పని చేసేంత ధైర్యం ఉంది."
+        reading: "ataniki ā pani cēsēnta dhairyam undi."
+        ipa: "at̪aniki aː pani tʃeːseːnt̪a d̪ʱairjam und̪i"
+        bases:
+          - { word: "చేసేంత", base: "చేయడం", reading: "cēyaḍam" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "ధైర్యంగా ముందుకు వెళ్ళు."
+        reading: "dhairyaṅgā munduku veḷḷu."
+        ipa: "d̪ʱairjaŋɡaː mund̪uku ʋeɭɭu"
+        bases:
+          - { word: "ధైర్యంగా", base: "ధైర్యం", reading: "dhairyam" }
+          - { word: "ముందుకు", base: "ముందు", reading: "mundu" }
+          - { word: "వెళ్ళు", base: "వెళ్ళడం", reading: "veḷḷaḍam" }
+  - id: "te-3308"
+    target: "నమ్మకం"
+    reading: "nammakam"
+    ipa: "nammakam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "నమ్మకంగా", reading: "nammakaṅgā" }] }
+      - { id: "n2", kind: "note" }
+    examples:
+      - target: "నాకు నీ మీద నమ్మకం ఉంది."
+        reading: "nāku nī mīda nammakam undi."
+        ipa: "naːku niː miːd̪a nammakam und̪i"
+        bases:
+          - { word: "నీ", base: "నువ్వు", reading: "nuvvu" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "ఆ వైద్యుడిపై ప్రజలకు చాలా నమ్మకం."
+        reading: "ā vaidyuḍipai prajalaku cālā nammakam."
+        ipa: "aː ʋaid̪juɖipai pradʒalaku tʃaːlaː nammakam"
+        bases:
+          - { word: "వైద్యుడిపై", base: "వైద్యుడు", reading: "vaidyuḍu" }
+          - { word: "ప్రజలకు", base: "ప్రజ", reading: "praja" }
+  - id: "te-3309"
+    target: "గర్వం"
+    reading: "garvam"
+    ipa: "ɡarʋam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "గర్వంగా", reading: "garvaṅgā" }] }
+      - { id: "n2", kind: "note" }
+    examples:
+      - target: "తన పిల్లల విజయంపై ఆయనకు గర్వం."
+        reading: "tana pillala vijayampai āyanaku garvam."
+        ipa: "t̪ana pillala ʋidʒajampai aːjanaku ɡarʋam"
+        bases:
+          - { word: "పిల్లల", base: "పిల్లలు", reading: "pillalu" }
+          - { word: "విజయంపై", base: "విజయం", reading: "vijayam" }
+          - { word: "ఆయనకు", base: "ఆయన", reading: "āyana" }
+      - target: "ఆ వేడుకలో అమ్మ గర్వంగా నవ్వింది."
+        reading: "ā vēḍukalō amma garvaṅgā navvindi."
+        ipa: "aː ʋeːɖukaloː amma ɡarʋaŋɡaː naʋʋind̪i"
+        bases:
+          - { word: "వేడుకలో", base: "వేడుక", reading: "vēḍuka" }
+          - { word: "గర్వంగా", base: "గర్వం", reading: "garvam" }
+          - { word: "నవ్వింది", base: "నవ్వడం", reading: "navvaḍam" }
+  - id: "te-3310"
+    target: "అసూయ"
+    reading: "asūya"
+    ipa: "asuːja"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "అసూయతో", reading: "asūyatō" }] }
+    examples:
+      - target: "స్నేహితుడి విజయం చూసి అతనికి అసూయ కలిగింది."
+        reading: "snēhituḍi vijayam cūsi ataniki asūya kaligindi."
+        ipa: "sneːhit̪uɖi ʋidʒajam tʃuːsi at̪aniki asuːja kaliɡind̪i"
+        bases:
+          - { word: "స్నేహితుడి", base: "స్నేహితుడు", reading: "snēhituḍu" }
+          - { word: "చూసి", base: "చూడడం", reading: "cūḍaḍam" }
+          - { word: "కలిగింది", base: "కలగడం", reading: "kalagaḍam" }
+      - target: "అసూయతో ఆమె అతని గురించి మాట్లాడింది."
+        reading: "asūyatō āme atani guriñci māṭlāḍindi."
+        ipa: "asuːjat̪oː aːme at̪ani ɡuriɲtʃi maːʈlaːɖind̪i"
+        bases:
+          - { word: "అసూయతో", base: "అసూయ", reading: "asūya" }
+          - { word: "అతని", base: "అతడు", reading: "ataḍu" }
+          - { word: "మాట్లాడింది", base: "మాట్లాడడం", reading: "māṭlāḍaḍam" }
+    antonyms:
+    senses:
+      - { id: "envy", pos: "noun", source: "https://en.wiktionary.org/wiki/అసూయ" }
+      - { id: "jealousy", pos: "noun", source: "https://en.wiktionary.org/wiki/అసూయ" }
+  - id: "te-3311"
+    target: "విసుగు"
+    reading: "visugu"
+    ipa: "ʋisuɡu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "విసుగుతో", reading: "visugutō" }] }
+    examples:
+      - target: "ఒకే పని రోజూ చేసి నాకు విసుగు వచ్చింది."
+        reading: "okē pani rōjū cēsi nāku visugu vaccindi."
+        ipa: "okeː pani roːdʒuː tʃeːsi naːku ʋisuɡu ʋatʃtʃind̪i"
+        bases:
+          - { word: "చేసి", base: "చేయడం", reading: "cēyaḍam" }
+          - { word: "వచ్చింది", base: "రావడం", reading: "rāvaḍam" }
+      - target: "ఈ సినిమా చూసి చూసి విసుగ్గా ఉంది."
+        reading: "ī sinimā cūsi cūsi visuggā undi."
+        ipa: "iː sinimaː tʃuːsi tʃuːsi ʋisuɡɡaː und̪i"
+        bases:
+          - { word: "చూసి", base: "చూడడం", reading: "cūḍaḍam" }
+          - { word: "విసుగ్గా", base: "విసుగు", reading: "visugu" }
+          - { word: "ఉంది", ref: "te-0633" }
+    senses:
+      - { id: "disgust", pos: "noun", source: "https://en.wiktionary.org/wiki/విసుగు" }
+      - { id: "boredom", pos: "noun", source: "https://en.wiktionary.org/wiki/విసుగు" }
+      - { id: "weariness", pos: "noun", source: "https://en.wiktionary.org/wiki/విసుగు" }
+  - id: "te-3312"
+    target: "ఉత్సాహం"
+    reading: "utsāham"
+    ipa: "ut̪saːham"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఉత్సాహంతో", reading: "utsāhantō" }] }
+      - { id: "n2", kind: "note" }
+    examples:
+      - target: "కొత్త ఉద్యోగంలో చేరడానికి ఆయనకు ఎంతో ఉత్సాహం."
+        reading: "kotta udyōgamlō cēraḍāniki āyanaku entō utsāham."
+        ipa: "kot̪t̪a ud̪joːɡamloː tʃeːraɖaːniki aːjanaku ent̪oː ut̪saːham"
+        bases:
+          - { word: "ఉద్యోగంలో", base: "ఉద్యోగం", reading: "udyōgam" }
+          - { word: "చేరడానికి", base: "చేరడం", reading: "cēraḍam" }
+          - { word: "ఆయనకు", base: "ఆయన", reading: "āyana" }
+      - target: "పిల్లలు పండుగ ఉత్సాహంతో పరిగెత్తారు."
+        reading: "pillalu paṇḍuga utsāhantō parigettāru."
+        ipa: "pillalu paɳɖuɡa ut̪saːhant̪oː pariɡet̪t̪aːru"
+        bases:
+          - { word: "ఉత్సాహంతో", base: "ఉత్సాహం", reading: "utsāham" }
+          - { word: "పరిగెత్తారు", base: "పరిగెత్తడం", reading: "parigettaḍam" }
+  - id: "te-3313"
+    target: "కృతజ్ఞత"
+    reading: "krutajñata"
+    ipa: "krut̪adʒɲat̪a"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "కృతజ్ఞతగా", reading: "krutajñatagā" }] }
+    examples:
+      - target: "నీ సహాయానికి కృతజ్ఞతలు."
+        reading: "nī sahāyāniki krutajñatalu."
+        ipa: "niː sahaːjaːniki krut̪adʒɲat̪alu"
+        bases:
+          - { word: "నీ", base: "నువ్వు", reading: "nuvvu" }
+          - { word: "సహాయానికి", base: "సహాయం", reading: "sahāyam" }
+      - target: "ఆయన మాటల్లో కృతజ్ఞత కనిపించింది."
+        reading: "āyana māṭallō krutajñata kanipiñcindi."
+        ipa: "aːjana maːʈalloː krut̪adʒɲat̪a kanipiɲtʃind̪i"
+        bases:
+          - { word: "మాటల్లో", base: "మాట", reading: "māṭa" }
+          - { word: "కనిపించింది", base: "కనిపించడం", reading: "kanipiñcaḍam" }
+    antonyms:
+      - { id: "krtaghnata", word: "కృతఘ్నత", reading: "krutaghnata", source: "https://en.wiktionary.org/wiki/కృతజ్ఞత" }
+  - id: "te-3314"
+    target: "ప్రశాంతత"
+    reading: "praśāntata"
+    ipa: "praʃaːnt̪at̪a"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ప్రశాంతంగా", reading: "praśāntaṅgā" }] }
+    examples:
+      - target: "ఉదయం గుడిలో ఎంతో ప్రశాంతత ఉంటుంది."
+        reading: "udayam guḍilō entō praśāntata uṇṭundi."
+        ipa: "ud̪ajam ɡuɖiloː ent̪oː praʃaːnt̪at̪a uɳʈund̪i"
+        bases:
+          - { word: "గుడిలో", base: "గుడి", reading: "guḍi" }
+          - { word: "ఉంటుంది", base: "ఉండడం", reading: "uṇḍaḍam" }
+      - target: "ఈ ఊరు వచ్చాక నాకు మనసులో ప్రశాంతత వచ్చింది."
+        reading: "ī ūru vaccāka nāku manasulō praśāntata vaccindi."
+        ipa: "iː uːru ʋatʃtʃaːka naːku manasuloː praʃaːnt̪at̪a ʋatʃtʃind̪i"
+        bases:
+          - { word: "వచ్చాక", base: "రావడం", reading: "rāvaḍam" }
+          - { word: "మనసులో", base: "మనసు", reading: "manasu" }
+          - { word: "వచ్చింది", base: "రావడం", reading: "rāvaḍam" }
+  - id: "te-3315"
+    target: "ఒత్తిడి"
+    reading: "ottiḍi"
+    ipa: "ot̪t̪iɖi"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఒత్తిడితో", reading: "ottiḍitō" }] }
+    examples:
+      - target: "పరీక్షల ముందు విద్యార్థులకు ఒత్తిడి ఎక్కువ."
+        reading: "parīkṣala mundu vidyārthulaku ottiḍi ekkuva."
+        ipa: "pariːkʂala mund̪u ʋid̪jaːrt̪ʰulaku ot̪t̪iɖi ekkuʋa"
+        bases:
+          - { word: "పరీక్షల", base: "పరీక్ష", reading: "parīkṣa" }
+          - { word: "విద్యార్థులకు", base: "విద్యార్థి", reading: "vidyārthi" }
+      - target: "ఒత్తిడిని తగ్గించడానికి కొంచెం నడుద్దాం."
+        reading: "ottiḍini taggiñcaḍāniki koñcem naḍuddām."
+        ipa: "ot̪t̪iɖini t̪aɡɡiɲtʃaɖaːniki koɲtʃem naɖud̪d̪aːm"
+        bases:
+          - { word: "ఒత్తిడిని", base: "ఒత్తిడి", reading: "ottiḍi" }
+          - { word: "తగ్గించడానికి", base: "తగ్గించడం", reading: "taggiñcaḍam" }
+          - { word: "నడుద్దాం", base: "నడవడం", reading: "naḍavaḍam" }
+  - id: "te-3316"
+    target: "దుఃఖం"
+    reading: "duḥkham"
+    ipa: "d̪uhkʰam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "దుఃఖంతో", reading: "duḥkhantō" }] }
+      - { id: "n2", kind: "note" }
+    examples:
+      - target: "ఆమె తల్లి మరణంతో దుఃఖంలో ఉంది."
+        reading: "āme talli maraṇantō duḥkhamlō undi."
+        ipa: "aːme t̪alli maraɳant̪oː d̪uhkʰamloː und̪i"
+        bases:
+          - { word: "మరణంతో", base: "మరణం", reading: "maraṇam" }
+          - { word: "దుఃఖంలో", base: "దుఃఖం", reading: "duḥkham" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "ఆ వార్త విని దుఃఖం ఆపుకోలేకపోయాను."
+        reading: "ā vārta vini duḥkham āpukōlēkapōyānu."
+        ipa: "aː ʋaːrt̪a ʋini d̪uhkʰam aːpukoːleːkapoːjaːnu"
+        bases:
+          - { word: "విని", base: "వినడం", reading: "vinaḍam" }
+          - { word: "ఆపుకోలేకపోయాను", base: "ఆపుకోవడం", reading: "āpukōvaḍam" }
+  - id: "te-3317"
+    target: "ఒంటరితనం"
+    reading: "oṇṭaritanam"
+    ipa: "oɳʈarit̪anam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఒంటరితనంలో", reading: "oṇṭaritanamlō" }] }
+      - { id: "n2", kind: "note" }
+    examples:
+      - target: "ఊరు మారాక ఆమెకు ఒంటరితనం అనిపించింది."
+        reading: "ūru mārāka āmeku oṇṭaritanam anipiñcindi."
+        ipa: "uːru maːraːka aːmeku oɳʈarit̪anam anipiɲtʃind̪i"
+        bases:
+          - { word: "మారాక", base: "మారడం", reading: "māraḍam" }
+          - { word: "ఆమెకు", base: "ఆమె", reading: "āme" }
+          - { word: "అనిపించింది", base: "అనిపించడం", reading: "anipiñcaḍam" }
+      - target: "ఒంటరితనాన్ని పోగొట్టడానికి ఆమె పుస్తకాలు చదువుతుంది."
+        reading: "oṇṭaritanānni pōgoṭṭaḍāniki āme pustakālu caduvutundi."
+        ipa: "oɳʈarit̪anaːnni poːɡoʈʈaɖaːniki aːme pust̪akaːlu tʃad̪uʋut̪und̪i"
+        bases:
+          - { word: "ఒంటరితనాన్ని", base: "ఒంటరితనం", reading: "oṇṭaritanam" }
+          - { word: "పోగొట్టడానికి", base: "పోగొట్టడం", reading: "pōgoṭṭaḍam" }
+          - { word: "పుస్తకాలు", base: "పుస్తకం", reading: "pustakam" }
+          - { word: "చదువుతుంది", base: "చదవడం", reading: "cadavaḍam" }
+  - id: "te-3318"
+    target: "కుతూహలం"
+    reading: "kutūhalam"
+    ipa: "kut̪uːhalam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "కుతూహలంగా", reading: "kutūhalaṅgā" }] }
+      - { id: "n2", kind: "note" }
+    examples:
+      - target: "పిల్లలకు కొత్త విషయాల మీద కుతూహలం ఎక్కువ."
+        reading: "pillalaku kotta viṣayāla mīda kutūhalam ekkuva."
+        ipa: "pillalaku kot̪t̪a ʋiʂajaːla miːd̪a kut̪uːhalam ekkuʋa"
+        bases:
+          - { word: "పిల్లలకు", base: "పిల్లలు", reading: "pillalu" }
+          - { word: "విషయాల", base: "విషయం", reading: "viṣayam" }
+      - target: "కుతూహలంతో ఆ పెట్టె తెరిచి చూశాను."
+        reading: "kutūhalantō ā peṭṭe terici cūśānu."
+        ipa: "kut̪uːhalant̪oː aː peʈʈe t̪eritʃi tʃuːʃaːnu"
+        bases:
+          - { word: "కుతూహలంతో", base: "కుతూహలం", reading: "kutūhalam" }
+          - { word: "తెరిచి", base: "తెరవడం", reading: "teravaḍam" }
+          - { word: "చూశాను", base: "చూడడం", reading: "cūḍaḍam" }
+  - id: "te-3319"
+    target: "కన్నీళ్లు"
+    reading: "kannīḷlu"
+    ipa: "kanniːɭlu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "కన్నీళ్లతో", reading: "kannīḷlatō" }] }
+    examples:
+      - target: "ఆమె కళ్ళలో కన్నీళ్లు వచ్చాయి."
+        reading: "āme kaḷḷalō kannīḷlu vaccāyi."
+        ipa: "aːme kaɭɭaloː kanniːɭlu ʋatʃtʃaːji"
+        bases:
+          - { word: "కళ్ళలో", base: "కన్ను", reading: "kannu" }
+          - { word: "వచ్చాయి", base: "రావడం", reading: "rāvaḍam" }
+      - target: "అమ్మ కన్నీళ్లు తుడుచుకుని నవ్వింది."
+        reading: "amma kannīḷlu tuḍucukuni navvindi."
+        ipa: "amma kanniːɭlu t̪uɖutʃukuni naʋʋind̪i"
+        bases:
+          - { word: "తుడుచుకుని", base: "తుడుచుకోవడం", reading: "tuḍucukōvaḍam" }
+          - { word: "నవ్వింది", base: "నవ్వడం", reading: "navvaḍam" }
+  - id: "te-3320"
+    target: "స్నేహం"
+    reading: "snēham"
+    ipa: "sneːham"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "స్నేహంగా", reading: "snēhaṅgā" }] }
+      - { id: "n2", kind: "note" }
+    examples:
+      - target: "వాళ్ళ మధ్య మంచి స్నేహం ఉంది."
+        reading: "vāḷḷa madhya mañci snēham undi."
+        ipa: "ʋaːɭɭa mad̪ʱja maɲtʃi sneːham und̪i"
+        bases:
+          - { word: "వాళ్ళ", base: "వాళ్ళు", reading: "vāḷḷu" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "నా స్నేహాన్ని అతను ఎప్పుడూ కాపాడుకున్నాడు."
+        reading: "nā snēhānni atanu eppuḍū kāpāḍukunnāḍu."
+        ipa: "naː sneːhaːnni at̪anu eppuɖuː kaːpaːɖukunnaːɖu"
+        bases:
+          - { word: "నా", base: "నేను", reading: "nēnu" }
+          - { word: "స్నేహాన్ని", base: "స్నేహం", reading: "snēham" }
+          - { word: "కాపాడుకున్నాడు", base: "కాపాడుకోవడం", reading: "kāpāḍukōvaḍam" }
+  - id: "te-3321"
+    target: "అవమానం"
+    reading: "avamānam"
+    ipa: "aʋamaːnam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "అవమానంగా", reading: "avamānaṅgā" }] }
+      - { id: "n2", kind: "note" }
+    examples:
+      - target: "అందరి ముందు తిట్టడం అతనికి అవమానం అనిపించింది."
+        reading: "andari mundu tiṭṭaḍam ataniki avamānam anipiñcindi."
+        ipa: "and̪ari mund̪u t̪iʈʈaɖam at̪aniki aʋamaːnam anipiɲtʃind̪i"
+        bases:
+          - { word: "అందరి", base: "అందరు", reading: "andaru" }
+          - { word: "తిట్టడం", base: "తిట్టడం", reading: "tiṭṭaḍam" }
+          - { word: "అతనికి", base: "అతడు", reading: "ataḍu" }
+          - { word: "అనిపించింది", base: "అనిపించడం", reading: "anipiñcaḍam" }
+      - target: "ఆ మాటలు విని ఆమె అవమానంతో తల దించుకుంది."
+        reading: "ā māṭalu vini āme avamānantō tala diñcukundi."
+        ipa: "aː maːʈalu ʋini aːme aʋamaːnant̪oː t̪ala d̪iɲtʃukund̪i"
+        bases:
+          - { word: "మాటలు", base: "మాట", reading: "māṭa" }
+          - { word: "విని", base: "వినడం", reading: "vinaḍam" }
+          - { word: "అవమానంతో", base: "అవమానం", reading: "avamānam" }
+          - { word: "దించుకుంది", base: "దించుకోవడం", reading: "diñcukōvaḍam" }
+  - id: "te-3322"
+    target: "బెంగ"
+    reading: "beṅga"
+    ipa: "beŋɡa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "బెంగతో", reading: "beṅgatō" }] }
+    examples:
+      - target: "ఊరు గుర్తుకొస్తే నాకు బెంగగా ఉంటుంది."
+        reading: "ūru gurtukostē nāku beṅgagā uṇṭundi."
+        ipa: "uːru ɡurt̪ukost̪eː naːku beŋɡaɡaː uɳʈund̪i"
+        bases:
+          - { word: "గుర్తుకొస్తే", base: "గుర్తుకు రావడం", reading: "gurtuku rāvaḍam" }
+          - { word: "బెంగగా", base: "బెంగ", reading: "beṅga" }
+          - { word: "ఉంటుంది", base: "ఉండడం", reading: "uṇḍaḍam" }
+      - target: "ఇంటికి దూరంగా ఉంటూ ఆమెకు బెంగ ఎక్కువైంది."
+        reading: "iṇṭiki dūraṅgā uṇṭū āmeku beṅga ekkuvaindi."
+        ipa: "iɳʈiki d̪uːraŋɡaː uɳʈuː aːmeku beŋɡa ekkuʋaind̪i"
+        bases:
+          - { word: "ఇంటికి", base: "ఇల్లు", reading: "illu" }
+          - { word: "దూరంగా", base: "దూరం", reading: "dūram" }
+          - { word: "ఉంటూ", base: "ఉండడం", reading: "uṇḍaḍam" }
+          - { word: "ఆమెకు", base: "ఆమె", reading: "āme" }
+          - { word: "ఎక్కువైంది", base: "ఎక్కువ", reading: "ekkuva" }
+  - id: "te-3323"
+    target: "నిరాశ"
+    reading: "nirāśa"
+    ipa: "niraːʃa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "నిరాశతో", reading: "nirāśatō" }] }
+    examples:
+      - target: "పరీక్ష ఫలితం చూసి అతనికి నిరాశ కలిగింది."
+        reading: "parīkṣa phalitam cūsi ataniki nirāśa kaligindi."
+        ipa: "pariːkʂa pʰalit̪am tʃuːsi at̪aniki niraːʃa kaliɡind̪i"
+        bases:
+          - { word: "చూసి", base: "చూడడం", reading: "cūḍaḍam" }
+          - { word: "కలిగింది", base: "కలగడం", reading: "kalagaḍam" }
+      - target: "ఈ చిన్న ఓటమితో నిరాశపడకు."
+        reading: "ī cinna ōṭamitō nirāśapaḍaku."
+        ipa: "iː tʃinna oːʈamit̪oː niraːʃapaɖaku"
+        bases:
+          - { word: "ఓటమితో", base: "ఓటమి", reading: "ōṭami" }
+          - { word: "నిరాశపడకు", base: "నిరాశపడడం", reading: "nirāśapaḍaḍam" }
+  - id: "te-3324"
+    target: "నిశ్చింత"
+    reading: "niścinta"
+    ipa: "niʃtʃint̪a"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "నిశ్చింతగా", reading: "niścintagā" }] }
+    examples:
+      - target: "పరీక్ష అయిపోయాక నాకు నిశ్చింతగా ఉంది."
+        reading: "parīkṣa ayipōyāka nāku niścintagā undi."
+        ipa: "pariːkʂa ajipoːjaːka naːku niʃtʃint̪aɡaː und̪i"
+        bases:
+          - { word: "అయిపోయాక", base: "అయిపోవడం", reading: "ayipōvaḍam" }
+          - { word: "నిశ్చింతగా", base: "నిశ్చింత", reading: "niścinta" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "ఇంట్లో అందరూ బాగున్నారని తెలిసి నిశ్చింత కలిగింది."
+        reading: "iṇṭlō andarū bāgunnārani telisi niścinta kaligindi."
+        ipa: "iɳʈloː and̪aruː baːɡunnaːrani t̪elisi niʃtʃint̪a kaliɡind̪i"
+        bases:
+          - { word: "ఇంట్లో", base: "ఇల్లు", reading: "illu" }
+          - { word: "బాగున్నారని", base: "బాగుండడం", reading: "bāguṇḍaḍam" }
+          - { word: "తెలిసి", base: "తెలియడం", reading: "teliyaḍam" }
+          - { word: "కలిగింది", base: "కలగడం", reading: "kalagaḍam" }
+  - id: "te-3325"
+    target: "ఇబ్బంది"
+    reading: "ibbandi"
+    ipa: "ibband̪i"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఇబ్బందిగా", reading: "ibbandigā" }] }
+    examples:
+      - target: "ఈ చలిలో బయట ఉండటం నాకు ఇబ్బందిగా ఉంది."
+        reading: "ī calilō bayaṭa uṇḍaṭam nāku ibbandigā undi."
+        ipa: "iː tʃaliloː bajaʈa uɳɖaʈam naːku ibband̪iɡaː und̪i"
+        bases:
+          - { word: "చలిలో", base: "చలి", reading: "cali" }
+          - { word: "బయట", base: "బయట", reading: "bayaṭa" }
+          - { word: "ఉండటం", base: "ఉండడం", reading: "uṇḍaḍam" }
+          - { word: "ఇబ్బందిగా", base: "ఇబ్బంది", reading: "ibbandi" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "ఎవరికీ ఇబ్బంది కలిగించకుండా ఉండాలి."
+        reading: "evarikī ibbandi kaligiñcakuṇḍā uṇḍāli."
+        ipa: "eʋarikiː ibband̪i kaliɡiɲtʃakuɳɖaː uɳɖaːli"
+        bases:
+          - { word: "ఎవరికీ", base: "ఎవరు", reading: "evaru" }
+          - { word: "కలిగించకుండా", base: "కలిగించడం", reading: "kaligiñcaḍam" }
+          - { word: "ఉండాలి", base: "ఉండడం", reading: "uṇḍaḍam" }
+  - id: "te-3326"
+    target: "ఆత్మవిశ్వాసం"
+    reading: "ātmaviśvāsam"
+    ipa: "aːt̪maʋiʃʋaːsam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఆత్మవిశ్వాసంతో", reading: "ātmaviśvāsantō" }] }
+      - { id: "n2", kind: "note" }
+    examples:
+      - target: "ఆమెకు మాట్లాడటంలో ఆత్మవిశ్వాసం పెరిగింది."
+        reading: "āmeku māṭlāḍaṭamlō ātmaviśvāsam perigindi."
+        ipa: "aːmeku maːʈlaːɖaʈamloː aːt̪maʋiʃʋaːsam periɡind̪i"
+        bases:
+          - { word: "ఆమెకు", base: "ఆమె", reading: "āme" }
+          - { word: "మాట్లాడటంలో", base: "మాట్లాడడం", reading: "māṭlāḍaḍam" }
+          - { word: "పెరిగింది", base: "పెరగడం", reading: "peragaḍam" }
+      - target: "ఆత్మవిశ్వాసంతో ప్రసంగం చేశాడు."
+        reading: "ātmaviśvāsantō prasaṅgam cēśāḍu."
+        ipa: "aːt̪maʋiʃʋaːsant̪oː prasaŋɡam tʃeːʃaːɖu"
+        bases:
+          - { word: "ఆత్మవిశ్వాసంతో", base: "ఆత్మవిశ్వాసం", reading: "ātmaviśvāsam" }
+          - { word: "చేశాడు", base: "చేయడం", reading: "cēyaḍam" }
+  - id: "te-3327"
+    target: "సంతోషంగా"
+    reading: "santōṣaṅgā"
+    ipa: "sant̪oːʂaŋɡaː"
+    pos: "adj"
+    bases:
+      - { word: "సంతోషంగా", base: "సంతోషం", reading: "santōṣam" }
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "సంతోషంగా ఉన్నాను", reading: "santōṣaṅgā unnānu" }] }
+    examples:
+      - target: "పిల్లలు ఆటలాడుతూ సంతోషంగా ఉన్నారు."
+        reading: "pillalu āṭalāḍutū santōṣaṅgā unnāru."
+        ipa: "pillalu aːʈalaːɖut̪uː sant̪oːʂaŋɡaː unnaːru"
+        bases:
+          - { word: "ఆటలాడుతూ", base: "ఆటలాడడం", reading: "āṭalāḍaḍam" }
+          - { word: "ఉన్నారు", base: "ఉండడం", reading: "uṇḍaḍam" }
+      - target: "మీరు వచ్చినందుకు నేను చాలా సంతోషంగా ఉన్నాను."
+        reading: "mīru vaccinanduku nēnu cālā santōṣaṅgā unnānu."
+        ipa: "miːru ʋatʃtʃinand̪uku neːnu tʃaːlaː sant̪oːʂaŋɡaː unnaːnu"
+        bases:
+          - { word: "వచ్చినందుకు", base: "రావడం", reading: "rāvaḍam" }
+          - { word: "ఉన్నాను", base: "ఉండడం", reading: "uṇḍaḍam" }
+  - id: "te-3328"
+    target: "విచారంగా"
+    reading: "vicāraṅgā"
+    ipa: "ʋitʃaːraŋɡaː"
+    pos: "adj"
+    bases:
+      - { word: "విచారంగా", base: "విచారం", reading: "vicāram" }
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "విచారంగా ఉంది", reading: "vicāraṅgā undi" }] }
+    examples:
+      - target: "అతను ఎందుకో విచారంగా కనిపించాడు."
+        reading: "atanu endukō vicāraṅgā kanipiñcāḍu."
+        ipa: "at̪anu end̪ukoː ʋitʃaːraŋɡaː kanipiɲtʃaːɖu"
+        bases:
+          - { word: "కనిపించాడు", base: "కనిపించడం", reading: "kanipiñcaḍam" }
+      - target: "ఆ కథ చదివి పిల్లలు విచారంగా మారిపోయారు."
+        reading: "ā katha cadivi pillalu vicāraṅgā māripōyāru."
+        ipa: "aː kat̪ʰa tʃad̪iʋi pillalu ʋitʃaːraŋɡaː maːripoːjaːru"
+        bases:
+          - { word: "చదివి", base: "చదవడం", reading: "cadavaḍam" }
+          - { word: "మారిపోయారు", base: "మారిపోవడం", reading: "māripōvaḍam" }
+  - id: "te-3329"
+    target: "కోపంగా"
+    reading: "kōpaṅgā"
+    ipa: "koːpaŋɡaː"
+    pos: "adj"
+    bases:
+      - { word: "కోపంగా", base: "కోపం", reading: "kōpam" }
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "కోపంగా", reading: "kōpaṅgā" }] }
+    examples:
+      - target: "నాన్న ఎందుకో కోపంగా ఉన్నారు."
+        reading: "nānna endukō kōpaṅgā unnāru."
+        ipa: "naːnna end̪ukoː koːpaŋɡaː unnaːru"
+        bases:
+          - { word: "ఉన్నారు", base: "ఉండడం", reading: "uṇḍaḍam" }
+      - target: "అతను కోపంగా తలుపు మూసేశాడు."
+        reading: "atanu kōpaṅgā talupu mūsēśāḍu."
+        ipa: "at̪anu koːpaŋɡaː t̪alupu muːseːʃaːɖu"
+        bases:
+          - { word: "మూసేశాడు", base: "మూసేయడం", reading: "mūsēyaḍam" }
+  - id: "te-3330"
+    target: "భయంగా"
+    reading: "bhayaṅgā"
+    ipa: "bʱajaŋɡaː"
+    pos: "adj"
+    bases:
+      - { word: "భయంగా", base: "భయం", reading: "bhayam" }
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "భయంగా", reading: "bhayaṅgā" }] }
+    examples:
+      - target: "చీకటిలో ఒంటరిగా నడవాలంటే నాకు భయంగా ఉంటుంది."
+        reading: "cīkaṭilō oṇṭarigā naḍavālaṇṭē nāku bhayaṅgā uṇṭundi."
+        ipa: "tʃiːkaʈiloː oɳʈariɡaː naɖaʋaːlaɳʈeː naːku bʱajaŋɡaː uɳʈund̪i"
+        bases:
+          - { word: "చీకటిలో", base: "చీకటి", reading: "cīkaṭi" }
+          - { word: "నడవాలంటే", base: "నడవడం", reading: "naḍavaḍam" }
+          - { word: "ఉంటుంది", base: "ఉండడం", reading: "uṇḍaḍam" }
+          - { word: "ఒంటరిగా", base: "ఒంటరి", reading: "oṇṭari" }
+      - target: "కుక్క దగ్గరికి వస్తే పిల్లవాడు భయంగా వెళ్ళిపోయాడు."
+        reading: "kukka daggariki vastē pillavāḍu bhayaṅgā veḷḷipōyāḍu."
+        ipa: "kukka d̪aɡɡariki ʋast̪eː pillaʋaːɖu bʱajaŋɡaː ʋeɭɭipoːjaːɖu"
+        bases:
+          - { word: "వస్తే", base: "రావడం", reading: "rāvaḍam" }
+          - { word: "వెళ్ళిపోయాడు", base: "వెళ్ళిపోవడం", reading: "veḷḷipōvaḍam" }
+  - id: "te-3331"
+    target: "సిగ్గుగా"
+    reading: "siggugā"
+    ipa: "siɡɡuɡaː"
+    pos: "adj"
+    bases:
+      - { word: "సిగ్గుగా", base: "సిగ్గు", reading: "siggu" }
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "సిగ్గుగా", reading: "siggugā" }] }
+    examples:
+      - target: "కొత్త వాళ్ళ ముందు అతను సిగ్గుగా నవ్వాడు."
+        reading: "kotta vāḷḷa mundu atanu siggugā navvāḍu."
+        ipa: "kot̪t̪a ʋaːɭɭa mund̪u at̪anu siɡɡuɡaː naʋʋaːɖu"
+        bases:
+          - { word: "వాళ్ళ", base: "వాళ్ళు", reading: "vāḷḷu" }
+          - { word: "నవ్వాడు", base: "నవ్వడం", reading: "navvaḍam" }
+      - target: "ఆ పొగడ్తకు ఆమె సిగ్గుగా తల వంచుకుంది."
+        reading: "ā pogaḍtaku āme siggugā tala vañcukundi."
+        ipa: "aː poɡaɖt̪aku aːme siɡɡuɡaː t̪ala ʋaɲtʃukund̪i"
+        bases:
+          - { word: "పొగడ్తకు", base: "పొగడ్త", reading: "pogaḍta" }
+          - { word: "వంచుకుంది", base: "వంచుకోవడం", reading: "vañcukōvaḍam" }
+  - id: "te-3332"
+    target: "గర్వంగా"
+    reading: "garvaṅgā"
+    ipa: "ɡarʋaŋɡaː"
+    pos: "adj"
+    bases:
+      - { word: "గర్వంగా", base: "గర్వం", reading: "garvam" }
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "గర్వంగా ఉంది", reading: "garvaṅgā undi" }] }
+    examples:
+      - target: "తల్లిదండ్రులు తమ కూతురిని చూసి గర్వంగా చెప్పారు."
+        reading: "tallidaṇḍrulu tama kūturini cūsi garvaṅgā ceppāru."
+        ipa: "t̪allid̪aɳɖrulu t̪ama kuːt̪urini tʃuːsi ɡarʋaŋɡaː tʃeppaːru"
+        bases:
+          - { word: "కూతురిని", base: "కూతురు", reading: "kūturu" }
+          - { word: "చూసి", base: "చూడడం", reading: "cūḍaḍam" }
+          - { word: "చెప్పారు", base: "చెప్పడం", reading: "ceppaḍam" }
+      - target: "నేను ఆ ఊరికి చెందినవాడినని గర్వంగా ఉంది."
+        reading: "nēnu ā ūriki cendinavāḍinani garvaṅgā undi."
+        ipa: "neːnu aː uːriki tʃend̪inaʋaːɖinani ɡarʋaŋɡaː und̪i"
+        bases:
+          - { word: "ఊరికి", base: "ఊరు", reading: "ūru" }
+          - { word: "చెందినవాడినని", base: "చెందడం", reading: "cendaḍam" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-3333"
+    target: "ఒంటరిగా"
+    reading: "oṇṭarigā"
+    ipa: "oɳʈariɡaː"
+    pos: "adj"
+    bases:
+      - { word: "ఒంటరిగా", base: "ఒంటరి", reading: "oṇṭari" }
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఒంటరిగా", reading: "oṇṭarigā" }] }
+    examples:
+      - target: "ఆమె ఇంట్లో ఒంటరిగా ఉంటుంది."
+        reading: "āme iṇṭlō oṇṭarigā uṇṭundi."
+        ipa: "aːme iɳʈloː oɳʈariɡaː uɳʈund̪i"
+        bases:
+          - { word: "ఇంట్లో", base: "ఇల్లు", reading: "illu" }
+          - { word: "ఉంటుంది", base: "ఉండడం", reading: "uṇḍaḍam" }
+      - target: "ఇంత పెద్ద ఊరిలో ఒంటరిగా నడవడం కష్టంగా ఉంది."
+        reading: "inta pedda ūrilō oṇṭarigā naḍavaḍam kaṣṭaṅgā undi."
+        ipa: "int̪a ped̪d̪a uːriloː oɳʈariɡaː naɖaʋaɖam kaʂʈaŋɡaː und̪i"
+        bases:
+          - { word: "ఊరిలో", base: "ఊరు", reading: "ūru" }
+          - { word: "నడవడం", base: "నడవడం", reading: "naḍavaḍam" }
+          - { word: "కష్టంగా", base: "కష్టం", reading: "kaṣṭam" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-3334"
+    target: "ఆత్రుతగా"
+    reading: "ātrutagā"
+    ipa: "aːt̪rut̪aɡaː"
+    pos: "adj"
+    bases:
+      - { word: "ఆత్రుతగా", base: "ఆత్రుత", reading: "ātruta" }
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఆత్రుతగా", reading: "ātrutagā" }] }
+    examples:
+      - target: "ఫలితాల కోసం అందరూ ఆత్రుతగా ఎదురు చూస్తున్నారు."
+        reading: "phalitāla kōsam andarū ātrutagā eduru cūstunnāru."
+        ipa: "pʰalit̪aːla koːsam and̪aruː aːt̪rut̪aɡaː ed̪uru tʃuːst̪unnaːru"
+        bases:
+          - { word: "ఫలితాల", base: "ఫలితం", reading: "phalitam" }
+          - { word: "ఎదురు చూస్తున్నారు", base: "ఎదురుచూడడం", reading: "edurucūḍaḍam" }
+      - target: "పరీక్ష రాసిన తర్వాత అతను ఆత్రుతగా ఇంటికి వచ్చాడు."
+        reading: "parīkṣa rāsina tarvāta atanu ātrutagā iṇṭiki vaccāḍu."
+        ipa: "pariːkʂa raːsina t̪arʋaːt̪a at̪anu aːt̪rut̪aɡaː iɳʈiki ʋatʃtʃaːɖu"
+        bases:
+          - { word: "రాసిన", base: "రాయడం", reading: "rāyaḍam" }
+          - { word: "ఇంటికి", base: "ఇల్లు", reading: "illu" }
+          - { word: "వచ్చాడు", base: "రావడం", reading: "rāvaḍam" }
+  - id: "te-3335"
+    target: "ఆశ్చర్యంగా"
+    reading: "āścaryaṅgā"
+    ipa: "aːʃtʃarjaŋɡaː"
+    pos: "adj"
+    bases:
+      - { word: "ఆశ్చర్యంగా", base: "ఆశ్చర్యం", reading: "āścaryam" }
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఆశ్చర్యంగా", reading: "āścaryaṅgā" }] }
+    examples:
+      - target: "అతను ఆశ్చర్యంగా చూశాడు."
+        reading: "atanu āścaryaṅgā cūśāḍu."
+        ipa: "at̪anu aːʃtʃarjaŋɡaː tʃuːʃaːɖu"
+        bases:
+          - { word: "చూశాడు", base: "చూడడం", reading: "cūḍaḍam" }
+      - target: "ఆమె ఫలితం విని ఆశ్చర్యంగా ఉంది."
+        reading: "āme phalitam vini āścaryaṅgā undi."
+        ipa: "aːme pʰalit̪am ʋini aːʃtʃarjaŋɡaː und̪i"
+        bases:
+          - { word: "విని", base: "వినడం", reading: "vinaḍam" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-3336"
+    target: "ఉత్సాహంగా"
+    reading: "utsāhaṅgā"
+    ipa: "ut̪saːhaŋɡaː"
+    pos: "adj"
+    bases:
+      - { word: "ఉత్సాహంగా", base: "ఉత్సాహం", reading: "utsāham" }
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఉత్సాహంగా", reading: "utsāhaṅgā" }] }
+    examples:
+      - target: "పిల్లలు సెలవుల గురించి ఉత్సాహంగా మాట్లాడుకుంటున్నారు."
+        reading: "pillalu selavula guriñci utsāhaṅgā māṭlāḍukuṇṭunnāru."
+        ipa: "pillalu selaʋula ɡuriɲtʃi ut̪saːhaŋɡaː maːʈlaːɖukuɳʈunnaːru"
+        bases:
+          - { word: "సెలవుల", base: "సెలవు", reading: "selavu" }
+          - { word: "మాట్లాడుకుంటున్నారు", base: "మాట్లాడుకోవడం", reading: "māṭlāḍukōvaḍam" }
+      - target: "కొత్త పని మొదలుపెట్టడానికి నేను ఉత్సాహంగా ఉన్నాను."
+        reading: "kotta pani modalupeṭṭaḍāniki nēnu utsāhaṅgā unnānu."
+        ipa: "kot̪t̪a pani mod̪alupeʈʈaɖaːniki neːnu ut̪saːhaŋɡaː unnaːnu"
+        bases:
+          - { word: "మొదలుపెట్టడానికి", base: "మొదలుపెట్టడం", reading: "modalupeṭṭaḍam" }
+          - { word: "ఉన్నాను", base: "ఉండడం", reading: "uṇḍaḍam" }
+  - id: "te-3337"
+    target: "కంగారుగా"
+    reading: "kaṅgārugā"
+    ipa: "kaŋɡaːruɡaː"
+    pos: "adj"
+    bases:
+      - { word: "కంగారుగా", base: "కంగారు", reading: "kaṅgāru" }
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "కంగారుగా", reading: "kaṅgārugā" }] }
+    examples:
+      - target: "ఇంటర్వ్యూ ముందు అతను కంగారుగా ఉన్నాడు."
+        reading: "iṇṭarvyū mundu atanu kaṅgārugā unnāḍu."
+        ipa: "iɳʈarʋjuː mund̪u at̪anu kaŋɡaːruɡaː unnaːɖu"
+        bases:
+          - { word: "ఉన్నాడు", base: "ఉండడం", reading: "uṇḍaḍam" }
+      - target: "పరుగెత్తుకుంటూ వచ్చి ఆమె కంగారుగా తలుపు తట్టింది."
+        reading: "parugettukuṇṭū vacci āme kaṅgārugā talupu taṭṭindi."
+        ipa: "paruɡet̪t̪ukuɳʈuː ʋatʃtʃi aːme kaŋɡaːruɡaː t̪alupu t̪aʈʈind̪i"
+        bases:
+          - { word: "పరుగెత్తుకుంటూ", base: "పరుగెత్తడం", reading: "parugettaḍam" }
+          - { word: "వచ్చి", base: "రావడం", reading: "rāvaḍam" }
+          - { word: "తట్టింది", base: "తట్టడం", reading: "taṭṭaḍam" }
+  - id: "te-3338"
+    target: "నిరాశగా"
+    reading: "nirāśagā"
+    ipa: "niraːʃaɡaː"
+    pos: "adj"
+    bases:
+      - { word: "నిరాశగా", base: "నిరాశ", reading: "nirāśa" }
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "నిరాశగా", reading: "nirāśagā" }] }
+    examples:
+      - target: "పరీక్షలో తప్పిన తర్వాత అతను నిరాశగా కూర్చున్నాడు."
+        reading: "parīkṣalō tappina tarvāta atanu nirāśagā kūrcunnāḍu."
+        ipa: "pariːkʂaloː t̪appina t̪arʋaːt̪a at̪anu niraːʃaɡaː kuːrtʃunnaːɖu"
+        bases:
+          - { word: "తప్పిన", base: "తప్పడం", reading: "tappaḍam" }
+          - { word: "కూర్చున్నాడు", base: "కూర్చోవడం", reading: "kūrcōvaḍam" }
+      - target: "ఆ జవాబు విని అందరూ నిరాశగా చూశారు."
+        reading: "ā javābu vini andarū nirāśagā cūśāru."
+        ipa: "aː dʒaʋaːbu ʋini and̪aruː niraːʃaɡaː tʃuːʃaːru"
+        bases:
+          - { word: "విని", base: "వినడం", reading: "vinaḍam" }
+          - { word: "చూశారు", base: "చూడడం", reading: "cūḍaḍam" }
+  - id: "te-3339"
+    target: "ప్రశాంతంగా"
+    reading: "praśāntaṅgā"
+    ipa: "praʃaːnt̪aŋɡaː"
+    pos: "adj"
+    bases:
+      - { word: "ప్రశాంతంగా", base: "ప్రశాంతం", reading: "praśāntam" }
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ప్రశాంతంగా", reading: "praśāntaṅgā" }] }
+    examples:
+      - target: "అతను ఎంతో ప్రశాంతంగా సమాధానం చెప్పాడు."
+        reading: "atanu entō praśāntaṅgā samādhānam ceppāḍu."
+        ipa: "at̪anu ent̪oː praʃaːnt̪aŋɡaː samaːd̪ʱaːnam tʃeppaːɖu"
+        bases:
+          - { word: "చెప్పాడు", base: "చెప్పడం", reading: "ceppaḍam" }
+      - target: "ఆ ఊరు రాత్రి ప్రశాంతంగా ఉంటుంది."
+        reading: "ā ūru rātri praśāntaṅgā uṇṭundi."
+        ipa: "aː uːru raːt̪ri praʃaːnt̪aŋɡaː uɳʈund̪i"
+        bases:
+          - { word: "ఉంటుంది", base: "ఉండడం", reading: "uṇḍaḍam" }
+  - id: "te-3340"
+    target: "ఆందోళనగా"
+    reading: "āndōḷanagā"
+    ipa: "aːnd̪oːɭanaɡaː"
+    pos: "adj"
+    bases:
+      - { word: "ఆందోళనగా", base: "ఆందోళన", reading: "āndōḷana" }
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఆందోళనగా", reading: "āndōḷanagā" }] }
+    examples:
+      - target: "ఆమె కొడుకు ఇంకా రాలేదని అమ్మ ఆందోళనగా చూస్తోంది."
+        reading: "āme koḍuku iṅkā rālēdani amma āndōḷanagā cūstōndi."
+        ipa: "aːme koɖuku iŋkaː raːleːd̪ani amma aːnd̪oːɭanaɡaː tʃuːst̪oːnd̪i"
+        bases:
+          - { word: "రాలేదని", base: "రావడం", reading: "rāvaḍam" }
+          - { word: "చూస్తోంది", base: "చూడడం", reading: "cūḍaḍam" }
+      - target: "డాక్టర్ మాటలు విని అతను ఆందోళనగా అడిగాడు."
+        reading: "ḍākṭar māṭalu vini atanu āndōḷanagā aḍigāḍu."
+        ipa: "ɖaːkʈar maːʈalu ʋini at̪anu aːnd̪oːɭanaɡaː aɖiɡaːɖu"
+        bases:
+          - { word: "మాటలు", base: "మాట", reading: "māṭa" }
+          - { word: "విని", base: "వినడం", reading: "vinaḍam" }
+          - { word: "అడిగాడు", base: "అడగడం", reading: "aḍagaḍam" }
+  - id: "te-3341"
+    target: "బాధగా"
+    reading: "bādhagā"
+    ipa: "baːd̪ʱaɡaː"
+    pos: "adj"
+    bases:
+      - { word: "బాధగా", base: "బాధ", reading: "bādha" }
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "బాధగా", reading: "bādhagā" }] }
+    examples:
+      - target: "నీ మాటలు నాకు బాధగా అనిపించాయి."
+        reading: "nī māṭalu nāku bādhagā anipiñcāyi."
+        ipa: "niː maːʈalu naːku baːd̪ʱaɡaː anipiɲtʃaːji"
+        bases:
+          - { word: "నీ", base: "నువ్వు", reading: "nuvvu" }
+          - { word: "మాటలు", base: "మాట", reading: "māṭa" }
+          - { word: "అనిపించాయి", base: "అనిపించడం", reading: "anipiñcaḍam" }
+      - target: "అతను గాయంతో బాధగా ఉన్నాడు."
+        reading: "atanu gāyantō bādhagā unnāḍu."
+        ipa: "at̪anu ɡaːjant̪oː baːd̪ʱaɡaː unnaːɖu"
+        bases:
+          - { word: "గాయంతో", base: "గాయం", reading: "gāyam" }
+          - { word: "ఉన్నాడు", base: "ఉండడం", reading: "uṇḍaḍam" }
+  - id: "te-3342"
+    target: "విసుగ్గా"
+    reading: "visuggā"
+    ipa: "ʋisuɡɡaː"
+    pos: "adj"
+    bases:
+      - { word: "విసుగ్గా", base: "విసుగు", reading: "visugu" }
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "విసుగ్గా", reading: "visuggā" }] }
+    examples:
+      - target: "ఆమె విసుగ్గా ఫోన్ పక్కన పెట్టింది."
+        reading: "āme visuggā phōn pakkana peṭṭindi."
+        ipa: "aːme ʋisuɡɡaː pʰoːn pakkana peʈʈind̪i"
+        bases:
+          - { word: "పెట్టింది", base: "పెట్టడం", reading: "peṭṭaḍam" }
+      - target: "ఈ ప్రయాణం చాలా సేపు ఉండటంతో అందరూ విసుగ్గా ఉన్నారు."
+        reading: "ī prayāṇam cālā sēpu uṇḍaṭantō andarū visuggā unnāru."
+        ipa: "iː prajaːɳam tʃaːlaː seːpu uɳɖaʈant̪oː and̪aruː ʋisuɡɡaː unnaːru"
+        bases:
+          - { word: "ఉండటంతో", base: "ఉండడం", reading: "uṇḍaḍam" }
+          - { word: "ఉన్నారు", base: "ఉండడం", reading: "uṇḍaḍam" }
+  - id: "te-3343"
+    target: "భయపడడం"
+    reading: "bhayapaḍaḍam"
+    ipa: "bʱajapaɖaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "భయపడకు", reading: "bhayapaḍaku" }] }
+    examples:
+      - target: "ఎవరూ లేని చోటుకి వెళ్ళాలంటే నేను భయపడతాను."
+        reading: "evarū lēni cōṭuki veḷḷālaṇṭē nēnu bhayapaḍatānu."
+        ipa: "eʋaruː leːni tʃoːʈuki ʋeɭɭaːlaɳʈeː neːnu bʱajapaɖat̪aːnu"
+        bases:
+          - { word: "వెళ్ళాలంటే", base: "వెళ్ళడం", reading: "veḷḷaḍam" }
+          - { word: "భయపడతాను", base: "భయపడడం", reading: "bhayapaḍaḍam" }
+      - target: "నువ్వు భయపడకు, నేను నీతో ఉన్నాను."
+        reading: "nuvvu bhayapaḍaku, nēnu nītō unnānu."
+        ipa: "nuʋʋu bʱajapaɖaku neːnu niːt̪oː unnaːnu"
+        bases:
+          - { word: "భయపడకు", base: "భయపడడం", reading: "bhayapaḍaḍam" }
+          - { word: "నీతో", base: "నువ్వు", reading: "nuvvu" }
+          - { word: "ఉన్నాను", base: "ఉండడం", reading: "uṇḍaḍam" }
+  - id: "te-3344"
+    target: "ఏడవడం"
+    reading: "ēḍavaḍam"
+    ipa: "eːɖaʋaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఏడవకు", reading: "ēḍavaku" }] }
+      - { id: "n2", kind: "note" }
+    examples:
+      - target: "చిన్న పిల్లవాడు ఆకలికి ఏడుస్తున్నాడు."
+        reading: "cinna pillavāḍu ākaliki ēḍustunnāḍu."
+        ipa: "tʃinna pillaʋaːɖu aːkaliki eːɖust̪unnaːɖu"
+        bases:
+          - { word: "ఏడుస్తున్నాడు", base: "ఏడవడం", reading: "ēḍavaḍam" }
+      - target: "ఆ సినిమా చూసి ఆమె ఏడ్చేసింది."
+        reading: "ā sinimā cūsi āme ēḍcēsindi."
+        ipa: "aː sinimaː tʃuːsi aːme eːɖtʃeːsind̪i"
+        bases:
+          - { word: "చూసి", base: "చూడడం", reading: "cūḍaḍam" }
+          - { word: "ఏడ్చేసింది", base: "ఏడవడం", reading: "ēḍavaḍam" }
+  - id: "te-3345"
+    target: "నవ్వడం"
+    reading: "navvaḍam"
+    ipa: "naʋʋaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "నవ్వుతూ", reading: "navvutū" }] }
+    examples:
+      - target: "అతని జోకు విని అందరూ నవ్వారు."
+        reading: "atani jōku vini andarū navvāru."
+        ipa: "at̪ani dʒoːku ʋini and̪aruː naʋʋaːru"
+        bases:
+          - { word: "జోకు", base: "జోకు", reading: "jōku" }
+          - { word: "విని", base: "వినడం", reading: "vinaḍam" }
+          - { word: "నవ్వారు", base: "నవ్వడం", reading: "navvaḍam" }
+      - target: "ఆమె నవ్వుతూ తలుపు తీసింది."
+        reading: "āme navvutū talupu tīsindi."
+        ipa: "aːme naʋʋut̪uː t̪alupu t̪iːsind̪i"
+        bases:
+          - { word: "నవ్వుతూ", base: "నవ్వడం", reading: "navvaḍam" }
+          - { word: "తీసింది", base: "తీయడం", reading: "tīyaḍam" }
+  - id: "te-3346"
+    target: "బాధపడడం"
+    reading: "bādhapaḍaḍam"
+    ipa: "baːd̪ʱapaɖaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "బాధపడకు", reading: "bādhapaḍaku" }] }
+    examples:
+      - target: "నేను అతని మాటలకి బాధపడతాను."
+        reading: "nēnu atani māṭalaki bādhapaḍatānu."
+        ipa: "neːnu at̪ani maːʈalaki baːd̪ʱapaɖat̪aːnu"
+        bases:
+          - { word: "మాటలకి", base: "మాట", reading: "māṭa" }
+          - { word: "బాధపడతాను", base: "బాధపడడం", reading: "bādhapaḍaḍam" }
+      - target: "నా వల్ల నువ్వు బాధపడ్డావా?"
+        reading: "nā valla nuvvu bādhapaḍḍāvā?"
+        ipa: "naː ʋalla nuʋʋu baːd̪ʱapaɖɖaːʋaː"
+        bases:
+          - { word: "నా", base: "నేను", reading: "nēnu" }
+          - { word: "బాధపడ్డావా", base: "బాధపడడం", reading: "bādhapaḍaḍam" }
+  - id: "te-3347"
+    target: "సిగ్గుపడడం"
+    reading: "siggupaḍaḍam"
+    ipa: "siɡɡupaɖaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "సిగ్గుపడకు", reading: "siggupaḍaku" }] }
+    examples:
+      - target: "తప్పు చేసినందుకు అతను సిగ్గుపడ్డాడు."
+        reading: "tappu cēsinanduku atanu siggupaḍḍāḍu."
+        ipa: "t̪appu tʃeːsinand̪uku at̪anu siɡɡupaɖɖaːɖu"
+        bases:
+          - { word: "చేసినందుకు", base: "చేయడం", reading: "cēyaḍam" }
+          - { word: "సిగ్గుపడ్డాడు", base: "సిగ్గుపడడం", reading: "siggupaḍaḍam" }
+      - target: "అలా అడగడానికి నేను సిగ్గుపడతాను."
+        reading: "alā aḍagaḍāniki nēnu siggupaḍatānu."
+        ipa: "alaː aɖaɡaɖaːniki neːnu siɡɡupaɖat̪aːnu"
+        bases:
+          - { word: "అడగడానికి", base: "అడగడం", reading: "aḍagaḍam" }
+          - { word: "సిగ్గుపడతాను", base: "సిగ్గుపడడం", reading: "siggupaḍaḍam" }
+  - id: "te-3348"
+    target: "గర్వపడడం"
+    reading: "garvapaḍaḍam"
+    ipa: "ɡarʋapaɖaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "గర్వపడకు", reading: "garvapaḍaku" }] }
+    examples:
+      - target: "నువ్వు సాధించినందుకు మేము గర్వపడుతున్నాం."
+        reading: "nuvvu sādhiñcinanduku mēmu garvapaḍutunnām."
+        ipa: "nuʋʋu saːd̪ʱiɲtʃinand̪uku meːmu ɡarʋapaɖut̪unnaːm"
+        bases:
+          - { word: "సాధించినందుకు", base: "సాధించడం", reading: "sādhiñcaḍam" }
+          - { word: "గర్వపడుతున్నాం", base: "గర్వపడడం", reading: "garvapaḍaḍam" }
+      - target: "మంచి పని చేసినప్పుడు తల్లి గర్వపడుతుంది."
+        reading: "mañci pani cēsinappuḍu talli garvapaḍutundi."
+        ipa: "maɲtʃi pani tʃeːsinappuɖu t̪alli ɡarʋapaɖut̪und̪i"
+        bases:
+          - { word: "చేసినప్పుడు", base: "చేయడం", reading: "cēyaḍam" }
+          - { word: "గర్వపడుతుంది", base: "గర్వపడడం", reading: "garvapaḍaḍam" }
+  - id: "te-3349"
+    target: "కంగారుపడడం"
+    reading: "kaṅgārupaḍaḍam"
+    ipa: "kaŋɡaːrupaɖaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "కంగారుపడకండి", reading: "kaṅgārupaḍakaṇḍi" }] }
+    examples:
+      - target: "పరీక్షకు ముందు ప్రతి ఒక్కరు కంగారుపడతారు."
+        reading: "parīkṣaku mundu prati okkaru kaṅgārupaḍatāru."
+        ipa: "pariːkʂaku mund̪u prat̪i okkaru kaŋɡaːrupaɖat̪aːru"
+        bases:
+          - { word: "ముందు", base: "ముందు", reading: "mundu" }
+          - { word: "కంగారుపడతారు", base: "కంగారుపడడం", reading: "kaṅgārupaḍaḍam" }
+      - target: "కంగారుపడకండి, రైలు ఇంకా రాలేదు."
+        reading: "kaṅgārupaḍakaṇḍi, railu iṅkā rālēdu."
+        ipa: "kaŋɡaːrupaɖakaɳɖi railu iŋkaː raːleːd̪u"
+        bases:
+          - { word: "కంగారుపడకండి", base: "కంగారుపడడం", reading: "kaṅgārupaḍaḍam" }
+          - { word: "రాలేదు", base: "రావడం", reading: "rāvaḍam" }
+  - id: "te-3350"
+    target: "నమ్మడం"
+    reading: "nammaḍam"
+    ipa: "nammaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "నమ్మండి", reading: "nammaṇḍi" }] }
+      - { id: "n2", kind: "note" }
+    examples:
+      - target: "నేను నిన్ను పూర్తిగా నమ్ముతాను."
+        reading: "nēnu ninnu pūrtigā nammutānu."
+        ipa: "neːnu ninnu puːrt̪iɡaː nammut̪aːnu"
+        bases:
+          - { word: "నిన్ను", base: "నువ్వు", reading: "nuvvu" }
+          - { word: "నమ్ముతాను", base: "నమ్మడం", reading: "nammaḍam" }
+      - target: "అతని మాటలు నమ్మవద్దు."
+        reading: "atani māṭalu nammavaddu."
+        ipa: "at̪ani maːʈalu nammaʋad̪d̪u"
+        bases:
+          - { word: "మాటలు", base: "మాట", reading: "māṭa" }
+          - { word: "నమ్మవద్దు", base: "నమ్మడం", reading: "nammaḍam" }
+  - id: "te-3351"
+    target: "ఆనందించడం"
+    reading: "ānandiñcaḍam"
+    ipa: "aːnand̪iɲtʃaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఆనందించండి", reading: "ānandiñcaṇḍi" }] }
+      - { id: "n2", kind: "note" }
+    examples:
+      - target: "మేము పండుగ రోజు సినిమా చూసి ఆనందించాం."
+        reading: "mēmu paṇḍuga rōju sinimā cūsi ānandiñcām."
+        ipa: "meːmu paɳɖuɡa roːdʒu sinimaː tʃuːsi aːnand̪iɲtʃaːm"
+        bases:
+          - { word: "చూసి", base: "చూడడం", reading: "cūḍaḍam" }
+          - { word: "ఆనందించాం", base: "ఆనందించడం", reading: "ānandiñcaḍam" }
+      - target: "పిల్లలు తోటలో ఆడుకుంటూ ఆనందిస్తున్నారు."
+        reading: "pillalu tōṭalō āḍukuṇṭū ānandistunnāru."
+        ipa: "pillalu t̪oːʈaloː aːɖukuɳʈuː aːnand̪ist̪unnaːru"
+        bases:
+          - { word: "తోటలో", base: "తోట", reading: "tōṭa" }
+          - { word: "ఆడుకుంటూ", base: "ఆడుకోవడం", reading: "āḍukōvaḍam" }
+          - { word: "ఆనందిస్తున్నారు", base: "ఆనందించడం", reading: "ānandiñcaḍam" }

@@ -1,0 +1,900 @@
+schema: 1
+id: "te-en-feelings"
+kind: "layer"
+core: "te-feelings"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Feelings and moods"
+description: "Words for feelings and moods: love, hope, joy, sadness, worry, shame, pride, courage, trust and loneliness; how you feel (happy, sad, angry, scared, shy, bored); and verbs such as to cry, to laugh and to be proud. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "te-3300":
+    native: "love; affection"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'with love'."
+    examples:
+      "అమ్మ పిల్లలపై ఎంతో ప్రేమ చూపిస్తుంది.":
+        native: "Mother shows her children a lot of love."
+        bases:
+          "పిల్లలపై": { meaning: "children" }
+          "చూపిస్తుంది": { meaning: "to show" }
+      "ఈ ఊరి మీద నాకు ప్రేమ పెరిగింది.":
+        native: "My love for this town has grown."
+        bases:
+          "ఊరి": { meaning: "town; village" }
+          "పెరిగింది": { meaning: "to grow; to increase" }
+    synonyms: { "kurimi": "love", "gadili": "love, affection" }
+  "te-3301":
+    native: "hope"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'with hope'."
+    examples:
+      "రేపు వర్షం పడుతుందని ఆశ ఉంది.":
+        native: "There is hope that it will rain tomorrow."
+        bases:
+          "పడుతుందని": { meaning: "to fall; to rain" }
+      "మా అమ్మ ఆశలు నెరవేరాయి.":
+        native: "My mother's hopes came true."
+        bases:
+          "ఆశలు": { meaning: "hope" }
+          "నెరవేరాయి": { meaning: "to come true; to be fulfilled" }
+    senses:
+      "love": { native: "love" }
+      "desire": { native: "desire" }
+      "hope": { native: "hope" }
+  "te-3302":
+    native: "joy; happiness"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'happily'."
+      "n2": "In the plural and before case endings the stem changes: ఆనందాలు (ānandālu) and ఆనందాన్ని (ānandānni)."
+    examples:
+      "పెళ్లిలో అందరికీ ఆనందం కలిగింది.":
+        native: "Everyone felt joy at the wedding."
+        bases:
+          "పెళ్లిలో": { meaning: "wedding" }
+          "అందరికీ": { meaning: "everyone" }
+          "కలిగింది": { meaning: "to arise; to be felt" }
+      "పిల్లల నవ్వులు నాకు ఎంతో ఆనందాన్ని ఇస్తాయి.":
+        native: "The children's laughter gives me great joy."
+        bases:
+          "నవ్వులు": { meaning: "laughter" }
+          "ఆనందాన్ని": { meaning: "joy; happiness" }
+          "ఇస్తాయి": { meaning: "to give" }
+  "te-3303":
+    native: "sadness; sorrow"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'sadly'."
+      "n2": "In the plural and before case endings the stem changes: విచారాలు (vicārālu) and విచారాన్ని (vicārānni)."
+    examples:
+      "ఆ వార్త వినగానే అతనికి విచారం వచ్చింది.":
+        native: "When he heard the news, sadness came over him."
+        bases:
+          "వినగానే": { meaning: "to hear" }
+          "అతనికి": { meaning: "he" }
+          "వచ్చింది": { meaning: "to come" }
+      "ఆ సినిమా ముగింపు చూసి విచారంతో బయటకు వచ్చాం.":
+        native: "We walked out of the film sad after seeing the ending."
+        bases:
+          "చూసి": { meaning: "to see" }
+          "విచారంతో": { meaning: "sadness" }
+          "బయటకు": { meaning: "outside" }
+          "వచ్చాం": { meaning: "to come" }
+  "te-3304":
+    native: "worry; anxiety"
+    notes:
+      "n1": "{1} is 'with worry'."
+    examples:
+      "పరీక్ష ఫలితాల గురించి ఆందోళనగా ఉంది.":
+        native: "I am worried about the exam results."
+        bases:
+          "ఫలితాల": { meaning: "result" }
+      "ఆమె ఆందోళనను దాచలేకపోయింది.":
+        native: "She could not hide her worry."
+        bases:
+          "ఆందోళనను": { meaning: "worry; anxiety" }
+          "దాచలేకపోయింది": { meaning: "to hide" }
+  "te-3305":
+    native: "surprise; wonder"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'in surprise'."
+      "n2": "In the plural and before case endings the stem changes: ఆశ్చర్యాలు (āścaryālu) and ఆశ్చర్యాన్ని (āścaryānni)."
+    examples:
+      "నీ ఫోన్ చూసి నాకు నిజంగా ఆశ్చర్యం.":
+        native: "Seeing your call, I was truly surprised."
+        bases:
+          "నీ": { meaning: "you" }
+          "చూసి": { meaning: "to see" }
+      "ఆయన ఆశ్చర్యంతో కళ్ళు పెద్దవి చేశారు.":
+        native: "He opened his eyes wide in surprise."
+        bases:
+          "ఆశ్చర్యంతో": { meaning: "surprise" }
+          "కళ్ళు": { meaning: "eye" }
+          "పెద్దవి": { meaning: "big" }
+          "చేశారు": { meaning: "to do" }
+  "te-3306":
+    native: "shame; shyness"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'with shame'."
+    examples:
+      "అతనికి అందరి ముందు మాట్లాడాలంటే సిగ్గు.":
+        native: "He is shy about speaking in front of everyone."
+        bases:
+          "అందరి": { meaning: "everyone" }
+          "మాట్లాడాలంటే": { meaning: "to speak" }
+      "ఆ పొగడ్తకు నేను సిగ్గుతో నవ్వేశాను.":
+        native: "I laughed shyly at that compliment."
+        bases:
+          "పొగడ్తకు": { meaning: "praise; compliment" }
+          "నవ్వేశాను": { meaning: "to laugh; to smile" }
+    synonyms: { "lajja": "shame" }
+  "te-3307":
+    native: "courage"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'with courage'."
+      "n2": "In the plural and before case endings the stem changes: ధైర్యాలు (dhairyālu) and ధైర్యాన్ని (dhairyānni)."
+    examples:
+      "అతనికి ఆ పని చేసేంత ధైర్యం ఉంది.":
+        native: "He has the courage to do that job."
+        bases:
+          "చేసేంత": { meaning: "to do" }
+      "ధైర్యంగా ముందుకు వెళ్ళు.":
+        native: "Go forward bravely."
+        bases:
+          "ధైర్యంగా": { meaning: "courage" }
+          "ముందుకు": { meaning: "front; forward" }
+          "వెళ్ళు": { meaning: "to go" }
+  "te-3308":
+    native: "trust; belief; confidence"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'confidently'."
+      "n2": "In the plural and before case endings the stem changes: నమ్మకాలు (nammakālu) and నమ్మకాన్ని (nammakānni)."
+    examples:
+      "నాకు నీ మీద నమ్మకం ఉంది.":
+        native: "I trust you."
+        bases:
+          "నీ": { meaning: "you" }
+      "ఆ వైద్యుడిపై ప్రజలకు చాలా నమ్మకం.":
+        native: "People have great trust in that doctor."
+        bases:
+          "వైద్యుడిపై": { meaning: "doctor" }
+          "ప్రజలకు": { meaning: "people" }
+  "te-3309":
+    native: "pride"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'proudly'."
+      "n2": "In the plural and before case endings the stem changes: గర్వాలు (garvālu) and గర్వాన్ని (garvānni)."
+    examples:
+      "తన పిల్లల విజయంపై ఆయనకు గర్వం.":
+        native: "He is proud of his children's success."
+        bases:
+          "పిల్లల": { meaning: "children" }
+          "విజయంపై": { meaning: "success" }
+          "ఆయనకు": { meaning: "he" }
+      "ఆ వేడుకలో అమ్మ గర్వంగా నవ్వింది.":
+        native: "At the celebration, Mother smiled with pride."
+        bases:
+          "వేడుకలో": { meaning: "celebration" }
+          "గర్వంగా": { meaning: "pride" }
+          "నవ్వింది": { meaning: "to laugh; to smile" }
+  "te-3310":
+    native: "jealousy; envy"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'out of envy'."
+    examples:
+      "స్నేహితుడి విజయం చూసి అతనికి అసూయ కలిగింది.":
+        native: "Seeing his friend's success, he felt envy."
+        bases:
+          "స్నేహితుడి": { meaning: "friend" }
+          "చూసి": { meaning: "to see" }
+          "కలిగింది": { meaning: "to arise; to be felt" }
+      "అసూయతో ఆమె అతని గురించి మాట్లాడింది.":
+        native: "Out of jealousy, she talked about him."
+        bases:
+          "అసూయతో": { meaning: "jealousy; envy" }
+          "అతని": { meaning: "he" }
+          "మాట్లాడింది": { meaning: "to speak" }
+    senses:
+      "envy": { native: "envy" }
+      "jealousy": { native: "jealousy" }
+  "te-3311":
+    native: "boredom; annoyance"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'with boredom or annoyance'."
+    examples:
+      "ఒకే పని రోజూ చేసి నాకు విసుగు వచ్చింది.":
+        native: "I got bored doing the same job every day."
+        bases:
+          "చేసి": { meaning: "to do" }
+          "వచ్చింది": { meaning: "to come" }
+      "ఈ సినిమా చూసి చూసి విసుగ్గా ఉంది.":
+        native: "I am bored of watching this film over and over."
+        bases:
+          "చూసి": { meaning: "to see" }
+          "విసుగ్గా": { meaning: "boredom; annoyance" }
+    senses:
+      "disgust": { native: "disgust, dislike, vexation" }
+      "boredom": { native: "boredom, tedium, tediousness" }
+      "weariness": { native: "weariness, tiredness" }
+  "te-3312":
+    native: "enthusiasm; excitement"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'with enthusiasm'."
+      "n2": "In the plural and before case endings the stem changes: ఉత్సాహాలు (utsāhālu) and ఉత్సాహాన్ని (utsāhānni)."
+    examples:
+      "కొత్త ఉద్యోగంలో చేరడానికి ఆయనకు ఎంతో ఉత్సాహం.":
+        native: "He is full of enthusiasm to join the new job."
+        bases:
+          "ఉద్యోగంలో": { meaning: "job" }
+          "చేరడానికి": { meaning: "to join" }
+          "ఆయనకు": { meaning: "he" }
+      "పిల్లలు పండుగ ఉత్సాహంతో పరిగెత్తారు.":
+        native: "The children ran with festival excitement."
+        bases:
+          "ఉత్సాహంతో": { meaning: "enthusiasm" }
+          "పరిగెత్తారు": { meaning: "to run" }
+  "te-3313":
+    native: "gratitude; thankfulness"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'gratefully'."
+    examples:
+      "నీ సహాయానికి కృతజ్ఞతలు.":
+        native: "Thank you for your help."
+        bases:
+          "నీ": { meaning: "you" }
+          "సహాయానికి": { meaning: "help" }
+      "ఆయన మాటల్లో కృతజ్ఞత కనిపించింది.":
+        native: "Gratitude showed in his words."
+        bases:
+          "మాటల్లో": { meaning: "word" }
+          "కనిపించింది": { meaning: "to appear" }
+    antonyms: { "krtaghnata": "a lack or absence of gratitude; ingratitude" }
+  "te-3314":
+    native: "calm; peace of mind"
+    notes:
+      "n1": "{1} is 'calmly'."
+    examples:
+      "ఉదయం గుడిలో ఎంతో ప్రశాంతత ఉంటుంది.":
+        native: "The temple is very peaceful in the morning."
+        bases:
+          "గుడిలో": { meaning: "temple" }
+          "ఉంటుంది": { meaning: "to be" }
+      "ఈ ఊరు వచ్చాక నాకు మనసులో ప్రశాంతత వచ్చింది.":
+        native: "Since coming to this town, I have found peace of mind."
+        bases:
+          "వచ్చాక": { meaning: "to come" }
+          "మనసులో": { meaning: "mind; heart" }
+          "వచ్చింది": { meaning: "to come" }
+  "te-3315":
+    native: "stress; pressure"
+    notes:
+      "n1": "{1} is 'under stress'."
+    examples:
+      "పరీక్షల ముందు విద్యార్థులకు ఒత్తిడి ఎక్కువ.":
+        native: "Students feel a lot of stress before exams."
+        bases:
+          "పరీక్షల": { meaning: "exam" }
+          "విద్యార్థులకు": { meaning: "student" }
+      "ఒత్తిడిని తగ్గించడానికి కొంచెం నడుద్దాం.":
+        native: "Let's walk a little to reduce the stress."
+        bases:
+          "ఒత్తిడిని": { meaning: "stress; pressure" }
+          "తగ్గించడానికి": { meaning: "to reduce" }
+          "నడుద్దాం": { meaning: "to walk" }
+  "te-3316":
+    native: "grief; deep sorrow"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'with grief'."
+      "n2": "In the plural and before case endings the stem changes: దుఃఖాలు (duḥkhālu) and దుఃఖాన్ని (duḥkhānni)."
+    examples:
+      "ఆమె తల్లి మరణంతో దుఃఖంలో ఉంది.":
+        native: "She is in grief over her mother's death."
+        bases:
+          "మరణంతో": { meaning: "death" }
+          "దుఃఖంలో": { meaning: "grief" }
+      "ఆ వార్త విని దుఃఖం ఆపుకోలేకపోయాను.":
+        native: "On hearing that news, I could not hold back my grief."
+        bases:
+          "విని": { meaning: "to hear" }
+          "ఆపుకోలేకపోయాను": { meaning: "to hold back" }
+  "te-3317":
+    native: "loneliness"
+    notes:
+      "n1": "{1} is 'in loneliness'."
+      "n2": "In the plural and before case endings the stem changes: ఒంటరితనాలు (oṇṭaritanālu) and ఒంటరితనాన్ని (oṇṭaritanānni)."
+    examples:
+      "ఊరు మారాక ఆమెకు ఒంటరితనం అనిపించింది.":
+        native: "After she moved to another town, she felt lonely."
+        bases:
+          "మారాక": { meaning: "to change; to move" }
+          "ఆమెకు": { meaning: "she" }
+          "అనిపించింది": { meaning: "to feel" }
+      "ఒంటరితనాన్ని పోగొట్టడానికి ఆమె పుస్తకాలు చదువుతుంది.":
+        native: "To get rid of loneliness, she reads books."
+        bases:
+          "ఒంటరితనాన్ని": { meaning: "loneliness" }
+          "పోగొట్టడానికి": { meaning: "to get rid of" }
+          "పుస్తకాలు": { meaning: "book" }
+          "చదువుతుంది": { meaning: "to read" }
+  "te-3318":
+    native: "curiosity"
+    notes:
+      "n1": "{1} is 'curiously'."
+      "n2": "In the plural and before case endings the stem changes: కుతూహలాలు (kutūhalālu) and కుతూహలాన్ని (kutūhalānni)."
+    examples:
+      "పిల్లలకు కొత్త విషయాల మీద కుతూహలం ఎక్కువ.":
+        native: "Children are very curious about new things."
+        bases:
+          "పిల్లలకు": { meaning: "children" }
+          "విషయాల": { meaning: "matter; thing" }
+      "కుతూహలంతో ఆ పెట్టె తెరిచి చూశాను.":
+        native: "Out of curiosity, I opened that box and looked."
+        bases:
+          "కుతూహలంతో": { meaning: "curiosity" }
+          "తెరిచి": { meaning: "to open" }
+          "చూశాను": { meaning: "to see" }
+  "te-3319":
+    native: "tears"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'with tears'."
+    examples:
+      "ఆమె కళ్ళలో కన్నీళ్లు వచ్చాయి.":
+        native: "Tears came to her eyes."
+        bases:
+          "కళ్ళలో": { meaning: "eye" }
+          "వచ్చాయి": { meaning: "to come" }
+      "అమ్మ కన్నీళ్లు తుడుచుకుని నవ్వింది.":
+        native: "Mother wiped her tears and smiled."
+        bases:
+          "తుడుచుకుని": { meaning: "to wipe" }
+          "నవ్వింది": { meaning: "to laugh; to smile" }
+  "te-3320":
+    native: "friendship"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'in a friendly way'."
+      "n2": "In the plural and before case endings the stem changes: స్నేహాలు (snēhālu) and స్నేహాన్ని (snēhānni)."
+    examples:
+      "వాళ్ళ మధ్య మంచి స్నేహం ఉంది.":
+        native: "There is a good friendship between them."
+        bases:
+          "వాళ్ళ": { meaning: "they" }
+      "నా స్నేహాన్ని అతను ఎప్పుడూ కాపాడుకున్నాడు.":
+        native: "He always kept up our friendship."
+        bases:
+          "నా": { meaning: "I" }
+          "స్నేహాన్ని": { meaning: "friendship" }
+          "కాపాడుకున్నాడు": { meaning: "to keep; to protect" }
+  "te-3321":
+    native: "humiliation; insult"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'humiliatingly'."
+      "n2": "In the plural and before case endings the stem changes: అవమానాలు (avamānālu) and అవమానాన్ని (avamānānni)."
+    examples:
+      "అందరి ముందు తిట్టడం అతనికి అవమానం అనిపించింది.":
+        native: "Being scolded in front of everyone felt humiliating to him."
+        bases:
+          "అందరి": { meaning: "everyone" }
+          "తిట్టడం": { meaning: "to scold" }
+          "అతనికి": { meaning: "he" }
+          "అనిపించింది": { meaning: "to feel" }
+      "ఆ మాటలు విని ఆమె అవమానంతో తల దించుకుంది.":
+        native: "Hearing those words, she lowered her head in humiliation."
+        bases:
+          "మాటలు": { meaning: "word" }
+          "విని": { meaning: "to hear" }
+          "అవమానంతో": { meaning: "humiliation" }
+          "దించుకుంది": { meaning: "to lower" }
+  "te-3322":
+    native: "homesickness; longing; worry"
+    notes:
+      "n1": "{1} is 'with homesickness'."
+    examples:
+      "ఊరు గుర్తుకొస్తే నాకు బెంగగా ఉంటుంది.":
+        native: "When I think of my village, I feel homesick."
+        bases:
+          "గుర్తుకొస్తే": { meaning: "to come to mind" }
+          "బెంగగా": { meaning: "homesickness" }
+          "ఉంటుంది": { meaning: "to be" }
+      "ఇంటికి దూరంగా ఉంటూ ఆమెకు బెంగ ఎక్కువైంది.":
+        native: "Living far from home, her homesickness has grown."
+        bases:
+          "ఇంటికి": { meaning: "house; home" }
+          "దూరంగా": { meaning: "distance" }
+          "ఉంటూ": { meaning: "to be" }
+          "ఆమెకు": { meaning: "she" }
+          "ఎక్కువైంది": { meaning: "more; many" }
+  "te-3323":
+    native: "disappointment; despair"
+    wiktionary: true
+    notes:
+      "n1": "{1} is 'with disappointment'."
+    examples:
+      "పరీక్ష ఫలితం చూసి అతనికి నిరాశ కలిగింది.":
+        native: "When he saw the exam result, he was disappointed."
+        bases:
+          "చూసి": { meaning: "to see" }
+          "కలిగింది": { meaning: "to arise; to be felt" }
+      "ఈ చిన్న ఓటమితో నిరాశపడకు.":
+        native: "Don't lose heart over this small defeat."
+        bases:
+          "ఓటమితో": { meaning: "defeat" }
+          "నిరాశపడకు": { meaning: "to be disappointed" }
+  "te-3324":
+    native: "peace of mind; relief from worry"
+    notes:
+      "n1": "{1} is 'with peace of mind'."
+    examples:
+      "పరీక్ష అయిపోయాక నాకు నిశ్చింతగా ఉంది.":
+        native: "Now that the exam is over, I feel relieved."
+        bases:
+          "అయిపోయాక": { meaning: "to finish" }
+          "నిశ్చింతగా": { meaning: "peace of mind" }
+      "ఇంట్లో అందరూ బాగున్నారని తెలిసి నిశ్చింత కలిగింది.":
+        native: "Knowing that everyone at home is well brought me peace of mind."
+        bases:
+          "ఇంట్లో": { meaning: "house; home" }
+          "బాగున్నారని": { meaning: "to be well" }
+          "తెలిసి": { meaning: "to know" }
+          "కలిగింది": { meaning: "to arise; to be felt" }
+  "te-3325":
+    native: "trouble; discomfort"
+    notes:
+      "n1": "{1} is 'uncomfortable'."
+    examples:
+      "ఈ చలిలో బయట ఉండటం నాకు ఇబ్బందిగా ఉంది.":
+        native: "Being outside in this cold is uncomfortable for me."
+        bases:
+          "చలిలో": { meaning: "cold" }
+          "బయట": { meaning: "outside" }
+          "ఉండటం": { meaning: "to be" }
+          "ఇబ్బందిగా": { meaning: "trouble" }
+      "ఎవరికీ ఇబ్బంది కలిగించకుండా ఉండాలి.":
+        native: "We should not cause anyone any trouble."
+        bases:
+          "ఎవరికీ": { meaning: "who" }
+          "కలిగించకుండా": { meaning: "to cause" }
+          "ఉండాలి": { meaning: "to be" }
+  "te-3326":
+    native: "self-confidence"
+    notes:
+      "n1": "{1} is 'with self-confidence'."
+      "n2": "In the plural and before case endings the stem changes: ఆత్మవిశ్వాసాలు (ātmaviśvāsālu) and ఆత్మవిశ్వాసాన్ని (ātmaviśvāsānni)."
+    examples:
+      "ఆమెకు మాట్లాడటంలో ఆత్మవిశ్వాసం పెరిగింది.":
+        native: "Her self-confidence in speaking has grown."
+        bases:
+          "ఆమెకు": { meaning: "she" }
+          "మాట్లాడటంలో": { meaning: "to speak" }
+          "పెరిగింది": { meaning: "to grow; to increase" }
+      "ఆత్మవిశ్వాసంతో ప్రసంగం చేశాడు.":
+        native: "He gave the speech with confidence."
+        bases:
+          "ఆత్మవిశ్వాసంతో": { meaning: "self-confidence" }
+          "చేశాడు": { meaning: "to do" }
+  "te-3327":
+    native: "happy; glad"
+    notes:
+      "n1": "{1} is 'I am happy': the form with ఉన్నాను."
+    examples:
+      "పిల్లలు ఆటలాడుతూ సంతోషంగా ఉన్నారు.":
+        native: "The children are happy, playing games."
+        bases:
+          "ఆటలాడుతూ": { meaning: "to play games" }
+          "ఉన్నారు": { meaning: "to be" }
+      "మీరు వచ్చినందుకు నేను చాలా సంతోషంగా ఉన్నాను.":
+        native: "I am very glad that you came."
+        bases:
+          "వచ్చినందుకు": { meaning: "to come" }
+          "ఉన్నాను": { meaning: "to be" }
+    bases:
+      "సంతోషంగా": { meaning: "happiness; joy" }
+  "te-3328":
+    native: "sad"
+    notes:
+      "n1": "{1} is 'it is sad', said of a mood or of a thing."
+    examples:
+      "అతను ఎందుకో విచారంగా కనిపించాడు.":
+        native: "For some reason he looked sad."
+        bases:
+          "కనిపించాడు": { meaning: "to appear" }
+      "ఆ కథ చదివి పిల్లలు విచారంగా మారిపోయారు.":
+        native: "After reading that story, the children became sad."
+        bases:
+          "చదివి": { meaning: "to read" }
+          "మారిపోయారు": { meaning: "to become" }
+    bases:
+      "విచారంగా": { meaning: "sadness; sorrow" }
+  "te-3329":
+    native: "angry"
+    notes:
+      "n1": "{1} is 'angrily'."
+    examples:
+      "నాన్న ఎందుకో కోపంగా ఉన్నారు.":
+        native: "Dad is angry about something."
+        bases:
+          "ఉన్నారు": { meaning: "to be" }
+      "అతను కోపంగా తలుపు మూసేశాడు.":
+        native: "He slammed the door in anger."
+        bases:
+          "మూసేశాడు": { meaning: "to close" }
+    bases:
+      "కోపంగా": { meaning: "anger" }
+  "te-3330":
+    native: "scared; afraid"
+    notes:
+      "n1": "{1} is 'fearfully'."
+    examples:
+      "చీకటిలో ఒంటరిగా నడవాలంటే నాకు భయంగా ఉంటుంది.":
+        native: "I feel scared when I have to walk alone in the dark."
+        bases:
+          "చీకటిలో": { meaning: "darkness" }
+          "నడవాలంటే": { meaning: "to walk" }
+          "ఉంటుంది": { meaning: "to be" }
+          "ఒంటరిగా": { meaning: "alone" }
+      "కుక్క దగ్గరికి వస్తే పిల్లవాడు భయంగా వెళ్ళిపోయాడు.":
+        native: "When the dog came near, the boy went away, scared."
+        bases:
+          "వస్తే": { meaning: "to come" }
+          "వెళ్ళిపోయాడు": { meaning: "to go away" }
+    bases:
+      "భయంగా": { meaning: "fear" }
+  "te-3331":
+    native: "shy; embarrassed"
+    notes:
+      "n1": "{1} is 'shyly'."
+    examples:
+      "కొత్త వాళ్ళ ముందు అతను సిగ్గుగా నవ్వాడు.":
+        native: "In front of new people, he smiled shyly."
+        bases:
+          "వాళ్ళ": { meaning: "they" }
+          "నవ్వాడు": { meaning: "to laugh; to smile" }
+      "ఆ పొగడ్తకు ఆమె సిగ్గుగా తల వంచుకుంది.":
+        native: "She lowered her head shyly at the praise."
+        bases:
+          "పొగడ్తకు": { meaning: "praise; compliment" }
+          "వంచుకుంది": { meaning: "to bend" }
+    bases:
+      "సిగ్గుగా": { meaning: "shame; shyness" }
+  "te-3332":
+    native: "proud"
+    notes:
+      "n1": "{1} is 'I feel proud', said by a person who is proud."
+    examples:
+      "తల్లిదండ్రులు తమ కూతురిని చూసి గర్వంగా చెప్పారు.":
+        native: "Seeing their daughter, the parents said proudly."
+        bases:
+          "కూతురిని": { meaning: "daughter" }
+          "చూసి": { meaning: "to see" }
+          "చెప్పారు": { meaning: "to say" }
+      "నేను ఆ ఊరికి చెందినవాడినని గర్వంగా ఉంది.":
+        native: "I am proud to belong to that town."
+        bases:
+          "ఊరికి": { meaning: "town; village" }
+          "చెందినవాడినని": { meaning: "to belong" }
+    bases:
+      "గర్వంగా": { meaning: "pride" }
+  "te-3333":
+    native: "alone"
+    notes:
+      "n1": "{1} is 'alone'."
+    examples:
+      "ఆమె ఇంట్లో ఒంటరిగా ఉంటుంది.":
+        native: "She lives alone at home."
+        bases:
+          "ఇంట్లో": { meaning: "house; home" }
+          "ఉంటుంది": { meaning: "to be" }
+      "ఇంత పెద్ద ఊరిలో ఒంటరిగా నడవడం కష్టంగా ఉంది.":
+        native: "It is hard to walk alone in such a big town."
+        bases:
+          "ఊరిలో": { meaning: "town; village" }
+          "నడవడం": { meaning: "to walk" }
+          "కష్టంగా": { meaning: "difficult" }
+    bases:
+      "ఒంటరిగా": { meaning: "alone; lonely" }
+  "te-3334":
+    native: "anxious; eager"
+    notes:
+      "n1": "{1} is 'anxiously; eagerly'."
+    examples:
+      "ఫలితాల కోసం అందరూ ఆత్రుతగా ఎదురు చూస్తున్నారు.":
+        native: "Everyone is waiting anxiously for the results."
+        bases:
+          "ఫలితాల": { meaning: "result" }
+          "ఎదురు చూస్తున్నారు": { meaning: "to wait" }
+      "పరీక్ష రాసిన తర్వాత అతను ఆత్రుతగా ఇంటికి వచ్చాడు.":
+        native: "After writing the exam, he came home eagerly."
+        bases:
+          "రాసిన": { meaning: "to write" }
+          "ఇంటికి": { meaning: "house; home" }
+          "వచ్చాడు": { meaning: "to come" }
+    bases:
+      "ఆత్రుతగా": { meaning: "eagerness; anxiety" }
+  "te-3335":
+    native: "surprised"
+    notes:
+      "n1": "{1} is 'in surprise'."
+    examples:
+      "అతను ఆశ్చర్యంగా చూశాడు.":
+        native: "He looked surprised."
+        bases:
+          "చూశాడు": { meaning: "to see" }
+      "ఆమె ఫలితం విని ఆశ్చర్యంగా ఉంది.":
+        native: "She is surprised to hear the result."
+        bases:
+          "విని": { meaning: "to hear" }
+    bases:
+      "ఆశ్చర్యంగా": { meaning: "surprise; wonder" }
+  "te-3336":
+    native: "excited; enthusiastic"
+    notes:
+      "n1": "{1} is 'enthusiastically'."
+    examples:
+      "పిల్లలు సెలవుల గురించి ఉత్సాహంగా మాట్లాడుకుంటున్నారు.":
+        native: "The children are excitedly talking about the holidays."
+        bases:
+          "సెలవుల": { meaning: "holiday" }
+          "మాట్లాడుకుంటున్నారు": { meaning: "to talk with each other" }
+      "కొత్త పని మొదలుపెట్టడానికి నేను ఉత్సాహంగా ఉన్నాను.":
+        native: "I am excited to start the new job."
+        bases:
+          "మొదలుపెట్టడానికి": { meaning: "to start" }
+          "ఉన్నాను": { meaning: "to be" }
+    bases:
+      "ఉత్సాహంగా": { meaning: "enthusiasm; excitement" }
+  "te-3337":
+    native: "nervous; flustered"
+    notes:
+      "n1": "{1} is 'nervously; in a flurry'."
+    examples:
+      "ఇంటర్వ్యూ ముందు అతను కంగారుగా ఉన్నాడు.":
+        native: "Before the interview he was nervous."
+        bases:
+          "ఉన్నాడు": { meaning: "to be" }
+      "పరుగెత్తుకుంటూ వచ్చి ఆమె కంగారుగా తలుపు తట్టింది.":
+        native: "She came running and knocked on the door in a flurry."
+        bases:
+          "పరుగెత్తుకుంటూ": { meaning: "to run" }
+          "వచ్చి": { meaning: "to come" }
+          "తట్టింది": { meaning: "to knock" }
+    bases:
+      "కంగారుగా": { meaning: "panic; flurry" }
+  "te-3338":
+    native: "disappointed"
+    notes:
+      "n1": "{1} is 'disappointedly'."
+    examples:
+      "పరీక్షలో తప్పిన తర్వాత అతను నిరాశగా కూర్చున్నాడు.":
+        native: "After failing the exam, he sat down, disappointed."
+        bases:
+          "తప్పిన": { meaning: "to fail" }
+          "కూర్చున్నాడు": { meaning: "to sit" }
+      "ఆ జవాబు విని అందరూ నిరాశగా చూశారు.":
+        native: "Hearing that answer, everyone looked disappointed."
+        bases:
+          "విని": { meaning: "to hear" }
+          "చూశారు": { meaning: "to see" }
+    bases:
+      "నిరాశగా": { meaning: "disappointment; despair" }
+  "te-3339":
+    native: "calm; peaceful"
+    notes:
+      "n1": "{1} is 'calmly; peacefully'."
+    examples:
+      "అతను ఎంతో ప్రశాంతంగా సమాధానం చెప్పాడు.":
+        native: "He answered very calmly."
+        bases:
+          "చెప్పాడు": { meaning: "to say" }
+      "ఆ ఊరు రాత్రి ప్రశాంతంగా ఉంటుంది.":
+        native: "That town is peaceful at night."
+        bases:
+          "ఉంటుంది": { meaning: "to be" }
+    bases:
+      "ప్రశాంతంగా": { meaning: "calm; peaceful" }
+  "te-3340":
+    native: "worried"
+    notes:
+      "n1": "{1} is 'worriedly'."
+    examples:
+      "ఆమె కొడుకు ఇంకా రాలేదని అమ్మ ఆందోళనగా చూస్తోంది.":
+        native: "Mother is looking worried because her son has not come yet."
+        bases:
+          "రాలేదని": { meaning: "to come" }
+          "చూస్తోంది": { meaning: "to see" }
+      "డాక్టర్ మాటలు విని అతను ఆందోళనగా అడిగాడు.":
+        native: "Hearing the doctor's words, he asked worriedly."
+        bases:
+          "మాటలు": { meaning: "word" }
+          "విని": { meaning: "to hear" }
+          "అడిగాడు": { meaning: "to ask" }
+    bases:
+      "ఆందోళనగా": { meaning: "worry; anxiety" }
+  "te-3341":
+    native: "hurt; unhappy"
+    notes:
+      "n1": "{1} is 'painfully; sadly'."
+    examples:
+      "నీ మాటలు నాకు బాధగా అనిపించాయి.":
+        native: "Your words felt hurtful to me."
+        bases:
+          "నీ": { meaning: "you" }
+          "మాటలు": { meaning: "word" }
+          "అనిపించాయి": { meaning: "to feel" }
+      "అతను గాయంతో బాధగా ఉన్నాడు.":
+        native: "He is in pain from the wound."
+        bases:
+          "గాయంతో": { meaning: "wound" }
+          "ఉన్నాడు": { meaning: "to be" }
+    bases:
+      "బాధగా": { meaning: "sadness; pain" }
+  "te-3342":
+    native: "bored; fed up"
+    notes:
+      "n1": "{1} is 'in a bored, fed-up way'."
+    examples:
+      "ఆమె విసుగ్గా ఫోన్ పక్కన పెట్టింది.":
+        native: "She put the phone aside, fed up."
+        bases:
+          "పెట్టింది": { meaning: "to put" }
+      "ఈ ప్రయాణం చాలా సేపు ఉండటంతో అందరూ విసుగ్గా ఉన్నారు.":
+        native: "The journey took so long that everyone is bored."
+        bases:
+          "ఉండటంతో": { meaning: "to be" }
+          "ఉన్నారు": { meaning: "to be" }
+    bases:
+      "విసుగ్గా": { meaning: "boredom; annoyance" }
+  "te-3343":
+    native: "to be afraid; to fear"
+    notes:
+      "n1": "{1} is 'do not be afraid'."
+    examples:
+      "ఎవరూ లేని చోటుకి వెళ్ళాలంటే నేను భయపడతాను.":
+        native: "I get scared when I have to go to a place where nobody is."
+        bases:
+          "వెళ్ళాలంటే": { meaning: "to go" }
+          "భయపడతాను": { meaning: "to be afraid" }
+      "నువ్వు భయపడకు, నేను నీతో ఉన్నాను.":
+        native: "Don't be afraid, I am with you."
+        bases:
+          "భయపడకు": { meaning: "to be afraid" }
+          "నీతో": { meaning: "you" }
+          "ఉన్నాను": { meaning: "to be" }
+  "te-3344":
+    native: "to cry"
+    notes:
+      "n1": "{1} is 'do not cry'."
+      "n2": "The present stem changes to ఏడుస్తా (ēḍustā)-, as in ఏడుస్తాను (ēḍustānu); 'please' is ఏడవండి (ēḍavaṇḍi)."
+    examples:
+      "చిన్న పిల్లవాడు ఆకలికి ఏడుస్తున్నాడు.":
+        native: "The little boy is crying from hunger."
+        bases:
+          "ఏడుస్తున్నాడు": { meaning: "to cry" }
+      "ఆ సినిమా చూసి ఆమె ఏడ్చేసింది.":
+        native: "She cried after watching that film."
+        bases:
+          "చూసి": { meaning: "to see" }
+          "ఏడ్చేసింది": { meaning: "to cry" }
+  "te-3345":
+    native: "to laugh; to smile"
+    notes:
+      "n1": "{1} is 'smiling; laughing'."
+    examples:
+      "అతని జోకు విని అందరూ నవ్వారు.":
+        native: "Hearing his joke, everyone laughed."
+        bases:
+          "జోకు": { meaning: "joke" }
+          "విని": { meaning: "to hear" }
+          "నవ్వారు": { meaning: "to laugh" }
+      "ఆమె నవ్వుతూ తలుపు తీసింది.":
+        native: "She opened the door, smiling."
+        bases:
+          "నవ్వుతూ": { meaning: "to laugh" }
+          "తీసింది": { meaning: "to open" }
+  "te-3346":
+    native: "to be hurt; to be upset"
+    notes:
+      "n1": "{1} is 'do not be hurt or upset'."
+    examples:
+      "నేను అతని మాటలకి బాధపడతాను.":
+        native: "I am hurt by his words."
+        bases:
+          "మాటలకి": { meaning: "word" }
+          "బాధపడతాను": { meaning: "to be hurt" }
+      "నా వల్ల నువ్వు బాధపడ్డావా?":
+        native: "Did you get hurt because of me?"
+        bases:
+          "నా": { meaning: "I" }
+          "బాధపడ్డావా": { meaning: "to be hurt" }
+  "te-3347":
+    native: "to be embarrassed; to feel shy"
+    notes:
+      "n1": "{1} is 'do not be embarrassed'."
+    examples:
+      "తప్పు చేసినందుకు అతను సిగ్గుపడ్డాడు.":
+        native: "He was embarrassed at having made a mistake."
+        bases:
+          "చేసినందుకు": { meaning: "to do" }
+          "సిగ్గుపడ్డాడు": { meaning: "to be embarrassed" }
+      "అలా అడగడానికి నేను సిగ్గుపడతాను.":
+        native: "I feel shy about asking like that."
+        bases:
+          "అడగడానికి": { meaning: "to ask" }
+          "సిగ్గుపడతాను": { meaning: "to be embarrassed" }
+  "te-3348":
+    native: "to be proud"
+    notes:
+      "n1": "{1} is 'do not be proud', as a warning."
+    examples:
+      "నువ్వు సాధించినందుకు మేము గర్వపడుతున్నాం.":
+        native: "We are proud of what you achieved."
+        bases:
+          "సాధించినందుకు": { meaning: "to achieve" }
+          "గర్వపడుతున్నాం": { meaning: "to be proud" }
+      "మంచి పని చేసినప్పుడు తల్లి గర్వపడుతుంది.":
+        native: "When her child does good work, the mother feels proud."
+        bases:
+          "చేసినప్పుడు": { meaning: "to do" }
+          "గర్వపడుతుంది": { meaning: "to be proud" }
+  "te-3349":
+    native: "to panic; to get nervous"
+    notes:
+      "n1": "{1} is 'do not panic', said politely."
+    examples:
+      "పరీక్షకు ముందు ప్రతి ఒక్కరు కంగారుపడతారు.":
+        native: "Before an exam, everyone gets nervous."
+        bases:
+          "ముందు": { meaning: "before" }
+          "కంగారుపడతారు": { meaning: "to get nervous" }
+      "కంగారుపడకండి, రైలు ఇంకా రాలేదు.":
+        native: "Don't panic; the train has not come yet."
+        bases:
+          "కంగారుపడకండి": { meaning: "to get nervous" }
+          "రాలేదు": { meaning: "to come" }
+  "te-3350":
+    native: "to trust; to believe"
+    notes:
+      "n1": "{1} is 'please believe'."
+      "n2": "The present stem changes to నమ్ముతా (nammutā)-, as in నమ్ముతాను (nammutānu); 'please' is నమ్మండి (nammaṇḍi)."
+    examples:
+      "నేను నిన్ను పూర్తిగా నమ్ముతాను.":
+        native: "I trust you completely."
+        bases:
+          "నిన్ను": { meaning: "you" }
+          "నమ్ముతాను": { meaning: "to trust" }
+      "అతని మాటలు నమ్మవద్దు.":
+        native: "Do not believe his words."
+        bases:
+          "మాటలు": { meaning: "word" }
+          "నమ్మవద్దు": { meaning: "to believe" }
+  "te-3351":
+    native: "to enjoy"
+    notes:
+      "n1": "{1} is 'please enjoy'."
+      "n2": "The present stem changes to ఆనందిస్తా (ānandistā)-, as in ఆనందిస్తాను (ānandistānu); 'please' is ఆనందించండి (ānandiñcaṇḍi)."
+    examples:
+      "మేము పండుగ రోజు సినిమా చూసి ఆనందించాం.":
+        native: "We enjoyed the film on the festival day."
+        bases:
+          "చూసి": { meaning: "to see" }
+          "ఆనందించాం": { meaning: "to enjoy" }
+      "పిల్లలు తోటలో ఆడుకుంటూ ఆనందిస్తున్నారు.":
+        native: "The children are enjoying themselves, playing in the garden."
+        bases:
+          "తోటలో": { meaning: "garden" }
+          "ఆడుకుంటూ": { meaning: "to play" }
+          "ఆనందిస్తున్నారు": { meaning: "to enjoy" }
