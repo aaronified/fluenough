@@ -93,8 +93,11 @@ approval.
 - `languages-learning.html`: Languages I'm learning redone in line with
   Languages I know (#626; owner, 2026-10-18, "Sonnet mockup"), revised for
   the owner's review of 2026-10-18: short rows with far less whitespace,
-  grouped by the same families in the same order as Languages I know; "Check
-  for deck updates" and "Update all" in one row at the top; on a learned row
+  grouped by the same families in the same order as Languages I know; one
+  contextual top button, "Check for deck updates" until updates are found and
+  then "Update all (N)"; the search bar pinned to the top when the list
+  scrolls; the list ending with its last row, no blank area; each row's
+  course progress as the app's A1, A2, B1 line (with culture), drawn thinner; on a learned row
   one row of buttons, Update only as "Update available" when an update
   exists, and Remove as a red x icon; a Popular section; a bottom sheet per
   language whose "Learn this language" (or "Stop learning") is fixed at the
