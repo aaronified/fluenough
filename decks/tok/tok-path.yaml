@@ -1,0 +1,450 @@
+# The order Toki Pona is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner
+# from English is taught tok-en-home for tok-home (ADR-0013, ADR-0036).
+#
+# This is also Toki Pona's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"):
+# every unit from the first words to B1, with its size in words, its
+# grammar topics, the three milestones, and for each planned unit its
+# listening and reading passages. No Toki Pona deck is written yet, so
+# every unit is planned: the course teaches each as "Coming" until its
+# deck is written.
+#
+# Toki Pona is small on purpose. Sonja Lang's first book (pu, 2014) has
+# 120 words; her dictionary (ku, 2021) names the 137 words most speakers
+# use, the nimi ku suli: pu's words, with ale and ali counted apart, and 16
+# more. The plan's sizes for other languages (about 700, 900 and 1,200
+# words) cannot be met: the language does not have the words. Scaling by
+# tier (docs/plans/language-paths-scheme.md) changes how long a phase
+# takes, not how many words exist, so it does not help either. This plan
+# keeps the true sizes instead (#581, question 1 to the owner):
+#
+# - Words. A unit's words are the roots it teaches for the first time,
+#   each counted once in the whole path: the 114 words of pu that are not
+#   particles, then the 16 nimi ku suli, 130 in all. The six particles
+#   li, e, la, pi, en and o are taught as rules and count no word.
+# - Rules. Toki Pona has no inflection: no word ever changes its form. Its
+#   grammar is the particles and word order: li before the predicate, e
+#   before the object, modifiers after their head, pi to group them, la
+#   for context, o for commands and address, en and anu to join. Each is a
+#   grammar unit, taught on words already known.
+# - Composition. A thing with no word of its own is described by putting
+#   known words together: tomo tawa (a moving building: a car), jan pi
+#   sona mute (a person of much knowledge: an expert). Conventional
+#   compounds and the skill of making one are Toki Pona's B1, the work
+#   that other languages spend on 1,200 more words. They are taught as
+#   grammar units with their sentences; their compounds are phrases, so
+#   they count no word.
+# - Passages. Every unit has a listening and a reading passage, from the
+#   first unit to the last.
+#
+# What the levels mean here, by what a learner can do (the CEFR's
+# descriptors, not its word counts):
+# - A1 (64 words): greet, say who you are and what you want, describe a
+#   person or thing in a simple sentence, ask and answer yes-no and seme
+#   questions, give a command, and place a sentence in the past or future
+#   with tenpo ... la.
+# - A2 (+48, 112 in all): every word of pu but two; group modifiers with
+#   pi; say where, from where, with what and how, with the prepositions;
+#   use the preverbs; join subjects, predicates and objects; read a short
+#   simple text and follow a slow conversation on familiar things.
+# - B1 (+18, 130 in all: every word of pu and of the nimi ku suli):
+#   the rest of the vocabulary, the nimi ku suli; describe what has no
+#   word; use and understand the conventional compounds; adapt and use
+#   proper names; report what someone said; chain contexts with la; follow
+#   a story, a forum thread or a podcast in Toki Pona, and give an opinion
+#   with reasons.
+#
+# The validator's level sizes do not fit (tools/validate_decks.py,
+# LEVEL_WORDS and B1_TOTAL): it warns of A1 outside 350-1,050, A2 outside
+# 450-1,350, B1 outside 600-1,800 and a total outside 2,000-3,500. This
+# path gives four such warnings, and no error. A path cannot give its own
+# level sizes: a format gap, named in the pull request, not worked around
+# here by counting compounds as words.
+#
+# The order follows docs/plans/words-rules-sentences.md (owner, 2026-10-07,
+# and 2026-10-17: "build the path files for all present languages via an
+# opus agent, as per our current path design"):
+# 1. the phrasebook, taught whole from the first lesson;
+# 2. the first word units, the sounds unit first;
+# 3. no script units: Toki Pona is written in 14 Latin letters (a e i o
+#    u, j k l m n p s t w), taught in the script guide (tok-script.yaml)
+#    and the sounds unit, so the path has no `alphabet`;
+# 4. a core of common words in themed units: here A1's 64 words, about
+#    half the language, ordered by judgement, most common first;
+# 5. rules as forms, practised on the words already known: here the
+#    particles and word order, since there are no forms;
+# 6. sentences, each after its words and rules; then the other themes,
+#    each its words, then its rules, then its sentences.
+#
+# Scripts. Latin letters are the course's script. sitelen pona, the
+# logographic script Sonja Lang drew in pu (a glyph per word, a name
+# spelled in a cartouche), is proposed as an optional unit after B1,
+# taught to read only: it is not in Unicode, only in the Under-ConScript
+# Unicode Registry (UCSUR, U+F1900 to U+F19FF, private use), so it needs a
+# bundled font and cannot be typed on a phone's keyboard. The format has
+# no place to plan it (a planned unit after B1 is an error, and `alphabet`
+# lists only written decks), so it is not in `units`: it comes in as a
+# written unit after the B1 mark, once its deck and its font exist. The
+# owner decides the font and its licence (#581, question 2). sitelen
+# sitelen, Jonathan Gabel's decorative non-linear script, is not planned:
+# it is art more than a writing system for daily use, and has no font.
+#
+# Toki Pona has no grammatical gender, so `genders` is empty. mije, meli
+# and tonsi are words, and a modifier after jan (jan mije, jan meli), not
+# gender classes.
+#
+# Toki Pona has no regional dialects: one language, learned by speakers in
+# every country from the same books and the same online community. What
+# differs between speakers is the accent of their first language and the
+# words they accept (pu only, ku suli, or newer nimi sin), not the region
+# they live in, so a region question ("Where you speak Toki Pona") would
+# not group raters by anything their answers share. The path lists no
+# `regions`, and the app asks no region question. The word-list
+# preference is a flavour, not a region (#581, item 5): a card's note
+# says when a word is ku suli and not pu. To confirm with the owner.
+#
+# Licence. The language is free to use; Sonja Lang's books and her word
+# lists' wording are copyrighted. Every example, note and passage in the
+# course is written for it, never copied from pu or ku (#581, question 3;
+# CC BY-SA 4.0, #510).
+#
+# A planned unit holds one core id. Where a written unit will hold more
+# than one deck, the others are named in a comment over the unit they
+# join; a theme's sentence deck, tok-<theme>-sentences, joins its theme's
+# unit once written.
+#
+# Every deck of Toki Pona is listed exactly once.
+schema: 1
+kind: "path"
+id: "tok-path"
+language: "tok"
+# The gender classes a noun's gender is one of (#512; DECK-FORMAT.md, Card
+# data): none, since Toki Pona has no grammatical gender.
+genders: []
+# "*" takes decks a learner adds (#22): one of a unit's theme at the
+# bottom of that unit, any other in the last unit.
+units:
+  # A1: about half the language, the basic sentence, negation, questions,
+  # commands, modifiers and time.
+  #
+  # 1. The phrasebook, taught whole from the first lesson: toki!, mi pona,
+  # sina pona ala pona?, nimi mi li ..., mi sona ala, tawa pona, awen pona.
+  # tok-first-words joins it when written. Its 7 words: toki, pona, mi,
+  # sina, ala, nimi, sona.
+  - planned: { id: "tok-phrasebook", theme: "first-words", words: 7 }
+    listening_passages:
+      - { id: "first-toki", text: { "en": "Toki and tawa pona: two people meet in an online voice chat, say their names and leave" } }
+    reading_passages:
+      - { id: "name-tags", text: { "en": "Name tags at a meetup: nimi mi li ... and where each person comes from" } }
+  # 2. The sounds: 9 consonants and 5 vowels, j said y, the stress always
+  # on the first syllable, the syllables the language forbids (wu, wo, ji,
+  # ti, and n before m or n), and capitals only for names. No new words:
+  # its pairs are the phrasebook's words and the next units'.
+  - planned: { id: "tok-sound-differences", grammar: ["sounds-syllables", "first-syllable-stress"] }
+    listening_passages:
+      - { id: "sounds-alike", text: { "en": "Pairs said one after the other: sina and sona, pan and pana, kon and ko" } }
+    reading_passages:
+      - { id: "fourteen-letters", text: { "en": "The fourteen letters, each with a word that starts with it" } }
+  # seme, anu, lon (true, yes, there) and a. The question forms are rules,
+  # in units 6 and 8.
+  - planned: { id: "tok-questions", theme: "questions", words: 4 }
+    listening_passages:
+      - { id: "what-is-it", text: { "en": "Someone asks what things are and is told: ni li seme?" } }
+    reading_passages:
+      - { id: "quiz-card", text: { "en": "A short quiz card with four simple questions" } }
+  # ona, ni, jan and ijo: with mi and sina, every pronoun the language has.
+  - planned: { id: "tok-pronouns", theme: "pronouns", words: 4 }
+    listening_passages:
+      - { id: "who-is-who", text: { "en": "Pointing out who is who in a group photo: ona, ni, jan ni" } }
+    reading_passages:
+      - { id: "group-chat", text: { "en": "Messages in a group chat, each saying who is writing" } }
+  # moku, lape, pali, lukin, kute, jo, pana, wile, kama and tawa.
+  - planned: { id: "tok-everyday-verbs", theme: "everyday-verbs", words: 10 }
+    listening_passages:
+      - { id: "what-i-do", text: { "en": "A short monologue: what I eat, see, hear and want today" } }
+    reading_passages:
+      - { id: "day-note", text: { "en": "A note left for a housemate about who is eating and sleeping when" } }
+  # The basic sentence: li before the predicate, no li after mi or sina
+  # alone, e before the object. Any word can be a noun, verb or modifier
+  # by its place: moku is food and to eat.
+  - planned: { id: "tok-grammar-sentence", grammar: ["li-predicate", "mi-sina-without-li", "e-object", "word-roles"] }
+    listening_passages:
+      - { id: "simple-statements", text: { "en": "Ten short statements about a cat, a person and some food" } }
+    reading_passages:
+      - { id: "three-lines", text: { "en": "A three-line story: someone sees food, wants it and eats it" } }
+  # suli, lili, ike, sin, wawa, mute, ante and sama.
+  - planned: { id: "tok-describing", theme: "describing", words: 8 }
+    listening_passages:
+      - { id: "describing-a-room", text: { "en": "Someone describes a room: big, small, new, strong" } }
+    reading_passages:
+      - { id: "for-sale", text: { "en": "A small ad describing something for sale" } }
+  # ala after the word it denies; the X ala X question (sina pona ala
+  # pona?); seme in the place of the answer; answering with the verb.
+  - planned: { id: "tok-grammar-negation-questions", grammar: ["negation-ala", "x-ala-x-questions", "seme-questions", "answering-yes-no"] }
+    listening_passages:
+      - { id: "yes-no-game", text: { "en": "A guessing game played with yes-no questions" } }
+    reading_passages:
+      - { id: "faq", text: { "en": "A short question-and-answer page about a club" } }
+  # mama, mije, meli, kulupu, olin and poka (the people beside you).
+  - planned: { id: "tok-family", theme: "family", words: 6 }
+    listening_passages:
+      - { id: "my-family", text: { "en": "Someone describes the people in a family photo" } }
+    reading_passages:
+      - { id: "family-tree", text: { "en": "A small family tree, with each person described in toki pona" } }
+  # o for commands (o moku!), o after a name to address someone (jan Ana
+  # o, ...), and mi wile e ni: sina ... for a polite request.
+  - planned: { id: "tok-grammar-o", grammar: ["o-commands", "o-address"] }
+    listening_passages:
+      - { id: "kitchen-orders", text: { "en": "Someone gives orders while cooking: o pana e telo!" } }
+    reading_passages:
+      - { id: "house-rules", text: { "en": "A list of house rules, each starting with o" } }
+  # telo, kili, pan, suwi, seli and lete.
+  - planned: { id: "tok-food", theme: "food", words: 6 }
+    listening_passages:
+      - { id: "what-to-eat", text: { "en": "Two friends decide what to eat and drink" } }
+    reading_passages:
+      - { id: "simple-menu", text: { "en": "A simple café menu described in toki pona words" } }
+  # wan, tu, luka, ale and nanpa; mute is already known. The simple
+  # system (wan, tu, mute) and counting with luka; nanpa for ordinals.
+  # The full nasin nanpa pona is B1's.
+  - planned: { id: "tok-numbers-1-20", theme: "numbers-1-20", words: 5 }
+    listening_passages:
+      - { id: "counting-fruit", text: { "en": "Counting pieces of fruit aloud, with wan, tu, luka and mute" } }
+    reading_passages:
+      - { id: "scoreboard", text: { "en": "A game's scoreboard: who is nanpa wan and nanpa tu" } }
+  # Modifiers follow their head (jan pona, tomo lili), several in a row
+  # each modify the whole before them, and a number or mute after a noun
+  # makes a plural; nouns never change.
+  - planned: { id: "tok-grammar-modifiers", grammar: ["head-first-modifiers", "number-after-noun"] }
+    listening_passages:
+      - { id: "which-one", text: { "en": "Choosing between things: the big red one, the two small ones" } }
+    reading_passages:
+      - { id: "lost-and-found", text: { "en": "A lost-and-found notice describing a lost bag" } }
+  # tomo, supa, poki, lupa and ilo.
+  - planned: { id: "tok-home", theme: "home", words: 5 }
+    listening_passages:
+      - { id: "house-tour", text: { "en": "A short tour of a small house" } }
+    reading_passages:
+      - { id: "room-for-rent", text: { "en": "A notice offering a room, with what is in it" } }
+  # tenpo, suno, mun, open and pini.
+  - planned: { id: "tok-time", theme: "time", words: 5 }
+    listening_passages:
+      - { id: "my-day", text: { "en": "Someone says what they do in the morning, by day and at night" } }
+    reading_passages:
+      - { id: "event-times", text: { "en": "A club's notice of when a meeting starts and ends" } }
+  # Time with la: tenpo pini la (before, the past), tenpo ni la (now),
+  # tenpo kama la (later, the future). Toki Pona has no tense; la is how
+  # a sentence is placed in time.
+  - planned: { id: "tok-grammar-time-la", grammar: ["tenpo-la"] }
+    listening_passages:
+      - { id: "yesterday-tomorrow", text: { "en": "Someone says what they did and what they will do" } }
+    reading_passages:
+      - { id: "diary-entry", text: { "en": "A three-line diary entry about yesterday and tomorrow" } }
+  # pakala, awen, ken and weka: something goes wrong, wait, can, gone.
+  - planned: { id: "tok-help", theme: "help", words: 4 }
+    listening_passages:
+      - { id: "something-broke", text: { "en": "Someone asks for help: something is broken and a thing is missing" } }
+    reading_passages:
+      - { id: "help-notice", text: { "en": "A notice: what to do if the door is broken" } }
+    milestone: "A1"
+  # A2: the rest of pu, pi, the prepositions, the preverbs, la clauses and
+  # joining. Reading and listening to short texts.
+  #
+  # sijelo, lawa, noka, uta, selo and nena; luka is already known.
+  - planned: { id: "tok-body", theme: "body", words: 6 }
+    listening_passages:
+      - { id: "at-the-doctor", text: { "en": "Someone tells a friend where it hurts" } }
+    reading_passages:
+      - { id: "stretching", text: { "en": "A short stretching routine: head, hands, legs" } }
+  # pi groups the modifiers after it into one: tomo pi telo nasa (a
+  # building of strange water: a bar) against tomo telo nasa.
+  - planned: { id: "tok-grammar-pi", grammar: ["pi-grouping"] }
+    listening_passages:
+      - { id: "two-meanings", text: { "en": "Pairs of phrases with and without pi, and what each means" } }
+    reading_passages:
+      - { id: "shop-signs", text: { "en": "Shop signs on a street, each a phrase with pi" } }
+  # anpa, insa, monsi, sinpin and sewi: below, inside, behind, in front,
+  # above. Placed with lon in the next unit (lon insa tomo).
+  - planned: { id: "tok-location", theme: "location", words: 5 }
+    listening_passages:
+      - { id: "where-is-it", text: { "en": "Looking for keys: under the table, inside the box, behind the door" } }
+    reading_passages:
+      - { id: "shelf-labels", text: { "en": "Labels on shelves saying what is where" } }
+  # nasin, tan and kepeken: the way, from or because, and using.
+  - planned: { id: "tok-directions", theme: "directions", words: 3 }
+    listening_passages:
+      - { id: "which-way", text: { "en": "Asking the way to a friend's house" } }
+    reading_passages:
+      - { id: "route-note", text: { "en": "A note giving the route from the station" } }
+  # The prepositions, which are also verbs: lon (at, in), tawa (to,
+  # for), tan (from, because of), kepeken (using) and sama (like). After
+  # li or after the object, never with e.
+  - planned: { id: "tok-grammar-prepositions", grammar: ["lon-prep", "tawa-prep", "tan-prep", "kepeken-prep", "sama-prep"] }
+    listening_passages:
+      - { id: "a-trip", text: { "en": "Someone tells how they went from home to the market and why" } }
+    reading_passages:
+      - { id: "postcard", text: { "en": "A postcard: where I am, what I came by, who I am with" } }
+  # soweli, waso, kala, pipi, akesi and mu (an animal's sound).
+  - planned: { id: "tok-animals", theme: "animals", words: 6 }
+    listening_passages:
+      - { id: "farm-sounds", text: { "en": "A child's game naming animals and the sounds they make" } }
+    reading_passages:
+      - { id: "zoo-signs", text: { "en": "Signs at a small zoo describing each animal" } }
+  # len, kule, loje, jelo, laso, walo and pimeja: Toki Pona's five colour
+  # words, and how other colours are mixed from them (laso jelo).
+  - planned: { id: "tok-clothes", theme: "clothes", words: 7 }
+    listening_passages:
+      - { id: "what-to-wear", text: { "en": "Two friends choose clothes and colours for an event" } }
+    reading_passages:
+      - { id: "flag-descriptions", text: { "en": "Three flags described by their colours and shapes" } }
+  # The preverbs before a verb: wile, ken, kama, awen, sona, lukin, open
+  # and pini (mi wile moku); kama with a modifier for becoming (kama
+  # suli).
+  - planned: { id: "tok-grammar-preverbs", grammar: ["preverbs", "kama-becoming"] }
+    listening_passages:
+      - { id: "learning-plans", text: { "en": "Someone says what they want, can and are starting to learn" } }
+    reading_passages:
+      - { id: "new-year-wishes", text: { "en": "A list of wishes for the new year" } }
+  # palisa, sike, linja, lipu, sitelen, kiwen and ko.
+  - planned: { id: "tok-things", theme: "things", words: 7 }
+    listening_passages:
+      - { id: "whats-in-the-bag", text: { "en": "Someone lists what is in their bag and what each is for" } }
+    reading_passages:
+      - { id: "craft-steps", text: { "en": "The steps of a simple craft: a stick, a stone, some paper" } }
+  # esun and mani: the market and money.
+  - planned: { id: "tok-market", theme: "market", words: 2 }
+    listening_passages:
+      - { id: "at-the-stall", text: { "en": "Buying fruit at a market stall" } }
+    reading_passages:
+      - { id: "price-list", text: { "en": "A market stall's price list, in toki pona numbers" } }
+  # la with a whole clause as the context: sina kama la mi pilin pona (if
+  # or when you come, I feel good).
+  - planned: { id: "tok-grammar-la-clauses", grammar: ["la-clause-context"] }
+    listening_passages:
+      - { id: "if-it-rains", text: { "en": "A friend's plans if it rains and if it does not" } }
+    reading_passages:
+      - { id: "game-rules", text: { "en": "The rules of a simple game, each in an if-then sentence" } }
+  # kasi, kon and ma.
+  - planned: { id: "tok-nature", theme: "nature", words: 3 }
+    listening_passages:
+      - { id: "a-walk", text: { "en": "Someone describes a walk in the country" } }
+    reading_passages:
+      - { id: "park-notice", text: { "en": "A notice at a park entrance" } }
+  # pilin, musi, nasa and jaki.
+  - planned: { id: "tok-feelings", theme: "feelings", words: 4 }
+    listening_passages:
+      - { id: "how-was-it", text: { "en": "Friends say how a party felt to each of them" } }
+    reading_passages:
+      - { id: "mood-diary", text: { "en": "A week of one-line mood diary entries" } }
+  # Joining: en between subjects, several li and several e, anu for a
+  # choice, and taso (but, only), its one word.
+  - planned: { id: "tok-grammar-joining", grammar: ["en-subjects", "repeated-li-e", "anu-choice", "taso-but"], words: 1 }
+    listening_passages:
+      - { id: "plans-for-two", text: { "en": "Two people plan a day: who does what, this or that" } }
+    reading_passages:
+      - { id: "shopping-list", text: { "en": "A note: buy bread and fruit, but not sweets" } }
+  # moli, utala, kalama and alasa.
+  - planned: { id: "tok-more-verbs", theme: "more-verbs", words: 4 }
+    listening_passages:
+      - { id: "a-hunt", text: { "en": "A short story told aloud: someone tries to catch a noisy bird" } }
+    reading_passages:
+      - { id: "game-report", text: { "en": "A report of a game: who fought, who tried, who lost" } }
+    milestone: "A2"
+  # B1: the nimi ku suli, composition, proper names, reported speech,
+  # chained contexts, and real community texts.
+  #
+  # misikeke and oko.
+  - planned: { id: "tok-health", theme: "health", words: 2 }
+    listening_passages:
+      - { id: "clinic-visit", text: { "en": "A visit to a clinic: what hurts, what to take and when" } }
+    reading_passages:
+      - { id: "medicine-label", text: { "en": "A medicine label explained in toki pona" } }
+  # Composition: how a head and its modifiers make a meaning, and the
+  # conventional compounds speakers share (jan pona, tomo tawa, ilo
+  # toki, telo nasa), each a phrase built from known words.
+  - planned: { id: "tok-grammar-compounds", grammar: ["compound-meaning", "conventional-compounds"] }
+    listening_passages:
+      - { id: "guess-the-thing", text: { "en": "A guessing game: players describe everyday objects without their English names" } }
+    reading_passages:
+      - { id: "compound-glossary", text: { "en": "A short glossary of common compounds, with what each part adds" } }
+  # kin, n and meso: indeed, a thinking sound, and the middle.
+  - planned: { id: "tok-opinions", theme: "opinions", words: 3 }
+    listening_passages:
+      - { id: "two-views", text: { "en": "Two speakers disagree about a film, each giving a reason" } }
+    reading_passages:
+      - { id: "forum-thread", text: { "en": "A short forum thread: is a new word needed?" } }
+  # Describing what has no word: choosing the head (what kind of thing is
+  # it?), then the modifiers, and pi chains for longer descriptions; why
+  # two speakers may say the same thing differently.
+  - planned: { id: "tok-grammar-describing-unnamed", grammar: ["choosing-the-head", "pi-chains", "many-ways-to-say"] }
+    listening_passages:
+      - { id: "explain-a-job", text: { "en": "Someone explains their job, which has no word in toki pona" } }
+    reading_passages:
+      - { id: "riddles", text: { "en": "Five riddles, each describing a thing without naming it" } }
+  # tonsi and unpa. unpa is in pu and in the sense of sex, taught with a
+  # note; to confirm with the owner whether the course teaches it.
+  - planned: { id: "tok-relationships", theme: "relationships", words: 2 }
+    listening_passages:
+      - { id: "how-we-met", text: { "en": "A couple tells how they met" } }
+    reading_passages:
+      - { id: "wedding-invite", text: { "en": "A wedding invitation" } }
+  # Proper names: an unofficial word used as a modifier after its head
+  # (jan Ali, ma Inli, toki Inli), with a capital; adapting a foreign
+  # name to Toki Pona's sounds and syllables.
+  - planned: { id: "tok-grammar-names", grammar: ["proper-names", "name-adaptation"] }
+    listening_passages:
+      - { id: "where-from", text: { "en": "People at a meetup say their names and countries in toki pona" } }
+    reading_passages:
+      - { id: "world-map", text: { "en": "A map's labels: countries and languages written as toki pona names" } }
+  # namako, kipisi and soko: spice or extra, to cut, and mushroom.
+  - planned: { id: "tok-cooking", theme: "cooking", words: 3 }
+    listening_passages:
+      - { id: "making-soup", text: { "en": "Someone explains how they make a mushroom soup" } }
+    reading_passages:
+      - { id: "recipe", text: { "en": "A short recipe with its steps" } }
+  # Reporting speech: ona li toki e ni: ... and the quoted sentence; ni
+  # pointing to what follows or what came before.
+  - planned: { id: "tok-grammar-reported-speech", grammar: ["ni-colon-quote", "reported-speech"] }
+    listening_passages:
+      - { id: "phone-message", text: { "en": "Someone passes on what a friend said on the phone" } }
+    reading_passages:
+      - { id: "news-item", text: { "en": "A short news item quoting two people" } }
+  # jasima, epiku and leko: mirror or reflect, epic, and block or step.
+  - planned: { id: "tok-arts", theme: "arts", words: 3 }
+    listening_passages:
+      - { id: "museum-talk", text: { "en": "A guide describes a painting and a statue" } }
+    reading_passages:
+      - { id: "poem", text: { "en": "A short poem written for the course, with a mirrored second half" } }
+  # Several contexts in one sentence: tenpo pini la, ma ni la, mi ...;
+  # a la clause inside a story.
+  - planned: { id: "tok-grammar-la-chains", grammar: ["stacked-la"] }
+    listening_passages:
+      - { id: "childhood", text: { "en": "Someone remembers a place from their childhood" } }
+    reading_passages:
+      - { id: "travel-blog", text: { "en": "A paragraph of a travel blog" } }
+  # monsuta, kijetesantakalu and lanpan: fear or monster, the raccoon
+  # family (a well-known joke word), and to take.
+  - planned: { id: "tok-stories", theme: "stories", words: 3 }
+    listening_passages:
+      - { id: "bedtime-story", text: { "en": "A short bedtime story about a raccoon who takes food" } }
+    reading_passages:
+      - { id: "fable", text: { "en": "A fable written for the course, with a moral in the last line" } }
+  # The full number system, nasin nanpa pona: mute for twenty and ale
+  # for a hundred, counted in a row (ale tu mute luka tu); the simple
+  # system against it.
+  - planned: { id: "tok-grammar-numbers", grammar: ["nasin-nanpa-pona"] }
+    listening_passages:
+      - { id: "how-old", text: { "en": "People say their ages in the full number system" } }
+    reading_passages:
+      - { id: "scores-table", text: { "en": "A table of scores written in the full number system" } }
+  # pu and ku: the books, and to use or interact with them; the
+  # community: its servers, meetups, podcasts, its Wikipedia-like wikis,
+  # the word lists (pu, ku suli, nimi sin) and how speakers differ on
+  # them.
+  - planned: { id: "tok-language-community", theme: "language-community", words: 2 }
+    listening_passages:
+      - { id: "podcast-clip", text: { "en": "A podcast-style chat between two speakers about how they learned toki pona" } }
+    reading_passages:
+      - { id: "community-intro", text: { "en": "A welcome page for new speakers on a community site" } }
+    milestone: "B1"
+  - ["*"]

@@ -1,0 +1,569 @@
+# The order Sumerian is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner from
+# English is taught sux-en-kingship for sux-kingship (ADR-0013, ADR-0036).
+#
+# This is also Sumerian's plan to its last level (docs/DECK-FORMAT.md, "The
+# B1 plan"): every unit to the last milestone, with its size in words, its
+# grammar topics, the three milestones, and each unit's listening and
+# reading passages. No Sumerian deck is written yet, so every unit is
+# planned: the course teaches each as "Coming" until its deck is written.
+#
+# A reading course, not a speaking one (#583). Sumerian has had no speakers
+# for about four thousand years: it is a language isolate, written in
+# cuneiform from about 3300 BCE, spoken until about 2000-1800 BCE, and
+# copied and studied by Babylonian scribes long after. Its sounds are
+# reconstructed from how Akkadian scribes spelled it, so nobody can order
+# food in it or hold a conversation, and a CEFR B1 of daily life does not
+# apply. The format names the milestones A1, A2 and B1, and the plan keeps
+# those names, but here they mean three reading levels:
+#
+# - A1, "Signs and formulae" (450 words): read the formulae of royal
+#   dedications, the gods, kings and cities they name, about 130 signs, the
+#   noun's cases with the ergative, the genitive chain, the copula and the
+#   simplest verbal chain (mu-na-du₃, he built it for him/her). The level
+#   ends with a whole Ur III dedication read with a sign list beside it.
+# - A2, "Royal inscriptions" (650 more, 1,100 in all): read Ur III and
+#   Lagash II royal inscriptions, year names and the simplest administrative
+#   receipts without help: about 220 signs, the marû stem, the modal
+#   prefixes, the dimensional infixes, subordinate clauses and non-finite
+#   forms. The level ends with Gudea's statue inscriptions and the prologue
+#   of Ur-Namma's laws.
+# - B1, "Literary texts" (900 more, 2,000 in all): read short literary
+#   texts in their Old Babylonian copies with a glossary: proverbs, school
+#   dialogues, hymns, passages of myth and epic, a lament in Emesal, about
+#   350 signs. The level ends with a passage of a royal hymn read without
+#   a translation.
+#
+# The sizes are lemmas (dictionary words), by judgement and of low
+# confidence: the formulaic inscriptions need fewer words than the plan's
+# usual 700, literary texts more. The three levels are within the
+# validator's ranges (half to one and a half times 700, 900 and 1,200),
+# and the 2,000 in all is the bottom of its 2,000-3,500.
+#
+# The order follows docs/plans/words-rules-sentences.md and the path design
+# of 2026-10-17:
+# 1. the phrasebook, here the formulae of royal dedications, taught whole
+#    ("lugal kalag-ga", mighty king; "nam-ti-la-ni-še₃", for his life);
+# 2. the first word units, read in transliteration;
+# 3. the script after them (sign sets, below), skipped by a learner who
+#    reads in transliteration only (#554, ADR-0023);
+# 4. a core of about 200 common words in themed units;
+# 5. rules as forms: the nominal chain and its cases (the ergative, the
+#    genitive chain), then the copula and the verbal chain;
+# 6. sentences, each after its words and rules; then the other themes.
+#
+# Cuneiform signs. A sign has several values: a logogram (a word, 𒂍 (e₂),
+# house), syllabograms (𒈬 (mu), 𒈾 (na)) and determinatives, unspoken signs
+# that class the next or the last word (ᵈ before a god, ᵏⁱ after a place,
+# ᵍᵉˢ̌ before a wooden thing). The signs are taught in eight sets, each a
+# script unit, each after the units whose words use them: three in A1
+# (about 130 signs), two in A2 (about 90 more), three in B1 (about 130
+# more), about 350 in all, by judgement. They count no words. A learner
+# meets the standard transliteration first: syllabic values in lowercase
+# joined by hyphens (mu-na-du₃), an index for the homophonous sign (du,
+# du₃), a sign name in UPPERCASE where the reading is uncertain or the sign
+# is meant as a sign (KA), and a determinative in superscript (ᵈen-lil₂).
+#
+# The format has no planned form for a script unit, which counts neither
+# words nor grammar: a planned unit is a theme or a grammar topic. So each
+# sign set is planned as a grammar unit, script-signs-1 to script-signs-8,
+# with 0 words (as Japanese's kana and kanji sets are, #577). When its deck
+# is written it becomes a plain list unit, joins `alphabet`, and its topic
+# leaves the grammar count.
+#
+# Readings are the standard transliteration (lugal, e₂, ᵈnanna), sign by
+# sign, with a normalised transcription beside it for a word or phrase
+# (/lugal/, e₂-a-ni mu-na-du₃ as /e'ani munadu/). Neither is ISO 15919,
+# and the romanisation format cannot hold them yet (the pull request
+# names the gap).
+#
+# Passages. Every passage is a real ancient text, or a few lines of one,
+# graded from a brick stamp to a hymn, never a text written for the course.
+# Each names the corpus its edition comes from: ORACC for royal and
+# administrative texts (its royal-inscription and Ur III projects), ETCSL
+# (the Electronic Text Corpus of Sumerian Literature, Oxford) for literary
+# texts, and ePSD2 (the Electronic Pennsylvania Sumerian Dictionary, on
+# ORACC) for glosses. Their licences are an open question for the owner
+# (#510, #583): the texts are ancient, but an edition's transliteration and
+# translation may be under copyright. A listening passage is the same kind
+# of text read aloud by a scholar in the reconstructed pronunciation: there
+# is no speaker and no voice, so whether any audio is recorded is for the
+# owner to decide (#583).
+#
+# Sumerian distinguishes two noun classes, not genders: human (people and
+# gods) and non-human (animals, things, abstracts). The class chooses the
+# possessive (-a-ni, his/her, against -bi, its), the plural (-ene is human
+# only), and the verb's agreement (-n- against -b-). Telugu's mahat and
+# amahat are the same kind of division, and `genders` holds them the same
+# way. The classes are named human and non-human, not animate and
+# inanimate, since an animal is in the non-human class. To confirm with an
+# Assyriologist.
+#
+# No `regions`. The app asks a rater "Where you speak Sumerian", and nobody
+# does; the reviewer is an Assyriologist, not a speaker, so a region
+# answer would group raters by nothing their answers share. Sumerian's
+# real variation is by period (Old Sumerian, Ur III, Old Babylonian copies)
+# and by register (the main dialect, emegir, and Emesal, used for women's
+# speech and laments), not by a place a reader is from. A region's id is
+# permanent, and naming periods as regions would misuse the field. A
+# card's note gives its period or register instead, and the validator
+# refuses an empty `regions: []`, so the field is left out.
+#
+# A planned unit holds one core id. A theme's sentence deck,
+# sux-<theme>-sentences, joins its theme's unit once written.
+#
+# Every deck of Sumerian is listed exactly once.
+schema: 1
+kind: "path"
+id: "sux-path"
+language: "sux"
+# The noun classes a noun's gender is one of (#512; DECK-FORMAT.md, Card
+# data): human and non-human, as Telugu's mahat and amahat.
+genders: ["human", "non-human"]
+# "*" takes decks a learner adds (#22): one of a unit's theme at the
+# bottom of that unit, any other in the last unit.
+units:
+  # A1, "Signs and formulae".
+  #
+  # 1. The phrasebook: the formulae of royal dedications, taught whole:
+  # lugal kalag-ga (mighty king), lugal urim₅ᵏⁱ-ma (king of Ur), lugal
+  # an-ub-da limmu₂-ba (king of the four quarters), nin-a-ni-ir (for his
+  # lady), nam-ti-la-ni-še₃ (for his life), e₂-a-ni mu-na-du₃ (he built her
+  # house for her), a mu-na-ru (he dedicated it to her).
+  - planned: { id: "sux-phrasebook", theme: "first-words", words: 15 }
+    listening_passages:
+      - { id: "brick-read-aloud", text: { "en": "Ur-Namma's brick stamp read aloud: Nanna, his lord, Ur-Namma, king of Ur, built his house (ORACC)" } }
+    reading_passages:
+      - { id: "ur-namma-brick", text: { "en": "The stamp on a baked brick of Ur-Namma from Ur, in transliteration with its translation (ORACC)" } }
+  # 2. Transliteration and the reconstructed sounds: sign values joined by
+  # hyphens, indices (du, du₃), UPPERCASE sign names, superscript
+  # determinatives; ĝ (ng), ḫ (as in Scottish loch), š (sh), and the
+  # uncertain ř. In place of a living language's sound-differences unit.
+  - planned: { id: "sux-transliteration", grammar: ["transliteration", "reconstructed-sounds"], words: 0 }
+    listening_passages:
+      - { id: "sounds-of-sumerian", text: { "en": "A scholar reads royal names aloud, Ur-Namma, Šulgi, Gudea, saying ĝ, ḫ and š as reconstructed" } }
+    reading_passages:
+      - { id: "one-line-three-ways", text: { "en": "One line of an inscription in transliteration, in normalised transcription and in translation, side by side (ORACC)" } }
+  # 3. The gods: an, ᵈen-lil₂, ᵈinana, ᵈnanna, ᵈutu, ᵈen-ki, ᵈnin-ĝir₂-su;
+  # dingir, god; their epithets.
+  - planned: { id: "sux-gods", theme: "gods", words: 40 }
+    listening_passages:
+      - { id: "divine-names", text: { "en": "The gods named in the openings of royal dedications, each with its epithet (ORACC)" } }
+    reading_passages:
+      - { id: "god-list-excerpt", text: { "en": "Ten lines of a god list, each god's name with the determinative ᵈ (ORACC)" } }
+  # 4. Kingship: lugal, ensi₂, nam-lugal, kalam, ki-en-gi (Sumer), ki-uri
+  # (Akkad), sipa (shepherd), the royal titles.
+  - planned: { id: "sux-kingship", theme: "kingship", words: 40 }
+    listening_passages:
+      - { id: "royal-titles", text: { "en": "Šulgi's titles read aloud: mighty man, king of Ur, king of Sumer and Akkad (ORACC)" } }
+    reading_passages:
+      - { id: "royal-seal", text: { "en": "A seal inscription naming a king and the servant who owned the seal (ORACC)" } }
+  # 5. Family: dumu, ama, a-a, šeš, nin₉, dam, dumu-munus.
+  - planned: { id: "sux-family", theme: "family", words: 30 }
+    listening_passages:
+      - { id: "son-of", text: { "en": "Who is whose son: the genealogies in the royal titles of Lagash's rulers (ORACC)" } }
+    reading_passages:
+      - { id: "personal-names", text: { "en": "Personal names that are sentences, from Ur III tablets: the god is my father, the son of the king (ORACC)" } }
+  # 6. Numbers 1 to 20: aš/diš, min, eš₅, limmu, ia₂, aš₃, imin, ussu,
+  # ilimmu, u; the wedges for units and tens, counting by sixty.
+  - planned: { id: "sux-numbers-1-20", theme: "numbers-1-20", words: 20 }
+    listening_passages:
+      - { id: "counting-sheep", text: { "en": "Sheep and goats counted aloud from a delivery tablet (ORACC)" } }
+    reading_passages:
+      - { id: "tally-tablet", text: { "en": "A short Ur III tablet of numbered sheep and goats, its number signs read (ORACC)" } }
+  # 7. The first signs, after the first six units: how cuneiform works
+  # (wedges, logograms, syllabograms, determinatives), and the about 40
+  # logograms of units 1 to 6 (𒈗 (lugal), 𒂍 (e₂), 𒀭 (an, dingir, ᵈ)).
+  - planned: { id: "sux-signs-1", grammar: "script-signs-1", words: 0 }
+    listening_passages:
+      - { id: "signs-of-the-brick", text: { "en": "The brick stamp read sign by sign, each sign named and given its value (ORACC)" } }
+    reading_passages:
+      - { id: "brick-in-cuneiform", text: { "en": "Ur-Namma's brick stamp in cuneiform, read with the signs taught (ORACC)" } }
+  # 8. The syllables of grammar: about 40 signs for the endings and
+  # prefixes (mu, na, ni, ba, ra, ka, ke₄, ta, še₃, a, e, da, ab, an).
+  - planned: { id: "sux-signs-2", grammar: "script-signs-2", words: 0 }
+    listening_passages:
+      - { id: "prefixes-heard", text: { "en": "Verb forms of dedications read aloud, mu-na-du₃, mu-na-ru, mu-na-dim₂: hearing the prefixes the signs write (ORACC)" } }
+    reading_passages:
+      - { id: "cone-opening", text: { "en": "The opening lines of a clay foundation cone of Lagash in cuneiform (ORACC)" } }
+  # 9 to 15. The core: about 200 common words, most common first by
+  # judgement (the ePSD2's corpus counts may order it again).
+  # Everyday verbs: du₃ (build), dug₄/e (say), ĝen (go), šum₂ (give), gub
+  # (stand), tuš (sit), ak (do), ĝar (place), de₆ (bring), gu₇ (eat).
+  - planned: { id: "sux-everyday-verbs", theme: "everyday-verbs", words: 40 }
+    listening_passages:
+      - { id: "what-the-king-did", text: { "en": "The verbs of royal deeds, read from inscriptions: he built, he dug, he brought, he set up (ORACC)" } }
+    reading_passages:
+      - { id: "building-lines", text: { "en": "Lines from Ur III inscriptions, each telling one thing the king did (ORACC)" } }
+  - planned: { id: "sux-describing", theme: "describing", words: 30 }
+    listening_passages:
+      - { id: "mighty-and-holy", text: { "en": "Epithets heard: gal (great), kalag (mighty), kug (holy), maḫ (lofty), dug₃ (good) (ORACC)" } }
+    reading_passages:
+      - { id: "epithet-chains", text: { "en": "The chains of epithets before a god's or a king's name in dedications (ORACC)" } }
+  - planned: { id: "sux-places", theme: "places", words: 35 }
+    listening_passages:
+      - { id: "cities-of-sumer", text: { "en": "The cities a king ruled, read aloud: Ur, Uruk, Nippur, Eridu, Lagash (ORACC)" } }
+    reading_passages:
+      - { id: "temple-and-city", text: { "en": "Lines naming a temple and its city, uru, e₂-gal, kalam, kur (ORACC)" } }
+  - planned: { id: "sux-things", theme: "things", words: 35 }
+    listening_passages:
+      - { id: "precious-materials", text: { "en": "The materials of dedicated objects: silver, gold, copper, stone, cedar (ORACC)" } }
+    reading_passages:
+      - { id: "votive-bowl", text: { "en": "The inscription on a stone bowl dedicated to a goddess (ORACC)" } }
+  - planned: { id: "sux-time", theme: "time", words: 25 }
+    listening_passages:
+      - { id: "day-month-year", text: { "en": "Dates heard at the end of tablets: u₄ (day), iti (month), mu (year) (ORACC)" } }
+    reading_passages:
+      - { id: "dated-tablet", text: { "en": "The date lines of three Ur III tablets: month, day and year name (ORACC)" } }
+  - planned: { id: "sux-body", theme: "body", words: 30 }
+    listening_passages:
+      - { id: "body-in-epithets", text: { "en": "Body words in royal phrases: chosen by the god's heart, looked on by the god's eye (ORACC)" } }
+    reading_passages:
+      - { id: "faithful-shepherd", text: { "en": "A king's epithets that use the body: šu (hand), igi (eye), ša₃ (heart), saĝ (head) (ORACC)" } }
+  - planned: { id: "sux-pronouns", theme: "pronouns", words: 10 }
+    listening_passages:
+      - { id: "i-am-the-king", text: { "en": "A king speaks of himself, ĝe₂₆-e (I), in lines of a royal hymn (ETCSL)" } }
+    reading_passages:
+      - { id: "who-and-what", text: { "en": "Short lines with a-ba (who) and a-na (what), from proverbs (ETCSL)" } }
+  # 16. The signs of the core, and the determinatives: ᵈ, ᵏⁱ, ᵍᵉˢ̌, ᵘʳᵘᵈᵘ,
+  # ⁿᵃ⁴, lu₂, about 50 signs.
+  - planned: { id: "sux-signs-3", grammar: "script-signs-3", words: 0 }
+    listening_passages:
+      - { id: "unspoken-signs", text: { "en": "Names with determinatives read aloud, the determinative left unspoken: ᵈnanna, urim₅ᵏⁱ, ᵍᵉˢ̌tukul (ORACC)" } }
+    reading_passages:
+      - { id: "door-socket", text: { "en": "A door-socket inscription in cuneiform, its determinatives found and named (ORACC)" } }
+  # 17 to 22. Rules as forms, practised on the words known: the nominal
+  # chain and its cases first, then the copula and the verbal chain.
+  - planned: { id: "sux-grammar-noun-chain", grammar: ["noun-chain", "plural", "possessive-suffixes"], words: 0 }
+    listening_passages:
+      - { id: "his-house-their-houses", text: { "en": "Nouns heard with their endings: e₂-a-ni (his house), lugal-e-ne (the kings), dumu-ĝu₁₀ (my son) (ORACC)" } }
+    reading_passages:
+      - { id: "noun-phrases", text: { "en": "Noun phrases from inscriptions taken apart: noun, adjective, possessor, plural, case (ORACC)" } }
+  - planned: { id: "sux-grammar-ergative", grammar: ["ergative", "absolutive"], words: 0 }
+    listening_passages:
+      - { id: "who-built-it", text: { "en": "Who built and what was built: the ergative -e on the king, the absolutive on the house (ORACC)" } }
+    reading_passages:
+      - { id: "ergative-in-dedications", text: { "en": "Dedications whose subject carries -e (ur-ᵈnamma-ke₄) and whose object carries nothing (ORACC)" } }
+  - planned: { id: "sux-grammar-genitive", grammar: "genitive-chain", words: 0 }
+    listening_passages:
+      - { id: "king-of-ur", text: { "en": "The genitive chain heard: lugal urim₅ᵏⁱ-ma (king of Ur), dumu ᵈnanna-ka (of the son of Nanna) (ORACC)" } }
+    reading_passages:
+      - { id: "temple-names", text: { "en": "Temple names that are genitive chains, e₂ ᵈnin-ĝir₂-su-ka (Ningirsu's house) (ORACC)" } }
+  - planned: { id: "sux-grammar-cases", grammar: ["dative", "locative", "terminative", "comitative", "ablative", "equative"], words: 0 }
+    listening_passages:
+      - { id: "for-to-from", text: { "en": "Case endings heard in royal lines: -ra (for), -a (in), -še₃ (towards), -da (with), -ta (from), -gin₇ (like) (ORACC)" } }
+    reading_passages:
+      - { id: "from-the-mountains", text: { "en": "Lines telling where materials came from and where they were set (ORACC)" } }
+  - planned: { id: "sux-grammar-copula", grammar: "copula", words: 0 }
+    listening_passages:
+      - { id: "he-is-the-king", text: { "en": "Sentences that are names: lugal-am₃ (he is king), and the copula in personal names (ORACC)" } }
+    reading_passages:
+      - { id: "copula-names", text: { "en": "Ur III personal names built on the copula, such as the god is my king (ORACC)" } }
+  - planned: { id: "sux-grammar-verbal-chain", grammar: ["verbal-chain", "conjugation-prefixes", "dative-infix", "hamtu"], words: 0 }
+    listening_passages:
+      - { id: "mu-na-du3", text: { "en": "The verb of dedications heard slot by slot: mu- (prefix), -na- (for him/her), -du₃ (build) (ORACC)" } }
+    reading_passages:
+      - { id: "verb-slots", text: { "en": "The finite verbs of five dedications, each split into its prefix, infix, stem and suffix (ORACC)" } }
+  # 23 to 25. The other A1 themes, each its words, then its sentences.
+  - planned: { id: "sux-building", theme: "building", words: 35 }
+    listening_passages:
+      - { id: "temple-building", text: { "en": "A king's account of building: the brick, the foundation, the temple raised high (ORACC)" } }
+    reading_passages:
+      - { id: "foundation-cone", text: { "en": "A complete clay foundation cone of Lagash: whose temple, built by whom (ORACC)" } }
+  - planned: { id: "sux-offerings", theme: "offerings", words: 35 }
+    listening_passages:
+      - { id: "dedicated-mace", text: { "en": "The dedication on a stone mace head, read aloud (ORACC)" } }
+    reading_passages:
+      - { id: "dedicated-objects", text: { "en": "Inscriptions on dedicated objects: a bowl, a statue, a mace, a bead (ORACC)" } }
+  # The cities and kings the inscriptions name: urim₅ᵏⁱ, unug ᵏⁱ, nibru ᵏⁱ,
+  # lagaš ᵏⁱ, ur-ᵈnamma, ᵈšul-gi, gu₃-de₂-a.
+  - planned: { id: "sux-names", theme: "names", words: 30 }
+    listening_passages:
+      - { id: "whole-dedication", text: { "en": "A whole Ur III dedication read aloud, from the god's name to the verb (ORACC)" } }
+    reading_passages:
+      - { id: "ur-iii-dedication", text: { "en": "A complete Ur III royal dedication in cuneiform, read with a sign list (ORACC)" } }
+    milestone: "A1"
+  # A2, "Royal inscriptions".
+  - planned: { id: "sux-warfare", theme: "warfare", words: 50 }
+    listening_passages:
+      - { id: "he-destroyed", text: { "en": "Year names of war, read aloud: the year the king destroyed a city (ORACC)" } }
+    reading_passages:
+      - { id: "campaign-inscription", text: { "en": "An Ur III royal inscription of a campaign to the eastern mountains (ORACC)" } }
+  - planned: { id: "sux-grammar-maru", grammar: ["maru", "maru-agreement"], words: 0 }
+    listening_passages:
+      - { id: "will-do-and-did", text: { "en": "The same verb in its two stems: what was done (hamtu) and what is done or will be (marû) (ORACC)" } }
+    reading_passages:
+      - { id: "curse-formula", text: { "en": "The curse at the end of an inscription: whoever erases this name, may the gods curse him (ORACC)" } }
+  - planned: { id: "sux-fields-canals", theme: "fields-canals", words: 50 }
+    listening_passages:
+      - { id: "digging-a-canal", text: { "en": "A ruler tells how he dug a canal and brought water to the fields (ORACC)" } }
+    reading_passages:
+      - { id: "canal-inscription", text: { "en": "An inscription of a canal dug by a ruler of Lagash (ORACC)" } }
+  - planned: { id: "sux-grammar-infixes", grammar: ["dimensional-infixes", "ba-prefix"], words: 0 }
+    listening_passages:
+      - { id: "into-and-from", text: { "en": "Verbs with the infixes -ni- (in), -ši- (towards), -da- (with) and -ta- (from), and the prefix ba-, heard (ORACC)" } }
+    reading_passages:
+      - { id: "infix-lines", text: { "en": "Lines of Gudea's inscriptions whose verbs carry dimensional infixes (ORACC)" } }
+  # The signs of royal inscriptions; compound signs (one sign inside
+  # another) and gunû signs; about 50 signs.
+  - planned: { id: "sux-signs-4", grammar: "script-signs-4", words: 0 }
+    listening_passages:
+      - { id: "compound-signs", text: { "en": "Compound signs named and read: a sign written inside KA, and what it adds (ORACC)" } }
+    reading_passages:
+      - { id: "statue-lines", text: { "en": "Ten lines of a Gudea statue in cuneiform (ORACC)" } }
+  - planned: { id: "sux-animals", theme: "animals", words: 45 }
+    listening_passages:
+      - { id: "flocks-and-herds", text: { "en": "Animals counted in a delivery to the royal livestock centre at Puzrish-Dagan (ORACC)" } }
+    reading_passages:
+      - { id: "livestock-receipt", text: { "en": "An Ur III receipt of sheep, goats and cattle (ORACC)" } }
+  - planned: { id: "sux-food", theme: "food", words: 40 }
+    listening_passages:
+      - { id: "rations", text: { "en": "Rations of barley, beer and bread listed for workers (ORACC)" } }
+    reading_passages:
+      - { id: "ration-list", text: { "en": "An Ur III ration list: who received how much barley and oil (ORACC)" } }
+  - planned: { id: "sux-administration", theme: "administration", words: 50 }
+    listening_passages:
+      - { id: "received-by", text: { "en": "The formulae of receipts heard: ki ... -ta (from), šu ba-ti (he received), ĝiri₃ (via) (ORACC)" } }
+    reading_passages:
+      - { id: "drehem-receipt", text: { "en": "A complete receipt from Puzrish-Dagan, with its seal and its date (ORACC)" } }
+  - planned: { id: "sux-numbers-big", theme: "numbers-big", words: 30 }
+    listening_passages:
+      - { id: "sixty-and-more", text: { "en": "Large numbers in the sexagesimal system heard: 60, 600, 3,600 (ORACC)" } }
+    reading_passages:
+      - { id: "barley-account", text: { "en": "A barley account totalled in gur and sila₃ (ORACC)" } }
+  - planned: { id: "sux-grammar-numerals", grammar: "numerals-and-measures", words: 0 }
+    listening_passages:
+      - { id: "how-much-barley", text: { "en": "Amounts heard: the numeral, the unit of measure and the thing measured, in that order (ORACC)" } }
+    reading_passages:
+      - { id: "silver-weights", text: { "en": "Silver weighed in ma-na and gin₂ in a short Ur III account (ORACC)" } }
+  # Numbers and measures in the script, and the signs of administrative
+  # tablets; about 40 signs.
+  - planned: { id: "sux-signs-5", grammar: "script-signs-5", words: 0 }
+    listening_passages:
+      - { id: "reading-a-total", text: { "en": "A tablet's total read from its number signs, sign by sign (ORACC)" } }
+    reading_passages:
+      - { id: "account-in-cuneiform", text: { "en": "A short Ur III account in cuneiform, its numbers and measures read (ORACC)" } }
+  - planned: { id: "sux-work", theme: "work", words: 45 }
+    listening_passages:
+      - { id: "officials", text: { "en": "The officials of a tablet heard: the scribe, the overseer, the courier (ORACC)" } }
+    reading_passages:
+      - { id: "work-gangs", text: { "en": "A record of workers' days in a work gang (ORACC)" } }
+  - planned: { id: "sux-crafts", theme: "crafts", words: 40 }
+    listening_passages:
+      - { id: "craft-workshop", text: { "en": "Materials issued to craftsmen: the smith, the carpenter, the leather worker (ORACC)" } }
+    reading_passages:
+      - { id: "workshop-record", text: { "en": "An Ur III workshop record of metal and wood issued and returned (ORACC)" } }
+  - planned: { id: "sux-grammar-modal", grammar: ["modal-prefixes", "negation", "imperative"], words: 0 }
+    listening_passages:
+      - { id: "may-he-live", text: { "en": "Wishes and commands heard: ḫe₂- (may he), ga- (let me), na- (do not), nu- (not) (ORACC)" } }
+    reading_passages:
+      - { id: "letter-order", text: { "en": "A short Ur III letter-order: say to so-and-so, give him the barley (ORACC)" } }
+  - planned: { id: "sux-location", theme: "location", words: 30 }
+    listening_passages:
+      - { id: "in-front-and-behind", text: { "en": "Relational nouns of place heard: igi (in front), egir (behind), ša₃ (inside), bar (outside) (ORACC)" } }
+    reading_passages:
+      - { id: "field-boundaries", text: { "en": "The boundaries of a field: which canal, which neighbour on which side (ORACC)" } }
+  - planned: { id: "sux-grammar-pronoun-forms", grammar: ["pronoun-cases", "demonstratives"], words: 0 }
+    listening_passages:
+      - { id: "this-and-that", text: { "en": "Pronouns in their cases and the demonstratives -bi, ne₂ and ur₅, heard in lines of inscriptions (ORACC)" } }
+    reading_passages:
+      - { id: "this-statue", text: { "en": "Lines that name this statue, this temple, that city (ORACC)" } }
+  - planned: { id: "sux-law", theme: "law", words: 45 }
+    listening_passages:
+      - { id: "justice-in-the-land", text: { "en": "Ur-Namma's prologue heard: he established justice in the land (ORACC)" } }
+    reading_passages:
+      - { id: "law-clauses", text: { "en": "Three clauses of Ur-Namma's laws: if a man ... (ORACC)" } }
+  - planned: { id: "sux-grammar-subordination", grammar: ["nominalising-a", "relative-clauses", "temporal-clauses"], words: 0 }
+    listening_passages:
+      - { id: "when-the-god", text: { "en": "Clauses heard: u₄ ... -a-ba (when), and -a turning a verb into a clause (ORACC)" } }
+    reading_passages:
+      - { id: "when-enlil-gave", text: { "en": "The opening of a royal inscription: when the god gave him the kingship (ORACC)" } }
+  - planned: { id: "sux-cult", theme: "cult", words: 50 }
+    listening_passages:
+      - { id: "festival-offerings", text: { "en": "Offerings for a festival of Nanna, listed animal by animal (ORACC)" } }
+    reading_passages:
+      - { id: "offering-list", text: { "en": "An Ur III list of offerings to the gods for one month (ORACC)" } }
+  # The Ur III months and the year names that date every tablet.
+  - planned: { id: "sux-calendar", theme: "calendar", words: 35 }
+    listening_passages:
+      - { id: "year-names-heard", text: { "en": "Year names of Šulgi read aloud: the year the king went from Ur to Nippur (ORACC)" } }
+    reading_passages:
+      - { id: "year-name-list", text: { "en": "Five year names of Šulgi and Amar-Suen, and the events they name (ORACC)" } }
+  - planned: { id: "sux-adverbs", theme: "adverbs", words: 40 }
+    listening_passages:
+      - { id: "for-ever", text: { "en": "Adverbs heard in inscriptions: u₄ ul-li₂-a-še₃ (for ever), the way of old (ORACC)" } }
+    reading_passages:
+      - { id: "as-in-days-of-old", text: { "en": "Lines that set the king's deeds against the days of old (ORACC)" } }
+  - planned: { id: "sux-grammar-nonfinite", grammar: ["participles", "ed-form"], words: 0 }
+    listening_passages:
+      - { id: "the-one-who-built", text: { "en": "Participles heard: lu₂ e₂ du₃-a (the man who built the house) (ORACC)" } }
+    reading_passages:
+      - { id: "builder-epithets", text: { "en": "Royal epithets made of participles: the one who built, the one who restored (ORACC)" } }
+  - planned: { id: "sux-more-verbs", theme: "more-verbs", words: 50 }
+    listening_passages:
+      - { id: "gudea-dream", text: { "en": "A passage of Gudea's cylinders: the dream that told him to build the temple (ETCSL)" } }
+    reading_passages:
+      - { id: "gudea-statue-b", text: { "en": "Gudea's Statue B, its account of the temple and the materials brought for it (ORACC)" } }
+  - planned: { id: "sux-home", theme: "home", words: 25 }
+    listening_passages:
+      - { id: "house-sale", text: { "en": "A house sale heard: the house, its size, its price in silver (ORACC)" } }
+    reading_passages:
+      - { id: "sale-contract", text: { "en": "A short sale contract of a house plot (ORACC)" } }
+  # Textiles: tug₂, siki (wool), gada (linen), the clothes of rations.
+  - planned: { id: "sux-clothes", theme: "clothes", words: 25 }
+    listening_passages:
+      - { id: "garments-issued", text: { "en": "Garments and wool issued to workers, heard from a textile account (ORACC)" } }
+    reading_passages:
+      - { id: "ur-namma-prologue", text: { "en": "The prologue of Ur-Namma's laws, read without a translation (ORACC)" } }
+    milestone: "A2"
+  # B1, "Literary texts", in their Old Babylonian copies.
+  - planned: { id: "sux-proverbs", theme: "proverbs", words: 60 }
+    listening_passages:
+      - { id: "short-proverbs", text: { "en": "Five short proverbs read aloud (ETCSL)" } }
+    reading_passages:
+      - { id: "proverb-collection", text: { "en": "Ten proverbs from the first Sumerian proverb collection (ETCSL)" } }
+  - planned: { id: "sux-grammar-ventive", grammar: "ventive", words: 0 }
+    listening_passages:
+      - { id: "come-here", text: { "en": "The ventive heard: verbs of coming towards the speaker, mu- and -m- (ETCSL)" } }
+    reading_passages:
+      - { id: "ventive-lines", text: { "en": "Lines of narrative whose verbs carry the ventive (ETCSL)" } }
+  - planned: { id: "sux-scribal-school", theme: "scribal-school", words: 50 }
+    listening_passages:
+      - { id: "schooldays", text: { "en": "A schoolboy tells his day at the tablet house, from the composition known as Schooldays (ETCSL)" } }
+    reading_passages:
+      - { id: "school-dialogue", text: { "en": "A passage of a school dialogue: teacher, pupil and the tablet (ETCSL)" } }
+  # Literary signs and polyvalence: the sign KA read ka, zu₂, du₁₁,
+  # inim, gu₃, kiri₃; about 50 signs.
+  - planned: { id: "sux-signs-6", grammar: "script-signs-6", words: 0 }
+    listening_passages:
+      - { id: "one-sign-many-words", text: { "en": "One sign, many readings: KA read as mouth, tooth, word, voice and nose, each in its line (ETCSL)" } }
+    reading_passages:
+      - { id: "proverbs-in-cuneiform", text: { "en": "Five proverbs in cuneiform, each sign's value chosen from the context (ETCSL)" } }
+  - planned: { id: "sux-feelings", theme: "feelings", words: 55 }
+    listening_passages:
+      - { id: "heart-glad", text: { "en": "Feelings heard in literary lines: ša₃ ḫul₂ (a glad heart), tears, anger (ETCSL)" } }
+    reading_passages:
+      - { id: "letter-prayer", text: { "en": "A passage of a letter-prayer: a servant pleads with the king (ETCSL)" } }
+  - planned: { id: "sux-grammar-genitive-2", grammar: ["anticipatory-genitive", "double-genitive"], words: 0 }
+    listening_passages:
+      - { id: "of-the-house-of", text: { "en": "Genitive within genitive heard, and the possessor placed before its noun (ETCSL)" } }
+    reading_passages:
+      - { id: "nested-genitives", text: { "en": "Hymn lines with nested genitive chains, taken apart (ETCSL)" } }
+  - planned: { id: "sux-nature", theme: "nature", words: 55 }
+    listening_passages:
+      - { id: "summer-and-winter", text: { "en": "The opening of the debate between Summer and Winter (ETCSL)" } }
+    reading_passages:
+      - { id: "flood-and-storm", text: { "en": "Lines of storm, flood and mountain from a hymn (ETCSL)" } }
+  - planned: { id: "sux-myth", theme: "myth", words: 60 }
+    listening_passages:
+      - { id: "enki-and-the-world", text: { "en": "A passage of Enki and the World Order: Enki gives each place its destiny (ETCSL)" } }
+    reading_passages:
+      - { id: "in-those-days", text: { "en": "The mythical opening: in those days, in those distant days (ETCSL)" } }
+  - planned: { id: "sux-grammar-causative", grammar: "causative", words: 0 }
+    listening_passages:
+      - { id: "made-him-do", text: { "en": "Causatives heard: the god made the king build, with the ergative and -ni- (ETCSL)" } }
+    reading_passages:
+      - { id: "causative-lines", text: { "en": "Lines of myth whose verbs make someone do something (ETCSL)" } }
+  - planned: { id: "sux-netherworld", theme: "netherworld", words: 45 }
+    listening_passages:
+      - { id: "descent-gates", text: { "en": "Inana passes the seven gates, from Inana's Descent to the Netherworld (ETCSL)" } }
+    reading_passages:
+      - { id: "descent-opening", text: { "en": "The opening of Inana's Descent: from the great above she set her mind on the great below (ETCSL)" } }
+  - planned: { id: "sux-hymns", theme: "hymns", words: 60 }
+    listening_passages:
+      - { id: "shulgi-runs", text: { "en": "Šulgi runs from Nippur to Ur in a single day, from his royal hymn (ETCSL)" } }
+    reading_passages:
+      - { id: "temple-hymn", text: { "en": "One of the temple hymns: a temple praised and its god named (ETCSL)" } }
+  # Signs of Old Babylonian literary copies; plene and phonetic spellings;
+  # about 40 signs.
+  - planned: { id: "sux-signs-7", grammar: "script-signs-7", words: 0 }
+    listening_passages:
+      - { id: "spelled-as-said", text: { "en": "Old Babylonian spellings heard against Ur III ones: the same word, spelled as it was said (ETCSL)" } }
+    reading_passages:
+      - { id: "hymn-in-cuneiform", text: { "en": "Ten lines of a royal hymn in cuneiform (ETCSL)" } }
+  - planned: { id: "sux-epic", theme: "epic", words: 60 }
+    listening_passages:
+      - { id: "gilgamesh-and-aga", text: { "en": "The envoys of Aga come to Uruk, from Gilgameš and Aga (ETCSL)" } }
+    reading_passages:
+      - { id: "lugalbanda-cave", text: { "en": "Lugalbanda left sick in the mountain cave, from Lugalbanda in the Mountain Cave (ETCSL)" } }
+  - planned: { id: "sux-grammar-reduplication", grammar: ["reduplication", "suppletion"], words: 0 }
+    listening_passages:
+      - { id: "go-and-goes", text: { "en": "Verbs that change: ĝen and re₇ (go, one and many), dug₄ and e (say), and reduplicated stems (ETCSL)" } }
+    reading_passages:
+      - { id: "many-went", text: { "en": "Epic lines where many people act and the verb shows it (ETCSL)" } }
+  - planned: { id: "sux-speech", theme: "speech", words: 50 }
+    listening_passages:
+      - { id: "he-spoke", text: { "en": "Speeches introduced in epic: he opened his mouth and spoke (ETCSL)" } }
+    reading_passages:
+      - { id: "council-of-elders", text: { "en": "Gilgameš speaks to the elders of Uruk, and they answer (ETCSL)" } }
+  - planned: { id: "sux-grammar-direct-speech", grammar: "direct-speech", words: 0 }
+    listening_passages:
+      - { id: "so-he-said", text: { "en": "Quoted speech heard, with the quotative -e-še (so he said) (ETCSL)" } }
+    reading_passages:
+      - { id: "messenger-speech", text: { "en": "A messenger repeats his master's words word for word (ETCSL)" } }
+  - planned: { id: "sux-love", theme: "love", words: 45 }
+    listening_passages:
+      - { id: "inana-and-dumuzi", text: { "en": "A passage of an Inana and Dumuzi song (ETCSL)" } }
+    reading_passages:
+      - { id: "love-song", text: { "en": "A short love song for a king (ETCSL)" } }
+  # Emesal, the register of women's speech and laments: ĝašan for nin
+  # (lady), umun for en (lord), mu for ĝeš (wood).
+  - planned: { id: "sux-emesal", theme: "emesal", words: 45 }
+    listening_passages:
+      - { id: "emesal-words", text: { "en": "Emesal words heard beside their main-dialect pairs, in a goddess's speech (ETCSL)" } }
+    reading_passages:
+      - { id: "goddess-speaks", text: { "en": "Inana's own words in Emesal, from a song (ETCSL)" } }
+  - planned: { id: "sux-grammar-emesal", grammar: "emesal", words: 0 }
+    listening_passages:
+      - { id: "emesal-sounds", text: { "en": "The sound changes of Emesal heard: where emegir has ĝ and Emesal m (ETCSL)" } }
+    reading_passages:
+      - { id: "emesal-lines", text: { "en": "Lament lines in Emesal, each set beside its main-dialect form (ETCSL)" } }
+  - planned: { id: "sux-lament", theme: "lament", words: 50 }
+    listening_passages:
+      - { id: "lament-for-ur", text: { "en": "The goddess mourns her city, from the Lament for Ur (ETCSL)" } }
+    reading_passages:
+      - { id: "city-destroyed", text: { "en": "The storm that destroyed the city, from the Lament for Sumer and Ur (ETCSL)" } }
+  # The last signs: rarer literary signs, and reading the Old Babylonian
+  # forms of signs from the font's later ones; about 40 signs.
+  - planned: { id: "sux-signs-8", grammar: "script-signs-8", words: 0 }
+    listening_passages:
+      - { id: "old-and-new-forms", text: { "en": "Signs named as a scholar compares their Old Babylonian forms with their later forms (ETCSL)" } }
+    reading_passages:
+      - { id: "lament-in-cuneiform", text: { "en": "Ten lines of a lament in cuneiform (ETCSL)" } }
+  - planned: { id: "sux-debates", theme: "debates", words: 50 }
+    listening_passages:
+      - { id: "hoe-and-plough", text: { "en": "The Hoe mocks the Plough, from the debate between Hoe and Plough (ETCSL)" } }
+    reading_passages:
+      - { id: "bird-and-fish", text: { "en": "The Bird boasts against the Fish, from their debate (ETCSL)" } }
+  - planned: { id: "sux-qualities", theme: "qualities", words: 50 }
+    listening_passages:
+      - { id: "praise-of-a-king", text: { "en": "A king's qualities praised: wise, just, strong, beloved (ETCSL)" } }
+    reading_passages:
+      - { id: "self-praise", text: { "en": "A king's praise of himself, from a royal hymn (ETCSL)" } }
+  - planned: { id: "sux-society", theme: "society", words: 50 }
+    listening_passages:
+      - { id: "slave-and-free", text: { "en": "Proverbs of rich and poor, slave and free (ETCSL)" } }
+    reading_passages:
+      - { id: "instructions-of-shuruppak", text: { "en": "Advice to a son, from the Instructions of Šuruppak (ETCSL)" } }
+  - planned: { id: "sux-health", theme: "health", words: 40 }
+    listening_passages:
+      - { id: "sick-man", text: { "en": "A sick man's complaint, from a literary letter or prayer (ETCSL)" } }
+    reading_passages:
+      - { id: "healing-goddess", text: { "en": "A hymn to the healing goddess Ninisina (ETCSL)" } }
+  - planned: { id: "sux-fate", theme: "fate", words: 40 }
+    listening_passages:
+      - { id: "fate-decreed", text: { "en": "The gods decree a fate: nam tar (ETCSL)" } }
+    reading_passages:
+      - { id: "death-of-a-hero", text: { "en": "A passage on a hero's death and the fate of all people (ETCSL)" } }
+  - planned: { id: "sux-grammar-literary", grammar: ["ob-spelling", "literary-style"], words: 0 }
+    listening_passages:
+      - { id: "parallel-lines", text: { "en": "Parallel lines and refrains heard, the way Sumerian poetry repeats (ETCSL)" } }
+    reading_passages:
+      - { id: "two-copies", text: { "en": "One passage in two Old Babylonian copies, their spellings compared (ETCSL)" } }
+  - planned: { id: "sux-music", theme: "music", words: 35 }
+    listening_passages:
+      - { id: "songs-and-instruments", text: { "en": "Instruments and songs named in a hymn: the balaĝ drum, the lyre, the song of praise (ETCSL)" } }
+    reading_passages:
+      - { id: "royal-hymn-unaided", text: { "en": "A passage of a royal hymn read without a translation (ETCSL)" } }
+    milestone: "B1"
+  - ["*"]
