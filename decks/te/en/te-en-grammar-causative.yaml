@@ -1,0 +1,17 @@
+schema: 1
+id: "te-en-grammar-causative"
+kind: "layer"
+core: "te-grammar-causative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "To make someone do it: -ించడం (-iñcaḍaṁ)"
+description: "The causative: a verb's -ించు (-iñcu) form makes someone else do the action, as 'to eat' becomes 'to feed'. Many verbs have their own causative, some use -బెట్టు (-beṭṭu) or -పజేయు (-pajēyu), and a few are said with a phrase. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "causative": "to make someone do it (verbal noun)"
+rules:
+  "te-rule-causative":
+    name: "-ించడం (-iñcaḍaṁ): to make someone do it"
+    explanation: "{1} is added to a verb's stem to say that someone else does the action: {2} is 'to make (someone) study', and {3} is 'to have (something) done'. Many verbs change their stem, or take another causative, so the table gives each verb's own form. A few verbs have no causative of their own and use a phrase with చేయడం (to do) instead. The rows marked 'unsure' in the deck are not yet checked by a Telugu speaker."
