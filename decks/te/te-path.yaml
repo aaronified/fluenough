@@ -451,7 +451,8 @@ units:
       - { id: "why-are-you-going", text: { "en": "Saying what you are going somewhere to do" } }
     reading_passages:
       - { id: "course-advert", text: { "en": "An advert for a course: what it is for" } }
-  - planned: { id: "te-technology", theme: "technology", words: 55 }
+  - decks: ["te-technology", "*"]
+    words: 55
     listening_passages:
       - { id: "fixing-a-phone", text: { "en": "Asking a shop to fix a phone" } }
     reading_passages:
