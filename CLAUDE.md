@@ -120,6 +120,21 @@ again."). This replaces the 2026-10-17 rule that only Telugu and Bengali
 were built here; the other courses' decks (#420) and the new courses'
 paths are no longer left to contributors.
 
+**Deck priority** (owner, 2026-10-18). Decks are built to B1 in this order:
+1. Telugu, 2. Bengali, 3. Spanish, 4. Marathi, 5. Kannada, 6. Assamese,
+7. Chinese, 8. Hindustani, 9. Japanese, 10. Korean. "Once these decks are
+done till B1 and we have added the movies songs books parts, we can
+finally start advertising the app." Other languages' paths and decks
+follow.
+
+**Hindustani** is one course (owner, 2026-10-18: "Hindi and Urdu should be
+combined as we should not care about socipolitics over linguistics"; chose
+"One course, two scripts"). The `hi` course and its card ids stay; it is
+renamed Hindustani, teaches the shared colloquial vocabulary, and offers
+Devanagari or Nastaliq as the learner's script, as Punjabi offers
+Gurmukhi or Shahmukhi. Sanskrit- and Persian-leaning synonyms go on the
+card. The Urdu path (#602) is folded into it.
+
 ## Dependencies are marked, never assumed (owner, 2026-10-12)
 
 When one issue needs another done first, record it on GitHub: set "blocked
