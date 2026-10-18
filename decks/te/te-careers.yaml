@@ -18,6 +18,8 @@ cards:
     pos: "noun"
     gender: "amahat"
     bases: "self"
+    synonyms:
+      - { id: "s1", ref: "te-2925" }
     notes:
       - { id: "n1", kind: "note" }
     examples:
@@ -34,6 +36,10 @@ cards:
           - { word: "సంస్థలో", base: "సంస్థ", reading: "samstha" }
           - { word: "వందల", base: "వంద", reading: "vanda" }
           - { word: "చేస్తారు", base: "చేయడం", reading: "cēyaḍam" }
+    senses:
+      - { id: "organization", pos: "noun", source: "https://en.wiktionary.org/wiki/సంస్థ" }
+      - { id: "company", pos: "noun", source: "https://en.wiktionary.org/wiki/సంస్థ" }
+      - { id: "institute", pos: "noun", source: "https://en.wiktionary.org/wiki/సంస్థ" }
   - ref: "te-2904"
   - id: "te-4301"
     target: "యజమాని"
@@ -42,6 +48,10 @@ cards:
     pos: "noun"
     gender: "mahat"
     bases: "self"
+    synonyms:
+      - { id: "s1", ref: "te-2902" }
+    antonyms:
+      - { id: "a1", ref: "te-2904" }
     notes:
       - { id: "n1", kind: "note" }
     examples:
@@ -56,6 +66,10 @@ cards:
         bases:
           - { word: "ఆఫీసుకి", base: "ఆఫీసు", reading: "āphīsu" }
           - { word: "వచ్చారు", base: "రావడం", reading: "rāvaḍam" }
+    senses:
+      - { id: "patron", pos: "noun", source: "https://en.wiktionary.org/wiki/యజమాని" }
+      - { id: "master", pos: "noun", source: "https://en.wiktionary.org/wiki/యజమాని" }
+      - { id: "owner", pos: "noun", source: "https://en.wiktionary.org/wiki/యజమాని" }
   - ref: "te-2903"
   - ref: "te-2905"
   - id: "te-4302"
@@ -274,6 +288,8 @@ cards:
         ipa: "iː koːrsuloː ʃikʂaɳa utʃit̪am."
         bases:
           - { word: "కోర్సులో", base: "కోర్సు", reading: "kōrsu" }
+    synonyms:
+      - { id: "nerputa", word: "నేర్పుట", reading: "nērpuṭa", source: "https://en.wiktionary.org/wiki/శిక్షణ" }
   - ref: "te-0414"
   - ref: "te-2911"
   - id: "te-4310"
