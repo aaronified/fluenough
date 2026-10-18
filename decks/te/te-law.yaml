@@ -43,6 +43,8 @@ cards:
     examples:
       - { target: "న్యాయమూర్తి గారు కేసును వాయిదా వేశారు.", reading: "nyāyamūrti gāru kēsunu vāyidā vēśāru.", ipa: "njaːjamuːrt̪i gaːru keːsunu ʋaːjid̪aː ʋeːʃaːru", bases: [{ word: "కేసును", base: "కేసు", reading: "kēsu" }, { word: "వేశారు", base: "వేయడం", reading: "vēyaḍaṁ" }] }
       - { target: "న్యాయమూర్తి ప్రశ్నలు అడిగారు.", reading: "nyāyamūrti praśnalu aḍigāru.", ipa: "njaːjamuːrt̪i praʃnalu aɖiɡaːru", bases: [{ word: "ప్రశ్నలు", base: "ప్రశ్న", reading: "praśna" }, { word: "అడిగారు", base: "అడగడం", reading: "aḍagaḍaṁ" }] }
+    synonyms:
+      - { id: "nyayadhipati", word: "న్యాయాధిపతి", reading: "nyāyādhipati", source: "https://en.wiktionary.org/wiki/న్యాయమూర్తి" }
   - id: "te-6003"
     target: "న్యాయవాది"
     reading: "nyāyavādi"
@@ -67,6 +69,8 @@ cards:
     examples:
       - { target: "నేను పోలీసులకు ఫిర్యాదు చేశాను.", reading: "nēnu pōlīsulaku phiryādu cēśānu.", ipa: "neːnu poːliːsulaku pʰirjaːd̪u tʃeːʃaːnu", bases: [{ word: "పోలీసులకు", base: "పోలీసు", reading: "pōlīsu" }, { word: "చేశాను", base: "చేయడం", reading: "cēyaḍaṁ" }] }
       - { target: "ఆయన ఫిర్యాదు రాతపూర్వకంగా ఇచ్చారు.", reading: "āyana phiryādu rātapūrvakaṅgā iccāru.", ipa: "aːjan̪a pʰirjaːd̪u raːt̪apuːrʋakaŋɡaː itʃtʃaːru", bases: [{ word: "రాతపూర్వకంగా", base: "రాతపూర్వకం", reading: "rātapūrvakaṁ" }, { word: "ఇచ్చారు", base: "ఇవ్వడం", reading: "ivvaḍaṁ" }] }
+    synonyms:
+      - { id: "mora", word: "మొర", reading: "mora", source: "https://en.wiktionary.org/wiki/ఫిర్యాదు" }
   - id: "te-6005"
     target: "నేరం"
     reading: "nēraṁ"
@@ -91,6 +95,8 @@ cards:
     examples:
       - { target: "ఈ నేరానికి కఠిన శిక్ష ఉంటుంది.", reading: "ī nērāniki kaṭhina śikṣa uṇṭundi.", ipa: "iː neːraːniki kaʈʰina ʃikʂa uɳʈund̪i", bases: [{ word: "నేరానికి", base: "నేరం", reading: "nēraṁ" }, { word: "ఉంటుంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }] }
       - { target: "అతడు శిక్షను తప్పించుకున్నాడు.", reading: "ataḍu śikṣanu tappiñcukunnāḍu.", ipa: "at̪aɖu ʃikʂanu t̪appint͡ʃukun̪n̪aːɖu", bases: [{ word: "శిక్షను", base: "శిక్ష", reading: "śikṣa" }, { word: "తప్పించుకున్నాడు", base: "తప్పించుకోవడం", reading: "tappiñcukōvaḍaṁ" }] }
+    senses:
+      - { id: "punishment", pos: "noun", source: "https://en.wiktionary.org/wiki/శిక్ష" }
   - id: "te-6007"
     target: "జైలు"
     reading: "jailu"
@@ -211,6 +217,9 @@ cards:
     examples:
       - { target: "ఆయన యజమానిపై దావా వేశారు.", reading: "āyana yajamānipai dāvā vēśāru.", ipa: "aːjan̪a jad͡ʒamaːnipai d̪aːʋaː ʋeːʃaːru", bases: [{ word: "యజమానిపై", base: "యజమాని", reading: "yajamāni" }, { word: "వేశారు", base: "వేయడం", reading: "vēyaḍaṁ" }] }
       - { target: "దావా ఖర్చు చాలా ఎక్కువ.", reading: "dāvā kharcu cālā ekkuva.", ipa: "d̪aːʋaː kʰart͡ʃu t͡ʃaːlaː ekːuʋa" }
+    senses:
+      - { id: "lawsuit", pos: "noun", source: "https://en.wiktionary.org/wiki/దావా" }
+      - { id: "claim", pos: "noun", source: "https://en.wiktionary.org/wiki/దావా" }
   - id: "te-6017"
     target: "జరిమానా"
     reading: "jarimānā"
@@ -223,6 +232,9 @@ cards:
     examples:
       - { target: "ట్రాఫిక్ నియమాలు ఉల్లంఘిస్తే జరిమానా ఉంటుంది.", reading: "ṭrāphik niyamālu ullaṅghistē jarimānā uṇṭundi.", ipa: "ʈraːpʰik nijamaːlu ullaŋɡʱisteː d͡ʒarimaːnaː uɳʈund̪i", bases: [{ word: "నియమాలు", base: "నియమం", reading: "niyamaṁ" }, { word: "ఉల్లంఘిస్తే", base: "ఉల్లంఘించడం", reading: "ullaṅghiñcaḍaṁ" }, { word: "ఉంటుంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }] }
       - { target: "అతడు వెయ్యి రూపాయలు జరిమానా కట్టాడు.", reading: "ataḍu veyyi rūpāyalu jarimānā kaṭṭāḍu.", ipa: "at̪aɖu ʋejːi ruːpaːjalu d͡ʒarimaːnaː kaʈʈaːɖu", bases: [{ word: "రూపాయలు", base: "రూపాయి", reading: "rūpāyi" }, { word: "కట్టాడు", base: "కట్టడం", reading: "kaṭṭaḍaṁ" }] }
+    senses:
+      - { id: "fine", pos: "noun", source: "https://en.wiktionary.org/wiki/జరిమానా" }
+      - { id: "penalty", pos: "noun", source: "https://en.wiktionary.org/wiki/జరిమానా" }
   - id: "te-6018"
     target: "అరెస్టు"
     reading: "aresṭu"
