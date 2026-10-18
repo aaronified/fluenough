@@ -207,9 +207,21 @@ Future<void> knowLanguage(
   await tester.pumpAndSettle();
   await tester.tap(find.widgetWithText(ListTile, name).first);
   await tester.pumpAndSettle();
-  await tester.tap(
-    find.byKey(ValueKey<String>(reads ? 'know-read' : 'know-speak')),
-  );
+  final oneScript = find.byKey(const ValueKey<String>('know-read'));
+  if (reads && oneScript.evaluate().isEmpty) {
+    // A language written in several scripts: tick its first, then Done.
+    await tester.tap(
+      find
+          .byWidgetPredicate((w) => w.key.toString().contains("'know-script-"))
+          .first,
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const ValueKey<String>('know-done')));
+  } else {
+    await tester.tap(
+      find.byKey(ValueKey<String>(reads ? 'know-read' : 'know-speak')),
+    );
+  }
   await tester.pumpAndSettle();
 }
 

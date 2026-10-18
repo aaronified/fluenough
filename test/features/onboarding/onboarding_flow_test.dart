@@ -102,9 +102,9 @@ void main() {
     expect(find.text(l10n.onboardingSpokenNeedOne), findsOneWidget);
     final go = find.widgetWithText(FilledButton, l10n.commonContinue);
     expect(tester.widget<FilledButton>(go).onPressed, isNull);
-    // Choosing Hindi asks, in one tap, whether its script is read (#462,
+    // Choosing Hindustani asks which of its scripts are read (#462,
     // #490), which nothing assumes.
-    await knowLanguage(tester, 'Hindi');
+    await knowLanguage(tester, 'Hindustani');
     expect(find.text(l10n.onboardingSpokenNeedOne), findsNothing);
     expect(settings.spokenLanguages, isEmpty, reason: 'nothing saved yet');
     expect(tester.widget<FilledButton>(go).onPressed, isNotNull);
@@ -309,7 +309,7 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.text(l10n.onboardingNext)); // the sound check
     await tester.pumpAndSettle();
-    await knowLanguage(tester, 'Hindi');
+    await knowLanguage(tester, 'Hindustani');
     await tester.tap(find.text(l10n.commonContinue));
     await tester.pumpAndSettle();
     expect(tester.takeException(), isNull);
