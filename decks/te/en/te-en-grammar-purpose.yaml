@@ -1,0 +1,17 @@
+schema: 1
+id: "te-en-grammar-purpose"
+kind: "layer"
+core: "te-grammar-purpose"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "In order to: -డానికి (-ḍāniki)"
+description: "A verb's -డం (-ḍaṁ) form with -ానికి (-āniki) says why someone does something: 'to eat', 'in order to eat'. The same form works for every person. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "purpose": "in order to do it, to do it"
+rules:
+  "te-rule-purpose":
+    name: "-డానికి (-ḍāniki): in order to"
+    explanation: "{1} is added to the verb's -డం (-ḍaṁ) form to say why someone does something. {2} is 'to eat' or 'in order to eat', {3} is 'in order to go', and {4} is 'in order to do'. The form is the same for every person: the rest of the sentence shows who is doing it, as in 'I am going to the market to buy vegetables'."
