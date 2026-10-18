@@ -10,7 +10,7 @@ tags: ["grammar", "unreviewed"]
 table:
   applies_to:
     pos: ["verb"]
-    except: ["te-0247", "te-0282", "te-0297", "te-0460", "te-0463", "te-0474", "te-0532", "te-0651", "te-1047", "te-1146", "te-1147", "te-1148", "te-1149", "te-1150", "te-3347", "te-3348", "te-3349", "te-3351"]
+    except: ["te-0247", "te-0282", "te-0297", "te-0460", "te-0463", "te-0474", "te-0532", "te-0651", "te-1047", "te-1146", "te-1147", "te-1148", "te-1149", "te-1150"]
   slots: ["past", "nonpast"]
   rows:
     - word: "te-0441"
@@ -501,7 +501,7 @@ table:
       readings: { "past": "mānēsina", "nonpast": "mānēsē" }
     - word: "te-3234"
       forms: { "past": "వేయించుకున్న", "nonpast": "వేయించుకునే" }
-      readings: { "past": "vēyin̄cukunna", "nonpast": "vēyin̄cukunē" }
+      readings: { "past": "vēyiñcukunna", "nonpast": "vēyiñcukunē" }
     - word: "te-3235"
       forms: { "past": "ఆరోగ్యంగా ఉన్న", "nonpast": "ఆరోగ్యంగా ఉండే" }
       readings: { "past": "ārōgyaṁgā unna", "nonpast": "ārōgyaṁgā uṇḍē" }
@@ -520,6 +520,30 @@ table:
     - word: "te-2933"
       forms: { "past": "నిర్ణయించిన", "nonpast": "నిర్ణయించే" }
       readings: { "past": "nirṇayiñcina", "nonpast": "nirṇayiñcē" }
+    - word: "te-3347"
+      forms: { "past": "సిగ్గుపడిన", "nonpast": "సిగ్గుపడే" }
+      readings: { "past": "siggupaḍina", "nonpast": "siggupaḍē" }
+    - word: "te-3348"
+      forms: { "past": "గర్వపడిన", "nonpast": "గర్వపడే" }
+      readings: { "past": "garvapaḍina", "nonpast": "garvapaḍē" }
+    - word: "te-3349"
+      forms: { "past": "కంగారుపడిన", "nonpast": "కంగారుపడే" }
+      readings: { "past": "kaṅgārupaḍina", "nonpast": "kaṅgārupaḍē" }
+    - word: "te-3351"
+      forms: { "past": "ఆనందించిన", "nonpast": "ఆనందించే" }
+      readings: { "past": "ānandiñcina", "nonpast": "ānandiñcē" }
+    - word: "te-3620"
+      forms: { "past": "అభిప్రాయపడిన", "nonpast": "అభిప్రాయపడే" }
+      readings: { "past": "abhiprāyapaḍina", "nonpast": "abhiprāyapaḍē" }
+    - word: "te-3622"
+      forms: { "past": "విమర్శించిన", "nonpast": "విమర్శించే" }
+      readings: { "past": "vimarśiñcina", "nonpast": "vimarśiñcē" }
+    - word: "te-3623"
+      forms: { "past": "ఊహించిన", "nonpast": "ఊహించే" }
+      readings: { "past": "ūhiñcina", "nonpast": "ūhiñcē" }
+    - word: "te-3624"
+      forms: { "past": "విభేదించిన", "nonpast": "విభేదించే" }
+      readings: { "past": "vibhēdiñcina", "nonpast": "vibhēdiñcē" }
 rules:
   - id: "te-rule-relative-past"
     slots: ["past"]

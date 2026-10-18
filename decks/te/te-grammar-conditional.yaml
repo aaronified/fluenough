@@ -10,7 +10,7 @@ tags: ["grammar", "unreviewed"]
 table:
   applies_to:
     pos: ["verb"]
-    except: ["te-0247", "te-0282", "te-0297", "te-0460", "te-0463", "te-0474", "te-0532", "te-0651", "te-1047", "te-1146", "te-1147", "te-1148", "te-1149", "te-1150", "te-3347", "te-3348", "te-3349", "te-3351"]
+    except: ["te-0247", "te-0282", "te-0297", "te-0460", "te-0463", "te-0474", "te-0532", "te-0651", "te-1047", "te-1146", "te-1147", "te-1148", "te-1149", "te-1150"]
   slots: ["conditional"]
   rows:
     - word: "te-0441"
@@ -207,7 +207,7 @@ table:
       readings: { "conditional": "tuḍistē" }
     - word: "te-1339"
       forms: { "conditional": "పంచుకుంటే" }
-      readings: { "conditional": "pan̈cukuṇṭē" }
+      readings: { "conditional": "pañcukuṇṭē" }
     - word: "te-1400"
       forms: { "conditional": "బేరమాడితే" }
       readings: { "conditional": "bēramāḍitē" }
@@ -219,7 +219,7 @@ table:
       readings: { "conditional": "taggistē" }
     - word: "te-1403"
       forms: { "conditional": "ఎంచుకుంటే" }
-      readings: { "conditional": "en̈cukuṇṭē" }
+      readings: { "conditional": "eñcukuṇṭē" }
     - word: "te-1404"
       forms: { "conditional": "తిరిగి ఇస్తే" }
       readings: { "conditional": "tirigi istē" }
@@ -231,7 +231,7 @@ table:
       readings: { "conditional": "jabbu paḍitē" }
     - word: "te-1530"
       forms: { "conditional": "చూపించుకుంటే" }
-      readings: { "conditional": "cūpin̈cukuṇṭē" }
+      readings: { "conditional": "cūpiñcukuṇṭē" }
     - word: "te-1531"
       forms: { "conditional": "తగ్గితే" }
       readings: { "conditional": "taggitē" }
@@ -348,7 +348,7 @@ table:
       readings: { "conditional": "naḍipitē" }
     - word: "te-2314"
       forms: { "conditional": "గుర్తుంచుకుంటే" }
-      readings: { "conditional": "gurtun̈cukuṇṭē" }
+      readings: { "conditional": "gurtuñcukuṇṭē" }
     - word: "te-2315"
       forms: { "conditional": "వివరిస్తే" }
       readings: { "conditional": "vivaristē" }
@@ -501,7 +501,7 @@ table:
       readings: { "conditional": "mānēstē" }
     - word: "te-3234"
       forms: { "conditional": "వేయించుకుంటే" }
-      readings: { "conditional": "vēyin̈cukuṇṭē" }
+      readings: { "conditional": "vēyiñcukuṇṭē" }
     - word: "te-3235"
       forms: { "conditional": "ఆరోగ్యంగా ఉంటే" }
       readings: { "conditional": "ārōgyaṅgā uṇṭē" }
@@ -520,6 +520,30 @@ table:
     - word: "te-2933"
       forms: { "conditional": "నిర్ణయిస్తే" }
       readings: { "conditional": "nirṇayistē" }
+    - word: "te-3347"
+      forms: { "conditional": "సిగ్గుపడితే" }
+      readings: { "conditional": "siggupaḍitē" }
+    - word: "te-3348"
+      forms: { "conditional": "గర్వపడితే" }
+      readings: { "conditional": "garvapaḍitē" }
+    - word: "te-3349"
+      forms: { "conditional": "కంగారుపడితే" }
+      readings: { "conditional": "kaṅgārupaḍitē" }
+    - word: "te-3351"
+      forms: { "conditional": "ఆనందిస్తే" }
+      readings: { "conditional": "ānandistē" }
+    - word: "te-3620"
+      forms: { "conditional": "అభిప్రాయపడితే" }
+      readings: { "conditional": "abhiprāyapaḍitē" }
+    - word: "te-3622"
+      forms: { "conditional": "విమర్శిస్తే" }
+      readings: { "conditional": "vimarśistē" }
+    - word: "te-3623"
+      forms: { "conditional": "ఊహిస్తే" }
+      readings: { "conditional": "ūhistē" }
+    - word: "te-3624"
+      forms: { "conditional": "విభేదిస్తే" }
+      readings: { "conditional": "vibhēdistē" }
 rules:
   - id: "te-rule-conditional"
     slots: ["conditional"]
