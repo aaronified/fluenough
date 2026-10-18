@@ -88,6 +88,8 @@ cards:
         bases:
           - { word: "విడిచి", base: "విడవడం", reading: "viḍici" }
           - { word: "వెళ్ళాడు", base: "వెళ్ళడం", reading: "veḷḷāḍu" }
+    antonyms:
+      - { id: "avidya", word: "అవిద్య", reading: "avidya", source: "https://en.wiktionary.org/wiki/విద్య" }
   - id: "te-6302"
     target: "అవకాశం"
     reading: "avakāśaṁ"
@@ -151,6 +153,8 @@ cards:
         ipa: "neːnu kot̪t̪a pad̪d̪ʱat̪i neːrtʃukunnaːnu"
         bases:
           - { word: "నేర్చుకున్నాను", base: "నేర్చుకోవడం", reading: "nērcukunnānu" }
+    senses:
+      - { id: "manner", pos: "noun", source: "https://en.wiktionary.org/wiki/పద్ధతి" }
   - id: "te-6305"
     target: "సత్యం"
     reading: "satyaṁ"
@@ -263,6 +267,9 @@ cards:
         bases:
           - { word: "దేశ", base: "దేశం", reading: "dēśa" }
           - { word: "అభివృద్ధికి", base: "అభివృద్ధి", reading: "abhivruddhiki" }
+    senses:
+      - { id: "increase", pos: "noun", source: "https://en.wiktionary.org/wiki/అభివృద్ధి" }
+      - { id: "improvement", pos: "noun", source: "https://en.wiktionary.org/wiki/అభివృద్ధి" }
   - id: "te-6310"
     target: "బలహీనత"
     reading: "balahīnata"
@@ -285,6 +292,8 @@ cards:
           - { word: "ఉందని", base: "ఉండడం", reading: "undani" }
     antonyms:
       - { id: "opposite", ref: "te-3227" }
+    synonyms:
+      - { id: "balahinamu", word: "బలహీనము", reading: "balahīnamu", source: "https://en.wiktionary.org/wiki/బలహీనత" }
   - id: "te-6311"
     target: "సౌందర్యం"
     reading: "saundaryaṁ"
@@ -433,6 +442,8 @@ cards:
         bases:
           - { word: "సామర్థ్యాన్ని", base: "సామర్థ్యం", reading: "sāmarthyānni" }
           - { word: "తెలుసుకోవాలి", base: "తెలుసుకోవడం", reading: "telusukōvāli" }
+    senses:
+      - { id: "ability", pos: "noun", source: "https://en.wiktionary.org/wiki/సామర్థ్యం" }
   - id: "te-6318"
     target: "ప్రభావం"
     reading: "prabhāvaṁ"
@@ -563,6 +574,8 @@ cards:
         bases:
           - { word: "ధర్మంగా", base: "ధర్మం", reading: "dharmaṅgā" }
           - { word: "పాలించాడు", base: "పాలించడం", reading: "pāliñcāḍu" }
+    antonyms:
+      - { id: "adharmam", word: "అధర్మం", reading: "adharmaṁ", source: "https://en.wiktionary.org/wiki/ధర్మం" }
   - id: "te-6324"
     target: "పరిమితి"
     reading: "parimiti"
@@ -607,3 +620,10 @@ cards:
         bases:
           - { word: "ఊహలతో", base: "ఊహ", reading: "ūhalatō" }
           - { word: "జరగదు", base: "జరగడం", reading: "jaragadu" }
+    synonyms:
+      - { id: "ancana", word: "అంచనా", reading: "añcanā", source: "https://en.wiktionary.org/wiki/ఊహ" }
+      - { id: "ujja", word: "ఉజ్జ", reading: "ujja", source: "https://en.wiktionary.org/wiki/ఊహ" }
+      - { id: "ujjayimpu", word: "ఉజ్జాయింపు", reading: "ujjāyiṁpu", source: "https://en.wiktionary.org/wiki/ఊహ" }
+    senses:
+      - { id: "guess", pos: "noun", source: "https://en.wiktionary.org/wiki/ఊహ" }
+      - { id: "idea", pos: "noun", source: "https://en.wiktionary.org/wiki/ఊహ" }
