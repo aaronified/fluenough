@@ -3,12 +3,18 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/features/placement/language_picker_page.dart';
 
-/// Driving the language picker (#211) in widget tests: its list is built
-/// lazily, so a card is scrolled to before it is found.
+/// Driving Languages I'm learning (#211, #626) in widget tests: its list is
+/// built lazily, so a row is scrolled to before it is found, and a language
+/// is chosen in its sheet.
 
-/// [code]'s card.
-Finder languageCard(String code) =>
-    find.byKey(ValueKey<String>('language-$code'));
+/// [code]'s row: keyed `language-` in Learning, `popular-` in Popular and
+/// `listed-` under its family.
+Finder languageCard(String code) => find.byWidgetPredicate(
+  (w) =>
+      w.key == ValueKey<String>('language-$code') ||
+      w.key == ValueKey<String>('popular-$code') ||
+      w.key == ValueKey<String>('listed-$code'),
+);
 
 /// The picker's list, which scrolls.
 Finder pickerList() => find.descendant(
@@ -36,36 +42,114 @@ Future<void> scrollToInPicker(WidgetTester tester, Finder finder) async {
   await tester.pumpAndSettle();
 }
 
-/// Ticks or un-ticks [code]: taps its card's checkbox.
-Future<void> pickLanguage(WidgetTester tester, String code) async {
-  final box = find.descendant(
-    of: languageCard(code),
-    matching: find.byType(Checkbox),
-  );
+/// Opens [code]'s sheet: taps its row, opening the families first when it is
+/// in none that is open.
+Future<void> openSheet(WidgetTester tester, String code) async {
+  if (languageCard(code).evaluate().isEmpty) {
+    await openFamilies(tester);
+  }
   await scrollToInPicker(tester, languageCard(code));
-  await scrollToInPicker(tester, box);
-  await tester.tap(box);
+  await tester.tap(languageCard(code).first);
   await tester.pumpAndSettle();
 }
 
-/// Turns [code]'s "Learn the script" switch, in its opened card.
-Future<void> flipScript(WidgetTester tester, String code) async {
-  final toggle = find.descendant(
-    of: languageCard(code),
-    matching: find.byType(Switch),
+/// Opens every family under "All languages": each closed one is at the end
+/// of the list, so the list is scrolled to its end, and one is opened at a
+/// time until none is closed.
+Future<void> openFamilies(WidgetTester tester) async {
+  final closed = find.descendant(
+    of: find.byWidgetPredicate(
+      (w) =>
+          w is ListTile &&
+          ((w.key as ValueKey<String>?)?.value.startsWith('family-') ?? false),
+    ),
+    matching: find.byIcon(Icons.expand_more),
   );
-  await scrollToInPicker(tester, toggle);
-  await tester.tap(toggle);
+  for (var i = 0; i < 12; i++) {
+    await tester.drag(pickerList().first, const Offset(0, -6000));
+    await tester.pumpAndSettle();
+    if (closed.evaluate().isEmpty) return;
+    await tester.ensureVisible(closed.first);
+    await tester.pumpAndSettle();
+    await tester.tap(closed.first);
+    await tester.pumpAndSettle();
+  }
+}
+
+/// Whether a language sheet is open.
+bool sheetIsOpen() =>
+    find.byKey(const ValueKey<String>('sheet-scroll')).evaluate().isNotEmpty;
+
+/// Taps [key] in the open sheet.
+Future<void> tapSheet(WidgetTester tester, String key) async {
+  final button = find.byKey(ValueKey<String>(key));
+  await tester.ensureVisible(button);
+  await tester.pumpAndSettle();
+  await tester.tap(button);
   await tester.pumpAndSettle();
 }
 
-/// Whether [code]'s card is ticked.
-bool isPicked(WidgetTester tester, String code) => tester
-    .widget<Checkbox>(
-      find.descendant(
-        of: languageCard(code),
-        matching: find.byType(Checkbox),
-        skipOffstage: false,
-      ),
+/// Chooses [code] to learn, as a learner does in its sheet: Learn this
+/// language, its scripts (untick them all with [script] false), where to
+/// start ("Start at the beginning" with [begin], else Find my level), then
+/// Next and Done. Chosen already, it is stopped instead, confirming the dialog a
+/// language learned asks.
+Future<void> pickLanguage(
+  WidgetTester tester,
+  String code, {
+  bool script = true,
+  bool begin = false,
+}) async {
+  await openSheet(tester, code);
+  final stop = find.byKey(const ValueKey<String>('sheet-stop'));
+  if (stop.evaluate().isNotEmpty) {
+    await tester.tap(stop);
+    await tester.pumpAndSettle();
+    final confirm = find.descendant(
+      of: find.byType(AlertDialog),
+      matching: find.byType(TextButton),
+    );
+    if (confirm.evaluate().isNotEmpty) {
+      await tester.tap(confirm.last);
+      await tester.pumpAndSettle();
+    }
+    return;
+  }
+  await tapSheet(tester, 'sheet-learn');
+  if (!script) {
+    final boxes = find.byWidgetPredicate(
+      (w) =>
+          w is CheckboxListTile &&
+          w.value == true &&
+          ((w.key as ValueKey<String>?)?.value.startsWith('sheet-script-') ??
+              false),
+    );
+    for (final box in boxes.evaluate().toList()) {
+      await tester.tap(find.byWidget(box.widget));
+      await tester.pumpAndSettle();
+    }
+  }
+  while (sheetIsOpen()) {
+    final start = find.byKey(const ValueKey<String>('sheet-begin-language'));
+    if (begin && start.evaluate().isNotEmpty) {
+      await tester.ensureVisible(start);
+      await tester.tap(start);
+      await tester.pumpAndSettle();
+    }
+    final next = find.byKey(const ValueKey<String>('sheet-next'));
+    await tapSheet(
+      tester,
+      next.evaluate().isNotEmpty ? 'sheet-next' : 'sheet-done',
+    );
+  }
+}
+
+/// Whether [code]'s row is ticked: a language learned or chosen.
+bool isPicked(WidgetTester tester, String code) => find
+    .descendant(
+      of: languageCard(code),
+      matching: find.byIcon(Icons.check_circle),
+      skipOffstage: false,
     )
-    .value!;
+    .evaluate()
+    .isNotEmpty;

@@ -46,6 +46,16 @@ Future<void> tapText(WidgetTester tester, String text) async {
   await tester.pumpAndSettle();
 }
 
+/// Answers "I don't know" until the check ends in its result.
+Future<void> giveUp(WidgetTester tester) async {
+  final l10n = l10nOf(tester);
+  var guard = 0;
+  while (find.text(l10n.placementDontKnow).evaluate().isNotEmpty &&
+      guard++ < 60) {
+    await tapText(tester, l10n.placementDontKnow);
+  }
+}
+
 String nameOf(AppState state, String code) =>
     state.languages.singleWhere((l) => l.code == code).name;
 
@@ -80,28 +90,19 @@ void main() {
     usePhone(tester);
     final state = await pumpFirstLaunch(tester);
     final l10n = l10nOf(tester);
-    final hindi = nameOf(state, 'hi');
 
     expect(find.text(l10n.learnTitle), findsOneWidget);
     expect(find.byType(AppShell), findsNothing);
     final go = find.widgetWithText(FilledButton, l10n.commonContinue);
     expect(tester.widget<FilledButton>(go).onPressed, isNull);
 
-    await pickLanguage(tester, 'hi');
-    // The picker asks whether to learn the alphabet (#47, #211), on to start
-    // with, so placement does not.
-    expect(find.text(l10n.pickerLearnScript('Devanagari')), findsOneWidget);
+    // Where to start is asked in the language's sheet (#626): from the
+    // beginning, so placement has nothing to ask.
+    await pickLanguage(tester, 'hi', begin: true);
+    expect(isPicked(tester, 'hi'), isTrue);
     await tester.tap(go);
     await tester.pumpAndSettle();
-    expect(find.text(l10n.alphabetAskTitle(hindi, 'Devanagari')), findsNothing);
-    expect(find.text(l10n.placementAskTitle(hindi)), findsOneWidget);
-    expect(state.settings.learningChosen, isFalse, reason: 'nothing saved yet');
-
-    await tapText(tester, l10n.placementNew(hindi));
-    final first = state.courseUnits('hi').first.first.deck.name;
-    expect(find.text(l10n.placementResultStart(hindi, first)), findsOneWidget);
-    await tapText(tester, l10n.placementDone);
-
+    expect(find.byType(PlacementPage), findsNothing);
     expect(find.byType(AppShell), findsOneWidget);
     expect(state.settings.learningLanguages, <String>['hi']);
     expect(state.settings.learningChosen, isTrue);
@@ -119,7 +120,6 @@ void main() {
 
     await pickLanguage(tester, 'hi');
     await tapText(tester, l10n.commonContinue);
-    await tapText(tester, l10n.placementFind);
     expect(find.text(l10n.placementQuestion), findsOneWidget);
     expect(find.text(l10n.placementProgress(1, units.length)), findsOneWidget);
     for (var i = 0; i < 4; i++) {
@@ -147,7 +147,6 @@ void main() {
 
     await pickLanguage(tester, 'hi');
     await tapText(tester, l10n.commonContinue);
-    await tapText(tester, l10n.placementFind);
     for (var i = 0; i < 4; i++) {
       await answer(tester, state, 'hi', right: true);
     }
@@ -164,18 +163,17 @@ void main() {
     usePhone(tester);
     final state = await pumpFirstLaunch(tester);
     final l10n = l10nOf(tester);
-    final hindi = nameOf(state, 'hi');
-    final bengali = nameOf(state, 'bn');
 
     await pickLanguage(tester, 'hi');
     await pickLanguage(tester, 'bn');
     await tapText(tester, l10n.commonContinue);
-    // In the catalog's order.
-    expect(find.text(l10n.placementAskTitle(bengali)), findsOneWidget);
-    await tapText(tester, l10n.placementNew(bengali));
+    // In the catalog's order, asking at once: "Find my level" was chosen in
+    // each sheet.
+    expect(find.text(l10n.placementQuestion), findsOneWidget);
+    await giveUp(tester);
     await tapText(tester, l10n.placementNext);
-    expect(find.text(l10n.placementAskTitle(hindi)), findsOneWidget);
-    await tapText(tester, l10n.placementNew(hindi));
+    expect(find.text(l10n.placementQuestion), findsOneWidget);
+    await giveUp(tester);
     await tapText(tester, l10n.placementDone);
     expect(state.settings.learningLanguages, <String>['bn', 'hi']);
     expect(find.byType(AppShell), findsOneWidget);
@@ -187,7 +185,6 @@ void main() {
     final l10n = l10nOf(tester);
     await pickLanguage(tester, 'hi');
     await tapText(tester, l10n.commonContinue);
-    await tapText(tester, l10n.placementFind);
     await answer(tester, state, 'hi', right: true);
     await tester.pageBack();
     await tester.pumpAndSettle();
@@ -225,8 +222,8 @@ void main() {
     expect(find.text(l10n.pickerSettingsTitle), findsOneWidget);
     await pickLanguage(tester, 'bn');
     await tapText(tester, l10n.commonContinue);
-    expect(find.text(l10n.placementAskTitle(bengali)), findsOneWidget);
-    await tapText(tester, l10n.placementNew(bengali));
+    expect(find.text(l10n.placementQuestion), findsOneWidget);
+    await giveUp(tester);
     await tapText(tester, l10n.placementDone);
 
     expect(find.byType(SettingsPage), findsOneWidget);
@@ -237,9 +234,16 @@ void main() {
     // Taking a language off asks first, and places nothing.
     await tapText(tester, l10n.settingsRowLanguages);
     await tapText(tester, l10n.settingsLearn);
-    await pickLanguage(tester, 'bn');
+    await openSheet(tester, 'bn');
+    await tapSheet(tester, 'sheet-stop');
     expect(find.text(l10n.pickerStopTitle(bengali)), findsOneWidget);
-    await tapText(tester, l10n.pickerStopConfirm);
+    await tester.tap(
+      find.descendant(
+        of: find.byType(AlertDialog),
+        matching: find.text(l10n.pickerStopConfirm),
+      ),
+    );
+    await tester.pumpAndSettle();
     await tapText(tester, l10n.commonContinue);
     expect(find.byType(PlacementPage), findsNothing);
     expect(find.byType(SettingsPage), findsOneWidget);
@@ -317,18 +321,18 @@ void main() {
       ),
     );
     final l10n = l10nOf(tester);
-    final hindi = nameOf(state, 'hi');
     await tapText(tester, l10n.navSettings);
     await tapText(tester, l10n.settingsRowLanguages);
     await tapText(tester, l10n.settingsLearn);
     await scrollToInPicker(tester, languageCard('bn'));
     expect(isPicked(tester, 'bn'), isTrue);
+    await openFamilies(tester);
     await scrollToInPicker(tester, languageCard('hi'));
     expect(isPicked(tester, 'hi'), isFalse);
 
     await pickLanguage(tester, 'hi');
     await tapText(tester, l10n.commonContinue);
-    await tapText(tester, l10n.placementNew(hindi));
+    await giveUp(tester);
     await tapText(tester, l10n.placementDone);
     expect(state.currentProfile.languages, <String>{'hi', 'bn'});
     expect(state.settings.learningLanguages, isEmpty);
@@ -364,7 +368,7 @@ void main() {
     await tapText(tester, l10n.settingsLearn);
     await pickLanguage(tester, 'hi');
     await tapText(tester, l10n.commonContinue);
-    await tapText(tester, l10n.placementNew(hindi));
+    await giveUp(tester);
     expect(
       find.text(l10n.placementResultContinue(hindi, units[1].first.deck.name)),
       findsOneWidget,
@@ -381,14 +385,12 @@ void main() {
     final alphabet = state.pathOf(withAlphabet.first.first)!.alphabet;
     expect(alphabet, isNotEmpty);
 
-    await pickLanguage(tester, 'hi');
-    await flipScript(tester, 'hi');
-    expect(find.text(l10n.pickerScriptOff), findsOneWidget);
+    await pickLanguage(tester, 'hi', script: false);
     await tapText(tester, l10n.commonContinue);
     expect(find.text(l10n.alphabetAskTitle(hindi, 'Devanagari')), findsNothing);
     // Nothing is saved until the end.
     expect(state.settings.learnsAlphabet('hi'), isTrue);
-    await tapText(tester, l10n.placementNew(hindi));
+    await giveUp(tester);
     final first = state
         .courseUnits('hi', alphabet: false)
         .first
@@ -410,10 +412,8 @@ void main() {
     usePhone(tester);
     await pumpFirstLaunch(tester);
     final l10n = l10nOf(tester);
-    await pickLanguage(tester, 'hi');
-    await flipScript(tester, 'hi');
+    await pickLanguage(tester, 'hi', script: false);
     await tapText(tester, l10n.commonContinue);
-    await tapText(tester, l10n.placementFind);
     expect(find.byType(ReadingFirst), findsOneWidget);
   });
 
@@ -426,10 +426,9 @@ void main() {
     );
     final l10n = l10nOf(tester);
     final hindi = nameOf(state, 'hi');
-    await pickLanguage(tester, 'hi');
-    await flipScript(tester, 'hi');
+    await pickLanguage(tester, 'hi', script: false);
     await tapText(tester, l10n.commonContinue);
-    await tapText(tester, l10n.placementNew(hindi));
+    await giveUp(tester);
     expect(find.text(l10n.placementNoAlphabet(hindi)), findsOneWidget);
   });
 
@@ -442,6 +441,6 @@ void main() {
     expect(find.text(l10n.pickerLearnScript('Latin')), findsNothing);
     await tapText(tester, l10n.commonContinue);
     expect(find.text(l10n.alphabetAskTitle(spanish, 'Latin')), findsNothing);
-    expect(find.text(l10n.placementAskTitle(spanish)), findsOneWidget);
+    expect(find.text(l10n.placementQuestion), findsOneWidget);
   });
 }
