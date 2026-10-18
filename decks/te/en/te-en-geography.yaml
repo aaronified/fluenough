@@ -1,0 +1,571 @@
+schema: 1
+id: "te-en-geography"
+kind: "layer"
+core: "te-geography"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Geography: the world, directions, places and rivers"
+description: "The world and its continents, directions and maps, the land and water of a region, and the places of India and the world: states, cities, countries and rivers. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "te-3000":
+    native: "world"
+    notes:
+      "n1": "A world map: {1}."
+    examples:
+      "ప్రపంచం చాలా పెద్దది.":
+        native: "The world is very big."
+      "ఈ ప్రపంచంలో చాలా దేశాలు ఉన్నాయి.":
+        native: "There are many countries in this world."
+        bases:
+          "ప్రపంచంలో": { meaning: "world" }
+          "దేశాలు": { meaning: "country" }
+          "ఉన్నాయి": { meaning: "to be; to have" }
+  "te-3001":
+    native: "continent"
+    wiktionary: true
+    notes:
+      "n1": "The plural is {1}: the stem changes to ఖండాల- (khaṇḍāla-)."
+    examples:
+      "ఏడు ఖండాలు ఉన్నాయి.":
+        native: "There are seven continents."
+        bases:
+          "ఖండాలు": { meaning: "continent" }
+          "ఉన్నాయి": { meaning: "to be; to have" }
+      "ఆఫ్రికా చాలా పెద్ద ఖండం.":
+        native: "Africa is a very large continent."
+  "te-3002":
+    native: "globe; the earth as a sphere"
+    wiktionary: true
+    notes:
+      "n1": "Not the same as {1}, which means land or soil."
+    examples:
+      "బడిలో భూగోళం చూశాను.":
+        native: "I saw a globe at school."
+        bases:
+          "బడిలో": { meaning: "school" }
+          "చూశాను": { meaning: "to see; to look at" }
+      "భూగోళం గుండ్రంగా ఉంటుంది.":
+        native: "A globe is round."
+        bases:
+          "ఉంటుంది": { meaning: "to be; to stay" }
+  "te-3003":
+    native: "map; chart"
+    wiktionary: true
+    notes:
+      "n1": "On a map: {1}."
+    examples:
+      "పటంలో నగరం ఎక్కడ ఉంది?":
+        native: "Where is the city on the map?"
+        bases:
+          "పటంలో": { meaning: "map" }
+      "ఈ పటం జాగ్రత్తగా చూశాను.":
+        native: "I looked at this map carefully."
+        bases:
+          "చూశాను": { meaning: "to see; to look at" }
+  "te-3004":
+    native: "direction; side of the compass"
+    wiktionary: true
+    notes:
+      "n1": "The plural is {1}: the stem changes to దిక్కుల- (dikkula-)."
+    examples:
+      "నాలుగు దిక్కులు ఉన్నాయి.":
+        native: "There are four directions."
+        bases:
+          "దిక్కులు": { meaning: "direction" }
+          "ఉన్నాయి": { meaning: "to be; to have" }
+      "ఏ దిక్కుకు వెళ్తున్నారు?":
+        native: "Which direction are you going?"
+        bases:
+          "దిక్కుకు": { meaning: "direction" }
+          "వెళ్తున్నారు": { meaning: "to go" }
+    synonyms: { "mula": "corner", "disa": "a point of the compass, quarter, direction, region" }
+    senses:
+      "quarter": { native: "a quarter, part, side, direction" }
+      "airt": { native: "an airt or point of the compass" }
+  "te-3005":
+    native: "south"
+    wiktionary: true
+    notes:
+      "n1": "South India: {1}. Before a noun the stem changes to దక్షిణ-."
+    antonyms: { "uttaram": "north" }
+    examples:
+      "ఆ పట్టణం దక్షిణంలో ఉంది.":
+        native: "That town is in the south."
+        bases:
+          "దక్షిణంలో": { meaning: "south" }
+      "ఇది దక్షిణం వైపు వెళ్లే రైలు.":
+        native: "This is the train going south."
+        bases:
+          "వెళ్లే": { meaning: "to go" }
+  "te-3006":
+    native: "east"
+    wiktionary: true
+    notes:
+      "n1": "On the east side: {1}."
+    antonyms: { "padamara": "west" }
+    examples:
+      "సూర్యుడు తూర్పున ఉదయిస్తాడు.":
+        native: "The sun rises in the east."
+        bases:
+          "తూర్పున": { meaning: "east" }
+          "ఉదయిస్తాడు": { meaning: "to rise" }
+      "మా ఊరు తూర్పు వైపు ఉంది.":
+        native: "Our village is to the east."
+  "te-3007":
+    native: "west"
+    wiktionary: true
+    notes:
+      "n1": "The west side: {1}."
+    antonyms: { "turpu": "east" }
+    examples:
+      "సూర్యుడు పడమర దిక్కున అస్తమిస్తాడు.":
+        native: "The sun sets in the west."
+        bases:
+          "దిక్కున": { meaning: "direction" }
+          "అస్తమిస్తాడు": { meaning: "to set (of the sun)" }
+      "బస్సు పడమర వైపు వెళ్తోంది.":
+        native: "The bus is going west."
+        bases:
+          "వెళ్తోంది": { meaning: "to go" }
+    synonyms: { "pascimamu": "west" }
+  "te-3008":
+    native: "border; boundary"
+    wiktionary: true
+    notes:
+      "n1": "A state border: {1}."
+    examples:
+      "రెండు రాష్ట్రాల మధ్య సరిహద్దు ఉంది.":
+        native: "There is a border between the two states."
+        bases:
+          "రాష్ట్రాల": { meaning: "state" }
+      "సరిహద్దు దాటి వెళ్లొద్దు.":
+        native: "Do not cross the border."
+        bases:
+          "దాటి": { meaning: "to cross" }
+          "వెళ్లొద్దు": { meaning: "do not go" }
+    synonyms: { "ella": "boundary, limit", "ancu": "skirt, border of a cloth" }
+  "te-3009":
+    native: "coast; shore"
+    wiktionary: true
+    notes:
+      "n1": "The sea coast: {1}."
+    examples:
+      "మేము తీరం వెంట నడిచాము.":
+        native: "We walked along the coast."
+        bases:
+          "నడిచాము": { meaning: "to walk" }
+      "ఈ తీరం చాలా అందంగా ఉంది.":
+        native: "This coast is very beautiful."
+  "te-3010":
+    native: "peninsula"
+    wiktionary: true
+    notes:
+      "n1": "The Indian peninsula: {1}."
+    examples:
+      "ఈ ద్వీపకల్పం మూడు వైపులా నీటితో చుట్టుముట్టి ఉంది.":
+        native: "This peninsula is surrounded by water on three sides."
+        bases:
+          "నీటితో": { meaning: "water" }
+          "చుట్టుముట్టి": { meaning: "to surround" }
+      "ఈ ద్వీపకల్పంలో చాలా ఊళ్ళు ఉన్నాయి.":
+        native: "There are many villages on this peninsula."
+        bases:
+          "ద్వీపకల్పంలో": { meaning: "peninsula" }
+          "ఊళ్ళు": { meaning: "village" }
+          "ఉన్నాయి": { meaning: "to be; to have" }
+  "te-3011":
+    native: "town"
+    wiktionary: true
+    notes:
+      "n1": "In town: {1}."
+    examples:
+      "పట్టణం చిన్నది కానీ చాలా శుభ్రంగా ఉంది.":
+        native: "The town is small but very clean."
+      "మేము వారం రోజులు పట్టణంలో ఉన్నాము.":
+        native: "We stayed in town for a week."
+        bases:
+          "పట్టణంలో": { meaning: "town" }
+          "ఉన్నాము": { meaning: "to be; to stay" }
+  "te-3012":
+    native: "region; area"
+    wiktionary: true
+    notes:
+      "n1": "In these areas: {1}. In the plural the stem changes to ప్రాంతాల- (prāntāla-)."
+    examples:
+      "ఇది కొండల ప్రాంతం.":
+        native: "This is a hilly region."
+        bases:
+          "కొండల": { meaning: "hill" }
+      "ఈ ప్రాంతంలో వర్షం ఎక్కువగా పడుతుంది.":
+        native: "It rains a lot in this region."
+        bases:
+          "ప్రాంతంలో": { meaning: "region" }
+          "పడుతుంది": { meaning: "to fall" }
+  "te-3013":
+    native: "rural; of the village"
+    wiktionary: true
+    notes:
+      "n1": "A rural region: {1}."
+    antonyms: { "pattana": "urban; of the town" }
+    examples:
+      "గ్రామీణ ప్రాంతాల్లో బస్సులు తక్కువ.":
+        native: "In rural areas there are few buses."
+        bases:
+          "ప్రాంతాల్లో": { meaning: "region" }
+          "బస్సులు": { meaning: "bus" }
+      "గ్రామీణ జీవితం ప్రశాంతంగా ఉంటుంది.":
+        native: "Rural life is peaceful."
+        bases:
+          "ఉంటుంది": { meaning: "to be; to stay" }
+  "te-3014":
+    native: "population"
+    wiktionary: true
+    notes:
+      "n1": "A population count, a census: {1}."
+    examples:
+      "ఈ నగరం జనాభా చాలా ఎక్కువ.":
+        native: "This city's population is very large."
+      "గ్రామంలో జనాభా తక్కువ.":
+        native: "The population in the village is small."
+        bases:
+          "గ్రామంలో": { meaning: "village" }
+  "te-3015":
+    native: "latitude"
+    wiktionary: true
+    notes:
+      "n1": "A latitude line: {1}."
+    examples:
+      "పటంలో అక్షాంశ రేఖలు ఉన్నాయి.":
+        native: "There are latitude lines on the map."
+        bases:
+          "పటంలో": { meaning: "map" }
+          "రేఖలు": { meaning: "line" }
+          "ఉన్నాయి": { meaning: "to be; to have" }
+      "ఈ నగరం అక్షాంశం ఎంత?":
+        native: "What is this city's latitude?"
+  "te-3016":
+    native: "longitude"
+    wiktionary: true
+    notes:
+      "n1": "Latitude and longitude together: {1}."
+    examples:
+      "అక్షాంశం అడ్డంగా, రేఖాంశం నిలువుగా ఉంటాయి.":
+        native: "Latitude runs across, longitude runs up and down."
+        bases:
+          "ఉంటాయి": { meaning: "to be; to stay" }
+      "ఫోన్‌లో రేఖాంశం చూశాను.":
+        native: "I saw the longitude on my phone."
+        bases:
+          "ఫోన్‌లో": { meaning: "phone" }
+          "చూశాను": { meaning: "to see; to look at" }
+  "te-3017":
+    native: "depth"
+    wiktionary: true
+    notes:
+      "n1": "A deep river: {1}."
+    examples:
+      "ఈ నది లోతు ఎంత?":
+        native: "How deep is this river?"
+      "సముద్రం లోతు చాలా ఎక్కువ.":
+        native: "The sea is very deep."
+    synonyms: { "nimnamu": "deep, profound" }
+    senses:
+      "depth": { native: "depth" }
+      "profundity": { native: "profundity" }
+  "te-3018":
+    native: "width; breadth"
+    notes:
+      "n1": "A wide road: {1}."
+    examples:
+      "ఈ రోడ్డు వెడల్పు ఎంత?":
+        native: "How wide is this road?"
+      "నది వెడల్పుగా ఉంది.":
+        native: "The river is wide."
+  "te-3019":
+    native: "plateau"
+    notes:
+      "n1": "The plural is {1}."
+    examples:
+      "డెక్కన్ పీఠభూమి పెద్దది.":
+        native: "The Deccan plateau is large."
+      "పీఠభూమి మీద చల్లగా ఉంటుంది.":
+        native: "It is cool on the plateau."
+        bases:
+          "ఉంటుంది": { meaning: "to be; to stay" }
+  "te-3020":
+    native: "bank; shore"
+    wiktionary: true
+    notes:
+      "n1": "A riverbank: {1}."
+    examples:
+      "నది ఒడ్డున ఒక గుడి ఉంది.":
+        native: "There is a temple on the riverbank."
+        bases:
+          "ఒడ్డున": { meaning: "bank; shore" }
+      "ఒడ్డు మీద కూర్చున్నాను.":
+        native: "I sat on the bank."
+        bases:
+          "కూర్చున్నాను": { meaning: "to sit" }
+    senses:
+      "shore": { native: "shore, bank" }
+      "stake": { native: "a stake in gambling" }
+  "te-3021":
+    native: "Bay of Bengal"
+    wiktionary: true
+    notes:
+      "n1": "The coast of the Bay of Bengal: {1}."
+    examples:
+      "బంగాళాఖాతం తూర్పున ఉంది.":
+        native: "The Bay of Bengal is to the east."
+        bases:
+          "తూర్పున": { meaning: "east" }
+      "బంగాళాఖాతంలో తుఫాన్లు వస్తాయి.":
+        native: "Storms come over the Bay of Bengal."
+        bases:
+          "బంగాళాఖాతంలో": { meaning: "Bay of Bengal" }
+          "తుఫాన్లు": { meaning: "storm" }
+          "వస్తాయి": { meaning: "to come" }
+  "te-3022":
+    native: "India"
+    notes:
+      "n1": "Also said as {1}, for the same country."
+    examples:
+      "భారతదేశం పెద్ద దేశం.":
+        native: "India is a large country."
+      "నేను భారతదేశంలో పుట్టాను.":
+        native: "I was born in India."
+        bases:
+          "భారతదేశంలో": { meaning: "India" }
+          "పుట్టాను": { meaning: "to be born" }
+  "te-3023":
+    native: "Hyderabad"
+    notes:
+      "n1": "The city of Hyderabad: {1}."
+    examples:
+      "హైదరాబాదు తెలంగాణ రాజధాని.":
+        native: "Hyderabad is the capital of Telangana."
+      "మా అక్క హైదరాబాదులో ఉంటుంది.":
+        native: "My elder sister lives in Hyderabad."
+        bases:
+          "హైదరాబాదులో": { meaning: "Hyderabad" }
+          "ఉంటుంది": { meaning: "to be; to stay" }
+  "te-3024":
+    native: "Vijayawada"
+    notes:
+      "n1": "To Vijayawada: {1}."
+    examples:
+      "విజయవాడ కృష్ణా నది ఒడ్డున ఉంది.":
+        native: "Vijayawada is on the bank of the Krishna river."
+        bases:
+          "ఒడ్డున": { meaning: "bank; shore" }
+      "విజయవాడకు రైలులో వెళ్లాను.":
+        native: "I went to Vijayawada by train."
+        bases:
+          "విజయవాడకు": { meaning: "Vijayawada" }
+          "రైలులో": { meaning: "train" }
+          "వెళ్లాను": { meaning: "to go" }
+  "te-3025":
+    native: "Chennai"
+    notes:
+      "n1": "The city of Chennai: {1}."
+    examples:
+      "చెన్నై బంగాళాఖాతం తీరాన ఉంది.":
+        native: "Chennai is on the coast of the Bay of Bengal."
+        bases:
+          "తీరాన": { meaning: "coast" }
+      "చెన్నైలో వేడిగా ఉంటుంది.":
+        native: "It is hot in Chennai."
+        bases:
+          "చెన్నైలో": { meaning: "Chennai" }
+          "ఉంటుంది": { meaning: "to be; to stay" }
+  "te-3026":
+    native: "Delhi"
+    notes:
+      "n1": "The city of Delhi: {1}."
+    examples:
+      "ఢిల్లీ భారతదేశ రాజధాని.":
+        native: "Delhi is India's capital."
+      "ఢిల్లీలో చలి ఎక్కువ.":
+        native: "It is very cold in Delhi."
+        bases:
+          "ఢిల్లీలో": { meaning: "Delhi" }
+  "te-3027":
+    native: "Bengaluru"
+    notes:
+      "n1": "The city of Bengaluru: {1}."
+    examples:
+      "బెంగళూరు కర్ణాటక రాజధాని.":
+        native: "Bengaluru is the capital of Karnataka."
+      "నా స్నేహితుడు బెంగళూరులో పని చేస్తాడు.":
+        native: "My friend works in Bengaluru."
+        bases:
+          "బెంగళూరులో": { meaning: "Bengaluru" }
+          "చేస్తాడు": { meaning: "to do; to work" }
+  "te-3028":
+    native: "Karnataka"
+    notes:
+      "n1": "The state of Karnataka: {1}."
+    examples:
+      "కర్ణాటక దక్షిణ భారతదేశంలో ఉంది.":
+        native: "Karnataka is in South India."
+        bases:
+          "భారతదేశంలో": { meaning: "India" }
+      "కర్ణాటకలో కాఫీ బాగా పండుతుంది.":
+        native: "Coffee grows well in Karnataka."
+        bases:
+          "కర్ణాటకలో": { meaning: "Karnataka" }
+          "పండుతుంది": { meaning: "to grow; to ripen" }
+  "te-3029":
+    native: "Tamil Nadu"
+    notes:
+      "n1": "The state of Tamil Nadu: {1}."
+    examples:
+      "చెన్నై తమిళనాడు రాజధాని.":
+        native: "Chennai is the capital of Tamil Nadu."
+      "మేము తమిళనాడు నుండి వచ్చాము.":
+        native: "We came from Tamil Nadu."
+        bases:
+          "వచ్చాము": { meaning: "to come" }
+  "te-3030":
+    native: "Africa"
+    notes:
+      "n1": "The continent of Africa: {1}."
+    examples:
+      "ఆఫ్రికాలో ఎండ ఎక్కువ.":
+        native: "It is very sunny in Africa."
+        bases:
+          "ఆఫ్రికాలో": { meaning: "Africa" }
+      "ఆఫ్రికా ఖండంలో అనేక భాషలు ఉన్నాయి.":
+        native: "There are many languages in the African continent."
+        bases:
+          "ఖండంలో": { meaning: "continent" }
+          "భాషలు": { meaning: "language" }
+          "ఉన్నాయి": { meaning: "to be; to have" }
+  "te-3031":
+    native: "Asia"
+    wiktionary: true
+    notes:
+      "n1": "The continent of Asia: {1}."
+    examples:
+      "ఆసియా అతి పెద్ద ఖండం.":
+        native: "Asia is the largest continent."
+      "భారతదేశం ఆసియాలో ఉంది.":
+        native: "India is in Asia."
+        bases:
+          "ఆసియాలో": { meaning: "Asia" }
+  "te-3032":
+    native: "Europe"
+    notes:
+      "n1": "The continent of Europe: {1}."
+    examples:
+      "యూరప్‌లో చలికాలం పొడవుగా ఉంటుంది.":
+        native: "In Europe winter is long."
+        bases:
+          "యూరప్‌లో": { meaning: "Europe" }
+          "ఉంటుంది": { meaning: "to be; to stay" }
+      "నేను యూరప్ చూడాలనుకుంటున్నాను.":
+        native: "I want to see Europe."
+        bases:
+          "చూడాలనుకుంటున్నాను": { meaning: "to want to see" }
+  "te-3033":
+    native: "America; the United States"
+    notes:
+      "n1": "The United States: {1}."
+    examples:
+      "అమెరికా ఉత్తర అమెరికా ఖండంలో ఉంది.":
+        native: "The United States is in North America."
+        bases:
+          "ఖండంలో": { meaning: "continent" }
+      "అమెరికాలో ఇంగ్లీషు మాట్లాడతారు.":
+        native: "People speak English in America."
+        bases:
+          "అమెరికాలో": { meaning: "America" }
+          "మాట్లాడతారు": { meaning: "to speak; to talk" }
+  "te-3034":
+    native: "north"
+    wiktionary: true
+    notes:
+      "n1": "Also a written letter, as in {1}."
+    antonyms: { "dakshinam": "south" }
+    examples:
+      "ఉత్తరం ఏ వైపు?":
+        native: "Which way is north?"
+      "గాలి ఉత్తరం నుండి వీస్తోంది.":
+        native: "The wind is blowing from the north."
+        bases:
+          "వీస్తోంది": { meaning: "to blow" }
+  "te-3035":
+    native: "Andhra Pradesh"
+    notes:
+      "n1": "Andhra, the old name of the Telugu region: {1}."
+    examples:
+      "ఆంధ్రప్రదేశ్ తెలంగాణ పక్కన ఉంది.":
+        native: "Andhra Pradesh is next to Telangana."
+      "విజయవాడ ఆంధ్రప్రదేశ్‌లో పెద్ద నగరం.":
+        native: "Vijayawada is a big city in Andhra Pradesh."
+        bases:
+          "ఆంధ్రప్రదేశ్‌లో": { meaning: "Andhra Pradesh" }
+  "te-3036":
+    native: "Telangana"
+    notes:
+      "n1": "The state of Telangana: {1}."
+    examples:
+      "తెలంగాణలో వర్షాలు ఈ నెలలో మొదలవుతాయి.":
+        native: "In Telangana the rains start this month."
+        bases:
+          "తెలంగాణలో": { meaning: "Telangana" }
+          "మొదలవుతాయి": { meaning: "to start; to begin" }
+      "మా స్నేహితురాలు తెలంగాణ నుండి వచ్చింది.":
+        native: "My friend came from Telangana."
+        bases:
+          "వచ్చింది": { meaning: "to come" }
+  "te-3037":
+    native: "Godavari (river)"
+    notes:
+      "n1": "The Godavari river: {1}."
+    examples:
+      "గోదావరి చాలా పొడవైన నది.":
+        native: "The Godavari is a very long river."
+      "గోదావరి ఒడ్డున రైతులు వరి పండిస్తారు.":
+        native: "Farmers grow rice along the bank of the Godavari."
+        bases:
+          "ఒడ్డున": { meaning: "bank; shore" }
+          "పండిస్తారు": { meaning: "to grow; to cultivate" }
+  "te-3038":
+    native: "Krishna (river)"
+    notes:
+      "n1": "The Krishna river: {1}."
+    examples:
+      "కృష్ణా నది ఆంధ్రప్రదేశ్‌లో ప్రవహిస్తుంది.":
+        native: "The Krishna river flows through Andhra Pradesh."
+        bases:
+          "ఆంధ్రప్రదేశ్‌లో": { meaning: "Andhra Pradesh" }
+          "ప్రవహిస్తుంది": { meaning: "to flow" }
+      "కృష్ణా నది మీద ఒక పెద్ద వంతెన ఉంది.":
+        native: "There is a big bridge over the Krishna river."
+  "te-3039":
+    native: "delta"
+    wiktionary: true
+    notes:
+      "n1": "A delta region: {1}."
+    examples:
+      "డెల్టాలో వరి పండుతుంది.":
+        native: "Rice grows in the delta."
+        bases:
+          "డెల్టాలో": { meaning: "delta" }
+          "పండుతుంది": { meaning: "to grow; to ripen" }
+      "డెల్టా భూమి చాలా సారవంతం.":
+        native: "The delta land is very fertile."
+  "te-3040":
+    native: "flow; current"
+    wiktionary: true
+    notes:
+      "n1": "A flow of water: {1}."
+    examples:
+      "ఈ ప్రవాహం ఎటు వెళ్తోంది?":
+        native: "Where is this current going?"
+        bases:
+          "వెళ్తోంది": { meaning: "to go" }
+      "నది ప్రవాహం వేగంగా ఉంది.":
+        native: "The river's current is fast."
