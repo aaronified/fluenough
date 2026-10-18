@@ -10,35 +10,35 @@ cards:
     target: "మాత్రం"
     reading: "mātraṁ"
     ipa: "maːt̪ram"
-    pos: "other"
+    pos: "particle"
     notes:
       - { id: "n1", kind: "note" }
     examples:
       - target: "అందరూ వచ్చారు, నేను మాత్రం రాలేదు."
         reading: "andarū vaccāru, nēnu mātraṁ rālēdu."
-        ipa: "and̪aruː vattʃaːru neːnu maːt̪ram raːleːd̪u"
+        ipa: "and̪aruː ʋatʃtʃaːru neːnu maːt̪ram raːleːd̪u"
         bases:
           - { word: "వచ్చారు", base: "రావడం", reading: "rāvaḍaṁ" }
           - { word: "రాలేదు", base: "రావడం", reading: "rāvaḍaṁ" }
       - target: "ఒక్క మాట మాత్రం చెప్పు."
         reading: "okka māṭa mātraṁ ceppu."
-        ipa: "okːa maːʈa maːt̪ram tʃepːu"
+        ipa: "okka maːʈa maːt̪ram tʃeppu"
         bases:
           - { word: "చెప్పు", base: "చెప్పడం", reading: "ceppaḍaṁ" }
   - id: "te-5901"
     target: "అయినా"
     reading: "ayinā"
     ipa: "ajinaː"
-    pos: "other"
+    pos: "particle"
     notes:
       - { id: "n1", kind: "note" }
     examples:
       - target: "అతను ధనవంతుడు అయినా సంతోషంగా లేడు."
         reading: "atanu dhanavantuḍu ayinā santōṣaṅgā lēḍu."
-        ipa: "at̪anu d̪ʱanavant̪uɖu ajinaː sant̪oːʂaŋgaː leːɖu"
+        ipa: "at̪anu d̪ʱanaʋant̪uɖu ajinaː sant̪oːʂaŋɡaː leːɖu"
       - target: "చాలా ఆలస్యమైంది, అయినా వెళ్దాం."
         reading: "cālā ālasyamaindi, ayinā veḷdāṁ."
-        ipa: "tʃaːlaː aːlasjamaind̪i ajinaː veɭd̪aːm"
+        ipa: "tʃaːlaː aːlasjamaind̪i ajinaː ʋeɭd̪aːm"
         bases:
           - { word: "వెళ్దాం", base: "వెళ్ళడం", reading: "veḷḷaḍaṁ" }
   - ref: "te-1098"
@@ -47,7 +47,8 @@ cards:
     reading: "idē"
     ipa: "id̪eː"
     pos: "pronoun"
-    bases: "te-0600"
+    bases:
+      - { word: "ఇదే", ref: "te-0600" }
     notes:
       - { id: "n1", kind: "note" }
     examples:
@@ -55,24 +56,24 @@ cards:
         reading: "nāku kāvālsindi idē."
         ipa: "naːku kaːʋaːlsind̪i id̪eː"
       - target: "ఇదే మంచి సమయం."
-        reading: "idē manci samayaṁ."
-        ipa: "id̪eː mant͡ʃi samajam"
+        reading: "idē mañci samayaṁ."
+        ipa: "id̪eː maɲtʃi samajam"
   - id: "te-5904"
     target: "కదా"
     reading: "kadā"
     ipa: "kad̪aː"
-    pos: "other"
+    pos: "particle"
     notes:
       - { id: "n1", kind: "note" }
     examples:
       - target: "ఈ రోజు చల్లగా ఉంది కదా?"
         reading: "ī rōju callagā undi kadā?"
-        ipa: "iː roːdʒu tʃalːaɡaː und̪i kad̪aː"
+        ipa: "iː roːdʒu tʃallaɡaː und̪i kad̪aː"
         bases:
           - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
       - target: "నువ్వు రేపు వస్తావు కదా?"
         reading: "nuvvu rēpu vastāvu kadā?"
-        ipa: "nuʋʋu reːpu vast̪aːʋu kad̪aː"
+        ipa: "nuʋʋu reːpu ʋast̪aːʋu kad̪aː"
         bases:
           - { word: "వస్తావు", base: "రావడం", reading: "rāvaḍaṁ" }
   - ref: "te-1110"
