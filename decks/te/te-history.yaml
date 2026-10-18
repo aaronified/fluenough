@@ -1,0 +1,1138 @@
+schema: 1
+id: "te-history"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "history"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-5100"
+    target: "చరిత్ర"
+    reading: "caritra"
+    ipa: "tʃarit̪ra"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "చరిత్ర పుస్తకం", reading: "caritra pustakaṁ" }] }
+    examples:
+      - target: "నాకు భారత చరిత్ర ఇష్టం."
+        reading: "nāku bhārata caritra iṣṭaṁ."
+        ipa: "naːku bʱaːrat̪a tʃarit̪ra iʂʈam"
+        bases:
+          - { word: "నాకు", base: "నేను", reading: "nēnu" }
+          - { word: "భారత", base: "భారత", reading: "bhārata" }
+          - { word: "ఇష్టం", base: "ఇష్టం", reading: "iṣṭaṁ" }
+      - target: "ఈ పుస్తకం చరిత్ర గురించి ఉంది."
+        reading: "ī pustakaṁ caritra guriṁci uṁdi."
+        ipa: "iː pust̪akam tʃarit̪ra ɡuriɲtʃi und̪i"
+        bases:
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "పుస్తకం", base: "పుస్తకం", reading: "pustakaṁ" }
+          - { word: "గురించి", base: "గురించి", reading: "guriṁci" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṁḍaḍaṁ" }
+    senses:
+      - { id: "history", pos: "noun", source: "https://en.wiktionary.org/wiki/చరిత్ర" }
+      - { id: "behavior", pos: "noun", source: "https://en.wiktionary.org/wiki/చరిత్ర" }
+  - id: "te-5101"
+    target: "రాజు"
+    reading: "rāju"
+    ipa: "raːdʒu"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "రాజ కుటుంబం", reading: "rāja kuṭuṁbaṁ" }] }
+    examples:
+      - target: "ఆ రాజు చాలా ధైర్యవంతుడు."
+        reading: "ā rāju cālā dhairyavaṁtuḍu."
+        ipa: "aː raːdʒu tʃaːlaː d̪ʱairjaʋant̪uɖu"
+        bases:
+          - { word: "ఆ", base: "ఆ", reading: "ā" }
+          - { word: "చాలా", base: "చాలా", reading: "cālā" }
+          - { word: "ధైర్యవంతుడు", base: "ధైర్యవంతుడు", reading: "dhairyavaṁtuḍu" }
+      - target: "రాజు ఎక్కడ ఉన్నాడు?"
+        reading: "rāju ekkaḍa unnāḍu?"
+        ipa: "raːdʒu ekkaɖa unnaːɖu"
+        bases:
+          - { word: "ఎక్కడ", base: "ఎక్కడ", reading: "ekkaḍa" }
+          - { word: "ఉన్నాడు", base: "ఉండడం", reading: "uṁḍaḍaṁ" }
+    synonyms:
+      - { id: "redu", word: "ఱేడు", reading: "rēḍu", source: "https://en.wiktionary.org/wiki/రాజు" }
+      - { id: "elika", word: "ఏలిక", reading: "ēlika", source: "https://en.wiktionary.org/wiki/రాజు" }
+      - { id: "dora", word: "దొర", reading: "dora", source: "https://en.wiktionary.org/wiki/రాజు" }
+      - { id: "rayadu", word: "రాయడు", reading: "rāyaḍu", source: "https://en.wiktionary.org/wiki/రాజు" }
+  - id: "te-5102"
+    target: "రాణి"
+    reading: "rāṇi"
+    ipa: "raːɳi"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "రాణి కథ", reading: "rāṇi katha" }] }
+    examples:
+      - target: "రాణి ప్రజలకు మంచి పాలన ఇచ్చింది."
+        reading: "rāṇi prajalaku maṁci pālana icciṁdi."
+        ipa: "raːɳi pradʒalaku maɲtʃi paːlana itʃtʃind̪i"
+        bases:
+          - { word: "ప్రజలకు", ref: "te-3515" }
+          - { word: "మంచి", base: "మంచి", reading: "maṁci" }
+          - { word: "ఇచ్చింది", base: "ఇవ్వడం", reading: "ivvaḍaṁ" }
+      - target: "నాకు రాణి కథ చెప్పారు."
+        reading: "nāku rāṇi katha ceppāru."
+        ipa: "naːku raːɳi kat̪ʰa tʃeppaːru"
+        bases:
+          - { word: "నాకు", base: "నేను", reading: "nēnu" }
+          - { word: "కథ", base: "కథ", reading: "katha" }
+          - { word: "చెప్పారు", base: "చెప్పడం", reading: "ceppaḍaṁ" }
+  - id: "te-5103"
+    target: "రాజ్యం"
+    reading: "rājyaṁ"
+    ipa: "raːdʒjam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "చిన్న రాజ్యం", reading: "cinna rājyaṁ" }] }
+    examples:
+      - target: "ఈ రాజ్యం చాలా పెద్దది."
+        reading: "ī rājyaṁ cālā peddadi."
+        ipa: "iː raːdʒjam tʃaːlaː ped̪d̪ad̪i"
+        bases:
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "చాలా", base: "చాలా", reading: "cālā" }
+          - { word: "పెద్దది", base: "పెద్ద", reading: "pedda" }
+      - target: "రాజ్యం మీద ఎవరు పాలించారు?"
+        reading: "rājyaṁ mīda evaru pāliṁcāru?"
+        ipa: "raːdʒjam miːd̪a eʋaru paːliɲtʃaːru"
+        bases:
+          - { word: "మీద", base: "మీద", reading: "mīda" }
+          - { word: "ఎవరు", base: "ఎవరు", reading: "evaru" }
+          - { word: "పాలించారు", base: "పాలించడం", reading: "pāliṁcaḍaṁ" }
+  - id: "te-5104"
+    target: "సామ్రాజ్యం"
+    reading: "sāmrājyaṁ"
+    ipa: "saːmraːdʒjam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "మౌర్య సామ్రాజ్యం", reading: "maurya sāmrājyaṁ" }] }
+    examples:
+      - target: "మౌర్య సామ్రాజ్యం భారతదేశంలో ఉండేది."
+        reading: "maurya sāmrājyaṁ bhāratadēśaṁlō uṁḍēdi."
+        ipa: "maurja saːmraːdʒjam bʱaːrat̪ad̪eːʃamloː uɳɖeːd̪i"
+        bases:
+          - { word: "మౌర్య", base: "మౌర్య", reading: "maurya" }
+          - { word: "భారతదేశంలో", base: "భారతదేశం", reading: "bhāratadēśaṁ" }
+          - { word: "ఉండేది", base: "ఉండడం", reading: "uṁḍaḍaṁ" }
+      - target: "అశోకుడు ఒక గొప్ప చక్రవర్తి."
+        reading: "aśōkuḍu oka goppa cakravarti."
+        ipa: "aʃoːkuɖu oka ɡoppa tʃakraʋart̪i"
+        bases:
+          - { word: "అశోకుడు", base: "అశోకుడు", reading: "aśōkuḍu" }
+          - { word: "ఒక", base: "ఒక", reading: "oka" }
+          - { word: "గొప్ప", base: "గొప్ప", reading: "goppa" }
+  - id: "te-5105"
+    target: "చక్రవర్తి"
+    reading: "cakravarti"
+    ipa: "tʃakraʋart̪i"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "చక్రవర్తి రాజభవనం", reading: "cakravarti rājabhavanaṁ" }] }
+    examples:
+      - target: "చక్రవర్తి రాజభవనంలో ఉన్నాడు."
+        reading: "cakravarti rājabhavanaṁlō unnāḍu."
+        ipa: "tʃakraʋart̪i raːdʒabʱaʋanamloː unnaːɖu"
+        bases:
+          - { word: "రాజభవనంలో", ref: "te-5107" }
+          - { word: "ఉన్నాడు", base: "ఉండడం", reading: "uṁḍaḍaṁ" }
+      - target: "ఆ చక్రవర్తి పేరు ఏమిటి?"
+        reading: "ā cakravarti pēru ēmiṭi?"
+        ipa: "aː tʃakraʋart̪i peːru eːmiʈi"
+        bases:
+          - { word: "ఆ", base: "ఆ", reading: "ā" }
+          - { word: "పేరు", base: "పేరు", reading: "pēru" }
+          - { word: "ఏమిటి", base: "ఏమిటి", reading: "ēmiṭi" }
+  - id: "te-5106"
+    target: "కోట"
+    reading: "kōṭa"
+    ipa: "koːʈa"
+    pos: "noun"
+    gender: "amahat"
+    picture: "🏰"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "కోట గోడ", reading: "kōṭa gōḍa" }] }
+    examples:
+      - target: "ఈ కోట చాలా పాతది."
+        reading: "ī kōṭa cālā pātadi."
+        ipa: "iː koːʈa tʃaːlaː paːt̪ad̪i"
+        bases:
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "చాలా", base: "చాలా", reading: "cālā" }
+          - { word: "పాతది", base: "పాత", reading: "pāta" }
+      - target: "మేము కోటను చూశాం."
+        reading: "mēmu kōṭanu cūśāṁ."
+        ipa: "meːmu koːʈanu tʃuːʃaːm"
+        bases:
+          - { word: "మేము", base: "మేము", reading: "mēmu" }
+          - { word: "కోటను", base: "కోట", reading: "kōṭa" }
+          - { word: "చూశాం", base: "చూడడం", reading: "cūḍaḍaṁ" }
+  - id: "te-5107"
+    target: "రాజభవనం"
+    reading: "rājabhavanaṁ"
+    ipa: "raːdʒabʱaʋanam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "పెద్ద రాజభవనం", reading: "pedda rājabhavanaṁ" }] }
+    examples:
+      - target: "రాజభవనం పెద్ద తోటలో ఉంది."
+        reading: "rājabhavanaṁ pedda tōṭalō uṁdi."
+        ipa: "raːdʒabʱaʋanam ped̪d̪a t̪oːʈaloː und̪i"
+        bases:
+          - { word: "పెద్ద", base: "పెద్ద", reading: "pedda" }
+          - { word: "తోటలో", base: "తోట", reading: "tōṭa" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṁḍaḍaṁ" }
+      - target: "ఆ రాజభవనాన్ని ఎప్పుడు కట్టారు?"
+        reading: "ā rājabhavanānni eppuḍu kaṭṭāru?"
+        ipa: "aː raːdʒabʱaʋanaːnni eppuɖu kaʈʈaːru"
+        bases:
+          - { word: "ఆ", base: "ఆ", reading: "ā" }
+          - { word: "రాజభవనాన్ని", base: "రాజభవనం", reading: "rājabhavanaṁ" }
+          - { word: "ఎప్పుడు", base: "ఎప్పుడు", reading: "eppuḍu" }
+          - { word: "కట్టారు", base: "కట్టడం", reading: "kaṭṭaḍaṁ" }
+  - id: "te-5108"
+    target: "యుద్ధం"
+    reading: "yuddhaṁ"
+    ipa: "jud̪d̪ʱam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "యుద్ధం తర్వాత", reading: "yuddhaṁ tarvāta" }] }
+    examples:
+      - target: "యుద్ధం చాలా కాలం జరిగింది."
+        reading: "yuddhaṁ cālā kālaṁ jarigiṁdi."
+        ipa: "jud̪d̪ʱam tʃaːlaː kaːlam dʒariɡind̪i"
+        bases:
+          - { word: "చాలా", base: "చాలా", reading: "cālā" }
+          - { word: "జరిగింది", base: "జరగడం", reading: "jaragaḍaṁ" }
+      - target: "ఆ యుద్ధంలో సైనికులు ధైర్యంగా పోరాడారు."
+        reading: "ā yuddhaṁlō sainikulu dhairyaṁgā pōrāḍāru."
+        ipa: "aː jud̪d̪ʱamloː sainikulu d̪ʱairjaŋɡaː poːraːɖaːru"
+        bases:
+          - { word: "ఆ", base: "ఆ", reading: "ā" }
+          - { word: "యుద్ధంలో", base: "యుద్ధం", reading: "yuddhaṁ" }
+          - { word: "సైనికులు", ref: "te-5109" }
+          - { word: "ధైర్యంగా", base: "ధైర్యం", reading: "dhairyaṁ" }
+          - { word: "పోరాడారు", base: "పోరాడడం", reading: "pōrāḍaḍaṁ" }
+  - id: "te-5109"
+    target: "సైనికుడు"
+    reading: "sainikuḍu"
+    ipa: "sainikuɖu"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "సైనికులు", reading: "sainikulu" }] }
+    examples:
+      - target: "సైనికుడు కోట గోడ మీద నిలబడ్డాడు."
+        reading: "sainikuḍu kōṭa gōḍa mīda nilabaḍḍāḍu."
+        ipa: "sainikuɖu koːʈa ɡoːɖa miːd̪a nilabaɖɖaːɖu"
+        bases:
+          - { word: "గోడ", base: "గోడ", reading: "gōḍa" }
+          - { word: "మీద", base: "మీద", reading: "mīda" }
+          - { word: "నిలబడ్డాడు", base: "నిలబడడం", reading: "nilabaḍaḍaṁ" }
+      - target: "నేను ఒక సైనికుడితో మాట్లాడాను."
+        reading: "nēnu oka sainikuḍitō māṭlāḍānu."
+        ipa: "neːnu oka sainikuɖit̪oː maːʈlaːɖaːnu"
+        bases:
+          - { word: "నేను", base: "నేను", reading: "nēnu" }
+          - { word: "ఒక", base: "ఒక", reading: "oka" }
+          - { word: "సైనికుడితో", base: "సైనికుడు", reading: "sainikuḍu" }
+          - { word: "మాట్లాడాను", base: "మాట్లాడడం", reading: "māṭlāḍaḍaṁ" }
+    synonyms:
+      - { id: "bantu", word: "బంటు", reading: "baṇṭu", source: "https://en.wiktionary.org/wiki/సైనికుడు" }
+  - id: "te-5110"
+    target: "శతాబ్దం"
+    reading: "śatābdaṁ"
+    ipa: "ʃat̪aːbd̪am"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "గత శతాబ్దం", reading: "gata śatābdaṁ" }] }
+    examples:
+      - target: "ఈ కోట రెండు శతాబ్దాల క్రితం కట్టారు."
+        reading: "ī kōṭa reṁḍu śatābdāla kritaṁ kaṭṭāru."
+        ipa: "iː koːʈa reɳɖu ʃat̪aːbd̪aːla krit̪am kaʈʈaːru"
+        bases:
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "రెండు", base: "రెండు", reading: "reṁḍu" }
+          - { word: "శతాబ్దాల", base: "శతాబ్దం", reading: "śatābdaṁ" }
+          - { word: "క్రితం", base: "క్రితం", reading: "kritaṁ" }
+          - { word: "కట్టారు", base: "కట్టడం", reading: "kaṭṭaḍaṁ" }
+      - target: "గత శతాబ్దంలో ఈ ఊరు చాలా మారింది."
+        reading: "gata śatābdaṁlō ī ūru cālā māriṁdi."
+        ipa: "ɡat̪a ʃat̪aːbd̪amloː iː uːru tʃaːlaː maːrind̪i"
+        bases:
+          - { word: "గత", base: "గత", reading: "gata" }
+          - { word: "శతాబ్దంలో", base: "శతాబ్దం", reading: "śatābdaṁ" }
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "ఊరు", base: "ఊరు", reading: "ūru" }
+          - { word: "చాలా", base: "చాలా", reading: "cālā" }
+          - { word: "మారింది", base: "మారడం", reading: "māraḍaṁ" }
+  - id: "te-5111"
+    target: "సంవత్సరం"
+    reading: "saṁvatsaraṁ"
+    ipa: "samʋat̪saram"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "గత సంవత్సరం", reading: "gata saṁvatsaraṁ" }] }
+    examples:
+      - target: "ఈ మ్యూజియం గత సంవత్సరం తెరిచారు."
+        reading: "ī myūjiyaṁ gata saṁvatsaraṁ tericāru."
+        ipa: "iː mjuːdʒijam ɡat̪a samʋat̪saram t̪eritʃaːru"
+        bases:
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "మ్యూజియం", ref: "te-3807" }
+          - { word: "గత", base: "గత", reading: "gata" }
+          - { word: "తెరిచారు", base: "తెరవడం", reading: "teravaḍaṁ" }
+      - target: "ఒక సంవత్సరంలో మేము రెండు పుస్తకాలు చదివాం."
+        reading: "oka saṁvatsaraṁlō mēmu reṁḍu pustakālu cadivāṁ."
+        ipa: "oka samʋat̪saramloː meːmu reɳɖu pust̪akaːlu tʃad̪iʋaːm"
+        bases:
+          - { word: "ఒక", base: "ఒక", reading: "oka" }
+          - { word: "సంవత్సరంలో", base: "సంవత్సరం", reading: "saṁvatsaraṁ" }
+          - { word: "మేము", base: "మేము", reading: "mēmu" }
+          - { word: "రెండు", base: "రెండు", reading: "reṁḍu" }
+          - { word: "పుస్తకాలు", base: "పుస్తకం", reading: "pustakaṁ" }
+          - { word: "చదివాం", base: "చదవడం", reading: "cadavaḍaṁ" }
+  - id: "te-5112"
+    target: "ప్రాచీన"
+    reading: "prācīna"
+    ipa: "praːtʃiːna"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ప్రాచీన చరిత్ర", reading: "prācīna caritra" }] }
+    examples:
+      - target: "ఇది ప్రాచీన దేవాలయం."
+        reading: "idi prācīna dēvālayaṁ."
+        ipa: "id̪i praːtʃiːna d̪eːʋaːlajam"
+        bases:
+          - { word: "ఇది", base: "ఇది", reading: "idi" }
+      - target: "ప్రాచీన చరిత్ర చాలా ఆసక్తికరం."
+        reading: "prācīna caritra cālā āsaktikaraṁ."
+        ipa: "praːtʃiːna tʃarit̪ra tʃaːlaː aːsakt̪ikaram"
+        bases:
+          - { word: "చాలా", base: "చాలా", reading: "cālā" }
+          - { word: "ఆసక్తికరం", base: "ఆసక్తికరం", reading: "āsaktikaraṁ" }
+  - id: "te-5113"
+    target: "పురాతన"
+    reading: "purātana"
+    ipa: "puraːt̪ana"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "పురాతన నగరం", reading: "purātana nagaraṁ" }] }
+    examples:
+      - target: "ఈ పురాతన నగరం నదికి దగ్గర ఉంది."
+        reading: "ī purātana nagaraṁ nadiki daggara uṁdi."
+        ipa: "iː puraːt̪ana naɡaram nad̪iki d̪aɡɡara und̪i"
+        bases:
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "నగరం", base: "నగరం", reading: "nagaraṁ" }
+          - { word: "నదికి", base: "నది", reading: "nadi" }
+          - { word: "దగ్గర", base: "దగ్గర", reading: "daggara" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṁḍaḍaṁ" }
+      - target: "పురాతన పుస్తకాలు మ్యూజియంలో ఉన్నాయి."
+        reading: "purātana pustakālu myūjiyaṁlō unnāyi."
+        ipa: "puraːt̪ana pust̪akaːlu mjuːdʒijamloː unnaːji"
+        bases:
+          - { word: "పుస్తకాలు", base: "పుస్తకం", reading: "pustakaṁ" }
+          - { word: "మ్యూజియంలో", ref: "te-3807" }
+          - { word: "ఉన్నాయి", base: "ఉండడం", reading: "uṁḍaḍaṁ" }
+  - id: "te-5114"
+    target: "చారిత్రక"
+    reading: "cāritraka"
+    ipa: "tʃaːrit̪raka"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "చారిత్రక ప్రదేశం", reading: "cāritraka pradēśaṁ" }] }
+    examples:
+      - target: "ఇది చారిత్రక ప్రదేశం."
+        reading: "idi cāritraka pradēśaṁ."
+        ipa: "id̪i tʃaːrit̪raka prad̪eːʃam"
+        bases:
+          - { word: "ఇది", base: "ఇది", reading: "idi" }
+          - { word: "ప్రదేశం", base: "ప్రదేశం", reading: "pradēśaṁ" }
+      - target: "చారిత్రక సంఘటనలు మనకు చాలా నేర్పుతాయి."
+        reading: "cāritraka saṁghaṭanalu manaku cālā nērputāyi."
+        ipa: "tʃaːrit̪raka saŋɡʱaʈanalu manaku tʃaːlaː neːrput̪aːji"
+        bases:
+          - { word: "సంఘటనలు", base: "సంఘటన", reading: "saṁghaṭana" }
+          - { word: "మనకు", base: "మనం", reading: "manaṁ" }
+          - { word: "చాలా", base: "చాలా", reading: "cālā" }
+          - { word: "నేర్పుతాయి", base: "నేర్పడం", reading: "nērpaḍaṁ" }
+  - id: "te-5115"
+    target: "స్మారకం"
+    reading: "smārakaṁ"
+    ipa: "smaːrakam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "స్మారక చిహ్నం", reading: "smāraka cihnaṁ" }] }
+    examples:
+      - target: "ఈ స్మారకం మన వీరుల గుర్తుగా ఉంది."
+        reading: "ī smārakaṁ mana vīrula gurtugā uṁdi."
+        ipa: "iː smaːrakam mana ʋiːrula ɡurt̪uɡaː und̪i"
+        bases:
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "మన", base: "మన", reading: "mana" }
+          - { word: "వీరుల", ref: "te-5119" }
+          - { word: "గుర్తుగా", base: "గుర్తు", reading: "gurtu" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṁḍaḍaṁ" }
+      - target: "ఆ స్మారకాన్ని ప్రజలు ప్రతి ఏడాది చూస్తారు."
+        reading: "ā smārakānni prajalu prati ēḍādi cūstāru."
+        ipa: "aː smaːrakaːnni pradʒalu prat̪i eːɖaːd̪i tʃuːst̪aːru"
+        bases:
+          - { word: "ఆ", base: "ఆ", reading: "ā" }
+          - { word: "స్మారకాన్ని", base: "స్మారకం", reading: "smārakaṁ" }
+          - { word: "ప్రజలు", ref: "te-3515" }
+          - { word: "ప్రతి", base: "ప్రతి", reading: "prati" }
+          - { word: "ఏడాది", base: "ఏడాది", reading: "ēḍādi" }
+          - { word: "చూస్తారు", base: "చూడడం", reading: "cūḍaḍaṁ" }
+  - id: "te-5116"
+    target: "దేవాలయం"
+    reading: "dēvālayaṁ"
+    ipa: "d̪eːʋaːlajam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఊరి దేవాలయం", reading: "ūri dēvālayaṁ" }] }
+    examples:
+      - target: "ఈ దేవాలయం ఊరి మధ్యలో ఉంది."
+        reading: "ī dēvālayaṁ ūri madhyalō uṁdi."
+        ipa: "iː d̪eːʋaːlajam uːri mad̪ʱjaloː und̪i"
+        bases:
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "ఊరి", base: "ఊరు", reading: "ūru" }
+          - { word: "మధ్యలో", base: "మధ్య", reading: "madhya" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṁḍaḍaṁ" }
+      - target: "పండుగ రోజున దేవాలయాన్ని అలంకరించారు."
+        reading: "paṁḍuga rōjuna dēvālayānni alaṁkariṁcāru."
+        ipa: "paɳɖuɡa roːdʒuna d̪eːʋaːlajaːnni alaŋkariɲtʃaːru"
+        bases:
+          - { word: "పండుగ", base: "పండుగ", reading: "paṁḍuga" }
+          - { word: "రోజున", base: "రోజు", reading: "rōju" }
+          - { word: "దేవాలయాన్ని", base: "దేవాలయం", reading: "dēvālayaṁ" }
+          - { word: "అలంకరించారు", base: "అలంకరించడం", reading: "alaṁkariṁcaḍaṁ" }
+  - id: "te-5117"
+    target: "దేశం"
+    reading: "dēśaṁ"
+    ipa: "d̪eːʃam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "మన దేశం", reading: "mana dēśaṁ" }] }
+    examples:
+      - target: "మన దేశం చాలా పురాతనమైనది."
+        reading: "mana dēśaṁ cālā purātanamainadi."
+        ipa: "mana d̪eːʃam tʃaːlaː puraːt̪anamainad̪i"
+        bases:
+          - { word: "మన", base: "మన", reading: "mana" }
+          - { word: "చాలా", base: "చాలా", reading: "cālā" }
+          - { word: "పురాతనమైనది", base: "పురాతన", reading: "purātana" }
+      - target: "ఈ దేశంలో అనేక రాజవంశాలు పాలించాయి."
+        reading: "ī dēśaṁlō anēka rājavaṁśālu pāliṁcāyi."
+        ipa: "iː d̪eːʃamloː aneːka raːdʒaʋamʃaːlu paːliɲtʃaːji"
+        bases:
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "దేశంలో", base: "దేశం", reading: "dēśaṁ" }
+          - { word: "అనేక", base: "అనేక", reading: "anēka" }
+          - { word: "రాజవంశాలు", ref: "te-5120" }
+          - { word: "పాలించాయి", base: "పాలించడం", reading: "pāliṁcaḍaṁ" }
+  - id: "te-5118"
+    target: "నాయకుడు"
+    reading: "nāyakuḍu"
+    ipa: "naːjakuɖu"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "నాయకులు", reading: "nāyakulu" }] }
+    examples:
+      - target: "అతను ప్రజల నాయకుడు."
+        reading: "atanu prajala nāyakuḍu."
+        ipa: "at̪anu pradʒala naːjakuɖu"
+        bases:
+          - { word: "అతను", base: "అతను", reading: "atanu" }
+          - { word: "ప్రజల", ref: "te-3515" }
+      - target: "ఆ యుద్ధంలో నాయకుడు కోటను కాపాడారు."
+        reading: "ā yuddhaṁlō nāyakuḍu kōṭanu kāpāḍāru."
+        ipa: "aː jud̪d̪ʱamloː naːjakuɖu koːʈanu kaːpaːɖaːru"
+        bases:
+          - { word: "ఆ", base: "ఆ", reading: "ā" }
+          - { word: "యుద్ధంలో", ref: "te-5108" }
+          - { word: "కోటను", ref: "te-5106" }
+          - { word: "కాపాడారు", base: "కాపాడడం", reading: "kāpāḍaḍaṁ" }
+  - id: "te-5119"
+    target: "వీరుడు"
+    reading: "vīruḍu"
+    ipa: "ʋiːruɖu"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "యుద్ధ వీరుడు", reading: "yuddha vīruḍu" }] }
+    examples:
+      - target: "అతను మా ఊరి వీరుడు."
+        reading: "atanu mā ūri vīruḍu."
+        ipa: "at̪anu maː uːri ʋiːruɖu"
+        bases:
+          - { word: "అతను", base: "అతను", reading: "atanu" }
+          - { word: "మా", base: "మా", reading: "mā" }
+          - { word: "ఊరి", base: "ఊరు", reading: "ūru" }
+      - target: "ఈ కథలో ఒక వీరుడు ఉంటాడు."
+        reading: "ī kathalō oka vīruḍu uṁṭāḍu."
+        ipa: "iː kat̪ʰaloː oka ʋiːruɖu uɳʈaːɖu"
+        bases:
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "కథలో", base: "కథ", reading: "katha" }
+          - { word: "ఒక", base: "ఒక", reading: "oka" }
+          - { word: "ఉంటాడు", base: "ఉండడం", reading: "uṁḍaḍaṁ" }
+    synonyms:
+      - { id: "surudu", word: "శూరుడు", reading: "śūruḍu", source: "https://en.wiktionary.org/wiki/వీరుడు" }
+  - id: "te-5120"
+    target: "రాజవంశం"
+    reading: "rājavaṁśaṁ"
+    ipa: "raːdʒaʋamʃam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "రాజవంశ చరిత్ర", reading: "rājavaṁśa caritra" }] }
+    examples:
+      - target: "ఈ రాజవంశం వెయ్యి సంవత్సరాలు పాలించింది."
+        reading: "ī rājavaṁśaṁ veyyi saṁvatsarālu pāliṁciṁdi."
+        ipa: "iː raːdʒaʋamʃam ʋejji samʋat̪saraːlu paːliɲtʃind̪i"
+        bases:
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "వెయ్యి", base: "వెయ్యి", reading: "veyyi" }
+          - { word: "సంవత్సరాలు", ref: "te-5111" }
+          - { word: "పాలించింది", base: "పాలించడం", reading: "pāliṁcaḍaṁ" }
+      - target: "రాజవంశాల చరిత్ర మనకు తెలియాలి."
+        reading: "rājavaṁśāla caritra manaku teliyāli."
+        ipa: "raːdʒaʋamʃaːla tʃarit̪ra manaku t̪elijaːli"
+        bases:
+          - { word: "రాజవంశాల", base: "రాజవంశం", reading: "rājavaṁśaṁ" }
+          - { word: "మనకు", base: "మనం", reading: "manaṁ" }
+          - { word: "తెలియాలి", base: "తెలియడం", reading: "teliyaḍaṁ" }
+  - id: "te-5121"
+    target: "రాజధాని"
+    reading: "rājadhāni"
+    ipa: "raːdʒad̪ʱaːni"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "రాజధాని నగరం", reading: "rājadhāni nagaraṁ" }] }
+    examples:
+      - target: "ఢిల్లీ భారతదేశ రాజధాని."
+        reading: "ḍhillī bhāratadēśa rājadhāni."
+        ipa: "ɖʱilliː bʱaːrat̪ad̪eːʃa raːdʒad̪ʱaːni"
+        bases:
+          - { word: "ఢిల్లీ", base: "ఢిల్లీ", reading: "ḍhillī" }
+          - { word: "భారతదేశ", base: "భారతదేశం", reading: "bhāratadēśaṁ" }
+      - target: "రాజధానికి ఈ రోడ్డు నుంచి వెళ్లవచ్చు."
+        reading: "rājadhāniki ī rōḍḍu nuṁci veḷlavaccu."
+        ipa: "raːdʒad̪ʱaːniki iː roːɖɖu nuɲtʃi ʋeɭlaʋatʃtʃu"
+        bases:
+          - { word: "రాజధానికి", base: "రాజధాని", reading: "rājadhāni" }
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "రోడ్డు", base: "రోడ్డు", reading: "rōḍḍu" }
+          - { word: "నుంచి", base: "నుంచి", reading: "nuṁci" }
+          - { word: "వెళ్లవచ్చు", base: "వెళ్ళడం", reading: "veḷḷaḍaṁ" }
+  - id: "te-5122"
+    target: "పాలన"
+    reading: "pālana"
+    ipa: "paːlana"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "బ్రిటిష్ పాలన", reading: "briṭiṣ pālana" }] }
+    examples:
+      - target: "ఆ రాజు పాలన ప్రజలకు మంచిది."
+        reading: "ā rāju pālana prajalaku maṁcidi."
+        ipa: "aː raːdʒu paːlana pradʒalaku maɲtʃid̪i"
+        bases:
+          - { word: "ఆ", base: "ఆ", reading: "ā" }
+          - { word: "ప్రజలకు", ref: "te-3515" }
+          - { word: "మంచిది", base: "మంచి", reading: "maṁci" }
+      - target: "బ్రిటిష్ పాలనలో ఎన్నో మార్పులు జరిగాయి."
+        reading: "briṭiṣ pālanalō ennō mārpulu jarigāyi."
+        ipa: "briʈiʂ paːlanaloː ennoː maːrpulu dʒariɡaːji"
+        bases:
+          - { word: "బ్రిటిష్", base: "బ్రిటిష్", reading: "briṭiṣ" }
+          - { word: "పాలనలో", base: "పాలన", reading: "pālana" }
+          - { word: "ఎన్నో", base: "ఎన్నో", reading: "ennō" }
+          - { word: "మార్పులు", base: "మార్పు", reading: "mārpu" }
+          - { word: "జరిగాయి", base: "జరగడం", reading: "jaragaḍaṁ" }
+  - id: "te-5123"
+    target: "పాలకుడు"
+    reading: "pālakuḍu"
+    ipa: "paːlakuɖu"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "పాలకులు", reading: "pālakulu" }] }
+    examples:
+      - target: "ఆ పాలకుడు ఒక గొప్ప రాజు."
+        reading: "ā pālakuḍu oka goppa rāju."
+        ipa: "aː paːlakuɖu oka ɡoppa raːdʒu"
+        bases:
+          - { word: "ఆ", base: "ఆ", reading: "ā" }
+          - { word: "ఒక", base: "ఒక", reading: "oka" }
+          - { word: "గొప్ప", base: "గొప్ప", reading: "goppa" }
+      - target: "ప్రజలు తమ పాలకుడిని గౌరవించారు."
+        reading: "prajalu tama pālakuḍini gauraviṁcāru."
+        ipa: "pradʒalu t̪ama paːlakuɖini ɡauraʋiɲtʃaːru"
+        bases:
+          - { word: "ప్రజలు", ref: "te-3515" }
+          - { word: "తమ", base: "తమ", reading: "tama" }
+          - { word: "పాలకుడిని", base: "పాలకుడు", reading: "pālakuḍu" }
+          - { word: "గౌరవించారు", base: "గౌరవించడం", reading: "gauraviṁcaḍaṁ" }
+  - id: "te-5124"
+    target: "విప్లవం"
+    reading: "viplavaṁ"
+    ipa: "ʋiplaʋam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "విప్లవ వీరులు", reading: "viplava vīrulu" }] }
+    examples:
+      - target: "ఆ విప్లవం దేశాన్ని మార్చింది."
+        reading: "ā viplavaṁ dēśānni mārciṁdi."
+        ipa: "aː ʋiplaʋam d̪eːʃaːnni maːrtʃind̪i"
+        bases:
+          - { word: "ఆ", base: "ఆ", reading: "ā" }
+          - { word: "దేశాన్ని", ref: "te-5117" }
+          - { word: "మార్చింది", base: "మార్చడం", reading: "mārcaḍaṁ" }
+      - target: "విప్లవ వీరులు ప్రాణాలు ఇచ్చారు."
+        reading: "viplava vīrulu prāṇālu iccāru."
+        ipa: "ʋiplaʋa ʋiːrulu praːɳaːlu itʃtʃaːru"
+        bases:
+          - { word: "విప్లవ", base: "విప్లవం", reading: "viplavaṁ" }
+          - { word: "వీరులు", ref: "te-5119" }
+          - { word: "ప్రాణాలు", base: "ప్రాణం", reading: "prāṇaṁ" }
+          - { word: "ఇచ్చారు", base: "ఇవ్వడం", reading: "ivvaḍaṁ" }
+  - id: "te-5125"
+    target: "ఒప్పందం"
+    reading: "oppaṁdaṁ"
+    ipa: "oppand̪am"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "శాంతి ఒప్పందం", reading: "śāṁti oppaṁdaṁ" }] }
+    examples:
+      - target: "రెండు దేశాలు ఒక ఒప్పందం చేసుకున్నాయి."
+        reading: "reṁḍu dēśālu oka oppaṁdaṁ cēsukunnāyi."
+        ipa: "reɳɖu d̪eːʃaːlu oka oppand̪am tʃeːsukunnaːji"
+        bases:
+          - { word: "రెండు", base: "రెండు", reading: "reṁḍu" }
+          - { word: "దేశాలు", ref: "te-5117" }
+          - { word: "ఒక", base: "ఒక", reading: "oka" }
+          - { word: "చేసుకున్నాయి", base: "చేసుకోవడం", reading: "cēsukōvaḍaṁ" }
+      - target: "ఆ ఒప్పందం ప్రకారం కోట మనకు దక్కింది."
+        reading: "ā oppaṁdaṁ prakāraṁ kōṭa manaku dakkiṁdi."
+        ipa: "aː oppand̪am prakaːram koːʈa manaku d̪akkind̪i"
+        bases:
+          - { word: "ఆ", base: "ఆ", reading: "ā" }
+          - { word: "ప్రకారం", base: "ప్రకారం", reading: "prakāraṁ" }
+          - { word: "మనకు", base: "మనం", reading: "manaṁ" }
+          - { word: "దక్కింది", base: "దక్కడం", reading: "dakkaḍaṁ" }
+  - id: "te-5126"
+    target: "యోధుడు"
+    reading: "yōdhuḍu"
+    ipa: "joːd̪ʱuɖu"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "యోధులు", reading: "yōdhulu" }] }
+    examples:
+      - target: "ఆ యోధుడు ఖడ్గం పట్టుకున్నాడు."
+        reading: "ā yōdhuḍu khaḍgaṁ paṭṭukunnāḍu."
+        ipa: "aː joːd̪ʱuɖu kʰaɖɡam paʈʈukunnaːɖu"
+        bases:
+          - { word: "ఆ", base: "ఆ", reading: "ā" }
+          - { word: "పట్టుకున్నాడు", base: "పట్టుకోవడం", reading: "paṭṭukōvaḍaṁ" }
+      - target: "యోధులు ఎప్పుడూ ధైర్యంగా ఉంటారు."
+        reading: "yōdhulu eppuḍū dhairyaṁgā uṁṭāru."
+        ipa: "joːd̪ʱulu eppuɖuː d̪ʱairjaŋɡaː uɳʈaːru"
+        bases:
+          - { word: "యోధులు", base: "యోధుడు", reading: "yōdhuḍu" }
+          - { word: "ఎప్పుడూ", base: "ఎప్పుడూ", reading: "eppuḍū" }
+          - { word: "ధైర్యంగా", base: "ధైర్యం", reading: "dhairyaṁ" }
+          - { word: "ఉంటారు", base: "ఉండడం", reading: "uṁḍaḍaṁ" }
+  - id: "te-5127"
+    target: "గతం"
+    reading: "gataṁ"
+    ipa: "ɡat̪am"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "గతంలో", reading: "gataṁlō" }] }
+    examples:
+      - target: "గతాన్ని మనం మర్చిపోకూడదు."
+        reading: "gatānni manaṁ marcipōkūḍadu."
+        ipa: "ɡat̪aːnni manam martʃipoːkuːɖad̪u"
+        bases:
+          - { word: "గతాన్ని", base: "గతం", reading: "gataṁ" }
+          - { word: "మనం", base: "మనం", reading: "manaṁ" }
+          - { word: "మర్చిపోకూడదు", base: "మర్చిపోవడం", reading: "marcipōvaḍaṁ" }
+      - target: "గతంలో ఈ ఊరు చిన్నది."
+        reading: "gataṁlō ī ūru cinnadi."
+        ipa: "ɡat̪amloː iː uːru tʃinnad̪i"
+        bases:
+          - { word: "గతంలో", base: "గతం", reading: "gataṁ" }
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "ఊరు", base: "ఊరు", reading: "ūru" }
+          - { word: "చిన్నది", base: "చిన్న", reading: "cinna" }
+  - id: "te-5128"
+    target: "యుగం"
+    reading: "yugaṁ"
+    ipa: "juɡam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "కొత్త యుగం", reading: "kotta yugaṁ" }] }
+    examples:
+      - target: "ఇది కొత్త యుగం."
+        reading: "idi kotta yugaṁ."
+        ipa: "id̪i kot̪t̪a juɡam"
+        bases:
+          - { word: "ఇది", base: "ఇది", reading: "idi" }
+          - { word: "కొత్త", base: "కొత్త", reading: "kotta" }
+      - target: "ఆ యుగంలో ప్రజలు కోటలలో నివసించారు."
+        reading: "ā yugaṁlō prajalu kōṭalalō nivasiṁcāru."
+        ipa: "aː juɡamloː pradʒalu koːʈalaloː niʋasiɲtʃaːru"
+        bases:
+          - { word: "ఆ", base: "ఆ", reading: "ā" }
+          - { word: "యుగంలో", base: "యుగం", reading: "yugaṁ" }
+          - { word: "ప్రజలు", ref: "te-3515" }
+          - { word: "కోటలలో", ref: "te-5106" }
+          - { word: "నివసించారు", base: "నివసించడం", reading: "nivasiṁcaḍaṁ" }
+  - id: "te-5129"
+    target: "సంస్కృతి"
+    reading: "saṁskr̥ti"
+    ipa: "samskrut̪i"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "భారత సంస్కృతి", reading: "bhārata saṁskr̥ti" }] }
+    examples:
+      - target: "భారత సంస్కృతి చాలా వైవిధ్యమైనది."
+        reading: "bhārata saṁskr̥ti cālā vaividhyamainadi."
+        ipa: "bʱaːrat̪a samskrut̪i tʃaːlaː ʋaiʋid̪ʱjamainad̪i"
+        bases:
+          - { word: "భారత", base: "భారత", reading: "bhārata" }
+          - { word: "చాలా", base: "చాలా", reading: "cālā" }
+          - { word: "వైవిధ్యమైనది", base: "వైవిధ్యమైన", reading: "vaividhyamaina" }
+      - target: "సంస్కృతి గురించి ఒక పుస్తకం చదివాను."
+        reading: "saṁskr̥ti guriṁci oka pustakaṁ cadivānu."
+        ipa: "samskrut̪i ɡuriɲtʃi oka pust̪akam tʃad̪iʋaːnu"
+        bases:
+          - { word: "గురించి", base: "గురించి", reading: "guriṁci" }
+          - { word: "ఒక", base: "ఒక", reading: "oka" }
+          - { word: "పుస్తకం", base: "పుస్తకం", reading: "pustakaṁ" }
+          - { word: "చదివాను", base: "చదవడం", reading: "cadavaḍaṁ" }
+  - id: "te-5130"
+    target: "సంప్రదాయం"
+    reading: "saṁpradāyaṁ"
+    ipa: "samprad̪aːjam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "పాత సంప్రదాయం", reading: "pāta saṁpradāyaṁ" }] }
+    examples:
+      - target: "ఈ పండుగ ఒక పాత సంప్రదాయం."
+        reading: "ī paṁḍuga oka pāta saṁpradāyaṁ."
+        ipa: "iː paɳɖuɡa oka paːt̪a samprad̪aːjam"
+        bases:
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "పండుగ", base: "పండుగ", reading: "paṁḍuga" }
+          - { word: "ఒక", base: "ఒక", reading: "oka" }
+          - { word: "పాత", base: "పాత", reading: "pāta" }
+      - target: "మా కుటుంబంలో ఈ సంప్రదాయం కొనసాగుతోంది."
+        reading: "mā kuṭuṁbaṁlō ī saṁpradāyaṁ konasāgutōṁdi."
+        ipa: "maː kuʈumbamloː iː samprad̪aːjam konasaːɡut̪oːnd̪i"
+        bases:
+          - { word: "మా", base: "మా", reading: "mā" }
+          - { word: "కుటుంబంలో", base: "కుటుంబం", reading: "kuṭuṁbaṁ" }
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "కొనసాగుతోంది", base: "కొనసాగడం", reading: "konasāgaḍaṁ" }
+  - id: "te-5131"
+    target: "శాసనం"
+    reading: "śāsanaṁ"
+    ipa: "ʃaːsanam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "రాతి శాసనం", reading: "rāti śāsanaṁ" }] }
+    examples:
+      - target: "ఈ రాతి శాసనం చాలా పాతది."
+        reading: "ī rāti śāsanaṁ cālā pātadi."
+        ipa: "iː raːt̪i ʃaːsanam tʃaːlaː paːt̪ad̪i"
+        bases:
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "రాతి", base: "రాతి", reading: "rāti" }
+          - { word: "చాలా", base: "చాలా", reading: "cālā" }
+          - { word: "పాతది", base: "పాత", reading: "pāta" }
+      - target: "అశోకుడు శాసనాలు రాయించాడు."
+        reading: "aśōkuḍu śāsanālu rāyiṁcāḍu."
+        ipa: "aʃoːkuɖu ʃaːsanaːlu raːjiɲtʃaːɖu"
+        bases:
+          - { word: "అశోకుడు", base: "అశోకుడు", reading: "aśōkuḍu" }
+          - { word: "శాసనాలు", base: "శాసనం", reading: "śāsanaṁ" }
+          - { word: "రాయించాడు", base: "రాయించడం", reading: "rāyiṁcaḍaṁ" }
+  - id: "te-5132"
+    target: "రాజకుమారుడు"
+    reading: "rājakumāruḍu"
+    ipa: "raːdʒakumaːruɖu"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "రాజకుమారి", reading: "rājakumāri" }] }
+    examples:
+      - target: "ఆ రాజకుమారుడు కోటలో పెరిగాడు."
+        reading: "ā rājakumāruḍu kōṭalō perigāḍu."
+        ipa: "aː raːdʒakumaːruɖu koːʈaloː periɡaːɖu"
+        bases:
+          - { word: "ఆ", base: "ఆ", reading: "ā" }
+          - { word: "కోటలో", ref: "te-5106" }
+          - { word: "పెరిగాడు", base: "పెరగడం", reading: "peragaḍaṁ" }
+      - target: "రాజకుమారుడు ప్రజలను కలిశాడు."
+        reading: "rājakumāruḍu prajalanu kaliśāḍu."
+        ipa: "raːdʒakumaːruɖu pradʒalanu kaliʃaːɖu"
+        bases:
+          - { word: "ప్రజలను", ref: "te-3515" }
+          - { word: "కలిశాడు", base: "కలవడం", reading: "kalavaḍaṁ" }
+    synonyms:
+      - { id: "rakumarudu", word: "రాకుమారుడు", reading: "rākumāruḍu", source: "https://en.wiktionary.org/wiki/రాజకుమారుడు" }
+  - id: "te-5133"
+    target: "చరిత్రకారుడు"
+    reading: "caritrakāruḍu"
+    ipa: "tʃarit̪rakaːruɖu"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "చరిత్రకారులు", reading: "caritrakārulu" }] }
+    examples:
+      - target: "ఆ చరిత్రకారుడు ఈ కోట గురించి రాశాడు."
+        reading: "ā caritrakāruḍu ī kōṭa guriṁci rāśāḍu."
+        ipa: "aː tʃarit̪rakaːruɖu iː koːʈa ɡuriɲtʃi raːʃaːɖu"
+        bases:
+          - { word: "ఆ", base: "ఆ", reading: "ā" }
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "గురించి", base: "గురించి", reading: "guriṁci" }
+          - { word: "రాశాడు", base: "రాయడం", reading: "rāyaḍaṁ" }
+      - target: "చరిత్రకారులు పాత పత్రాలు చదువుతారు."
+        reading: "caritrakārulu pāta patrālu caduvutāru."
+        ipa: "tʃarit̪rakaːrulu paːt̪a pat̪raːlu tʃad̪uʋut̪aːru"
+        bases:
+          - { word: "చరిత్రకారులు", base: "చరిత్రకారుడు", reading: "caritrakāruḍu" }
+          - { word: "పాత", base: "పాత", reading: "pāta" }
+          - { word: "పత్రాలు", base: "పత్రం", reading: "patraṁ" }
+          - { word: "చదువుతారు", base: "చదవడం", reading: "cadavaḍaṁ" }
+  - id: "te-5134"
+    target: "వారసత్వం"
+    reading: "vārasatvaṁ"
+    ipa: "ʋaːrasat̪ʋam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ప్రపంచ వారసత్వం", reading: "prapaṁca vārasatvaṁ" }] }
+    examples:
+      - target: "ఈ దేవాలయం మన వారసత్వంలో భాగం."
+        reading: "ī dēvālayaṁ mana vārasatvaṁlō bhāgaṁ."
+        ipa: "iː d̪eːʋaːlajam mana ʋaːrasat̪ʋamloː bʱaːɡam"
+        bases:
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "మన", base: "మన", reading: "mana" }
+          - { word: "వారసత్వంలో", base: "వారసత్వం", reading: "vārasatvaṁ" }
+          - { word: "భాగం", base: "భాగం", reading: "bhāgaṁ" }
+      - target: "ఈ కోటలు మనకు గొప్ప వారసత్వం."
+        reading: "ī kōṭalu manaku goppa vārasatvaṁ."
+        ipa: "iː koːʈalu manaku ɡoppa ʋaːrasat̪ʋam"
+        bases:
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "కోటలు", ref: "te-5106" }
+          - { word: "మనకు", base: "మనం", reading: "manaṁ" }
+          - { word: "గొప్ప", base: "గొప్ప", reading: "goppa" }
+  - id: "te-5135"
+    target: "ఆక్రమణ"
+    reading: "ākramaṇa"
+    ipa: "aːkramaɳa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "భూమి ఆక్రమణ", reading: "bhūmi ākramaṇa" }] }
+    examples:
+      - target: "ఆ ఆక్రమణ చాలా సంవత్సరాలు సాగింది."
+        reading: "ā ākramaṇa cālā saṁvatsarālu sāgiṁdi."
+        ipa: "aː aːkramaɳa tʃaːlaː samʋat̪saraːlu saːɡind̪i"
+        bases:
+          - { word: "ఆ", base: "ఆ", reading: "ā" }
+          - { word: "చాలా", base: "చాలా", reading: "cālā" }
+          - { word: "సంవత్సరాలు", ref: "te-5111" }
+          - { word: "సాగింది", base: "సాగడం", reading: "sāgaḍaṁ" }
+      - target: "ఆక్రమణ తర్వాత ప్రజలు కోటను వదిలారు."
+        reading: "ākramaṇa tarvāta prajalu kōṭanu vadilāru."
+        ipa: "aːkramaɳa t̪arʋaːt̪a pradʒalu koːʈanu ʋad̪ilaːru"
+        bases:
+          - { word: "తర్వాత", base: "తర్వాత", reading: "tarvāta" }
+          - { word: "ప్రజలు", ref: "te-3515" }
+          - { word: "కోటను", ref: "te-5106" }
+          - { word: "వదిలారు", base: "వదలడం", reading: "vadalaḍaṁ" }
+  - id: "te-5136"
+    target: "కాలం"
+    reading: "kālaṁ"
+    ipa: "kaːlam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "చాలా కాలం", reading: "cālā kālaṁ" }] }
+    examples:
+      - target: "ఆ కాలంలో ఈ నగరం చాలా పెద్దది."
+        reading: "ā kālaṁlō ī nagaraṁ cālā peddadi."
+        ipa: "aː kaːlamloː iː naɡaram tʃaːlaː ped̪d̪ad̪i"
+        bases:
+          - { word: "ఆ", base: "ఆ", reading: "ā" }
+          - { word: "కాలంలో", base: "కాలం", reading: "kālaṁ" }
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "నగరం", base: "నగరం", reading: "nagaraṁ" }
+          - { word: "చాలా", base: "చాలా", reading: "cālā" }
+          - { word: "పెద్దది", base: "పెద్ద", reading: "pedda" }
+      - target: "ఎంత కాలం గడిచింది?"
+        reading: "eṁta kālaṁ gaḍiciṁdi?"
+        ipa: "ent̪a kaːlam ɡaɖitʃind̪i"
+        bases:
+          - { word: "ఎంత", base: "ఎంత", reading: "eṁta" }
+          - { word: "గడిచింది", base: "గడవడం", reading: "gaḍavaḍaṁ" }
+  - id: "te-5137"
+    target: "ఆయుధం"
+    reading: "āyudhaṁ"
+    ipa: "aːjud̪ʱam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఆయుధాలు", reading: "āyudhālu" }] }
+    examples:
+      - target: "ఆ రోజుల్లో సైనికులు కొత్త ఆయుధాలు వాడేవారు."
+        reading: "ā rōjullō sainikulu kotta āyudhālu vāḍēvāru."
+        ipa: "aː roːdʒulloː sainikulu kot̪t̪a aːjud̪ʱaːlu ʋaːɖeːʋaːru"
+        bases:
+          - { word: "ఆ", base: "ఆ", reading: "ā" }
+          - { word: "రోజుల్లో", base: "రోజు", reading: "rōju" }
+          - { word: "సైనికులు", ref: "te-5109" }
+          - { word: "కొత్త", base: "కొత్త", reading: "kotta" }
+          - { word: "ఆయుధాలు", base: "ఆయుధం", reading: "āyudhaṁ" }
+          - { word: "వాడేవారు", base: "వాడడం", reading: "vāḍaḍaṁ" }
+      - target: "ఈ ఆయుధం చాలా బరువుగా ఉంది."
+        reading: "ī āyudhaṁ cālā baruvugā uṁdi."
+        ipa: "iː aːjud̪ʱam tʃaːlaː baruʋuɡaː und̪i"
+        bases:
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "చాలా", base: "చాలా", reading: "cālā" }
+          - { word: "బరువుగా", base: "బరువు", reading: "baruvu" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṁḍaḍaṁ" }
+  - id: "te-5138"
+    target: "ఖడ్గం"
+    reading: "khaḍgaṁ"
+    ipa: "kʰaɖɡam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఖడ్గ యోధుడు", reading: "khaḍga yōdhuḍu" }] }
+    examples:
+      - target: "ఆ ఖడ్గం ఎవరిది?"
+        reading: "ā khaḍgaṁ evaridi?"
+        ipa: "aː kʰaɖɡam eʋarid̪i"
+        bases:
+          - { word: "ఆ", base: "ఆ", reading: "ā" }
+          - { word: "ఎవరిది", base: "ఎవరు", reading: "evaru" }
+      - target: "యోధుడు తన ఖడ్గాన్ని తీశాడు."
+        reading: "yōdhuḍu tana khaḍgānni tīśāḍu."
+        ipa: "joːd̪ʱuɖu t̪ana kʰaɖɡaːnni t̪iːʃaːɖu"
+        bases:
+          - { word: "తన", base: "తన", reading: "tana" }
+          - { word: "ఖడ్గాన్ని", base: "ఖడ్గం", reading: "khaḍgaṁ" }
+          - { word: "తీశాడు", base: "తీయడం", reading: "tīyaḍaṁ" }
+  - id: "te-5139"
+    target: "ఉద్యమం"
+    reading: "udyamaṁ"
+    ipa: "ud̪jamam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "స్వాతంత్ర్య ఉద్యమం", reading: "svātaṁtrya udyamaṁ" }] }
+    examples:
+      - target: "స్వాతంత్ర్య ఉద్యమం చాలా కాలం సాగింది."
+        reading: "svātaṁtrya udyamaṁ cālā kālaṁ sāgiṁdi."
+        ipa: "sʋaːt̪ant̪rja ud̪jamam tʃaːlaː kaːlam saːɡind̪i"
+        bases:
+          - { word: "స్వాతంత్ర్య", ref: "te-5141" }
+          - { word: "చాలా", base: "చాలా", reading: "cālā" }
+          - { word: "సాగింది", base: "సాగడం", reading: "sāgaḍaṁ" }
+      - target: "ఆ ఉద్యమంలో ప్రజలు పాల్గొన్నారు."
+        reading: "ā udyamaṁlō prajalu pālgonnāru."
+        ipa: "aː ud̪jamamloː pradʒalu paːlɡonnaːru"
+        bases:
+          - { word: "ఆ", base: "ఆ", reading: "ā" }
+          - { word: "ఉద్యమంలో", base: "ఉద్యమం", reading: "udyamaṁ" }
+          - { word: "ప్రజలు", ref: "te-3515" }
+          - { word: "పాల్గొన్నారు", base: "పాల్గొనడం", reading: "pālgonaḍaṁ" }
+  - id: "te-5140"
+    target: "ప్రజాస్వామ్యం"
+    reading: "prajāsvāmyaṁ"
+    ipa: "pradʒaːsʋaːmjam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ప్రజాస్వామ్య దేశం", reading: "prajāsvāmya dēśaṁ" }] }
+    examples:
+      - target: "ప్రజాస్వామ్యంలో ప్రజలు నాయకులను ఎన్నుకుంటారు."
+        reading: "prajāsvāmyaṁlō prajalu nāyakulanu ennukuṁṭāru."
+        ipa: "pradʒaːsʋaːmjamloː pradʒalu naːjakulanu ennukuɳʈaːru"
+        bases:
+          - { word: "ప్రజాస్వామ్యంలో", base: "ప్రజాస్వామ్యం", reading: "prajāsvāmyaṁ" }
+          - { word: "ప్రజలు", ref: "te-3515" }
+          - { word: "నాయకులను", ref: "te-5118" }
+          - { word: "ఎన్నుకుంటారు", base: "ఎన్నుకోవడం", reading: "ennukōvaḍaṁ" }
+      - target: "ఈ దేశంలో ప్రజాస్వామ్యం ఎప్పటి నుంచి ఉంది?"
+        reading: "ī dēśaṁlō prajāsvāmyaṁ eppaṭi nuṁci uṁdi?"
+        ipa: "iː d̪eːʃamloː pradʒaːsʋaːmjam eppaʈi nuɲtʃi und̪i"
+        bases:
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "దేశంలో", ref: "te-5117" }
+          - { word: "ఎప్పటి", base: "ఎప్పటి", reading: "eppaṭi" }
+          - { word: "నుంచి", base: "నుంచి", reading: "nuṁci" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṁḍaḍaṁ" }
+  - id: "te-5141"
+    target: "స్వాతంత్ర్యం"
+    reading: "svātaṁtryaṁ"
+    ipa: "sʋaːt̪ant̪rjam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "స్వాతంత్ర్య సమరయోధుడు", reading: "svātaṁtrya samarayōdhuḍu" }] }
+    examples:
+      - target: "మన దేశానికి స్వాతంత్ర్యం ఒక గొప్ప బహుమతి."
+        reading: "mana dēśāniki svātaṁtryaṁ oka goppa bahumati."
+        ipa: "mana d̪eːʃaːniki sʋaːt̪ant̪rjam oka ɡoppa bahumat̪i"
+        bases:
+          - { word: "మన", base: "మన", reading: "mana" }
+          - { word: "దేశానికి", ref: "te-5117" }
+          - { word: "ఒక", base: "ఒక", reading: "oka" }
+          - { word: "గొప్ప", base: "గొప్ప", reading: "goppa" }
+          - { word: "బహుమతి", base: "బహుమతి", reading: "bahumati" }
+      - target: "స్వాతంత్ర్యం కోసం చాలా మంది పోరాడారు."
+        reading: "svātaṁtryaṁ kōsaṁ cālā maṁdi pōrāḍāru."
+        ipa: "sʋaːt̪ant̪rjam koːsam tʃaːlaː mand̪i poːraːɖaːru"
+        bases:
+          - { word: "కోసం", base: "కోసం", reading: "kōsaṁ" }
+          - { word: "చాలా", base: "చాలా", reading: "cālā" }
+          - { word: "మంది", base: "మంది", reading: "maṁdi" }
+          - { word: "పోరాడారు", base: "పోరాడడం", reading: "pōrāḍaḍaṁ" }
+  - id: "te-5142"
+    target: "రాజ్యాంగం"
+    reading: "rājyāṁgaṁ"
+    ipa: "raːdʒjaːŋɡam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "దేశ రాజ్యాంగం", reading: "dēśa rājyāṁgaṁ" }] }
+    examples:
+      - target: "మన రాజ్యాంగం ప్రజలకు చాలా హక్కులు ఇస్తుంది."
+        reading: "mana rājyāṁgaṁ prajalaku cālā hakkulu istuṁdi."
+        ipa: "mana raːdʒjaːŋɡam pradʒalaku tʃaːlaː hakkulu ist̪und̪i"
+        bases:
+          - { word: "మన", base: "మన", reading: "mana" }
+          - { word: "ప్రజలకు", ref: "te-3515" }
+          - { word: "చాలా", base: "చాలా", reading: "cālā" }
+          - { word: "హక్కులు", base: "హక్కు", reading: "hakku" }
+          - { word: "ఇస్తుంది", base: "ఇవ్వడం", reading: "ivvaḍaṁ" }
+      - target: "రాజ్యాంగం గురించి ఈ పుస్తకం చెప్తుంది."
+        reading: "rājyāṁgaṁ guriṁci ī pustakaṁ ceptuṁdi."
+        ipa: "raːdʒjaːŋɡam ɡuriɲtʃi iː pust̪akam tʃept̪und̪i"
+        bases:
+          - { word: "గురించి", base: "గురించి", reading: "guriṁci" }
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "పుస్తకం", base: "పుస్తకం", reading: "pustakaṁ" }
+          - { word: "చెప్తుంది", base: "చెప్పడం", reading: "ceppaḍaṁ" }
+  - id: "te-5143"
+    target: "ఆచారం"
+    reading: "ācāraṁ"
+    ipa: "aːtʃaːram"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "పాత ఆచారం", reading: "pāta ācāraṁ" }] }
+    examples:
+      - target: "ఇది పాత ఆచారం."
+        reading: "idi pāta ācāraṁ."
+        ipa: "id̪i paːt̪a aːtʃaːram"
+        bases:
+          - { word: "ఇది", base: "ఇది", reading: "idi" }
+          - { word: "పాత", base: "పాత", reading: "pāta" }
+      - target: "ఈ ఆచారం ఎంత పాతది?"
+        reading: "ī ācāraṁ eṁta pātadi?"
+        ipa: "iː aːtʃaːram ent̪a paːt̪ad̪i"
+        bases:
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "ఎంత", base: "ఎంత", reading: "eṁta" }
+          - { word: "పాతది", base: "పాత", reading: "pāta" }
+  - ref: "te-3517"
+  - ref: "te-3518"
+  - ref: "te-3807"
+  - ref: "te-4007"
+  - ref: "te-3515"
+  - ref: "te-4000"
