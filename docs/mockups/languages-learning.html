@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Languages I’m Learning</title>
-<meta name="description" content="Languages I’m learning, redone in line with Languages I know: plain rows with the own name, deck updates at the top, a Popular section and a bottom sheet per language with script, placement and course details (#626).">
+<meta name="description" content="Languages I’m learning (#626), revised for the owner’s review: short rows grouped by family, deck updates in one row, and a sheet with a fixed Learn this language button that asks about scripts and placement in two steps.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&family=Noto+Sans+Tamil:wght@400;600&family=Noto+Sans+Gurmukhi:wght@400;600&family=Noto+Sans+Gujarati:wght@400;600&family=Noto+Sans+Kannada:wght@400;600&family=Noto+Sans+Malayalam:wght@400;600&family=Noto+Sans+Oriya:wght@400;600&family=Noto+Sans+Ol+Chiki:wght@400;600&family=Noto+Nastaliq+Urdu:wght@400;600&family=Noto+Naskh+Arabic:wght@400;600&display=swap">
@@ -229,12 +229,56 @@ td .big{font-size:17px;line-height:26px;color:var(--page-fg)}
 .pcard .bar{background:var(--sc)}
 .row .line{min-height:48px}
 .row.sel .tb.er{color:var(--er)}
+/* ===== Revised after the owner's review (2026-10-18) ===== */
+/* the list: short rows. Learned rows hold name, one meta line and one row of buttons. */
+.lst .row{padding:8px 8px 8px 20px;min-height:0}
+.lst .row.fam{padding:6px 8px 6px 20px}
+.lst .row .line{min-height:48px;gap:8px}
+.lst .grp+.grp{margin-top:8px}
+.lst .lbl{padding:14px 32px 6px}
+.lst .qh{padding:4px 24px 8px}
+.lst .qh .hM{margin:0 0 4px}
+.lst .trail{margin:-8px 0}
+.lst .meta{margin-top:0}
+.topbtns{display:flex;gap:8px;padding:0 16px 4px}
+.topbtns .cbtn{flex:1 1 0;min-width:0;justify-content:center;text-align:center;padding:4px 10px;gap:6px}
+.lst .upd{padding:0 32px 6px}
+.acts2{display:flex;align-items:center;gap:8px;margin:0 -2px -4px 0}
+.acts2 .st{flex:1 1 auto;min-width:0;color:var(--onSc)}
+.acts2 .sp1{flex:1 1 auto}
+.ubtn{min-height:48px;display:inline-flex;align-items:center;gap:6px;padding:4px 16px;border-radius:24px;background:var(--p);color:var(--onP);font-weight:700;text-align:center}
+.xbtn{width:48px;height:48px;border-radius:24px;display:flex;align-items:center;justify-content:center;flex:none;color:var(--er)}
+.row.sel .xbtn{color:var(--er)}
+/* the sheet: header, a scrolling middle, and a fixed bottom bar outside the scroll */
+.sheet .sbot{flex:none;display:flex;align-items:center;gap:12px;padding:12px 24px 0}
+.sheet .sbot .pbtn,.sheet .sbot .obtn{flex:1 1 auto;min-width:0}
+.bkbtn{min-height:56px;min-width:56px;border-radius:28px;display:flex;align-items:center;justify-content:center;gap:4px;padding:0 16px 0 8px;color:var(--p);font-weight:700;
+ font-size:calc(16px*var(--t));line-height:calc(24px*var(--t))}
+.sheet .step{color:var(--onSv);margin-bottom:2px}
+.sheet .sh{padding:0 24px 8px}
+.sheet .sbot .tbn{margin-top:0}
+.sheet .row.known{background:var(--sHigh)}
+.chk{flex:none}
+.pgs{margin-top:6px}
+.sheet .pbtn.sm{min-height:48px}
+/* ===== Revised again (2026-10-18): one contextual top button, a pinned search, no blank end, the thin course line ===== */
+.topbtns{padding:0 16px 4px}
+.topbtns .cbtn{flex:1 1 100%;width:100%;justify-content:center;text-align:center;padding:4px 20px;gap:8px}
+.topbtns .cbtn.hot{background:var(--p);color:var(--onP);font-weight:700}
+.pin{flex:none;position:relative;z-index:1;background:var(--s);padding:4px 0 8px;border-bottom:1px solid var(--olv)}
+.plv{display:flex;gap:3px;margin:0 8px 0 0;padding-top:2px}
+.plv .sg{flex:1 1 0;min-width:0}
+.plv .tr{display:block;height:4px;border-radius:2px;background:var(--sc);overflow:hidden}
+.plv .tr b{display:block;height:100%;background:var(--p);border-radius:2px}
+.row.sel .plv .tr{background:var(--sHigh)}
+.plv .bS{display:block;text-align:end;color:var(--onSv);font-weight:600;margin-top:1px}
+.row.sel .plv .bS{color:var(--onSc)}
 </style>
 </head>
 <body>
 <div class="wrap">
-<h1>Languages I’m learning: a sheet per language, as in Languages I know</h1>
-<p class="lede">Issue #626. The screen keeps what it does today (search, deck updates, each language’s size, Update and Remove, Continue) and takes from Languages I know what the owner chose (2026-10-18): plain list rows, the own name beside the name, a bottom sheet per language, and a Popular section. The learner here speaks English and reads Bengali; they learn Hindi and Marathi. Figures are real where the deck index has them (<code>decks/index.json</code>: B1 written, stage, size, units); the learner’s own progress, the update state and Punjabi’s course are illustrations, marked below. Awaiting the owner’s approval.</p>
+<h1>Languages I’m learning: short rows, and a sheet that asks in steps</h1>
+<p class="lede">Issue #626, revised for the owner’s review of 2026-10-18. The list is short and grouped by family exactly as Languages I know is; one contextual button at the top reads “Check for deck updates” until updates are found, then “Update all (N)”; the search bar stays at the top when the list scrolls, which ends with its last row; each row shows the course’s A1, A2, B1 and culture line, thin, and a learned language’s row holds one row of buttons, with Remove as a red ×. The sheet keeps the course (and, for a learned language, “Find my level” and its scripts’ progress) on its first screen, and “Learn this language” is fixed at its bottom, outside the scroll. It leads to two screens, each with Back: which scripts to learn, one option per script the language has, then where to start. The learner here speaks English, reads Bengali and learns Hindustani (in Devanagari) and Marathi; Hindustani’s second script is the Perso-Arabic script of Urdu. Figures are real where the deck index has them (<code>decks/index.json</code>); the learner’s own progress, the update state and the shared-script progress are illustrations. Awaiting the owner’s approval.</p>
 
 <div class="controls" role="group" aria-label="Theme">
  <fieldset><legend>Seed</legend>
@@ -264,42 +308,51 @@ td .big{font-size:17px;line-height:26px;color:var(--page-fg)}
 <section class="opt" id="decided">
 <h2>What the owner decided, and where it is on the screen</h2>
 <ul>
-<li><b>Rows.</b> Plain list rows: “Hindi · हिन्दी” (the own name is marked for a screen reader with its language, as in Languages I know), a short line with “13% of B1 written” and the Alpha, Beta or Complete tag, and, for a language the learner learns, “You: 8% of B1”. Update and Remove stay on the row with its size. “Check for deck updates” and “Update all” are at the top. Continue stays; there is no Back or Save in an app bar.</li>
-<li><b>Popular.</b> The 5 most complete courses that are at least A1 (Beta or Complete), the ones already learned left out. With today’s index only Telugu qualifies, so the section holds one row; it fills as courses reach A1.</li>
-<li><b>Tap a row, get its sheet.</b> “Learn this language”, or “Stop learning” for one learned (asks first, as today). Script details, in the UI language (English for now): the Learn the script switch; a script picker for a language with several scripts; script progress, counting the progress shared with other languages the learner learns or knows (Devanagari for Hindi and Marathi). Placement: for a new language, “Find my level” or “Start at the beginning”, applied on Continue; for a learned one a “Find my level” button, run on demand, and also an entry on the Progress tab. Course details: B1 written and stage, taught from (a choice when several of the learner’s languages teach it), size and units.</li>
-<li><b>Text.</b> Every frame at 1x and 1.4x (the app’s cap, #505). A sheet taller than the phone scrolls; the frames named “scrolled to” show the other parts.</li>
+<li><b>The sheet (review, 2026-10-18).</b> “Learn this language” is at the bottom of the sheet, fixed, outside the scroll; the rest of the sheet scrolls. It leads to two more screens in the sheet, each with Back: (1) whether to learn the script, one option per script the language has (Hindustani: Devanagari, Perso-Arabic; Punjabi: Gurmukhi, Shahmukhi; Telugu: the Telugu script), so a learner can pick any of them; (2) placement, or start at the beginning. With several scripts, each chosen script is placed separately, apart from the language (#481), and the screen says so. Neither choice is on the first screen. A learned language keeps “Find my level” and its course details on the first screen (and “Also on the Progress tab”).</li>
+<li><b>The list.</b> Much shorter rows. No Update button unless an update exists, and then the button says “Update available”. All of a row’s buttons are in one row; Remove is a red × icon button (its name for a screen reader is “Remove Marathi”). The top has one contextual button (owner, 2026-10-18): “Check for deck updates” until updates are found (with a “Checking…” state), then “Update all (N)”. The search bar is pinned to the top once the list scrolls, and the scroll ends with its last row, with no blank area above Continue. A row’s course progress is the course card’s A1, A2, B1 line with the culture part added, drawn thinner (4 dp against the card’s 8), in place of “100% of B1 written” (the figure stays in the sheet and in the row’s screen-reader name); the learner’s own progress and the Alpha, Beta or Complete tag stay on the row.</li>
+<li><b>Grouping.</b> The families of Languages I know, with the same headings, in the same order (Indo-Aryan, Dravidian, Tibeto-Burman, Austroasiatic, Germanic), folded by default, a family listed only when it holds a course, languages in a family sorted by name. Your languages and Popular stay above them, as in Languages I know.</li>
+<li><b>Hindustani.</b> The <code>hi</code> course is shown as Hindustani (#623) with its two scripts. A learner who knows Hindustani and reads Devanagari can choose Learn Hindustani just for the Perso-Arabic script (the three frames “Knows Hindustani”).</li>
+<li><b>Carried over.</b> Plain rows with the own name, the short course line, Popular (the most complete top 5, at least A1), script details in the UI language (English for now), the learner’s progress on the row, Continue, no Back or Save in an app bar. Every frame at 1x and 1.4x (the app’s cap, #505); a sheet taller than the phone scrolls, and the frames named “scrolled to” show the other parts.</li>
 </ul>
 <h2>Proposed, not decided</h2>
 <ul>
-<li>The search field stays, as today and as in Languages I know. Remove it if the owner would rather not.</li>
-<li>Update shows on a row only when an update is available (Hindi here); Marathi is up to date and has Remove alone. “Update all” is hot only while one is available.</li>
-<li>“Complete” is a new label: today a finished course carries no tag. The tag has a screen-reader label, such as “Alpha: A1 is still being written”.</li>
-<li>Where the learner already reads a script from a known language (Assamese, written in the script of Bengali), its script decks start as known and the sheet says so.</li>
-<li>Stop learning and “Learn this language” change the choice only; nothing is saved or downloaded before Continue, as the page works today. The IPA keeps its two entries and is not drawn here.</li>
-<li>The Punjabi frames show a language with two scripts as it will look; Punjabi has no deck yet, and its numbers, and a second language to teach it from (Bengali), are illustrations.</li>
+<li>Script choices are tick boxes, so a learner can pick several or none; none means Latin letters only (words show their reading first, the script decks are left out). A script the learner already reads (Devanagari for a Hindustani speaker, Eastern Nagari for a Bengali reader) is offered unticked, marked “You already read it”; ticking it learns its decks anyway, starting them as known.</li>
+<li>Step 2 asks about the language and each chosen script separately, “Find my level” or “Start at the beginning” for each, with “Find my level” the default. For a learner who knows the language and learns it only for a script, it asks about that script alone.</li>
+<li>The last step’s button is “Done”: it returns to the list. Nothing is saved or downloaded before Continue on the list, as the page works today.</li>
+<li>A learned language’s sheet shows each script’s progress and, for a script not learned, “Add this script”, which opens step 1. This is the route for adding Perso-Arabic later to a language already learned.</li>
+<li>The list holds only courses in <code>decks/index.json</code>, so the families are Indo-Aryan (Assamese, Bengali, Gujarati, Hindustani, Marathi), Dravidian (Kannada, Telugu) and Other (Spanish, which has no family in <code>assets/languages.yaml</code>; Languages I know’s code would file it under “other”). Families with no course are not listed; the code builds the list from the languages it has.</li>
+<li>The culture part of the line is empty for every course (none is written yet), and the level ends are drawn as equal quarters; the app places each level where its plan’s units end. The line fills A1, A2 and B1 in turn from the share written toward B1.</li>
+<li>Search stays, and shows every match whatever is folded, as in Languages I know. “Complete” is a new tag label; the tag has a screen-reader label.</li>
 </ul>
 </section>
 </div>
 
 <script>
+/* ColorScheme.fromSeed, printed by Flutter 3.47 for each ThemeSeed in lib/app/settings.dart, light and dark, contrast 0. */
 const SCHEMES={"forest-dark":{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLowest":"#0a0f0c","sLow":"#171d19","sCont":"#1b211d","sHigh":"#262b27","sHighest":"#313632","ol":"#8a938b","olv":"#404942","pc":"#085231","onPc":"#aef2c6"},"forest-light":{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLowest":"#ffffff","sLow":"#f0f5ee","sCont":"#eaefe8","sHigh":"#e4eae3","sHighest":"#dfe4dd","ol":"#717972","olv":"#c0c9c0","pc":"#aef2c6","onPc":"#085231"},"ocean-dark":{"p":"#a0cafd","onP":"#003258","sc":"#3b4858","onSc":"#d6e3f7","s":"#101418","onS":"#e1e2e8","onSv":"#c3c7cf","sLowest":"#0b0e13","sLow":"#191c20","sCont":"#1d2024","sHigh":"#272a2f","sHighest":"#32353a","ol":"#8d9199","olv":"#42474e","pc":"#184975","onPc":"#d1e4ff"},"ocean-light":{"p":"#35618e","onP":"#ffffff","sc":"#d6e3f7","onSc":"#3b4858","s":"#f8f9ff","onS":"#191c20","onSv":"#42474e","sLowest":"#ffffff","sLow":"#f2f3f9","sCont":"#eceef4","sHigh":"#e6e8ee","sHighest":"#e1e2e8","ol":"#73777f","olv":"#c3c7cf","pc":"#d1e4ff","onPc":"#184975"},"clay-dark":{"p":"#ffb59e","onP":"#55200d","sc":"#5d4037","onSc":"#ffdbd0","s":"#1a110f","onS":"#f1dfda","onSv":"#d8c2bc","sLowest":"#140c0a","sLow":"#231917","sCont":"#271d1b","sHigh":"#322825","sHighest":"#3d322f","ol":"#a08d87","olv":"#53433f","pc":"#723521","onPc":"#ffdbd0"},"clay-light":{"p":"#8f4c36","onP":"#ffffff","sc":"#ffdbd0","onSc":"#5d4037","s":"#fff8f6","onS":"#231917","onSv":"#53433f","sLowest":"#ffffff","sLow":"#fff1ed","sCont":"#fceae5","sHigh":"#f7e4df","sHighest":"#f1dfda","ol":"#85736e","olv":"#d8c2bc","pc":"#ffdbd0","onPc":"#723521"},"iris-dark":{"p":"#cfbdfe","onP":"#36265d","sc":"#4a4458","onSc":"#e8def8","s":"#141218","onS":"#e6e0e9","onSv":"#cac4cf","sLowest":"#0f0d13","sLow":"#1d1b20","sCont":"#211f24","sHigh":"#2b292f","sHighest":"#36343a","ol":"#948f99","olv":"#49454e","pc":"#4d3d75","onPc":"#e9ddff"},"iris-light":{"p":"#65558f","onP":"#ffffff","sc":"#e8def8","onSc":"#4a4458","s":"#fdf7ff","onS":"#1d1b20","onSv":"#49454e","sLowest":"#ffffff","sLow":"#f8f2fa","sCont":"#f2ecf4","sHigh":"#ece6ee","sHighest":"#e6e0e9","ol":"#7a757f","olv":"#cac4cf","pc":"#e9ddff","onPc":"#4d3d75"}};
 /* Real figures from decks/index.json (2026-10-18): B1 written is the plan's completeness formula (sum of min(words a unit has, its planned
    words) over the units up to the B1 mark), the stage is Alpha until every A1 unit is written, Beta until every B1 unit is, then Complete;
-   size is the course's files; units are the path's units, planned ones included. `you` is the learner's own progress, an illustration. */
+   size is the course's files; units are the path's units, planned ones included. `you` is the learner's own progress, an illustration.
+   The `hi` course is shown as Hindustani (#623), with its two scripts. */
+const SC={
+ dev:{n:'Devanagari',sub:'Used in India. Written left to right.'},
+ ar:{n:'Perso-Arabic',sub:'The script of Urdu. Written right to left.'},
+ bn:{n:'Eastern Nagari',sub:'The Bengali script, used for Bengali and Assamese. Written left to right.'},
+ te:{n:'Telugu',sub:'Written left to right.'},
+};
 const D={
- hi:{n:'Hindi',o:'हिन्दी',scr:'Devanagari',st:'alpha',b1:13,kb:406,units:115,wr:43,decks:5,you:8,learned:true,upd:true},
- mr:{n:'Marathi',o:'मराठी',scr:'Devanagari',st:'alpha',b1:15,kb:437,units:116,wr:43,decks:5,you:3,learned:true},
- te:{n:'Telugu',o:'తెలుగు',scr:'Telugu',st:'complete',b1:100,kb:4247,units:115,wr:115,decks:5},
- as:{n:'Assamese',o:'অসমীয়া',scr:'Eastern Nagari',st:'alpha',b1:12,kb:451,units:115,wr:42,decks:5},
- bn:{n:'Bengali',o:'বাংলা',scr:'Eastern Nagari',st:'alpha',b1:30,kb:926,units:122,wr:61,decks:5},
- gu:{n:'Gujarati',o:'ગુજરાતી',scr:'Gujarati',st:'alpha',b1:13,kb:430,units:116,wr:43,decks:5},
- kn:{n:'Kannada',o:'ಕನ್ನಡ',scr:'Kannada',st:'alpha',b1:12,kb:390,units:115,wr:42,decks:5},
- es:{n:'Spanish',o:'',scr:null,st:'alpha',b1:1,kb:53,units:101,wr:5,decks:0},
- /* illustration: Punjabi has no deck yet */
- pa:{n:'Punjabi',o:'ਪੰਜਾਬੀ',scr:'Gurmukhi',scripts:['Gurmukhi','Shahmukhi'],st:'alpha',b1:2,kb:61,units:100,wr:6,decks:5},
+ hi:{n:'Hindustani',o:'हिन्दुस्तानी',scripts:['dev','ar'],st:'alpha',b1:13,kb:406,units:115,wr:43,you:8,fam:'ia'},
+ mr:{n:'Marathi',o:'मराठी',scripts:['dev'],st:'alpha',b1:15,kb:437,units:116,wr:43,you:3,fam:'ia'},
+ te:{n:'Telugu',o:'తెలుగు',scripts:['te'],st:'complete',b1:100,kb:4247,units:115,wr:115,fam:'dr'},
+ as:{n:'Assamese',o:'অসমীয়া',scripts:['bn'],st:'alpha',b1:12,kb:451,units:115,wr:42,fam:'ia'},
+ bn:{n:'Bengali',o:'বাংলা',scripts:['bn'],st:'alpha',b1:30,kb:926,units:122,wr:61,fam:'ia'},
+ gu:{n:'Gujarati',o:'ગુજરાતી',scripts:['gujarati'],st:'alpha',b1:13,kb:430,units:116,wr:43,fam:'ia'},
+ kn:{n:'Kannada',o:'ಕನ್ನಡ',scripts:['kannada'],st:'alpha',b1:12,kb:390,units:115,wr:42,fam:'dr'},
+ es:{n:'Spanish',o:'',scripts:[],st:'alpha',b1:1,kb:53,units:101,wr:5,fam:'other'},
 };
 Object.entries(D).forEach(([c,d])=>d.c=c);
-const RTL=new Set();
+/* the families of Languages I know, in its order; a family is listed only when it holds a course (as the code does) */
+const FAMILIES=[['ia','Indo-Aryan'],['dr','Dravidian'],['tb','Tibeto-Burman'],['aa','Austroasiatic'],['ger','Germanic'],['other','Other']];
 const TAG={alpha:['Alpha','Alpha: A1 is still being written'],beta:['Beta','Beta: A1 is written, B1 is still being written'],complete:['Complete','Complete: every unit up to B1 is written']};
 const size=(kb)=>kb>=1024?(kb/1024).toFixed(1)+' MB':kb+' KB';
 
@@ -310,65 +363,119 @@ const tag=(st)=>`<span class="tag" role="img" aria-label="${TAG[st][1]}">${TAG[s
 const stat=()=>`<div class="stat"><span>9:41</span><span class="ic">${ic('signal_cellular_alt')}${ic('wifi')}${ic('battery_full')}</span></div>`;
 const nav3=()=>`<div class="nav3" aria-hidden="true"><svg viewBox="0 0 20 20"><rect x="3" y="3" width="14" height="14" rx="2"/></svg><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/></svg><svg viewBox="0 0 20 20"><path d="M16 2.5v15L4 10z"/></svg></div>`;
 const label=(t,end='',cls='')=>`<div class="lbl lf ${cls}"><span class="gl">${t}</span>${end}</div>`;
-const grp=(rows)=>`<div class="grp">${rows.join('')}</div>`;
+const grp=(rows,cls='')=>`<div class="grp ${cls}">${rows.join('')}</div>`;
 const bar=(pct,lab)=>`<div class="bar lf" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100" aria-label="${lab}"><i style="width:${pct}%"></i></div>`;
 const writtenLine=(d)=>`${d.b1}% of B1 written`;
 const youLine=(d)=>`You: ${d.you}% of B1`;
+const youShort=(d)=>`You: ${d.you}%`;
+/* The course line of the app's course card (_ProgressBar in lib/features/decks/course_card.dart): one bar with each level
+   marked where it ends, A1, A2, B1, then the culture part, here as four short bars and drawn thinner. The share written
+   toward B1 fills A1, A2 and B1 in order; the culture part is not written yet. The level ends are an illustration (equal
+   quarters), the app uses each plan's real unit counts. */
+const LV=['A1','A2','B1','Culture'];
+const segPct=(d,i)=>i>2?0:Math.round(Math.max(0,Math.min(1,d.b1*3/100-i))*100);
+const pathline=(d)=>`<div class="plv lf" role="img" aria-label="Course written: ${LV.map((l,i)=>l+' '+segPct(d,i)+'%').join(', ')}">${LV.map((l,i)=>`<span class="sg"><i class="tr"><b style="width:${segPct(d,i)}%"></b></i><span class="bS">${l}</span></span>`).join('')}</div>`;
+const searchBar=()=>`<div class="sbw"><div class="sb lf" data-search>${ic('search')}<span class="q bL hint lf" style="color:var(--onSv)">Search languages</span><span style="width:12px"></span></div></div>`;
 
 /* ---------- the list ---------- */
-function row(d){
- const lr=!!d.learned;
- const acts=lr?`<div class="acts lf"><span class="sz bM">${size(d.kb)} · ${d.upd?'Update available':'Up to date'}</span>${d.upd?'<span class="tb lL" data-tap role="button">Update</span>':''}<span class="tb er lL" data-tap role="button">Remove</span></div>`:'';
- return `<div class="row${lr?' sel':' plain'}" data-row="${d.c}"><div class="line lf" data-tap role="button" aria-label="${d.n}${d.o?', '+d.o:''}, ${TAG[d.st][0]}, ${writtenLine(d)}${lr?', '+youLine(d):''}"><div class="tx"><div class="tM nm">${nm(d)}</div><div class="meta bM">${tag(d.st)}<span>${writtenLine(d)}</span></div>${lr?`<div class="bM v">${youLine(d)}</div>`:''}</div><span class="trail">${ic(lr?'check_circle':'chevron_right')}</span></div>${acts}</div>`;
+/* ctx: {learned:[codes], upd:[codes], open:[family ids]} */
+function row(d,ctx,withActs){
+ const lr=ctx.learned.includes(d.c),up=ctx.upd.includes(d.c);
+ const meta=`${tag(d.st)}${lr?`<span>${youShort(d)}</span>`:''}`;
+ let acts='';
+ if(lr&&withActs)acts=`<div class="acts2 lf">${up?`<span class="ubtn lL" data-tap role="button">${ic('download','m20')}Update available</span><span class="sp1"></span>`:`<span class="st bM">${size(d.kb)} · Up to date</span>`}<span class="xbtn" data-tap role="button" aria-label="Remove ${d.n}">${ic('close')}</span></div>`;
+ return `<div class="row${lr?' sel':''}" data-row="${d.c}"><div class="line lf" data-tap role="button" aria-label="${d.n}${d.o?', '+d.o:''}, ${TAG[d.st][0]}, ${writtenLine(d)}${lr?', '+youLine(d):''}"><div class="tx"><div class="tM nm">${nm(d)}</div><div class="meta bM">${meta}</div></div>${withActs?'':`<span class="trail">${ic(lr?'check_circle':'chevron_right')}</span>`}</div>${pathline(d)}${acts}</div>`;
 }
-function list(){
- let out=`<div class="qh"><div class="hM lf">Languages I’m learning</div><div class="bL v lf">Tap a language for its script, placement and course. Continue saves your choice.</div></div>`;
- out+=`<div class="cbtns"><span class="cbtn lL lf" data-tap role="button">${ic('refresh','m20')}Check for deck updates</span><span class="cbtn hot lL lf" data-tap role="button">${ic('download','m20')}Update all · 1</span></div><div class="upd bM lf">Checked today, 9:30. 1 update available.</div>`;
- out+=`<div class="sbw"><div class="sb lf" data-search>${ic('search')}<span class="q bL hint lf" style="color:var(--onSv)">Search languages</span><span style="width:12px"></span></div></div>`;
- out+=label('Learning · 2','<span class="bS v">your progress shown</span>','sec-learn')+grp([row(D.hi),row(D.mr)]);
- out+=label('Popular · 1','<span class="bS v">most complete, A1 or more</span>','sec-pop')+grp([row(D.te)]);
- out+=label('Available · 5','','sec-avail')+grp(['as','bn','gu','kn','es'].map(c=>row(D[c])));
- return out;
+const famRow=(f,fname,n,open)=>`<div class="row fam${open?' open':''}" data-fam="${f}" data-tap role="button" aria-expanded="${open}"><div class="line lf"><div class="tx tM">${fname}</div><span class="bM v" aria-label="${n} ${n>1?'languages':'language'}">${n}</span><span class="trail">${ic(open?'expand_less':'expand_more')}</span></div></div>`;
+function list(ctx){
+ const upN=ctx.upd.length;
+ let out=`<div class="lst"><div class="qh"><div class="hM lf">Languages I’m learning</div></div>`;
+ const top=upN?'found':ctx.checking?'checking':'idle';
+ const btn={idle:`<span class="cbtn lL lf" data-tap role="button">${ic('sync','m20')}<span>Check for deck updates</span></span>`,
+  checking:`<span class="cbtn lL lf" data-tap role="button" aria-busy="true">${ic('sync','m20')}<span>Checking…</span></span>`,
+  found:`<span class="cbtn hot lL lf" data-tap role="button">${ic('download','m20')}<span>Update all (${upN})</span></span>`}[top];
+ const say={idle:'Last checked today, 9:30.',checking:'Asking for the newest decks…',found:upN+' update found: '+ctx.upd.map(c=>D[c].n).join(', ')+'.'}[top];
+ out+=`<div class="topbtns">${btn}</div><div class="upd bM lf" role="status">${say}</div>`;
+ if(!ctx.pin)out+=searchBar();
+ out+=label(`Learning · ${ctx.learned.length}`,'<span class="bS v">your progress shown</span>','sec-learn')+grp(ctx.learned.map(c=>row(D[c],ctx,true)));
+ out+=label('Popular · 1','<span class="bS v">most complete, A1 or more</span>','sec-pop')+grp([row(D.te,ctx,false)]);
+ out+=label('All languages','<span class="bS v">by family</span>','sec-fam');
+ let pending=[],html='';
+ const flush=()=>{if(pending.length){html+=grp(pending);pending=[]}};
+ for(const [f,fname] of FAMILIES){
+  const langs=Object.values(D).filter(d=>d.fam===f).sort((a,b)=>a.n.localeCompare(b.n));
+  if(!langs.length)continue;
+  const open=ctx.open.includes(f);
+  if(open){flush();html+=grp([famRow(f,fname,langs.length,true),...langs.map(d=>row(d,ctx,false))])}
+  else pending.push(famRow(f,fname,langs.length,false));
+ }
+ flush();
+ return out+html+`</div>`;
 }
 const bottomContinue=()=>`<div class="bot"><div class="sp"></div><div class="btn lf" data-tap role="button">Continue</div></div>`;
 
 /* ---------- the sheet ---------- */
-const sw=(on)=>`<span class="swh" data-tap role="switch" aria-checked="${on}"><span class="sw${on?' on':''}"><i></i></span></span>`;
 const radio=(on)=>ic(on?'radio_button_checked':'radio_button_unchecked','mo');
 const opt=(t,sub,on)=>`<div class="row" data-tap role="radio" aria-checked="${on}"><div class="line lf"><div class="tx"><div class="tM">${t}</div>${sub?`<div class="bM v">${sub}</div>`:''}</div><span class="trail" style="color:${on?'var(--p)':'var(--onSv)'}">${radio(on)}</span></div></div>`;
+const chkopt=(t,sub,on,extra)=>`<div class="row" data-tap role="checkbox" aria-checked="${on}"><div class="line lf"><div class="tx"><div class="tM">${t}</div>${sub?`<div class="bM v">${sub}</div>`:''}</div><span class="trail" style="color:${on?'var(--p)':'var(--onSv)'}">${ic(on?'check_box':'check_box_outline_blank','mo')}</span></div>${extra||''}</div>`;
 const kv=(k,v,sub)=>`<div class="row"><div class="line lf"><div class="tx"><div class="bS kvl">${k}</div><div class="bL">${v}</div>${sub?`<div class="bM v">${sub}</div>`:''}</div></div></div>`;
-/* o: {learned, scriptOn, scripts, pickScript, scriptInfo:{pct,line,shared}, native:[...], skip} */
-function sheet(d,o){
- const n=d.o?`${d.n} · ${own(d)}`:d.n;
- const head=`<div class="handle"></div><div class="sh"><div class="tL lf">${n}</div><div class="hmeta bM lf">${tag(d.st)}${o.learned?`<span>${youLine(d)}</span>`:`<span>${writtenLine(d)}</span>`}</div></div>
- <div class="hbtn"><div class="${o.learned?'obtn':'pbtn'} lf" data-tap role="button">${o.learned?'Stop learning':'Learn this language'}</div></div>`;
+const note=(t,cls='')=>`<div class="nt bM lf ${cls}">${ic('info_outline','m20')}<span>${t}</span></div>`;
+const backBtn=`<span class="bkbtn" data-tap role="button">${ic('arrow_back','m20')}Back</span>`;
+const pbtn=(t)=>`<div class="pbtn lf" data-tap role="button">${t}</div>`;
+function shell(d,{step,meta,body,bottom,skip}){
+ const n=nm(d);
+ return `<div class="scrim"></div><div class="sheet" role="dialog" aria-label="${d.n}${d.o?', '+d.o:''}"><div class="handle"></div><div class="sh">${step?`<div class="bS step lf">${step}</div>`:''}<div class="tL lf">${n}</div>${meta?`<div class="hmeta bM lf">${meta}</div>`:''}</div>
+ <div class="scroll ss"${skip?` data-skip="${skip}"`:''}><div class="clip"><div class="content">${body}</div></div></div><div class="sbot">${bottom}</div></div>`;
+}
+const scriptNames=(d)=>d.scripts.map(k=>SC[k].n).join(', ');
+function courseRows(d,learned,natives=['English']){
+ const r=[kv('Written toward B1',`${d.b1}% · ${TAG[d.st][0]}`,TAG[d.st][1])];
+ if(d.scripts.length)r.push(kv(d.scripts.length>1?'Scripts':'Script',scriptNames(d)));
+ r.push(kv('Taught from',natives[0]),kv('Size',learned?`${size(d.kb)} on the phone`:`Not on the phone · ${size(d.kb)}`),kv('Units',`${d.wr} of ${d.units} units written`));
+ return label('Course','','sec-course')+grp(r);
+}
+/* first screen. o: {learned, knows:{dev:true} (scripts the learner already reads), scriptProg:{key:{pct,line,shared}}} */
+function sheet1(d,o){
  let b='';
- // script
- if(d.scr){
-  const multi=(d.scripts||[]).length>1;
-  const sname=o.pickScript||d.scr;
-  const rows=[`<div class="row"><div class="line lf"><div class="tx"><div class="tM">Learn the ${sname} script</div><div class="bM v">${o.scriptOn?`Includes ${d.decks} decks on letters, spelling and reading.`:'Latin letters only. Words show their reading first, and the script decks are left out.'}</div></div>${sw(o.scriptOn)}</div></div>`];
-  if(multi)rows.push(`<div class="row"><div class="lf"><div class="tM">Script to learn</div><div class="bM v">${d.n} is written in two scripts.</div></div></div>`,
-   opt('Gurmukhi','Used in India. Written left to right.',sname==='Gurmukhi'),opt('Shahmukhi','The Perso-Arabic script, as used in Pakistan. Written right to left.',sname==='Shahmukhi'));
-  const si=o.scriptInfo;
-  rows.push(`<div class="row"><div class="lf"><div class="bS kvl">Script progress · ${sname}</div><div class="bL">${si.line}</div></div>${bar(si.pct,sname+' script progress')}<div class="bM v lf">${si.shared}</div></div>`);
-  b+=label('Script','','sec-script')+grp(rows);
- }
- // placement
  if(o.learned){
-  b+=label('Placement','','sec-place')+grp([`<div class="row"><div class="lf"><div class="tM">Find my level</div><div class="bM v">Check where you are in ${d.n} again. Your progress is kept. It is also on the Progress tab.</div></div><div class="tbn lf" data-tap role="button">Find my level</div></div>`]);
- }else{
-  b+=label('Where to start','','sec-place')+grp([opt('Find my level','A short check after Continue places you in the course.',o.place!=='start'),opt('Start at the beginning','No check: begin with the first unit.',o.place==='start')])
-   +`<div class="nt bM lf">${ic('info_outline','m20')}<span>Applied when you press Continue. You can find your level later from this sheet or the Progress tab.</span></div>`;
+  b+=label('Level','','sec-place')+grp([`<div class="row"><div class="lf"><div class="tM">Find my level</div><div class="bM v">Check where you are in ${d.n} again. Your progress is kept.${d.scripts.length>1?' Each script is placed on its own, apart from the language.':''} It is also on the Progress tab.</div></div><div class="tbn lf" data-tap role="button">Find my level</div></div>`]);
+  const rows=d.scripts.map(k=>{
+   const p=(o.scriptProg||{})[k];
+   return p?`<div class="row"><div class="lf"><div class="bS kvl">${SC[k].n} · learning</div><div class="bL">${p.line}</div></div>${bar(p.pct,SC[k].n+' script progress')}<div class="bM v lf">${p.shared}</div></div>`
+     :`<div class="row"><div class="lf"><div class="bS kvl">${SC[k].n}</div><div class="bL">Not learning this script</div></div><div class="tbn lf" data-tap role="button">Add this script</div></div>`});
+  b+=label('Scripts','','sec-script')+grp(rows);
+ }else if(o.knows){
+  const ks=Object.keys(o.knows).map(k=>SC[k].n).join(', ');
+  b+=label('You know it','','sec-know')+grp([`<div class="row"><div class="lf"><div class="tM">You speak ${d.n} and read ${ks}</div><div class="bM v">Learn ${d.n} to add the ${d.scripts.filter(k=>!o.knows[k]).map(k=>SC[k].n).join(', ')} script, or to learn the language itself. You choose on the next screens.</div></div></div>`]);
  }
- // course
- const natives=o.native||['English'];
- const crows=[kv('Written toward B1',`${d.b1}% · ${TAG[d.st][0]}`,TAG[d.st][1])];
- if(natives.length>1)crows.push(`<div class="row"><div class="lf"><div class="bS kvl">Taught from</div><div class="bM v">Choose which of your languages teaches ${d.n}.</div></div></div>`,...natives.map((x,i)=>opt(x,i===0?'':'',i===(o.from||0))));
- else crows.push(kv('Taught from',natives[0]));
- crows.push(kv('Size',o.learned?`${size(d.kb)} on the phone`:`Not on the phone · ${size(d.kb)}`),kv('Units',`${d.wr} of ${d.units} units written`));
- b+=label('Course','','sec-course')+grp(crows);
- return `<div class="scrim"></div><div class="sheet" role="dialog" aria-label="${d.n}${d.o?', '+d.o:''}">${head}<div class="scroll ss"${o.skip?` data-skip="${o.skip}"`:''}><div class="clip"><div class="content">${b}</div></div></div></div>`;
+ b+=courseRows(d,o.learned);
+ const meta=`${tag(d.st)}<span>${o.learned?youLine(d):writtenLine(d)}</span>`;
+ const bottom=o.learned?`<div class="obtn lf" data-tap role="button">Stop learning</div>`:pbtn('Learn this language');
+ return shell(d,{meta,body:b,bottom,skip:o.skip});
+}
+/* step 1. o: {on:{key:bool}, knows, prog:{key:text}} */
+function sheet2(d,o){
+ const rows=d.scripts.map(k=>{
+  const known=o.knows&&o.knows[k];
+  const sub=SC[k].sub+(known?' You already read it. Tick it to learn its decks anyway; they start as known.':'');
+  const p=(o.prog||{})[k];
+  return chkopt(`${SC[k].n}`,sub,!!o.on[k],p?`<div class="bM v lf pgs" style="padding-right:48px">${p}</div>`:'');
+ });
+ const b=label('Scripts to learn','<span class="bS v">pick any</span>','sec-scripts')+grp(rows)+note('Leave every box empty to learn with Latin letters only. Words show their reading first, and the script decks are left out.');
+ return shell(d,{step:'Step 1 of 2 · Script',body:b,bottom:backBtn+pbtn('Next'),skip:o.skip});
+}
+/* step 2. o: {entries:[{k:'lang'|scriptKey, place}], multi, scriptOnly} */
+function sheet3(d,o){
+ let b='';
+ o.entries.forEach((e,i)=>{
+  const t=e.k==='lang'?`${d.n}, the language`:`${SC[e.k].n} script`;
+  const place=e.place||'find';
+  b+=label(t,'',`sec-p${i}`)+grp([opt('Find my level',e.k==='lang'?'A short check after Continue places you in the course.':'A short check places you in the script decks.',place==='find'),opt('Start at the beginning',e.k==='lang'?'No check: begin with the first unit.':'No check: begin with the first letters.',place==='start')]);
+ });
+ if(o.scriptOnly)b+=note(`You already speak ${d.n}, so only the script is placed.`);
+ if(o.multi)b+=note('Each script you chose is placed separately, apart from the language. You can start one at the beginning and be placed in another.');
+ b+=note('Applied when you press Continue on the list. You can find your level later from this sheet or the Progress tab.');
+ return shell(d,{step:'Step 2 of 2 · Where to start',body:b,bottom:backBtn+pbtn('Done'),skip:o.skip});
 }
 
 /* ---------- the Progress tab ---------- */
@@ -376,31 +483,40 @@ function progress(){
  const d=D.hi;
  const nav=[['home','Today',0],['style','Decks',0],['insert_chart','Progress',1],['settings','Settings',0]].map(([i,t,on])=>`<div class="it${on?' on':''}" data-tap role="button"><span class="pill">${ic(i+(on?'':'_outlined'))}</span><span class="bS lf">${t}</span></div>`).join('');
  const body=`<div class="qh"><div class="hM lf">Progress</div></div>
- <div class="langbar">${['Hindi','Marathi'].map((t,i)=>`<span class="chipHit lf" data-tap><span class="chip lL${i?'':' on'}">${i?'':ic('check','m18')}<span>${t}</span></span></span>`).join('')}</div>
+ <div class="langbar">${['Hindustani','Marathi'].map((t,i)=>`<span class="chipHit lf" data-tap><span class="chip lL${i?'':' on'}">${i?'':ic('check','m18')}<span>${t}</span></span></span>`).join('')}</div>
  <div class="pcard"><div class="tL lf">${nm(d)}</div><div class="bM v lf" style="margin-top:4px">${writtenLine(d)} · ${youLine(d)}</div>${bar(d.you,'Your progress')}<div class="bS v lf">${tag(d.st).replace('<span','<span style="margin-right:8px"')}Course stage</div></div>
  ${label('Level')}${grp([`<div class="row" data-row="find"><div class="line lf" data-tap role="button"><span class="mi mo" aria-hidden="true" style="color:var(--p)">my_location</span><div class="tx"><div class="tM">Find my level</div><div class="bM v">Check where you are in ${d.n} again. Your progress is kept.</div></div><span class="trail">${ic('chevron_right')}</span></div></div>`])}`;
  return {body,bot:`<div class="navbar" role="tablist">${nav}</div>`};
 }
 
-const phone=({body,bot,x14,overlay='',skip,nonav})=>`<div class="ph${x14?' x14':''}">${stat()}<div class="scroll"${skip?` data-skip="${skip}"`:''}><div class="clip"><div class="content">${body}</div></div></div>${bot}${nav3()}${overlay}</div>`;
+const phone=({body,bot,x14,overlay='',skip,end,pin})=>`<div class="ph${x14?' x14':''}">${stat()}${pin?`<div class="pin">${searchBar()}</div>`:''}<div class="scroll"${skip?` data-skip="${skip}"`:''}${end?' data-end="1"':''}><div class="clip"><div class="content">${body}</div></div></div>${bot}${nav3()}${overlay}</div>`;
 
-const HI_SCRIPT={pct:60,line:'3 of 5 script decks learned',shared:'Shared with Marathi, which you are learning. One progress counts in both: what you learn in Hindi is known in Marathi.'};
-const AS_SCRIPT={pct:100,line:'You read Eastern Nagari',shared:'Shared with Bengali, a language you know. Its script decks start as known.'};
-const PA_SCRIPT={pct:0,line:'Not started',shared:'Not shared with any language you learn or know.'};
+const MAIN={learned:['hi','mr'],upd:['hi'],open:[]};   // updates found
+const IDLE={learned:['hi','mr'],upd:[],open:[]};     // no update known yet
+const CHECKING={...IDLE,checking:true};
+const NEW={learned:['mr'],upd:[],open:[]};
+const KNOW={learned:['mr'],upd:[],open:[]};      // a learner who knows Hindustani (reads Devanagari) and learns Marathi
+const HI_PROG={dev:{pct:60,line:'3 of 5 script decks learned',shared:'Shared with Marathi, which you are learning. One progress counts in both: what you learn in Hindustani is known in Marathi.'}};
+const lst=(ctx,overlay,skip)=>(x)=>phone({x14:x,skip,body:list(ctx),bot:bottomContinue(),overlay:overlay||''});
 const FRAMES=[
- ['List, top',(x)=>phone({x14:x,body:list(),bot:bottomContinue()})],
- ['List, scrolled to Popular',(x)=>phone({x14:x,skip:'.sec-pop',body:list(),bot:bottomContinue()})],
- ['New language (Assamese): sheet',(x)=>phone({x14:x,body:list(),bot:bottomContinue(),overlay:sheet(D.as,{scriptOn:true,scriptInfo:AS_SCRIPT})})],
- ['New language: sheet, scrolled to where to start',(x)=>phone({x14:x,body:list(),bot:bottomContinue(),overlay:sheet(D.as,{scriptOn:true,scriptInfo:AS_SCRIPT,skip:'.sec-place'})})],
- ['New language: sheet, scrolled to the course',(x)=>phone({x14:x,body:list(),bot:bottomContinue(),overlay:sheet(D.as,{scriptOn:true,scriptInfo:AS_SCRIPT,skip:'.sec-course'})})],
- ['Learned language (Hindi): sheet',(x)=>phone({x14:x,body:list(),bot:bottomContinue(),overlay:sheet(D.hi,{learned:true,scriptOn:true,scriptInfo:HI_SCRIPT})})],
- ['Learned language: sheet, scrolled to placement',(x)=>phone({x14:x,body:list(),bot:bottomContinue(),overlay:sheet(D.hi,{learned:true,scriptOn:true,scriptInfo:HI_SCRIPT,skip:'.sec-place'})})],
- ['Learned language: sheet, scrolled to the course',(x)=>phone({x14:x,body:list(),bot:bottomContinue(),overlay:sheet(D.hi,{learned:true,scriptOn:true,scriptInfo:HI_SCRIPT,skip:'.sec-course'})})],
- ['Two scripts (Punjabi): sheet',(x)=>phone({x14:x,body:list(),bot:bottomContinue(),overlay:sheet(D.pa,{scriptOn:true,pickScript:'Gurmukhi',scriptInfo:PA_SCRIPT,native:['English','Bengali']})})],
- ['Two scripts: Shahmukhi chosen, scrolled to the course',(x)=>phone({x14:x,body:list(),bot:bottomContinue(),overlay:sheet(D.pa,{scriptOn:true,pickScript:'Shahmukhi',scriptInfo:PA_SCRIPT,native:['English','Bengali'],skip:'.sec-course'})})],
+ ['List, top: no update known, “Check for deck updates”',(x)=>phone({x14:x,body:list(IDLE),bot:bottomContinue()})],
+ ['List, top: checking',(x)=>phone({x14:x,body:list(CHECKING),bot:bottomContinue()})],
+ ['List, top: updates found, “Update all (1)”',(x)=>phone({x14:x,body:list(MAIN),bot:bottomContinue()})],
+ ['List, scrolled: the search bar stays at the top',(x)=>phone({x14:x,pin:true,skip:'.sec-learn',body:list({...MAIN,pin:true}),bot:bottomContinue()})],
+ ['List, scrolled to the end: it stops at the last row',(x)=>phone({x14:x,pin:true,end:true,body:list({...MAIN,pin:true,open:['ia']}),bot:bottomContinue()})],
+ ['New language (Assamese): sheet, first screen',(x)=>lst(MAIN,sheet1(D.as,{}))(x)],
+ ['Assamese, step 1: script (Eastern Nagari read from Bengali)',(x)=>lst(MAIN,sheet2(D.as,{on:{},knows:{bn:true}}))(x)],
+ ['Assamese, step 2: where to start',(x)=>lst(MAIN,sheet3(D.as,{entries:[{k:'lang'}]}))(x)],
+ ['Learned language (Hindustani): sheet, first screen',(x)=>lst(MAIN,sheet1(D.hi,{learned:true,scriptProg:HI_PROG}))(x)],
+ ['Learned language: sheet, scrolled to the course',(x)=>lst(MAIN,sheet1(D.hi,{learned:true,scriptProg:HI_PROG,skip:'.sec-course'}))(x)],
+ ['Knows Hindustani (reads Devanagari): sheet, first screen',(x)=>lst(KNOW,sheet1(D.hi,{knows:{dev:true}}))(x)],
+ ['Knows Hindustani, step 1: Perso-Arabic alone',(x)=>lst(KNOW,sheet2(D.hi,{on:{ar:true},knows:{dev:true},prog:{ar:'Not started. Not shared with any language you learn or know.'}}))(x)],
+ ['Knows Hindustani, step 2: the script only',(x)=>lst(KNOW,sheet3(D.hi,{entries:[{k:'ar'}],scriptOnly:true}))(x)],
+ ['New to Hindustani, step 1: both scripts',(x)=>lst(NEW,sheet2(D.hi,{on:{dev:true,ar:true},prog:{dev:'Shared with Marathi, which you are learning: 60% already counts.',ar:'Not started. Not shared with any language you learn or know.'}}))(x)],
+ ['New to Hindustani, step 2: language and each script',(x)=>lst(NEW,sheet3(D.hi,{entries:[{k:'lang'},{k:'dev'},{k:'ar'}],multi:true}))(x)],
+ ['New to Hindustani, step 2: scrolled to the last script',(x)=>lst(NEW,sheet3(D.hi,{entries:[{k:'lang'},{k:'dev'},{k:'ar',place:'start'}],multi:true,skip:'.sec-p2'}))(x)],
  ['Progress tab: Find my level',(x)=>{const p=progress();return phone({x14:x,body:p.body,bot:p.bot})}],
 ];
-
 /* ---------- theme ---------- */
 const VARS=['p','onP','sc','onSc','s','onS','onSv','sLowest','sLow','sCont','sHigh','sHighest','ol','olv','pc','onPc'];
 function varsFor(seed,dark,black){const s={...SCHEMES[`${seed}-${dark?'dark':'light'}`]};
@@ -416,7 +532,7 @@ function applyTheme({seed,mode,scale,black}){
  });
 }
 function render(){
- document.getElementById('screens').innerHTML=`<section class="opt" id="frames"><h2>Frames</h2><p>Each at 1x and 1.4x text, light and dark. A frame is a scroll position, as in Languages I know: the screen is stopped between two rows, and the thumb shows there is more. A row marked ✓ is a language the learner learns.</p><div class="frames">${
+ document.getElementById('screens').innerHTML=`<section class="opt" id="frames"><h2>Frames</h2><p>Each at 1x and 1.4x text, light and dark. The sheet’s button is fixed at its bottom, outside the scroll. A frame is a scroll position, as in Languages I know: the screen is stopped between two rows, and the thumb shows there is more. A row marked ✓ is a language the learner learns.</p><div class="frames">${
   FRAMES.flatMap(([cap,fn])=>['1','1.4'].flatMap(sc=>['light','dark'].map(th=>`<div class="fcol" data-th="${th}" data-sc="${sc}"><span class="fcap">${cap} · <span class="th"></span></span>${fn(sc==='1.4')}</div>`))).join('')}</div></section>`;
 }
 
@@ -435,8 +551,9 @@ function fit(){
   const padTop=(e)=>{let p=0;for(let x=e;x&&x.nodeType===1;x=x.firstElementChild){p+=parseFloat(getComputedStyle(x).paddingTop)||0;if(x.classList.contains('lbl'))break}return p};
   let off=sk?Math.max(0,sk.getBoundingClientRect().top-content.getBoundingClientRect().top+Math.max(0,padTop(sk)-8)):0;
   const c0=content.getBoundingClientRect().top;
-  for(const el of content.querySelectorAll('.lf')){const r=el.getBoundingClientRect();const t=r.top-c0,b=r.bottom-c0;if(r.height&&t<off-0.5&&b>off+0.5)off=b}
-  content.style.transform=`translateY(${-off}px)`;
+  if(sc.dataset.end)off=Math.max(0,content.scrollHeight-sc.clientHeight);
+  else for(const el of content.querySelectorAll('.lf')){const r=el.getBoundingClientRect();const t=r.top-c0,b=r.bottom-c0;if(r.height&&t<off-0.5&&b>off+0.5)off=b}
+  content.style.transform=`translateY(${-off}px)`;sc.dataset.off=Math.round(off);
   const top0=sc.getBoundingClientRect().top;let cut=sc.clientHeight;
   const leaves=[...content.querySelectorAll('.lf')];
   for(let guard=0;guard<60;guard++){let moved=false;
@@ -474,18 +591,32 @@ function layoutProblems(){
   const areas=[...ph.querySelectorAll('.scroll')];
   areas.forEach(a=>{const c=a.querySelector('.clip').getBoundingClientRect();
    a.querySelectorAll('.content .lf').forEach(el=>{const r=el.getBoundingClientRect();if(!r.height||r.bottom<=c.top+0.5||r.top>=c.bottom-0.5)return;
-    if(r.top<c.top-0.5||r.bottom>c.bottom+0.5)bad.push(`${tag}: ${el.className} cut at the edge`)});
+    if((r.top<c.top-0.5&&!a.dataset.end)||r.bottom>c.bottom+0.5)bad.push(`${tag}: ${el.className} cut at the edge`)});
    a.querySelectorAll('[data-tap]').forEach(el=>{const r=el.getBoundingClientRect();if(r.bottom<=c.top||r.top>=c.bottom)return;
     if(r.height<47.5||r.width<47.5)bad.push(`${tag}: target ${Math.round(r.width)}×${Math.round(r.height)} (${el.textContent.trim().slice(0,16)})`)});
   });
-  ph.querySelectorAll('.hbtn [data-tap],.bot [data-tap],.navbar [data-tap]').forEach(el=>{const r=el.getBoundingClientRect();if(r.height<47.5||r.width<47.5)bad.push(`${tag}: target ${Math.round(r.width)}×${Math.round(r.height)} (${el.textContent.trim().slice(0,16)})`)});
+  ph.querySelectorAll('.sbot [data-tap],.bot [data-tap],.navbar [data-tap]').forEach(el=>{const r=el.getBoundingClientRect();if(r.height<47.5||r.width<47.5)bad.push(`${tag}: target ${Math.round(r.width)}×${Math.round(r.height)} (${el.textContent.trim().slice(0,16)})`)});
   const nav=ph.querySelector('.nav3').getBoundingClientRect();
   const bot=ph.querySelector('.bot,.navbar');if(bot){const b=bot.getBoundingClientRect();if(b.bottom>nav.top+0.5)bad.push(`${tag}: bottom bar under the navigation bar`);if(sc.getBoundingClientRect().bottom>b.top+0.5)bad.push(`${tag}: content under the bottom bar`)}
   if(cr.height<sc.clientHeight*0.55)bad.push(`${tag}: only ${Math.round(cr.height)} of ${sc.clientHeight} dp of content shown`);
   if(sh){const r=sh.getBoundingClientRect();if(r.top<pr.top+72-0.5)bad.push(`${tag}: sheet too tall`);
    const ss=sh.querySelector('.ss');if(ss&&ss.getBoundingClientRect().height<120)bad.push(`${tag}: sheet scroll area only ${Math.round(ss.getBoundingClientRect().height)} dp`);
    if(r.bottom>pr.bottom+0.5)bad.push(`${tag}: sheet below the frame`);
-   const hb=sh.querySelector('.hbtn');if(hb&&hb.getBoundingClientRect().bottom>nav.top+0.5)bad.push(`${tag}: sheet button under the navigation bar`)}
+   const hb=sh.querySelector('.sbot');if(!hb||sh.querySelector('.scroll .sbot'))bad.push(`${tag}: sheet button not fixed outside the scroll`);else{if(hb.getBoundingClientRect().bottom>nav.top+0.5)bad.push(`${tag}: sheet button under the navigation bar`);const tx=hb.textContent;if(!/Learn this language|Stop learning|Back/.test(tx))bad.push(`${tag}: sheet bottom bar has no button`);if(/Back/.test(tx)&&!/Next|Done/.test(tx))bad.push(`${tag}: step without Next or Done`)}}
+  ph.querySelectorAll('.xbtn').forEach(x=>{if(!/^Remove /.test(x.getAttribute('aria-label')||''))bad.push(`${tag}: Remove icon without its name`);if(x.textContent.trim().replace('close',''))bad.push(`${tag}: Remove is not an icon`)});
+  ph.querySelectorAll('.row.sel .acts2').forEach(a=>{const u=a.querySelector('.ubtn'),s=a.querySelector('.st');if(!u===!s)bad.push(`${tag}: a row needs exactly one of the update button and the up-to-date text`);if(a.querySelectorAll('[data-tap]').length>2)bad.push(`${tag}: more than two buttons in a row`)});
+  ph.querySelectorAll('.topbtns').forEach(t=>{if(t.querySelectorAll('[data-tap]').length!==1)bad.push(`${tag}: the top row must hold exactly one contextual button`)});
+  if(ph.querySelector('.lst')){
+   const scr=ph.querySelector('.scroll:not(.ss)'),ct=scr.querySelector('.content').getBoundingClientRect(),cl=scr.querySelector('.clip').getBoundingClientRect();
+   const off=+(scr.dataset.off||0),pinned=!!ph.querySelector('.pin [data-search]'),inflow=!!scr.querySelector('[data-search]');
+   if(off>0&&!pinned)bad.push(`${tag}: scrolled list without the search bar pinned at the top`);
+   if(off>0&&inflow)bad.push(`${tag}: pinned search also drawn in the list`);
+   if(off===0&&(pinned||!inflow))bad.push(`${tag}: list at its top must draw the search bar in the list`);
+   if(ct.bottom<cl.bottom-17)bad.push(`${tag}: ${Math.round(cl.bottom-ct.bottom)} dp of blank space after the last row`);
+   if(pinned&&ph.querySelector('.pin').getBoundingClientRect().bottom>scr.getBoundingClientRect().top+0.5)bad.push(`${tag}: pinned search overlaps the list`);
+   scr.querySelectorAll('.plv').forEach(l=>{if(l.querySelectorAll('.sg').length!==4)bad.push(`${tag}: course line incomplete`);
+    const tr=l.querySelector('.tr').getBoundingClientRect().height;if(tr>6)bad.push(`${tag}: course line not thin (${tr}dp)`)});
+  }
   ph.querySelectorAll('[data-search]').forEach(sb=>{const q=sb.querySelector('.q');const lh=parseFloat(getComputedStyle(q).lineHeight);
    if(q.getBoundingClientRect().height>lh*1.5)bad.push(`${tag}: search text wraps`)});
   ph.querySelectorAll('[data-tap]').forEach(el=>{if(/^(yes|no)$/i.test(el.textContent.trim()))bad.push(`${tag}: an option labelled Yes or No`)});
