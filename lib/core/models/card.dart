@@ -592,12 +592,14 @@ class Card {
   /// chosen.
   List<String> acceptedAnswers(DrillMode mode) => switch (mode) {
     DrillMode.recognition ||
-    DrillMode.reading => <String>[native, ...altNative],
+    DrillMode.reading ||
+    DrillMode.readScript => <String>[native, ...altNative],
     DrillMode.grammarUnderstood => <String>[native],
     DrillMode.production ||
     DrillMode.listening ||
     DrillMode.grammar ||
-    DrillMode.speaking => <String>[target, ...altTarget],
+    DrillMode.speaking ||
+    DrillMode.writeScript => <String>[target, ...altTarget],
   };
 
   /// What the learner is shown (DECK-FORMAT.md, Rules decks). A rules table's
@@ -607,7 +609,9 @@ class Card {
   /// meaning to express, so that only the rule is tested: "అమ్మ (amma): with
   /// mother".
   String promptFor(DrillMode mode) => switch (mode) {
-    DrillMode.recognition || DrillMode.reading => target,
+    DrillMode.recognition ||
+    DrillMode.reading ||
+    DrillMode.readScript => target,
     DrillMode.grammarUnderstood => switch (reading) {
       final reading? => '$target ($reading)',
       null => target,
@@ -616,7 +620,10 @@ class Card {
       final reading? => '${rule!.wordTarget} ($reading): $native',
       null => '${rule!.wordTarget}: $native',
     },
-    DrillMode.production || DrillMode.grammar || DrillMode.speaking => native,
+    DrillMode.production ||
+    DrillMode.grammar ||
+    DrillMode.speaking ||
+    DrillMode.writeScript => native,
     // The listening prompt is the audio itself; the text is withheld until
     // the answer is in.
     DrillMode.listening => '',

@@ -601,6 +601,20 @@ class AppState extends ChangeNotifier {
     return out;
   }
 
+  /// The facts that name [card], in [language]'s facts file, for the
+  /// languages the learner speaks, each with its text in them, best known
+  /// first (#546): what the Facts section at the end of a card's sheet
+  /// lists. Empty when none names the card.
+  List<CardFact> factsNaming(Card card, LanguageInfo language) {
+    final file = _catalog.facts[language.code];
+    if (file == null) return const <CardFact>[];
+    final spoken = settings.spokenLanguages;
+    return <CardFact>[
+      for (final fact in factsNamingCard(file.facts, card.id, spoken: spoken))
+        (fact: fact, texts: factTexts(fact, spoken)),
+    ];
+  }
+
   /// Today's fact for each language the profile learns that has facts
   /// (#48), with its text in each language the learner speaks, best known
   /// first. Choosing one records it as shown today, after this call, so
@@ -609,6 +623,11 @@ class AppState extends ChangeNotifier {
     final spoken = settings.spokenLanguages;
     final learned = <String, LanguageInfo>{
       for (final entry in profileDecks) entry.language.code: entry.language,
+    };
+    // A fact that names a card being studied comes first (#546): a card
+    // with a schedule state that is not new, so answered in some skill.
+    final studied = <String>{
+      for (final key in progress.states.keys) key.cardId,
     };
     final today = <TodayFact>[];
     for (final language in learned.values) {
@@ -620,6 +639,7 @@ class AppState extends ChangeNotifier {
         spoken: spoken,
         shownAt: shown,
         now: now(),
+        studied: studied,
       );
       if (fact == null) continue;
       today.add((
@@ -920,11 +940,16 @@ class AppState extends ChangeNotifier {
   /// means, so that a right answer there implies Write, not Recognition
   /// (ADR-0034).
   void _mapSkills() {
+    final scriptDecks = <String>{
+      for (final entry in decks)
+        if (needsAlphabet(entry)) entry.id,
+    };
+    // The decks listed under `alphabet:` in a path are also the script
+    // skills' (#556): their answers make Read script and Write script,
+    // rebuilt from the log whenever the decks are read.
     progress.skills = SkillMap(
-      formHeardIn: <String>{
-        for (final entry in decks)
-          if (needsAlphabet(entry)) entry.id,
-      },
+      formHeardIn: scriptDecks,
+      scriptDecks: scriptDecks,
     );
   }
 
@@ -1949,7 +1974,7 @@ class AppState extends ChangeNotifier {
 
   /// Whether [card] has been taught: some skill of it has been drilled.
   bool isTaught(Card card) =>
-      DrillMode.values.any((mode) => progress.stateOf(card.id, mode) != null);
+      DrillMode.drills.any((mode) => progress.stateOf(card.id, mode) != null);
 
   /// The modes [card] can be drilled in now: those it takes, switched on
   /// and not paused, by ear only with a voice and sound on and by mouth
@@ -2332,6 +2357,9 @@ class AppState extends ChangeNotifier {
     super.dispose();
   }
 }
+
+/// A fact that names a card, and its text in the learner's languages (#546).
+typedef CardFact = ({Fact fact, List<({String code, String text})> texts});
 
 /// A language's fact for today, and its text in the learner's languages.
 typedef TodayFact = ({

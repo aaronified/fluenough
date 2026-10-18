@@ -7,19 +7,40 @@ bool factIsFor(Fact fact, List<String> spoken) =>
     fact.text.keys.any(spoken.contains) &&
     (fact.contrast == null || spoken.contains(fact.contrast));
 
+/// Whether [fact] names a card in [cardIds] (#546).
+bool factNamesAny(Fact fact, Set<String> cardIds) =>
+    fact.cards.any(cardIds.contains);
+
+/// The facts of [facts] that name the card [cardId] and can be shown to a
+/// learner who speaks [spoken], in the file's order (#546): what a card's
+/// Facts section lists.
+List<Fact> factsNamingCard(
+  List<Fact> facts,
+  String cardId, {
+  required List<String> spoken,
+}) => <Fact>[
+  for (final fact in facts)
+    if (fact.cards.contains(cardId) && factIsFor(fact, spoken)) fact,
+];
+
 /// Today's fact from [facts], for a learner who speaks [spoken], given when
 /// each fact was last shown ([shownAt], by fact id). Null if none is for
 /// them.
 ///
 /// - A fact already shown today stays today's fact.
-/// - Otherwise the first eligible fact never shown, in the file's order.
+/// - Otherwise the first eligible fact never shown, in the file's order,
+///   but one that names a card in [studied] comes first (#546).
 /// - Once every eligible fact has been shown, the one shown longest ago:
 ///   the cycle starts again.
+///
+/// [studied] is the ids of the cards being studied: those with a schedule
+/// state that is not new, so answered at least once in some skill.
 Fact? factForToday(
   List<Fact> facts, {
   required List<String> spoken,
   required Map<String, DateTime> shownAt,
   required DateTime now,
+  Set<String> studied = const <String>{},
 }) {
   final eligible = [
     for (final fact in facts)
@@ -36,8 +57,15 @@ Fact? factForToday(
   }
   if (today != null) return today;
 
-  for (final fact in eligible) {
-    if (!shownAt.containsKey(fact.id)) return fact;
+  final unseen = <Fact>[
+    for (final fact in eligible)
+      if (!shownAt.containsKey(fact.id)) fact,
+  ];
+  if (unseen.isNotEmpty) {
+    return unseen.firstWhere(
+      (fact) => factNamesAny(fact, studied),
+      orElse: () => unseen.first,
+    );
   }
   return eligible.reduce(
     (a, b) => shownAt[b.id]!.isBefore(shownAt[a.id]!) ? b : a,

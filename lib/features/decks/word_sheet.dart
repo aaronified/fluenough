@@ -12,6 +12,7 @@ import '../../ui/widgets/target_text.dart';
 import '../review/alike_warning.dart';
 import '../review/review_words.dart';
 import 'card_bases.dart';
+import 'card_facts.dart';
 import 'card_notes.dart';
 import '../drill/ipa_examples.dart';
 import 'card_top_line.dart';
@@ -50,7 +51,7 @@ bool adultContentOn(AppState state) => state.settings.adultContent;
 /// speech and where the learner stands with it, a speaker and the bug icon;
 /// then its picture, the word and its reading, how it is said in the IPA,
 /// its meaning, its notes, its base words ([BaseLine]) and its first
-/// example.
+/// example, and at the end the facts that name it ([CardFacts], #546).
 ///
 /// Where a minimal-pair partner, a word that sounds almost the same (its
 /// `pair` or a pair note's), is rude, it carries the warning the drill cards carry, "Careful when
@@ -106,6 +107,7 @@ class WordSheet extends StatelessWidget {
     );
     final pos = card.pos;
     final checked = checkedByOf(state.decks, card).length;
+    final facts = state.factsNaming(card, language);
     return SafeArea(
       child: SingleChildScrollView(
         padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 24),
@@ -231,6 +233,12 @@ class WordSheet extends StatelessWidget {
                 language: language,
                 care: partner.care,
               ),
+            ],
+            // Last, after the examples and notes (#546), and only when a
+            // fact names the card.
+            if (facts.isNotEmpty) ...<Widget>[
+              const SizedBox(height: 20),
+              CardFacts(facts: facts),
             ],
           ],
         ),

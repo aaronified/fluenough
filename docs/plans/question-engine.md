@@ -77,7 +77,7 @@ chooses.
 Plain Dart in `lib/core`, no Flutter. The pages draw an `Ask`; they do not
 decide which.
 
-## Steps (Proposed order; the owner decided only "Fields first")
+## Steps (approved order, owner, 2026-10-18: "approve the #522 step order")
 
 Each step is one pull request or push to main, and every step ends with
 `flutter analyze` clean and the full `flutter test` passing. A step moves

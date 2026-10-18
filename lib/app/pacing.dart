@@ -88,7 +88,8 @@ class Pacing extends ChangeNotifier {
   /// marks them to be once the job running ends.
   void _ask() {
     final now = _clock();
-    final log = progress.log;
+    // The script skills' reviews too (#556): they have paces of their own.
+    final log = progress.skillLog;
     final actions = progress.leechActions;
     final key = (
       log.length,
