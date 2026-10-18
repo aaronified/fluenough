@@ -154,8 +154,9 @@ units:
       - { id: "welcome-card", text: { "en": "A welcome card: hello, thank you and please" } }
   # 2. The first word units. The sounds: the retroflex against the dental,
   # the aspirates, ड़ (ṛa) against ड (ḍa), the vowels ऐ (ai) and औ (au), the
-  # nasal vowels of अहाँ (ahā̃), and the short -i and -u Maithili keeps at a
-  # word's end, अछि (achi), where Hindi drops them.
+  # nasal vowels of अहाँ (ahā̃), the short final -i of अछि (achi), and the
+  # a Maithili keeps inside a word where Hindi drops it, देखलहुँ
+  # (dekhalahũ).
   - planned: { id: "mai-sound-differences", grammar: "sound-differences", words: 10 }
     listening_passages:
       - { id: "sound-pairs", text: { "en": "Pairs of words that differ in one sound, said slowly" } }
