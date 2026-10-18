@@ -157,26 +157,7 @@ cards:
           - { "word": "రాత్రికి", "base": "రాత్రి", "reading": "rātriki" }
           - { "word": "ఊరికి", "base": "ఊరు", "reading": "ūriki" }
           - { "word": "చేరుతారు", "base": "చేరడం", "reading": "cērutāru" }
-  - id: "te-6107"
-    target: "తగ్గడం"
-    reading: "taggaḍam"
-    ipa: "t̪aɡɡaɖam"
-    pos: "verb"
-    bases: "self"
-    notes:
-      - { "id": "n1", "kind": "behaviour", "words": [{ "word": "తగ్గుతాను", "reading": "taggutānu" }, { "word": "తగ్గండి", "reading": "taggaṇḍi" }] }
-    examples:
-      - target: "ధర తగ్గుతుంది."
-        reading: "dhara taggutundi."
-        ipa: "d̪ʱara t̪aɡɡut̪und̪i"
-        bases:
-          - { "word": "తగ్గుతుంది", "base": "తగ్గడం", "reading": "taggutundi" }
-      - target: "రేట్లు వచ్చే నెలలో తగ్గుతుంది."
-        reading: "rēṭlu vaccē nelalō taggutundi."
-        ipa: "reːʈlu ʋatʃtʃeː nelaloː t̪aɡɡut̪und̪i"
-        bases:
-          - { "word": "నెలలో", "base": "నెల", "reading": "nelalō" }
-          - { "word": "తగ్గుతుంది", "base": "తగ్గడం", "reading": "taggutundi" }
+  - ref: "te-1531"
   - id: "te-6108"
     target: "తీర్చడం"
     reading: "tīrcaḍam"
@@ -241,27 +222,7 @@ cards:
         bases:
           - { "word": "బట్టలు", "base": "బట్ట", "reading": "baṭṭalu" }
           - { "word": "కుట్టుతాడు", "base": "కుట్టడం", "reading": "kuṭṭutāḍu" }
-  - id: "te-6111"
-    target: "తిప్పడం"
-    reading: "tippaḍam"
-    ipa: "t̪ippaɖam"
-    pos: "verb"
-    bases: "self"
-    notes:
-      - { "id": "n1", "kind": "behaviour", "words": [{ "word": "తిప్పుతాను", "reading": "tipputānu" }, { "word": "తిప్పండి", "reading": "tippaṇḍi" }] }
-    examples:
-      - target: "తాళం చెవిని తిప్పుతాను."
-        reading: "tāḷam cevini tipputānu."
-        ipa: "t̪aːɭam tʃeʋini t̪ipput̪aːnu"
-        bases:
-          - { "word": "తాళం చెవిని", "base": "తాళం చెవి", "reading": "tāḷam cevini" }
-          - { "word": "తిప్పుతాను", "base": "తిప్పడం", "reading": "tipputānu" }
-      - target: "పిల్లవాడు బొంగరాన్ని తిప్పుతాడు."
-        reading: "pillavāḍu boṅgarānni tipputāḍu."
-        ipa: "pillaʋaːɖu boŋɡaraːnni t̪ipput̪aːɖu"
-        bases:
-          - { "word": "బొంగరాన్ని", "base": "బొంగరం", "reading": "boṅgarānni" }
-          - { "word": "తిప్పుతాడు", "base": "తిప్పడం", "reading": "tipputāḍu" }
+  - ref: "te-2336"
   - id: "te-6112"
     target: "వంచడం"
     reading: "vañcaḍam"
@@ -283,29 +244,7 @@ cards:
         bases:
           - { "word": "కడ్డీని", "base": "కడ్డీ", "reading": "kaḍḍīni" }
           - { "word": "వంచుతాడు", "base": "వంచడం", "reading": "vañcutāḍu" }
-  - id: "te-6113"
-    target: "ఆర్పడం"
-    reading: "ārpaḍam"
-    ipa: "aːrpaɖam"
-    pos: "verb"
-    bases: "self"
-    antonyms:
-      - { id: "light", ref: "te-6135" }
-    notes:
-      - { "id": "n1", "kind": "behaviour", "words": [{ "word": "ఆర్పుతాను", "reading": "ārputānu" }, { "word": "ఆర్పండి", "reading": "ārpaṇḍi" }] }
-    examples:
-      - target: "నేను దీపాన్ని ఆర్పుతాను."
-        reading: "nēnu dīpānni ārputānu."
-        ipa: "neːnu d̪iːpaːnni aːrput̪aːnu"
-        bases:
-          - { "word": "దీపాన్ని", "base": "దీపం", "reading": "dīpānni" }
-          - { "word": "ఆర్పుతాను", "base": "ఆర్పడం", "reading": "ārputānu" }
-      - target: "అగ్నిని వెంటనే ఆర్పండి."
-        reading: "agnini veṇṭanē ārpaṇḍi."
-        ipa: "aɡnini ʋeɳʈaneː aːrpaɳɖi"
-        bases:
-          - { "word": "అగ్నిని", "base": "అగ్ని", "reading": "agnini" }
-          - { "word": "ఆర్పండి", "base": "ఆర్పడం", "reading": "ārpaṇḍi" }
+  - ref: "te-2356"
   - id: "te-6114"
     target: "చల్లడం"
     reading: "callaḍam"
@@ -329,28 +268,7 @@ cards:
           - { "word": "పొలంలో", "base": "పొలం", "reading": "polamlō" }
           - { "word": "ఎరువు", "base": "ఎరువు", "reading": "eruvu" }
           - { "word": "చల్లుతాడు", "base": "చల్లడం", "reading": "callutāḍu" }
-  - id: "te-6115"
-    target: "నేర్పడం"
-    reading: "nērpaḍam"
-    ipa: "neːrpaɖam"
-    pos: "verb"
-    bases: "self"
-    notes:
-      - { "id": "n1", "kind": "behaviour", "words": [{ "word": "నేర్పుతాను", "reading": "nērputānu" }, { "word": "నేర్పండి", "reading": "nērpaṇḍi" }] }
-    examples:
-      - target: "ఆమె పిల్లలకు ఈత నేర్పుతుంది."
-        reading: "āme pillalaku īta nērputundi."
-        ipa: "aːme pillalaku iːt̪a neːrput̪und̪i"
-        bases:
-          - { "word": "పిల్లలకు", "base": "పిల్లవాడు", "reading": "pillalaku" }
-          - { "word": "ఈత", "base": "ఈత", "reading": "īta" }
-          - { "word": "నేర్పుతుంది", "base": "నేర్పడం", "reading": "nērputundi" }
-      - target: "నేను నీకు తెలుగు నేర్పుతాను."
-        reading: "nēnu nīku telugu nērputānu."
-        ipa: "neːnu niːku t̪eluɡu neːrput̪aːnu"
-        bases:
-          - { "word": "నీకు", "base": "నువ్వు", "reading": "nīku" }
-          - { "word": "నేర్పుతాను", "base": "నేర్పడం", "reading": "nērputānu" }
+  - ref: "te-0832"
   - id: "te-6116"
     target: "కనిపెట్టడం"
     reading: "kanipeṭṭaḍam"
@@ -518,27 +436,7 @@ cards:
           - { "word": "నా", "base": "నేను", "reading": "nā" }
           - { "word": "బహుమతిని", "base": "బహుమతి", "reading": "bahumatini" }
           - { "word": "దాచిపెడుతుంది", "base": "దాచిపెట్టడం", "reading": "dācipeḍutundi" }
-  - id: "te-6124"
-    target: "సిగ్గుపడడం"
-    reading: "siggupaḍaḍam"
-    ipa: "siɡɡupaɖaɖam"
-    pos: "verb"
-    bases: "self"
-    notes:
-      - { "id": "n1", "kind": "behaviour", "words": [{ "word": "సిగ్గుపడతాను", "reading": "siggupaḍatānu" }, { "word": "సిగ్గుపడండి", "reading": "siggupaḍaṇḍi" }] }
-    examples:
-      - target: "అతను అందరి ముందు సిగ్గుపడతాడు."
-        reading: "atanu andari mundu siggupaḍatāḍu."
-        ipa: "at̪anu and̪ari mund̪u siɡɡupaɖat̪aːɖu"
-        bases:
-          - { "word": "అందరి", "base": "అందరు", "reading": "andari" }
-          - { "word": "సిగ్గుపడతాడు", "base": "సిగ్గుపడడం", "reading": "siggupaḍatāḍu" }
-      - target: "వేదిక మీద మాట్లాడేటప్పుడు సిగ్గుపడతాను."
-        reading: "vēdika mīda māṭlāḍēṭappuḍu siggupaḍatānu."
-        ipa: "ʋeːd̪ika miːd̪a maːʈlaːɖeːʈappuɖu siɡɡupaɖat̪aːnu"
-        bases:
-          - { "word": "మాట్లాడేటప్పుడు", "base": "మాట్లాడడం", "reading": "māṭlāḍēṭappuḍu" }
-          - { "word": "సిగ్గుపడతాను", "base": "సిగ్గుపడడం", "reading": "siggupaḍatānu" }
+  - ref: "te-3347"
   - id: "te-6125"
     target: "ఇబ్బందిపడడం"
     reading: "ibbandipaḍaḍam"
@@ -760,71 +658,9 @@ cards:
           - { "word": "నా", "base": "నేను", "reading": "nā" }
           - { "word": "తప్పును", "base": "తప్పు", "reading": "tappunu" }
           - { "word": "క్షమించండి", "base": "క్షమించడం", "reading": "kṣamiñcaṇḍi" }
-  - id: "te-6135"
-    target: "వెలిగించడం"
-    reading: "veligiñcaḍam"
-    ipa: "ʋeliɡiɲtʃaɖam"
-    pos: "verb"
-    bases: "self"
-    antonyms:
-      - { id: "put-out", ref: "te-6113" }
-    notes:
-      - { "id": "n1", "kind": "behaviour", "words": [{ "word": "వెలిగిస్తాను", "reading": "veligistānu" }, { "word": "వెలిగించండి", "reading": "veligiñcaṇḍi" }] }
-    examples:
-      - target: "సాయంత్రం దీపం వెలిగిస్తాను."
-        reading: "sāyantram dīpam veligistānu."
-        ipa: "saːjant̪ram d̪iːpam ʋeliɡist̪aːnu"
-        bases:
-          - { "word": "వెలిగిస్తాను", "base": "వెలిగించడం", "reading": "veligistānu" }
-      - target: "పండుగ రోజు ప్రతి ఇంట్లో దీపాలను వెలిగిస్తారు."
-        reading: "paṇḍuga rōju prati iṇṭlō dīpālanu veligistāru."
-        ipa: "paɳɖuɡa roːdʒu prat̪i iɳʈloː d̪iːpaːlanu ʋeliɡist̪aːru"
-        bases:
-          - { "word": "దీపాలను", "base": "దీపం", "reading": "dīpālanu" }
-          - { "word": "వెలిగిస్తారు", "base": "వెలిగించడం", "reading": "veligistāru" }
-  - id: "te-6136"
-    target: "కొనసాగించడం"
-    reading: "konasāgiñcaḍam"
-    ipa: "konasaːɡiɲtʃaɖam"
-    pos: "verb"
-    bases: "self"
-    notes:
-      - { "id": "n1", "kind": "behaviour", "words": [{ "word": "కొనసాగిస్తాను", "reading": "konasāgistānu" }, { "word": "కొనసాగించండి", "reading": "konasāgiñcaṇḍi" }] }
-    examples:
-      - target: "నేను చదువును కొనసాగిస్తాను."
-        reading: "nēnu caduvunu konasāgistānu."
-        ipa: "neːnu tʃad̪uʋunu konasaːɡist̪aːnu"
-        bases:
-          - { "word": "చదువును", "base": "చదువు", "reading": "caduvunu" }
-          - { "word": "కొనసాగిస్తాను", "base": "కొనసాగించడం", "reading": "konasāgistānu" }
-      - target: "వాళ్ళు తమ ప్రయాణాన్ని కొనసాగిస్తారు."
-        reading: "vāḷḷu tama prayāṇānni konasāgistāru."
-        ipa: "ʋaːɭɭu t̪ama prajaːɳaːnni konasaːɡist̪aːru"
-        bases:
-          - { "word": "తమ", "base": "తాము", "reading": "tama" }
-          - { "word": "ప్రయాణాన్ని", "base": "ప్రయాణం", "reading": "prayāṇānni" }
-          - { "word": "కొనసాగిస్తారు", "base": "కొనసాగించడం", "reading": "konasāgistāru" }
-  - id: "te-6137"
-    target: "సాధించడం"
-    reading: "sādhiñcaḍam"
-    ipa: "saːd̪ʱiɲtʃaɖam"
-    pos: "verb"
-    bases: "self"
-    notes:
-      - { "id": "n1", "kind": "behaviour", "words": [{ "word": "సాధిస్తాను", "reading": "sādhistānu" }, { "word": "సాధించండి", "reading": "sādhiñcaṇḍi" }] }
-    examples:
-      - target: "ఆమె పరీక్షలో మంచి మార్కులు సాధిస్తుంది."
-        reading: "āme parīkṣalō mañci mārkulu sādhistundi."
-        ipa: "aːme pariːkʂaloː maɲtʃi maːrkulu saːd̪ʱist̪und̪i"
-        bases:
-          - { "word": "మార్కులు", "base": "మార్కు", "reading": "mārkulu" }
-          - { "word": "సాధిస్తుంది", "base": "సాధించడం", "reading": "sādhistundi" }
-      - target: "కష్టపడి లక్ష్యాన్ని సాధించండి."
-        reading: "kaṣṭapaḍi lakṣyānni sādhiñcaṇḍi."
-        ipa: "kaʂʈapaɖi lakʂjaːnni saːd̪ʱiɲtʃaɳɖi"
-        bases:
-          - { "word": "లక్ష్యాన్ని", "base": "లక్ష్యం", "reading": "lakṣyānni" }
-          - { "word": "సాధించండి", "base": "సాధించడం", "reading": "sādhiñcaṇḍi" }
+  - ref: "te-2355"
+  - ref: "te-2357"
+  - ref: "te-2351"
   - id: "te-6138"
     target: "నిర్వహించడం"
     reading: "nirvahiñcaḍam"
@@ -913,28 +749,7 @@ cards:
           - { "word": "నా", "base": "నేను", "reading": "nā" }
           - { "word": "మాటను", "base": "మాట", "reading": "māṭanu" }
           - { "word": "నిరూపిస్తుంది", "base": "నిరూపించడం", "reading": "nirūpistundi" }
-  - id: "te-6142"
-    target: "గుర్తించడం"
-    reading: "gurtiñcaḍam"
-    ipa: "ɡurt̪iɲtʃaɖam"
-    pos: "verb"
-    bases: "self"
-    notes:
-      - { "id": "n1", "kind": "behaviour", "words": [{ "word": "గుర్తిస్తాను", "reading": "gurtistānu" }, { "word": "గుర్తించండి", "reading": "gurtiñcaṇḍi" }] }
-    examples:
-      - target: "దూరం నుంచి అతని ముఖాన్ని గుర్తిస్తాను."
-        reading: "dūram nuñci atani mukhānni gurtistānu."
-        ipa: "d̪uːram nuɲtʃi at̪ani mukʰaːnni ɡurt̪ist̪aːnu"
-        bases:
-          - { "word": "అతని", "base": "అతను", "reading": "atani" }
-          - { "word": "ముఖాన్ని", "base": "ముఖం", "reading": "mukhānni" }
-          - { "word": "గుర్తిస్తాను", "base": "గుర్తించడం", "reading": "gurtistānu" }
-      - target: "పోలీసులు నేరస్థుడిని గుర్తిస్తారు."
-        reading: "pōlīsulu nērasthuḍini gurtistāru."
-        ipa: "poːliːsulu neːrast̪ʰuɖini ɡurt̪ist̪aːru"
-        bases:
-          - { "word": "నేరస్థుడిని", "base": "నేరస్థుడు", "reading": "nērasthuḍini" }
-          - { "word": "గుర్తిస్తారు", "base": "గుర్తించడం", "reading": "gurtistāru" }
+  - ref: "te-2344"
   - id: "te-6143"
     target: "తొలగించడం"
     reading: "tolagiñcaḍam"
@@ -958,27 +773,7 @@ cards:
         bases:
           - { "word": "చెత్తను", "base": "చెత్త", "reading": "cettanu" }
           - { "word": "తొలగిస్తారు", "base": "తొలగించడం", "reading": "tolagistāru" }
-  - id: "te-6144"
-    target: "ప్రయత్నించడం"
-    reading: "prayatniñcaḍam"
-    ipa: "prajat̪niɲtʃaɖam"
-    pos: "verb"
-    bases: "self"
-    notes:
-      - { "id": "n1", "kind": "behaviour", "words": [{ "word": "ప్రయత్నిస్తాను", "reading": "prayatnistānu" }, { "word": "ప్రయత్నించండి", "reading": "prayatniñcaṇḍi" }] }
-    examples:
-      - target: "ఈ పని చేయడానికి ప్రయత్నిస్తాను."
-        reading: "ī pani cēyaḍāniki prayatnistānu."
-        ipa: "iː pani tʃeːjaɖaːniki prajat̪nist̪aːnu"
-        bases:
-          - { "word": "చేయడానికి", "base": "చేయడం", "reading": "cēyaḍāniki" }
-          - { "word": "ప్రయత్నిస్తాను", "base": "ప్రయత్నించడం", "reading": "prayatnistānu" }
-      - target: "అతను ఈత నేర్చుకోవడానికి మళ్ళీ ప్రయత్నిస్తాడు."
-        reading: "atanu īta nērcukōvaḍāniki maḷḷī prayatnistāḍu."
-        ipa: "at̪anu iːt̪a neːrtʃukoːʋaɖaːniki maɭɭiː prajat̪nist̪aːɖu"
-        bases:
-          - { "word": "నేర్చుకోవడానికి", "base": "నేర్చుకోవడం", "reading": "nērcukōvaḍāniki" }
-          - { "word": "ప్రయత్నిస్తాడు", "base": "ప్రయత్నించడం", "reading": "prayatnistāḍu" }
+  - ref: "te-1405"
   - id: "te-6145"
     target: "ఇరుక్కోవడం"
     reading: "irukkōvaḍam"
@@ -1000,27 +795,7 @@ cards:
         bases:
           - { "word": "కొమ్మల", "base": "కొమ్మ", "reading": "kommala" }
           - { "word": "ఇరుక్కుంటుంది", "base": "ఇరుక్కోవడం", "reading": "irukkuṇṭundi" }
-  - id: "te-6146"
-    target: "ఎంచుకోవడం"
-    reading: "eñcukōvaḍam"
-    ipa: "eɲtʃukoːʋaɖam"
-    pos: "verb"
-    bases: "self"
-    notes:
-      - { "id": "n1", "kind": "behaviour", "words": [{ "word": "ఎంచుకుంటాను", "reading": "eñcukuṇṭānu" }, { "word": "ఎంచుకోండి", "reading": "eñcukōṇḍi" }] }
-    examples:
-      - target: "నేను ఈ చీరను ఎంచుకుంటాను."
-        reading: "nēnu ī cīranu eñcukuṇṭānu."
-        ipa: "neːnu iː tʃiːranu eɲtʃukuɳʈaːnu"
-        bases:
-          - { "word": "చీరను", "base": "చీర", "reading": "cīranu" }
-          - { "word": "ఎంచుకుంటాను", "base": "ఎంచుకోవడం", "reading": "eñcukuṇṭānu" }
-      - target: "అమ్మాయి తనకు ఇష్టమైన పుస్తకాన్ని ఎంచుకుంటుంది."
-        reading: "ammāyi tanaku iṣṭamaina pustakānni eñcukuṇṭundi."
-        ipa: "ammaːji t̪anaku iʂʈamaina pust̪akaːnni eɲtʃukuɳʈund̪i"
-        bases:
-          - { "word": "పుస్తకాన్ని", "base": "పుస్తకం", "reading": "pustakānni" }
-          - { "word": "ఎంచుకుంటుంది", "base": "ఎంచుకోవడం", "reading": "eñcukuṇṭundi" }
+  - ref: "te-1403"
   - id: "te-6147"
     target: "కనుక్కోవడం"
     reading: "kanukkōvaḍam"
@@ -1105,27 +880,7 @@ cards:
         bases:
           - { "word": "మమ్మల్ని", "base": "మేము", "reading": "mammalni" }
           - { "word": "ఆదుకుంటుంది", "base": "ఆదుకోవడం", "reading": "ādukuṇṭundi" }
-  - id: "te-6151"
-    target: "ఒప్పుకోవడం"
-    reading: "oppukōvaḍam"
-    ipa: "oppukoːʋaɖam"
-    pos: "verb"
-    bases: "self"
-    notes:
-      - { "id": "n1", "kind": "behaviour", "words": [{ "word": "ఒప్పుకుంటాను", "reading": "oppukuṇṭānu" }, { "word": "ఒప్పుకోండి", "reading": "oppukōṇḍi" }] }
-    examples:
-      - target: "అతను తన తప్పును ఒప్పుకుంటాడు."
-        reading: "atanu tana tappunu oppukuṇṭāḍu."
-        ipa: "at̪anu t̪ana t̪appunu oppukuɳʈaːɖu"
-        bases:
-          - { "word": "తప్పును", "base": "తప్పు", "reading": "tappunu" }
-          - { "word": "ఒప్పుకుంటాడు", "base": "ఒప్పుకోవడం", "reading": "oppukuṇṭāḍu" }
-      - target: "సరే, నేను ఈ ప్రతిపాదనకు ఒప్పుకుంటాను."
-        reading: "sarē, nēnu ī pratipādanaku oppukuṇṭānu."
-        ipa: "sareː neːnu iː prat̪ipaːd̪anaku oppukuɳʈaːnu"
-        bases:
-          - { "word": "ప్రతిపాదనకు", "base": "ప్రతిపాదన", "reading": "pratipādanaku" }
-          - { "word": "ఒప్పుకుంటాను", "base": "ఒప్పుకోవడం", "reading": "oppukuṇṭānu" }
+  - ref: "te-2352"
   - id: "te-6152"
     target: "తడుముకోవడం"
     reading: "taḍumukōvaḍam"

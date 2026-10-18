@@ -7,44 +7,9 @@ license: "CC-BY-SA-4.0"
 theme: "law"
 tags: ["beginner", "unreviewed"]
 cards:
-  - id: "te-6000"
-    target: "చట్టం"
-    reading: "caṭṭaṁ"
-    ipa: "tʃaʈʈam"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - { target: "ఈ చట్టం అందరికీ వర్తిస్తుంది.", reading: "ī caṭṭaṁ andarikī vartistundi.", ipa: "iː tʃaʈʈam andarikiː ʋartistund̪i", bases: [{ word: "వర్తిస్తుంది", base: "వర్తించడం", reading: "vartiñcaḍaṁ" }] }
-      - { target: "చట్టం ప్రకారం ఇది తప్పు.", reading: "caṭṭaṁ prakāraṁ idi tappu.", ipa: "tʃaʈʈam prakaːram id̪i t̪appu" }
-  - id: "te-6001"
-    target: "కోర్టు"
-    reading: "kōrṭu"
-    ipa: "koːrʈu"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - { target: "కోర్టు రేపు తీర్పు ఇస్తుంది.", reading: "kōrṭu rēpu tīrpu istundi.", ipa: "koːrʈu reːpu t̪iːrpu istund̪i", bases: [{ word: "ఇస్తుంది", base: "ఇవ్వడం", reading: "ivvaḍaṁ" }] }
-      - { target: "మేము కోర్టులో సాక్ష్యం చెప్పాము.", reading: "mēmu kōrṭulō sākṣyaṁ ceppāmu.", ipa: "meːmu koːrʈuloː saːkʂjam tʃeppaːmu", bases: [{ word: "కోర్టులో", base: "కోర్టు", reading: "kōrṭu" }, { word: "చెప్పాము", base: "చెప్పడం", reading: "ceppaḍaṁ" }] }
-  - id: "te-6002"
-    target: "న్యాయమూర్తి"
-    reading: "nyāyamūrti"
-    ipa: "njaːjamuːrt̪i"
-    pos: "noun"
-    gender: "mahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - { target: "న్యాయమూర్తి గారు కేసును వాయిదా వేశారు.", reading: "nyāyamūrti gāru kēsunu vāyidā vēśāru.", ipa: "njaːjamuːrt̪i gaːru keːsunu ʋaːjid̪aː ʋeːʃaːru", bases: [{ word: "కేసును", base: "కేసు", reading: "kēsu" }, { word: "వేశారు", base: "వేయడం", reading: "vēyaḍaṁ" }] }
-      - { target: "న్యాయమూర్తి ప్రశ్నలు అడిగారు.", reading: "nyāyamūrti praśnalu aḍigāru.", ipa: "njaːjamuːrt̪i praʃnalu aɖiɡaːru", bases: [{ word: "ప్రశ్నలు", base: "ప్రశ్న", reading: "praśna" }, { word: "అడిగారు", base: "అడగడం", reading: "aḍagaḍaṁ" }] }
-    synonyms:
-      - { id: "nyayadhipati", word: "న్యాయాధిపతి", reading: "nyāyādhipati", source: "https://en.wiktionary.org/wiki/న్యాయమూర్తి" }
+  - ref: "te-4004"
+  - ref: "te-4009"
+  - ref: "te-4008"
   - id: "te-6003"
     target: "న్యాయవాది"
     reading: "nyāyavādi"
@@ -57,20 +22,7 @@ cards:
     examples:
       - { target: "నా న్యాయవాది కేసు గురించి వివరంగా చెప్పారు.", reading: "nā nyāyavādi kēsu gurinci vivaraṅgā ceppāru.", ipa: "naː njaːjaʋaːd̪i keːsu gurint͡ʃi ʋiʋaraŋɡaː tʃeppaːru", bases: [{ word: "వివరంగా", base: "వివరం", reading: "vivaraṁ" }, { word: "చెప్పారు", base: "చెప్పడం", reading: "ceppaḍaṁ" }] }
       - { target: "మంచి న్యాయవాదిని పెట్టుకోవాలి.", reading: "manci nyāyavādini peṭṭukōvāli.", ipa: "mant͡ʃi njaːjaʋaːd̪ini peʈʈukoːʋaːli", bases: [{ word: "న్యాయవాదిని", base: "న్యాయవాది", reading: "nyāyavādi" }, { word: "పెట్టుకోవాలి", base: "పెట్టుకోవడం", reading: "peṭṭukōvaḍaṁ" }] }
-  - id: "te-6004"
-    target: "ఫిర్యాదు"
-    reading: "phiryādu"
-    ipa: "pʰirjaːd̪u"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - { target: "నేను పోలీసులకు ఫిర్యాదు చేశాను.", reading: "nēnu pōlīsulaku phiryādu cēśānu.", ipa: "neːnu poːliːsulaku pʰirjaːd̪u tʃeːʃaːnu", bases: [{ word: "పోలీసులకు", base: "పోలీసు", reading: "pōlīsu" }, { word: "చేశాను", base: "చేయడం", reading: "cēyaḍaṁ" }] }
-      - { target: "ఆయన ఫిర్యాదు రాతపూర్వకంగా ఇచ్చారు.", reading: "āyana phiryādu rātapūrvakaṅgā iccāru.", ipa: "aːjan̪a pʰirjaːd̪u raːt̪apuːrʋakaŋɡaː itʃtʃaːru", bases: [{ word: "రాతపూర్వకంగా", base: "రాతపూర్వకం", reading: "rātapūrvakaṁ" }, { word: "ఇచ్చారు", base: "ఇవ్వడం", reading: "ivvaḍaṁ" }] }
-    synonyms:
-      - { id: "mora", word: "మొర", reading: "mora", source: "https://en.wiktionary.org/wiki/ఫిర్యాదు" }
+  - ref: "te-4025"
   - id: "te-6005"
     target: "నేరం"
     reading: "nēraṁ"
@@ -331,18 +283,7 @@ cards:
     examples:
       - { target: "పోలీసులు ముగ్గురు అనుమానితులను ప్రశ్నించారు.", reading: "pōlīsulu mugguru anumānitulanu praśniñcāru.", ipa: "poːliːsulu muɡɡuru anumaːnit̪ulanu praʃnint͡ʃaːru", bases: [{ word: "పోలీసులు", base: "పోలీసు", reading: "pōlīsu" }, { word: "అనుమానితులను", base: "అనుమానితుడు", reading: "anumānituḍu" }, { word: "ప్రశ్నించారు", base: "ప్రశ్నించడం", reading: "praśniñcaḍaṁ" }] }
       - { target: "ఆ అనుమానితుడు పారిపోయాడు.", reading: "ā anumānituḍu pāripōyāḍu.", ipa: "aː anumaːnit̪uɖu paːripoːjaːɖu", bases: [{ word: "పారిపోయాడు", base: "పారిపోవడం", reading: "pāripōvaḍaṁ" }] }
-  - id: "te-6026"
-    target: "పౌరుడు"
-    reading: "pauruḍu"
-    ipa: "pauruɖu"
-    pos: "noun"
-    gender: "mahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - { target: "ప్రతి పౌరుడు చట్టాన్ని గౌరవించాలి.", reading: "prati pauruḍu caṭṭānni gauraviñcāli.", ipa: "prat̪i pauruɖu t͡ʃaʈʈaːnni gauraʋint͡ʃaːli", bases: [{ word: "చట్టాన్ని", base: "చట్టం", reading: "caṭṭaṁ" }, { word: "గౌరవించాలి", base: "గౌరవించడం", reading: "gauraviñcaḍaṁ" }] }
-      - { target: "ఆయన భారతీయ పౌరుడు.", reading: "āyana bhāratīya pauruḍu.", ipa: "aːjan̪a bʱaːrat̪iːja pauruɖu" }
+  - ref: "te-4006"
   - id: "te-6027"
     target: "ఖైదీ"
     reading: "khaidī"
