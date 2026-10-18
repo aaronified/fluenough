@@ -24,6 +24,7 @@ cards:
         reading: "okka māṭa mātraṁ ceppu."
         ipa: "okka maːʈa maːt̪ram tʃeppu"
         bases:
+          - { word: "మాట", base: "మాట", reading: "māṭa" }
           - { word: "చెప్పు", base: "చెప్పడం", reading: "ceppaḍaṁ" }
   - id: "te-5901"
     target: "అయినా"
@@ -36,10 +37,14 @@ cards:
       - target: "అతను ధనవంతుడు అయినా సంతోషంగా లేడు."
         reading: "atanu dhanavantuḍu ayinā santōṣaṅgā lēḍu."
         ipa: "at̪anu d̪ʱanaʋant̪uɖu ajinaː sant̪oːʂaŋɡaː leːɖu"
+        bases:
+          - { word: "ధనవంతుడు", base: "ధనవంతుడు", reading: "dhanavantuḍu" }
+          - { word: "లేడు", ref: "te-0159" }
       - target: "చాలా ఆలస్యమైంది, అయినా వెళ్దాం."
         reading: "cālā ālasyamaindi, ayinā veḷdāṁ."
         ipa: "tʃaːlaː aːlasjamaind̪i ajinaː ʋeɭd̪aːm"
         bases:
+          - { word: "ఆలస్యమైంది", ref: "te-2926" }
           - { word: "వెళ్దాం", base: "వెళ్ళడం", reading: "veḷḷaḍaṁ" }
   - ref: "te-1098"
   - id: "te-5903"
@@ -55,6 +60,9 @@ cards:
       - target: "నాకు కావాల్సింది ఇదే."
         reading: "nāku kāvālsindi idē."
         ipa: "naːku kaːʋaːlsind̪i id̪eː"
+        bases:
+          - { word: "నాకు", ref: "te-0593" }
+          - { word: "కావాల్సింది", ref: "te-0460" }
       - target: "ఇదే మంచి సమయం."
         reading: "idē mañci samayaṁ."
         ipa: "id̪eː maɲtʃi samajam"
