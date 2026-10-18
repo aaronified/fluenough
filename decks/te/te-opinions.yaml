@@ -1,0 +1,837 @@
+schema: 1
+id: "te-opinions"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "opinions"
+tags: ["beginner", "unreviewed"]
+cards:
+  - ref: "te-1090"
+  - ref: "te-1092"
+  - ref: "te-1099"
+  - ref: "te-0952"
+  - ref: "te-0953"
+  - ref: "te-3308"
+  - ref: "te-0141"
+  - ref: "te-0500"
+  - ref: "te-0501"
+  - ref: "te-0507"
+  - ref: "te-0469"
+  - ref: "te-0474"
+  - ref: "te-0465"
+  - ref: "te-0844"
+  - ref: "te-1029"
+  - ref: "te-1030"
+  - ref: "te-0157"
+  - ref: "te-0158"
+  - ref: "te-1831"
+  - ref: "te-2340"
+  - ref: "te-2341"
+  - ref: "te-2345"
+  - ref: "te-2352"
+  - id: "te-3600"
+    target: "అభిప్రాయం"
+    reading: "abhiprāyaṁ"
+    ipa: "abʰipraːjam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "నా అభిప్రాయం ప్రకారం", reading: "nā abhiprāyaṁ prakāraṁ" }
+    examples:
+      - target: "నీ అభిప్రాయం ఏమిటి?"
+        reading: "nī abhiprāyaṁ ēmiṭi?"
+        ipa: "niː abʰipraːjam eːmiʈi?"
+        bases:
+          - { word: "నీ", base: "నువ్వు", reading: "nuvvu" }
+      - target: "ఆ సినిమా గురించి నా అభిప్రాయం మారింది."
+        reading: "ā sinimā gurin̄ci nā abhiprāyaṁ mārindi."
+        ipa: "aː sinimaː ɡurin̄tʃi naː abʰipraːjam maːrind̪i."
+        bases:
+          - { word: "నా", base: "నేను", reading: "nēnu" }
+          - { word: "మారింది", base: "మారడం", reading: "māraḍaṁ" }
+  - id: "te-3601"
+    target: "ఆలోచన"
+    reading: "ālōcana"
+    ipa: "aːloːtʃana"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "మంచి ఆలోచన", reading: "mañci ālōcana" }
+    examples:
+      - target: "అది మంచి ఆలోచన!"
+        reading: "adi mañci ālōcana!"
+        ipa: "ad̪i maɲtʃi aːloːtʃana!"
+      - target: "అతని ఆలోచనలు ఎప్పుడూ కొత్తగానే ఉంటాయి."
+        reading: "atani ālōcanalu eppuḍū kottagānē uṇṭāyi."
+        ipa: "at̪ani aːloːtʃanalu epːuɖuː kot̪ːaɡaːneː uɳʈaːji."
+        bases:
+          - { word: "అతని", base: "అతను", reading: "atanu" }
+          - { word: "ఆలోచనలు", base: "ఆలోచన", reading: "ālōcana" }
+          - { word: "కొత్తగానే", base: "కొత్త", reading: "kotta" }
+          - { word: "ఉంటాయి", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+  - id: "te-3602"
+    target: "నిజం"
+    reading: "nijaṁ"
+    ipa: "nidʒam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "నిజంగా", reading: "nijaṅgā" }
+    examples:
+      - target: "అది నిజం కాదు."
+        reading: "adi nijaṁ kādu."
+        ipa: "ad̪i nidʒam kaːd̪u."
+      - target: "ఇది నిజమేనా?"
+        reading: "idi nijamēnā?"
+        ipa: "id̪i nidʒameːnaː?"
+        bases:
+          - { word: "నిజమేనా", base: "నిజం", reading: "nijaṁ" }
+  - id: "te-3603"
+    target: "అబద్ధం"
+    reading: "abaddhaṁ"
+    ipa: "abad̪ːham"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "అబద్ధం చెప్పడం", reading: "abaddhaṁ ceppaḍaṁ" }
+    examples:
+      - target: "అతను ఎప్పుడూ అబద్ధం చెప్పడు."
+        reading: "atanu eppuḍū abaddhaṁ ceppaḍu."
+        ipa: "at̪anu epːuɖuː abad̪ːham tʃepːaɖu."
+        bases:
+          - { word: "చెప్పడు", base: "చెప్పడం", reading: "ceppaḍaṁ" }
+      - target: "నువ్వు అబద్ధం ఎందుకు చెప్పావు?"
+        reading: "nuvvu abaddhaṁ enduku ceppāvu?"
+        ipa: "nuʋːu abad̪ːham end̪uku tʃepːaːʋu?"
+        bases:
+          - { word: "చెప్పావు", base: "చెప్పడం", reading: "ceppaḍaṁ" }
+  - id: "te-3604"
+    target: "న్యాయం"
+    reading: "nyāyaṁ"
+    ipa: "njaːjam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "న్యాయంగా", reading: "nyāyaṅgā" }
+    examples:
+      - target: "ఇది న్యాయం కాదు."
+        reading: "idi nyāyaṁ kādu."
+        ipa: "id̪i njaːjam kaːd̪u."
+      - target: "న్యాయం కోసం అందరూ కలిసి పోరాడాలి."
+        reading: "nyāyaṁ kōsaṁ andarū kalisi pōrāḍāli."
+        ipa: "njaːjam koːsam and̪aruː kalisi poːraːɖaːli."
+        bases:
+          - { word: "అందరూ", base: "అందరు", reading: "andaru" }
+          - { word: "పోరాడాలి", base: "పోరాడడం", reading: "pōrāḍaḍaṁ" }
+  - id: "te-3605"
+    target: "అన్యాయం"
+    reading: "anyāyaṁ"
+    ipa: "anjaːjam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "అన్యాయం చేయడం", reading: "anyāyaṁ cēyaḍaṁ" }
+    examples:
+      - target: "అతను నాకు అన్యాయం చేశాడు."
+        reading: "atanu nāku anyāyaṁ cēśāḍu."
+        ipa: "at̪anu naːku anjaːjam tʃeːʃaːɖu."
+        bases:
+          - { word: "నాకు", base: "నేను", reading: "nēnu" }
+          - { word: "చేశాడు", base: "చేయడం", reading: "cēyaḍaṁ" }
+      - target: "ఈ నిర్ణయం అందరికీ అన్యాయంగా ఉంది."
+        reading: "ī nirṇayaṁ andarikī anyāyaṅgā undi."
+        ipa: "iː nirɳajam and̪arikiː anjaːjaŋɡaː und̪i."
+        bases:
+          - { word: "అందరికీ", base: "అందరు", reading: "andaru" }
+          - { word: "అన్యాయంగా", base: "అన్యాయం", reading: "anyāyaṁ" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+  - id: "te-3606"
+    target: "అద్భుతం"
+    reading: "adbhutaṁ"
+    ipa: "ad̪bʰut̪am"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "అద్భుతం!", reading: "adbhutaṁ!" }
+    examples:
+      - target: "ఈ సినిమా అద్భుతంగా ఉంది."
+        reading: "ī sinimā adbhutaṅgā undi."
+        ipa: "iː sinimaː ad̪bʰut̪aŋɡaː und̪i."
+        bases:
+          - { word: "అద్భుతంగా", base: "అద్భుతం", reading: "adbhutaṁ" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - target: "ఆ దృశ్యం చాలా అద్భుతం."
+        reading: "ā dr̥śyaṁ cālā adbhutaṁ."
+        ipa: "aː d̪r̥ʃjam tʃaːlaː ad̪bʰut̪am."
+  - id: "te-3607"
+    target: "విలువ"
+    reading: "viluva"
+    ipa: "ʋiluʋa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "విలువైన", reading: "viluvaina" }
+    examples:
+      - target: "ఈ పుస్తకానికి చాలా విలువ ఉంది."
+        reading: "ī pustakāniki cālā viluva undi."
+        ipa: "iː pust̪akaːniki tʃaːlaː ʋiluʋa und̪i."
+        bases:
+          - { word: "పుస్తకానికి", base: "పుస్తకం", reading: "pustakaṁ" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - target: "మన మాటకు విలువ ఇవ్వాలి."
+        reading: "mana māṭaku viluva ivvāli."
+        ipa: "mana maːʈaku ʋiluʋa iʋːaːli."
+        bases:
+          - { word: "మన", base: "మనం", reading: "manaṁ" }
+          - { word: "మాటకు", base: "మాట", reading: "māṭa" }
+          - { word: "ఇవ్వాలి", base: "ఇవ్వడం", reading: "ivvaḍaṁ" }
+    synonyms:
+      - { id: "vela", word: "వెల", reading: "vela", source: "https://en.wiktionary.org/wiki/విలువ" }
+      - { id: "dhara", ref: "te-0240", source: "https://en.wiktionary.org/wiki/విలువ" }
+      - { id: "mulyamu", word: "మూల్యము", reading: "mūlyamu", source: "https://en.wiktionary.org/wiki/విలువ" }
+  - id: "te-3608"
+    target: "సందేహం"
+    reading: "sandēhaṁ"
+    ipa: "sand̪eːham"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "సందేహంగా", reading: "sandēhaṅgā" }
+    examples:
+      - target: "నాకు ఇంకా సందేహం ఉంది."
+        reading: "nāku iṅkā sandēhaṁ undi."
+        ipa: "naːku iŋkaː sand̪eːham und̪i."
+        bases:
+          - { word: "నాకు", base: "నేను", reading: "nēnu" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - target: "ఆ మాట విని అతనికి సందేహం వచ్చింది."
+        reading: "ā māṭa vini ataniki sandēhaṁ vaccindi."
+        ipa: "aː maːʈa ʋini at̪aniki sand̪eːham ʋatʃːind̪i."
+        bases:
+          - { word: "విని", base: "వినడం", reading: "vinaḍaṁ" }
+          - { word: "అతనికి", base: "అతను", reading: "atanu" }
+          - { word: "వచ్చింది", base: "రావడం", reading: "rāvaḍaṁ" }
+  - id: "te-3609"
+    target: "అనుమానం"
+    reading: "anumānaṁ"
+    ipa: "anumaːnam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "అనుమానం కలగడం", reading: "anumānaṁ kalagaḍaṁ" }
+    examples:
+      - target: "అతని మాటల్లో నాకు అనుమానం కలిగింది."
+        reading: "atani māṭallō nāku anumānaṁ kaligindi."
+        ipa: "at̪ani maːʈalːoː naːku anumaːnam kaliɡind̪i."
+        bases:
+          - { word: "అతని", base: "అతను", reading: "atanu" }
+          - { word: "మాటల్లో", base: "మాట", reading: "māṭa" }
+          - { word: "నాకు", base: "నేను", reading: "nēnu" }
+          - { word: "కలిగింది", base: "కలగడం", reading: "kalagaḍaṁ" }
+      - target: "నేను చెప్పేది నిజమని నీకు అనుమానమా?"
+        reading: "nēnu ceppēdi nijamani nīku anumānamā?"
+        ipa: "neːnu tʃepːeːd̪i nidʒamani niːku anumaːnamaː?"
+        bases:
+          - { word: "చెప్పేది", base: "చెప్పడం", reading: "ceppaḍaṁ" }
+          - { word: "నిజమని", base: "నిజం", reading: "nijaṁ" }
+          - { word: "నీకు", base: "నువ్వు", reading: "nuvvu" }
+  - id: "te-3610"
+    target: "అర్థం"
+    reading: "arthaṁ"
+    ipa: "art̪ʰam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "అర్థం కావడం", reading: "arthaṁ kāvaḍaṁ" }
+    examples:
+      - target: "ఈ పదానికి అర్థం ఏమిటి?"
+        reading: "ī padāniki arthaṁ ēmiṭi?"
+        ipa: "iː pad̪aːniki art̪ʰam eːmiʈi?"
+        bases:
+          - { word: "పదానికి", base: "పదం", reading: "padaṁ" }
+      - target: "నీ మాటలకు అర్థం లేదు."
+        reading: "nī māṭalaku arthaṁ lēdu."
+        ipa: "niː maːʈalaku art̪ʰam leːd̪u."
+        bases:
+          - { word: "నీ", base: "నువ్వు", reading: "nuvvu" }
+          - { word: "మాటలకు", base: "మాట", reading: "māṭa" }
+  - id: "te-3611"
+    target: "సలహా"
+    reading: "salahā"
+    ipa: "salahaː"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "సలహా ఇవ్వడం", reading: "salahā ivvaḍaṁ" }
+    examples:
+      - target: "నా సలహా వినండి."
+        reading: "nā salahā vinaṇḍi."
+        ipa: "naː salahaː ʋinaɳɖi."
+        bases:
+          - { word: "నా", base: "నేను", reading: "nēnu" }
+          - { word: "వినండి", base: "వినడం", reading: "vinaḍaṁ" }
+      - target: "డాక్టర్ సలహా మేరకు ఇంటికి వెళ్ళాడు."
+        reading: "ḍākṭar salahā mēraku iṇṭiki veḷḷāḍu."
+        ipa: "ɖaːkʈar salahaː meːraku iɳʈiki ʋeɭɭaːɖu."
+        bases:
+          - { word: "ఇంటికి", base: "ఇల్లు", reading: "illu" }
+          - { word: "వెళ్ళాడు", base: "వెళ్ళడం", reading: "veḷḷaḍaṁ" }
+    senses:
+      - { id: "advice", pos: "noun", source: "https://en.wiktionary.org/wiki/సలహా" }
+      - { id: "pointer", pos: "noun", source: "https://en.wiktionary.org/wiki/సలహా" }
+      - { id: "proposal", pos: "noun", source: "https://en.wiktionary.org/wiki/సలహా" }
+  - id: "te-3612"
+    target: "నిర్ణయం"
+    reading: "nirṇayaṁ"
+    ipa: "nirɳajam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "నిర్ణయం తీసుకోవడం", reading: "nirṇayaṁ tīsukōvaḍaṁ" }
+    examples:
+      - target: "ఈ నిర్ణయం నాకు నచ్చలేదు."
+        reading: "ī nirṇayaṁ nāku naccalēdu."
+        ipa: "iː nirɳajam naːku natʃːaleːd̪u."
+        bases:
+          - { word: "నాకు", base: "నేను", reading: "nēnu" }
+          - { word: "నచ్చలేదు", base: "నచ్చడం", reading: "naccaḍaṁ" }
+      - target: "మనం కలిసి ఒక నిర్ణయం తీసుకుందాం."
+        reading: "manaṁ kalisi oka nirṇayaṁ tīsukundāṁ."
+        ipa: "manam kalisi oka nirɳajam t̪iːsukund̪aːm."
+        bases:
+          - { word: "మనం", base: "మనం", reading: "manaṁ" }
+          - { word: "తీసుకుందాం", base: "తీసుకోవడం", reading: "tīsukōvaḍaṁ" }
+  - id: "te-3613"
+    target: "వాదన"
+    reading: "vādana"
+    ipa: "ʋaːd̪ana"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "వాదించడం", reading: "vādin̄caḍaṁ" }
+    examples:
+      - target: "వాళ్ళిద్దరి మధ్య వాదన జరిగింది."
+        reading: "vāḷḷiddari madhya vādana jarigindi."
+        ipa: "ʋaːɭɭid̪ːari mad̪ʰja ʋaːd̪ana dʒariɡind̪i."
+        bases:
+          - { word: "వాళ్ళిద్దరి", base: "వాళ్ళు", reading: "vāḷḷu" }
+          - { word: "జరిగింది", base: "జరగడం", reading: "jaragaḍaṁ" }
+      - target: "ఈ వాదనలో నేను గెలిచాను."
+        reading: "ī vādanalō nēnu gelicānu."
+        ipa: "iː ʋaːd̪analoː neːnu ɡelitʃaːnu."
+        bases:
+          - { word: "వాదనలో", base: "వాదన", reading: "vādana" }
+          - { word: "గెలిచాను", base: "గెలవడం", reading: "gelavaḍaṁ" }
+  - id: "te-3614"
+    target: "చర్చ"
+    reading: "carca"
+    ipa: "tʃartʃa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "చర్చించడం", reading: "carcin̄caḍaṁ" }
+    examples:
+      - target: "ఈ అంశంపై అందరూ చర్చ చేశారు."
+        reading: "ī aṁśaṁpai andarū carca cēśāru."
+        ipa: "iː amʃampai and̪aruː tʃartʃa tʃeːʃaːru."
+        bases:
+          - { word: "అంశంపై", base: "అంశం", reading: "aṁśaṁ" }
+          - { word: "అందరూ", base: "అందరు", reading: "andaru" }
+          - { word: "చేశారు", base: "చేయడం", reading: "cēyaḍaṁ" }
+      - target: "సమావేశంలో చర్చ బాగా జరిగింది."
+        reading: "samāvēśaṁlō carca bāgā jarigindi."
+        ipa: "samaːʋeːʃamloː tʃartʃa baːɡaː dʒariɡind̪i."
+        bases:
+          - { word: "సమావేశంలో", base: "సమావేశం", reading: "samāvēśaṁ" }
+          - { word: "జరిగింది", base: "జరగడం", reading: "jaragaḍaṁ" }
+  - id: "te-3615"
+    target: "ఆమోదం"
+    reading: "āmōdaṁ"
+    ipa: "aːmoːd̪am"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "ఆమోదం తెలపడం", reading: "āmōdaṁ telapaḍaṁ" }
+    examples:
+      - target: "నా ప్రతిపాదనకు అతని ఆమోదం లభించింది."
+        reading: "nā pratipādanaku atani āmōdaṁ labhin̄cindi."
+        ipa: "naː prat̪ipaːd̪anaku at̪ani aːmoːd̪am labʰin̄tʃind̪i."
+        bases:
+          - { word: "నా", base: "నేను", reading: "nēnu" }
+          - { word: "ప్రతిపాదనకు", base: "ప్రతిపాదన", reading: "pratipādana" }
+          - { word: "అతని", base: "అతను", reading: "atanu" }
+          - { word: "లభించింది", base: "లభించడం", reading: "labhin̄caḍaṁ" }
+      - target: "ఆ పథకానికి ప్రభుత్వ ఆమోదం ఉంది."
+        reading: "ā pathakāniki prabhutva āmōdaṁ undi."
+        ipa: "aː pat̪ʰakaːniki prabʰut̪ʋa aːmoːd̪am und̪i."
+        bases:
+          - { word: "పథకానికి", base: "పథకం", reading: "pathakaṁ" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+  - id: "te-3616"
+    target: "ప్రశంస"
+    reading: "praśaṁsa"
+    ipa: "praʃamsa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "ప్రశంసించడం", reading: "praśaṁsin̄caḍaṁ" }
+    examples:
+      - target: "అతని పని అందరి ప్రశంసలు పొందింది."
+        reading: "atani pani andari praśaṁsalu pondindi."
+        ipa: "at̪ani pani and̪ari praʃamsalu pond̪ind̪i."
+        bases:
+          - { word: "అతని", base: "అతను", reading: "atanu" }
+          - { word: "అందరి", base: "అందరు", reading: "andaru" }
+          - { word: "ప్రశంసలు", base: "ప్రశంస", reading: "praśaṁsa" }
+          - { word: "పొందింది", base: "పొందడం", reading: "pondaḍaṁ" }
+      - target: "ఆమె ప్రశంసలు విని సిగ్గుపడింది."
+        reading: "āme praśaṁsalu vini siggupaḍindi."
+        ipa: "aːme praʃamsalu ʋini siɡːupaɖind̪i."
+        bases:
+          - { word: "ప్రశంసలు", base: "ప్రశంస", reading: "praśaṁsa" }
+          - { word: "విని", base: "వినడం", reading: "vinaḍaṁ" }
+          - { word: "సిగ్గుపడింది", base: "సిగ్గుపడడం", reading: "siggupaḍaḍaṁ" }
+  - id: "te-3617"
+    target: "విమర్శ"
+    reading: "vimarśa"
+    ipa: "ʋimarʃa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "విమర్శించడం", reading: "vimarśin̄caḍaṁ" }
+    examples:
+      - target: "అతని విమర్శలను అంగీకరించాను."
+        reading: "atani vimarśalanu aṅgīkarin̄cānu."
+        ipa: "at̪ani ʋimarʃalanu aŋɡiːkarin̄tʃaːnu."
+        bases:
+          - { word: "అతని", base: "అతను", reading: "atanu" }
+          - { word: "విమర్శలను", base: "విమర్శ", reading: "vimarśa" }
+          - { word: "అంగీకరించాను", base: "అంగీకరించడం", reading: "aṅgīkarin̄caḍaṁ" }
+      - target: "ఈ విమర్శ నిర్మాణాత్మకంగా ఉంది."
+        reading: "ī vimarśa nirmāṇātmakaṅgā undi."
+        ipa: "iː ʋimarʃa nirmaːɳaːt̪makaŋɡaː und̪i."
+        bases:
+          - { word: "నిర్మాణాత్మకంగా", base: "నిర్మాణాత్మకం", reading: "nirmāṇātmakaṁ" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+  - id: "te-3618"
+    target: "నష్టం"
+    reading: "naṣṭaṁ"
+    ipa: "naʂʈam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "నష్టం కలిగించడం", reading: "naṣṭaṁ kaligin̄caḍaṁ" }
+    examples:
+      - target: "ఈ నిర్ణయం వల్ల మనకు నష్టం కలుగుతుంది."
+        reading: "ī nirṇayaṁ valla manaku naṣṭaṁ kalugutundi."
+        ipa: "iː nirɳajam ʋalːa manaku naʂʈam kaluɡut̪und̪i."
+        bases:
+          - { word: "మనకు", base: "మనం", reading: "manaṁ" }
+          - { word: "కలుగుతుంది", base: "కలగడం", reading: "kalagaḍaṁ" }
+      - target: "అందులో మనకు ఏ నష్టమూ లేదు."
+        reading: "anduloṁ manaku ē naṣṭamū lēdu."
+        ipa: "and̪ulom manaku eː naʂʈamuː leːd̪u."
+        bases:
+          - { word: "అందులో", base: "అందు", reading: "andu" }
+          - { word: "మనకు", base: "మనం", reading: "manaṁ" }
+          - { word: "నష్టమూ", base: "నష్టం", reading: "naṣṭaṁ" }
+  - id: "te-3619"
+    target: "లాభం"
+    reading: "lābhaṁ"
+    ipa: "laːbʰam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "లాభనష్టాలు", reading: "lābhanaṣṭālu" }
+    examples:
+      - target: "ఈ పని వల్ల మనకు లాభం ఏంటి?"
+        reading: "ī pani valla manaku lābhaṁ ēṇṭi?"
+        ipa: "iː pani ʋalːa manaku laːbʰam eːɳʈi?"
+        bases:
+          - { word: "మనకు", base: "మనం", reading: "manaṁ" }
+      - target: "ఈ పథకంతో రైతులకు చాలా లాభం కలిగింది."
+        reading: "ī pathakaṁtō raitulaku cālā lābhaṁ kaligindi."
+        ipa: "iː pat̪ʰakamt̪oː rait̪ulaku tʃaːlaː laːbʰam kaliɡind̪i."
+        bases:
+          - { word: "పథకంతో", base: "పథకం", reading: "pathakaṁ" }
+          - { word: "రైతులకు", base: "రైతు", reading: "raitu" }
+          - { word: "కలిగింది", base: "కలగడం", reading: "kalagaḍaṁ" }
+  - id: "te-3620"
+    target: "అభిప్రాయపడడం"
+    reading: "abhiprāyapaḍaḍaṁ"
+    ipa: "abʰipraːjapaɖaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "అభిప్రాయపడి", reading: "abhiprāyapaḍi" }
+    examples:
+      - target: "అతను ఈ సినిమా బాగుందని అభిప్రాయపడ్డాడు."
+        reading: "atanu ī sinimā bāgundani abhiprāyapaḍḍāḍu."
+        ipa: "at̪anu iː sinimaː baːɡund̪ani abʰipraːjapaɖɖaːɖu."
+        bases:
+          - { word: "బాగుందని", base: "బాగుంది", reading: "bāgundi" }
+          - { word: "అభిప్రాయపడ్డాడు", base: "అభిప్రాయపడడం", reading: "abhiprāyapaḍaḍaṁ" }
+      - target: "నిపుణులు ఈ పద్ధతి మంచిదని అభిప్రాయపడుతున్నారు."
+        reading: "nipuṇulu ī paddhati mañcidani abhiprāyapaḍutunnāru."
+        ipa: "nipuɳulu iː pad̪ːhat̪i maɲtʃid̪ani abʰipraːjapaɖut̪unːaːru."
+        bases:
+          - { word: "నిపుణులు", base: "నిపుణుడు", reading: "nipuṇuḍu" }
+          - { word: "మంచిదని", base: "మంచి", reading: "mañci" }
+          - { word: "అభిప్రాయపడుతున్నారు", base: "అభిప్రాయపడడం", reading: "abhiprāyapaḍaḍaṁ" }
+  - id: "te-3621"
+    target: "మెచ్చుకోవడం"
+    reading: "meccukōvaḍaṁ"
+    ipa: "metʃːukoːʋaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "మెచ్చుకుని", reading: "meccukuni" }
+    examples:
+      - target: "మీ పనిని అందరూ మెచ్చుకున్నారు."
+        reading: "mī panini andarū meccukunnāru."
+        ipa: "miː panini and̪aruː metʃːukunːaːru."
+        bases:
+          - { word: "మీ", base: "మీరు", reading: "mīru" }
+          - { word: "పనిని", base: "పని", reading: "pani" }
+          - { word: "అందరూ", base: "అందరు", reading: "andaru" }
+          - { word: "మెచ్చుకున్నారు", base: "మెచ్చుకోవడం", reading: "meccukōvaḍaṁ" }
+      - target: "ఆమె నా చిత్రాన్ని బాగుందని మెచ్చుకుంది."
+        reading: "āme nā citrānni bāgundani meccukundi."
+        ipa: "aːme naː tʃit̪raːnːi baːɡund̪ani metʃːukund̪i."
+        bases:
+          - { word: "నా", base: "నేను", reading: "nēnu" }
+          - { word: "చిత్రాన్ని", base: "చిత్రం", reading: "citraṁ" }
+          - { word: "బాగుందని", base: "బాగుంది", reading: "bāgundi" }
+          - { word: "మెచ్చుకుంది", base: "మెచ్చుకోవడం", reading: "meccukōvaḍaṁ" }
+  - id: "te-3622"
+    target: "విమర్శించడం"
+    reading: "vimarśin̄caḍaṁ"
+    ipa: "ʋimarʃin̄tʃaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "విమర్శించి", reading: "vimarśin̄ci" }
+    examples:
+      - target: "అతను నా పనిని కఠినంగా విమర్శించాడు."
+        reading: "atanu nā panini kaṭhinaṅgā vimarśin̄cāḍu."
+        ipa: "at̪anu naː panini kaʈʰinaŋɡaː ʋimarʃin̄tʃaːɖu."
+        bases:
+          - { word: "నా", base: "నేను", reading: "nēnu" }
+          - { word: "పనిని", base: "పని", reading: "pani" }
+          - { word: "కఠినంగా", base: "కఠినం", reading: "kaṭhinaṁ" }
+          - { word: "విమర్శించాడు", base: "విమర్శించడం", reading: "vimarśin̄caḍaṁ" }
+      - target: "విమర్శించే ముందు అందరూ ఆలోచించాలి."
+        reading: "vimarśin̄cē mundu andarū ālōcin̄cāli."
+        ipa: "ʋimarʃin̄tʃeː mund̪u and̪aruː aːloːtʃin̄tʃaːli."
+        bases:
+          - { word: "విమర్శించే", base: "విమర్శించడం", reading: "vimarśin̄caḍaṁ" }
+          - { word: "అందరూ", base: "అందరు", reading: "andaru" }
+          - { word: "ఆలోచించాలి", base: "ఆలోచించడం", reading: "ālōcin̄caḍaṁ" }
+  - id: "te-3623"
+    target: "ఊహించడం"
+    reading: "ūhin̄caḍaṁ"
+    ipa: "uːhin̄tʃaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "ఊహించలేని", reading: "ūhin̄calēni" }
+    examples:
+      - target: "ఫలితం ఎలా ఉంటుందో ఊహించడం కష్టం."
+        reading: "phalitaṁ elā uṇṭundō ūhin̄caḍaṁ kaṣṭaṁ."
+        ipa: "pʰalit̪am elaː uɳʈund̪oː uːhin̄tʃaɖam kaʂʈam."
+        bases:
+          - { word: "ఉంటుందో", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - target: "నేను ఊహించినట్లే జరిగింది."
+        reading: "nēnu ūhin̄cinaṭlē jarigindi."
+        ipa: "neːnu uːhin̄tʃinaʈleː dʒariɡind̪i."
+        bases:
+          - { word: "ఊహించినట్లే", base: "ఊహించడం", reading: "ūhin̄caḍaṁ" }
+          - { word: "జరిగింది", base: "జరగడం", reading: "jaragaḍaṁ" }
+  - id: "te-3624"
+    target: "విభేదించడం"
+    reading: "vibhēdin̄caḍaṁ"
+    ipa: "ʋibʰeːd̪in̄tʃaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "విభేదిస్తున్నాను", reading: "vibhēdistunnānu" }
+    examples:
+      - target: "నేను ఈ అభిప్రాయంతో విభేదిస్తాను."
+        reading: "nēnu ī abhiprāyaṁtō vibhēdistānu."
+        ipa: "neːnu iː abʰipraːjamt̪oː ʋibʰeːd̪ist̪aːnu."
+        bases:
+          - { word: "అభిప్రాయంతో", base: "అభిప్రాయం", reading: "abhiprāyaṁ" }
+          - { word: "విభేదిస్తాను", base: "విభేదించడం", reading: "vibhēdin̄caḍaṁ" }
+      - target: "వాళ్ళు మా మాటతో విభేదించారు."
+        reading: "vāḷḷu mā māṭatō vibhēdin̄cāru."
+        ipa: "ʋaːɭɭu maː maːʈat̪oː ʋibʰeːd̪in̄tʃaːru."
+        bases:
+          - { word: "మా", base: "మేము", reading: "mēmu" }
+          - { word: "మాటతో", base: "మాట", reading: "māṭa" }
+          - { word: "విభేదించారు", base: "విభేదించడం", reading: "vibhēdin̄caḍaṁ" }
+  - id: "te-3625"
+    target: "అభిప్రాయభేదం"
+    reading: "abhiprāyabhēdaṁ"
+    ipa: "abʰipraːjabʰeːd̪am"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "అభిప్రాయభేదాలు", reading: "abhiprāyabhēdālu" }
+    examples:
+      - target: "మా ఇద్దరి మధ్య అభిప్రాయభేదం ఉంది."
+        reading: "mā iddari madhya abhiprāyabhēdaṁ undi."
+        ipa: "maː id̪ːari mad̪ʰja abʰipraːjabʰeːd̪am und̪i."
+        bases:
+          - { word: "మా", base: "మేము", reading: "mēmu" }
+          - { word: "ఇద్దరి", base: "ఇద్దరు", reading: "iddaru" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - target: "ఈ విషయంలో అభిప్రాయభేదాలు తొలగిపోయాయి."
+        reading: "ī viṣayaṁlō abhiprāyabhēdālu tolagipōyāyi."
+        ipa: "iː ʋiʂajamloː abʰipraːjabʰeːd̪aːlu t̪olaɡipoːjaːji."
+        bases:
+          - { word: "విషయంలో", base: "విషయం", reading: "viṣayaṁ" }
+          - { word: "అభిప్రాయభేదాలు", base: "అభిప్రాయభేదం", reading: "abhiprāyabhēdaṁ" }
+          - { word: "తొలగిపోయాయి", base: "తొలగిపోవడం", reading: "tolagipōvaḍaṁ" }
+  - id: "te-3626"
+    target: "సరైన"
+    reading: "sarainā"
+    ipa: "sarainaː"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "సరైనది", reading: "sarainadi" }
+    examples:
+      - target: "నీ సమాధానం సరైనదేనా?"
+        reading: "nī samādhānaṁ sarainadēnā?"
+        ipa: "niː samaːd̪ʰaːnam sarainad̪eːnaː?"
+        bases:
+          - { word: "నీ", base: "నువ్వు", reading: "nuvvu" }
+          - { word: "సరైనదేనా", base: "సరైన", reading: "sarainā" }
+      - target: "ఇది సరైన నిర్ణయమే అని నేను అనుకుంటున్నాను."
+        reading: "idi sarain nirṇayamē ani nēnu anukuṇṭunnānu."
+        ipa: "id̪i sarain nirɳajameː ani neːnu anukuɳʈunːaːnu."
+        bases:
+          - { word: "అనుకుంటున్నాను", base: "అనుకోవడం", reading: "anukōvaḍaṁ" }
+  - id: "te-3627"
+    target: "ముఖ్యం"
+    reading: "mukhyaṁ"
+    ipa: "mukʰjam"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "ముఖ్యంగా", reading: "mukhyaṅgā" }
+    examples:
+      - target: "ఇది చాలా ముఖ్యమైన విషయం."
+        reading: "idi cālā mukhyamaina viṣayaṁ."
+        ipa: "id̪i tʃaːlaː mukʰjamaina ʋiʂajam."
+        bases:
+          - { word: "ముఖ్యమైన", base: "ముఖ్యం", reading: "mukhyaṁ" }
+      - target: "మన ఆరోగ్యం ముఖ్యం."
+        reading: "mana ārōgyaṁ mukhyaṁ."
+        ipa: "mana aːroːɡjam mukʰjam."
+        bases:
+          - { word: "మన", base: "మనం", reading: "manaṁ" }
+  - id: "te-3628"
+    target: "ఉత్తమం"
+    reading: "uttamaṁ"
+    ipa: "ut̪ːamam"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "ఉత్తమ పద్ధతి", reading: "uttama paddhati" }
+    examples:
+      - target: "ఇది ఉత్తమమైన పద్ధతి."
+        reading: "idi uttamamaina paddhati."
+        ipa: "id̪i ut̪ːamamaina pad̪ːhat̪i."
+        bases:
+          - { word: "ఉత్తమమైన", base: "ఉత్తమం", reading: "uttamaṁ" }
+      - target: "మీ సలహా ఉత్తమంగా ఉంది."
+        reading: "mī salahā uttamaṅgā undi."
+        ipa: "miː salahaː ut̪ːamaŋɡaː und̪i."
+        bases:
+          - { word: "మీ", base: "మీరు", reading: "mīru" }
+          - { word: "ఉత్తమంగా", base: "ఉత్తమం", reading: "uttamaṁ" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+  - id: "te-3629"
+    target: "సమంజసం"
+    reading: "samañjasaṁ"
+    ipa: "samaɲdʒasam"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "సమంజసంగా", reading: "samañjasaṅgā" }
+    examples:
+      - target: "నీ వాదన సమంజసంగా ఉంది."
+        reading: "nī vādana samañjasaṅgā undi."
+        ipa: "niː ʋaːd̪ana samaɲdʒasaŋɡaː und̪i."
+        bases:
+          - { word: "నీ", base: "నువ్వు", reading: "nuvvu" }
+          - { word: "సమంజసంగా", base: "సమంజసం", reading: "samañjasaṁ" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - target: "ఆ ధరలు సమంజసమే అని నేను అంగీకరిస్తాను."
+        reading: "ā dharalu samañjasamē ani nēnu aṅgīkaristānu."
+        ipa: "aː d̪ʰaralu samaɲdʒasameː ani neːnu aŋɡiːkarist̪aːnu."
+        bases:
+          - { word: "ధరలు", base: "ధర", reading: "dhara" }
+          - { word: "సమంజసమే", base: "సమంజసం", reading: "samañjasaṁ" }
+          - { word: "అంగీకరిస్తాను", base: "అంగీకరించడం", reading: "aṅgīkarin̄caḍaṁ" }
+  - id: "te-3630"
+    target: "సాధ్యం"
+    reading: "sādhyaṁ"
+    ipa: "saːd̪ʰjam"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "సాధ్యమే", reading: "sādhyamē" }
+    examples:
+      - target: "ఇది ఈ రోజే సాధ్యమా?"
+        reading: "idi ī rōjē sādhyamā?"
+        ipa: "id̪i iː roːdʒeː saːd̪ʰjamaː?"
+        bases:
+          - { word: "సాధ్యమా", base: "సాధ్యం", reading: "sādhyaṁ" }
+      - target: "ఎవరికైనా ఇది సాధ్యమే."
+        reading: "evarikainā idi sādhyamē."
+        ipa: "eʋarikainaː id̪i saːd̪ʰjameː."
+        bases:
+          - { word: "ఎవరికైనా", base: "ఎవరు", reading: "evaru" }
+          - { word: "సాధ్యమే", base: "సాధ్యం", reading: "sādhyaṁ" }
+  - id: "te-3631"
+    target: "అసాధ్యం"
+    reading: "asādhyaṁ"
+    ipa: "asaːd̪ʰjam"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - id: "n1"
+        kind: "usage"
+        words:
+          - { word: "అసాధ్యమైన", reading: "asādhyamaina" }
+    examples:
+      - target: "అతనికి ఇది అసాధ్యం అనిపించింది."
+        reading: "atanuki idi asādhyaṁ anipin̄cindi."
+        ipa: "at̪anuki id̪i asaːd̪ʰjam anipin̄tʃind̪i."
+        bases:
+          - { word: "అతనికి", base: "అతను", reading: "atanu" }
+          - { word: "అనిపించింది", base: "అనిపించడం", reading: "anipin̄caḍaṁ" }
+      - target: "అన్నీ అసాధ్యం అని ఎందుకు అనుకుంటావు?"
+        reading: "annī asādhyaṁ ani enduku anukuṇṭāvu?"
+        ipa: "anːiː asaːd̪ʰjam ani end̪uku anukuɳʈaːʋu?"
+        bases:
+          - { word: "అన్నీ", base: "అన్ని", reading: "anni" }
+          - { word: "అనుకుంటావు", base: "అనుకోవడం", reading: "anukōvaḍaṁ" }
