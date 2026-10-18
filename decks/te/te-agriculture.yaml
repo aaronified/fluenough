@@ -1,0 +1,723 @@
+schema: 1
+id: "te-agriculture"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "agriculture"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-4600"
+    target: "వ్యవసాయం"
+    reading: "vyavasāyam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "పొలం", reading: "polam" }] }
+    examples:
+      - target: "వ్యవసాయం కష్టమైన పని."
+        reading: "vyavasāyam kaṣṭamaina pani."
+        bases:
+          - { word: "కష్టమైన", base: "కష్టం", reading: "kaṣṭam" }
+      - target: "మా ఊళ్ళో వ్యవసాయం ముఖ్యమైనది."
+        reading: "mā ūḷḷō vyavasāyam mukhyamainadi."
+        bases:
+          - { word: "మా", base: "మేము", reading: "mēmu" }
+          - { word: "ఊళ్ళో", base: "ఊరు", reading: "ūru" }
+          - { word: "ముఖ్యమైనది", base: "ముఖ్యం", reading: "mukhyam" }
+  - id: "te-4601"
+    target: "సేద్యం"
+    reading: "sēdyam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "సేద్యం చాలా ఓపిక కావాలి."
+        reading: "sēdyam cālā ōpika kāvāli."
+        bases:
+          - { word: "కావాలి", base: "కావడం", reading: "kāvaḍaṁ" }
+      - target: "ఈ భూమి సేద్యానికి మంచిది."
+        reading: "ī bhūmi sēdyāniki manciḍi."
+        bases:
+          - { word: "సేద్యానికి", base: "సేద్యం", reading: "sēdyam" }
+          - { word: "మంచిది", base: "మంచి", reading: "mañci" }
+  - id: "te-4602"
+    target: "నాగలి"
+    reading: "nāgali"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఎద్దులు", reading: "eddulu" }] }
+    examples:
+      - target: "రైతు నాగలితో పొలం దున్నాడు."
+        reading: "raitu nāgalitō polam dunnāḍu."
+        bases:
+          - { word: "నాగలితో", base: "నాగలి", reading: "nāgali" }
+          - { word: "దున్నాడు", base: "దున్నడం", reading: "dunnaḍaṁ" }
+      - target: "ఈ నాగలి చాలా పాతది."
+        reading: "ī nāgali cālā pātadi."
+        bases:
+          - { word: "పాతది", base: "పాత", reading: "pāta" }
+  - id: "te-4603"
+    target: "ట్రాక్టర్"
+    reading: "ṭrāktar"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ట్రాక్టర్లు", reading: "ṭrāktarlu" }] }
+    examples:
+      - target: "మా పొలంలో ట్రాక్టర్ ఉంది."
+        reading: "mā polamlō ṭrāktar undi."
+        bases:
+          - { word: "మా", base: "మేము", reading: "mēmu" }
+          - { word: "పొలంలో", base: "పొలం", reading: "polam" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - target: "ట్రాక్టర్‌తో దున్నితే పని త్వరగా అవుతుంది."
+        reading: "ṭrāktartō dunnitē pani tvaragā avutundi."
+        bases:
+          - { word: "ట్రాక్టర్‌తో", base: "ట్రాక్టర్", reading: "ṭrāktar" }
+          - { word: "దున్నితే", base: "దున్నడం", reading: "dunnaḍaṁ" }
+          - { word: "అవుతుంది", base: "అవడం", reading: "avaḍaṁ" }
+  - id: "te-4604"
+    target: "చేను"
+    reading: "cēnu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "చేలు", reading: "cēlu" }] }
+    examples:
+      - target: "చేనులో వరి పండుతోంది."
+        reading: "cēnulō vari paṇḍutōndi."
+        bases:
+          - { word: "చేనులో", base: "చేను", reading: "cēnu" }
+          - { word: "పండుతోంది", base: "పండడం", reading: "paṇḍaḍaṁ" }
+      - target: "చేనుకి నీళ్ళు పెట్టాలి."
+        reading: "cēnuki nīḷḷu peṭṭāli."
+        bases:
+          - { word: "చేనుకి", base: "చేను", reading: "cēnu" }
+          - { word: "నీళ్ళు", base: "నీరు", reading: "nīru" }
+          - { word: "పెట్టాలి", base: "పెట్టడం", reading: "peṭṭaḍaṁ" }
+  - id: "te-4605"
+    target: "నారు"
+    reading: "nāru"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "నారు ఇప్పుడే నాటాలి."
+        reading: "nāru ippuḍē nāṭāli."
+        bases:
+          - { word: "నాటాలి", base: "నాటడం", reading: "nāṭaḍaṁ" }
+      - target: "నారు పచ్చగా ఉంది."
+        reading: "nāru paccagā undi."
+        bases:
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+  - id: "te-4606"
+    target: "మొలక"
+    reading: "molaka"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "మొలకలు", reading: "molakalu" }] }
+    examples:
+      - target: "విత్తనం నుంచి మొలక వచ్చింది."
+        reading: "vittanam nuñci molaka vaccindi."
+        bases:
+          - { word: "వచ్చింది", base: "రావడం", reading: "rāvaḍaṁ" }
+      - target: "రెండు రోజుల్లో మొలకలు కనిపిస్తాయి."
+        reading: "reṇḍu rōjullō molakalu kanipistāyi."
+        bases:
+          - { word: "రోజుల్లో", base: "రోజు", reading: "rōju" }
+          - { word: "మొలకలు", base: "మొలక", reading: "molaka" }
+          - { word: "కనిపిస్తాయి", base: "కనిపించడం", reading: "kanipiñcaḍaṁ" }
+  - id: "te-4607"
+    target: "కంపోస్ట్"
+    reading: "kampōsṭ"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "కంపోస్ట్ ఎరువుగా వాడతారు."
+        reading: "kampōsṭ eruvugā vāḍatāru."
+        bases:
+          - { word: "ఎరువుగా", base: "ఎరువు", reading: "eruvu" }
+          - { word: "వాడతారు", base: "వాడడం", reading: "vāḍaḍaṁ" }
+      - target: "ఇంట్లో చెత్తతో కంపోస్ట్ చేయవచ్చు."
+        reading: "iṇṭlō cettatō kampōsṭ cēyavaccu."
+        bases:
+          - { word: "ఇంట్లో", base: "ఇల్లు", reading: "illu" }
+          - { word: "చెత్తతో", base: "చెత్త", reading: "cetta" }
+          - { word: "చేయవచ్చు", base: "చేయడం", reading: "cēyaḍaṁ" }
+  - id: "te-4608"
+    target: "కలుపు"
+    reading: "kalupu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "కలుపు తీయడం", reading: "kalupu tīyaḍaṁ" }] }
+    examples:
+      - target: "పొలంలో కలుపు ఎక్కువ ఉంది."
+        reading: "polamlō kalupu ekkuva undi."
+        bases:
+          - { word: "పొలంలో", base: "పొలం", reading: "polam" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - target: "కలుపు తీయకపోతే పంట దెబ్బతింటుంది."
+        reading: "kalupu tīyakapōtē paṇṭa debbatiṇṭundi."
+        bases:
+          - { word: "తీయకపోతే", base: "తీయడం", reading: "tīyaḍaṁ" }
+          - { word: "దెబ్బతింటుంది", base: "దెబ్బతినడం", reading: "debbatinaḍaṁ" }
+  - id: "te-4609"
+    target: "తెగులు"
+    reading: "teguḷu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "తెగుళ్ళు", reading: "teguḷḷu" }] }
+    examples:
+      - target: "ఈ ఏడాది పత్తికి తెగులు వచ్చింది."
+        reading: "ī ēḍādi pattiki teguḷu vaccindi."
+        bases:
+          - { word: "పత్తికి", base: "పత్తి", reading: "patti" }
+          - { word: "వచ్చింది", base: "రావడం", reading: "rāvaḍaṁ" }
+      - target: "ఆకులపై తెగులు కనిపిస్తే మందు వేయాలి."
+        reading: "ākulapai teguḷu kanipistē mandu vēyāli."
+        bases:
+          - { word: "ఆకులపై", base: "ఆకు", reading: "āku" }
+          - { word: "కనిపిస్తే", base: "కనిపించడం", reading: "kanipiñcaḍaṁ" }
+          - { word: "వేయాలి", base: "వేయడం", reading: "vēyaḍaṁ" }
+  - id: "te-4610"
+    target: "పురుగు"
+    reading: "purugu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "పురుగులు", reading: "purugulu" }] }
+    examples:
+      - target: "ఆకులో పురుగు ఉంది."
+        reading: "ākulō purugu undi."
+        bases:
+          - { word: "ఆకులో", base: "ఆకు", reading: "āku" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - target: "పురుగులు పంటను తినేస్తున్నాయి."
+        reading: "purugulu paṇṭanu tinēstunnāyi."
+        bases:
+          - { word: "పురుగులు", base: "పురుగు", reading: "purugu" }
+          - { word: "పంటను", base: "పంట", reading: "paṇṭa" }
+          - { word: "తినేస్తున్నాయి", base: "తినేయడం", reading: "tinēyaḍaṁ" }
+  - id: "te-4611"
+    target: "పురుగుమందు"
+    reading: "purugumandu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "మందు", reading: "mandu" }] }
+    examples:
+      - target: "పురుగుమందు జాగ్రత్తగా వాడాలి."
+        reading: "purugumandu jāgrattagā vāḍāli."
+        bases:
+          - { word: "వాడాలి", base: "వాడడం", reading: "vāḍaḍaṁ" }
+      - target: "పురుగుమందు పిల్లలకు దూరంగా పెట్టండి."
+        reading: "purugumandu pillalaku dūrangā peṭṭaṇḍi."
+        bases:
+          - { word: "పిల్లలకు", base: "పిల్ల", reading: "pilla" }
+          - { word: "పెట్టండి", base: "పెట్టడం", reading: "peṭṭaḍaṁ" }
+  - id: "te-4612"
+    target: "మిడత"
+    reading: "miḍata"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "మిడతలు", reading: "miḍatalu" }] }
+    examples:
+      - target: "మిడతలు పొలం అంతా తినేశాయి."
+        reading: "miḍatalu polam antā tinēśāyi."
+        bases:
+          - { word: "మిడతలు", base: "మిడత", reading: "miḍata" }
+          - { word: "తినేశాయి", base: "తినేయడం", reading: "tinēyaḍaṁ" }
+      - target: "మిడతల దండు ఊరి మీదికి వచ్చింది."
+        reading: "miḍatala daṇḍu ūri mīdiki vaccindi."
+        bases:
+          - { word: "మిడతల", base: "మిడత", reading: "miḍata" }
+          - { word: "ఊరి", base: "ఊరు", reading: "ūru" }
+          - { word: "వచ్చింది", base: "రావడం", reading: "rāvaḍaṁ" }
+  - id: "te-4613"
+    target: "గింజ"
+    reading: "giñja"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "గింజలు", reading: "giñjalu" }] }
+    examples:
+      - target: "ఒక్క గింజ కూడా వృథా చేయకు."
+        reading: "okka giñja kūḍā vṛthā cēyaku."
+        bases:
+          - { word: "చేయకు", base: "చేయడం", reading: "cēyaḍaṁ" }
+      - target: "ఈ పొలంలో గింజలు బాగా పండాయి."
+        reading: "ī polamlō giñjalu bāgā paṇḍāyi."
+        bases:
+          - { word: "పొలంలో", base: "పొలం", reading: "polam" }
+          - { word: "గింజలు", base: "గింజ", reading: "giñja" }
+          - { word: "పండాయి", base: "పండడం", reading: "paṇḍaḍaṁ" }
+  - id: "te-4614"
+    target: "ధాన్యం"
+    reading: "dhānyam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ధాన్యాలు", reading: "dhānyālu" }] }
+    examples:
+      - target: "ధాన్యాన్ని గోదాములో దాచారు."
+        reading: "dhānyānni gōdāmulō dācāru."
+        bases:
+          - { word: "ధాన్యాన్ని", base: "ధాన్యం", reading: "dhānyam" }
+          - { word: "గోదాములో", base: "గోదాము", reading: "gōdāmu" }
+          - { word: "దాచారు", base: "దాచడం", reading: "dācaḍaṁ" }
+      - target: "మార్కెట్లో ధాన్యం ధర పెరిగింది."
+        reading: "mārkeṭlō dhānyam dhara perigindi."
+        bases:
+          - { word: "మార్కెట్లో", base: "మార్కెట్", reading: "mārkeṭ" }
+          - { word: "పెరిగింది", base: "పెరగడం", reading: "peragaḍaṁ" }
+  - id: "te-4615"
+    target: "గోదాము"
+    reading: "gōdāmu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "గోదాములు", reading: "gōdāmulu" }] }
+    examples:
+      - target: "గోదాములో ధాన్యం నిల్వ ఉంది."
+        reading: "gōdāmulō dhānyam nilva undi."
+        bases:
+          - { word: "గోదాములో", base: "గోదాము", reading: "gōdāmu" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - target: "రైతులు పంటను గోదాముకు తీసుకెళ్తారు."
+        reading: "raitulu paṇṭanu gōdāmuku tīsukeḷtāru."
+        bases:
+          - { word: "రైతులు", base: "రైతు", reading: "raitu" }
+          - { word: "పంటను", base: "పంట", reading: "paṇṭa" }
+          - { word: "గోదాముకు", base: "గోదాము", reading: "gōdāmu" }
+          - { word: "తీసుకెళ్తారు", base: "తీసుకెళ్ళడం", reading: "tīsukeḷḷaḍaṁ" }
+  - id: "te-4616"
+    target: "బస్తా"
+    reading: "bastā"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "బస్తాలు", reading: "bastālu" }] }
+    examples:
+      - target: "ఒక బస్తా బియ్యం ఎంత?"
+        reading: "oka bastā biyyam enta?"
+      - target: "వాళ్ళు పది బస్తాలు తీసుకెళ్ళారు."
+        reading: "vāḷḷu padi bastālu tīsukeḷḷāru."
+        bases:
+          - { word: "బస్తాలు", base: "బస్తా", reading: "bastā" }
+          - { word: "తీసుకెళ్ళారు", base: "తీసుకెళ్ళడం", reading: "tīsukeḷḷaḍaṁ" }
+  - id: "te-4617"
+    target: "దిగుబడి"
+    reading: "digubaḍi"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "ఈ సారి ఎకరాకు మంచి దిగుబడి వచ్చింది."
+        reading: "ī sāri ekarāku mañci digubaḍi vaccindi."
+        bases:
+          - { word: "ఎకరాకు", base: "ఎకరం", reading: "ekaraṁ" }
+          - { word: "వచ్చింది", base: "రావడం", reading: "rāvaḍaṁ" }
+      - target: "వర్షం లేకపోవడంతో దిగుబడి తగ్గింది."
+        reading: "varṣam lēkapōvaḍantō digubaḍi taggindi."
+        bases:
+          - { word: "లేకపోవడంతో", base: "లేకపోవడం", reading: "lēkapōvaḍaṁ" }
+          - { word: "తగ్గింది", base: "తగ్గడం", reading: "taggaḍaṁ" }
+  - id: "te-4618"
+    target: "గోధుమ"
+    reading: "gōdhuma"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "గోధుమపిండి", reading: "gōdhumapiṇḍi" }] }
+    examples:
+      - target: "చలికాలంలో గోధుమ పంట వేస్తారు."
+        reading: "calikālanlō gōdhuma paṇṭa vēstāru."
+        bases:
+          - { word: "చలికాలంలో", base: "చలికాలం", reading: "calikālam" }
+          - { word: "వేస్తారు", base: "వేయడం", reading: "vēyaḍaṁ" }
+      - target: "గోధుమపిండితో చపాతీలు చేస్తారు."
+        reading: "gōdhumapiṇḍitō capātīlu cēstāru."
+        bases:
+          - { word: "గోధుమపిండితో", base: "గోధుమపిండి", reading: "gōdhumapiṇḍi" }
+          - { word: "చేస్తారు", base: "చేయడం", reading: "cēyaḍaṁ" }
+  - id: "te-4619"
+    target: "వరి"
+    reading: "vari"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "వరి పొలం", reading: "vari polam" }] }
+    examples:
+      - target: "ఈ ఊళ్ళో వరి ఎక్కువగా పండుతుంది."
+        reading: "ī ūḷḷō vari ekkuvagā paṇḍutundi."
+        bases:
+          - { word: "ఊళ్ళో", base: "ఊరు", reading: "ūru" }
+          - { word: "పండుతుంది", base: "పండడం", reading: "paṇḍaḍaṁ" }
+      - target: "వరి నాట్లు జూన్‌లో మొదలవుతాయి."
+        reading: "vari nāṭlu jūn‌lō modalavutāyi."
+        bases:
+          - { word: "నాట్లు", base: "నాటడం", reading: "nāṭaḍaṁ" }
+          - { word: "జూన్‌లో", base: "జూన్", reading: "jūn" }
+          - { word: "మొదలవుతాయి", base: "మొదలవడం", reading: "modalavaḍaṁ" }
+  - id: "te-4620"
+    target: "పత్తి"
+    reading: "patti"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "పత్తి చేను", reading: "patti cēnu" }] }
+    examples:
+      - target: "పత్తి పంటకు ఈ ఏడాది మంచి ధర ఉంది."
+        reading: "patti paṇṭaku ī ēḍādi mañci dhara undi."
+        bases:
+          - { word: "పంటకు", base: "పంట", reading: "paṇṭa" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - target: "అమ్మ పత్తితో దిండు చేసింది."
+        reading: "amma pattitō diṇḍu cēsindi."
+        bases:
+          - { word: "పత్తితో", base: "పత్తి", reading: "patti" }
+          - { word: "చేసింది", base: "చేయడం", reading: "cēyaḍaṁ" }
+  - id: "te-4621"
+    target: "చెరకు"
+    reading: "ceraku"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "చెరకు రసం", reading: "ceraku rasaṁ" }] }
+    examples:
+      - target: "చెరకు రసం తాగితే బాగుంటుంది."
+        reading: "ceraku rasaṁ tāgitē bāguṇṭundi."
+        bases:
+          - { word: "తాగితే", base: "తాగడం", reading: "tāgaḍaṁ" }
+          - { word: "బాగుంటుంది", base: "బాగుండడం", reading: "bāguṇḍaḍaṁ" }
+      - target: "ఈ ఊళ్ళో చెరకు చేలు ఎక్కువ."
+        reading: "ī ūḷḷō ceraku cēlu ekkuva."
+        bases:
+          - { word: "ఊళ్ళో", base: "ఊరు", reading: "ūru" }
+          - { word: "చేలు", base: "చేను", reading: "cēnu" }
+  - id: "te-4622"
+    target: "జొన్న"
+    reading: "jonna"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "జొన్నలు", reading: "jonnalu" }] }
+    examples:
+      - target: "జొన్న రొట్టె చాలా మందికి ఇష్టం."
+        reading: "jonna roṭṭe cālā mandiki iṣṭaṁ."
+        bases:
+          - { word: "మందికి", base: "మంది", reading: "mandi" }
+      - target: "వర్షం తక్కువ ఉన్న చోట జొన్న పండుతుంది."
+        reading: "varṣam takkuva unna cōṭa jonna paṇḍutundi."
+        bases:
+          - { word: "ఉన్న", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+          - { word: "చోట", base: "చోటు", reading: "cōṭu" }
+          - { word: "పండుతుంది", base: "పండడం", reading: "paṇḍaḍaṁ" }
+  - id: "te-4623"
+    target: "మొక్కజొన్న"
+    reading: "mokkajonna"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "మొక్కజొన్న కంకి", reading: "mokkajonna kaṅki" }] }
+    examples:
+      - target: "పిల్లలు మొక్కజొన్న కంకులు కాల్చుకుని తిన్నారు."
+        reading: "pillalu mokkajonna kaṅkulu kālcukuni tinnāru."
+        bases:
+          - { word: "కంకులు", base: "కంకి", reading: "kaṅki" }
+          - { word: "కాల్చుకుని", base: "కాల్చుకోవడం", reading: "kālcukōvaḍaṁ" }
+          - { word: "తిన్నారు", base: "తినడం", reading: "tinaḍaṁ" }
+      - target: "ఈ సారి మొక్కజొన్న పంట బాగా వచ్చింది."
+        reading: "ī sāri mokkajonna paṇṭa bāgā vaccindi."
+        bases:
+          - { word: "వచ్చింది", base: "రావడం", reading: "rāvaḍaṁ" }
+  - id: "te-4624"
+    target: "శనగ"
+    reading: "śanaga"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "శనగలు", reading: "śanagalu" }] }
+    examples:
+      - target: "శనగలు నానబెట్టి ఉడికిస్తారు."
+        reading: "śanagalu nānabeṭṭi uḍikistāru."
+        bases:
+          - { word: "శనగలు", base: "శనగ", reading: "śanaga" }
+          - { word: "నానబెట్టి", base: "నానబెట్టడం", reading: "nānabeṭṭaḍaṁ" }
+          - { word: "ఉడికిస్తారు", base: "ఉడికించడం", reading: "uḍikiñcaḍaṁ" }
+      - target: "ఈ భూమిలో శనగ బాగా పండుతుంది."
+        reading: "ī bhūmilō śanaga bāgā paṇḍutundi."
+        bases:
+          - { word: "భూమిలో", base: "భూమి", reading: "bhūmi" }
+          - { word: "పండుతుంది", base: "పండడం", reading: "paṇḍaḍaṁ" }
+  - id: "te-4625"
+    target: "కంది"
+    reading: "kandi"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "కందిపప్పు", reading: "kandipappu" }] }
+    examples:
+      - target: "కంది పంట పొలంలో ఉంది."
+        reading: "kandi paṇṭa polamlō undi."
+        bases:
+          - { word: "పొలంలో", base: "పొలం", reading: "polam" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - target: "కందిపప్పుతో పప్పు చేసాను."
+        reading: "kandipapputō pappu cēsānu."
+        bases:
+          - { word: "కందిపప్పుతో", base: "కందిపప్పు", reading: "kandipappu" }
+          - { word: "చేసాను", base: "చేయడం", reading: "cēyaḍaṁ" }
+  - id: "te-4626"
+    target: "మామిడి"
+    reading: "māmiḍi"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "మామిడి పండు", reading: "māmiḍi paṇḍu" }] }
+    examples:
+      - target: "మా ఇంటి వెనక మామిడి చెట్టు ఉంది."
+        reading: "mā iṇṭi venaka māmiḍi ceṭṭu undi."
+        bases:
+          - { word: "మా", base: "మేము", reading: "mēmu" }
+          - { word: "ఇంటి", base: "ఇల్లు", reading: "illu" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - target: "వేసవిలో మామిడి పండ్లు తింటాం."
+        reading: "vēsavilō māmiḍi paṇḍlu tiṇṭāṁ."
+        bases:
+          - { word: "వేసవిలో", base: "వేసవి", reading: "vēsavi" }
+          - { word: "పండ్లు", base: "పండు", reading: "paṇḍu" }
+          - { word: "తింటాం", base: "తినడం", reading: "tinaḍaṁ" }
+  - id: "te-4627"
+    target: "అరటి"
+    reading: "araṭi"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "అరటి పండు", reading: "araṭi paṇḍu" }] }
+    examples:
+      - target: "పెరట్లో అరటి చెట్లు పెరిగాయి."
+        reading: "peraṭlō araṭi ceṭlu perigāyi."
+        bases:
+          - { word: "పెరట్లో", base: "పెరడు", reading: "peraḍu" }
+          - { word: "చెట్లు", base: "చెట్టు", reading: "ceṭṭu" }
+          - { word: "పెరిగాయి", base: "పెరగడం", reading: "peragaḍaṁ" }
+      - target: "అరటి గెల ధర ఈ రోజు పెరిగింది."
+        reading: "araṭi gela dhara ī rōju perigindi."
+        bases:
+          - { word: "పెరిగింది", base: "పెరగడం", reading: "peragaḍaṁ" }
+  - id: "te-4628"
+    target: "కొబ్బరి"
+    reading: "kobbari"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "కొబ్బరికాయ", reading: "kobbarikāya" }] }
+    examples:
+      - target: "కొబ్బరి చెట్టు ఎత్తుగా పెరిగింది."
+        reading: "kobbari ceṭṭu ettugā perigindi."
+        bases:
+          - { word: "ఎత్తుగా", base: "ఎత్తు", reading: "ettu" }
+          - { word: "పెరిగింది", base: "పెరగడం", reading: "peragaḍaṁ" }
+      - target: "కొబ్బరికాయ నీళ్ళు ఆరోగ్యానికి మంచివి."
+        reading: "kobbarikāya nīḷḷu ārōgyāniki mañcivi."
+        bases:
+          - { word: "ఆరోగ్యానికి", base: "ఆరోగ్యం", reading: "ārōgyaṁ" }
+          - { word: "మంచివి", base: "మంచి", reading: "mañci" }
+  - id: "te-4629"
+    target: "పశువు"
+    reading: "paśuvu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "పశువులు", reading: "paśuvulu" }] }
+    examples:
+      - target: "రైతు పొలంలో పశువులను మేపుతున్నాడు."
+        reading: "raitu polamlō paśuvulanu mēputunnāḍu."
+        bases:
+          - { word: "పొలంలో", base: "పొలం", reading: "polam" }
+          - { word: "పశువులను", base: "పశువు", reading: "paśuvu" }
+          - { word: "మేపుతున్నాడు", base: "మేపడం", reading: "mēpaḍaṁ" }
+      - target: "పశువులకు నీళ్ళు తాగించాలి."
+        reading: "paśuvulaku nīḷḷu tāgiñcāli."
+        bases:
+          - { word: "పశువులకు", base: "పశువు", reading: "paśuvu" }
+          - { word: "నీళ్ళు", base: "నీరు", reading: "nīru" }
+          - { word: "తాగించాలి", base: "తాగించడం", reading: "tāgiñcaḍaṁ" }
+  - id: "te-4630"
+    target: "సీజను"
+    reading: "sījanu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "సీజన్", reading: "sījan" }] }
+    examples:
+      - target: "ఈ సీజనులో వర్షం బాగా పడింది."
+        reading: "ī sījanulō varṣam bāgā paḍindi."
+        bases:
+          - { word: "సీజనులో", base: "సీజను", reading: "sījanu" }
+          - { word: "పడింది", base: "పడడం", reading: "paḍaḍaṁ" }
+      - target: "ప్రతి సీజనులో కొత్త పంట వేస్తారు."
+        reading: "prati sījanulō kotta paṇṭa vēstāru."
+        bases:
+          - { word: "సీజనులో", base: "సీజను", reading: "sījanu" }
+          - { word: "వేస్తారు", base: "వేయడం", reading: "vēyaḍaṁ" }
+  - id: "te-4631"
+    target: "నీటిపారుదల"
+    reading: "nīṭipārudala"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "నీటిపారుదల వల్ల పంట బాగా పండింది."
+        reading: "nīṭipārudala valla paṇṭa bāgā paṇḍindi."
+        bases:
+          - { word: "పండింది", base: "పండడం", reading: "paṇḍaḍaṁ" }
+      - target: "బావి నీరు నీటిపారుదలకు ఉపయోగపడుతుంది."
+        reading: "bāvi nīru nīṭipārudalaku upayōgapaḍutundi."
+        bases:
+          - { word: "నీటిపారుదలకు", base: "నీటిపారుదల", reading: "nīṭipārudala" }
+          - { word: "ఉపయోగపడుతుంది", base: "ఉపయోగపడడం", reading: "upayōgapaḍaḍaṁ" }
+  - id: "te-4632"
+    target: "బోరు"
+    reading: "bōru"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "బోరు బావి", reading: "bōru bāvi" }] }
+    examples:
+      - target: "ఈ పొలంలో కొత్త బోరు వేయించారు."
+        reading: "ī polamlō kotta bōru vēyiñcāru."
+        bases:
+          - { word: "పొలంలో", base: "పొలం", reading: "polam" }
+          - { word: "వేయించారు", base: "వేయించడం", reading: "vēyiñcaḍaṁ" }
+      - target: "బోరులో నీళ్ళు తగ్గిపోయాయి."
+        reading: "bōrulō nīḷḷu taggipōyāyi."
+        bases:
+          - { word: "బోరులో", base: "బోరు", reading: "bōru" }
+          - { word: "నీళ్ళు", base: "నీరు", reading: "nīru" }
+          - { word: "తగ్గిపోయాయి", base: "తగ్గిపోవడం", reading: "taggipōvaḍaṁ" }
+  - id: "te-4633"
+    target: "పూత"
+    reading: "pūta"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "పూత పడింది", reading: "pūta paḍindi" }] }
+    examples:
+      - target: "మామిడి చెట్లకు పూత బాగా వచ్చింది."
+        reading: "māmiḍi ceṭlaku pūta bāgā vaccindi."
+        bases:
+          - { word: "చెట్లకు", base: "చెట్టు", reading: "ceṭṭu" }
+          - { word: "వచ్చింది", base: "రావడం", reading: "rāvaḍaṁ" }
+      - target: "పూత రాలిపోతే కాయ కట్టదు."
+        reading: "pūta rālipōtē kāya kaṭṭadu."
+        bases:
+          - { word: "రాలిపోతే", base: "రాలిపోవడం", reading: "rālipōvaḍaṁ" }
+          - { word: "కట్టదు", base: "కాయ కట్టడం", reading: "kāya kaṭṭaḍaṁ" }
+  - id: "te-4634"
+    target: "వ్యాపారి"
+    reading: "vyāpāri"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "వ్యాపారులు", reading: "vyāpārulu" }] }
+    examples:
+      - target: "ఆ వ్యాపారి మార్కెట్లో ధాన్యం కొంటున్నాడు."
+        reading: "ā vyāpāri mārkeṭlō dhānyam kontunnāḍu."
+        bases:
+          - { word: "మార్కెట్లో", base: "మార్కెట్", reading: "mārkeṭ" }
+          - { word: "కొంటున్నాడు", base: "కొనడం", reading: "konaḍaṁ" }
+      - target: "వ్యాపారులు రైతులకు మంచి ధర ఇవ్వాలి."
+        reading: "vyāpārulu raitulaku mañci dhara ivvāli."
+        bases:
+          - { word: "రైతులకు", base: "రైతు", reading: "raitu" }
+          - { word: "ఇవ్వాలి", base: "ఇవ్వడం", reading: "ivvaḍaṁ" }
+  - id: "te-4635"
+    target: "గొర్రెల కాపరి"
+    reading: "gorrela kāpari"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "కాపరులు", reading: "kāparulu" }] }
+    examples:
+      - target: "గొర్రెల కాపరి ఉదయం గొర్రెలను మేతకు తీసుకెళ్ళాడు."
+        reading: "gorrela kāpari udayaṁ gorrelanu mētaku tīsukeḷḷāḍu."
+        bases:
+          - { word: "గొర్రెలను", base: "గొర్రె", reading: "gorre" }
+          - { word: "మేతకు", base: "మేత", reading: "mēta" }
+          - { word: "తీసుకెళ్ళాడు", base: "తీసుకెళ్ళడం", reading: "tīsukeḷḷaḍaṁ" }
+      - target: "ఆ కాపరికి గొర్రెలు ఇరవై ఉన్నాయి."
+        reading: "ā kāpariki gorrelu iravai unnāyi."
+        bases:
+          - { word: "కాపరికి", base: "కాపరి", reading: "kāpari" }
+          - { word: "ఉన్నాయి", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+  - ref: "te-0781"
+  - ref: "te-0408"
+  - ref: "te-4512"
+  - ref: "te-2604"
+  - ref: "te-2610"
+  - ref: "te-1132"
+  - ref: "te-4507"
+  - ref: "te-2614"
+  - ref: "te-4508"
+  - ref: "te-2612"
+  - ref: "te-2609"
+  - ref: "te-2600"
+  - ref: "te-3512"
+  - ref: "te-1137"
+  - ref: "te-0240"
+  - ref: "te-1118"
+  - ref: "te-1127"
+  - ref: "te-0782"
+  - ref: "te-2601"
