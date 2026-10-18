@@ -881,7 +881,7 @@ void main() {
 
   // Backup and restore (#470): Your data with its Recent backups, the
   // restore sheet, and the sheet for a file from a newer Fluenough, as
-  // shipped, with restore on (owner, 2026-10-17). Bengali and Hindi
+  // shipped, with restore on (owner, 2026-10-17). Bengali and Hindustani
   // progress, as in the mockup.
   group('backup and restore', () {
     const restoreOn = FeatureRegistry.shipped();
@@ -930,7 +930,9 @@ void main() {
           expect(tester.takeException(), isNull);
           expect(find.text(l10n.settingsRestoreTitle), findsOneWidget);
           expect(
-            find.text(l10n.settingsRestoreProgressIn(6, 'Bengali and Hindi')),
+            find.text(
+              l10n.settingsRestoreProgressIn(6, 'Bengali and Hindustani'),
+            ),
             findsOneWidget,
           );
           await meetsEveryGuideline(tester);

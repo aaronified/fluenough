@@ -34,6 +34,11 @@ void main() {
       'latin': <(int, int)>[(0x41, 0x24F), (0x1E00, 0x1EFF)],
       'bengali': <(int, int)>[(0x980, 0x9FF)],
       'devanagari': <(int, int)>[(0x900, 0x97F)],
+      'perso_arabic': <(int, int)>[
+        (0x600, 0x6FF),
+        (0x750, 0x77F),
+        (0xFB50, 0xFDFF),
+      ],
       'gujarati': <(int, int)>[(0xA80, 0xAFF)],
       'gurmukhi': <(int, int)>[(0xA00, 0xA7F)],
       'odia': <(int, int)>[(0xB00, 0xB7F)],
@@ -128,7 +133,15 @@ void main() {
         for (final script in l.scripts) {
           expect(blocks, contains(script), reason: '${l.code} $script');
         }
-        expect(inScript(l.ownName, l.script!), isTrue, reason: l.code);
+        // Its own name is in one of its scripts, or in two, joined by a dot
+        // (Hindustani: Devanagari and Perso-Arabic).
+        for (final part in l.ownName.split(' · ')) {
+          expect(
+            l.scripts.any((s) => inScript(part, s)),
+            isTrue,
+            reason: '${l.code} $part',
+          );
+        }
         expect(RegExp(r'^[a-z]{3}$').hasMatch(l.iso639_3), isTrue);
         expect(isos.add(l.iso639_3), isTrue, reason: '${l.iso639_3} twice');
         expect(families, contains(l.family), reason: l.code);
@@ -136,7 +149,7 @@ void main() {
     });
 
     test('a sentence of the sheet is in the language\'s own script, and '
-        'the approved Bengali and Hindi ones are as approved', () {
+        'the approved Bengali one is as approved', () {
       for (final l in languages.where((l) => l.asksInOwnScript)) {
         expect(inScript(l.scriptQuestion!, l.script!), isTrue, reason: l.code);
         expect(inScript(l.scriptCanRead!, l.script!), isTrue, reason: l.code);
@@ -144,9 +157,10 @@ void main() {
       final bn = languages.firstWhere((l) => l.code == 'bn');
       expect(bn.scriptQuestion, 'আপনি কি পূর্ব নাগরী লিপি পড়তে পারেন?');
       expect(bn.scriptCanRead, 'আমি পূর্ব নাগরী লিপি পড়তে পারি');
+      // Hindustani reads in two scripts (#623): the Devanagari answer is the
+      // approved Hindi one.
       final hi = languages.firstWhere((l) => l.code == 'hi');
-      expect(hi.scriptQuestion, 'क्या आपको देवनागरी लिपि पढ़नी आती है?');
-      expect(hi.scriptCanRead, 'मुझे देवनागरी लिपि पढ़नी आती है');
+      expect(hi.canReadIn('devanagari'), 'मुझे देवनागरी लिपि पढ़नी आती है');
     });
 
     test('every language not written in Latin has both texts of its sheet, '
@@ -170,11 +184,11 @@ void main() {
       }
     });
 
-    test('an entry marked unchecked still shows its own texts: only en, bn and '
-        'hi are checked, and every entry with texts asks in its own script '
+    test('an entry marked unchecked still shows its own texts: only en and bn '
+        'are checked, and every entry with texts asks in its own script '
         '(owner, 2026-10-18)', () {
       for (final l in languages) {
-        final checked = <String>{'en', 'bn', 'hi'}.contains(l.code);
+        final checked = <String>{'en', 'bn'}.contains(l.code);
         expect(
           l.scriptTextUnchecked,
           !checked && l.script != 'latin',
@@ -216,6 +230,7 @@ void main() {
         'them (#551)', () {
       const several = <String, List<String>>{
         'pa': <String>['gurmukhi', 'shahmukhi'],
+        'hi': <String>['devanagari', 'perso_arabic'],
         'sd': <String>['arabic', 'devanagari'],
         'ks': <String>['arabic', 'devanagari'],
         'kok': <String>['devanagari', 'kannada', 'malayalam'],
@@ -226,7 +241,6 @@ void main() {
         'en': 'latin',
         'bn': 'bengali',
         'as': 'bengali',
-        'hi': 'devanagari',
         'gu': 'gujarati',
         'kn': 'kannada',
         'tcy': 'kannada',
@@ -262,6 +276,7 @@ void main() {
         'latin': 'Latin',
         'bengali': 'Eastern Nagari',
         'devanagari': 'Devanagari',
+        'perso_arabic': 'Perso-Arabic',
         'gujarati': 'Gujarati',
         'kannada': 'Kannada',
         'arabic': 'Perso-Arabic',
@@ -545,15 +560,6 @@ void main() {
               'Can read the Eastern Nagari script',
               'Eastern Nagari',
             ),
-            (
-              'Hindi',
-              'hi',
-              'क्या आपको देवनागरी लिपि पढ़नी आती है?',
-              'मुझे देवनागरी लिपि पढ़नी आती है',
-              'I can only speak Hindi',
-              'Can only speak Hindi',
-              'Devanagari',
-            ),
           ]) {
         await tester.enterText(
           find.byKey(const ValueKey<String>('known-search')),
@@ -594,11 +600,8 @@ void main() {
       expect(state.settings.spokenLanguages, isEmpty);
       await tester.tap(find.text(l10n.knownSave));
       await tester.pumpAndSettle();
-      expect(state.settings.spokenLanguages, ['bn', 'hi']);
-      expect(state.settings.scriptsRead, <String, bool>{
-        'bn': true,
-        'hi': false,
-      });
+      expect(state.settings.spokenLanguages, ['bn']);
+      expect(state.settings.scriptsRead, <String, bool>{'bn': true});
     });
 
     testWidgets('a language with no sentences of its own is asked in '
@@ -765,7 +768,7 @@ void main() {
       expect(textStart(tester, find.text(l10n.spokenBody)), 24);
       expect(textStart(tester, find.text(l10n.knownYourLanguages)), 24);
       // English, the test state's language, starts chosen.
-      await knowLanguage(tester, 'Hindi', reads: false);
+      await knowLanguage(tester, 'Hindustani', reads: false);
       await tester.tap(find.byType(BackButton));
       await tester.pumpAndSettle();
       expect(find.text(l10n.spokenTitle), findsNothing);
@@ -780,7 +783,7 @@ void main() {
         AppNavigator.openSpokenLanguages(tester.element(find.byType(AppShell))),
       );
       await tester.pumpAndSettle();
-      await knowLanguage(tester, 'Hindi');
+      await knowLanguage(tester, 'Hindustani');
       await tester.tap(find.text(l10n.knownSave));
       await tester.pumpAndSettle();
       expect(state.settings.spokenLanguages, ['en', 'hi']);
@@ -1130,6 +1133,35 @@ void main() {
         });
       });
     }
+
+    testWidgets('Hindustani offers Devanagari and Perso-Arabic, and one who '
+        'reads only the second keeps that (#623)', (tester) async {
+      usePhone(tester);
+      final state = await openPage(tester);
+      final l10n = l10nOf(tester);
+      await tester.enterText(
+        find.byKey(const ValueKey<String>('known-search')),
+        'Hindustani',
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const ValueKey<String>('lang-hi')));
+      await tester.pumpAndSettle();
+      expect(find.text('I can read the Devanagari script'), findsOneWidget);
+      expect(find.text('I can read the Perso-Arabic script'), findsOneWidget);
+      await tester.tap(
+        find.byKey(const ValueKey<String>('know-script-perso_arabic')),
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const ValueKey<String>('know-done')));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(l10n.knownSave));
+      await tester.pumpAndSettle();
+      expect(state.settings.spokenLanguages, contains('hi'));
+      expect(state.settings.scriptsRead, <String, bool>{
+        'hi': false,
+        'hi:perso_arabic': true,
+      });
+    });
 
     test('a language with no texts of its own has none to show, so the sheet '
         'falls back to English (#552)', () {
