@@ -1,310 +1,419 @@
-schema: 1
-id: "te-en-relationships"
-kind: "layer"
-core: "te-relationships"
-native: { code: "en", iso639_3: "eng", name: "English" }
-name: "Relationships: neighbours, friends and thank-you notes"
-description: "Words for neighbours and old friends: how to greet them, keep in touch, thank them and say sorry. Not yet checked by a Telugu speaker: please report any mistake."
-license: "CC-BY-SA-4.0"
-tags: ["beginner", "unreviewed"]
-cards:
+"schema": 1
+"id": "te-en-relationships"
+"kind": "layer"
+"core": "te-relationships"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "Relationships: neighbours, friends and thank-you notes"
+"description": "Words for neighbours and old friends: how to greet them, keep in touch, thank them and say sorry. Not yet checked by a Telugu speaker: please report any mistake."
+"license": "CC-BY-SA-4.0"
+"tags":
+- "beginner"
+- "unreviewed"
+"cards":
   "te-5500":
-    native: "female friend; a woman friend"
-    wiktionary: true
-    notes:
+    "native": "female friend; a woman friend"
+    "wiktionary": true
+    "notes":
       "n1": "For a male friend say స్నేహితుడు (snēhituḍu)."
-    examples:
+    "examples":
       "ఆమె నా పాత స్నేహితురాలు.":
-        native: "She is my old female friend."
-        bases:
-          "నా": { meaning: "my (from I)" }
+        "native": "She is my old female friend."
+        "bases":
+          "నా":
+            "meaning": "my (from I)"
       "స్నేహితురాలి పెళ్ళికి వెళ్తాను.":
-        native: "I am going to my female friend's wedding."
-        bases:
-          "స్నేహితురాలి": { meaning: "of a female friend" }
-          "పెళ్ళికి": { meaning: "to the wedding" }
-          "వెళ్తాను": { meaning: "to go" }
-    synonyms: { "celi": "A girl's companion, a playfellow, a playmate, a confidante", "celiya": "A female friend or companion", "celikatte": "A playmate among girls", "celimikatte": "A playmate among girls" }
+        "native": "I am going to my female friend's wedding."
+        "bases":
+          "స్నేహితురాలి":
+            "meaning": "of a female friend"
+          "పెళ్ళికి":
+            "meaning": "to the wedding"
+          "వెళ్తాను":
+            "meaning": "to go"
+    "synonyms":
+      "celi": "A girl's companion, a playfellow, a playmate, a confidante"
+      "celiya": "A female friend or companion"
+      "celikatte": "A playmate among girls"
+      "celimikatte": "A playmate among girls"
   "te-5501":
-    native: "neighbour (a man)"
-    notes:
+    "native": "neighbour (a man)"
+    "notes":
       "n1": "The plural పొరుగువారు (poruguvāru) is used for neighbours in general. For a woman neighbour say పొరుగింటావిడ (porugiṇṭāviḍa)."
-    examples:
+    "examples":
       "మా పొరుగువాడు రోజూ ఉదయం నడకకు వెళ్తాడు.":
-        native: "Our neighbour goes for a walk every morning."
-        bases:
-          "మా": { meaning: "our" }
-          "నడకకు": { meaning: "for a walk" }
-          "వెళ్తాడు": { meaning: "goes" }
+        "native": "Our neighbour goes for a walk every morning."
+        "bases":
+          "మా":
+            "meaning": "our"
+          "నడకకు":
+            "meaning": "for a walk"
+          "వెళ్తాడు":
+            "meaning": "goes"
       "పొరుగువాడు మా ఇంటికి వచ్చి పాలు అడిగాడు.":
-        native: "The neighbour came to our house and asked for some milk."
-        bases:
-          "మా": { meaning: "our" }
-          "ఇంటికి": { meaning: "to the house" }
-          "వచ్చి": { meaning: "having come" }
-          "అడిగాడు": { meaning: "asked" }
+        "native": "The neighbour came to our house and asked for some milk."
+        "bases":
+          "మా":
+            "meaning": "our"
+          "ఇంటికి":
+            "meaning": "to the house"
+          "వచ్చి":
+            "meaning": "having come"
+          "అడిగాడు":
+            "meaning": "asked"
   "te-5502":
-    native: "respect; honour"
-    wiktionary: true
-    notes:
+    "native": "respect; honour"
+    "wiktionary": true
+    "notes":
       "n1": "In speech, గౌరవం ఇవ్వు (gauravaṁ ivvu) means to show respect."
-    examples:
+    "examples":
       "పెద్దవాళ్ళకు గౌరవం ఇవ్వాలి.":
-        native: "We must show respect to elders."
-        bases:
-          "పెద్దవాళ్ళకు": { meaning: "to elders" }
-          "ఇవ్వాలి": { meaning: "must give" }
+        "native": "We must show respect to elders."
+        "bases":
+          "పెద్దవాళ్ళకు":
+            "meaning": "to elders"
+          "ఇవ్వాలి":
+            "meaning": "must give"
       "ఆయనకు ఊరిలో చాలా గౌరవం ఉంది.":
-        native: "He has a lot of respect in the village."
-        bases:
-          "ఆయనకు": { meaning: "to him" }
-          "ఊరిలో": { meaning: "in the village" }
-          "ఉంది": { meaning: "has" }
+        "native": "He has a lot of respect in the village."
+        "bases":
+          "ఆయనకు":
+            "meaning": "to him"
+          "ఊరిలో":
+            "meaning": "in the village"
+          "ఉంది":
+            "meaning": "has"
   "te-5503":
-    native: "courtesy; politeness; good manners"
-    wiktionary: true
-    notes:
+    "native": "courtesy; politeness; good manners"
+    "wiktionary": true
+    "notes":
       "n1": "The same word is an adverb: మర్యాదగా (maryādagā), politely."
-    examples:
+    "examples":
       "అతిథులను మర్యాదతో చూడాలి.":
-        native: "Guests must be treated with courtesy."
-        bases:
-          "అతిథులను": { meaning: "guests" }
-          "మర్యాదతో": { meaning: "with" }
-          "చూడాలి": { meaning: "must treat" }
+        "native": "Guests must be treated with courtesy."
+        "bases":
+          "అతిథులను":
+            "meaning": "guests"
+          "మర్యాదతో":
+            "meaning": "with"
+          "చూడాలి":
+            "meaning": "must treat"
       "ఆయన చాలా మర్యాదగా మాట్లాడతారు.":
-        native: "He speaks very politely."
-        bases:
-          "మర్యాదగా": { meaning: "politely" }
-          "మాట్లాడతారు": { meaning: "speaks" }
-    senses:
-      "limit": { native: "limit, boundary" }
-      "respect": { native: "respect, civility" }
-      "manner": { native: "manner, way, fashion, decency, custom, rule" }
+        "native": "He speaks very politely."
+        "bases":
+          "మర్యాదగా":
+            "meaning": "politely"
+          "మాట్లాడతారు":
+            "meaning": "speaks"
+    "senses":
+      "limit":
+        "native": "limit, boundary"
+      "respect":
+        "native": "respect, civility"
+      "manner":
+        "native": "manner, way, fashion, decency, custom, rule"
   "te-5504":
-    native: "acquaintance; introduction"
-    wiktionary: true
-    notes:
+    "native": "acquaintance; introduction"
+    "wiktionary": true
+    "notes":
       "n1": "Also the verb phrase పరిచయం చేయడం (paricayaṁ cēyaḍaṁ), to introduce someone."
-    examples:
+    "examples":
       "మీతో పరిచయం ఆనందంగా ఉంది.":
-        native: "I am glad to know you."
-        bases:
-          "మీతో": { meaning: "with you" }
-          "ఆనందంగా": { meaning: "happily" }
-          "ఉంది": { meaning: "is" }
+        "native": "I am glad to know you."
+        "bases":
+          "మీతో":
+            "meaning": "with you"
+          "ఆనందంగా":
+            "meaning": "happily"
+          "ఉంది":
+            "meaning": "is"
       "వాళ్ళతో పరిచయం కొద్ది రోజులే.":
-        native: "I have known them only a few days."
-        bases:
-          "వాళ్ళతో": { meaning: "with them" }
-          "రోజులే": { meaning: "only days" }
+        "native": "I have known them only a few days."
+        "bases":
+          "వాళ్ళతో":
+            "meaning": "with them"
+          "రోజులే":
+            "meaning": "only days"
+          "కొద్ది":
+            "meaning": "few; a little"
   "te-5505":
-    native: "stranger (a man)"
-    notes:
+    "native": "stranger (a man)"
+    "notes":
       "n1": "The plural అపరిచితులు (aparicitulu) is used for strangers in general."
-    examples:
+    "examples":
       "ఆ అపరిచితుడు మా ఇంటి దగ్గర నిలబడ్డాడు.":
-        native: "That stranger stood near our house."
-        bases:
-          "మా": { meaning: "our" }
-          "ఇంటి": { meaning: "of the house" }
-          "నిలబడ్డాడు": { meaning: "stood" }
+        "native": "That stranger stood near our house."
+        "bases":
+          "మా":
+            "meaning": "our"
+          "ఇంటి":
+            "meaning": "of the house"
+          "నిలబడ్డాడు":
+            "meaning": "stood"
       "అపరిచితులతో మాట్లాడకూడదు.":
-        native: "You should not talk to strangers."
-        bases:
-          "అపరిచితులతో": { meaning: "with strangers" }
-          "మాట్లాడకూడదు": { meaning: "should not talk" }
+        "native": "You should not talk to strangers."
+        "bases":
+          "అపరిచితులతో":
+            "meaning": "with strangers"
+          "మాట్లాడకూడదు":
+            "meaning": "should not talk"
   "te-5506":
-    native: "well-being; health and welfare"
-    wiktionary: true
-    notes:
+    "native": "well-being; health and welfare"
+    "wiktionary": true
+    "notes":
       "n1": "In greetings, కుశలమా (kuśalamā) asks how someone is. The answer is కుశలమే (kuśalamē)."
-    examples:
+    "examples":
       "మీ కుశలం ఎలా ఉంది?":
-        native: "How are you doing?"
-        bases:
-          "మీ": { meaning: "your" }
-          "ఉంది": { meaning: "is" }
+        "native": "How are you doing?"
+        "bases":
+          "మీ":
+            "meaning": "your"
+          "ఉంది":
+            "meaning": "is"
       "నాన్న అమ్మ కుశలం గురించి అడిగారు.":
-        native: "Dad asked about Mum's well-being."
-        bases:
-          "అడిగారు": { meaning: "asked" }
+        "native": "Dad asked about Mum's well-being."
+        "bases":
+          "అడిగారు":
+            "meaning": "asked"
+          "గురించి":
+            "meaning": "about; concerning"
   "te-5507":
-    native: "memory; a keepsake"
-    wiktionary: true
-    notes:
+    "native": "memory; a keepsake"
+    "wiktionary": true
+    "notes":
       "n1": "The plural జ్ఞాపకాలు (jñāpakālu) is common in speech."
-    examples:
+    "examples":
       "ఈ పుస్తకం నాకు ఒక మంచి జ్ఞాపకం.":
-        native: "This book is a good memory for me."
-        bases:
-          "నాకు": { meaning: "to me" }
+        "native": "This book is a good memory for me."
+        "bases":
+          "నాకు":
+            "meaning": "to me"
       "ఆమె జ్ఞాపకాలు ఇప్పటికీ నా మనసులో ఉన్నాయి.":
-        native: "Her memories are still in my heart."
-        bases:
-          "జ్ఞాపకాలు": { meaning: "memories" }
-          "నా": { meaning: "my" }
-          "మనసులో": { meaning: "in the heart" }
-          "ఉన్నాయి": { meaning: "are" }
+        "native": "Her memories are still in my heart."
+        "bases":
+          "జ్ఞాపకాలు":
+            "meaning": "memories"
+          "నా":
+            "meaning": "my"
+          "మనసులో":
+            "meaning": "in the heart"
+          "ఉన్నాయి":
+            "meaning": "are"
   "te-5508":
-    native: "quarrel; fight; trouble"
-    wiktionary: true
-    notes:
+    "native": "quarrel; fight; trouble"
+    "wiktionary": true
+    "notes":
       "n1": "Also a noisy commotion, as in a loud argument."
-    examples:
+    "examples":
       "వాళ్ళిద్దరికీ మళ్ళీ గొడవ అయింది.":
-        native: "The two of them quarrelled again."
-        bases:
-          "వాళ్ళిద్దరికీ": { meaning: "to the two of them" }
-          "అయింది": { meaning: "happened" }
+        "native": "The two of them quarrelled again."
+        "bases":
+          "వాళ్ళిద్దరికీ":
+            "meaning": "to the two of them"
+          "అయింది":
+            "meaning": "happened"
       "పొరుగువాళ్ళతో గొడవ పెట్టుకోవద్దు.":
-        native: "Do not pick a quarrel with the neighbours."
-        bases:
-          "పొరుగువాళ్ళతో": { meaning: "with the neighbours" }
-          "పెట్టుకోవద్దు": { meaning: "do not pick" }
-    senses:
-      "trouble": { native: "trouble, difficulty, danger" }
-      "confusion": { native: "confusion" }
-      "fault": { native: "fault" }
-      "sorrow": { native: "sorrow" }
+        "native": "Do not pick a quarrel with the neighbours."
+        "bases":
+          "పొరుగువాళ్ళతో":
+            "meaning": "with the neighbours"
+          "పెట్టుకోవద్దు":
+            "meaning": "do not pick"
+    "senses":
+      "trouble":
+        "native": "trouble, difficulty, danger"
+      "confusion":
+        "native": "confusion"
+      "fault":
+        "native": "fault"
+      "sorrow":
+        "native": "sorrow"
   "te-5509":
-    native: "news; a message; word from someone"
-    wiktionary: true
-    notes:
+    "native": "news; a message; word from someone"
+    "wiktionary": true
+    "notes":
       "n1": "A common word in speech: కబురు పంపు (kaburu pampu) means to send word."
-    examples:
+    "examples":
       "నీకు ఏదైనా కబురు తెలిసిందా?":
-        native: "Did you hear any news?"
-        bases:
-          "నీకు": { meaning: "to you" }
-          "తెలిసిందా": { meaning: "did you hear" }
+        "native": "Did you hear any news?"
+        "bases":
+          "నీకు":
+            "meaning": "to you"
+          "తెలిసిందా":
+            "meaning": "did you hear"
       "అమ్మ మాకు కబురు పంపింది.":
-        native: "Mother sent us word."
-        bases:
-          "మాకు": { meaning: "to us" }
-          "పంపింది": { meaning: "sent" }
-    synonyms: { "syn4": "a chat; a talk; news" }
-    senses:
-      "news": { native: "news" }
-      "message": { native: "message" }
-      "report": { native: "report, public talk" }
-      "intelligence": { native: "intelligence" }
+        "native": "Mother sent us word."
+        "bases":
+          "మాకు":
+            "meaning": "to us"
+          "పంపింది":
+            "meaning": "sent"
+    "synonyms":
+      "syn4": "a chat; a talk; news"
+    "senses":
+      "news":
+        "native": "news"
+      "message":
+        "native": "message"
+      "report":
+        "native": "report, public talk"
+      "intelligence":
+        "native": "intelligence"
   "te-5510":
-    native: "warmth; closeness; affection"
-    notes:
+    "native": "warmth; closeness; affection"
+    "notes":
       "n1": "An abstract word. The adjective is ఆత్మీయమైన (ātmīyamaina), dear."
-    examples:
+    "examples":
       "ఆమె మాటల్లో ఆత్మీయత ఉంది.":
-        native: "There is warmth in her words."
-        bases:
-          "మాటల్లో": { meaning: "in the words" }
-          "ఉంది": { meaning: "there is" }
+        "native": "There is warmth in her words."
+        "bases":
+          "మాటల్లో":
+            "meaning": "in the words"
+          "ఉంది":
+            "meaning": "there is"
       "ఆ ఇంట్లో అందరూ ఆత్మీయతతో పలకరించారు.":
-        native: "Everyone there greeted us warmly."
-        bases:
-          "ఇంట్లో": { meaning: "in the house" }
-          "ఆత్మీయతతో": { meaning: "warmly" }
-          "పలకరించారు": { meaning: "greeted" }
+        "native": "Everyone there greeted us warmly."
+        "bases":
+          "ఇంట్లో":
+            "meaning": "in the house"
+          "ఆత్మీయతతో":
+            "meaning": "warmly"
+          "పలకరించారు":
+            "meaning": "greeted"
   "te-5511":
-    native: "meeting; get-together; reunion"
-    wiktionary: true
-    notes:
+    "native": "meeting; get-together; reunion"
+    "wiktionary": true
+    "notes":
       "n1": "Used for a family gathering or a reunion."
-    examples:
+    "examples":
       "మా కుటుంబాల కలయిక బాగా జరిగింది.":
-        native: "The get-together of our families went well."
-        bases:
-          "మా": { meaning: "our" }
-          "కుటుంబాల": { meaning: "of the families" }
-          "జరిగింది": { meaning: "went" }
+        "native": "The get-together of our families went well."
+        "bases":
+          "మా":
+            "meaning": "our"
+          "కుటుంబాల":
+            "meaning": "of the families"
+          "జరిగింది":
+            "meaning": "went"
       "ఈ సంవత్సరం కలయిక ఇంట్లో జరుగుతుంది.":
-        native: "The get-together is at home this year."
-        bases:
-          "ఇంట్లో": { meaning: "at home" }
-          "జరుగుతుంది": { meaning: "takes place" }
-    synonyms: { "sangamamu": "coming together, meeting, union, junction, conjunction", "syn1": "coming together; a meeting" }
+        "native": "The get-together is at home this year."
+        "bases":
+          "ఇంట్లో":
+            "meaning": "at home"
+          "జరుగుతుంది":
+            "meaning": "takes place"
+    "synonyms":
+      "sangamamu": "coming together, meeting, union, junction, conjunction"
+      "syn1": "coming together; a meeting"
   "te-5517":
-    native: "unexpectedly; by chance"
-    notes:
+    "native": "unexpectedly; by chance"
+    "notes":
       "n1": "Literally 'without thinking'."
-    examples:
+    "examples":
       "అనుకోకుండా ఈ రోజు పాత స్నేహితుడిని కలిశాను.":
-        native: "By chance I met an old friend today."
-        bases:
-          "స్నేహితుడిని": { meaning: "a friend" }
-          "కలిశాను": { meaning: "I met" }
+        "native": "By chance I met an old friend today."
+        "bases":
+          "స్నేహితుడిని":
+            "meaning": "a friend"
+          "కలిశాను":
+            "meaning": "I met"
       "అనుకోకుండా వర్షం వచ్చింది.":
-        native: "It suddenly rained."
-        bases:
-          "వచ్చింది": { meaning: "came" }
+        "native": "It suddenly rained."
+        "bases":
+          "వచ్చింది":
+            "meaning": "came"
   "te-5518":
-    native: "still; even now"
-    notes:
+    "native": "still; even now"
+    "notes":
       "n1": "Used with a verb of staying or being for 'still'."
-    examples:
+    "examples":
       "ఆయన ఇప్పటికీ అదే ఇంట్లో ఉంటారు.":
-        native: "He still lives in the same house."
-        bases:
-          "ఇంట్లో": { meaning: "in the house" }
-          "ఉంటారు": { meaning: "lives" }
+        "native": "He still lives in the same house."
+        "bases":
+          "ఇంట్లో":
+            "meaning": "in the house"
+          "ఉంటారు":
+            "meaning": "lives"
       "నాకు ఇప్పటికీ ఆ పాట గుర్తు.":
-        native: "I still remember that song."
-        bases:
-          "నాకు": { meaning: "to me" }
+        "native": "I still remember that song."
+        "bases":
+          "నాకు":
+            "meaning": "to me"
+          "గుర్తు":
+            "meaning": "memory; sign; remembered"
   "te-5519":
-    native: "dear; warm; close (of a person)"
-    notes:
+    "native": "dear; warm; close (of a person)"
+    "notes":
       "n1": "Describes a relationship or a person: an ఆత్మీయమైన (ātmīyamaina) friend."
-    examples:
+    "examples":
       "ఆమె ఒక ఆత్మీయమైన మనిషి.":
-        native: "She is a warm and caring person."
+        "native": "She is a warm and caring person."
+        "bases":
+          "మనిషి":
+            "meaning": "person; human being"
       "వాళ్ళు మాకు ఆత్మీయమైన బంధువులు.":
-        native: "They are dear relatives to us."
-        bases:
-          "మాకు": { meaning: "to us" }
-          "బంధువులు": { meaning: "relatives" }
+        "native": "They are dear relatives to us."
+        "bases":
+          "మాకు":
+            "meaning": "to us"
+          "బంధువులు":
+            "meaning": "relatives"
   "te-5520":
-    native: "from childhood; childhood"
-    notes:
+    "native": "from childhood; childhood"
+    "notes":
       "n1": "Used before a noun: చిన్ననాటి స్నేహితుడు (cinnanāṭi snēhituḍu), a childhood friend."
-    examples:
+    "examples":
       "ఇది నా చిన్ననాటి ఊరు.":
-        native: "This is my childhood village."
-        bases:
-          "నా": { meaning: "my" }
+        "native": "This is my childhood village."
+        "bases":
+          "నా":
+            "meaning": "my"
       "చిన్ననాటి స్నేహితులు ఇప్పటికీ కలుస్తారు.":
-        native: "Childhood friends still meet."
-        bases:
-          "స్నేహితులు": { meaning: "friends" }
-          "కలుస్తారు": { meaning: "meet" }
+        "native": "Childhood friends still meet."
+        "bases":
+          "స్నేహితులు":
+            "meaning": "friends"
+          "కలుస్తారు":
+            "meaning": "meet"
   "te-5521":
-    native: "close friend; a trusted, intimate person (a man)"
-    notes:
+    "native": "close friend; a trusted, intimate person (a man)"
+    "notes":
       "n1": "The plural ఆప్తులు (āptulu) covers close friends of either sex."
-    examples:
+    "examples":
       "అతను నాకు ఆప్తుడు.":
-        native: "He is a close friend of mine."
-        bases:
-          "నాకు": { meaning: "to me" }
+        "native": "He is a close friend of mine."
+        "bases":
+          "నాకు":
+            "meaning": "to me"
       "కష్టంలో ఆప్తులే ఉంటారు.":
-        native: "In hard times, it is close friends who are there for you."
-        bases:
-          "కష్టంలో": { meaning: "in hard times" }
-          "ఆప్తులే": { meaning: "it is the close friends" }
-          "ఉంటారు": { meaning: "are there" }
+        "native": "In hard times, it is close friends who are there for you."
+        "bases":
+          "కష్టంలో":
+            "meaning": "in hard times"
+          "ఆప్తులే":
+            "meaning": "it is the close friends"
+          "ఉంటారు":
+            "meaning": "are there"
   "te-5522":
-    native: "greeting; the way someone greets you"
-    notes:
+    "native": "greeting; the way someone greets you"
+    "notes":
       "n1": "The verb is పలకరించు (palakariñcu), to greet."
-    examples:
+    "examples":
       "ఆమె పలకరింపు ఎప్పుడూ చిరునవ్వుతో ఉంటుంది.":
-        native: "Her greeting is always with a smile."
-        bases:
-          "చిరునవ్వుతో": { meaning: "with a smile" }
-          "ఉంటుంది": { meaning: "is" }
+        "native": "Her greeting is always with a smile."
+        "bases":
+          "చిరునవ్వుతో":
+            "meaning": "with a smile"
+          "ఉంటుంది":
+            "meaning": "is"
       "పొరుగువారి పలకరింపు నాకు చాలా సంతోషం ఇచ్చింది.":
-        native: "The neighbours' greeting made me very happy."
-        bases:
-          "పొరుగువారి": { meaning: "of the neighbours" }
-          "నాకు": { meaning: "to me" }
-          "ఇచ్చింది": { meaning: "gave" }
+        "native": "The neighbours' greeting made me very happy."
+        "bases":
+          "పొరుగువారి":
+            "meaning": "of the neighbours"
+          "నాకు":
+            "meaning": "to me"
+          "ఇచ్చింది":
+            "meaning": "gave"

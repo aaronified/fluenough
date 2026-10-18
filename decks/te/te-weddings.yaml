@@ -1,601 +1,862 @@
-schema: 1
-id: "te-weddings"
-part: "core"
-kind: "vocab"
-language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
-license: "CC-BY-SA-4.0"
-authors:
-  - { name: "Fluenough contributors" }
-theme: "weddings"
-tags: ["beginner", "unreviewed"]
-cards:
-  - id: "te-5200"
-    target: "పెళ్ళి"
-    reading: "peḷḷi"
-    ipa: "peɭɭi"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "పెళ్ళి చాలా బాగా జరిగింది."
-        reading: "peḷḷi cālā bāgā jarigindi."
-        ipa: "peɭɭi tʃaːlaː baːɡaː dʒariɡind̪i"
-        bases:
-          - { word: "జరిగింది", base: "జరగడం", reading: "jaragaḍam" }
-      - target: "పెళ్ళికి అందరూ వచ్చారు."
-        reading: "peḷḷiki andarū vaccāru."
-        ipa: "peɭɭiki and̪aruː ʋatʃtʃaːru"
-        bases:
-          - { word: "పెళ్ళికి", base: "పెళ్ళి", reading: "peḷḷi" }
-          - { word: "వచ్చారు", base: "రావడం", reading: "rāvaḍam" }
-  - id: "te-5201"
-    target: "వివాహం"
-    reading: "vivāham"
-    ipa: "ʋiʋaːham"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "వివాహం రెండు కుటుంబాలను కలుపుతుంది."
-        reading: "vivāham reṇḍu kuṭumbālanu kaluputundi."
-        ipa: "ʋiʋaːham reɳɖu kuʈumbaːlanu kaluput̪und̪i"
-        bases:
-          - { word: "కుటుంబాలను", base: "కుటుంబం", reading: "kuṭumbam" }
-          - { word: "కలుపుతుంది", base: "కలపడం", reading: "kalapaḍam" }
-      - target: "వివాహానికి ముందు మేము పూజ చేస్తాము."
-        reading: "vivāhāniki mundu mēmu pūja cēstāmu."
-        ipa: "ʋiʋaːhaːniki mund̪u meːmu puːdʒa tʃeːst̪aːmu"
-        bases:
-          - { word: "వివాహానికి", base: "వివాహం", reading: "vivāham" }
-          - { word: "చేస్తాము", base: "చేయడం", reading: "cēyaḍam" }
-  - id: "te-5202"
-    target: "వధువు"
-    reading: "vadhuvu"
-    ipa: "ʋad̪ʱuʋu"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "వధువు ఎరుపు చీర కట్టుకుంది."
-        reading: "vadhuvu erupu cīra kaṭṭukundi."
-        ipa: "ʋad̪ʱuʋu erupu tʃiːra kaʈʈukund̪i"
-        bases:
-          - { word: "కట్టుకుంది", base: "కట్టుకోవడం", reading: "kaṭṭukōvaḍam" }
-      - target: "వధువు చాలా అందంగా ఉంది."
-        reading: "vadhuvu cālā andaṅgā undi."
-        ipa: "ʋad̪ʱuʋu tʃaːlaː and̪aŋɡaː und̪i"
-        bases:
-          - { word: "అందంగా", base: "అందం", reading: "andam" }
-          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍam" }
-    synonyms:
-      - { id: "pendlikuturu", word: "పెండ్లికూతురు", reading: "peṇḍlikūturu", source: "https://en.wiktionary.org/wiki/వధువు" }
-  - id: "te-5203"
-    target: "వరుడు"
-    reading: "varuḍu"
-    ipa: "ʋaruɖu"
-    pos: "noun"
-    gender: "mahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "వరుడు గుర్రం మీద వచ్చాడు."
-        reading: "varuḍu gurram mīda vaccāḍu."
-        ipa: "ʋaruɖu ɡurram miːd̪a ʋatʃtʃaːɖu"
-        bases:
-          - { word: "వచ్చాడు", base: "రావడం", reading: "rāvaḍam" }
-      - target: "వరుడి తల్లి ఇక్కడ ఉంది."
-        reading: "varuḍi talli ikkaḍa undi."
-        ipa: "ʋaruɖi t̪alli ikkaɖa und̪i"
-        bases:
-          - { word: "వరుడి", base: "వరుడు", reading: "varuḍu" }
-          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍam" }
-    senses:
-      - { id: "bridegroom", pos: "noun", source: "https://en.wiktionary.org/wiki/వరుడు" }
-  - id: "te-5204"
-    target: "ముహూర్తం"
-    reading: "muhūrtam"
-    ipa: "muhuːrt̪am"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "పెళ్ళి ముహూర్తం ఉదయం ఆరు గంటలకు."
-        reading: "peḷḷi muhūrtam udayam āru gaṇṭalaku."
-        ipa: "peɭɭi muhuːrt̪am ud̪ajam aːru ɡaɳʈalaku"
-        bases:
-          - { word: "గంటలకు", base: "గంట", reading: "gaṇṭa" }
-      - target: "పండితుడు ముహూర్తం చెప్పాడు."
-        reading: "paṇḍituḍu muhūrtam ceppāḍu."
-        ipa: "paɳɖit̪uɖu muhuːrt̪am tʃeppaːɖu"
-        bases:
-          - { word: "చెప్పాడు", base: "చెప్పడం", reading: "ceppaḍam" }
-  - id: "te-5205"
-    target: "పెళ్ళిపత్రిక"
-    reading: "peḷḷipatrika"
-    ipa: "peɭɭipat̪rika"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "నాకు పెళ్ళిపత్రిక వచ్చింది."
-        reading: "nāku peḷḷipatrika vaccindi."
-        ipa: "naːku peɭɭipat̪rika ʋatʃtʃind̪i"
-        bases:
-          - { word: "నాకు", base: "నేను", reading: "nēnu" }
-          - { word: "వచ్చింది", base: "రావడం", reading: "rāvaḍam" }
-      - target: "పెళ్ళిపత్రికలో తేదీ, సమయం ఉన్నాయి."
-        reading: "peḷḷipatrikalō tēdī, samayam unnāyi."
-        ipa: "peɭɭipat̪rikaloː t̪eːd̪iː samajam unnaːji"
-        bases:
-          - { word: "పెళ్ళిపత్రికలో", base: "పెళ్ళిపత్రిక", reading: "peḷḷipatrika" }
-          - { word: "ఉన్నాయి", base: "ఉండడం", reading: "uṇḍaḍam" }
-  - ref: "te-1317"
-  - id: "te-5207"
-    target: "మండపం"
-    reading: "maṇḍapam"
-    ipa: "maɳɖapam"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "పెళ్ళి మండపం పూలతో అలంకరించారు."
-        reading: "peḷḷi maṇḍapam pūlatō alaṅkariñcāru."
-        ipa: "peɭɭi maɳɖapam puːlat̪oː alaŋkariɲtʃaːru"
-        bases:
-          - { word: "పూలతో", base: "పువ్వు", reading: "puvvu" }
-          - { word: "అలంకరించారు", base: "అలంకరించడం", reading: "alaṅkariñcaḍam" }
-      - target: "మండపంలో చాలా మంది కూర్చున్నారు."
-        reading: "maṇḍapamlō cālā mandi kūrcunnāru."
-        ipa: "maɳɖapamloː tʃaːlaː mand̪i kuːrtʃunnaːru"
-        bases:
-          - { word: "మండపంలో", base: "మండపం", reading: "maṇḍapam" }
-          - { word: "కూర్చున్నారు", base: "కూర్చోవడం", reading: "kūrcōvaḍam" }
-  - id: "te-5208"
-    target: "మంగళసూత్రం"
-    reading: "maṅgaḷasūtram"
-    ipa: "maŋɡaɭasuːt̪ram"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "వధువు మెడలో మంగళసూత్రం ఉంది."
-        reading: "vadhuvu meḍalō maṅgaḷasūtram undi."
-        ipa: "ʋad̪ʱuʋu meɖaloː maŋɡaɭasuːt̪ram und̪i"
-        bases:
-          - { word: "మెడలో", base: "మెడ", reading: "meḍa" }
-          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍam" }
-      - target: "వరుడు మంగళసూత్రం కట్టాడు."
-        reading: "varuḍu maṅgaḷasūtram kaṭṭāḍu."
-        ipa: "ʋaruɖu maŋɡaɭasuːt̪ram kaʈʈaːɖu"
-        bases:
-          - { word: "కట్టాడు", base: "కట్టడం", reading: "kaṭṭaḍam" }
-  - id: "te-5209"
-    target: "అక్షింతలు"
-    reading: "akṣintalu"
-    ipa: "akʂint̪alu"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "పెద్దలు అక్షింతలు వేసి ఆశీర్వదించారు."
-        reading: "peddalu akṣintalu vēsi āśīrvadiñcāru."
-        ipa: "ped̪d̪alu akʂint̪alu ʋeːsi aːʃiːrʋad̪iɲtʃaːru"
-        bases:
-          - { word: "వేసి", base: "వేయడం", reading: "vēyaḍam" }
-          - { word: "ఆశీర్వదించారు", base: "ఆశీర్వదించడం", reading: "āśīrvadiñcaḍam" }
-      - target: "అందరూ వధూవరుల మీద అక్షింతలు చల్లారు."
-        reading: "andarū vadhūvarula mīda akṣintalu callāru."
-        ipa: "and̪aruː ʋad̪ʱuːʋarula miːd̪a akʂint̪alu tʃallaːru"
-        bases:
-          - { word: "వధూవరుల", base: "వధూవరులు", reading: "vadhūvarulu" }
-          - { word: "చల్లారు", base: "చల్లడం", reading: "callaḍam" }
-  - id: "te-5210"
-    target: "తలంబ్రాలు"
-    reading: "talambrālu"
-    ipa: "t̪alambraːlu"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "వధూవరులు తలంబ్రాలు పోసుకున్నారు."
-        reading: "vadhūvarulu talambrālu pōsukunnāru."
-        ipa: "ʋad̪ʱuːʋarulu t̪alambraːlu poːsukunnaːru"
-        bases:
-          - { word: "పోసుకున్నారు", base: "పోసుకోవడం", reading: "pōsukōvaḍam" }
-      - target: "తలంబ్రాలు పసుపు రంగులో ఉన్నాయి."
-        reading: "talambrālu pasupu raṅgulō unnāyi."
-        ipa: "t̪alambraːlu pasupu raŋɡuloː unnaːji"
-        bases:
-          - { word: "రంగులో", base: "రంగు", reading: "raṅgu" }
-          - { word: "ఉన్నాయి", base: "ఉండడం", reading: "uṇḍaḍam" }
-  - id: "te-5211"
-    target: "పూలదండ"
-    reading: "pūladaṇḍa"
-    ipa: "puːlad̪aɳɖa"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "వరుడు వధువుకు పూలదండ వేశాడు."
-        reading: "varuḍu vadhuvuku pūladaṇḍa vēśāḍu."
-        ipa: "ʋaruɖu ʋad̪ʱuʋuku puːlad̪aɳɖa ʋeːʃaːɖu"
-        bases:
-          - { word: "వధువుకు", base: "వధువు", reading: "vadhuvu" }
-          - { word: "వేశాడు", base: "వేయడం", reading: "vēyaḍam" }
-      - target: "పూలదండ చాలా సువాసనగా ఉంది."
-        reading: "pūladaṇḍa cālā suvāsanagā undi."
-        ipa: "puːlad̪aɳɖa tʃaːlaː suʋaːsanaɡaː und̪i"
-        bases:
-          - { word: "సువాసనగా", base: "సువాసన", reading: "suvāsana" }
-          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍam" }
-  - id: "te-5212"
-    target: "ఊరేగింపు"
-    reading: "ūrēgimpu"
-    ipa: "uːreːɡimpu"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "వరుడి ఊరేగింపు ఊరంతా తిరిగింది."
-        reading: "varuḍi ūrēgimpu ūrantā tirigindi."
-        ipa: "ʋaruɖi uːreːɡimpu uːrant̪aː t̪iriɡind̪i"
-        bases:
-          - { word: "వరుడి", base: "వరుడు", reading: "varuḍu" }
-          - { word: "ఊరంతా", base: "ఊరు", reading: "ūru" }
-          - { word: "తిరిగింది", base: "తిరగడం", reading: "tiragaḍam" }
-      - target: "ఊరేగింపులో అందరూ పాటలు పాడారు."
-        reading: "ūrēgimpulō andarū pāṭalu pāḍāru."
-        ipa: "uːreːɡimpuloː and̪aruː paːʈalu paːɖaːru"
-        bases:
-          - { word: "ఊరేగింపులో", base: "ఊరేగింపు", reading: "ūrēgimpu" }
-          - { word: "పాటలు", base: "పాట", reading: "pāṭa" }
-          - { word: "పాడారు", base: "పాడడం", reading: "pāḍaḍam" }
-  - id: "te-5213"
-    target: "పురోహితుడు"
-    reading: "purōhituḍu"
-    ipa: "puroːhit̪uɖu"
-    pos: "noun"
-    gender: "mahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "పురోహితుడు మంత్రాలు చదివారు."
-        reading: "purōhituḍu mantrālu cadivāru."
-        ipa: "puroːhit̪uɖu mant̪raːlu tʃad̪iʋaːru"
-        bases:
-          - { word: "మంత్రాలు", base: "మంత్రం", reading: "mantram" }
-          - { word: "చదివారు", base: "చదవడం", reading: "cadavaḍam" }
-      - target: "పురోహితుడు ఇంకా రాలేదు."
-        reading: "purōhituḍu iṅkā rālēdu."
-        ipa: "puroːhit̪uɖu iŋkaː raːleːd̪u"
-        bases:
-          - { word: "రాలేదు", base: "రావడం", reading: "rāvaḍam" }
-  - id: "te-5214"
-    target: "మంత్రం"
-    reading: "mantram"
-    ipa: "mant̪ram"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "మంత్రం వినగానే అందరూ లేచారు."
-        reading: "mantram vinagānē andarū lēcāru."
-        ipa: "mant̪ram ʋinaɡaːneː and̪aruː leːtʃaːru"
-        bases:
-          - { word: "వినగానే", base: "వినడం", reading: "vinaḍam" }
-          - { word: "లేచారు", base: "లేవడం", reading: "lēvaḍam" }
-      - target: "అమ్మ రోజూ ఒక మంత్రం చదువుతుంది."
-        reading: "amma rōjū oka mantram caduvutundi."
-        ipa: "amma roːdʒuː oka mant̪ram tʃad̪uʋut̪und̪i"
-        bases:
-          - { word: "చదువుతుంది", base: "చదవడం", reading: "cadavaḍam" }
-  - id: "te-5215"
-    target: "హోమం"
-    reading: "hōmam"
-    ipa: "hoːmam"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "పెళ్ళిలో హోమం చేశారు."
-        reading: "peḷḷilō hōmam cēśāru."
-        ipa: "peɭɭiloː hoːmam tʃeːʃaːru"
-        bases:
-          - { word: "పెళ్ళిలో", base: "పెళ్ళి", reading: "peḷḷi" }
-          - { word: "చేశారు", base: "చేయడం", reading: "cēyaḍam" }
-      - target: "హోమం ముందు అందరూ కూర్చున్నారు."
-        reading: "hōmam mundu andarū kūrcunnāru."
-        ipa: "hoːmam mund̪u and̪aruː kuːrtʃunnaːru"
-        bases:
-          - { word: "కూర్చున్నారు", base: "కూర్చోవడం", reading: "kūrcōvaḍam" }
-  - ref: "te-1305"
-  - ref: "te-1319"
-  - ref: "te-1338"
-  - id: "te-5219"
-    target: "శుభాకాంక్షలు"
-    reading: "śubhākāṅkṣalu"
-    ipa: "ʃubʱaːkaːŋkʂalu"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "మీకు శుభాకాంక్షలు!"
-        reading: "mīku śubhākāṅkṣalu!"
-        ipa: "miːku ʃubʱaːkaːŋkʂalu"
-        bases:
-          - { word: "మీకు", base: "మీరు", reading: "mīru" }
-      - target: "అందరూ వధూవరులకు శుభాకాంక్షలు చెప్పారు."
-        reading: "andarū vadhūvarulaku śubhākāṅkṣalu ceppāru."
-        ipa: "and̪aruː ʋad̪ʱuːʋarulaku ʃubʱaːkaːŋkʂalu tʃeppaːru"
-        bases:
-          - { word: "వధూవరులకు", base: "వధూవరులు", reading: "vadhūvarulu" }
-          - { word: "చెప్పారు", base: "చెప్పడం", reading: "ceppaḍam" }
-  - id: "te-5220"
-    target: "అభినందనలు"
-    reading: "abhinandanalu"
-    ipa: "abʱinand̪analu"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "కొత్త జంటకు అభినందనలు!"
-        reading: "kotta jaṇṭaku abhinandanalu!"
-        ipa: "kot̪t̪a dʒaɳʈaku abʱinand̪analu"
-        bases:
-          - { word: "జంటకు", base: "జంట", reading: "jaṇṭa" }
-      - target: "మీ పెళ్ళికి అభినందనలు తెలిపాను."
-        reading: "mī peḷḷiki abhinandanalu telipānu."
-        ipa: "miː peɭɭiki abʱinand̪analu t̪elipaːnu"
-        bases:
-          - { word: "మీ", base: "మీరు", reading: "mīru" }
-          - { word: "పెళ్ళికి", base: "పెళ్ళి", reading: "peḷḷi" }
-          - { word: "తెలిపాను", base: "తెలుపడం", reading: "telupaḍam" }
-  - ref: "te-1318"
-  - id: "te-5222"
-    target: "అల్లుడు"
-    reading: "alluḍu"
-    ipa: "alluɖu"
-    pos: "noun"
-    gender: "mahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "అల్లుడు మా ఇంటికి వచ్చాడు."
-        reading: "alluḍu mā iṇṭiki vaccāḍu."
-        ipa: "alluɖu maː iɳʈiki ʋatʃtʃaːɖu"
-        bases:
-          - { word: "మా", base: "మేము", reading: "mēmu" }
-          - { word: "ఇంటికి", base: "ఇల్లు", reading: "illu" }
-          - { word: "వచ్చాడు", base: "రావడం", reading: "rāvaḍam" }
-      - target: "అత్తగారు అల్లుడికి పాయసం పెట్టారు."
-        reading: "attagāru alluḍiki pāyasam peṭṭāru."
-        ipa: "at̪t̪aɡaːru alluɖiki paːjasam peʈʈaːru"
-        bases:
-          - { word: "అల్లుడికి", base: "అల్లుడు", reading: "alluḍu" }
-          - { word: "పెట్టారు", base: "పెట్టడం", reading: "peṭṭaḍam" }
-    synonyms:
-      - { id: "alluvadu", word: "అల్లువాడు", reading: "alluvāḍu", source: "https://en.wiktionary.org/wiki/అల్లుడు" }
-  - id: "te-5223"
-    target: "కోడలు"
-    reading: "kōḍalu"
-    ipa: "koːɖalu"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "కోడలు పాయసం వడ్డించింది."
-        reading: "kōḍalu pāyasam vaḍḍiñcindi."
-        ipa: "koːɖalu paːjasam ʋaɖɖiɲtʃind̪i"
-        bases:
-          - { word: "వడ్డించింది", base: "వడ్డించడం", reading: "vaḍḍiñcaḍam" }
-      - target: "మా కోడలు చాలా మంచిది."
-        reading: "mā kōḍalu cālā mañcidi."
-        ipa: "maː koːɖalu tʃaːlaː maɲtʃid̪i"
-        bases:
-          - { word: "మా", base: "మేము", reading: "mēmu" }
-  - id: "te-5224"
-    target: "ఆశీర్వాదం"
-    reading: "āśīrvādam"
-    ipa: "aːʃiːrʋaːd̪am"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "పెద్దల ఆశీర్వాదం తీసుకున్నారు."
-        reading: "peddala āśīrvādam tīsukunnāru."
-        ipa: "ped̪d̪ala aːʃiːrʋaːd̪am t̪iːsukunnaːru"
-        bases:
-          - { word: "పెద్దల", base: "పెద్దలు", reading: "peddalu" }
-          - { word: "తీసుకున్నారు", base: "తీసుకోవడం", reading: "tīsukōvaḍam" }
-      - target: "మీ ఆశీర్వాదంతో అన్నీ బాగా జరిగాయి."
-        reading: "mī āśīrvādantō annī bāgā jarigāyi."
-        ipa: "miː aːʃiːrʋaːd̪ant̪oː anniː baːɡaː dʒariɡaːji"
-        bases:
-          - { word: "మీ", base: "మీరు", reading: "mīru" }
-          - { word: "ఆశీర్వాదంతో", base: "ఆశీర్వాదం", reading: "āśīrvādam" }
-          - { word: "జరిగాయి", base: "జరగడం", reading: "jaragaḍam" }
-  - id: "te-5225"
-    target: "ఉంగరం"
-    reading: "uṅgaram"
-    ipa: "uŋɡaram"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "వరుడు వధువుకు ఉంగరం తొడిగాడు."
-        reading: "varuḍu vadhuvuku uṅgaram toḍigāḍu."
-        ipa: "ʋaruɖu ʋad̪ʱuʋuku uŋɡaram t̪oɖiɡaːɖu"
-        bases:
-          - { word: "వధువుకు", base: "వధువు", reading: "vadhuvu" }
-          - { word: "తొడిగాడు", base: "తొడగడం", reading: "toḍagaḍam" }
-      - target: "నా ఉంగరం ఎక్కడ?"
-        reading: "nā uṅgaram ekkaḍa?"
-        ipa: "naː uŋɡaram ekkaɖa"
-        bases:
-          - { word: "నా", base: "నేను", reading: "nēnu" }
-  - id: "te-5226"
-    target: "బంగారం"
-    reading: "baṅgāram"
-    ipa: "baŋɡaːram"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "ఆమెకు బంగారం అంటే ఇష్టం."
-        reading: "āmeku baṅgāram aṇṭē iṣṭam."
-        ipa: "aːmeku baŋɡaːram aɳʈeː iʂʈam"
-        bases:
-          - { word: "ఆమెకు", base: "ఆమె", reading: "āme" }
-      - target: "బంగారు నగలు కొన్నారు."
-        reading: "baṅgāru nagalu konnāru."
-        ipa: "baŋɡaːru naɡalu konnaːru"
-        bases:
-          - { word: "బంగారు", base: "బంగారం", reading: "baṅgāram" }
-          - { word: "నగలు", base: "నగ", reading: "naga" }
-          - { word: "కొన్నారు", base: "కొనడం", reading: "konaḍam" }
-  - id: "te-5227"
-    target: "వియ్యంకుడు"
-    reading: "viyyaṅkuḍu"
-    ipa: "ʋijjaŋkuɖu"
-    pos: "noun"
-    gender: "mahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "వియ్యంకుడు మాకు స్వాగతం చెప్పాడు."
-        reading: "viyyaṅkuḍu māku svāgatam ceppāḍu."
-        ipa: "ʋijjaŋkuɖu maːku sʋaːɡat̪am tʃeppaːɖu"
-        bases:
-          - { word: "మాకు", base: "మేము", reading: "mēmu" }
-          - { word: "చెప్పాడు", base: "చెప్పడం", reading: "ceppaḍam" }
-      - target: "వియ్యంకులు ఇద్దరూ నవ్వుకున్నారు."
-        reading: "viyyaṅkulu iddarū navvukunnāru."
-        ipa: "ʋijjaŋkulu id̪d̪aruː naʋʋukunnaːru"
-        bases:
-          - { word: "వియ్యంకులు", base: "వియ్యంకుడు", reading: "viyyaṅkuḍu" }
-          - { word: "నవ్వుకున్నారు", base: "నవ్వుకోవడం", reading: "navvukōvaḍam" }
-  - ref: "te-1320"
-  - id: "te-5229"
-    target: "మేళం"
-    reading: "mēḷam"
-    ipa: "meːɭam"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "మేళం వాయిద్యాలు మోగాయి."
-        reading: "mēḷam vāyidyālu mōgāyi."
-        ipa: "meːɭam ʋaːjid̪jaːlu moːɡaːji"
-        bases:
-          - { word: "వాయిద్యాలు", base: "వాయిద్యం", reading: "vāyidyam" }
-          - { word: "మోగాయి", base: "మోగడం", reading: "mōgaḍam" }
-      - target: "మేళం ఇంటి ముందు ఆగింది."
-        reading: "mēḷam iṇṭi mundu āgindi."
-        ipa: "meːɭam iɳʈi mund̪u aːɡind̪i"
-        bases:
-          - { word: "ఇంటి", base: "ఇల్లు", reading: "illu" }
-          - { word: "ఆగింది", base: "ఆగడం", reading: "āgaḍam" }
-  - id: "te-5230"
-    target: "అలంకారం"
-    reading: "alaṅkāram"
-    ipa: "alaŋkaːram"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "ఇంటికి అలంకారం బాగుంది."
-        reading: "iṇṭiki alaṅkāram bāgundi."
-        ipa: "iɳʈiki alaŋkaːram baːɡund̪i"
-        bases:
-          - { word: "ఇంటికి", base: "ఇల్లు", reading: "illu" }
-          - { word: "బాగుంది", base: "బాగుండడం", reading: "bāguṇḍaḍam" }
-      - target: "అలంకారానికి చాలా సమయం పట్టింది."
-        reading: "alaṅkārāniki cālā samayam paṭṭindi."
-        ipa: "alaŋkaːraːniki tʃaːlaː samajam paʈʈind̪i"
-        bases:
-          - { word: "అలంకారానికి", base: "అలంకారం", reading: "alaṅkāram" }
-          - { word: "పట్టింది", base: "పట్టడం", reading: "paṭṭaḍam" }
-  - ref: "te-4934"
-  - ref: "te-1331"
-  - ref: "te-1328"
-  - id: "te-5234"
-    target: "ముత్యం"
-    reading: "mutyam"
-    ipa: "mut̪jam"
-    pos: "noun"
-    gender: "amahat"
-    bases: "self"
-    notes:
-      - { id: "n1", kind: "note" }
-    examples:
-      - target: "ఆమె మెడలో ముత్యాల హారం ఉంది."
-        reading: "āme meḍalō mutyāla hāram undi."
-        ipa: "aːme meɖaloː mut̪jaːla haːram und̪i"
-        bases:
-          - { word: "మెడలో", base: "మెడ", reading: "meḍa" }
-          - { word: "ముత్యాల", base: "ముత్యం", reading: "mutyam" }
-          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍam" }
-      - target: "ఈ ముత్యం చాలా పెద్దది."
-        reading: "ī mutyam cālā peddadi."
-        ipa: "iː mut̪jam tʃaːlaː ped̪d̪ad̪i"
-  - ref: "te-0380"
-  - ref: "te-0395"
-  - ref: "te-0394"
-  - ref: "te-0385"
-  - ref: "te-0386"
-  - ref: "te-0387"
-  - ref: "te-0914"
-  - ref: "te-0911"
-  - ref: "te-0692"
-  - ref: "te-0340"
-  - ref: "te-0699"
-  - ref: "te-0669"
-  - ref: "te-4627"
-  - ref: "te-0052"
-  - ref: "te-0396"
+"schema": 1
+"id": "te-weddings"
+"part": "core"
+"kind": "vocab"
+"language":
+  "code": "te"
+  "iso639_3": "tel"
+  "name": "Telugu"
+  "script": "telugu"
+  "tts": "te-IN"
+  "icon": "తె"
+"license": "CC-BY-SA-4.0"
+"authors":
+- "name": "Fluenough contributors"
+"theme": "weddings"
+"tags":
+- "beginner"
+- "unreviewed"
+"cards":
+- id: "te-5200"
+  "target": "పెళ్ళి"
+  "reading": "peḷḷi"
+  "ipa": "peɭɭi"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "పెళ్ళి చాలా బాగా జరిగింది."
+    "reading": "peḷḷi cālā bāgā jarigindi."
+    "ipa": "peɭɭi tʃaːlaː baːɡaː dʒariɡind̪i"
+    "bases":
+    - "word": "జరిగింది"
+      "base": "జరగడం"
+      "reading": "jaragaḍam"
+  - "target": "పెళ్ళికి అందరూ వచ్చారు."
+    "reading": "peḷḷiki andarū vaccāru."
+    "ipa": "peɭɭiki and̪aruː ʋatʃtʃaːru"
+    "bases":
+    - "word": "పెళ్ళికి"
+      "base": "పెళ్ళి"
+      "reading": "peḷḷi"
+    - "word": "వచ్చారు"
+      "base": "రావడం"
+      "reading": "rāvaḍam"
+- id: "te-5201"
+  "target": "వివాహం"
+  "reading": "vivāham"
+  "ipa": "ʋiʋaːham"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "వివాహం రెండు కుటుంబాలను కలుపుతుంది."
+    "reading": "vivāham reṇḍu kuṭumbālanu kaluputundi."
+    "ipa": "ʋiʋaːham reɳɖu kuʈumbaːlanu kaluput̪und̪i"
+    "bases":
+    - "word": "కుటుంబాలను"
+      "base": "కుటుంబం"
+      "reading": "kuṭumbam"
+    - "word": "కలుపుతుంది"
+      "base": "కలపడం"
+      "reading": "kalapaḍam"
+  - "target": "వివాహానికి ముందు మేము పూజ చేస్తాము."
+    "reading": "vivāhāniki mundu mēmu pūja cēstāmu."
+    "ipa": "ʋiʋaːhaːniki mund̪u meːmu puːdʒa tʃeːst̪aːmu"
+    "bases":
+    - "word": "వివాహానికి"
+      "base": "వివాహం"
+      "reading": "vivāham"
+    - "word": "చేస్తాము"
+      "base": "చేయడం"
+      "reading": "cēyaḍam"
+- id: "te-5202"
+  "target": "వధువు"
+  "reading": "vadhuvu"
+  "ipa": "ʋad̪ʱuʋu"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "వధువు ఎరుపు చీర కట్టుకుంది."
+    "reading": "vadhuvu erupu cīra kaṭṭukundi."
+    "ipa": "ʋad̪ʱuʋu erupu tʃiːra kaʈʈukund̪i"
+    "bases":
+    - "word": "కట్టుకుంది"
+      "base": "కట్టుకోవడం"
+      "reading": "kaṭṭukōvaḍam"
+  - "target": "వధువు చాలా అందంగా ఉంది."
+    "reading": "vadhuvu cālā andaṅgā undi."
+    "ipa": "ʋad̪ʱuʋu tʃaːlaː and̪aŋɡaː und̪i"
+    "bases":
+    - "word": "అందంగా"
+      "base": "అందం"
+      "reading": "andam"
+    - "word": "ఉంది"
+      "base": "ఉండడం"
+      "reading": "uṇḍaḍam"
+  "synonyms":
+  - "id": "pendlikuturu"
+    "word": "పెండ్లికూతురు"
+    "reading": "peṇḍlikūturu"
+    "source": "https://en.wiktionary.org/wiki/వధువు"
+- id: "te-5203"
+  "target": "వరుడు"
+  "reading": "varuḍu"
+  "ipa": "ʋaruɖu"
+  "pos": "noun"
+  "gender": "mahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "వరుడు గుర్రం మీద వచ్చాడు."
+    "reading": "varuḍu gurram mīda vaccāḍu."
+    "ipa": "ʋaruɖu ɡurram miːd̪a ʋatʃtʃaːɖu"
+    "bases":
+    - "word": "వచ్చాడు"
+      "base": "రావడం"
+      "reading": "rāvaḍam"
+  - "target": "వరుడి తల్లి ఇక్కడ ఉంది."
+    "reading": "varuḍi talli ikkaḍa undi."
+    "ipa": "ʋaruɖi t̪alli ikkaɖa und̪i"
+    "bases":
+    - "word": "వరుడి"
+      "base": "వరుడు"
+      "reading": "varuḍu"
+    - "word": "ఉంది"
+      "base": "ఉండడం"
+      "reading": "uṇḍaḍam"
+    - "word": "తల్లి"
+      "base": "తల్లి"
+      "reading": "talli"
+  "senses":
+  - "id": "bridegroom"
+    "pos": "noun"
+    "source": "https://en.wiktionary.org/wiki/వరుడు"
+- id: "te-5204"
+  "target": "ముహూర్తం"
+  "reading": "muhūrtam"
+  "ipa": "muhuːrt̪am"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "పెళ్ళి ముహూర్తం ఉదయం ఆరు గంటలకు."
+    "reading": "peḷḷi muhūrtam udayam āru gaṇṭalaku."
+    "ipa": "peɭɭi muhuːrt̪am ud̪ajam aːru ɡaɳʈalaku"
+    "bases":
+    - "word": "గంటలకు"
+      "base": "గంట"
+      "reading": "gaṇṭa"
+  - "target": "పండితుడు ముహూర్తం చెప్పాడు."
+    "reading": "paṇḍituḍu muhūrtam ceppāḍu."
+    "ipa": "paɳɖit̪uɖu muhuːrt̪am tʃeppaːɖu"
+    "bases":
+    - "word": "చెప్పాడు"
+      "base": "చెప్పడం"
+      "reading": "ceppaḍam"
+    - "word": "పండితుడు"
+      "base": "పండితుడు"
+      "reading": "paṇḍituḍu"
+- id: "te-5205"
+  "target": "పెళ్ళిపత్రిక"
+  "reading": "peḷḷipatrika"
+  "ipa": "peɭɭipat̪rika"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "నాకు పెళ్ళిపత్రిక వచ్చింది."
+    "reading": "nāku peḷḷipatrika vaccindi."
+    "ipa": "naːku peɭɭipat̪rika ʋatʃtʃind̪i"
+    "bases":
+    - "word": "నాకు"
+      "base": "నేను"
+      "reading": "nēnu"
+    - "word": "వచ్చింది"
+      "base": "రావడం"
+      "reading": "rāvaḍam"
+  - "target": "పెళ్ళిపత్రికలో తేదీ, సమయం ఉన్నాయి."
+    "reading": "peḷḷipatrikalō tēdī, samayam unnāyi."
+    "ipa": "peɭɭipat̪rikaloː t̪eːd̪iː samajam unnaːji"
+    "bases":
+    - "word": "పెళ్ళిపత్రికలో"
+      "base": "పెళ్ళిపత్రిక"
+      "reading": "peḷḷipatrika"
+    - "word": "ఉన్నాయి"
+      "base": "ఉండడం"
+      "reading": "uṇḍaḍam"
+- "ref": "te-1317"
+- id: "te-5207"
+  "target": "మండపం"
+  "reading": "maṇḍapam"
+  "ipa": "maɳɖapam"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "పెళ్ళి మండపం పూలతో అలంకరించారు."
+    "reading": "peḷḷi maṇḍapam pūlatō alaṅkariñcāru."
+    "ipa": "peɭɭi maɳɖapam puːlat̪oː alaŋkariɲtʃaːru"
+    "bases":
+    - "word": "పూలతో"
+      "base": "పువ్వు"
+      "reading": "puvvu"
+    - "word": "అలంకరించారు"
+      "base": "అలంకరించడం"
+      "reading": "alaṅkariñcaḍam"
+  - "target": "మండపంలో చాలా మంది కూర్చున్నారు."
+    "reading": "maṇḍapamlō cālā mandi kūrcunnāru."
+    "ipa": "maɳɖapamloː tʃaːlaː mand̪i kuːrtʃunnaːru"
+    "bases":
+    - "word": "మండపంలో"
+      "base": "మండపం"
+      "reading": "maṇḍapam"
+    - "word": "కూర్చున్నారు"
+      "base": "కూర్చోవడం"
+      "reading": "kūrcōvaḍam"
+    - "word": "మంది"
+      "base": "మంది"
+      "reading": "mandi"
+- id: "te-5208"
+  "target": "మంగళసూత్రం"
+  "reading": "maṅgaḷasūtram"
+  "ipa": "maŋɡaɭasuːt̪ram"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "వధువు మెడలో మంగళసూత్రం ఉంది."
+    "reading": "vadhuvu meḍalō maṅgaḷasūtram undi."
+    "ipa": "ʋad̪ʱuʋu meɖaloː maŋɡaɭasuːt̪ram und̪i"
+    "bases":
+    - "word": "మెడలో"
+      "base": "మెడ"
+      "reading": "meḍa"
+    - "word": "ఉంది"
+      "base": "ఉండడం"
+      "reading": "uṇḍaḍam"
+  - "target": "వరుడు మంగళసూత్రం కట్టాడు."
+    "reading": "varuḍu maṅgaḷasūtram kaṭṭāḍu."
+    "ipa": "ʋaruɖu maŋɡaɭasuːt̪ram kaʈʈaːɖu"
+    "bases":
+    - "word": "కట్టాడు"
+      "base": "కట్టడం"
+      "reading": "kaṭṭaḍam"
+- id: "te-5209"
+  "target": "అక్షింతలు"
+  "reading": "akṣintalu"
+  "ipa": "akʂint̪alu"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "పెద్దలు అక్షింతలు వేసి ఆశీర్వదించారు."
+    "reading": "peddalu akṣintalu vēsi āśīrvadiñcāru."
+    "ipa": "ped̪d̪alu akʂint̪alu ʋeːsi aːʃiːrʋad̪iɲtʃaːru"
+    "bases":
+    - "word": "వేసి"
+      "base": "వేయడం"
+      "reading": "vēyaḍam"
+    - "word": "ఆశీర్వదించారు"
+      "base": "ఆశీర్వదించడం"
+      "reading": "āśīrvadiñcaḍam"
+    - "word": "పెద్దలు"
+      "ref": "te-0502"
+  - "target": "అందరూ వధూవరుల మీద అక్షింతలు చల్లారు."
+    "reading": "andarū vadhūvarula mīda akṣintalu callāru."
+    "ipa": "and̪aruː ʋad̪ʱuːʋarula miːd̪a akʂint̪alu tʃallaːru"
+    "bases":
+    - "word": "వధూవరుల"
+      "base": "వధూవరులు"
+      "reading": "vadhūvarulu"
+    - "word": "చల్లారు"
+      "base": "చల్లడం"
+      "reading": "callaḍam"
+- id: "te-5210"
+  "target": "తలంబ్రాలు"
+  "reading": "talambrālu"
+  "ipa": "t̪alambraːlu"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "వధూవరులు తలంబ్రాలు పోసుకున్నారు."
+    "reading": "vadhūvarulu talambrālu pōsukunnāru."
+    "ipa": "ʋad̪ʱuːʋarulu t̪alambraːlu poːsukunnaːru"
+    "bases":
+    - "word": "పోసుకున్నారు"
+      "base": "పోసుకోవడం"
+      "reading": "pōsukōvaḍam"
+    - "word": "వధూవరులు"
+      "base": "వధూవరులు"
+      "reading": "vadhūvarulu"
+  - "target": "తలంబ్రాలు పసుపు రంగులో ఉన్నాయి."
+    "reading": "talambrālu pasupu raṅgulō unnāyi."
+    "ipa": "t̪alambraːlu pasupu raŋɡuloː unnaːji"
+    "bases":
+    - "word": "రంగులో"
+      "base": "రంగు"
+      "reading": "raṅgu"
+    - "word": "ఉన్నాయి"
+      "base": "ఉండడం"
+      "reading": "uṇḍaḍam"
+- id: "te-5211"
+  "target": "పూలదండ"
+  "reading": "pūladaṇḍa"
+  "ipa": "puːlad̪aɳɖa"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "వరుడు వధువుకు పూలదండ వేశాడు."
+    "reading": "varuḍu vadhuvuku pūladaṇḍa vēśāḍu."
+    "ipa": "ʋaruɖu ʋad̪ʱuʋuku puːlad̪aɳɖa ʋeːʃaːɖu"
+    "bases":
+    - "word": "వధువుకు"
+      "base": "వధువు"
+      "reading": "vadhuvu"
+    - "word": "వేశాడు"
+      "base": "వేయడం"
+      "reading": "vēyaḍam"
+  - "target": "పూలదండ చాలా సువాసనగా ఉంది."
+    "reading": "pūladaṇḍa cālā suvāsanagā undi."
+    "ipa": "puːlad̪aɳɖa tʃaːlaː suʋaːsanaɡaː und̪i"
+    "bases":
+    - "word": "సువాసనగా"
+      "base": "సువాసన"
+      "reading": "suvāsana"
+    - "word": "ఉంది"
+      "base": "ఉండడం"
+      "reading": "uṇḍaḍam"
+- id: "te-5212"
+  "target": "ఊరేగింపు"
+  "reading": "ūrēgimpu"
+  "ipa": "uːreːɡimpu"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "వరుడి ఊరేగింపు ఊరంతా తిరిగింది."
+    "reading": "varuḍi ūrēgimpu ūrantā tirigindi."
+    "ipa": "ʋaruɖi uːreːɡimpu uːrant̪aː t̪iriɡind̪i"
+    "bases":
+    - "word": "వరుడి"
+      "base": "వరుడు"
+      "reading": "varuḍu"
+    - "word": "ఊరంతా"
+      "base": "ఊరు"
+      "reading": "ūru"
+    - "word": "తిరిగింది"
+      "base": "తిరగడం"
+      "reading": "tiragaḍam"
+  - "target": "ఊరేగింపులో అందరూ పాటలు పాడారు."
+    "reading": "ūrēgimpulō andarū pāṭalu pāḍāru."
+    "ipa": "uːreːɡimpuloː and̪aruː paːʈalu paːɖaːru"
+    "bases":
+    - "word": "ఊరేగింపులో"
+      "base": "ఊరేగింపు"
+      "reading": "ūrēgimpu"
+    - "word": "పాటలు"
+      "base": "పాట"
+      "reading": "pāṭa"
+    - "word": "పాడారు"
+      "base": "పాడడం"
+      "reading": "pāḍaḍam"
+- id: "te-5213"
+  "target": "పురోహితుడు"
+  "reading": "purōhituḍu"
+  "ipa": "puroːhit̪uɖu"
+  "pos": "noun"
+  "gender": "mahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "పురోహితుడు మంత్రాలు చదివారు."
+    "reading": "purōhituḍu mantrālu cadivāru."
+    "ipa": "puroːhit̪uɖu mant̪raːlu tʃad̪iʋaːru"
+    "bases":
+    - "word": "మంత్రాలు"
+      "base": "మంత్రం"
+      "reading": "mantram"
+    - "word": "చదివారు"
+      "base": "చదవడం"
+      "reading": "cadavaḍam"
+  - "target": "పురోహితుడు ఇంకా రాలేదు."
+    "reading": "purōhituḍu iṅkā rālēdu."
+    "ipa": "puroːhit̪uɖu iŋkaː raːleːd̪u"
+    "bases":
+    - "word": "రాలేదు"
+      "base": "రావడం"
+      "reading": "rāvaḍam"
+- id: "te-5214"
+  "target": "మంత్రం"
+  "reading": "mantram"
+  "ipa": "mant̪ram"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "మంత్రం వినగానే అందరూ లేచారు."
+    "reading": "mantram vinagānē andarū lēcāru."
+    "ipa": "mant̪ram ʋinaɡaːneː and̪aruː leːtʃaːru"
+    "bases":
+    - "word": "వినగానే"
+      "base": "వినడం"
+      "reading": "vinaḍam"
+    - "word": "లేచారు"
+      "base": "లేవడం"
+      "reading": "lēvaḍam"
+  - "target": "అమ్మ రోజూ ఒక మంత్రం చదువుతుంది."
+    "reading": "amma rōjū oka mantram caduvutundi."
+    "ipa": "amma roːdʒuː oka mant̪ram tʃad̪uʋut̪und̪i"
+    "bases":
+    - "word": "చదువుతుంది"
+      "base": "చదవడం"
+      "reading": "cadavaḍam"
+- id: "te-5215"
+  "target": "హోమం"
+  "reading": "hōmam"
+  "ipa": "hoːmam"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "పెళ్ళిలో హోమం చేశారు."
+    "reading": "peḷḷilō hōmam cēśāru."
+    "ipa": "peɭɭiloː hoːmam tʃeːʃaːru"
+    "bases":
+    - "word": "పెళ్ళిలో"
+      "base": "పెళ్ళి"
+      "reading": "peḷḷi"
+    - "word": "చేశారు"
+      "base": "చేయడం"
+      "reading": "cēyaḍam"
+  - "target": "హోమం ముందు అందరూ కూర్చున్నారు."
+    "reading": "hōmam mundu andarū kūrcunnāru."
+    "ipa": "hoːmam mund̪u and̪aruː kuːrtʃunnaːru"
+    "bases":
+    - "word": "కూర్చున్నారు"
+      "base": "కూర్చోవడం"
+      "reading": "kūrcōvaḍam"
+- "ref": "te-1305"
+- "ref": "te-1319"
+- "ref": "te-1338"
+- id: "te-5219"
+  "target": "శుభాకాంక్షలు"
+  "reading": "śubhākāṅkṣalu"
+  "ipa": "ʃubʱaːkaːŋkʂalu"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "మీకు శుభాకాంక్షలు!"
+    "reading": "mīku śubhākāṅkṣalu!"
+    "ipa": "miːku ʃubʱaːkaːŋkʂalu"
+    "bases":
+    - "word": "మీకు"
+      "base": "మీరు"
+      "reading": "mīru"
+  - "target": "అందరూ వధూవరులకు శుభాకాంక్షలు చెప్పారు."
+    "reading": "andarū vadhūvarulaku śubhākāṅkṣalu ceppāru."
+    "ipa": "and̪aruː ʋad̪ʱuːʋarulaku ʃubʱaːkaːŋkʂalu tʃeppaːru"
+    "bases":
+    - "word": "వధూవరులకు"
+      "base": "వధూవరులు"
+      "reading": "vadhūvarulu"
+    - "word": "చెప్పారు"
+      "base": "చెప్పడం"
+      "reading": "ceppaḍam"
+- id: "te-5220"
+  "target": "అభినందనలు"
+  "reading": "abhinandanalu"
+  "ipa": "abʱinand̪analu"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "కొత్త జంటకు అభినందనలు!"
+    "reading": "kotta jaṇṭaku abhinandanalu!"
+    "ipa": "kot̪t̪a dʒaɳʈaku abʱinand̪analu"
+    "bases":
+    - "word": "జంటకు"
+      "base": "జంట"
+      "reading": "jaṇṭa"
+  - "target": "మీ పెళ్ళికి అభినందనలు తెలిపాను."
+    "reading": "mī peḷḷiki abhinandanalu telipānu."
+    "ipa": "miː peɭɭiki abʱinand̪analu t̪elipaːnu"
+    "bases":
+    - "word": "మీ"
+      "base": "మీరు"
+      "reading": "mīru"
+    - "word": "పెళ్ళికి"
+      "base": "పెళ్ళి"
+      "reading": "peḷḷi"
+    - "word": "తెలిపాను"
+      "base": "తెలుపడం"
+      "reading": "telupaḍam"
+- "ref": "te-1318"
+- id: "te-5222"
+  "target": "అల్లుడు"
+  "reading": "alluḍu"
+  "ipa": "alluɖu"
+  "pos": "noun"
+  "gender": "mahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "అల్లుడు మా ఇంటికి వచ్చాడు."
+    "reading": "alluḍu mā iṇṭiki vaccāḍu."
+    "ipa": "alluɖu maː iɳʈiki ʋatʃtʃaːɖu"
+    "bases":
+    - "word": "మా"
+      "base": "మేము"
+      "reading": "mēmu"
+    - "word": "ఇంటికి"
+      "base": "ఇల్లు"
+      "reading": "illu"
+    - "word": "వచ్చాడు"
+      "base": "రావడం"
+      "reading": "rāvaḍam"
+  - "target": "అత్తగారు అల్లుడికి పాయసం పెట్టారు."
+    "reading": "attagāru alluḍiki pāyasam peṭṭāru."
+    "ipa": "at̪t̪aɡaːru alluɖiki paːjasam peʈʈaːru"
+    "bases":
+    - "word": "అల్లుడికి"
+      "base": "అల్లుడు"
+      "reading": "alluḍu"
+    - "word": "పెట్టారు"
+      "base": "పెట్టడం"
+      "reading": "peṭṭaḍam"
+  "synonyms":
+  - "id": "alluvadu"
+    "word": "అల్లువాడు"
+    "reading": "alluvāḍu"
+    "source": "https://en.wiktionary.org/wiki/అల్లుడు"
+- id: "te-5223"
+  "target": "కోడలు"
+  "reading": "kōḍalu"
+  "ipa": "koːɖalu"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "కోడలు పాయసం వడ్డించింది."
+    "reading": "kōḍalu pāyasam vaḍḍiñcindi."
+    "ipa": "koːɖalu paːjasam ʋaɖɖiɲtʃind̪i"
+    "bases":
+    - "word": "వడ్డించింది"
+      "base": "వడ్డించడం"
+      "reading": "vaḍḍiñcaḍam"
+  - "target": "మా కోడలు చాలా మంచిది."
+    "reading": "mā kōḍalu cālā mañcidi."
+    "ipa": "maː koːɖalu tʃaːlaː maɲtʃid̪i"
+    "bases":
+    - "word": "మా"
+      "base": "మేము"
+      "reading": "mēmu"
+    - "word": "మంచిది"
+      "ref": "te-0500"
+- id: "te-5224"
+  "target": "ఆశీర్వాదం"
+  "reading": "āśīrvādam"
+  "ipa": "aːʃiːrʋaːd̪am"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "పెద్దల ఆశీర్వాదం తీసుకున్నారు."
+    "reading": "peddala āśīrvādam tīsukunnāru."
+    "ipa": "ped̪d̪ala aːʃiːrʋaːd̪am t̪iːsukunnaːru"
+    "bases":
+    - "word": "పెద్దల"
+      "base": "పెద్దలు"
+      "reading": "peddalu"
+    - "word": "తీసుకున్నారు"
+      "base": "తీసుకోవడం"
+      "reading": "tīsukōvaḍam"
+  - "target": "మీ ఆశీర్వాదంతో అన్నీ బాగా జరిగాయి."
+    "reading": "mī āśīrvādantō annī bāgā jarigāyi."
+    "ipa": "miː aːʃiːrʋaːd̪ant̪oː anniː baːɡaː dʒariɡaːji"
+    "bases":
+    - "word": "మీ"
+      "base": "మీరు"
+      "reading": "mīru"
+    - "word": "ఆశీర్వాదంతో"
+      "base": "ఆశీర్వాదం"
+      "reading": "āśīrvādam"
+    - "word": "జరిగాయి"
+      "base": "జరగడం"
+      "reading": "jaragaḍam"
+    - "word": "అన్నీ"
+      "ref": "te-1027"
+- id: "te-5225"
+  "target": "ఉంగరం"
+  "reading": "uṅgaram"
+  "ipa": "uŋɡaram"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "వరుడు వధువుకు ఉంగరం తొడిగాడు."
+    "reading": "varuḍu vadhuvuku uṅgaram toḍigāḍu."
+    "ipa": "ʋaruɖu ʋad̪ʱuʋuku uŋɡaram t̪oɖiɡaːɖu"
+    "bases":
+    - "word": "వధువుకు"
+      "base": "వధువు"
+      "reading": "vadhuvu"
+    - "word": "తొడిగాడు"
+      "base": "తొడగడం"
+      "reading": "toḍagaḍam"
+  - "target": "నా ఉంగరం ఎక్కడ?"
+    "reading": "nā uṅgaram ekkaḍa?"
+    "ipa": "naː uŋɡaram ekkaɖa"
+    "bases":
+    - "word": "నా"
+      "base": "నేను"
+      "reading": "nēnu"
+- id: "te-5226"
+  "target": "బంగారం"
+  "reading": "baṅgāram"
+  "ipa": "baŋɡaːram"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "ఆమెకు బంగారం అంటే ఇష్టం."
+    "reading": "āmeku baṅgāram aṇṭē iṣṭam."
+    "ipa": "aːmeku baŋɡaːram aɳʈeː iʂʈam"
+    "bases":
+    - "word": "ఆమెకు"
+      "base": "ఆమె"
+      "reading": "āme"
+    - "word": "అంటే"
+      "base": "అనడం"
+      "reading": "anaḍaṁ"
+  - "target": "బంగారు నగలు కొన్నారు."
+    "reading": "baṅgāru nagalu konnāru."
+    "ipa": "baŋɡaːru naɡalu konnaːru"
+    "bases":
+    - "word": "బంగారు"
+      "base": "బంగారం"
+      "reading": "baṅgāram"
+    - "word": "నగలు"
+      "base": "నగ"
+      "reading": "naga"
+    - "word": "కొన్నారు"
+      "base": "కొనడం"
+      "reading": "konaḍam"
+- id: "te-5227"
+  "target": "వియ్యంకుడు"
+  "reading": "viyyaṅkuḍu"
+  "ipa": "ʋijjaŋkuɖu"
+  "pos": "noun"
+  "gender": "mahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "వియ్యంకుడు మాకు స్వాగతం చెప్పాడు."
+    "reading": "viyyaṅkuḍu māku svāgatam ceppāḍu."
+    "ipa": "ʋijjaŋkuɖu maːku sʋaːɡat̪am tʃeppaːɖu"
+    "bases":
+    - "word": "మాకు"
+      "base": "మేము"
+      "reading": "mēmu"
+    - "word": "చెప్పాడు"
+      "base": "చెప్పడం"
+      "reading": "ceppaḍam"
+    - "word": "స్వాగతం"
+      "base": "స్వాగతం"
+      "reading": "svāgataṁ"
+  - "target": "వియ్యంకులు ఇద్దరూ నవ్వుకున్నారు."
+    "reading": "viyyaṅkulu iddarū navvukunnāru."
+    "ipa": "ʋijjaŋkulu id̪d̪aruː naʋʋukunnaːru"
+    "bases":
+    - "word": "వియ్యంకులు"
+      "base": "వియ్యంకుడు"
+      "reading": "viyyaṅkuḍu"
+    - "word": "నవ్వుకున్నారు"
+      "base": "నవ్వుకోవడం"
+      "reading": "navvukōvaḍam"
+    - "word": "ఇద్దరూ"
+      "base": "ఇద్దరు"
+      "reading": "iddaru"
+- "ref": "te-1320"
+- id: "te-5229"
+  "target": "మేళం"
+  "reading": "mēḷam"
+  "ipa": "meːɭam"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "మేళం వాయిద్యాలు మోగాయి."
+    "reading": "mēḷam vāyidyālu mōgāyi."
+    "ipa": "meːɭam ʋaːjid̪jaːlu moːɡaːji"
+    "bases":
+    - "word": "వాయిద్యాలు"
+      "base": "వాయిద్యం"
+      "reading": "vāyidyam"
+    - "word": "మోగాయి"
+      "base": "మోగడం"
+      "reading": "mōgaḍam"
+  - "target": "మేళం ఇంటి ముందు ఆగింది."
+    "reading": "mēḷam iṇṭi mundu āgindi."
+    "ipa": "meːɭam iɳʈi mund̪u aːɡind̪i"
+    "bases":
+    - "word": "ఇంటి"
+      "base": "ఇల్లు"
+      "reading": "illu"
+    - "word": "ఆగింది"
+      "base": "ఆగడం"
+      "reading": "āgaḍam"
+- id: "te-5230"
+  "target": "అలంకారం"
+  "reading": "alaṅkāram"
+  "ipa": "alaŋkaːram"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "ఇంటికి అలంకారం బాగుంది."
+    "reading": "iṇṭiki alaṅkāram bāgundi."
+    "ipa": "iɳʈiki alaŋkaːram baːɡund̪i"
+    "bases":
+    - "word": "ఇంటికి"
+      "base": "ఇల్లు"
+      "reading": "illu"
+    - "word": "బాగుంది"
+      "base": "బాగుండడం"
+      "reading": "bāguṇḍaḍam"
+  - "target": "అలంకారానికి చాలా సమయం పట్టింది."
+    "reading": "alaṅkārāniki cālā samayam paṭṭindi."
+    "ipa": "alaŋkaːraːniki tʃaːlaː samajam paʈʈind̪i"
+    "bases":
+    - "word": "అలంకారానికి"
+      "base": "అలంకారం"
+      "reading": "alaṅkāram"
+    - "word": "పట్టింది"
+      "base": "పట్టడం"
+      "reading": "paṭṭaḍam"
+- "ref": "te-4934"
+- "ref": "te-1331"
+- "ref": "te-1328"
+- id: "te-5234"
+  "target": "ముత్యం"
+  "reading": "mutyam"
+  "ipa": "mut̪jam"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "examples":
+  - "target": "ఆమె మెడలో ముత్యాల హారం ఉంది."
+    "reading": "āme meḍalō mutyāla hāram undi."
+    "ipa": "aːme meɖaloː mut̪jaːla haːram und̪i"
+    "bases":
+    - "word": "మెడలో"
+      "base": "మెడ"
+      "reading": "meḍa"
+    - "word": "ముత్యాల"
+      "base": "ముత్యం"
+      "reading": "mutyam"
+    - "word": "ఉంది"
+      "base": "ఉండడం"
+      "reading": "uṇḍaḍam"
+    - "word": "హారం"
+      "base": "హారం"
+      "reading": "hāraṁ"
+  - "target": "ఈ ముత్యం చాలా పెద్దది."
+    "reading": "ī mutyam cālā peddadi."
+    "ipa": "iː mut̪jam tʃaːlaː ped̪d̪ad̪i"
+    "bases":
+    - "word": "పెద్దది"
+      "ref": "te-0502"
+- "ref": "te-0380"
+- "ref": "te-0395"
+- "ref": "te-0394"
+- "ref": "te-0385"
+- "ref": "te-0386"
+- "ref": "te-0387"
+- "ref": "te-0914"
+- "ref": "te-0911"
+- "ref": "te-0692"
+- "ref": "te-0340"
+- "ref": "te-0699"
+- "ref": "te-0669"
+- "ref": "te-4627"
+- "ref": "te-0052"
+- "ref": "te-0396"

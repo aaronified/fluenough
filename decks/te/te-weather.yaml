@@ -1,2417 +1,1450 @@
-{
-  "schema": 1,
-  "id": "te-weather",
-  "part": "core",
-  "kind": "vocab",
-  "language": {
-    "code": "te",
-    "iso639_3": "tel",
-    "name": "Telugu",
-    "script": "telugu",
-    "tts": "te-IN",
-    "icon": "తె"
-  },
-  "license": "CC-BY-SA-4.0",
-  "authors": [
-    {
-      "name": "Fluenough contributors"
-    }
-  ],
-  "theme": "weather",
-  "tags": [
-    "beginner",
-    "unreviewed"
-  ],
-  "cards": [
-    {
-      "id": "te-1113",
-      "target": "వాతావరణం",
-      "reading": "vātāvaraṇaṁ",
-      "ipa": "ʋaːt̪aːʋaraɳam",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "ఈ రోజు వాతావరణం బాగుంది.",
-          "reading": "ī rōju vātāvaraṇaṁ bāgundi.",
-          "ipa": "iː roːdʒu ʋaːt̪aːʋaraɳam baːɡund̪i",
-          "bases": [
-            {
-              "word": "బాగుంది",
-              "base": "బాగు",
-              "reading": "bāgu"
-            },
-            {
-              "word": "ఈ",
-              "base": "ఈ",
-              "reading": "ī"
-            },
-            {
-              "word": "రోజు",
-              "base": "రోజు",
-              "reading": "rōju"
-            }
-          ]
-        },
-        {
-          "target": "రేపటి వాతావరణం ఎలా ఉంటుంది?",
-          "reading": "rēpaṭi vātāvaraṇaṁ elā uṇṭundi?",
-          "ipa": "reːpaʈi ʋaːt̪aːʋaraɳam elaː uɳʈund̪i",
-          "bases": [
-            {
-              "word": "ఉంటుంది",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            },
-            {
-              "word": "రేపటి",
-              "base": "రేపు",
-              "reading": "rēpu"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1114",
-      "target": "ఆకాశం",
-      "reading": "ākāśaṁ",
-      "ipa": "aːkaːʃam",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "ఆకాశంలో మేఘాలు ఉన్నాయి.",
-          "reading": "ākāśaṁlō mēghālu unnāyi.",
-          "ipa": "aːkaːʃamloː meːɡʱaːlu unnaːji",
-          "bases": [
-            {
-              "word": "ఉన్నాయి",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            },
-            {
-              "word": "ఆకాశంలో",
-              "base": "ఆకాశం",
-              "reading": "ākāśaṁ"
-            },
-            {
-              "word": "మేఘాలు",
-              "base": "మేఘం",
-              "reading": "mēghaṁ"
-            }
-          ]
-        },
-        {
-          "target": "ఈ రోజు ఆకాశం నీలంగా ఉంది.",
-          "reading": "ī rōju ākāśaṁ nīlaṁgā uṁdi.",
-          "ipa": "iː roːdʒu aːkaːʃam niːlaŋɡaː und̪i",
-          "bases": [
-            {
-              "word": "నీలంగా",
-              "base": "నీలం",
-              "reading": "nīlaṁ"
-            },
-            {
-              "word": "ఉంది",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            },
-            {
-              "word": "ఈ",
-              "base": "ఈ",
-              "reading": "ī"
-            },
-            {
-              "word": "రోజు",
-              "base": "రోజు",
-              "reading": "rōju"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1115",
-      "target": "మేఘం",
-      "reading": "mēghaṁ",
-      "ipa": "meːɡʱam",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "ఆకాశంలో ఒక మేఘం ఉంది.",
-          "reading": "ākāśaṁlō oka mēghaṁ uṁdi.",
-          "ipa": "aːkaːʃamloː oka meːɡʱam und̪i",
-          "bases": [
-            {
-              "word": "ఉంది",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            },
-            {
-              "word": "ఆకాశంలో",
-              "base": "ఆకాశం",
-              "reading": "ākāśaṁ"
-            },
-            {
-              "word": "ఒక",
-              "base": "ఒక",
-              "reading": "oka"
-            }
-          ]
-        },
-        {
-          "target": "మేఘం కదులుతోంది.",
-          "reading": "mēghaṁ kadulutōṁdi.",
-          "ipa": "meːɡʱam kad̪ulut̪oːnd̪i",
-          "bases": [
-            {
-              "word": "కదులుతోంది",
-              "base": "కదులు",
-              "reading": "kadulu"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1116",
-      "target": "వర్షం",
-      "reading": "varṣaṁ",
-      "ipa": "ʋarʂam",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "ఈ రోజు వర్షం పడుతోంది.",
-          "reading": "ī rōju varṣaṁ paḍutōṁdi.",
-          "ipa": "iː roːdʒu ʋarʂam paɖut̪oːnd̪i",
-          "bases": [
-            {
-              "word": "పడుతోంది",
-              "base": "పడు",
-              "reading": "paḍu"
-            },
-            {
-              "word": "ఈ",
-              "base": "ఈ",
-              "reading": "ī"
-            },
-            {
-              "word": "రోజు",
-              "base": "రోజు",
-              "reading": "rōju"
-            }
-          ]
-        },
-        {
-          "target": "వర్షం వల్ల రోడ్డు తడిగా ఉంది.",
-          "reading": "varṣaṁ valla roḍḍu taḍigā uṁdi.",
-          "ipa": "ʋarʂam ʋalla roɖɖu taɖiɡaː und̪i",
-          "bases": [
-            {
-              "word": "తడిగా",
-              "base": "తడి",
-              "reading": "taḍi"
-            },
-            {
-              "word": "ఉంది",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            },
-            {
-              "word": "వల్ల",
-              "base": "వల్ల",
-              "reading": "valla"
-            },
-            {
-              "word": "రోడ్డు",
-              "base": "రోడ్డు",
-              "reading": "roḍḍu"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1117",
-      "target": "ఎండ",
-      "reading": "eṇḍa",
-      "ipa": "eɳɖa",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "ఈ రోజు ఎండ చాలా ఎక్కువగా ఉంది.",
-          "reading": "ī rōju eṇḍa cālā ekkuvagā uṁdi.",
-          "ipa": "iː roːdʒu eɳɖa tʃaːlaː ekkuʋaɡaː und̪i",
-          "bases": [
-            {
-              "word": "ఎక్కువగా",
-              "base": "ఎక్కువ",
-              "reading": "ekkuva"
-            },
-            {
-              "word": "ఉంది",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            },
-            {
-              "word": "ఈ",
-              "base": "ఈ",
-              "reading": "ī"
-            },
-            {
-              "word": "రోజు",
-              "base": "రోజు",
-              "reading": "rōju"
-            },
-            {
-              "word": "చాలా",
-              "base": "చాలా",
-              "reading": "cālā"
-            }
-          ]
-        },
-        {
-          "target": "ఎండలో నడవకు.",
-          "reading": "eṇḍalō naḍavaku.",
-          "ipa": "eɳɖaloː naɖaʋaku",
-          "bases": [
-            {
-              "word": "నడవకు",
-              "base": "నడు",
-              "reading": "naḍu"
-            },
-            {
-              "word": "ఎండలో",
-              "base": "ఎండ",
-              "reading": "eṇḍa"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1118",
-      "target": "గాలి",
-      "reading": "gāli",
-      "ipa": "ɡaːli",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "గాలి బలంగా వీస్తోంది.",
-          "reading": "gāli balaṁgā vīstōṁdi.",
-          "ipa": "ɡaːli balaŋɡaː ʋiːst̪oːnd̪i",
-          "bases": [
-            {
-              "word": "బలంగా",
-              "base": "బలం",
-              "reading": "balaṁ"
-            },
-            {
-              "word": "వీస్తోంది",
-              "base": "వీచు",
-              "reading": "vīcu"
-            }
-          ]
-        },
-        {
-          "target": "కిటికీ నుంచి చల్లని గాలి వస్తోంది.",
-          "reading": "kiṭikī nuṁci callani gāli vastōṁdi.",
-          "ipa": "kiʈiki nunt͡ʃi t͡ʃəlːəni ɡaːli ʋəst̪oːnd̪i",
-          "bases": [
-            {
-              "word": "వస్తోంది",
-              "base": "వచ్చు",
-              "reading": "vaccu"
-            },
-            {
-              "word": "కిటికీ",
-              "base": "కిటికీ",
-              "reading": "kiṭikī"
-            },
-            {
-              "word": "నుంచి",
-              "base": "నుంచి",
-              "reading": "nuṁci"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "ref": "te-0974"
-    },
-    {
-      "ref": "te-0505"
-    },
-    {
-      "id": "te-1121",
-      "target": "మంచు",
-      "reading": "mañcu",
-      "ipa": "mant͡ʃu",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "ఉదయం గడ్డి మీద మంచు ఉంది.",
-          "reading": "udayaṁ gaḍḍi mīda mañcu uṁdi.",
-          "ipa": "ud̪əjəm ɡəɖɖi miːd̪ə mant͡ʃu und̪i",
-          "bases": [
-            {
-              "word": "ఉంది",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            },
-            {
-              "word": "ఉదయం",
-              "base": "ఉదయం",
-              "reading": "udayaṁ"
-            },
-            {
-              "word": "గడ్డి",
-              "base": "గడ్డి",
-              "reading": "gaḍḍi"
-            },
-            {
-              "word": "మీద",
-              "base": "మీద",
-              "reading": "mīda"
-            }
-          ]
-        },
-        {
-          "target": "చలికాలంలో మంచు పడుతుంది.",
-          "reading": "calikālaṁlō mañcu paḍutuṁdi.",
-          "ipa": "t͡ʃəlikaːləŋloː mant͡ʃu paɖut̪un̪d̪i",
-          "bases": [
-            {
-              "word": "చలికాలంలో",
-              "base": "చలికాలం",
-              "reading": "calikālaṁ"
-            },
-            {
-              "word": "పడుతుంది",
-              "base": "పడు",
-              "reading": "paḍu"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1122",
-      "target": "తుఫాను",
-      "reading": "tuphānu",
-      "ipa": "t̪ufaːnu",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "తీరానికి ఒక తుఫాను వస్తోంది.",
-          "reading": "tīrāniki oka tuphānu vastōṁdi.",
-          "ipa": "t̪iːraːniki oka t̪ufaːnu ʋəst̪oːnd̪i",
-          "bases": [
-            {
-              "word": "తీరానికి",
-              "base": "తీరం",
-              "reading": "tīraṁ"
-            },
-            {
-              "word": "వస్తోంది",
-              "base": "వచ్చు",
-              "reading": "vaccu"
-            },
-            {
-              "word": "ఒక",
-              "base": "ఒక",
-              "reading": "oka"
-            }
-          ]
-        },
-        {
-          "target": "తుఫాను వల్ల బస్సులు ఆగిపోయాయి.",
-          "reading": "tuphānu valla bassulu āgipōyāyi.",
-          "ipa": "t̪ufaːnu ʋəlla bəssulu aːɡipoːjaːji",
-          "bases": [
-            {
-              "word": "బస్సులు",
-              "base": "బస్సు",
-              "reading": "bassu"
-            },
-            {
-              "word": "ఆగిపోయాయి",
-              "base": "ఆగిపోవు",
-              "reading": "āgipōvu"
-            },
-            {
-              "word": "వల్ల",
-              "base": "వల్ల",
-              "reading": "valla"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1123",
-      "target": "మెరుపు",
-      "reading": "merupu",
-      "ipa": "meɾupu",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "ఆకాశంలో మెరుపు మెరిసింది.",
-          "reading": "ākāśaṁlō merupu merisiṁdi.",
-          "ipa": "aːkaːʃamloː meɾupu meɾisind̪i",
-          "bases": [
-            {
-              "word": "మెరిసింది",
-              "base": "మెరియు",
-              "reading": "meriyu"
-            },
-            {
-              "word": "ఆకాశంలో",
-              "base": "ఆకాశం",
-              "reading": "ākāśaṁ"
-            }
-          ]
-        },
-        {
-          "target": "మెరుపు తర్వాత ఉరుము వినిపించింది.",
-          "reading": "merupu tarvāta urumu vinipiṁcindi.",
-          "ipa": "meɾupu t̪ərʋaːt̪ə urumu ʋinipint͡ʃind̪i",
-          "bases": [
-            {
-              "word": "వినిపించింది",
-              "base": "వినిపించు",
-              "reading": "vinipiṁcu"
-            },
-            {
-              "word": "తర్వాత",
-              "base": "తర్వాత",
-              "reading": "tarvāta"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1124",
-      "target": "ఉరుము",
-      "reading": "urumu",
-      "ipa": "uɾumu",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "దూరంగా ఉరుము వినిపిస్తోంది.",
-          "reading": "dūraṁgā urumu vinipistōṁdi.",
-          "ipa": "d̪uːraŋɡaː urumu ʋinipist̪oːnd̪i",
-          "bases": [
-            {
-              "word": "దూరంగా",
-              "base": "దూరం",
-              "reading": "dūraṁ"
-            },
-            {
-              "word": "వినిపిస్తోంది",
-              "base": "వినిపించు",
-              "reading": "vinipiṁcu"
-            }
-          ]
-        },
-        {
-          "target": "ఉరుములతో కూడిన వర్షం.",
-          "reading": "urumulatō kūḍina varṣaṁ.",
-          "ipa": "uɾumulat̪oː kuːɖinə ʋarʂam",
-          "bases": [
-            {
-              "word": "ఉరుములతో",
-              "base": "ఉరుము",
-              "reading": "urumu"
-            },
-            {
-              "word": "కూడిన",
-              "base": "కూడు",
-              "reading": "kūḍu"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1125",
-      "target": "వర్షాకాలం",
-      "reading": "varṣākālaṁ",
-      "ipa": "ʋarʂaːkaːlam",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "వర్షాకాలంలో ఎక్కువ వర్షం వస్తుంది.",
-          "reading": "varṣākālaṁlō ekkuva varṣaṁ vastuṁdi.",
-          "ipa": "ʋarʂaːkaːləŋloː ekkuʋa ʋarʂam vəst̪un̪d̪i",
-          "bases": [
-            {
-              "word": "వస్తుంది",
-              "base": "వచ్చు",
-              "reading": "vaccu"
-            },
-            {
-              "word": "వర్షాకాలంలో",
-              "base": "వర్షాకాలం",
-              "reading": "varṣākālaṁ"
-            },
-            {
-              "word": "ఎక్కువ",
-              "base": "ఎక్కువ",
-              "reading": "ekkuva"
-            }
-          ]
-        },
-        {
-          "target": "వర్షాకాలంలో గొడుగు తీసుకో.",
-          "reading": "varṣākālaṁlō godugu tīsuko.",
-          "ipa": "ʋarʂaːkaːləŋloː ɡod̪ud̪u t̪iːsuko",
-          "bases": [
-            {
-              "word": "తీసుకో",
-              "base": "తీసుకొను",
-              "reading": "tīsukonu"
-            },
-            {
-              "word": "వర్షాకాలంలో",
-              "base": "వర్షాకాలం",
-              "reading": "varṣākālaṁ"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1126",
-      "target": "చలికాలం",
-      "reading": "calikālaṁ",
-      "ipa": "t͡ʃəlikaːləm",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "చలికాలంలో రాత్రులు చల్లగా ఉంటాయి.",
-          "reading": "calikālaṁlō rātrulu callagā uṇṭāyi.",
-          "ipa": "t͡ʃəlikaːləŋloː raːt̪rulu t͡ʃəlːəɡaː un̪t̪aːji",
-          "bases": [
-            {
-              "word": "రాత్రులు",
-              "base": "రాత్రి",
-              "reading": "rātri"
-            },
-            {
-              "word": "ఉంటాయి",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            },
-            {
-              "word": "చలికాలంలో",
-              "base": "చలికాలం",
-              "reading": "calikālaṁ"
-            }
-          ]
-        },
-        {
-          "target": "చలికాలం ఇప్పుడే మొదలైంది.",
-          "reading": "calikālaṁ ippuḍē modalaiṁdi.",
-          "ipa": "t͡ʃəlikaːləm ippuɖeː modəlaind̪i",
-          "bases": [
-            {
-              "word": "మొదలైంది",
-              "base": "మొదలవు",
-              "reading": "modalavu"
-            },
-            {
-              "word": "ఇప్పుడే",
-              "base": "ఇప్పుడే",
-              "reading": "ippuḍē"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1127",
-      "target": "వేసవి",
-      "reading": "vēsavi",
-      "ipa": "ʋeːsəʋi",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "వేసవిలో బాగా ఎండగా ఉంటుంది.",
-          "reading": "vēsavilō bāgā eṇḍagā uṇṭuṁdi.",
-          "ipa": "ʋeːsəʋiloː baːɡaː eɳɖaɡaː un̪t̪un̪d̪i",
-          "bases": [
-            {
-              "word": "వేసవిలో",
-              "base": "వేసవి",
-              "reading": "vēsavi"
-            },
-            {
-              "word": "ఎండగా",
-              "base": "ఎండ",
-              "reading": "eṇḍa"
-            },
-            {
-              "word": "ఉంటుంది",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            },
-            {
-              "word": "బాగా",
-              "base": "బాగా",
-              "reading": "bāgā"
-            }
-          ]
-        },
-        {
-          "target": "వేసవి సెలవుల్లో ఊరికి వెళ్తాను.",
-          "reading": "vēsavi selavullō ūriki veḷtānu.",
-          "ipa": "ʋeːsəʋi sələt̪ulloː uːrik̪i ʋeɭt̪aːnu",
-          "bases": [
-            {
-              "word": "సెలవుల్లో",
-              "base": "సెలవు",
-              "reading": "selavu"
-            },
-            {
-              "word": "ఊరికి",
-              "base": "ఊరు",
-              "reading": "ūru"
-            },
-            {
-              "word": "వెళ్తాను",
-              "base": "వెళ్ళు",
-              "reading": "veḷḷu"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1128",
-      "target": "చినుకు",
-      "reading": "cinuku",
-      "ipa": "t͡ʃinuku",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "చినుకులు పడుతున్నాయి.",
-          "reading": "cinukulu paḍutunnāyi.",
-          "ipa": "t͡ʃinukulu paɖut̪unnaːji",
-          "bases": [
-            {
-              "word": "పడుతున్నాయి",
-              "base": "పడు",
-              "reading": "paḍu"
-            },
-            {
-              "word": "చినుకులు",
-              "base": "చినుకు",
-              "reading": "cinuku"
-            }
-          ]
-        },
-        {
-          "target": "మొదటి చినుకు నేలను తాకింది.",
-          "reading": "modaṭi cinuku nēlanu tākiṁdi.",
-          "ipa": "modət̪i t͡ʃinuku neːlanu t̪aːkind̪i",
-          "bases": [
-            {
-              "word": "నేలను",
-              "base": "నేల",
-              "reading": "nēla"
-            },
-            {
-              "word": "తాకింది",
-              "base": "తాకు",
-              "reading": "tāku"
-            },
-            {
-              "word": "మొదటి",
-              "base": "మొదటి",
-              "reading": "modaṭi"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1129",
-      "target": "సూర్యుడు",
-      "reading": "sūryuḍu",
-      "ipa": "suːrjuɖu",
-      "pos": "noun",
-      "gender": "mahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "ఉదయం సూర్యుడు ఉదయించాడు.",
-          "reading": "udayaṁ sūryuḍu udayiṁcāḍu.",
-          "ipa": "ud̪əjəm suːrjuɖu ud̪əjint͡ʃaːɖu",
-          "bases": [
-            {
-              "word": "ఉదయించాడు",
-              "base": "ఉదయించు",
-              "reading": "udayiṁcu"
-            },
-            {
-              "word": "ఉదయం",
-              "base": "ఉదయం",
-              "reading": "udayaṁ"
-            }
-          ]
-        },
-        {
-          "target": "సూర్యుడు మేఘాల వెనుక దాక్కున్నాడు.",
-          "reading": "sūryuḍu mēghāla venuka dākkunnāḍu.",
-          "ipa": "suːrjuɖu meːɡʱaːlə ʋenuka d̪aːkkunnaːɖu",
-          "bases": [
-            {
-              "word": "మేఘాల",
-              "base": "మేఘం",
-              "reading": "mēghaṁ"
-            },
-            {
-              "word": "దాక్కున్నాడు",
-              "base": "దాగు",
-              "reading": "dāgu"
-            },
-            {
-              "word": "వెనుక",
-              "base": "వెనుక",
-              "reading": "venuka"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1130",
-      "target": "చంద్రుడు",
-      "reading": "candruḍu",
-      "ipa": "t͡ʃand̪ruɖu",
-      "pos": "noun",
-      "gender": "mahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "ఈ రాత్రి చంద్రుడు చాలా అందంగా ఉన్నాడు.",
-          "reading": "ī rātri candruḍu cālā andaṁgā unnāḍu.",
-          "ipa": "iː raːt̪ri t͡ʃand̪ruɖu tʃaːlaː and̪əŋɡaː unnaːɖu",
-          "bases": [
-            {
-              "word": "అందంగా",
-              "base": "అందం",
-              "reading": "andaṁ"
-            },
-            {
-              "word": "ఉన్నాడు",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            },
-            {
-              "word": "ఈ",
-              "base": "ఈ",
-              "reading": "ī"
-            },
-            {
-              "word": "రాత్రి",
-              "base": "రాత్రి",
-              "reading": "rātri"
-            },
-            {
-              "word": "చాలా",
-              "base": "చాలా",
-              "reading": "cālā"
-            }
-          ]
-        },
-        {
-          "target": "మేఘాల వల్ల చంద్రుడు కనిపించడం లేదు.",
-          "reading": "mēghāla valla candruḍu kanipiṁcaḍaṁ lēdu.",
-          "ipa": "meːɡʱaːlə ʋəlla t͡ʃand̪ruɖu kənipint͡ʃəɖəm leːd̪u",
-          "bases": [
-            {
-              "word": "మేఘాల",
-              "base": "మేఘం",
-              "reading": "mēghaṁ"
-            },
-            {
-              "word": "కనిపించడం",
-              "base": "కనిపించు",
-              "reading": "kanipiṁcu"
-            },
-            {
-              "word": "వల్ల",
-              "base": "వల్ల",
-              "reading": "valla"
-            },
-            {
-              "word": "లేదు",
-              "base": "లేదు",
-              "reading": "lēdu"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "ref": "te-0869"
-    },
-    {
-      "id": "te-1132",
-      "target": "నీరు",
-      "reading": "nīru",
-      "ipa": "niːru",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "చలిగా ఉంది, వేడి నీరు తాగు.",
-          "reading": "caligā uṁdi, vēḍi nīru tāgu.",
-          "ipa": "t͡ʃaliɡaː und̪i ʋeːɖi niːru t̪aːɡu",
-          "bases": [
-            {
-              "word": "తాగు",
-              "base": "తాగు",
-              "reading": "tāgu"
-            },
-            {
-              "word": "చలిగా",
-              "base": "చలి",
-              "reading": "cali"
-            },
-            {
-              "word": "ఉంది",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            }
-          ]
-        },
-        {
-          "target": "వర్షం వల్ల నేలపై నీరు నిలిచింది.",
-          "reading": "varṣaṁ valla nēlapai nīru nilicciṁdi.",
-          "ipa": "ʋarʂəm vəlla neːləpəi niːru nilit͡ʃt͡ʃind̪i",
-          "bases": [
-            {
-              "word": "నేలపై",
-              "base": "నేల",
-              "reading": "nēla"
-            },
-            {
-              "word": "నిలిచింది",
-              "base": "నిలుచు",
-              "reading": "nilucu"
-            },
-            {
-              "word": "వల్ల",
-              "base": "వల్ల",
-              "reading": "valla"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1133",
-      "target": "పొగమంచు",
-      "reading": "pogamañcu",
-      "ipa": "poɡəmant͡ʃu",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "ఉదయం ఊరంతా పొగమంచు ఉంది.",
-          "reading": "udayaṁ ūraṁtā pogamañcu uṁdi.",
-          "ipa": "ud̪əjəm uːrənt̪aː poɡəmant͡ʃu und̪i",
-          "bases": [
-            {
-              "word": "ఊరంతా",
-              "base": "ఊరు",
-              "reading": "ūru"
-            },
-            {
-              "word": "ఉదయం",
-              "base": "ఉదయం",
-              "reading": "udayaṁ"
-            },
-            {
-              "word": "ఉంది",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            }
-          ]
-        },
-        {
-          "target": "పొగమంచులో బండి నెమ్మదిగా నడుస్తోంది.",
-          "reading": "pogamañculō baṇḍi nemmadigā naḍustōṁdi.",
-          "ipa": "poɡəmant͡ʃuloː bəɳɖi nemmədiɡaː naɖust̪oːnd̪i",
-          "bases": [
-            {
-              "word": "పొగమంచులో",
-              "base": "పొగమంచు",
-              "reading": "pogamañcu"
-            },
-            {
-              "word": "నెమ్మదిగా",
-              "base": "నెమ్మది",
-              "reading": "nemmadi"
-            },
-            {
-              "word": "నడుస్తోంది",
-              "base": "నడుచు",
-              "reading": "naḍucu"
-            },
-            {
-              "word": "బండి",
-              "base": "బండి",
-              "reading": "baṇḍi"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1134",
-      "target": "రుతువు",
-      "reading": "rutuvu",
-      "ipa": "ɾut̪uʋu",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "భారతదేశంలో మూడు ప్రధాన రుతువులు ఉన్నాయి.",
-          "reading": "bhāratadēśaṁlō mūḍu pradhāna rutuvulu unnāyi.",
-          "ipa": "bʱaːrət̪əd̪eːʃəloː muːɖu prəd̪ʱaːnə ruʈuʋulu unnaːji",
-          "bases": [
-            {
-              "word": "భారతదేశంలో",
-              "base": "భారతదేశం",
-              "reading": "bhāratadēśaṁ"
-            },
-            {
-              "word": "రుతువులు",
-              "base": "రుతువు",
-              "reading": "rutuvu"
-            },
-            {
-              "word": "ఉన్నాయి",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            },
-            {
-              "word": "మూడు",
-              "base": "మూడు",
-              "reading": "mūḍu"
-            },
-            {
-              "word": "ప్రధాన",
-              "base": "ప్రధాన",
-              "reading": "pradhāna"
-            }
-          ]
-        },
-        {
-          "target": "ఇది ఏ రుతువు?",
-          "reading": "idi ē rutuvu?",
-          "ipa": "id̪i eː ɾut̪uʋu",
-          "bases": [
-            {
-              "word": "ఇది",
-              "base": "ఇది",
-              "reading": "idi"
-            },
-            {
-              "word": "ఏ",
-              "base": "ఏ",
-              "reading": "ē"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1135",
-      "target": "ఉష్ణోగ్రత",
-      "reading": "uṣṇōgrata",
-      "ipa": "uʂɳoːɡrət̪ə",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "ఈ రోజు ఉష్ణోగ్రత నలభై డిగ్రీలు.",
-          "reading": "ī rōju uṣṇōgrata nalabhai ḍigrīlu.",
-          "ipa": "iː roːdʒu uʂɳoːɡrət̪ə nələbʱəi ɖiɡriːlu",
-          "bases": [
-            {
-              "word": "డిగ్రీలు",
-              "base": "డిగ్రీ",
-              "reading": "ḍigrī"
-            },
-            {
-              "word": "ఈ",
-              "base": "ఈ",
-              "reading": "ī"
-            },
-            {
-              "word": "రోజు",
-              "base": "రోజు",
-              "reading": "rōju"
-            },
-            {
-              "word": "నలభై",
-              "base": "నలభై",
-              "reading": "nalabhai"
-            }
-          ]
-        },
-        {
-          "target": "ఉష్ణోగ్రత తగ్గింది.",
-          "reading": "uṣṇōgrata taggiṁdi.",
-          "ipa": "uʂɳoːɡrət̪ə t̪əɡɡind̪i",
-          "bases": [
-            {
-              "word": "తగ్గింది",
-              "base": "తగ్గు",
-              "reading": "taggu"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1136",
-      "target": "జల్లు",
-      "reading": "jallu",
-      "ipa": "d͡ʒəlːu",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "సాయంత్రం చిన్న జల్లు పడింది.",
-          "reading": "sāyaṁtraṁ cinna jallu paḍiṁdi.",
-          "ipa": "sɑːjənt̪rəm t͡ʃinnə d͡ʒəlːu paɖind̪i",
-          "bases": [
-            {
-              "word": "పడింది",
-              "base": "పడు",
-              "reading": "paḍu"
-            },
-            {
-              "word": "సాయంత్రం",
-              "base": "సాయంత్రం",
-              "reading": "sāyaṁtraṁ"
-            },
-            {
-              "word": "చిన్న",
-              "base": "చిన్న",
-              "reading": "cinna"
-            }
-          ]
-        },
-        {
-          "target": "ఇంటికి వెళ్ళే ముందు జల్లు ఆగింది.",
-          "reading": "iṁṭiki veḷḷē muṁdu jallu āgiṁdi.",
-          "ipa": "int̪iki ʋeɭɭeː mund̪u d͡ʒəlːu aːɡind̪i",
-          "bases": [
-            {
-              "word": "ఆగింది",
-              "base": "ఆగు",
-              "reading": "āgu"
-            },
-            {
-              "word": "ఇంటికి",
-              "base": "ఇల్లు",
-              "reading": "illu"
-            },
-            {
-              "word": "వెళ్ళే",
-              "base": "వెళ్ళు",
-              "reading": "veḷḷu"
-            },
-            {
-              "word": "ముందు",
-              "base": "ముందు",
-              "reading": "muṁdu"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1137",
-      "target": "కరువు",
-      "reading": "karuvu",
-      "ipa": "kəɾuʋu",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "ఈ ఏడాది కరువు వచ్చింది.",
-          "reading": "ī ēḍādi karuvu vaccindi.",
-          "ipa": "iː eːɖaːd̪i kəɾuʋu ʋət͡ʃt͡ʃind̪i",
-          "bases": [
-            {
-              "word": "వచ్చింది",
-              "base": "వచ్చు",
-              "reading": "vaccu"
-            },
-            {
-              "word": "ఈ",
-              "base": "ఈ",
-              "reading": "ī"
-            },
-            {
-              "word": "ఏడాది",
-              "base": "ఏడాది",
-              "reading": "ēḍādi"
-            }
-          ]
-        },
-        {
-          "target": "కరువు వల్ల పంటలు ఎండిపోయాయి.",
-          "reading": "karuvu valla paṁṭalu eṇḍipōyāyi.",
-          "ipa": "kəɾuʋu ʋəlla pəɳʈəlu eɳɖipoːjaːji",
-          "bases": [
-            {
-              "word": "పంటలు",
-              "base": "పంట",
-              "reading": "paṁṭa"
-            },
-            {
-              "word": "ఎండిపోయాయి",
-              "base": "ఎండిపోవు",
-              "reading": "eṇḍipōvu"
-            },
-            {
-              "word": "వల్ల",
-              "base": "వల్ల",
-              "reading": "valla"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1138",
-      "target": "ఎండగా",
-      "reading": "eṇḍagā",
-      "ipa": "eɳɖaɡaː",
-      "pos": "adv",
-      "bases": [
-        {
-          "word": "ఎండగా",
-          "ref": "te-1117"
-        }
-      ],
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "ఈ రోజు ఎండగా ఉంది.",
-          "reading": "ī rōju eṇḍagā uṁdi.",
-          "ipa": "iː roːdʒu eɳɖaɡaː und̪i",
-          "bases": [
-            {
-              "word": "ఎండగా",
-              "base": "ఎండ",
-              "reading": "eṇḍa"
-            },
-            {
-              "word": "ఉంది",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            },
-            {
-              "word": "ఈ",
-              "base": "ఈ",
-              "reading": "ī"
-            },
-            {
-              "word": "రోజు",
-              "base": "రోజు",
-              "reading": "rōju"
-            }
-          ]
-        },
-        {
-          "target": "ఉదయం మబ్బుగా ఉంది, మధ్యాహ్నం ఎండగా ఉంది.",
-          "reading": "udayaṁ mabbugā uṁdi, madhyāhnaṁ eṇḍagā uṁdi.",
-          "ipa": "ud̪əjəm məbːuɡaː und̪i məd̪d̪ʱjaːɦnəm eɳɖaɡaː und̪i",
-          "bases": [
-            {
-              "word": "మబ్బుగా",
-              "base": "మబ్బు",
-              "reading": "mabbu"
-            },
-            {
-              "word": "ఉంది",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            },
-            {
-              "word": "ఉదయం",
-              "base": "ఉదయం",
-              "reading": "udayaṁ"
-            },
-            {
-              "word": "మధ్యాహ్నం",
-              "base": "మధ్యాహ్నం",
-              "reading": "madhyāhnaṁ"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1139",
-      "target": "చల్లగా",
-      "reading": "callagā",
-      "ipa": "t͡ʃəlːəɡaː",
-      "pos": "adv",
-      "bases": [
-        {
-          "word": "చల్లగా",
-          "ref": "te-0506"
-        }
-      ],
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "సాయంత్రం గాలి చల్లగా ఉంది.",
-          "reading": "sāyaṁtraṁ gāli callagā uṁdi.",
-          "ipa": "sɑːjənt̪rəm ɡaːli t͡ʃəlːəɡaː und̪i",
-          "bases": [
-            {
-              "word": "చల్లగా",
-              "base": "చల్ల",
-              "reading": "calla"
-            },
-            {
-              "word": "ఉంది",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            },
-            {
-              "word": "సాయంత్రం",
-              "base": "సాయంత్రం",
-              "reading": "sāyaṁtraṁ"
-            }
-          ]
-        },
-        {
-          "target": "నీళ్లు చల్లగా ఉన్నాయి.",
-          "reading": "nīḷḷu callagā unnāyi.",
-          "ipa": "niːɭɭu t͡ʃəlːəɡaː unnaːji",
-          "bases": [
-            {
-              "word": "నీళ్లు",
-              "base": "నీరు",
-              "reading": "nīru"
-            },
-            {
-              "word": "చల్లగా",
-              "base": "చల్ల",
-              "reading": "calla"
-            },
-            {
-              "word": "ఉన్నాయి",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1140",
-      "target": "వేడిగా",
-      "reading": "vēḍigā",
-      "ipa": "ʋeːɖiɡaː",
-      "pos": "adv",
-      "bases": [
-        {
-          "word": "వేడిగా",
-          "ref": "te-0505"
-        }
-      ],
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "ఇవాళ చాలా వేడిగా ఉంది.",
-          "reading": "ivāḷa cālā vēḍigā uṁdi.",
-          "ipa": "iʋaːɭə t͡ʃaːlaː ʋeːɖiɡaː und̪i",
-          "bases": [
-            {
-              "word": "వేడిగా",
-              "base": "వేడి",
-              "reading": "vēḍi"
-            },
-            {
-              "word": "ఉంది",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            },
-            {
-              "word": "ఇవాళ",
-              "base": "ఇవాళ",
-              "reading": "ivāḷa"
-            },
-            {
-              "word": "చాలా",
-              "base": "చాలా",
-              "reading": "cālā"
-            }
-          ]
-        },
-        {
-          "target": "టీ వేడిగా ఉంది, కాసేపు ఆగు.",
-          "reading": "ṭī vēḍigā uṁdi, kāsēpu āgu.",
-          "ipa": "ʈiː ʋeːɖiɡaː und̪i kaːseːpu aːɡu",
-          "bases": [
-            {
-              "word": "ఆగు",
-              "base": "ఆగు",
-              "reading": "āgu"
-            },
-            {
-              "word": "టీ",
-              "base": "టీ",
-              "reading": "ṭī"
-            },
-            {
-              "word": "ఉంది",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            },
-            {
-              "word": "కాసేపు",
-              "base": "కాసేపు",
-              "reading": "kāsēpu"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1141",
-      "target": "తడిగా",
-      "reading": "taḍigā",
-      "ipa": "t̪əɖiɡaː",
-      "pos": "adv",
-      "bases": [
-        {
-          "word": "తడిగా",
-          "ref": "te-0958"
-        }
-      ],
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "గాలి తడిగా ఉంది.",
-          "reading": "gāli taḍigā uṁdi.",
-          "ipa": "ɡaːli t̪əɖiɡaː und̪i",
-          "bases": [
-            {
-              "word": "తడిగా",
-              "base": "తడి",
-              "reading": "taḍi"
-            },
-            {
-              "word": "ఉంది",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            }
-          ]
-        },
-        {
-          "target": "బట్టలు ఇంకా తడిగా ఉన్నాయి.",
-          "reading": "baṭṭalu iṁkā taḍigā unnāyi.",
-          "ipa": "bəṭːəlu iŋkaː t̪əɖiɡaː unnaːji",
-          "bases": [
-            {
-              "word": "బట్టలు",
-              "base": "బట్ట",
-              "reading": "baṭṭa"
-            },
-            {
-              "word": "తడిగా",
-              "base": "తడి",
-              "reading": "taḍi"
-            },
-            {
-              "word": "ఉన్నాయి",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            },
-            {
-              "word": "ఇంకా",
-              "base": "ఇంకా",
-              "reading": "iṁkā"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1142",
-      "target": "పొడిగా",
-      "reading": "poḍigā",
-      "ipa": "poɖiɡaː",
-      "pos": "adv",
-      "bases": [
-        {
-          "word": "పొడిగా",
-          "ref": "te-0959"
-        }
-      ],
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "వేసవిలో నేల పొడిగా ఉంటుంది.",
-          "reading": "vēsavilō nēla poḍigā uṇṭuṁdi.",
-          "ipa": "ʋeːsəʋiloː neːlə poɖiɡaː un̪t̪un̪d̪i",
-          "bases": [
-            {
-              "word": "వేసవిలో",
-              "base": "వేసవి",
-              "reading": "vēsavi"
-            },
-            {
-              "word": "పొడిగా",
-              "base": "పొడి",
-              "reading": "poḍi"
-            },
-            {
-              "word": "ఉంటుంది",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            },
-            {
-              "word": "నేల",
-              "base": "నేల",
-              "reading": "nēla"
-            }
-          ]
-        },
-        {
-          "target": "వర్షం తర్వాత రోడ్డు ఇంకా పొడిగా లేదు.",
-          "reading": "varṣaṁ tarvāta roḍḍu iṁkā poḍigā lēdu.",
-          "ipa": "ʋarʂəm t̪ərʋaːt̪ə roɖɖu iŋkaː poɖiɡaː leːd̪u",
-          "bases": [
-            {
-              "word": "పొడిగా",
-              "base": "పొడి",
-              "reading": "poḍi"
-            },
-            {
-              "word": "తర్వాత",
-              "base": "తర్వాత",
-              "reading": "tarvāta"
-            },
-            {
-              "word": "రోడ్డు",
-              "base": "రోడ్డు",
-              "reading": "roḍḍu"
-            },
-            {
-              "word": "ఇంకా",
-              "base": "ఇంకా",
-              "reading": "iṁkā"
-            },
-            {
-              "word": "లేదు",
-              "base": "లేదు",
-              "reading": "lēdu"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1143",
-      "target": "మబ్బుగా",
-      "reading": "mabbugā",
-      "ipa": "məbːuɡaː",
-      "pos": "adv",
-      "bases": [
-        {
-          "word": "మబ్బుగా",
-          "base": "మబ్బు",
-          "reading": "mabbu"
-        }
-      ],
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "ఆకాశం మబ్బుగా ఉంది.",
-          "reading": "ākāśaṁ mabbugā uṁdi.",
-          "ipa": "aːkaːʃəm məbːuɡaː und̪i",
-          "bases": [
-            {
-              "word": "మబ్బుగా",
-              "base": "మబ్బు",
-              "reading": "mabbu"
-            },
-            {
-              "word": "ఉంది",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            }
-          ]
-        },
-        {
-          "target": "సాయంత్రానికి మబ్బుగా మారింది.",
-          "reading": "sāyaṁtrāniki mabbugā mārindi.",
-          "ipa": "sɑːjənt̪rɑːniki məbːuɡaː maːrind̪i",
-          "bases": [
-            {
-              "word": "మారింది",
-              "base": "మారు",
-              "reading": "māru"
-            },
-            {
-              "word": "సాయంత్రానికి",
-              "base": "సాయంత్రం",
-              "reading": "sāyaṁtraṁ"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "ref": "te-0506"
-    },
-    {
-      "ref": "te-0963"
-    },
-    {
-      "id": "te-1146",
-      "target": "కురియు",
-      "reading": "kuriyu",
-      "ipa": "kuɾiju",
-      "pos": "verb",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "ఈ రాత్రి వర్షం కురుస్తుంది.",
-          "reading": "ī rātri varṣaṁ kurustuṁdi.",
-          "ipa": "iː raːt̪ri ʋarʂəm kurust̪un̪d̪i",
-          "bases": [
-            {
-              "word": "కురుస్తుంది",
-              "base": "కురియు",
-              "reading": "kuriyu"
-            },
-            {
-              "word": "ఈ",
-              "base": "ఈ",
-              "reading": "ī"
-            },
-            {
-              "word": "రాత్రి",
-              "base": "రాత్రి",
-              "reading": "rātri"
-            }
-          ]
-        },
-        {
-          "target": "రోజంతా వర్షం కురిసింది.",
-          "reading": "rōjaṁtā varṣaṁ kurisiṁdi.",
-          "ipa": "roːdʒənt̪aː ʋarʂəm kurisind̪i",
-          "bases": [
-            {
-              "word": "కురిసింది",
-              "base": "కురియు",
-              "reading": "kuriyu"
-            },
-            {
-              "word": "రోజంతా",
-              "base": "రోజు",
-              "reading": "rōju"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1147",
-      "target": "వీచు",
-      "reading": "vīcu",
-      "ipa": "ʋiːt͡ʃu",
-      "pos": "verb",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "ఉత్తర గాలి చల్లగా వీస్తుంది.",
-          "reading": "uttara gāli callagā vīstuṁdi.",
-          "ipa": "ut̪t̪əɾə ɡaːli t͡ʃəlːəɡaː ʋiːst̪un̪d̪i",
-          "bases": [
-            {
-              "word": "వీస్తుంది",
-              "base": "వీచు",
-              "reading": "vīcu"
-            },
-            {
-              "word": "ఉత్తర",
-              "base": "ఉత్తర",
-              "reading": "uttara"
-            }
-          ]
-        },
-        {
-          "target": "గాలి బాగా వీచింది.",
-          "reading": "gāli bāgā vīciṁdi.",
-          "ipa": "ɡaːli baːɡaː ʋiːt͡ʃind̪i",
-          "bases": [
-            {
-              "word": "వీచింది",
-              "base": "వీచు",
-              "reading": "vīcu"
-            },
-            {
-              "word": "బాగా",
-              "base": "బాగా",
-              "reading": "bāgā"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1148",
-      "target": "కాయు",
-      "reading": "kāyu",
-      "ipa": "kaːju",
-      "pos": "verb",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "ఎండ బాగా కాస్తుంది.",
-          "reading": "eṇḍa bāgā kāstuṁdi.",
-          "ipa": "eɳɖə baːɡaː kaːst̪un̪d̪i",
-          "bases": [
-            {
-              "word": "కాస్తుంది",
-              "base": "కాయు",
-              "reading": "kāyu"
-            },
-            {
-              "word": "బాగా",
-              "base": "బాగా",
-              "reading": "bāgā"
-            }
-          ]
-        },
-        {
-          "target": "ఎండ కాసినప్పుడు బయటకు వెళ్లకు.",
-          "reading": "eṇḍa kāsinappuḍu bayaṭaku veḷlaku.",
-          "ipa": "eɳɖə kaːsinəppuɖu bəjət̪ək̪u ʋeɭləku",
-          "bases": [
-            {
-              "word": "కాసినప్పుడు",
-              "base": "కాయు",
-              "reading": "kāyu"
-            },
-            {
-              "word": "వెళ్లకు",
-              "base": "వెళ్ళు",
-              "reading": "veḷḷu"
-            },
-            {
-              "word": "బయటకు",
-              "base": "బయట",
-              "reading": "bayaṭa"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1149",
-      "target": "ఉరుమడం",
-      "reading": "urumaḍaṁ",
-      "ipa": "uɾumədəm",
-      "pos": "verb",
-      "bases": [
-        {
-          "word": "ఉరుమడం",
-          "ref": "te-1124"
-        }
-      ],
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "దూరంగా ఉరుముతోంది.",
-          "reading": "dūraṁgā urumutōṁdi.",
-          "ipa": "d̪uːraŋɡaː urumut̪oːnd̪i",
-          "bases": [
-            {
-              "word": "ఉరుముతోంది",
-              "base": "ఉరుమడం",
-              "reading": "urumaḍaṁ"
-            },
-            {
-              "word": "దూరంగా",
-              "base": "దూరం",
-              "reading": "dūraṁ"
-            }
-          ]
-        },
-        {
-          "target": "ఉరుముతున్నప్పుడు ఇంట్లో ఉండు.",
-          "reading": "urumutunnappuḍu iṁṭlō uṇḍu.",
-          "ipa": "uɾumut̪unnəppuɖu int̪loː uɳɖu",
-          "bases": [
-            {
-              "word": "ఉరుముతున్నప్పుడు",
-              "base": "ఉరుమడం",
-              "reading": "urumaḍaṁ"
-            },
-            {
-              "word": "ఇంట్లో",
-              "base": "ఇల్లు",
-              "reading": "illu"
-            },
-            {
-              "word": "ఉండు",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1150",
-      "target": "మెరియు",
-      "reading": "meriyu",
-      "ipa": "meɾiju",
-      "pos": "verb",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "ఆకాశంలో మెరుపులు మెరుస్తున్నాయి.",
-          "reading": "ākāśaṁlō merupulu merustunnāyi.",
-          "ipa": "aːkaːʃəloː meɾupulu meɾust̪unnaːji",
-          "bases": [
-            {
-              "word": "మెరుస్తున్నాయి",
-              "base": "మెరియు",
-              "reading": "meriyu"
-            },
-            {
-              "word": "ఆకాశంలో",
-              "base": "ఆకాశం",
-              "reading": "ākāśaṁ"
-            },
-            {
-              "word": "మెరుపులు",
-              "base": "మెరుపు",
-              "reading": "merupu"
-            }
-          ]
-        },
-        {
-          "target": "ఎండలో నీళ్లు మెరుస్తున్నాయి.",
-          "reading": "eṇḍalō nīḷḷu merustunnāyi.",
-          "ipa": "eɳɖəloː niːɭɭu meɾust̪unnaːji",
-          "bases": [
-            {
-              "word": "నీళ్లు",
-              "base": "నీరు",
-              "reading": "nīru"
-            },
-            {
-              "word": "మెరుస్తున్నాయి",
-              "base": "మెరియు",
-              "reading": "meriyu"
-            },
-            {
-              "word": "ఎండలో",
-              "base": "ఎండ",
-              "reading": "eṇḍa"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1151",
-      "target": "చల్లబడు",
-      "reading": "callabaḍu",
-      "ipa": "t͡ʃəlːəbəɖu",
-      "pos": "verb",
-      "bases": [
-        {
-          "word": "చల్లబడు",
-          "ref": "te-0506"
-        }
-      ],
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "రాత్రి అవుతుంటే వాతావరణం చల్లబడుతుంది.",
-          "reading": "rātri avutuṁṭē vātāvaraṇaṁ callabaḍutuṁdi.",
-          "ipa": "raːt̪ri əʋut̪un̪ʈeː ʋaːt̪aːʋəɾənəm t͡ʃəlːəbəɖut̪un̪d̪i",
-          "bases": [
-            {
-              "word": "చల్లబడుతుంది",
-              "base": "చల్లబడు",
-              "reading": "callabaḍu"
-            },
-            {
-              "word": "రాత్రి",
-              "base": "రాత్రి",
-              "reading": "rātri"
-            },
-            {
-              "word": "అవుతుంటే",
-              "base": "అవు",
-              "reading": "avu"
-            }
-          ]
-        },
-        {
-          "target": "వర్షం తర్వాత నేల చల్లబడింది.",
-          "reading": "varṣaṁ tarvāta nēla callabaḍiṁdi.",
-          "ipa": "ʋarʂəm t̪ərʋaːt̪ə neːlə t͡ʃəlːəbəɖind̪i",
-          "bases": [
-            {
-              "word": "చల్లబడింది",
-              "base": "చల్లబడు",
-              "reading": "callabaḍu"
-            },
-            {
-              "word": "తర్వాత",
-              "base": "తర్వాత",
-              "reading": "tarvāta"
-            },
-            {
-              "word": "నేల",
-              "base": "నేల",
-              "reading": "nēla"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1152",
-      "target": "ఆగిపోవు",
-      "reading": "āgipōvu",
-      "ipa": "aːɡipoːʋu",
-      "pos": "verb",
-      "bases": [
-        {
-          "word": "ఆగిపోవు",
-          "ref": "te-0648"
-        }
-      ],
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "వర్షం ఆగిపోయింది.",
-          "reading": "varṣaṁ āgipōyiṁdi.",
-          "ipa": "ʋarʂəm aːɡipoːjind̪i",
-          "bases": [
-            {
-              "word": "ఆగిపోయింది",
-              "base": "ఆగిపోవు",
-              "reading": "āgipōvu"
-            }
-          ]
-        },
-        {
-          "target": "గాలి ఆగిపోయింది.",
-          "reading": "gāli āgipōyiṁdi.",
-          "ipa": "ɡaːli aːɡipoːjind̪i",
-          "bases": [
-            {
-              "word": "ఆగిపోయింది",
-              "base": "ఆగిపోవు",
-              "reading": "āgipōvu"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1153",
-      "target": "చీకటి",
-      "reading": "cīkaṭi",
-      "ipa": "t͡ʃiːkəʈi",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "వర్షం వల్ల చీకటి అయ్యింది.",
-          "reading": "varṣaṁ valla cīkaṭi ayyiṁdi.",
-          "ipa": "ʋarʂəm ʋəlla t͡ʃiːkəʈi əjːind̪i",
-          "bases": [
-            {
-              "word": "అయ్యింది",
-              "base": "అవు",
-              "reading": "avu"
-            },
-            {
-              "word": "వల్ల",
-              "base": "వల్ల",
-              "reading": "valla"
-            }
-          ]
-        },
-        {
-          "target": "రాత్రి చీకటిగా ఉంది.",
-          "reading": "rātri cīkaṭigā uṁdi.",
-          "ipa": "raːt̪ri t͡ʃiːkəʈiɡaː und̪i",
-          "bases": [
-            {
-              "word": "చీకటిగా",
-              "base": "చీకటి",
-              "reading": "cīkaṭi"
-            },
-            {
-              "word": "ఉంది",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            },
-            {
-              "word": "రాత్రి",
-              "base": "రాత్రి",
-              "reading": "rātri"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1154",
-      "target": "సూచన",
-      "reading": "sūcana",
-      "ipa": "suːt͡ʃənə",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "రేడియోలో వాతావరణ సూచన వచ్చింది.",
-          "reading": "rēḍiyōlō vātāvaraṇa sūcana vaccindi.",
-          "ipa": "reːɖijoːloː ʋaːt̪aːʋəɾəɳə suːt͡ʃənə ʋət͡ʃt͡ʃind̪i",
-          "bases": [
-            {
-              "word": "రేడియోలో",
-              "base": "రేడియో",
-              "reading": "rēḍiyō"
-            },
-            {
-              "word": "వచ్చింది",
-              "base": "వచ్చు",
-              "reading": "vaccu"
-            },
-            {
-              "word": "వాతావరణ",
-              "base": "వాతావరణం",
-              "reading": "vātāvaraṇaṁ"
-            }
-          ]
-        },
-        {
-          "target": "వాతావరణ సూచన ప్రకారం రేపు వర్షం పడుతుంది.",
-          "reading": "vātāvaraṇa sūcana prakāraṁ rēpu varṣaṁ paḍutuṁdi.",
-          "ipa": "ʋaːt̪aːʋəɾəɳə suːt͡ʃənə prəkaːrəm reːpu ʋarʂəm paɖut̪un̪d̪i",
-          "bases": [
-            {
-              "word": "పడుతుంది",
-              "base": "పడు",
-              "reading": "paḍu"
-            },
-            {
-              "word": "వాతావరణ",
-              "base": "వాతావరణం",
-              "reading": "vātāvaraṇaṁ"
-            },
-            {
-              "word": "ప్రకారం",
-              "base": "ప్రకారం",
-              "reading": "prakāraṁ"
-            },
-            {
-              "word": "రేపు",
-              "base": "రేపు",
-              "reading": "rēpu"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "ref": "te-0165"
-    },
-    {
-      "id": "te-1156",
-      "target": "వడగళ్ళు",
-      "reading": "vaḍagaḷḷu",
-      "ipa": "ʋəɖəɡəɭɭu",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "వడగళ్ళు పడ్డాయి.",
-          "reading": "vaḍagaḷḷu paḍḍāyi.",
-          "ipa": "ʋəɖəɡəɭɭu pəɖɖaːji",
-          "bases": [
-            {
-              "word": "పడ్డాయి",
-              "base": "పడు",
-              "reading": "paḍu"
-            }
-          ]
-        },
-        {
-          "target": "వడగళ్ళ వల్ల పంటలు దెబ్బతిన్నాయి.",
-          "reading": "vaḍagaḷḷa valla paṁṭalu debbatinnāyi.",
-          "ipa": "ʋəɖəɡəɭɭə ʋəlla pəɳʈəlu d̪ebːət̪innaːji",
-          "bases": [
-            {
-              "word": "పంటలు",
-              "base": "పంట",
-              "reading": "paṁṭa"
-            },
-            {
-              "word": "దెబ్బతిన్నాయి",
-              "base": "దెబ్బతిను",
-              "reading": "debbatinu"
-            },
-            {
-              "word": "వడగళ్ళ",
-              "base": "వడగళ్ళు",
-              "reading": "vaḍagaḷḷu"
-            },
-            {
-              "word": "వల్ల",
-              "base": "వల్ల",
-              "reading": "valla"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "te-1157",
-      "target": "బురద",
-      "reading": "buraḍa",
-      "ipa": "buɾəɖə",
-      "pos": "noun",
-      "gender": "amahat",
-      "bases": "self",
-      "notes": [
-        {
-          "id": "n1",
-          "kind": "usage"
-        }
-      ],
-      "examples": [
-        {
-          "target": "వర్షం తర్వాత రోడ్డు మీద బురద ఉంది.",
-          "reading": "varṣaṁ tarvāta roḍḍu mīda buraḍa uṁdi.",
-          "ipa": "ʋarʂəm t̪ərʋaːt̪ə roɖɖu miːd̪ə buɾəɖə und̪i",
-          "bases": [
-            {
-              "word": "ఉంది",
-              "base": "ఉండు",
-              "reading": "uṇḍu"
-            },
-            {
-              "word": "తర్వాత",
-              "base": "తర్వాత",
-              "reading": "tarvāta"
-            },
-            {
-              "word": "రోడ్డు",
-              "base": "రోడ్డు",
-              "reading": "roḍḍu"
-            },
-            {
-              "word": "మీద",
-              "base": "మీద",
-              "reading": "mīda"
-            }
-          ]
-        },
-        {
-          "target": "బురదలో నడవకు.",
-          "reading": "buraḍalō naḍavaku.",
-          "ipa": "buɾəɖəloː naɖəʋəku",
-          "bases": [
-            {
-              "word": "బురదలో",
-              "base": "బురద",
-              "reading": "buraḍa"
-            },
-            {
-              "word": "నడవకు",
-              "base": "నడుచు",
-              "reading": "naḍucu"
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
+"schema": 1
+"id": "te-weather"
+"part": "core"
+"kind": "vocab"
+"language":
+  "code": "te"
+  "iso639_3": "tel"
+  "name": "Telugu"
+  "script": "telugu"
+  "tts": "te-IN"
+  "icon": "తె"
+"license": "CC-BY-SA-4.0"
+"authors":
+- "name": "Fluenough contributors"
+"theme": "weather"
+"tags":
+- "beginner"
+- "unreviewed"
+"cards":
+- id: "te-1113"
+  "target": "వాతావరణం"
+  "reading": "vātāvaraṇaṁ"
+  "ipa": "ʋaːt̪aːʋaraɳam"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "ఈ రోజు వాతావరణం బాగుంది."
+    "reading": "ī rōju vātāvaraṇaṁ bāgundi."
+    "ipa": "iː roːdʒu ʋaːt̪aːʋaraɳam baːɡund̪i"
+    "bases":
+    - "word": "బాగుంది"
+      "base": "బాగు"
+      "reading": "bāgu"
+    - "word": "ఈ"
+      "base": "ఈ"
+      "reading": "ī"
+    - "word": "రోజు"
+      "base": "రోజు"
+      "reading": "rōju"
+  - "target": "రేపటి వాతావరణం ఎలా ఉంటుంది?"
+    "reading": "rēpaṭi vātāvaraṇaṁ elā uṇṭundi?"
+    "ipa": "reːpaʈi ʋaːt̪aːʋaraɳam elaː uɳʈund̪i"
+    "bases":
+    - "word": "ఉంటుంది"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+    - "word": "రేపటి"
+      "base": "రేపు"
+      "reading": "rēpu"
+- id: "te-1114"
+  "target": "ఆకాశం"
+  "reading": "ākāśaṁ"
+  "ipa": "aːkaːʃam"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "ఆకాశంలో మేఘాలు ఉన్నాయి."
+    "reading": "ākāśaṁlō mēghālu unnāyi."
+    "ipa": "aːkaːʃamloː meːɡʱaːlu unnaːji"
+    "bases":
+    - "word": "ఉన్నాయి"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+    - "word": "ఆకాశంలో"
+      "base": "ఆకాశం"
+      "reading": "ākāśaṁ"
+    - "word": "మేఘాలు"
+      "base": "మేఘం"
+      "reading": "mēghaṁ"
+  - "target": "ఈ రోజు ఆకాశం నీలంగా ఉంది."
+    "reading": "ī rōju ākāśaṁ nīlaṁgā uṁdi."
+    "ipa": "iː roːdʒu aːkaːʃam niːlaŋɡaː und̪i"
+    "bases":
+    - "word": "నీలంగా"
+      "base": "నీలం"
+      "reading": "nīlaṁ"
+    - "word": "ఉంది"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+    - "word": "ఈ"
+      "base": "ఈ"
+      "reading": "ī"
+    - "word": "రోజు"
+      "base": "రోజు"
+      "reading": "rōju"
+- id: "te-1115"
+  "target": "మేఘం"
+  "reading": "mēghaṁ"
+  "ipa": "meːɡʱam"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "ఆకాశంలో ఒక మేఘం ఉంది."
+    "reading": "ākāśaṁlō oka mēghaṁ uṁdi."
+    "ipa": "aːkaːʃamloː oka meːɡʱam und̪i"
+    "bases":
+    - "word": "ఉంది"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+    - "word": "ఆకాశంలో"
+      "base": "ఆకాశం"
+      "reading": "ākāśaṁ"
+    - "word": "ఒక"
+      "base": "ఒక"
+      "reading": "oka"
+  - "target": "మేఘం కదులుతోంది."
+    "reading": "mēghaṁ kadulutōṁdi."
+    "ipa": "meːɡʱam kad̪ulut̪oːnd̪i"
+    "bases":
+    - "word": "కదులుతోంది"
+      "base": "కదులు"
+      "reading": "kadulu"
+- id: "te-1116"
+  "target": "వర్షం"
+  "reading": "varṣaṁ"
+  "ipa": "ʋarʂam"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "ఈ రోజు వర్షం పడుతోంది."
+    "reading": "ī rōju varṣaṁ paḍutōṁdi."
+    "ipa": "iː roːdʒu ʋarʂam paɖut̪oːnd̪i"
+    "bases":
+    - "word": "పడుతోంది"
+      "base": "పడు"
+      "reading": "paḍu"
+    - "word": "ఈ"
+      "base": "ఈ"
+      "reading": "ī"
+    - "word": "రోజు"
+      "base": "రోజు"
+      "reading": "rōju"
+  - "target": "వర్షం వల్ల రోడ్డు తడిగా ఉంది."
+    "reading": "varṣaṁ valla roḍḍu taḍigā uṁdi."
+    "ipa": "ʋarʂam ʋalla roɖɖu taɖiɡaː und̪i"
+    "bases":
+    - "word": "తడిగా"
+      "base": "తడి"
+      "reading": "taḍi"
+    - "word": "ఉంది"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+    - "word": "వల్ల"
+      "base": "వల్ల"
+      "reading": "valla"
+    - "word": "రోడ్డు"
+      "base": "రోడ్డు"
+      "reading": "roḍḍu"
+- id: "te-1117"
+  "target": "ఎండ"
+  "reading": "eṇḍa"
+  "ipa": "eɳɖa"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "ఈ రోజు ఎండ చాలా ఎక్కువగా ఉంది."
+    "reading": "ī rōju eṇḍa cālā ekkuvagā uṁdi."
+    "ipa": "iː roːdʒu eɳɖa tʃaːlaː ekkuʋaɡaː und̪i"
+    "bases":
+    - "word": "ఎక్కువగా"
+      "base": "ఎక్కువ"
+      "reading": "ekkuva"
+    - "word": "ఉంది"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+    - "word": "ఈ"
+      "base": "ఈ"
+      "reading": "ī"
+    - "word": "రోజు"
+      "base": "రోజు"
+      "reading": "rōju"
+    - "word": "చాలా"
+      "base": "చాలా"
+      "reading": "cālā"
+  - "target": "ఎండలో నడవకు."
+    "reading": "eṇḍalō naḍavaku."
+    "ipa": "eɳɖaloː naɖaʋaku"
+    "bases":
+    - "word": "నడవకు"
+      "base": "నడు"
+      "reading": "naḍu"
+    - "word": "ఎండలో"
+      "base": "ఎండ"
+      "reading": "eṇḍa"
+- id: "te-1118"
+  "target": "గాలి"
+  "reading": "gāli"
+  "ipa": "ɡaːli"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "గాలి బలంగా వీస్తోంది."
+    "reading": "gāli balaṁgā vīstōṁdi."
+    "ipa": "ɡaːli balaŋɡaː ʋiːst̪oːnd̪i"
+    "bases":
+    - "word": "బలంగా"
+      "base": "బలం"
+      "reading": "balaṁ"
+    - "word": "వీస్తోంది"
+      "base": "వీచు"
+      "reading": "vīcu"
+  - "target": "కిటికీ నుంచి చల్లని గాలి వస్తోంది."
+    "reading": "kiṭikī nuṁci callani gāli vastōṁdi."
+    "ipa": "kiʈiki nunt͡ʃi t͡ʃalːani ɡaːli ʋast̪oːnd̪i"
+    "bases":
+    - "word": "వస్తోంది"
+      "base": "వచ్చు"
+      "reading": "vaccu"
+    - "word": "కిటికీ"
+      "base": "కిటికీ"
+      "reading": "kiṭikī"
+    - "word": "నుంచి"
+      "base": "నుంచి"
+      "reading": "nuṁci"
+- "ref": "te-0974"
+- "ref": "te-0505"
+- id: "te-1121"
+  "target": "మంచు"
+  "reading": "mañcu"
+  "ipa": "mant͡ʃu"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "ఉదయం గడ్డి మీద మంచు ఉంది."
+    "reading": "udayaṁ gaḍḍi mīda mañcu uṁdi."
+    "ipa": "ud̪ajam ɡaɖɖi miːd̪a mant͡ʃu und̪i"
+    "bases":
+    - "word": "ఉంది"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+    - "word": "ఉదయం"
+      "base": "ఉదయం"
+      "reading": "udayaṁ"
+    - "word": "గడ్డి"
+      "base": "గడ్డి"
+      "reading": "gaḍḍi"
+    - "word": "మీద"
+      "base": "మీద"
+      "reading": "mīda"
+  - "target": "చలికాలంలో మంచు పడుతుంది."
+    "reading": "calikālaṁlō mañcu paḍutuṁdi."
+    "ipa": "t͡ʃalikaːlaŋloː mant͡ʃu paɖut̪un̪d̪i"
+    "bases":
+    - "word": "చలికాలంలో"
+      "base": "చలికాలం"
+      "reading": "calikālaṁ"
+    - "word": "పడుతుంది"
+      "base": "పడు"
+      "reading": "paḍu"
+- id: "te-1122"
+  "target": "తుఫాను"
+  "reading": "tuphānu"
+  "ipa": "t̪ufaːnu"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "తీరానికి ఒక తుఫాను వస్తోంది."
+    "reading": "tīrāniki oka tuphānu vastōṁdi."
+    "ipa": "t̪iːraːniki oka t̪ufaːnu ʋast̪oːnd̪i"
+    "bases":
+    - "word": "తీరానికి"
+      "base": "తీరం"
+      "reading": "tīraṁ"
+    - "word": "వస్తోంది"
+      "base": "వచ్చు"
+      "reading": "vaccu"
+    - "word": "ఒక"
+      "base": "ఒక"
+      "reading": "oka"
+  - "target": "తుఫాను వల్ల బస్సులు ఆగిపోయాయి."
+    "reading": "tuphānu valla bassulu āgipōyāyi."
+    "ipa": "t̪ufaːnu ʋalla bassulu aːɡipoːjaːji"
+    "bases":
+    - "word": "బస్సులు"
+      "base": "బస్సు"
+      "reading": "bassu"
+    - "word": "ఆగిపోయాయి"
+      "base": "ఆగిపోవు"
+      "reading": "āgipōvu"
+    - "word": "వల్ల"
+      "base": "వల్ల"
+      "reading": "valla"
+- id: "te-1123"
+  "target": "మెరుపు"
+  "reading": "merupu"
+  "ipa": "meɾupu"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "ఆకాశంలో మెరుపు మెరిసింది."
+    "reading": "ākāśaṁlō merupu merisiṁdi."
+    "ipa": "aːkaːʃamloː meɾupu meɾisind̪i"
+    "bases":
+    - "word": "మెరిసింది"
+      "base": "మెరియు"
+      "reading": "meriyu"
+    - "word": "ఆకాశంలో"
+      "base": "ఆకాశం"
+      "reading": "ākāśaṁ"
+  - "target": "మెరుపు తర్వాత ఉరుము వినిపించింది."
+    "reading": "merupu tarvāta urumu vinipiṁcindi."
+    "ipa": "meɾupu t̪arʋaːt̪a urumu ʋinipint͡ʃind̪i"
+    "bases":
+    - "word": "వినిపించింది"
+      "base": "వినిపించు"
+      "reading": "vinipiṁcu"
+    - "word": "తర్వాత"
+      "base": "తర్వాత"
+      "reading": "tarvāta"
+- id: "te-1124"
+  "target": "ఉరుము"
+  "reading": "urumu"
+  "ipa": "uɾumu"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "దూరంగా ఉరుము వినిపిస్తోంది."
+    "reading": "dūraṁgā urumu vinipistōṁdi."
+    "ipa": "d̪uːraŋɡaː urumu ʋinipist̪oːnd̪i"
+    "bases":
+    - "word": "దూరంగా"
+      "base": "దూరం"
+      "reading": "dūraṁ"
+    - "word": "వినిపిస్తోంది"
+      "base": "వినిపించు"
+      "reading": "vinipiṁcu"
+  - "target": "ఉరుములతో కూడిన వర్షం."
+    "reading": "urumulatō kūḍina varṣaṁ."
+    "ipa": "uɾumulat̪oː kuːɖina ʋarʂam"
+    "bases":
+    - "word": "ఉరుములతో"
+      "base": "ఉరుము"
+      "reading": "urumu"
+    - "word": "కూడిన"
+      "base": "కూడు"
+      "reading": "kūḍu"
+- id: "te-1125"
+  "target": "వర్షాకాలం"
+  "reading": "varṣākālaṁ"
+  "ipa": "ʋarʂaːkaːlam"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "వర్షాకాలంలో ఎక్కువ వర్షం వస్తుంది."
+    "reading": "varṣākālaṁlō ekkuva varṣaṁ vastuṁdi."
+    "ipa": "ʋarʂaːkaːlaŋloː ekkuʋa ʋarʂam vast̪un̪d̪i"
+    "bases":
+    - "word": "వస్తుంది"
+      "base": "వచ్చు"
+      "reading": "vaccu"
+    - "word": "వర్షాకాలంలో"
+      "base": "వర్షాకాలం"
+      "reading": "varṣākālaṁ"
+    - "word": "ఎక్కువ"
+      "base": "ఎక్కువ"
+      "reading": "ekkuva"
+  - "target": "వర్షాకాలంలో గొడుగు తీసుకో."
+    "reading": "varṣākālaṁlō godugu tīsuko."
+    "ipa": "ʋarʂaːkaːlaŋloː ɡod̪ud̪u t̪iːsuko"
+    "bases":
+    - "word": "తీసుకో"
+      "base": "తీసుకొను"
+      "reading": "tīsukonu"
+    - "word": "వర్షాకాలంలో"
+      "base": "వర్షాకాలం"
+      "reading": "varṣākālaṁ"
+- id: "te-1126"
+  "target": "చలికాలం"
+  "reading": "calikālaṁ"
+  "ipa": "t͡ʃalikaːlam"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "చలికాలంలో రాత్రులు చల్లగా ఉంటాయి."
+    "reading": "calikālaṁlō rātrulu callagā uṇṭāyi."
+    "ipa": "t͡ʃalikaːlaŋloː raːt̪rulu t͡ʃalːaɡaː un̪t̪aːji"
+    "bases":
+    - "word": "రాత్రులు"
+      "base": "రాత్రి"
+      "reading": "rātri"
+    - "word": "ఉంటాయి"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+    - "word": "చలికాలంలో"
+      "base": "చలికాలం"
+      "reading": "calikālaṁ"
+  - "target": "చలికాలం ఇప్పుడే మొదలైంది."
+    "reading": "calikālaṁ ippuḍē modalaiṁdi."
+    "ipa": "t͡ʃalikaːlam ippuɖeː modalaind̪i"
+    "bases":
+    - "word": "మొదలైంది"
+      "base": "మొదలవు"
+      "reading": "modalavu"
+    - "word": "ఇప్పుడే"
+      "base": "ఇప్పుడే"
+      "reading": "ippuḍē"
+- id: "te-1127"
+  "target": "వేసవి"
+  "reading": "vēsavi"
+  "ipa": "ʋeːsaʋi"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "వేసవిలో బాగా ఎండగా ఉంటుంది."
+    "reading": "vēsavilō bāgā eṇḍagā uṇṭuṁdi."
+    "ipa": "ʋeːsaʋiloː baːɡaː eɳɖaɡaː un̪t̪un̪d̪i"
+    "bases":
+    - "word": "వేసవిలో"
+      "base": "వేసవి"
+      "reading": "vēsavi"
+    - "word": "ఎండగా"
+      "base": "ఎండ"
+      "reading": "eṇḍa"
+    - "word": "ఉంటుంది"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+    - "word": "బాగా"
+      "base": "బాగా"
+      "reading": "bāgā"
+  - "target": "వేసవి సెలవుల్లో ఊరికి వెళ్తాను."
+    "reading": "vēsavi selavullō ūriki veḷtānu."
+    "ipa": "ʋeːsaʋi salat̪ulloː uːrik̪i ʋeɭt̪aːnu"
+    "bases":
+    - "word": "సెలవుల్లో"
+      "base": "సెలవు"
+      "reading": "selavu"
+    - "word": "ఊరికి"
+      "base": "ఊరు"
+      "reading": "ūru"
+    - "word": "వెళ్తాను"
+      "base": "వెళ్ళు"
+      "reading": "veḷḷu"
+- id: "te-1128"
+  "target": "చినుకు"
+  "reading": "cinuku"
+  "ipa": "t͡ʃinuku"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "చినుకులు పడుతున్నాయి."
+    "reading": "cinukulu paḍutunnāyi."
+    "ipa": "t͡ʃinukulu paɖut̪unnaːji"
+    "bases":
+    - "word": "పడుతున్నాయి"
+      "base": "పడు"
+      "reading": "paḍu"
+    - "word": "చినుకులు"
+      "base": "చినుకు"
+      "reading": "cinuku"
+  - "target": "మొదటి చినుకు నేలను తాకింది."
+    "reading": "modaṭi cinuku nēlanu tākiṁdi."
+    "ipa": "modat̪i t͡ʃinuku neːlanu t̪aːkind̪i"
+    "bases":
+    - "word": "నేలను"
+      "base": "నేల"
+      "reading": "nēla"
+    - "word": "తాకింది"
+      "base": "తాకు"
+      "reading": "tāku"
+    - "word": "మొదటి"
+      "base": "మొదటి"
+      "reading": "modaṭi"
+- id: "te-1129"
+  "target": "సూర్యుడు"
+  "reading": "sūryuḍu"
+  "ipa": "suːrjuɖu"
+  "pos": "noun"
+  "gender": "mahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "ఉదయం సూర్యుడు ఉదయించాడు."
+    "reading": "udayaṁ sūryuḍu udayiṁcāḍu."
+    "ipa": "ud̪ajam suːrjuɖu ud̪ajint͡ʃaːɖu"
+    "bases":
+    - "word": "ఉదయించాడు"
+      "base": "ఉదయించు"
+      "reading": "udayiṁcu"
+    - "word": "ఉదయం"
+      "base": "ఉదయం"
+      "reading": "udayaṁ"
+  - "target": "సూర్యుడు మేఘాల వెనుక దాక్కున్నాడు."
+    "reading": "sūryuḍu mēghāla venuka dākkunnāḍu."
+    "ipa": "suːrjuɖu meːɡʱaːla ʋenuka d̪aːkkunnaːɖu"
+    "bases":
+    - "word": "మేఘాల"
+      "base": "మేఘం"
+      "reading": "mēghaṁ"
+    - "word": "దాక్కున్నాడు"
+      "base": "దాగు"
+      "reading": "dāgu"
+    - "word": "వెనుక"
+      "base": "వెనుక"
+      "reading": "venuka"
+- id: "te-1130"
+  "target": "చంద్రుడు"
+  "reading": "candruḍu"
+  "ipa": "t͡ʃand̪ruɖu"
+  "pos": "noun"
+  "gender": "mahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "ఈ రాత్రి చంద్రుడు చాలా అందంగా ఉన్నాడు."
+    "reading": "ī rātri candruḍu cālā andaṁgā unnāḍu."
+    "ipa": "iː raːt̪ri t͡ʃand̪ruɖu tʃaːlaː and̪aŋɡaː unnaːɖu"
+    "bases":
+    - "word": "అందంగా"
+      "base": "అందం"
+      "reading": "andaṁ"
+    - "word": "ఉన్నాడు"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+    - "word": "ఈ"
+      "base": "ఈ"
+      "reading": "ī"
+    - "word": "రాత్రి"
+      "base": "రాత్రి"
+      "reading": "rātri"
+    - "word": "చాలా"
+      "base": "చాలా"
+      "reading": "cālā"
+  - "target": "మేఘాల వల్ల చంద్రుడు కనిపించడం లేదు."
+    "reading": "mēghāla valla candruḍu kanipiṁcaḍaṁ lēdu."
+    "ipa": "meːɡʱaːla ʋalla t͡ʃand̪ruɖu kanipint͡ʃaɖam leːd̪u"
+    "bases":
+    - "word": "మేఘాల"
+      "base": "మేఘం"
+      "reading": "mēghaṁ"
+    - "word": "కనిపించడం"
+      "base": "కనిపించు"
+      "reading": "kanipiṁcu"
+    - "word": "వల్ల"
+      "base": "వల్ల"
+      "reading": "valla"
+    - "word": "లేదు"
+      "base": "లేదు"
+      "reading": "lēdu"
+- "ref": "te-0869"
+- id: "te-1132"
+  "target": "నీరు"
+  "reading": "nīru"
+  "ipa": "niːru"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "చలిగా ఉంది, వేడి నీరు తాగు."
+    "reading": "caligā uṁdi, vēḍi nīru tāgu."
+    "ipa": "t͡ʃaliɡaː und̪i ʋeːɖi niːru t̪aːɡu"
+    "bases":
+    - "word": "తాగు"
+      "base": "తాగు"
+      "reading": "tāgu"
+    - "word": "చలిగా"
+      "base": "చలి"
+      "reading": "cali"
+    - "word": "ఉంది"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+  - "target": "వర్షం వల్ల నేలపై నీరు నిలిచింది."
+    "reading": "varṣaṁ valla nēlapai nīru nilicciṁdi."
+    "ipa": "ʋarʂam valla neːlapai niːru nilit͡ʃt͡ʃind̪i"
+    "bases":
+    - "word": "నేలపై"
+      "base": "నేల"
+      "reading": "nēla"
+    - "word": "నిలిచింది"
+      "base": "నిలుచు"
+      "reading": "nilucu"
+    - "word": "వల్ల"
+      "base": "వల్ల"
+      "reading": "valla"
+- id: "te-1133"
+  "target": "పొగమంచు"
+  "reading": "pogamañcu"
+  "ipa": "poɡamant͡ʃu"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "ఉదయం ఊరంతా పొగమంచు ఉంది."
+    "reading": "udayaṁ ūraṁtā pogamañcu uṁdi."
+    "ipa": "ud̪ajam uːrant̪aː poɡamant͡ʃu und̪i"
+    "bases":
+    - "word": "ఊరంతా"
+      "base": "ఊరు"
+      "reading": "ūru"
+    - "word": "ఉదయం"
+      "base": "ఉదయం"
+      "reading": "udayaṁ"
+    - "word": "ఉంది"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+  - "target": "పొగమంచులో బండి నెమ్మదిగా నడుస్తోంది."
+    "reading": "pogamañculō baṇḍi nemmadigā naḍustōṁdi."
+    "ipa": "poɡamant͡ʃuloː baɳɖi nemmadiɡaː naɖust̪oːnd̪i"
+    "bases":
+    - "word": "పొగమంచులో"
+      "base": "పొగమంచు"
+      "reading": "pogamañcu"
+    - "word": "నెమ్మదిగా"
+      "base": "నెమ్మది"
+      "reading": "nemmadi"
+    - "word": "నడుస్తోంది"
+      "base": "నడుచు"
+      "reading": "naḍucu"
+    - "word": "బండి"
+      "base": "బండి"
+      "reading": "baṇḍi"
+- id: "te-1134"
+  "target": "రుతువు"
+  "reading": "rutuvu"
+  "ipa": "ɾut̪uʋu"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "భారతదేశంలో మూడు ప్రధాన రుతువులు ఉన్నాయి."
+    "reading": "bhāratadēśaṁlō mūḍu pradhāna rutuvulu unnāyi."
+    "ipa": "bʱaːrat̪ad̪eːʃaloː muːɖu prad̪ʱaːna ruʈuʋulu unnaːji"
+    "bases":
+    - "word": "భారతదేశంలో"
+      "base": "భారతదేశం"
+      "reading": "bhāratadēśaṁ"
+    - "word": "రుతువులు"
+      "base": "రుతువు"
+      "reading": "rutuvu"
+    - "word": "ఉన్నాయి"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+    - "word": "మూడు"
+      "base": "మూడు"
+      "reading": "mūḍu"
+    - "word": "ప్రధాన"
+      "base": "ప్రధాన"
+      "reading": "pradhāna"
+  - "target": "ఇది ఏ రుతువు?"
+    "reading": "idi ē rutuvu?"
+    "ipa": "id̪i eː ɾut̪uʋu"
+    "bases":
+    - "word": "ఇది"
+      "base": "ఇది"
+      "reading": "idi"
+    - "word": "ఏ"
+      "base": "ఏ"
+      "reading": "ē"
+- id: "te-1135"
+  "target": "ఉష్ణోగ్రత"
+  "reading": "uṣṇōgrata"
+  "ipa": "uʂɳoːɡrat̪a"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "ఈ రోజు ఉష్ణోగ్రత నలభై డిగ్రీలు."
+    "reading": "ī rōju uṣṇōgrata nalabhai ḍigrīlu."
+    "ipa": "iː roːdʒu uʂɳoːɡrat̪a nalabʱai ɖiɡriːlu"
+    "bases":
+    - "word": "డిగ్రీలు"
+      "base": "డిగ్రీ"
+      "reading": "ḍigrī"
+    - "word": "ఈ"
+      "base": "ఈ"
+      "reading": "ī"
+    - "word": "రోజు"
+      "base": "రోజు"
+      "reading": "rōju"
+    - "word": "నలభై"
+      "base": "నలభై"
+      "reading": "nalabhai"
+  - "target": "ఉష్ణోగ్రత తగ్గింది."
+    "reading": "uṣṇōgrata taggiṁdi."
+    "ipa": "uʂɳoːɡrat̪a t̪aɡɡind̪i"
+    "bases":
+    - "word": "తగ్గింది"
+      "base": "తగ్గు"
+      "reading": "taggu"
+- id: "te-1136"
+  "target": "జల్లు"
+  "reading": "jallu"
+  "ipa": "d͡ʒalːu"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "సాయంత్రం చిన్న జల్లు పడింది."
+    "reading": "sāyaṁtraṁ cinna jallu paḍiṁdi."
+    "ipa": "sɑːjant̪ram t͡ʃinna d͡ʒalːu paɖind̪i"
+    "bases":
+    - "word": "పడింది"
+      "base": "పడు"
+      "reading": "paḍu"
+    - "word": "సాయంత్రం"
+      "base": "సాయంత్రం"
+      "reading": "sāyaṁtraṁ"
+    - "word": "చిన్న"
+      "base": "చిన్న"
+      "reading": "cinna"
+  - "target": "ఇంటికి వెళ్ళే ముందు జల్లు ఆగింది."
+    "reading": "iṁṭiki veḷḷē muṁdu jallu āgiṁdi."
+    "ipa": "int̪iki ʋeɭɭeː mund̪u d͡ʒalːu aːɡind̪i"
+    "bases":
+    - "word": "ఆగింది"
+      "base": "ఆగు"
+      "reading": "āgu"
+    - "word": "ఇంటికి"
+      "base": "ఇల్లు"
+      "reading": "illu"
+    - "word": "వెళ్ళే"
+      "base": "వెళ్ళు"
+      "reading": "veḷḷu"
+    - "word": "ముందు"
+      "base": "ముందు"
+      "reading": "muṁdu"
+- id: "te-1137"
+  "target": "కరువు"
+  "reading": "karuvu"
+  "ipa": "kaɾuʋu"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "ఈ ఏడాది కరువు వచ్చింది."
+    "reading": "ī ēḍādi karuvu vaccindi."
+    "ipa": "iː eːɖaːd̪i kaɾuʋu ʋat͡ʃt͡ʃind̪i"
+    "bases":
+    - "word": "వచ్చింది"
+      "base": "వచ్చు"
+      "reading": "vaccu"
+    - "word": "ఈ"
+      "base": "ఈ"
+      "reading": "ī"
+    - "word": "ఏడాది"
+      "base": "ఏడాది"
+      "reading": "ēḍādi"
+  - "target": "కరువు వల్ల పంటలు ఎండిపోయాయి."
+    "reading": "karuvu valla paṁṭalu eṇḍipōyāyi."
+    "ipa": "kaɾuʋu ʋalla paɳʈalu eɳɖipoːjaːji"
+    "bases":
+    - "word": "పంటలు"
+      "base": "పంట"
+      "reading": "paṁṭa"
+    - "word": "ఎండిపోయాయి"
+      "base": "ఎండిపోవు"
+      "reading": "eṇḍipōvu"
+    - "word": "వల్ల"
+      "base": "వల్ల"
+      "reading": "valla"
+- id: "te-1138"
+  "target": "ఎండగా"
+  "reading": "eṇḍagā"
+  "ipa": "eɳɖaɡaː"
+  "pos": "adv"
+  "bases":
+  - "word": "ఎండగా"
+    "ref": "te-1117"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "ఈ రోజు ఎండగా ఉంది."
+    "reading": "ī rōju eṇḍagā uṁdi."
+    "ipa": "iː roːdʒu eɳɖaɡaː und̪i"
+    "bases":
+    - "word": "ఎండగా"
+      "base": "ఎండ"
+      "reading": "eṇḍa"
+    - "word": "ఉంది"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+    - "word": "ఈ"
+      "base": "ఈ"
+      "reading": "ī"
+    - "word": "రోజు"
+      "base": "రోజు"
+      "reading": "rōju"
+  - "target": "ఉదయం మబ్బుగా ఉంది, మధ్యాహ్నం ఎండగా ఉంది."
+    "reading": "udayaṁ mabbugā uṁdi, madhyāhnaṁ eṇḍagā uṁdi."
+    "ipa": "ud̪ajam mabːuɡaː und̪i mad̪d̪ʱjaːɦnam eɳɖaɡaː und̪i"
+    "bases":
+    - "word": "మబ్బుగా"
+      "base": "మబ్బు"
+      "reading": "mabbu"
+    - "word": "ఉంది"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+    - "word": "ఉదయం"
+      "base": "ఉదయం"
+      "reading": "udayaṁ"
+    - "word": "మధ్యాహ్నం"
+      "base": "మధ్యాహ్నం"
+      "reading": "madhyāhnaṁ"
+- id: "te-1139"
+  "target": "చల్లగా"
+  "reading": "callagā"
+  "ipa": "t͡ʃalːaɡaː"
+  "pos": "adv"
+  "bases":
+  - "word": "చల్లగా"
+    "ref": "te-0506"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "సాయంత్రం గాలి చల్లగా ఉంది."
+    "reading": "sāyaṁtraṁ gāli callagā uṁdi."
+    "ipa": "sɑːjant̪ram ɡaːli t͡ʃalːaɡaː und̪i"
+    "bases":
+    - "word": "చల్లగా"
+      "base": "చల్ల"
+      "reading": "calla"
+    - "word": "ఉంది"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+    - "word": "సాయంత్రం"
+      "base": "సాయంత్రం"
+      "reading": "sāyaṁtraṁ"
+  - "target": "నీళ్లు చల్లగా ఉన్నాయి."
+    "reading": "nīḷḷu callagā unnāyi."
+    "ipa": "niːɭɭu t͡ʃalːaɡaː unnaːji"
+    "bases":
+    - "word": "నీళ్లు"
+      "base": "నీరు"
+      "reading": "nīru"
+    - "word": "చల్లగా"
+      "base": "చల్ల"
+      "reading": "calla"
+    - "word": "ఉన్నాయి"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+- id: "te-1140"
+  "target": "వేడిగా"
+  "reading": "vēḍigā"
+  "ipa": "ʋeːɖiɡaː"
+  "pos": "adv"
+  "bases":
+  - "word": "వేడిగా"
+    "ref": "te-0505"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "ఇవాళ చాలా వేడిగా ఉంది."
+    "reading": "ivāḷa cālā vēḍigā uṁdi."
+    "ipa": "iʋaːɭa t͡ʃaːlaː ʋeːɖiɡaː und̪i"
+    "bases":
+    - "word": "వేడిగా"
+      "base": "వేడి"
+      "reading": "vēḍi"
+    - "word": "ఉంది"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+    - "word": "ఇవాళ"
+      "base": "ఇవాళ"
+      "reading": "ivāḷa"
+    - "word": "చాలా"
+      "base": "చాలా"
+      "reading": "cālā"
+  - "target": "టీ వేడిగా ఉంది, కాసేపు ఆగు."
+    "reading": "ṭī vēḍigā uṁdi, kāsēpu āgu."
+    "ipa": "ʈiː ʋeːɖiɡaː und̪i kaːseːpu aːɡu"
+    "bases":
+    - "word": "ఆగు"
+      "base": "ఆగు"
+      "reading": "āgu"
+    - "word": "టీ"
+      "base": "టీ"
+      "reading": "ṭī"
+    - "word": "ఉంది"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+    - "word": "కాసేపు"
+      "base": "కాసేపు"
+      "reading": "kāsēpu"
+- id: "te-1141"
+  "target": "తడిగా"
+  "reading": "taḍigā"
+  "ipa": "t̪aɖiɡaː"
+  "pos": "adv"
+  "bases":
+  - "word": "తడిగా"
+    "ref": "te-0958"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "గాలి తడిగా ఉంది."
+    "reading": "gāli taḍigā uṁdi."
+    "ipa": "ɡaːli t̪aɖiɡaː und̪i"
+    "bases":
+    - "word": "తడిగా"
+      "base": "తడి"
+      "reading": "taḍi"
+    - "word": "ఉంది"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+  - "target": "బట్టలు ఇంకా తడిగా ఉన్నాయి."
+    "reading": "baṭṭalu iṁkā taḍigā unnāyi."
+    "ipa": "baʈːalu iŋkaː t̪aɖiɡaː unnaːji"
+    "bases":
+    - "word": "బట్టలు"
+      "base": "బట్ట"
+      "reading": "baṭṭa"
+    - "word": "తడిగా"
+      "base": "తడి"
+      "reading": "taḍi"
+    - "word": "ఉన్నాయి"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+    - "word": "ఇంకా"
+      "base": "ఇంకా"
+      "reading": "iṁkā"
+- id: "te-1142"
+  "target": "పొడిగా"
+  "reading": "poḍigā"
+  "ipa": "poɖiɡaː"
+  "pos": "adv"
+  "bases":
+  - "word": "పొడిగా"
+    "ref": "te-0959"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "వేసవిలో నేల పొడిగా ఉంటుంది."
+    "reading": "vēsavilō nēla poḍigā uṇṭuṁdi."
+    "ipa": "ʋeːsaʋiloː neːla poɖiɡaː un̪t̪un̪d̪i"
+    "bases":
+    - "word": "వేసవిలో"
+      "base": "వేసవి"
+      "reading": "vēsavi"
+    - "word": "పొడిగా"
+      "base": "పొడి"
+      "reading": "poḍi"
+    - "word": "ఉంటుంది"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+    - "word": "నేల"
+      "base": "నేల"
+      "reading": "nēla"
+  - "target": "వర్షం తర్వాత రోడ్డు ఇంకా పొడిగా లేదు."
+    "reading": "varṣaṁ tarvāta roḍḍu iṁkā poḍigā lēdu."
+    "ipa": "ʋarʂam t̪arʋaːt̪a roɖɖu iŋkaː poɖiɡaː leːd̪u"
+    "bases":
+    - "word": "పొడిగా"
+      "base": "పొడి"
+      "reading": "poḍi"
+    - "word": "తర్వాత"
+      "base": "తర్వాత"
+      "reading": "tarvāta"
+    - "word": "రోడ్డు"
+      "base": "రోడ్డు"
+      "reading": "roḍḍu"
+    - "word": "ఇంకా"
+      "base": "ఇంకా"
+      "reading": "iṁkā"
+    - "word": "లేదు"
+      "base": "లేదు"
+      "reading": "lēdu"
+- id: "te-1143"
+  "target": "మబ్బుగా"
+  "reading": "mabbugā"
+  "ipa": "mabːuɡaː"
+  "pos": "adv"
+  "bases":
+  - "word": "మబ్బుగా"
+    "base": "మబ్బు"
+    "reading": "mabbu"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "ఆకాశం మబ్బుగా ఉంది."
+    "reading": "ākāśaṁ mabbugā uṁdi."
+    "ipa": "aːkaːʃam mabːuɡaː und̪i"
+    "bases":
+    - "word": "మబ్బుగా"
+      "base": "మబ్బు"
+      "reading": "mabbu"
+    - "word": "ఉంది"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+  - "target": "సాయంత్రానికి మబ్బుగా మారింది."
+    "reading": "sāyaṁtrāniki mabbugā mārindi."
+    "ipa": "sɑːjant̪rɑːniki mabːuɡaː maːrind̪i"
+    "bases":
+    - "word": "మారింది"
+      "base": "మారు"
+      "reading": "māru"
+    - "word": "సాయంత్రానికి"
+      "base": "సాయంత్రం"
+      "reading": "sāyaṁtraṁ"
+- "ref": "te-0506"
+- "ref": "te-0963"
+- id: "te-1146"
+  "target": "కురియు"
+  "reading": "kuriyu"
+  "ipa": "kuɾiju"
+  "pos": "verb"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "ఈ రాత్రి వర్షం కురుస్తుంది."
+    "reading": "ī rātri varṣaṁ kurustuṁdi."
+    "ipa": "iː raːt̪ri ʋarʂam kurust̪un̪d̪i"
+    "bases":
+    - "word": "కురుస్తుంది"
+      "base": "కురియు"
+      "reading": "kuriyu"
+    - "word": "ఈ"
+      "base": "ఈ"
+      "reading": "ī"
+    - "word": "రాత్రి"
+      "base": "రాత్రి"
+      "reading": "rātri"
+  - "target": "రోజంతా వర్షం కురిసింది."
+    "reading": "rōjaṁtā varṣaṁ kurisiṁdi."
+    "ipa": "roːdʒant̪aː ʋarʂam kurisind̪i"
+    "bases":
+    - "word": "కురిసింది"
+      "base": "కురియు"
+      "reading": "kuriyu"
+    - "word": "రోజంతా"
+      "base": "రోజు"
+      "reading": "rōju"
+- id: "te-1147"
+  "target": "వీచు"
+  "reading": "vīcu"
+  "ipa": "ʋiːt͡ʃu"
+  "pos": "verb"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "ఉత్తర గాలి చల్లగా వీస్తుంది."
+    "reading": "uttara gāli callagā vīstuṁdi."
+    "ipa": "ut̪t̪aɾa ɡaːli t͡ʃalːaɡaː ʋiːst̪un̪d̪i"
+    "bases":
+    - "word": "వీస్తుంది"
+      "base": "వీచు"
+      "reading": "vīcu"
+    - "word": "ఉత్తర"
+      "base": "ఉత్తర"
+      "reading": "uttara"
+  - "target": "గాలి బాగా వీచింది."
+    "reading": "gāli bāgā vīciṁdi."
+    "ipa": "ɡaːli baːɡaː ʋiːt͡ʃind̪i"
+    "bases":
+    - "word": "వీచింది"
+      "base": "వీచు"
+      "reading": "vīcu"
+    - "word": "బాగా"
+      "base": "బాగా"
+      "reading": "bāgā"
+- id: "te-1148"
+  "target": "కాయు"
+  "reading": "kāyu"
+  "ipa": "kaːju"
+  "pos": "verb"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "ఎండ బాగా కాస్తుంది."
+    "reading": "eṇḍa bāgā kāstuṁdi."
+    "ipa": "eɳɖa baːɡaː kaːst̪un̪d̪i"
+    "bases":
+    - "word": "కాస్తుంది"
+      "base": "కాయు"
+      "reading": "kāyu"
+    - "word": "బాగా"
+      "base": "బాగా"
+      "reading": "bāgā"
+  - "target": "ఎండ కాసినప్పుడు బయటకు వెళ్లకు."
+    "reading": "eṇḍa kāsinappuḍu bayaṭaku veḷlaku."
+    "ipa": "eɳɖa kaːsinappuɖu bajat̪ak̪u ʋeɭlaku"
+    "bases":
+    - "word": "కాసినప్పుడు"
+      "base": "కాయు"
+      "reading": "kāyu"
+    - "word": "వెళ్లకు"
+      "base": "వెళ్ళు"
+      "reading": "veḷḷu"
+    - "word": "బయటకు"
+      "base": "బయట"
+      "reading": "bayaṭa"
+- id: "te-1149"
+  "target": "ఉరుమడం"
+  "reading": "urumaḍaṁ"
+  "ipa": "uɾumadam"
+  "pos": "verb"
+  "bases":
+  - "word": "ఉరుమడం"
+    "ref": "te-1124"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "దూరంగా ఉరుముతోంది."
+    "reading": "dūraṁgā urumutōṁdi."
+    "ipa": "d̪uːraŋɡaː urumut̪oːnd̪i"
+    "bases":
+    - "word": "ఉరుముతోంది"
+      "base": "ఉరుమడం"
+      "reading": "urumaḍaṁ"
+    - "word": "దూరంగా"
+      "base": "దూరం"
+      "reading": "dūraṁ"
+  - "target": "ఉరుముతున్నప్పుడు ఇంట్లో ఉండు."
+    "reading": "urumutunnappuḍu iṁṭlō uṇḍu."
+    "ipa": "uɾumut̪unnappuɖu int̪loː uɳɖu"
+    "bases":
+    - "word": "ఉరుముతున్నప్పుడు"
+      "base": "ఉరుమడం"
+      "reading": "urumaḍaṁ"
+    - "word": "ఇంట్లో"
+      "base": "ఇల్లు"
+      "reading": "illu"
+    - "word": "ఉండు"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+- id: "te-1150"
+  "target": "మెరియు"
+  "reading": "meriyu"
+  "ipa": "meɾiju"
+  "pos": "verb"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "ఆకాశంలో మెరుపులు మెరుస్తున్నాయి."
+    "reading": "ākāśaṁlō merupulu merustunnāyi."
+    "ipa": "aːkaːʃaloː meɾupulu meɾust̪unnaːji"
+    "bases":
+    - "word": "మెరుస్తున్నాయి"
+      "base": "మెరియు"
+      "reading": "meriyu"
+    - "word": "ఆకాశంలో"
+      "base": "ఆకాశం"
+      "reading": "ākāśaṁ"
+    - "word": "మెరుపులు"
+      "base": "మెరుపు"
+      "reading": "merupu"
+  - "target": "ఎండలో నీళ్లు మెరుస్తున్నాయి."
+    "reading": "eṇḍalō nīḷḷu merustunnāyi."
+    "ipa": "eɳɖaloː niːɭɭu meɾust̪unnaːji"
+    "bases":
+    - "word": "నీళ్లు"
+      "base": "నీరు"
+      "reading": "nīru"
+    - "word": "మెరుస్తున్నాయి"
+      "base": "మెరియు"
+      "reading": "meriyu"
+    - "word": "ఎండలో"
+      "base": "ఎండ"
+      "reading": "eṇḍa"
+- id: "te-1151"
+  "target": "చల్లబడు"
+  "reading": "callabaḍu"
+  "ipa": "t͡ʃalːabaɖu"
+  "pos": "verb"
+  "bases":
+  - "word": "చల్లబడు"
+    "ref": "te-0506"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "రాత్రి అవుతుంటే వాతావరణం చల్లబడుతుంది."
+    "reading": "rātri avutuṁṭē vātāvaraṇaṁ callabaḍutuṁdi."
+    "ipa": "raːt̪ri aʋut̪un̪ʈeː ʋaːt̪aːʋaɾanam t͡ʃalːabaɖut̪un̪d̪i"
+    "bases":
+    - "word": "చల్లబడుతుంది"
+      "base": "చల్లబడు"
+      "reading": "callabaḍu"
+    - "word": "రాత్రి"
+      "base": "రాత్రి"
+      "reading": "rātri"
+    - "word": "అవుతుంటే"
+      "base": "అవు"
+      "reading": "avu"
+  - "target": "వర్షం తర్వాత నేల చల్లబడింది."
+    "reading": "varṣaṁ tarvāta nēla callabaḍiṁdi."
+    "ipa": "ʋarʂam t̪arʋaːt̪a neːla t͡ʃalːabaɖind̪i"
+    "bases":
+    - "word": "చల్లబడింది"
+      "base": "చల్లబడు"
+      "reading": "callabaḍu"
+    - "word": "తర్వాత"
+      "base": "తర్వాత"
+      "reading": "tarvāta"
+    - "word": "నేల"
+      "base": "నేల"
+      "reading": "nēla"
+- id: "te-1152"
+  "target": "ఆగిపోవు"
+  "reading": "āgipōvu"
+  "ipa": "aːɡipoːʋu"
+  "pos": "verb"
+  "bases":
+  - "word": "ఆగిపోవు"
+    "ref": "te-0648"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "వర్షం ఆగిపోయింది."
+    "reading": "varṣaṁ āgipōyiṁdi."
+    "ipa": "ʋarʂam aːɡipoːjind̪i"
+    "bases":
+    - "word": "ఆగిపోయింది"
+      "base": "ఆగిపోవు"
+      "reading": "āgipōvu"
+  - "target": "గాలి ఆగిపోయింది."
+    "reading": "gāli āgipōyiṁdi."
+    "ipa": "ɡaːli aːɡipoːjind̪i"
+    "bases":
+    - "word": "ఆగిపోయింది"
+      "base": "ఆగిపోవు"
+      "reading": "āgipōvu"
+- id: "te-1153"
+  "target": "చీకటి"
+  "reading": "cīkaṭi"
+  "ipa": "t͡ʃiːkaʈi"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "వర్షం వల్ల చీకటి అయ్యింది."
+    "reading": "varṣaṁ valla cīkaṭi ayyiṁdi."
+    "ipa": "ʋarʂam ʋalla t͡ʃiːkaʈi ajːind̪i"
+    "bases":
+    - "word": "అయ్యింది"
+      "base": "అవు"
+      "reading": "avu"
+    - "word": "వల్ల"
+      "base": "వల్ల"
+      "reading": "valla"
+  - "target": "రాత్రి చీకటిగా ఉంది."
+    "reading": "rātri cīkaṭigā uṁdi."
+    "ipa": "raːt̪ri t͡ʃiːkaʈiɡaː und̪i"
+    "bases":
+    - "word": "చీకటిగా"
+      "base": "చీకటి"
+      "reading": "cīkaṭi"
+    - "word": "ఉంది"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+    - "word": "రాత్రి"
+      "base": "రాత్రి"
+      "reading": "rātri"
+- id: "te-1154"
+  "target": "సూచన"
+  "reading": "sūcana"
+  "ipa": "suːt͡ʃana"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "రేడియోలో వాతావరణ సూచన వచ్చింది."
+    "reading": "rēḍiyōlō vātāvaraṇa sūcana vaccindi."
+    "ipa": "reːɖijoːloː ʋaːt̪aːʋaɾaɳa suːt͡ʃana ʋat͡ʃt͡ʃind̪i"
+    "bases":
+    - "word": "రేడియోలో"
+      "base": "రేడియో"
+      "reading": "rēḍiyō"
+    - "word": "వచ్చింది"
+      "base": "వచ్చు"
+      "reading": "vaccu"
+    - "word": "వాతావరణ"
+      "base": "వాతావరణం"
+      "reading": "vātāvaraṇaṁ"
+  - "target": "వాతావరణ సూచన ప్రకారం రేపు వర్షం పడుతుంది."
+    "reading": "vātāvaraṇa sūcana prakāraṁ rēpu varṣaṁ paḍutuṁdi."
+    "ipa": "ʋaːt̪aːʋaɾaɳa suːt͡ʃana prakaːram reːpu ʋarʂam paɖut̪un̪d̪i"
+    "bases":
+    - "word": "పడుతుంది"
+      "base": "పడు"
+      "reading": "paḍu"
+    - "word": "వాతావరణ"
+      "base": "వాతావరణం"
+      "reading": "vātāvaraṇaṁ"
+    - "word": "ప్రకారం"
+      "base": "ప్రకారం"
+      "reading": "prakāraṁ"
+    - "word": "రేపు"
+      "base": "రేపు"
+      "reading": "rēpu"
+- "ref": "te-0165"
+- id: "te-1156"
+  "target": "వడగళ్ళు"
+  "reading": "vaḍagaḷḷu"
+  "ipa": "ʋaɖaɡaɭɭu"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "వడగళ్ళు పడ్డాయి."
+    "reading": "vaḍagaḷḷu paḍḍāyi."
+    "ipa": "ʋaɖaɡaɭɭu paɖɖaːji"
+    "bases":
+    - "word": "పడ్డాయి"
+      "base": "పడు"
+      "reading": "paḍu"
+  - "target": "వడగళ్ళ వల్ల పంటలు దెబ్బతిన్నాయి."
+    "reading": "vaḍagaḷḷa valla paṁṭalu debbatinnāyi."
+    "ipa": "ʋaɖaɡaɭɭa ʋalla paɳʈalu d̪ebːat̪innaːji"
+    "bases":
+    - "word": "పంటలు"
+      "base": "పంట"
+      "reading": "paṁṭa"
+    - "word": "దెబ్బతిన్నాయి"
+      "base": "దెబ్బతిను"
+      "reading": "debbatinu"
+    - "word": "వడగళ్ళ"
+      "base": "వడగళ్ళు"
+      "reading": "vaḍagaḷḷu"
+    - "word": "వల్ల"
+      "base": "వల్ల"
+      "reading": "valla"
+- id: "te-1157"
+  "target": "బురద"
+  "reading": "buraḍa"
+  "ipa": "buɾaɖa"
+  "pos": "noun"
+  "gender": "amahat"
+  "bases": "self"
+  "notes":
+  - "id": "n1"
+    "kind": "usage"
+  "examples":
+  - "target": "వర్షం తర్వాత రోడ్డు మీద బురద ఉంది."
+    "reading": "varṣaṁ tarvāta roḍḍu mīda buraḍa uṁdi."
+    "ipa": "ʋarʂam t̪arʋaːt̪a roɖɖu miːd̪a buɾaɖa und̪i"
+    "bases":
+    - "word": "ఉంది"
+      "base": "ఉండు"
+      "reading": "uṇḍu"
+    - "word": "తర్వాత"
+      "base": "తర్వాత"
+      "reading": "tarvāta"
+    - "word": "రోడ్డు"
+      "base": "రోడ్డు"
+      "reading": "roḍḍu"
+    - "word": "మీద"
+      "base": "మీద"
+      "reading": "mīda"
+  - "target": "బురదలో నడవకు."
+    "reading": "buraḍalō naḍavaku."
+    "ipa": "buɾaɖaloː naɖaʋaku"
+    "bases":
+    - "word": "బురదలో"
+      "base": "బురద"
+      "reading": "buraḍa"
+    - "word": "నడవకు"
+      "base": "నడుచు"
+      "reading": "naḍucu"
