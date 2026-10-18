@@ -84,13 +84,13 @@ class SpokenLanguage {
   final String? scriptCanRead;
 
   /// Whether the sheet asks in the language's own script: both sentences
-  /// are there.
-  bool get asksInOwnScript =>
-      !scriptTextUnchecked && scriptQuestion != null && scriptCanRead != null;
+  /// are there, checked or not (owner, 2026-10-18).
+  bool get asksInOwnScript => scriptQuestion != null && scriptCanRead != null;
 
   /// Whether the texts above were written by Claude and no speaker has
-  /// checked them (`script_text: "unchecked"`, #552). They are kept, but the
-  /// sheet asks in English until a speaker removes the mark.
+  /// checked them (`script_text: "unchecked"`, #552). The sheet shows them all
+  /// the same, with the English under them (owner, 2026-10-18: own-script
+  /// texts for every language that has them, checked or not).
   final bool scriptTextUnchecked;
 
   /// For a language written in several scripts, the sheet's heading,
@@ -105,13 +105,11 @@ class SpokenLanguage {
 
   /// Whether the sheet's heading for several scripts is in the language's
   /// own script.
-  bool get asksScriptsInOwnScript =>
-      !scriptTextUnchecked && scriptsQuestion != null;
+  bool get asksScriptsInOwnScript => scriptsQuestion != null;
 
   /// The own-script "I can read it" answer for [script] of a language
-  /// written in several, or null: none written, or not yet checked.
-  String? canReadIn(String script) =>
-      scriptTextUnchecked ? null : scriptCanReadFor[script];
+  /// written in several, or null: none written.
+  String? canReadIn(String script) => scriptCanReadFor[script];
 
   /// Whether [query] is in its English name or its own name, ignoring case.
   bool matches(String query) {
