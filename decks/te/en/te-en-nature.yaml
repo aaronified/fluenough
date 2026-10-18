@@ -1,317 +1,507 @@
-schema: 1
-id: "te-en-nature"
-kind: "layer"
-core: "te-nature"
-native: { code: "en", iso639_3: "eng", name: "English" }
-name: "Nature: trees, land and water"
-description: "Trees and their parts, stones and soil, and the land: hills, mountains, valleys, caves, deserts and islands. Water too: ponds, wells, streams and waterfalls. Not yet checked by a Telugu speaker: please report any mistake."
-license: "CC-BY-SA-4.0"
-tags: ["beginner", "unreviewed"]
-cards:
+"schema": 1
+"id": "te-en-nature"
+"kind": "layer"
+"core": "te-nature"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "Nature: trees, land and water"
+"description": "Trees and their parts, stones and soil, and the land: hills, mountains, valleys, caves, deserts and islands. Water too: ponds, wells, streams and waterfalls. Not yet checked by a Telugu speaker: please report any mistake."
+"license": "CC-BY-SA-4.0"
+"tags":
+- "beginner"
+- "unreviewed"
+"cards":
   "te-2600":
-    native: "tree"
-    wiktionary: true
-    notes:
+    "native": "tree"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}: the stem changes to చెట్ల- (ceṭla-)."
-    examples:
+    "examples":
       "మా ఇంటి ముందు పెద్ద చెట్టు ఉంది.": "There is a big tree in front of our house."
       "ఈ చెట్టు మీద చాలా పక్షులు ఉన్నాయి.": "There are many birds on this tree."
-    synonyms: { "mranu": "tree", "padapamu": "a tree", "vrksamu": "tree", "sakhi": "a tree with branches" }
+    "synonyms":
+      "mranu": "tree"
+      "padapamu": "a tree"
+      "vrksamu": "tree"
+      "sakhi": "a tree with branches"
   "te-2601":
-    native: "leaf"
-    wiktionary: true
-    notes:
+    "native": "leaf"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}."
-    examples:
+    "examples":
       "ఈ ఆకు ఆకుపచ్చగా ఉంది.": "This leaf is green."
-      "అరటి ఆకులో భోజనం పెడతారు.": "Meals are served on a banana leaf."
-    synonyms: { "patramu": "leaf" }
-    senses:
-      "leaf": { native: "leaf" }
-      "paper": { native: "paper, document" }
+      "అరటి ఆకులో భోజనం పెడతారు.":
+        "native": "Meals are served on a banana leaf."
+        "bases":
+          "ఆకులో":
+            "meaning": "leaf"
+    "synonyms":
+      "patramu": "leaf"
+    "senses":
+      "leaf":
+        "native": "leaf"
+      "paper":
+        "native": "paper, document"
   "te-2602":
-    native: "branch (of a tree)"
-    wiktionary: true
-    notes:
+    "native": "branch (of a tree)"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}."
-    examples:
+    "examples":
       "ఈ కొమ్మ చాలా పొడవుగా ఉంది.": "This branch is very long."
       "పక్షి చెట్టు కొమ్మ మీద కూర్చుంది.": "A bird sat on a branch of the tree."
-    synonyms: { "sakha": "branch" }
+    "synonyms":
+      "sakha": "branch"
   "te-2603":
-    native: "root (of a plant)"
-    wiktionary: true
-    notes:
+    "native": "root (of a plant)"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}: the stem changes to వేర్- (vēr-)."
-    examples:
-      "చెట్టు వేర్లు నేలలోకి లోతుగా వెళ్తాయి.": "A tree's roots go deep into the ground."
+    "examples":
+      "చెట్టు వేర్లు నేలలోకి లోతుగా వెళ్తాయి.":
+        "native": "A tree's roots go deep into the ground."
+        "bases":
+          "వేర్లు":
+            "meaning": "root"
       "ఈ మొక్క వేరు చాలా చిన్నది.": "The root of this plant is very small."
-    synonyms: { "modalu": "beginning, origin, source", "mulamu": "root" }
+    "synonyms":
+      "modalu": "beginning, origin, source"
+      "mulamu": "root"
   "te-2604":
-    native: "seed"
-    wiktionary: true
-    notes:
+    "native": "seed"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}."
-    examples:
-      "రైతు పొలంలో విత్తనాలు వేస్తాడు.": "The farmer sows seeds in the field."
-      "ఈ విత్తనం నుంచి మొక్క వస్తుంది.": "A plant grows from this seed."
+    "examples":
+      "రైతు పొలంలో విత్తనాలు వేస్తాడు.":
+        "native": "The farmer sows seeds in the field."
+        "bases":
+          "విత్తనాలు":
+            "meaning": "seed"
+      "ఈ విత్తనం నుంచి మొక్క వస్తుంది.":
+        "native": "A plant grows from this seed."
+        "bases":
+          "నుంచి":
+            "meaning": "from; since"
   "te-2605":
-    native: "stone"
-    wiktionary: true
-    notes:
+    "native": "stone"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}: the stem changes to రాళ్ళ- (rāḷḷa-)."
-    examples:
+    "examples":
       "దారిలో పెద్ద రాయి ఉంది.": "There is a big stone on the road."
-      "పిల్లవాడు రాయి విసిరాడు.": "The boy threw a stone."
+      "పిల్లవాడు రాయి విసిరాడు.":
+        "native": "The boy threw a stone."
+        "bases":
+          "పిల్లవాడు":
+            "meaning": "boy; child"
   "te-2606":
-    native: "rock; boulder"
-    wiktionary: true
-    notes:
+    "native": "rock; boulder"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}."
-    examples:
+    "examples":
       "కొండ మీద పెద్ద బండ ఉంది.": "There is a big rock on the hill."
       "ఆ బండ చాలా బరువుగా ఉంది.": "That rock is very heavy."
-    senses:
-      "rock": { native: "a rock, a block or slab of stone" }
+    "senses":
+      "rock":
+        "native": "a rock, a block or slab of stone"
   "te-2607":
-    native: "sand"
-    wiktionary: true
-    notes:
+    "native": "sand"
+    "wiktionary": true
+    "notes":
       "n1": "Sand as a whole; it has no plural."
-    examples:
-      "సముద్రం ఒడ్డున తెల్లని ఇసుక ఉంది.": "There is white sand on the seashore."
-      "పిల్లలు ఇసుకలో ఆడుకుంటారు.": "The children play in the sand."
+    "examples":
+      "సముద్రం ఒడ్డున తెల్లని ఇసుక ఉంది.":
+        "native": "There is white sand on the seashore."
+        "bases":
+          "తెల్లని":
+            "meaning": "white"
+      "పిల్లలు ఇసుకలో ఆడుకుంటారు.":
+        "native": "The children play in the sand."
+        "bases":
+          "ఇసుకలో":
+            "meaning": "sand"
   "te-2608":
-    native: "soil; earth; clay"
-    wiktionary: true
-    notes:
+    "native": "soil; earth; clay"
+    "wiktionary": true
+    "notes":
       "n1": "Soil, earth or clay, as a substance; it has no plural."
-    examples:
+    "examples":
       "వర్షం తర్వాత మట్టి తడిగా ఉంటుంది.": "After the rain the soil is wet."
-      "కుమ్మరి మట్టితో కుండ చేస్తాడు.": "The potter makes a pot out of clay."
-    synonyms: { "mannu": "earth, mud, soil, dirt" }
+      "కుమ్మరి మట్టితో కుండ చేస్తాడు.":
+        "native": "The potter makes a pot out of clay."
+        "bases":
+          "కుమ్మరి":
+            "meaning": "potter"
+          "మట్టితో":
+            "meaning": "clay; soil"
+    "synonyms":
+      "mannu": "earth, mud, soil, dirt"
   "te-2609":
-    native: "earth; land"
-    wiktionary: true
-    notes:
+    "native": "earth; land"
+    "wiktionary": true
+    "notes":
       "n1": "Earth, the ground or land; it is also the planet."
-    examples:
+    "examples":
       "భూమి సూర్యుని చుట్టూ తిరుగుతుంది.": "The earth goes around the sun."
       "మా భూమి గ్రామం బయట ఉంది.": "Our land is outside the village."
-    synonyms: { "acala": "the earth, as being stable", "avani": "the earth", "urvi": "the earth" }
+    "synonyms":
+      "acala": "the earth, as being stable"
+      "avani": "the earth"
+      "urvi": "the earth"
   "te-2610":
-    native: "ground; soil; land"
-    wiktionary: true
-    notes:
+    "native": "ground; soil; land"
+    "wiktionary": true
+    "notes":
       "n1": "The ground you stand on, or the soil under it."
-    examples:
+    "examples":
       "వర్షానికి నేల తడిసింది.": "The ground got wet in the rain."
       "ఈ నేల చాలా గట్టిగా ఉంది.": "This ground is very hard."
-    synonyms: { "pudami": "Earth", "mannu": "earth, mud, soil, dirt" }
-    senses:
-      "land": { native: "land, ground, field" }
-      "earth": { native: "earth, world" }
-      "soil": { native: "soil" }
+    "synonyms":
+      "pudami": "Earth"
+      "mannu": "earth, mud, soil, dirt"
+    "senses":
+      "land":
+        "native": "land, ground, field"
+      "earth":
+        "native": "earth, world"
+      "soil":
+        "native": "soil"
   "te-2611":
-    native: "shade; shadow"
-    wiktionary: true
-    notes:
+    "native": "shade; shadow"
+    "wiktionary": true
+    "notes":
       "n1": "Shade, or a shadow, depending on the context."
-    examples:
-      "ఎండలో కంటే నీడలో చల్లగా ఉంటుంది.": "It is cooler in the shade than in the sun."
-      "చెట్టు నీడలో కాసేపు కూర్చుందాం.": "Let us sit in the shade of the tree for a while."
-    synonyms: { "chaya": "shadow" }
-    senses:
-      "shade": { native: "shade, shadow" }
-      "image": { native: "an image or reflection in a mirror" }
+    "examples":
+      "ఎండలో కంటే నీడలో చల్లగా ఉంటుంది.":
+        "native": "It is cooler in the shade than in the sun."
+        "bases":
+          "నీడలో":
+            "meaning": "shade; shadow"
+      "చెట్టు నీడలో కాసేపు కూర్చుందాం.":
+        "native": "Let us sit in the shade of the tree for a while."
+        "bases":
+          "నీడలో":
+            "meaning": "shade; shadow"
+          "కాసేపు":
+            "meaning": "for a while"
+    "synonyms":
+      "chaya": "shadow"
+    "senses":
+      "shade":
+        "native": "shade, shadow"
+      "image":
+        "native": "an image or reflection in a mirror"
   "te-2612":
-    native: "pond; tank"
-    wiktionary: true
-    notes:
+    "native": "pond; tank"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}."
-    examples:
-      "మా ఊరి చెరువులో చేపలు ఉన్నాయి.": "There are fish in our village pond."
+    "examples":
+      "మా ఊరి చెరువులో చేపలు ఉన్నాయి.":
+        "native": "There are fish in our village pond."
+        "bases":
+          "చెరువులో":
+            "meaning": "pond; tank"
       "ఈ చెరువు చాలా లోతుగా ఉంది.": "This pond is very deep."
   "te-2613":
-    native: "pool; small pond"
-    wiktionary: true
-    notes:
+    "native": "pool; small pond"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}."
-    examples:
-      "కొలనులో తామర పువ్వులు ఉన్నాయి.": "There are lotus flowers in the pool."
+    "examples":
+      "కొలనులో తామర పువ్వులు ఉన్నాయి.":
+        "native": "There are lotus flowers in the pool."
+        "bases":
+          "కొలనులో":
+            "meaning": "pool"
+          "తామర":
+            "meaning": "lotus"
       "ఈ హోటల్‌లో పెద్ద ఈత కొలను ఉంది.": "This hotel has a big swimming pool."
   "te-2614":
-    native: "well"
-    wiktionary: true
-    notes:
+    "native": "well"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}."
-    examples:
-      "ఊరి బావిలో నీళ్లు చల్లగా ఉంటాయి.": "The water in the village well is cold."
+    "examples":
+      "ఊరి బావిలో నీళ్లు చల్లగా ఉంటాయి.":
+        "native": "The water in the village well is cold."
+        "bases":
+          "బావిలో":
+            "meaning": "well"
       "ఈ బావి చాలా పాతది.": "This well is very old."
-    synonyms: { "nuyyi": "well", "kupamu": "a well" }
-    senses:
-      "well": { native: "well" }
-      "tank": { native: "tank" }
-      "spring": { native: "spring" }
-      "pit": { native: "pit" }
+    "synonyms":
+      "nuyyi": "well"
+      "kupamu": "a well"
+    "senses":
+      "well":
+        "native": "well"
+      "tank":
+        "native": "tank"
+      "spring":
+        "native": "spring"
+      "pit":
+        "native": "pit"
   "te-2615":
-    native: "waterfall"
-    notes:
+    "native": "waterfall"
+    "notes":
       "n1": "The plural is {1}."
-    examples:
-      "ఈ జలపాతం చాలా ఎత్తు నుంచి పడుతుంది.": "This waterfall falls from a great height."
+    "examples":
+      "ఈ జలపాతం చాలా ఎత్తు నుంచి పడుతుంది.":
+        "native": "This waterfall falls from a great height."
+        "bases":
+          "నుంచి":
+            "meaning": "from; since"
       "మేము ఆదివారం జలపాతం చూశాం.": "We saw the waterfall on Sunday."
   "te-2616":
-    native: "valley"
-    wiktionary: true
-    notes:
+    "native": "valley"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}."
-    examples:
+    "examples":
       "కొండల మధ్య ఒక అందమైన లోయ ఉంది.": "There is a beautiful valley between the hills."
       "ఈ లోయ చాలా లోతుగా ఉంది.": "This valley is very deep."
-    senses:
-      "valley": { native: "valley" }
-      "pit": { native: "pit or hollow place in hills, a deep crack or opening" }
+    "senses":
+      "valley":
+        "native": "valley"
+      "pit":
+        "native": "pit or hollow place in hills, a deep crack or opening"
   "te-2617":
-    native: "island"
-    wiktionary: true
-    notes:
+    "native": "island"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}."
-    examples:
+    "examples":
       "ఈ ద్వీపం సముద్రం మధ్యలో ఉంది.": "This island is in the middle of the sea."
-      "మేము పడవలో ద్వీపానికి వెళ్ళాం.": "We went to the island by boat."
+      "మేము పడవలో ద్వీపానికి వెళ్ళాం.":
+        "native": "We went to the island by boat."
+        "bases":
+          "ద్వీపానికి":
+            "meaning": "island"
   "te-2618":
-    native: "mountain"
-    wiktionary: true
-    notes:
+    "native": "mountain"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}."
-    examples:
-      "ఎవరెస్ట్ ప్రపంచంలో ఎత్తైన పర్వతం.": "Everest is the tallest mountain in the world."
+    "examples":
+      "ఎవరెస్ట్ ప్రపంచంలో ఎత్తైన పర్వతం.":
+        "native": "Everest is the tallest mountain in the world."
+        "bases":
+          "ఎవరెస్ట్":
+            "meaning": "Everest"
       "మేము ఈ పర్వతం ఎక్కాం.": "We climbed this mountain."
   "te-2619":
-    native: "volcano"
-    wiktionary: true
-    notes:
+    "native": "volcano"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}. The first part, అగ్ని (agni), is fire."
-    examples:
-      "ఈ అగ్నిపర్వతం నుంచి పొగ వస్తోంది.": "Smoke is coming from this volcano."
-      "ఇటలీలో ఒక ప్రసిద్ధ అగ్నిపర్వతం ఉంది.": "There is a famous volcano in Italy."
+    "examples":
+      "ఈ అగ్నిపర్వతం నుంచి పొగ వస్తోంది.":
+        "native": "Smoke is coming from this volcano."
+        "bases":
+          "నుంచి":
+            "meaning": "from; since"
+      "ఇటలీలో ఒక ప్రసిద్ధ అగ్నిపర్వతం ఉంది.":
+        "native": "There is a famous volcano in Italy."
+        "bases":
+          "ఇటలీలో":
+            "meaning": "Italy"
   "te-2620":
-    native: "small hill; mound"
-    wiktionary: true
-    notes:
+    "native": "small hill; mound"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}."
-    examples:
+    "examples":
       "మా ఊరి వెనుక ఒక చిన్న గుట్ట ఉంది.": "There is a small hill behind our village."
       "ఆ గుట్ట మీద ఒక గుడి ఉంది.": "There is a temple on that hill."
-    synonyms: { "gubbali": "hillock, hill, mount" }
-    senses:
-      "hill": { native: "hill, hillock" }
-      "heap": { native: "heap" }
+    "synonyms":
+      "gubbali": "hillock, hill, mount"
+    "senses":
+      "hill":
+        "native": "hill, hillock"
+      "heap":
+        "native": "heap"
   "te-2621":
-    native: "star"
-    wiktionary: true
-    notes:
+    "native": "star"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}."
-    examples:
-      "రాత్రి ఆకాశంలో చాలా నక్షత్రాలు ఉన్నాయి.": "There are many stars in the sky at night."
-      "ఆ నక్షత్రం చాలా ప్రకాశవంతంగా ఉంది.": "That star is very bright."
+    "examples":
+      "రాత్రి ఆకాశంలో చాలా నక్షత్రాలు ఉన్నాయి.":
+        "native": "There are many stars in the sky at night."
+        "bases":
+          "నక్షత్రాలు":
+            "meaning": "star"
+      "ఆ నక్షత్రం చాలా ప్రకాశవంతంగా ఉంది.":
+        "native": "That star is very bright."
+        "bases":
+          "ప్రకాశవంతంగా":
+            "meaning": "bright"
   "te-2622":
-    native: "grass"
-    wiktionary: true
-    notes:
+    "native": "grass"
+    "wiktionary": true
+    "notes":
       "n1": "Grass as a whole; it has no plural."
-    examples:
+    "examples":
       "ఆవు గడ్డి తింటుంది.": "The cow eats grass."
       "ఉదయం గడ్డి మీద మంచు ఉంటుంది.": "In the morning there is dew on the grass."
-    synonyms: { "kasavu": "grass", "kavanu": "grass", "pulu": "grass", "puri": "grass" }
-    senses:
-      "grass": { native: "grass (any plant of the family Poaceae)" }
+    "synonyms":
+      "kasavu": "grass"
+      "kavanu": "grass"
+      "pulu": "grass"
+      "puri": "grass"
+    "senses":
+      "grass":
+        "native": "grass (any plant of the family Poaceae)"
   "te-2623":
-    native: "grassland; pasture; lawn"
-    wiktionary: true
-    notes:
+    "native": "grassland; pasture; lawn"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}."
-    examples:
+    "examples":
       "పార్కులో పచ్చిక చాలా మెత్తగా ఉంది.": "The grass in the park is very soft."
       "పచ్చిక మీద నడవకండి.": "Please do not walk on the lawn."
   "te-2625":
-    native: "stream; brook"
-    wiktionary: true
-    notes:
+    "native": "stream; brook"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}."
-    examples:
+    "examples":
       "ఊరి దగ్గర ఒక చిన్న వాగు ఉంది.": "There is a small stream near the village."
-      "ఈ వాగు నీళ్లు చాలా స్వచ్ఛంగా ఉన్నాయి.": "The water of this stream is very clear."
+      "ఈ వాగు నీళ్లు చాలా స్వచ్ఛంగా ఉన్నాయి.":
+        "native": "The water of this stream is very clear."
+        "bases":
+          "స్వచ్ఛంగా":
+            "meaning": "pure; clear"
   "te-2626":
-    native: "cave"
-    wiktionary: true
-    notes:
+    "native": "cave"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}."
-    examples:
+    "examples":
       "ఈ గుహ లోపల చాలా చీకటిగా ఉంది.": "It is very dark inside this cave."
-      "ఆ గుహలో గబ్బిలాలు ఉంటాయి.": "Bats live in that cave."
-    synonyms: { "gavi": "cavern, grotto", "goba": "cave", "dari": "cave, cavern, grotto" }
+      "ఆ గుహలో గబ్బిలాలు ఉంటాయి.":
+        "native": "Bats live in that cave."
+        "bases":
+          "గుహలో":
+            "meaning": "cave"
+          "గబ్బిలాలు":
+            "meaning": "bat"
+    "synonyms":
+      "gavi": "cavern, grotto"
+      "goba": "cave"
+      "dari": "cave, cavern, grotto"
   "te-2627":
-    native: "desert"
-    wiktionary: true
-    notes:
+    "native": "desert"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}."
-    examples:
-      "ఎడారిలో వర్షం చాలా తక్కువ.": "There is very little rain in the desert."
-      "ఒంటె ఎడారిలో నడుస్తుంది.": "The camel walks in the desert."
+    "examples":
+      "ఎడారిలో వర్షం చాలా తక్కువ.":
+        "native": "There is very little rain in the desert."
+        "bases":
+          "ఎడారిలో":
+            "meaning": "desert"
+      "ఒంటె ఎడారిలో నడుస్తుంది.":
+        "native": "The camel walks in the desert."
+        "bases":
+          "ఎడారిలో":
+            "meaning": "desert"
   "te-2628":
-    native: "wilderness; wild forest"
-    wiktionary: true
-    notes:
+    "native": "wilderness; wild forest"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}. For a forest in speech, అడవి (aḍavi) is more common."
-    examples:
-      "అరణ్యంలో పులులు, ఏనుగులు ఉంటాయి.": "Tigers and elephants live in the wilderness."
-      "ఈ అరణ్యం చాలా దట్టంగా ఉంది.": "This forest is very dense."
+    "examples":
+      "అరణ్యంలో పులులు, ఏనుగులు ఉంటాయి.":
+        "native": "Tigers and elephants live in the wilderness."
+        "bases":
+          "అరణ్యంలో":
+            "meaning": "forest"
+      "ఈ అరణ్యం చాలా దట్టంగా ఉంది.":
+        "native": "This forest is very dense."
+        "bases":
+          "దట్టంగా":
+            "meaning": "dense; thick"
   "te-2629":
-    native: "nature"
-    wiktionary: true
-    notes:
+    "native": "nature"
+    "wiktionary": true
+    "notes":
       "n1": "Nature in general; it has no plural."
-    examples:
-      "నాకు ప్రకృతి అంటే చాలా ఇష్టం.": "I like nature very much."
+    "examples":
+      "నాకు ప్రకృతి అంటే చాలా ఇష్టం.":
+        "native": "I like nature very much."
+        "bases":
+          "అంటే":
+            "meaning": "to say; to mean"
       "ప్రకృతి అందాన్ని చూడండి.": "Look at the beauty of nature."
-    senses:
-      "nature": { native: "nature, character, constitution, disposition, temper, temperament" }
+    "senses":
+      "nature":
+        "native": "nature, character, constitution, disposition, temper, temperament"
   "te-2630":
-    native: "raw fruit; unripe fruit; pod"
-    wiktionary: true
-    notes:
+    "native": "raw fruit; unripe fruit; pod"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}."
-    examples:
-      "ఈ మామిడి కాయ ఇంకా పచ్చిగా ఉంది.": "This mango is still unripe."
-      "ఈ చెట్టుకు చాలా కాయలు కాశాయి.": "This tree has borne many fruits."
-    senses:
-      "unripe": { native: "unripe fruit" }
-      "anything": { native: "anything round, as the head" }
-      "pimple": { native: "pimple, boil" }
+    "examples":
+      "ఈ మామిడి కాయ ఇంకా పచ్చిగా ఉంది.":
+        "native": "This mango is still unripe."
+        "bases":
+          "పచ్చిగా":
+            "meaning": "raw; unripe"
+      "ఈ చెట్టుకు చాలా కాయలు కాశాయి.":
+        "native": "This tree has borne many fruits."
+        "bases":
+          "కాయలు":
+            "meaning": "unripe fruit; nut; pod"
+    "senses":
+      "unripe":
+        "native": "unripe fruit"
+      "anything":
+        "native": "anything round, as the head"
+      "pimple":
+        "native": "pimple, boil"
   "te-2631":
-    native: "timber; wood"
-    wiktionary: true
-    notes:
+    "native": "timber; wood"
+    "wiktionary": true
+    "notes":
       "n1": "Wood cut for building or furniture; it has no plural."
-    examples:
-      "ఈ బల్ల కలపతో చేశారు.": "This table is made of wood."
-      "టేకు కలప చాలా గట్టిగా ఉంటుంది.": "Teak wood is very hard."
+    "examples":
+      "ఈ బల్ల కలపతో చేశారు.":
+        "native": "This table is made of wood."
+        "bases":
+          "కలపతో":
+            "meaning": "timber; wood"
+      "టేకు కలప చాలా గట్టిగా ఉంటుంది.":
+        "native": "Teak wood is very hard."
+        "bases":
+          "టేకు":
+            "meaning": "teak"
   "te-2632":
-    native: "bush; shrub"
-    wiktionary: true
-    notes:
+    "native": "bush; shrub"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}."
-    examples:
+    "examples":
       "ఇంటి వెనుక ఒక చిన్న పొద ఉంది.": "There is a small bush behind the house."
-      "ఈ పొదకు ఎర్రని పువ్వులు ఉన్నాయి.": "This bush has red flowers."
+      "ఈ పొదకు ఎర్రని పువ్వులు ఉన్నాయి.":
+        "native": "This bush has red flowers."
+        "bases":
+          "పొదకు":
+            "meaning": "bush"
+          "ఎర్రని":
+            "meaning": "red"
   "te-2634":
-    native: "anthill; termite mound"
-    wiktionary: true
-    notes:
+    "native": "anthill; termite mound"
+    "wiktionary": true
+    "notes":
       "n1": "The plural is {1}."
-    examples:
+    "examples":
       "పుట్ట చుట్టూ చాలా చీమలు ఉన్నాయి.": "There are many ants around the anthill."
       "ఈ పుట్ట చాలా ఎత్తుగా ఉంది.": "This anthill is very tall."
-    synonyms: { "valmikamu": "anthill" }
+    "synonyms":
+      "valmikamu": "anthill"
