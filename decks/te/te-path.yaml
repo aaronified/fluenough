@@ -386,6 +386,8 @@ units:
   - decks: ["te-registers"]
     words: 17
   - decks: ["te-grammar-verbal-participle"]
+    words: 0
+    grammar: ["verbal-participle", "verbal-participle-without"]
     listening_passages:
       - { id: "what-i-did-today", text: { "en": "Telling a day as one chain of actions" } }
     reading_passages:
@@ -405,6 +407,8 @@ units:
   - decks: ["te-slang"]
     words: 10
   - decks: ["te-grammar-relative-participle"]
+    words: 0
+    grammar: ["relative-past", "relative-nonpast"]
     listening_passages:
       - { id: "the-man-who-came", text: { "en": "Describing people by what they did" } }
     reading_passages:
@@ -425,6 +429,8 @@ units:
     words: 0
     grammar: ["can-must"]
   - decks: ["te-grammar-conditional"]
+    words: 0
+    grammar: ["conditional"]
     listening_passages:
       - { id: "rain-plans", text: { "en": "A friend's plans if it rains" } }
     reading_passages:
@@ -448,6 +454,8 @@ units:
     reading_passages:
       - { id: "form-instructions", text: { "en": "Instructions on an application form" } }
   - decks: ["te-grammar-purpose"]
+    words: 0
+    grammar: ["purpose"]
     listening_passages:
       - { id: "why-are-you-going", text: { "en": "Saying what you are going somewhere to do" } }
     reading_passages:
@@ -466,7 +474,7 @@ units:
       - { id: "job-advert", text: { "en": "A job advert" } }
   - decks: ["te-grammar-before-after"]
     words: 0
-    grammar: ["before-after"]
+    grammar: ["before", "after"]
     listening_passages:
       - { id: "order-of-events", text: { "en": "Saying what happens before and after what" } }
     reading_passages:
@@ -484,6 +492,8 @@ units:
     reading_passages:
       - { id: "market-prices", text: { "en": "A crop price board at a market" } }
   - decks: ["te-grammar-while"]
+    words: 0
+    grammar: ["while"]
     listening_passages:
       - { id: "doing-two-things", text: { "en": "Saying what people do while doing something else" } }
     reading_passages:
@@ -501,6 +511,8 @@ units:
     reading_passages:
       - { id: "exhibition-notice", text: { "en": "A notice for an art exhibition" } }
   - decks: ["te-grammar-causative"]
+    words: 0
+    grammar: ["causative"]
     listening_passages:
       - { id: "having-things-done", text: { "en": "Asking someone to get things done" } }
     reading_passages:
@@ -518,6 +530,8 @@ units:
     reading_passages:
       - { id: "wedding-card", text: { "en": "A wedding invitation card" } }
   - decks: ["te-grammar-concessive"]
+    words: 0
+    grammar: ["concessive"]
     listening_passages:
       - { id: "even-though", text: { "en": "Saying something happened even though it was hard" } }
     reading_passages:
@@ -573,6 +587,8 @@ units:
     reading_passages:
       - { id: "short-story", text: { "en": "A short story with a turn" } }
   - decks: ["te-grammar-passive"]
+    words: 0
+    grammar: ["passive-was", "passive-is"]
     listening_passages:
       - { id: "it-was-done", text: { "en": "Saying what was done, without saying by whom" } }
     reading_passages:
@@ -583,7 +599,7 @@ units:
       - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
     reading_passages:
       - { id: "opinion-column", text: { "en": "A short opinion column" } }
-  - decks: ["te-grammar-honorifics", "*"]
+  - decks: ["te-grammar-honorifics"]
     words: 0
     grammar: ["honorifics"]
     listening_passages:
