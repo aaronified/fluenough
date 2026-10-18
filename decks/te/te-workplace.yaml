@@ -1,0 +1,750 @@
+schema: 1
+id: "te-workplace"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+theme: "workplace"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-2900"
+    target: "మీటింగ్"
+    reading: "mīṭiṅg"
+    ipa: "miːʈiŋɡ"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "రేపు పది గంటలకు మీటింగ్ ఉంది."
+        reading: "rēpu padi gaṇṭalaku mīṭiṅg undi."
+        ipa: "reːpu padi gaɳʈalaku miːʈiŋɡ und̪i."
+        bases:
+          - { word: "గంటలకు", base: "గంట", reading: "gaṇṭa" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "మీటింగ్ తర్వాత నేను ఫోన్ చేస్తాను."
+        reading: "mīṭiṅg tarvāta nēnu fōn cēstānu."
+        ipa: "miːʈiŋɡ t̪arʋaːt̪a neːnu foːn tʃeːst̪aːnu"
+        bases:
+          - { word: "చేస్తాను", ref: "te-0621" }
+  - id: "te-2901"
+    target: "సమావేశం"
+    reading: "samāvēśaṁ"
+    ipa: "samaːʋeːɕam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "సమావేశంలో అందరూ ఉన్నారు."
+        reading: "samāvēśaṁlō andarū unnāru."
+        ipa: "samaːʋeːɕamloː andaruː unnaːru."
+        bases:
+          - { word: "సమావేశంలో", base: "సమావేశం", reading: "samāvēśaṁ" }
+          - { word: "అందరూ", base: "అందరు", reading: "andaru" }
+          - { word: "ఉన్నారు", ref: "te-0633" }
+      - target: "సమావేశానికి రావాలి."
+        reading: "samāvēśāniki rāvāli."
+        ipa: "samaːʋeːɕaːnikiː raːʋaːli."
+        bases:
+          - { word: "సమావేశానికి", base: "సమావేశం", reading: "samāvēśaṁ" }
+          - { word: "రావాలి", ref: "te-0623" }
+    senses:
+      - { id: "meeting", pos: "noun", source: "https://en.wiktionary.org/wiki/సమావేశం" }
+      - { id: "conference", pos: "noun", source: "https://en.wiktionary.org/wiki/సమావేశం" }
+  - id: "te-2902"
+    target: "బాస్"
+    reading: "bās"
+    ipa: "baːs"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "మా బాస్ చాలా మంచివారు."
+        reading: "mā bās cālā mañcivāru."
+        ipa: "maː baːs tʃaːlaː mant̪ʃiʋaːru."
+        bases:
+          - { word: "మా", base: "మేము", reading: "mēmu" }
+          - { word: "మంచివారు", base: "మంచివాడు", reading: "mañcivāḍu" }
+      - target: "బాస్ నాకు ఒక ఫైలు ఇచ్చారు."
+        reading: "bās nāku oka phailu iccāru."
+        ipa: "baːs naːku oka pʰailu itʃtʃaːru."
+        bases:
+          - { word: "నాకు", base: "నేను", reading: "nēnu" }
+          - { word: "ఇచ్చారు", ref: "te-0630" }
+  - id: "te-2903"
+    target: "సహోద్యోగి"
+    reading: "sahōdyōgi"
+    ipa: "sahoːd̪joːɡi"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "నా సహోద్యోగి రేపు సెలవులో ఉంటారు."
+        reading: "nā sahōdyōgi rēpu selavulō uṇṭāru."
+        ipa: "naː sahoːd̪joːɡi reːpu selaʋuloː ʉnʈaːru."
+        bases:
+          - { word: "నా", base: "నేను", reading: "nēnu" }
+          - { word: "సెలవులో", ref: "te-0413" }
+          - { word: "ఉంటారు", ref: "te-0633" }
+      - target: "సహోద్యోగులు నాకు సహాయం చేశారు."
+        reading: "sahōdyōgulu nāku sahāyaṁ cēśāru."
+        ipa: "sahoːd̪joːɡulu naːku sahaːjam tʃeːʃaːru."
+        bases:
+          - { word: "సహోద్యోగులు", base: "సహోద్యోగి", reading: "sahōdyōgi" }
+          - { word: "నాకు", base: "నేను", reading: "nēnu" }
+          - { word: "చేశారు", ref: "te-0621" }
+  - id: "te-2904"
+    target: "ఉద్యోగి"
+    reading: "udyōgi"
+    ipa: "ud̪joːɡi"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ఈ కంపెనీలో వంద మంది ఉద్యోగులు ఉన్నారు."
+        reading: "ī kampenīlō vanda mandi udyōgulu unnāru."
+        ipa: "iː kampeniːloː ʋand̪a mand̪i ud̪joːɡulu unnaːru."
+        bases:
+          - { word: "కంపెనీలో", base: "కంపెనీ", reading: "kampenī" }
+          - { word: "ఉద్యోగులు", base: "ఉద్యోగి", reading: "udyōgi" }
+          - { word: "ఉన్నారు", ref: "te-0633" }
+      - target: "కొత్త ఉద్యోగి ఈ రోజు వచ్చారు."
+        reading: "kotta udyōgi ī rōju vaccāru."
+        ipa: "kot̪t̪a ud̪joːɡi iː roːdʒu ʋat͡ʃtʃaːru."
+        bases:
+          - { word: "వచ్చారు", ref: "te-0623" }
+    synonyms:
+      - { id: "udyogasthudu", word: "ఉద్యోగస్థుడు", reading: "udyōgasthuḍu", source: "https://en.wiktionary.org/wiki/ఉద్యోగి" }
+    senses:
+      - { id: "officer", pos: "noun", source: "https://en.wiktionary.org/wiki/ఉద్యోగి" }
+  - id: "te-2905"
+    target: "మేనేజర్"
+    reading: "mēnējar"
+    ipa: "meːneːdʒar"
+    pos: "noun"
+    gender: "mahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "మా మేనేజర్ ఇప్పుడు మీటింగ్‌లో ఉన్నారు."
+        reading: "mā mēnējar ippuḍu mīṭiṅglō unnāru."
+        ipa: "maː meːneːdʒar ippuɖu miːʈiŋɡloː unnaːru."
+        bases:
+          - { word: "మా", base: "మేము", reading: "mēmu" }
+          - { word: "మీటింగ్‌లో", base: "మీటింగ్", reading: "mīṭiṅg" }
+          - { word: "ఉన్నారు", ref: "te-0633" }
+      - target: "మేనేజర్ నాకు ఫైలు పంపారు."
+        reading: "mēnējar nāku phailu pampāru."
+        ipa: "meːneːdʒar naːku pʰailu pampaːru."
+        bases:
+          - { word: "నాకు", base: "నేను", reading: "nēnu" }
+          - { word: "పంపారు", ref: "te-0650" }
+  - ref: "te-0401"
+  - id: "te-2906"
+    target: "డెస్కు"
+    alt_target: ["డెస్క్"]
+    reading: "ḍesku"
+    ipa: "ɖesku"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "నా డెస్కు మీద ఫైళ్లు ఉన్నాయి."
+        reading: "nā ḍesku mīda phaiḷḷu unnāyi."
+        ipa: "naː ɖesku miːd̪a pʰaiɭɭu unnaːji."
+        bases:
+          - { word: "నా", base: "నేను", reading: "nēnu" }
+          - { word: "ఫైళ్లు", base: "ఫైలు", reading: "phailu" }
+          - { word: "ఉన్నాయి", ref: "te-0633" }
+      - target: "డెస్కులో ఒక పెన్ను ఉంది."
+        reading: "ḍeskulō oka pennu undi."
+        ipa: "ɖeskuloː oka pennu und̪i."
+        bases:
+          - { word: "డెస్కులో", base: "డెస్కు", reading: "ḍesku" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - ref: "te-0867"
+  - ref: "te-0874"
+  - id: "te-2907"
+    target: "ప్రింటర్"
+    reading: "priṇṭar"
+    ipa: "prinʈar"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ప్రింటర్ మళ్ళీ పని చేస్తోంది."
+        reading: "priṇṭar maḷḷī pani cēstōndi."
+        ipa: "prinʈar mal̪liː pani tʃeːst̪oːnd̪i."
+        bases:
+          - { word: "చేస్తోంది", ref: "te-0621" }
+      - target: "ఈ ప్రింటర్‌లో కాగితం లేదు."
+        reading: "ī priṇṭarlō kāgitaṁ lēdu."
+        ipa: "iː prinʈarloː kaːgit̪am leːd̪u."
+        bases:
+          - { word: "ప్రింటర్‌లో", base: "ప్రింటర్", reading: "priṇṭar" }
+  - id: "te-2908"
+    target: "ఫైలు"
+    reading: "phailu"
+    ipa: "pʰailu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ఈ ఫైలు రేపు ఇవ్వండి."
+        reading: "ī phailu rēpu ivvaṇḍi."
+        ipa: "iː pʰailu reːpu ʋaɳɖi."
+        bases:
+          - { word: "ఇవ్వండి", ref: "te-0630" }
+      - target: "ఫైలును మీ డెస్కు మీద పెట్టండి."
+        reading: "phailunu mī ḍesku mīda peṭṭaṇḍi."
+        ipa: "pʰailunu miː ɖesku miːd̪a pet̪ʈaɳɖi."
+        bases:
+          - { word: "ఫైలును", base: "ఫైలు", reading: "phailu" }
+          - { word: "మీ", base: "మీరు", reading: "mīru" }
+          - { word: "పెట్టండి", base: "పెట్టడం", reading: "peṭṭaḍaṁ" }
+  - id: "te-2909"
+    target: "పత్రం"
+    reading: "patraṁ"
+    ipa: "pat̪ram"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ఈ పత్రంలో మీ పేరు రాయండి."
+        reading: "ī patraṁlō mī pēru rāyaṇḍi."
+        ipa: "iː pat̪ramloː miː peːru raːjaɳɖi."
+        bases:
+          - { word: "పత్రంలో", base: "పత్రం", reading: "patraṁ" }
+          - { word: "మీ", base: "మీరు", reading: "mīru" }
+          - { word: "రాయండి", ref: "te-0639" }
+      - target: "నేను రెండు పత్రాలు తీసుకున్నాను."
+        reading: "nēnu reṇḍu patrālu tīsukunnānu."
+        ipa: "neːnu renɖu pat̪raːlu tiːsukunnaːnu."
+        bases:
+          - { word: "పత్రాలు", base: "పత్రం", reading: "patraṁ" }
+          - { word: "తీసుకున్నాను", base: "తీసుకోవడం", reading: "tīsukōvaḍaṁ" }
+  - id: "te-2910"
+    target: "నోటీసు"
+    reading: "nōṭīsu"
+    ipa: "noːʈiːsu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "గోడ మీద ఒక నోటీసు ఉంది."
+        reading: "gōḍa mīda oka nōṭīsu undi."
+        ipa: "goːɖa miːd̪a oka noːʈiːsu und̪i."
+        bases:
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "ఆ నోటీసు చదివారా?"
+        reading: "ā nōṭīsu cadivārā?"
+        ipa: "aː noːʈiːsu tʃad̪ivaːraː?"
+        bases:
+          - { word: "చదివారా", base: "చదవడం", reading: "cadavaḍaṁ" }
+  - ref: "te-2409"
+  - id: "te-2911"
+    target: "లక్ష్యం"
+    reading: "lakṣyaṁ"
+    ipa: "lakʂjam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ఈ నెల లక్ష్యం ఏమిటి?"
+        reading: "ī nela lakṣyaṁ ēmiṭi?"
+        ipa: "iː nela lakʂjam eːmiʈi?"
+      - target: "మా లక్ష్యం సమయానికి పని పూర్తి చేయడం."
+        reading: "mā lakṣyaṁ samayāniki pani pūrti cēyaḍaṁ."
+        ipa: "maː lakʂjam samaːjaːniki pani puːrt̪i tʃeːjaɖam."
+        bases:
+          - { word: "మా", base: "మేము", reading: "mēmu" }
+          - { word: "సమయానికి", base: "సమయం", reading: "samayaṁ" }
+  - id: "te-2912"
+    target: "గడువు"
+    reading: "gaḍuvu"
+    ipa: "ɡaɖuʋu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "గడువు శుక్రవారం."
+        reading: "gaḍuvu śukravāraṁ."
+        ipa: "ɡaɖuʋu ʃukrəʋaːram."
+      - target: "గడువు దాటితే మళ్ళీ దరఖాస్తు చేయాలి."
+        reading: "gaḍuvu dāṭitē maḷḷī darakhāstu cēyāli."
+        ipa: "ɡaɖuʋu d̪aːʈit̪eː mal̪liː d̪arakʰaːst̪u tʃeːjaːli."
+        bases:
+          - { word: "దాటితే", base: "దాటడం", reading: "dāṭaḍaṁ" }
+          - { word: "చేయాలి", ref: "te-0621" }
+  - id: "te-2913"
+    target: "హాజరు"
+    reading: "hājaru"
+    ipa: "haːdʒaru"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ఈ రోజు హాజరు తీసుకోండి."
+        reading: "ī rōju hājaru tīsukōṇḍi."
+        ipa: "iː roːdʒu haːdʒaru tiːsukoːɳɖi."
+        bases:
+          - { word: "తీసుకోండి", base: "తీసుకోవడం", reading: "tīsukōvaḍaṁ" }
+      - target: "హాజరు తప్పనిసరి."
+        reading: "hājaru tappanisari."
+        ipa: "haːdʒaru t̪appanisari."
+  - id: "te-2914"
+    target: "అనుమతి"
+    reading: "anumati"
+    ipa: "anumat̪i"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "నాకు ఇంటికి వెళ్ళడానికి అనుమతి కావాలి."
+        reading: "nāku iṇṭiki veḷḷaḍāniki anumati kāvāli."
+        ipa: "naːku intiki ʋeɭɭaɖaːniki anumat̪i kaːʋaːli."
+        bases:
+          - { word: "నాకు", base: "నేను", reading: "nēnu" }
+          - { word: "ఇంటికి", base: "ఇల్లు", reading: "illu" }
+          - { word: "వెళ్ళడానికి", ref: "te-0622" }
+          - { word: "కావాలి", ref: "te-0646" }
+      - target: "మేనేజర్ అనుమతి ఇచ్చారు."
+        reading: "mēnējar anumati iccāru."
+        ipa: "meːneːdʒar anumat̪i itʃtʃaːru."
+        bases:
+          - { word: "ఇచ్చారు", ref: "te-0630" }
+  - id: "te-2915"
+    target: "దరఖాస్తు"
+    reading: "darakhāstu"
+    ipa: "d̪arakʰaːst̪u"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "దరఖాస్తు ఫారం ఎక్కడ?"
+        reading: "darakhāstu phāraṁ ekkaḍa?"
+        ipa: "d̪arakʰaːst̪u pʰaːram ekkaɖa?"
+      - target: "నేను ఉద్యోగానికి దరఖాస్తు పంపాను."
+        reading: "nēnu udyōgāniki darakhāstu pampānu."
+        ipa: "neːnu ud̪joːɡaːniki d̪arakʰaːst̪u pampaːnu."
+        bases:
+          - { word: "ఉద్యోగానికి", ref: "te-0400" }
+          - { word: "పంపాను", ref: "te-0650" }
+    senses:
+      - { id: "application", pos: "noun", source: "https://en.wiktionary.org/wiki/దరఖాస్తు" }
+  - ref: "te-0400"
+  - id: "te-2916"
+    target: "ఇంటర్వ్యూ"
+    reading: "iṇṭarvyū"
+    ipa: "intarʋjuː"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "రేపు ఉదయం ఇంటర్వ్యూ ఉంది."
+        reading: "rēpu udayaṁ iṇṭarvyū undi."
+        ipa: "reːpu ud̪ajam intarʋjuː und̪i."
+        bases:
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "ఇంటర్వ్యూలో ఏం అడిగారు?"
+        reading: "iṇṭarvyūlō ēṁ aḍigāru?"
+        ipa: "intarʋjuːloː eːm aɖigaːru?"
+        bases:
+          - { word: "ఇంటర్వ్యూలో", base: "ఇంటర్వ్యూ", reading: "iṇṭarvyū" }
+          - { word: "ఏం", ref: "te-0160" }
+          - { word: "అడిగారు", ref: "te-0629" }
+  - id: "te-2917"
+    target: "క్యాంటీన్"
+    reading: "kyāṇṭīn"
+    ipa: "kjaːɳʈiːn"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "మధ్యాహ్నం క్యాంటీన్‌లో భోజనం చేస్తాను."
+        reading: "madhyāhnaṁ kyāṇṭīnlō bhōjanaṁ cēstānu."
+        ipa: "mad̪ʱjaːɦnam kjaːɳʈiːnloː boːdʒanam tʃeːst̪aːnu."
+        bases:
+          - { word: "క్యాంటీన్‌లో", base: "క్యాంటీన్", reading: "kyāṇṭīn" }
+          - { word: "చేస్తాను", ref: "te-0621" }
+      - target: "క్యాంటీన్ ఎక్కడ ఉంది?"
+        reading: "kyāṇṭīn ekkaḍa undi?"
+        ipa: "kjaːɳʈiːn ekkaɖa und̪i?"
+        bases:
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-2918"
+    target: "లిఫ్టు"
+    alt_target: ["లిఫ్ట్"]
+    reading: "liphṭu"
+    ipa: "lipʰʈu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "లిఫ్టు పని చేయడం లేదు, మెట్లు ఎక్కండి."
+        reading: "liphṭu pani cēyaḍaṁ lēdu, meṭlu ekkaṇḍi."
+        ipa: "lipʰʈu pani tʃeːjaɖam leːd̪u, meʈlu ekkaɳɖi."
+        bases:
+          - { word: "ఎక్కండి", base: "ఎక్కడం", reading: "ekkaḍaṁ" }
+      - target: "లిఫ్టులో ఐదుగురు ఉన్నారు."
+        reading: "liphṭulō aiduguru unnāru."
+        ipa: "lipʰʈuloː aid̪uɡuru unnaːru."
+        bases:
+          - { word: "లిఫ్టులో", base: "లిఫ్టు", reading: "liphṭu" }
+          - { word: "ఐదుగురు", base: "ఐదు", reading: "aidu" }
+          - { word: "ఉన్నారు", ref: "te-0633" }
+  - id: "te-2919"
+    target: "రిసెప్షన్"
+    reading: "risepṣan"
+    ipa: "risepʂan"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "రిసెప్షన్‌లో మీ పేరు చెప్పండి."
+        reading: "risepṣanlō mī pēru ceppaṇḍi."
+        ipa: "risepʂanloː miː peːru tʃeppaɳɖi."
+        bases:
+          - { word: "రిసెప్షన్‌లో", base: "రిసెప్షన్", reading: "risepṣan" }
+          - { word: "మీ", base: "మీరు", reading: "mīru" }
+          - { word: "చెప్పండి", ref: "te-0628" }
+      - target: "రిసెప్షన్ మూడో అంతస్తులో ఉంది."
+        reading: "risepṣan mūḍō antastulō undi."
+        ipa: "risepʂan muːɖoː ant̪ast̪uloː und̪i."
+        bases:
+          - { word: "మూడో", base: "మూడు", reading: "mūḍu" }
+          - { word: "అంతస్తులో", base: "అంతస్తు", reading: "antastu" }
+          - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-2920"
+    target: "ఐడీ కార్డు"
+    reading: "aiḍī kārḍu"
+    ipa: "aiɖiː kaːrɖu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "మీ ఐడీ కార్డు చూపించండి."
+        reading: "mī aiḍī kārḍu cūpiñcaṇḍi."
+        ipa: "miː aiɖiː kaːrɖu tʃuːpiɲtʃaɳɖi."
+        bases:
+          - { word: "మీ", base: "మీరు", reading: "mīru" }
+          - { word: "చూపించండి", base: "చూపించడం", reading: "cūpiñcaḍaṁ" }
+      - target: "ఐడీ కార్డు లేకుండా లోపలికి రావద్దు."
+        reading: "aiḍī kārḍu lēkuṇḍā lōpaliki rāvaddu."
+        ipa: "aiɖiː kaːrɖu leːkuɳɖaː loːpaliki raːʋad̪d̪u."
+        bases:
+          - { word: "లోపలికి", base: "లోపల", reading: "lōpala" }
+          - { word: "రావద్దు", ref: "te-0623" }
+  - id: "te-2921"
+    target: "సంతకం"
+    reading: "santakaṁ"
+    ipa: "sant̪akam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ఇక్కడ మీ సంతకం పెట్టండి."
+        reading: "ikkaḍa mī santakaṁ peṭṭaṇḍi."
+        ipa: "ikkaɖa miː sant̪akam pet̪ʈaɳɖi."
+        bases:
+          - { word: "మీ", base: "మీరు", reading: "mīru" }
+          - { word: "పెట్టండి", base: "పెట్టడం", reading: "peṭṭaḍaṁ" }
+      - target: "ఈ పత్రం మీద సంతకం లేదు."
+        reading: "ī patraṁ mīda santakaṁ lēdu."
+        ipa: "iː pat̪ram miːd̪a sant̪akam leːd̪u."
+  - ref: "te-0414"
+  - id: "te-2922"
+    target: "వేతనం"
+    reading: "vētanaṁ"
+    ipa: "ʋeːt̪anam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "నెల వేతనం ఎంత?"
+        reading: "nela vētanaṁ enta?"
+        ipa: "nela ʋeːt̪anam ent̪a?"
+      - target: "వేతనం ప్రతి నెలా ఒకటో తేదీన వస్తుంది."
+        reading: "vētanaṁ prati nelā okaṭō tēdīna vastundi."
+        ipa: "ʋeːt̪anam prat̪i nelaː okat̪oː t̪eːd̪iːna ʋast̪und̪i."
+        bases:
+          - { word: "నెలా", base: "నెల", reading: "nela" }
+          - { word: "ఒకటో", base: "ఒకటి", reading: "okaṭi" }
+          - { word: "తేదీన", base: "తేది", reading: "tēdi" }
+          - { word: "వస్తుంది", ref: "te-0623" }
+  - id: "te-2923"
+    target: "ప్రమోషన్"
+    reading: "pramōṣan"
+    ipa: "pramoːʂan"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ఈ సంవత్సరం నాకు ప్రమోషన్ వచ్చింది."
+        reading: "ī saṁvatsaraṁ nāku pramōṣan vaccindi."
+        ipa: "iː samʋat̪sarəm naːku pramoːʂan ʋat͡ʃtʃind̪i."
+        bases:
+          - { word: "నాకు", base: "నేను", reading: "nēnu" }
+          - { word: "వచ్చింది", ref: "te-0623" }
+      - target: "ప్రమోషన్ కోసం పని బాగా చేయాలి."
+        reading: "pramōṣan kōsaṁ pani bāgā cēyāli."
+        ipa: "pramoːʂan koːsam pani baːɡaː tʃeːjaːli."
+        bases:
+          - { word: "చేయాలి", ref: "te-0621" }
+  - id: "te-2924"
+    target: "రాజీనామా"
+    reading: "rājīnāmā"
+    ipa: "raːdʒiːnaːmaː"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "అతను రాజీనామా ఇచ్చారు."
+        reading: "atanu rājīnāmā iccāru."
+        ipa: "at̪anu raːdʒiːnaːmaː itʃtʃaːru."
+        bases:
+          - { word: "అతను", base: "అతడు", reading: "ataḍu" }
+          - { word: "ఇచ్చారు", ref: "te-0630" }
+      - target: "రాజీనామా ఆమోదించారు."
+        reading: "rājīnāmā āmōdiñcāru."
+        ipa: "raːdʒiːnaːmaː aːmoːd̪ɪɲtʃaːru."
+        bases:
+          - { word: "ఆమోదించారు", base: "ఆమోదించడం", reading: "āmōdiñcaḍaṁ" }
+    senses:
+      - { id: "resignation", pos: "noun", source: "https://en.wiktionary.org/wiki/రాజీనామా" }
+  - id: "te-2925"
+    target: "కంపెనీ"
+    reading: "kampenī"
+    ipa: "kampeniː"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "మా కంపెనీ ఎక్కడ ఉంది?"
+        reading: "mā kampenī ekkaḍa undi?"
+        ipa: "maː kampeniː ekkaɖa und̪i?"
+        bases:
+          - { word: "మా", base: "మేము", reading: "mēmu" }
+          - { word: "ఉంది", ref: "te-0633" }
+      - target: "ఆ కంపెనీలో ఎంత మంది పని చేస్తారు?"
+        reading: "ā kampenīlō enta mandi pani cēstāru?"
+        ipa: "aː kampeniːloː ent̪a mand̪i pani tʃeːst̪aːru?"
+        bases:
+          - { word: "కంపెనీలో", base: "కంపెనీ", reading: "kampenī" }
+          - { word: "చేస్తారు", ref: "te-0621" }
+  - id: "te-2926"
+    target: "ఆలస్యం"
+    reading: "ālasyaṁ"
+    ipa: "aːlasjam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ట్రాఫిక్ వల్ల ఆలస్యం అయింది."
+        reading: "ṭrāphik valla ālasyaṁ ayindi."
+        ipa: "ʈraːpʰik ʋalla aːlasjam ajind̪i."
+        bases:
+          - { word: "అయింది", base: "అవడం", reading: "avaḍaṁ" }
+      - target: "క్షమించండి, నేను ఆలస్యంగా వచ్చాను."
+        reading: "kṣamiñcaṇḍi, nēnu ālasyaṅgā vaccānu."
+        ipa: "kʂamiɲtʃaɳɖi, neːnu aːlasjaŋɡaː ʋat͡ʃtʃaːnu."
+        bases:
+          - { word: "క్షమించండి", base: "క్షమించడం", reading: "kṣamiñcaḍaṁ" }
+          - { word: "ఆలస్యంగా", base: "ఆలస్యం", reading: "ālasyaṁ" }
+          - { word: "వచ్చాను", ref: "te-0623" }
+  - id: "te-2927"
+    target: "తప్పనిసరి"
+    reading: "tappanisari"
+    ipa: "t̪appanisari"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ఈ సమావేశం అందరికీ తప్పనిసరి."
+        reading: "ī samāvēśaṁ andarikī tappanisari."
+        ipa: "iː samaːʋeːɕam andarikiː t̪appanisari."
+        bases:
+          - { word: "అందరికీ", base: "అందరు", reading: "andaru" }
+      - target: "ఈ ఫారం నింపడం తప్పనిసరి."
+        reading: "ī phāraṁ nimpaḍaṁ tappanisari."
+        ipa: "iː pʰaːram nimpaɖam t̪appanisari."
+    senses:
+      - { id: "unavoidable", pos: "adj", source: "https://en.wiktionary.org/wiki/తప్పనిసరి" }
+  - id: "te-2928"
+    target: "ముఖ్యమైన"
+    reading: "mukhyamaina"
+    ipa: "mukʰjamaina"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ఇది చాలా ముఖ్యమైన విషయం."
+        reading: "idi cālā mukhyamaina viṣayaṁ."
+        ipa: "id̪i tʃaːlaː mukʰjamaina ʋiʂajam."
+      - target: "ఈ నోటీసు ముఖ్యమైనది."
+        reading: "ī nōṭīsu mukhyamainadi."
+        ipa: "iː noːʈiːsu mukʰjamainad̪i."
+        bases:
+          - { word: "ముఖ్యమైనది", base: "ముఖ్యమైన", reading: "mukhyamaina" }
+  - ref: "te-0413"
+  - ref: "te-1334"
+  - ref: "te-0311"
+  - ref: "te-1820"
+  - ref: "te-0420"
+  - ref: "te-0425"
+  - ref: "te-0427"
+  - ref: "te-0872"
+  - id: "te-2929"
+    target: "వాయిదా వేయడం"
+    reading: "vāyidā vēyaḍaṁ"
+    ipa: "ʋaːjid̪aː ʋeːjaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "మీటింగ్ వాయిదా వేశారు."
+        reading: "mīṭiṅg vāyidā vēśāru."
+        ipa: "miːʈiŋɡ ʋaːjid̪aː ʋeːʃaːru."
+        bases:
+          - { word: "వేశారు", base: "వేయడం", reading: "vēyaḍaṁ" }
+      - target: "ఈ రోజు పని వాయిదా వేయొద్దు."
+        reading: "ī rōju pani vāyidā vēyoddu."
+        ipa: "iː roːdʒu pani ʋaːjid̪aː ʋeːjod̪d̪u."
+        bases:
+          - { word: "వేయొద్దు", base: "వేయడం", reading: "vēyaḍaṁ" }
+  - id: "te-2930"
+    target: "తెలియజేయడం"
+    reading: "teliyajēyaḍaṁ"
+    ipa: "t̪eliɪjad͡ʒeːjaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "గడువు మార్పు గురించి నేను మీకు తెలియజేస్తాను."
+        reading: "gaḍuvu mārpu gurinci nēnu mīku teliyajēstānu."
+        ipa: "ɡaɖuʋu maːrpu ɡurint͡ʃi neːnu miːku t̪eliɪjad͡ʒeːst̪aːnu."
+        bases:
+          - { word: "మీకు", base: "మీరు", reading: "mīru" }
+          - { word: "తెలియజేస్తాను", ref: "te-2930" }
+      - target: "దయచేసి ఇమెయిల్‌లో తెలియజేయండి."
+        reading: "dayacēsi imeyil‌lō teliyajēyaṇḍi."
+        ipa: "d̪ajat͡ʃeːsi imeːjilloː t̪eliɪjad͡ʒeːjaɳɖi."
+        bases:
+          - { word: "ఇమెయిల్‌లో", ref: "te-2409" }
+          - { word: "తెలియజేయండి", ref: "te-2930" }
+  - id: "te-2931"
+    target: "రద్దు చేయడం"
+    reading: "raddu cēyaḍaṁ"
+    ipa: "raddu tʃeːjaɖam"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "చేయడం", ref: "te-0621" }
+    examples:
+      - target: "వర్షం వల్ల మీటింగ్ రద్దు చేశారు."
+        reading: "varṣaṁ valla mīṭiṅg raddu cēśāru."
+        ipa: "ʋarʂam ʋalla miːʈiŋɡ raddu tʃeːʃaːru."
+        bases:
+          - { word: "చేశారు", ref: "te-0621" }
+      - target: "రైలు రద్దు అయింది."
+        reading: "railu raddu ayindi."
+        ipa: "railu raddu ajind̪i."
+        bases:
+          - { word: "అయింది", base: "అవడం", reading: "avaḍaṁ" }
+  - id: "te-2932"
+    target: "సంతకం చేయడం"
+    reading: "santakaṁ cēyaḍaṁ"
+    ipa: "sant̪akam tʃeːjaɖam"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "చేయడం", ref: "te-0621" }
+    examples:
+      - target: "దయచేసి ఇక్కడ సంతకం చేయండి."
+        reading: "dayacēsi ikkaḍa santakaṁ cēyaṇḍi."
+        ipa: "d̪ajat͡ʃeːsi ikkaɖa sant̪akam tʃeːjaɳɖi."
+        bases:
+          - { word: "చేయండి", ref: "te-0621" }
+      - target: "నేను ఆ పత్రం మీద సంతకం చేశాను."
+        reading: "nēnu ā patraṁ mīda santakaṁ cēśānu."
+        ipa: "neːnu aː pat̪ram miːd̪a sant̪akam tʃeːʃaːnu."
+        bases:
+          - { word: "చేశాను", ref: "te-0621" }
+  - id: "te-2933"
+    target: "నిర్ణయించడం"
+    reading: "nirṇayiñcaḍaṁ"
+    ipa: "nirɳajiɲtʃaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "మేము రేపు నిర్ణయిస్తాం."
+        reading: "mēmu rēpu nirṇayistāṁ."
+        ipa: "meːmu reːpu nirɳajist̪aːm."
+        bases:
+          - { word: "నిర్ణయిస్తాం", ref: "te-2933" }
+      - target: "ఈ విషయం మీరే నిర్ణయించాలి."
+        reading: "ī viṣayaṁ mīrē nirṇayiñcāli."
+        ipa: "iː ʋiʂajam miːreː nirɳajiɲtʃaːli."
+        bases:
+          - { word: "మీరే", base: "మీరు", reading: "mīru" }
+          - { word: "నిర్ణయించాలి", ref: "te-2933" }
