@@ -1,20 +1,793 @@
-# The order Japanese is taught in, from every language it is taught from:
-# each deck is named by its core id, and a learner from English is
-# taught ja-en-<name> for ja-<name>. First hiragana, which everything
-# else in Japanese assumes.
-# See ADR-0013, ADR-0036 and docs/DECK-FORMAT.md.
+# The order Japanese is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner
+# from English is taught ja-en-<name> for ja-<name> (ADR-0013, ADR-0036).
+#
+# This is also Japanese's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"):
+# every unit from the first words to B1, written or planned, with its size
+# in words, its grammar topics, the three milestones, and for each planned
+# unit its listening and reading passages. A unit with no deck yet is
+# planned: the course teaches it as "Coming" until a deck is written. A
+# theme named here that decks/themes.yaml does not list yet is added to it
+# with its first deck.
+#
+# Sizes. The plan's levels are about 700, 900 and 1,200 words (low
+# confidence). Japanese is tier V (docs/plans/language-paths-scheme.md,
+# x3.7 in time), and a Japanese B1 needs more words than a Romance one
+# (the JLPT's N5, N4 and N3 are usually given as about 800, 1,500 and
+# 3,700 words), so the levels here are raised to about 800, 1,050 and
+# 1,500 words, about 3,350 in all: the most the validator's range
+# (2,000-3,500 up to B1, each level within half to one and a half times
+# its size) allows. The tier stretches the time a level takes, not the
+# words it holds. Sizes are one number for every native language.
+#
+# The order follows docs/plans/words-rules-sentences.md (owner, 2026-10-07,
+# and 2026-10-17: "build the path files for all present languages via an
+# opus agent, as per our current path design"):
+# 1. the phrasebook, taught whole from the first lesson;
+# 2. the first word units, read in romaji (Hepburn, ja-romanisation.yaml);
+# 3. the script, after the first word units ("After units 4-6"): hiragana
+#    first, then, after the core, katakana, then the first kanji, a set at
+#    a time through A1, A2 and B1, as the scheme's tier V order has it
+#    ("kanji (gradual)"); a learner who learns without the script skips
+#    them (#554);
+# 4. a core of about 200 common words in themed units, before the large
+#    tables ("Yes, smaller (~200)");
+# 5. rules as forms: the copula and the particles first (Japanese's
+#    postpositions), then the demonstratives, the polite verb forms, the
+#    verb groups and the adjectives, practised on the words already known;
+# 6. sentences, each after its words and rules; then the other themes,
+#    each its words, then its rules, then its sentences.
+# Japanese's grammar keeps the East Asian order of
+# docs/plans/language-paths-scheme.md within each level: desu and masu,
+# the particles (wa, ga, o, ni, de), the verb groups, the te-form, the
+# plain form, then the conditionals and keigo.
+#
+# Script units not written yet. The format has no planned form for an
+# alphabet unit, which counts neither words nor grammar: a planned unit is
+# a theme, which counts words, or a grammar topic. So each planned script
+# unit is planned as a grammar unit of 0 words with a topic named
+# script-..., and when its deck is written it becomes a plain list unit,
+# its deck goes into alphabet, and its topic leaves the grammar count.
+#
+# Japanese is written without spaces between words, so the checks that
+# split a card's text into words wait for its words to be given
+# (docs/plans/language-paths.md, "Scripts without spaces").
+#
+# The core's order is by judgement, most common first: about me, everyday
+# verbs, the common adverbs and function words, how much and how many,
+# describing words, time, where things are, more verbs. It was meant to
+# come from Wikipedia's counts (tools/wikipedia_frequency.py, #516): order
+# the core again from the counts once they are written.
+#
+# Every deck of Japanese is listed exactly once.
 schema: 1
-kind: path
-id: ja-path
-language: ja
+kind: "path"
+id: "ja-path"
+language: "ja"
 # No gender classes: a noun takes no gender (#512; DECK-FORMAT.md, Card data).
 genders: []
+# Where Japanese is spoken, for a rater's region and a card's region note
+# (ADR-0036): the usual regions of Japan, which its dialects roughly follow
+# (Tokyo speech in Kanto, the Kansai dialects of Osaka and Kyoto, and so
+# on), each named with example prefectures and cities so that a rater can
+# place themselves. Low confidence on the grouping: a native reviewer
+# checks this list before any rating names a region. The ids are
+# permanent, as card ids are; rename a name, never an id. The app adds
+# "Elsewhere" after them.
+regions:
+  - id: "hokkaido-tohoku"
+    name: { "en": "Hokkaido and Tohoku (Sapporo, Sendai, Aomori)" }
+  - id: "kanto"
+    name: { "en": "Kanto (Tokyo, Yokohama, Saitama, Chiba)" }
+  - id: "chubu"
+    name: { "en": "Chubu (Nagoya, Niigata, Shizuoka, Kanazawa)" }
+  - id: "kansai"
+    name: { "en": "Kansai (Osaka, Kyoto, Kobe, Nara)" }
+  - id: "chugoku-shikoku"
+    name: { "en": "Chugoku and Shikoku (Hiroshima, Okayama, Matsuyama)" }
+  - id: "kyushu"
+    name: { "en": "Kyushu (Fukuoka, Kumamoto, Kagoshima)" }
+  - id: "okinawa"
+    name: { "en": "Okinawa (Naha and the Ryukyu Islands)" }
 # The decks that need the alphabet: a learner who learns without it
-# skips them.
+# skips them. The planned script units join it as each is written.
 alphabet:
-  - ja-hiragana
+  - "ja-hiragana"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
-  - [ja-hiragana]
+  # 1. The phrasebook, taught whole from the first lesson, with the first
+  # words beside it: ja-phrasebook (15-25 survival phrases, which count no
+  # words) and ja-first-words when written.
+  - planned: { id: "ja-phrasebook", theme: "first-words", words: 12 }
+    listening_passages:
+      - { id: "first-greetings", text: { "en": "Greeting a neighbour in the morning, at noon and in the evening" } }
+    reading_passages:
+      - { id: "phrase-card", text: { "en": "A pocket card of survival phrases, in romaji" } }
+  # 2. The first word units, read in romaji.
+  - planned: { id: "ja-sound-differences", theme: "sound-differences", words: 16 }
+    listening_passages:
+      - { id: "long-and-short", text: { "en": "Pairs of words told apart by a long vowel or a double consonant: obasan and obaasan, kite and kitte" } }
+    reading_passages:
+      - { id: "sound-pairs-list", text: { "en": "A list of word pairs in romaji that differ by one long sound" } }
+  - planned: { id: "ja-questions", theme: "questions", words: 15 }
+    listening_passages:
+      - { id: "at-the-information-desk", text: { "en": "Asking who, what, where and when at an information desk" } }
+    reading_passages:
+      - { id: "visitor-faq", text: { "en": "A short visitor's sheet of questions and answers" } }
+  - planned: { id: "ja-addressing", theme: "addressing", words: 20 }
+    listening_passages:
+      - { id: "san-and-sensei", text: { "en": "Meeting a teacher and a classmate: names with san and sensei" } }
+    reading_passages:
+      - { id: "name-cards", text: { "en": "Business cards exchanged at a meeting, surname first" } }
+  - planned: { id: "ja-pronouns", theme: "pronouns", words: 20 }
+    listening_passages:
+      - { id: "who-is-that", text: { "en": "Pointing out who is who in a group photo: I, you, he, she" } }
+    reading_passages:
+      - { id: "class-photo-caption", text: { "en": "A caption under a class photo naming each person" } }
+  - planned: { id: "ja-family", theme: "family", words: 35 }
+    listening_passages:
+      - { id: "my-family-your-family", text: { "en": "Talking about your own family and someone else's, with the two words for each relative" } }
+    reading_passages:
+      - { id: "family-introduction", text: { "en": "A short self-introduction naming the family" } }
+  - planned: { id: "ja-numbers-1-20", theme: "numbers-1-20", words: 25 }
+    listening_passages:
+      - { id: "two-ways-to-count", text: { "en": "Counting from one to ten twice: ichi, ni, san and hitotsu, futatsu, mittsu" } }
+    reading_passages:
+      - { id: "locker-numbers", text: { "en": "Locker numbers at a station" } }
+  # 3. The script, after the first word units (#554: skipped by a learner
+  # who learns without it). Hiragana first: the 46 basic letters, then the
+  # voiced marks, the small ya, yu and yo, the small tsu and long vowels.
+  - ["ja-hiragana"]
+  - planned: { id: "ja-hiragana-marks", grammar: "script-hiragana-marks", words: 0 }
+    listening_passages:
+      - { id: "ka-and-ga", text: { "en": "Hearing a letter with and without its voiced mark: ka and ga, ha, ba and pa" } }
+    reading_passages:
+      - { id: "hiragana-signs", text: { "en": "Simple hiragana signs: entrance, exit, toilet" } }
+  # 4. The core: about 200 common words, most common first (by judgement
+  # until the Wikipedia counts are written, #516).
+  - planned: { id: "ja-about-me", theme: "about-me", words: 20 }
+    listening_passages:
+      - { id: "jikoshoukai", text: { "en": "A self-introduction on the first day at a language school" } }
+    reading_passages:
+      - { id: "registration-card", text: { "en": "A registration card: name, age, country, job" } }
+  - planned: { id: "ja-everyday-verbs", theme: "everyday-verbs", words: 35 }
+    listening_passages:
+      - { id: "a-morning-at-home", text: { "en": "A mother says what each person in the house does in the morning" } }
+    reading_passages:
+      - { id: "note-on-the-table", text: { "en": "A note on the table: what to eat, what to drink, when to come home" } }
+  - planned: { id: "ja-adverbs", theme: "adverbs", words: 30 }
+    listening_passages:
+      - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
+    reading_passages:
+      - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
+  - planned: { id: "ja-quantities", theme: "quantities", words: 20 }
+    listening_passages:
+      - { id: "how-many-do-you-want", text: { "en": "Asking how much and how many at a bakery" } }
+    reading_passages:
+      - { id: "recipe-amounts", text: { "en": "The amounts on a recipe card" } }
+  - planned: { id: "ja-describing", theme: "describing", words: 35 }
+    listening_passages:
+      - { id: "how-is-it", text: { "en": "A friend asks about your new room: big, quiet, convenient" } }
+    reading_passages:
+      - { id: "postcard-from-kyoto", text: { "en": "A short postcard: the weather, the food, the people" } }
+  - planned: { id: "ja-time", theme: "time", words: 25 }
+    listening_passages:
+      - { id: "what-time-is-it", text: { "en": "Asking and telling the time" } }
+    reading_passages:
+      - { id: "shop-hours", text: { "en": "The opening hours on a shop door" } }
+  - planned: { id: "ja-location", theme: "location", words: 15 }
+    listening_passages:
+      - { id: "where-is-my-key", text: { "en": "Looking for a key: on, under, in, next to" } }
+    reading_passages:
+      - { id: "room-layout", text: { "en": "A note saying where things are in a room" } }
+  - planned: { id: "ja-more-verbs", theme: "more-verbs", words: 30 }
+    listening_passages:
+      - { id: "weekend-chores", text: { "en": "Someone lists what they will do this weekend" } }
+    reading_passages:
+      - { id: "to-do-list", text: { "en": "A short to-do list" } }
+  # 5. Rules as forms, practised on the words known: the copula and the
+  # particles first, then the demonstratives, the polite verb forms, the
+  # verb groups, existence and the adjectives.
+  - planned: { id: "ja-grammar-desu", grammar: ["desu", "desu-negative"] }
+    listening_passages:
+      - { id: "i-am-a-student", text: { "en": "Saying who and what you are, and are not: a student, not a teacher" } }
+    reading_passages:
+      - { id: "profile-card", text: { "en": "A profile card: what each person is and is not" } }
+  - planned: { id: "ja-grammar-case-particles", grammar: ["particle-wa", "particle-ga", "particle-o", "particle-ni", "particle-de"] }
+    listening_passages:
+      - { id: "who-does-what-where", text: { "en": "Saying who does what, where and to whom" } }
+    reading_passages:
+      - { id: "diary-lines", text: { "en": "A few diary lines: where I ate, what I bought, whom I met" } }
+  - planned: { id: "ja-grammar-more-particles", grammar: ["particle-e", "particle-no", "particle-mo", "particle-to", "kara-made"] }
+    listening_passages:
+      - { id: "from-nine-to-five", text: { "en": "Saying from when to when, with whom, and whose" } }
+    reading_passages:
+      - { id: "office-hours-note", text: { "en": "A note on office hours and who is in, from when to when" } }
+  - planned: { id: "ja-grammar-questions", grammar: "question-ka" }
+    listening_passages:
+      - { id: "is-it-yours", text: { "en": "Asking yes-no questions with ka, and answering hai and iie" } }
+    reading_passages:
+      - { id: "quiz-card", text: { "en": "A short quiz of yes-no questions" } }
+  - planned: { id: "ja-grammar-demonstratives", grammar: "kosoado" }
+    listening_passages:
+      - { id: "this-one-that-one", text: { "en": "Pointing at things in a shop: this, that, that over there, which" } }
+    reading_passages:
+      - { id: "shop-labels", text: { "en": "Labels in a shop window pointing at its goods" } }
+  - planned: { id: "ja-grammar-masu", grammar: ["masu", "masen"] }
+    listening_passages:
+      - { id: "what-do-you-do-on-sundays", text: { "en": "Saying politely what you do and do not do on Sundays" } }
+    reading_passages:
+      - { id: "weekly-routine", text: { "en": "A weekly routine written in polite forms" } }
+  - planned: { id: "ja-grammar-verb-groups", grammar: "verb-groups" }
+    listening_passages:
+      - { id: "taberu-and-nomu", text: { "en": "The same sentences with verbs of each group: eat, drink, come, do" } }
+    reading_passages:
+      - { id: "verb-chart", text: { "en": "A chart of everyday verbs sorted into their three groups" } }
+  - planned: { id: "ja-grammar-aru-iru", grammar: "aru-iru" }
+    listening_passages:
+      - { id: "is-there-a-bank", text: { "en": "Asking whether there is a bank nearby, and who is at home" } }
+    reading_passages:
+      - { id: "floor-guide", text: { "en": "A floor guide in a department store: what is on each floor" } }
+  - planned: { id: "ja-grammar-adjectives", grammar: ["i-adjectives", "na-adjectives"] }
+    listening_passages:
+      - { id: "a-quiet-town", text: { "en": "Describing a town: quiet, lively, not expensive" } }
+    reading_passages:
+      - { id: "hotel-review", text: { "en": "A short hotel review: the room, the staff, the food" } }
+  # 6. Sentences, each after its words and rules; then the other A1
+  # themes, each its words, its rules, then its sentences.
+  - planned: { id: "ja-work", theme: "work", words: 35 }
+    listening_passages:
+      - { id: "what-is-your-job", text: { "en": "Two people ask each other what they do for a living" } }
+    reading_passages:
+      - { id: "meishi", text: { "en": "A business card and a short job description" } }
+  - planned: { id: "ja-numbers-big", theme: "numbers-big", words: 35 }
+    listening_passages:
+      - { id: "prices-and-years", text: { "en": "Hearing prices in yen, years and phone numbers" } }
+    reading_passages:
+      - { id: "price-tags", text: { "en": "Price tags and a bus-route number board" } }
+  - planned: { id: "ja-grammar-counters", grammar: "counters" }
+    listening_passages:
+      - { id: "two-coffees-three-people", text: { "en": "Ordering for a group: two coffees, three people, one sheet of paper" } }
+    reading_passages:
+      - { id: "order-slip", text: { "en": "An order slip with counted items" } }
+  # Katakana, after the core: the sounds of loanwords.
+  - planned: { id: "ja-katakana", grammar: "script-katakana", words: 0 }
+    listening_passages:
+      - { id: "loanword-sounds", text: { "en": "Hearing English words as Japanese says them: koohii, terebi, pasokon" } }
+    reading_passages:
+      - { id: "cafe-menu-board", text: { "en": "A cafe menu board in katakana" } }
+  - planned: { id: "ja-loanwords", theme: "loanwords", words: 30 }
+    listening_passages:
+      - { id: "at-the-konbini", text: { "en": "Buying a few things at a convenience store" } }
+    reading_passages:
+      - { id: "konbini-flyer", text: { "en": "A convenience store's flyer of new products" } }
+  - planned: { id: "ja-market", theme: "market", words: 40 }
+    listening_passages:
+      - { id: "at-the-greengrocer", text: { "en": "Buying fruit and vegetables at a greengrocer" } }
+    reading_passages:
+      - { id: "market-price-board", text: { "en": "A price board at a market" } }
+  - planned: { id: "ja-groceries", theme: "groceries", words: 40 }
+    listening_passages:
+      - { id: "shopping-list-aloud", text: { "en": "Two people go through a shopping list at a supermarket" } }
+    reading_passages:
+      - { id: "shopping-list", text: { "en": "A handwritten shopping list" } }
+  - planned: { id: "ja-food", theme: "food", words: 60 }
+    listening_passages:
+      - { id: "ordering-a-set-meal", text: { "en": "Choosing a set meal at a small restaurant" } }
+    reading_passages:
+      - { id: "menu-card", text: { "en": "A restaurant menu card with dishes and prices" } }
+  - planned: { id: "ja-grammar-masu-past", grammar: ["mashita", "masen-deshita"] }
+    listening_passages:
+      - { id: "what-did-you-eat", text: { "en": "Saying politely what you ate and did yesterday" } }
+    reading_passages:
+      - { id: "yesterday-note", text: { "en": "A short note about yesterday, in polite past forms" } }
+  - planned: { id: "ja-transport", theme: "transport", words: 35 }
+    listening_passages:
+      - { id: "which-train", text: { "en": "Asking which train goes to the city centre" } }
+    reading_passages:
+      - { id: "station-timetable", text: { "en": "A train and bus timetable at a station" } }
+  - planned: { id: "ja-directions", theme: "directions", words: 30 }
+    listening_passages:
+      - { id: "asking-the-way", text: { "en": "Asking the way to the station and being told" } }
+    reading_passages:
+      - { id: "simple-map", text: { "en": "A simple map with a route in words" } }
+  - planned: { id: "ja-grammar-tai", grammar: "tai" }
+    listening_passages:
+      - { id: "i-want-to-go", text: { "en": "Saying where you want to go and what you want to eat" } }
+    reading_passages:
+      - { id: "wish-list", text: { "en": "A wish list for a trip" } }
+  - planned: { id: "ja-body", theme: "body", words: 30 }
+    listening_passages:
+      - { id: "where-it-hurts", text: { "en": "Telling a doctor where it hurts" } }
+    reading_passages:
+      - { id: "stretching-chart", text: { "en": "A chart of simple morning stretches" } }
+  - planned: { id: "ja-places", theme: "places", words: 40 }
+    listening_passages:
+      - { id: "walk-to-the-station", text: { "en": "A neighbour names the places you pass on the way to the station" } }
+    reading_passages:
+      - { id: "street-signs", text: { "en": "Signs along a street: post office, bank, hospital, shrine" } }
+  - planned: { id: "ja-home", theme: "home", words: 40 }
+    listening_passages:
+      - { id: "an-apartment-tour", text: { "en": "A tour of a small apartment, room by room" } }
+    reading_passages:
+      - { id: "apartment-advert", text: { "en": "A short advert for an apartment to rent" } }
+  - planned: { id: "ja-grammar-mashou", grammar: ["masen-ka", "mashou"] }
+    listening_passages:
+      - { id: "shall-we-go", text: { "en": "Inviting a friend: won't you come, let's go" } }
+    reading_passages:
+      - { id: "invitation-message", text: { "en": "A message inviting a friend out on Saturday" } }
+  - planned: { id: "ja-help", theme: "help", words: 25 }
+    listening_passages:
+      - { id: "lost-in-the-city", text: { "en": "Asking for help when lost" } }
+    reading_passages:
+      - { id: "emergency-numbers", text: { "en": "A card of emergency numbers and what to say" } }
+  # The first kanji: numbers, days, people and the simplest pictures.
+  - planned: { id: "ja-kanji-1", grammar: "script-kanji-1", words: 0 }
+    listening_passages:
+      - { id: "days-of-the-week", text: { "en": "The days of the week, each named after its kanji: sun, moon, fire, water" } }
+    reading_passages:
+      - { id: "calendar-page", text: { "en": "A calendar page with the days and dates in kanji" } }
+    milestone: "A1"
+  # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
+  # then its sentences; the te-form and the plain forms, more kanji.
+  - planned: { id: "ja-daily-life", theme: "daily-life", words: 45 }
+    listening_passages:
+      - { id: "a-normal-day", text: { "en": "Someone talks through an ordinary working day" } }
+    reading_passages:
+      - { id: "daily-timetable", text: { "en": "A timetable for a day: wake, work, eat, bathe, sleep" } }
+  - planned: { id: "ja-grammar-te-form", grammar: "te-form" }
+    listening_passages:
+      - { id: "and-then", text: { "en": "Telling a morning in order: I got up, washed and went out" } }
+    reading_passages:
+      - { id: "morning-steps", text: { "en": "A short text joining the steps of a morning" } }
+  - planned: { id: "ja-grammar-te-kudasai", grammar: "te-kudasai" }
+    listening_passages:
+      - { id: "please-wait", text: { "en": "Asking someone politely to wait, write and show" } }
+    reading_passages:
+      - { id: "request-signs", text: { "en": "Signs that ask: please take off your shoes, please line up" } }
+  - planned: { id: "ja-calendar", theme: "calendar", words: 40 }
+    listening_passages:
+      - { id: "making-a-date", text: { "en": "Fixing a day and a time with a friend" } }
+    reading_passages:
+      - { id: "wall-calendar", text: { "en": "A wall calendar with appointments" } }
+  - planned: { id: "ja-seasons", theme: "seasons", words: 40 }
+    listening_passages:
+      - { id: "cherry-blossom-plans", text: { "en": "Friends plan a cherry-blossom picnic in spring" } }
+    reading_passages:
+      - { id: "seasonal-greeting", text: { "en": "A seasonal greeting card" } }
+  - planned: { id: "ja-grammar-te-iru", grammar: "te-iru" }
+    listening_passages:
+      - { id: "what-are-you-doing", text: { "en": "Saying what you are doing right now, and where someone lives" } }
+    reading_passages:
+      - { id: "chat-messages", text: { "en": "A few chat messages about what each person is doing" } }
+  - planned: { id: "ja-clothes", theme: "clothes", words: 40 }
+    listening_passages:
+      - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
+    reading_passages:
+      - { id: "sale-sign", text: { "en": "A clothes shop's sale sign" } }
+  - planned: { id: "ja-grammar-conjunctions", grammar: "conjunctions" }
+    listening_passages:
+      - { id: "but-and-so", text: { "en": "Joining two sentences: and, but, so, then" } }
+    reading_passages:
+      - { id: "short-blog-post", text: { "en": "A short blog post about a weekend" } }
+  - planned: { id: "ja-animals", theme: "animals", words: 35 }
+    listening_passages:
+      - { id: "a-zoo-visit", text: { "en": "A child names the animals seen at a zoo" } }
+    reading_passages:
+      - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
+  - planned: { id: "ja-weather", theme: "weather", words: 40 }
+    listening_passages:
+      - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain, typhoon" } }
+    reading_passages:
+      - { id: "weather-message", text: { "en": "A message to a friend about the weather" } }
+  - planned: { id: "ja-grammar-plain-present", grammar: ["plain-present", "nai-form"] }
+    listening_passages:
+      - { id: "talking-with-friends", text: { "en": "Friends talk casually: what they do and do not do" } }
+    reading_passages:
+      - { id: "casual-messages", text: { "en": "Casual messages between friends, in plain forms" } }
+  - planned: { id: "ja-things", theme: "things", words: 50 }
+    listening_passages:
+      - { id: "packing-for-a-trip", text: { "en": "Two people pack a bag for a trip" } }
+    reading_passages:
+      - { id: "lost-property-list", text: { "en": "A lost-property list at a railway station" } }
+  - planned: { id: "ja-kanji-2", grammar: "script-kanji-2", words: 0 }
+    listening_passages:
+      - { id: "kanji-at-the-station", text: { "en": "Hearing the station words whose kanji are taught: in, out, east, west, north, south" } }
+    reading_passages:
+      - { id: "station-signs", text: { "en": "Station signs in kanji: entrance, exit, platform, ticket gate" } }
+  - planned: { id: "ja-shopping", theme: "shopping", words: 50 }
+    listening_passages:
+      - { id: "asking-the-price", text: { "en": "Asking about price and size in a department store" } }
+    reading_passages:
+      - { id: "receipt", text: { "en": "A shop receipt with tax" } }
+  - planned: { id: "ja-grammar-plain-past", grammar: ["ta-form", "nakatta"] }
+    listening_passages:
+      - { id: "what-did-you-do", text: { "en": "Friends say casually what they did and did not do" } }
+    reading_passages:
+      - { id: "plain-diary", text: { "en": "A diary entry in plain past forms" } }
+  - planned: { id: "ja-grammar-adjective-past", grammar: "adjective-past" }
+    listening_passages:
+      - { id: "how-was-it", text: { "en": "Asking how a trip was: fun, cold, not expensive" } }
+    reading_passages:
+      - { id: "trip-review", text: { "en": "A short review of a day trip" } }
+  - planned: { id: "ja-eating-out", theme: "eating-out", words: 50 }
+    listening_passages:
+      - { id: "at-an-izakaya", text: { "en": "Ordering at a small izakaya and asking for the bill" } }
+    reading_passages:
+      - { id: "ticket-machine", text: { "en": "The buttons of a restaurant's meal-ticket machine" } }
+  - planned: { id: "ja-cooking", theme: "cooking", words: 45 }
+    listening_passages:
+      - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes miso soup" } }
+    reading_passages:
+      - { id: "recipe-card", text: { "en": "A recipe card with its steps" } }
+  - planned: { id: "ja-grammar-permission", grammar: ["te-mo-ii", "te-wa-ikenai"] }
+    listening_passages:
+      - { id: "may-i-sit-here", text: { "en": "Asking whether you may sit, take photos and smoke, and being told no" } }
+    reading_passages:
+      - { id: "temple-rules", text: { "en": "The rules on a sign at a temple gate" } }
+  - planned: { id: "ja-school", theme: "school", words: 50 }
+    listening_passages:
+      - { id: "school-day", text: { "en": "A pupil describes the school day" } }
+    reading_passages:
+      - { id: "class-timetable", text: { "en": "A school timetable" } }
+  - planned: { id: "ja-hobbies", theme: "hobbies", words: 50 }
+    listening_passages:
+      - { id: "weekend-hobbies", text: { "en": "Friends talk about what they like doing at weekends" } }
+    reading_passages:
+      - { id: "club-poster", text: { "en": "A poster for a school's sports and music clubs" } }
+  - planned: { id: "ja-grammar-likes", grammar: ["suki", "jouzu"] }
+    listening_passages:
+      - { id: "what-do-you-like", text: { "en": "Saying what you like and are good at, and what you are not" } }
+    reading_passages:
+      - { id: "pen-pal-letter", text: { "en": "A pen-pal letter about likes and skills" } }
+  - planned: { id: "ja-grammar-comparison", grammar: ["yori", "ichiban"] }
+    listening_passages:
+      - { id: "which-is-better", text: { "en": "Two friends compare two phones, and pick the best" } }
+    reading_passages:
+      - { id: "two-cities", text: { "en": "A short text comparing Tokyo and Osaka" } }
+  - planned: { id: "ja-music", theme: "music", words: 40 }
+    listening_passages:
+      - { id: "at-karaoke", text: { "en": "Friends choose songs at karaoke" } }
+    reading_passages:
+      - { id: "concert-flyer", text: { "en": "A flyer for a concert" } }
+  - planned: { id: "ja-sports", theme: "sports", words: 45 }
+    listening_passages:
+      - { id: "baseball-talk", text: { "en": "Friends talk about a baseball game" } }
+    reading_passages:
+      - { id: "match-result", text: { "en": "A short match result" } }
+  - planned: { id: "ja-grammar-giving-receiving", grammar: ["ageru", "kureru", "morau"] }
+    listening_passages:
+      - { id: "birthday-presents", text: { "en": "Saying who gave whom which birthday present" } }
+    reading_passages:
+      - { id: "thank-you-card", text: { "en": "A thank-you card for a present" } }
+  - planned: { id: "ja-illness", theme: "illness", words: 40 }
+    listening_passages:
+      - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
+    reading_passages:
+      - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
+  - planned: { id: "ja-grammar-obligation", grammar: ["nakereba-naranai", "ta-hou-ga-ii"] }
+    listening_passages:
+      - { id: "you-should-rest", text: { "en": "A doctor says what you must do and what you had better do" } }
+    reading_passages:
+      - { id: "clinic-advice", text: { "en": "A clinic's advice sheet" } }
+  - planned: { id: "ja-chores", theme: "chores", words: 35 }
+    listening_passages:
+      - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
+    reading_passages:
+      - { id: "rubbish-calendar", text: { "en": "A neighbourhood calendar of rubbish collection days" } }
+  - planned: { id: "ja-appearance", theme: "appearance", words: 40 }
+    listening_passages:
+      - { id: "describing-a-friend", text: { "en": "Describing a friend to someone who will meet them at the station" } }
+    reading_passages:
+      - { id: "lost-child-notice", text: { "en": "A notice describing a lost child at a shopping centre" } }
+  - planned: { id: "ja-kanji-3", grammar: "script-kanji-3", words: 0 }
+    listening_passages:
+      - { id: "kanji-in-town", text: { "en": "Hearing the town words whose kanji are taught: shop, station, hospital, bank" } }
+    reading_passages:
+      - { id: "town-signs", text: { "en": "Shop and building signs in kanji" } }
+  - planned: { id: "ja-verbs-3", theme: "verbs-3", words: 60 }
+    listening_passages:
+      - { id: "a-busy-day", text: { "en": "Someone lists everything they did in a day" } }
+    reading_passages:
+      - { id: "diary-entry", text: { "en": "A short diary entry" } }
+  - planned: { id: "ja-grammar-experience", grammar: "ta-koto-ga-aru" }
+    listening_passages:
+      - { id: "have-you-ever", text: { "en": "Asking and saying whether you have ever climbed Mount Fuji" } }
+    reading_passages:
+      - { id: "experience-survey", text: { "en": "A short survey about experiences" } }
+  - planned: { id: "ja-phone", theme: "phone", words: 35 }
+    listening_passages:
+      - { id: "phone-call", text: { "en": "A phone call to arrange a meeting" } }
+    reading_passages:
+      - { id: "text-messages", text: { "en": "A few text messages between friends" } }
+  - planned: { id: "ja-journey", theme: "journey", words: 55 }
+    listening_passages:
+      - { id: "shinkansen-ticket", text: { "en": "Buying a bullet-train ticket at the counter" } }
+    reading_passages:
+      - { id: "platform-notice", text: { "en": "A train timetable and a platform notice" } }
+  - planned: { id: "ja-grammar-reasons", grammar: ["kara-because", "node"] }
+    listening_passages:
+      - { id: "why-were-you-late", text: { "en": "Giving reasons: I was late because the train stopped" } }
+    reading_passages:
+      - { id: "apology-email", text: { "en": "A short email apologising and giving the reason" } }
+  - planned: { id: "ja-nature", theme: "nature", words: 40 }
+    listening_passages:
+      - { id: "a-walk-in-the-hills", text: { "en": "Two people describe a walk in the hills" } }
+    reading_passages:
+      - { id: "park-signs", text: { "en": "Signs in a national park" } }
+  - planned: { id: "ja-adjectives-2", theme: "adjectives-2", words: 50 }
+    listening_passages:
+      - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
+    reading_passages:
+      - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
+  - planned: { id: "ja-grammar-potential", grammar: "potential" }
+    listening_passages:
+      - { id: "can-you-swim", text: { "en": "Saying what you can and cannot do: swim, read kanji, eat natto" } }
+    reading_passages:
+      - { id: "skills-form", text: { "en": "A form listing the skills of a part-time job applicant" } }
+  - planned: { id: "ja-workplace", theme: "workplace", words: 45 }
+    listening_passages:
+      - { id: "first-day-at-work", text: { "en": "A new colleague's first day at the office" } }
+    reading_passages:
+      - { id: "office-notice", text: { "en": "An office notice about a meeting" } }
+  - planned: { id: "ja-grammar-intention", grammar: ["volitional", "tsumori"] }
+    listening_passages:
+      - { id: "plans-for-the-holidays", text: { "en": "Saying what you are going to do and intend to do in the holidays" } }
+    reading_passages:
+      - { id: "new-year-resolutions", text: { "en": "A list of New Year resolutions" } }
+  - planned: { id: "ja-geography", theme: "geography", words: 40 }
+    listening_passages:
+      - { id: "islands-and-cities", text: { "en": "Naming Japan's main islands, regions and cities" } }
+    reading_passages:
+      - { id: "map-caption", text: { "en": "A map caption of Japan's regions" } }
+    milestone: "A2"
+  # B1: the themes and grammar of the CEFR's B1: the conditionals, the
+  # passive and causative, reported speech and keigo, more kanji.
+  - planned: { id: "ja-health", theme: "health", words: 55 }
+    listening_passages:
+      - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
+    reading_passages:
+      - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
+  - planned: { id: "ja-grammar-conditional-to-ba", grammar: ["conditional-to", "conditional-ba"] }
+    listening_passages:
+      - { id: "if-you-press-this", text: { "en": "Saying what happens if you press a button, and what to do if it rains" } }
+    reading_passages:
+      - { id: "machine-instructions", text: { "en": "Instructions on a ticket machine" } }
+  - planned: { id: "ja-feelings", theme: "feelings", words: 55 }
+    listening_passages:
+      - { id: "a-hard-week", text: { "en": "A friend says how the week made them feel" } }
+    reading_passages:
+      - { id: "letter-to-a-friend", text: { "en": "A letter to a friend about worries and hopes" } }
+  - planned: { id: "ja-grammar-conditional-tara-nara", grammar: ["conditional-tara", "conditional-nara"] }
+    listening_passages:
+      - { id: "rain-plans", text: { "en": "A friend's plans if it rains" } }
+    reading_passages:
+      - { id: "late-train", text: { "en": "A message: if the train is late" } }
+  - planned: { id: "ja-news", theme: "news", words: 55 }
+    listening_passages:
+      - { id: "radio-news", text: { "en": "A short radio news bulletin" } }
+    reading_passages:
+      - { id: "headline-list", text: { "en": "A list of newspaper headlines" } }
+  - planned: { id: "ja-grammar-quotation", grammar: ["to-iu", "to-omou"] }
+    listening_passages:
+      - { id: "i-think-that", text: { "en": "Saying what you think and what someone said" } }
+    reading_passages:
+      - { id: "interview-notes", text: { "en": "Notes from a short street interview" } }
+  - planned: { id: "ja-opinions", theme: "opinions", words: 50 }
+    listening_passages:
+      - { id: "agreeing-and-disagreeing", text: { "en": "Two friends agree and disagree politely over coffee" } }
+    reading_passages:
+      - { id: "readers-letters", text: { "en": "Two short letters to a newspaper" } }
+  - planned: { id: "ja-kanji-4", grammar: "script-kanji-4", words: 0 }
+    listening_passages:
+      - { id: "kanji-in-the-news", text: { "en": "Hearing the news words whose kanji are taught: country, city, company, government" } }
+    reading_passages:
+      - { id: "simple-headlines", text: { "en": "Simple headlines in kanji and kana" } }
+  - planned: { id: "ja-travel", theme: "travel", words: 55 }
+    listening_passages:
+      - { id: "ryokan-booking", text: { "en": "Booking a room at a traditional inn over the phone" } }
+    reading_passages:
+      - { id: "itinerary", text: { "en": "A two-day trip itinerary" } }
+  - planned: { id: "ja-grammar-te-auxiliaries", grammar: ["te-shimau", "te-oku", "te-miru"] }
+    listening_passages:
+      - { id: "i-lost-my-wallet", text: { "en": "Saying what went wrong, what you tried and what you got ready" } }
+    reading_passages:
+      - { id: "trip-checklist", text: { "en": "A checklist of things to do before a trip" } }
+  - planned: { id: "ja-services", theme: "services", words: 45 }
+    listening_passages:
+      - { id: "at-the-post-office", text: { "en": "Sending a parcel at the post office counter" } }
+    reading_passages:
+      - { id: "bank-form", text: { "en": "A simple bank form" } }
+  - planned: { id: "ja-government", theme: "government", words: 40 }
+    listening_passages:
+      - { id: "at-the-ward-office", text: { "en": "Asking at the ward office which document is needed" } }
+    reading_passages:
+      - { id: "form-instructions", text: { "en": "Instructions on a residence registration form" } }
+  - planned: { id: "ja-grammar-relative-clauses", grammar: "relative-clauses" }
+    listening_passages:
+      - { id: "the-person-who-came", text: { "en": "Describing people and things by what they did: the person who came, the book I bought" } }
+    reading_passages:
+      - { id: "shop-reviews", text: { "en": "Short reviews of a shop and its staff" } }
+  - planned: { id: "ja-technology", theme: "technology", words: 50 }
+    listening_passages:
+      - { id: "fixing-a-phone", text: { "en": "Asking a shop to fix a phone" } }
+    reading_passages:
+      - { id: "app-instructions", text: { "en": "Instructions inside a phone app" } }
+  - planned: { id: "ja-grammar-nominalisers", grammar: ["nominaliser-no", "nominaliser-koto"] }
+    listening_passages:
+      - { id: "my-hobby-is", text: { "en": "Saying that your hobby is reading, and that you like walking" } }
+    reading_passages:
+      - { id: "hobby-essay", text: { "en": "A short essay about a hobby" } }
+  - planned: { id: "ja-careers", theme: "careers", words: 50 }
+    listening_passages:
+      - { id: "job-interview", text: { "en": "A short job interview" } }
+    reading_passages:
+      - { id: "job-advert", text: { "en": "A job advert" } }
+  - planned: { id: "ja-business", theme: "business", words: 50 }
+    listening_passages:
+      - { id: "a-business-call", text: { "en": "A polite phone call between two companies" } }
+    reading_passages:
+      - { id: "business-email", text: { "en": "A short business email" } }
+  - planned: { id: "ja-grammar-keigo-sonkeigo", grammar: "sonkeigo" }
+    listening_passages:
+      - { id: "the-manager-is-coming", text: { "en": "Speaking of a customer and a manager with honorific verbs" } }
+    reading_passages:
+      - { id: "shop-announcement", text: { "en": "A shop's announcement to its customers" } }
+  - planned: { id: "ja-grammar-keigo-kenjougo", grammar: "kenjougo" }
+    listening_passages:
+      - { id: "i-will-carry-it", text: { "en": "Speaking of yourself humbly to a customer: I will carry it, I will go" } }
+    reading_passages:
+      - { id: "formal-letter", text: { "en": "A formal letter and its closing" } }
+  - planned: { id: "ja-manners", theme: "manners", words: 45 }
+    listening_passages:
+      - { id: "visiting-a-home", text: { "en": "Visiting a Japanese home: what to say at the door and at the table" } }
+    reading_passages:
+      - { id: "etiquette-guide", text: { "en": "A short etiquette guide for visitors" } }
+  - planned: { id: "ja-environment", theme: "environment", words: 50 }
+    listening_passages:
+      - { id: "recycling-talk", text: { "en": "Neighbours talk about sorting rubbish and the summer heat" } }
+    reading_passages:
+      - { id: "clean-up-notice", text: { "en": "A notice for a neighbourhood clean-up" } }
+  - planned: { id: "ja-grammar-passive", grammar: "passive" }
+    listening_passages:
+      - { id: "my-bike-was-stolen", text: { "en": "Telling the police your bike was stolen" } }
+    reading_passages:
+      - { id: "news-brief", text: { "en": "A short news item written in the passive" } }
+  - planned: { id: "ja-cinema", theme: "cinema", words: 50 }
+    listening_passages:
+      - { id: "after-the-film", text: { "en": "Friends talk about an animated film they saw" } }
+    reading_passages:
+      - { id: "film-review", text: { "en": "A short film review" } }
+  - planned: { id: "ja-kanji-5", grammar: "script-kanji-5", words: 0 }
+    listening_passages:
+      - { id: "kanji-at-work", text: { "en": "Hearing the work and study words whose kanji are taught: meeting, report, exam, question" } }
+    reading_passages:
+      - { id: "office-memo", text: { "en": "A short office memo in kanji and kana" } }
+  - planned: { id: "ja-arts", theme: "arts", words: 45 }
+    listening_passages:
+      - { id: "a-calligraphy-class", text: { "en": "A teacher explains a calligraphy class" } }
+    reading_passages:
+      - { id: "exhibition-notice", text: { "en": "A notice for an art exhibition" } }
+  - planned: { id: "ja-grammar-hearsay-appearance", grammar: ["sou-da-hearsay", "sou-da-appearance", "you-da", "rashii"] }
+    listening_passages:
+      - { id: "it-looks-like-rain", text: { "en": "Saying it looks like rain, and that you heard the shop closed" } }
+    reading_passages:
+      - { id: "rumour-messages", text: { "en": "Messages passing on what people heard" } }
+  - planned: { id: "ja-history", theme: "history", words: 45 }
+    listening_passages:
+      - { id: "a-castle-visit", text: { "en": "A guide tells the story of an old castle" } }
+    reading_passages:
+      - { id: "museum-card", text: { "en": "A museum card about a shogun" } }
+  - planned: { id: "ja-religion", theme: "religion", words: 45 }
+    listening_passages:
+      - { id: "at-the-shrine", text: { "en": "A friend explains how to pray at a shrine and a temple" } }
+    reading_passages:
+      - { id: "shrine-sign", text: { "en": "A sign at a shrine explaining its history" } }
+  - planned: { id: "ja-grammar-purpose", grammar: ["tame-ni", "you-ni"] }
+    listening_passages:
+      - { id: "saving-to-travel", text: { "en": "Saying what you do in order to travel, and so as not to forget" } }
+    reading_passages:
+      - { id: "study-tips", text: { "en": "A short list of study tips" } }
+  - planned: { id: "ja-festivals", theme: "festivals", words: 45 }
+    listening_passages:
+      - { id: "summer-festival", text: { "en": "Neighbours plan a summer festival together" } }
+    reading_passages:
+      - { id: "festival-poster", text: { "en": "A poster for a summer festival" } }
+  - planned: { id: "ja-weddings", theme: "weddings", words: 40 }
+    listening_passages:
+      - { id: "wedding-plans", text: { "en": "Relatives plan a wedding" } }
+    reading_passages:
+      - { id: "wedding-card", text: { "en": "A wedding invitation card" } }
+  - planned: { id: "ja-grammar-causative", grammar: ["causative", "causative-passive"] }
+    listening_passages:
+      - { id: "let-me-do-it", text: { "en": "Saying what a parent makes or lets a child do, and what you were made to do" } }
+    reading_passages:
+      - { id: "club-memories", text: { "en": "A short memory of a strict school club" } }
+  - planned: { id: "ja-relationships", theme: "relationships", words: 45 }
+    listening_passages:
+      - { id: "neighbours-and-friends", text: { "en": "Talking about neighbours and old friends" } }
+    reading_passages:
+      - { id: "thank-you-note", text: { "en": "A thank-you note to a neighbour" } }
+  - planned: { id: "ja-housing", theme: "housing", words: 45 }
+    listening_passages:
+      - { id: "renting-a-flat", text: { "en": "Asking an estate agent about a flat to rent" } }
+    reading_passages:
+      - { id: "rental-terms", text: { "en": "The terms of a rental, with key money and deposit" } }
+  - planned: { id: "ja-grammar-transitivity", grammar: "transitive-intransitive" }
+    listening_passages:
+      - { id: "the-door-opened", text: { "en": "Saying I opened the door and the door opened" } }
+    reading_passages:
+      - { id: "office-closing-checklist", text: { "en": "A checklist for closing the office: lights off, windows shut" } }
+  - planned: { id: "ja-emergencies", theme: "emergencies", words: 40 }
+    listening_passages:
+      - { id: "earthquake-drill", text: { "en": "Instructions in an earthquake drill" } }
+    reading_passages:
+      - { id: "evacuation-notice", text: { "en": "An evacuation notice in a building" } }
+  - planned: { id: "ja-law", theme: "law", words: 35 }
+    listening_passages:
+      - { id: "at-the-koban", text: { "en": "Reporting a lost wallet at a police box" } }
+    reading_passages:
+      - { id: "rights-leaflet", text: { "en": "A leaflet on a tenant's rights" } }
+  - planned: { id: "ja-grammar-nagara-tari", grammar: ["nagara", "tari"] }
+    listening_passages:
+      - { id: "while-walking", text: { "en": "Saying you listen to music while walking, and do this and that at weekends" } }
+    reading_passages:
+      - { id: "weekend-blog", text: { "en": "A blog post about a relaxed weekend" } }
+  - planned: { id: "ja-verbs-4", theme: "verbs-4", words: 60 }
+    listening_passages:
+      - { id: "a-long-story", text: { "en": "A story told in a sequence of events" } }
+    reading_passages:
+      - { id: "short-story", text: { "en": "A short story with a turn" } }
+  - planned: { id: "ja-onomatopoeia", theme: "onomatopoeia", words: 50 }
+    listening_passages:
+      - { id: "sounds-and-feelings", text: { "en": "A friend describes rain, a headache and a smile with sound words: zaazaa, zukizuki, nikoniko" } }
+    reading_passages:
+      - { id: "manga-panel", text: { "en": "The sound words in a few manga panels" } }
+  - planned: { id: "ja-abstract-words", theme: "abstract-words", words: 55 }
+    listening_passages:
+      - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
+    reading_passages:
+      - { id: "opinion-column", text: { "en": "A short opinion column" } }
+  - planned: { id: "ja-kanji-6", grammar: "script-kanji-6", words: 0 }
+    listening_passages:
+      - { id: "kanji-in-society", text: { "en": "Hearing the society words whose kanji are taught: economy, culture, environment, problem" } }
+    reading_passages:
+      - { id: "newspaper-paragraph", text: { "en": "One paragraph of a newspaper article" } }
+  - planned: { id: "ja-money", theme: "money", words: 45 }
+    listening_passages:
+      - { id: "at-the-bank", text: { "en": "Opening an account at a bank counter" } }
+    reading_passages:
+      - { id: "bill-and-receipt", text: { "en": "A utility bill and a receipt" } }
+  - planned: { id: "ja-society", theme: "society", words: 50 }
+    listening_passages:
+      - { id: "an-ageing-town", text: { "en": "Residents talk about an ageing town" } }
+    reading_passages:
+      - { id: "survey-results", text: { "en": "The results of a short survey on work and life" } }
+  - planned: { id: "ja-university", theme: "university", words: 50 }
+    listening_passages:
+      - { id: "choosing-a-seminar", text: { "en": "Students talk about which seminar to choose" } }
+    reading_passages:
+      - { id: "campus-notice", text: { "en": "A campus notice about exams" } }
+  - planned: { id: "ja-food-culture", theme: "food-culture", words: 50 }
+    listening_passages:
+      - { id: "new-year-food", text: { "en": "A family explains the dishes they eat at New Year" } }
+    reading_passages:
+      - { id: "washoku-article", text: { "en": "A short article about traditional Japanese food" } }
+  - planned: { id: "ja-literature", theme: "literature", words: 50 }
+    listening_passages:
+      - { id: "a-haiku-explained", text: { "en": "A teacher reads a haiku and explains it" } }
+    reading_passages:
+      - { id: "book-blurb", text: { "en": "The back-cover blurb of a novel" } }
+  - planned: { id: "ja-verbs-5", theme: "verbs-5", words: 50 }
+    listening_passages:
+      - { id: "what-happened-next", text: { "en": "Telling a long story with every step in order" } }
+    reading_passages:
+      - { id: "newspaper-feature", text: { "en": "A newspaper feature with a short interview" } }
+  - planned: { id: "ja-grammar-teineigo", grammar: "teineigo" }
+    listening_passages:
+      - { id: "speaking-to-a-stranger", text: { "en": "Speaking to an elder, a stranger and a friend: three levels of politeness" } }
+    reading_passages:
+      - { id: "speech-levels-chart", text: { "en": "One message written plainly, politely and very politely" } }
+    milestone: "B1"
   - ["*"]
