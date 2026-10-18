@@ -1,0 +1,812 @@
+schema: 1
+id: "te-en-history"
+kind: "layer"
+core: "te-history"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "History: kings, forts, wars and heritage"
+description: "Words for history: rulers and kingdoms, forts and palaces, wars and freedom, and heritage. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "te-5100":
+    native: "history"
+    wiktionary: true
+    notes:
+      "n1": "Used in 'history book'."
+    examples:
+      "నాకు భారత చరిత్ర ఇష్టం.":
+        native: "I like Indian history."
+        bases:
+          "నాకు": { meaning: "I" }
+          "భారత": { meaning: "Indian" }
+          "ఇష్టం": { meaning: "liking" }
+      "ఈ పుస్తకం చరిత్ర గురించి ఉంది.":
+        native: "This book is about history."
+        bases:
+          "ఈ": { meaning: "this" }
+          "పుస్తకం": { meaning: "book" }
+          "గురించి": { meaning: "about" }
+          "ఉంది": { meaning: "to be; to exist" }
+    senses:
+      "history": { native: "history, tale, story, account, narrative" }
+      "behavior": { native: "behavior, conduct" }
+  "te-5101":
+    native: "king"
+    wiktionary: true
+    notes:
+      "n1": "Used in 'royal family'."
+    examples:
+      "ఆ రాజు చాలా ధైర్యవంతుడు.":
+        native: "That king is very brave."
+        bases:
+          "ఆ": { meaning: "that" }
+          "చాలా": { meaning: "very; many" }
+          "ధైర్యవంతుడు": { meaning: "brave man" }
+      "రాజు ఎక్కడ ఉన్నాడు?":
+        native: "Where is the king?"
+        bases:
+          "ఎక్కడ": { meaning: "where" }
+          "ఉన్నాడు": { meaning: "to be; to exist" }
+    synonyms: { "redu": "king, ruler", "elika": "ruler, king, prince", "dora": "a chief, baron, lord, master, owner", "rayadu": "king" }
+  "te-5102":
+    native: "queen"
+    wiktionary: true
+    notes:
+      "n1": "Used in 'queen's story'."
+    examples:
+      "రాణి ప్రజలకు మంచి పాలన ఇచ్చింది.":
+        native: "The queen gave the people good rule."
+        bases:
+          "మంచి": { meaning: "good" }
+          "ఇచ్చింది": { meaning: "to give" }
+      "నాకు రాణి కథ చెప్పారు.":
+        native: "They told me the queen's story."
+        bases:
+          "నాకు": { meaning: "I" }
+          "కథ": { meaning: "story" }
+          "చెప్పారు": { meaning: "to tell" }
+  "te-5103":
+    native: "kingdom"
+    wiktionary: true
+    notes:
+      "n1": "Used in 'a small kingdom'."
+    examples:
+      "ఈ రాజ్యం చాలా పెద్దది.":
+        native: "This kingdom is very big."
+        bases:
+          "ఈ": { meaning: "this" }
+          "చాలా": { meaning: "very; many" }
+          "పెద్దది": { meaning: "big" }
+      "రాజ్యం మీద ఎవరు పాలించారు?":
+        native: "Who ruled over the kingdom?"
+        bases:
+          "మీద": { meaning: "on; over" }
+          "ఎవరు": { meaning: "who" }
+          "పాలించారు": { meaning: "to rule" }
+  "te-5104":
+    native: "empire"
+    notes:
+      "n1": "Used in 'Maurya empire'."
+    examples:
+      "మౌర్య సామ్రాజ్యం భారతదేశంలో ఉండేది.":
+        native: "The Maurya Empire was in India."
+        bases:
+          "మౌర్య": { meaning: "Maurya" }
+          "భారతదేశంలో": { meaning: "India" }
+          "ఉండేది": { meaning: "to be; to exist" }
+      "అశోకుడు ఒక గొప్ప చక్రవర్తి.":
+        native: "Ashoka was a great emperor."
+        bases:
+          "అశోకుడు": { meaning: "Ashoka" }
+          "ఒక": { meaning: "one; a" }
+          "గొప్ప": { meaning: "great" }
+  "te-5105":
+    native: "emperor"
+    wiktionary: true
+    notes:
+      "n1": "Used in 'emperor's palace'."
+    examples:
+      "చక్రవర్తి రాజభవనంలో ఉన్నాడు.":
+        native: "The emperor is in the palace."
+        bases:
+          "ఉన్నాడు": { meaning: "to be; to exist" }
+      "ఆ చక్రవర్తి పేరు ఏమిటి?":
+        native: "What is that emperor's name?"
+        bases:
+          "ఆ": { meaning: "that" }
+          "పేరు": { meaning: "name" }
+          "ఏమిటి": { meaning: "what" }
+  "te-5106":
+    native: "fort"
+    wiktionary: true
+    notes:
+      "n1": "Used in 'fort wall'."
+    examples:
+      "ఈ కోట చాలా పాతది.":
+        native: "This fort is very old."
+        bases:
+          "ఈ": { meaning: "this" }
+          "చాలా": { meaning: "very; many" }
+          "పాతది": { meaning: "old" }
+      "మేము కోటను చూశాం.":
+        native: "We saw the fort."
+        bases:
+          "మేము": { meaning: "we" }
+          "కోటను": { meaning: "fort" }
+          "చూశాం": { meaning: "to see" }
+  "te-5107":
+    native: "palace"
+    notes:
+      "n1": "Used in 'big palace'."
+    examples:
+      "రాజభవనం పెద్ద తోటలో ఉంది.":
+        native: "The palace is in a big garden."
+        bases:
+          "పెద్ద": { meaning: "big" }
+          "తోటలో": { meaning: "garden" }
+          "ఉంది": { meaning: "to be; to exist" }
+      "ఆ రాజభవనాన్ని ఎప్పుడు కట్టారు?":
+        native: "When was that palace built?"
+        bases:
+          "ఆ": { meaning: "that" }
+          "రాజభవనాన్ని": { meaning: "palace" }
+          "ఎప్పుడు": { meaning: "when" }
+          "కట్టారు": { meaning: "to build" }
+  "te-5108":
+    native: "war; battle"
+    wiktionary: true
+    notes:
+      "n1": "Used in 'after the war'."
+    examples:
+      "యుద్ధం చాలా కాలం జరిగింది.":
+        native: "The war went on for a long time."
+        bases:
+          "చాలా": { meaning: "very; many" }
+          "జరిగింది": { meaning: "to happen" }
+      "ఆ యుద్ధంలో సైనికులు ధైర్యంగా పోరాడారు.":
+        native: "In that war, the soldiers fought bravely."
+        bases:
+          "ఆ": { meaning: "that" }
+          "యుద్ధంలో": { meaning: "war" }
+          "ధైర్యంగా": { meaning: "courage" }
+          "పోరాడారు": { meaning: "to fight" }
+  "te-5109":
+    native: "soldier"
+    wiktionary: true
+    notes:
+      "n1": "The plural is 'soldiers'."
+    examples:
+      "సైనికుడు కోట గోడ మీద నిలబడ్డాడు.":
+        native: "The soldier stood on the fort wall."
+        bases:
+          "గోడ": { meaning: "wall" }
+          "మీద": { meaning: "on; over" }
+          "నిలబడ్డాడు": { meaning: "to stand" }
+      "నేను ఒక సైనికుడితో మాట్లాడాను.":
+        native: "I talked with a soldier."
+        bases:
+          "నేను": { meaning: "I" }
+          "ఒక": { meaning: "one; a" }
+          "సైనికుడితో": { meaning: "soldier" }
+          "మాట్లాడాను": { meaning: "to talk" }
+    synonyms: { "bantu": "a servant" }
+  "te-5110":
+    native: "century"
+    wiktionary: true
+    notes:
+      "n1": "Used in 'last century'."
+    examples:
+      "ఈ కోట రెండు శతాబ్దాల క్రితం కట్టారు.":
+        native: "This fort was built two centuries ago."
+        bases:
+          "ఈ": { meaning: "this" }
+          "రెండు": { meaning: "two" }
+          "శతాబ్దాల": { meaning: "century" }
+          "క్రితం": { meaning: "ago" }
+          "కట్టారు": { meaning: "to build" }
+      "గత శతాబ్దంలో ఈ ఊరు చాలా మారింది.":
+        native: "This town changed a lot in the last century."
+        bases:
+          "గత": { meaning: "last; past" }
+          "శతాబ్దంలో": { meaning: "century" }
+          "ఈ": { meaning: "this" }
+          "ఊరు": { meaning: "town; village" }
+          "చాలా": { meaning: "very; many" }
+          "మారింది": { meaning: "to change" }
+  "te-5111":
+    native: "year"
+    wiktionary: true
+    notes:
+      "n1": "Used in 'last year'."
+    examples:
+      "ఈ మ్యూజియం గత సంవత్సరం తెరిచారు.":
+        native: "This museum was opened last year."
+        bases:
+          "ఈ": { meaning: "this" }
+          "గత": { meaning: "last; past" }
+          "తెరిచారు": { meaning: "to open" }
+      "ఒక సంవత్సరంలో మేము రెండు పుస్తకాలు చదివాం.":
+        native: "In one year we read two books."
+        bases:
+          "ఒక": { meaning: "one; a" }
+          "సంవత్సరంలో": { meaning: "year" }
+          "మేము": { meaning: "we" }
+          "రెండు": { meaning: "two" }
+          "పుస్తకాలు": { meaning: "book" }
+          "చదివాం": { meaning: "to read; to study" }
+  "te-5112":
+    native: "ancient"
+    notes:
+      "n1": "An adjective; it does not change for gender."
+    examples:
+      "ఇది ప్రాచీన దేవాలయం.":
+        native: "This is an ancient temple."
+        bases:
+          "ఇది": { meaning: "this; it" }
+      "ప్రాచీన చరిత్ర చాలా ఆసక్తికరం.":
+        native: "Ancient history is very interesting."
+        bases:
+          "చాలా": { meaning: "very; many" }
+          "ఆసక్తికరం": { meaning: "interesting" }
+  "te-5113":
+    native: "ancient; old"
+    notes:
+      "n1": "An adjective; the same in both sentences."
+    examples:
+      "ఈ పురాతన నగరం నదికి దగ్గర ఉంది.":
+        native: "This ancient city is near the river."
+        bases:
+          "ఈ": { meaning: "this" }
+          "నగరం": { meaning: "city" }
+          "నదికి": { meaning: "river" }
+          "దగ్గర": { meaning: "near" }
+          "ఉంది": { meaning: "to be; to exist" }
+      "పురాతన పుస్తకాలు మ్యూజియంలో ఉన్నాయి.":
+        native: "Ancient books are in the museum."
+        bases:
+          "పుస్తకాలు": { meaning: "book" }
+          "ఉన్నాయి": { meaning: "to be; to exist" }
+  "te-5114":
+    native: "historical"
+    wiktionary: true
+    notes:
+      "n1": "An adjective made from the word for history."
+    examples:
+      "ఇది చారిత్రక ప్రదేశం.":
+        native: "This is a historical place."
+        bases:
+          "ఇది": { meaning: "this; it" }
+          "ప్రదేశం": { meaning: "place" }
+      "చారిత్రక సంఘటనలు మనకు చాలా నేర్పుతాయి.":
+        native: "Historical events teach us a lot."
+        bases:
+          "సంఘటనలు": { meaning: "event" }
+          "మనకు": { meaning: "we (including you)" }
+          "చాలా": { meaning: "very; many" }
+          "నేర్పుతాయి": { meaning: "to teach" }
+  "te-5115":
+    native: "monument; memorial"
+    wiktionary: true
+    notes:
+      "n1": "Used for memorials to people."
+    examples:
+      "ఈ స్మారకం మన వీరుల గుర్తుగా ఉంది.":
+        native: "This monument is a memorial to our heroes."
+        bases:
+          "ఈ": { meaning: "this" }
+          "మన": { meaning: "our" }
+          "గుర్తుగా": { meaning: "sign; memory" }
+          "ఉంది": { meaning: "to be; to exist" }
+      "ఆ స్మారకాన్ని ప్రజలు ప్రతి ఏడాది చూస్తారు.":
+        native: "People see that monument every year."
+        bases:
+          "ఆ": { meaning: "that" }
+          "స్మారకాన్ని": { meaning: "monument" }
+          "ప్రతి": { meaning: "every" }
+          "ఏడాది": { meaning: "year" }
+          "చూస్తారు": { meaning: "to see" }
+  "te-5116":
+    native: "temple"
+    wiktionary: true
+    notes:
+      "n1": "Used for a temple in a town."
+    examples:
+      "ఈ దేవాలయం ఊరి మధ్యలో ఉంది.":
+        native: "This temple is in the middle of the town."
+        bases:
+          "ఈ": { meaning: "this" }
+          "ఊరి": { meaning: "town; village" }
+          "మధ్యలో": { meaning: "middle" }
+          "ఉంది": { meaning: "to be; to exist" }
+      "పండుగ రోజున దేవాలయాన్ని అలంకరించారు.":
+        native: "On the festival day they decorated the temple."
+        bases:
+          "పండుగ": { meaning: "festival" }
+          "రోజున": { meaning: "day" }
+          "దేవాలయాన్ని": { meaning: "temple" }
+          "అలంకరించారు": { meaning: "to decorate" }
+  "te-5117":
+    native: "country"
+    wiktionary: true
+    notes:
+      "n1": "Often said with 'our'."
+    examples:
+      "మన దేశం చాలా పురాతనమైనది.":
+        native: "Our country is very ancient."
+        bases:
+          "మన": { meaning: "our" }
+          "చాలా": { meaning: "very; many" }
+          "పురాతనమైనది": { meaning: "ancient" }
+      "ఈ దేశంలో అనేక రాజవంశాలు పాలించాయి.":
+        native: "Many dynasties ruled in this country."
+        bases:
+          "ఈ": { meaning: "this" }
+          "దేశంలో": { meaning: "country" }
+          "అనేక": { meaning: "many" }
+          "పాలించాయి": { meaning: "to rule" }
+  "te-5118":
+    native: "leader"
+    wiktionary: true
+    notes:
+      "n1": "The plural is 'leaders'."
+    examples:
+      "అతను ప్రజల నాయకుడు.":
+        native: "He is the leader of the people."
+        bases:
+          "అతను": { meaning: "he" }
+      "ఆ యుద్ధంలో నాయకుడు కోటను కాపాడారు.":
+        native: "In that war the leader protected the fort."
+        bases:
+          "ఆ": { meaning: "that" }
+          "కాపాడారు": { meaning: "to protect" }
+  "te-5119":
+    native: "hero"
+    wiktionary: true
+    notes:
+      "n1": "Used for heroes in stories and history."
+    examples:
+      "అతను మా ఊరి వీరుడు.":
+        native: "He is our town's hero."
+        bases:
+          "అతను": { meaning: "he" }
+          "మా": { meaning: "our" }
+          "ఊరి": { meaning: "town; village" }
+      "ఈ కథలో ఒక వీరుడు ఉంటాడు.":
+        native: "In this story there is a hero."
+        bases:
+          "ఈ": { meaning: "this" }
+          "కథలో": { meaning: "story" }
+          "ఒక": { meaning: "one; a" }
+          "ఉంటాడు": { meaning: "to be; to exist" }
+    synonyms: { "surudu": "a brave or valiant man, a hero, champion" }
+  "te-5120":
+    native: "dynasty"
+    notes:
+      "n1": "Used with the history of a line of rulers."
+    examples:
+      "ఈ రాజవంశం వెయ్యి సంవత్సరాలు పాలించింది.":
+        native: "This dynasty ruled for a thousand years."
+        bases:
+          "ఈ": { meaning: "this" }
+          "వెయ్యి": { meaning: "thousand" }
+          "పాలించింది": { meaning: "to rule" }
+      "రాజవంశాల చరిత్ర మనకు తెలియాలి.":
+        native: "We should know the history of dynasties."
+        bases:
+          "రాజవంశాల": { meaning: "dynasty" }
+          "మనకు": { meaning: "we (including you)" }
+          "తెలియాలి": { meaning: "to be known" }
+  "te-5121":
+    native: "capital"
+    wiktionary: true
+    notes:
+      "n1": "The capital city of a country."
+    examples:
+      "ఢిల్లీ భారతదేశ రాజధాని.":
+        native: "Delhi is the capital of India."
+        bases:
+          "ఢిల్లీ": { meaning: "Delhi" }
+          "భారతదేశ": { meaning: "India" }
+      "రాజధానికి ఈ రోడ్డు నుంచి వెళ్లవచ్చు.":
+        native: "You can go to the capital by this road."
+        bases:
+          "రాజధానికి": { meaning: "capital" }
+          "ఈ": { meaning: "this" }
+          "రోడ్డు": { meaning: "road" }
+          "నుంచి": { meaning: "from" }
+          "వెళ్లవచ్చు": { meaning: "to go" }
+  "te-5122":
+    native: "rule; administration"
+    notes:
+      "n1": "Also used for a period of rule."
+    examples:
+      "ఆ రాజు పాలన ప్రజలకు మంచిది.":
+        native: "That king's rule was good for the people."
+        bases:
+          "ఆ": { meaning: "that" }
+          "మంచిది": { meaning: "good" }
+      "బ్రిటిష్ పాలనలో ఎన్నో మార్పులు జరిగాయి.":
+        native: "Many changes happened under British rule."
+        bases:
+          "బ్రిటిష్": { meaning: "British" }
+          "పాలనలో": { meaning: "rule" }
+          "ఎన్నో": { meaning: "many" }
+          "మార్పులు": { meaning: "change" }
+          "జరిగాయి": { meaning: "to happen" }
+  "te-5123":
+    native: "ruler"
+    notes:
+      "n1": "The plural is 'rulers'."
+    examples:
+      "ఆ పాలకుడు ఒక గొప్ప రాజు.":
+        native: "That ruler was a great king."
+        bases:
+          "ఆ": { meaning: "that" }
+          "ఒక": { meaning: "one; a" }
+          "గొప్ప": { meaning: "great" }
+      "ప్రజలు తమ పాలకుడిని గౌరవించారు.":
+        native: "The people respected their ruler."
+        bases:
+          "తమ": { meaning: "their" }
+          "పాలకుడిని": { meaning: "ruler" }
+          "గౌరవించారు": { meaning: "to respect" }
+  "te-5124":
+    native: "revolution"
+    notes:
+      "n1": "Used in 'revolutionary' forms."
+    examples:
+      "ఆ విప్లవం దేశాన్ని మార్చింది.":
+        native: "That revolution changed the country."
+        bases:
+          "ఆ": { meaning: "that" }
+          "మార్చింది": { meaning: "to change (something)" }
+      "విప్లవ వీరులు ప్రాణాలు ఇచ్చారు.":
+        native: "Revolutionaries gave their lives."
+        bases:
+          "విప్లవ": { meaning: "revolution" }
+          "ప్రాణాలు": { meaning: "life" }
+          "ఇచ్చారు": { meaning: "to give" }
+  "te-5125":
+    native: "treaty; agreement"
+    wiktionary: true
+    notes:
+      "n1": "Also used for any agreement."
+    examples:
+      "రెండు దేశాలు ఒక ఒప్పందం చేసుకున్నాయి.":
+        native: "The two countries signed an agreement."
+        bases:
+          "రెండు": { meaning: "two" }
+          "ఒక": { meaning: "one; a" }
+          "చేసుకున్నాయి": { meaning: "to make for oneself" }
+      "ఆ ఒప్పందం ప్రకారం కోట మనకు దక్కింది.":
+        native: "According to that agreement, the fort came to us."
+        bases:
+          "ఆ": { meaning: "that" }
+          "ప్రకారం": { meaning: "according to" }
+          "మనకు": { meaning: "we (including you)" }
+          "దక్కింది": { meaning: "to fall to one's share" }
+  "te-5126":
+    native: "warrior"
+    notes:
+      "n1": "The plural is 'warriors'."
+    examples:
+      "ఆ యోధుడు ఖడ్గం పట్టుకున్నాడు.":
+        native: "That warrior held a sword."
+        bases:
+          "ఆ": { meaning: "that" }
+          "పట్టుకున్నాడు": { meaning: "to hold" }
+      "యోధులు ఎప్పుడూ ధైర్యంగా ఉంటారు.":
+        native: "Warriors are always brave."
+        bases:
+          "యోధులు": { meaning: "warrior" }
+          "ఎప్పుడూ": { meaning: "always" }
+          "ధైర్యంగా": { meaning: "courage" }
+          "ఉంటారు": { meaning: "to be; to exist" }
+  "te-5127":
+    native: "the past"
+    wiktionary: true
+    notes:
+      "n1": "Used for 'the past' in general."
+    examples:
+      "గతాన్ని మనం మర్చిపోకూడదు.":
+        native: "We should not forget the past."
+        bases:
+          "గతాన్ని": { meaning: "the past" }
+          "మనం": { meaning: "we (including you)" }
+          "మర్చిపోకూడదు": { meaning: "to forget" }
+      "గతంలో ఈ ఊరు చిన్నది.":
+        native: "In the past this town was small."
+        bases:
+          "గతంలో": { meaning: "the past" }
+          "ఈ": { meaning: "this" }
+          "ఊరు": { meaning: "town; village" }
+          "చిన్నది": { meaning: "small" }
+  "te-5128":
+    native: "age; era"
+    wiktionary: true
+    notes:
+      "n1": "Used for a period in history."
+    examples:
+      "ఇది కొత్త యుగం.":
+        native: "This is a new era."
+        bases:
+          "ఇది": { meaning: "this; it" }
+          "కొత్త": { meaning: "new" }
+      "ఆ యుగంలో ప్రజలు కోటలలో నివసించారు.":
+        native: "In that era people lived in forts."
+        bases:
+          "ఆ": { meaning: "that" }
+          "యుగంలో": { meaning: "age" }
+          "నివసించారు": { meaning: "to live; to reside" }
+  "te-5129":
+    native: "culture"
+    wiktionary: true
+    notes:
+      "n1": "Used in 'Indian culture'."
+    examples:
+      "భారత సంస్కృతి చాలా వైవిధ్యమైనది.":
+        native: "Indian culture is very diverse."
+        bases:
+          "భారత": { meaning: "Indian" }
+          "చాలా": { meaning: "very; many" }
+          "వైవిధ్యమైనది": { meaning: "varied" }
+      "సంస్కృతి గురించి ఒక పుస్తకం చదివాను.":
+        native: "I read a book about culture."
+        bases:
+          "గురించి": { meaning: "about" }
+          "ఒక": { meaning: "one; a" }
+          "పుస్తకం": { meaning: "book" }
+          "చదివాను": { meaning: "to read; to study" }
+  "te-5130":
+    native: "tradition"
+    notes:
+      "n1": "Used for a custom passed down."
+    examples:
+      "ఈ పండుగ ఒక పాత సంప్రదాయం.":
+        native: "This festival is an old tradition."
+        bases:
+          "ఈ": { meaning: "this" }
+          "పండుగ": { meaning: "festival" }
+          "ఒక": { meaning: "one; a" }
+          "పాత": { meaning: "old" }
+      "మా కుటుంబంలో ఈ సంప్రదాయం కొనసాగుతోంది.":
+        native: "In our family this tradition continues."
+        bases:
+          "మా": { meaning: "our" }
+          "కుటుంబంలో": { meaning: "family" }
+          "ఈ": { meaning: "this" }
+          "కొనసాగుతోంది": { meaning: "to continue" }
+  "te-5131":
+    native: "inscription; edict"
+    notes:
+      "n1": "A carved text, often on stone."
+    examples:
+      "ఈ రాతి శాసనం చాలా పాతది.":
+        native: "This stone inscription is very old."
+        bases:
+          "ఈ": { meaning: "this" }
+          "రాతి": { meaning: "stone (adj.)" }
+          "చాలా": { meaning: "very; many" }
+          "పాతది": { meaning: "old" }
+      "అశోకుడు శాసనాలు రాయించాడు.":
+        native: "Ashoka had inscriptions written."
+        bases:
+          "అశోకుడు": { meaning: "Ashoka" }
+          "శాసనాలు": { meaning: "inscription" }
+          "రాయించాడు": { meaning: "to have written" }
+  "te-5132":
+    native: "prince"
+    wiktionary: true
+    notes:
+      "n1": "The feminine form is 'princess'."
+    examples:
+      "ఆ రాజకుమారుడు కోటలో పెరిగాడు.":
+        native: "That prince grew up in the fort."
+        bases:
+          "ఆ": { meaning: "that" }
+          "పెరిగాడు": { meaning: "to grow up" }
+      "రాజకుమారుడు ప్రజలను కలిశాడు.":
+        native: "The prince met the people."
+        bases:
+          "కలిశాడు": { meaning: "to meet" }
+    synonyms: { "rakumarudu": "son of the king; a prince" }
+  "te-5133":
+    native: "historian"
+    notes:
+      "n1": "The plural is 'historians'."
+    examples:
+      "ఆ చరిత్రకారుడు ఈ కోట గురించి రాశాడు.":
+        native: "That historian wrote about this fort."
+        bases:
+          "ఆ": { meaning: "that" }
+          "ఈ": { meaning: "this" }
+          "గురించి": { meaning: "about" }
+          "రాశాడు": { meaning: "to write" }
+      "చరిత్రకారులు పాత పత్రాలు చదువుతారు.":
+        native: "Historians read old documents."
+        bases:
+          "చరిత్రకారులు": { meaning: "historian" }
+          "పాత": { meaning: "old" }
+          "పత్రాలు": { meaning: "document" }
+          "చదువుతారు": { meaning: "to read; to study" }
+  "te-5134":
+    native: "heritage"
+    notes:
+      "n1": "Used in 'world heritage'."
+    examples:
+      "ఈ దేవాలయం మన వారసత్వంలో భాగం.":
+        native: "This temple is part of our heritage."
+        bases:
+          "ఈ": { meaning: "this" }
+          "మన": { meaning: "our" }
+          "వారసత్వంలో": { meaning: "heritage" }
+          "భాగం": { meaning: "part" }
+      "ఈ కోటలు మనకు గొప్ప వారసత్వం.":
+        native: "These forts are a great heritage for us."
+        bases:
+          "ఈ": { meaning: "this" }
+          "మనకు": { meaning: "we (including you)" }
+          "గొప్ప": { meaning: "great" }
+  "te-5135":
+    native: "invasion; occupation"
+    notes:
+      "n1": "Also used for taking over land."
+    examples:
+      "ఆ ఆక్రమణ చాలా సంవత్సరాలు సాగింది.":
+        native: "That occupation lasted many years."
+        bases:
+          "ఆ": { meaning: "that" }
+          "చాలా": { meaning: "very; many" }
+          "సాగింది": { meaning: "to continue; to last" }
+      "ఆక్రమణ తర్వాత ప్రజలు కోటను వదిలారు.":
+        native: "After the invasion, people left the fort."
+        bases:
+          "తర్వాత": { meaning: "after" }
+          "వదిలారు": { meaning: "to leave behind" }
+  "te-5136":
+    native: "time; period"
+    wiktionary: true
+    notes:
+      "n1": "Used in 'a long time'."
+    examples:
+      "ఆ కాలంలో ఈ నగరం చాలా పెద్దది.":
+        native: "In that period this city was very big."
+        bases:
+          "ఆ": { meaning: "that" }
+          "కాలంలో": { meaning: "time" }
+          "ఈ": { meaning: "this" }
+          "నగరం": { meaning: "city" }
+          "చాలా": { meaning: "very; many" }
+          "పెద్దది": { meaning: "big" }
+      "ఎంత కాలం గడిచింది?":
+        native: "How much time has passed?"
+        bases:
+          "ఎంత": { meaning: "how much" }
+          "గడిచింది": { meaning: "to pass (of time)" }
+  "te-5137":
+    native: "weapon"
+    wiktionary: true
+    notes:
+      "n1": "The plural is 'weapons'."
+    examples:
+      "ఆ రోజుల్లో సైనికులు కొత్త ఆయుధాలు వాడేవారు.":
+        native: "In those days soldiers used new weapons."
+        bases:
+          "ఆ": { meaning: "that" }
+          "రోజుల్లో": { meaning: "day" }
+          "కొత్త": { meaning: "new" }
+          "ఆయుధాలు": { meaning: "weapon" }
+          "వాడేవారు": { meaning: "to use" }
+      "ఈ ఆయుధం చాలా బరువుగా ఉంది.":
+        native: "This weapon is very heavy."
+        bases:
+          "ఈ": { meaning: "this" }
+          "చాలా": { meaning: "very; many" }
+          "బరువుగా": { meaning: "weight" }
+          "ఉంది": { meaning: "to be; to exist" }
+  "te-5138":
+    native: "sword"
+    notes:
+      "n1": "A long sword, as in old stories."
+    examples:
+      "ఆ ఖడ్గం ఎవరిది?":
+        native: "Whose sword is that?"
+        bases:
+          "ఆ": { meaning: "that" }
+          "ఎవరిది": { meaning: "who" }
+      "యోధుడు తన ఖడ్గాన్ని తీశాడు.":
+        native: "The warrior drew his sword."
+        bases:
+          "తన": { meaning: "his; her" }
+          "ఖడ్గాన్ని": { meaning: "sword" }
+          "తీశాడు": { meaning: "to take out" }
+  "te-5139":
+    native: "movement"
+    notes:
+      "n1": "Used in 'freedom movement'."
+    examples:
+      "స్వాతంత్ర్య ఉద్యమం చాలా కాలం సాగింది.":
+        native: "The independence movement lasted a long time."
+        bases:
+          "చాలా": { meaning: "very; many" }
+          "సాగింది": { meaning: "to continue; to last" }
+      "ఆ ఉద్యమంలో ప్రజలు పాల్గొన్నారు.":
+        native: "In that movement people took part."
+        bases:
+          "ఆ": { meaning: "that" }
+          "ఉద్యమంలో": { meaning: "movement" }
+          "పాల్గొన్నారు": { meaning: "to take part" }
+  "te-5140":
+    native: "democracy"
+    wiktionary: true
+    notes:
+      "n1": "Used in 'democratic country'."
+    examples:
+      "ప్రజాస్వామ్యంలో ప్రజలు నాయకులను ఎన్నుకుంటారు.":
+        native: "In a democracy people elect their leaders."
+        bases:
+          "ప్రజాస్వామ్యంలో": { meaning: "democracy" }
+          "ఎన్నుకుంటారు": { meaning: "to elect" }
+      "ఈ దేశంలో ప్రజాస్వామ్యం ఎప్పటి నుంచి ఉంది?":
+        native: "Since when has this country had democracy?"
+        bases:
+          "ఈ": { meaning: "this" }
+          "ఎప్పటి": { meaning: "since when" }
+          "నుంచి": { meaning: "from" }
+          "ఉంది": { meaning: "to be; to exist" }
+  "te-5141":
+    native: "independence; freedom"
+    notes:
+      "n1": "Used in 'freedom fighter'."
+    examples:
+      "మన దేశానికి స్వాతంత్ర్యం ఒక గొప్ప బహుమతి.":
+        native: "Independence is a great gift for our country."
+        bases:
+          "మన": { meaning: "our" }
+          "ఒక": { meaning: "one; a" }
+          "గొప్ప": { meaning: "great" }
+          "బహుమతి": { meaning: "gift; prize" }
+      "స్వాతంత్ర్యం కోసం చాలా మంది పోరాడారు.":
+        native: "Many people fought for freedom."
+        bases:
+          "కోసం": { meaning: "for" }
+          "చాలా": { meaning: "very; many" }
+          "మంది": { meaning: "people; a number of people" }
+          "పోరాడారు": { meaning: "to fight" }
+  "te-5142":
+    native: "constitution"
+    wiktionary: true
+    notes:
+      "n1": "Used in 'a country's constitution'."
+    examples:
+      "మన రాజ్యాంగం ప్రజలకు చాలా హక్కులు ఇస్తుంది.":
+        native: "Our constitution gives people many rights."
+        bases:
+          "మన": { meaning: "our" }
+          "చాలా": { meaning: "very; many" }
+          "హక్కులు": { meaning: "right; entitlement" }
+          "ఇస్తుంది": { meaning: "to give" }
+      "రాజ్యాంగం గురించి ఈ పుస్తకం చెప్తుంది.":
+        native: "This book explains the constitution."
+        bases:
+          "గురించి": { meaning: "about" }
+          "ఈ": { meaning: "this" }
+          "పుస్తకం": { meaning: "book" }
+          "చెప్తుంది": { meaning: "to tell; to explain" }
+  "te-5143":
+    native: "custom"
+    wiktionary: true
+    notes:
+      "n1": "A custom passed down from the past."
+    examples:
+      "ఇది పాత ఆచారం.":
+        native: "This is an old custom."
+        bases:
+          "ఇది": { meaning: "this; it" }
+          "పాత": { meaning: "old" }
+      "ఈ ఆచారం ఎంత పాతది?":
+        native: "How old is this custom?"
+        bases:
+          "ఈ": { meaning: "this" }
+          "ఎంత": { meaning: "how much" }
+          "పాతది": { meaning: "old" }

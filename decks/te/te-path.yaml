@@ -505,7 +505,8 @@ units:
       - { id: "having-things-done", text: { "en": "Asking someone to get things done" } }
     reading_passages:
       - { id: "service-request", text: { "en": "A written service request" } }
-  - planned: { id: "te-history", theme: "history", words: 50 }
+  - decks: ["te-history", "*"]
+    words: 50
     listening_passages:
       - { id: "a-fort-visit", text: { "en": "A guide tells the story of a fort" } }
     reading_passages:
