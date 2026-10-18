@@ -1,0 +1,21 @@
+schema: 1
+id: "te-en-grammar-relative-participle"
+kind: "layer"
+core: "te-grammar-relative-participle"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The one who did it: -ిన and -ే"
+description: "A verb's -ిన form describes a noun that did the action in the past: 'the man who came'. Its -ే form describes a noun that does the action now, as a habit, or in future. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "past": "the one who did it (past)"
+    "nonpast": "the one who does or will do it"
+rules:
+  "te-rule-relative-past":
+    name: "-ిన (-ina): who did"
+    explanation: "{1} joins a verb's past stem and describes a noun that did the action: {2} is 'the man who came', and {3} is 'the food that was eaten'."
+  "te-rule-relative-nonpast":
+    name: "-ే (-ē): who does or will"
+    explanation: "{1} joins a verb's stem and describes a noun that does the action now, as a habit, or in future: {2} is 'the train that comes or will come', and {3} is 'those who eat'."
