@@ -1,0 +1,427 @@
+schema: 1
+id: "te-grammar-passive"
+part: "core"
+kind: "rules"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["te-0247", "te-0282", "te-0297", "te-0441", "te-0450", "te-0460", "te-0463", "te-0474", "te-0532", "te-0622", "te-0623", "te-0633", "te-0634", "te-0635", "te-0636", "te-0637", "te-0640", "te-0646", "te-0648", "te-0649", "te-0651", "te-0822", "te-0823", "te-0827", "te-0828", "te-0839", "te-0841", "te-0843", "te-0845", "te-0846", "te-1047", "te-1146", "te-1147", "te-1148", "te-1149", "te-1150", "te-1151", "te-1152", "te-1400", "te-1405", "te-1529", "te-1530", "te-1531", "te-1532", "te-1534", "te-1535", "te-1536", "te-1537", "te-1539", "te-2300", "te-2301", "te-2303", "te-2304", "te-2305", "te-2306", "te-2307", "te-2308", "te-2317", "te-2321", "te-2322", "te-2323", "te-2324", "te-2325", "te-2330", "te-2348", "te-2359", "te-2360", "te-2537", "te-3229", "te-3230", "te-3231", "te-3232", "te-3234", "te-3235", "te-3347", "te-3348", "te-3349", "te-3620", "te-3624", "te-6100", "te-6101", "te-6106", "te-6119", "te-6120", "te-6121", "te-6125", "te-6126", "te-6131", "te-6145", "te-6152", "te-6154", "te-6155", "te-6156", "te-6109", "te-6148", "te-6149", "te-2311", "te-0833", "te-3351", "te-1923", "te-0632"]
+  slots: ["was-done", "is-done"]
+  rows:
+    - word: "te-0621"
+      forms: { "was-done": "చేయబడింది", "is-done": "చేయబడుతుంది" }
+      readings: { "was-done": "cēyabaḍindi", "is-done": "cēyabaḍutundi" }
+    - word: "te-0624"
+      forms: { "was-done": "తినబడింది", "is-done": "తినబడుతుంది" }
+      readings: { "was-done": "tinabaḍindi", "is-done": "tinabaḍutundi" }
+    - word: "te-0625"
+      forms: { "was-done": "తాగబడింది", "is-done": "తాగబడుతుంది" }
+      readings: { "was-done": "tāgabaḍindi", "is-done": "tāgabaḍutundi" }
+    - word: "te-0626"
+      forms: { "was-done": "చూడబడింది", "is-done": "చూడబడుతుంది" }
+      readings: { "was-done": "cūḍabaḍindi", "is-done": "cūḍabaḍutundi" }
+    - word: "te-0627"
+      forms: { "was-done": "వినబడింది", "is-done": "వినబడుతుంది" }
+      readings: { "was-done": "vinabaḍindi", "is-done": "vinabaḍutundi" }
+    - word: "te-0628"
+      forms: { "was-done": "చెప్పబడింది", "is-done": "చెప్పబడుతుంది" }
+      readings: { "was-done": "ceppabaḍindi", "is-done": "ceppabaḍutundi" }
+    - word: "te-0629"
+      forms: { "was-done": "అడగబడింది", "is-done": "అడగబడుతుంది" }
+      readings: { "was-done": "aḍagabaḍindi", "is-done": "aḍagabaḍutundi" }
+    - word: "te-0630"
+      forms: { "was-done": "ఇవ్వబడింది", "is-done": "ఇవ్వబడుతుంది" }
+      readings: { "was-done": "ivvabaḍindi", "is-done": "ivvabaḍutundi" }
+    - word: "te-0631"
+      forms: { "was-done": "తీసుకోబడింది", "is-done": "తీసుకోబడుతుంది" }
+      readings: { "was-done": "tīsukōbaḍindi", "is-done": "tīsukōbaḍutundi" }
+    - word: "te-0638"
+      forms: { "was-done": "చదవబడింది", "is-done": "చదవబడుతుంది" }
+      readings: { "was-done": "cadavabaḍindi", "is-done": "cadavabaḍutundi" }
+    - word: "te-0639"
+      forms: { "was-done": "రాయబడింది", "is-done": "రాయబడుతుంది" }
+      readings: { "was-done": "rāyabaḍindi", "is-done": "rāyabaḍutundi" }
+    - word: "te-0641"
+      forms: { "was-done": "కొనబడింది", "is-done": "కొనబడుతుంది" }
+      readings: { "was-done": "konabaḍindi", "is-done": "konabaḍutundi" }
+    - word: "te-0642"
+      forms: { "was-done": "అమ్మబడింది", "is-done": "అమ్మబడుతుంది" }
+      readings: { "was-done": "ammabaḍindi", "is-done": "ammabaḍutundi" }
+    - word: "te-0643"
+      forms: { "was-done": "వండబడింది", "is-done": "వండబడుతుంది" }
+      readings: { "was-done": "vaṇḍabaḍindi", "is-done": "vaṇḍabaḍutundi" }
+    - word: "te-0644"
+      forms: { "was-done": "మాట్లాడబడింది", "is-done": "మాట్లాడబడుతుంది" }
+      readings: { "was-done": "māṭlāḍabaḍindi", "is-done": "māṭlāḍabaḍutundi" }
+    - word: "te-0645"
+      forms: { "was-done": "నేర్చుకోబడింది", "is-done": "నేర్చుకోబడుతుంది" }
+      readings: { "was-done": "nērcukōbaḍindi", "is-done": "nērcukōbaḍutundi" }
+    - word: "te-0647"
+      forms: { "was-done": "తెలుసుకోబడింది", "is-done": "తెలుసుకోబడుతుంది" }
+      readings: { "was-done": "telusukōbaḍindi", "is-done": "telusukōbaḍutundi" }
+    - word: "te-0650"
+      forms: { "was-done": "పంపబడింది", "is-done": "పంపబడుతుంది" }
+      readings: { "was-done": "pampabaḍindi", "is-done": "pampabaḍutundi" }
+    - word: "te-0821"
+      forms: { "was-done": "పాడబడింది", "is-done": "పాడబడుతుంది" }
+      readings: { "was-done": "pāḍabaḍindi", "is-done": "pāḍabaḍutundi" }
+    - word: "te-0824"
+      forms: { "was-done": "కడగబడింది", "is-done": "కడగబడుతుంది" }
+      readings: { "was-done": "kaḍagabaḍindi", "is-done": "kaḍagabaḍutundi" }
+    - word: "te-0825"
+      forms: { "was-done": "తెరవబడింది", "is-done": "తెరవబడుతుంది" }
+      readings: { "was-done": "teravabaḍindi", "is-done": "teravabaḍutundi" }
+    - word: "te-0826"
+      forms: { "was-done": "మూయబడింది", "is-done": "మూయబడుతుంది" }
+      readings: { "was-done": "mūyabaḍindi", "is-done": "mūyabaḍutundi" }
+    - word: "te-0829"
+      forms: { "was-done": "పట్టుకోబడింది", "is-done": "పట్టుకోబడుతుంది" }
+      readings: { "was-done": "paṭṭukōbaḍindi", "is-done": "paṭṭukōbaḍutundi" }
+    - word: "te-0830"
+      forms: { "was-done": "పెట్టబడింది", "is-done": "పెట్టబడుతుంది" }
+      readings: { "was-done": "peṭṭabaḍindi", "is-done": "peṭṭabaḍutundi" }
+    - word: "te-0831"
+      forms: { "was-done": "ఉంచబడింది", "is-done": "ఉంచబడుతుంది" }
+      readings: { "was-done": "uñcabaḍindi", "is-done": "uñcabaḍutundi" }
+    - word: "te-0832"
+      forms: { "was-done": "నేర్పబడింది", "is-done": "నేర్పబడుతుంది" }
+      readings: { "was-done": "nērpabaḍindi", "is-done": "nērpabaḍutundi" }
+    - word: "te-0834"
+      forms: { "was-done": "ఆలోచించబడింది", "is-done": "ఆలోచించబడుతుంది" }
+      readings: { "was-done": "ālōciñcabaḍindi", "is-done": "ālōciñcabaḍutundi" }
+    - word: "te-0835"
+      forms: { "was-done": "వెతకబడింది", "is-done": "వెతకబడుతుంది" }
+      readings: { "was-done": "vetakabaḍindi", "is-done": "vetakabaḍutundi" }
+    - word: "te-0836"
+      forms: { "was-done": "తీయబడింది", "is-done": "తీయబడుతుంది" }
+      readings: { "was-done": "tīyabaḍindi", "is-done": "tīyabaḍutundi" }
+    - word: "te-0837"
+      forms: { "was-done": "వేయబడింది", "is-done": "వేయబడుతుంది" }
+      readings: { "was-done": "vēyabaḍindi", "is-done": "vēyabaḍutundi" }
+    - word: "te-0838"
+      forms: { "was-done": "కొట్టబడింది", "is-done": "కొట్టబడుతుంది" }
+      readings: { "was-done": "koṭṭabaḍindi", "is-done": "koṭṭabaḍutundi" }
+    - word: "te-0840"
+      forms: { "was-done": "ఆపబడింది", "is-done": "ఆపబడుతుంది" }
+      readings: { "was-done": "āpabaḍindi", "is-done": "āpabaḍutundi" }
+    - word: "te-0842"
+      forms: { "was-done": "చూపించబడింది", "is-done": "చూపించబడుతుంది" }
+      readings: { "was-done": "cūpiñcabaḍindi", "is-done": "cūpiñcabaḍutundi" }
+    - word: "te-0844"
+      forms: { "was-done": "నమ్మబడింది", "is-done": "నమ్మబడుతుంది" }
+      readings: { "was-done": "nammabaḍindi", "is-done": "nammabaḍutundi" }
+    - word: "te-0847"
+      forms: { "was-done": "కోయబడింది", "is-done": "కోయబడుతుంది" }
+      readings: { "was-done": "kōyabaḍindi", "is-done": "kōyabaḍutundi" }
+    - word: "te-0848"
+      forms: { "was-done": "లాగబడింది", "is-done": "లాగబడుతుంది" }
+      readings: { "was-done": "lāgabaḍindi", "is-done": "lāgabaḍutundi" }
+    - word: "te-0849"
+      forms: { "was-done": "పిలవబడింది", "is-done": "పిలవబడుతుంది" }
+      readings: { "was-done": "pilavabaḍindi", "is-done": "pilavabaḍutundi" }
+    - word: "te-0850"
+      forms: { "was-done": "కలపబడింది", "is-done": "కలపబడుతుంది" }
+      readings: { "was-done": "kalapabaḍindi", "is-done": "kalapabaḍutundi" }
+    - word: "te-0851"
+      forms: { "was-done": "నింపబడింది", "is-done": "నింపబడుతుంది" }
+      readings: { "was-done": "nimpabaḍindi", "is-done": "nimpabaḍutundi" }
+    - word: "te-0852"
+      forms: { "was-done": "తుడవబడింది", "is-done": "తుడవబడుతుంది" }
+      readings: { "was-done": "tuḍavabaḍindi", "is-done": "tuḍavabaḍutundi" }
+    - word: "te-1339"
+      forms: { "was-done": "పంచుకోబడింది", "is-done": "పంచుకోబడుతుంది" }
+      readings: { "was-done": "pañcukōbaḍindi", "is-done": "pañcukōbaḍutundi" }
+    - word: "te-1401"
+      forms: { "was-done": "చెల్లించబడింది", "is-done": "చెల్లించబడుతుంది" }
+      readings: { "was-done": "celliñcabaḍindi", "is-done": "celliñcabaḍutundi" }
+    - word: "te-1402"
+      forms: { "was-done": "తగ్గించబడింది", "is-done": "తగ్గించబడుతుంది" }
+      readings: { "was-done": "taggiñcabaḍindi", "is-done": "taggiñcabaḍutundi" }
+    - word: "te-1403"
+      forms: { "was-done": "ఎంచుకోబడింది", "is-done": "ఎంచుకోబడుతుంది" }
+      readings: { "was-done": "eñcukōbaḍindi", "is-done": "eñcukōbaḍutundi" }
+    - word: "te-1404"
+      forms: { "was-done": "తిరిగివ్వబడింది", "is-done": "తిరిగివ్వబడుతుంది" }
+      readings: { "was-done": "tirigivvabaḍindi", "is-done": "tirigivvabaḍutundi" }
+    - word: "te-1538"
+      forms: { "was-done": "చేర్చబడింది", "is-done": "చేర్చబడుతుంది" }
+      readings: { "was-done": "cērcabaḍindi", "is-done": "cērcabaḍutundi" }
+    - word: "te-1621"
+      forms: { "was-done": "ఉడకబెట్టబడింది", "is-done": "ఉడకబెట్టబడుతుంది" }
+      readings: { "was-done": "uḍakabeṭṭabaḍindi", "is-done": "uḍakabeṭṭabaḍutundi" }
+    - word: "te-1622"
+      forms: { "was-done": "వేయించబడింది", "is-done": "వేయించబడుతుంది" }
+      readings: { "was-done": "vēyiñcabaḍindi", "is-done": "vēyiñcabaḍutundi" }
+    - word: "te-1914"
+      forms: { "was-done": "వాయించబడింది", "is-done": "వాయించబడుతుంది" }
+      readings: { "was-done": "vāyiñcabaḍindi", "is-done": "vāyiñcabaḍutundi" }
+    - word: "te-1915"
+      forms: { "was-done": "గీయబడింది", "is-done": "గీయబడుతుంది" }
+      readings: { "was-done": "gīyabaḍindi", "is-done": "gīyabaḍutundi" }
+    - word: "te-2100"
+      forms: { "was-done": "ఊడ్చబడింది", "is-done": "ఊడ్చబడుతుంది" }
+      readings: { "was-done": "ūḍcabaḍindi", "is-done": "ūḍcabaḍutundi" }
+    - word: "te-2101"
+      forms: { "was-done": "ఉతకబడింది", "is-done": "ఉతకబడుతుంది" }
+      readings: { "was-done": "utakabaḍindi", "is-done": "utakabaḍutundi" }
+    - word: "te-2102"
+      forms: { "was-done": "ఆరేయబడింది", "is-done": "ఆరేయబడుతుంది" }
+      readings: { "was-done": "ārēyabaḍindi", "is-done": "ārēyabaḍutundi" }
+    - word: "te-2103"
+      forms: { "was-done": "ఇస్త్రీ చేయబడింది", "is-done": "ఇస్త్రీ చేయబడుతుంది" }
+      readings: { "was-done": "istrī cēyabaḍindi", "is-done": "istrī cēyabaḍutundi" }
+    - word: "te-2104"
+      forms: { "was-done": "తరగబడింది", "is-done": "తరగబడుతుంది" }
+      readings: { "was-done": "taragabaḍindi", "is-done": "taragabaḍutundi" }
+    - word: "te-2105"
+      forms: { "was-done": "ఉడికించబడింది", "is-done": "ఉడికించబడుతుంది" }
+      readings: { "was-done": "uḍikiñcabaḍindi", "is-done": "uḍikiñcabaḍutundi" }
+    - word: "te-2106"
+      forms: { "was-done": "సర్దబడింది", "is-done": "సర్దబడుతుంది" }
+      readings: { "was-done": "sardabaḍindi", "is-done": "sardabaḍutundi" }
+    - word: "te-2107"
+      forms: { "was-done": "పారేయబడింది", "is-done": "పారేయబడుతుంది" }
+      readings: { "was-done": "pārēyabaḍindi", "is-done": "pārēyabaḍutundi" }
+    - word: "te-2108"
+      forms: { "was-done": "ఎత్తబడింది", "is-done": "ఎత్తబడుతుంది" }
+      readings: { "was-done": "ettabaḍindi", "is-done": "ettabaḍutundi" }
+    - word: "te-2302"
+      forms: { "was-done": "లేపబడింది", "is-done": "లేపబడుతుంది" }
+      readings: { "was-done": "lēpabaḍindi", "is-done": "lēpabaḍutundi" }
+    - word: "te-2309"
+      forms: { "was-done": "ముగించబడింది", "is-done": "ముగించబడుతుంది" }
+      readings: { "was-done": "mugiñcabaḍindi", "is-done": "mugiñcabaḍutundi" }
+    - word: "te-2310"
+      forms: { "was-done": "మొదలుపెట్టబడింది", "is-done": "మొదలుపెట్టబడుతుంది" }
+      readings: { "was-done": "modalupeṭṭabaḍindi", "is-done": "modalupeṭṭabaḍutundi" }
+    - word: "te-2312"
+      forms: { "was-done": "పెంచబడింది", "is-done": "పెంచబడుతుంది" }
+      readings: { "was-done": "peñcabaḍindi", "is-done": "peñcabaḍutundi" }
+    - word: "te-2313"
+      forms: { "was-done": "నడపబడింది", "is-done": "నడపబడుతుంది" }
+      readings: { "was-done": "naḍapabaḍindi", "is-done": "naḍapabaḍutundi" }
+    - word: "te-2314"
+      forms: { "was-done": "గుర్తుంచుకోబడింది", "is-done": "గుర్తుంచుకోబడుతుంది" }
+      readings: { "was-done": "gurtuñcukōbaḍindi", "is-done": "gurtuñcukōbaḍutundi" }
+    - word: "te-2315"
+      forms: { "was-done": "వివరించబడింది", "is-done": "వివరించబడుతుంది" }
+      readings: { "was-done": "vivariñcabaḍindi", "is-done": "vivariñcabaḍutundi" }
+    - word: "te-2316"
+      forms: { "was-done": "తిట్టబడింది", "is-done": "తిట్టబడుతుంది" }
+      readings: { "was-done": "tiṭṭabaḍindi", "is-done": "tiṭṭabaḍutundi" }
+    - word: "te-2318"
+      forms: { "was-done": "దాచబడింది", "is-done": "దాచబడుతుంది" }
+      readings: { "was-done": "dācabaḍindi", "is-done": "dācabaḍutundi" }
+    - word: "te-2319"
+      forms: { "was-done": "విసరబడింది", "is-done": "విసరబడుతుంది" }
+      readings: { "was-done": "visarabaḍindi", "is-done": "visarabaḍutundi" }
+    - word: "te-2320"
+      forms: { "was-done": "ఊదబడింది", "is-done": "ఊదబడుతుంది" }
+      readings: { "was-done": "ūdabaḍindi", "is-done": "ūdabaḍutundi" }
+    - word: "te-2326"
+      forms: { "was-done": "పంపించబడింది", "is-done": "పంపించబడుతుంది" }
+      readings: { "was-done": "pampiñcabaḍindi", "is-done": "pampiñcabaḍutundi" }
+    - word: "te-2327"
+      forms: { "was-done": "వాడబడింది", "is-done": "వాడబడుతుంది" }
+      readings: { "was-done": "vāḍabaḍindi", "is-done": "vāḍabaḍutundi" }
+    - word: "te-2328"
+      forms: { "was-done": "బోధించబడింది", "is-done": "బోధించబడుతుంది" }
+      readings: { "was-done": "bōdhiñcabaḍindi", "is-done": "bōdhiñcabaḍutundi" }
+    - word: "te-2329"
+      forms: { "was-done": "మెచ్చుకోబడింది", "is-done": "మెచ్చుకోబడుతుంది" }
+      readings: { "was-done": "meccukōbaḍindi", "is-done": "meccukōbaḍutundi" }
+    - word: "te-2331"
+      forms: { "was-done": "మడవబడింది", "is-done": "మడవబడుతుంది" }
+      readings: { "was-done": "maḍavabaḍindi", "is-done": "maḍavabaḍutundi" }
+    - word: "te-2332"
+      forms: { "was-done": "చుట్టబడింది", "is-done": "చుట్టబడుతుంది" }
+      readings: { "was-done": "cuṭṭabaḍindi", "is-done": "cuṭṭabaḍutundi" }
+    - word: "te-2333"
+      forms: { "was-done": "విప్పబడింది", "is-done": "విప్పబడుతుంది" }
+      readings: { "was-done": "vippabaḍindi", "is-done": "vippabaḍutundi" }
+    - word: "te-2334"
+      forms: { "was-done": "కట్టబడింది", "is-done": "కట్టబడుతుంది" }
+      readings: { "was-done": "kaṭṭabaḍindi", "is-done": "kaṭṭabaḍutundi" }
+    - word: "te-2335"
+      forms: { "was-done": "వదలబడింది", "is-done": "వదలబడుతుంది" }
+      readings: { "was-done": "vadalabaḍindi", "is-done": "vadalabaḍutundi" }
+    - word: "te-2336"
+      forms: { "was-done": "తిప్పబడింది", "is-done": "తిప్పబడుతుంది" }
+      readings: { "was-done": "tippabaḍindi", "is-done": "tippabaḍutundi" }
+    - word: "te-2337"
+      forms: { "was-done": "నొక్కబడింది", "is-done": "నొక్కబడుతుంది" }
+      readings: { "was-done": "nokkabaḍindi", "is-done": "nokkabaḍutundi" }
+    - word: "te-2338"
+      forms: { "was-done": "కొలవబడింది", "is-done": "కొలవబడుతుంది" }
+      readings: { "was-done": "kolavabaḍindi", "is-done": "kolavabaḍutundi" }
+    - word: "te-2339"
+      forms: { "was-done": "లెక్కపెట్టబడింది", "is-done": "లెక్కపెట్టబడుతుంది" }
+      readings: { "was-done": "lekkapeṭṭabaḍindi", "is-done": "lekkapeṭṭabaḍutundi" }
+    - word: "te-2340"
+      forms: { "was-done": "అంగీకరించబడింది", "is-done": "అంగీకరించబడుతుంది" }
+      readings: { "was-done": "aṅgīkariñcabaḍindi", "is-done": "aṅgīkariñcabaḍutundi" }
+    - word: "te-2341"
+      forms: { "was-done": "తిరస్కరించబడింది", "is-done": "తిరస్కరించబడుతుంది" }
+      readings: { "was-done": "tiraskariñcabaḍindi", "is-done": "tiraskariñcabaḍutundi" }
+    - word: "te-2343"
+      forms: { "was-done": "ప్రారంభించబడింది", "is-done": "ప్రారంభించబడుతుంది" }
+      readings: { "was-done": "prārambhiñcabaḍindi", "is-done": "prārambhiñcabaḍutundi" }
+    - word: "te-2344"
+      forms: { "was-done": "గుర్తించబడింది", "is-done": "గుర్తించబడుతుంది" }
+      readings: { "was-done": "gurtiñcabaḍindi", "is-done": "gurtiñcabaḍutundi" }
+    - word: "te-2345"
+      forms: { "was-done": "అనుకోబడింది", "is-done": "అనుకోబడుతుంది" }
+      readings: { "was-done": "anukōbaḍindi", "is-done": "anukōbaḍutundi" }
+    - word: "te-2346"
+      forms: { "was-done": "ప్రేమించబడింది", "is-done": "ప్రేమించబడుతుంది" }
+      readings: { "was-done": "prēmiñcabaḍindi", "is-done": "prēmiñcabaḍutundi" }
+    - word: "te-2347"
+      forms: { "was-done": "మార్చబడింది", "is-done": "మార్చబడుతుంది" }
+      readings: { "was-done": "mārcabaḍindi", "is-done": "mārcabaḍutundi" }
+    - word: "te-2349"
+      forms: { "was-done": "సంపాదించబడింది", "is-done": "సంపాదించబడుతుంది" }
+      readings: { "was-done": "sampādiñcabaḍindi", "is-done": "sampādiñcabaḍutundi" }
+    - word: "te-2350"
+      forms: { "was-done": "ఖర్చుపెట్టబడింది", "is-done": "ఖర్చుపెట్టబడుతుంది" }
+      readings: { "was-done": "kharcupeṭṭabaḍindi", "is-done": "kharcupeṭṭabaḍutundi" }
+    - word: "te-2351"
+      forms: { "was-done": "సాధించబడింది", "is-done": "సాధించబడుతుంది" }
+      readings: { "was-done": "sādhiñcabaḍindi", "is-done": "sādhiñcabaḍutundi" }
+    - word: "te-2352"
+      forms: { "was-done": "ఒప్పుకోబడింది", "is-done": "ఒప్పుకోబడుతుంది" }
+      readings: { "was-done": "oppukōbaḍindi", "is-done": "oppukōbaḍutundi" }
+    - word: "te-2353"
+      forms: { "was-done": "చేరుకోబడింది", "is-done": "చేరుకోబడుతుంది" }
+      readings: { "was-done": "cērukōbaḍindi", "is-done": "cērukōbaḍutundi" }
+    - word: "te-2354"
+      forms: { "was-done": "పరీక్షించబడింది", "is-done": "పరీక్షించబడుతుంది" }
+      readings: { "was-done": "parīkṣiñcabaḍindi", "is-done": "parīkṣiñcabaḍutundi" }
+    - word: "te-2355"
+      forms: { "was-done": "వెలిగించబడింది", "is-done": "వెలిగించబడుతుంది" }
+      readings: { "was-done": "veligiñcabaḍindi", "is-done": "veligiñcabaḍutundi" }
+    - word: "te-2356"
+      forms: { "was-done": "ఆర్పబడింది", "is-done": "ఆర్పబడుతుంది" }
+      readings: { "was-done": "ārpabaḍindi", "is-done": "ārpabaḍutundi" }
+    - word: "te-2357"
+      forms: { "was-done": "కొనసాగించబడింది", "is-done": "కొనసాగించబడుతుంది" }
+      readings: { "was-done": "konasāgiñcabaḍindi", "is-done": "konasāgiñcabaḍutundi" }
+    - word: "te-2358"
+      forms: { "was-done": "పొందబడింది", "is-done": "పొందబడుతుంది" }
+      readings: { "was-done": "pondabaḍindi", "is-done": "pondabaḍutundi" }
+    - word: "te-2535"
+      forms: { "was-done": "బుక్ చేయబడింది", "is-done": "బుక్ చేయబడుతుంది" }
+      readings: { "was-done": "buk cēyabaḍindi", "is-done": "buk cēyabaḍutundi" }
+    - word: "te-3233"
+      forms: { "was-done": "మానేయబడింది", "is-done": "మానేయబడుతుంది" }
+      readings: { "was-done": "mānēyabaḍindi", "is-done": "mānēyabaḍutundi" }
+    - word: "te-2929"
+      forms: { "was-done": "వాయిదా వేయబడింది", "is-done": "వాయిదా వేయబడుతుంది" }
+      readings: { "was-done": "vāyidā vēyabaḍindi", "is-done": "vāyidā vēyabaḍutundi" }
+    - word: "te-2930"
+      forms: { "was-done": "తెలియజేయబడింది", "is-done": "తెలియజేయబడుతుంది" }
+      readings: { "was-done": "teliyajēyabaḍindi", "is-done": "teliyajēyabaḍutundi" }
+    - word: "te-2933"
+      forms: { "was-done": "నిర్ణయించబడింది", "is-done": "నిర్ణయించబడుతుంది" }
+      readings: { "was-done": "nirṇayiñcabaḍindi", "is-done": "nirṇayiñcabaḍutundi" }
+    - word: "te-3622"
+      forms: { "was-done": "విమర్శించబడింది", "is-done": "విమర్శించబడుతుంది" }
+      readings: { "was-done": "vimarśiñcabaḍindi", "is-done": "vimarśiñcabaḍutundi" }
+    - word: "te-3623"
+      forms: { "was-done": "ఊహించబడింది", "is-done": "ఊహించబడుతుంది" }
+      readings: { "was-done": "ūhiñcabaḍindi", "is-done": "ūhiñcabaḍutundi" }
+    - word: "te-6102"
+      forms: { "was-done": "నెట్టబడింది", "is-done": "నెట్టబడుతుంది" }
+      readings: { "was-done": "neṭṭabaḍindi", "is-done": "neṭṭabaḍutundi" }
+    - word: "te-6103"
+      forms: { "was-done": "కప్పబడింది", "is-done": "కప్పబడుతుంది" }
+      readings: { "was-done": "kappabaḍindi", "is-done": "kappabaḍutundi" }
+    - word: "te-6104"
+      forms: { "was-done": "ముంచబడింది", "is-done": "ముంచబడుతుంది" }
+      readings: { "was-done": "muñcabaḍindi", "is-done": "muñcabaḍutundi" }
+    - word: "te-6105"
+      forms: { "was-done": "దాటబడింది", "is-done": "దాటబడుతుంది" }
+      readings: { "was-done": "dāṭabaḍindi", "is-done": "dāṭabaḍutundi" }
+    - word: "te-6108"
+      forms: { "was-done": "తీర్చబడింది", "is-done": "తీర్చబడుతుంది" }
+      readings: { "was-done": "tīrcabaḍindi", "is-done": "tīrcabaḍutundi" }
+    - word: "te-6110"
+      forms: { "was-done": "కుట్టబడింది", "is-done": "కుట్టబడుతుంది" }
+      readings: { "was-done": "kuṭṭabaḍindi", "is-done": "kuṭṭabaḍutundi" }
+    - word: "te-6112"
+      forms: { "was-done": "వంచబడింది", "is-done": "వంచబడుతుంది" }
+      readings: { "was-done": "vañcabaḍindi", "is-done": "vañcabaḍutundi" }
+    - word: "te-6114"
+      forms: { "was-done": "చల్లబడింది", "is-done": "చల్లబడుతుంది" }
+      readings: { "was-done": "callabaḍindi", "is-done": "callabaḍutundi" }
+    - word: "te-6116"
+      forms: { "was-done": "కనిపెట్టబడింది", "is-done": "కనిపెట్టబడుతుంది" }
+      readings: { "was-done": "kanipeṭṭabaḍindi", "is-done": "kanipeṭṭabaḍutundi" }
+    - word: "te-6117"
+      forms: { "was-done": "పగలగొట్టబడింది", "is-done": "పగలగొట్టబడుతుంది" }
+      readings: { "was-done": "pagalagoṭṭabaḍindi", "is-done": "pagalagoṭṭabaḍutundi" }
+    - word: "te-6118"
+      forms: { "was-done": "పోగొట్టబడింది", "is-done": "పోగొట్టబడుతుంది" }
+      readings: { "was-done": "pōgoṭṭabaḍindi", "is-done": "pōgoṭṭabaḍutundi" }
+    - word: "te-6122"
+      forms: { "was-done": "కూడబెట్టబడింది", "is-done": "కూడబెట్టబడుతుంది" }
+      readings: { "was-done": "kūḍabeṭṭabaḍindi", "is-done": "kūḍabeṭṭabaḍutundi" }
+    - word: "te-6123"
+      forms: { "was-done": "దాచిపెట్టబడింది", "is-done": "దాచిపెట్టబడుతుంది" }
+      readings: { "was-done": "dācipeṭṭabaḍindi", "is-done": "dācipeṭṭabaḍutundi" }
+    - word: "te-6127"
+      forms: { "was-done": "స్వీకరించబడింది", "is-done": "స్వీకరించబడుతుంది" }
+      readings: { "was-done": "svīkariñcabaḍindi", "is-done": "svīkariñcabaḍutundi" }
+    - word: "te-6128"
+      forms: { "was-done": "ఆమోదించబడింది", "is-done": "ఆమోదించబడుతుంది" }
+      readings: { "was-done": "āmōdiñcabaḍindi", "is-done": "āmōdiñcabaḍutundi" }
+    - word: "te-6129"
+      forms: { "was-done": "అనుమతించబడింది", "is-done": "అనుమతించబడుతుంది" }
+      readings: { "was-done": "anumatiñcabaḍindi", "is-done": "anumatiñcabaḍutundi" }
+    - word: "te-6130"
+      forms: { "was-done": "హెచ్చరించబడింది", "is-done": "హెచ్చరించబడుతుంది" }
+      readings: { "was-done": "heccariñcabaḍindi", "is-done": "heccariñcabaḍutundi" }
+    - word: "te-6132"
+      forms: { "was-done": "సమర్పించబడింది", "is-done": "సమర్పించబడుతుంది" }
+      readings: { "was-done": "samarpiñcabaḍindi", "is-done": "samarpiñcabaḍutundi" }
+    - word: "te-6133"
+      forms: { "was-done": "అంటించబడింది", "is-done": "అంటించబడుతుంది" }
+      readings: { "was-done": "aṇṭiñcabaḍindi", "is-done": "aṇṭiñcabaḍutundi" }
+    - word: "te-6134"
+      forms: { "was-done": "క్షమించబడింది", "is-done": "క్షమించబడుతుంది" }
+      readings: { "was-done": "kṣamiñcabaḍindi", "is-done": "kṣamiñcabaḍutundi" }
+    - word: "te-6138"
+      forms: { "was-done": "నిర్వహించబడింది", "is-done": "నిర్వహించబడుతుంది" }
+      readings: { "was-done": "nirvahiñcabaḍindi", "is-done": "nirvahiñcabaḍutundi" }
+    - word: "te-6139"
+      forms: { "was-done": "వర్ణించబడింది", "is-done": "వర్ణించబడుతుంది" }
+      readings: { "was-done": "varṇiñcabaḍindi", "is-done": "varṇiñcabaḍutundi" }
+    - word: "te-6140"
+      forms: { "was-done": "ప్రకటించబడింది", "is-done": "ప్రకటించబడుతుంది" }
+      readings: { "was-done": "prakaṭiñcabaḍindi", "is-done": "prakaṭiñcabaḍutundi" }
+    - word: "te-6141"
+      forms: { "was-done": "నిరూపించబడింది", "is-done": "నిరూపించబడుతుంది" }
+      readings: { "was-done": "nirūpiñcabaḍindi", "is-done": "nirūpiñcabaḍutundi" }
+    - word: "te-6143"
+      forms: { "was-done": "తొలగించబడింది", "is-done": "తొలగించబడుతుంది" }
+      readings: { "was-done": "tolagiñcabaḍindi", "is-done": "tolagiñcabaḍutundi" }
+    - word: "te-6147"
+      forms: { "was-done": "కనుక్కోబడింది", "is-done": "కనుక్కోబడుతుంది" }
+      readings: { "was-done": "kanukkōbaḍindi", "is-done": "kanukkōbaḍutundi" }
+    - word: "te-6150"
+      forms: { "was-done": "ఆదుకోబడింది", "is-done": "ఆదుకోబడుతుంది" }
+      readings: { "was-done": "ādukōbaḍindi", "is-done": "ādukōbaḍutundi" }
+    - word: "te-6153"
+      forms: { "was-done": "ఆకట్టుకోబడింది", "is-done": "ఆకట్టుకోబడుతుంది" }
+      readings: { "was-done": "ākaṭṭukōbaḍindi", "is-done": "ākaṭṭukōbaḍutundi" }
+rules:
+  - id: "te-rule-passive-was"
+    slots: ["was-done"]
+    words: [{ word: "-బడింది", reading: "-baḍindi" }, { word: "చేయబడింది", reading: "cēyabaḍindi" }, { word: "తినబడింది", reading: "tinabaḍindi" }, { word: "పంపబడింది", reading: "pampabaḍindi" }]
+  - id: "te-rule-passive-is"
+    slots: ["is-done"]
+    words: [{ word: "-బడుతుంది", reading: "-baḍutundi" }, { word: "చేయబడుతుంది", reading: "cēyabaḍutundi" }, { word: "అమ్మబడుతుంది", reading: "ammabaḍutundi" }, { word: "తెరవబడుతుంది", reading: "teravabaḍutundi" }]

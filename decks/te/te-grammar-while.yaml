@@ -1,0 +1,685 @@
+schema: 1
+id: "te-grammar-while"
+part: "core"
+kind: "rules"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["te-0247", "te-0282", "te-0297", "te-0460", "te-0463", "te-0474", "te-0532", "te-0651", "te-1047", "te-1146", "te-1147", "te-1148", "te-1149", "te-1150"]
+  slots: ["while"]
+  rows:
+    - word: "te-0441"
+      forms: { "while": "లేస్తూ" }
+      readings: { "while": "lēstū" }
+    - word: "te-0450"
+      forms: { "while": "పడుకుంటూ" }
+      readings: { "while": "paḍukuṇṭū" }
+    - word: "te-0621"
+      forms: { "while": "చేస్తూ" }
+      readings: { "while": "cēstū" }
+    - word: "te-0622"
+      forms: { "while": "వెళ్తూ" }
+      readings: { "while": "veḷtū" }
+    - word: "te-0623"
+      forms: { "while": "వస్తూ" }
+      readings: { "while": "vastū" }
+    - word: "te-0624"
+      forms: { "while": "తింటూ" }
+      readings: { "while": "tiṇṭū" }
+    - word: "te-0625"
+      forms: { "while": "తాగుతూ" }
+      readings: { "while": "tāgutū" }
+    - word: "te-0626"
+      forms: { "while": "చూస్తూ" }
+      readings: { "while": "cūstū" }
+    - word: "te-0627"
+      forms: { "while": "వింటూ" }
+      readings: { "while": "viṇṭū" }
+    - word: "te-0628"
+      forms: { "while": "చెప్తూ" }
+      readings: { "while": "ceptū" }
+    - word: "te-0629"
+      forms: { "while": "అడుగుతూ" }
+      readings: { "while": "aḍugutū" }
+    - word: "te-0630"
+      forms: { "while": "ఇస్తూ" }
+      readings: { "while": "istū" }
+    - word: "te-0631"
+      forms: { "while": "తీసుకుంటూ" }
+      readings: { "while": "tīsukuṇṭū" }
+    - word: "te-0632"
+      forms: { "while": "తెస్తూ" }
+      readings: { "while": "testū" }
+    - word: "te-0633"
+      forms: { "while": "ఉంటూ" }
+      readings: { "while": "uṇṭū" }
+    - word: "te-0634"
+      forms: { "while": "కూర్చుంటూ" }
+      readings: { "while": "kūrcuṇṭū" }
+    - word: "te-0635"
+      forms: { "while": "నిలబడుతూ" }
+      readings: { "while": "nilabaḍutū" }
+    - word: "te-0636"
+      forms: { "while": "నడుస్తూ" }
+      readings: { "while": "naḍustū" }
+    - word: "te-0637"
+      forms: { "while": "ఆడుతూ" }
+      readings: { "while": "āḍutū" }
+    - word: "te-0638"
+      forms: { "while": "చదువుతూ" }
+      readings: { "while": "caduvutū" }
+    - word: "te-0639"
+      forms: { "while": "రాస్తూ" }
+      readings: { "while": "rāstū" }
+    - word: "te-0640"
+      forms: { "while": "నిద్రపోతూ" }
+      readings: { "while": "nidrapōtū" }
+    - word: "te-0641"
+      forms: { "while": "కొంటూ" }
+      readings: { "while": "koṇṭū" }
+    - word: "te-0642"
+      forms: { "while": "అమ్ముతూ" }
+      readings: { "while": "ammutū" }
+    - word: "te-0643"
+      forms: { "while": "వండుతూ" }
+      readings: { "while": "vaṇḍutū" }
+    - word: "te-0644"
+      forms: { "while": "మాట్లాడుతూ" }
+      readings: { "while": "māṭlāḍutū" }
+    - word: "te-0645"
+      forms: { "while": "నేర్చుకుంటూ" }
+      readings: { "while": "nērcukuṇṭū" }
+    - word: "te-0646"
+      forms: { "while": "అవుతూ" }
+      readings: { "while": "avutū" }
+    - word: "te-0647"
+      forms: { "while": "తెలుసుకుంటూ" }
+      readings: { "while": "telusukuṇṭū" }
+    - word: "te-0648"
+      forms: { "while": "ఆగుతూ" }
+      readings: { "while": "āgutū" }
+    - word: "te-0649"
+      forms: { "while": "కలుస్తూ" }
+      readings: { "while": "kalustū" }
+    - word: "te-0650"
+      forms: { "while": "పంపుతూ" }
+      readings: { "while": "pamputū" }
+    - word: "te-0821"
+      forms: { "while": "పాడుతూ" }
+      readings: { "while": "pāḍutū" }
+    - word: "te-0822"
+      forms: { "while": "నవ్వుతూ" }
+      readings: { "while": "navvutū" }
+    - word: "te-0823"
+      forms: { "while": "ఏడుస్తూ" }
+      readings: { "while": "ēḍustū" }
+    - word: "te-0824"
+      forms: { "while": "కడుగుతూ" }
+      readings: { "while": "kaḍugutū" }
+    - word: "te-0825"
+      forms: { "while": "తెరుస్తూ" }
+      readings: { "while": "terustū" }
+    - word: "te-0826"
+      forms: { "while": "మూస్తూ" }
+      readings: { "while": "mūstū" }
+    - word: "te-0827"
+      forms: { "while": "ఎక్కుతూ" }
+      readings: { "while": "ekkutū" }
+    - word: "te-0828"
+      forms: { "while": "దిగుతూ" }
+      readings: { "while": "digutū" }
+    - word: "te-0829"
+      forms: { "while": "పట్టుకుంటూ" }
+      readings: { "while": "paṭṭukuṇṭū" }
+    - word: "te-0830"
+      forms: { "while": "పెడుతూ" }
+      readings: { "while": "peḍutū" }
+    - word: "te-0831"
+      forms: { "while": "ఉంచుతూ" }
+      readings: { "while": "uñcutū" }
+    - word: "te-0832"
+      forms: { "while": "నేర్పుతూ" }
+      readings: { "while": "nērputū" }
+    - word: "te-0833"
+      forms: { "while": "మర్చిపోతూ" }
+      readings: { "while": "marcipōtū" }
+    - word: "te-0834"
+      forms: { "while": "ఆలోచిస్తూ" }
+      readings: { "while": "ālōcistū" }
+    - word: "te-0835"
+      forms: { "while": "వెతుకుతూ" }
+      readings: { "while": "vetukutū" }
+    - word: "te-0836"
+      forms: { "while": "తీస్తూ" }
+      readings: { "while": "tīstū" }
+    - word: "te-0837"
+      forms: { "while": "వేస్తూ" }
+      readings: { "while": "vēstū" }
+    - word: "te-0838"
+      forms: { "while": "కొడుతూ" }
+      readings: { "while": "koḍutū" }
+    - word: "te-0839"
+      forms: { "while": "పడుతూ" }
+      readings: { "while": "paḍutū" }
+    - word: "te-0840"
+      forms: { "while": "ఆపుతూ" }
+      readings: { "while": "āputū" }
+    - word: "te-0841"
+      forms: { "while": "తిరుగుతూ" }
+      readings: { "while": "tirugutū" }
+    - word: "te-0842"
+      forms: { "while": "చూపిస్తూ" }
+      readings: { "while": "cūpistū" }
+    - word: "te-0843"
+      forms: { "while": "పరిగెత్తుతూ" }
+      readings: { "while": "parigettutū" }
+    - word: "te-0844"
+      forms: { "while": "నమ్ముతూ" }
+      readings: { "while": "nammutū" }
+    - word: "te-0845"
+      forms: { "while": "ఎగురుతూ" }
+      readings: { "while": "egurutū" }
+    - word: "te-0846"
+      forms: { "while": "ఈదుతూ" }
+      readings: { "while": "īdutū" }
+    - word: "te-0847"
+      forms: { "while": "కోస్తూ" }
+      readings: { "while": "kōstū" }
+    - word: "te-0848"
+      forms: { "while": "లాగుతూ" }
+      readings: { "while": "lāgutū" }
+    - word: "te-0849"
+      forms: { "while": "పిలుస్తూ" }
+      readings: { "while": "pilustū" }
+    - word: "te-0850"
+      forms: { "while": "కలుపుతూ" }
+      readings: { "while": "kaluputū" }
+    - word: "te-0851"
+      forms: { "while": "నింపుతూ" }
+      readings: { "while": "nimputū" }
+    - word: "te-0852"
+      forms: { "while": "తుడుస్తూ" }
+      readings: { "while": "tuḍustū" }
+    - word: "te-1339"
+      forms: { "while": "పంచుకుంటూ" }
+      readings: { "while": "pañcukuṇṭū" }
+    - word: "te-1400"
+      forms: { "while": "బేరమాడుతూ" }
+      readings: { "while": "bēramāḍutū" }
+    - word: "te-1401"
+      forms: { "while": "చెల్లిస్తూ" }
+      readings: { "while": "cellistū" }
+    - word: "te-1402"
+      forms: { "while": "తగ్గిస్తూ" }
+      readings: { "while": "taggistū" }
+    - word: "te-1403"
+      forms: { "while": "ఎంచుకుంటూ" }
+      readings: { "while": "eñcukuṇṭū" }
+    - word: "te-1404"
+      forms: { "while": "తిరిగి ఇస్తూ" }
+      readings: { "while": "tirigi istū" }
+    - word: "te-1405"
+      forms: { "while": "ప్రయత్నిస్తూ" }
+      readings: { "while": "prayatnistū" }
+    - word: "te-1529"
+      forms: { "while": "జబ్బు పడుతూ" }
+      readings: { "while": "jabbu paḍutū" }
+    - word: "te-1530"
+      forms: { "while": "చూపించుకుంటూ" }
+      readings: { "while": "cūpiñcukuṇṭū" }
+    - word: "te-1531"
+      forms: { "while": "తగ్గుతూ" }
+      readings: { "while": "taggutū" }
+    - word: "te-1532"
+      forms: { "while": "విశ్రాంతి తీసుకుంటూ" }
+      readings: { "while": "viśrāṁti tīsukuṇṭū" }
+    - word: "te-1534"
+      forms: { "while": "దగ్గుతూ" }
+      readings: { "while": "daggutū" }
+    - word: "te-1535"
+      forms: { "while": "తుమ్ముతూ" }
+      readings: { "while": "tummutū" }
+    - word: "te-1536"
+      forms: { "while": "కోలుకుంటూ" }
+      readings: { "while": "kōlukuṇṭū" }
+    - word: "te-1537"
+      forms: { "while": "కారుతూ" }
+      readings: { "while": "kārutū" }
+    - word: "te-1538"
+      forms: { "while": "చేరుస్తూ" }
+      readings: { "while": "cērustū" }
+    - word: "te-1539"
+      forms: { "while": "బాధపడుతూ" }
+      readings: { "while": "bādhapaḍutū" }
+    - word: "te-1621"
+      forms: { "while": "ఉడకబెడుతూ" }
+      readings: { "while": "uḍakabeḍutū" }
+    - word: "te-1622"
+      forms: { "while": "వేయిస్తూ" }
+      readings: { "while": "vēyistū" }
+    - word: "te-1914"
+      forms: { "while": "వాయిస్తూ" }
+      readings: { "while": "vāyistū" }
+    - word: "te-1915"
+      forms: { "while": "గీస్తూ" }
+      readings: { "while": "gīstū" }
+    - word: "te-1923"
+      forms: { "while": "గెలుస్తూ" }
+      readings: { "while": "gelustū" }
+    - word: "te-2100"
+      forms: { "while": "ఊడుస్తూ" }
+      readings: { "while": "ūḍustū" }
+    - word: "te-2101"
+      forms: { "while": "ఉతుకుతూ" }
+      readings: { "while": "utukutū" }
+    - word: "te-2102"
+      forms: { "while": "ఆరేస్తూ" }
+      readings: { "while": "ārēstū" }
+    - word: "te-2103"
+      forms: { "while": "ఇస్త్రీ చేస్తూ" }
+      readings: { "while": "istrī cēstū" }
+    - word: "te-2104"
+      forms: { "while": "తరుగుతూ" }
+      readings: { "while": "tarugutū" }
+    - word: "te-2105"
+      forms: { "while": "ఉడికిస్తూ" }
+      readings: { "while": "uḍikistū" }
+    - word: "te-2106"
+      forms: { "while": "సర్దుతూ" }
+      readings: { "while": "sardutū" }
+    - word: "te-2107"
+      forms: { "while": "పారేస్తూ" }
+      readings: { "while": "pārēstū" }
+    - word: "te-2108"
+      forms: { "while": "ఎత్తుతూ" }
+      readings: { "while": "ettutū" }
+    - word: "te-1151"
+      forms: { "while": "చల్లబడుతూ" }
+      readings: { "while": "callabaḍutū" }
+    - word: "te-1152"
+      forms: { "while": "ఆగిపోతూ" }
+      readings: { "while": "āgipōtū" }
+    - word: "te-2300"
+      forms: { "while": "కడుక్కుంటూ" }
+      readings: { "while": "kaḍukkuṇṭū" }
+    - word: "te-2301"
+      forms: { "while": "బయలుదేరుతూ" }
+      readings: { "while": "bayaludērutū" }
+    - word: "te-2302"
+      forms: { "while": "లేపుతూ" }
+      readings: { "while": "lēputū" }
+    - word: "te-2303"
+      forms: { "while": "మేల్కొంటూ" }
+      readings: { "while": "mēlkoṇṭū" }
+    - word: "te-2304"
+      forms: { "while": "తోముకుంటూ" }
+      readings: { "while": "tōmukuṇṭū" }
+    - word: "te-2305"
+      forms: { "while": "దువ్వుకుంటూ" }
+      readings: { "while": "duvvukuṇṭū" }
+    - word: "te-2306"
+      forms: { "while": "కట్టుకుంటూ" }
+      readings: { "while": "kaṭṭukuṇṭū" }
+    - word: "te-2307"
+      forms: { "while": "వేసుకుంటూ" }
+      readings: { "while": "vēsukuṇṭū" }
+    - word: "te-2308"
+      forms: { "while": "ఎదురుచూస్తూ" }
+      readings: { "while": "edurucūstū" }
+    - word: "te-2309"
+      forms: { "while": "ముగిస్తూ" }
+      readings: { "while": "mugistū" }
+    - word: "te-2310"
+      forms: { "while": "మొదలుపెడుతూ" }
+      readings: { "while": "modalupeḍutū" }
+    - word: "te-2311"
+      forms: { "while": "ఆడుకుంటూ" }
+      readings: { "while": "āḍukuṇṭū" }
+    - word: "te-2312"
+      forms: { "while": "పెంచుతూ" }
+      readings: { "while": "peñcutū" }
+    - word: "te-2313"
+      forms: { "while": "నడుపుతూ" }
+      readings: { "while": "naḍuputū" }
+    - word: "te-2314"
+      forms: { "while": "గుర్తుంచుకుంటూ" }
+      readings: { "while": "gurtuñcukuṇṭū" }
+    - word: "te-2315"
+      forms: { "while": "వివరిస్తూ" }
+      readings: { "while": "vivaristū" }
+    - word: "te-2316"
+      forms: { "while": "తిడుతూ" }
+      readings: { "while": "tiḍutū" }
+    - word: "te-2317"
+      forms: { "while": "భయపడుతూ" }
+      readings: { "while": "bhayapaḍutū" }
+    - word: "te-2318"
+      forms: { "while": "దాస్తూ" }
+      readings: { "while": "dāstū" }
+    - word: "te-2319"
+      forms: { "while": "విసురుతూ" }
+      readings: { "while": "visurutū" }
+    - word: "te-2320"
+      forms: { "while": "ఊదుతూ" }
+      readings: { "while": "ūdutū" }
+    - word: "te-2321"
+      forms: { "while": "తడుస్తూ" }
+      readings: { "while": "taḍustū" }
+    - word: "te-2322"
+      forms: { "while": "కప్పుకుంటూ" }
+      readings: { "while": "kappukuṇṭū" }
+    - word: "te-2323"
+      forms: { "while": "ఆవులిస్తూ" }
+      readings: { "while": "āvulistū" }
+    - word: "te-2324"
+      forms: { "while": "చదువుకుంటూ" }
+      readings: { "while": "caduvukuṇṭū" }
+    - word: "te-2325"
+      forms: { "while": "రాసుకుంటూ" }
+      readings: { "while": "rāsukuṇṭū" }
+    - word: "te-2326"
+      forms: { "while": "పంపిస్తూ" }
+      readings: { "while": "pampistū" }
+    - word: "te-2327"
+      forms: { "while": "వాడుతూ" }
+      readings: { "while": "vāḍutū" }
+    - word: "te-2328"
+      forms: { "while": "బోధిస్తూ" }
+      readings: { "while": "bōdhistū" }
+    - word: "te-2329"
+      forms: { "while": "మెచ్చుకుంటూ" }
+      readings: { "while": "meccukuṇṭū" }
+    - word: "te-2330"
+      forms: { "while": "అరుస్తూ" }
+      readings: { "while": "arustū" }
+    - word: "te-2331"
+      forms: { "while": "మడుస్తూ" }
+      readings: { "while": "maḍustū" }
+    - word: "te-2332"
+      forms: { "while": "చుడుతూ" }
+      readings: { "while": "cuḍutū" }
+    - word: "te-2333"
+      forms: { "while": "విప్పుతూ" }
+      readings: { "while": "vipputū" }
+    - word: "te-2334"
+      forms: { "while": "కడుతూ" }
+      readings: { "while": "kaḍutū" }
+    - word: "te-2335"
+      forms: { "while": "వదులుతూ" }
+      readings: { "while": "vadulutū" }
+    - word: "te-2336"
+      forms: { "while": "తిప్పుతూ" }
+      readings: { "while": "tipputū" }
+    - word: "te-2337"
+      forms: { "while": "నొక్కుతూ" }
+      readings: { "while": "nokkutū" }
+    - word: "te-2338"
+      forms: { "while": "కొలుస్తూ" }
+      readings: { "while": "kolustū" }
+    - word: "te-2339"
+      forms: { "while": "లెక్కపెడుతూ" }
+      readings: { "while": "lekkapeḍutū" }
+    - word: "te-2340"
+      forms: { "while": "అంగీకరిస్తూ" }
+      readings: { "while": "aṅgīkaristū" }
+    - word: "te-2341"
+      forms: { "while": "తిరస్కరిస్తూ" }
+      readings: { "while": "tiraskaristū" }
+    - word: "te-2343"
+      forms: { "while": "ప్రారంభిస్తూ" }
+      readings: { "while": "prārambhistū" }
+    - word: "te-2344"
+      forms: { "while": "గుర్తిస్తూ" }
+      readings: { "while": "gurtistū" }
+    - word: "te-2345"
+      forms: { "while": "అనుకుంటూ" }
+      readings: { "while": "anukuṇṭū" }
+    - word: "te-2346"
+      forms: { "while": "ప్రేమిస్తూ" }
+      readings: { "while": "prēmistū" }
+    - word: "te-2347"
+      forms: { "while": "మారుస్తూ" }
+      readings: { "while": "mārustū" }
+    - word: "te-2348"
+      forms: { "while": "మారుతూ" }
+      readings: { "while": "mārutū" }
+    - word: "te-2349"
+      forms: { "while": "సంపాదిస్తూ" }
+      readings: { "while": "sampādistū" }
+    - word: "te-2350"
+      forms: { "while": "ఖర్చుపెడుతూ" }
+      readings: { "while": "kharcupeḍutū" }
+    - word: "te-2351"
+      forms: { "while": "సాధిస్తూ" }
+      readings: { "while": "sādhistū" }
+    - word: "te-2352"
+      forms: { "while": "ఒప్పుకుంటూ" }
+      readings: { "while": "oppukuṇṭū" }
+    - word: "te-2353"
+      forms: { "while": "చేరుకుంటూ" }
+      readings: { "while": "cērukuṇṭū" }
+    - word: "te-2354"
+      forms: { "while": "పరీక్షిస్తూ" }
+      readings: { "while": "parīkṣistū" }
+    - word: "te-2355"
+      forms: { "while": "వెలిగిస్తూ" }
+      readings: { "while": "veligistū" }
+    - word: "te-2356"
+      forms: { "while": "ఆర్పుతూ" }
+      readings: { "while": "ārputū" }
+    - word: "te-2357"
+      forms: { "while": "కొనసాగిస్తూ" }
+      readings: { "while": "konasāgistū" }
+    - word: "te-2358"
+      forms: { "while": "పొందుతూ" }
+      readings: { "while": "pondutū" }
+    - word: "te-2359"
+      forms: { "while": "జాగ్రత్తపడుతూ" }
+      readings: { "while": "jāgrattapaḍutū" }
+    - word: "te-2360"
+      forms: { "while": "సర్దుకుంటూ" }
+      readings: { "while": "sardukuṇṭū" }
+    - word: "te-2535"
+      forms: { "while": "బుక్ చేస్తూ" }
+      readings: { "while": "buk cēstū" }
+    - word: "te-2537"
+      forms: { "while": "తిరిగి వస్తూ" }
+      readings: { "while": "tirigi vastū" }
+    - word: "te-3229"
+      forms: { "while": "తల తిరుగుతూ" }
+      readings: { "while": "tala tirugutū" }
+    - word: "te-3230"
+      forms: { "while": "చెమట పడుతూ" }
+      readings: { "while": "cemaṭa paḍutū" }
+    - word: "te-3231"
+      forms: { "while": "ఊపిరి తీసుకుంటూ" }
+      readings: { "while": "ūpiri tīsukuṇṭū" }
+    - word: "te-3232"
+      forms: { "while": "వ్యాయామం చేస్తూ" }
+      readings: { "while": "vyāyāmaṁ cēstū" }
+    - word: "te-3233"
+      forms: { "while": "మానేస్తూ" }
+      readings: { "while": "mānēstū" }
+    - word: "te-3234"
+      forms: { "while": "వేయించుకుంటూ" }
+      readings: { "while": "vēyiñcukuṇṭū" }
+    - word: "te-3235"
+      forms: { "while": "ఆరోగ్యంగా ఉంటూ" }
+      readings: { "while": "ārōgyaṁgā uṇṭū" }
+    - word: "te-3347"
+      forms: { "while": "సిగ్గుపడుతూ" }
+      readings: { "while": "siggupaḍutū" }
+    - word: "te-3348"
+      forms: { "while": "గర్వపడుతూ" }
+      readings: { "while": "garvapaḍutū" }
+    - word: "te-3349"
+      forms: { "while": "కంగారుపడుతూ" }
+      readings: { "while": "kaṅgārupaḍutū" }
+    - word: "te-3351"
+      forms: { "while": "ఆనందిస్తూ" }
+      readings: { "while": "ānandistū" }
+    - word: "te-2929"
+      forms: { "while": "వాయిదా వేస్తూ" }
+      readings: { "while": "vāyidā vēstū" }
+    - word: "te-2930"
+      forms: { "while": "తెలియజేస్తూ" }
+      readings: { "while": "teliyajēstū" }
+    - word: "te-2933"
+      forms: { "while": "నిర్ణయిస్తూ" }
+      readings: { "while": "nirṇayistū" }
+    - word: "te-3620"
+      forms: { "while": "అభిప్రాయపడుతూ" }
+      readings: { "while": "abhiprāyapaḍutū" }
+    - word: "te-3622"
+      forms: { "while": "విమర్శిస్తూ" }
+      readings: { "while": "vimarśistū" }
+    - word: "te-3623"
+      forms: { "while": "ఊహిస్తూ" }
+      readings: { "while": "ūhistū" }
+    - word: "te-3624"
+      forms: { "while": "విభేదిస్తూ" }
+      readings: { "while": "vibhēdistū" }
+    - word: "te-6100"
+      forms: { "while": "దూకుతూ" }
+      readings: { "while": "dūkutū" }
+    - word: "te-6101"
+      forms: { "while": "పరుగెత్తుతూ" }
+      readings: { "while": "parugettutū" }
+    - word: "te-6102"
+      forms: { "while": "నెడుతూ" }
+      readings: { "while": "neḍutū" }
+    - word: "te-6103"
+      forms: { "while": "కప్పుతూ" }
+      readings: { "while": "kapputū" }
+    - word: "te-6104"
+      forms: { "while": "ముంచుతూ" }
+      readings: { "while": "muñcutū" }
+    - word: "te-6105"
+      forms: { "while": "దాటుతూ" }
+      readings: { "while": "dāṭutū" }
+    - word: "te-6106"
+      forms: { "while": "చేరుతూ" }
+      readings: { "while": "cērutū" }
+    - word: "te-6108"
+      forms: { "while": "తీరుస్తూ" }
+      readings: { "while": "tīrustū" }
+    - word: "te-6109"
+      forms: { "while": "కూడుతూ" }
+      readings: { "while": "kūḍutū" }
+    - word: "te-6110"
+      forms: { "while": "కుడుతూ" }
+      readings: { "while": "kuḍutū" }
+    - word: "te-6112"
+      forms: { "while": "వంచుతూ" }
+      readings: { "while": "vañcutū" }
+    - word: "te-6114"
+      forms: { "while": "చల్లుతూ" }
+      readings: { "while": "callutū" }
+    - word: "te-6116"
+      forms: { "while": "కనిపెడుతూ" }
+      readings: { "while": "kanipeḍutū" }
+    - word: "te-6117"
+      forms: { "while": "పగలగొడుతూ" }
+      readings: { "while": "pagalagoḍutū" }
+    - word: "te-6118"
+      forms: { "while": "పోగొడుతూ" }
+      readings: { "while": "pōgoḍutū" }
+    - word: "te-6119"
+      forms: { "while": "కిందపడుతూ" }
+      readings: { "while": "kindapaḍutū" }
+    - word: "te-6120"
+      forms: { "while": "జారిపడుతూ" }
+      readings: { "while": "jāripaḍutū" }
+    - word: "te-6121"
+      forms: { "while": "బయటపడుతూ" }
+      readings: { "while": "bayaṭapaḍutū" }
+    - word: "te-6122"
+      forms: { "while": "కూడబెడుతూ" }
+      readings: { "while": "kūḍabeḍutū" }
+    - word: "te-6123"
+      forms: { "while": "దాచిపెడుతూ" }
+      readings: { "while": "dācipeḍutū" }
+    - word: "te-6125"
+      forms: { "while": "ఇబ్బందిపడుతూ" }
+      readings: { "while": "ibbandipaḍutū" }
+    - word: "te-6126"
+      forms: { "while": "అలవాటుపడుతూ" }
+      readings: { "while": "alavāṭupaḍutū" }
+    - word: "te-6127"
+      forms: { "while": "స్వీకరిస్తూ" }
+      readings: { "while": "svīkaristū" }
+    - word: "te-6128"
+      forms: { "while": "ఆమోదిస్తూ" }
+      readings: { "while": "āmōdistū" }
+    - word: "te-6129"
+      forms: { "while": "అనుమతిస్తూ" }
+      readings: { "while": "anumatistū" }
+    - word: "te-6130"
+      forms: { "while": "హెచ్చరిస్తూ" }
+      readings: { "while": "heccaristū" }
+    - word: "te-6131"
+      forms: { "while": "స్పందిస్తూ" }
+      readings: { "while": "spandistū" }
+    - word: "te-6132"
+      forms: { "while": "సమర్పిస్తూ" }
+      readings: { "while": "samarpistū" }
+    - word: "te-6133"
+      forms: { "while": "అంటిస్తూ" }
+      readings: { "while": "aṇṭistū" }
+    - word: "te-6134"
+      forms: { "while": "క్షమిస్తూ" }
+      readings: { "while": "kṣamistū" }
+    - word: "te-6138"
+      forms: { "while": "నిర్వహిస్తూ" }
+      readings: { "while": "nirvahistū" }
+    - word: "te-6139"
+      forms: { "while": "వర్ణిస్తూ" }
+      readings: { "while": "varṇistū" }
+    - word: "te-6140"
+      forms: { "while": "ప్రకటిస్తూ" }
+      readings: { "while": "prakaṭistū" }
+    - word: "te-6141"
+      forms: { "while": "నిరూపిస్తూ" }
+      readings: { "while": "nirūpistū" }
+    - word: "te-6143"
+      forms: { "while": "తొలగిస్తూ" }
+      readings: { "while": "tolagistū" }
+    - word: "te-6145"
+      forms: { "while": "ఇరుక్కుంటూ" }
+      readings: { "while": "irukkuṇṭū" }
+    - word: "te-6147"
+      forms: { "while": "కనుక్కుంటూ" }
+      readings: { "while": "kanukkuṇṭū" }
+    - word: "te-6148"
+      forms: { "while": "దాచుకుంటూ" }
+      readings: { "while": "dācukuṇṭū" }
+    - word: "te-6149"
+      forms: { "while": "కాపాడుకుంటూ" }
+      readings: { "while": "kāpāḍukuṇṭū" }
+    - word: "te-6150"
+      forms: { "while": "ఆదుకుంటూ" }
+      readings: { "while": "ādukuṇṭū" }
+    - word: "te-6152"
+      forms: { "while": "తడుముకుంటూ" }
+      readings: { "while": "taḍumukuṇṭū" }
+    - word: "te-6153"
+      forms: { "while": "ఆకట్టుకుంటూ" }
+      readings: { "while": "ākaṭṭukuṇṭū" }
+    - word: "te-6154"
+      forms: { "while": "చిక్కుకుంటూ" }
+      readings: { "while": "cikkukuṇṭū" }
+    - word: "te-6155"
+      forms: { "while": "వేడుకుంటూ" }
+      readings: { "while": "vēḍukuṇṭū" }
+    - word: "te-6156"
+      forms: { "while": "చుట్టుకుంటూ" }
+      readings: { "while": "cuṭṭukuṇṭū" }
+rules:
+  - id: "te-rule-while"
+    slots: ["while"]
+    words: [{ word: "-తూ", reading: "-tū" }, { word: "నడుస్తూ మాట్లాడాను", reading: "naḍustū māṭlāḍānu" }, { word: "టీవీ చూస్తూ తిన్నాను", reading: "ṭīvī cūstū tinnānu" }, { word: "పాడుతూ వంట చేసింది", reading: "pāḍutū vaṇṭa cēsindi" }]

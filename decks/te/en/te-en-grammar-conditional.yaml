@@ -1,0 +1,17 @@
+schema: 1
+id: "te-en-grammar-conditional"
+kind: "layer"
+core: "te-grammar-conditional"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "If it comes: -తే (-tē)"
+description: "A verb with -తే (-tē) says the condition: 'if he comes', 'if you eat'. The same ending works for every person. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "conditional": "if (someone) does it"
+rules:
+  "te-rule-conditional":
+    name: "-తే (-tē): if"
+    explanation: "{1} joins a verb's stem to say 'if': {2} is 'if (he/she/it/they) comes', {3} is 'if there is money'. In speech many verbs shorten: వెళ్తే (veḷtē) for 'if (he) goes' and చూస్తే (cūstē) for 'if (you) see'. Those short forms are the everyday ones, and the -ితే (-itē) form is the same condition said more formally."

@@ -1,0 +1,200 @@
+schema: 1
+id: "te-grammar-comparison"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "te-1700"
+    target: "కంటే"
+    reading: "kaṇṭē"
+    ipa: "kaɳʈeː"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ఇది దాని కంటే పెద్దది.", reading: "idi dāni kaṇṭē peddadi.", ipa: "id̪i d̪aːni kaɳʈeː ped̪d̪ad̪i", bases: [ { word: "దాని", ref: "te-0599" }, { word: "పెద్దది", ref: "te-0502" } ] }
+      - { target: "అతను ఆమె కంటే చిన్నవాడు.", reading: "atanu āme kaṇṭē cinnavāḍu.", ipa: "at̪anu aːme kaɳʈeː tʃinːaʋaːɖu", bases: [ { word: "చిన్నవాడు", ref: "te-0503" } ] }
+    bases: "self"
+  - id: "te-1701"
+    target: "కన్నా"
+    reading: "kannā"
+    ipa: "kan̪naː"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ఇది దాని కన్నా చిన్నది.", reading: "idi dāni kannā cinnadi.", ipa: "id̪i d̪aːni kan̪naː tʃinːad̪i", bases: [ { word: "దాని", ref: "te-0599" }, { word: "చిన్నది", ref: "te-0503" } ] }
+      - { target: "అది దీని కన్నా ఎక్కువ.", reading: "adi dīni kannā ekkuva.", ipa: "ad̪i d̪iːni kan̪naː ekkuʋa", bases: [ { word: "దీని", ref: "te-0600" } ] }
+    bases: "self"
+  - id: "te-1702"
+    target: "అన్నిటికంటే"
+    reading: "anniṭikaṇṭē"
+    ipa: "an̪n̪it̪ikaɳʈeː"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ఇది అన్నిటికంటే పెద్దది.", reading: "idi anniṭikaṇṭē peddadi.", ipa: "id̪i an̪n̪it̪ikaɳʈeː ped̪d̪ad̪i", bases: [ { word: "పెద్దది", ref: "te-0502" } ] }
+      - { target: "ఇది అన్నిటికంటే మంచిది.", reading: "idi anniṭikaṇṭē mañcidi.", ipa: "id̪i an̪n̪it̪ikaɳʈeː mant͡ʃid̪i", bases: [ { word: "మంచిది", ref: "te-0500" } ] }
+    bases: "self"
+  - id: "te-1703"
+    target: "మరింత"
+    reading: "marinta"
+    ipa: "marint̪a"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ఇది మరింత పెద్దది.", reading: "idi marinta peddadi.", ipa: "id̪i marint̪a ped̪d̪ad̪i", bases: [ { word: "పెద్దది", ref: "te-0502" } ] }
+      - { target: "ఇది మరింత మంచిది.", reading: "idi marinta mañcidi.", ipa: "id̪i marint̪a mant͡ʃid̪i", bases: [ { word: "మంచిది", ref: "te-0500" } ] }
+    bases: "self"
+  - id: "te-1704"
+    target: "ఒకే"
+    reading: "oke"
+    ipa: "oke"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ఇది ఒకే పుస్తకం.", reading: "idi oke pustakam.", ipa: "id̪i oke pust̪akam" }
+      - { target: "ఇవి ఒకే పుస్తకాలు.", reading: "ivi oke pustakālu.", ipa: "iʋi oke pust̪aːkaːlu", bases: [ { word: "పుస్తకాలు", ref: "te-0865" } ] }
+    bases: "self"
+  - id: "te-1705"
+    target: "సమానంగా"
+    reading: "samānaṅgā"
+    ipa: "samaːnaŋɡaː"
+    pos: "adv"
+    bases:
+      - { word: "సమానంగా", base: "సమాన", reading: "samāna" }
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ఈ రెండు పుస్తకాలు సమానంగా మంచివి.", reading: "ī reṇḍu pustakālu samānaṅgā mañcivi.", ipa: "iː ɾenɖu pust̪aːkaːlu samaːnaŋɡaː mant͡ʃiʋi", bases: [ { word: "పుస్తకాలు", ref: "te-0865" }, { word: "మంచివి", ref: "te-0500" } ] }
+      - { target: "ఇద్దరూ సమానంగా మంచివారు.", reading: "iddarū samānaṅgā mañcivāru.", ipa: "idd̪aruː samaːnaŋɡaː mant͡ʃiʋaːru", bases: [ { word: "ఇద్దరూ", base: "ఇద్దరు", reading: "iddaru" }, { word: "మంచివారు", ref: "te-0500" } ] }
+  - ref: "te-1029"
+  - ref: "te-1030"
+  - ref: "te-0346"
+  - ref: "te-1041"
+  - ref: "te-0502"
+  - ref: "te-0503"
+  - ref: "te-0500"
+  - id: "te-1706"
+    target: "ఇది దాని కంటే పెద్దది."
+    reading: "idi dāni kaṇṭē peddadi."
+    ipa: "id̪i d̪aːni kaɳʈeː ped̪d̪ad̪i"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "small", word: "చిన్నది", reading: "cinnadi", kind: "word" }
+      - { id: "more", ref: "te-1029", kind: "word" }
+    bases:
+      - { word: "ఇది", ref: "te-0600" }
+      - { word: "దాని", ref: "te-0599" }
+      - { word: "పెద్దది", ref: "te-0502" }
+  - id: "te-1707"
+    target: "ఈ పుస్తకం ఆ పుస్తకం కంటే మంచిది."
+    reading: "ī pustakam ā pustakam kaṇṭē mañcidi."
+    ipa: "iː pust̪akam aː pust̪akam kaɳʈeː mant͡ʃid̪i"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "worse", word: "చెడ్డది", reading: "ceḍḍadi", kind: "word" }
+      - { id: "less", ref: "te-1030", kind: "word" }
+    bases:
+      - { word: "పుస్తకం", ref: "te-0865" }
+      - { word: "మంచిది", ref: "te-0500" }
+  - id: "te-1708"
+    target: "ఇది అంత పెద్దది కాదు."
+    reading: "idi anta peddadi kādu."
+    ipa: "id̪i ant̪a ped̪d̪ad̪i kaːd̪u"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "ఇది", ref: "te-0600" }
+      - { word: "అంత", ref: "te-1041" }
+      - { word: "పెద్దది", ref: "te-0502" }
+  - id: "te-1709"
+    target: "అతను నా కంటే ఎక్కువ తింటాడు."
+    reading: "atanu nā kaṇṭē ekkuva tiṇṭāḍu."
+    ipa: "at̪anu naː kaɳʈeː ekkuʋa tiɳʈaːɖu"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "less", ref: "te-1030", kind: "word" }
+      - { id: "stem", word: "నేను", reading: "nēnu", kind: "form" }
+    bases:
+      - { word: "అతను", ref: "te-0595" }
+      - { word: "నా", ref: "te-0593" }
+      - { word: "ఎక్కువ", ref: "te-1029" }
+      - { word: "తింటాడు", ref: "te-0624" }
+  - id: "te-1710"
+    target: "అన్నిటికంటే ఇది మంచిది."
+    reading: "anniṭikaṇṭē idi mañcidi."
+    ipa: "an̪n̪it̪ikaɳʈeː id̪i mant͡ʃid̪i"
+    pos: "phrase"
+    bases:
+      - { word: "ఇది", ref: "te-0600" }
+      - { word: "మంచిది", ref: "te-0500" }
+  - id: "te-1711"
+    target: "ఇది దాని కంటే తక్కువ."
+    reading: "idi dāni kaṇṭē takkuva."
+    ipa: "id̪i d̪aːni kaɳʈeː takkuʋa"
+    pos: "phrase"
+    bases:
+      - { word: "ఇది", ref: "te-0600" }
+      - { word: "దాని", ref: "te-0599" }
+      - { word: "తక్కువ", ref: "te-1030" }
+  - id: "te-1712"
+    target: "ఇది ఇంకా మంచిది."
+    reading: "idi iṅkā mañcidi."
+    ipa: "id̪i iŋkaː mant͡ʃid̪i"
+    pos: "phrase"
+    bases:
+      - { word: "ఇది", ref: "te-0600" }
+      - { word: "ఇంకా", ref: "te-0346" }
+      - { word: "మంచిది", ref: "te-0500" }
+  - id: "te-1713"
+    target: "ఇది మరింత పెద్దది."
+    reading: "idi marinta peddadi."
+    ipa: "id̪i marint̪a ped̪d̪ad̪i"
+    pos: "phrase"
+    bases:
+      - { word: "ఇది", ref: "te-0600" }
+      - { word: "పెద్దది", ref: "te-0502" }
+  - id: "te-1714"
+    target: "ఈ రెండు పుస్తకాలు సమానంగా మంచివి."
+    reading: "ī reṇḍu pustakālu samānaṅgā mañcivi."
+    ipa: "iː ɾenɖu pust̪aːkaːlu samaːnaŋɡaː mant͡ʃiʋi"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    confusables:
+      - { id: "unequal", word: "తక్కువ", reading: "takkuva", kind: "word" }
+      - { id: "more", ref: "te-1029", kind: "word" }
+    bases:
+      - { word: "పుస్తకాలు", ref: "te-0865" }
+      - { word: "మంచివి", ref: "te-0500" }
+  - id: "te-1715"
+    target: "అతను ఆమె కంటే చిన్నవాడు."
+    reading: "atanu āme kaṇṭē cinnavāḍu."
+    ipa: "at̪anu aːme kaɳʈeː tʃinːaʋaːɖu"
+    pos: "phrase"
+    bases:
+      - { word: "అతను", ref: "te-0595" }
+      - { word: "ఆమె", ref: "te-0596" }
+      - { word: "చిన్నవాడు", ref: "te-0503" }
+  - id: "te-1716"
+    target: "నేను అతని కంటే పెద్దవాడిని."
+    reading: "nēnu atani kaṇṭē peddavāḍini."
+    ipa: "neːnu at̪ani kaɳʈeː ped̪d̪aʋaːɖini"
+    pos: "phrase"
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "అతని", ref: "te-0595" }
+      - { word: "పెద్దవాడిని", ref: "te-0502" }

@@ -1,0 +1,477 @@
+schema: 1
+id: "te-en-adjectives-2"
+kind: "layer"
+core: "te-adjectives-2"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Describing a room"
+description: "Words for how a room, a house and its rent feel: spacious, bright, quiet, furnished, and the rules and price of a rent. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "te-2800":
+    native: "spacious; roomy"
+    bases:
+      "విశాలమైన": { meaning: "spaciousness" }
+    notes:
+      "n1": "Its opposite is ఇరుకైన (irukaina)."
+    examples:
+      "ఇది విశాలమైన గది.":
+        native: "This is a spacious room."
+      "నాకు విశాలమైన ఇల్లు కావాలి.":
+        native: "I need a spacious house."
+  "te-2801":
+    native: "narrow; cramped"
+    bases:
+      "ఇరుకైన": { meaning: "narrowness" }
+    notes:
+      "n1": "Its opposite is విశాలమైన (viśālamaina)."
+    examples:
+      "ఇది చాలా ఇరుకైన గది.":
+        native: "This is a very cramped room."
+      "ఇరుకైన వీధిలో ఇల్లు ఉంది.":
+        native: "The house is on a narrow street."
+  "te-2802":
+    native: "bright; well lit"
+    bases:
+      "ప్రకాశవంతమైన": { meaning: "light; brightness" }
+    notes:
+      "n1": "Its opposite is చీకటి (cīkaṭi)."
+    examples:
+      "ఈ గది చాలా ప్రకాశవంతంగా ఉంది.":
+        native: "This room is very bright."
+        bases:
+          "ప్రకాశవంతంగా": { meaning: "bright; well lit" }
+      "నాకు ప్రకాశవంతమైన గది కావాలి.":
+        native: "I need a bright room."
+  "te-2804":
+    native: "quiet; silent"
+    bases:
+      "నిశ్శబ్దమైన": { meaning: "silence" }
+    notes:
+      "n1": "Used before a noun, as in the first example."
+    examples:
+      "ఇది నిశ్శబ్దమైన ఇల్లు.":
+        native: "This is a quiet house."
+      "ఈ వీధి చాలా నిశ్శబ్దంగా ఉంది.":
+        native: "This street is very quiet."
+        bases:
+          "నిశ్శబ్దంగా": { meaning: "quiet; silent" }
+  "te-2805":
+    native: "safe; secure"
+    bases:
+      "సురక్షితమైన": { meaning: "safe" }
+    notes:
+      "n1": "Used before a noun, as in the first example."
+    examples:
+      "ఇది సురక్షితమైన ప్రాంతం.":
+        native: "This is a safe area."
+        bases:
+          "ప్రాంతం": { meaning: "area; region" }
+      "ఈ ఇంట్లో తలుపులు సురక్షితంగా ఉన్నాయి.":
+        native: "The doors in this house are secure."
+        bases:
+          "సురక్షితంగా": { meaning: "safe; secure" }
+  "te-2806":
+    native: "comfortable"
+    bases:
+      "సౌకర్యవంతమైన": { meaning: "comfort" }
+    notes:
+      "n1": "Used before a noun, as in the first example."
+    examples:
+      "ఇది సౌకర్యవంతమైన మంచం.":
+        native: "This is a comfortable bed."
+      "ఈ గదిలో ఉండడం సౌకర్యంగా ఉంది.":
+        native: "Staying in this room is comfortable."
+        bases:
+          "సౌకర్యంగా": { meaning: "comfort" }
+  "te-2807":
+    native: "furnished; fitted out"
+    bases:
+      "అమర్చిన": { meaning: "to arrange; to fit" }
+    notes:
+      "n1": "Used before a noun, as in the first example."
+    examples:
+      "ఇది అమర్చిన గది.":
+        native: "This is a furnished room."
+      "అమర్చిన ఇల్లు అద్దెకు ఉంది.":
+        native: "A furnished house is available for rent."
+  "te-2808":
+    native: "fresh"
+    wiktionary: true
+    notes:
+      "n1": "Used before a noun, as in the examples."
+    examples:
+      "తాజా గాలి ఉంది.":
+        native: "There is fresh air."
+      "ఈ గదిలో తాజా గాలి వస్తుంది.":
+        native: "Fresh air comes into this room."
+        bases:
+          "వస్తుంది": { meaning: "to come" }
+  "te-2809":
+    native: "distant; far"
+    bases:
+      "దూరమైన": { meaning: "distance" }
+    notes:
+      "n1": "Its opposite is దగ్గరి (daggari)."
+    examples:
+      "ఇది దూరమైన ప్రాంతం.":
+        native: "This is a distant area."
+        bases:
+          "ప్రాంతం": { meaning: "area; region" }
+      "ఆసుపత్రి చాలా దూరంగా ఉంది.":
+        native: "The hospital is very far away."
+        bases:
+          "దూరంగా": { meaning: "distant; far" }
+  "te-2810":
+    native: "near; nearby"
+    bases:
+      "దగ్గరి": { meaning: "near" }
+    notes:
+      "n1": "Its opposite is దూరమైన (dūramaina)."
+    examples:
+      "దగ్గరి పాఠశాల ఉంది.":
+        native: "There is a school nearby."
+      "ఇల్లు బజారుకు దగ్గరగా ఉంది.":
+        native: "The house is near the market."
+        bases:
+          "దగ్గరగా": { meaning: "near; nearby" }
+  "te-2811":
+    native: "separate; private"
+    bases:
+      "ప్రత్యేకమైన": { meaning: "special; separate" }
+    notes:
+      "n1": "Used before a noun, as in the examples."
+    examples:
+      "ఈ ఇంటికి ప్రత్యేకమైన ప్రవేశం ఉంది.":
+        native: "This house has a separate entrance."
+      "నాకు ప్రత్యేకమైన వంటగది కావాలి.":
+        native: "I need a separate kitchen."
+        bases:
+          "వంటగది": { meaning: "kitchen" }
+  "te-2812":
+    native: "modern"
+    bases:
+      "ఆధునికమైన": { meaning: "modern" }
+    notes:
+      "n1": "Its opposite is పాతకాలపు (pātakālapu)."
+    examples:
+      "ఇది ఆధునికమైన ఇల్లు.":
+        native: "This is a modern house."
+      "ఈ భవనం ఆధునికంగా ఉంది.":
+        native: "This building looks modern."
+        bases:
+          "భవనం": { meaning: "building" }
+          "ఆధునికంగా": { meaning: "modern" }
+  "te-2813":
+    native: "old-fashioned"
+    bases:
+      "పాతకాలపు": { meaning: "old times" }
+    notes:
+      "n1": "Its opposite is ఆధునికమైన (ādhunikamaina)."
+    examples:
+      "ఇది పాతకాలపు ఇల్లు.":
+        native: "This is an old-fashioned house."
+      "ఈ గదిలో పాతకాలపు ఫ్యాన్ ఉంది.":
+        native: "There is an old-fashioned fan in this room."
+  "te-2814":
+    native: "beautiful; scenic"
+    bases:
+      "సుందరమైన": { meaning: "beautiful" }
+    notes:
+      "n1": "Another word for beautiful is అందమైన (andamaina)."
+    examples:
+      "ఇది సుందరమైన ప్రదేశం.":
+        native: "This is a beautiful place."
+        bases:
+          "ప్రదేశం": { meaning: "place" }
+      "ఈ వీధి చాలా సుందరంగా ఉంది.":
+        native: "This street is very beautiful."
+        bases:
+          "సుందరంగా": { meaning: "beautiful; scenic" }
+  "te-2815":
+    native: "trustworthy; reliable"
+    bases:
+      "నమ్మకమైన": { meaning: "trust" }
+    wiktionary: true
+    synonyms: { "nammakamayina": "trustworthy; reliable (another spelling)" }
+    notes:
+      "n1": "Used before a noun, as in the examples."
+    examples:
+      "ఆయన నమ్మకమైన యజమాని.":
+        native: "He is a trustworthy landlord."
+        bases:
+          "యజమాని": { meaning: "owner; landlord" }
+      "ఆమె నమ్మకమైన వ్యక్తి.":
+        native: "She is a reliable person."
+        bases:
+          "వ్యక్తి": { meaning: "person" }
+  "te-2816":
+    native: "honest"
+    bases:
+      "నిజాయితీగల": { meaning: "honesty" }
+    notes:
+      "n1": "Used before a noun, as in the first example."
+    examples:
+      "మా యజమాని నిజాయితీగల వ్యక్తి.":
+        native: "Our landlord is an honest person."
+        bases:
+          "యజమాని": { meaning: "owner; landlord" }
+          "వ్యక్తి": { meaning: "person" }
+      "ఆయన నిజాయితీగల మనిషి.":
+        native: "He is an honest man."
+        bases:
+          "మనిషి": { meaning: "person" }
+  "te-2817":
+    native: "strict; harsh"
+    bases:
+      "కఠినమైన": { meaning: "hard; strict" }
+    notes:
+      "n1": "Its opposite is దయగల (dayagala)."
+    examples:
+      "కఠినమైన నియమాలు ఉన్నాయి.":
+        native: "There are strict rules."
+        bases:
+          "నియమాలు": { meaning: "rule" }
+      "ఈ యజమాని కఠినంగా ఉంటాడు.":
+        native: "This landlord is strict."
+        bases:
+          "యజమాని": { meaning: "owner; landlord" }
+          "కఠినంగా": { meaning: "strict; harsh" }
+  "te-2818":
+    native: "kind"
+    bases:
+      "దయగల": { meaning: "kindness" }
+    notes:
+      "n1": "Its opposite is కఠినమైన (kaṭhinamaina)."
+    examples:
+      "ఆమె దయగల మనిషి.":
+        native: "She is a kind person."
+        bases:
+          "మనిషి": { meaning: "person" }
+      "మా ఇంటి యజమాని చాలా దయగలవారు.":
+        native: "Our landlord is very kind."
+        bases:
+          "యజమాని": { meaning: "owner; landlord" }
+          "దయగలవారు": { meaning: "kind" }
+  "te-2819":
+    native: "friendly"
+    bases:
+      "స్నేహపూర్వకమైన": { meaning: "friendship" }
+    notes:
+      "n1": "Used before a noun, as in the examples."
+    examples:
+      "ఇరుగుపొరుగు వాళ్లు స్నేహపూర్వకంగా ఉంటారు.":
+        native: "The neighbours are friendly."
+        bases:
+          "వాళ్లు": { meaning: "they" }
+          "స్నేహపూర్వకంగా": { meaning: "friendly" }
+      "మా యజమాని స్నేహపూర్వకమైన వ్యక్తి.":
+        native: "Our landlord is a friendly person."
+        bases:
+          "యజమాని": { meaning: "owner; landlord" }
+          "వ్యక్తి": { meaning: "person" }
+  "te-2820":
+    native: "affordable; reasonable in price"
+    notes:
+      "n1": "Its opposite is ఖరీదైన (kharīdaina)."
+    examples:
+      "ఇది సరసమైన ధర.":
+        native: "This is a reasonable price."
+      "సరసమైన అద్దె దొరికింది.":
+        native: "An affordable rent was found."
+        bases:
+          "దొరికింది": { meaning: "to be found; to get" }
+  "te-2821":
+    native: "fixed; exact"
+    bases:
+      "ఖచ్చితమైన": { meaning: "exact; certain" }
+    notes:
+      "n1": "Used before a noun, as in the examples."
+    examples:
+      "ఖచ్చితమైన తేదీ చెప్పండి.":
+        native: "Tell me the exact date."
+        bases:
+          "చెప్పండి": { meaning: "to tell; to say" }
+      "నెలకు ఖచ్చితమైన అద్దె ఎంత?":
+        native: "What is the fixed rent per month?"
+  "te-2822":
+    native: "monthly"
+    bases:
+      "నెలవారీ": { meaning: "month" }
+    notes:
+      "n1": "Used before a noun, as in the examples."
+    examples:
+      "నెలవారీ అద్దె ఎంత?":
+        native: "What is the monthly rent?"
+      "నెలవారీ అద్దె చెల్లించాలి.":
+        native: "The monthly rent must be paid."
+        bases:
+          "చెల్లించాలి": { meaning: "to pay" }
+  "te-2823":
+    native: "advance; paid beforehand"
+    bases:
+      "ముందస్తు": { meaning: "front; before" }
+    notes:
+      "n1": "Used before a noun, as in the examples."
+    examples:
+      "ముందస్తు చెల్లింపు ఉంది.":
+        native: "An advance payment is required."
+      "ముందస్తు చెల్లింపు ఎంత?":
+        native: "How much is the advance payment?"
+  "te-2824":
+    native: "other; different"
+    bases:
+      "వేరే": { meaning: "separate; different" }
+    wiktionary: true
+    notes:
+      "n1": "Used before a noun, as in the examples."
+    examples:
+      "వేరే గది ఉందా?":
+        native: "Is there another room?"
+      "ఇది వేరే ఇల్లు.":
+        native: "This is a different house."
+  "te-2825":
+    native: "alone; single"
+    bases:
+      "ఒంటరి": { meaning: "single; alone" }
+    wiktionary: true
+    notes:
+      "n1": "Used before a noun, as in the first example."
+    examples:
+      "ఒంటరి వ్యక్తికి మాత్రమే ఇల్లు.":
+        native: "The house is only for a single person."
+        bases:
+          "వ్యక్తికి": { meaning: "person" }
+      "అతను ఒంటరిగా ఉంటాడు.":
+        native: "He lives alone."
+        bases:
+          "ఒంటరిగా": { meaning: "alone; single" }
+  "te-2826":
+    native: "vegetarian"
+    bases:
+      "శాకాహారి": { meaning: "vegetarian food" }
+    notes:
+      "n1": "Its opposite is మాంసాహారి (māṁsāhāri)."
+    examples:
+      "ఈ యజమాని శాకాహారి.":
+        native: "This landlord is vegetarian."
+        bases:
+          "యజమాని": { meaning: "owner; landlord" }
+      "శాకాహారి వాళ్లకు మాత్రమే ఇల్లు.":
+        native: "The house is only for vegetarians."
+        bases:
+          "వాళ్లకు": { meaning: "they; to them" }
+  "te-2827":
+    native: "non-vegetarian"
+    bases:
+      "మాంసాహారి": { meaning: "meat-based food" }
+    notes:
+      "n1": "Its opposite is శాకాహారి (śākāhāri)."
+    examples:
+      "నేను మాంసాహారిని.":
+        native: "I am non-vegetarian."
+        bases:
+          "మాంసాహారిని": { meaning: "non-vegetarian" }
+      "అతను మాంసాహారి.":
+        native: "He is non-vegetarian."
+  "te-2828":
+    native: "own; one's own"
+    notes:
+      "n1": "Used before a noun, as in the examples."
+    examples:
+      "నాకు సొంత ఇల్లు ఉంది.":
+        native: "I have a house of my own."
+      "సొంత వంటగది కావాలి.":
+        native: "I want my own kitchen."
+        bases:
+          "వంటగది": { meaning: "kitchen" }
+  "te-2829":
+    native: "important; main"
+    bases:
+      "ముఖ్యమైన": { meaning: "important" }
+    notes:
+      "n1": "Used before a noun, as in the first example."
+    examples:
+      "ఇది ముఖ్యమైన విషయం.":
+        native: "This is an important matter."
+        bases:
+          "విషయం": { meaning: "matter; thing" }
+      "అద్దె ఒప్పందం ముఖ్యమైనది.":
+        native: "The rent agreement is important."
+        bases:
+          "ఒప్పందం": { meaning: "agreement" }
+          "ముఖ్యమైనది": { meaning: "important; main" }
+  "te-2830":
+    native: "necessary; needed"
+    bases:
+      "అవసరమైన": { meaning: "need" }
+    wiktionary: true
+    notes:
+      "n1": "Used before a noun, as in the first example."
+    examples:
+      "ఇది అవసరమైన వస్తువు.":
+        native: "This is a necessary item."
+      "ఈ పత్రాలు అవసరమైనవి.":
+        native: "These documents are necessary."
+        bases:
+          "పత్రాలు": { meaning: "document" }
+          "అవసరమైనవి": { meaning: "necessary; needed" }
+  "te-2831":
+    native: "faded"
+    notes:
+      "n1": "Used before a noun, as in the examples."
+    examples:
+      "ఇది వెలిసిన గోడ.":
+        native: "This is a faded wall."
+      "ఈ కర్టెన్ వెలిసిన రంగులో ఉంది.":
+        native: "This curtain is in a faded colour."
+        bases:
+          "కర్టెన్": { meaning: "curtain" }
+  "te-2832":
+    native: "cracked"
+    bases:
+      "పగిలిన": { meaning: "to crack; to break" }
+    notes:
+      "n1": "Used before a noun, as in the examples."
+    examples:
+      "పగిలిన అద్దం ఉంది.":
+        native: "There is a cracked mirror."
+      "పగిలిన కిటికీ మార్చాలి.":
+        native: "The cracked window must be replaced."
+        bases:
+          "మార్చాలి": { meaning: "to change; to replace" }
+  "te-2833":
+    native: "broken"
+    bases:
+      "విరిగిన": { meaning: "to break" }
+    notes:
+      "n1": "Used before a noun, as in the examples."
+    examples:
+      "విరిగిన కుర్చీ ఉంది.":
+        native: "There is a broken chair."
+      "విరిగిన తలుపు మార్చాలి.":
+        native: "The broken door must be replaced."
+        bases:
+          "మార్చాలి": { meaning: "to change; to replace" }
+  "te-2834":
+    native: "working; in working order"
+    notes:
+      "n1": "Its opposite is పాడైన (pāḍaina)."
+    examples:
+      "పనిచేసే ఫ్యాన్ ఉంది.":
+        native: "There is a working fan."
+      "నాకు పనిచేసే కుళాయి కావాలి.":
+        native: "I need a working tap."
+        bases:
+          "కుళాయి": { meaning: "tap" }
+  "te-2835":
+    native: "damaged; spoiled"
+    bases:
+      "పాడైన": { meaning: "to get spoiled" }
+    notes:
+      "n1": "Its opposite is పనిచేసే (panicēsē)."
+    examples:
+      "పాడైన తలుపు ఉంది.":
+        native: "There is a damaged door."
+      "పాడైన గోడ ఇంకా ఉంది.":
+        native: "The damaged wall is still there."

@@ -1,0 +1,26 @@
+schema: 1
+id: "te-en-grammar-ordinals"
+kind: "layer"
+core: "te-grammar-ordinals"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Ordinal numbers"
+description: "First to tenth: how the ordinal numbers are made from the numbers, for dates, weeks and birthdays. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Ordinal numbers"
+  slot_name: "order"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "క్రమ (krama)": "before a noun" }
+  entries:
+    "modati": "first"
+    "rendava": "second"
+    "mudava": "third"
+    "nalugava": "fourth"
+    "aidava": "fifth"
+    "aarava": "sixth"
+    "edava": "seventh"
+    "enimidava": "eighth"
+    "tommidava": "ninth"
+    "padava": "tenth"
+  notes: "An ordinal drops the last vowel of its number, -ు (-u) or -ి (-i), and adds -వ (-va): రెండు (reṇḍu), two, becomes రెండవ (reṇḍava), second; పది (padi), ten, becomes పదవ (padava), tenth. First is the exception: it is మొదటి (modaṭi), not made from ఒకటి (okaṭi), one. ఒకటవ (okaṭava) is heard for school classes, as in ఒకటవ తరగతి (okaṭava taragati), class one. An ordinal stands before its noun, as in English: రెండవ రోజు (reṇḍava rōju), the second day."

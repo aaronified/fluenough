@@ -1,0 +1,351 @@
+schema: 1
+id: "te-chores"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "chores"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-2100"
+    target: "ఊడ్చడం"
+    reading: "ūḍcaḍam"
+    ipa: "uːɖʧaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ఊడుస్తాను", reading: "ūḍustānu" }, { word: "ఊడ్చండి", reading: "ūḍcaṇḍi" }] }
+      - { id: "n2", kind: "usage", words: [{ word: "నేల ఊడ్చడం", reading: "nēla ūḍcaḍam" }] }
+    examples:
+      - target: "నేను రోజూ ఇల్లు ఊడుస్తాను."
+        reading: "nēnu rōjū illu ūḍustānu."
+        ipa: "neːnu roːdʒuː illu uːɖustaːnu"
+        bases:
+          - { word: "ఊడుస్తాను", base: "ఊడ్చడం", reading: "ūḍcaḍam" }
+      - target: "నేల ఊడ్చండి."
+        reading: "nēla ūḍcaṇḍi."
+        ipa: "neːlaː uːɖʧaɳɖi"
+        bases:
+          - { word: "ఊడ్చండి", base: "ఊడ్చడం", reading: "ūḍcaḍam" }
+  - id: "te-2101"
+    target: "ఉతకడం"
+    reading: "utakaḍam"
+    ipa: "utakaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ఉతుకుతాను", reading: "utukutānu" }, { word: "ఉతకండి", reading: "utakaṇḍi" }] }
+      - { id: "n2", kind: "usage", words: [{ word: "బట్టలు ఉతకడం", reading: "baṭṭalu utakaḍam" }] }
+    examples:
+      - target: "నేను బట్టలు ఉతుకుతాను."
+        reading: "nēnu baṭṭalu utukutānu."
+        ipa: "neːnu bʌʈʈaluː utukutaːnu"
+        bases:
+          - { word: "ఉతుకుతాను", base: "ఉతకడం", reading: "utakaḍam" }
+      - target: "బట్టలు ఉతకండి."
+        reading: "baṭṭalu utakaṇḍi."
+        ipa: "bʌʈʈaluː utakaɳɖi"
+        bases:
+          - { word: "ఉతకండి", base: "ఉతకడం", reading: "utakaḍam" }
+  - id: "te-2102"
+    target: "ఆరేయడం"
+    reading: "ārēyaḍam"
+    ipa: "aːreːjaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ఆరేస్తాను", reading: "ārēstānu" }, { word: "ఆరేయండి", reading: "ārēyaṇḍi" }] }
+      - { id: "n2", kind: "usage", words: [{ word: "బట్టలు ఆరేయడం", reading: "baṭṭalu ārēyaḍam" }] }
+    examples:
+      - target: "నేను బట్టలు ఆరేస్తాను."
+        reading: "nēnu baṭṭalu ārēstānu."
+        ipa: "neːnu bʌʈʈaluː aːreːstaːnu"
+        bases:
+          - { word: "ఆరేస్తాను", base: "ఆరేయడం", reading: "ārēyaḍam" }
+      - target: "బట్టలు ఆరేయండి."
+        reading: "baṭṭalu ārēyaṇḍi."
+        ipa: "bʌʈʈaluː aːreːjaɳɖi"
+        bases:
+          - { word: "ఆరేయండి", base: "ఆరేయడం", reading: "ārēyaḍam" }
+  - id: "te-2103"
+    target: "ఇస్త్రీ చేయడం"
+    reading: "istrī cēyaḍam"
+    ipa: "istriː tʃeːjaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ఇస్త్రీ చేస్తాను", reading: "istrī cēstānu" }, { word: "ఇస్త్రీ చేయండి", reading: "istrī cēyaṇḍi" }] }
+      - { id: "n2", kind: "usage", words: [{ word: "ఇస్త్రీ", reading: "istrī" }] }
+    examples:
+      - target: "అమ్మ బట్టలు ఇస్త్రీ చేస్తుంది."
+        reading: "amma baṭṭalu istrī cēstundi."
+        ipa: "ammaː bʌʈʈaluː istriː tʃeːstundi"
+        bases:
+          - { word: "చేస్తుంది", base: "చేయడం", reading: "cēyaḍam" }
+      - target: "చొక్కా ఇస్త్రీ చేయండి."
+        reading: "cokkā istrī cēyaṇḍi."
+        ipa: "tʃokkaː istriː tʃeːjaɳɖi"
+        bases:
+          - { word: "చేయండి", base: "చేయడం", reading: "cēyaḍam" }
+  - id: "te-2104"
+    target: "తరగడం"
+    reading: "taragaḍam"
+    ipa: "taraɡaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "తరుగుతాను", reading: "tarugutānu" }, { word: "తరగండి", reading: "taragaṇḍi" }] }
+      - { id: "n2", kind: "usage", words: [{ word: "కూరగాయలు తరగడం", reading: "kūragāyalu taragaḍam" }] }
+    examples:
+      - target: "అమ్మ కూరగాయలు తరుగుతుంది."
+        reading: "amma kūragāyalu tarugutundi."
+        ipa: "ammaː kuːrəɡaːjəluː taruɡutundi"
+        bases:
+          - { word: "తరుగుతుంది", base: "తరగడం", reading: "taragaḍam" }
+      - target: "ఉల్లిపాయ తరగండి."
+        reading: "ullipāya taragaṇḍi."
+        ipa: "ullipaːjaː taraɡaɳɖi"
+        bases:
+          - { word: "తరగండి", base: "తరగడం", reading: "taragaḍam" }
+  - id: "te-2105"
+    target: "ఉడికించడం"
+    reading: "uḍikiñcaḍam"
+    ipa: "uɖikiɲʧaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ఉడికిస్తాను", reading: "uḍikistānu" }, { word: "ఉడికించండి", reading: "uḍikiñcaṇḍi" }] }
+      - { id: "n2", kind: "usage", words: [{ word: "అన్నం ఉడికించడం", reading: "annaṁ uḍikiñcaḍam" }] }
+    examples:
+      - target: "నేను అన్నం ఉడికిస్తాను."
+        reading: "nēnu annaṁ uḍikistānu."
+        ipa: "neːnu annam uɖikistaːnu"
+        bases:
+          - { word: "ఉడికిస్తాను", base: "ఉడికించడం", reading: "uḍikiñcaḍam" }
+      - target: "పప్పు ఉడికించండి."
+        reading: "pappu uḍikiñcaṇḍi."
+        ipa: "pappu uɖikiɲʧaɳɖi"
+        bases:
+          - { word: "ఉడికించండి", base: "ఉడికించడం", reading: "uḍikiñcaḍam" }
+  - id: "te-2106"
+    target: "సర్దడం"
+    reading: "sardaḍam"
+    ipa: "sardaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "సర్దుతాను", reading: "sardutānu" }, { word: "సర్దండి", reading: "sardaṇḍi" }] }
+      - { id: "n2", kind: "usage", words: [{ word: "గది సర్దడం", reading: "gadi sardaḍam" }] }
+    examples:
+      - target: "నేను గది సర్దుతాను."
+        reading: "nēnu gadi sardutānu."
+        ipa: "neːnu ɡadi sardutaːnu"
+        bases:
+          - { word: "సర్దుతాను", base: "సర్దడం", reading: "sardaḍam" }
+      - target: "బట్టలు సర్దండి."
+        reading: "baṭṭalu sardaṇḍi."
+        ipa: "bʌʈʈaluː sardaɳɖi"
+        bases:
+          - { word: "సర్దండి", base: "సర్దడం", reading: "sardaḍam" }
+  - id: "te-2107"
+    target: "పారేయడం"
+    reading: "pārēyaḍam"
+    ipa: "paːreːjaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "పారేస్తాను", reading: "pārēstānu" }, { word: "పారేయండి", reading: "pārēyaṇḍi" }] }
+      - { id: "n2", kind: "usage", words: [{ word: "చెత్త పారేయడం", reading: "cetta pārēyaḍam" }] }
+    examples:
+      - target: "నేను చెత్త పారేస్తాను."
+        reading: "nēnu cetta pārēstānu."
+        ipa: "neːnu tʃettaː paːreːstaːnu"
+        bases:
+          - { word: "పారేస్తాను", base: "పారేయడం", reading: "pārēyaḍam" }
+      - target: "ఈ చెత్త పారేయండి."
+        reading: "ī cetta pārēyaṇḍi."
+        ipa: "iː tʃettaː paːreːjaɳɖi"
+        bases:
+          - { word: "పారేయండి", base: "పారేయడం", reading: "pārēyaḍam" }
+  - id: "te-2108"
+    target: "ఎత్తడం"
+    reading: "ettaḍam"
+    ipa: "ettaɖam"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ఎత్తుతాను", reading: "ettutānu" }, { word: "ఎత్తండి", reading: "ettaṇḍi" }] }
+    examples:
+      - target: "నేను బకెట్ ఎత్తుతాను."
+        reading: "nēnu bakeṭ ettutānu."
+        ipa: "neːnu bakeʈ ettutaːnu"
+        bases:
+          - { word: "ఎత్తుతాను", base: "ఎత్తడం", reading: "ettaḍam" }
+      - target: "ఆ బుట్ట ఎత్తండి."
+        reading: "ā buṭṭa ettaṇḍi."
+        ipa: "aː buʈʈa ettaɳɖi"
+        bases:
+          - { word: "ఎత్తండి", base: "ఎత్తడం", reading: "ettaḍam" }
+  - ref: "te-1604"
+  - id: "te-2110"
+    target: "బుట్ట"
+    reading: "buṭṭa"
+    ipa: "buʈʈa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "బుట్టలు", reading: "buṭṭalu" }, { word: "బుట్టలో", reading: "buṭṭalō" }] }
+    examples:
+      - "target": "బుట్టలో కూరగాయలు ఉన్నాయి."
+        "reading": "buṭṭalō kūragāyalu unnāyi."
+        "ipa": "buʈʈaloː kuːrəɡaːjəlu unnaːji"
+        "bases":
+          - "word": "ఉన్నాయి"
+            "base": "ఉండడం"
+            "reading": "uṇḍaḍam"
+          - "word": "బుట్టలో"
+            "base": "బుట్ట"
+            "reading": "buṭṭa"
+      - "target": "ఈ బుట్ట పెద్దది."
+        "reading": "ī buṭṭa peddadi."
+        "ipa": "iː buʈʈa peddadi"
+        "bases":
+          - "word": "పెద్దది"
+            "ref": "te-0502"
+  - id: "te-2111"
+    target: "చెత్తబుట్ట"
+    reading: "cettabuṭṭa"
+    ipa: "tʃettabuʈʈa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "చెత్తబుట్టలు", reading: "cettabuṭṭalu" }, { word: "చెత్తబుట్టలో", reading: "cettabuṭṭalō" }] }
+    examples:
+      - "target": "చెత్తబుట్టలో చెత్త ఉంది."
+        "reading": "cettabuṭṭalō cetta undi."
+        "ipa": "tʃettabuʈʈaloː tʃettaː und̪i"
+        "bases":
+          - "word": "ఉంది"
+            "base": "ఉండడం"
+            "reading": "uṇḍaḍam"
+          - "word": "చెత్తబుట్టలో"
+            "base": "చెత్తబుట్ట"
+            "reading": "cettabuṭṭa"
+      - target: "చెత్తబుట్ట నిండింది."
+        reading: "cettabuṭṭa niṇḍindi."
+        ipa: "tʃettabuʈʈaː niɳɖindi"
+        bases:
+          - { word: "నిండింది", base: "నిండడం", reading: "niṇḍaḍam" }
+  - id: "te-2112"
+    target: "గోడ"
+    reading: "gōḍa"
+    ipa: "ɡoːɖa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "గోడలు", reading: "gōḍalu" }] }
+    examples:
+      - target: "గోడ తుడవండి."
+        reading: "gōḍa tuḍavaṇḍi."
+        ipa: "ɡoːɖa tuɖaʋaɳɖi"
+        bases:
+          - { word: "తుడవండి", base: "తుడవడం", reading: "tuḍavaḍam" }
+      - target: "గోడ మీద బొమ్మ ఉంది."
+        reading: "gōḍa mīda bomma undi."
+        ipa: "ɡoːɖa miːd̪a bommaː und̪i"
+        bases:
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍam" }
+    synonyms:
+      - { id: "kudyamu", word: "కుడ్యము", reading: "kuḍyamu", source: "https://en.wiktionary.org/wiki/గోడ" }
+  - ref: "te-2610"
+  - ref: "te-1605"
+  - id: "te-2115"
+    target: "చెంబు"
+    reading: "cembu"
+    ipa: "tʃembu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "చెంబులు", reading: "cembulu" }, { word: "చెంబులో", reading: "cembulō" }] }
+    examples:
+      - "target": "చెంబు నా చేతిలో ఉంది."
+        "reading": "cembu nā cētilō undi."
+        "ipa": "tʃembu naː tʃeːt̪iloː und̪i"
+        "bases":
+          - "word": "ఉంది"
+            "base": "ఉండడం"
+            "reading": "uṇḍaḍam"
+          - "word": "నా"
+            "ref": "te-0593"
+          - "word": "చేతిలో"
+            "ref": "te-0741"
+      - target: "చెంబు కడగండి."
+        reading: "cembu kaḍagaṇḍi."
+        ipa: "tʃembu kaɖaɡaɳɖi"
+        bases:
+          - { word: "కడగండి", base: "కడగడం", reading: "kaḍagaḍam" }
+    senses:
+      - { id: "cup", pos: "noun", source: "https://en.wiktionary.org/wiki/చెంబు" }
+  - ref: "te-1132"
+  - id: "te-2117"
+    target: "ఇంటి పని"
+    reading: "iṇṭi pani"
+    ipa: "intiː paːni"
+    pos: "noun"
+    gender: "amahat"
+    bases: [{"word": "ఇంటి", "ref": "te-0195"}]
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ఇంటి పనులు", reading: "iṇṭi panulu" }] }
+    examples:
+      - "target": "నేను ఇంటి పని చేస్తాను."
+        "reading": "nēnu iṇṭi pani cēstānu."
+        "ipa": "neːnu intiː paːni tʃeːstaːnu"
+        "bases":
+          - "word": "చేస్తాను"
+            "base": "చేయడం"
+            "reading": "cēyaḍam"
+          - "word": "ఇంటి"
+            "ref": "te-0195"
+      - "target": "ఇంటి పనులు అందరూ చేయాలి."
+        "reading": "iṇṭi panulu andarū cēyāli."
+        "ipa": "intiː paːnuluː əndəruː tʃeːjaːli"
+        "bases":
+          - "word": "చేయాలి"
+            "base": "చేయడం"
+            "reading": "cēyaḍam"
+          - "word": "ఇంటి"
+            "ref": "te-0195"
+          - "word": "పనులు"
+            "ref": "te-0197"
+  - ref: "te-0197"
+  - ref: "te-0881"
+  - ref: "te-0883"
+  - ref: "te-0884"
+  - ref: "te-0885"
+  - ref: "te-0902"
+  - ref: "te-0911"
+  - ref: "te-0420"
+  - ref: "te-0421"
+  - ref: "te-0425"
+  - ref: "te-0426"
+  - ref: "te-0430"
+  - ref: "te-0431"
+  - ref: "te-0432"
+  - ref: "te-0708"
+  - ref: "te-0962"
+  - ref: "te-0888"
+  - ref: "te-0890"
+  - ref: "te-0643"
+  - ref: "te-0824"
+  - ref: "te-0485"
+  - ref: "te-0825"
+  - ref: "te-0826"
+  - ref: "te-0830"
+  - ref: "te-0836"
+  - ref: "te-0852"

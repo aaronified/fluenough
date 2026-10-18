@@ -1,0 +1,17 @@
+schema: 1
+id: "te-en-grammar-while"
+kind: "layer"
+core: "te-grammar-while"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "While: doing two things at once"
+description: "A verb's -తూ (-tū) form says that the action goes on while another action happens: 'while walking', 'while singing'. The same form works for every person. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "while": "while doing it"
+rules:
+  "te-rule-while":
+    name: "-తూ (-tū): while"
+    explanation: "{1} is added to a verb's present stem (the part before -ాను (-ānu) in 'I go') to say that one action goes on while another happens. {2} is 'I talked while walking', {3} is 'I ate while watching TV' and {4} is 'she cooked while singing'. The form does not change for a person: the last verb of the sentence shows who did it. For 'when' with a whole clause, use -ప్పుడు (-ppuḍu), as in the when unit."

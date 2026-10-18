@@ -1,0 +1,90 @@
+schema: 1
+id: "te-grammar-emphasis"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "te-5900"
+    target: "మాత్రం"
+    reading: "mātraṁ"
+    ipa: "maːt̪ram"
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "అందరూ వచ్చారు, నేను మాత్రం రాలేదు."
+        reading: "andarū vaccāru, nēnu mātraṁ rālēdu."
+        ipa: "and̪aruː ʋatʃtʃaːru neːnu maːt̪ram raːleːd̪u"
+        bases:
+          - { word: "వచ్చారు", base: "రావడం", reading: "rāvaḍaṁ" }
+          - { word: "రాలేదు", base: "రావడం", reading: "rāvaḍaṁ" }
+      - target: "ఒక్క మాట మాత్రం చెప్పు."
+        reading: "okka māṭa mātraṁ ceppu."
+        ipa: "okka maːʈa maːt̪ram tʃeppu"
+        bases:
+          - { word: "మాట", base: "మాట", reading: "māṭa" }
+          - { word: "చెప్పు", base: "చెప్పడం", reading: "ceppaḍaṁ" }
+  - id: "te-5901"
+    target: "అయినా"
+    reading: "ayinā"
+    ipa: "ajinaː"
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "అతను ధనవంతుడు అయినా సంతోషంగా లేడు."
+        reading: "atanu dhanavantuḍu ayinā santōṣaṅgā lēḍu."
+        ipa: "at̪anu d̪ʱanaʋant̪uɖu ajinaː sant̪oːʂaŋɡaː leːɖu"
+        bases:
+          - { word: "ధనవంతుడు", base: "ధనవంతుడు", reading: "dhanavantuḍu" }
+          - { word: "లేడు", ref: "te-0159" }
+      - target: "చాలా ఆలస్యమైంది, అయినా వెళ్దాం."
+        reading: "cālā ālasyamaindi, ayinā veḷdāṁ."
+        ipa: "tʃaːlaː aːlasjamaind̪i ajinaː ʋeɭd̪aːm"
+        bases:
+          - { word: "ఆలస్యమైంది", ref: "te-2926" }
+          - { word: "వెళ్దాం", base: "వెళ్ళడం", reading: "veḷḷaḍaṁ" }
+  - ref: "te-1098"
+  - id: "te-5903"
+    target: "ఇదే"
+    reading: "idē"
+    ipa: "id̪eː"
+    pos: "pronoun"
+    bases:
+      - { word: "ఇదే", ref: "te-0600" }
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "నాకు కావాల్సింది ఇదే."
+        reading: "nāku kāvālsindi idē."
+        ipa: "naːku kaːʋaːlsind̪i id̪eː"
+        bases:
+          - { word: "నాకు", ref: "te-0593" }
+          - { word: "కావాల్సింది", ref: "te-0460" }
+      - target: "ఇదే మంచి సమయం."
+        reading: "idē mañci samayaṁ."
+        ipa: "id̪eː maɲtʃi samajam"
+  - id: "te-5904"
+    target: "కదా"
+    reading: "kadā"
+    ipa: "kad̪aː"
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ఈ రోజు చల్లగా ఉంది కదా?"
+        reading: "ī rōju callagā undi kadā?"
+        ipa: "iː roːdʒu tʃallaɡaː und̪i kad̪aː"
+        bases:
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - target: "నువ్వు రేపు వస్తావు కదా?"
+        reading: "nuvvu rēpu vastāvu kadā?"
+        ipa: "nuʋʋu reːpu ʋast̪aːʋu kad̪aː"
+        bases:
+          - { word: "వస్తావు", base: "రావడం", reading: "rāvaḍaṁ" }
+  - ref: "te-1110"
+  - ref: "te-1078"
+  - ref: "te-1091"
+  - ref: "te-0359"

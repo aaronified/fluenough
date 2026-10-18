@@ -1,0 +1,378 @@
+schema: 1
+id: "te-environment"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "environment"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-4500"
+    target: "పర్యావరణం"
+    reading: "paryāvaraṇam"
+    ipa: "parjaːʋaraɳam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - {"target": "బడిలో పర్యావరణం గురించి చదువుతారు.", "reading": "baḍilō paryāvaraṇam guriñci caduvutāru.", "ipa": "baɖiloː parjaːʋaraɳam ɡuriɲtʃi tʃad̪uʋut̪aːru", "bases": [{"word": "బడిలో", "ref": "te-0764"}, {"word": "చదువుతారు", "ref": "te-0638"}, {"word": "గురించి", "base": "గురించి", "reading": "guriñci"}]}
+      - {"target": "ఈ రోజు పర్యావరణ దినోత్సవం.", "reading": "ī rōju paryāvaraṇa dinōtsavam.", "ipa": "iː roːdʒu parjaːʋaraɳa d̪inoːt̪saʋam", "bases": [{"word": "పర్యావరణ", "base": "పర్యావరణం", "reading": "paryāvaraṇam"}, {"word": "దినోత్సవం", "base": "దినోత్సవం", "reading": "dinōtsavam"}]}
+  - ref: "te-2629"
+  - ref: "te-1113"
+  - ref: "te-1118"
+  - id: "te-4525"
+    target: "వాయువు"
+    reading: "vāyuvu"
+    ipa: "ʋaːjuʋu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "వాయువులు", reading: "vāyuvulu" }] }
+    examples:
+      - {"target": "మొక్కలకు కర్బన వాయువు అవసరం.", "reading": "mokkalaku karbana vāyuvu avasaram.", "ipa": "mokkalaku karbana ʋaːjuʋu aʋasaram", "bases": [{"word": "మొక్కలకు", "ref": "te-1903"}, {"word": "కర్బన", "base": "కర్బనం", "reading": "karbanam"}]}
+      - {"target": "కర్మాగారం నుంచి విష వాయువులు వస్తున్నాయి.", "reading": "karmāgāram nuñci viṣa vāyuvulu vastunnāyi.", "ipa": "karmaːɡaːram nuɲtʃi ʋiʂa ʋaːjuʋulu ʋast̪unnaːji", "bases": [{"word": "వాయువులు", "base": "వాయువు", "reading": "vāyuvu"}, {"word": "వస్తున్నాయి", "ref": "te-0623"}, {"word": "నుంచి", "base": "నుంచి", "reading": "nuñci"}, {"word": "విష", "ref": "te-5818"}]}
+  - id: "te-4526"
+    target: "ఆక్సిజన్"
+    reading: "āksijan"
+    ipa: "aːksidʒan"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "చెట్లు ఆక్సిజన్ ఇస్తాయి.", reading: "ceṭlu āksijan istāyi.", ipa: "tʃeʈlu aːksidʒan ist̪aːji", bases: [{ word: "చెట్లు", ref: "te-2600" }, { word: "ఇస్తాయి", ref: "te-0630" }] }
+      - { target: "ఎత్తైన ప్రాంతాల్లో ఆక్సిజన్ తక్కువగా ఉంటుంది.", reading: "ettaina prāntāllō āksijan takkuvagā uṇṭundi.", ipa: "et̪t̪aina praːnt̪aːlloː aːksidʒan t̪akkuʋaɡaː uɳʈund̪i", bases: [{ word: "ప్రాంతాల్లో", ref: "te-3012" }, { word: "ఉంటుంది", ref: "te-0633" }] }
+  - ref: "te-1116"
+  - ref: "te-1117"
+  - ref: "te-1129"
+  - ref: "te-1115"
+  - ref: "te-1121"
+  - ref: "te-1135"
+  - ref: "te-1137"
+  - ref: "te-1122"
+  - id: "te-4501"
+    target: "కాలుష్యం"
+    reading: "kāluṣyam"
+    ipa: "kaːluʂjam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ఈ పట్నంలో కాలుష్యం ఎక్కువగా ఉంది.", reading: "ī paṭnamlō kāluṣyam ekkuvagā undi.", ipa: "iː paʈnamloː kaːluʂjam ekkuʋaɡaː und̪i", bases: [{ word: "పట్నంలో", ref: "te-0778" }, { word: "ఉంది", ref: "te-0633" }] }
+      - {"target": "కాలుష్యం వల్ల దగ్గు వస్తుంది.", "reading": "kāluṣyam valla daggu vastundi.", "ipa": "kaːluʂjam ʋalla d̪aɡɡu ʋast̪und̪i", "bases": [{"word": "వస్తుంది", "ref": "te-0623"}, {"word": "వల్ల", "base": "వల్ల", "reading": "valla"}]}
+  - id: "te-4514"
+    target: "భూతాపం"
+    reading: "bhūtāpam"
+    ipa: "bʱuːt̪aːpam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - {"target": "భూతాపం వల్ల వాతావరణం మారుతోంది.", "reading": "bhūtāpam valla vātāvaraṇam mārutōndi.", "ipa": "bʱuːt̪aːpam ʋalla ʋaːt̪aːʋaraɳam maːrut̪oːnd̪i", "bases": [{"word": "మారుతోంది", "ref": "te-2348"}, {"word": "వల్ల", "base": "వల్ల", "reading": "valla"}]}
+      - {"target": "భూతాపం గురించి టీవీలో వింటారు.", "reading": "bhūtāpam guriñci ṭīvīlō viṇṭāru.", "ipa": "bʱuːt̪aːpam ɡuriɲtʃi ʈiːʋiːloː ʋiɳʈaːru", "bases": [{"word": "టీవీలో", "ref": "te-0875"}, {"word": "వింటారు", "ref": "te-0627"}, {"word": "గురించి", "base": "గురించి", "reading": "guriñci"}]}
+  - id: "te-4506"
+    target: "పునర్వినియోగం"
+    reading: "punarviniyōgam"
+    ipa: "punarʋinijoːɡam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - {"target": "వస్తువుల పునర్వినియోగం వల్ల డబ్బు ఆదా అవుతుంది.", "reading": "vastuvula punarviniyōgam valla ḍabbu ādā avutundi.", "ipa": "ʋast̪uʋula punarʋinijoːɡam ʋalla ɖabbu aːd̪aː aʋut̪und̪i", "bases": [{"word": "అవుతుంది", "ref": "te-0646"}, {"word": "వస్తువుల", "ref": "te-0890"}, {"word": "వల్ల", "base": "వల్ల", "reading": "valla"}, {"word": "ఆదా", "base": "ఆదా", "reading": "ādā"}]}
+      - {"target": "పునర్వినియోగం అంటే వస్తువులను మళ్ళీ వాడటం.", "reading": "punarviniyōgam aṇṭē vastuvulanu maḷḷī vāḍaṭam.", "ipa": "punarʋinijoːɡam aɳʈeː ʋast̪uʋulanu maɭɭiː ʋaːɖaʈam", "bases": [{"word": "వస్తువులను", "ref": "te-0890"}, {"word": "వాడటం", "ref": "te-2327"}, {"word": "అంటే", "base": "అనడం", "reading": "anaḍam"}]}
+  - id: "te-4520"
+    target: "రీసైక్లింగ్"
+    reading: "rīsaikliṅg"
+    ipa: "riːsaikliŋɡ"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ఈ కంపెనీ ప్లాస్టిక్ రీసైక్లింగ్ చేస్తుంది.", reading: "ī kampenī plāsṭik rīsaikliṅg cēstundi.", ipa: "iː kampeniː plaːsʈik riːsaikliŋɡ tʃeːst̪und̪i", bases: [{ word: "చేస్తుంది", ref: "te-0621" }] }
+      - {"target": "పాత కాగితాల రీసైక్లింగ్ గురించి పాఠం చదివాం.", "reading": "pāta kāgitāla rīsaikliṅg guriñci pāṭham cadivām.", "ipa": "paːt̪a kaːɡit̪aːla riːsaikliŋɡ ɡuriɲtʃi paːʈʰam tʃad̪iʋaːm", "bases": [{"word": "కాగితాల", "ref": "te-0867"}, {"word": "చదివాం", "ref": "te-0638"}, {"word": "గురించి", "base": "గురించి", "reading": "guriñci"}]}
+  - ref: "te-0902"
+  - id: "te-4521"
+    target: "చెత్తకుండీ"
+    reading: "cettakuṇḍī"
+    ipa: "tʃet̪t̪akuɳɖiː"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "చెత్తకుండీలు", reading: "cettakuṇḍīlu" }] }
+    examples:
+      - { target: "ఇంటి బయట చెత్తకుండీ ఉంది.", reading: "iṇṭi bayaṭa cettakuṇḍī undi.", ipa: "iɳʈi bajaʈa tʃet̪t̪akuɳɖiː und̪i", bases: [{ word: "ఇంటి", ref: "te-0195" }, { word: "ఉంది", ref: "te-0633" }] }
+      - { target: "చెత్తకుండీ ఖాళీ చేయండి.", reading: "cettakuṇḍī khāḷī cēyaṇḍi.", ipa: "tʃet̪t̪akuɳɖiː kʰaːɭiː tʃeːjaɳɖi", bases: [{ word: "చేయండి", ref: "te-0621" }] }
+  - id: "te-4503"
+    target: "వ్యర్థం"
+    reading: "vyartham"
+    ipa: "ʋjart̪ʰam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "వ్యర్థాలు", reading: "vyarthālu" }] }
+    examples:
+      - {"target": "ఇంటి వ్యర్థాలను రోజూ బయట పారేస్తారు.", "reading": "iṇṭi vyarthālanu rōjū bayaṭa pārēstāru.", "ipa": "iɳʈi ʋjart̪ʰaːlanu roːdʒuː bajaʈa paːreːst̪aːru", "bases": [{"word": "ఇంటి", "ref": "te-0195"}, {"word": "వ్యర్థాలను", "base": "వ్యర్థం", "reading": "vyartham"}, {"word": "పారేస్తారు", "ref": "te-2107"}]}
+      - {"target": "వ్యర్థం ఎక్కడ వేయాలో మీకు తెలుసా?", "reading": "vyartham ekkaḍa vēyālō mīku telusā?", "ipa": "ʋjart̪ʰam ekkaɖa ʋeːjaːloː miːku t̪elusaː", "bases": [{"word": "వేయాలో", "ref": "te-0837"}, {"word": "తెలుసా", "ref": "te-0651"}, {"word": "మీకు", "ref": "te-0136"}]}
+  - id: "te-4504"
+    target: "ప్లాస్టిక్"
+    reading: "plāsṭik"
+    ipa: "plaːsʈik"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ప్లాస్టిక్‌లు", reading: "plāsṭiklu" }] }
+    examples:
+      - { target: "బజారులో ప్లాస్టిక్ సంచులు ఇస్తారు.", reading: "bajārulō plāsṭik sañculu istāru.", ipa: "badʒaːruloː plaːsʈik saɲtʃulu ist̪aːru", bases: [{ word: "బజారులో", ref: "te-0773" }, { word: "సంచులు", ref: "te-0868" }, { word: "ఇస్తారు", ref: "te-0630" }] }
+      - {"target": "నేలపై ప్లాస్టిక్ బాటిల్ పడి ఉంది.", "reading": "nēlapai plāsṭik bāṭil paḍi undi.", "ipa": "neːlapai plaːsʈik baːʈil paɖi und̪i", "bases": [{"word": "నేలపై", "ref": "te-2610"}, {"word": "పడి", "ref": "te-0839"}, {"word": "ఉంది", "ref": "te-0633"}, {"word": "బాటిల్", "base": "బాటిల్", "reading": "bāṭil"}]}
+  - id: "te-4505"
+    target: "పొగ"
+    reading: "poga"
+    ipa: "poɡa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "పొగలు", reading: "pogalu" }] }
+    examples:
+      - { target: "పొగ ఆకాశంలోకి వెళ్తుంది.", reading: "poga ākāśamlōki veḷtundi.", ipa: "poɡa aːkaːʃamloːki ʋeɭt̪und̪i", bases: [{ word: "ఆకాశంలోకి", ref: "te-1114" }, { word: "వెళ్తుంది", ref: "te-0622" }] }
+      - {"target": "ఫ్యాక్టరీ నుంచి దట్టమైన పొగలు వస్తున్నాయి.", "reading": "phyākṭarī nuñci daṭṭamaina pogalu vastunnāyi.", "ipa": "pʰjaːkʈariː nuɲtʃi d̪aʈʈamaina poɡalu ʋast̪unnaːji", "bases": [{"word": "పొగలు", "base": "పొగ", "reading": "poga"}, {"word": "వస్తున్నాయి", "ref": "te-0623"}, {"word": "నుంచి", "base": "నుంచి", "reading": "nuñci"}, {"word": "దట్టమైన", "base": "దట్టం", "reading": "daṭṭam"}]}
+    synonyms:
+      - { id: "dhumamu", word: "ధూమము", reading: "dhūmamu", source: "https://en.wiktionary.org/wiki/పొగ" }
+  - id: "te-4502"
+    target: "శుభ్రత"
+    reading: "śubhrata"
+    ipa: "ʃubʱrat̪a"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ఈ పట్నంలో వీధుల శుభ్రత బాగా ఉంది.", reading: "ī paṭnamlō vīdhula śubhrata bāgā undi.", ipa: "iː paʈnamloː ʋiːd̪ʱula ʃubʱrat̪a baːɡaː und̪i", bases: [{ word: "పట్నంలో", ref: "te-0778" }, { word: "వీధుల", ref: "te-0438" }, { word: "ఉంది", ref: "te-0633" }] }
+      - {"target": "శుభ్రత కోసం చెత్తను చెత్తకుండీలో వేయండి.", "reading": "śubhrata kōsam cettanu cettakuṇḍīlō vēyaṇḍi.", "ipa": "ʃubʱrat̪a koːsam tʃet̪t̪anu tʃet̪t̪akuɳɖiːloː ʋeːjaɳɖi", "bases": [{"word": "చెత్తను", "ref": "te-0902"}, {"word": "చెత్తకుండీలో", "ref": "te-4521"}, {"word": "వేయండి", "ref": "te-0837"}, {"word": "కోసం", "base": "కోసం", "reading": "kōsam"}]}
+  - ref: "te-0962"
+  - id: "te-4516"
+    target: "రక్షణ"
+    reading: "rakṣaṇa"
+    ipa: "rakʂaɳa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - {"target": "అడవుల రక్షణ మన బాధ్యత.", "reading": "aḍavula rakṣaṇa mana bādhyata.", "ipa": "aɖaʋula rakʂaɳa mana baːd̪ʱjat̪a", "bases": [{"word": "అడవుల", "ref": "te-0786"}, {"word": "మన", "ref": "te-0127"}]}
+      - { target: "ఈ చెరువుకు రక్షణ గోడ ఉంది.", reading: "ī ceruvuku rakṣaṇa gōḍa undi.", ipa: "iː tʃeruʋuku rakʂaɳa ɡoːɖa und̪i", bases: [{ word: "చెరువుకు", ref: "te-2612" }, { word: "గోడ", ref: "te-2112" }, { word: "ఉంది", ref: "te-0633" }] }
+  - id: "te-4517"
+    target: "సంరక్షణ"
+    reading: "samrakṣaṇa"
+    ipa: "samrakʂaɳa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - {"target": "జంతువుల సంరక్షణ కోసం ఈ అడవిని కాపాడుతున్నారు.", "reading": "jantuvula samrakṣaṇa kōsam ī aḍavini kāpāḍutunnāru.", "ipa": "dʒant̪uʋula samrakʂaɳa koːsam iː aɖaʋini kaːpaːɖut̪unnaːru", "bases": [{"word": "జంతువుల", "ref": "te-4511"}, {"word": "అడవిని", "ref": "te-0786"}, {"word": "కోసం", "base": "కోసం", "reading": "kōsam"}, {"word": "కాపాడుతున్నారు", "base": "కాపాడడం", "reading": "kāpāḍaḍam"}]}
+      - { target: "ఈ అడవి సంరక్షణ ఎవరి బాధ్యత?", reading: "ī aḍavi samrakṣaṇa evari bādhyata?", ipa: "iː aɖaʋi samrakʂaɳa eʋari baːd̪ʱjat̪a" }
+  - id: "te-4518"
+    target: "అవగాహన"
+    reading: "avagāhana"
+    ipa: "aʋaɡaːhana"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ప్రజల్లో ఇప్పుడు మంచి అవగాహన ఉంది.", reading: "prajallō ippuḍu mañci avagāhana undi.", ipa: "pradʒalloː ippuɖu maɲtʃi aʋaɡaːhana und̪i", bases: [{ word: "ప్రజల్లో", ref: "te-3515" }, { word: "ఉంది", ref: "te-0633" }] }
+      - {"target": "పిల్లలకు అవగాహన కలిగించడానికి బొమ్మల పుస్తకం చదివారు.", "reading": "pillalaku avagāhana kaligiñcaḍāniki bommala pustakam cadivāru.", "ipa": "pillalaku aʋaɡaːhana kaliɡiɲtʃaɖaːniki bommala pust̪akam tʃad̪iʋaːru", "bases": [{"word": "బొమ్మల", "ref": "te-0898"}, {"word": "చదివారు", "ref": "te-0638"}, {"word": "పిల్లలకు", "ref": "te-0387"}, {"word": "కలిగించడానికి", "base": "కలిగించడం", "reading": "kaligiñcaḍam"}]}
+  - id: "te-4519"
+    target: "ఇంధనం"
+    reading: "indhanam"
+    ipa: "ind̪ʱanam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ఇంధనాలు", reading: "indhanālu" }] }
+    examples:
+      - { target: "కారులో ఇంధనం ఉంది.", reading: "kārulō indhanam undi.", ipa: "kaːruloː ind̪ʱanam und̪i", bases: [{ word: "కారులో", ref: "te-0879" }, { word: "ఉంది", ref: "te-0633" }] }
+      - {"target": "ఇంధనం ఆదా చేయడం మంచిది.", "reading": "indhanam ādā cēyaḍam mañcidi.", "ipa": "ind̪ʱanam aːd̪aː tʃeːjaɖam maɲtʃid̪i", "bases": [{"word": "చేయడం", "ref": "te-0621"}, {"word": "ఆదా", "base": "ఆదా", "reading": "ādā"}, {"word": "మంచిది", "ref": "te-0500"}]}
+  - id: "te-4527"
+    target: "విద్యుత్తు"
+    reading: "vidyuttu"
+    ipa: "ʋid̪jut̪t̪u"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - {"target": "సౌర విద్యుత్తు ఇంటికి వెలుగు ఇస్తుంది.", "reading": "saura vidyuttu iṇṭiki velugu istundi.", "ipa": "saura ʋid̪jut̪t̪u iɳʈiki ʋeluɡu ist̪und̪i", "bases": [{"word": "ఇంటికి", "ref": "te-0195"}, {"word": "ఇస్తుంది", "ref": "te-0630"}, {"word": "సౌర", "base": "సౌరం", "reading": "sauram"}]}
+      - {"target": "విద్యుత్తు ఆదా చేయడం మన బాధ్యత.", "reading": "vidyuttu ādā cēyaḍam mana bādhyata.", "ipa": "ʋid̪jut̪t̪u aːd̪aː tʃeːjaɖam mana baːd̪ʱjat̪a", "bases": [{"word": "చేయడం", "ref": "te-0621"}, {"word": "ఆదా", "base": "ఆదా", "reading": "ādā"}, {"word": "మన", "ref": "te-0127"}]}
+  - ref: "te-2600"
+  - ref: "te-1903"
+  - ref: "te-2608"
+  - ref: "te-0783"
+  - ref: "te-0794"
+  - ref: "te-2612"
+  - ref: "te-0786"
+  - ref: "te-0784"
+  - ref: "te-2618"
+  - ref: "te-0772"
+  - id: "te-4507"
+    target: "ఎరువు"
+    reading: "eruvu"
+    ipa: "eruʋu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ఎరువులు", reading: "eruvulu" }] }
+    examples:
+      - { target: "రైతు పొలంలో ఎరువు వేస్తాడు.", reading: "raitu polamlō eruvu vēstāḍu.", ipa: "rait̪u polamloː eruʋu ʋeːst̪aːɖu", bases: [{ word: "పొలంలో", ref: "te-0781" }, { word: "వేస్తాడు", ref: "te-0837" }] }
+      - {"target": "ఎరువు వేసిన చెట్లు పెద్దగా ఉన్నాయి.", "reading": "eruvu vēsina ceṭlu peddagā unnāyi.", "ipa": "eruʋu ʋeːsina tʃeʈlu ped̪d̪aɡaː unnaːji", "bases": [{"word": "చెట్లు", "ref": "te-2600"}, {"word": "వేసిన", "ref": "te-0837"}, {"word": "ఉన్నాయి", "ref": "te-0633"}, {"word": "పెద్దగా", "ref": "te-0502"}]}
+  - id: "te-4508"
+    target: "కాలువ"
+    reading: "kāluva"
+    ipa: "kaːluʋa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "కాలువలు", reading: "kāluvalu" }] }
+    examples:
+      - {"target": "కాలువలో చెత్త వేయకండి.", "reading": "kāluvalō cetta vēyakaṇḍi.", "ipa": "kaːluʋaloː tʃet̪t̪a ʋeːjakaɳɖi", "bases": [{"word": "కాలువలో", "base": "కాలువ", "reading": "kāluva"}, {"word": "వేయకండి", "ref": "te-0837"}]}
+      - {"target": "వర్షం పడితే కాలువ నీరు రోడ్డు మీదకు వస్తుంది.", "reading": "varṣam paḍitē kāluva nīru rōḍḍu mīdaku vastundi.", "ipa": "ʋarʂam paɖit̪eː kaːluʋa niːru roːɖɖu miːd̪aku ʋast̪und̪i", "bases": [{"word": "పడితే", "ref": "te-0839"}, {"word": "వస్తుంది", "ref": "te-0623"}, {"word": "మీదకు", "ref": "te-0805"}]}
+    synonyms:
+      - { id: "kulya", word: "కుల్య", reading: "kulya", source: "https://en.wiktionary.org/wiki/కాలువ" }
+  - id: "te-4509"
+    target: "ఉద్యానవనం"
+    reading: "udyānavanam"
+    ipa: "ud̪jaːnaʋanam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ఉద్యానవనాలు", reading: "udyānavanālu" }] }
+    examples:
+      - {"target": "సాయంత్రం మేము ఉద్యానవనానికి వెళ్తాము.", "reading": "sāyantram mēmu udyānavanāniki veḷtāmu.", "ipa": "saːjant̪ram meːmu ud̪jaːnaʋanaːniki ʋeɭt̪aːmu", "bases": [{"word": "ఉద్యానవనానికి", "base": "ఉద్యానవనం", "reading": "udyānavanam"}, {"word": "వెళ్తాము", "ref": "te-0622"}]}
+      - {"target": "ఈ ఉద్యానవనంలో వందల మొక్కలు ఉన్నాయి.", "reading": "ī udyānavanamlō vandala mokkalu unnāyi.", "ipa": "iː ud̪jaːnaʋanamloː ʋand̪ala mokkalu unnaːji", "bases": [{"word": "ఉద్యానవనంలో", "base": "ఉద్యానవనం", "reading": "udyānavanam"}, {"word": "మొక్కలు", "ref": "te-1903"}, {"word": "ఉన్నాయి", "ref": "te-0633"}, {"word": "వందల", "ref": "te-0228"}]}
+  - id: "te-4510"
+    target: "పచ్చదనం"
+    reading: "paccadanam"
+    ipa: "patʃtʃad̪anam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - {"target": "పట్నం చుట్టూ పచ్చదనం పుష్కలంగా ఉంది.", "reading": "paṭnam cuṭṭū paccadanam puṣkalaṅgā undi.", "ipa": "paʈnam tʃuʈʈuː patʃtʃad̪anam puʂkalaŋɡaː und̪i", "bases": [{"word": "ఉంది", "ref": "te-0633"}, {"word": "పుష్కలంగా", "base": "పుష్కలం", "reading": "puṣkalam"}]}
+      - {"target": "పచ్చదనం కళ్ళకు హాయిగా ఉంటుంది.", "reading": "paccadanam kaḷḷaku hāyigā uṇṭundi.", "ipa": "patʃtʃad̪anam kaɭɭaku haːjiɡaː uɳʈund̪i", "bases": [{"word": "ఉంటుంది", "ref": "te-0633"}, {"word": "కళ్ళకు", "ref": "te-0732"}, {"word": "హాయిగా", "base": "హాయి", "reading": "hāyi"}]}
+  - id: "te-4512"
+    target: "పంట"
+    reading: "paṇṭa"
+    ipa: "paɳʈa"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "పంటలు", reading: "paṇṭalu" }] }
+    examples:
+      - { target: "పొలంలో పంట ఇంకా ఉంది.", reading: "polamlō paṇṭa iṅkā undi.", ipa: "polamloː paɳʈa iŋkaː und̪i", bases: [{ word: "పొలంలో", ref: "te-0781" }, { word: "ఉంది", ref: "te-0633" }] }
+      - {"target": "మంచి పంట కోసం సమయానికి నీళ్ళు పెట్టాలి.", "reading": "mañci paṇṭa kōsam samayāniki nīḷḷu peṭṭāli.", "ipa": "maɲtʃi paɳʈa koːsam samajaːniki niːɭɭu peʈʈaːli", "bases": [{"word": "పెట్టాలి", "ref": "te-0830"}, {"word": "కోసం", "base": "కోసం", "reading": "kōsam"}, {"word": "సమయానికి", "ref": "te-0057"}]}
+  - id: "te-4513"
+    target: "జీవి"
+    reading: "jīvi"
+    ipa: "dʒiːʋi"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "జీవులు", reading: "jīvulu" }] }
+    examples:
+      - {"target": "భూమి మీద లక్షల జీవులు ఉన్నాయి.", "reading": "bhūmi mīda lakṣala jīvulu unnāyi.", "ipa": "bʱuːmi miːd̪a lakʂala dʒiːʋulu unnaːji", "bases": [{"word": "జీవులు", "base": "జీవి", "reading": "jīvi"}, {"word": "ఉన్నాయి", "ref": "te-0633"}, {"word": "లక్షల", "ref": "te-0230"}]}
+      - {"target": "ప్రతి జీవికి గాలి, నీరు అవసరం.", "reading": "prati jīviki gāli, nīru avasaram.", "ipa": "prat̪i dʒiːʋiki ɡaːli niːru aʋasaram", "bases": [{"word": "జీవికి", "base": "జీవి", "reading": "jīvi"}]}
+  - id: "te-4511"
+    target: "జంతువు"
+    reading: "jantuvu"
+    ipa: "dʒant̪uʋu"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "జంతువులు", reading: "jantuvulu" }] }
+    examples:
+      - {"target": "అడవిలో అనేక జంతువులు ఉంటాయి.", "reading": "aḍavilō anēka jantuvulu uṇṭāyi.", "ipa": "aɖaʋiloː aneːka dʒant̪uʋulu uɳʈaːji", "bases": [{"word": "అడవిలో", "ref": "te-0786"}, {"word": "జంతువులు", "base": "జంతువు", "reading": "jantuvu"}, {"word": "ఉంటాయి", "ref": "te-0633"}, {"word": "అనేక", "base": "అనేకం", "reading": "anēkam"}]}
+      - {"target": "ఆ జంతువును దూరం నుంచి చూడండి.", "reading": "ā jantuvunu dūram nuñci cūḍaṇḍi.", "ipa": "aː dʒant̪uʋunu d̪uːram nuɲtʃi tʃuːɖaɳɖi", "bases": [{"word": "జంతువును", "base": "జంతువు", "reading": "jantuvu"}, {"word": "చూడండి", "ref": "te-0626"}, {"word": "నుంచి", "base": "నుంచి", "reading": "nuñci"}]}
+  - ref: "te-0995"
+  - ref: "te-1009"
+  - id: "te-4522"
+    target: "వన్యప్రాణి"
+    reading: "vanyaprāṇi"
+    ipa: "ʋanjapraːɳi"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "వన్యప్రాణులు", reading: "vanyaprāṇulu" }] }
+    examples:
+      - {"target": "ఈ అడవిలో అరుదైన వన్యప్రాణులు ఉన్నాయి.", "reading": "ī aḍavilō arudaina vanyaprāṇulu unnāyi.", "ipa": "iː aɖaʋiloː arud̪aina ʋanjapraːɳulu unnaːji", "bases": [{"word": "అడవిలో", "ref": "te-0786"}, {"word": "వన్యప్రాణులు", "base": "వన్యప్రాణి", "reading": "vanyaprāṇi"}, {"word": "ఉన్నాయి", "ref": "te-0633"}, {"word": "అరుదైన", "base": "అరుదు", "reading": "arudu"}]}
+      - {"target": "వన్యప్రాణుల వల్ల పర్యాటకులు ఎక్కువ మంది వస్తారు.", "reading": "vanyaprāṇula valla paryāṭakulu ekkuva mandi vastāru.", "ipa": "ʋanjapraːɳula ʋalla parjaːʈakulu ekkuʋa mand̪i ʋast̪aːru", "bases": [{"word": "వన్యప్రాణుల", "base": "వన్యప్రాణి", "reading": "vanyaprāṇi"}, {"word": "వస్తారు", "ref": "te-0623"}, {"word": "వల్ల", "base": "వల్ల", "reading": "valla"}, {"word": "పర్యాటకులు", "base": "పర్యాటకుడు", "reading": "paryāṭakuḍu"}, {"word": "మంది", "base": "మంది", "reading": "mandi"}]}
+  - id: "te-4523"
+    target: "వనరు"
+    reading: "vanaru"
+    ipa: "ʋanaru"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "వనరులు", reading: "vanarulu" }] }
+    examples:
+      - { target: "నీరు ఒక ముఖ్యమైన వనరు.", reading: "nīru oka mukhyamaina vanaru.", ipa: "niːru oka mukʰjamaina ʋanaru" }
+      - {"target": "సహజ వనరులను జాగ్రత్తగా వాడాలి.", "reading": "sahaja vanarulanu jāgrattagā vāḍāli.", "ipa": "sahadʒa ʋanarulanu dʒaːɡrat̪t̪aɡaː ʋaːɖaːli", "bases": [{"word": "వనరులను", "base": "వనరు", "reading": "vanaru"}, {"word": "వాడాలి", "ref": "te-2327"}, {"word": "సహజ", "base": "సహజం", "reading": "sahajam"}, {"word": "జాగ్రత్తగా", "base": "జాగ్రత్త", "reading": "jāgratta"}]}
+  - id: "te-4524"
+    target: "ఖనిజం"
+    reading: "khanijam"
+    ipa: "kʰanidʒam"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ఖనిజాలు", reading: "khanijālu" }] }
+    examples:
+      - {"target": "ఈ కొండలో విలువైన ఖనిజాలు ఉన్నాయి.", "reading": "ī koṇḍalō viluvaina khanijālu unnāyi.", "ipa": "iː koɳɖaloː ʋiluʋaina kʰanidʒaːlu unnaːji", "bases": [{"word": "కొండలో", "ref": "te-0785"}, {"word": "ఖనిజాలు", "base": "ఖనిజం", "reading": "khanijam"}, {"word": "ఉన్నాయి", "ref": "te-0633"}, {"word": "విలువైన", "ref": "te-3607"}]}
+      - {"target": "ఈ నేలలో ఇనుప ఖనిజం ఎక్కువగా ఉంది.", "reading": "ī nēlalō inupa khanijam ekkuvagā undi.", "ipa": "iː neːlaloː inupa kʰanidʒam ekkuʋaɡaː und̪i", "bases": [{"word": "నేలలో", "ref": "te-2610"}, {"word": "ఉంది", "ref": "te-0633"}, {"word": "ఇనుప", "base": "ఇనుము", "reading": "inumu"}]}
+  - id: "te-4515"
+    target: "ఉద్గారం"
+    reading: "udgāram"
+    ipa: "ud̪ɡaːram"
+    pos: "noun"
+    gender: "amahat"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ఉద్గారాలు", reading: "udgārālu" }] }
+    examples:
+      - {"target": "కర్మాగారాల ఉద్గారాలు ఎక్కువగా ఉన్నాయి.", "reading": "karmāgārāla udgārālu ekkuvagā unnāyi.", "ipa": "karmaːɡaːraːla ud̪ɡaːraːlu ekkuʋaɡaː unnaːji", "bases": [{"word": "కర్మాగారాల", "ref": "te-0788"}, {"word": "ఉద్గారాలు", "base": "ఉద్గారం", "reading": "udgāram"}, {"word": "ఉన్నాయి", "ref": "te-0633"}]}
+      - {"target": "కార్ల ఉద్గారాలను తగ్గించడానికి సైకిల్ వాడండి.", "reading": "kārla udgārālanu taggiñcaḍāniki saikil vāḍaṇḍi.", "ipa": "kaːrla ud̪ɡaːraːlanu t̪aɡɡiɲtʃaɖaːniki saikil ʋaːɖaɳɖi", "bases": [{"word": "కార్ల", "ref": "te-0879"}, {"word": "ఉద్గారాలను", "base": "ఉద్గారం", "reading": "udgāram"}, {"word": "వాడండి", "ref": "te-2327"}, {"word": "తగ్గించడానికి", "ref": "te-1402"}]}
+  - ref: "te-3511"
+  - ref: "te-3512"

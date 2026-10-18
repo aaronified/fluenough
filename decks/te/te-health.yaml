@@ -1,0 +1,881 @@
+"schema": 1
+"id": "te-health"
+"part": "core"
+"kind": "vocab"
+"language":
+  "code": "te"
+  "iso639_3": "tel"
+  "name": "Telugu"
+  "script": "telugu"
+  "tts": "te-IN"
+  "icon": "తె"
+"license": "CC-BY-SA-4.0"
+"authors":
+  - "name": "Fluenough contributors"
+"theme": "health"
+"tags":
+  - "beginner"
+  - "unreviewed"
+"cards":
+  - ref: "te-0366"
+  - ref: "te-0368"
+  - ref: "te-0367"
+  - id: "te-3200"
+    "target": "వైద్యుడు"
+    "reading": "vaidyuḍu"
+    "pos": "noun"
+    "gender": "mahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "వైద్యుడు ఇప్పుడు వస్తారు."
+        "reading": "vaidyuḍu ippuḍu vastāru."
+        "bases":
+          - { word: "ఇప్పుడు", base: "ఇప్పుడు", reading: "ippuḍu" }
+          - { word: "వస్తారు", base: "రావడం", reading: "rāvaḍaṁ" }
+      - "target": "మా వైద్యుడు చాలా మంచివారు."
+        "reading": "mā vaidyuḍu cālā mañcivāru."
+        "bases":
+          - { word: "మా", base: "మేము", reading: "mēmu" }
+          - { word: "చాలా", base: "చాలా", reading: "cālā" }
+          - { word: "మంచివారు", base: "మంచి", reading: "mañci" }
+    ipa: "ʋaid̪juɖu"
+    synonyms:
+      - { id: "cikitsakudu", word: "చికిత్సకుడు", reading: "cikitsakuḍu", source: "https://en.wiktionary.org/wiki/వైద్యుడు" }
+      - { id: "vejja", word: "వెజ్జ", reading: "vejja", source: "https://en.wiktionary.org/wiki/వైద్యుడు" }
+    antonyms:
+      - { id: "vaidyuralu", word: "వైద్యురాలు", reading: "vaidyurālu", source: "https://en.wiktionary.org/wiki/వైద్యుడు" }
+  - id: "te-3201"
+    "target": "దంతవైద్యుడు"
+    "reading": "dantavaidyuḍu"
+    "pos": "noun"
+    "gender": "mahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "దంతవైద్యుడు నా పంటిని చూశారు."
+        "reading": "dantavaidyuḍu nā paṇṭini cūśāru."
+        "bases":
+          - { word: "నా", base: "నేను", reading: "nēnu" }
+          - { word: "పంటిని", ref: "te-0736" }
+          - { word: "చూశారు", base: "చూడడం", reading: "cūḍaḍaṁ" }
+      - "target": "ప్రతి ఆరు నెలలకు దంతవైద్యుడిని కలవండి."
+        "reading": "prati āru nelalaku dantavaidyuḍini kalavaṇḍi."
+        "bases":
+          - { word: "ప్రతి", base: "ప్రతి", reading: "prati" }
+          - { word: "ఆరు", base: "ఆరు", reading: "āru" }
+          - { word: "నెలలకు", base: "నెల", reading: "nela" }
+          - { word: "దంతవైద్యుడిని", base: "దంతవైద్యుడు", reading: "dantavaidyuḍu" }
+          - { word: "కలవండి", base: "కలవడం", reading: "kalavaḍaṁ" }
+    ipa: "d̪an̪t̪aʋaid̪juɖu"
+  - id: "te-3202"
+    "target": "అంబులెన్స్"
+    "reading": "ambulens"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "అంబులెన్స్ వచ్చింది."
+        "reading": "ambulens vaccindi."
+        "bases":
+          - { word: "వచ్చింది", base: "రావడం", reading: "rāvaḍaṁ" }
+      - "target": "అంబులెన్స్ ఎక్కడ ఉంది?"
+        "reading": "ambulens ekkaḍa undi?"
+        "bases":
+          - { word: "ఎక్కడ", base: "ఎక్కడ", reading: "ekkaḍa" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+  - id: "te-3203"
+    "target": "అత్యవసరం"
+    "reading": "atyavasaraṁ"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "ఏదైనా అత్యవసరం అయితే ఫోన్ చేయండి."
+        "reading": "ēdainā atyavasaraṁ ayitē phōn cēyaṇḍi."
+        "bases":
+          - { word: "ఏదైనా", base: "ఏదైనా", reading: "ēdainā" }
+          - { word: "అయితే", base: "అవడం", reading: "avaḍaṁ" }
+          - { word: "ఫోన్", base: "ఫోన్", reading: "phōn" }
+          - { word: "చేయండి", base: "చేయడం", reading: "cēyaḍaṁ" }
+      - "target": "అత్యవసర గదిలో చాలా సేపు ఎదురుచూశాను."
+        "reading": "atyavasara gadilō cālā sēpu edurucūśānu."
+        "bases":
+          - { word: "అత్యవసర", base: "అత్యవసరం", reading: "atyavasaraṁ" }
+          - { word: "గదిలో", base: "గది", reading: "gadi" }
+          - { word: "చాలా", base: "చాలా", reading: "cālā" }
+          - { word: "సేపు", base: "సేపు", reading: "sēpu" }
+          - { word: "ఎదురుచూశాను", base: "ఎదురుచూడడం", reading: "edurucūḍaṁ" }
+  - id: "te-3204"
+    "target": "టీకా"
+    "reading": "ṭīkā"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "నాకు టీకా ఇచ్చారు."
+        "reading": "nāku ṭīkā iccāru."
+        "bases":
+          - { word: "నాకు", base: "నేను", reading: "nēnu" }
+          - { word: "ఇచ్చారు", base: "ఇవ్వడం", reading: "ivvaḍaṁ" }
+      - "target": "టీకా తీసుకోవడం మంచిది."
+        "reading": "ṭīkā tīsukōvaḍaṁ mañcidi."
+        "bases":
+          - { word: "తీసుకోవడం", ref: "te-0631" }
+          - { word: "మంచిది", base: "మంచి", reading: "mañci" }
+  - id: "te-3205"
+    "target": "బీమా"
+    "reading": "bīmā"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "నా బీమా ఈ ఆసుపత్రిలో పనిచేస్తుందా?"
+        "reading": "nā bīmā ī āsupatrilō panicēstundā?"
+        "bases":
+          - { word: "నా", base: "నేను", reading: "nēnu" }
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "ఆసుపత్రిలో", ref: "te-0366" }
+          - { word: "పనిచేస్తుందా", base: "పనిచేయడం", reading: "panicēyaḍaṁ" }
+      - "target": "బీమా కార్డు ఇంట్లో మర్చిపోయాను."
+        "reading": "bīmā kārḍu iṇṭlō marcipōyānu."
+        "bases":
+          - { word: "కార్డు", base: "కార్డు", reading: "kārḍu" }
+          - { word: "ఇంట్లో", base: "ఇల్లు", reading: "illu" }
+          - { word: "మర్చిపోయాను", base: "మర్చిపోవడం", reading: "marcipōvaḍaṁ" }
+  - id: "te-3206"
+    "target": "ఆహారం"
+    "reading": "āhāraṁ"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "సమతుల్య ఆహారం శరీరానికి మేలు చేస్తుంది."
+        "reading": "samatulya āhāraṁ śarīrāniki mēlu cēstundi."
+        "bases":
+          - { word: "సమతుల్య", base: "సమతుల్య", reading: "samatulya" }
+          - { word: "శరీరానికి", ref: "te-0728" }
+          - { word: "మేలు", base: "మేలు", reading: "mēlu" }
+          - { word: "చేస్తుంది", base: "చేయడం", reading: "cēyaḍaṁ" }
+      - "target": "ఎక్కువ కూరగాయలు తినండి."
+        "reading": "ekkuva kūragāyalu tinaṇḍi."
+        "bases":
+          - { word: "ఎక్కువ", base: "ఎక్కువ", reading: "ekkuva" }
+          - { word: "కూరగాయలు", base: "కూరగాయ", reading: "kūragāya" }
+          - { word: "తినండి", ref: "te-0624" }
+  - id: "te-3207"
+    "target": "విటమిన్"
+    "reading": "viṭamin"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "రోజూ విటమిన్ మాత్ర తీసుకుంటాను."
+        "reading": "rōjū viṭamin mātra tīsukuṇṭānu."
+        "bases":
+          - { word: "రోజూ", base: "రోజు", reading: "rōju" }
+          - { word: "మాత్ర", ref: "te-1511" }
+          - { word: "తీసుకుంటాను", ref: "te-0631" }
+      - "target": "ఈ విటమిన్లు పిల్లలకు మంచివి."
+        "reading": "ī viṭaminlu pillalaku mañcivi."
+        "bases":
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "విటమిన్లు", base: "విటమిన్", reading: "viṭamin" }
+          - { word: "పిల్లలకు", base: "పిల్లవాడు", reading: "pillavāḍu" }
+          - { word: "మంచివి", base: "మంచి", reading: "mañci" }
+  - id: "te-3208"
+    "target": "ధూమపానం"
+    "reading": "dhūmapānaṁ"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "ధూమపానం ఆరోగ్యానికి హానికరం."
+        "reading": "dhūmapānaṁ ārōgyāniki hānikaraṁ."
+        "bases":
+          - { word: "ఆరోగ్యానికి", ref: "te-1508" }
+          - { word: "హానికరం", base: "హానికరం", reading: "hānikaraṁ" }
+      - "target": "అతను ధూమపానం మానేశాడు."
+        "reading": "atanu dhūmapānaṁ mānēśāḍu."
+        "bases":
+          - { word: "అతను", base: "అతడు", reading: "ataḍu" }
+          - { word: "మానేశాడు", ref: "te-3233" }
+  - id: "te-3209"
+    "target": "సిగరెట్"
+    "reading": "sigareṭ"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "ఈ సిగరెట్ చాలా ఖరీదు."
+        "reading": "ī sigareṭ cālā kharīdu."
+        "bases":
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "చాలా", base: "చాలా", reading: "cālā" }
+          - { word: "ఖరీదు", base: "ఖరీదు", reading: "kharīdu" }
+      - "target": "సిగరెట్ తాగడం ఆపేయాలి."
+        "reading": "sigareṭ tāgaḍaṁ āpēyāli."
+        "bases":
+          - { word: "తాగడం", ref: "te-0625" }
+          - { word: "ఆపేయాలి", ref: "te-0840" }
+  - id: "te-3210"
+    "target": "మద్యం"
+    "reading": "madyaṁ"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "డాక్టర్ మద్యం తాగవద్దని చెప్పారు."
+        "reading": "ḍākṭar madyaṁ tāgavaddani ceppāru."
+        "bases":
+          - { word: "డాక్టర్", base: "డాక్టర్", reading: "ḍākṭar" }
+          - { word: "తాగవద్దని", ref: "te-0625" }
+          - { word: "చెప్పారు", base: "చెప్పడం", reading: "ceppaḍaṁ" }
+      - "target": "రాత్రిపూట మద్యం తాగితే నిద్ర సరిగా పట్టదు."
+        "reading": "rātripūṭa madyaṁ tāgitē nidra sarigā paṭṭadu."
+        "bases":
+          - { word: "రాత్రిపూట", base: "రాత్రి", reading: "rātri" }
+          - { word: "తాగితే", ref: "te-0625" }
+          - { word: "నిద్ర", ref: "te-0968" }
+          - { word: "సరిగా", base: "సరిగా", reading: "sariga" }
+          - { word: "పట్టదు", base: "పట్టడం", reading: "paṭṭaḍaṁ" }
+  - id: "te-3211"
+    "target": "రక్తపోటు"
+    "reading": "raktapōṭu"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "నా రక్తపోటు ఈ రోజు ఎక్కువగా ఉంది."
+        "reading": "nā raktapōṭu ī rōju ekkuvagā undi."
+        "bases":
+          - { word: "నా", base: "నేను", reading: "nēnu" }
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "రోజు", base: "రోజు", reading: "rōju" }
+          - { word: "ఎక్కువగా", base: "ఎక్కువ", reading: "ekkuva" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - "target": "రక్తపోటు తగ్గించడానికి ఉప్పు తక్కువ తినండి."
+        "reading": "raktapōṭu taggiñcaḍāniki uppu takkuva tinaṇḍi."
+        "bases":
+          - { word: "తగ్గించడానికి", ref: "te-1402" }
+          - { word: "ఉప్పు", ref: "te-0696" }
+          - { word: "తక్కువ", base: "తక్కువ", reading: "takkuva" }
+          - { word: "తినండి", ref: "te-0624" }
+  - id: "te-3212"
+    "target": "మధుమేహం"
+    "reading": "madhumēhaṁ"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "అమ్మకు మధుమేహం ఉంది."
+        "reading": "ammaku madhumēhaṁ undi."
+        "bases":
+          - { word: "అమ్మకు", base: "అమ్మ", reading: "amma" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - "target": "మధుమేహం ఉన్నవారు చక్కెర తక్కువ తినాలి."
+        "reading": "madhumēhaṁ unnavāru cakkera takkuva tinali."
+        "bases":
+          - { word: "ఉన్నవారు", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+          - { word: "చక్కెర", ref: "te-1612" }
+          - { word: "తక్కువ", base: "తక్కువ", reading: "takkuva" }
+          - { word: "తినాలి", base: "తినడం", reading: "tinaḍaṁ" }
+  - id: "te-3213"
+    "target": "అలెర్జీ"
+    "reading": "alerjī"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "నాకు పాలంటే అలెర్జీ."
+        "reading": "nāku pālaṇṭē alerjī."
+        "bases":
+          - { word: "నాకు", base: "నేను", reading: "nēnu" }
+          - { word: "పాలంటే", base: "పాలు", reading: "pālu" }
+      - "target": "ఈ మందుకు అలెర్జీ ఉందా?"
+        "reading": "ī mandaku alerjī undā?"
+        "bases":
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "మందుకు", ref: "te-0367" }
+          - { word: "ఉందా", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+  - id: "te-3214"
+    "target": "కట్టు"
+    "reading": "kaṭṭu"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "గాయానికి కట్టు కట్టండి."
+        "reading": "gāyāniki kaṭṭu kaṭṭaṇḍi."
+        "bases":
+          - { word: "గాయానికి", ref: "te-1540" }
+          - { word: "కట్టండి", base: "కట్టడం", reading: "kaṭṭaḍaṁ" }
+      - "target": "మందుల దుకాణంలో కట్టు దొరుకుతుందా?"
+        "reading": "mandula dukāṇaṁlō kaṭṭu dorakutundā?"
+        "bases":
+          - { word: "మందుల", ref: "te-0367" }
+          - { word: "దుకాణంలో", base: "దుకాణం", reading: "dukāṇaṁ" }
+          - { word: "దొరుకుతుందా", base: "దొరకడం", reading: "dorakaḍaṁ" }
+    ipa: "kaʈːu"
+    synonyms:
+      - { id: "bandhamu", word: "బంధము", reading: "bandhamu", source: "https://en.wiktionary.org/wiki/కట్టు" }
+    senses:
+      - { id: "tie", pos: "noun", source: "https://en.wiktionary.org/wiki/కట్టు" }
+      - { id: "water", pos: "noun", source: "https://en.wiktionary.org/wiki/కట్టు" }
+  - id: "te-3215"
+    "target": "ప్లాస్టర్"
+    "reading": "plāsṭar"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "కాలికి ప్లాస్టర్ వేశారు."
+        "reading": "kāliki plāsṭar vēśāru."
+        "bases":
+          - { word: "కాలికి", ref: "te-0747" }
+          - { word: "వేశారు", base: "వేయడం", reading: "vēyaḍaṁ" }
+      - "target": "ప్లాస్టర్ ఎన్ని రోజులు ఉంచాలి?"
+        "reading": "plāsṭar enni rōjulu uñcāli?"
+        "bases":
+          - { word: "ఎన్ని", base: "ఎన్ని", reading: "enni" }
+          - { word: "రోజులు", base: "రోజు", reading: "rōju" }
+          - { word: "ఉంచాలి", base: "ఉంచడం", reading: "uñcaḍaṁ" }
+  - id: "te-3216"
+    "target": "లేపనం"
+    "reading": "lēpanaṁ"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "రోజుకు రెండుసార్లు ఈ లేపనం రాయండి."
+        "reading": "rōjuku reṇḍusārlu ī lēpanaṁ rāyaṇḍi."
+        "bases":
+          - { word: "రోజుకు", base: "రోజు", reading: "rōju" }
+          - { word: "రెండుసార్లు", base: "రెండుసార్లు", reading: "reṇḍusārlu" }
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "రాయండి", base: "రాయడం", reading: "rāyaḍaṁ" }
+      - "target": "లేపనం చర్మంపై మాత్రమే రాయాలి."
+        "reading": "lēpanaṁ carmaṁpai mātramē rāyāli."
+        "bases":
+          - { word: "చర్మంపై", ref: "te-0750" }
+          - { word: "మాత్రమే", base: "మాత్రమే", reading: "mātramē" }
+          - { word: "రాయాలి", base: "రాయడం", reading: "rāyaḍaṁ" }
+  - id: "te-3217"
+    "target": "థర్మామీటర్"
+    "reading": "thermāmīṭar"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "థర్మామీటర్ పెట్టి జ్వరం చూడండి."
+        "reading": "thermāmīṭar peṭṭi jvaraṁ cūḍaṇḍi."
+        "bases":
+          - { word: "పెట్టి", base: "పెట్టడం", reading: "peṭṭaḍaṁ" }
+          - { word: "జ్వరం", ref: "te-1500" }
+          - { word: "చూడండి", base: "చూడడం", reading: "cūḍaḍaṁ" }
+      - "target": "థర్మామీటర్ ఎంత వేడి చూపిస్తోంది?"
+        "reading": "thermāmīṭar enta vēḍi cūpistōndi?"
+        "bases":
+          - { word: "ఎంత", base: "ఎంత", reading: "enta" }
+          - { word: "వేడి", base: "వేడి", reading: "vēḍi" }
+          - { word: "చూపిస్తోంది", base: "చూపించడం", reading: "cūpiñcaḍaṁ" }
+  - id: "te-3218"
+    "target": "శస్త్రచికిత్స"
+    "reading": "śastracikitsa"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "ఆయనకు శస్త్రచికిత్స జరిగింది."
+        "reading": "āyanaku śastracikitsa jarigindi."
+        "bases":
+          - { word: "ఆయనకు", base: "ఆయన", reading: "āyana" }
+          - { word: "జరిగింది", base: "జరగడం", reading: "jaragaḍaṁ" }
+      - "target": "శస్త్రచికిత్స తర్వాత కొన్ని రోజులు విశ్రాంతి తీసుకోవాలి."
+        "reading": "śastracikitsa tarvāta konni rōjulu viśrāṁti tīsukōvāli."
+        "bases":
+          - { word: "తర్వాత", base: "తర్వాత", reading: "tarvāta" }
+          - { word: "కొన్ని", base: "కొన్ని", reading: "konni" }
+          - { word: "రోజులు", base: "రోజు", reading: "rōju" }
+          - { word: "విశ్రాంతి", ref: "te-1518" }
+          - { word: "తీసుకోవాలి", ref: "te-0631" }
+    synonyms:
+      - { id: "astracikitsa", word: "అస్త్రచికిత్స", reading: "astracikitsa", source: "https://en.wiktionary.org/wiki/శస్త్రచికిత్స" }
+  - id: "te-3219"
+    "target": "యోగా"
+    "reading": "yōgā"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "ఉదయం యోగా చేస్తాను."
+        "reading": "udayaṁ yōgā cēstānu."
+        "bases":
+          - { word: "ఉదయం", base: "ఉదయం", reading: "udayaṁ" }
+          - { word: "చేస్తాను", base: "చేయడం", reading: "cēyaḍaṁ" }
+      - "target": "యోగా వల్ల నా ఒత్తిడి తగ్గింది."
+        "reading": "yōgā valla nā ottiḍi taggindi."
+        "bases":
+          - { word: "వల్ల", base: "వల్ల", reading: "valla" }
+          - { word: "నా", base: "నేను", reading: "nēnu" }
+          - { word: "ఒత్తిడి", ref: "te-3222" }
+          - { word: "తగ్గింది", ref: "te-1531" }
+  - id: "te-3220"
+    "target": "ఊపిరి"
+    "reading": "ūpiri"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "పొగ వల్ల ఊపిరి తీసుకోవడం కష్టమైంది."
+        "reading": "poga valla ūpiri tīsukōvaḍaṁ kaṣṭamaindi."
+        "bases":
+          - { word: "పొగ", base: "పొగ", reading: "poga" }
+          - { word: "వల్ల", base: "వల్ల", reading: "valla" }
+          - { word: "తీసుకోవడం", ref: "te-0631" }
+          - { word: "కష్టమైంది", base: "కష్టం", reading: "kaṣṭaṁ" }
+      - "target": "నాకు ఊపిరి ఆడటం లేదు."
+        "reading": "nāku ūpiri āḍaṭaṁ lēdu."
+        "bases":
+          - { word: "నాకు", base: "నేను", reading: "nēnu" }
+          - { word: "ఆడటం", base: "ఆడడం", reading: "āḍaḍaṁ" }
+          - { word: "లేదు", base: "లేదు", reading: "lēdu" }
+    ipa: "uːpiɾi"
+    synonyms:
+      - { id: "usuru", word: "ఉసురు", reading: "usuru", source: "https://en.wiktionary.org/wiki/ఊపిరి" }
+      - { id: "pranamu", word: "ప్రాణము", reading: "prāṇamu", source: "https://en.wiktionary.org/wiki/ఊపిరి" }
+  - id: "te-3221"
+    "target": "చెమట"
+    "reading": "cemaṭa"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "ఎండలో నడిస్తే ముఖమంతా చెమట."
+        "reading": "eṇḍalō naḍistē mukhamantā cemaṭa."
+        "bases":
+          - { word: "ఎండలో", base: "ఎండ", reading: "eṇḍa" }
+          - { word: "నడిస్తే", ref: "te-0636" }
+          - { word: "ముఖమంతా", ref: "te-0731" }
+      - "target": "అతని నుదురు చెమటతో తడిసింది."
+        "reading": "atani nuduru cemaṭatō taḍisindi."
+        "bases":
+          - { word: "అతని", base: "అతడు", reading: "ataḍu" }
+          - { word: "చెమటతో", base: "చెమట", reading: "cemaṭa" }
+          - { word: "తడిసింది", base: "తడవడం", reading: "taḍavaḍaṁ" }
+    synonyms:
+      - { id: "sramajalamu", word: "శ్రమజలము", reading: "śramajalamu", source: "https://en.wiktionary.org/wiki/చెమట" }
+      - { id: "svedamu", word: "స్వేదము", reading: "svēdamu", source: "https://en.wiktionary.org/wiki/చెమట" }
+  - id: "te-3222"
+    "target": "ఒత్తిడి"
+    "reading": "ottiḍi"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "పని ఒత్తిడి ఎక్కువగా ఉంది."
+        "reading": "pani ottiḍi ekkuvagā undi."
+        "bases":
+          - { word: "పని", base: "పని", reading: "pani" }
+          - { word: "ఎక్కువగా", base: "ఎక్కువ", reading: "ekkuva" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - "target": "ఒత్తిడి తగ్గించుకోవడానికి నడవండి."
+        "reading": "ottiḍi taggiñcukōvaḍāniki naḍavaṇḍi."
+        "bases":
+          - { word: "తగ్గించుకోవడానికి", base: "తగ్గించుకోవడం", reading: "taggiñcukōvaḍaṁ" }
+          - { word: "నడవండి", ref: "te-0636" }
+  - id: "te-3223"
+    "target": "నడక"
+    "reading": "naḍaka"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "ప్రతి రోజు ఉదయం నడక చేయండి."
+        "reading": "prati rōju udayaṁ naḍaka cēyaṇḍi."
+        "bases":
+          - { word: "ప్రతి", base: "ప్రతి", reading: "prati" }
+          - { word: "రోజు", base: "రోజు", reading: "rōju" }
+          - { word: "ఉదయం", base: "ఉదయం", reading: "udayaṁ" }
+          - { word: "చేయండి", base: "చేయడం", reading: "cēyaḍaṁ" }
+      - "target": "నడక తర్వాత నాకు ఆకలి వేస్తుంది."
+        "reading": "naḍaka tarvāta nāku ākali vēstundi."
+        "bases":
+          - { word: "తర్వాత", base: "తర్వాత", reading: "tarvāta" }
+          - { word: "నాకు", base: "నేను", reading: "nēnu" }
+          - { word: "ఆకలి", base: "ఆకలి", reading: "ākali" }
+          - { word: "వేస్తుంది", base: "వేయడం", reading: "vēyaḍaṁ" }
+    ipa: "naɖaka"
+    senses:
+      - { id: "walk", pos: "noun", source: "https://en.wiktionary.org/wiki/నడక" }
+      - { id: "gait", pos: "noun", source: "https://en.wiktionary.org/wiki/నడక" }
+  - id: "te-3224"
+    "target": "స్నానం"
+    "reading": "snānaṁ"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "వేడి నీళ్లతో స్నానం చేశాను."
+        "reading": "vēḍi nīḷḷatō snānaṁ cēśānu."
+        "bases":
+          - { word: "వేడి", base: "వేడి", reading: "vēḍi" }
+          - { word: "నీళ్లతో", ref: "te-1132" }
+          - { word: "చేశాను", base: "చేయడం", reading: "cēyaḍaṁ" }
+      - "target": "రోజూ స్నానం చేస్తే తాజాగా ఉంటుంది."
+        "reading": "rōjū snānaṁ cēstē tājāgā uṇṭundi."
+        "bases":
+          - { word: "రోజూ", base: "రోజు", reading: "rōju" }
+          - { word: "చేస్తే", base: "చేయడం", reading: "cēyaḍaṁ" }
+          - { word: "తాజాగా", base: "తాజాగా", reading: "tājāgā" }
+          - { word: "ఉంటుంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+  - id: "te-3225"
+    "target": "పౌష్టికాహారం"
+    "reading": "pauṣṭikāhāraṁ"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "పిల్లలకు పౌష్టికాహారం అవసరం."
+        "reading": "pillalaku pauṣṭikāhāraṁ avasaraṁ."
+        "bases":
+          - { word: "పిల్లలకు", base: "పిల్లవాడు", reading: "pillavāḍu" }
+          - { word: "అవసరం", base: "అవసరం", reading: "avasaraṁ" }
+      - "target": "పప్పు, కూరగాయలు పౌష్టికాహారంలో భాగం."
+        "reading": "pappu, kūragāyalu pauṣṭikāhāraṁlō bhāgaṁ."
+        "bases":
+          - { word: "పప్పు", base: "పప్పు", reading: "pappu" }
+          - { word: "కూరగాయలు", base: "కూరగాయ", reading: "kūragāya" }
+          - { word: "పౌష్టికాహారంలో", base: "పౌష్టికాహారం", reading: "pauṣṭikāhāraṁ" }
+          - { word: "భాగం", base: "భాగం", reading: "bhāgaṁ" }
+  - id: "te-3226"
+    "target": "జబ్బు"
+    "reading": "jabbu"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "నాకు ఏదో జబ్బు చేసింది."
+        "reading": "nāku ēdō jabbu cēsindi."
+        "bases":
+          - { word: "నాకు", base: "నేను", reading: "nēnu" }
+          - { word: "ఏదో", base: "ఏదో", reading: "ēdō" }
+          - { word: "చేసింది", base: "చేయడం", reading: "cēyaḍaṁ" }
+      - "target": "ఈ జబ్బు ఎంత కాలం ఉంటుంది?"
+        "reading": "ī jabbu enta kālaṁ uṇṭundi?"
+        "bases":
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "ఎంత", base: "ఎంత", reading: "enta" }
+          - { word: "కాలం", base: "కాలం", reading: "kālaṁ" }
+          - { word: "ఉంటుంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+    senses:
+      - { id: "disease", pos: "noun", source: "https://en.wiktionary.org/wiki/జబ్బు" }
+      - { id: "weakness", pos: "noun", source: "https://en.wiktionary.org/wiki/జబ్బు" }
+  - id: "te-3227"
+    "target": "బలం"
+    "reading": "balaṁ"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "కొంచెం విశ్రాంతి తర్వాత బలం వచ్చింది."
+        "reading": "koñceṁ viśrāṁti tarvāta balaṁ vaccindi."
+        "bases":
+          - { word: "కొంచెం", base: "కొంచెం", reading: "koñceṁ" }
+          - { word: "విశ్రాంతి", ref: "te-1518" }
+          - { word: "తర్వాత", base: "తర్వాత", reading: "tarvāta" }
+          - { word: "వచ్చింది", base: "రావడం", reading: "rāvaḍaṁ" }
+      - "target": "అతనికి బలం లేదు."
+        "reading": "ataniki balaṁ lēdu."
+        "bases":
+          - { word: "అతనికి", base: "అతడు", reading: "ataḍu" }
+          - { word: "లేదు", base: "లేదు", reading: "lēdu" }
+  - id: "te-3228"
+    "target": "ఉపవాసం"
+    "reading": "upavāsaṁ"
+    "pos": "noun"
+    "gender": "amahat"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "డాక్టర్ సలహాతో ఉపవాసం చేస్తున్నాను."
+        "reading": "ḍākṭar salahātō upavāsaṁ cēstunnānu."
+        "bases":
+          - { word: "డాక్టర్", base: "డాక్టర్", reading: "ḍākṭar" }
+          - { word: "సలహాతో", base: "సలహా", reading: "salahā" }
+          - { word: "చేస్తున్నాను", base: "చేయడం", reading: "cēyaḍaṁ" }
+      - "target": "ఉపవాసం ఉన్నప్పుడు నీళ్లు తాగండి."
+        "reading": "upavāsaṁ unnappuḍu nīḷḷu tāgaṇḍi."
+        "bases":
+          - { word: "ఉన్నప్పుడు", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+          - { word: "నీళ్లు", ref: "te-1132" }
+          - { word: "తాగండి", ref: "te-0625" }
+    ipa: "upaʋaːsam̃"
+  - id: "te-3229"
+    "target": "తల తిరగడం"
+    "reading": "tala tiragaḍaṁ"
+    "pos": "verb"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "లేచినప్పుడు నాకు తల తిరిగింది."
+        "reading": "lēcinappuḍu nāku tala tirigindi."
+        "bases":
+          - { word: "లేచినప్పుడు", base: "లేవడం", reading: "lēvaḍaṁ" }
+          - { word: "నాకు", base: "నేను", reading: "nēnu" }
+          - { word: "తల", ref: "te-0729" }
+          - { word: "తిరిగింది", base: "తిరగడం", reading: "tiragaḍaṁ" }
+      - "target": "ఎండలో ఎక్కువసేపు ఉంటే తల తిరుగుతుంది."
+        "reading": "eṇḍalō ekkuvasēpu uṇṭē tala tirugutundi."
+        "bases":
+          - { word: "ఎండలో", base: "ఎండ", reading: "eṇḍa" }
+          - { word: "ఎక్కువసేపు", base: "ఎక్కువసేపు", reading: "ekkuvasēpu" }
+          - { word: "ఉంటే", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+          - { word: "తల", ref: "te-0729" }
+          - { word: "తిరుగుతుంది", base: "తిరగడం", reading: "tiragaḍaṁ" }
+  - id: "te-3230"
+    "target": "చెమట పట్టడం"
+    "reading": "cemaṭa paṭṭaḍaṁ"
+    "pos": "verb"
+    "bases": [{"word": "పట్టడం", "base": "పట్టడం", "reading": "paṭṭaḍam"}]
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "వేడిగా ఉన్నప్పుడు చెమట పట్టింది."
+        "reading": "vēḍigā unnappuḍu cemaṭa paṭṭindi."
+        "bases":
+          - { word: "వేడిగా", base: "వేడి", reading: "vēḍi" }
+          - { word: "ఉన్నప్పుడు", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+          - { word: "చెమట", ref: "te-3221" }
+          - { word: "పట్టింది", base: "పట్టడం", reading: "paṭṭaḍaṁ" }
+      - "target": "చెమట పట్టినా పర్వాలేదు."
+        "reading": "cemaṭa paṭṭinā parvālēdu."
+        "bases":
+          - { word: "పట్టినా", base: "పట్టడం", reading: "paṭṭaḍaṁ" }
+          - { word: "పర్వాలేదు", base: "పర్వాలేదు", reading: "parvālēdu" }
+  - id: "te-3231"
+    "target": "ఊపిరి తీసుకోవడం"
+    "reading": "ūpiri tīsukōvaḍaṁ"
+    "pos": "verb"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "నెమ్మదిగా ఊపిరి తీసుకోండి."
+        "reading": "nemmadigā ūpiri tīsukōṇḍi."
+        "bases":
+          - { word: "నెమ్మదిగా", base: "నెమ్మదిగా", reading: "nemmadigā" }
+          - { word: "ఊపిరి", ref: "te-3220" }
+          - { word: "తీసుకోండి", ref: "te-0631" }
+      - "target": "ఊపిరి తీసుకుంటూ కొద్దిసేపు కూర్చోండి."
+        "reading": "ūpiri tīsukuṇṭū koddisēpu kūrcōṇḍi."
+        "bases":
+          - { word: "ఊపిరి", ref: "te-3220" }
+          - { word: "తీసుకుంటూ", ref: "te-0631" }
+          - { word: "కొద్దిసేపు", base: "కొద్దిసేపు", reading: "koddisēpu" }
+          - { word: "కూర్చోండి", base: "కూర్చోవడం", reading: "kūrcōvaḍaṁ" }
+  - id: "te-3232"
+    "target": "వ్యాయామం చేయడం"
+    "reading": "vyāyāmaṁ cēyaḍaṁ"
+    "pos": "verb"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "వారానికి మూడు సార్లు వ్యాయామం చేస్తాను."
+        "reading": "vārāniki mūḍu sārlu vyāyāmaṁ cēstānu."
+        "bases":
+          - { word: "వారానికి", base: "వారం", reading: "vāraṁ" }
+          - { word: "మూడు", base: "మూడు", reading: "mūḍu" }
+          - { word: "సార్లు", base: "సారి", reading: "sāri" }
+          - { word: "వ్యాయామం", ref: "te-1921" }
+          - { word: "చేస్తాను", base: "చేయడం", reading: "cēyaḍaṁ" }
+      - "target": "ఇంట్లోనే వ్యాయామం చేయవచ్చా?"
+        "reading": "iṇṭlōnē vyāyāmaṁ cēyavaccā?"
+        "bases":
+          - { word: "ఇంట్లోనే", base: "ఇల్లు", reading: "illu" }
+          - { word: "చేయవచ్చా", base: "చేయడం", reading: "cēyaḍaṁ" }
+  - id: "te-3233"
+    "target": "మానేయడం"
+    "reading": "mānēyaḍaṁ"
+    "pos": "verb"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "అతను ఈ ఏడాది మద్యం మానేశాడు."
+        "reading": "atanu ī ēḍādi madyaṁ mānēśāḍu."
+        "bases":
+          - { word: "అతను", base: "అతడు", reading: "ataḍu" }
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "ఏడాది", base: "ఏడాది", reading: "ēḍādi" }
+          - { word: "మద్యం", ref: "te-3210" }
+          - { word: "మానేశాడు", base: "మానేయడం", reading: "mānēyaḍaṁ" }
+      - "target": "ఈ అలవాటు మానేయాలి."
+        "reading": "ī alavāṭu mānēyāli."
+        "bases":
+          - { word: "ఈ", base: "ఈ", reading: "ī" }
+          - { word: "అలవాటు", base: "అలవాటు", reading: "alavāṭu" }
+          - { word: "మానేయాలి", base: "మానేయడం", reading: "mānēyaḍaṁ" }
+  - id: "te-3234"
+    "target": "వేయించుకోవడం"
+    "reading": "vēyiñcukōvaḍaṁ"
+    "pos": "verb"
+    "bases": "self"
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "నేను టీకా వేయించుకున్నాను."
+        "reading": "nēnu ṭīkā vēyiñcukunnānu."
+        "bases":
+          - { word: "నేను", base: "నేను", reading: "nēnu" }
+          - { word: "టీకా", ref: "te-3204" }
+          - { word: "వేయించుకున్నాను", base: "వేయించుకోవడం", reading: "vēyiñcukōvaḍaṁ" }
+      - "target": "రక్త పరీక్ష చేయించుకోవాలి."
+        "reading": "rakta parīkṣa cēyiñcukōvāli."
+        "bases":
+          - { word: "రక్త", ref: "te-0752" }
+          - { word: "పరీక్ష", ref: "te-1804" }
+          - { word: "చేయించుకోవాలి", base: "చేయించుకోవడం", reading: "cēyiñcukōvaḍaṁ" }
+  - id: "te-3235"
+    "target": "ఆరోగ్యంగా ఉండడం"
+    "reading": "ārōgyaṁgā uṇḍaḍaṁ"
+    "pos": "verb"
+    "bases": [{"word": "ఆరోగ్యంగా", "ref": "te-1508"}]
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "రోజూ నడిస్తే ఆరోగ్యంగా ఉంటారు."
+        "reading": "rōjū naḍistē ārōgyaṁgā uṇṭāru."
+        "bases":
+          - { word: "రోజూ", base: "రోజు", reading: "rōju" }
+          - { word: "నడిస్తే", ref: "te-0636" }
+          - { word: "ఆరోగ్యంగా", base: "ఆరోగ్యంగా", reading: "ārōgyaṁgā" }
+          - { word: "ఉంటారు", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - "target": "ఆరోగ్యంగా ఉండడానికి మంచి నిద్ర అవసరం."
+        "reading": "ārōgyaṁgā uṇḍaḍāniki mañci nidra avasaraṁ."
+        "bases":
+          - { word: "ఆరోగ్యంగా", base: "ఆరోగ్యంగా", reading: "ārōgyaṁgā" }
+          - { word: "ఉండడానికి", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+          - { word: "మంచి", base: "మంచి", reading: "mañci" }
+          - { word: "నిద్ర", ref: "te-0968" }
+          - { word: "అవసరం", base: "అవసరం", reading: "avasaraṁ" }
+  - id: "te-3236"
+    "target": "మీకు ఎక్కడ నొప్పిగా ఉంది?"
+    "reading": "mīku ekkaḍa noppigā undi?"
+    "pos": "phrase"
+    "bases": [{"word": "మీకు", "ref": "te-0136"}, {"word": "నొప్పిగా", "ref": "te-0368"}, {"word": "ఉంది", "ref": "te-0633"}]
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "తలలో నొప్పిగా ఉంది."
+        "reading": "talalō noppigā undi."
+        "bases":
+          - { word: "తలలో", ref: "te-0729" }
+          - { word: "నొప్పిగా", ref: "te-0368" }
+          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - "target": "గొంతులో నొప్పిగా ఉందా?"
+        "reading": "gontulō noppigā undā?"
+        "bases":
+          - { word: "గొంతులో", ref: "te-0749" }
+          - { word: "నొప్పిగా", ref: "te-0368" }
+          - { word: "ఉందా", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+  - id: "te-3237"
+    "target": "అంబులెన్స్ పిలవండి."
+    "reading": "ambulens pilavaṇḍi."
+    "pos": "phrase"
+    "bases": [{"word": "పిలవండి", "ref": "te-0849"}]
+    "notes":
+      - { id: "n1", kind: "note" }
+    "examples":
+      - "target": "అత్యవసరమైతే అంబులెన్స్ పిలవండి."
+        "reading": "atyavasaramaitē ambulens pilavaṇḍi."
+        "bases":
+          - { word: "అత్యవసరమైతే", base: "అత్యవసరం", reading: "atyavasaraṁ" }
+          - { word: "అంబులెన్స్", ref: "te-3202" }
+          - { word: "పిలవండి", base: "పిలవడం", reading: "pilavaḍaṁ" }
+      - "target": "దయచేసి వెంటనే అంబులెన్స్ పిలవండి."
+        "reading": "dayacēsi veṇṭanē ambulens pilavaṇḍi."
+        "bases":
+          - { word: "దయచేసి", base: "దయచేసి", reading: "dayacēsi" }
+          - { word: "వెంటనే", base: "వెంటనే", reading: "veṇṭanē" }
+          - { word: "అంబులెన్స్", ref: "te-3202" }
+          - { word: "పిలవండి", base: "పిలవడం", reading: "pilavaḍaṁ" }
+  - ref: "te-0729"
+  - ref: "te-0744"
+  - ref: "te-0747"
+  - ref: "te-0746"
+  - ref: "te-0749"
+  - ref: "te-0968"
+  - ref: "te-1132"
+  - ref: "te-1612"
+  - ref: "te-0696"
+  - ref: "te-0664"
+  - ref: "te-1513"
+  - ref: "te-1518"
+  - ref: "te-1921"
+  - ref: "te-0624"
+  - ref: "te-0625"
+  - ref: "te-0636"
+  - ref: "te-0640"
+  - ref: "te-0631"
+  - ref: "te-1402"
+  - ref: "te-0840"
+  - ref: "te-2303"
+  - ref: "te-2312"

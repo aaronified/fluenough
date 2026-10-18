@@ -151,7 +151,7 @@ void main() {
           .whereType<MilestoneStep>()
           .where((m) => m.kind == MilestoneKind.words)
           .toList();
-      expect(counts.map((m) => m.count), [50, 100, 250, 500]);
+      expect(counts.map((m) => m.count), [50, 100, 250, 500, 1000]);
       Set<String> wordsUpTo(int end) => <String>{
         for (final u in units.take(end))
           if (!u.content.isScript) ...u.content.words.map((c) => c.id),
