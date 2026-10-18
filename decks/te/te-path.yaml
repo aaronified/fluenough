@@ -389,7 +389,8 @@ units:
       - { id: "what-i-did-today", text: { "en": "Telling a day as one chain of actions" } }
     reading_passages:
       - { id: "travel-diary", text: { "en": "A travel diary that chains what happened" } }
-  - planned: { id: "te-health", theme: "health", words: 60 }
+  - decks: ["te-health", "*"]
+    words: 60
     listening_passages:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
     reading_passages:
