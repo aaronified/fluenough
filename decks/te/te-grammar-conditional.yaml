@@ -1,0 +1,526 @@
+schema: 1
+id: "te-grammar-conditional"
+part: "core"
+kind: "rules"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["te-0247", "te-0282", "te-0297", "te-0460", "te-0463", "te-0474", "te-0532", "te-0651", "te-1047", "te-1146", "te-1147", "te-1148", "te-1149", "te-1150", "te-3347", "te-3348", "te-3349", "te-3351"]
+  slots: ["conditional"]
+  rows:
+    - word: "te-0441"
+      forms: { "conditional": "లేస్తే" }
+      readings: { "conditional": "lēstē" }
+    - word: "te-0450"
+      forms: { "conditional": "పడుకుంటే" }
+      readings: { "conditional": "paḍukuṇṭē" }
+    - word: "te-0621"
+      forms: { "conditional": "చేస్తే" }
+      readings: { "conditional": "cēstē" }
+    - word: "te-0622"
+      forms: { "conditional": "వెళ్తే" }
+      readings: { "conditional": "veḷtē" }
+    - word: "te-0623"
+      forms: { "conditional": "వస్తే" }
+      readings: { "conditional": "vastē" }
+    - word: "te-0624"
+      forms: { "conditional": "తింటే" }
+      readings: { "conditional": "tiṇṭē" }
+    - word: "te-0625"
+      forms: { "conditional": "తాగితే" }
+      readings: { "conditional": "tāgitē" }
+    - word: "te-0626"
+      forms: { "conditional": "చూస్తే" }
+      readings: { "conditional": "cūstē" }
+    - word: "te-0627"
+      forms: { "conditional": "వింటే" }
+      readings: { "conditional": "viṇṭē" }
+    - word: "te-0628"
+      forms: { "conditional": "చెప్తే" }
+      readings: { "conditional": "ceptē" }
+    - word: "te-0629"
+      forms: { "conditional": "అడిగితే" }
+      readings: { "conditional": "aḍigitē" }
+    - word: "te-0630"
+      forms: { "conditional": "ఇస్తే" }
+      readings: { "conditional": "istē" }
+    - word: "te-0631"
+      forms: { "conditional": "తీసుకుంటే" }
+      readings: { "conditional": "tīsukuṇṭē" }
+    - word: "te-0632"
+      forms: { "conditional": "తెస్తే" }
+      readings: { "conditional": "testē" }
+    - word: "te-0633"
+      forms: { "conditional": "ఉంటే" }
+      readings: { "conditional": "uṇṭē" }
+    - word: "te-0634"
+      forms: { "conditional": "కూర్చుంటే" }
+      readings: { "conditional": "kūrcuṇṭē" }
+    - word: "te-0635"
+      forms: { "conditional": "నిలబడితే" }
+      readings: { "conditional": "nilabaḍitē" }
+    - word: "te-0636"
+      forms: { "conditional": "నడిస్తే" }
+      readings: { "conditional": "naḍistē" }
+    - word: "te-0637"
+      forms: { "conditional": "ఆడితే" }
+      readings: { "conditional": "āḍitē" }
+    - word: "te-0638"
+      forms: { "conditional": "చదివితే" }
+      readings: { "conditional": "cadivitē" }
+    - word: "te-0639"
+      forms: { "conditional": "రాస్తే" }
+      readings: { "conditional": "rāstē" }
+    - word: "te-0640"
+      forms: { "conditional": "నిద్రపోతే" }
+      readings: { "conditional": "nidrapōtē" }
+    - word: "te-0641"
+      forms: { "conditional": "కొంటే" }
+      readings: { "conditional": "kontē" }
+    - word: "te-0642"
+      forms: { "conditional": "అమ్మితే" }
+      readings: { "conditional": "ammitē" }
+    - word: "te-0643"
+      forms: { "conditional": "వండితే" }
+      readings: { "conditional": "vaṇḍitē" }
+    - word: "te-0644"
+      forms: { "conditional": "మాట్లాడితే" }
+      readings: { "conditional": "māṭlāḍitē" }
+    - word: "te-0645"
+      forms: { "conditional": "నేర్చుకుంటే" }
+      readings: { "conditional": "nērcukuṇṭē" }
+    - word: "te-0646"
+      forms: { "conditional": "అయితే" }
+      readings: { "conditional": "ayitē" }
+    - word: "te-0647"
+      forms: { "conditional": "తెలుసుకుంటే" }
+      readings: { "conditional": "telusukuṇṭē" }
+    - word: "te-0648"
+      forms: { "conditional": "ఆగితే" }
+      readings: { "conditional": "āgitē" }
+    - word: "te-0649"
+      forms: { "conditional": "కలిస్తే" }
+      readings: { "conditional": "kalistē" }
+    - word: "te-0650"
+      forms: { "conditional": "పంపితే" }
+      readings: { "conditional": "pampitē" }
+    - word: "te-0821"
+      forms: { "conditional": "పాడితే" }
+      readings: { "conditional": "pāḍitē" }
+    - word: "te-0822"
+      forms: { "conditional": "నవ్వితే" }
+      readings: { "conditional": "navvitē" }
+    - word: "te-0823"
+      forms: { "conditional": "ఏడిస్తే" }
+      readings: { "conditional": "ēḍistē" }
+    - word: "te-0824"
+      forms: { "conditional": "కడిగితే" }
+      readings: { "conditional": "kaḍigitē" }
+    - word: "te-0825"
+      forms: { "conditional": "తెరిస్తే" }
+      readings: { "conditional": "teristē" }
+    - word: "te-0826"
+      forms: { "conditional": "మూస్తే" }
+      readings: { "conditional": "mūstē" }
+    - word: "te-0827"
+      forms: { "conditional": "ఎక్కితే" }
+      readings: { "conditional": "ekkitē" }
+    - word: "te-0828"
+      forms: { "conditional": "దిగితే" }
+      readings: { "conditional": "digitē" }
+    - word: "te-0829"
+      forms: { "conditional": "పట్టుకుంటే" }
+      readings: { "conditional": "paṭṭukuṇṭē" }
+    - word: "te-0830"
+      forms: { "conditional": "పెడితే" }
+      readings: { "conditional": "peḍitē" }
+    - word: "te-0831"
+      forms: { "conditional": "ఉంచితే" }
+      readings: { "conditional": "uñcitē" }
+    - word: "te-0832"
+      forms: { "conditional": "నేర్పితే" }
+      readings: { "conditional": "nērpitē" }
+    - word: "te-0833"
+      forms: { "conditional": "మర్చిపోతే" }
+      readings: { "conditional": "marcipōtē" }
+    - word: "te-0834"
+      forms: { "conditional": "ఆలోచిస్తే" }
+      readings: { "conditional": "ālōcistē" }
+    - word: "te-0835"
+      forms: { "conditional": "వెతికితే" }
+      readings: { "conditional": "vetikitē" }
+    - word: "te-0836"
+      forms: { "conditional": "తీస్తే" }
+      readings: { "conditional": "tīstē" }
+    - word: "te-0837"
+      forms: { "conditional": "వేస్తే" }
+      readings: { "conditional": "vēstē" }
+    - word: "te-0838"
+      forms: { "conditional": "కొడితే" }
+      readings: { "conditional": "koḍitē" }
+    - word: "te-0839"
+      forms: { "conditional": "పడితే" }
+      readings: { "conditional": "paḍitē" }
+    - word: "te-0840"
+      forms: { "conditional": "ఆపితే" }
+      readings: { "conditional": "āpitē" }
+    - word: "te-0841"
+      forms: { "conditional": "తిరిగితే" }
+      readings: { "conditional": "tirigitē" }
+    - word: "te-0842"
+      forms: { "conditional": "చూపిస్తే" }
+      readings: { "conditional": "cūpistē" }
+    - word: "te-0843"
+      forms: { "conditional": "పరిగెత్తితే" }
+      readings: { "conditional": "parigettitē" }
+    - word: "te-0844"
+      forms: { "conditional": "నమ్మితే" }
+      readings: { "conditional": "nammitē" }
+    - word: "te-0845"
+      forms: { "conditional": "ఎగిరితే" }
+      readings: { "conditional": "egiritē" }
+    - word: "te-0846"
+      forms: { "conditional": "ఈదితే" }
+      readings: { "conditional": "īditē" }
+    - word: "te-0847"
+      forms: { "conditional": "కోస్తే" }
+      readings: { "conditional": "kōstē" }
+    - word: "te-0848"
+      forms: { "conditional": "లాగితే" }
+      readings: { "conditional": "lāgitē" }
+    - word: "te-0849"
+      forms: { "conditional": "పిలిస్తే" }
+      readings: { "conditional": "pilistē" }
+    - word: "te-0850"
+      forms: { "conditional": "కలిపితే" }
+      readings: { "conditional": "kalipitē" }
+    - word: "te-0851"
+      forms: { "conditional": "నింపితే" }
+      readings: { "conditional": "nimpitē" }
+    - word: "te-0852"
+      forms: { "conditional": "తుడిస్తే" }
+      readings: { "conditional": "tuḍistē" }
+    - word: "te-1339"
+      forms: { "conditional": "పంచుకుంటే" }
+      readings: { "conditional": "pan̈cukuṇṭē" }
+    - word: "te-1400"
+      forms: { "conditional": "బేరమాడితే" }
+      readings: { "conditional": "bēramāḍitē" }
+    - word: "te-1401"
+      forms: { "conditional": "చెల్లిస్తే" }
+      readings: { "conditional": "cellistē" }
+    - word: "te-1402"
+      forms: { "conditional": "తగ్గిస్తే" }
+      readings: { "conditional": "taggistē" }
+    - word: "te-1403"
+      forms: { "conditional": "ఎంచుకుంటే" }
+      readings: { "conditional": "en̈cukuṇṭē" }
+    - word: "te-1404"
+      forms: { "conditional": "తిరిగి ఇస్తే" }
+      readings: { "conditional": "tirigi istē" }
+    - word: "te-1405"
+      forms: { "conditional": "ప్రయత్నిస్తే" }
+      readings: { "conditional": "prayatnistē" }
+    - word: "te-1529"
+      forms: { "conditional": "జబ్బు పడితే" }
+      readings: { "conditional": "jabbu paḍitē" }
+    - word: "te-1530"
+      forms: { "conditional": "చూపించుకుంటే" }
+      readings: { "conditional": "cūpin̈cukuṇṭē" }
+    - word: "te-1531"
+      forms: { "conditional": "తగ్గితే" }
+      readings: { "conditional": "taggitē" }
+    - word: "te-1532"
+      forms: { "conditional": "విశ్రాంతి తీసుకుంటే" }
+      readings: { "conditional": "viśrāṁti tīsukuṇṭē" }
+    - word: "te-1534"
+      forms: { "conditional": "దగ్గితే" }
+      readings: { "conditional": "daggitē" }
+    - word: "te-1535"
+      forms: { "conditional": "తుమ్మితే" }
+      readings: { "conditional": "tummitē" }
+    - word: "te-1536"
+      forms: { "conditional": "కోలుకుంటే" }
+      readings: { "conditional": "kōlukuṇṭē" }
+    - word: "te-1537"
+      forms: { "conditional": "కారితే" }
+      readings: { "conditional": "kāritē" }
+    - word: "te-1538"
+      forms: { "conditional": "చేర్చితే" }
+      readings: { "conditional": "cērcitē" }
+    - word: "te-1539"
+      forms: { "conditional": "బాధపడితే" }
+      readings: { "conditional": "bādhapaḍitē" }
+    - word: "te-1621"
+      forms: { "conditional": "ఉడకబెడితే" }
+      readings: { "conditional": "uḍakabeḍitē" }
+    - word: "te-1622"
+      forms: { "conditional": "వేయిస్తే" }
+      readings: { "conditional": "vēyistē" }
+    - word: "te-1914"
+      forms: { "conditional": "వాయిస్తే" }
+      readings: { "conditional": "vāyistē" }
+    - word: "te-1915"
+      forms: { "conditional": "గీస్తే" }
+      readings: { "conditional": "gīstē" }
+    - word: "te-1923"
+      forms: { "conditional": "గెలిస్తే" }
+      readings: { "conditional": "gelistē" }
+    - word: "te-2100"
+      forms: { "conditional": "ఊడిస్తే" }
+      readings: { "conditional": "ūḍistē" }
+    - word: "te-2101"
+      forms: { "conditional": "ఉతికితే" }
+      readings: { "conditional": "utikitē" }
+    - word: "te-2102"
+      forms: { "conditional": "ఆరేస్తే" }
+      readings: { "conditional": "ārēstē" }
+    - word: "te-2103"
+      forms: { "conditional": "ఇస్త్రీ చేస్తే" }
+      readings: { "conditional": "istrī cēstē" }
+    - word: "te-2104"
+      forms: { "conditional": "తరిగితే" }
+      readings: { "conditional": "tarigitē" }
+    - word: "te-2105"
+      forms: { "conditional": "ఉడికిస్తే" }
+      readings: { "conditional": "uḍikistē" }
+    - word: "te-2106"
+      forms: { "conditional": "సర్దితే" }
+      readings: { "conditional": "sarditē" }
+    - word: "te-2107"
+      forms: { "conditional": "పారేస్తే" }
+      readings: { "conditional": "pārēstē" }
+    - word: "te-2108"
+      forms: { "conditional": "ఎత్తితే" }
+      readings: { "conditional": "ettitē" }
+    - word: "te-1151"
+      forms: { "conditional": "చల్లబడితే" }
+      readings: { "conditional": "challabaḍitē" }
+    - word: "te-1152"
+      forms: { "conditional": "ఆగిపోతే" }
+      readings: { "conditional": "āgipōtē" }
+    - word: "te-2300"
+      forms: { "conditional": "కడుక్కుంటే" }
+      readings: { "conditional": "kaḍukkuṇṭē" }
+    - word: "te-2301"
+      forms: { "conditional": "బయలుదేరితే" }
+      readings: { "conditional": "bayaludēritē" }
+    - word: "te-2302"
+      forms: { "conditional": "లేపితే" }
+      readings: { "conditional": "lēpitē" }
+    - word: "te-2303"
+      forms: { "conditional": "మేల్కొంటే" }
+      readings: { "conditional": "mēlkontē" }
+    - word: "te-2304"
+      forms: { "conditional": "తోముకుంటే" }
+      readings: { "conditional": "tōmukuṇṭē" }
+    - word: "te-2305"
+      forms: { "conditional": "దువ్వుకుంటే" }
+      readings: { "conditional": "duvvukuṇṭē" }
+    - word: "te-2306"
+      forms: { "conditional": "కట్టుకుంటే" }
+      readings: { "conditional": "kaṭṭukuṇṭē" }
+    - word: "te-2307"
+      forms: { "conditional": "వేసుకుంటే" }
+      readings: { "conditional": "vēsukuṇṭē" }
+    - word: "te-2308"
+      forms: { "conditional": "ఎదురుచూస్తే" }
+      readings: { "conditional": "eduruchūstē" }
+    - word: "te-2309"
+      forms: { "conditional": "ముగిస్తే" }
+      readings: { "conditional": "mugistē" }
+    - word: "te-2310"
+      forms: { "conditional": "మొదలుపెడితే" }
+      readings: { "conditional": "modalupeḍitē" }
+    - word: "te-2311"
+      forms: { "conditional": "ఆడుకుంటే" }
+      readings: { "conditional": "āḍukuṇṭē" }
+    - word: "te-2312"
+      forms: { "conditional": "పెంచితే" }
+      readings: { "conditional": "penacitē" }
+    - word: "te-2313"
+      forms: { "conditional": "నడిపితే" }
+      readings: { "conditional": "naḍipitē" }
+    - word: "te-2314"
+      forms: { "conditional": "గుర్తుంచుకుంటే" }
+      readings: { "conditional": "gurtun̈cukuṇṭē" }
+    - word: "te-2315"
+      forms: { "conditional": "వివరిస్తే" }
+      readings: { "conditional": "vivaristē" }
+    - word: "te-2316"
+      forms: { "conditional": "తిడితే" }
+      readings: { "conditional": "tiḍitē" }
+    - word: "te-2317"
+      forms: { "conditional": "భయపడితే" }
+      readings: { "conditional": "bhayapaḍitē" }
+    - word: "te-2318"
+      forms: { "conditional": "దాస్తే" }
+      readings: { "conditional": "dāstē" }
+    - word: "te-2319"
+      forms: { "conditional": "విసిరితే" }
+      readings: { "conditional": "visiritē" }
+    - word: "te-2320"
+      forms: { "conditional": "ఊదితే" }
+      readings: { "conditional": "ūditē" }
+    - word: "te-2321"
+      forms: { "conditional": "తడిస్తే" }
+      readings: { "conditional": "taḍistē" }
+    - word: "te-2322"
+      forms: { "conditional": "కప్పుకుంటే" }
+      readings: { "conditional": "kappukuṇṭē" }
+    - word: "te-2323"
+      forms: { "conditional": "ఆవులిస్తే" }
+      readings: { "conditional": "āvulistē" }
+    - word: "te-2324"
+      forms: { "conditional": "చదువుకుంటే" }
+      readings: { "conditional": "caduvukuṇṭē" }
+    - word: "te-2325"
+      forms: { "conditional": "రాసుకుంటే" }
+      readings: { "conditional": "rāsukuṇṭē" }
+    - word: "te-2326"
+      forms: { "conditional": "పంపిస్తే" }
+      readings: { "conditional": "pampistē" }
+    - word: "te-2327"
+      forms: { "conditional": "వాడితే" }
+      readings: { "conditional": "vāḍitē" }
+    - word: "te-2328"
+      forms: { "conditional": "బోధిస్తే" }
+      readings: { "conditional": "bōdhistē" }
+    - word: "te-2329"
+      forms: { "conditional": "మెచ్చుకుంటే" }
+      readings: { "conditional": "meccukuṇṭē" }
+    - word: "te-2330"
+      forms: { "conditional": "అరిస్తే" }
+      readings: { "conditional": "aristē" }
+    - word: "te-2331"
+      forms: { "conditional": "మడిస్తే" }
+      readings: { "conditional": "maḍistē" }
+    - word: "te-2332"
+      forms: { "conditional": "చుట్టితే" }
+      readings: { "conditional": "cuṭṭitē" }
+    - word: "te-2333"
+      forms: { "conditional": "విప్పితే" }
+      readings: { "conditional": "vippitē" }
+    - word: "te-2334"
+      forms: { "conditional": "కడితే" }
+      readings: { "conditional": "kaḍitē" }
+    - word: "te-2335"
+      forms: { "conditional": "వదిలితే" }
+      readings: { "conditional": "vadilitē" }
+    - word: "te-2336"
+      forms: { "conditional": "తిప్పితే" }
+      readings: { "conditional": "tippitē" }
+    - word: "te-2337"
+      forms: { "conditional": "నొక్కితే" }
+      readings: { "conditional": "nokkitē" }
+    - word: "te-2338"
+      forms: { "conditional": "కొలిస్తే" }
+      readings: { "conditional": "kolistē" }
+    - word: "te-2339"
+      forms: { "conditional": "లెక్కపెడితే" }
+      readings: { "conditional": "lekkapeḍitē" }
+    - word: "te-2340"
+      forms: { "conditional": "అంగీకరిస్తే" }
+      readings: { "conditional": "aṅgīkaristē" }
+    - word: "te-2341"
+      forms: { "conditional": "తిరస్కరిస్తే" }
+      readings: { "conditional": "tiraskaristē" }
+    - word: "te-2343"
+      forms: { "conditional": "ప్రారంభిస్తే" }
+      readings: { "conditional": "prārambhistē" }
+    - word: "te-2344"
+      forms: { "conditional": "గుర్తిస్తే" }
+      readings: { "conditional": "gurtistē" }
+    - word: "te-2345"
+      forms: { "conditional": "అనుకుంటే" }
+      readings: { "conditional": "anukuṇṭē" }
+    - word: "te-2346"
+      forms: { "conditional": "ప్రేమిస్తే" }
+      readings: { "conditional": "prēmistē" }
+    - word: "te-2347"
+      forms: { "conditional": "మార్చితే" }
+      readings: { "conditional": "mārcitē" }
+    - word: "te-2348"
+      forms: { "conditional": "మారితే" }
+      readings: { "conditional": "māritē" }
+    - word: "te-2349"
+      forms: { "conditional": "సంపాదిస్తే" }
+      readings: { "conditional": "sampādistē" }
+    - word: "te-2350"
+      forms: { "conditional": "ఖర్చుపెడితే" }
+      readings: { "conditional": "kharcupeḍitē" }
+    - word: "te-2351"
+      forms: { "conditional": "సాధిస్తే" }
+      readings: { "conditional": "sādhistē" }
+    - word: "te-2352"
+      forms: { "conditional": "ఒప్పుకుంటే" }
+      readings: { "conditional": "oppukuṇṭē" }
+    - word: "te-2353"
+      forms: { "conditional": "చేరుకుంటే" }
+      readings: { "conditional": "cērukuṇṭē" }
+    - word: "te-2354"
+      forms: { "conditional": "పరీక్షిస్తే" }
+      readings: { "conditional": "parīkṣistē" }
+    - word: "te-2355"
+      forms: { "conditional": "వెలిగిస్తే" }
+      readings: { "conditional": "veligistē" }
+    - word: "te-2356"
+      forms: { "conditional": "ఆర్పితే" }
+      readings: { "conditional": "ārpitē" }
+    - word: "te-2357"
+      forms: { "conditional": "కొనసాగిస్తే" }
+      readings: { "conditional": "konasāgistē" }
+    - word: "te-2358"
+      forms: { "conditional": "పొందితే" }
+      readings: { "conditional": "ponditē" }
+    - word: "te-2359"
+      forms: { "conditional": "జాగ్రత్తపడితే" }
+      readings: { "conditional": "jāgrattapaḍitē" }
+    - word: "te-2360"
+      forms: { "conditional": "సర్దుకుంటే" }
+      readings: { "conditional": "sardukuṇṭē" }
+    - word: "te-3229"
+      forms: { "conditional": "తల తిరిగితే" }
+      readings: { "conditional": "tala tirigitē" }
+    - word: "te-3230"
+      forms: { "conditional": "చెమట పడితే" }
+      readings: { "conditional": "cemaṭa paḍitē" }
+    - word: "te-3231"
+      forms: { "conditional": "ఊపిరి తీసుకుంటే" }
+      readings: { "conditional": "ūpiri tīsukuṇṭē" }
+    - word: "te-3232"
+      forms: { "conditional": "వ్యాయామం చేస్తే" }
+      readings: { "conditional": "vyāyāmaṁ cēstē" }
+    - word: "te-3233"
+      forms: { "conditional": "మానేస్తే" }
+      readings: { "conditional": "mānēstē" }
+    - word: "te-3234"
+      forms: { "conditional": "వేయించుకుంటే" }
+      readings: { "conditional": "vēyin̈cukuṇṭē" }
+    - word: "te-3235"
+      forms: { "conditional": "ఆరోగ్యంగా ఉంటే" }
+      readings: { "conditional": "ārōgyaṅgā uṇṭē" }
+    - word: "te-2535"
+      forms: { "conditional": "బుక్ చేస్తే" }
+      readings: { "conditional": "buk cēstē" }
+    - word: "te-2537"
+      forms: { "conditional": "తిరిగి వస్తే" }
+      readings: { "conditional": "tirigi vastē" }
+    - word: "te-2929"
+      forms: { "conditional": "వాయిదా వేస్తే" }
+      readings: { "conditional": "vāyidā vēstē" }
+    - word: "te-2930"
+      forms: { "conditional": "తెలియజేస్తే" }
+      readings: { "conditional": "teliyajēstē" }
+    - word: "te-2933"
+      forms: { "conditional": "నిర్ణయిస్తే" }
+      readings: { "conditional": "nirṇayistē" }
+rules:
+  - id: "te-rule-conditional"
+    slots: ["conditional"]
+    words: [{ word: "-తే", reading: "-tē" }, { word: "వస్తే", reading: "vastē" }, { word: "చదివితే", reading: "cadivitē" }, { word: "డబ్బు ఉంటే", reading: "dabbu uṇṭē" }]
