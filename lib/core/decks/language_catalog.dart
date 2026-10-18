@@ -81,6 +81,9 @@ class B1Progress {
     required this.grammarTopics,
     required this.grammarWritten,
     required this.stage,
+    required this.levels,
+    required this.unitsWritten,
+    required this.unitCount,
     required this._upToB1,
   });
 
@@ -97,6 +100,7 @@ class B1Progress {
 
     final b1 = at(Milestone.b1);
     final a1 = at(Milestone.a1);
+    final a2 = at(Milestone.a2);
     final upToB1 = b1 == null ? const <B1Unit>[] : units.sublist(0, b1 + 1);
     var planned = 0;
     var written = 0;
@@ -120,6 +124,9 @@ class B1Progress {
         ? CourseStage.beta
         : CourseStage.complete;
     return B1Progress._(
+      levels: _levels(units, <int?>[a1, a2, b1]),
+      unitsWritten: units.where((u) => u.written).length,
+      unitCount: units.length,
       hasPlan: hasPlan,
       plannedWords: planned,
       writtenWords: written,
@@ -129,6 +136,31 @@ class B1Progress {
       stage: stage,
       upToB1: upToB1,
     );
+  }
+
+  /// How much of each level is written, 0–1, for A1, A2 and B1: the
+  /// planned words of the units from after the level before it up to the one
+  /// marked [ends], and how many of them are written. A level the path does
+  /// not mark, or with no planned words, is 0.
+  static List<double> _levels(List<B1Unit> units, List<int?> ends) {
+    final shares = <double>[];
+    var from = 0;
+    for (final end in ends) {
+      if (end == null || end < from) {
+        shares.add(0);
+        continue;
+      }
+      var planned = 0;
+      var written = 0;
+      for (final unit in units.sublist(from, end + 1)) {
+        final words = unit.words ?? 0;
+        planned += words;
+        if (unit.written) written += math.min(unit.has!, words);
+      }
+      shares.add(planned == 0 ? 0 : written / planned);
+      from = end + 1;
+    }
+    return List<double>.unmodifiable(shares);
   }
 
   // A written unit with no words counted and no deck in any native
@@ -156,6 +188,15 @@ class B1Progress {
   final int grammarWritten;
 
   final CourseStage stage;
+
+  /// How much of A1, A2 and B1 is written, each 0–1, in that order: the
+  /// course line on a language's sheet draws one part for each, and a fourth
+  /// for the culture part, which nothing fills yet.
+  final List<double> levels;
+
+  /// The units of the path written, planned ones counted in [unitCount].
+  final int unitsWritten;
+  final int unitCount;
 
   final List<B1Unit> _upToB1;
 
@@ -385,4 +426,55 @@ List<CatalogLanguage> pickerOrder(
       return mine != 0 ? mine : a.name.compareTo(b.name);
     });
   return sorted;
+}
+
+/// Popular (owner, 2026-10-18, #626): the most complete courses, at most
+/// [limit], that have at least A1 written: Beta or Complete, never Alpha, and
+/// with a B1 plan to say so. Most written first, then by name. The learner
+/// has [spoken] languages, which the course's native is chosen from.
+List<CatalogLanguage> popularOf(
+  Iterable<CatalogLanguage> languages,
+  List<String> spoken, {
+  int limit = 5,
+}) {
+  double share(CatalogLanguage l) => l.progressFor(spoken)?.share ?? 0;
+  final popular =
+      <CatalogLanguage>[
+        for (final language in languages)
+          if (language.progressFor(spoken) case final progress?
+              when progress.hasPlan && progress.stage != CourseStage.alpha)
+            language,
+      ]..sort((a, b) {
+        final by = share(b).compareTo(share(a));
+        return by != 0 ? by : a.name.compareTo(b.name);
+      });
+  return popular.take(limit).toList();
+}
+
+/// A language family and the courses in it.
+typedef FamilyGroup = ({String id, List<CatalogLanguage> languages});
+
+/// [languages] grouped by family, as Languages you know groups its own
+/// (#626): the families in [order], then `other` for a course in none, each
+/// listed only when it holds a course, the languages in it by English name.
+/// [familyOf] gives a language's family by code.
+List<FamilyGroup> groupByFamily(
+  Iterable<CatalogLanguage> languages, {
+  required List<String> order,
+  required Map<String, String> familyOf,
+}) {
+  final ids = <String>[
+    for (final id in order)
+      if (id != 'other') id,
+    'other',
+  ];
+  return <FamilyGroup>[
+    for (final id in ids)
+      if (<CatalogLanguage>[
+            for (final language in languages)
+              if ((familyOf[language.code] ?? 'other') == id) language,
+          ]
+          case final members when members.isNotEmpty)
+        (id: id, languages: members..sort((a, b) => a.name.compareTo(b.name))),
+  ];
 }
