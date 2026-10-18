@@ -469,7 +469,8 @@ units:
       - { id: "order-of-events", text: { "en": "Saying what happens before and after what" } }
     reading_passages:
       - { id: "event-schedule", text: { "en": "A schedule of an event day" } }
-  - planned: { id: "te-environment", theme: "environment", words: 55 }
+  - decks: ["te-environment", "*"]
+    words: 55
     listening_passages:
       - { id: "rain-and-lakes", text: { "en": "Neighbours talk about the lake and the rain" } }
     reading_passages:
