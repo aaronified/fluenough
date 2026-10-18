@@ -70,9 +70,12 @@ cards:
       "n1": "{1} is 'with worry'."
     examples:
       "పరీక్ష ఫలితాల గురించి ఆందోళనగా ఉంది.":
-        native: "I am worried about the exam results."
-        bases:
-          "ఫలితాల": { meaning: "result" }
+        "native": "I am worried about the exam results."
+        "bases":
+          "ఫలితాల":
+            "meaning": "result"
+          "గురించి":
+            "meaning": "about; concerning"
       "ఆమె ఆందోళనను దాచలేకపోయింది.":
         native: "She could not hide her worry."
         bases:
@@ -110,10 +113,14 @@ cards:
           "అందరి": { meaning: "everyone" }
           "మాట్లాడాలంటే": { meaning: "to speak" }
       "ఆ పొగడ్తకు నేను సిగ్గుతో నవ్వేశాను.":
-        native: "I laughed shyly at that compliment."
-        bases:
-          "పొగడ్తకు": { meaning: "praise; compliment" }
-          "నవ్వేశాను": { meaning: "to laugh; to smile" }
+        "native": "I laughed shyly at that compliment."
+        "bases":
+          "పొగడ్తకు":
+            "meaning": "praise; compliment"
+          "నవ్వేశాను":
+            "meaning": "to laugh; to smile"
+          "సిగ్గుతో":
+            "meaning": "shyness; shame"
     synonyms: { "lajja": "shame" }
   "te-3307":
     native: "courage"
@@ -156,11 +163,16 @@ cards:
       "n2": "In the plural and before case endings the stem changes: గర్వాలు (garvālu) and గర్వాన్ని (garvānni)."
     examples:
       "తన పిల్లల విజయంపై ఆయనకు గర్వం.":
-        native: "He is proud of his children's success."
-        bases:
-          "పిల్లల": { meaning: "children" }
-          "విజయంపై": { meaning: "success" }
-          "ఆయనకు": { meaning: "he" }
+        "native": "He is proud of his children's success."
+        "bases":
+          "పిల్లల":
+            "meaning": "children"
+          "విజయంపై":
+            "meaning": "success"
+          "ఆయనకు":
+            "meaning": "he"
+          "తన":
+            "meaning": "oneself; one's own"
       "ఆ వేడుకలో అమ్మ గర్వంగా నవ్వింది.":
         native: "At the celebration, Mother smiled with pride."
         bases:
@@ -180,11 +192,16 @@ cards:
           "చూసి": { meaning: "to see" }
           "కలిగింది": { meaning: "to arise; to be felt" }
       "అసూయతో ఆమె అతని గురించి మాట్లాడింది.":
-        native: "Out of jealousy, she talked about him."
-        bases:
-          "అసూయతో": { meaning: "jealousy; envy" }
-          "అతని": { meaning: "he" }
-          "మాట్లాడింది": { meaning: "to speak" }
+        "native": "Out of jealousy, she talked about him."
+        "bases":
+          "అసూయతో":
+            "meaning": "jealousy; envy"
+          "అతని":
+            "meaning": "he"
+          "మాట్లాడింది":
+            "meaning": "to speak"
+          "గురించి":
+            "meaning": "about; concerning"
     senses:
       "envy": { native: "envy" }
       "jealousy": { native: "jealousy" }
@@ -215,10 +232,14 @@ cards:
       "n1": "{1} is 'gratefully'."
     examples:
       "నీ సహాయానికి కృతజ్ఞతలు.":
-        native: "Thank you for your help."
-        bases:
-          "నీ": { meaning: "you" }
-          "సహాయానికి": { meaning: "help" }
+        "native": "Thank you for your help."
+        "bases":
+          "నీ":
+            "meaning": "you"
+          "సహాయానికి":
+            "meaning": "help"
+          "కృతజ్ఞతలు":
+            "meaning": "gratitude; thanks"
       "ఆయన మాటల్లో కృతజ్ఞత కనిపించింది.":
         native: "Gratitude showed in his words."
         bases:
@@ -249,10 +270,14 @@ cards:
       "n2": "In the plural and before case endings the stem changes: దుఃఖాలు (duḥkhālu) and దుఃఖాన్ని (duḥkhānni)."
     examples:
       "ఆమె తల్లి మరణంతో దుఃఖంలో ఉంది.":
-        native: "She is in grief over her mother's death."
-        bases:
-          "మరణంతో": { meaning: "death" }
-          "దుఃఖంలో": { meaning: "grief" }
+        "native": "She is in grief over her mother's death."
+        "bases":
+          "మరణంతో":
+            "meaning": "death"
+          "దుఃఖంలో":
+            "meaning": "grief"
+          "తల్లి":
+            "meaning": "mother"
       "ఆ వార్త విని దుఃఖం ఆపుకోలేకపోయాను.":
         native: "On hearing that news, I could not hold back my grief."
         bases:
@@ -431,14 +456,18 @@ cards:
           "మాట్లాడటంలో": { meaning: "to speak" }
           "పెరిగింది": { meaning: "to grow; to increase" }
       "ఆత్మవిశ్వాసంతో ప్రసంగం చేశాడు.":
-        native: "He gave the speech with confidence."
-        bases:
-          "ఆత్మవిశ్వాసంతో": { meaning: "self-confidence" }
-          "చేశాడు": { meaning: "to do" }
+        "native": "He gave the speech with confidence."
+        "bases":
+          "ఆత్మవిశ్వాసంతో":
+            "meaning": "self-confidence"
+          "చేశాడు":
+            "meaning": "to do"
+          "ప్రసంగం":
+            "meaning": "speech; talk"
   "te-3327":
     native: "happy; glad"
     notes:
-      "n1": "{1} is 'I am happy': the form with ఉన్నాను."
+      "n1": "{1} is 'I am happy': the form with ఉన్నాను (unnānu)."
     examples:
       "పిల్లలు ఆటలాడుతూ సంతోషంగా ఉన్నారు.":
         native: "The children are happy, playing games."
@@ -496,10 +525,14 @@ cards:
           "ఉంటుంది": { meaning: "to be" }
           "ఒంటరిగా": { meaning: "alone" }
       "కుక్క దగ్గరికి రాగానే పిల్లవాడు భయంగా వెళ్ళిపోయాడు.":
-        native: "As soon as the dog came near, the boy went away, scared."
-        bases:
-          "రాగానే": { meaning: "to come" }
-          "వెళ్ళిపోయాడు": { meaning: "to go away" }
+        "native": "As soon as the dog came near, the boy went away, scared."
+        "bases":
+          "రాగానే":
+            "meaning": "to come"
+          "వెళ్ళిపోయాడు":
+            "meaning": "to go away"
+          "పిల్లవాడు":
+            "meaning": "boy; child"
     bases:
       "భయంగా": { meaning: "fear" }
   "te-3331":
@@ -544,10 +577,14 @@ cards:
       "n1": "{1} is 'anxiously; eagerly'."
     examples:
       "ఫలితాల కోసం అందరూ ఆత్రుతగా ఎదురు చూస్తున్నారు.":
-        native: "Everyone is waiting anxiously for the results."
-        bases:
-          "ఫలితాల": { meaning: "result" }
-          "ఎదురు చూస్తున్నారు": { meaning: "to wait" }
+        "native": "Everyone is waiting anxiously for the results."
+        "bases":
+          "ఫలితాల":
+            "meaning": "result"
+          "కోసం":
+            "meaning": "for; for the sake of"
+          "ఎదురు":
+            "meaning": "front; opposite; with 'to look', to wait for"
       "పరీక్ష రాసిన తర్వాత అతను ఆత్రుతగా ఇంటికి వచ్చాడు.":
         native: "After writing the exam, he came home eagerly."
         bases:
@@ -577,10 +614,14 @@ cards:
       "n1": "{1} is 'enthusiastically'."
     examples:
       "పిల్లలు సెలవుల గురించి ఉత్సాహంగా మాట్లాడుకుంటున్నారు.":
-        native: "The children are excitedly talking about the holidays."
-        bases:
-          "సెలవుల": { meaning: "holiday" }
-          "మాట్లాడుకుంటున్నారు": { meaning: "to talk with each other" }
+        "native": "The children are excitedly talking about the holidays."
+        "bases":
+          "సెలవుల":
+            "meaning": "holiday"
+          "మాట్లాడుకుంటున్నారు":
+            "meaning": "to talk with each other"
+          "గురించి":
+            "meaning": "about; concerning"
       "కొత్త పని మొదలుపెట్టడానికి నేను ఉత్సాహంగా ఉన్నాను.":
         native: "I am excited to start the new job."
         bases:
@@ -628,9 +669,12 @@ cards:
       "n1": "{1} is 'calmly; peacefully'."
     examples:
       "అతను ఎంతో ప్రశాంతంగా సమాధానం చెప్పాడు.":
-        native: "He answered very calmly."
-        bases:
-          "చెప్పాడు": { meaning: "to say" }
+        "native": "He answered very calmly."
+        "bases":
+          "చెప్పాడు":
+            "meaning": "to say"
+          "సమాధానం":
+            "meaning": "answer"
       "ఆ ఊరు రాత్రి ప్రశాంతంగా ఉంటుంది.":
         native: "That town is peaceful at night."
         bases:
@@ -683,10 +727,14 @@ cards:
         bases:
           "పెట్టింది": { meaning: "to put" }
       "ఈ ప్రయాణం చాలా సేపు ఉండటంతో అందరూ విసుగ్గా ఉన్నారు.":
-        native: "The journey took so long that everyone is bored."
-        bases:
-          "ఉండటంతో": { meaning: "to be" }
-          "ఉన్నారు": { meaning: "to be" }
+        "native": "The journey took so long that everyone is bored."
+        "bases":
+          "ఉండటంతో":
+            "meaning": "to be"
+          "ఉన్నారు":
+            "meaning": "to be"
+          "సేపు":
+            "meaning": "a while; duration"
     bases:
       "విసుగ్గా": { meaning: "boredom; annoyance" }
   "te-3347":
@@ -700,10 +748,14 @@ cards:
           "చేసినందుకు": { meaning: "to do" }
           "సిగ్గుపడ్డాడు": { meaning: "to be embarrassed" }
       "అలా అడగడానికి నేను సిగ్గుపడతాను.":
-        native: "I feel shy about asking like that."
-        bases:
-          "అడగడానికి": { meaning: "to ask" }
-          "సిగ్గుపడతాను": { meaning: "to be embarrassed" }
+        "native": "I feel shy about asking like that."
+        "bases":
+          "అడగడానికి":
+            "meaning": "to ask"
+          "సిగ్గుపడతాను":
+            "meaning": "to be embarrassed"
+          "అలా":
+            "meaning": "like that; in that way"
   "te-3348":
     native: "to be proud"
     notes:
@@ -715,20 +767,28 @@ cards:
           "సాధించినందుకు": { meaning: "to achieve" }
           "గర్వపడుతున్నాం": { meaning: "to be proud" }
       "మంచి పని చేసినప్పుడు తల్లి గర్వపడుతుంది.":
-        native: "When her child does good work, the mother feels proud."
-        bases:
-          "చేసినప్పుడు": { meaning: "to do" }
-          "గర్వపడుతుంది": { meaning: "to be proud" }
+        "native": "When her child does good work, the mother feels proud."
+        "bases":
+          "చేసినప్పుడు":
+            "meaning": "to do"
+          "గర్వపడుతుంది":
+            "meaning": "to be proud"
+          "తల్లి":
+            "meaning": "mother"
   "te-3349":
     native: "to panic; to get nervous"
     notes:
       "n1": "{1} is 'do not panic', said politely."
     examples:
       "పరీక్షకు ముందు ప్రతి ఒక్కరు కంగారుపడతారు.":
-        native: "Before an exam, everyone gets nervous."
-        bases:
-          "ముందు": { meaning: "before" }
-          "కంగారుపడతారు": { meaning: "to get nervous" }
+        "native": "Before an exam, everyone gets nervous."
+        "bases":
+          "ముందు":
+            "meaning": "before"
+          "కంగారుపడతారు":
+            "meaning": "to get nervous"
+          "ఒక్కరు":
+            "meaning": "one person"
       "కంగారుపడకండి, రైలు ఇంకా రాలేదు.":
         native: "Don't panic; the train has not come yet."
         bases:

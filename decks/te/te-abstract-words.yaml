@@ -82,12 +82,19 @@ cards:
         ipa: "pillalaku maɲtʃi ʋid̪ja aʋasaram"
         bases:
           - { word: "పిల్లలకు", base: "పిల్లలు", reading: "pillalu" }
-      - target: "అతను విద్య కోసం ఊరు విడిచి వెళ్ళాడు."
-        reading: "atanu vidya kōsaṁ ūru viḍici veḷḷāḍu."
-        ipa: "at̪anu ʋid̪ja koːsam uːru ʋiɖitʃi ʋeɭɭaːɖu"
-        bases:
-          - { word: "విడిచి", base: "విడవడం", reading: "viḍavaḍaṁ" }
-          - { word: "వెళ్ళాడు", base: "వెళ్ళడం", reading: "veḷḷaḍaṁ" }
+      - "target": "అతను విద్య కోసం ఊరు విడిచి వెళ్ళాడు."
+        "reading": "atanu vidya kōsaṁ ūru viḍici veḷḷāḍu."
+        "ipa": "at̪anu ʋid̪ja koːsam uːru ʋiɖitʃi ʋeɭɭaːɖu"
+        "bases":
+          - "word": "విడిచి"
+            "base": "విడవడం"
+            "reading": "viḍavaḍaṁ"
+          - "word": "వెళ్ళాడు"
+            "base": "వెళ్ళడం"
+            "reading": "veḷḷaḍaṁ"
+          - "word": "కోసం"
+            "base": "కోసం"
+            "reading": "kōsam"
     antonyms:
       - { id: "avidya", word: "అవిద్య", reading: "avidya", source: "https://en.wiktionary.org/wiki/విద్య" }
   - id: "te-6302"
@@ -141,13 +148,22 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ఈ పద్ధతిలో", reading: "ī paddhatilō" }] }
     examples:
-      - target: "ఈ పద్ధతిలో పని చేస్తే సమయం ఆదా అవుతుంది."
-        reading: "ī paddhatilō pani cēstē samayaṁ ādā avutundi."
-        ipa: "iː pad̪d̪ʱat̪iloː pani tʃeːst̪eː samajam aːd̪aː aʋut̪und̪i"
-        bases:
-          - { word: "పద్ధతిలో", base: "పద్ధతి", reading: "paddhati" }
-          - { word: "చేస్తే", base: "చేయడం", reading: "cēyaḍaṁ" }
-          - { word: "అవుతుంది", base: "అవడం", reading: "avaḍaṁ" }
+      - "target": "ఈ పద్ధతిలో పని చేస్తే సమయం ఆదా అవుతుంది."
+        "reading": "ī paddhatilō pani cēstē samayaṁ ādā avutundi."
+        "ipa": "iː pad̪d̪ʱat̪iloː pani tʃeːst̪eː samajam aːd̪aː aʋut̪und̪i"
+        "bases":
+          - "word": "పద్ధతిలో"
+            "base": "పద్ధతి"
+            "reading": "paddhati"
+          - "word": "చేస్తే"
+            "base": "చేయడం"
+            "reading": "cēyaḍaṁ"
+          - "word": "అవుతుంది"
+            "base": "అవడం"
+            "reading": "avaḍaṁ"
+          - "word": "ఆదా"
+            "base": "ఆదా"
+            "reading": "ādā"
       - target: "నేను కొత్త పద్ధతి నేర్చుకున్నాను."
         reading: "nēnu kotta paddhati nērcukunnānu."
         ipa: "neːnu kot̪t̪a pad̪d̪ʱat̪i neːrtʃukunnaːnu"
@@ -187,12 +203,19 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "మంచి భావం", reading: "mañci bhāvaṁ" }] }
     examples:
-      - target: "ఈ పాటలో గొప్ప భావం ఉంది."
-        reading: "ī pāṭalō goppa bhāvaṁ undi."
-        ipa: "iː paːʈaloː ɡoppa bʱaːʋam und̪i"
-        bases:
-          - { word: "పాటలో", base: "పాట", reading: "pāṭa" }
-          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - "target": "ఈ పాటలో గొప్ప భావం ఉంది."
+        "reading": "ī pāṭalō goppa bhāvaṁ undi."
+        "ipa": "iː paːʈaloː ɡoppa bʱaːʋam und̪i"
+        "bases":
+          - "word": "పాటలో"
+            "base": "పాట"
+            "reading": "pāṭa"
+          - "word": "ఉంది"
+            "base": "ఉండడం"
+            "reading": "uṇḍaḍaṁ"
+          - "word": "గొప్ప"
+            "base": "గొప్ప"
+            "reading": "goppa"
       - target: "ఆ మాటకు అసలు భావం ఏమిటో చెప్పండి."
         reading: "ā māṭaku asalu bhāvaṁ ēmiṭō ceppaṇḍi."
         ipa: "aː maːʈaku asalu bʱaːʋam eːmiʈoː tʃeppaɳɖi"
@@ -233,11 +256,16 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ప్రయత్నంలో", reading: "prayatnaṁlō" }] }
     examples:
-      - target: "ఆమె ఉద్యోగం కోసం గట్టి ప్రయత్నం చేసింది."
-        reading: "āme udyōgaṁ kōsaṁ gaṭṭi prayatnaṁ cēsindi."
-        ipa: "aːme ud̪joːɡam koːsam ɡaʈʈi prajat̪nam tʃeːsind̪i"
-        bases:
-          - { word: "చేసింది", base: "చేయడం", reading: "cēyaḍaṁ" }
+      - "target": "ఆమె ఉద్యోగం కోసం గట్టి ప్రయత్నం చేసింది."
+        "reading": "āme udyōgaṁ kōsaṁ gaṭṭi prayatnaṁ cēsindi."
+        "ipa": "aːme ud̪joːɡam koːsam ɡaʈʈi prajat̪nam tʃeːsind̪i"
+        "bases":
+          - "word": "చేసింది"
+            "base": "చేయడం"
+            "reading": "cēyaḍaṁ"
+          - "word": "కోసం"
+            "base": "కోసం"
+            "reading": "kōsam"
       - target: "ఈ ప్రయత్నంలో నేను విజయం సాధించాను."
         reading: "ī prayatnaṁlō nēnu vijayaṁ sādhiñcānu."
         ipa: "iː prajat̪namloː neːnu ʋidʒajam saːd̪ʱiɲtʃaːnu"
@@ -285,11 +313,15 @@ cards:
         ipa: "ad̪i at̪ani balahiːnat̪a"
         bases:
           - { word: "అతని", base: "అతడు", reading: "ataḍu" }
-      - target: "బలహీనత ఉందని ఒప్పుకోవడం మంచిది."
-        reading: "balahīnata undani oppukōvaḍaṁ mañcidi."
-        ipa: "balahiːnat̪a und̪ani oppukoːʋaɖam maɲtʃid̪i"
-        bases:
-          - { word: "ఉందని", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - "target": "బలహీనత ఉందని ఒప్పుకోవడం మంచిది."
+        "reading": "balahīnata undani oppukōvaḍaṁ mañcidi."
+        "ipa": "balahiːnat̪a und̪ani oppukoːʋaɖam maɲtʃid̪i"
+        "bases":
+          - "word": "ఉందని"
+            "base": "ఉండడం"
+            "reading": "uṇḍaḍaṁ"
+          - "word": "మంచిది"
+            "ref": "te-0500"
     antonyms:
       - { id: "opposite", ref: "te-3227" }
     synonyms:
@@ -325,12 +357,20 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "విశ్వాసంతో", reading: "viśvāsantō" }] }
     examples:
-      - target: "నాకు నా స్నేహితుల మీద విశ్వాసం ఉంది."
-        reading: "nāku nā snēhitula mīda viśvāsaṁ undi."
-        ipa: "naːku naː sneːhit̪ula miːd̪a ʋiʃʋaːsam und̪i"
-        bases:
-          - { word: "స్నేహితుల", base: "స్నేహితుడు", reading: "snēhituḍu" }
-          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
+      - "target": "నాకు నా స్నేహితుల మీద విశ్వాసం ఉంది."
+        "reading": "nāku nā snēhitula mīda viśvāsaṁ undi."
+        "ipa": "naːku naː sneːhit̪ula miːd̪a ʋiʃʋaːsam und̪i"
+        "bases":
+          - "word": "స్నేహితుల"
+            "base": "స్నేహితుడు"
+            "reading": "snēhituḍu"
+          - "word": "ఉంది"
+            "base": "ఉండడం"
+            "reading": "uṇḍaḍaṁ"
+          - "word": "నాకు"
+            "ref": "te-0593"
+          - "word": "నా"
+            "ref": "te-0593"
       - target: "దేవుడి మీద అతనికి గట్టి విశ్వాసం."
         reading: "dēvuḍi mīda ataniki gaṭṭi viśvāsaṁ."
         ipa: "d̪eːʋuɖi miːd̪a at̪aniki ɡaʈʈi ʋiʃʋaːsam"
@@ -368,17 +408,30 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ఐక్యతతో", reading: "aikyatatō" }] }
     examples:
-      - target: "ఐక్యత ఉంటే ఏ పనైనా సాధ్యమే."
-        reading: "aikyata uṇṭē ē panainā sādhyamē."
-        ipa: "aikjat̪a uɳʈeː eː panainaː saːd̪ʱjameː"
-        bases:
-          - { word: "ఉంటే", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
-      - target: "గ్రామస్థుల ఐక్యత అందరికీ ఆదర్శం."
-        reading: "grāmasthula aikyata andarikī ādarśaṁ."
-        ipa: "ɡraːmast̪ʰula aikjat̪a and̪arikiː aːd̪arʃam"
-        bases:
-          - { word: "గ్రామస్థుల", base: "గ్రామస్థుడు", reading: "grāmasthuḍu" }
-          - { word: "అందరికీ", base: "అందరు", reading: "andaru" }
+      - "target": "ఐక్యత ఉంటే ఏ పనైనా సాధ్యమే."
+        "reading": "aikyata uṇṭē ē panainā sādhyamē."
+        "ipa": "aikjat̪a uɳʈeː eː panainaː saːd̪ʱjameː"
+        "bases":
+          - "word": "ఉంటే"
+            "base": "ఉండడం"
+            "reading": "uṇḍaḍaṁ"
+          - "word": "పనైనా"
+            "ref": "te-0197"
+          - "word": "సాధ్యమే"
+            "ref": "te-3630"
+      - "target": "గ్రామస్థుల ఐక్యత అందరికీ ఆదర్శం."
+        "reading": "grāmasthula aikyata andarikī ādarśaṁ."
+        "ipa": "ɡraːmast̪ʰula aikjat̪a and̪arikiː aːd̪arʃam"
+        "bases":
+          - "word": "గ్రామస్థుల"
+            "base": "గ్రామస్థుడు"
+            "reading": "grāmasthuḍu"
+          - "word": "అందరికీ"
+            "base": "అందరు"
+            "reading": "andaru"
+          - "word": "ఆదర్శం"
+            "base": "ఆదర్శం"
+            "reading": "ādarśam"
   - id: "te-6315"
     target: "ఉద్దేశం"
     reading: "uddēśaṁ"
@@ -389,16 +442,30 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "మంచి ఉద్దేశం", reading: "mañci uddēśaṁ" }] }
     examples:
-      - target: "అతని ఉద్దేశం మంచిదే, కానీ పద్ధతి సరికాదు."
-        reading: "atani uddēśaṁ mañcidē, kānī paddhati sarikādu."
-        ipa: "at̪ani ud̪d̪eːʃam maɲtʃid̪eː kaːniː pad̪d̪ʱat̪i sarikaːd̪u"
-        bases:
-          - { word: "అతని", base: "అతడు", reading: "ataḍu" }
-      - target: "నా ఉద్దేశం మిమ్మల్ని బాధపెట్టడం కాదు."
-        reading: "nā uddēśaṁ mimmalni bādhapeṭṭaḍaṁ kādu."
-        ipa: "naː ud̪d̪eːʃam mimmalni baːd̪ʱapeʈʈaɖam kaːd̪u"
-        bases:
-          - { word: "మిమ్మల్ని", base: "మీరు", reading: "mīru" }
+      - "target": "అతని ఉద్దేశం మంచిదే, కానీ పద్ధతి సరికాదు."
+        "reading": "atani uddēśaṁ mañcidē, kānī paddhati sarikādu."
+        "ipa": "at̪ani ud̪d̪eːʃam maɲtʃid̪eː kaːniː pad̪d̪ʱat̪i sarikaːd̪u"
+        "bases":
+          - "word": "అతని"
+            "base": "అతడు"
+            "reading": "ataḍu"
+          - "word": "మంచిదే"
+            "ref": "te-0500"
+          - "word": "సరికాదు"
+            "base": "సరి"
+            "reading": "sari"
+      - "target": "నా ఉద్దేశం మిమ్మల్ని బాధపెట్టడం కాదు."
+        "reading": "nā uddēśaṁ mimmalni bādhapeṭṭaḍaṁ kādu."
+        "ipa": "naː ud̪d̪eːʃam mimmalni baːd̪ʱapeʈʈaɖam kaːd̪u"
+        "bases":
+          - "word": "మిమ్మల్ని"
+            "base": "మీరు"
+            "reading": "mīru"
+          - "word": "నా"
+            "ref": "te-0593"
+          - "word": "బాధపెట్టడం"
+            "base": "బాధపెట్టడం"
+            "reading": "bādhapeṭṭaḍam"
   - id: "te-6316"
     target: "కర్తవ్యం"
     reading: "kartavyaṁ"
@@ -414,11 +481,15 @@ cards:
         ipa: "prat̪i pauruɖi kart̪aʋjam oːʈu ʋeːjaɖam"
         bases:
           - { word: "పౌరుడి", base: "పౌరుడు", reading: "pauruḍu" }
-      - target: "ఇది నా కర్తవ్యం అని అనుకుంటాను."
-        reading: "idi nā kartavyaṁ ani anukuṇṭānu."
-        ipa: "id̪i naː kart̪aʋjam ani anukuɳʈaːnu"
-        bases:
-          - { word: "అనుకుంటాను", base: "అనుకోవడం", reading: "anukōvaḍaṁ" }
+      - "target": "ఇది నా కర్తవ్యం అని అనుకుంటాను."
+        "reading": "idi nā kartavyaṁ ani anukuṇṭānu."
+        "ipa": "id̪i naː kart̪aʋjam ani anukuɳʈaːnu"
+        "bases":
+          - "word": "అనుకుంటాను"
+            "base": "అనుకోవడం"
+            "reading": "anukōvaḍaṁ"
+          - "word": "నా"
+            "ref": "te-0593"
   - id: "te-6317"
     target: "సామర్థ్యం"
     reading: "sāmarthyaṁ"
@@ -461,13 +532,21 @@ cards:
           - { word: "సినిమాల", base: "సినిమా", reading: "sinimā" }
           - { word: "పిల్లల", base: "పిల్లలు", reading: "pillalu" }
           - { word: "ఉంటుంది", base: "ఉండడం", reading: "uṇḍaḍaṁ" }
-      - target: "అతని మాటలు నా మీద మంచి ప్రభావం చూపాయి."
-        reading: "atani māṭalu nā mīda mañci prabhāvaṁ cūpāyi."
-        ipa: "at̪ani maːʈalu naː miːd̪a maɲtʃi prabʱaːʋam tʃuːpaːji"
-        bases:
-          - { word: "అతని", base: "అతడు", reading: "ataḍu" }
-          - { word: "మాటలు", base: "మాట", reading: "māṭa" }
-          - { word: "చూపాయి", base: "చూపడం", reading: "cūpaḍaṁ" }
+      - "target": "అతని మాటలు నా మీద మంచి ప్రభావం చూపాయి."
+        "reading": "atani māṭalu nā mīda mañci prabhāvaṁ cūpāyi."
+        "ipa": "at̪ani maːʈalu naː miːd̪a maɲtʃi prabʱaːʋam tʃuːpaːji"
+        "bases":
+          - "word": "అతని"
+            "base": "అతడు"
+            "reading": "ataḍu"
+          - "word": "మాటలు"
+            "base": "మాట"
+            "reading": "māṭa"
+          - "word": "చూపాయి"
+            "base": "చూపడం"
+            "reading": "cūpaḍaṁ"
+          - "word": "నా"
+            "ref": "te-0593"
   - id: "te-6319"
     target: "పురోగతి"
     reading: "purōgati"
@@ -484,11 +563,16 @@ cards:
         bases:
           - { word: "పనిలో", base: "పని", reading: "pani" }
           - { word: "కనిపిస్తోంది", base: "కనిపించడం", reading: "kanipiñcaḍaṁ" }
-      - target: "ప్రాజెక్టు పురోగతి ప్రతి వారం చెప్పండి."
-        reading: "prājekṭu purōgati prati vāraṁ ceppaṇḍi."
-        ipa: "praːdʒekʈu puroːɡat̪i prat̪i ʋaːram tʃeppaɳɖi"
-        bases:
-          - { word: "చెప్పండి", base: "చెప్పడం", reading: "ceppaḍaṁ" }
+      - "target": "ప్రాజెక్టు పురోగతి ప్రతి వారం చెప్పండి."
+        "reading": "prājekṭu purōgati prati vāraṁ ceppaṇḍi."
+        "ipa": "praːdʒekʈu puroːɡat̪i prat̪i ʋaːram tʃeppaɳɖi"
+        "bases":
+          - "word": "చెప్పండి"
+            "base": "చెప్పడం"
+            "reading": "ceppaḍaṁ"
+          - "word": "ప్రాజెక్టు"
+            "base": "ప్రాజెక్టు"
+            "reading": "prājekṭu"
   - id: "te-6320"
     target: "సంబంధం"
     reading: "sambandhaṁ"
@@ -521,16 +605,29 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "రోజువారీ అభ్యాసం", reading: "rōjuvārī abhyāsaṁ" }] }
     examples:
-      - target: "రోజూ తెలుగు అభ్యాసం చేస్తాను."
-        reading: "rōjū telugu abhyāsaṁ cēstānu."
-        ipa: "roːdʒuː t̪eluɡu abʱjaːsam tʃeːst̪aːnu"
-        bases:
-          - { word: "చేస్తాను", base: "చేయడం", reading: "cēyaḍaṁ" }
-      - target: "నిరంతర అభ్యాసం వల్ల మెరుగవుతారు."
-        reading: "nirantara abhyāsaṁ valla merugavutāru."
-        ipa: "nirant̪ara abʱjaːsam ʋalla meruɡaʋut̪aːru"
-        bases:
-          - { word: "మెరుగవుతారు", base: "మెరుగవడం", reading: "merugavaḍaṁ" }
+      - "target": "రోజూ తెలుగు అభ్యాసం చేస్తాను."
+        "reading": "rōjū telugu abhyāsaṁ cēstānu."
+        "ipa": "roːdʒuː t̪eluɡu abʱjaːsam tʃeːst̪aːnu"
+        "bases":
+          - "word": "చేస్తాను"
+            "base": "చేయడం"
+            "reading": "cēyaḍaṁ"
+          - "word": "తెలుగు"
+            "base": "తెలుగు"
+            "reading": "telugu"
+      - "target": "నిరంతర అభ్యాసం వల్ల మెరుగవుతారు."
+        "reading": "nirantara abhyāsaṁ valla merugavutāru."
+        "ipa": "nirant̪ara abʱjaːsam ʋalla meruɡaʋut̪aːru"
+        "bases":
+          - "word": "మెరుగవుతారు"
+            "base": "మెరుగవడం"
+            "reading": "merugavaḍaṁ"
+          - "word": "నిరంతర"
+            "base": "నిరంతరం"
+            "reading": "nirantaram"
+          - "word": "వల్ల"
+            "base": "వల్ల"
+            "reading": "valla"
   - id: "te-6322"
     target: "నైతికత"
     reading: "naitikata"
@@ -541,12 +638,19 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "నైతిక విలువలు", reading: "naitika viluvalu" }] }
     examples:
-      - target: "నైతికత గురించి పిల్లలకు నేర్పాలి."
-        reading: "naitikata guriñci pillalaku nērpāli."
-        ipa: "nait̪ikat̪a ɡuriɲtʃi pillalaku neːrpaːli"
-        bases:
-          - { word: "పిల్లలకు", base: "పిల్లలు", reading: "pillalu" }
-          - { word: "నేర్పాలి", base: "నేర్పడం", reading: "nērpaḍaṁ" }
+      - "target": "నైతికత గురించి పిల్లలకు నేర్పాలి."
+        "reading": "naitikata guriñci pillalaku nērpāli."
+        "ipa": "nait̪ikat̪a ɡuriɲtʃi pillalaku neːrpaːli"
+        "bases":
+          - "word": "పిల్లలకు"
+            "base": "పిల్లలు"
+            "reading": "pillalu"
+          - "word": "నేర్పాలి"
+            "base": "నేర్పడం"
+            "reading": "nērpaḍaṁ"
+          - "word": "గురించి"
+            "base": "గురించి"
+            "reading": "guriñci"
       - target: "అతనికి బలమైన నైతికత ఉంది."
         reading: "ataniki balamaina naitikata undi."
         ipa: "at̪aniki balamaina nait̪ikat̪a und̪i"
@@ -563,11 +667,16 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ధర్మంగా", reading: "dharmaṅgā" }] }
     examples:
-      - target: "పేదలకు సాయం చేయడం ధర్మం."
-        reading: "pēdalaku sāyaṁ cēyaḍaṁ dharmaṁ."
-        ipa: "peːd̪alaku saːjam tʃeːjaɖam d̪ʱarmam"
-        bases:
-          - { word: "పేదలకు", base: "పేద", reading: "pēda" }
+      - "target": "పేదలకు సాయం చేయడం ధర్మం."
+        "reading": "pēdalaku sāyaṁ cēyaḍaṁ dharmaṁ."
+        "ipa": "peːd̪alaku saːjam tʃeːjaɖam d̪ʱarmam"
+        "bases":
+          - "word": "పేదలకు"
+            "base": "పేద"
+            "reading": "pēda"
+          - "word": "సాయం"
+            "base": "సాయం"
+            "reading": "sāyam"
       - target: "ఆ రాజు ధర్మంగా పాలించాడు."
         reading: "ā rāju dharmaṅgā pāliñcāḍu."
         ipa: "aː raːdʒu d̪ʱarmaŋɡaː paːliɲtʃaːɖu"
@@ -586,11 +695,15 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "సమయ పరిమితి", reading: "samaya parimiti" }] }
     examples:
-      - target: "ఈ పరీక్షకు సమయ పరిమితి ఒక గంట."
-        reading: "ī parīkṣaku samaya parimiti oka gaṇṭa."
-        ipa: "iː pariːkʂaku samaja parimit̪i oka ɡaɳʈa"
-        bases:
-          - { word: "పరీక్షకు", base: "పరీక్ష", reading: "parīkṣa" }
+      - "target": "ఈ పరీక్షకు సమయ పరిమితి ఒక గంట."
+        "reading": "ī parīkṣaku samaya parimiti oka gaṇṭa."
+        "ipa": "iː pariːkʂaku samaja parimit̪i oka ɡaɳʈa"
+        "bases":
+          - "word": "పరీక్షకు"
+            "base": "పరీక్ష"
+            "reading": "parīkṣa"
+          - "word": "సమయ"
+            "ref": "te-0057"
       - target: "ప్రతి మనిషికీ కొన్ని పరిమితులు ఉంటాయి."
         reading: "prati maniṣikī konni parimitulu uṇṭāyi."
         ipa: "prat̪i maniʂikiː konni parimit̪ulu uɳʈaːji"

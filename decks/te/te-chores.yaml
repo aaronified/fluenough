@@ -200,14 +200,22 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "బుట్టలు", reading: "buṭṭalu" }, { word: "బుట్టలో", reading: "buṭṭalō" }] }
     examples:
-      - target: "బుట్టలో కూరగాయలు ఉన్నాయి."
-        reading: "buṭṭalō kūragāyalu unnāyi."
-        ipa: "buʈʈaloː kuːrəɡaːjəlu unnaːji"
-        bases:
-          - { word: "ఉన్నాయి", base: "ఉండడం", reading: "uṇḍaḍam" }
-      - target: "ఈ బుట్ట పెద్దది."
-        reading: "ī buṭṭa peddadi."
-        ipa: "iː buʈʈa peddadi"
+      - "target": "బుట్టలో కూరగాయలు ఉన్నాయి."
+        "reading": "buṭṭalō kūragāyalu unnāyi."
+        "ipa": "buʈʈaloː kuːrəɡaːjəlu unnaːji"
+        "bases":
+          - "word": "ఉన్నాయి"
+            "base": "ఉండడం"
+            "reading": "uṇḍaḍam"
+          - "word": "బుట్టలో"
+            "base": "బుట్ట"
+            "reading": "buṭṭa"
+      - "target": "ఈ బుట్ట పెద్దది."
+        "reading": "ī buṭṭa peddadi."
+        "ipa": "iː buʈʈa peddadi"
+        "bases":
+          - "word": "పెద్దది"
+            "ref": "te-0502"
   - id: "te-2111"
     target: "చెత్తబుట్ట"
     reading: "cettabuṭṭa"
@@ -218,11 +226,16 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "చెత్తబుట్టలు", reading: "cettabuṭṭalu" }, { word: "చెత్తబుట్టలో", reading: "cettabuṭṭalō" }] }
     examples:
-      - target: "చెత్తబుట్టలో చెత్త ఉంది."
-        reading: "cettabuṭṭalō cetta undi."
-        ipa: "tʃettabuʈʈaloː tʃettaː und̪i"
-        bases:
-          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍam" }
+      - "target": "చెత్తబుట్టలో చెత్త ఉంది."
+        "reading": "cettabuṭṭalō cetta undi."
+        "ipa": "tʃettabuʈʈaloː tʃettaː und̪i"
+        "bases":
+          - "word": "ఉంది"
+            "base": "ఉండడం"
+            "reading": "uṇḍaḍam"
+          - "word": "చెత్తబుట్టలో"
+            "base": "చెత్తబుట్ట"
+            "reading": "cettabuṭṭa"
       - target: "చెత్తబుట్ట నిండింది."
         reading: "cettabuṭṭa niṇḍindi."
         ipa: "tʃettabuʈʈaː niɳɖindi"
@@ -262,11 +275,17 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "చెంబులు", reading: "cembulu" }, { word: "చెంబులో", reading: "cembulō" }] }
     examples:
-      - target: "చెంబు నా చేతిలో ఉంది."
-        reading: "cembu nā cētilō undi."
-        ipa: "tʃembu naː tʃeːt̪ilo: und̪i"
-        bases:
-          - { word: "ఉంది", base: "ఉండడం", reading: "uṇḍaḍam" }
+      - "target": "చెంబు నా చేతిలో ఉంది."
+        "reading": "cembu nā cētilō undi."
+        "ipa": "tʃembu naː tʃeːt̪iloː und̪i"
+        "bases":
+          - "word": "ఉంది"
+            "base": "ఉండడం"
+            "reading": "uṇḍaḍam"
+          - "word": "నా"
+            "ref": "te-0593"
+          - "word": "చేతిలో"
+            "ref": "te-0741"
       - target: "చెంబు కడగండి."
         reading: "cembu kaḍagaṇḍi."
         ipa: "tʃembu kaɖaɡaɳɖi"
@@ -281,20 +300,30 @@ cards:
     ipa: "intiː paːni"
     pos: "noun"
     gender: "amahat"
-    bases: "self"
+    bases: [{"word": "ఇంటి", "ref": "te-0195"}]
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ఇంటి పనులు", reading: "iṇṭi panulu" }] }
     examples:
-      - target: "నేను ఇంటి పని చేస్తాను."
-        reading: "nēnu iṇṭi pani cēstānu."
-        ipa: "neːnu intiː paːni tʃeːstaːnu"
-        bases:
-          - { word: "చేస్తాను", base: "చేయడం", reading: "cēyaḍam" }
-      - target: "ఇంటి పనులు అందరూ చేయాలి."
-        reading: "iṇṭi panulu andarū cēyāli."
-        ipa: "intiː paːnuluː əndəruː tʃeːjaːli"
-        bases:
-          - { word: "చేయాలి", base: "చేయడం", reading: "cēyaḍam" }
+      - "target": "నేను ఇంటి పని చేస్తాను."
+        "reading": "nēnu iṇṭi pani cēstānu."
+        "ipa": "neːnu intiː paːni tʃeːstaːnu"
+        "bases":
+          - "word": "చేస్తాను"
+            "base": "చేయడం"
+            "reading": "cēyaḍam"
+          - "word": "ఇంటి"
+            "ref": "te-0195"
+      - "target": "ఇంటి పనులు అందరూ చేయాలి."
+        "reading": "iṇṭi panulu andarū cēyāli."
+        "ipa": "intiː paːnuluː əndəruː tʃeːjaːli"
+        "bases":
+          - "word": "చేయాలి"
+            "base": "చేయడం"
+            "reading": "cēyaḍam"
+          - "word": "ఇంటి"
+            "ref": "te-0195"
+          - "word": "పనులు"
+            "ref": "te-0197"
   - ref: "te-0197"
   - ref: "te-0881"
   - ref: "te-0883"
