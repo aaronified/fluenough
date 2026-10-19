@@ -2748,7 +2748,9 @@ def validate_core(r: Report, raw: dict, path: Path) -> None:
     lang = raw.get("language")
     code = _lang_code(lang)
     shown = code or "<lang>"
-    check_transliterated(r, raw, fixed=code or "", own=_SCRIPT_BLOCK.get(_script_of(lang)),
+    # The block's own script, known to the validator or not (perso_arabic).
+    own = _SCRIPT_BLOCK.get(lang.get("script")) if isinstance(lang, dict) else None
+    check_transliterated(r, raw, fixed=code or "", own=own,
                          word_keys=_WORD_KEYS | {"slots"})
     check_romanised(r, raw, path)
     check_ipa(r, raw)
