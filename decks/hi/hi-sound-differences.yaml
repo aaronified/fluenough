@@ -2,12 +2,13 @@ schema: 1
 id: "hi-sound-differences"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
   - id: "hi-0100"
     target: "पल"
+    target_scripts: { perso_arabic: "پل" }
     reading: "pal"
     ipa: "pəl"
     tags: ["aspiration"]
@@ -19,6 +20,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0101"
     target: "दान"
+    target_scripts: { perso_arabic: "دان" }
     reading: "dān"
     ipa: "d̪aːn"
     tags: ["aspiration"]
@@ -26,6 +28,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0102"
     target: "धान"
+    target_scripts: { perso_arabic: "دھان" }
     picture: "🌾"
     reading: "dhān"
     ipa: "d̪ʱaːn"
@@ -38,6 +41,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0103"
     target: "डाल"
+    target_scripts: { perso_arabic: "ڈال" }
     reading: "ḍāl"
     ipa: "ɖaːl"
     tags: ["dental-retroflex"]
@@ -56,6 +60,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0105"
     target: "कम"
+    target_scripts: { perso_arabic: "کم" }
     reading: "kam"
     ipa: "kəm"
     tags: ["vowel-length"]
@@ -67,6 +72,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0106"
     target: "सुना"
+    target_scripts: { perso_arabic: "سنا" }
     reading: "sunā"
     ipa: "sʊnaː"
     tags: ["vowel-length"]
@@ -74,6 +80,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0107"
     target: "सूना"
+    target_scripts: { perso_arabic: "سونا" }
     reading: "sūnā"
     ipa: "suːnaː"
     tags: ["vowel-length"]
@@ -95,6 +102,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0110"
     target: "बचा"
+    target_scripts: { perso_arabic: "بچا" }
     reading: "bacā"
     ipa: "bətʃaː"
     tags: ["gemination"]
@@ -102,6 +110,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0111"
     target: "बच्चा"
+    target_scripts: { perso_arabic: "بچہ" }
     reading: "baccā"
     ipa: "bətʃtʃaː"
     tags: ["gemination"]
@@ -109,6 +118,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0112"
     target: "है"
+    target_scripts: { perso_arabic: "ہے" }
     reading: "hai"
     ipa: "ɦɛː"
     tags: ["nasal"]
@@ -116,6 +126,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0113"
     target: "हैं"
+    target_scripts: { perso_arabic: "ہیں" }
     reading: "haim̐"
     ipa: "ɦɛ̃ː"
     tags: ["nasal"]
@@ -123,6 +134,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0114"
     target: "पढ़ना"
+    target_scripts: { perso_arabic: "پڑھنا" }
     reading: "paṛhnā"
     ipa: "pəɽʱnaː"
     tags: ["aspiration"]
@@ -130,6 +142,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0115"
     target: "पड़ना"
+    target_scripts: { perso_arabic: "پڑنا" }
     reading: "paṛnā"
     ipa: "pəɽnaː"
     tags: ["aspiration"]
