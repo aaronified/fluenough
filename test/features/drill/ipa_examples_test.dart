@@ -59,13 +59,13 @@ void main() {
       target: card.target,
       native: card.native,
       examples: <CardExample>[
-        CardExample(
+        const CardExample(
           target: 'pin',
           native: 'pin',
           language: 'en',
           ipa: '[pʰɪn]',
         ),
-        CardExample(target: 'cat', native: 'cat', language: 'en', ipa: 'kæt'),
+        const CardExample(target: 'cat', native: 'cat', language: 'en', ipa: 'kæt'),
       ],
     );
     await pumpScreen(
