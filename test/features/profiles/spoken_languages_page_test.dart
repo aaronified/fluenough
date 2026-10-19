@@ -449,6 +449,14 @@ void main() {
         'perso_arabic',
       ]);
       expect(both.scriptsRead.containsKey('ur'), isFalse);
+      // Knowing Urdu without reading its script says nothing more.
+      final spoken = SettingsNotifier()
+        ..restore(const {
+          'spoken_languages': 'ur',
+          'scripts_read': '{"ur":false}',
+        });
+      expect(spoken.spokenLanguages, ['hi']);
+      expect(hindustani.scriptsReadIn(spoken.scriptsRead), isEmpty);
       // Saved again, it reads the same.
       final again = SettingsNotifier()..restore(one.toStored());
       expect(again.spokenLanguages, one.spokenLanguages);
