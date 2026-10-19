@@ -62,7 +62,9 @@ void main() {
   testWidgets('with both scripts learned, the primary is shown and the other '
       'beneath it', (tester) async {
     await pump(tester, both, Skill.recognition);
-    expect(find.text(devanagari), findsOneWidget);
+    // A long word is given its breaks between aksharas, so it is found as a
+    // target, not as plain text.
+    expect(findTarget(devanagari), findsOneWidget);
     expect(find.text(persoArabic), findsOneWidget);
   });
 

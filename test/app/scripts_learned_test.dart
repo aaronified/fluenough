@@ -63,9 +63,7 @@ void main() {
         ..setScriptsLearned('hi', <String>{persoArabic})
         ..setLearnsAlphabet('hi', true);
       expect(s.hasScriptsChosen('hi'), isFalse);
-      expect(s.scriptsLearned('hi', primary: devanagari), <String>{
-        devanagari,
-      });
+      expect(s.scriptsLearned('hi', primary: devanagari), <String>{devanagari});
     });
 
     test('the choice survives toStored and restore', () {
@@ -85,9 +83,7 @@ void main() {
       final old = SettingsNotifier()
         ..restore(const <String, String>{'no_alphabet': 'hi'});
       expect(old.scriptsLearned('hi', primary: devanagari), isEmpty);
-      expect(old.scriptsLearned('bn', primary: 'bengali'), <String>{
-        'bengali',
-      });
+      expect(old.scriptsLearned('bn', primary: 'bengali'), <String>{'bengali'});
       expect(old.hasScriptsChosen('hi'), isFalse);
     });
   });

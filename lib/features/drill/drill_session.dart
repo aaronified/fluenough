@@ -365,14 +365,21 @@ class DrillSession extends ChangeNotifier {
   /// The answers the grader accepts, the canonical one first: while
   /// [transliterating], the reading, then the target, which is accepted too.
   List<String> get acceptedAnswers {
-    var accepted = _answersOf(item.card);
+    final accepted = _writtenAnswers;
     final reading = item.card.reading;
     if (transliterating && reading != null) {
       return <String>[reading, ...accepted];
     }
-    // Written in another script (#623): its spelling, then the rest.
+    return accepted;
+  }
+
+  /// What a typed answer is graded against, apart from the reading: the
+  /// card's answers, with, written in another script (#623), its spelling
+  /// in it first.
+  List<String> get _writtenAnswers {
+    final accepted = _answersOf(item.card);
     if (!hearsMeaning && writtenTarget != item.card.target) {
-      accepted = <String>[writtenTarget, ...accepted];
+      return <String>[writtenTarget, ...accepted];
     }
     return accepted;
   }
@@ -390,7 +397,7 @@ class DrillSession extends ChangeNotifier {
     if (_phase != DrillPhase.prompt || typed.trim().isEmpty) return;
     if (item.mode == DrillMode.recognition || question != null) return;
     if (ask != Ask.own) return;
-    final accepted = _answersOf(item.card);
+    final accepted = _writtenAnswers;
     final grader = typesDigits
         ? const AnswerGrader(typoDistance: 0, longTypoDistance: 0)
         : AnswerGrader(

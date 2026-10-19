@@ -1781,7 +1781,7 @@ class AppState extends ChangeNotifier {
       course.removeWhere(
         (e) =>
             path.alphabet.contains(e.id) &&
-            !(alphabet ?? learnsScriptOf(e.language)),
+            !learnsScriptOf(e.language, alphabet: alphabet),
       );
     }
     final byId = <String, DeckEntry>{for (final e in course) e.id: e};
@@ -1820,15 +1820,29 @@ class AppState extends ChangeNotifier {
   /// a script deck's own (#623), so a Devanagari reader learning
   /// Perso-Arabic skips the Devanagari script units. A script the language
   /// does not list follows whether the alphabet is learned at all.
-  bool learnsScriptOf(LanguageInfo language) {
+  ///
+  /// [alphabet] overrides whether the alphabet is learned, for placement,
+  /// which asks before it saves: true means the scripts chosen, or the
+  /// primary script where none is stored, never every script.
+  bool learnsScriptOf(LanguageInfo language, {bool? alphabet}) {
     final code = language.code;
     final primary = primaryScript(code);
     final listed = <String>{primary, ...language.allScripts};
-    return listed.contains(language.script)
-        ? settings
-              .scriptsLearned(code, primary: primary)
-              .contains(language.script)
-        : settings.learnsAlphabet(code);
+    if (!listed.contains(language.script)) {
+      return alphabet ?? settings.learnsAlphabet(code);
+    }
+    if (alphabet == null) {
+      return settings
+          .scriptsLearned(code, primary: primary)
+          .contains(language.script);
+    }
+    if (!alphabet) return false;
+    final chosen = settings.hasScriptsChosen(code)
+        ? settings.scriptsLearned(code, primary: primary)
+        : const <String>{};
+    return (chosen.isEmpty ? <String>{primary} : chosen).contains(
+      language.script,
+    );
   }
 
   /// The scripts [language]'s cards are read in, in course order: those
