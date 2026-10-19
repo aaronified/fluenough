@@ -1887,7 +1887,9 @@ class AppState extends ChangeNotifier {
   /// or placed. Until then typed answers start in Latin letters and count
   /// in full. True for a course with no such units.
   bool scriptLearned(String language) {
-    final units = courseUnits(language, alphabet: true);
+    // The script units of the scripts learned (#623): one skipped is not
+    // waited for.
+    final units = courseUnits(language);
     final path = units.isEmpty ? null : pathOf(units.first.first);
     if (path == null) return true;
     bool script(List<DeckEntry> unit) =>

@@ -184,4 +184,41 @@ void main() {
     expect(state.settings.learnsAlphabet('bn'), isFalse);
     expect(state.settings.noAlphabet, <String>{'bn'});
   });
+
+  testWidgets('adding Perso-Arabic and stopping Devanagari saves the '
+      'Perso-Arabic choice, not a yes or no about Devanagari', (
+    tester,
+  ) async {
+    usePhone(tester);
+    tester.view.physicalSize = const Size(390 * 3, 6000 * 3);
+    final state = await pumpScreen(
+      tester,
+      LanguagePickerPage(spokenList: pickerSpokenList),
+      state: learning(),
+    );
+    final l10n = l10nOf(tester);
+    expect(state.settings.hasScriptsChosen('hi'), isFalse);
+
+    await openSheet(tester, 'hi');
+    await tester.tap(
+      find.byKey(const ValueKey<String>('sheet-add-script')).first,
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(
+      find.byKey(const ValueKey<String>('sheet-script-perso_arabic')),
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(
+      find.byKey(const ValueKey<String>('sheet-script-devanagari')),
+    );
+    await tester.pumpAndSettle();
+    await finishSheet(tester);
+    await tester.tap(find.text(l10n.commonContinue));
+    await tester.pumpAndSettle();
+    expect(state.settings.scriptsLearned('hi', primary: 'devanagari'), <String>{
+      'perso_arabic',
+    });
+    expect(state.settings.learnsAlphabet('hi'), isTrue);
+    expect(state.settings.learnsAlphabet('bn'), isTrue);
+  });
 }
