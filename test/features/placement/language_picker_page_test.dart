@@ -18,7 +18,8 @@ import 'package:fluenough/core/decks/language_catalog.dart';
 import 'package:fluenough/core/tts/tts_engine.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/features/gallery/gallery_page.dart';
-import 'package:fluenough/features/placement/language_card.dart';
+import 'package:fluenough/features/placement/course_line.dart';
+import 'package:fluenough/features/placement/language_row.dart';
 import 'package:fluenough/features/placement/language_picker_page.dart';
 import 'package:fluenough/features/placement/picker_fixtures.dart';
 import 'package:fluenough/features/placement/placement_page.dart';
@@ -29,11 +30,12 @@ import '../../support/deck_remote.dart';
 import '../../support/harness.dart';
 import '../../support/picker.dart';
 
-/// The language picker (#211, `docs/plans/language-picker.md` and its
-/// approved mockup): search, the order of its groups, what a card says,
-/// what an opened card asks, removal, the download on a card, and its
+/// Languages I'm learning (#211, #626, `docs/plans/language-picker.md` and
+/// its approved mockup): plain rows in groups, the pinned search, a
+/// language's sheet in steps with Back, Remove, the download under a row, and
 /// accessibility. Choosing and placement through the whole app are in
-/// `placement_flow_test.dart`; the catalog's arithmetic in
+/// `placement_flow_test.dart`; the update button and Remove in
+/// `deck_downloads_flow_test.dart`; the catalog's arithmetic in
 /// `test/core/decks/language_catalog_test.dart`.
 
 /// The picker on [fixture], one of [PickerFixtures]' states, on the deck
@@ -41,27 +43,32 @@ import '../../support/picker.dart';
 Future<AppState> pumpPicker(
   WidgetTester tester,
   AppState Function(AppState) fixture, {
-  LanguagePickerPage page = const LanguagePickerPage(firstRun: true),
+  LanguagePickerPage? page,
   ThemeMode themeMode = ThemeMode.light,
 }) async {
   final app = AppState.test();
   addTearDown(app.dispose);
   final state = fixture(app);
   addTearDown(state.dispose);
-  await pumpScreen(tester, page, state: state, themeMode: themeMode);
+  await pumpScreen(
+    tester,
+    page ?? LanguagePickerPage(firstRun: true, spokenList: pickerSpokenList),
+    state: state,
+    themeMode: themeMode,
+  );
   return state;
 }
 
-/// Whether [finder] is under [code]'s card.
+/// Whether [finder] is under [code]'s row.
 Finder inCard(String code, Finder finder) =>
     find.descendant(of: languageCard(code), matching: finder);
 
-/// The codes of the cards built, in the list's order.
+/// The codes of the rows built, in the list's order.
 List<String> cardOrder(WidgetTester tester) => <String>[
-  for (final card in tester.widgetList<LanguageCard>(
-    find.byType(LanguageCard, skipOffstage: false),
+  for (final row in tester.widgetList<LanguageRow>(
+    find.byType(LanguageRow, skipOffstage: false),
   ))
-    card.language.code,
+    row.language.code,
 ];
 
 /// A phone tall enough for the whole list to be built.
@@ -190,6 +197,42 @@ Finder continueButton(AppLocalizations l10n) =>
 bool canContinue(WidgetTester tester, AppLocalizations l10n) =>
     tester.widget<FilledButton>(continueButton(l10n)).onPressed != null;
 
+/// The picker on the bundled decks, for a learner who speaks English: a first
+/// launch unless [learning] says what is learned.
+Future<AppState> pumpFresh(
+  WidgetTester tester, {
+  List<String> learning = const <String>[],
+  bool firstRun = true,
+  double textScale = 1.0,
+  ThemeMode themeMode = ThemeMode.light,
+}) async {
+  usePhone(tester, textScale: textScale);
+  final state = AppState.test(
+    settings: SettingsNotifier(
+      spokenLanguages: const <String>['en'],
+      learningLanguages: learning,
+      learningChosen: learning.isNotEmpty,
+    ),
+  );
+  addTearDown(state.dispose);
+  await pumpScreen(
+    tester,
+    // A new key: a second picture in one test starts a page of its own.
+    KeyedSubtree(
+      key: UniqueKey(),
+      child: LanguagePickerPage(
+        firstRun: firstRun,
+        spokenList: pickerSpokenList,
+      ),
+    ),
+    state: state,
+    themeMode: themeMode,
+  );
+  return state;
+}
+
+Finder sheetKey(String key) => find.byKey(ValueKey<String>(key));
+
 void main() {
   group('search', () {
     testWidgets('matches names, own names and codes, ignoring case and '
@@ -212,14 +255,29 @@ void main() {
 
       await tester.enterText(field, 'gu');
       await tester.pumpAndSettle();
-      expect(cardOrder(tester), <String>['te', 'gu'], reason: 'Telugu too');
+      expect(
+        cardOrder(tester),
+        unorderedEquals(<String>['gu', 'te']),
+        reason: 'Telugu too',
+      );
 
       await tester.enterText(field, 'kn ');
       await tester.pumpAndSettle();
       expect(cardOrder(tester), <String>['kn'], reason: 'code, trimmed');
     });
 
-    testWidgets('with no match, says so; clearing brings every language '
+    testWidgets('results are grouped by family, with how many of the family '
+        'match', (tester) async {
+      useTallPhone(tester);
+      await pumpPicker(tester, PickerFixtures.taughtFromTwo);
+      final l10n = l10nOf(tester);
+      await tester.enterText(find.byType(TextField), 'hi');
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.knownFamily('indo_aryan')), findsOneWidget);
+      expect(find.byKey(const ValueKey<String>('check-updates')), findsNothing);
+    });
+
+    testWidgets('with no match, says so; clearing brings every group '
         'back', (tester) async {
       final handle = tester.ensureSemantics();
       useTallPhone(tester);
@@ -237,56 +295,121 @@ void main() {
 
       await tester.tap(find.byTooltip(l10n.pickerClearSearch));
       await tester.pumpAndSettle();
-      expect(cardOrder(tester), hasLength(8));
+      expect(find.text(l10n.knownAllLanguages), findsOneWidget);
       expect(find.byTooltip(l10n.pickerClearSearch), findsNothing);
       handle.dispose();
     });
+
+    testWidgets('the search bar stays at the top as the list scrolls, and '
+        'the update button scrolls away', (tester) async {
+      usePhone(tester);
+      await pumpPicker(
+        tester,
+        PickerFixtures.onPhone,
+        page: LanguagePickerPage(spokenList: pickerSpokenList),
+      );
+      final search = find.byType(SearchBar);
+      final button = find.byKey(const ValueKey<String>('check-updates'));
+      final before = tester.getTopLeft(search).dy;
+      expect(button, findsOneWidget);
+      expect(tester.getTopLeft(button).dy, lessThan(before));
+
+      await tester.drag(pickerList().first, const Offset(0, -2000));
+      await tester.pumpAndSettle();
+      expect(search, findsOneWidget);
+      expect(tester.getTopLeft(search).dy, lessThan(before));
+      expect(tester.getRect(search).top, greaterThanOrEqualTo(0));
+      expect(tester.getRect(search).bottom, lessThan(200));
+      // The button went off the top; the search did not.
+      expect(
+        button.evaluate().isEmpty ||
+            tester.getRect(button).bottom <= tester.getRect(search).top,
+        isTrue,
+      );
+      // It still takes a search.
+      await tester.enterText(find.byType(TextField), 'kan');
+      await tester.pumpAndSettle();
+      expect(cardOrder(tester), <String>['kn']);
+    });
   });
 
-  group('order', () {
-    testWidgets('chosen first, then taught from a language the learner '
-        'speaks, then A to Z', (tester) async {
+  group('the groups', () {
+    testWidgets('Learning first, then Popular, then every language by '
+        'family, each family folded', (tester) async {
       useTallPhone(tester);
-      await pumpPicker(tester, PickerFixtures.taughtFromTwo);
+      await pumpPicker(
+        tester,
+        PickerFixtures.onPhone,
+        page: LanguagePickerPage(spokenList: pickerSpokenList),
+      );
       final l10n = l10nOf(tester);
-      expect(find.text(l10n.pickerGroupAvailable(8)), findsOneWidget);
-      expect(find.text(l10n.pickerGroupLearning(1)), findsNothing);
-      // The learner speaks Bengali and Hindi: only Telugu is taught from
-      // them.
-      expect(cardOrder(tester), <String>[
-        'te',
-        'as',
-        'bn',
-        'gu',
-        'hi',
-        'kn',
-        'mr',
-        'es',
-      ]);
+      final learning = find.text(l10n.pickerGroupLearning(3));
+      expect(learning, findsOneWidget);
+      expect(
+        cardOrder(tester).take(3),
+        unorderedEquals(<String>['hi', 'es', 'te']),
+      );
+      expect(
+        tester.getTopLeft(learning).dy,
+        lessThan(tester.getTopLeft(languageCard('hi')).dy),
+      );
 
-      await pickLanguage(tester, 'kn');
+      // Every family is folded until it is opened.
+      await tester.drag(pickerList().first, const Offset(0, -6000));
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.knownAllLanguages), findsOneWidget);
+      final folded = find.byIcon(Icons.expand_more);
+      expect(folded, findsWidgets);
+      final rows = find.byType(LanguageRow).evaluate().length;
+      await tester.ensureVisible(folded.first);
+      await tester.pumpAndSettle();
+      await tester.tap(folded.first);
+      await tester.pumpAndSettle();
+      expect(find.byType(LanguageRow).evaluate().length, greaterThan(rows));
+      expect(find.byIcon(Icons.expand_less), findsOneWidget);
+      // And folds again.
+      await tester.tap(find.byIcon(Icons.expand_less));
+      await tester.pumpAndSettle();
+      expect(find.byType(LanguageRow).evaluate().length, rows);
+    });
+
+    testWidgets('a language chosen moves to Learning; one stopped leaves it', (
+      tester,
+    ) async {
+      await pumpFresh(tester);
+      final l10n = l10nOf(tester);
+      expect(find.text(l10n.pickerGroupLearning(1)), findsNothing);
+      await pickLanguage(tester, 'es');
+      await tester.drag(pickerList().first, const Offset(0, 4000));
+      await tester.pumpAndSettle();
       expect(find.text(l10n.pickerGroupLearning(1)), findsOneWidget);
-      expect(find.text(l10n.pickerGroupAvailable(7)), findsOneWidget);
-      expect(cardOrder(tester).first, 'kn');
+      expect(cardOrder(tester).first, 'es');
+      expect(isPicked(tester, 'es'), isTrue);
       expect(
         tester.getTopLeft(find.text(l10n.pickerGroupLearning(1))).dy,
-        lessThan(tester.getTopLeft(languageCard('kn')).dy),
+        lessThan(tester.getTopLeft(languageCard('es')).dy),
       );
+
+      await pickLanguage(tester, 'es');
+      await tester.drag(pickerList().first, const Offset(0, 4000));
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.pickerGroupLearning(1)), findsNothing);
+      expect(find.byType(AlertDialog), findsNothing, reason: 'just chosen');
     });
 
-    testWidgets('a card ticked far down the list stays in view as it '
-        'moves up', (tester) async {
-      usePhone(tester);
-      await pumpPicker(tester, PickerFixtures.taughtFromTwo);
+    testWidgets('a row chosen far down the list is in view in Learning', (
+      tester,
+    ) async {
+      await pumpFresh(tester);
       await pickLanguage(tester, 'es');
-      final box = inCard('es', find.byType(Checkbox));
-      expect(box, findsOneWidget);
-      expect(tester.getRect(box).top, greaterThanOrEqualTo(0));
-      expect(tester.getRect(box).bottom, lessThan(844));
+      expect(isPicked(tester, 'es'), isTrue);
+      final row = languageCard('es');
+      expect(tester.getRect(row).top, greaterThanOrEqualTo(0));
+      expect(tester.getRect(row).bottom, lessThan(844));
     });
   });
 
-  group('the card', () {
+  group('the row', () {
     const units = <B1Unit>[
       B1Unit(words: 100, has: 50, grammar: <String>['g1']),
       B1Unit(
@@ -303,10 +426,7 @@ void main() {
       ),
     ];
 
-    CatalogLanguage telugu({
-      List<B1Unit> course = units,
-      List<String> natives = const <String>['en'],
-    }) => CatalogLanguage(
+    CatalogLanguage telugu({List<B1Unit> course = units}) => CatalogLanguage(
       code: 'te',
       name: 'Telugu',
       ownName: 'తెలుగు',
@@ -314,26 +434,17 @@ void main() {
       script: 'telugu',
       scriptDecks: true,
       natives: <CatalogNative>[
-        for (final code in natives)
-          (
-            code: code,
-            name: const <String, String>{
-              'en': 'English',
-              'bn': 'Bengali',
-              'hi': 'Hindi',
-            }[code]!,
-            progress: B1Progress.of(course),
-          ),
+        (code: 'en', name: 'English', progress: B1Progress.of(course)),
       ],
     );
 
-    Future<void> pumpCard(
+    Future<void> pumpRow(
       WidgetTester tester,
       CatalogLanguage language, {
-      List<String> spoken = const <String>['en'],
+      bool chosen = false,
       double? you,
       int? youWords,
-      ({bool onPhone, String size})? storage,
+      String query = '',
     }) async {
       usePhone(tester);
       await pumpScreen(
@@ -341,15 +452,14 @@ void main() {
         Scaffold(
           body: ListView(
             children: <Widget>[
-              LanguageCard(
+              LanguageRow(
                 language: language,
-                ticked: false,
-                onToggle: () {},
-                spoken: spoken,
-                progress: language.progressFor(spoken),
+                chosen: chosen,
+                onTap: () {},
+                progress: language.progressFor(const <String>['en']),
                 you: you,
                 youWords: youWords,
-                storage: storage,
+                query: query,
               ),
             ],
           ),
@@ -357,47 +467,59 @@ void main() {
       );
     }
 
-    testWidgets('shows how much of B1 is written, a unit over its plan '
-        'capped, with the grammar topics', (tester) async {
-      await pumpCard(tester, telugu());
+    testWidgets('is plain: the names, the tag and the learner\'s own '
+        'progress, with no B1 line', (tester) async {
+      await pumpRow(tester, telugu(), chosen: true, you: 0.18);
       final l10n = l10nOf(tester);
-      // (50 + min(120, 100) + 0) of 400 words.
-      expect(find.textContaining(l10n.pickerWritten(37)), findsOneWidget);
-      expect(
-        find.textContaining(l10n.pickerGrammarTopics(2, 3)),
-        findsOneWidget,
-      );
-      expect(find.text(l10n.pickerScript('Telugu')), findsOneWidget);
-      expect(find.text('Telugu · తెలుగు'), findsOneWidget);
+      expect(find.byType(LanguageRow), findsOneWidget);
+      expect(find.text(l10n.pickerBeta), findsOneWidget);
+      expect(find.text(l10n.pickerYouShort(18)), findsOneWidget);
+      expect(find.byIcon(Icons.check_circle), findsOneWidget);
+      // The A1, A2, B1 and culture line is in the language's sheet (owner,
+      // 2026-10-18), not on the row.
+      expect(find.byType(CourseLine), findsNothing);
+      expect(find.byType(LinearProgressIndicator), findsNothing);
     });
 
-    testWidgets('a path with no B1 plan shows the course size instead', (
+    testWidgets('a language not learned shows a chevron and no progress', (
       tester,
     ) async {
-      await pumpCard(
-        tester,
-        telugu(course: const <B1Unit>[B1Unit(has: 300), B1Unit(has: 340)]),
-      );
-      final l10n = l10nOf(tester);
-      expect(find.text(l10n.pickerCourseSize(640)), findsOneWidget);
+      await pumpRow(tester, telugu());
+      expect(find.byIcon(Icons.chevron_right), findsOneWidget);
+      expect(find.byIcon(Icons.check_circle), findsNothing);
       expect(find.textContaining('% of B1'), findsNothing);
     });
 
-    testWidgets('Alpha until A1 is written, Beta until B1 is, then no tag; '
-        'never "Just started"', (tester) async {
-      Future<void> expectTag(List<B1Unit> course, String? tag) async {
-        await pumpCard(tester, telugu(course: course));
+    testWidgets('a course with no B1 plan shows the words learned instead', (
+      tester,
+    ) async {
+      await pumpRow(
+        tester,
+        telugu(course: const <B1Unit>[B1Unit(has: 300)]),
+        chosen: true,
+        youWords: 40,
+      );
+      expect(find.text(l10nOf(tester).pickerYouWords(40)), findsOneWidget);
+    });
+
+    testWidgets('Alpha until A1 is written, Beta until B1 is, then '
+        'Complete', (tester) async {
+      Future<void> expectTag(List<B1Unit> course, String which) async {
+        await pumpRow(tester, telugu(course: course));
         final l10n = l10nOf(tester);
-        for (final t in <String>[l10n.pickerAlpha, l10n.pickerBeta]) {
-          expect(find.text(t), t == tag ? findsOneWidget : findsNothing);
+        final tags = <String>[
+          l10n.pickerAlpha,
+          l10n.pickerBeta,
+          l10n.pickerComplete,
+        ];
+        for (final t in tags) {
+          expect(find.text(t), t == which ? findsOneWidget : findsNothing);
         }
         expect(find.textContaining('started'), findsNothing);
       }
 
-      final l10n = await () async {
-        await pumpCard(tester, telugu());
-        return l10nOf(tester);
-      }();
+      await pumpRow(tester, telugu());
+      final l10n = l10nOf(tester);
       // A1's unit written: Beta.
       await expectTag(units, l10n.pickerBeta);
       // A1's unit still planned: Alpha.
@@ -406,91 +528,31 @@ void main() {
         B1Unit(words: 100, planned: true, milestone: Milestone.a1),
         B1Unit(words: 200, planned: true, milestone: Milestone.b1),
       ], l10n.pickerAlpha);
-      // Every unit to B1 written: no tag.
+      // Every unit to B1 written: Complete.
       await expectTag(const <B1Unit>[
         B1Unit(words: 100, has: 100, milestone: Milestone.a1),
         B1Unit(words: 200, has: 150, milestone: Milestone.b1),
-      ], null);
+      ], l10n.pickerComplete);
+      // A path with no level plan is Alpha.
+      await expectTag(const <B1Unit>[
+        B1Unit(has: 300),
+        B1Unit(has: 340),
+      ], l10n.pickerAlpha);
     });
 
-    testWidgets('a path with no level plan is Alpha, without saying that A1 '
-        'is unfinished', (tester) async {
+    testWidgets('is one button to a screen reader, with its names, its '
+        'stage and its progress in one label', (tester) async {
       final handle = tester.ensureSemantics();
-      await pumpCard(
-        tester,
-        telugu(course: const <B1Unit>[B1Unit(has: 300), B1Unit(has: 340)]),
-      );
+      await pumpRow(tester, telugu(), chosen: true, you: 0.18);
       final l10n = l10nOf(tester);
-      expect(find.text(l10n.pickerAlpha), findsOneWidget);
-      final label = tester
-          .getSemantics(find.byType(Checkbox))
-          .getSemanticsData()
-          .label;
-      expect(label, contains(l10n.pickerAlphaUnplannedLabel));
-      expect(label, isNot(contains(l10n.pickerAlphaLabel)));
-      handle.dispose();
-    });
-
-    testWidgets('taught from: the learner\'s own first, and a line when none '
-        'is theirs', (tester) async {
-      await pumpCard(
-        tester,
-        telugu(natives: const <String>['en', 'hi', 'bn']),
-        spoken: const <String>['hi', 'bn'],
-      );
-      final l10n = l10nOf(tester);
-      expect(
-        find.bySemanticsLabel(
-          RegExp(
-            RegExp.escape(l10n.pickerTaughtFromLine('Hindi, Bengali, English')),
-          ),
-        ),
-        findsOneWidget,
-      );
-      expect(find.text(l10n.pickerNotYours), findsNothing);
-
-      await pumpCard(tester, telugu(), spoken: const <String>['bn']);
-      expect(find.text(l10n.pickerNotYours), findsOneWidget);
-    });
-
-    testWidgets('both progresses, and whether it is on the phone', (
-      tester,
-    ) async {
-      await pumpCard(
-        tester,
-        telugu(),
-        you: 0.18,
-        storage: (onPhone: true, size: '259 KB'),
-      );
-      final l10n = l10nOf(tester);
-      expect(find.textContaining(l10n.pickerWritten(37)), findsOneWidget);
-      expect(find.text(l10n.pickerYou(18)), findsOneWidget);
-      expect(find.text(l10n.pickerOnPhone('259 KB')), findsOneWidget);
-
-      await pumpCard(
-        tester,
-        telugu(course: const <B1Unit>[B1Unit(has: 300)]),
-        youWords: 40,
-        storage: (onPhone: false, size: '259 KB'),
-      );
-      expect(find.text(l10n.pickerYouWords(40)), findsOneWidget);
-      expect(find.text(l10n.pickerNotOnPhone('259 KB')), findsOneWidget);
-    });
-
-    testWidgets('is one checkbox to a screen reader, with its name, '
-        'completeness and native languages in its label', (tester) async {
-      final handle = tester.ensureSemantics();
-      await pumpCard(tester, telugu());
-      final l10n = l10nOf(tester);
-      final node = tester.getSemantics(find.byType(Checkbox));
-      expect(node, isSemantics(hasCheckedState: true, isChecked: false));
+      final node = tester.getSemantics(find.byType(LanguageRow));
       final label = node.getSemanticsData().label;
       for (final part in <String>[
         'Telugu',
         'తెలుగు',
-        l10n.pickerWritten(37),
-        l10n.pickerTaughtFromLine('English'),
         l10n.pickerBetaLabel,
+        l10n.pickerWritten(37),
+        l10n.pickerYouShort(18),
       ]) {
         expect(label, contains(part));
       }
@@ -498,118 +560,146 @@ void main() {
     });
   });
 
-  group('the opened card', () {
-    testWidgets('"Learn the script" shows only for a course with script '
-        'decks, on to start with', (tester) async {
-      useTallPhone(tester);
-      await pumpPicker(tester, PickerFixtures.taughtFromTwo);
+  group('a language\'s sheet', () {
+    testWidgets('holds the course with the A1, A2, B1 and culture line, and '
+        'Learn this language fixed below the scroll', (tester) async {
+      await pumpFresh(tester);
+      await openSheet(tester, 'hi');
       final l10n = l10nOf(tester);
-      await pickLanguage(tester, 'kn');
-      await pickLanguage(tester, 'es');
-      expect(inCard('es', find.byType(Switch)), findsNothing);
-      final toggle = inCard('kn', find.byType(Switch));
-      expect(tester.widget<Switch>(toggle).value, isTrue);
+      expect(sheetIsOpen(), isTrue);
       expect(
-        inCard('kn', find.text(l10n.pickerLearnScript('Kannada'))),
-        findsOneWidget,
-      );
-
-      await flipScript(tester, 'kn');
-      expect(tester.widget<Switch>(toggle).value, isFalse);
-      expect(inCard('kn', find.text(l10n.pickerScriptOff)), findsOneWidget);
-    });
-
-    testWidgets('an alpha course says so when it is chosen', (tester) async {
-      useTallPhone(tester);
-      await pumpPicker(tester, PickerFixtures.taughtFromTwo);
-      final l10n = l10nOf(tester);
-      await pickLanguage(tester, 'es');
-      expect(
-        inCard('es', find.text(l10n.pickerAlphaNotice('Spanish'))),
-        findsOneWidget,
-      );
-    });
-
-    testWidgets('taught from two of the learner\'s languages: a choice side '
-        'by side; from one, none', (tester) async {
-      useTallPhone(tester);
-      await pumpPicker(tester, PickerFixtures.taughtFromTwo);
-      await pickLanguage(tester, 'te');
-      await pickLanguage(tester, 'kn');
-      expect(inCard('kn', find.byType(SegmentedButton<String>)), findsNothing);
-      final choice = inCard('te', find.byType(SegmentedButton<String>));
-      final buttons = tester.widget<SegmentedButton<String>>(choice);
-      expect(buttons.segments.map((s) => s.value), <String>['bn', 'hi']);
-      expect(buttons.selected, <String>{'bn'});
-
-      await tester.tap(
-        find.descendant(of: choice, matching: find.text('Hindi')),
-      );
-      await tester.pumpAndSettle();
-      expect(tester.widget<SegmentedButton<String>>(choice).selected, <String>{
-        'hi',
-      });
-    });
-
-    testWidgets('taught from three: still side by side, the most that are', (
-      tester,
-    ) async {
-      useTallPhone(tester);
-      await pumpPicker(tester, PickerFixtures.taughtFromThree);
-      await pickLanguage(tester, 'te');
-      final choice = inCard('te', find.byType(SegmentedButton<String>));
-      expect(choice, findsOneWidget);
-      expect(
-        tester
-            .widget<SegmentedButton<String>>(choice)
-            .segments
-            .map((s) => s.value),
-        <String>['bn', 'hi', 'gu'],
-      );
-      expect(NativeChoiceField.sideBySide, 3);
-    });
-
-    testWidgets('taught from more than three: a radio list in a sheet, each '
-        'with its coverage, the learner\'s own order', (tester) async {
-      useTallPhone(tester);
-      await pumpPicker(tester, PickerFixtures.taughtFromFour);
-      final l10n = l10nOf(tester);
-      await pickLanguage(tester, 'te');
-      expect(find.byType(SegmentedButton<String>), findsNothing);
-      final change = inCard('te', find.text(l10n.pickerChangeNative));
-      expect(change, findsOneWidget);
-      expect(inCard('te', find.widgetWithText(ListTile, 'Bengali')), findsOne);
-      // To a screen reader, one node for one action, saying what changes.
-      final handle = tester.ensureSemantics();
-      expect(
-        find.bySemanticsLabel(
-          RegExp('^${RegExp.escape(l10n.pickerNativeChoiceLabel('Bengali'))}'),
+        find.descendant(
+          of: sheetKey('sheet-scroll'),
+          matching: find.byType(CourseLine),
         ),
         findsOneWidget,
       );
-      expect(find.bySemanticsLabel(l10n.pickerChangeNative), findsNothing);
-      handle.dispose();
+      expect(find.text(l10n.pickerSectionCourse), findsOneWidget);
+      // Fixed: in the sheet, outside what scrolls.
+      final learn = sheetKey('sheet-learn');
+      expect(learn, findsOneWidget);
+      expect(
+        find.descendant(of: sheetKey('sheet-scroll'), matching: learn),
+        findsNothing,
+      );
+      expect(sheetKey('sheet-stop'), findsNothing);
+    });
 
-      await tester.tap(change);
-      await tester.pumpAndSettle();
-      expect(find.text(l10n.pickerLearnFrom('Telugu')), findsOneWidget);
-      final tiles = tester
-          .widgetList<RadioListTile<String>>(find.byType(RadioListTile<String>))
-          .toList();
-      expect(tiles.map((t) => t.value), <String>['bn', 'hi', 'gu', 'mr']);
-      for (final tile in tiles) {
-        expect((tile.subtitle! as Text).data, contains('% of B1 written'));
-      }
+    testWidgets('learning goes in steps, each with Back: scripts, then where '
+        'to start, and nothing is saved until Continue', (tester) async {
+      final state = await pumpFresh(tester);
+      final l10n = l10nOf(tester);
+      await openSheet(tester, 'hi');
+      await tapSheet(tester, 'sheet-learn');
 
-      await tester.tap(find.widgetWithText(RadioListTile<String>, 'Gujarati'));
+      // Step 1: one option for each script Hindustani is written in.
+      expect(find.text(l10n.pickerStepScripts(1, 2)), findsOneWidget);
+      CheckboxListTile script(String code) =>
+          tester.widget<CheckboxListTile>(sheetKey('sheet-script-$code'));
+      expect(script('devanagari').value, isTrue);
+      expect(script('perso_arabic').value, isTrue);
+      await tapSheet(tester, 'sheet-script-perso_arabic');
+      expect(script('perso_arabic').value, isFalse);
+
+      // Back to the course and in again: the choice is kept.
+      await tapSheet(tester, 'sheet-back');
+      expect(find.text(l10n.pickerStepScripts(1, 2)), findsNothing);
+      expect(sheetKey('sheet-learn'), findsOneWidget);
+      await tapSheet(tester, 'sheet-learn');
+      expect(script('perso_arabic').value, isFalse);
+
+      // Step 2: where to start.
+      await tapSheet(tester, 'sheet-next');
+      expect(find.text(l10n.pickerStepStart(2, 2)), findsOneWidget);
+      expect(sheetKey('sheet-find-language'), findsOneWidget);
+      expect(sheetKey('sheet-begin-language'), findsOneWidget);
+      await tapSheet(tester, 'sheet-back');
+      expect(find.text(l10n.pickerStepScripts(1, 2)), findsOneWidget);
+      await tapSheet(tester, 'sheet-next');
+      await tapSheet(tester, 'sheet-done');
+
+      expect(sheetIsOpen(), isFalse);
+      expect(isPicked(tester, 'hi'), isTrue);
+      expect(state.settings.learningLanguages, isEmpty);
+      expect(find.byType(PlacementPage), findsNothing);
+    });
+
+    testWidgets('a language with no script decks goes straight to where to '
+        'start', (tester) async {
+      await pumpFresh(tester);
+      final l10n = l10nOf(tester);
+      await openSheet(tester, 'es');
+      await tapSheet(tester, 'sheet-learn');
+      expect(find.text(l10n.pickerStepStartOnly), findsOneWidget);
+      expect(find.textContaining('Step 1 of'), findsNothing);
+      await tapSheet(tester, 'sheet-back');
+      expect(sheetKey('sheet-learn'), findsOneWidget);
+      await tapSheet(tester, 'sheet-learn');
+      await tapSheet(tester, 'sheet-done');
+      expect(isPicked(tester, 'es'), isTrue);
+    });
+
+    testWidgets('a language chosen and not saved reopens with Stop learning', (
+      tester,
+    ) async {
+      await pumpFresh(tester);
+      await pickLanguage(tester, 'es', begin: true);
+      await openSheet(tester, 'es');
+      expect(sheetKey('sheet-stop'), findsOneWidget);
+      expect(sheetKey('sheet-learn'), findsNothing);
+    });
+
+    testWidgets('a language learned: Find my level, its scripts, and Stop '
+        'learning fixed below, which asks first', (tester) async {
+      final state = await pumpFresh(
+        tester,
+        learning: const <String>['hi'],
+        firstRun: false,
+      );
+      final l10n = l10nOf(tester);
+      await openSheet(tester, 'hi');
+      expect(sheetKey('sheet-find'), findsOneWidget);
+      expect(sheetKey('sheet-learned-devanagari'), findsOneWidget);
+      expect(sheetKey('sheet-learn'), findsNothing);
+      final stop = sheetKey('sheet-stop');
+      expect(
+        find.descendant(of: sheetKey('sheet-scroll'), matching: stop),
+        findsNothing,
+      );
+
+      await tapSheet(tester, 'sheet-stop');
+      expect(find.text(l10n.pickerStopTitle('Hindustani')), findsOneWidget);
+      await tester.tap(find.text(l10n.commonCancel));
       await tester.pumpAndSettle();
-      expect(find.byType(RadioListTile<String>), findsNothing);
-      expect(inCard('te', find.widgetWithText(ListTile, 'Gujarati')), findsOne);
+      expect(sheetIsOpen(), isTrue, reason: 'Cancel keeps it');
+
+      await tapSheet(tester, 'sheet-stop');
+      await tester.tap(
+        find.descendant(
+          of: find.byType(AlertDialog),
+          matching: find.text(l10n.pickerStopConfirm),
+        ),
+      );
+      await tester.pumpAndSettle();
+      expect(sheetIsOpen(), isFalse);
+      expect(isPicked(tester, 'hi'), isFalse);
+      expect(state.settings.learningLanguages, <String>[
+        'hi',
+      ], reason: 'saved on Continue');
+    });
+
+    testWidgets('Find my level opens the placement check for a language '
+        'learned', (tester) async {
+      await pumpFresh(tester, learning: const <String>['hi'], firstRun: false);
+      await openSheet(tester, 'hi');
+      await tapSheet(tester, 'sheet-find');
+      expect(find.byType(PlacementPage), findsOneWidget);
+      expect(find.text(l10nOf(tester).placementQuestion), findsOneWidget);
     });
   });
 
   group('leaving and removing', () {
-    testWidgets('un-ticking a language whose download was asked for stops it, '
+    testWidgets('stopping a language whose download was asked for stops it, '
         'even before its files are known', (tester) async {
       useTallPhone(tester);
       final downloads = PendingDownloads(PickerFixtures.index());
@@ -650,35 +740,6 @@ void main() {
       );
     });
 
-    testWidgets('un-ticking a language learned asks first, and Cancel keeps '
-        'it; one just chosen goes without asking', (tester) async {
-      useTallPhone(tester);
-      final state = AppState.test(
-        settings: SettingsNotifier(
-          spokenLanguages: const <String>['en'],
-          learningLanguages: const <String>['hi'],
-          learningChosen: true,
-        ),
-      );
-      addTearDown(state.dispose);
-      await pumpScreen(tester, const LanguagePickerPage(), state: state);
-      final l10n = l10nOf(tester);
-      expect(find.text(l10n.pickerSettingsTitle), findsOneWidget);
-      expect(isPicked(tester, 'hi'), isTrue);
-
-      await pickLanguage(tester, 'hi');
-      expect(find.text(l10n.pickerStopTitle('Hindustani')), findsOneWidget);
-      await tester.tap(find.text(l10n.commonCancel));
-      await tester.pumpAndSettle();
-      expect(isPicked(tester, 'hi'), isTrue);
-
-      await pickLanguage(tester, 'bn');
-      await pickLanguage(tester, 'bn');
-      expect(find.byType(AlertDialog), findsNothing);
-      expect(isPicked(tester, 'bn'), isFalse);
-      expect(state.settings.learningLanguages, <String>['hi']);
-    });
-
     testWidgets('a language already learned opens at once; only a new one '
         'goes through placement', (tester) async {
       useTallPhone(tester);
@@ -698,7 +759,8 @@ void main() {
               child: TextButton(
                 onPressed: () => Navigator.of(context).push(
                   MaterialPageRoute<void>(
-                    builder: (_) => const LanguagePickerPage(),
+                    builder: (_) =>
+                        LanguagePickerPage(spokenList: pickerSpokenList),
                   ),
                 ),
                 child: const Text('open'),
@@ -711,11 +773,8 @@ void main() {
       await tester.tap(find.text('open'));
       await tester.pumpAndSettle();
       final l10n = l10nOf(tester);
-      expect(
-        inCard('hi', find.byType(Switch)),
-        findsOneWidget,
-        reason: 'only its script switch (#555), no question to answer',
-      );
+      expect(find.text(l10n.pickerSettingsTitle), findsOneWidget);
+      expect(isPicked(tester, 'hi'), isTrue);
       await tester.tap(continueButton(l10n));
       await tester.pumpAndSettle();
       expect(find.byType(PlacementPage), findsNothing);
@@ -787,13 +846,6 @@ void main() {
         ),
         findsOneWidget,
       );
-      // A course with no level plan yet: Alpha, without saying A1 is
-      // unfinished.
-      expect(
-        inCard('hi', find.text(l10n.pickerAlphaUnplannedNotice('Hindustani'))),
-        findsOneWidget,
-      );
-      expect(find.text(l10n.pickerAlphaNotice('Hindustani')), findsNothing);
 
       remote.release(firstFiles(state));
       await tester.pumpAndSettle();
@@ -854,8 +906,10 @@ void main() {
       // The course starts with what arrived.
       await tester.tap(continueButton(l10n));
       await tester.pumpAndSettle();
-      await tester.tap(find.text(l10n.placementNew('Hindustani')));
-      await tester.pumpAndSettle();
+      while (find.text(l10n.placementDontKnow).evaluate().isNotEmpty) {
+        await tester.tap(find.text(l10n.placementDontKnow));
+        await tester.pumpAndSettle();
+      }
       await tester.tap(find.text(l10n.placementDone));
       await tester.pumpAndSettle();
       expect(state.settings.learningLanguages, <String>['hi']);
@@ -1046,11 +1100,11 @@ void main() {
       await expectLater(tester, meetsGuideline(textContrastGuideline));
     }
 
-    testWidgets('nothing overflows at twice the text size, light and dark, '
-        'scrolled through', (tester) async {
+    testWidgets('nothing overflows at 1.4x text, light and dark, scrolled '
+        'through', (tester) async {
       for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
         for (final entry in pickerEntries) {
-          usePhone(tester, textScale: 2.0);
+          usePhone(tester, textScale: 1.4);
           await pumpEntry(tester, entry.id, mode);
           expect(tester.takeException(), isNull, reason: entry.id);
           expectTheme(tester, mode, entry.id);
@@ -1066,47 +1120,67 @@ void main() {
       }
     });
 
-    testWidgets('the taught-from sheet and the "Stop learning" dialog fit '
-        'and meet the guidelines at twice the text size, light and dark', (
+    testWidgets('every screen of a language\'s sheet and the "Stop learning" '
+        'dialog fit and meet the guidelines at 1.4x text, light and dark', (
       tester,
     ) async {
       final handle = tester.ensureSemantics();
       for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
-        usePhone(tester, textScale: 2.0);
-        await pumpEntry(tester, 'picker-taught-from-list', mode);
-        expectTheme(tester, mode, 'sheet');
+        await pumpFresh(tester, textScale: 1.4, themeMode: mode);
         final l10n = l10nOf(tester);
-        final change = inCard('te', find.text(l10n.pickerChangeNative));
-        await scrollToInPicker(tester, change);
-        await tester.tap(change);
-        await tester.pumpAndSettle();
-        expect(find.byType(RadioListTile<String>), findsWidgets);
-        expect(tester.takeException(), isNull, reason: 'sheet');
+        await openSheet(tester, 'hi');
+        expect(tester.takeException(), isNull, reason: 'course');
         await expectGuidelines(tester);
-        // Choosing another closes it.
-        await tester.tap(
-          find.widgetWithText(RadioListTile<String>, 'Gujarati'),
-        );
-        await tester.pumpAndSettle();
-        expect(find.byType(RadioListTile<String>), findsNothing);
+        await tapSheet(tester, 'sheet-learn');
+        expect(tester.takeException(), isNull, reason: 'scripts');
+        await expectGuidelines(tester);
+        await tapSheet(tester, 'sheet-next');
+        expect(tester.takeException(), isNull, reason: 'start');
+        await expectGuidelines(tester);
+        await closeSheet(tester);
 
-        // From Settings, learning Hindi, Spanish and Telugu.
-        usePhone(tester, textScale: 2.0);
-        await pumpEntry(tester, 'picker-on-phone', mode);
-        expectTheme(tester, mode, 'dialog');
-        await pickLanguage(tester, 'hi');
-        expect(find.text(l10n.pickerStopTitle('Hindi')), findsOneWidget);
+        // A language learned, from Settings: its sheet, and the dialog.
+        await pumpFresh(
+          tester,
+          learning: const <String>['hi'],
+          firstRun: false,
+          textScale: 1.4,
+          themeMode: mode,
+        );
+        await openSheet(tester, 'hi');
+        expect(tester.takeException(), isNull, reason: 'learned');
+        await expectGuidelines(tester);
+        await tapSheet(tester, 'sheet-stop');
+        expect(find.text(l10n.pickerStopTitle('Hindustani')), findsOneWidget);
         expect(tester.takeException(), isNull, reason: 'dialog');
         await expectGuidelines(tester);
         await tester.tap(find.text(l10n.commonCancel));
         await tester.pumpAndSettle();
+        await closeSheet(tester);
       }
       handle.dispose();
     });
 
-    for (final scale in <double>[1.0, 2.0]) {
+    testWidgets('the taught-from choice sits in the sheet: a list over it '
+        'from four languages', (tester) async {
+      await pumpEntry(tester, 'picker-taught-from-list', ThemeMode.light);
+      final l10n = l10nOf(tester);
+      await openSheet(tester, 'te');
+      final change = find.text(l10n.pickerChangeNative);
+      await tester.ensureVisible(change);
+      await tester.pumpAndSettle();
+      await tester.tap(change);
+      await tester.pumpAndSettle();
+      expect(find.byType(RadioListTile<String>), findsWidgets);
+      await tester.tap(find.widgetWithText(RadioListTile<String>, 'Gujarati'));
+      await tester.pumpAndSettle();
+      expect(find.byType(RadioListTile<String>), findsNothing);
+      expect(sheetIsOpen(), isTrue, reason: 'the language\'s sheet stays');
+    });
+
+    for (final scale in <double>[1.0, 1.4]) {
       testWidgets('every state meets the tap-target, label and contrast '
-          'guidelines, light and dark, at text size $scale', (tester) async {
+          'guidelines, light and dark, at text size ${scale}x', (tester) async {
         final handle = tester.ensureSemantics();
         for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
           for (final entry in pickerEntries) {
