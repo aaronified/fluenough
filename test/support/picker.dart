@@ -83,9 +83,8 @@ Future<void> openSheet(WidgetTester tester, String code) async {
   await tester.pumpAndSettle();
 }
 
-/// Opens every family under "All languages": each closed one is at the end
-/// of the list, so the list is scrolled to its end, and one is opened at a
-/// time until none is closed.
+/// Opens every family under "All languages": from the top of the list, the
+/// next closed one is scrolled to and opened, until none is left.
 Future<void> openFamilies(WidgetTester tester) async {
   final closed = find.descendant(
     of: find.byWidgetPredicate(
@@ -96,10 +95,26 @@ Future<void> openFamilies(WidgetTester tester) async {
     matching: find.byIcon(Icons.expand_more),
   );
   for (var i = 0; i < 12; i++) {
-    await tester.drag(pickerList().first, const Offset(0, -6000));
+    await tester.drag(pickerList().first, const Offset(0, 6000));
     await tester.pumpAndSettle();
-    if (closed.evaluate().isEmpty) return;
-    await tester.ensureVisible(closed.first);
+    if (closed.evaluate().isEmpty) {
+      try {
+        await tester.scrollUntilVisible(
+          closed,
+          200,
+          scrollable: pickerList().first,
+          maxScrolls: 80,
+        );
+      } on StateError {
+        return;
+      } on TestFailure {
+        return;
+      }
+    }
+    await Scrollable.ensureVisible(
+      closed.first.evaluate().first,
+      alignment: 0.5,
+    );
     await tester.pumpAndSettle();
     await tester.tap(closed.first);
     await tester.pumpAndSettle();
