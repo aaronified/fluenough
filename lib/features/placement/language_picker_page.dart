@@ -432,9 +432,8 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     if (_scriptsChosen[code] case final chosen?) return <String>{...chosen};
     final own = language.script;
     if (_learnsNow(language)) {
-      return <String>{
-        if (own != null && state.settings.learnsAlphabet(code)) own,
-      };
+      if (own == null) return <String>{};
+      return <String>{...state.settings.scriptsLearned(code, primary: own)};
     }
     return <String>{
       for (final script in _scriptCodes(language))
@@ -485,13 +484,11 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     ];
   }
 
-  /// Whether [language]'s primary script is learned: what the sheet chose,
-  /// else the setting for a language learned, else on.
+  /// Whether [language] is learned in any of its scripts: what the sheet
+  /// chose, else the setting for a language learned, else on.
   bool _learnsScript(AppState state, CatalogLanguage language) {
     final code = language.code;
-    if (_scriptsChosen[code] case final chosen?) {
-      return chosen.contains(language.script);
-    }
+    if (_scriptsChosen[code] case final chosen?) return chosen.isNotEmpty;
     if (widget.initialScript[code] case final on?) return on;
     return _isLearned(language) ? state.settings.learnsAlphabet(code) : true;
   }
@@ -747,6 +744,12 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
                 (added.contains(code) || _scriptsChosen.containsKey(code)))
           code: _learnsScript(state, language),
     };
+    // The scripts each sheet chose, kept whole: Perso-Arabic is not lost to
+    // a yes or no about the primary script.
+    final scripts = <String, Set<String>>{
+      for (final code in alphabet.keys)
+        if (_scriptsChosen[code] case final chosen?) code: chosen,
+    };
     final natives = <String, String>{
       for (final code in added)
         if (byCode[code] case final language?)
@@ -762,6 +765,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         chosen,
         const <String, Set<String>>{},
         alphabet: alphabet,
+        scripts: scripts,
         natives: natives,
       );
       return;
@@ -784,6 +788,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
             chosen,
             found.placed,
             alphabet: <String, bool>{...alphabet, ...found.alphabet},
+            scripts: scripts,
             natives: <String, String>{...natives, ...found.natives},
           ),
         ),
@@ -799,6 +804,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     List<String> chosen,
     Map<String, Set<String>> placed, {
     Map<String, bool> alphabet = const <String, bool>{},
+    Map<String, Set<String>> scripts = const <String, Set<String>>{},
     Map<String, String> natives = const <String, String>{},
   }) {
     _saved = true;
@@ -806,6 +812,9 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     settings.ipaScope = _scope;
     for (final MapEntry(:key, :value) in alphabet.entries) {
       settings.setLearnsAlphabet(key, value);
+    }
+    for (final MapEntry(:key, :value) in scripts.entries) {
+      settings.setScriptsLearned(key, value);
     }
     for (final MapEntry(:key, :value) in natives.entries) {
       state.chooseNative(key, value);
