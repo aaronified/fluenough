@@ -712,12 +712,11 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
   }
 
   /// Whether [language] is placed by a check after Continue: the learner
-  /// chose "Find my level" for it, which is the default, and does not know it
-  /// already (then only a script is learned, which the check cannot place
-  /// apart from the language yet: #481).
-  bool _placed(AppState state, CatalogLanguage language) =>
-      !state.settings.spokenLanguages.contains(language.code) &&
-      (_findLanguage[language.code] ?? true);
+  /// chose "Find my level" for it, which is the default, whether or not they
+  /// speak it (the check cannot place a script apart from the language yet:
+  /// #481).
+  bool _placed(CatalogLanguage language) =>
+      _findLanguage[language.code] ?? true;
 
   void _continue(AppState state, List<CatalogLanguage> all) {
     final chosen = <String>{
@@ -746,7 +745,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     };
     final place = <String>[
       for (final code in added)
-        if (_placed(state, byCode[code]!)) code,
+        if (_placed(byCode[code]!)) code,
     ];
     if (place.isEmpty) {
       _save(
