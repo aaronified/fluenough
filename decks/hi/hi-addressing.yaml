@@ -2,13 +2,14 @@ schema: 1
 id: "hi-addressing"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 theme: "addressing"
 tags: ["beginner"]
 cards:
   - id: "hi-0177"
     target: "भैया"
+    target_scripts: { perso_arabic: "بھیا" }
     reading: "bhaiyā"
     ipa: "bʱɛːjaː"
     pos: "noun"
@@ -18,6 +19,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0178"
     target: "दीदी"
+    target_scripts: { perso_arabic: "دیدی" }
     reading: "dīdī"
     ipa: "d̪iːd̪iː"
     pos: "noun"
@@ -25,6 +27,7 @@ cards:
     tags: ["honorific"]
   - id: "hi-0179"
     target: "भाई साहब"
+    target_scripts: { perso_arabic: "بھائی صاحب" }
     reading: "bhāī sāhab"
     ipa: "bʱaːiː saːɦəb"
     pos: "phrase"
@@ -34,6 +37,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0180"
     target: "अंकल"
+    target_scripts: { perso_arabic: "انکل" }
     reading: "aṅkal"
     ipa: "əŋkəl"
     pos: "noun"
@@ -43,6 +47,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0181"
     target: "आंटी"
+    target_scripts: { perso_arabic: "آنٹی" }
     reading: "āṇṭī"
     ipa: "aːɳʈiː"
     pos: "noun"
@@ -50,6 +55,7 @@ cards:
     tags: ["honorific"]
   - id: "hi-0182"
     target: "साहब"
+    target_scripts: { perso_arabic: "صاحب" }
     reading: "sāhab"
     ipa: "saːɦəb"
     pos: "noun"
@@ -59,6 +65,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0183"
     target: "मैडम"
+    target_scripts: { perso_arabic: "میڈم" }
     reading: "maiḍam"
     ipa: "mɛːɖəm"
     pos: "noun"
@@ -66,6 +73,7 @@ cards:
     tags: ["honorific"]
   - id: "hi-0184"
     target: "बेटा"
+    target_scripts: { perso_arabic: "بیٹا" }
     reading: "bēṭā"
     ipa: "beːʈaː"
     pos: "noun"
@@ -74,6 +82,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0185"
     target: "दोस्त"
+    target_scripts: { perso_arabic: "دوست" }
     reading: "dōst"
     ipa: "d̪oːst̪"
     pos: "noun"
@@ -82,6 +91,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0186"
     target: "सुनिए"
+    target_scripts: { perso_arabic: "سنیے" }
     reading: "suniē"
     ipa: "sʊnɪeː"
     pos: "other"
