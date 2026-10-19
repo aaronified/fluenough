@@ -38,6 +38,8 @@ AppBackup fixtureBackup({
         grade: 3,
         elapsed: const Duration(seconds: 2),
         answerGiven: null,
+        script: null,
+        asked: null,
       ),
   ], const <LeechAction>[]),
   settings: settings,

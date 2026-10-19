@@ -21,6 +21,8 @@ final List<LoggedReview> reviews = <LoggedReview>[
     grade: 4,
     elapsed: const Duration(milliseconds: 3120),
     answerGiven: 'बाज़ार',
+    script: null,
+    asked: null,
   ),
   (
     key: (cardId: 'bn-0012', mode: DrillMode.recognition),
@@ -29,6 +31,8 @@ final List<LoggedReview> reviews = <LoggedReview>[
     grade: 3,
     elapsed: const Duration(seconds: 2),
     answerGiven: null,
+    script: null,
+    asked: null,
   ),
 ];
 

@@ -19,10 +19,21 @@ void main() {
   const map = SkillMap(
     formHeardIn: <String>{script},
     scriptDecks: <String>{script},
+    primaryScripts: <String, String>{'hi': 'devanagari'},
   );
 
-  const read = (cardId: 'hi-0001', mode: DrillMode.readScript);
-  const write = (cardId: 'hi-0001', mode: DrillMode.writeScript);
+  // Script-deck answers from before the script was kept per answer count
+  // for the course's primary script (#653).
+  const read = (
+    cardId: 'hi-0001',
+    mode: DrillMode.readScript,
+    script: 'devanagari',
+  );
+  const write = (
+    cardId: 'hi-0001',
+    mode: DrillMode.writeScript,
+    script: 'devanagari',
+  );
   const recognition = (cardId: 'hi-0001', mode: DrillMode.recognition);
   const production = (cardId: 'hi-0001', mode: DrillMode.production);
 
@@ -39,31 +50,35 @@ void main() {
     grade: grade,
     elapsed: Duration.zero,
     answerGiven: mode == DrillMode.recognition ? null : 'x',
+    script: null,
+    asked: null,
   );
 
   group('SkillMap.scriptOf', () {
     test('recognition and write feed the script skills in full', () {
-      expect(map.scriptOf(DrillMode.recognition, script), (
+      expect(map.scriptOf(review(DrillMode.recognition, 4, day)), (
         skill: DrillMode.readScript,
+        script: 'devanagari',
         share: 1.0,
       ));
-      expect(map.scriptOf(DrillMode.production, script), (
+      expect(map.scriptOf(review(DrillMode.production, 4, day)), (
         skill: DrillMode.writeScript,
+        script: 'devanagari',
         share: 1.0,
       ));
     });
 
     test('say and hear feed neither: the owner gave no other feed', () {
-      expect(map.scriptOf(DrillMode.speaking, script), isNull);
-      expect(map.scriptOf(DrillMode.listening, script), isNull);
+      expect(map.scriptOf(review(DrillMode.speaking, 4, day)), isNull);
+      expect(map.scriptOf(review(DrillMode.listening, 4, day)), isNull);
     });
 
-    test('a deck outside the script decks, or grammar, feeds none', () {
+    test('an old answer outside the script decks, or grammar, feeds none', () {
       for (final mode in DrillMode.drills) {
-        expect(map.scriptOf(mode, words), isNull);
+        expect(map.scriptOf(review(mode, 4, day, deck: words)), isNull);
       }
-      expect(map.scriptOf(DrillMode.grammar, script), isNull);
-      expect(map.scriptOf(DrillMode.reading, script), isNull);
+      expect(map.scriptOf(review(DrillMode.grammar, 4, day)), isNull);
+      expect(map.scriptOf(review(DrillMode.reading, 4, day)), isNull);
     });
 
     test('the script skills are not drills', () {
@@ -116,7 +131,10 @@ void main() {
         expect(withScript.states[key]!.dueAt, without.states[key]!.dueAt);
       }
       // Never one schedule: the log's pairs are not the script's.
-      expect(withScript.states.containsKey(read), isFalse);
+      expect(
+        withScript.states.containsKey((cardId: read.cardId, mode: read.mode)),
+        isFalse,
+      );
       expect(withScript.events, hasLength(4));
     });
 

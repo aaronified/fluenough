@@ -2822,6 +2822,26 @@
   "@skillWriteScript": {
     "description": "A skill: forming or typing a script's letters and conjuncts, worked out from the answers to the script decks (#556). Shown on Progress."
   },
+  "skillReadScriptIn": "Read {script}",
+  "@skillReadScriptIn": {
+    "description": "A skill on Progress: reading one script, worked out from the answers shown in it (#653). {script} is the script's own name, scriptName: Read Devanagari, Read Perso-Arabic.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  },
+  "skillWriteScriptIn": "Write {script}",
+  "@skillWriteScriptIn": {
+    "description": "A skill on Progress: writing one script, worked out from the answers typed in it (#653). {script} is the script's own name, scriptName: Write Devanagari, Write Perso-Arabic.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  },
   "skillReadingDeckDesc": "Read a passage, answer questions",
   "@skillReadingDeckDesc": {
     "description": "Under Reading on a reading deck's screen."

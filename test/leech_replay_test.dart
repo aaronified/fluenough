@@ -18,6 +18,8 @@ LoggedReview review(ProgressKey key, int d, int grade) => (
   grade: grade,
   elapsed: Duration.zero,
   answerGiven: null,
+  script: null,
+  asked: null,
 );
 
 LeechAction act(LeechActionKind kind, int d, {ProgressKey key = pair}) =>

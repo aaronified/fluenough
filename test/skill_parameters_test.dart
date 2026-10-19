@@ -177,6 +177,8 @@ void main() {
           grade: grade,
           elapsed: Duration.zero,
           answerGiven: 'typed',
+          script: null,
+          asked: null,
         );
 
     final hi = fitWith(9);
