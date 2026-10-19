@@ -2363,9 +2363,24 @@ class AppState extends ChangeNotifier {
   NumberRules? numberRulesFor(LanguageInfo language) =>
       _catalog.numberRules[language.code];
 
-  /// [language]'s script guide (#30, ADR-0016), or null if it has none.
+  /// The script guide for a deck in [language] (#30, ADR-0016): the guide
+  /// for the deck's own script ([LanguageInfo.script]), else the language's
+  /// default guide, or null if it has neither.
   ScriptGuide? scriptGuideFor(LanguageInfo language) =>
-      _catalog.scriptGuides[language.code];
+      _catalog.scriptGuideFor(language.code, language.script);
+
+  /// The script guide with [key] (`ScriptGuide.key`), with the language as
+  /// one of its script decks names it: the Tips page shows the guide's
+  /// letters in that language's script. Null if no script deck on the phone
+  /// uses it.
+  (ScriptGuide, LanguageInfo)? scriptGuideByKey(String key) {
+    for (final entry in decks) {
+      if (!entry.isScript) continue;
+      final guide = scriptGuideFor(entry.language);
+      if (guide != null && guide.key == key) return (guide, entry.language);
+    }
+    return null;
+  }
 
   /// [language]'s sound contrasts (#89, ADR-0015), or null if it has no
   /// sounds file.

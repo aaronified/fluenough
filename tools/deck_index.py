@@ -15,7 +15,10 @@ reviewers have made in it (ADR-0038); and, under `media`, the recordings
 and images its cards name (#518, #523), each with its path, size, SHA-256
 and kind, `audio` or `image`, which the language's size counts. They are
 listed apart from `files` so that an app too old to read them passes them
-by. Under `fonts` it lists the font of each script its decks are shown in,
+by. So are the script guides of a language's other scripts, such as
+`hi-perso-arabic-script`, under `script_guides` (ADR-0016): the app before
+them reads only `<code>-script` and fails a file named otherwise. Under
+`fonts` it lists the font of each script its decks are shown in,
 for scripts that phones often draw wrongly or lack (ADR-0042): path, size,
 SHA-256, `script` and `family`, kept apart from `files` and left out of the
 language's size, for the same reason. Each file's `content_sha256` is the
@@ -88,6 +91,25 @@ FONTS_DIR = DECKS / "fonts"
 # language whose files are all of these has no written deck, and is left
 # out of the index.
 NOT_DECKS = {"path", "facts", "numbers", "romanisation", "sounds", "script"}
+
+
+# The core a layer names when it is the layer of a script guide for one of a
+# language's other scripts: hi-perso-arabic-script, not hi-script.
+_OTHER_SCRIPT_CORE = re.compile(r"[a-z]{2,3}-[a-z]+(?:-[a-z]+)*-script")
+
+
+def _other_script_guide(path: Path, entry: dict) -> bool:
+    """Whether the file is a script guide, or a layer of one, for another
+    script of its language than the default `<code>-script` guide."""
+    code = entry["path"].split("/")[1]
+    if entry["kind"] not in ("script", "layer"):
+        return False
+    text = path.read_text(encoding="utf-8", errors="replace")
+    if entry["kind"] == "script":
+        guide = _top(text, "id")
+        return guide is not None and guide != f"{code}-script"
+    core = _top(text, "core")
+    return core is not None and _OTHER_SCRIPT_CORE.fullmatch(core) is not None
 
 
 def _own_names() -> dict[str, str]:
@@ -306,9 +328,11 @@ def build(reports: list[vd.Report] | None = None) -> dict:
         lang = ctx.lang(code)
         block = _language_block(files)
         entries = [_file_entry(p, by_path.get(p.resolve())) for p in files]
+        guides = [e for p, e in zip(files, entries) if _other_script_guide(p, e)]
+        entries = [e for e in entries if e not in guides]
         # A course with a path but no written deck is not offered: the
         # app would list it empty. It appears once its first deck lands.
-        if all(e["kind"] in NOT_DECKS for e in entries):
+        if all(e["kind"] in NOT_DECKS for e in entries + guides):
             continue
         natives = lang.natives()
         path_rep = lang.path()
@@ -326,7 +350,7 @@ def build(reports: list[vd.Report] | None = None) -> dict:
         language["script_decks"] = bool(plan and plan.alphabet)
         language["natives"] = [{"code": n, "name": lang.native_name(n)} for n in natives]
         media = _media_entries(d)
-        language["size"] = sum(e["size"] for e in entries + media)
+        language["size"] = sum(e["size"] for e in entries + guides + media)
         if plan is not None:
             language["path"] = [core for u in plan.units for core in u.decks]
             units = []
@@ -350,6 +374,8 @@ def build(reports: list[vd.Report] | None = None) -> dict:
                 units.append(unit)
             language["units"] = units
         language["files"] = entries
+        if guides:
+            language["script_guides"] = guides
         if media:
             language["media"] = media
         # Apart from `files` and from the size: the released app reads only
@@ -380,8 +406,8 @@ def render(index: dict) -> str:
     lines.append('  "languages": [')
     for i, language in enumerate(index["languages"]):
         lines.append("    {")
-        keys = [k for k in language
-                if k not in ("files", "units", "media", "fonts")]
+        lists = ("files", "script_guides", "media", "fonts")
+        keys = [k for k in language if k not in ("units", *lists)]
         for k in keys:
             lines.append(f'      "{k}": {dump(language[k])},')
         if "units" in language:
@@ -390,9 +416,9 @@ def render(index: dict) -> str:
             for j, unit in enumerate(units):
                 lines.append(f"        {dump(unit)}{',' if j < len(units) - 1 else ''}")
             lines.append("      ],")
-        lists = [k for k in ("files", "media", "fonts") if k in language]
-        for key in lists:
-            last = key == lists[-1]
+        present = [k for k in lists if k in language]
+        for key in present:
+            last = key == present[-1]
             lines.append(f'      "{key}": [')
             files = language[key]
             for j, f in enumerate(files):
