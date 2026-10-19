@@ -197,7 +197,7 @@ class _LanguageProgress extends StatelessWidget {
     final line = ready
         ? l10n.downloadsReady
         : progress != null
-        ? l10n.downloadsProgress(progress.done, progress.total)
+        ? downloadProgressText(l10n, downloads, code, progress)
         : l10n.downloadsWaiting;
     final value = ready
         ? 1.0
