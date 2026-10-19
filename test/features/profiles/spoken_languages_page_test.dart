@@ -229,9 +229,12 @@ void main() {
       expect(ours['te'], 'telugu');
       expect(ours['gu'], 'gujarati');
       expect(ours['kn'], 'kannada');
+      // A deck may be in any of its language's scripts, as Hindustani's
+      // Perso-Arabic script decks are (#623).
+      final listed = <String>{for (final l in languages) ...l.scripts};
       // The IPA course's script is no spoken language's (ADR-0041).
       for (final script in used.difference(<String>{'kana', 'ipa'})) {
-        expect(ours.values, contains(script), reason: script);
+        expect(listed, contains(script), reason: script);
       }
     });
 
