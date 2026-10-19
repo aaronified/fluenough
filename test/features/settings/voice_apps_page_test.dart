@@ -128,9 +128,9 @@ void main() {
     final state = _state(tts, links: links);
     await pumpScreen(tester, VoicesPage(apps: _apps), state: state);
     final l10n = l10nOf(tester);
-    final urdu = state.voiceBlocksOf('hi').firstWhere(
-      (b) => b.ttsTag == 'ur-PK',
-    );
+    final urdu = state
+        .voiceBlocksOf('hi')
+        .firstWhere((b) => b.ttsTag == 'ur-PK');
     expect(state.voiceStatus(urdu), VoiceStatus.missing);
 
     await _tap(

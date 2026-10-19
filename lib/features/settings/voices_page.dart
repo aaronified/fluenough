@@ -779,11 +779,7 @@ class LanguageVoiceCard extends StatelessWidget {
         ),
       // Apps that add a voice for it (#642), open where it has none.
       if (apps.isNotEmpty)
-        _OtherVoices(
-          apps: apps,
-          open: canDownload,
-          onOpenStore: onOpenStore,
-        ),
+        _OtherVoices(apps: apps, open: canDownload, onOpenStore: onOpenStore),
     ];
   }
 
