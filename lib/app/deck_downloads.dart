@@ -10,6 +10,7 @@ import '../core/decks/sha256.dart';
 import 'app_log.dart';
 import 'deck_catalog.dart';
 import 'downloaded_decks.dart';
+import 'script_fonts.dart';
 
 /// Why a language's decks could not be downloaded (ADR-0037).
 enum DeckDownloadFailure {
@@ -102,6 +103,12 @@ typedef DeckFileCheck = String? Function(String path, String text);
 /// - **Removing** a language deletes its files ([remove]). Progress is in
 ///   the review log, by card id, so it stays, and comes back with the
 ///   decks.
+/// - **Fonts** (ADR-0042): a language's decks come with the fonts of the
+///   scripts they are shown in, which phones often draw wrongly or lack.
+///   They download first, with the same size and SHA-256 checks, and are
+///   loaded for [fonts] to hand out. A font shared by several languages is
+///   downloaded once, and removing a language deletes only the fonts no
+///   language on the phone still lists.
 ///
 /// Every file is checked against the index's SHA-256, then read as the app
 /// reads it ([DeckCatalog.checkFile]), before it replaces one on the phone;
@@ -117,7 +124,8 @@ class DeckDownloads extends ChangeNotifier {
     required this._clock,
     this._log,
     this.check = DeckCatalog.checkFile,
-  });
+    ScriptFonts? scriptFonts,
+  }) : fonts = scriptFonts ?? ScriptFonts();
 
   /// How long after the last check an automatic one is due.
   static const Duration interval = Duration(days: 1);
@@ -135,6 +143,9 @@ class DeckDownloads extends ChangeNotifier {
   final DeckFetcher fetcher;
   final DownloadedDecks files;
   final DeckFileCheck check;
+
+  /// The script fonts loaded from what is on the phone (ADR-0042).
+  final ScriptFonts fonts;
   final DateTime Function() _clock;
   final AppLog? _log;
 
@@ -146,6 +157,8 @@ class DeckDownloads extends ChangeNotifier {
   IndexStatus _indexStatus = IndexStatus.none;
   DeckDownloadFailure? _indexFailure;
   Map<String, IndexFile> _onPhone = const <String, IndexFile>{};
+  Map<String, IndexFont> _fontsOnPhone = const <String, IndexFont>{};
+  final Map<String, List<String>> _fontScripts = <String, List<String>>{};
   DateTime? _checkedAt;
   String? _declined;
   bool _autoCheck = true;
@@ -187,6 +200,7 @@ class DeckDownloads extends ChangeNotifier {
     try {
       await files.clean();
       _onPhone = await files.manifest();
+      _fontsOnPhone = await files.fontManifest();
       final text = await files.readNote(_indexNote);
       if (text != null) {
         _index = DeckIndex.parse(text);
@@ -220,7 +234,25 @@ class DeckDownloads extends ChangeNotifier {
     } on Object catch (e) {
       _log?.warning('Deck downloads: could not read their state: $e');
     }
+    await _loadFonts();
     _notify();
+  }
+
+  /// Loads the fonts on the phone that are not loaded yet, so that text in
+  /// their scripts is drawn in them (ADR-0042). A font that cannot be read
+  /// leaves its script in the phone's own font.
+  Future<void> _loadFonts() async {
+    for (final font in _fontsOnPhone.values.toList()) {
+      if (fonts.isLoaded(font)) continue;
+      try {
+        final bytes = await files.readFont(font.path);
+        if (bytes != null && !await fonts.load(font, bytes)) {
+          _log?.warning('Deck downloads: could not load ${font.path}');
+        }
+      } on Object catch (e) {
+        _log?.warning('Deck downloads: could not read ${font.path}: $e');
+      }
+    }
   }
 
   /// Reads the index from GitHub again, and keeps it. Returns whether it
@@ -367,6 +399,20 @@ class DeckDownloads extends ChangeNotifier {
   /// How far [language]'s download has got, while it downloads.
   DownloadProgress? progressOf(String language) => _progress[language];
 
+  /// The script of a font [language]'s download is still fetching, or null
+  /// when it fetches none: the downloads then say the font is coming too
+  /// (ADR-0042).
+  String? fontDownloading(String language) {
+    final scripts = _fontScripts[language];
+    return scripts == null || scripts.isEmpty ? null : scripts.first;
+  }
+
+  /// The fonts of [entry] not on the phone, or changed since.
+  List<IndexFont> _fontsToFetch(IndexLanguage entry) => <IndexFont>[
+    for (final font in entry.fonts)
+      if (_fontsOnPhone[font.path]?.sha256 != font.sha256) font,
+  ];
+
   /// How much of [language] a learner who speaks [spoken] has on the phone,
   /// with what has arrived of a download under way: its decks (a deck
   /// counts once all its files are in) and bytes, of all it has for them,
@@ -459,7 +505,12 @@ class DeckDownloads extends ChangeNotifier {
             entry.nativesFor(spoken),
             count: decksBeforeReady,
           );
-          return _fetchAndKeep(language, first, groups: false);
+          return _fetchAndKeep(
+            language,
+            first,
+            groups: false,
+            fonts: _fontsToFetch(entry),
+          );
         }),
       );
 
@@ -485,6 +536,7 @@ class DeckDownloads extends ChangeNotifier {
             language,
             entry.filesFor(entry.nativesFor(spoken)),
             groups: true,
+            fonts: _fontsToFetch(entry),
           );
           if (failure == null && !_paused.contains(language)) {
             _complete.add(language);
@@ -552,11 +604,13 @@ class DeckDownloads extends ChangeNotifier {
 
   /// Fetches those of [wanted] not on the phone, checks each, and keeps
   /// them, with what they replace removed. With [groups], a few decks at a
-  /// time, each deck's files together; else all in one write.
+  /// time, each deck's files together; else all in one write. The [fonts]
+  /// the language needs come first, each kept as it arrives.
   Future<DeckDownloadFailure?> _fetchAndKeep(
     String language,
     List<IndexFile> wanted, {
     required bool groups,
+    List<IndexFont> fonts = const <IndexFont>[],
   }) async {
     final changes = changesFor(language, wanted, _onPhone, reviewer: _reviewer);
     // Files not on the phone, and those whose proposals alone changed,
@@ -567,16 +621,19 @@ class DeckDownloads extends ChangeNotifier {
         if (!_onPhone.containsKey(file.path) || changes.quiet.contains(file))
           file,
     ];
-    if (fetch.isEmpty || _stopping.remove(language)) {
+    if (fetch.isEmpty && fonts.isEmpty || _stopping.remove(language)) {
       _failures.remove(language);
       _notify();
       return null;
     }
     _failures.remove(language);
-    final total = fetch.length;
-    final totalBytes = fetch.fold(0, (sum, f) => sum + f.size);
+    final total = fetch.length + fonts.length;
+    final fetchBytes = fetch.fold(0, (sum, f) => sum + f.size);
+    final fontBytes = fonts.fold(0, (sum, f) => sum + f.size);
+    final totalBytes = fetchBytes + fontBytes;
     var done = 0;
     var bytes = 0;
+    _fontScripts[language] = <String>[for (final font in fonts) font.script];
     _progress[language] = (
       done: 0,
       total: total,
@@ -587,7 +644,21 @@ class DeckDownloads extends ChangeNotifier {
     final batches = groups ? _batches(fetch) : <List<IndexFile>>[fetch];
     var remove = changes.remove;
     final fetched = _fetched[language] = <String>{};
+    void kept(IndexFont font) {
+      done++;
+      bytes += font.size;
+      _progress[language] = (
+        done: done,
+        total: total,
+        bytes: bytes,
+        totalBytes: totalBytes,
+      );
+      _notify();
+    }
+
     try {
+      final fontFailure = await _downloadFonts(language, fonts, kept);
+      if (fontFailure != null) return fontFailure;
       for (final batch in batches) {
         final got = <IndexFile, List<int>>{};
         for (final file in batch) {
@@ -617,6 +688,7 @@ class DeckDownloads extends ChangeNotifier {
     } finally {
       _progress.remove(language);
       _fetched.remove(language);
+      _fontScripts.remove(language);
       _stopping.remove(language);
     }
     _log?.event('Decks downloaded for $language: $total files');
@@ -711,6 +783,41 @@ class DeckDownloads extends ChangeNotifier {
       return (bytes: null, failure: DeckDownloadFailure.badFile);
     }
     return (bytes: bytes, failure: null);
+  }
+
+  /// Downloads [fonts] for [language], one at a time, keeps each as it
+  /// arrives and loads it, and calls [onKept] after each, including one
+  /// that another language's download brought in the meantime. Returns why
+  /// it stopped, or null when all are in.
+  Future<DeckDownloadFailure?> _downloadFonts(
+    String language,
+    List<IndexFont> fonts,
+    void Function(IndexFont font) onKept,
+  ) async {
+    for (final font in fonts) {
+      if (_fontsOnPhone[font.path]?.sha256 != font.sha256) {
+        final asFile = IndexFile(
+          path: font.path,
+          size: font.size,
+          sha256: font.sha256,
+        );
+        final result = await _fetchChecked(asFile);
+        if (result.failure case final failure?) {
+          return _failed(language, failure);
+        }
+        try {
+          await files.putFonts(<IndexFont, List<int>>{font: result.bytes!});
+          _fontsOnPhone = await files.fontManifest();
+        } on Object catch (e) {
+          _log?.error('Downloaded font could not be kept: $e');
+          return _failed(language, DeckDownloadFailure.storage);
+        }
+        await _loadFonts();
+      }
+      _fontScripts[language]?.remove(font.script);
+      onKept(font);
+    }
+    return null;
   }
 
   /// Checks every file of [got] as the app reads it, then keeps them all,
@@ -848,6 +955,8 @@ class DeckDownloads extends ChangeNotifier {
         entry.filesFor(entry.nativesFor(spoken)),
         _onPhone,
         reviewer: _reviewer,
+        fonts: entry.fonts,
+        fontsOnPhone: _fontsOnPhone,
       );
       if (!changes.isEmpty) updates[language] = changes;
     }
@@ -911,7 +1020,7 @@ class DeckDownloads extends ChangeNotifier {
     LanguageChanges changes,
   ) async {
     _failures.remove(language);
-    final total = changes.fetch.length;
+    final total = changes.fetch.length + changes.fonts.length;
     final totalBytes = changes.bytes;
     var done = 0;
     var bytes = 0;
@@ -921,8 +1030,25 @@ class DeckDownloads extends ChangeNotifier {
       bytes: 0,
       totalBytes: totalBytes,
     );
+    _fontScripts[language] = <String>[
+      for (final font in changes.fonts) font.script,
+    ];
     _notify();
+    void kept(IndexFont font) {
+      done++;
+      bytes += font.size;
+      _progress[language] = (
+        done: done,
+        total: total,
+        bytes: bytes,
+        totalBytes: totalBytes,
+      );
+      _notify();
+    }
+
     try {
+      final fontFailure = await _downloadFonts(language, changes.fonts, kept);
+      if (fontFailure != null) return fontFailure;
       final got = <IndexFile, List<int>>{};
       for (final file in changes.fetch) {
         final result = await _fetchChecked(file);
@@ -944,10 +1070,11 @@ class DeckDownloads extends ChangeNotifier {
       if (failure != null) return _failed(language, failure);
     } finally {
       _progress.remove(language);
+      _fontScripts.remove(language);
     }
     _log?.event(
       'Decks updated for $language: ${changes.fetch.length} files, '
-      '${changes.remove.length} replaced',
+      '${changes.fonts.length} fonts, ${changes.remove.length} replaced',
     );
     return null;
   }
@@ -964,6 +1091,7 @@ class DeckDownloads extends ChangeNotifier {
           else if (!changes.quiet.contains(f))
             '${f.path}:${f.contentSha256}',
         for (final path in changes.remove) '-$path',
+        for (final f in changes.fonts) 'font:${f.path}:${f.sha256}',
       ],
     ]..sort();
     return sha256Hex(utf8.encode(parts.join('\n')));
@@ -985,11 +1113,38 @@ class DeckDownloads extends ChangeNotifier {
       _stopping.remove(language);
       _updates = Map<String, LanguageChanges>.of(_updates)..remove(language);
       await _saveState();
+      await _removeUnusedFonts();
       _log?.event('Language removed from the phone: $language');
       return null;
     });
     _notify();
     await _filesChanged();
+  }
+
+  /// Deletes the fonts no language on the phone lists any more, after one
+  /// was removed (ADR-0042). A font shared with a language that stays is
+  /// kept. Where a language on the phone is not in the index, what it needs
+  /// is not known, and every font stays.
+  Future<void> _removeUnusedFonts() async {
+    final index = _index;
+    if (index == null) return;
+    final used = <String>{};
+    for (final code in languagesOnPhone) {
+      final entry = index.language(code);
+      if (entry == null) return;
+      used.addAll(<String>[for (final font in entry.fonts) font.path]);
+    }
+    final unused = <String>[
+      for (final path in _fontsOnPhone.keys)
+        if (!used.contains(path)) path,
+    ];
+    if (unused.isEmpty) return;
+    try {
+      await files.removeFonts(unused);
+      _fontsOnPhone = await files.fontManifest();
+    } on Object catch (e) {
+      _log?.warning('Deck downloads: could not remove fonts: $e');
+    }
   }
 
   // ---------------------------------------------------------------------------
@@ -1012,6 +1167,7 @@ class DeckDownloads extends ChangeNotifier {
   }
 
   Future<void> _filesChanged() async {
+    await _loadFonts();
     final changed = onFilesChanged;
     if (changed != null && !_disposed) await changed();
   }
@@ -1023,6 +1179,7 @@ class DeckDownloads extends ChangeNotifier {
   @override
   void dispose() {
     _disposed = true;
+    fonts.dispose();
     super.dispose();
   }
 }
