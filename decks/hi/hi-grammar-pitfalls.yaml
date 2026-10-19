@@ -2,12 +2,13 @@ schema: 1
 id: "hi-grammar-pitfalls"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "grammar"]
 cards:
   - id: "hi-0364"
     target: "मैंने खाना खाया।"
+    target_scripts: { perso_arabic: "میں نے کھانا کھایا۔" }
     reading: "mainnē khānā khāyā."
     ipa: "mɛːnneː kʰaːnaː kʰaːjaː"
     pos: "phrase"
@@ -18,6 +19,7 @@ cards:
       - { word: "खाया", ref: "hi-0332" }
   - id: "hi-0365"
     target: "मैंने रोटी खाई।"
+    target_scripts: { perso_arabic: "میں نے روٹی کھائی۔" }
     reading: "mainnē rōṭī khāī."
     ipa: "mɛːnneː roːʈiː kʰaːiː"
     pos: "phrase"
@@ -28,6 +30,7 @@ cards:
       - { word: "खाई", ref: "hi-0332" }
   - id: "hi-0366"
     target: "यह मेरी गाड़ी है।"
+    target_scripts: { perso_arabic: "یہ میری گاڑی ہے۔" }
     reading: "yah mērī gāṛī hai."
     ipa: "jəɦ meːriː ɡaːɽiː ɦɛː"
     pos: "phrase"
@@ -39,6 +42,7 @@ cards:
       - { word: "गाड़ी", base: "गाड़ी", reading: "gāṛī" }
   - id: "hi-0367"
     target: "वह आ रही है।"
+    target_scripts: { perso_arabic: "وہ آ رہی ہے۔" }
     reading: "vah ā rahī hai."
     ipa: "ʋəɦ aː rəɦiː ɦɛː"
     pos: "phrase"
@@ -49,6 +53,7 @@ cards:
       - { word: "रही", base: "रहना", reading: "rahnā" }
   - id: "hi-0368"
     target: "पानी ठंडा है।"
+    target_scripts: { perso_arabic: "پانی ٹھنڈا ہے۔" }
     reading: "pānī ṭhaṇḍā hai."
     ipa: "paːniː ʈʰəɳɖaː ɦɛː"
     pos: "phrase"
@@ -58,6 +63,7 @@ cards:
       - { word: "ठंडा", base: "ठंडा", reading: "ṭhaṇḍā" }
   - id: "hi-0369"
     target: "चाय ठंडी है।"
+    target_scripts: { perso_arabic: "چائے ٹھنڈی ہے۔" }
     reading: "cāy ṭhaṇḍī hai."
     ipa: "tʃaːj ʈʰəɳɖiː ɦɛː"
     pos: "phrase"
@@ -67,6 +73,7 @@ cards:
       - { word: "ठंडी", base: "ठंडा", reading: "ṭhaṇḍā" }
   - id: "hi-0370"
     target: "मुझे भूख लगी है।"
+    target_scripts: { perso_arabic: "مجھے بھوک لگی ہے۔" }
     reading: "mujhē bhūkh lagī hai."
     ipa: "mʊdʒʱeː bʱuːkʰ ləɡiː ɦɛː"
     pos: "phrase"
@@ -78,6 +85,7 @@ cards:
       - { word: "लगी", base: "लगना", reading: "lagnā" }
   - id: "hi-0371"
     target: "मुझे जाना है।"
+    target_scripts: { perso_arabic: "مجھے جانا ہے۔" }
     reading: "mujhē jānā hai."
     ipa: "mʊdʒʱeː dʒaːnaː ɦɛː"
     pos: "phrase"
@@ -88,6 +96,7 @@ cards:
       - { word: "जाना", base: "जाना", reading: "jānā" }
   - id: "hi-0372"
     target: "मुझे आपसे बात करनी है।"
+    target_scripts: { perso_arabic: "مجھے آپ سے بات کرنی ہے۔" }
     reading: "mujhē āpsē bāt karnī hai."
     ipa: "mʊdʒʱeː aːpseː baːt̪ kərniː ɦɛː"
     pos: "phrase"
@@ -100,6 +109,7 @@ cards:
       - { word: "करनी", base: "करना", reading: "karnā" }
   - id: "hi-0373"
     target: "आप बैठिए।"
+    target_scripts: { perso_arabic: "آپ بیٹھیے۔" }
     reading: "āp baiṭhiē."
     ipa: "aːp bɛːʈʰɪeː"
     pos: "phrase"

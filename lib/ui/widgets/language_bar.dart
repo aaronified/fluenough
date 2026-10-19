@@ -220,8 +220,17 @@ class _LanguageBarState extends State<LanguageBar> {
     final velocity = details.primaryVelocity ?? 0;
     final flick = velocity.abs() > 300 && (velocity < 0) == (_drag < 0);
     final target = _target;
+    final width = context.size?.width ?? 0;
     // Past a third of the whole bar's width, as the mockup says (#528).
-    final far = _drag.abs() > (context.size?.width ?? 0) / 3;
+    final far = _drag.abs() > width / 3;
+    final forward = (_drag < 0) != _rtl;
+    // A long drag or a hard fling goes past several languages, as a list
+    // does (owner, 2026-10-19: "The language bar only scrolls one at a
+    // time"): one for each third of the bar dragged, or each 1500 a second
+    // of the fling, and at least one.
+    final byDrag = width <= 0 ? 1 : (_drag.abs() / (width / 3)).floor();
+    final byFling = flick ? 1 + (velocity.abs() / 1500).floor() : 1;
+    final steps = byDrag > byFling ? byDrag : byFling;
     setState(() {
       _dragging = false;
       _drag = 0;
@@ -229,14 +238,23 @@ class _LanguageBarState extends State<LanguageBar> {
       _progress = 0;
       _give = 0;
     });
-    final language = state.languageChoices
-        .where((l) => l.code == target)
-        .firstOrNull;
-    if (language != null && (far || flick)) {
-      _choose(state, language);
-    } else {
-      _hideLabel();
+    if (target != null && (far || flick)) {
+      final codes = <String>[for (final l in state.languageChoices) l.code];
+      var code = target;
+      for (var i = 1; i < steps; i++) {
+        final more = LanguageChoice.step(code, codes, forward ? 1 : -1);
+        if (more == null) break;
+        code = more;
+      }
+      final language = state.languageChoices
+          .where((l) => l.code == code)
+          .firstOrNull;
+      if (language != null) {
+        _choose(state, language);
+        return;
+      }
     }
+    _hideLabel();
   }
 
   void _dragCancel() {
