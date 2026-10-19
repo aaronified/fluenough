@@ -548,6 +548,19 @@ class _LanguageSheetState extends State<LanguageSheet> {
                   ),
                 ],
                 ..._sharedNotes(context, script),
+                // The script test (#554), to take or retake for the script
+                // the language's lessons teach.
+                if (script.code == widget.language.script)
+                  if (widget.scriptTest?.call(
+                        context,
+                        _passed,
+                        (passed) => setState(() => _passed = passed),
+                      )
+                      case final offer?)
+                    Padding(
+                      padding: const EdgeInsetsDirectional.only(top: 8),
+                      child: offer,
+                    ),
               ],
             ),
     );
