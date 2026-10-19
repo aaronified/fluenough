@@ -2,13 +2,14 @@ schema: 1
 id: "hi-transport"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 theme: "transport"
 tags: ["beginner"]
 cards:
   - id: "hi-0262"
     target: "बस"
+    target_scripts: { perso_arabic: "بس" }
     picture: "🚌"
     reading: "bas"
     ipa: "bəs"
@@ -18,6 +19,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0263"
     target: "ऑटो"
+    target_scripts: { perso_arabic: "آٹو" }
     picture: "🛺"
     reading: "ôṭō"
     ipa: "ɔʈoː"
@@ -26,6 +28,7 @@ cards:
     gender: "m"
   - id: "hi-0264"
     target: "टैक्सी"
+    target_scripts: { perso_arabic: "ٹیکسی" }
     picture: "🚕"
     reading: "ṭaiksī"
     ipa: "ʈɛːksiː"
@@ -33,6 +36,7 @@ cards:
     gender: "f"
   - id: "hi-0265"
     target: "किराया"
+    target_scripts: { perso_arabic: "کرایہ" }
     reading: "kirāyā"
     ipa: "kɪraːjaː"
     pos: "noun"
@@ -41,6 +45,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0266"
     target: "मीटर से चलिए।"
+    target_scripts: { perso_arabic: "میٹر سے چلیے۔" }
     reading: "mīṭar sē caliē."
     ipa: "miːʈər seː tʃəlɪeː"
     pos: "phrase"
@@ -51,6 +56,7 @@ cards:
       - { word: "मीटर", base: "मीटर", reading: "mīṭar" }
   - id: "hi-0267"
     target: "स्टेशन जाना है।"
+    target_scripts: { perso_arabic: "اسٹیشن جانا ہے۔" }
     reading: "sṭēśan jānā hai."
     ipa: "sʈeːʃən dʒaːnaː ɦɛː"
     pos: "phrase"
@@ -60,6 +66,7 @@ cards:
       - { word: "जाना", base: "जाना", reading: "jānā" }
   - id: "hi-0268"
     target: "कितनी देर लगेगी?"
+    target_scripts: { perso_arabic: "کتنی دیر لگے گی؟" }
     reading: "kitnī dēr lagēgī?"
     ipa: "kɪt̪niː d̪eːr ləɡeːɡiː"
     pos: "phrase"
@@ -69,6 +76,7 @@ cards:
       - { word: "लगेगी", base: "लगना", reading: "lagnā" }
   - id: "hi-0269"
     target: "यहाँ रोकिए।"
+    target_scripts: { perso_arabic: "یہاں روکیے۔" }
     reading: "yahām̐ rōkiē."
     ipa: "jəɦãː roːkɪeː"
     pos: "phrase"
@@ -77,6 +85,7 @@ cards:
       - { word: "रोकिए", base: "रोकना", reading: "rōknā" }
   - id: "hi-0270"
     target: "स्टेशन"
+    target_scripts: { perso_arabic: "اسٹیشن" }
     picture: "🚉"
     reading: "sṭēśan"
     ipa: "sʈeːʃən"
@@ -84,6 +93,7 @@ cards:
     gender: "m"
   - id: "hi-0271"
     target: "टिकट"
+    target_scripts: { perso_arabic: "ٹکٹ" }
     picture: "🎫"
     reading: "ṭikaṭ"
     ipa: "ʈɪkəʈ"
@@ -93,6 +103,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0272"
     target: "सीट"
+    target_scripts: { perso_arabic: "سیٹ" }
     picture: "💺"
     reading: "sīṭ"
     ipa: "siːʈ"
@@ -100,6 +111,7 @@ cards:
     gender: "f"
   - id: "hi-0273"
     target: "चलिए"
+    target_scripts: { perso_arabic: "چلیے" }
     reading: "caliē"
     ipa: "tʃəlɪeː"
     pos: "verb"
