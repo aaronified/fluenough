@@ -2,3 +2,6 @@
 # decks/index.json (ADR-0037), which tools/deck_index.py computes from the
 # bytes on disk. Keep them the bytes GitHub serves, whatever the platform.
 decks/** text eol=lf
+# Fonts are binary: the line-ending rule above would rewrite bytes in them and
+# break the SHA-256 the app checks (ADR-0042).
+decks/fonts/** binary
