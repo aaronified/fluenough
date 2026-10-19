@@ -1801,12 +1801,19 @@ class AppState extends ChangeNotifier {
   bool leavesOut(DeckEntry entry) =>
       needsAlphabet(entry) && !learnsScriptOf(entry.language);
 
-  /// The script [code]'s course starts with: the first its decks list.
+  /// The script [code]'s course starts with: the one most of its decks use.
   String primaryScript(String code) {
+    // The script most of the course's decks are written in: a deck in the
+    // second script lists that script first, so the first deck found could
+    // be one of those.
+    final counts = <String, int>{};
     for (final entry in decks) {
-      if (entry.language.code == code) return entry.language.allScripts.first;
+      if (entry.language.code != code) continue;
+      final script = entry.language.script;
+      counts[script] = (counts[script] ?? 0) + 1;
     }
-    return 'latin';
+    if (counts.isEmpty) return 'latin';
+    return counts.entries.reduce((a, b) => b.value > a.value ? b : a).key;
   }
 
   /// Whether the learner learns the script [language] is written in here:
