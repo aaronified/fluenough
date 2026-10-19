@@ -129,6 +129,8 @@ const _headerFields = {
   'passages',
 };
 
+final _scriptId = RegExp(r'^[a-z]+(?:_[a-z]+)*$');
+
 const _cardFields = {
   'id',
   'target',
@@ -136,6 +138,7 @@ const _cardFields = {
   'reading',
   'ipa',
   'alt_target',
+  'target_scripts',
   'alt_native',
   'pos',
   'gender',
@@ -223,6 +226,7 @@ const _coreCardFields = {
   'reading',
   'ipa',
   'alt_target',
+  'target_scripts',
   'pos',
   'gender',
   'tags',
@@ -664,11 +668,60 @@ class _Reader {
       script: full
           ? fields.string('script')
           : fields.optionalString('script', allowEmpty: false) ?? 'latin',
+      scripts: scripts(fields, path),
       tts: fields.optionalString('tts', allowEmpty: false),
       rtl: fields.optionalBool('rtl') ?? false,
       icon: fields.optionalString('icon', allowEmpty: false),
       typed: fields.optionalBool('typed') ?? true,
     );
+  }
+
+  /// A language block's `scripts` (#623): every script it is written in,
+  /// the block's `script` first, none twice. Empty where it gives none.
+  List<String> scripts(_Fields fields, String path) {
+    final node = fields.node('scripts');
+    if (node == null) return const <String>[];
+    final name = '$path.scripts';
+    final scripts = <String>[
+      for (final (i, item) in list(node, name).indexed) text(item, '$name[$i]'),
+    ];
+    if (scripts.toSet().length != scripts.length) {
+      fail(node, '$name lists a script twice');
+    }
+    final first = fields.optionalString('script', allowEmpty: false);
+    if (first != null && scripts.first != first) {
+      fail(node, '$name starts with the block\'s script, "$first"');
+    }
+    return List<String>.unmodifiable(scripts);
+  }
+
+  /// A card's `target_scripts` (#623): its spelling in each of the
+  /// language's other scripts, by script id. Which scripts a language has
+  /// is the validator's to check; here each key is a script id and each
+  /// text is not blank and is not the card's own [target].
+  Map<String, String> targetScripts(
+    YamlNode? node,
+    String path,
+    String target,
+  ) {
+    if (node == null) return const <String, String>{};
+    if (node is! YamlMap) fail(node, _wrongType(node, path, 'a mapping'));
+    if (node.nodes.isEmpty) fail(node, '$path must not be empty');
+    final spellings = <String, String>{};
+    for (final entry in node.nodes.entries) {
+      final key = entry.key as YamlNode;
+      final value = entry.value;
+      final id = _value(key);
+      if (id is! String || !_scriptId.hasMatch(id)) {
+        fail(key, '$path: ${_describe(key)} is not a script id');
+      }
+      final spelling = text(value, '$path.$id');
+      if (spelling == target) {
+        fail(value, '$path.$id is the same as the card\'s target');
+      }
+      spellings[id] = spelling;
+    }
+    return Map<String, String>.unmodifiable(spellings);
   }
 
   List<Author> authors(YamlNode? node) {
@@ -784,6 +837,11 @@ class _Reader {
       reading: fields.optionalString('reading', allowEmpty: false),
       ipa: fields.optionalString('ipa', allowEmpty: false),
       altTarget: fields.strings('alt_target'),
+      targetScripts: targetScripts(
+        fields.node('target_scripts'),
+        '$path.target_scripts',
+        fields.string('target'),
+      ),
       altNative: fields.strings('alt_native'),
       pos: fields.optionalString('pos', allowEmpty: false),
       gender: fields.optionalString('gender'),
@@ -1504,6 +1562,11 @@ class _Reader {
       reading: fields.optionalString('reading', allowEmpty: false),
       ipa: fields.optionalString('ipa', allowEmpty: false),
       altTarget: fields.strings('alt_target'),
+      targetScripts: targetScripts(
+        fields.node('target_scripts'),
+        '$path.target_scripts',
+        fields.string('target'),
+      ),
       pos: fields.optionalString('pos', allowEmpty: false),
       gender: fields.optionalString('gender'),
       tags: fields.strings('tags'),

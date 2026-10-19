@@ -93,7 +93,6 @@ void main() {
         'sd',
         'ta',
         'te',
-        'ur',
       };
       const others = <String>{
         'bho',
@@ -110,7 +109,7 @@ void main() {
         'gom',
       };
       expect(codes, <String>{'en', ...scheduled, ...others});
-      expect(languages, hasLength(35));
+      expect(languages, hasLength(34));
       final bengali = languages.firstWhere((l) => l.code == 'bn');
       expect(bengali.ownName, 'বাংলা');
       expect(bengali.iso639_3, 'ben');
@@ -161,6 +160,16 @@ void main() {
       // approved Hindi one.
       final hi = languages.firstWhere((l) => l.code == 'hi');
       expect(hi.canReadIn('devanagari'), 'मुझे देवनागरी लिपि पढ़नी आती है');
+    });
+
+    test('Urdu has no entry of its own: a search for Urdu or Hindi finds '
+        'Hindustani (#623)', () {
+      expect(languages.any((l) => l.code == 'ur'), isFalse);
+      for (final query in ['Urdu', 'urdu', 'Hindi', 'اردو', 'हिन्दी']) {
+        expect(languages.where((l) => l.matches(query)).map((l) => l.code), [
+          'hi',
+        ], reason: query);
+      }
     });
 
     test('every language not written in Latin has both texts of its sheet, '
@@ -248,7 +257,6 @@ void main() {
         'or': 'odia',
         'ta': 'tamil',
         'te': 'telugu',
-        'ur': 'arabic',
         'gom': 'latin',
         'kha': 'latin',
         'lus': 'latin',
@@ -411,6 +419,50 @@ void main() {
       expect(junk.spokenLanguages, ['bn', 'hi']);
     });
 
+    test('a learner who knew Urdu knows Hindustani, reading its Perso-Arabic '
+        'script, at Urdu\'s rank (#623)', () {
+      final one = SettingsNotifier()
+        ..restore(const {
+          'spoken_languages': 'bn,ur,en',
+          'scripts_read': '{"bn":true,"ur":true}',
+        });
+      expect(one.spokenLanguages, ['bn', 'hi', 'en']);
+      expect(one.rankOf('hi'), 1);
+      expect(one.scriptsRead, <String, bool>{
+        'bn': true,
+        'hi': false,
+        'hi:perso_arabic': true,
+      });
+      final hindustani = parseSpokenLanguages(
+        File(SpokenLanguagesPage.asset).readAsStringSync(),
+      ).firstWhere((l) => l.code == 'hi');
+      expect(hindustani.scriptsReadIn(one.scriptsRead), ['perso_arabic']);
+      // Both known: Hindustani keeps the better rank and its own answers.
+      final both = SettingsNotifier()
+        ..restore(const {
+          'spoken_languages': 'ur,bn,hi',
+          'scripts_read': '{"hi":true,"hi:perso_arabic":false,"ur":true}',
+        });
+      expect(both.spokenLanguages, ['hi', 'bn']);
+      expect(hindustani.scriptsReadIn(both.scriptsRead), [
+        'devanagari',
+        'perso_arabic',
+      ]);
+      expect(both.scriptsRead.containsKey('ur'), isFalse);
+      // Knowing Urdu without reading its script says nothing more.
+      final spoken = SettingsNotifier()
+        ..restore(const {
+          'spoken_languages': 'ur',
+          'scripts_read': '{"ur":false}',
+        });
+      expect(spoken.spokenLanguages, ['hi']);
+      expect(hindustani.scriptsReadIn(spoken.scriptsRead), isEmpty);
+      // Saved again, it reads the same.
+      final again = SettingsNotifier()..restore(one.toStored());
+      expect(again.spokenLanguages, one.spokenLanguages);
+      expect(again.scriptsRead, one.scriptsRead);
+    });
+
     test('keeps the scripts read per language and script (#551), and reads '
         'a save from before as the language\'s own script', () {
       final punjabi = parseSpokenLanguages(
@@ -502,14 +554,14 @@ void main() {
       expect(find.byKey(const ValueKey<String>('lang-bn')), findsNothing);
       final indoAryan = l10n.knownFamily('indo_aryan');
       expect(
-        find.bySemanticsLabel(l10n.knownFamilyCollapsed(indoAryan, 24)),
+        find.bySemanticsLabel(l10n.knownFamilyCollapsed(indoAryan, 23)),
         findsOneWidget,
       );
       await tester.tap(find.byKey(const ValueKey<String>('family-indo_aryan')));
       await tester.pumpAndSettle();
       expect(find.byKey(const ValueKey<String>('lang-bn')), findsOneWidget);
       expect(
-        find.bySemanticsLabel(l10n.knownFamilyExpanded(indoAryan, 24)),
+        find.bySemanticsLabel(l10n.knownFamilyExpanded(indoAryan, 23)),
         findsOneWidget,
       );
       await tester.tap(find.byKey(const ValueKey<String>('family-indo_aryan')));

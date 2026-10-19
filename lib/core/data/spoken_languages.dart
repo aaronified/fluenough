@@ -14,6 +14,7 @@ class SpokenLanguage {
     this.scriptsQuestion,
     this.scriptCanReadFor = const <String, String>{},
     this.scriptTextUnchecked = false,
+    this.aliases = const <String>[],
   });
 
   /// The same code decks use for `native.code`, such as `bn`.
@@ -111,11 +112,18 @@ class SpokenLanguage {
   /// written in several, or null: none written.
   String? canReadIn(String script) => scriptCanReadFor[script];
 
-  /// Whether [query] is in its English name or its own name, ignoring case.
+  /// Other names a search finds it by (`aliases`), such as "Urdu" for
+  /// Hindustani (#623).
+  final List<String> aliases;
+
+  /// Whether [query] is in its English name, its own name or an alias,
+  /// ignoring case.
   bool matches(String query) {
     final q = query.trim().toLowerCase();
     return q.isNotEmpty &&
-        (name.toLowerCase().contains(q) || ownName.toLowerCase().contains(q));
+        (name.toLowerCase().contains(q) ||
+            ownName.toLowerCase().contains(q) ||
+            aliases.any((a) => a.toLowerCase().contains(q)));
   }
 }
 
@@ -192,7 +200,7 @@ const Map<String, List<String>> regionLanguages = <String, List<String>>{
   'IN': <String>['hi', 'bn', 'te', 'mr', 'ta'],
   'BD': <String>['bn'],
   'NP': <String>['ne'],
-  'PK': <String>['ur'],
+  'PK': <String>['hi'],
 };
 
 String? _optional(Object? item, String key, int i, [RegExp? pattern]) {
@@ -207,6 +215,16 @@ String? _optional(Object? item, String key, int i, [RegExp? pattern]) {
 }
 
 final _script = RegExp(r'^[a-z_]+$');
+
+/// An entry's `aliases`: other names a search finds it by.
+List<String> _aliases(Object? item, int i) {
+  final list = item is YamlMap ? item['aliases'] : null;
+  if (list == null) return const <String>[];
+  if (list is! YamlList || list.any((a) => a is! String || a.trim().isEmpty)) {
+    throw FormatException('languages[$i]: aliases is malformed');
+  }
+  return List<String>.unmodifiable(list.map((a) => (a as String).trim()));
+}
 
 /// An entry's `scripts`, its own first; or, as a list written before #551
 /// has it, its one `script`.
@@ -331,6 +349,7 @@ List<SpokenLanguage> parseSpokenLanguages(String text) {
         scriptsQuestion: scriptsQuestion,
         scriptCanReadFor: canReadFor,
         scripts: scripts,
+        aliases: _aliases(item, i),
       ),
     );
   }

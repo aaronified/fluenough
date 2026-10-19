@@ -291,6 +291,7 @@ class CardRef {
       altReading: reading == null ? written.altReading : const <String>[],
       ipa: ipa ?? written.ipa,
       altTarget: written.altTarget,
+      targetScripts: written.targetScripts,
       altNative:
           altNative ?? (sameNative ? written.altNative : const <String>[]),
       pos: written.pos,
@@ -342,6 +343,7 @@ class Card {
     this.ipa,
     this.altReading = const <String>[],
     this.altTarget = const <String>[],
+    this.targetScripts = const <String, String>{},
     this.altNative = const <String>[],
     this.pos,
     this.gender,
@@ -402,6 +404,18 @@ class Card {
 
   /// Extra answers accepted when the learner is typing the target.
   final List<String> altTarget;
+
+  /// The word spelled in the language's other scripts, by script id
+  /// (`target_scripts`, #623): Hindustani's `target` is in Devanagari and
+  /// `{perso_arabic: "کتاب"}` is its Perso-Arabic spelling. One [reading]
+  /// and one [ipa] serve every spelling. Empty for a card with one script.
+  final Map<String, String> targetScripts;
+
+  /// The word as spelled in [script]: [target] for the language's first
+  /// script, [targetScripts]'s spelling for another, or null where the card
+  /// has none.
+  String? targetIn(String script, {required String firstScript}) =>
+      script == firstScript ? target : targetScripts[script];
 
   /// Extra answers accepted when the learner is typing the meaning.
   final List<String> altNative;
