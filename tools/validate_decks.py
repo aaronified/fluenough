@@ -56,7 +56,28 @@ SCRIPTS = {
 # is a notation read as written, and the course about it is no language
 # with a romanisation (ADR-0041).
 NO_READING = {"latin", "cyrillic", "greek", "ipa"}
-SCRIPT_RE = re.compile(r"[a-z]+(?:-[a-z]+)*")
+# A script id is lowercase words joined by a hyphen or, as the app's own
+# list has it (`ol_chiki`, `meitei_mayek`, `perso_arabic`), an underscore (#623).
+SCRIPT_RE = re.compile(r"[a-z]+(?:[-_][a-z]+)*")
+_ARABIC_BLOCKS = ((0x0600, 0x06FF), (0x0750, 0x077F), (0x08A0, 0x08FF),
+                  (0xFB50, 0xFDFF), (0xFE70, 0xFEFF))
+_HAN_BLOCKS = ((0x3400, 0x4DBF), (0x4E00, 0x9FFF), (0xF900, 0xFAFF),
+               (0x20000, 0x2FA1F))
+# The Unicode blocks a script's letters are in, for a card's `target_scripts`
+# (#623). Perso-Arabic and Shahmukhi are written in the Arabic blocks, and
+# Chinese, traditional or simplified, in the CJK ones. A script not listed
+# here is not checked for its letters.
+SCRIPT_BLOCKS = {
+    "arabic": _ARABIC_BLOCKS, "perso_arabic": _ARABIC_BLOCKS,
+    "shahmukhi": _ARABIC_BLOCKS,
+    "han": _HAN_BLOCKS, "han_traditional": _HAN_BLOCKS,
+    "han_simplified": _HAN_BLOCKS, "traditional": _HAN_BLOCKS,
+    "simplified": _HAN_BLOCKS,
+    "devanagari": ((0x0900, 0x097F), (0xA8E0, 0xA8FF)),
+    "gurmukhi": ((0x0A00, 0x0A7F),),
+    "bengali": ((0x0980, 0x09FF),),
+    "latin": ((0x0041, 0x024F), (0x1E00, 0x1EFF)),
+}
 KINDS = {"vocab", "grammar", "facts", "themes", "numbers", "path", "sounds", "script",
          "reading", "rules", "layer"}
 THEMES_KEYS = {"schema", "kind", "description", "themes"}
@@ -118,7 +139,7 @@ CARD_KEYS = {
     "id", "target", "native", "reading", "ipa", "alt_target", "alt_native",
     "pos", "gender", "tags", "notes", "audio", "examples", "modes", "pair",
     "picture", "phrasebook", "bases", "rules", "wiktionary", "register", "frequency",
-    "audio_credit", "image", "image_credit",
+    "audio_credit", "image", "image_credit", "target_scripts",
 }
 # A ref lists a card written in another deck (ADR-0018). It may give its own
 # native-side fields; what the card is in the language learned stays the
@@ -154,7 +175,8 @@ CORE_CARD_KEYS = {"id", "target", "reading", "ipa", "alt_target", "pos",
                   "gender", "tags", "audio", "examples", "modes", "picture",
                   "notes", "phrasebook", "bases", "rules", "register", "frequency",
                   "synonyms", "antonyms", "collocations", "confusables", "forms",
-                  "senses", "audio_credit", "image", "image_credit"}
+                  "senses", "audio_credit", "image", "image_credit",
+                  "target_scripts"}
 CORE_REF_KEYS = {"ref", "reading", "ipa", "tags", "modes", "examples", "notes"}
 # A set card (DECK-FORMAT.md, Set cards; #506, #515): a closed group shown
 # together before its members are drilled. It is a card of a vocab core,
@@ -600,6 +622,50 @@ def _check_str_list(r: Report, where: str, key: str, value: object) -> None:
             r.error(where, f"{key}[{i}] must be a non-empty string")
 
 
+def _letters_in(text: str, blocks: tuple[tuple[int, int], ...]) -> bool:
+    """Whether every letter and mark of `text` is in one of `blocks`. Digits,
+    spaces, punctuation and the zero-width joiners are in any script."""
+    for ch in text:
+        if unicodedata.category(ch)[0] not in "LM" or ch in "\u200c\u200d":
+            continue
+        if not any(lo <= ord(ch) <= hi for lo, hi in blocks):
+            return False
+    return True
+
+
+def _check_target_scripts(r: Report, where: str, value: object, target: object,
+                          scripts: list[str] | None) -> None:
+    """A card's `target_scripts` (#623): its spelling in each of the
+    language's scripts but the first, by script id. `target` is in the first."""
+    if not isinstance(value, dict) or not value:
+        r.error(where, "target_scripts must be a mapping of script id to the "
+                       "word in that script")
+        return
+    others = (scripts or [])[1:]
+    for key, text in value.items():
+        if not _is_str(key) or not SCRIPT_RE.fullmatch(key):
+            r.error(where, f"target_scripts key {key!r} is not a script id")
+        elif key not in others:
+            if scripts and len(scripts) > 1:
+                r.error(where, f"target_scripts key {key!r} is not one of the "
+                               f"language's other scripts ({', '.join(others)})")
+            else:
+                r.error(where, f"target_scripts needs the language block to list "
+                               f"its scripts, `scripts: [<first>, {key}]`")
+        if not _is_str(text):
+            r.error(where, f"target_scripts.{key} must be a non-empty string")
+            continue
+        if text != text.strip():
+            r.error(where, f"target_scripts.{key} has leading or trailing whitespace")
+        if text == target:
+            r.error(where, f"target_scripts.{key} is the same as target; give a "
+                           f"spelling in {key}")
+        blocks = SCRIPT_BLOCKS.get(key) if _is_str(key) else None
+        if blocks and not _letters_in(text, blocks):
+            r.error(where, f"target_scripts.{key} has letters that are not in "
+                           f"{key}: {text!r}")
+
+
 def _check_optional_text(r: Report, where: str, block: dict, key: str) -> None:
     """A free-text field may be omitted, but when present it must be text.
 
@@ -641,6 +707,17 @@ def check_langblock(r: Report, where: str, block: object, *, full: bool) -> None
             r.warn(where, f"script {script!r} is not one the validator knows "
                           f"({', '.join(sorted(SCRIPTS))}); it is accepted, "
                           f"and a reading is expected on every card")
+    scripts = block.get("scripts")
+    if scripts is not None:
+        if (not isinstance(scripts, list) or len(scripts) < 2
+                or not all(_is_str(x) and SCRIPT_RE.fullmatch(x) for x in scripts)):
+            r.error(where, f"scripts must list two or more script names, such as "
+                           f"['devanagari', 'perso_arabic'], got {scripts!r}")
+        elif len(set(scripts)) != len(scripts):
+            r.error(where, "scripts lists a script twice")
+        elif _is_str(script) and scripts[0] != script:
+            r.error(where, f"scripts starts with the block's script, {script!r}, "
+                           f"got {scripts[0]!r} first")
     tts = block.get("tts")
     if tts is not None and (not _is_str(tts) or not BCP47_RE.fullmatch(tts)):
         r.error(where, f"tts must be a BCP-47 tag, got {tts!r}")
@@ -670,7 +747,8 @@ def card_id_re(lang: str) -> re.Pattern[str]:
 
 def check_card(r: Report, idx: int, card: object, seen: set[str],
                script: str, lang: str, *, form: str = "single",
-               key: str | None = None) -> None:
+               key: str | None = None,
+               scripts: list[str] | None = None) -> None:
     """A card of a single-file deck (`form` "single"), of a core ("core"), or
     a layer's own card ("layer"), whose id is its key in the layer's
     `cards` mapping. A core card has the language side only (ADR-0036)."""
@@ -764,6 +842,8 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
     for key in ("alt_target", "alt_native", "tags"):
         if key in card:
             _check_str_list(r, where, key, card[key])
+    if "target_scripts" in card:
+        _check_target_scripts(r, where, card["target_scripts"], target, scripts)
 
     _check_optional_text(r, where, card, "gender")
     if card.get("pos") == "noun":
@@ -2007,7 +2087,7 @@ def check_transliterated(r: Report, raw: object, *, fixed: str | None = None,
             keys = [p for p in path if not p.isdigit()]
             key = keys[-1] if keys else ""
             if key in word_keys or any(k in ("forms", "ipas", "readings",
-                                             "alternatives") for k in keys[:-1]):
+                                             "alternatives", "target_scripts") for k in keys[:-1]):
                 return
             if key == "text" and "passages" in keys:
                 return
@@ -2196,7 +2276,8 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
             seen: set[str] = set()
             code = lang.get("code") if isinstance(lang, dict) else None
             for i, card in enumerate(cards):
-                check_card(r, i, card, seen, script, code if _is_str(code) else "xx")
+                check_card(r, i, card, seen, script, code if _is_str(code) else "xx",
+                           scripts=_scripts_of(lang))
             if r.number_taught is not None:
                 r.number_taught[1].update(
                     w for d in r.card_defs.values() for t in d.words for w in t.split())
@@ -2514,6 +2595,17 @@ def proposal_count(path: Path) -> int:
                if isinstance(p.items, list))
 
 
+def _scripts_of(lang: object) -> list[str]:
+    """The scripts a language block lists, its `script` first (#623)."""
+    if isinstance(lang, dict):
+        scripts = lang.get("scripts")
+        if isinstance(scripts, list) and all(_is_str(x) for x in scripts):
+            return list(scripts)
+        if _is_str(lang.get("script")):
+            return [lang["script"]]
+    return []
+
+
 def _script_of(lang: object) -> str:
     script = lang.get("script") if isinstance(lang, dict) else "other"
     return script if script in SCRIPTS else "other"
@@ -2716,7 +2808,8 @@ def validate_core(r: Report, raw: dict, path: Path) -> None:
                 if _is_set(card):
                     check_set_card(r, i, card, seen, lc)
                 else:
-                    check_card(r, i, card, seen, script, lc, form="core")
+                    check_card(r, i, card, seen, script, lc, form="core",
+                               scripts=_scripts_of(lang))
             r.core_cards = [(cid, c.written) for cid, c in _core_index(raw, lc).items()]
     elif kind == "grammar":
         if "pattern" not in raw:
@@ -3231,7 +3324,8 @@ def _check_layer_cards(r: Report, raw: dict, core: dict, core_path: Path,
                 r.error(where, f"{cid} is not a card of {core_id}; a card only this "
                                f"layer has gives its target too")
             else:
-                check_card(r, i, entry, seen, script, lang, form="layer", key=cid)
+                check_card(r, i, entry, seen, script, lang, form="layer", key=cid,
+                           scripts=_scripts_of(core.get("language")))
             continue
         gives, notes, examples = _check_layer_entry(r, where, cid, entry, known, nname,
                                                     lang)
@@ -3248,7 +3342,8 @@ def _check_layer_cards(r: Report, raw: dict, core: dict, core_path: Path,
     core_cards = core.get("cards") if isinstance(core.get("cards"), list) else []
     for i, card in enumerate(core_cards):
         if not _is_set(card):
-            check_card(scratch, i, card, set(), script, lang, form="core")
+            check_card(scratch, i, card, set(), script, lang, form="core",
+                       scripts=_scripts_of(core.get("language")))
     for c in scratch.cards:
         if c.id not in translated:
             continue

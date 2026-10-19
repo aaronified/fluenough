@@ -125,6 +125,7 @@ Common to every kind.
 | `iso639_3` | yes | Three-letter ISO 639-3 code, e.g. `spa`, `jpn`, `hin`, `eng`. It names the language unambiguously, including languages with no two-letter code, and sits beside `code` rather than replacing it. |
 | `name` | yes | English name of the language. |
 | `script` | yes | A lowercase script name. The validator knows `latin`, `cyrillic`, `greek`, `arabic`, `hebrew`, `devanagari`, `bengali`, `gujarati`, `gurmukhi`, `odia`, `telugu`, `tamil`, `kannada`, `malayalam`, `sinhala`, `kana`, `han`, `hangul`, `thai`, `ipa` and `other`. Any other name is accepted with a warning ([ADR-0009](adr/0009-scripts-are-open.md)). Every script but `latin`, `cyrillic`, `greek` and `ipa` expects a `reading` on each card. `ipa` is for [the IPA course](#the-ipa-course) alone. |
+| `scripts` | no | For a language written in more than one script, every script it is taught in, `script` first: `["devanagari", "perso_arabic"]` for Hindustani, `["han", "han_traditional"]` for Chinese. Two or more names, none twice. A card's other spellings are written under [`target_scripts`](#a-cards-other-scripts-target_scripts). A script id is lowercase words joined by an underscore (`perso_arabic`, `ol_chiki`), as the app's own list of scripts has it; the validator accepts a hyphen too. |
 | `tts` | no | BCP-47 tag handed to the TTS engine, e.g. `es-ES`, `pt-BR`. Defaults to `code`. Omitting it on a language with major regional variation is a mistake. |
 | `rtl` | no | `true` for right-to-left scripts. Defaults to `false`. |
 | `typed` | no | `false` for a language whose answers cannot be typed: its production is asked by choosing the word among others, in reviews, in lessons and in the check of a hard word, never by typing. Defaults to `true`. Only [the IPA course](#the-ipa-course) is `false`. |
@@ -294,7 +295,7 @@ The file sits in `decks/<language.code>/`. A core no layer names is warned
 of: no learner is taught it.
 
 **A core card** has the language side only. It may give `id`, `target`,
-`reading`, `ipa`, `alt_target`, `pos`, `gender`, `tags`, `audio` (with
+`reading`, `ipa`, `alt_target`, `target_scripts`, `pos`, `gender`, `tags`, `audio` (with
 `audio_credit`), `examples`, `modes`, `picture`, `image` (with
 `image_credit`), `notes` (the core form, below),
 `phrasebook`, `bases` and `rules`. It may **not** give `native`,
@@ -568,6 +569,7 @@ cards:
 | `reading` | no | Romanisation, as the language's [romanisation file](#romanisation) says: for the Indic languages, letters based on ISO 15919, as the word is said. Required in practice for non-Latin scripts. |
 | `ipa` | no | How the word is said, in the IPA: broad, without the slashes, which the app adds, as `"paːlu"` ([ADR-0025](adr/0025-iso-15919-and-ipa.md)). `tools/transcribe.py` writes one. |
 | `alt_target` | no | Additional answers accepted in production drills. |
+| `target_scripts` | no | For a language whose block lists several `scripts`: the word spelled in each script but the first, `{ perso_arabic: "کتاب" }`. See [below](#a-cards-other-scripts-target_scripts). |
 | `alt_native` | no | Additional meanings accepted when the meaning is typed, in Hear (ADR-0034). |
 | `pos` | no | Part of speech: `noun`, `verb`, `adj`, `adv`, `pronoun`, `phrase`, `particle`, `other`. A [rules deck](#rules-decks) picks its rows by it, so give every word its own: a pronoun is `pronoun`, not `other`. |
 | `gender` | no | Grammatical gender, as text. On a noun it is one of its language's classes, which the language's path lists (`genders`): see [Gender](#gender). |
@@ -595,6 +597,39 @@ In a [core and its layers](#core-and-layer-files), the core card gives
 every field above but `native`, `alt_native`, `wiktionary` and `pair`; the
 layer gives `native`, `alt_native` and `wiktionary`, and the texts of the
 core's notes, examples and card data.
+
+### A card's other scripts: `target_scripts`
+
+A language the learner may read in more than one script (Hindustani:
+Devanagari or Perso-Arabic, as Punjabi has Gurmukhi or Shahmukhi) lists them
+in its `language` block, `scripts: ["devanagari", "perso_arabic"]`, the
+deck's own `script` first. The card's `target` stays in that first script, so
+every card, layer and id is as it was, and the card spells the same word in
+each other script under `target_scripts`, a map from script id to text:
+
+```yaml
+- id: "hi-0004"
+  target: "किताब"
+  target_scripts: { perso_arabic: "کتاب" }
+  reading: "kitāb"
+```
+
+There is **one** `reading` and **one** `ipa` per card: they say how the word
+sounds, which every spelling shares, so a second reading is never written.
+A word that differs by more than its spelling (a Sanskrit-leaning synonym in
+Devanagari, a Persian-leaning one in Perso-Arabic) is a card of its own, or a
+synonym of the card, not a second spelling. `alt_target` stays in the first
+script. A core card gives `target_scripts`, and the layer needs nothing.
+
+The validator checks that each key is one of the language's `scripts` other
+than the first (so a language with one script gives none), that the text is
+in that script's Unicode blocks (Perso-Arabic and Shahmukhi: the Arabic
+blocks; Chinese, traditional or simplified: the CJK ones; a script it has no
+blocks for is not checked), and that it differs from `target`. The value is
+not "script in prose": the card's `reading` serves it.
+
+The app parses and keeps it (`Card.targetScripts`); a screen that shows the
+spelling in the script a learner chose is not built yet.
 
 ### A note on `id`
 
