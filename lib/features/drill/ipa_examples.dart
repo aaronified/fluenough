@@ -124,7 +124,9 @@ class _IpaExample extends StatelessWidget {
                   ),
                   if (ipa != null)
                     Text(
-                      '/$ipa/',
+                      ipa.startsWith('[') && ipa.endsWith(']')
+                          ? ipa
+                          : '/$ipa/',
                       style: theme.textTheme.bodyMedium!.copyWith(
                         color: scheme.onSurfaceVariant,
                       ),

@@ -42,6 +42,48 @@ void main() {
     },
   );
 
+  testWidgets('shows a narrow ipa in brackets and a broad one in slashes', (
+    tester,
+  ) async {
+    usePhone(tester);
+    final state = ipaApp(<String>['es', 'ipa'], scope: null);
+    addTearDown(state.dispose);
+    await state.load();
+    final card = state
+        .deckById('ipa-en-basics')!
+        .cards
+        .firstWhere((c) => c.id == 'ipa-0002');
+    final narrow = Card(
+      id: card.id,
+      deckId: card.deckId,
+      target: card.target,
+      native: card.native,
+      examples: <CardExample>[
+        CardExample(
+          target: 'pin',
+          native: 'pin',
+          language: 'en',
+          ipa: '[pʰɪn]',
+        ),
+        CardExample(target: 'cat', native: 'cat', language: 'en', ipa: 'kæt'),
+      ],
+    );
+    await pumpScreen(
+      tester,
+      Scaffold(
+        body: SingleChildScrollView(
+          child: IpaExamples(
+            card: narrow,
+            language: state.deckOf(card)!.language,
+          ),
+        ),
+      ),
+      state: state,
+    );
+    expect(find.text('[pʰɪn]'), findsOneWidget);
+    expect(find.text('/kæt/'), findsOneWidget);
+  });
+
   testWidgets('says which example has the sound and which does not, and '
       'plays each in its own language\'s voice', (tester) async {
     usePhone(tester);
