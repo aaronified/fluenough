@@ -2,13 +2,14 @@ schema: 1
 id: "hi-grammar-ne"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed", "grammar"]
 cards:
   - ref: "hi-0364"
   - id: "hi-0480"
     target: "मैंने चाय पी।"
+    target_scripts: { perso_arabic: "میں نے چائے پی۔" }
     reading: "mainnē cāy pī."
     ipa: "mɛːnneː tʃaːj piː"
     pos: "phrase"
@@ -19,6 +20,7 @@ cards:
       - { word: "पी", ref: "hi-0602" }
   - id: "hi-0481"
     target: "उसने किताब पढ़ी।"
+    target_scripts: { perso_arabic: "اس نے کتاب پڑھی۔" }
     reading: "usnē kitāb paṛhī."
     ipa: "ʊsneː kɪt̪aːb pəɽʱiː"
     pos: "phrase"
@@ -30,6 +32,7 @@ cards:
       - { word: "पढ़ी", ref: "hi-0114" }
   - id: "hi-0482"
     target: "हमने फ़िल्म देखी।"
+    target_scripts: { perso_arabic: "ہم نے فلم دیکھی۔" }
     reading: "hamnē film dēkhī."
     ipa: "ɦəmneː fɪlm d̪eːkʰiː"
     pos: "phrase"
@@ -39,6 +42,7 @@ cards:
       - { word: "देखी", base: "देखना", reading: "dēkhnā" }
   - id: "hi-0483"
     target: "राम ने पत्र लिखा।"
+    target_scripts: { perso_arabic: "رام نے خط لکھا۔" }
     reading: "rām nē patra likhā."
     ipa: "raːm neː pət̪rə lɪkʰaː"
     pos: "phrase"
@@ -51,6 +55,7 @@ cards:
       - { word: "लिखा", base: "लिखना", reading: "likhnā" }
   - id: "hi-0484"
     target: "आपने क्या कहा?"
+    target_scripts: { perso_arabic: "آپ نے کیا کہا؟" }
     reading: "āpnē kyā kahā?"
     ipa: "aːpneː kjaː kəɦaː"
     pos: "phrase"
@@ -59,6 +64,7 @@ cards:
       - { word: "कहा", base: "कहना", reading: "kahnā" }
   - id: "hi-0485"
     target: "उन्होंने खाना खाया।"
+    target_scripts: { perso_arabic: "انہوں نے کھانا کھایا۔" }
     reading: "unhōnnē khānā khāyā."
     ipa: "ʊnɦoːnneː kʰaːnaː kʰaːjaː"
     pos: "phrase"
@@ -67,6 +73,7 @@ cards:
       - { word: "खाया", ref: "hi-0332" }
   - id: "hi-0486"
     target: "मैंने उसे देखा।"
+    target_scripts: { perso_arabic: "میں نے اسے دیکھا۔" }
     reading: "mainnē usē dēkhā."
     ipa: "mɛːnneː ʊseː d̪eːkʰaː"
     pos: "phrase"
@@ -78,6 +85,7 @@ cards:
       - { word: "देखा", base: "देखना", reading: "dēkhnā" }
   - id: "hi-0487"
     target: "मैं आया।"
+    target_scripts: { perso_arabic: "میں آیا۔" }
     reading: "maim̐ āyā."
     ipa: "mɛ̃ː aːjaː"
     pos: "phrase"
