@@ -2,18 +2,20 @@ schema: 1
 id: "hi-time"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 theme: "time"
 tags: ["beginner"]
 cards:
   - id: "hi-0299"
     target: "आज"
+    target_scripts: { perso_arabic: "آج" }
     reading: "āj"
     ipa: "aːdʒ"
     pos: "adv"
   - id: "hi-0300"
     target: "कल"
+    target_scripts: { perso_arabic: "کل" }
     reading: "kal"
     ipa: "kəl"
     pos: "adv"
@@ -21,29 +23,34 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0301"
     target: "अभी"
+    target_scripts: { perso_arabic: "ابھی" }
     reading: "abhī"
     ipa: "əbʱiː"
     pos: "adv"
   - id: "hi-0302"
     target: "सुबह"
+    target_scripts: { perso_arabic: "صبح" }
     reading: "subah"
     ipa: "sʊbəɦ"
     pos: "noun"
     gender: "f"
   - id: "hi-0303"
     target: "शाम"
+    target_scripts: { perso_arabic: "شام" }
     reading: "śām"
     ipa: "ʃaːm"
     pos: "noun"
     gender: "f"
   - id: "hi-0304"
     target: "रात"
+    target_scripts: { perso_arabic: "رات" }
     reading: "rāt"
     ipa: "raːt̪"
     pos: "noun"
     gender: "f"
   - id: "hi-0305"
     target: "बजे"
+    target_scripts: { perso_arabic: "بجے" }
     reading: "bajē"
     ipa: "bədʒeː"
     pos: "other"
@@ -51,6 +58,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0306"
     target: "साढ़े"
+    target_scripts: { perso_arabic: "ساڑھے" }
     reading: "sāṛhē"
     ipa: "saːɽʱeː"
     pos: "other"
@@ -58,6 +66,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0307"
     target: "कितने बजे हैं?"
+    target_scripts: { perso_arabic: "کتنے بجے ہیں؟" }
     reading: "kitnē bajē haim̐?"
     ipa: "kɪt̪neː bədʒeː ɦɛ̃ː"
     pos: "phrase"
@@ -67,12 +76,14 @@ cards:
       - { word: "कितने", ref: "hi-0163" }
   - id: "hi-0308"
     target: "दिन"
+    target_scripts: { perso_arabic: "دن" }
     reading: "din"
     ipa: "d̪ɪn"
     pos: "noun"
     gender: "m"
   - id: "hi-0309"
     target: "हफ़्ता"
+    target_scripts: { perso_arabic: "ہفتہ" }
     reading: "haftā"
     ipa: "ɦəft̪aː"
     alt_target: ["हफ्ता"]
@@ -82,6 +93,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0310"
     target: "सोमवार"
+    target_scripts: { perso_arabic: "سوموار" }
     reading: "sōmvār"
     ipa: "soːmʋaːr"
     pos: "noun"
@@ -90,18 +102,21 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0311"
     target: "मंगलवार"
+    target_scripts: { perso_arabic: "منگل" }
     reading: "maṅgalvār"
     ipa: "məŋɡəlʋaːr"
     pos: "noun"
     gender: "m"
   - id: "hi-0312"
     target: "बुधवार"
+    target_scripts: { perso_arabic: "بدھ" }
     reading: "budhvār"
     ipa: "bʊd̪ʱʋaːr"
     pos: "noun"
     gender: "m"
   - id: "hi-0313"
     target: "गुरुवार"
+    target_scripts: { perso_arabic: "جمعرات" }
     reading: "guruvār"
     ipa: "ɡʊrʊʋaːr"
     pos: "noun"
@@ -110,18 +125,21 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0314"
     target: "शुक्रवार"
+    target_scripts: { perso_arabic: "جمعہ" }
     reading: "śukravār"
     ipa: "ʃʊkrəʋaːr"
     pos: "noun"
     gender: "m"
   - id: "hi-0315"
     target: "शनिवार"
+    target_scripts: { perso_arabic: "ہفتہ" }
     reading: "śanivār"
     ipa: "ʃənɪʋaːr"
     pos: "noun"
     gender: "m"
   - id: "hi-0316"
     target: "रविवार"
+    target_scripts: { perso_arabic: "اتوار" }
     reading: "ravivār"
     ipa: "rəʋɪʋaːr"
     alt_target: ["इतवार"]
