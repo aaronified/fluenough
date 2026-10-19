@@ -14,7 +14,10 @@ import 'deck_catalog.dart';
 /// so that the catalog reads it as it read the bundled one. Beside the
 /// files, the store keeps what the index said of each when it was
 /// downloaded ([manifest]), the last index read, and a little state of its
-/// own ([readNote]).
+/// own ([readNote]). The script fonts of the courses on the phone
+/// (ADR-0042) are kept the same way, under `decks/fonts/`, with a manifest
+/// of their own ([fontManifest]): a font is shared by the courses in its
+/// script, so it belongs to no one language's files.
 ///
 /// Every file put here has been checked against the index's SHA-256 first
 /// ([DeckDownloads]); [putAll] then writes each beside its place and moves
@@ -43,8 +46,22 @@ abstract interface class DownloadedDecks implements DeckSource, CardMedia {
   });
 
   /// Deletes every file of [language]. Its learner's progress, which is in
-  /// the review log, stays.
+  /// the review log, stays. Fonts are not its files: [removeFonts] deletes
+  /// those no course needs.
   Future<void> removeLanguage(String language);
+
+  /// What the index said of each font on the phone when it was downloaded,
+  /// by path (ADR-0042).
+  Future<Map<String, IndexFont>> fontManifest();
+
+  /// Keeps [fonts], each with its bytes, replacing any font at its path.
+  Future<void> putFonts(Map<IndexFont, List<int>> fonts);
+
+  /// The bytes of the font at [path], or null if it is not on the phone.
+  Future<Uint8List?> readFont(String path);
+
+  /// Deletes the fonts at [paths].
+  Future<void> removeFonts(Iterable<String> paths);
 
   /// A note the downloads keep, such as `index.json` or `state.json`, or
   /// null if there is none.
@@ -64,9 +81,11 @@ class FileDownloadedDecks implements DownloadedDecks {
   final Directory directory;
 
   static const String _manifest = 'files.json';
+  static const String _fontsNote = 'fonts.json';
   static const String _partial = '.part';
 
   Map<String, IndexFile>? _files;
+  Map<String, IndexFont>? _fontFiles;
 
   File _file(String path) => File('${directory.path}/$path');
 
@@ -179,6 +198,83 @@ class FileDownloadedDecks implements DownloadedDecks {
     await _save(known);
   }
 
+  /// Refuses a path that is not a font's, so nothing is written or read
+  /// outside [directory].
+  static String _checkedFont(String path) {
+    if (!fontPathPattern.hasMatch(path)) {
+      throw ArgumentError.value(path, 'path', 'not a font file');
+    }
+    return path;
+  }
+
+  @override
+  Future<Map<String, IndexFont>> fontManifest() async {
+    final known = _fontFiles;
+    if (known != null) return Map<String, IndexFont>.of(known);
+    final fonts = <String, IndexFont>{};
+    final text = await readNote(_fontsNote);
+    if (text != null) {
+      try {
+        final json = jsonDecode(text);
+        if (json is Map && json['fonts'] is List) {
+          for (final entry in json['fonts'] as List<Object?>) {
+            final font = IndexFont.tryParse(entry);
+            // A font the manifest knows but the disk does not was deleted.
+            if (font != null && await _file(font.path).exists()) {
+              fonts[font.path] = font;
+            }
+          }
+        }
+      } on Object {
+        // A manifest that cannot be read: the fonts are downloaded again.
+      }
+    }
+    _fontFiles = fonts;
+    return Map<String, IndexFont>.of(fonts);
+  }
+
+  @override
+  Future<void> putFonts(Map<IndexFont, List<int>> fonts) async {
+    final known = await fontManifest();
+    for (final MapEntry(key: font, value: bytes) in fonts.entries) {
+      final target = _file(_checkedFont(font.path));
+      await target.parent.create(recursive: true);
+      final part = File('${target.path}$_partial');
+      await part.writeAsBytes(bytes, flush: true);
+      await part.rename(target.path);
+      known[font.path] = font;
+    }
+    await _saveFonts(known);
+  }
+
+  @override
+  Future<Uint8List?> readFont(String path) async {
+    final file = _file(_checkedFont(path));
+    if (!await file.exists()) return null;
+    return file.readAsBytes();
+  }
+
+  @override
+  Future<void> removeFonts(Iterable<String> paths) async {
+    final known = await fontManifest();
+    for (final path in paths) {
+      final file = _file(_checkedFont(path));
+      if (await file.exists()) await file.delete();
+      known.remove(path);
+    }
+    await _saveFonts(known);
+  }
+
+  Future<void> _saveFonts(Map<String, IndexFont> fonts) async {
+    _fontFiles = fonts;
+    await writeNote(
+      _fontsNote,
+      jsonEncode(<String, Object?>{
+        'fonts': <Object?>[for (final font in fonts.values) font.toJson()],
+      }),
+    );
+  }
+
   Future<void> _save(Map<String, IndexFile> files) async {
     _files = files;
     await writeNote(_manifest, manifestJson(files.values));
@@ -231,6 +327,10 @@ class MemoryDownloadedDecks implements DownloadedDecks {
   final Map<String, IndexFile> _manifest = <String, IndexFile>{};
   final Map<String, String> notes = <String, String>{};
 
+  /// Each font's bytes by path, and what the index said of it.
+  final Map<String, Uint8List> fontFiles = <String, Uint8List>{};
+  final Map<String, IndexFont> _fonts = <String, IndexFont>{};
+
   /// How many times [putAll] was called.
   int puts = 0;
 
@@ -277,6 +377,30 @@ class MemoryDownloadedDecks implements DownloadedDecks {
   Future<void> removeLanguage(String language) async {
     files.removeWhere((path, _) => path.split('/')[1] == language);
     _manifest.removeWhere((_, file) => file.language == language);
+  }
+
+  @override
+  Future<Map<String, IndexFont>> fontManifest() async =>
+      Map<String, IndexFont>.of(_fonts);
+
+  @override
+  Future<void> putFonts(Map<IndexFont, List<int>> fonts) async {
+    if (failPut case final error?) throw error;
+    for (final MapEntry(key: font, value: bytes) in fonts.entries) {
+      fontFiles[font.path] = Uint8List.fromList(bytes);
+      _fonts[font.path] = font;
+    }
+  }
+
+  @override
+  Future<Uint8List?> readFont(String path) async => fontFiles[path];
+
+  @override
+  Future<void> removeFonts(Iterable<String> paths) async {
+    for (final path in paths) {
+      fontFiles.remove(path);
+      _fonts.remove(path);
+    }
   }
 
   @override
