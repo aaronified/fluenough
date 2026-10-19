@@ -1,6 +1,7 @@
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/core/data/deck_parser.dart';
 import 'package:fluenough/core/data/guide_layers.dart';
+import 'package:fluenough/core/models/script_guide.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 // A script guide and a sounds file split into a core and an English layer
@@ -61,6 +62,32 @@ native: { code: "en", iso639_3: "eng", name: "English" }
 contrasts:
   "aspiration": "a breath after the consonant"
   "inherent-vowel": "the open o against a"
+''';
+
+const sylhetiCore = '''
+schema: 1
+kind: "script"
+part: "core"
+id: "bn-sylheti-script"
+language: "bn"
+features:
+  - id: "slope"
+    example: "ꠍ"
+    letters: ["ꠍ"]
+''';
+
+const sylhetiLayer = '''
+schema: 1
+id: "bn-en-sylheti-script"
+kind: "layer"
+core: "bn-sylheti-script"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "How Sylheti script works"
+intro: "A few ideas of its own."
+features:
+  "slope":
+    name: "The slope"
+    text: "Words lean to one side."
 ''';
 
 void main() {
@@ -143,10 +170,77 @@ void main() {
     expect(catalog.broken.single.path, 'decks/bn/en/bn-en-script.yaml');
   });
 
+  Map<String, String> withSylheti() => {
+    ...files(),
+    'decks/bn/bn-sylheti-script.yaml': sylhetiCore,
+    'decks/bn/en/bn-en-sylheti-script.yaml': sylhetiLayer,
+  };
+
+  test('a language has a guide for each of its scripts', () {
+    final catalog = DeckCatalog.parseAll(withSylheti());
+    expect(catalog.broken, isEmpty, reason: '${catalog.broken}');
+    expect(catalog.scriptGuides.keys, unorderedEquals(['bn', 'bn-sylheti']));
+    final guide = catalog.scriptGuides['bn-sylheti']!;
+    expect(guide.language, 'bn');
+    expect(guide.script, 'sylheti');
+    expect(guide.name, 'How Sylheti script works');
+    expect(catalog.scriptGuides['bn']!.script, isNull);
+    expect(catalog.scriptGuides['bn']!.name, 'How Bengali script works');
+  });
+
+  test("a deck's guide is its own script's, else the language's", () {
+    final catalog = DeckCatalog.parseAll(withSylheti());
+    expect(catalog.scriptGuideFor('bn', 'sylheti')?.key, 'bn-sylheti');
+    expect(catalog.scriptGuideFor('bn', 'bengali')?.key, 'bn');
+    expect(catalog.scriptGuideFor('hi', 'devanagari'), isNull);
+    final only = DeckCatalog.parseAll({
+      'decks/bn/bn-sylheti-script.yaml': sylhetiCore,
+      'decks/bn/en/bn-en-sylheti-script.yaml': sylhetiLayer,
+    });
+    expect(only.scriptGuideFor('bn', 'bengali'), isNull);
+    expect(only.scriptGuideFor('bn', 'sylheti')?.key, 'bn-sylheti');
+  });
+
+  test('a script is hyphenated in its guide key', () {
+    expect(scriptGuideKey('hi', 'perso_arabic'), 'hi-perso-arabic');
+    expect(scriptGuideKey('hi', null), 'hi');
+  });
+
+  test("a guide's id is its language and one script", () {
+    for (final id in ['bn-sylheti', 'bn-script-sylheti']) {
+      expect(
+        DeckCatalog.checkFile(
+          'decks/bn/$id.yaml',
+          sylhetiCore.replaceFirst('bn-sylheti-script', id),
+        ),
+        isNotNull,
+        reason: id,
+      );
+    }
+    for (final MapEntry(:key, :value) in withSylheti().entries) {
+      expect(DeckCatalog.checkFile(key, value), isNull, reason: key);
+    }
+  });
+
+  test("a layer's id follows its core's", () {
+    final catalog = DeckCatalog.parseAll({
+      'decks/bn/bn-sylheti-script.yaml': sylhetiCore,
+      'decks/bn/en/bn-en-script.yaml': sylhetiLayer.replaceFirst(
+        'bn-en-sylheti-script',
+        'bn-en-script',
+      ),
+    });
+    expect(catalog.scriptGuides, isEmpty);
+    expect(catalog.broken.single.path, 'decks/bn/en/bn-en-script.yaml');
+  });
+
   test('only a script or sounds core is a guide core', () {
     expect(isGuideCoreId('hi-script'), isTrue);
     expect(isGuideCoreId('hi-sounds'), isTrue);
+    expect(isGuideCoreId('hi-perso-arabic-script'), isTrue);
     expect(isGuideCoreId('hi-script-vowels'), isFalse);
+    expect(isGuideCoreId('hi-script-perso-arabic-letters'), isFalse);
+    expect(isGuideCoreId('hi-perso-arabic-sounds'), isFalse);
     expect(isGuideCoreId('hi-home'), isFalse);
   });
 }
