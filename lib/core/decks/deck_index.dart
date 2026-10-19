@@ -269,6 +269,9 @@ class IndexLanguage {
   /// Its decks' core ids, in teaching order.
   final List<String> path;
   final List<IndexUnit> units;
+
+  /// Its files but not its media. The script guides of its other scripts,
+  /// which the index lists apart as `script_guides`, are among them.
   final List<IndexFile> files;
 
   /// Its cards' recordings and images (#518, #523), listed apart from
@@ -366,8 +369,12 @@ class IndexLanguage {
     if (code is! String || !RegExp(r'^[a-z]{2,3}$').hasMatch(code)) {
       throw FormatException('a language has a bad code: $code');
     }
+    // A guide for one of the language's other scripts is listed under
+    // `script_guides`, apart from `files`, so that an app too old to read
+    // it passes it by (ADR-0016); here it is a file like any other.
     final files = <IndexFile>[
       for (final file in _list(json['files'])) IndexFile._parse(file),
+      for (final file in _list(json['script_guides'])) IndexFile._parse(file),
     ];
     final media = <IndexFile>[
       for (final file in _list(json['media']))

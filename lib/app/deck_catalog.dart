@@ -234,9 +234,17 @@ class Catalog {
   /// without a romanisation file has none.
   final Map<String, Romanisation> romanisations;
 
-  /// Each language's script guide (#30, ADR-0016), by language code. A
-  /// language without one has none.
+  /// Each script guide (#30, ADR-0016), by [ScriptGuide.key]: a language's
+  /// code for its default guide, and for a guide of another of its scripts
+  /// the code and the script, such as `hi-perso-arabic`. A language without
+  /// one has none.
   final Map<String, ScriptGuide> scriptGuides;
+
+  /// The guide for a deck in [script] (as its language block names it) of
+  /// [language]: that script's own, else the language's default guide, or
+  /// null if it has neither.
+  ScriptGuide? scriptGuideFor(String language, String script) =>
+      scriptGuides[scriptGuideKey(language, script)] ?? scriptGuides[language];
 
   static final Catalog empty = Catalog(decks: const [], broken: const []);
 
@@ -478,7 +486,7 @@ class DeckCatalog {
             guideNative[key] = layer.native;
             switch (merged) {
               case ScriptGuide():
-                scriptGuides[language] = merged;
+                scriptGuides[merged.key] = merged;
               case SoundContrasts():
                 sounds[language] = merged;
             }
@@ -546,7 +554,7 @@ class DeckCatalog {
       if (kind == 'script') {
         try {
           final guide = parseScriptGuide(text, source: path.split('/').last);
-          scriptGuides.putIfAbsent(guide.language, () => guide);
+          scriptGuides.putIfAbsent(guide.key, () => guide);
         } on DeckParseException catch (e) {
           broken.add(BrokenDeck(path: path, error: e));
         }

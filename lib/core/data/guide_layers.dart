@@ -7,7 +7,8 @@ import 'deck_parser.dart';
 /// The layer of a script guide or sounds core (#498): its text in one
 /// native language, keyed by the core's feature or contrast ids.
 /// `decks/<lang>/<native>/<lang>-<native>-script.yaml` names its core,
-/// `<lang>-script`, in the folder above (DECK-FORMAT.md, Script guides and
+/// `<lang>-script` (or `<lang>-<script>-script`, a guide for one of the
+/// language's other scripts), in the folder above (DECK-FORMAT.md, Script guides and
 /// Sounds files).
 class GuideLayer {
   const GuideLayer({
@@ -23,7 +24,7 @@ class GuideLayer {
 
   final String id;
 
-  /// The core's id: `hi-script` or `hi-sounds`.
+  /// The core's id: `hi-script`, `hi-perso-arabic-script` or `hi-sounds`.
   final String core;
 
   /// The native language's code, such as `en`.
@@ -44,11 +45,14 @@ class GuideLayer {
 }
 
 /// Whether [coreId], a layer's `core`, names a script guide or sounds core
-/// rather than a deck's: a deck's core is never `<lang>-script` or
+/// rather than a deck's: a deck's core never ends in `-script`, and is never
 /// `<lang>-sounds` (DECK-FORMAT.md, Files and ids).
 bool isGuideCoreId(String? coreId) =>
-    coreId != null &&
-    RegExp(r'^[a-z]{2,3}-(?:script|sounds)$').hasMatch(coreId);
+    coreId != null && _guideCoreId.hasMatch(coreId);
+
+final _guideCoreId = RegExp(
+  r'^[a-z]{2,3}-(?:[a-z]+(?:-[a-z]+)*-script|sounds)$',
+);
 
 const _common = {'schema', 'id', 'kind', 'core', 'native'};
 
@@ -92,10 +96,12 @@ GuideLayer parseGuideLayer(String text, {required String source}) {
     throw bad('native must be a language block with a code', root);
   }
   final lang = core.split('-').first;
-  final kind = isScript ? 'script' : 'sounds';
+  // `hi-script` -> `hi-en-script`, `hi-perso-arabic-script` ->
+  // `hi-en-perso-arabic-script`.
+  final wantId = '$lang-$code${core.substring(lang.length)}';
   final id = root['id'];
-  if (id != '$lang-$code-$kind') {
-    throw bad('the $code layer of $core has id "$lang-$code-$kind"', root);
+  if (id != wantId) {
+    throw bad('the $code layer of $core has id "$wantId"', root);
   }
   String textOf(YamlMap map, String key, String what) {
     final value = map[key];
@@ -179,6 +185,7 @@ ScriptGuide mergeScriptGuide(
   }
   return ScriptGuide(
     language: core.language,
+    script: core.script,
     name: layer.name ?? '',
     intro: layer.intro ?? '',
     features: <ScriptFeature>[

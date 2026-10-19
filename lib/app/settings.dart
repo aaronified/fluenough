@@ -427,15 +427,17 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Whether the learner has seen [code]'s script guide (#30, ADR-0016),
-  /// which the drill shows once, before the language's first script card.
-  bool hasSeenScriptGuide(String code) => _scriptGuidesSeen.contains(code);
+  /// Whether the learner has seen a script guide (#30, ADR-0016), by its
+  /// `ScriptGuide.key`: a language's code, or the code and a script, such as
+  /// `hi-perso-arabic`. The drill shows each once, before the first card in
+  /// its script.
+  bool hasSeenScriptGuide(String key) => _scriptGuidesSeen.contains(key);
 
-  void markScriptGuideSeen(String code) {
-    if (_scriptGuidesSeen.contains(code)) return;
+  void markScriptGuideSeen(String key) {
+    if (_scriptGuidesSeen.contains(key)) return;
     _scriptGuidesSeen = Set<String>.unmodifiable(<String>{
       ..._scriptGuidesSeen,
-      code,
+      key,
     });
     notifyListeners();
   }
@@ -944,8 +946,10 @@ class SettingsNotifier extends ChangeNotifier {
       }
     }
     if (pick('script_guides_seen', (t) => t) case final v?) {
-      for (final code in v.split(',')) {
-        if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) markScriptGuideSeen(code);
+      for (final key in v.split(',')) {
+        if (RegExp(r'^[a-z]{2,3}(?:-[a-z]+)*$').hasMatch(key)) {
+          markScriptGuideSeen(key);
+        }
       }
     }
     if (pick('waiting_open', (t) => t) case final v?) {
