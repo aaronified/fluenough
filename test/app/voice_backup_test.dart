@@ -79,15 +79,15 @@ void main() {
     expect(tts.spoken.single.text, card.target);
   });
 
-  test('the Urdu voice alone does not stand in for the Devanagari decks, '
-      'which carry no Perso-Arabic spelling', () async {
+  test('the Urdu voice alone stands in for the Devanagari decks, which '
+      'also spell their cards in Perso-Arabic', () async {
     final (state, _) = await _phone(<String>{'ur-pk'});
     final devanagari = state.decks.firstWhere(
       (d) => d.language.ttsTag == 'hi-IN',
     );
     expect(state.voiceStatus(devanagari.language), VoiceStatus.missing);
-    expect(state.backupVoice(devanagari.language), isNull);
-    expect(state.hasVoice(devanagari.language), isFalse);
+    expect(state.backupVoice(devanagari.language)?.ttsTag, 'ur-PK');
+    expect(state.hasVoice(devanagari.language), isTrue);
   });
 
   test('with neither voice there is no backup', () async {
