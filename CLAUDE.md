@@ -55,7 +55,9 @@ wherever the table above allows it.
 - **Releases.** Bump `pubspec.yaml` and `lib/app/app_info.dart`, check with
   `tools/check_release_version.py`, write the release's CHANGELOG.md entry
   (owner, 2026-10-16: "I will not write changelog"), and open the release
-  pull request. The owner tags the release.
+  pull request. The owner tags the release. Deck content (new or filled decks, paths)
+  is not part of a release and stays out of its CHANGELOG entry (owner,
+  2026-10-19: "This has nothing to do with the release. It is content.").
 - **Questions.** Ask them as soon as they come up. Record the owner's
   answers, quoted and dated, in the plan and the issue they belong to.
 - **Readings.** Readings are *based on* ISO 15919. Never say they strictly
