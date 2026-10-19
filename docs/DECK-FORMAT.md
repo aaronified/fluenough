@@ -2575,6 +2575,21 @@ downloads is listed in `decks/index.json`:
   They are listed apart from `files`, so that an app too old to read them
   passes them by, and the language's `size` counts them. They download
   after the decks, and are checked against their hash alone.
+- **`fonts`**: the font of each script the language's decks are shown in,
+  for scripts that phones often draw wrongly or lack
+  ([ADR-0042](adr/0042-script-fonts-download-per-course.md)): `path`,
+  `size`, `sha256`, `script` and `family`. A language's scripts are the one
+  its language block names, then the others `assets/languages.yaml` lists
+  for it, so that Hindustani lists Devanagari and Perso-Arabic. The files
+  are one OFL-licensed Noto font per script, with its `OFL.txt`, in
+  `decks/fonts/<script>/`; `FONTS` in `tools/deck_index.py` says which.
+  Never put a font in `files` or `media`: the released app reads those, and
+  passes `fonts` by. The language's `size` does not count them. A font
+  shared by courses in one script is one file, listed by each and
+  downloaded once. No font is over 2 MB; Chinese, Japanese and Korean have
+  none, as phones have them. The `.ttf` files are marked binary in
+  `.gitattributes`: the line-ending rule for `decks/` would change bytes
+  and break the hash.
 - **`bundled`**: `decks/themes.yaml`, which ships inside the app and is
   not downloaded.
 
