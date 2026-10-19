@@ -207,8 +207,9 @@ class _LanguageSheetState extends State<LanguageSheet> {
   bool get _hasScripts => widget.scripts.isNotEmpty;
 
   /// What step 2 asks about, in order: the language and each script chosen
-  /// (a language learned asks only about a script added now, one known only
-  /// about its scripts), when there is more than the language to place.
+  /// (a language learned asks only about a script added now; one the learner
+  /// speaks is placed as a whole too, until scripts are placed apart: #481),
+  /// when there is more than the language to place.
   List<String?> get _entries {
     final chosen = <String>[
       for (final s in widget.scripts)
@@ -220,7 +221,6 @@ class _LanguageSheetState extends State<LanguageSheet> {
           if (!widget.initialScripts.contains(code)) code,
       ];
     }
-    if (widget.knows) return <String?>[...chosen];
     return <String?>[null, if (chosen.length > 1) ...chosen];
   }
 
@@ -762,7 +762,6 @@ class _LanguageSheetState extends State<LanguageSheet> {
             ),
           ),
         ],
-        if (widget.knows) notice(l10n.pickerStartScriptOnly(language.name)),
         if (entries.length > 1) notice(l10n.pickerStartSeparately),
         notice(l10n.pickerStartApplied),
       ],
