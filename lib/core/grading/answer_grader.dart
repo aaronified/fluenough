@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart' show StringCharacters;
 
 import 'canonical.dart';
 import 'diacritics.dart';
+import 'meaning_rules.dart';
 
 export 'diacritics.dart' show foldDiacritics;
 
@@ -81,6 +82,7 @@ class AnswerGrader {
     this.longTypoDistance = 2,
     this.longThreshold = 8,
     this.shortThreshold = 3,
+    this.meaning = false,
   });
 
   /// Leading articles ignored when comparing, e.g. `['el', 'la', 'los', 'las']`
@@ -99,6 +101,12 @@ class AnswerGrader {
   /// slip in あ or है is a different answer altogether.
   final int shortThreshold;
 
+  /// Grade an English meaning answer by the rules in `meaning_rules.dart`:
+  /// contractions, bracketed qualifiers, `;` alternatives, a leading "to",
+  /// ok/okay. Matches by them are [AnswerOutcome.exact]; what still differs
+  /// goes through the diacritic and typo passes as before.
+  final bool meaning;
+
   GradedAnswer grade(
     String given,
     String expected, {
@@ -111,28 +119,33 @@ class AnswerGrader {
       return const GradedAnswer(AnswerOutcome.wrong, matched: null);
     }
 
+    // Each candidate with the normalised forms it accepts: one, or with the
+    // meaning rules, one per `;` part.
+    final forms = <(String, String)>[
+      for (final candidate in candidates)
+        for (final form in _forms(candidate)) (candidate, form),
+    ];
+    final givenKey = meaning ? meaningKey(given) : normalisedGiven;
+
     // Pass 1: exact after normalisation.
-    for (final candidate in candidates) {
-      if (normalisedGiven == _normalise(candidate)) {
+    for (final (candidate, form) in forms) {
+      if (givenKey == form) {
         return GradedAnswer(AnswerOutcome.exact, matched: candidate);
       }
     }
 
     // Pass 2: also fold diacritics and drop a leading article.
-    final foldedGiven = _fold(normalisedGiven);
-    for (final candidate in candidates) {
-      final normalisedCandidate = _normalise(candidate);
-      if (foldedGiven == _fold(normalisedCandidate)) {
+    final foldedGiven = _fold(givenKey);
+    for (final (candidate, form) in forms) {
+      if (foldedGiven == _fold(form)) {
         // Exact failed, so at least one of the two folds did the work. If the
         // answers still differ with only diacritics folded, the article did.
         final droppedArticle =
-            _foldDiacritics(normalisedGiven) !=
-            _foldDiacritics(normalisedCandidate);
+            _foldDiacritics(givenKey) != _foldDiacritics(form);
         // With the article left alone, the diacritics must be what differed;
         // with it dropped, they may have differed as well.
         final foldedDiacritics =
-            !droppedArticle ||
-            _dropArticle(normalisedGiven) != _dropArticle(normalisedCandidate);
+            !droppedArticle || _dropArticle(givenKey) != _dropArticle(form);
         return GradedAnswer(
           AnswerOutcome.closeDiacritics,
           matched: candidate,
@@ -144,8 +157,8 @@ class AnswerGrader {
 
     // Pass 3: edit distance, against the folded forms so that a missing accent
     // does not also consume the typo budget.
-    for (final candidate in candidates) {
-      final foldedCandidate = _fold(_normalise(candidate));
+    for (final (candidate, form) in forms) {
+      final foldedCandidate = _fold(form);
       final letters = foldedCandidate.characters.length;
       final allowed = letters < shortThreshold
           ? 0
@@ -159,6 +172,13 @@ class AnswerGrader {
     }
 
     return const GradedAnswer(AnswerOutcome.wrong, matched: null);
+  }
+
+  /// The forms a candidate accepts, normalised.
+  Iterable<String> _forms(String candidate) {
+    if (!meaning) return [_normalise(candidate)];
+    final keys = meaningKeys(candidate);
+    return keys.isEmpty ? [_normalise(candidate)] : keys;
   }
 
   /// One spelling for text that looks the same ([canonical]), case folding,
