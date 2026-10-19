@@ -222,6 +222,26 @@ void main() {
     expect(lessons.map((l) => l.language.code), <String>['bn']);
   });
 
+  testWidgets('a hard fling goes past several languages at once, and stops '
+      'at the end (owner, 2026-10-19)', (tester) async {
+    usePhone(tester);
+    final state = learner(eight, choice: 'hi');
+    await pumpApp(tester, state: state);
+    final codes = <String>[for (final l in state.languageChoices) l.code];
+    final start = codes.indexOf('hi');
+
+    await tester.fling(zone(), const Offset(-200, 0), 4000);
+    await tester.pumpAndSettle(const Duration(seconds: 2));
+    final moved = codes.indexOf(state.shownLanguage!) - start;
+    expect(moved, greaterThan(1));
+
+    // Past the end it stops at the last language.
+    await tester.fling(zone(), const Offset(-200, 0), 20000);
+    await tester.pumpAndSettle(const Duration(seconds: 2));
+    expect(state.shownLanguage, codes.last);
+    expect(tester.takeException(), isNull);
+  });
+
   testWidgets('while dragging, the next glyph rises and a label names it; '
       'after, it fades', (tester) async {
     usePhone(tester);

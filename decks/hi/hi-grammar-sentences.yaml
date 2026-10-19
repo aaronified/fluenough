@@ -2,7 +2,7 @@ schema: 1
 id: "hi-grammar-sentences"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "grammar"]
 cards:
@@ -18,6 +18,7 @@ cards:
       - { word: "हूँ", base: "होना", reading: "hōnā" }
   - id: "hi-0146"
     target: "यह मेरा घर है।"
+    target_scripts: { perso_arabic: "یہ میرا گھر ہے۔" }
     reading: "yah mērā ghar hai."
     ipa: "jəɦ meːraː ɡʱər ɦɛː"
     pos: "phrase"
@@ -26,6 +27,7 @@ cards:
       - { word: "मेरा", base: "मेरा", reading: "mērā" }
   - id: "hi-0147"
     target: "वह डॉक्टर है।"
+    target_scripts: { perso_arabic: "وہ ڈاکٹر ہے۔" }
     reading: "vah ḍôkṭar hai."
     ipa: "ʋəɦ ɖɔkʈər ɦɛː"
     pos: "phrase"
@@ -35,6 +37,7 @@ cards:
       - { word: "वह", base: "वह", reading: "vah" }
   - id: "hi-0148"
     target: "मैं चाय पीता हूँ।"
+    target_scripts: { perso_arabic: "میں چائے پیتا ہوں۔" }
     reading: "maim̐ cāy pītā hūm̐."
     ipa: "mɛ̃ː tʃaːj piːt̪aː ɦũː"
     pos: "phrase"
@@ -46,6 +49,7 @@ cards:
       - { word: "हूँ", base: "होना", reading: "hōnā" }
   - id: "hi-0149"
     target: "वह हिंदी सीख रही है।"
+    target_scripts: { perso_arabic: "وہ ہندی سیکھ رہی ہے۔" }
     reading: "vah hindī sīkh rahī hai."
     ipa: "ʋəɦ ɦɪnd̪iː siːkʰ rəɦiː ɦɛː"
     pos: "phrase"
@@ -58,6 +62,7 @@ cards:
       - { word: "रही", base: "रहना", reading: "rahnā" }
   - id: "hi-0150"
     target: "मुझे हिंदी पसंद है।"
+    target_scripts: { perso_arabic: "مجھے ہندی پسند ہے۔" }
     reading: "mujhē hindī pasand hai."
     ipa: "mʊdʒʱeː ɦɪnd̪iː pəsənd̪ ɦɛː"
     pos: "phrase"
@@ -68,6 +73,7 @@ cards:
       - { word: "हिंदी", base: "हिंदी", reading: "hindī" }
   - id: "hi-0151"
     target: "मेरे पास एक गाड़ी है।"
+    target_scripts: { perso_arabic: "میرے پاس ایک گاڑی ہے۔" }
     reading: "mērē pās ēk gāṛī hai."
     ipa: "meːreː paːs eːk ɡaːɽiː ɦɛː"
     pos: "phrase"
@@ -78,6 +84,7 @@ cards:
       - { word: "गाड़ी", base: "गाड़ी", reading: "gāṛī" }
   - id: "hi-0152"
     target: "यह अच्छा नहीं है।"
+    target_scripts: { perso_arabic: "یہ اچھا نہیں ہے۔" }
     reading: "yah acchā nahīm̐ hai."
     ipa: "jəɦ ətʃtʃʰaː nəɦĩː ɦɛː"
     pos: "phrase"
@@ -88,6 +95,7 @@ cards:
       - { word: "अच्छा", base: "अच्छा", reading: "acchā" }
   - id: "hi-0153"
     target: "मत जाइए।"
+    target_scripts: { perso_arabic: "مت جائیے۔" }
     reading: "mat jāiē."
     ipa: "mət̪ dʒaːɪeː"
     pos: "phrase"
@@ -98,6 +106,7 @@ cards:
       - { word: "जाइए", base: "जाना", reading: "jānā" }
   - id: "hi-0154"
     target: "यहाँ बहुत गर्मी है।"
+    target_scripts: { perso_arabic: "یہاں بہت گرمی ہے۔" }
     reading: "yahām̐ bahut garmī hai."
     ipa: "jəɦãː bəɦʊt̪ ɡərmiː ɦɛː"
     pos: "phrase"

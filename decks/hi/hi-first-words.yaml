@@ -2,13 +2,14 @@ schema: 1
 id: "hi-first-words"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 theme: "first-words"
 tags: ["beginner"]
 cards:
   - id: "hi-0134"
     target: "आप"
+    target_scripts: { perso_arabic: "آپ" }
     reading: "āp"
     ipa: "aːp"
     pos: "other"
@@ -17,6 +18,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0135"
     target: "जी"
+    target_scripts: { perso_arabic: "جی" }
     reading: "jī"
     ipa: "dʒiː"
     pos: "particle"

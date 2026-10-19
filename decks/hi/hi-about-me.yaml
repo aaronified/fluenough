@@ -2,19 +2,21 @@ schema: 1
 id: "hi-about-me"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 theme: "about-me"
 tags: ["beginner"]
 cards:
   - id: "hi-0187"
     target: "नाम"
+    target_scripts: { perso_arabic: "نام" }
     reading: "nām"
     ipa: "naːm"
     pos: "noun"
     gender: "m"
   - id: "hi-0191"
     target: "मैं … में रहता हूँ।"
+    target_scripts: { perso_arabic: "میں … میں رہتا ہوں۔" }
     reading: "maim̐... mēm̐ rahtā hūm̐."
     ipa: "mɛ̃ː mẽː rəɦt̪aː ɦũː"
     pos: "phrase"
@@ -26,6 +28,7 @@ cards:
       - { word: "हूँ", base: "होना", reading: "hōnā" }
   - id: "hi-0192"
     target: "घर"
+    target_scripts: { perso_arabic: "گھر" }
     picture: "🏠"
     reading: "ghar"
     ipa: "ɡʱər"
@@ -39,12 +42,14 @@ cards:
     gender: "m"
   - id: "hi-0194"
     target: "काम"
+    target_scripts: { perso_arabic: "کام" }
     reading: "kām"
     ipa: "kaːm"
     pos: "noun"
     gender: "m"
   - id: "hi-0195"
     target: "शहर"
+    target_scripts: { perso_arabic: "شہر" }
     picture: "🏙"
     reading: "śahar"
     ipa: "ʃəɦər"
@@ -52,6 +57,7 @@ cards:
     gender: "m"
   - id: "hi-0196"
     target: "देश"
+    target_scripts: { perso_arabic: "دیس" }
     reading: "dēś"
     ipa: "d̪eːʃ"
     pos: "noun"
