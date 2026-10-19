@@ -12,6 +12,7 @@ class LanguageInfo {
     required this.iso639_3,
     required this.name,
     this.script = 'latin',
+    this.scripts = const <String>[],
     this.tts,
     this.rtl = false,
     this.icon,
@@ -29,6 +30,15 @@ class LanguageInfo {
 
   final String name;
   final String script;
+
+  /// For a language written in several scripts, all of them, [script]
+  /// first (`scripts`, #623): `devanagari` and `perso_arabic` for
+  /// Hindustani. Empty where the deck names one, so use [allScripts].
+  final List<String> scripts;
+
+  /// Every script the language is written in, [script] first.
+  List<String> get allScripts => scripts.isEmpty ? <String>[script] : scripts;
+
   final bool rtl;
 
   /// BCP-47 voice tag from the deck, if it declared one.
