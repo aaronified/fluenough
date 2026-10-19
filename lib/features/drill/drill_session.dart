@@ -308,6 +308,9 @@ class DrillSession extends ChangeNotifier {
       item.card is! QuestionCard &&
       !_state.hearsForm(item.card);
 
+  /// Whether meanings are English, where the meaning rules apply.
+  bool get _meaningIsEnglish => deck.deck.native.code == 'en';
+
   /// What a typed answer to [card] is graded against: its meanings when
   /// [hearsMeaning], else what its mode accepts.
   List<String> _answersOf(Card card) =>
@@ -344,6 +347,7 @@ class DrillSession extends ChangeNotifier {
             articles: hearsMeaning
                 ? deck.deck.native.articles
                 : deck.language.articles,
+            meaning: hearsMeaning && _meaningIsEnglish,
           );
     var graded = grader.grade(
       typesDigits ? typed.replaceAll(RegExp(r'[\s,]'), '') : typed,
@@ -387,6 +391,7 @@ class DrillSession extends ChangeNotifier {
           : deck.language.articles,
       typoDistance: 0,
       longTypoDistance: 0,
+      meaning: hearsMeaning && _meaningIsEnglish,
     );
     final spelling = romanised ? _spelling : null;
     final key = spelling?.key(typed);
