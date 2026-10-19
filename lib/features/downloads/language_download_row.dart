@@ -264,35 +264,45 @@ class LanguageRowActions extends StatelessWidget {
           ),
         Row(
           children: <Widget>[
+            // The size and the buttons wrap together, so that at large text
+            // nothing runs past the cross, which stays at the end.
             Expanded(
-              child: Text(
-                line,
-                style: theme.textTheme.bodyMedium!.copyWith(
-                  color: theme.colorScheme.onSurfaceVariant,
-                ),
+              child: Wrap(
+                spacing: 8,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                children: <Widget>[
+                  Text(
+                    line,
+                    style: theme.textTheme.bodyMedium!.copyWith(
+                      color: theme.colorScheme.onSurfaceVariant,
+                    ),
+                  ),
+                  if (waiting)
+                    TextButton.icon(
+                      icon: const Icon(Icons.download, size: 20),
+                      onPressed: busy
+                          ? null
+                          : () => runDeckUpdate(context, downloads, <String>[
+                              code,
+                            ]),
+                      label: Text(l10n.pickerUpdateAvailable),
+                    ),
+                  if (retry)
+                    TextButton(
+                      onPressed: busy
+                          ? null
+                          : () => onPhone
+                                ? downloads.retry(code, spoken)
+                                : state.downloadLanguage(code),
+                      child: Text(
+                        status == LanguageDownloadState.failed
+                            ? l10n.commonRetry
+                            : l10n.deckDownloadsGetRest,
+                      ),
+                    ),
+                ],
               ),
             ),
-            if (waiting)
-              TextButton.icon(
-                icon: const Icon(Icons.download, size: 20),
-                onPressed: busy
-                    ? null
-                    : () => runDeckUpdate(context, downloads, <String>[code]),
-                label: Text(l10n.pickerUpdateAvailable),
-              ),
-            if (retry)
-              TextButton(
-                onPressed: busy
-                    ? null
-                    : () => onPhone
-                          ? downloads.retry(code, spoken)
-                          : state.downloadLanguage(code),
-                child: Text(
-                  status == LanguageDownloadState.failed
-                      ? l10n.commonRetry
-                      : l10n.deckDownloadsGetRest,
-                ),
-              ),
             if (onPhone)
               IconButton(
                 key: ValueKey<String>('remove-$code'),

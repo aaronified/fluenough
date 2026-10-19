@@ -57,7 +57,8 @@ Future<void> scrollToInPicker(WidgetTester tester, Finder finder) async {
       );
     }
   }
-  await tester.ensureVisible(finder.first);
+  // Centred, clear of the search bar that stays at the top of the list.
+  await Scrollable.ensureVisible(finder.first.evaluate().first, alignment: 0.5);
   await tester.pumpAndSettle();
 }
 
@@ -69,7 +70,16 @@ Future<void> openSheet(WidgetTester tester, String code) async {
     await openFamilies(tester);
   }
   await scrollToInPicker(tester, languageCard(code));
-  await tester.tap(languageCard(code).first);
+  // The row's own button: its middle can fall between it and the buttons
+  // under it, on a language on the phone.
+  await tester.tap(
+    find
+        .descendant(
+          of: languageCard(code).first,
+          matching: find.byType(InkWell),
+        )
+        .first,
+  );
   await tester.pumpAndSettle();
 }
 
