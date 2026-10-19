@@ -171,7 +171,7 @@ class ChoiceDrill extends StatelessWidget {
           fontSize: 48,
         )
       else ...<Widget>[
-        TargetText.hero(card.target, language: language),
+        TargetText.hero(card.target, language: language, card: card),
         if (reading != null)
           Text(
             reading,
@@ -325,6 +325,7 @@ class _OptionWord extends StatelessWidget {
           ? style.color!.withValues(alpha: 0.75)
           : style.color,
       textAlign: TextAlign.start,
+      card: card,
     );
     if (!readingFirst || reading == null) return word;
     return Column(

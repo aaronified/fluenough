@@ -59,6 +59,7 @@ class SettingsNotifier extends ChangeNotifier {
     this._learningChosen = false,
     Set<String> speechOnline = const <String>{},
     Set<String> noAlphabet = const <String>{},
+    Map<String, Set<String>> scriptsLearned = const <String, Set<String>>{},
     this._languageChoice,
     this._progressAll = false,
   }) : _enabledSkills = Set<Skill>.unmodifiable(
@@ -68,7 +69,11 @@ class SettingsNotifier extends ChangeNotifier {
        _learningLanguages = List<String>.unmodifiable(learningLanguages),
        _placedDecks = Set<String>.unmodifiable(placedDecks),
        _speechOnline = Set<String>.unmodifiable(speechOnline),
-       _noAlphabet = Set<String>.unmodifiable(noAlphabet);
+       _noAlphabet = Set<String>.unmodifiable(noAlphabet),
+       _scriptsLearned = <String, Set<String>>{
+         for (final MapEntry(:key, :value) in scriptsLearned.entries)
+           key: Set<String>.unmodifiable(value),
+       };
 
   /// The speech-rate slider's range and step, as a multiple of normal speed.
   static const double minSpeechRate = 0.5;
@@ -112,6 +117,7 @@ class SettingsNotifier extends ChangeNotifier {
   IpaScope _ipaScope = IpaScope.mine;
   Set<String> _speechOnline;
   Set<String> _noAlphabet;
+  Map<String, Set<String>> _scriptsLearned;
   Set<String> _speechNotOnDevice = const <String>{};
   Set<String> _speechUnsupported = const <String>{};
   Set<String> _scriptGuidesSeen = const <String>{};
@@ -395,13 +401,46 @@ class SettingsNotifier extends ChangeNotifier {
   /// language when it is chosen.
   Set<String> get noAlphabet => _noAlphabet;
 
+  /// Whether [code] is learned with any of its scripts: false when it is in
+  /// [noAlphabet], which is also when [scriptsLearned] is empty.
   bool learnsAlphabet(String code) => !_noAlphabet.contains(code);
 
   void setLearnsAlphabet(String code, bool learns) {
     final next = Set<String>.of(_noAlphabet);
     learns ? next.remove(code) : next.add(code);
-    if (setEquals(next, _noAlphabet)) return;
+    final scripts = Map<String, Set<String>>.of(_scriptsLearned)..remove(code);
+    if (setEquals(next, _noAlphabet) &&
+        scripts.length == _scriptsLearned.length) {
+      return;
+    }
     _noAlphabet = Set<String>.unmodifiable(next);
+    _scriptsLearned = scripts;
+    notifyListeners();
+  }
+
+  /// The scripts the learner learns [code] in (#623), such as Devanagari
+  /// and Perso-Arabic for Hindustani. What was chosen; before a choice, the
+  /// [primary] script when [learnsAlphabet], else none, as the one
+  /// per-language setting was before there were several scripts.
+  Set<String> scriptsLearned(String code, {required String primary}) =>
+      _scriptsLearned[code] ??
+      (learnsAlphabet(code) ? <String>{primary} : const <String>{});
+
+  /// Whether the learner chose [code]'s scripts, rather than the default.
+  bool hasScriptsChosen(String code) => _scriptsLearned.containsKey(code);
+
+  /// Records the [scripts] [code] is learned in. None is learning it
+  /// without its alphabet.
+  void setScriptsLearned(String code, Set<String> scripts) {
+    final next = Set<String>.unmodifiable(scripts);
+    final none = Set<String>.of(_noAlphabet);
+    next.isEmpty ? none.add(code) : none.remove(code);
+    if (_scriptsLearned[code] case final old?
+        when setEquals(old, next) && setEquals(none, _noAlphabet)) {
+      return;
+    }
+    _scriptsLearned = <String, Set<String>>{..._scriptsLearned, code: next};
+    _noAlphabet = Set<String>.unmodifiable(none);
     notifyListeners();
   }
 
@@ -746,6 +785,10 @@ class SettingsNotifier extends ChangeNotifier {
     'ipa_scope': _ipaScope.name,
     'speech_online': (_speechOnline.toList()..sort()).join(','),
     'no_alphabet': (_noAlphabet.toList()..sort()).join(','),
+    'scripts_learned': jsonEncode(<String, List<String>>{
+      for (final MapEntry(:key, :value) in _scriptsLearned.entries)
+        key: value.toList()..sort(),
+    }),
     'speech_not_on_device': (_speechNotOnDevice.toList()..sort()).join(','),
     'speech_unsupported': (_speechUnsupported.toList()..sort()).join(','),
     'script_guides_seen': (_scriptGuidesSeen.toList()..sort()).join(','),
@@ -940,6 +983,19 @@ class SettingsNotifier extends ChangeNotifier {
       for (final code in v.split(',')) {
         if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) {
           setLearnsAlphabet(code, false);
+        }
+      }
+    }
+    // After no_alphabet: a backup from before several scripts has only that,
+    // and the default follows from it.
+    if (pick('scripts_learned', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (RegExp(r'^[a-z]{2,3}$').hasMatch(key) && value is List) {
+          setScriptsLearned(key, <String>{
+            for (final script in value)
+              if (script is String && RegExp(r'^[a-z_]+$').hasMatch(script))
+                script,
+          });
         }
       }
     }
