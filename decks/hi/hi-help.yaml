@@ -2,19 +2,21 @@ schema: 1
 id: "hi-help"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 theme: "help"
 tags: ["beginner"]
 cards:
   - id: "hi-0352"
     target: "मदद"
+    target_scripts: { perso_arabic: "مدد" }
     reading: "madad"
     ipa: "məd̪əd̪"
     pos: "noun"
     gender: "f"
   - id: "hi-0356"
     target: "पुलिस"
+    target_scripts: { perso_arabic: "پولیس" }
     picture: "👮"
     reading: "pulis"
     ipa: "pʊlɪs"
@@ -24,6 +26,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0357"
     target: "डॉक्टर"
+    target_scripts: { perso_arabic: "ڈاکٹر" }
     picture: "🧑‍⚕"
     reading: "ḍôkṭar"
     ipa: "ɖɔkʈər"
@@ -32,6 +35,7 @@ cards:
     gender: "m"
   - id: "hi-0358"
     target: "अस्पताल"
+    target_scripts: { perso_arabic: "ہسپتال" }
     picture: "🏥"
     reading: "aspatāl"
     ipa: "əspət̪aːl"
@@ -39,6 +43,7 @@ cards:
     gender: "m"
   - id: "hi-0359"
     target: "दवाई"
+    target_scripts: { perso_arabic: "دوائی" }
     picture: "💊"
     reading: "davāī"
     ipa: "d̪əʋaːiː"
@@ -49,6 +54,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0360"
     target: "दर्द"
+    target_scripts: { perso_arabic: "درد" }
     reading: "dard"
     ipa: "d̪ərd̪"
     pos: "noun"
