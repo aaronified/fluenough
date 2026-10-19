@@ -166,7 +166,7 @@ abstract final class AppRoutes {
       releaseNotes => const ReleaseNotesPage(),
       sources => const SourcesPage(),
       appLog => const AppLogPage(),
-      scriptGuide when args is String => ScriptGuidePage(languageCode: args),
+      scriptGuide when args is String => ScriptGuidePage(guideKey: args),
       profiles => const ProfilesPage(),
       pin when args is String => PinPage(profileId: args),
       newProfile => const NewProfilePage(),
@@ -292,13 +292,10 @@ abstract final class AppNavigator {
   static Future<void> openAppLog(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.appLog);
 
-  /// How [languageCode]'s script works (#30): a script deck's Tips.
-  static Future<void> openScriptGuide(
-    BuildContext context,
-    String languageCode,
-  ) =>
-      Navigator.of(context)
-          .pushNamed(AppRoutes.scriptGuide, arguments: languageCode);
+  /// How a script works (#30): a script deck's Tips. [key] is the guide's
+  /// `ScriptGuide.key`.
+  static Future<void> openScriptGuide(BuildContext context, String key) =>
+      Navigator.of(context).pushNamed(AppRoutes.scriptGuide, arguments: key);
 
   static Future<void> openProfiles(BuildContext context) =>
       Navigator.of(context).pushNamed(AppRoutes.profiles);

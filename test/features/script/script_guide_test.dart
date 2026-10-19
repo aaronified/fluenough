@@ -210,7 +210,7 @@ void main() {
     final state = guided();
     await pumpScreen(
       tester,
-      const ScriptGuidePage(languageCode: 'bn'),
+      const ScriptGuidePage(guideKey: 'bn'),
       state: state,
     );
     expect(find.text('মাত্রা'), findsOneWidget);
