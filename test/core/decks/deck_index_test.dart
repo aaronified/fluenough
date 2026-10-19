@@ -152,12 +152,63 @@ void main() {
       );
     });
 
+    test('lists the Perso-Arabic guide apart from files', () {
+      final raw = jsonDecode(File('decks/index.json').readAsStringSync());
+      final languages = (raw as Map<String, Object?>)['languages'] as List;
+      final hi = languages.cast<Map>().firstWhere((l) => l['code'] == 'hi');
+      final listed = [for (final f in hi['files'] as List) (f as Map)['path']];
+      final apart = [
+        for (final f in hi['script_guides'] as List) (f as Map)['path'],
+      ];
+      expect(listed, contains('decks/hi/hi-script.yaml'));
+      expect(listed, isNot(contains('decks/hi/hi-perso-arabic-script.yaml')));
+      expect(apart, [
+        'decks/hi/hi-perso-arabic-script.yaml',
+        'decks/hi/en/hi-en-perso-arabic-script.yaml',
+      ]);
+      // They are files all the same to this app.
+      expect(
+        index.filesByPath.keys,
+        containsAll(<String>[
+          'decks/hi/hi-perso-arabic-script.yaml',
+          'decks/hi/en/hi-en-perso-arabic-script.yaml',
+        ]),
+      );
+    });
+
     test('a guide layer is a language file of its native language', () {
       final layer = index.filesByPath['decks/hi/en/hi-en-script.yaml']!;
       expect(layer.isLanguageFile, isTrue);
       expect(layer.native, 'en');
       expect(layer.role, 'file:decks/hi/en/hi-en-script.yaml');
       expect(index.filesByPath['decks/hi/hi-script.yaml']!.role, 'kind:script');
+    });
+  });
+
+  group('script guides', () {
+    test('are read as files, though the index lists them apart', () {
+      final index = DeckIndex.parse(
+        jsonEncode(<String, Object?>{
+          'version': 1,
+          'languages': <Object?>[
+            <String, Object?>{
+              'code': 'zz',
+              'files': <Object?>[_file('decks/zz/zz-a.yaml', deck: 'zz-a')],
+              'script_guides': <Object?>[
+                _file('decks/zz/zz-b-script.yaml', kind: 'script', core: true),
+              ],
+            },
+          ],
+        }),
+      );
+      final zz = index.language('zz')!;
+      expect(zz.files.map((f) => f.path), [
+        'decks/zz/zz-a.yaml',
+        'decks/zz/zz-b-script.yaml',
+      ]);
+      final guide = index.filesByPath['decks/zz/zz-b-script.yaml']!;
+      expect(guide.isLanguageFile, isTrue);
+      expect(zz.filesFor(const <String>['en']), contains(guide));
     });
   });
 

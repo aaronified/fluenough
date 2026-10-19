@@ -42,6 +42,14 @@ October 2026:
   all of them show it; number practice has no script cards.
 - **A script deck's page has Tips,** which opens the guide again with
   Done. Opening it there doesn't count as seen.
+- **A language written in several scripts has a guide for each**
+  (amended 2026-10-19, #623). `<lang>-script` is the language's default;
+  another script's is `<lang>-<script>-script`, such as
+  `hi-perso-arabic-script`, with its layer `hi-en-perso-arabic-script`.
+  Tips and the drill show the guide for the deck's own script, else the
+  default, and each guide is seen once, by its own key. The released app
+  rejects any guide id but `<lang>-script`, so the index lists these files
+  under `script_guides`, apart from `files`, as it does `media`.
 - **The drill deck is ordinary data.** Each language's path puts a short
   deck of first words to read in its first unit. Those words use only
   the letters, and put the features and look-alikes to work. No new
