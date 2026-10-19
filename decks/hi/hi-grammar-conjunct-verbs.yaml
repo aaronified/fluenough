@@ -2,12 +2,13 @@ schema: 1
 id: "hi-grammar-conjunct-verbs"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed", "grammar"]
 cards:
   - id: "hi-0488"
     target: "काम करना"
+    target_scripts: { perso_arabic: "کام کرنا" }
     reading: "kām karnā"
     ipa: "kaːm kərnaː"
     pos: "phrase"
@@ -15,6 +16,7 @@ cards:
       - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0489"
     target: "बात करना"
+    target_scripts: { perso_arabic: "بات کرنا" }
     reading: "bāt karnā"
     ipa: "baːt̪ kərnaː"
     pos: "phrase"
@@ -25,6 +27,7 @@ cards:
       - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0490"
     target: "मदद करना"
+    target_scripts: { perso_arabic: "مدد کرنا" }
     reading: "madad karnā"
     ipa: "məd̪əd̪ kərnaː"
     pos: "phrase"
@@ -34,6 +37,7 @@ cards:
       - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0491"
     target: "इंतज़ार करना"
+    target_scripts: { perso_arabic: "انتظار کرنا" }
     reading: "intazār karnā"
     ipa: "ɪnt̪əzaːr kərnaː"
     alt_target: ["इंतजार करना"]
@@ -45,6 +49,7 @@ cards:
       - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0492"
     target: "शुरू करना"
+    target_scripts: { perso_arabic: "شروع کرنا" }
     reading: "śurū karnā"
     ipa: "ʃʊruː kərnaː"
     pos: "phrase"
@@ -53,6 +58,7 @@ cards:
       - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0493"
     target: "ख़त्म करना"
+    target_scripts: { perso_arabic: "ختم کرنا" }
     reading: "k͟hatm karnā"
     ipa: "xət̪m kərnaː"
     alt_target: ["खत्म करना"]
@@ -62,6 +68,7 @@ cards:
       - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0494"
     target: "कोशिश करना"
+    target_scripts: { perso_arabic: "کوشش کرنا" }
     reading: "kōśiś karnā"
     ipa: "koːʃɪʃ kərnaː"
     pos: "phrase"
@@ -70,6 +77,7 @@ cards:
       - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0495"
     target: "फ़ोन करना"
+    target_scripts: { perso_arabic: "فون کرنا" }
     reading: "fōn karnā"
     ipa: "foːn kərnaː"
     alt_target: ["फोन करना"]
@@ -79,6 +87,7 @@ cards:
       - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0496"
     target: "साफ़ करना"
+    target_scripts: { perso_arabic: "صاف کرنا" }
     reading: "sāf karnā"
     ipa: "saːf kərnaː"
     alt_target: ["साफ करना"]
@@ -88,6 +97,7 @@ cards:
       - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0497"
     target: "शादी करना"
+    target_scripts: { perso_arabic: "شادی کرنا" }
     reading: "śādī karnā"
     ipa: "ʃaːd̪iː kərnaː"
     pos: "phrase"
@@ -96,6 +106,7 @@ cards:
       - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0498"
     target: "आराम करना"
+    target_scripts: { perso_arabic: "آرام کرنا" }
     reading: "ārām karnā"
     ipa: "aːraːm kərnaː"
     pos: "phrase"
@@ -104,6 +115,7 @@ cards:
       - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0499"
     target: "याद करना"
+    target_scripts: { perso_arabic: "یاد کرنا" }
     reading: "yād karnā"
     ipa: "jaːd̪ kərnaː"
     pos: "phrase"
@@ -112,6 +124,7 @@ cards:
       - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0500"
     target: "ग़लती करना"
+    target_scripts: { perso_arabic: "غلطی کرنا" }
     reading: "ġaltī karnā"
     ipa: "ɣəlt̪iː kərnaː"
     alt_target: ["गलती करना"]
@@ -121,6 +134,7 @@ cards:
       - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0501"
     target: "याद आना"
+    target_scripts: { perso_arabic: "یاد آنا" }
     reading: "yād ānā"
     ipa: "jaːd̪ aːnaː"
     pos: "phrase"
@@ -131,6 +145,7 @@ cards:
       - { word: "आना", base: "आना", reading: "ānā" }
   - id: "hi-0502"
     target: "देर होना"
+    target_scripts: { perso_arabic: "دیر ہونا" }
     reading: "dēr hōnā"
     ipa: "d̪eːr ɦoːnaː"
     pos: "phrase"
@@ -141,6 +156,7 @@ cards:
       - { word: "होना", base: "होना", reading: "hōnā" }
   - id: "hi-0503"
     target: "डर लगना"
+    target_scripts: { perso_arabic: "ڈر لگنا" }
     reading: "ḍar lagnā"
     ipa: "ɖər ləɡnaː"
     pos: "phrase"
