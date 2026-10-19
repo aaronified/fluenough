@@ -131,15 +131,11 @@ void main() {
       final l10n = l10nOf(tester);
       expect(find.text(l10n.learnTitle), findsOneWidget);
       expect(state.decks, isEmpty, reason: 'no deck ships in the app');
+      // Its size and whether it is on the phone are in a language's sheet.
       for (final code in <String>['es', 'hi']) {
-        await scrollToInPicker(tester, languageCard(code));
-        expect(
-          find.descendant(
-            of: languageCard(code),
-            matching: find.textContaining('Not on the phone'),
-          ),
-          findsOneWidget,
-        );
+        await openSheet(tester, code);
+        expect(find.textContaining('Not on the phone'), findsOneWidget);
+        await closeSheet(tester);
       }
 
       await pickLanguage(tester, 'es');
@@ -163,7 +159,8 @@ void main() {
 
       remote.failAll = null;
       await tapText(tester, l10n.commonRetry);
-      expect(find.text('Spanish'), findsOneWidget);
+      await openFamilies(tester);
+      expect(languageCard('es'), findsWidgets);
     });
 
     testWidgets('says when GitHub limits it', (tester) async {
@@ -406,7 +403,9 @@ cards:
         expect(
           find.descendant(
             of: card,
-            matching: find.text(l10n.deckDownloadsRemove),
+            matching: find.byTooltip(
+              l10n.pickerRemoveLabel(code == 'es' ? 'Spanish' : 'Hindustani'),
+            ),
           ),
           findsOneWidget,
         );
@@ -435,7 +434,7 @@ cards:
       await tester.tap(
         find.descendant(
           of: spanish,
-          matching: find.text(l10n.deckDownloadsRemove),
+          matching: find.byKey(const ValueKey<String>('remove-es')),
         ),
       );
       await tester.pumpAndSettle();
@@ -488,14 +487,14 @@ cards:
       expect(
         find.descendant(
           of: spanish,
-          matching: find.textContaining('Update waiting'),
+          matching: find.text(l10n.pickerUpdateAvailable),
         ),
         findsOneWidget,
       );
       await tester.tap(
         find.descendant(
           of: spanish,
-          matching: find.text(l10n.deckDownloadsUpdate),
+          matching: find.text(l10n.pickerUpdateAvailable),
         ),
       );
       await tester.pumpAndSettle();
@@ -629,9 +628,9 @@ cards:
       await cardOf(tester, 'es');
 
       remote.failAll = FetchFailure.offline;
-      await tapText(tester, l10n.deckDownloadsUpdate);
+      await tapText(tester, l10n.pickerUpdateAvailable);
       expect(find.text(l10n.commonRetry), findsOneWidget);
-      expect(find.text(l10n.deckDownloadsUpdate), findsNothing);
+      expect(find.text(l10n.pickerUpdateAvailable), findsNothing);
 
       remote.failAll = null;
       await tapText(tester, l10n.commonRetry);
@@ -732,7 +731,7 @@ cards:
     });
 
     testWidgets('Languages I\'m learning, with an update waiting, meets the '
-        'guidelines, at twice the text size too', (tester) async {
+        'guidelines, at 1.4x text too', (tester) async {
       final semantics = tester.ensureSemantics();
       await downloaded(remote, phone, const <String>['es', 'hi']);
       const deck = 'decks/es/en/es-en-core-100.yaml';
@@ -750,12 +749,13 @@ cards:
       addTearDown(state.dispose);
       await pumpScreen(tester, const LanguagePickerPage(), state: state);
       final l10n = l10nOf(tester);
-      // At the top: the check, the switch and Update all.
-      expect(find.text(l10n.deckDownloadsCheck), findsOneWidget);
+      // At the top: Update all, in the place of the check, and the switch.
+      expect(find.text(l10n.deckDownloadsUpdateAllCount(1)), findsOneWidget);
+      expect(find.text(l10n.deckDownloadsCheck), findsNothing);
       await meetsGuidelines(tester);
       await cardOf(tester, 'es');
-      expect(find.textContaining('Update waiting'), findsOneWidget);
-      usePhone(tester, textScale: 2);
+      expect(find.text(l10n.pickerUpdateAvailable), findsOneWidget);
+      usePhone(tester, textScale: 1.4);
       await tester.pumpAndSettle();
       expect(tester.takeException(), isNull);
       semantics.dispose();
@@ -773,7 +773,7 @@ cards:
       await pumpScreen(tester, const LanguagePickerPage(), state: state);
       await tester.pumpAndSettle();
       await cardOf(tester, 'hi');
-      expect(find.textContaining('Update waiting'), findsOneWidget);
+      expect(find.text(l10nOf(tester).pickerUpdateAvailable), findsOneWidget);
       await cardOf(tester, 'te');
       expect(find.textContaining('Up to date'), findsOneWidget);
     });
