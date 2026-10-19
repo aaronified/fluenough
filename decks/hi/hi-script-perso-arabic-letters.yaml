@@ -2,111 +2,96 @@ schema: 1
 id: "hi-script-perso-arabic-letters"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "perso_arabic", scripts: ["perso_arabic", "devanagari"], tts: "ur-PK", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "perso_arabic", tts: "ur-PK", icon: "हि" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed", "script"]
 cards:
   - id: "hi-0646"
     target: "ا"
-    target_scripts: { devanagari: "आ" }
     reading: "ā"
     ipa: "aː"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0647"
     target: "ب"
-    target_scripts: { devanagari: "ब" }
     reading: "ba"
     ipa: "bə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0648"
     target: "پ"
-    target_scripts: { devanagari: "प" }
     reading: "pa"
     ipa: "pə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0649"
     target: "ت"
-    target_scripts: { devanagari: "त" }
     reading: "ta"
     ipa: "t̪ə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0650"
     target: "ٹ"
-    target_scripts: { devanagari: "ट" }
     reading: "ṭa"
     ipa: "ʈə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0651"
     target: "ث"
-    target_scripts: { devanagari: "स" }
     reading: "sa"
     ipa: "sə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0652"
     target: "ج"
-    target_scripts: { devanagari: "ज" }
     reading: "ja"
     ipa: "dʒə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0653"
     target: "چ"
-    target_scripts: { devanagari: "च" }
     reading: "ca"
     ipa: "tʃə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0654"
     target: "ح"
-    target_scripts: { devanagari: "ह" }
     reading: "ha"
     ipa: "ɦə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0655"
     target: "خ"
-    target_scripts: { devanagari: "ख़" }
     reading: "k͟ha"
     ipa: "xə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0656"
     target: "د"
-    target_scripts: { devanagari: "द" }
     reading: "da"
     ipa: "d̪ə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0657"
     target: "ڈ"
-    target_scripts: { devanagari: "ड" }
     reading: "ḍa"
     ipa: "ɖə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0658"
     target: "ذ"
-    target_scripts: { devanagari: "ज़" }
     reading: "za"
     ipa: "zə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0659"
     target: "ر"
-    target_scripts: { devanagari: "र" }
     reading: "ra"
     ipa: "rə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0660"
     target: "ڑ"
-    target_scripts: { devanagari: "ड़" }
     reading: "ṛa"
     ipa: "ɽə"
     modes: ["recognition", "production"]
@@ -114,14 +99,12 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0661"
     target: "ز"
-    target_scripts: { devanagari: "ज़" }
     reading: "za"
     ipa: "zə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0662"
     target: "ژ"
-    target_scripts: { devanagari: "झ़" }
     reading: "z͟ha"
     ipa: "ʒə"
     modes: ["recognition", "production"]
@@ -129,126 +112,108 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0663"
     target: "س"
-    target_scripts: { devanagari: "स" }
     reading: "sa"
     ipa: "sə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0664"
     target: "ش"
-    target_scripts: { devanagari: "श" }
     reading: "śa"
     ipa: "ʃə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0665"
     target: "ص"
-    target_scripts: { devanagari: "स" }
     reading: "sa"
     ipa: "sə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0666"
     target: "ض"
-    target_scripts: { devanagari: "ज़" }
     reading: "za"
     ipa: "zə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0667"
     target: "ط"
-    target_scripts: { devanagari: "त" }
     reading: "ta"
     ipa: "t̪ə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0668"
     target: "ظ"
-    target_scripts: { devanagari: "ज़" }
     reading: "za"
     ipa: "zə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0669"
     target: "غ"
-    target_scripts: { devanagari: "ग़" }
     reading: "ġa"
     ipa: "ɣə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0670"
     target: "ف"
-    target_scripts: { devanagari: "फ़" }
     reading: "fa"
     ipa: "fə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0671"
     target: "ق"
-    target_scripts: { devanagari: "क़" }
     reading: "qa"
     ipa: "qə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0672"
     target: "ک"
-    target_scripts: { devanagari: "क" }
     reading: "ka"
     ipa: "kə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0673"
     target: "گ"
-    target_scripts: { devanagari: "ग" }
     reading: "ga"
     ipa: "ɡə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0674"
     target: "ل"
-    target_scripts: { devanagari: "ल" }
     reading: "la"
     ipa: "lə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0675"
     target: "م"
-    target_scripts: { devanagari: "म" }
     reading: "ma"
     ipa: "mə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0676"
     target: "ن"
-    target_scripts: { devanagari: "न" }
     reading: "na"
     ipa: "nə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0677"
     target: "و"
-    target_scripts: { devanagari: "व" }
     reading: "va"
     ipa: "ʋə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0678"
     target: "ہ"
-    target_scripts: { devanagari: "ह" }
     reading: "ha"
     ipa: "ɦə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0679"
     target: "ی"
-    target_scripts: { devanagari: "य" }
     reading: "ya"
     ipa: "jə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0680"
     target: "ے"
-    target_scripts: { devanagari: "ए" }
     reading: "ē"
     ipa: "eː"
     notes:
