@@ -39,6 +39,12 @@ final RegExp mediaPathPattern = RegExp(
 /// Whether [path] is a deck file's path, as the index may list it.
 bool isDeckFilePath(String path) => _filePath.hasMatch(path);
 
+/// What a script font's path must look like (ADR-0042): a TrueType file in
+/// its script's folder under `decks/fonts/`. Group 1 is the script.
+final RegExp fontPathPattern = RegExp(
+  r'^decks/fonts/([a-z]+(?:_[a-z]+)*)/[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*\.ttf$',
+);
+
 final RegExp _hex64 = RegExp(r'^[0-9a-f]{64}$');
 
 /// One file of a language in the index (`decks/index.json`).
@@ -176,6 +182,71 @@ class IndexFile {
       : 'deck:$deck:$native';
 }
 
+/// A script's font in the index (ADR-0042), listed under a language's
+/// `fonts`: one OFL-licensed Noto font, downloaded with the course that
+/// needs it and drawn under the family name [scriptFontFamily] gives its
+/// script. Courses in one script list the same file, which downloads once.
+///
+/// Listed apart from [IndexLanguage.files], which the released app reads,
+/// so that an app too old to know fonts passes them by.
+class IndexFont {
+  const IndexFont({
+    required this.path,
+    required this.size,
+    required this.sha256,
+    required this.script,
+    this.family = '',
+  });
+
+  /// Where it is in the repository, which is also its path on the phone:
+  /// `decks/fonts/telugu/NotoSansTelugu.ttf`.
+  final String path;
+
+  /// Its size in bytes.
+  final int size;
+
+  /// Its SHA-256, 64 lower-case hex digits. A download that does not match
+  /// it is thrown away.
+  final String sha256;
+
+  /// The script it draws, as the decks name it: `telugu`.
+  final String script;
+
+  /// The font's own family name, `Noto Sans Telugu`, for credits.
+  final String family;
+
+  /// The font [json] describes, or null when it is not one. A bad entry
+  /// costs its font and never the decks: the index is read whole without
+  /// it.
+  static IndexFont? tryParse(Object? json) {
+    if (json is! Map) return null;
+    final path = json['path'];
+    final size = json['size'];
+    final sha = json['sha256'];
+    final script = json['script'];
+    if (path is! String || script is! String) return null;
+    if (fontPathPattern.firstMatch(path)?.group(1) != script) return null;
+    if (size is! int || size <= 0) return null;
+    if (sha is! String || !_hex64.hasMatch(sha)) return null;
+    final family = json['family'];
+    return IndexFont(
+      path: path,
+      size: size,
+      sha256: sha,
+      script: script,
+      family: family is String ? family : '',
+    );
+  }
+
+  Map<String, Object?> toJson() => <String, Object?>{
+    'path': path,
+    'size': size,
+    'sha256': sha256,
+    'script': script,
+    'family': family,
+  };
+}
+
 /// A unit of a language's path, as the index counts it.
 class IndexUnit {
   const IndexUnit({
@@ -243,6 +314,7 @@ class IndexLanguage {
     this.units = const <IndexUnit>[],
     this.files = const <IndexFile>[],
     this.media = const <IndexFile>[],
+    this.fonts = const <IndexFont>[],
   });
 
   final String code;
@@ -274,6 +346,11 @@ class IndexLanguage {
   /// Its cards' recordings and images (#518, #523), listed apart from
   /// [files] so that an app too old to read them passes them by.
   final List<IndexFile> media;
+
+  /// The fonts of the scripts its decks are shown in (ADR-0042), downloaded
+  /// with the decks and kept apart from [files], so that an app too old to
+  /// read them passes them by. Not counted in [size].
+  final List<IndexFont> fonts;
 
   /// The native languages a learner who speaks [spoken], best known first,
   /// is taught this language from: those of [spoken] it has decks for, or
@@ -405,6 +482,9 @@ class IndexLanguage {
       ],
       files: files,
       media: media,
+      fonts: <IndexFont>[
+        for (final font in _list(json['fonts'])) ?IndexFont.tryParse(font),
+      ],
     );
   }
 }
@@ -495,6 +575,7 @@ class LanguageChanges {
     this.fetch = const <IndexFile>[],
     this.quiet = const <IndexFile>[],
     this.remove = const <String>[],
+    this.fonts = const <IndexFont>[],
   });
 
   final String language;
@@ -513,9 +594,16 @@ class LanguageChanges {
   /// learner's cards do not vanish (ADR-0037).
   final List<String> remove;
 
-  int get bytes => fetch.fold(0, (sum, f) => sum + f.size);
+  /// Fonts new to the phone, or changed since they were downloaded
+  /// (ADR-0042). A font a course gained, as when the app first knew fonts,
+  /// is an update like any other.
+  final List<IndexFont> fonts;
 
-  bool get isEmpty => fetch.isEmpty && remove.isEmpty;
+  int get bytes =>
+      fetch.fold(0, (sum, f) => sum + f.size) +
+      fonts.fold(0, (sum, f) => sum + f.size);
+
+  bool get isEmpty => fetch.isEmpty && remove.isEmpty && fonts.isEmpty;
 }
 
 /// What it would take to bring [onPhone], the files of [language] on the
@@ -531,12 +619,21 @@ class LanguageChanges {
 /// nothing to fetch (#444). A file on the phone that [wanted] does not list
 /// stays, unless a wanted file takes its role ([IndexFile.role]) under
 /// another path.
+///
+/// Of the language's [fonts] (ADR-0042), those not among [fontsOnPhone], or
+/// whose hash differs, come with the changes, or alone.
 LanguageChanges changesFor(
   String language,
   List<IndexFile> wanted,
   Map<String, IndexFile> onPhone, {
   bool reviewer = false,
+  List<IndexFont> fonts = const <IndexFont>[],
+  Map<String, IndexFont> fontsOnPhone = const <String, IndexFont>{},
 }) {
+  final newFonts = <IndexFont>[
+    for (final font in fonts)
+      if (fontsOnPhone[font.path]?.sha256 != font.sha256) font,
+  ];
   final roles = <String>{for (final file in wanted) file.role};
   final paths = <String>{for (final file in wanted) file.path};
   final fetch = <IndexFile>[];
@@ -553,12 +650,13 @@ LanguageChanges changesFor(
     }
   }
   if (!real && !reviewer) {
-    return LanguageChanges(language: language);
+    return LanguageChanges(language: language, fonts: newFonts);
   }
   return LanguageChanges(
     language: language,
     fetch: fetch,
     quiet: quiet,
+    fonts: newFonts,
     remove: <String>[
       for (final MapEntry(key: path, value: file) in onPhone.entries)
         if (file.language == language &&
