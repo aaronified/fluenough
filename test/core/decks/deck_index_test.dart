@@ -155,7 +155,9 @@ void main() {
     test('lists the Perso-Arabic guide apart from files', () {
       final raw = jsonDecode(File('decks/index.json').readAsStringSync());
       final languages = (raw as Map<String, Object?>)['languages'] as List;
-      final hi = languages.cast<Map>().firstWhere((l) => l['code'] == 'hi');
+      final hi = languages.cast<Map<String, Object?>>().firstWhere(
+        (l) => l['code'] == 'hi',
+      );
       final listed = [for (final f in hi['files'] as List) (f as Map)['path']];
       final apart = [
         for (final f in hi['script_guides'] as List) (f as Map)['path'],
