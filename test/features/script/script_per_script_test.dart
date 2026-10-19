@@ -69,8 +69,9 @@ Future<void> tapText(WidgetTester tester, String text) async {
 }
 
 void main() {
-  test('the app state picks a guide by the deck script', () {
+  test('the app state picks a guide by the deck script', () async {
     final state = twoScripts();
+    await state.load();
     final letters = state.decks.firstWhere((e) => e.id == 'bn-en-letters');
     final syloti = state.decks.firstWhere((e) => e.id == 'bn-en-syloti');
     expect(state.scriptGuideFor(letters.language)?.key, 'bn');
@@ -78,6 +79,7 @@ void main() {
     expect(state.scriptGuideByKey('bn-sylheti')?.$2.script, 'sylheti');
     expect(state.scriptGuideByKey('bn')?.$1.name, 'How Bengali works');
     final without = twoScripts(withSylheti: false);
+    await without.load();
     final other = without.decks.firstWhere((e) => e.id == 'bn-en-syloti');
     expect(without.scriptGuideFor(other.language)?.key, 'bn');
   });
