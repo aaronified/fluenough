@@ -916,8 +916,7 @@ class DrillSession extends ChangeNotifier {
     }
     final curated = <Card>[
       for (final item in card.confusables)
-        if (item.ref case final id?)
-          if (_state.cardInCourseOf(card, id) case final other?) other,
+        if (item.ref case final id?) ?_state.cardInCourseOf(card, id),
     ]..shuffle(_random);
     for (final other in <Card>[...curated, ...pool]) {
       if (picked.length == optionCount) break;
