@@ -71,6 +71,16 @@ class IpaLanguageBlock(B1Case):
         self.assertNoError(EXTRA, "script")
         self.assertNoError(EXTRA, "tts")
 
+    def test_a_bracketed_ipa_is_narrow_and_only_for_the_ipa_course(self) -> None:
+        ex = {"target": "pin", "native": "pin", "language": "en", "ipa": "[pʰɪn]"}
+        self.put(EXTRA, single(language=dict(self.IPA),
+                               cards=[dict(CAT, examples=[ex])]))
+        self.assertNoError(EXTRA, "not a broad IPA")
+        self.put(EXTRA, single(cards=[dict(CAT, examples=[ex])]))
+        self.assertError(EXTRA, "ipa", "'[pʰɪn]' is not a broad IPA "
+                         "transcription: IPA letters and marks only, "
+                         "without / / or [ ]")
+
 
 if __name__ == "__main__":
     unittest.main()

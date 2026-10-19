@@ -1142,7 +1142,10 @@ Built (#511). Owner (#506): a word card has "At least 2" examples.
   when left out: `false` says that the card's letter is *not* said with the
   card's sound in this word, and what it is said as goes in the example's
   translation. Both are on the core's example, as a single-file deck's
-  example writes them. See [the IPA course](#the-ipa-course).
+  example writes them. See [the IPA course](#the-ipa-course). An IPA-course
+  example that needs a narrow transcription writes it in square brackets,
+  as `ipa: "[pʰɪn]"`, and is shown so; every other `ipa` stays broad,
+  without slashes or brackets.
 
   ```yaml
   # the card of ɒ, in a core
