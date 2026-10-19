@@ -2,7 +2,7 @@ schema: 1
 id: "hi-family"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 theme: "family"
 tags: ["beginner", "unreviewed"]
@@ -27,6 +27,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0377"
     target: "माँ"
+    target_scripts: { perso_arabic: "ماں" }
     reading: "mām̐"
     ipa: "mãː"
     alt_target: ["माता", "मम्मी"]
@@ -36,6 +37,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0378"
     target: "भाई"
+    target_scripts: { perso_arabic: "بھائی" }
     reading: "bhāī"
     ipa: "bʱaːiː"
     pos: "noun"
@@ -44,6 +46,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0379"
     target: "बहन"
+    target_scripts: { perso_arabic: "بہن" }
     reading: "bahan"
     ipa: "bəɦən"
     pos: "noun"
@@ -55,6 +58,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0380"
     target: "बेटी"
+    target_scripts: { perso_arabic: "بیٹی" }
     reading: "bēṭī"
     ipa: "beːʈiː"
     pos: "noun"
@@ -73,6 +77,7 @@ cards:
     gender: "f"
   - id: "hi-0383"
     target: "बच्चे"
+    target_scripts: { perso_arabic: "بچے" }
     reading: "baccē"
     ipa: "bətʃtʃeː"
     pos: "noun"
@@ -80,6 +85,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0384"
     target: "दादा"
+    target_scripts: { perso_arabic: "دادا" }
     reading: "dādā"
     ipa: "d̪aːd̪aː"
     alt_target: ["दादाजी"]
@@ -87,6 +93,7 @@ cards:
     gender: "m"
   - id: "hi-0385"
     target: "दादी"
+    target_scripts: { perso_arabic: "دادی" }
     reading: "dādī"
     ipa: "d̪aːd̪iː"
     alt_target: ["दादीजी"]
@@ -94,6 +101,7 @@ cards:
     gender: "f"
   - id: "hi-0386"
     target: "नाना"
+    target_scripts: { perso_arabic: "نانا" }
     reading: "nānā"
     ipa: "naːnaː"
     alt_target: ["नानाजी"]
@@ -101,6 +109,7 @@ cards:
     gender: "m"
   - id: "hi-0387"
     target: "नानी"
+    target_scripts: { perso_arabic: "نانی" }
     reading: "nānī"
     ipa: "naːniː"
     alt_target: ["नानीजी"]
@@ -108,6 +117,7 @@ cards:
     gender: "f"
   - id: "hi-0388"
     target: "चाचा"
+    target_scripts: { perso_arabic: "چاچا" }
     reading: "cācā"
     ipa: "tʃaːtʃaː"
     pos: "noun"
@@ -116,6 +126,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0389"
     target: "ताऊ"
+    target_scripts: { perso_arabic: "تاؤ" }
     reading: "tāū"
     ipa: "t̪aːuː"
     alt_target: ["ताया"]
@@ -133,6 +144,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0391"
     target: "मामा"
+    target_scripts: { perso_arabic: "ماما" }
     reading: "māmā"
     ipa: "maːmaː"
     pos: "noun"
@@ -149,24 +161,28 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0393"
     target: "ससुर"
+    target_scripts: { perso_arabic: "سسر" }
     reading: "sasur"
     ipa: "səsʊr"
     pos: "noun"
     gender: "m"
   - id: "hi-0394"
     target: "सास"
+    target_scripts: { perso_arabic: "ساس" }
     reading: "sās"
     ipa: "saːs"
     pos: "noun"
     gender: "f"
   - id: "hi-0395"
     target: "रिश्तेदार"
+    target_scripts: { perso_arabic: "رشتے دار" }
     reading: "riśtēdār"
     ipa: "rɪʃt̪eːd̪aːr"
     pos: "noun"
     gender: "m"
   - id: "hi-0396"
     target: "मेरे दो भाई और एक बहन हैं।"
+    target_scripts: { perso_arabic: "میرے دو بھائی اور ایک بہن ہیں۔" }
     reading: "mērē dō bhāī aur ēk bahan haim̐."
     ipa: "meːreː d̪oː bʱaːiː ɔːr eːk bəɦən ɦɛ̃ː"
     pos: "phrase"
@@ -176,6 +192,7 @@ cards:
       - { word: "मेरे", base: "मेरा", reading: "mērā" }
   - id: "hi-0397"
     target: "आपके कितने भाई-बहन हैं?"
+    target_scripts: { perso_arabic: "آپ کے کتنے بھائی بہن ہیں؟" }
     reading: "āpkē kitnē bhāī-bahan haim̐?"
     ipa: "aːpkeː kɪt̪neː bʱaːiːbəɦən ɦɛ̃ː"
     pos: "phrase"
@@ -184,6 +201,7 @@ cards:
       - { word: "कितने", ref: "hi-0163" }
   - id: "hi-0398"
     target: "मेरी शादी हो गई है।"
+    target_scripts: { perso_arabic: "میری شادی ہو گئی ہے۔" }
     reading: "mērī śādī hō gaī hai."
     ipa: "meːriː ʃaːd̪iː ɦoː ɡəiː ɦɛː"
     alt_target: ["मैं शादीशुदा हूँ।"]
