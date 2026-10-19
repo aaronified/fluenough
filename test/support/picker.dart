@@ -97,20 +97,12 @@ Future<void> openFamilies(WidgetTester tester) async {
   for (var i = 0; i < 12; i++) {
     await tester.drag(pickerList().first, const Offset(0, 6000));
     await tester.pumpAndSettle();
-    if (closed.evaluate().isEmpty) {
-      try {
-        await tester.scrollUntilVisible(
-          closed,
-          200,
-          scrollable: pickerList().first,
-          maxScrolls: 80,
-        );
-      } on StateError {
-        return;
-      } on TestFailure {
-        return;
-      }
+    // Down a screen at a time until a closed family is built.
+    for (var j = 0; j < 80 && closed.evaluate().isEmpty; j++) {
+      await tester.drag(pickerList().first, const Offset(0, -300));
+      await tester.pumpAndSettle();
     }
+    if (closed.evaluate().isEmpty) return;
     await Scrollable.ensureVisible(
       closed.first.evaluate().first,
       alignment: 0.5,
@@ -125,9 +117,11 @@ Future<void> openFamilies(WidgetTester tester) async {
 bool sheetIsOpen() =>
     find.byKey(const ValueKey<String>('sheet-scroll')).evaluate().isNotEmpty;
 
-/// Closes the open sheet without answering: a tap on the screen above it.
+/// Closes the open sheet without answering, as Back does.
 Future<void> closeSheet(WidgetTester tester) async {
-  await tester.tapAt(const Offset(5, 5));
+  Navigator.of(
+    tester.element(find.byKey(const ValueKey<String>('sheet-scroll'))),
+  ).pop();
   await tester.pumpAndSettle();
 }
 
