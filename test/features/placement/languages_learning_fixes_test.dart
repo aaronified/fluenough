@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/features/placement/course_line.dart';
 import 'package:fluenough/features/placement/language_picker_page.dart';
 import 'package:fluenough/features/placement/placement_page.dart';
 
@@ -85,5 +86,31 @@ void main() {
         findsOneWidget,
       );
     });
+  });
+
+  testWidgets("the course line reads its shares with the app's percent", (
+    tester,
+  ) async {
+    usePhone(tester);
+    await pumpScreen(
+      tester,
+      const Scaffold(body: CourseLine(levels: <double>[0.5, 0.25, 0.0])),
+      state: AppState.test(),
+    );
+    final l10n = l10nOf(tester);
+    String percent(double v) => l10n.commonPercent(v);
+    expect(
+      find.bySemanticsLabel(
+        l10n.pickerCourseLineLabel(
+          <String>[
+            'A1 ${percent(0.5)}',
+            'A2 ${percent(0.25)}',
+            'B1 ${percent(0)}',
+            '${l10n.pickerLevelCulture} ${percent(0)}',
+          ].join(l10n.commonListSeparator),
+        ),
+      ),
+      findsOneWidget,
+    );
   });
 }
