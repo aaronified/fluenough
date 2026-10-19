@@ -2016,7 +2016,7 @@ _SCRIPT_BLOCK = {"devanagari": 0x0900, "bengali": 0x0980, "gurmukhi": 0x0A00,
 _WORD_KEYS = {"id", "key", "target", "reading", "readings", "ipa", "ipas",
               "term", "example", "letters", "letter", "forms", "alternatives",
               "answer", "answers", "accept", "equivalents", "words", "tiles",
-              "source", "scheme", "audio", "image",
+              "source", "scheme", "audio", "image", "icon",
               # The B1 format's (ADR-0036): a base's word, a card or a rule
               # named by id.
               "word", "base", "ref", "core", "except", "rules", "part", "region"}
