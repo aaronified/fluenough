@@ -366,6 +366,9 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
           _ => null,
         },
         native: native,
+        onNative: chosen
+            ? (picked) => setState(() => _native[code] = picked)
+            : null,
         hasPlacement: code != ipaLanguageCode,
         findLanguage: _findLanguage[code] ?? true,
         findScripts: _findScripts[code] ?? const <String, bool>{},
