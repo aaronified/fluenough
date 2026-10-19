@@ -2,12 +2,13 @@ schema: 1
 id: "hi-grammar-can-must"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed", "grammar"]
 cards:
   - id: "hi-0513"
     target: "सकना"
+    target_scripts: { perso_arabic: "سکنا" }
     reading: "saknā"
     ipa: "səknaː"
     pos: "verb"
@@ -15,6 +16,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0514"
     target: "मैं हिंदी बोल सकता हूँ।"
+    target_scripts: { perso_arabic: "میں ہندی بول سکتا ہوں۔" }
     reading: "maim̐ hindī bōl saktā hūm̐."
     ipa: "mɛ̃ː ɦɪnd̪iː boːl səkt̪aː ɦũː"
     alt_target: ["मैं हिंदी बोल सकती हूँ।"]
@@ -27,6 +29,7 @@ cards:
       - { word: "हूँ", base: "होना", reading: "hōnā" }
   - id: "hi-0515"
     target: "मैं तैर नहीं सकती।"
+    target_scripts: { perso_arabic: "میں تیر نہیں سکتی۔" }
     reading: "maim̐ tair nahīm̐ saktī."
     ipa: "mɛ̃ː t̪ɛːr nəɦĩː səkt̪iː"
     alt_target: ["मैं तैर नहीं सकता।"]
@@ -37,6 +40,7 @@ cards:
       - { word: "सकती", ref: "hi-0513" }
   - id: "hi-0516"
     target: "क्या आप मेरी मदद कर सकते हैं?"
+    target_scripts: { perso_arabic: "کیا آپ میری مدد کر سکتے ہیں؟" }
     reading: "kyā āp mērī madad kar saktē haim̐?"
     ipa: "kjaː aːp meːriː məd̪əd̪ kər səkt̪eː ɦɛ̃ː"
     pos: "phrase"
@@ -46,6 +50,7 @@ cards:
       - { word: "सकते", ref: "hi-0513" }
   - id: "hi-0517"
     target: "मैं घर जाना चाहता हूँ।"
+    target_scripts: { perso_arabic: "میں گھر جانا چاہتا ہوں۔" }
     reading: "maim̐ ghar jānā cāhtā hūm̐."
     ipa: "mɛ̃ː ɡʱər dʒaːnaː tʃaːɦt̪aː ɦũː"
     alt_target: ["मैं घर जाना चाहती हूँ।"]
@@ -57,6 +62,7 @@ cards:
       - { word: "हूँ", base: "होना", reading: "hōnā" }
   - id: "hi-0518"
     target: "आपको आराम करना चाहिए।"
+    target_scripts: { perso_arabic: "آپ کو آرام کرنا چاہیے۔" }
     reading: "āpkō ārām karnā cāhiē."
     ipa: "aːpkoː aːraːm kərnaː tʃaːɦɪeː"
     pos: "phrase"
@@ -68,6 +74,7 @@ cards:
       - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0519"
     target: "मुझे कल काम पर जाना है।"
+    target_scripts: { perso_arabic: "مجھے کل کام پر جانا ہے۔" }
     reading: "mujhē kal kām par jānā hai."
     ipa: "mʊdʒʱeː kəl kaːm pər dʒaːnaː ɦɛː"
     pos: "phrase"
@@ -76,6 +83,7 @@ cards:
       - { word: "जाना", base: "जाना", reading: "jānā" }
   - id: "hi-0520"
     target: "मुझे जाना पड़ेगा।"
+    target_scripts: { perso_arabic: "مجھے جانا پڑے گا۔" }
     reading: "mujhē jānā paṛēgā."
     ipa: "mʊdʒʱeː dʒaːnaː pəɽeːɡaː"
     pos: "phrase"
@@ -87,6 +95,7 @@ cards:
       - { word: "पड़ेगा", ref: "hi-0115" }
   - id: "hi-0521"
     target: "मैं नहीं आ पाया।"
+    target_scripts: { perso_arabic: "میں نہیں آ پایا۔" }
     reading: "maim̐ nahīm̐ ā pāyā."
     ipa: "mɛ̃ː nəɦĩː aː paːjaː"
     pos: "phrase"
@@ -97,6 +106,7 @@ cards:
       - { word: "पाया", base: "पाना", reading: "pānā" }
   - id: "hi-0522"
     target: "यहाँ फ़ोटो ले सकते हैं?"
+    target_scripts: { perso_arabic: "یہاں فوٹو لے سکتے ہیں؟" }
     reading: "yahām̐ fōṭō lē saktē haim̐?"
     ipa: "jəɦãː foːʈoː leː səkt̪eː ɦɛ̃ː"
     pos: "phrase"

@@ -2,13 +2,14 @@ schema: 1
 id: "hi-daily-life"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 theme: "daily-life"
 tags: ["beginner", "unreviewed"]
 cards:
   - id: "hi-0441"
     target: "उठना"
+    target_scripts: { perso_arabic: "اٹھنا" }
     reading: "uṭhnā"
     ipa: "ʊʈʰnaː"
     pos: "verb"
@@ -16,11 +17,13 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0442"
     target: "नहाना"
+    target_scripts: { perso_arabic: "نہانا" }
     reading: "nahānā"
     ipa: "nəɦaːnaː"
     pos: "verb"
   - id: "hi-0443"
     target: "दाँत साफ़ करना"
+    target_scripts: { perso_arabic: "دانت صاف کرنا" }
     reading: "dām̐t sāf karnā"
     ipa: "d̪ãːt̪ saːf kərnaː"
     alt_target: ["दांत साफ करना"]
@@ -31,12 +34,14 @@ cards:
       - { word: "करना", base: "करना", reading: "karnā" }
   - id: "hi-0444"
     target: "नाश्ता"
+    target_scripts: { perso_arabic: "ناشتہ" }
     reading: "nāśtā"
     ipa: "naːʃt̪aː"
     pos: "noun"
     gender: "m"
   - id: "hi-0445"
     target: "दोपहर का खाना"
+    target_scripts: { perso_arabic: "دوپہر کا کھانا" }
     reading: "dōpahar kā khānā"
     ipa: "d̪oːpəɦər kaː kʰaːnaː"
     pos: "phrase"
@@ -44,11 +49,13 @@ cards:
       - { word: "दोपहर", base: "दोपहर", reading: "dōpahar" }
   - id: "hi-0446"
     target: "रात का खाना"
+    target_scripts: { perso_arabic: "رات کا کھانا" }
     reading: "rāt kā khānā"
     ipa: "raːt̪ kaː kʰaːnaː"
     pos: "phrase"
   - id: "hi-0447"
     target: "काम पर जाना"
+    target_scripts: { perso_arabic: "کام پر جانا" }
     reading: "kām par jānā"
     ipa: "kaːm pər dʒaːnaː"
     pos: "phrase"
@@ -56,6 +63,7 @@ cards:
       - { word: "जाना", base: "जाना", reading: "jānā" }
   - id: "hi-0448"
     target: "घर लौटना"
+    target_scripts: { perso_arabic: "گھر لوٹنا" }
     reading: "ghar lauṭnā"
     ipa: "ɡʱər lɔːʈnaː"
     alt_target: ["घर आना"]
@@ -64,6 +72,7 @@ cards:
       - { word: "लौटना", base: "लौटना", reading: "lauṭnā" }
   - id: "hi-0449"
     target: "खाना बनाना"
+    target_scripts: { perso_arabic: "کھانا بنانا" }
     reading: "khānā banānā"
     ipa: "kʰaːnaː bənaːnaː"
     pos: "phrase"
@@ -71,6 +80,7 @@ cards:
       - { word: "बनाना", base: "बनाना", reading: "banānā" }
   - id: "hi-0450"
     target: "सोना"
+    target_scripts: { perso_arabic: "سونا" }
     reading: "sōnā"
     ipa: "soːnaː"
     pos: "verb"
@@ -78,12 +88,14 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0451"
     target: "रोज़"
+    target_scripts: { perso_arabic: "روز" }
     reading: "rōz"
     ipa: "roːz"
     alt_target: ["रोज", "हर दिन"]
     pos: "adv"
   - id: "hi-0452"
     target: "कभी-कभी"
+    target_scripts: { perso_arabic: "کبھی کبھی" }
     reading: "kabhī-kabhī"
     ipa: "kəbʱiːkəbʱiː"
     alt_target: ["कभी कभी"]
@@ -92,11 +104,13 @@ cards:
       - { word: "कभी", base: "कभी", reading: "kabhī" }
   - id: "hi-0453"
     target: "हमेशा"
+    target_scripts: { perso_arabic: "ہمیشہ" }
     reading: "hamēśā"
     ipa: "ɦəmeːʃaː"
     pos: "adv"
   - id: "hi-0454"
     target: "आम तौर पर"
+    target_scripts: { perso_arabic: "عام طور پر" }
     reading: "ām taur par"
     ipa: "aːm t̪ɔːr pər"
     alt_target: ["आमतौर पर"]
@@ -106,6 +120,7 @@ cards:
       - { word: "तौर", base: "तौर", reading: "taur" }
   - id: "hi-0455"
     target: "उसके बाद"
+    target_scripts: { perso_arabic: "اس کے بعد" }
     reading: "uskē bād"
     ipa: "ʊskeː baːd̪"
     pos: "phrase"
@@ -114,6 +129,7 @@ cards:
       - { word: "बाद", base: "बाद", reading: "bād" }
   - id: "hi-0456"
     target: "मैं रोज़ सात बजे उठता हूँ।"
+    target_scripts: { perso_arabic: "میں روز سات بجے اٹھتا ہوں۔" }
     reading: "maim̐ rōz sāt bajē uṭhtā hūm̐."
     ipa: "mɛ̃ː roːz saːt̪ bədʒeː ʊʈʰt̪aː ɦũː"
     pos: "phrase"
@@ -125,6 +141,7 @@ cards:
       - { word: "हूँ", base: "होना", reading: "hōnā" }
   - id: "hi-0457"
     target: "उसके बाद मैं काम पर जाता हूँ।"
+    target_scripts: { perso_arabic: "اس کے بعد میں کام پر جاتا ہوں۔" }
     reading: "uskē bād maim̐ kām par jātā hūm̐."
     ipa: "ʊskeː baːd̪ mɛ̃ː kaːm pər dʒaːt̪aː ɦũː"
     pos: "phrase"
@@ -138,6 +155,7 @@ cards:
       - { word: "हूँ", base: "होना", reading: "hōnā" }
   - id: "hi-0458"
     target: "मैं रात ग्यारह बजे सोता हूँ।"
+    target_scripts: { perso_arabic: "میں رات گیارہ بجے سوتا ہوں۔" }
     reading: "maim̐ rāt gyārah bajē sōtā hūm̐."
     ipa: "mɛ̃ː raːt̪ ɡjaːrəɦ bədʒeː soːt̪aː ɦũː"
     pos: "phrase"
@@ -149,6 +167,7 @@ cards:
       - { word: "हूँ", base: "होना", reading: "hōnā" }
   - id: "hi-0459"
     target: "मुझे कभी देर नहीं होती।"
+    target_scripts: { perso_arabic: "مجھے کبھی دیر نہیں ہوتی۔" }
     reading: "mujhē kabhī dēr nahīm̐ hōtī."
     ipa: "mʊdʒʱeː kəbʱiː d̪eːr nəɦĩː ɦoːt̪iː"
     pos: "phrase"

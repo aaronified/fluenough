@@ -2,7 +2,7 @@ schema: 1
 id: "hi-home"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 theme: "home"
 tags: ["beginner", "unreviewed"]
@@ -10,6 +10,7 @@ cards:
   - ref: "hi-0192"
   - id: "hi-0419"
     target: "मकान"
+    target_scripts: { perso_arabic: "مکان" }
     picture: "🏠"
     reading: "makān"
     ipa: "məkaːn"
@@ -19,6 +20,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0420"
     target: "फ़्लैट"
+    target_scripts: { perso_arabic: "فلیٹ" }
     reading: "flaiṭ"
     ipa: "flɛːʈ"
     alt_target: ["फ्लैट"]
@@ -26,12 +28,14 @@ cards:
     gender: "m"
   - id: "hi-0421"
     target: "कमरा"
+    target_scripts: { perso_arabic: "کمرہ" }
     reading: "kamrā"
     ipa: "kəmraː"
     pos: "noun"
     gender: "m"
   - id: "hi-0422"
     target: "रसोई"
+    target_scripts: { perso_arabic: "رسوئی" }
     reading: "rasōī"
     ipa: "rəsoːiː"
     alt_target: ["रसोईघर"]
@@ -39,6 +43,7 @@ cards:
     gender: "f"
   - id: "hi-0423"
     target: "सोने का कमरा"
+    target_scripts: { perso_arabic: "سونے کا کمرہ" }
     reading: "sōnē kā kamrā"
     ipa: "soːneː kaː kəmraː"
     alt_target: ["बेडरूम"]
@@ -49,6 +54,7 @@ cards:
       - { word: "सोने", ref: "hi-0450" }
   - id: "hi-0424"
     target: "बैठक"
+    target_scripts: { perso_arabic: "بیٹھک" }
     reading: "baiṭhak"
     ipa: "bɛːʈʰək"
     alt_target: ["ड्राइंग रूम"]
@@ -56,6 +62,7 @@ cards:
     gender: "f"
   - id: "hi-0425"
     target: "बाथरूम"
+    target_scripts: { perso_arabic: "باتھ روم" }
     reading: "bāthrūm"
     ipa: "baːt̪ʰruːm"
     alt_target: ["स्नानघर"]
@@ -63,6 +70,7 @@ cards:
     gender: "m"
   - id: "hi-0426"
     target: "दरवाज़ा"
+    target_scripts: { perso_arabic: "دروازہ" }
     picture: "🚪"
     reading: "darvāzā"
     ipa: "d̪ərʋaːzaː"
@@ -71,6 +79,7 @@ cards:
     gender: "m"
   - id: "hi-0427"
     target: "खिड़की"
+    target_scripts: { perso_arabic: "کھڑکی" }
     picture: "🪟"
     reading: "khiṛkī"
     ipa: "kʰɪɽkiː"
@@ -78,18 +87,21 @@ cards:
     gender: "f"
   - id: "hi-0428"
     target: "छत"
+    target_scripts: { perso_arabic: "چھت" }
     reading: "chat"
     ipa: "tʃʰət̪"
     pos: "noun"
     gender: "f"
   - id: "hi-0429"
     target: "सीढ़ियाँ"
+    target_scripts: { perso_arabic: "سیڑھیاں" }
     reading: "sīṛhiyām̐"
     ipa: "siːɽʱɪjãː"
     alt_target: ["सीढ़ियां"]
     pos: "noun"
   - id: "hi-0430"
     target: "मंज़िल"
+    target_scripts: { perso_arabic: "منزل" }
     reading: "maṁzil"
     ipa: "mə̃zɪl"
     alt_target: ["मंजिल"]
@@ -97,6 +109,7 @@ cards:
     gender: "f"
   - id: "hi-0431"
     target: "चाबी"
+    target_scripts: { perso_arabic: "چابی" }
     picture: "🔑"
     reading: "cābī"
     ipa: "tʃaːbiː"
@@ -105,6 +118,7 @@ cards:
     gender: "f"
   - id: "hi-0432"
     target: "बिस्तर"
+    target_scripts: { perso_arabic: "بستر" }
     picture: "🛏"
     reading: "bistar"
     ipa: "bɪst̪ər"
@@ -112,6 +126,7 @@ cards:
     gender: "m"
   - id: "hi-0433"
     target: "कुर्सी"
+    target_scripts: { perso_arabic: "کرسی" }
     picture: "🪑"
     reading: "kursī"
     ipa: "kʊrsiː"
@@ -119,6 +134,7 @@ cards:
     gender: "f"
   - id: "hi-0434"
     target: "मेज़"
+    target_scripts: { perso_arabic: "میز" }
     reading: "mēz"
     ipa: "meːz"
     alt_target: ["मेज"]
@@ -126,12 +142,14 @@ cards:
     gender: "f"
   - id: "hi-0435"
     target: "पंखा"
+    target_scripts: { perso_arabic: "پنکھا" }
     reading: "paṅkhā"
     ipa: "pəŋkʰaː"
     pos: "noun"
     gender: "m"
   - id: "hi-0436"
     target: "बत्ती"
+    target_scripts: { perso_arabic: "بتی" }
     reading: "battī"
     ipa: "bət̪t̪iː"
     pos: "noun"
@@ -140,12 +158,14 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0437"
     target: "पड़ोसी"
+    target_scripts: { perso_arabic: "پڑوسی" }
     reading: "paṛōsī"
     ipa: "pəɽoːsiː"
     pos: "noun"
     gender: "m"
   - id: "hi-0438"
     target: "मोहल्ला"
+    target_scripts: { perso_arabic: "محلہ" }
     reading: "mōhallā"
     ipa: "moːɦəllaː"
     pos: "noun"
@@ -155,6 +175,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0439"
     target: "घर के सामने एक पार्क है।"
+    target_scripts: { perso_arabic: "گھر کے سامنے ایک پارک ہے۔" }
     reading: "ghar kē sāmnē ēk pārk hai."
     ipa: "ɡʱər keː saːmneː eːk paːrk ɦɛː"
     pos: "phrase"
