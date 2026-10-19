@@ -2,13 +2,14 @@ schema: 1
 id: "hi-numbers-big"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 theme: "numbers-big"
 tags: ["beginner"]
 cards:
   - id: "hi-0218"
     target: "तीस"
+    target_scripts: { perso_arabic: "تیس" }
     reading: "tīs"
     ipa: "t̪iːs"
     pos: "other"
@@ -16,36 +17,43 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0219"
     target: "चालीस"
+    target_scripts: { perso_arabic: "چالیس" }
     reading: "cālīs"
     ipa: "tʃaːliːs"
     pos: "other"
   - id: "hi-0220"
     target: "पचास"
+    target_scripts: { perso_arabic: "پچاس" }
     reading: "pacās"
     ipa: "pətʃaːs"
     pos: "other"
   - id: "hi-0221"
     target: "साठ"
+    target_scripts: { perso_arabic: "ساٹھ" }
     reading: "sāṭh"
     ipa: "saːʈʰ"
     pos: "other"
   - id: "hi-0222"
     target: "सत्तर"
+    target_scripts: { perso_arabic: "ستر" }
     reading: "sattar"
     ipa: "sət̪t̪ər"
     pos: "other"
   - id: "hi-0223"
     target: "अस्सी"
+    target_scripts: { perso_arabic: "اسی" }
     reading: "assī"
     ipa: "əssiː"
     pos: "other"
   - id: "hi-0224"
     target: "नब्बे"
+    target_scripts: { perso_arabic: "نوے" }
     reading: "nabbē"
     ipa: "nəbbeː"
     pos: "other"
   - id: "hi-0225"
     target: "सौ"
+    target_scripts: { perso_arabic: "سو" }
     reading: "sau"
     ipa: "sɔː"
     pos: "other"
@@ -53,6 +61,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0226"
     target: "हज़ार"
+    target_scripts: { perso_arabic: "ہزار" }
     reading: "hazār"
     ipa: "ɦəzaːr"
     alt_target: ["हजार"]
@@ -61,6 +70,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0227"
     target: "लाख"
+    target_scripts: { perso_arabic: "لاکھ" }
     reading: "lākh"
     ipa: "laːkʰ"
     pos: "other"
@@ -68,6 +78,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0228"
     target: "करोड़"
+    target_scripts: { perso_arabic: "کروڑ" }
     reading: "karōṛ"
     ipa: "kəroːɽ"
     pos: "other"
@@ -75,6 +86,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0229"
     target: "डेढ़"
+    target_scripts: { perso_arabic: "ڈیڑھ" }
     reading: "ḍēṛh"
     ipa: "ɖeːɽʱ"
     pos: "other"
@@ -82,6 +94,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0230"
     target: "ढाई"
+    target_scripts: { perso_arabic: "ڈھائی" }
     reading: "ḍhāī"
     ipa: "ɖʱaːiː"
     pos: "other"
@@ -89,6 +102,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0523"
     target: "इक्कीस"
+    target_scripts: { perso_arabic: "اکیس" }
     reading: "ikkīs"
     ipa: "ɪkkiːs"
     pos: "other"
@@ -96,361 +110,432 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0524"
     target: "बाईस"
+    target_scripts: { perso_arabic: "بائیس" }
     reading: "bāīs"
     ipa: "baːiːs"
     pos: "other"
   - id: "hi-0525"
     target: "तेईस"
+    target_scripts: { perso_arabic: "تیئس" }
     reading: "tēīs"
     ipa: "t̪eːiːs"
     pos: "other"
   - id: "hi-0526"
     target: "चौबीस"
+    target_scripts: { perso_arabic: "چوبیس" }
     reading: "caubīs"
     ipa: "tʃɔːbiːs"
     pos: "other"
   - id: "hi-0527"
     target: "पच्चीस"
+    target_scripts: { perso_arabic: "پچیس" }
     reading: "paccīs"
     ipa: "pətʃtʃiːs"
     pos: "other"
   - id: "hi-0528"
     target: "छब्बीस"
+    target_scripts: { perso_arabic: "چھبیس" }
     reading: "chabbīs"
     ipa: "tʃʰəbbiːs"
     pos: "other"
   - id: "hi-0529"
     target: "सत्ताईस"
+    target_scripts: { perso_arabic: "ستائیس" }
     reading: "sattāīs"
     ipa: "sət̪t̪aːiːs"
     pos: "other"
   - id: "hi-0530"
     target: "अट्ठाईस"
+    target_scripts: { perso_arabic: "اٹھائیس" }
     reading: "aṭṭhāīs"
     ipa: "əʈʈʰaːiːs"
     pos: "other"
   - id: "hi-0531"
     target: "उनतीस"
+    target_scripts: { perso_arabic: "انتیس" }
     reading: "untīs"
     ipa: "ʊnt̪iːs"
     pos: "other"
   - id: "hi-0532"
     target: "इकतीस"
+    target_scripts: { perso_arabic: "اکتیس" }
     reading: "iktīs"
     ipa: "ɪkt̪iːs"
     pos: "other"
   - id: "hi-0533"
     target: "बत्तीस"
+    target_scripts: { perso_arabic: "بتیس" }
     reading: "battīs"
     ipa: "bət̪t̪iːs"
     pos: "other"
   - id: "hi-0534"
     target: "तैंतीस"
+    target_scripts: { perso_arabic: "تینتیس" }
     reading: "taintīs"
     ipa: "t̪ɛːnt̪iːs"
     pos: "other"
   - id: "hi-0535"
     target: "चौंतीस"
+    target_scripts: { perso_arabic: "چونتیس" }
     reading: "cauntīs"
     ipa: "tʃɔːnt̪iːs"
     pos: "other"
   - id: "hi-0536"
     target: "पैंतीस"
+    target_scripts: { perso_arabic: "پینتیس" }
     reading: "paintīs"
     ipa: "pɛːnt̪iːs"
     pos: "other"
   - id: "hi-0537"
     target: "छत्तीस"
+    target_scripts: { perso_arabic: "چھتیس" }
     reading: "chattīs"
     ipa: "tʃʰət̪t̪iːs"
     pos: "other"
   - id: "hi-0538"
     target: "सैंतीस"
+    target_scripts: { perso_arabic: "سینتیس" }
     reading: "saintīs"
     ipa: "sɛːnt̪iːs"
     pos: "other"
   - id: "hi-0539"
     target: "अड़तीस"
+    target_scripts: { perso_arabic: "اڑتیس" }
     reading: "aṛtīs"
     ipa: "əɽt̪iːs"
     pos: "other"
   - id: "hi-0540"
     target: "उनतालीस"
+    target_scripts: { perso_arabic: "انتالیس" }
     reading: "untālīs"
     ipa: "ʊnt̪aːliːs"
     pos: "other"
   - id: "hi-0541"
     target: "इकतालीस"
+    target_scripts: { perso_arabic: "اکتالیس" }
     reading: "iktālīs"
     ipa: "ɪkt̪aːliːs"
     pos: "other"
   - id: "hi-0542"
     target: "बयालीस"
+    target_scripts: { perso_arabic: "بیالیس" }
     reading: "bayālīs"
     ipa: "bəjaːliːs"
     pos: "other"
   - id: "hi-0543"
     target: "तैंतालीस"
+    target_scripts: { perso_arabic: "تینتالیس" }
     reading: "taintālīs"
     ipa: "t̪ɛːnt̪aːliːs"
     pos: "other"
   - id: "hi-0544"
     target: "चवालीस"
+    target_scripts: { perso_arabic: "چوالیس" }
     reading: "cavālīs"
     ipa: "tʃəʋaːliːs"
     alt_target: ["चौवालीस"]
     pos: "other"
   - id: "hi-0545"
     target: "पैंतालीस"
+    target_scripts: { perso_arabic: "پینتالیس" }
     reading: "paintālīs"
     ipa: "pɛːnt̪aːliːs"
     pos: "other"
   - id: "hi-0546"
     target: "छियालीस"
+    target_scripts: { perso_arabic: "چھیالیس" }
     reading: "chiyālīs"
     ipa: "tʃʰɪjaːliːs"
     pos: "other"
   - id: "hi-0547"
     target: "सैंतालीस"
+    target_scripts: { perso_arabic: "سینتالیس" }
     reading: "saintālīs"
     ipa: "sɛːnt̪aːliːs"
     pos: "other"
   - id: "hi-0548"
     target: "अड़तालीस"
+    target_scripts: { perso_arabic: "اڑتالیس" }
     reading: "aṛtālīs"
     ipa: "əɽt̪aːliːs"
     pos: "other"
   - id: "hi-0549"
     target: "उनचास"
+    target_scripts: { perso_arabic: "انچاس" }
     reading: "uncās"
     ipa: "ʊntʃaːs"
     pos: "other"
   - id: "hi-0550"
     target: "इक्यावन"
+    target_scripts: { perso_arabic: "اکاون" }
     reading: "ikyāvan"
     ipa: "ɪkjaːʋən"
     pos: "other"
   - id: "hi-0551"
     target: "बावन"
+    target_scripts: { perso_arabic: "باون" }
     reading: "bāvan"
     ipa: "baːʋən"
     pos: "other"
   - id: "hi-0552"
     target: "तिरपन"
+    target_scripts: { perso_arabic: "ترپن" }
     reading: "tirpan"
     ipa: "t̪ɪrpən"
     pos: "other"
   - id: "hi-0553"
     target: "चौवन"
+    target_scripts: { perso_arabic: "چون" }
     reading: "cauvan"
     ipa: "tʃɔːʋən"
     alt_target: ["चव्वन"]
     pos: "other"
   - id: "hi-0554"
     target: "पचपन"
+    target_scripts: { perso_arabic: "پچپن" }
     reading: "pacpan"
     ipa: "pətʃpən"
     pos: "other"
   - id: "hi-0555"
     target: "छप्पन"
+    target_scripts: { perso_arabic: "چھپن" }
     reading: "chappan"
     ipa: "tʃʰəppən"
     pos: "other"
   - id: "hi-0556"
     target: "सत्तावन"
+    target_scripts: { perso_arabic: "ستاون" }
     reading: "sattāvan"
     ipa: "sət̪t̪aːʋən"
     pos: "other"
   - id: "hi-0557"
     target: "अट्ठावन"
+    target_scripts: { perso_arabic: "اٹھاون" }
     reading: "aṭṭhāvan"
     ipa: "əʈʈʰaːʋən"
     pos: "other"
   - id: "hi-0558"
     target: "उनसठ"
+    target_scripts: { perso_arabic: "انسٹھ" }
     reading: "unsaṭh"
     ipa: "ʊnsəʈʰ"
     pos: "other"
   - id: "hi-0559"
     target: "इकसठ"
+    target_scripts: { perso_arabic: "اکسٹھ" }
     reading: "iksaṭh"
     ipa: "ɪksəʈʰ"
     pos: "other"
   - id: "hi-0560"
     target: "बासठ"
+    target_scripts: { perso_arabic: "باسٹھ" }
     reading: "bāsaṭh"
     ipa: "baːsəʈʰ"
     pos: "other"
   - id: "hi-0561"
     target: "तिरसठ"
+    target_scripts: { perso_arabic: "تریسٹھ" }
     reading: "tirsaṭh"
     ipa: "t̪ɪrsəʈʰ"
     pos: "other"
   - id: "hi-0562"
     target: "चौंसठ"
+    target_scripts: { perso_arabic: "چونسٹھ" }
     reading: "cauṁsaṭh"
     ipa: "tʃɔ̃ːsəʈʰ"
     pos: "other"
   - id: "hi-0563"
     target: "पैंसठ"
+    target_scripts: { perso_arabic: "پینسٹھ" }
     reading: "paiṁsaṭh"
     ipa: "pɛ̃ːsəʈʰ"
     pos: "other"
   - id: "hi-0564"
     target: "छियासठ"
+    target_scripts: { perso_arabic: "چھیاسٹھ" }
     reading: "chiyāsaṭh"
     ipa: "tʃʰɪjaːsəʈʰ"
     pos: "other"
   - id: "hi-0565"
     target: "सड़सठ"
+    target_scripts: { perso_arabic: "سڑسٹھ" }
     reading: "saṛsaṭh"
     ipa: "səɽsəʈʰ"
     alt_target: ["सरसठ"]
     pos: "other"
   - id: "hi-0566"
     target: "अड़सठ"
+    target_scripts: { perso_arabic: "اڑسٹھ" }
     reading: "aṛsaṭh"
     ipa: "əɽsəʈʰ"
     pos: "other"
   - id: "hi-0567"
     target: "उनहत्तर"
+    target_scripts: { perso_arabic: "انہتر" }
     reading: "unhattar"
     ipa: "ʊnɦət̪t̪ər"
     pos: "other"
   - id: "hi-0568"
     target: "इकहत्तर"
+    target_scripts: { perso_arabic: "اکہتر" }
     reading: "ikhattar"
     ipa: "ɪkɦət̪t̪ər"
     pos: "other"
   - id: "hi-0569"
     target: "बहत्तर"
+    target_scripts: { perso_arabic: "بہتر" }
     reading: "bahattar"
     ipa: "bəɦət̪t̪ər"
     pos: "other"
   - id: "hi-0570"
     target: "तिहत्तर"
+    target_scripts: { perso_arabic: "تہتر" }
     reading: "tihattar"
     ipa: "t̪ɪɦət̪t̪ər"
     pos: "other"
   - id: "hi-0571"
     target: "चौहत्तर"
+    target_scripts: { perso_arabic: "چوہتر" }
     reading: "cauhattar"
     ipa: "tʃɔːɦət̪t̪ər"
     pos: "other"
   - id: "hi-0572"
     target: "पचहत्तर"
+    target_scripts: { perso_arabic: "پچہتر" }
     reading: "pachattar"
     ipa: "pətʃɦət̪t̪ər"
     pos: "other"
   - id: "hi-0573"
     target: "छिहत्तर"
+    target_scripts: { perso_arabic: "چھہتر" }
     reading: "chihattar"
     ipa: "tʃʰɪɦət̪t̪ər"
     pos: "other"
   - id: "hi-0574"
     target: "सतहत्तर"
+    target_scripts: { perso_arabic: "ستتر" }
     reading: "sathattar"
     ipa: "sət̪ɦət̪t̪ər"
     pos: "other"
   - id: "hi-0575"
     target: "अठहत्तर"
+    target_scripts: { perso_arabic: "اٹھہتر" }
     reading: "aṭhhattar"
     ipa: "əʈʰɦət̪t̪ər"
     pos: "other"
   - id: "hi-0576"
     target: "उनासी"
+    target_scripts: { perso_arabic: "اناسی" }
     reading: "unāsī"
     ipa: "ʊnaːsiː"
     alt_target: ["उन्यासी"]
     pos: "other"
   - id: "hi-0577"
     target: "इक्यासी"
+    target_scripts: { perso_arabic: "اکیاسی" }
     reading: "ikyāsī"
     ipa: "ɪkjaːsiː"
     pos: "other"
   - id: "hi-0578"
     target: "बयासी"
+    target_scripts: { perso_arabic: "بیاسی" }
     reading: "bayāsī"
     ipa: "bəjaːsiː"
     pos: "other"
   - id: "hi-0579"
     target: "तिरासी"
+    target_scripts: { perso_arabic: "تراسی" }
     reading: "tirāsī"
     ipa: "t̪ɪraːsiː"
     pos: "other"
   - id: "hi-0580"
     target: "चौरासी"
+    target_scripts: { perso_arabic: "چوراسی" }
     reading: "caurāsī"
     ipa: "tʃɔːraːsiː"
     pos: "other"
   - id: "hi-0581"
     target: "पचासी"
+    target_scripts: { perso_arabic: "پچاسی" }
     reading: "pacāsī"
     ipa: "pətʃaːsiː"
     pos: "other"
   - id: "hi-0582"
     target: "छियासी"
+    target_scripts: { perso_arabic: "چھیاسی" }
     reading: "chiyāsī"
     ipa: "tʃʰɪjaːsiː"
     pos: "other"
   - id: "hi-0583"
     target: "सत्तासी"
+    target_scripts: { perso_arabic: "ستاسی" }
     reading: "sattāsī"
     ipa: "sət̪t̪aːsiː"
     pos: "other"
   - id: "hi-0584"
     target: "अट्ठासी"
+    target_scripts: { perso_arabic: "اٹھاسی" }
     reading: "aṭṭhāsī"
     ipa: "əʈʈʰaːsiː"
     pos: "other"
   - id: "hi-0585"
     target: "नवासी"
+    target_scripts: { perso_arabic: "نواسی" }
     reading: "navāsī"
     ipa: "nəʋaːsiː"
     pos: "other"
   - id: "hi-0586"
     target: "इक्यानवे"
+    target_scripts: { perso_arabic: "اکیانوے" }
     reading: "ikyānvē"
     ipa: "ɪkjaːnʋeː"
     pos: "other"
   - id: "hi-0587"
     target: "बानवे"
+    target_scripts: { perso_arabic: "بانوے" }
     reading: "bānvē"
     ipa: "baːnʋeː"
     pos: "other"
   - id: "hi-0588"
     target: "तिरानवे"
+    target_scripts: { perso_arabic: "ترانوے" }
     reading: "tirānvē"
     ipa: "t̪ɪraːnʋeː"
     pos: "other"
   - id: "hi-0589"
     target: "चौरानवे"
+    target_scripts: { perso_arabic: "چورانوے" }
     reading: "caurānvē"
     ipa: "tʃɔːraːnʋeː"
     pos: "other"
   - id: "hi-0590"
     target: "पचानवे"
+    target_scripts: { perso_arabic: "پچانوے" }
     reading: "pacānvē"
     ipa: "pətʃaːnʋeː"
     alt_target: ["पंचानवे"]
     pos: "other"
   - id: "hi-0591"
     target: "छियानवे"
+    target_scripts: { perso_arabic: "چھیانوے" }
     reading: "chiyānvē"
     ipa: "tʃʰɪjaːnʋeː"
     pos: "other"
   - id: "hi-0592"
     target: "सत्तानवे"
+    target_scripts: { perso_arabic: "ستانوے" }
     reading: "sattānvē"
     ipa: "sət̪t̪aːnʋeː"
     pos: "other"
   - id: "hi-0593"
     target: "अट्ठानवे"
+    target_scripts: { perso_arabic: "اٹھانوے" }
     reading: "aṭṭhānvē"
     ipa: "əʈʈʰaːnʋeː"
     pos: "other"
   - id: "hi-0594"
     target: "निन्यानवे"
+    target_scripts: { perso_arabic: "ننانوے" }
     reading: "ninyānvē"
     ipa: "nɪnjaːnʋeː"
     alt_target: ["निन्यानबे"]
