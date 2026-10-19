@@ -342,13 +342,28 @@ sheets = <String, Future<void> Function(WidgetTester tester)>{
       GalleryPreview(key: UniqueKey(), entry: entry),
       state: app,
     );
-    final change = find.descendant(
-      of: languageCard('te'),
-      matching: find.text(l10nOf(tester).pickerChangeNative),
-    );
-    await scrollToInPicker(tester, change);
+    // Over the language's own sheet, which holds the question (#626).
+    await openSheet(tester, 'te');
+    final change = find.text(l10nOf(tester).pickerChangeNative);
+    await tester.ensureVisible(change);
+    await tester.pumpAndSettle();
     await tester.tap(change);
     await tester.pumpAndSettle();
+  },
+  'language_picker_page: a language, learned in steps': (tester) async {
+    final app = AppState.test();
+    await app.load();
+    final entry = placementGalleryEntries.firstWhere(
+      (e) => e.id == 'picker-taught-from-list',
+    );
+    await pumpScreen(
+      tester,
+      GalleryPreview(key: UniqueKey(), entry: entry),
+      state: app,
+    );
+    // Its scripts screen, the longest of the three.
+    await openSheet(tester, 'kn');
+    await tapSheet(tester, 'sheet-learn');
   },
   'spoken_languages_picker: a language I know': (tester) async {
     final state = AppState.test();
@@ -434,6 +449,7 @@ void main() {
       'speech_test_sheet': 1,
       'adjust_section': 1,
       'language_card': 1,
+      'language_picker_page': 1,
       'set_drill': 1,
       'spoken_languages_picker': 1,
       'restore_sheet': 2,
@@ -447,7 +463,8 @@ void main() {
       ) async {
         usePhone(tester, navBar: true, textScale: scale);
         await open(tester);
-        final sheet = find.byType(BottomSheet);
+        // The top one: a language's sheet can open another over it.
+        final sheet = find.byType(BottomSheet).last;
         expect(sheet, findsOneWidget, reason: 'the sheet opened');
         expect(
           MediaQuery.textScalerOf(tester.element(sheet)).scale(1),
