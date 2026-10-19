@@ -32,38 +32,56 @@ class InputModeChoice extends StatelessWidget {
       feature: Feature.translitInput,
       label: l10n.drillInputModeGroup,
       badge: IncomingBadgePlacement.below,
-      child: Segmented<InputMode>(
+      child: Segmented<String>(
         semanticLabel: l10n.drillInputModeGroup,
         // The 48dp tap target, which 44 fell short of at small text.
         height: 48,
-        selected: session.transliterating
-            ? InputMode.translit
-            : InputMode.script,
+        selected: session.transliterating ? _translit : session.inputScript,
         onSelected: incoming
             ? null
-            : (mode) {
+            : (choice) {
                 onChanged();
-                session.inputMode = mode;
+                if (choice == _translit) {
+                  session.inputMode = InputMode.translit;
+                } else {
+                  session.chooseScript(choice);
+                }
               },
-        options: <SegmentOption<InputMode>>[
-          SegmentOption<InputMode>(
-            value: InputMode.script,
-            label: l10n.drillInputScript(
-              l10n.scriptNameOr(language.script, language.name),
+        options: <SegmentOption<String>>[
+          // One option for each script learned (#623).
+          for (final script in session.writeScripts)
+            SegmentOption<String>(
+              value: script,
+              label: l10n.drillInputScript(
+                l10n.scriptNameOr(script, language.name),
+              ),
+              leading: TargetText(
+                _glyph(script),
+                language: language.inScript(script),
+                fontSize: 16,
+              ),
             ),
-            leading: TargetText(
-              session.deck.glyph,
-              language: language,
-              fontSize: 16,
-            ),
-          ),
-          SegmentOption<InputMode>(
-            value: InputMode.translit,
+          SegmentOption<String>(
+            value: _translit,
             label: l10n.drillInputTranslit,
             leading: const Icon(Icons.abc, size: 20),
           ),
         ],
       ),
     );
+  }
+
+  /// The id of the Latin-letters option, among the scripts' ids.
+  static const String _translit = 'translit';
+
+  /// One letter in [script]: the current card's, else the deck's.
+  String _glyph(String script) {
+    if (script == session.deck.language.script) return session.deck.glyph;
+    final spelling = session.item.card.targetIn(
+      script,
+      firstScript: session.deck.language.script,
+    );
+    final trimmed = spelling?.trim() ?? '';
+    return trimmed.isEmpty ? session.deck.glyph : trimmed.characters.first;
   }
 }

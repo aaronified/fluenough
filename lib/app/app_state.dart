@@ -1844,7 +1844,7 @@ class AppState extends ChangeNotifier {
     Card card,
     LanguageInfo language,
   ) {
-    final first = primaryScript(language.code);
+    final first = language.script;
     final learned = learnedScripts(language);
     if (learned.isEmpty || learned.contains(first)) {
       return (text: card.target, language: language);
