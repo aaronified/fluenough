@@ -146,14 +146,14 @@ class _VoicesPageState extends State<VoicesPage> with WidgetsBindingObserver {
     super.didChangeDependencies();
     if (_apps == null && !_loadingApps) {
       _loadingApps = true;
-      unawaited(_loadApps(DefaultAssetBundle.of(context)));
+      unawaited(_loadApps(DefaultAssetBundle.of(context).loadString));
     }
   }
 
-  Future<void> _loadApps(AssetBundle bundle) async {
+  Future<void> _loadApps(Future<String> Function(String key) load) async {
     List<VoiceApp> apps;
     try {
-      apps = parseVoiceApps(await bundle.loadString(VoicesPage.appsAsset));
+      apps = parseVoiceApps(await load(VoicesPage.appsAsset));
     } catch (_) {
       // The list is a help, not the page: without it there is none.
       apps = const <VoiceApp>[];
@@ -310,13 +310,14 @@ class _VoicesPageState extends State<VoicesPage> with WidgetsBindingObserver {
             ? VoiceStatus.checking
             : state.voiceStatus(language),
         voices: _voices[language.ttsTag],
-        otherTags: <({String tag, VoiceStatus status})>[
+        otherTags: <CourseVoice>[
           for (final other in others)
             (
               tag: other.ttsTag,
               status: _rechecking
                   ? VoiceStatus.checking
                   : state.voiceStatus(other),
+              backup: _rechecking ? null : state.backupVoice(other)?.ttsTag,
             ),
         ],
         otherVoices: <TtsVoice>[
@@ -486,6 +487,11 @@ class _FoldHeader extends StatelessWidget {
   }
 }
 
+/// One of a course's voice tags beside the card's own, such as `ur-PK`
+/// beside `hi-IN` (#641): whether the phone has it and, while it does not,
+/// the tag of the voice that says its cards instead, or null.
+typedef CourseVoice = ({String tag, VoiceStatus status, String? backup});
+
 /// One language's card on the Voices page: hearing it and speaking it.
 class LanguageVoiceCard extends StatelessWidget {
   const LanguageVoiceCard({
@@ -506,7 +512,7 @@ class LanguageVoiceCard extends StatelessWidget {
     required this.onSwitchOnSpeaking,
     required this.onAllowOnline,
     required this.onOpenStore,
-    this.otherTags = const <({String tag, VoiceStatus status})>[],
+    this.otherTags = const <CourseVoice>[],
     this.otherVoices = const <TtsVoice>[],
     this.backup,
     this.apps = const <VoiceApp>[],
@@ -525,7 +531,7 @@ class LanguageVoiceCard extends StatelessWidget {
 
   /// The course's other voice tags and whether the phone has each: `ur-PK`
   /// beside `hi-IN` for Hindustani (#641).
-  final List<({String tag, VoiceStatus status})> otherTags;
+  final List<CourseVoice> otherTags;
 
   /// The phone's voices for [otherTags], those asked for so far.
   final List<TtsVoice> otherVoices;
@@ -666,6 +672,11 @@ class LanguageVoiceCard extends StatelessWidget {
     final chosenNow = choices.any((v) => v.name == chosen) ? chosen : null;
     final hasVoice =
         available || otherTags.any((t) => t.status == VoiceStatus.available);
+    // A voice the course uses that the phone lacks and nothing stands in
+    // for: it can be downloaded (#641).
+    final canDownload =
+        (voiceStatus == VoiceStatus.missing && backup == null) ||
+        otherTags.any((t) => t.status == VoiceStatus.missing);
     final String? inUse;
     if (backup case final tag?) {
       inUse = l10n.voicesInUseBackup(tag);
@@ -691,7 +702,10 @@ class LanguageVoiceCard extends StatelessWidget {
           title: l10n.voicesListening,
           line: switch (other.status) {
             VoiceStatus.available => l10n.deckVoiceInstalled(other.tag),
-            VoiceStatus.missing => l10n.deckVoiceMissing(other.tag),
+            VoiceStatus.missing =>
+              other.backup == null
+                  ? l10n.deckVoiceMissing(other.tag)
+                  : l10n.deckVoiceBackup(other.tag, other.backup!),
             VoiceStatus.checking => l10n.deckVoiceChecking(other.tag),
           },
         ),
@@ -701,7 +715,7 @@ class LanguageVoiceCard extends StatelessWidget {
           padding: const EdgeInsetsDirectional.only(start: 34, top: 8),
           child: Text(inUse, style: settingsHelpStyle(theme)),
         ),
-      if (voiceStatus == VoiceStatus.missing && backup == null)
+      if (canDownload)
         Padding(
           padding: const EdgeInsetsDirectional.only(start: 34, top: 8),
           child: Text(l10n.voicesDownloadHint, style: settingsHelpStyle(theme)),
@@ -767,7 +781,7 @@ class LanguageVoiceCard extends StatelessWidget {
       if (apps.isNotEmpty)
         _OtherVoices(
           apps: apps,
-          open: voiceStatus == VoiceStatus.missing && backup == null,
+          open: canDownload,
           onOpenStore: onOpenStore,
         ),
     ];
