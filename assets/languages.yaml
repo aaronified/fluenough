@@ -12,6 +12,9 @@
 #                   A script's name is the app's (`bengali` is Eastern
 #                   Nagari), never the language's: see `scriptName` in
 #                   lib/l10n/app_en.arb, where a new script is named too.
+#   aliases         optional: other names a search finds it by, such as
+#                   "Urdu" for Hindustani, which has no entry of its own
+#                   (#623)
 #   family          indo_aryan, dravidian, tibeto_burman, austroasiatic or
 #                   germanic: the folded group it is listed in
 #   script_question, script_can_read
@@ -47,6 +50,7 @@ languages:
   - { code: "bn", iso639_3: "ben", name: "Bengali", own_name: "বাংলা", scripts: ["bengali"], family: "indo_aryan",
       script_question: "আপনি কি পূর্ব নাগরী লিপি পড়তে পারেন?", script_can_read: "আমি পূর্ব নাগরী লিপি পড়তে পারি" }
   - { code: "hi", iso639_3: "hin", name: "Hindustani", own_name: "हिन्दुस्तानी · ہندوستانی", scripts: ["devanagari", "perso_arabic"], family: "indo_aryan",
+      aliases: ["Hindi", "Urdu", "हिन्दी", "उर्दू", "اردو", "ہندی"],
       scripts_question: "आप हिन्दुस्तानी किन लिपियों में पढ़ सकते हैं?",
       script_can_read: { devanagari: "मुझे देवनागरी लिपि पढ़नी आती है", "perso_arabic": "मुझे फ़ारसी-अरबी (उर्दू) लिपि पढ़नी आती है" }, script_text: "unchecked" }  # Hindi and Urdu as one course (#623); Claude-written, for a speaker to check
   - { code: "as", iso639_3: "asm", name: "Assamese", own_name: "অসমীয়া", scripts: ["bengali"], family: "indo_aryan",
@@ -93,8 +97,6 @@ languages:
       script_question: "உங்களால் தமிழ் எழுத்துமுறையைப் படிக்க முடியுமா?", script_can_read: "என்னால் தமிழ் எழுத்துமுறையைப் படிக்க முடியும்", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "te", iso639_3: "tel", name: "Telugu", own_name: "తెలుగు", scripts: ["telugu"], family: "dravidian",
       script_question: "మీరు తెలుగు లిపిని చదవగలరా?", script_can_read: "నేను తెలుగు లిపిని చదవగలను", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
-  - { code: "ur", iso639_3: "urd", name: "Urdu", own_name: "اردو", scripts: ["arabic"], family: "indo_aryan",
-      script_question: "کیا آپ کو فارسی-عربی رسم الخط پڑھنا آتا ہے؟", script_can_read: "مجھے فارسی-عربی رسم الخط پڑھنا آتا ہے", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "bho", iso639_3: "bho", name: "Bhojpuri", own_name: "भोजपुरी", scripts: ["devanagari"], family: "indo_aryan",
       script_question: "का रउआ देवनागरी लिपि पढ़ सकत बानी?", script_can_read: "हम देवनागरी लिपि पढ़ सकत बानी", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "tcy", iso639_3: "tcy", name: "Tulu", own_name: "ತುಳು", scripts: ["kannada"], family: "dravidian",
