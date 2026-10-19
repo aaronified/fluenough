@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 
 import '../../app/deck_downloads.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/script_name.dart';
 
 /// [bytes] as a download size: "310 KB", or "1.2 MB" from a megabyte up.
 String formatSize(AppLocalizations l10n, int bytes) {
@@ -13,6 +14,24 @@ String formatSize(AppLocalizations l10n, int bytes) {
   }
   final mb = NumberFormat('#,##0.0', l10n.localeName).format(bytes / kb / kb);
   return l10n.downloadsSizeMb(mb);
+}
+
+/// How far [code]'s download has got, in files: "3 of 12 files", and while
+/// a font of one of its scripts is still coming, that too (ADR-0042).
+String downloadProgressText(
+  AppLocalizations l10n,
+  DeckDownloads downloads,
+  String code,
+  DownloadProgress progress,
+) {
+  final font = downloads.fontDownloading(code);
+  return font == null
+      ? l10n.downloadsProgress(progress.done, progress.total)
+      : l10n.downloadsProgressFont(
+          progress.done,
+          progress.total,
+          l10n.scriptNameOr(font, font),
+        );
 }
 
 /// Why decks could not be downloaded, and what to do about it.
