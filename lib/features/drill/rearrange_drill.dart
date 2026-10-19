@@ -38,6 +38,8 @@ class RearrangeDrill extends StatelessWidget {
     final scheme = theme.colorScheme;
     final card = session.item.card;
     final language = session.deck.language;
+    // The script the words are put in order in (#623).
+    final writing = session.inputLanguage;
     final answer = session.answer;
     final latin = session.rearrangesReading;
     final tiles = session.tiles;
@@ -46,7 +48,7 @@ class RearrangeDrill extends StatelessWidget {
 
     Widget word(int index, {required bool inAnswer}) => _WordTile(
       text: tiles[index],
-      language: latin ? null : language,
+      language: latin ? null : writing,
       hint: inAnswer ? l10n.drillRearrangeTakeBack : null,
       onTap: answer != null
           ? null
@@ -154,10 +156,10 @@ class RearrangeDrill extends StatelessWidget {
               kind: FeedbackKind.wrong,
               title: l10n.feedbackWrong,
               detail: l10n.feedbackAnswer(
-                latin && reading != null ? reading : card.target,
+                latin && reading != null ? reading : session.writtenTarget,
               ),
-              quotes: <String>[if (!latin) card.target],
-              language: latin ? null : language,
+              quotes: <String>[if (!latin) session.writtenTarget],
+              language: latin ? null : writing,
             ),
       actions: <Widget>[
         if (answer == null)
