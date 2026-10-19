@@ -1836,6 +1836,26 @@ class AppState extends ChangeNotifier {
     ];
   }
 
+  /// The other spellings of [card] to show beneath [targetShown]'s, smaller
+  /// (#623): when the learner learns its script and another too, the others
+  /// that it has. None for a card or a learner with one script.
+  List<({String text, LanguageInfo language})> otherSpellings(
+    Card card,
+    LanguageInfo language,
+  ) {
+    final first = language.script;
+    final learned = learnedScripts(language);
+    if (!learned.contains(first)) {
+      return const <({String text, LanguageInfo language})>[];
+    }
+    return <({String text, LanguageInfo language})>[
+      for (final script in learned)
+        if (script != first)
+          if (card.targetIn(script, firstScript: first) case final text?)
+            (text: text, language: language.inScript(script)),
+    ];
+  }
+
   /// How [card] is shown as [language]'s text: the learner's script and
   /// that script's language, which draws it in its direction (#623). The
   /// card's own target and [language] unless they learn only another
