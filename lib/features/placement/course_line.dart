@@ -34,7 +34,7 @@ class CourseLine extends StatelessWidget {
       l10n.pickerLevelCulture,
     ];
     final fills = <double>[...levels, culture];
-    String percent(double share) => '${(share * 100).floor().clamp(0, 100)}%';
+    String percent(double share) => l10n.commonPercent(share.clamp(0.0, 1.0));
     return Semantics(
       label: l10n.pickerCourseLineLabel(
         <String>[
