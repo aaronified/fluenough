@@ -2057,6 +2057,16 @@ class ScriptInProse(B1Case):
                          "'అమ్మ' has no transliteration beside it; write its ISO 15919 "
                          "reading in parentheses, as లేదు (lēdu)")
 
+    def test_an_urdu_word_is_one_run_across_the_arabic_halves(self) -> None:
+        # U+0679 and U+0688-U+06D2 sit in different 128-code-point halves.
+        self.edit(LAYER, lambda d: d["cards"]["zz-9001"].update(notes={
+            "address": "It joins only to the letter before it: لڑکا (laṛkā, boy)."}))
+        self.assertNoError(LAYER, "transliteration")
+        self.edit(LAYER, lambda d: d["cards"]["zz-9001"].update(notes={
+            "address": "apart from ت: ٹھیک (ṭhīk, right)"}))
+        self.assertTrue(any("'ت' has no transliteration beside it" in e
+                            for e in self.errors(LAYER)))
+
     def test_a_cores_own_words_need_no_reading(self) -> None:
         self.assertNoError(CORE)
         self.edit(CORE, lambda d: d.update(source="ইল্লু"))

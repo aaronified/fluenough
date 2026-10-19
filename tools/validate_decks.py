@@ -2018,15 +2018,25 @@ _CODE_BLOCK = {"hi": 0x0900, "mr": 0x0900, "ne": 0x0900, "sa": 0x0900,
 _SCRIPT_BLOCK = {"devanagari": 0x0900, "bengali": 0x0980, "gurmukhi": 0x0A00,
                  "gujarati": 0x0A80, "odia": 0x0B00, "tamil": 0x0B80,
                  "telugu": 0x0C00, "kannada": 0x0C80, "malayalam": 0x0D00,
-                 "sinhala": 0x0D80}
+                 "sinhala": 0x0D80,
+                 "perso_arabic": 0x0600, "arabic": 0x0600, "shahmukhi": 0x0600}
 # Keys whose values are the word itself, not prose about it.
 _WORD_KEYS = {"id", "key", "target", "reading", "readings", "ipa", "ipas",
               "term", "example", "letters", "letter", "forms", "alternatives",
               "answer", "answers", "accept", "equivalents", "words", "tiles",
-              "source", "scheme", "audio", "image",
+              "source", "scheme", "audio", "image", "icon",
               # The B1 format's (ADR-0036): a base's word, a card or a rule
               # named by id.
               "word", "base", "ref", "core", "except", "rules", "part", "region"}
+
+
+def _block(ch: str) -> int:
+    """The 128-code-point block of [ch]; Arabic and its Perso-Arabic letters
+    (U+0600-U+06FF, U+0750-U+077F) count as one."""
+    o = ord(ch)
+    if 0x0600 <= o <= 0x06FF or 0x0750 <= o <= 0x077F:
+        return 0x0600 >> 7
+    return o >> 7
 
 
 def _script_runs(text: str):
@@ -2035,7 +2045,7 @@ def _script_runs(text: str):
         start, run, block = m.start(), "", None
         for i, ch in enumerate(m.group(0)):
             mark = unicodedata.category(ch).startswith("M")
-            b = ord(ch) >> 7 if _SCRIPT_CHAR.match(ch) and not mark else None
+            b = _block(ch) if _SCRIPT_CHAR.match(ch) and not mark else None
             if b is not None and block is not None and b != block:
                 kept = run.rstrip(" -")
                 yield start, kept
@@ -2060,10 +2070,10 @@ def _untransliterated(text: str, code: str | None, own: int | None = None) -> li
         first = next((c for c in run if _SCRIPT_CHAR.match(c)), None)
         if first is None or all(c in _SILENT or c == "-" for c in run):
             continue
-        if own is not None and ord(first) >> 7 == own >> 7:
+        if own is not None and _block(first) == own >> 7:
             continue
         if code not in (None, "en"):
-            if code in _CODE_BLOCK and ord(first) >> 7 == _CODE_BLOCK[code] >> 7:
+            if code in _CODE_BLOCK and _block(first) == _CODE_BLOCK[code] >> 7:
                 continue
         after = text[end:end + 12]
         if re.match(rf"[?!.,;:]?\s?\(\s?[*_'\"]?-?(?:\d|[{letter}])", after):
@@ -2746,7 +2756,9 @@ def validate_core(r: Report, raw: dict, path: Path) -> None:
     lang = raw.get("language")
     code = _lang_code(lang)
     shown = code or "<lang>"
-    check_transliterated(r, raw, fixed=code or "", own=_SCRIPT_BLOCK.get(_script_of(lang)),
+    # The block's own script, known to the validator or not (perso_arabic).
+    own = _SCRIPT_BLOCK.get(lang.get("script")) if isinstance(lang, dict) else None
+    check_transliterated(r, raw, fixed=code or "", own=own,
                          word_keys=_WORD_KEYS | {"slots"})
     check_romanised(r, raw, path)
     check_ipa(r, raw)
