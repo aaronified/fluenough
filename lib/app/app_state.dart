@@ -1193,13 +1193,21 @@ class AppState extends ChangeNotifier {
       if (other.code == language.code &&
           other.ttsTag != language.ttsTag &&
           other.script != language.script &&
-          language.allScripts.contains(other.script) &&
-          _voices[other.ttsTag] == true) {
+          _voices[other.ttsTag] == true &&
+          _spelledIn(language, other.script)) {
         return other;
       }
     }
     return null;
   }
+
+  /// Whether a deck voiced as [language] gives its cards in [script] too,
+  /// not only names the script among the language's.
+  bool _spelledIn(LanguageInfo language, String script) => decks.any(
+    (d) =>
+        d.language.ttsTag == language.ttsTag &&
+        d.deck.cards.any((c) => c.targetScripts.containsKey(script)),
+  );
 
   /// Every voice the course of [code] uses, one language block per voice
   /// tag, in the order its decks name them: `hi-IN` and `ur-PK` for
