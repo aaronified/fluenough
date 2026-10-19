@@ -186,9 +186,7 @@ void main() {
   });
 
   testWidgets('adding Perso-Arabic and stopping Devanagari saves the '
-      'Perso-Arabic choice, not a yes or no about Devanagari', (
-    tester,
-  ) async {
+      'Perso-Arabic choice, not a yes or no about Devanagari', (tester) async {
     usePhone(tester);
     tester.view.physicalSize = const Size(390 * 3, 6000 * 3);
     final state = await pumpScreen(
