@@ -11,25 +11,22 @@ import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
 
 /// How a script works, opened from a script deck's Tips (#30, ADR-0016).
-/// The drill shows the same guide once, before a language's first script
-/// card, with Start in place of Done.
+/// The drill shows the same guide once, before the first card in its script,
+/// with Start in place of Done.
 class ScriptGuidePage extends StatelessWidget {
-  const ScriptGuidePage({super.key, required this.languageCode});
+  const ScriptGuidePage({super.key, required this.guideKey});
 
-  /// The language whose guide to show, by code.
-  final String languageCode;
+  /// The guide to show, by its [ScriptGuide.key]: a language's code, or the
+  /// code and a script, such as `hi-perso-arabic`.
+  final String guideKey;
 
   @override
   Widget build(BuildContext context) {
     final state = AppScope.of(context);
     final l10n = AppLocalizations.of(context)!;
-    LanguageInfo? language;
-    for (final candidate in state.languages) {
-      if (candidate.code == languageCode) language = candidate;
-    }
-    final guide = language == null ? null : state.scriptGuideFor(language);
+    final found = state.scriptGuideByKey(guideKey);
     void close() => Navigator.of(context).maybePop();
-    if (language == null || guide == null) {
+    if (found == null) {
       return Scaffold(
         appBar: AppBar(
           leading: IconButton(
@@ -41,6 +38,7 @@ class ScriptGuidePage extends StatelessWidget {
         ),
       );
     }
+    final (guide, language) = found;
     return ScriptGuideView(
       guide: guide,
       language: language,
