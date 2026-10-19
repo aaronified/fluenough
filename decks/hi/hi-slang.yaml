@@ -2,12 +2,13 @@ schema: 1
 id: "hi-slang"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 tags: ["slang", "unreviewed"]
 cards:
   - id: "hi-0595"
     target: "यार"
+    target_scripts: { perso_arabic: "یار" }
     reading: "yār"
     ipa: "jaːr"
     pos: "noun"
@@ -15,6 +16,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0596"
     target: "जुगाड़"
+    target_scripts: { perso_arabic: "جگاڑ" }
     reading: "jugāṛ"
     ipa: "dʒʊɡaːɽ"
     pos: "noun"
@@ -23,6 +25,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0597"
     target: "टाइमपास"
+    target_scripts: { perso_arabic: "ٹائم پاس" }
     reading: "ṭāimpās"
     ipa: "ʈaːɪmpaːs"
     pos: "noun"
@@ -31,6 +34,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0598"
     target: "मस्त"
+    target_scripts: { perso_arabic: "مست" }
     reading: "mast"
     ipa: "məst̪"
     pos: "adj"
@@ -38,11 +42,13 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0599"
     target: "बिंदास"
+    target_scripts: { perso_arabic: "بنداس" }
     reading: "bindās"
     ipa: "bɪnd̪aːs"
     pos: "adj"
   - id: "hi-0600"
     target: "बकवास"
+    target_scripts: { perso_arabic: "بکواس" }
     reading: "bakvās"
     ipa: "bəkʋaːs"
     pos: "noun"
@@ -51,6 +57,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0601"
     target: "चलता है"
+    target_scripts: { perso_arabic: "چلتا ہے" }
     reading: "caltā hai"
     ipa: "tʃəlt̪aː ɦɛː"
     pos: "phrase"
@@ -60,6 +67,7 @@ cards:
       - { word: "चलता", base: "चलना", reading: "calnā" }
   - id: "hi-0602"
     target: "पीना"
+    target_scripts: { perso_arabic: "پینا" }
     reading: "pīnā"
     ipa: "piːnaː"
     pos: "verb"
@@ -67,6 +75,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0603"
     target: "दारू"
+    target_scripts: { perso_arabic: "دارو" }
     reading: "dārū"
     ipa: "d̪aːruː"
     pos: "noun"
