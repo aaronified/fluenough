@@ -65,7 +65,12 @@ void main() {
           language: 'en',
           ipa: '[pʰɪn]',
         ),
-        const CardExample(target: 'cat', native: 'cat', language: 'en', ipa: 'kæt'),
+        const CardExample(
+          target: 'cat',
+          native: 'cat',
+          language: 'en',
+          ipa: 'kæt',
+        ),
       ],
     );
     await pumpScreen(
