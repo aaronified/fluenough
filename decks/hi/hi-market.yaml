@@ -2,13 +2,14 @@ schema: 1
 id: "hi-market"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 theme: "market"
 tags: ["beginner"]
 cards:
   - id: "hi-0231"
     target: "कितने का है?"
+    target_scripts: { perso_arabic: "کتنے کا ہے؟" }
     reading: "kitnē kā hai?"
     ipa: "kɪt̪neː kaː ɦɛː"
     pos: "phrase"
@@ -18,6 +19,7 @@ cards:
       - { word: "कितने", ref: "hi-0163" }
   - id: "hi-0232"
     target: "दाम"
+    target_scripts: { perso_arabic: "دام" }
     reading: "dām"
     ipa: "d̪aːm"
     pos: "noun"
@@ -26,6 +28,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0233"
     target: "रुपया"
+    target_scripts: { perso_arabic: "روپیہ" }
     reading: "rupayā"
     ipa: "rʊpəjaː"
     pos: "noun"
@@ -34,6 +37,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0234"
     target: "पैसे"
+    target_scripts: { perso_arabic: "پیسے" }
     picture: "💰"
     reading: "paisē"
     ipa: "pɛːseː"
@@ -43,6 +47,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0235"
     target: "खुले पैसे"
+    target_scripts: { perso_arabic: "کھلے پیسے" }
     reading: "khulē paisē"
     ipa: "kʰʊleː pɛːseː"
     pos: "phrase"
@@ -52,6 +57,7 @@ cards:
       - { word: "खुले", base: "खुला", reading: "khulā" }
   - id: "hi-0236"
     target: "महँगा"
+    target_scripts: { perso_arabic: "مہنگا" }
     reading: "maham̐gā"
     ipa: "məɦə̃ɡaː"
     alt_target: ["महंगा"]
@@ -60,6 +66,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0237"
     target: "सस्ता"
+    target_scripts: { perso_arabic: "سستا" }
     reading: "sastā"
     ipa: "səst̪aː"
     pos: "adj"
@@ -67,6 +74,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0238"
     target: "थोड़ा कम कीजिए।"
+    target_scripts: { perso_arabic: "تھوڑا کم کیجیے۔" }
     reading: "thōṛā kam kījiē."
     ipa: "t̪ʰoːɽaː kəm kiːdʒɪeː"
     pos: "phrase"
@@ -78,12 +86,14 @@ cards:
       - { word: "कीजिए", base: "करना", reading: "karnā" }
   - id: "hi-0239"
     target: "दुकान"
+    target_scripts: { perso_arabic: "دکان" }
     reading: "dukān"
     ipa: "d̪ʊkaːn"
     pos: "noun"
     gender: "f"
   - id: "hi-0240"
     target: "दीजिए"
+    target_scripts: { perso_arabic: "دیجیے" }
     reading: "dījiē"
     ipa: "d̪iːdʒɪeː"
     pos: "verb"
@@ -92,6 +102,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0241"
     target: "किलो"
+    target_scripts: { perso_arabic: "کلو" }
     reading: "kilō"
     ipa: "kɪloː"
     pos: "noun"
@@ -100,6 +111,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0242"
     target: "बस"
+    target_scripts: { perso_arabic: "بس" }
     reading: "bas"
     ipa: "bəs"
     pos: "other"

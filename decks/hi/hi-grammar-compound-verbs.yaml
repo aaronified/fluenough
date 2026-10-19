@@ -2,12 +2,13 @@ schema: 1
 id: "hi-grammar-compound-verbs"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed", "grammar"]
 cards:
   - id: "hi-0504"
     target: "खा लेना"
+    target_scripts: { perso_arabic: "کھا لینا" }
     reading: "khā lēnā"
     ipa: "kʰaː leːnaː"
     pos: "phrase"
@@ -18,6 +19,7 @@ cards:
       - { word: "लेना", base: "लेना", reading: "lēnā" }
   - id: "hi-0505"
     target: "दे देना"
+    target_scripts: { perso_arabic: "دے دینا" }
     reading: "dē dēnā"
     ipa: "d̪eː d̪eːnaː"
     pos: "phrase"
@@ -28,6 +30,7 @@ cards:
       - { word: "देना", base: "देना", reading: "dēnā" }
   - id: "hi-0506"
     target: "रख देना"
+    target_scripts: { perso_arabic: "رکھ دینا" }
     reading: "rakh dēnā"
     ipa: "rəkʰ d̪eːnaː"
     pos: "phrase"
@@ -36,6 +39,7 @@ cards:
       - { word: "देना", base: "देना", reading: "dēnā" }
   - id: "hi-0507"
     target: "आ जाना"
+    target_scripts: { perso_arabic: "آ جانا" }
     reading: "ā jānā"
     ipa: "aː dʒaːnaː"
     pos: "phrase"
@@ -45,6 +49,7 @@ cards:
       - { word: "जाना", base: "जाना", reading: "jānā" }
   - id: "hi-0508"
     target: "हो जाना"
+    target_scripts: { perso_arabic: "ہو جانا" }
     reading: "hō jānā"
     ipa: "ɦoː dʒaːnaː"
     pos: "phrase"
@@ -55,6 +60,7 @@ cards:
       - { word: "जाना", base: "जाना", reading: "jānā" }
   - id: "hi-0509"
     target: "सो जाना"
+    target_scripts: { perso_arabic: "سو جانا" }
     reading: "sō jānā"
     ipa: "soː dʒaːnaː"
     pos: "phrase"
@@ -63,6 +69,7 @@ cards:
       - { word: "जाना", base: "जाना", reading: "jānā" }
   - id: "hi-0510"
     target: "बैठ जाना"
+    target_scripts: { perso_arabic: "بیٹھ جانا" }
     reading: "baiṭh jānā"
     ipa: "bɛːʈʰ dʒaːnaː"
     pos: "phrase"
@@ -71,6 +78,7 @@ cards:
       - { word: "जाना", base: "जाना", reading: "jānā" }
   - id: "hi-0511"
     target: "समझ जाना"
+    target_scripts: { perso_arabic: "سمجھ جانا" }
     reading: "samajh jānā"
     ipa: "səmədʒʱ dʒaːnaː"
     pos: "phrase"
@@ -81,6 +89,7 @@ cards:
       - { word: "जाना", base: "जाना", reading: "jānā" }
   - id: "hi-0512"
     target: "भूल जाना"
+    target_scripts: { perso_arabic: "بھول جانا" }
     reading: "bhūl jānā"
     ipa: "bʱuːl dʒaːnaː"
     pos: "phrase"

@@ -2,13 +2,14 @@ schema: 1
 id: "hi-work"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 theme: "work"
 tags: ["beginner", "unreviewed"]
 cards:
   - id: "hi-0399"
     target: "नौकरी"
+    target_scripts: { perso_arabic: "نوکری" }
     reading: "naukrī"
     ipa: "nɔːkriː"
     pos: "noun"
@@ -18,6 +19,7 @@ cards:
   - ref: "hi-0194"
   - id: "hi-0400"
     target: "दफ़्तर"
+    target_scripts: { perso_arabic: "دفتر" }
     picture: "🏢"
     reading: "daftar"
     ipa: "d̪əft̪ər"
@@ -38,36 +40,42 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0402"
     target: "दुकानदार"
+    target_scripts: { perso_arabic: "دکاندار" }
     reading: "dukāndār"
     ipa: "d̪ʊkaːnd̪aːr"
     pos: "noun"
     gender: "m"
   - id: "hi-0403"
     target: "ड्राइवर"
+    target_scripts: { perso_arabic: "ڈرائیور" }
     reading: "ḍrāivar"
     ipa: "ɖraːɪʋər"
     pos: "noun"
     gender: "m"
   - id: "hi-0404"
     target: "इंजीनियर"
+    target_scripts: { perso_arabic: "انجینئر" }
     reading: "iñjīniyar"
     ipa: "ɪɲdʒiːnɪjər"
     pos: "noun"
     gender: "m"
   - id: "hi-0405"
     target: "वकील"
+    target_scripts: { perso_arabic: "وکیل" }
     reading: "vakīl"
     ipa: "ʋəkiːl"
     pos: "noun"
     gender: "m"
   - id: "hi-0406"
     target: "नर्स"
+    target_scripts: { perso_arabic: "نرس" }
     reading: "nars"
     ipa: "nərs"
     pos: "noun"
     gender: "f"
   - id: "hi-0407"
     target: "किसान"
+    target_scripts: { perso_arabic: "کسان" }
     picture: "🧑‍🌾"
     reading: "kisān"
     ipa: "kɪsaːn"
@@ -108,6 +116,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0412"
     target: "छुट्टी"
+    target_scripts: { perso_arabic: "چھٹی" }
     reading: "chuṭṭī"
     ipa: "tʃʰʊʈʈiː"
     pos: "noun"
@@ -116,6 +125,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0413"
     target: "तनख़्वाह"
+    target_scripts: { perso_arabic: "تنخواہ" }
     reading: "tank͟hvāh"
     ipa: "t̪ənxʋaːɦ"
     alt_target: ["तनख्वाह", "वेतन"]
@@ -131,6 +141,7 @@ cards:
     gender: "m"
   - id: "hi-0415"
     target: "आप क्या करते हैं?"
+    target_scripts: { perso_arabic: "آپ کیا کرتے ہیں؟" }
     reading: "āp kyā kartē haim̐?"
     ipa: "aːp kjaː kərt̪eː ɦɛ̃ː"
     alt_target: ["आप क्या करती हैं?"]
@@ -141,6 +152,7 @@ cards:
       - { word: "करते", base: "करना", reading: "karnā" }
   - id: "hi-0416"
     target: "मैं टीचर हूँ।"
+    target_scripts: { perso_arabic: "میں ٹیچر ہوں۔" }
     reading: "maim̐ ṭīcar hūm̐."
     ipa: "mɛ̃ː ʈiːtʃər ɦũː"
     alt_target: ["मैं अध्यापक हूँ।", "मैं अध्यापिका हूँ।"]
@@ -150,6 +162,7 @@ cards:
       - { word: "हूँ", base: "होना", reading: "hōnā" }
   - id: "hi-0417"
     target: "आप कहाँ काम करते हैं?"
+    target_scripts: { perso_arabic: "آپ کہاں کام کرتے ہیں؟" }
     reading: "āp kahām̐ kām kartē haim̐?"
     ipa: "aːp kəɦãː kaːm kərt̪eː ɦɛ̃ː"
     alt_target: ["आप कहाँ काम करती हैं?"]
@@ -158,6 +171,7 @@ cards:
       - { word: "करते", base: "करना", reading: "karnā" }
   - id: "hi-0418"
     target: "मैं एक दफ़्तर में काम करता हूँ।"
+    target_scripts: { perso_arabic: "میں ایک دفتر میں کام کرتا ہوں۔" }
     reading: "maim̐ ēk daftar mēm̐ kām kartā hūm̐."
     ipa: "mɛ̃ː eːk d̪əft̪ər mẽː kaːm kərt̪aː ɦũː"
     pos: "phrase"
