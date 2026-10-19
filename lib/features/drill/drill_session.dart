@@ -949,10 +949,13 @@ class DrillSession extends ChangeNotifier {
   List<Card>? _options;
 
   /// The current choice question's options, the card itself among them, in
-  /// the order shown: up to [optionCount], the others from
-  /// [AppState.choicePool], each showing something different. In Hear, the
-  /// word's minimal-pair partner is one of them where it has one
-  /// ([AppState.pairOf], ADR-0034).
+  /// the order shown: up to [optionCount], each showing something different.
+  /// In Hear, the word's minimal-pair partner is the first of the others
+  /// where it has one ([AppState.pairOf], ADR-0034). Then come the card's
+  /// hand-picked wrong alternatives, its [Card.confusables] that name a card
+  /// of the course, in random order (a confusable written out as a word is
+  /// not a card, so it is not used here). The rest are drawn from
+  /// [AppState.choicePool].
   List<Card> get options => _options ??= _pickOptions();
 
   List<Card> _pickOptions() {
@@ -964,7 +967,11 @@ class DrillSession extends ChangeNotifier {
     if (partner != null && shown.add(ask.optionOf(partner))) {
       picked.add(partner);
     }
-    for (final other in pool) {
+    final curated = <Card>[
+      for (final item in card.confusables)
+        if (item.ref case final id?) ?_state.cardInCourseOf(card, id),
+    ]..shuffle(_random);
+    for (final other in <Card>[...curated, ...pool]) {
       if (picked.length == optionCount) break;
       if (shown.add(ask.optionOf(other))) picked.add(other);
     }

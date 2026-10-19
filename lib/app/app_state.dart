@@ -1944,8 +1944,14 @@ class AppState extends ChangeNotifier {
   /// native language lists it, or null.
   Card? pairOf(Card card) {
     final id = card.pair;
+    return id == null ? null : cardInCourseOf(card, id);
+  }
+
+  /// The card [id], as a deck of [card]'s language and native language lists
+  /// it, or null where the learner has no such card in that course.
+  Card? cardInCourseOf(Card card, String id) {
     final entry = deckOf(card);
-    if (id == null || entry == null) return null;
+    if (entry == null) return null;
     for (final other in decks) {
       if (other.language.code != entry.language.code ||
           other.deck.native.code != entry.deck.native.code) {

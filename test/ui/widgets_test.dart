@@ -29,6 +29,24 @@ const LanguageInfo urdu = LanguageInfo(
 );
 
 void main() {
+  test('Perso-Arabic text is marked Urdu, so it is drawn in Nastaliq', () {
+    const hindustani = LanguageInfo(
+      code: 'hi',
+      iso639_3: 'hin',
+      name: 'Hindustani',
+      script: 'perso_arabic',
+      rtl: true,
+    );
+    const devanagari = LanguageInfo(
+      code: 'hi',
+      iso639_3: 'hin',
+      name: 'Hindustani',
+      script: 'devanagari',
+    );
+    expect(targetLocale(hindustani), const Locale('ur'));
+    expect(targetLocale(devanagari), const Locale('hi'));
+  });
+
   testWidgets('Segmented: one selected, in a named group, tap selects', (
     tester,
   ) async {

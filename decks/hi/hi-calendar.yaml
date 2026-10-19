@@ -2,13 +2,14 @@ schema: 1
 id: "hi-calendar"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 theme: "calendar"
 tags: ["beginner"]
 cards:
   - id: "hi-0317"
     target: "महीना"
+    target_scripts: { perso_arabic: "مہینہ" }
     reading: "mahīnā"
     ipa: "məɦiːnaː"
     pos: "noun"
@@ -17,6 +18,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0318"
     target: "साल"
+    target_scripts: { perso_arabic: "سال" }
     reading: "sāl"
     ipa: "saːl"
     pos: "noun"
@@ -25,6 +27,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0319"
     target: "तारीख़"
+    target_scripts: { perso_arabic: "تاریخ" }
     reading: "tārīk͟h"
     ipa: "t̪aːriːx"
     alt_target: ["तारीख"]
@@ -34,6 +37,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0320"
     target: "जनवरी"
+    target_scripts: { perso_arabic: "جنوری" }
     reading: "janvarī"
     ipa: "dʒənʋəriː"
     pos: "noun"
@@ -41,60 +45,71 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0321"
     target: "फ़रवरी"
+    target_scripts: { perso_arabic: "فروری" }
     reading: "farvarī"
     ipa: "fərʋəriː"
     alt_target: ["फरवरी"]
     pos: "noun"
   - id: "hi-0322"
     target: "मार्च"
+    target_scripts: { perso_arabic: "مارچ" }
     reading: "mārc"
     ipa: "maːrtʃ"
     pos: "noun"
   - id: "hi-0323"
     target: "अप्रैल"
+    target_scripts: { perso_arabic: "اپریل" }
     reading: "aprail"
     ipa: "əprɛːl"
     pos: "noun"
   - id: "hi-0324"
     target: "मई"
+    target_scripts: { perso_arabic: "مئی" }
     reading: "maī"
     ipa: "məiː"
     pos: "noun"
   - id: "hi-0325"
     target: "जून"
+    target_scripts: { perso_arabic: "جون" }
     reading: "jūn"
     ipa: "dʒuːn"
     pos: "noun"
   - id: "hi-0326"
     target: "जुलाई"
+    target_scripts: { perso_arabic: "جولائی" }
     reading: "julāī"
     ipa: "dʒʊlaːiː"
     pos: "noun"
   - id: "hi-0327"
     target: "अगस्त"
+    target_scripts: { perso_arabic: "اگست" }
     reading: "agast"
     ipa: "əɡəst̪"
     pos: "noun"
   - id: "hi-0328"
     target: "सितंबर"
+    target_scripts: { perso_arabic: "ستمبر" }
     reading: "sitambar"
     ipa: "sɪt̪əmbər"
     alt_target: ["सितम्बर"]
     pos: "noun"
   - id: "hi-0329"
     target: "अक्तूबर"
+    target_scripts: { perso_arabic: "اکتوبر" }
     reading: "aktūbar"
     ipa: "əkt̪uːbər"
     alt_target: ["अक्टूबर"]
     pos: "noun"
   - id: "hi-0330"
     target: "नवंबर"
+    target_scripts: { perso_arabic: "نومبر" }
     reading: "navambar"
     ipa: "nəʋəmbər"
     alt_target: ["नवम्बर"]
     pos: "noun"
   - id: "hi-0331"
     target: "दिसंबर"
+    target_scripts: { perso_arabic: "دسمبر" }
     reading: "disambar"
     ipa: "d̪ɪsəmbər"
     alt_target: ["दिसम्बर"]
