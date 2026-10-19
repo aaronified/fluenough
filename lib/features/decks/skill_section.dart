@@ -171,13 +171,18 @@ class SkillSection extends StatelessWidget {
     final request = DrillRequest.deck(entry.id, skill: skill, tags: tags);
     final count = state.buildSession(request).items.length;
     final label = skill.label(l10n);
+    final backup = skill.needsVoice ? state.backupVoice(language) : null;
     return GroupedTile(
       padding: padding,
       leadingGap: leadingGap,
       trailingGap: trailingGap,
       leading: ModePill(skill: skill, size: ModePillSize.large),
       title: label,
-      subtitle: _description(l10n, skill),
+      // Where the course's other voice stands in for the deck's own, say so
+      // (#641).
+      subtitle: backup == null
+          ? _description(l10n, skill)
+          : l10n.deckListenBackup(backup.ttsTag),
       trailing: FilledButton.tonalIcon(
         style: AppButtonStyles.compact(context)
             .merge(const ButtonStyle(iconAlignment: IconAlignment.end)),
