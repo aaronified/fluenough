@@ -50,9 +50,7 @@ class GuideLayer {
 bool isGuideCoreId(String? coreId) =>
     coreId != null && _guideCoreId.hasMatch(coreId);
 
-final _guideCoreId = RegExp(
-  r'^[a-z]{2,3}-(?:[a-z]+(?:-[a-z]+)*-script|sounds)$',
-);
+final _guideCoreId = RegExp(r'^[a-z]{2,3}-(?:(?:[a-z]+-)*script|sounds)$');
 
 const _common = {'schema', 'id', 'kind', 'core', 'native'};
 
