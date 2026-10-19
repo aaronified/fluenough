@@ -8,8 +8,8 @@ import 'deck_parser.dart';
 /// native language, keyed by the core's feature or contrast ids.
 /// `decks/<lang>/<native>/<lang>-<native>-script.yaml` names its core,
 /// `<lang>-script` (or `<lang>-<script>-script`, a guide for one of the
-/// language's other scripts), in the folder above (DECK-FORMAT.md, Script guides and
-/// Sounds files).
+/// language's other scripts), in the folder above (DECK-FORMAT.md, Script
+/// guides and Sounds files).
 class GuideLayer {
   const GuideLayer({
     required this.id,
