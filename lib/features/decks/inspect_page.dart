@@ -281,9 +281,11 @@ class _Script extends StatelessWidget {
     required this.language,
     this.ipa,
     this.size = 20,
+    this.card,
   });
 
   final String text;
+  final Card? card;
   final String? reading;
   final String? ipa;
   final LanguageInfo language;
@@ -301,6 +303,7 @@ class _Script extends StatelessWidget {
           language: language,
           fontSize: size,
           textAlign: TextAlign.start,
+          card: card,
         ),
         if (reading != null && reading.isNotEmpty) _Muted(reading),
         if (ipaToShow(context, ipa, target: text) case final ipa?)
@@ -454,6 +457,7 @@ class _CardRow extends StatelessWidget {
         card.reading,
         ipa: card.ipa,
         language: language,
+        card: card,
       ),
       bottom: card.native,
       id: card.id,

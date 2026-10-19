@@ -12,6 +12,7 @@ import '../../core/grading/answer_grader.dart';
 import '../../core/grading/romanised.dart';
 import '../../core/grading/self_grade.dart';
 import '../../core/models/card.dart';
+import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
 import '../../core/models/reading.dart';
 import '../../core/models/sound_contrasts.dart';
@@ -146,6 +147,10 @@ class DrillSession extends ChangeNotifier {
   /// The input mode the learner, or a preset, chose; null for the
   /// language's own: [InputMode.translit] without its alphabet.
   InputMode? _chosenMode;
+
+  /// The script the learner chose to write in, or null for the first they
+  /// learn (#623).
+  String? _chosenScript;
   bool _slower = false;
   bool _playing = false;
   bool _hearing = false;
@@ -277,6 +282,50 @@ class DrillSession extends ChangeNotifier {
   /// Whether the current card's language is learned with its alphabet.
   bool get learnsAlphabet => _state.settings.learnsAlphabet(deck.language.code);
 
+  /// The scripts the current card's language is learned in, one Write
+  /// option each beside Latin letters (#623): the script it is written in
+  /// where none is learned.
+  List<String> get writeScripts {
+    final learned = _state.learnedScripts(deck.language);
+    return learned.isEmpty ? <String>[deck.language.script] : learned;
+  }
+
+  /// The script an answer is written in: as chosen, else the first learned
+  /// that the current card has a spelling in.
+  String get inputScript {
+    final scripts = writeScripts;
+    final chosen = _chosenScript;
+    if (chosen != null && scripts.contains(chosen)) return chosen;
+    for (final script in scripts) {
+      if (_spellingIn(script) != null) return script;
+    }
+    return scripts.first;
+  }
+
+  String? _spellingIn(String script) =>
+      item.card.targetIn(script, firstScript: deck.language.script);
+
+  /// The current card spelled in [inputScript]: its target, where it has no
+  /// spelling in it.
+  String get writtenTarget => _spellingIn(inputScript) ?? item.card.target;
+
+  /// The language an answer is typed in: its direction follows
+  /// [inputScript]. The deck's own in Latin letters.
+  LanguageInfo get inputLanguage =>
+      transliterating || _spellingIn(inputScript) == null
+      ? deck.language
+      : deck.language.inScript(inputScript);
+
+  /// Chooses to write in [script] (#623).
+  void chooseScript(String script) {
+    if (_phase != DrillPhase.prompt) return;
+    _chosenScript = script;
+    inputMode = InputMode.script;
+    _tiles = null;
+    _placed.clear();
+    notifyListeners();
+  }
+
   /// Script, or Latin letters: as chosen, or else the script once it is
   /// [expectsScript], and Latin letters before.
   InputMode get inputMode =>
@@ -308,6 +357,9 @@ class DrillSession extends ChangeNotifier {
       item.card is! QuestionCard &&
       !_state.hearsForm(item.card);
 
+  /// Whether meanings are English, where the meaning rules apply.
+  bool get _meaningIsEnglish => deck.deck.native.code == 'en';
+
   /// What a typed answer to [card] is graded against: its meanings when
   /// [hearsMeaning], else what its mode accepts.
   List<String> _answersOf(Card card) =>
@@ -316,10 +368,21 @@ class DrillSession extends ChangeNotifier {
   /// The answers the grader accepts, the canonical one first: while
   /// [transliterating], the reading, then the target, which is accepted too.
   List<String> get acceptedAnswers {
-    final accepted = _answersOf(item.card);
+    final accepted = _writtenAnswers;
     final reading = item.card.reading;
     if (transliterating && reading != null) {
       return <String>[reading, ...accepted];
+    }
+    return accepted;
+  }
+
+  /// What a typed answer is graded against, apart from the reading: the
+  /// card's answers, with, written in another script (#623), its spelling
+  /// in it first.
+  List<String> get _writtenAnswers {
+    final accepted = _answersOf(item.card);
+    if (!hearsMeaning && writtenTarget != item.card.target) {
+      return <String>[writtenTarget, ...accepted];
     }
     return accepted;
   }
@@ -337,13 +400,14 @@ class DrillSession extends ChangeNotifier {
     if (_phase != DrillPhase.prompt || typed.trim().isEmpty) return;
     if (item.mode == DrillMode.recognition || question != null) return;
     if (ask != Ask.own) return;
-    final accepted = _answersOf(item.card);
+    final accepted = _writtenAnswers;
     final grader = typesDigits
         ? const AnswerGrader(typoDistance: 0, longTypoDistance: 0)
         : AnswerGrader(
             articles: hearsMeaning
                 ? deck.deck.native.articles
                 : deck.language.articles,
+            meaning: hearsMeaning && _meaningIsEnglish,
           );
     var graded = grader.grade(
       typesDigits ? typed.replaceAll(RegExp(r'[\s,]'), '') : typed,
@@ -387,6 +451,7 @@ class DrillSession extends ChangeNotifier {
           : deck.language.articles,
       typoDistance: 0,
       longTypoDistance: 0,
+      meaning: hearsMeaning && _meaningIsEnglish,
     );
     final spelling = romanised ? _spelling : null;
     final key = spelling?.key(typed);
@@ -1006,7 +1071,7 @@ class DrillSession extends ChangeNotifier {
   }
 
   List<String> get _words =>
-      tilesOf(rearrangesReading ? item.card.reading! : item.card.target);
+      tilesOf(rearrangesReading ? item.card.reading! : writtenTarget);
 
   List<String>? _tiles;
 
@@ -1060,7 +1125,10 @@ class DrillSession extends ChangeNotifier {
     final card = item.card;
     final accepted = rearrangesReading
         ? card.readings
-        : card.acceptedAnswers(DrillMode.production);
+        : <String>[
+            if (writtenTarget != card.target) writtenTarget,
+            ...card.acceptedAnswers(DrillMode.production),
+          ];
     final right = accepted.any((a) => tilesOf(a).join(' ') == given);
     final grade = right
         ? AnswerOutcome.exact.toGrade()

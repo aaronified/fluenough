@@ -597,6 +597,7 @@ class _CardRow extends StatelessWidget {
       language: language,
       fontSize: sentence ? 17 : 20,
       textAlign: TextAlign.start,
+      card: card,
     );
     final meaning = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
