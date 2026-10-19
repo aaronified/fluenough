@@ -146,4 +146,42 @@ void main() {
     expect(state.settings.noAlphabet, isEmpty);
     expect(state.settings.learnsAlphabet('bn'), isTrue);
   });
+
+  testWidgets('a language learned can stop its script: Change scripts opens '
+      'the screen with it ticked, and Continue saves the change', (
+    tester,
+  ) async {
+    usePhone(tester);
+    tester.view.physicalSize = const Size(390 * 3, 6000 * 3);
+    final state = await pumpScreen(
+      tester,
+      LanguagePickerPage(spokenList: pickerSpokenList),
+      state: learning(),
+    );
+    final l10n = l10nOf(tester);
+    expect(state.settings.learnsAlphabet('bn'), isTrue);
+
+    // Bengali has one script, learned: no "Add this script", but the way
+    // in is there.
+    await openSheet(tester, 'bn');
+    expect(
+      find.byKey(const ValueKey<String>('sheet-add-script')),
+      findsNothing,
+    );
+    await tapSheet(tester, 'sheet-change-scripts');
+    CheckboxListTile script() => tester.widget<CheckboxListTile>(
+      find.byKey(const ValueKey<String>('sheet-script-bengali')),
+    );
+    expect(script().value, isTrue);
+    await tapSheet(tester, 'sheet-script-bengali');
+    expect(script().value, isFalse);
+    await finishSheet(tester);
+    // Nothing is saved until Continue, and no confirmation was asked.
+    expect(find.byType(AlertDialog), findsNothing);
+    expect(state.settings.learnsAlphabet('bn'), isTrue);
+    await tester.tap(find.text(l10n.commonContinue));
+    await tester.pumpAndSettle();
+    expect(state.settings.learnsAlphabet('bn'), isFalse);
+    expect(state.settings.noAlphabet, <String>{'bn'});
+  });
 }
