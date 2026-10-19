@@ -939,7 +939,7 @@
       "script": "devanagari",
       "script_decks": true,
       "natives": [{"code": "en", "name": "English"}],
-      "size": 478637,
+      "size": 483815,
       "path": ["hi-phrasebook", "hi-first-words", "hi-sound-differences", "hi-questions", "hi-addressing", "hi-family", "hi-script-vowels", "hi-script-consonants", "hi-script-reading", "hi-script-vowel-signs", "hi-script-conjuncts", "hi-script-perso-arabic-letters", "hi-script-perso-arabic-shapes", "hi-script-perso-arabic-vowels", "hi-script-perso-arabic-reading", "hi-numbers-1-20", "hi-about-me", "hi-time", "hi-work", "hi-grammar-nouns", "hi-grammar-postpositions", "hi-grammar-conjunctions", "hi-grammar-pronouns", "hi-grammar-possessives", "hi-grammar-be", "hi-grammar-present", "hi-grammar-demonstratives", "hi-grammar-adjectives", "hi-numbers-big", "hi-groceries", "hi-grammar-needs", "hi-market", "hi-grammar-questions", "hi-grammar-likes", "hi-grammar-sentences", "hi-grammar-differences", "hi-directions", "hi-grammar-continuous", "hi-transport", "hi-home", "hi-grammar-articles", "hi-grammar-future", "hi-daily-life", "hi-grammar-conjunct-verbs", "hi-calendar", "hi-grammar-past", "hi-grammar-ne", "hi-grammar-perfect", "hi-grammar-past-more", "hi-grammar-compound-verbs", "hi-eating-out", "hi-help", "hi-grammar-irregular", "hi-grammar-pitfalls", "hi-registers", "hi-slang", "hi-grammar-can-must", "hi-spelling", "hi-reading-panch-parmeshwar"],
       "units": [
         {"decks": ["hi-phrasebook", "hi-first-words"], "has": {"en": 2}, "words": 2},
@@ -1188,6 +1188,10 @@
         {"content_sha256": "4686bb303a0a2bbfaafa23ef386b1a03f3de92025056e6d43313d20207ef9d69", "deck": "hi-time", "kind": "layer", "native": "en", "path": "decks/hi/en/hi-en-time.yaml", "schema": 1, "sha256": "4686bb303a0a2bbfaafa23ef386b1a03f3de92025056e6d43313d20207ef9d69", "size": 1911},
         {"content_sha256": "89fc43085a9d67141ebac82ba2fe103361c13f9191b82951cbc532feea19d9ef", "deck": "hi-transport", "kind": "layer", "native": "en", "path": "decks/hi/en/hi-en-transport.yaml", "schema": 1, "sha256": "89fc43085a9d67141ebac82ba2fe103361c13f9191b82951cbc532feea19d9ef", "size": 1517},
         {"content_sha256": "789400c5bbada69672d9c8d6bff2ecfb0ac2a50c97e4bea838fc70a154372ad2", "deck": "hi-work", "kind": "layer", "native": "en", "path": "decks/hi/en/hi-en-work.yaml", "schema": 1, "sha256": "789400c5bbada69672d9c8d6bff2ecfb0ac2a50c97e4bea838fc70a154372ad2", "size": 2294}
+      ],
+      "script_guides": [
+        {"content_sha256": "75d81a49634c4ad017a71d624b19fb30b9f053a52451c19e5494d11f571f4e43", "kind": "script", "part": "core", "path": "decks/hi/hi-perso-arabic-script.yaml", "schema": 1, "sha256": "75d81a49634c4ad017a71d624b19fb30b9f053a52451c19e5494d11f571f4e43", "size": 1537},
+        {"content_sha256": "e577dbffe94948171ba47b75a9d1a2423eedd5e5220d28dd44f60278598fa59b", "kind": "layer", "native": "en", "path": "decks/hi/en/hi-en-perso-arabic-script.yaml", "schema": 1, "sha256": "e577dbffe94948171ba47b75a9d1a2423eedd5e5220d28dd44f60278598fa59b", "size": 3641}
       ],
       "fonts": [
         {"family": "Noto Sans Devanagari", "path": "decks/fonts/devanagari/NotoSansDevanagari.ttf", "script": "devanagari", "sha256": "14ec4af41f27482216d1c2229f417ff9b1425e1babb014e57d1d40d03229853e", "size": 641944},
