@@ -1776,9 +1776,13 @@ class AppState extends ChangeNotifier {
     ];
     final path = pathOf(course.first);
     // Learned without its alphabet, the course leaves out the decks that
-    // need it.
-    if (path != null && !(alphabet ?? settings.learnsAlphabet(language))) {
-      course.removeWhere((e) => path.alphabet.contains(e.id));
+    // need it; with several scripts, those of each script not learned.
+    if (path != null) {
+      course.removeWhere(
+        (e) =>
+            path.alphabet.contains(e.id) &&
+            !(alphabet ?? learnsScriptOf(e.language)),
+      );
     }
     final byId = <String, DeckEntry>{for (final e in course) e.id: e};
     return <List<DeckEntry>>[
@@ -1795,7 +1799,63 @@ class AppState extends ChangeNotifier {
   /// Whether [entry] needs an alphabet the learner is not learning: its
   /// course leaves it out (#47). It can still be opened and studied.
   bool leavesOut(DeckEntry entry) =>
-      !settings.learnsAlphabet(entry.language.code) && needsAlphabet(entry);
+      needsAlphabet(entry) && !learnsScriptOf(entry.language);
+
+  /// The script [code]'s course starts with: the first its decks list.
+  String primaryScript(String code) {
+    for (final entry in decks) {
+      if (entry.language.code == code) return entry.language.allScripts.first;
+    }
+    return 'latin';
+  }
+
+  /// Whether the learner learns the script [language] is written in here:
+  /// a script deck's own (#623), so a Devanagari reader learning
+  /// Perso-Arabic skips the Devanagari script units. A script the language
+  /// does not list follows whether the alphabet is learned at all.
+  bool learnsScriptOf(LanguageInfo language) {
+    final code = language.code;
+    final primary = primaryScript(code);
+    final listed = <String>{primary, ...language.allScripts};
+    return listed.contains(language.script)
+        ? settings
+              .scriptsLearned(code, primary: primary)
+              .contains(language.script)
+        : settings.learnsAlphabet(code);
+  }
+
+  /// The scripts [language]'s cards are read in, in course order: those
+  /// the learner learns (#623). None when they learn none.
+  List<String> learnedScripts(LanguageInfo language) {
+    final code = language.code;
+    final primary = primaryScript(code);
+    final learned = settings.scriptsLearned(code, primary: primary);
+    return <String>[
+      for (final script in <String>{primary, ...language.allScripts})
+        if (learned.contains(script)) script,
+    ];
+  }
+
+  /// How [card] is shown as [language]'s text: the learner's script and
+  /// that script's language, which draws it in its direction (#623). The
+  /// card's own target and [language] unless they learn only another
+  /// script, and the card has its spelling in it.
+  ({String text, LanguageInfo language}) targetShown(
+    Card card,
+    LanguageInfo language,
+  ) {
+    final first = primaryScript(language.code);
+    final learned = learnedScripts(language);
+    if (learned.isEmpty || learned.contains(first)) {
+      return (text: card.target, language: language);
+    }
+    for (final script in learned) {
+      if (card.targetIn(script, firstScript: first) case final text?) {
+        return (text: text, language: language.inScript(script));
+      }
+    }
+    return (text: card.target, language: language);
+  }
 
   /// Whether [entry] is one of its course's decks that need the alphabet:
   /// a script, spelling or reading deck.
