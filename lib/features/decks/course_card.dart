@@ -4,6 +4,7 @@ import '../../app/app_scope.dart';
 import '../../app/deck_downloads.dart';
 import '../../app/features.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/deck_tile.dart';
 import '../../ui/widgets/incoming.dart';
@@ -219,12 +220,18 @@ class _UpdatesRow extends StatelessWidget {
       builder: (context, _) {
         final busy = downloads.updating || downloads.isDownloading(language);
         final waiting = downloads.updates.containsKey(language);
+        final font = downloads.fontDownloading(language);
+        final downloading = font == null
+            ? l10n.deckDownloadsRowDownloading
+            : l10n.deckDownloadsRowDownloadingFont(
+                l10n.scriptNameOr(font, font),
+              );
         return _IncomingRow(
           feature: Feature.deckUpdates,
           icon: Icons.sync,
           title: l10n.pathUpdatesTitle,
           body: busy
-              ? l10n.deckDownloadsRowDownloading
+              ? downloading
               : waiting
               ? l10n.pathUpdatesBody
               : l10n.pathUpdatesUpToDate,
