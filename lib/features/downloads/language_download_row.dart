@@ -27,7 +27,7 @@ String languageDownloadLine(
   final progress = downloads.progressOf(code);
   final line = switch (downloads.stateOf(code, spoken)) {
     LanguageDownloadState.downloading when progress != null =>
-      l10n.downloadsProgress(progress.done, progress.total),
+      downloadProgressText(l10n, downloads, code, progress),
     LanguageDownloadState.failed => downloadFailureText(
       l10n,
       downloads.failureOf(code),

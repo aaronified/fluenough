@@ -3004,6 +3004,14 @@
   "@sourcesLicenceLine": {
     "description": "The line under the licence row on the Sources screen: what the deck licence allows. Licence names stay as they are."
   },
+  "sourcesFonts": "Fonts: Noto, SIL OFL 1.1",
+  "@sourcesFonts": {
+    "description": "Credit on the Sources screen, shown once a script font is on the phone (ADR-0042): the Noto fonts and their licence, the SIL Open Font License 1.1. Names stay as they are."
+  },
+  "sourcesFontsLine": "The fonts that download with a course, so that its script is drawn rightly, are Google's Noto fonts, under the SIL Open Font License 1.1.",
+  "@sourcesFontsLine": {
+    "description": "The line under the fonts credit on the Sources screen. Noto and the licence name stay as they are."
+  },
   "sourcesCreditName": "{project, select, wiktionary{Wiktionary} commons{Wikimedia Commons} openmoji{OpenMoji} wikipedia{Wikipedia} tatoeba{Tatoeba} other{{project}}}",
   "@sourcesCreditName": {
     "description": "A project whose data the decks use, credited on the Sources screen. Project names stay as they are.",
@@ -4512,7 +4520,7 @@
   "@onboardingSpokenNeedOne": {
     "description": "First-launch question, just above the button while it is disabled: why it is."
   },
-  "scriptName": "{script, select, bengali{Eastern Nagari} devanagari{Devanagari} gurmukhi{Gurmukhi} shahmukhi{Shahmukhi} gujarati{Gujarati} odia{Odia} kannada{Kannada} telugu{Telugu} tamil{Tamil} malayalam{Malayalam} ol_chiki{Ol Chiki} arabic{Perso-Arabic} perso_arabic{Perso-Arabic} meitei_mayek{Meitei Mayek} latin{Latin} kana{Kana} other{}}",
+  "scriptName": "{script, select, bengali{Eastern Nagari} devanagari{Devanagari} gurmukhi{Gurmukhi} shahmukhi{Shahmukhi} gujarati{Gujarati} odia{Odia} kannada{Kannada} telugu{Telugu} tamil{Tamil} malayalam{Malayalam} ol_chiki{Ol Chiki} arabic{Perso-Arabic} perso_arabic{Perso-Arabic} meitei_mayek{Meitei Mayek} egyptian_hieroglyphs{Egyptian hieroglyphs} cuneiform{Cuneiform} linear_b{Linear B} latin{Latin} kana{Kana} other{}}",
   "@scriptName": {
     "description": "A script's own name, never a language's (owner, 2026-10-17, #551: \"All scripts should have their own names, not just inherit the language\"). {script} is the code in assets/languages.yaml and the deck files: bengali is Eastern Nagari, the script of Bengali, Assamese and Manipuri; arabic is Perso-Arabic; perso_arabic is the Perso-Arabic script as Hindustani and Urdu write it, in Nastaliq (#623); shahmukhi is the Perso-Arabic alphabet as Punjabi writes it. A code with no name here gives nothing, and the app then names the script after its language. Every sentence that names a script takes this.",
     "placeholders": {
@@ -4836,6 +4844,24 @@
   "@downloadsBody": {
     "description": "Explanation on the screen that downloads the first decks of the languages chosen."
   },
+  "downloadsProgressFont": "{total, plural, =1{{done} of 1 file} other{{done} of {total} files}}, with the {script} font",
+  "@downloadsProgressFont": {
+    "description": "How far a language's download has got, in files, while a font for the language's script downloads with its decks (ADR-0042): the font counts as one of the files. {script} is the script's own name, scriptName: Telugu, or Eastern Nagari for Bengali.",
+    "placeholders": {
+      "done": {
+        "type": "int",
+        "example": "3"
+      },
+      "total": {
+        "type": "int",
+        "example": "12"
+      },
+      "script": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
   "downloadsProgress": "{total, plural, =1{{done} of 1 file} other{{done} of {total} files}}",
   "@downloadsProgress": {
     "description": "How far a language's download has got, in files.",
@@ -4877,6 +4903,16 @@
   "deckDownloadsRowDownloading": "Downloading decks…",
   "@deckDownloadsRowDownloading": {
     "description": "Second line of the deck updates row on the Decks tab's course card (#464) while the course's decks download or update."
+  },
+  "deckDownloadsRowDownloadingFont": "Downloading decks and the {script} font…",
+  "@deckDownloadsRowDownloadingFont": {
+    "description": "Second line of the deck updates row on the Decks tab's course card while the course's decks download or update, and a font for the course's script downloads with them (ADR-0042). {script} is the script's own name, scriptName: Telugu, or Eastern Nagari for Bengali.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
   },
   "deckDownloadsCheck": "Check for deck updates",
   "@deckDownloadsCheck": {

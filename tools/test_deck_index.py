@@ -116,6 +116,77 @@ class DeckIndex(unittest.TestCase):
     def test_no_media_key_without_media(self) -> None:
         self.assertNotIn("media", self.language(self.index(), "es"))
 
+    def add_font(self, script: str, name: str, data: bytes) -> None:
+        folder = self.tmp / "decks" / "fonts" / script
+        folder.mkdir(parents=True)
+        (folder / name).write_bytes(data)
+        (folder / "OFL.txt").write_text("licence", encoding="utf-8")
+
+    def spanish_in_scripts(self, scripts: str) -> None:
+        (self.tmp / "assets" / "languages.yaml").write_text(
+            'schema: 1\nkind: languages\nlanguages:\n'
+            '  - { code: es, iso639_3: spa, name: "Spanish", own_name: "Español",'
+            f' scripts: [{scripts}] }}\n', encoding="utf-8")
+
+    def test_fonts_are_listed_per_language_apart_from_files(self) -> None:
+        # ADR-0042: the font of each script a language's decks are shown
+        # in, under a key of its own, which the released app ignores.
+        self.spanish_in_scripts('"latin", "devanagari", "perso_arabic"')
+        self.add_font("devanagari", "NotoSansDevanagari.ttf", b"deva-font")
+        self.add_font("perso_arabic", "NotoNastaliqUrdu.ttf", b"nast")
+        index = self.index()
+        es = self.language(index, "es")
+        self.assertEqual(es["fonts"], [{
+            "path": "decks/fonts/devanagari/NotoSansDevanagari.ttf",
+            "size": 9, "sha256": hashlib.sha256(b"deva-font").hexdigest(),
+            "script": "devanagari", "family": "Noto Sans Devanagari"}, {
+            "path": "decks/fonts/perso_arabic/NotoNastaliqUrdu.ttf",
+            "size": 4, "sha256": hashlib.sha256(b"nast").hexdigest(),
+            "script": "perso_arabic", "family": "Noto Nastaliq Urdu"}])
+        listed = [f["path"] for f in es["files"] + es.get("media", [])]
+        self.assertFalse([p for p in listed if "fonts" in p])
+        # The language's size is what the released app shows: no fonts in it.
+        self.assertEqual(es["size"], sum(f["size"] for f in es["files"]))
+        self.assertEqual([lang["code"] for lang in index["languages"]], ["es"])
+        text = (self.tmp / "decks" / "index.json").read_text(encoding="utf-8")
+        self.assertIn('\n      "fonts": [\n        {"family": "Noto Sans Devanagari"',
+                      text)
+
+    def test_a_language_with_no_font_script_has_no_fonts(self) -> None:
+        # Latin has no font in the table, so even with a file under fonts/
+        # nothing is listed; a script with a font but no file is passed by.
+        self.add_font("latin", "NotoSans.ttf", b"x")
+        self.spanish_in_scripts('"latin", "telugu"')
+        self.assertNotIn("fonts", self.language(self.index(), "es"))
+
+    def test_the_fonts_folder_is_not_a_language(self) -> None:
+        self.add_font("devanagari", "NotoSansDevanagari.ttf", b"deva-font")
+        codes = [lang["code"] for lang in self.index()["languages"]]
+        self.assertNotIn("fonts", codes)
+
+    def test_fonts_the_repository_holds(self) -> None:
+        # Every font of the table is in decks/fonts/ with its licence and
+        # under 2 MB, and the index lists it for a language that needs it.
+        sys.path.insert(0, str(TOOLS))
+        try:
+            import deck_index
+        finally:
+            sys.path.remove(str(TOOLS))
+        for script, (family, name) in deck_index.FONTS.items():
+            folder = REPO / "decks" / "fonts" / script
+            self.assertTrue((folder / name).is_file(), script)
+            self.assertTrue((folder / "OFL.txt").is_file(), script)
+            self.assertLess((folder / name).stat().st_size, 2 * 1024 * 1024)
+            self.assertTrue(family.startswith("Noto "), family)
+        index = json.loads((REPO / "decks" / "index.json").read_text(encoding="utf-8"))
+        scripts = {
+            lang["code"]: [f["script"] for f in lang.get("fonts", [])]
+            for lang in index["languages"]}
+        self.assertEqual(scripts["te"], ["telugu"])
+        self.assertEqual(scripts["hi"], ["devanagari", "perso_arabic"])
+        self.assertEqual(scripts["as"], ["bengali"])
+        self.assertEqual(scripts["es"], [])
+
     def test_the_theme_list_stays_bundled(self) -> None:
         index = self.index()
         self.assertEqual(index["bundled"], ["decks/themes.yaml"])
