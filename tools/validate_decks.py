@@ -1761,10 +1761,18 @@ def _ipas_in(node: object):
 
 def check_ipa(r: Report, raw: dict) -> None:
     """Every IPA transcription is broad IPA, without the slashes the app
-    adds (ADR-0025)."""
+    adds (ADR-0025). In the IPA course (language `ipa`) an example may also
+    be narrow, written inside square brackets: `[pʰɪn]`."""
+    language = raw.get("language")
+    if isinstance(language, dict):
+        language = language.get("code")
+    narrow_ok = language == "ipa"
     for ipa in sorted(set(_ipas_in(raw))):
         if ipa != unicodedata.normalize("NFC", ipa):
             r.error("ipa", f"{ipa!r} is not NFC-normalised")
+        elif (narrow_ok and len(ipa) > 2 and ipa[0] == "[" and ipa[-1] == "]"
+              and IPA_RE.fullmatch(ipa[1:-1])):
+            continue
         elif ipa != ipa.strip() or not IPA_RE.fullmatch(ipa):
             r.error("ipa", f"{ipa!r} is not a broad IPA transcription: IPA "
                            f"letters and marks only, without / / or [ ]")
