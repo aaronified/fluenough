@@ -1,0 +1,57 @@
+# Apps that install on a phone as text-to-speech voices (#642).
+#
+# Settings, Voices lists them under each language they cover, as other voices
+# the learner can get. None is built into Fluenough or downloaded by it: the
+# learner installs the app, and the phone then offers its voices to every app.
+# Kept by hand, and checked again whenever an app changes.
+#
+# Each app:
+#   id            a short name, never shown
+#   name          what the store calls it
+#   voices        the voice family, in plain English
+#   note          one line for the learner, in plain English
+#   links         where to get it: `fdroid`, `play`, `github` (one or more)
+#   min_android   the oldest Android major version it runs on; left out where
+#                 the store says nothing certain
+#   cpus          the CPU types it runs on; left out for all of them
+#   languages     the language codes it covers, as the decks' codes: Urdu is
+#                 `ur`, a voice of Hindustani (`hi`)
+#
+# Coverage as of 2026-10-19 (#642, #641); an app's own settings may offer
+# more or fewer voices than listed here.
+apps:
+  - id: "google"
+    name: "Google Speech Services"
+    voices: "Google's voices"
+    note: "Natural voices. Already on most phones; update it and download a language in its settings."
+    links:
+      play: "https://play.google.com/store/apps/details?id=com.google.android.tts"
+    languages: ["hi", "ur", "bn", "te", "mr", "kn", "ta", "ml", "gu", "pa", "ne", "es", "zh", "ja", "ko", "de", "fr", "en"]
+
+  - id: "espeak"
+    name: "eSpeak NG"
+    voices: "eSpeak NG (robotic)"
+    note: "Robotic, but it covers every language here, small and fully offline."
+    links:
+      fdroid: "https://f-droid.org/packages/com.reecedunn.espeak/"
+      play: "https://play.google.com/store/apps/details?id=com.reecedunn.espeak"
+    languages: ["hi", "ur", "bn", "te", "kn", "mr", "as", "ml", "ta", "gu", "pa", "ne", "or", "es", "zh", "ja", "ko", "de", "fr", "en", "eo"]
+
+  - id: "voxsherpa"
+    name: "VoxSherpa TTS"
+    voices: "Kokoro neural voices"
+    note: "Natural-sounding voices that work offline; the model files are large. Choose it as the phone's speech engine after installing."
+    links:
+      play: "https://play.google.com/store/apps/details?id=com.CodeBySonu.VoxSherpa"
+      github: "https://github.com/CodeBySonu95/VoxSherpa-TTS"
+    min_android: 11
+    cpus: ["arm64-v8a"]
+    languages: ["hi", "es", "ja", "zh", "fr"]
+
+  - id: "sherpatts"
+    name: "SherpaTTS"
+    voices: "Piper neural voices"
+    note: "Free and open source; it downloads each voice once, then works offline."
+    links:
+      fdroid: "https://f-droid.org/packages/org.woheller69.ttsengine/"
+    languages: ["hi", "te", "ml", "ne", "es", "zh", "de", "fr"]
