@@ -80,6 +80,8 @@ wherever the table above allows it.
   tests and bug reports go up to 1.4x; a phone set to 2x is drawn at 1.4x.
 - **Content.** Keep transliteration in deck prose, and say in a card's notes
   when its base word changes its stem (`docs/DECK-FORMAT.md`).
+  Telugu readings write a word-final anusvara (ం) as `ṁ`, course-wide
+  (owner, 2026-10-19).
 - **Reviewers** are bilingual and the meaning of a card never changes; new
   themes come only by pull request (`docs/plans/reviewing-scope.md`).
 - **CI.** A deck-only change needs only "Validate decks" and "Released app
