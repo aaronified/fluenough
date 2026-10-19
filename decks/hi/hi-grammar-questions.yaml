@@ -2,12 +2,13 @@ schema: 1
 id: "hi-grammar-questions"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "grammar"]
 cards:
   - id: "hi-0167"
     target: "क्या आप हिंदी बोलते हैं?"
+    target_scripts: { perso_arabic: "کیا آپ ہندی بولتے ہیں؟" }
     reading: "kyā āp hindī bōltē haim̐?"
     ipa: "kjaː aːp ɦɪnd̪iː boːlt̪eː ɦɛ̃ː"
     pos: "phrase"
@@ -18,6 +19,7 @@ cards:
       - { word: "बोलते", base: "बोलना", reading: "bōlnā" }
   - id: "hi-0168"
     target: "आप चाय पिएँगे?"
+    target_scripts: { perso_arabic: "آپ چائے پیئیں گے؟" }
     reading: "āp cāy piēm̐gē?"
     ipa: "aːp tʃaːj pɪẽːɡeː"
     pos: "phrase"
@@ -27,6 +29,7 @@ cards:
       - { word: "पिएँगे", ref: "hi-0602" }
   - id: "hi-0169"
     target: "यह क्या है?"
+    target_scripts: { perso_arabic: "یہ کیا ہے؟" }
     reading: "yah kyā hai?"
     ipa: "jəɦ kjaː ɦɛː"
     pos: "phrase"
@@ -36,6 +39,7 @@ cards:
       - { word: "यह", base: "यह", reading: "yah" }
   - id: "hi-0170"
     target: "आप कहाँ जा रहे हैं?"
+    target_scripts: { perso_arabic: "آپ کہاں جا رہے ہیں؟" }
     reading: "āp kahām̐ jā rahē haim̐?"
     ipa: "aːp kəɦãː dʒaː rəɦeː ɦɛ̃ː"
     pos: "phrase"
@@ -46,6 +50,7 @@ cards:
       - { word: "रहे", base: "रहना", reading: "rahnā" }
   - id: "hi-0171"
     target: "वह कौन है?"
+    target_scripts: { perso_arabic: "وہ کون ہے؟" }
     reading: "vah kaun hai?"
     ipa: "ʋəɦ kɔːn ɦɛː"
     pos: "phrase"
@@ -53,6 +58,7 @@ cards:
       - { word: "वह", base: "वह", reading: "vah" }
   - id: "hi-0172"
     target: "आप कब आएँगे?"
+    target_scripts: { perso_arabic: "آپ کب آئیں گے؟" }
     reading: "āp kab āēm̐gē?"
     ipa: "aːp kəb aːẽːɡeː"
     pos: "phrase"
@@ -60,6 +66,7 @@ cards:
       - { word: "आएँगे", base: "आना", reading: "ānā" }
   - id: "hi-0173"
     target: "आप हिंदी क्यों सीख रहे हैं?"
+    target_scripts: { perso_arabic: "آپ ہندی کیوں سیکھ رہے ہیں؟" }
     reading: "āp hindī kyōm̐ sīkh rahē haim̐?"
     ipa: "aːp ɦɪnd̪iː kjõː siːkʰ rəɦeː ɦɛ̃ː"
     pos: "phrase"
@@ -69,6 +76,7 @@ cards:
       - { word: "रहे", base: "रहना", reading: "rahnā" }
   - id: "hi-0174"
     target: "आपके कितने बच्चे हैं?"
+    target_scripts: { perso_arabic: "آپ کے کتنے بچے ہیں؟" }
     reading: "āpkē kitnē baccē haim̐?"
     ipa: "aːpkeː kɪt̪neː bətʃtʃeː ɦɛ̃ː"
     pos: "phrase"
@@ -79,6 +87,7 @@ cards:
       - { word: "कितने", ref: "hi-0163" }
   - id: "hi-0175"
     target: "आप कैसे आए?"
+    target_scripts: { perso_arabic: "آپ کیسے آئے؟" }
     reading: "āp kaisē āē?"
     ipa: "aːp kɛːseː aːeː"
     pos: "phrase"
@@ -88,6 +97,7 @@ cards:
       - { word: "आए", base: "आना", reading: "ānā" }
   - id: "hi-0176"
     target: "अच्छा है न?"
+    target_scripts: { perso_arabic: "اچھا ہے نا؟" }
     reading: "acchā hai na?"
     ipa: "ətʃtʃʰaː ɦɛː nə"
     pos: "phrase"
