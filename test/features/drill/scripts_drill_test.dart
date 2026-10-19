@@ -8,6 +8,7 @@ import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_preset.dart';
+import 'package:fluenough/ui/script_name.dart';
 
 import '../../support/harness.dart';
 import '../../support/two_script_course.dart';
@@ -43,7 +44,7 @@ Future<AppState> pump(
     tester,
     DrillPage(
       request: DrillRequest.deck(entry.id, skill: skill),
-      preset: DrillPreset(target: devanagari),
+      preset: const DrillPreset(target: devanagari),
     ),
     state: state,
   );

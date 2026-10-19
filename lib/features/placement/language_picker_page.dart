@@ -747,8 +747,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     // The scripts each sheet chose, kept whole: Perso-Arabic is not lost to
     // a yes or no about the primary script.
     final scripts = <String, Set<String>>{
-      for (final code in alphabet.keys)
-        if (_scriptsChosen[code] case final chosen?) code: chosen,
+      for (final code in alphabet.keys) code: ?_scriptsChosen[code],
     };
     final natives = <String, String>{
       for (final code in added)
