@@ -416,6 +416,101 @@ cards:
       expect(find.text('Deck downloads'), findsNothing);
     });
 
+    testWidgets('one button at the top: Check for deck updates, Checking…, '
+        'then Update all (N) when updates are found, and back', (tester) async {
+      await downloaded(remote, phone, const <String>['es', 'hi']);
+      const deck = 'decks/es/en/es-en-core-100.yaml';
+      await openPage(tester);
+      final l10n = l10nOf(tester);
+      final check = find.byKey(const ValueKey<String>('check-updates'));
+      final updateAll = find.byKey(const ValueKey<String>('update-all'));
+      expect(check, findsOneWidget);
+      expect(updateAll, findsNothing);
+      expect(
+        find.descendant(
+          of: check,
+          matching: find.text(l10n.deckDownloadsCheck),
+        ),
+        findsOneWidget,
+      );
+
+      // Nothing new upstream: it checks, says so, and stays a check.
+      await tester.tap(check);
+      await tester.pumpAndSettle();
+      expect(
+        find.byKey(const ValueKey<String>('check-updates')),
+        findsOneWidget,
+      );
+      expect(updateAll, findsNothing);
+      expect(find.text(l10n.deckDownloadsUpdateAllCount(1)), findsNothing);
+
+      // An update upstream: the same place now says Update all (1), and no
+      // other button asks for the check.
+      remote.files[deck] = '${remote.files[deck]!}# a fix\n';
+      await tester.tap(find.byKey(const ValueKey<String>('check-updates')));
+      await tester.pumpAndSettle();
+      // The app asks once whether to update; the button waits after "Not now".
+      await tapText(tester, l10n.deckUpdatePromptLater);
+      expect(updateAll, findsOneWidget);
+      expect(check, findsNothing);
+      expect(
+        find.descendant(
+          of: updateAll,
+          matching: find.text(l10n.deckDownloadsUpdateAllCount(1)),
+        ),
+        findsOneWidget,
+      );
+      // Only the language with an update has "Update available".
+      expect(find.text(l10n.pickerUpdateAvailable), findsOneWidget);
+
+      // At the top of the list, clear of the search bar that stays pinned.
+      await tester.drag(pickerList().first, const Offset(0, 4000));
+      await tester.pumpAndSettle();
+      await tester.tap(updateAll);
+      await tester.pumpAndSettle();
+      expect(await phone.read(deck), endsWith('# a fix\n'));
+      expect(updateAll, findsNothing);
+      expect(
+        find.byKey(const ValueKey<String>('check-updates')),
+        findsOneWidget,
+      );
+      expect(find.text(l10n.pickerUpdateAvailable), findsNothing);
+    });
+
+    testWidgets('Remove is a red cross on a language on the phone: it asks, '
+        'and Cancel keeps the decks', (tester) async {
+      await downloaded(remote, phone, const <String>['es', 'hi']);
+      final state = await openPage(tester);
+      final l10n = l10nOf(tester);
+      final cross = find.descendant(
+        of: await cardOf(tester, 'es'),
+        matching: find.byKey(const ValueKey<String>('remove-es')),
+      );
+      expect(cross, findsOneWidget);
+      expect(
+        tester
+            .widget<Icon>(
+              find.descendant(of: cross, matching: find.byType(Icon)),
+            )
+            .color,
+        Theme.of(tester.element(cross)).colorScheme.error,
+      );
+      await tester.tap(cross);
+      await tester.pumpAndSettle();
+      expect(
+        find.text(l10n.deckDownloadsRemoveTitle('Spanish')),
+        findsOneWidget,
+      );
+      await tester.tap(find.text(l10n.commonCancel));
+      await tester.pumpAndSettle();
+      expect(
+        phone.files.keys.where((p) => p.startsWith('decks/es/')),
+        isNotEmpty,
+      );
+      expect(state.deckById('es-en-core-100'), isNotNull);
+      expect(isPicked(tester, 'es'), isTrue);
+    });
+
     testWidgets('removing a language deletes its decks, keeps its '
         'progress, and downloading it again brings it back', (tester) async {
       await downloaded(remote, phone, const <String>['es', 'hi']);
