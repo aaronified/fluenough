@@ -126,7 +126,12 @@ class WordSheet extends StatelessWidget {
               Center(child: CardPicture(card, size: 88)),
               const SizedBox(height: 12),
             ],
-            TargetText(card.target, language: language, fontSize: 44),
+            TargetText(
+              card.target,
+              language: language,
+              fontSize: 44,
+              card: card,
+            ),
             if (reading != null) ...<Widget>[
               const SizedBox(height: 4),
               Text(

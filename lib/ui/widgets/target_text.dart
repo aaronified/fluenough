@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
 import '../../core/models/aksharas.dart';
+import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../card_text_scale.dart';
 import '../theme.dart';
@@ -39,6 +40,7 @@ class TargetText extends StatelessWidget {
     this.fontWeight = FontWeight.w600,
     this.color,
     this.textAlign = TextAlign.center,
+    this.card,
   }) : _sizing = _Sizing.fixed;
 
   /// The big text on a drill card, sized by its length and the card scale.
@@ -49,6 +51,7 @@ class TargetText extends StatelessWidget {
     this.fontWeight = FontWeight.w600,
     this.color,
     this.textAlign = TextAlign.center,
+    this.card,
   }) : fontSize = null,
        _sizing = _Sizing.hero;
 
@@ -61,7 +64,19 @@ class TargetText extends StatelessWidget {
     this.fontWeight = FontWeight.w600,
     this.color,
     this.textAlign = TextAlign.center,
+    this.card,
   }) : _sizing = _Sizing.card;
+
+  /// [text] as it is, in [language]: a spelling of a card, shown beneath.
+  const TargetText._raw(
+    this.text,
+    this.language,
+    this.fontSize,
+    this.fontWeight,
+    this.color,
+    this.textAlign,
+    this._sizing,
+  ) : card = null;
 
   final String text;
   final LanguageInfo language;
@@ -74,8 +89,55 @@ class TargetText extends StatelessWidget {
   final TextAlign textAlign;
   final _Sizing _sizing;
 
+  /// The card [text] is the target of, where it should be shown in the
+  /// script the learner learns (#623): the card's spelling in it, drawn in
+  /// its direction, and with both scripts learned the other beneath,
+  /// smaller. Null shows [text] as given.
+  final Card? card;
+
   @override
   Widget build(BuildContext context) {
+    final card = this.card;
+    if (card == null) return _build(context);
+    final state = AppScope.of(context);
+    return ListenableBuilder(
+      listenable: state.settings,
+      builder: (context, _) {
+        final shown = state.targetShown(card, language);
+        final main = shown.text == text
+            ? _build(context)
+            : TargetText._raw(
+                shown.text,
+                shown.language,
+                fontSize,
+                fontWeight,
+                color,
+                textAlign,
+                _sizing,
+              )._build(context);
+        final others = state.otherSpellings(card, language);
+        if (others.isEmpty) return main;
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            main,
+            for (final other in others)
+              TargetText._raw(
+                other.text,
+                other.language,
+                _sizing == _Sizing.hero ? 28 : (fontSize ?? 28) * 0.6,
+                fontWeight,
+                color,
+                textAlign,
+                _sizing == _Sizing.hero ? _Sizing.card : _sizing,
+              )._build(context),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _build(BuildContext context) {
     if (_sizing == _Sizing.fixed) return _text(context, fontSize!);
     final settings = AppScope.of(context).settings;
     return ListenableBuilder(
