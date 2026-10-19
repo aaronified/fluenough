@@ -546,10 +546,12 @@ class SettingsNotifier extends ChangeNotifier {
       }
       spokenLanguages = next;
     }
-    final answers = Map<String, bool>.of(_scriptsRead)..remove('ur');
-    // Someone who read Urdu has not said they read Devanagari.
+    final answers = Map<String, bool>.of(_scriptsRead);
+    // Urdu's answer becomes the Perso-Arabic one; someone who knew Urdu has
+    // not said they read Devanagari.
+    final readUrdu = answers.remove('ur');
     answers.putIfAbsent('hi', () => false);
-    answers['hi:perso_arabic'] = true;
+    if (readUrdu != null) answers['hi:perso_arabic'] = readUrdu;
     scriptsRead = answers;
   }
 
