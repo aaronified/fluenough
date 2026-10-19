@@ -69,7 +69,7 @@ class RecognitionDrill extends StatelessWidget {
             fontSize: 48,
           )
         else
-          TargetText.hero(card.target, language: language),
+          TargetText.hero(card.target, language: language, card: card),
         if (reading != null &&
             settings.showRomanisation &&
             session.learnsAlphabet)

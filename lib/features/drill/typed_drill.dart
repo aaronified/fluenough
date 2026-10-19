@@ -88,6 +88,8 @@ class _TypedDrillState extends State<TypedDrill> {
     final session = _session;
     final card = session.item.card;
     final language = session.deck.language;
+    // The script written in (#623): its direction and keyboard.
+    final writing = session.inputLanguage;
     final listening = session.item.mode == DrillMode.listening;
     final answer = session.answer;
     final translit = session.transliterating;
@@ -122,14 +124,14 @@ class _TypedDrillState extends State<TypedDrill> {
                 key: const ValueKey<String>('answer'),
                 controller: _controller,
                 label: _fieldLabel(l10n, language, listening, translit),
-                language: language,
+                language: writing,
                 latin: translit,
                 digits: session.typesDigits,
                 onChanged: (_) => setState(() {}),
                 onSubmitted: (_) => _check(),
               ),
               if (!listening && language.needsReading && !translit && !typing)
-                KeyboardHint(language: language),
+                KeyboardHint(language: writing),
             ],
       feedback: answer == null
           ? null
@@ -140,7 +142,7 @@ class _TypedDrillState extends State<TypedDrill> {
               transliterating: translit,
               language: session.typesDigits || session.hearsMeaning
                   ? null
-                  : language,
+                  : writing,
             ),
       actions: _actions(context, answer, typing: typing),
     );

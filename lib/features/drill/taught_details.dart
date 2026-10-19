@@ -194,13 +194,19 @@ class TaughtDetails extends StatelessWidget {
     }
     return <Widget>[
       if (size == null)
-        TargetText.hero(card.target, language: language, color: wordColor)
+        TargetText.hero(
+          card.target,
+          language: language,
+          color: wordColor,
+          card: card,
+        )
       else
         TargetText.card(
           card.target,
           language: language,
           fontSize: size,
           color: wordColor,
+          card: card,
         ),
       if (reading != null && showReading)
         Text(
