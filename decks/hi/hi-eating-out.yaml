@@ -2,13 +2,14 @@ schema: 1
 id: "hi-eating-out"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 theme: "eating-out"
 tags: ["beginner"]
 cards:
   - id: "hi-0332"
     target: "खाना"
+    target_scripts: { perso_arabic: "کھانا" }
     reading: "khānā"
     ipa: "kʰaːnaː"
     pos: "noun"
@@ -17,6 +18,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0333"
     target: "पानी"
+    target_scripts: { perso_arabic: "پانی" }
     picture: "💧"
     reading: "pānī"
     ipa: "paːniː"
@@ -24,6 +26,7 @@ cards:
     gender: "m"
   - id: "hi-0334"
     target: "चाय"
+    target_scripts: { perso_arabic: "چائے" }
     picture: "🍵"
     reading: "cāy"
     ipa: "tʃaːj"
@@ -33,6 +36,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0335"
     target: "रोटी"
+    target_scripts: { perso_arabic: "روٹی" }
     picture: "🫓"
     reading: "rōṭī"
     ipa: "roːʈiː"
@@ -40,6 +44,7 @@ cards:
     gender: "f"
   - id: "hi-0336"
     target: "मुझे … चाहिए।"
+    target_scripts: { perso_arabic: "مجھے … چاہیے۔" }
     reading: "mujhē... cāhiē."
     ipa: "mʊdʒʱeː tʃaːɦɪeː"
     pos: "phrase"
@@ -49,6 +54,7 @@ cards:
       - { word: "मुझे", base: "मैं", reading: "maim̐" }
   - id: "hi-0337"
     target: "और"
+    target_scripts: { perso_arabic: "اور" }
     reading: "aur"
     ipa: "ɔːr"
     pos: "other"
@@ -56,6 +62,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0338"
     target: "तीखा"
+    target_scripts: { perso_arabic: "تیکھا" }
     reading: "tīkhā"
     ipa: "t̪iːkʰaː"
     pos: "adj"
@@ -63,11 +70,13 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0339"
     target: "मीठा"
+    target_scripts: { perso_arabic: "میٹھا" }
     reading: "mīṭhā"
     ipa: "miːʈʰaː"
     pos: "adj"
   - id: "hi-0340"
     target: "शाकाहारी"
+    target_scripts: { perso_arabic: "شاکاہاری" }
     reading: "śākāhārī"
     ipa: "ʃaːkaːɦaːriː"
     pos: "adj"
@@ -75,6 +84,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0341"
     target: "बिल लाइए।"
+    target_scripts: { perso_arabic: "بل لائیے۔" }
     reading: "bil lāiē."
     ipa: "bɪl laːɪeː"
     pos: "phrase"
@@ -86,6 +96,7 @@ cards:
       - { word: "लाइए", base: "लाना", reading: "lānā" }
   - id: "hi-0342"
     target: "बहुत अच्छा था।"
+    target_scripts: { perso_arabic: "بہت اچھا تھا۔" }
     reading: "bahut acchā thā."
     ipa: "bəɦʊt̪ ətʃtʃʰaː t̪ʰaː"
     pos: "phrase"
