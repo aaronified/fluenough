@@ -438,18 +438,20 @@ class PickerHeading extends StatelessWidget {
     final theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(24, 16, 24, 4),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.baseline,
-        textBaseline: TextBaseline.alphabetic,
+      // A wrap, not a row: at large text a note too long for the line goes
+      // under the label instead of overflowing.
+      child: Wrap(
+        alignment: WrapAlignment.spaceBetween,
+        crossAxisAlignment: WrapCrossAlignment.end,
+        spacing: 12,
+        runSpacing: 2,
         children: <Widget>[
-          Expanded(
-            child: Semantics(
-              header: true,
-              child: Text(
-                text,
-                style: theme.textTheme.titleSmall!.copyWith(
-                  color: theme.colorScheme.primary,
-                ),
+          Semantics(
+            header: true,
+            child: Text(
+              text,
+              style: theme.textTheme.titleSmall!.copyWith(
+                color: theme.colorScheme.primary,
               ),
             ),
           ),

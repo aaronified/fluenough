@@ -36,6 +36,7 @@ void main() {
     tester,
   ) async {
     await pumpPicker(tester, <String>['hi']);
+    await openFamilies(tester);
     expect(languageCard('ipa:mine'), findsOneWidget);
     expect(languageCard('ipa:whole'), findsOneWidget);
     expect(languageCard('ipa'), findsNothing);
@@ -89,9 +90,17 @@ void main() {
     tester,
   ) async {
     final state = await pumpPicker(tester, <String>['hi', 'ipa']);
-    await pickLanguage(tester, 'ipa:mine');
+    await openSheet(tester, 'ipa:mine');
+    await tapSheet(tester, 'sheet-stop');
     expect(find.byType(AlertDialog), findsOneWidget);
-    await tester.tap(find.byType(TextButton).last);
+    await tester.tap(
+      find
+          .descendant(
+            of: find.byType(AlertDialog),
+            matching: find.byType(TextButton),
+          )
+          .last,
+    );
     await tester.pumpAndSettle();
     expect(isPicked(tester, 'ipa:mine'), isFalse);
     await proceed(tester);
