@@ -2,48 +2,55 @@ schema: 1
 id: "hi-script-perso-arabic-vowels"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "perso_arabic", tts: "ur-PK", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "perso_arabic", scripts: ["perso_arabic", "devanagari"], tts: "ur-PK", icon: "हि" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed", "script"]
 cards:
   - id: "hi-0681"
     target: "بَ"
+    target_scripts: { devanagari: "ब" }
     reading: "ba"
     ipa: "bə"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0682"
     target: "بِ"
+    target_scripts: { devanagari: "बि" }
     reading: "bi"
     ipa: "bɪ"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0683"
     target: "بُ"
+    target_scripts: { devanagari: "बु" }
     reading: "bu"
     ipa: "bʊ"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0684"
     target: "آ"
+    target_scripts: { devanagari: "आ" }
     reading: "ā"
     ipa: "aː"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0685"
     target: "ای"
+    target_scripts: { devanagari: "ई" }
     reading: "ī"
     ipa: "iː"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0686"
     target: "او"
+    target_scripts: { devanagari: "ओ" }
     reading: "ō"
     ipa: "oː"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0687"
     target: "اے"
+    target_scripts: { devanagari: "ए" }
     reading: "ē"
     ipa: "eː"
     notes:
@@ -56,6 +63,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0689"
     target: "بھ"
+    target_scripts: { devanagari: "भ" }
     reading: "bha"
     ipa: "bʱə"
     notes:
@@ -69,6 +77,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0691"
     target: "ع"
+    target_scripts: { devanagari: "अ" }
     reading: "a"
     ipa: "ə"
     modes: ["recognition", "production"]
@@ -76,12 +85,14 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0692"
     target: "بّ"
+    target_scripts: { devanagari: "ब्ब" }
     reading: "bb"
     ipa: "bː"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0693"
     target: "وزیرِ اعظم"
+    target_scripts: { devanagari: "वज़ीर-ए-आज़म" }
     reading: "vazīr-e azam"
     ipa: "ʋəziːrɪ əzəm"
     notes:
