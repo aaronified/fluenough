@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
 import '../../core/models/aksharas.dart';
