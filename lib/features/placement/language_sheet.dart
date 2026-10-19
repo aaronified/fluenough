@@ -412,6 +412,18 @@ class _LanguageSheetState extends State<LanguageSheet> {
         if (widget.learned && _hasScripts) ...<Widget>[
           PickerHeading(l10n.pickerSectionScripts),
           for (final script in widget.scripts) _learnedScript(context, script),
+          // The way to stop a script, or to add one, with those learned now
+          // ticked (#555: the setting is changed nowhere else).
+          _Block(
+            child: Align(
+              alignment: AlignmentDirectional.centerStart,
+              child: OutlinedButton(
+                key: const ValueKey<String>('sheet-change-scripts'),
+                onPressed: () => setState(() => _step = _Step.scripts),
+                child: Text(l10n.pickerChangeScripts),
+              ),
+            ),
+          ),
         ] else if (!widget.learned && widget.knows) ...<Widget>[
           PickerHeading(l10n.pickerSectionKnow),
           _Block(
