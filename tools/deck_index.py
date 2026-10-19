@@ -15,7 +15,10 @@ reviewers have made in it (ADR-0038); and, under `media`, the recordings
 and images its cards name (#518, #523), each with its path, size, SHA-256
 and kind, `audio` or `image`, which the language's size counts. They are
 listed apart from `files` so that an app too old to read them passes them
-by. Each file's `content_sha256` is the
+by. Under `fonts` it lists the font of each script its decks are shown in,
+for scripts that phones often draw wrongly or lack (ADR-0042): path, size,
+SHA-256, `script` and `family`, kept apart from `files` and left out of the
+language's size, for the same reason. Each file's `content_sha256` is the
 SHA-256 of the file with its proposals and its cards' `checked_by` taken
 out, so that a learner's phone is not offered an update when only a
 proposal or a reviewer's sign-off changed (#444, #449).
@@ -56,6 +59,30 @@ HIDDEN = {
 # What ships inside the app rather than downloading (the plan's item 7):
 # the theme list. The spoken languages live in assets/, not here.
 BUNDLED = {"decks/themes.yaml"}
+
+# The fonts the app downloads with a course (ADR-0042): for each script that
+# phones often draw wrongly or lack, one OFL-licensed Noto font in
+# `decks/fonts/<script>/`, with its OFL.txt. Chinese, Japanese and Korean
+# are left out: phones have them, and they are too large. The key is the
+# script as `assets/languages.yaml` and the deck files name it; the value,
+# the font's family name and its file.
+FONTS = {
+    "perso_arabic": ("Noto Nastaliq Urdu", "NotoNastaliqUrdu.ttf"),
+    "devanagari": ("Noto Sans Devanagari", "NotoSansDevanagari.ttf"),
+    "bengali": ("Noto Sans Bengali", "NotoSansBengali.ttf"),
+    "telugu": ("Noto Sans Telugu", "NotoSansTelugu.ttf"),
+    "kannada": ("Noto Sans Kannada", "NotoSansKannada.ttf"),
+    "gujarati": ("Noto Sans Gujarati", "NotoSansGujarati.ttf"),
+    "gurmukhi": ("Noto Sans Gurmukhi", "NotoSansGurmukhi.ttf"),
+    "odia": ("Noto Sans Oriya", "NotoSansOriya.ttf"),
+    "tamil": ("Noto Sans Tamil", "NotoSansTamil.ttf"),
+    "malayalam": ("Noto Sans Malayalam", "NotoSansMalayalam.ttf"),
+    "egyptian_hieroglyphs": (
+        "Noto Sans Egyptian Hieroglyphs", "NotoSansEgyptianHieroglyphs.ttf"),
+    "cuneiform": ("Noto Sans Cuneiform", "NotoSansCuneiform.ttf"),
+    "linear_b": ("Noto Sans Linear B", "NotoSansLinearB.ttf"),
+}
+FONTS_DIR = DECKS / "fonts"
 
 # Kinds of file that hold no deck: one of each per language at most. A
 # language whose files are all of these has no written deck, and is left
@@ -201,6 +228,50 @@ def _media_entries(directory: Path) -> list[dict]:
     return entries
 
 
+def _own_scripts() -> dict[str, list[str]]:
+    """Each language's scripts, from assets/languages.yaml."""
+    raw = vd._load_raw(ROOT / "assets" / "languages.yaml")
+    found: dict[str, list[str]] = {}
+    if isinstance(raw, dict) and isinstance(raw.get("languages"), list):
+        for entry in raw["languages"]:
+            if isinstance(entry, dict) and vd._is_str(entry.get("code")) \
+                    and isinstance(entry.get("scripts"), list):
+                found[entry["code"]] = [
+                    s for s in entry["scripts"] if vd._is_str(s)]
+    return found
+
+
+def _scripts_of(code: str, block: dict, scripts: dict[str, list[str]]) -> list[str]:
+    """The scripts a language's decks are shown in: the one its language
+    block names, then the others `assets/languages.yaml` lists for it, as
+    Hindustani's Perso-Arabic."""
+    found: list[str] = []
+    if vd._is_str(block.get("script")):
+        found.append(block["script"])
+    for script in scripts.get(code, []):
+        if script not in found:
+            found.append(script)
+    return found
+
+
+def _font_entries(scripts: list[str]) -> list[dict]:
+    """The fonts of [scripts] that decks/fonts/ holds (ADR-0042), in the
+    order of [scripts]."""
+    entries = []
+    for script in scripts:
+        if script not in FONTS:
+            continue
+        family, name = FONTS[script]
+        path = FONTS_DIR / script / name
+        if not path.is_file():
+            continue
+        data = path.read_bytes()
+        entries.append({"path": _rel(path), "size": len(data),
+                        "sha256": hashlib.sha256(data).hexdigest(),
+                        "script": script, "family": family})
+    return entries
+
+
 def _language_block(files: list[Path]) -> dict:
     """The language block of the first deck that has one."""
     for p in files:
@@ -213,7 +284,8 @@ def _language_block(files: list[Path]) -> dict:
 def build(reports: list[vd.Report] | None = None) -> dict:
     """The index of the repository's decks/, from [reports] when the
     validator has them, else from validating every file here."""
-    langs = sorted(p for p in DECKS.iterdir() if p.is_dir() and p.name not in HIDDEN)
+    langs = sorted(p for p in DECKS.iterdir()
+                   if p.is_dir() and p.name not in HIDDEN | {FONTS_DIR.name})
     paths = [p for d in langs for p in vd._yaml_files(d)]
     if reports is None:
         reports = [vd.validate(p) for p in paths]
@@ -224,6 +296,7 @@ def build(reports: list[vd.Report] | None = None) -> dict:
         by_path.update({rep.path.resolve(): rep for rep in reports})
     ctx = vd._context(reports)
     own = _own_names()
+    own_scripts = _own_scripts()
     out = []
     for d in langs:
         code = d.name
@@ -279,6 +352,11 @@ def build(reports: list[vd.Report] | None = None) -> dict:
         language["files"] = entries
         if media:
             language["media"] = media
+        # Apart from `files` and from the size: the released app reads only
+        # those, and passes this by (ADR-0042).
+        fonts = _font_entries(_scripts_of(code, block, own_scripts))
+        if fonts:
+            language["fonts"] = fonts
         out.append(language)
     return {
         "version": INDEX_VERSION,
@@ -302,7 +380,8 @@ def render(index: dict) -> str:
     lines.append('  "languages": [')
     for i, language in enumerate(index["languages"]):
         lines.append("    {")
-        keys = [k for k in language if k not in ("files", "units", "media")]
+        keys = [k for k in language
+                if k not in ("files", "units", "media", "fonts")]
         for k in keys:
             lines.append(f'      "{k}": {dump(language[k])},')
         if "units" in language:
@@ -311,10 +390,9 @@ def render(index: dict) -> str:
             for j, unit in enumerate(units):
                 lines.append(f"        {dump(unit)}{',' if j < len(units) - 1 else ''}")
             lines.append("      ],")
-        for key in ("files", "media"):
-            if key not in language:
-                continue
-            last = key == "media" or "media" not in language
+        lists = [k for k in ("files", "media", "fonts") if k in language]
+        for key in lists:
+            last = key == lists[-1]
             lines.append(f'      "{key}": [')
             files = language[key]
             for j, f in enumerate(files):
