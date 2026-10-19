@@ -2,12 +2,13 @@ schema: 1
 id: "hi-grammar-postpositions"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "grammar"]
 cards:
   - id: "hi-0274"
     target: "में"
+    target_scripts: { perso_arabic: "میں" }
     reading: "mēm̐"
     ipa: "mẽː"
     pos: "particle"
@@ -15,6 +16,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0275"
     target: "पर"
+    target_scripts: { perso_arabic: "پر" }
     reading: "par"
     ipa: "pər"
     pos: "particle"
@@ -22,6 +24,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0276"
     target: "से"
+    target_scripts: { perso_arabic: "سے" }
     reading: "sē"
     ipa: "seː"
     pos: "particle"
@@ -29,6 +32,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0277"
     target: "को"
+    target_scripts: { perso_arabic: "کو" }
     reading: "kō"
     ipa: "koː"
     pos: "particle"
@@ -36,6 +40,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0278"
     target: "तक"
+    target_scripts: { perso_arabic: "تک" }
     reading: "tak"
     ipa: "t̪ək"
     pos: "particle"
@@ -43,6 +48,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0279"
     target: "का"
+    target_scripts: { perso_arabic: "کا" }
     reading: "kā"
     ipa: "kaː"
     pos: "particle"
@@ -50,6 +56,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0280"
     target: "के साथ"
+    target_scripts: { perso_arabic: "کے ساتھ" }
     reading: "kē sāth"
     ipa: "keː saːt̪ʰ"
     pos: "phrase"
@@ -59,6 +66,7 @@ cards:
       - { word: "साथ", base: "साथ", reading: "sāth" }
   - id: "hi-0281"
     target: "के लिए"
+    target_scripts: { perso_arabic: "کے لیے" }
     reading: "kē liē"
     ipa: "keː lɪeː"
     pos: "phrase"
@@ -68,6 +76,7 @@ cards:
       - { word: "लिए", base: "लिए", reading: "liē" }
   - id: "hi-0282"
     target: "के पास"
+    target_scripts: { perso_arabic: "کے پاس" }
     reading: "kē pās"
     ipa: "keː paːs"
     pos: "phrase"
@@ -75,6 +84,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0283"
     target: "के बाद"
+    target_scripts: { perso_arabic: "کے بعد" }
     reading: "kē bād"
     ipa: "keː baːd̪"
     pos: "phrase"
@@ -84,6 +94,7 @@ cards:
       - { word: "बाद", base: "बाद", reading: "bād" }
   - id: "hi-0284"
     target: "से पहले"
+    target_scripts: { perso_arabic: "سے پہلے" }
     reading: "sē pahlē"
     ipa: "seː pəɦleː"
     pos: "phrase"
@@ -93,6 +104,7 @@ cards:
       - { word: "पहले", base: "पहले", reading: "pahlē" }
   - id: "hi-0285"
     target: "के नीचे"
+    target_scripts: { perso_arabic: "کے نیچے" }
     reading: "kē nīcē"
     ipa: "keː niːtʃeː"
     pos: "phrase"
