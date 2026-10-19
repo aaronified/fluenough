@@ -282,8 +282,7 @@ class _Header extends StatelessWidget {
               style: OutlinedButton.styleFrom(
                 minimumSize: const Size.fromHeight(AppSizes.primaryButton),
               ),
-              onPressed: () =>
-                  AppNavigator.openScriptGuide(context, guide.key),
+              onPressed: () => AppNavigator.openScriptGuide(context, guide.key),
               icon: const Icon(Icons.lightbulb_outline),
               label: Text(
                 l10n.deckScriptTips(guide.name),
