@@ -100,6 +100,44 @@ void main() {
     expect(state.courseUnits('hi').single.single.id, 'hi-bn-a');
   });
 
+  testWidgets('what a chosen course is taught from can change in its sheet, '
+      'and closing the sheet keeps it until Continue', (tester) async {
+    usePhone(tester);
+    final state = bengaliFirst();
+    await tester.pumpWidget(FluenoughApp(state: state));
+    await tester.pumpAndSettle();
+    final l10n = l10nOf(tester);
+
+    await pickLanguage(tester, 'hi');
+    await openSheet(tester, 'hi');
+    final choice = find.byType(SegmentedButton<String>);
+    await tester.ensureVisible(choice);
+    await tester.pumpAndSettle();
+    expect(tester.widget<SegmentedButton<String>>(choice).selected, <String>{
+      'en',
+    });
+    await tester.tap(
+      find.descendant(of: choice, matching: find.text('Bengali')),
+    );
+    await tester.pumpAndSettle();
+    // Closed without an answer, as a swipe or a tap outside does.
+    await closeSheet(tester);
+
+    await openSheet(tester, 'hi');
+    final again = find.byType(SegmentedButton<String>);
+    await tester.ensureVisible(again);
+    await tester.pumpAndSettle();
+    expect(tester.widget<SegmentedButton<String>>(again).selected, <String>{
+      'bn',
+    });
+    await closeSheet(tester);
+
+    await tapText(tester, l10n.commonContinue);
+    await giveUp(tester);
+    await tapText(tester, l10n.placementDone);
+    expect(state.settings.courseNative('hi'), 'bn');
+  });
+
   testWidgets('placement asks which language to learn a course from when '
       'nothing has, each with its coverage, the best covered chosen', (
     tester,

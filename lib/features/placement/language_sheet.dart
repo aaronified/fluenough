@@ -122,6 +122,7 @@ class LanguageSheet extends StatefulWidget {
     required this.storage,
     this.you,
     this.native,
+    this.onNative,
     this.hasPlacement = true,
     this.findLanguage = true,
     this.findScripts = const <String, bool>{},
@@ -161,6 +162,11 @@ class LanguageSheet extends StatefulWidget {
   /// The language it is taught from, where the learner chose or the app
   /// suggests.
   final String? native;
+
+  /// Called at once with a language chosen here and not saved yet, when the
+  /// learner changes what it is taught from: the page holds it until
+  /// Continue, as it holds its other choices, so closing the sheet keeps it.
+  final ValueChanged<String>? onNative;
 
   /// Whether there is a level to find: false for the IPA.
   final bool hasPlacement;
@@ -476,7 +482,10 @@ class _LanguageSheetState extends State<LanguageSheet> {
               language: language,
               options: options,
               chosen: _native!,
-              onChosen: (picked) => setState(() => _native = picked),
+              onChosen: (picked) {
+                setState(() => _native = picked);
+                widget.onNative?.call(picked);
+              },
             ),
           )
         else if (nativeName != null)
