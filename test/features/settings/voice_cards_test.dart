@@ -120,7 +120,17 @@ void main() {
     );
     expect(cards, hasLength(voiced));
     expect(cards.first.language.code, 'te');
-    expect(find.text(l10n.voicesListening), findsNWidgets(voiced));
+    // A course's other voices, such as ur-PK beside hi-IN, list too (#641).
+    final otherVoices = <LanguageInfo>[
+      for (final l in state.languages)
+        if (!l.isIpa)
+          for (final block in state.voiceBlocksOf(l.code))
+            if (block.ttsTag != l.ttsTag) block,
+    ].length;
+    expect(
+      find.text(l10n.voicesListening),
+      findsNWidgets(voiced + otherVoices),
+    );
     expect(find.text(l10n.voicesSpeakingPart), findsNWidgets(voiced));
     // No second list for speech below the voices.
     expect(find.text('Recognising your speech'), findsNothing);
