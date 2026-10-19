@@ -2218,6 +2218,9 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
         r.error("id", f"must match [a-z0-9-]+, got {deck_id!r}")
     elif deck_id != path.stem:
         r.error("id", f"is {deck_id!r} but the filename stem is {path.stem!r}")
+    elif deck_id.endswith("-script"):
+        r.error("id", f"{deck_id!r} ends in -script, which only a script guide's id does; "
+                      f"give the deck another name")
 
     if not _is_str(raw.get("name")):
         r.error("name", "is required")
@@ -2729,6 +2732,10 @@ def _check_core_id(r: Report, raw: dict, path: Path, lang: str) -> None:
         return
     if name in RESERVED_CORES:
         r.error("id", f"{cid!r} is the name of the language's {RESERVED_CORES[name]}; "
+                      f"give the core another name")
+        return
+    if name.endswith("-script"):
+        r.error("id", f"{cid!r} ends in -script, which only a script guide's id does; "
                       f"give the core another name")
         return
     dirs = _unique_dirs(path.parent, ROOT / "decks" / lang)
@@ -4512,10 +4519,23 @@ def check_sounds_file(r: Report, raw: dict, path: Path, *, core: bool = False) -
                         f"must be two different quoted strings, at most one empty, got {pair!r}")
 
 
+def _course_scripts(folder: Path) -> set[str]:
+    """The scripts the decks directly in [folder] (a language's) are written
+    in, hyphens as underscores: a script guide may be for any of them."""
+    found: set[str] = set()
+    for p in sorted(folder.glob("*.yaml")):
+        raw = _load_raw(p)
+        if isinstance(raw, dict) and isinstance(raw.get("language"), dict):
+            found.update(s.replace("-", "_") for s in _scripts_of(raw["language"]))
+    return found
+
+
 def check_script_file(r: Report, raw: dict, path: Path, *, core: bool = False) -> None:
     """A script's guide, decks/<lang>/<lang>-script.yaml: the recurring
     features a learner from English misses, shown before the first script
-    card (#30). See ADR-0016. A core (`part: "core"`, #498) leaves its name,
+    card (#30). See ADR-0016. A language written in several scripts has one
+    guide for each: <lang>-script is its default, and <lang>-<script>-script,
+    such as hi-perso-arabic-script, the guide of that script. A core (`part: "core"`, #498) leaves its name,
     intro and each feature's name and text to its layers."""
     texts = ("name", "intro")
     keys = (SCRIPT_KEYS - set(texts)) | {"part"} if core else SCRIPT_KEYS
@@ -4536,8 +4556,19 @@ def check_script_file(r: Report, raw: dict, path: Path, *, core: bool = False) -
     guide_id = raw.get("id")
     if guide_id != path.stem:
         r.error("id", f"is {guide_id!r} but the filename stem is {path.stem!r}")
-    elif lang is not None and guide_id != f"{lang}-script":
-        r.error("id", f"a script guide for {lang} has id {lang}-script, got {guide_id!r}")
+    elif lang is not None:
+        match = re.fullmatch(rf"{lang}-(?:([a-z]+(?:-[a-z]+)*)-)?script", guide_id)
+        if match is None:
+            r.error("id", f"a script guide for {lang} has id {lang}-script, or "
+                          f"{lang}-<script>-script for another script of the language; "
+                          f"got {guide_id!r}")
+        elif match.group(1) is not None:
+            script = match.group(1).replace("-", "_")
+            scripts = _course_scripts(path.parent)
+            if script not in scripts:
+                r.error("id", f"{guide_id!r} is the guide for the script {script!r}, which "
+                              f"none of the decks of {lang} is written in "
+                              f"({', '.join(sorted(scripts)) or 'none found'})")
     for key in () if core else texts:
         if not _is_str(raw.get(key)) or not raw[key].strip():
             r.error(key, "is required text")
@@ -4602,9 +4633,13 @@ def validate_guide_layer(r: Report, raw: dict, path: Path, core: dict) -> None:
     lid = raw.get("id")
     if lid != path.stem:
         r.error("id", f"is {lid!r} but the filename stem is {path.stem!r}")
-    elif lang and ncode and lid != f"{lang}-{ncode}-{kind}":
-        r.error("id", f"the {ncode} layer of {lang}-{kind} has id {lang}-{ncode}-{kind}, "
-                      f"got {lid!r}")
+    elif lang and ncode:
+        # `hi-script` -> `hi-en-script`; `hi-perso-arabic-script` ->
+        # `hi-en-perso-arabic-script`.
+        core_id = core.get("id") if _is_str(core.get("id")) else f"{lang}-{kind}"
+        want = f"{lang}-{ncode}" + core_id[len(lang):]
+        if lid != want:
+            r.error("id", f"the {ncode} layer of {core_id} has id {want}, got {lid!r}")
     if ncode and path.parent.name != ncode:
         r.error("root", f"a layer lives in decks/{lang}/{ncode}/, the folder of its "
                         f"native language; this one is in {path.parent.name!r}")

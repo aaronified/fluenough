@@ -1,0 +1,49 @@
+# How the Perso-Arabic script, the second script of Hindustani, works: the
+# recurring features a learner from English misses, shown before the first
+# letters and from a Perso-Arabic script deck's Tips. The guide of the
+# course's other script is hi-script. See ADR-0016 and docs/DECK-FORMAT.md.
+schema: 1
+kind: "script"
+part: "core"
+id: "hi-perso-arabic-script"
+language: "hi"
+features:
+  - id: "right-to-left"
+    example: "کتاب"
+    letters: ["ک", "ت", "ا", "ب"]
+  - id: "joining"
+    example: "بب"
+    letters: ["بـ", "ـبـ", "ـب", "ب"]
+  - id: "non-joiners"
+    example: "دور"
+    letters: ["ا", "د", "ڈ", "ذ", "ر", "ڑ", "ز", "ژ", "و"]
+  - id: "dots"
+    term: "نقطہ"
+    reading: "nuqtā"
+    ipa: "nʊqt̪aː"
+    example: "ب"
+    letters: ["ب", "پ", "ت", "ٹ", "ث"]
+  - id: "short-vowels"
+    term: "زبر"
+    reading: "zabar"
+    ipa: "zəbər"
+    example: "بَ"
+    letters: ["بَ", "بِ", "بُ"]
+  - id: "aspirates"
+    term: "دو چشمی ھ"
+    reading: "do cashmī he"
+    ipa: "d̪oː tʃəʃmiː ɦeː"
+    example: "بھ"
+    letters: ["بھ", "پھ", "تھ", "ٹھ", "جھ", "چھ", "دھ", "ڈھ", "کھ", "گھ"]
+  - id: "nastaliq"
+    term: "نستعلیق"
+    reading: "nastalīq"
+    ipa: "nəst̪əliːq"
+    example: "نستعلیق"
+    letters: ["ن", "س", "ت", "ع", "ل", "ی", "ق"]
+  - id: "nun-ghunna"
+    term: "نون غنہ"
+    reading: "nūn ġunnā"
+    ipa: "nuːn ɣʊnːaː"
+    example: "ں"
+    letters: ["ں", "ہاں", "میں", "کہاں"]
