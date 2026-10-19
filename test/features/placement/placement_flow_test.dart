@@ -403,7 +403,12 @@ void main() {
     expect(state.settings.learnsAlphabet('hi'), isFalse);
     final without = decksOf(state.courseUnits('hi'));
     expect(without.intersection(alphabet), isEmpty);
-    expect(decksOf(withAlphabet).difference(without), alphabet);
+    // The Perso-Arabic decks are not in the course of a learner of the
+    // primary script, so only the decks it had are left out.
+    expect(
+      decksOf(withAlphabet).difference(without),
+      alphabet.intersection(decksOf(withAlphabet)),
+    );
     expect(decksOf(state.pendingUnits).intersection(alphabet), isEmpty);
   });
 

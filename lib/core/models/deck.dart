@@ -53,6 +53,34 @@ class LanguageInfo {
   /// choosing (ADR-0041).
   final bool typed;
 
+  /// This language written in [other], one of its [allScripts] (#623):
+  /// the same language in that script's direction, for text drawn in it.
+  LanguageInfo inScript(String other) => other == script
+      ? this
+      : LanguageInfo(
+          code: code,
+          iso639_3: iso639_3,
+          name: name,
+          script: other,
+          scripts: scripts,
+          tts: tts,
+          rtl: rtlScripts.contains(other),
+          icon: icon,
+          typed: typed,
+        );
+
+  /// The scripts that run right to left.
+  static const Set<String> rtlScripts = <String>{
+    'arabic',
+    'perso_arabic',
+    'shahmukhi',
+    'hebrew',
+    'thaana',
+    'syriac',
+    'nko',
+    'adlam',
+  };
+
   /// Whether this is the IPA, a notation taught like a language
   /// (ADR-0041): its cards' examples are in other languages.
   bool get isIpa => script == 'ipa';
