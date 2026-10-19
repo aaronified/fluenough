@@ -7,9 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.1] - 2026-10-19
+
+### Added
+
+- Languages I'm learning, redone in line with Languages I know (#626): short rows grouped as Learning, Popular and by language family, with search pinned at the top; each row shows your progress and the course's Alpha, Beta or Complete tag, with Update only when an update is waiting and Remove as a red ×. One button checks for deck updates and then becomes Update all. Tapping a language opens its sheet with the course's A1–A2–B1–culture line, what it is taught from, its size and units, Find my level (also on Progress) and Change scripts; Learn this language asks, on screens of their own with Back, which of its scripts to learn and where to start.
+
 ### Changed
 
-- Hindi and Urdu are one course, Hindustani (#623): the `hi` course and its card ids stay, and it is named Hindustani wherever the app shows a language. Languages I know offers its two scripts, Devanagari and Perso-Arabic, as it does for Punjabi; knowing Hindustani never hides it from Languages I'm learning. The Urdu path's script units and loan-word units are planned in its path.
+- Hindi and Urdu are one course, Hindustani (#623): the `hi` course and its card ids stay, and it is named Hindustani wherever the app shows a language. Languages I know offers its two scripts, Devanagari and Perso-Arabic, as it does for Punjabi; knowing Hindustani never hides it from Languages I'm learning, so you can learn it for a script you don't read.
+- Languages I know asks about a language's script in that language's own script, with the English under it, for every language that has the sentences, checked by a speaker or not (#621). Those not yet checked have a bug icon to report a mistake.
+
+### Fixed
+
+- A language whose course has a path but no deck yet is no longer listed as an empty course (#620, #624).
 
 ## [0.5.0] - 2026-10-18
 
