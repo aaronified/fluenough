@@ -75,7 +75,9 @@ alphabet:
   - "hi-script-vowel-signs"
   - "hi-script-conjuncts"
   - "hi-script-perso-arabic-letters"
+  - "hi-script-perso-arabic-shapes"
   - "hi-script-perso-arabic-vowels"
+  - "hi-script-perso-arabic-reading"
   - "hi-spelling"
   - "hi-reading-panch-parmeshwar"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
@@ -113,7 +115,7 @@ units:
   # forms: most letters take an initial, a medial, a final and an alone
   # form, as ب (b) does in بات (bāt) and کتاب (kitāb), and nine join only to
   # the letter before them (ا د ڈ ذ ر ڑ ز ژ و).
-  - decks: ["hi-script-perso-arabic-letters"]
+  - decks: ["hi-script-perso-arabic-letters", "hi-script-perso-arabic-shapes"]
   # The second unit teaches the vowels: the short vowels are left unwritten,
   # so کتاب (kitāb) is written k-t-ā-b, and their marks, زبر (zabar, a),
   # زیر (zer, i) and پیش (peś, u), appear only in teaching texts; the long
@@ -122,7 +124,7 @@ units:
   # aspirates against ہ (h), ء (hamza), ع (ʿain), the doubling mark ّ
   # (taśdīd), and the izafat: the -e- that joins two Persian words, written
   # with a zer, وزیرِ اعظم (vazīr-e aʿzam, "prime minister").
-  - decks: ["hi-script-perso-arabic-vowels"]
+  - decks: ["hi-script-perso-arabic-vowels", "hi-script-perso-arabic-reading"]
   # Numbers 1–20 follow the script, so it comes after the first six units.
   - decks: ["hi-numbers-1-20", "*"]
     words: 20
