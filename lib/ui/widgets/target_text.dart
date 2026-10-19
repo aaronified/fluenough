@@ -174,7 +174,7 @@ class TargetText extends StatelessWidget {
       semanticsLabel: shown == text ? null : text,
       textAlign: textAlign,
       textDirection: language.rtl ? TextDirection.rtl : TextDirection.ltr,
-      locale: Locale(language.code),
+      locale: targetLocale(language),
       style: TextStyle(
         fontSize: size,
         fontWeight: fontWeight,
@@ -194,7 +194,7 @@ class TargetText extends StatelessWidget {
       text: TextSpan(
         text: text,
         style: TextStyle(fontSize: size, fontWeight: fontWeight),
-        locale: Locale(language.code),
+        locale: targetLocale(language),
       ),
       textDirection: language.rtl ? TextDirection.rtl : TextDirection.ltr,
       textScaler: MediaQuery.textScalerOf(context),
@@ -212,6 +212,15 @@ class TargetText extends StatelessWidget {
 
 enum _Sizing { fixed, hero, card }
 
+/// The locale [language]'s text is drawn and read in: its own code, except
+/// that text in the Perso-Arabic script of Urdu (Hindustani's second script,
+/// and Punjabi's Shahmukhi) is marked Urdu, so that the phone draws it in its
+/// Nastaliq font rather than the plain Naskh it uses for Arabic.
+Locale targetLocale(LanguageInfo language) => switch (language.script) {
+  'perso_arabic' || 'shahmukhi' => const Locale('ur'),
+  _ => Locale(language.code),
+};
+
 /// [text], an interface string that quotes deck content, with each of
 /// [quotes] in it marked as [language]'s: drawn in its font and read by a
 /// screen reader in its voice, while the rest stays the interface's (#26).
@@ -226,7 +235,7 @@ TextSpan quotingTarget(
     for (final quote in quotes)
       if (quote.isNotEmpty) quote,
   }.toList()..sort((a, b) => b.length.compareTo(a.length));
-  final locale = Locale(language.code);
+  final locale = targetLocale(language);
   final spans = <TextSpan>[];
   var start = 0;
   while (start < text.length) {

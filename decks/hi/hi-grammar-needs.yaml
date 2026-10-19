@@ -2,13 +2,14 @@ schema: 1
 id: "hi-grammar-needs"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed", "grammar"]
 cards:
   - ref: "hi-0336"
   - id: "hi-0460"
     target: "चाहिए"
+    target_scripts: { perso_arabic: "چاہیے" }
     reading: "cāhiē"
     ipa: "tʃaːɦɪeː"
     pos: "verb"
@@ -16,6 +17,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0461"
     target: "आपको क्या चाहिए?"
+    target_scripts: { perso_arabic: "آپ کو کیا چاہیے؟" }
     reading: "āpkō kyā cāhiē?"
     ipa: "aːpkoː kjaː tʃaːɦɪeː"
     pos: "phrase"
@@ -23,6 +25,7 @@ cards:
       - { word: "आपको", ref: "hi-0134" }
   - id: "hi-0462"
     target: "मुझे और कुछ नहीं चाहिए।"
+    target_scripts: { perso_arabic: "مجھے اور کچھ نہیں چاہیے۔" }
     reading: "mujhē aur kuch nahīm̐ cāhiē."
     ipa: "mʊdʒʱeː ɔːr kʊtʃʰ nəɦĩː tʃaːɦɪeː"
     pos: "phrase"
@@ -38,6 +41,7 @@ cards:
       - { word: "धन्यवाद", ref: "hi-0138" }
   - id: "hi-0464"
     target: "ज़रूरत"
+    target_scripts: { perso_arabic: "ضرورت" }
     reading: "zarūrat"
     ipa: "zəruːrət̪"
     alt_target: ["जरूरत"]
@@ -45,6 +49,7 @@ cards:
     gender: "f"
   - id: "hi-0465"
     target: "मुझे मदद की ज़रूरत है।"
+    target_scripts: { perso_arabic: "مجھے مدد کی ضرورت ہے۔" }
     reading: "mujhē madad kī zarūrat hai."
     ipa: "mʊdʒʱeː məd̪əd̪ kiː zəruːrət̪ ɦɛː"
     pos: "phrase"
@@ -54,11 +59,13 @@ cards:
       - { word: "मुझे", base: "मैं", reading: "maim̐" }
   - id: "hi-0466"
     target: "ज़रूरत नहीं है।"
+    target_scripts: { perso_arabic: "ضرورت نہیں ہے۔" }
     reading: "zarūrat nahīm̐ hai."
     ipa: "zəruːrət̪ nəɦĩː ɦɛː"
     pos: "phrase"
   - id: "hi-0467"
     target: "मैं एक कप चाय चाहता हूँ।"
+    target_scripts: { perso_arabic: "میں ایک کپ چائے چاہتا ہوں۔" }
     reading: "maim̐ ēk kap cāy cāhtā hūm̐."
     ipa: "mɛ̃ː eːk kəp tʃaːj tʃaːɦt̪aː ɦũː"
     pos: "phrase"

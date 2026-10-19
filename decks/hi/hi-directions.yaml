@@ -2,13 +2,14 @@ schema: 1
 id: "hi-directions"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 theme: "directions"
 tags: ["beginner"]
 cards:
   - id: "hi-0286"
     target: "… कहाँ है?"
+    target_scripts: { perso_arabic: "… کہاں ہے؟" }
     reading: "... kahām̐ hai?"
     ipa: "kəɦãː ɦɛː"
     pos: "phrase"
@@ -16,6 +17,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0287"
     target: "दाएँ"
+    target_scripts: { perso_arabic: "دائیں" }
     reading: "dāēm̐"
     ipa: "d̪aːẽː"
     alt_target: ["दाएं", "दायें"]
@@ -24,33 +26,39 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0288"
     target: "बाएँ"
+    target_scripts: { perso_arabic: "بائیں" }
     reading: "bāēm̐"
     ipa: "baːẽː"
     alt_target: ["बाएं", "बायें"]
     pos: "adv"
   - id: "hi-0289"
     target: "सीधे"
+    target_scripts: { perso_arabic: "سیدھے" }
     reading: "sīdhē"
     ipa: "siːd̪ʱeː"
     pos: "adv"
   - id: "hi-0290"
     target: "मुड़िए"
+    target_scripts: { perso_arabic: "مڑیے" }
     reading: "muṛiē"
     ipa: "mʊɽɪeː"
     pos: "verb"
     tags: ["polite"]
   - id: "hi-0291"
     target: "आगे"
+    target_scripts: { perso_arabic: "آگے" }
     reading: "āgē"
     ipa: "aːɡeː"
     pos: "adv"
   - id: "hi-0292"
     target: "पीछे"
+    target_scripts: { perso_arabic: "پیچھے" }
     reading: "pīchē"
     ipa: "piːtʃʰeː"
     pos: "adv"
   - id: "hi-0293"
     target: "पास"
+    target_scripts: { perso_arabic: "پاس" }
     reading: "pās"
     ipa: "paːs"
     pos: "adv"
@@ -58,6 +66,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0294"
     target: "दूर"
+    target_scripts: { perso_arabic: "دور" }
     reading: "dūr"
     ipa: "d̪uːr"
     pos: "adv"
@@ -65,18 +74,21 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0295"
     target: "यहाँ"
+    target_scripts: { perso_arabic: "یہاں" }
     reading: "yahām̐"
     ipa: "jəɦãː"
     alt_target: ["यहां"]
     pos: "adv"
   - id: "hi-0296"
     target: "वहाँ"
+    target_scripts: { perso_arabic: "وہاں" }
     reading: "vahām̐"
     ipa: "ʋəɦãː"
     alt_target: ["वहां"]
     pos: "adv"
   - id: "hi-0297"
     target: "रास्ता"
+    target_scripts: { perso_arabic: "راستہ" }
     reading: "rāstā"
     ipa: "raːst̪aː"
     pos: "noun"
@@ -85,6 +97,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0298"
     target: "सड़क"
+    target_scripts: { perso_arabic: "سڑک" }
     reading: "saṛak"
     ipa: "səɽək"
     pos: "noun"
