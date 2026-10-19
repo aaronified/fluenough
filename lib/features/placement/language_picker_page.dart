@@ -1335,9 +1335,9 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     );
   }
 
-  /// [language]'s row: opens its sheet. In "Learning" a language on the
-  /// phone has its row of buttons (#467, #626), and one newly chosen its
-  /// download below.
+  /// [language]'s row: opens its sheet. A language on the phone, learned or
+  /// not chosen, has its row of buttons in every group and in search
+  /// (#467, #626), and one newly chosen its download below.
   Widget _row(
     BuildContext context,
     AppState state,
@@ -1374,9 +1374,8 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
       query: query,
       // A language on the phone has its size, state and buttons (#467).
       actions:
-          learningGroup &&
-              !widget.firstRun &&
-              learns &&
+          !widget.firstRun &&
+              (learns || !ticked) &&
               downloads != null &&
               hasDownloadRow(downloads, code)
           ? LanguageRowActions(
