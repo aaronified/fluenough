@@ -524,6 +524,35 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Urdu is part of Hindustani since #623: a learner who said they know
+  /// `ur` knows `hi` with its Perso-Arabic script read, at the rank Urdu
+  /// had (or Hindustani's own, if that is better). Their answer for Urdu
+  /// is dropped. Reading the stored `ur` again after this is a no-op.
+  void _foldUrduIntoHindustani() {
+    final urdu = _spokenLanguages.indexOf('ur');
+    final answered = _scriptsRead.containsKey('ur');
+    if (urdu < 0 && !answered) return;
+    if (urdu >= 0) {
+      final hindustani = _spokenLanguages.indexOf('hi');
+      final next = List<String>.of(_spokenLanguages);
+      if (hindustani < 0) {
+        next[urdu] = 'hi';
+      } else {
+        next.removeAt(urdu);
+        if (urdu < hindustani) {
+          next.remove('hi');
+          next.insert(urdu, 'hi');
+        }
+      }
+      spokenLanguages = next;
+    }
+    final answers = Map<String, bool>.of(_scriptsRead)..remove('ur');
+    // Someone who read Urdu has not said they read Devanagari.
+    answers.putIfAbsent('hi', () => false);
+    answers['hi:perso_arabic'] = true;
+    scriptsRead = answers;
+  }
+
   /// Where [code] ranks among [spokenLanguages], from 0, or null.
   int? rankOf(String code) {
     final i = _spokenLanguages.indexOf(code);
@@ -985,6 +1014,7 @@ class SettingsNotifier extends ChangeNotifier {
           if (readKeyPattern.hasMatch(key) && value is bool) key: value,
       };
     }
+    _foldUrduIntoHindustani();
     if (pick('course_natives', _parseJsonMap) case final v?) {
       final code = RegExp(r'^[a-z]{2,3}$');
       for (final MapEntry(:key, :value) in v.entries) {
