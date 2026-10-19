@@ -477,6 +477,53 @@ cards:
       expect(find.text(l10n.pickerUpdateAvailable), findsNothing);
     });
 
+    testWidgets('a language on the phone keeps its Update, size and Remove '
+        'on its row when not learned, stopped, or found by search', (
+      tester,
+    ) async {
+      await downloaded(remote, phone, const <String>['es', 'hi']);
+      await pump(
+        tester,
+        downloadingApp(
+          remote: remote,
+          phone: phone,
+          settings: learning(const <String>['es']),
+        ),
+      );
+      await openLearning(tester);
+      Finder remove(String code) => find.descendant(
+        of: languageCard(code),
+        matching: find.byKey(ValueKey<String>('remove-$code')),
+      );
+
+      // Not learned, but its decks are on the phone: in "All languages".
+      await openSheet(tester, 'hi');
+      await closeSheet(tester);
+      await scrollToInPicker(tester, languageCard('hi'));
+      expect(remove('hi'), findsOneWidget);
+      expect(
+        find.descendant(
+          of: languageCard('hi'),
+          matching: find.textContaining('Up to date'),
+        ),
+        findsOneWidget,
+      );
+
+      // Stopped: Remove stays until Continue saves it.
+      await pickLanguage(tester, 'es');
+      expect(isPicked(tester, 'es'), isFalse);
+      await scrollToInPicker(tester, languageCard('es'));
+      expect(remove('es'), findsOneWidget);
+
+      // In search results, learned or not.
+      await tester.enterText(find.byType(TextField), 'hindustani');
+      await tester.pumpAndSettle();
+      expect(remove('hi'), findsOneWidget);
+      await tester.enterText(find.byType(TextField), 'spanish');
+      await tester.pumpAndSettle();
+      expect(remove('es'), findsOneWidget);
+    });
+
     testWidgets('Remove is a red cross on a language on the phone: it asks, '
         'and Cancel keeps the decks', (tester) async {
       await downloaded(remote, phone, const <String>['es', 'hi']);
