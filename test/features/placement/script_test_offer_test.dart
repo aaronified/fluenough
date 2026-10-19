@@ -8,6 +8,7 @@ import 'package:fluenough/app/language_offer.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/features/placement/language_picker_page.dart';
+import 'package:fluenough/features/placement/placement_page.dart';
 import 'package:fluenough/features/placement/script_test_page.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 
@@ -227,5 +228,29 @@ void main() {
     expect(state.settings.placedDecks, <String>{
       for (final entry in state.scriptLessons('as')) entry.id,
     });
+  });
+
+  testWidgets('Find my level on a language learned keeps a passed script '
+      'test: its lessons stay skipped', (tester) async {
+    usePhone(tester);
+    final state = bengaliReader(learning: const <String>['as']);
+    await pumpScreen(
+      tester,
+      LanguagePickerPage(spokenList: spokenList),
+      state: state,
+    );
+    final l10n = l10nOf(tester);
+    state.skipScriptLessons('as', true);
+    expect(state.scriptLessonsSkipped('as'), isTrue);
+
+    await openSheet(tester, 'as');
+    await tapSheet(tester, 'sheet-find');
+    expect(find.byType(PlacementPage), findsOneWidget);
+    while (find.text(l10n.placementDontKnow).evaluate().isNotEmpty) {
+      await tapIn(tester, find.text(l10n.placementDontKnow));
+    }
+    await tapIn(tester, find.text(l10n.placementDone));
+    expect(find.byType(PlacementPage), findsNothing);
+    expect(state.scriptLessonsSkipped('as'), isTrue);
   });
 }

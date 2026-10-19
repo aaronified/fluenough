@@ -582,6 +582,9 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
   void _findLevel(AppState state, CatalogLanguage language) {
     final code = language.code;
     final native = state.courseNative(code);
+    // A passed script test stays: the lessons it placed are among the decks
+    // replaced below.
+    final skipped = state.scriptLessonsSkipped(code, native: native);
     Navigator.of(context).push(
       MaterialPageRoute<void>(
         settings: const RouteSettings(name: '/placement'),
@@ -604,6 +607,9 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
                 if (!replaced.contains(id)) id,
               ...?found.placed[code],
             };
+            if (skipped && settings.learnsAlphabet(code)) {
+              state.skipScriptLessons(code, true, native: native);
+            }
           },
         ),
       ),
