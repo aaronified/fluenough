@@ -102,6 +102,10 @@ const int kHeatmapDays = kHeatmapWeeks * 7;
 /// The number of colour steps in the grid, the empty one included.
 const int kHeatmapLevels = 5;
 
+/// A script skill in one script (#653): Read or Write, of Devanagari or
+/// Perso-Arabic.
+typedef ScriptSkill = ({String script, DrillMode mode});
+
 /// Everything Progress shows, computed from the review log and the current
 /// scheduling states. Nothing is stored; every number is rebuilt from
 /// [ProgressStore.log], so nothing here can drift from it.
@@ -151,10 +155,18 @@ class StatsNumbers {
         if (inRange(e.at)) e,
     ];
 
-    final script = <DrillMode, List<int>>{};
+    // By script, in the order each was first answered in, so a course's
+    // primary script comes first; Read before Write in each (#653).
+    final scripts = <String>[];
+    final script = <ScriptSkill, List<int>>{};
     for (final e in scriptLog) {
-      if (!inRange(e.at)) continue;
-      final s = script.putIfAbsent(e.mode, () => <int>[0, 0]);
+      final name = e.script;
+      if (name == null || !inRange(e.at)) continue;
+      if (!scripts.contains(name)) scripts.add(name);
+      final s = script.putIfAbsent((
+        script: name,
+        mode: e.mode,
+      ), () => <int>[0, 0]);
       s[0] += e.passed ? 1 : 0;
       s[1]++;
     }
@@ -209,12 +221,14 @@ class StatsNumbers {
         for (final skill in Skill.values)
           if (skills[skill] case final t?) skill: Tally(t[0], t[1]),
       },
-      scriptSkills: <DrillMode, Tally>{
-        for (final mode in const <DrillMode>[
-          DrillMode.readScript,
-          DrillMode.writeScript,
-        ])
-          if (script[mode] case final t?) mode: Tally(t[0], t[1]),
+      scriptSkills: <ScriptSkill, Tally>{
+        for (final name in scripts)
+          for (final mode in const <DrillMode>[
+            DrillMode.readScript,
+            DrillMode.writeScript,
+          ])
+            if (script[(script: name, mode: mode)] case final t?)
+              (script: name, mode: mode): Tally(t[0], t[1]),
       },
       weakestTags: <String, Tally>{
         for (final entry in weakest.take(tagCount))
@@ -246,12 +260,12 @@ class StatsNumbers {
   /// [Skill] order.
   final Map<Skill, Tally> bySkill;
 
-  /// Correct answers for each script skill, Read script then Write script,
-  /// that has answers in the range (#556): taken from the answers to the
-  /// script decks, which count in the word skills too. A skill without
-  /// answers has no row, so a language in Latin script, or a learner who
-  /// reads the script already, shows neither.
-  final Map<DrillMode, Tally> scriptSkills;
+  /// Correct answers for each script skill that has answers in the range,
+  /// per script, Read then Write of each (#556, #653): taken from the
+  /// answers that read or write the script, which count in the word skills
+  /// too. A skill without answers has no row, so a language in Latin
+  /// script, or a learner who reads the script already, shows neither.
+  final Map<ScriptSkill, Tally> scriptSkills;
 
   /// The tags with the lowest share remembered in the range, weakest first.
   /// Tags come from the cards' decks.

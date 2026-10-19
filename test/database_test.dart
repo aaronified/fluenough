@@ -47,8 +47,8 @@ void main() {
         kind: kind,
       );
 
-  test('opens at version 8 with its eight tables', () async {
-    expect(db.schemaVersion, 8);
+  test('opens at version 9 with its eight tables', () async {
+    expect(db.schemaVersion, 9);
     final tables = await db
         .customSelect(
           "SELECT name FROM sqlite_master WHERE type = 'table' "

@@ -22,6 +22,8 @@ void main() {
     grade: grade,
     elapsed: Duration.zero,
     answerGiven: 'x',
+    script: null,
+    asked: null,
   );
 
   group('impliedBy', () {

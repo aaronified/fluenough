@@ -266,14 +266,9 @@ class _StatsBody extends StatelessWidget {
               for (final MapEntry(key: skill, value: tally)
                   in numbers.bySkill.entries)
                 bar(skill.label(l10n), tally),
-              for (final MapEntry(key: mode, value: tally)
+              for (final MapEntry(key: skill, value: tally)
                   in numbers.scriptSkills.entries)
-                bar(
-                  mode == DrillMode.readScript
-                      ? l10n.skillReadScript
-                      : l10n.skillWriteScript,
-                  tally,
-                ),
+                bar(scriptSkillLabel(l10n, skill), tally),
               howYouLearn,
             ],
           )
@@ -403,4 +398,14 @@ class _LeechesRow extends StatelessWidget {
           )
         : MergeSemantics(child: tile);
   }
+}
+
+/// [skill]'s name on Progress (#653): Read or Write and its script's own
+/// name, "Read Devanagari"; Read script or Write script for a script with
+/// no name.
+String scriptSkillLabel(AppLocalizations l10n, ScriptSkill skill) {
+  final name = l10n.scriptName(skill.script);
+  final read = skill.mode == DrillMode.readScript;
+  if (name.isEmpty) return read ? l10n.skillReadScript : l10n.skillWriteScript;
+  return read ? l10n.skillReadScriptIn(name) : l10n.skillWriteScriptIn(name);
 }

@@ -338,6 +338,8 @@ void main() {
           grade: 4,
           elapsed: Duration.zero,
           answerGiven: 'x',
+          script: null,
+          asked: null,
         ));
       }
       expect(states, before);
@@ -442,6 +444,8 @@ void main() {
             grade: r.grade,
             elapsed: r.elapsed,
             answerGiven: r.answerGiven,
+            script: null,
+            asked: null,
             key: r.key,
           ),
       ], const []);

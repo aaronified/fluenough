@@ -36,6 +36,8 @@ void main() {
     grade: grade,
     elapsed: const Duration(seconds: 2),
     answerGiven: null,
+    script: null,
+    asked: null,
   );
 
   RestoreRecord record() => RestoreRecord(

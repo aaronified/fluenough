@@ -87,12 +87,13 @@ void main() {
         range: StatsRange.all,
         cardOf: cardOf,
       );
-      expect(n.scriptSkills.keys, <DrillMode>[
-        DrillMode.readScript,
-        DrillMode.writeScript,
-      ]);
-      expect(n.scriptSkills[DrillMode.readScript]!.total, 6);
-      expect(n.scriptSkills[DrillMode.writeScript]!.total, 6);
+      // Answers from before the script was kept count for the course's
+      // primary script (#653).
+      const read = (script: 'devanagari', mode: DrillMode.readScript);
+      const write = (script: 'devanagari', mode: DrillMode.writeScript);
+      expect(n.scriptSkills.keys, <ScriptSkill>[read, write]);
+      expect(n.scriptSkills[read]!.total, 6);
+      expect(n.scriptSkills[write]!.total, 6);
       // The word skills count every answer, the script decks' included, and
       // the script skills' are not counted twice in the totals.
       expect(n.reviews, 18);
@@ -134,7 +135,7 @@ void main() {
     });
 
     for (final dark in <bool>[false, true]) {
-      testWidgets('the tab shows Read script and Write script at 1.4x text'
+      testWidgets('the tab shows Read and Write Devanagari at 1.4x text'
           '${dark ? ', dark' : ''}', (tester) async {
         usePhone(tester, textScale: 1.4);
         final state = await hindiLearner();
@@ -145,14 +146,15 @@ void main() {
           themeMode: dark ? ThemeMode.dark : ThemeMode.light,
         );
         final l10n = l10nOf(tester);
+        final devanagari = l10n.scriptName('devanagari');
         await tester.scrollUntilVisible(
-          find.text(l10n.skillWriteScript),
+          find.text(l10n.skillWriteScriptIn(devanagari)),
           200,
           scrollable: find.byType(Scrollable).last,
         );
         await tester.pumpAndSettle();
-        expect(find.text(l10n.skillReadScript), findsOneWidget);
-        expect(find.text(l10n.skillWriteScript), findsOneWidget);
+        expect(find.text(l10n.skillReadScriptIn(devanagari)), findsOneWidget);
+        expect(find.text(l10n.skillWriteScriptIn(devanagari)), findsOneWidget);
         expect(find.text(l10n.skillRecognition), findsOneWidget);
         expect(tester.takeException(), isNull);
       });
@@ -163,8 +165,9 @@ void main() {
       final state = await hindiLearner(scriptAnswers: false);
       await pumpScreen(tester, const StatsPage(), state: state);
       final l10n = l10nOf(tester);
-      expect(find.text(l10n.skillReadScript), findsNothing);
-      expect(find.text(l10n.skillWriteScript), findsNothing);
+      final devanagari = l10n.scriptName('devanagari');
+      expect(find.text(l10n.skillReadScriptIn(devanagari)), findsNothing);
+      expect(find.text(l10n.skillWriteScriptIn(devanagari)), findsNothing);
     });
   });
 
