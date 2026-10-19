@@ -1,11 +1,30 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/features/placement/language_picker_page.dart';
 
 /// Driving Languages I'm learning (#211, #626) in widget tests: its list is
 /// built lazily, so a row is scrolled to before it is found, and a language
 /// is chosen in its sheet.
+
+/// The languages of `assets/languages.yaml`: their scripts and families,
+/// which the page reads from the asset bundle, a read a widget test does not
+/// wait for. Passed to [LanguagePickerPage] where a test needs them at once.
+final List<SpokenLanguage> pickerSpokenList = parseSpokenLanguages(
+  File('assets/languages.yaml').readAsStringSync(),
+);
+
+/// Lets the page's read of `assets/languages.yaml` finish, which takes real
+/// time, not the test clock's.
+Future<void> settleAssets(WidgetTester tester) async {
+  await tester.runAsync(
+    () => Future<void>.delayed(const Duration(milliseconds: 100)),
+  );
+  await tester.pumpAndSettle();
+}
 
 /// [code]'s row: keyed `language-` in Learning, `popular-` in Popular and
 /// `listed-` under its family.
@@ -45,6 +64,7 @@ Future<void> scrollToInPicker(WidgetTester tester, Finder finder) async {
 /// Opens [code]'s sheet: taps its row, opening the families first when it is
 /// in none that is open.
 Future<void> openSheet(WidgetTester tester, String code) async {
+  await settleAssets(tester);
   if (languageCard(code).evaluate().isEmpty) {
     await openFamilies(tester);
   }
@@ -79,6 +99,12 @@ Future<void> openFamilies(WidgetTester tester) async {
 /// Whether a language sheet is open.
 bool sheetIsOpen() =>
     find.byKey(const ValueKey<String>('sheet-scroll')).evaluate().isNotEmpty;
+
+/// Closes the open sheet without answering: a tap on the screen above it.
+Future<void> closeSheet(WidgetTester tester) async {
+  await tester.tapAt(const Offset(5, 5));
+  await tester.pumpAndSettle();
+}
 
 /// Taps [key] in the open sheet.
 Future<void> tapSheet(WidgetTester tester, String key) async {
@@ -129,6 +155,12 @@ Future<void> pickLanguage(
       await tester.pumpAndSettle();
     }
   }
+  await finishSheet(tester, begin: begin);
+}
+
+/// Presses Next and Done through the sheet's remaining screens, choosing
+/// "Start at the beginning" with [begin].
+Future<void> finishSheet(WidgetTester tester, {bool begin = false}) async {
   while (sheetIsOpen()) {
     final start = find.byKey(const ValueKey<String>('sheet-begin-language'));
     if (begin && start.evaluate().isNotEmpty) {

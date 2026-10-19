@@ -38,6 +38,16 @@ Future<void> tapText(WidgetTester tester, String text) async {
   await tester.pumpAndSettle();
 }
 
+/// Answers "I don't know" until the check ends in its result.
+Future<void> giveUp(WidgetTester tester) async {
+  final l10n = l10nOf(tester);
+  var guard = 0;
+  while (find.text(l10n.placementDontKnow).evaluate().isNotEmpty &&
+      guard++ < 60) {
+    await tapText(tester, l10n.placementDontKnow);
+  }
+}
+
 Radio<String> radioOf(WidgetTester tester, String code) => tester
     .widgetList<Radio<String>>(find.byType(Radio<String>))
     .singleWhere((r) => r.value == code);
@@ -53,9 +63,11 @@ void main() {
     await tester.pumpAndSettle();
     final l10n = l10nOf(tester);
 
-    await pickLanguage(tester, 'hi');
+    // The choice is on the first screen of the language's sheet (#626).
+    await openSheet(tester, 'hi');
     final choice = find.byType(SegmentedButton<String>);
-    await scrollToInPicker(tester, choice);
+    await tester.ensureVisible(choice);
+    await tester.pumpAndSettle();
     final buttons = tester.widget<SegmentedButton<String>>(choice);
     expect(buttons.segments.map((s) => s.value), <String>['bn', 'en']);
     expect(buttons.selected, <String>{'en'}, reason: 'the best covered');
@@ -67,12 +79,20 @@ void main() {
     expect(tester.widget<SegmentedButton<String>>(choice).selected, <String>{
       'bn',
     });
+    await tapSheet(tester, 'sheet-learn');
+    while (sheetIsOpen()) {
+      final next = find.byKey(const ValueKey<String>('sheet-next'));
+      await tapSheet(
+        tester,
+        next.evaluate().isNotEmpty ? 'sheet-next' : 'sheet-done',
+      );
+    }
     await tapText(tester, l10n.commonContinue);
     expect(find.text(l10n.nativeChoiceTitle('Hindi')), findsNothing);
-    expect(find.text(l10n.placementAskTitle('Hindi')), findsOneWidget);
+    expect(find.text(l10n.placementQuestion), findsOneWidget);
     expect(state.settings.courseNative('hi'), isNull, reason: 'not yet saved');
 
-    await tapText(tester, l10n.placementNew('Hindi'));
+    await giveUp(tester);
     await tapText(tester, l10n.placementDone);
     expect(state.settings.courseNative('hi'), 'bn');
     expect(state.settings.nativesOffered('hi'), <String>{'bn', 'en'});
@@ -113,10 +133,10 @@ void main() {
     await tester.pumpWidget(FluenoughApp(state: state));
     await tester.pumpAndSettle();
     final l10n = l10nOf(tester);
-    await tapText(tester, 'Hindi');
+    await pickLanguage(tester, 'hi');
     await tapText(tester, l10n.commonContinue);
     expect(find.text(l10n.nativeChoiceTitle('Hindi')), findsNothing);
-    expect(find.text(l10n.placementAskTitle('Hindi')), findsOneWidget);
+    expect(find.text(l10n.placementQuestion), findsOneWidget);
   });
 
   testWidgets('Today asks once a course already learned is taught from '
