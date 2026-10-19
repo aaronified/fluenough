@@ -2,12 +2,13 @@ schema: 1
 id: "hi-grammar-differences"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed", "grammar"]
 cards:
   - id: "hi-0116"
     target: "वह किताब पढ़ता है।"
+    target_scripts: { perso_arabic: "وہ کتاب پڑھتا ہے۔" }
     reading: "vah kitāb paṛhtā hai."
     ipa: "ʋəɦ kɪt̪aːb pəɽʱt̪aː ɦɛː"
     tags: ["grammar", "word-order"]
@@ -19,6 +20,7 @@ cards:
       - { word: "पढ़ता", ref: "hi-0114" }
   - id: "hi-0117"
     target: "दुकान में"
+    target_scripts: { perso_arabic: "دکان میں" }
     reading: "dukān mēm̐"
     ipa: "d̪ʊkaːn mẽː"
     tags: ["grammar", "postpositions"]
@@ -26,6 +28,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0118"
     target: "दिल्ली से"
+    target_scripts: { perso_arabic: "دہلی سے" }
     reading: "dillī sē"
     ipa: "d̪ɪlliː seː"
     tags: ["grammar", "postpositions"]
@@ -35,6 +38,7 @@ cards:
       - { word: "दिल्ली", base: "दिल्ली", reading: "dillī" }
   - id: "hi-0119"
     target: "मेज़ पर"
+    target_scripts: { perso_arabic: "میز پر" }
     reading: "mēz par"
     ipa: "meːz pər"
     tags: ["grammar", "postpositions"]
@@ -42,6 +46,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0120"
     target: "पिता का घर"
+    target_scripts: { perso_arabic: "باپ کا گھر" }
     reading: "pitā kā ghar"
     ipa: "pɪt̪aː kaː ɡʱər"
     tags: ["grammar", "of"]
@@ -49,6 +54,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0121"
     target: "माता की किताब"
+    target_scripts: { perso_arabic: "ماں کی کتاب" }
     reading: "mātā kī kitāb"
     ipa: "maːt̪aː kiː kɪt̪aːb"
     tags: ["grammar", "of"]
@@ -58,6 +64,7 @@ cards:
       - { word: "किताब", base: "किताब", reading: "kitāb" }
   - id: "hi-0122"
     target: "लड़का जाता है।"
+    target_scripts: { perso_arabic: "لڑکا جاتا ہے۔" }
     reading: "laṛkā jātā hai."
     ipa: "ləɽkaː dʒaːt̪aː ɦɛː"
     tags: ["grammar", "gender"]
@@ -68,6 +75,7 @@ cards:
       - { word: "जाता", base: "जाना", reading: "jānā" }
   - id: "hi-0123"
     target: "लड़की जाती है।"
+    target_scripts: { perso_arabic: "لڑکی جاتی ہے۔" }
     reading: "laṛkī jātī hai."
     ipa: "ləɽkiː dʒaːt̪iː ɦɛː"
     tags: ["grammar", "gender"]
@@ -78,6 +86,7 @@ cards:
       - { word: "जाती", base: "जाना", reading: "jānā" }
   - id: "hi-0124"
     target: "बड़ी खिड़की"
+    target_scripts: { perso_arabic: "بڑی کھڑکی" }
     reading: "baṛī khiṛkī"
     ipa: "bəɽiː kʰɪɽkiː"
     tags: ["grammar", "gender"]
@@ -87,6 +96,7 @@ cards:
       - { word: "बड़ी", base: "बड़ा", reading: "baṛā" }
   - id: "hi-0125"
     target: "आप सुनते हैं।"
+    target_scripts: { perso_arabic: "آپ سنتے ہیں۔" }
     alt_target: ["आप सुनती हैं।"]
     reading: "āp suntē haim̐."
     ipa: "aːp sʊnt̪eː ɦɛ̃ː"
@@ -97,6 +107,7 @@ cards:
       - { word: "सुनते", base: "सुनना", reading: "sunnā" }
   - id: "hi-0126"
     target: "तुम सुनते हो।"
+    target_scripts: { perso_arabic: "تم سنتے ہو۔" }
     alt_target: ["तुम सुनती हो।"]
     reading: "tum suntē hō."
     ipa: "t̪ʊm sʊnt̪eː ɦoː"
@@ -109,6 +120,7 @@ cards:
       - { word: "हो", base: "होना", reading: "hōnā" }
   - id: "hi-0127"
     target: "तू सुनता है।"
+    target_scripts: { perso_arabic: "تو سنتا ہے۔" }
     alt_target: ["तू सुनती है।"]
     reading: "tū suntā hai."
     ipa: "t̪uː sʊnt̪aː ɦɛː"
@@ -120,6 +132,7 @@ cards:
       - { word: "सुनता", base: "सुनना", reading: "sunnā" }
   - id: "hi-0128"
     target: "घर बड़ा है।"
+    target_scripts: { perso_arabic: "گھر بڑا ہے۔" }
     reading: "ghar baṛā hai."
     ipa: "ɡʱər bəɽaː ɦɛː"
     tags: ["grammar", "articles"]
@@ -129,6 +142,7 @@ cards:
       - { word: "बड़ा", base: "बड़ा", reading: "baṛā" }
   - id: "hi-0129"
     target: "मेरे पास किताब है।"
+    target_scripts: { perso_arabic: "میرے پاس کتاب ہے۔" }
     reading: "mērē pās kitāb hai."
     ipa: "meːreː paːs kɪt̪aːb ɦɛː"
     tags: ["grammar", "have"]
@@ -139,6 +153,7 @@ cards:
       - { word: "किताब", base: "किताब", reading: "kitāb" }
   - id: "hi-0130"
     target: "वह नहीं आता।"
+    target_scripts: { perso_arabic: "وہ نہیں آتا۔" }
     reading: "vah nahīm̐ ātā."
     ipa: "ʋəɦ nəɦĩː aːt̪aː"
     tags: ["grammar", "negation"]
@@ -149,6 +164,7 @@ cards:
       - { word: "आता", base: "आना", reading: "ānā" }
   - id: "hi-0131"
     target: "क्या तुम आओगे?"
+    target_scripts: { perso_arabic: "کیا تم آؤ گے؟" }
     alt_target: ["क्या तुम आओगी?"]
     reading: "kyā tum āōgē?"
     ipa: "kjaː t̪ʊm aːoːɡeː"
