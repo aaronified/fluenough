@@ -66,9 +66,10 @@ String meaningKey(String meaning) {
       .toLowerCase()
       .replaceAll(RegExp('[‘’ʼ`´]'), "'")
       .replaceAll(RegExp('[“”]'), '"')
-      .replaceAll(_brackets, ' ');
+      .replaceAll(_brackets, ' ')
+      // "o.k." is the word ok, before its stops become spaces.
+      .replaceAll(RegExp(r'\bo\.k\b\.?'), 'ok');
   text = text.split(_spaces).map(_expandWord).join(' ');
-  // "o.k." loses its stops here, so it meets "ok".
   text = text.replaceAll(_punctuation, ' ').trim();
   final words = text
       .split(_spaces)
