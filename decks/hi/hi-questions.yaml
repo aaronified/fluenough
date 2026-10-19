@@ -2,13 +2,14 @@ schema: 1
 id: "hi-questions"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 theme: "questions"
 tags: ["beginner"]
 cards:
   - id: "hi-0155"
     target: "हाँ"
+    target_scripts: { perso_arabic: "ہاں" }
     reading: "hām̐"
     ipa: "ɦãː"
     alt_target: ["हां"]
@@ -17,6 +18,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0156"
     target: "नहीं"
+    target_scripts: { perso_arabic: "نہیں" }
     reading: "nahīm̐"
     ipa: "nəɦĩː"
     pos: "other"
@@ -24,6 +26,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0157"
     target: "क्या"
+    target_scripts: { perso_arabic: "کیا" }
     reading: "kyā"
     ipa: "kjaː"
     pos: "other"
@@ -31,32 +34,38 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0158"
     target: "कौन"
+    target_scripts: { perso_arabic: "کون" }
     reading: "kaun"
     ipa: "kɔːn"
     pos: "other"
   - id: "hi-0159"
     target: "कहाँ"
+    target_scripts: { perso_arabic: "کہاں" }
     reading: "kahām̐"
     ipa: "kəɦãː"
     alt_target: ["कहां"]
     pos: "other"
   - id: "hi-0160"
     target: "कब"
+    target_scripts: { perso_arabic: "کب" }
     reading: "kab"
     ipa: "kəb"
     pos: "other"
   - id: "hi-0161"
     target: "क्यों"
+    target_scripts: { perso_arabic: "کیوں" }
     reading: "kyōm̐"
     ipa: "kjõː"
     pos: "other"
   - id: "hi-0162"
     target: "कैसे"
+    target_scripts: { perso_arabic: "کیسے" }
     reading: "kaisē"
     ipa: "kɛːseː"
     pos: "other"
   - id: "hi-0163"
     target: "कितना"
+    target_scripts: { perso_arabic: "کتنا" }
     reading: "kitnā"
     ipa: "kɪt̪naː"
     pos: "other"
@@ -64,6 +73,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0164"
     target: "कौन-सा"
+    target_scripts: { perso_arabic: "کون سا" }
     reading: "kaun-sā"
     ipa: "kɔːnsaː"
     alt_target: ["कौन सा"]
@@ -74,6 +84,7 @@ cards:
       - { word: "सा", base: "सा", reading: "sā" }
   - id: "hi-0165"
     target: "ठीक है?"
+    target_scripts: { perso_arabic: "ٹھیک ہے؟" }
     reading: "ṭhīk hai?"
     ipa: "ʈʰiːk ɦɛː"
     pos: "phrase"
@@ -83,6 +94,7 @@ cards:
       - { word: "ठीक", base: "ठीक", reading: "ṭhīk" }
   - id: "hi-0166"
     target: "सच में?"
+    target_scripts: { perso_arabic: "سچ میں؟" }
     reading: "sac mēm̐?"
     ipa: "sətʃ mẽː"
     pos: "phrase"

@@ -2,12 +2,13 @@ schema: 1
 id: "hi-phrasebook"
 part: "core"
 kind: "vocab"
-language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", tts: "hi-IN", icon: "हि" }
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner"]
 cards:
   - id: "hi-0132"
     target: "नमस्ते"
+    target_scripts: { perso_arabic: "نمستے" }
     reading: "namastē"
     ipa: "nəməst̪eː"
     pos: "other"
@@ -19,6 +20,7 @@ cards:
       - { word: "नमस्ते", base: "नमस्ते", reading: "namastē" }
   - id: "hi-0133"
     target: "नमस्कार"
+    target_scripts: { perso_arabic: "نمسکار" }
     reading: "namaskār"
     ipa: "nəməskaːr"
     pos: "other"
@@ -30,6 +32,7 @@ cards:
       - { word: "नमस्कार", base: "नमस्कार", reading: "namaskār" }
   - id: "hi-0136"
     target: "आप कैसे हैं?"
+    target_scripts: { perso_arabic: "آپ کیسے ہیں؟" }
     reading: "āp kaisē haim̐?"
     ipa: "aːp kɛːseː ɦɛ̃ː"
     pos: "phrase"
@@ -39,6 +42,7 @@ cards:
       - { id: "n1", kind: "note" }
   - id: "hi-0137"
     target: "मैं ठीक हूँ।"
+    target_scripts: { perso_arabic: "میں ٹھیک ہوں۔" }
     reading: "maim̐ ṭhīk hūm̐."
     ipa: "mɛ̃ː ʈʰiːk ɦũː"
     pos: "phrase"
@@ -52,6 +56,7 @@ cards:
       - { word: "हूँ", base: "होना", reading: "hōnā" }
   - id: "hi-0144"
     target: "फिर मिलेंगे।"
+    target_scripts: { perso_arabic: "پھر ملیں گے۔" }
     reading: "phir milēṅgē."
     ipa: "pʰɪr mɪleːŋɡeː"
     pos: "phrase"
@@ -74,6 +79,7 @@ cards:
       - { word: "धन्यवाद", base: "धन्यवाद", reading: "dhanyavād" }
   - id: "hi-0139"
     target: "शुक्रिया"
+    target_scripts: { perso_arabic: "شکریہ" }
     reading: "śukriyā"
     ipa: "ʃʊkrɪjaː"
     pos: "other"
@@ -85,6 +91,7 @@ cards:
       - { word: "शुक्रिया", base: "शुक्रिया", reading: "śukriyā" }
   - id: "hi-0188"
     target: "मेरा नाम … है।"
+    target_scripts: { perso_arabic: "میرا نام … ہے۔" }
     reading: "mērā nām... hai."
     ipa: "meːraː naːm ɦɛː"
     pos: "phrase"
@@ -95,6 +102,7 @@ cards:
       - { word: "मेरा", base: "मेरा", reading: "mērā" }
   - id: "hi-0189"
     target: "आपका नाम क्या है?"
+    target_scripts: { perso_arabic: "آپ کا نام کیا ہے؟" }
     reading: "āpkā nām kyā hai?"
     ipa: "aːpkaː naːm kjaː ɦɛː"
     pos: "phrase"
@@ -104,6 +112,7 @@ cards:
       - { word: "आपका", ref: "hi-0134" }
   - id: "hi-0190"
     target: "मैं … से हूँ।"
+    target_scripts: { perso_arabic: "میں … سے ہوں۔" }
     reading: "maim̐... sē hūm̐."
     ipa: "mɛ̃ː seː ɦũː"
     pos: "phrase"
@@ -115,6 +124,7 @@ cards:
       - { word: "हूँ", base: "होना", reading: "hōnā" }
   - id: "hi-0140"
     target: "मुझे हिंदी नहीं आती।"
+    target_scripts: { perso_arabic: "مجھے ہندی نہیں آتی۔" }
     reading: "mujhē hindī nahīm̐ ātī."
     ipa: "mʊdʒʱeː ɦɪnd̪iː nəɦĩː aːt̪iː"
     pos: "phrase"
@@ -127,6 +137,7 @@ cards:
       - { word: "आती", base: "आना", reading: "ānā" }
   - id: "hi-0141"
     target: "मैं अभी हिंदी सीख रहा हूँ।"
+    target_scripts: { perso_arabic: "میں ابھی ہندی سیکھ رہا ہوں۔" }
     reading: "maim̐ abhī hindī sīkh rahā hūm̐."
     ipa: "mɛ̃ː əbʱiː ɦɪnd̪iː siːkʰ rəɦaː ɦũː"
     pos: "phrase"
@@ -141,6 +152,7 @@ cards:
       - { word: "हूँ", base: "होना", reading: "hōnā" }
   - id: "hi-0142"
     target: "धीरे बोलिए।"
+    target_scripts: { perso_arabic: "دھیرے بولیے۔" }
     reading: "dhīrē bōliē."
     ipa: "d̪ʱiːreː boːlɪeː"
     pos: "phrase"
@@ -153,6 +165,7 @@ cards:
       - { word: "बोलिए", base: "बोलना", reading: "bōlnā" }
   - id: "hi-0143"
     target: "फिर से बोलिए।"
+    target_scripts: { perso_arabic: "پھر سے بولیے۔" }
     reading: "phir sē bōliē."
     ipa: "pʰɪr seː boːlɪeː"
     pos: "phrase"
@@ -162,6 +175,7 @@ cards:
       - { word: "बोलिए", base: "बोलना", reading: "bōlnā" }
   - id: "hi-0362"
     target: "मुझे समझ नहीं आया।"
+    target_scripts: { perso_arabic: "مجھے سمجھ نہیں آیا۔" }
     reading: "mujhē samajh nahīm̐ āyā."
     ipa: "mʊdʒʱeː səmədʒʱ nəɦĩː aːjaː"
     pos: "phrase"
@@ -172,6 +186,7 @@ cards:
       - { word: "आया", base: "आना", reading: "ānā" }
   - id: "hi-0363"
     target: "टॉयलेट कहाँ है?"
+    target_scripts: { perso_arabic: "ٹائلٹ کہاں ہے؟" }
     reading: "ṭôylēṭ kahām̐ hai?"
     ipa: "ʈɔjleːʈ kəɦãː ɦɛː"
     pos: "phrase"
@@ -182,6 +197,7 @@ cards:
       - { word: "टॉयलेट", base: "टॉयलेट", reading: "ṭôylēṭ" }
   - id: "hi-0361"
     target: "मैं खो गया हूँ।"
+    target_scripts: { perso_arabic: "میں کھو گیا ہوں۔" }
     reading: "maim̐ khō gayā hūm̐."
     ipa: "mɛ̃ː kʰoː ɡəjaː ɦũː"
     pos: "phrase"
@@ -195,6 +211,7 @@ cards:
       - { word: "हूँ", base: "होना", reading: "hōnā" }
   - id: "hi-0353"
     target: "मदद कीजिए!"
+    target_scripts: { perso_arabic: "مدد کیجیے!" }
     reading: "madad kījiē!"
     ipa: "məd̪əd̪ kiːdʒɪeː"
     pos: "phrase"
@@ -206,6 +223,7 @@ cards:
       - { word: "कीजिए", base: "करना", reading: "karnā" }
   - id: "hi-0354"
     target: "बचाओ!"
+    target_scripts: { perso_arabic: "بچاؤ!" }
     reading: "bacāō!"
     ipa: "bətʃaːoː"
     pos: "phrase"
@@ -216,6 +234,7 @@ cards:
       - { word: "बचाओ", base: "बचाना", reading: "bacānā" }
   - id: "hi-0355"
     target: "रुकिए!"
+    target_scripts: { perso_arabic: "رکیے!" }
     reading: "rukiē!"
     ipa: "rʊkɪeː"
     pos: "phrase"

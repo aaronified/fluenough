@@ -165,6 +165,8 @@ class SourcesPage extends StatelessWidget {
     final decks = AppScope.of(context).decks;
     final sources = sourcesOf(decks);
     final media = mediaCreditsOf(decks);
+    // The script fonts are credited once one is on the phone (ADR-0042).
+    final fonts = AppScope.of(context).deckDownloads?.fonts.hasFonts ?? false;
     return Scaffold(
       appBar: AppBar(
         title: Text(l10n.settingsSources),
@@ -186,6 +188,12 @@ class SourcesPage extends StatelessWidget {
                 title: l10n.sourcesLicence,
                 subtitle: l10n.sourcesLicenceLine,
               ),
+              if (fonts)
+                GroupedTile(
+                  leading: const Icon(Icons.font_download_outlined),
+                  title: l10n.sourcesFonts,
+                  subtitle: l10n.sourcesFontsLine,
+                ),
               for (final credit in creditsOf(decks))
                 GroupedTile(
                   leading: const Icon(Icons.public),

@@ -18,6 +18,9 @@ import 'drill_frame.dart';
 ///   scripts takes the right regional form.
 /// - **Line height** of 1.9 for right-to-left scripts, whose Nastaliq forms
 ///   climb and descend far more than Latin, and 1.25 otherwise.
+/// - **Font** of the script, once the course's font is downloaded and loaded
+///   (ADR-0042): phones often draw Indic and Nastaliq text wrongly or lack
+///   the script. Until then, or without one, the phone's own font.
 ///
 /// Text in a drill follows the learner's card text size, live:
 /// [TargetText.hero] sizes it as the design does — 96, 64 or 48 by length —
@@ -76,7 +79,22 @@ class TargetText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (_sizing == _Sizing.fixed) return _text(context, fontSize!);
+    // Not AppScope.of: a plain TargetText never needed the scope, and the
+    // script fonts notify on their own.
+    final scope = context.getInheritedWidgetOfExactType<AppScope>();
+    final fonts = scope?.notifier?.deckDownloads?.fonts;
+    if (fonts == null) return _sized(context, null);
+    return ListenableBuilder(
+      listenable: fonts,
+      builder: (context, _) =>
+          _sized(context, fonts.familyFor(language.script)),
+    );
+  }
+
+  /// The text at its size, in [family], the script's downloaded font, or
+  /// the phone's own when it is null.
+  Widget _sized(BuildContext context, String? family) {
+    if (_sizing == _Sizing.fixed) return _text(context, fontSize!, family);
     final settings = AppScope.of(context).settings;
     return ListenableBuilder(
       listenable: settings,
@@ -87,17 +105,18 @@ class TargetText extends StatelessWidget {
           _sizing == _Sizing.hero
               ? TargetSizes.forText(text, scale: scale)
               : fontSize! * scale,
+          family,
         );
       },
     );
   }
 
-  Widget _text(BuildContext context, double base) {
+  Widget _text(BuildContext context, double base, String? family) {
     var size = base;
     var shown = text;
     if (_sizing != _Sizing.fixed && _isOneWord) {
       final room = MediaQuery.sizeOf(context).width - _cardMargins;
-      final width = _width(context, size);
+      final width = _width(context, size, family);
       if (width > room) {
         if (hasAksharas(text)) {
           shown = breakableWord(text);
@@ -115,23 +134,44 @@ class TargetText extends StatelessWidget {
       locale: targetLocale(language),
       style: TextStyle(
         fontSize: size,
-        fontWeight: fontWeight,
+        fontWeight: _styleWeight(family, fontWeight),
+        fontFamily: family,
+        fontVariations: _variations(family, fontWeight),
         color: color,
         height: language.rtl ? TargetSizes.rtlHeight : TargetSizes.ltrHeight,
       ),
     );
   }
 
+  /// What a variable font needs to draw [weight]: the downloaded fonts are
+  /// one file each, registered without a weight, so the weight is set on
+  /// its axis. Fonts with no such axis ignore it.
+  static List<FontVariation>? _variations(String? family, FontWeight weight) {
+    if (family == null) return null;
+    return <FontVariation>[FontVariation.weight(weight.value.toDouble())];
+  }
+
+  /// The weight to ask the text style for: with a downloaded font, which is
+  /// one face registered at its default weight, the normal weight, so that
+  /// the engine adds no synthetic bold on top of [_variations]' own.
+  static FontWeight _styleWeight(String? family, FontWeight weight) =>
+      family == null ? weight : FontWeight.normal;
+
   /// Whether [text] is one word: a longer text breaks between its words.
   bool get _isOneWord => !text.contains(RegExp(r'\s'));
 
   /// How wide [text] is on one line at [size], scaled as the screen scales
   /// text.
-  double _width(BuildContext context, double size) {
+  double _width(BuildContext context, double size, String? family) {
     final painter = TextPainter(
       text: TextSpan(
         text: text,
-        style: TextStyle(fontSize: size, fontWeight: fontWeight),
+        style: TextStyle(
+          fontSize: size,
+          fontWeight: _styleWeight(family, fontWeight),
+          fontFamily: family,
+          fontVariations: _variations(family, fontWeight),
+        ),
         locale: targetLocale(language),
       ),
       textDirection: language.rtl ? TextDirection.rtl : TextDirection.ltr,
