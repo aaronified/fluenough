@@ -77,6 +77,7 @@ class CoreWritten extends CoreCard {
     this.reading,
     this.ipa,
     this.altTarget = const <String>[],
+    this.targetScripts = const <String, String>{},
     this.pos,
     this.gender,
     this.tags = const <String>[],
@@ -102,6 +103,9 @@ class CoreWritten extends CoreCard {
   final String? reading;
   final String? ipa;
   final List<String> altTarget;
+
+  /// The word in the language's other scripts (`target_scripts`).
+  final Map<String, String> targetScripts;
   final String? pos;
   final String? gender;
   final List<String> tags;
@@ -747,6 +751,7 @@ class _Merge {
       reading: card.reading,
       ipa: card.ipa,
       altTarget: card.altTarget,
+      targetScripts: card.targetScripts,
       altNative: entry.altNative ?? const <String>[],
       pos: card.pos,
       gender: card.gender,
