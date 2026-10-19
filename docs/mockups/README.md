@@ -87,28 +87,6 @@ approval.
   the 2026-10-09 drafts, which are in git history
   (`git show 6715716:docs/mockups/reviewer-mode.html`). Approved by the owner, 2026-10-17, with the decisions the page marks
   Proposed ("The reviewer mode mockup looks fine. Build it.").
-- `languages-learning.html`: Languages I'm learning redone in line with
-  Languages I know (#626; owner, 2026-10-18, "Sonnet mockup"), revised for
-  the owner's review of 2026-10-18: short rows with far less whitespace,
-  grouped by the same families in the same order as Languages I know; one
-  contextual top button, "Check for deck updates" until updates are found
-  and then "Update all (N)"; the search bar pinned to the top when the list
-  scrolls; the list ending with its last row, no blank area; each row's
-  course progress as the app's A1, A2, B1 line (with culture), drawn
-  thinner; on a learned row one row of buttons, Update only as "Update
-  available" when an update exists, and Remove as a red x icon; a Popular
-  section; a bottom sheet per language whose "Learn this language" (or "Stop
-  learning") is fixed at the bottom, outside the scroll, and leads to two
-  screens with Back: which scripts to learn (one option per script) and
-  where to start (each chosen script placed separately from the language,
-  #481). A learned language keeps Find my level (also on Progress) and its
-  course details on the first screen. Hindustani (#623) with Devanagari and
-  Perso-Arabic, including a learner who knows it in Devanagari and learns it
-  just for the Perso-Arabic script. Light and dark, 1x and 1.4x. Approved by
-  the owner, 2026-10-18, with its proposed choices ("Choices approved.
-  Mockup is approved."), except that the thin A1–A2–B1–culture line goes in
-  the bottom sheet, not on the list row.
-
 
 ## Awaiting approval
 
@@ -127,3 +105,6 @@ name them. They are in git at 19d200b
   built in #528 and removed once built (owner, 2026-10-16: "Remove when
   built"). It is in git history:
   `git show 25522ea:docs/mockups/language-bar.html`.
+- `languages-learning.html`: Languages I'm learning (#626), built and
+  removed once built (owner, 2026-10-16: "Remove when built"). It is in git
+  history: `git show 4e094b9:docs/mockups/languages-learning.html`.

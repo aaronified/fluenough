@@ -172,10 +172,7 @@ extension LanguageOffer on AppState {
     }.length;
   }
 
-  Set<String> _learnedCards() => <String>{
-    for (final MapEntry(:key, :value) in progress.states.entries)
-      if (value.repetitions > 0) key.cardId,
-  };
+  Set<String> _learnedCards() => _learnedCardsOf(this);
 
   /// What learning [language]'s script includes, from the decks on the
   /// phone: how many decks its path marks as needing the alphabet, and the
@@ -203,6 +200,12 @@ extension LanguageOffer on AppState {
     );
   }
 }
+
+/// The ids of the cards [state]'s learner has answered right at least once.
+Set<String> _learnedCardsOf(AppState state) => <String>{
+  for (final MapEntry(:key, :value) in state.progress.states.entries)
+    if (value.repetitions > 0) key.cardId,
+};
 
 /// The script test (#554), as the language picker reads it of the app.
 extension ScriptLessons on AppState {
@@ -244,5 +247,32 @@ extension ScriptLessons on AppState {
     settings.placedDecks = skip
         ? <String>{...placed, ...ids}
         : placed.difference(ids);
+  }
+
+  /// How far the learner is through [language]'s script lessons (#626): how
+  /// many of them there are, how many have every card learned, and the share
+  /// of their cards learned, 0–1. Null while the lessons are not on the
+  /// phone.
+  ({int decks, int learnedDecks, double share})? scriptProgress(
+    String language,
+  ) {
+    final lessons = scriptLessons(language);
+    if (lessons.isEmpty) return null;
+    final learned = _learnedCardsOf(this);
+    var cards = 0;
+    var known = 0;
+    var done = 0;
+    for (final entry in lessons) {
+      final ids = <String>[for (final card in entry.cards) card.id];
+      final got = ids.where(learned.contains).length;
+      cards += ids.length;
+      known += got;
+      if (ids.isNotEmpty && got == ids.length) done++;
+    }
+    return (
+      decks: lessons.length,
+      learnedDecks: done,
+      share: cards == 0 ? 0 : known / cards,
+    );
   }
 }

@@ -39,6 +39,7 @@ class PlacementPage extends StatefulWidget {
     this.checking = false,
     this.alphabet = const <String, bool>{},
     this.natives = const <String, String>{},
+    this.asked = const <String>{},
   });
 
   /// Language codes, in the order they are placed.
@@ -61,6 +62,11 @@ class PlacementPage extends StatefulWidget {
   /// The language each is learned from, by code, where the picker has
   /// asked already: its native stage is skipped.
   final Map<String, String> natives;
+
+  /// The languages whose "Find my level" was chosen already, in Languages
+  /// I'm learning (#626): each goes straight to its check, with no "Do you
+  /// know any?" first.
+  final Set<String> asked;
 
   @override
   State<PlacementPage> createState() => _PlacementPageState();
@@ -183,6 +189,15 @@ class _PlacementPageState extends State<PlacementPage> {
     }
     final placement = _placement;
     final question = placement?.question;
+    if (_stage == _Stage.ask &&
+        placement == null &&
+        widget.asked.contains(_code)) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted && _stage == _Stage.ask && _placement == null) {
+          _find(AppScope.read(context));
+        }
+      });
+    }
     return Scaffold(
       appBar: AppBar(
         title: Text(language.name),
@@ -203,11 +218,14 @@ class _PlacementPageState extends State<PlacementPage> {
             language: language,
             onChoose: _chooseAlphabet,
           ),
-          _Stage.ask => _Ask(
-            language: language,
-            onFind: () => _find(state),
-            onNew: _new,
-          ),
+          _Stage.ask =>
+            widget.asked.contains(_code)
+                ? const SizedBox.shrink()
+                : _Ask(
+                    language: language,
+                    onFind: () => _find(state),
+                    onNew: _new,
+                  ),
           _Stage.check => _Check(
             language: language,
             alphabet: _alphabet[_code] ?? true,
