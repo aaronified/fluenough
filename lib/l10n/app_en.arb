@@ -9527,5 +9527,363 @@
   "settingsUpdateBackupFailed": "The backup could not be made. The update goes on without it.",
   "@settingsUpdateBackupFailed": {
       "description": "Under the downloading update row when the backup made with the download failed."
+  },
+  "pickerComplete": "Complete",
+  "@pickerComplete": {
+    "description": "The tag on a course whose every unit up to B1 is written, beside Alpha and Beta (#626)."
+  },
+  "pickerCompleteLabel": "Complete: every unit up to B1 is written",
+  "@pickerCompleteLabel": {
+    "description": "What a screen reader says for the Complete tag."
+  },
+  "pickerYouShort": "You: {percent}%",
+  "@pickerYouShort": {
+    "description": "Languages I’m learning: the learner’s own progress on a language’s row, short.",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerLevelCulture": "Culture",
+  "@pickerLevelCulture": {
+    "description": "Under the fourth part of a course’s line, after A1, A2 and B1: the culture part of the course, which nothing fills yet (#626)."
+  },
+  "pickerCourseLineLabel": "Course written: {levels}",
+  "@pickerCourseLineLabel": {
+    "description": "What a screen reader says for a course’s A1, A2, B1 and culture line. {levels} lists each part with its share, such as A1 60%, A2 0%.",
+    "placeholders": {
+      "levels": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerUpdateAvailable": "Update available",
+  "@pickerUpdateAvailable": {
+    "description": "The button on a learned language’s row while an update waits for it, shown only then (#626)."
+  },
+  "pickerRemoveLabel": "Remove {language}",
+  "@pickerRemoveLabel": {
+    "description": "The name of the red cross on a learned language’s row, which removes its decks from the phone after asking.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "deckDownloadsUpdateAllCount": "Update all ({count})",
+  "@deckDownloadsUpdateAllCount": {
+    "description": "The one contextual button at the top of Languages I’m learning once updates are found; {count} is how many languages have one (#626).",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deckDownloadsFound": "{count, plural, =1{1 update found: {languages} · {size}} other{{count} updates found: {languages} · {size}}}",
+  "@deckDownloadsFound": {
+    "description": "The line under the update button once updates are found. {languages} lists them, {size} is how much they download.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "languages": {
+        "type": "String",
+        "example": "Hindustani, Marathi"
+      },
+      "size": {
+        "type": "String",
+        "example": "120 KB"
+      }
+    }
+  },
+  "deckDownloadsAsking": "Asking for the newest decks…",
+  "@deckDownloadsAsking": {
+    "description": "The line under the update button while GitHub is asked."
+  },
+  "pickerGroupPopular": "Popular · {count}",
+  "@pickerGroupPopular": {
+    "description": "Heading in Languages I’m learning: the most complete courses, with at least A1 written, and how many.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerPopularNote": "most complete, A1 or more",
+  "@pickerPopularNote": {
+    "description": "Beside the Popular heading."
+  },
+  "pickerStepScripts": "Step {number} of {total} · Script",
+  "@pickerStepScripts": {
+    "description": "Top of the language sheet’s script screen.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerStepStart": "Step {number} of {total} · Where to start",
+  "@pickerStepStart": {
+    "description": "Top of the language sheet’s placement screen when a script screen came before it.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerStepStartOnly": "Where to start",
+  "@pickerStepStartOnly": {
+    "description": "Top of the language sheet’s placement screen when it is the only step."
+  },
+  "pickerSectionLevel": "Level",
+  "@pickerSectionLevel": {
+    "description": "Language sheet: heading above Find my level."
+  },
+  "pickerSectionScripts": "Scripts",
+  "@pickerSectionScripts": {
+    "description": "Language sheet: heading above a learned language’s scripts."
+  },
+  "pickerSectionCourse": "Course",
+  "@pickerSectionCourse": {
+    "description": "Language sheet: heading above the course’s details."
+  },
+  "pickerSectionKnow": "You know it",
+  "@pickerSectionKnow": {
+    "description": "Language sheet: heading above what the learner already knows of the language."
+  },
+  "pickerFindBody": "Check where you are in {language} again. Your progress is kept.",
+  "@pickerFindBody": {
+    "description": "Language sheet of a learned language: what Find my level does.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerFindEachScript": "Each script is placed on its own, apart from the language.",
+  "@pickerFindEachScript": {
+    "description": "Added to the line above when the language has several scripts."
+  },
+  "pickerKnowSpeaks": "You speak {language}",
+  "@pickerKnowSpeaks": {
+    "description": "Language sheet of a language the learner knows but cannot read.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerKnowReads": "You speak {language} and read {scripts}",
+  "@pickerKnowReads": {
+    "description": "Language sheet of a language the learner knows and reads. {scripts} lists the scripts read.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      },
+      "scripts": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerKnowBody": "Learn {language} to add a script you do not read yet, or to learn the language itself. You choose on the next screens.",
+  "@pickerKnowBody": {
+    "description": "Language sheet of a language the learner knows: what learning it offers.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerSheetWritten": "Written toward B1",
+  "@pickerSheetWritten": {
+    "description": "Language sheet: label of how much of the course is written."
+  },
+  "pickerSheetCourseSize": "Course size",
+  "@pickerSheetCourseSize": {
+    "description": "Language sheet: label of the course’s size when it has no B1 plan."
+  },
+  "pickerSheetWrittenValue": "{percent}% · {stage}",
+  "@pickerSheetWrittenValue": {
+    "description": "Language sheet: how much of B1 is written and the course’s stage (Alpha, Beta or Complete).",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      },
+      "stage": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerSheetScript": "{count, plural, =1{Script} other{Scripts}}",
+  "@pickerSheetScript": {
+    "description": "Language sheet: label of the course’s script or scripts.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerSheetSize": "Size",
+  "@pickerSheetSize": {
+    "description": "Language sheet: label of the course’s size on the phone."
+  },
+  "pickerSheetUnits": "Units",
+  "@pickerSheetUnits": {
+    "description": "Language sheet: label of how many units are written."
+  },
+  "pickerUnitsWritten": "{written} of {total} units written",
+  "@pickerUnitsWritten": {
+    "description": "Language sheet: the units of the course’s path written, planned ones counted in the total.",
+    "placeholders": {
+      "written": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerScriptNotLearning": "Not learning this script",
+  "@pickerScriptNotLearning": {
+    "description": "Language sheet of a learned language: a script it is not learning."
+  },
+  "pickerChangeScripts": "Change scripts",
+  "@pickerChangeScripts": {
+    "description": "Language sheet of a language learned: opens the script screen, with the scripts learned now ticked, to add or stop one."
+  },
+  "pickerAddScript": "Add this script",
+  "@pickerAddScript": {
+    "description": "Language sheet: opens the script screen to add a script."
+  },
+  "pickerScriptLearning": "{script} · learning",
+  "@pickerScriptLearning": {
+    "description": "Language sheet of a learned language: a script it is learning.",
+    "placeholders": {
+      "script": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerScriptDecksLearned": "{learned} of {total} script decks learned",
+  "@pickerScriptDecksLearned": {
+    "description": "Language sheet: how many of a script’s decks the learner has learned.",
+    "placeholders": {
+      "learned": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "pickerScriptSharedLearning": "{script} is also used by {languages}, which you are learning.",
+  "@pickerScriptSharedLearning": {
+    "description": "Language sheet: a script shared with languages the learner learns.",
+    "placeholders": {
+      "script": {
+        "type": "String"
+      },
+      "languages": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerScriptSharedKnown": "{script} is also used by {languages}, which you know.",
+  "@pickerScriptSharedKnown": {
+    "description": "Language sheet: a script shared with languages the learner knows.",
+    "placeholders": {
+      "script": {
+        "type": "String"
+      },
+      "languages": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerScriptsHeading": "Scripts to learn",
+  "@pickerScriptsHeading": {
+    "description": "Language sheet’s script screen: heading."
+  },
+  "pickerScriptsPickAny": "pick any",
+  "@pickerScriptsPickAny": {
+    "description": "Beside that heading."
+  },
+  "pickerScriptDirection": "{direction, select, rtl{Written right to left.} other{Written left to right.}}",
+  "@pickerScriptDirection": {
+    "description": "Language sheet’s script screen: the direction a script is written in.",
+    "placeholders": {
+      "direction": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerScriptYouRead": "You already read it. Tick it to learn its decks anyway.",
+  "@pickerScriptYouRead": {
+    "description": "Language sheet’s script screen: under a script the learner reads through a language they know."
+  },
+  "pickerScriptsNone": "Leave every box empty to learn with Latin letters only. Words show their reading first, and the script decks are left out.",
+  "@pickerScriptsNone": {
+    "description": "Language sheet’s script screen: what choosing no script does."
+  },
+  "pickerStartLanguage": "{language}, the language",
+  "@pickerStartLanguage": {
+    "description": "Language sheet’s placement screen: heading above the language’s own choice.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerStartScript": "{script} script",
+  "@pickerStartScript": {
+    "description": "Language sheet’s placement screen: heading above a script’s choice.",
+    "placeholders": {
+      "script": {
+        "type": "String"
+      }
+    }
+  },
+  "pickerFindLanguageBody": "A short check after Continue places you in the course.",
+  "@pickerFindLanguageBody": {
+    "description": "Language sheet: under Find my level for the language."
+  },
+  "pickerFindScriptBody": "A short check places you in the script decks.",
+  "@pickerFindScriptBody": {
+    "description": "Language sheet: under Find my level for a script."
+  },
+  "pickerStartBeginning": "Start at the beginning",
+  "@pickerStartBeginning": {
+    "description": "Language sheet: the choice to start without a check."
+  },
+  "pickerBeginLanguageBody": "No check: begin with the first unit.",
+  "@pickerBeginLanguageBody": {
+    "description": "Language sheet: under Start at the beginning for the language."
+  },
+  "pickerBeginScriptBody": "No check: begin with the first letters.",
+  "@pickerBeginScriptBody": {
+    "description": "Language sheet: under Start at the beginning for a script."
+  },
+  "pickerStartSeparately": "Your answer for each script is kept for when scripts can be placed on their own. For now the check places the language as a whole.",
+  "@pickerStartSeparately": {
+    "description": "Language sheet’s placement screen when several scripts were chosen."
+  },
+  "pickerStartApplied": "Applied when you press Continue on the list. You can find your level later from this sheet.",
+  "@pickerStartApplied": {
+    "description": "Language sheet’s placement screen: when the answers take effect."
+  },
+  "pickerNext": "Next",
+  "@pickerNext": {
+    "description": "Language sheet: the button to the next screen."
+  },
+  "pickerLearnThis": "Learn this language",
+  "@pickerLearnThis": {
+    "description": "Language sheet: the button fixed at the bottom of a language not learned yet."
   }
 }

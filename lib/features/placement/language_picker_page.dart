@@ -24,29 +24,34 @@ import '../downloads/download_text.dart';
 import '../downloads/language_download_row.dart';
 import '../downloads/update_escape.dart';
 import '../profiles/spoken_languages_picker.dart';
-import 'language_card.dart';
+import 'language_row.dart';
+import 'language_sheet.dart';
 import 'language_download.dart';
 import 'placement_page.dart';
 import 'script_test_page.dart';
 
-/// The languages the learner learns (#211, `docs/plans/language-picker.md`
-/// and its approved mockup): asked on first launch, after the languages
-/// they speak, and from Settings.
+/// The languages the learner learns (#211, #626, `docs/plans/language-picker.md`
+/// and the approved mockup `docs/mockups/languages-learning.html`): asked on
+/// first launch, after the languages they speak, and from Settings.
 ///
-/// Search at the top; "Learning", the languages chosen, then "Available".
-/// Each language is a card with how much of its course is written toward
-/// B1, the learner's own progress where they learn it, the languages it is
-/// taught from and its Alpha or Beta tag. Choosing a new one opens its card
-/// in place: "Learn the script", on to start with, which tells placement
-/// not to ask; which of the learner's languages to learn it from, when more
-/// than one teaches it; and with deck downloads, its download, which starts
-/// as it is chosen. From Settings, deck updates are checked at the top, and
-/// each language on the phone shows its size and state, with Update and
-/// Remove (#467). Continue waits only for each new language's first five
-/// decks, then runs placement for the new ones (ADR-0013) and saves; a
-/// language already learned needs none. Un-ticking a language the learner
-/// learns asks first: its progress is kept, but its decks leave Today.
-/// Leaving without saving stops the downloads of the languages it chose.
+/// Laid out as Languages you know is: the search bar, pinned to the top once
+/// the list scrolls; "Learning", the languages chosen; "Popular", the most
+/// complete courses; then every language grouped by family, folded by
+/// default. Each language is a plain row with its names, its Alpha, Beta or
+/// Complete tag and the learner's own progress; a language on the phone shows
+/// its size and state, "Update available" while an update waits, and Remove
+/// as a red cross. Tapping a row opens its bottom sheet: the course (with its
+/// A1, A2, B1 and culture line), the script details, and for a language
+/// learned "Find my level". "Learn this language" is fixed at the sheet's
+/// bottom and leads to two screens, each with Back: which scripts to learn,
+/// then where to start. With deck downloads, a new language's download
+/// starts as it is chosen. From Settings, one button at the top checks for
+/// deck updates and then reads "Update all (N)". Continue waits only for each
+/// new language's first five decks, then runs placement for those that chose
+/// "Find my level" (ADR-0013) and saves; a language already learned needs
+/// none. Stopping a language the learner learns asks first: its progress is
+/// kept, but its decks leave Today. Leaving without saving stops the
+/// downloads of the languages it chose.
 class LanguagePickerPage extends StatefulWidget {
   const LanguagePickerPage({
     super.key,
@@ -122,10 +127,21 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         language,
   ];
 
-  /// "Learn the script", for each language newly chosen with script decks.
-  late final Map<String, bool> _script = <String, bool>{
-    ...widget.initialScript,
-  };
+  /// The scripts each language's sheet chose to learn, by language: none
+  /// is Latin letters only. Applied on Continue, the language's own script
+  /// as "Learn the script" (#211); a script besides it is recorded, for
+  /// placement per script (#481).
+  final Map<String, Set<String>> _scriptsChosen = <String, Set<String>>{};
+
+  /// Where each newly chosen language's sheet said to start: "Find my
+  /// level" (true, the default) or at the beginning, for the language and
+  /// for each of its scripts.
+  final Map<String, bool> _findLanguage = <String, bool>{};
+  final Map<String, Map<String, bool>> _findScripts =
+      <String, Map<String, bool>>{};
+
+  /// The families open in the list, by id. Every family starts folded.
+  final Set<String> _openFamilies = <String>{};
 
   /// Whether each newly chosen language's script test was passed (#554):
   /// saved with the rest, its script lessons then placed as known.
@@ -248,32 +264,43 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
   // ---------------------------------------------------------------------------
   // Choosing
 
-  Future<void> _toggle(AppState state, CatalogLanguage language) async {
+  /// Whether the learner learns [language] now: saved, and still chosen.
+  bool _learnsNow(CatalogLanguage language) =>
+      _isLearned(language) && _isTicked(language);
+
+  /// Learns [language], as its sheet answered: chosen, with the scripts to
+  /// learn and where to start. A language already learned takes only the
+  /// scripts, applied on Continue.
+  void _learn(AppState state, CatalogLanguage language, SheetReply reply) {
     final code = language.code;
     final l10n = AppLocalizations.of(context)!;
+    final variant = language.variant;
+    final already = _learnsNow(language);
     // The other entry of the IPA, while it is chosen: its scope changes,
     // and it is still the one language, learned once.
-    final variant = language.variant;
-    if (variant != null && _ticked.contains(code) && variant != _scope.name) {
-      setState(() => _scope = IpaScope.tryParse(variant) ?? _scope);
-      _announce(l10n.pickerAnnounceChosen(language.name));
-      _showCard(language.key);
-      return;
-    }
-    if (!_ticked.contains(code)) {
-      setState(() {
-        _ticked = <String>{..._ticked, code};
-        if (variant != null) _scope = IpaScope.tryParse(variant) ?? _scope;
-      });
-      _announce(l10n.pickerAnnounceChosen(language.name));
-      _startDownload(state, code);
-      _showCard(language.key);
-      return;
-    }
-    if (_learning.contains(code) && !await _confirmStop(state, language)) {
-      return;
-    }
-    if (!mounted) return;
+    final switchScope =
+        variant != null && _ticked.contains(code) && variant != _scope.name;
+    setState(() {
+      _scriptsChosen[code] = reply.scripts;
+      if (already) return;
+      _findLanguage[code] = reply.findLanguage;
+      _findScripts[code] = reply.findScripts;
+      _scriptPassed[code] = reply.scriptPassed;
+      if (reply.native case final native?) _native[code] = native;
+      _ticked = <String>{..._ticked, code};
+      if (variant != null) _scope = IpaScope.tryParse(variant) ?? _scope;
+    });
+    if (already) return;
+    _announce(l10n.pickerAnnounceChosen(language.name));
+    if (!switchScope) _startDownload(state, code);
+    _showCard(language.key);
+  }
+
+  /// Stops learning [language], or un-chooses it: its download stops if it
+  /// was only asked for here.
+  void _stop(AppState state, CatalogLanguage language) {
+    final code = language.code;
+    final l10n = AppLocalizations.of(context)!;
     final downloads = state.deckDownloads;
     // From the moment it is asked for, not only once its files are known.
     if (!_learning.contains(code) &&
@@ -282,8 +309,191 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
       unawaited(downloads.cancel(code));
     }
     _forgetFailures(code);
-    setState(() => _ticked = <String>{..._ticked}..remove(code));
+    setState(() {
+      _ticked = <String>{..._ticked}..remove(code);
+      _scriptsChosen.remove(code);
+    });
     _announce(l10n.pickerAnnounceUnchosen(language.name));
+  }
+
+  /// Opens [language]'s sheet and applies its answer.
+  Future<void> _open(AppState state, CatalogLanguage language) async {
+    final l10n = AppLocalizations.of(context)!;
+    final spoken = state.settings.spokenLanguages;
+    final code = language.code;
+    final learns = _learnsNow(language);
+    final chosen = _isTicked(language) && !learns;
+    final native = _isLearned(language)
+        ? state.courseNative(code)
+        : _nativeChoice(state, language);
+    final progress = language.progressFor(spoken, native: native);
+    final downloads = state.deckDownloads;
+    final download = downloads?.languageDownload(code, spoken);
+    final onPhone = downloads?.languagesOnPhone.contains(code) ?? false;
+    final size = downloads == null || download == null
+        ? null
+        : formatSize(
+            l10n,
+            onPhone ? downloads.sizeOnPhone(code) : download.totalBytes,
+          );
+    final share = learns && (progress?.hasPlan ?? false)
+        ? state.learnedShare(code)
+        : null;
+    final scripts = _sheetScripts(state, language);
+    final primary = language.script;
+    final reply = await showModalBottomSheet<SheetReply>(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      showDragHandle: true,
+      builder: (_) => LanguageSheet(
+        language: language,
+        spoken: spoken,
+        learned: learns,
+        chosen: chosen,
+        knows: spoken.contains(code),
+        scripts: scripts,
+        initialScripts: _scriptsFor(state, language),
+        storage: size == null
+            ? ''
+            : (onPhone
+                  ? l10n.pickerOnPhone(size)
+                  : l10n.pickerNotOnPhone(size)),
+        you: switch (share) {
+          final share? => l10n.pickerYou(B1Progress.percentOf(share)),
+          null when learns && !(progress?.hasPlan ?? false) =>
+            l10n.pickerYouWords(state.learnedWords(code)),
+          _ => null,
+        },
+        native: native,
+        onNative: chosen
+            ? (picked) => setState(() => _native[code] = picked)
+            : null,
+        hasPlacement: code != ipaLanguageCode,
+        findLanguage: _findLanguage[code] ?? true,
+        findScripts: _findScripts[code] ?? const <String, bool>{},
+        confirmStop: learns ? () => _confirmStop(state, language) : null,
+        scriptPassed: _scriptPassed[code] ?? false,
+        scriptTest: primary == null || !language.scriptDecks
+            ? null
+            : (context, passed, onResult) => _scriptTest(
+                context,
+                state,
+                language,
+                learns: learns,
+                passed: passed,
+                onResult: onResult,
+                native: native,
+              ),
+      ),
+    );
+    if (reply == null || !mounted) return;
+    switch (reply.action) {
+      case SheetAction.learn:
+        _learn(state, language, reply);
+      case SheetAction.stop:
+        _stop(state, language);
+      case SheetAction.find:
+        _findLevel(state, language);
+    }
+  }
+
+  /// The scripts [language] offers to learn, one option each: the scripts
+  /// `assets/languages.yaml` gives it except Latin, its own first; else the
+  /// script of its decks. None for a course without script decks.
+  List<String> _scriptCodes(CatalogLanguage language) {
+    if (!language.scriptDecks) return const <String>[];
+    final listed = <String>[
+      for (final entry in _spokenList)
+        if (entry.code == language.code)
+          for (final script in entry.scripts)
+            if (script != 'latin' && script.isNotEmpty) script,
+    ];
+    if (listed.isNotEmpty) return listed;
+    final own = language.script;
+    return own == null || own == 'latin' ? const <String>[] : <String>[own];
+  }
+
+  /// Whether the learner reads [script] through a language they know.
+  bool _readsScript(CatalogLanguage language, String? script) {
+    if (script == null) return false;
+    final readers = scriptReaders(
+      _spokenList,
+      _app.settings.scriptsRead,
+    )[script];
+    return readers != null && readers.isNotEmpty;
+  }
+
+  /// The scripts ticked when [language]'s sheet opens: what the learner
+  /// chose here before; for a language learned, its own script when it is
+  /// learned; for a new one, each script they do not read already.
+  Set<String> _scriptsFor(AppState state, CatalogLanguage language) {
+    final code = language.code;
+    if (_scriptsChosen[code] case final chosen?) return <String>{...chosen};
+    final own = language.script;
+    if (_learnsNow(language)) {
+      return <String>{
+        if (own != null && state.settings.learnsAlphabet(code)) own,
+      };
+    }
+    return <String>{
+      for (final script in _scriptCodes(language))
+        if (script == own
+            ? (widget.initialScript[code] ?? !_readsScript(language, script))
+            : !_readsScript(language, script))
+          script,
+    };
+  }
+
+  /// What the sheet says of each of [language]'s scripts.
+  List<SheetScript> _sheetScripts(AppState state, CatalogLanguage language) {
+    final codes = _scriptCodes(language);
+    if (codes.isEmpty) return const <SheetScript>[];
+    final readers = scriptReaders(_spokenList, state.settings.scriptsRead);
+    final names = <String, String>{for (final l in _spokenList) l.code: l.name};
+    final learning = _scriptsFor(state, language);
+    final catalog = state.catalogLanguages(ownNames: _ownNames);
+    return <SheetScript>[
+      for (final script in codes)
+        () {
+          final sharing = <String>[
+            for (final other in catalog)
+              if (other.code != language.code &&
+                  _isTicked(other) &&
+                  _scriptCodes(other).contains(script))
+                other.name,
+          ];
+          final known = <String>[
+            for (final reader in readers[script] ?? const <String>[])
+              if (reader != language.code &&
+                  !sharing.contains(names[reader] ?? reader))
+                names[reader] ?? reader,
+          ];
+          final own = script == language.script;
+          return SheetScript(
+            code: script,
+            reads: readers[script]?.isNotEmpty ?? false,
+            learning: _learnsNow(language) && learning.contains(script),
+            decks: own ? state.scriptPreview(language.code)?.decks : null,
+            progress: own && _learnsNow(language)
+                ? state.scriptProgress(language.code)
+                : null,
+            sharedLearning: sharing,
+            sharedKnown: known,
+          );
+        }(),
+    ];
+  }
+
+  /// Whether [language]'s primary script is learned: what the sheet chose,
+  /// else the setting for a language learned, else on.
+  bool _learnsScript(AppState state, CatalogLanguage language) {
+    final code = language.code;
+    if (_scriptsChosen[code] case final chosen?) {
+      return chosen.contains(language.script);
+    }
+    if (widget.initialScript[code] case final on?) return on;
+    return _isLearned(language) ? state.settings.learnsAlphabet(code) : true;
   }
 
   /// Tells a screen reader of a change it would not otherwise hear: a card
@@ -307,7 +517,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     unawaited(state.downloadLanguage(code));
   }
 
-  /// Keeps a card in view after it moves to "Learning", at the top of the
+  /// Keeps a row in view after it moves to "Learning", at the top of the
   /// list: when the move takes it out of what the list has built, back to
   /// the top first.
   void _showCard(String code) {
@@ -367,6 +577,46 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
       ),
     );
     return stop ?? false;
+  }
+
+  /// Find my level, on demand, for a language already learned (#626): the
+  /// placement check from its first question, then the decks it places as
+  /// known replace what placement found before. Nothing else changes.
+  void _findLevel(AppState state, CatalogLanguage language) {
+    final code = language.code;
+    final native = state.courseNative(code);
+    // A passed script test stays: the lessons it placed are among the decks
+    // replaced below.
+    final skipped = state.scriptLessonsSkipped(code, native: native);
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        settings: const RouteSettings(name: '/placement'),
+        builder: (_) => PlacementPage(
+          languages: <String>[code],
+          asked: <String>{code},
+          alphabet: <String, bool>{
+            if (language.scriptDecks) code: state.settings.learnsAlphabet(code),
+          },
+          natives: <String, String>{code: ?native},
+          onFinished: (found) {
+            final settings = state.settings;
+            final replaced = <String>{
+              for (final entry in state.decks)
+                if (entry.language.code == code) entry.id,
+            };
+            Navigator.of(context).pop();
+            settings.placedDecks = <String>{
+              for (final id in settings.placedDecks)
+                if (!replaced.contains(id)) id,
+              ...?found.placed[code],
+            };
+            if (skipped && settings.learnsAlphabet(code)) {
+              state.skipScriptLessons(code, true, native: native);
+            }
+          },
+        ),
+      ),
+    );
   }
 
   void _cancel(AppState state, CatalogLanguage language) {
@@ -470,6 +720,13 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     ];
   }
 
+  /// Whether [language] is placed by a check after Continue: the learner
+  /// chose "Find my level" for it, which is the default, whether or not they
+  /// speak it (the check cannot place a script apart from the language yet:
+  /// #481).
+  bool _placed(CatalogLanguage language) =>
+      _findLanguage[language.code] ?? true;
+
   void _continue(AppState state, List<CatalogLanguage> all) {
     final chosen = <String>{
       for (final language in all)
@@ -480,32 +737,54 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
       for (final code in _added(all))
         if (code != ipaLanguageCode) code,
     ];
-    if (added.isEmpty) {
-      _save(state, chosen, const <String, Set<String>>{});
+    final byCode = <String, CatalogLanguage>{for (final l in all) l.code: l};
+    // Whether to learn each script, for a language with script decks that is
+    // new, or whose sheet answered: its own script is the course's alphabet.
+    final alphabet = <String, bool>{
+      for (final code in chosen)
+        if (byCode[code] case final language?
+            when language.scriptDecks &&
+                (added.contains(code) || _scriptsChosen.containsKey(code)))
+          code: _learnsScript(state, language),
+    };
+    final natives = <String, String>{
+      for (final code in added)
+        if (byCode[code] case final language?)
+          code: ?_nativeChoice(state, language),
+    };
+    final place = <String>[
+      for (final code in added)
+        if (_placed(byCode[code]!)) code,
+    ];
+    if (place.isEmpty) {
+      _save(
+        state,
+        chosen,
+        const <String, Set<String>>{},
+        alphabet: alphabet,
+        natives: natives,
+      );
       return;
     }
-    final byCode = <String, CatalogLanguage>{for (final l in all) l.code: l};
     Navigator.of(context).push(
       MaterialPageRoute<void>(
         settings: const RouteSettings(name: '/placement'),
         builder: (_) => PlacementPage(
-          languages: added,
+          languages: place,
+          // "Find my level" is asked for already, in each sheet.
+          asked: place.toSet(),
           alphabet: <String, bool>{
-            for (final code in added)
-              if (byCode[code]?.scriptDecks ?? false)
-                code: _script[code] ?? true,
+            for (final code in place) code: ?alphabet[code],
           },
           natives: <String, String>{
-            for (final code in added)
-              if (byCode[code] case final language?)
-                code: ?_nativeChoice(state, language),
+            for (final code in place) code: ?natives[code],
           },
           onFinished: (found) => _save(
             state,
             chosen,
             found.placed,
-            alphabet: found.alphabet,
-            natives: found.natives,
+            alphabet: <String, bool>{...alphabet, ...found.alphabet},
+            natives: <String, String>{...natives, ...found.natives},
           ),
         ),
       ),
@@ -684,6 +963,15 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     ],
   );
 
+  /// The families, in the order Languages you know lists them: as
+  /// `assets/languages.yaml` first uses them.
+  List<String> get _familyOrder =>
+      <String>{for (final language in _spokenList) ?language.family}.toList();
+
+  Map<String, String> get _familyOf => <String, String>{
+    for (final language in _spokenList) language.code: ?language.family,
+  };
+
   Widget _list(BuildContext context, AppState state) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
@@ -691,12 +979,26 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     final base = state.catalogLanguages(ownNames: _ownNames);
     final all = _withIpaEntries(l10n, base);
     final query = _search.text;
+    final searching = query.trim().isNotEmpty;
     final shown = <CatalogLanguage>[
       for (final language in all)
         if (LanguageSearch.matches(language, query)) language,
     ];
     final learning = pickerOrder(shown.where(_isTicked), spoken);
-    final available = pickerOrder(shown.where((l) => !_isTicked(l)), spoken);
+    final popular = popularOf(all.where((l) => !_isTicked(l)), spoken);
+    final families = groupByFamily(
+      shown,
+      order: _familyOrder,
+      familyOf: _familyOf,
+    );
+    final totals = <String, int>{
+      for (final family in groupByFamily(
+        all,
+        order: _familyOrder,
+        familyOf: _familyOf,
+      ))
+        family.id: family.languages.length,
+    };
     final added = _added(all);
     final waiting = _waiting(state, added);
     final names = <String, String>{for (final l in base) l.code: l.name};
@@ -725,35 +1027,66 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
           _failedRuns[code]?.count ?? 1,
     ];
 
-    Widget heading(String text) => Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(
-        AppSizes.gutter + 8,
-        16,
-        AppSizes.gutter,
-        8,
-      ),
-      child: Semantics(
-        header: true,
-        child: Text(
-          text,
-          style: theme.textTheme.titleSmall!.copyWith(
-            color: theme.colorScheme.primary,
-            fontWeight: FontWeight.w700,
-          ),
-        ),
-      ),
-    );
+    // A language can be in "Popular" and its family at once: each row's key
+    // names its group, as keys in one list must differ.
+    Widget row(
+      CatalogLanguage language, {
+      required bool learningGroup,
+      String group = 'listed',
+    }) {
+      final tile = _row(context, state, language, query, learningGroup, group);
+      return learningGroup
+          ? KeyedSubtree(
+              key: _cardKeys.putIfAbsent(language.key, GlobalKey.new),
+              child: tile,
+            )
+          : tile;
+    }
 
-    Widget card(CatalogLanguage language) => Padding(
-      key: _cardKeys.putIfAbsent(language.key, GlobalKey.new),
-      padding: const EdgeInsetsDirectional.fromSTEB(
-        AppSizes.gutter,
-        0,
-        AppSizes.gutter,
-        12,
-      ),
-      child: _card(context, state, language, query),
-    );
+    final body = <Widget>[
+      if (searching) ...<Widget>[
+        for (final family in families) ...<Widget>[
+          PickerHeading(
+            l10n.knownFamily(family.id),
+            note: l10n.knownSearchMatches(
+              family.languages.length,
+              totals[family.id] ?? family.languages.length,
+            ),
+          ),
+          for (final language in family.languages)
+            row(language, learningGroup: false),
+        ],
+      ] else ...<Widget>[
+        if (learning.isNotEmpty) ...<Widget>[
+          PickerHeading(l10n.pickerGroupLearning(learning.length)),
+          for (final language in learning) row(language, learningGroup: true),
+        ],
+        if (popular.isNotEmpty) ...<Widget>[
+          PickerHeading(
+            l10n.pickerGroupPopular(popular.length),
+            note: l10n.pickerPopularNote,
+          ),
+          for (final language in popular)
+            row(language, learningGroup: false, group: 'popular'),
+        ],
+        PickerHeading(l10n.knownAllLanguages, note: l10n.knownByFamily),
+        for (final family in families) ...<Widget>[
+          FamilyRow(
+            id: family.id,
+            count: family.languages.length,
+            open: _openFamilies.contains(family.id),
+            onToggle: () => setState(
+              () => _openFamilies.contains(family.id)
+                  ? _openFamilies.remove(family.id)
+                  : _openFamilies.add(family.id),
+            ),
+          ),
+          if (_openFamilies.contains(family.id))
+            for (final language in family.languages)
+              row(language, learningGroup: false),
+        ],
+      ],
+    ];
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -767,6 +1100,45 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
             slivers: <Widget>[
               if (widget.firstRun)
                 SliverToBoxAdapter(child: TabHeader(title: l10n.learnTitle)),
+              // The intro and the update button scroll away with the list;
+              // the search bar below them stays at the top once they have
+              // (owner, 2026-10-18).
+              SliverToBoxAdapter(
+                child: widget.firstRun && !searching
+                    ? Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                          AppSizes.gutter + 8,
+                          8,
+                          AppSizes.gutter,
+                          0,
+                        ),
+                        child: Text(
+                          l10n.learnBody,
+                          style: theme.textTheme.bodyLarge!.copyWith(
+                            color: theme.colorScheme.onSurfaceVariant,
+                          ),
+                        ),
+                      )
+                    // Deck updates (#467), where Settings' Deck downloads
+                    // page was: above the languages, out of a search.
+                    : !widget.firstRun && !searching
+                    ? switch (state.deckDownloads) {
+                        final downloads? => Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                            AppSizes.gutter + 8,
+                            8,
+                            AppSizes.gutter,
+                            0,
+                          ),
+                          child: DeckUpdateControls(
+                            downloads: downloads,
+                            names: names,
+                          ),
+                        ),
+                        null => const SizedBox.shrink(),
+                      }
+                    : const SizedBox.shrink(),
+              ),
               PinnedHeaderSliver(
                 child: ColoredBox(
                   color: theme.scaffoldBackgroundColor,
@@ -842,50 +1214,11 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
                   ),
                 )
               else
+                // The list ends with its last row (owner, 2026-10-18): no
+                // blank area above Continue.
                 SliverPadding(
-                  padding: const EdgeInsetsDirectional.only(bottom: 16),
-                  sliver: SliverList.list(
-                    children: <Widget>[
-                      // The intro scrolls with the list: at large text sizes,
-                      // it and the button would not leave the list any room.
-                      if (widget.firstRun && query.isEmpty)
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                            AppSizes.gutter + 8,
-                            8,
-                            AppSizes.gutter,
-                            0,
-                          ),
-                          child: Text(
-                            l10n.learnBody,
-                            style: theme.textTheme.bodyLarge!.copyWith(
-                              color: theme.colorScheme.onSurfaceVariant,
-                            ),
-                          ),
-                        ),
-                      // Deck updates (#467), where Settings' Deck downloads
-                      // page was: above the languages, out of a search.
-                      if (!widget.firstRun && query.isEmpty)
-                        if (state.deckDownloads case final downloads?)
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                              AppSizes.gutter,
-                              8,
-                              AppSizes.gutter,
-                              0,
-                            ),
-                            child: DeckUpdateControls(downloads: downloads),
-                          ),
-                      if (learning.isNotEmpty) ...<Widget>[
-                        heading(l10n.pickerGroupLearning(learning.length)),
-                        for (final language in learning) card(language),
-                      ],
-                      if (available.isNotEmpty) ...<Widget>[
-                        heading(l10n.pickerGroupAvailable(available.length)),
-                        for (final language in available) card(language),
-                      ],
-                    ],
-                  ),
+                  padding: const EdgeInsetsDirectional.only(bottom: 4),
+                  sliver: SliverList.list(children: body),
                 ),
             ],
           ),
@@ -913,7 +1246,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
                   ],
                   if (hint != null) ...<Widget>[
                     // Not a live region: a download's ready point is
-                    // announced from its card, once.
+                    // announced from its row, once.
                     Text(
                       hint,
                       textAlign: TextAlign.center,
@@ -950,15 +1283,19 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     return active || _downloadShown.contains(code);
   }
 
-  /// The script test's offer on [language]'s card (#554), for a learner who
-  /// reads its script through another language they know; null for anyone
-  /// else, and for a language whose script is its own, such as Telugu to a
-  /// reader of Bengali.
+  /// The script test's offer (#554) for [language]'s own script, in the
+  /// sheet's script screen, for a learner who reads it through another
+  /// language they know; null for anyone else, and for a language whose
+  /// script is its own, such as Telugu to a reader of Bengali. [passed] is
+  /// whether a passed test has skipped its lessons, and [onResult] hears
+  /// what a test finds.
   Widget? _scriptTest(
     BuildContext context,
     AppState state,
     CatalogLanguage language, {
     required bool learns,
+    required bool passed,
+    required ValueChanged<bool> onResult,
     String? native,
   }) {
     final script = language.script;
@@ -987,125 +1324,88 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
       }.values.toList(),
       skipped: learns
           ? state.scriptLessonsSkipped(code, native: native)
-          : _scriptPassed[code] ?? false,
+          : passed,
       onTake: lessons.isEmpty
           ? null
           : () async {
-              final passed = await Navigator.of(context).push<bool>(
+              final result = await Navigator.of(context).push<bool>(
                 MaterialPageRoute<bool>(
                   settings: const RouteSettings(name: '/script-test'),
                   builder: (_) =>
                       ScriptTestPage(script: scriptName, lessons: lessons),
                 ),
               );
-              if (passed == null || !mounted) return;
+              if (result == null || !mounted) return;
               if (learns) {
-                state.skipScriptLessons(code, passed, native: native);
-              } else {
-                setState(() => _scriptPassed[code] = passed);
+                state.skipScriptLessons(code, result, native: native);
               }
+              onResult(result);
             },
     );
   }
 
-  Widget _card(
+  /// [language]'s row: opens its sheet. A language on the phone, learned or
+  /// not chosen, has its row of buttons in every group and in search
+  /// (#467, #626), and one newly chosen its download below.
+  Widget _row(
     BuildContext context,
     AppState state,
     CatalogLanguage language,
     String query,
+    bool learningGroup,
+    String group,
   ) {
-    final l10n = AppLocalizations.of(context)!;
     final spoken = state.settings.spokenLanguages;
     final code = language.code;
     final ticked = _isTicked(language);
-    final learns = _isLearned(language);
-    final options = language.spokenNatives(spoken);
-    final chosenNative = learns ? null : _nativeChoice(state, language);
-    final native = learns ? state.courseNative(code) : chosenNative;
+    final learns = _isLearned(language) && ticked;
+    final native = _isLearned(language)
+        ? state.courseNative(code)
+        : _nativeChoice(state, language);
     final progress = language.progressFor(spoken, native: native);
     final downloads = state.deckDownloads;
     final download = downloads?.languageDownload(code, spoken);
-    final onPhone = downloads?.languagesOnPhone.contains(code) ?? false;
     final share = learns && progress != null && progress.hasPlan
         ? state.learnedShare(code)
         : null;
-    final expanded = <Widget>[
-      // A language on the phone, learned or not chosen, has its download's
-      // row (#467): size, state, Update and Remove. One newly chosen shows
-      // its download below instead.
-      if (!widget.firstRun &&
-          downloads != null &&
-          (learns || !ticked) &&
-          hasDownloadRow(downloads, code))
-        _DownloadRow(
-          line: languageDownloadLine(l10n, downloads, code, spoken),
-          actions: LanguageDownloadActions(
-            code: code,
-            name: language.name,
-            // Removed, it is no longer learned: Continue must not bring it
-            // back.
-            onRemoved: () {
-              if (!mounted) return;
-              setState(() {
-                _learning.remove(code);
-                _ticked = <String>{..._ticked}..remove(code);
-              });
-            },
-          ),
-        ),
-      // A language already learned: its script switch is the setting itself
-      // (#555), the one place to change it after the first choice.
-      if (learns && language.scriptDecks)
-        ListenableBuilder(
-          listenable: state.settings,
-          builder: (context, _) => Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              ScriptChoice(
-                language: language,
-                on: state.settings.learnsAlphabet(code),
-                onChanged: (on) => state.settings.setLearnsAlphabet(code, on),
-                preview: state.scriptPreview(code),
-              ),
-              if (state.settings.learnsAlphabet(code))
-                if (_scriptTest(context, state, language, learns: true)
-                    case final offer?) ...<Widget>[
-                  const SizedBox(height: 16),
-                  offer,
-                ],
-            ],
-          ),
-        ),
-      if (ticked && !learns) ...<Widget>[
-        if (language.scriptDecks)
-          ScriptChoice(
-            language: language,
-            on: _script[code] ?? true,
-            onChanged: (on) => setState(() => _script[code] = on),
-            preview: state.scriptPreview(code),
-          ),
-        if (language.scriptDecks && (_script[code] ?? true))
-          ?_scriptTest(
-            context,
-            state,
-            language,
-            learns: false,
-            native: chosenNative,
-          ),
-        if (chosenNative != null)
-          NativeChoiceField(
-            language: language,
-            options: options,
-            chosen: chosenNative,
-            onChosen: (picked) => setState(() => _native[code] = picked),
-          ),
-        if (progress?.stage == CourseStage.alpha)
-          CardNotice(
-            text: progress!.hasPlan
-                ? l10n.pickerAlphaNotice(language.name)
-                : l10n.pickerAlphaUnplannedNotice(language.name),
-          ),
-        if (downloads != null &&
+    return LanguageRow(
+      key: ValueKey<String>(
+        learningGroup ? 'language-${language.key}' : '$group-${language.key}',
+      ),
+      language: language,
+      chosen: ticked,
+      onTap: () => _open(state, language),
+      progress: progress,
+      you: share,
+      youWords: learns && share == null && !(progress?.hasPlan ?? false)
+          ? state.learnedWords(code)
+          : null,
+      query: query,
+      // A language on the phone has its size, state and buttons (#467).
+      actions:
+          !widget.firstRun &&
+              (learns || !ticked) &&
+              downloads != null &&
+              hasDownloadRow(downloads, code)
+          ? LanguageRowActions(
+              code: code,
+              name: language.name,
+              // Removed, it is no longer learned: Continue must not bring it
+              // back.
+              onRemoved: () {
+                if (!mounted) return;
+                setState(() {
+                  _learning.remove(code);
+                  _ticked = <String>{..._ticked}..remove(code);
+                });
+              },
+            )
+          : null,
+      below: <Widget>[
+        if (learningGroup &&
+            ticked &&
+            !learns &&
+            downloads != null &&
             download != null &&
             _showsDownload(downloads, download, code))
           LanguageDownloadBlock(
@@ -1117,54 +1417,6 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
             onCancel: () => _cancel(state, language),
             onRetry: () => _retry(state, code),
           ),
-      ],
-    ];
-    return LanguageCard(
-      key: ValueKey<String>('language-${language.key}'),
-      language: language,
-      ticked: ticked,
-      onToggle: () => _toggle(state, language),
-      spoken: spoken,
-      progress: progress,
-      you: share,
-      youWords: learns && share == null && !(progress?.hasPlan ?? false)
-          ? state.learnedWords(code)
-          : null,
-      storage: downloads == null || download == null
-          ? null
-          : (
-              onPhone: onPhone,
-              size: formatSize(
-                l10n,
-                onPhone ? downloads.sizeOnPhone(code) : download.totalBytes,
-              ),
-            ),
-      query: query,
-      expanded: expanded,
-    );
-  }
-}
-
-/// A downloaded language's line and buttons, on its card.
-class _DownloadRow extends StatelessWidget {
-  const _DownloadRow({required this.line, required this.actions});
-
-  final String line;
-  final Widget actions;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: <Widget>[
-        Text(
-          line,
-          style: theme.textTheme.bodyMedium!.copyWith(
-            color: theme.colorScheme.onSurfaceVariant,
-          ),
-        ),
-        actions,
       ],
     );
   }

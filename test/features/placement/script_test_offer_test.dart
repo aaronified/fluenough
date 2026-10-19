@@ -8,14 +8,15 @@ import 'package:fluenough/app/language_offer.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/features/placement/language_picker_page.dart';
+import 'package:fluenough/features/placement/placement_page.dart';
 import 'package:fluenough/features/placement/script_test_page.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 
 import '../../support/harness.dart';
 import '../../support/picker.dart';
 
-/// The script test's offer on a language's card (#554): for a learner who
-/// reads the language's script through another language they know.
+/// The script test's offer in a language's sheet (#554, #626): for a learner
+/// who reads the language's script through another language they know.
 
 final List<SpokenLanguage> spokenList = parseSpokenLanguages(
   File('assets/languages.yaml').readAsStringSync(),
@@ -68,10 +69,23 @@ Future<void> takeTest(
   }
 }
 
+/// Taps [finder] in the open sheet, scrolling it into view first.
 Future<void> tapIn(WidgetTester tester, Finder finder) async {
-  await scrollToInPicker(tester, finder);
+  await tester.ensureVisible(finder);
+  await tester.pumpAndSettle();
   await tester.tap(finder);
   await tester.pumpAndSettle();
+}
+
+/// Learns [code] in its sheet as far as its scripts screen, with its own
+/// script ticked: where the offer of the test is.
+Future<void> toScripts(WidgetTester tester, String code, String script) async {
+  await openSheet(tester, code);
+  await tapSheet(tester, 'sheet-learn');
+  final box = find.byKey(ValueKey<String>('sheet-script-$script'));
+  if (!tester.widget<CheckboxListTile>(box).value!) {
+    await tapIn(tester, box);
+  }
 }
 
 void main() {
@@ -89,8 +103,9 @@ void main() {
           themeMode: mode,
         );
         final l10n = l10nOf(tester);
-        await pickLanguage(tester, 'as');
-        await scrollToInPicker(tester, offerOf('as'));
+        await toScripts(tester, 'as', 'bengali');
+        await tester.ensureVisible(offerOf('as'));
+        await tester.pumpAndSettle();
         expect(
           find.descendant(
             of: offerOf('as'),
@@ -104,7 +119,8 @@ void main() {
           find.text(l10n.scriptTestOwnLetters('Assamese', 'ৰ (rô), ৱ (wô)')),
           findsOneWidget,
         );
-        await pickLanguage(tester, 'te');
+        await closeSheet(tester);
+        await toScripts(tester, 'te', 'telugu');
         expect(offerOf('te'), findsNothing);
         expect(tester.takeException(), isNull);
       });
@@ -119,6 +135,7 @@ void main() {
           themeMode: mode,
         );
         final l10n = l10nOf(tester);
+        await openSheet(tester, 'as');
         await tapIn(tester, find.text(l10n.scriptTestTake));
         expect(find.byType(ScriptTestPage), findsOneWidget);
         expect(
@@ -144,14 +161,13 @@ void main() {
       LanguagePickerPage(spokenList: spokenList),
       state: bengaliReader(reads: false),
     );
-    await pickLanguage(tester, 'as');
+    await toScripts(tester, 'as', 'bengali');
     expect(offerOf('as'), findsNothing);
   });
 
   testWidgets('learning Assamese: passed, its script lessons are skipped; '
       'retaken and failed, they stay', (tester) async {
     usePhone(tester);
-    tester.view.physicalSize = const Size(390 * 3, 3000 * 3);
     final state = bengaliReader(learning: const <String>['as']);
     await pumpScreen(
       tester,
@@ -161,6 +177,7 @@ void main() {
     final l10n = l10nOf(tester);
     expect(state.scriptLessonsSkipped('as'), isFalse);
 
+    await openSheet(tester, 'as');
     await tapIn(tester, find.text(l10n.scriptTestTake));
     await takeTest(tester, state);
     expect(find.text(l10n.scriptTestPassed(8, 8, 'Assamese')), findsOneWidget);
@@ -168,6 +185,9 @@ void main() {
     await tester.pumpAndSettle();
     expect(state.scriptLessonsSkipped('as'), isTrue);
     expect(state.settings.learnsAlphabet('as'), isTrue);
+    await tester.ensureVisible(
+      find.text(l10n.scriptTestSkippedNote('Assamese')),
+    );
     expect(find.text(l10n.scriptTestSkippedNote('Assamese')), findsOneWidget);
 
     await tapIn(tester, find.text(l10n.scriptTestRetake));
@@ -188,26 +208,49 @@ void main() {
       state: state,
     );
     final l10n = l10nOf(tester);
-    await pickLanguage(tester, 'as');
+    await toScripts(tester, 'as', 'bengali');
     await tapIn(tester, find.text(l10n.scriptTestTake));
     await takeTest(tester, state);
     await tester.tap(find.text(l10n.scriptTestDone));
     await tester.pumpAndSettle();
+    await tester.ensureVisible(
+      find.text(l10n.scriptTestSkippedNote('Assamese')),
+    );
     expect(find.text(l10n.scriptTestSkippedNote('Assamese')), findsOneWidget);
     // Nothing is saved until the end.
     expect(state.settings.placedDecks, isEmpty);
 
-    await tapIn(tester, find.text(l10n.commonContinue));
-    final new_ = find.text(l10n.placementNew('Assamese'));
-    await tester.ensureVisible(new_);
-    await tester.tap(new_);
-    await tester.pumpAndSettle();
-    await tester.tap(find.text(l10n.placementDone));
+    await finishSheet(tester, begin: true);
+    await tester.tap(find.text(l10n.commonContinue));
     await tester.pumpAndSettle();
     expect(state.scriptLessonsSkipped('as'), isTrue);
     expect(state.settings.learnsAlphabet('as'), isTrue);
     expect(state.settings.placedDecks, <String>{
       for (final entry in state.scriptLessons('as')) entry.id,
     });
+  });
+
+  testWidgets('Find my level on a language learned keeps a passed script '
+      'test: its lessons stay skipped', (tester) async {
+    usePhone(tester);
+    final state = bengaliReader(learning: const <String>['as']);
+    await pumpScreen(
+      tester,
+      LanguagePickerPage(spokenList: spokenList),
+      state: state,
+    );
+    final l10n = l10nOf(tester);
+    state.skipScriptLessons('as', true);
+    expect(state.scriptLessonsSkipped('as'), isTrue);
+
+    await openSheet(tester, 'as');
+    await tapSheet(tester, 'sheet-find');
+    expect(find.byType(PlacementPage), findsOneWidget);
+    while (find.text(l10n.placementDontKnow).evaluate().isNotEmpty) {
+      await tapIn(tester, find.text(l10n.placementDontKnow));
+    }
+    await tapIn(tester, find.text(l10n.placementDone));
+    expect(find.byType(PlacementPage), findsNothing);
+    expect(state.scriptLessonsSkipped('as'), isTrue);
   });
 }

@@ -216,7 +216,7 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
         if (hits.isEmpty) continue;
         any = true;
         body.add(
-          _Heading(
+          PickerHeading(
             l10n.knownFamily(f),
             note: l10n.knownSearchMatches(hits.length, all.length),
           ),
@@ -238,7 +238,7 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
       if (_chosen.isNotEmpty) {
         body
           ..add(
-            _Heading(
+            PickerHeading(
               l10n.knownYourLanguages,
               note: l10n.knownYourLanguagesNote,
             ),
@@ -248,7 +248,7 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
       final picks = topPicksFor(_phoneLocales(), choices);
       if (picks.isNotEmpty) {
         body
-          ..add(_Heading(l10n.knownTopPicks))
+          ..add(PickerHeading(l10n.knownTopPicks))
           ..add(
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 8),
@@ -262,7 +262,7 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
             ),
           );
       }
-      body.add(_Heading(l10n.knownAllLanguages, note: l10n.knownByFamily));
+      body.add(PickerHeading(l10n.knownAllLanguages, note: l10n.knownByFamily));
       for (final f in families) {
         final languages = inFamily(f);
         final open = _open.contains(f);
@@ -321,37 +321,13 @@ class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
     );
   }
 
-  Widget _familyRow(AppLocalizations l10n, String id, int count, bool open) {
-    final name = l10n.knownFamily(id);
-    void toggle() => setState(() => open ? _open.remove(id) : _open.add(id));
-    return Semantics(
-      button: true,
-      excludeSemantics: true,
-      label: open
-          ? l10n.knownFamilyExpanded(name, count)
-          : l10n.knownFamilyCollapsed(name, count),
-      onTap: toggle,
-      child: ListTile(
-        key: ValueKey<String>('family-$id'),
-        contentPadding: const EdgeInsetsDirectional.only(start: 24, end: 16),
-        title: Text(name),
-        trailing: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Text(
-              l10n.knownFamilyCount(count),
-              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                color: Theme.of(context).colorScheme.onSurfaceVariant,
-              ),
-            ),
-            const SizedBox(width: 8),
-            Icon(open ? Icons.expand_less : Icons.expand_more),
-          ],
-        ),
-        onTap: toggle,
-      ),
-    );
-  }
+  Widget _familyRow(AppLocalizations l10n, String id, int count, bool open) =>
+      FamilyRow(
+        id: id,
+        count: count,
+        open: open,
+        onToggle: () => setState(() => open ? _open.remove(id) : _open.add(id)),
+      );
 
   /// A language: English name and own name; once chosen, its answer.
   Widget _row(AppLocalizations l10n, SpokenLanguage language) {
@@ -398,9 +374,61 @@ String _answer(
   };
 }
 
+/// A language family's row, folded or open, with how many languages it
+/// holds: Languages you know and Languages I'm learning (#626) group their
+/// languages the same way.
+class FamilyRow extends StatelessWidget {
+  const FamilyRow({
+    super.key,
+    required this.id,
+    required this.count,
+    required this.open,
+    required this.onToggle,
+  });
+
+  /// The family's id in `assets/languages.yaml`, or `other`.
+  final String id;
+  final int count;
+  final bool open;
+  final VoidCallback onToggle;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final name = l10n.knownFamily(id);
+    return Semantics(
+      button: true,
+      excludeSemantics: true,
+      label: open
+          ? l10n.knownFamilyExpanded(name, count)
+          : l10n.knownFamilyCollapsed(name, count),
+      onTap: onToggle,
+      child: ListTile(
+        key: ValueKey<String>('family-$id'),
+        contentPadding: const EdgeInsetsDirectional.only(start: 24, end: 16),
+        title: Text(name),
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Text(
+              l10n.knownFamilyCount(count),
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+              ),
+            ),
+            const SizedBox(width: 8),
+            Icon(open ? Icons.expand_less : Icons.expand_more),
+          ],
+        ),
+        onTap: onToggle,
+      ),
+    );
+  }
+}
+
 /// A group's label on the 24 px line, with a note at its end.
-class _Heading extends StatelessWidget {
-  const _Heading(this.text, {this.note});
+class PickerHeading extends StatelessWidget {
+  const PickerHeading(this.text, {super.key, this.note});
 
   final String text;
   final String? note;
@@ -410,18 +438,20 @@ class _Heading extends StatelessWidget {
     final theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(24, 16, 24, 4),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.baseline,
-        textBaseline: TextBaseline.alphabetic,
+      // A wrap, not a row: at large text a note too long for the line goes
+      // under the label instead of overflowing.
+      child: Wrap(
+        alignment: WrapAlignment.spaceBetween,
+        crossAxisAlignment: WrapCrossAlignment.end,
+        spacing: 12,
+        runSpacing: 2,
         children: <Widget>[
-          Expanded(
-            child: Semantics(
-              header: true,
-              child: Text(
-                text,
-                style: theme.textTheme.titleSmall!.copyWith(
-                  color: theme.colorScheme.primary,
-                ),
+          Semantics(
+            header: true,
+            child: Text(
+              text,
+              style: theme.textTheme.titleSmall!.copyWith(
+                color: theme.colorScheme.primary,
               ),
             ),
           ),
