@@ -68,6 +68,8 @@ void main() {
     expect(style.fontVariations, <FontVariation>[
       const FontVariation.weight(600),
     ]);
+    // The weight is the font's axis alone, with no synthetic bold on top.
+    expect(style.fontWeight, FontWeight.normal);
   });
 
   testWidgets('the other sizes of TargetText take the font too', (

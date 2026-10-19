@@ -134,7 +134,7 @@ class TargetText extends StatelessWidget {
       locale: Locale(language.code),
       style: TextStyle(
         fontSize: size,
-        fontWeight: fontWeight,
+        fontWeight: _styleWeight(family, fontWeight),
         fontFamily: family,
         fontVariations: _variations(family, fontWeight),
         color: color,
@@ -151,6 +151,12 @@ class TargetText extends StatelessWidget {
     return <FontVariation>[FontVariation.weight(weight.value.toDouble())];
   }
 
+  /// The weight to ask the text style for: with a downloaded font, which is
+  /// one face registered at its default weight, the normal weight, so that
+  /// the engine adds no synthetic bold on top of [_variations]' own.
+  static FontWeight _styleWeight(String? family, FontWeight weight) =>
+      family == null ? weight : FontWeight.normal;
+
   /// Whether [text] is one word: a longer text breaks between its words.
   bool get _isOneWord => !text.contains(RegExp(r'\s'));
 
@@ -162,7 +168,7 @@ class TargetText extends StatelessWidget {
         text: text,
         style: TextStyle(
           fontSize: size,
-          fontWeight: fontWeight,
+          fontWeight: _styleWeight(family, fontWeight),
           fontFamily: family,
           fontVariations: _variations(family, fontWeight),
         ),
