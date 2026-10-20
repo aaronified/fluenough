@@ -10,14 +10,14 @@ tags: ["unreviewed"]
 cards:
   "ko-0001":
     native: "hello"
-    alt_native: "hi"
+    alt_native: ["hi"]
     notes:
       "n1": "The everyday greeting, polite to anyone you meet: 안녕하세요 (annyeonghaseyo). It works at any hour, and is said with a small bow."
     bases:
       "안녕하세요": "to be at peace; well (in greetings)"
   "ko-0002":
     native: "goodbye (said to someone who is leaving)"
-    alt_native: "bye"
+    alt_native: ["bye"]
     notes:
       "n1": "Said by the person who stays, to someone going: 안녕히 가세요 (annyeonghi gaseyo). Here 가세요 (gaseyo) is 'go', polite form."
     bases:
@@ -32,7 +32,7 @@ cards:
       "계세요": "to stay (polite, honorific)"
   "ko-0004":
     native: "thank you"
-    alt_native: "thanks"
+    alt_native: ["thanks"]
     notes:
       "n1": "The polite everyday thanks, 감사해요 (gamsahaeyo). The more formal 감사합니다 (gamsahamnida) is for speeches and service staff."
     bases:
@@ -45,21 +45,21 @@ cards:
       "고마워요": "to be grateful; thank you (polite)"
   "ko-0006":
     native: "you're welcome"
-    alt_native: "no problem; don't mention it"
+    alt_native: ["no problem", "don't mention it"]
     notes:
-      "n1": "The answer to thanks, 천만에요 (cheonmaneyo), says 'not at all', from 천만 (cheonman), ten million, with 에요 (eyo). Some speakers answer 아니에요 (anieyo) instead."
+      "n1": "The answer to thanks, 천만에요 (cheonmaneyo), says 'not at all'. 천만 (cheonman) is 'ten million', used here to mean 'by no means'. Some speakers answer 아니에요 (anieyo) instead."
     bases:
-      "천만에요": "it is ten million (said to mean 'not at all')"
+      "천만에요": "not at all; don't mention it"
   "ko-0007":
     native: "I'm sorry (more formal)"
-    alt_native: "sorry"
+    alt_native: ["sorry"]
     notes:
       "n1": "A sincere, formal apology, 죄송해요 (joesonghaeyo). It is said to a boss or a stranger, or when something is more serious."
     bases:
       "죄송해요": "to be sorry; to feel guilty (polite)"
   "ko-0008":
     native: "sorry"
-    alt_native: "I'm sorry; excuse me"
+    alt_native: ["I'm sorry"]
     notes:
       "n1": "The everyday apology, 미안해요 (mianhaeyo), for a small mistake or bumping into someone. Among close friends, 미안 (mian) alone is enough."
     bases:
@@ -72,24 +72,27 @@ cards:
       "저기": "over there"
   "ko-0010":
     native: "I don't understand."
-    alt_native: "I can't follow."
+    alt_native: ["I can't follow."]
     notes:
-      "n1": "Literally 'understanding does not come' with 이해가 안 돼요 (ihaega an dwaeyo). The 안 (an) before 돼요 (dwaeyo) makes it a negative."
+      "n1": "Literally 'understanding does not become': 이해가 안 돼요 (ihaega an dwaeyo). 안 (an) before a verb makes it negative."
     bases:
       "이해가": "understanding (with the subject particle 가)"
+      "안": "not (before a verb)"
       "돼요": "to become; to be all right"
   "ko-0011":
     native: "Please say that again."
-    alt_native: "Could you repeat that, please?"
+    alt_native: ["Could you repeat that, please?"]
     notes:
       "n1": "다시 (dasi) is 'again' and 한 번 (han beon) is 'one time'. Say 다시 한 번 (dasi han beon) to ask for a repetition, and 주세요 (juseyo) makes it a request."
     bases:
+      "다시": "again"
       "한": "one (before a counter)"
+      "번": "time (a counter for occasions)"
       "말해": "to speak; say"
       "주세요": "to give (polite request)"
   "ko-0012":
     native: "Please speak more slowly."
-    alt_native: "Slower, please."
+    alt_native: ["Slower, please."]
     notes:
       "n1": "천천히 (cheoncheonhi) is 'slowly'. Put it before 말해 주세요 (malhae juseyo), 'please speak', and the request is clear without any other word."
     bases:
@@ -98,29 +101,35 @@ cards:
       "주세요": "to give (polite request)"
   "ko-0013":
     native: "I don't speak Korean well."
-    alt_native: "My Korean is not good."
+    alt_native: ["My Korean is not good."]
     notes:
-      "n1": "한국말 (hangungmal) is 'Korean language'. 잘 (jal) is 'well' and 못 (mot) before 해요 (haeyo) means 'cannot'. Put the 잘 못 (jal mot) before the verb, so it means 'not well'."
+      "n1": "한국말 (hangungmal) is 'the Korean language'. 잘 (jal) is 'well', and 못 (mot) before a verb means 'cannot': 못 해요 (mot haeyo), 'cannot do'. Together, 잘 못 해요 (jal mot haeyo) says you do it poorly."
     bases:
+      "한국말": "the Korean language"
+      "잘": "well"
+      "못": "cannot (before a verb)"
       "해요": "to do; to speak (polite)"
   "ko-0014":
     native: "Can you speak English?"
-    alt_native: "Do you speak English?"
+    alt_native: ["Do you speak English?"]
     notes:
       "n1": "영어 (yeongeo) is 'English', and 할 수 있어요 (hal su isseoyo) is 'can do'. Swap 영어 for 한국어 (hangugeo), 'Korean', to ask the same of another language."
     bases:
-      "할": "to do (before a noun)"
+      "영어": "English"
+      "할": "to do (form before 수, 'way, ability')"
+      "수": "way; means; ability"
       "있어요": "to be; to have (polite)"
   "ko-0015":
     native: "How much is this?"
-    alt_native: "How much does this cost?"
+    alt_native: ["How much does this cost?"]
     notes:
       "n1": "이거 (igeo) is 'this one'. 얼마예요 (eolmayeyo) is 'how much is it', from 얼마 (eolma), 'how much', with 예요 (yeyo), the polite 'is'. Point at the item as you ask."
     bases:
+      "이거": "this one"
       "얼마예요": "how much (with the polite 'is')"
   "ko-0016":
     native: "Where is the toilet?"
-    alt_native: "Where is the restroom?"
+    alt_native: ["Where is the restroom?"]
     notes:
       "n1": "Swap 화장실 (hwajangsil), 'toilet', for any place: 역 (yeok), 'station', or 병원 (byeongwon), 'hospital'. 어디 (eodi) is 'where'."
     bases:
@@ -128,14 +137,15 @@ cards:
       "어디예요": "where (with the polite 'is')"
   "ko-0017":
     native: "This one, please."
-    alt_native: "I'll have this, please."
+    alt_native: ["I'll have this, please."]
     notes:
       "n1": "Point at the thing you want while you say 이거 (igeo), 'this one'. 주세요 (juseyo), 'please give', makes it a request."
     bases:
+      "이거": "this one"
       "주세요": "to give (polite request)"
   "ko-0018":
     native: "The bill, please."
-    alt_native: "Check, please."
+    alt_native: ["Check, please."]
     notes:
       "n1": "계산 (gyesan) is 'calculation, payment'. 계산해 주세요 (gyesanhae juseyo) asks the staff to take payment, a request in a shop or at a restaurant."
     bases:
@@ -143,8 +153,8 @@ cards:
       "주세요": "to give (polite request)"
   "ko-0019":
     native: "Please help me."
-    alt_native: "Help, please."
+    alt_native: ["Help, please."]
     notes:
-      "n1": "도와주세요 (dowajuseyo) is 'please help', from 도와 (dowa), 'help', and 주세요 (juseyo), 'please give'. For an emergency, say it loudly and call 112 or 119."
+      "n1": "도와주세요 (dowajuseyo) is 'please help', from 도와 (dowa), a form of 돕다 (dopda), 'to help', and 주세요 (juseyo), 'please give'. For an emergency, say it loudly and call 112 or 119."
     bases:
       "도와주세요": "to help (polite request)"

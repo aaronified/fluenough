@@ -10,22 +10,23 @@ cards:
   - id: "ja-0067"
     target: "わたし"
     reading: "watashi"
-    ipa: "watɕi"
+    ipa: "wataɕi"
     pos: "pronoun"
     tags: ["pronoun"]
     notes:
       - { id: "n1", kind: "note" }
+    bases: "self"
     examples:
       - target: "わたしはせんせいです。"
         reading: "watashi wa sensei desu."
-        ipa: "watɕi wa seɴseː desɯ"
+        ipa: "wataɕi wa seɴseː desɯ"
         bases:
           - { word: "は", base: "は", reading: "wa" }
           - { word: "せんせい", ref: "ja-0070" }
           - { word: "です", base: "です", reading: "desu" }
       - target: "わたしはにほんにいます。"
         reading: "watashi wa nihon ni imasu."
-        ipa: "watɕi wa nihoɴ ni imasɯ"
+        ipa: "wataɕi wa nihoɴ ni imasɯ"
         bases:
           - { word: "は", base: "は", reading: "wa" }
           - { word: "にほん", ref: "ja-0072" }
@@ -39,6 +40,7 @@ cards:
     tags: ["pronoun"]
     notes:
       - { id: "n1", kind: "note" }
+    bases: "self"
     examples:
       - target: "あなたはがくせいですか。"
         reading: "anata wa gakusei desu ka?"
@@ -64,13 +66,15 @@ cards:
     tags: ["honorific"]
     notes:
       - { id: "n1", kind: "note" }
+    bases: "self"
     examples:
-      - target: "わたしはたなかさんです。"
-        reading: "watashi wa tanaka-san desu."
-        ipa: "watɕi wa tanaka saɴ desɯ"
+      - target: "たなかさんはにほんじんです。"
+        reading: "tanaka-san wa nihonjin desu."
+        ipa: "tanaka saɴ wa nihoɴdʑiɴ desɯ"
         bases:
-          - { word: "は", base: "は", reading: "wa" }
           - { word: "たなか", base: "たなか", reading: "tanaka" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "にほんじん", base: "にほんじん", reading: "nihonjin" }
           - { word: "です", base: "です", reading: "desu" }
       - target: "やまださんはせんせいです。"
         reading: "yamada-san wa sensei desu."
@@ -87,6 +91,7 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    bases: "self"
     examples:
       - target: "たなかさんはせんせいです。"
         reading: "tanaka-san wa sensei desu."
@@ -98,7 +103,7 @@ cards:
           - { word: "です", base: "です", reading: "desu" }
       - target: "わたしのせんせいはたなかさんです。"
         reading: "watashi no sensei wa tanaka-san desu."
-        ipa: "watɕi no seɴseː wa tanaka saɴ desɯ"
+        ipa: "wataɕi no seɴseː wa tanaka saɴ desɯ"
         bases:
           - { word: "わたし", ref: "ja-0067" }
           - { word: "の", base: "の", reading: "no" }
@@ -113,6 +118,7 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    bases: "self"
     examples:
       - target: "やまださんはがくせいです。"
         reading: "yamada-san wa gakusei desu."
@@ -124,7 +130,7 @@ cards:
           - { word: "です", base: "です", reading: "desu" }
       - target: "わたしはがくせいです。"
         reading: "watashi wa gakusei desu."
-        ipa: "watɕi wa gakɯseː desɯ"
+        ipa: "wataɕi wa gakɯseː desɯ"
         bases:
           - { word: "わたし", ref: "ja-0067" }
           - { word: "は", base: "は", reading: "wa" }
@@ -136,6 +142,7 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    bases: "self"
     examples:
       - target: "にほんはおおきいです。"
         reading: "nihon wa ookii desu."
@@ -146,7 +153,7 @@ cards:
           - { word: "です", base: "です", reading: "desu" }
       - target: "わたしはにほんじんです。"
         reading: "watashi wa nihonjin desu."
-        ipa: "watɕi wa nihoɴdʑiɴ desɯ"
+        ipa: "wataɕi wa nihoɴdʑiɴ desɯ"
         bases:
           - { word: "わたし", ref: "ja-0067" }
           - { word: "は", base: "は", reading: "wa" }
@@ -159,12 +166,13 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    bases: "self"
     examples:
       - target: "みずをください。"
-        reading: "mizu o kudasai."
+        reading: "mizu wo kudasai."
         ipa: "mizɯ o kɯdasai"
         bases:
-          - { word: "を", base: "を", reading: "o" }
+          - { word: "を", base: "を", reading: "wo" }
           - { word: "ください", base: "くださる", reading: "kudasaru" }
       - target: "みずはつめたいです。"
         reading: "mizu wa tsumetai desu."
@@ -180,16 +188,17 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    bases: "self"
     examples:
       - target: "ごはんをたべます。"
-        reading: "gohan o tabemasu."
+        reading: "gohan wo tabemasu."
         ipa: "gohaɴ o tabemasɯ"
         bases:
-          - { word: "を", base: "を", reading: "o" }
+          - { word: "を", base: "を", reading: "wo" }
           - { word: "たべます", base: "たべる", reading: "taberu" }
       - target: "ごはんはおいしいです。"
         reading: "gohan wa oishii desu."
-        ipa: "gohaɴ wa oɪɕiː desɯ"
+        ipa: "gohaɴ wa oiɕiː desɯ"
         bases:
           - { word: "は", base: "は", reading: "wa" }
           - { word: "おいしい", base: "おいしい", reading: "oishii" }
@@ -197,20 +206,21 @@ cards:
   - id: "ja-0075"
     target: "でんしゃ"
     reading: "densha"
-    ipa: "densʲa"
+    ipa: "deɴɕa"
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    bases: "self"
     examples:
       - target: "でんしゃでいきます。"
         reading: "densha de ikimasu."
-        ipa: "densʲa de ikimasɯ"
+        ipa: "deɴɕa de ikimasɯ"
         bases:
           - { word: "で", base: "で", reading: "de" }
           - { word: "いきます", base: "いく", reading: "iku" }
       - target: "でんしゃはおおきいです。"
         reading: "densha wa ookii desu."
-        ipa: "densʲa wa oːkiː desɯ"
+        ipa: "deɴɕa wa oːkiː desɯ"
         bases:
           - { word: "は", base: "は", reading: "wa" }
           - { word: "おおきい", ref: "ja-0077" }
@@ -222,6 +232,7 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    bases: "self"
     examples:
       - target: "いぬがすきです。"
         reading: "inu ga suki desu."
@@ -232,7 +243,7 @@ cards:
           - { word: "です", base: "です", reading: "desu" }
       - target: "わたしのいぬはおおきいです。"
         reading: "watashi no inu wa ookii desu."
-        ipa: "watɕi no inɯ wa oːkiː desɯ"
+        ipa: "wataɕi no inɯ wa oːkiː desɯ"
         bases:
           - { word: "わたし", ref: "ja-0067" }
           - { word: "の", base: "の", reading: "no" }
@@ -246,6 +257,7 @@ cards:
     pos: "adj"
     notes:
       - { id: "n1", kind: "note" }
+    bases: "self"
     examples:
       - target: "いぬはおおきいです。"
         reading: "inu wa ookii desu."
@@ -268,6 +280,7 @@ cards:
     pos: "adj"
     notes:
       - { id: "n1", kind: "note" }
+    bases: "self"
     examples:
       - target: "ねこはちいさいです。"
         reading: "neko wa chiisai desu."
@@ -278,7 +291,7 @@ cards:
           - { word: "です", base: "です", reading: "desu" }
       - target: "わたしのいぬはちいさいです。"
         reading: "watashi no inu wa chiisai desu."
-        ipa: "watɕi no inɯ wa tɕiːsai desɯ"
+        ipa: "wataɕi no inɯ wa tɕiːsai desɯ"
         bases:
           - { word: "わたし", ref: "ja-0067" }
           - { word: "の", base: "の", reading: "no" }

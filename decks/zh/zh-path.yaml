@@ -6,8 +6,9 @@
 # This is also Mandarin's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"):
 # every unit from the first words to B1, planned, with its size in words,
 # its grammar topics, the three milestones, and for each unit its listening
-# and reading passages. No deck of Mandarin is written yet, so every unit
-# is planned: the course teaches it as "Coming" until a deck is written. A
+# and reading passages. Only the first unit is written (the phrasebook and
+# the first words); every other unit is planned: the course teaches it as
+# "Coming" until a deck is written. A
 # theme named here that decks/themes.yaml does not list yet is added to it
 # with its first deck.
 #
@@ -125,10 +126,6 @@ units:
   # words) and zh-first-words.
   - decks: ["zh-phrasebook", "zh-first-words", "*"]
     words: 12
-    listening_passages:
-      - { id: "first-greetings", text: { "en": "Greeting a neighbour, a shopkeeper and a teacher: ni hao, nin hao, zaijian" } }
-    reading_passages:
-      - { id: "phrase-card", text: { "en": "A pocket card of survival phrases, in pinyin with tone marks" } }
   # 2. The first word units, read in pinyin: the tones first.
   - planned: { id: "zh-tones", theme: "tones", words: 16 }
     listening_passages:
