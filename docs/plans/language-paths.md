@@ -5,7 +5,8 @@ Written 2026-10-05.
 **Later plans change how courses are written, and are current where they
 differ from this one:**
 
-- decks are a core and a layer per native language (`native-layers.md`);
+- decks are a core and a layer per native language (built; see
+  `docs/DECK-FORMAT.md`, "Core and layer files");
 - a course is a phrasebook, then words, then rules, then sentences, and a
   lesson's new items come in that order (`words-rules-sentences.md`);
 - "Writing the planned decks" in `b1-plans.md`.
@@ -168,7 +169,7 @@ Each new language needs what an existing one has:
 
 - a path, with its B1 plan: the units up to B1, their milestones and
   planned sizes, which the app reads to show completeness
-  (`language-picker.md`);
+  (the language picker, built in #443 and #626);
 - vocabulary and grammar decks;
 - facts, 30 or more (AGENTS.md);
 - sounds, number rules, a script guide, and its romanisation.
@@ -189,7 +190,7 @@ Each new language needs what an existing one has:
   - Arabic short vowels, Hebrew niqqud and Greek accents can be ignored;
   - whether tones in Vietnamese and pinyin are ignored is to decide.
 - **Readings and IPA:** `transcribe.py` knows only eight languages. For the
-  rest, the IPA can come from Wiktionary (`wiktionary-ipa.md`), which covers
+  rest, the IPA can come from Wiktionary (`tools/import_wiktionary.py`, #518), which covers
   European languages better than Indian ones.
 - **Voices and recognition** vary by phone. Several of these languages,
   such as Quechua, Hausa, Somali and Esperanto, may have no Android voice, so
@@ -199,7 +200,7 @@ Each new language needs what an existing one has:
 
 - Deck downloads first (done, ADR-0037): new languages then reach learners without
   an app release, and the APK does not grow with them.
-- `wiktionary-ipa.md` before the new languages, for their IPA.
+- `tools/import_wiktionary.py` (#518) before the new languages, for their IPA.
 - The 30-minute day can use FSRS (done: ADR-0033) for the review block, and the
   listening tier (`listening-in-context.md`) for the listening block, but
   needs neither to start.

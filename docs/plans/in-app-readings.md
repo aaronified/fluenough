@@ -26,7 +26,7 @@ the owner chose:
 ## Scope
 
 - **Course decks** get their readings from Wiktionary or a similar source
-  (`wiktionary-ipa.md`), not from the app.
+  (`tools/import_wiktionary.py`, #518), not from the app.
 - **The app makes readings only** for sentences the learner adds:
   - text imported (`import-text.md`);
   - cards of the learner's own, for training on them.

@@ -107,7 +107,7 @@ from by interest: `books-films-songs.md`.
 
 | Where | How |
 |---|---|
-| Language picker (`language-picker.md`) | "18% of B1 · 12 of 30 grammar topics": words = Σ min(a unit's words, its plan) ÷ Σ planned words up to B1; grammar = topics with a written unit ÷ topics planned |
+| Language picker (built, #443 and #626) | "18% of B1 · 12 of 30 grammar topics": words = Σ min(a unit's words, its plan) ÷ Σ planned words up to B1; grammar = topics with a written unit ÷ topics planned |
 | Decks tab | Planned units show greyed, with "Coming", in their place; they cannot be started |
 | Lessons and Today | Planned units are skipped |
 | Achievements (`achievements.md`) | The A1, A2 and B1 badges come from the milestones |
@@ -223,7 +223,7 @@ target and in its examples:
 
 - **`ref`** names the card that teaches the base, so its target, reading
   and meaning are shown from that card, in the learner's own language
-  (`native-layers.md`). A base no card teaches is written in full instead:
+  (`docs/DECK-FORMAT.md`, "Core and layer files"). A base no card teaches is written in full instead:
   `base`, `reading`, and its meaning in the layer.
 - **Shown** on the lesson's teach card, and in reviews once the question is
   answered, with the other taught details: "गया ← जाना (jānā), to go;
@@ -280,7 +280,7 @@ answers."
   claim names its `source`, and the deck stays marked unreviewed until a
   speaker checks it (owner's choice).
 - **Transliteration** ("Script in prose") applies to every note. Notes live
-  in the native layer (`native-layers.md`).
+  in the native layer (`docs/DECK-FORMAT.md`, "Core and layer files").
 - **Today's single `notes` string** reads as one note of kind `note`, so
   existing decks keep working until they are rewritten.
 
@@ -318,7 +318,7 @@ browser:
   Bengali gets bn.wiktionary, with the native layers.
 - **Shown only where Wiktionary has an entry** (owner's choice). A tool
   checks each word against Wiktionary's extracts (kaikki.org, as
-  `wiktionary-ipa.md` uses), and marks the words that have one. Many Indian
+  `tools/import_wiktionary.py` uses), and marks the words that have one. Many Indian
   language words have none yet.
 - Nothing is fetched until the learner taps the link.
 

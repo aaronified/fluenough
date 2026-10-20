@@ -56,7 +56,7 @@ The ROADMAP already lists "Sentence mining from imported text" under
    - the learner types them (works offline, no licence question);
    - an offline dictionary per language, downloaded like the decks, built
      from Wiktionary through kaikki.org. That is CC BY-SA, the licence
-     question in `wiktionary-ipa.md`.
+     question settled for the decks in ADR-0040.
 6. **Tests** for word states, matching, the card maker, and ids.
 
 ## To decide
