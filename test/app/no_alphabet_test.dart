@@ -49,7 +49,8 @@ void main() {
       if (path == null) continue;
       final marked = path.alphabet.contains(entry.id);
       final id = entry.id;
-      final needs = RegExp(r'-(script-|spelling$|reading-)').hasMatch(id);
+      final needs = RegExp(r'-(script-|spelling$|reading-|hiragana$|katakana$)')
+          .hasMatch(id);
       expect(marked, needs, reason: id);
     }
   });
