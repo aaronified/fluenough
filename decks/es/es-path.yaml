@@ -55,8 +55,8 @@ genders: ["m", "f"]
 # bottom of that unit, any other in the last unit.
 units:
   # 1. The phrasebook, taught whole from the first lesson.
-  - decks: ["es-phrasebook"]
-    words: 0
+  - decks: ["es-phrasebook", "es-first-words", "*"]
+    words: 10
   # 2. The first word units.
   - planned: { id: "es-questions", theme: "questions", words: 15 }
     listening_passages:
