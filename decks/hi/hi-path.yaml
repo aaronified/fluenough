@@ -74,10 +74,12 @@ alphabet:
   - "hi-script-reading"
   - "hi-script-vowel-signs"
   - "hi-script-conjuncts"
+  - "hi-script-digits"
   - "hi-script-perso-arabic-letters"
   - "hi-script-perso-arabic-shapes"
   - "hi-script-perso-arabic-vowels"
   - "hi-script-perso-arabic-reading"
+  - "hi-script-perso-arabic-digits"
   - "hi-spelling"
   - "hi-reading-panch-parmeshwar"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
@@ -107,7 +109,7 @@ units:
     words: 23
   # 3. The script, after the first six units (#554: skipped by a learner
   # who already reads it).
-  - ["hi-script-vowels", "hi-script-consonants", "hi-script-reading"]
+  - ["hi-script-vowels", "hi-script-consonants", "hi-script-reading", "hi-script-digits"]
   - ["hi-script-vowel-signs", "hi-script-conjuncts"]
   # The Perso-Arabic script (#623, from #602), for a learner who chooses it;
   # one who already reads it skips it (#554). Written right to left, in the
@@ -124,7 +126,7 @@ units:
   # aspirates against ہ (h), ء (hamza), ع (ʿain), the doubling mark ّ
   # (taśdīd), and the izafat: the -e- that joins two Persian words, written
   # with a zer, وزیرِ اعظم (vazīr-e aʿzam, "prime minister").
-  - decks: ["hi-script-perso-arabic-vowels", "hi-script-perso-arabic-reading"]
+  - decks: ["hi-script-perso-arabic-vowels", "hi-script-perso-arabic-reading", "hi-script-perso-arabic-digits"]
   # Numbers 1–20 follow the script, so it comes after the first six units.
   - decks: ["hi-numbers-1-20", "*"]
     words: 20
