@@ -90,31 +90,23 @@ void main() {
     final semantics = tester.ensureSemantics();
     await pumpProfiles(tester, const NewProfilePage(), flagsOn: false);
     final l10n = l10nOf(tester);
-    // Below the language list, which every bundled language makes long.
+    // The app language is above the language list, on the first screen.
+    expect(
+      find.bySemanticsLabel(
+        l10n.incomingSemanticsLabel(l10n.settingsAppLanguage),
+      ),
+      findsOneWidget,
+    );
+    // The PIN switch is below the list, which every bundled language makes
+    // long.
     await tester.scrollUntilVisible(
       find.byType(SwitchListTile),
       200,
       scrollable: find.byType(Scrollable).first,
     );
-
     expect(
       find.bySemanticsLabel(l10n.incomingSemanticsLabel(l10n.newProfilePin)),
       findsOneWidget,
-    );
-    // The app language is below it, however long the list grows.
-    final appLanguage = find.bySemanticsLabel(
-      l10n.incomingSemanticsLabel(l10n.settingsAppLanguage),
-    );
-    await tester.scrollUntilVisible(
-      appLanguage,
-      200,
-      scrollable: find.byType(Scrollable).first,
-    );
-    expect(appLanguage, findsOneWidget);
-    await tester.scrollUntilVisible(
-      find.byType(SwitchListTile),
-      -200,
-      scrollable: find.byType(Scrollable).first,
     );
     expect(
       tester.widget<SwitchListTile>(find.byType(SwitchListTile)).onChanged,
