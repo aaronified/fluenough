@@ -301,6 +301,8 @@ const _layerEntryFields = {
   'examples',
   'bases',
   'wiktionary',
+  // A short entry imported from Wiktionary (DECK-FORMAT.md, A layer).
+  'dictionary',
   // Card data (DECK-FORMAT.md, Card data): the fields of [_itemFields].
   'synonyms',
   'antonyms',
@@ -1100,10 +1102,13 @@ class _Reader {
       'culture' => NoteKind.culture,
       'usage' => NoteKind.usage,
       'behaviour' => NoteKind.behaviour,
+      'homograph' => NoteKind.homograph,
+      'lookalike' => NoteKind.lookalike,
       'note' => NoteKind.note,
       _ => fail(
         kindNode,
-        '$path.kind must be one of behaviour, culture, note, pair, usage, '
+        '$path.kind must be one of behaviour, culture, homograph, lookalike, '
+        'note, pair, usage, '
         'got ${_describe(kindNode)}',
       ),
     };
@@ -1152,18 +1157,24 @@ class _Reader {
 
     final refNode = fields.node('ref');
     String? ref;
-    if (kind == NoteKind.pair) {
+    if (kind == NoteKind.pair ||
+        kind == NoteKind.homograph ||
+        kind == NoteKind.lookalike) {
       ref = this.id(
         refNode ??
             fail(
               node,
-              '$path.ref: a pair note names its partner, the id of another '
-              '$lang card',
+              '$path.ref: a ${kind.name} note names '
+              '${kind == NoteKind.pair ? 'its partner' : 'the other word'}, '
+              'the id of another $lang card',
             ),
         '$path.ref',
       );
     } else if (refNode != null) {
-      fail(fields.keyNode('ref'), '$path.ref is only for a pair note');
+      fail(
+        fields.keyNode('ref'),
+        '$path.ref is only for a pair, homograph or lookalike note',
+      );
     }
 
     final String? source;
@@ -2166,7 +2177,8 @@ class _Reader {
         fail(
           at,
           '$path: "$name" belongs to the word, in the core; a layer gives '
-          'native, alt_native, notes, examples, bases and wiktionary',
+          'native, alt_native, notes, examples, bases, wiktionary and '
+          'dictionary',
         );
       }
     }
@@ -2200,6 +2212,9 @@ class _Reader {
       senses: fields.has('senses')
           ? layerSenses(fields.require('senses'), '$path.senses')
           : null,
+      dictionary: fields.has('dictionary')
+          ? layerDictionary(fields.require('dictionary'), '$path.dictionary')
+          : null,
       key: key,
     );
   }
@@ -2231,6 +2246,22 @@ class _Reader {
       }
     }
     return Map<String, LayerText>.unmodifiable(texts);
+  }
+
+  /// A layer's Wiktionary entry for a card: `{ senses, etymology, source }`.
+  /// Showing it is later work; the parser only reads it.
+  LayerDictionary layerDictionary(YamlNode node, String path) {
+    final fields = this.fields(node, path);
+    fields.allowOnly(const {'senses', 'etymology', 'source'});
+    final senses = fields.strings('senses');
+    if (senses.isEmpty) {
+      fail(node, '$path.senses must be a non-empty list of text');
+    }
+    return LayerDictionary(
+      senses: senses,
+      etymology: fields.optionalString('etymology', allowEmpty: false),
+      source: fields.string('source'),
+    );
   }
 
   /// A layer's senses of a core card (#517), by id: `{ native, examples }`.

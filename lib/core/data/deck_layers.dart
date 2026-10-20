@@ -346,6 +346,7 @@ class LayerEntry extends LayerCard {
     this.wiktionary,
     this.items = const <String, Map<String, LayerText>>{},
     this.senses,
+    this.dictionary,
   }) : super(key);
 
   final String? native;
@@ -369,6 +370,24 @@ class LayerEntry extends LayerCard {
 
   /// Its senses' meanings and translations, by sense id.
   final Map<String, LayerSense>? senses;
+
+  /// A short Wiktionary entry for the card, null when the layer gives none.
+  final LayerDictionary? dictionary;
+}
+
+/// A short entry imported from Wiktionary (DECK-FORMAT.md, A layer): the
+/// word's other meanings, its etymology, and the page it came from, for the
+/// CC BY-SA credit.
+class LayerDictionary {
+  const LayerDictionary({
+    required this.senses,
+    required this.source,
+    this.etymology,
+  });
+
+  final List<String> senses;
+  final String? etymology;
+  final String source;
 }
 
 /// What a layer gives a core card's sense (#517).
@@ -652,7 +671,8 @@ class _Merge {
         reader.fail(
           entry.key,
           'cards.$id: "target" belongs to the word, in the core; a layer '
-          'gives native, alt_native, notes, examples, bases and wiktionary',
+          'gives native, alt_native, notes, examples, bases, wiktionary and '
+          'dictionary',
         );
       }
       if (entry is LayerEntry && !ids.contains(id)) {
@@ -731,6 +751,7 @@ class _Merge {
         entry.examples != null ||
         entry.bases != null ||
         entry.wiktionary != null ||
+        entry.dictionary != null ||
         entry.items.isNotEmpty ||
         entry.senses != null) {
       reader.fail(

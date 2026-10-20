@@ -59,6 +59,14 @@ enum NoteKind {
   /// How the word behaves: its stem, its plural, its irregular forms.
   behaviour,
 
+  /// The same spelling as another word of the language, with a different
+  /// sound or meaning: names that word by `ref`, like [pair].
+  homograph,
+
+  /// Differs from another word only by a dot, a length mark or another
+  /// short mark, such as a nukta: names that word by `ref`, like [pair].
+  lookalike,
+
   /// Anything else, and every note written as plain text.
   note,
 }

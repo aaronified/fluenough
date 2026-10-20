@@ -94,6 +94,10 @@ Before you start:
    - Tag the files `"unreviewed"`; a culture note needs a `source`
      ([docs/REVIEWING.md](../../../docs/REVIEWING.md) is how a speaker clears it).
    - Every word card gets at least one typed note ("Notes").
+   - Use the `homograph` and `lookalike` note kinds (each with a `ref`) where a
+     word shares its spelling with another, or differs only by a dot or mark,
+     and a layer's `dictionary` (senses, etymology, `source`) for an entry
+     imported from Wiktionary.
    - Every word card gets at least 2 examples ("Card data", "Examples"):
      natural sentences that use the word, each with its `reading` and `ipa`
      in the core and its translation in each layer, keyed by the target.

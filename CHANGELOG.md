@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- The deck reader accepts the `homograph` and `lookalike` note kinds and a layer's `dictionary` entry (#692). Nothing shows them yet.
+
 ## [0.5.3] - 2026-10-20
 
 ### Changed

@@ -856,6 +856,35 @@ cards:
         expect(notes[1].text, 'కలాలు (kalālu) and -లు.');
         expect(notes[2].text, 'Literal {x}, { 1 } and {.');
       });
+
+      test('homograph and lookalike notes name another card', () {
+        final notes = parseProbe(
+          probeCard('''
+    notes:
+      - { kind: "homograph", ref: "zz-9004", text: "Same spelling." }
+      - { kind: "lookalike", ref: "zz-9004", text: "A dot apart." }
+'''),
+        ).cards.single.notes;
+        expect(notes.map((n) => n.kind), [
+          NoteKind.homograph,
+          NoteKind.lookalike,
+        ]);
+        expect(notes.map((n) => n.ref), ['zz-9004', 'zz-9004']);
+      });
+
+      test('a layer entry may carry a Wiktionary dictionary entry', () {
+        final deck = merge(
+          homeCore,
+          homeLayer.replaceFirst(
+            '    native: "home; house"\n',
+            '    native: "home; house"\n'
+                '    dictionary: { senses: ["household"], '
+                'etymology: "Old.", '
+                'source: "https://en.wiktionary.org/wiki/x" }\n',
+          ),
+        );
+        expect(deck.cards.first.native, 'home; house');
+      });
     });
 
     group('layers (2.6)', () {
@@ -899,7 +928,8 @@ cards:
               '    native: "mother"\n    reading: "amma"\n',
             ),
             'cards.zz-9004: "reading" belongs to the word, in the core; a layer '
-                'gives native, alt_native, notes, examples, bases and wiktionary',
+                'gives native, alt_native, notes, examples, bases, wiktionary and '
+                'dictionary',
           ),
           (
             homeLayer.replaceFirst(
