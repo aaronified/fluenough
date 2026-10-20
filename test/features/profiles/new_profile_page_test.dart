@@ -101,11 +101,20 @@ void main() {
       find.bySemanticsLabel(l10n.incomingSemanticsLabel(l10n.newProfilePin)),
       findsOneWidget,
     );
-    expect(
-      find.bySemanticsLabel(
-        l10n.incomingSemanticsLabel(l10n.settingsAppLanguage),
-      ),
-      findsOneWidget,
+    // The app language is below it, however long the list grows.
+    final appLanguage = find.bySemanticsLabel(
+      l10n.incomingSemanticsLabel(l10n.settingsAppLanguage),
+    );
+    await tester.scrollUntilVisible(
+      appLanguage,
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
+    expect(appLanguage, findsOneWidget);
+    await tester.scrollUntilVisible(
+      find.byType(SwitchListTile),
+      -200,
+      scrollable: find.byType(Scrollable).first,
     );
     expect(
       tester.widget<SwitchListTile>(find.byType(SwitchListTile)).onChanged,
