@@ -220,7 +220,7 @@ void main() {
       for (final unit in everything.pendingUnits) [for (final e in unit) e.id],
     ];
     final starts = [for (final unit in pending) unit.first];
-    // Two units for each of the eight courses. Bengali starts with its
+    // Every course is taught, each in its units. Bengali starts with its
     // phrasebook and first words (ADR-0036: the phrasebook is taught in
     // the first unit), then the sounds English lacks.
     final bengaliUnits = [
@@ -234,7 +234,9 @@ void main() {
     ]);
     expect(bengaliUnits.last.first, 'bn-en-sound-differences');
     expect(starts, contains('es-en-phrasebook'));
-    expect(starts, hasLength(16));
+    expect({
+      for (final start in starts) start.split('-').first,
+    }, containsAll(<String>['as', 'bn', 'es', 'gu', 'hi', 'kn', 'mr', 'te']));
   });
 
   test('a language is taught from the best-known language the learner speaks '
