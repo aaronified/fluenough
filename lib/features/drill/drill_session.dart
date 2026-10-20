@@ -282,6 +282,11 @@ class DrillSession extends ChangeNotifier {
   /// Whether the current card's language is learned with its alphabet.
   bool get learnsAlphabet => _state.settings.learnsAlphabet(deck.language.code);
 
+  /// Whether the current card shows its reading first: its language is
+  /// learned in none of its scripts, and the learner reads none of them
+  /// already (`AppState.readsFirst`), as placement shows it too.
+  bool get readsFirst => _state.readsFirst(deck.language);
+
   /// The scripts the current card's language is learned in, one Write
   /// option each beside Latin letters (#623): the script it is written in
   /// where none is learned.

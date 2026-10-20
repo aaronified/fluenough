@@ -5295,6 +5295,20 @@
   "@placementQuestion": {
     "description": "The question asked about each word in the placement check."
   },
+  "placementFormQuestion": "Which form of {word} ({meaning}) is this?",
+  "@placementFormQuestion": {
+    "description": "The question asked in the placement check about a form of a word in a grammar table, such as घर (house) or its plural: the options are the forms' names alone. {word} is the word, in its own script or romanised; {meaning} its meaning as the deck gives it, such as \"house, m\".",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "घर"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "house, m"
+      }
+    }
+  },
   "placementDontKnow": "I don’t know",
   "@placementDontKnow": {
     "description": "Button in the placement check: the learner does not know the word."
