@@ -1,4 +1,7 @@
 import '../models/drill_mode.dart';
+import 'ability.dart';
+import 'ask.dart';
+import 'replay.dart';
 
 /// Which skills one answer judges (ADR-0034; the evidence is in
 /// docs/research/skill-evidence.md): the skill it was asked in, in full,
@@ -16,12 +19,21 @@ import '../models/drill_mode.dart';
 /// - **Grammar,** understood or produced, implies nothing: no study gives
 ///   a figure for a rule's forms (DECK-FORMAT.md, Rules decks).
 ///
-/// - **Script decks (#556, owner, 2026-10-17: "Both").** An answer in a deck
-///   that teaches the alphabet counts for the word skill it was asked in,
-///   as above, and also, in full, for a script skill of its own:
-///   Recognition for Read script and Write for Write script. The owner
-///   gave no other feed, so Say and Hear count for neither. [scriptOf]
-///   says which.
+/// - **Script skills, per script (#556, #653).** Each script a course is
+///   learned in has a Read and a Write of its own: Hindustani has
+///   Devanagari Read and Write and Perso-Arabic Read and Write. An answer
+///   counts for the word skill it was asked in, as above, and, shown or
+///   typed in a script the learner learns, for a script skill too
+///   ([scriptOf]; owner, 2026-10-19):
+///   - **Read** from the script decks' Recognition; from choosing script
+///     text, any question whose options are written in the script (a word
+///     chosen, word-order tiles, a match's words); and from reading a word
+///     for its meaning, Recognition anywhere.
+///   - **Write** from the script decks' Write, and from a Write answer
+///     typed in the script, in any deck.
+///
+///   In a script deck it counts as a review of its own; elsewhere as half
+///   of one, [implied]. Shown or typed in transliteration, it feeds none.
 ///
 /// Only a right answer implies anything: a miss in Write says little about
 /// Recognition, which is easier. A miss counts against its own skill alone.
@@ -29,6 +41,7 @@ class SkillMap {
   const SkillMap({
     this.formHeardIn = const <String>{},
     this.scriptDecks = const <String>{},
+    this.primaryScripts = const <String, String>{},
   });
 
   /// The decks where hearing asks for what was heard rather than what it
@@ -39,17 +52,61 @@ class SkillMap {
   /// script decks, whose answers also feed the script skills (#556).
   final Set<String> scriptDecks;
 
-  /// The script skill an answer in [mode], in [deckId], counts for, and the
-  /// share of a review it counts for, always 1: a review of its own. Null
-  /// for an answer outside the script decks, and for any mode but
-  /// Recognition and Write.
-  ({DrillMode skill, double share})? scriptOf(DrillMode mode, String deckId) {
-    if (!scriptDecks.contains(deckId)) return null;
-    return switch (mode) {
-      DrillMode.recognition => (skill: DrillMode.readScript, share: 1.0),
-      DrillMode.production => (skill: DrillMode.writeScript, share: 1.0),
+  /// Each course's primary script, by language code: the one most of its
+  /// decks are written in (`AppState.primaryScript`). A script-deck answer
+  /// from before the script was kept per answer counts for it (#653).
+  final Map<String, String> primaryScripts;
+
+  /// The script skill [review] counts for, the script it is in, and the
+  /// share of a review it counts for (#653). Null where it feeds none: an
+  /// answer shown or typed in transliteration, or in a script not learned,
+  /// and any mode or way of asking that neither reads nor writes the script.
+  ///
+  /// In a script deck, as before (#556): Recognition is Read and Write is
+  /// Write, a review of their own, in the script the answer was in, or, for
+  /// an answer from before that was kept, the course's primary script; and
+  /// a heard letter chosen among written ones is Read too.
+  ///
+  /// Elsewhere, half a review ([implied]): Recognition, shown in the
+  /// script, is Read; Write typed in it is Write; a word chosen, or put in
+  /// order, among words written in it is Read, in Write, Hear or grammar.
+  ({DrillMode skill, String script, double share})? scriptOf(
+    LoggedReview review,
+  ) {
+    final mode = review.key.mode;
+    final asked = review.asked;
+    if (scriptDecks.contains(review.deckId)) {
+      final script =
+          review.script ??
+          (asked == null
+              ? primaryScripts[Abilities.languageOf(review.key.cardId)]
+              : null);
+      if (script == null) return null;
+      final skill = switch (mode) {
+        DrillMode.recognition => DrillMode.readScript,
+        DrillMode.production => DrillMode.writeScript,
+        DrillMode.listening when asked == Ask.hearAndChoose =>
+          DrillMode.readScript,
+        _ => null,
+      };
+      return skill == null ? null : (skill: skill, script: script, share: 1.0);
+    }
+    final script = review.script;
+    if (script == null || asked == null) return null;
+    final skill = switch (mode) {
+      DrillMode.recognition => DrillMode.readScript,
+      DrillMode.production when asked == Ask.own => DrillMode.writeScript,
+      DrillMode.production || DrillMode.listening || DrillMode.grammar
+          when asked == Ask.chooseWord ||
+              asked == Ask.rearrange ||
+              asked == Ask.hearAndChoose ||
+              asked == Ask.chooseForm =>
+        DrillMode.readScript,
       _ => null,
     };
+    return skill == null
+        ? null
+        : (skill: skill, script: script, share: implied);
   }
 
   /// How much a right answer counts for a skill it implies, against its
@@ -91,11 +148,18 @@ class SkillMap {
       other.formHeardIn.length == formHeardIn.length &&
       other.formHeardIn.containsAll(formHeardIn) &&
       other.scriptDecks.length == scriptDecks.length &&
-      other.scriptDecks.containsAll(scriptDecks);
+      other.scriptDecks.containsAll(scriptDecks) &&
+      other.primaryScripts.length == primaryScripts.length &&
+      primaryScripts.entries.every(
+        (e) => other.primaryScripts[e.key] == e.value,
+      );
 
   @override
   int get hashCode => Object.hash(
     Object.hashAllUnordered(formHeardIn),
     Object.hashAllUnordered(scriptDecks),
+    Object.hashAllUnordered(<String>[
+      for (final e in primaryScripts.entries) '${e.key}=${e.value}',
+    ]),
   );
 }

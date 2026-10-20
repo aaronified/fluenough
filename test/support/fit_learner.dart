@@ -13,6 +13,8 @@ LoggedReview review(String card, DrillMode mode, DateTime at, int grade) => (
   grade: grade,
   elapsed: Duration.zero,
   answerGiven: 'typed',
+  script: null,
+  asked: null,
 );
 
 /// A learner who remembers each word with chance [recall] when it comes

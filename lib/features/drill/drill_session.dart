@@ -436,6 +436,7 @@ class DrillSession extends ChangeNotifier {
         ? romanisedGrade
         : graded.outcome.toGrade();
     _answer = TypedAnswer(typed: typed, graded: graded, grade: grade);
+    _typedRomanised = romanised;
     if (grade != null) _record(grade, answerGiven: typed);
     _phase = DrillPhase.feedback;
     notifyListeners();
@@ -1157,9 +1158,62 @@ class DrillSession extends ChangeNotifier {
         grade,
         elapsed: _watch.elapsed,
         answerGiven: answerGiven,
+        script: answerScript(entry, typed: answerGiven),
+        asked: ask,
       );
     }
     _answers.add(SessionAnswer(skill: Skill.of(entry.mode), grade: grade));
+  }
+
+  /// Whether the current typed answer was graded as its reading, in Latin
+  /// letters (#47): set by [check], for [judge] to record.
+  bool _typedRomanised = false;
+
+  static final RegExp _latinLetter = RegExp(
+    r'[A-Za-z\u00C0-\u024F\u1E00-\u1EFF]',
+  );
+
+  /// The script [entry] was shown in, or its answer [typed] or put in
+  /// order in, for the script skills (#653): one the learner learns, in
+  /// which the language needs a reading. Null for an answer typed, or put
+  /// in order, in Latin letters; for a card shown in a script the learner
+  /// does not learn; and where nothing is shown in the script: said, heard
+  /// for its meaning, a number's digits, or a reading question. With two
+  /// scripts learned, the one the card is shown in first.
+  @visibleForTesting
+  String? answerScript(SessionItem entry, {String? typed}) {
+    final language = _state.deckOf(entry.card)?.language;
+    if (language == null) return null;
+    final mode = entry.mode;
+    if (mode == DrillMode.speaking ||
+        mode == DrillMode.reading ||
+        entry.card is QuestionCard ||
+        ask == Ask.hearMeaning ||
+        (identical(entry, item) && (hearsMeaning || typesDigits))) {
+      return null;
+    }
+    final String script;
+    if (ask == Ask.rearrange) {
+      if (rearrangesReading) return null;
+      script = inputLanguage.script;
+    } else if (ask == Ask.own && _typedModes.contains(mode)) {
+      // In Latin letters the script is still accepted (#47): typed in it,
+      // it counts.
+      if (transliterating &&
+          (typed == null ||
+              typed.trim().isEmpty ||
+              _typedRomanised ||
+              _latinLetter.hasMatch(typed))) {
+        return null;
+      }
+      script = inputLanguage.script;
+    } else {
+      script = _state.targetShown(entry.card, language).language.script;
+    }
+    final learned = _state.learnedScripts(language);
+    return learned.contains(script) && language.inScript(script).needsReading
+        ? script
+        : null;
   }
 
   // ---------------------------------------------------------------------------
@@ -1233,6 +1287,7 @@ class DrillSession extends ChangeNotifier {
     _index = next;
     _phase = DrillPhase.prompt;
     _answer = null;
+    _typedRomanised = false;
     _choice = null;
     _choiceOrder = null;
     _options = null;

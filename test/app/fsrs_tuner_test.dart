@@ -76,7 +76,10 @@ void main() {
 
     test('are fitted on their own, from the script decks\' answers', () async {
       final p = progressOf(learner('hi'))
-        ..skills = const SkillMap(scriptDecks: <String>{'deck'});
+        ..skills = const SkillMap(
+          scriptDecks: <String>{'deck'},
+          primaryScripts: <String, String>{'hi': 'devanagari'},
+        );
       expect(p.scriptLog, isNotEmpty);
       final runner = Recording();
       final tuner = FsrsTuner(
