@@ -41,9 +41,10 @@ Before you start:
 - Closed groups (articles, pronouns, genders, cases and postpositions,
   demonstratives, question words, conjunctions, days, months, number words
   1-10, colours) need a set card that introduces the whole set, "Teach only"
-  (owner, 2026-10-13, #506); its format is approved (kind `set`,
-  members by card id, explanation in the layer; DECK-FORMAT, "Set cards")
-  and DECK-FORMAT does not allow it yet.
+  (owner, 2026-10-13, #506), and verb forms too (#515). Every deck that
+  teaches such a group writes one: kind `set`, members by ref, its name
+  and explanation in each layer (DECK-FORMAT, "Set cards"). It gives the
+  learner the set's button after answering a member (owner, 2026-10-20).
 - Model: Haiku at low effort writes decks, and Sonnet at medium effort reviews them (CLAUDE.md, owner, 2026-10-17). Haiku for large reads. A small
   change to a tool or the validator is Sonnet, reviewed by Opus; only a
   complex change across several files is Opus (owner, 2026-10-16).
