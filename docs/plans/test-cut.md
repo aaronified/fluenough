@@ -1,5 +1,14 @@
 # Plan: cut the tests down to behaviour
 
+## Owner's decisions (2026-10-20)
+
+1. Total: "About 469".
+2. Accessibility: "One test, light+dark" per screen at 1.4x (42 tests).
+3. README GIF tests: "Tool run by hand", out of CI.
+4. Tools outside decks and reviews: "A few tests each".
+5. Braille (#664): "Before the cut".
+6. Landing: "One PR".
+
 Written 2026-10-20. A plan only: no test is changed by it.
 
 The owner, 2026-10-20: "there is no need for 4000+ tests. That can easily be
