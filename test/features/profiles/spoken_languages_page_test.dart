@@ -216,15 +216,18 @@ void main() {
     });
 
     test('a script is named as the deck files name it', () {
+      final ours = <String, String>{
+        for (final l in languages) l.code: l.script!,
+      };
+      // The scripts of the languages listed here: a course of a language no
+      // learner can say they know (Korean, the IPA) is taught, not listed.
       final used = <String>{
         for (final f in Directory('decks').listSync(recursive: true))
           if (f is File && f.path.endsWith('.yaml'))
-            ...RegExp(r'language:.*?script: "?([a-z_]+)')
-                .allMatches(f.readAsStringSync())
-                .map((m) => m.group(1)!),
-      };
-      final ours = <String, String>{
-        for (final l in languages) l.code: l.script!,
+            for (final m in RegExp(
+              r'language:.*?code: "?([a-z]+)"?.*?script: "?([a-z_]+)',
+            ).allMatches(f.readAsStringSync()))
+              if (ours.containsKey(m.group(1))) m.group(2)!,
       };
       expect(ours['te'], 'telugu');
       expect(ours['gu'], 'gujarati');
@@ -232,8 +235,7 @@ void main() {
       // A deck may be in any of its language's scripts, as Hindustani's
       // Perso-Arabic script decks are (#623).
       final listed = <String>{for (final l in languages) ...l.scripts};
-      // The IPA course's script is no spoken language's (ADR-0041).
-      for (final script in used.difference(<String>{'kana', 'ipa'})) {
+      for (final script in used) {
         expect(listed, contains(script), reason: script);
       }
     });
