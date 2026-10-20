@@ -55,6 +55,7 @@ alphabet:
   - "as-script-reading"
   - "as-script-vowel-signs"
   - "as-script-conjuncts"
+  - "as-script-digits"
   - "as-spelling"
   - "as-reading-aitar-mas"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
@@ -80,7 +81,7 @@ units:
   # 3. The script, after the first six units (#554: skipped by a learner
   # who already reads it).
   - ["as-script-vowels", "as-script-consonants", "as-script-reading"]
-  - ["as-script-vowel-signs", "as-script-conjuncts"]
+  - ["as-script-vowel-signs", "as-script-conjuncts", "as-script-digits"]
   # Numbers 1–20 follow the script, so it comes after the first six units.
   - decks: ["as-numbers-1-20", "*"]
     words: 20

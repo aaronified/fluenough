@@ -55,6 +55,7 @@ alphabet:
   - "gu-script-reading"
   - "gu-script-vowel-signs"
   - "gu-script-conjuncts"
+  - "gu-script-digits"
   - "gu-spelling"
   - "gu-reading-keri"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
@@ -80,7 +81,7 @@ units:
   # 3. The script, after the first six units (#554: skipped by a learner
   # who already reads it).
   - ["gu-script-vowels", "gu-script-consonants", "gu-script-reading"]
-  - ["gu-script-vowel-signs", "gu-script-conjuncts"]
+  - ["gu-script-vowel-signs", "gu-script-conjuncts", "gu-script-digits"]
   # Numbers 1–20 follow the script, so it comes after the first six units.
   - decks: ["gu-numbers-1-20", "*"]
     words: 21

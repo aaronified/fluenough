@@ -58,6 +58,7 @@ alphabet:
   - "te-script-reading"
   - "te-script-vowel-signs"
   - "te-script-conjuncts"
+  - "te-script-digits"
   - "te-spelling"
   - "te-reading-diddubatu"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
@@ -80,7 +81,7 @@ units:
   # 3. The script, after the first six units (#554: skipped by a learner
   # who already reads it).
   - ["te-script-vowels", "te-script-consonants", "te-script-reading"]
-  - ["te-script-vowel-signs", "te-script-conjuncts"]
+  - ["te-script-vowel-signs", "te-script-conjuncts", "te-script-digits"]
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
   - decks: ["te-about-me", "*"]
