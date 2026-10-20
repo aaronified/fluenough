@@ -22,6 +22,7 @@ import '../gallery/gallery_entry.dart';
 import 'drill_session.dart';
 import 'grammar_cells.dart';
 import 'input_mode_choice.dart';
+import 'set_drill.dart';
 
 /// The deck the fixture drills: the real bundled pattern, read from the
 /// catalog.
@@ -220,6 +221,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
           ? Speaker(onPlay: session.play, playing: session.playing)
           : null,
       onClose: widget.onClose!,
+      session: session,
       moves: (
         dontKnow: session.dontKnow,
         check: () => session.check(_controller.text),
@@ -240,6 +242,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
     required bool incoming,
     required VoidCallback onClose,
     required _Moves moves,
+    DrillSession? session,
     Widget? inputChoice,
     bool latin = false,
     String? reading,
@@ -258,15 +261,19 @@ class _GrammarDrillState extends State<GrammarDrill> {
       reportDetail: '${cell.entry.lemma}, ${cell.slot} in ${deck.id}',
       progress: (position - 1 + (answer == null ? 0 : 0.5)) / total,
       onClose: onClose,
-      card: _card(
-        context,
-        cell,
-        language,
-        answered: answer != null,
-        readingFirst: readingFirst,
-        typing: typing,
-        speaker: speaker,
-      ),
+      card: <Widget>[
+        ..._card(
+          context,
+          cell,
+          language,
+          answered: answer != null,
+          readingFirst: readingFirst,
+          typing: typing,
+          speaker: speaker,
+        ),
+        if (session != null)
+          ...answeredSetList(context, session, answered: answer != null),
+      ],
       belowCard: answer != null
           ? null
           : <Widget>[

@@ -554,10 +554,17 @@ List<Widget> answeredSetList(
   BuildContext context,
   DrillSession session, {
   required bool answered,
+  Iterable<Card>? cards,
 }) {
   if (!answered || session.item.setPart != null) return const <Widget>[];
   final state = AppScope.of(context);
-  final sets = state.fullListSetsOf(session.item.card);
+  // A drill that asks several cards at once, Match, gives them all; a set
+  // two of them share is listed once.
+  final byId = <String, ResolvedSet>{
+    for (final card in cards ?? <Card>[session.item.card])
+      for (final set in state.fullListSetsOf(card)) set.set.id: set,
+  };
+  final sets = byId.values.toList();
   if (sets.isEmpty) return const <Widget>[];
   return <Widget>[
     Center(
