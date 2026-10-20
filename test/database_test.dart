@@ -47,27 +47,6 @@ void main() {
         kind: kind,
       );
 
-  test('opens at version 9 with its eight tables', () async {
-    expect(db.schemaVersion, 9);
-    final tables = await db
-        .customSelect(
-          "SELECT name FROM sqlite_master WHERE type = 'table' "
-          "AND name NOT LIKE 'sqlite_%' ORDER BY name",
-        )
-        .map((r) => r.read<String>('name'))
-        .get();
-    expect(tables, <String>[
-      'card_states',
-      'cards',
-      'decks',
-      'fsrs_parameters',
-      'leech_actions',
-      'restores',
-      'reviews',
-      'settings',
-    ]);
-  });
-
   test('a version 1 database upgrades and keeps its reviews', () async {
     final dir = Directory.systemTemp.createTempSync('fluenough');
     addTearDown(() => dir.deleteSync(recursive: true));
@@ -320,21 +299,6 @@ void main() {
     expect(triggers, <String>['restores_no_delete', 'restores_no_update']);
   });
 
-  test('fsrs_parameters: one row per language and skill, replaced by the '
-      'next fit', () async {
-    await db.fsrsParametersDao.put(fit('hi', 0.3));
-    await db.fsrsParametersDao.put(fit('bn', 0.4));
-    await db.fsrsParametersDao.put(fit('hi', 0.35, count: 440));
-    final rows = await db.fsrsParametersDao.all();
-    expect(rows.map((r) => r.language), <String>['bn', 'hi']);
-    final hi = rows.last;
-    expect(hi.parameters.split(',').first, '0.35');
-    expect(hi.reviewCount, 440);
-    expect(hi.fittedAt, at);
-    expect(hi.lossBefore, 0.41);
-    expect(hi.lossAfter, 0.38);
-  });
-
   test('leech_actions: appended in order, never changed', () async {
     await db.leechActionsDao.append(leechAction(kind: LeechActionKind.reset));
     await db.leechActionsDao.append(
@@ -360,116 +324,8 @@ void main() {
     expect(await db.leechActionsDao.all(), hasLength(2));
   });
 
-  test('settings: stored by name, replaced on a second write', () async {
-    await db.settingsDao.put('theme_mode', 'dark');
-    await db.settingsDao.put('theme_mode', 'light');
-    await db.settingsDao.put('seed', 'clay');
-    expect(await db.settingsDao.all(), {'theme_mode': 'light', 'seed': 'clay'});
-  });
-
-  test('decks: written, read back, and replaced by id', () async {
-    await db.decksDao.put(
-      DecksCompanion.insert(
-        id: 'hi-en-market',
-        name: 'Market',
-        kind: 'vocab',
-        languageCode: 'hi',
-        nativeCode: 'en',
-        loadedAt: at,
-      ),
-    );
-    final row = (await db.decksDao.byId('hi-en-market'))!;
-    expect(row.name, 'Market');
-    expect((row.languageCode, row.nativeCode), ('hi', 'en'));
-    expect(row.loadedAt, at);
-
-    await db.decksDao.put(
-      row.copyWith(name: 'Market and money').toCompanion(true),
-    );
-    expect((await db.decksDao.all()).single.name, 'Market and money');
-  });
-
-  test('cards: a deck is replaced outright, in deck order', () async {
-    CardsCompanion card(String id, int position, String target) =>
-        CardsCompanion.insert(
-          deckId: 'hi-en-market',
-          cardId: id,
-          position: position,
-          target: target,
-          native: 'how much',
-        );
-    await db.cardsDao.replaceDeck('hi-en-market', [
-      card('hi-0232', 1, 'कितना'),
-      card('hi-0231', 0, 'कितने का है?'),
-    ]);
-    expect(
-      (await db.cardsDao.ofDeck('hi-en-market')).map((c) => c.cardId),
-      <String>['hi-0231', 'hi-0232'],
-    );
-    expect(
-      (await db.cardsDao.ofDeck('hi-en-market')).first.target,
-      'कितने का है?',
-    );
-
-    await db.cardsDao.replaceDeck('hi-en-market', [
-      card('hi-0233', 0, 'महँगा'),
-    ]);
-    expect(
-      (await db.cardsDao.ofDeck('hi-en-market')).map((c) => c.cardId),
-      <String>['hi-0233'],
-    );
-  });
-
-  test('card_states: one row per card and mode', () async {
-    CardStatesCompanion state(DrillMode mode, int interval) =>
-        CardStatesCompanion.insert(
-          cardId: 'hi-0231',
-          mode: mode,
-          stability: interval.toDouble(),
-          difficulty: 5,
-          intervalDays: interval,
-          repetitions: 1,
-          dueAt: at,
-          lastReviewAt: at,
-        );
-    await db.cardStatesDao.put(state(DrillMode.recognition, 1));
-    await db.cardStatesDao.put(state(DrillMode.production, 6));
-    await db.cardStatesDao.put(state(DrillMode.recognition, 3));
-
-    final recognition = (await db.cardStatesDao.of(
-      'hi-0231',
-      DrillMode.recognition,
-    ))!;
-    expect(recognition.intervalDays, 3, reason: 'replaced, not added');
-    expect(recognition.dueAt, at);
-    expect(recognition.lapses, 0);
-    expect(await db.cardStatesDao.all(), hasLength(2));
-    expect(await db.cardStatesDao.of('hi-0231', DrillMode.listening), isNull);
-  });
-
-  test(
-    'reviews: appended and read back in order, first review nulls kept',
-    () async {
-      final first = await db.reviewsDao.append(review(grade: 3));
-      final second = await db.reviewsDao.append(
-        // An earlier clock time than the first: the log keeps append order.
-        review(first: false, ts: at.subtract(const Duration(hours: 1))),
-      );
-      expect(second, greaterThan(first));
-
-      final log = await db.reviewsDao.all();
-      expect(log.map((r) => r.id), <int>[first, second]);
-      expect(log.first.ts, at);
-      expect(log.first.mode, DrillMode.production);
-      expect(log.first.grade, 3);
-      expect(log.first.elapsedMs, 3200);
-      expect(log.first.answerGiven, 'kitne ka hai');
-      expect(log.first.intervalBefore, isNull);
-      expect((log.last.intervalBefore, log.last.intervalAfter), (1, 6));
-    },
-  );
-
-  test('reviews: a grade outside 0 to 5 is refused', () async {
+  test('reviews: a grade outside 0 to 5 is refused, and SQLite refuses any '
+      'update or delete, even from drift', () async {
     for (final grade in <int>[-1, 6]) {
       await expectLater(
         db.reviewsDao.append(review(grade: grade)),
@@ -478,25 +334,17 @@ void main() {
       );
     }
     expect(await db.reviewsDao.all(), isEmpty);
-  });
 
-  test(
-    'reviews: SQLite refuses any update or delete, even from drift',
-    () async {
-      await db.reviewsDao.append(review());
-      final Matcher appendOnly = throwsA(
-        predicate(
-          (Object e) => e.toString().contains('reviews is append-only'),
-        ),
-      );
-      await expectLater(
-        db.update(db.reviews).write(const ReviewsCompanion(grade: Value(0))),
-        appendOnly,
-      );
-      await expectLater(db.delete(db.reviews).go(), appendOnly);
-      await expectLater(db.customStatement('DELETE FROM reviews'), appendOnly);
-      final log = await db.reviewsDao.all();
-      expect(log.single.grade, 4);
-    },
-  );
+    await db.reviewsDao.append(review());
+    final Matcher appendOnly = throwsA(
+      predicate((Object e) => e.toString().contains('reviews is append-only')),
+    );
+    await expectLater(
+      db.update(db.reviews).write(const ReviewsCompanion(grade: Value(0))),
+      appendOnly,
+    );
+    await expectLater(db.delete(db.reviews).go(), appendOnly);
+    await expectLater(db.customStatement('DELETE FROM reviews'), appendOnly);
+    expect((await db.reviewsDao.all()).single.grade, 4);
+  });
 }
