@@ -12,18 +12,24 @@ Owner, on Find my level for Hindustani: "There are many other issues with placem
 - The questions: "1 simple letter, 1 composite, 1 longer word (just ask to transliterate, as it is script), 1 choose the word from sound and 1 read (if user cannot listen/read, replace with complex word/phrase transliteration)."
 - Owner: "Make one of them a match columns question (not the transliterate ones, user needs to write that)."
 - **Read** means reading a word aloud, checked by speech recognition (owner chose "Read a word aloud"). With no microphone or recogniser, it is a harder word or phrase to transliterate instead.
-- **Scoring** (owner chose "5/5 knows, 3–4 partly, 0–2 new"):
-  - **5/5:** the learner knows the script. Its decks are skipped, and Read and Write are credited for it.
-  - **3–4:** the learner knows it partly. Its letter decks are skipped; the learner starts at its reading and conjunct decks.
-  - **0–2:** the learner is new to it and starts at its first deck.
+- **Levels, not a score** (owner, 2026-10-20: "if any are wrong, user will be given another of the same level, if that is wrong too, no need to continue, just place"). This replaces the earlier "5/5 knows, 3–4 partly, 0–2 new". The five questions are five levels, in order: a simple letter, a composite, a longer word to transliterate, the word heard, the word read aloud. A wrong answer gets one more question of the same level; a second wrong ends that script's check, and the level reached places it:
+  - **stopped at the letters:** new to it; it starts at its first deck;
+  - **stopped at the composites:** its letter decks are skipped; it starts at its composite (vowel sign, conjunct, shape) decks;
+  - **stopped at a word (level 3, 4 or 5):** its letter and composite decks are skipped; it starts at its reading decks;
+  - **every level passed:** the learner knows the script; its decks are skipped, and Read and Write are credited for it.
+- The match-columns question is the letters (level 1).
+- **No asks nothing** (owner, 2026-10-20: "The goal is to ask minimal questions to place people"). Answering No to "Do you read Devanagari?" places the learner as new to it with no questions; only Yes runs the check.
 - A script the learner already reads through a language they know is still checked. The form says that the learner already reads it.
+- **Placement stays short** (owner, 2026-10-20: "I cannot be expected to answer 100+ questions just to be placed when i mostly know a language. That's the point here."). A learner who knows the whole course finishes in about 20 questions at most; progress shows "Question 4", with no total, since the walk ends early.
 
 **2. The deck walk.**
 - Owner: "Ask 1 question per deck, if one is wrong, ask another from the same deck (if that's wrong, stop). If 3 decks are cleared continuously without any second guess, skip one deck, if 5 decks are cleared continuously without second guesses, just ask from the end, like passages and all, if wrong skip 2, if wrong again, skip 3, and so on till we land on the level. If right, ask another 2-3 produce questions from latter decks."
 - "Skip 2, then 3" steps back towards the start: by 2 decks, then by 3 more, until an answer is right. The 2–3 typed questions then come from the decks after that point.
+- As built (#481): the steps back grow as 2, 3, 5, 8, … (each the last two together), so that the questions grow with the logarithm of the path's length, not with it; the forward walk asks at most 8 questions before it jumps to the end, as five clean decks do; and a step back that would pass the decks already cleared goes straight to the typed questions from there. Right at the end, the typed questions come from the last decks.
 
 **3. The result, and trying again.**
 - Owner: "When you decide that the user is placed, tell the user where he will be placed and why. Let them decide if they want to try again (if they think there was a mistake), and the placement start again from that spot. This will go on until the user cannot progress much further than where he was placed before. Or the user can stop the placement whenever."
+- As built (#481): "much further" is at least one deck further. Try again is offered while each try gets that far; the result says so.
 
 **Example** (owner): "in Hindustani, i only want to learn perso arabic, and know the rest. The app should figure that out." Devanagari scores 5/5, so its decks are skipped and its skills credited. Perso-Arabic scores 0–2, so its script decks are taught. The words place the learner near the end of the path.
 
