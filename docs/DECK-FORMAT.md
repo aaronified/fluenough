@@ -413,6 +413,7 @@ readings against the core's language and its
 | `examples` | A mapping from a core example's `target`, exactly as the core writes it, to its translation: text, or `{ native, bases }`, where `bases` gives the example's inline bases their meanings as the card's `bases` below does. |
 | `bases` | A mapping from the `word` of one of the core card's inline bases to its meaning: text, or `{ meaning, wiktionary }` ([Base words](#base-words-bases)). |
 | `wiktionary` | `true` ([The Wiktionary link](#the-wiktionary-link)). |
+| `dictionary` | A short entry imported from Wiktionary, `{ senses, etymology?, source }` ([A dictionary entry](#a-dictionary-entry-dictionary)). |
 | `explanation` | Only on a [set card's](#set-cards) entry, which gives `native`, its name, and `explanation`, both required, and nothing else. |
 
 Anything else, `target`, `reading`, `ipa`, `pos`, `tags`, `modes` and the
@@ -871,6 +872,8 @@ repeated until every note of the card has been shown once.
 | Kind | What it says |
 |---|---|
 | `pair` | A minimal pair: a word of the language that sounds almost the same. It names that word, the partner, by `ref`. |
+| `homograph` | The same spelling as another word of the language, with a different sound or meaning. It names that word by `ref`, like `pair`. |
+| `lookalike` | Differs from another word only by a dot, a length mark or another short mark, such as a nukta. It names that word by `ref`, like `pair`. |
 | `culture` | The word's cultural significance. It names its `source`. |
 | `usage` | Another context it is used in, or another sense. |
 | `behaviour` | How it behaves unlike similar words: an irregular form, a gender, a use. |
@@ -881,6 +884,8 @@ repeated until every note of the card has been shown once.
 ```yaml
     notes:
       - { kind: "pair", ref: "te-9007", text: "Not కాలం (kālam), time: the a is long there." }
+      - { kind: "homograph", ref: "te-9008", text: "Spelled like కలం (kalaṁ), a pen, but read with another vowel: a different word." }
+      - { kind: "lookalike", ref: "te-9009", text: "Only the dot differs from కలం (kalaṁ), a pen." }
       - { kind: "culture", text: "A pen was a gift for the first day at school.", source: "https://example.org/telugu-school-customs" }
       - { kind: "usage", text: "Also a pen-name, in old usage." }
       - { kind: "behaviour", id: "plural", text: "Its plural is {1}.", words: [{ word: "కలాలు", reading: "kalālu" }] }
@@ -889,10 +894,10 @@ repeated until every note of the card has been shown once.
 
 | Field | Required | Notes |
 |---|---|---|
-| `kind` | yes | `pair`, `culture`, `usage`, `behaviour` or `note`. |
+| `kind` | yes | `pair`, `homograph`, `lookalike`, `culture`, `usage`, `behaviour` or `note`. |
 | `text` | yes | The note, in the deck's native language. [Script in prose](#script-in-prose-always-with-its-reading) applies. |
 | `id` | no | The note's id: starts with a letter, `[a-z0-9-]+`, not one of `yes`, `no`, `on`, `off`, `true`, `false`, `y`, `n`, and unique in the card. Without one, a note's id is its place, `"1"`, `"2"`. The app remembers which notes it has shown by card and note id, so give ids once a card's notes may be reordered. |
-| `ref` | on a `pair` note, and only there | The partner: another card of the language that sounds almost the same. |
+| `ref` | on a `pair`, `homograph` or `lookalike` note, and only there | The other word: another card of the language. For a `pair`, the partner that sounds almost the same; for a `homograph`, the word with the same spelling; for a `lookalike`, the word that differs by a mark. |
 | `source` | on a `culture` note; optional on the rest | Where the claim can be checked: a URL, or a book with its author and year. |
 | `words` | no | The words of the language the text quotes, `{ word, reading, ipa? }`, `reading` required in a script that needs one. The text names them `{1}`, `{2}` (below). |
 | `region` | no | On a note of any kind: the [regions](#regions) of the language it is about, a region id or a list of them, each a region of the language's path. |
@@ -924,6 +929,8 @@ own:
 ```yaml
     notes:
       - { id: "pair", kind: "pair", ref: "te-9007" }
+      - { id: "same", kind: "homograph", ref: "te-9008" }
+      - { id: "dot", kind: "lookalike", ref: "te-9009" }
       - { id: "school", kind: "culture", source: "https://example.org/telugu-school-customs" }
       - { id: "plural", kind: "behaviour", words: [{ word: "కలాలు", reading: "kalālu" }] }
 ```
@@ -962,9 +969,14 @@ its reading.
   it shows its button only where the partner is in the catalog in the
   learner's native language, so a deck a learner adds cannot open a panel
   on a word with no meaning.
-- **Errors on a note:** a `kind` other than the five; no `text` in a
-  single-file note; a `ref` on a note that is not `pair`, on a pair note
-  that names its own card, or that no deck writes; no `source` on a culture
+- **A homograph or lookalike note's `ref` follows the pair note's rules**
+  but for the minimal-pair panel: it is a card of the language, not the
+  card itself, and a card some deck writes. It need not be taught from the
+  learner's language, since no panel shows the two words side by side yet.
+- **Errors on a note:** a `kind` other than the seven; no `text` in a
+  single-file note; a `ref` on a note that is not `pair`, `homograph` or
+  `lookalike`, on one of those that names its own card or no card of the
+  language, or that no deck writes; no `source` on a culture
   note; a `region` that is not a region of the language's
   [path](#regions); an `id` used twice in a card; an empty list. An
   all-blank string reads as no notes.
@@ -977,6 +989,34 @@ its reading.
   that holds the claim: the core for a core card's culture note, the layer
   for a layer's own card. A layer may carry `unreviewed` for its own texts
   too.
+
+### A dictionary entry: `dictionary`
+
+A layer's entry may carry a short entry imported from Wiktionary, in the
+layer's language: the word's other meanings, and where it comes from. It is
+the native language's, so it is never in a core.
+
+```yaml
+  "te-9001":
+    native: "home; house"
+    wiktionary: true
+    dictionary:
+      senses: ["household", "family", "a square of a chessboard"]
+      etymology: "From Proto-Dravidian *il, house."
+      source: "https://en.wiktionary.org/wiki/ఇల్లు"
+```
+
+| Field | Required | Notes |
+|---|---|---|
+| `senses` | yes | A non-empty list of the word's other meanings, each text in the layer's language. |
+| `etymology` | no | Text, in the layer's language. |
+| `source` | yes | The Wiktionary page the entry was imported from, `https://en.wiktionary.org/wiki/<word>`: the page only, with no fragment or query, as for any `source` that names Wiktionary. It is the credit that CC BY-SA 4.0 asks for, which is why it is required. |
+
+Anything else is an error. `dictionary` goes with [the `wiktionary`
+mark](#the-wiktionary-link) but does not need it: `wiktionary: true` says an
+entry exists, `dictionary` carries a copy of part of it. Only the layer's own
+entry for a card of its core may carry it; a layer's own card (one the core
+does not have) and a set card's entry may not. The app does not show it yet.
 
 ### The Wiktionary link
 
