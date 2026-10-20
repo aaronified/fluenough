@@ -47,6 +47,7 @@ import 'package:fluenough/features/drill/drill_preset.dart';
 import 'package:fluenough/features/drill/drill_session.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/features/placement/language_picker_page.dart';
+import 'package:fluenough/features/profiles/spoken_languages_picker.dart';
 import 'package:fluenough/features/placement/language_row.dart';
 import 'package:fluenough/features/placement/picker_fixtures.dart';
 import 'package:fluenough/features/placement/placement_page.dart';
@@ -61,6 +62,7 @@ import 'package:fluenough/ui/widgets/reading_first.dart';
 import 'package:fluenough/ui/widgets/stat_tile.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/braille_course.dart';
@@ -952,6 +954,13 @@ Future<void> pumpPlacement(WidgetTester tester, AppState state) async {
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
+
+  // The picker reads assets/languages.yaml through the asset bundle, which
+  // keeps what it read. A test that pumped the app without waiting for real
+  // time leaves that read half done in the cache, and a later test (which
+  // tests land in a CI shard together decides) then never gets the list, so
+  // a sheet offers its course's own script only. Each test reads afresh.
+  setUp(() => rootBundle.evict(SpokenLanguagesPicker.asset));
 
   group('the language picker', () {
     group('search', () {
