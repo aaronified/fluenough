@@ -876,6 +876,13 @@ Future<void> placeAll(
   expect(guard, greaterThan(1), reason: 'placement asked something');
 }
 
+/// The [word] on screen as written: a long word on a drill card is drawn
+/// with breaks between its aksharas (#515), and keeps the word as its
+/// semantics label.
+Finder shownWord(String word) => find.byWidgetPredicate(
+  (w) => w is Text && (w.data == word || w.semanticsLabel == word),
+);
+
 Future<void> pumpPlacement(WidgetTester tester, AppState state) async {
   usePhone(tester);
   await pumpScreen(
@@ -1324,8 +1331,8 @@ void main() {
         expect(find.byType(ReadingFirst), findsNothing);
         final urdu = card.targetScripts[persoArabic];
         if (urdu != null) {
-          expect(find.text(urdu), findsOneWidget);
-          expect(find.text(card.target), findsNothing);
+          expect(shownWord(urdu), findsOneWidget);
+          expect(shownWord(card.target), findsNothing);
         }
       });
 
@@ -1335,9 +1342,9 @@ void main() {
       );
       await placeAll(tester, (card) {
         expect(find.byType(ReadingFirst), findsNothing);
-        expect(find.text(card.target), findsOneWidget);
+        expect(shownWord(card.target), findsOneWidget);
         if (card.targetScripts[persoArabic] case final urdu?) {
-          expect(find.text(urdu), findsOneWidget);
+          expect(shownWord(urdu), findsOneWidget);
         }
       });
     });
@@ -1349,7 +1356,7 @@ void main() {
         await pumpPlacement(tester, devanagariReader(const <String>{}));
         await placeAll(tester, (card) {
           expect(find.byType(ReadingFirst), findsNothing);
-          expect(find.text(card.target), findsOneWidget);
+          expect(shownWord(card.target), findsOneWidget);
         });
 
         await pumpPlacement(
