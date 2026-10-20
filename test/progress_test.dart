@@ -20,6 +20,7 @@ import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/data/course_path.dart' show Milestone;
 import 'package:fluenough/core/data/log_jsonl.dart';
 import 'package:fluenough/core/decks/language_catalog.dart';
+import 'package:fluenough/core/models/deck.dart' show LanguageInfo;
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
 import 'package:fluenough/core/scheduling/replay.dart';
@@ -39,6 +40,7 @@ import 'package:fluenough/features/decks/path_fixture.dart';
 import 'package:fluenough/features/decks/path_model.dart';
 import 'package:fluenough/features/decks/path_parts.dart';
 import 'package:fluenough/features/decks/unit_page.dart';
+import 'package:fluenough/features/decks/unit_search.dart';
 import 'package:fluenough/features/decks/word_mastery.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
@@ -1251,6 +1253,43 @@ void main() {
       // deck to lend one.
       expect(themes['hi-en-grammar-nouns'], isNull);
       expect(themes['hi-en-grammar-continuous']?.id, 'directions');
+    });
+  });
+
+  group('searching cards', () {
+    late AppState state;
+    late List<LanguageInfo> telugu;
+
+    setUpAll(() async {
+      state = AppState.test();
+      await state.load();
+      telugu = <LanguageInfo>[
+        for (final l in state.languages)
+          if (l.code == 'te') l,
+      ];
+    });
+
+    List<String> cardIds(String query) => <String>[
+      for (final hit in searchCourses(
+        state,
+        AppLocalizationsEn(),
+        query,
+        telugu,
+      ))
+        if (hit is CardHit) hit.card.id,
+    ];
+
+    test('a meaning finds the Telugu word for it', () {
+      expect(cardIds('why'), contains('te-0164'));
+    });
+
+    test('Telugu script finds the word', () {
+      expect(cardIds('ఎందుకు'), contains('te-0164'));
+    });
+
+    test('a reading without its accents finds the word', () {
+      expect(cardIds('namaskaram'), contains('te-0135'));
+      expect(cardIds('NAMASKARAM'), contains('te-0135'));
     });
   });
 
