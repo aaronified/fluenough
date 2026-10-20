@@ -40,6 +40,11 @@ class ScriptFeature {
   final List<String> letters;
 }
 
+/// The key of the script guide of [language] for [script] (a deck's
+/// `perso_arabic`, or hyphenated), or of its default guide for null.
+String scriptGuideKey(String language, String? script) =>
+    script == null ? language : '$language-${script.replaceAll('_', '-')}';
+
 /// How a script works, before its letters: read from
 /// `decks/<lang>/<lang>-script.yaml`.
 class ScriptGuide {
@@ -48,10 +53,22 @@ class ScriptGuide {
     required this.name,
     required this.intro,
     required this.features,
+    this.script,
   });
 
   /// The language's code, such as `bn`.
   final String language;
+
+  /// The script this guide is for, as a deck's language block names it
+  /// (`perso_arabic`), or null for the language's default guide,
+  /// `<code>-script`. A guide for another script of the language has id
+  /// `<code>-<script, hyphenated>-script` (ADR-0016).
+  final String? script;
+
+  /// What the catalog keys it by, and what a learner is marked to have seen
+  /// it by: the language's code for its default guide, else the code and
+  /// the script hyphenated, such as `hi-perso-arabic`.
+  String get key => scriptGuideKey(language, script);
 
   /// The guide's title: "How Bengali script works".
   final String name;

@@ -1,0 +1,32 @@
+schema: 1
+id: "hi-en-perso-arabic-script"
+kind: "layer"
+core: "hi-perso-arabic-script"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "How the Perso-Arabic script works"
+intro: "Hindustani is also written in the Perso-Arabic script, the script of Urdu, which is built from a few ideas that come back in letter after letter. They look strange at first because English has none of them. Once you have seen them, the letters start to make sense."
+features:
+  "right-to-left":
+    name: "Read from right to left"
+    text: "A line starts at the right and runs to the left, so a book opens at what English would call its back. The word کتاب (kitāb, book) is read ک (ka), ت (ta), ا (ā), ب (ba), from right to left. Numbers are the exception: their digits still run from left to right."
+  "joining":
+    name: "Letters join, and change shape"
+    text: "A word is written in one flowing stroke, so its letters join. Most letters take up to four shapes, for the start of a word, the middle, the end, and standing alone: ب (ba) is written بـ (ba) at the start, ـبـ (ba) in the middle, ـب (ba) at the end and ب (ba) alone."
+  "non-joiners":
+    name: "Nine letters that never join forward"
+    text: "ا (ā), د (da), ڈ (ḍa), ذ (za), ر (ra), ڑ (ṛa), ز (za), ژ (z͟ha) and و (va) join the letter before them but never the one after, so a word breaks into pieces after them: دور (dūr, far) is three separate letters, د (da), و (va) and ر (ra). A gap after one of these nine is not a space between words."
+  "dots":
+    name: "Dots tell letters apart"
+    text: "Many letters share one shape, and only their dots tell them apart. ب (ba) has one dot below, پ (pa) three dots below, ت (ta) two dots above, ٹ (ṭa) a tiny ط (ta) above, and ث (sa) three dots above. A missed dot makes a different letter, so look at the dots as closely as at the shape."
+  "short-vowels":
+    name: "Short vowels are left unwritten"
+    text: "A word shows its consonants and its long vowels, and the short vowels a, i and u are usually left out, so you read them from the word you already know: کتاب (kitāb, book) is written k-t-ā-b. They have marks, زبر (zabar) for a above the letter, زیر (zer) for i below it and پیش (peś) for u above it, as in بَ (ba), بِ (bi) and بُ (bu), but these appear only in teaching texts."
+  "aspirates":
+    name: "One letter makes the breathy consonants"
+    text: "Devanagari has a letter of its own for a breathy consonant, such as भ (bha). Here you write the plain consonant and add ھ (ha), the do-cashmī he, after it: ب (ba) with ھ (ha) is بھ (bha), and ک (ka) with ھ (ha) is کھ (kha). It is part of the breath of the consonant and is never said alone. Do not mix it up with ہ (ha), the choṭī he, which is the plain h."
+  "nastaliq":
+    name: "The hand slopes down"
+    text: "Urdu is usually written in the Nastaliq hand, نستعلیق (nastalīq), in which a word slopes down from its start at the upper right towards the baseline at the left. The letters keep their shapes, but they lean and stack, so a word can end well below where it began. Many phones show it in a plainer, level type, so a word in this app can look flatter than in a printed Urdu book."
+  "nun-ghunna":
+    name: "A dotless nūn for a nasal vowel"
+    text: "At the end of a word, ں (m̐), a ن (na) with its dot left out, is the nūn ġunna. It makes the vowel before it nasal, said through the nose with no n sound after it: ہاں (hām̐, yes), میں (maim̐, I). The ordinary ن (na) with its dot is a full n at the end of a word, as in دن (din, day)."

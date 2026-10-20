@@ -222,9 +222,10 @@ a core and layers; the app's parser refuses the same words.
   and every card id.
 - **Reserved names:** a deck's core is never `<lang>-facts`,
   `<lang>-numbers`, `<lang>-romanisation`, `<lang>-script`, `<lang>-sounds`
-  or `<lang>-path`, the files beside the decks. (The script guide and the
-  sounds file have cores of their own under those names: a layer whose
-  `core` is `<lang>-script` or `<lang>-sounds` is theirs, see
+  or `<lang>-path`, the files beside the decks, and a deck's id never ends in
+  `-script`. (The script guide and the sounds file have cores of their own
+  under those names: a layer whose `core` is `<lang>-script` or
+  `<lang>-sounds`, or ends in `-script`, is theirs, see
   [Script guides](#script-guides) and [Sounds files](#sounds-files).)
 - **A core's name never starts with a native language's code,** nor with the
   name of a folder beside it: a core `te-en-x` would read as a deck of the
@@ -630,6 +631,14 @@ not "script in prose": the card's `reading` serves it.
 
 The app parses and keeps it (`Card.targetScripts`); a screen that shows the
 spelling in the script a learner chose is not built yet.
+
+It is also what a backup voice says (#641). The Perso-Arabic decks are voiced
+`tts: "ur-PK"`. On a phone with the Hindi voice (`hi-IN`) but not the Urdu
+one, the Hindi voice says each card from its `devanagari` spelling, so those
+decks list `scripts: ["perso_arabic", "devanagari"]` and give every card a
+`devanagari` spelling the Hindi voice can read: a letter with its vowel
+(`ب` is `ब`), a word in its normal Hindi spelling. A card with no sensible
+spelling, such as a bare nasal mark, gives none, and no backup is said for it.
 
 ### A note on `id`
 
@@ -2569,6 +2578,12 @@ downloads is listed in `decks/index.json`:
   in reviewer mode when `sha256` does (#444, #449). A deck's `tags` are
   not taken out, so a deck becoming `reviewed` is an update. Every
   download is still checked against `size` and `sha256`.
+- **`script_guides`**: the [guides of a language's other
+  scripts](#one-guide-per-script) and their layers, each listed as a file is.
+  They are kept out of `files` because the released app (0.5.1) rejects a
+  script guide whose id is not `<lang>-script`; the app that knows
+  `script_guides` downloads them with the language's other files, and the
+  language's `size` counts them.
 - **`media`**: every [recording](#a-cards-own-recording-audio) and
   [image](#a-cards-own-image-image) in the language's folders, with its
   path, size, SHA-256 and `kind`, `"audio"` or `"image"`.
@@ -2985,7 +3000,7 @@ features:
 
 | Field | Required | Notes |
 |---|---|---|
-| `id` | yes | `<language>-script`, and the filename stem. |
+| `id` | yes | `<language>-script`, and the filename stem. For a guide of one of the language's other scripts, `<language>-<script>-script`: see [One guide per script](#one-guide-per-script). |
 | `language` | yes | The code of the language, which is also its folder. |
 | `name` | yes | The page's title. |
 | `intro` | yes | A paragraph before the features. |
@@ -3043,6 +3058,29 @@ The layer's id is `<lang>-<native>-script`. It gives `name`, `intro` and
 nothing else. [Script in prose](#script-in-prose-always-with-its-reading)
 holds in its text. The app reads the English layer; which layer a learner
 from another language sees is not decided yet (#498).
+
+### One guide per script
+
+A language written in more than one script (its `scripts`, #623) may have a
+guide for each. `<lang>-script` is the language's default guide;
+`decks/hi/hi-perso-arabic-script.yaml`, id `hi-perso-arabic-script`, is
+Hindustani's guide to the Perso-Arabic script, and its English layer
+`decks/hi/en/hi-en-perso-arabic-script.yaml` has the id
+`hi-en-perso-arabic-script` and the `core` `hi-perso-arabic-script`. The
+script is written between the code and `-script`, hyphenated where its name in
+a deck's language block has an underscore (`perso_arabic`), and the validator
+requires it to be one of the scripts the language's decks are written in. A
+deck's Tips, and the drill, show the guide of the deck's own `script`, else
+the language's default guide; a learner is marked to have seen each guide
+once, apart from the others. A deck's id never ends in `-script`, so no deck
+core is mistaken for a guide. The shape of the guide is otherwise the same.
+
+**The released app cannot read these files.** It accepts only
+`<lang>-script` as a guide's id, and `decks/index.json` lists every file it
+would download, so `tools/deck_index.py` lists a guide of another script, and
+its layers, under the language's `script_guides` instead of `files`
+([How the app gets decks](#how-the-app-gets-decks-indexjson)): an app that does not know the key
+passes them by, as it does `media`, and keeps showing the default guide.
 
 ## Facts files
 
