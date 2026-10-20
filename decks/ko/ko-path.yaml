@@ -118,9 +118,10 @@ alphabet: []
 # bottom of that unit, any other in the last unit.
 units:
   # 1. The phrasebook, taught whole from the first lesson, with the first
-  # words beside it: ko-phrasebook (15-25 survival phrases, which count no
-  # words) and ko-first-words when written.
-  - planned: { id: "ko-phrasebook", theme: "first-words", words: 12 }
+  # words beside it: ko-phrasebook (19 survival phrases, which count no
+  # words) and ko-first-words (12 words).
+  - decks: ["ko-phrasebook", "ko-first-words", "*"]
+    words: 12
     listening_passages:
       - { id: "first-greetings", text: { "en": "Greeting a neighbour and saying thank you and goodbye: annyeonghaseyo, gamsahamnida, annyeonghi gaseyo" } }
     reading_passages:

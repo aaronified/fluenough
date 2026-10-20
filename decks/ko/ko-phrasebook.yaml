@@ -1,0 +1,208 @@
+schema: 1
+id: "ko-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ko-0001"
+    target: "안녕하세요"
+    reading: "annyeonghaseyo"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "안녕하세요", base: "안녕하다", reading: "annyeonghada" }
+  - id: "ko-0002"
+    target: "안녕히 가세요"
+    reading: "annyeonghi gaseyo"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "안녕히", base: "안녕하다", reading: "annyeonghada" }
+      - { word: "가세요", base: "가다", reading: "gada" }
+  - id: "ko-0003"
+    target: "안녕히 계세요"
+    reading: "annyeonghi gyeseyo"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "안녕히", base: "안녕하다", reading: "annyeonghada" }
+      - { word: "계세요", base: "계시다", reading: "gesida" }
+  - id: "ko-0004"
+    target: "감사해요"
+    reading: "gamsahaeyo"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "감사해요", base: "감사하다", reading: "gamsahada" }
+  - id: "ko-0005"
+    target: "고마워요"
+    reading: "gomawoyo"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "고마워요", base: "고맙다", reading: "gomapda" }
+  - id: "ko-0006"
+    target: "천만에요"
+    reading: "cheonmaneyo"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "천만에요", base: "이다", reading: "ida" }
+  - id: "ko-0007"
+    target: "죄송해요"
+    reading: "joesonghaeyo"
+    pos: "phrase"
+    tags: ["sorry"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "죄송해요", base: "죄송하다", reading: "joesonghada" }
+  - id: "ko-0008"
+    target: "미안해요"
+    reading: "mianhaeyo"
+    pos: "phrase"
+    tags: ["sorry"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "미안해요", base: "미안하다", reading: "mianhada" }
+  - id: "ko-0009"
+    target: "저기요"
+    reading: "jeogiyo"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "저기요", base: "저기", reading: "jeogi" }
+  - id: "ko-0010"
+    target: "이해가 안 돼요"
+    reading: "ihaega an dwaeyo"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "이해가", base: "이해", reading: "ihae" }
+      - { word: "돼요", base: "되다", reading: "doeda" }
+  - id: "ko-0011"
+    target: "다시 한 번 말해 주세요"
+    reading: "dasi han beon malhae juseyo"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "한", base: "하나", reading: "hana" }
+      - { word: "말해", base: "말하다", reading: "malhada" }
+      - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-0012"
+    target: "천천히 말해 주세요"
+    reading: "cheoncheonhi malhae juseyo"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "천천히", base: "천천하다", reading: "cheoncheonhada" }
+      - { word: "말해", base: "말하다", reading: "malhada" }
+      - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-0013"
+    target: "한국말 잘 못 해요"
+    reading: "hangungmal jal mot haeyo"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "해요", base: "하다", reading: "hada" }
+  - id: "ko-0014"
+    target: "영어 할 수 있어요?"
+    reading: "yeongeo hal su isseoyo?"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "할", base: "하다", reading: "hada" }
+      - { word: "있어요", base: "있다", reading: "itda" }
+  - id: "ko-0015"
+    target: "이거 얼마예요?"
+    reading: "igeo eolmayeyo?"
+    pos: "phrase"
+    tags: ["shopping"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "얼마예요", base: "얼마", reading: "eolma" }
+  - id: "ko-0016"
+    target: "화장실이 어디예요?"
+    reading: "hwajangsiri eodiyeyo?"
+    pos: "phrase"
+    tags: ["directions"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "화장실이", base: "화장실", reading: "hwajangsil" }
+      - { word: "어디예요", base: "어디", reading: "eodi" }
+  - id: "ko-0017"
+    target: "이거 주세요"
+    reading: "igeo juseyo"
+    pos: "phrase"
+    tags: ["shopping"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-0018"
+    target: "계산해 주세요"
+    reading: "gyesanhae juseyo"
+    pos: "phrase"
+    tags: ["shopping"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "계산해", base: "계산하다", reading: "gyesanhada" }
+      - { word: "주세요", base: "주다", reading: "juda" }
+  - id: "ko-0019"
+    target: "도와주세요"
+    reading: "dowajuseyo"
+    pos: "phrase"
+    tags: ["help"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "도와주세요", base: "도와주다", reading: "dowajuda" }
