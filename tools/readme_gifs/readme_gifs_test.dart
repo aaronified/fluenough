@@ -2,7 +2,8 @@
 // four screens of the real app, on a Bengali learner a few weeks in.
 // tools/make_gif.py turns the frames into docs/screenshots/*.gif.
 //
-// Skipped unless README_GIFS=1, so CI never runs it. It needs real fonts
+// A tool run by hand, not a test: it lives outside test/, so CI's
+// `flutter test` never reaches it, and is skipped unless README_GIFS=1. It needs real fonts
 // rather than the test font's boxes: Roboto merged with Noto Sans Bengali,
 // from README_GIFS_FONTS, and the icons from the Flutter SDK. The commands
 // are in tools/README.md.

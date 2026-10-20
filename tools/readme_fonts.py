@@ -9,7 +9,7 @@ Noto Sans Bengali fills in what Roboto lacks. This merges the two instead:
 each weight of the Flutter SDK's Roboto gets the Bengali glyphs of the
 nearest weight of Noto Sans Bengali, scaled to Roboto's units, and is
 written as `Roboto-<Weight>.ttf` in the output directory, which
-test/tools/readme_gifs_test.dart loads as Roboto (README_GIFS_FONTS).
+tools/readme_gifs/readme_gifs_test.dart loads as Roboto (README_GIFS_FONTS).
 
 The Noto directory holds static `NotoSansBengali-*.ttf` files, from
 https://github.com/notofonts/bengali (OFL-1.1). Needs fontTools
