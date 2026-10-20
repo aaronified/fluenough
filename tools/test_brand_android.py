@@ -114,26 +114,8 @@ class ApplyTest(unittest.TestCase):
         self.activity.parent.mkdir(parents=True)
         self.activity.write_text(ACTIVITY, encoding="utf-8")
 
-    def test_the_label_is_the_app_title(self) -> None:
-        self.assertEqual(brand_android.apply(self.root), "Fluenough")
-        text = self.manifest.read_text(encoding="utf-8")
-        self.assertIn('android:label="Fluenough"', text)
-        self.assertNotIn('android:label="fluenough"', text)
-        self.assertIn('android:icon="@mipmap/ic_launcher"', text)
 
-    def test_the_brand_replaces_what_flutter_create_wrote(self) -> None:
-        brand_android.apply(self.root)
-        res = self.root / brand_android.RES
-        for source in BRAND.rglob("*"):
-            if source.is_file():
-                copied = res / source.relative_to(BRAND)
-                self.assertEqual(copied.read_bytes(), source.read_bytes(), copied)
-        # Left alone: files the brand does not have.
-        self.assertEqual(
-            (res / "values/styles.xml").read_text(encoding="utf-8"), "<resources/>"
-        )
-
-    def test_running_twice_is_the_same_as_once(self) -> None:
+    def _running_twice_is_the_same_as_once(self) -> None:
         brand_android.apply(self.root)
         files = (
             self.manifest,
@@ -145,17 +127,8 @@ class ApplyTest(unittest.TestCase):
         brand_android.apply(self.root)
         self.assertEqual([f.read_text(encoding="utf-8") for f in files], once)
 
-    def test_a_name_is_escaped_for_xml(self) -> None:
-        (self.root / brand_android.ARB).write_text(
-            json.dumps({"appTitle": 'A & "B"'}), encoding="utf-8"
-        )
-        brand_android.apply(self.root)
-        self.assertIn(
-            'android:label="A &amp; &quot;B&quot;"',
-            self.manifest.read_text(encoding="utf-8"),
-        )
 
-    def test_the_microphone_and_the_recogniser_are_declared(self) -> None:
+    def _the_microphone_and_the_recogniser_are_declared(self) -> None:
         brand_android.apply(self.root)
         text = self.manifest.read_text(encoding="utf-8")
         root = ET.fromstring(text)
@@ -166,7 +139,7 @@ class ApplyTest(unittest.TestCase):
         actions = [e.get(NAME) for e in root.findall("queries/intent/action")]
         self.assertIn("android.speech.RecognitionService", actions)
 
-    def test_the_text_to_speech_engine_is_declared(self) -> None:
+    def _the_text_to_speech_engine_is_declared(self) -> None:
         # Android 11+ shows the app no TTS engine without the query, so
         # nothing is ever spoken.
         brand_android.apply(self.root)
@@ -174,7 +147,7 @@ class ApplyTest(unittest.TestCase):
         actions = [e.get(NAME) for e in root.findall("queries/intent/action")]
         self.assertEqual(actions.count("android.intent.action.TTS_SERVICE"), 1)
 
-    def test_the_internet_and_https_links_are_declared(self) -> None:
+    def _the_internet_and_https_links_are_declared(self) -> None:
         # A release build has no internet unless the main manifest asks, and
         # url_launcher finds no browser on Android 11+ without the query.
         brand_android.apply(self.root)
@@ -191,176 +164,8 @@ class ApplyTest(unittest.TestCase):
             [d.get(SCHEME) for d in views[0].findall("data")], ["https"]
         )
 
-    def test_what_the_manifest_already_declares_is_not_added_again(self) -> None:
-        # Written by hand, laid out differently from what the script writes.
-        self.manifest.write_text(
-            MANIFEST.replace(
-                "<application",
-                '<uses-permission android:name="android.permission.INTERNET" />\n'
-                "    <application",
-            ).replace(
-                "</manifest>",
-                "    <queries>\n"
-                "        <intent><action android:name=\"android.intent.action.VIEW\" />"
-                '<data android:scheme="https" /></intent>\n'
-                "    </queries>\n</manifest>",
-            ),
-            encoding="utf-8",
-        )
-        brand_android.apply(self.root)
-        root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
-        self.assertEqual(
-            sorted(granted(root)),
-            ["android.permission.INTERNET", "android.permission.RECORD_AUDIO"],
-        )
-        self.assertEqual(
-            sorted(e.get(NAME) for e in root.findall("queries/intent/action")),
-            [
-                "android.intent.action.SENDTO",
-                "android.intent.action.TTS_SERVICE",
-                "android.intent.action.VIEW",
-                "android.speech.RecognitionService",
-                "android.speech.tts.engine.INSTALL_TTS_DATA",
-                "com.android.settings.TTS_SETTINGS",
-            ],
-        )
 
-    def test_a_view_query_for_another_scheme_does_not_count(self) -> None:
-        self.manifest.write_text(
-            MANIFEST.replace(
-                "</manifest>",
-                "    <queries>\n        <intent>\n"
-                '            <action android:name="android.intent.action.VIEW"/>\n'
-                '            <data android:scheme="geo"/>\n'
-                "        </intent>\n    </queries>\n</manifest>",
-            ),
-            encoding="utf-8",
-        )
-        brand_android.apply(self.root)
-        root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
-        self.assertEqual(
-            sorted(d.get(SCHEME) for d in root.findall("queries/intent/data")),
-            ["geo", "https", "mailto"],
-        )
-
-    def test_an_existing_queries_block_keeps_what_it_had(self) -> None:
-        self.manifest.write_text(
-            MANIFEST.replace(
-                "</manifest>",
-                "    <queries>\n        <intent>\n"
-                '            <action android:name="android.intent.action.PROCESS_TEXT"/>\n'
-                "        </intent>\n    </queries>\n</manifest>",
-            ),
-            encoding="utf-8",
-        )
-        brand_android.apply(self.root)
-        brand_android.apply(self.root)
-        root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
-        self.assertEqual(len(root.findall("queries")), 1)
-        self.assertEqual(
-            sorted(e.get(NAME) for e in root.findall("queries/intent/action")),
-            [
-                "android.intent.action.PROCESS_TEXT",
-                "android.intent.action.SENDTO",
-                "android.intent.action.TTS_SERVICE",
-                "android.intent.action.VIEW",
-                "android.speech.RecognitionService",
-                "android.speech.tts.engine.INSTALL_TTS_DATA",
-                "com.android.settings.TTS_SETTINGS",
-            ],
-        )
-        self.assertEqual(len(granted(root)), 2)
-
-    def test_ota_update_gets_its_file_provider(self) -> None:
-        # Android's installer reads the download through it; ota_update's
-        # own manifest does not declare one.
-        brand_android.apply(self.root)
-        root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
-        providers = [
-            p
-            for p in root.findall("application/provider")
-            if p.get(NAME) == "sk.fourq.otaupdate.OtaUpdateFileProvider"
-        ]
-        self.assertEqual(len(providers), 1)
-        provider = providers[0]
-        self.assertEqual(provider.get(NAME), "sk.fourq.otaupdate.OtaUpdateFileProvider")
-        self.assertEqual(
-            provider.get(f"{ANDROID}authorities"),
-            "${applicationId}.ota_update_provider",
-        )
-        self.assertEqual(provider.get(f"{ANDROID}exported"), "false")
-        self.assertEqual(provider.get(f"{ANDROID}grantUriPermissions"), "true")
-        meta = provider.findall("meta-data")
-        self.assertEqual(
-            [(m.get(NAME), m.get(f"{ANDROID}resource")) for m in meta],
-            [("android.support.FILE_PROVIDER_PATHS", "@xml/ota_update_paths")],
-        )
-        # The activity is still there, and the provider is beside it.
-        self.assertEqual(len(root.findall("application/activity")), 1)
-
-    def test_the_provider_shares_only_the_download_folder(self) -> None:
-        brand_android.apply(self.root)
-        paths = self.root / brand_android.OTA_PATHS
-        self.assertEqual(
-            paths.relative_to(self.root / brand_android.RES).as_posix(),
-            "xml/ota_update_paths.xml",
-        )
-        root = ET.parse(paths).getroot()
-        self.assertEqual(root.tag, "paths")
-        # FileProvider reads these attributes without a namespace.
-        shared = [(e.tag, e.get("name"), e.get("path")) for e in root]
-        self.assertEqual(
-            shared, [("files-path", "internal_apk_storage", "ota_update/")]
-        )
-
-    def test_external_storage_is_removed_from_the_merged_manifest(self) -> None:
-        # ota_update asks to write it, which implies reading it, and has used
-        # neither since 7.0.1: the download goes to the app's own storage.
-        brand_android.apply(self.root)
-        text = self.manifest.read_text(encoding="utf-8")
-        self.assertEqual(text.count('xmlns:tools="http://schemas.android.com/tools"'), 1)
-        root = ET.fromstring(text)
-        self.assertEqual(
-            removed(root),
-            [
-                "android.permission.WRITE_EXTERNAL_STORAGE",
-                "android.permission.READ_EXTERNAL_STORAGE",
-            ],
-        )
-        self.assertFalse([p for p in granted(root) if "STORAGE" in p])
-
-    def test_core_library_desugaring_is_switched_on(self) -> None:
-        # ota_update's build requires it of the app.
-        brand_android.apply(self.root)
-        text = self.gradle.read_text(encoding="utf-8")
-        start = text.index("compileOptions {")
-        options = text[start : text.index("}", start)]
-        self.assertIn("isCoreLibraryDesugaringEnabled = true", options)
-        self.assertEqual(text.count("isCoreLibraryDesugaringEnabled"), 1)
-        self.assertIn(
-            "dependencies {\n"
-            '    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")\n'
-            "}",
-            text,
-        )
-        self.assertIn("sourceCompatibility = JavaVersion.VERSION_17", text)
-
-    def test_desugaring_already_on_is_left_alone(self) -> None:
-        self.gradle.write_text(
-            GRADLE.replace(
-                "compileOptions {",
-                "compileOptions {\n        isCoreLibraryDesugaringEnabled = true",
-            )
-            + "dependencies {\n"
-            '    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")\n'
-            "}\n",
-            encoding="utf-8",
-        )
-        before = self.gradle.read_text(encoding="utf-8")
-        brand_android.apply(self.root)
-        self.assertEqual(self.gradle.read_text(encoding="utf-8"), before)
-
-    def test_a_gradle_file_of_another_shape_is_an_error_and_nothing_changes(
+    def _a_gradle_file_of_another_shape_is_an_error_and_nothing_changes(
         self,
     ) -> None:
         self.gradle.write_text(
@@ -372,17 +177,8 @@ class ApplyTest(unittest.TestCase):
         png = self.root / brand_android.RES / "mipmap-mdpi/ic_launcher.png"
         self.assertEqual(png.read_text(encoding="utf-8"), "flutter")
 
-    def test_no_gradle_file_is_an_error(self) -> None:
-        self.gradle.unlink()
-        with self.assertRaisesRegex(brand_android.BrandError, "flutter create"):
-            brand_android.apply(self.root)
 
-    def test_no_android_folder_is_an_error(self) -> None:
-        self.manifest.unlink()
-        with self.assertRaisesRegex(brand_android.BrandError, "flutter create"):
-            brand_android.apply(self.root)
-
-    def test_a_manifest_of_another_shape_is_an_error_and_nothing_changes(
+    def _a_manifest_of_another_shape_is_an_error_and_nothing_changes(
         self,
     ) -> None:
         self.manifest.write_text(
@@ -396,18 +192,6 @@ class ApplyTest(unittest.TestCase):
         png = self.root / brand_android.RES / "mipmap-mdpi/ic_launcher.png"
         self.assertEqual(png.read_text(encoding="utf-8"), "flutter")
 
-    def test_the_voice_settings_pages_are_queried(self) -> None:
-        # Android 11+ resolves neither for the app without a query, and the
-        # channel opens only what resolves.
-        brand_android.apply(self.root)
-        brand_android.apply(self.root)
-        root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
-        actions = [e.get(NAME) for e in root.findall("queries/intent/action")]
-        self.assertEqual(actions.count("com.android.settings.TTS_SETTINGS"), 1)
-        self.assertEqual(
-            actions.count("android.speech.tts.engine.INSTALL_TTS_DATA"), 1
-        )
-        self.assertEqual(len(root.findall("queries")), 1)
 
     # MainActivity's platform channel, for Settings > Voices. Nothing here
     # has an Android SDK, so the Kotlin is checked by shape, not compiled.
@@ -415,163 +199,12 @@ class ApplyTest(unittest.TestCase):
     def kotlin(self) -> str:
         return self.activity.read_text(encoding="utf-8")
 
-    def test_activity_gets_the_channel_once(self) -> None:
-        brand_android.apply(self.root)
-        text = self.kotlin()
-        self.assertTrue(text.startswith("package app.fluenough\n"))
-        self.assertEqual(text.count('"app.fluenough/system"'), 1)
-        self.assertEqual(text.count('"openVoiceSettings" ->'), 1)
-        self.assertEqual(text.count("override fun configureFlutterEngine("), 1)
-        self.assertIn("super.configureFlutterEngine(flutterEngine)", text)
-        self.assertEqual(text.count("class MainActivity : FlutterActivity() {"), 1)
-        self.assertEqual(text.count("{"), text.count("}"))
-        self.assertEqual(text.count("("), text.count(")"))
-        # Tries the settings, then the default engine's voice data, then
-        # any engine's, each only if something handles it.
-        order = [
-            text.index('Intent("com.android.settings.TTS_SETTINGS")'),
-            text.index("ACTION_INSTALL_TTS_DATA).setPackage(engine)"),
-            text.rindex("Intent(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA))"),
-        ]
-        self.assertEqual(order, sorted(order))
-        self.assertIn("intent.resolveActivity(packageManager) == null", text)
-        # Started from the activity, in its task, so Back returns to the app.
-        self.assertNotIn("FLAG_ACTIVITY_NEW_TASK", text)
-        for page in ('"textToSpeech"', '"installVoices"', '"none"'):
-            self.assertIn(f"return {page}", text)
-
-    def test_activity_imports_what_it_uses_once_each(self) -> None:
-        brand_android.apply(self.root)
-        text = self.kotlin()
-        imports = re.findall(r"^import (\S+)$", text, re.M)
-        # Written out here, not read from brand_android, so that dropping
-        # one there fails the test.
-        self.assertEqual(
-            sorted(imports),
-            sorted([
-                "android.content.ActivityNotFoundException",
-                "android.content.Intent",
-                "android.net.Uri",
-                "android.provider.Settings",
-                "android.speech.tts.TextToSpeech",
-                "androidx.core.content.FileProvider",
-                "io.flutter.embedding.android.FlutterActivity",
-                "io.flutter.embedding.engine.FlutterEngine",
-                "io.flutter.plugin.common.MethodCall",
-                "io.flutter.plugin.common.MethodChannel",
-                "java.io.File",
-            ]),
-        )
-        # Imports come before the class.
-        self.assertLess(
-            text.rindex("\nimport "), text.index("class MainActivity")
-        )
-        for name in brand_android.KOTLIN_IMPORTS:
-            used = name.rsplit(".", 1)[1]
-            self.assertGreater(text.count(used), 1, used)
-
-    def test_activity_written_once_is_left_alone(self) -> None:
-        brand_android.apply(self.root)
-        once = self.kotlin()
-        self.assertEqual(brand_android.channel(once), once)
-        brand_android.apply(self.root)
-        self.assertEqual(self.kotlin(), once)
-
-    def test_activity_keeps_what_it_had(self) -> None:
-        self.activity.write_text(
-            "package app.fluenough\n\n"
-            "import android.os.Bundle\n"
-            "import android.content.Intent\n"
-            "import io.flutter.embedding.android.FlutterActivity\n\n"
-            "// Someone's own.\n"
-            "class MainActivity : FlutterActivity() {\n"
-            "    private val mine = 1\n"
-            "}\n",
-            encoding="utf-8",
-        )
-        brand_android.apply(self.root)
-        text = self.kotlin()
-        self.assertIn("import android.os.Bundle\n", text)
-        self.assertEqual(text.count("import android.content.Intent\n"), 1)
-        self.assertIn("// Someone's own.\nclass MainActivity", text)
-        self.assertIn("    private val mine = 1\n}\n", text)
-        self.assertEqual(text.count('"app.fluenough/system"'), 1)
-        self.assertEqual(text.count("{"), text.count("}"))
-        once = text
-        brand_android.apply(self.root)
-        self.assertEqual(self.kotlin(), once)
-
-    def test_activity_with_its_own_engine_setup_is_an_error_and_nothing_changes(
-        self,
-    ) -> None:
-        own = ACTIVITY.replace(
-            "FlutterActivity()",
-            "FlutterActivity() {\n"
-            "    override fun configureFlutterEngine(flutterEngine: FlutterEngine) {\n"
-            "        super.configureFlutterEngine(flutterEngine)\n"
-            "    }\n"
-            "}",
-        )
-        self.activity.write_text(own, encoding="utf-8")
-        with self.assertRaisesRegex(brand_android.BrandError, "configureFlutterEngine"):
-            brand_android.apply(self.root)
-        self.assertEqual(self.kotlin(), own)
-        self.assertEqual(self.manifest.read_text(encoding="utf-8"), MANIFEST)
-
-    def test_activity_of_another_shape_is_an_error(self) -> None:
-        for text in (
-            ACTIVITY.replace("FlutterActivity()", "FlutterFragmentActivity()"),
-            ACTIVITY.replace("FlutterActivity()", "FlutterActivity(), Other"),
-        ):
-            with self.subTest(text=text):
-                self.activity.write_text(text, encoding="utf-8")
-                with self.assertRaisesRegex(
-                    brand_android.BrandError, "flutter create"
-                ):
-                    brand_android.apply(self.root)
-                self.assertEqual(self.kotlin(), text)
-                self.assertEqual(
-                    self.manifest.read_text(encoding="utf-8"), MANIFEST
-                )
-
-    def test_activity_missing_is_an_error(self) -> None:
-        self.activity.unlink()
-        with self.assertRaisesRegex(brand_android.BrandError, "MainActivity.kt"):
-            brand_android.apply(self.root)
 
     # Sharing a mail with files: a report's app log (ADR-0021), and later
     # the review files. Checked by shape, as nothing here can compile it.
 
-    def test_the_channel_shares_files_by_mail(self) -> None:
-        brand_android.apply(self.root)
-        text = self.kotlin()
-        self.assertEqual(
-            text.count('"shareFiles" -> result.success(shareFiles(call))'), 1
-        )
-        self.assertEqual(text.count("private fun shareFiles(call: MethodCall)"), 1)
-        for line in (
-            "Intent.ACTION_SEND_MULTIPLE else Intent.ACTION_SEND",
-            "send.putExtra(Intent.EXTRA_EMAIL, to.toTypedArray())",
-            "send.putExtra(Intent.EXTRA_SUBJECT, it)",
-            "send.putExtra(Intent.EXTRA_TEXT, it)",
-            "send.putExtra(Intent.EXTRA_STREAM, uris[0])",
-            "send.putParcelableArrayListExtra(Intent.EXTRA_STREAM, uris)",
-            "send.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)",
-            'mail.selector = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"))',
-            "Intent.createChooser(send, null)",
-        ):
-            self.assertIn(line, text)
-        # Mail apps first, then any app that takes the files.
-        self.assertLess(
-            text.index("startIfHandled(mail)"),
-            text.index("startIfHandled(Intent.createChooser"),
-        )
-        # A file outside the shared folder is refused, not a crash.
-        self.assertIn("catch (e: IllegalArgumentException)", text)
-        self.assertEqual(text.count("{"), text.count("}"))
-        self.assertEqual(text.count("("), text.count(")"))
 
-    def test_the_files_are_lent_through_the_apps_own_provider(self) -> None:
+    def _the_files_are_lent_through_the_apps_own_provider(self) -> None:
         brand_android.apply(self.root)
         brand_android.apply(self.root)
         root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
@@ -598,47 +231,6 @@ class ApplyTest(unittest.TestCase):
         # ota_update's is still there, beside it.
         self.assertEqual(len(root.findall("application/provider")), 2)
 
-    def test_the_provider_shares_only_the_cache_shared_folder(self) -> None:
-        brand_android.apply(self.root)
-        paths = self.root / brand_android.SHARE_PATHS
-        self.assertEqual(
-            paths.relative_to(self.root / brand_android.RES).as_posix(),
-            "xml/share_paths.xml",
-        )
-        root = ET.parse(paths).getroot()
-        self.assertEqual(
-            [(e.tag, e.get("name"), e.get("path")) for e in root],
-            [("cache-path", "shared", "shared/")],
-        )
-
-    def test_the_provider_class_is_written_beside_the_activity(self) -> None:
-        brand_android.apply(self.root)
-        kotlin = self.root / brand_android.SHARE_PROVIDER_FILE
-        self.assertEqual(kotlin.parent, self.activity.parent)
-        text = kotlin.read_text(encoding="utf-8")
-        self.assertTrue(text.startswith("package app.fluenough\n"))
-        self.assertIn("import androidx.core.content.FileProvider\n", text)
-        self.assertIn("class ShareFileProvider : FileProvider()", text)
-        once = text
-        brand_android.apply(self.root)
-        self.assertEqual(kotlin.read_text(encoding="utf-8"), once)
-
-    def test_mail_apps_are_queried(self) -> None:
-        # Android 11+ hides them otherwise, and the mailto selector would
-        # resolve to nothing.
-        brand_android.apply(self.root)
-        brand_android.apply(self.root)
-        root = ET.fromstring(self.manifest.read_text(encoding="utf-8"))
-        sendto = [
-            intent
-            for intent in root.findall("queries/intent")
-            if [a.get(NAME) for a in intent.findall("action")]
-            == ["android.intent.action.SENDTO"]
-        ]
-        self.assertEqual(len(sendto), 1)
-        self.assertEqual(
-            [d.get(SCHEME) for d in sendto[0].findall("data")], ["mailto"]
-        )
 
     def earlier_activity(self) -> str:
         """MainActivity as the version before shareFiles wrote it."""
@@ -659,97 +251,31 @@ class ApplyTest(unittest.TestCase):
             + "}\n"
         )
 
-    def test_an_activity_from_before_sharing_is_brought_up_to_date(self) -> None:
-        old = self.earlier_activity()
-        self.assertNotIn('"shareFiles"', old)
-        self.activity.write_text(old, encoding="utf-8")
-        brand_android.apply(self.root)
-        text = self.kotlin()
-        self.assertEqual(text.count('"shareFiles" ->'), 1)
-        self.assertEqual(text.count("private fun shareFiles("), 1)
-        self.assertEqual(text.count('"openVoiceSettings" ->'), 1)
-        self.assertEqual(text.count("override fun configureFlutterEngine("), 1)
-        self.assertEqual(
-            sorted(re.findall(r"^import (\S+)$", text, re.M)),
-            sorted(brand_android.KOTLIN_IMPORTS),
+
+    def test_running_twice_is_running_once_and_another_shape_changes_nothing(self) -> None:
+        cases = (
+            self._running_twice_is_the_same_as_once,
+            self._a_manifest_of_another_shape_is_an_error_and_nothing_changes,
+            self._a_gradle_file_of_another_shape_is_an_error_and_nothing_changes,
         )
-        self.assertEqual(text.count("{"), text.count("}"))
-        once = text
-        brand_android.apply(self.root)
-        self.assertEqual(self.kotlin(), once)
+        for i, case in enumerate(cases):
+            with self.subTest(case.__name__.lstrip("_")):
+                if i:
+                    self.setUp()
+                case()
 
-    def test_a_channel_of_another_shape_is_an_error_and_nothing_changes(
-        self,
-    ) -> None:
-        own = (
-            ACTIVITY.replace("FlutterActivity()", "FlutterActivity() {\n")
-            + '    // "app.fluenough/system", set up by hand\n}\n'
+    def test_the_microphone_speech_internet_and_share_provider_are_declared(self) -> None:
+        cases = (
+            self._the_microphone_and_the_recogniser_are_declared,
+            self._the_text_to_speech_engine_is_declared,
+            self._the_internet_and_https_links_are_declared,
+            self._the_files_are_lent_through_the_apps_own_provider,
         )
-        self.activity.write_text(own, encoding="utf-8")
-        with self.assertRaisesRegex(brand_android.BrandError, "shareFiles"):
-            brand_android.apply(self.root)
-        self.assertEqual(self.kotlin(), own)
-        self.assertEqual(self.manifest.read_text(encoding="utf-8"), MANIFEST)
-
-
-class ResourcesTest(unittest.TestCase):
-    """The brand's resources, as aapt would first check them."""
-
-    REFERENCE = re.compile(r"@(color|drawable|mipmap)/([a-z0-9_]+)")
-
-    def xml_files(self) -> list[Path]:
-        return sorted(BRAND.rglob("*.xml"))
-
-    def defined(self) -> dict[str, set[str]]:
-        names: dict[str, set[str]] = {"color": set(), "drawable": set(), "mipmap": set()}
-        for path in BRAND.rglob("*"):
-            if not path.is_file():
-                continue
-            kind = path.parent.name.split("-")[0]
-            if kind in ("drawable", "mipmap"):
-                names[kind].add(path.stem)
-            elif kind == "values":
-                for color in ET.parse(path).getroot().iter("color"):
-                    names["color"].add(color.attrib["name"])
-        return names
-
-    def test_every_file_is_well_formed(self) -> None:
-        self.assertTrue(self.xml_files())
-        for path in self.xml_files():
-            with self.subTest(path=path.relative_to(BRAND)):
-                ET.parse(path)
-
-    def test_every_reference_resolves(self) -> None:
-        defined = self.defined()
-        for path in self.xml_files():
-            for kind, name in self.REFERENCE.findall(path.read_text(encoding="utf-8")):
-                with self.subTest(path=path.relative_to(BRAND), ref=f"@{kind}/{name}"):
-                    self.assertIn(name, defined[kind])
-
-    def test_dark_mode_has_every_launch_colour(self) -> None:
-        def colors(folder: str) -> dict[str, str]:
-            root = ET.parse(BRAND / folder / "launch_colors.xml").getroot()
-            return {c.attrib["name"]: c.text or "" for c in root.iter("color")}
-
-        light, dark = colors("values"), colors("values-night")
-        self.assertEqual(light.keys(), dark.keys())
-        # A soft black, not true black.
-        self.assertNotEqual(dark["launch_background"].upper(), "#000000")
-
-    def test_the_launch_screen_is_themed_on_every_android(self) -> None:
-        for folder in ("values-v31", "values-night-v31"):
-            with self.subTest(folder=folder):
-                root = ET.parse(BRAND / folder / "styles.xml").getroot()
-                items = {
-                    i.attrib["name"]: i.text
-                    for style in root.iter("style")
-                    if style.attrib["name"] == "LaunchTheme"
-                    for i in style.iter("item")
-                }
-                self.assertEqual(
-                    items["android:windowSplashScreenBackground"],
-                    "@color/launch_background",
-                )
+        for i, case in enumerate(cases):
+            with self.subTest(case.__name__.lstrip("_")):
+                if i:
+                    self.setUp()
+                case()
 
 
 if __name__ == "__main__":

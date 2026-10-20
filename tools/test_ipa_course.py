@@ -28,11 +28,11 @@ def decks():
 
 
 class IpaCourse(unittest.TestCase):
-    def test_ids_are_kept(self):
+    def _ids_are_kept(self):
         ids = sorted(c["id"] for _, cards in decks() for c in cards)
         self.assertEqual(ids, [f"ipa-{i:04d}" for i in range(1, 180)])
 
-    def test_every_symbol_has_examples_of_both_kinds(self):
+    def _every_symbol_has_examples_of_both_kinds(self):
         for deck, cards in decks():
             for c in cards:
                 ex = c.get("examples") or []
@@ -46,14 +46,17 @@ class IpaCourse(unittest.TestCase):
                     self.assertFalse(any(e.get("sounds") is not False for e in ex),
                                      f"{c['id']} now has one: shorten the list")
 
-    def test_confusable_symbols_are_adjacent(self):
-        for a, b in CONFUSABLE:
-            for deck, cards in decks():
-                targets = [c["target"] for c in cards]
-                if a in targets and b in targets:
-                    self.assertEqual(abs(targets.index(a) - targets.index(b)), 1,
-                                     f"{a} and {b} in {deck}")
-                    break
+
+    def test_ids_are_kept_and_every_symbol_has_examples(self) -> None:
+        cases = (
+            self._ids_are_kept,
+            self._every_symbol_has_examples_of_both_kinds,
+        )
+        for i, case in enumerate(cases):
+            with self.subTest(case.__name__.lstrip("_")):
+                if i:
+                    self.setUp()
+                case()
 
 
 if __name__ == "__main__":

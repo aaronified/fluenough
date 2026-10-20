@@ -40,12 +40,12 @@ class PrepareReleaseTest(unittest.TestCase):
     def read(self, name):
         return (self.root / name).read_text(encoding="utf-8")
 
-    def test_bumps_version_files(self):
+    def _bumps_version_files(self):
         prepare_release.prepare(self.root, "0.5.2", "2026-10-20")
         self.assertIn("version: 0.5.2+15\n", self.read("pubspec.yaml"))
         self.assertIn("version = '0.5.2';", self.read("lib/app/app_info.dart"))
 
-    def test_moves_changelog_body(self):
+    def _moves_changelog_body(self):
         prepare_release.prepare(self.root, "0.5.2", "2026-10-20")
         text = self.read("CHANGELOG.md")
         self.assertIn(
@@ -55,7 +55,7 @@ class PrepareReleaseTest(unittest.TestCase):
         )
         self.assertEqual(text.count("A new thing"), 1)
 
-    def test_empty_unreleased_fails_and_writes_nothing(self):
+    def _empty_unreleased_fails_and_writes_nothing(self):
         self.write(
             "CHANGELOG.md",
             CHANGELOG.replace("### Added\n\n- A new thing (#1).\n\n", ""),
@@ -65,23 +65,56 @@ class PrepareReleaseTest(unittest.TestCase):
         self.assertEqual(self.read("pubspec.yaml"), PUBSPEC)
         self.assertEqual(self.read("lib/app/app_info.dart"), APP_INFO)
 
-    def test_not_higher_fails(self):
+    def _not_higher_fails(self):
         for version in ("0.5.1", "0.5.0", "0.4.9"):
             with self.assertRaisesRegex(prepare_release.ReleaseError, "not higher"):
                 prepare_release.prepare(self.root, version, "2026-10-20")
         self.assertEqual(self.read("pubspec.yaml"), PUBSPEC)
 
-    def test_bad_version_fails(self):
+    def _bad_version_fails(self):
         with self.assertRaises(prepare_release.ReleaseError):
             prepare_release.prepare(self.root, "v0.5.2", "2026-10-20")
 
-    def test_unreleased_as_last_section(self):
+    def _unreleased_as_last_section(self):
         self.write("CHANGELOG.md", "# Changelog\n\n## [Unreleased]\n\n- Only.\n")
         prepare_release.prepare(self.root, "0.6.0", "2026-10-20")
         self.assertEqual(
             self.read("CHANGELOG.md"),
             "# Changelog\n\n## [Unreleased]\n\n## [0.6.0] - 2026-10-20\n\n- Only.\n",
         )
+
+    def test_bumps_both_version_files(self) -> None:
+        cases = (
+            self._bumps_version_files,
+        )
+        for i, case in enumerate(cases):
+            with self.subTest(case.__name__.lstrip("_")):
+                if i:
+                    self.setUp()
+                case()
+
+    def test_moves_the_changelog_body(self) -> None:
+        cases = (
+            self._moves_changelog_body,
+            self._unreleased_as_last_section,
+        )
+        for i, case in enumerate(cases):
+            with self.subTest(case.__name__.lstrip("_")):
+                if i:
+                    self.setUp()
+                case()
+
+    def test_refuses_an_empty_or_not_higher_release(self) -> None:
+        cases = (
+            self._empty_unreleased_fails_and_writes_nothing,
+            self._not_higher_fails,
+            self._bad_version_fails,
+        )
+        for i, case in enumerate(cases):
+            with self.subTest(case.__name__.lstrip("_")):
+                if i:
+                    self.setUp()
+                case()
 
 
 if __name__ == "__main__":
