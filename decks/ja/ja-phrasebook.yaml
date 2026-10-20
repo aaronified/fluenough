@@ -97,9 +97,6 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases:
-      - { word: "いって", base: "いう", reading: "iu" }
-      - { word: "ください", base: "くださる", reading: "kudasaru" }
   - id: "ja-0057"
     target: "ゆっくりはなしてください。"
     reading: "yukkuri hanashite kudasai."
@@ -109,9 +106,6 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases:
-      - { word: "はなして", base: "はなす", reading: "hanasu" }
-      - { word: "ください", base: "くださる", reading: "kudasaru" }
   - id: "ja-0058"
     target: "えいごをはなせますか。"
     reading: "eigo wo hanasemasu ka?"
@@ -121,10 +115,6 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases:
-      - { word: "えいご", base: "えいご", reading: "eigo" }
-      - { word: "を", base: "を", reading: "wo" }
-      - { word: "はなせます", base: "はなす", reading: "hanasu" }
   - id: "ja-0059"
     target: "いくらですか。"
     reading: "ikura desu ka?"
@@ -134,22 +124,15 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases:
-      - { word: "いくら", base: "いくら", reading: "ikura" }
-      - { word: "です", base: "です", reading: "desu" }
   - id: "ja-0060"
     target: "…はどこですか。"
     reading: "... wa doko desu ka?"
-    ipa: "… wa doko desɯ ka"
+    ipa: "wa doko desɯ ka"
     pos: "phrase"
     tags: ["polite"]
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases:
-      - { word: "は", base: "は", reading: "wa" }
-      - { word: "どこ", base: "どこ", reading: "doko" }
-      - { word: "です", base: "です", reading: "desu" }
   - id: "ja-0061"
     target: "トイレはどこですか。"
     reading: "toire wa doko desu ka?"
@@ -159,11 +142,6 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases:
-      - { word: "トイレ", base: "トイレ", reading: "toire" }
-      - { word: "は", base: "は", reading: "wa" }
-      - { word: "どこ", base: "どこ", reading: "doko" }
-      - { word: "です", base: "です", reading: "desu" }
   - id: "ja-0062"
     target: "おねがいします。"
     reading: "onegai shimasu."
@@ -178,15 +156,12 @@ cards:
   - id: "ja-0063"
     target: "…をください。"
     reading: "... wo kudasai."
-    ipa: "… o kɯdasai"
+    ipa: "o kɯdasai"
     pos: "phrase"
     tags: ["polite"]
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases:
-      - { word: "を", base: "を", reading: "wo" }
-      - { word: "ください", base: "くださる", reading: "kudasaru" }
   - id: "ja-0064"
     target: "たすけてください。"
     reading: "tasukete kudasai."
@@ -196,9 +171,6 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases:
-      - { word: "たすけて", base: "たすける", reading: "tasukeru" }
-      - { word: "ください", base: "くださる", reading: "kudasaru" }
   - id: "ja-0065"
     target: "わたしのなまえは…です。"
     reading: "watashi no namae wa ... desu."
@@ -208,10 +180,6 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { word: "わたし", base: "わたし", reading: "watashi" }
-      - { word: "の", base: "の", reading: "no" }
-      - { word: "なまえ", base: "なまえ", reading: "namae" }
-      - { word: "は", base: "は", reading: "wa" }
       - { word: "です", base: "です", reading: "desu" }
   - id: "ja-0066"
     target: "わたしは…からきました。"
@@ -221,8 +189,3 @@ cards:
     phrasebook: true
     notes:
       - { id: "n1", kind: "note" }
-    bases:
-      - { word: "わたし", base: "わたし", reading: "watashi" }
-      - { word: "は", base: "は", reading: "wa" }
-      - { word: "から", base: "から", reading: "kara" }
-      - { word: "きました", base: "くる", reading: "kuru" }
