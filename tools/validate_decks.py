@@ -3824,11 +3824,14 @@ def _check_layer_rules(r: Report, raw: dict, core: dict, core_id: str) -> list[o
 def _words(text: str) -> list[str]:
     """The words of [text], for comparing with the words decks teach: split
     at spaces and punctuation, but not at an apostrophe inside a word, as in
-    ক’রে, and without numbers. Never used to change what is stored."""
+    ক’রে, and without numbers. A braille cell, though Unicode files it as a
+    symbol, is a letter of its script, so ⠉⠁⠞ is one word (ADR-0043). Never
+    used to change what is stored."""
     words = []
     for chunk in text.split():
         spaced = "".join(
-            " " if unicodedata.category(ch)[0] in "PSZ" and ch not in "’'" else ch
+            " " if unicodedata.category(ch)[0] in "PSZ" and ch not in "’'"
+            and not "\u2800" <= ch <= "\u28ff" else ch
             for ch in chunk)
         for word in spaced.split():
             word = word.strip("’'")

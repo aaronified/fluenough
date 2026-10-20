@@ -113,8 +113,9 @@ void main() {
     // Only Telugu, learned, until the other languages are unfolded (#463).
     expect(find.byType(LanguageVoiceCard), findsOneWidget);
     await _tap(tester, find.text(l10n.voicesOtherLanguages));
-    // The IPA has no voice of its own, so it has no card (ADR-0041).
-    final voiced = state.languages.where((l) => !l.isIpa).length;
+    // A notation, the IPA or braille, has no voice of its own, so it has
+    // no card (ADR-0041, ADR-0043).
+    final voiced = state.languages.where((l) => !l.isNotation).length;
     final cards = tester.widgetList<LanguageVoiceCard>(
       find.byType(LanguageVoiceCard),
     );
@@ -123,7 +124,7 @@ void main() {
     // A course's other voices, such as ur-PK beside hi-IN, list too (#641).
     final otherVoices = <LanguageInfo>[
       for (final l in state.languages)
-        if (!l.isIpa)
+        if (!l.isNotation)
           for (final block in state.voiceBlocksOf(l.code))
             if (block.ttsTag != l.ttsTag) block,
     ].length;
