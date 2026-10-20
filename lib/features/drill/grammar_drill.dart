@@ -215,7 +215,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
           : null,
       latin: session.transliterating,
       reading: session.transliterating ? reading : null,
-      readingFirst: !session.learnsAlphabet,
+      readingFirst: session.readsFirst,
       speaker: session.canPlay
           ? Speaker(onPlay: session.play, playing: session.playing)
           : null,

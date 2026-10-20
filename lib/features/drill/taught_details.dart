@@ -35,7 +35,7 @@ enum TaughtReading {
   /// first for a language learned without its alphabet (as recognition
   /// does), else under the word as Latin-letter readings says.
   static TaughtReading inReview(DrillSession session) =>
-      session.learnsAlphabet ? bySetting : first;
+      session.readsFirst ? first : bySetting;
 }
 
 /// What a word's lesson showed of it (ADR-0024), laid out as the teach card
