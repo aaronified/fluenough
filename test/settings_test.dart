@@ -46,7 +46,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'features/profiles/support.dart';
+import 'support/profiles.dart';
 import 'support/settings_pages.dart';
 import 'support/harness.dart';
 
