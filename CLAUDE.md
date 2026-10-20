@@ -52,14 +52,16 @@ wherever the table above allows it.
   to a branch frequently"). Long work is committed in small steps and pushed
   to a work branch (`wip/<topic>`) as it goes, so nothing is lost if a
   session ends. Only checked, approved work reaches main or `decks-next`.
-- **Releases.** Bump `pubspec.yaml` and `lib/app/app_info.dart`, check with
-  `tools/check_release_version.py`, write the release's CHANGELOG.md entry
-  (owner, 2026-10-16: "I will not write changelog"), and open the release
-  pull request. The owner tags the release. Deck content (new or filled decks, paths)
-  is not part of a release and stays out of its CHANGELOG entry (owner,
-  2026-10-19: "This has nothing to do with the release. It is content."). The release
-  pull request needs no CI: merge it once opened (owner, 2026-10-19: "The
-  release PR doesn't need CI. Just merge it").
+- **Releases** (owner, 2026-10-20: "Can the release workflow not
+  automatically take care of the release commit? So that I can cut releases
+  just from the UI?"). Each pull request adds its own CHANGELOG.md line under
+  `## [Unreleased]`; deck content (new or filled decks, paths) is not part of
+  a release and stays out of it (owner, 2026-10-19: "This has nothing to do
+  with the release. It is content."). The owner releases by running the
+  Release workflow from the Actions tab, from main, with the version (like
+  `0.5.3`): it bumps `pubspec.yaml` and `lib/app/app_info.dart`, dates the
+  changelog, commits, tags and builds (`tools/prepare_release.py`). There is
+  no release pull request.
 - **Questions.** Ask them as soon as they come up. Record the owner's
   answers, quoted and dated, in the plan and the issue they belong to.
 - **Readings.** Readings are *based on* ISO 15919. Never say they strictly
