@@ -1746,6 +1746,42 @@
       ]
     },
     {
+      "code": "qbe",
+      "name": "English Braille",
+      "icon": "⠃",
+      "script": "braille",
+      "script_decks": false,
+      "natives": [{"code": "en", "name": "English"}],
+      "size": 24707,
+      "path": ["qbe-letters-a-j", "qbe-letters-k-t", "qbe-letters-u-z", "qbe-capitals", "qbe-numbers", "qbe-punctuation"],
+      "units": [
+        {"decks": ["qbe-letters-a-j"], "has": {"en": 0}},
+        {"decks": ["qbe-letters-k-t"], "has": {"en": 0}},
+        {"decks": ["qbe-letters-u-z"], "has": {"en": 0}},
+        {"decks": ["qbe-capitals"], "has": {"en": 0}},
+        {"decks": ["qbe-numbers"], "has": {"en": 0}},
+        {"decks": ["qbe-punctuation"], "has": {"en": 0}},
+        {"decks": []}
+      ],
+      "files": [
+        {"content_sha256": "14a9f6a56e046cb0b1f6fa0bb3458ad6f715f337e6de198aef5d143f92e96e68", "deck": "qbe-capitals", "kind": "vocab", "part": "core", "path": "decks/qbe/qbe-capitals.yaml", "schema": 1, "sha256": "14a9f6a56e046cb0b1f6fa0bb3458ad6f715f337e6de198aef5d143f92e96e68", "size": 1232},
+        {"content_sha256": "f98458625d0b32b3689bc26c1ed97033c00eee622ef8174d6f1c0c7066f89fc5", "deck": "qbe-letters-a-j", "kind": "vocab", "part": "core", "path": "decks/qbe/qbe-letters-a-j.yaml", "schema": 1, "sha256": "f98458625d0b32b3689bc26c1ed97033c00eee622ef8174d6f1c0c7066f89fc5", "size": 1668},
+        {"content_sha256": "2333936b7b4c28a947aa2a31132481e2236107fa995dba652fe0ef5072105822", "deck": "qbe-letters-k-t", "kind": "vocab", "part": "core", "path": "decks/qbe/qbe-letters-k-t.yaml", "schema": 1, "sha256": "2333936b7b4c28a947aa2a31132481e2236107fa995dba652fe0ef5072105822", "size": 1668},
+        {"content_sha256": "6aef796fc2ed821b6bb3213089ad03c57d1fb94a748d0b67f644026898a09016", "deck": "qbe-letters-u-z", "kind": "vocab", "part": "core", "path": "decks/qbe/qbe-letters-u-z.yaml", "schema": 1, "sha256": "6aef796fc2ed821b6bb3213089ad03c57d1fb94a748d0b67f644026898a09016", "size": 1172},
+        {"content_sha256": "1ceb03ac9442e0d5783b7245cfd89f3ca47cf1ba9af39719203dbe1708a2f17a", "deck": "qbe-numbers", "kind": "vocab", "part": "core", "path": "decks/qbe/qbe-numbers.yaml", "schema": 1, "sha256": "1ceb03ac9442e0d5783b7245cfd89f3ca47cf1ba9af39719203dbe1708a2f17a", "size": 2091},
+        {"content_sha256": "3d01a791bd88c35b5ff801c44ef6ec19104b17308338065e6c6d3712ff1bc049", "kind": "path", "path": "decks/qbe/qbe-path.yaml", "schema": 1, "sha256": "3d01a791bd88c35b5ff801c44ef6ec19104b17308338065e6c6d3712ff1bc049", "size": 967},
+        {"content_sha256": "ddfd139666b2f32650ed2e93259a32b1dd7eb18c2ec18a3f46aa8071c88c5ccc", "deck": "qbe-punctuation", "kind": "vocab", "part": "core", "path": "decks/qbe/qbe-punctuation.yaml", "schema": 1, "sha256": "ddfd139666b2f32650ed2e93259a32b1dd7eb18c2ec18a3f46aa8071c88c5ccc", "size": 2045},
+        {"content_sha256": "80b8d93bf8f2ab52e494bab74153b5335ebc37f0d2f49f7cbcb73d387a3e17e9", "kind": "script", "part": "core", "path": "decks/qbe/qbe-script.yaml", "schema": 1, "sha256": "80b8d93bf8f2ab52e494bab74153b5335ebc37f0d2f49f7cbcb73d387a3e17e9", "size": 1048},
+        {"content_sha256": "f7a616ad3b6081bc380785ab103a8b2317d020e46c4670ce6fa90d3c0d16b87c", "deck": "qbe-capitals", "kind": "layer", "native": "en", "path": "decks/qbe/en/qbe-en-capitals.yaml", "schema": 1, "sha256": "f7a616ad3b6081bc380785ab103a8b2317d020e46c4670ce6fa90d3c0d16b87c", "size": 1561},
+        {"content_sha256": "5fb138ae531cabd2f7fcc662693e725afe2702d49ba4166628a05e7d85074e28", "deck": "qbe-letters-a-j", "kind": "layer", "native": "en", "path": "decks/qbe/en/qbe-en-letters-a-j.yaml", "schema": 1, "sha256": "5fb138ae531cabd2f7fcc662693e725afe2702d49ba4166628a05e7d85074e28", "size": 1675},
+        {"content_sha256": "6edcdfb2ad7e3ca52baa296b2ac7b4d99f63fea6c263a095b2975daa9394d93b", "deck": "qbe-letters-k-t", "kind": "layer", "native": "en", "path": "decks/qbe/en/qbe-en-letters-k-t.yaml", "schema": 1, "sha256": "6edcdfb2ad7e3ca52baa296b2ac7b4d99f63fea6c263a095b2975daa9394d93b", "size": 1349},
+        {"content_sha256": "2806e6b52038a986d6b2e4f5f411587b30e71c200895acd362e73876e17cc303", "deck": "qbe-letters-u-z", "kind": "layer", "native": "en", "path": "decks/qbe/en/qbe-en-letters-u-z.yaml", "schema": 1, "sha256": "2806e6b52038a986d6b2e4f5f411587b30e71c200895acd362e73876e17cc303", "size": 1267},
+        {"content_sha256": "fc755e0eec64ae74ddf785fa6f61c5d898559924ba221cd5a7cd1b08773450ab", "deck": "qbe-numbers", "kind": "layer", "native": "en", "path": "decks/qbe/en/qbe-en-numbers.yaml", "schema": 1, "sha256": "fc755e0eec64ae74ddf785fa6f61c5d898559924ba221cd5a7cd1b08773450ab", "size": 2293},
+        {"content_sha256": "85d20d8124ca4af9777547f7f46b7f6989f977d413504f2cc72c5252bad1c000", "deck": "qbe-punctuation", "kind": "layer", "native": "en", "path": "decks/qbe/en/qbe-en-punctuation.yaml", "schema": 1, "sha256": "85d20d8124ca4af9777547f7f46b7f6989f977d413504f2cc72c5252bad1c000", "size": 2346},
+        {"content_sha256": "966c0d20b71e7688890717088ade3c1f1d408ed7949030f6594da55044303688", "kind": "layer", "native": "en", "path": "decks/qbe/en/qbe-en-script.yaml", "schema": 1, "sha256": "966c0d20b71e7688890717088ade3c1f1d408ed7949030f6594da55044303688", "size": 2325}
+      ]
+    },
+    {
       "code": "te",
       "name": "Telugu",
       "own_name": "తెలుగు",
