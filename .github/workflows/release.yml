@@ -84,7 +84,11 @@ jobs:
       # GITHUB_TOKEN cannot bypass. Deploy keys are on its bypass list, so the
       # release commit is pushed with one: RELEASE_DEPLOY_KEY is the private
       # half of an SSH deploy key of this repository with write access.
-      - name: Check the release deploy key is set
+      # The key is rebuilt from whatever the secret holds, so a paste that
+      # lost its BEGIN and END lines, its line breaks or its last newline
+      # still works; ssh-keygen then checks it is a private key before
+      # anything is committed.
+      - name: Read the release deploy key
         env:
           RELEASE_DEPLOY_KEY: ${{ secrets.RELEASE_DEPLOY_KEY }}
         run: |
@@ -92,11 +96,25 @@ jobs:
             echo "::error::The RELEASE_DEPLOY_KEY secret is not set, so the release commit cannot be pushed to main. See the comment above this step in .github/workflows/release.yml."
             exit 1
           fi
+          key="$RUNNER_TEMP/release_key"
+          body=$(printf '%s' "$RELEASE_DEPLOY_KEY" \
+            | sed -E 's/-----(BEGIN|END) [A-Z ]*PRIVATE KEY-----//g' \
+            | tr -d ' \t\r\n')
+          {
+            echo "-----BEGIN OPENSSH PRIVATE KEY-----"
+            printf '%s\n' "$body" | fold -w 70
+            echo "-----END OPENSSH PRIVATE KEY-----"
+          } > "$key"
+          chmod 600 "$key"
+          if ! ssh-keygen -y -f "$key" > /dev/null; then
+            rm -f "$key"
+            echo "::error::RELEASE_DEPLOY_KEY is not an OpenSSH private key. Paste the private file made by ssh-keygen (not the .pub)."
+            exit 1
+          fi
 
       - uses: actions/checkout@v7
         with:
           ref: main
-          ssh-key: ${{ secrets.RELEASE_DEPLOY_KEY }}
 
       # Standard library only, so it runs on the runner's own python3. Fails
       # with a message when [Unreleased] is empty or the version is not higher.
@@ -115,7 +133,8 @@ jobs:
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
           git add pubspec.yaml lib/app/app_info.dart CHANGELOG.md
           git commit -m "Release $VERSION"
-          git push origin HEAD:main
+          GIT_SSH_COMMAND="ssh -i $RUNNER_TEMP/release_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new" \
+            git push "git@github.com:${GITHUB_REPOSITORY}.git" HEAD:main
           # The tag goes up with GITHUB_TOKEN, not the deploy key: a tag
           # pushed with a deploy key would start this workflow a second time,
           # building the release twice.

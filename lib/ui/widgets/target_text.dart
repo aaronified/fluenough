@@ -44,6 +44,7 @@ class TargetText extends StatelessWidget {
     this.color,
     this.textAlign = TextAlign.center,
     this.card,
+    this.scripts,
   }) : _sizing = _Sizing.fixed;
 
   /// The big text on a drill card, sized by its length and the card scale.
@@ -55,6 +56,7 @@ class TargetText extends StatelessWidget {
     this.color,
     this.textAlign = TextAlign.center,
     this.card,
+    this.scripts,
   }) : fontSize = null,
        _sizing = _Sizing.hero;
 
@@ -68,6 +70,7 @@ class TargetText extends StatelessWidget {
     this.color,
     this.textAlign = TextAlign.center,
     this.card,
+    this.scripts,
   }) : _sizing = _Sizing.card;
 
   /// [text] as it is, in [language]: a spelling of a card, shown beneath.
@@ -79,7 +82,8 @@ class TargetText extends StatelessWidget {
     this.color,
     this.textAlign,
     this._sizing,
-  ) : card = null;
+  ) : card = null,
+      scripts = null;
 
   final String text;
   final LanguageInfo language;
@@ -98,6 +102,10 @@ class TargetText extends StatelessWidget {
   /// smaller. Null shows [text] as given.
   final Card? card;
 
+  /// The scripts to show [card] in where they are chosen but not saved yet,
+  /// as placement's are (#650); null for those the learner learns.
+  final Set<String>? scripts;
+
   @override
   Widget build(BuildContext context) {
     final card = this.card;
@@ -106,7 +114,7 @@ class TargetText extends StatelessWidget {
     return ListenableBuilder(
       listenable: state.settings,
       builder: (context, _) {
-        final shown = state.targetShown(card, language);
+        final shown = state.targetShown(card, language, scripts: scripts);
         final main = shown.text == text
             ? _build(context)
             : TargetText._raw(
@@ -118,7 +126,7 @@ class TargetText extends StatelessWidget {
                 textAlign,
                 _sizing,
               )._build(context);
-        final others = state.otherSpellings(card, language);
+        final others = state.otherSpellings(card, language, scripts: scripts);
         if (others.isEmpty) return main;
         return Column(
           mainAxisSize: MainAxisSize.min,
