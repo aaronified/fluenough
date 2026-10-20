@@ -1,25 +1,15 @@
-import 'dart:math';
-
 import '../core/models/card.dart';
 import '../core/models/drill_mode.dart';
 import '../core/scheduling/ask.dart';
-import '../core/scheduling/fsrs.dart';
 import 'app_state.dart';
 import 'placement.dart';
 import 'placement_plan.dart';
 import 'skill.dart';
 
-/// The soonest a placed card first comes due, in days after placement
-/// (`docs/plans/placement-v2.md`, "Placed cards get reviews").
-const int kPlacedFirstDueMin = 14;
-
-/// One past the latest: first due dates fall on days 14 to 27, so every
-/// placed card is due within four weeks.
-const int kPlacedFirstDueEnd = 28;
-
-/// The grade a placement entry is recorded with: Good (4), as if the card
-/// was answered once on the day of placement.
-const int _placedGrade = 4;
+/// The grade a placement entry is recorded with: 5, which Easy is when a
+/// review has no answer given (`Fsrs.ratingOf`), so that a card placement
+/// found known comes up rarely.
+const int _placedGrade = 5;
 
 typedef _Credit = ({String deckId, DrillMode mode, String? script});
 
@@ -39,18 +29,15 @@ extension PlacementCredit on AppState {
   /// - The cards of the other decks in [placed] get a review in each skill
   ///   the learner has switched on.
   ///
-  /// The reviews are placement entries: Good answers given on the day of
-  /// placement, dated so that the first due dates are spread evenly over
-  /// days [kPlacedFirstDueMin] to [kPlacedFirstDueEnd] after it, in an order
-  /// [random] shuffles (seed it in tests), so that placement does not make
-  /// a pile of reviews on one day. A pair that already has a review keeps it:
-  /// a retake never replaces a real review.
+  /// The reviews are Easy answers given today, as if the learner had
+  /// mastered the card, so each first comes due after the Easy interval and the
+  /// card then comes up rarely. A pair that already has a review keeps it:
+  /// a retake changes nothing.
   int creditPlacement(
     String code, {
     required Set<String> placed,
     Map<String, ScriptStanding> standings = const <String, ScriptStanding>{},
     String? native,
-    Random? random,
   }) {
     final wanted = <String, List<_Credit>>{};
     void want(Card card, String deckId, DrillMode mode, String? script) {
@@ -97,32 +84,16 @@ extension PlacementCredit on AppState {
     }
     if (wanted.isEmpty) return 0;
 
-    final ids = wanted.keys.toList()..sort();
-    ids.shuffle(random ?? Random());
-    final base = now();
-    const span = kPlacedFirstDueEnd - kPlacedFirstDueMin;
+    final at = now();
     var written = 0;
-    for (final (i, id) in ids.indexed) {
-      final due = kPlacedFirstDueMin + i * span ~/ ids.length;
-      for (final credit in wanted[id]!) {
-        final interval = Fsrs.next(
-          null,
-          _placedGrade,
-          now: base,
-          rated: true,
-          parameters: progress.parameters.forPair((
-            cardId: id,
-            mode: credit.mode,
-          )),
-        ).intervalDays;
-        // Dated so that its interval ends on the day it is to come due: the
-        // log replays to the same state.
+    for (final MapEntry(key: id, value: credits) in wanted.entries) {
+      for (final credit in credits) {
         progress.record(
           deckId: credit.deckId,
           cardId: id,
           mode: credit.mode,
           grade: _placedGrade,
-          now: base.add(Duration(days: due - interval)),
+          now: at,
           script: credit.script,
           asked: Ask.own,
         );

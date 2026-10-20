@@ -38,6 +38,7 @@ import 'package:fluenough/core/decks/notation.dart';
 import 'package:fluenough/core/models/card.dart' as model;
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
+import 'package:fluenough/core/scheduling/fsrs.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
 import 'package:fluenough/core/tts/tts_engine.dart';
 import 'package:fluenough/features/decks/course_card.dart';
@@ -2665,30 +2666,20 @@ void main() {
           .firstWhere((s) => s.script == devanagari);
     });
 
-    Iterable<DateTime> firstDue(Iterable<ProgressKey> keys) => <DateTime>[
-      for (final key in keys)
-        state.progress.stateOf(key.cardId, key.mode)!.dueAt,
-    ];
-
-    Set<String> scriptDeckCards() => <String>{
-      for (final e in deva.decks)
-        if (e.isScript)
-          for (final c in e.cards) c.id,
+    Set<String> cardsOf(Iterable<DeckEntry> decks) => <String>{
+      for (final e in decks)
+        for (final c in e.cards) c.id,
     };
 
-    int days(DateTime due) => due.difference(state.now()).inDays;
-
-    test('a script read credits Read and Write, due in weeks 3 and 4, none in '
-        'the first', () {
+    test('a script read credits Read and Write, as Easy answers today', () {
       final placed = ScriptCheck.placedFor(deva.decks, ScriptStanding.reads);
       final written = state.creditPlacement(
         'hi',
         placed: placed,
         standings: <String, ScriptStanding>{devanagari: ScriptStanding.reads},
-        random: Random(4),
       );
       expect(written, greaterThan(0));
-      final cards = scriptDeckCards();
+      final cards = cardsOf(deva.decks.where((e) => e.isScript));
       final scripts = state.progress.scriptStates;
       for (final id in cards) {
         for (final mode in <DrillMode>[
@@ -2701,21 +2692,11 @@ void main() {
             reason: '$id $mode',
           );
         }
+        final due = state.progress.stateOf(id, DrillMode.recognition)!;
+        final easy = Fsrs.next(null, 5, now: state.now(), rated: true);
+        expect(due.dueAt, easy.dueAt, reason: 'the Easy interval, from today');
+        expect(due.lastReviewAt, state.now());
       }
-      final due = firstDue(<ProgressKey>[
-        for (final id in cards)
-          for (final mode in <DrillMode>[
-            DrillMode.recognition,
-            DrillMode.production,
-          ])
-            (cardId: id, mode: mode),
-      ]).toList();
-      for (final d in due) {
-        expect(days(d), inInclusiveRange(kPlacedFirstDueMin, 28));
-      }
-      // Spread, not piled: more than a few distinct days.
-      expect(due.map(days).toSet().length, greaterThan(5));
-
       final numbers = StatsNumbers.of(
         state.progress,
         now: state.now(),
@@ -2738,18 +2719,13 @@ void main() {
         'hi',
         placed: placed,
         standings: <String, ScriptStanding>{devanagari: ScriptStanding.joined},
-        random: Random(4),
       );
-      final credited = <String>{
-        for (final e in deva.decks)
-          if (placed.contains(e.id) && e.isScript)
-            for (final c in e.cards) c.id,
-      };
-      final reading = <String>{
-        for (final e in deva.decks)
-          if (!placed.contains(e.id) && e.isScript)
-            for (final c in e.cards) c.id,
-      }.difference(credited);
+      final credited = cardsOf(
+        deva.decks.where((e) => placed.contains(e.id) && e.isScript),
+      );
+      final reading = cardsOf(
+        deva.decks.where((e) => !placed.contains(e.id) && e.isScript),
+      ).difference(credited);
       final scripts = state.progress.scriptStates;
       expect(credited, isNotEmpty);
       expect(reading, isNotEmpty);
@@ -2776,34 +2752,18 @@ void main() {
       }
     });
 
-    test('word decks placed are credited the same way, and a retake keeps '
-        'what is there', () {
+    test('placed word decks are credited, and a retake changes nothing', () {
       final walked = state.walkDecks('hi').take(2).toList();
       final placed = <String>{for (final e in walked) e.id};
-      final written = state.creditPlacement(
-        'hi',
-        placed: placed,
-        random: Random(9),
-      );
-      expect(written, greaterThan(0));
-      final ids = <String>{
-        for (final e in walked)
-          for (final c in e.cards) c.id,
-      };
-      final due = <DateTime>[
+      expect(state.creditPlacement('hi', placed: placed), greaterThan(0));
+      final ids = cardsOf(walked);
+      final states = <ProgressKey, FsrsState>{
         for (final entry in state.progress.states.entries)
-          if (ids.contains(entry.key.cardId)) entry.value.dueAt,
-      ];
-      expect(due, isNotEmpty);
-      for (final d in due) {
-        expect(days(d), inInclusiveRange(kPlacedFirstDueMin, 28));
-      }
-      expect(due.map(days).toSet().length, greaterThan(5));
-      expect(
-        state.creditPlacement('hi', placed: placed, random: Random(1)),
-        0,
-        reason: 'a pair with a review keeps it',
-      );
+          if (ids.contains(entry.key.cardId)) entry.key: entry.value,
+      };
+      expect(states, isNotEmpty);
+      expect(state.creditPlacement('hi', placed: placed), 0);
+      expect(state.progress.log.length, states.length);
     });
   });
 }
