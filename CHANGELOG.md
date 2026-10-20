@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Find my level shows each word as drills do: in the scripts you learn, such as Perso-Arabic for Hindustani, with the other beneath when you learn both, and never the reading first when you already read one of the language's scripts through a language you know. A question about a word's form names the word once and offers only its forms, of which one alone is right.
+
+## [0.5.2] - 2026-10-20
+
 The app's database moves to version 9: each answer now records the script it was shown or typed in, and how it was asked. A backup made by this version can still be restored by 0.5.1, which passes the two new fields by. Going back to an older version after updating is not supported. Your progress is kept by card id, and no card id changed.
 
 ### Added

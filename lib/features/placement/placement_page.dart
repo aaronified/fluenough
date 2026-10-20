@@ -38,6 +38,7 @@ class PlacementPage extends StatefulWidget {
     this.random,
     this.checking = false,
     this.alphabet = const <String, bool>{},
+    this.scripts = const <String, Set<String>>{},
     this.natives = const <String, String>{},
     this.asked = const <String>{},
   });
@@ -58,6 +59,11 @@ class PlacementPage extends StatefulWidget {
   /// language picker has asked already ("Learn the script", #211): its
   /// alphabet stage is skipped.
   final Map<String, bool> alphabet;
+
+  /// The scripts each language is learned in, by code, where the language
+  /// picker's sheet chose them and they are not saved yet (#650): its
+  /// course and its cards follow them, as drills will.
+  final Map<String, Set<String>> scripts;
 
   /// The language each is learned from, by code, where the picker has
   /// asked already: its native stage is skipped.
@@ -115,8 +121,19 @@ class _PlacementPageState extends State<PlacementPage> {
   List<List<DeckEntry>> _units(AppState state) => state.courseUnits(
     _code,
     alphabet: _alphabet[_code],
+    scripts: widget.scripts[_code],
     native: _natives[_code],
   );
+
+  /// The scripts the language is learned in, where placement knows them
+  /// before they are saved: as the picker chose them, or as the alphabet
+  /// was answered here. Null for those saved.
+  Set<String>? _scripts(AppState state) {
+    if (widget.scripts[_code] case final scripts?) return scripts;
+    final alphabet = _alphabet[_code];
+    if (alphabet == null) return null;
+    return state.scriptsLearnedOf(_code, alphabet: alphabet);
+  }
 
   @override
   void didChangeDependencies() {
@@ -228,7 +245,7 @@ class _PlacementPageState extends State<PlacementPage> {
                   ),
           _Stage.check => _Check(
             language: language,
-            alphabet: _alphabet[_code] ?? true,
+            scripts: _scripts(state),
             question: question!,
             unit: placement!.unit,
             units: placement.units.length,
@@ -362,12 +379,14 @@ class _Alphabet extends StatelessWidget {
   }
 }
 
-/// One question: the target, alone, and the meanings to choose from;
-/// without the [alphabet], its reading first.
+/// One question: the target, alone, and the meanings to choose from, or
+/// for a form of a word in a table, the forms. The target is shown as a
+/// drill shows it (#650): in the [scripts] learned, or else those read
+/// already; its reading first only where neither is any of its language's.
 class _Check extends StatelessWidget {
   const _Check({
     required this.language,
-    required this.alphabet,
+    required this.scripts,
     required this.question,
     required this.unit,
     required this.units,
@@ -375,7 +394,9 @@ class _Check extends StatelessWidget {
   });
 
   final LanguageInfo language;
-  final bool alphabet;
+
+  /// The scripts learned, where not saved yet; null for those saved.
+  final Set<String>? scripts;
   final PlacementQuestion question;
   final int unit;
   final int units;
@@ -386,6 +407,13 @@ class _Check extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
+    final state = AppScope.of(context);
+    final card = question.card;
+    // The card's own deck's language: a script deck's may be written in
+    // the language's other script.
+    final written = state.deckOf(card)?.language ?? language;
+    final readsFirst = state.readsFirst(written, scripts: scripts);
+    final word = question.formOf;
     return ListView(
       padding: const EdgeInsetsDirectional.all(AppSizes.gutter),
       children: <Widget>[
@@ -404,18 +432,26 @@ class _Check extends StatelessWidget {
             color: scheme.surfaceContainerHigh,
             borderRadius: BorderRadius.circular(AppRadii.card),
           ),
-          child: switch (question.card.reading) {
-            final reading? when !alphabet => ReadingFirst(
+          child: switch (card.reading) {
+            final reading? when readsFirst => ReadingFirst(
               reading: reading,
-              target: question.card.target,
-              language: language,
+              target: card.target,
+              language: written,
               fontSize: 48,
             ),
-            _ => TargetText.hero(question.card.target, language: language),
+            _ => TargetText.hero(
+              card.target,
+              language: written,
+              card: card,
+              scripts: scripts,
+            ),
           },
         ),
         const SizedBox(height: 16),
-        Text(l10n.placementQuestion, style: theme.textTheme.titleMedium),
+        if (word == null)
+          Text(l10n.placementQuestion, style: theme.textTheme.titleMedium)
+        else
+          _formQuestion(context, state, written, word, readsFirst),
         const SizedBox(height: 12),
         for (final option in question.options) ...<Widget>[
           OutlinedButton(
@@ -430,6 +466,49 @@ class _Check extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  /// "Which form of घर (house, m) is this?": the word once, here, so that
+  /// the options are its forms alone. The word as the learner reads it: in
+  /// their script, where a card of the course spells it in that script, or
+  /// romanised where they read none.
+  Widget _formQuestion(
+    BuildContext context,
+    AppState state,
+    LanguageInfo written,
+    PlacementWord word,
+    bool readsFirst,
+  ) {
+    final l10n = AppLocalizations.of(context)!;
+    final shown = readsFirst
+        ? (text: word.reading ?? word.lemma, language: written)
+        : _lemmaShown(state, written, word.lemma);
+    return Text.rich(
+      quotingTarget(
+        l10n.placementFormQuestion(shown.text, word.gloss),
+        <String>[shown.text],
+        shown.language,
+      ),
+      style: Theme.of(context).textTheme.titleMedium,
+    );
+  }
+
+  /// [lemma] as [targetShown] shows a card of [language]'s course written
+  /// so; as it is where none is.
+  ({String text, LanguageInfo language}) _lemmaShown(
+    AppState state,
+    LanguageInfo language,
+    String lemma,
+  ) {
+    for (final entry in state.decks) {
+      if (entry.language.code != language.code) continue;
+      for (final card in entry.cards) {
+        if (card.target == lemma && card.targetScripts.isNotEmpty) {
+          return state.targetShown(card, entry.language, scripts: scripts);
+        }
+      }
+    }
+    return (text: lemma, language: language);
   }
 }
 
