@@ -59,7 +59,9 @@ class B1Unit {
 /// [complete] after, which carries no tag. A course whose path has no B1
 /// plan cannot show that its A1 units are written, so it is Alpha; the
 /// picker then says only that its levels are not mapped out, not that A1 is
-/// unfinished ([B1Progress.hasPlan]).
+/// unfinished ([B1Progress.hasPlan]). The IPA course has no levels (CEFR
+/// does not fit it, owner, 2026-10-20), so it is Complete once every unit of
+/// its path is written, else Alpha.
 enum CourseStage { alpha, beta, complete }
 
 /// [name], `A1`, `A2` or `B1`, as a [Milestone]; null for anything else.
@@ -90,7 +92,10 @@ class B1Progress {
   /// What [units], a course's path in order, say: completeness is
   /// Σ min(words a unit has, its planned words) ÷ Σ planned words, over the
   /// units up to the one marked B1. A unit not written counts 0.
-  factory B1Progress.of(List<B1Unit> units) {
+  ///
+  /// [isIpa] marks the IPA course, which has no milestones: its stage is
+  /// [CourseStage.complete] once every unit of its path is written.
+  factory B1Progress.of(List<B1Unit> units, {bool isIpa = false}) {
     int? at(Milestone m) {
       for (final (i, unit) in units.indexed) {
         if (unit.milestone == m) return i;
@@ -118,7 +123,11 @@ class B1Progress {
     bool allWritten(int end) =>
         units.take(end + 1).every((u) => u.written || _unwritable(u));
     final hasPlan = b1 != null && planned > 0;
-    final stage = !hasPlan || a1 == null || !allWritten(a1)
+    final stage = isIpa
+        ? (units.isNotEmpty && allWritten(units.length - 1)
+              ? CourseStage.complete
+              : CourseStage.alpha)
+        : !hasPlan || a1 == null || !allWritten(a1)
         ? CourseStage.alpha
         : !allWritten(b1)
         ? CourseStage.beta
