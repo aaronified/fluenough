@@ -55,6 +55,7 @@ alphabet:
   - "mr-script-reading"
   - "mr-script-vowel-signs"
   - "mr-script-conjuncts"
+  - "mr-script-digits"
   - "mr-spelling"
   - "mr-reading-sunitacha-ravivar"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
@@ -79,7 +80,7 @@ units:
     words: 22
   # 3. The script, after the first six units (#554: skipped by a learner
   # who already reads it).
-  - ["mr-script-vowels", "mr-script-consonants", "mr-script-reading"]
+  - ["mr-script-vowels", "mr-script-consonants", "mr-script-reading", "mr-script-digits"]
   - ["mr-script-vowel-signs", "mr-script-conjuncts"]
   # Numbers 1–20 follow the script, so it comes after the first six units.
   - decks: ["mr-numbers-1-20", "*"]
