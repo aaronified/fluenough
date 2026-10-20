@@ -1,0 +1,141 @@
+schema: 1
+id: "ja-en-phrasebook"
+kind: "layer"
+core: "ja-phrasebook"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Phrasebook: first phrases"
+description: "Twenty survival phrases to say whole from the first lesson, before their words are taught: greetings, thanks and sorry, yes and no, asking for something, asking for help and asking for slower speech."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0047":
+    native: "hello"
+    alt_native: ["good afternoon"]
+    notes:
+      "n1": "Used from late morning into the early evening. In the morning say おはようございます (ohayou gozaimasu); at night, こんばんは (konbanwa). Written with は in kana, but read wa."
+  "ja-0048":
+    native: "good morning"
+    notes:
+      "n1": "The polite form. ございます (gozaimasu) is the polite ending; among friends, おはよう (ohayou) alone is common."
+  "ja-0049":
+    native: "good evening"
+    notes:
+      "n1": "Said from about dusk onwards. Leaving at night, say おやすみなさい (oyasumi nasai), 'good night'."
+  "ja-0050":
+    native: "goodbye"
+    alt_native: ["farewell"]
+    notes:
+      "n1": "A parting for a long time. In daily life, じゃあまた (jaa mata), 'see you', is more usual."
+  "ja-0051":
+    native: "thank you"
+    alt_native: ["thanks"]
+    notes:
+      "n1": "The polite form. The plain ありがとう (arigatou) is for friends. After a purchase, shop staff often say ありがとうございました (arigatou gozaimashita)."
+  "ja-0052":
+    native: "yes"
+    notes:
+      "n1": "はい (hai) also shows you are listening, so it does not always mean agreement."
+  "ja-0053":
+    native: "no"
+    notes:
+      "n1": "A plain no. Japanese speakers often avoid いいえ (iie) and say ちょっと (chotto), 'a little', or leave the answer unsaid."
+  "ja-0054":
+    native: "excuse me; sorry"
+    alt_native: ["sorry"]
+    notes:
+      "n1": "Used to get someone's attention, to apologise for a small trouble, and to thank someone for a favour. For a bigger apology, say 申し訳ありません (mōshiwake arimasen)."
+  "ja-0055":
+    native: "I don't understand."
+    alt_native: ["I do not understand"]
+    notes:
+      "n1": "Polite. わかりません (wakarimasen) also means 'I don't know'. With にほんご (nihongo, Japanese) it becomes にほんごがわかりません (nihongo ga wakarimasen), 'I don't understand Japanese'."
+    bases:
+      "わかりません": "to understand (polite negative)"
+  "ja-0056":
+    native: "Please say that again."
+    alt_native: ["say that again, please"]
+    notes:
+      "n1": "もういちど (mou ichido) is 'once more'. ください (kudasai) makes the request polite."
+    bases:
+      "いって": "to say (te-form)"
+      "ください": "please give (polite request)"
+  "ja-0057":
+    native: "Please speak slowly."
+    notes:
+      "n1": "ゆっくり (yukkuri) is 'slowly'. はなして (hanashite) is 'speak' in the te-form, before ください (kudasai)."
+    bases:
+      "はなして": "to speak (te-form)"
+      "ください": "please give (polite request)"
+  "ja-0058":
+    native: "Do you speak English?"
+    alt_native: ["can you speak English?"]
+    notes:
+      "n1": "はなせます (hanasemasu) is 'can speak'. The answer はい、すこし (hai, sukoshi) means 'yes, a little'."
+    bases:
+      "えいご": "English"
+      "を": "object particle"
+      "はなせます": "can speak"
+  "ja-0059":
+    native: "How much is it?"
+    alt_native: ["what does it cost?"]
+    notes:
+      "n1": "いくら (ikura) is 'how much'. ですか (desu ka) makes the question polite. In shops, the price is often shown on a tag or a screen."
+    bases:
+      "いくら": "how much"
+      "です": "is (polite)"
+  "ja-0060":
+    native: "Where is …?"
+    notes:
+      "n1": "Put the place before は (wa): えきはどこですか (eki wa doko desu ka), 'where is the station?' どこ (doko) is 'where'."
+    bases:
+      "は": "topic particle"
+      "どこ": "where"
+      "です": "is (polite)"
+  "ja-0061":
+    native: "Where is the toilet?"
+    notes:
+      "n1": "トイレ (toire) is the everyday word. In stations and public buildings, お手洗い (otearai) is also used."
+    bases:
+      "トイレ": "toilet"
+      "は": "topic particle"
+      "どこ": "where"
+      "です": "is (polite)"
+  "ja-0062":
+    native: "Please (when asking for something)."
+    notes:
+      "n1": "Said when asking for something, as at a counter. コーヒーをおねがいします (kōhī o onegai shimasu) is 'a coffee, please'."
+    bases:
+      "おねがいします": "to request (polite)"
+  "ja-0063":
+    native: "Please give me …"
+    notes:
+      "n1": "Name what you want, then say をください (o kudasai): みずをください (mizu o kudasai), 'water, please'."
+    bases:
+      "を": "object particle"
+      "ください": "please give (polite request)"
+  "ja-0064":
+    native: "Please help me."
+    notes:
+      "n1": "For an emergency. たすけて (tasukete) on its own is a call for help."
+    bases:
+      "たすけて": "to help (te-form)"
+      "ください": "please give (polite request)"
+  "ja-0065":
+    native: "My name is …"
+    notes:
+      "n1": "Say your name before です (desu). The の (no) links わたし (watashi, I) to なまえ (namae, name)."
+    bases:
+      "わたし": "I"
+      "の": "of"
+      "なまえ": "name"
+      "は": "topic particle"
+      "です": "is (polite)"
+  "ja-0066":
+    native: "I'm from …"
+    notes:
+      "n1": "から (kara) is 'from', and comes after the place. きました (kimashita) is the polite past of きます (kimasu), 'to come': literally 'I came from …'."
+    bases:
+      "わたし": "I"
+      "は": "topic particle"
+      "から": "from"
+      "きました": "came (polite past)"
