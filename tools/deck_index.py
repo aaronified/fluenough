@@ -54,10 +54,9 @@ INDEX_VERSION = 1
 
 # Languages kept in the repository, and validated like any other, but not
 # offered in the app for now. Remove a line to offer the language.
-HIDDEN = {
-    # Hidden for now: the app teaches Spanish and the Indic languages.
-    "ja",
-}
+# Japanese, hidden until 2026-10-20, is offered (owner: write its first
+# decks).
+HIDDEN: set[str] = set()
 
 # What ships inside the app rather than downloading (the plan's item 7):
 # the theme list. The spoken languages live in assets/, not here.
