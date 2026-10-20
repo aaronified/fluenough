@@ -4,6 +4,7 @@ import '../../app/app_scope.dart';
 import '../../core/models/deck.dart';
 import '../card_text_scale.dart';
 import '../theme.dart';
+import 'braille_keyboard.dart';
 
 /// The typed-answer field: a label above, then a 64 px field with a 2 px
 /// `primary` border and 20 px corners, text at 22 px. Text in [language]'s
@@ -16,6 +17,11 @@ import '../theme.dart';
 /// learner's answer into something they did not type.
 ///
 /// The label and the field are one screen-reader node.
+///
+/// A language the phone has no keyboard for names the app's own
+/// ([LanguageInfo.keyboard]): braille's six dots (ADR-0043). It is drawn
+/// under the field in place of the phone's, which the field then never
+/// opens. Transliteration and digits keep the phone's.
 class AnswerField extends StatelessWidget {
   const AnswerField({
     super.key,
@@ -62,11 +68,12 @@ class AnswerField extends StatelessWidget {
     final settings = AppScope.of(context).settings;
     final script = !latin && !digits;
     final rtl = language.rtl && script;
+    final keyboard = script ? language.keyboard : null;
     final border = OutlineInputBorder(
       borderRadius: BorderRadius.circular(AppRadii.tile),
       borderSide: BorderSide(color: scheme.primary, width: 2),
     );
-    return MergeSemantics(
+    final field = MergeSemantics(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -82,8 +89,16 @@ class AnswerField extends StatelessWidget {
             builder: (context, _) => TextField(
               controller: controller,
               focusNode: focusNode,
-              autofocus: autofocus,
+              // Owner, 2026-10-20: "Make sure that the fields which need
+              // the keyboard will not trigger the normal keyboard." Not
+              // focused of itself, read-only and with no input type, the
+              // field never asks the phone for its keyboard: not on focus,
+              // nor on a tap, nor on the next card.
+              autofocus: autofocus && keyboard == null,
               enabled: enabled,
+              // The app's own keyboard types into it: the phone's stays shut.
+              readOnly: keyboard != null,
+              showCursor: keyboard != null ? true : null,
               onChanged: onChanged,
               onSubmitted: onSubmitted,
               textDirection: rtl ? TextDirection.rtl : TextDirection.ltr,
@@ -92,7 +107,11 @@ class AnswerField extends StatelessWidget {
               enableSuggestions: false,
               textCapitalization: TextCapitalization.none,
               textInputAction: TextInputAction.done,
-              keyboardType: digits ? TextInputType.number : null,
+              keyboardType: keyboard != null
+                  ? TextInputType.none
+                  : digits
+                  ? TextInputType.number
+                  : null,
               style: TextStyle(
                 fontSize: script ? 22 * cardTextScaleOf(context, settings) : 22,
                 color: scheme.onSurface,
@@ -120,5 +139,20 @@ class AnswerField extends StatelessWidget {
         ],
       ),
     );
+    return switch (keyboard) {
+      null => field,
+      ScriptKeyboard.braille => Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          field,
+          const SizedBox(height: 16),
+          BrailleKeyboard(
+            controller: controller,
+            onChanged: onChanged,
+            enabled: enabled,
+          ),
+        ],
+      ),
+    };
   }
 }

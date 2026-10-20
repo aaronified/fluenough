@@ -17,6 +17,7 @@ The app's database moves to version 9: each answer now records the script it was
 - Script fonts download with each course, and the app says while a font is downloading (#652).
 - Voices lists every voice a course uses, such as Hindi and Urdu for Hindustani. When one is missing, the other says the card in its own script. The page also links voice apps you can install instead (#648).
 - The IPA quiz offers hand-picked wrong options for every symbol (#649).
+- English Braille can be learned as a course of its own, like the IPA: chosen only when you add it, with no level to find and no voice, and Complete once its path is written. Its answers are typed on the app's own braille keyboard, six dots in the Perkins layout with Enter cell, Space and Backspace, in place of the phone's keyboard (ADR-0043).
 
 ### Changed
 
@@ -24,6 +25,10 @@ The app's database moves to version 9: each answer now records the script it was
 - Meaning answers are graded by rule (#654): case, punctuation, contractions, text in brackets, a leading "to", "please", and ok, okay or o.k. no longer make a right answer wrong, and any one of a card's meanings is accepted.
 - A long drag or a hard fling on the language bar passes several languages (#647).
 - The IPA course is tagged Complete once its path is written, instead of Alpha: it has no CEFR levels to measure it by (#658).
+
+### Fixed
+
+- A notation's course, the IPA's or braille's, shows Complete in the language list before its decks are downloaded too, not Alpha.
 
 ## [0.5.1] - 2026-10-19
 

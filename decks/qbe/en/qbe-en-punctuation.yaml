@@ -1,0 +1,66 @@
+schema: 1
+id: "qbe-en-punctuation"
+kind: "layer"
+core: "qbe-punctuation"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Braille: punctuation"
+description: "The common punctuation of uncontracted braille: full stop, comma, question and exclamation marks, apostrophe, hyphen, quotation marks and brackets."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "script"]
+cards:
+  "qbe-0043":
+    native: "full stop (period)"
+    notes:
+      "n1": "Dots 2-5-6: ⠙ (d) moved down a row. Punctuation sits low in the cell, where no letter does. In a number it is the decimal point: ⠼⠉⠲⠑ is 3.5."
+    examples:
+      "⠠⠛⠕⠲": "Go."
+  "qbe-0044":
+    native: "comma"
+    notes:
+      "n1": "Dot 2: ⠁ (a) moved down a row. In a number it groups the thousands: ⠼⠁⠂⠚⠚⠚ is 1,000."
+    examples:
+      "⠽⠑⠎⠂ ⠎⠊⠗": "yes, sir"
+  "qbe-0045":
+    native: "question mark ?, or an opening quotation mark “"
+    notes:
+      "n1": "Dots 2-3-6: ⠓ (h) moved down a row. The same cell opens a quotation and ends a question: where it stands tells which."
+    examples:
+      "⠠⠺⠓⠕⠦": "Who?"
+      "⠦⠓⠊⠴": "“hi”"
+  "qbe-0046":
+    native: "exclamation mark !"
+    notes:
+      "n1": "Dots 2-3-5: ⠋ (f) moved down a row."
+    examples:
+      "⠠⠓⠊⠖": "Hi!"
+  "qbe-0047":
+    native: "apostrophe '"
+    notes:
+      "n1": "Dot 3 alone, low in the cell."
+    examples:
+      "⠊⠞⠄⠎": "it's"
+      "⠙⠕⠝⠄⠞": "don't"
+  "qbe-0048":
+    native: "hyphen -"
+    notes:
+      "n1": "Dots 3-6: the bottom row."
+    examples:
+      "⠑⠤⠍⠁⠊⠇": "e-mail"
+  "qbe-0049":
+    native: "closing quotation mark ”"
+    notes:
+      "n1": "Dots 3-5-6: the opening mark, ⠦, mirrored, so a quotation opens and closes like a pair of brackets."
+    examples:
+      "⠦⠓⠊⠴": "“hi”"
+  "qbe-0050":
+    native: "opening bracket (parenthesis) ("
+    notes:
+      "n1": "Two cells: dot 5, then dots 1-2-6. The ⠐ in front says the cell after it is a sign, not a letter."
+    examples:
+      "⠐⠣⠁⠐⠜": "(a)"
+  "qbe-0051":
+    native: "closing bracket (parenthesis) )"
+    notes:
+      "n1": "Two cells: dot 5, then dots 3-4-5, the opening bracket's ⠣ mirrored, as the brackets mirror each other in print."
+    examples:
+      "⠐⠣⠁⠐⠜": "(a)"
