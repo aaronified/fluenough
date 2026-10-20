@@ -50,7 +50,8 @@ SCRIPTS = {
     "latin", "cyrillic", "greek", "arabic", "hebrew",
     "devanagari", "bengali", "gujarati", "gurmukhi", "odia",
     "telugu", "tamil", "kannada", "malayalam", "sinhala",
-    "kana", "han", "hangul", "thai", "ipa", "other",
+    "kana", "han", "han_simplified", "han_traditional", "hangul", "thai",
+    "ipa", "other",
 }
 # Scripts whose cards need no reading: they are read as written. The IPA
 # is a notation read as written, and the course about it is no language
@@ -2019,7 +2020,9 @@ _SCRIPT_BLOCK = {"devanagari": 0x0900, "bengali": 0x0980, "gurmukhi": 0x0A00,
                  "gujarati": 0x0A80, "odia": 0x0B00, "tamil": 0x0B80,
                  "telugu": 0x0C00, "kannada": 0x0C80, "malayalam": 0x0D00,
                  "sinhala": 0x0D80,
-                 "perso_arabic": 0x0600, "arabic": 0x0600, "shahmukhi": 0x0600}
+                 "perso_arabic": 0x0600, "arabic": 0x0600, "shahmukhi": 0x0600,
+                 "han": 0x4E00, "han_simplified": 0x4E00,
+                 "han_traditional": 0x4E00, "kana": 0x3040, "hangul": 0xAC00}
 # Keys whose values are the word itself, not prose about it.
 _WORD_KEYS = {"id", "key", "target", "reading", "readings", "ipa", "ipas",
               "term", "example", "letters", "letter", "forms", "alternatives",
@@ -2030,12 +2033,36 @@ _WORD_KEYS = {"id", "key", "target", "reading", "readings", "ipa", "ipas",
               "word", "base", "ref", "core", "except", "rules", "part", "region"}
 
 
+# Scripts larger than one 128-code-point block, each counted as one, so
+# that a word in them is one run with one reading after it: Han with kana
+# (Japanese writes both in one word, 日本語 and its okurigana), and Hangul.
+_HAN_KANA = (
+    (0x3040, 0x30FF),    # hiragana, katakana
+    (0x31F0, 0x31FF),    # katakana phonetic extensions
+    (0x3400, 0x4DBF),    # CJK extension A
+    (0x4E00, 0x9FFF),    # CJK unified ideographs
+    (0xF900, 0xFAFF),    # CJK compatibility ideographs
+    (0xFF66, 0xFF9F),    # halfwidth katakana
+    (0x20000, 0x3FFFF),  # CJK extensions B and on
+)
+_HANGUL = (
+    (0x1100, 0x11FF),    # jamo
+    (0x3130, 0x318F),    # compatibility jamo
+    (0xAC00, 0xD7AF),    # syllables
+)
+
+
 def _block(ch: str) -> int:
     """The 128-code-point block of [ch]; Arabic and its Perso-Arabic letters
-    (U+0600-U+06FF, U+0750-U+077F) count as one."""
+    (U+0600-U+06FF, U+0750-U+077F) count as one, as do Han with kana, and
+    Hangul ([_HAN_KANA], [_HANGUL])."""
     o = ord(ch)
     if 0x0600 <= o <= 0x06FF or 0x0750 <= o <= 0x077F:
         return 0x0600 >> 7
+    if any(lo <= o <= hi for lo, hi in _HAN_KANA):
+        return 0x4E00 >> 7
+    if any(lo <= o <= hi for lo, hi in _HANGUL):
+        return 0xAC00 >> 7
     return o >> 7
 
 
@@ -2070,10 +2097,10 @@ def _untransliterated(text: str, code: str | None, own: int | None = None) -> li
         first = next((c for c in run if _SCRIPT_CHAR.match(c)), None)
         if first is None or all(c in _SILENT or c == "-" for c in run):
             continue
-        if own is not None and _block(first) == own >> 7:
+        if own is not None and _block(first) == _block(chr(own)):
             continue
         if code not in (None, "en"):
-            if code in _CODE_BLOCK and _block(first) == _CODE_BLOCK[code] >> 7:
+            if code in _CODE_BLOCK and _block(first) == _block(chr(_CODE_BLOCK[code])):
                 continue
         after = text[end:end + 12]
         if re.match(rf"[?!.,;:]?\s?\(\s?[*_'\"]?-?(?:\d|[{letter}])", after):
