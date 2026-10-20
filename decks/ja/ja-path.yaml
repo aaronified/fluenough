@@ -98,12 +98,9 @@ alphabet:
 units:
   # 1. The phrasebook, taught whole from the first lesson, with the first
   # words beside it: ja-phrasebook (15-25 survival phrases, which count no
-  # words) and ja-first-words when written.
-  - planned: { id: "ja-phrasebook", theme: "first-words", words: 12 }
-    listening_passages:
-      - { id: "first-greetings", text: { "en": "Greeting a neighbour in the morning, at noon and in the evening" } }
-    reading_passages:
-      - { id: "phrase-card", text: { "en": "A pocket card of survival phrases, in romaji" } }
+  # words) and ja-first-words (12 words).
+  - decks: ["ja-phrasebook", "ja-first-words", "*"]
+    words: 12
   # 2. The first word units, read in romaji.
   - planned: { id: "ja-sound-differences", theme: "sound-differences", words: 16 }
     listening_passages:

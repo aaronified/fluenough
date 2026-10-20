@@ -1,0 +1,236 @@
+schema: 1
+id: "zh-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "zh-0019"
+    target: "我"
+    words: ["我"]
+    reading: "wǒ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "我是学生。"
+        reading: "wǒ shì xuésheng."
+        words: ["我", "是", "学生"]
+        bases:
+          - { word: "学生", base: "学生", reading: "xuésheng" }
+      - target: "我不懂。"
+        reading: "wǒ bù dǒng."
+        words: ["我", "不", "懂"]
+        bases:
+          - { word: "懂", base: "懂", reading: "dǒng" }
+  - id: "zh-0020"
+    target: "你"
+    words: ["你"]
+    reading: "nǐ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "你好吗？"
+        reading: "nǐ hǎo ma?"
+        words: ["你", "好", "吗"]
+      - target: "你叫什么名字？"
+        reading: "nǐ jiào shénme míngzi?"
+        words: ["你", "叫", "什么", "名字"]
+        bases:
+          - { word: "叫", base: "叫", reading: "jiào" }
+          - { word: "名字", base: "名字", reading: "míngzi" }
+  - id: "zh-0021"
+    target: "他"
+    words: ["他"]
+    reading: "tā"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "他是老师。"
+        reading: "tā shì lǎoshī."
+        words: ["他", "是", "老师"]
+        bases:
+          - { word: "老师", base: "老师", reading: "lǎoshī" }
+      - target: "他很好。"
+        reading: "tā hěn hǎo."
+        words: ["他", "很", "好"]
+  - id: "zh-0022"
+    target: "是"
+    words: ["是"]
+    reading: "shì"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "我是学生。"
+        reading: "wǒ shì xuésheng."
+        words: ["我", "是", "学生"]
+        bases:
+          - { word: "学生", base: "学生", reading: "xuésheng" }
+      - target: "这是书。"
+        reading: "zhè shì shū."
+        words: ["这", "是", "书"]
+        bases:
+          - { word: "这", base: "这", reading: "zhè" }
+          - { word: "书", base: "书", reading: "shū" }
+  - id: "zh-0023"
+    target: "不"
+    words: ["不"]
+    reading: "bù"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "今天不冷。"
+        reading: "jīntiān bù lěng."
+        words: ["今天", "不", "冷"]
+        bases:
+          - { word: "今天", base: "今天", reading: "jīntiān" }
+          - { word: "冷", base: "冷", reading: "lěng" }
+      - target: "我不懂。"
+        reading: "wǒ bù dǒng."
+        words: ["我", "不", "懂"]
+        bases:
+          - { word: "懂", base: "懂", reading: "dǒng" }
+  - id: "zh-0024"
+    target: "好"
+    words: ["好"]
+    reading: "hǎo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "天气很好。"
+        reading: "tiānqì hěn hǎo."
+        words: ["天气", "很", "好"]
+        bases:
+          - { word: "天气", base: "天气", reading: "tiānqì" }
+      - target: "好的。"
+        reading: "hǎo de."
+        words: ["好的"]
+        bases:
+          - { word: "好的", ref: "zh-0024" }
+  - id: "zh-0025"
+    target: "吗"
+    target_scripts: { han_traditional: "嗎" }
+    words: ["吗"]
+    reading: "ma"
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "你好吗？"
+        reading: "nǐ hǎo ma?"
+        words: ["你", "好", "吗"]
+      - target: "你是学生吗？"
+        reading: "nǐ shì xuésheng ma?"
+        words: ["你", "是", "学生", "吗"]
+        bases:
+          - { word: "学生", base: "学生", reading: "xuésheng" }
+  - id: "zh-0026"
+    target: "什么"
+    target_scripts: { han_traditional: "什麼" }
+    words: ["什么"]
+    reading: "shénme"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "你叫什么名字？"
+        reading: "nǐ jiào shénme míngzi?"
+        words: ["你", "叫", "什么", "名字"]
+        bases:
+          - { word: "叫", base: "叫", reading: "jiào" }
+          - { word: "名字", base: "名字", reading: "míngzi" }
+      - target: "这是什么？"
+        reading: "zhè shì shénme?"
+        words: ["这", "是", "什么"]
+        bases:
+          - { word: "这", base: "这", reading: "zhè" }
+  - id: "zh-0027"
+    target: "哪里"
+    target_scripts: { han_traditional: "哪裡" }
+    words: ["哪里"]
+    reading: "nǎlǐ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "厕所在哪里？"
+        reading: "cèsuǒ zài nǎlǐ?"
+        words: ["厕所", "在", "哪里"]
+        bases:
+          - { word: "厕所", base: "厕所", reading: "cèsuǒ" }
+          - { word: "在", base: "在", reading: "zài" }
+      - target: "你是哪里人？"
+        reading: "nǐ shì nǎlǐ rén?"
+        words: ["你", "是", "哪里", "人"]
+  - id: "zh-0028"
+    target: "多少"
+    words: ["多少"]
+    reading: "duōshao"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "多少钱？"
+        reading: "duōshao qián?"
+        words: ["多少", "钱"]
+        bases:
+          - { word: "钱", base: "钱", reading: "qián" }
+      - target: "你有多少书？"
+        reading: "nǐ yǒu duōshao shū?"
+        words: ["你", "有", "多少", "书"]
+        bases:
+          - { word: "有", base: "有", reading: "yǒu" }
+          - { word: "书", base: "书", reading: "shū" }
+  - id: "zh-0029"
+    target: "人"
+    words: ["人"]
+    reading: "rén"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "中国人。"
+        reading: "Zhōngguórén."
+        words: ["中国", "人"]
+        bases:
+          - { word: "中国", base: "中国", reading: "Zhōngguó" }
+      - target: "很多人。"
+        reading: "hěn duō rén."
+        words: ["很", "多", "人"]
+        bases:
+          - { word: "多", base: "多", reading: "duō" }
+  - id: "zh-0030"
+    target: "很"
+    words: ["很"]
+    reading: "hěn"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "我很忙。"
+        reading: "wǒ hěn máng."
+        words: ["我", "很", "忙"]
+        bases:
+          - { word: "忙", base: "忙", reading: "máng" }
+      - target: "很好。"
+        reading: "hěn hǎo."
+        words: ["很", "好"]
