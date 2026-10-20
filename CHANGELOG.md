@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Find my level shows each word as drills do: in the scripts you learn, such as Perso-Arabic for Hindustani, with the other beneath when you learn both, and never the reading first when you already read one of the language's scripts through a language you know. A question about a word's form names the word once and offers only its forms, of which one alone is right.
+- The Inspect screen no longer cuts off a row at large text (#671).
 
 ## [0.5.2] - 2026-10-20
 
@@ -34,7 +35,6 @@ The app's database moves to version 9: each answer now records the script it was
 
 ### Fixed
 
-- The Inspect screen no longer cuts off a row at large text (#671).
 - A deck download no longer stops at the first dropped connection: a file that fails as offline is tried again up to three more times, after 1, 3 and 9 seconds, and a course's files share one connection. Files also download in parallel, six at a time shared fairly between the languages downloading together, instead of one after another. The log names the cause, such as SocketException.
 - A notation's course, the IPA's or braille's, shows Complete in the language list before its decks are downloaded too, not Alpha.
 
