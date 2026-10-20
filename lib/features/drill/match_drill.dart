@@ -2,6 +2,7 @@ import 'package:flutter/material.dart' hide Card;
 import 'package:flutter/semantics.dart';
 
 import '../../app/app_scope.dart';
+import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/scheduling/session_queue.dart';
 import '../../l10n/app_localizations.dart';
@@ -10,6 +11,7 @@ import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
 import '../../ui/widgets/target_text.dart';
 import 'drill_session.dart';
+import 'set_drill.dart';
 import 'match_hear_toggle.dart';
 
 /// Match pairs (ADR-0024): a few words in the language learned beside their
@@ -162,6 +164,12 @@ class _MatchDrillState extends State<MatchDrill> {
               ),
             ),
           ],
+        ),
+        ...answeredSetList(
+          context,
+          session,
+          answered: done,
+          cards: <Card>[for (final entry in session.item.group) entry.card],
         ),
       ],
       feedback: !done

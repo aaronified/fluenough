@@ -15,6 +15,7 @@ import '../../ui/widgets/target_text.dart';
 import 'cant_now.dart';
 import 'choice_tile.dart';
 import 'drill_session.dart';
+import 'set_drill.dart';
 
 /// Reading comprehension (#98, ADR-0019): a passage on its own, then its
 /// questions one at a time, each answered by a choice that is right or
@@ -149,6 +150,7 @@ class ReadingDrill extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         if (source != null) _Source(source),
+        ...answeredSetList(context, session, answered: answered),
       ],
       belowCard: <Widget>[
         Column(
