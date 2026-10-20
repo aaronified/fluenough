@@ -2230,6 +2230,48 @@ void main() {
       },
     );
 
+    // Momentum (#682).
+    testWidgets('a full-width fling moves at least five languages', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final state = learnerLanguageBar(eight, choice: eight.first);
+      await pumpApp(tester, state: state);
+      final width = tester.getSize(zone()).width;
+      await tester.fling(zone(), Offset(-width * 0.9, 0), 3000);
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      final codes = <String>[for (final l in state.languageChoices) l.code];
+      expect(codes.indexOf(state.shownLanguage!), greaterThanOrEqualTo(5));
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('a short flick moves one language', (tester) async {
+      usePhone(tester);
+      final state = learnerLanguageBar(eight, choice: eight.first);
+      await pumpApp(tester, state: state);
+      await tester.fling(zone(), const Offset(-60, 0), 800);
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      final codes = <String>[for (final l in state.languageChoices) l.code];
+      expect(codes.indexOf(state.shownLanguage!), 1);
+    });
+
+    testWidgets('the language changes once, when the bar stops', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final state = learnerLanguageBar(eight, choice: eight.first);
+      await pumpApp(tester, state: state);
+      final seen = <String?>[];
+      state.addListener(() => seen.add(state.shownLanguage));
+      final width = tester.getSize(zone()).width;
+      await tester.fling(zone(), Offset(-width * 0.9, 0), 3000);
+      await tester.pump(const Duration(milliseconds: 100));
+      expect(state.shownLanguage, eight.first);
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(state.shownLanguage, isNot(eight.first));
+      expect(seen.where((l) => l != eight.first).toSet().length, 1);
+    });
+
     // The swipe works the same wherever it starts on the bar (owner,
     // 2026-10-17: "It should be consistent").
   });
