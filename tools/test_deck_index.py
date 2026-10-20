@@ -116,6 +116,40 @@ class DeckIndex(unittest.TestCase):
     def test_no_media_key_without_media(self) -> None:
         self.assertNotIn("media", self.language(self.index(), "es"))
 
+    def test_a_guide_of_another_script_is_listed_apart(self) -> None:
+        # ADR-0016: a released app reads only `<code>-script` as a script
+        # guide and rejects any other id, so the guides of a language's other
+        # scripts are listed under `script_guides`, which it passes by, as it
+        # does `media`; the default guide stays in `files`.
+        es = self.tmp / "decks" / "es"
+        (es / "en").mkdir()
+        (es / "es-script.yaml").write_text(
+            'schema: 1\nkind: "script"\nid: "es-script"\n', encoding="utf-8")
+        (es / "es-arabic-script.yaml").write_text(
+            'schema: 1\nkind: "script"\npart: "core"\nid: "es-arabic-script"\n',
+            encoding="utf-8")
+        (es / "en" / "es-en-arabic-script.yaml").write_text(
+            'schema: 1\nid: "es-en-arabic-script"\nkind: "layer"\n'
+            'core: "es-arabic-script"\n', encoding="utf-8")
+        (es / "en" / "es-en-script.yaml").write_text(
+            'schema: 1\nid: "es-en-script"\nkind: "layer"\ncore: "es-script"\n',
+            encoding="utf-8")
+        lang = self.language(self.index(), "es")
+        self.assertEqual([f["path"] for f in lang["script_guides"]],
+                         ["decks/es/es-arabic-script.yaml",
+                          "decks/es/en/es-en-arabic-script.yaml"])
+        listed = [f["path"] for f in lang["files"]]
+        self.assertIn("decks/es/es-script.yaml", listed)
+        self.assertIn("decks/es/en/es-en-script.yaml", listed)
+        self.assertFalse(any("arabic" in path for path in listed))
+        every = lang["files"] + lang["script_guides"]
+        self.assertEqual(lang["size"], sum(f["size"] for f in every))
+        text = (self.tmp / "decks" / "index.json").read_text(encoding="utf-8")
+        self.assertLess(text.index('"files"'), text.index('"script_guides"'))
+
+    def test_no_script_guides_key_without_one(self) -> None:
+        self.assertNotIn("script_guides", self.language(self.index(), "es"))
+
     def add_font(self, script: str, name: str, data: bytes) -> None:
         folder = self.tmp / "decks" / "fonts" / script
         folder.mkdir(parents=True)

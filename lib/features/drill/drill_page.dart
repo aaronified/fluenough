@@ -151,15 +151,16 @@ class _DrillPageState extends State<DrillPage> {
     }
     if (items.isEmpty) return;
     if (preset == null) {
-      final languages = <String>{};
+      // One guide per script, so a deck in a language's second script
+      // shows that script's guide, and each is shown once.
+      final seen = <String>{};
       for (final item in items) {
         final entry = state.deckOf(item.card);
         if (entry == null || !entry.isScript) continue;
         final language = entry.language;
-        if (!languages.add(language.code)) continue;
         final guide = state.scriptGuideFor(language);
-        if (guide != null &&
-            !state.settings.hasSeenScriptGuide(language.code)) {
+        if (guide == null || !seen.add(guide.key)) continue;
+        if (!state.settings.hasSeenScriptGuide(guide.key)) {
           _guides.add((guide, language));
         }
       }
@@ -185,8 +186,8 @@ class _DrillPageState extends State<DrillPage> {
 
   /// Start, on a guide: it is seen, and the next one, or the session,
   /// follows.
-  void _guideRead(AppState state, LanguageInfo language) {
-    state.settings.markScriptGuideSeen(language.code);
+  void _guideRead(AppState state, ScriptGuide guide) {
+    state.settings.markScriptGuideSeen(guide.key);
     setState(() {
       _guides.removeAt(0);
       if (_guides.isEmpty) _begin(state);
@@ -261,11 +262,11 @@ class _DrillPageState extends State<DrillPage> {
     if (_guides.isNotEmpty) {
       final (guide, language) = _guides.first;
       return ScriptGuideView(
-        key: ValueKey<String>(language.code),
+        key: ValueKey<String>(guide.key),
         guide: guide,
         language: language,
         actionLabel: l10n.scriptGuideStart,
-        onAction: () => _guideRead(AppScope.read(context), language),
+        onAction: () => _guideRead(AppScope.read(context), guide),
         onClose: _close,
       );
     }

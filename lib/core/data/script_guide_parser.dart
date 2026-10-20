@@ -81,9 +81,19 @@ ScriptGuide _parse(String text, {required String source, required bool core}) {
   if (language is! String || !RegExp(r'^[a-z]{2,3}$').hasMatch(language)) {
     throw bad('language must be a code such as "bn"', root);
   }
-  if (root['id'] != '$language-script') {
-    throw bad('a script guide for $language has id "$language-script"', root);
+  // `hi-script`, or for another script of the language `hi-perso-arabic-script`
+  // (ADR-0016): the script, hyphenated, between the code and `-script`.
+  final id = root['id'];
+  final idPattern = RegExp('^$language-(?:([a-z]+(?:-[a-z]+)*)-)?script\$');
+  final match = id is String ? idPattern.firstMatch(id) : null;
+  if (match == null) {
+    throw bad(
+      'a script guide for $language has id "$language-script", or '
+      '"$language-<script>-script" for another script of the language',
+      root,
+    );
   }
+  final script = match.group(1)?.replaceAll('-', '_');
   String required(YamlMap map, String key, String what) {
     final value = map[key];
     if (value is! String || value.trim().isEmpty) {
@@ -154,6 +164,7 @@ ScriptGuide _parse(String text, {required String source, required bool core}) {
   }
   return ScriptGuide(
     language: language,
+    script: script,
     name: name,
     intro: intro,
     features: features,
