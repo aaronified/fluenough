@@ -284,7 +284,9 @@ Future<AppState> pumpFirstLaunch(
     settings: SettingsNotifier(spokenLanguages: const <String>['en']),
   );
   addTearDown(state.dispose);
-  await tester.pumpWidget(FluenoughApp(key: UniqueKey(), state: state));
+  await tester.pumpWidget(
+    withLanguageList(FluenoughApp(key: UniqueKey(), state: state)),
+  );
   await tester.pumpAndSettle();
   return state;
 }
@@ -1105,7 +1107,9 @@ void main() {
       Future<AppState> start(WidgetTester tester) async {
         useTallPhone(tester);
         final state = downloadingApp(remote, phone);
-        await tester.pumpWidget(FluenoughApp(key: UniqueKey(), state: state));
+        await tester.pumpWidget(
+          withLanguageList(FluenoughApp(key: UniqueKey(), state: state)),
+        );
         await tester.pumpAndSettle();
         return state;
       }
@@ -1978,7 +1982,9 @@ void main() {
         'placement', (tester) async {
       usePhone(tester);
       final state = bengaliFirst();
-      await tester.pumpWidget(FluenoughApp(key: UniqueKey(), state: state));
+      await tester.pumpWidget(
+        withLanguageList(FluenoughApp(key: UniqueKey(), state: state)),
+      );
       await tester.pumpAndSettle();
       final l10n = l10nOf(tester);
 
