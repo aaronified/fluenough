@@ -63,5 +63,6 @@ Decided in #575 (owner, 2026-10-18), reused here:
 
 ## Order
 
-Not started before the deck work is done (owner, 2026-10-18). Related:
+Milestone "Any order"; the mockup comes "Later. When we pick it up"
+(owner, 2026-10-20). Related:
 #411, a shareable progress image.
