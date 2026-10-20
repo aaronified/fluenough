@@ -180,7 +180,7 @@ final List<GalleryEntry> placementGalleryEntries = <GalleryEntry>[
     id: 'placement-check',
     section: GallerySection.profiles,
     label: 'Placement, checking', // ui-literal-ok: debug-only gallery
-    note: 'A word from the first part of the course', // ui-literal-ok: debug-only gallery
+    note: 'The first script\'s question: do you read it?', // ui-literal-ok: debug-only gallery
     builder: (_) => PlacementPage(
       languages: const <String>['hi'],
       onFinished: (_) {},

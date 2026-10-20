@@ -416,6 +416,12 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     return own == null || own == 'latin' ? const <String>[] : <String>[own];
   }
 
+  /// The names of the languages a learner can speak, by code, for
+  /// placement's "You read Devanagari through Hindi" (#481).
+  Map<String, String> get _spokenNames => <String, String>{
+    for (final l in _spokenList) l.code: l.name,
+  };
+
   /// Whether the learner reads [script] through a language they know.
   bool _readsScript(CatalogLanguage language, String? script) {
     if (script == null) return false;
@@ -597,6 +603,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
             if (language.scriptDecks) code: state.settings.learnsAlphabet(code),
           },
           natives: <String, String>{code: ?native},
+          languageNames: _spokenNames,
           onFinished: (found) {
             final settings = state.settings;
             final replaced = <String>{
@@ -779,6 +786,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
           languages: place,
           // "Find my level" is asked for already, in each sheet.
           asked: place.toSet(),
+          languageNames: _spokenNames,
           alphabet: <String, bool>{
             for (final code in place) code: ?alphabet[code],
           },

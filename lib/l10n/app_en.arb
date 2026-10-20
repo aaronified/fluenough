@@ -5317,20 +5317,6 @@
   "@placementStop": {
     "description": "Button in the placement check: end it, keeping what it has found so far."
   },
-  "placementProgress": "Part {unit} of {total}",
-  "@placementProgress": {
-    "description": "Above a placement question: which part of the course is being checked.",
-    "placeholders": {
-      "unit": {
-        "type": "int",
-        "example": "2"
-      },
-      "total": {
-        "type": "int",
-        "example": "14"
-      }
-    }
-  },
   "placementResultStart": "You’ll start {language} from the beginning, with {deck}.",
   "@placementResultStart": {
     "description": "Placement result when nothing was placed as known.",
@@ -5342,24 +5328,6 @@
       "deck": {
         "type": "String",
         "example": "First words"
-      }
-    }
-  },
-  "placementResultFrom": "{count, plural, =1{You know the first part of {language}.} other{You know the first {count} parts of {language}.}} You’ll start with {deck}.",
-  "@placementResultFrom": {
-    "description": "Placement result when some parts were placed as known. {deck} is where teaching starts.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "3"
-      },
-      "language": {
-        "type": "String",
-        "example": "Hindi"
-      },
-      "deck": {
-        "type": "String",
-        "example": "Market"
       }
     }
   },
@@ -5387,13 +5355,223 @@
       }
     }
   },
-  "placementNext": "Next language",
+  "placementNext": "Start here, then the next language",
   "@placementNext": {
-    "description": "Button after one language's placement result, when another language follows."
+    "description": "Button on one language's placement result, when another language follows: start there, and place the next."
   },
-  "placementDone": "Start learning",
+  "placementDone": "Start here",
   "@placementDone": {
-    "description": "Button after the last placement result: go on to the app."
+    "description": "Button on the last placement result: start where placement placed the learner, and go on to the app."
+  },
+  "placementQuestionNumber": "Question {number}",
+  "@placementQuestionNumber": {
+    "description": "Above a placement question: how many have been asked, counting this one. There is no total: placement ends as soon as it knows where to start.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "placementScriptAskTitle": "Do you read {script}?",
+  "@placementScriptAskTitle": {
+    "description": "Placement, before a script's check: whether the learner reads the script. {script} is its name.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  },
+  "placementScriptAskThrough": "You read {script} through {languages}. A few questions check how well, so that the script decks you know are skipped.",
+  "@placementScriptAskThrough": {
+    "description": "Under the script question, when Languages I know says the learner reads the script.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      },
+      "languages": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "placementScriptAskBody": "A few questions check how well, from letters to words, so that the script decks you know are skipped. If you don’t read it, its decks start from the first letters.",
+  "@placementScriptAskBody": {
+    "description": "Under the script question, when the learner is not known to read the script."
+  },
+  "placementScriptYes": "Yes, check me",
+  "@placementScriptYes": {
+    "description": "Button: the learner reads the script; the check starts."
+  },
+  "placementScriptNo": "No, I’m new to it",
+  "@placementScriptNo": {
+    "description": "Button: the learner does not read the script; it is learned from its first deck, with no questions."
+  },
+  "placementMatchQuestion": "Match each letter with what it is",
+  "@placementMatchQuestion": {
+    "description": "Placement: a question with two columns, letters and what each is. The learner taps one in each to pair them."
+  },
+  "placementTransliterate": "Write this in Latin letters",
+  "@placementTransliterate": {
+    "description": "Placement: a word in a script, to type as it is read, in Latin letters."
+  },
+  "placementProduce": "Write the {language} for “{meaning}”",
+  "@placementProduce": {
+    "description": "Placement: a meaning, for which the learner types the word.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "house"
+      }
+    }
+  },
+  "placementProduceHint": "In its script or in Latin letters",
+  "@placementProduceHint": {
+    "description": "Hint in the answer field of a placement question to type a word."
+  },
+  "placementTypeHint": "Your answer",
+  "@placementTypeHint": {
+    "description": "Hint in the answer field of a placement question to type a reading."
+  },
+  "placementCheck": "Check",
+  "@placementCheck": {
+    "description": "Button: check the typed answer, or the matched pairs, in placement."
+  },
+  "placementHearQuestion": "Which word do you hear?",
+  "@placementHearQuestion": {
+    "description": "Placement: a word is said, and the learner chooses it among words in the script."
+  },
+  "placementHearPlay": "Play again",
+  "@placementHearPlay": {
+    "description": "Button: say the word of a placement question again."
+  },
+  "placementSayQuestion": "Read this aloud",
+  "@placementSayQuestion": {
+    "description": "Placement: a word to read aloud, heard by the phone’s speech recognition."
+  },
+  "placementSayStart": "Speak",
+  "@placementSayStart": {
+    "description": "Button: start listening for the word read aloud."
+  },
+  "placementSayListening": "Listening…",
+  "@placementSayListening": {
+    "description": "While the phone listens for the word read aloud."
+  },
+  "placementScriptReads": "{script}: you read it, so its decks are skipped.",
+  "@placementScriptReads": {
+    "description": "Placement result, one line per script: every level of its check was right.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  },
+  "placementScriptJoined": "{script}: you know its letters and joined letters, so you start at its reading decks.",
+  "@placementScriptJoined": {
+    "description": "Placement result, one line per script: the check stopped at a word.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  },
+  "placementScriptLetters": "{script}: you know its letters, so you start at its joined letters.",
+  "@placementScriptLetters": {
+    "description": "Placement result, one line per script: the check stopped at the joined letters.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Devanagari"
+      }
+    }
+  },
+  "placementScriptNew": "{script}: new to you, so its script decks come first.",
+  "@placementScriptNew": {
+    "description": "Placement result, one line per script: the check stopped at the letters, or the learner said they do not read it.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Perso-Arabic"
+      }
+    }
+  },
+  "placementWordsAll": "Words: you answered right to the end of the path.",
+  "@placementWordsAll": {
+    "description": "Placement result: the walk along the word decks placed every one."
+  },
+  "placementWordsMissed": "Words: you answered up to {known}, and missed {missed}.",
+  "@placementWordsMissed": {
+    "description": "Placement result: the deck the walk last got right and the one it missed.",
+    "placeholders": {
+      "known": {
+        "type": "String",
+        "example": "Market"
+      },
+      "missed": {
+        "type": "String",
+        "example": "Directions"
+      }
+    }
+  },
+  "placementWordsFirst": "Words: you missed {missed}, so you start with the first words.",
+  "@placementWordsFirst": {
+    "description": "Placement result: the walk missed its first deck.",
+    "placeholders": {
+      "missed": {
+        "type": "String",
+        "example": "First words"
+      }
+    }
+  },
+  "placementWordsStopped": "Words: you stopped at {deck}.",
+  "@placementWordsStopped": {
+    "description": "Placement result: the learner stopped placement during the walk.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Market"
+      }
+    }
+  },
+  "placementResultAt": "You’ll start {language} with {deck}.",
+  "@placementResultAt": {
+    "description": "Placement result when some decks were placed as known. {deck} is where teaching starts.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      },
+      "deck": {
+        "type": "String",
+        "example": "Market"
+      }
+    }
+  },
+  "placementTryAgain": "Try again from here",
+  "@placementTryAgain": {
+    "description": "Button on the placement result: check again, starting from where the learner was placed."
+  },
+  "placementTryAgainNote": "If something went wrong, try again: it starts from {deck} and goes on as long as each try gets at least one deck further.",
+  "@placementTryAgainNote": {
+    "description": "Under the placement result, before Try again from here.",
+    "placeholders": {
+      "deck": {
+        "type": "String",
+        "example": "Market"
+      }
+    }
+  },
+  "placementNoFurther": "That try got no further than the one before, so this is where you start.",
+  "@placementNoFurther": {
+    "description": "Placement result after a try again that placed the learner less than one deck further."
   },
   "settingsAppLanguage": "App language",
   "@settingsAppLanguage": {

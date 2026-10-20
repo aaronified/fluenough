@@ -1958,18 +1958,21 @@ class AppState extends ChangeNotifier {
   /// Languages I know): a script answered for a language by name
   /// (`hi:perso_arabic`), and a language's own script answered by its code
   /// alone, as its decks, or else the deck index, name it.
-  Set<String> get scriptsReadKnown {
-    final read = <String>{};
+  Set<String> get scriptsReadKnown => scriptReadersKnown.keys.toSet();
+
+  /// The languages the learner knows that they read each script through,
+  /// by code, in the order answered: what placement's "Do you read
+  /// Devanagari?" says they read it through (#481).
+  Map<String, List<String>> get scriptReadersKnown {
+    final readers = <String, List<String>>{};
     for (final MapEntry(:key, :value) in settings.scriptsRead.entries) {
       if (!value) continue;
       final parts = key.split(':');
-      if (parts.length == 2) {
-        read.add(parts[1]);
-      } else if (_ownScriptOf(key) case final script?) {
-        read.add(script);
-      }
+      final script = parts.length == 2 ? parts[1] : _ownScriptOf(key);
+      if (script == null) continue;
+      readers.putIfAbsent(script, () => <String>[]).add(parts.first);
     }
-    return read;
+    return readers;
   }
 
   /// The script [code] is written in first: its decks', or the deck
