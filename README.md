@@ -66,8 +66,8 @@ than hard-coded rules. Adding a language means adding files, never code.
 Taught from English: Telugu, Bengali, Spanish, Marathi, Kannada, Assamese,
 Chinese (Mandarin), Hindustani, Japanese, Korean and Gujarati. Every course
 has a B1 plan in its path: the units up to B1, in teaching order, those not
-yet written shown as "Coming". Telugu is written to B1; Bengali has its A1
-units in full; the others have their first units, or more. Each Indic course
+yet written shown as "Coming". Telugu is written to B1; Bengali has all but one of its A1
+units; the others have their first units, or more. Each Indic course
 starts with its script decks, digits included, and a script guide. Hindustani
 is one course in two scripts, Devanagari and Perso-Arabic, and Chinese in
 two, simplified and traditional: the learner chooses which to learn. A course
