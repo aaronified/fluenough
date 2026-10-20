@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Find my level shows each word as drills do: in the scripts you learn, such as Perso-Arabic for Hindustani, with the other beneath when you learn both, and never the reading first when you already read one of the language's scripts through a language you know. A question about a word's form names the word once and offers only its forms, of which one alone is right.
+- The Inspect screen no longer cuts off a row at large text (#671).
 
 ## [0.5.2] - 2026-10-20
 
