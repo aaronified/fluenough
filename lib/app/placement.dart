@@ -657,6 +657,18 @@ class DeckWalk {
   /// The index in [decks] the walk started from.
   int get start => _start;
 
+  /// The indexes in [decks] of the decks the walk can ask from, in order.
+  List<int> get askableDecks => List<int>.unmodifiable(_askable);
+
+  /// The deck the current question is from, by its index in [decks]; null
+  /// once [isFinished].
+  int? get asking {
+    if (_question == null) return null;
+    return _phase == WalkPhase.produce
+        ? _askable[_typedAt[_typedIndex]]
+        : _askable[_at];
+  }
+
   /// The decks before [landing]: those placed as known.
   Set<String> get placedDeckIds => <String>{
     for (final entry in decks.take(landing)) entry.id,

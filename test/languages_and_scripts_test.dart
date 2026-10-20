@@ -22,6 +22,7 @@ import 'package:fluenough/app/language_choice.dart';
 import 'package:fluenough/app/language_offer.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/placement.dart';
+import 'package:fluenough/app/placement_plan.dart';
 import 'package:fluenough/app/profile.dart';
 import 'package:fluenough/app/script_test.dart';
 import 'package:fluenough/app/session.dart';
@@ -47,6 +48,7 @@ import 'package:fluenough/features/placement/language_picker_page.dart';
 import 'package:fluenough/features/placement/language_row.dart';
 import 'package:fluenough/features/placement/picker_fixtures.dart';
 import 'package:fluenough/features/placement/placement_page.dart';
+import 'package:fluenough/features/placement/placement_questions.dart';
 import 'package:fluenough/features/placement/script_test_page.dart';
 import 'package:fluenough/features/today/lesson_card.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
@@ -290,38 +292,75 @@ Future<void> tapText(WidgetTester tester, String text) async {
   await tester.pumpAndSettle();
 }
 
-/// Answers "I don't know" until the check ends in its result.
+/// Answers "No" to each script and "I don't know" to each word until the
+/// check ends in its result.
 Future<void> giveUp(WidgetTester tester) async {
   final l10n = l10nOf(tester);
   var guard = 0;
-  while (find.text(l10n.placementDontKnow).evaluate().isNotEmpty &&
-      guard++ < 60) {
-    await tapText(tester, l10n.placementDontKnow);
+  while (guard++ < 60) {
+    if (find.text(l10n.placementScriptNo).evaluate().isNotEmpty) {
+      await tapText(tester, l10n.placementScriptNo);
+    } else if (find.text(l10n.placementDontKnow).evaluate().isNotEmpty) {
+      await tapText(tester, l10n.placementDontKnow);
+    } else {
+      return;
+    }
   }
 }
 
-String nameOf(AppState state, String code) =>
-    state.languages.singleWhere((l) => l.code == code).name;
-
-/// Answers the question on screen: rightly, from [state]'s course for
-/// [code], or with "I don't know".
-Future<void> answer(
-  WidgetTester tester,
-  AppState state,
-  String code, {
-  required bool right,
-}) async {
+/// Answers the placement question on screen, of whatever kind: rightly,
+/// or with "I don't know".
+Future<void> answerShown(WidgetTester tester, {bool right = true}) async {
   final l10n = l10nOf(tester);
   if (!right) return tapText(tester, l10n.placementDontKnow);
-  final target = tester.widget<TargetText>(find.byType(TargetText)).text;
-  final card = <DeckEntry>[for (final unit in state.courseUnits(code)) ...unit]
-      .expand((e) => e.cards)
-      .firstWhere((c) => c.target == target);
-  await tester.ensureVisible(find.widgetWithText(OutlinedButton, card.native));
-  await tester.pumpAndSettle();
-  await tester.tap(find.widgetWithText(OutlinedButton, card.native));
-  await tester.pumpAndSettle();
+  Future<void> tap(Finder f) async {
+    await tester.ensureVisible(f);
+    await tester.pumpAndSettle();
+    await tester.tap(f);
+    await tester.pumpAndSettle();
+  }
+
+  final match = find.byType(PlacementMatch);
+  if (match.evaluate().isNotEmpty) {
+    final q = tester.widget<PlacementMatch>(match).question;
+    for (final (i, card) in q.cards.indexed) {
+      await tap(find.byKey(ValueKey<String>('match-left-$i')));
+      final j = q.answers.indexOf(card.native);
+      await tap(find.byKey(ValueKey<String>('match-right-$j')));
+    }
+    return tap(find.widgetWithText(FilledButton, l10n.placementCheck));
+  }
+  final typed = find.byType(PlacementType);
+  if (typed.evaluate().isNotEmpty) {
+    final q = tester.widget<PlacementType>(typed).question;
+    await tester.enterText(
+      find.byKey(const ValueKey<String>('placement-answer')),
+      q.produce ? q.card.target : q.card.reading!,
+    );
+    await tester.pumpAndSettle();
+    return tap(find.widgetWithText(FilledButton, l10n.placementCheck));
+  }
+  final hear = find.byType(PlacementHear);
+  if (hear.evaluate().isNotEmpty) {
+    final q = tester.widget<PlacementHear>(hear).question;
+    return tap(find.byKey(ValueKey<String>('hear-option-${q.answer}')));
+  }
+  final q = tester
+      .widget<PlacementChoice>(find.byType(PlacementChoice))
+      .question;
+  return tap(find.widgetWithText(OutlinedButton, q.answer));
 }
+
+/// Whether a placement question is on screen.
+bool questionShown() =>
+    find.byType(PlacementChoice).evaluate().isNotEmpty ||
+    find.byType(PlacementMatch).evaluate().isNotEmpty ||
+    find.byType(PlacementType).evaluate().isNotEmpty ||
+    find.byType(PlacementHear).evaluate().isNotEmpty ||
+    find.byType(PlacementSay).evaluate().isNotEmpty;
+
+String nameOf(AppState state, String code) =>
+    state.languages.singleWhere((l) => l.code == code).name;
 
 Set<String> decksOf(Iterable<List<DeckEntry>> units) => <String>{
   for (final unit in units)
@@ -856,24 +895,32 @@ cards:
     );
 
 /// Answers each placement question on screen rightly, after [check] has
-/// looked at the card it shows.
+/// looked at the card each word question shows; says Yes to each script,
+/// or No without [readsScripts].
 Future<void> placeAll(
   WidgetTester tester,
-  void Function(model.Card card) check,
-) async {
+  void Function(model.Card card) check, {
+  bool readsScripts = true,
+}) async {
   final l10n = l10nOf(tester);
   var guard = 0;
-  while (find.text(l10n.placementQuestion).evaluate().isNotEmpty &&
-      guard++ < 20) {
-    final card = tester.widget<TargetText>(find.byType(TargetText)).card!;
-    check(card);
-    final right = find.widgetWithText(OutlinedButton, card.native);
-    await tester.ensureVisible(right);
-    await tester.pumpAndSettle();
-    await tester.tap(right);
-    await tester.pumpAndSettle();
+  var words = 0;
+  while (guard++ < 40) {
+    if (find.text(l10n.placementScriptYes).evaluate().isNotEmpty) {
+      await tapText(
+        tester,
+        readsScripts ? l10n.placementScriptYes : l10n.placementScriptNo,
+      );
+      continue;
+    }
+    if (!questionShown()) break;
+    if (find.text(l10n.placementQuestion).evaluate().isNotEmpty) {
+      words++;
+      check(tester.widget<TargetText>(find.byType(TargetText)).card!);
+    }
+    await answerShown(tester);
   }
-  expect(guard, greaterThan(1), reason: 'placement asked something');
+  expect(words, greaterThan(0), reason: 'placement asked a word');
 }
 
 /// The [word] on screen as written: a long word on a drill card is drawn
@@ -1086,10 +1133,7 @@ void main() {
         // The course starts with what arrived.
         await tester.tap(continueButton(l10n));
         await tester.pumpAndSettle();
-        while (find.text(l10n.placementDontKnow).evaluate().isNotEmpty) {
-          await tester.tap(find.text(l10n.placementDontKnow));
-          await tester.pumpAndSettle();
-        }
+        await giveUp(tester);
         await tester.tap(find.text(l10n.placementDone));
         await tester.pumpAndSettle();
         expect(state.settings.learningLanguages, <String>['hi']);
@@ -1202,8 +1246,9 @@ void main() {
 
   group('placement', () {
     testWidgets(
-      'first launch asks what to learn, and Find my level places the units '
-      'known',
+      'first launch asks what to learn; Find my level asks whether each '
+      'script is read, No asking nothing more of it, and the walk places the '
+      'decks known',
       (tester) async {
         usePhone(tester);
         final state = await pumpFirstLaunch(tester);
@@ -1231,35 +1276,61 @@ void main() {
           usePhone(tester);
           final state = await pumpFirstLaunch(tester);
           final l10n = l10nOf(tester);
-          final hindi = nameOf(state, 'hi');
-          final units = state.courseUnits('hi');
+          final decks = state.walkDecks('hi');
+          final askable = DeckWalk(decks).askableDecks;
 
           await pickLanguage(tester, 'hi');
           await tapText(tester, l10n.commonContinue);
-          expect(find.text(l10n.placementQuestion), findsOneWidget);
-          expect(
-            find.text(l10n.placementProgress(1, units.length)),
-            findsOneWidget,
-          );
-          for (var i = 0; i < 4; i++) {
-            await answer(tester, state, 'hi', right: true);
-          }
-          expect(
-            find.text(l10n.placementProgress(2, units.length)),
-            findsOneWidget,
-          );
-          await answer(tester, state, 'hi', right: false);
-          await answer(tester, state, 'hi', right: false);
-
+          // Each of the course's scripts is asked about, and No places it
+          // as new with no questions.
           expect(
             find.text(
-              l10n.placementResultFrom(1, hindi, units[1].first.deck.name),
+              l10n.placementScriptAskTitle(l10n.scriptName(devanagari)),
+            ),
+            findsOneWidget,
+          );
+          expect(find.text(l10n.placementScriptAskBody), findsOneWidget);
+          await tapText(tester, l10n.placementScriptNo);
+          expect(
+            find.text(
+              l10n.placementScriptAskTitle(l10n.scriptName(persoArabic)),
+            ),
+            findsOneWidget,
+          );
+          await tapText(tester, l10n.placementScriptNo);
+
+          // The walk: each question numbered, with no total.
+          expect(find.text(l10n.placementQuestionNumber(1)), findsOneWidget);
+          await answerShown(tester);
+          await answerShown(tester, right: false);
+          // A miss gets a second question from the same deck.
+          expect(find.text(l10n.placementQuestionNumber(3)), findsOneWidget);
+          await answerShown(tester, right: false);
+
+          for (final script in <String>[devanagari, persoArabic]) {
+            expect(
+              find.text(l10n.placementScriptNew(l10n.scriptName(script))),
+              findsOneWidget,
+            );
+          }
+          expect(
+            find.text(
+              l10n.placementWordsMissed(
+                decks[askable[1] - 1].deck.name,
+                decks[askable[1]].deck.name,
+              ),
             ),
             findsOneWidget,
           );
           await tapText(tester, l10n.placementDone);
-          expect(state.settings.placedDecks, decksOf(units.take(1)));
-          expect(state.pendingUnits.first.first.id, units[1].first.id);
+          expect(state.settings.placedDecks, <String>{
+            for (final e in decks.take(askable[1])) e.id,
+          });
+          // The scripts chosen to learn stay learned, though new.
+          expect(
+            state.settings.scriptsLearned('hi', primary: devanagari),
+            <String>{devanagari, persoArabic},
+          );
         }
       },
     );
@@ -1269,21 +1340,24 @@ void main() {
       usePhone(tester);
       final state = await pumpFirstLaunch(tester);
       final l10n = l10nOf(tester);
-      final hindi = nameOf(state, 'hi');
-      final units = state.courseUnits('hi');
+      final script = state.placementScripts('hi').first;
 
       await pickLanguage(tester, 'hi');
       await tapText(tester, l10n.commonContinue);
-      for (var i = 0; i < 4; i++) {
-        await answer(tester, state, 'hi', right: true);
-      }
+      await tapText(tester, l10n.placementScriptYes);
+      await answerShown(tester);
       await tapText(tester, l10n.placementStop);
       expect(
-        find.text(l10n.placementResultFrom(1, hindi, units[1].first.deck.name)),
+        find.text(l10n.placementScriptLetters(l10n.scriptName(devanagari))),
         findsOneWidget,
       );
+      expect(find.text(l10n.placementTryAgain), findsNothing);
       await tapText(tester, l10n.placementDone);
-      expect(state.settings.placedDecks, decksOf(units.take(1)));
+      expect(
+        state.settings.placedDecks,
+        ScriptCheck.placedFor(script.decks, ScriptStanding.letters),
+      );
+      expect(state.settings.placedDecks, isNotEmpty);
 
       {
         usePhone(tester);
@@ -1291,7 +1365,8 @@ void main() {
         final l10n = l10nOf(tester);
         await pickLanguage(tester, 'hi');
         await tapText(tester, l10n.commonContinue);
-        await answer(tester, state, 'hi', right: true);
+        await tapText(tester, l10n.placementScriptYes);
+        await answerShown(tester);
         await tester.pageBack();
         await tester.pumpAndSettle();
         expect(find.byType(LanguagePickerPage), findsOneWidget);
@@ -1299,6 +1374,50 @@ void main() {
         expect(state.settings.learningLanguages, isEmpty);
         expect(state.settings.placedDecks, isEmpty);
       }
+    });
+
+    testWidgets('Try again from here starts the walk where it landed, and is '
+        'offered again only while a try gets at least a deck further', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final state = await pumpFirstLaunch(tester);
+      final l10n = l10nOf(tester);
+      final decks = state.walkDecks('hi');
+      final askable = DeckWalk(decks).askableDecks;
+      Set<String> before(int deck) => <String>{
+        for (final e in decks.take(deck)) e.id,
+      };
+
+      await pickLanguage(tester, 'hi');
+      await tapText(tester, l10n.commonContinue);
+      await tapText(tester, l10n.placementScriptNo);
+      await tapText(tester, l10n.placementScriptNo);
+      await answerShown(tester);
+      await answerShown(tester, right: false);
+      await answerShown(tester, right: false);
+      expect(
+        find.text(l10n.placementTryAgainNote(decks[askable[1]].deck.name)),
+        findsOneWidget,
+      );
+
+      // From there: one deck further.
+      await tapText(tester, l10n.placementTryAgain);
+      expect(find.text(l10n.placementQuestionNumber(4)), findsOneWidget);
+      await answerShown(tester);
+      await answerShown(tester, right: false);
+      await answerShown(tester, right: false);
+      expect(find.text(l10n.placementNoFurther), findsNothing);
+      expect(find.text(l10n.placementTryAgain), findsOneWidget);
+
+      // From there again: no further, so this is where the learner starts.
+      await tapText(tester, l10n.placementTryAgain);
+      await answerShown(tester, right: false);
+      await answerShown(tester, right: false);
+      expect(find.text(l10n.placementNoFurther), findsOneWidget);
+      expect(find.text(l10n.placementTryAgain), findsNothing);
+      await tapText(tester, l10n.placementDone);
+      expect(state.settings.placedDecks, before(askable[2]));
     });
 
     testWidgets('two languages are placed one after the other', (tester) async {
@@ -1311,15 +1430,128 @@ void main() {
       await tapText(tester, l10n.commonContinue);
       // In the catalog's order, asking at once: "Find my level" was chosen in
       // each sheet.
-      expect(find.text(l10n.placementQuestion), findsOneWidget);
+      expect(find.text(l10n.placementScriptYes), findsOneWidget);
       await giveUp(tester);
       await tapText(tester, l10n.placementNext);
-      expect(find.text(l10n.placementQuestion), findsOneWidget);
+      expect(find.text(l10n.placementScriptYes), findsOneWidget);
       await giveUp(tester);
       await tapText(tester, l10n.placementDone);
       expect(state.settings.learningLanguages, <String>['bn', 'hi']);
       expect(find.byType(AppShell), findsOneWidget);
     });
+
+    testWidgets(
+      'the owner\'s example: learning Hindustani for its Perso-Arabic, '
+      'reading Devanagari through Hindi and knowing every word, the learner '
+      'is placed in under 20 questions: Devanagari read, Perso-Arabic taught, '
+      'the words placed to the end',
+      (tester) async {
+        usePhone(tester);
+        final state = AppState.test(
+          settings: SettingsNotifier(
+            spokenLanguages: const <String>['en', 'hi'],
+            learningLanguages: const <String>['hi'],
+            learningChosen: true,
+            scriptsLearned: <String, Set<String>>{
+              'hi': <String>{persoArabic},
+            },
+          )..scriptsRead = <String, bool>{'en': true, 'hi': true},
+        );
+        addTearDown(state.dispose);
+        PlacementFound? found;
+        await pumpScreen(
+          tester,
+          PlacementPage(
+            languages: const <String>['hi'],
+            asked: const <String>{'hi'},
+            scripts: <String, Set<String>>{
+              'hi': <String>{persoArabic},
+            },
+            languageNames: const <String, String>{'hi': 'Hindi'},
+            random: Random(3),
+            onFinished: (f) => found = f,
+          ),
+          state: state,
+        );
+        await tester.pumpAndSettle();
+        final l10n = l10nOf(tester);
+        final scripts = state.placementScripts('hi');
+        final deva = scripts.firstWhere((s) => s.script == devanagari);
+        final urdu = scripts.firstWhere((s) => s.script == persoArabic);
+
+        // Asked though Languages I know says so, and said so.
+        expect(
+          find.text(
+            l10n.placementScriptAskThrough(
+              l10n.scriptName(devanagari),
+              'Hindi',
+            ),
+          ),
+          findsOneWidget,
+        );
+        await tapText(tester, l10n.placementScriptYes);
+        var asked = 0;
+        final kinds = <Type>[];
+        while (questionShown()) {
+          for (final type in <Type>[
+            PlacementMatch,
+            PlacementChoice,
+            PlacementType,
+            PlacementHear,
+            PlacementSay,
+          ]) {
+            if (find.byType(type).evaluate().isNotEmpty) kinds.add(type);
+          }
+          await answerShown(tester);
+          asked++;
+        }
+        // No voice and no recogniser: the heard and read-aloud words are
+        // words to write in Latin letters.
+        expect(kinds, <Type>[
+          PlacementMatch,
+          PlacementChoice,
+          PlacementType,
+          PlacementType,
+          PlacementType,
+        ]);
+        expect(find.text(l10n.placementScriptAskBody), findsOneWidget);
+        await tapText(tester, l10n.placementScriptNo);
+        // The words are shown in the script the learner reads.
+        final first = tester.widget<PlacementChoice>(
+          find.byType(PlacementChoice),
+        );
+        expect(shownWord(first.question.card.target), findsOneWidget);
+        while (questionShown()) {
+          await answerShown(tester);
+          asked++;
+        }
+        expect(asked, lessThanOrEqualTo(20));
+
+        expect(
+          find.text(l10n.placementScriptReads(l10n.scriptName(devanagari))),
+          findsOneWidget,
+        );
+        expect(
+          find.text(l10n.placementScriptNew(l10n.scriptName(persoArabic))),
+          findsOneWidget,
+        );
+        expect(find.text(l10n.placementWordsAll), findsOneWidget);
+        await tapText(tester, l10n.placementDone);
+        final placed = found!.placed['hi']!;
+        expect(placed, containsAll(<String>[for (final e in deva.decks) e.id]));
+        for (final e in urdu.decks) {
+          expect(placed, isNot(contains(e.id)));
+        }
+        expect(
+          placed,
+          containsAll(<String>[for (final e in state.walkDecks('hi')) e.id]),
+        );
+        expect(found!.scripts['hi'], <String, ScriptStanding>{
+          devanagari: ScriptStanding.reads,
+          persoArabic: ScriptStanding.newTo,
+        });
+      },
+    );
   });
 
   group('placement in the learner\'s scripts', () {
@@ -1351,7 +1583,8 @@ void main() {
 
     testWidgets(
       'learned without its scripts, a language is shown in a script the '
-      'learner reads already, and its reading first only when they read none',
+      'check found the learner reads, and its reading first when they read '
+      'none',
       (tester) async {
         await pumpPlacement(tester, devanagariReader(const <String>{}));
         await placeAll(tester, (card) {
@@ -1363,6 +1596,9 @@ void main() {
           tester,
           devanagariReader(const <String>{}, reads: false),
         );
+        final l10n = l10nOf(tester);
+        await tapText(tester, l10n.placementScriptNo);
+        await tapText(tester, l10n.placementScriptNo);
         expect(find.byType(ReadingFirst), findsOneWidget);
       },
     );
@@ -1385,12 +1621,10 @@ void main() {
         for (final slot in pattern.slots)
           pattern.slotLabels[slot] ?? slot: slot,
       };
-      final placement = Placement(<List<DeckEntry>>[
-        <DeckEntry>[nouns],
-      ], random: Random(3));
+      final walk = DeckWalk(<DeckEntry>[nouns], random: Random(3));
       var asked = 0;
-      while (!placement.isFinished) {
-        final q = placement.question!;
+      while (!walk.isFinished) {
+        final q = walk.question! as PlacementQuestion;
         final word = q.formOf!;
         final row = pattern.entries.singleWhere((e) => e.lemma == word.lemma);
         expect(q.options.length, greaterThan(1));
@@ -1402,66 +1636,239 @@ void main() {
           expect(row.forms[slot] == q.card.target, option == q.answer);
           expect(q.isRight(option), option == q.answer);
         }
-        placement.answer(q.answer);
+        walk.answer(true);
         asked++;
       }
       expect(asked, greaterThan(0));
-      expect(placement.placedDeckIds, <String>{nouns.id});
+      expect(walk.placedDeckIds, <String>{nouns.id});
     });
   });
 
-  group('placing units', () {
-    late List<List<DeckEntry>> hindi;
+  group('the script check', () {
+    late PlacementScript devanagariScript;
     setUpAll(() async {
       final state = AppState.test();
       await state.load();
-      hindi = state.courseUnits('hi');
+      devanagariScript = state
+          .placementScripts('hi')
+          .firstWhere((s) => s.script == devanagari);
     });
 
-    Placement placement() => Placement(hindi, random: Random(7));
+    ScriptCheck check({bool sound = false}) => ScriptCheck(
+      script: devanagari,
+      decks: devanagariScript.decks,
+      words: devanagariScript.words,
+      canHear: sound,
+      canSay: sound,
+      random: Random(2),
+    );
 
-    Set<String> decksOf(Iterable<List<DeckEntry>> units) => <String>{
-      for (final unit in units)
-        for (final entry in unit) entry.id,
+    Set<String> decksNamed(List<String> endings) => <String>{
+      for (final e in devanagariScript.decks)
+        if (endings.any(e.id.endsWith)) e.id,
     };
+    final letters = <String>[
+      'script-vowels',
+      'script-consonants',
+      'script-digits',
+    ];
+    final joined = <String>[
+      ...letters,
+      'script-vowel-signs',
+      'script-conjuncts',
+    ];
 
-    /// Answers [placement]'s questions rightly until it reaches unit [stop].
-    void knowUpTo(Placement placement, int stop) {
-      while (!placement.isFinished && placement.unit < stop) {
-        placement.answer(placement.question!.answer);
+    test(
+      'a miss gets another question of the same level, and right, the '
+      'check goes on; a second miss ends it, placed by the level reached',
+      () {
+        final c = check();
+        expect(c.question, isA<MatchQuestion>());
+        c.answer(true);
+        final missed = c.question!;
+        expect(missed, isA<PlacementQuestion>());
+        c.answer(false);
+        expect(c.isFinished, isFalse);
+        expect(c.question, isA<PlacementQuestion>());
+        expect(c.question!.card.id, isNot(missed.card.id));
+        c.answer(true);
+        expect(c.question, isA<TypeQuestion>());
+        c
+          ..answer(false)
+          ..answer(false);
+        expect(c.isFinished, isTrue);
+        expect(c.asked, 5);
+        expect(c.standing, ScriptStanding.joined);
+        expect(c.placedDeckIds, decksNamed(joined));
+
+        final atLetters = check()
+          ..answer(false)
+          ..answer(false);
+        expect(atLetters.standing, ScriptStanding.newTo);
+        expect(atLetters.placedDeckIds, isEmpty);
+
+        final atJoined = check()
+          ..answer(true)
+          ..answer(false)
+          ..answer(false);
+        expect(atJoined.standing, ScriptStanding.letters);
+        expect(atJoined.placedDeckIds, decksNamed(letters));
+      },
+    );
+
+    test('without a voice or a recogniser, the heard and read-aloud levels '
+        'are harder words to write in Latin letters; with them, a word heard '
+        'and one read aloud; every level right skips the script\'s decks', () {
+      for (final sound in <bool>[false, true]) {
+        final c = check(sound: sound);
+        final kinds = <Type>[];
+        while (!c.isFinished) {
+          kinds.add(c.question.runtimeType);
+          c.answer(true);
+        }
+        expect(kinds, <Type>[
+          MatchQuestion,
+          PlacementQuestion,
+          TypeQuestion,
+          if (sound) HearQuestion else TypeQuestion,
+          if (sound) SayQuestion else TypeQuestion,
+        ]);
+        expect(c.standing, ScriptStanding.reads);
+        expect(c.placedDeckIds, <String>{
+          for (final e in devanagariScript.decks) e.id,
+        });
       }
-    }
+    });
+  });
 
-    test('two wrong in a unit ends placement there; the units before are '
-        'placed', () {
-      final p = placement();
-      knowUpTo(p, 2);
-      expect(p.unit, 2);
-      p.answer(null);
-      expect(p.isFinished, isFalse, reason: 'one wrong in four is allowed');
-      p.answer('not a meaning');
-      expect(p.isFinished, isTrue);
-      expect(p.question, isNull);
-      expect(p.placedDeckIds, decksOf(hindi.take(2)));
-      expect(p.startUnit, hindi[2]);
+  group('the deck walk', () {
+    late List<DeckEntry> decks;
+    late List<DeckEntry> telugu;
+    late List<int> askable;
+    setUpAll(() async {
+      final state = AppState.test();
+      await state.load();
+      decks = state.walkDecks('hi');
+      telugu = state.walkDecks('te');
+      askable = DeckWalk(decks).askableDecks;
     });
 
-    test('a beginner starts at the first unit; knowing every unit places the '
-        'whole course', () {
-      final p = placement()
-        ..answer(null)
-        ..answer(null);
-      expect(p.isFinished, isTrue);
-      expect(p.placedDeckIds, isEmpty);
-      expect(p.startUnit, hindi.first);
+    DeckWalk walk() => DeckWalk(decks, random: Random(7));
 
-      {
-        final p = placement();
-        knowUpTo(p, hindi.length);
-        expect(p.isFinished, isTrue);
-        expect(p.startUnit, isNull);
-        expect(p.placedDeckIds, decksOf(hindi));
+    test('three decks right at the first try skip the next, and five jump to '
+        'the end', () {
+      final w = walk();
+      final asked = <int>[];
+      while (w.phase == WalkPhase.forward) {
+        asked.add(w.asking!);
+        w.answer(true);
       }
+      expect(asked, <int>[
+        askable[0],
+        askable[1],
+        askable[2],
+        askable[4],
+        askable[5],
+      ]);
+      expect(w.phase, WalkPhase.end);
+      expect(w.asking, askable.last);
+    });
+
+    test('a miss gets a second question from the same deck: right, the walk '
+        'goes on, its run counted again; wrong, it stops before that deck', () {
+      final w = walk()..answer(true);
+      final missed = w.question!;
+      w.answer(false);
+      expect(w.asking, askable[1]);
+      expect(w.question!.card.id, isNot(missed.card.id));
+      w.answer(true);
+      final asked = <int>[];
+      for (var i = 0; i < 3; i++) {
+        asked.add(w.asking!);
+        w.answer(true);
+      }
+      expect(asked, <int>[askable[2], askable[3], askable[4]]);
+      expect(w.asking, askable[6], reason: 'three in a row skip one');
+      w
+        ..answer(false)
+        ..answer(false);
+      expect(w.isFinished, isTrue);
+      expect(w.landing, askable[6]);
+      expect(w.missed, askable[6]);
+      expect(w.placedDeckIds, <String>{
+        for (final e in decks.take(askable[6])) e.id,
+      });
+    });
+
+    test('wrong at the end, the walk steps back by 2, then 3 more, then 5, '
+        'until right; then two or three typed questions from the decks after '
+        'decide where it lands', () {
+      for (final typedRight in <bool>[true, false]) {
+        final w = walk();
+        for (var i = 0; i < 5; i++) {
+          w.answer(true);
+        }
+        final end = askable.length - 1;
+        expect(w.asking, askable[end]);
+        w.answer(false);
+        expect(w.asking, askable[end - 2]);
+        w.answer(false);
+        expect(w.asking, askable[end - 5]);
+        w.answer(false);
+        expect(w.asking, askable[end - 10]);
+        w.answer(true);
+        expect(w.phase, WalkPhase.produce);
+        final typed = <int>[];
+        while (w.phase == WalkPhase.produce) {
+          expect(w.question, isA<TypeQuestion>());
+          typed.add(w.asking!);
+          w.answer(typedRight);
+        }
+        for (final deck in typed) {
+          expect(deck, greaterThan(askable[end - 10]));
+          expect(deck, lessThan(askable[end - 5]));
+        }
+        if (typedRight) {
+          expect(typed.length, inInclusiveRange(2, 3));
+          expect(w.landing, greaterThan(typed.last));
+          expect(w.landing, lessThanOrEqualTo(askable[end - 5]));
+        } else {
+          expect(typed.length, 1);
+          expect(w.landing, typed.single, reason: 'lands on the deck missed');
+        }
+      }
+    });
+
+    test('on the longest path, no way of answering asks more than about 20 '
+        'questions of the words, so placement stays well under 40 with a '
+        'script check at its longest (owner, 2026-10-20: "I cannot be '
+        'expected to answer 100+ questions")', () {
+      expect(telugu.length, greaterThan(100));
+      var worst = 0;
+      void run(bool Function(int n) right) {
+        final w = DeckWalk(telugu, random: Random(1));
+        var n = 0;
+        while (!w.isFinished && n < 1000) {
+          w.answer(right(n++));
+        }
+        expect(w.isFinished, isTrue);
+        worst = max(worst, w.asked);
+      }
+
+      run((_) => true);
+      run((_) => false);
+      run((n) => n.isOdd);
+      run((n) => n.isEven);
+      run((n) => n < 5);
+      for (final p in <double>[0.3, 0.5, 0.7, 0.85, 0.95]) {
+        for (var seed = 0; seed < 100; seed++) {
+          final random = Random(seed);
+          run((_) => random.nextDouble() < p);
+        }
+      }
+      expect(worst, lessThanOrEqualTo(24));
+      // A script check asks at most two questions at each of five levels.
+      expect(worst + 2 * 5, lessThan(36));
     });
   });
 
