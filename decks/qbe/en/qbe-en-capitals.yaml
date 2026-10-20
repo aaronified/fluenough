@@ -1,0 +1,36 @@
+schema: 1
+id: "qbe-en-capitals"
+kind: "layer"
+core: "qbe-capitals"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Braille: capitals"
+description: "How braille marks capitals: the capital indicator before a letter, and the indicators for a word and a passage in capitals."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "script"]
+cards:
+  "qbe-0027":
+    native: "capital letter indicator: the next letter is a capital"
+    notes:
+      "n1": "Dot 6, before a letter: ⠠⠁ is A. Braille has no capital letters of its own; a cell in front says that the next one is a capital."
+    examples:
+      "⠠⠃⠕⠃": "Bob"
+      "⠠⠇⠕⠝⠙⠕⠝": "London"
+  "qbe-0028":
+    native: "capitalised word indicator: the whole word is in capitals"
+    notes:
+      "n1": "Dots 6, 6: two capital indicators. Every letter to the end of the word is a capital."
+    examples:
+      "⠠⠠⠃⠃⠉": "BBC"
+      "⠠⠠⠝⠕": "NO"
+  "qbe-0029":
+    native: "capitalised passage indicator: capitals until the capitals terminator"
+    notes:
+      "n1": "Dots 6, 6, 6: three capital indicators, for three or more words in capitals. The capitals go on until the capitals terminator, ⠠⠄."
+    examples:
+      "⠠⠠⠠⠙⠕ ⠝⠕⠞ ⠛⠕ ⠝⠕⠺⠠⠄": "DO NOT GO NOW"
+  "qbe-0030":
+    native: "capitals terminator: the capitals end here"
+    notes:
+      "n1": "Dots 6, then 3. It ends a capitalised passage, or capitals that stop inside a word: ⠠⠠⠉⠙⠠⠄⠎ is CDs."
+    examples:
+      "⠠⠠⠉⠙⠠⠄⠎": "CDs"

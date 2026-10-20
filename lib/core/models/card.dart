@@ -697,9 +697,9 @@ List<String> wordsOf(String text) => <String>[
 /// The words of [text] as the validator's `_words` splits them, for
 /// comparing a text's words with its `bases` and with the words a course
 /// teaches (DECK-FORMAT.md, Base words): split at white space; within each
-/// piece, every punctuation mark, symbol or separator except `’` and `'` splits
-/// it too; `’` and `'` are stripped from each end; and what is left empty or is
-/// all digits is dropped. Unlike the validator, this does not NFC-normalise
+/// piece, every punctuation mark, symbol or separator except `’`, `'` and a
+/// braille cell splits it too; `’` and `'` are stripped from each end; and
+/// what is left empty or is all digits is dropped. Unlike the validator, this does not NFC-normalise
 /// (#28).
 List<String> wordsForBases(String text) => <String>[
   for (final chunk in text.split(_pySpace))
@@ -709,8 +709,13 @@ List<String> wordsForBases(String text) => <String>[
         word,
 ];
 
-/// A punctuation mark, symbol or separator other than an apostrophe.
-final RegExp _baseBreak = RegExp(r"(?!['’])[\p{P}\p{S}\p{Z}]", unicode: true);
+/// A punctuation mark, symbol or separator other than an apostrophe or a
+/// braille cell, which Unicode files as a symbol but is a letter of its
+/// script, so that ⠉⠁⠞ is one word (ADR-0043).
+final RegExp _baseBreak = RegExp(
+  r"(?!['’\u2800-\u28FF])[\p{P}\p{S}\p{Z}]",
+  unicode: true,
+);
 final RegExp _edgeApostrophes = RegExp(r"^['’]+|['’]+$");
 final RegExp _allDigits = RegExp(r'^\p{Nd}+$', unicode: true);
 
