@@ -353,9 +353,10 @@ class DeckIndex(unittest.TestCase):
 
     def test_the_readme_badge_does_not_count_an_ipa_course(self) -> None:
         shutil.copytree(B1, self.tmp / "decks" / "zz")
-        home = self.tmp / "decks" / "zz" / "zz-home.yaml"
-        home.write_text(home.read_text(encoding="utf-8").replace(
-            'script: "telugu"', 'script: "ipa"'), encoding="utf-8")
+        # Every file of the course, since the index takes its script from one.
+        for deck in (self.tmp / "decks" / "zz").rglob("*.yaml"):
+            deck.write_text(deck.read_text(encoding="utf-8").replace(
+                'script: "telugu"', 'script: "ipa"'), encoding="utf-8")
         (self.tmp / "README.md").write_text(self.BADGE % (8, 8), encoding="utf-8")
         codes = [lang["code"] for lang in self.index()["languages"]]
         self.assertIn("zz", codes)
