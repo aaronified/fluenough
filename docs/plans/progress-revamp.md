@@ -23,7 +23,7 @@ Written 2026-10-20. Issue #678.
 
 | Issue | What | Fits here as |
 |---|---|---|
-| #575 (0.6.0) | A second "Toward B1" bar per skill | Its decisions give the scores below |
+| #575 (0.6.0) | A second "Toward B1" bar per skill | Replaced by the star; its scoring is kept |
 | #323 | Achievements grid on Progress | Sits below the charts |
 | #411 | Shareable progress image | Can share the star |
 
@@ -38,32 +38,28 @@ Decided in #575 (owner, 2026-10-18), reused here:
 
 ## The design
 
-| Chart | Shows | Source |
+| Part | Shows | Score |
 |---|---|---|
-| Words count | Words mastered (bold) of words taught (lighter) |
-| 6-point star (radar) | Mastery now: grammar, script, read, write, hear, say | Recall per skill |
-| Line chart | Scores over time for taught words, phrases, script and grammar, one line each | Recall per card kind, by day |
-| Area chart | Overall proficiency over time | Combined from the six axes |
+| Words count | Words mastered (bold), then words taught (lighter) | Counts |
+| 6-point star (radar) | Mastery per skill: grammar, script, read, write, hear, say. The points are joined and filled; the filled area is overall mastery | Known ÷ B1 total (#575) |
+| Line chart | Over time, one line each for words, phrases, script and grammar | Known ÷ taught |
 
-- A score is the share of the B1 total that is known (as #575 defines
-  it), from 0 to 100.
-- These charts are drawn per language, for the chosen language.
+- These are drawn per language, for the chosen language.
+- "Known" is as #575 defines it: FSRS 90%, past learning.
 
-## Decided
+## Decided (owner, 2026-10-20)
 
-- **Words are a number, not a skill** (owner, 2026-10-20: "Words is not
-  a skill. It is a number. A mastered number in bold and a lighter
-  coloured total taught/known."). Shown as the mastered count in bold,
-  then the total taught in a lighter colour, like **312** / 540.
+- **Words are a number, not a skill** ("Words is not a skill. It is a
+  number. A mastered number in bold and a lighter coloured total
+  taught/known."). Shown like **312** / 540.
 - **The star's six axes**: grammar, script, read, write, hear and say.
-
-## Open questions
-
-1. **Overall proficiency.** A weighted mean of the six axes, or mapped to
-   CEFR (A1 to B1)?
-2. **Mockup first?** `docs/mockups/README.md` says yes.
-3. **#575's bars**: does the star replace them, or do the two sit
-   together?
+- **The star replaces #575's bars**; #575 folds into #678.
+- **The area is the star itself** ("Area chart is basically the overall
+  mastery in skill, pointed on the 6 axis and then joined and filled").
+  There is no separate area chart over time.
+- **Line chart score**: known ÷ taught.
+- **Mockup first, by Sonnet** ("Sonnet mockup"), following
+  `docs/mockups/README.md`.
 
 ## Order
 
