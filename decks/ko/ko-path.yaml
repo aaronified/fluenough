@@ -3,7 +3,7 @@
 # from English is taught ko-en-<name> for ko-<name> (ADR-0013, ADR-0036).
 #
 # This is also Korean's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"):
-# every unit from the first words to B1, all of them planned, with its size
+# every unit from the first words to B1, the first written and the rest planned, with its size
 # in words, its grammar topics, the three milestones, and for each planned
 # unit its listening and reading passages. A unit with no deck yet is
 # planned: the course teaches it as "Coming" until a deck is written. A
@@ -118,13 +118,10 @@ alphabet: []
 # bottom of that unit, any other in the last unit.
 units:
   # 1. The phrasebook, taught whole from the first lesson, with the first
-  # words beside it: ko-phrasebook (15-25 survival phrases, which count no
-  # words) and ko-first-words when written.
-  - planned: { id: "ko-phrasebook", theme: "first-words", words: 12 }
-    listening_passages:
-      - { id: "first-greetings", text: { "en": "Greeting a neighbour and saying thank you and goodbye: annyeonghaseyo, gamsahamnida, annyeonghi gaseyo" } }
-    reading_passages:
-      - { id: "phrase-card", text: { "en": "A pocket card of survival phrases, in the romanisation" } }
+  # words beside it: ko-phrasebook (19 survival phrases, which count no
+  # words) and ko-first-words (12 words).
+  - decks: ["ko-phrasebook", "ko-first-words", "*"]
+    words: 12
   # 2. The first word units, read in the romanisation.
   - planned: { id: "ko-sound-differences", theme: "sound-differences", words: 16 }
     listening_passages:

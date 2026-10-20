@@ -26,6 +26,12 @@ SHA-256 of the file with its proposals and its cards' `checked_by` taken
 out, so that a learner's phone is not offered an update when only a
 proposal or a reviewer's sign-off changed (#444, #449).
 
+Writing the index also keeps the languages badge in the root README.md
+current: its number (`languages-N` and `N languages`) is the count of the
+index's real languages, leaving out the notation courses (script `ipa` or
+`braille`, else code `ipa` or `qbe`). It is rewritten only when it changed,
+and skipped when README.md or the badge is not there.
+
 `tools/validate_decks.py decks/` fails when the index is out of date, so CI
 keeps it current. Run this after changing any file under decks/.
 
@@ -47,6 +53,12 @@ import validate_decks as vd  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 DECKS = ROOT / "decks"
 INDEX = DECKS / "index.json"
+README = ROOT / "README.md"
+
+# Notation courses, not languages: the badge does not count them.
+NOTATION_SCRIPTS = {"ipa", "braille"}
+NOTATION_CODES = {"ipa", "qbe"}
+_BADGE = re.compile(r'(badge/languages-)\d+(-[^"\s]*"\s+alt=")\d+( languages")')
 
 # The index format. The app refuses an index of a newer version and asks
 # for an app update; raise it only for a change an older app would misread.
@@ -441,6 +453,37 @@ def stale(reports: list[vd.Report] | None = None) -> list[str]:
     return []
 
 
+def language_count(index: dict) -> int:
+    """How many of the index's languages are real languages."""
+    n = 0
+    for lang in index.get("languages", []):
+        script = lang.get("script")
+        if script is not None:
+            notation = script in NOTATION_SCRIPTS
+        else:
+            notation = lang.get("code") in NOTATION_CODES
+        n += not notation
+    return n
+
+
+def update_badge(index: dict) -> bool:
+    """Rewrite the README's languages badge to the index's count. True when
+    it changed; False, silently, when README.md or the badge is missing or
+    already right."""
+    if not README.is_file():
+        return False
+    with README.open(encoding="utf-8", newline="") as f:
+        text = f.read()
+    count = str(language_count(index))
+    new = _BADGE.sub(lambda m: m.group(1) + count + m.group(2) + count + m.group(3),
+                     text, count=1)
+    if new == text:
+        return False
+    with README.open("w", encoding="utf-8", newline="") as f:
+        f.write(new)
+    return True
+
+
 def main(argv: list[str]) -> int:
     args = argv[1:]
     if args not in ([], ["--check"]):
@@ -454,8 +497,11 @@ def main(argv: list[str]) -> int:
         for problem in problems:
             print(f"error: {problem}")
         return 1 if problems else 0
-    INDEX.write_text(render(build()), encoding="utf-8")
+    index = build()
+    INDEX.write_text(render(index), encoding="utf-8")
     print(f"wrote {_rel(INDEX)}")
+    if update_badge(index):
+        print(f"updated the languages badge in {_rel(README)}")
     return 0
 
 
