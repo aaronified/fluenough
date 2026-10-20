@@ -86,6 +86,9 @@ Before you start:
      or description is followed by its reading ("Script in prose").
    - When a base word changes its stem in a card's form, say so in that
      card's notes ("Base words"). Every inflected word has a `bases` entry.
+   - In a script written without spaces (Chinese, Japanese, Thai), every
+     target and example gives its `words` in order ("Base words"):
+     `["我", "听不懂"]`, Japanese particles as words of their own.
    - The meaning of a card never changes between layers or edits.
    - Tag the files `"unreviewed"`; a culture note needs a `source`
      ([docs/REVIEWING.md](../../../docs/REVIEWING.md) is how a speaker clears it).
