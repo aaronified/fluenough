@@ -2,6 +2,7 @@ import '../models/card.dart';
 import '../models/drill_mode.dart';
 import '../models/reading.dart';
 import 'ask.dart';
+import 'deck_sampling.dart';
 import 'fsrs.dart';
 import 'lesson_sets.dart';
 
@@ -188,6 +189,10 @@ class SessionQueue {
   /// its date: revising a finished deck. One mode per card still holds, the
   /// one due soonest.
   ///
+  /// With [sampleKnown], a deck whose known cards are due shows only some of
+  /// them, as [sampleCount] says, the ones reviewed longest ago first; the
+  /// rest wait (#680).
+  ///
   /// A card gives either its most overdue pair or its first new one, unless
   /// [newEvenIfDue]: then its first new pair is offered as well, for a
   /// session of new cards only, which drops the due ones.
@@ -206,6 +211,7 @@ class SessionQueue {
     bool Function(Card card)? canIntroduce,
     bool reviseAll = false,
     bool newEvenIfDue = false,
+    bool sampleKnown = false,
     Set<DrillMode> modes = const <DrillMode>{
       DrillMode.recognition,
       DrillMode.production,
@@ -299,8 +305,44 @@ class SessionQueue {
       return byDue != 0 ? byDue : a.order.compareTo(b.order);
     });
 
+    var shown = due.map((d) => d.item).toList();
+    if (sampleKnown) {
+      // Each deck's pair states, to tell a deck already represented.
+      final byDeck = <String, List<FsrsState>>{};
+      for (final card in all) {
+        for (final mode in DrillMode.drills) {
+          final state = stateOf(card, mode);
+          if (state != null) (byDeck[card.deckId] ??= <FsrsState>[]).add(state);
+        }
+      }
+      final knownDue = <String, List<SessionItem>>{};
+      for (final item in shown) {
+        if (isKnownState(item.state!)) {
+          (knownDue[item.card.deckId] ??= <SessionItem>[]).add(item);
+        }
+      }
+      final held = <SessionItem>{};
+      for (final MapEntry(key: deck, value: items) in knownDue.entries) {
+        final count = sampleCount(
+          <FsrsState>[for (final i in items) i.state!],
+          byDeck[deck]!,
+          now: now,
+        );
+        // Longest since reviewed first; the due order breaks ties.
+        final ranked = List<SessionItem>.of(items)
+          ..sort(
+            (a, b) => a.state!.lastReviewAt.compareTo(b.state!.lastReviewAt),
+          );
+        held.addAll(ranked.skip(count));
+      }
+      shown = <SessionItem>[
+        for (final item in shown)
+          if (!held.contains(item)) item,
+      ];
+    }
+
     return SessionQueue._(
-      List<SessionItem>.unmodifiable(due.map((d) => d.item)),
+      List<SessionItem>.unmodifiable(shown),
       List<SessionItem>.unmodifiable(fresh),
     );
   }
