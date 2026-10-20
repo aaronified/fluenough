@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Decks in a language written without spaces, such as Chinese and Japanese, can give the words of each card and example (#661). Putting a phrase's words in order then offers its real words as tiles, 我 and 听不懂 for 我听不懂, in traditional characters too, and a card of one word counts as one of its unit's words.
+
 ## [0.5.1] - 2026-10-19
 
 ### Added
