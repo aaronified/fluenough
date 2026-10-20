@@ -312,6 +312,9 @@ jobs:
       - name: Attach the APK to the release
         uses: softprops/action-gh-release@v3
         with:
+          # A manual run's ref is main, so name the tag rather than let the
+          # action take it from the ref.
+          tag_name: ${{ env.TAG }}
           files: build/app/outputs/flutter-apk/app-release.apk
           generate_release_notes: true
           body: |
