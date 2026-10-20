@@ -142,6 +142,18 @@ void main() {
       expect(p.stage, CourseStage.complete);
     });
 
+    test('the IPA course is Complete once every unit is written', () {
+      expect(
+        B1Progress.of(<B1Unit>[written(5), written(5)], isIpa: true).stage,
+        CourseStage.complete,
+      );
+      expect(
+        B1Progress.of(<B1Unit>[written(5), planned(5)], isIpa: true).stage,
+        CourseStage.alpha,
+      );
+      expect(B1Progress.of(<B1Unit>[written(5)]).stage, CourseStage.alpha);
+    });
+
     test('a course with no B1 plan is Alpha', () {
       expect(B1Progress.of(<B1Unit>[written(600)]).stage, CourseStage.alpha);
     });

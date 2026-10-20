@@ -3,6 +3,7 @@ import 'package:drift/drift.dart';
 import '../models/drill_mode.dart';
 import '../models/leech_action.dart';
 import '../models/review_event.dart';
+import '../scheduling/ask.dart';
 import '../scheduling/replay.dart';
 import '../scheduling/fsrs.dart';
 import '../scheduling/skill_parameters.dart';
@@ -36,6 +37,8 @@ class ReviewLog {
     required DateTime now,
     Duration elapsed = Duration.zero,
     String? answerGiven,
+    String? script,
+    Ask? asked,
     List<double> parameters = Fsrs.w,
   }) => _db.transaction(() async {
     final key = (cardId: cardId, mode: mode);
@@ -56,6 +59,8 @@ class ReviewLog {
         grade: grade,
         elapsedMs: elapsed.inMilliseconds,
         answerGiven: Value(answerGiven),
+        script: Value(script),
+        asked: Value(asked?.name),
         intervalBefore: Value(before?.intervalDays),
         intervalAfter: after.intervalDays,
         stabilityAfter: Value(after.stability),
@@ -71,6 +76,8 @@ class ReviewLog {
       grade: grade,
       elapsed: elapsed,
       answerGiven: answerGiven,
+      script: script,
+      asked: asked,
       before: before,
       after: after,
     );
@@ -252,6 +259,8 @@ class ReviewLog {
       grade: event.grade,
       elapsedMs: event.elapsed.inMilliseconds,
       answerGiven: Value(event.answerGiven),
+      script: Value(event.script),
+      asked: Value(event.asked?.name),
       intervalBefore: Value(event.before?.intervalDays),
       intervalAfter: event.after.intervalDays,
       stabilityAfter: Value(event.after.stability),
@@ -316,4 +325,6 @@ LoggedReview _logged(ReviewRow row) => (
   grade: row.grade,
   elapsed: Duration(milliseconds: row.elapsedMs),
   answerGiven: row.answerGiven,
+  script: row.script,
+  asked: Ask.values.asNameMap()[row.asked],
 );

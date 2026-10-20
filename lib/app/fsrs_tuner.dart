@@ -154,8 +154,9 @@ class FsrsTuner extends ChangeNotifier {
   void afterReview(ReviewEvent event) {
     // The skills this answer counts in full for: its own, and in a script
     // deck the script skill too (#556), each with its own count and fit.
+    // A part of a review elsewhere (#653) is not fitted.
     final own = skillOf(event.key);
-    final script = progress.skills.scriptOf(event.mode, event.deckId);
+    final script = progress.skills.scriptOf(logged(event));
     final keys = <SkillKey>[
       own,
       if (script != null && script.share >= 1)
