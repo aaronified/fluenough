@@ -1,3 +1,12 @@
+// Accessibility at 1.4x text, the app's cap (#505; owner, 2026-10-17: "We
+// are now only building for 1.4x text"). One test per screen, drawing it in
+// light and in dark on a phone with Android's three-button bar: nothing
+// overflows or is clipped, nothing sits under the bar, tap targets are big
+// enough, every control is labelled, and text meets contrast. Beside them:
+// the screen reader never reads out the answer asked for; deck text in an
+// interface string is read in its own language; the first launch in high
+// contrast and every colour; a phone at 2x text is drawn at 1.4x; a toast is
+// a live region.
 import 'dart:io';
 import 'dart:ui' show LocaleStringAttribute;
 
@@ -8,66 +17,57 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/app.dart';
 import 'package:fluenough/app/app_state.dart';
-import 'package:fluenough/app/backup_files.dart';
+import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/features.dart';
-import 'package:fluenough/app/mail_share.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/shell_tab.dart';
 import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
+import 'package:fluenough/core/feedback/report.dart';
 import 'package:fluenough/core/models/deck.dart';
-import 'package:fluenough/core/review/deck_review.dart';
 import 'package:fluenough/core/numbers/number_practice.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart' show Ask;
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/decks/decks_page.dart';
-import 'package:fluenough/features/decks/import_page.dart';
 import 'package:fluenough/features/decks/path_fixture.dart';
 import 'package:fluenough/features/decks/unit_page.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_preset.dart';
 import 'package:fluenough/features/drill/recognition_drill.dart';
 import 'package:fluenough/features/drill/typed_drill.dart';
+import 'package:fluenough/features/gallery/fixtures.dart';
+import 'package:fluenough/features/gallery/gallery_page.dart';
 import 'package:fluenough/features/onboarding/onboarding_flow.dart';
 import 'package:fluenough/features/onboarding/tour_step.dart';
-import 'package:fluenough/features/profiles/new_profile_page.dart';
-import 'package:fluenough/features/profiles/profiles_page.dart';
+import 'package:fluenough/features/placement/language_picker_page.dart';
+import 'package:fluenough/features/placement/script_test_page.dart';
 import 'package:fluenough/features/profiles/spoken_languages_page.dart';
-import 'package:fluenough/features/review/how_reviewing_works.dart';
+import 'package:fluenough/features/report/report_page.dart';
 import 'package:fluenough/features/review/offensive_review_page.dart';
 import 'package:fluenough/features/review/review_page.dart';
-import 'package:fluenough/features/review/reviewed_not_sent_page.dart';
-import 'package:fluenough/features/review/reviewed_sent_page.dart';
 import 'package:fluenough/features/review/waiting_page.dart';
-import 'package:fluenough/features/settings/appearance_page.dart';
 import 'package:fluenough/features/settings/activities_page.dart';
-import 'package:fluenough/features/settings/app_log_page.dart';
-import 'package:fluenough/features/settings/languages_page.dart';
-import 'package:fluenough/features/settings/profiles_privacy_page.dart';
-import 'package:fluenough/features/settings/reminders_page.dart';
-import 'package:fluenough/features/settings/updates_page.dart';
+import 'package:fluenough/features/settings/appearance_page.dart';
 import 'package:fluenough/features/settings/your_data_page.dart';
-import 'package:fluenough/features/settings/your_decks_page.dart';
-import 'package:fluenough/features/settings/reviewing_page.dart';
-import 'package:fluenough/features/settings/sources_page.dart';
-import 'package:fluenough/features/settings/voices_page.dart';
 import 'package:fluenough/features/stats/how_you_learn_page.dart';
-import 'package:fluenough/features/stats/leeches_page.dart';
 import 'package:fluenough/features/summary/summary_page.dart';
-import 'package:fluenough/features/today/due_card.dart';
-import 'package:fluenough/ui/widgets/pace_parts.dart';
+import 'package:fluenough/ui/theme.dart';
+import 'package:fluenough/ui/widgets/braille_keyboard.dart';
+import 'package:fluenough/ui/widgets/snack.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 
 import 'support/backup_fixture.dart';
+import 'support/braille_course.dart';
 import 'support/harness.dart';
+import 'support/nav_bar_walk.dart';
 import 'support/paced_learner.dart';
+import 'support/picker.dart';
 import 'support/review_fixture.dart';
 
-/// Flutter's accessibility guidelines on every drill state (#26): tap targets
-/// big enough for a drill used fast, every tap target labelled, and text at
-/// WCAG AA contrast, in both themes.
+/// Flutter's accessibility guidelines (#26): tap targets big enough for a
+/// drill used fast, every tap target labelled, and text at WCAG AA contrast.
 Future<void> meetsEveryGuideline(WidgetTester tester) async {
   await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
   await expectLater(tester, meetsGuideline(iOSTapTargetGuideline));
@@ -135,105 +135,426 @@ Future<void> noTargetCutAtTop(WidgetTester tester) async {
   }
 }
 
-void main() {
-  group('deck content in an interface string is read in its language', () {
-    const spanish = LanguageInfo(
-      code: 'es',
-      iso639_3: 'spa',
-      name: 'Spanish',
-      script: 'latin',
-    );
+/// Draws a screen in [mode]; returns nothing, leaving it on screen.
+typedef DrawScreen = Future<void> Function(WidgetTester tester, ThemeMode mode);
 
-    test('the longest quote wins, and the rest stays unmarked', () {
-      final span = quotingTarget('You typed “nino”. Written: el niño', <String>[
-        'niño',
-        'el niño',
-        'nino',
-      ], spanish);
+/// One screen at 1.4x text on a phone with the three-button bar, in light
+/// and in dark: nothing overflows, the guidelines hold, and once scrolled
+/// to its end nothing is left under the bar (#489, #501). [onTop] is what
+/// is checked for the bar when a sheet covers the page behind it.
+void screen(String name, DrawScreen draw, {Finder? onTop}) {
+  testWidgets('$name, at 1.4x text, light and dark', (tester) async {
+    final semantics = tester.ensureSemantics();
+    for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
+      usePhone(tester, textScale: 1.4, navBar: true);
+      await draw(tester, mode);
+      expect(tester.takeException(), isNull, reason: mode.name);
+      await noTargetCutAtTop(tester);
+      await meetsEveryGuideline(tester);
       expect(
-        [
-          for (final child in span.children!.cast<TextSpan>())
-            (child.text, child.locale?.languageCode),
-        ],
-        <(String?, String?)>[
-          ('You typed “', null),
-          ('nino', 'es'),
-          ('”. Written: ', null),
-          ('el niño', 'es'),
-        ],
+        await underBarAtEnd(tester, within: onTop ?? find.byType(MaterialApp)),
+        isEmpty,
+        reason: '${mode.name}: under the three-button bar',
       );
-    });
+    }
+    semantics.dispose();
+  });
+}
 
-    testWidgets('a wrong answer\'s feedback', (tester) async {
-      usePhone(tester);
-      final semantics = tester.ensureSemantics();
+/// The gallery's screen [id], on the state it is drawn on there.
+DrawScreen gallery(String id) => (tester, mode) async {
+  final app = AppState.test();
+  await app.load();
+  final entry = allGalleryEntries.firstWhere((e) => e.id == id);
+  final state = entry.state?.call(app) ?? GalleryFixtures.state(app);
+  await pumpScreen(
+    tester,
+    Builder(builder: entry.builder),
+    state: state,
+    themeMode: mode,
+  );
+};
+
+/// [page] on a fresh app, or on the state [state] makes.
+DrawScreen page(Widget page, {Future<AppState> Function()? state}) =>
+    (tester, mode) async {
+      await pumpScreen(
+        tester,
+        page,
+        state: state == null ? null : await state(),
+        themeMode: mode,
+      );
+    };
+
+/// A drill of [request] from [preset].
+DrawScreen drill(
+  DrillRequest request, [
+  DrillPreset preset = const DrillPreset(),
+]) => page(
+  DrillPage(request: request, preset: preset),
+  state: () async => AppState.test(tts: FixedTtsEngine(<String>{'es', 'hi'})),
+);
+
+/// The whole app on [tab], for a learner whose pace has been fitted.
+DrawScreen tab(ShellTab tab) => (tester, mode) async {
+  final state = await pacedLearner(
+    Paced.fewer,
+    also: <Paced>{Paced.more, Paced.same},
+  );
+  state.settings.themeMode = mode;
+  await pumpApp(tester, state: state);
+  state.shellTab.value = tab;
+  await tester.pumpAndSettle();
+};
+
+/// The design's Telugu learner, on the path (PathFixtures).
+Future<AppState> teluguLearner() async {
+  final app = AppState.test();
+  await app.load();
+  return PathFixtures.state(app);
+}
+
+/// [page] in reviewer mode, then [open] done on it.
+DrawScreen review(
+  Widget page, [
+  Future<void> Function(WidgetTester tester, AppState state)? open,
+]) => (tester, mode) async {
+  final state = await pumpScreen(
+    tester,
+    page,
+    state: await reviewState(reviewing: true),
+    themeMode: mode,
+  );
+  if (open != null) {
+    await open(tester, state);
+    await tester.pumpAndSettle();
+  }
+};
+
+final List<SpokenLanguage> choices = parseSpokenLanguages(
+  File(SpokenLanguagesPage.asset).readAsStringSync(),
+);
+
+/// A learner who speaks English and Bengali, reading both, learning
+/// Assamese: the script test is offered (#554).
+AppState bengaliReader() => AppState.test(
+  settings: SettingsNotifier(
+    spokenLanguages: const <String>['en', 'bn'],
+    learningLanguages: const <String>['as'],
+    learningChosen: true,
+  )..scriptsRead = <String, bool>{'en': true, 'bn': true},
+);
+
+/// The example set's files with a set card of five words, split over two
+/// cards, added to its home deck (#515).
+Map<String, String> setFiles() {
+  const appendix = 'test/fixtures/b1/appendix-a/zz';
+  final out = <String, String>{
+    for (final file in Directory(appendix).listSync(recursive: true))
+      if (file is File && file.path.endsWith('.yaml'))
+        'decks/zz/${file.path.substring(appendix.length + 1)}': file
+            .readAsStringSync(),
+  };
+  const members = <String>[
+    'zz-9001',
+    'zz-9004',
+    'zz-9006',
+    'zz-9003',
+    'zz-9002',
+  ];
+  out['decks/zz/zz-home.yaml'] =
+      '${out['decks/zz/zz-home.yaml']}'
+      '  - id: "zz-9201"\n'
+      '    kind: "set"\n'
+      '    members: [${members.map((m) => '{ ref: "$m" }').join(', ')}]\n';
+  out['decks/zz/en/zz-en-home.yaml'] = out['decks/zz/en/zz-en-home.yaml']!
+      .replaceFirst(
+        'cards:\n',
+        'cards:\n'
+            '  "zz-9201":\n'
+            '    native: "First words"\n'
+            '    explanation: "Words you meet first, together."\n',
+      );
+  return out;
+}
+
+const Key _say = Key('say');
+
+/// A screen with an app bar and a button that toasts.
+class _Toasting extends StatelessWidget {
+  const _Toasting();
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    appBar: AppBar(title: const Text('Screen')),
+    body: Center(
+      child: Builder(
+        builder: (context) => TextButton(
+          key: _say,
+          onPressed: () => showAppSnackBar(context, 'Saved'),
+          child: const Text('Say'),
+        ),
+      ),
+    ),
+  );
+}
+
+void main() {
+  group('Learn', () {
+    screen('Today', tab(ShellTab.today));
+    screen(
+      'the Decks path',
+      page(const DecksPage(planOf: PathFixtures.planOf), state: teluguLearner),
+    );
+    screen(
+      'a unit',
+      page(
+        const UnitPage(
+          deckId: PathFixtures.familyDeck,
+          plan: PathFixtures.telugu,
+        ),
+        state: teluguLearner,
+      ),
+    );
+    screen('a deck', page(const DeckDetailPage(deckId: 'hi-en-market')));
+    screen('Languages on the phone', gallery('learning-deck-updates'));
+    screen(
+      'the summary',
+      page(
+        SummaryPage(
+          result: SessionResult(
+            answers: const <SessionAnswer>[
+              SessionAnswer(skill: Skill.recognition, grade: 4),
+              SessionAnswer(skill: Skill.production, grade: 1),
+            ],
+            startedAt: DateTime(2026, 9, 28, 18, 50),
+            endedAt: DateTime(2026, 9, 28, 19),
+          ),
+        ),
+      ),
+    );
+  });
+
+  group('Drills', () {
+    screen('the teach card', gallery('drill-lesson'));
+    screen(
+      'recognition, revealed',
+      drill(
+        DrillRequest.deck('es-en-core-100', skill: Skill.recognition),
+        const DrillPreset(target: 'la casa', reveal: true),
+      ),
+    );
+    screen('choosing the meaning', gallery('drill-choose-meaning'));
+    screen(
+      'match pairs, with its tap-to-hear button',
+      drill(
+        DrillRequest.untaught('es-en-core-100', skill: Skill.recognition),
+        const DrillPreset(target: 'la casa', ask: Ask.matchPairs),
+      ),
+    );
+    screen('rearranging', gallery('drill-rearrange'));
+    // A typed answer with the keyboard open: the prompt, the field and
+    // Check stay in view above it; then its feedback.
+    screen('typed production, the keyboard open, then its feedback', (
+      tester,
+      mode,
+    ) async {
       await pumpScreen(
         tester,
         DrillPage(
-          request: DrillRequest.deck('es-en-core-100', skill: Skill.production),
-          preset: const DrillPreset(
-            target: 'el niño',
-            typed: 'la mesa',
-            check: true,
+          request: DrillRequest.untaught(
+            'te-en-first-words',
+            skill: Skill.production,
+          ),
+          preset: const DrillPreset(target: 'నమస్కారం'),
+        ),
+        themeMode: mode,
+      );
+      await tester.enterText(find.byType(TextField), 'nama');
+      tester.view.viewInsets = const FakeViewPadding(bottom: 336 * 3);
+      addTearDown(tester.view.resetViewInsets);
+      await tester.pumpAndSettle();
+      final l10n = l10nOf(tester);
+      for (final shown in <Finder>[
+        find.byType(TextField),
+        find.text(l10n.drillCheck),
+      ]) {
+        expect(shown.hitTestable(), findsOneWidget);
+        expect(tester.getRect(shown).bottom, lessThanOrEqualTo(844 - 336));
+      }
+      expect(tester.takeException(), isNull);
+      await meetsEveryGuideline(tester);
+      tester.view.resetViewInsets();
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(l10n.drillCheck));
+      await tester.pumpAndSettle();
+    });
+    screen(
+      'listening',
+      drill(DrillRequest.deck('es-en-core-100', skill: Skill.listening)),
+    );
+    screen('speaking', gallery('drill-speaking'));
+    screen('grammar, answered', gallery('drill-grammar-right'));
+    screen('minimal pairs, a wrong pick', gallery('drill-pair-wrong'));
+    screen(
+      'a reading passage, its glossary open',
+      gallery('drill-reading-glossary'),
+    );
+    screen(
+      'a split set card',
+      page(
+        DrillPage(
+          request: DrillRequest.lesson(language: 'zz', deckId: 'zz-en-home'),
+        ),
+        state: () async => AppState.test(
+          decks: MemoryDeckSource(setFiles()),
+          settings: SettingsNotifier(
+            spokenLanguages: const <String>['en'],
+            learningLanguages: const <String>['zz'],
           ),
         ),
+      ),
+    );
+    screen('the script guide', gallery('script-guide'));
+    screen('braille typed on its keyboard', (tester, mode) async {
+      await pumpScreen(
+        tester,
+        DrillPage(
+          request: DrillRequest.untaught(
+            'qbe-en-letters',
+            skill: Skill.production,
+          ),
+          preset: const DrillPreset(target: '⠃'),
+        ),
+        state: brailleApp(<String>['qbe']),
+        themeMode: mode,
       );
-      final l10n = l10nOf(tester);
-      expect(
-        quotedIn(tester, find.text(l10n.feedbackAnswer('el niño'))),
-        <String, String>{'el niño': 'es'},
-      );
-      semantics.dispose();
+      expect(find.byType(BrailleKeyboard), findsOneWidget);
     });
+  });
 
-    testWidgets('a language\'s own name, in the list of spoken ones', (
+  group('First launch', () {
+    screen('the tour', page(const OnboardingFlow(startAt: 'tour', page: 1)));
+    screen('the sound check', gallery('onboarding-sound'));
+    screen('Languages you know, a language\'s sheet open', (
       tester,
+      mode,
     ) async {
-      usePhone(tester);
-      final semantics = tester.ensureSemantics();
       await pumpScreen(
         tester,
         OnboardingFlow(
           startAt: 'spoken',
           spoken: const <String>['bn', 'en'],
-          choices: parseSpokenLanguages(
-            File(SpokenLanguagesPage.asset).readAsStringSync(),
-          ),
+          choices: choices,
         ),
+        themeMode: mode,
       );
-      final l10n = l10nOf(tester);
-      final bengali = find.text(l10n.spokenOption('Bengali', 'বাংলা'));
-      expect(quotedIn(tester, bengali), <String, String>{'বাংলা': 'bn'});
-      semantics.dispose();
+      await tapShown(tester, find.byKey(const ValueKey<String>('pick-en')));
+      await tester.pumpAndSettle();
     });
-
-    testWidgets('but not a heard number\'s digits', (tester) async {
-      usePhone(tester);
-      final semantics = tester.ensureSemantics();
-      final settings = SettingsNotifier()
-        ..setSkillEnabled(Skill.recognition, false)
-        ..setSkillEnabled(Skill.production, false);
+    screen(
+      'the language picker, a language\'s sheet open',
+      gallery('picker-taught-from'),
+    );
+    screen('a placement question', gallery('placement-check'));
+    screen('the script test', (tester, mode) async {
       await pumpScreen(
         tester,
-        DrillPage(request: DrillRequest.numbers('hi-en-numbers-big')),
-        state: AppState.test(
-          tts: FixedTtsEngine(<String>{'hi'}),
-          settings: settings,
-        ),
+        LanguagePickerPage(spokenList: choices),
+        state: bengaliReader(),
+        themeMode: mode,
       );
-      final card =
-          tester.widget<TypedDrill>(find.byType(TypedDrill)).session.item.card
-              as NumberCard;
-      await tester.enterText(find.byType(TextField), '1');
-      await tester.pump();
-      await tester.tap(find.text(l10nOf(tester).drillCheck));
+      await openSheet(tester, 'as');
+      await tapShown(tester, find.text(l10nOf(tester).scriptTestTake));
       await tester.pumpAndSettle();
-      expect(
-        quotedIn(tester, find.text(l10nOf(tester).feedbackAnswer(card.native))),
-        isEmpty,
-      );
-      semantics.dispose();
+      expect(find.byType(ScriptTestPage), findsOneWidget);
     });
+  });
+
+  group('Progress and settings', () {
+    screen('Progress', tab(ShellTab.progress));
+    screen(
+      'How you learn',
+      page(
+        const HowYouLearnPage(),
+        state: () =>
+            pacedLearner(Paced.fewer, also: <Paced>{Paced.more, Paced.same}),
+      ),
+    );
+    screen('leeches', gallery('leeches'));
+    screen('Settings', gallery('settings'));
+    screen('Activities and memory', page(const ActivitiesPage()));
+    screen('Appearance', page(const AppearancePage()));
+    screen('Voices', gallery('voices-speaking'));
+    screen('backup, the restore sheet open', (tester, mode) async {
+      tester.view.physicalSize = const Size(390 * 3, 5000 * 3);
+      final app = await stateWithBackups(
+        features: const FeatureRegistry.shipped(),
+      );
+      await pumpScreen(
+        tester,
+        const YourDataPage(),
+        state: app.state,
+        themeMode: mode,
+      );
+      final l10n = l10nOf(tester);
+      await tester.tap(find.byTooltip(l10n.settingsBackupRestore).first);
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.settingsRestoreTitle), findsOneWidget);
+    }, onTop: find.byType(BottomSheet));
+    screen('the app log', gallery('settings-app-log'));
+    screen('release notes', gallery('release-notes'));
+    screen(
+      'Report a problem',
+      page(
+        const ReportPage(
+          request: ReportRequest(screen: '/deck', detail: 'hi-en-market'),
+        ),
+        state: () async => AppState.test(
+          features: const FeatureRegistry.only(Feature.available),
+        ),
+      ),
+    );
+  });
+
+  group('Reviewing', () {
+    screen(
+      'the review page, a card open',
+      review(
+        const ReviewPage(deckId: wordsDeck),
+        (tester, state) async => tapShown(tester, find.text('mother')),
+      ),
+    );
+    screen(
+      'Suggest a change',
+      review(const ReviewPage(deckId: wordsDeck), (tester, state) async {
+        await tapShown(tester, find.text('mother'));
+        await tester.pumpAndSettle();
+        await tapShown(
+          tester,
+          find.widgetWithText(OutlinedButton, l10nOf(tester).reviewSuggest),
+        );
+      }),
+    );
+    screen(
+      'Waiting for review, a language unfolded',
+      review(const WaitingForReviewPage(), (tester, state) async {
+        state.settings
+          ..spokenLanguages = const <String>['en', 'te']
+          ..scriptsRead = const <String, bool>{'en': true, 'te': true}
+          ..reviewLanguages = const <String>{'te'};
+        await tester.pumpAndSettle();
+        await tapShown(tester, find.text('Telugu'));
+      }),
+    );
+    screen(
+      'the offensive-words gate',
+      review(const OffensiveReviewPage(language: 'te')),
+    );
+  });
+
+  group('Profiles', () {
+    screen('the PIN', gallery('pin'));
   });
 
   group('the screen reader never reads out the answer asked for', () {
@@ -318,829 +639,163 @@ void main() {
     });
   });
 
-  final drills = <(String, DrillRequest, DrillPreset)>[
-    (
-      'recognition',
-      DrillRequest.deck('es-en-core-100', skill: Skill.recognition),
-      const DrillPreset(target: 'la casa'),
-    ),
-    (
-      'recognition, revealed',
-      DrillRequest.deck('es-en-core-100', skill: Skill.recognition),
-      const DrillPreset(target: 'la casa', reveal: true),
-    ),
-    (
-      'production',
-      DrillRequest.deck('es-en-core-100', skill: Skill.production),
-      const DrillPreset(target: 'el niño'),
-    ),
-    (
-      'production, correct',
-      DrillRequest.deck('es-en-core-100', skill: Skill.production),
-      const DrillPreset(target: 'el niño', typed: 'el niño', check: true),
-    ),
-    (
-      'production, accent',
-      DrillRequest.deck('es-en-core-100', skill: Skill.production),
-      const DrillPreset(target: 'el niño', typed: 'el nino', check: true),
-    ),
-    (
-      'production, near miss',
-      DrillRequest.deck('es-en-core-100', skill: Skill.production),
-      const DrillPreset(target: 'la ventana', typed: 'la ventna', check: true),
-    ),
-    (
-      'production, wrong',
-      DrillRequest.deck('es-en-core-100', skill: Skill.production),
-      const DrillPreset(target: 'la ventana', typed: 'el perro', check: true),
-    ),
-    (
-      'production in a script, with the keyboard hint',
-      DrillRequest.deck('hi-en-script-consonants', skill: Skill.production),
-      const DrillPreset(target: 'क'),
-    ),
-    (
-      'listening',
-      DrillRequest.deck('es-en-core-100', skill: Skill.listening),
-      const DrillPreset(),
-    ),
-    (
-      'match pairs, with its tap-to-hear button',
-      DrillRequest.untaught('es-en-core-100', skill: Skill.recognition),
-      const DrillPreset(target: 'la casa', ask: Ask.matchPairs),
-    ),
-    (
-      'number practice',
-      DrillRequest.numbers('hi-en-numbers-big'),
-      const DrillPreset(),
-    ),
-  ];
+  testWidgets('deck text in an interface string is read in its language: '
+      'a wrong answer\'s feedback, a language\'s own name, but not a heard '
+      'number\'s digits', (tester) async {
+    const spanish = LanguageInfo(
+      code: 'es',
+      iso639_3: 'spa',
+      name: 'Spanish',
+      script: 'latin',
+    );
+    final span = quotingTarget('You typed “nino”. Written: el niño', <String>[
+      'niño',
+      'el niño',
+      'nino',
+    ], spanish);
+    expect(
+      [
+        for (final child in span.children!.cast<TextSpan>())
+          (child.text, child.locale?.languageCode),
+      ],
+      <(String?, String?)>[
+        ('You typed “', null),
+        ('nino', 'es'),
+        ('”. Written: ', null),
+        ('el niño', 'es'),
+      ],
+      reason: 'the longest quote wins, and the rest stays unmarked',
+    );
 
-  final pages = <(String, Widget)>[
-    ('a deck', const DeckDetailPage(deckId: 'hi-en-market')),
-    ('a deck marked unreviewed', const DeckDetailPage(deckId: 'te-en-market')),
-    ('add a deck', const ImportPage()),
-    ('leeches', const LeechesPage()),
-    ('your languages', const LanguagesSettingsPage()),
-    ('activities and memory', const ActivitiesPage()),
-    ('look and language', const AppearancePage()),
-    ('reminders', const RemindersPage()),
-    ('your decks', const YourDecksPage()),
-    ('your data', const YourDataPage()),
-    ('the app log', const AppLogPage()),
-    ('updates', const UpdatesPage()),
-    ('profiles and privacy', const ProfilesPrivacyPage()),
-    ('voices', const VoicesPage()),
-    ('sources', const SourcesPage()),
-    ('profiles', const ProfilesPage()),
-    ('a new profile', const NewProfilePage()),
-    (
-      'the summary',
-      SummaryPage(
-        result: SessionResult(
-          answers: const <SessionAnswer>[
-            SessionAnswer(skill: Skill.recognition, grade: 4),
-            SessionAnswer(skill: Skill.production, grade: 1),
-          ],
-          startedAt: DateTime(2026, 9, 28, 18, 50),
-          endedAt: DateTime(2026, 9, 28, 19),
+    usePhone(tester);
+    final semantics = tester.ensureSemantics();
+    await pumpScreen(
+      tester,
+      DrillPage(
+        request: DrillRequest.deck('es-en-core-100', skill: Skill.production),
+        preset: const DrillPreset(
+          target: 'el niño',
+          typed: 'la mesa',
+          check: true,
         ),
       ),
-    ),
-  ];
+    );
+    final l10n = l10nOf(tester);
+    expect(
+      quotedIn(tester, find.text(l10n.feedbackAnswer('el niño'))),
+      <String, String>{'el niño': 'es'},
+    );
 
-  final choices = parseSpokenLanguages(
-    File(SpokenLanguagesPage.asset).readAsStringSync(),
-  );
-  final firstLaunch = <(String, Widget)>[
-    ('first launch: welcome', const OnboardingFlow()),
-    for (final (i, slide) in tourSlides.indexed)
-      (
-        'first launch: tour, ${slide.id}',
-        OnboardingFlow(startAt: 'tour', page: i),
-      ),
-    (
-      'first launch: languages, none ticked',
-      OnboardingFlow(startAt: 'spoken', choices: choices),
-    ),
-    (
-      'first launch: languages, two ranked',
+    await pumpScreen(
+      tester,
       OnboardingFlow(
         startAt: 'spoken',
         spoken: const <String>['bn', 'en'],
         choices: choices,
       ),
-    ),
-    ('languages, from Settings', SpokenLanguagesPage(choices: choices)),
-  ];
-  pages.addAll(firstLaunch);
-
-  // The Decks tab's path and a unit's screen (the owner's design), on the
-  // design's Telugu learner: levels, milestones and coming units, a search
-  // across courses, a unit part learned, and a word's card.
-  final pathScreens = <(String, Widget)>[
-    ('the path, toward B1', const DecksPage(planOf: PathFixtures.planOf)),
-    (
-      'the path, searched',
-      const DecksPage(planOf: PathFixtures.planOf, initialQuery: 'family'),
-    ),
-    (
-      'a unit',
-      const UnitPage(
-        deckId: PathFixtures.familyDeck,
-        plan: PathFixtures.telugu,
-      ),
-    ),
-    (
-      'a unit, a word\'s card open',
-      const UnitPage(
-        deckId: 'te-en-sound-differences',
-        plan: PathFixtures.telugu,
-        openWord: PathFixtures.soundAlikeCard,
-      ),
-    ),
-  ];
-  Future<AppState> teluguLearner() async {
-    final app = AppState.test();
-    await app.load();
-    return PathFixtures.state(app);
-  }
-
-  for (final themeMode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
-    group('the path and a unit, ${themeMode.name} theme', () {
-      for (final (name, page) in pathScreens) {
-        testWidgets(name, (tester) async {
-          usePhone(tester);
-          final semantics = tester.ensureSemantics();
-          await pumpScreen(
-            tester,
-            page,
-            state: await teluguLearner(),
-            themeMode: themeMode,
-          );
-          await noTargetCutAtTop(tester);
-          await meetsEveryGuideline(tester);
-          semantics.dispose();
-        });
-      }
-    });
-  }
-
-  // In reviewer mode, each unit with a deck no native speaker has signed
-  // off carries "To review": every bundled Telugu deck is unreviewed.
-  for (final themeMode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
-    testWidgets('the path in reviewer mode, its units marked To review, '
-        '${themeMode.name} theme', (tester) async {
-      usePhone(tester);
-      final semantics = tester.ensureSemantics();
-      final state = await teluguLearner();
-      state.reviewing.turnOn();
-      // Reviewing Telugu from English needs both known, both scripts read.
-      state.settings
-        ..spokenLanguages = const <String>['en', 'te']
-        ..scriptsRead = const <String, bool>{'en': true, 'te': true}
-        ..reviewLanguages = const <String>{'te'};
-      await pumpScreen(
-        tester,
-        const DecksPage(planOf: PathFixtures.planOf),
-        state: state,
-        themeMode: themeMode,
-      );
-      expect(find.text(l10nOf(tester).pathToReview), findsWidgets);
-      // The path's top, so that no unit is cut at the edge under the
-      // language bar (#528).
-      await tester.fling(
-        find
-            .byWidgetPredicate(
-              (w) => w is Scrollable && w.axisDirection == AxisDirection.down,
-            )
-            .first,
-        const Offset(0, 3000),
-        3000,
-      );
-      await tester.pumpAndSettle();
-      await meetsEveryGuideline(tester);
-      semantics.dispose();
-    });
-  }
-
-  group('the path and a unit at the largest font size, 2.0 on Android', () {
-    for (final (name, page) in pathScreens) {
-      testWidgets('$name: nothing clipped, targets still big enough', (
-        tester,
-      ) async {
-        usePhone(tester, textScale: 2.0);
-        final semantics = tester.ensureSemantics();
-        await pumpScreen(tester, page, state: await teluguLearner());
-        expect(tester.takeException(), isNull);
-        // The path opens with its current unit a third of the way down,
-        // which can leave a sliver of the unit above at the top edge: at
-        // the app's 1.4x cap, 2.6 high. A sliver is where the list
-        // stopped, not a target's size, so check from the top (#505).
-        for (final element in find.byType(Scrollable).evaluate()) {
-          final position =
-              (element as StatefulElement).state as ScrollableState;
-          if (position.position.axis == Axis.vertical) {
-            position.position.jumpTo(0);
-          }
-        }
-        await tester.pumpAndSettle();
-        await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
-        await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
-        semantics.dispose();
-      });
-    }
-  });
-
-  group('at the largest font size, 2.0 on Android', () {
-    for (final (name, page) in firstLaunch) {
-      testWidgets('$name: nothing clipped, targets still big enough', (
-        tester,
-      ) async {
-        usePhone(tester, textScale: 2.0);
-        final semantics = tester.ensureSemantics();
-        await pumpScreen(tester, page);
-        expect(tester.takeException(), isNull);
-        await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
-        await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
-        semantics.dispose();
-      });
-    }
-
-    for (final (name, request, preset) in drills) {
-      testWidgets('$name: nothing clipped, targets still big enough', (
-        tester,
-      ) async {
-        usePhone(tester, textScale: 2.0);
-        final semantics = tester.ensureSemantics();
-        await pumpScreen(
-          tester,
-          DrillPage(request: request, preset: preset),
-          state: AppState.test(tts: FixedTtsEngine(<String>{'es', 'hi'})),
-        );
-        expect(tester.takeException(), isNull);
-        await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
-        await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
-        semantics.dispose();
-      });
-    }
-  });
-
-  for (final themeMode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
-    group('${themeMode.name} theme', () {
-      for (final (name, request, preset) in drills) {
-        testWidgets(name, (tester) async {
-          usePhone(tester);
-          final semantics = tester.ensureSemantics();
-          await pumpScreen(
-            tester,
-            DrillPage(request: request, preset: preset),
-            state: AppState.test(tts: FixedTtsEngine(<String>{'es'})),
-            themeMode: themeMode,
-          );
-          await meetsEveryGuideline(tester);
-          semantics.dispose();
-        });
-      }
-
-      for (final (name, page) in pages) {
-        testWidgets(name, (tester) async {
-          usePhone(tester);
-          final semantics = tester.ensureSemantics();
-          await pumpScreen(tester, page, themeMode: themeMode);
-          await meetsEveryGuideline(tester);
-          semantics.dispose();
-        });
-      }
-
-      for (final tab in ShellTab.values) {
-        testWidgets('the ${tab.name} tab', (tester) async {
-          usePhone(tester);
-          final semantics = tester.ensureSemantics();
-          final state = AppState.test();
-          state.settings.themeMode = themeMode;
-          await pumpApp(tester, state: state);
-          state.shellTab.value = tab;
-          await tester.pumpAndSettle();
-          await meetsEveryGuideline(tester);
-          semantics.dispose();
-        });
-      }
-    });
-  }
-
-  // Reviewer mode (docs/plans/deck-browser.md): Settings' Reviewing group
-  // and How reviewing works, a unit's review and each of its sheets, the
-  // rude-word rating and the pair check with adult content on, the send
-  // sheet, and the drill card's sound-alike warning.
-  final reviewScreens =
-      <
-        (
-          String,
-          Widget,
-          Future<void> Function(WidgetTester tester, AppState state)?,
-        )
-      >[
-        ('settings, reviewing on', const ReviewingPage(), null),
-        (
-          'how reviewing works',
-          const ReviewingPage(),
-          (tester, state) async {
-            await tapShown(tester, find.text(l10nOf(tester).reviewSettingsHow));
-          },
-        ),
-        ('review a unit', const ReviewPage(deckId: wordsDeck), null),
-        (
-          'review a unit, a card open',
-          const ReviewPage(deckId: wordsDeck),
-          (tester, state) async => tapShown(tester, find.text('mother')),
-        ),
-        (
-          'review a unit, suggest a change',
-          const ReviewPage(deckId: wordsDeck),
-          (tester, state) async {
-            await tapShown(tester, find.text('mother'));
-            await tester.pumpAndSettle();
-            await tapShown(
-              tester,
-              find.widgetWithText(OutlinedButton, l10nOf(tester).reviewSuggest),
-            );
-          },
-        ),
-        (
-          'review a unit, a word like a rude one, adult content on',
-          const ReviewPage(deckId: wordsDeck),
-          (tester, state) async {
-            state.settings.adultContent = true;
-            await tester.pumpAndSettle();
-            await tapShown(tester, find.text('widow'));
-          },
-        ),
-        (
-          'offensive words, why they are here',
-          const OffensiveReviewPage(language: 'te'),
-          null,
-        ),
-        (
-          'offensive words, the age question',
-          const OffensiveReviewPage(language: 'te'),
-          (tester, state) async =>
-              tapShown(tester, find.text(l10nOf(tester).commonContinue)),
-        ),
-        (
-          'offensive words, rating one',
-          const OffensiveReviewPage(language: 'te'),
-          (tester, state) async {
-            final l10n = l10nOf(tester);
-            await tapShown(tester, find.text(l10n.commonContinue));
-            await tester.pumpAndSettle();
-            await tapShown(tester, find.text(l10n.settingsAdultConfirm));
-            await tester.pumpAndSettle();
-            await tapShown(tester, find.text('idiot, good-for-nothing'));
-            await tester.pumpAndSettle();
-            await tapShown(tester, find.text(l10n.reviewRate));
-          },
-        ),
-        (
-          'offensive words, checking a pair',
-          const OffensiveReviewPage(language: 'te'),
-          (tester, state) async {
-            final l10n = l10nOf(tester);
-            await tapShown(tester, find.text(l10n.commonContinue));
-            await tester.pumpAndSettle();
-            await tapShown(tester, find.text(l10n.settingsAdultConfirm));
-            await tester.pumpAndSettle();
-            await tapShown(
-              tester,
-              find.widgetWithText(FilledButton, l10n.reviewAlikeCheckShort),
-            );
-          },
-        ),
-        (
-          'review a unit, the send sheet',
-          const ReviewPage(deckId: wordsDeck),
-          (tester, state) async {
-            final words = state.deckById(wordsDeck)!;
-            state.reviewing.markRight(words, words.cards.first);
-            await tester.pumpAndSettle();
-            await tapShown(tester, find.text(l10nOf(tester).reviewSend));
-          },
-        ),
-        (
-          'waiting for review, no language chosen',
-          const WaitingForReviewPage(),
-          null,
-        ),
-        (
-          'waiting for review, choosing the languages',
-          const WaitingForReviewPage(),
-          (tester, state) async =>
-              tapShown(tester, find.text(l10nOf(tester).reviewWaitingChoose)),
-        ),
-        (
-          'waiting for review in Telugu',
-          const WaitingForReviewPage(),
-          (tester, state) async {
-            state.settings
-              ..spokenLanguages = const <String>['en', 'te']
-              ..scriptsRead = const <String, bool>{'en': true, 'te': true}
-              ..reviewLanguages = const <String>{'te'};
-          },
-        ),
-        (
-          'waiting for review in Telugu, unfolded',
-          const WaitingForReviewPage(),
-          (tester, state) async {
-            state.settings
-              ..spokenLanguages = const <String>['en', 'te']
-              ..scriptsRead = const <String, bool>{'en': true, 'te': true}
-              ..reviewLanguages = const <String>{'te'};
-            await tester.pumpAndSettle();
-            await tapShown(tester, find.text('Telugu'));
-          },
-        ),
-        (
-          'reviewed, not sent',
-          const ReviewedNotSentPage(),
-          (tester, state) async {
-            final words = state.deckById(wordsDeck)!;
-            state.reviewing.suggest(words, words.cards.last, const <Suggestion>[
-              Suggestion(
-                part: CardPart.meaning,
-                now: 'mother',
-                text: 'mum',
-                why: 'Less formal.',
-              ),
-            ]);
-            state.reviewing.markRight(words, words.cards.first);
-            await tester.pumpAndSettle();
-            await tapShown(
-              tester,
-              find.text(l10nOf(tester).reviewUnsentLooksRight(1)),
-            );
-          },
-        ),
-        // The reviewer guide as the walkthrough (#409): its first step, one
-        // with three paragraphs, and the last, which closes with Got it.
-        ('how reviewing works, first step', const HowReviewingWorks(), null),
-        (
-          'how reviewing works, sending in one mail',
-          HowReviewingWorks(
-            initialStep: reviewGuideSteps.indexWhere((s) => s.id == 'send'),
-          ),
-          null,
-        ),
-        (
-          'how reviewing works, last step',
-          HowReviewingWorks(initialStep: reviewGuideSteps.length - 1),
-          null,
-        ),
-        (
-          'a seen word like a rude one, answer shown',
-          DrillPage(
-            request: DrillRequest.deck(wordsDeck, skill: Skill.recognition),
-            preset: const DrillPreset(target: 'విధవ', reveal: true),
-          ),
-          null,
-        ),
-      ];
-
-  Future<void> pumpReview(
-    WidgetTester tester,
-    Widget page,
-    Future<void> Function(WidgetTester, AppState)? open, {
-    ThemeMode themeMode = ThemeMode.light,
-  }) async {
-    final state = await pumpScreen(
-      tester,
-      page,
-      state: await reviewState(reviewing: true),
-      themeMode: themeMode,
     );
-    if (open != null) {
-      await open(tester, state);
-      await tester.pumpAndSettle();
-    }
-  }
+    final bengali = find.text(l10n.spokenOption('Bengali', 'বাংলা'));
+    expect(quotedIn(tester, bengali), <String, String>{'বাংলা': 'bn'});
 
-  for (final themeMode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
-    group('reviewer mode, ${themeMode.name} theme', () {
-      for (final (name, page, open) in reviewScreens) {
-        testWidgets(name, (tester) async {
-          usePhone(tester);
-          final semantics = tester.ensureSemantics();
-          await pumpReview(tester, page, open, themeMode: themeMode);
-          await meetsEveryGuideline(tester);
-          semantics.dispose();
-        });
-      }
-    });
-  }
-
-  // Reviewed and sent (#471): the states come from the deck files, so it
-  // needs a review sent from a phone whose deck holds a proposal.
-  for (final scale in <double>[1.0, 1.4]) {
-    for (final themeMode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
-      testWidgets('reviewer mode: reviewed and sent, ${scale}x, '
-          '${themeMode.name} theme', (tester) async {
-        usePhone(tester, textScale: scale);
-        final semantics = tester.ensureSemantics();
-        final state = await reviewState(
-          proposed:
-              '[{ id: "aaaaaaaaaa", field: "native", now: "mother", '
-              'text: "mum", by: "$reviewerCode", date: "2026-10-09" }]',
-          reviewing: true,
-          share: FixedMailShare(),
-          settings: SettingsNotifier(
-            spokenLanguages: const <String>['en', 'te'],
-            learningLanguages: const <String>['te'],
-            learningChosen: true,
-          )..raterCode = reviewerCode,
-        );
-        final words = state.deckById(wordsDeck)!;
-        state.reviewing.suggest(words, words.cards.last, const <Suggestion>[
-          Suggestion(part: CardPart.meaning, now: 'mother', text: 'mum'),
-          Suggestion(part: CardPart.reading, now: 'ammaa', text: 'amma'),
-          Suggestion(part: CardPart.ipa, now: 'old', text: 'new'),
-          Suggestion(part: CardPart.picture, now: '', text: 'A mother.'),
-        ]);
-        await state.reviewing.send(state.reviewing.unsent, body: '');
-        await pumpScreen(
-          tester,
-          const ReviewedSentPage(),
-          state: state,
-          themeMode: themeMode,
-        );
-        expect(tester.takeException(), isNull);
-        expect(find.text(l10nOf(tester).reviewSentAccepted), findsWidgets);
-        await meetsEveryGuideline(tester);
-        semantics.dispose();
-      });
-    }
-  }
-
-  // Backup and restore (#470): Your data with its Recent backups, the
-  // restore sheet, and the sheet for a file from a newer Fluenough, as
-  // shipped, with restore on (owner, 2026-10-17). Bengali and Hindustani
-  // progress, as in the mockup.
-  group('backup and restore', () {
-    const restoreOn = FeatureRegistry.shipped();
-    for (final scale in <double>[1.0, 1.4]) {
-      for (final themeMode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
-        final where = '${themeMode.name} theme, ${scale}x text';
-
-        testWidgets('Your data and Recent backups, $where', (tester) async {
-          usePhone(tester, textScale: scale);
-          tester.view.physicalSize = const Size(390 * 3, 5000 * 3);
-          final semantics = tester.ensureSemantics();
-          final app = await stateWithBackups(features: restoreOn);
-          await pumpScreen(
-            tester,
-            const YourDataPage(),
-            state: app.state,
-            themeMode: themeMode,
-          );
-          expect(tester.takeException(), isNull);
-          expect(
-            find.text(l10nOf(tester).settingsBackupMadeByYou('Sep 28')),
-            findsOneWidget,
-          );
-          await meetsEveryGuideline(tester);
-          semantics.dispose();
-        });
-
-        testWidgets('the restore sheet, $where', (tester) async {
-          usePhone(tester, textScale: scale);
-          tester.view.physicalSize = const Size(390 * 3, 5000 * 3);
-          final semantics = tester.ensureSemantics();
-          final app = await stateWithBackups(features: restoreOn);
-          await pumpScreen(
-            tester,
-            const YourDataPage(),
-            state: app.state,
-            themeMode: themeMode,
-          );
-          final l10n = l10nOf(tester);
-          await tester.tap(
-            scale > 1.3
-                ? find.byTooltip(l10n.settingsBackupRestore).first
-                : find.text(l10n.settingsBackupRestore).first,
-          );
-          await tester.pumpAndSettle();
-          expect(tester.takeException(), isNull);
-          expect(find.text(l10n.settingsRestoreTitle), findsOneWidget);
-          expect(
-            find.text(
-              l10n.settingsRestoreProgressIn(6, 'Bengali and Hindustani'),
-            ),
-            findsOneWidget,
-          );
-          await meetsEveryGuideline(tester);
-          semantics.dispose();
-        });
-
-        testWidgets('the sheet for a file from a newer Fluenough, $where', (
-          tester,
-        ) async {
-          usePhone(tester, textScale: scale);
-          final semantics = tester.ensureSemantics();
-          final files = FixedBackupFiles()..toOpen = newerFile('0.7.0');
-          await pumpScreen(
-            tester,
-            const YourDataPage(),
-            state: AppState.test(features: restoreOn, backupFiles: files),
-            themeMode: themeMode,
-          );
-          final l10n = l10nOf(tester);
-          await tapShown(tester, find.text(l10n.settingsDataRestore));
-          await tester.pumpAndSettle();
-          expect(tester.takeException(), isNull);
-          expect(find.text(l10n.settingsRestoreNewerTitle), findsOneWidget);
-          await meetsEveryGuideline(tester);
-          semantics.dispose();
-        });
-      }
-    }
+    final settings = SettingsNotifier()
+      ..setSkillEnabled(Skill.recognition, false)
+      ..setSkillEnabled(Skill.production, false);
+    await pumpScreen(
+      tester,
+      DrillPage(request: DrillRequest.numbers('hi-en-numbers-big')),
+      state: AppState.test(
+        tts: FixedTtsEngine(<String>{'hi'}),
+        settings: settings,
+      ),
+    );
+    final card =
+        tester.widget<TypedDrill>(find.byType(TypedDrill)).session.item.card
+            as NumberCard;
+    await tester.enterText(find.byType(TextField), '1');
+    await tester.pump();
+    await tester.tap(find.text(l10n.drillCheck));
+    await tester.pumpAndSettle();
+    expect(
+      quotedIn(tester, find.text(l10n.feedbackAnswer(card.native))),
+      isEmpty,
+    );
+    semantics.dispose();
   });
 
-  // The app's cap is 1.4x (#505; owner, 2026-10-17: only 1.4x is built for).
-  for (final themeMode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
-    group('reviewer mode at 1.4x text, ${themeMode.name} theme', () {
-      for (final (name, page, open) in reviewScreens) {
-        testWidgets('$name: nothing clipped, guidelines met', (tester) async {
-          usePhone(tester, textScale: 1.4);
-          final semantics = tester.ensureSemantics();
-          await pumpReview(tester, page, open, themeMode: themeMode);
-          expect(tester.takeException(), isNull);
-          await meetsEveryGuideline(tester);
-          semantics.dispose();
-        });
-      }
-    });
-  }
-
-  group('reviewer mode at the largest font size, 2.0 on Android', () {
-    for (final (name, page, open) in reviewScreens) {
-      testWidgets('$name: nothing clipped, targets still big enough', (
-        tester,
-      ) async {
-        usePhone(tester, textScale: 2.0);
-        final semantics = tester.ensureSemantics();
-        await pumpReview(tester, page, open);
-        expect(tester.takeException(), isNull);
-        await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
-        await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
-        semantics.dispose();
-      });
-    }
-  });
-
-  // Adjusted to you (ADR-0035): How you learn, and the
-  // Today and Progress tabs, before any fit and after each kind of fit.
-  group('adjusted to you', () {
-    for (final paced in Paced.values) {
-      for (final themeMode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
-        testWidgets('How you learn, ${paced.name}, ${themeMode.name}', (
-          tester,
-        ) async {
-          usePhone(tester);
-          final semantics = tester.ensureSemantics();
-          await pumpScreen(
-            tester,
-            const HowYouLearnPage(),
-            state: await pacedLearner(paced),
-            themeMode: themeMode,
-          );
-          await meetsEveryGuideline(tester);
-          semantics.dispose();
-        });
-
-        for (final tab in <ShellTab>[ShellTab.today, ShellTab.progress]) {
-          testWidgets('the ${tab.name} tab, ${paced.name}, ${themeMode.name}', (
-            tester,
-          ) async {
-            usePhone(tester);
-            final semantics = tester.ensureSemantics();
-            final state = await pacedLearner(paced);
-            state.settings.themeMode = themeMode;
-            await pumpApp(tester, state: state);
-            state.shellTab.value = tab;
-            await tester.pumpAndSettle();
-            if (tab == ShellTab.today) {
-              // The state checked is the one asked for.
-              expect(
-                find.descendant(
-                  of: find.byType(DueCard),
-                  matching: find.byType(PaceStrip),
-                ),
-                paced.adjusts ? findsOneWidget : findsNothing,
-              );
-              // The tiles and their marks on screen, to be measured.
-              final marks = find.byType(PaceMark);
-              if (paced.adjusts) {
-                // The due card at the top, its tiles whole: with the
-                // language bar (#528) over the scrolling, bringing a mark
-                // to the top would cut its tile at the edge.
-                await Scrollable.ensureVisible(
-                  tester.element(find.byType(DueCard)),
-                );
-                await tester.pumpAndSettle();
-                expect(marks.hitTestable(), findsWidgets);
-              }
-            }
-            await meetsEveryGuideline(tester);
-            semantics.dispose();
-          });
-        }
-      }
-
-      testWidgets('How you learn, ${paced.name}, at text scale 2.0: nothing '
-          'clipped, targets still big enough', (tester) async {
-        usePhone(tester, textScale: 2.0);
-        final semantics = tester.ensureSemantics();
-        await pumpScreen(
-          tester,
-          const HowYouLearnPage(),
-          state: await pacedLearner(
-            paced,
-            also: <Paced>{Paced.fewer, Paced.more, Paced.same},
-          ),
-        );
-        expect(tester.takeException(), isNull);
-        await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
-        await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
-        semantics.dispose();
-      });
-    }
-
-    for (final tab in <ShellTab>[ShellTab.today, ShellTab.progress]) {
-      testWidgets('the ${tab.name} tab, every kind of fit, at text scale '
-          '2.0: nothing clipped, targets still big enough', (tester) async {
-        usePhone(tester, textScale: 2.0);
-        final semantics = tester.ensureSemantics();
-        final state = await pacedLearner(
-          Paced.fewer,
-          also: <Paced>{Paced.more, Paced.same},
-        );
-        await pumpApp(tester, state: state);
-        state.shellTab.value = tab;
-        await tester.pumpAndSettle();
-        expect(tester.takeException(), isNull);
-        await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
-        await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
-        semantics.dispose();
-      });
-    }
-  });
-
-  group('the first launch in every colour', () {
-    setUp(rootBundle.clear);
+  testWidgets('the first launch meets contrast in every colour, standard and '
+      'high contrast, light and dark', (tester) async {
+    usePhone(tester);
+    final semantics = tester.ensureSemantics();
     for (final seed in ThemeSeed.values) {
       for (final high in <bool>[false, true]) {
         for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
-          testWidgets('${seed.name}, ${high ? 'high' : 'standard'} contrast, '
-              '${mode.name}', (tester) async {
-            usePhone(tester);
-            final semantics = tester.ensureSemantics();
-            final settings = SettingsNotifier(
-              seed: seed,
-              highContrast: high,
-              themeMode: mode,
-            );
-            final state = AppState.test(settings: settings);
-            addTearDown(state.dispose);
-            addTearDown(settings.dispose);
-            await tester.pumpWidget(FluenoughApp(state: state));
-            await tester.pumpAndSettle();
+          rootBundle.clear();
+          final settings = SettingsNotifier(
+            seed: seed,
+            highContrast: high,
+            themeMode: mode,
+          );
+          final state = AppState.test(settings: settings);
+          addTearDown(state.dispose);
+          addTearDown(settings.dispose);
+          await tester.pumpWidget(FluenoughApp(key: UniqueKey(), state: state));
+          await tester.pumpAndSettle();
+          await expectLater(tester, meetsGuideline(textContrastGuideline));
+          await tester.tap(find.byType(FilledButton));
+          await tester.pumpAndSettle();
+          for (var i = 0; i < tourSlides.length; i++) {
             await expectLater(tester, meetsGuideline(textContrastGuideline));
             await tester.tap(find.byType(FilledButton));
             await tester.pumpAndSettle();
-            for (var i = 0; i < tourSlides.length; i++) {
-              await expectLater(tester, meetsGuideline(textContrastGuideline));
-              await tester.tap(find.byType(FilledButton));
-              await tester.pumpAndSettle();
-            }
-            // The microphone and sound check (#89), then on.
-            await expectLater(tester, meetsGuideline(textContrastGuideline));
-            await tester.tap(find.byType(FilledButton));
-            await tester.pumpAndSettle();
-            await knowLanguage(tester, 'Bengali');
-            await tester.enterText(
-              find.byKey(const ValueKey<String>('known-search')),
-              '',
-            );
-            await tester.pumpAndSettle();
-            // The sheet, open (#490), then the list with answers.
-            await tester.tap(find.byKey(const ValueKey<String>('pick-en')));
-            await tester.pumpAndSettle();
-            await expectLater(tester, meetsGuideline(textContrastGuideline));
-            await tester.tap(find.byKey(const ValueKey<String>('know-read')));
-            await tester.pumpAndSettle();
-            await expectLater(tester, meetsGuideline(textContrastGuideline));
-            semantics.dispose();
-          });
+          }
+          // The microphone and sound check (#89), then on.
+          await expectLater(tester, meetsGuideline(textContrastGuideline));
+          await tester.tap(find.byType(FilledButton));
+          await tester.pumpAndSettle();
+          await knowLanguage(tester, 'Bengali');
+          await tester.enterText(
+            find.byKey(const ValueKey<String>('known-search')),
+            '',
+          );
+          await tester.pumpAndSettle();
+          // The sheet, open (#490), then the list with answers.
+          await tester.tap(find.byKey(const ValueKey<String>('pick-en')));
+          await tester.pumpAndSettle();
+          await expectLater(tester, meetsGuideline(textContrastGuideline));
+          await tester.tap(find.byKey(const ValueKey<String>('know-read')));
+          await tester.pumpAndSettle();
+          await expectLater(tester, meetsGuideline(textContrastGuideline));
         }
       }
     }
+    semantics.dispose();
+  });
+
+  testWidgets('a phone at 2x text draws the app at 1.4x (#505), and below '
+      'the cap keeps its own size', (tester) async {
+    usePhone(tester, textScale: 2.0);
+    await pumpApp(tester);
+    TextScaler scaler() =>
+        MediaQuery.textScalerOf(tester.element(find.byType(Scaffold).first));
+    expect(AppSizes.maxTextScale, 1.4);
+    expect(scaler().scale(10), closeTo(14, 0.001));
+
+    usePhone(tester, textScale: 1.2);
+    await tester.pumpAndSettle();
+    expect(scaler().scale(10), closeTo(12, 0.001));
+  });
+
+  testWidgets('a toast is a live region a screen reader hears', (tester) async {
+    addTearDown(hideAppSnackBar);
+    usePhone(tester);
+    final handle = tester.ensureSemantics();
+    await pumpScreen(tester, const _Toasting());
+    await tester.tap(find.byKey(_say));
+    await tester.pumpAndSettle();
+    expect(
+      tester.getSemantics(find.text('Saved')),
+      matchesSemantics(label: 'Saved', isLiveRegion: true),
+    );
+    handle.dispose();
   });
 }

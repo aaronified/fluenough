@@ -181,17 +181,8 @@ class Base(unittest.TestCase):
         return pr.Proposal(**facts)
 
 
-class Threshold(unittest.TestCase):
-    def test_the_variable_or_one(self) -> None:
-        for raw, wanted in (("", 1), ("abc", 1), ("0", 1), ("-2", 1), ("1.5", 1),
-                            ("2", 2), (" 3 ", 3)):
-            with self.subTest(raw=raw):
-                self.assertEqual(rb.agreements_needed({rb.THRESHOLD: raw}), wanted)
-        self.assertEqual(rb.agreements_needed({}), 1)
-
-
 class ReadingReviews(unittest.TestCase):
-    def test_suggestions_answers_and_what_is_left(self) -> None:
+    def _suggestions_answers_and_what_is_left(self) -> None:
         files = [review_file([
             suggestion("zz-9201", "meaning", "milk", " cow's milk ", "Why not"),
             suggestion("zz-9201", "example", "x", "y"),
@@ -218,8 +209,7 @@ class ReadingReviews(unittest.TestCase):
         self.assertEqual(review.rejects, [("zz", "bbbbbbbbbb", "zz-9202")])
         self.assertEqual(review.edits, 1)
 
-
-    def test_a_card_with_suggestions_on_two_parts_makes_two(self) -> None:
+    def _a_card_with_suggestions_on_two_parts_makes_two(self) -> None:
         # Since #468 a card keeps one suggestion a part, in a list.
         files = [review_file([
             {"card": "zz-9201", "at": "2026-10-09T09:40:00.000Z",
@@ -233,8 +223,7 @@ class ReadingReviews(unittest.TestCase):
                          ["native", "notes"])
         self.assertEqual(review.checks, [])
 
-
-    def test_a_file_whose_language_is_not_a_code_is_dropped(self) -> None:
+    def _a_file_whose_language_is_not_a_code_is_dropped(self) -> None:
         files = []
         for lang in ("", ".", "..", "../x", "zz/..", "ZZ", "*", "zzzz"):
             f = review_file([suggestion("zz-9201", "meaning", "milk", "cow's milk")])
@@ -244,6 +233,33 @@ class ReadingReviews(unittest.TestCase):
         self.assertEqual(review.suggestions, [])
         self.assertEqual(review.dropped, len(files))
 
+    def _a_failed_git_command_never_shows_the_token(self) -> None:
+        tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, tmp, True)
+        git = rb.LocalGit(tmp, "ghs_SECRETTOKEN", tmp / "work")
+        with self.assertRaises(RuntimeError) as caught:
+            git._git("fetch", "origin", "main", auth=True)
+        self.assertNotIn("SECRETTOKEN", str(caught.exception))
+        self.assertNotIn("basic", str(caught.exception))
+        self.assertEqual(str(caught.exception), "git fetch failed (128)")
+
+    def test_a_review_file_is_read_and_git_never_shows_the_token(self) -> None:
+        cases = (
+            self._suggestions_answers_and_what_is_left,
+            self._a_card_with_suggestions_on_two_parts_makes_two,
+            self._a_file_whose_language_is_not_a_code_is_dropped,
+            self._a_failed_git_command_never_shows_the_token,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
+
 
 class Checks(unittest.TestCase):
     """Only the checks `main` requires gate a merge."""
@@ -252,7 +268,7 @@ class Checks(unittest.TestCase):
     def run_(name: str, status: str = "completed", conclusion: str | None = "success") -> dict:
         return {"name": name, "status": status, "conclusion": conclusion}
 
-    def test_the_required_checks_and_only_those(self) -> None:
+    def _the_required_checks_and_only_those(self) -> None:
         ok = [self.run_(n) for n in rb.REQUIRED_CHECKS]
         self.assertEqual(rb.required_state(ok), "passed")
         self.assertEqual(rb.required_state(ok + [self.run_("Other", conclusion="failure")]),
@@ -267,7 +283,7 @@ class Checks(unittest.TestCase):
         self.assertEqual(rb.required_state(
             ok[:1] + [self.run_(rb.REQUIRED_CHECKS[1], conclusion="failure")]), "failed")
 
-    def test_they_are_the_jobs_of_ci(self) -> None:
+    def _they_are_the_jobs_of_ci(self) -> None:
         import yaml
         ci = yaml.safe_load((TOOLS.parent / ".github" / "workflows" / "ci.yml")
                             .read_text(encoding="utf-8"))
@@ -276,7 +292,7 @@ class Checks(unittest.TestCase):
         names = {j["name"] for j in ci["jobs"].values()}
         self.assertLessEqual(set(rb.REQUIRED_CHECKS), names)
 
-    def test_rest_reads_the_latest_runs_and_merges_at_the_checked_head(self) -> None:
+    def _rest_reads_the_latest_runs_and_merges_at_the_checked_head(self) -> None:
         calls: list[tuple] = []
 
         class Stub(rb.RestGitHub):
@@ -301,6 +317,30 @@ class Checks(unittest.TestCase):
         self.assertEqual(gh.merge({"number": 3}, "moved"), "merged")
         self.assertEqual(calls[-1][2]["sha"], "moved")
 
+    def _the_variable_or_one(self) -> None:
+        for raw, wanted in (("", 1), ("abc", 1), ("0", 1), ("-2", 1), ("1.5", 1),
+                            ("2", 2), (" 3 ", 3)):
+            with self.subTest(raw=raw):
+                self.assertEqual(rb.agreements_needed({rb.THRESHOLD: raw}), wanted)
+        self.assertEqual(rb.agreements_needed({}), 1)
+
+    def test_the_required_checks_are_cis_jobs(self) -> None:
+        cases = (
+            self._the_required_checks_and_only_those,
+            self._they_are_the_jobs_of_ci,
+            self._rest_reads_the_latest_runs_and_merges_at_the_checked_head,
+            self._the_variable_or_one,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
+
 
 class Reviews(Base):
     def review(self) -> rb.Review:
@@ -309,7 +349,7 @@ class Reviews(Base):
             suggestion("zz-9004", "meaning", "mother", "mum")], deck="zz-en-extra")],
             ALICE)
 
-    def test_a_review_becomes_one_pr_that_merges_once_checks_pass(self) -> None:
+    def _a_review_becomes_one_pr_that_merges_once_checks_pass(self) -> None:
         self.github.check = "pending"
         self.assertEqual(self.bot.review("mail1", ALICE, self.review()), "pending")
         self.assertEqual(len(self.github.prs), 1)
@@ -332,7 +372,7 @@ class Reviews(Base):
         self.assertEqual(len(self.github.prs), 1)
         self.assertEqual(self.git.pushes, ["review-bot/review/mail1"])
 
-    def test_failed_checks_are_left_open_and_labelled_once(self) -> None:
+    def _failed_checks_are_left_open_and_labelled_once(self) -> None:
         self.github.check = "failed"
         self.assertEqual(self.bot.review("mail1", ALICE, self.review()), "failed")
         self.assertEqual(self.bot.review("mail1", ALICE, self.review()), "failed")
@@ -340,32 +380,32 @@ class Reviews(Base):
         self.assertEqual(names.count(rb.FAILED_LABEL), 1)
         self.assertEqual(self.github.prs[0]["state"], "open")
 
-    def test_nothing_to_propose_opens_nothing(self) -> None:
+    def _nothing_to_propose_opens_nothing(self) -> None:
         review = rb.read_review([review_file([
             suggestion("zz-9201", "meaning", "milkk", "cow's milk")])], ALICE)
         self.assertEqual(self.bot.review("mail2", ALICE, review), "nothing")
         self.assertEqual(self.github.prs, [])
 
-    def test_a_change_that_does_not_validate_is_not_pushed(self) -> None:
+    def _a_change_that_does_not_validate_is_not_pushed(self) -> None:
         self.git.invalid = True
         self.assertEqual(self.bot.review("mail1", ALICE, self.review()), "invalid")
         self.assertEqual(self.github.prs, [])
         self.assertEqual(self.git.pushes, [])
 
-    def test_a_closed_pr_is_never_opened_again(self) -> None:
+    def _a_closed_pr_is_never_opened_again(self) -> None:
         self.github.check = "pending"
         self.bot.review("mail1", ALICE, self.review())
         self.github.close(1, "no")
         self.assertEqual(self.bot.review("mail1", ALICE, self.review()), "closed")
         self.assertEqual(len(self.github.prs), 1)
 
-    def test_behind_main_it_is_built_again_from_main(self) -> None:
+    def _behind_main_it_is_built_again_from_main(self) -> None:
         self.github.dirty = 1
         self.assertEqual(self.bot.review("mail1", ALICE, self.review()), "pending")
         self.assertEqual(self.git.pushes, ["review-bot/review/mail1"] * 2)
         self.assertEqual(self.bot.review("mail1", ALICE, self.review()), "merged")
 
-    def test_a_review_with_nothing_to_propose_logs_what_was_left(self) -> None:
+    def _a_review_with_nothing_to_propose_logs_what_was_left(self) -> None:
         review = rb.read_review([review_file([
             suggestion("zz-9201", "meaning", "milkk", SECRET),
             suggestion("zz-9201", "example", "x", SECRET),
@@ -377,11 +417,11 @@ class Reviews(Base):
         self.assertIn("the PR: nothing", line)
         self.assertNotIn(SECRET, " ".join(self.logged))
 
-    def test_a_head_is_merged_at_the_sha_its_checks_passed_on(self) -> None:
+    def _a_head_is_merged_at_the_sha_its_checks_passed_on(self) -> None:
         self.assertEqual(self.bot.review("mail1", ALICE, self.review()), "merged")
         self.assertEqual(self.github.merged_at, [self.github.prs[0]["head"]["sha"]])
 
-    def test_no_checks_for_long_is_logged(self) -> None:
+    def _no_checks_for_long_is_logged(self) -> None:
         self.github.check = "missing"
         self.assertEqual(self.bot.review("mail1", ALICE, self.review()), "pending")
         self.assertFalse(any("checks" in line for line in self.logged))
@@ -389,7 +429,7 @@ class Reviews(Base):
         self.assertEqual(self.bot.review("mail1", ALICE, self.review()), "pending")
         self.assertIn("none of the required checks has started", self.logged[-1])
 
-    def test_an_acceptance_is_recorded_by_the_reviewers_pr(self) -> None:
+    def _an_acceptance_is_recorded_by_the_reviewers_pr(self) -> None:
         p = self.p()
         self.put_on_main(p)
         review = rb.read_review([review_file([{
@@ -400,9 +440,32 @@ class Reviews(Base):
         self.assertIn(f'accepted: ["{BOB}"]', self.main_text())
         self.assertIn(f"{BOB} accepts: `{p.id}`", self.github.prs[0]["body"])
 
+    def test_a_review_becomes_one_pr_merged_only_once_its_checks_pass(self) -> None:
+        cases = (
+            self._a_review_becomes_one_pr_that_merges_once_checks_pass,
+            self._failed_checks_are_left_open_and_labelled_once,
+            self._nothing_to_propose_opens_nothing,
+            self._a_change_that_does_not_validate_is_not_pushed,
+            self._a_closed_pr_is_never_opened_again,
+            self._behind_main_it_is_built_again_from_main,
+            self._a_review_with_nothing_to_propose_logs_what_was_left,
+            self._a_head_is_merged_at_the_sha_its_checks_passed_on,
+            self._no_checks_for_long_is_logged,
+            self._an_acceptance_is_recorded_by_the_reviewers_pr,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
+
 
 class Agreement(Base):
-    def test_enough_acceptances_apply_the_change_and_close_its_rivals(self) -> None:
+    def _enough_acceptances_apply_the_change_and_close_its_rivals(self) -> None:
         win = self.p(accepted=(BOB,))
         rival = self.p(text="milk (cow's)", by=BOB)
         for p in (win, rival):
@@ -422,13 +485,13 @@ class Agreement(Base):
         self.bot.sweep()
         self.assertEqual(len(self.github.prs), 1)
 
-    def test_fewer_acceptances_than_needed_wait(self) -> None:
+    def _fewer_acceptances_than_needed_wait(self) -> None:
         self.put_on_main(self.p(accepted=(BOB,)))
         counts = self.make_bot(2).sweep()
         self.assertEqual(counts["applied"], 0)
         self.assertEqual(self.github.prs, [])
 
-    def test_while_its_checks_run_a_rerun_opens_nothing_more(self) -> None:
+    def _while_its_checks_run_a_rerun_opens_nothing_more(self) -> None:
         self.github.check = "pending"
         self.put_on_main(self.p(accepted=(BOB,)))
         self.put_on_main(self.p(text="milk (cow's)", by=BOB, accepted=(ALICE,)))
@@ -436,7 +499,7 @@ class Agreement(Base):
         self.bot.sweep()
         self.assertEqual(len(self.github.prs), 1)
 
-    def test_when_the_owner_closes_the_winner_the_next_goes(self) -> None:
+    def _when_the_owner_closes_the_winner_the_next_goes(self) -> None:
         self.github.check = "pending"
         first = self.p(accepted=(BOB,))
         second = self.p(text="milk (cow's)", by=BOB, accepted=(ALICE,))
@@ -454,7 +517,7 @@ class Agreement(Base):
         pr.accept(self.git.main, "zz", p.id, code, p.text, result)
         self.assertEqual(result.accepted, [(p.id, code)])
 
-    def test_the_first_to_reach_the_agreement_wins_not_the_first_in_the_file(self) -> None:
+    def _the_first_to_reach_the_agreement_wins_not_the_first_in_the_file(self) -> None:
         self.github.check = "pending"
         earlier = self.p(text="milk (cow's)", by=BOB)
         later = self.p(accepted=(BOB,))
@@ -473,7 +536,7 @@ class Agreement(Base):
         self.assertIn('native: "cow\'s milk"', self.main_text())
         self.assertNotIn("proposed", self.main_text())
 
-    def test_two_open_for_one_field_keep_only_the_first(self) -> None:
+    def _two_open_for_one_field_keep_only_the_first(self) -> None:
         self.github.check = "pending"
         a = self.p(accepted=(BOB,))
         b = self.p(text="milk (cow's)", by=BOB, accepted=(ALICE,))
@@ -485,7 +548,7 @@ class Agreement(Base):
         self.bot.sweep()
         self.assertEqual([p["state"] for p in self.github.prs], ["open", "closed"])
 
-    def test_a_proposal_deleted_on_main_is_not_applied(self) -> None:
+    def _a_proposal_deleted_on_main_is_not_applied(self) -> None:
         self.github.check = "pending"
         p = self.p(accepted=(BOB,))
         self.put_on_main(p)
@@ -499,7 +562,7 @@ class Agreement(Base):
         self.assertIn('native: "milk"', self.main_text())
         self.assertEqual(self.github.merged_at, [])
 
-    def test_a_pr_built_on_an_older_main_is_built_again_before_merging(self) -> None:
+    def _a_pr_built_on_an_older_main_is_built_again_before_merging(self) -> None:
         self.github.check = "pending"
         p = self.p(accepted=(BOB,))
         self.put_on_main(p)
@@ -516,7 +579,7 @@ class Agreement(Base):
         self.assertIn('native: "cow\'s milk"', text)
         self.assertIn('native: "fresh water"', text)
 
-    def test_the_same_proposal_made_again_later_is_applied_again(self) -> None:
+    def _the_same_proposal_made_again_later_is_applied_again(self) -> None:
         p = self.p(accepted=(BOB,))
         self.put_on_main(p)
         self.bot.sweep()
@@ -531,7 +594,7 @@ class Agreement(Base):
         self.assertEqual(len(self.github.prs), 2)
         self.assertIn('native: "cow\'s milk"', self.main_text())
 
-    def test_the_owners_revert_of_an_agreement_is_not_applied_again(self) -> None:
+    def _the_owners_revert_of_an_agreement_is_not_applied_again(self) -> None:
         p = self.p(accepted=(BOB,))
         self.put_on_main(p)
         before = self.main_text()
@@ -542,7 +605,7 @@ class Agreement(Base):
         self.assertEqual(len(self.github.prs), 1)
         self.assertEqual(self.main_text(), before)
 
-    def test_an_outdated_proposal_is_closed_not_applied(self) -> None:
+    def _an_outdated_proposal_is_closed_not_applied(self) -> None:
         p = self.p(accepted=(BOB,))
         self.put_on_main(p)
         path = self.git.main / "decks" / "zz" / "zz-en-extra.yaml"
@@ -556,6 +619,30 @@ class Agreement(Base):
         text = self.main_text()
         self.assertIn('native: "fresh milk"', text)
         self.assertNotIn("proposed", text)
+
+    def test_enough_agreement_applies_a_change_and_closes_its_rivals(self) -> None:
+        cases = (
+            self._enough_acceptances_apply_the_change_and_close_its_rivals,
+            self._fewer_acceptances_than_needed_wait,
+            self._while_its_checks_run_a_rerun_opens_nothing_more,
+            self._when_the_owner_closes_the_winner_the_next_goes,
+            self._the_first_to_reach_the_agreement_wins_not_the_first_in_the_file,
+            self._two_open_for_one_field_keep_only_the_first,
+            self._a_proposal_deleted_on_main_is_not_applied,
+            self._a_pr_built_on_an_older_main_is_built_again_before_merging,
+            self._the_same_proposal_made_again_later_is_applied_again,
+            self._the_owners_revert_of_an_agreement_is_not_applied_again,
+            self._an_outdated_proposal_is_closed_not_applied,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class ChangedWord(Base):
@@ -572,7 +659,7 @@ class ChangedWord(Base):
         block = text[text.index('id: "zz-9201"'):text.index('id: "zz-9202"')]
         return [l.strip() for l in block.splitlines() if l.strip()]
 
-    def test_a_word_alone_fills_reading_and_ipa_from_wiktionary(self) -> None:
+    def _a_word_alone_fills_reading_and_ipa_from_wiktionary(self) -> None:
         self.wiki = "peɾuɡu"
         self.put_on_main(self.word())
         self.assertEqual(self.bot.sweep()["applied"], 1)
@@ -584,7 +671,7 @@ class ChangedWord(Base):
         self.assertIn("- reading: `perugu` (transcribe rules)", body)
         self.assertIn("- ipa: `peɾuɡu` (Wiktionary)", body)
 
-    def test_not_on_wiktionary_the_ipa_is_transcribed(self) -> None:
+    def _not_on_wiktionary_the_ipa_is_transcribed(self) -> None:
         self.wiki = None
         self.put_on_main(self.word())
         self.bot.sweep()
@@ -593,7 +680,7 @@ class ChangedWord(Base):
         self.assertIn("- ipa: `peruɡu` (transcribe rules)", body)
         self.assertIn("No IPA on Wiktionary", body)
 
-    def test_a_network_failure_falls_back_and_says_so(self) -> None:
+    def _a_network_failure_falls_back_and_says_so(self) -> None:
         self.wiki = rb.LookupFailed("URLError")
         self.put_on_main(self.word())
         self.assertEqual(self.bot.sweep()["applied"], 1)
@@ -602,7 +689,7 @@ class ChangedWord(Base):
         self.assertIn("Wiktionary could not be reached (URLError)", body)
         self.assertIn("- ipa: `peruɡu` (transcribe rules)", body)
 
-    def test_an_agreed_ipa_goes_with_the_word_and_only_the_reading_is_made(self) -> None:
+    def _an_agreed_ipa_goes_with_the_word_and_only_the_reading_is_made(self) -> None:
         word = self.word()
         ipa = self.p(field="ipa", now="", text="peɾuɡu", by=BOB, accepted=(ALICE,))
         for p in (word, ipa):
@@ -620,89 +707,29 @@ class ChangedWord(Base):
         self.assertIn("- reading: `perugu` (transcribe rules)", body)
         self.assertNotIn("- ipa:", body)
 
-    def test_a_latin_script_language_gets_no_reading(self) -> None:
+    def _a_latin_script_language_gets_no_reading(self) -> None:
         got = rb.work_out("casa", "es", "Spanish", "latin", ["reading", "ipa"],
                           lambda w, l: None)
         self.assertEqual(list(got.values), ["ipa"])
         self.assertEqual(got.values["ipa"][1], rb.SOURCE_RULES)
 
-
-class Wiktionary(unittest.TestCase):
-    PAGE = ('<section><h2 id="Telugu">Telugu</h2><span class="IPA">/x/</span>'
-            '</section><section><h2 id="Hindi">Hindi</h2><ul><li>'
-            '<span class="IPA">[mə.ɦiː.naː]</span></li></ul></section>')
-
-    def test_the_languages_first_ipa_without_delimiters_or_dots(self) -> None:
-        self.assertEqual(rb.ipa_in_html(self.PAGE, "Hindi"), "məɦiːnaː")
-        self.assertEqual(rb.ipa_in_html(self.PAGE, "Telugu"), "x")
-        self.assertIsNone(rb.ipa_in_html(self.PAGE, "Bengali"))
-
-    def fetch(self, effect) -> object:
-        from unittest import mock
-        with mock.patch.object(rb.urllib.request, "urlopen", side_effect=effect):
-            return rb.wiktionary_ipa("महीना", "Hindi")
-
-    def test_found(self) -> None:
-        page = io.BytesIO(self.PAGE.encode("utf-8"))
-        self.assertEqual(self.fetch(lambda *a, **k: contextlib.nullcontext(page)),
-                         "məɦiːnaː")
-
-    def test_not_found(self) -> None:
-        import urllib.error
-        missing = urllib.error.HTTPError("u", 404, "Not Found", {}, None)
-        self.assertIsNone(self.fetch(missing))
-
-    def test_a_network_error_is_a_failed_lookup(self) -> None:
-        import urllib.error
-        with self.assertRaises(rb.LookupFailed):
-            self.fetch(urllib.error.URLError("offline"))
-        with self.assertRaises(rb.LookupFailed):
-            self.fetch(TimeoutError())
-        import http.client
-        with self.assertRaises(rb.LookupFailed):
-            self.fetch(http.client.IncompleteRead(b"half"))
-
-
-class IpaStyle(unittest.TestCase):
-    """Wiktionary's IPA is written in each deck's style (#479)."""
-
-    def test_hindi_open_back_a_is_the_decks_a(self) -> None:
-        self.assertEqual(rb.deck_style("məɦiːnɑː", "hi"), "məɦiːnaː")
-        self.assertEqual(rb.deck_style("ɑ̃ːɡ", "hi"), "a\u0303ːɡ")
-
-    def test_every_other_language_is_unchanged_until_a_difference_is_known(self) -> None:
-        for lang in ("as", "bn", "es", "gu", "ja", "kn", "mr", "te"):
-            with self.subTest(lang):
-                self.assertEqual(rb.deck_style("məɦiːnɑː", lang), "məɦiːnɑː")
-
-    def test_the_table_only_has_languages_the_decks_have(self) -> None:
-        self.assertLessEqual(set(rb.IPA_STYLE), {"as", "bn", "es", "gu", "hi",
-                                                 "ja", "kn", "mr", "te"})
-
-    def test_each_languages_style_gives_symbols_its_decks_use(self) -> None:
-        root = Path(__file__).resolve().parent.parent
-        for lang, table in rb.IPA_STYLE.items():
-            inventory = rb.deck_ipa_symbols(root, lang)
-            for deck in table.values():
-                with self.subTest(lang=lang, symbol=deck):
-                    self.assertTrue(set(deck) <= inventory)
-
-    def test_symbols_outside_the_inventory_are_listed_in_order_once(self) -> None:
-        self.assertEqual(rb.unknown_symbols("aɑbɑc ɒ", {"a", "b", "c"}), ["ɑ", "ɒ"])
-        self.assertEqual(rb.unknown_symbols("ɑ", set()), [])
-
-    def test_work_out_styles_the_ipa_and_names_unknown_symbols(self) -> None:
-        got = rb.work_out("महीना", "hi", "Hindi", "devanagari", ["ipa"],
-                          lambda w, n: "məɦiːnɑːʕ", {"a", "ː", "ə", "ɦ", "i", "m", "n"})
-        self.assertEqual(got.values["ipa"], ("məɦiːnaːʕ", rb.SOURCE_WIKTIONARY))
-        self.assertEqual(got.notes,
-                         ["The IPA has symbols the deck's IPA does not use: `ʕ`."])
-
-    def test_a_clean_ipa_adds_no_note(self) -> None:
-        got = rb.work_out("महीना", "hi", "Hindi", "devanagari", ["ipa"],
-                          lambda w, n: "məɦiːnɑː", {"a", "ː", "ə", "ɦ", "i", "m", "n"})
-        self.assertEqual(got.values["ipa"][0], "məɦiːnaː")
-        self.assertEqual(got.notes, [])
+    def test_a_changed_word_brings_its_reading_and_ipa(self) -> None:
+        cases = (
+            self._a_word_alone_fills_reading_and_ipa_from_wiktionary,
+            self._not_on_wiktionary_the_ipa_is_transcribed,
+            self._a_network_failure_falls_back_and_says_so,
+            self._an_agreed_ipa_goes_with_the_word_and_only_the_reading_is_made,
+            self._a_latin_script_language_gets_no_reading,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 def review_mail(files: list[dict], sender: str = "anvi@example.com",
@@ -750,7 +777,7 @@ class Mails(Base):
     def files(self) -> list[dict]:
         return [review_file([suggestion("zz-9201", "meaning", "milk", SECRET)])]
 
-    def test_a_filed_review_is_proposed_and_labelled(self) -> None:
+    def _a_filed_review_is_proposed_and_labelled(self) -> None:
         imap = ProposingImap([review_mail(self.files())])
         filed, log = self.run_tool(imap)
         self.assertEqual(len(filed), 1)
@@ -765,14 +792,14 @@ class Mails(Base):
         self.assertEqual(self.github.prs[0]["head"]["ref"],
                          f"review-bot/review/{mail_to_issues.mail_key(review_mail([]))}")
 
-    def test_a_pending_pr_leaves_the_mail_for_the_next_run(self) -> None:
+    def _a_pending_pr_leaves_the_mail_for_the_next_run(self) -> None:
         self.github.check = "pending"
         imap = ProposingImap([review_mail(self.files())])
         _, log = self.run_tool(imap)
         self.assertEqual(imap.proposed, [])
         self.assertIn("1 pending", log)
 
-    def test_another_sender_is_left_to_the_owner(self) -> None:
+    def _another_sender_is_left_to_the_owner(self) -> None:
         record = email.message.EmailMessage()
         record["Subject"] = ALICE
         record.set_content("first@example.com")
@@ -784,14 +811,14 @@ class Mails(Base):
         self.assertEqual(self.github.prs, [])
         self.assertIn("1 left to the owner", log)
 
-    def test_unreadable_records_wait_for_the_next_run(self) -> None:
+    def _unreadable_records_wait_for_the_next_run(self) -> None:
         imap = ProposingImap([review_mail(self.files())], label=False)
         _, log = self.run_tool(imap)
         self.assertEqual(imap.proposed, [])
         self.assertEqual(self.github.prs, [])
         self.assertIn("1 waiting for the sender check", log)
 
-    def test_a_rejection_is_flagged_in_the_issue_without_text(self) -> None:
+    def _a_rejection_is_flagged_in_the_issue_without_text(self) -> None:
         files = [review_file([{"card": "zz-9201", "at": "2026-10-09T09:40:00.000Z",
                                "proposals": [{"id": "0123456789", "answer": "reject",
                                               "field": "native", "text": SECRET}]}])]
@@ -803,7 +830,7 @@ class Mails(Base):
         self.assertIn("- Proposals rejected: 1", issue["body"])
         self.assertNotIn(SECRET, str(issue))
 
-    def test_without_the_app_nothing_is_proposed(self) -> None:
+    def _without_the_app_nothing_is_proposed(self) -> None:
         imap = ProposingImap([review_mail(self.files())])
         out = io.StringIO()
         with contextlib.redirect_stdout(out):
@@ -812,7 +839,7 @@ class Mails(Base):
         self.assertEqual(imap.proposed, [])
         self.assertEqual(len(imap.searches), 1)
 
-    def test_a_failing_bot_does_not_stop_the_run(self) -> None:
+    def _a_failing_bot_does_not_stop_the_run(self) -> None:
         class Broken(rb.Bot):
             def review(self, *args):
                 raise RuntimeError("git fetch failed (128)")
@@ -826,17 +853,25 @@ class Mails(Base):
         self.assertEqual(imap.proposed, [])
         self.assertIn("RuntimeError: git fetch failed (128)", log)
 
-
-class LocalGitAuth(unittest.TestCase):
-    def test_a_failed_git_command_never_shows_the_token(self) -> None:
-        tmp = Path(tempfile.mkdtemp())
-        self.addCleanup(shutil.rmtree, tmp, True)
-        git = rb.LocalGit(tmp, "ghs_SECRETTOKEN", tmp / "work")
-        with self.assertRaises(RuntimeError) as caught:
-            git._git("fetch", "origin", "main", auth=True)
-        self.assertNotIn("SECRETTOKEN", str(caught.exception))
-        self.assertNotIn("basic", str(caught.exception))
-        self.assertEqual(str(caught.exception), "git fetch failed (128)")
+    def test_a_filed_review_mail_is_proposed(self) -> None:
+        cases = (
+            self._a_filed_review_is_proposed_and_labelled,
+            self._a_pending_pr_leaves_the_mail_for_the_next_run,
+            self._another_sender_is_left_to_the_owner,
+            self._unreadable_records_wait_for_the_next_run,
+            self._a_rejection_is_flagged_in_the_issue_without_text,
+            self._without_the_app_nothing_is_proposed,
+            self._a_failing_bot_does_not_stop_the_run,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 if __name__ == "__main__":
