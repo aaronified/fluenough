@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.3] - 2026-10-20
+
 ### Changed
 
 - A sideways swipe on Home, Decks, Progress or Settings moves to the next or previous tab, stopping at the ends (#683). An upright drag still scrolls the page, and the language bar keeps its own swipe.
