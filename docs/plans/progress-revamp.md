@@ -40,7 +40,8 @@ Decided in #575 (owner, 2026-10-18), reused here:
 
 | Chart | Shows | Source |
 |---|---|---|
-| 6-point star (radar) | Mastery now, one axis per skill | Recall per skill |
+| Words count | Words mastered (bold) of words taught (lighter) |
+| 6-point star (radar) | Mastery now: grammar, script, read, write, hear, say | Recall per skill |
 | Line chart | Scores over time for taught words, phrases, script and grammar, one line each | Recall per card kind, by day |
 | Area chart | Overall proficiency over time | Combined from the six axes |
 
@@ -48,16 +49,20 @@ Decided in #575 (owner, 2026-10-18), reused here:
   it), from 0 to 100.
 - These charts are drawn per language, for the chosen language.
 
+## Decided
+
+- **Words are a number, not a skill** (owner, 2026-10-20: "Words is not
+  a skill. It is a number. A mastered number in bold and a lighter
+  coloured total taught/known."). Shown as the mastered count in bold,
+  then the total taught in a lighter colour, like **312** / 540.
+- **The star's six axes**: grammar, script, read, write, hear and say.
+
 ## Open questions
 
-1. **The star's six axes.** Seven were named: words, grammar, script,
-   read, write, hear, say. Which six? Suggested: words, grammar, read,
-   write, hear, say, with script folded into read/write, since those are
-   already credited per script (#656).
-2. **Overall proficiency.** A weighted mean of the six axes, or mapped to
+1. **Overall proficiency.** A weighted mean of the six axes, or mapped to
    CEFR (A1 to B1)?
-3. **Mockup first?** `docs/mockups/README.md` says yes.
-4. **#575's bars**: does the star replace them, or do the two sit
+2. **Mockup first?** `docs/mockups/README.md` says yes.
+3. **#575's bars**: does the star replace them, or do the two sit
    together?
 
 ## Order
