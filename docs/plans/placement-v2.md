@@ -3,6 +3,30 @@
 Written 2026-10-11, for **0.7.0** (owner: too large for 0.5; moved from 0.6). Tracks #481. It is the top priority of 0.7.0. Replaces the placement in ADR-0013 and keeps
 ADR-0023's no-alphabet path.
 
+## Owner's spec (2026-10-20), replacing the parts above that differ
+
+Owner, on Find my level for Hindustani: "There are many other issues with placement."
+
+**1. A script check for every script of the course.** Hindustani gets one for Devanagari and one for Perso-Arabic.
+- Owner: "Perso arabic and devanagari both needed to be tested, and weren't. Just ask (even when the user has them known languages/scripts, just acknowledge that and mention in the form) whether user knows devnagari, then ask 5 questions."
+- The questions: "1 simple letter, 1 composite, 1 longer word (just ask to transliterate, as it is script), 1 choose the word from sound and 1 read (if user cannot listen/read, replace with complex word/phrase transliteration)."
+- Owner: "Make one of them a match columns question (not the transliterate ones, user needs to write that)."
+- **Read** means reading a word aloud, checked by speech recognition (owner chose "Read a word aloud"). With no microphone or recogniser, it is a harder word or phrase to transliterate instead.
+- **Scoring** (owner chose "5/5 knows, 3–4 partly, 0–2 new"):
+  - **5/5:** the learner knows the script. Its decks are skipped, and Read and Write are credited for it.
+  - **3–4:** the learner knows it partly. Its letter decks are skipped; the learner starts at its reading and conjunct decks.
+  - **0–2:** the learner is new to it and starts at its first deck.
+- A script the learner already reads through a language they know is still checked. The form says that the learner already reads it.
+
+**2. The deck walk.**
+- Owner: "Ask 1 question per deck, if one is wrong, ask another from the same deck (if that's wrong, stop). If 3 decks are cleared continuously without any second guess, skip one deck, if 5 decks are cleared continuously without second guesses, just ask from the end, like passages and all, if wrong skip 2, if wrong again, skip 3, and so on till we land on the level. If right, ask another 2-3 produce questions from latter decks."
+- "Skip 2, then 3" steps back towards the start: by 2 decks, then by 3 more, until an answer is right. The 2–3 typed questions then come from the decks after that point.
+
+**3. The result, and trying again.**
+- Owner: "When you decide that the user is placed, tell the user where he will be placed and why. Let them decide if they want to try again (if they think there was a mistake), and the placement start again from that spot. This will go on until the user cannot progress much further than where he was placed before. Or the user can stop the placement whenever."
+
+**Example** (owner): "in Hindustani, i only want to learn perso arabic, and know the rest. The app should figure that out." Devanagari scores 5/5, so its decks are skipped and its skills credited. Perso-Arabic scores 0–2, so its script decks are taught. The words place the learner near the end of the path.
+
 ## What exists (origin/main)
 
 - **Order:** for each newly ticked language, the learner picks the language
