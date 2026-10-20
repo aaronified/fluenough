@@ -258,11 +258,15 @@ class ApplyTest(unittest.TestCase):
             self._a_manifest_of_another_shape_is_an_error_and_nothing_changes,
             self._a_gradle_file_of_another_shape_is_an_error_and_nothing_changes,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
     def test_the_microphone_speech_internet_and_share_provider_are_declared(self) -> None:
         cases = (
@@ -271,11 +275,15 @@ class ApplyTest(unittest.TestCase):
             self._the_internet_and_https_links_are_declared,
             self._the_files_are_lent_through_the_apps_own_provider,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 if __name__ == "__main__":

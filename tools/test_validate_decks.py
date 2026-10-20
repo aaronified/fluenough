@@ -183,11 +183,15 @@ class IndexCheck(unittest.TestCase):
             self._fails_when_a_language_is_added_after_it,
             self._fails_when_a_deck_changes_after_it,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
     def test_a_hidden_language_and_any_working_directory_are_checked(self) -> None:
         cases = (
@@ -196,33 +200,45 @@ class IndexCheck(unittest.TestCase):
             self._absolute_paths_do_not_produce_false_failures,
             self._absolute_path_still_catches_a_real_miss,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
     def test_one_deck_alone_skips_the_index(self) -> None:
         cases = (
             self._one_deck_alone_skips_the_index,
             self._a_deck_outside_the_repo_skips_the_index,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
     def test_a_language_with_a_deck_needs_a_path(self) -> None:
         cases = (
             self._a_language_with_a_deck_needs_a_path,
             self._one_deck_validates_alone_when_its_path_is_on_disk,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 # From test_validate_content.py.
@@ -322,11 +338,15 @@ class Iso6393Codes(Validated):
             self._it_must_be_three_lowercase_letters,
             self._a_facts_file_needs_one_on_its_language,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class DeckIds(Validated):
@@ -353,11 +373,15 @@ class DeckIds(Validated):
             self._an_id_without_the_source_language_is_rejected,
             self._a_facts_file_names_only_its_language,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class FactsFiles(Validated):
@@ -482,11 +506,15 @@ class FactsFiles(Validated):
             self._contrast_facts_do_not_count_towards_a_language,
             self._a_file_with_no_english_warns,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 THEMES = """\
 schema: 1
@@ -555,11 +583,15 @@ class Themes(Validated):
             self._only_a_vocab_deck_takes_a_theme,
             self._across_files_a_theme_must_exist_and_be_used_once,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class Scripts(Validated):
@@ -593,11 +625,15 @@ class Scripts(Validated):
             self._an_unknown_script_is_a_warning_not_an_error,
             self._a_script_that_is_not_a_lowercase_name_is_an_error,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 GRAMMAR = """\
@@ -648,11 +684,15 @@ class PatternKeys(Validated):
             self._a_key_must_be_an_id,
             self._two_rows_cannot_share_an_id_part,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 NUMBERS = """\
@@ -735,11 +775,15 @@ class Numbers(Validated):
             self._every_word_must_be_taught_by_a_number_deck,
             self._rules_with_no_number_deck_are_refused,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class Icons(Validated):
@@ -780,11 +824,15 @@ class Icons(Validated):
             self._too_long_or_padded_is_not,
             self._across_files_a_language_gives_one_icon,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 def vocab_note(note: str) -> str:
@@ -852,11 +900,15 @@ class Transliteration(Validated):
             self._another_script_in_it_still_needs_a_reading,
             self._in_the_readers_own_script_is_enough,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 # From test_validate_deck_parity.py.
@@ -1006,11 +1058,15 @@ pattern:
             self._pattern_notes_that_are_not_text_are_rejected,
             self._the_native_block_is_checked_like_language,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class PlainScalars(unittest.TestCase):
@@ -1106,11 +1162,15 @@ class PlainScalars(unittest.TestCase):
             self._anything_else_is_a_string,
             self._a_plain_key_resolves_as_a_value_does,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 if __name__ == "__main__":

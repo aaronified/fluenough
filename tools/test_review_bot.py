@@ -250,11 +250,15 @@ class ReadingReviews(unittest.TestCase):
             self._a_file_whose_language_is_not_a_code_is_dropped,
             self._a_failed_git_command_never_shows_the_token,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class Checks(unittest.TestCase):
@@ -327,11 +331,15 @@ class Checks(unittest.TestCase):
             self._rest_reads_the_latest_runs_and_merges_at_the_checked_head,
             self._the_variable_or_one,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class Reviews(Base):
@@ -445,11 +453,15 @@ class Reviews(Base):
             self._no_checks_for_long_is_logged,
             self._an_acceptance_is_recorded_by_the_reviewers_pr,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class Agreement(Base):
@@ -622,11 +634,15 @@ class Agreement(Base):
             self._the_owners_revert_of_an_agreement_is_not_applied_again,
             self._an_outdated_proposal_is_closed_not_applied,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class ChangedWord(Base):
@@ -705,11 +721,15 @@ class ChangedWord(Base):
             self._an_agreed_ipa_goes_with_the_word_and_only_the_reading_is_made,
             self._a_latin_script_language_gets_no_reading,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 def review_mail(files: list[dict], sender: str = "anvi@example.com",
@@ -843,11 +863,15 @@ class Mails(Base):
             self._without_the_app_nothing_is_proposed,
             self._a_failing_bot_does_not_stop_the_run,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 if __name__ == "__main__":

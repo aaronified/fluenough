@@ -328,11 +328,15 @@ class DeckIndex(unittest.TestCase):
             self._a_core_and_its_layers,
             self._one_file_to_a_line,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
     def test_media_guides_and_fonts_are_listed_apart(self) -> None:
         cases = (
@@ -342,11 +346,15 @@ class DeckIndex(unittest.TestCase):
             self._fonts_are_listed_per_language_apart_from_files,
             self._the_fonts_folder_is_not_a_language,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
     def test_hidden_or_unwritten_languages_are_left_out(self) -> None:
         cases = (
@@ -354,11 +362,15 @@ class DeckIndex(unittest.TestCase):
             self._a_language_with_no_written_deck_is_left_out,
             self._a_language_with_one_written_deck_is_listed,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
     def _a_file_without_proposals_is_unchanged(self) -> None:
         data = self.BASE.encode()
@@ -428,11 +440,15 @@ class DeckIndex(unittest.TestCase):
             self._only_proposals_go,
             self._crlf_line_ends,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
     def test_check_says_whether_it_is_current_and_the_badge_follows_the_count(self) -> None:
         cases = (
@@ -441,11 +457,15 @@ class DeckIndex(unittest.TestCase):
             self._the_readme_badge_does_not_count_an_ipa_course,
             self._a_missing_readme_or_badge_is_skipped,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class ContentBytes(unittest.TestCase):
