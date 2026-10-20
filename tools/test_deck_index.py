@@ -336,6 +336,38 @@ class DeckIndex(unittest.TestCase):
         self.assertEqual(result.returncode, 1)
         self.assertIn("out of date", result.stdout)
 
+    BADGE = ('<a href="#courses"><img src="https://img.shields.io/badge/'
+             'languages-%s-C2621D" alt="%s languages"></a>')
+
+    def readme(self) -> str:
+        return (self.tmp / "README.md").read_text(encoding="utf-8")
+
+    def test_the_readme_badge_follows_the_language_count(self) -> None:
+        (self.tmp / "README.md").write_text(
+            "# App\n" + self.BADGE % (8, 8) + "\n", encoding="utf-8")
+        self.index()
+        self.assertEqual(self.readme(), "# App\n" + self.BADGE % (1, 1) + "\n")
+        shutil.copytree(B1, self.tmp / "decks" / "zz")
+        self.index()
+        self.assertIn(self.BADGE % (2, 2), self.readme())
+
+    def test_the_readme_badge_does_not_count_an_ipa_course(self) -> None:
+        shutil.copytree(B1, self.tmp / "decks" / "zz")
+        home = self.tmp / "decks" / "zz" / "zz-home.yaml"
+        home.write_text(home.read_text(encoding="utf-8").replace(
+            'script: "telugu"', 'script: "ipa"'), encoding="utf-8")
+        (self.tmp / "README.md").write_text(self.BADGE % (8, 8), encoding="utf-8")
+        codes = [lang["code"] for lang in self.index()["languages"]]
+        self.assertIn("zz", codes)
+        self.assertEqual(self.readme(), self.BADGE % (1, 1))
+
+    def test_a_missing_readme_or_badge_is_skipped(self) -> None:
+        self.index()
+        self.assertFalse((self.tmp / "README.md").exists())
+        (self.tmp / "README.md").write_text("no badge\n", encoding="utf-8")
+        self.index()
+        self.assertEqual(self.readme(), "no badge\n")
+
     def test_bad_arguments(self) -> None:
         self.assertEqual(self.run_tool("--wrong").returncode, 2)
 
