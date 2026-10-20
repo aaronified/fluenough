@@ -59,6 +59,9 @@ void main() {
 
     // The dots are lowered: a second cell starts empty.
     await tester.tap(dot(1));
+    // Enter cell waits for a dot, so it is pressable once the frame with the
+    // dot raised is drawn.
+    await tester.pump();
     await tester.tap(find.text(l10n.brailleEnterCell));
     await tester.pump();
     expect(controller.text, '⠃⠁');
@@ -95,6 +98,7 @@ void main() {
     expect(controller.text, '⠁ ');
     await tester.tap(dot(1));
     await tester.tap(dot(2));
+    await tester.pump();
     await tester.tap(find.text(l10n.brailleEnterCell));
     await tester.pump();
     expect(controller.text, '⠁ ⠃');
@@ -202,6 +206,7 @@ void main() {
 
     await tester.tap(dot(1));
     await tester.tap(dot(2));
+    await tester.pump();
     await tester.tap(find.text(l10n.brailleEnterCell));
     await tester.pumpAndSettle();
     expect(field.controller!.text, '⠃');

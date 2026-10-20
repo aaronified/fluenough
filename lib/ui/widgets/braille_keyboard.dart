@@ -120,8 +120,11 @@ class _BrailleKeyboardState extends State<BrailleKeyboard> {
             children: <Widget>[
               column(const <int>[1, 2, 3]),
               const SizedBox(width: 16),
-              // The cell the raised dots make, as it will be entered.
+              // The cell the raised dots make, as it will be entered: a node
+              // of its own, so that its label is not merged into the
+              // keyboard's.
               Semantics(
+                container: true,
                 liveRegion: true,
                 label: dots.isEmpty
                     ? l10n.brailleCellEmpty
