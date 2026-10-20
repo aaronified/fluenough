@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Words you know come up a few at a time (#680). When a deck's known words come due, Today asks one or two of them, the ones you reviewed longest ago; if you get them right, the deck's other due known words wait until those two come due again, and every word has a turn before any is asked twice. If one is wrong, three to five more are asked, and if those go wrong too, all of the deck's due known words come up.
 - Find my level is shorter and checks each script (#481). It asks "Do you read Devanagari?" for each of a course's scripts, saying so when you read it through a language you know; No starts its script decks from the first letters with no questions, and Yes asks up to five questions, from a letter to a word read aloud, with one more try at each. Then it walks the word decks one question each, skipping ahead and jumping to the end while you know them, says where you start and why, and lets you try again from there.
 
 ### Fixed
