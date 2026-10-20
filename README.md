@@ -63,13 +63,20 @@ than hard-coded rules. Adding a language means adding files, never code.
 
 ## Courses
 
-Taught from English: Assamese, Bengali, Gujarati, Hindi, Kannada, Marathi and
-Telugu, each starting with its script decks and a script guide. Spanish is
-started. Every one of these has a B1 plan in its path: the units up to B1, in
-teaching order, those not yet written shown as "Coming". Telugu and Bengali
-have their A1 units written in full. A course is tagged Alpha until its A1
-units are written and Beta until its B1 units are. Japanese (`decks/ja/`) is
-kept in the repository but not offered in the app for now. See
+Taught from English: Telugu, Bengali, Spanish, Marathi, Kannada, Assamese,
+Chinese (Mandarin), Hindustani, Japanese, Korean and Gujarati. Every course
+has a B1 plan in its path: the units up to B1, in teaching order, those not
+yet written shown as "Coming". Telugu is written to B1; Bengali has its A1
+units in full; the others have their first units, or more. Each Indic course
+starts with its script decks, digits included, and a script guide. Hindustani
+is one course in two scripts, Devanagari and Perso-Arabic, and Chinese in
+two, simplified and traditional: the learner chooses which to learn. A course
+is tagged Alpha until its A1 units are written and Beta until its B1 units
+are.
+
+Two courses teach a notation rather than a language: the International
+Phonetic Alphabet, and English Braille (uncontracted UEB, typed on the app's
+own six-dot keyboard). Each is tagged Complete once its path is written. See
 [docs/ROADMAP.md](docs/ROADMAP.md).
 
 The app comes with no decks. It downloads a language's decks from this
