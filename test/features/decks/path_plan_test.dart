@@ -115,11 +115,12 @@ void main() {
       await app.load();
       // A path that marks no level and plans no unit shows no plan (the first
       // test above); since ADR-0036 every language that has a core has its
-      // plan, so none of the bundled paths is one; but for the IPA course,
-      // which is taught to no level and has none (ADR-0041).
+      // plan, so none of the bundled paths is one; but for the notations'
+      // courses, the IPA's and braille's, which are taught to no level and
+      // have none (ADR-0041, ADR-0043).
       final unplanned = <String>{
         for (final language in app.languages)
-          if (!language.isIpa)
+          if (!language.isNotation)
             if (app.languagePathOf(language.code)?.plan case final plan?)
               if (plan.every((u) => u.milestone == null && u.planned == null))
                 language.code,

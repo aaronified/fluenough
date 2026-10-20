@@ -124,11 +124,11 @@ Common to every kind.
 | `code` | yes | BCP-47 primary subtag, e.g. `es`, `ja`, `pt`. This is the tag voices and the app key on. |
 | `iso639_3` | yes | Three-letter ISO 639-3 code, e.g. `spa`, `jpn`, `hin`, `eng`. It names the language unambiguously, including languages with no two-letter code, and sits beside `code` rather than replacing it. |
 | `name` | yes | English name of the language. |
-| `script` | yes | A lowercase script name. The validator knows `latin`, `cyrillic`, `greek`, `arabic`, `hebrew`, `devanagari`, `bengali`, `gujarati`, `gurmukhi`, `odia`, `telugu`, `tamil`, `kannada`, `malayalam`, `sinhala`, `kana`, `han`, `hangul`, `thai`, `ipa` and `other`. Any other name is accepted with a warning ([ADR-0009](adr/0009-scripts-are-open.md)). Every script but `latin`, `cyrillic`, `greek` and `ipa` expects a `reading` on each card. `ipa` is for [the IPA course](#the-ipa-course) alone. |
+| `script` | yes | A lowercase script name. The validator knows `latin`, `cyrillic`, `greek`, `arabic`, `hebrew`, `devanagari`, `bengali`, `gujarati`, `gurmukhi`, `odia`, `telugu`, `tamil`, `kannada`, `malayalam`, `sinhala`, `kana`, `han`, `hangul`, `thai`, `ipa`, `braille` and `other`. Any other name is accepted with a warning ([ADR-0009](adr/0009-scripts-are-open.md)). Every script but `latin`, `cyrillic`, `greek`, `ipa` and `braille` expects a `reading` on each card. `ipa` is for [the IPA course](#the-ipa-course) alone, and `braille` for [the English Braille course](#the-english-braille-course), whose answers are typed on the app's own braille keyboard. |
 | `scripts` | no | For a language written in more than one script, every script it is taught in, `script` first: `["devanagari", "perso_arabic"]` for Hindustani, `["han", "han_traditional"]` for Chinese. Two or more names, none twice. A card's other spellings are written under [`target_scripts`](#a-cards-other-scripts-target_scripts). A script id is lowercase words joined by an underscore (`perso_arabic`, `ol_chiki`), as the app's own list of scripts has it; the validator accepts a hyphen too. |
 | `tts` | no | BCP-47 tag handed to the TTS engine, e.g. `es-ES`, `pt-BR`. Defaults to `code`. Omitting it on a language with major regional variation is a mistake. |
 | `rtl` | no | `true` for right-to-left scripts. Defaults to `false`. |
-| `typed` | no | `false` for a language whose answers cannot be typed: its production is asked by choosing the word among others, in reviews, in lessons and in the check of a hard word, never by typing. Defaults to `true`. Only [the IPA course](#the-ipa-course) is `false`. |
+| `typed` | no | `false` for a language whose answers cannot be typed: its production is asked by choosing the word among others, in reviews, in lessons and in the check of a hard word, never by typing. Defaults to `true`. Only [the IPA course](#the-ipa-course) is `false`. [English Braille](#the-english-braille-course) is typed, on the app's own keyboard, which its script names. |
 | `icon` | no | What the language's chip shows: the first letter of its own name, as `"हि"` for Hindi or `"Es"` for Spanish ([ADR-0027](adr/0027-language-icons.md)). Give the same one on every deck of the language; the validator checks that they agree. Without one, a chip shows the first letter of the language's first card. |
 
 ### `native`
@@ -2105,6 +2105,47 @@ language: { code: "ipa", iso639_3: "zxx", name: "IPA", script: "ipa", typed: fal
   IPA cards whose symbols occur in that `ipa`: a card's `target`, found in
   the word's transcription. So an IPA card's `target` is exactly the
   symbol as it is written in a transcription.
+
+## The English Braille course
+
+English Braille is taught like a language, as the IPA is
+([ADR-0043](adr/0043-english-braille-course.md)): Unified English Braille
+(UEB) uncontracted, grade 1, as a core and layers in `decks/qbe/`. Its
+language block is
+
+```yaml
+language: { code: "qbe", iso639_3: "eng", name: "English Braille", script: "braille", icon: "⠃" }
+```
+
+- **The code** `qbe` is in ISO 639's range for local use, `qaa`–`qtz`, so it
+  is never a real language's. Its ids are `qbe-0001` on, permanent like any
+  other.
+- **Cards.** A card's `target` is the cell or cells in Unicode braille
+  (U+2800–U+28FF): `⠃`, or `⠼⠁` for the digit 1. Its meaning is its print
+  equivalent (`b`, `1`, "capital letter indicator"), and its note begins
+  with its dots, "Dots 1-2", then says how it relates to cells learned
+  before. There is no `reading`: beside the cell it would give the answer
+  away. Every card is `modes: ["recognition", "production"]`. A note that
+  quotes a letter's cell gives its letter after it, `⠁ (a)`, as a word in a
+  script takes its reading.
+- **One cell, one card.** Where UEB gives one cell two uses, as ⠦ for the
+  question mark and the opening quotation mark, it is one card whose
+  meaning names both.
+- **No voice, no `tts`.** Braille is read, not heard: listening is never
+  drilled.
+- **Answers are typed** on the app's own keyboard, which the `braille`
+  script names: six dots in the Perkins layout, 1-2-3 down the left and
+  4-5-6 down the right, "Enter cell", Space and Backspace. The language has
+  no `typed: false`.
+- **The path** has no B1 plan, as the IPA's has none: its units are the
+  letters a to j, k to t (a to j with dot 3), u to z with w, the capital
+  indicators, the numbers with the grade 1 indicator, and the punctuation.
+  The contractions of grade 2 come as later units (owner, 2026-10-20:
+  "Uncontracted now, contractions later"). It is learned only when chosen,
+  placed by nothing, and Complete once its path is written.
+- **Its script guide**, `qbe-script.yaml` and its layers, shows the
+  patterns: the numbered dots, the top row, dot 3, dots 3 and 6, mirror
+  images, the indicators and the low punctuation.
 
 ## Paths
 
