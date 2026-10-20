@@ -14,7 +14,7 @@ enum Difficulty {
   /// reading where it has one, so that scripts compare alike. Easy: the
   /// rest.
   static Difficulty of(Card card) {
-    final words = wordsOf(card.target).length;
+    final words = card.wordCount;
     if (card.pos == 'phrase' ||
         words >= 3 ||
         card.modes.contains(DrillMode.grammar)) {

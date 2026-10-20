@@ -78,6 +78,7 @@ class CoreWritten extends CoreCard {
     this.ipa,
     this.altTarget = const <String>[],
     this.targetScripts = const <String, String>{},
+    this.words,
     this.pos,
     this.gender,
     this.tags = const <String>[],
@@ -106,6 +107,9 @@ class CoreWritten extends CoreCard {
 
   /// The word in the language's other scripts (`target_scripts`).
   final Map<String, String> targetScripts;
+
+  /// [target]'s words, where the core gives them (`words`).
+  final List<String>? words;
   final String? pos;
   final String? gender;
   final List<String> tags;
@@ -198,12 +202,16 @@ class CoreExample {
     this.source,
     this.language,
     this.sounds = true,
+    this.words,
   });
 
   final String target;
   final String? reading;
   final String? ipa;
   final List<CardBase> bases;
+
+  /// [target]'s words, where the core gives them (`words`).
+  final List<String>? words;
 
   /// The language of the example when it is not the card's, and whether the
   /// letter has the card's sound in it (DECK-FORMAT.md, Examples).
@@ -752,6 +760,7 @@ class _Merge {
       ipa: card.ipa,
       altTarget: card.altTarget,
       targetScripts: card.targetScripts,
+      words: card.words,
       altNative: entry.altNative ?? const <String>[],
       pos: card.pos,
       gender: card.gender,
@@ -957,6 +966,7 @@ class _Merge {
             source: example.source,
             language: example.language,
             sounds: example.sounds,
+            words: example.words,
             bases: bases(
               example.bases,
               translation.bases,

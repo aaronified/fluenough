@@ -1103,9 +1103,11 @@ class _SuggestSheetState extends State<SuggestSheet> {
       for (final e in _added)
         if (!identical(e, own) && e.word != null) e.word!,
     };
-    return <String>{...wordsForBases(_newWord ?? widget.card.target)}
-        .where((w) => !taken.contains(w))
-        .toList();
+    final words = switch (_newWord) {
+      final word? => wordsForBases(word),
+      null => widget.card.words ?? wordsForBases(widget.card.target),
+    };
+    return <String>{...words}.where((w) => !taken.contains(w)).toList();
   }
 
   void _addBase() => setState(() {

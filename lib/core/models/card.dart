@@ -11,10 +11,16 @@ class CardExample {
     this.source,
     this.language,
     this.sounds = true,
+    this.words,
   });
 
   final String target;
   final String native;
+
+  /// [target]'s words in order, as the deck gives them for a script written
+  /// without spaces (`words`, DECK-FORMAT.md, Base words); null where the
+  /// deck gives none, and [wordsForBases] splits it.
+  final List<String>? words;
 
   /// The language the example is in, when it is not the card's: an IPA card
   /// takes its examples from several (ADR-0041). Null means the card's own.
@@ -292,6 +298,7 @@ class CardRef {
       ipa: ipa ?? written.ipa,
       altTarget: written.altTarget,
       targetScripts: written.targetScripts,
+      words: written.words,
       altNative:
           altNative ?? (sameNative ? written.altNative : const <String>[]),
       pos: written.pos,
@@ -344,6 +351,7 @@ class Card {
     this.altReading = const <String>[],
     this.altTarget = const <String>[],
     this.targetScripts = const <String, String>{},
+    this.words,
     this.altNative = const <String>[],
     this.pos,
     this.gender,
@@ -416,6 +424,38 @@ class Card {
   /// has none.
   String? targetIn(String script, {required String firstScript}) =>
       script == firstScript ? target : targetScripts[script];
+
+  /// [target]'s words in order, as the deck gives them for a script written
+  /// without spaces (`words`, DECK-FORMAT.md, Base words): `["我", "听不懂"]`
+  /// for 我听不懂. Null where the deck gives none, and the target is split
+  /// at its spaces.
+  final List<String>? words;
+
+  /// How many words [target] has: its [words] where given, else its
+  /// [wordsOf].
+  int get wordCount => words?.length ?? wordsOf(target).length;
+
+  /// The words of [text], the card spelled in [script], where the deck
+  /// gives them: [words] for [target]; for another spelling in
+  /// [targetScripts], [words] carried over letter for letter, which only a
+  /// spelling with as many letters as [target] allows (simplified 听不懂,
+  /// traditional 聽不懂). Null where there are none, and [text] is split at
+  /// its spaces.
+  List<String>? wordsOfSpelling(String text) {
+    final given = words;
+    if (given == null) return null;
+    if (text == target) return given;
+    if (!targetScripts.containsValue(text)) return null;
+    return carryWords(given, from: target, to: text);
+  }
+
+  /// The tiles of [text], the card spelled in one of its scripts, to put
+  /// in order (#347): [tilesOfWords] by its [wordsOfSpelling], where it
+  /// has them, else [tilesOf].
+  List<String> tilesOfSpelling(String text) => switch (wordsOfSpelling(text)) {
+    final words? => tilesOfWords(text, words),
+    null => tilesOf(text),
+  };
 
   /// Extra answers accepted when the learner is typing the meaning.
   final List<String> altNative;
@@ -562,7 +602,7 @@ class Card {
   /// rather than typing it (ADR-0024): a sentence of three words or more,
   /// or a phrase of two or more.
   bool get rearranges {
-    final words = wordsOf(target).length;
+    final words = wordCount;
     return words >= 3 || (pos == 'phrase' && words >= 2);
   }
 
@@ -710,6 +750,76 @@ final RegExp _edges = RegExp(
 
 final RegExp _letter = RegExp(r'\p{L}', unicode: true);
 final RegExp _space = RegExp(r'\s+');
+
+/// A letter, mark or digit: what a word is made of, and [tilesOfWords]
+/// never leaves out of one.
+final RegExp _wordChar = RegExp(r'[\p{L}\p{M}\p{N}]', unicode: true);
+
+/// The tiles of [text] to put in order, by its [words] as the deck gives
+/// them (`words`, DECK-FORMAT.md, Base words) for a script written without
+/// spaces: each word, in lowercase, and each mark between and around them a
+/// tile of its own, as [tilesOf] makes them. 多少钱？ with `["多少", "钱"]`
+/// is `多少`, `钱` and `？`. Where the words are not [text]'s, in order and
+/// leaving no letter out, [tilesOf].
+List<String> tilesOfWords(String text, List<String> words) {
+  final tiles = <String>[];
+  var at = 0;
+  for (final word in words) {
+    final i = word.isEmpty ? -1 : text.indexOf(word, at);
+    if (i < 0) return tilesOf(text);
+    final gap = _marks(text.substring(at, i));
+    if (gap == null) return tilesOf(text);
+    tiles
+      ..addAll(gap)
+      ..add(word.toLowerCase());
+    at = i + word.length;
+  }
+  final rest = _marks(text.substring(at));
+  if (rest == null) return tilesOf(text);
+  return tiles..addAll(rest);
+}
+
+/// The marks of [gap], each a tile, without its spaces; null where it has
+/// a letter, a mark or a digit, which a word should have held.
+List<String>? _marks(String gap) {
+  if (_wordChar.hasMatch(gap)) return null;
+  return <String>[
+    for (final c in _characters(gap))
+      if (c.trim().isNotEmpty) c,
+  ];
+}
+
+/// [words], the words of [from], carried over to [to], the same text in
+/// another script, letter for letter: each word takes as many of [to]'s
+/// letters as it has of [from]'s, marks and spaces aside. Null where the
+/// two have not as many letters, or a word has none.
+List<String>? carryWords(
+  List<String> words, {
+  required String from,
+  required String to,
+}) {
+  final letters = <String>[
+    for (final c in _characters(to))
+      if (_wordChar.hasMatch(c)) c,
+  ];
+  final counts = <int>[
+    for (final word in words)
+      _characters(word).where(_wordChar.hasMatch).length,
+  ];
+  final total = _characters(from).where(_wordChar.hasMatch).length;
+  if (letters.length != total ||
+      counts.fold<int>(0, (a, b) => a + b) != total ||
+      counts.contains(0)) {
+    return null;
+  }
+  final carried = <String>[];
+  var at = 0;
+  for (final n in counts) {
+    carried.add(letters.sublist(at, at + n).join());
+    at += n;
+  }
+  return carried;
+}
 
 /// The bundled image of [emoji], a card's [Card.picture]: Noto Emoji's
 /// picture of it, named by its code points in hex of at least four digits,
