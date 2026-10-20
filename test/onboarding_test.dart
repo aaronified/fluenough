@@ -31,6 +31,7 @@ import 'package:fluenough/features/stats/stats_page.dart';
 import 'package:fluenough/features/today/today_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/widgets/fluenough_mark.dart';
+import 'package:fluenough/ui/widgets/language_bar.dart';
 import 'package:fluenough/ui/widgets/wave_progress.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart' show RenderParagraph;
@@ -93,6 +94,73 @@ void main() {
           await tester.pumpAndSettle();
           expect(showing(tester, TodayPage), isTrue);
         }
+      },
+    );
+
+    testWidgets(
+      'a sideways swipe changes tab and stops at the ends; the language bar '
+      'and an upright drag keep theirs (#683)',
+      (tester) async {
+        usePhone(tester);
+        final state = await pumpApp(
+          tester,
+          state: AppState.test(
+            settings: SettingsNotifier(
+              spokenLanguages: const <String>['en'],
+              learningLanguages: const <String>['hi', 'bn'],
+              learningChosen: true,
+              languageChoice: 'hi',
+            ),
+          ),
+        );
+        Future<void> swipeOn(Type page, Offset by) async {
+          await tester.dragFrom(
+            tester.getCenter(find.byType(page).hitTestable()),
+            by,
+          );
+          await tester.pumpAndSettle(const Duration(seconds: 2));
+        }
+
+        int selected() => tester
+            .widget<NavigationBar>(find.byType(NavigationBar))
+            .selectedIndex;
+
+        // Left on Home: Decks, and the bar follows. Right: back to Home.
+        await swipeOn(TodayPage, const Offset(-250, 0));
+        expect(state.shellTab.value, ShellTab.decks);
+        expect(showing(tester, DecksPage), isTrue);
+        expect(selected(), ShellTab.decks.index);
+        await swipeOn(DecksPage, const Offset(250, 0));
+        expect(state.shellTab.value, ShellTab.today);
+        // Right on Home: nothing before it.
+        await swipeOn(TodayPage, const Offset(250, 0));
+        expect(state.shellTab.value, ShellTab.today);
+
+        // An upright drag scrolls, and the tab stays.
+        await swipeOn(TodayPage, const Offset(30, -300));
+        expect(state.shellTab.value, ShellTab.today);
+
+        // A swipe on the language bar changes the language, not the tab.
+        await tester.drag(
+          find
+              .descendant(
+                of: find.byType(LanguageBar),
+                matching: find.byType(GestureDetector),
+              )
+              .hitTestable()
+              .first,
+          const Offset(-200, 0),
+        );
+        await tester.pumpAndSettle(const Duration(seconds: 2));
+        expect(state.shownLanguage, 'bn');
+        expect(state.shellTab.value, ShellTab.today);
+
+        // Left on Settings: nothing after it.
+        state.shellTab.value = ShellTab.settings;
+        await tester.pumpAndSettle();
+        await swipeOn(SettingsPage, const Offset(-250, 0));
+        expect(state.shellTab.value, ShellTab.settings);
+        expect(selected(), ShellTab.settings.index);
       },
     );
   });
