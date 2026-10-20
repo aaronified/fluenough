@@ -34,8 +34,10 @@ const Set<String> _everyLanguage = <String>{
   'hi',
   'ja',
   'kn',
+  'ko',
   'mr',
   'te',
+  'zh',
 };
 
 /// The switch row titled [title]: a section heading of the same name, such
