@@ -511,6 +511,8 @@ void main() {
       plugin.finish();
       await second;
 
+      plugin = _Plugin();
+      engine = SystemTtsEngine(tts: plugin);
       plugin.voices = <Map<String, String>>[
         <String, String>{'name': 'es-es-x-eea', 'locale': 'es-ES'},
       ];

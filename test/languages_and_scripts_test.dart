@@ -1043,6 +1043,8 @@ void main() {
         expect(downloads.missing('hi', const <String>['en']), isEmpty);
 
         {
+          remote = SteppedRemote(repoFiles(const <String>['hi']));
+          phone = MemoryDownloadedDecks();
           final state = await start(tester);
           final l10n = l10nOf(tester);
           await pickLanguage(tester, 'hi');
@@ -1065,6 +1067,8 @@ void main() {
         }
 
         {
+          remote = SteppedRemote(repoFiles(const <String>['hi']));
+          phone = MemoryDownloadedDecks();
           final handle = tester.ensureSemantics();
           final state = await start(tester);
           final l10n = l10nOf(tester);

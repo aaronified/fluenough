@@ -140,8 +140,9 @@ typedef DrawScreen = Future<void> Function(WidgetTester tester, ThemeMode mode);
 
 /// One screen at 1.4x text on a phone with the three-button bar, in light
 /// and in dark: nothing overflows, the guidelines hold, and once scrolled
-/// to its end nothing is left under the bar (#489, #501).
-void screen(String name, DrawScreen draw) {
+/// to its end nothing is left under the bar (#489, #501). [onTop] is what
+/// is checked for the bar when a sheet covers the page behind it.
+void screen(String name, DrawScreen draw, {Finder? onTop}) {
   testWidgets('$name, at 1.4x text, light and dark', (tester) async {
     final semantics = tester.ensureSemantics();
     for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {
@@ -151,7 +152,7 @@ void screen(String name, DrawScreen draw) {
       await noTargetCutAtTop(tester);
       await meetsEveryGuideline(tester);
       expect(
-        await underBarAtEnd(tester, within: find.byType(MaterialApp)),
+        await underBarAtEnd(tester, within: onTop ?? find.byType(MaterialApp)),
         isEmpty,
         reason: '${mode.name}: under the three-button bar',
       );
@@ -448,7 +449,7 @@ void main() {
         ),
         themeMode: mode,
       );
-      await tester.tap(find.byKey(const ValueKey<String>('pick-en')));
+      await tapShown(tester, find.byKey(const ValueKey<String>('pick-en')));
       await tester.pumpAndSettle();
     });
     screen(
@@ -500,7 +501,7 @@ void main() {
       await tester.tap(find.byTooltip(l10n.settingsBackupRestore).first);
       await tester.pumpAndSettle();
       expect(find.text(l10n.settingsRestoreTitle), findsOneWidget);
-    });
+    }, onTop: find.byType(BottomSheet));
     screen('the app log', gallery('settings-app-log'));
     screen('release notes', gallery('release-notes'));
     screen(
