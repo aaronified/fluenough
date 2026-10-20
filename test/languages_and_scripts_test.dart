@@ -22,6 +22,7 @@ import 'package:fluenough/app/language_choice.dart';
 import 'package:fluenough/app/language_offer.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/placement.dart';
+import 'package:fluenough/app/placement_credit.dart';
 import 'package:fluenough/app/placement_plan.dart';
 import 'package:fluenough/app/profile.dart';
 import 'package:fluenough/app/script_test.dart';
@@ -37,6 +38,7 @@ import 'package:fluenough/core/decks/notation.dart';
 import 'package:fluenough/core/models/card.dart' as model;
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
+import 'package:fluenough/core/scheduling/fsrs.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
 import 'package:fluenough/core/tts/tts_engine.dart';
 import 'package:fluenough/features/decks/course_card.dart';
@@ -50,6 +52,7 @@ import 'package:fluenough/features/placement/picker_fixtures.dart';
 import 'package:fluenough/features/placement/placement_page.dart';
 import 'package:fluenough/features/placement/placement_questions.dart';
 import 'package:fluenough/features/placement/script_test_page.dart';
+import 'package:fluenough/features/stats/stats_numbers.dart';
 import 'package:fluenough/features/today/lesson_card.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/script_name.dart';
@@ -2227,6 +2230,48 @@ void main() {
       },
     );
 
+    // Momentum (#682).
+    testWidgets('a full-width fling moves at least five languages', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final state = learnerLanguageBar(eight, choice: eight.first);
+      await pumpApp(tester, state: state);
+      final width = tester.getSize(zone()).width;
+      await tester.fling(zone(), Offset(-width * 0.9, 0), 3000);
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      final codes = <String>[for (final l in state.languageChoices) l.code];
+      expect(codes.indexOf(state.shownLanguage!), greaterThanOrEqualTo(5));
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('a short flick moves one language', (tester) async {
+      usePhone(tester);
+      final state = learnerLanguageBar(eight, choice: eight.first);
+      await pumpApp(tester, state: state);
+      await tester.fling(zone(), const Offset(-60, 0), 800);
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      final codes = <String>[for (final l in state.languageChoices) l.code];
+      expect(codes.indexOf(state.shownLanguage!), 1);
+    });
+
+    testWidgets('the language changes once, when the bar stops', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final state = learnerLanguageBar(eight, choice: eight.first);
+      await pumpApp(tester, state: state);
+      final seen = <String?>[];
+      state.addListener(() => seen.add(state.shownLanguage));
+      final width = tester.getSize(zone()).width;
+      await tester.fling(zone(), Offset(-width * 0.9, 0), 3000);
+      await tester.pump(const Duration(milliseconds: 100));
+      expect(state.shownLanguage, eight.first);
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(state.shownLanguage, isNot(eight.first));
+      expect(seen.where((l) => l != eight.first).toSet().length, 1);
+    });
+
     // The swipe works the same wherever it starts on the bar (owner,
     // 2026-10-17: "It should be consistent").
   });
@@ -2650,6 +2695,117 @@ void main() {
           }
         },
       );
+    });
+  });
+  group('placement credits what it found', () {
+    late AppState state;
+    late PlacementScript deva;
+    setUp(() async {
+      state = AppState.test();
+      await state.load();
+      deva = state
+          .placementScripts('hi')
+          .firstWhere((s) => s.script == devanagari);
+    });
+
+    Set<String> cardsOf(Iterable<DeckEntry> decks) => <String>{
+      for (final e in decks)
+        for (final c in e.cards) c.id,
+    };
+
+    test('a script read credits Read and Write, as Easy answers today', () {
+      final placed = ScriptCheck.placedFor(deva.decks, ScriptStanding.reads);
+      final written = state.creditPlacement(
+        'hi',
+        placed: placed,
+        standings: <String, ScriptStanding>{devanagari: ScriptStanding.reads},
+      );
+      expect(written, greaterThan(0));
+      final cards = cardsOf(deva.decks.where((e) => e.isScript));
+      final scripts = state.progress.scriptStates;
+      for (final id in cards) {
+        for (final mode in <DrillMode>[
+          DrillMode.readScript,
+          DrillMode.writeScript,
+        ]) {
+          expect(
+            scripts.containsKey((cardId: id, mode: mode, script: devanagari)),
+            isTrue,
+            reason: '$id $mode',
+          );
+        }
+        final due = state.progress.stateOf(id, DrillMode.recognition)!;
+        final easy = Fsrs.next(null, 5, now: state.now(), rated: true);
+        expect(due.dueAt, easy.dueAt, reason: 'the Easy interval, from today');
+        expect(due.lastReviewAt, state.now());
+      }
+      final numbers = StatsNumbers.of(
+        state.progress,
+        now: state.now(),
+        range: StatsRange.all,
+        cardOf: cardLookupOf(state),
+      );
+      expect(
+        numbers.scriptSkills.keys,
+        containsAll(<ScriptSkill>[
+          (script: devanagari, mode: DrillMode.readScript),
+          (script: devanagari, mode: DrillMode.writeScript),
+        ]),
+      );
+    });
+
+    test('a script stopped part-way credits Read for the letters and '
+        'composites only', () {
+      final placed = ScriptCheck.placedFor(deva.decks, ScriptStanding.joined);
+      state.creditPlacement(
+        'hi',
+        placed: placed,
+        standings: <String, ScriptStanding>{devanagari: ScriptStanding.joined},
+      );
+      final credited = cardsOf(
+        deva.decks.where((e) => placed.contains(e.id) && e.isScript),
+      );
+      final reading = cardsOf(
+        deva.decks.where((e) => !placed.contains(e.id) && e.isScript),
+      ).difference(credited);
+      final scripts = state.progress.scriptStates;
+      expect(credited, isNotEmpty);
+      expect(reading, isNotEmpty);
+      for (final id in credited) {
+        expect(
+          scripts.containsKey((
+            cardId: id,
+            mode: DrillMode.readScript,
+            script: devanagari,
+          )),
+          isTrue,
+        );
+        expect(
+          scripts.containsKey((
+            cardId: id,
+            mode: DrillMode.writeScript,
+            script: devanagari,
+          )),
+          isFalse,
+        );
+      }
+      for (final id in reading) {
+        expect(state.progress.stateOf(id, DrillMode.recognition), isNull);
+      }
+    });
+
+    test('placed word decks are credited, and a retake changes nothing', () {
+      final walked = state.walkDecks('hi').take(2).toList();
+      final placed = <String>{for (final e in walked) e.id};
+      expect(state.creditPlacement('hi', placed: placed), greaterThan(0));
+      final ids = cardsOf(walked);
+      final states = <ProgressKey, FsrsState>{
+        for (final entry in state.progress.states.entries)
+          if (ids.contains(entry.key.cardId)) entry.key: entry.value,
+      };
+      expect(states, isNotEmpty);
+      expect(state.creditPlacement('hi', placed: placed), 0);
+      expect(state.progress.log.length, states.length);
     });
   });
 }
