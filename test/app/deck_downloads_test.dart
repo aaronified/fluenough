@@ -752,4 +752,107 @@ void main() {
       );
     });
   });
+
+  group('files download in parallel', () {
+    /// Updates 20 files of each of [codes] at once, through a fetcher that
+    /// counts the requests in flight, by language.
+    Future<_Traffic> updateTogether(List<String> codes) async {
+      final d = downloads();
+      await d.open();
+      for (final code in codes) {
+        await d.download(code, english);
+        await d.downloadRest(code, english);
+      }
+      for (final code in codes) {
+        for (final path
+            in (phone.files.keys.toList()..sort())
+                .where((p) => p.startsWith('decks/$code/'))
+                .take(20)) {
+          remote.files[path] = '${remote.files[path]!}# a fix\n';
+        }
+      }
+      await d.checkForUpdates(english, force: true);
+      final traffic = _Traffic(remote, <String, int>{
+        for (final code in codes) code: d.updates[code]!.fetch.length,
+      });
+      final slow = DeckDownloads(
+        fetcher: traffic,
+        files: phone,
+        clock: () => now,
+      );
+      await slow.open();
+      await slow.checkForUpdates(english, force: true);
+      expect(await slow.update(), isNull);
+      expect(slow.updates, isEmpty);
+      for (final path in remote.files.keys) {
+        if (phone.files.containsKey(path)) {
+          expect(await phone.read(path), remote.files[path], reason: path);
+        }
+      }
+      return traffic;
+    }
+
+    test('a language has several in flight, within the bound', () async {
+      final traffic = await updateTogether(<String>['es']);
+      expect(traffic.peak, greaterThan(1));
+      expect(
+        traffic.peak,
+        lessThanOrEqualTo(DeckDownloads.maxConcurrentFetches),
+      );
+    });
+
+    test('two languages share the bound fairly', () async {
+      final traffic = await updateTogether(<String>['es', 'hi']);
+      expect(traffic.peak, greaterThan(1));
+      expect(
+        traffic.peak,
+        lessThanOrEqualTo(DeckDownloads.maxConcurrentFetches),
+      );
+      expect(traffic.bothInFlight, isTrue);
+      expect(traffic.unfair, isEmpty);
+    });
+  });
+}
+
+/// [inner], slowed, counting the requests in flight and noting when one
+/// language has more than its share while another still has files to start.
+class _Traffic implements DeckFetcher {
+  _Traffic(this.inner, this.totals) : _started = <String, int>{};
+
+  final DeckFetcher inner;
+
+  /// How many files each language is to fetch.
+  final Map<String, int> totals;
+  final Map<String, int> _started;
+  final Map<String, int> _inFlight = <String, int>{};
+  int _starts = 0;
+
+  int peak = 0;
+  bool bothInFlight = false;
+  final List<String> unfair = <String>[];
+
+  @override
+  Future<Fetched> fetch(String path) async {
+    if (path == 'decks/index.json') return inner.fetch(path);
+    final code = path.split('/')[1];
+    _inFlight[code] = (_inFlight[code] ?? 0) + 1;
+    _started[code] = (_started[code] ?? 0) + 1;
+    final total = _inFlight.values.fold(0, (a, b) => a + b);
+    if (total > peak) peak = total;
+    if (_inFlight.values.where((n) => n > 0).length > 1) bothInFlight = true;
+    // Once the first slots are filled, while every language still has
+    // files to start, each has one in flight and no more than its share.
+    if (++_starts > DeckDownloads.maxConcurrentFetches &&
+        totals.entries.every((e) => (_started[e.key] ?? 0) < e.value)) {
+      final share = DeckDownloads.maxConcurrentFetches ~/ totals.length;
+      for (final language in totals.keys) {
+        final n = _inFlight[language] ?? 0;
+        if (n < 1 || n > share) unfair.add('$language has $n');
+      }
+    }
+    await Future<void>.delayed(const Duration(milliseconds: 2));
+    final result = await inner.fetch(path);
+    _inFlight[code] = _inFlight[code]! - 1;
+    return result;
+  }
 }
