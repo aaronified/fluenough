@@ -1860,9 +1860,9 @@
   "@deckPractiseOne": {
     "description": "Heading above the skill rows on a deck's screen."
   },
-  "deckNoVoice": "No {language} voice on this phone",
+  "deckNoVoice": "No {language} voice on this phone. You can download one.",
   "@deckNoVoice": {
-    "description": "Under Listening when the phone cannot speak the deck's language.",
+    "description": "Under Listening when the phone cannot speak the deck's language. Says a voice can be downloaded: Set up beside it opens the Voices page, which lists the apps that add one (#641).",
     "placeholders": {
       "language": {
         "type": "String",
@@ -6360,9 +6360,9 @@
   "@voicesVoice": {
     "description": "Label of the menu on a language’s card that chooses which of the phone’s voices speaks it."
   },
-  "voicesVoiceDefault": "Phone default",
+  "voicesVoiceDefault": "Automatic",
   "@voicesVoiceDefault": {
-    "description": "In the voice menu: the voice the phone’s text-to-speech uses for the language unless one is chosen. The first choice, and the default."
+    "description": "In the voice menu: the learner leaves the choice to the app, which uses the deck’s own voice, else the course’s other voice (#641). The first choice, and the default."
   },
   "voicesVoiceOnline": "{name} · needs a connection",
   "@voicesVoiceOnline": {
@@ -9921,5 +9921,115 @@
   "pickerLearnThis": "Learn this language",
   "@pickerLearnThis": {
     "description": "Language sheet: the button fixed at the bottom of a language not learned yet."
+  },
+  "deckVoiceBackup": "{tag} · not on this phone. The {backup} voice says it instead, from the card’s other spelling",
+  "@deckVoiceBackup": {
+    "description": "In a deck's facts: the deck's own voice is not on the phone, so its course's other voice says the cards, reading each card's spelling in that voice's script (#641). tag is the deck's BCP-47 voice tag, backup the other voice's.",
+    "placeholders": {
+      "tag": {
+        "type": "String",
+        "example": "ur-PK"
+      },
+      "backup": {
+        "type": "String",
+        "example": "hi-IN"
+      }
+    }
+  },
+  "deckListenBackup": "Backup voice in use: {backup}, reading the card’s other spelling",
+  "@deckListenBackup": {
+    "description": "Under Listening on a deck's page when the deck's own voice is not on the phone and the course's other voice says its cards instead, from each card's spelling in that voice's script (#641). backup is that voice's BCP-47 tag.",
+    "placeholders": {
+      "backup": {
+        "type": "String",
+        "example": "hi-IN"
+      }
+    }
+  },
+  "voicesInUseChosen": "In use: {name}",
+  "@voicesInUseChosen": {
+    "description": "On a language's card on the Voices page: the voice the learner chose for it. name is the phone's name for the voice.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "te-in-x-tem-local"
+      }
+    }
+  },
+  "voicesInUseAutomatic": "In use: automatic, the {tag} voice",
+  "@voicesInUseAutomatic": {
+    "description": "On a language's card on the Voices page: no voice is chosen, so the deck's own voice speaks. tag is its BCP-47 voice tag.",
+    "placeholders": {
+      "tag": {
+        "type": "String",
+        "example": "hi-IN"
+      }
+    }
+  },
+  "voicesInUseBackup": "In use: the {tag} voice as a backup, reading each card’s other spelling",
+  "@voicesInUseBackup": {
+    "description": "On a language's card on the Voices page: the deck's own voice is not on the phone, so the course's other voice speaks, from each card's spelling in that voice's script (#641). tag is the other voice's BCP-47 tag.",
+    "placeholders": {
+      "tag": {
+        "type": "String",
+        "example": "hi-IN"
+      }
+    }
+  },
+  "voicesDownloadHint": "This voice can be downloaded. The apps under Other voices can say this language too.",
+  "@voicesDownloadHint": {
+    "description": "On a language's card on the Voices page when the phone has no voice for it: says a voice can be downloaded and points to the list of voice apps below (#641, #642)."
+  },
+  "voicesOthersTitle": "Other voices",
+  "@voicesOthersTitle": {
+    "description": "Heading of the folded list, on a language's card on the Voices page, of apps that add voices to the phone for that language (#642)."
+  },
+  "voicesOthersIntro": "Apps that add voices to your phone. Install one, then come back: Fluenough checks again. Fluenough installs and downloads nothing itself.",
+  "@voicesOthersIntro": {
+    "description": "Under Other voices on a language's card on the Voices page: what the listed apps are and what happens after installing one (#642)."
+  },
+  "voiceAppFdroid": "F-Droid",
+  "@voiceAppFdroid": {
+    "description": "Button label: opens a voice app's page on F-Droid, the free-software app store. A store's name."
+  },
+  "voiceAppPlay": "Google Play",
+  "@voiceAppPlay": {
+    "description": "Button label: opens a voice app's page on Google Play. A store's name."
+  },
+  "voiceAppGithub": "GitHub",
+  "@voiceAppGithub": {
+    "description": "Button label: opens a voice app's page on GitHub, where its releases can be downloaded. A site's name."
+  },
+  "voiceAppGetLabel": "Get {app} from {store}",
+  "@voiceAppGetLabel": {
+    "description": "Screen-reader label of a button that opens a voice app's page in a store. app is the app's name, store the store's or site's.",
+    "placeholders": {
+      "app": {
+        "type": "String",
+        "example": "eSpeak NG"
+      },
+      "store": {
+        "type": "String",
+        "example": "F-Droid"
+      }
+    }
+  },
+  "voiceAppAndroid": "Android {version} or newer",
+  "@voiceAppAndroid": {
+    "description": "Requirement shown under a voice app: the oldest Android version it runs on. version is a number.",
+    "placeholders": {
+      "version": {
+        "type": "int",
+        "example": "11"
+      }
+    }
+  },
+  "voiceAppArm64": "64-bit ARM phones only",
+  "@voiceAppArm64": {
+    "description": "Requirement shown under a voice app: it runs only on phones with a 64-bit ARM processor (arm64), which most phones made since 2017 have."
+  },
+  "voiceAppLinkCopied": "Couldn’t open the link, so it’s copied.",
+  "@voiceAppLinkCopied": {
+    "description": "SnackBar when nothing on the phone could open a voice app's store link, so its address was copied instead."
   }
 }

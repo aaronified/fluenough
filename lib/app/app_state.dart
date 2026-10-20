@@ -1174,32 +1174,89 @@ class AppState extends ChangeNotifier {
           null => VoiceStatus.checking,
         };
 
+  /// Whether the phone can say [language]'s cards: it has the voice, or the
+  /// course's other voice stands in for it ([backupVoice]).
   bool hasVoice(LanguageInfo language) =>
-      voiceStatus(language) == VoiceStatus.available;
+      voiceStatus(language) == VoiceStatus.available ||
+      backupVoice(language) != null;
+
+  /// The course's other voice that says [language]'s cards while the
+  /// deck's own is missing from the phone, or null (#641): another voice
+  /// tag of the same course that the phone has, in a script that
+  /// [language]'s decks also give each card in (`target_scripts`). The
+  /// Perso-Arabic decks are voiced `ur-PK`; with only the Hindi voice,
+  /// `hi-IN`, installed, it says each card's Devanagari spelling.
+  LanguageInfo? backupVoice(LanguageInfo language) {
+    // Only once the phone has said the deck's own voice is missing.
+    if (language.isIpa || _voices[language.ttsTag] != false) return null;
+    for (final other in voiceLanguages) {
+      if (other.code == language.code &&
+          other.ttsTag != language.ttsTag &&
+          other.script != language.script &&
+          _voices[other.ttsTag] == true &&
+          _spelledIn(language, other.script)) {
+        return other;
+      }
+    }
+    return null;
+  }
+
+  /// Whether a deck voiced as [language] gives its cards in [script] too,
+  /// not only names the script among the language's.
+  bool _spelledIn(LanguageInfo language, String script) => decks.any(
+    (d) =>
+        d.language.ttsTag == language.ttsTag &&
+        d.deck.cards.any((c) => c.targetScripts.containsKey(script)),
+  );
+
+  /// Every voice the course of [code] uses, one language block per voice
+  /// tag, in the order its decks name them: `hi-IN` and `ur-PK` for
+  /// Hindustani.
+  List<LanguageInfo> voiceBlocksOf(String code) => <LanguageInfo>[
+    for (final language in voiceLanguages)
+      if (language.code == code) language,
+  ];
 
   /// Whether [language] can be heard now: the phone has a voice for it, and
   /// sound is on in Settings. What decides whether listening is drilled;
   /// with sound off it is skipped, as on a phone with no voice at all.
-  /// [voiceStatus] and [hasVoice] stay the phone's own, for the Voices page
-  /// and for whether a speaker shows.
+  /// [voiceStatus] stays the phone's own, for the Voices page; [hasVoice] is
+  /// what decides whether a speaker shows.
   bool canSpeak(LanguageInfo language) =>
       settings.soundOn && hasVoice(language);
 
-  /// Every language the app can say a word in: those the decks teach and
-  /// those they teach from, one per code, the IPA, which has no voice, left
-  /// out. An IPA card's examples are said in these (ADR-0041).
+  /// Every voice the app can say a word in: for each language the decks
+  /// teach, one block per distinct voice tag its decks name (`hi-IN` and
+  /// `ur-PK` for Hindustani, #641), then the languages they teach from,
+  /// one per code, where no deck teaches them. The IPA, which has no voice,
+  /// left out. An IPA card's examples are said in these (ADR-0041).
   List<LanguageInfo> get voiceLanguages {
+    // Asked for by every deck's voice check, so kept until the catalog
+    // changes.
+    if (identical(_voiceCatalog, _catalog)) return _voiceList;
     final found = <String, LanguageInfo>{};
-    for (final entry in decks) {
-      if (entry.language.script != 'ipa') {
-        found.putIfAbsent(entry.language.code, () => entry.language);
+    for (final entry in _catalog.decks) {
+      final language = entry.language;
+      if (language.script != 'ipa') {
+        found.putIfAbsent(
+          '${language.code}/${language.ttsTag}',
+          () => language,
+        );
       }
     }
-    for (final entry in decks) {
-      found.putIfAbsent(entry.deck.native.code, () => entry.deck.native);
+    final codes = <String>{for (final language in found.values) language.code};
+    for (final entry in _catalog.decks) {
+      final native = entry.deck.native;
+      if (codes.add(native.code)) {
+        found['${native.code}/${native.ttsTag}'] = native;
+      }
     }
-    return List<LanguageInfo>.unmodifiable(found.values);
+    _voiceCatalog = _catalog;
+    return _voiceList = List<LanguageInfo>.unmodifiable(found.values);
   }
+
+  Catalog? _voiceCatalog;
+  List<LanguageInfo> _voiceList = const <LanguageInfo>[];
 
   /// The language with [code], as the decks name it, or null when none does:
   /// what an example in that language is said in.
@@ -1284,6 +1341,16 @@ class AppState extends ChangeNotifier {
       } catch (e) {
         log.warning('Recording error: ${card.id} ${e.runtimeType}');
       }
+    }
+    // While the deck's own voice is missing, the course's other voice says
+    // the card's spelling in its own script (#641). A card with none, such
+    // as a bare mark, is not said.
+    if (backupVoice(language) case final backup?) {
+      final spelling = card.targetIn(
+        backup.script,
+        firstScript: language.script,
+      );
+      return spelling == null ? null : speak(spelling, backup, slower: slower);
     }
     return speak(card.target, language, slower: slower);
   }

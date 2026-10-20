@@ -632,6 +632,14 @@ not "script in prose": the card's `reading` serves it.
 The app parses and keeps it (`Card.targetScripts`); a screen that shows the
 spelling in the script a learner chose is not built yet.
 
+It is also what a backup voice says (#641). The Perso-Arabic decks are voiced
+`tts: "ur-PK"`. On a phone with the Hindi voice (`hi-IN`) but not the Urdu
+one, the Hindi voice says each card from its `devanagari` spelling, so those
+decks list `scripts: ["perso_arabic", "devanagari"]` and give every card a
+`devanagari` spelling the Hindi voice can read: a letter with its vowel
+(`ب` is `ब`), a word in its normal Hindi spelling. A card with no sensible
+spelling, such as a bare nasal mark, gives none, and no backup is said for it.
+
 ### A note on `id`
 
 Card ids are the primary key of the user's entire review history. Changing an

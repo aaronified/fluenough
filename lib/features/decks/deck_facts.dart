@@ -119,6 +119,7 @@ class DeckFacts extends StatelessWidget {
     final state = AppScope.of(context);
     final deck = entry.deck;
     final tag = entry.language.ttsTag;
+    final backup = state.backupVoice(entry.language);
     final origin = deck.source;
     final authors = deck.authors;
     // Each recording's credit (#518): whom, and its licence.
@@ -157,7 +158,10 @@ class DeckFacts extends StatelessWidget {
         l10n.deckVoice,
         switch (state.voiceStatus(entry.language)) {
           VoiceStatus.available => l10n.deckVoiceInstalled(tag),
-          VoiceStatus.missing => l10n.deckVoiceMissing(tag),
+          VoiceStatus.missing =>
+            backup == null
+                ? l10n.deckVoiceMissing(tag)
+                : l10n.deckVoiceBackup(tag, backup.ttsTag),
           VoiceStatus.checking => l10n.deckVoiceChecking(tag),
         },
         false,
