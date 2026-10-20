@@ -8,8 +8,6 @@ import 'package:fluenough/core/decks/deck_fetch.dart';
 import '../../support/fake_http.dart';
 
 void main() {
-  final fetcher = GitHubDeckFetcher(userAgent: 'fluenough/test');
-
   Future<(Fetched, FakeHttpClient)> fetch(
     Future<(int, List<int>)> Function() reply, {
     int? claims,
@@ -18,10 +16,15 @@ void main() {
     final client = FakeHttpClient(reply)
       ..contentLength = claims
       ..compressed = compressed;
-    final fetched = await withFakeClient(
-      client,
-      () => fetcher.fetch('decks/hi/hi-path.yaml'),
+    final fetcher = GitHubDeckFetcher(
+      userAgent: 'fluenough/test',
+      retryDelays: const <Duration>[],
     );
+    final fetched = await withFakeClient(client, () async {
+      final fetched = await fetcher.fetch('decks/hi/hi-path.yaml');
+      fetcher.close();
+      return fetched;
+    });
     return (fetched, client);
   }
 
@@ -94,6 +97,53 @@ void main() {
       () => small.fetch('decks/hi/hi-path.yaml'),
     );
     expect(fetched.failure, FetchFailure.badReply);
+  });
+
+  group('a dropped connection', () {
+    Future<(Fetched, int)> fetchWith(
+      Future<(int, List<int>)> Function(int attempt) reply,
+    ) async {
+      var attempts = 0;
+      final client = FakeHttpClient(() => reply(++attempts));
+      final fetcher = GitHubDeckFetcher(
+        userAgent: 'fluenough/test',
+        retryDelays: const <Duration>[
+          Duration.zero,
+          Duration.zero,
+          Duration.zero,
+        ],
+      );
+      final fetched = await withFakeClient(
+        client,
+        () => fetcher.fetch('decks/hi/hi-path.yaml'),
+      );
+      return (fetched, attempts);
+    }
+
+    test('is tried again, and the file arrives', () async {
+      final (fetched, attempts) = await fetchWith(
+        (n) async => n <= 2
+            ? throw const SocketException('Connection reset')
+            : (200, utf8.encode('kind: path\n')),
+      );
+      expect(utf8.decode(fetched.bytes!), 'kind: path\n');
+      expect(attempts, 3);
+    });
+
+    test('is reported, with its cause, after four tries', () async {
+      final (fetched, attempts) = await fetchWith(
+        (_) async => throw const SocketException('Connection reset'),
+      );
+      expect(fetched.failure, FetchFailure.offline);
+      expect(fetched.cause, 'SocketException');
+      expect(attempts, 4);
+    });
+
+    test('is not retried when the file is gone', () async {
+      final (fetched, attempts) = await fetchWith((_) async => (404, <int>[]));
+      expect(fetched.failure, FetchFailure.notFound);
+      expect(attempts, 1);
+    });
   });
 
   test('the null fetcher never reaches the network', () async {

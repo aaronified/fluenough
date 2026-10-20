@@ -10,6 +10,7 @@ import '../core/decks/sha256.dart';
 import 'app_log.dart';
 import 'deck_catalog.dart';
 import 'downloaded_decks.dart';
+import 'fair_slots.dart';
 import 'script_fonts.dart';
 
 /// Why a language's decks could not be downloaded (ADR-0037).
@@ -137,6 +138,11 @@ class DeckDownloads extends ChangeNotifier {
   /// How many recordings and images one write keeps.
   static const int mediaPerWrite = 50;
 
+  /// How many files are downloaded at once, over every language: shared
+  /// between the languages downloading in turn, so that a large one never
+  /// holds them all while another waits.
+  static const int maxConcurrentFetches = 6;
+
   static const String _indexNote = 'index.json';
   static const String _stateNote = 'state.json';
 
@@ -177,6 +183,7 @@ class DeckDownloads extends ChangeNotifier {
   bool _asked = false;
   bool _updating = false;
   Future<void> _lock = Future<void>.value();
+  late final FairSlots _slots = FairSlots(maxConcurrentFetches);
   bool _disposed = false;
 
   // ---------------------------------------------------------------------------
@@ -660,16 +667,7 @@ class DeckDownloads extends ChangeNotifier {
       final fontFailure = await _downloadFonts(language, fonts, kept);
       if (fontFailure != null) return fontFailure;
       for (final batch in batches) {
-        final got = <IndexFile, List<int>>{};
-        for (final file in batch) {
-          if (_stopping.contains(language)) {
-            return await _stopped(language, batch, got, remove);
-          }
-          final result = await _fetchChecked(file);
-          if (result.failure case final failure?) {
-            return _failed(language, failure);
-          }
-          got[file] = result.bytes!;
+        final result = await _fetchFiles(language, batch, (file) {
           fetched.add(file.path);
           done++;
           bytes += file.size;
@@ -680,6 +678,13 @@ class DeckDownloads extends ChangeNotifier {
             totalBytes: totalBytes,
           );
           _notify();
+        }, cancellable: true);
+        if (result.failure case final failure?) {
+          return _failed(language, failure);
+        }
+        final got = result.got;
+        if (result.stopped) {
+          return await _stopped(language, batch, got, remove);
         }
         final failure = await _keep(language, got, remove);
         if (failure != null) return _failed(language, failure);
@@ -766,15 +771,84 @@ class DeckDownloads extends ChangeNotifier {
     return batches;
   }
 
+  /// Downloads [files] of [language] up to [maxConcurrentFetches] at a
+  /// time, sharing that bound fairly with the other languages, and calls
+  /// [onFetched] as each arrives. Stops starting files at the first
+  /// failure, and, with [cancellable], once [language] is cancelled; files
+  /// already on their way finish. The files fetched are in [got], in the
+  /// order of [files], whenever they arrived; [stopped] says a file was
+  /// left unstarted because of the cancel.
+  Future<
+    ({
+      Map<IndexFile, List<int>> got,
+      DeckDownloadFailure? failure,
+      bool stopped,
+    })
+  >
+  _fetchFiles(
+    String language,
+    List<IndexFile> files,
+    void Function(IndexFile file) onFetched, {
+    bool cancellable = false,
+  }) async {
+    final results = List<List<int>?>.filled(files.length, null);
+    DeckDownloadFailure? failure;
+    var stopped = false;
+    var next = 0;
+    // Whether no more files are to be started.
+    bool halted() {
+      if (next >= files.length) return true;
+      if (failure != null) return true;
+      if (cancellable && _stopping.contains(language)) {
+        stopped = true;
+        return true;
+      }
+      return false;
+    }
+
+    Future<void> worker() async {
+      while (!halted()) {
+        await _slots.acquire(language);
+        try {
+          // Things change while waiting for a slot.
+          if (halted()) return;
+          final index = next++;
+          final result = await _fetchChecked(files[index]);
+          if (result.failure case final why?) {
+            failure ??= why;
+          } else {
+            results[index] = result.bytes;
+            onFetched(files[index]);
+          }
+        } finally {
+          _slots.release(language);
+        }
+      }
+    }
+
+    await Future.wait(<Future<void>>[
+      for (var i = 0; i < min(maxConcurrentFetches, files.length); i++)
+        worker(),
+    ]);
+    return (
+      got: <IndexFile, List<int>>{
+        for (var i = 0; i < files.length; i++) files[i]: ?results[i],
+      },
+      failure: failure,
+      stopped: stopped,
+    );
+  }
+
   /// [file], downloaded and checked against its size and hash.
   Future<({List<int>? bytes, DeckDownloadFailure? failure})> _fetchChecked(
     IndexFile file,
   ) async {
-    final fetched = await _locked(() => fetcher.fetch(file.path));
+    final fetched = await fetcher.fetch(file.path);
     final bytes = fetched.bytes;
     if (bytes == null) {
       _log?.warning(
-        'Deck download failed (${fetched.failure!.name}): ${file.path}',
+        'Deck download failed (${fetched.failure!.name}'
+        '${fetched.cause == null ? '' : ': ${fetched.cause}'}): ${file.path}',
       );
       return (bytes: null, failure: _failureOf(fetched.failure!));
     }
@@ -801,12 +875,20 @@ class DeckDownloads extends ChangeNotifier {
           size: font.size,
           sha256: font.sha256,
         );
-        final result = await _fetchChecked(asFile);
+        await _slots.acquire(language);
+        final ({List<int>? bytes, DeckDownloadFailure? failure}) result;
+        try {
+          result = await _fetchChecked(asFile);
+        } finally {
+          _slots.release(language);
+        }
         if (result.failure case final failure?) {
           return _failed(language, failure);
         }
         try {
-          await files.putFonts(<IndexFont, List<int>>{font: result.bytes!});
+          await _writing(
+            () => files.putFonts(<IndexFont, List<int>>{font: result.bytes!}),
+          );
           _fontsOnPhone = await files.fontManifest();
         } on Object catch (e) {
           _log?.error('Downloaded font could not be kept: $e');
@@ -845,8 +927,10 @@ class DeckDownloads extends ChangeNotifier {
       }
     }
     try {
-      await files.putAll(got, remove: remove);
-      _onPhone = await files.manifest();
+      await _writing(() async {
+        await files.putAll(got, remove: remove);
+        _onPhone = await files.manifest();
+      });
     } on Object catch (e) {
       _log?.error('Downloaded decks could not be kept: $e');
       return DeckDownloadFailure.storage;
@@ -860,8 +944,9 @@ class DeckDownloads extends ChangeNotifier {
     return failure;
   }
 
-  /// One download at a time, whichever language asks.
-  Future<T> _locked<T>(Future<T> Function() body) {
+  /// One write to the phone's files at a time, whichever language asks:
+  /// downloads run side by side, what they keep does not.
+  Future<T> _writing<T>(Future<T> Function() body) {
     final result = _lock.then((_) => body());
     _lock = result.then<void>((_) {}, onError: (_) {});
     return result;
@@ -989,24 +1074,27 @@ class DeckDownloads extends ChangeNotifier {
     DeckDownloadFailure? first;
     var changed = false;
     try {
-      for (final language in (languages ?? _updates.keys).toList()) {
-        if (!_updates.containsKey(language)) continue;
-        final failure = await _job(
-          language,
-          () => _againIfStale(language, () async {
-            // Read here, as the index read again may have changed them.
-            final changes = _updates[language];
-            return changes == null ? null : _applyUpdate(language, changes);
-          }),
-        );
-        if (failure == null) {
-          changed = true;
-          _updates = Map<String, LanguageChanges>.of(_updates)
-            ..remove(language);
-        } else {
-          first ??= failure;
-        }
-      }
+      // Every language at once: they share the bound on files in flight.
+      final failures = await Future.wait(<Future<DeckDownloadFailure?>>[
+        for (final language in (languages ?? _updates.keys).toList())
+          if (_updates.containsKey(language))
+            _job(
+              language,
+              () => _againIfStale(language, () async {
+                // Read here, as the index read again may have changed them.
+                final changes = _updates[language];
+                return changes == null ? null : _applyUpdate(language, changes);
+              }),
+            ).then((failure) {
+              if (failure == null) {
+                changed = true;
+                _updates = Map<String, LanguageChanges>.of(_updates)
+                  ..remove(language);
+              }
+              return failure;
+            }),
+      ]);
+      first = failures.nonNulls.firstOrNull;
     } finally {
       _updating = false;
       _notify();
@@ -1049,13 +1137,7 @@ class DeckDownloads extends ChangeNotifier {
     try {
       final fontFailure = await _downloadFonts(language, changes.fonts, kept);
       if (fontFailure != null) return fontFailure;
-      final got = <IndexFile, List<int>>{};
-      for (final file in changes.fetch) {
-        final result = await _fetchChecked(file);
-        if (result.failure case final failure?) {
-          return _failed(language, failure);
-        }
-        got[file] = result.bytes!;
+      final result = await _fetchFiles(language, changes.fetch, (file) {
         done++;
         bytes += file.size;
         _progress[language] = (
@@ -1065,7 +1147,11 @@ class DeckDownloads extends ChangeNotifier {
           totalBytes: totalBytes,
         );
         _notify();
+      });
+      if (result.failure case final failure?) {
+        return _failed(language, failure);
       }
+      final got = result.got;
       final failure = await _keep(language, got, changes.remove);
       if (failure != null) return _failed(language, failure);
     } finally {
@@ -1179,6 +1265,8 @@ class DeckDownloads extends ChangeNotifier {
   @override
   void dispose() {
     _disposed = true;
+    // Closes the connection kept for the next file.
+    if (fetcher case final GitHubDeckFetcher github) github.close();
     fonts.dispose();
     super.dispose();
   }
