@@ -956,11 +956,12 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   // The picker reads assets/languages.yaml through the asset bundle, which
-  // keeps what it read. A test that pumped the app without waiting for real
-  // time leaves that read half done in the cache, and a later test (which
-  // tests land in a CI shard together decides) then never gets the list, so
-  // a sheet offers its course's own script only. Each test reads afresh.
-  setUp(() => rootBundle.evict(SpokenLanguagesPicker.asset));
+  // keeps what it read, and a widget test does not wait for real time. So
+  // whether a test got the list depended on which tests ran before it in its
+  // CI shard: a read left half done by an earlier test, or the 100 ms a
+  // helper waits for a read of its own. Read once here, in real time, and
+  // every test finds the finished read in the cache, in any order.
+  setUpAll(() => rootBundle.loadString(SpokenLanguagesPicker.asset));
 
   group('the language picker', () {
     group('search', () {
