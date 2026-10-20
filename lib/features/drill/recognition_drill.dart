@@ -61,7 +61,7 @@ class RecognitionDrill extends StatelessWidget {
       progress: session.progress,
       onClose: onClose,
       card: <Widget>[
-        if (reading != null && !session.learnsAlphabet)
+        if (reading != null && session.readsFirst)
           ReadingFirst(
             reading: reading,
             target: card.target,
@@ -70,9 +70,7 @@ class RecognitionDrill extends StatelessWidget {
           )
         else
           TargetText.hero(card.target, language: language, card: card),
-        if (reading != null &&
-            settings.showRomanisation &&
-            session.learnsAlphabet)
+        if (reading != null && settings.showRomanisation && !session.readsFirst)
           Text(
             reading,
             textAlign: TextAlign.center,

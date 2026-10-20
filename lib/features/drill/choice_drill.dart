@@ -163,7 +163,7 @@ class ChoiceDrill extends StatelessWidget {
           color: scheme.onSurfaceVariant,
         ),
       ),
-      if (reading != null && !session.learnsAlphabet)
+      if (reading != null && session.readsFirst)
         ReadingFirst(
           reading: reading,
           target: card.target,

@@ -33,6 +33,7 @@ import 'package:fluenough/core/decks/deck_fetch.dart';
 import 'package:fluenough/core/decks/deck_index.dart' show decksBeforeReady;
 import 'package:fluenough/core/decks/ipa_course.dart';
 import 'package:fluenough/core/decks/notation.dart';
+import 'package:fluenough/core/models/card.dart' as model;
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
@@ -826,6 +827,72 @@ const LanguageInfo telugu = LanguageInfo(
   script: 'telugu',
 );
 
+// Placement in the learner's scripts (owner, 2026-10-20).
+/// A Marathi speaker who reads its script, Devanagari, learning the tiny
+/// two-script Hindustani course in [scripts] (none: without its alphabet),
+/// or as [reads] says when they do not read it.
+AppState devanagariReader(Set<String> scripts, {bool reads = true}) =>
+    AppState.test(
+      decks: MemoryDeckSource(<String, String>{
+        ...twoScriptCourse(),
+        'decks/mr/mr-en-words.yaml': '''
+schema: 1
+id: mr-en-words
+name: "Words"
+language: { code: mr, iso639_3: mar, name: Marathi, script: devanagari }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+  - { id: mr-en-words-0001, target: "घर", native: "house", reading: "ghar" }
+''',
+      }),
+      settings: SettingsNotifier(
+        spokenLanguages: const <String>['en', 'mr'],
+        learningLanguages: const <String>['hi'],
+        learningChosen: true,
+        noAlphabet: <String>{if (scripts.isEmpty) 'hi'},
+        scriptsLearned: <String, Set<String>>{'hi': scripts},
+      )..scriptsRead = <String, bool>{'en': true, 'mr': reads},
+    );
+
+/// Answers each placement question on screen rightly, after [check] has
+/// looked at the card it shows.
+Future<void> placeAll(
+  WidgetTester tester,
+  void Function(model.Card card) check,
+) async {
+  final l10n = l10nOf(tester);
+  var guard = 0;
+  while (find.text(l10n.placementQuestion).evaluate().isNotEmpty &&
+      guard++ < 20) {
+    final card = tester.widget<TargetText>(find.byType(TargetText)).card!;
+    check(card);
+    final right = find.widgetWithText(OutlinedButton, card.native);
+    await tester.ensureVisible(right);
+    await tester.pumpAndSettle();
+    await tester.tap(right);
+    await tester.pumpAndSettle();
+  }
+  expect(guard, greaterThan(1), reason: 'placement asked something');
+}
+
+Future<void> pumpPlacement(WidgetTester tester, AppState state) async {
+  usePhone(tester);
+  await pumpScreen(
+    tester,
+    // As Find my level opens it, from Languages I'm learning.
+    PlacementPage(
+      languages: const <String>['hi'],
+      asked: const <String>{'hi'},
+      alphabet: <String, bool>{'hi': state.settings.learnsAlphabet('hi')},
+      random: Random(1),
+      onFinished: (_) {},
+    ),
+    state: state,
+  );
+  await tester.pumpAndSettle();
+}
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -1248,6 +1315,94 @@ void main() {
     });
   });
 
+  group('placement in the learner\'s scripts', () {
+    testWidgets('a Devanagari reader learning Perso-Arabic is placed on the '
+        'Perso-Arabic spelling, never the reading first; learning both, on '
+        'each, as drills show them', (tester) async {
+      await pumpPlacement(tester, devanagariReader(<String>{persoArabic}));
+      await placeAll(tester, (card) {
+        expect(find.byType(ReadingFirst), findsNothing);
+        final urdu = card.targetScripts[persoArabic];
+        if (urdu != null) {
+          expect(find.text(urdu), findsOneWidget);
+          expect(find.text(card.target), findsNothing);
+        }
+      });
+
+      await pumpPlacement(
+        tester,
+        devanagariReader(<String>{devanagari, persoArabic}),
+      );
+      await placeAll(tester, (card) {
+        expect(find.byType(ReadingFirst), findsNothing);
+        expect(find.text(card.target), findsOneWidget);
+        if (card.targetScripts[persoArabic] case final urdu?) {
+          expect(find.text(urdu), findsOneWidget);
+        }
+      });
+    });
+
+    testWidgets(
+      'learned without its scripts, a language is shown in a script the '
+      'learner reads already, and its reading first only when they read none',
+      (tester) async {
+        await pumpPlacement(tester, devanagariReader(const <String>{}));
+        await placeAll(tester, (card) {
+          expect(find.byType(ReadingFirst), findsNothing);
+          expect(find.text(card.target), findsOneWidget);
+        });
+
+        await pumpPlacement(
+          tester,
+          devanagariReader(const <String>{}, reads: false),
+        );
+        expect(find.byType(ReadingFirst), findsOneWidget);
+      },
+    );
+  });
+
+  group('placement\'s form questions', () {
+    late DeckEntry nouns;
+    setUpAll(() async {
+      final state = AppState.test();
+      await state.load();
+      nouns = state.decks.firstWhere(
+        (e) => e.language.code == 'hi' && e.deck.pattern != null,
+      );
+    });
+
+    test('a form of a table\'s word names the word once, in the question, '
+        'and offers only its forms, of which one alone is right', () {
+      final pattern = nouns.deck.pattern!;
+      final slotOf = <String, String>{
+        for (final slot in pattern.slots)
+          pattern.slotLabels[slot] ?? slot: slot,
+      };
+      final placement = Placement(<List<DeckEntry>>[
+        <DeckEntry>[nouns],
+      ], random: Random(3));
+      var asked = 0;
+      while (!placement.isFinished) {
+        final q = placement.question!;
+        final word = q.formOf!;
+        final row = pattern.entries.singleWhere((e) => e.lemma == word.lemma);
+        expect(q.options.length, greaterThan(1));
+        for (final option in q.options) {
+          expect(option, isNot(contains(word.lemma)));
+          expect(option, isNot(contains(word.gloss)));
+          final slot = slotOf[option]!;
+          // Only the right option's form is the one shown.
+          expect(row.forms[slot] == q.card.target, option == q.answer);
+          expect(q.isRight(option), option == q.answer);
+        }
+        placement.answer(q.answer);
+        asked++;
+      }
+      expect(asked, greaterThan(0));
+      expect(placement.placedDeckIds, <String>{nouns.id});
+    });
+  });
+
   group('placing units', () {
     late List<List<DeckEntry>> hindi;
     setUpAll(() async {
@@ -1266,7 +1421,7 @@ void main() {
     /// Answers [placement]'s questions rightly until it reaches unit [stop].
     void knowUpTo(Placement placement, int stop) {
       while (!placement.isFinished && placement.unit < stop) {
-        placement.answer(placement.question!.card.native);
+        placement.answer(placement.question!.answer);
       }
     }
 

@@ -1830,12 +1830,13 @@ class AppState extends ChangeNotifier {
   /// teaches [language]. Whether the profile learns it does not matter:
   /// placement asks before it does.
   ///
-  /// [alphabet] overrides whether the alphabet is learned, and [native]
-  /// which language it is learned from, for placement, which asks before
-  /// either is saved.
+  /// [alphabet] overrides whether the alphabet is learned, [scripts] which
+  /// scripts are (over [alphabet]), and [native] which language it is
+  /// learned from, for placement, which asks before any is saved.
   List<List<DeckEntry>> courseUnits(
     String language, {
     bool? alphabet,
+    Set<String>? scripts,
     String? native,
   }) {
     final teaching = <DeckEntry>[
@@ -1855,7 +1856,7 @@ class AppState extends ChangeNotifier {
       course.removeWhere(
         (e) =>
             path.alphabet.contains(e.id) &&
-            !learnsScriptOf(e.language, alphabet: alphabet),
+            !learnsScriptOf(e.language, alphabet: alphabet, scripts: scripts),
       );
     }
     final byId = <String, DeckEntry>{for (final e in course) e.id: e};
@@ -1897,54 +1898,130 @@ class AppState extends ChangeNotifier {
   ///
   /// [alphabet] overrides whether the alphabet is learned, for placement,
   /// which asks before it saves: true means the scripts chosen, or the
-  /// primary script where none is stored, never every script.
-  bool learnsScriptOf(LanguageInfo language, {bool? alphabet}) {
+  /// primary script where none is stored, never every script. [scripts]
+  /// overrides both: the scripts chosen and not saved yet.
+  bool learnsScriptOf(
+    LanguageInfo language, {
+    bool? alphabet,
+    Set<String>? scripts,
+  }) {
     final code = language.code;
-    final primary = primaryScript(code);
-    final listed = <String>{primary, ...language.allScripts};
+    final listed = _courseScripts(language);
     if (!listed.contains(language.script)) {
+      if (scripts != null) return scripts.isNotEmpty;
       return alphabet ?? settings.learnsAlphabet(code);
     }
+    return scriptsLearnedOf(
+      code,
+      alphabet: alphabet,
+      scripts: scripts,
+    ).contains(language.script);
+  }
+
+  /// The scripts [code] is learned in: [scripts] where given; else as
+  /// [alphabet] says, where given (see [learnsScriptOf]); else as saved.
+  Set<String> scriptsLearnedOf(
+    String code, {
+    bool? alphabet,
+    Set<String>? scripts,
+  }) {
+    if (scripts != null) return scripts;
+    final primary = primaryScript(code);
     if (alphabet == null) {
-      return settings
-          .scriptsLearned(code, primary: primary)
-          .contains(language.script);
+      return settings.scriptsLearned(code, primary: primary);
     }
-    if (!alphabet) return false;
+    if (!alphabet) return const <String>{};
     final chosen = settings.hasScriptsChosen(code)
         ? settings.scriptsLearned(code, primary: primary)
         : const <String>{};
-    return (chosen.isEmpty ? <String>{primary} : chosen).contains(
-      language.script,
-    );
+    return chosen.isEmpty ? <String>{primary} : chosen;
   }
 
   /// The scripts [language]'s cards are read in, in course order: those
-  /// the learner learns (#623). None when they learn none.
-  List<String> learnedScripts(LanguageInfo language) {
-    final code = language.code;
-    final primary = primaryScript(code);
-    final learned = settings.scriptsLearned(code, primary: primary);
+  /// the learner learns (#623). None when they learn none. [scripts]
+  /// overrides what is saved, as placement's choice does before it is.
+  List<String> learnedScripts(LanguageInfo language, {Set<String>? scripts}) {
+    final learned = scriptsLearnedOf(language.code, scripts: scripts);
     return <String>[
-      for (final script in <String>{primary, ...language.allScripts})
+      for (final script in _courseScripts(language))
         if (learned.contains(script)) script,
     ];
   }
 
+  /// [language]'s scripts, in course order: its course's primary first.
+  Set<String> _courseScripts(LanguageInfo language) => <String>{
+    primaryScript(language.code),
+    ...language.allScripts,
+  };
+
+  /// The scripts the learner reads through the languages they know (#554,
+  /// Languages I know): a script answered for a language by name
+  /// (`hi:perso_arabic`), and a language's own script answered by its code
+  /// alone, as its decks, or else the deck index, name it.
+  Set<String> get scriptsReadKnown {
+    final read = <String>{};
+    for (final MapEntry(:key, :value) in settings.scriptsRead.entries) {
+      if (!value) continue;
+      final parts = key.split(':');
+      if (parts.length == 2) {
+        read.add(parts[1]);
+      } else if (_ownScriptOf(key) case final script?) {
+        read.add(script);
+      }
+    }
+    return read;
+  }
+
+  /// The script [code] is written in first: its decks', or the deck
+  /// index's for a language with none on the phone. Null if neither knows.
+  String? _ownScriptOf(String code) {
+    if (decks.any((e) => e.language.code == code)) return primaryScript(code);
+    for (final language
+        in deckDownloads?.index?.languages ?? const <IndexLanguage>[]) {
+      if (language.code == code) return language.script;
+    }
+    return null;
+  }
+
+  /// The scripts [language]'s cards are shown in, in course order: those
+  /// learned; for a language written in several but learned in none, those
+  /// the learner reads already through a language they know, which need not
+  /// be learned to be read (owner, 2026-10-20). A language written in one
+  /// script and learned without it shows none, as before.
+  List<String> _shownScripts(LanguageInfo language, {Set<String>? scripts}) {
+    final learned = learnedScripts(language, scripts: scripts);
+    final all = _courseScripts(language);
+    if (learned.isNotEmpty || all.length < 2) return learned;
+    final read = scriptsReadKnown;
+    return <String>[
+      for (final script in all)
+        if (read.contains(script)) script,
+    ];
+  }
+
+  /// Whether [language]'s cards show their reading first (#47): the
+  /// learner learns none of its scripts and reads none of them already
+  /// ([_shownScripts]). What drills and placement both ask; [scripts] as
+  /// for [learnedScripts].
+  bool readsFirst(LanguageInfo language, {Set<String>? scripts}) =>
+      _shownScripts(language, scripts: scripts).isEmpty;
+
   /// The other spellings of [card] to show beneath [targetShown]'s, smaller
   /// (#623): when the learner learns its script and another too, the others
-  /// that it has. None for a card or a learner with one script.
+  /// that it has. None for a card or a learner with one script. [scripts]
+  /// as for [learnedScripts].
   List<({String text, LanguageInfo language})> otherSpellings(
     Card card,
-    LanguageInfo language,
-  ) {
+    LanguageInfo language, {
+    Set<String>? scripts,
+  }) {
     final first = language.script;
-    final learned = learnedScripts(language);
-    if (!learned.contains(first)) {
+    final shown = _shownScripts(language, scripts: scripts);
+    if (!shown.contains(first)) {
       return const <({String text, LanguageInfo language})>[];
     }
     return <({String text, LanguageInfo language})>[
-      for (final script in learned)
+      for (final script in shown)
         if (script != first)
           if (card.targetIn(script, firstScript: first) case final text?)
             (text: text, language: language.inScript(script)),
@@ -1954,17 +2031,19 @@ class AppState extends ChangeNotifier {
   /// How [card] is shown as [language]'s text: the learner's script and
   /// that script's language, which draws it in its direction (#623). The
   /// card's own target and [language] unless they learn only another
-  /// script, and the card has its spelling in it.
+  /// script (or, learning none, read only another), and the card has its
+  /// spelling in it. [scripts] as for [learnedScripts].
   ({String text, LanguageInfo language}) targetShown(
     Card card,
-    LanguageInfo language,
-  ) {
+    LanguageInfo language, {
+    Set<String>? scripts,
+  }) {
     final first = language.script;
-    final learned = learnedScripts(language);
-    if (learned.isEmpty || learned.contains(first)) {
+    final shown = _shownScripts(language, scripts: scripts);
+    if (shown.isEmpty || shown.contains(first)) {
       return (text: card.target, language: language);
     }
-    for (final script in learned) {
+    for (final script in shown) {
       if (card.targetIn(script, firstScript: first) case final text?) {
         return (text: text, language: language.inScript(script));
       }

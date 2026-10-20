@@ -782,6 +782,9 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
           alphabet: <String, bool>{
             for (final code in place) code: ?alphabet[code],
           },
+          scripts: <String, Set<String>>{
+            for (final code in place) code: ?scripts[code],
+          },
           natives: <String, String>{
             for (final code in place) code: ?natives[code],
           },
