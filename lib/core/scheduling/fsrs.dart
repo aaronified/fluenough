@@ -237,6 +237,48 @@ abstract final class Fsrs {
     );
   }
 
+  /// [state] after a review graded [grade] that counts for [share] of one,
+  /// 0 to 1 (#653): stability and difficulty move [share] of the way from
+  /// where they were to where [next] would take them, from no stability
+  /// at all for a pair with no state. The interval follows the stability
+  /// reached; repetitions and lapses count as [next] counts them. A share
+  /// of 1 is [next].
+  static FsrsState partial(
+    FsrsState? state,
+    int grade,
+    double share, {
+    required DateTime now,
+    bool rated = false,
+    List<double> parameters = w,
+  }) {
+    final full = next(
+      state,
+      grade,
+      now: now,
+      rated: rated,
+      parameters: parameters,
+    );
+    if (share >= 1) return full;
+    final fromStability = state?.stability ?? 0;
+    final fromDifficulty = state?.difficulty ?? full.difficulty;
+    final stability = math.max(
+      minStability,
+      fromStability + share * (full.stability - fromStability),
+    );
+    final interval = intervalFor(stability, parameters: parameters);
+    return FsrsState(
+      stability: stability,
+      difficulty: _clampDifficulty(
+        fromDifficulty + share * (full.difficulty - fromDifficulty),
+      ),
+      intervalDays: interval,
+      dueAt: now.add(Duration(days: interval)),
+      lastReviewAt: now,
+      repetitions: full.repetitions,
+      lapses: full.lapses,
+    );
+  }
+
   /// Rebuilds a pair's state from its `(grade, time)` reviews, oldest first.
   static FsrsState? replay(
     Iterable<({int grade, DateTime at, bool rated})> reviews, {

@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import '../core/data/database.dart';
 import '../core/data/review_log.dart';
 import '../core/models/drill_mode.dart';
+import '../core/scheduling/ask.dart';
 import '../core/scheduling/replay.dart';
 import '../core/scheduling/fsrs.dart';
 import '../core/scheduling/skill_map.dart';
@@ -63,7 +64,7 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
   List<ReviewEvent> get log => _memory.log;
 
   @override
-  Map<ProgressKey, FsrsState> get scriptStates => _memory.scriptStates;
+  Map<ScriptKey, FsrsState> get scriptStates => _memory.scriptStates;
 
   @override
   List<ReviewEvent> get scriptLog => _memory.scriptLog;
@@ -120,6 +121,8 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
     required DateTime now,
     Duration elapsed = Duration.zero,
     String? answerGiven,
+    String? script,
+    Ask? asked,
   }) {
     final chosen = _memory.parameters;
     final event = _memory.record(
@@ -130,6 +133,8 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
       now: now,
       elapsed: elapsed,
       answerGiven: answerGiven,
+      script: script,
+      asked: asked,
     );
     _write(
       () => _log.record(
@@ -140,6 +145,8 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
         now: now,
         elapsed: elapsed,
         answerGiven: answerGiven,
+        script: script,
+        asked: asked,
         parameters: chosen.forPair((cardId: cardId, mode: mode)),
       ),
       'while saving a review',

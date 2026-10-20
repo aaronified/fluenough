@@ -3,6 +3,7 @@ import 'dart:convert';
 import '../models/drill_mode.dart';
 import '../models/leech_action.dart';
 import '../models/review_event.dart';
+import '../scheduling/ask.dart';
 import '../scheduling/fsrs.dart';
 import '../scheduling/fsrs_fit.dart';
 import '../scheduling/replay.dart';
@@ -38,6 +39,8 @@ abstract final class LogJsonl {
           'grade': r.grade,
           'elapsed_ms': r.elapsed.inMilliseconds,
           if (r.answerGiven != null) 'answer': r.answerGiven,
+          if (r.script != null) 'script': r.script,
+          if (r.asked != null) 'asked': r.asked!.name,
         }),
       for (final a in leechActions)
         jsonEncode(<String, Object>{
@@ -110,6 +113,8 @@ abstract final class LogJsonl {
             grade: _grade(decoded, n),
             elapsed: Duration(milliseconds: _elapsed(decoded, n)),
             answerGiven: _answer(decoded, n),
+            script: _script(decoded, n),
+            asked: Ask.values.asNameMap()[decoded['asked']],
           ));
         case 'leech':
           final kind = LeechActionKind.values.asNameMap()[decoded['kind']];
@@ -218,6 +223,16 @@ abstract final class LogJsonl {
       throw FormatException('line $n: answer is not text');
     }
     return answer as String?;
+  }
+
+  /// The script a review was shown or typed in (#653); absent before it
+  /// was kept, and for transliteration.
+  static String? _script(Map<String, Object?> o, int n) {
+    final script = o['script'];
+    if (script != null && script is! String) {
+      throw FormatException('line $n: script is not text');
+    }
+    return script as String?;
   }
 
   static int _elapsed(Map<String, Object?> o, int n) {

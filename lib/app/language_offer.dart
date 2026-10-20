@@ -81,7 +81,10 @@ extension LanguageOffer on AppState {
           (
             code: native.code,
             name: native.name,
-            progress: B1Progress.of(b1Units(code, native.code)),
+            progress: B1Progress.of(
+              b1Units(code, native.code),
+              isIpa: first?.language.isIpa ?? false,
+            ),
           ),
       ],
     );

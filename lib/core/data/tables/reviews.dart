@@ -33,6 +33,15 @@ class Reviews extends Table {
   /// What was typed, for a machine-graded mode. Null for recognition.
   TextColumn get answerGiven => text().nullable()();
 
+  /// The script the card was shown in, or the answer typed in, when the
+  /// learner learns it (#653). Added by migration 9: null on the rows
+  /// written before it, and for transliteration.
+  TextColumn get script => text().nullable()();
+
+  /// How the card was asked, an `Ask` by name (#653). Added by migration
+  /// 9: null on the rows written before it.
+  TextColumn get asked => text().nullable()();
+
   /// Null on the pair's first review.
   IntColumn get intervalBefore => integer().nullable()();
 

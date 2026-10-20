@@ -76,12 +76,15 @@ class AppDatabase extends _$AppDatabase {
   ///    skill (ADR-0035).
   /// 8: `restores`, append-only: each restore that replaced the review log
   ///    (#470).
+  /// 9: `reviews` gains `script` and `asked`: the script each answer was
+  ///    shown or typed in, and how it was asked, for the script skills per
+  ///    script (#653). Older rows keep null.
   @override
   int get schemaVersion => currentSchemaVersion;
 
   /// [schemaVersion], for what needs it without a database: a backup says
   /// which schema it was made under (#470).
-  static const int currentSchemaVersion = 8;
+  static const int currentSchemaVersion = 9;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -149,6 +152,22 @@ class AppDatabase extends _$AppDatabase {
         if (exists.isEmpty) {
           await m.createTable(restores);
           await _appendOnly('restores');
+        }
+      }
+      if (from < 9) {
+        // Each column once, as in step 5. Adding a column rewrites no row,
+        // so the append-only triggers are not set off.
+        final has = <String>{
+          for (final row in await customSelect(
+            "SELECT name FROM pragma_table_info('reviews')",
+          ).get())
+            row.read<String>('name'),
+        };
+        for (final column in <GeneratedColumn<Object>>[
+          reviews.script,
+          reviews.asked,
+        ]) {
+          if (!has.contains(column.name)) await m.addColumn(reviews, column);
         }
       }
     },

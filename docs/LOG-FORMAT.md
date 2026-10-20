@@ -44,6 +44,8 @@ One per answered card, oldest first: a row of the `reviews` table
 | `grade` | yes | The grade, a whole number 0–5, read by FSRS as a rating (ADR-0033): 0–2 Again, 3 Hard, 4 Good, and 5 Easy when there is no `answer` (the learner rated it), Good when there is (typed exactly). |
 | `elapsed_ms` | yes | How long the answer took, in milliseconds. |
 | `answer` | no | What was typed, or for `speaking` what the recogniser heard. Absent for a self-graded review, and only then: its absence makes a grade of 5 Easy. |
+| `script` | no | The script the card was shown in, or the answer typed in, when the learner learns it, such as `devanagari` (#653). Absent for transliteration, a script not learned, and reviews from before it was kept. What the script skills are worked out from. |
+| `asked` | no | How the card was asked: `own` (typed, rated or said), `chooseMeaning`, `chooseWord`, `hearAndChoose`, `hearMeaning`, `matchPairs`, `rearrange`, `chooseFormMeaning` or `chooseForm` (#653). Absent for reviews from before it was kept. |
 
 ## `leech` lines
 

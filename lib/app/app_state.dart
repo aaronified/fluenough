@@ -947,9 +947,15 @@ class AppState extends ChangeNotifier {
     // The decks listed under `alphabet:` in a path are also the script
     // skills' (#556): their answers make Read script and Write script,
     // rebuilt from the log whenever the decks are read.
+    // Script-deck answers from before the script was kept per answer
+    // count for the course's primary script (#653).
     progress.skills = SkillMap(
       formHeardIn: scriptDecks,
       scriptDecks: scriptDecks,
+      primaryScripts: <String, String>{
+        for (final code in <String>{for (final e in decks) e.language.code})
+          code: primaryScript(code),
+      },
     );
   }
 
@@ -2506,11 +2512,17 @@ class AppState extends ChangeNotifier {
   /// the review. Minimal pairs have no mode and are not recorded. With
   /// "Adjust automatically" on, the review's skill is then refitted in the
   /// background if it has grown enough ([FsrsTuner.afterReview]).
+  ///
+  /// [script] is the script the learner learns that the card was shown, or
+  /// the answer typed, in, null for transliteration, and [asked] how it was
+  /// asked: what the script skills are worked out from (#653).
   ReviewEvent record(
     SessionItem item,
     int grade, {
     Duration elapsed = Duration.zero,
     String? answerGiven,
+    String? script,
+    Ask? asked,
   }) {
     final event = progress.record(
       deckId: item.card.deckId,
@@ -2520,6 +2532,8 @@ class AppState extends ChangeNotifier {
       now: now(),
       elapsed: elapsed,
       answerGiven: answerGiven,
+      script: script,
+      asked: asked,
     );
     if (settings.autoAdjust) tuner.afterReview(event);
     return event;
