@@ -1,0 +1,231 @@
+schema: 1
+id: "es-en-first-words"
+kind: "layer"
+core: "es-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "Yes and no, the small words that link a sentence, and a few words for leaving and for being sorry. Greetings and thank you are in the phrasebook."
+cards:
+  "es-0042":
+    native: "yes"
+    notes:
+      "n1": "Sí is the plain yes. A negative question is answered the same way: ¿No vienes? Sí, vengo (Aren't you coming? Yes, I am)."
+    examples:
+      "Sí, gracias.":
+        native: "Yes, thank you."
+        bases:
+          "Sí": "yes"
+          "gracias": "thank you"
+      "Sí, tengo hambre.":
+        native: "Yes, I'm hungry."
+        bases:
+          "Sí": "yes"
+          "tengo": "I have"
+          "hambre": "hunger"
+  "es-0043":
+    native: "no"
+    notes:
+      "n1": "No (no) is both 'no' and 'not'. Before a verb it means 'not': No hablo inglés (I don't speak English)."
+    examples:
+      "No, gracias.":
+        native: "No, thank you."
+        bases:
+          "No": "no"
+          "gracias": "thank you"
+      "No hablo inglés.":
+        native: "I don't speak English."
+        bases:
+          "No": "not"
+          "hablo": "I speak"
+          "inglés": "English"
+  "es-0044":
+    native: "you're welcome"
+    notes:
+      "n1": "The answer to gracias. Literally 'of nothing'. Say it to a stranger as readily as to a friend."
+    examples:
+      "Gracias por la comida. De nada.":
+        native: "Thanks for the food. You're welcome."
+        bases:
+          "Gracias": "thanks"
+          "por": "for"
+          "la": "the"
+          "comida": "food"
+          "De": "of"
+          "nada": "nothing"
+      "De nada, señora.":
+        native: "You're welcome, madam."
+        bases:
+          "De": "of"
+          "nada": "nothing"
+          "señora": "madam"
+    bases:
+      "de": "of"
+      "nada": "nothing"
+  "es-0045":
+    native: "excuse me; sorry"
+    alt_native: ["pardon me"]
+    notes:
+      "n1": "Perdón gets someone's attention or asks pardon for a small slip. For a bigger apology, lo siento is in the phrasebook."
+    examples:
+      "Perdón, ¿dónde está el baño?":
+        native: "Excuse me, where is the bathroom?"
+        bases:
+          "Perdón": "excuse me"
+          "dónde": "where"
+          "está": "is"
+          "el": "the"
+          "baño": "bathroom"
+      "Perdón por llegar tarde.":
+        native: "Sorry for arriving late."
+        bases:
+          "Perdón": "sorry"
+          "por": "for"
+          "llegar": "to arrive"
+          "tarde": "late"
+  "es-0046":
+    native: "goodbye"
+    alt_native: ["bye"]
+    notes:
+      "n1": "Adiós is goodbye. For a short parting, hasta luego is more usual."
+    examples:
+      "Adiós, hasta mañana.":
+        native: "Goodbye, see you tomorrow."
+        bases:
+          "Adiós": "goodbye"
+          "hasta": "until"
+          "mañana": "tomorrow"
+      "Adiós, amigo.":
+        native: "Goodbye, friend."
+        bases:
+          "Adiós": "goodbye"
+          "amigo": "friend"
+  "es-0047":
+    native: "see you later"
+    notes:
+      "n1": "Literally 'until later'. Used among friends and in the classroom alike."
+    examples:
+      "Hasta luego, Ana.":
+        native: "See you later, Ana."
+        bases:
+          "Hasta": "until"
+          "luego": "later"
+          "Ana": "Ana"
+      "Nos vemos luego.":
+        native: "We'll see each other later."
+        bases:
+          "Nos": "us"
+          "vemos": "see"
+          "luego": "later"
+    bases:
+      "hasta": "until"
+      "luego": "later"
+  "es-0048":
+    native: "and"
+    notes:
+      "n1": "Y becomes e before a word that starts with i or hi, as in agua e hielo (water and ice)."
+    examples:
+      "Pan y leche.":
+        native: "Bread and milk."
+        bases:
+          "Pan": "bread"
+          "y": "and"
+          "leche": "milk"
+      "Tengo un libro y una mesa.":
+        native: "I have a book and a table."
+        bases:
+          "Tengo": "I have"
+          "un": "a"
+          "libro": "book"
+          "y": "and"
+          "una": "a"
+          "mesa": "table"
+  "es-0049":
+    native: "or"
+    notes:
+      "n1": "O (o) becomes u before a word that starts with o or ho, as in siete u ocho (seven or eight). Otherwise it stays o."
+    examples:
+      "¿Café o té?":
+        native: "Coffee or tea?"
+        bases:
+          "Café": "coffee"
+          "o": "or"
+          "té": "tea"
+      "¿Hoy o mañana?":
+        native: "Today or tomorrow?"
+        bases:
+          "Hoy": "today"
+          "o": "or"
+          "mañana": "tomorrow"
+  "es-0050":
+    native: "but"
+    notes:
+      "n1": "Pero joins two clauses that contrast. Peor means 'worse': a different word."
+    examples:
+      "Quiero ir, pero no puedo.":
+        native: "I want to go, but I can't."
+        bases:
+          "Quiero": "I want"
+          "ir": "to go"
+          "pero": "but"
+          "no": "not"
+          "puedo": "can"
+      "Es caro, pero bueno.":
+        native: "It's expensive, but good."
+        bases:
+          "Es": "it is"
+          "caro": "expensive"
+          "pero": "but"
+          "bueno": "good"
+  "es-0051":
+    native: "here"
+    notes:
+      "n1": "Aquí is here; allí is there, away from both speaker and listener."
+    examples:
+      "Estoy aquí.":
+        native: "I am here."
+        bases:
+          "Estoy": "I am"
+          "aquí": "here"
+      "Ven aquí, hija.":
+        native: "Come here, daughter."
+        bases:
+          "Ven": "come"
+          "aquí": "here"
+          "hija": "daughter"
+  "es-0052":
+    native: "also; too"
+    notes:
+      "n1": "También comes after the thing it adds to, as in 'me too': yo también. Use tampoco for 'neither' or 'not either'."
+    examples:
+      "Yo también.":
+        native: "Me too."
+        bases:
+          "Yo": "I"
+          "también": "too"
+      "Mi madre también lee.":
+        native: "My mother also reads."
+        bases:
+          "Mi": "my"
+          "madre": "mother"
+          "también": "also"
+          "lee": "reads"
+  "es-0053":
+    native: "a lot; very; much"
+    notes:
+      "n1": "Mucho means 'a lot' or 'much', and agrees with the noun it goes with: mucho calor. Muy (very) goes before an adjective: muy bueno, very good."
+    examples:
+      "Hace mucho calor.":
+        native: "It's very hot."
+        bases:
+          "Hace": "it is"
+          "mucho": "very"
+          "calor": "heat"
+      "Me gusta mucho el café.":
+        native: "I like coffee a lot."
+        bases:
+          "Me": "to me"
+          "gusta": "pleases"
+          "mucho": "a lot"
+          "el": "the"
+          "café": "coffee"
