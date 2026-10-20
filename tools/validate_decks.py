@@ -144,7 +144,7 @@ CARD_KEYS = {
     "id", "target", "native", "reading", "ipa", "alt_target", "alt_native",
     "pos", "gender", "tags", "notes", "audio", "examples", "modes", "pair",
     "picture", "phrasebook", "bases", "rules", "wiktionary", "register", "frequency",
-    "audio_credit", "image", "image_credit", "target_scripts",
+    "audio_credit", "image", "image_credit", "target_scripts", "words",
 }
 # A ref lists a card written in another deck (ADR-0018). It may give its own
 # native-side fields; what the card is in the language learned stays the
@@ -160,7 +160,7 @@ SENTENCE_KEYS = {"text", "reading", "ipa"}
 QUESTION_KEYS = {"id", "prompt", "options", "answer"}
 GLOSS_KEYS = {"word", "modern", "reading", "ipa", "meaning", "note"}
 EXAMPLE_KEYS = {"target", "native", "reading", "ipa", "bases", "source",
-                "language", "sounds"}
+                "language", "sounds", "words"}
 # A reading question has this many options, and a passage this many
 # questions (#98, ADR-0019).
 CHOICES = range(2, 5)
@@ -181,7 +181,7 @@ CORE_CARD_KEYS = {"id", "target", "reading", "ipa", "alt_target", "pos",
                   "notes", "phrasebook", "bases", "rules", "register", "frequency",
                   "synonyms", "antonyms", "collocations", "confusables", "forms",
                   "senses", "audio_credit", "image", "image_credit",
-                  "target_scripts"}
+                  "target_scripts", "words"}
 CORE_REF_KEYS = {"ref", "reading", "ipa", "tags", "modes", "examples", "notes"}
 # A set card (DECK-FORMAT.md, Set cards; #506, #515): a closed group shown
 # together before its members are drilled. It is a card of a vocab core,
@@ -198,7 +198,7 @@ LAYER_SET_KEYS = {"native", "explanation"}
 # A set needs at least this many members: one card alone is no group.
 MIN_SET_MEMBERS = 2
 CORE_EXAMPLE_KEYS = {"target", "reading", "ipa", "bases", "source",
-                     "language", "sounds"}
+                     "language", "sounds", "words"}
 # A word card has at least this many examples (owner, #506: "At least 2").
 MIN_EXAMPLES = 2
 # The languages filled in (#511, #512). In these, a word card with fewer than
@@ -282,7 +282,9 @@ B1_TOTAL = (2000, 3500)
 PHRASEBOOK_SIZE = (15, 25)
 # Parts of speech whose several-word cards still count as one word.
 LEXICAL_POS = {"noun", "verb", "adj", "adv", "pronoun"}
-# Scripts written without spaces, whose words bases cannot find yet.
+# Scripts written without spaces: a card of a B1 deck in one gives its
+# words, `words`, on its target and on each example (DECK-FORMAT.md, Base
+# words), since splitting at spaces cannot find them.
 NO_SPACES = {"han", "han_simplified", "han_traditional", "kana", "thai"}
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -421,6 +423,10 @@ class TCard:
     notes: list[Note] = field(default_factory=list)
     pair: str | None = None
     single: bool = True        # written in a single-file deck or as layer-only
+    # Its target's `words`, where it gives them, and each example's, by
+    # place (DECK-FORMAT.md, Base words); None and absent where not given.
+    words: list[str] | None = None
+    example_words: dict[int, list[str]] = field(default_factory=dict)
 
 
 @dataclass
@@ -871,7 +877,8 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
         _check_frequency(r, where, card["frequency"])
     target = card.get("target")
     if core and _is_str(target):
-        tiles = _tiles(target) if _rearranges(target, pos) else None
+        given = _given(card)
+        tiles = _tiles(target, given) if _rearranges(target, pos, given) else None
         for key in ITEM_KEYS:
             if key in card:
                 check_items(r, where, key, card[key], cid, target, lang, script, tiles)
@@ -905,11 +912,15 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
         _check_card_rules(r, where, card["rules"], lang)
 
     target = card.get("target")
+    words = check_given_words(r, where, "", card.get("words"),
+                              target if _is_str(target) else None)
     bases = check_bases(r, where, "", card.get("bases"),
                         target if _is_str(target) else None, cid, lang, script,
-                        core=core)
+                        core=core, given=words)
+    example_words: dict[int, list[str]] = {}
     examples = _check_examples(r, where, card.get("examples"), form=form,
-                               cid=cid, lang=lang, script=script)
+                               cid=cid, lang=lang, script=script,
+                               words=example_words)
     if (lang in FILLED_LANGUAGES and counts_as_word(card, r.deck_kind or "vocab")
             and len(examples) < MIN_EXAMPLES):
         r.error(where, f"{len(examples)} example(s); a word card has at least "
@@ -925,7 +936,8 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
             tags=[t for t in tags if isinstance(t, str)] if isinstance(tags, list) else [],
             phrasebook=card.get("phrasebook") is True, path=r.path, where=where,
             deck_kind=r.deck_kind or "vocab", bases=bases, examples=examples,
-            notes=notes, pair=partner, single=not core))
+            notes=notes, pair=partner, single=not core, words=words,
+            example_words=example_words))
 
 
 def _check_modes(r: Report, where: str, modes: object) -> None:
@@ -1141,11 +1153,12 @@ def check_note_regions(r: Report, where: str, p: str, i: int, value: object) -> 
 
 def check_bases(r: Report, where: str, prefix: str, bases: object,
                 text: str | None, cid: str | None, lang: str, script: str, *,
-                core: bool) -> list[dict]:
+                core: bool, given: list[str] | None = None) -> list[dict]:
     """A card's or an example's `bases`: the base word of each derived word
     in its text, by the card that teaches it or written in full (ADR-0036).
-    A card whose word is its own root says `bases: self` (#513). Returns the
-    well-formed entries."""
+    A card whose word is its own root says `bases: self` (#513). [given] is
+    the text's `words`, where it gives them. Returns the well-formed
+    entries."""
     if bases is None or (bases == "self" and not prefix):
         return []
     if not isinstance(bases, list):
@@ -1154,7 +1167,8 @@ def check_bases(r: Report, where: str, prefix: str, bases: object,
                        + ("" if prefix else ', or "self" for a word that is its own root'))
         return []
     of = "the target" if not prefix else f"{prefix}target"
-    words = {_key(w) for w in _words(text)} if text is not None else None
+    words = ({_key(w) for w in _split(text, given)} if text is not None
+             else None)
     seen: set[str] = set()
     found: list[dict] = []
     id_re = card_id_re(lang)
@@ -1214,19 +1228,33 @@ def check_bases(r: Report, where: str, prefix: str, bases: object,
     return found
 
 
-def _rearranges(target: str, pos: object) -> bool:
+def _rearranges(target: str, pos: object, given: list[str] | None = None) -> bool:
     """Whether a card is produced by putting its words in order, as the
     app's `Card.rearranges` decides: three words or more, or a phrase of
-    two or more."""
-    words = [w for w in target.split()
-             if any(unicodedata.category(c)[0] == "L" for c in w)]
+    two or more, counted in its `words` where it gives them."""
+    words = given if given is not None else [
+        w for w in target.split() if any(unicodedata.category(c)[0] == "L" for c in w)]
     return len(words) >= 3 or (pos == "phrase" and len(words) >= 2)
 
 
-def _tiles(text: str) -> list[str]:
+def _tiles(text: str, given: list[str] | None = None) -> list[str]:
     """The tiles of [text] to put in order, as the app's `tilesOf` makes
     them: each word in lowercase, the marks at its edges tiles of their
-    own."""
+    own. Where the card gives its `words`, as the app's `tilesOfWords`
+    makes them: each word, and each mark between them."""
+    if given is not None:
+        found: list[str] = []
+        at = 0
+        for word in given:
+            i = text.find(word, at)
+            gap = [ch for ch in text[at:i] if not ch.isspace()]
+            if i < 0 or any(unicodedata.category(ch)[0] in "LMN" for ch in gap):
+                break
+            found += gap
+            found.append(word.lower())
+            at = i + len(word)
+        else:
+            return found + [ch for ch in text[at:] if not ch.isspace()]
     tiles: list[str] = []
     for word in text.split():
         if not any(unicodedata.category(c)[0] == "L" for c in word):
@@ -1470,11 +1498,13 @@ def check_picture(r: Report, where: str, picture: object) -> None:
 
 def _check_examples(r: Report, where: str, examples: object, *,
                     form: str = "single", cid: str | None = None,
-                    lang: str = "xx", script: str = "other"
+                    lang: str = "xx", script: str = "other",
+                    words: dict[int, list[str]] | None = None
                     ) -> list[tuple[int, str, list[dict]]]:
     """A card's examples. In a core an example has its language side only,
     and each layer names it by its target. Returns (place, target, bases)
-    of each well-formed example."""
+    of each well-formed example, and puts each one's `words`, where given,
+    in [words] by its place."""
     if examples is None:
         return []
     if not isinstance(examples, list):
@@ -1527,8 +1557,13 @@ def _check_examples(r: Report, where: str, examples: object, *,
                            f"language code, got {ex['language']!r}")
         if "sounds" in ex and not isinstance(ex["sounds"], bool):
             r.error(where, f"examples[{j}].sounds must be true or false")
+        given = check_given_words(r, where, f"examples[{j}].", ex.get("words"),
+                                  ex["target"])
+        if given is not None and words is not None:
+            words[j] = given
         bases = check_bases(r, where, f"examples[{j}].", ex.get("bases"),
-                            ex["target"], cid, lang, script, core=form == "core")
+                            ex["target"], cid, lang, script, core=form == "core",
+                            given=given)
         found.append((j, ex["target"], bases))
     return found
 
@@ -3416,7 +3451,8 @@ def _check_layer_cards(r: Report, raw: dict, core: dict, core_path: Path,
             tags=c.tags, phrasebook=c.phrasebook, path=c.path, where=c.where,
             deck_kind="vocab", bases=c.bases,
             examples=[e for e in c.examples if e[1] in examples], notes=kept,
-            pair=next((n.ref for n in kept if n.kind == "pair"), None), single=False))
+            pair=next((n.ref for n in kept if n.kind == "pair"), None), single=False,
+            words=c.words, example_words=c.example_words))
 
 
 def _check_layer_entry(r: Report, where: str, cid: str, entry: object,
@@ -3867,16 +3903,77 @@ def _words(text: str) -> list[str]:
     return words
 
 
+def _bare(text: str) -> str:
+    """[text] without its spaces, punctuation and symbols, apostrophes kept,
+    in Unicode's composed form: what a `words` list must join to."""
+    return "".join(
+        ch for ch in unicodedata.normalize("NFC", text)
+        if not ch.isspace() and (unicodedata.category(ch)[0] not in "PSZ"
+                                 or ch in "’'"))
+
+
+def _split(text: str, given: list[str] | None) -> list[str]:
+    """The words of [text]: its `words` where given ([check_given_words]),
+    else [_words]'s split at spaces and punctuation."""
+    return given if given is not None else _words(text)
+
+
+def check_given_words(r: Report, where: str, prefix: str, value: object,
+                      text: str | None) -> list[str] | None:
+    """A card's or an example's `words` (DECK-FORMAT.md, Base words): the
+    words of its target, in order, for a script written without spaces.
+    Joined, with spaces and punctuation left out of both, they are the
+    target. Returns them as [_words] gives words, or None where not given
+    or wrong."""
+    if value is None:
+        return None
+    if (not isinstance(value, list) or not value
+            or not all(_is_str(w) for w in value)):
+        r.error(where, f"{prefix}words must be a non-empty list of the "
+                       f"{prefix}target's words, in order, each a string")
+        return None
+    bad = [w for w in value if any(ch.isspace() for ch in w) or not _bare(w)]
+    if bad:
+        r.error(where, f"{prefix}words: {bad[0]!r} is not a word: a word has no "
+                       f"space in it, and is not punctuation alone")
+        return None
+    if text is not None and _bare("".join(value)) != _bare(text):
+        r.error(where, f"{prefix}words join to {''.join(value)!r}, but the "
+                       f"{prefix}target is {text!r}; give its words in order, "
+                       f"every letter of it in one word (spaces and "
+                       f"punctuation left out)")
+        return None
+    return [x for w in value for x in _words(w)]
+
+
+def _given(block: dict) -> list[str] | None:
+    """A card's or an example's `words`, as [check_given_words] returns them
+    when well formed, for code that reads the raw YAML; None otherwise."""
+    value, text = block.get("words"), block.get("target")
+    if (not isinstance(value, list) or not value or not _is_str(text)
+            or not all(_is_str(w) for w in value)
+            or _bare("".join(value)) != _bare(text)):
+        return None
+    return [x for w in value for x in _words(w)]
+
+
 def _taught(raw: dict) -> set[str]:
-    """Every word a vocab or grammar deck teaches, as [_words] splits them."""
+    """Every word a vocab or grammar deck teaches, as [_words] splits them,
+    or as a card's or an example's `words` gives them."""
     texts: list[object] = []
+    found: set[str] = set()
     for card in raw.get("cards") or []:
         if isinstance(card, dict):
-            texts.append(card.get("target"))
+            if (given := _given(card)) is not None:
+                found.update(given)
+            else:
+                texts.append(card.get("target"))
             alts = card.get("alt_target")
             texts.extend(alts if isinstance(alts, list) else [])
             for ex in card.get("examples") or []:
-                if isinstance(ex, dict):
+                if isinstance(ex, dict) and (given := _given(ex)) is not None:
+                    found.update(given)
+                elif isinstance(ex, dict):
                     texts.append(ex.get("target"))
     pattern = raw.get("pattern")
     if isinstance(pattern, dict):
@@ -3885,7 +3982,7 @@ def _taught(raw: dict) -> set[str]:
                 texts.append(entry.get("lemma"))
                 forms = entry.get("forms")
                 texts.extend(forms.values() if isinstance(forms, dict) else [])
-    return {w for t in texts if isinstance(t, str) for w in _words(t)}
+    return found | {w for t in texts if isinstance(t, str) for w in _words(t)}
 
 
 def _check_by_language(r: Report, where: str, key: str, value: object) -> set[str]:
@@ -5333,11 +5430,13 @@ def counts_as_word(card: object, deck_kind: str) -> bool:
     if isinstance(card, dict):
         target, pos = card.get("target"), card.get("pos")
         phrasebook = card.get("phrasebook") is True
+        given = _given(card)
     else:
         target, pos, phrasebook = card.target, card.pos, card.phrasebook
+        given = card.words
     if deck_kind != "vocab" or phrasebook or pos == "phrase" or not isinstance(target, str):
         return False
-    return len(_words(target)) == 1 or pos in LEXICAL_POS
+    return len(_split(target, given)) == 1 or pos in LEXICAL_POS
 
 
 def _languages(reports: list[Report]) -> list[str]:
@@ -5566,42 +5665,48 @@ def check_notes_across(reports: list[Report]) -> list[str]:
 
 def check_bases_across(reports: list[Report]) -> list[str]:
     """In a B1 deck, every word of a target or an example is a word the
-    course teaches as a card, or has a `bases` entry."""
+    course teaches as a card, or has a `bases` entry. In a script written
+    without spaces, the words are the card's and each example's `words`,
+    which each gives."""
     ctx = _context(reports)
     given = {rep.path.resolve() for rep in reports}
     problems: list[str] = []
     seen: set[tuple] = set()
     for code in _languages(reports):
         lang = ctx.lang(code)
-        for native, path in lang.planned():
+        for native, _ in lang.planned():
             course = f"{code}-{native}"
             taught: set[str] = set()
             for c, drep in lang.taught(native).values():
                 if drep.deck_kind != "vocab" or c.phrasebook:
                     continue
-                for t in [c.target, *c.alt_targets]:
-                    words = _words(t)
+                for t, w in [(c.target, c.words), *((a, None) for a in c.alt_targets)]:
+                    words = _split(t, w)
                     if len(words) == 1:
                         taught.add(_key(words[0]))
-            for deck_id, ui, drep in lang.b1_decks(native):
+            for deck_id, _, drep in lang.b1_decks(native):
                 if drep is None or drep.deck_kind != "vocab":
                     continue
-                if drep.script in NO_SPACES:
-                    if path.path.resolve() in given and (deck_id, "spaces") not in seen:
-                        seen.add((deck_id, "spaces"))
-                        problems.append(f"{path.path}: units[{ui}]: {deck_id} is in the "
-                                        f"{drep.script} script, written without spaces; "
-                                        f"bases cannot be checked until the format gives "
-                                        f"its words (DECK-FORMAT.md, Base words)")
-                    continue
+                unspaced = drep.script in NO_SPACES
                 for c in list(drep.merged) + list(drep.cards):
                     if c.path.resolve() not in given:
                         continue
-                    texts = [("", c.target, c.bases)] + [
-                        (f"examples[{j}]: ", t, b) for j, t, b in c.examples]
-                    for prefix, text, bases in texts:
+                    texts = [("", c.target, c.bases, c.words)] + [
+                        (f"examples[{j}]: ", t, b, c.example_words.get(j))
+                        for j, t, b in c.examples]
+                    for prefix, text, bases, words in texts:
+                        if unspaced and words is None:
+                            key = (c.path, c.where, prefix, "words")
+                            if key not in seen:
+                                seen.add(key)
+                                problems.append(
+                                    f"{c.path}: {c.where}: {prefix}no `words`; {deck_id} "
+                                    f"is a B1 deck in the {drep.script} script, written "
+                                    f"without spaces, so each target and example gives "
+                                    f"its words in order (DECK-FORMAT.md, Base words)")
+                            continue
                         have = {_key(b["word"]) for b in bases}
-                        for w in dict.fromkeys(_words(text)):
+                        for w in dict.fromkeys(_split(text, words)):
                             k = _key(w)
                             if k in taught or k in have:
                                 continue
