@@ -78,11 +78,15 @@ class BrailleCourse(unittest.TestCase):
             self._a_single_cell_note_names_its_dots,
             self._every_letter_cell_in_prose_has_its_letter,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 DECK = """\
@@ -124,11 +128,15 @@ class BrailleValidator(unittest.TestCase):
             self._a_card_needs_no_reading_and_the_language_no_tts,
             self._braille_is_a_notation,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 if __name__ == "__main__":

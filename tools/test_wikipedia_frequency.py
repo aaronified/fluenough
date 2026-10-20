@@ -74,11 +74,15 @@ class Writing(Case):
             self._ranks_written_with_their_source,
             self._without_write_nothing_changes,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 if __name__ == "__main__":

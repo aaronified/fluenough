@@ -306,18 +306,16 @@ void main() {
       page(const DecksPage(planOf: PathFixtures.planOf), state: teluguLearner),
     );
     screen(
-      'a unit, a word\'s card open',
+      'a unit',
       page(
         const UnitPage(
-          deckId: 'te-en-sound-differences',
+          deckId: PathFixtures.familyDeck,
           plan: PathFixtures.telugu,
-          openWord: PathFixtures.soundAlikeCard,
         ),
         state: teluguLearner,
       ),
     );
     screen('a deck', page(const DeckDetailPage(deckId: 'hi-en-market')));
-    screen('Inspect', gallery('inspect'));
     screen('Languages on the phone', gallery('learning-deck-updates'));
     screen(
       'the summary',
@@ -397,11 +395,10 @@ void main() {
     screen('speaking', gallery('drill-speaking'));
     screen('grammar, answered', gallery('drill-grammar-right'));
     screen('minimal pairs, a wrong pick', gallery('drill-pair-wrong'));
-    screen('a reading passage, its glossary open', (tester, mode) async {
-      await gallery('drill-reading')(tester, mode);
-      await tapShown(tester, find.text(l10nOf(tester).readingWords));
-      await tester.pumpAndSettle();
-    });
+    screen(
+      'a reading passage, its glossary open',
+      gallery('drill-reading-glossary'),
+    );
     screen(
       'a split set card',
       page(

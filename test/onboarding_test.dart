@@ -68,8 +68,6 @@ void main() {
         expect(bar.selectedIndex, ShellTab.today.index);
 
         {
-          usePhone(tester);
-          final state = await pumpApp(tester);
           final l10n = l10nOf(tester);
 
           for (final (label, page, tab) in <(String, Type, ShellTab)>[
@@ -109,7 +107,7 @@ void main() {
       final state = AppState.test(settings: settings);
       addTearDown(state.dispose);
       addTearDown(settings.dispose);
-      await tester.pumpWidget(FluenoughApp(state: state));
+      await tester.pumpWidget(FluenoughApp(key: UniqueKey(), state: state));
       await tester.pumpAndSettle();
       return settings;
     }

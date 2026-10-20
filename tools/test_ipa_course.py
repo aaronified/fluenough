@@ -52,11 +52,15 @@ class IpaCourse(unittest.TestCase):
             self._ids_are_kept,
             self._every_symbol_has_examples_of_both_kinds,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 if __name__ == "__main__":

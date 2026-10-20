@@ -93,22 +93,30 @@ class UiStringGate(unittest.TestCase):
             self._catches_a_literal_on_the_same_line,
             self._catches_a_literal_split_across_lines,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
     def test_tokens_and_allowed_literals_pass(self) -> None:
         cases = (
             self._tokens_only_passes,
             self._an_explicitly_allowed_literal_passes,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 if __name__ == "__main__":

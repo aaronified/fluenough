@@ -38,22 +38,30 @@ class ReadingTest(unittest.TestCase):
             self._length_is_marked,
             self._retroflex_is_marked,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
     def test_the_bengali_inherent_vowel_and_a_hint_that_does_not_fit(self) -> None:
         cases = (
             self._bengali_inherent_vowel,
             self._a_hint_that_does_not_fit_says_so,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 if __name__ == "__main__":

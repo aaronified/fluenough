@@ -162,11 +162,15 @@ class SplitDeckTest(unittest.TestCase):
             self._a_vocab_deck_keeps_every_id_and_text,
             self._a_reading_deck_is_not_split,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class SplitFilesTest(unittest.TestCase):
@@ -213,11 +217,15 @@ class SplitFilesTest(unittest.TestCase):
             self._a_guide_splits_into_files_that_validate,
             self._a_deck_splits_and_the_old_file_goes,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 if __name__ == "__main__":

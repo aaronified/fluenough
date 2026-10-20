@@ -190,11 +190,15 @@ class OwnRoot(Case):
             self._a_collocation_may_give_a_note,
             self._only_on_a_core_card,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class Confusables(Case):
@@ -265,11 +269,15 @@ class Confusables(Case):
             self._one_card_word_alone_is_not_put_in_order,
             self._never_a_tile_the_answer_needs,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class FactsNameCards(Case):
@@ -346,11 +354,15 @@ class FactsNameCards(Case):
             self._one_of_five,
             self._a_layer_cannot_change_the_word,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class Forms(Case):
@@ -396,11 +408,15 @@ class Forms(Case):
             self._a_form_of_kind_other_needs_its_label,
             self._a_form_a_rules_table_has_is_warned_of,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class Senses(Case):
@@ -461,11 +477,15 @@ class Senses(Case):
             self._the_layer,
             self._a_sense_with_no_native,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class WiktionarySourceShape(Case):
@@ -527,11 +547,15 @@ class WiktionarySourceShape(Case):
             self._every_kind_of_item_is_checked,
             self._a_source_not_naming_wiktionary_is_unaffected,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 # From test_validate_examples.py.
@@ -622,11 +646,15 @@ class ExampleSource(B1Case):
             self._only_word_cards_need_them,
             self._a_single_file_word_card_too,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 # From test_validate_gender.py.
@@ -752,11 +780,15 @@ class GenderClasses(B1Case):
             self._a_single_file_deck_is_checked,
             self._a_layer_gives_no_gender,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 # From test_validate_ipa.py.
@@ -840,11 +872,15 @@ class IpaLanguageBlock(B1Case):
             self._language_is_a_code,
             self._a_single_file_example_may_give_them,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 # From test_validate_iso.py.
@@ -1011,11 +1047,15 @@ class IsoAndIpa(unittest.TestCase):
             self._an_ipa_is_broad_ipa_without_slashes,
             self._a_grammar_entry_gives_each_form_its_ipa,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 # From test_validate_media.py.
@@ -1200,11 +1240,15 @@ class Audio(CaseMedia):
             self._not_in_a_layer_nor_on_a_ref,
             self._image_a_file_no_card_names,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 IMAGE_CREDIT = {"source": "https://openmoji.org/library/emoji-1F3E0/",
@@ -1244,11 +1288,15 @@ class Pictures(Validated):
             self._it_must_be_an_emoji,
             self._its_file_is_named_as_the_app_names_it,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 # From test_validate_reading.py.
@@ -1537,11 +1585,15 @@ cards:
             self._passages_are_only_for_a_reading_deck_and_cards_not,
             self._a_card_cannot_be_drilled_by_reading,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 # From test_validate_romanisation.py.
@@ -1669,11 +1721,15 @@ cards:
             self._with_the_file_every_reading_is_in_the_scheme,
             self._with_the_file_grammar_readings_are_in_the_scheme_too,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 # From test_validate_script.py.
@@ -1762,11 +1818,15 @@ class ScriptGuideTest(unittest.TestCase):
             self._unknown_fields_fail,
             self._the_core_and_its_english_layer_are_valid,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 SECOND = GOOD.replace("id: bn-script", "id: bn-sylheti-script")
@@ -1849,11 +1909,15 @@ class OtherScriptGuideTest(unittest.TestCase):
             self._a_deck_never_has_an_id_ending_in_script,
             self._the_layer_of_another_script_is_named_for_it,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 # From test_validate_target_scripts.py.
@@ -2011,11 +2075,15 @@ class TargetScripts(CaseTargetScripts):
             self._two_or_more_names_none_twice,
             self._an_underscore_is_part_of_a_script_id,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 # From test_validate_cjk.py.
@@ -2050,11 +2118,15 @@ class CjkReadings(unittest.TestCase):
             self._a_word_without_its_reading_is_one_run,
             self._a_cores_own_script_needs_no_reading,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 if __name__ == "__main__":

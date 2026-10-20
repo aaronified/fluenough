@@ -245,11 +245,15 @@ class TheFixture(B1Case):
             self._another_part_is_an_error_and_the_file_a_single_file_deck,
             self._a_single_file_deck_refuses_what_belongs_to_cores_and_layers,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class CoreHeader(B1Case):
@@ -480,11 +484,15 @@ class CoreHeader(B1Case):
             self._a_core_ref_must_name_a_written_card,
             self._next_id_sees_a_cores_card_and_a_layer_only_card,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class GrammarCore(B1Case):
@@ -549,11 +557,15 @@ class GrammarCore(B1Case):
             self._the_layer_glosses_every_entry_and_names_only_the_cores,
             self._slots_labels_are_optional,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class LayerCards(B1Case):
@@ -773,11 +785,15 @@ class LayerCards(B1Case):
             self._coverage_is_an_info_line,
             self._placeholders_in_a_layers_note_count_the_cores_words,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class LayersAcross(B1Case):
@@ -971,11 +987,15 @@ class LayersAcross(B1Case):
             self._a_pair_in_a_b1_deck_has_its_pair_note,
             self._culture_notes_are_tagged_unreviewed_or_reviewed,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 def phrase(k: int) -> tuple[str, dict, dict]:
@@ -1166,11 +1186,15 @@ class Phrasebook(B1Case):
             self._a_rule_named_is_defined_by_a_rules_deck_of_the_language,
             self._wiktionary_is_true_or_left_out,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class RulesCore(B1Case):
@@ -1320,11 +1344,15 @@ class RulesCore(B1Case):
             self._keys_in_the_table_and_rules_are_strings,
             self._a_rules_core_has_no_cards_pattern_or_theme,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class RulesLayer(B1Case):
@@ -1391,11 +1419,15 @@ class RulesLayer(B1Case):
             self._an_explanations_placeholders_count_the_rules_words,
             self._a_rule_the_layer_leaves_out_is_not_asked,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class SingleFileNotes(B1Case):
@@ -1502,11 +1534,15 @@ class SingleFileNotes(B1Case):
             self._a_core_note_has_an_id_and_no_text,
             self._a_core_pair_note_names_a_card_of_the_language,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class Bases(B1Case):
@@ -1646,11 +1682,15 @@ class Bases(B1Case):
             self._a_deck_on_no_plan_is_not_checked,
             self._a_script_without_spaces_cannot_be_checked_yet,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class BaseStems(B1Case):
@@ -1748,11 +1788,15 @@ class BaseStems(B1Case):
             self._a_lemma_of_a_pronoun_grammar_deck_is_not_a_new_stem,
             self._a_layers_note_answers_a_core_card,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class PathUnits(B1Case):
@@ -2222,11 +2266,15 @@ class PathUnits(B1Case):
             self._a_layer_only_cards_note_is_checked_where_the_layer_writes_it,
             self._a_single_file_decks_note_names_a_region_too,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class ScriptInProse(B1Case):
@@ -2310,11 +2358,15 @@ class ScriptInProse(B1Case):
             self._a_paths_passages_and_region_names_are_prose,
             self._placeholders_are_checked_before_they_are_filled,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class Compatibility(unittest.TestCase):
@@ -2361,11 +2413,15 @@ class Compatibility(unittest.TestCase):
             self._todays_decks_get_no_info_and_no_b1_message,
             self._counts_as_word,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 # From test_validate_paths.py.
@@ -2536,11 +2592,15 @@ class PathFile(Paths):
             self._the_alphabet_decks_are_on_the_path,
             self._unknown_fields_are_rejected,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class PathAcrossDecks(Paths):
@@ -2619,11 +2679,15 @@ class PathAcrossDecks(Paths):
             self._a_course_path_left_beside_it_is_a_second_path,
             self._a_language_without_a_path_is_not_checked,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 # From test_validate_sets.py.
@@ -2760,11 +2824,15 @@ class RefSets(SetCase):
             self._its_explanation_keeps_the_transliteration,
             self._the_rules_core_is_unchanged_by_a_set,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class RuleSets(SetCase):
@@ -2835,11 +2903,15 @@ class RuleSets(SetCase):
             self._one_value_beside_the_rule,
             self._the_rule_is_named_by_id,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class ShownRows(SetCase):
@@ -2899,11 +2971,15 @@ class ShownRows(SetCase):
             self._each_row_has_a_form_in_the_slot,
             self._only_a_slot_set_names_rows,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 if __name__ == "__main__":

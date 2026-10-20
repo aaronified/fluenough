@@ -109,11 +109,15 @@ class IssueFrom(unittest.TestCase):
             self._support_stays_private_whichever_of_subject_or_body_says_so,
             self._the_sender_is_never_in_the_issue,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 CODE = "FL-7K3M-Q9TD-6"
@@ -169,11 +173,15 @@ class ReviewIssueFrom(unittest.TestCase):
         cases = (
             self._a_review_mail_names_only_the_code_and_languages,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 def record(code: str, address: str) -> bytes:
@@ -327,11 +335,15 @@ class Run(unittest.TestCase):
             self._reports_are_filed_once_and_other_mail_is_untouched,
             self._support_mail_is_left_unfiled_and_unlabelled,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 def review_from(sender: str, code: str = CODE) -> email.message.EmailMessage:

@@ -172,33 +172,45 @@ class CardIds(unittest.TestCase):
             self._a_ref_from_another_native_language_gives_its_own,
             self._a_ref_checks_its_examples_as_a_card_does,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
     def test_a_pair_is_another_card_of_the_language(self) -> None:
         cases = (
             self._a_pair_names_a_card_written_in_the_language,
             self._a_pair_is_another_card_of_the_language,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
     def test_a_file_alone_is_held_to_the_repository_and_next_id_follows_the_highest(self) -> None:
         cases = (
             self._a_file_checked_alone_is_held_to_the_repository,
             self._next_id_follows_the_highest_in_the_language,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 GRAMMAR = """\
@@ -244,11 +256,15 @@ class CellAlternatives(unittest.TestCase):
             self._a_cell_may_list_its_forms,
             self._a_listed_cell_has_forms_and_no_repeats,
         )
-        for i, case in enumerate(cases):
+        for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
-                if i:
-                    self.setUp()
-                case()
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 if __name__ == "__main__":

@@ -665,9 +665,9 @@ void main() {
       expect(n.learned, 1);
 
       {
-        late LanguageLookup languageOf;
-
-        languageOf = languageLookupOf(app);
+        // The group's log of known Spanish reviews, beside which Hindi goes.
+        final progress = knownLog(app.now());
+        final languageOf = languageLookupOf(app);
 
         /// A Hindi review on each of [days], counted from today, beside the
         /// Spanish log.

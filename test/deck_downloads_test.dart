@@ -86,7 +86,7 @@ SettingsNotifier learning(List<String> languages) => SettingsNotifier(
 Future<AppState> pump(WidgetTester tester, AppState state) async {
   usePhone(tester);
   addTearDown(state.dispose);
-  await tester.pumpWidget(FluenoughApp(state: state));
+  await tester.pumpWidget(FluenoughApp(key: UniqueKey(), state: state));
   await tester.pumpAndSettle();
   return state;
 }
@@ -355,7 +355,7 @@ Future<AppState> _pump(
 }) async {
   usePhone(tester, textScale: textScale);
   addTearDown(state.dispose);
-  await tester.pumpWidget(FluenoughApp(state: state));
+  await tester.pumpWidget(FluenoughApp(key: UniqueKey(), state: state));
   await tester.pumpAndSettle();
   return state;
 }
@@ -433,8 +433,12 @@ void main() {
         await openFamilies(tester);
         expect(languageCard('es'), findsWidgets);
 
-        remote.failAll = FetchFailure.rateLimited;
-        await pump(tester, downloadingApp(remote: remote, phone: phone));
+        final limited = FakeDeckRemote(repoFiles(const <String>['es', 'hi']))
+          ..failAll = FetchFailure.rateLimited;
+        await pump(
+          tester,
+          downloadingApp(remote: limited, phone: MemoryDownloadedDecks()),
+        );
         expect(find.text(l10nOf(tester).downloadsRateLimited), findsOneWidget);
       });
     });
@@ -651,23 +655,28 @@ void main() {
         }
       });
 
-      test('with no network, or GitHub limiting it, it says so and keeps '
-          'nothing', () async {
-        remote.failAll = FetchFailure.offline;
-        final d = downloads();
-        await d.open();
-        expect(
-          await d.downloadFirst('hi', english),
-          DeckDownloadFailure.offline,
-        );
-        expect(d.indexStatus, IndexStatus.failed);
-        expect(d.indexFailure, DeckDownloadFailure.offline);
-        expect(phone.files, isEmpty);
-        remote.failAll = null;
-        expect(await d.downloadFirst('hi', english), isNull);
-        expect(d.isReady('hi', english), isTrue);
+      test(
+        'with no network it says so, keeps nothing, and tries again',
+        () async {
+          remote.failAll = FetchFailure.offline;
+          final d = downloads();
+          await d.open();
+          expect(
+            await d.downloadFirst('hi', english),
+            DeckDownloadFailure.offline,
+          );
+          expect(d.indexStatus, IndexStatus.failed);
+          expect(d.indexFailure, DeckDownloadFailure.offline);
+          expect(phone.files, isEmpty);
+          remote.failAll = null;
+          expect(await d.downloadFirst('hi', english), isNull);
+          expect(d.isReady('hi', english), isTrue);
+        },
+      );
 
-        {
+      test(
+        'says when GitHub limits it, keeping nothing of the batch',
+        () async {
           remote.failAfter = 3;
           remote.failAfterWith = FetchFailure.rateLimited;
           final d = downloads();
@@ -679,8 +688,8 @@ void main() {
           expect(d.failureOf('hi'), DeckDownloadFailure.rateLimited);
           expect(d.stateOf('hi', english), LanguageDownloadState.failed);
           expect(phone.files, isEmpty);
-        }
-      });
+        },
+      );
 
       test('a download cut short keeps the decks that came whole', () async {
         final d = downloads();
