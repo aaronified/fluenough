@@ -77,6 +77,7 @@ alphabet:
   - "bn-script-reading"
   - "bn-script-vowel-signs"
   - "bn-script-conjuncts"
+  - "bn-script-digits"
   - "bn-reading-sahaj-path-1"
   - "bn-spelling"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
@@ -99,7 +100,7 @@ units:
   # 3. The script, after the first six units (#554: skipped by a learner
   # who already reads it).
   - ["bn-script-vowels", "bn-script-consonants", "bn-script-reading"]
-  - ["bn-script-vowel-signs", "bn-script-conjuncts"]
+  - ["bn-script-vowel-signs", "bn-script-conjuncts", "bn-script-digits"]
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
   - decks: ["bn-about-me", "*"]
