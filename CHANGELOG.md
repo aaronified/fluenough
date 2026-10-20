@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- English Braille can be learned as a course of its own, like the IPA: chosen only when you add it, with no level to find and no voice, and Complete once its path is written. Its answers are typed on the app's own braille keyboard, six dots in the Perkins layout with Enter cell, Space and Backspace, in place of the phone's keyboard (ADR-0043).
+
+### Fixed
+
+- A notation's course, the IPA's or braille's, shows Complete in the language list before its decks are downloaded too, not Alpha.
+
 ## [0.5.1] - 2026-10-19
 
 ### Added
