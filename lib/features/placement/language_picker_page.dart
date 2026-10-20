@@ -8,6 +8,8 @@ import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/deck_downloads.dart';
 import '../../app/language_offer.dart';
+import '../../app/placement.dart' show ScriptStanding;
+import '../../app/placement_credit.dart';
 import '../../app/script_test.dart';
 import '../../core/data/spoken_languages.dart';
 import '../../core/decks/deck_index.dart' show decksBeforeReady;
@@ -616,6 +618,13 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
                 if (!replaced.contains(id)) id,
               ...?found.placed[code],
             };
+            state.creditPlacement(
+              code,
+              placed: found.placed[code] ?? const <String>{},
+              standings:
+                  found.scripts[code] ?? const <String, ScriptStanding>{},
+              native: native,
+            );
             if (skipped && settings.learnsAlphabet(code)) {
               state.skipScriptLessons(code, true, native: native);
             }
@@ -800,6 +809,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
             state,
             chosen,
             found.placed,
+            standings: found.scripts,
             alphabet: <String, bool>{...alphabet, ...found.alphabet},
             scripts: scripts,
             natives: <String, String>{...natives, ...found.natives},
@@ -816,6 +826,8 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     AppState state,
     List<String> chosen,
     Map<String, Set<String>> placed, {
+    Map<String, Map<String, ScriptStanding>> standings =
+        const <String, Map<String, ScriptStanding>>{},
     Map<String, bool> alphabet = const <String, bool>{},
     Map<String, Set<String>> scripts = const <String, Set<String>>{},
     Map<String, String> natives = const <String, String>{},
@@ -844,6 +856,16 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         if (!replaced.contains(id)) id,
       for (final ids in placed.values) ...ids,
     };
+    // What placement found is credited in the log, with first reviews spread
+    // over the weeks that follow (#677).
+    for (final MapEntry(:key, :value) in placed.entries) {
+      state.creditPlacement(
+        key,
+        placed: value,
+        standings: standings[key] ?? const <String, ScriptStanding>{},
+        native: state.courseNative(key),
+      );
+    }
     // A passed script test places the script lessons, whatever placement
     // found (#554).
     for (final code in chosen) {
