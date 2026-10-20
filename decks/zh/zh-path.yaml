@@ -13,8 +13,10 @@
 #
 # The course: Mandarin as taught in mainland China (Putonghua), written in
 # simplified characters, with pinyin with tone marks as the reading (based
-# on the standard Hanyu Pinyin romanisation). Cantonese (#377) and the
-# traditional characters are courses of their own. The code is "zh", the
+# on the standard Hanyu Pinyin romanisation). Cantonese (#377) is a course
+# of its own. Simplified and traditional characters are two scripts of this
+# one course (owner, 2026-10-20), as Devanagari and Perso-Arabic are of
+# Hindustani: each card gives both. The code is "zh", the
 # code the IPA course already gives its Mandarin examples (ISO 639-1 zh;
 # its ISO 639-3 code is cmn).
 #
@@ -120,8 +122,9 @@ regions:
 units:
   # 1. The phrasebook, taught whole from the first lesson, with the first
   # words beside it: zh-phrasebook (15-25 survival phrases, which count no
-  # words) and zh-first-words when written.
-  - planned: { id: "zh-phrasebook", theme: "first-words", words: 12 }
+  # words) and zh-first-words.
+  - decks: ["zh-phrasebook", "zh-first-words", "*"]
+    words: 12
     listening_passages:
       - { id: "first-greetings", text: { "en": "Greeting a neighbour, a shopkeeper and a teacher: ni hao, nin hao, zaijian" } }
     reading_passages:
