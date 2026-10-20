@@ -1,0 +1,452 @@
+schema: 1
+id: "te-dishes"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "dishes"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "te-6441"
+    target: "కోడి కూర"
+    reading: "kōḍi kūra"
+    ipa: "koːɖi kuːra"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "నాకు కోడి కూర కావాలి.", "reading": "nāku kōḍi kūra kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "కోడి", "ref": "te-0263" }, { "word": "కూర", "ref": "te-0676" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+      - { "target": "కోడి కూర చాలా బాగుంది.", "reading": "kōḍi kūra cālā bāgundi.", "bases": [ { "word": "కోడి", "ref": "te-0263" }, { "word": "కూర", "ref": "te-0676" }, { "word": "చాలా", "ref": "te-1026" }, { "word": "బాగుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+    bases:
+      - { "word": "కోడి", "ref": "te-0263" }
+      - { "word": "కూర", "ref": "te-0676" }
+  - id: "te-6442"
+    target: "కోడి పులుసు"
+    reading: "kōḍi pulusu"
+    ipa: "koːɖi pulusu"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "కోడి పులుసు కారంగా ఉంది.", "reading": "kōḍi pulusu kāraṁgā undi.", "bases": [ { "word": "కోడి", "ref": "te-0263" }, { "word": "పులుసు", "ref": "te-6444" }, { "word": "కారంగా", "ref": "te-0347" }, { "word": "ఉంది", "ref": "te-0633" } ] }
+      - { "target": "నాకు కోడి పులుసు కావాలి.", "reading": "nāku kōḍi pulusu kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "కోడి", "ref": "te-0263" }, { "word": "పులుసు", "ref": "te-6444" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases:
+      - { "word": "కోడి", "ref": "te-0263" }
+      - { "word": "పులుసు", "ref": "te-6444" }
+  - id: "te-6443"
+    target: "చేపల పులుసు"
+    reading: "cēpala pulusu"
+    ipa: "tʃeːpala pulusu"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "చేపల పులుసు చాలా బాగుంది.", "reading": "cēpala pulusu cālā bāgundi.", "bases": [ { "word": "చేపల", "ref": "te-0261" }, { "word": "పులుసు", "ref": "te-6444" }, { "word": "చాలా", "ref": "te-1026" }, { "word": "బాగుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+      - { "target": "నాకు చేపల పులుసు కావాలి.", "reading": "nāku cēpala pulusu kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "చేపల", "ref": "te-0261" }, { "word": "పులుసు", "ref": "te-6444" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases:
+      - { "word": "చేపల", "ref": "te-0261" }
+      - { "word": "పులుసు", "ref": "te-6444" }
+  - id: "te-6444"
+    target: "పులుసు"
+    reading: "pulusu"
+    ipa: "pulusu"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "ఈ పులుసు పులుపుగా ఉంది.", "reading": "ī pulusu pulupugā undi.", "bases": [ { "word": "ఈ", "ref": "te-0607" }, { "word": "పులుపుగా", "ref": "te-0713" }, { "word": "ఉంది", "ref": "te-0633" } ] }
+      - { "target": "పులుసు అన్నంతో బాగుంటుంది.", "reading": "pulusu annaṁtō bāguṇṭundi.", "bases": [ { "word": "అన్నంతో", "ref": "te-0344" }, { "word": "బాగుంటుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+    bases: "self"
+  - id: "te-6446"
+    target: "పప్పుచారు"
+    reading: "pappucāru"
+    ipa: "papputʃaːru"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "పప్పుచారు నెయ్యితో బాగుంటుంది.", "reading": "pappucāru neyyitō bāguṇṭundi.", "bases": [ { "word": "నెయ్యితో", "ref": "te-0693" }, { "word": "బాగుంటుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+      - { "target": "నాకు పప్పుచారు కావాలి.", "reading": "nāku pappucāru kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases: "self"
+  - id: "te-6447"
+    target: "ఉలవచారు"
+    reading: "ulavacāru"
+    ipa: "ulaʋatʃaːru"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "ఉలవచారు అన్నంలో కలుపుకోండి.", "reading": "ulavacāru annaṁlō kalupukōṇḍi.", "bases": [ { "word": "అన్నంలో", "ref": "te-0344" }, { "word": "కలుపుకోండి", "base": "కలుపుకోవడం", "reading": "kalupukōvaḍaṁ" } ] }
+      - { "target": "ఉలవచారు చాలా బాగుంది.", "reading": "ulavacāru cālā bāgundi.", "bases": [ { "word": "చాలా", "ref": "te-1026" }, { "word": "బాగుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+    bases: "self"
+  - id: "te-6448"
+    target: "బగారా అన్నం"
+    reading: "bagārā annaṁ"
+    ipa: "baɡaːraː annam"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "బగారా అన్నం కుర్మాతో బాగుంటుంది.", "reading": "bagārā annaṁ kurmātō bāguṇṭundi.", "bases": [ { "word": "బగారా", "base": "బగారా", "reading": "bagārā" }, { "word": "అన్నం", "ref": "te-0344" }, { "word": "కుర్మాతో", "ref": "te-6460" }, { "word": "బాగుంటుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+      - { "target": "నాకు బగారా అన్నం కావాలి.", "reading": "nāku bagārā annaṁ kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "బగారా", "base": "బగారా", "reading": "bagārā" }, { "word": "అన్నం", "ref": "te-0344" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases:
+      - { "word": "బగారా", "base": "బగారా", "reading": "bagārā" }
+      - { "word": "అన్నం", "ref": "te-0344" }
+  - id: "te-6449"
+    target: "మటన్ కూర"
+    reading: "maṭan kūra"
+    ipa: "maʈan kuːra"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "మటన్ కూర ఘాటుగా ఉంది.", "reading": "maṭan kūra ghāṭugā undi.", "bases": [ { "word": "మటన్", "ref": "te-0262" }, { "word": "కూర", "ref": "te-0676" }, { "word": "ఘాటుగా", "base": "ఘాటు", "reading": "ghāṭu" }, { "word": "ఉంది", "ref": "te-0633" } ] }
+      - { "target": "నాకు మటన్ కూర కావాలి.", "reading": "nāku maṭan kūra kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "మటన్", "ref": "te-0262" }, { "word": "కూర", "ref": "te-0676" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases:
+      - { "word": "మటన్", "ref": "te-0262" }
+      - { "word": "కూర", "ref": "te-0676" }
+  - id: "te-6450"
+    target: "గోంగూర పచ్చడి"
+    reading: "gōṅgūra paccaḍi"
+    ipa: "ɡoːŋɡuːra patʃtʃaɖi"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "గోంగూర పచ్చడి చాలా కారంగా ఉంది.", "reading": "gōṅgūra paccaḍi cālā kāraṁgā undi.", "bases": [ { "word": "గోంగూర", "ref": "te-6496" }, { "word": "పచ్చడి", "ref": "te-0680" }, { "word": "చాలా", "ref": "te-1026" }, { "word": "కారంగా", "ref": "te-0347" }, { "word": "ఉంది", "ref": "te-0633" } ] }
+      - { "target": "గోంగూర పచ్చడి నెయ్యితో బాగుంటుంది.", "reading": "gōṅgūra paccaḍi neyyitō bāguṇṭundi.", "bases": [ { "word": "గోంగూర", "ref": "te-6496" }, { "word": "పచ్చడి", "ref": "te-0680" }, { "word": "నెయ్యితో", "ref": "te-0693" }, { "word": "బాగుంటుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+    bases:
+      - { "word": "గోంగూర", "ref": "te-6496" }
+      - { "word": "పచ్చడి", "ref": "te-0680" }
+  - id: "te-6451"
+    target: "గోంగూర మాంసం"
+    reading: "gōṅgūra māṁsaṁ"
+    ipa: "ɡoːŋɡuːra maːmsam"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "గోంగూర మాంసం అన్నంతో బాగుంటుంది.", "reading": "gōṅgūra māṁsaṁ annaṁtō bāguṇṭundi.", "bases": [ { "word": "గోంగూర", "ref": "te-6496" }, { "word": "మాంసం", "ref": "te-6488" }, { "word": "అన్నంతో", "ref": "te-0344" }, { "word": "బాగుంటుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+      - { "target": "నాకు గోంగూర మాంసం కావాలి.", "reading": "nāku gōṅgūra māṁsaṁ kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "గోంగూర", "ref": "te-6496" }, { "word": "మాంసం", "ref": "te-6488" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases:
+      - { "word": "గోంగూర", "ref": "te-6496" }
+      - { "word": "మాంసం", "ref": "te-6488" }
+  - id: "te-6452"
+    target: "ఆవకాయ"
+    reading: "āvakāya"
+    ipa: "aːʋakaːja"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "ఆవకాయ అన్నంతో చాలా బాగుంది.", "reading": "āvakāya annaṁtō cālā bāgundi.", "bases": [ { "word": "అన్నంతో", "ref": "te-0344" }, { "word": "చాలా", "ref": "te-1026" }, { "word": "బాగుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+      - { "target": "ఇంకొంచెం ఆవకాయ ఇవ్వండి.", "reading": "iṅkoñceṁ āvakāya ivvaṇḍi.", "bases": [ { "word": "ఇంకొంచెం", "ref": "te-1024" }, { "word": "ఇవ్వండి", "ref": "te-0247" } ] }
+    bases: "self"
+  - id: "te-6453"
+    target: "ముద్దపప్పు"
+    reading: "muddapappu"
+    ipa: "mud̪d̪apappu"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "ముద్దపప్పు అన్నంతో బాగుంటుంది.", "reading": "muddapappu annaṁtō bāguṇṭundi.", "bases": [ { "word": "అన్నంతో", "ref": "te-0344" }, { "word": "బాగుంటుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+      - { "target": "నాకు ముద్దపప్పు కావాలి.", "reading": "nāku muddapappu kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases: "self"
+  - id: "te-6454"
+    target: "పెసరట్టు"
+    reading: "pesaraṭṭu"
+    ipa: "pesaraʈʈu"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "పెసరట్టు పొద్దున్నే బాగుంటుంది.", "reading": "pesaraṭṭu poddunnē bāguṇṭundi.", "bases": [ { "word": "పొద్దున్నే", "ref": "te-0310" }, { "word": "బాగుంటుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+      - { "target": "నాకు పెసరట్టు కావాలి.", "reading": "nāku pesaraṭṭu kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases: "self"
+  - id: "te-6455"
+    target: "ఉప్మా పెసరట్టు"
+    reading: "upmā pesaraṭṭu"
+    ipa: "upmaː pesaraʈʈu"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "ఉప్మా పెసరట్టు చాలా బాగుంది.", "reading": "upmā pesaraṭṭu cālā bāgundi.", "bases": [ { "word": "ఉప్మా", "ref": "te-0684" }, { "word": "పెసరట్టు", "ref": "te-6454" }, { "word": "చాలా", "ref": "te-1026" }, { "word": "బాగుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+      - { "target": "ఉప్మా పెసరట్టు పొద్దున తింటారు.", "reading": "upmā pesaraṭṭu podduna tiṇṭāru.", "bases": [ { "word": "ఉప్మా", "ref": "te-0684" }, { "word": "పెసరట్టు", "ref": "te-6454" }, { "word": "పొద్దున", "ref": "te-0310" }, { "word": "తింటారు", "ref": "te-0624" } ] }
+    bases:
+      - { "word": "ఉప్మా", "ref": "te-0684" }
+      - { "word": "పెసరట్టు", "ref": "te-6454" }
+  - id: "te-6456"
+    target: "మిర్చి బజ్జీ"
+    reading: "mirci bajjī"
+    ipa: "mirtʃi badʒdʒiː"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "మిర్చి బజ్జీ వేడిగా ఉంది.", "reading": "mirci bajjī vēḍigā undi.", "bases": [ { "word": "మిర్చి", "base": "మిర్చి", "reading": "mirci" }, { "word": "బజ్జీ", "base": "బజ్జీ", "reading": "bajjī" }, { "word": "వేడిగా", "ref": "te-0505" }, { "word": "ఉంది", "ref": "te-0633" } ] }
+      - { "target": "నాకు మిర్చి బజ్జీ కావాలి.", "reading": "nāku mirci bajjī kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "మిర్చి", "base": "మిర్చి", "reading": "mirci" }, { "word": "బజ్జీ", "base": "బజ్జీ", "reading": "bajjī" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases:
+      - { "word": "మిర్చి", "base": "మిర్చి", "reading": "mirci" }
+      - { "word": "బజ్జీ", "base": "బజ్జీ", "reading": "bajjī" }
+  - id: "te-6457"
+    target: "పునుగులు"
+    reading: "punugulu"
+    ipa: "punuɡulu"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "పునుగులు వేడిగా ఉన్నాయి.", "reading": "punugulu vēḍigā unnāyi.", "bases": [ { "word": "వేడిగా", "ref": "te-0505" }, { "word": "ఉన్నాయి", "ref": "te-0633" } ] }
+      - { "target": "నాకు పునుగులు కావాలి.", "reading": "nāku punugulu kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases: "self"
+  - id: "te-6458"
+    target: "హలీం"
+    reading: "halīṁ"
+    ipa: "haliːm"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "హలీం వేడిగా ఉంది.", "reading": "halīṁ vēḍigā undi.", "bases": [ { "word": "వేడిగా", "ref": "te-0505" }, { "word": "ఉంది", "ref": "te-0633" } ] }
+      - { "target": "నాకు హలీం కావాలి.", "reading": "nāku halīṁ kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases: "self"
+  - id: "te-6459"
+    target: "డబల్ కా మీఠా"
+    reading: "ḍabal kā mīṭhā"
+    ipa: "ɖabal kaː miːʈʰaː"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "డబల్ కా మీఠా చాలా తీపిగా ఉంది.", "reading": "ḍabal kā mīṭhā cālā tīpigā undi.", "bases": [ { "word": "డబల్", "base": "డబల్", "reading": "ḍabal" }, { "word": "కా", "base": "కా", "reading": "kā" }, { "word": "మీఠా", "base": "మీఠా", "reading": "mīṭhā" }, { "word": "చాలా", "ref": "te-1026" }, { "word": "తీపిగా", "ref": "te-0348" }, { "word": "ఉంది", "ref": "te-0633" } ] }
+      - { "target": "నాకు డబల్ కా మీఠా కావాలి.", "reading": "nāku ḍabal kā mīṭhā kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "డబల్", "base": "డబల్", "reading": "ḍabal" }, { "word": "కా", "base": "కా", "reading": "kā" }, { "word": "మీఠా", "base": "మీఠా", "reading": "mīṭhā" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases:
+      - { "word": "డబల్", "base": "డబల్", "reading": "ḍabal" }
+      - { "word": "కా", "base": "కా", "reading": "kā" }
+      - { "word": "మీఠా", "base": "మీఠా", "reading": "mīṭhā" }
+  - id: "te-6460"
+    target: "కుర్మా"
+    reading: "kurmā"
+    ipa: "kurmaː"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "బగారా అన్నంతో కుర్మా ఇవ్వండి.", "reading": "bagārā annaṁtō kurmā ivvaṇḍi.", "bases": [ { "word": "బగారా", "base": "బగారా", "reading": "bagārā" }, { "word": "అన్నంతో", "ref": "te-0344" }, { "word": "ఇవ్వండి", "ref": "te-0247" } ] }
+      - { "target": "కుర్మా చాలా బాగుంది.", "reading": "kurmā cālā bāgundi.", "bases": [ { "word": "చాలా", "ref": "te-1026" }, { "word": "బాగుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+    bases: "self"
+  - id: "te-6461"
+    target: "గారెలు"
+    reading: "gārelu"
+    ipa: "ɡaːrelu"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "గారెలు సాంబారులో వేసుకోండి.", "reading": "gārelu sāmbārulō vēsukōṇḍi.", "bases": [ { "word": "సాంబారులో", "ref": "te-0677" }, { "word": "వేసుకోండి", "ref": "te-0837" } ] }
+      - { "target": "గారెలు వేడిగా ఉన్నాయి.", "reading": "gārelu vēḍigā unnāyi.", "bases": [ { "word": "వేడిగా", "ref": "te-0505" }, { "word": "ఉన్నాయి", "ref": "te-0633" } ] }
+    bases: "self"
+  - id: "te-6462"
+    target: "ఇగురు"
+    reading: "iguru"
+    ipa: "iɡuru"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "కోడి ఇగురు చాలా ఘాటుగా ఉంది.", "reading": "kōḍi iguru cālā ghāṭugā undi.", "bases": [ { "word": "కోడి", "ref": "te-0263" }, { "word": "చాలా", "ref": "te-1026" }, { "word": "ఘాటుగా", "base": "ఘాటు", "reading": "ghāṭu" }, { "word": "ఉంది", "ref": "te-0633" } ] }
+      - { "target": "ఇగురు అన్నంతో బాగుంటుంది.", "reading": "iguru annaṁtō bāguṇṭundi.", "bases": [ { "word": "అన్నంతో", "ref": "te-0344" }, { "word": "బాగుంటుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+    bases: "self"
+  - id: "te-6463"
+    target: "వేపుడు"
+    reading: "vēpuḍu"
+    ipa: "ʋeːpuɖu"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "కోడి వేపుడు కారంగా ఉంది.", "reading": "kōḍi vēpuḍu kāraṁgā undi.", "bases": [ { "word": "కోడి", "ref": "te-0263" }, { "word": "కారంగా", "ref": "te-0347" }, { "word": "ఉంది", "ref": "te-0633" } ] }
+      - { "target": "వేపుడు అన్నంతో బాగుంటుంది.", "reading": "vēpuḍu annaṁtō bāguṇṭundi.", "bases": [ { "word": "అన్నంతో", "ref": "te-0344" }, { "word": "బాగుంటుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+    bases: "self"
+  - id: "te-6464"
+    target: "పులావ్"
+    reading: "pulāv"
+    ipa: "pulaːʋ"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "పులావ్ బాగుంది.", "reading": "pulāv bāgundi.", "bases": [ { "word": "బాగుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+      - { "target": "నాకు పులావ్ కావాలి.", "reading": "nāku pulāv kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases: "self"
+  - id: "te-6465"
+    target: "పుల్కా"
+    reading: "pulkā"
+    ipa: "pulkaː"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "పుల్కా వేడిగా ఉంది.", "reading": "pulkā vēḍigā undi.", "bases": [ { "word": "వేడిగా", "ref": "te-0505" }, { "word": "ఉంది", "ref": "te-0633" } ] }
+      - { "target": "నాకు పుల్కా కావాలి.", "reading": "nāku pulkā kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases: "self"
+  - id: "te-6466"
+    target: "చపాతీ"
+    reading: "capātī"
+    ipa: "tʃapaːt̪iː"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "చపాతీ కుర్మాతో బాగుంటుంది.", "reading": "capātī kurmātō bāguṇṭundi.", "bases": [ { "word": "కుర్మాతో", "ref": "te-6460" }, { "word": "బాగుంటుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+      - { "target": "నాకు చపాతీ కావాలి.", "reading": "nāku capātī kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases: "self"
+  - id: "te-6467"
+    target: "బొబ్బట్లు"
+    reading: "bobbaṭlu"
+    ipa: "bobbaʈlu"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "బొబ్బట్లు తీపిగా ఉన్నాయి.", "reading": "bobbaṭlu tīpigā unnāyi.", "bases": [ { "word": "తీపిగా", "ref": "te-0348" }, { "word": "ఉన్నాయి", "ref": "te-0633" } ] }
+      - { "target": "నాకు బొబ్బట్లు కావాలి.", "reading": "nāku bobbaṭlu kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases: "self"
+  - id: "te-6468"
+    target: "బెల్లం జున్ను"
+    reading: "bellaṁ junnu"
+    ipa: "bellam dʒunnu"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "బెల్లం జున్ను చాలా తీపిగా ఉంది.", "reading": "bellaṁ junnu cālā tīpigā undi.", "bases": [ { "word": "బెల్లం", "ref": "te-6501" }, { "word": "జున్ను", "base": "జున్ను", "reading": "junnu" }, { "word": "చాలా", "ref": "te-1026" }, { "word": "తీపిగా", "ref": "te-0348" }, { "word": "ఉంది", "ref": "te-0633" } ] }
+      - { "target": "నాకు బెల్లం జున్ను కావాలి.", "reading": "nāku bellaṁ junnu kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "బెల్లం", "ref": "te-6501" }, { "word": "జున్ను", "base": "జున్ను", "reading": "junnu" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases:
+      - { "word": "బెల్లం", "ref": "te-6501" }
+      - { "word": "జున్ను", "base": "జున్ను", "reading": "junnu" }
+  - id: "te-6469"
+    target: "రాగి ముద్ద"
+    reading: "rāgi mudda"
+    ipa: "raːɡi mud̪d̪a"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "రాగి ముద్ద పప్పుతో బాగుంటుంది.", "reading": "rāgi mudda papputō bāguṇṭundi.", "bases": [ { "word": "రాగి", "ref": "te-6500" }, { "word": "ముద్ద", "base": "ముద్ద", "reading": "mudda" }, { "word": "పప్పుతో", "ref": "te-0267" }, { "word": "బాగుంటుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+      - { "target": "నాకు రాగి ముద్ద కావాలి.", "reading": "nāku rāgi mudda kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "రాగి", "ref": "te-6500" }, { "word": "ముద్ద", "base": "ముద్ద", "reading": "mudda" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases:
+      - { "word": "రాగి", "ref": "te-6500" }
+      - { "word": "ముద్ద", "base": "ముద్ద", "reading": "mudda" }
+  - id: "te-6470"
+    target: "పల్లీపొడి"
+    reading: "pallīpoḍi"
+    ipa: "palliːpoɖi"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "పల్లీపొడి అన్నంతో బాగుంటుంది.", "reading": "pallīpoḍi annaṁtō bāguṇṭundi.", "bases": [ { "word": "అన్నంతో", "ref": "te-0344" }, { "word": "బాగుంటుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+      - { "target": "నాకు పల్లీపొడి కావాలి.", "reading": "nāku pallīpoḍi kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases: "self"
+  - id: "te-6471"
+    target: "నెయ్యి అన్నం"
+    reading: "neyyi annaṁ"
+    ipa: "nejji annam"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "నెయ్యి అన్నం పప్పుతో బాగుంటుంది.", "reading": "neyyi annaṁ papputō bāguṇṭundi.", "bases": [ { "word": "నెయ్యి", "ref": "te-0693" }, { "word": "అన్నం", "ref": "te-0344" }, { "word": "పప్పుతో", "ref": "te-0267" }, { "word": "బాగుంటుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+      - { "target": "నాకు నెయ్యి అన్నం కావాలి.", "reading": "nāku neyyi annaṁ kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "నెయ్యి", "ref": "te-0693" }, { "word": "అన్నం", "ref": "te-0344" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases:
+      - { "word": "నెయ్యి", "ref": "te-0693" }
+      - { "word": "అన్నం", "ref": "te-0344" }
+  - id: "te-6472"
+    target: "పెరుగన్నం"
+    reading: "perugannaṁ"
+    ipa: "peruɡannam"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "పెరుగన్నం చాలా బాగుంది.", "reading": "perugannaṁ cālā bāgundi.", "bases": [ { "word": "చాలా", "ref": "te-1026" }, { "word": "బాగుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+      - { "target": "చివర పెరుగన్నం తింటారు.", "reading": "civara perugannaṁ tiṇṭāru.", "bases": [ { "word": "చివర", "base": "చివర", "reading": "civara" }, { "word": "తింటారు", "ref": "te-0624" } ] }
+    bases: "self"
+  - id: "te-6473"
+    target: "ఫ్రైడ్ రైస్"
+    reading: "phraiḍ rais"
+    ipa: "pʰraiɖ rais"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "ఫ్రైడ్ రైస్ కూరతో బాగుంటుంది.", "reading": "phraiḍ rais kūratō bāguṇṭundi.", "bases": [ { "word": "ఫ్రైడ్", "base": "ఫ్రైడ్", "reading": "phraiḍ" }, { "word": "రైస్", "base": "రైస్", "reading": "rais" }, { "word": "కూరతో", "ref": "te-0676" }, { "word": "బాగుంటుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+      - { "target": "నాకు ఫ్రైడ్ రైస్ కావాలి.", "reading": "nāku phraiḍ rais kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "ఫ్రైడ్", "base": "ఫ్రైడ్", "reading": "phraiḍ" }, { "word": "రైస్", "base": "రైస్", "reading": "rais" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases:
+      - { "word": "ఫ్రైడ్", "base": "ఫ్రైడ్", "reading": "phraiḍ" }
+      - { "word": "రైస్", "base": "రైస్", "reading": "rais" }
+  - id: "te-6474"
+    target: "చిల్లీ చికెన్"
+    reading: "cillī ciken"
+    ipa: "tʃilliː tʃiken"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "చిల్లీ చికెన్ చాలా కారంగా ఉంది.", "reading": "cillī ciken cālā kāraṁgā undi.", "bases": [ { "word": "చిల్లీ", "base": "చిల్లీ", "reading": "cillī" }, { "word": "చికెన్", "base": "చికెన్", "reading": "ciken" }, { "word": "చాలా", "ref": "te-1026" }, { "word": "కారంగా", "ref": "te-0347" }, { "word": "ఉంది", "ref": "te-0633" } ] }
+      - { "target": "నాకు చిల్లీ చికెన్ కావాలి.", "reading": "nāku cillī ciken kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "చిల్లీ", "base": "చిల్లీ", "reading": "cillī" }, { "word": "చికెన్", "base": "చికెన్", "reading": "ciken" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases:
+      - { "word": "చిల్లీ", "base": "చిల్లీ", "reading": "cillī" }
+      - { "word": "చికెన్", "base": "చికెన్", "reading": "ciken" }
+  - id: "te-6475"
+    target: "పాయ"
+    reading: "pāya"
+    ipa: "paːja"
+    pos: "noun"
+    gender: "amahat"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { "target": "పాయ వేడిగా ఉంది.", "reading": "pāya vēḍigā undi.", "bases": [ { "word": "వేడిగా", "ref": "te-0505" }, { "word": "ఉంది", "ref": "te-0633" } ] }
+      - { "target": "నాకు పాయ కావాలి.", "reading": "nāku pāya kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+    bases: "self"
+  - ref: "te-1615"
+  - ref: "te-0686"
