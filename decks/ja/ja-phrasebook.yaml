@@ -1,0 +1,228 @@
+schema: 1
+id: "ja-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-0047"
+    target: "こんにちは"
+    reading: "konnichiwa"
+    ipa: "konnitɕiwa"
+    pos: "other"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ja-0048"
+    target: "おはようございます"
+    reading: "ohayou gozaimasu"
+    ipa: "ohajoː gozaimasɯ"
+    pos: "phrase"
+    tags: ["greeting", "polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ja-0049"
+    target: "こんばんは"
+    reading: "konbanwa"
+    ipa: "konbanwa"
+    pos: "other"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ja-0050"
+    target: "さようなら"
+    reading: "sayounara"
+    ipa: "sajoːnara"
+    pos: "other"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ja-0051"
+    target: "ありがとうございます"
+    reading: "arigatou gozaimasu"
+    ipa: "arigatoː gozaimasɯ"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ja-0052"
+    target: "はい"
+    reading: "hai"
+    ipa: "hai"
+    pos: "other"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ja-0053"
+    target: "いいえ"
+    reading: "iie"
+    ipa: "iːe"
+    pos: "other"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ja-0054"
+    target: "すみません"
+    reading: "sumimasen"
+    ipa: "sɯmimasen"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "ja-0055"
+    target: "わかりません"
+    reading: "wakarimasen"
+    ipa: "wakarimasen"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "わかりません", base: "わかる", reading: "wakaru" }
+  - id: "ja-0056"
+    target: "もういちどいってください。"
+    reading: "mou ichido itte kudasai."
+    ipa: "moːitɕido itte kɯdasai"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "いって", base: "いう", reading: "iu" }
+      - { word: "ください", base: "くださる", reading: "kudasaru" }
+  - id: "ja-0057"
+    target: "ゆっくりはなしてください。"
+    reading: "yukkuri hanashite kudasai."
+    ipa: "jɯkkɯɾi hanaɕite kɯdasai"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "はなして", base: "はなす", reading: "hanasu" }
+      - { word: "ください", base: "くださる", reading: "kudasaru" }
+  - id: "ja-0058"
+    target: "えいごをはなせますか。"
+    reading: "eigo o hanasemasu ka?"
+    ipa: "eːŋo o hanasemasɯ ka"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "えいご", base: "えいご", reading: "eigo" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "はなせます", base: "はなす", reading: "hanasu" }
+  - id: "ja-0059"
+    target: "いくらですか。"
+    reading: "ikura desu ka?"
+    ipa: "ikɯɾa desɯ ka"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "いくら", base: "いくら", reading: "ikura" }
+      - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-0060"
+    target: "…はどこですか。"
+    reading: "... wa doko desu ka?"
+    ipa: "… wa doko desɯ ka"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "どこ", base: "どこ", reading: "doko" }
+      - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-0061"
+    target: "トイレはどこですか。"
+    reading: "toire wa doko desu ka?"
+    ipa: "tojɾe wa doko desɯ ka"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "トイレ", base: "トイレ", reading: "toire" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "どこ", base: "どこ", reading: "doko" }
+      - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-0062"
+    target: "おねがいします。"
+    reading: "onegai shimasu."
+    ipa: "onegai ɕimasɯ"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "おねがいします", base: "おねがいする", reading: "onegai suru" }
+  - id: "ja-0063"
+    target: "…をください。"
+    reading: "... o kudasai."
+    ipa: "… o kɯdasai"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "ください", base: "くださる", reading: "kudasaru" }
+  - id: "ja-0064"
+    target: "たすけてください。"
+    reading: "tasukete kudasai."
+    ipa: "tasɯkete kɯdasai"
+    pos: "phrase"
+    tags: ["polite"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "たすけて", base: "たすける", reading: "tasukeru" }
+      - { word: "ください", base: "くださる", reading: "kudasaru" }
+  - id: "ja-0065"
+    target: "わたしのなまえは…です。"
+    reading: "watashi no namae wa ... desu."
+    ipa: "watɕi no namae wa desɯ"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "わたし", base: "わたし", reading: "watashi" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "なまえ", base: "なまえ", reading: "namae" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-0066"
+    target: "わたしは…からきました。"
+    reading: "watashi wa ... kara kimashita."
+    ipa: "watɕi wa kara kimaɕita"
+    pos: "phrase"
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "わたし", base: "わたし", reading: "watashi" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "から", base: "から", reading: "kara" }
+      - { word: "きました", base: "くる", reading: "kuru" }

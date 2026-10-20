@@ -1,0 +1,207 @@
+schema: 1
+id: "ja-en-first-words"
+kind: "layer"
+core: "ja-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+description: "Twelve basic words: I and you, the honorific さん (san), the first nouns and adjectives, and the particles and copula that join them into sentences. Greetings and the requests for help are in the phrasebook."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0067":
+    native: "I"
+    notes:
+      "n1": "The polite everyday 'I'. Men may say ぼく (boku) and women may say あたし (atashi) in casual speech; a learner should use わたし (watashi). Japanese often leaves it out, since the context shows who is meant."
+    examples:
+      "わたしはせんせいです。":
+        native: "I am a teacher."
+        bases:
+          "は": "topic particle, marks what the sentence is about"
+          "です": "is (polite)"
+      "わたしはにほんにいます。":
+        native: "I am in Japan."
+        bases:
+          "は": "topic particle, marks what the sentence is about"
+          "に": "in, at (a place)"
+          "います": "am, are (of a living thing, in a place)"
+  "ja-0068":
+    native: "you"
+    notes:
+      "n1": "Used less than 'you' in English. People often use the other person's name with さん (san), or their job, such as 先生 (sensei). Using あなた (anata) to a stranger can sound cold."
+    examples:
+      "あなたはがくせいですか。":
+        native: "Are you a student?"
+        bases:
+          "は": "topic particle, marks what the sentence is about"
+          "です": "is (polite)"
+      "あなたのいぬはおおきいです。":
+        native: "Your dog is big."
+        bases:
+          "の": "of, 's"
+          "は": "topic particle, marks what the sentence is about"
+          "です": "is (polite)"
+  "ja-0069":
+    native: "Mr.; Ms.; Mrs."
+    notes:
+      "n1": "Added after a surname, for anyone, in a neutral and polite way: たなかさん (tanaka-san). Not used for your own name, nor for the family you belong to."
+    examples:
+      "わたしはたなかさんです。":
+        native: "I am Mr. or Ms. Tanaka."
+        bases:
+          "は": "topic particle, marks what the sentence is about"
+          "たなか": "Tanaka (a surname)"
+          "です": "is (polite)"
+      "やまださんはせんせいです。":
+        native: "Mr. or Ms. Yamada is a teacher."
+        bases:
+          "やまだ": "Yamada (a surname)"
+          "は": "topic particle, marks what the sentence is about"
+          "です": "is (polite)"
+  "ja-0070":
+    native: "teacher"
+    notes:
+      "n1": "A teacher is addressed as 先生 (sensei) and not with さん (san). The word also titles doctors and other experts."
+    examples:
+      "たなかさんはせんせいです。":
+        native: "Ms. Tanaka is a teacher."
+        bases:
+          "たなか": "Tanaka (a surname)"
+          "は": "topic particle, marks what the sentence is about"
+          "です": "is (polite)"
+      "わたしのせんせいはたなかさんです。":
+        native: "My teacher is Ms. Tanaka."
+        bases:
+          "の": "of, 's"
+          "たなか": "Tanaka (a surname)"
+          "は": "topic particle, marks what the sentence is about"
+          "です": "is (polite)"
+  "ja-0071":
+    native: "student"
+    notes:
+      "n1": "For someone at school or university; written 学生 (gakusei) in kanji."
+    examples:
+      "やまださんはがくせいです。":
+        native: "Mr. or Ms. Yamada is a student."
+        bases:
+          "やまだ": "Yamada (a surname)"
+          "は": "topic particle, marks what the sentence is about"
+          "です": "is (polite)"
+      "わたしはがくせいです。":
+        native: "I am a student."
+        bases:
+          "は": "topic particle, marks what the sentence is about"
+          "です": "is (polite)"
+  "ja-0072":
+    native: "Japan"
+    notes:
+      "n1": "The name of the country. Its language is 日本語 (nihongo), and a person from Japan is a 日本人 (nihonjin)."
+    examples:
+      "にほんはおおきいです。":
+        native: "Japan is big."
+        bases:
+          "は": "topic particle, marks what the sentence is about"
+          "です": "is (polite)"
+      "わたしはにほんじんです。":
+        native: "I am Japanese."
+        bases:
+          "は": "topic particle, marks what the sentence is about"
+          "にほんじん": "a Japanese person"
+          "です": "is (polite)"
+  "ja-0073":
+    native: "water"
+    notes:
+      "n1": "In Japanese restaurants a glass of water is often served without charge, and asking for it is simple: みずをください (mizu o kudasai)."
+    examples:
+      "みずをください。":
+        native: "Water, please."
+        bases:
+          "を": "object particle"
+          "ください": "please give (polite request)"
+      "みずはつめたいです。":
+        native: "The water is cold."
+        bases:
+          "は": "topic particle, marks what the sentence is about"
+          "つめたい": "cold (to the touch)"
+          "です": "is (polite)"
+  "ja-0074":
+    native: "rice; a meal"
+    notes:
+      "n1": "Cooked rice, and by extension a meal, as in 朝ごはん (asagohan), breakfast. The same word serves for both."
+    examples:
+      "ごはんをたべます。":
+        native: "I eat a meal."
+        bases:
+          "を": "object particle"
+          "たべます": "eat (polite)"
+      "ごはんはおいしいです。":
+        native: "The meal is delicious."
+        bases:
+          "は": "topic particle, marks what the sentence is about"
+          "おいしい": "delicious"
+          "です": "is (polite)"
+  "ja-0075":
+    native: "train"
+    notes:
+      "n1": "The ordinary train. The fast bullet train is 新幹線 (shinkansen)."
+    examples:
+      "でんしゃでいきます。":
+        native: "I go by train."
+        bases:
+          "で": "by, with (a means)"
+          "いきます": "go (polite)"
+      "でんしゃはおおきいです。":
+        native: "The train is big."
+        bases:
+          "は": "topic particle, marks what the sentence is about"
+          "です": "is (polite)"
+  "ja-0076":
+    native: "dog"
+    notes:
+      "n1": "Written 犬 (inu) in kanji. A dog kept as a pet is often called by its owner's name with a word of love, not by this one."
+    examples:
+      "いぬがすきです。":
+        native: "I like dogs."
+        bases:
+          "が": "subject particle"
+          "すき": "liked; fond of"
+          "です": "is (polite)"
+      "わたしのいぬはおおきいです。":
+        native: "My dog is big."
+        bases:
+          "の": "of, 's"
+          "は": "topic particle, marks what the sentence is about"
+          "です": "is (polite)"
+  "ja-0077":
+    native: "big"
+    alt_native: ["large"]
+    notes:
+      "n1": "An i-adjective, so it changes its ending rather than adding a word. Its opposite is ちいさい (chiisai, small)."
+    examples:
+      "いぬはおおきいです。":
+        native: "The dog is big."
+        bases:
+          "は": "topic particle, marks what the sentence is about"
+          "です": "is (polite)"
+      "こうえんはおおきいです。":
+        native: "The park is big."
+        bases:
+          "こうえん": "park"
+          "は": "topic particle, marks what the sentence is about"
+          "です": "is (polite)"
+  "ja-0078":
+    native: "small"
+    notes:
+      "n1": "An i-adjective, the opposite of おおきい (ookii, big)."
+    examples:
+      "ねこはちいさいです。":
+        native: "The cat is small."
+        bases:
+          "ねこ": "cat"
+          "は": "topic particle, marks what the sentence is about"
+          "です": "is (polite)"
+      "わたしのいぬはちいさいです。":
+        native: "My dog is small."
+        bases:
+          "の": "of, 's"
+          "は": "topic particle, marks what the sentence is about"
+          "です": "is (polite)"
