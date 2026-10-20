@@ -48,6 +48,9 @@ void usePhone(
 /// bundled decks, no voices, a fixed clock) and waits for the catalog.
 Future<AppState> pumpApp(WidgetTester tester, {AppState? state}) async {
   final s = state ?? AppState.test();
+  // A fresh tree: a test that draws more than one app keeps no state of
+  // the one before.
+  await tester.pumpWidget(const SizedBox());
   await tester.pumpWidget(FluenoughApp(state: s));
   await tester.pumpAndSettle();
   return s;
@@ -63,6 +66,9 @@ Future<AppState> pumpScreen(
 }) async {
   final s = state ?? AppState.test();
   await s.load();
+  // A fresh tree: a test that draws more than one screen keeps no state of
+  // the one before.
+  await tester.pumpWidget(const SizedBox());
   await tester.pumpWidget(
     AppScope(
       state: s,

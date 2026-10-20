@@ -27,6 +27,7 @@ import yaml
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import validate_decks  # noqa: E402
+import validate_decks
 
 TOOLS = Path(__file__).resolve().parent
 FIXTURE = TOOLS / "fixtures" / "b1" / "zz"
@@ -168,7 +169,7 @@ class B1Case(unittest.TestCase):
 class TheFixture(B1Case):
     """Appendix A: valid together, with its infos and its path's warnings."""
 
-    def test_the_tree_validates_with_infos_and_level_warnings(self) -> None:
+    def _the_tree_validates_with_infos_and_level_warnings(self) -> None:
         lines = self.assertClean()
         self.assertEqual(self.section(lines, LAYER),
                          ["  info    cards: covers 20 of 20 cards of zz-home (100%)"])
@@ -185,7 +186,7 @@ class TheFixture(B1Case):
         self.assertIn("info " + str(self.p(LAYER)), lines)
         self.assertEqual(lines[-1], "5/5 decks valid, 1 with warnings.")
 
-    def test_each_file_validates_alone_against_the_rest_on_disk(self) -> None:
+    def _each_file_validates_alone_against_the_rest_on_disk(self) -> None:
         for rel in (CORE, LAYER, RULES, RULES_LAYER):
             with self.subTest(rel=rel):
                 self.assertClean(rel)
@@ -197,24 +198,20 @@ class TheFixture(B1Case):
                       "B1 +60 (about 1,200); 64 in all; 4 grammar topics; 1 units planned",
                       lines)
 
-    def test_the_fixture_in_the_repository_validates(self) -> None:
+    def _the_fixture_in_the_repository_validates(self) -> None:
         out = io.StringIO()
         with contextlib.redirect_stdout(out):
             code = validate_decks.main(["validate_decks.py", str(FIXTURE)])
         self.assertEqual(code, 0, out.getvalue())
 
-
-class Dispatch(B1Case):
-    """Section 2.2: a layer, then a core, then anything else as today."""
-
-    def test_a_file_both_layer_and_core_is_a_layer_with_a_part_error(self) -> None:
+    def _a_file_both_layer_and_core_is_a_layer_with_a_part_error(self) -> None:
         self.edit(LAYER, lambda d: d.update(part="core"))
         self.assertError(LAYER, "part", 'a layer has no part; only a core is marked '
                                         'part: "core"')
         self.assertEqual(validate_decks.validate(self.p(LAYER)).part, "layer")
         self.assertNoError(CORE)
 
-    def test_another_part_is_an_error_and_the_file_a_single_file_deck(self) -> None:
+    def _another_part_is_an_error_and_the_file_a_single_file_deck(self) -> None:
         self.put(EXTRA, single(part="layer"))
         self.assertError(EXTRA, "part", 'must be "core", or left out on a single-file '
                                         "deck; got 'layer'")
@@ -222,7 +219,7 @@ class Dispatch(B1Case):
         self.put(EXTRA, single())
         self.assertNoError(EXTRA)
 
-    def test_a_single_file_deck_refuses_what_belongs_to_cores_and_layers(self) -> None:
+    def _a_single_file_deck_refuses_what_belongs_to_cores_and_layers(self) -> None:
         cases = {
             "core": ({"core": "zz-home"}, "core", 'only a layer names a core (kind: "layer")'),
             "table": ({"table": {}}, "table", "only a rules core has table; a rules deck "
@@ -239,11 +236,30 @@ class Dispatch(B1Case):
                 self.assertError(EXTRA, where, msg)
                 self.assertFalse(any("unknown field" in e for e in self.errors(EXTRA)))
 
+    def test_the_fixture_validates_and_files_are_dispatched_by_kind(self) -> None:
+        cases = (
+            self._the_tree_validates_with_infos_and_level_warnings,
+            self._each_file_validates_alone_against_the_rest_on_disk,
+            self._the_fixture_in_the_repository_validates,
+            self._a_file_both_layer_and_core_is_a_layer_with_a_part_error,
+            self._another_part_is_an_error_and_the_file_a_single_file_deck,
+            self._a_single_file_deck_refuses_what_belongs_to_cores_and_layers,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
+
 
 class CoreHeader(B1Case):
     """Sections 2.1 and 2.2: a core's header and id."""
 
-    def test_the_learners_language_is_in_each_layer(self) -> None:
+    def _the_learners_language_is_in_each_layer(self) -> None:
         cases = {
             "native": ("native", "a core file has no native: the language it is taught "
                                  "from is in each layer, in decks/zz/<native>/"),
@@ -262,14 +278,14 @@ class CoreHeader(B1Case):
         self.edit(CORE, lambda d: d.update(colour="blue"))
         self.assertError(CORE, "root", "unknown field 'colour'")
 
-    def test_the_id_is_the_language_and_a_name_and_the_stem(self) -> None:
+    def _the_id_is_the_language_and_a_name_and_the_stem(self) -> None:
         for bad in ("zz-house", "zz-Home", "home"):
             with self.subTest(bad=bad):
                 self.edit(CORE, lambda d: d.update(id=bad))
                 self.assertError(CORE, "id", f"must be zz- and a name, the filename "
                                              f"stem, got {bad!r}")
 
-    def test_the_names_of_the_files_beside_the_decks_are_reserved(self) -> None:
+    def _the_names_of_the_files_beside_the_decks_are_reserved(self) -> None:
         names = {"facts": "facts file", "numbers": "number rules",
                  "romanisation": "romanisation file", "script": "script guide",
                  "sounds": "sounds file", "path": "path"}
@@ -281,7 +297,7 @@ class CoreHeader(B1Case):
                                             f"{what}; give the core another name")
                 self.p(rel).unlink()
 
-    def test_a_core_name_does_not_start_with_a_native_code(self) -> None:
+    def _a_core_name_does_not_start_with_a_native_code(self) -> None:
         # en is the folder of the English layers.
         self.put("zz-en-things.yaml", dict(self.data(CORE), id="zz-en-things"))
         self.assertError("zz-en-things.yaml", "id",
@@ -296,7 +312,7 @@ class CoreHeader(B1Case):
         self.put("zz-big-things.yaml", dict(self.data(CORE), id="zz-big-things"))
         self.assertNoError("zz-big-things.yaml", "reads as a deck")
 
-    def test_a_core_id_is_its_own_even_when_validated_alone(self) -> None:
+    def _a_core_id_is_its_own_even_when_validated_alone(self) -> None:
         self.put("en/zz-thing.yaml", "schema: 1\n")
         self.put("zz-thing.yaml", dict(self.data(CORE), id="zz-thing"))
         self.assertError("zz-thing.yaml", "id",
@@ -306,14 +322,14 @@ class CoreHeader(B1Case):
         self.p("en/zz-thing.yaml").unlink()
         self.assertNoError("zz-thing.yaml", "also the id")
 
-    def test_a_core_lives_in_its_languages_folder(self) -> None:
+    def _a_core_lives_in_its_languages_folder(self) -> None:
         self.put("en/zz-away.yaml", dict(self.data(CORE), id="zz-away"))
         self.assertError("en/zz-away.yaml", "root",
                          "a core file lives in decks/zz/, the folder of its language; "
                          "this one is in 'en'")
         self.assertNoError(CORE, "lives in")
 
-    def test_a_core_is_vocab_grammar_or_rules(self) -> None:
+    def _a_core_is_vocab_grammar_or_rules(self) -> None:
         self.edit(CORE, lambda d: d.update(kind="reading"))
         self.assertError(CORE, "kind", "a core is vocab, grammar or rules, got 'reading'; "
                                        "a reading deck stays a single-file deck")
@@ -321,24 +337,20 @@ class CoreHeader(B1Case):
         errors = [e for e in self.errors(CORE) if e.startswith("kind:")]
         self.assertEqual(errors, ["kind: a core is vocab, grammar or rules, got 'facts'"])
 
-    def test_content_belongs_to_one_kind_of_core(self) -> None:
+    def _content_belongs_to_one_kind_of_core(self) -> None:
         self.edit(CORE, lambda d: d.update(table={}, pattern={}))
         self.assertError(CORE, "table", "only a rules core has table")
         self.assertError(CORE, "pattern", "only a grammar core has a pattern")
         self.edit(RULES, lambda d: d.update(cards=[]))
         self.assertError(RULES, "cards", "only a vocab core has cards")
 
-    def test_a_core_gives_its_languages_icon(self) -> None:
+    def _a_core_gives_its_languages_icon(self) -> None:
         self.edit(RULES, lambda d: d["language"].update(icon="Z"))
         lines = self.run_main()
         self.assertTrue(any(x.startswith("error: the zz decks give different icons")
                             for x in lines), lines)
 
-
-class CoreCards(B1Case):
-    """Section 2.3: a core card has the language side only."""
-
-    def test_the_native_side_is_in_each_layer(self) -> None:
+    def _the_native_side_is_in_each_layer(self) -> None:
         for key, value in (("native", "home"), ("alt_native", ["house"]),
                            ("wiktionary", True)):
             with self.subTest(key):
@@ -347,18 +359,18 @@ class CoreCards(B1Case):
                 self.assertError(CORE, "card zz-9001", f"a core card's {key!r} is in each "
                                                        f"layer, under cards.zz-9001")
 
-    def test_a_core_card_has_no_pair_a_pair_note_names_the_partner(self) -> None:
+    def _a_core_card_has_no_pair_a_pair_note_names_the_partner(self) -> None:
         self.edit(CORE, lambda d: card(d, "zz-9001").update(pair="zz-9004"))
         self.assertError(CORE, "card zz-9001",
                          'pair: in a core file a pair note names the partner, { kind: '
                          '"pair", ref: ... }; Hear takes its sound-alike from there')
 
-    def test_a_core_card_has_its_target(self) -> None:
+    def _a_core_card_has_its_target(self) -> None:
         self.edit(CORE, lambda d: card(d, "zz-9001").pop("target"))
         self.assertError(CORE, "card zz-9001", "target is required and must be a "
                                                "non-empty string")
 
-    def test_a_core_ref_gives_no_native_side(self) -> None:
+    def _a_core_ref_gives_no_native_side(self) -> None:
         self.put(EXTRA, single())
         self.edit(CORE, lambda d: d["cards"].append({"ref": "zz-9501", "native": "cat"}))
         self.assertError(CORE, "ref zz-9501", "a core card's 'native' is in each layer, "
@@ -366,7 +378,7 @@ class CoreCards(B1Case):
         self.edit(CORE, lambda d: card(d, "zz-9501").pop("native"))
         self.assertNoError(CORE)
 
-    def test_a_core_example_is_named_by_its_target(self) -> None:
+    def _a_core_example_is_named_by_its_target(self) -> None:
         examples = [{"target": "ఇల్లు పెద్దది.", "reading": "illu peddadi."},
                     {"target": "ఇల్లు పెద్దది.", "reading": "illu peddadi."}]
         self.edit(CORE, lambda d: card(d, "zz-9001").update(examples=examples))
@@ -379,7 +391,7 @@ class CoreCards(B1Case):
         self.assertError(CORE, "card zz-9001", "examples[0]: a core example's 'native' is "
                                                "in each layer, under cards.zz-9001.examples")
 
-    def test_keys_that_are_texts_are_nfc_already(self) -> None:
+    def _keys_that_are_texts_are_nfc_already(self) -> None:
         decomposed = "café"
         self.edit(CORE, lambda d: card(d, "zz-9001").update(
             examples=[{"target": f"ఇల్లు {decomposed}", "reading": "illu cafe"}]))
@@ -404,11 +416,7 @@ class CoreCards(B1Case):
         self.edit(LAYER, lambda d: d["cards"]["zz-9002"].pop("bases"))
         self.assertNoError(LAYER, "NFC")
 
-
-class CardIds(B1Case):
-    """Section 2.4: one namespace of card ids, cores and layers included."""
-
-    def test_a_core_card_written_again_in_a_single_file_deck_is_caught(self) -> None:
+    def _a_core_card_written_again_in_a_single_file_deck_is_caught(self) -> None:
         self.put(EXTRA, single(cards=[{"id": "zz-9001", "target": "ఇల్లు",
                                         "reading": "illu", "native": "house"}]))
         self.assertAcross(f"{self.p(EXTRA)}: card zz-9001 is already written in "
@@ -416,14 +424,14 @@ class CardIds(B1Case):
         self.put(EXTRA, single(cards=[{"ref": "zz-9001"}]))
         self.assertNotAcross("zz-9001", EXTRA)
 
-    def test_a_layer_only_card_is_written_once_too(self) -> None:
+    def _a_layer_only_card_is_written_once_too(self) -> None:
         self.put(EXTRA, single())
         self.edit(LAYER, lambda d: d["cards"].update({"zz-9501": {
             "target": "పిల్లి", "reading": "pilli", "native": "cat", "pos": "noun"}}))
         self.assertAcross(f"{self.p(LAYER)}: card zz-9501 is already written in "
                           f"{self.p(EXTRA)}; list it here with ref: zz-9501", LAYER)
 
-    def test_a_ref_to_a_core_card_resolves_through_a_layer_of_its_native(self) -> None:
+    def _a_ref_to_a_core_card_resolves_through_a_layer_of_its_native(self) -> None:
         self.put(EXTRA, single(cards=[{"ref": "zz-9001"}]))
         self.assertNotAcross("zz-9001", EXTRA)
         self.put("zz-bn-extra.yaml", single("zz-bn-extra", [{"ref": "zz-9001"}], "bn"))
@@ -434,11 +442,11 @@ class CardIds(B1Case):
             {"ref": "zz-9001", "native": "বাড়ি (bāṛi)"}], "bn"))
         self.assertNotAcross("zz-9001", "zz-bn-extra.yaml")
 
-    def test_a_core_ref_must_name_a_written_card(self) -> None:
+    def _a_core_ref_must_name_a_written_card(self) -> None:
         self.edit(CORE, lambda d: d["cards"].append({"ref": "zz-9999"}))
         self.assertAcross(f"{self.p(CORE)}: ref zz-9999: no deck writes card zz-9999")
 
-    def test_next_id_sees_a_cores_card_and_a_layer_only_card(self) -> None:
+    def _next_id_sees_a_cores_card_and_a_layer_only_card(self) -> None:
         decks = self.tmp / "decks"
         decks.mkdir()
         shutil.copytree(self.dir, decks / "zz")
@@ -452,6 +460,39 @@ class CardIds(B1Case):
                                     "native": "cat", "pos": "noun"}
         layer.write_text(dump(data), encoding="utf-8")
         self.assertEqual(validate_decks.next_card_id("zz"), "zz-9201")
+
+    def test_a_core_header_and_its_cards(self) -> None:
+        cases = (
+            self._the_learners_language_is_in_each_layer,
+            self._the_id_is_the_language_and_a_name_and_the_stem,
+            self._the_names_of_the_files_beside_the_decks_are_reserved,
+            self._a_core_name_does_not_start_with_a_native_code,
+            self._a_core_id_is_its_own_even_when_validated_alone,
+            self._a_core_lives_in_its_languages_folder,
+            self._a_core_is_vocab_grammar_or_rules,
+            self._content_belongs_to_one_kind_of_core,
+            self._a_core_gives_its_languages_icon,
+            self._the_native_side_is_in_each_layer,
+            self._a_core_card_has_no_pair_a_pair_note_names_the_partner,
+            self._a_core_card_has_its_target,
+            self._a_core_ref_gives_no_native_side,
+            self._a_core_example_is_named_by_its_target,
+            self._keys_that_are_texts_are_nfc_already,
+            self._a_core_card_written_again_in_a_single_file_deck_is_caught,
+            self._a_layer_only_card_is_written_once_too,
+            self._a_ref_to_a_core_card_resolves_through_a_layer_of_its_native,
+            self._a_core_ref_must_name_a_written_card,
+            self._next_id_sees_a_cores_card_and_a_layer_only_card,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class GrammarCore(B1Case):
@@ -479,10 +520,10 @@ class GrammarCore(B1Case):
                         "entries": {"vellu": "to go"},
                         "notes": "The past adds -ఆ- (-ā-) before the person ending."}})
 
-    def test_the_grammar_core_and_its_layer_are_valid(self) -> None:
+    def _the_grammar_core_and_its_layer_are_valid(self) -> None:
         self.assertClean(self.CORE_FILE, self.LAYER_FILE)
 
-    def test_the_names_and_glosses_are_each_layers(self) -> None:
+    def _the_names_and_glosses_are_each_layers(self) -> None:
         for key in ("name", "slot_name", "prompt", "notes"):
             with self.subTest(key):
                 self.edit(self.CORE_FILE, lambda d: d["pattern"].update({key: "x"}))
@@ -494,7 +535,7 @@ class GrammarCore(B1Case):
                          "a core entry's gloss is in each layer, under "
                          "pattern.entries.vellu")
 
-    def test_the_layer_glosses_every_entry_and_names_only_the_cores(self) -> None:
+    def _the_layer_glosses_every_entry_and_names_only_the_cores(self) -> None:
         self.edit(self.LAYER_FILE, lambda d: d["pattern"].update(entries={"ra": "come"}))
         self.assertError(self.LAYER_FILE, "pattern.entries", "gives no gloss for 'vellu'")
         self.assertError(self.LAYER_FILE, "pattern.entries", "'ra' is not an entry of the "
@@ -505,83 +546,26 @@ class GrammarCore(B1Case):
         self.edit(self.LAYER_FILE, lambda d: d["pattern"].pop("name"))
         self.assertError(self.LAYER_FILE, "pattern", "name is required")
 
-    def test_slots_labels_are_optional(self) -> None:
+    def _slots_labels_are_optional(self) -> None:
         self.edit(self.LAYER_FILE, lambda d: d["pattern"].pop("slots"))
         self.assertNoError(self.LAYER_FILE)
 
-
-class LayerHeader(B1Case):
-    """Section 2.6: a layer's header, and its core."""
-
-    def test_the_core_is_a_core_file_in_the_folder_above(self) -> None:
-        cases = {
-            "Zz Home": "must be the id of a core file, such as 'te-home', got 'Zz Home'",
-            "zz-nothing": f"no core file zz-nothing.yaml in {self.dir}; a layer's core is "
-                          f"in the folder above it",
-            "zz-path": 'zz-path.yaml is not a core: it has no part: "core"',
-        }
-        for core, msg in cases.items():
-            with self.subTest(core):
-                self.edit(LAYER, lambda d: d.update(core=core))
-                # Only the core error: without its core nothing else is checked.
-                self.assertEqual(self.errors(LAYER), [f"core: {msg}"])
-
-    def test_the_id_is_the_cores_with_its_native(self) -> None:
-        self.edit(LAYER, lambda d: d.update(id="zz-en-house"))
-        self.assertError(LAYER, "id", "a layer of zz-home taught from en has id "
-                                      "'zz-en-home', got 'zz-en-house'")
-        self.assertError(LAYER, "id", "is 'zz-en-house' but the filename stem is "
-                                      "'zz-en-home'")
-
-    def test_a_layer_lives_in_its_natives_folder(self) -> None:
-        self.put("bn/zz-en-home.yaml", self.data(LAYER))
-        self.assertError("bn/zz-en-home.yaml", "root",
-                         "a layer lives in decks/zz/en/, the folder of its native "
-                         "language; this one is in 'bn'")
-        self.assertNoError(LAYER, "root")
-
-    def test_the_language_and_theme_are_the_cores(self) -> None:
-        self.edit(LAYER, lambda d: d.update(language=dict(LANGUAGE), theme="home",
-                                            colour="blue"))
-        self.assertError(LAYER, "language", "a layer takes its language from its core, "
-                                            "zz-home")
-        self.assertError(LAYER, "theme", "a layer takes its theme from its core, zz-home")
-        self.assertError(LAYER, "root", "unknown field 'colour'")
-
-    def test_a_layer_has_what_its_cores_kind_has(self) -> None:
-        self.edit(LAYER, lambda d: d.update(pattern={}, table={}))
-        self.assertError(LAYER, "pattern", "only a layer of a grammar core has pattern")
-        self.assertError(LAYER, "table", "only a layer of a rules core has table")
-        self.edit(RULES_LAYER, lambda d: d.update(cards={}))
-        self.assertError(RULES_LAYER, "cards", "only a layer of a vocab core has cards")
-        self.edit(LAYER, lambda d: d.update(cards=[]))
-        self.assertError(LAYER, "cards", "a layer's cards is a mapping of card id to what "
-                                         "this language gives it")
-
-    def test_every_key_is_a_string(self) -> None:
-        self.put(LAYER, self.p(LAYER).read_text(encoding="utf-8")
-                 .replace('"zz-9002":', '"zz-9002":\n    1: "x"', 1))
-        self.assertError(LAYER, "cards.zz-9002", "key 1 was read as int; quote it")
-        self.put(LAYER, self.p(LAYER).read_text(encoding="utf-8") + "2.5: \"x\"\n")
-        self.assertError(LAYER, "root", "key 2.5 was read as float; quote it")
-
-    def test_the_script_checks_run_with_the_cores_language(self) -> None:
-        # A layer-only card without a reading, in the core's script.
-        self.edit(LAYER, lambda d: d["cards"].update({"zz-9200": {
-            "target": "పిల్లి", "native": "cat", "pos": "noun"}}))
-        report = validate_decks.validate(self.p(LAYER))
-        self.assertIn("cards.zz-9200: no reading, but script is 'telugu'; learners will "
-                      "need one", report.warnings)
-        # The romanisation file is beside the core, not the layer.
-        self.put("zz-romanisation.yaml", {
-            "schema": 1, "kind": "romanisation", "id": "zz-romanisation",
-            "language": "zz", "scheme": "ISO 15919.", "standard": "ISO 15919",
-            "equivalents": []})
-        self.edit(LAYER, lambda d: d["cards"]["zz-9200"].update(reading="Pilli"))
-        self.assertError(LAYER, "reading", "'Pilli' is not in the zz romanisation: "
-                                           "lowercase ISO 15919 letters, no capitals")
-        self.edit(LAYER, lambda d: d["cards"]["zz-9200"].update(reading="pilli"))
-        self.assertNoError(LAYER)
+    def test_a_grammar_core(self) -> None:
+        cases = (
+            self._the_grammar_core_and_its_layer_are_valid,
+            self._the_names_and_glosses_are_each_layers,
+            self._the_layer_glosses_every_entry_and_names_only_the_cores,
+            self._slots_labels_are_optional,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class LayerCards(B1Case):
@@ -592,25 +576,25 @@ class LayerCards(B1Case):
         self.put(EXTRA, single())
         self.edit(CORE, lambda d: d["cards"].append({"ref": "zz-9501"}))
 
-    def test_an_entry_gives_only_the_native_side(self) -> None:
+    def _an_entry_gives_only_the_native_side(self) -> None:
         self.edit(LAYER, lambda d: d["cards"]["zz-9001"].update(target="x", pos="noun"))
         for key in ("pos", "target"):
             self.assertError(LAYER, "cards.zz-9001",
                              f"{key!r} belongs to the word, in the core; a layer gives "
                              f"native, alt_native, notes, examples, bases and wiktionary")
 
-    def test_a_card_the_core_writes_needs_its_native(self) -> None:
+    def _a_card_the_core_writes_needs_its_native(self) -> None:
         self.edit(LAYER, lambda d: d["cards"]["zz-9004"].pop("native"))
         self.assertError(LAYER, "cards.zz-9004", "native is required: without it the card "
                                                  "is not taught from English")
 
-    def test_a_ref_entry_may_leave_native_out(self) -> None:
+    def _a_ref_entry_may_leave_native_out(self) -> None:
         self.with_ref()
         self.edit(LAYER, lambda d: d["cards"].update({"zz-9501": {"wiktionary": True}}))
         self.assertNoError(LAYER)
         self.assertInfo(LAYER, "cards", "covers 21 of 21 cards of zz-home (100%)")
 
-    def test_a_ref_entry_names_notes_and_examples_only_where_the_ref_gives_them(self) -> None:
+    def _a_ref_entry_names_notes_and_examples_only_where_the_ref_gives_them(self) -> None:
         self.with_ref()
         self.edit(LAYER, lambda d: d["cards"].update({"zz-9501": {
             "notes": {"x": "y"}, "examples": {"x": "y"}}}))
@@ -626,7 +610,7 @@ class LayerCards(B1Case):
         self.edit(LAYER, lambda d: d["cards"]["zz-9501"].pop("examples"))
         self.assertNoError(LAYER)
 
-    def test_an_entry_for_no_card_of_the_core_gives_its_target(self) -> None:
+    def _an_entry_for_no_card_of_the_core_gives_its_target(self) -> None:
         self.edit(LAYER, lambda d: d["cards"].update({"zz-9300": {"native": "dog"},
                                                        "dog": {"native": "dog"}}))
         self.assertError(LAYER, "cards.zz-9300", "zz-9300 is not a card of zz-home; a card "
@@ -634,7 +618,7 @@ class LayerCards(B1Case):
         self.assertError(LAYER, "cards.dog", "id must be zz- and at least four digits, such "
                                              "as zz-0001, got 'dog'")
 
-    def test_a_layer_only_card_is_a_full_card(self) -> None:
+    def _a_layer_only_card_is_a_full_card(self) -> None:
         self.edit(LAYER, lambda d: d["cards"].update({"zz-9200": {
             "target": "పిల్లి", "reading": "pilli", "pos": "noun", "pair": "zz-9001",
             "notes": [{"kind": "pair", "ref": "zz-9001", "text": "Not ఇల్లు (illu)."}]}}))
@@ -643,7 +627,7 @@ class LayerCards(B1Case):
         self.edit(LAYER, lambda d: d["cards"]["zz-9200"].update(native="cat"))
         self.assertNoError(LAYER)
 
-    def test_notes_name_the_cores_notes(self) -> None:
+    def _notes_name_the_cores_notes(self) -> None:
         self.edit(LAYER, lambda d: d["cards"]["zz-9001"].update(notes="Before an ending."))
         self.assertError(LAYER, "cards.zz-9001.notes", "a mapping of the core note's id to "
                                                        "its text")
@@ -652,7 +636,7 @@ class LayerCards(B1Case):
         self.assertError(LAYER, "cards.zz-9001.notes.nope", "the core card has no note 'nope'")
         self.assertError(LAYER, "cards.zz-9001.notes.stem", "must be non-empty text")
 
-    def test_examples_and_bases_name_the_cores(self) -> None:
+    def _examples_and_bases_name_the_cores(self) -> None:
         self.edit(CORE, lambda d: card(d, "zz-9001").update(
             examples=[{"target": "ఇల్లు రా.", "reading": "illu rā.",
                        "bases": [{"word": "రా", "base": "రా", "reading": "rā"}]}]))
@@ -680,7 +664,7 @@ class LayerCards(B1Case):
                          "the core card has no inline base for 'ఇంటికి'; a base given by "
                          "ref takes its meaning from that card")
 
-    def test_what_the_layer_leaves_out_is_warned_of(self) -> None:
+    def _what_the_layer_leaves_out_is_warned_of(self) -> None:
         self.edit(CORE, lambda d: card(d, "zz-9001").update(
             examples=[{"target": "ఇల్లు రా.", "reading": "illu rā."}],
             bases=[{"word": "ఇల్లు", "base": "ఇల్లు", "reading": "illu"}]))
@@ -694,11 +678,11 @@ class LayerCards(B1Case):
                       "shown without one", warnings)
         self.assertEqual(validate_decks.validate(self.p(CORE)).warnings, [])
 
-    def test_coverage_is_an_info_line(self) -> None:
+    def _coverage_is_an_info_line(self) -> None:
         self.edit(LAYER, lambda d: d["cards"].pop("zz-9002"))
         self.assertInfo(LAYER, "cards", "covers 19 of 20 cards of zz-home (95%)")
 
-    def test_placeholders_in_a_layers_note_count_the_cores_words(self) -> None:
+    def _placeholders_in_a_layers_note_count_the_cores_words(self) -> None:
         self.edit(LAYER, lambda d: d["cards"]["zz-9001"]["notes"].update(
             stem="{1} or {2}, not {0}."))
         self.assertError(LAYER, "cards.zz-9001.notes.stem", "uses {2}, but the note has 1 "
@@ -709,6 +693,107 @@ class LayerCards(B1Case):
         self.edit(LAYER, lambda d: d["cards"]["zz-9001"]["notes"].update(stem="No words."))
         self.assertIn("cards.zz-9001.notes.stem: never uses {1}, ఇంటి-",
                       validate_decks.validate(self.p(LAYER)).warnings)
+
+    def _the_core_is_a_core_file_in_the_folder_above(self) -> None:
+        cases = {
+            "Zz Home": "must be the id of a core file, such as 'te-home', got 'Zz Home'",
+            "zz-nothing": f"no core file zz-nothing.yaml in {self.dir}; a layer's core is "
+                          f"in the folder above it",
+            "zz-path": 'zz-path.yaml is not a core: it has no part: "core"',
+        }
+        for core, msg in cases.items():
+            with self.subTest(core):
+                self.edit(LAYER, lambda d: d.update(core=core))
+                # Only the core error: without its core nothing else is checked.
+                self.assertEqual(self.errors(LAYER), [f"core: {msg}"])
+
+    def _the_id_is_the_cores_with_its_native(self) -> None:
+        self.edit(LAYER, lambda d: d.update(id="zz-en-house"))
+        self.assertError(LAYER, "id", "a layer of zz-home taught from en has id "
+                                      "'zz-en-home', got 'zz-en-house'")
+        self.assertError(LAYER, "id", "is 'zz-en-house' but the filename stem is "
+                                      "'zz-en-home'")
+
+    def _a_layer_lives_in_its_natives_folder(self) -> None:
+        self.put("bn/zz-en-home.yaml", self.data(LAYER))
+        self.assertError("bn/zz-en-home.yaml", "root",
+                         "a layer lives in decks/zz/en/, the folder of its native "
+                         "language; this one is in 'bn'")
+        self.assertNoError(LAYER, "root")
+
+    def _the_language_and_theme_are_the_cores(self) -> None:
+        self.edit(LAYER, lambda d: d.update(language=dict(LANGUAGE), theme="home",
+                                            colour="blue"))
+        self.assertError(LAYER, "language", "a layer takes its language from its core, "
+                                            "zz-home")
+        self.assertError(LAYER, "theme", "a layer takes its theme from its core, zz-home")
+        self.assertError(LAYER, "root", "unknown field 'colour'")
+
+    def _a_layer_has_what_its_cores_kind_has(self) -> None:
+        self.edit(LAYER, lambda d: d.update(pattern={}, table={}))
+        self.assertError(LAYER, "pattern", "only a layer of a grammar core has pattern")
+        self.assertError(LAYER, "table", "only a layer of a rules core has table")
+        self.edit(RULES_LAYER, lambda d: d.update(cards={}))
+        self.assertError(RULES_LAYER, "cards", "only a layer of a vocab core has cards")
+        self.edit(LAYER, lambda d: d.update(cards=[]))
+        self.assertError(LAYER, "cards", "a layer's cards is a mapping of card id to what "
+                                         "this language gives it")
+
+    def _every_key_is_a_string(self) -> None:
+        self.put(LAYER, self.p(LAYER).read_text(encoding="utf-8")
+                 .replace('"zz-9002":', '"zz-9002":\n    1: "x"', 1))
+        self.assertError(LAYER, "cards.zz-9002", "key 1 was read as int; quote it")
+        self.put(LAYER, self.p(LAYER).read_text(encoding="utf-8") + "2.5: \"x\"\n")
+        self.assertError(LAYER, "root", "key 2.5 was read as float; quote it")
+
+    def _the_script_checks_run_with_the_cores_language(self) -> None:
+        # A layer-only card without a reading, in the core's script.
+        self.edit(LAYER, lambda d: d["cards"].update({"zz-9200": {
+            "target": "పిల్లి", "native": "cat", "pos": "noun"}}))
+        report = validate_decks.validate(self.p(LAYER))
+        self.assertIn("cards.zz-9200: no reading, but script is 'telugu'; learners will "
+                      "need one", report.warnings)
+        # The romanisation file is beside the core, not the layer.
+        self.put("zz-romanisation.yaml", {
+            "schema": 1, "kind": "romanisation", "id": "zz-romanisation",
+            "language": "zz", "scheme": "ISO 15919.", "standard": "ISO 15919",
+            "equivalents": []})
+        self.edit(LAYER, lambda d: d["cards"]["zz-9200"].update(reading="Pilli"))
+        self.assertError(LAYER, "reading", "'Pilli' is not in the zz romanisation: "
+                                           "lowercase ISO 15919 letters, no capitals")
+        self.edit(LAYER, lambda d: d["cards"]["zz-9200"].update(reading="pilli"))
+        self.assertNoError(LAYER)
+
+    def test_a_layer_gives_every_text_of_its_core(self) -> None:
+        cases = (
+            self._the_core_is_a_core_file_in_the_folder_above,
+            self._the_id_is_the_cores_with_its_native,
+            self._a_layer_lives_in_its_natives_folder,
+            self._the_language_and_theme_are_the_cores,
+            self._a_layer_has_what_its_cores_kind_has,
+            self._every_key_is_a_string,
+            self._the_script_checks_run_with_the_cores_language,
+            self._an_entry_gives_only_the_native_side,
+            self._a_card_the_core_writes_needs_its_native,
+            self._a_ref_entry_may_leave_native_out,
+            self._a_ref_entry_names_notes_and_examples_only_where_the_ref_gives_them,
+            self._an_entry_for_no_card_of_the_core_gives_its_target,
+            self._a_layer_only_card_is_a_full_card,
+            self._notes_name_the_cores_notes,
+            self._examples_and_bases_name_the_cores,
+            self._what_the_layer_leaves_out_is_warned_of,
+            self._coverage_is_an_info_line,
+            self._placeholders_in_a_layers_note_count_the_cores_words,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class LayersAcross(B1Case):
@@ -725,31 +810,31 @@ class LayersAcross(B1Case):
         self.addCleanup(setattr, validate_decks, "ROOT", root)
         return decks
 
-    def test_a_layer_validated_alone_finds_its_path_beside_its_core(self) -> None:
+    def _a_layer_validated_alone_finds_its_path_beside_its_core(self) -> None:
         self.in_repository()
         self.assertNotAcross("has no path", LAYER)
         self.p(PATH).unlink()
         self.assertAcross(f"{self.p(LAYER)}: zz has no path; add zz-path.yaml in "
                           f"decks/zz/", LAYER)
 
-    def test_a_core_no_layer_names_is_warned_of(self) -> None:
+    def _a_core_no_layer_names_is_warned_of(self) -> None:
         self.assertEqual(self.section(self.run_main(CORE), CORE), [])
         self.p(LAYER).unlink()
         self.assertWarned(CORE, "root", "no layer names this core, so no learner is "
                                         "taught it", CORE)
 
-    def test_every_layer_of_the_language_is_on_its_path(self) -> None:
+    def _every_layer_of_the_language_is_on_its_path(self) -> None:
         self.edit(PATH, lambda d: d["units"][0].update(decks=["zz-extra"]))
         self.put(EXTRA, single())
         self.assertAcross(f"{self.p(PATH)}: units: does not list 'zz-home', the core id of "
                           f"zz-en-home; every deck of zz is on its path")
 
-    def test_a_layer_of_a_second_native_language_is_on_it_through_its_core(self) -> None:
+    def _a_layer_of_a_second_native_language_is_on_it_through_its_core(self) -> None:
         self.put("bn/zz-bn-home.yaml", BENGALI_HOME)
         self.assertNotAcross("does not list")
         self.assertNotAcross("which is no deck")
 
-    def test_a_layer_whose_core_has_a_theme_is_a_theme_deck(self) -> None:
+    def _a_layer_whose_core_has_a_theme_is_a_theme_deck(self) -> None:
         self.put("../themes.yaml", {"schema": 1, "kind": "themes",
                                     "themes": [{"id": "home", "name": "Home"},
                                                {"id": "health", "name": "Health"}]})
@@ -759,6 +844,158 @@ class LayersAcross(B1Case):
                           f"theme deck to say which decks it takes", *files)
         self.edit(CORE, lambda d: d.update(theme="home"))
         self.assertClean(*files)
+
+    def _a_row_is_a_taught_word_of_the_tables_kind(self) -> None:
+        cases = {
+            "zz-9999": "no vocab deck writes card zz-9999",
+            "zz-9006": "zz-9006 is a pronoun, not one of noun",
+            "zz-9101": "zz-9101 is a phrasebook card; its words are taught as words",
+        }
+        for word, msg in cases.items():
+            with self.subTest(word):
+                self.setUp()
+                self.edit(RULES, lambda d: d["table"]["rows"][1].update(word=word))
+                self.assertAcross(f"{self.p(RULES)}: table.rows[{word}]: {msg}")
+
+    def _a_row_is_not_also_an_exception(self) -> None:
+        self.edit(RULES, lambda d: d["table"]["applies_to"].update({"except": ["zz-9001"]}))
+        self.assertAcross(f"{self.p(RULES)}: table.rows[zz-9001]: zz-9001 is both a row and "
+                          f"in applies_to.except")
+        self.edit(RULES, lambda d: d["table"]["applies_to"].update({"except": ["zz-9999"]}))
+        self.assertAcross(f"{self.p(RULES)}: table.applies_to.except: no deck writes card "
+                          f"zz-9999")
+
+    def _a_rows_word_has_its_reading(self) -> None:
+        self.edit(CORE, lambda d: card(d, "zz-9004").pop("reading"))
+        self.assertAcross(f"{self.p(RULES)}: table.rows[zz-9004]: zz-9004 has no reading, "
+                          f"but the script is 'telugu'; a typed cell shows the word with its "
+                          f"reading")
+
+    def _every_noun_a_b1_deck_teaches_has_its_row(self) -> None:
+        cat = {"id": "zz-9007", "target": "పిల్లి", "reading": "pilli", "pos": "noun",
+               "notes": [{"id": "tail", "kind": "usage"}]}
+        self.edit(CORE, lambda d: d["cards"].insert(1, cat))
+        self.edit(LAYER, lambda d: d["cards"].update(
+            {"zz-9007": {"native": "cat", "notes": {"tail": "Also a shy person."}}}))
+        self.assertAcross(f"{self.p(RULES)}: table: zz-9007 (పిల్లి) is a noun taught in "
+                          f"zz-en-home but has no row; add its forms, or list it in "
+                          f"applies_to.except")
+        self.edit(RULES, lambda d: d["table"]["applies_to"].update({"except": ["zz-9007"]}))
+        self.assertNotAcross("has no row")
+
+    def _a_noun_on_no_plan_needs_no_row(self) -> None:
+        self.put(EXTRA, single())
+        self.assertNotAcross("has no row", RULES, EXTRA)
+
+    def _a_rule_id_is_defined_once_in_the_language(self) -> None:
+        other = self.data(RULES)
+        other.update(id="zz-grammar-more")
+        self.put("zz-grammar-more.yaml", other)
+        self.assertAcross(f"{self.p(RULES)}: rule zz-rule-lo: is also defined in "
+                          f"{self.p('zz-grammar-more.yaml')}", RULES)
+
+    def _a_pair_notes_partner_is_taught_in_the_course(self) -> None:
+        pair = [{"kind": "pair", "ref": "zz-9001", "text": "Not ఇల్లు (illu)."}]
+        self.put(EXTRA, single(cards=[dict(CAT, notes=pair)]))
+        self.assertNotAcross("minimal-pair", EXTRA)
+        self.put("zz-bn-extra.yaml", single("zz-bn-extra", native="bn", cards=[
+            {"id": "zz-9601", "target": "కుక్క", "reading": "kukka",
+             "native": "কুকুর (kukur)", "notes": pair}]))
+        self.assertAcross(f"{self.p('zz-bn-extra.yaml')}: card zz-9601: notes[0].ref names "
+                          f"zz-9001, which no zz-bn deck teaches; the minimal-pair panel "
+                          f"shows both words with their meanings", "zz-bn-extra.yaml")
+
+    def _a_core_pair_notes_partner_is_taught_from_the_layers_language(self) -> None:
+        self.edit(CORE, lambda d: d["cards"].insert(0, {
+            "id": "zz-9008", "target": "కాలం", "reading": "kālam", "pos": "other",
+            "notes": [{"id": "time", "kind": "usage"}]}))
+        self.edit(CORE, lambda d: card(d, "zz-9001")["notes"].append(
+            {"id": "pair", "kind": "pair", "ref": "zz-9008"}))
+        self.edit(LAYER, lambda d: d["cards"]["zz-9001"]["notes"].update(
+            pair="Not కాలం (kālam), time."))
+        self.assertAcross(f"{self.p(LAYER)}: cards.zz-9001.notes.pair: the partner zz-9008 "
+                          f"is not taught from English; translate it in a zz-en deck, or "
+                          f"leave this note's text out")
+        self.edit(LAYER, lambda d: d["cards"].update({"zz-9008": {
+            "native": "time", "notes": {"time": "Also a season."}}}))
+        self.assertNotAcross("the partner")
+
+    def _a_word_card_of_a_b1_deck_has_notes(self) -> None:
+        self.edit(CORE, lambda d: card(d, "zz-9004").pop("notes"))
+        self.edit(LAYER, lambda d: d["cards"]["zz-9004"].pop("notes"))
+        self.assertWarned(CORE, "card zz-9004", "no notes; every word card should have one "
+                                                "or more (pair, culture, usage, behaviour, "
+                                                "note)")
+        self.edit(LAYER, lambda d: d["cards"].update({"zz-9200": {
+            "target": "పోవు", "reading": "pōvu", "native": "to go away", "pos": "verb"}}))
+        self.assertWarned(LAYER, "cards.zz-9200", "no notes; every word card should have "
+                                                  "one or more (pair, culture, usage, "
+                                                  "behaviour, note)")
+
+    def _a_word_card_on_no_plan_is_not_warned_of(self) -> None:
+        self.put(EXTRA, single())
+        self.assertEqual(self.section(self.run_main(EXTRA), EXTRA), [])
+
+    def _a_pair_in_a_b1_deck_has_its_pair_note(self) -> None:
+        verb = {"target": "పోవు", "reading": "pōvu", "native": "to go away", "pos": "verb",
+                "pair": "zz-9003", "notes": [{"kind": "usage", "text": "Rude."}]}
+        self.edit(LAYER, lambda d: d["cards"].update({"zz-9200": verb}))
+        self.assertWarned(LAYER, "cards.zz-9200", "pair names zz-9003, but no pair note does; "
+                                                  "the minimal-pair button needs a pair note")
+        verb["notes"].append({"kind": "pair", "ref": "zz-9003", "text": "Not వెళ్ళు (veḷḷu)."})
+        self.edit(LAYER, lambda d: d["cards"].update({"zz-9200": verb}))
+        self.assertNotIn("pair names", "\n".join(self.run_main()))
+
+    def _culture_notes_are_tagged_unreviewed_or_reviewed(self) -> None:
+        culture = {"id": "school", "kind": "culture", "source": "https://example.org/x"}
+        self.edit(CORE, lambda d: card(d, "zz-9001")["notes"].append(culture))
+        self.assertNoError(CORE, "tags")
+        for tags, msg in (([], 'has culture notes, so it is tagged "unreviewed" until a '
+                               'speaker checks them, then "reviewed" (#99)'),
+                          (["reviewed", "unreviewed"], '"reviewed" and "unreviewed" '
+                                                       'together; a deck is one or the other')):
+            with self.subTest(tags=tags):
+                self.edit(CORE, lambda d: d.update(tags=tags))
+                self.assertError(CORE, "tags", msg)
+        self.edit(CORE, lambda d: d.update(tags=["reviewed"]))
+        self.assertNoError(CORE, "tags")
+        # A layer-only card's culture note: the tag is the layer's.
+        self.edit(LAYER, lambda d: d["cards"].update({"zz-9200": {
+            "target": "పండుగ", "reading": "paṇḍuga", "native": "festival", "pos": "other",
+            "notes": [{"kind": "culture", "text": "Sankranti is in January.",
+                       "source": "https://example.org/y"}]}}))
+        self.assertError(LAYER, "tags", 'has culture notes, so it is tagged "unreviewed" '
+                                        'until a speaker checks them, then "reviewed" (#99)')
+
+    def test_refs_rows_and_notes_resolve_through_the_layers(self) -> None:
+        cases = (
+            self._a_layer_validated_alone_finds_its_path_beside_its_core,
+            self._a_core_no_layer_names_is_warned_of,
+            self._every_layer_of_the_language_is_on_its_path,
+            self._a_layer_of_a_second_native_language_is_on_it_through_its_core,
+            self._a_layer_whose_core_has_a_theme_is_a_theme_deck,
+            self._a_row_is_a_taught_word_of_the_tables_kind,
+            self._a_row_is_not_also_an_exception,
+            self._a_rows_word_has_its_reading,
+            self._every_noun_a_b1_deck_teaches_has_its_row,
+            self._a_noun_on_no_plan_needs_no_row,
+            self._a_rule_id_is_defined_once_in_the_language,
+            self._a_pair_notes_partner_is_taught_in_the_course,
+            self._a_core_pair_notes_partner_is_taught_from_the_layers_language,
+            self._a_word_card_of_a_b1_deck_has_notes,
+            self._a_word_card_on_no_plan_is_not_warned_of,
+            self._a_pair_in_a_b1_deck_has_its_pair_note,
+            self._culture_notes_are_tagged_unreviewed_or_reviewed,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 def phrase(k: int) -> tuple[str, dict, dict]:
@@ -780,7 +1017,7 @@ class Phrasebook(B1Case):
             self.edit(CORE, lambda d: d["cards"].append(core_card))
             self.edit(LAYER, lambda d: d["cards"].update({cid: entry}))
 
-    def test_phrasebook_is_true_or_left_out(self) -> None:
+    def _phrasebook_is_true_or_left_out(self) -> None:
         for value in ("true", False, "yes", 1):
             with self.subTest(value=value):
                 self.edit(CORE, lambda d: card(d, "zz-9101").update(phrasebook=value))
@@ -793,12 +1030,12 @@ class Phrasebook(B1Case):
         self.assertError(CORE, "card zz-9101", "phrasebook must be true, unquoted, or left "
                                                "out; got 'yes'")
 
-    def test_a_ref_cannot_give_phrasebook(self) -> None:
+    def _a_ref_cannot_give_phrasebook(self) -> None:
         self.put(EXTRA, single(cards=[{"ref": "zz-9101", "phrasebook": True}]))
         self.assertError(EXTRA, "ref zz-9101", "a ref cannot give 'phrasebook': it belongs "
                                                "to the card itself, where it is written")
 
-    def test_a_course_has_15_to_25_phrasebook_cards(self) -> None:
+    def _a_course_has_15_to_25_phrasebook_cards(self) -> None:
         for n, ok in ((14, False), (15, True), (25, True), (26, False)):
             with self.subTest(n=n):
                 self.setUp()
@@ -810,7 +1047,7 @@ class Phrasebook(B1Case):
                 else:
                     self.assertAcross(line)
 
-    def test_none_is_an_error_only_with_a_plan(self) -> None:
+    def _none_is_an_error_only_with_a_plan(self) -> None:
         self.phrasebook_of(0)
         self.assertAcross(f"{self.p(PATH)}: phrasebook: the zz-en course has 0 phrasebook "
                           f"cards; a course's phrasebook has 15 to 25 (none)")
@@ -833,7 +1070,7 @@ class Phrasebook(B1Case):
                           f"phrasebook cards; a course's phrasebook has 15 to 25 "
                           f"(zy-bn-words)", "../zy")
 
-    def test_a_course_with_no_written_deck_has_no_phrasebook_size(self) -> None:
+    def _a_course_with_no_written_deck_has_no_phrasebook_size(self) -> None:
         # A path and a script deck, no written deck: not held to 15 to 25.
         zx = self.tmp / "zx"
         zx.mkdir()
@@ -853,7 +1090,7 @@ class Phrasebook(B1Case):
         self.assertAcross(f"{self.p(PATH)}: phrasebook: the zz-en course has 0 phrasebook "
                           f"cards; a course's phrasebook has 15 to 25 (none)")
 
-    def test_a_bengali_layers_phrasebook_counts_for_bengali_learners_only(self) -> None:
+    def _a_bengali_layers_phrasebook_counts_for_bengali_learners_only(self) -> None:
         bn = dict(BENGALI_HOME, cards=dict(BENGALI_HOME["cards"], **{
             "zz-9150": {"target": "అమ్మ!", "reading": "amma!", "pos": "phrase",
                         "native": "মা! (mā!)", "phrasebook": True}}))
@@ -865,7 +1102,7 @@ class Phrasebook(B1Case):
                       f"phrasebook cards; a course's phrasebook has 15 to 25 "
                       f"(zz-bn-home)", lines)
 
-    def test_the_phrasebook_comes_first(self) -> None:
+    def _the_phrasebook_comes_first(self) -> None:
         self.put(EXTRA, single(cards=[dict(CAT, pos="other")]))
         self.edit(PATH, lambda d: d["units"].insert(0, {"decks": ["zz-extra"], "words": 1}))
         self.assertAcross(f"{self.p(PATH)}: units[1]: zz-en-home teaches phrasebook card "
@@ -882,6 +1119,83 @@ class Phrasebook(B1Case):
         self.edit(PATH, lambda d: d["units"][1]["decks"].append("zz-extra"))
         self.assertNotAcross("the phrasebook comes first")
 
+    def _a_card_or_a_ref_cannot_name_it(self) -> None:
+        self.edit(CORE, lambda d: card(d, "zz-9001").update(modes=["grammarUnderstood"]))
+        self.assertError(CORE, "card zz-9001", "grammarUnderstood is only for a rules "
+                                               "table's cells")
+        self.put(EXTRA, single(cards=[{"ref": "zz-9001", "modes": ["grammarUnderstood"]}]))
+        self.assertError(EXTRA, "ref zz-9001", "grammarUnderstood is only for a rules "
+                                               "table's cells")
+        self.put(EXTRA, single(cards=[{"ref": "zz-9001", "modes": ["recognition"]}]))
+        self.assertNoError(EXTRA)
+
+    def _rules_is_a_list_of_the_languages_rule_ids(self) -> None:
+        cases = {
+            "zz-rule-ki": 'rules must be a list of rule ids, such as ["zz-rule-past"]',
+            ("ki",): "rules[0] must be a zz rule id, zz-rule- and a name, got 'ki'",
+            ("zz-rule-ki", "zz-rule-ki"): "rules lists 'zz-rule-ki' twice",
+        }
+        for value, msg in cases.items():
+            with self.subTest(value=value):
+                rules = list(value) if isinstance(value, tuple) else value
+                self.edit(CORE, lambda d: card(d, "zz-9002").update(rules=rules))
+                self.assertError(CORE, "card zz-9002", msg)
+
+    def _a_ref_cannot_give_rules(self) -> None:
+        self.put(EXTRA, single(cards=[{"ref": "zz-9002", "rules": ["zz-rule-ki"]}]))
+        self.assertError(EXTRA, "ref zz-9002", "a ref cannot give 'rules': it belongs to "
+                                               "the card itself, where it is written")
+
+    def _a_rule_named_is_defined_by_a_rules_deck_of_the_language(self) -> None:
+        self.assertNotAcross("rules names", CORE)
+        self.edit(CORE, lambda d: card(d, "zz-9002").update(rules=["zz-rule-past"]))
+        self.assertAcross(f"{self.p(CORE)}: card zz-9002: rules names zz-rule-past, which "
+                          f"no rules deck of zz defines", CORE)
+        self.edit(LAYER, lambda d: d["cards"].update({"zz-9200": {
+            "target": "ఇంట్లో", "reading": "iṇṭlō", "native": "at home", "pos": "adv",
+            "rules": ["zz-rule-on"]}}))
+        self.assertAcross(f"{self.p(LAYER)}: cards.zz-9200: rules names zz-rule-on, which "
+                          f"no rules deck of zz defines", LAYER)
+
+    def _wiktionary_is_true_or_left_out(self) -> None:
+        self.put(EXTRA, single(cards=[dict(CAT, wiktionary=False)]))
+        self.assertError(EXTRA, "card zz-9501", "wiktionary must be true, or left out where "
+                                                "Wiktionary has no entry; got False")
+        self.put(EXTRA, single(cards=[dict(CAT, wiktionary=True), {
+            "ref": "zz-9001", "wiktionary": "yes"}]))
+        self.assertError(EXTRA, "ref zz-9001", "wiktionary must be true, or left out where "
+                                               "Wiktionary has no entry; got 'yes'")
+        self.edit(LAYER, lambda d: d["cards"]["zz-9001"].update(wiktionary=1))
+        self.assertError(LAYER, "cards.zz-9001", "wiktionary must be true, or left out "
+                                                 "where Wiktionary has no entry; got 1")
+        self.edit(LAYER, lambda d: d["cards"]["zz-9001"].update(wiktionary=True))
+        self.assertNoError(LAYER)
+
+    def test_the_phrasebook_modes_sentences_and_wiktionary(self) -> None:
+        cases = (
+            self._phrasebook_is_true_or_left_out,
+            self._a_ref_cannot_give_phrasebook,
+            self._a_course_has_15_to_25_phrasebook_cards,
+            self._none_is_an_error_only_with_a_plan,
+            self._a_course_with_no_written_deck_has_no_phrasebook_size,
+            self._a_bengali_layers_phrasebook_counts_for_bengali_learners_only,
+            self._the_phrasebook_comes_first,
+            self._a_card_or_a_ref_cannot_name_it,
+            self._rules_is_a_list_of_the_languages_rule_ids,
+            self._a_ref_cannot_give_rules,
+            self._a_rule_named_is_defined_by_a_rules_deck_of_the_language,
+            self._wiktionary_is_true_or_left_out,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
+
 
 class RulesCore(B1Case):
     """Section 4.2: a rules core's table and rules."""
@@ -889,7 +1203,7 @@ class RulesCore(B1Case):
     def table(self, change) -> None:
         self.edit(RULES, lambda d: change(d["table"]))
 
-    def test_the_table_is_required_and_a_mapping(self) -> None:
+    def _the_table_is_required_and_a_mapping(self) -> None:
         self.edit(RULES, lambda d: d.pop("table"))
         self.assertError(RULES, "table", "is required on a rules deck")
         self.edit(RULES, lambda d: d.update(table=[]))
@@ -897,7 +1211,7 @@ class RulesCore(B1Case):
         self.edit(RULES, lambda d: d.update(table={"colour": "blue"}))
         self.assertError(RULES, "table", "unknown field 'colour'")
 
-    def test_applies_to_names_the_rows_kind(self) -> None:
+    def _applies_to_names_the_rows_kind(self) -> None:
         self.table(lambda t: t.pop("applies_to"))
         self.assertError(RULES, "table.applies_to", 'is required: which words are its rows, '
                                                     'as { pos: ["noun"] }')
@@ -914,7 +1228,7 @@ class RulesCore(B1Case):
                                                   "except": ["zz-9030"]}))
         self.assertNoError(RULES, "applies_to")
 
-    def test_slots_are_slot_keys(self) -> None:
+    def _slots_are_slot_keys(self) -> None:
         self.table(lambda t: t.update(slots=[]))
         self.assertError(RULES, "table.slots", "must be a non-empty list of slot keys")
         for bad in ("on", "1st", "Lo", "no"):
@@ -926,7 +1240,7 @@ class RulesCore(B1Case):
         self.table(lambda t: t.update(slots=["lo", "lo", "to", "nunci"]))
         self.assertError(RULES, "table.slots", "slots contains duplicates")
 
-    def test_rows(self) -> None:
+    def _rows(self) -> None:
         self.table(lambda t: t.update(rows="x"))
         self.assertError(RULES, "table.rows", "must be a non-empty list of rows")
         self.setUp()
@@ -937,7 +1251,7 @@ class RulesCore(B1Case):
         self.assertError(RULES, "table.rows[2]", "word must be the id of a zz card, got "
                                                  "'zz-1'")
 
-    def test_a_row_has_its_own_word_and_id_part(self) -> None:
+    def _a_row_has_its_own_word_and_id_part(self) -> None:
         self.table(lambda t: t["rows"].append(dict(t["rows"][0])))
         self.assertError(RULES, "table.rows[zz-9001]", "zz-9001 has a row already")
         self.setUp()
@@ -951,7 +1265,7 @@ class RulesCore(B1Case):
         self.table(lambda t: t["rows"][1].update(key="amma"))
         self.assertNoError(RULES)
 
-    def test_every_form_is_listed_with_its_reading(self) -> None:
+    def _every_form_is_listed_with_its_reading(self) -> None:
         self.table(lambda t: t["rows"][0]["forms"].pop("nunci"))
         self.assertError(RULES, "table.rows[zz-9001]", "forms missing slots: ['nunci']")
         self.setUp()
@@ -969,7 +1283,7 @@ class RulesCore(B1Case):
         self.assertIn("table.rows[zz-9001]: has one form only, so its grammar questions "
                       "cannot offer a choice", report.warnings)
 
-    def test_rules(self) -> None:
+    def _rules(self) -> None:
         self.edit(RULES, lambda d: d.pop("rules"))
         self.assertError(RULES, "rules", "is required on a rules deck: a non-empty list of "
                                          "rules")
@@ -987,7 +1301,7 @@ class RulesCore(B1Case):
         self.assertError(RULES, "rule zz-rule-lo", "duplicate rule id")
         self.assertError(RULES, "rule zz-rule-lo", "'x' is not a slot of the table")
 
-    def test_every_slot_belongs_to_one_rule(self) -> None:
+    def _every_slot_belongs_to_one_rule(self) -> None:
         self.edit(RULES, lambda d: d["rules"][1].update(slots=["ki", "lo"]))
         self.assertError(RULES, "rule zz-rule-ki", "'lo' is also in rule zz-rule-lo; a slot "
                                                    "belongs to one rule")
@@ -1001,73 +1315,44 @@ class RulesCore(B1Case):
         self.edit(RULES_LAYER, lambda d: d["rules"].pop("zz-rule-nunci"))
         self.assertClean(RULES, RULES_LAYER)
 
-    def test_a_rules_words_have_their_readings(self) -> None:
+    def _a_rules_words_have_their_readings(self) -> None:
         self.edit(RULES, lambda d: d["rules"][0]["words"][0].pop("reading"))
         self.assertError(RULES, "rule zz-rule-lo", "words[0] needs word, and its reading in a "
                                                    "script that needs one")
 
-    def test_keys_in_the_table_and_rules_are_strings(self) -> None:
+    def _keys_in_the_table_and_rules_are_strings(self) -> None:
         text = self.p(RULES).read_text(encoding="utf-8")
         self.put(RULES, text.replace('"nunci": "ఇంటి నుంచి" }', '"nunci": "ఇంటి నుంచి", 1: "x" }', 1))
         self.assertError(RULES, "table.rows[0].forms", "key 1 was read as int; quote it")
 
-    def test_a_rules_core_has_no_cards_pattern_or_theme(self) -> None:
+    def _a_rules_core_has_no_cards_pattern_or_theme(self) -> None:
         self.edit(RULES, lambda d: d.update(pattern={}, theme="home"))
         self.assertError(RULES, "pattern", "only a grammar core has a pattern")
         self.assertError(RULES, "theme", "only a vocab deck teaches a theme")
 
-
-class RowsAcross(B1Case):
-    """Sections 4.3 and 4.4: rows against the language's words."""
-
-    def test_a_row_is_a_taught_word_of_the_tables_kind(self) -> None:
-        cases = {
-            "zz-9999": "no vocab deck writes card zz-9999",
-            "zz-9006": "zz-9006 is a pronoun, not one of noun",
-            "zz-9101": "zz-9101 is a phrasebook card; its words are taught as words",
-        }
-        for word, msg in cases.items():
-            with self.subTest(word):
-                self.setUp()
-                self.edit(RULES, lambda d: d["table"]["rows"][1].update(word=word))
-                self.assertAcross(f"{self.p(RULES)}: table.rows[{word}]: {msg}")
-
-    def test_a_row_is_not_also_an_exception(self) -> None:
-        self.edit(RULES, lambda d: d["table"]["applies_to"].update({"except": ["zz-9001"]}))
-        self.assertAcross(f"{self.p(RULES)}: table.rows[zz-9001]: zz-9001 is both a row and "
-                          f"in applies_to.except")
-        self.edit(RULES, lambda d: d["table"]["applies_to"].update({"except": ["zz-9999"]}))
-        self.assertAcross(f"{self.p(RULES)}: table.applies_to.except: no deck writes card "
-                          f"zz-9999")
-
-    def test_a_rows_word_has_its_reading(self) -> None:
-        self.edit(CORE, lambda d: card(d, "zz-9004").pop("reading"))
-        self.assertAcross(f"{self.p(RULES)}: table.rows[zz-9004]: zz-9004 has no reading, "
-                          f"but the script is 'telugu'; a typed cell shows the word with its "
-                          f"reading")
-
-    def test_every_noun_a_b1_deck_teaches_has_its_row(self) -> None:
-        cat = {"id": "zz-9007", "target": "పిల్లి", "reading": "pilli", "pos": "noun",
-               "notes": [{"id": "tail", "kind": "usage"}]}
-        self.edit(CORE, lambda d: d["cards"].insert(1, cat))
-        self.edit(LAYER, lambda d: d["cards"].update(
-            {"zz-9007": {"native": "cat", "notes": {"tail": "Also a shy person."}}}))
-        self.assertAcross(f"{self.p(RULES)}: table: zz-9007 (పిల్లి) is a noun taught in "
-                          f"zz-en-home but has no row; add its forms, or list it in "
-                          f"applies_to.except")
-        self.edit(RULES, lambda d: d["table"]["applies_to"].update({"except": ["zz-9007"]}))
-        self.assertNotAcross("has no row")
-
-    def test_a_noun_on_no_plan_needs_no_row(self) -> None:
-        self.put(EXTRA, single())
-        self.assertNotAcross("has no row", RULES, EXTRA)
-
-    def test_a_rule_id_is_defined_once_in_the_language(self) -> None:
-        other = self.data(RULES)
-        other.update(id="zz-grammar-more")
-        self.put("zz-grammar-more.yaml", other)
-        self.assertAcross(f"{self.p(RULES)}: rule zz-rule-lo: is also defined in "
-                          f"{self.p('zz-grammar-more.yaml')}", RULES)
+    def test_a_rules_core_and_its_table(self) -> None:
+        cases = (
+            self._the_table_is_required_and_a_mapping,
+            self._applies_to_names_the_rows_kind,
+            self._slots_are_slot_keys,
+            self._rows,
+            self._a_row_has_its_own_word_and_id_part,
+            self._every_form_is_listed_with_its_reading,
+            self._rules,
+            self._every_slot_belongs_to_one_rule,
+            self._a_rules_words_have_their_readings,
+            self._keys_in_the_table_and_rules_are_strings,
+            self._a_rules_core_has_no_cards_pattern_or_theme,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class RulesLayer(B1Case):
@@ -1076,7 +1361,7 @@ class RulesLayer(B1Case):
     def table(self, change) -> None:
         self.edit(RULES_LAYER, lambda d: change(d["table"]))
 
-    def test_the_table_has_its_slot_name_and_every_label(self) -> None:
+    def _the_table_has_its_slot_name_and_every_label(self) -> None:
         self.table(lambda t: t.pop("slot_name"))
         self.assertError(RULES_LAYER, "table.slot_name", "is required")
         self.table(lambda t: t["slots"].pop("nunci"))
@@ -1084,7 +1369,7 @@ class RulesLayer(B1Case):
         self.table(lambda t: t["slots"].update(lu="by {meaning}"))
         self.assertError(RULES_LAYER, "table.slots", "'lu' is not a slot of the core")
 
-    def test_a_labels_only_placeholder_is_meaning(self) -> None:
+    def _a_labels_only_placeholder_is_meaning(self) -> None:
         self.table(lambda t: t["slots"].update(lo="in {word}"))
         self.assertError(RULES_LAYER, "table.slots.lo",
                          "uses unknown placeholder {word}; a label may use {meaning}, and "
@@ -1092,20 +1377,20 @@ class RulesLayer(B1Case):
         self.table(lambda t: t["slots"].update(lo="inside"))
         self.assertNoError(RULES_LAYER)
 
-    def test_prompts_name_rows_and_slots_of_the_core(self) -> None:
+    def _prompts_name_rows_and_slots_of_the_core(self) -> None:
         self.table(lambda t: t["prompts"].update({"zz-9999": {"lo": "x"},
                                                   "zz-9004": {"lu": "x"}}))
         self.assertError(RULES_LAYER, "table.prompts", "'zz-9999' is not a row of the core")
         self.assertError(RULES_LAYER, "table.prompts", "'lu' is not a slot of the core")
 
-    def test_rules_have_a_name_and_an_explanation(self) -> None:
+    def _rules_have_a_name_and_an_explanation(self) -> None:
         self.edit(RULES_LAYER, lambda d: d["rules"].update({"zz-rule-past": {}}))
         self.assertError(RULES_LAYER, "rules", "'zz-rule-past' is not a rule of the core")
         self.edit(RULES_LAYER, lambda d: d["rules"].update({"zz-rule-lo": {}}))
         self.assertError(RULES_LAYER, "rules.zz-rule-lo", "name is required")
         self.assertError(RULES_LAYER, "rules.zz-rule-lo", "explanation is required")
 
-    def test_an_explanations_placeholders_count_the_rules_words(self) -> None:
+    def _an_explanations_placeholders_count_the_rules_words(self) -> None:
         self.edit(RULES_LAYER, lambda d: d["rules"]["zz-rule-to"].update(
             explanation="{1} and {2}, not {01}."))
         self.assertError(RULES_LAYER, "rules.zz-rule-to.explanation",
@@ -1118,58 +1403,31 @@ class RulesLayer(B1Case):
         self.assertIn("rules.zz-rule-to.explanation: never uses {1}, -తో",
                       validate_decks.validate(self.p(RULES_LAYER)).warnings)
 
-    def test_a_rule_the_layer_leaves_out_is_not_asked(self) -> None:
+    def _a_rule_the_layer_leaves_out_is_not_asked(self) -> None:
         self.edit(RULES_LAYER, lambda d: d["rules"].pop("zz-rule-nunci"))
         self.assertInfo(RULES_LAYER, "rules", "covers 3 of 4 rules of "
                                               "zz-grammar-case-endings; the cells of "
                                               "zz-rule-nunci are not asked")
         self.assertClean()
 
-
-class Modes(B1Case):
-    """Section 4.7: grammarUnderstood is only for a rules table's cells."""
-
-    def test_a_card_or_a_ref_cannot_name_it(self) -> None:
-        self.edit(CORE, lambda d: card(d, "zz-9001").update(modes=["grammarUnderstood"]))
-        self.assertError(CORE, "card zz-9001", "grammarUnderstood is only for a rules "
-                                               "table's cells")
-        self.put(EXTRA, single(cards=[{"ref": "zz-9001", "modes": ["grammarUnderstood"]}]))
-        self.assertError(EXTRA, "ref zz-9001", "grammarUnderstood is only for a rules "
-                                               "table's cells")
-        self.put(EXTRA, single(cards=[{"ref": "zz-9001", "modes": ["recognition"]}]))
-        self.assertNoError(EXTRA)
-
-
-class SentenceRules(B1Case):
-    """Section 5: the rules a sentence uses."""
-
-    def test_rules_is_a_list_of_the_languages_rule_ids(self) -> None:
-        cases = {
-            "zz-rule-ki": 'rules must be a list of rule ids, such as ["zz-rule-past"]',
-            ("ki",): "rules[0] must be a zz rule id, zz-rule- and a name, got 'ki'",
-            ("zz-rule-ki", "zz-rule-ki"): "rules lists 'zz-rule-ki' twice",
-        }
-        for value, msg in cases.items():
-            with self.subTest(value=value):
-                rules = list(value) if isinstance(value, tuple) else value
-                self.edit(CORE, lambda d: card(d, "zz-9002").update(rules=rules))
-                self.assertError(CORE, "card zz-9002", msg)
-
-    def test_a_ref_cannot_give_rules(self) -> None:
-        self.put(EXTRA, single(cards=[{"ref": "zz-9002", "rules": ["zz-rule-ki"]}]))
-        self.assertError(EXTRA, "ref zz-9002", "a ref cannot give 'rules': it belongs to "
-                                               "the card itself, where it is written")
-
-    def test_a_rule_named_is_defined_by_a_rules_deck_of_the_language(self) -> None:
-        self.assertNotAcross("rules names", CORE)
-        self.edit(CORE, lambda d: card(d, "zz-9002").update(rules=["zz-rule-past"]))
-        self.assertAcross(f"{self.p(CORE)}: card zz-9002: rules names zz-rule-past, which "
-                          f"no rules deck of zz defines", CORE)
-        self.edit(LAYER, lambda d: d["cards"].update({"zz-9200": {
-            "target": "ఇంట్లో", "reading": "iṇṭlō", "native": "at home", "pos": "adv",
-            "rules": ["zz-rule-on"]}}))
-        self.assertAcross(f"{self.p(LAYER)}: cards.zz-9200: rules names zz-rule-on, which "
-                          f"no rules deck of zz defines", LAYER)
+    def test_a_rules_layer_names_its_table(self) -> None:
+        cases = (
+            self._the_table_has_its_slot_name_and_every_label,
+            self._a_labels_only_placeholder_is_meaning,
+            self._prompts_name_rows_and_slots_of_the_core,
+            self._rules_have_a_name_and_an_explanation,
+            self._an_explanations_placeholders_count_the_rules_words,
+            self._a_rule_the_layer_leaves_out_is_not_asked,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class SingleFileNotes(B1Case):
@@ -1179,7 +1437,7 @@ class SingleFileNotes(B1Case):
         self.put(EXTRA, single(cards=[dict(CAT, notes=notes)], tags=["unreviewed"]))
         return self.errors(EXTRA)
 
-    def test_valid_notes(self) -> None:
+    def _valid_notes(self) -> None:
         good = [
             {"kind": "pair", "ref": "zz-9001", "text": "Not ఇల్లు (illu)."},
             {"kind": "culture", "text": "Cats keep the rice store safe.",
@@ -1196,7 +1454,7 @@ class SingleFileNotes(B1Case):
         report = validate_decks.validate(self.p(EXTRA))
         self.assertEqual(report.cards[0].notes, [])
 
-    def test_bad_notes(self) -> None:
+    def _bad_notes(self) -> None:
         def note(**fields: object) -> list[dict]:
             return [dict({"kind": "usage", "text": "A note."}, **fields)]
         cases = [
@@ -1240,21 +1498,17 @@ class SingleFileNotes(B1Case):
         self.assertIn("card zz-9501: notes[0].text never uses {1}, పిల్లులు",
                       validate_decks.validate(self.p(EXTRA)).warnings)
 
-    def test_a_ref_in_a_single_file_deck_may_give_typed_notes(self) -> None:
+    def _a_ref_in_a_single_file_deck_may_give_typed_notes(self) -> None:
         self.put(EXTRA, single(cards=[{"ref": "zz-9001", "notes": [
             {"kind": "pair", "ref": "zz-9004", "text": "Not అమ్మ (amma)."}]}]))
         self.assertClean(EXTRA)
 
-    def test_a_pair_notes_partner_is_written_in_the_language(self) -> None:
+    def _a_pair_notes_partner_is_written_in_the_language(self) -> None:
         self.notes([{"kind": "pair", "ref": "zz-9999", "text": "Not this."}])
         self.assertAcross(f"{self.p(EXTRA)}: card zz-9501: notes[0].ref names card zz-9999, "
                           f"which no deck writes", EXTRA)
 
-
-class CoreNotes(B1Case):
-    """Sections 6.2 and 6.3: a core's notes hold the facts; layers the text."""
-
-    def test_a_core_note_has_an_id_and_no_text(self) -> None:
+    def _a_core_note_has_an_id_and_no_text(self) -> None:
         self.edit(CORE, lambda d: card(d, "zz-9001").update(notes="Before an ending."))
         self.assertError(CORE, "card zz-9001", "notes must be a list of notes in a core "
                                                "file; their text is in each layer")
@@ -1265,106 +1519,30 @@ class CoreNotes(B1Case):
         self.assertError(CORE, "card zz-9001", "notes[1].text: a core note's text is in each "
                                                "layer, under cards.zz-9001.notes.stem")
 
-    def test_a_core_pair_note_names_a_card_of_the_language(self) -> None:
+    def _a_core_pair_note_names_a_card_of_the_language(self) -> None:
         self.edit(CORE, lambda d: card(d, "zz-9001")["notes"].append(
             {"id": "pair", "kind": "pair", "ref": "zz-9999"}))
         self.assertAcross(f"{self.p(CORE)}: card zz-9001: notes[1].ref names card zz-9999, "
                           f"which no deck writes", CORE)
 
-
-class NotesAcross(B1Case):
-    """Section 6.5: partners taught, word cards with notes, culture tags."""
-
-    def test_a_pair_notes_partner_is_taught_in_the_course(self) -> None:
-        pair = [{"kind": "pair", "ref": "zz-9001", "text": "Not ఇల్లు (illu)."}]
-        self.put(EXTRA, single(cards=[dict(CAT, notes=pair)]))
-        self.assertNotAcross("minimal-pair", EXTRA)
-        self.put("zz-bn-extra.yaml", single("zz-bn-extra", native="bn", cards=[
-            {"id": "zz-9601", "target": "కుక్క", "reading": "kukka",
-             "native": "কুকুর (kukur)", "notes": pair}]))
-        self.assertAcross(f"{self.p('zz-bn-extra.yaml')}: card zz-9601: notes[0].ref names "
-                          f"zz-9001, which no zz-bn deck teaches; the minimal-pair panel "
-                          f"shows both words with their meanings", "zz-bn-extra.yaml")
-
-    def test_a_core_pair_notes_partner_is_taught_from_the_layers_language(self) -> None:
-        self.edit(CORE, lambda d: d["cards"].insert(0, {
-            "id": "zz-9008", "target": "కాలం", "reading": "kālam", "pos": "other",
-            "notes": [{"id": "time", "kind": "usage"}]}))
-        self.edit(CORE, lambda d: card(d, "zz-9001")["notes"].append(
-            {"id": "pair", "kind": "pair", "ref": "zz-9008"}))
-        self.edit(LAYER, lambda d: d["cards"]["zz-9001"]["notes"].update(
-            pair="Not కాలం (kālam), time."))
-        self.assertAcross(f"{self.p(LAYER)}: cards.zz-9001.notes.pair: the partner zz-9008 "
-                          f"is not taught from English; translate it in a zz-en deck, or "
-                          f"leave this note's text out")
-        self.edit(LAYER, lambda d: d["cards"].update({"zz-9008": {
-            "native": "time", "notes": {"time": "Also a season."}}}))
-        self.assertNotAcross("the partner")
-
-    def test_a_word_card_of_a_b1_deck_has_notes(self) -> None:
-        self.edit(CORE, lambda d: card(d, "zz-9004").pop("notes"))
-        self.edit(LAYER, lambda d: d["cards"]["zz-9004"].pop("notes"))
-        self.assertWarned(CORE, "card zz-9004", "no notes; every word card should have one "
-                                                "or more (pair, culture, usage, behaviour, "
-                                                "note)")
-        self.edit(LAYER, lambda d: d["cards"].update({"zz-9200": {
-            "target": "పోవు", "reading": "pōvu", "native": "to go away", "pos": "verb"}}))
-        self.assertWarned(LAYER, "cards.zz-9200", "no notes; every word card should have "
-                                                  "one or more (pair, culture, usage, "
-                                                  "behaviour, note)")
-
-    def test_a_word_card_on_no_plan_is_not_warned_of(self) -> None:
-        self.put(EXTRA, single())
-        self.assertEqual(self.section(self.run_main(EXTRA), EXTRA), [])
-
-    def test_a_pair_in_a_b1_deck_has_its_pair_note(self) -> None:
-        verb = {"target": "పోవు", "reading": "pōvu", "native": "to go away", "pos": "verb",
-                "pair": "zz-9003", "notes": [{"kind": "usage", "text": "Rude."}]}
-        self.edit(LAYER, lambda d: d["cards"].update({"zz-9200": verb}))
-        self.assertWarned(LAYER, "cards.zz-9200", "pair names zz-9003, but no pair note does; "
-                                                  "the minimal-pair button needs a pair note")
-        verb["notes"].append({"kind": "pair", "ref": "zz-9003", "text": "Not వెళ్ళు (veḷḷu)."})
-        self.edit(LAYER, lambda d: d["cards"].update({"zz-9200": verb}))
-        self.assertNotIn("pair names", "\n".join(self.run_main()))
-
-    def test_culture_notes_are_tagged_unreviewed_or_reviewed(self) -> None:
-        culture = {"id": "school", "kind": "culture", "source": "https://example.org/x"}
-        self.edit(CORE, lambda d: card(d, "zz-9001")["notes"].append(culture))
-        self.assertNoError(CORE, "tags")
-        for tags, msg in (([], 'has culture notes, so it is tagged "unreviewed" until a '
-                               'speaker checks them, then "reviewed" (#99)'),
-                          (["reviewed", "unreviewed"], '"reviewed" and "unreviewed" '
-                                                       'together; a deck is one or the other')):
-            with self.subTest(tags=tags):
-                self.edit(CORE, lambda d: d.update(tags=tags))
-                self.assertError(CORE, "tags", msg)
-        self.edit(CORE, lambda d: d.update(tags=["reviewed"]))
-        self.assertNoError(CORE, "tags")
-        # A layer-only card's culture note: the tag is the layer's.
-        self.edit(LAYER, lambda d: d["cards"].update({"zz-9200": {
-            "target": "పండుగ", "reading": "paṇḍuga", "native": "festival", "pos": "other",
-            "notes": [{"kind": "culture", "text": "Sankranti is in January.",
-                       "source": "https://example.org/y"}]}}))
-        self.assertError(LAYER, "tags", 'has culture notes, so it is tagged "unreviewed" '
-                                        'until a speaker checks them, then "reviewed" (#99)')
-
-
-class Wiktionary(B1Case):
-    """Section 7: the mark that Wiktionary has an entry: true, or left out."""
-
-    def test_wiktionary_is_true_or_left_out(self) -> None:
-        self.put(EXTRA, single(cards=[dict(CAT, wiktionary=False)]))
-        self.assertError(EXTRA, "card zz-9501", "wiktionary must be true, or left out where "
-                                                "Wiktionary has no entry; got False")
-        self.put(EXTRA, single(cards=[dict(CAT, wiktionary=True), {
-            "ref": "zz-9001", "wiktionary": "yes"}]))
-        self.assertError(EXTRA, "ref zz-9001", "wiktionary must be true, or left out where "
-                                               "Wiktionary has no entry; got 'yes'")
-        self.edit(LAYER, lambda d: d["cards"]["zz-9001"].update(wiktionary=1))
-        self.assertError(LAYER, "cards.zz-9001", "wiktionary must be true, or left out "
-                                                 "where Wiktionary has no entry; got 1")
-        self.edit(LAYER, lambda d: d["cards"]["zz-9001"].update(wiktionary=True))
-        self.assertNoError(LAYER)
+    def test_typed_notes_on_single_files_and_cores(self) -> None:
+        cases = (
+            self._valid_notes,
+            self._bad_notes,
+            self._a_ref_in_a_single_file_deck_may_give_typed_notes,
+            self._a_pair_notes_partner_is_written_in_the_language,
+            self._a_core_note_has_an_id_and_no_text,
+            self._a_core_pair_note_names_a_card_of_the_language,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class Bases(B1Case):
@@ -1379,7 +1557,7 @@ class Bases(B1Case):
         self.put(EXTRA, single(cards=[dict(CAT), sentence]))
         return self.errors(EXTRA)
 
-    def test_valid_bases(self) -> None:
+    def _valid_bases(self) -> None:
         good = [{"word": "పిల్లి", "ref": "zz-9501"}, {"word": "ఇంటికి", "ref": "zz-9001"},
                 {"word": "వచ్చింది", "base": "వచ్చు", "reading": "vaccu",
                  "meaning": "to come", "wiktionary": True, "ipa": "ʋat͡ʃːu"}]
@@ -1388,7 +1566,7 @@ class Bases(B1Case):
                               "meaning": "to come"}]}
         self.assertEqual(self.bases(good, examples=[example]), [])
 
-    def test_bad_bases(self) -> None:
+    def _bad_bases(self) -> None:
         full = {"word": "వచ్చింది", "base": "వచ్చు", "reading": "vaccu", "meaning": "to come"}
         cases = [
             ("x", 'bases must be a list of { word, ref } or { word, base, reading }, '
@@ -1425,7 +1603,7 @@ class Bases(B1Case):
         self.assertIn("card zz-9502: examples[0].bases[0].word 'ఇంటికి' is not a word of "
                       "examples[0].target", self.bases([], examples=[example]))
 
-    def test_a_core_base_has_its_meaning_in_each_layer(self) -> None:
+    def _a_core_base_has_its_meaning_in_each_layer(self) -> None:
         self.edit(CORE, lambda d: card(d, "zz-9002")["bases"][1].update(
             ref=None, base="వెళ్ళు", reading="veḷḷu", meaning="to go", wiktionary=True))
         self.edit(CORE, lambda d: card(d, "zz-9002")["bases"][1].pop("ref"))
@@ -1434,114 +1612,24 @@ class Bases(B1Case):
                                                    f"are in each layer, under "
                                                    f"cards.zz-9002.bases")
 
-    def test_a_ref_cannot_give_bases(self) -> None:
+    def _a_ref_cannot_give_bases(self) -> None:
         self.put(EXTRA, single(cards=[{"ref": "zz-9002", "bases": []}]))
         self.assertError(EXTRA, "ref zz-9002", "a ref cannot give 'bases': it belongs to "
                                                "the card itself, where it is written")
 
-    def test_a_bases_card_is_written_in_the_language(self) -> None:
+    def _a_bases_card_is_written_in_the_language(self) -> None:
         self.bases([{"word": "ఇంటికి", "ref": "zz-9999"}])
         self.assertAcross(f"{self.p(EXTRA)}: card zz-9502: bases[0].ref names card zz-9999, "
                           f"which no deck writes", EXTRA)
 
-
-class BaseStems(B1Case):
-    """A base whose word starts with another letter than its base: the
-    notes, in the core or any layer, say which stem the form takes."""
-
-    SENTENCE = Bases.SENTENCE
-    CAME = {"word": "వచ్చింది", "base": "రా", "reading": "rā", "meaning": "to come"}
-    MSG = ("bases: 'వచ్చింది' does not start as its base 'రా' does, and the card's "
-           "notes do not name 'రా'; say in the notes which stem the form takes "
-           "(DECK-FORMAT.md, \"Base words\")")
-
-    def warnings(self, bases: list, **extra: object) -> list[str]:
-        sentence = dict(self.SENTENCE, bases=bases, **extra)
-        self.put(EXTRA, single(cards=[dict(CAT), sentence]))
-        return self.section(self.run_main(), EXTRA)
-
-    def test_a_new_stem_not_in_the_notes_is_a_warning(self) -> None:
-        self.assertIn(f"  warning card zz-9502: {self.MSG}", self.warnings([self.CAME]))
-        self.assertEqual(self.errors(EXTRA), [])
-
-    def test_notes_naming_the_base_answer_it(self) -> None:
-        self.assertEqual(self.warnings([self.CAME], notes="Past of రా (rā), on the stem "
-                                                          "వచ్చ్ (vacc)."), [])
-        typed = [{"kind": "behaviour", "text": "The past takes the stem {1}.",
-                  "words": [{"word": "రా", "reading": "rā"}]}]
-        self.assertEqual(self.warnings([self.CAME], notes=typed), [])
-
-    def test_the_same_first_letter_needs_no_note(self) -> None:
-        same = dict(self.CAME, base="వచ్చు", reading="vaccu")
-        self.assertEqual(self.warnings([same]), [])
-
-    def test_a_ref_base_is_its_cards_target(self) -> None:
-        lines = self.warnings([{"word": "ఇంటికి", "ref": "zz-9003"}])
-        self.assertIn("  warning card zz-9502: " + self.MSG.replace("రా", "వెళ్ళు")
-                      .replace("వచ్చింది", "ఇంటికి"), lines)
-        example = {"target": "పిల్లి వచ్చింది.", "native": "The cat came.",
-                   "bases": [dict(self.CAME)]}
-        self.assertIn(f"  warning card zz-9502: examples[0].{self.MSG}",
-                      self.warnings([], examples=[example]))
-
-    # A sentence with a pronoun's case form in it, as the Assamese decks have.
-    HIS = {"target": "తన పిల్లి వచ్చింది.", "reading": "tana pilli vaccindi."}
-    HIS_BASE = {"word": "తన", "base": "అతడు", "reading": "ataḍu", "meaning": "he"}
-
-    def test_a_pronouns_case_form_is_not_a_new_stem(self) -> None:
-        # తన (tana) is a form of అతడు (ataḍu), not అతడు on another stem (#480).
-        warning = (f"  warning card zz-9502: bases: 'తన' does not start as its base "
-                   f"'అతడు' does")
-        self.assertTrue(any(x.startswith(warning) for x in
-                            self.warnings([self.HIS_BASE], **self.HIS)))
-        he = {"id": "zz-9503", "target": "అతడు", "reading": "ataḍu", "native": "he",
-              "pos": "pronoun"}
-        sentence = dict(self.SENTENCE, bases=[self.HIS_BASE, self.CAME], **self.HIS)
-        self.put(EXTRA, single(cards=[dict(CAT), he, sentence]))
-        # Only the pronoun is let off: the verb's new stem still warns.
-        self.assertEqual(self.section(self.run_main(), EXTRA),
-                         [f"  warning card zz-9502: {self.MSG}"])
-
-    def test_a_lemma_of_a_pronoun_grammar_deck_is_not_a_new_stem(self) -> None:
-        for deck_id, warned in (("zz-grammar-pronouns", False), ("zz-grammar-past", True)):
-            with self.subTest(deck_id):
-                self.put(f"{deck_id}.yaml", {
-                    "schema": 1, "id": deck_id, "part": "core", "kind": "grammar",
-                    "language": dict(LANGUAGE), "license": "CC-BY-SA-4.0",
-                    "pattern": {"slots": ["నేను"], "entries": [{
-                        "lemma": "అతడు", "key": "ataddu", "reading": "ataḍu",
-                        "forms": {"నేను": "తన"}, "readings": {"నేను": "tana"}}]}})
-                found = self.warnings([self.HIS_BASE], **self.HIS)
-                self.assertEqual(any("does not start as its base" in x for x in found),
-                                 warned)
-                self.p(f"{deck_id}.yaml").unlink()
-
-    def test_a_layers_note_answers_a_core_card(self) -> None:
-        self.edit(CORE, lambda d: card(d, "zz-9002")["bases"].__setitem__(
-            0, {"word": "నేను", "ref": "zz-9001"}))
-        warning = (f"  warning card zz-9002: bases: 'నేను' does not start as its base "
-                   f"'ఇల్లు' does")
-        self.assertTrue(any(x.startswith(warning)
-                            for x in self.section(self.run_main(), CORE)))
-        self.edit(CORE, lambda d: card(d, "zz-9002").update(
-            notes=[{"id": "stem", "kind": "behaviour"}]))
-        self.edit(LAYER, lambda d: d["cards"]["zz-9002"].update(
-            notes={"stem": "Not ఇల్లు (illu): a test."}))
-        self.assertFalse(any(x.startswith(warning)
-                             for x in self.section(self.run_main(), CORE)))
-
-
-class BasesCoverage(B1Case):
-    """Section 8.3: in a B1 deck every word of a text is taught or based."""
-
-    def test_a_word_not_taught_as_a_card_has_its_base(self) -> None:
+    def _a_word_not_taught_as_a_card_has_its_base(self) -> None:
         self.edit(CORE, lambda d: card(d, "zz-9002").pop("bases"))
         self.assertAcross(f"{self.p(CORE)}: card zz-9002: 'ఇంటికి' is not a word the zz-en "
                           f"course teaches as a card, and has no bases entry; add {{ word: "
                           f"\"ఇంటికి\", ref: ... }}, or {{ word: \"ఇంటికి\", base: ..., "
                           f"reading: ... }}")
 
-    def test_an_example_is_checked_where_the_layer_shows_it(self) -> None:
+    def _an_example_is_checked_where_the_layer_shows_it(self) -> None:
         self.edit(CORE, lambda d: card(d, "zz-9001").update(
             examples=[{"target": "ఇల్లు చిన్నది.", "reading": "illu cinnadi."}]))
         # Without a translation the example is not shown, so not checked.
@@ -1553,7 +1641,7 @@ class BasesCoverage(B1Case):
                           f"add {{ word: \"చిన్నది\", ref: ... }}, or {{ word: \"చిన్నది\", "
                           f"base: ..., reading: ... }}")
 
-    def test_a_word_taught_only_from_another_language_is_not_taught(self) -> None:
+    def _a_word_taught_only_from_another_language_is_not_taught(self) -> None:
         self.edit(CORE, lambda d: d["cards"].insert(0, {
             "id": "zz-9010", "target": "పిల్లి", "reading": "pilli", "pos": "other",
             "notes": [{"id": "tail", "kind": "usage"}]}))
@@ -1571,15 +1659,144 @@ class BasesCoverage(B1Case):
             "native": "cat", "notes": {"tail": "Also a shy person."}}}))
         self.assertNotAcross("is not a word the zz-en course teaches")
 
-    def test_a_deck_on_no_plan_is_not_checked(self) -> None:
+    def _a_deck_on_no_plan_is_not_checked(self) -> None:
         self.put(EXTRA, single(cards=[dict(CAT), dict(Bases.SENTENCE)]))
         self.assertNotAcross("is not a word", EXTRA)
 
-    def test_a_script_without_spaces_cannot_be_checked_yet(self) -> None:
+    def _a_script_without_spaces_cannot_be_checked_yet(self) -> None:
         self.edit(CORE, lambda d: d["language"].update(script="thai"))
         self.assertAcross(f"{self.p(PATH)}: units[0]: zz-en-home is in the thai script, "
                           f"written without spaces; bases cannot be checked until the format "
                           f"gives its words (DECK-FORMAT.md, Base words)")
+
+    def test_bases_and_their_coverage(self) -> None:
+        cases = (
+            self._valid_bases,
+            self._bad_bases,
+            self._a_core_base_has_its_meaning_in_each_layer,
+            self._a_ref_cannot_give_bases,
+            self._a_bases_card_is_written_in_the_language,
+            self._a_word_not_taught_as_a_card_has_its_base,
+            self._an_example_is_checked_where_the_layer_shows_it,
+            self._a_word_taught_only_from_another_language_is_not_taught,
+            self._a_deck_on_no_plan_is_not_checked,
+            self._a_script_without_spaces_cannot_be_checked_yet,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
+
+
+class BaseStems(B1Case):
+    """A base whose word starts with another letter than its base: the
+    notes, in the core or any layer, say which stem the form takes."""
+
+    SENTENCE = Bases.SENTENCE
+    CAME = {"word": "వచ్చింది", "base": "రా", "reading": "rā", "meaning": "to come"}
+    MSG = ("bases: 'వచ్చింది' does not start as its base 'రా' does, and the card's "
+           "notes do not name 'రా'; say in the notes which stem the form takes "
+           "(DECK-FORMAT.md, \"Base words\")")
+
+    def warnings(self, bases: list, **extra: object) -> list[str]:
+        sentence = dict(self.SENTENCE, bases=bases, **extra)
+        self.put(EXTRA, single(cards=[dict(CAT), sentence]))
+        return self.section(self.run_main(), EXTRA)
+
+    def _a_new_stem_not_in_the_notes_is_a_warning(self) -> None:
+        self.assertIn(f"  warning card zz-9502: {self.MSG}", self.warnings([self.CAME]))
+        self.assertEqual(self.errors(EXTRA), [])
+
+    def _notes_naming_the_base_answer_it(self) -> None:
+        self.assertEqual(self.warnings([self.CAME], notes="Past of రా (rā), on the stem "
+                                                          "వచ్చ్ (vacc)."), [])
+        typed = [{"kind": "behaviour", "text": "The past takes the stem {1}.",
+                  "words": [{"word": "రా", "reading": "rā"}]}]
+        self.assertEqual(self.warnings([self.CAME], notes=typed), [])
+
+    def _the_same_first_letter_needs_no_note(self) -> None:
+        same = dict(self.CAME, base="వచ్చు", reading="vaccu")
+        self.assertEqual(self.warnings([same]), [])
+
+    def _a_ref_base_is_its_cards_target(self) -> None:
+        lines = self.warnings([{"word": "ఇంటికి", "ref": "zz-9003"}])
+        self.assertIn("  warning card zz-9502: " + self.MSG.replace("రా", "వెళ్ళు")
+                      .replace("వచ్చింది", "ఇంటికి"), lines)
+        example = {"target": "పిల్లి వచ్చింది.", "native": "The cat came.",
+                   "bases": [dict(self.CAME)]}
+        self.assertIn(f"  warning card zz-9502: examples[0].{self.MSG}",
+                      self.warnings([], examples=[example]))
+
+    # A sentence with a pronoun's case form in it, as the Assamese decks have.
+    HIS = {"target": "తన పిల్లి వచ్చింది.", "reading": "tana pilli vaccindi."}
+    HIS_BASE = {"word": "తన", "base": "అతడు", "reading": "ataḍu", "meaning": "he"}
+
+    def _a_pronouns_case_form_is_not_a_new_stem(self) -> None:
+        # తన (tana) is a form of అతడు (ataḍu), not అతడు on another stem (#480).
+        warning = (f"  warning card zz-9502: bases: 'తన' does not start as its base "
+                   f"'అతడు' does")
+        self.assertTrue(any(x.startswith(warning) for x in
+                            self.warnings([self.HIS_BASE], **self.HIS)))
+        he = {"id": "zz-9503", "target": "అతడు", "reading": "ataḍu", "native": "he",
+              "pos": "pronoun"}
+        sentence = dict(self.SENTENCE, bases=[self.HIS_BASE, self.CAME], **self.HIS)
+        self.put(EXTRA, single(cards=[dict(CAT), he, sentence]))
+        # Only the pronoun is let off: the verb's new stem still warns.
+        self.assertEqual(self.section(self.run_main(), EXTRA),
+                         [f"  warning card zz-9502: {self.MSG}"])
+
+    def _a_lemma_of_a_pronoun_grammar_deck_is_not_a_new_stem(self) -> None:
+        for deck_id, warned in (("zz-grammar-pronouns", False), ("zz-grammar-past", True)):
+            with self.subTest(deck_id):
+                self.put(f"{deck_id}.yaml", {
+                    "schema": 1, "id": deck_id, "part": "core", "kind": "grammar",
+                    "language": dict(LANGUAGE), "license": "CC-BY-SA-4.0",
+                    "pattern": {"slots": ["నేను"], "entries": [{
+                        "lemma": "అతడు", "key": "ataddu", "reading": "ataḍu",
+                        "forms": {"నేను": "తన"}, "readings": {"నేను": "tana"}}]}})
+                found = self.warnings([self.HIS_BASE], **self.HIS)
+                self.assertEqual(any("does not start as its base" in x for x in found),
+                                 warned)
+                self.p(f"{deck_id}.yaml").unlink()
+
+    def _a_layers_note_answers_a_core_card(self) -> None:
+        self.edit(CORE, lambda d: card(d, "zz-9002")["bases"].__setitem__(
+            0, {"word": "నేను", "ref": "zz-9001"}))
+        warning = (f"  warning card zz-9002: bases: 'నేను' does not start as its base "
+                   f"'ఇల్లు' does")
+        self.assertTrue(any(x.startswith(warning)
+                            for x in self.section(self.run_main(), CORE)))
+        self.edit(CORE, lambda d: card(d, "zz-9002").update(
+            notes=[{"id": "stem", "kind": "behaviour"}]))
+        self.edit(LAYER, lambda d: d["cards"]["zz-9002"].update(
+            notes={"stem": "Not ఇల్లు (illu): a test."}))
+        self.assertFalse(any(x.startswith(warning)
+                             for x in self.section(self.run_main(), CORE)))
+
+    def test_a_base_that_changes_its_stem_says_so(self) -> None:
+        cases = (
+            self._a_new_stem_not_in_the_notes_is_a_warning,
+            self._notes_naming_the_base_answer_it,
+            self._the_same_first_letter_needs_no_note,
+            self._a_ref_base_is_its_cards_target,
+            self._a_pronouns_case_form_is_not_a_new_stem,
+            self._a_lemma_of_a_pronoun_grammar_deck_is_not_a_new_stem,
+            self._a_layers_note_answers_a_core_card,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class PathUnits(B1Case):
@@ -1593,7 +1810,7 @@ class PathUnits(B1Case):
         self.setUp()
         self.assertIn(line, self.units(change))
 
-    def test_a_unit_is_a_list_or_a_mapping(self) -> None:
+    def _a_unit_is_a_list_or_a_mapping(self) -> None:
         self.assertUnits(lambda u: u.__setitem__(0, "zz-home"),
                          "units[0]: must be a list of core ids, or a mapping with decks or "
                          "planned")
@@ -1612,7 +1829,7 @@ class PathUnits(B1Case):
                          "units[0].decks: 'yy-home' is not a core id of zz: zz- and a "
                          "name, such as zz-home")
 
-    def test_words_is_a_whole_number(self) -> None:
+    def _words_is_a_whole_number(self) -> None:
         for value in (-1, True, 4.5, "4"):
             self.assertUnits(lambda u: u[0].update(words=value),
                              f"units[0].words: must be a whole number of words, 0 or more, "
@@ -1628,14 +1845,14 @@ class PathUnits(B1Case):
         self.assertNotIn("units[0].words", " ".join(self.units(
             lambda u: u[0].update(words=0))))
 
-    def test_words_and_grammar_are_given_once(self) -> None:
+    def _words_and_grammar_are_given_once(self) -> None:
         self.assertUnits(lambda u: u[2].update(words=60),
                          "units[2]: words is given both in planned and beside it")
         self.assertUnits(lambda u: u[2].update(planned={"id": "zz-if", "grammar": "if",
                                                         "words": 10}, grammar=["if"]),
                          "units[2]: grammar is given both in planned and beside it")
 
-    def test_grammar_is_a_topic_or_a_list_of_them(self) -> None:
+    def _grammar_is_a_topic_or_a_list_of_them(self) -> None:
         self.assertUnits(lambda u: u[1].update(grammar=5),
                          'units[1].grammar: must be a grammar topic id or a list of them, '
                          'such as ["past"], got 5')
@@ -1645,7 +1862,7 @@ class PathUnits(B1Case):
         self.assertEqual(self.units(lambda u: u[2].update(
             planned={"id": "zz-grammar-if", "grammar": "conditional"})), [])
 
-    def test_milestones(self) -> None:
+    def _milestones(self) -> None:
         self.assertUnits(lambda u: u[0].update(milestone="C1"),
                          'units[0].milestone: must be "A1", "A2" or "B1", got \'C1\'')
         self.assertUnits(lambda u: (u[0].update(milestone="A2"), u[1].update(milestone="A1")),
@@ -1657,7 +1874,7 @@ class PathUnits(B1Case):
                          "units: the B1 plan needs the milestones A1, A2 and B1, each once "
                          "and in that order; found none")
 
-    def test_a_planned_unit(self) -> None:
+    def _a_planned_unit(self) -> None:
         self.assertUnits(lambda u: u[2].update(planned="zz-health"),
                          "units[2].planned: must be a mapping with id, and theme or grammar")
         self.assertUnits(lambda u: u[2]["planned"].update(size=1),
@@ -1674,7 +1891,7 @@ class PathUnits(B1Case):
         self.assertUnits(lambda u: u[2]["planned"].pop("words"),
                          "units[2].planned: a planned theme unit gives its size in words")
 
-    def test_a_planned_unit_names_its_passages(self) -> None:
+    def _a_planned_unit_names_its_passages(self) -> None:
         self.assertUnits(lambda u: u[2].pop("reading_passages"),
                          "units[2]: a planned unit names its listening_passages and its "
                          "reading_passages (b1-plans.md: each planned unit names its "
@@ -1688,7 +1905,7 @@ class PathUnits(B1Case):
         self.assertEqual(self.units(lambda u: u[0].update(reading_passages=[
             {"id": "door-note", "text": {"en": "A note on the door"}}])), [])
 
-    def test_a_passage_has_an_id_once_in_the_path_and_its_texts(self) -> None:
+    def _a_passage_has_an_id_once_in_the_path_and_its_texts(self) -> None:
         def passage(**fields: object):
             return lambda u: u[2]["reading_passages"][0].update(fields)
         where = "units[2].reading_passages[0]"
@@ -1711,13 +1928,13 @@ class PathUnits(B1Case):
         self.assertEqual(self.units(passage(text={
             "en": "A notice at the clinic", "bn": "ক্লিনিকের নোটিস (kliniker noṭis)"})), [])
 
-    def test_the_wildcard_alone_carries_no_plan(self) -> None:
+    def _the_wildcard_alone_carries_no_plan(self) -> None:
         self.assertUnits(lambda u: u.append({"decks": ["*"], "words": 3}),
                          'units[3]: a unit of "*" alone cannot carry a milestone or a plan')
         self.setUp()
         self.assertEqual(self.units(lambda u: u.append(["*"])), [])
 
-    def test_every_unit_up_to_b1_is_sized(self) -> None:
+    def _every_unit_up_to_b1_is_sized(self) -> None:
         self.assertUnits(lambda u: u[1].pop("grammar"),
                          "units[1]: a unit up to B1 gives its planned size (words) or its "
                          "grammar topics (grammar)")
@@ -1731,11 +1948,11 @@ class PathUnits(B1Case):
         self.setUp()
         self.assertEqual(self.units(lambda u: u.append(["zz-extra"])), [])
 
-    def test_a_topic_is_planned_once(self) -> None:
+    def _a_topic_is_planned_once(self) -> None:
         self.assertUnits(lambda u: u[0].update(grammar=["lo"]),
                          "units[1]: grammar topic 'lo' is already planned in units[0]")
 
-    def test_planned_units_end_at_b1_and_are_planned_once(self) -> None:
+    def _planned_units_end_at_b1_and_are_planned_once(self) -> None:
         later = {"planned": {"id": "zz-food", "theme": "food", "words": 50},
                  "listening_passages": [{"id": "x", "text": {"en": "x"}}],
                  "reading_passages": [{"id": "y", "text": {"en": "y"}}]}
@@ -1750,32 +1967,14 @@ class PathUnits(B1Case):
                          "units[2].planned.id: 'zz-home' is planned and also listed as a "
                          "deck in units[0]")
 
-    def test_a_path_without_a_mapping_unit_has_no_plan(self) -> None:
+    def _a_path_without_a_mapping_unit_has_no_plan(self) -> None:
         self.put(PATH, {"schema": 1, "kind": "path", "id": "zz-path", "language": "zz",
                         "units": [["zz-home"], ["zz-grammar-case-endings"], ["*"]]})
         report = validate_decks.validate(self.p(PATH))
         self.assertEqual(report.errors, [])
         self.assertFalse(report.plan.has_plan)
 
-
-class PlansAcross(B1Case):
-    """Section 10.3: a B1 plan against the decks."""
-
-    def health(self, native: str = "en") -> str:
-        """A core zz-health, and its layer for [native]."""
-        self.put("zz-health.yaml", {
-            "schema": 1, "id": "zz-health", "part": "core", "language": dict(LANGUAGE),
-            "license": "CC-BY-SA-4.0",
-            "cards": [{"id": "zz-9701", "target": "జ్వరం", "reading": "jvaraṁ",
-                       "pos": "noun"}]})
-        rel = f"{native}/zz-{native}-health.yaml"
-        self.put(rel, {"schema": 1, "id": f"zz-{native}-health", "kind": "layer",
-                       "core": "zz-health", "native": dict(NATIVES[native]),
-                       "name": "Health", "license": "CC-BY-SA-4.0",
-                       "cards": {"zz-9701": {"native": "fever"}}})
-        return rel
-
-    def test_a_planned_deck_does_not_exist_yet(self) -> None:
+    def _a_planned_deck_does_not_exist_yet(self) -> None:
         rel = self.health()
         line = (f"{self.p(PATH)}: units[2].planned.id: zz-health already exists "
                 f"({self.p('zz-health.yaml')}); list it under decks in place of planned")
@@ -1796,19 +1995,19 @@ class PlansAcross(B1Case):
                           f"({self.p('zz-bn-health.yaml')}); list it under decks in place "
                           f"of planned", PATH)
 
-    def test_a_planned_single_file_deck_exists_too(self) -> None:
+    def _a_planned_single_file_deck_exists_too(self) -> None:
         self.put("zz-en-health.yaml", single("zz-en-health"))
         self.assertAcross(f"{self.p(PATH)}: units[2].planned.id: zz-health already "
                           f"exists ({self.p('zz-en-health.yaml')}); list it under decks in "
                           f"place of planned", PATH)
 
-    def test_a_planned_id_is_a_core_id(self) -> None:
+    def _a_planned_id_is_a_core_id(self) -> None:
         self.edit(PATH, lambda d: d["units"][2]["planned"].update(id="zz-en-health"))
         self.assertAcross(f"{self.p(PATH)}: units[2].planned.id: lists 'zz-en-health', a "
                           f"deck of the zz-en course; a path lists core ids, here "
                           f"'zz-health'", PATH)
 
-    def test_grammar_topics_name_a_rule_or_a_grammar_deck_of_the_unit(self) -> None:
+    def _grammar_topics_name_a_rule_or_a_grammar_deck_of_the_unit(self) -> None:
         self.put("zz-en-grammar-be.yaml", {
             "schema": 1, "id": "zz-en-grammar-be", "name": "Be", "kind": "grammar",
             "language": dict(LANGUAGE), "native": dict(NATIVES["en"]), "license": "CC-BY-SA-4.0",
@@ -1829,14 +2028,14 @@ class PlansAcross(B1Case):
         self.edit(PATH, lambda d: d["units"][1]["decks"].append("zz-missing"))
         self.assertNotAcross(".grammar:")
 
-    def test_a_grammar_topic_does_not_name_a_rules_deck(self) -> None:
+    def _a_grammar_topic_does_not_name_a_rules_deck(self) -> None:
         # Its rules are its topics; the deck too would count them twice.
         self.edit(PATH, lambda d: d["units"][1]["grammar"].append("case-endings"))
         self.assertAcross(f"{self.p(PATH)}: units[1].grammar: 'case-endings' names the "
                           f"rules deck 'zz-grammar-case-endings'; its topics are its "
                           f"rules, 'lo', 'ki', 'to', 'nunci'")
 
-    def test_a_path_needs_its_plan_once_the_language_has_a_core(self) -> None:
+    def _a_path_needs_its_plan_once_the_language_has_a_core(self) -> None:
         self.put(PATH, {"schema": 1, "kind": "path", "id": "zz-path", "language": "zz",
                         "units": [["zz-home", "zz-grammar-case-endings"]]})
         self.assertAcross(f"{self.p(PATH)}: units: zz has core files "
@@ -1857,7 +2056,7 @@ class PlansAcross(B1Case):
             code = validate_decks.main(["v", str(zy)])
         self.assertEqual(code, 0, out.getvalue())
 
-    def test_a_b1_deck_still_single_file_is_warned_of(self) -> None:
+    def _a_b1_deck_still_single_file_is_warned_of(self) -> None:
         self.put(EXTRA, single(cards=[dict(CAT, pos="other",
                                            notes=[{"kind": "usage", "text": "Shy."}])]))
         self.edit(PATH, lambda d: d["units"][0]["decks"].append("zz-extra"))
@@ -1866,14 +2065,14 @@ class PlansAcross(B1Case):
                                             "B1 plan is split into a core and its layers as "
                                             "the plan is written")
 
-    def test_a_unit_with_more_words_than_planned_is_warned_of(self) -> None:
+    def _a_unit_with_more_words_than_planned_is_warned_of(self) -> None:
         self.edit(PATH, lambda d: d["units"][0].update(words=3))
         self.assertWarned(PATH, "units[0]", "has 4 words for learners from English, more "
                                             "than the 3 planned; raise words")
         self.edit(PATH, lambda d: d["units"][0].update(words=4))
         self.assertNotIn("more than the", "\n".join(self.run_main()))
 
-    def test_words_are_counted_per_course_against_one_size(self) -> None:
+    def _words_are_counted_per_course_against_one_size(self) -> None:
         # The Bengali layer teaches one word of the unit: within its size.
         self.put("bn/zz-bn-home.yaml", BENGALI_HOME)
         self.edit(PATH, lambda d: d["units"][0].update(words=3))
@@ -1885,7 +2084,7 @@ class PlansAcross(B1Case):
         self.assertIn("  warning units[0]: has 1 words for learners from Bengali, more "
                       "than the 0 planned; raise words", self.section(self.run_main(), PATH))
 
-    def test_a_passage_without_a_description_in_a_courses_language(self) -> None:
+    def _a_passage_without_a_description_in_a_courses_language(self) -> None:
         self.put("bn/zz-bn-home.yaml", BENGALI_HOME)
         lines = self.section(self.run_main(), PATH)
         for where in ("units[2].listening_passages[0]", "units[2].reading_passages[0]"):
@@ -1897,7 +2096,7 @@ class PlansAcross(B1Case):
                                    for p in d["units"][2][key]])
         self.assertNotIn("no description", "\n".join(self.run_main()))
 
-    def test_sizes_near_the_levels_are_not_warned_of(self) -> None:
+    def _sizes_near_the_levels_are_not_warned_of(self) -> None:
         self.edit(PATH, lambda d: (d["units"][0].update(words=700),
                                    d["units"][1].update(words=900),
                                    d["units"][2]["planned"].update(words=1200)))
@@ -1905,7 +2104,7 @@ class PlansAcross(B1Case):
             "  info    units: B1 plan: A1 700 words (about 700), A2 +900 (about 900), "
             "B1 +1200 (about 1,200); 2800 in all; 4 grammar topics; 1 units planned"])
 
-    def test_a_planned_theme_is_in_the_themes_file(self) -> None:
+    def _a_planned_theme_is_in_the_themes_file(self) -> None:
         themes = self.tmp / "themes.yaml"
         files = (CORE, LAYER, RULES, RULES_LAYER, PATH, "../themes.yaml")
         themes.write_text(dump({"schema": 1, "kind": "themes",
@@ -1918,22 +2117,27 @@ class PlansAcross(B1Case):
                           encoding="utf-8")
         self.assertNotIn("is not in decks/themes.yaml", "\n".join(self.run_main(*files)))
 
+    def health(self, native: str = "en") -> str:
+        """A core zz-health, and its layer for [native]."""
+        self.put("zz-health.yaml", {
+            "schema": 1, "id": "zz-health", "part": "core", "language": dict(LANGUAGE),
+            "license": "CC-BY-SA-4.0",
+            "cards": [{"id": "zz-9701", "target": "జ్వరం", "reading": "jvaraṁ",
+                       "pos": "noun"}]})
+        rel = f"{native}/zz-{native}-health.yaml"
+        self.put(rel, {"schema": 1, "id": f"zz-{native}-health", "kind": "layer",
+                       "core": "zz-health", "native": dict(NATIVES[native]),
+                       "name": "Health", "license": "CC-BY-SA-4.0",
+                       "cards": {"zz-9701": {"native": "fever"}}})
+        return rel
 
-class Regions(B1Case):
-    """Section 10.5: a language's regions, in its path, and a note's."""
-
-    def regions(self, change) -> list[str]:
-        self.setUp()
-        self.edit(PATH, lambda d: change(d["regions"]))
-        return self.errors(PATH)
-
-    def test_the_fixtures_regions_are_valid(self) -> None:
+    def _the_fixtures_regions_are_valid(self) -> None:
         report = validate_decks.validate(self.p(PATH))
         self.assertEqual(report.errors, [])
         self.assertEqual(report.plan.regions,
                          ["telangana", "coastal-andhra", "rayalaseema"])
 
-    def test_each_per_file_message(self) -> None:
+    def _each_per_file_message(self) -> None:
         cases = [
             (lambda r: r.clear(), "regions: must be a non-empty list of regions, each "
                                   "{ id, name }"),
@@ -1965,7 +2169,7 @@ class Regions(B1Case):
         self.assertIn("regions: must be a non-empty list of regions, each { id, name }",
                       self.errors(PATH))
 
-    def test_a_note_names_its_regions(self) -> None:
+    def _a_note_names_its_regions(self) -> None:
         self.edit(CORE, lambda d: card(d, "zz-9001")["notes"].append(
             {"id": "telangana", "kind": "usage", "region": "telangana"}))
         self.edit(LAYER, lambda d: d["cards"]["zz-9001"]["notes"].update(
@@ -1975,7 +2179,7 @@ class Regions(B1Case):
             region=["telangana", "rayalaseema"]))
         self.assertClean()
 
-    def test_a_notes_region_has_its_shape(self) -> None:
+    def _a_notes_region_has_its_shape(self) -> None:
         for value, line in (
             (5, 'notes[1].region must be a region id, or a list of them, such as '
                 '"telangana", got 5'),
@@ -1991,7 +2195,7 @@ class Regions(B1Case):
                     {"id": "where", "kind": "usage", "region": value}]))
                 self.assertError(CORE, "card zz-9001", line)
 
-    def test_a_notes_region_is_a_region_of_its_languages_path(self) -> None:
+    def _a_notes_region_is_a_region_of_its_languages_path(self) -> None:
         self.edit(CORE, lambda d: card(d, "zz-9001")["notes"].append(
             {"id": "where", "kind": "usage", "region": ["telangana", "nizam"]}))
         line = (f"{self.p(CORE)}: card zz-9001: notes[1].region names 'nizam', which is "
@@ -2008,7 +2212,7 @@ class Regions(B1Case):
         self.p(PATH).unlink()
         self.assertNotAcross("region names", CORE)
 
-    def test_a_layer_only_cards_note_is_checked_where_the_layer_writes_it(self) -> None:
+    def _a_layer_only_cards_note_is_checked_where_the_layer_writes_it(self) -> None:
         self.edit(LAYER, lambda d: d["cards"].update({"zz-9200": {
             "target": "పిల్లి", "reading": "pilli", "pos": "noun", "native": "cat",
             "notes": [{"kind": "usage", "text": "Also a shy person.",
@@ -2017,17 +2221,67 @@ class Regions(B1Case):
                           f"which is not a region of zz; its path lists telangana, "
                           f"coastal-andhra, rayalaseema")
 
-    def test_a_single_file_decks_note_names_a_region_too(self) -> None:
+    def _a_single_file_decks_note_names_a_region_too(self) -> None:
         self.put(EXTRA, single(cards=[dict(CAT, notes=[
             {"kind": "usage", "text": "Said in Telangana.", "region": "telangana"}])]))
         self.assertNotAcross("region names", EXTRA)
+
+    def regions(self, change) -> list[str]:
+        self.setUp()
+        self.edit(PATH, lambda d: change(d["regions"]))
+        return self.errors(PATH)
+
+    def test_units_and_words_planned_and_regions(self) -> None:
+        cases = (
+            self._a_unit_is_a_list_or_a_mapping,
+            self._words_is_a_whole_number,
+            self._words_and_grammar_are_given_once,
+            self._grammar_is_a_topic_or_a_list_of_them,
+            self._milestones,
+            self._a_planned_unit,
+            self._a_planned_unit_names_its_passages,
+            self._a_passage_has_an_id_once_in_the_path_and_its_texts,
+            self._the_wildcard_alone_carries_no_plan,
+            self._every_unit_up_to_b1_is_sized,
+            self._a_topic_is_planned_once,
+            self._planned_units_end_at_b1_and_are_planned_once,
+            self._a_path_without_a_mapping_unit_has_no_plan,
+            self._a_planned_deck_does_not_exist_yet,
+            self._a_planned_single_file_deck_exists_too,
+            self._a_planned_id_is_a_core_id,
+            self._grammar_topics_name_a_rule_or_a_grammar_deck_of_the_unit,
+            self._a_grammar_topic_does_not_name_a_rules_deck,
+            self._a_path_needs_its_plan_once_the_language_has_a_core,
+            self._a_b1_deck_still_single_file_is_warned_of,
+            self._a_unit_with_more_words_than_planned_is_warned_of,
+            self._words_are_counted_per_course_against_one_size,
+            self._a_passage_without_a_description_in_a_courses_language,
+            self._sizes_near_the_levels_are_not_warned_of,
+            self._a_planned_theme_is_in_the_themes_file,
+            self._the_fixtures_regions_are_valid,
+            self._each_per_file_message,
+            self._a_note_names_its_regions,
+            self._a_notes_region_has_its_shape,
+            self._a_notes_region_is_a_region_of_its_languages_path,
+            self._a_layer_only_cards_note_is_checked_where_the_layer_writes_it,
+            self._a_single_file_decks_note_names_a_region_too,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class ScriptInProse(B1Case):
     """Section 11: a layer's prose is its native language's; a core's is the
     language learnt's."""
 
-    def test_a_layers_prose_needs_readings_for_the_language_learnt(self) -> None:
+    def _a_layers_prose_needs_readings_for_the_language_learnt(self) -> None:
         self.edit(LAYER, lambda d: d["cards"]["zz-9001"].update(native="a ఇల్లు, a home"))
         self.assertError(LAYER, "cards.zz-9001.native",
                          "'ఇల్లు' has no transliteration beside it; write its ISO 15919 "
@@ -2036,7 +2290,7 @@ class ScriptInProse(B1Case):
             native="a ఇల్లు (illu), a home"))
         self.assertNoError(LAYER)
 
-    def test_a_slot_key_is_not_a_language_code(self) -> None:
+    def _a_slot_key_is_not_a_language_code(self) -> None:
         # "lo" would read as Lao, whose prose may follow a word with its own
         # script in brackets. A layer's prose is English throughout.
         self.edit(RULES_LAYER, lambda d: d["table"]["prompts"]["zz-9001"].update(
@@ -2045,7 +2299,7 @@ class ScriptInProse(B1Case):
                          "'ఇంట్లో' has no transliteration beside it; write its ISO 15919 "
                          "reading in parentheses, as లేదు (lēdu)")
 
-    def test_a_bengali_layers_own_words_need_no_reading(self) -> None:
+    def _a_bengali_layers_own_words_need_no_reading(self) -> None:
         bn = {"schema": 1, "id": "zz-bn-home", "kind": "layer", "core": "zz-home",
               "native": dict(NATIVES["bn"]), "name": "বাড়ি", "license": "CC-BY-SA-4.0",
               "cards": {"zz-9004": {"native": "মা", "notes": {"address": "আদর।"}}}}
@@ -2057,7 +2311,7 @@ class ScriptInProse(B1Case):
                          "'అమ్మ' has no transliteration beside it; write its ISO 15919 "
                          "reading in parentheses, as లేదు (lēdu)")
 
-    def test_an_urdu_word_is_one_run_across_the_arabic_halves(self) -> None:
+    def _an_urdu_word_is_one_run_across_the_arabic_halves(self) -> None:
         # U+0679 and U+0688-U+06D2 sit in different 128-code-point halves.
         self.edit(LAYER, lambda d: d["cards"]["zz-9001"].update(notes={
             "address": "It joins only to the letter before it: لڑکا (laṛkā, boy)."}))
@@ -2067,12 +2321,12 @@ class ScriptInProse(B1Case):
         self.assertTrue(any("'ت' has no transliteration beside it" in e
                             for e in self.errors(LAYER)))
 
-    def test_a_cores_own_words_need_no_reading(self) -> None:
+    def _a_cores_own_words_need_no_reading(self) -> None:
         self.assertNoError(CORE)
         self.edit(CORE, lambda d: d.update(source="ইল্লু"))
         self.assertNoError(CORE, "transliteration")
 
-    def test_a_paths_passages_and_region_names_are_prose(self) -> None:
+    def _a_paths_passages_and_region_names_are_prose(self) -> None:
         self.edit(PATH, lambda d: d["units"][2]["listening_passages"][0].update(
             text={"en": "Going to the ఇల్లు"}))
         self.assertError(PATH, "units.2.listening_passages.0.text.en",
@@ -2090,15 +2344,35 @@ class ScriptInProse(B1Case):
         self.edit(PATH, lambda d: d["regions"][0]["name"].update(te="తెలంగాణ"))
         self.assertNoError(PATH)
 
-    def test_placeholders_are_checked_before_they_are_filled(self) -> None:
+    def _placeholders_are_checked_before_they_are_filled(self) -> None:
         # The fixture's note "{1}" stands for ఇంటి- (iṇṭi-): no reading needed.
         self.assertNoError(LAYER)
+
+    def test_script_in_prose_has_its_reading(self) -> None:
+        cases = (
+            self._a_layers_prose_needs_readings_for_the_language_learnt,
+            self._a_slot_key_is_not_a_language_code,
+            self._a_bengali_layers_own_words_need_no_reading,
+            self._an_urdu_word_is_one_run_across_the_arabic_halves,
+            self._a_cores_own_words_need_no_reading,
+            self._a_paths_passages_and_region_names_are_prose,
+            self._placeholders_are_checked_before_they_are_filled,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 class Compatibility(unittest.TestCase):
     """Section 12: today's decks print what they printed before."""
 
-    def test_todays_decks_get_no_info_and_no_b1_message(self) -> None:
+    def _todays_decks_get_no_info_and_no_b1_message(self) -> None:
         out = io.StringIO()
         with contextlib.redirect_stdout(out):
             code = validate_decks.main(["validate_decks.py",
@@ -2123,11 +2397,7 @@ class Compatibility(unittest.TestCase):
         self.assertEqual([x for x in kept if x.startswith(("info ", "  info"))], [])
         self.assertEqual([x for x in lines if x.startswith(("error", "FAIL"))], [])
 
-
-class CountsAsWord(unittest.TestCase):
-    """Section 8.5: what counts as one of a unit's words."""
-
-    def test_counts_as_word(self) -> None:
+    def _counts_as_word(self) -> None:
         f = validate_decks.counts_as_word
         self.assertTrue(f({"target": "ఇల్లు", "pos": "noun"}, "vocab"))
         self.assertTrue(f({"target": "ఇల్లు"}, "vocab"))
@@ -2137,6 +2407,579 @@ class CountsAsWord(unittest.TestCase):
         self.assertFalse(f({"target": "అమ్మ!", "phrasebook": True}, "vocab"))
         self.assertFalse(f({"target": "ఇల్లు", "pos": "noun"}, "grammar"))
         self.assertTrue(f({"target": "నేను", "pos": "pronoun"}, "vocab"))
+
+    def test_old_files_still_read_and_words_are_counted(self) -> None:
+        cases = (
+            self._todays_decks_get_no_info_and_no_b1_message,
+            self._counts_as_word,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
+
+
+# From test_validate_paths.py.
+# Paths (#117, ADR-0013, ADR-0036): a language's path file on its own, and
+# against the decks of the language, in every course.
+#
+# Described in docs/DECK-FORMAT.md. Stdlib `unittest` plus PyYAML, like the
+# validator itself.
+
+
+def deck(deck_id: str, lang: str = "hi", native: str = "en",
+         theme: str | None = None) -> str:
+    names = {"hi": ("hin", "Hindi", "devanagari", "hi-IN"),
+             "bn": ("ben", "Bengali", "bengali", "bn-IN"),
+             "en": ("eng", "English", "latin", "en-GB")}
+    iso, name, script, tts = names[lang]
+    n_iso, n_name, _, _ = names[native]
+    return f"""\
+schema: 1
+id: {deck_id}
+name: Probe
+language: {{ code: {lang}, iso639_3: {iso}, name: {name}, script: {script}, tts: {tts} }}
+native: {{ code: {native}, iso639_3: {n_iso}, name: {n_name} }}
+license: CC-BY-SA-4.0
+{f"theme: {theme}" + chr(10) if theme else ""}cards:
+  - id: {deck_id}-0001
+    target: "x"
+    native: the thing
+    reading: "x"
+"""
+
+
+def path_file(units: str, path_id: str = "hi-path", lang: str = "hi",
+              extra: str = "") -> str:
+    return f"""\
+schema: 1
+kind: path
+id: {path_id}
+language: {lang}
+{extra}units:
+{units}"""
+
+
+class Paths(unittest.TestCase):
+    def setUp(self) -> None:
+        self.tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, self.tmp, True)
+
+    def write(self, name: str, text: str) -> validate_decks.Report:
+        path = self.tmp / name
+        path.write_text(text, encoding="utf-8")
+        return validate_decks.validate(path)
+
+    def assertRejected(self, report: validate_decks.Report, needle: str) -> None:
+        self.assertTrue(
+            any(needle in e for e in report.errors),
+            f"expected an error containing {needle!r}, got {report.errors}",
+        )
+
+    def course(self) -> list[validate_decks.Report]:
+        """Two Hindi decks and a Bengali one, all valid."""
+        return [
+            self.write("hi-en-market.yaml", deck("hi-en-market")),
+            self.write("hi-en-grammar-nouns.yaml", deck("hi-en-grammar-nouns")),
+            self.write("bn-en-market.yaml", deck("bn-en-market", lang="bn")),
+        ]
+
+
+class PathFile(Paths):
+    def _a_path_is_valid_and_lists_its_decks_by_core_id_in_order(self) -> None:
+        report = self.write("hi-path.yaml", path_file(
+            "  - [hi-market, hi-grammar-nouns]\n  - [hi-help]\n"))
+        self.assertEqual(report.errors, [])
+        self.assertEqual(report.course_path,
+                         ("hi", ["hi-market", "hi-grammar-nouns", "hi-help"]))
+
+    def _the_id_is_the_languages_and_the_file_name(self) -> None:
+        self.assertRejected(
+            self.write("hi-route.yaml", path_file("  - [hi-market]\n",
+                                                  path_id="hi-route")),
+            "a path of hi has id hi-path, the filename stem, got 'hi-route'")
+        self.assertRejected(
+            self.write("hi-route.yaml", path_file("  - [hi-market]\n")),
+            "is 'hi-path' but the filename stem is 'hi-route'")
+
+    def _a_path_for_one_course_is_refused_and_told_what_to_do(self) -> None:
+        report = self.write("hi-en-path.yaml", path_file(
+            "  - [hi-en-market]\n", path_id="hi-en-path", extra="native: en\n"))
+        self.assertIn(
+            "native: a path is one per language learnt, decks/hi/hi-path.yaml, shared "
+            "by every native language (ADR-0036); list core ids, such as "
+            "'hi-market', and remove native", report.errors)
+        self.assertIn("id: a path of hi has id hi-path, the filename stem, got "
+                      "'hi-en-path'", report.errors)
+
+    def _the_language_is_a_language_code(self) -> None:
+        report = self.write("hi-path.yaml",
+                            path_file("  - [hi-market]\n", lang="false"))
+        # YAML reads a bare false as a boolean; the message says so. (A bare
+        # no is the string "no", YAML 1.2, as the app reads it.)
+        self.assertRejected(report, "boolean")
+        self.assertIsNone(report.course_path)
+
+    def _units_are_non_empty_lists_of_core_ids(self) -> None:
+        for units, needle in (
+            ("  []\n", "non-empty list"),
+            ("  - hi-market\n", "must be a list of core ids, or a mapping"),
+            ("  - []\n", "non-empty list of core ids"),
+            ("  - [Hi_Market]\n", "'Hi_Market' is not a core id of hi: hi- and a "
+                                  "name, such as hi-home"),
+            ("  - [bn-market]\n", "'bn-market' is not a core id of hi"),
+            ("  - [hi-market]\n  - [hi-market]\n", "'hi-market' is listed twice"),
+        ):
+            with self.subTest(units=units):
+                self.assertRejected(
+                    self.write("hi-path.yaml", path_file(units)), needle)
+
+    def _a_wildcard_ends_a_unit_and_is_not_a_deck(self) -> None:
+        report = self.write("hi-path.yaml", path_file(
+            '  - [hi-market, "*"]\n  - [hi-help]\n  - ["*"]\n'))
+        self.assertEqual(report.errors, [])
+        self.assertEqual(report.course_path, ("hi", ["hi-market", "hi-help"]))
+        self.assertEqual(report.open_units, [["hi-market"]])
+
+    def _a_wildcard_only_ends_a_unit_and_alone_only_the_last(self) -> None:
+        for units, needle in (
+            ('  - ["*", hi-market]\n', "can only end a unit"),
+            ('  - [hi-market, "*", "*"]\n', "can only end a unit"),
+            ('  - ["*"]\n  - [hi-market]\n', "alone can only be the last"),
+        ):
+            with self.subTest(units=units):
+                self.assertRejected(
+                    self.write("hi-path.yaml", path_file(units)), needle)
+
+    def _the_alphabet_decks_are_on_the_path(self) -> None:
+        units = "  - [hi-script-vowels]\n  - [hi-market]\n"
+        report = self.write("hi-path.yaml", path_file(
+            units, extra="alphabet: [hi-script-vowels]\n"))
+        self.assertEqual(report.errors, [])
+        self.assertRejected(
+            self.write("hi-path.yaml", path_file(
+                units, extra="alphabet: [hi-spelling]\n")),
+            "lists 'hi-spelling', which the path does not")
+        self.assertRejected(
+            self.write("hi-path.yaml", path_file(
+                units, extra="alphabet: [hi-en-script-vowels]\n")),
+            "lists 'hi-en-script-vowels', which the path does not")
+        self.assertRejected(
+            self.write("hi-path.yaml", path_file(
+                units, extra="alphabet: hi-script-vowels\n")),
+            "must be a list")
+
+    def _unknown_fields_are_rejected(self) -> None:
+        self.assertRejected(
+            self.write("hi-path.yaml",
+                       path_file("  - [hi-market]\n", extra="theme: x\n")),
+            "unknown field 'theme'")
+
+    def test_a_path_lists_every_deck_by_core_id_once_per_language(self) -> None:
+        cases = (
+            self._a_path_is_valid_and_lists_its_decks_by_core_id_in_order,
+            self._the_id_is_the_languages_and_the_file_name,
+            self._a_path_for_one_course_is_refused_and_told_what_to_do,
+            self._the_language_is_a_language_code,
+            self._units_are_non_empty_lists_of_core_ids,
+            self._a_wildcard_ends_a_unit_and_is_not_a_deck,
+            self._a_wildcard_only_ends_a_unit_and_alone_only_the_last,
+            self._the_alphabet_decks_are_on_the_path,
+            self._unknown_fields_are_rejected,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
+
+
+class PathAcrossDecks(Paths):
+    def problems(self, units: str, *more: validate_decks.Report) -> list[str]:
+        path = self.write("hi-path.yaml", path_file(units))
+        return validate_decks.check_paths_across([*self.course(), path, *more])
+
+    def _a_path_listing_every_deck_of_the_language_passes(self) -> None:
+        self.assertEqual(self.problems("  - [hi-market, hi-grammar-nouns]\n"), [])
+
+    def _every_deck_of_the_language_is_on_its_path(self) -> None:
+        problems = self.problems("  - [hi-market]\n")
+        self.assertIn(f"{self.tmp / 'hi-path.yaml'}: units: does not list "
+                      f"'hi-grammar-nouns', the core id of hi-en-grammar-nouns; every "
+                      f"deck of hi is on its path", problems)
+
+    def _a_deck_of_a_second_native_language_is_on_it_by_its_core_id(self) -> None:
+        bengali = self.write("hi-bn-market.yaml", deck("hi-bn-market", native="bn"))
+        self.assertEqual(self.problems("  - [hi-market, hi-grammar-nouns]\n", bengali),
+                         [])
+        bengali = self.write("hi-bn-words.yaml", deck("hi-bn-words", native="bn"))
+        self.assertIn(f"{self.tmp / 'hi-path.yaml'}: units: does not list 'hi-words', "
+                      f"the core id of hi-bn-words; every deck of hi is on its path",
+                      self.problems("  - [hi-market, hi-grammar-nouns]\n", bengali))
+
+    def _a_listed_id_is_a_core_id_of_a_deck_of_the_language(self) -> None:
+        problems = self.problems(
+            "  - [hi-market, hi-grammar-nouns, hi-en-market, hi-gone]\n")
+        where = self.tmp / "hi-path.yaml"
+        self.assertIn(f"{where}: units[0]: lists 'hi-en-market', a deck of the hi-en "
+                      f"course; a path lists core ids, here 'hi-market'", problems)
+        self.assertIn(f"{where}: units[0]: lists 'hi-gone', which is no deck of hi: no "
+                      f"core hi-gone, and no deck hi-<native>-gone", problems)
+
+    def _a_wildcard_unit_needs_a_theme_deck(self) -> None:
+        themed = self.write("hi-en-home.yaml", deck("hi-en-home", theme="home"))
+        self.assertEqual(self.problems(
+            '  - [hi-home, "*"]\n  - [hi-market, hi-grammar-nouns]\n'
+            '  - ["*"]\n', themed), [])
+        # A unit of the grammar deck alone: the real hi-market core, which
+        # the validator also reads, has a theme, so it cannot stand here.
+        problems = self.problems(
+            '  - [hi-home]\n  - [hi-grammar-nouns, "*"]\n  - [hi-market]\n',
+            themed)
+        self.assertTrue(any("has no theme deck" in p for p in problems), problems)
+
+    def _a_language_has_one_path(self) -> None:
+        other = self.tmp / "other"
+        other.mkdir()
+        (other / "hi-path.yaml").write_text(
+            path_file("  - [hi-market, hi-grammar-nouns]\n"), encoding="utf-8")
+        problems = self.problems("  - [hi-market, hi-grammar-nouns]\n",
+                                 validate_decks.validate(other / "hi-path.yaml"))
+        self.assertIn(f"{other / 'hi-path.yaml'}: root: hi already has a path, "
+                      f"{self.tmp / 'hi-path.yaml'}; a language has one", problems)
+
+    def _a_course_path_left_beside_it_is_a_second_path(self) -> None:
+        (self.tmp / "hi-en-path.yaml").write_text(
+            path_file("  - [hi-en-market]\n", path_id="hi-en-path",
+                      extra="native: en\n"), encoding="utf-8")
+        self.assertIn(f"{self.tmp / 'hi-path.yaml'}: root: hi already has a path, "
+                      f"{self.tmp / 'hi-en-path.yaml'}; a language has one",
+                      self.problems("  - [hi-market, hi-grammar-nouns]\n"))
+
+    def _a_language_without_a_path_is_not_checked(self) -> None:
+        self.assertEqual(validate_decks.check_paths_across(self.course()), [])
+
+    def test_a_path_across_the_decks_it_names(self) -> None:
+        cases = (
+            self._a_path_listing_every_deck_of_the_language_passes,
+            self._every_deck_of_the_language_is_on_its_path,
+            self._a_deck_of_a_second_native_language_is_on_it_by_its_core_id,
+            self._a_listed_id_is_a_core_id_of_a_deck_of_the_language,
+            self._a_wildcard_unit_needs_a_theme_deck,
+            self._a_language_has_one_path,
+            self._a_course_path_left_beside_it_is_a_second_path,
+            self._a_language_without_a_path_is_not_checked,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
+
+
+# From test_validate_sets.py.
+# Set cards in the validator (DECK-FORMAT.md, Set cards; #506, #515): a
+# card of a vocab core, `kind: "set"`, whose members are cards by ref, or a
+# rule and one fixed value of its table ("Rule + axis", owner, 2026-10-16),
+# with its name and explanation in each layer.
+#
+# Each test copies the B1 fixture (tools/fixtures/b1/zz) as
+# tools/test_validate_b1.py does, adds a set card, and checks the exact
+# message. The fixture itself has no set card.
+
+
+SET_ID = "zz-9201"
+SET = {"id": SET_ID, "kind": "set",
+       "members": [{"ref": "zz-9001"}, {"ref": "zz-9004"}, {"ref": "zz-9006"}]}
+SET_TEXT = {"native": "Three first words",
+            "explanation": "Three words you meet first: ఇల్లు (illu), అమ్మ (amma), "
+                           "నేను (nēnu)."}
+
+
+class SetCase(B1Case):
+
+    def add_set(self, set_card: dict | None = None, text: dict | None = None) -> None:
+        """Adds a set card to the core, and its text to the layer."""
+        set_card = dict(SET) if set_card is None else set_card
+        text = dict(SET_TEXT) if text is None else text
+        self.edit(CORE, lambda d: d["cards"].append(set_card))
+        self.edit(LAYER, lambda d: d["cards"].__setitem__(set_card.get("id", SET_ID),
+                                                           text))
+
+
+class RefSets(SetCase):
+
+    def _a_set_by_refs_with_its_layer_text_is_valid(self) -> None:
+        self.add_set()
+        lines = self.assertClean()
+        # Not a card the layer covers: it is taught, never asked.
+        self.assertIn("  info    cards: covers 20 of 20 cards of zz-home (100%)",
+                      self.section(lines, LAYER))
+
+    def _a_set_card_has_only_id_kind_and_members(self) -> None:
+        self.add_set({**SET, "target": "x"})
+        self.assertError(CORE, f"card {SET_ID}", "a set card has only id, kind, members "
+                         "and shown, its name and explanation in each layer; got "
+                         "'target'")
+
+    def _a_set_has_two_members_or_more(self) -> None:
+        self.add_set({**SET, "members": [{"ref": "zz-9001"}]})
+        self.assertError(CORE, f"card {SET_ID}.members",
+                         "a set has at least 2 members, got 1")
+
+    def _a_member_is_a_ref_once(self) -> None:
+        self.add_set({**SET, "members": [{"ref": "zz-9001"}, {"ref": "zz-9001"},
+                                         {"ref": SET_ID}, {"word": "x"}]})
+        self.assertError(CORE, f"card {SET_ID}.members[1]", "zz-9001 is a member already")
+        self.assertError(CORE, f"card {SET_ID}.members[2]", "a set is not a member of "
+                                                            "itself")
+        self.assertError(CORE, f"card {SET_ID}.members[3]",
+                         "must be { ref: \"zz-0001\" }, a card of the language, got "
+                         "{'word': 'x'}")
+
+    def _members_are_required(self) -> None:
+        self.add_set({"id": SET_ID, "kind": "set"})
+        self.assertError(CORE, f"card {SET_ID}.members",
+                         'is required: a list of { ref: "zz-0001" }, or { rule, and '
+                         'one value of its table }')
+
+    def _its_id_is_a_card_id_of_the_language(self) -> None:
+        self.add_set({**SET, "id": "zz-9001"})
+        self.assertError(CORE, "card zz-9001", "duplicate card id")
+
+    def _a_member_is_a_card_the_language_writes(self) -> None:
+        self.add_set({**SET, "members": [{"ref": "zz-9001"}, {"ref": "zz-9999"}]})
+        self.assertAcross(f"{self.p(CORE)}: card {SET_ID}: members names card "
+                          f"zz-9999, which no deck writes")
+
+    def _a_member_is_not_a_set(self) -> None:
+        self.add_set()
+        other = {"id": "zz-9202", "kind": "set",
+                 "members": [{"ref": "zz-9001"}, {"ref": SET_ID}]}
+        self.add_set(other, dict(SET_TEXT))
+        self.assertAcross(f"{self.p(CORE)}: card zz-9202: members names {SET_ID}, a "
+                          f"set card; a set's members are cards that are asked")
+
+    def _a_set_is_never_listed_by_ref(self) -> None:
+        self.add_set()
+        self.put("en/zz-en-extra.yaml", single(cards=[{"ref": SET_ID, "native": "x"}]))
+        lines = self.run_main()
+        self.assertTrue(any(f"{SET_ID} is a set card, taught in its own deck and never "
+                            f"listed by ref" in x for x in lines), lines)
+
+    def _a_set_card_is_written_in_a_core(self) -> None:
+        self.put("en/zz-en-extra.yaml", single(cards=[dict(SET)]))
+        self.assertError("en/zz-en-extra.yaml", "cards[0]",
+                         'a set card is written in a vocab core, kind: "set", its name '
+                         'and explanation in each layer (DECK-FORMAT.md, Set cards)')
+
+    def _the_layer_gives_its_name_and_explanation(self) -> None:
+        self.add_set(text={"native": "Three first words"})
+        self.assertError(LAYER, f"cards.{SET_ID}", "explanation is required: without it "
+                                                   "the set is not taught from this "
+                                                   "language")
+
+    def _the_layer_gives_nothing_else(self) -> None:
+        self.add_set(text={**SET_TEXT, "notes": {"a": "b"}})
+        self.assertError(LAYER, f"cards.{SET_ID}", "a set card's entry gives native, its "
+                                                   "name, and explanation; got 'notes'")
+
+    def _its_explanation_keeps_the_transliteration(self) -> None:
+        self.add_set(text={**SET_TEXT, "explanation": "Words such as అమ్మ."})
+        self.assertTrue(any("has no transliteration beside it" in e
+                            for e in self.errors(LAYER)), self.errors(LAYER))
+
+    def _the_rules_core_is_unchanged_by_a_set(self) -> None:
+        self.add_set()
+        self.assertNoError(RULES)
+        self.assertEqual(card(self.data(CORE), SET_ID)["kind"], "set")
+
+    def test_a_set_by_refs_with_two_members_or_more(self) -> None:
+        cases = (
+            self._a_set_by_refs_with_its_layer_text_is_valid,
+            self._a_set_card_has_only_id_kind_and_members,
+            self._a_set_has_two_members_or_more,
+            self._a_member_is_a_ref_once,
+            self._members_are_required,
+            self._its_id_is_a_card_id_of_the_language,
+            self._a_member_is_a_card_the_language_writes,
+            self._a_member_is_not_a_set,
+            self._a_set_is_never_listed_by_ref,
+            self._a_set_card_is_written_in_a_core,
+            self._the_layer_gives_its_name_and_explanation,
+            self._the_layer_gives_nothing_else,
+            self._its_explanation_keeps_the_transliteration,
+            self._the_rules_core_is_unchanged_by_a_set,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
+
+
+class RuleSets(SetCase):
+    """{ rule, <axis>: value }: the members are the table's cells, a row
+    fixed by its word, or a slot fixed by its key."""
+
+    def _a_row_by_its_words_target_or_id_and_a_slot(self) -> None:
+        sets = [
+            {"id": "zz-9201", "kind": "set",
+             "members": {"rule": "zz-grammar-case-endings", "noun": "అమ్మ"}},
+            {"id": "zz-9202", "kind": "set",
+             "members": {"rule": "zz-grammar-case-endings", "noun": "zz-9001"}},
+            {"id": "zz-9203", "kind": "set",
+             "members": {"rule": "zz-rule-lo", "case": "lo"},
+             "shown": [{"ref": "zz-9004"}, {"ref": "zz-9001"}]},
+        ]
+        for s in sets:
+            self.add_set(s)
+        self.assertClean()
+
+    def _the_rule_is_one_of_the_language(self) -> None:
+        self.add_set({**SET, "members": {"rule": "zz-rule-past", "noun": "అమ్మ"}})
+        self.assertAcross(f"{self.p(CORE)}: card {SET_ID}: members.rule names "
+                          f"zz-rule-past, which no rules deck of zz defines")
+
+    def _a_row_is_a_row_of_the_table(self) -> None:
+        self.add_set({**SET, "members": {"rule": "zz-grammar-case-endings",
+                                         "noun": "పిల్లి"}})
+        self.assertAcross(f"{self.p(CORE)}: card {SET_ID}: members.noun: 'పిల్లి' is no "
+                          f"row of zz-grammar-case-endings; give a row's word, as its "
+                          f"card writes it, or its id")
+
+    def _a_slot_is_a_slot_of_the_rule(self) -> None:
+        self.add_set({**SET, "members": {"rule": "zz-rule-lo", "case": "ki"},
+                      "shown": [{"ref": "zz-9004"}, {"ref": "zz-9001"}]})
+        self.assertAcross(f"{self.p(CORE)}: card {SET_ID}: members.case: 'ki' is not a "
+                          f"slot of zz-rule-lo; a value that is not a row's word is a "
+                          f"slot, one of ['lo'], or use a part of speech of its rows "
+                          f"(noun) as the key")
+
+    def _a_part_of_speech_is_one_of_its_rows(self) -> None:
+        self.add_set({**SET, "members": {"rule": "zz-grammar-case-endings",
+                                         "verb": "lo"}})
+        self.assertAcross(f"{self.p(CORE)}: card {SET_ID}: members.verb: "
+                          f"zz-grammar-case-endings's rows are noun, not verb")
+
+    def _one_value_beside_the_rule(self) -> None:
+        self.add_set({**SET, "members": {"rule": "zz-rule-lo", "case": "lo",
+                                         "noun": "అమ్మ"}})
+        self.assertError(CORE, f"card {SET_ID}.members",
+                         "a rule's set fixes one value of its table beside rule, as "
+                         "{ rule: ..., verb: \"...\" } or { rule: ..., person: \"...\" }, "
+                         "got ['case', 'noun']")
+
+    def _the_rule_is_named_by_id(self) -> None:
+        self.add_set({**SET, "members": {"rule": "lo", "case": "lo"}})
+        self.assertError(CORE, f"card {SET_ID}.members",
+                         "rule must name a rule, such as zz-rule-past, or a rules core, "
+                         "such as zz-grammar-past, got 'lo'")
+
+    def test_a_rule_set_names_a_real_row_and_slot(self) -> None:
+        cases = (
+            self._a_row_by_its_words_target_or_id_and_a_slot,
+            self._the_rule_is_one_of_the_language,
+            self._a_row_is_a_row_of_the_table,
+            self._a_slot_is_a_slot_of_the_rule,
+            self._a_part_of_speech_is_one_of_its_rows,
+            self._one_value_beside_the_rule,
+            self._the_rule_is_named_by_id,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
+
+
+class ShownRows(SetCase):
+    """A set of one slot across the words names the rows its card shows, a
+    few the deck chooses; its Full list shows every row (owner, 2026-10-16,
+    #515: "A few curated verbs should be good enough")."""
+
+    SLOT = {"rule": "zz-rule-lo", "case": "lo"}
+
+    def _a_slot_set_names_the_rows_it_shows(self) -> None:
+        self.add_set({**SET, "members": self.SLOT})
+        self.assertError(CORE, f"card {SET_ID}.shown",
+                         'is required: the rows its card shows, a few of the table\'s, '
+                         'as [{ ref: "zz-0001" }, ...]; its Full list shows every row')
+
+    def _at_least_two_rows_each_once(self) -> None:
+        self.add_set({**SET, "members": self.SLOT,
+                      "shown": [{"ref": "zz-9004"}, {"ref": "zz-9004"}]})
+        self.assertError(CORE, f"card {SET_ID}.shown[1]", "zz-9004 is a row already")
+        self.add_set({**SET, "id": "zz-9202", "members": self.SLOT,
+                      "shown": [{"ref": "zz-9004"}]}, dict(SET_TEXT))
+        self.assertError(CORE, "card zz-9202.shown", "a set shows at least 2 rows, got 1")
+
+    def _each_row_is_a_row_of_the_table(self) -> None:
+        self.add_set({**SET, "members": self.SLOT,
+                      "shown": [{"ref": "zz-9004"}, {"ref": "zz-9006"}]})
+        self.assertAcross(f"{self.p(CORE)}: card {SET_ID}: shown[1]: zz-9006 is no row "
+                          f"of zz-grammar-case-endings")
+
+    def _each_row_has_a_form_in_the_slot(self) -> None:
+        def no_lo(d: dict) -> None:
+            d["table"]["rows"][0]["forms"]["lo"] = None
+            d["table"]["rows"][0]["readings"]["lo"] = None
+        self.edit(RULES, no_lo)
+        self.add_set({**SET, "members": self.SLOT,
+                      "shown": [{"ref": "zz-9004"}, {"ref": "zz-9001"}]})
+        self.assertAcross(f"{self.p(CORE)}: card {SET_ID}: shown[1]: zz-9001 has no lo "
+                          f"form in zz-grammar-case-endings")
+
+    def _only_a_slot_set_names_rows(self) -> None:
+        self.add_set({**SET, "shown": [{"ref": "zz-9004"}, {"ref": "zz-9001"}]})
+        self.assertError(CORE, f"card {SET_ID}.shown",
+                         "only a set of one slot across the words names the rows its "
+                         "card shows; a set by refs shows its members")
+        self.add_set({**SET, "id": "zz-9202",
+                      "members": {"rule": "zz-grammar-case-endings", "noun": "అమ్మ"},
+                      "shown": [{"ref": "zz-9004"}, {"ref": "zz-9001"}]}, dict(SET_TEXT))
+        self.assertError(CORE, "card zz-9202.shown",
+                         "only a set of one slot across the words names the rows its "
+                         "card shows; this set shows every form of its row")
+
+    def test_a_set_shows_the_rows_it_names(self) -> None:
+        cases = (
+            self._a_slot_set_names_the_rows_it_shows,
+            self._at_least_two_rows_each_once,
+            self._each_row_is_a_row_of_the_table,
+            self._each_row_has_a_form_in_the_slot,
+            self._only_a_slot_set_names_rows,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 if __name__ == "__main__":
