@@ -1,7 +1,8 @@
 # Plan: settings that say what they do, on and off
 
 Written 2026-10-06. **Part of the settings redesign,** with
-`language-picker.md` and `settings-wording.md` (the Voices page is built):
+`language-picker.md` (removed once built; see git history) and
+`settings-wording.md` (the Voices page is built):
 last in the owner's order, after the skill model (done), `b1-plans.md` and
 deck downloads ([ADR-0037](../adr/0037-decks-download-from-main.md)).
 

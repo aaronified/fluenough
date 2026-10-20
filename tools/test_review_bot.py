@@ -271,8 +271,10 @@ class Checks(unittest.TestCase):
         import yaml
         ci = yaml.safe_load((TOOLS.parent / ".github" / "workflows" / "ci.yml")
                             .read_text(encoding="utf-8"))
-        self.assertEqual(sorted(j["name"] for j in ci["jobs"].values()),
-                         sorted(rb.REQUIRED_CHECKS))
+        # Every check the bot waits for is a job of CI; CI may run more,
+        # such as the jobs the required ones gather.
+        names = {j["name"] for j in ci["jobs"].values()}
+        self.assertLessEqual(set(rb.REQUIRED_CHECKS), names)
 
     def test_rest_reads_the_latest_runs_and_merges_at_the_checked_head(self) -> None:
         calls: list[tuple] = []

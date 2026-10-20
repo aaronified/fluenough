@@ -321,12 +321,13 @@ themes:
       final state = await loaded();
       expect(state.currentProfile.id, Profile.defaultProfile.id);
       expect(state.currentProfile.name, isNull);
-      // It learns every language but the IPA course, which is learned only
-      // when chosen (ADR-0041); Today shows the language bar's (#528).
+      // It learns every language but the notations' courses, the IPA's and
+      // braille's, which are learned only when chosen (ADR-0041, ADR-0043);
+      // Today shows the language bar's (#528).
       expect(
         state.languageChoices.map((l) => l.code).toSet(),
         state.decks
-            .where((d) => !d.language.isIpa)
+            .where((d) => !d.language.isNotation)
             .map((d) => d.language.code)
             .toSet(),
       );

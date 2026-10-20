@@ -1,0 +1,29 @@
+schema: 1
+id: "qbe-en-script"
+kind: "layer"
+core: "qbe-script"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "How braille works"
+intro: "Braille writes print letter by letter in cells of up to six raised dots, read by touch, and here by sight. This course teaches Unified English Braille uncontracted, where every print letter has its own cell; the contractions of grade 2 come later. Its cells are not a random list: the alphabet is built from ten cells, repeated with a dot or two added."
+features:
+  "cell":
+    name: "Six dots, numbered"
+    text: "A cell is two columns of three dots. They are numbered 1, 2 and 3 down the left column, and 4, 5 and 6 down the right. A cell is named by its raised dots: ⠃ (b) is dots 1-2. The keyboard here has them in the same places, as a Perkins brailler does."
+  "top-row":
+    name: "a to j: the top four dots"
+    text: "The first ten letters, a to j, use only dots 1, 2, 4 and 5, the top two rows. Learn these ten well: the rest of the alphabet, and the digits, are made from them."
+  "dot-3":
+    name: "k to t: add dot 3"
+    text: "Add dot 3, at the bottom left, to a letter from a to j and you have the letter ten after it: ⠁ (a) becomes ⠅ (k), ⠃ (b) becomes ⠇ (l), and so on to ⠚ (j) and ⠞ (t)."
+  "dots-3-6":
+    name: "u to z: add dots 3 and 6"
+    text: "Add dots 3 and 6, the whole bottom row, to a to e and you have u, v, x, y and z. w is the one exception, ⠚ (j) with dot 6: French, for which braille was made, had no w in its alphabet then."
+  "mirrors":
+    name: "Mirror images"
+    text: "Some letters are each other's mirror image, and are easy to mix up: ⠑ (e) and ⠊ (i), ⠙ (d) and ⠋ (f), ⠓ (h) and ⠚ (j). Look for dot 1, top left: e, d and h have it, and i, f and j do not."
+  "indicators":
+    name: "Cells that change the next one"
+    text: "Some cells are not letters but say how to read what follows. ⠠ (dot 6) makes the next letter a capital; ⠼ (dots 3-4-5-6) turns the letters a to j into the digits 1 to 0; ⠰ (dots 5-6) says that a letter after a number is a letter."
+  "low-cells":
+    name: "Punctuation sits low"
+    text: "Most punctuation uses the lower dots of the cell, 2, 3, 5 and 6, where no letter does: the full stop ⠲ is ⠙ (d) moved down a row, and the comma ⠂ is ⠁ (a) moved down."

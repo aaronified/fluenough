@@ -13,6 +13,7 @@ import '../../core/data/spoken_languages.dart';
 import '../../core/decks/deck_index.dart' show decksBeforeReady;
 import '../../core/decks/ipa_course.dart';
 import '../../core/decks/language_catalog.dart';
+import '../../core/decks/notation.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
@@ -369,7 +370,8 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         onNative: chosen
             ? (picked) => setState(() => _native[code] = picked)
             : null,
-        hasPlacement: code != ipaLanguageCode,
+        // A notation has no level to find (ADR-0041, ADR-0043).
+        hasPlacement: !isNotationCode(code),
         findLanguage: _findLanguage[code] ?? true,
         findScripts: _findScripts[code] ?? const <String, bool>{},
         confirmStop: learns ? () => _confirmStop(state, language) : null,
@@ -729,10 +731,11 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
       for (final language in all)
         if (_ticked.contains(language.code)) language.code,
     }.toList();
-    // The IPA is placed by nothing: it has no level to find.
+    // A notation, the IPA or braille, is placed by nothing: it has no
+    // level to find.
     final added = <String>[
       for (final code in _added(all))
-        if (code != ipaLanguageCode) code,
+        if (!isNotationCode(code)) code,
     ];
     final byCode = <String, CatalogLanguage>{for (final l in all) l.code: l};
     // Whether to learn each script, for a language with script decks that is

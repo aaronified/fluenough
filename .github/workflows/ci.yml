@@ -5,6 +5,11 @@ on:
     branches: [main]
   pull_request:
 
+# A new push to a PR cancels its older run; main's runs are never cancelled.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 permissions:
   contents: read
 
@@ -12,8 +17,14 @@ env:
   FLUTTER_VERSION: "3.47.6"
 
 jobs:
-  decks:
-    name: Validate decks
+  # The jobs below all run at once; CI used to take 35-55 minutes with them in
+  # sequence (owner, 2026-10-20: "Also run all in parallel"). The three
+  # required checks, "Validate decks", "Analyse and test" and "Build debug
+  # APK", are the ones the main branch's ruleset names, so they keep their
+  # names: the first two are small final jobs that gather the parallel ones.
+
+  decks-validate:
+    name: "Decks: validate"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -24,15 +35,38 @@ jobs:
       # Runs on every PR because YAML fails quietly: a bare `no` becomes a
       # boolean and a reviewer will not spot it. See docs/DECK-FORMAT.md.
       - run: python3 tools/validate_decks.py decks/
-      # The validator now gates CI on more than deck content — it checks that
-      # decks/index.json, which the app downloads decks by, is current
-      # (tools/deck_index.py) — so it and the index tool have tests of their
-      # own.
-      - run: python3 -m unittest discover -s tools -t tools
       # Rule 10: no user-visible string is a literal in a widget. Checked here
       # rather than by the analyzer because flutter_lints has no such rule, and
       # a rule aimed at parallel agents cannot rest on a checklist box.
       - run: python3 tools/check_ui_strings.py lib/
+
+  # The validator now gates CI on more than deck content — it checks that
+  # decks/index.json, which the app downloads decks by, is current
+  # (tools/deck_index.py) — so it and the index tool have tests of their
+  # own. They are unittest TestCases, run here by pytest in parallel.
+  decks-tools-tests:
+    name: "Decks: tools' tests"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml pytest pytest-xdist
+      - run: python3 -m pytest -n auto -q -p no:cacheprovider --rootdir tools tools
+
+  # The required check "Validate decks": passes only if both jobs above did.
+  decks:
+    name: Validate decks
+    runs-on: ubuntu-latest
+    needs: [decks-validate, decks-tools-tests]
+    if: always()
+    steps:
+      - run: |
+          if [ "${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') || contains(needs.*.result, 'skipped') }}" = "true" ]; then
+            echo "::error::A deck job did not succeed"
+            exit 1
+          fi
 
   # Phones download decks from main, so a deck change reaches every installed
   # app at once, but each app reads only its own release's format: 0.4.3
@@ -66,8 +100,8 @@ jobs:
           dart run build_runner build
           flutter test test/release_reader/
 
-  app:
-    name: Analyse and test
+  app-analyse:
+    name: "App: analyse"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -90,18 +124,9 @@ jobs:
       # schema fails analyse, test and build on a file CI never made.
       - run: dart run build_runner build
 
-      # Analyse and test first: a formatting failure must not mask whether the
-      # code actually compiles and passes.
+      # Analyse and format here, apart from the tests: a formatting failure
+      # must not mask whether the code actually compiles and passes.
       - run: flutter analyze
-      - run: flutter test
-      # Real downloads from GitHub through the app's own fetcher: 0.4.0
-      # shipped unable to download any deck, which only a test against the
-      # real GitHub could have caught.
-      - name: Download real decks from GitHub
-        run: flutter test test/live/
-        env:
-          LIVE_GITHUB: "1"
-
       - name: Check formatting
         id: fmt
         run: |
@@ -119,10 +144,92 @@ jobs:
           path: format.patch
           if-no-files-found: ignore
 
+  # `flutter test` is split over 8 machines (owner, 2026-10-20); the suite is
+  # ~51 minutes of tests, so each runs about an eighth. Shard indices are 0..7.
+  app-tests:
+    name: "App: tests ${{ matrix.n }}/8"
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { shard: 0, n: 1 }
+          - { shard: 1, n: 2 }
+          - { shard: 2, n: 3 }
+          - { shard: 3, n: 4 }
+          - { shard: 4, n: 5 }
+          - { shard: 5, n: 6 }
+          - { shard: 6, n: 7 }
+          - { shard: 7, n: 8 }
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      # android/ and ios/ are generated rather than committed, so CI recreates
+      # them. This also catches a pubspec that no longer matches the SDK.
+      - run: flutter create . --org app --project-name fluenough --platforms=android
+      # flutter create writes a widget_test.dart referencing MyApp; our app
+      # class is FluenoughApp, so the generated boilerplate does not compile.
+      - run: rm -f test/widget_test.dart
+      - run: flutter pub get
+
+      # drift generates database.g.dart, which is gitignored like every other
+      # generated file. Without this step the first PR that lands a drift
+      # schema fails analyse, test and build on a file CI never made.
+      - run: dart run build_runner build
+      - run: flutter test --total-shards 8 --shard-index ${{ matrix.shard }}
+
+  # Real downloads from GitHub through the app's own fetcher: 0.4.0
+  # shipped unable to download any deck, which only a test against the
+  # real GitHub could have caught.
+  app-live:
+    name: "App: live downloads"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      # android/ and ios/ are generated rather than committed, so CI recreates
+      # them. This also catches a pubspec that no longer matches the SDK.
+      - run: flutter create . --org app --project-name fluenough --platforms=android
+      # flutter create writes a widget_test.dart referencing MyApp; our app
+      # class is FluenoughApp, so the generated boilerplate does not compile.
+      - run: rm -f test/widget_test.dart
+      - run: flutter pub get
+
+      # drift generates database.g.dart, which is gitignored like every other
+      # generated file. Without this step the first PR that lands a drift
+      # schema fails analyse, test and build on a file CI never made.
+      - run: dart run build_runner build
+      - name: Download real decks from GitHub
+        run: flutter test test/live/
+        env:
+          LIVE_GITHUB: "1"
+
+  # The required check "Analyse and test": passes only if every app job did.
+  app:
+    name: Analyse and test
+    runs-on: ubuntu-latest
+    needs: [app-analyse, app-tests, app-live]
+    if: always()
+    steps:
+      - run: |
+          if [ "${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') || contains(needs.*.result, 'skipped') }}" = "true" ]; then
+            echo "::error::An app job did not succeed"
+            exit 1
+          fi
+
   build:
     name: Build debug APK
     runs-on: ubuntu-latest
-    needs: [decks, app]
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-java@v6
