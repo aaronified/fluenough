@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.2] - 2026-10-20
+
 The app's database moves to version 9: each answer now records the script it was shown or typed in, and how it was asked. A backup made by this version can still be restored by 0.5.1, which passes the two new fields by. Going back to an older version after updating is not supported. Your progress is kept by card id, and no card id changed.
 
 ### Added
