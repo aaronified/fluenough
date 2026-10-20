@@ -841,13 +841,15 @@ class _Traffic implements DeckFetcher {
     if (total > peak) peak = total;
     if (_inFlight.values.where((n) => n > 0).length > 1) bothInFlight = true;
     // Once the first slots are filled, while every language still has
-    // files to start, each has one in flight and no more than its share.
+    // files to start, none has more than its share in flight. (A language
+    // may briefly have none on the wire: its file is in, still being
+    // checked, and it holds its slot meanwhile.)
     if (++_starts > DeckDownloads.maxConcurrentFetches &&
         totals.entries.every((e) => (_started[e.key] ?? 0) < e.value)) {
       final share = DeckDownloads.maxConcurrentFetches ~/ totals.length;
       for (final language in totals.keys) {
         final n = _inFlight[language] ?? 0;
-        if (n < 1 || n > share) unfair.add('$language has $n');
+        if (n > share) unfair.add('$language has $n');
       }
     }
     await Future<void>.delayed(const Duration(milliseconds: 2));
