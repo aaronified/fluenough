@@ -826,13 +826,15 @@ target's words, in order, and each example its own:
     words: ["我", "听不懂"]
     reading: "wǒ tīng bu dǒng"
     bases:
-      - { word: "我", ref: "zh-0101" }
-      - { word: "听不懂", base: "听", reading: "tīng" }
+      - { word: "听不懂", base: "听懂", reading: "tīngdǒng" }
     examples:
       - target: "对不起，我听不懂。"
         words: ["对不起", "我", "听不懂"]
         reading: "duìbuqǐ, wǒ tīng bu dǒng."
 ```
+
+我 (wǒ) is a word card of the course, so it needs no base; 听不懂 (tīng bu
+dǒng) names its base, as an inflected word in a spaced language does.
 
 - **They join to the target.** Joined, with spaces, punctuation and
   symbols left out of both, the words are the target (or the example's
