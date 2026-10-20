@@ -5,6 +5,7 @@ import '../core/data/restore_record.dart';
 import '../core/models/drill_mode.dart';
 import '../core/models/leech_action.dart';
 import '../core/models/review_event.dart';
+import '../core/scheduling/ask.dart';
 import '../core/scheduling/replay.dart';
 import '../core/scheduling/fsrs.dart';
 import '../core/scheduling/skill_map.dart';
@@ -35,22 +36,25 @@ abstract interface class ProgressStore implements Listenable {
   /// Every review, oldest first. Append-only: nothing is ever removed.
   List<ReviewEvent> get log;
 
-  /// The states of the script skills, Read script and Write script (#556),
-  /// by card: worked out from the answers to the script decks in [log]
-  /// (`SkillMap.scriptOf`), not stored, and so rebuilt for a learner whose
-  /// answers are older than the skills. Apart from [states] because they
-  /// are never drilled: nothing is due in them.
-  Map<ProgressKey, FsrsState> get scriptStates;
+  /// The states of the script skills, Read and Write of each script
+  /// (#556, #653), by card and script: worked out from the answers in [log]
+  /// that read or write a script (`SkillMap.scriptOf`), not stored, and so
+  /// rebuilt for a learner whose answers are older than the skills. Apart
+  /// from [states] because they are never drilled: nothing is due in them.
+  Map<ScriptKey, FsrsState> get scriptStates;
 
-  /// The script skills' reviews, oldest first, one for each script-deck
-  /// answer that counts in full for one: derived like [scriptStates], and
-  /// not in [log], so that no count of answers, streak or day's work
-  /// counts them twice. [ProgressQueries.skillLog] joins the two.
+  /// The script skills' reviews, oldest first, one for each answer that
+  /// counts for one, in full in a script deck or in part elsewhere
+  /// ([ReviewEvent.share]): derived like [scriptStates], and not in [log],
+  /// so that no count of answers, streak or day's work counts them twice.
+  /// [ProgressQueries.skillLog] joins the full ones to [log].
   List<ReviewEvent> get scriptLog;
 
   /// Records a review: runs [Fsrs.next] on the pair's state, with the
   /// parameters that schedule its skill ([parameters]), appends the event,
-  /// and returns it. Call it the moment the answer is given.
+  /// and returns it. Call it the moment the answer is given. [script] is
+  /// the learned script the card was shown or the answer typed in, null for
+  /// transliteration, and [asked] how it was asked (#653).
   ReviewEvent record({
     required String deckId,
     required String cardId,
@@ -59,6 +63,8 @@ abstract interface class ProgressStore implements Listenable {
     required DateTime now,
     Duration elapsed = Duration.zero,
     String? answerGiven,
+    String? script,
+    Ask? asked,
   });
 
   /// What the learner has done about leeches, oldest first. Append-only.
@@ -157,7 +163,7 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
 
   final Map<ProgressKey, FsrsState> _states = <ProgressKey, FsrsState>{};
   final List<ReviewEvent> _log = <ReviewEvent>[];
-  final Map<ProgressKey, FsrsState> _scriptStates = <ProgressKey, FsrsState>{};
+  final Map<ScriptKey, FsrsState> _scriptStates = <ScriptKey, FsrsState>{};
   final List<ReviewEvent> _scriptLog = <ReviewEvent>[];
   final List<LeechAction> _leechActions = <LeechAction>[];
   SkillMap _skills = const SkillMap();
@@ -202,8 +208,8 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
   List<ReviewEvent> get log => List<ReviewEvent>.unmodifiable(_log);
 
   @override
-  Map<ProgressKey, FsrsState> get scriptStates =>
-      Map<ProgressKey, FsrsState>.unmodifiable(_scriptStates);
+  Map<ScriptKey, FsrsState> get scriptStates =>
+      Map<ScriptKey, FsrsState>.unmodifiable(_scriptStates);
 
   @override
   List<ReviewEvent> get scriptLog => List<ReviewEvent>.unmodifiable(_scriptLog);
@@ -217,6 +223,8 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
     required DateTime now,
     Duration elapsed = Duration.zero,
     String? answerGiven,
+    String? script,
+    Ask? asked,
   }) {
     final key = (cardId: cardId, mode: mode);
     final before = _states[key];
@@ -235,6 +243,8 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
       grade: grade,
       elapsed: elapsed,
       answerGiven: answerGiven,
+      script: script,
+      asked: asked,
       before: before,
       after: after,
     );
@@ -388,9 +398,15 @@ extension ProgressQueries on ProgressStore {
   );
 
   /// Every review of every skill, the script skills' (#556) after the
-  /// word skills': what a skill's pace and fit are worked out from. [log]
-  /// alone is what the learner did, answer by answer.
-  List<ReviewEvent> get skillLog => <ReviewEvent>[...log, ...scriptLog];
+  /// word skills': what a skill's pace and fit are worked out from. Of the
+  /// script skills' only the full reviews, in the script decks: a part of
+  /// one (#653) is not a review to fit. [log] alone is what the learner
+  /// did, answer by answer.
+  List<ReviewEvent> get skillLog => <ReviewEvent>[
+    ...log,
+    for (final e in scriptLog)
+      if (e.share >= 1) e,
+  ];
 
   /// What the leech actions add up to: which pairs are reset or set aside.
   LeechEffects get leechEffects => LeechEffects(leechActions);

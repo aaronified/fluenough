@@ -1,5 +1,6 @@
 import '../models/leech_action.dart';
 import '../models/review_event.dart';
+import 'ask.dart';
 import 'fsrs.dart';
 import 'skill_map.dart';
 import 'skill_parameters.dart';
@@ -12,6 +13,8 @@ typedef LoggedReview = ({
   int grade,
   Duration elapsed,
   String? answerGiven,
+  String? script,
+  Ask? asked,
 });
 
 /// What [replayReviews] gives.
@@ -19,7 +22,7 @@ typedef Replayed = ({
   List<ReviewEvent> events,
   Map<ProgressKey, FsrsState> states,
   List<ReviewEvent> scriptEvents,
-  Map<ProgressKey, FsrsState> scriptStates,
+  Map<ScriptKey, FsrsState> scriptStates,
 });
 
 /// Replays [reviews], in the order given, through [Fsrs.next]: every review
@@ -36,8 +39,8 @@ typedef Replayed = ({
 /// Without, each pair is its own reviews alone: what the database's
 /// `card_states` caches.
 ///
-/// With [skills] that name script decks, the answers in them also make the
-/// script skills (#556, [scriptReview]): their reviews, [scriptEvents], and
+/// With [skills], the answers that read or write a script also make the
+/// script skills (#556, #653, [scriptReview]): their reviews, [scriptEvents], and
 /// their states, [scriptStates], kept apart from the word skills' because
 /// they are never drilled or logged. Replaying the whole log rebuilds them,
 /// so a learner with script-deck answers from before the skills existed
@@ -56,7 +59,7 @@ Replayed replayReviews(
   final states = <ProgressKey, FsrsState>{};
   final restarted = <ProgressKey>{};
   final events = <ReviewEvent>[];
-  final scriptStates = <ProgressKey, FsrsState>{};
+  final scriptStates = <ScriptKey, FsrsState>{};
   final scriptEvents = <ReviewEvent>[];
   for (final review in reviews) {
     final key = review.key;
@@ -92,6 +95,8 @@ Replayed replayReviews(
         grade: review.grade,
         elapsed: review.elapsed,
         answerGiven: review.answerGiven,
+        script: review.script,
+        asked: review.asked,
         before: before,
         after: after,
       ),
@@ -108,30 +113,36 @@ Replayed replayReviews(
   );
 }
 
-/// Counts [review], an answer in a script deck, for the script skill
-/// [skills] says it feeds (#556), in [states], and for a review of the
-/// skill's own, in [events]: the skill's pair is reviewed as the word
-/// skill's is, with the parameters of the script skill, so that the two
-/// schedules are never one. A leech reset or set-aside of the word skill's
-/// pair does not touch the script skills.
+/// Counts [review] for the script skill [skills] says it feeds (#556,
+/// #653), in [states], and as a review of that skill's own, in [events]:
+/// the skill's pair, in its script, is reviewed as the word skill's is,
+/// with the parameters of the script skill, so that the two schedules are
+/// never one. In a script deck a full review; elsewhere the share
+/// [SkillMap.scriptOf] gives ([Fsrs.partial]). A leech reset or set-aside
+/// of the word skill's pair does not touch the script skills.
 void scriptReview(
-  Map<ProgressKey, FsrsState> states,
+  Map<ScriptKey, FsrsState> states,
   List<ReviewEvent> events,
   SkillMap skills,
   LoggedReview review, {
   SkillParameters? parameters,
 }) {
-  final target = skills.scriptOf(review.key.mode, review.deckId);
+  final target = skills.scriptOf(review);
   if (target == null) return;
   final chosen = parameters ?? SkillParameters.none;
-  final key = (cardId: review.key.cardId, mode: target.skill);
+  final key = (
+    cardId: review.key.cardId,
+    mode: target.skill,
+    script: target.script,
+  );
   final before = states[key];
-  final after = Fsrs.next(
+  final after = Fsrs.partial(
     before,
     review.grade,
+    target.share,
     now: review.at,
     rated: review.answerGiven == null,
-    parameters: chosen.forPair(key),
+    parameters: chosen.forPair((cardId: key.cardId, mode: key.mode)),
   );
   states[key] = after;
   events.add(
@@ -143,6 +154,9 @@ void scriptReview(
       grade: review.grade,
       elapsed: review.elapsed,
       answerGiven: review.answerGiven,
+      script: target.script,
+      asked: review.asked,
+      share: target.share,
       before: before,
       after: after,
     ),
@@ -183,6 +197,8 @@ LoggedReview logged(ReviewEvent event) => (
   grade: event.grade,
   elapsed: event.elapsed,
   answerGiven: event.answerGiven,
+  script: event.script,
+  asked: event.asked,
 );
 
 /// [reviews] oldest first, keeping the order they were given in for a tie.

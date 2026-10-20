@@ -36,6 +36,8 @@ void main() {
       grade: 4,
       elapsed: const Duration(milliseconds: 3120),
       answerGiven: 'बाज़ार',
+      script: null,
+      asked: null,
     ),
     (
       key: (cardId: 'bn-0246', mode: DrillMode.recognition),
@@ -44,6 +46,8 @@ void main() {
       grade: 1,
       elapsed: Duration.zero,
       answerGiven: null,
+      script: null,
+      asked: null,
     ),
   ];
   final actions = <LeechAction>[
@@ -376,6 +380,8 @@ void main() {
       grade: 0,
       elapsed: Duration.zero,
       answerGiven: null,
+      script: null,
+      asked: null,
     );
     expect(reviewIdentity(regraded), reviewIdentity(r));
     final later = (
@@ -385,6 +391,8 @@ void main() {
       grade: r.grade,
       elapsed: r.elapsed,
       answerGiven: r.answerGiven,
+      script: null,
+      asked: null,
     );
     expect(reviewIdentity(later), isNot(reviewIdentity(r)));
   });
