@@ -28,6 +28,7 @@ The app's database moves to version 9: each answer now records the script it was
 
 ### Fixed
 
+- The Inspect screen no longer cuts off a row at large text (#671).
 - A deck download no longer stops at the first dropped connection: a file that fails as offline is tried again up to three more times, after 1, 3 and 9 seconds, and a course's files share one connection. Files also download in parallel, six at a time shared fairly between the languages downloading together, instead of one after another. The log names the cause, such as SocketException.
 - A notation's course, the IPA's or braille's, shows Complete in the language list before its decks are downloaded too, not Alpha.
 

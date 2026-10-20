@@ -350,10 +350,11 @@ class _Line extends StatelessWidget {
         Text(bottom, style: theme.textTheme.bodyLarge),
       if (id != null)
         if (deckId case final deck?)
-          Row(
+          Wrap(
+            crossAxisAlignment: WrapCrossAlignment.center,
+            spacing: 8,
             children: <Widget>[
-              Flexible(child: _Id(id)),
-              const SizedBox(width: 8),
+              _Id(id),
               TextButton.icon(
                 onPressed: () =>
                     ReportButton.open(context, detail: '$id in $deck'),
