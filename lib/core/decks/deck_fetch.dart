@@ -22,12 +22,16 @@ enum FetchFailure {
 
 /// A downloaded file's bytes, or why there are none.
 class Fetched {
-  const Fetched(Uint8List this.bytes) : failure = null;
+  const Fetched(Uint8List this.bytes) : failure = null, cause = null;
 
-  const Fetched.failed(FetchFailure this.failure) : bytes = null;
+  const Fetched.failed(FetchFailure this.failure, {this.cause}) : bytes = null;
 
   final Uint8List? bytes;
   final FetchFailure? failure;
+
+  /// The exception's type behind a [FetchFailure.offline], such as
+  /// `SocketException`, for the log. The learner sees only [failure].
+  final String? cause;
 
   bool get ok => bytes != null;
 }
@@ -81,6 +85,11 @@ class GitHubDeckFetcher implements DeckFetcher {
     Uri? base,
     this.timeout = const Duration(seconds: 30),
     this.maxBytes = 8 * 1024 * 1024,
+    this.retryDelays = const <Duration>[
+      Duration(seconds: 1),
+      Duration(seconds: 3),
+      Duration(seconds: 9),
+    ],
   }) : base = base ?? defaultBase;
 
   /// The repository's `main` branch, which the app downloads its decks
@@ -102,20 +111,49 @@ class GitHubDeckFetcher implements DeckFetcher {
   /// not a deck.
   final int maxBytes;
 
+  /// The waits before each retry of a file that failed as
+  /// [FetchFailure.offline]: a dropped connection is tried again after each,
+  /// then reported. Empty for no retries.
+  final List<Duration> retryDelays;
+
+  /// One client for every file, so that the connection to GitHub is kept
+  /// alive between them. Made on the first download.
+  HttpClient? _client;
+
+  /// Closes the connection kept for the next file. A later [fetch] opens a
+  /// new one.
+  void close() {
+    _client?.close(force: true);
+    _client = null;
+  }
+
   @override
   Future<Fetched> fetch(String path) async {
-    final client = HttpClient()..connectionTimeout = timeout;
+    var fetched = await _fetchOnce(path);
+    for (final wait in retryDelays) {
+      // Only a dropped connection is worth another try: a 404, a rate
+      // limit or a file too large would answer the same.
+      if (fetched.failure != FetchFailure.offline) break;
+      await Future<void>.delayed(wait);
+      fetched = await _fetchOnce(path);
+    }
+    return fetched;
+  }
+
+  Future<Fetched> _fetchOnce(String path) async {
+    final client = _client ??= HttpClient()..connectionTimeout = timeout;
     try {
       return await _get(client, base.resolve(path)).timeout(timeout);
     } on _TooLarge {
       return const Fetched.failed(FetchFailure.badReply);
-    } catch (_) {
+    } catch (e) {
       // No network, no DNS, a refused connection, a failed TLS handshake,
       // the connection closing part-way, or the timeout: GitHub was not
       // reached, or not all the way.
-      return const Fetched.failed(FetchFailure.offline);
-    } finally {
-      client.close(force: true);
+      return Fetched.failed(
+        FetchFailure.offline,
+        cause: e.runtimeType.toString(),
+      );
     }
   }
 
@@ -143,7 +181,7 @@ class GitHubDeckFetcher implements DeckFetcher {
             HttpClientResponseCompressionState.notCompressed &&
         expected >= 0 &&
         bytes.length != expected) {
-      return const Fetched.failed(FetchFailure.offline);
+      return const Fetched.failed(FetchFailure.offline, cause: 'ShortBody');
     }
     return Fetched(bytes.takeBytes());
   }
