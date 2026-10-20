@@ -252,11 +252,12 @@ class Deck {
 /// Whether [card], in a deck of [kind], counts as a word (DECK-FORMAT.md, The
 /// B1 plan): the words a unit plans and a course teaches. True for a card of a
 /// vocab deck that is not a phrasebook chunk nor a phrase, and is one word by
-/// [wordsForBases] or a noun, verb, adjective, adverb or pronoun of several
-/// words. Grammar and rules cells and reading questions are not words.
+/// its `words`, where the deck gives them, else by [wordsForBases], or a
+/// noun, verb, adjective, adverb or pronoun of several words. Grammar and
+/// rules cells and reading questions are not words.
 bool countsAsWord(Card card, DeckKind kind) =>
     kind == DeckKind.vocab &&
     !card.phrasebook &&
     card.pos != 'phrase' &&
-    (wordsForBases(card.target).length == 1 ||
+    ((card.words?.length ?? wordsForBases(card.target).length) == 1 ||
         const {'noun', 'verb', 'adj', 'adv', 'pronoun'}.contains(card.pos));

@@ -1643,4 +1643,83 @@ $units''',
       });
     });
   });
+
+  // A card's and an example's `words` (DECK-FORMAT.md, Base words; #661):
+  // Chinese and Japanese are written without spaces, so the deck gives the
+  // words of each target, and the app splits by them where it would split
+  // at spaces.
+  group('words in a script without spaces', () {
+    const header = '''
+schema: 1
+id: test-deck
+name: Test deck
+language: { code: zh, iso639_3: cmn, name: Mandarin Chinese, script: han_simplified, scripts: [han_simplified, han_traditional] }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+''';
+    const phrase = '''
+  - id: zh-0011
+    target: "我听不懂"
+    target_scripts: { han_traditional: "我聽不懂" }
+    words: ["我", "听不懂"]
+    reading: "wǒ tīng bu dǒng"
+    native: "I don't understand"
+    pos: "phrase"
+    examples:
+      - target: "对不起，我听不懂。"
+        words: ["对不起", "我", "听不懂"]
+        native: "Sorry, I don't understand."
+''';
+    Card parsed(String yaml) =>
+        DeckParser.parse('$header$yaml', source: 'test.yaml').cards.single;
+
+    test('the words give the tiles put in order; words that are not the '
+        'text, in order, fall back to its spaces', () {
+      final card = parsed(phrase);
+      expect(card.rearranges, isTrue);
+      expect(card.tilesOfSpelling('我听不懂'), <String>['我', '听不懂']);
+      expect(tilesOfWords('对不起，我听不懂。', <String>['对不起', '我', '听不懂']), <String>[
+        '对不起',
+        '，',
+        '我',
+        '听不懂',
+        '。',
+      ]);
+      // Without its words it is one word, and typed instead.
+      expect(
+        parsed(phrase.replaceAll('    words: ["我", "听不懂"]\n', '')).rearranges,
+        isFalse,
+      );
+      expect(tilesOfWords('多少钱？', <String>['多', '钱']), <String>['多少钱', '？']);
+      expect(tilesOfWords('多少钱？', <String>['钱', '多少']), <String>['多少钱', '？']);
+      expect(tilesOfWords('多少钱？', <String>['多少']), <String>['多少钱', '？']);
+    });
+
+    test('the traditional spelling takes the words letter for letter; a '
+        'spelling of another length takes none', () {
+      final card = parsed(phrase);
+      expect(card.wordsOfSpelling('我聽不懂'), <String>['我', '聽不懂']);
+      expect(card.tilesOfSpelling('我聽不懂'), <String>['我', '聽不懂']);
+      expect(card.wordsOfSpelling('我不懂'), isNull);
+      expect(carryWords(<String>['我', '听不懂'], from: '我听不懂', to: '我聽不'), isNull);
+    });
+
+    test('a card of several given words is not one word; a card of one '
+        'is', () {
+      final several = parsed(
+        phrase.replaceAll('    pos: "phrase"\n', '    pos: "other"\n'),
+      );
+      expect(countsAsWord(several, DeckKind.vocab), isFalse);
+      final one = parsed('''
+  - id: zh-0101
+    target: "我"
+    words: ["我"]
+    native: "I"
+    pos: "pronoun"
+''');
+      expect(one.wordCount, 1);
+      expect(countsAsWord(one, DeckKind.vocab), isTrue);
+    });
+  });
 }

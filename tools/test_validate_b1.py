@@ -1663,11 +1663,13 @@ class Bases(B1Case):
         self.put(EXTRA, single(cards=[dict(CAT), dict(Bases.SENTENCE)]))
         self.assertNotAcross("is not a word", EXTRA)
 
-    def _a_script_without_spaces_cannot_be_checked_yet(self) -> None:
+    def _a_script_without_spaces_gives_its_words(self) -> None:
+        # The words themselves are checked in test_validate_card_data.py.
         self.edit(CORE, lambda d: d["language"].update(script="thai"))
-        self.assertAcross(f"{self.p(PATH)}: units[0]: zz-en-home is in the thai script, "
-                          f"written without spaces; bases cannot be checked until the format "
-                          f"gives its words (DECK-FORMAT.md, Base words)")
+        self.assertAcross(f"{self.p(CORE)}: card zz-9002: no `words`; zz-en-home is a B1 "
+                          f"deck in the thai script, written without spaces, so each "
+                          f"target and example gives its words in order (DECK-FORMAT.md, "
+                          f"Base words)")
 
     def test_bases_and_their_coverage(self) -> None:
         cases = (
@@ -1680,11 +1682,84 @@ class Bases(B1Case):
             self._an_example_is_checked_where_the_layer_shows_it,
             self._a_word_taught_only_from_another_language_is_not_taught,
             self._a_deck_on_no_plan_is_not_checked,
-            self._a_script_without_spaces_cannot_be_checked_yet,
+            self._a_script_without_spaces_gives_its_words,
         )
         for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
                 # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
+
+
+def _spaced(target: str) -> list[str]:
+    """The fixture's words, as its spaces give them, a mark at the end left
+    off: what a deck in a script without spaces would list."""
+    return [w.rstrip("!.") for w in target.split()]
+
+
+def _give_words(deck: dict) -> None:
+    for c in deck["cards"]:
+        if "target" in c:
+            c["words"] = _spaced(c["target"])
+
+
+class GivenWords(B1Case):
+    """A card's and an example's `words` (DECK-FORMAT.md, Base words; #661):
+    the words of a target in a script written without spaces. The fixture is
+    Telugu, written with spaces; these cases give it `words` and, where they
+    say so, mark it a script without spaces."""
+
+    def _words_joining_to_the_target_are_clean(self) -> None:
+        self.edit(CORE, _give_words)
+        self.assertNoError(CORE, "words")
+
+    def _words_must_join_to_the_target(self) -> None:
+        self.edit(CORE, lambda d: card(d, "zz-9002").update(words=["నేను", "వెళ్తాను"]))
+        self.assertError(CORE, "card zz-9002",
+                         "words join to 'నేనువెళ్తాను', but the target is "
+                         "'నేను ఇంటికి వెళ్తాను.'; give its words in order, every letter "
+                         "of it in one word (spaces and punctuation left out)")
+        self.edit(CORE, lambda d: card(d, "zz-9001").update(examples=[{
+            "target": "ఇల్లు చిన్నది.", "reading": "illu cinnadi.", "words": ["ఇల్లు"]}]))
+        self.assertError(CORE, "card zz-9001",
+                         "examples[0].words join to 'ఇల్లు', but the examples[0].target "
+                         "is 'ఇల్లు చిన్నది.'; give its words in order, every letter of "
+                         "it in one word (spaces and punctuation left out)")
+
+    def _a_word_has_no_space_and_is_not_a_mark(self) -> None:
+        self.edit(CORE, lambda d: card(d, "zz-9002").update(
+            words=["నేను ఇంటికి", "వెళ్తాను"]))
+        self.assertError(CORE, "card zz-9002", "words: 'నేను ఇంటికి' is not a word: a "
+                                               "word has no space in it, and is not "
+                                               "punctuation alone")
+        self.edit(CORE, lambda d: card(d, "zz-9002").update(
+            words=["నేను", "ఇంటికి", "వెళ్తాను", "."]))
+        self.assertError(CORE, "card zz-9002", "words: '.' is not a word: a word has no "
+                                               "space in it, and is not punctuation alone")
+
+    def _an_unspaced_b1_deck_gives_every_target_its_words(self) -> None:
+        self.edit(CORE, lambda d: d["language"].update(script="thai"))
+        self.assertAcross(f"{self.p(CORE)}: card zz-9101: no `words`; zz-en-home is a B1 "
+                          f"deck in the thai script, written without spaces, so each "
+                          f"target and example gives its words in order (DECK-FORMAT.md, "
+                          f"Base words)")
+        self.edit(CORE, _give_words)
+        self.assertNotAcross("no `words`")
+        self.assertNotAcross("is not a word the zz-en course teaches")
+
+    def test_words_make_up_the_target_and_an_unspaced_deck_gives_them(self) -> None:
+        cases = (
+            self._words_joining_to_the_target_are_clean,
+            self._words_must_join_to_the_target,
+            self._a_word_has_no_space_and_is_not_a_mark,
+            self._an_unspaced_b1_deck_gives_every_target_its_words,
+        )
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
                 fresh = type(self)(case.__name__)
                 fresh.setUp()
                 try:

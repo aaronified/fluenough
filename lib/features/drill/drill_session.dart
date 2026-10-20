@@ -1068,11 +1068,12 @@ class DrillSession extends ChangeNotifier {
     final reading = item.card.reading;
     return transliterating &&
         reading != null &&
-        wordsOf(reading).length == wordsOf(item.card.target).length;
+        wordsOf(reading).length == item.card.wordCount;
   }
 
-  List<String> get _words =>
-      tilesOf(rearrangesReading ? item.card.reading! : writtenTarget);
+  List<String> get _words => rearrangesReading
+      ? tilesOf(item.card.reading!)
+      : item.card.tilesOfSpelling(writtenTarget);
 
   List<String>? _tiles;
 
@@ -1130,7 +1131,13 @@ class DrillSession extends ChangeNotifier {
             if (writtenTarget != card.target) writtenTarget,
             ...card.acceptedAnswers(DrillMode.production),
           ];
-    final right = accepted.any((a) => tilesOf(a).join(' ') == given);
+    final right = accepted.any(
+      (a) =>
+          (rearrangesReading ? tilesOf(a) : card.tilesOfSpelling(a)).join(
+            ' ',
+          ) ==
+          given,
+    );
     final grade = right
         ? AnswerOutcome.exact.toGrade()
         : AnswerOutcome.wrong.toGrade();

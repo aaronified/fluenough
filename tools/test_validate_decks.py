@@ -117,8 +117,15 @@ class IndexCheck(unittest.TestCase):
         self.assertIn("out of date", result.stdout)
 
     def _a_hidden_language_is_still_validated(self) -> None:
-        """decks/ja/ is hidden: left out of the index, but still checked."""
+        """A hidden language is left out of the index, but still checked.
+        No language is hidden now, so the copied tool hides Japanese."""
+        tool = self.tmp / "tools" / "deck_index.py"
+        tool.write_text(tool.read_text(encoding="utf-8").replace(
+            "HIDDEN: set[str] = set()", 'HIDDEN: set[str] = {"ja"}'),
+            encoding="utf-8")
         shutil.copytree(REPO / "decks" / "ja", self.tmp / "decks" / "ja")
+        shutil.copy(REPO / "decks" / "themes.yaml", self.tmp / "decks" / "themes.yaml")
+        self.write_index()
         result = self.run_validator("decks/", self.tmp)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 

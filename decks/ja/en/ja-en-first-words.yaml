@@ -1,0 +1,208 @@
+schema: 1
+id: "ja-en-first-words"
+kind: "layer"
+core: "ja-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+description: "Twelve basic words: I and you, the honorific さん (san), the first nouns and adjectives. Their examples bring in the particles and です (desu), which are taught later. Greetings and the requests for help are in the phrasebook."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0067":
+    native: "I"
+    notes:
+      "n1": "The polite everyday 'I'. Men may say ぼく (boku) and women may say あたし (atashi) in casual speech; a learner should use わたし (watashi). Japanese often leaves it out, since the context shows who is meant."
+    examples:
+      "わたしはせんせいです。":
+        native: "I am a teacher."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "わたしはにほんにいます。":
+        native: "I am in Japan."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "に": { meaning: "in; at; to" }
+          "います": { meaning: "to be (of people and animals)" }
+  "ja-0068":
+    native: "you"
+    notes:
+      "n1": "Used less than 'you' in English. People often use the other person's name with さん (san), or their job, such as 先生 (sensei). Using あなた (anata) to a stranger can sound cold."
+    examples:
+      "あなたはがくせいですか。":
+        native: "Are you a student?"
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+          "か": { meaning: "(marks a question)" }
+      "あなたのいぬはおおきいです。":
+        native: "Your dog is big."
+        bases:
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-0069":
+    native: "Mr.; Ms.; Mrs."
+    notes:
+      "n1": "Added after a surname, for anyone, in a neutral and polite way: たなかさん (tanaka-san). Not used for your own name, nor for the family you belong to."
+    examples:
+      "たなかさんはにほんじんです。":
+        native: "Mr. Tanaka is Japanese."
+        bases:
+          "たなか": { meaning: "Tanaka (a family name)" }
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "やまださんはせんせいです。":
+        native: "Ms. Yamada is a teacher."
+        bases:
+          "やまだ": { meaning: "Yamada (a family name)" }
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-0070":
+    native: "teacher"
+    notes:
+      "n1": "A teacher is addressed as 先生 (sensei) and not with さん (san). The word also titles doctors and other experts."
+    examples:
+      "たなかさんはせんせいです。":
+        native: "Ms. Tanaka is a teacher."
+        bases:
+          "たなか": { meaning: "Tanaka (a family name)" }
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "わたしのせんせいはたなかさんです。":
+        native: "My teacher is Ms. Tanaka."
+        bases:
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "は": { meaning: "(marks the topic)" }
+          "たなか": { meaning: "Tanaka (a family name)" }
+          "です": { meaning: "is (polite)" }
+  "ja-0071":
+    native: "student"
+    notes:
+      "n1": "For someone at school or university; written 学生 (gakusei) in kanji."
+    examples:
+      "やまださんはがくせいです。":
+        native: "Mr. Yamada is a student."
+        bases:
+          "やまだ": { meaning: "Yamada (a family name)" }
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "わたしはがくせいです。":
+        native: "I am a student."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-0072":
+    native: "Japan"
+    notes:
+      "n1": "The name of the country. Its language is 日本語 (nihongo), and a person from Japan is a 日本人 (nihonjin)."
+    examples:
+      "にほんはおおきいです。":
+        native: "Japan is big."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "わたしはにほんじんです。":
+        native: "I am Japanese."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "にほんじん": { meaning: "a Japanese person" }
+          "です": { meaning: "is (polite)" }
+  "ja-0073":
+    native: "water"
+    notes:
+      "n1": "In Japanese restaurants a glass of water is often served without charge, and asking for it is simple: みずをください (mizu wo kudasai)."
+    examples:
+      "みずをください。":
+        native: "Water, please."
+        bases:
+          "を": { meaning: "(marks the object)" }
+          "ください": { meaning: "please (give me)" }
+      "みずはつめたいです。":
+        native: "The water is cold."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "つめたい": { meaning: "cold (to the touch)" }
+          "です": { meaning: "is (polite)" }
+  "ja-0074":
+    native: "rice; a meal"
+    notes:
+      "n1": "Cooked rice, and by extension a meal, as in 朝ごはん (asagohan), breakfast. The same word serves for both."
+    examples:
+      "ごはんをたべます。":
+        native: "I eat a meal."
+        bases:
+          "を": { meaning: "(marks the object)" }
+          "たべます": { meaning: "to eat" }
+      "ごはんはおいしいです。":
+        native: "The meal is delicious."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "おいしい": { meaning: "tasty" }
+          "です": { meaning: "is (polite)" }
+  "ja-0075":
+    native: "train"
+    notes:
+      "n1": "The ordinary train. The fast bullet train is 新幹線 (shinkansen)."
+    examples:
+      "でんしゃでいきます。":
+        native: "I go by train."
+        bases:
+          "で": { meaning: "by (a means); at" }
+          "いきます": { meaning: "to go" }
+      "でんしゃはおおきいです。":
+        native: "The train is big."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-0076":
+    native: "dog"
+    notes:
+      "n1": "Written 犬 (inu) in kanji. ワンワン (wanwan) is the child's word for a dog."
+    examples:
+      "いぬがすきです。":
+        native: "I like dogs."
+        bases:
+          "が": { meaning: "(marks the subject)" }
+          "すき": { meaning: "liked; fond of" }
+          "です": { meaning: "is (polite)" }
+      "わたしのいぬはおおきいです。":
+        native: "My dog is big."
+        bases:
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-0077":
+    native: "big"
+    alt_native: ["large"]
+    notes:
+      "n1": "An i-adjective, so it changes its ending rather than adding a word. Its opposite is ちいさい (chiisai, small)."
+    examples:
+      "いぬはおおきいです。":
+        native: "The dog is big."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "こうえんはおおきいです。":
+        native: "The park is big."
+        bases:
+          "こうえん": { meaning: "park" }
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-0078":
+    native: "small"
+    notes:
+      "n1": "An i-adjective, the opposite of おおきい (ookii, big)."
+    examples:
+      "ねこはちいさいです。":
+        native: "The cat is small."
+        bases:
+          "ねこ": { meaning: "cat" }
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "わたしのいぬはちいさいです。":
+        native: "My dog is small."
+        bases:
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }

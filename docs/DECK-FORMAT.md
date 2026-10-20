@@ -571,6 +571,7 @@ cards:
 | `ipa` | no | How the word is said, in the IPA: broad, without the slashes, which the app adds, as `"paːlu"` ([ADR-0025](adr/0025-iso-15919-and-ipa.md)). `tools/transcribe.py` writes one. |
 | `alt_target` | no | Additional answers accepted in production drills. |
 | `target_scripts` | no | For a language whose block lists several `scripts`: the word spelled in each script but the first, `{ perso_arabic: "کتاب" }`. See [below](#a-cards-other-scripts-target_scripts). |
+| `words` | in a B1 deck in a script without spaces | The target's words, in order, `["我", "听不懂"]` for 我听不懂 (wǒ tīng bu dǒng): for Chinese, Japanese and Thai, written without spaces. Allowed on any card. See [Base words](#base-words-bases). |
 | `alt_native` | no | Additional meanings accepted when the meaning is typed, in Hear (ADR-0034). |
 | `pos` | no | Part of speech: `noun`, `verb`, `adj`, `adv`, `pronoun`, `phrase`, `particle`, `other`. A [rules deck](#rules-decks) picks its rows by it, so give every word its own: a pronoun is `pronoun`, not `other`. |
 | `gender` | no | Grammatical gender, as text. On a noun it is one of its language's classes, which the language's path lists (`genders`): see [Gender](#gender). |
@@ -580,7 +581,7 @@ cards:
 | `audio_credit` | with a shipped `audio` | `{ source, license, credit }`: the file it was made from, its licence and its speaker. |
 | `image` | no | The card's own image, shown where `picture` shows and in its place: `"decks/hi/images/hi-0001.webp"`, a file shipped with the deck, with its `image_credit`. See [A card's own image](#a-cards-own-image-image). |
 | `image_credit` | with `image` | `{ source, license, credit }`: the file it was made from, its licence, and whom to credit. |
-| `examples` | no | List of `{target, native}` sentence pairs; a word card has at least 2 once its language is filled in (see [Examples](#examples)). An example may also give its `reading`, `ipa`, [`bases`](#base-words-bases), `source`, and, for [the IPA course](#the-ipa-course), its `language` and whether it `sounds`. |
+| `examples` | no | List of `{target, native}` sentence pairs; a word card has at least 2 once its language is filled in (see [Examples](#examples)). An example may also give its `reading`, `ipa`, [`bases`](#base-words-bases), [`words`](#base-words-bases), `source`, and, for [the IPA course](#the-ipa-course), its `language` and whether it `sounds`. |
 | `phrasebook` | no | `true` on a survival phrase taught whole, first: see [The phrasebook](#the-phrasebook). Leave it out otherwise. |
 | `bases` | no | The base word of each inflected or derived word in the target and its examples: see [Base words](#base-words-bases). `"self"` on a word that is its own root ([Card data](#root-word-synonyms-and-antonyms)). |
 | `register` | no | How formal or rude the word is: `"formal"`, `"neutral"`, `"informal"`, `"slang"` or `"offensive"`. See [Register, forms, collocations and senses](#register-forms-collocations-and-senses). |
@@ -630,7 +631,9 @@ blocks for is not checked), and that it differs from `target`. The value is
 not "script in prose": the card's `reading` serves it.
 
 The app parses and keeps it (`Card.targetScripts`); a screen that shows the
-spelling in the script a learner chose is not built yet.
+spelling in the script a learner chose is not built yet. A card's
+[`words`](#base-words-bases) are its target's; another spelling takes them
+letter for letter where it has as many letters.
 
 It is also what a backup voice says (#641). The Perso-Arabic decks are voiced
 `tts: "ur-PK"`. On a phone with the Hindi voice (`hi-IN`) but not the Urdu
@@ -787,7 +790,8 @@ are in each layer:
   `wiktionary` (they are in the layer). Two words are the same when they are
   equal in Unicode's composed form, ignoring case.
 - **Words** are the text split at spaces and punctuation (an apostrophe
-  inside a word is kept), with digits dropped.
+  inside a word is kept), with digits dropped, or, where the card or the
+  example gives them, its `words` (below).
 - **A changed stem is said in the card's notes.** When the inflected form
   does not show its base, the card says so in one short line, so the learner
   sees the link. The base రావడం (rāvaḍam), to come, becomes వచ్చింది
@@ -809,8 +813,54 @@ or rules cell does not count, since an inflected form taught as a cell is
 still a derived word that names its base, and nor does a card taught only
 from another native language. Phrasebook cards are checked too. Decks on no
 B1 plan are not checked: they gain their bases as their language's plan is
-written. A language written without spaces (`han`, `kana`, `thai`) cannot
-have a B1 deck until the format can give its words.
+written.
+
+**A script written without spaces gives its words: `words`** (#661). Spaces
+cannot show where a Chinese, Japanese or Thai word ends, so a card gives its
+target's words, in order, and each example its own:
+
+```yaml
+  - id: "zh-0011"
+    target: "我听不懂"
+    target_scripts: { han_traditional: "我聽不懂" }
+    words: ["我", "听不懂"]
+    reading: "wǒ tīng bu dǒng"
+    bases:
+      - { word: "听不懂", base: "听懂", reading: "tīngdǒng" }
+    examples:
+      - target: "对不起，我听不懂。"
+        words: ["对不起", "我", "听不懂"]
+        reading: "duìbuqǐ, wǒ tīng bu dǒng."
+```
+
+我 (wǒ) is a word card of the course, so it needs no base; 听不懂 (tīng bu
+dǒng) names its base, as an inflected word in a spaced language does.
+
+- **They join to the target.** Joined, with spaces, punctuation and
+  symbols left out of both, the words are the target (or the example's
+  target), in Unicode's composed form. A word has no space in it and is not
+  a mark alone. The validator names the card and what the words join to
+  where they do not.
+- **Where given, they are the text's words.** A base's `word` is one of
+  them, B1 coverage checks each of them, a card of one word counts as a
+  word of its unit, and the app puts a phrase's words in order by them:
+  each word a tile, each mark between them a tile of its own. A card of two
+  or more words is a phrase the app has put in order, as a spaced one is.
+- **Required in a B1 deck in a script without spaces** (`han`,
+  `han_simplified`, `han_traditional`, `kana`, `thai`): on every card's
+  target and every example the deck shows; the validator names each that
+  has none ("card zh-0011: no `words`"). Elsewhere `words` is allowed and
+  used, and a text without it is split at spaces.
+- **Japanese** writes its particles as words of their own: `["私", "は",
+  "学生", "です"]`; a set phrase stays whole where a learner says it whole,
+  `["ありがとう", "ございます"]`.
+- **A card's other spellings** (`target_scripts`, such as Chinese
+  traditional characters) have no `words` of their own. The app carries the
+  target's words over letter for letter, which is right for simplified and
+  traditional Chinese, one character for one: 我聽不懂 is 我 and 聽不懂. A
+  spelling with another number of letters than the target is split at
+  spaces, as an `alt_target` always is. The validator checks the words of
+  the target only.
 
 ### Notes
 
