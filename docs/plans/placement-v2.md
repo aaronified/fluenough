@@ -127,16 +127,18 @@ Owner, later the same day:
 
 ## Placed cards get reviews (owner: "as currently known")
 
+Changed (owner, 2026-10-20, on #679): "Date today. No spread. Mark them as
+mastered so they come up rarely." Asked how, the owner chose an Easy grade,
+about two weeks.
+
 - Every card of every placed deck gets an FSRS state, for each skill the
-  learner has switched on, as if answered **Good** once on the day of
-  placement.
-- The first due dates are **spread over the next 2 to 4 weeks**, so
-  placement doesn't make a pile of reviews on one day.
+  learner has switched on, as if answered **Easy** once **today**. There is
+  no spread, and no future-dated entry.
 - A card answered wrong later is a normal lapse, so a wrong placement
   corrects itself.
-- These first states are written as **placement entries** in the review
-  log. They are marked as placement, are not counted in stats or streaks,
-  and are exported with the log so a backup keeps them.
+- Known cards then come back by deck sampling (#680): 1-2 of a deck's due
+  known cards stand for the deck, with 3-5 more if they fail. This covers
+  all known cards, not just placed ones.
 
 ## The placement section in every deck (part of the B1 route)
 
@@ -186,9 +188,7 @@ Owner, later the same day:
   passed unit is placed.
 - Placed cards:
   - get states for every skill switched on;
-  - due dates spread over 2 to 4 weeks;
-  - left out of stats and streaks;
-  - kept in exports.
+  - recorded as Easy today, then reviewed by deck sampling (#680).
 - Placement sections:
   - the validator rules;
   - the fallback to the deck's own cards;
