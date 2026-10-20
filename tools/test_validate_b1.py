@@ -1575,11 +1575,13 @@ class BasesCoverage(B1Case):
         self.put(EXTRA, single(cards=[dict(CAT), dict(Bases.SENTENCE)]))
         self.assertNotAcross("is not a word", EXTRA)
 
-    def test_a_script_without_spaces_cannot_be_checked_yet(self) -> None:
+    def test_a_script_without_spaces_gives_its_words(self) -> None:
+        # The words themselves are tested in test_validate_words.py.
         self.edit(CORE, lambda d: d["language"].update(script="thai"))
-        self.assertAcross(f"{self.p(PATH)}: units[0]: zz-en-home is in the thai script, "
-                          f"written without spaces; bases cannot be checked until the format "
-                          f"gives its words (DECK-FORMAT.md, Base words)")
+        self.assertAcross(f"{self.p(CORE)}: card zz-9002: no `words`; zz-en-home is a B1 "
+                          f"deck in the thai script, written without spaces, so each "
+                          f"target and example gives its words in order (DECK-FORMAT.md, "
+                          f"Base words)")
 
 
 class PathUnits(B1Case):
