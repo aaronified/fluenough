@@ -10,7 +10,7 @@ description: "Twelve words to start with: yes and no, 'I', 'this' and 'that', go
 cards:
   "ko-0020":
     native: "yes"
-    alt_native: "yeah"
+    alt_native: ["yeah"]
     notes:
       "n1": "네 (ne) answers a question with yes, and also says 'I hear you' on the phone. A formal yes is 예 (ye), heard in speeches and from officials."
     examples:
@@ -37,7 +37,6 @@ cards:
           "아니에요": "to be not (polite)"
   "ko-0022":
     native: "I, me (polite)"
-    alt_native: "I (humble)"
     notes:
       "n1": "저 (jeo) is 'I' to strangers, bosses and elders. Friends say 나 (na). 저는 (jeoneun) is 저 with the topic particle 는 (neun), written joined to it, with no space."
     examples:
@@ -53,7 +52,6 @@ cards:
           "괜찮아요": "to be fine; all right"
   "ko-0023":
     native: "this"
-    alt_native: "this (before a noun)"
     notes:
       "n1": "이 (i) is 'this', before a noun: 이 커피 (i keopi), this coffee. On its own, 'this one' is 이거 (igeo), as in the phrasebook."
     examples:
@@ -67,7 +65,6 @@ cards:
           "좋아요": "to be good; fine"
   "ko-0024":
     native: "that (near you, or just mentioned)"
-    alt_native: "that one"
     notes:
       "n1": "그 (geu) is 'that' for the thing the listener is near, or one you have just mentioned: 그 사람 (geu saram), that person. 'That one' on its own is 그것 (geugeot)."
     examples:
@@ -81,16 +78,16 @@ cards:
           "좋아요": "to be good; fine"
   "ko-0025":
     native: "good; OK; fine"
-    alt_native: "fine"
+    alt_native: ["fine"]
     notes:
       "n1": "좋아요 (joayo) is the polite form of 좋다 (jota), 'to be good'. For 'I like it', say 좋아해요 (joahaeyo), from 좋아하다 (joahada), 'to like'."
     bases:
       "좋아요": "to be good; fine (polite)"
     examples:
       "커피 좋아요?":
-        native: "Do you like coffee?"
+        native: "Is coffee all right?"
         bases:
-          "좋아요": "to be good; to like"
+          "좋아요": "to be good; fine"
       "좋아요, 그렇게 해요.":
         native: "OK, let's do it that way."
         bases:
@@ -98,7 +95,7 @@ cards:
           "해요": "to do (polite)"
   "ko-0026":
     native: "fine; all right; it's OK"
-    alt_native: "okay"
+    alt_native: ["okay"]
     notes:
       "n1": "괜찮아요 (gwaenchanayo) asks 'are you OK?' and answers 'I'm fine' or refuses politely, as with 'no thanks'. Its root is 괜찮다 (gwaenchanta)."
     bases:
@@ -168,21 +165,22 @@ cards:
       "우리 선생님은 친절해요.":
         native: "Our teacher is kind."
         bases:
+          "우리": "we; our"
           "선생님은": "teacher, with the topic particle 은 (eun)"
           "친절해요": "to be kind (polite)"
   "ko-0031":
     native: "name"
     notes:
-      "n1": "이름 (ireum) is 'name'. 이름이 뭐예요? (ireumi mwoyeyo?) asks someone's name: 'what is your name?'. Before 이 (i) it is said ireumi."
+      "n1": "이름 (ireum) is 'name'. 이름이 뭐예요? (ireumi mwoyeyo?) asks someone's name: 'what is your name?'. Before 이 (i) it is said ireumi. 제 (je), 'my', is 저 (jeo) with 의 (ui) shortened."
     examples:
       "이름이 뭐예요?":
         native: "What is your name?"
         bases:
           "이름이": "name, with the subject particle 이 (i)"
-          "뭐예요": "what is it (polite)"
+          "뭐예요": "what (with the polite 'is')"
       "제 이름은 민수예요.":
         native: "My name is Minsu."
         bases:
-          "제": "my (short for 저의, jeo-ui)"
+          "제": "my (저 plus 의, shortened)"
           "이름은": "name, with the topic particle 은 (eun)"
-          "민수예요": "is Minsu (polite)"
+          "민수예요": "to be Minsu (polite)"

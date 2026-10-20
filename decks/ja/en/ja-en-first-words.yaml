@@ -4,7 +4,7 @@ kind: "layer"
 core: "ja-first-words"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "First words"
-description: "Twelve basic words: I and you, the honorific さん (san), the first nouns and adjectives, and the particles and copula that join them into sentences. Greetings and the requests for help are in the phrasebook."
+description: "Twelve basic words: I and you, the honorific さん (san), the first nouns and adjectives. Their examples bring in the particles and です (desu), which are taught later. Greetings and the requests for help are in the phrasebook."
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
@@ -45,14 +45,15 @@ cards:
     notes:
       "n1": "Added after a surname, for anyone, in a neutral and polite way: たなかさん (tanaka-san). Not used for your own name, nor for the family you belong to."
     examples:
-      "わたしはたなかさんです。":
-        native: "I am Mr. or Ms. Tanaka."
+      "たなかさんはにほんじんです。":
+        native: "Mr. Tanaka is Japanese."
         bases:
-          "は": "topic particle, marks what the sentence is about"
           "たなか": "Tanaka (a surname)"
+          "は": "topic particle, marks what the sentence is about"
+          "にほんじん": "a Japanese person"
           "です": "is (polite)"
       "やまださんはせんせいです。":
-        native: "Mr. or Ms. Yamada is a teacher."
+        native: "Ms. Yamada is a teacher."
         bases:
           "やまだ": "Yamada (a surname)"
           "は": "topic particle, marks what the sentence is about"
@@ -81,7 +82,7 @@ cards:
       "n1": "For someone at school or university; written 学生 (gakusei) in kanji."
     examples:
       "やまださんはがくせいです。":
-        native: "Mr. or Ms. Yamada is a student."
+        native: "Mr. Yamada is a student."
         bases:
           "やまだ": "Yamada (a surname)"
           "は": "topic particle, marks what the sentence is about"
@@ -110,7 +111,7 @@ cards:
   "ja-0073":
     native: "water"
     notes:
-      "n1": "In Japanese restaurants a glass of water is often served without charge, and asking for it is simple: みずをください (mizu o kudasai)."
+      "n1": "In Japanese restaurants a glass of water is often served without charge, and asking for it is simple: みずをください (mizu wo kudasai)."
     examples:
       "みずをください。":
         native: "Water, please."
@@ -157,7 +158,7 @@ cards:
   "ja-0076":
     native: "dog"
     notes:
-      "n1": "Written 犬 (inu) in kanji. A dog kept as a pet is often called by its owner's name with a word of love, not by this one."
+      "n1": "Written 犬 (inu) in kanji. ワンワン (wanwan) is the child's word for a dog."
     examples:
       "いぬがすきです。":
         native: "I like dogs."
