@@ -54,6 +54,7 @@ alphabet:
   - "kn-script-reading"
   - "kn-script-vowel-signs"
   - "kn-script-conjuncts"
+  - "kn-script-digits"
   - "kn-spelling"
   - "kn-reading-ravi"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
@@ -79,7 +80,7 @@ units:
   # 3. The script, after the first six units (#554: skipped by a learner
   # who already reads it).
   - ["kn-script-vowels", "kn-script-consonants", "kn-script-reading"]
-  - ["kn-script-vowel-signs", "kn-script-conjuncts"]
+  - ["kn-script-vowel-signs", "kn-script-conjuncts", "kn-script-digits"]
   # Numbers 1–20 follow the script, so it comes after the first six units.
   - decks: ["kn-numbers-1-20", "*"]
     words: 20
