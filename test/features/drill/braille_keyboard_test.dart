@@ -191,6 +191,14 @@ void main() {
     final field = tester.widget<TextField>(find.byType(TextField));
     expect(field.readOnly, isTrue, reason: 'the phone\'s keyboard stays shut');
     expect(field.keyboardType, TextInputType.none);
+    // Owner, 2026-10-20: "Make sure that the fields which need the keyboard
+    // will not trigger the normal keyboard": not as it appears, nor on a tap.
+    expect(tester.testTextInput.isVisible, isFalse);
+    expect(tester.testTextInput.hasAnyClients, isFalse);
+    await tester.tap(find.byType(TextField));
+    await tester.pump();
+    expect(tester.testTextInput.isVisible, isFalse);
+    expect(tester.testTextInput.hasAnyClients, isFalse);
 
     await tester.tap(dot(1));
     await tester.tap(dot(2));
@@ -203,6 +211,17 @@ void main() {
     expect(session.answer!.graded!.outcome, AnswerOutcome.exact);
     // With the answer in, the keyboard goes with the field.
     expect(find.byType(BrailleKeyboard), findsNothing);
+    expect(tester.testTextInput.isVisible, isFalse);
+
+    // The next card's field does not ask for the phone's keyboard either.
+    await tester.tap(find.text(l10n.commonContinue));
+    await tester.pumpAndSettle();
+    if (find.byType(BrailleKeyboard).evaluate().isNotEmpty) {
+      await tester.tap(find.byType(TextField));
+      await tester.pump();
+    }
+    expect(tester.testTextInput.isVisible, isFalse);
+    expect(tester.testTextInput.hasAnyClients, isFalse);
   });
 
   testWidgets('another language keeps the phone\'s keyboard', (tester) async {
@@ -221,5 +240,9 @@ void main() {
     expect(find.byType(BrailleKeyboard), findsNothing);
     final field = tester.widget<TextField>(find.byType(TextField));
     expect(field.readOnly, isFalse);
+    expect(field.keyboardType, isNot(TextInputType.none));
+    await tester.tap(find.byType(TextField));
+    await tester.pump();
+    expect(tester.testTextInput.isVisible, isTrue);
   });
 }

@@ -2,8 +2,10 @@
 
 - **Status:** Accepted (owner, 2026-10-20: "Add a course for english braille
   as well, only for the script (including numbers)"; asked which braille,
-  "Uncontracted now, contractions later"; and then "Braille will need a
-  keyboard too. Add that as well.")
+  "Uncontracted now, contractions later"; then "Braille will need a
+  keyboard too. Add that as well."; and, asked about a mockup, "No, go
+  ahead. Make sure that the fields which need the keyboard will not trigger
+  the normal keyboard.")
 - **Date:** 2026-10-20
 
 ## Context
@@ -58,8 +60,12 @@ the IPA, it is typed.
    answer is, cell for cell. A language names a keyboard the app draws
    through its script, `LanguageInfo.keyboard`: `braille` gives six dots in
    the Perkins layout (1-2-3 down the left, 4-5-6 down the right), "Enter
-   cell", Space and Backspace, under the answer field, which then never opens
-   the phone's keyboard. Every other script keeps the phone's.
+   cell", Space and Backspace, under the answer field. That field never
+   opens the phone's keyboard (owner, 2026-10-20: "Make sure that the fields
+   which need the keyboard will not trigger the normal keyboard"): it is
+   read-only, with no input type (`TextInputType.none`), and does not focus
+   itself, so neither its appearing, a tap on it, nor the next card asks
+   the phone for a keyboard. Every other script keeps the phone's.
 
 ## Consequences
 

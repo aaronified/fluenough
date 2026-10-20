@@ -89,7 +89,12 @@ class AnswerField extends StatelessWidget {
             builder: (context, _) => TextField(
               controller: controller,
               focusNode: focusNode,
-              autofocus: autofocus,
+              // Owner, 2026-10-20: "Make sure that the fields which need
+              // the keyboard will not trigger the normal keyboard." Not
+              // focused of itself, read-only and with no input type, the
+              // field never asks the phone for its keyboard: not on focus,
+              // nor on a tap, nor on the next card.
+              autofocus: autofocus && keyboard == null,
               enabled: enabled,
               // The app's own keyboard types into it: the phone's stays shut.
               readOnly: keyboard != null,

@@ -213,6 +213,8 @@ class _DotKey extends StatelessWidget {
       toggled: raised,
       enabled: enabled,
       label: l10n.brailleDot(dot),
+      // The number drawn in the key is the label already; the tap is kept.
+      onTap: onTap,
       excludeSemantics: true,
       child: Opacity(
         opacity: enabled ? 1 : 0.5,
