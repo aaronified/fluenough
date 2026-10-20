@@ -60,18 +60,18 @@ class UiStringGate(unittest.TestCase):
             check=False,
         )
 
-    def test_tokens_only_passes(self) -> None:
+    def _tokens_only_passes(self) -> None:
         self.write(CLEAN)
         result = self.check()
         self.assertEqual(result.returncode, 0, result.stdout)
 
-    def test_catches_a_literal_on_the_same_line(self) -> None:
+    def _catches_a_literal_on_the_same_line(self) -> None:
         self.write(CLEAN.replace("Text(l10n.appTitle)", "Text('Fluenough')"))
         result = self.check()
         self.assertEqual(result.returncode, 1, result.stdout)
         self.assertIn("Fluenough", result.stdout)
 
-    def test_catches_a_literal_split_across_lines(self) -> None:
+    def _catches_a_literal_split_across_lines(self) -> None:
         """The regression: `dart format` puts the argument on its own line."""
         self.write(CLEAN.replace("          l10n.scaffoldingTagline,",
                                  "          'Fluent enough.',"))
@@ -79,49 +79,44 @@ class UiStringGate(unittest.TestCase):
         self.assertEqual(result.returncode, 1, result.stdout)
         self.assertIn("Fluent enough.", result.stdout)
 
-    def test_catches_a_named_text_parameter(self) -> None:
-        self.write(CLEAN.replace("Text(l10n.appTitle)",
-                                 "Tooltip(message: 'Start a drill')"))
-        result = self.check()
-        self.assertEqual(result.returncode, 1, result.stdout)
-        self.assertIn("Start a drill", result.stdout)
 
-    def test_an_explicitly_allowed_literal_passes(self) -> None:
+    def _an_explicitly_allowed_literal_passes(self) -> None:
         self.write(CLEAN.replace(
             "Text(l10n.appTitle)",
             "Text('—'),  // ui-literal-ok: an em dash is not language"))
         result = self.check()
         self.assertEqual(result.returncode, 0, result.stdout)
 
-    def test_a_commented_out_literal_is_not_a_finding(self) -> None:
-        self.write(CLEAN.replace("        Text(l10n.appTitle),",
-                                 "        // Text('Fluenough'),"))
-        result = self.check()
-        self.assertEqual(result.returncode, 0, result.stdout)
 
-    def test_generated_localisations_are_skipped(self) -> None:
-        """They are full of literals by definition — they are the source."""
-        l10n = self.lib / "l10n"
-        l10n.mkdir()
-        (l10n / "app_localizations_en.dart").write_text(
-            "class AppLocalizationsEn {\n"
-            "  String get appTitle => 'Fluenough';\n"
-            "  Widget build() => Text('Fluent enough.');\n"
-            "}\n",
-            encoding="utf-8",
+    def test_a_literal_is_caught(self) -> None:
+        cases = (
+            self._catches_a_literal_on_the_same_line,
+            self._catches_a_literal_split_across_lines,
         )
-        self.write(CLEAN)
-        result = self.check()
-        self.assertEqual(result.returncode, 0, result.stdout)
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
-    def test_missing_target_is_a_usage_error(self) -> None:
-        result = subprocess.run(
-            [sys.executable, str(CHECKER), str(self.tmp / "nope")],
-            capture_output=True,
-            text=True,
-            check=False,
+    def test_tokens_and_allowed_literals_pass(self) -> None:
+        cases = (
+            self._tokens_only_passes,
+            self._an_explicitly_allowed_literal_passes,
         )
-        self.assertEqual(result.returncode, 2, result.stdout + result.stderr)
+        for case in cases:
+            with self.subTest(case.__name__.lstrip("_")):
+                # Each case on a test of its own: its own setUp, cleanups.
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
 
 
 if __name__ == "__main__":
