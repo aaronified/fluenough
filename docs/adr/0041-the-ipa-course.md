@@ -76,7 +76,7 @@ a voice, and the IPA is neither.
   schedule would hold cards no screen shows.
 - Every drill's header has one more button. It is empty on cards with no
   IPA, which is every card until the Wiktionary IPA lands
-  ([wiktionary-ipa.md](../plans/wiktionary-ipa.md)); Indic decks have theirs.
+  (`wiktionary-ipa.md`, removed; see git history; now `tools/import_wiktionary.py`); Indic decks have theirs.
 - The substring match over-includes: `t` is found in `t̪`. A learner sees the
   plain letter as well as the marked one, which is a fair review and costs a
   card more; a segmenter needs a list of every symbol and its marks, which is

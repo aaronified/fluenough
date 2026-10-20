@@ -2,7 +2,7 @@
 
 Settings → Your data → Back up now saves the whole app as one file,
 `fluenough-backup-<yyyy-mm-dd>.fnbackup` (#470). Restore from a file reads
-such a file back. The plan is [docs/plans/app-backup.md](plans/app-backup.md).
+such a file back.
 
 The file is a plain zip of small UTF-8 text files, so a backup outlives the
 app the way the review log does: any unzip tool opens it. The app writes its

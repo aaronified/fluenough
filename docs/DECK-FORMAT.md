@@ -1449,8 +1449,9 @@ Owner, 2026-10-13 (#506): "a language's grammar decks must cover adjectives,
 genders, pronouns, etc. not just as cards, but also together. like a card with
 "English has three articles, a, an, and the", and then drill each one
 separately in the same lesson." Verb forms are a closed group too (owner,
-2026-10-16, #515: "Verb forms need set cards too."). The lesson is drawn in
-the approved mockup, [`docs/mockups/set-cards.html`](mockups/set-cards.html).
+2026-10-16, #515: "Verb forms need set cards too."). The lesson was drawn in
+an approved mockup, `docs/mockups/set-cards.html`, removed once built (see
+git history).
 
 A set card is a card of a **vocab core**, `kind: "set"`. Its id is a card id
 of the language, taken from `--next-id`, and permanent like any other. It
@@ -2403,9 +2404,10 @@ error before moving on. Read the warnings; do not leave them unexplained.
 
 **Before you start:**
 
-- Read [AGENTS.md](../AGENTS.md), `docs/plans/b1-plans.md`,
-  `docs/plans/words-rules-sentences.md` and `docs/plans/native-layers.md`,
-  and this file through.
+- Read [AGENTS.md](../AGENTS.md), `docs/plans/b1-plans.md` and
+  `docs/plans/words-rules-sentences.md`, and this file through (its
+  [Core and layer files](#core-and-layer-files) section replaces the removed
+  `native-layers.md` plan).
 - **Card ids are permanent.** Splitting, moving or converting a deck keeps
   every id it has. A new card takes
   `python3 tools/validate_decks.py --next-id <lang>`, and nothing else does.
