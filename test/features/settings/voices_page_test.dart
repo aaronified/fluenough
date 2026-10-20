@@ -50,9 +50,10 @@ class _ChangingTts implements TtsEngine {
   Future<void> dispose() async {}
 }
 
-/// How many languages the Voices page lists: every one but the IPA, which
-/// has no voice (ADR-0041).
-int _voiced(AppState state) => state.languages.where((l) => !l.isIpa).length;
+/// How many languages the Voices page lists: every one but the notations,
+/// the IPA and braille, which have no voice (ADR-0041, ADR-0043).
+int _voiced(AppState state) =>
+    state.languages.where((l) => !l.isNotation).length;
 
 LanguageInfo _language(AppState state, String code) =>
     state.languages.firstWhere((l) => l.code == code);

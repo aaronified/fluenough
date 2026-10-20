@@ -1,0 +1,31 @@
+# How braille works: the patterns behind its cells, shown before the first
+# card and from a deck's Tips. See ADR-0016, ADR-0043 and
+# docs/DECK-FORMAT.md. After The Rules of Unified English Braille, second
+# edition, 2013, of the International Council on English Braille.
+schema: 1
+kind: "script"
+part: "core"
+id: "qbe-script"
+language: "qbe"
+features:
+  - id: "cell"
+    example: "⠿"
+    letters: ["⠁", "⠂", "⠄", "⠈", "⠐", "⠠"]
+  - id: "top-row"
+    example: "⠛"
+    letters: ["⠁", "⠃", "⠉", "⠙", "⠑", "⠋", "⠛", "⠓", "⠊", "⠚"]
+  - id: "dot-3"
+    example: "⠅"
+    letters: ["⠅", "⠇", "⠍", "⠝", "⠕", "⠏", "⠟", "⠗", "⠎", "⠞"]
+  - id: "dots-3-6"
+    example: "⠥"
+    letters: ["⠥", "⠧", "⠭", "⠽", "⠵", "⠺"]
+  - id: "mirrors"
+    example: "⠑"
+    letters: ["⠑", "⠊", "⠙", "⠋", "⠓", "⠚"]
+  - id: "indicators"
+    example: "⠠"
+    letters: ["⠠", "⠼", "⠰"]
+  - id: "low-cells"
+    example: "⠲"
+    letters: ["⠲", "⠂", "⠦", "⠖", "⠄", "⠤", "⠴"]

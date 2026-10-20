@@ -142,16 +142,46 @@ void main() {
       expect(p.stage, CourseStage.complete);
     });
 
-    test('the IPA course is Complete once every unit is written', () {
+    test('a notation\'s course, the IPA\'s or braille\'s, is Complete once '
+        'every unit is written', () {
       expect(
-        B1Progress.of(<B1Unit>[written(5), written(5)], isIpa: true).stage,
+        B1Progress.of(<B1Unit>[written(5), written(5)], isNotation: true).stage,
         CourseStage.complete,
       );
       expect(
-        B1Progress.of(<B1Unit>[written(5), planned(5)], isIpa: true).stage,
+        B1Progress.of(<B1Unit>[written(5), planned(5)], isNotation: true).stage,
         CourseStage.alpha,
       );
+      // Braille's path: six units written and the open last one, for decks
+      // a learner adds and the contractions to come (ADR-0043).
+      expect(
+        B1Progress.of(<B1Unit>[
+          for (var i = 0; i < 6; i++) written(10),
+          const B1Unit(),
+        ], isNotation: true).stage,
+        CourseStage.complete,
+      );
       expect(B1Progress.of(<B1Unit>[written(5)]).stage, CourseStage.alpha);
+    });
+
+    test('a notation is Complete from the index too, before its decks are '
+        'on the phone', () {
+      CourseStage stageOf(String? script) => CatalogLanguage.fromIndex(
+        IndexLanguage(
+          code: 'x',
+          name: 'X',
+          script: script,
+          natives: const <IndexNative>[(code: 'en', name: 'English')],
+          units: const <IndexUnit>[
+            IndexUnit(decks: <String>['x-a'], has: <String, int>{'en': 10}),
+            IndexUnit(decks: <String>['x-b'], has: <String, int>{'en': 6}),
+            IndexUnit(),
+          ],
+        ),
+      ).natives.single.progress.stage;
+      expect(stageOf('braille'), CourseStage.complete);
+      expect(stageOf('ipa'), CourseStage.complete);
+      expect(stageOf('telugu'), CourseStage.alpha);
     });
 
     test('a course with no B1 plan is Alpha', () {
