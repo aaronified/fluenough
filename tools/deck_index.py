@@ -473,13 +473,15 @@ def update_badge(index: dict) -> bool:
     already right."""
     if not README.is_file():
         return False
-    text = README.read_text(encoding="utf-8", newline="")
+    with README.open(encoding="utf-8", newline="") as f:
+        text = f.read()
     count = str(language_count(index))
     new = _BADGE.sub(lambda m: m.group(1) + count + m.group(2) + count + m.group(3),
                      text, count=1)
     if new == text:
         return False
-    README.write_text(new, encoding="utf-8", newline="")
+    with README.open("w", encoding="utf-8", newline="") as f:
+        f.write(new)
     return True
 
 
