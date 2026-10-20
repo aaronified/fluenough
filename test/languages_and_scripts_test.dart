@@ -22,6 +22,7 @@ import 'package:fluenough/app/language_choice.dart';
 import 'package:fluenough/app/language_offer.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/placement.dart';
+import 'package:fluenough/app/placement_credit.dart';
 import 'package:fluenough/app/placement_plan.dart';
 import 'package:fluenough/app/profile.dart';
 import 'package:fluenough/app/script_test.dart';
@@ -50,6 +51,7 @@ import 'package:fluenough/features/placement/picker_fixtures.dart';
 import 'package:fluenough/features/placement/placement_page.dart';
 import 'package:fluenough/features/placement/placement_questions.dart';
 import 'package:fluenough/features/placement/script_test_page.dart';
+import 'package:fluenough/features/stats/stats_numbers.dart';
 import 'package:fluenough/features/today/lesson_card.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/script_name.dart';
@@ -2649,6 +2651,158 @@ void main() {
             expect(today.where((i) => i.mode == DrillMode.listening), isEmpty);
           }
         },
+      );
+    });
+  });
+  group('placement credits what it found', () {
+    late AppState state;
+    late PlacementScript deva;
+    setUp(() async {
+      state = AppState.test();
+      await state.load();
+      deva = state
+          .placementScripts('hi')
+          .firstWhere((s) => s.script == devanagari);
+    });
+
+    Iterable<DateTime> firstDue(Iterable<ProgressKey> keys) => <DateTime>[
+      for (final key in keys)
+        state.progress.stateOf(key.cardId, key.mode)!.dueAt,
+    ];
+
+    Set<String> scriptDeckCards() => <String>{
+      for (final e in deva.decks)
+        if (e.isScript)
+          for (final c in e.cards) c.id,
+    };
+
+    int days(DateTime due) => due.difference(state.now()).inDays;
+
+    test('a script read credits Read and Write, due in weeks 3 and 4, none in '
+        'the first', () {
+      final placed = ScriptCheck.placedFor(deva.decks, ScriptStanding.reads);
+      final written = state.creditPlacement(
+        'hi',
+        placed: placed,
+        standings: <String, ScriptStanding>{devanagari: ScriptStanding.reads},
+        random: Random(4),
+      );
+      expect(written, greaterThan(0));
+      final cards = scriptDeckCards();
+      final scripts = state.progress.scriptStates;
+      for (final id in cards) {
+        for (final mode in <DrillMode>[
+          DrillMode.readScript,
+          DrillMode.writeScript,
+        ]) {
+          expect(
+            scripts.containsKey((cardId: id, mode: mode, script: devanagari)),
+            isTrue,
+            reason: '$id $mode',
+          );
+        }
+      }
+      final due = firstDue(<ProgressKey>[
+        for (final id in cards)
+          for (final mode in <DrillMode>[
+            DrillMode.recognition,
+            DrillMode.production,
+          ])
+            (cardId: id, mode: mode),
+      ]).toList();
+      for (final d in due) {
+        expect(days(d), inInclusiveRange(kPlacedFirstDueMin, 28));
+      }
+      // Spread, not piled: more than a few distinct days.
+      expect(due.map(days).toSet().length, greaterThan(5));
+
+      final numbers = StatsNumbers.of(
+        state.progress,
+        now: state.now(),
+        range: StatsRange.all,
+        cardOf: cardLookupOf(state),
+      );
+      expect(
+        numbers.scriptSkills.keys,
+        containsAll(<ScriptSkill>[
+          (script: devanagari, mode: DrillMode.readScript),
+          (script: devanagari, mode: DrillMode.writeScript),
+        ]),
+      );
+    });
+
+    test('a script stopped part-way credits Read for the letters and '
+        'composites only', () {
+      final placed = ScriptCheck.placedFor(deva.decks, ScriptStanding.joined);
+      state.creditPlacement(
+        'hi',
+        placed: placed,
+        standings: <String, ScriptStanding>{devanagari: ScriptStanding.joined},
+        random: Random(4),
+      );
+      final credited = <String>{
+        for (final e in deva.decks)
+          if (placed.contains(e.id) && e.isScript)
+            for (final c in e.cards) c.id,
+      };
+      final reading = <String>{
+        for (final e in deva.decks)
+          if (!placed.contains(e.id) && e.isScript)
+            for (final c in e.cards) c.id,
+      }.difference(credited);
+      final scripts = state.progress.scriptStates;
+      expect(credited, isNotEmpty);
+      expect(reading, isNotEmpty);
+      for (final id in credited) {
+        expect(
+          scripts.containsKey((
+            cardId: id,
+            mode: DrillMode.readScript,
+            script: devanagari,
+          )),
+          isTrue,
+        );
+        expect(
+          scripts.containsKey((
+            cardId: id,
+            mode: DrillMode.writeScript,
+            script: devanagari,
+          )),
+          isFalse,
+        );
+      }
+      for (final id in reading) {
+        expect(state.progress.stateOf(id, DrillMode.recognition), isNull);
+      }
+    });
+
+    test('word decks placed are credited the same way, and a retake keeps '
+        'what is there', () {
+      final walked = state.walkDecks('hi').take(2).toList();
+      final placed = <String>{for (final e in walked) e.id};
+      final written = state.creditPlacement(
+        'hi',
+        placed: placed,
+        random: Random(9),
+      );
+      expect(written, greaterThan(0));
+      final ids = <String>{
+        for (final e in walked)
+          for (final c in e.cards) c.id,
+      };
+      final due = <DateTime>[
+        for (final entry in state.progress.states.entries)
+          if (ids.contains(entry.key.cardId)) entry.value.dueAt,
+      ];
+      expect(due, isNotEmpty);
+      for (final d in due) {
+        expect(days(d), inInclusiveRange(kPlacedFirstDueMin, 28));
+      }
+      expect(due.map(days).toSet().length, greaterThan(5));
+      expect(
+        state.creditPlacement('hi', placed: placed, random: Random(1)),
+        0,
+        reason: 'a pair with a review keeps it',
       );
     });
   });
