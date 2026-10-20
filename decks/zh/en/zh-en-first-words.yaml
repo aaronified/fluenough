@@ -80,7 +80,10 @@ cards:
         native: "The weather is good."
         bases:
           "天气": { meaning: "weather" }
-      "好的。": "OK."
+      "好的。":
+        native: "OK."
+        bases:
+          "的": { meaning: "particle; here it makes 好 (hǎo) a reply, 'OK'" }
   "zh-0025":
     native: "question particle (turns a statement into a question)"
     notes:
