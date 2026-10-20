@@ -1170,9 +1170,10 @@ class AppState extends ChangeNotifier {
 
   /// Whether the phone has a voice for [language], by its `ttsTag`.
   ///
-  /// The IPA has none, and nothing to check: its examples are said in their
-  /// own languages' voices (ADR-0041).
-  VoiceStatus voiceStatus(LanguageInfo language) => language.isIpa
+  /// A notation has none, and nothing to check: the IPA's examples are said
+  /// in their own languages' voices (ADR-0041), and braille is read, not
+  /// heard (ADR-0043).
+  VoiceStatus voiceStatus(LanguageInfo language) => language.isNotation
       ? VoiceStatus.missing
       : switch (_voices[language.ttsTag]) {
           true => VoiceStatus.available,
@@ -1194,7 +1195,7 @@ class AppState extends ChangeNotifier {
   /// `hi-IN`, installed, it says each card's Devanagari spelling.
   LanguageInfo? backupVoice(LanguageInfo language) {
     // Only once the phone has said the deck's own voice is missing.
-    if (language.isIpa || _voices[language.ttsTag] != false) return null;
+    if (language.isNotation || _voices[language.ttsTag] != false) return null;
     for (final other in voiceLanguages) {
       if (other.code == language.code &&
           other.ttsTag != language.ttsTag &&
@@ -1234,8 +1235,8 @@ class AppState extends ChangeNotifier {
   /// Every voice the app can say a word in: for each language the decks
   /// teach, one block per distinct voice tag its decks name (`hi-IN` and
   /// `ur-PK` for Hindustani, #641), then the languages they teach from,
-  /// one per code, where no deck teaches them. The IPA, which has no voice,
-  /// left out. An IPA card's examples are said in these (ADR-0041).
+  /// one per code, where no deck teaches them. The notations, which have
+  /// no voice, left out. An IPA card's examples are said in these (ADR-0041).
   List<LanguageInfo> get voiceLanguages {
     // Asked for by every deck's voice check, so kept until the catalog
     // changes.
@@ -1243,7 +1244,7 @@ class AppState extends ChangeNotifier {
     final found = <String, LanguageInfo>{};
     for (final entry in _catalog.decks) {
       final language = entry.language;
-      if (language.script != 'ipa') {
+      if (!language.isNotation) {
         found.putIfAbsent(
           '${language.code}/${language.ttsTag}',
           () => language,
@@ -2291,7 +2292,7 @@ class AppState extends ChangeNotifier {
     final codes = learningCodes.isEmpty
         ? <String>[
             for (final language in languages)
-              if (!language.isIpa) language.code,
+              if (!language.isNotation) language.code,
           ]
         : learningCodes.toList();
     if (!codes.contains(ipaLanguageCode)) codes.add(ipaLanguageCode);

@@ -1,0 +1,64 @@
+schema: 1
+id: "qbe-en-digits"
+kind: "layer"
+core: "qbe-digits"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Braille: numbers"
+description: "The numeric indicator and the digits 1 to 0, which are the letters a to j after it; and the grade 1 indicator, for a letter after a number."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "script"]
+cards:
+  "qbe-0031":
+    native: "numeric indicator: the letters a to j after it are digits"
+    notes:
+      "n1": "Dots 3-4-5-6. After it, ⠁ (a) to ⠚ (j) are the digits 1 to 9 and 0, until a space or a letter from k on. It comes once before a number, not before each digit: ⠼⠁⠃ is 12."
+    examples:
+      "⠼⠁⠃": "12"
+      "⠼⠁⠚⠚": "100"
+  "qbe-0032":
+    native: "1"
+    notes:
+      "n1": "The numeric indicator ⠼, then ⠁ (a), dot 1."
+  "qbe-0033":
+    native: "2"
+    notes:
+      "n1": "The numeric indicator ⠼, then ⠃ (b), dots 1-2."
+  "qbe-0034":
+    native: "3"
+    notes:
+      "n1": "The numeric indicator ⠼, then ⠉ (c), dots 1-4."
+  "qbe-0035":
+    native: "4"
+    notes:
+      "n1": "The numeric indicator ⠼, then ⠙ (d), dots 1-4-5."
+  "qbe-0036":
+    native: "5"
+    notes:
+      "n1": "The numeric indicator ⠼, then ⠑ (e), dots 1-5."
+  "qbe-0037":
+    native: "6"
+    notes:
+      "n1": "The numeric indicator ⠼, then ⠋ (f), dots 1-2-4."
+  "qbe-0038":
+    native: "7"
+    notes:
+      "n1": "The numeric indicator ⠼, then ⠛ (g), dots 1-2-4-5."
+  "qbe-0039":
+    native: "8"
+    notes:
+      "n1": "The numeric indicator ⠼, then ⠓ (h), dots 1-2-5."
+  "qbe-0040":
+    native: "9"
+    notes:
+      "n1": "The numeric indicator ⠼, then ⠊ (i), dots 2-4."
+  "qbe-0041":
+    native: "0"
+    notes:
+      "n1": "The numeric indicator ⠼, then ⠚ (j), dots 2-4-5. j, the tenth letter, is 0, which comes after 9 on a keypad."
+  "qbe-0042":
+    native: "grade 1 indicator: the next cell is a letter, not a digit"
+    notes:
+      "n1": "Dots 5-6. After a number, a letter from a to j would be read as a digit: ⠰ in front says it is a letter, so ⠼⠁⠰⠁ is 1a. A letter from k on needs none: ⠼⠉⠗⠙ is 3rd. In contracted braille it also says that a cell is not a contraction."
+    examples:
+      "⠼⠁⠰⠁": "1a"
+      "⠼⠉⠗⠙": "3rd"

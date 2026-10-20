@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import '../data/course_path.dart' show Milestone;
 import '../grading/diacritics.dart';
 import 'deck_index.dart';
+import 'notation.dart';
 
 /// The languages a learner can choose to learn, as the language picker
 /// shows them (#211, `docs/plans/language-picker.md`): read from the deck
@@ -93,9 +94,10 @@ class B1Progress {
   /// Σ min(words a unit has, its planned words) ÷ Σ planned words, over the
   /// units up to the one marked B1. A unit not written counts 0.
   ///
-  /// [isIpa] marks the IPA course, which has no milestones: its stage is
-  /// [CourseStage.complete] once every unit of its path is written.
-  factory B1Progress.of(List<B1Unit> units, {bool isIpa = false}) {
+  /// [isNotation] marks a notation's course, the IPA's or braille's, which
+  /// has no milestones: its stage is [CourseStage.complete] once every unit
+  /// of its path is written (ADR-0041, ADR-0043).
+  factory B1Progress.of(List<B1Unit> units, {bool isNotation = false}) {
     int? at(Milestone m) {
       for (final (i, unit) in units.indexed) {
         if (unit.milestone == m) return i;
@@ -123,7 +125,7 @@ class B1Progress {
     bool allWritten(int end) =>
         units.take(end + 1).every((u) => u.written || _unwritable(u));
     final hasPlan = b1 != null && planned > 0;
-    final stage = isIpa
+    final stage = isNotation
         ? (units.isNotEmpty && allWritten(units.length - 1)
               ? CourseStage.complete
               : CourseStage.alpha)
@@ -361,9 +363,14 @@ class CatalogLanguage {
         (
           code: native.code,
           name: native.name,
-          progress: B1Progress.of(<B1Unit>[
-            for (final unit in index.units) B1Unit.fromIndex(unit, native.code),
-          ]),
+          progress: B1Progress.of(
+            <B1Unit>[
+              for (final unit in index.units)
+                B1Unit.fromIndex(unit, native.code),
+            ],
+            // Before its decks are on the phone too (ADR-0043).
+            isNotation: notationScripts.contains(index.script),
+          ),
         ),
     ],
     size: index
