@@ -2648,6 +2648,45 @@
   "@drillCheck": {
     "description": "Submits a typed answer."
   },
+  "brailleKeyboard": "Braille keyboard",
+  "@brailleKeyboard": {
+    "description": "Names, for a screen reader, the app's own six-dot braille keyboard under a typed answer in the English Braille course (ADR-0043)."
+  },
+  "brailleDot": "Dot {number}",
+  "@brailleDot": {
+    "description": "One of the six dots of the braille keyboard, which the learner taps to raise or lower it, for a screen reader. The dots are numbered 1 to 3 down the left and 4 to 6 down the right, as on a Perkins brailler.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "brailleCellDots": "This cell: dots {dots}",
+  "@brailleCellDots": {
+    "description": "For a screen reader, the cell the braille keyboard's raised dots make, before it is entered. {dots} is the dot numbers joined by hyphens, as braille teachers write them: 1-2.",
+    "placeholders": {
+      "dots": {
+        "type": "String",
+        "example": "1-2"
+      }
+    }
+  },
+  "brailleCellEmpty": "No dots raised",
+  "@brailleCellEmpty": {
+    "description": "For a screen reader, the braille keyboard's cell with no dot raised yet."
+  },
+  "brailleEnterCell": "Enter cell",
+  "@brailleEnterCell": {
+    "description": "Button of the braille keyboard: adds the cell of the raised dots to the answer and lowers them."
+  },
+  "brailleSpace": "Space",
+  "@brailleSpace": {
+    "description": "Button of the braille keyboard: adds a space, an empty cell between words, to the answer."
+  },
+  "brailleBackspace": "Delete the last cell",
+  "@brailleBackspace": {
+    "description": "Button of the braille keyboard, an icon with this as its tooltip: deletes the cell or space before the cursor in the answer."
+  },
   "drillCountWrong": "Count it wrong",
   "@drillCountWrong": {
     "description": "After a near miss: the learner says they did not know it."
