@@ -26,6 +26,7 @@ The app's database moves to version 9: each answer now records the script it was
 - Hindustani's Perso-Arabic script is drawn in Nastaliq (#646).
 - Meaning answers are graded by rule (#654): case, punctuation, contractions, text in brackets, a leading "to", "please", and ok, okay or o.k. no longer make a right answer wrong, and any one of a card's meanings is accepted.
 - A long drag or a hard fling on the language bar passes several languages (#647).
+- The IPA course is tagged Complete once its path is written, instead of Alpha: it has no CEFR levels to measure it by (#658).
 
 ## [0.5.1] - 2026-10-19
 
