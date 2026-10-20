@@ -1,10 +1,13 @@
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show AssetBundle, rootBundle;
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/features/placement/language_picker_page.dart';
+import 'package:fluenough/features/profiles/spoken_languages_picker.dart';
 
 /// Driving Languages I'm learning (#211, #626) in widget tests: its list is
 /// built lazily, so a row is scrolled to before it is found, and a language
@@ -16,6 +19,32 @@ import 'package:fluenough/features/placement/language_picker_page.dart';
 final List<SpokenLanguage> pickerSpokenList = parseSpokenLanguages(
   File('assets/languages.yaml').readAsStringSync(),
 );
+
+/// An asset bundle that has `assets/languages.yaml` already in hand, so that
+/// a page's read of it ends in the next microtask, whichever tests ran
+/// before and however loaded the machine is. A test that pumps the whole app
+/// puts it above the app with [withLanguageList]. The bundle caches what it
+/// read, and a read that goes to the platform takes real time, which a widget
+/// test does not wait for; the page then never got the list, and a sheet
+/// offered its course's own script only. Anything else is read as ever.
+class LanguageListBundle extends AssetBundle {
+  final Future<String> _list = Future<String>.value(
+    File(SpokenLanguagesPicker.asset).readAsStringSync(),
+  );
+
+  @override
+  Future<ByteData> load(String key) => rootBundle.load(key);
+
+  @override
+  Future<String> loadString(String key, {bool cache = true}) =>
+      key == SpokenLanguagesPicker.asset
+      ? _list
+      : rootBundle.loadString(key, cache: cache);
+}
+
+/// [app] with [LanguageListBundle] above it.
+Widget withLanguageList(Widget app) =>
+    DefaultAssetBundle(bundle: LanguageListBundle(), child: app);
 
 /// Lets the page's read of `assets/languages.yaml` finish, which takes real
 /// time, not the test clock's.
