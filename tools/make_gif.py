@@ -3,7 +3,7 @@
 
     python3 tools/make_gif.py build/readme_gifs/today docs/screenshots/today.gif
 
-The frames are `frame_NNN.png`, as test/tools/readme_gifs_test.dart writes
+The frames are `frame_NNN.png`, as tools/readme_gifs/readme_gifs_test.dart writes
 them, played in name order. Every frame is scaled to --width and mapped to
 one palette taken from a sample of them all, without dithering: an app's
 flat colours compress far better undithered, and one palette keeps colours
