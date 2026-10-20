@@ -19,6 +19,23 @@ Written 2026-10-20. Issue #678.
   The scores below are computed from it.
 - **Read/Write credit per script** (#656, #677).
 
+## Related issues
+
+| Issue | What | Fits here as |
+|---|---|---|
+| #575 (0.6.0) | A second "Toward B1" bar per skill | Its decisions give the scores below |
+| #323 | Achievements grid on Progress | Sits below the charts |
+| #411 | Shareable progress image | Can share the star |
+
+Decided in #575 (owner, 2026-10-18), reused here:
+
+- **Known**: "FSRS 90%". A card counts once it is past learning in that
+  skill and FSRS gives it at least a 90% chance of recall today.
+- **The total**: "whole B1 plan", meaning built units plus the planned
+  sizes of the units still to come.
+- **Script skills**: their total is the letters and conjuncts in the
+  path's `alphabet:` decks.
+
 ## The design
 
 | Chart | Shows | Source |
@@ -27,8 +44,8 @@ Written 2026-10-20. Issue #678.
 | Line chart | Scores over time for taught words, phrases, script and grammar, one line each | Recall per card kind, by day |
 | Area chart | Overall proficiency over time | Combined from the six axes |
 
-- A score is the share of taught items that are currently remembered
-  (0 to 100). Items not yet taught do not count against it.
+- A score is the share of the B1 total that is known (as #575 defines
+  it), from 0 to 100.
 - These charts are drawn per language, for the chosen language.
 
 ## Open questions
@@ -40,6 +57,8 @@ Written 2026-10-20. Issue #678.
 2. **Overall proficiency.** A weighted mean of the six axes, or mapped to
    CEFR (A1 to B1)?
 3. **Mockup first?** `docs/mockups/README.md` says yes.
+4. **#575's bars**: does the star replace them, or do the two sit
+   together?
 
 ## Order
 
