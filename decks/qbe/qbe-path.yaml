@@ -1,0 +1,27 @@
+# The order English Braille is taught in: Unified English Braille,
+# uncontracted (grade 1), one unit per deck (ADR-0043). First the ten
+# letters of the top row, a to j; then k to t, which add dot 3; then u to
+# z, which add dots 3 and 6, and w; then the capital indicators, the
+# numbers, which are a to j after the numeric indicator, and the
+# punctuation.
+#
+# The contractions of grade 2 come later, as units after these (owner,
+# 2026-10-20: "Uncontracted now, contractions later"). Braille is taught to
+# no level, so the path has no B1 plan.
+#
+# Every qbe deck is listed, by its core id, exactly once. See ADR-0013 and
+# docs/DECK-FORMAT.md.
+schema: 1
+kind: "path"
+id: "qbe-path"
+language: "qbe"
+# No theme decks here, so no unit but the last can end in "*": a deck a
+# learner adds goes in the last unit.
+units:
+  - ["qbe-letters-a-j"]
+  - ["qbe-letters-k-t"]
+  - ["qbe-letters-u-z"]
+  - ["qbe-capitals"]
+  - ["qbe-numbers"]
+  - ["qbe-punctuation"]
+  - ["*"]

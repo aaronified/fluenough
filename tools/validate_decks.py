@@ -50,12 +50,16 @@ SCRIPTS = {
     "latin", "cyrillic", "greek", "arabic", "hebrew",
     "devanagari", "bengali", "gujarati", "gurmukhi", "odia",
     "telugu", "tamil", "kannada", "malayalam", "sinhala",
-    "kana", "han", "hangul", "thai", "ipa", "other",
+    "kana", "han", "hangul", "thai", "ipa", "braille", "other",
 }
-# Scripts whose cards need no reading: they are read as written. The IPA
-# is a notation read as written, and the course about it is no language
-# with a romanisation (ADR-0041).
-NO_READING = {"latin", "cyrillic", "greek", "ipa"}
+# The notations taught like languages: the IPA (ADR-0041) and braille
+# (ADR-0043). Neither is spoken, so neither has a tts tag, and neither is
+# taught towards a level, so neither path has a B1 plan.
+NOTATION_SCRIPTS = {"ipa", "braille"}
+# Scripts whose cards need no reading: they are read as written. The
+# notations are read as written, and their courses are no languages with a
+# romanisation: a braille cell's print equivalent is its meaning.
+NO_READING = {"latin", "cyrillic", "greek"} | NOTATION_SCRIPTS
 # A script id is lowercase words joined by a hyphen or, as the app's own
 # list has it (`ol_chiki`, `meitei_mayek`, `perso_arabic`), an underscore (#623).
 SCRIPT_RE = re.compile(r"[a-z]+(?:[-_][a-z]+)*")
@@ -721,9 +725,10 @@ def check_langblock(r: Report, where: str, block: object, *, full: bool) -> None
     tts = block.get("tts")
     if tts is not None and (not _is_str(tts) or not BCP47_RE.fullmatch(tts)):
         r.error(where, f"tts must be a BCP-47 tag, got {tts!r}")
-    # The IPA course has no voice of its own: each example is said in the
-    # voice of its own language (ADR-0041).
-    if full and tts is None and script != "ipa":
+    # A notation has no voice of its own: each IPA example is said in the
+    # voice of its own language (ADR-0041), and braille is read by touch
+    # or sight (ADR-0043).
+    if full and tts is None and script not in NOTATION_SCRIPTS:
         r.warn(where, "no tts tag; the device will pick a default regional voice")
     if "rtl" in block and not isinstance(block["rtl"], bool):
         r.error(where, "rtl must be a boolean")
@@ -5769,10 +5774,10 @@ def check_plans_across(reports: list[Report]) -> list[str]:
         lang = ctx.lang(code)
         if not plan.has_plan:
             core = lang.first_core()
-            # The IPA course is no language taught towards a level: it has
-            # no B1 plan (ADR-0041).
+            # A notation's course, the IPA's or braille's, is no language
+            # taught towards a level: it has no B1 plan (ADR-0041, ADR-0043).
             if core is not None and not any(
-                    d.script == "ipa" for d in lang.all()):
+                    d.script in NOTATION_SCRIPTS for d in lang.all()):
                 problems.append(f"{rep.path}: units: {code} has core files ({core}), "
                                 f"so its path needs its B1 plan: the milestones A1, A2 "
                                 f"and B1, in that order")
