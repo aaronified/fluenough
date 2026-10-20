@@ -1,0 +1,188 @@
+schema: 1
+id: "ko-en-first-words"
+kind: "layer"
+core: "ko-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+description: "Twelve words to start with: yes and no, 'I', 'this' and 'that', good and fine, water and coffee, and the words for student, teacher and name. The phrases that use them are in the phrasebook."
+cards:
+  "ko-0020":
+    native: "yes"
+    alt_native: "yeah"
+    notes:
+      "n1": "네 (ne) answers a question with yes, and also says 'I hear you' on the phone. A formal yes is 예 (ye), heard in speeches and from officials."
+    examples:
+      "네, 좋아요.":
+        native: "Yes, that's good."
+        bases:
+          "좋아요": "to be good; fine"
+      "네, 알겠어요.":
+        native: "Yes, I understand."
+        bases:
+          "알겠어요": "to understand (polite)"
+  "ko-0021":
+    native: "no"
+    notes:
+      "n1": "아니요 (aniyo) answers a question with no, and is polite. Close friends say 아니 (ani). In a shop, 아니요, 괜찮아요 (aniyo, gwaenchanayo) declines politely."
+    examples:
+      "아니요, 괜찮아요.":
+        native: "No, I'm fine."
+        bases:
+          "괜찮아요": "to be fine; all right"
+      "아니요, 학생이 아니에요.":
+        native: "No, I'm not a student."
+        bases:
+          "아니에요": "to be not (polite)"
+  "ko-0022":
+    native: "I, me (polite)"
+    alt_native: "I (humble)"
+    notes:
+      "n1": "저 (jeo) is 'I' to strangers, bosses and elders. Friends say 나 (na). 저는 (jeoneun) is 저 with the topic particle 는 (neun), written joined to it, with no space."
+    examples:
+      "저는 학생이에요.":
+        native: "I'm a student."
+        bases:
+          "저는": "I, with the topic particle 는 (neun)"
+          "학생이에요": "to be (polite)"
+      "저는 괜찮아요.":
+        native: "I'm fine."
+        bases:
+          "저는": "I, with the topic particle 는 (neun)"
+          "괜찮아요": "to be fine; all right"
+  "ko-0023":
+    native: "this"
+    alt_native: "this (before a noun)"
+    notes:
+      "n1": "이 (i) is 'this', before a noun: 이 커피 (i keopi), this coffee. On its own, 'this one' is 이거 (igeo), as in the phrasebook."
+    examples:
+      "이 커피 주세요.":
+        native: "This coffee, please."
+        bases:
+          "주세요": "to give (polite request)"
+      "이 물이 좋아요.":
+        native: "This water is good."
+        bases:
+          "좋아요": "to be good; fine"
+  "ko-0024":
+    native: "that (near you, or just mentioned)"
+    alt_native: "that one"
+    notes:
+      "n1": "그 (geu) is 'that' for the thing the listener is near, or one you have just mentioned: 그 사람 (geu saram), that person. 'That one' on its own is 그것 (geugeot)."
+    examples:
+      "그 사람은 선생님이에요.":
+        native: "That person is a teacher."
+        bases:
+          "사람은": "person, with the topic particle 은 (eun)"
+      "그 커피 좋아요.":
+        native: "That coffee is good."
+        bases:
+          "좋아요": "to be good; fine"
+  "ko-0025":
+    native: "good; OK; fine"
+    alt_native: "fine"
+    notes:
+      "n1": "좋아요 (joayo) is the polite form of 좋다 (jota), 'to be good'. For 'I like it', say 좋아해요 (joahaeyo), from 좋아하다 (joahada), 'to like'."
+    bases:
+      "좋아요": "to be good; fine (polite)"
+    examples:
+      "커피 좋아요?":
+        native: "Do you like coffee?"
+        bases:
+          "좋아요": "to be good; to like"
+      "좋아요, 그렇게 해요.":
+        native: "OK, let's do it that way."
+        bases:
+          "좋아요": "to be good; fine"
+          "해요": "to do (polite)"
+  "ko-0026":
+    native: "fine; all right; it's OK"
+    alt_native: "okay"
+    notes:
+      "n1": "괜찮아요 (gwaenchanayo) asks 'are you OK?' and answers 'I'm fine' or refuses politely, as with 'no thanks'. Its root is 괜찮다 (gwaenchanta)."
+    bases:
+      "괜찮아요": "to be fine; all right (polite)"
+    examples:
+      "괜찮아요?":
+        native: "Are you OK?"
+        bases:
+          "괜찮아요": "to be fine; all right"
+      "저는 괜찮아요.":
+        native: "I'm fine."
+        bases:
+          "저는": "I, with the topic particle 는 (neun)"
+          "괜찮아요": "to be fine; all right"
+  "ko-0027":
+    native: "water"
+    notes:
+      "n1": "Water to drink. It is often served free at a restaurant, so 물 주세요 (mul juseyo), 'water, please', is useful. Before the particle 이 (i), it is said muri: 물이 (muri), water (as the subject)."
+    examples:
+      "물 주세요.":
+        native: "Water, please."
+        bases:
+          "주세요": "to give (polite request)"
+      "물이 차가워요.":
+        native: "The water is cold."
+        bases:
+          "물이": "water, with the subject particle 이 (i)"
+          "차가워요": "to be cold (polite)"
+  "ko-0028":
+    native: "coffee"
+    notes:
+      "n1": "A loanword from English, said keopi. Cafes often sell it iced, as 아이스 (aiseu), a word from English, 'iced'."
+    examples:
+      "커피 주세요.":
+        native: "Coffee, please."
+        bases:
+          "주세요": "to give (polite request)"
+      "커피가 뜨거워요.":
+        native: "The coffee is hot."
+        bases:
+          "커피가": "coffee, with the subject particle 가 (ga)"
+          "뜨거워요": "to be hot (polite)"
+  "ko-0029":
+    native: "student"
+    notes:
+      "n1": "A Sino-Korean word, built on 학 (hak), 'learning', which is also in 학교 (hakgyo), school. The old Chinese characters are not taught in this course."
+    examples:
+      "동생은 학생이에요.":
+        native: "My younger sibling is a student."
+        bases:
+          "동생은": "younger sibling, with the topic particle 은 (eun)"
+          "학생이에요": "to be (polite)"
+      "저도 학생이에요.":
+        native: "I'm a student too."
+        bases:
+          "저도": "I, also (with the particle 도 (do))"
+          "학생이에요": "to be (polite)"
+  "ko-0030":
+    native: "teacher"
+    notes:
+      "n1": "선생님 (seonsaengnim) is also a polite title for anyone you respect, such as a doctor, as in 김 선생님 (Kim seonsaengnim), Mr or Ms Kim. You do not say 'you' to a teacher."
+    examples:
+      "선생님, 안녕하세요.":
+        native: "Hello, teacher."
+        bases:
+          "안녕하세요": "hello (greeting)"
+      "우리 선생님은 친절해요.":
+        native: "Our teacher is kind."
+        bases:
+          "선생님은": "teacher, with the topic particle 은 (eun)"
+          "친절해요": "to be kind (polite)"
+  "ko-0031":
+    native: "name"
+    notes:
+      "n1": "이름 (ireum) is 'name'. 이름이 뭐예요? (ireumi mwoyeyo?) asks someone's name: 'what is your name?'. Before 이 (i) it is said ireumi."
+    examples:
+      "이름이 뭐예요?":
+        native: "What is your name?"
+        bases:
+          "이름이": "name, with the subject particle 이 (i)"
+          "뭐예요": "what is it (polite)"
+      "제 이름은 민수예요.":
+        native: "My name is Minsu."
+        bases:
+          "제": "my (short for 저의, jeo-ui)"
+          "이름은": "name, with the topic particle 은 (eun)"
+          "민수예요": "is Minsu (polite)"
