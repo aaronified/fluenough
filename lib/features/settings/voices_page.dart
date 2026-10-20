@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
@@ -8,6 +10,7 @@ import '../../app/skill.dart';
 import '../../app/system_settings.dart';
 import '../../core/models/deck.dart';
 import '../../core/tts/tts_engine.dart';
+import '../../core/tts/voice_apps.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
@@ -27,7 +30,14 @@ import 'speech_test_sheet.dart';
 /// - **Listening:** whether the phone has a voice and how many, a choice of
 ///   voice where it has several (#123), and Play, which speaks a word of
 ///   the course in the chosen voice at the learner's speech rate. With no
-///   voice, "Install a voice" opens the same help as "Install voices".
+///   voice, "Install a voice" opens the same help as "Install voices". A
+///   course that uses several voice tags, such as `hi-IN` and `ur-PK` for
+///   Hindustani, lists each (#641), and says which voice is in use: the
+///   learner's choice (Automatic, or a voice, which may be another
+///   engine's), or the course's other voice as a backup while the deck's
+///   own is missing. Under "Other voices", the apps that add a voice for
+///   the language, each with its store links (#642, `assets/voice_apps.yaml`);
+///   coming back from a store asks the phone again.
 /// - **Speaking:** whether the phone's recogniser hears the language, the
 ///   switch that allows it online where it is heard only online, and "Say
 ///   something", which opens [SpeechTestSheet]. With speaking off, "Switch
@@ -46,7 +56,14 @@ import 'speech_test_sheet.dart';
 /// once speaking is set up), for after installing a voice or a language
 /// pack.
 class VoicesPage extends StatefulWidget {
-  const VoicesPage({super.key});
+  const VoicesPage({super.key, this.apps});
+
+  /// The voice apps listed under Other voices, for tests and the gallery.
+  /// Null reads them from [appsAsset].
+  final List<VoiceApp>? apps;
+
+  /// The hand-kept list of apps that install as phone voices (#642).
+  static const String appsAsset = 'assets/voice_apps.yaml';
 
   /// What Play says for [language]: the first card of its first vocabulary
   /// deck, or of a script deck when that is all there is, passing over any
@@ -86,9 +103,18 @@ class VoicesPage extends StatefulWidget {
   State<VoicesPage> createState() => _VoicesPageState();
 }
 
-class _VoicesPageState extends State<VoicesPage> {
+class _VoicesPageState extends State<VoicesPage> with WidgetsBindingObserver {
   /// Asking the phone again, after Check again.
   bool _rechecking = false;
+
+  /// The voice apps, once read from [VoicesPage.appsAsset].
+  List<VoiceApp>? _apps;
+
+  bool _loadingApps = false;
+
+  /// Whether the learner went off to a store, so that coming back asks the
+  /// phone for its voices again (#642).
+  bool _inStore = false;
 
   /// Whether "Other languages on this phone" is open, once the learner
   /// opened or closed it.
@@ -101,6 +127,57 @@ class _VoicesPageState extends State<VoicesPage> {
 
   /// The engine's error code from the last Play, by language code.
   final Map<String, String> _playFailed = <String, String>{};
+
+  @override
+  void initState() {
+    super.initState();
+    _apps = widget.apps;
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (_apps == null && !_loadingApps) {
+      _loadingApps = true;
+      unawaited(_loadApps(DefaultAssetBundle.of(context).loadString));
+    }
+  }
+
+  Future<void> _loadApps(Future<String> Function(String key) load) async {
+    List<VoiceApp> apps;
+    try {
+      apps = parseVoiceApps(await load(VoicesPage.appsAsset));
+    } catch (_) {
+      // The list is a help, not the page: without it there is none.
+      apps = const <VoiceApp>[];
+    }
+    if (mounted && _apps == null) setState(() => _apps = apps);
+  }
+
+  /// Back from a store: the phone may have a new voice.
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed && _inStore) {
+      _inStore = false;
+      if (!_rechecking) unawaited(_checkAgain());
+    }
+  }
+
+  Future<void> _openStore(String url) {
+    _inStore = true;
+    return openLink(
+      context,
+      url,
+      copied: AppLocalizations.of(context)!.voiceAppLinkCopied,
+    );
+  }
 
   void _askVoices(AppState state, LanguageInfo language) {
     final tag = language.ttsTag;
@@ -210,27 +287,63 @@ class _VoicesPageState extends State<VoicesPage> {
     // Folded unless nothing is learned, then open, until the learner says.
     final othersOpen = _othersOpen ?? learning.isEmpty;
     final speaking = state.features.isAvailable(Feature.drillSpeaking);
-    Widget card(LanguageInfo language) => LanguageVoiceCard(
-      language: language,
-      glyph: _glyphOf(state, language),
-      voiceStatus: _rechecking
-          ? VoiceStatus.checking
-          : state.voiceStatus(language),
-      voices: _voices[language.ttsTag],
-      chosen: state.settings.voiceFor(language.code),
-      sample: VoicesPage.sampleFor(state, language),
-      playFailed: _playFailed[language.code],
-      speechStatus: speaking ? _speechOf(state, language) : null,
-      allowsOnline: state.settings.allowsOnlineSpeech(language.code),
-      onAskVoices: () => _askVoices(state, language),
-      onChoose: (voice) => state.settings.chooseVoice(language.code, voice),
-      onPlay: (text) => _play(state, language, text),
-      onInstall: _installVoices,
-      onSay: () => showSpeechTest(context, language),
-      onSwitchOnSpeaking: _switchOnSpeaking,
-      onAllowOnline: (on) =>
-          state.settings.allowOnlineSpeech(language.code, on),
-    );
+    Widget card(LanguageInfo language) {
+      final blocks = state.voiceBlocksOf(language.code);
+      // The course's other voices, such as ur-PK beside hi-IN (#641).
+      final others = <LanguageInfo>[
+        for (final block in blocks)
+          if (block.ttsTag != language.ttsTag) block,
+      ];
+      for (final other in others) {
+        if (state.voiceStatus(other) == VoiceStatus.available) {
+          _askVoices(state, other);
+        }
+      }
+      final codes = <String>{
+        language.code,
+        for (final block in blocks) block.ttsTag.split('-').first,
+      };
+      return LanguageVoiceCard(
+        language: language,
+        glyph: _glyphOf(state, language),
+        voiceStatus: _rechecking
+            ? VoiceStatus.checking
+            : state.voiceStatus(language),
+        voices: _voices[language.ttsTag],
+        otherTags: <CourseVoice>[
+          for (final other in others)
+            (
+              tag: other.ttsTag,
+              status: _rechecking
+                  ? VoiceStatus.checking
+                  : state.voiceStatus(other),
+              backup: _rechecking ? null : state.backupVoice(other)?.ttsTag,
+            ),
+        ],
+        otherVoices: <TtsVoice>[
+          for (final other in others) ...?_voices[other.ttsTag],
+        ],
+        backup: _rechecking ? null : state.backupVoice(language)?.ttsTag,
+        chosen: state.settings.voiceFor(language.code),
+        sample: VoicesPage.sampleFor(state, language),
+        playFailed: _playFailed[language.code],
+        speechStatus: speaking ? _speechOf(state, language) : null,
+        allowsOnline: state.settings.allowsOnlineSpeech(language.code),
+        apps: <VoiceApp>[
+          for (final app in _apps ?? const <VoiceApp>[])
+            if (app.covers(codes)) app,
+        ],
+        onAskVoices: () => _askVoices(state, language),
+        onChoose: (voice) => state.settings.chooseVoice(language.code, voice),
+        onPlay: (text) => _play(state, language, text),
+        onInstall: _installVoices,
+        onSay: () => showSpeechTest(context, language),
+        onSwitchOnSpeaking: _switchOnSpeaking,
+        onAllowOnline: (on) =>
+            state.settings.allowOnlineSpeech(language.code, on),
+        onOpenStore: _openStore,
+      );
+    }
 
     return Scaffold(
       appBar: AppBar(
@@ -374,6 +487,11 @@ class _FoldHeader extends StatelessWidget {
   }
 }
 
+/// One of a course's voice tags beside the card's own, such as `ur-PK`
+/// beside `hi-IN` (#641): whether the phone has it and, while it does not,
+/// the tag of the voice that says its cards instead, or null.
+typedef CourseVoice = ({String tag, VoiceStatus status, String? backup});
+
 /// One language's card on the Voices page: hearing it and speaking it.
 class LanguageVoiceCard extends StatelessWidget {
   const LanguageVoiceCard({
@@ -393,6 +511,11 @@ class LanguageVoiceCard extends StatelessWidget {
     required this.onSay,
     required this.onSwitchOnSpeaking,
     required this.onAllowOnline,
+    required this.onOpenStore,
+    this.otherTags = const <CourseVoice>[],
+    this.otherVoices = const <TtsVoice>[],
+    this.backup,
+    this.apps = const <VoiceApp>[],
     this.playFailed,
   });
 
@@ -406,7 +529,21 @@ class LanguageVoiceCard extends StatelessWidget {
   /// The phone's voices for it, or null until asked.
   final List<TtsVoice>? voices;
 
-  /// The voice chosen for it, by name, or null for the phone's default.
+  /// The course's other voice tags and whether the phone has each: `ur-PK`
+  /// beside `hi-IN` for Hindustani (#641).
+  final List<CourseVoice> otherTags;
+
+  /// The phone's voices for [otherTags], those asked for so far.
+  final List<TtsVoice> otherVoices;
+
+  /// The tag of the course's other voice that stands in for this one while
+  /// it is missing, or null (#641).
+  final String? backup;
+
+  /// The voice apps that cover the language, for Other voices (#642).
+  final List<VoiceApp> apps;
+
+  /// The voice chosen for it, by name, or null for Automatic.
   final String? chosen;
 
   /// A word to speak, or null when the language's decks have none.
@@ -431,6 +568,9 @@ class LanguageVoiceCard extends StatelessWidget {
   final VoidCallback onSay;
   final VoidCallback onSwitchOnSpeaking;
   final ValueChanged<bool> onAllowOnline;
+
+  /// Opens a voice app's store link.
+  final ValueChanged<String> onOpenStore;
 
   @override
   Widget build(BuildContext context) {
@@ -513,7 +653,11 @@ class LanguageVoiceCard extends StatelessWidget {
     final available = voiceStatus == VoiceStatus.available;
     final String line = switch (voiceStatus) {
       VoiceStatus.checking => l10n.voicesChecking,
-      VoiceStatus.missing => l10n.voicesMissing,
+      // With a backup the language is still heard: not "skipped".
+      VoiceStatus.missing =>
+        backup == null
+            ? l10n.voicesMissing
+            : l10n.deckVoiceMissing(language.ttsTag),
       // An engine that says yes has at least one voice, even if it lists
       // none by name.
       VoiceStatus.available =>
@@ -523,18 +667,65 @@ class LanguageVoiceCard extends StatelessWidget {
     };
     final say = sample;
     final failed = playFailed;
+    // Every voice of the course the learner can choose among (#641).
+    final choices = <TtsVoice>[...?voices, ...otherVoices];
+    final chosenNow = choices.any((v) => v.name == chosen) ? chosen : null;
+    final hasVoice =
+        available || otherTags.any((t) => t.status == VoiceStatus.available);
+    // A voice the course uses that the phone lacks and nothing stands in
+    // for: it can be downloaded (#641).
+    final canDownload =
+        (voiceStatus == VoiceStatus.missing && backup == null) ||
+        otherTags.any((t) => t.status == VoiceStatus.missing);
+    final String? inUse;
+    if (backup case final tag?) {
+      inUse = l10n.voicesInUseBackup(tag);
+    } else if (!available || voices == null) {
+      inUse = null;
+    } else if (chosenNow != null) {
+      inUse = l10n.voicesInUseChosen(chosenNow);
+    } else {
+      inUse = l10n.voicesInUseAutomatic(language.ttsTag);
+    }
     return <Widget>[
       _Part(
         icon: available ? Icons.volume_up_outlined : Icons.volume_off_outlined,
         title: l10n.voicesListening,
         line: line,
       ),
-      if (available && voices != null && voices.length > 1) ...<Widget>[
+      for (final other in otherTags) ...<Widget>[
+        const SizedBox(height: 8),
+        _Part(
+          icon: other.status == VoiceStatus.available
+              ? Icons.volume_up_outlined
+              : Icons.volume_off_outlined,
+          title: l10n.voicesListening,
+          line: switch (other.status) {
+            VoiceStatus.available => l10n.deckVoiceInstalled(other.tag),
+            VoiceStatus.missing =>
+              other.backup == null
+                  ? l10n.deckVoiceMissing(other.tag)
+                  : l10n.deckVoiceBackup(other.tag, other.backup!),
+            VoiceStatus.checking => l10n.deckVoiceChecking(other.tag),
+          },
+        ),
+      ],
+      if (inUse != null)
+        Padding(
+          padding: const EdgeInsetsDirectional.only(start: 34, top: 8),
+          child: Text(inUse, style: settingsHelpStyle(theme)),
+        ),
+      if (canDownload)
+        Padding(
+          padding: const EdgeInsetsDirectional.only(start: 34, top: 8),
+          child: Text(l10n.voicesDownloadHint, style: settingsHelpStyle(theme)),
+        ),
+      if (hasVoice && choices.length > 1) ...<Widget>[
         const SizedBox(height: 10),
         _VoiceChoice(
           language: language,
-          voices: voices,
-          chosen: voices.any((v) => v.name == chosen) ? chosen : null,
+          voices: choices,
+          chosen: chosenNow,
           onChoose: onChoose,
         ),
       ],
@@ -586,6 +777,9 @@ class LanguageVoiceCard extends StatelessWidget {
               ),
           ],
         ),
+      // Apps that add a voice for it (#642), open where it has none.
+      if (apps.isNotEmpty)
+        _OtherVoices(apps: apps, open: canDownload, onOpenStore: onOpenStore),
     ];
   }
 
@@ -760,6 +954,119 @@ class _VoiceChoice extends StatelessWidget {
             ),
         ],
         onChanged: onChoose,
+      ),
+    );
+  }
+}
+
+/// "Other voices" on a language's card (#642): the apps that add a voice for
+/// it to the phone, folded until the learner opens it (open from the start
+/// where the language has no voice), each with its links.
+class _OtherVoices extends StatefulWidget {
+  const _OtherVoices({
+    required this.apps,
+    required this.open,
+    required this.onOpenStore,
+  });
+
+  final List<VoiceApp> apps;
+  final bool open;
+  final ValueChanged<String> onOpenStore;
+
+  @override
+  State<_OtherVoices> createState() => _OtherVoicesState();
+}
+
+class _OtherVoicesState extends State<_OtherVoices> {
+  late bool _open = widget.open;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        const SizedBox(height: 8),
+        _FoldHeader(
+          label: l10n.voicesOthersTitle,
+          expanded: _open,
+          onToggle: () => setState(() => _open = !_open),
+        ),
+        if (_open) ...<Widget>[
+          Padding(
+            padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
+            child: Text(
+              l10n.voicesOthersIntro,
+              style: settingsHelpStyle(theme),
+            ),
+          ),
+          for (final app in widget.apps)
+            _VoiceAppTile(app: app, onOpenStore: widget.onOpenStore),
+        ],
+      ],
+    );
+  }
+}
+
+/// A voice app: its name and voice family, what it is, what it needs, and
+/// a button for each place to get it.
+class _VoiceAppTile extends StatelessWidget {
+  const _VoiceAppTile({required this.app, required this.onOpenStore});
+
+  final VoiceApp app;
+  final ValueChanged<String> onOpenStore;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final needs = <String>[
+      if (app.minAndroid case final version?) l10n.voiceAppAndroid(version),
+      if (app.arm64Only) l10n.voiceAppArm64,
+    ];
+    String storeName(String store) => switch (store) {
+      'fdroid' => l10n.voiceAppFdroid,
+      'play' => l10n.voiceAppPlay,
+      _ => l10n.voiceAppGithub,
+    };
+    return Padding(
+      padding: const EdgeInsetsDirectional.fromSTEB(8, 12, 8, 0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          MergeSemantics(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(app.name, style: theme.textTheme.titleSmall),
+                Text(app.voices, style: settingsHelpStyle(theme)),
+                Text(app.note, style: theme.textTheme.bodyMedium),
+                if (needs.isNotEmpty)
+                  Text(
+                    needs.join(l10n.commonListSeparator),
+                    style: settingsHelpStyle(theme),
+                  ),
+              ],
+            ),
+          ),
+          _Actions(
+            children: <Widget>[
+              for (final (store, url) in app.links)
+                Semantics(
+                  button: true,
+                  label: l10n.voiceAppGetLabel(app.name, storeName(store)),
+                  excludeSemantics: true,
+                  onTap: () => onOpenStore(url),
+                  child: OutlinedButton(
+                    style: AppButtonStyles.compact(context),
+                    onPressed: () => onOpenStore(url),
+                    child: Text(storeName(store)),
+                  ),
+                ),
+            ],
+          ),
+        ],
       ),
     );
   }
