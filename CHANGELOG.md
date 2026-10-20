@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- The language bar scrolls with momentum (#682): a drag or fling across its width passes at least five languages, each highlighted with a light tick as it goes by, and it settles on the nearest one, switching the screen once, at the end. A short flick still moves one, and it stops at the ends.
 - Find my level is shorter and checks each script (#481). It asks "Do you read Devanagari?" for each of a course's scripts, saying so when you read it through a language you know; No starts its script decks from the first letters with no questions, and Yes asks up to five questions, from a letter to a word read aloud, with one more try at each. Then it walks the word decks one question each, skipping ahead and jumping to the end while you know them, says where you start and why, and lets you try again from there.
 
 ### Fixed
