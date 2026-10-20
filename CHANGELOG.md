@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - The Decks tab search finds cards (#527): a word, its spelling in another script, its reading or its meaning, ignoring case and accents, one row for each card, listed after the units and decks. Tapping a row opens the word.
+- The deck reader accepts the `homograph` and `lookalike` note kinds and a layer's `dictionary` entry (#692). Nothing shows them yet.
 
 ## [0.5.3] - 2026-10-20
 

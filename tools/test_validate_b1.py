@@ -581,7 +581,8 @@ class LayerCards(B1Case):
         for key in ("pos", "target"):
             self.assertError(LAYER, "cards.zz-9001",
                              f"{key!r} belongs to the word, in the core; a layer gives "
-                             f"native, alt_native, notes, examples, bases and wiktionary")
+                             f"native, alt_native, notes, examples, bases, wiktionary and "
+                             f"dictionary")
 
     def _a_card_the_core_writes_needs_its_native(self) -> None:
         self.edit(LAYER, lambda d: d["cards"]["zz-9004"].pop("native"))
@@ -1463,8 +1464,8 @@ class SingleFileNotes(B1Case):
             ([], "notes must not be an empty list; leave it out"),
             (["a"], "notes[0] must be a mapping"),
             (note(colour="blue"), "notes[0]: unknown field 'colour'"),
-            (note(kind="tip"), "notes[0].kind must be one of behaviour, culture, note, "
-                               "pair, usage, got 'tip'"),
+            (note(kind="tip"), "notes[0].kind must be one of behaviour, culture, "
+                               "homograph, lookalike, note, pair, usage, got 'tip'"),
             (note(text=""), "notes[0].text is required and must be non-empty text"),
             (note(id="on"), "notes[0].id must start with a letter and match [a-z0-9-]+, "
                             "and not be a YAML 1.1 boolean word, got 'on'"),
@@ -1476,7 +1477,7 @@ class SingleFileNotes(B1Case):
             (note(kind="pair"), "notes[0].ref: a pair note names its partner, the id of "
                                 "another zz card, got None"),
             (note(kind="pair", ref="zz-9501"), "notes[0].ref names the card itself"),
-            (note(ref="zz-9001"), "notes[0].ref is only for a pair note"),
+            (note(ref="zz-9001"), "notes[0].ref is only for a pair, homograph or lookalike note"),
             (note(kind="culture"), "notes[0].source: a culture note names where its "
                                    "claims can be checked"),
             (note(words="x"), "notes[0].words must be a list of { word, reading }"),
@@ -1766,6 +1767,65 @@ class GivenWords(B1Case):
                     getattr(fresh, case.__name__)()
                 finally:
                     fresh.doCleanups()
+
+
+class SimilarWords(B1Case):
+    """Homograph and lookalike notes, and a layer's `dictionary` (#692)."""
+
+    URL = "https://en.wiktionary.org/wiki/%E0%B0%87%E0%B0%B2%E0%B1%8D%E0%B0%B2%E0%B1%81"
+
+    def notes(self, notes: object) -> list[str]:
+        self.put(EXTRA, single(cards=[dict(CAT, notes=notes)], tags=["unreviewed"]))
+        return self.errors(EXTRA)
+
+    def dictionary(self, value: object) -> list[str]:
+        self.edit(LAYER, lambda d: d["cards"]["zz-9001"].update(dictionary=value))
+        return self.errors(LAYER)
+
+    def test_homograph_and_lookalike_notes_name_another_card(self) -> None:
+        for kind in ("homograph", "lookalike"):
+            with self.subTest(kind):
+                good = [{"kind": kind, "ref": "zz-9001", "text": "Not ఇల్లు (illu)."}]
+                self.assertEqual(self.notes(good), [])
+                self.assertIn(f"card zz-9501: notes[0].ref: a {kind} note names the "
+                              f"other word, the id of another zz card, got None",
+                              self.notes([{"kind": kind, "text": "x"}]))
+                self.assertIn("card zz-9501: notes[0].ref names the card itself",
+                              self.notes([{"kind": kind, "ref": "zz-9501", "text": "x"}]))
+
+    def test_a_homograph_ref_must_be_written_by_a_deck(self) -> None:
+        self.notes([{"kind": "homograph", "ref": "zz-9999", "text": "Same spelling."}])
+        self.assertAcross(f"{self.p(EXTRA)}: card zz-9501: notes[0].ref names card "
+                          f"zz-9999, which no deck writes (homograph note)", EXTRA)
+
+    def test_a_layer_may_give_a_dictionary_entry(self) -> None:
+        good = {"senses": ["house", "household"], "etymology": "From Proto-Dravidian.",
+                "source": self.URL}
+        self.assertEqual(self.dictionary(good), [])
+        self.assertEqual(self.dictionary({"senses": ["house"], "source": self.URL}), [])
+
+    def test_a_dictionary_entry_is_checked(self) -> None:
+        cases = [
+            ("text", "dictionary must be a mapping"),
+            ({"senses": ["house"]}, "dictionary.source is required"),
+            ({"source": self.URL}, "dictionary.senses must be a non-empty list of text"),
+            ({"senses": [], "source": self.URL},
+             "dictionary.senses must be a non-empty list of text"),
+            ({"senses": ["a"], "source": "https://example.org/x"},
+             "dictionary.source must be the Wiktionary page only"),
+            ({"senses": ["a"], "source": self.URL, "etymology": ""},
+             "dictionary.etymology must be non-empty text"),
+            ({"senses": ["a"], "source": self.URL, "colour": "x"},
+             "dictionary: unknown field 'colour'"),
+        ]
+        for value, msg in cases:
+            with self.subTest(msg):
+                self.setUp()
+                self.assertTrue(any(msg in e for e in self.dictionary(value)), msg)
+
+    def test_a_core_has_no_dictionary(self) -> None:
+        self.edit(CORE, lambda d: card(d, "zz-9001").update(dictionary={"senses": ["a"]}))
+        self.assertTrue(any("dictionary" in e for e in self.errors(CORE)))
 
 
 class BaseStems(B1Case):
