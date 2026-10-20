@@ -7,9 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+The app's database moves to version 9: each answer now records the script it was shown or typed in, and how it was asked. A backup made by this version can still be restored by 0.5.1, which passes the two new fields by. Going back to an older version after updating is not supported. Your progress is kept by card id, and no card id changed.
+
 ### Added
 
+- Read and Write are tracked for each script a course is learned in, such as Devanagari and Perso-Arabic for Hindustani, and Progress shows each (#656). Script decks count in full; outside them, reading a word shown in the script, choosing among options written in it, or typing a Write answer in it counts as half a review. Past script practice counts for the course's main script.
+- Learn a language in the scripts you choose (#650): Hindustani in Devanagari, Perso-Arabic or both. Cards show your script first, with the other beneath when you learn both, and a typed answer counts in either script you learn.
+- Each script has its own guide: the Perso-Arabic decks show the Perso-Arabic guide, not the Devanagari one (#645).
+- Script fonts download with each course, and the app says while a font is downloading (#652).
+- Voices lists every voice a course uses, such as Hindi and Urdu for Hindustani. When one is missing, the other says the card in its own script. The page also links voice apps you can install instead (#648).
+- The IPA quiz offers hand-picked wrong options for every symbol (#649).
 - Decks in a language written without spaces, such as Chinese and Japanese, can give the words of each card and example (#661). Putting a phrase's words in order then offers its real words as tiles, 我 and 听不懂 for 我听不懂, in traditional characters too, and a card of one word counts as one of its unit's words.
+
+### Changed
+
+- Hindustani's Perso-Arabic script is drawn in Nastaliq (#646).
+- Meaning answers are graded by rule (#654): case, punctuation, contractions, text in brackets, a leading "to", "please", and ok, okay or o.k. no longer make a right answer wrong, and any one of a card's meanings is accepted.
+- A long drag or a hard fling on the language bar passes several languages (#647).
+- The IPA course is tagged Complete once its path is written, instead of Alpha: it has no CEFR levels to measure it by (#658).
 
 ## [0.5.1] - 2026-10-19
 
