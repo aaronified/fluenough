@@ -23,21 +23,27 @@ class FairSlots {
   Future<void> acquire(String key) {
     final waiter = Completer<void>();
     (_waiting[key] ??= Queue<Completer<void>>()).add(waiter);
-    if (!_scheduled) {
-      _scheduled = true;
-      scheduleMicrotask(() {
-        _scheduled = false;
-        _grant();
-      });
-    }
+    _grantSoon();
     return waiter.future;
+  }
+
+  /// Hands out free slots once the current task is done, so that every
+  /// language that will ask in it, such as one whose file just finished and
+  /// asks for its next, is waiting when they are shared out.
+  void _grantSoon() {
+    if (_scheduled) return;
+    _scheduled = true;
+    scheduleMicrotask(() {
+      _scheduled = false;
+      _grant();
+    });
   }
 
   /// Gives back a slot [key] held.
   void release(String key) {
     _busy--;
     _held[key] = _held[key]! - 1;
-    _grant();
+    _grantSoon();
   }
 
   void _grant() {
