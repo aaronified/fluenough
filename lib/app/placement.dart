@@ -112,6 +112,12 @@ class TypeQuestion extends PlacementAsk {
         romanised.grade(typed, readings).outcome.isCorrect) {
       return true;
     }
+    // The reading as the deck writes it, in its standard's letters (cāy
+    // for chāy), is right too.
+    final key = romanised.key(typed);
+    if (key.isNotEmpty && readings.any((r) => romanised.key(r) == key)) {
+      return true;
+    }
     if (!produce) return false;
     return AnswerGrader(articles: articles)
         .grade(
