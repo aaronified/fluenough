@@ -142,14 +142,24 @@ void main() {
       expect(p.stage, CourseStage.complete);
     });
 
-    test('the IPA course is Complete once every unit is written', () {
+    test('a notation\'s course, the IPA\'s or braille\'s, is Complete once '
+        'every unit is written', () {
       expect(
-        B1Progress.of(<B1Unit>[written(5), written(5)], isIpa: true).stage,
+        B1Progress.of(<B1Unit>[written(5), written(5)], isNotation: true).stage,
         CourseStage.complete,
       );
       expect(
-        B1Progress.of(<B1Unit>[written(5), planned(5)], isIpa: true).stage,
+        B1Progress.of(<B1Unit>[written(5), planned(5)], isNotation: true).stage,
         CourseStage.alpha,
+      );
+      // Braille's path: six units written and the open last one, for decks
+      // a learner adds and the contractions to come (ADR-0043).
+      expect(
+        B1Progress.of(<B1Unit>[
+          for (var i = 0; i < 6; i++) written(10),
+          const B1Unit(),
+        ], isNotation: true).stage,
+        CourseStage.complete,
       );
       expect(B1Progress.of(<B1Unit>[written(5)]).stage, CourseStage.alpha);
     });

@@ -50,7 +50,8 @@ class LanguageInfo {
 
   /// Whether an answer in this language can be typed. False for the IPA
   /// (`script: ipa`), which has no keyboard: production is asked by
-  /// choosing (ADR-0041).
+  /// choosing (ADR-0041). Braille is typed, on the app's own keyboard
+  /// ([keyboard], ADR-0043).
   final bool typed;
 
   /// This language written in [other], one of its [allScripts] (#623):
@@ -85,14 +86,31 @@ class LanguageInfo {
   /// (ADR-0041): its cards' examples are in other languages.
   bool get isIpa => script == 'ipa';
 
+  /// Whether this is braille, a script taught as a course of its own
+  /// (ADR-0043): English Braille, Unified English Braille.
+  bool get isBraille => script == 'braille';
+
+  /// Whether this is a notation taught like a language: the IPA
+  /// (ADR-0041) or braille (ADR-0043). It has no voice, is learned only
+  /// when chosen, is placed by nothing, and is complete once its path is
+  /// written.
+  bool get isNotation => isIpa || isBraille;
+
+  /// The app's own keyboard that answers in this language are typed on,
+  /// in place of the phone's, or null for the phone's: braille's six dots
+  /// (ADR-0043). Named by the script, so that a deck needs no new field.
+  ScriptKeyboard? get keyboard => isBraille ? ScriptKeyboard.braille : null;
+
   /// The tag handed to the TTS engine. Falls back to the bare language code,
   /// which leaves the regional accent to the device — acceptable, but decks
   /// for languages with major regional variation should set it explicitly.
   String get ttsTag => tts ?? code;
 
   /// Whether this script needs a romanisation shown alongside the target.
+  /// Not the notations: an IPA symbol or a braille cell is read as written,
+  /// and its print equivalent is its meaning (ADR-0043).
   bool get needsReading =>
-      !const {'latin', 'cyrillic', 'greek', 'ipa'}.contains(script);
+      !const {'latin', 'cyrillic', 'greek', 'ipa', 'braille'}.contains(script);
 
   /// Leading articles ignored when grading typed answers.
   ///
@@ -108,6 +126,13 @@ class LanguageInfo {
     'en' => const ['the', 'a', 'an'],
     _ => const <String>[],
   };
+}
+
+/// A keyboard the app draws for a script the phone has none for
+/// ([LanguageInfo.keyboard], ADR-0043).
+enum ScriptKeyboard {
+  /// Six dots in the Perkins layout, entered a cell at a time.
+  braille,
 }
 
 /// What a deck holds: cards, a pattern table that expands into cards,
