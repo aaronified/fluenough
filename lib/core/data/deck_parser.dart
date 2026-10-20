@@ -139,6 +139,7 @@ const _cardFields = {
   'ipa',
   'alt_target',
   'target_scripts',
+  'words',
   'alt_native',
   'pos',
   'gender',
@@ -227,6 +228,7 @@ const _coreCardFields = {
   'ipa',
   'alt_target',
   'target_scripts',
+  'words',
   'pos',
   'gender',
   'tags',
@@ -288,6 +290,7 @@ const _coreExampleFields = {
   'source',
   'language',
   'sounds',
+  'words',
 };
 const _layerEntryFields = {
   'native',
@@ -379,6 +382,7 @@ const _exampleFields = {
   'source',
   'language',
   'sounds',
+  'words',
 };
 const _authorFields = {'name', 'url'};
 
@@ -842,6 +846,7 @@ class _Reader {
         '$path.target_scripts',
         fields.string('target'),
       ),
+      words: words(fields, path),
       altNative: fields.strings('alt_native'),
       pos: fields.optionalString('pos', allowEmpty: false),
       gender: fields.optionalString('gender'),
@@ -929,7 +934,21 @@ class _Reader {
       source: fields.optionalString('source', allowEmpty: false),
       language: exampleLanguage(fields, path),
       sounds: exampleSounds(fields, path),
+      words: words(fields, path),
     );
+  }
+
+  /// A card's or an example's `words` (DECK-FORMAT.md, Base words): its
+  /// target's words in order, for a script written without spaces. Null
+  /// where not given. That they join to the target is the validator's to
+  /// check; the app falls back to splitting at spaces where they do not
+  /// ([tilesOfWords]).
+  List<String>? words(_Fields fields, String path) {
+    if (!fields.has('words')) return null;
+    final node = fields.node('words')!;
+    final words = fields.strings('words');
+    if (words.isEmpty) fail(node, '$path.words must not be empty');
+    return words;
   }
 
   /// An example's `language`: a language code, such as `en`.
@@ -1567,6 +1586,7 @@ class _Reader {
         '$path.target_scripts',
         fields.string('target'),
       ),
+      words: words(fields, path),
       pos: fields.optionalString('pos', allowEmpty: false),
       gender: fields.optionalString('gender'),
       tags: fields.strings('tags'),
@@ -1832,6 +1852,7 @@ class _Reader {
           source: fields.optionalString('source', allowEmpty: false),
           language: exampleLanguage(fields, where),
           sounds: exampleSounds(fields, where),
+          words: words(fields, where),
         ),
       );
     }
