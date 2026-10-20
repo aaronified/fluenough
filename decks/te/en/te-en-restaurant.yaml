@@ -1,0 +1,101 @@
+schema: 1
+id: "te-en-restaurant"
+kind: "layer"
+core: "te-restaurant"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Restaurants and ordering"
+description: "Ordering in Hyderabad and the Andhra towns: menus, the meal, asking for less spice, and taking food away. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "te-6425":
+    native: "menu"
+    notes:
+      "n1": "From English. Menus in Hyderabad and the Andhra towns also list dishes in English letters, so a learner sees both names."
+    examples:
+      "మెను ఇవ్వండి.": { "native": "Please give the menu.", "bases": { "మెను": "menu" } }
+      "మెనులో ఏముంది?": { "native": "What is on the menu?", "bases": { "మెనులో": "in the menu", "ఏముంది": "what is there" } }
+  "te-6426":
+    native: "meals; a thali"
+    notes:
+      "n1": "The plural of భోజనం (bhōjanaṁ), a full meal. In a restaurant it often means a thali: rice with small dishes set around it on one plate. Ask for భోజనాలు at lunch in a మెస్ (mes)."
+    examples:
+      "మధ్యాహ్నం భోజనాలు బాగున్నాయి.": { "native": "The lunch meals are good.", "bases": { "మధ్యాహ్నం": "noon; afternoon", "భోజనాలు": "meals; a thali", "బాగున్నాయి": "are good" } }
+      "భోజనాలు ఎంత?": { "native": "How much are the meals?", "bases": { "భోజనాలు": "meals; a thali" } }
+  "te-6427":
+    native: "a cheap eating house"
+    notes:
+      "n1": "A mess is a cheap canteen-style place with a fixed meal, popular with students and workers. Telugu speakers use the English word."
+    examples:
+      "ఈ మెస్ చాలా చౌక.": { "native": "This mess is very cheap.", "bases": { "ఈ": "this", "మెస్": "a cheap eating house", "చౌక": "cheap" } }
+      "మెస్ భోజనం చాలా బాగుంది.": { "native": "The mess meal is very good.", "bases": { "మెస్": "a cheap eating house", "బాగుంది": "is good; tastes good" } }
+  "te-6428":
+    native: "takeaway; parcel"
+    notes:
+      "n1": "Food to take away. Ask for it to be packed with పార్సిల్ చేయండి (pārsil cēyaṇḍi), pack it."
+    examples:
+      "పార్సిల్ ఇవ్వండి.": { "native": "Please pack it to take away.", "bases": { "పార్సిల్": "takeaway; parcel" } }
+      "నాకు పార్సిల్ కావాలి.": { "native": "I'd like a parcel to take away.", "bases": { "పార్సిల్": "takeaway; parcel" } }
+  "te-6429":
+    native: "non-vegetarian food; meat"
+    notes:
+      "n1": "The opposite of శాకాహారం (śākāhāraṁ), vegetarian food. Menus mark dishes veg and non-veg. In Telangana and Andhra, మాంసాహారం covers every meat dish."
+    examples:
+      "నేను మాంసాహారం తింటాను.": { "native": "I eat non-vegetarian food.", "bases": { "మాంసాహారం": "non-vegetarian food; meat", "తింటాను": "I eat" } }
+      "ఇది మాంసాహారమా?": { "native": "Is this non-veg?", "bases": { "మాంసాహారమా": "non-veg food" } }
+  "te-6430":
+    native: "plate (a portion of food)"
+    notes:
+      "n1": "A portion of a dish, ordered as a plate: ఒక ప్లేట్ (oka plēṭ) is one plate. The metal plate itself is పళ్ళెం (paḷḷeṁ)."
+    examples:
+      "ఒక ప్లేట్ ఇవ్వండి.": { "native": "Give me one plate.", "bases": { "ప్లేట్": "plate (a portion of food)" } }
+      "మటన్ ప్లేట్ ఎంత?": { "native": "How much is a plate of mutton?", "bases": { "ప్లేట్": "plate (a portion of food)" } }
+  "te-6431":
+    native: "waiter"
+    notes:
+      "n1": "Address a waiter as అన్నా (annā), brother, or అండీ (aṇḍī), the polite word for sir or madam. Do not call him by name."
+    examples:
+      "వెయిటర్ ఇక్కడ ఉన్నాడు.": { "native": "The waiter is here.", "bases": { "వెయిటర్": "waiter", "ఇక్కడ": "here", "ఉన్నాడు": "is (he)" } }
+      "అన్నా, బిల్లు ఇవ్వండి.": { "native": "Brother, please give the bill.", "bases": { "బిల్లు": "bill" } }
+  "te-6432":
+    native: "Please give me more rice."
+    notes:
+      "n1": "ఇంకొంచెం (iṅkoñcem) is 'a little more'. It works for curry or chutney too: ఇంకొంచెం పచ్చడి (iṅkoñcem paccaḍi)."
+    bases:
+      "ఇంకొంచెం": "a little more"
+  "te-6433":
+    native: "Please put in less chilli."
+    notes:
+      "n1": "కారం తక్కువ (kāraṁ takkuva), less spicy. Andhra and Telangana food is hot, so this is the most useful phrase to know."
+    bases:
+      "వేయండి": "put in"
+  "te-6434":
+    native: "How much is a plate?"
+    bases:
+      "ప్లేట్": "plate (a portion of food)"
+  "te-6435":
+    native: "Is it spicy?"
+    bases:
+      "ఉందా": "is there?"
+  "te-6436":
+    native: "One more, please."
+    bases:
+      "ఇంకొకటి": "one more"
+  "te-6437":
+    native: "Pack it, please."
+    bases:
+      "పార్సిల్": "takeaway; parcel"
+      "చేయండి": "do; make"
+  "te-6438":
+    native: "Brother, the menu, please."
+    bases:
+      "మెను": "menu"
+  "te-6439":
+    native: "The meal was very good."
+    bases:
+      "బాగుంది": "is good; tastes good"
+  "te-6440":
+    native: "Is there a free table?"
+    bases:
+      "ఖాళీ": "free; empty"
+      "ఉందా": "is there?"
