@@ -5,7 +5,7 @@ import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/features/profiles/gallery_entries.dart';
 
-import '../../support/harness.dart';
+import 'harness.dart';
 
 /// Pumps [page] on a phone, on the design's Aro (PIN 1234) and Mira, with
 /// profiles and PIN lock on, or as this version ships them when [flagsOn]
