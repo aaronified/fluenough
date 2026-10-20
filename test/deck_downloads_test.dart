@@ -790,7 +790,8 @@ void main() {
             'reviewer', () async {
           final d = await withEs();
           final was = await phone.read(deck);
-          remote.files[deck] = withProposal(remote.files[deck]!, field);
+          final original = remote.files[deck]!;
+          remote.files[deck] = withProposal(original, field);
           await d.checkForUpdates(english, force: true);
           expect(d.updates, isEmpty);
           expect(d.askToUpdate, isFalse);
@@ -800,7 +801,7 @@ void main() {
           {
             final d = await withEs();
             d.reviewer = true;
-            final base = remote.files[deck]!;
+            final base = original;
             remote.files[deck] = withProposal(base, field);
             await d.checkForUpdates(english, force: true);
             expect(d.updates['es']!.fetch.single.path, deck);

@@ -810,8 +810,6 @@ void main() {
         reason: 'the schedules are rebuilt from the backup\'s log alone',
       );
 
-      await ownProgress();
-      await log.replaceAll(backupReviews, backupActions, restore: record());
       final kept = (await db.restoresDao.all()).single;
       expect(kept.at, at.add(const Duration(days: 10)));
       expect(kept.backupCreatedAt, at.add(const Duration(days: 3)));

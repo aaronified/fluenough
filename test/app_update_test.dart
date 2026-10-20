@@ -547,7 +547,7 @@ void main() {
           expect(done, isTrue);
           expect(events.single.failure, InstallFailure.download);
 
-          {
+          await tester.runAsync(() async {
             final ota = _FakeOta(<OtaEvent>[
               OtaEvent(OtaStatus.DOWNLOADING, '10'),
             ]);
@@ -566,7 +566,7 @@ void main() {
             // Nothing under way: nothing to cancel.
             await installer.cancel();
             expect(ota.cancels, 1);
-          }
+          });
         },
       );
     });

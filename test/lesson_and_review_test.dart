@@ -990,7 +990,7 @@ Map<String, String> files({bool split = false}) {
       ? <String>['zz-9001', 'zz-9004', 'zz-9006', 'zz-9003', 'zz-9002']
       : <String>['zz-9001', 'zz-9004', 'zz-9006'];
   out['decks/zz/zz-home.yaml'] =
-      '${out['decks/zz/zz-homeSetDrill.yaml']}'
+      '${out['decks/zz/zz-home.yaml']}'
       '  - id: "zz-9201"\n'
       '    kind: "set"\n'
       '    members: [${members.map((m) => '{ ref: "$m" }').join(', ')}]\n';
@@ -4187,7 +4187,6 @@ void main() {
     testWidgets('after the answer, a reviewed word shows its note and '
         'example, which nothing gives away before it', (tester) async {
       final handle = tester.ensureSemantics();
-      addTearDown(handle.dispose);
       for (final question in <Question>[...answered, recognition]) {
         const outcome = Outcome.right;
 
@@ -4241,6 +4240,7 @@ void main() {
         expect(inCard(find.text(card.notes.first.text)), findsOneWidget);
         expect(find.byType(TaughtDetails), findsOneWidget);
       }
+      handle.dispose();
     });
   });
 
