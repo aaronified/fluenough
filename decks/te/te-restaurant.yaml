@@ -12,81 +12,96 @@ cards:
   - id: "te-6425"
     target: "మెను"
     reading: "menu"
+    ipa: "menu"
     pos: "noun"
+    gender: "amahat"
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { "target": "మెను ఇవ్వండి.", "reading": "menu ivvaṇḍi.", "bases": [ { "word": "మెను", "base": "మెను", "reading": "menu" }, { "word": "ఇవ్వండి", "ref": "te-0247" } ] }
-      - { "target": "మెనులో ఏముంది?", "reading": "menulō ēmundi?", "bases": [ { "word": "మెనులో", "base": "మెను", "reading": "menu" }, { "word": "ఏముంది", "base": "ఉండడం", "reading": "uṇḍaḍaṁ" } ] }
+      - { "target": "మెను ఇవ్వండి.", "reading": "menu ivvaṇḍi.", "bases": [ { "word": "ఇవ్వండి", "ref": "te-0247" } ] }
+      - { "target": "మెనులో ఏమి ఉంది?", "reading": "menulō ēmi undi?", "bases": [ { "word": "మెనులో", "base": "మెను", "reading": "menu" }, { "word": "ఏమి", "base": "ఏమి", "reading": "ēmi" }, { "word": "ఉంది", "ref": "te-0633" } ] }
     bases: "self"
   - id: "te-6426"
     target: "భోజనాలు"
     reading: "bhōjanālu"
+    ipa: "bʱoːdʒanaːlu"
     pos: "noun"
+    gender: "amahat"
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { "target": "మధ్యాహ్నం భోజనాలు బాగున్నాయి.", "reading": "madhyāhnaṁ bhōjanālu bāgunnāyi.", "bases": [ { "word": "మధ్యాహ్నం", "base": "మధ్యాహ్నం", "reading": "madhyāhnaṁ" }, { "word": "భోజనాలు", "base": "భోజనాలు", "reading": "bhōjanālu" }, { "word": "బాగున్నాయి", "base": "బాగు", "reading": "bāgu" } ] }
-      - { "target": "భోజనాలు ఎంత?", "reading": "bhōjanālu enta?", "bases": [ { "word": "భోజనాలు", "base": "భోజనాలు", "reading": "bhōjanālu" }, { "word": "ఎంత", "ref": "te-0166" } ] }
-    bases: "self"
+      - { "target": "మధ్యాహ్నం భోజనాలు బాగున్నాయి.", "reading": "madhyāhnaṁ bhōjanālu bāgunnāyi.", "bases": [ { "word": "మధ్యాహ్నం", "base": "మధ్యాహ్నం", "reading": "madhyāhnaṁ" }, { "word": "బాగున్నాయి", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
+      - { "target": "భోజనాలు ఎంత?", "reading": "bhōjanālu enta?", "bases": [ { "word": "ఎంత", "ref": "te-0166" } ] }
+    bases:
+      - { "word": "భోజనాలు", "ref": "te-0340" }
   - id: "te-6427"
     target: "మెస్"
     reading: "mes"
+    ipa: "mes"
     pos: "noun"
+    gender: "amahat"
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { "target": "ఈ మెస్ చాలా చౌక.", "reading": "ī mes cālā cauka.", "bases": [ { "word": "ఈ", "base": "ఈ", "reading": "ī" }, { "word": "మెస్", "base": "మెస్", "reading": "mes" }, { "word": "చాలా", "ref": "te-1026" }, { "word": "చౌక", "base": "చౌక", "reading": "cauka" } ] }
-      - { "target": "మెస్ భోజనం చాలా బాగుంది.", "reading": "mes bhōjanaṁ cālā bāgundi.", "bases": [ { "word": "మెస్", "base": "మెస్", "reading": "mes" }, { "word": "భోజనం", "ref": "te-0340" }, { "word": "చాలా", "ref": "te-1026" }, { "word": "బాగుంది", "base": "బాగు", "reading": "bāgu" } ] }
+      - { "target": "ఈ మెస్ చాలా చౌక.", "reading": "ī mes cālā cauka.", "bases": [ { "word": "ఈ", "ref": "te-0607" }, { "word": "చాలా", "ref": "te-1026" }, { "word": "చౌక", "ref": "te-1426" } ] }
+      - { "target": "మెస్ భోజనం చాలా బాగుంది.", "reading": "mes bhōjanaṁ cālā bāgundi.", "bases": [ { "word": "భోజనం", "ref": "te-0340" }, { "word": "చాలా", "ref": "te-1026" }, { "word": "బాగుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" } ] }
     bases: "self"
   - id: "te-6428"
     target: "పార్సిల్"
     reading: "pārsil"
+    ipa: "paːrsil"
     pos: "noun"
+    gender: "amahat"
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { "target": "పార్సిల్ ఇవ్వండి.", "reading": "pārsil ivvaṇḍi.", "bases": [ { "word": "పార్సిల్", "base": "పార్సిల్", "reading": "pārsil" }, { "word": "ఇవ్వండి", "ref": "te-0247" } ] }
-      - { "target": "నాకు పార్సిల్ కావాలి.", "reading": "nāku pārsil kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "పార్సిల్", "base": "పార్సిల్", "reading": "pārsil" }, { "word": "కావాలి", "ref": "te-0460" } ] }
+      - { "target": "పార్సిల్ ఇవ్వండి.", "reading": "pārsil ivvaṇḍi.", "bases": [ { "word": "ఇవ్వండి", "ref": "te-0247" } ] }
+      - { "target": "నాకు పార్సిల్ కావాలి.", "reading": "nāku pārsil kāvāli.", "bases": [ { "word": "నాకు", "ref": "te-0593" }, { "word": "కావాలి", "ref": "te-0460" } ] }
     bases: "self"
   - id: "te-6429"
     target: "మాంసాహారం"
     reading: "māṁsāhāraṁ"
+    ipa: "maːmsaːhaːram"
     pos: "noun"
+    gender: "amahat"
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { "target": "నేను మాంసాహారం తింటాను.", "reading": "nēnu māṁsāhāraṁ tiṇṭānu.", "bases": [ { "word": "నేను", "ref": "te-0593" }, { "word": "మాంసాహారం", "base": "మాంసాహారం", "reading": "māṁsāhāraṁ" }, { "word": "తింటాను", "base": "తినడం", "reading": "tinaḍaṁ" } ] }
+      - { "target": "నేను మాంసాహారం తింటాను.", "reading": "nēnu māṁsāhāraṁ tiṇṭānu.", "bases": [ { "word": "నేను", "ref": "te-0593" }, { "word": "తింటాను", "ref": "te-0624" } ] }
       - { "target": "ఇది మాంసాహారమా?", "reading": "idi māṁsāhāramā?", "bases": [ { "word": "ఇది", "ref": "te-0600" }, { "word": "మాంసాహారమా", "base": "మాంసాహారం", "reading": "māṁsāhāraṁ" } ] }
     bases: "self"
   - id: "te-6430"
     target: "ప్లేట్"
     reading: "plēṭ"
+    ipa: "pleːʈ"
     pos: "noun"
+    gender: "amahat"
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { "target": "ఒక ప్లేట్ ఇవ్వండి.", "reading": "oka plēṭ ivvaṇḍi.", "bases": [ { "word": "ఒక", "ref": "te-1034" }, { "word": "ప్లేట్", "base": "ప్లేట్", "reading": "plēṭ" }, { "word": "ఇవ్వండి", "ref": "te-0247" } ] }
-      - { "target": "మటన్ ప్లేట్ ఎంత?", "reading": "maṭan plēṭ enta?", "bases": [ { "word": "మటన్", "ref": "te-0262" }, { "word": "ప్లేట్", "base": "ప్లేట్", "reading": "plēṭ" }, { "word": "ఎంత", "ref": "te-0166" } ] }
+      - { "target": "ఒక ప్లేట్ ఇవ్వండి.", "reading": "oka plēṭ ivvaṇḍi.", "bases": [ { "word": "ఒక", "ref": "te-1034" }, { "word": "ఇవ్వండి", "ref": "te-0247" } ] }
+      - { "target": "మటన్ ప్లేట్ ఎంత?", "reading": "maṭan plēṭ enta?", "bases": [ { "word": "మటన్", "ref": "te-0262" }, { "word": "ఎంత", "ref": "te-0166" } ] }
     bases: "self"
   - id: "te-6431"
     target: "వెయిటర్"
     reading: "veyiṭar"
+    ipa: "ʋejiʈar"
     pos: "noun"
+    gender: "mahat"
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { "target": "వెయిటర్ ఇక్కడ ఉన్నాడు.", "reading": "veyiṭar ikkaḍa unnāḍu.", "bases": [ { "word": "వెయిటర్", "base": "వెయిటర్", "reading": "veyiṭar" }, { "word": "ఇక్కడ", "base": "ఇక్కడ", "reading": "ikkaḍa" }, { "word": "ఉన్నాడు", "base": "ఉండడం", "reading": "uṇḍaḍaṁ" } ] }
-      - { "target": "అన్నా, బిల్లు ఇవ్వండి.", "reading": "annā billu ivvaṇḍi.", "bases": [ { "word": "అన్నా", "ref": "te-0179" }, { "word": "బిల్లు", "base": "బిల్లు", "reading": "billu" }, { "word": "ఇవ్వండి", "ref": "te-0247" } ] }
+      - { "target": "వెయిటర్ ఇక్కడ ఉన్నాడు.", "reading": "veyiṭar ikkaḍa unnāḍu.", "bases": [ { "word": "ఇక్కడ", "ref": "te-0302" }, { "word": "ఉన్నాడు", "ref": "te-0633" } ] }
+      - { "target": "అన్నా, బిల్లు ఇవ్వండి.", "reading": "annā, billu ivvaṇḍi.", "bases": [ { "word": "అన్నా", "ref": "te-0179" }, { "word": "బిల్లు", "ref": "te-3927" }, { "word": "ఇవ్వండి", "ref": "te-0247" } ] }
     bases: "self"
   - id: "te-6432"
     target: "ఇంకొంచెం అన్నం ఇవ్వండి."
-    reading: "iṅkoñcem annaṁ ivvaṇḍi."
+    reading: "iṅkoñceṁ annaṁ ivvaṇḍi."
     pos: "phrase"
     notes:
       - { id: "n1", kind: "note" }
     bases:
-      - { "word": "ఇంకొంచెం", "base": "ఇంకొంచెం", "reading": "iṅkoñcem" }
+      - { "word": "ఇంకొంచెం", "ref": "te-1024" }
       - { "word": "అన్నం", "ref": "te-0344" }
       - { "word": "ఇవ్వండి", "ref": "te-0247" }
   - id: "te-6433"
@@ -98,14 +113,14 @@ cards:
     bases:
       - { "word": "కారం", "ref": "te-0347" }
       - { "word": "తక్కువ", "ref": "te-1030" }
-      - { "word": "వేయండి", "base": "వేయడం", "reading": "vēyaḍaṁ" }
+      - { "word": "వేయండి", "ref": "te-0837" }
   - id: "te-6434"
     target: "ఒక ప్లేట్ ఎంత?"
     reading: "oka plēṭ enta?"
     pos: "phrase"
     bases:
       - { "word": "ఒక", "ref": "te-1034" }
-      - { "word": "ప్లేట్", "base": "ప్లేట్", "reading": "plēṭ" }
+      - { "word": "ప్లేట్", "ref": "te-6430" }
       - { "word": "ఎంత", "ref": "te-0166" }
   - id: "te-6435"
     target: "ఇది కారంగా ఉందా?"
@@ -114,42 +129,46 @@ cards:
     bases:
       - { "word": "ఇది", "ref": "te-0600" }
       - { "word": "కారంగా", "ref": "te-0347" }
-      - { "word": "ఉందా", "base": "ఉండడం", "reading": "uṇḍaḍaṁ" }
+      - { "word": "ఉందా", "ref": "te-0633" }
   - id: "te-6436"
     target: "ఇంకొకటి ఇవ్వండి."
     reading: "iṅkokaṭi ivvaṇḍi."
     pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
     bases:
-      - { "word": "ఇంకొకటి", "base": "ఇంకొకటి", "reading": "iṅkokaṭi" }
+      - { "word": "ఇంకొకటి", "ref": "te-0201" }
       - { "word": "ఇవ్వండి", "ref": "te-0247" }
   - id: "te-6437"
     target: "పార్సిల్ చేయండి."
     reading: "pārsil cēyaṇḍi."
     pos: "phrase"
     bases:
-      - { "word": "పార్సిల్", "base": "పార్సిల్", "reading": "pārsil" }
-      - { "word": "చేయండి", "base": "చేయడం", "reading": "cēyaḍaṁ" }
+      - { "word": "పార్సిల్", "ref": "te-6428" }
+      - { "word": "చేయండి", "ref": "te-0621" }
   - id: "te-6438"
     target: "అన్నా, మెను ఇవ్వండి."
     reading: "annā, menu ivvaṇḍi."
     pos: "phrase"
     bases:
       - { "word": "అన్నా", "ref": "te-0179" }
-      - { "word": "మెను", "base": "మెను", "reading": "menu" }
+      - { "word": "మెను", "ref": "te-6425" }
       - { "word": "ఇవ్వండి", "ref": "te-0247" }
   - id: "te-6439"
     target: "భోజనం చాలా బాగుంది."
-    reading: "bhōjanaṁ cālā bāguṁdi."
+    reading: "bhōjanaṁ cālā bāgundi."
     pos: "phrase"
     bases:
       - { "word": "భోజనం", "ref": "te-0340" }
       - { "word": "చాలా", "ref": "te-1026" }
-      - { "word": "బాగుంది", "base": "బాగు", "reading": "bāgu" }
+      - { "word": "బాగుంది", "base": "బాగుండడం", "reading": "bāguṇḍaḍaṁ" }
   - id: "te-6440"
     target: "టేబుల్ ఖాళీ ఉందా?"
-    reading: "ṭēbul khālī undā?"
+    reading: "ṭēbul khāḷī undā?"
     pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
     bases:
       - { "word": "టేబుల్", "ref": "te-0432" }
-      - { "word": "ఖాళీ", "base": "ఖాళీ", "reading": "khālī" }
-      - { "word": "ఉందా", "base": "ఉండడం", "reading": "uṇḍaḍaṁ" }
+      - { "word": "ఖాళీ", "ref": "te-0956" }
+      - { "word": "ఉందా", "ref": "te-0633" }
