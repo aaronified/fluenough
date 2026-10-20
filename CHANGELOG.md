@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Find my level is shorter and checks each script (#481). It asks "Do you read Devanagari?" for each of a course's scripts, saying so when you read it through a language you know; No starts its script decks from the first letters with no questions, and Yes asks up to five questions, from a letter to a word read aloud, with one more try at each. Then it walks the word decks one question each, skipping ahead and jumping to the end while you know them, says where you start and why, and lets you try again from there.
 
+- Find my level credits what it found (#677). A script you read is credited Read and Write on Progress; one it stopped part-way in is credited Read for its letters and joined letters only. The cards of the decks it placed are recorded as Easy answers today, as if mastered, so they come up rarely. A card you have already reviewed keeps its own.
+
 ### Fixed
 
 - Find my level shows each word as drills do: in the scripts you learn, such as Perso-Arabic for Hindustani, with the other beneath when you learn both, and never the reading first when you already read one of the language's scripts through a language you know. A question about a word's form names the word once and offers only its forms, of which one alone is right.
