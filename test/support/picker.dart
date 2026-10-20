@@ -18,12 +18,22 @@ final List<SpokenLanguage> pickerSpokenList = parseSpokenLanguages(
 );
 
 /// Lets the page's read of `assets/languages.yaml` finish, which takes real
-/// time, not the test clock's.
+/// time, not the test clock's, and as long as a busy machine makes it: the
+/// families under "All languages" are built from it, so they show it is read
+/// (a fixed wait left a test to a race, which it lost on a loaded CI shard).
 Future<void> settleAssets(WidgetTester tester) async {
-  await tester.runAsync(
-    () => Future<void>.delayed(const Duration(milliseconds: 100)),
+  final families = find.byWidgetPredicate(
+    (w) =>
+        w is ListTile &&
+        ((w.key as ValueKey<String>?)?.value.startsWith('family-') ?? false),
   );
-  await tester.pumpAndSettle();
+  for (var i = 0; i < 50; i++) {
+    await tester.runAsync(
+      () => Future<void>.delayed(const Duration(milliseconds: 100)),
+    );
+    await tester.pumpAndSettle();
+    if (families.evaluate().isNotEmpty) return;
+  }
 }
 
 /// [code]'s row: keyed `language-` in Learning, `popular-` in Popular and
