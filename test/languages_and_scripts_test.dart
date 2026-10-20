@@ -1464,6 +1464,7 @@ void main() {
           PlacementPage(
             languages: const <String>['hi'],
             asked: const <String>{'hi'},
+            alphabet: const <String, bool>{'hi': true},
             scripts: <String, Set<String>>{
               'hi': <String>{persoArabic},
             },
