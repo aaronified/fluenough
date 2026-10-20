@@ -279,7 +279,7 @@ PHRASEBOOK_SIZE = (15, 25)
 # Parts of speech whose several-word cards still count as one word.
 LEXICAL_POS = {"noun", "verb", "adj", "adv", "pronoun"}
 # Scripts written without spaces, whose words bases cannot find yet.
-NO_SPACES = {"han", "kana", "thai"}
+NO_SPACES = {"han", "han_simplified", "han_traditional", "kana", "thai"}
 
 ROOT = Path(__file__).resolve().parent.parent
 

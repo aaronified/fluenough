@@ -119,7 +119,7 @@ void main() {
           for (final dir in Directory('decks').listSync())
             if (dir is Directory && hasWrittenDeck(dir))
               dir.path.split('/').last,
-        ];
+        ]..remove('ja');
         expect(index.languages.map((l) => l.code).toSet(), folders.toSet());
       },
     );

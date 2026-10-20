@@ -228,11 +228,6 @@ class DeckIndex(unittest.TestCase):
         self.assertNotIn("decks/themes.yaml", every)
 
     def test_a_hidden_language_is_left_out(self) -> None:
-        tool = self.tmp / "tools" / "deck_index.py"
-        text = tool.read_text(encoding="utf-8")
-        tool.write_text(text.replace("HIDDEN: set[str] = set()",
-                                     'HIDDEN: set[str] = {"ja"}'),
-                        encoding="utf-8")
         shutil.copytree(REPO / "decks" / "ja", self.tmp / "decks" / "ja")
         codes = [lang["code"] for lang in self.index()["languages"]]
         self.assertNotIn("ja", codes)
