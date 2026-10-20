@@ -1,0 +1,133 @@
+schema: 1
+id: "ko-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "ko", iso639_3: "kor", name: "Korean", script: "hangul", tts: "ko-KR", icon: "한" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ko-0020"
+    target: "네"
+    reading: "ne"
+    pos: "other"
+    tags: ["yes-no"]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "네, 좋아요.", reading: "ne, joayo.", bases: [{ word: "좋아요", base: "좋다", reading: "jota" }] }
+      - { target: "네, 알겠어요.", reading: "ne, algesseoyo.", bases: [{ word: "알겠어요", base: "알다", reading: "alda" }] }
+  - id: "ko-0021"
+    target: "아니요"
+    reading: "aniyo"
+    pos: "other"
+    tags: ["yes-no"]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "아니요, 괜찮아요.", reading: "aniyo, gwaenchanayo.", bases: [{ word: "괜찮아요", base: "괜찮다", reading: "gwaenchanta" }] }
+      - { target: "아니요, 학생이 아니에요.", reading: "aniyo, haksaengi anieyo.", bases: [{ word: "학생이", ref: "ko-0029" }, { word: "아니에요", base: "아니다", reading: "anida" }] }
+  - id: "ko-0022"
+    target: "저"
+    reading: "jeo"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "저는 학생이에요.", reading: "jeoneun haksaengieyo.", bases: [{ word: "저는", base: "저", reading: "jeo" }, { word: "학생이에요", base: "이다", reading: "ida" }] }
+      - { target: "저는 괜찮아요.", reading: "jeoneun gwaenchanayo.", bases: [{ word: "저는", base: "저", reading: "jeo" }, { word: "괜찮아요", base: "괜찮다", reading: "gwaenchanta" }] }
+  - id: "ko-0023"
+    target: "이"
+    reading: "i"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "이 커피 주세요.", reading: "i keopi juseyo.", bases: [{ word: "주세요", base: "주다", reading: "juda" }] }
+      - { target: "이 물이 좋아요.", reading: "i muri joayo.", bases: [{ word: "물이", ref: "ko-0027" }, { word: "좋아요", base: "좋다", reading: "jota" }] }
+  - id: "ko-0024"
+    target: "그"
+    reading: "geu"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "그 사람은 선생님이에요.", reading: "geu sarameun seonsaengnimieyo.", bases: [{ word: "사람은", base: "사람", reading: "saram" }, { word: "선생님이에요", ref: "ko-0030" }] }
+      - { target: "그 커피 좋아요.", reading: "geu keopi joayo.", bases: [{ word: "좋아요", base: "좋다", reading: "jota" }] }
+  - id: "ko-0025"
+    target: "좋아요"
+    reading: "joayo"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "좋아요", base: "좋다", reading: "jota" }
+    examples:
+      - { target: "커피 좋아요?", reading: "keopi joayo?", bases: [{ word: "좋아요", base: "좋다", reading: "jota" }] }
+      - { target: "좋아요, 그렇게 해요.", reading: "joayo, geureoke haeyo.", bases: [{ word: "좋아요", base: "좋다", reading: "jota" }, { word: "해요", base: "하다", reading: "hada" }] }
+  - id: "ko-0026"
+    target: "괜찮아요"
+    reading: "gwaenchanayo"
+    pos: "adj"
+    tags: ["describing"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "괜찮아요", base: "괜찮다", reading: "gwaenchanta" }
+    examples:
+      - { target: "괜찮아요?", reading: "gwaenchanayo?", bases: [{ word: "괜찮아요", base: "괜찮다", reading: "gwaenchanta" }] }
+      - { target: "저는 괜찮아요.", reading: "jeoneun gwaenchanayo.", bases: [{ word: "저는", base: "저", reading: "jeo" }, { word: "괜찮아요", base: "괜찮다", reading: "gwaenchanta" }] }
+  - id: "ko-0027"
+    target: "물"
+    reading: "mul"
+    pos: "noun"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "물 주세요.", reading: "mul juseyo.", bases: [{ word: "주세요", base: "주다", reading: "juda" }] }
+      - { target: "물이 차가워요.", reading: "muri chagawoyo.", bases: [{ word: "물이", base: "물", reading: "mul" }, { word: "차가워요", base: "차갑다", reading: "chagapda" }] }
+  - id: "ko-0028"
+    target: "커피"
+    reading: "keopi"
+    pos: "noun"
+    tags: ["food"]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "커피 주세요.", reading: "keopi juseyo.", bases: [{ word: "주세요", base: "주다", reading: "juda" }] }
+      - { target: "커피가 뜨거워요.", reading: "keopiga tteugeowoyo.", bases: [{ word: "커피가", base: "커피", reading: "keopi" }, { word: "뜨거워요", base: "뜨겁다", reading: "tteugeopda" }] }
+  - id: "ko-0029"
+    target: "학생"
+    reading: "haksaeng"
+    pos: "noun"
+    tags: ["people"]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "동생은 학생이에요.", reading: "dongsaengeun haksaengieyo.", bases: [{ word: "동생은", base: "동생", reading: "dongsaeng" }, { word: "학생이에요", base: "이다", reading: "ida" }] }
+      - { target: "저도 학생이에요.", reading: "jeodo haksaengieyo.", bases: [{ word: "저도", base: "저", reading: "jeo" }, { word: "학생이에요", base: "이다", reading: "ida" }] }
+  - id: "ko-0030"
+    target: "선생님"
+    reading: "seonsaengnim"
+    pos: "noun"
+    tags: ["people"]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "선생님, 안녕하세요.", reading: "seonsaengnim, annyeonghaseyo.", bases: [{ word: "안녕하세요", base: "안녕하다", reading: "annyeonghada" }] }
+      - { target: "우리 선생님은 친절해요.", reading: "uri seonsaengnimeun chinjeolhaeyo.", bases: [{ word: "선생님은", base: "선생님", reading: "seonsaengnim" }, { word: "친절해요", base: "친절하다", reading: "chinjeolhada" }] }
+  - id: "ko-0031"
+    target: "이름"
+    reading: "ireum"
+    pos: "noun"
+    tags: ["people"]
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "이름이 뭐예요?", reading: "ireumi mwoyeyo?", bases: [{ word: "이름이", base: "이름", reading: "ireum" }, { word: "뭐예요", base: "이다", reading: "ida" }] }
+      - { target: "제 이름은 민수예요.", reading: "je ireumeun minsuyeyo.", bases: [{ word: "제", base: "저", reading: "jeo" }, { word: "이름은", base: "이름", reading: "ireum" }, { word: "민수예요", base: "이다", reading: "ida" }] }
