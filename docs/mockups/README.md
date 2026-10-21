@@ -84,8 +84,11 @@ approval.
   with a tick and vibration, the round wheel, and the label under the bar,
   as first drawn. Owner, 2026-10-21: "keep the initial mockup, just add the
   expansion (it will start expanding as soon as the ratchet stops, and will
-  expand in about 0.3 seconds). And slightly increase the damping." Friction
-  2.4 (was 2.0), settle 16/s (was 14).
+  expand in about 0.3 seconds). And slightly increase the damping." Dials
+  (owner: "Same units of measure"): the settle is a spring like the tab
+  swipe's, damping ratio 0.85 and stiffness 400, fling friction 2.4 per
+  second, expansion 0.3 s. The expanded pill is centred, glyph and name,
+  with even padding.
 - `tab-swipe.html`: the tab swipe spring (#702, #683). Owner, 2026-10-21:
   "decrease the damping a little (0.75?) And increase the wigglyness a
   bit": damping ratio 0.75, stiffness 400, with sliders to try others.

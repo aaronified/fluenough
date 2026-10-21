@@ -55,13 +55,14 @@ code{font-size:13px}
 .wheel:active{cursor:grabbing}
 .wheel:focus-visible{outline:2px solid var(--p);outline-offset:-2px}
 /* the fixed selection: a secondaryContainer pill at the centre (height grows with text, as the chip does); the glyphs pass under/over it */
-.pill{transition:width .3s cubic-bezier(.2,.8,.2,1),margin-left .3s cubic-bezier(.2,.8,.2,1);display:flex;align-items:center;justify-content:flex-end;overflow:hidden;padding-right:0;box-sizing:border-box;position:absolute;left:50%;top:50%;width:52px;height:calc(32px + 12px*(var(--t) - 1));margin:calc(-.5*(32px + 12px*(var(--t) - 1))) 0 0 -26px;border-radius:10px;background:var(--sc);pointer-events:none}
+.pill{transition:width var(--exp,.3s) cubic-bezier(.2,.8,.2,1),margin-left var(--exp,.3s) cubic-bezier(.2,.8,.2,1);display:flex;align-items:center;justify-content:center;overflow:hidden;padding-right:0;box-sizing:border-box;position:absolute;left:50%;top:50%;width:52px;height:calc(32px + 12px*(var(--t) - 1));margin:calc(-.5*(32px + 12px*(var(--t) - 1))) 0 0 -26px;border-radius:10px;background:var(--sc);pointer-events:none}
 .pill.off{background:transparent;box-shadow:inset 0 0 0 1px var(--ol)}
 .g{position:absolute;left:50%;top:50%;width:44px;height:32px;margin:-16px 0 0 -22px;display:flex;align-items:center;justify-content:center;font-size:18px;line-height:24px;font-weight:600;color:var(--onS);will-change:transform,opacity;pointer-events:none;white-space:nowrap}
 /* glyphs do not scale with text (TextScaler.noScaling) */
 
 /* the label under the bar: names the language at the centre while moving, then goes after 1 s (as today) */
-.pname{opacity:0;transition:opacity .2s;font-size:calc(14px*var(--t));font-weight:500;color:var(--onSc);white-space:nowrap;padding-right:12px}
+.pname{opacity:0;transition:opacity .2s;font-size:calc(14px*var(--t));font-weight:500;color:var(--onSc);white-space:nowrap;padding:0 16px;display:flex;align-items:center;gap:10px}
+.pname .pg{font-weight:400}
 .wheel.exp .pname{opacity:1;transition-delay:.1s}
 .wheel.exp .g.side{opacity:0!important;transition:opacity .15s}
 .lname{position:absolute;z-index:5;left:50%;top:60px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:6px 14px 6px 8px;border-radius:12px;background:var(--inv);color:var(--onInv);box-shadow:0 2px 6px rgba(0,0,0,.3);opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}
@@ -76,6 +77,13 @@ code{font-size:13px}
 <body>
 <div class="wrap">
 <h1>Language wheel</h1>
+<div class="dials" style="display:grid;gap:8px;max-width:420px;margin:12px 0 20px;padding:12px 16px;border:1px solid var(--page-line);border-radius:12px;background:var(--page-card)">
+ <b>Dials</b> <span style="color:var(--page-muted);font-size:13px">Same units as the tab swipe: the settle is a spring (mass 1). Tell me the numbers.</span>
+ <label>Damping ratio <input id="dz" type="range" min="0.2" max="1.2" step="0.05" value="0.85"> <output id="dzv"></output></label>
+ <label>Stiffness <input id="dk" type="range" min="60" max="800" step="10" value="400"> <output id="dkv"></output></label>
+ <label>Fling friction (per second; higher stops sooner) <input id="df" type="range" min="0.5" max="8" step="0.1" value="2.4"> <output id="dfv"></output></label>
+ <label>Expansion (seconds) <input id="de" type="range" min="0.05" max="1" step="0.05" value="0.3"> <output id="dev"></output></label>
+</div>
 <p class="lede">The language bar's top row as a wheel (#703): the shown language is fixed at the centre and the row of glyphs turns under it like a tuning scale past a pointer. Only the top bar is drawn, nothing beneath it. Drag, fling or tap the wheels below: each is live. All frames are 390 dp wide at 1.4x text, the app's cap (#505), in the app's real theme (forest seed), light and dark.</p>
 <div id="check">Self-check running…</div>
 
@@ -125,7 +133,10 @@ light:{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf
 const LANGS=[
  {c:'hi',n:'Hindustani',g:'हि'},{c:'bn',n:'Bengali',g:'বা'},{c:'te',n:'Telugu',g:'తె'},{c:'es',n:'Spanish',g:'Es'},{c:'mr',n:'Marathi',g:'म'},
  {c:'kn',n:'Kannada',g:'ಕ'},{c:'as',n:'Assamese',g:'অ'},{c:'zh',n:'Mandarin Chinese',g:'中'},{c:'ja',n:'Japanese',g:'日'},{c:'ko',n:'Korean',g:'한'}];
-const DETENT=44, R=150, STEP=DETENT/R, K_FRICTION=2.4, K_SETTLE=16, VISIBLE=4.9;
+const DETENT=44, R=150, STEP=DETENT/R, K_SETTLE=16, VISIBLE=4.9;
+const DIAL={get z(){return +document.getElementById('dz').value},get k(){return +document.getElementById('dk').value},get f(){return +document.getElementById('df').value},get e(){return +document.getElementById('de').value}};
+function syncDials(){for(const id of ['dz','dk','df','de']){document.getElementById(id+'v').textContent=document.getElementById(id).value+(id==='de'?' s':'')}document.documentElement.style.setProperty('--exp',DIAL.e+'s')}
+document.addEventListener('input',e=>{if(e.target.closest&&e.target.closest('.dials'))syncDials()});
 const BUG='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 8h-2.81a5.985 5.985 0 0 0-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6.002 6.002 0 0 0-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z"/></svg>';
 
 /* ---------- build the frames ---------- */
@@ -194,12 +205,12 @@ function wheel(ph,langs){
  }
  const pname=pill.querySelector('.pname');
  function expand(){ // owner, 2026-10-21: starts as soon as the ratchet stops, about 0.3 s
-  const i=mod(Math.round(pos));pname.textContent=langs[i].n;
-  const w=52+pname.scrollWidth+6;
+  const i=mod(Math.round(pos));pname.innerHTML='';const pg=document.createElement('span');pg.className='pg';pg.textContent=langs[i].g;pg.lang=langs[i].c;pname.append(pg,document.createTextNode(langs[i].n));
+  const w=Math.max(52,pname.scrollWidth);
   let best=null,bd=1e9; // the glyph at the centre: every other one fades, repeats of the same language too
   for(const it of items){const m=new DOMMatrix(getComputedStyle(it.g).transform);const d=Math.abs(m.m41);if(it.g.style.display!=='none'&&d<bd){bd=d;best=it}}
-  for(const it of items)it.g.classList.toggle('side',it!==best);
-  pill.style.width=w+'px';pill.style.marginLeft='-26px';el.classList.add('exp');
+  for(const it of items)it.g.classList.toggle('side',true); // the pill now carries the glyph and the name, centred
+  pill.style.width=w+'px';pill.style.marginLeft=(-w/2)+'px';el.classList.add('exp');
  }
  function collapse(){el.classList.remove('exp');pill.style.width='';pill.style.marginLeft='';}
  function showLabel(hold){
@@ -210,24 +221,26 @@ function wheel(ph,langs){
  function stopAnim(){if(anim){cancelAnimationFrame(anim.raf);anim=null}}
 
  /* momentum: x(t) = x0 + D (1 − e^(−k t)), velocity v0 e^(−k t) with k = v0/D, so it ends exactly on a detent */
- function run(x0,D,k){
-  stopAnim();const t0=performance.now();const a={};anim=a;
+ function run(x0,D,v0){ // a damped spring (mass 1) from x0 to x0+D, starting at v0 detents/s
+  stopAnim();const a={};anim=a;const target=x0+D,k=DIAL.k,c=2*DIAL.z*Math.sqrt(k);
+  let x=x0,v=v0||0,last=performance.now();
   const frame=(now)=>{
    if(anim!==a)return;
-   const t=(now-t0)/1000, rem=D*Math.exp(-k*t);
-   if(Math.abs(rem)<0.02){pos=x0+D;anim=null;render();showLabel();return}
-   pos=x0+D-rem;render();a.raf=requestAnimationFrame(frame);
+   let dt=Math.min((now-last)/1000,0.05);last=now;
+   while(dt>0){const h=Math.min(dt,1/240);const acc=-k*(x-target)-c*v;v+=acc*h;x+=v*h;dt-=h}
+   if(Math.abs(x-target)<0.002&&Math.abs(v)<0.02){pos=target;anim=null;render();showLabel();return}
+   pos=x;render();a.raf=requestAnimationFrame(frame);
   };
   a.raf=requestAnimationFrame(frame);
  }
  function release(v){ // v in detents per second
-  const x0=pos;let target=Math.round(x0+v/K_FRICTION), D=target-x0;
+  const x0=pos;let target=Math.round(x0+v/DIAL.f), D=target-x0;
   if(Math.abs(v)<1.5||D*v<=0||Math.abs(D)<0.02){ // too slow to coast, or it would have to turn back: settle
    target=Math.round(x0);D=target-x0;
    if(Math.abs(D)<0.004){pos=target;render();showLabel();return}
-   run(x0,D,K_SETTLE);return;
+   run(x0,D,0);return;
   }
-  run(x0,D,Math.abs(v)/Math.abs(D)); // the adjusted decay: v/D (≈ K_FRICTION, a little more or less)
+  run(x0,D,v); // the spring carries the fling's own velocity to the detent friction chose
  }
 
  /* pointer events: 1:1 tracking, a fling on release */
@@ -266,7 +279,7 @@ function wheel(ph,langs){
  el.addEventListener('pointercancel',e=>end(e,true));
  el.addEventListener('keydown',e=>{
   const dir=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!dir)return;e.preventDefault();
-  const x0=pos;stopAnim();const target=Math.round(x0)+dir;showLabel(false);run(x0,target-x0,K_SETTLE);
+  const x0=pos;stopAnim();const target=Math.round(x0)+dir;showLabel(false);run(x0,target-x0,0);
  });
  function showToast(){toast.classList.add('on');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('on'),1600)}
  if(allb)allb.addEventListener('click',()=>{const on=allb.getAttribute('aria-pressed')!=='true';allb.setAttribute('aria-pressed',on);pill.classList.toggle('off',on)});
@@ -303,6 +316,7 @@ function selfCheck(){
  window.__checkBad=bad;
 }
 build();selfCheck();
+syncDials();
 </script>
 </body>
 </html>
