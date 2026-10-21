@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.4] - 2026-10-21
+
 ### Added
 
 - The Decks tab search finds cards (#527): a word, its spelling in another script, its reading or its meaning, ignoring case and accents, one row for each card, listed after the units and decks. Tapping a row opens the word.
