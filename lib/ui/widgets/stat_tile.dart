@@ -65,6 +65,23 @@ class StatTile extends StatelessWidget {
       _ => theme.textTheme.statValue.copyWith(fontWeight: FontWeight.w800),
     };
 
+    final labelText = Text(
+      label,
+      textAlign: centred ? TextAlign.center : TextAlign.start,
+      style: theme.textTheme.bodyMedium!.copyWith(color: labelColour),
+    );
+    // A one-word label that does not fit shrinks rather than breaking
+    // mid-word (#492); a label of several words wraps at the spaces.
+    final fittedLabel = label.contains(' ')
+        ? labelText
+        : FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: centred
+                ? AlignmentDirectional.center
+                : AlignmentDirectional.centerStart,
+            child: labelText,
+          );
+
     return MergeSemantics(
       child: Container(
         padding: switch (variant) {
@@ -95,11 +112,7 @@ class StatTile extends StatelessWidget {
           children: <Widget>[
             Text(value, style: valueStyle.copyWith(color: fg)),
             const SizedBox(height: 2),
-            Text(
-              label,
-              textAlign: centred ? TextAlign.center : TextAlign.start,
-              style: theme.textTheme.bodyMedium!.copyWith(color: labelColour),
-            ),
+            labelText,
           ],
         ),
       ),
