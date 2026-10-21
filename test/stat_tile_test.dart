@@ -2,6 +2,7 @@
 
 import 'package:fluenough/ui/widgets/stat_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart' show RenderParagraph;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -9,10 +10,10 @@ void main() {
     tester,
   ) async {
     await tester.pumpWidget(
-      MaterialApp(
+      const MaterialApp(
         home: MediaQuery(
-          data: const MediaQueryData(textScaler: TextScaler.linear(1.4)),
-          child: const Scaffold(
+          data: MediaQueryData(textScaler: TextScaler.linear(1.4)),
+          child: Scaffold(
             body: Center(
               child: SizedBox(
                 width: 110,
@@ -28,9 +29,7 @@ void main() {
       ),
     );
 
-    final label = tester.renderObject<RenderParagraph>(
-      find.text('Remembered'),
-    );
+    final label = tester.renderObject<RenderParagraph>(find.text('Remembered'));
     // One line: a mid-word break would make the paragraph two lines tall.
     expect(label.size.height, lessThan(label.text.style!.fontSize! * 1.4 * 2));
     expect(tester.takeException(), isNull);

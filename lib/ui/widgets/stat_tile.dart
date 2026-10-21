@@ -112,7 +112,7 @@ class StatTile extends StatelessWidget {
           children: <Widget>[
             Text(value, style: valueStyle.copyWith(color: fg)),
             const SizedBox(height: 2),
-            labelText,
+            fittedLabel,
           ],
         ),
       ),
