@@ -80,16 +80,15 @@ approval.
 
 ## Awaiting approval
 
-- `language-bar-and-tab-motion.html`: the language bar and tab swipe motion
-  (#682, #683; owner, 2026-10-21; "Main state only"). The bar is a row of
-  bare glyphs you drag or fling, each language passing the centre
-  highlighted, settling on the nearest with a spring, no rubber-band at
-  the ends, and the selected language expanding into a chip with its
-  English name one second after it settles until the bar is touched; the
-  four pages follow the finger and spring to the next or previous tab, hard
-  stop at Home and Settings, and a drag on the bar never moves the tabs.
-  Spring: damping ratio 0.8, stiffness 400, mass 1, in plain JS. Hindi and
-  Bengali, light and dark, 1.4x, with a contrast self-check.
+- `language-wheel.html`: the language wheel (#703, #682): ratchet detents
+  with a tick and vibration, the round wheel, and the label under the bar,
+  as first drawn. Owner, 2026-10-21: "keep the initial mockup, just add the
+  expansion (it will start expanding as soon as the ratchet stops, and will
+  expand in about 0.3 seconds). And slightly increase the damping." Friction
+  2.4 (was 2.0), settle 16/s (was 14).
+- `tab-swipe.html`: the tab swipe spring (#702, #683). Owner, 2026-10-21:
+  "decrease the damping a little (0.75?) And increase the wigglyness a
+  bit": damping ratio 0.75, stiffness 400, with sliders to try others.
 
 ## Deleted (owner, 2026-10-12)
 
