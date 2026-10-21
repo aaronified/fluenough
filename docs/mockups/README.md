@@ -1,5 +1,15 @@
 # Mockups
 
+## Awaiting approval
+
+- `progress-mastery.html`: the Progress tab's mastery view (#678): the
+  words count (**312** / 540), a 6-point star of mastery per skill (grammar,
+  script, read, write, hear, say; known / B1 total; the filled area is overall
+  mastery; it grows from the centre in 400 ms on open), and a line chart of
+  known / taught over time for words, phrases, script and grammar, in place of
+  #575's bars. Main state only, Hindi (Hindustani) in light and Bengali in
+  dark, 1.4x (owner, 2026-10-21). The page marks its Proposed choices.
+
 ## Current and approved
 
 Each is the spec for its screen. Don't rewrite one without the owner's
