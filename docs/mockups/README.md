@@ -80,7 +80,16 @@ approval.
 
 ## Awaiting approval
 
-None.
+- `language-bar-and-tab-motion.html`: the language bar and tab swipe motion
+  (#682, #683; owner, 2026-10-21; "Main state only"). The bar is a row of
+  bare glyphs you drag or fling, each language passing the centre
+  highlighted, settling on the nearest with a spring, no rubber-band at
+  the ends, and the selected language expanding into a chip with its
+  English name one second after it settles until the bar is touched; the
+  four pages follow the finger and spring to the next or previous tab, hard
+  stop at Home and Settings, and a drag on the bar never moves the tabs.
+  Spring: damping ratio 0.8, stiffness 400, mass 1, in plain JS. Hindi and
+  Bengali, light and dark, 1.4x, with a contrast self-check.
 
 ## Deleted (owner, 2026-10-12)
 
