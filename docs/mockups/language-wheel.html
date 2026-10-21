@@ -64,8 +64,9 @@ code{font-size:13px}
 .pname{opacity:0;transition:opacity .2s;font-size:calc(14px*var(--t));font-weight:500;color:var(--onSc);white-space:nowrap;padding:0 16px;display:flex;align-items:center;gap:10px}
 .pname .pg{font-weight:400}
 .wheel.exp .pname{opacity:1;transition-delay:.1s}
-.wheel.exp .g.side{opacity:0!important;transition:opacity .15s}
-.lname{position:absolute;z-index:5;left:50%;top:60px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:6px 14px 6px 8px;border-radius:12px;background:var(--inv);color:var(--onInv);box-shadow:0 2px 6px rgba(0,0,0,.3);opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}
+.wheel.exp .g.mid{opacity:0!important}
+.wheel.exp .g{transition:transform var(--exp,.3s) cubic-bezier(.2,.8,.2,1)}
+.lname{position:absolute;z-index:5;left:50%;top:60px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:6px 14px 6px 8px;border-radius:12px;background:var(--inv);color:var(--onInv);box-shadow:0 2px 6px rgba(0,0,0,.3);opacity:0;transition:opacity var(--exp,.3s);pointer-events:none;white-space:nowrap}
 .lname.on{opacity:1}
 .lname .tile{min-width:24px;height:24px;padding:0 4px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;line-height:22px;background:var(--onInv);color:var(--inv)}
 .lname .nm{font-size:calc(14px*var(--t));line-height:calc(20px*var(--t));font-weight:600;letter-spacing:.1px}
@@ -79,9 +80,9 @@ code{font-size:13px}
 <h1>Language wheel</h1>
 <div class="dials" style="display:grid;gap:8px;max-width:420px;margin:12px 0 20px;padding:12px 16px;border:1px solid var(--page-line);border-radius:12px;background:var(--page-card)">
  <b>Dials</b> <span style="color:var(--page-muted);font-size:13px">Same units as the tab swipe: the settle is a spring (mass 1). Tell me the numbers.</span>
- <label>Damping ratio <input id="dz" type="range" min="0.2" max="1.2" step="0.05" value="0.85"> <output id="dzv"></output></label>
- <label>Stiffness <input id="dk" type="range" min="60" max="800" step="10" value="400"> <output id="dkv"></output></label>
- <label>Fling friction (per second; higher stops sooner) <input id="df" type="range" min="0.5" max="8" step="0.1" value="2.4"> <output id="dfv"></output></label>
+ <label>Damping ratio <input id="dz" type="range" min="0.2" max="1.2" step="0.05" value="0.4"> <output id="dzv"></output></label>
+ <label>Stiffness <input id="dk" type="range" min="60" max="800" step="10" value="800"> <output id="dkv"></output></label>
+ <label>Fling friction (per second; higher stops sooner) <input id="df" type="range" min="0.5" max="8" step="0.1" value="8"> <output id="dfv"></output></label>
  <label>Expansion (seconds) <input id="de" type="range" min="0.05" max="1" step="0.05" value="0.3"> <output id="dev"></output></label>
 </div>
 <p class="lede">The language bar's top row as a wheel (#703): the shown language is fixed at the centre and the row of glyphs turns under it like a tuning scale past a pointer. Only the top bar is drawn, nothing beneath it. Drag, fling or tap the wheels below: each is live. All frames are 390 dp wide at 1.4x text, the app's cap (#505), in the app's real theme (forest seed), light and dark.</p>
@@ -173,7 +174,7 @@ function wheel(ph,langs){
  for(let i=0;i<n;i++)for(let m=-KC;m<=KC;m++){
   const g=document.createElement('span');g.className='g';g.textContent=langs[i].g;g.lang=langs[i].c;g.dataset.i=i;el.appendChild(g);items.push({g,i,m});
  }
- let pos=0, ticks=0, lastC=0, anim=null, labelTimer=null, toastTimer=null;
+ let push=0, pos=0, ticks=0, lastC=0, anim=null, labelTimer=null, toastTimer=null;
  const state={get pos(){return pos},get ticks(){return ticks},get idx(){return mod(Math.round(pos))}};
  ph._wheel=state;
 
@@ -184,7 +185,7 @@ function wheel(ph,langs){
    if(Math.abs(d)>VISIBLE){it.g.style.display='none';continue}
    it.g.style.display='';
    const th=d*STEP, cos=Math.cos(th), x=R*Math.sin(th);
-   it.g.style.transform=`translateX(${x.toFixed(2)}px) scale(${(0.65+0.35*cos).toFixed(3)})`;
+   it.g.style.transform=`translateX(${(x+Math.sign(d)*push*(Math.abs(d)>0.5?1:0)).toFixed(2)}px) scale(${(0.65+0.35*cos).toFixed(3)})`;
    it.g.style.opacity=(0.35+0.65*cos).toFixed(3);
   }
   const c=Math.round(pos);
@@ -209,14 +210,15 @@ function wheel(ph,langs){
   const w=Math.max(52,pname.scrollWidth);
   let best=null,bd=1e9; // the glyph at the centre: every other one fades, repeats of the same language too
   for(const it of items){const m=new DOMMatrix(getComputedStyle(it.g).transform);const d=Math.abs(m.m41);if(it.g.style.display!=='none'&&d<bd){bd=d;best=it}}
-  for(const it of items)it.g.classList.toggle('side',true); // the pill now carries the glyph and the name, centred
+  for(const it of items)it.g.classList.toggle('mid',it===best); // the pill carries the centre glyph and the name
+  push=Math.max(0,w/2-26);render(); // owner, 2026-10-21: neighbours pushed out, the same gap from the pill's edge
   pill.style.width=w+'px';pill.style.marginLeft=(-w/2)+'px';el.classList.add('exp');
  }
- function collapse(){el.classList.remove('exp');pill.style.width='';pill.style.marginLeft='';}
+ function collapse(){push=0;el.classList.remove('exp');pill.style.width='';pill.style.marginLeft='';}
  function showLabel(hold){
   if(hold!==false)expand();else collapse();
   label.classList.add('on');clearTimeout(labelTimer);
-  if(hold===false)return;labelTimer=setTimeout(()=>label.classList.remove('on'),1000);
+  if(hold===false)return;label.classList.remove('on'); // owner, 2026-10-21: the tooltip cross-fades into the expansion, both over the expansion time
  }
  function stopAnim(){if(anim){cancelAnimationFrame(anim.raf);anim=null}}
 

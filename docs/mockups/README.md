@@ -78,20 +78,23 @@ approval.
   (`git show 6715716:docs/mockups/reviewer-mode.html`). Approved by the owner, 2026-10-17, with the decisions the page marks
   Proposed ("The reviewer mode mockup looks fine. Build it.").
 
+## Approved
+
+- `tab-swipe.html`: the tab swipe spring (#702, #683): damping ratio 0.75,
+  stiffness 400, mass 1 (owner, 2026-10-21: "400, 0.75 approved for tab
+  swipe").
+
 ## Awaiting approval
 
 - `language-wheel.html`: the language wheel (#703, #682): ratchet detents
   with a tick and vibration, the round wheel, and the label under the bar,
-  as first drawn. Owner, 2026-10-21: "keep the initial mockup, just add the
-  expansion (it will start expanding as soon as the ratchet stops, and will
-  expand in about 0.3 seconds). And slightly increase the damping." Dials
-  (owner: "Same units of measure"): the settle is a spring like the tab
-  swipe's, damping ratio 0.85 and stiffness 400, fling friction 2.4 per
-  second, expansion 0.3 s. The expanded pill is centred, glyph and name,
-  with even padding.
-- `tab-swipe.html`: the tab swipe spring (#702, #683). Owner, 2026-10-21:
-  "decrease the damping a little (0.75?) And increase the wigglyness a
-  bit": damping ratio 0.75, stiffness 400, with sliders to try others.
+  as first drawn, plus the expansion. Owner, 2026-10-21: damping ratio 0.4,
+  stiffness 800 (mass 1), fling friction 8 per second, expansion 0.3 s.
+  "The tooltip should become the expansion via some animation that will
+  take that 0.3 seconds" (chose a cross-fade: the label fades out as the
+  pill grows); "After expanded, the two languages to either side will still
+  show, as per the wheel distance" (chose: pushed out, the same gap from
+  the pill's edge). The pill is centred, glyph and name.
 
 ## Deleted (owner, 2026-10-12)
 
