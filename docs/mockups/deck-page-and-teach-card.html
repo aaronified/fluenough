@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deck Page and Teach Card</title>
+<meta name="description" content="The new deck page (#693), the word sheet and the one teach card (#691), shared by lessons, the guided walkthrough (#694) and the word sheet. Hindustani in light, Bengali in dark, 1.4x text.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&display=swap">
+<style>
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;font-weight:700}
+.lede,.opt>p{max-width:760px;color:var(--page-muted);margin:0 0 14px;font-size:15px}
+#check{font-size:13px;line-height:18px;margin:0 0 28px;padding:10px 12px;border-radius:10px;background:var(--page-card);border:1px solid var(--page-line);max-width:900px}
+#check.bad{border-color:#BA1A1A}
+#check table{font-size:12px;margin-top:8px}
+section.opt{margin:0 0 44px}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:6px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+.fnote{font-size:12px;line-height:16px;color:var(--page-muted)}
+table{border-collapse:collapse;width:100%;font-size:14px;background:var(--page-card)}
+th,td{border-bottom:1px solid var(--page-line);padding:8px 10px;text-align:left;vertical-align:top}
+.prop{display:inline-block;font-size:12px;line-height:16px;font-weight:700;padding:1px 8px;border-radius:8px;border:1px solid var(--page-acc);color:var(--page-acc);margin-right:6px}
+.notes li{margin:0 0 8px;max-width:820px;font-size:15px;color:var(--page-muted)}
+code{font-size:13px}
+
+/* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed) =====
+   Every size is calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. */
+.ph{--t:1.4;width:360px;max-width:100%;height:760px;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph button{font-family:inherit;color:inherit;cursor:pointer}
+.fs{font-size:calc(var(--n)*1px*var(--t))}
+.appbar{flex:none;height:56px;display:flex;align-items:center;padding:0 4px;color:var(--onSv)}
+.ib{width:48px;height:48px;border:0;background:none;display:flex;align-items:center;justify-content:center;border-radius:24px;padding:0;color:var(--onSv)}
+.ib svg,.ic svg{width:24px;height:24px;fill:currentColor;display:block}
+.sp{flex:1}
+.scroll{flex:1;min-height:0;overflow-y:auto;padding:0 16px 16px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.t-title{font-size:calc(24px*var(--t));line-height:1.2;font-weight:600;margin:0}
+.t-body{font-size:calc(14px*var(--t));line-height:1.4;margin:0}
+.t-sm{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv)}
+.t-lab{font-size:calc(12px*var(--t));line-height:1.3;font-weight:600;letter-spacing:.4px;color:var(--onSv);text-transform:uppercase;margin:0 0 6px}
+.script{font-family:"Noto Sans Devanagari","Noto Sans Bengali",Roboto,sans-serif}
+
+/* deck page */
+.meta{margin:4px 0 18px}
+.meta .t-sm{margin-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.chip{border:1px solid var(--ol);background:none;border-radius:8px;min-height:32px;padding:0 12px;font-size:calc(14px*var(--t));line-height:1.3;font-weight:500;display:inline-flex;align-items:center;gap:6px;color:var(--onSv)}
+.chip[aria-pressed="true"]{background:var(--sc);color:var(--onSc);border-color:transparent}
+.chip svg{width:18px;height:18px;fill:currentColor}
+.chip:not([aria-pressed="true"]) svg{display:none}
+.count{margin:0 0 4px}
+.rows{list-style:none;margin:0;padding:0}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px 12px;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--olv);padding:12px 0;align-items:start}
+.row .w{font-size:calc(20px*var(--t));line-height:1.25;font-weight:500}
+.row .rd{display:block;font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv)}
+.row .mn{font-size:calc(14px*var(--t));line-height:1.3;text-align:right}
+.row .mc{grid-column:2;justify-self:end}
+.mastery{display:inline-flex;align-items:center;gap:4px;height:calc(18px*var(--t));padding:0 8px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));line-height:1;font-weight:600;letter-spacing:.3px}
+.m-new{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.m-learning{background:var(--sc);color:var(--onSc)}
+.m-known{background:var(--p);color:var(--onP)}
+.empty{padding:24px 0;color:var(--onSv)}
+.bottom{flex:none;display:flex;gap:12px;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv)}
+.btn{flex:1;min-height:calc(40px*var(--t));border-radius:calc(20px*var(--t));border:0;font-size:calc(14px*var(--t));line-height:1.2;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 12px}
+.btn svg{width:20px;height:20px;fill:currentColor}
+.btn.tonal{background:var(--sc);color:var(--onSc)}
+.btn.fill{background:var(--p);color:var(--onP)}
+.btn.text{background:none;color:var(--p);flex:none;padding:0 14px}
+.btn[disabled]{opacity:.4;cursor:default}
+
+/* scrim, popup, sheet */
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.42);opacity:0;pointer-events:none;transition:opacity .2s;z-index:3}
+.scrim.on{opacity:1;pointer-events:auto}
+.dlg{position:absolute;z-index:4;left:16px;right:16px;top:50%;transform:translateY(-50%) scale(.96);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;background:var(--sHigh);border-radius:28px;padding:22px 20px 14px}
+.dlg.on{opacity:1;transform:translateY(-50%);pointer-events:auto}
+.dlg h3{margin:0 0 4px;font-size:calc(20px*var(--t));line-height:1.2;font-weight:500}
+.dlg .t-sm{margin:0 0 8px}
+.opt-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;border:0;padding:6px 0;min-height:48px;font-size:calc(14px*var(--t));line-height:1.3}
+.box{flex:none;width:18px;height:18px;border-radius:3px;border:2px solid var(--onSv);display:flex;align-items:center;justify-content:center}
+.opt-row[aria-checked="true"] .box{background:var(--p);border-color:var(--p)}
+.box svg{width:16px;height:16px;fill:var(--onP);opacity:0}
+.opt-row[aria-checked="true"] .box svg{opacity:1}
+.opt-row.all{font-weight:600;border-bottom:1px solid var(--olv);margin-bottom:2px}
+.dacts{display:flex;justify-content:flex-end;gap:4px;margin-top:8px}
+.sheet{position:absolute;z-index:4;left:0;right:0;bottom:0;top:96px;background:var(--sLow);border-radius:28px 28px 0 0;transform:translateY(105%);transition:transform .25s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
+.sheet.on{transform:none}
+.grab{flex:none;width:32px;height:4px;border-radius:2px;background:var(--onSv);opacity:.4;margin:10px auto 6px;border:0;padding:0}
+.sheet .scroll{padding:6px 20px 24px}
+
+/* the teach card: one component in lessons, the walkthrough and the word sheet */
+.tc{display:flex;flex-direction:column;gap:20px;padding-top:6px}
+.hero{display:flex;flex-direction:column;gap:6px}
+.hero .big{font-size:calc(40px*var(--t));line-height:1.15;font-weight:500;margin:0}
+.hero .read{font-size:calc(18px*var(--t));line-height:1.3;color:var(--onSv)}
+.say{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.audio{width:48px;height:48px;border-radius:24px;border:0;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;flex:none}
+.audio svg{width:24px;height:24px;fill:currentColor}
+.ipa{font-size:calc(14px*var(--t));color:var(--onSv)}
+.mean{font-size:calc(22px*var(--t));line-height:1.25;font-weight:500;margin:0}
+.line{font-size:calc(14px*var(--t));line-height:1.3;color:var(--onSv);margin:4px 0 0}
+.img{height:150px;border-radius:16px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.img svg{width:96px;height:96px;fill:currentColor;opacity:.9}
+.img span{position:absolute;left:12px;bottom:8px;font-size:calc(11px*var(--t));font-weight:500}
+.blk{display:flex;gap:12px;align-items:flex-start;border-radius:16px;padding:14px 16px;background:var(--sHigh)}
+.blk .ic{flex:none;width:24px;height:24px}
+.blk.note .ic{color:var(--p)}
+.blk.warn{background:var(--eC);color:var(--onEC)}
+.blk.warn .ic{color:var(--onEC)}
+.blk .tt{font-size:calc(12px*var(--t));line-height:1.3;font-weight:700;letter-spacing:.3px;margin:0 0 4px;text-transform:uppercase}
+.blk p{margin:0;font-size:calc(14px*var(--t));line-height:1.35}
+.blk .tx{min-width:0}
+.ex{border-left:3px solid var(--p);padding:2px 0 2px 14px}
+.ex .e1{font-size:calc(18px*var(--t));line-height:1.35;margin:0}
+.ex .e2{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv);margin:2px 0 0}
+.ex .e3{font-size:calc(14px*var(--t));line-height:1.35;margin:2px 0 0}
+.kv{display:flex;flex-wrap:wrap;gap:8px}
+.tag{border-radius:8px;padding:2px 10px;font-size:calc(12px*var(--t));line-height:1.4;background:var(--sc);color:var(--onSc)}
+.dict ol{margin:0;padding-left:22px;font-size:calc(14px*var(--t));line-height:1.4}
+.dict li{margin:0 0 4px}
+.dict .et{margin:8px 0 0;font-size:calc(12px*var(--t));line-height:1.4;color:var(--onSv)}
+.foot{display:flex;align-items:center;gap:8px;justify-content:space-between;color:var(--onSv)}
+.rep{border:0;background:none;color:var(--p);font-size:calc(14px*var(--t));font-weight:600;display:flex;align-items:center;gap:6px;min-height:48px;padding:0 8px}
+.rep svg{width:20px;height:20px;fill:currentColor}
+
+/* the walkthrough / lesson slide */
+.lbar{flex:none;display:flex;align-items:center;gap:12px;padding:0 16px 0 4px;height:56px}
+.prog{flex:1;height:4px;border-radius:2px;background:var(--olv);overflow:hidden}
+.prog i{display:block;height:100%;background:var(--p);transition:width .2s}
+.lbar .t-sm{white-space:nowrap}
+.vp{flex:1;min-height:0;overflow:hidden;position:relative}
+.track{display:flex;height:100%;width:200%;transition:transform .2s cubic-bezier(.2,.8,.2,1)}
+.track.s1{transform:translateX(-50%)}
+.slide{width:50%;height:100%;overflow-y:auto;padding:0 20px 16px;scrollbar-width:none}
+.slide::-webkit-scrollbar{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Deck page and teach card</h1>
+<p class="lede">#693 (the new deck page, merging learning and Inspect, which is retired) and #691 (the one teach card, shared by Today's lesson, the guided walkthrough #694 and the word sheet). Airy, one idea per block. Main state only, one of each screen: Hindustani in light, Bengali in dark, in the app's real theme (forest seed) at 1.4x text, 360 dp wide. Live where cheap: tap tag chips to filter the list, tap Practice for the skills popup, tap a row for the word sheet, tap Continue to slide between two teach cards (about 200 ms).</p>
+<div id="check">Self-check running…</div>
+
+<section class="opt">
+  <h2>Hindustani · light</h2>
+  <p>Time words (Devanagari script). Left: the deck page. Middle: the word sheet open over it. Right: the teach card as in a lesson.</p>
+  <div class="frames" id="f-hi"></div>
+</section>
+<section class="opt">
+  <h2>Bengali · dark</h2>
+  <p>The same three screens, in the dark theme.</p>
+  <div class="frames" id="f-bn"></div>
+</section>
+
+<section class="opt notes">
+  <h2>Notes</h2>
+  <ul>
+    <li><b>Deck page (#693).</b> Every word is one row: the word and reading at the left, the meaning at the right with a small mastery chip (New, Learning, Known). The tag chips filter the list as they are tapped (<span class="prop">Proposed</span> a word shows when it has any selected tag; none selected shows all). The count line says how many words are shown. The per-skill buttons and Inspect are gone.</li>
+    <li><b>Two buttons, side by side, both on the filtered words.</b> Practice opens a popup of skills with All (all on by default; unchecking All clears the rest; Start is off when none is ticked). Learn teaches the words not yet taught and shows how many; when every filtered word is taught it becomes Relearn, the guided walkthrough (#694). Tick a tag such as Calendar to see Learn become Relearn in the mockup (all of its words are taught).</li>
+    <li><b>Word sheet.</b> A bottom sheet over the deck page with everything on the card, in the order: word, reading, IPA, audio; meaning, other meanings, accepted answers; part of speech and gender as one line; image; notes (exclamation icon); similarity warnings (sounds like, same spelling, differs by a dot or short mark, other meanings); the dictionary entry (Wiktionary senses and etymology, #692) and every example; tags, card id and Report.</li>
+    <li><b>Teach card (#691).</b> The subset: word, reading, IPA, audio, main meaning, image, note, similarity warning, part of speech and gender, one example. Notes and warnings are separate blocks of the same shape; the note has an exclamation icon and the warning a triangle in the error colours. The same component fills the word sheet, which only adds blocks below it, so the three places cannot drift apart.</li>
+    <li><b>Card transition.</b> Continue slides the next card in from the right in 200 ms (cubic-bezier .2, .8, .2, 1); the progress line moves with it. The slide is not a spring.</li>
+    <li><span class="prop">Proposed</span> The mastery chips: New is an outline, Learning the secondaryContainer, Known the primary. The warning block uses the theme's errorContainer. The dictionary and example content is invented for the mockup (the real one comes from #692).</li>
+    <li>Readings are transliteration, based on ISO 15919. Text size is 1.4x only (owner, 2026-10-17). Hindi कल is a card with a base-word note: it means both yesterday and tomorrow.</li>
+  </ul>
+</section>
+</div>
+
+<script>
+/* ColorScheme.fromSeed(forest), same values as language-wheel.html; error roles are the standard M3 ones */
+const SCHEMES={
+dark:{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sHigh":"#262b27","ol":"#8a938b","olv":"#404942","eC":"#93000a","onEC":"#ffdad6"},
+light:{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sHigh":"#e4eae3","ol":"#717972","olv":"#c0c9c0","eC":"#ffdad6","onEC":"#93000a"}};
+
+const I={
+ back:'<svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>',
+ close:'<svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>',
+ bug:'<svg viewBox="0 0 24 24"><path d="M20 8h-2.81a5.985 5.985 0 0 0-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6.002 6.002 0 0 0-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z"/></svg>',
+ vol:'<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>',
+ excl:'<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>',
+ warn:'<svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>',
+ check:'<svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>',
+ play:'<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>',
+ relearn:'<svg viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>',
+ add:'<svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>',
+ flag:'<svg viewBox="0 0 24 24"><path d="M14.4 6 14 4H5v17h2v-7h5.6l.4 2h7V6z"/></svg>',
+ pic:'<svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>'
+};
+
+/* the courses. m: the status of each word (n new, l learning, k known) */
+const COURSES={
+hi:{lang:'hi',th:'light',deck:'Time words',sub:'Hindustani · Devanagari · 12 words',
+ tags:['time','day','calendar'],
+ skills:['Recognition','Writing','Listening','Speaking'],
+ words:[
+  {id:'hi.time.kal',w:'कल',r:'kal',m:'yesterday; tomorrow',s:'k',t:['day','time']},
+  {id:'hi.time.aaj',w:'आज',r:'āj',m:'today',s:'k',t:['day']},
+  {id:'hi.time.ab',w:'अब',r:'ab',m:'now',s:'l',t:['time']},
+  {id:'hi.time.kaal',w:'काल',r:'kāl',m:'time; era',s:'n',t:['time']},
+  {id:'hi.time.subah',w:'सुबह',r:'subah',m:'morning',s:'l',t:['day']},
+  {id:'hi.time.shaam',w:'शाम',r:'śām',m:'evening',s:'n',t:['day']},
+  {id:'hi.time.raat',w:'रात',r:'rāt',m:'night',s:'k',t:['day']},
+  {id:'hi.time.din',w:'दिन',r:'din',m:'day',s:'k',t:['day','calendar']},
+  {id:'hi.time.hafta',w:'हफ़्ता',r:'haftā',m:'week',s:'k',t:['calendar']},
+  {id:'hi.time.mahina',w:'महीना',r:'mahīnā',m:'month',s:'k',t:['calendar']},
+  {id:'hi.time.saal',w:'साल',r:'sāl',m:'year',s:'k',t:['calendar']},
+  {id:'hi.time.samay',w:'समय',r:'samay',m:'time; moment',s:'n',t:['time']}],
+ open:0, teach:[0,1],
+ card:{
+  0:{w:'कल',r:'kal',ipa:'/kəl/',mean:'yesterday; tomorrow',also:'the past or the next day, by context',accept:'yesterday, tomorrow',line:'adverb · noun, masculine',
+     note:'One word for both days. The verb tense or a word such as “आने वाला” (coming) says which.',
+     warn:{k:'Sounds like',tx:'काल (kāl), “time”. The long ā is the only difference.'},
+     ex:['मैं कल आऊँगा।','maiṁ kal āūṅgā.','I will come tomorrow.'],
+     dict:['The day before today.','The day after today.','(figurative) the near future or past.'],
+     ety:'From Sanskrit कल्य (kalya), “tomorrow, dawn”.',tags:['day','time']},
+  1:{w:'आज',r:'āj',ipa:'/aːdʒ/',mean:'today',also:'now, these days',accept:'today',line:'adverb · noun, masculine',
+     note:'Often paired with कल to talk about the days around now.',
+     warn:null,ex:['आज मौसम अच्छा है।','āj mausam acchā hai.','The weather is nice today.'],
+     dict:['This day.','At present, nowadays.'],ety:'From Sanskrit अद्य (adya), “today”.',tags:['day']}}},
+bn:{lang:'bn',th:'dark',deck:'Time words',sub:'Bengali · Bengali script · 12 words',
+ tags:['time','day','calendar'],
+ skills:['Recognition','Writing','Listening','Speaking'],
+ words:[
+  {id:'bn.time.kal',w:'কাল',r:'kāla',m:'yesterday; tomorrow',s:'k',t:['day','time']},
+  {id:'bn.time.aj',w:'আজ',r:'āja',m:'today',s:'k',t:['day']},
+  {id:'bn.time.ekhon',w:'এখন',r:'ekhana',m:'now',s:'l',t:['time']},
+  {id:'bn.time.sakal',w:'সকাল',r:'sakāla',m:'morning',s:'l',t:['day']},
+  {id:'bn.time.sondha',w:'সন্ধ্যা',r:'sandhyā',m:'evening',s:'n',t:['day']},
+  {id:'bn.time.rat',w:'রাত',r:'rāta',m:'night',s:'k',t:['day']},
+  {id:'bn.time.din',w:'দিন',r:'dina',m:'day',s:'k',t:['day','calendar']},
+  {id:'bn.time.shopta',w:'সপ্তাহ',r:'saptāha',m:'week',s:'k',t:['calendar']},
+  {id:'bn.time.mash',w:'মাস',r:'māsa',m:'month',s:'k',t:['calendar']},
+  {id:'bn.time.bochor',w:'বছর',r:'bachara',m:'year',s:'k',t:['calendar']},
+  {id:'bn.time.somoy',w:'সময়',r:'samaya',m:'time; moment',s:'n',t:['time']},
+  {id:'bn.time.kalo',w:'কালো',r:'kālo',m:'black',s:'n',t:['time']}],
+ open:0, teach:[0,1],
+ card:{
+  0:{w:'কাল',r:'kāla',ipa:'/kal/',mean:'yesterday; tomorrow',also:'time, era',accept:'yesterday, tomorrow',line:'adverb · noun',
+     note:'One word for both days. The tense of the verb says which.',
+     warn:{k:'Sounds like',tx:'কালো (kālo), “black”. Only the final vowel differs.'},
+     ex:['আমি কাল যাব।','āmi kāla yāba.','I will go tomorrow.'],
+     dict:['The day before today.','The day after today.','Time, as an age or era.'],
+     ety:'From Sanskrit কল্য (kalya), “tomorrow, dawn”.',tags:['day','time']},
+  1:{w:'আজ',r:'āja',ipa:'/adʒ/',mean:'today',also:'these days',accept:'today',line:'adverb · noun',
+     note:'Pairs with কাল to speak of the days around now.',
+     warn:null,ex:['আজ বৃষ্টি হবে।','āja bṛṣṭi habe.','It will rain today.'],
+     dict:['This day.','At present.'],ety:'From Sanskrit অদ্য (adya), “today”.',tags:['day']}}}
+};
+const STAT={n:'New',l:'Learning',k:'Known'};
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+/* the one teach card: full=false is the lesson subset, true is the word sheet */
+function teachCard(c,full,lang,w){
+ const L=`lang="${lang}"`;
+ const blocks=[];
+ blocks.push(`<div class="hero"><p class="big script" ${L}>${c.w}</p><span class="read">${c.r}</span><div class="say"><button class="audio" type="button" aria-label="Play audio">${I.vol}</button><span class="ipa">${c.ipa}</span></div></div>`);
+ blocks.push(`<div><p class="mean">${c.mean}</p><p class="line">${c.line}</p>${full?`<p class="line">Also means: ${c.also}</p><p class="line">Also accepted: ${c.accept}</p>`:''}</div>`);
+ blocks.push(`<div class="img" role="img" aria-label="Picture for ${c.mean}">${I.pic}<span>image on the card</span></div>`);
+ if(c.note)blocks.push(`<div class="blk note"><span class="ic">${I.excl}</span><div class="tx"><p class="tt">Note</p><p>${c.note}</p></div></div>`);
+ if(c.warn)blocks.push(`<div class="blk warn"><span class="ic">${I.warn}</span><div class="tx"><p class="tt">${c.warn.k}</p><p>${c.warn.tx}</p></div></div>`);
+ if(full&&c.warn)blocks.push(`<div class="blk warn"><span class="ic">${I.warn}</span><div class="tx"><p class="tt">Other meanings</p><p>“${c.mean.split('; ')[0]}” also names another word in this course.</p></div></div>`);
+ blocks.push(`<div class="ex"><p class="e1 script" ${L}>${c.ex[0]}</p><p class="e2">${c.ex[1]}</p><p class="e3">${c.ex[2]}</p></div>`);
+ if(full){
+  blocks.push(`<div class="dict"><p class="t-lab">Dictionary · Wiktionary</p><ol>${c.dict.map(d=>`<li>${d}</li>`).join('')}</ol><p class="et">Etymology: ${c.ety}</p></div>`);
+  blocks.push(`<div><p class="t-lab">More examples</p><div class="ex"><p class="e1 script" ${L}>${c.ex[0]}</p><p class="e2">${c.ex[1]}</p><p class="e3">${c.ex[2]}</p></div></div>`);
+  blocks.push(`<div><p class="t-lab">Tags</p><div class="kv">${c.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div></div>`);
+  blocks.push(`<div class="foot"><span class="t-sm">${c.id}</span><button class="rep" type="button">${I.flag}Report</button></div>`);
+ }
+ return `<div class="tc">${blocks.join('')}</div>`;
+}
+
+function build(box,key){
+ const C=COURSES[key], th=C.th;
+ const vars=Object.entries(SCHEMES[th]).map(([k,v])=>`--${k}:${v}`).join(';');
+ const cap=(n,t)=>`<div class="fcol"><span class="fcap">${t} · ${th==='light'?'Light':'Dark'} · 1.4x</span>${n}</div>`;
+ const deck=(withSheet)=>`
+ <div class="ph" style="${vars}" data-deck>
+  <div class="appbar"><button class="ib" type="button" aria-label="Back">${I.back}</button><span class="sp"></span><button class="ib" type="button" aria-label="Report a problem">${I.bug}</button></div>
+  <div class="scroll">
+   <div class="meta"><h3 class="t-title">${C.deck}</h3><div class="t-sm">${C.sub}</div></div>
+   <div class="chips" role="group" aria-label="Filter by tag">${C.tags.map(t=>`<button class="chip" type="button" aria-pressed="false" data-tag="${t}">${I.check}${t}</button>`).join('')}</div>
+   <p class="t-sm count" data-count></p>
+   <ul class="rows" data-rows></ul>
+  </div>
+  <div class="bottom"><button class="btn tonal" type="button" data-practice>Practice</button><button class="btn fill" type="button" data-learn></button></div>
+  <div class="scrim" data-scrim></div>
+  <div class="dlg" role="dialog" aria-label="Practice skills"><h3>Practice</h3><p class="t-sm">Choose skills. Every taught word in them is drilled, due or not.</p>
+   <button class="opt-row all" type="button" role="checkbox" aria-checked="true" data-skill="all"><span class="box">${I.check}</span>All</button>
+   ${C.skills.map(s=>`<button class="opt-row" type="button" role="checkbox" aria-checked="true" data-skill="${s}"><span class="box">${I.check}</span>${s}</button>`).join('')}
+   <div class="dacts"><button class="btn text" type="button" data-cancel>Cancel</button><button class="btn text" type="button" data-start>Start</button></div></div>
+  <div class="sheet" role="dialog" aria-label="Word sheet"><button class="grab" type="button" aria-label="Close" data-close></button><div class="scroll" data-sheet></div></div>
+ </div>`;
+ const teach=()=>`
+ <div class="ph" style="${vars}" data-teach>
+  <div class="lbar"><button class="ib" type="button" aria-label="Close">${I.close}</button><div class="prog"><i style="width:50%"></i></div><span class="t-sm" data-pos>1 / 2</span></div>
+  <div class="vp"><div class="track">
+   <div class="slide">${teachCard(C.card[0],false,C.lang)}</div>
+   <div class="slide">${teachCard(C.card[1],false,C.lang)}</div></div></div>
+  <div class="bottom"><button class="btn tonal" type="button" data-back disabled>Back</button><button class="btn fill" type="button" data-next>Continue</button></div>
+ </div>`;
+ box.innerHTML=cap(deck(),'Deck page')+cap(deck(),'Word sheet open')+cap(teach(),'Teach card (Continue slides 200 ms)');
+ const [d1,d2,tp]=box.querySelectorAll('.ph');
+ wireDeck(d1,C,false);wireDeck(d2,C,true);wireTeach(tp);
+}
+
+function wireDeck(ph,C,sheetOpen){
+ const sel=new Set(), rows=ph.querySelector('[data-rows]'), cnt=ph.querySelector('[data-count]'), learn=ph.querySelector('[data-learn]');
+ const scrim=ph.querySelector('[data-scrim]'), dlg=ph.querySelector('.dlg'), sheet=ph.querySelector('.sheet');
+ const vis=()=>C.words.filter(x=>!sel.size||x.t.some(t=>sel.has(t)));
+ function paint(){
+  const v=vis(), fresh=v.filter(x=>x.s==='n').length;
+  cnt.textContent=`${v.length} of ${C.words.length} words`;
+  rows.innerHTML=v.length?v.map(x=>`<li><button class="row" type="button" data-id="${x.id}"><span><span class="w script" lang="${C.lang}">${x.w}</span><span class="rd">${x.r}</span></span><span class="mn">${x.m}</span><span class="mc"><span class="mastery m-${{n:'new',l:'learning',k:'known'}[x.s]}">${STAT[x.s]}</span></span></button></li>`).join(''):`<li class="empty">No words have these tags.</li>`;
+  const relearn=v.length&&!fresh;
+  learn.disabled=!v.length;
+  learn.innerHTML=relearn?`${I.relearn}Relearn`:`${I.add}Learn${fresh?' '+fresh+' new':''}`;
+  ph.querySelector('[data-practice]').disabled=!v.length;
+ }
+ function openSheet(id){
+  const x=C.words.find(w=>w.id===id), c=C.card[C.open];
+  const cardData=x&&C.card[C.words.indexOf(x)]?C.card[C.words.indexOf(x)]:c;
+  const data=Object.assign({},cardData,{id:cardData===c?C.words[C.open].id:x.id});
+  ph.querySelector('[data-sheet]').innerHTML=teachCard(data,true,C.lang);
+  ph.querySelector('[data-sheet]').scrollTop=0;
+  scrim.classList.add('on');sheet.classList.add('on');
+ }
+ function closeAll(){scrim.classList.remove('on');sheet.classList.remove('on');dlg.classList.remove('on')}
+ ph.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{
+  const t=b.dataset.tag, on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);on?sel.add(t):sel.delete(t);paint()}));
+ rows.addEventListener('click',e=>{const b=e.target.closest('.row');if(b)openSheet(b.dataset.id)});
+ ph.querySelector('[data-practice]').addEventListener('click',()=>{scrim.classList.add('on');dlg.classList.add('on')});
+ const skills=[...ph.querySelectorAll('[data-skill]')], all=skills[0], start=ph.querySelector('[data-start]');
+ const sync=()=>{const on=skills.slice(1).filter(b=>b.getAttribute('aria-checked')==='true').length;all.setAttribute('aria-checked',on===skills.length-1);start.disabled=!on};
+ skills.forEach(b=>b.addEventListener('click',()=>{
+  const on=b.getAttribute('aria-checked')!=='true';
+  if(b===all)skills.forEach(s=>s.setAttribute('aria-checked',on));else b.setAttribute('aria-checked',on);sync()}));
+ ph.querySelector('[data-cancel]').addEventListener('click',closeAll);
+ start.addEventListener('click',closeAll);
+ scrim.addEventListener('click',closeAll);
+ ph.querySelector('[data-close]').addEventListener('click',closeAll);
+ paint();
+ if(sheetOpen){sheet.style.transition='none';openSheet(C.words[C.open].id);scrim.style.transition='none';requestAnimationFrame(()=>requestAnimationFrame(()=>{sheet.style.transition='';scrim.style.transition=''}))}
+}
+
+function wireTeach(ph){
+ const tr=ph.querySelector('.track'), back=ph.querySelector('[data-back]'), next=ph.querySelector('[data-next]'), pos=ph.querySelector('[data-pos]'), bar=ph.querySelector('.prog i');
+ let i=0;
+ const go=n=>{i=n;tr.classList.toggle('s1',i===1);back.disabled=i===0;next.textContent=i===0?'Continue':'Done';pos.textContent=`${i+1} / 2`;bar.style.width=(i+1)*50+'%'};
+ next.addEventListener('click',()=>{i===0?go(1):go(0)});
+ back.addEventListener('click',()=>go(0));
+}
+
+/* ---------- self-check: WCAG contrast (text 4.5:1, icons and graphics 3:1) ---------- */
+const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const lum=c=>{const a=c.map(v=>{v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4)});return .2126*a[0]+.7152*a[1]+.0722*a[2]};
+const ratio=(a,b)=>{const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
+function selfCheck(){
+ const rows=[];let bad=0;
+ const add=(th,what,r,need)=>{const ok=r>=need;if(!ok)bad++;rows.push(`<tr><td>${th}</td><td>${what}</td><td>${r.toFixed(2)}:1</td><td>${need}:1</td><td>${ok?'pass':'FAIL'}</td></tr>`)};
+ for(const th of ['light','dark']){
+  const S=Object.fromEntries(Object.entries(SCHEMES[th]).map(([k,v])=>[k,hex(v)]));
+  add(th,'body text: onSurface on surface',ratio(S.onS,S.s),4.5);
+  add(th,'reading and captions: onSurfaceVariant on surface',ratio(S.onSv,S.s),4.5);
+  add(th,'captions on the sheet: onSurfaceVariant on surfaceContainerLow',ratio(S.onSv,S.sLow),4.5);
+  add(th,'note and block text: onSurface on surfaceContainerHigh',ratio(S.onS,S.sHigh),4.5);
+  add(th,'note icon: primary on surfaceContainerHigh',ratio(S.p,S.sHigh),3);
+  add(th,'warning: onErrorContainer on errorContainer',ratio(S.onEC,S.eC),4.5);
+  add(th,'chip selected / Learning / Practice: onSecondaryContainer on secondaryContainer',ratio(S.onSc,S.sc),4.5);
+  add(th,'chip unselected and New chip: onSurfaceVariant on surface',ratio(S.onSv,S.s),4.5);
+  add(th,'chip and New outline: outline on surface',ratio(S.ol,S.s),3);
+  add(th,'Known chip and Learn button: onPrimary on primary',ratio(S.onP,S.p),4.5);
+  add(th,'Report and popup buttons: primary on surfaceContainerLow',ratio(S.p,S.sLow),4.5);
+  add(th,'primary on popup surface (surfaceContainerHigh)',ratio(S.p,S.sHigh),4.5);
+  add(th,'popup text: onSurface on surfaceContainerHigh',ratio(S.onS,S.sHigh),4.5);
+  add(th,'bottom bar text: onSecondaryContainer on secondaryContainer (Practice)',ratio(S.onSc,S.sc),4.5);
+  add(th,'example rule: primary on surfaceContainerLow',ratio(S.p,S.sLow),3);
+ }
+ const c=document.getElementById('check');c.classList.toggle('bad',bad>0);
+ c.innerHTML=`<b>Self-check: ${bad} problem${bad===1?'':'s'}.</b> ${document.querySelectorAll('.ph').length} frames, 360 dp wide, 1.4x text, forest seed, light and dark. Text 4.5:1, icons and outlines 3:1. The mastery chips, the warning and the note use theme roles only.<table><thead><tr><th>Theme</th><th>Pair</th><th>Ratio</th><th>Needs</th><th></th></tr></thead><tbody>${rows.join('')}</tbody></table>`;
+ window.__checkBad=bad;
+}
+build(document.getElementById('f-hi'),'hi');
+build(document.getElementById('f-bn'),'bn');
+selfCheck();
+</script>
+</body>
+</html>
