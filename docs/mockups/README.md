@@ -80,12 +80,6 @@ approval.
 
 ## Approved
 
-- `tab-swipe.html`: the tab swipe spring (#702, #683): damping ratio 0.75,
-  stiffness 400, mass 1 (owner, 2026-10-21: "400, 0.75 approved for tab
-  swipe").
-
-## Awaiting approval
-
 - `language-wheel.html`: the language wheel (#703, #682): ratchet detents
   with a tick and vibration, the round wheel, and the label under the bar,
   as first drawn, plus the expansion. Owner, 2026-10-21: damping ratio 0.4,
@@ -95,6 +89,12 @@ approval.
   pill grows); "After expanded, the two languages to either side will still
   show, as per the wheel distance" (chose: pushed out, the same gap from
   the pill's edge). The pill is centred, glyph and name.
+  Approved (owner, 2026-10-21: "Works. Approved.").
+
+- `tab-swipe.html`: the tab swipe spring (#702, #683): damping ratio 0.75,
+  stiffness 400, mass 1 (owner, 2026-10-21: "400, 0.75 approved for tab
+  swipe").
+
 
 ## Deleted (owner, 2026-10-12)
 
