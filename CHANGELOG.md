@@ -9,19 +9,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.5.4] - 2026-10-21
 
+0.5.3 was never published: its build failed, so its changes ship here.
+
 ### Added
 
 - The Decks tab search finds cards (#527): a word, its spelling in another script, its reading or its meaning, ignoring case and accents, one row for each card, listed after the units and decks. Tapping a row opens the word.
 - The deck reader accepts the `homograph` and `lookalike` note kinds and a layer's `dictionary` entry (#692). Nothing shows them yet.
-
-## [0.5.3] - 2026-10-20
 
 ### Changed
 
 - A sideways swipe on Home, Decks, Progress or Settings moves to the next or previous tab, stopping at the ends (#683). An upright drag still scrolls the page, and the language bar keeps its own swipe.
 - The language bar scrolls with momentum (#682): a drag or fling across its width passes at least five languages, each highlighted with a light tick as it goes by, and it settles on the nearest one, switching the screen once, at the end. A short flick still moves one, and it stops at the ends.
 - Find my level is shorter and checks each script (#481). It asks "Do you read Devanagari?" for each of a course's scripts, saying so when you read it through a language you know; No starts its script decks from the first letters with no questions, and Yes asks up to five questions, from a letter to a word read aloud, with one more try at each. Then it walks the word decks one question each, skipping ahead and jumping to the end while you know them, says where you start and why, and lets you try again from there.
-
 - Find my level credits what it found (#677). A script you read is credited Read and Write on Progress; one it stopped part-way in is credited Read for its letters and joined letters only. The cards of the decks it placed are recorded as Easy answers today, as if mastered, so they come up rarely. A card you have already reviewed keeps its own.
 
 ### Fixed
