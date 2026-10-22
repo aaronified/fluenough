@@ -1,0 +1,152 @@
+schema: 1
+id: "hi-en-pronouns"
+kind: "layer"
+core: "hi-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns and people words"
+license: "CC-BY-SA-4.0"
+description: "I, you in three ways, he, she, it and they, near and far, my, your and our, someone and nobody, and the words for people, a man and a woman. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-0745":
+    native: "I"
+    notes:
+      "forms": "Its form for 'to me' is {1}."
+    examples:
+      "मैं पढ़ता हूँ।": { native: "I study.", bases: { "पढ़ता": "to read, to study", "हूँ": "to be" } }
+      "मैं तैयार हूँ।": { native: "I am ready.", bases: { "तैयार": "ready", "हूँ": "to be" } }
+  "hi-0746":
+    native: "you (very intimate)"
+    notes:
+      "use": "Said to a child, a close friend or God. To an elder or a stranger, use आप (āp)."
+    examples:
+      "तू कैसा है?": { native: "How are you? (to a close friend)", bases: { "कैसा": "how" } }
+      "तू मेरा दोस्त है।": "You are my friend."
+  "hi-0747":
+    native: "you (informal)"
+    notes:
+      "use": "The usual 'you' for a friend, a junior or family. To an elder or a stranger, use आप (āp)."
+    examples:
+      "तुम कैसे हो?": { native: "How are you?", bases: { "हो": "to be" } }
+      "तुम्हारा नाम क्या है?": "What is your name?"
+  "hi-0748":
+    native: "this; he, she (near)"
+    notes:
+      "near": "Its plural is {1}."
+    examples:
+      "यह मेरा घर है।": "This is my house."
+      "यह मेरी बहन है।": { native: "This is my sister.", bases: { "मेरी": "my" } }
+  "hi-0749":
+    native: "that; he, she (far)"
+    notes:
+      "far": "Its possessive before a noun is {1}."
+    examples:
+      "वह मेरा भाई है।": "That is my brother."
+      "उसका नाम क्या है?": "What is his name?"
+  "hi-0750":
+    native: "these; they (near)"
+    notes:
+      "n1": "The plural of यह (yah). Near the speaker it means 'these' or 'they'."
+    examples:
+      "ये मेरे दोस्त हैं।": { native: "These are my friends.", bases: { "मेरे": "my" } }
+      "ये लोग कौन हैं?": "Who are these people?"
+  "hi-0751":
+    native: "those; they (far)"
+    notes:
+      "n1": "The plural of वह (vah). Far from the speaker it means 'those' or 'they'."
+    examples:
+      "वे मेरे दोस्त हैं।": { native: "They are my friends.", bases: { "मेरे": "my" } }
+      "वे लोग कहाँ हैं?": "Where are those people?"
+  "hi-0752":
+    native: "my"
+    notes:
+      "stem": "It takes {1} before a masculine plural noun or a postposition, and {2} before a feminine noun."
+    examples:
+      "मेरा नाम क्या है?": "What is my name?"
+      "मेरे दोस्त कहाँ हैं?": { native: "Where are my friends?", bases: { "मेरे": "my" } }
+  "hi-0753":
+    native: "your (very intimate)"
+    notes:
+      "stem": "It takes {1} before a masculine plural noun or a postposition, and {2} before a feminine noun."
+    examples:
+      "तेरा नाम क्या है?": "What is your name? (to a close friend)"
+      "तेरे दोस्त कहाँ हैं?": { native: "Where are your friends?", bases: { "तेरे": "your" } }
+  "hi-0754":
+    native: "your (informal)"
+    notes:
+      "stem": "It takes {1} before a masculine plural noun or a postposition, and {2} before a feminine noun."
+    examples:
+      "तुम्हारी बहन कहाँ है?": { native: "Where is your sister?", bases: { "तुम्हारी": "your" } }
+      "तुम्हारे भाई यहाँ हैं।": { native: "Your brothers are here.", bases: { "तुम्हारे": "your" } }
+  "hi-0755":
+    native: "your (formal)"
+    notes:
+      "stem": "It takes {1} before a masculine plural noun or a postposition, and {2} before a feminine noun."
+    examples:
+      "आपका नाम क्या है?": "What is your name? (formal)"
+      "आपकी बहन कहाँ है?": { native: "Where is your sister? (formal)", bases: { "आपकी": "your" } }
+  "hi-0756":
+    native: "our"
+    notes:
+      "stem": "It takes {1} before a masculine plural noun or a postposition, and {2} before a feminine noun."
+    examples:
+      "हमारा घर यहाँ है।": "Our house is here."
+      "हमारे पड़ोसी कौन हैं?": { native: "Who are our neighbours?", bases: { "हमारे": "our" } }
+  "hi-0757":
+    native: "his; her; its"
+    notes:
+      "stem": "It is the form of वह (vah) before a noun. It takes {1} before a masculine plural noun or a postposition, and {2} before a feminine noun."
+    examples:
+      "उसकी बहन कहाँ है?": { native: "Where is his (or her) sister?", bases: { "उसकी": "his, her" } }
+      "उसके दोस्त यहाँ हैं।": { native: "His (or her) friends are here.", bases: { "उसके": "his, her" } }
+  "hi-0758":
+    native: "someone; anyone; some"
+    notes:
+      "nobody": "With a verb, {1} means nobody."
+    examples:
+      "कोई आया है।": { native: "Someone has come.", bases: { "आया": "to come" } }
+      "क्या कोई है?": "Is anyone there?"
+  "hi-0759":
+    native: "something; some; a little"
+    notes:
+      "some": "With a noun it means some: {1}."
+    examples:
+      "मुझे कुछ चाहिए।": { native: "I need something.", bases: { "मुझे": "me", "चाहिए": "needed" } }
+      "कुछ लोग आए।": { native: "Some people came.", bases: { "आए": "to come" } }
+  "hi-0760":
+    native: "one's own"
+    notes:
+      "own": "It means one's own and refers back to the subject. It takes {1} before a masculine plural noun or a postposition, and {2} before a feminine noun."
+    examples:
+      "यह मेरा अपना घर है।": "This is my own house."
+      "उसने अपना नाम बताया।": { native: "He told his name.", bases: { "उसने": "he, she", "बताया": "to tell" } }
+  "hi-0761":
+    native: "people"
+    notes:
+      "n1": "Plural in its verb: लोग आए (log āe), people came. A single person is व्यक्ति (vyakti)."
+    examples:
+      "सब लोग यहाँ रहते हैं।": { native: "Everyone lives here.", bases: { "रहते": "to live" } }
+      "लोग क्या कहते हैं?": { native: "What do people say?", bases: { "कहते": "to say" } }
+  "hi-0762":
+    native: "man"
+    notes:
+      "n1": "A man. For a person of either sex, say व्यक्ति (vyakti)."
+    examples:
+      "वह आदमी कहाँ है?": "Where is that man?"
+      "यह आदमी मेरा भाई है।": "This man is my brother."
+  "hi-0763":
+    native: "woman"
+    notes:
+      "n1": "A woman. For a wife, say पत्नी (patnī): औरत (aurat) can sound rude then."
+    examples:
+      "वह औरत कौन है?": "Who is that woman?"
+      "यह औरत मेरी बहन है।": { native: "This woman is my sister.", bases: { "मेरी": "my" } }
+  "hi-0764":
+    native: "I and we"
+    explanation: "Hindi has one word for I, मैं (maim̐), and one for we, हम (ham). Each changes its form before a postposition: मुझे (mujhē) and हमें (hamēm̐)."
+  "hi-0765":
+    native: "You: three words"
+    explanation: "Hindi has three words for you, from the most respectful to the most intimate: आप (āp), तुम (tum) and तू (tū)."
+  "hi-0766":
+    native: "This and that: near and far"
+    explanation: "Near the speaker, यह (yah) and ये (yē) are this and these; further off, वह (vah) and वे (vē) are that and those. Each pair also means he or she, and they."
