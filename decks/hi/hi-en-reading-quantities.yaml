@@ -1,0 +1,45 @@
+schema: 1
+id: "hi-en-reading-quantities"
+name: "Reading: how much and how many"
+kind: reading
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about buying and cooking, with the words for how much and how many of this unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-at-the-grocers"
+    title: "At the grocer's"
+    theme: "quantities"
+    sentences:
+      - { text: "आपको कितना आलू चाहिए?", reading: "āpkō kitnā ālū cāhiē?", ipa: "aːpkoː kɪt̪naː aːluː tʃaːɦɪeː" }
+      - { text: "मुझे दो किलो आलू चाहिए।", reading: "mujhē dō kilō ālū cāhiē.", ipa: "mʊdʒʱeː d̪oː kɪloː aːluː tʃaːɦɪeː" }
+      - { text: "और कुछ?", reading: "aur kuch?", ipa: "ɔːr kʊtʃʰ" }
+      - { text: "हाँ, एक लीटर दूध भी दीजिए।", reading: "hām̐, ēk līṭar dūdh bhī dījiē.", ipa: "ɦãː eːk liːʈər d̪uːd̪ʱ bʱiː d̪iːdʒɪeː" }
+    questions:
+      - id: "hi-0890"
+        prompt: { en: "How many kilos of potatoes does the customer want?" }
+        options: [{ en: "Half a kilo" }, { en: "Two kilos" }]
+        answer: 2
+      - id: "hi-0891"
+        prompt: { en: "What else does the customer buy?" }
+        options: [{ en: "Milk" }, { en: "Tea" }]
+        answer: 1
+  - id: "hi-recipe-amounts"
+    title: "Recipe amounts"
+    theme: "quantities"
+    sentences:
+      - { text: "दो कप चावल लीजिए।", reading: "dō kap cāval lījiē.", ipa: "d̪oː kəp tʃaːʋəl liːdʒɪeː" }
+      - { text: "एक चम्मच नमक डालिए।", reading: "ēk cammac namak ḍāliē.", ipa: "eːk tʃəmmətʃ nəmək ɖaːlɪeː" }
+      - { text: "थोड़ा पानी डालिए।", reading: "thōṛā pānī ḍāliē.", ipa: "t̪ʰoːɽaː paːniː ɖaːlɪeː" }
+      - { text: "आधा किलो टमाटर काफ़ी है।", reading: "ādhā kilō ṭamāṭar kāfī hai.", ipa: "aːd̪ʱaː kɪloː ʈəmaːʈər kaːfiː ɦɛː" }
+    questions:
+      - id: "hi-0892"
+        prompt: { en: "How many cups of rice does the recipe need?" }
+        options: [{ en: "Two" }, { en: "Ten" }]
+        answer: 1
+      - id: "hi-0893"
+        prompt: { en: "How much water is added?" }
+        options: [{ en: "A little" }, { en: "A litre" }]
+        answer: 1
