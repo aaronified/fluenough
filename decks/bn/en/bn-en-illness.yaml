@@ -331,18 +331,26 @@
     "notes":
       "n1": "{1} is a picture of the inside of the body, taken with radiation."
     "examples":
-      "ডাক্তার হাতের এক্স-রে দেখলেন।": "The doctor looked at the X-ray of the arm."
+      "ডাক্তার হাতের এক্স-রে দেখলেন।":
+        "native": "The doctor looked at the X-ray of the arm."
+        "bases":
+          "এক্স":
+            "meaning": "X"
+          "রে":
+            "meaning": "ray"
       "এক্স-রেতে হাড় ভাঙা নেই।":
         "native": "The X-ray shows no broken bone."
         "bases":
-          "এক্স-রেতে":
-            "meaning": "X-ray"
           "হাড়":
             "meaning": "bone"
           "ভাঙা":
             "meaning": "broken"
           "নেই":
             "meaning": "there is not"
+          "এক্স":
+            "meaning": "X"
+          "রেতে":
+            "meaning": "in the X-ray"
   "bn-1776":
     "native": "test; examination"
     "notes":
@@ -529,18 +537,30 @@
         "bases":
           "শিগগিরই":
             "meaning": "soon"
-      "জ্বর সেরে গেছে আর এখন ভালো।": "The fever has gone and now I am well."
+          "সেরে":
+            "meaning": "recovered"
+      "জ্বর সেরে গেছে আর এখন ভালো।":
+        "native": "The fever has gone and now I am well."
+        "bases":
+          "সেরে":
+            "meaning": "recovered"
   "bn-1789":
     "native": "to stay in bed; to lie down"
     "notes":
       "n1": "{1} is to lie down and stay still, usually in bed, to rest while ill."
     "examples":
-      "আজ বিছানায় শুয়ে থাকুন।": "Stay in bed today."
+      "আজ বিছানায় শুয়ে থাকুন।":
+        "native": "Stay in bed today."
+        "bases":
+          "শুয়ে":
+            "meaning": "lying down"
       "জ্বর হলে কয়েক দিন শুয়ে থাকা ভালো।":
         "native": "With a fever it is good to stay in bed for a few days."
         "bases":
           "কয়েক":
             "meaning": "a few"
+          "শুয়ে":
+            "meaning": "lying down"
   "bn-1790":
     "native": "to hurt; to ache"
     "notes":
@@ -588,6 +608,8 @@
         "bases":
           "আমার":
             "meaning": "my"
+          "ভাব":
+            "meaning": "feeling"
       "গাড়িতে উঠলে আমার বমি বমি ভাব হয়।":
         "native": "I feel sick when I get into a car."
         "bases":
@@ -595,6 +617,8 @@
             "meaning": "car"
           "আমার":
             "meaning": "my"
+          "ভাব":
+            "meaning": "feeling"
   "bn-1794":
     "native": "to get a fever"
     "notes":
@@ -693,8 +717,16 @@
     "notes":
       "n1": "{1} is three times a day, as a dose is written on a label."
     "examples":
-      "দিনে তিনবার জল খান।": "Drink water three times a day."
-      "ওষুধটা দিনে তিনবার খেতে হবে।": "This medicine must be taken three times a day."
+      "দিনে তিনবার জল খান।":
+        "native": "Drink water three times a day."
+        "bases":
+          "তিনবার":
+            "meaning": "three times"
+      "ওষুধটা দিনে তিনবার খেতে হবে।":
+        "native": "This medicine must be taken three times a day."
+        "bases":
+          "তিনবার":
+            "meaning": "three times"
   "bn-1802":
     "native": "to be admitted to hospital"
     "notes":
@@ -735,5 +767,13 @@
     "notes":
       "n1": "{1} is before any food is eaten. Some medicines should not be taken that way."
     "examples":
-      "খালি পেটে ওষুধ খাবেন না।": "Do not take the medicine on an empty stomach."
-      "খালি পেটে চা খাবেন না।": "Do not drink tea on an empty stomach."
+      "খালি পেটে ওষুধ খাবেন না।":
+        "native": "Do not take the medicine on an empty stomach."
+        "bases":
+          "পেটে":
+            "meaning": "stomach"
+      "খালি পেটে চা খাবেন না।":
+        "native": "Do not drink tea on an empty stomach."
+        "bases":
+          "পেটে":
+            "meaning": "stomach"
