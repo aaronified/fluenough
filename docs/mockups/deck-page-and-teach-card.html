@@ -70,9 +70,9 @@ section.opt{margin:0 0 44px}
 .count{margin:0 0 4px}
 .rows{list-style:none;margin:0;padding:0}
 .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px 12px;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--olv);padding:12px 0;align-items:start}
-.row .w{overflow-wrap:anywhere;font-size:calc(20px*var(--t));line-height:1.25;font-weight:500}
-.row .rd{display:block;font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv)}
-.row .mn{font-size:calc(14px*var(--t));line-height:1.3;text-align:right}
+.row .w{display:block;white-space:nowrap;font-size:calc(20px*var(--t));line-height:1.25;font-weight:500}
+.row .rd{display:block;white-space:nowrap;font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv)}
+.row .mn{white-space:nowrap;font-size:calc(14px*var(--t));line-height:1.3;text-align:right}
 .row .mc{grid-column:2;justify-self:end}
 .mastery{display:inline-flex;align-items:center;gap:4px;height:calc(18px*var(--t));padding:0 8px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));line-height:1;font-weight:600;letter-spacing:.3px}
 .m-new{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
@@ -92,7 +92,7 @@ section.opt{margin:0 0 44px}
 .scrim.on{opacity:1;pointer-events:auto}
 .dlg{position:absolute;z-index:4;left:16px;right:16px;top:50%;transform:translateY(-50%) scale(.96);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;background:var(--sHigh);border-radius:28px;padding:22px 20px 14px}
 .dlg.on{opacity:1;transform:translateY(-50%);pointer-events:auto}
-.dlg h3{margin:0 0 4px;font-size:calc(20px*var(--t));line-height:1.2;font-weight:500}
+.dlg h3{white-space:nowrap;margin:0 0 4px;font-size:calc(20px*var(--t));line-height:1.2;font-weight:500}
 .dlg .t-sm{margin:0 0 8px}
 .opt-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;border:0;padding:6px 0;min-height:48px;font-size:calc(14px*var(--t));line-height:1.3}
 .box{flex:none;width:18px;height:18px;border-radius:3px;border:2px solid var(--onSv);display:flex;align-items:center;justify-content:center}
@@ -117,15 +117,17 @@ section.opt{margin:0 0 44px}
 .audio svg{width:24px;height:24px;fill:currentColor}
 .ipa{font-size:calc(14px*var(--t));color:var(--onSv)}
 button.ipa{min-height:48px;padding:0 16px;border-radius:24px;border:1px solid var(--ol);background:none;color:var(--onS);font-size:calc(14px*var(--t));font-weight:500}
-.mrow{display:flex;gap:12px;align-items:stretch;min-height:156px}
-.mean{overflow-wrap:anywhere;font-size:calc(22px*var(--t));line-height:1.25;font-weight:500;margin:0}
+.mrow{display:flex;gap:12px;align-items:center}
+.mean{white-space:nowrap;font-size:calc(22px*var(--t));line-height:1.25;font-weight:500;margin:0}
 .line{font-size:calc(14px*var(--t));line-height:1.3;color:var(--onSv);margin:4px 0 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .mdiv{flex:1;min-width:0}
-button.meanb{flex:1;min-width:0;text-align:left;border:0;background:var(--sHigh);color:var(--onS);border-radius:16px;padding:10px 12px 10px 16px;display:flex;gap:8px;align-items:center}
+button.meanb{flex:1;min-width:0;text-align:left;border:0;background:var(--sHigh);color:var(--onS);border-radius:16px;padding:14px 14px 14px 16px;display:block}
 button.meanb .mt{flex:1;min-width:0}
 button.meanb svg{flex:none;width:24px;height:24px;fill:var(--p)}
-.img{flex:none;width:80px;border-radius:16px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
-.img svg{width:44px;height:44px;fill:currentColor;opacity:.9}
+.lr{display:flex;align-items:center;gap:8px;margin-top:4px}
+.lr .line{flex:1;min-width:0;margin:0}
+.img{flex:none;width:104px;height:104px;aspect-ratio:1;border-radius:16px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
+.img svg{width:52px;height:52px;fill:currentColor;opacity:.9}
 .blk{display:flex;gap:12px;align-items:flex-start;border-radius:16px;padding:18px 16px;background:var(--sHigh)}
 .blk .ic{flex:none;width:24px;height:24px}
 .blk.note .ic{color:var(--p)}
@@ -172,14 +174,15 @@ button.meanb svg{flex:none;width:24px;height:24px;fill:var(--p)}
 .vp{flex:1;min-height:0;overflow:hidden;position:relative}
 .track{display:flex;height:100%;width:200%}
 .track.s1{transform:translateX(-50%)}
-.vp,.track{touch-action:pan-y;user-select:none;-webkit-user-select:none}
-.chev{position:absolute;top:50%;margin-top:-24px;z-index:2;width:40px;height:48px;border:0;padding:0;display:flex;align-items:center;justify-content:center;background:var(--sc);color:var(--onSc);opacity:0;pointer-events:none;transition:opacity .15s}
+.vp,.track{touch-action:none;user-select:none;-webkit-user-select:none}
+.chev{position:absolute;top:50%;margin-top:-24px;z-index:2;width:40px;height:48px;border:0;padding:0;display:flex;align-items:center;justify-content:center;background:var(--sc);color:var(--onSc);opacity:0;transition:opacity .15s}
+.chev.off{pointer-events:none}
 .chev svg{width:24px;height:24px;fill:currentColor}
 .chev.l{left:0;border-radius:0 24px 24px 0}.chev.r{right:0;border-radius:24px 0 0 24px}
-.teachl.touch .chev:not(.off){opacity:.92;pointer-events:auto}
+.teachl.touch .chev:not(.off){opacity:.92}
 .teachl.touch .chev:not(.off) svg{animation:wig .25s ease-in-out 1}
 @keyframes wig{0%,100%{transform:translateX(0)}17%{transform:translateX(-3px)}34%{transform:translateX(3px)}51%{transform:translateX(-3px)}68%{transform:translateX(3px)}85%{transform:translateX(-2px)}}
-.slide{width:50%;height:100%;overflow-y:auto;padding:0 20px 8px;scrollbar-width:none}
+.slide{width:50%;height:100%;overflow:hidden;touch-action:none;padding:0 20px 8px}
 .slide::-webkit-scrollbar{display:none}
 .teachl{position:absolute;inset:0;z-index:6;display:flex;flex-direction:column;background:var(--s);visibility:hidden;opacity:0;transition:opacity .2s,visibility 0s .2s}
 .teachl.on{visibility:visible;opacity:1;transition:opacity .2s}
@@ -292,19 +295,21 @@ hi:{lang:'hi',deck:'Time words',sub:'Hindustani · Devanagari · 14 words',
  card:{
   0:{w:'कल',r:'kal',ipa:`/kəl/`,mean:'yesterday; tomorrow',also:'the past or the next day, by context',accept:'yesterday, tomorrow',line:'adverb · noun (m.)',
      note:'One word for both days. The verb tense or a word such as “आने वाला” (coming) says which.',
-     warn:{tt:'Sounds like another word',tx:'काल (kāl), “time”. The long ā is the only difference.'},
-     other:{tt:'Other meanings',tx:'“time” in this course is काल (kāl), not कल.'},
+     pick:'warn',
+     look:{tt:'Looks like another word',tx:'काल has the ā sign (ा) after क; कल has none.'},
+     warn:{tt:'Sounds like another word',tx:'काल (kāl), “time”. One sound differs: ə against aː, the short and the long a.'},
+     other:{tt:'Other meanings',tx:'It also means “machine” and “ease, peace”.'},
      exs:[['मैं कल आऊँगा।','maiṁ kal āūṅgā.','I will come tomorrow.'],['कल स्कूल बंद था।','kal skūl band thā.','School was closed yesterday.']],
      dict:['The day before today.','The day after today.','(figurative) the near future or past.'],
      ety:'From Sanskrit कल्य (kalya), “tomorrow, dawn”.',tags:['day','time']},
-  1:{w:'प्रतिनिधित्व',r:'pratinidhitva',ipa:`/pɾət${D}ɪnɪd${D}${B}ɪt${D}ʋ/`,mean:'represen­tation',also:'a delegation',accept:'representation',line:'noun (m.)',
+  1:{w:'प्रतिनिधित्व',r:'pratinidhitva',ipa:`/pɾət${D}ɪnɪd${D}${B}ɪt${D}ʋ/`,mean:'representation',also:'a delegation',accept:'representation',line:'noun (m.)',
      note:'The ending -त्व (-tva) turns प्रतिनिधि (pratinidhi), “representative”, into an abstract noun.',
      warn:null,other:{tt:'Other meanings',tx:'It also means a delegation, the body of people who represent others.'},
      exs:[['संसद में महिलाओं का प्रतिनिधित्व बढ़ा है।','saṁsad meṁ mahilāoṁ kā pratinidhitva baṛhā hai.','Women’s representation in parliament has grown.']],
      dict:['The act of standing or speaking for others.','A delegation; those who represent a group.'],ety:'From Sanskrit प्रतिनिधि (pratinidhi), “representative”, with the suffix -त्व (-tva).',tags:['time']},
   13:{w:'बाल',r:'bāl',ipa:`/ba${L}l/`,mean:'hair',also:'a child (बाल-)',accept:'hair',line:'noun (m.)',
      note:'In compounds बाल- also means “child”, as in बाल-मन (a child’s mind).',
-     look:{tt:'Looks like another word',tx:'बल (bal), “strength”. The ā sign is the only difference, and the vowel is short.'},
+     look:{tt:'Looks like another word',tx:'बाल has the ā sign (ा) after ब; बल has none.'},
      warn:null,other:null,
      exs:[['उसके बाल लंबे हैं।','uske bāl laṁbe haiṁ.','Her hair is long.']],
      dict:['The hair of the head or body.','(in compounds) a child.'],ety:'From Sanskrit बाल (bāla), “hair; child”.',tags:[]},
@@ -333,13 +338,14 @@ bn:{lang:'bn',deck:'Time words',sub:'Bengali · Bengali script · 13 words',
  card:{
   0:{w:'কাল',r:'kāl',ipa:'/kal/',mean:'yesterday; tomorrow',also:'time, era',accept:'yesterday, tomorrow',line:'adverb · noun',
      note:'One word for both days. The tense of the verb says which.',
-     look:{tt:'Looks like another word',tx:'কল (kôl), “machine, tap”. The ā sign is the only difference, and the vowel is short.'},
-     warn:{tt:'Sounds like another word',tx:'কালো (kālo), “black”. Only the final vowel differs.'},
+     pick:'look',
+     look:{tt:'Looks like another word',tx:'কাল has the ā sign (া) after ক; কল has none.'},
+     warn:{tt:'Sounds like another word',tx:'খাল (khāl), “canal”. One sound differs: k against kʰ, without a puff of air and with one.'},
      other:{tt:'Other meanings',tx:'“time, era” is also কাল, as in the age of a ruler.'},
      exs:[['আমি কাল যাব।','āmi kāl jābo.','I will go tomorrow.'],['কাল আমি বাড়িতে ছিলাম।','kāl āmi bāṛite chilām.','I was at home yesterday.']],
      dict:['The day before today.','The day after today.','Time, as an age or era.'],
      ety:'From Sanskrit কল্য (kalya), “tomorrow, dawn”.',tags:['day','time']},
-  1:{w:'পরিস্থিতিগুলোর',r:'pôristhitigulor',ipa:`/pɔɾist${D}${H}it${D}iɡuloɾ/`,mean:'of the situ­ations',also:'of the circumstances',accept:'of the circumstances',line:'noun · genitive',
+  1:{w:'পরিস্থিতিগুলোর',r:'pôristhitigulor',ipa:`/pɔɾist${D}${H}it${D}iɡuloɾ/`,mean:'of the situations',also:'of the circumstances',accept:'of the circumstances',line:'noun · genitive',
      note:'The stem পরিস্থিতি (pôristhiti) keeps its form; -গুলো makes it plural and -র makes it genitive.',
      warn:null,other:{tt:'Other meanings',tx:'It is also read “of the circumstances”.'},
      exs:[['পরিস্থিতিগুলোর কারণে দেরি হলো।','pôristhitigulor kāroṇe deri hôlo.','There was a delay because of the situations.']],
@@ -353,10 +359,11 @@ bn:{lang:'bn',deck:'Time words',sub:'Bengali · Bengali script · 13 words',
 const STAT={n:'New',l:'Learning',k:'Known'};
 
 /* only a teach card's headword shrinks to fit a long word; the deck list keeps its size */
+const FIT='.big,.mean,.row .w,.row .mn,.row .rd,.meanb .line,.dlg h3';
 function fit(root){
- root.querySelectorAll('.big').forEach(el=>{
+ root.querySelectorAll(FIT).forEach(el=>{
   el.style.fontSize='';let px=parseFloat(getComputedStyle(el).fontSize);
-  while(el.scrollWidth>el.clientWidth+0.5&&px>14){px-=1;el.style.fontSize=px+'px'}
+  while(el.scrollWidth>el.clientWidth+0.5&&px>10){px-=0.5;el.style.fontSize=px+'px'}
  });
 }
 const exHtml=(e,L)=>`<div class="ex"><p class="e1 script" ${L}>${e[0]}</p><p class="e2">${e[1]}</p><p class="e3">${e[2]}</p></div>`;
@@ -381,11 +388,11 @@ function teachCard(c,full,lang){
   B.push(`<div><p class="t-lab">Tags</p><div class="kv">${c.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div></div>`);
   B.push(`<div class="foot"><span class="t-sm">${c.id}</span><button class="rep" type="button">${I.flag}Report</button></div>`);
  }else{
-  B.push(`<div class="mrow"><button class="meanb" type="button" data-dict aria-label="Dictionary: ${c.mean}"><span class="mt"><p class="mean">${c.mean}</p><p class="line">${c.line}</p></span>${I.book}</button><div class="img" role="img" aria-label="Picture">${I.pic}</div></div>`);
-  const ws=[c.look&&['deaf',c.look],c.warn&&['hear',c.warn],c.other&&['trans',c.other]].filter(Boolean);
-  const room=c.note?2:3;                       /* the note plus up to two warnings, or three warnings */
+  B.push(`<div class="mrow"><button class="meanb" type="button" data-dict aria-label="Dictionary: ${c.mean}"><span class="mt"><p class="mean">${c.mean}</p><span class="lr"><p class="line">${c.line}</p>${I.book}</span></span></button><div class="img" role="img" aria-label="Picture">${I.pic}</div></div>`);
+  const ws={look:['deaf',c.look],warn:['hear',c.warn],other:['trans',c.other]};
+  const pick=ws[c.pick]&&ws[c.pick][1]?ws[c.pick]:Object.values(ws).find(w=>w[1]);   /* one note and one warning, the most useful */
   if(c.note)B.push(blk('note',I.excl,{tx:c.note},false));
-  ws.slice(0,room).forEach(w=>B.push(blk('warn',I[w[0]],w[1],false)));
+  if(pick)B.push(blk('warn',I[pick[0]],pick[1],false));
  }
  return `<div class="tc">${B.join('')}</div>`;
 }
@@ -446,7 +453,7 @@ function wireDeck(ph,C,teach){
   learn.disabled=!v.length;
   learn.innerHTML=relearn?`${I.relearn}Relearn`:`${I.add}Learn`;
   badge.textContent=fresh;badge.hidden=!!relearn||!fresh;
-  ph.querySelector('[data-practice]').disabled=!v.length;
+  ph.querySelector('[data-practice]').disabled=!v.length;fit(rows);
  }
  function openSheet(id){
   const i=C.words.findIndex(w=>w.id===id), x=C.words[i];
@@ -503,24 +510,24 @@ function wireTeach(ph,C){
  const goTo=n=>{if(drag)return;n=Math.max(0,Math.min(N-1,n));spring(n*W(),0,Z)};
  next.addEventListener('click',()=>goTo(i+1));
  back.addEventListener('click',()=>goTo(i-1));
- /* chevrons show 0.1 s after a touch starts (mouse down counts), hide 0.3 s after it ends */
+ /* chevrons show 0.1 s after a touch starts (mouse down counts, and a quick tap still shows them), hide 0.3 s after it ends; they are tappable even while hidden */
  let tIn=0,tOut=0;
  layer.addEventListener('pointerdown',()=>{clearTimeout(tOut);clearTimeout(tIn);tIn=setTimeout(()=>{layer.classList.remove('touch');void layer.offsetWidth;layer.classList.add('touch')},100)});
- const end=()=>{clearTimeout(tIn);tOut=setTimeout(()=>layer.classList.remove('touch'),300)};
+ const end=()=>{clearTimeout(tOut);tOut=setTimeout(()=>layer.classList.remove('touch'),300)};
  layer.addEventListener('pointerup',end);layer.addEventListener('pointercancel',end);
  /* swipe by mouse drag or touch: the card follows the pointer, then springs to the next, the previous, or back */
- vp.addEventListener('pointerdown',e=>{
+ tr.addEventListener('pointerdown',e=>{
   if(drag||(e.pointerType==='mouse'&&e.button!==0))return;
   if(!e.target.closest('button'))e.preventDefault();   /* no text selection while dragging; buttons keep their clicks */
   anim=null;const n=Math.max(0,Math.min(N-1,Math.round(pos/W())));
   drag={id:e.pointerId,x0:e.clientX,y0:e.clientY,pos0:pos,startIdx:n,mode:'undecided',raw:pos,samples:[{t:performance.now(),p:pos}]};
  });
- vp.addEventListener('pointermove',e=>{
+ tr.addEventListener('pointermove',e=>{
   if(!drag||e.pointerId!==drag.id)return;
   let dx=e.clientX-drag.x0,dy=e.clientY-drag.y0;
   if(drag.mode==='undecided'){
    if(Math.hypot(dx,dy)<SLOP)return;
-   if(Math.abs(dx)>Math.abs(dy)){drag.mode='h';try{vp.setPointerCapture(e.pointerId)}catch(_){}drag.x0=e.clientX;drag.pos0=pos;dx=0;drag.samples=[{t:performance.now(),p:pos}]}
+   if(Math.abs(dx)>Math.abs(dy)){drag.mode='h';try{tr.setPointerCapture(e.pointerId)}catch(_){}drag.x0=e.clientX;drag.pos0=pos;dx=0;drag.samples=[{t:performance.now(),p:pos}]}
    else drag.mode='v';
   }
   if(drag.mode==='h'){
@@ -542,7 +549,7 @@ function wireTeach(ph,C){
   const mix=Math.max(0,Math.min(1,(Math.abs(v)-300)/(FAST-300)));
   spring(t*W(),v,1+(Z-1)*mix);
  }
- vp.addEventListener('pointerup',e=>release(e,false));vp.addEventListener('pointercancel',e=>release(e,true));
+ tr.addEventListener('pointerup',e=>release(e,false));tr.addEventListener('pointercancel',e=>release(e,true));
  /* popups: over the teach card, inside the phone, above everything */
  const L=`lang="${C.lang}"`;
  function openP(k){
@@ -551,7 +558,7 @@ function wireTeach(ph,C){
   else{const t=P.dict.querySelector('[data-dt]');t.textContent=c.w;t.setAttribute('lang',C.lang);
    P.dict.querySelector('[data-body]').innerHTML=dictHtml(c)+`<p class="t-lab">Examples</p>`+c.exs.map(e=>exHtml(e,L)).join('')}
   P[k].querySelector('[data-body]').scrollTop=0;
-  pscrim.classList.add('on');P[k].classList.add('on');
+  pscrim.classList.add('on');P[k].classList.add('on');fit(P[k]);
  }
  function closePopup(){const any=P.ipa.classList.contains('on')||P.dict.classList.contains('on');pscrim.classList.remove('on');P.ipa.classList.remove('on');P.dict.classList.remove('on');return any}
  layer.addEventListener('click',e=>{if(e.target.closest('[data-ipa]'))openP('ipa');else if(e.target.closest('[data-dict]'))openP('dict')});
