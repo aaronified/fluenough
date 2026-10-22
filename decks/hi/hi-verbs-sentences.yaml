@@ -1,0 +1,62 @@
+schema: 1
+id: "hi-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-0802"
+    target: "मैं रोज़ सुबह उठता हूँ।"
+    reading: "maim̐ rōz subah uṭhtā hūm̐."
+    ipa: "mɛ̃ː roːz sʊbəɦ ʊʈʰt̪aː ɦũː"
+    pos: "phrase"
+    bases: [{ word: "उठता", ref: "hi-0441" }, { word: "हूँ", ref: "hi-0780" }]
+    confusables:
+      - { id: "f1", word: "उठती", reading: "uṭhtī", kind: "form" }
+      - { id: "w1", word: "बैठता", reading: "baiṭhtā", kind: "word" }
+  - id: "hi-0803"
+    target: "वह कल कहाँ जाएगा?"
+    reading: "vah kal kahām̐ jāēgā?"
+    ipa: "ʋəɦ kəl kəɦãː dʒaːeːɡaː"
+    pos: "phrase"
+    bases: [{ word: "जाएगा", ref: "hi-0777" }]
+    confusables:
+      - { id: "w1", word: "करेगा", reading: "karēgā", kind: "word" }
+      - { id: "w2", word: "सोएगा", reading: "sōēgā", kind: "word" }
+  - id: "hi-0804"
+    target: "उसने मुझसे रास्ता पूछा।"
+    reading: "usnē mujhsē rāstā pūchā."
+    ipa: "ʊsneː mʊdʒʱseː raːst̪aː puːtʃʰaː"
+    pos: "phrase"
+    bases: [{ word: "उसने", ref: "hi-0749" }, { word: "मुझसे", ref: "hi-0745" }, { word: "पूछा", ref: "hi-0799" }]
+    confusables:
+      - { id: "w1", word: "बताया", reading: "batāyā", kind: "word" }
+      - { id: "w2", word: "लिखा", reading: "likhā", kind: "word" }
+  - id: "hi-0805"
+    target: "मेरी बहन दिल्ली में रहती है।"
+    reading: "mērī bahan dillī mēm̐ rahtī hai."
+    ipa: "meːriː bəɦən d̪ɪlliː mẽː rəɦt̪iː ɦɛː"
+    pos: "phrase"
+    bases: [{ word: "मेरी", ref: "hi-0752" }, { word: "रहती", ref: "hi-0791" }, { word: "है", ref: "hi-0780" }]
+    confusables:
+      - { id: "f1", word: "रहता", reading: "rahtā", kind: "form" }
+      - { id: "f2", word: "मेरे", reading: "mērē", kind: "form" }
+  - id: "hi-0806"
+    target: "आप यहाँ बैठिए।"
+    reading: "āp yahām̐ baiṭhiē."
+    ipa: "aːp jəɦãː bɛːʈʰɪeː"
+    pos: "phrase"
+    bases: [{ word: "बैठिए", ref: "hi-0788" }]
+    confusables:
+      - { id: "w1", word: "उठिए", reading: "uṭhiē", kind: "word" }
+      - { id: "w2", word: "कहाँ", reading: "kahām̐", kind: "word" }
+  - id: "hi-0807"
+    target: "हमारी बहन ने एक किताब ख़रीदी।"
+    reading: "hamārī bahan nē ek kitāb k͟harīdī."
+    ipa: "ɦəmaːriː bəɦən neː eːk kɪt̪aːb xəriːd̪iː"
+    pos: "phrase"
+    bases: [{ word: "हमारी", ref: "hi-0756" }, { word: "ख़रीदी", ref: "hi-0794" }]
+    confusables:
+      - { id: "w1", word: "बेची", reading: "bēcī", kind: "word" }
+      - { id: "f1", word: "ख़रीदा", reading: "k͟harīdā", kind: "form" }

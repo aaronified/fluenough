@@ -1,0 +1,435 @@
+schema: 1
+id: "hi-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "everyday-verbs"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-0777"
+    target: "जाना"
+    target_scripts: { perso_arabic: "جانا" }
+    reading: "jānā"
+    ipa: "dʒaːnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "गया", reading: "gayā" }, { word: "गई", reading: "gaī" }] }
+      - { id: "pair", kind: "pair", ref: "hi-0790" }
+    examples:
+      - { target: "वह रोज़ स्कूल जाता है।", reading: "vah rōz skūl jātā hai.", ipa: "ʋəɦ roːz skuːl dʒaːt̪aː ɦɛː", bases: [{ word: "जाता", ref: "hi-0777" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "हम कल बाज़ार जाएँगे।", reading: "ham kal bāzār jāēm̐gē.", ipa: "ɦəm kəl baːzaːr dʒaːẽːɡeː", bases: [{ word: "जाएँगे", ref: "hi-0777" }] }
+    antonyms:
+      - { id: "come", ref: "hi-0778" }
+    collocations:
+      - { id: "school", word: "स्कूल", reading: "skūl", ipa: "skuːl" }
+  - id: "hi-0778"
+    target: "आना"
+    target_scripts: { perso_arabic: "آنا" }
+    reading: "ānā"
+    ipa: "aːnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "आया", reading: "āyā" }, { word: "आई", reading: "āī" }] }
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "वह कल घर आएगा।", reading: "vah kal ghar āēgā.", ipa: "ʋəɦ kəl ɡʱər aːeːɡaː", bases: [{ word: "आएगा", ref: "hi-0778" }] }
+      - { target: "मेहमान कब आए?", reading: "mehmān kab āē?", ipa: "meːɦmaːn kəb aːeː", bases: [{ word: "आए", ref: "hi-0778" }] }
+    antonyms:
+      - { id: "go", ref: "hi-0777" }
+    collocations:
+      - { id: "home", word: "घर", reading: "ghar", ipa: "ɡʱər" }
+  - id: "hi-0779"
+    target: "करना"
+    target_scripts: { perso_arabic: "کرنا" }
+    reading: "karnā"
+    ipa: "kərnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "किया", reading: "kiyā" }, { word: "की", reading: "kī" }, { word: "कर", reading: "kar" }] }
+      - { id: "use", kind: "usage", words: [{ word: "काम करना", reading: "kām karnā" }] }
+    examples:
+      - { target: "तुम क्या कर रहे हो?", reading: "tum kyā kar rahē ho?", ipa: "t̪ʊm kjaː kər rəɦeː ɦoː", bases: [{ word: "कर", ref: "hi-0779" }, { word: "रहे", ref: "hi-0791" }, { word: "हो", ref: "hi-0780" }] }
+      - { target: "उसने अपना काम किया।", reading: "usnē apnā kām kiyā.", ipa: "ʊsneː əpnaː kaːm kɪjaː", bases: [{ word: "उसने", ref: "hi-0749" }, { word: "किया", ref: "hi-0779" }] }
+    collocations:
+      - { id: "work", word: "काम", reading: "kām", ipa: "kaːm" }
+  - id: "hi-0780"
+    target: "होना"
+    target_scripts: { perso_arabic: "ہونا" }
+    reading: "hōnā"
+    ipa: "ɦoːnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "forms", kind: "behaviour", words: [{ word: "है", reading: "hai" }, { word: "हैं", reading: "haim̐" }, { word: "था", reading: "thā" }] }
+      - { id: "happen", kind: "usage", words: [{ word: "क्या हुआ?", reading: "kyā huā?" }] }
+    examples:
+      - { target: "वह कल घर पर होगा।", reading: "vah kal ghar par hōgā.", ipa: "ʋəɦ kəl ɡʱər pər ɦoːɡaː", bases: [{ word: "होगा", ref: "hi-0780" }] }
+      - { target: "आज मौसम अच्छा है।", reading: "āj mausam acchā hai.", ipa: "aːdʒ mɔːsəm ətʃtʃʰaː ɦɛː", bases: [{ word: "है", ref: "hi-0780" }] }
+    collocations:
+      - { id: "late", word: "देर", reading: "dēr", ipa: "d̪eːr" }
+  - id: "hi-0781"
+    target: "लिखना"
+    target_scripts: { perso_arabic: "لکھنا" }
+    reading: "likhnā"
+    ipa: "lɪkʰnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "लिखा", reading: "likhā" }, { word: "लिखी", reading: "likhī" }] }
+      - { id: "use", kind: "usage", words: [{ word: "चिट्ठी लिखना", reading: "ciṭṭhī likhnā" }] }
+    examples:
+      - { target: "वह अपनी माँ को चिट्ठी लिखता है।", reading: "vah apnī mām̐ kō ciṭṭhī likhtā hai.", ipa: "ʋəɦ əpniː mãː koː tʃɪʈʈʰiː lɪkʰt̪aː ɦɛː", bases: [{ word: "अपनी", ref: "hi-0760" }, { word: "लिखता", ref: "hi-0781" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "मैंने अपना नाम लिखा।", reading: "mainē apnā nām likhā.", ipa: "mɛːnneː əpnaː naːm lɪkʰaː", bases: [{ word: "मैंने", ref: "hi-0745" }, { word: "लिखा", ref: "hi-0781" }] }
+    collocations:
+      - { id: "letter", word: "चिट्ठी", reading: "ciṭṭhī", ipa: "tʃɪʈʈʰiː" }
+  - id: "hi-0782"
+    target: "बोलना"
+    target_scripts: { perso_arabic: "بولنا" }
+    reading: "bōlnā"
+    ipa: "boːlnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "बोला", reading: "bōlā" }, { word: "बोली", reading: "bōlī" }] }
+      - { id: "use", kind: "usage", words: [{ word: "हिंदी बोलना", reading: "hindī bōlnā" }] }
+    examples:
+      - { target: "वह अच्छी हिंदी बोलता है।", reading: "vah acchī hindī bōltā hai.", ipa: "ʋəɦ ətʃtʃʰiː ɦɪnd̪iː boːlt̪aː ɦɛː", bases: [{ word: "अच्छी", base: "अच्छा", reading: "acchā" }, { word: "बोलता", ref: "hi-0782" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "धीरे बोलिए।", reading: "dhīrē bōliē.", ipa: "d̪ʱiːreː boːlɪeː", bases: [{ word: "बोलिए", ref: "hi-0782" }] }
+    antonyms:
+      - { id: "listen", ref: "hi-0783" }
+    collocations:
+      - { id: "Hindi", word: "हिंदी", reading: "hindī", ipa: "ɦɪnd̪iː" }
+  - id: "hi-0783"
+    target: "सुनना"
+    target_scripts: { perso_arabic: "سننا" }
+    reading: "sunnā"
+    ipa: "sʊnnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "सुना", reading: "sunā" }, { word: "सुनी", reading: "sunī" }] }
+      - { id: "use", kind: "usage", words: [{ word: "गाना सुनना", reading: "gānā sunnā" }] }
+    examples:
+      - { target: "हम रेडियो पर गाना सुनते हैं।", reading: "ham rediyō par gānā sunte haim̐.", ipa: "ɦəm reːɖɪjoː pər ɡaːnaː sʊnt̪eː ɦɛ̃ː", bases: [{ word: "सुनते", ref: "hi-0783" }, { word: "हैं", ref: "hi-0780" }] }
+      - { target: "उसने मेरी बात सुनी।", reading: "usnē mērī bāt sunī.", ipa: "ʊsneː meːriː baːt̪ sʊniː", bases: [{ word: "उसने", ref: "hi-0749" }, { word: "मेरी", ref: "hi-0752" }, { word: "सुनी", ref: "hi-0783" }] }
+    antonyms:
+      - { id: "speak", ref: "hi-0782" }
+    collocations:
+      - { id: "song", word: "गाना", reading: "gānā", ipa: "ɡaːnaː" }
+  - id: "hi-0784"
+    target: "देखना"
+    target_scripts: { perso_arabic: "دیکھنا" }
+    reading: "dēkhnā"
+    ipa: "d̪eːkʰnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "देखा", reading: "dēkhā" }, { word: "देखी", reading: "dēkhī" }] }
+      - { id: "use", kind: "usage", words: [{ word: "फ़िल्म देखना", reading: "film dēkhnā" }] }
+    examples:
+      - { target: "हम रात को टीवी देखते हैं।", reading: "ham rāt kō ṭīvī dēkhte haim̐.", ipa: "ɦəm raːt̪ koː ʈiːʋiː d̪eːkʰt̪eː ɦɛ̃ː", bases: [{ word: "देखते", ref: "hi-0784" }, { word: "हैं", ref: "hi-0780" }] }
+      - { target: "वह ऊपर देखता है।", reading: "vah ūpar dēkhtā hai.", ipa: "ʋəɦ uːpər d̪eːkʰt̪aː ɦɛː", bases: [{ word: "देखता", ref: "hi-0784" }, { word: "है", ref: "hi-0780" }] }
+    collocations:
+      - { id: "film", word: "फ़िल्म", reading: "film", ipa: "fɪlm" }
+  - id: "hi-0785"
+    target: "देना"
+    target_scripts: { perso_arabic: "دینا" }
+    reading: "dēnā"
+    ipa: "d̪eːnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "दिया", reading: "diyā" }, { word: "दी", reading: "dī" }] }
+      - { id: "polite", kind: "usage", words: [{ word: "दीजिए", reading: "dījiē" }] }
+    examples:
+      - { target: "मुझे एक गिलास पानी दीजिए।", reading: "mujhē ek gilās pānī dījiē.", ipa: "mʊdʒʱeː eːk ɡɪlaːs paːniː d̪iːdʒɪeː", bases: [{ word: "मुझे", ref: "hi-0745" }, { word: "दीजिए", ref: "hi-0785" }] }
+      - { target: "उसने मुझे किताब दी।", reading: "usnē mujhē kitāb dī.", ipa: "ʊsneː mʊdʒʱeː kɪt̪aːb d̪iː", bases: [{ word: "उसने", ref: "hi-0749" }, { word: "मुझे", ref: "hi-0745" }, { word: "दी", ref: "hi-0785" }] }
+    antonyms:
+      - { id: "take", ref: "hi-0786" }
+  - id: "hi-0786"
+    target: "लेना"
+    target_scripts: { perso_arabic: "لینا" }
+    reading: "lēnā"
+    ipa: "leːnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "लिया", reading: "liyā" }, { word: "ली", reading: "lī" }] }
+      - { id: "buy", kind: "usage", words: [{ word: "मैं यह लूँगा", reading: "maim̐ yah lūm̐gā" }] }
+    examples:
+      - { target: "मैं एक चाय लूँगा।", reading: "maim̐ ek cāy lūm̐gā.", ipa: "mɛ̃ː eːk tʃaːj lũːɡaː", bases: [{ word: "लूँगा", ref: "hi-0786" }] }
+      - { target: "उसने साँस ली।", reading: "usnē sām̐s lī.", ipa: "ʊsneː sãːs liː", bases: [{ word: "उसने", ref: "hi-0749" }, { word: "ली", ref: "hi-0786" }] }
+    antonyms:
+      - { id: "give", ref: "hi-0785" }
+    collocations:
+      - { id: "breath", word: "साँस", reading: "sām̐s", ipa: "sãːs" }
+  - id: "hi-0787"
+    target: "खेलना"
+    target_scripts: { perso_arabic: "کھیلنا" }
+    reading: "khēlnā"
+    ipa: "kʰeːlnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "खेला", reading: "khēlā" }, { word: "खेली", reading: "khēlī" }] }
+      - { id: "use", kind: "usage", words: [{ word: "क्रिकेट खेलना", reading: "krikeṭ khēlnā" }] }
+    examples:
+      - { target: "बच्चे पार्क में खेलते हैं।", reading: "baccē pārk mēm̐ khēlte haim̐.", ipa: "bətʃtʃeː paːrk mẽː kʰeːlt̪eː ɦɛ̃ː", bases: [{ word: "बच्चे", base: "बच्चा", reading: "baccā" }, { word: "खेलते", ref: "hi-0787" }, { word: "हैं", ref: "hi-0780" }] }
+      - { target: "वह रोज़ क्रिकेट खेलता है।", reading: "vah rōz krikeṭ khēltā hai.", ipa: "ʋəɦ roːz krɪkeːʈ kʰeːlt̪aː ɦɛː", bases: [{ word: "खेलता", ref: "hi-0787" }, { word: "है", ref: "hi-0780" }] }
+    collocations:
+      - { id: "cricket", word: "क्रिकेट", reading: "krikeṭ", ipa: "krɪkeːʈ" }
+  - id: "hi-0788"
+    target: "बैठना"
+    target_scripts: { perso_arabic: "بیٹھنا" }
+    reading: "baiṭhnā"
+    ipa: "bɛːʈʰnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "बैठा", reading: "baiṭhā" }, { word: "बैठी", reading: "baiṭhī" }] }
+      - { id: "opposite", kind: "note", words: [{ word: "उठना", reading: "uṭhnā" }] }
+    examples:
+      - { target: "यहाँ बैठिए।", reading: "yahām̐ baiṭhiē.", ipa: "jəɦãː bɛːʈʰɪeː", bases: [{ word: "बैठिए", ref: "hi-0788" }] }
+      - { target: "वे कुर्सी पर बैठे हैं।", reading: "vē kursī par baiṭhē haim̐.", ipa: "ʋeː kʊrsiː pər bɛːʈʰeː ɦɛ̃ː", bases: [{ word: "बैठे", ref: "hi-0788" }, { word: "हैं", ref: "hi-0780" }] }
+    antonyms:
+      - { id: "get up", ref: "hi-0441" }
+    collocations:
+      - { id: "chair", word: "कुर्सी", reading: "kursī", ipa: "kʊrsiː" }
+  - id: "hi-0789"
+    target: "समझना"
+    target_scripts: { perso_arabic: "سمجھنا" }
+    reading: "samjhnā"
+    ipa: "səmdʒʱnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "समझा", reading: "samjhā" }, { word: "समझी", reading: "samjhī" }] }
+      - { id: "use", kind: "usage", words: [{ word: "बात समझना", reading: "bāt samjhnā" }] }
+    examples:
+      - { target: "क्या तुम मेरी बात समझे?", reading: "kyā tum mērī bāt samjhē?", ipa: "kjaː t̪ʊm meːriː baːt̪ səmdʒʱeː", bases: [{ word: "मेरी", ref: "hi-0752" }, { word: "समझे", ref: "hi-0789" }] }
+      - { target: "वह अंग्रेज़ी नहीं समझता।", reading: "vah angrēzī nahīm̐ samjhtā.", ipa: "ʋəɦ əŋɡreːziː nəɦĩː səmdʒʱt̪aː", bases: [{ word: "समझता", ref: "hi-0789" }] }
+    collocations:
+      - { id: "matter", word: "बात", reading: "bāt", ipa: "baːt̪" }
+  - id: "hi-0790"
+    target: "जानना"
+    target_scripts: { perso_arabic: "جاننا" }
+    reading: "jānnā"
+    ipa: "dʒaːnnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "pair", kind: "pair", ref: "hi-0777" }
+      - { id: "use", kind: "usage", words: [{ word: "उसे जानता हूँ", reading: "usē jāntā hūm̐" }] }
+    examples:
+      - { target: "क्या तुम उसे जानते हो?", reading: "kyā tum usē jāntē ho?", ipa: "kjaː t̪ʊm ʊseː dʒaːnt̪eː ɦoː", bases: [{ word: "उसे", ref: "hi-0749" }, { word: "जानते", ref: "hi-0790" }, { word: "हो", ref: "hi-0780" }] }
+      - { target: "मैं यह बात जानता हूँ।", reading: "maim̐ yah bāt jāntā hūm̐.", ipa: "mɛ̃ː jəɦ baːt̪ dʒaːnt̪aː ɦũː", bases: [{ word: "जानता", ref: "hi-0790" }, { word: "हूँ", ref: "hi-0780" }] }
+  - id: "hi-0791"
+    target: "रहना"
+    target_scripts: { perso_arabic: "رہنا" }
+    reading: "rahnā"
+    ipa: "rəɦnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "रहा", reading: "rahā" }, { word: "रही", reading: "rahī" }] }
+      - { id: "use", kind: "usage", words: [{ word: "शहर में रहना", reading: "śahr mēm̐ rahnā" }] }
+    examples:
+      - { target: "हम दिल्ली में रहते हैं।", reading: "ham dillī mēm̐ rahte haim̐.", ipa: "ɦəm d̪ɪlliː mẽː rəɦt̪eː ɦɛ̃ː", bases: [{ word: "रहते", ref: "hi-0791" }, { word: "हैं", ref: "hi-0780" }] }
+      - { target: "वह यहाँ कब तक रहेगा?", reading: "vah yahām̐ kab tak rahēgā?", ipa: "ʋəɦ jəɦãː kəb t̪ək rəɦeːɡaː", bases: [{ word: "रहेगा", ref: "hi-0791" }] }
+  - id: "hi-0792"
+    target: "चाहना"
+    target_scripts: { perso_arabic: "چاہنا" }
+    reading: "cāhnā"
+    ipa: "tʃaːɦnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "चाहा", reading: "cāhā" }, { word: "चाही", reading: "cāhī" }] }
+      - { id: "need", kind: "usage", words: [{ word: "मुझे पानी चाहिए", reading: "mujhē pānī cāhiē" }] }
+    examples:
+      - { target: "मैं एक कप चाय चाहता हूँ।", reading: "maim̐ ek kap cāy cāhtā hūm̐.", ipa: "mɛ̃ː eːk kəp tʃaːj tʃaːɦt̪aː ɦũː", bases: [{ word: "चाहता", ref: "hi-0792" }, { word: "हूँ", ref: "hi-0780" }] }
+      - { target: "वे कुछ और चाहते हैं।", reading: "vē kuch aur cāhte haim̐.", ipa: "ʋeː kʊtʃʰ ɔːr tʃaːɦt̪eː ɦɛ̃ː", bases: [{ word: "चाहते", ref: "hi-0792" }, { word: "हैं", ref: "hi-0780" }] }
+  - id: "hi-0793"
+    target: "मिलना"
+    target_scripts: { perso_arabic: "ملنا" }
+    reading: "milnā"
+    ipa: "mɪlnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "मिला", reading: "milā" }, { word: "मिली", reading: "milī" }] }
+      - { id: "use", kind: "usage", words: [{ word: "दोस्त से मिलना", reading: "dōst sē milnā" }] }
+    examples:
+      - { target: "कल मैं अपने दोस्त से मिला।", reading: "kal maim̐ apnē dōst sē milā.", ipa: "kəl mɛ̃ː əpneː d̪oːst̪ seː mɪlaː", bases: [{ word: "अपने", ref: "hi-0760" }, { word: "मिला", ref: "hi-0793" }] }
+      - { target: "आज शाम हम मिलेंगे।", reading: "āj śām ham milēm̐gē.", ipa: "aːdʒ ʃaːm ɦəm mɪleːŋɡeː", bases: [{ word: "मिलेंगे", ref: "hi-0793" }] }
+    synonyms:
+      - { id: "meet-sanskrit", word: "भेंट करना", reading: "bhēnṭ karnā", ipa: "bʱeːɳʈ kərnaː" }
+      - { id: "meet-persian", word: "मुलाक़ात करना", reading: "mulāqāt karnā", ipa: "mʊlaːqaːt̪ kərnaː" }
+    collocations:
+      - { id: "friend", word: "दोस्त", reading: "dōst", ipa: "d̪oːst̪" }
+  - id: "hi-0794"
+    target: "ख़रीदना"
+    target_scripts: { perso_arabic: "خریدنا" }
+    reading: "k͟harīdnā"
+    ipa: "xəriːd̪naː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "ख़रीदा", reading: "k͟harīdā" }, { word: "ख़रीदी", reading: "k͟harīdī" }] }
+      - { id: "use", kind: "usage", words: [{ word: "सब्ज़ी ख़रीदना", reading: "sabzī k͟harīdnā" }] }
+    examples:
+      - { target: "माँ बाज़ार से सब्ज़ी ख़रीदती हैं।", reading: "mām̐ bāzār sē sabzī k͟harīdtī haim̐.", ipa: "mãː baːzaːr seː səbziː xəriːd̪t̪iː ɦɛ̃ː", bases: [{ word: "ख़रीदती", ref: "hi-0794" }, { word: "हैं", ref: "hi-0780" }] }
+      - { target: "उसने नई कार ख़रीदी।", reading: "usnē nayī kār k͟harīdī.", ipa: "ʊsneː nəiː kaːr xəriːd̪iː", bases: [{ word: "उसने", ref: "hi-0749" }, { word: "नई", base: "नया", reading: "nayā" }, { word: "ख़रीदी", ref: "hi-0794" }] }
+    antonyms:
+      - { id: "sell", ref: "hi-0795" }
+    collocations:
+      - { id: "vegetables", word: "सब्ज़ी", reading: "sabzī", ipa: "səbziː" }
+  - id: "hi-0795"
+    target: "बेचना"
+    target_scripts: { perso_arabic: "بیچنا" }
+    reading: "bēcnā"
+    ipa: "beːtʃnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "बेचा", reading: "bēcā" }, { word: "बेची", reading: "bēcī" }] }
+    examples:
+      - { target: "वह पुरानी साइकिल बेचता है।", reading: "vah purānī saikil bēctā hai.", ipa: "ʋəɦ pʊraːniː saːɪkɪl beːtʃt̪aː ɦɛː", bases: [{ word: "पुरानी", base: "पुराना", reading: "purānā" }, { word: "बेचता", ref: "hi-0795" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "हम दूध बेचते हैं।", reading: "ham dūdh bēcte haim̐.", ipa: "ɦəm d̪uːd̪ʱ beːtʃt̪eː ɦɛ̃ː", bases: [{ word: "बेचते", ref: "hi-0795" }, { word: "हैं", ref: "hi-0780" }] }
+    synonyms:
+      - { id: "sell-persian", word: "फ़रोख़्त करना", reading: "farōk͟ht karnā", ipa: "fəroːxt̪ kərnaː" }
+    antonyms:
+      - { id: "buy", ref: "hi-0794" }
+    collocations:
+      - { id: "milk", word: "दूध", reading: "dūdh", ipa: "d̪uːd̪ʱ" }
+  - id: "hi-0796"
+    target: "बताना"
+    target_scripts: { perso_arabic: "بتانا" }
+    reading: "batānā"
+    ipa: "bət̪aːnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "बताया", reading: "batāyā" }, { word: "बताई", reading: "batāī" }] }
+      - { id: "way", kind: "usage", words: [{ word: "रास्ता बताना", reading: "rāstā batānā" }] }
+    examples:
+      - { target: "उसने मुझे अपना नाम बताया।", reading: "usnē mujhē apnā nām batāyā.", ipa: "ʊsneː mʊdʒʱeː əpnaː naːm bət̪aːjaː", bases: [{ word: "उसने", ref: "hi-0749" }, { word: "मुझे", ref: "hi-0745" }, { word: "बताया", ref: "hi-0796" }] }
+      - { target: "क्या आप मुझे रास्ता बताएँगे?", reading: "kyā āp mujhē rāstā batāēm̐gē?", ipa: "kjaː aːp mʊdʒʱeː raːst̪aː bət̪aːẽːɡeː", bases: [{ word: "मुझे", ref: "hi-0745" }, { word: "बताएँगे", ref: "hi-0796" }] }
+    synonyms:
+      - { id: "inform", word: "सूचित करना", reading: "sūcit karnā", ipa: "suːtʃɪt̪ kərnaː" }
+    collocations:
+      - { id: "name", word: "नाम", reading: "nām", ipa: "naːm" }
+  - id: "hi-0797"
+    target: "भेजना"
+    target_scripts: { perso_arabic: "بھیجنا" }
+    reading: "bhējnā"
+    ipa: "bʱeːdʒnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "भेजा", reading: "bhējā" }, { word: "भेजी", reading: "bhējī" }] }
+      - { id: "money", kind: "usage", words: [{ word: "पैसे भेजना", reading: "paisē bhējnā" }] }
+    examples:
+      - { target: "मैंने उसे एक ईमेल भेजा।", reading: "mainē usē ek īmēl bhējā.", ipa: "mɛːnneː ʊseː eːk iːmeːl bʱeːdʒaː", bases: [{ word: "मैंने", ref: "hi-0745" }, { word: "उसे", ref: "hi-0749" }, { word: "भेजा", ref: "hi-0797" }] }
+      - { target: "पैसे भेजिए।", reading: "paisē bhējiē.", ipa: "pɛːseː bʱeːdʒɪeː", bases: [{ word: "पैसे", base: "पैसा", reading: "paisā" }, { word: "भेजिए", ref: "hi-0797" }] }
+    collocations:
+      - { id: "money", word: "पैसे", reading: "paisē", ipa: "pɛːseː" }
+  - id: "hi-0798"
+    target: "धोना"
+    target_scripts: { perso_arabic: "دھونا" }
+    reading: "dhōnā"
+    ipa: "d̪ʱoːnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "धोया", reading: "dhōyā" }, { word: "धोई", reading: "dhōī" }] }
+      - { id: "use", kind: "usage", words: [{ word: "कपड़े धोना", reading: "kapṛē dhōnā" }, { word: "हाथ धोना", reading: "hāth dhōnā" }] }
+    examples:
+      - { target: "माँ सुबह कपड़े धोती है।", reading: "mām̐ subah kapṛē dhōtī hai.", ipa: "mãː sʊbəɦ kəpɽeː d̪ʱoːt̪iː ɦɛː", bases: [{ word: "धोती", ref: "hi-0798" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "खाने से पहले हाथ धोओ।", reading: "khānē sē pahlē hāth dhōō.", ipa: "kʰaːneː seː pəɦleː ɦaːt̪ʰ d̪ʱoːoː", bases: [{ word: "खाने", ref: "hi-0332" }, { word: "धोओ", ref: "hi-0798" }] }
+    collocations:
+      - { id: "clothes", word: "कपड़े", reading: "kapṛē", ipa: "kəpɽeː" }
+  - id: "hi-0799"
+    target: "पूछना"
+    target_scripts: { perso_arabic: "پوچھنا" }
+    reading: "pūchnā"
+    ipa: "puːtʃʰnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "पूछा", reading: "pūchā" }, { word: "पूछी", reading: "pūchī" }] }
+      - { id: "way", kind: "usage", words: [{ word: "रास्ता पूछना", reading: "rāstā pūchnā" }] }
+    examples:
+      - { target: "उसने मुझसे नाम पूछा।", reading: "usnē mujhsē nām pūchā.", ipa: "ʊsneː mʊdʒʱseː naːm puːtʃʰaː", bases: [{ word: "उसने", ref: "hi-0749" }, { word: "मुझसे", ref: "hi-0745" }, { word: "पूछा", ref: "hi-0799" }] }
+      - { target: "आप पुलिस से पूछिए।", reading: "āp pulis sē pūchiē.", ipa: "aːp pʊlɪs seː puːtʃʰɪeː", bases: [{ word: "पूछिए", ref: "hi-0799" }] }
+    synonyms:
+      - { id: "ask-sanskrit", word: "प्रश्न करना", reading: "praśn karnā", ipa: "prəʃn kərnaː" }
+      - { id: "ask-persian", word: "सवाल करना", reading: "savāl karnā", ipa: "səʋaːl kərnaː" }
+    collocations:
+      - { id: "way", word: "रास्ता", reading: "rāstā", ipa: "raːst̪aː" }
+  - id: "hi-0800"
+    target: "कहना"
+    target_scripts: { perso_arabic: "کہنا" }
+    reading: "kahnā"
+    ipa: "kəɦnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "कहा", reading: "kahā" }, { word: "कही", reading: "kahī" }] }
+      - { id: "name", kind: "usage", words: [{ word: "इसे क्या कहते हैं?", reading: "isē kyā kahte haim̐?" }] }
+    examples:
+      - { target: "वे क्या कह रहे हैं?", reading: "vē kyā kah rahē haim̐?", ipa: "ʋeː kjaː kəɦ rəɦeː ɦɛ̃ː", bases: [{ word: "कह", ref: "hi-0800" }, { word: "रहे", ref: "hi-0791" }, { word: "हैं", ref: "hi-0780" }] }
+      - { target: "उसने सच कहा।", reading: "usnē sac kahā.", ipa: "ʊsneː sətʃ kəɦaː", bases: [{ word: "उसने", ref: "hi-0749" }, { word: "कहा", ref: "hi-0800" }] }
+    synonyms:
+      - { id: "state-sanskrit", word: "कथन करना", reading: "kathan karnā", ipa: "kət̪ʰən kərnaː" }
+    collocations:
+      - { id: "truth", word: "सच", reading: "sac", ipa: "sətʃ" }
+  - id: "hi-0801"
+    target: "चलना"
+    target_scripts: { perso_arabic: "چلنا" }
+    reading: "calnā"
+    ipa: "tʃəlnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "past", kind: "behaviour", words: [{ word: "चला", reading: "calā" }, { word: "चली", reading: "calī" }] }
+      - { id: "clock", kind: "usage", words: [{ word: "घड़ी चलना", reading: "ghaṛī calnā" }] }
+    examples:
+      - { target: "वह रोज़ सुबह पार्क तक चलता है।", reading: "vah rōz subah pārk tak caltā hai.", ipa: "ʋəɦ roːz sʊbəɦ paːrk t̪ək tʃəlt̪aː ɦɛː", bases: [{ word: "चलता", ref: "hi-0801" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "घड़ी ठीक चल रही है।", reading: "ghaṛī ṭhīk cal rahī hai.", ipa: "ɡʱəɽiː ʈʰiːk tʃəl rəɦiː ɦɛː", bases: [{ word: "चल", ref: "hi-0801" }, { word: "रही", ref: "hi-0791" }, { word: "है", ref: "hi-0780" }] }
+    collocations:
+      - { id: "clock", word: "घड़ी", reading: "ghaṛī", ipa: "ɡʱəɽiː" }
+  - ref: "hi-0441"
+  - ref: "hi-0442"
+  - ref: "hi-0450"
+  - ref: "hi-0114"
+  - ref: "hi-0332"
