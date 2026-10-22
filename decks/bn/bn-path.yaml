@@ -281,11 +281,14 @@ units:
       - { id: "which-floor", text: { "en": "Finding a flat: the first floor, the second, the third" } }
     reading_passages:
       - { id: "month-calendar", text: { "en": "A calendar of events: the first, second and third week of the month" } }
-  - planned: { id: "bn-festivals", theme: "festivals", words: 40 }
+  - decks: ["bn-festivals", "bn-festivals-sentences", "*"]
+    words: 40
     listening_passages:
       - { id: "puja-plans", text: { "en": "Neighbours plan the days of a festival together" } }
     reading_passages:
       - { id: "festival-invitation", text: { "en": "An invitation to a festival meal" } }
+  - decks: ["bn-reading-festivals"]
+    words: 0
   - decks: ["bn-grammar-perfect", "bn-grammar-past-negative"]
     words: 0
     grammar: ["perfect", "past-negative"]
