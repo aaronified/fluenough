@@ -1174,7 +1174,13 @@ class DrillSession extends ChangeNotifier {
         asked: ask,
       );
     }
-    _answers.add(SessionAnswer(skill: Skill.of(entry.mode), grade: grade));
+    _answers.add(
+      SessionAnswer(
+        skill: Skill.of(entry.mode),
+        grade: grade,
+        time: _watch.elapsed,
+      ),
+    );
   }
 
   /// Whether the current typed answer was graded as its reading, in Latin
