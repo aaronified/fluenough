@@ -96,10 +96,12 @@ contributor.
 - **Tests check behaviour** (owner, 2026-10-20). The rule is in
   [AGENTS.md](AGENTS.md), "Tests check behaviour".
 - **Tests run only in CI** (owner, 2026-10-17: "You should not run tests
-  locally at all"; on the validator: "Why not let ci do it?"; 2026-10-22).
+  locally at all"; on the validator: "Why not let ci do it?"; 2026-10-22: "Doc
+  pushes do not need CI.").
   No agent runs the tests or the deck validator locally, and none is launched
-  just to run tests. CI runs them for free. Every commit, docs pushed to main
-  included, is checked by CI: after pushing, read CI's result.
+  just to run tests. CI runs them for free. Code and deck commits are checked
+  by CI: after pushing, read CI's result. A docs-only push to main needs no CI
+  check.
 - **Irrelevant checks** (owner, 2026-10-22). When reading CI for a change,
   ignore failing checks that are irrelevant to it. A deck-only change needs
   only "Validate decks" and "Released app reads the decks" green (#524, owner,

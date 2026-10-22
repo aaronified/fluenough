@@ -301,8 +301,10 @@ second review runs only if the first caught a breaking bug (CLAUDE.md, owner,
 when the owner asks for a score.
 
 **Tests run only in CI.** No agent runs the tests or the validator locally,
-and none is launched just to run them. Push, then read CI's result, ignoring
-checks irrelevant to the change (CLAUDE.md, "How the owner works").
+and none is launched just to run them. Push code and deck changes, then read
+CI's result, ignoring checks irrelevant to the change (CLAUDE.md, "How the
+owner works"). A docs-only push to main needs no CI check (owner, 2026-10-22:
+"Doc pushes do not need CI.").
 
 ### Tests check behaviour
 
