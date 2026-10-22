@@ -195,6 +195,8 @@ class UserError extends UserState {
 ## 6. Testing
 
 ### Test types and expectations:
+This repository: tests check behaviour, and a change adds one only for a behaviour no test covers (AGENTS.md, "Tests check behaviour"). The coverage items below do not apply; do not flag a missing test unless the change adds an uncovered behaviour.
+
 - [ ] **Unit tests**: Cover all business logic (state managers, repositories, utility functions)
 - [ ] **Widget tests**: Cover individual widget behavior, interactions, and visual output
 - [ ] **Integration tests**: Cover critical user flows end-to-end

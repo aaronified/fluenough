@@ -82,4 +82,4 @@ flutter analyze
 flutter test
 ```
 
-CI runs all four.
+CI runs all four, so do not run them for a docs-only change. Write a test only as AGENTS.md says, "Tests check behaviour".
