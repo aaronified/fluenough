@@ -93,7 +93,7 @@ class _AskBadge extends StatelessWidget {
         border: Border.all(color: colors.surface, width: 1.5),
       ),
       child: Text(
-        '?',
+        '?', // ui-literal-ok: a symbol on a picture, not prose; no words to translate
         textScaler: TextScaler.noScaling,
         style: TextStyle(
           color: colors.onPrimary,
