@@ -1,0 +1,45 @@
+schema: 1
+id: "hi-en-reading-adverbs"
+name: "Reading: how often and how well"
+kind: reading
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short passages about how often and how well people do things, with the adverbs of the Adverbs unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-how-often"
+    title: "How often"
+    theme: "adverbs"
+    sentences:
+      - { text: "मैं रोज़ सुबह घर पर पढ़ता हूँ।", reading: "maim̐ rōz subah ghar par paṛhtā hūm̐.", ipa: "mɛ̃ː roːz sʊbəɦ ɡʱər pər pəɽʱt̪aː ɦũː" }
+      - { text: "मैं अक्सर धीरे चलता हूँ।", reading: "maim̐ aksar dhīrē caltā hūm̐.", ipa: "mɛ̃ː əksər d̪ʱiːreː tʃəlt̪aː ɦũː" }
+      - { text: "कभी-कभी मेरे दोस्त साथ आते हैं।", reading: "kabhī-kabhī mērē dōst sāth ātē haim̐.", ipa: "kəbʱiːkəbʱiː meːreː d̪oːst̪ saːt̪ʰ aːt̪eː ɦɛ̃ː" }
+      - { text: "वे अच्छी तरह खेलते हैं।", reading: "vē acchī tarah khēltē haim̐.", ipa: "ʋeː ətʃtʃʰiː t̪ərəɦ kʰeːlt̪eː ɦɛ̃ː" }
+    questions:
+      - id: "hi-0861"
+        prompt: { en: "How often does the speaker study at home?" }
+        options: [{ en: "Every morning" }, { en: "Never" }]
+        answer: 1
+      - id: "hi-0862"
+        prompt: { en: "Who comes along sometimes?" }
+        options: [{ en: "The speaker's friends" }, { en: "Nobody" }]
+        answer: 1
+  - id: "hi-habit-survey"
+    title: "A habits survey"
+    theme: "adverbs"
+    sentences:
+      - { text: "आप कितनी बार चाय पीते हैं?", reading: "āp kitnī bār cāy pītē haim̐?", ipa: "aːp kɪt̪niː baːr tʃaːj piːt̪eː ɦɛ̃ː" }
+      - { text: "मैं हमेशा सुबह चाय पीता हूँ।", reading: "maim̐ hamēśā subah cāy pītā hūm̐.", ipa: "mɛ̃ː ɦəmeːʃaː sʊbəɦ tʃaːj piːt̪aː ɦũː" }
+      - { text: "मेरी बहन कभी नहीं पीती।", reading: "mērī bahan kabhī nahīm̐ pītī.", ipa: "meːriː bəɦən kəbʱiː nəɦĩː piːt̪iː" }
+      - { text: "हम हर हफ़्ते फ़िल्म देखते हैं।", reading: "ham har haftē film dēkhtē haim̐.", ipa: "ɦəm ɦər ɦəft̪eː fɪlm d̪eːkʰt̪eː ɦɛ̃ː" }
+    questions:
+      - id: "hi-0863"
+        prompt: { en: "How often does the speaker drink tea?" }
+        options: [{ en: "Always in the morning" }, { en: "Never" }]
+        answer: 1
+      - id: "hi-0864"
+        prompt: { en: "How often does the speaker's sister drink tea?" }
+        options: [{ en: "Every week" }, { en: "Never" }]
+        answer: 2
