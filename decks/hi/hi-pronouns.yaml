@@ -1,0 +1,233 @@
+schema: 1
+id: "hi-pronouns"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "pronouns"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-0745"
+    target: "मैं"
+    target_scripts: { perso_arabic: "میں" }
+    reading: "maim̐"
+    ipa: "mɛ̃ː"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "forms", kind: "behaviour", words: [{ word: "मुझे", reading: "mujhē" }] }
+    examples:
+      - { target: "मैं पढ़ता हूँ।", reading: "maim̐ paṛhtā hūm̐.", bases: [{ word: "पढ़ता", base: "पढ़ना", reading: "paṛhnā" }, { word: "हूँ", base: "होना", reading: "hōnā" }] }
+      - { target: "मैं तैयार हूँ।", reading: "maim̐ taiyār hūm̐.", bases: [{ word: "तैयार", base: "तैयार", reading: "taiyār" }, { word: "हूँ", base: "होना", reading: "hōnā" }] }
+  - id: "hi-0746"
+    target: "तू"
+    reading: "tū"
+    ipa: "t̪uː"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "तू कैसा है?", reading: "tū kaisā hai?", bases: [{ word: "कैसा", base: "कैसा", reading: "kaisā" }] }
+      - { target: "तू मेरा दोस्त है।", reading: "tū merā dōst hai." }
+  - id: "hi-0747"
+    target: "तुम"
+    reading: "tum"
+    ipa: "t̪ʊm"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "तुम कैसे हो?", reading: "tum kaise ho?", bases: [{ word: "हो", base: "होना", reading: "hōnā" }] }
+      - { target: "तुम्हारा नाम क्या है?", reading: "tumhārā nām kyā hai?" }
+  - id: "hi-0748"
+    target: "यह"
+    reading: "yah"
+    ipa: "jəɦ"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "near", kind: "behaviour", words: [{ word: "ये", reading: "yē" }] }
+    examples:
+      - { target: "यह मेरा घर है।", reading: "yah merā ghar hai." }
+      - { target: "यह मेरी बहन है।", reading: "yah merī bahan hai.", bases: [{ word: "मेरी", base: "मेरा", reading: "mērā" }] }
+  - id: "hi-0749"
+    target: "वह"
+    reading: "vah"
+    ipa: "ʋəɦ"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "far", kind: "behaviour", words: [{ word: "उसका", reading: "uskā" }] }
+    examples:
+      - { target: "वह मेरा भाई है।", reading: "vah merā bʰāī hai." }
+      - { target: "उसका नाम क्या है?", reading: "uskā nām kyā hai?" }
+  - id: "hi-0750"
+    target: "ये"
+    reading: "yē"
+    ipa: "jeː"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ये मेरे दोस्त हैं।", reading: "yē merē dōst haim̐.", bases: [{ word: "मेरे", base: "मेरा", reading: "mērā" }] }
+      - { target: "ये लोग कौन हैं?", reading: "yē log kaun haim̐?" }
+  - id: "hi-0751"
+    target: "वे"
+    reading: "vē"
+    ipa: "ʋeː"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "वे मेरे दोस्त हैं।", reading: "vē merē dōst haim̐.", bases: [{ word: "मेरे", base: "मेरा", reading: "mērā" }] }
+      - { target: "वे लोग कहाँ हैं?", reading: "vē log kahām̐ haim̐?" }
+  - id: "hi-0752"
+    target: "मेरा"
+    reading: "mērā"
+    ipa: "meːraː"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "stem", kind: "behaviour", words: [{ word: "मेरे", reading: "mērē" }, { word: "मेरी", reading: "mērī" }] }
+    examples:
+      - { target: "मेरा नाम क्या है?", reading: "mērā nām kyā hai?" }
+      - { target: "मेरे दोस्त कहाँ हैं?", reading: "mērē dōst kahām̐ haim̐?", bases: [{ word: "मेरे", base: "मेरा", reading: "mērā" }] }
+  - id: "hi-0753"
+    target: "तेरा"
+    reading: "tērā"
+    ipa: "t̪eːraː"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "stem", kind: "behaviour", words: [{ word: "तेरे", reading: "tērē" }, { word: "तेरी", reading: "tērī" }] }
+    examples:
+      - { target: "तेरा नाम क्या है?", reading: "tērā nām kyā hai?" }
+      - { target: "तेरे दोस्त कहाँ हैं?", reading: "tērē dōst kahām̐ haim̐?", bases: [{ word: "तेरे", base: "तेरा", reading: "tērā" }] }
+  - id: "hi-0754"
+    target: "तुम्हारा"
+    reading: "tumhārā"
+    ipa: "t̪ʊmɦaːraː"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "stem", kind: "behaviour", words: [{ word: "तुम्हारे", reading: "tumhārē" }, { word: "तुम्हारी", reading: "tumhārī" }] }
+    examples:
+      - { target: "तुम्हारी बहन कहाँ है?", reading: "tumhārī bahan kahām̐ hai?", bases: [{ word: "तुम्हारी", base: "तुम्हारा", reading: "tumhārā" }] }
+      - { target: "तुम्हारे भाई यहाँ हैं।", reading: "tumhārē bʰāī yahām̐ haim̐.", bases: [{ word: "तुम्हारे", base: "तुम्हारा", reading: "tumhārā" }] }
+  - id: "hi-0755"
+    target: "आपका"
+    reading: "āpkā"
+    ipa: "aːpkaː"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "stem", kind: "behaviour", words: [{ word: "आपके", reading: "āpkē" }, { word: "आपकी", reading: "āpkī" }] }
+    examples:
+      - { target: "आपका नाम क्या है?", reading: "āpkā nām kyā hai?" }
+      - { target: "आपकी बहन कहाँ है?", reading: "āpkī bahan kahām̐ hai?", bases: [{ word: "आपकी", base: "आपका", reading: "āpkā" }] }
+  - id: "hi-0756"
+    target: "हमारा"
+    reading: "hamārā"
+    ipa: "ɦəmaːraː"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "stem", kind: "behaviour", words: [{ word: "हमारे", reading: "hamārē" }, { word: "हमारी", reading: "hamārī" }] }
+    examples:
+      - { target: "हमारा घर यहाँ है।", reading: "hamārā ghar yahām̐ hai." }
+      - { target: "हमारे पड़ोसी कौन हैं?", reading: "hamārē paṛosī kaun haim̐?", bases: [{ word: "हमारे", base: "हमारा", reading: "hamārā" }] }
+  - id: "hi-0757"
+    target: "उसका"
+    reading: "uskā"
+    ipa: "ʊskaː"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "stem", kind: "behaviour", words: [{ word: "उसके", reading: "uskē" }, { word: "उसकी", reading: "uskī" }] }
+    examples:
+      - { target: "उसकी बहन कहाँ है?", reading: "uskī bahan kahām̐ hai?", bases: [{ word: "उसकी", base: "उसका", reading: "uskā" }] }
+      - { target: "उसके दोस्त यहाँ हैं।", reading: "uskē dōst yahām̐ haim̐.", bases: [{ word: "उसके", base: "उसका", reading: "uskā" }] }
+  - id: "hi-0758"
+    target: "कोई"
+    reading: "kōī"
+    ipa: "koːiː"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "nobody", kind: "behaviour", words: [{ word: "कोई नहीं", reading: "koī nahīm̐" }] }
+    examples:
+      - { target: "कोई आया है।", reading: "koī āyā hai.", bases: [{ word: "आया", base: "आना", reading: "ānā" }] }
+      - { target: "क्या कोई है?", reading: "kyā koī hai?" }
+  - id: "hi-0759"
+    target: "कुछ"
+    reading: "kuch"
+    ipa: "kʊtʃʰ"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "some", kind: "behaviour", words: [{ word: "कुछ लोग", reading: "kuch log" }] }
+    examples:
+      - { target: "मुझे कुछ चाहिए।", reading: "mujhē kuch cāhiē.", bases: [{ word: "मुझे", base: "मैं", reading: "mujhē" }, { word: "चाहिए", base: "चाहिए", reading: "cāhiē" }] }
+      - { target: "कुछ लोग आए।", reading: "kuch log āe.", bases: [{ word: "आए", base: "आना", reading: "ānā" }] }
+  - id: "hi-0760"
+    target: "अपना"
+    reading: "apnā"
+    ipa: "əpnaː"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "own", kind: "behaviour", words: [{ word: "अपने", reading: "apnē" }, { word: "अपनी", reading: "apnī" }] }
+    examples:
+      - { target: "यह मेरा अपना घर है।", reading: "yah merā apnā ghar hai." }
+      - { target: "उसने अपना नाम बताया।", reading: "usnē apnā nām batāyā.", bases: [{ word: "उसने", base: "वह", reading: "vah" }, { word: "बताया", base: "बताना", reading: "batānā" }] }
+  - id: "hi-0761"
+    target: "लोग"
+    reading: "lōg"
+    ipa: "loːɡ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "सब लोग यहाँ रहते हैं।", reading: "sab log yahām̐ rahte haim̐.", bases: [{ word: "रहते", base: "रहना", reading: "rahnā" }] }
+      - { target: "लोग क्या कहते हैं?", reading: "log kyā kahte haim̐?", bases: [{ word: "कहते", base: "कहना", reading: "kahnā" }] }
+  - id: "hi-0762"
+    target: "आदमी"
+    reading: "ādmī"
+    ipa: "aːd̪miː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "वह आदमी कहाँ है?", reading: "vah ādmī kahām̐ hai?" }
+      - { target: "यह आदमी मेरा भाई है।", reading: "yah ādmī merā bʰāī hai." }
+  - id: "hi-0763"
+    target: "औरत"
+    reading: "aurat"
+    ipa: "ɔːrət̪"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "वह औरत कौन है?", reading: "vah aurat kaun hai?" }
+      - { target: "यह औरत मेरी बहन है।", reading: "yah aurat merī bahan hai.", bases: [{ word: "मेरी", base: "मेरा", reading: "mērā" }] }
+  - id: "hi-0764"
+    kind: "set"
+    members: [{ ref: "hi-0745" }, { ref: "hi-0053" }]
+  - id: "hi-0765"
+    kind: "set"
+    members: [{ ref: "hi-0134" }, { ref: "hi-0747" }, { ref: "hi-0746" }]
+  - id: "hi-0766"
+    kind: "set"
+    members: [{ ref: "hi-0748" }, { ref: "hi-0749" }, { ref: "hi-0750" }, { ref: "hi-0751" }]
+  - ref: "hi-0134"
+  - ref: "hi-0053"
+  - ref: "hi-0158"
+  - ref: "hi-0054"
+  - ref: "hi-0185"
