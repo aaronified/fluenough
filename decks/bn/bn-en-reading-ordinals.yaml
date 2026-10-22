@@ -1,0 +1,40 @@
+schema: 1
+id: "bn-en-reading-ordinals"
+name: "Reading: ordinal numbers"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Two short texts that use the ordinals, first to fourth, before a noun: the floor of a flat and the weeks of a month. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-which-floor"
+    title: "Finding a flat"
+    sentences:
+      - { text: "আমার ফ্ল্যাট দ্বিতীয় তলায়।", reading: "āmār flêṭ ditiy tôlāy.", ipa: "amar flæʈ d̪it̪ij t̪ɔlaj" }
+      - { text: "তৃতীয় তলায় কে থাকে?", reading: "tritiy tôlāy ke thāke?", ipa: "t̪rit̪ij t̪ɔlaj ke t̪ʰake" }
+      - { text: "প্রথম তলায় একটা দোকান আছে।", reading: "prôthom tôlāy ekṭā dokān āche.", ipa: "prɔt̪ʰom t̪ɔlaj ekʈa d̪okan atʃʰe" }
+      - { text: "চতুর্থ তলার ফ্ল্যাট খালি।", reading: "coturth tôlār flêṭ khāli.", ipa: "tʃot̪urt̪ʰ t̪ɔlar flæʈ kʰali" }
+    questions:
+      - id: "bn-1627"
+        prompt: { "en": "The writer's flat is on the second floor." }
+        answer: true
+      - id: "bn-1628"
+        prompt: { "en": "Where is the shop?" }
+        options: [{ "en": "On the first floor" }, { "en": "On the second floor" }]
+        answer: 1
+  - id: "bn-month-calendar"
+    title: "A calendar of events"
+    sentences:
+      - { text: "মাসের প্রথম সপ্তাহে সভা।", reading: "māśer prôthom sôptāhe śôbhā.", ipa: "maʃer prɔt̪ʰom sɔpt̪aɦe ʃɔbʱa" }
+      - { text: "মাসের দ্বিতীয় সপ্তাহে ছুটি।", reading: "māśer ditiy sôptāhe chuṭi.", ipa: "maʃer d̪it̪ij sɔpt̪aɦe tʃʰuʈi" }
+      - { text: "মাসের তৃতীয় সপ্তাহে পরীক্ষা।", reading: "māśer tritiy sôptāhe porikkhā.", ipa: "maʃer t̪rit̪ij sɔpt̪aɦe porikkʰa" }
+    questions:
+      - id: "bn-1629"
+        prompt: { "en": "When is the exam?" }
+        options: [{ "en": "In the first week" }, { "en": "In the third week" }]
+        answer: 2
+      - id: "bn-1630"
+        prompt: { "en": "The holiday is in the second week of the month." }
+        answer: true
