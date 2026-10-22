@@ -285,18 +285,24 @@ people fall into under time pressure.
 
 | Tier | Work | Model |
 | --- | --- | --- |
-| cheap | Searching, extraction, parsing, grouping, transcribing, running a test suite, running a linter | Haiku |
+| cheap | Searching, extraction, parsing, grouping, transcribing | Haiku |
 | standard | Writing, synthesis and review with judgement | Sonnet |
 
 For work done for the owner, the table in [CLAUDE.md](CLAUDE.md) decides
-instead, along with how many agents may run at once.
+instead, along with how many agents may run at once. Opus is used only when
+the owner asks (CLAUDE.md, owner, 2026-10-22).
 
 **One review before calling it done** (owner, 2026-10-12: the independent
 8/10 rating is dropped; "the review is enough"). A change gets one
-independent review, which reports only blocking defects it has confirmed.
-Fix those, then finish. No rating, no second review, no extra verification
-pass. The work-rating skill (`.claude/skills/work-rating/SKILL.md`) runs only
+independent Sonnet review, which reports only blocking defects it has
+confirmed. Fix those, then finish. No rating, no extra verification pass; a
+second review runs only if the first caught a breaking bug (CLAUDE.md, owner,
+2026-10-22). The work-rating skill (`.claude/skills/work-rating/SKILL.md`) runs only
 when the owner asks for a score.
+
+**Tests run only in CI.** No agent runs the tests or the validator locally,
+and none is launched just to run them. Push, then read CI's result, ignoring
+checks irrelevant to the change (CLAUDE.md, "How the owner works").
 
 ### Tests check behaviour
 

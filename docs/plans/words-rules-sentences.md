@@ -245,5 +245,6 @@ Every path is rebuilt to this design: phrasebook, the first word units, the
 script, the ~200-word core, then rules as forms and set cards, with sentences
 waiting until their words and rules are known (owner, 2026-10-17: "build the
 path files for all present languages via an opus agent, as per our current
-path design").
+path design"). Now Haiku writes decks and Sonnet reviews them (Opus only if
+the owner asks, 2026-10-22).
 

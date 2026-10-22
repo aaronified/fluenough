@@ -348,10 +348,11 @@ behaviour and no app code change in any of them.
 
 1. Delete the 73 files marked delete (Sonnet). The quickest win: most of
    the 2.0x layouts go here.
-2. Rewrite `accessibility_test.dart` as the per-screen check (Opus, being
-   several files' worth of harness).
+2. Rewrite `accessibility_test.dart` as the per-screen check (Sonnet; was Opus,
+   Opus only if the owner asks, 2026-10-22).
 3. One pull request per new file, merging and trimming its sources
-   (Sonnet, reviewed by Opus): deck format, grading, scheduling, database,
+   (Sonnet, reviewed by Sonnet; was Opus,
+   Opus only if the owner asks, 2026-10-22): deck format, grading, scheduling, database,
    backup, downloads, voices, languages and scripts, lesson and review,
    progress, reviewing, settings, onboarding, app update.
 4. Python: fold the validator files, then trim each tool's file (Sonnet).

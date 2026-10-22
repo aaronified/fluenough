@@ -178,4 +178,6 @@ Before you start:
    (CLAUDE.md). Contributors open a pull request on a branch
    `deck/<name>` ([CONTRIBUTING.md](../../../CONTRIBUTING.md), AGENTS.md
    "Branches, commits, pull requests"). Get one independent review (Sonnet)
-   before finishing; no extra passes. Say what you verified.
+   before finishing (CLAUDE.md, "Which model does what"); no extra passes.
+   Do not run the validator locally: push and read CI's result, ignoring
+   checks irrelevant to a deck. Say what you verified.
