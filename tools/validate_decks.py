@@ -143,7 +143,8 @@ HEADER_KEYS = {
 CARD_KEYS = {
     "id", "target", "native", "reading", "ipa", "alt_target", "alt_native",
     "pos", "gender", "tags", "notes", "audio", "examples", "modes", "pair",
-    "picture", "phrasebook", "bases", "rules", "wiktionary", "register", "frequency",
+    "picture", "picture_ask", "phrasebook", "bases", "rules", "wiktionary",
+    "register", "frequency",
     "audio_credit", "image", "image_credit", "target_scripts", "words",
 }
 # A ref lists a card written in another deck (ADR-0018). It may give its own
@@ -178,6 +179,7 @@ LAYER_HEADER_KEYS = {"schema", "id", "kind", "core", "native", "name",
 CORE_KINDS = ("vocab", "grammar", "rules")
 CORE_CARD_KEYS = {"id", "target", "reading", "ipa", "alt_target", "pos",
                   "gender", "tags", "audio", "examples", "modes", "picture",
+                  "picture_ask",
                   "notes", "phrasebook", "bases", "rules", "register", "frequency",
                   "synonyms", "antonyms", "collocations", "confusables", "forms",
                   "senses", "audio_credit", "image", "image_credit",
@@ -908,6 +910,12 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
 
     if "picture" in card:
         check_picture(r, where, card["picture"])
+    if "picture_ask" in card:
+        if card["picture_ask"] is not True:
+            r.error(where, f"picture_ask must be true, unquoted, or left out; "
+                           f"got {card['picture_ask']!r}")
+        elif "picture" not in card:
+            r.error(where, "picture_ask needs a picture: it puts a ? badge on it")
 
     if "phrasebook" in card and card["phrasebook"] is not True:
         r.error(where, f"phrasebook must be true, unquoted, or left out; got "

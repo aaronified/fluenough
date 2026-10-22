@@ -87,6 +87,7 @@ class CoreWritten extends CoreCard {
     this.examples = const <CoreExample>[],
     this.modes = const <DrillMode>{},
     this.picture,
+    this.pictureAsk = false,
     this.image,
     this.imageCredit,
     this.notes = const <CoreNote>[],
@@ -118,6 +119,7 @@ class CoreWritten extends CoreCard {
   final List<CoreExample> examples;
   final Set<DrillMode> modes;
   final String? picture;
+  final bool pictureAsk;
   final String? image;
   final MediaCredit? imageCredit;
   final List<CoreNote> notes;
@@ -795,6 +797,7 @@ class _Merge {
       // Notes).
       pair: notes.where((n) => n.kind == NoteKind.pair).firstOrNull?.ref,
       picture: card.picture,
+      pictureAsk: card.pictureAsk,
       image: card.image,
       imageCredit: card.imageCredit,
       phrasebook: card.phrasebook,
