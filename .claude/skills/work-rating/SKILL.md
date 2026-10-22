@@ -1,6 +1,6 @@
 ---
 name: work-rating
-description: Have an independent subagent rate a finished piece of work out of 10 against the user's own prompts, before reporting it complete. Use at the end of any substantial task, when the user asks how good the work was, or whenever a session's requests arrived in fragments and something may have been dropped.
+description: Opt-in, only when the owner asks. Have an independent subagent rate a finished piece of work out of 10 against the user's own prompts. Never run it at the end of a task on your own; the PR's one review is enough (owner, 2026-10-12, 2026-10-22).
 ---
 
 # Rate the work before calling it done
@@ -11,6 +11,8 @@ judge of whether it covered the request — especially in a session where the sc
 pieces, which is when a request goes missing.
 
 ## When to run it
+
+**Only when the owner asks for a score.** It is not a closing step. The one review per PR (CLAUDE.md, "Budget") is the only check. The list below says when it would help, if asked.
 
 - At the end of any task that touched more than a couple of files.
 - Whenever the user's requests arrived across several messages, or mid-task.
@@ -56,8 +58,7 @@ Collect, without editorialising:
 ### Step 2 — spawn the rater
 
 If your runtime supports subagents, spawn one with the body of `.claude/agents/work-rater.md`
-as its instructions and pass it the evidence from Step 1. It needs a strong model — this is
-judgement, not extraction.
+as its instructions and pass it the evidence from Step 1. Use Sonnet (CLAUDE.md, owner, 2026-10-22).
 
 **ITS OWN HELPERS RUN ON THE CHEAP TIER.** The owner's ruling of 27 September: a rater that
 fans out, or runs the screenshot bot, does it on the cheap tier. The judgement stays with the
@@ -136,7 +137,7 @@ the owner stopped it.
 ### Step 3 — act on it, then report
 
 1. **Fix what the rater found**, if it found something real, before you report anything. A
-   rating is a work item, not a verdict to be filed. Re-run the affected tests after fixing.
+   rating is a work item, not a verdict to be filed. CI re-runs the tests after the fix.
 2. **Report the score as given**, then the findings, then what you did about each. If you
    disagree with a finding, say so in one line with the reason — do not silently drop it.
 3. **Re-rate only after fixing**, and only by handing the rater the new diff. Do not ask it
@@ -202,7 +203,6 @@ should cost more than any implementation flaw.
 - [ ] Every agent the rater started, and every screenshot run, was on the cheap tier.
 - [ ] The score is reported exactly as given, alongside its findings.
 - [ ] Every finding was either fixed or answered in one line with a reason; none was dropped.
-- [ ] The affected tests were re-run after the fixes.
 - [ ] Any re-rate was made against a new diff.
 
 ---

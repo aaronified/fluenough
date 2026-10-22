@@ -1533,7 +1533,7 @@ pipeline yet again)."
 
 **Proposed rollout** for the checks that are enforced: a warning first, naming
 the card and the field; an error per language once its fill issue is closed;
-each new field lands with its check and its entry here, with tests.
+each new field lands with its check and its entry here; a test only for a behaviour no test covers yet (AGENTS.md, "Tests check behaviour").
 
 ### Card data: decided on 2026-10-13
 
@@ -2716,8 +2716,8 @@ error before moving on. Read the warnings; do not leave them unexplained.
     - every deck on the path once, and every split deck's old file gone;
     - `python3 tools/deck_index.py` run, and its `decks/index.json`
       committed with the decks;
-    - `python3 tools/validate_decks.py decks/` with no error, and
-      `flutter test`, which parses every deck the index lists;
+    - CI's "Validate decks" and `flutter test`, which parses every deck the
+      index lists, green (never run locally, CLAUDE.md);
     - the work reviewed once, as [CLAUDE.md](../CLAUDE.md) says: one
       review per change, and no extra verification passes. A contributor's
       pull request is reviewed in the pull request

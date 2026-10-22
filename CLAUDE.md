@@ -88,11 +88,8 @@ contributor.
   (owner, 2026-10-19).
 - **Reviewers** are bilingual and the meaning of a card never changes; new
   themes come only by pull request (`docs/plans/reviewing-scope.md`).
-- **Tests check behaviour** (owner, 2026-10-20: "there is no need for 4000+
-  tests. That can easily be cut down to about 100-500. You are testing every
-  code change. No point in that at all. You should only check behaviour.").
-  A test says what a learner or a deck author sees happen, not how the code
-  does it; a change adds a test only for a behaviour no test covers yet.
+- **Tests check behaviour** (owner, 2026-10-20). The rule is in
+  [AGENTS.md](AGENTS.md), "Tests check behaviour".
 - **CI.** A deck-only change needs only "Validate decks" and "Released app
   reads the decks" green (#524, owner, 2026-10-17).
 - **Budget.** Tokens are limited: one review per change, no extra

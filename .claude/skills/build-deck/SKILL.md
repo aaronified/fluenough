@@ -50,9 +50,7 @@ Before you start:
   teaches such a group writes one: kind `set`, members by ref, its name
   and explanation in each layer (DECK-FORMAT, "Set cards"). It gives the
   learner the set's button after answering a member (owner, 2026-10-20).
-- Model: Haiku at low effort writes decks, and Sonnet at medium effort reviews them (CLAUDE.md, owner, 2026-10-17). Haiku for large reads. A small
-  change to a tool or the validator is Sonnet, reviewed by Opus; only a
-  complex change across several files is Opus (owner, 2026-10-16).
+- Model: Haiku writes decks, and Sonnet reviews them once (CLAUDE.md, owner, 2026-10-22). Haiku for large reads. Any tool or validator change is Sonnet (CLAUDE.md, owner, 2026-10-22).
 
 ## Checklist
 
