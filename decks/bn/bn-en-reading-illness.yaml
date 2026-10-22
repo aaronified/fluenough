@@ -1,0 +1,78 @@
+"schema": 1
+"id": "bn-en-reading-illness"
+"name": "Reading: illness"
+"kind": "reading"
+"language":
+  "code": "bn"
+  "iso639_3": "ben"
+  "name": "Bengali"
+  "script": "bengali"
+  "tts": "bn-IN"
+  "icon": "বা"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for the Fluenough Bengali course"
+"description": "A phone call about a cold and a fever, and a medicine label, each with its questions. Not yet checked by a Bengali speaker: please report any mistake."
+"tags":
+  - "reading"
+  - "unreviewed"
+"passages":
+  - "id": "bn-a-cold-and-a-fever"
+    "title": "A cold and a fever"
+    "theme": "illness"
+    "sentences":
+      - "text": "হ্যালো আমি আজ কাজে যাইনি।"
+        "reading": "hêlo āmi āj kāje jāini."
+        "ipa": "ɦælo ami adʒ kadʒe dʒaini"
+      - "text": "আমার খুব ঠান্ডা লেগেছে।"
+        "reading": "āmār khub ṭhānḍā legeche."
+        "ipa": "amar kʰub ʈʰanɖa leɡetʃʰe"
+      - "text": "সঙ্গে জ্বরও হয়েছে।"
+        "reading": "sôṅge jôroo hôyeche."
+        "ipa": "sɔŋɡe dʒɔroo ɦɔjetʃʰe"
+      - "text": "ডাক্তার ওষুধ দিয়েছেন আর বিশ্রাম নিতে বলেছেন।"
+        "reading": "ḍāktār ośudh diyechen ār biśrām nite bôlechen."
+        "ipa": "ɖakt̪ar oʃud̪ʱ d̪ijetʃʰen ar biʃram nit̪e bɔletʃʰen"
+    "questions":
+      - "id": "bn-1826"
+        "prompt":
+          "en": "The speaker has a cold and a fever."
+        "answer": true
+      - "id": "bn-1827"
+        "prompt":
+          "en": "What did the doctor tell the speaker to do?"
+        "options":
+          - "en": "Rest and take the medicine"
+          - "en": "Go to work early"
+        "answer": 1
+  - "id": "bn-medicine-label"
+    "title": "Medicine label"
+    "theme": "illness"
+    "sentences":
+      - "text": "এই ওষুধ দিনে তিনবার খেতে হবে।"
+        "reading": "ei ośudh dine tinobār khete hôbe."
+        "ipa": "ei oʃud̪ʱ d̪ine t̪inobar kʰet̪e ɦɔbe"
+      - "text": "খালি পেটে খাবেন না।"
+        "reading": "khāli peṭe khāben nā."
+        "ipa": "kʰali peʈe kʰaben na"
+      - "text": "ঘুম পেতে পারে।"
+        "reading": "ghum pete pāre."
+        "ipa": "ɡʱum pet̪e pare"
+      - "text": "শিশুর নাগালের বাইরে রাখুন।"
+        "reading": "śiśur nāgāler bāire rākhun."
+        "ipa": "ʃiʃur naɡaler baire rakʰun"
+    "questions":
+      - "id": "bn-1828"
+        "prompt":
+          "en": "The medicine is taken three times a day."
+        "answer": true
+      - "id": "bn-1829"
+        "prompt":
+          "en": "What may this medicine make you feel?"
+        "options":
+          - "en": "Sleepy"
+          - "en": "Hungry"
+        "answer": 1

@@ -303,11 +303,14 @@ units:
   - decks: ["bn-grammar-past-more"]
     words: 0
     grammar: ["past-more"]
-  - planned: { id: "bn-illness", theme: "illness", words: 50 }
+  - decks: ["bn-illness", "bn-illness-sentences", "*"]
+    words: 50
     listening_passages:
       - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
     reading_passages:
       - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
+  - decks: ["bn-reading-illness"]
+    words: 0
   - planned: { id: "bn-grammar-compound-verbs", grammar: "compound-verbs" }
     listening_passages:
       - { id: "what-just-happened", text: { "en": "A neighbour tells what suddenly happened: fell down, sat down, went away" } }
