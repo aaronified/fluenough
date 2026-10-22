@@ -1,0 +1,108 @@
+# ADR-0033: FSRS in place of SM-2
+
+Source of truth: this wiki page.
+
+
+- **Status:** Accepted
+- **Date:** 2026-10-08
+- **Supersedes:** ADR-0005's choice of SM-2. Its review log and per-pair
+  scheduling stand.
+- **Amends:** ADR-0029 and ADR-0030: a revision from Today records every
+  answer, not only the misses.
+
+## Context
+
+ADR-0005 chose SM-2 for being about a hundred lines with no dependency, and
+kept every review so that a better algorithm could later replay the whole
+log. The owner asked, 2026-10-05, to "replace SM-2 with FSRS" (#113), and
+chose, 2026-10-06, to land it with the skill model (ADR-0034) in one
+migration and one replay of the log, keyed by the skill model's schedules
+(ADR-0034), which keep the names of the modes they replace.
+
+FSRS-6 models each pair's memory with a difficulty D (1–10), a stability S
+(the days until the chance of recall falls to 90%) and the retrievability R
+(that chance now), and schedules the next review for when R falls to the
+desired retention. It takes four ratings: Again, Hard, Good, Easy.
+
+## Decision
+
+The owner's answers to #245:
+
+- **A port of our own,** `lib/core/scheduling/fsrs.dart`, of `py-fsrs`
+  6.3.2's scheduler, with FSRS-6's default parameters. No dependency
+  (AGENTS.md rule 6). Its tests replay sequences through both and match
+  them to 1e-9.
+- **No learning steps, and no fuzzing.** A session asks each item once, so
+  every pair is in review from its first answer, and a second answer the
+  same day takes FSRS-6's same-day formula. Without fuzzing, replaying the
+  log always gives the same dates.
+- **Grades stay 0–5** in the log, and are read as ratings: below 3 Again,
+  3 Hard, 4 Good. 5 is Good when an answer was given (typed exactly) and
+  Easy when the learner rated it on the buttons, which log no answer.
+- **Desired retention 0.9,** and one set of parameters for every schedule,
+  until the optimiser (`docs/plans/difficulty-by-skill.md`).
+- **Migration 5.** `card_states` holds stability, difficulty, the interval,
+  the due date, the last review, consecutive passes and lapses, and is
+  rebuilt by replaying `reviews`. `reviews` gains nullable
+  `stability_after` and `difficulty_after`; `interval_after` is still
+  written, and `ease_after`, not null, is written as 0, "not SM-2". The
+  skill model (ADR-0034) keeps the modes as its schedules and needs no
+  table change of its own, so both land in this one migration and one
+  replay, as the owner chose.
+- **Quick revision records every answer.** FSRS models an early review: R
+  is high, so a right answer adds little stability. ADR-0029 recorded only
+  misses because SM-2 had no rule for reviewing early. A deck's Revise
+  still records nothing.
+
+## Consequences
+
+- Every due date moves on the first launch after the upgrade, since the
+  whole log replays through FSRS. Today's count can jump that day.
+- Intervals for a new word answered Good each time it comes due are 2, 11,
+  46 days, where SM-2 gave 1, 6, 15. An exact typed answer no longer pushes
+  a word out as Easy would.
+- A backup from before the change replays as it is: the backup keeps each
+  grade, its time and whether an answer was given, which is all replay
+  needs (`docs/LOG-FORMAT.md`).
+- Leeches still count lapses: a miss after a review that was not a miss.
+- Fitting the parameters to one learner waits for the optimiser, which
+  exists only in Rust and Python.
+
+## Alternatives considered
+
+- **The `fsrs` package** (2.0.1, MIT, pure Dart): a dependency for about
+  200 lines of formulas. The owner chose a port.
+- **Exact typed answers as Easy:** Easy multiplies stability sharply, and
+  would push a word typed right twice months out.
+- **Rebuilding `reviews`** with SM-2's columns nullable: a copy of the one
+  table whose loss cannot be repaired, for a tidier schema.
+- **Learning steps** (re-asking at 1 and 10 minutes): longer sessions and a
+  new session queue, for what FSRS-6's same-day formula already covers.
+
+## Record of the owner's decisions, moved from the deleted plan
+
+`docs/plans/fsrs.md` was deleted when #113 closed (the rule in
+`docs/ROADMAP.md`). Everything in it that was still needed is above, or here.
+
+- **What the grades stood for** before this change, which the log still
+  holds and replay still reads: 1 for a wrong answer, "Again", a typo
+  counted wrong, a missed match; 3 for "Hard", a typo judged known, an
+  answer typed in Latin letters; 4 for "Good", a right choice, a right
+  reading question; 5 for "Easy", an answer typed exactly. The log's CHECK
+  keeps grades between 0 and 5.
+- **SM-2 goes, all but its history** (owner, 2026-10-09). Migration 5 wrote
+  `ease_after` as 0, "not SM-2"; migration 6 then dropped `reviews.ease_before`
+  and `ease_after`, keeping every row, so that `reviews` carries no SM-2
+  column at all. Tests and plans no longer name SM-2; ADRs keep it, as the
+  record of what was decided. (Dropping a column rewrites no row, so the
+  append-only triggers are not set off.)
+- **The skill model and this change were to be finished, rated and opened as
+  one pull request first** (owner, 2026-10-09), then the B1 format, then the
+  colours. The owner's rule for the work: commit and push everything as it
+  goes, no raters until a whole feature is built.
+- **Fitting each learner's parameters** was "Later" in the plan, needing the
+  Rust optimiser through FFI or offline. It is done, in Dart, by ADR-0035.
+- **Per-skill difficulty** (#208) builds on this ADR and is still open:
+  `docs/plans/difficulty-by-skill.md`.
+
+See also: [Contributing](Contributing) · [ADR-Index](ADR-Index) · [Home](Home)
