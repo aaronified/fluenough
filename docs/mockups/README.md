@@ -10,13 +10,13 @@
   #575's bars. Main state only, Hindi (Hindustani) in light and Bengali in
   dark, 1.4x (owner, 2026-10-21). The page marks its Proposed choices.
 
-- `deck-page-and-teach-card.html`: the new deck page (#693: every word with its
-  meaning and a mastery chip, live tag chips, Practice and + Learn with a
-  count badge that becomes Relearn, Inspect retired), the word sheet with
-  everything inline, and the one-screen teach card (#691) with its
+- `deck-page-and-teach-card.html`: one phone with the new deck page (#693: every
+  word with its meaning and a mastery chip, live tag chips, Practice and
+  + Learn with a count badge that becomes Relearn, Inspect retired), the word
+  sheet with everything inline, and the one-screen teach card (#691) with its
   pronunciation and dictionary popups, a tab-swipe spring and chevrons.
-  Hindustani in light and Bengali in dark, 1.4x (owner, 2026-10-22). The
-  self-check and notes, with Proposed items marked, are in
+  Course and theme are tweak controls. Hindustani and Bengali, 1.4x (owner,
+  2026-10-22). The self-check and notes, with Proposed items marked, are in
   `deck-page-and-teach-card.md`.
 
 ## Current and approved
