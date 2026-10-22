@@ -10,15 +10,6 @@
   #575's bars. Main state only, Hindi (Hindustani) in light and Bengali in
   dark, 1.4x (owner, 2026-10-21). The page marks its Proposed choices.
 
-- `deck-page-and-teach-card.html`: one phone with the new deck page (#693: every
-  word with its meaning and a mastery chip, live tag chips, Practice and
-  + Learn with a count badge that becomes Relearn, Inspect retired), the word
-  sheet with everything inline, and the one-screen teach card (#691) with its
-  pronunciation and dictionary popups, a tab-swipe spring and chevrons.
-  Course and theme are tweak controls. Hindustani and Bengali, 1.4x (owner,
-  2026-10-22). The self-check and notes, with Proposed items marked, are in
-  `deck-page-and-teach-card.md`.
-
 ## Current and approved
 
 Each is the spec for its screen. Don't rewrite one without the owner's
@@ -98,6 +89,18 @@ approval.
   Proposed ("The reviewer mode mockup looks fine. Build it.").
 
 ## Approved
+
+- `deck-page-and-teach-card.html`: one phone with the new deck page (#693: every
+  word with its meaning and a mastery chip, live tag chips, Practice and
+  + Learn with a count badge that becomes Relearn, Inspect retired), the word
+  sheet with everything inline, and the one-screen teach card (#691) with its
+  pronunciation and dictionary popups, a tab-swipe spring and chevrons.
+  Course and theme are tweak controls. Hindustani and Bengali, 1.4x (owner,
+  2026-10-22). The self-check and notes, with Proposed items marked, are in
+  `deck-page-and-teach-card.md`.
+  Approved (owner, 2026-10-22: "Approved", with "Just give the meaning
+  more space": the picture sits beside the word and the meaning takes the
+  full width).
 
 - `language-wheel.html`: the language wheel (#703, #682): ratchet detents
   with a tick and vibration, the round wheel, and the label under the bar,

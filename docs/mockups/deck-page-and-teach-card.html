@@ -118,6 +118,7 @@ section.opt{margin:0 0 44px}
 .ipa{font-size:calc(14px*var(--t));color:var(--onSv)}
 button.ipa{min-height:48px;padding:0 16px;border-radius:24px;border:1px solid var(--ol);background:none;color:var(--onS);font-size:calc(14px*var(--t));font-weight:500}
 .mrow{display:flex;gap:12px;align-items:center}
+.hrow{display:flex;gap:16px;align-items:center}.hrow .hero{flex:1;min-width:0}
 .mean{white-space:nowrap;font-size:calc(22px*var(--t));line-height:1.25;font-weight:500;margin:0}
 .line{font-size:calc(14px*var(--t));line-height:1.3;color:var(--onSv);margin:4px 0 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .mdiv{flex:1;min-width:0}
@@ -388,7 +389,10 @@ function teachCard(c,full,lang){
   B.push(`<div><p class="t-lab">Tags</p><div class="kv">${c.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div></div>`);
   B.push(`<div class="foot"><span class="t-sm">${c.id}</span><button class="rep" type="button">${I.flag}Report</button></div>`);
  }else{
-  B.push(`<div class="mrow"><button class="meanb" type="button" data-dict aria-label="Dictionary: ${c.mean}"><span class="mt"><p class="mean">${c.mean}</p><span class="lr"><p class="line">${c.line}</p>${I.book}</span></span></button><div class="img" role="img" aria-label="Picture">${I.pic}</div></div>`);
+  // owner, 2026-10-22: "Just give the meaning more space": the picture moves up beside the word, the meaning takes the full width
+  const hi=B.findIndex(x=>x.startsWith('<div class="hero"'));
+  if(hi>=0)B[hi]=`<div class="hrow">${B[hi]}<div class="img" role="img" aria-label="Picture">${I.pic}</div></div>`;
+  B.push(`<div class="mrow"><button class="meanb" type="button" data-dict aria-label="Dictionary: ${c.mean}"><span class="mt"><p class="mean">${c.mean}</p><span class="lr"><p class="line">${c.line}</p>${I.book}</span></span></button></div>`);
   const ws={look:['deaf',c.look],warn:['hear',c.warn],other:['trans',c.other]};
   const pick=ws[c.pick]&&ws[c.pick][1]?ws[c.pick]:Object.values(ws).find(w=>w[1]);   /* one note and one warning, the most useful */
   if(c.note)B.push(blk('note',I.excl,{tx:c.note},false));
