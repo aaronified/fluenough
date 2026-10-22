@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- A card can set `picture_ask: true`: its `picture` is drawn with a small "?" badge, for question words (#707).
+
 ## [0.5.4] - 2026-10-21
 
 0.5.3 was never published: its build failed, so its changes ship here.
