@@ -213,9 +213,8 @@ class SessionResult {
   }
 
   /// Whole minutes spent, rounded, and at least 1 for any session.
-  int get minutes => total == 0
-      ? 0
-      : (spent.inSeconds / 60).round().clamp(1, 1 << 30).toInt();
+  int get minutes =>
+      total == 0 ? 0 : (spent.inSeconds / 60).round().clamp(1, 1 << 30).toInt();
 
   /// One score per skill drilled, in [Skill] order; skills not drilled are
   /// left out.
