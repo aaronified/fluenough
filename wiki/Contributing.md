@@ -11,7 +11,7 @@ contributions are often content rather than software.
 
 | You want to | Read |
 |---|---|
-| Add or fix deck content | [Deck-Format](Deck-Format) (and the licensing rule under *Contributing a deck* below) |
+| Add or fix deck content | [Deck-Format](Deck-Format) (and the licensing rule in [Deck Building Guide](Deck-Building-Guide#contributing-a-deck)) |
 | Write code | This file, then [Agentic-Coding](Agentic-Coding) |
 | Work with a coding agent | [Agentic-Coding](Agentic-Coding) — the rules that keep parallel work from colliding |
 | Understand why something is the way it is | [ADR-Index](ADR-Index) |
@@ -56,10 +56,10 @@ Roughly in order of how much they help right now.
 The most useful thing you can contribute, and it needs **no Flutter toolchain
 at all** — just a text editor and Python.
 
-The app offers decks for eight languages (Assamese, Bengali, Gujarati,
-Hindi, Kannada, Marathi, Spanish and Telugu), downloaded from this
-repository when a learner chooses one; Japanese is kept in the repository
-but not offered. It needs many more, in many more
+The app offers the courses listed in `decks/index.json` (Assamese, Bengali,
+Gujarati, Hindustani, Kannada, Marathi, Spanish, Telugu, Japanese, Korean,
+Mandarin Chinese, and the IPA and English Braille courses), downloaded from
+this repository when a learner chooses one. It needs many more, in many more
 languages, and the people best placed to write a good Hungarian deck are not
 necessarily Flutter developers. That asymmetry is the whole reason the deck
 format is plain text validated by a standalone Python script.
@@ -110,27 +110,9 @@ If something here was confusing, that is a bug in this file.
 
 ## Contributing a deck
 
-Deck work follows [Deck-Format](Deck-Format). That file is
-the guide: where a deck goes, how cards, ids and paths work, and what makes a
-deck good. Agents building a deck use the `build-deck` skill at
-[.claude/skills/build-deck/SKILL.md](https://github.com/aaronified/fluenough/blob/main/.claude/skills/build-deck/SKILL.md),
-which itself follows DECK-FORMAT.md.
-
-Whatever the format says, two things are yours to check as a contributor:
-
-**You have the right to contribute the content under CC BY-SA 4.0.**
-Wordlists taken from textbooks or commercial courses are not acceptable,
-*even reworded*. Public domain frequency lists, Wiktionary (CC BY-SA 4.0),
-counts from Wikipedia (CC BY-SA), Tatoeba (CC BY 2.0 FR) and your own work
-are fine, and each item taken from outside names its source. The deck's
-`license` field is `"CC-BY-SA-4.0"`; see
-[Licensing deck content](Deck-Format#licensing-deck-content).
-
-**Run the tools before you push** (see the checklist under *Contributing
-code*): `python3 tools/deck_index.py`, then
-`python3 tools/validate_decks.py decks/`. They need PyYAML
-(`pip install pyyaml`). To turn a wordlist into a deck, use
-`tools/import_csv.py` (see `tools/README.md`).
+The steps, the licensing rule and the tools to run are in
+[Deck Building Guide](Deck-Building-Guide#contributing-a-deck). The format is in
+[Deck Format](Deck-Format).
 
 ---
 

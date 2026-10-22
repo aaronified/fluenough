@@ -3488,7 +3488,7 @@ Wikimedia Commons each keep their own licence and speaker credit.
   else (owner, 2026-10-16, #518: "Link only"). A deck's own `source` names
   a source the whole deck draws on.
 - **CC0 content already given stays usable,** because CC0 allows it.
-- **The app credits the sources.** Settings, Sources names CC BY-SA 4.0 for
+- **The app credits the sources.** Settings > Your languages > Sources names CC BY-SA 4.0 for
   deck content, and credits Wiktionary, Wikimedia Commons, Wikipedia and
   Tatoeba when a deck's source names them.
 - **The validator accepts any SPDX identifier** in `license`, so a deck a

@@ -17,6 +17,6 @@ the source. See [LICENSE](https://github.com/aaronified/fluenough/blob/main/LICE
 Deck content is **CC BY-SA 4.0**, with attribution, declared in each deck's
 `license` ([ADR-0040](ADR-0040-Decks-Are-Cc-By-Sa)). Data taken
 from Wiktionary, Wikimedia Commons, Wikipedia or Tatoeba names its source,
-and the app credits them under Settings, Sources.
+and the app credits them under Settings > Your languages > Sources.
 
 See also: [Sources-and-Attributions](Sources-and-Attributions) · [Home](Home)

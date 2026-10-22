@@ -4,17 +4,17 @@
 
 Fluenough uses your phone's own text-to-speech. It adds nothing to the download and needs no network ([ADR-0002](ADR-0002-System-Tts)). A word has a speaker button on its card: tap it to hear the word.
 
-Settings > Sound has two switches. "Sound" turns speech and listening questions on or off for the whole app. "Play words automatically" plays a word as a card shows, or once you answer. You can also long-press a speaker to turn on automatic play. With sound off, questions that need sound are skipped.
+Under Settings > Activities and memory, "Play words automatically" plays a word as a card shows, or once you answer. You can also long-press a speaker to turn it on or off. If sound is off, questions that need sound are skipped, and a deck's page offers to turn sound on.
 
 ## Voices for each language
 
-Settings has a Voices page. It lists each language you learn and says whether this phone has a voice for it. A language without a voice skips listening. To add one, open your phone's Settings, search for "Text-to-speech", open the preferred engine's settings and install the voice data. Fluenough installs nothing itself. Voices from other apps are listed under "Other voices"; install one, come back, and the app checks again.
+Settings > Activities and memory > Voices is a page of its own. It lists each language you learn and says whether this phone has a voice for it. A language without a voice skips listening. To add one, open your phone's Settings, search for "Text-to-speech", open the preferred engine's settings and install the voice data. Fluenough installs nothing itself. Voices from other apps are listed under "Other voices"; install one, come back, and the app checks again.
 
-When a language's own voice is missing, a backup voice may read the card's other spelling. The page says so. Each voice can be tried from the page.
+When a language's own voice is missing, a backup voice may read the card's other spelling. The page says so. Where a language has more than one voice, you can choose one. Play speaks a word of the course in the voice in use, at your speech rate. "Say something" opens a speaking test. It tries the phone's speech recogniser, not a voice: you say a course word or anything, and it shows what the phone heard.
 
 ## Listening drills
 
-You hear a word, then choose, and then type, what it means. A word can name a minimal-pair partner, a word that sounds close to it, and listening offers it among the meanings.
+You hear a word, then choose, and then type, what it means. A word can name a minimal-pair partner, a word that sounds close to it, and listening offers it among the meanings. The separate drill on sound contrasts is built as a screen but not switched on yet, so no lesson asks it.
 
 ## Speaking drills
 

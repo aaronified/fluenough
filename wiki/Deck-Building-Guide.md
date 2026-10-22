@@ -114,8 +114,8 @@ are fine, and each item taken from outside names its source. The deck's
 `license` field is `"CC-BY-SA-4.0"`; see
 [Licensing deck content](Deck-Format#licensing-deck-content).
 
-**Run the tools before you push** (see the checklist under *Contributing
-code*): `python3 tools/deck_index.py`, then
+**Run the tools before you push** (see the checklist under
+[Contributing](Contributing#before-opening-the-pull-request)): `python3 tools/deck_index.py`, then
 `python3 tools/validate_decks.py decks/`. They need PyYAML
 (`pip install pyyaml`). To turn a wordlist into a deck, use
 `tools/import_csv.py` (see `tools/README.md`).

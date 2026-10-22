@@ -1,6 +1,6 @@
 # Reporting a problem
 
-Settings > Get support or report a problem opens a form. Many screens also have a small icon to report that screen or card.
+The small report icon at the top of most screens, and on cards, opens a form. Its tooltip says "Get support or report a problem". The form knows which screen or card you came from.
 
 ## Choose what you need
 
@@ -18,7 +18,7 @@ Always sent: the screen and what it showed. You can also include device informat
 
 ## How it is sent
 
-- **By mail** (support). Your mail app opens with everything filled in. Change anything, then send it. If no mail app can take it, the app says so. If you attached no log, you can export the log from Settings > Logs and attach it yourself.
+- **By mail** (support). Your mail app opens with everything filled in. Change anything, then send it. If no mail app can take it, the app says so. If you attached no log, you can export the log from Settings > App log and attach it yourself.
 - **On GitHub** (bugs and feedback). GitHub opens a new issue with the screen filled in. Issues are public, so leave out anything private. If GitHub cannot be opened, the link is copied.
 
 Your email address is not shown on a public issue.

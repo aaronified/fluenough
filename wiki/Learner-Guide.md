@@ -11,7 +11,7 @@ This guide says what you see and what to do. It does not cover how the app is bu
 | Today | The day's lesson, the words due, quick revision and a fact of the day. |
 | Decks | Your courses, their paths, units and decks. |
 | Progress | Reviews, what you remember, your streak. |
-| Settings | Sound, look, backups, updates and more. |
+| Settings | Languages, activities, look, backups, updates and more. |
 
 ## Pages in this guide
 

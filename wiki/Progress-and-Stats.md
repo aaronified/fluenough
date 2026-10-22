@@ -4,15 +4,15 @@ The Progress tab shows how you are doing. It is recomputed from your review log,
 
 ## What it shows
 
-Pick a time range: a number of days, or all time. For it you see:
+Pick a time range: 7 days, 30 days or All. The numbers are for the language picked in the language bar at the top, or for every language together.
 
 - **Reviews**: how many answers you gave.
-- **Remembered**: how much of what you reviewed you remembered.
-- **Day streak** and **Longest streak**.
-- **New cards learned** and **Cards learned**.
-- **A calendar of daily reviews** for the last weeks, from fewer to more. It says on how many days you reviewed.
-- **Correct, by skill**: seen, written, heard, spoken and grammar.
-- **Weakest tags**: the topics you miss most.
+- **Remembered**: the share of your reviews in the range that you remembered, that is, answers graded Good or better. It counts reviews, not cards. It shows a dash when there are no reviews.
+- **Day streak**, or **Longest streak** when the range is All.
+- **New cards learned**, or **Cards learned** when the range is All. A card counts as learned on its first remembered review.
+- **A calendar of daily reviews** for the last 12 weeks, from fewer to more. It does not follow the range. It says on how many days you reviewed.
+- **Correct, by skill**: the share correct in each skill you answered in the range, named as on the deck pills: Recognition, Write, Hear, Say, Grammar and Reading. A skill with no answers has no bar. Minimal pairs never has one. If you have learned a script, there are also Read and Write bars for it, such as "Read Devanagari". Under the bars is "How you learn", which opens your pacing.
+- **Weakest tags**: the three topics you miss most.
 - **Leeches**: cards you keep missing.
 
 Until you finish a session, it says there are no reviews yet.

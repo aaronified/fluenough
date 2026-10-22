@@ -14,7 +14,7 @@ Each word is scheduled separately in each skill. You can recognise a word long b
 
 Reading passages come on top: read, or hear, a short passage and answer questions.
 
-In Settings, under "Activities and memory", you can switch skills on or off. See [Profiles and settings](Profiles-and-Settings). Seen words, grammar, matching pairs, choosing answers and sound contrasts are always asked, so a lesson always has questions.
+In Settings, under "Activities and memory", you can switch skills on or off. See [Profiles and settings](Profiles-and-Settings). Seen words, grammar, matching pairs and choosing answers have no switch: they are always asked, so a lesson always has questions. The drill on sound contrasts (minimal pairs) is built as a screen but is not switched on yet, so no lesson asks it. It is shown "Feature incoming" ([Roadmap](Roadmap)).
 
 A right answer also counts in part for the skills it implies ([ADR-0034](ADR-0034-Hear-Say-Write)).
 
@@ -40,7 +40,7 @@ When you type, the app is gentle with:
 
 For Latin-letter answers, see [Readings and ISO 15919](Readings-ISO-15919) and [ADR-0022](ADR-0022-Romanised-Answers).
 
-After a wrong answer, the screen shows the right one, and what you typed or said beside it. A word that sounds almost like a rude word is flagged. The rude word is shown only when Adult content is on.
+After a wrong answer, the screen shows the right one, and what you typed or said beside it. A word that sounds almost like a rude word is flagged "Careful when speaking". The flag always shows, but the rude word is named only when Adult content is on.
 
 ## Rating yourself
 
