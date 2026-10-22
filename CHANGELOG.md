@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- A card can set `picture_ask: true`: its `picture` is drawn with a small "?" badge, for question words (#707).
+
 ### Fixed
 
 - The session result counts the time spent answering, each answer capped at 60 seconds, instead of the time the app was open, so a short lesson no longer reads 31 minutes (#486, minutes only; the card count is still open).

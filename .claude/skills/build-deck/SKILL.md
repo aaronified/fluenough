@@ -38,6 +38,11 @@ Before you start:
   DECK-FORMAT requires it. When a field lands, DECK-FORMAT and this list
   are updated in the same change. New text for the learner goes in each
   native layer.
+- Every question-word card (where, when, who, what, why, how, which, how
+  many) gets a `picture` plus `picture_ask: true` (DECK-FORMAT, "A question
+  word's picture"; owner, 2026-10-22, #707: "So that all future decks can
+  start adding them"). A deck can use `picture_ask` only once a release that
+  reads it is out: the released parser rejects unknown fields.
 - Closed groups (articles, pronouns, genders, cases and postpositions,
   demonstratives, question words, conjunctions, days, months, number words
   1-10, colours) need a set card that introduces the whole set, "Teach only"
