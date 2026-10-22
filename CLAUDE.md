@@ -22,6 +22,13 @@ At most **three agents run at the same time, and never more than two
 Sonnet** (owner, 2026-10-22). This replaces the earlier Opus rules
 (2026-10-09, 2026-10-12, 2026-10-16, 2026-10-17).
 
+**Opus only when the owner explicitly asks**, reviews included (owner,
+2026-10-22). Nothing defaults to Opus.
+
+**Reviews** (owner, 2026-10-22): one Sonnet review per pull request. A second
+review runs only if the first caught a breaking bug, and it is also Sonnet.
+Ratings are opt in (`.claude/skills/work-rating/SKILL.md`).
+
 **Bug fixes are only for decks and reviews** (owner, 2026-10-16: "Don't do
 bugfixes that are not relevant to decks and reviews"). Others wait for a
 contributor.
@@ -38,10 +45,8 @@ contributor.
   change goes through a pull request to main
   (or to `decks-next`). Before it merges, CI's checks pass (`flutter
   analyze`, the full `flutter test`, the deck validator and the tools'
-  tests) and one review finds nothing blocking. Never run the tests or
-  the deck validator locally (owner, 2026-10-17: "You should not run tests
-  locally at all"; on the validator: "Why not let ci do it?"): commit,
-  push, and read CI's result. The owner approves it in review; then merge it
+  tests) and one review finds nothing blocking (see "Which model does what").
+  The owner approves it in review; then merge it
   once CI is green (owner, 2026-10-16, on #529: "I have approved it in
   review. So you should be able to merge").
 - **Commit and push often** (owner, 2026-10-15: "Keep committing and pushing
@@ -90,10 +95,18 @@ contributor.
   themes come only by pull request (`docs/plans/reviewing-scope.md`).
 - **Tests check behaviour** (owner, 2026-10-20). The rule is in
   [AGENTS.md](AGENTS.md), "Tests check behaviour".
-- **CI.** A deck-only change needs only "Validate decks" and "Released app
-  reads the decks" green (#524, owner, 2026-10-17).
-- **Budget.** Tokens are limited: one review per change, no extra
-  verification passes, and no new work unless the owner asks for it.
+- **Tests run only in CI** (owner, 2026-10-17: "You should not run tests
+  locally at all"; on the validator: "Why not let ci do it?"; 2026-10-22).
+  No agent runs the tests or the deck validator locally, and none is launched
+  just to run tests. CI runs them for free. Every commit, docs pushed to main
+  included, is checked by CI: after pushing, read CI's result.
+- **Irrelevant checks** (owner, 2026-10-22). When reading CI for a change,
+  ignore failing checks that are irrelevant to it. A deck-only change needs
+  only "Validate decks" and "Released app reads the decks" green (#524, owner,
+  2026-10-17). An irrelevant failure is fixed in its own pull request, never
+  by widening the current change or pushing a fix straight to main.
+- **Budget.** Tokens are limited: one review per change (see "Which model
+  does what"), no extra verification passes, and no new work unless the owner asks for it.
 
 ## Decks before 0.6.0 (owner, 2026-10-18)
 
