@@ -1,0 +1,85 @@
+"schema": 1
+"id": "bn-en-reading-shopping"
+"name": "Reading: shopping"
+"kind": "reading"
+"language":
+  "code": "bn"
+  "iso639_3": "ben"
+  "name": "Bengali"
+  "script": "bengali"
+  "tts": "bn-IN"
+  "icon": "বা"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for the Fluenough Bengali course"
+"description": "A bargain at a market stall, and a shop's price list, each with its questions. Not yet checked by a Bengali speaker: please report any mistake."
+"tags":
+- "reading"
+- "unreviewed"
+"passages":
+- "id": "bn-bargaining"
+  "title": "Bargaining at a stall"
+  "theme": "shopping"
+  "sentences":
+  - "text": "আলু কত করে কিলো?"
+    "reading": "ālu kôt kôre kilo?"
+    "ipa": "alu kɔt̪ kɔre kilo"
+  - "text": "দশ টাকা। একটু কম করুন।"
+    "reading": "dôś ṭākā. ekoṭu kôm korun."
+    "ipa": "d̪ɔʃ ʈaka ekoʈu kɔm korun"
+  - "text": "ঠিক আছে, আট টাকা দেব।"
+    "reading": "ṭhik āche, āṭ ṭākā deb."
+    "ipa": "ʈʰik atʃʰe aʈ ʈaka d̪eb"
+  - "text": "আট টাকা হলে কিনব।"
+    "reading": "āṭ ṭākā hôle kinob."
+    "ipa": "aʈ ʈaka ɦɔle kinob"
+  "questions":
+  - "id": "bn-1751"
+    "prompt":
+      "en": "The buyer asks the seller to lower the price."
+    "answer": true
+  - "id": "bn-1752"
+    "prompt":
+      "en": "What price does the seller first name?"
+    "options":
+    - "en": "Ten rupees a kilo"
+    - "en": "Eight rupees a kilo"
+    "answer": 1
+- "id": "bn-price-list"
+  "title": "A price list"
+  "theme": "shopping"
+  "sentences":
+  - "text": "দোকানের দামের তালিকা।"
+    "reading": "dokāner dāmer tālikā."
+    "ipa": "d̪okaner d̪amer t̪alika"
+  - "text": "চাল কিলো পঞ্চাশ টাকা।"
+    "reading": "cāl kilo pôncāś ṭākā."
+    "ipa": "tʃal kilo pɔntʃaʃ ʈaka"
+  - "text": "ডিম দশ টাকা।"
+    "reading": "ḍim dôś ṭākā."
+    "ipa": "ɖim d̪ɔʃ ʈaka"
+  - "text": "আজ সবজিতে ছাড় আছে।"
+    "reading": "āj sôbojite chāṛ āche."
+    "ipa": "adʒ sɔbodʒit̪e tʃʰaɽ atʃʰe"
+  - "text": "নগদ টাকায় দাম আরও কম।"
+    "reading": "nôgod ṭākāy dām āro kôm."
+    "ipa": "nɔɡod̪ ʈakaj d̪am aro kɔm"
+  "questions":
+  - "id": "bn-1753"
+    "prompt":
+      "en": "Rice costs fifty rupees a kilo."
+    "answer": true
+  - "id": "bn-1754"
+    "prompt":
+      "en": "Which item has a discount today?"
+    "options":
+    - "en": "Vegetables"
+    - "en": "Eggs"
+    "answer": 1
+  - "id": "bn-1755"
+    "prompt":
+      "en": "Paying in cash makes the price higher."
+    "answer": false
