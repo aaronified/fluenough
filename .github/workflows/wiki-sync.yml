@@ -1,0 +1,77 @@
+name: Wiki sync
+
+# Publishes the wiki/ folder to the GitHub wiki (the repository's .wiki.git,
+# branch master). The owner wants the wiki to be the source of truth for the
+# documentation; until pages can be pushed to it directly, they live in wiki/
+# (Home.md, _Sidebar.md, _Footer.md and Title-With-Dashes.md pages, flat, no
+# subfolders) and this workflow mirrors them. A page deleted from wiki/ is
+# deleted from the wiki, and an edit made in the wiki's web editor is
+# overwritten by the next sync.
+#
+# Uses GITHUB_TOKEN. If the clone or push is refused, the token has no wiki
+# access: create a fine-grained personal access token with "Contents: write"
+# on this repository and save it as the repository secret WIKI_TOKEN, which
+# is then used instead. The wiki must also exist: create its first page once
+# in the web UI.
+
+on:
+  push:
+    branches: [main]
+    paths: ["wiki/**"]
+  workflow_dispatch:
+
+# One sync at a time; a second waits rather than cancelling the first, which
+# may be half way through pushing.
+concurrency:
+  group: wiki-sync
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    name: Publish wiki/
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Mirror wiki/ to the wiki
+        env:
+          TOKEN: ${{ secrets.WIKI_TOKEN || secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          hint="Likely cause: GITHUB_TOKEN has no access to the wiki, or the wiki does not exist yet (create its first page in the web UI). Fallback: create a fine-grained PAT with Contents: write on this repository and save it as the secret WIKI_TOKEN."
+
+          if ! git clone --quiet "https://x-access-token:${TOKEN}@github.com/${REPO}.wiki.git" "$RUNNER_TEMP/wiki"; then
+            echo "::error::Could not clone the wiki. $hint"
+            exit 1
+          fi
+
+          # Mirror: remove every page, then copy wiki/*.md back in. Pages
+          # that no longer exist in wiki/ stay deleted.
+          find "$RUNNER_TEMP/wiki" -mindepth 1 -path "$RUNNER_TEMP/wiki/.git" -prune -o -type f -print -delete >/dev/null
+          find "$RUNNER_TEMP/wiki" -mindepth 1 -path "$RUNNER_TEMP/wiki/.git" -prune -o -type d -empty -print -delete >/dev/null
+          shopt -s nullglob
+          pages=(wiki/*.md)
+          if [ ${#pages[@]} -eq 0 ]; then
+            echo "::error::wiki/ has no .md pages; refusing to empty the wiki."
+            exit 1
+          fi
+          cp "${pages[@]}" "$RUNNER_TEMP/wiki/"
+
+          cd "$RUNNER_TEMP/wiki"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "The wiki is already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit --quiet -m "Sync wiki from ${SHA::7}"
+          if ! git push --quiet origin HEAD:master; then
+            echo "::error::Could not push to the wiki. $hint"
+            exit 1
+          fi
