@@ -1,0 +1,235 @@
+schema: 1
+id: "hi-en-verbs"
+kind: "layer"
+core: "hi-verbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Everyday verbs"
+license: "CC-BY-SA-4.0"
+description: "Go, come, do, be, write, speak and the other verbs of the daily round. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-0777":
+    native: "to go"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman: the past takes the gender of its subject."
+      "pair": "Sounds almost like जानना (jānnā), to know: here the n is single."
+    examples:
+      "वह रोज़ स्कूल जाता है।": "He goes to school every day."
+      "हम कल बाज़ार जाएँगे।": "We will go to the market tomorrow."
+    collocations: { "school": "school" }
+  "hi-0778":
+    native: "to come"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman."
+      "use": "With को (ko) before a person it means to feel or to occur: मुझे नींद आती है (mujhē nīnd ātī hai), I feel sleepy."
+    examples:
+      "वह कल घर आएगा।": "He will come home tomorrow."
+      "मेहमान कब आए?": "When did the guests come?"
+    collocations: { "home": "home" }
+  "hi-0779":
+    native: "to do, to make"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman. Its stem before the endings is {3}."
+      "use": "With a noun before it, it makes a verb: {1}, to work."
+    examples:
+      "तुम क्या कर रहे हो?": "What are you doing?"
+      "उसने अपना काम किया।": "He did his work."
+    collocations: { "work": "work, a job" }
+  "hi-0780":
+    native: "to be, to become"
+    notes:
+      "forms": "Its present forms are {1} and {2}; for a man, its past is {3}."
+      "happen": "It also means to happen: {1}, what happened?"
+    examples:
+      "वह कल घर पर होगा।": "He will be at home tomorrow."
+      "आज मौसम अच्छा है।": "The weather is good today."
+    collocations: { "late": "delay, lateness" }
+  "hi-0781":
+    native: "to write"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman."
+      "use": "Used for a letter, a note or a form: {1}, to write a letter."
+    examples:
+      "वह अपनी माँ को चिट्ठी लिखता है।": "He writes a letter to his mother."
+      "मैंने अपना नाम लिखा।": "I wrote my name."
+    collocations: { "letter": "a letter" }
+  "hi-0782":
+    native: "to speak"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman."
+      "use": "Used for a language: {1}, to speak Hindi."
+    examples:
+      "वह अच्छी हिंदी बोलता है।": { native: "He speaks good Hindi.", bases: { "अच्छी": "good" } }
+      "धीरे बोलिए।": "Please speak slowly."
+    collocations: { "Hindi": "Hindi" }
+  "hi-0783":
+    native: "to listen, to hear"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman."
+      "use": "For music or a story: {1}, to listen to a song."
+    examples:
+      "हम रेडियो पर गाना सुनते हैं।": "We listen to songs on the radio."
+      "उसने मेरी बात सुनी।": "He heard what I said."
+    collocations: { "song": "a song" }
+  "hi-0784":
+    native: "to see, to look"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman."
+      "use": "For a film or a match: {1}, to watch a film."
+    examples:
+      "हम रात को टीवी देखते हैं।": "We watch TV at night."
+      "वह ऊपर देखता है।": "He looks up."
+    collocations: { "film": "a film" }
+  "hi-0785":
+    native: "to give"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman."
+      "polite": "Its polite form for 'give me' is {1}."
+    examples:
+      "मुझे एक गिलास पानी दीजिए।": "Please give me a glass of water."
+      "उसने मुझे किताब दी।": "He gave me a book."
+  "hi-0786":
+    native: "to take"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman."
+      "buy": "In a shop it means to buy: {1}, I will take this."
+    examples:
+      "मैं एक चाय लूँगा।": "I will have a tea."
+      "उसने साँस ली।": "He took a breath."
+    collocations: { "breath": "breath" }
+  "hi-0787":
+    native: "to play"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman."
+      "use": "For a game or a sport: {1}, to play cricket."
+    examples:
+      "बच्चे पार्क में खेलते हैं।": { native: "The children play in the park.", bases: { "बच्चे": "children" } }
+      "वह रोज़ क्रिकेट खेलता है।": "He plays cricket every day."
+    collocations: { "cricket": "cricket" }
+  "hi-0788":
+    native: "to sit"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman."
+      "opposite": "Its opposite is {1}, to get up."
+    examples:
+      "यहाँ बैठिए।": "Please sit here."
+      "वे कुर्सी पर बैठे हैं।": "They are sitting on the chair."
+    collocations: { "chair": "a chair" }
+  "hi-0789":
+    native: "to understand"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman."
+      "use": "For a matter or a point: {1}, to understand the matter."
+    examples:
+      "क्या तुम मेरी बात समझे?": "Did you understand what I said?"
+      "वह अंग्रेज़ी नहीं समझता।": "He does not understand English."
+    collocations: { "matter": "a matter, a word, a talk" }
+  "hi-0790":
+    native: "to know"
+    notes:
+      "pair": "Sounds almost like जाना (jānā), to go: here the n is doubled."
+      "use": "For a person or a fact: {1}, I know him."
+    examples:
+      "क्या तुम उसे जानते हो?": "Do you know him?"
+      "मैं यह बात जानता हूँ।": "I know this."
+  "hi-0791":
+    native: "to live, to stay"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman."
+      "use": "With a place, it means to live there: {1}, to live in a city."
+    examples:
+      "हम दिल्ली में रहते हैं।": "We live in Delhi."
+      "वह यहाँ कब तक रहेगा?": "How long will he stay here?"
+  "hi-0792":
+    native: "to want, to wish"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman."
+      "need": "For 'I need water', say {1}: wanting is not needing."
+    examples:
+      "मैं एक कप चाय चाहता हूँ।": "I want a cup of tea."
+      "वे कुछ और चाहते हैं।": "They want something else."
+  "hi-0793":
+    native: "to meet"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman."
+      "use": "With से (sē) before a person it means to meet: {1}, to meet a friend."
+    examples:
+      "कल मैं अपने दोस्त से मिला।": "Yesterday I met my friend."
+      "आज शाम हम मिलेंगे।": "We will meet this evening."
+    synonyms: { "meet-sanskrit": "to meet a person, formally (Sanskrit-leaning)", "meet-persian": "to meet a person, formally (Persian-leaning)" }
+    collocations: { "friend": "a friend" }
+  "hi-0794":
+    native: "to buy"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman."
+      "use": "Used for buying in a shop or a market: {1}, to buy vegetables."
+    examples:
+      "माँ बाज़ार से सब्ज़ी ख़रीदती हैं।": "Mother buys vegetables at the market."
+      "उसने नई कार ख़रीदी।": { native: "He bought a new car.", bases: { "नई": "new" } }
+    collocations: { "vegetables": "vegetables" }
+  "hi-0795":
+    native: "to sell"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman."
+    examples:
+      "वह पुरानी साइकिल बेचता है।": { native: "He sells an old bicycle.", bases: { "पुरानी": "old" } }
+      "हम दूध बेचते हैं।": "We sell milk."
+    synonyms: { "sell-persian": "to sell, formally (Persian-leaning)" }
+    collocations: { "milk": "milk" }
+  "hi-0796":
+    native: "to tell, to show"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman."
+      "way": "It can also mean to show the way: {1}, to tell the way."
+    examples:
+      "उसने मुझे अपना नाम बताया।": "He told me his name."
+      "क्या आप मुझे रास्ता बताएँगे?": "Will you tell me the way?"
+    synonyms: { "inform": "to inform, formally (Sanskrit-leaning)" }
+    collocations: { "name": "a name" }
+  "hi-0797":
+    native: "to send"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman."
+      "money": "For money or a message: {1}, to send money."
+    examples:
+      "मैंने उसे एक ईमेल भेजा।": "I sent him an email."
+      "पैसे भेजिए।": { native: "Please send the money.", bases: { "पैसे": "money" } }
+    collocations: { "money": "money" }
+  "hi-0798":
+    native: "to wash"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman."
+      "use": "For clothes or hands: {1}, to wash clothes; {2}, to wash hands."
+    examples:
+      "माँ सुबह कपड़े धोती है।": "Mother washes the clothes in the morning."
+      "खाने से पहले हाथ धोओ।": "Wash your hands before eating."
+    collocations: { "clothes": "clothes" }
+  "hi-0799":
+    native: "to ask"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman."
+      "way": "For a way or a direction: {1}, to ask the way."
+    examples:
+      "उसने मुझसे नाम पूछा।": "He asked me my name."
+      "आप पुलिस से पूछिए।": "Ask the police."
+    synonyms: { "ask-sanskrit": "to put a question, formally (Sanskrit-leaning)", "ask-persian": "to ask a question (Persian-leaning)" }
+    collocations: { "way": "the way, a road" }
+  "hi-0800":
+    native: "to say"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman."
+      "name": "For asking what a thing is called: {1}, what do you call this?"
+    examples:
+      "वे क्या कह रहे हैं?": "What are they saying?"
+      "उसने सच कहा।": "He told the truth."
+    synonyms: { "state-sanskrit": "to state, formally (Sanskrit-leaning)" }
+    collocations: { "truth": "the truth" }
+  "hi-0801":
+    native: "to walk, to work (of a machine)"
+    notes:
+      "past": "Its past is {1} for a man and {2} for a woman."
+      "clock": "For a machine or a clock that works: {1}, the clock is running."
+    examples:
+      "वह रोज़ सुबह पार्क तक चलता है।": "He walks to the park every morning."
+      "घड़ी ठीक चल रही है।": "The clock is keeping good time."
+    collocations: { "clock": "a clock or a watch" }
