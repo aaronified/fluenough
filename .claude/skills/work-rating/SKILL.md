@@ -3,6 +3,8 @@ name: work-rating
 description: Opt-in, only when the owner asks. Have an independent subagent rate a finished piece of work out of 10 against the user's own prompts. Never run it at the end of a task on your own; the PR's one review is enough (owner, 2026-10-12, 2026-10-22).
 ---
 
+The wiki is the source of truth for documentation: https://github.com/aaronified/fluenough/wiki
+
 # Rate the work before calling it done
 
 A closing pass that asks an independent agent one question: **did the work that was done

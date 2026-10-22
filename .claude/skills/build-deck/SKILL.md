@@ -3,6 +3,8 @@ name: build-deck
 description: Use when building or extending a Fluenough deck, including writing the next planned unit of a language's B1 plan (a core in decks/<lang>/ plus its English layer in decks/<lang>/en/). Not for app code.
 ---
 
+The wiki is the source of truth for documentation: https://github.com/aaronified/fluenough/wiki
+
 # Build a deck
 
 An ordered checklist. It does not copy the format: [docs/DECK-FORMAT.md](../../../docs/DECK-FORMAT.md)

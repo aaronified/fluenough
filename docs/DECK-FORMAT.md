@@ -1,5 +1,7 @@
 # Deck format, schema 1
 
+The wiki is the source of truth for documentation: https://github.com/aaronified/fluenough/wiki
+
 **This file is the guide; `tools/validate_decks.py` is the test.** When the
 two disagree, what the validator does is what passes CI, and this guide is
 fixed to match it (owner, 2026-10-13, #506: "validator is the test.

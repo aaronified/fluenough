@@ -1,3 +1,5 @@
+The wiki is the source of truth for documentation: https://github.com/aaronified/fluenough/wiki
+
 See [AGENTS.md](AGENTS.md) for how to work in this repository.
 
 Read it before making changes. It is short, and three of its rules — card ids
@@ -15,7 +17,8 @@ itself. Pick the model by the job:
 | UI mockups | Sonnet |
 | Building decks | Haiku |
 | Reviews (one per PR, decks included) | Sonnet |
-| Docs and audits | Sonnet |
+| Routine doc updates, CHANGELOG lines, find-and-replace | Haiku |
+| Skills, ADRs, audits, keeping several docs consistent | Sonnet |
 | Fan-outs and large reads | Haiku |
 
 At most **three agents run at the same time, and never more than two
@@ -35,6 +38,10 @@ contributor.
 
 ## How the owner works (owner, 2026-10-11)
 
+- **Docs live in the wiki** (owner, 2026-10-22). The repo's wiki/ folder is
+  the source of truth, published to the GitHub wiki by
+  `.github/workflows/wiki-sync.yml`. Repo docs are pointers, except files
+  tools or agents read from disk.
 - **Docs straight to main** (owner, 2026-10-17: "Docs go straight to main,
   no PR"). A change to documentation only (Markdown such as `docs/`,
   `CLAUDE.md`, `AGENTS.md`, the READMEs and the skills) is pushed straight to
@@ -64,7 +71,9 @@ contributor.
   changelog, commits, tags and builds (`tools/prepare_release.py`). There is
   no release pull request.
 - **Questions.** Ask them as soon as they come up. Record the owner's
-  answers, quoted and dated, in the plan and the issue they belong to.
+  answers, quoted and dated, in the plan and the issue they belong to. For a
+  decision, explain the options (what each means and its main downside), then
+  ask (owner, 2026-10-22).
 - **Readings.** Readings are *based on* ISO 15919. Never say they strictly
   follow it.
 - **Milestones are releases** (0.4.4, 0.5.0, 0.6.0, 0.7.0). The milestone's

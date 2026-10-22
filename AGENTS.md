@@ -1,5 +1,7 @@
 # Working on Fluenough
 
+The wiki is the source of truth for documentation: https://github.com/aaronified/fluenough/wiki
+
 Guidance for contributors and the coding agents they work with.
 
 Several people are building this at once, most of them with an agent. That

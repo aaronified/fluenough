@@ -1,5 +1,7 @@
 # Reviewing Fluenough decks
 
+The wiki is the source of truth for documentation: https://github.com/aaronified/fluenough/wiki
+
 <!-- This guide is also the app's reviewer onboarding, "How reviewing works"
 (lib/features/review/how_reviewing_works.dart, strings reviewGuide* in
 lib/l10n/app_en.arb). Each `## ` section but Help is one step there, in this
