@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- The `wiki/` folder is published to the GitHub wiki by a workflow whenever it changes on main.
 - A card can set `picture_ask: true`: its `picture` is drawn with a small "?" badge, for question words (#707).
 
 ### Fixed

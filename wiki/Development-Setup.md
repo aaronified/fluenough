@@ -87,4 +87,6 @@ flutter test
 
 CI runs all four, so do not run them for a docs-only change. Write a test only as AGENTS.md says, "Tests check behaviour".
 
+The `wiki/` folder is published to the GitHub wiki by `.github/workflows/wiki-sync.yml`; edits made in the wiki's web editor are overwritten by the next sync.
+
 See also: [Contributing](Contributing) · [Home](Home)
