@@ -355,7 +355,20 @@ Future<void> answerShown(WidgetTester tester, {bool right = true}) async {
   final q = tester
       .widget<PlacementChoice>(find.byType(PlacementChoice))
       .question;
-  return tap(find.widgetWithText(OutlinedButton, q.answer));
+  // The options are shuffled, so the right one may sit below the fold, where
+  // the list has not built it yet.
+  final option = find.widgetWithText(OutlinedButton, q.answer);
+  await tester.scrollUntilVisible(
+    option,
+    100,
+    scrollable: find
+        .descendant(
+          of: find.byType(PlacementChoice),
+          matching: find.byType(Scrollable),
+        )
+        .first,
+  );
+  return tap(option);
 }
 
 /// Whether a placement question is on screen.
