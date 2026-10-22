@@ -1,5 +1,7 @@
 # Mockups
 
+The wiki is the source of truth for documentation: https://github.com/aaronified/fluenough/wiki
+
 ## Awaiting approval
 
 - `progress-mastery.html`: the Progress tab's mastery view (#678): the
