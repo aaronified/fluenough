@@ -10,39 +10,46 @@ Settings is a list of pages.
 
 | Page | What it holds |
 |---|---|
-| Your languages | The languages you already know (they decide your facts and which decks you can review) and the languages you learn. |
-| Activities and memory | Switch skills on or off: seen, written, heard, spoken, grammar, sound contrasts and reading. Adjust to me and Adjust automatically fit your reviews to how you remember. |
-| Look and language | Theme, colour, contrast, card text size, Latin-letter readings, IPA and adult content. |
+| Your languages | Languages I know (they decide your facts and which decks you can review) and Languages I'm learning, where decks are checked for updates and updated. Switches for Latin-letter readings, IPA and Adult content. Which language to learn a course from, where a course has more than one. Sources. |
+| Activities and memory | Switches for Written words, Heard words, Spoken words and Reading, and for playing words automatically. Pause hearing or speaking for an hour, or turn them off per language. Speech rate and Voices. Adjust to me and Adjust automatically fit your reviews to how you remember. |
+| Look and language | Theme, pure black, colour, contrast, card text size and the app language. |
 | Reviewing | Reviewer mode for speakers who check decks. See the [Reviewing guide](Reviewing-Guide). |
-| Your decks | Upload a deck or CSV, get a template, send a deck to the project. |
+| Your decks | Upload a deck file, get a template, send a deck to the project, remove a deck you added. |
 | Reminders | One reminder a day, only on days with cards due. Shown as "Feature incoming". |
 | Your data | Backup and restore, the review log. See [Backup and restore](Backup-and-Restore). |
 | App log | What the app did, kept 7 days. See [Reporting a problem](Reporting-a-Problem). |
-| Updates | Check for a new app version. Deck downloads, with their daily check. |
-| Profiles and privacy | See above. |
+| Updates | Check for a new app version, check automatically (off until you switch it on), and release notes. |
+| Profiles and privacy | See above. The profile card at the top of Settings opens it. |
 
 ## Look and language
 
 - **Theme:** System, Light or Dark. System follows your phone's dark theme.
 - **Pure black:** dark mode uses black backgrounds instead of dark grey.
-- **Colour:** Forest, Ocean, Clay or Iris. A wallpaper-colours switch follows your wallpaper, where the phone allows.
+- **Colour:** Forest, Ocean, Clay or Iris. A wallpaper-colours switch is shown as "Feature incoming".
 - **Contrast:** Standard or High.
 - **Card text size:** makes card text larger, for scripts with small marks, like matras and dots. Menus follow your phone's font size. The app goes up to 1.4 times the normal size, and no further ([#505](https://github.com/aaronified/fluenough/issues/505)). If your phone is already at that size, cards cannot be made bigger.
+- **App language:** the app's menus are in English only for now.
+
+## Readings, IPA and adult content
+
+These three switches are on the Your languages page.
+
 - **Latin-letter readings:** a reading under words in other scripts. See [Scripts and readings](Scripts-and-Readings).
-- **Adult content (18+):** rude and offensive words are shown, so you know one when you hear it. It asks if you are 18 or over. Off, they stay behind warnings.
+- **IPA:** how each word is pronounced, under the word.
+- **Adult content (18+):** rude and offensive words are shown, so you know one when you hear it. It asks if you are 18 or over. A word that sounds almost like a rude word always carries a "Careful when speaking" warning. With Adult content off, the warning does not name the rude word. With it on, the word is named. Rude words are never said in a speaking test.
 
 The app's menus are in English only. Translation is explained in the [Translation guide](Translation-Guide).
 
-## Sound
+## Playing words
 
-"Sound" turns all speech and listening questions on or off. "Play words automatically" plays words as cards show. Voices lists each language's voice. See [Speaking and listening](Speaking-and-Listening).
+"Play words automatically" is under Activities and memory, beside Speech rate and Voices. A long press on a speaker button also turns it on or off. See [Speaking and listening](Speaking-and-Listening).
 
 ## Privacy
 
-Your learning stays on the phone. The app goes online only to download decks, to check for updates, and to send a report you choose to send. The deck check can be turned off.
+Your learning stays on the phone. The app goes online only to download decks, to check for updates, and to send a report you choose to send. The daily deck check can be turned off, on the Languages I'm learning page.
 
 ## Updates
 
-Settings > Updates checks GitHub for a new app version, once a day when the app opens, or only when you tap Check for updates. A backup is made as it downloads. Then Android asks you to install it. If Android says Fluenough is not allowed to install apps, open Settings, Apps, Special app access, Install unknown apps, and allow Fluenough.
+Settings > Updates checks GitHub for a new app version when you tap Check for updates. "Check automatically" is off until you switch it on. Then it checks once a day, when the app opens. A backup is made as it downloads. Then Android asks you to install it. If Android says Fluenough is not allowed to install apps, open Settings, Apps, Special app access, Install unknown apps, and allow Fluenough.
 
 See also: [Learner guide](Learner-Guide), [Home](Home).

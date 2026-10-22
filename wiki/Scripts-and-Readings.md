@@ -22,7 +22,7 @@ Every word in an Indian language has a reading: its Latin letters, shown on the 
 
 More examples: Telugu పాలు, milk, is *pālu*, and పలు, many, is *palu*: the macron marks a long vowel. Hindi नहीं, no, is *nahīm̐*. Bengali কথা, talk, is *kôthā*, where *ô* is Bengali's own vowel.
 
-Settings > "Look and language" has "Latin-letter readings". Turn it off to see only the script. A setting for showing how each word is said in the IPA is shown too.
+Settings > "Your languages" has "Latin-letter readings". Turn it off to see only the script. A switch for showing how each word is said in the IPA is beside it.
 
 See [Readings and ISO 15919](Readings-ISO-15919) for the full table of letters and where the readings depart from it.
 

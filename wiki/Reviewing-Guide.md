@@ -26,7 +26,7 @@ thing anyone can give these decks.
 
 ## Your code and languages
 
-1. Open **Settings**, find the **Reviewing** group and turn on **Review decks**.
+1. Open **Settings > Reviewing** and turn on **Review decks**.
 2. The app asks first, then makes your **rater code** on your phone, like
    `FL-XXXX-XXXX-C`. Nothing is sent when you turn reviewing on. You can copy
    the code from Settings.

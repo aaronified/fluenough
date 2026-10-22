@@ -36,7 +36,7 @@ flutter pub get
 dart run build_runner build
 ```
 
-Keep the application id `app.fluenough`. If you also build Android, include `android` in `--platforms` and see [Development setup](Development-Setup). The Android-only branding script is not for iOS.
+The generated application id is `app.fluenough`. A free Apple ID needs another one: see step 5 in section 3. If you also build Android, include `android` in `--platforms` and see [Development setup](Development-Setup). The Android-only branding script is not for iOS.
 
 ## 2. Run on the simulator
 
@@ -83,6 +83,8 @@ If you publish a build of Fluenough, the licence applies: see [Licence](Licence)
 - The update check installs an APK on Android. iOS cannot do that. Update by building again.
 - `tools/brand_android.py` is for Android only.
 - Voices come from the iPhone's own speech engine ([ADR-0002](ADR-0002-System-Tts)), with its own list of languages. Check them in iOS Settings.
+- **Platform channel.** The app has one channel of its own, `app.fluenough/system`. Only its Android side exists, and `tools/brand_android.py` writes it. On iOS, "Install voices in phone settings" on the Voices page opens nothing, and the page explains the way there instead. A report is not shared with its files attached ([ADR-0021](ADR-0021-In-App-Reports)): it goes without the log, and says so. Fix the iOS side only if you need it.
+- **Speech recognition.** Speaking drills use the `speech_to_text` plugin, which asks the iPhone's own recogniser, as it asks Android's. The `record` plugin uses the microphone. Nothing in the repository tests either on iOS. Both need usage descriptions for the microphone and for speech recognition in `ios/Runner/Info.plist`. The repository does not add them, because `ios/` is generated, so add them yourself, or speaking will not work. See the plugins' own instructions.
 - We have not tested every screen on iOS. If you find a problem, see [Reporting a problem](Reporting-a-Problem).
 
 See also: [Development setup](Development-Setup), [Learner guide](Learner-Guide), [Home](Home).

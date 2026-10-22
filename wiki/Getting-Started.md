@@ -14,7 +14,7 @@ The first launch walks you through a few screens. You can go Back or Skip on the
 
 1. **Welcome.** One screen on what the app is. No account is needed.
 2. **A short tour.** Slides on the four ways to practise, how words come back just before you forget them, that your progress stays on your phone, and that most languages have a fact a day.
-3. **Microphone and sound check.** Speaking drills listen to you and listening drills read words aloud. You record two seconds and hear them back. Android asks to let Fluenough use the microphone. If you refuse, speaking stays off. You can switch speaking and listening on or off later in Settings. See [Speaking and listening](Speaking-and-Listening).
+3. **Microphone and sound check.** Speaking drills listen to you and listening drills read words aloud. You record two seconds and hear them back. Android asks to let Fluenough use the microphone. If you refuse, speaking stays off. You can switch speaking and listening on or off later, under Settings > Activities and memory. See [Speaking and listening](Speaking-and-Listening).
 4. **Which languages do you already know?** Choose at least one. This decides your daily facts and which decks you can review. It is kept on your phone and never sent. You can change it later in Settings, under "Your languages".
 
 ## Choose what to learn

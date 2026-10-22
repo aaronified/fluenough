@@ -9,7 +9,7 @@ Where the data, fonts, books and pictures come from, and the licence each one ca
 
 Most decks are written for Fluenough. Where a deck's text comes from
 elsewhere, the deck names the source in its `source` field, and the app shows
-it: under each passage, on the deck's page, and in Settings, under Sources.
+it: under each passage, on the deck's page, and in Settings > Your languages > Sources.
 
 The Bengali decks quote two books in the public domain, letter for letter:
 
