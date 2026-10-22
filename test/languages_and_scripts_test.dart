@@ -40,6 +40,7 @@ import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
+import 'package:fluenough/core/speech/speech_engine.dart';
 import 'package:fluenough/core/tts/tts_engine.dart';
 import 'package:fluenough/features/decks/course_card.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
@@ -1659,6 +1660,58 @@ void main() {
       }
       expect(asked, greaterThan(0));
       expect(walk.placedDeckIds, <String>{nouns.id});
+    });
+  });
+
+  group('placement\'s read-aloud question', () {
+    testWidgets('a speech miss does not answer it: the learner hears that '
+        'nothing was heard, and can speak again', (tester) async {
+      usePhone(tester);
+      final speech = FixedSpeechEngine(onDevice: <String>{'hi'})
+        ..failing = const SpeechHeard.failed(SpeechFailure.noMatch);
+      final state = AppState.test(
+        speech: speech,
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningChosen: true,
+        ),
+      );
+      addTearDown(state.dispose);
+      await state.load();
+      await state.startSpeech();
+      final entry = state.decks.firstWhere((e) => e.language.code == 'hi');
+      final card = entry.deck.cards.first;
+      final answers = <bool>[];
+      await pumpScreen(
+        tester,
+        Scaffold(
+          body: PlacementSay(
+            question: SayQuestion(
+              card: card,
+              shown: card.target,
+              language: entry.language,
+            ),
+            number: 1,
+            onAnswer: answers.add,
+          ),
+        ),
+        state: state,
+      );
+      final l10n = l10nOf(tester);
+
+      await tapText(tester, l10n.placementSayStart);
+      expect(answers, isEmpty);
+      expect(find.text(l10n.drillUnheardNoMatch), findsOneWidget);
+
+      // Speak again: still not answered, then heard right.
+      await tapText(tester, l10n.placementSayStart);
+      expect(answers, isEmpty);
+      speech
+        ..failing = null
+        ..next = <SpeechAlternative>[SpeechAlternative(card.target)];
+      await tapText(tester, l10n.placementSayStart);
+      expect(answers, <bool>[true]);
+      expect(speech.listens, hasLength(3));
     });
   });
 
