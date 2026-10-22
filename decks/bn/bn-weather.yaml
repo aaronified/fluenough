@@ -40,7 +40,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "কড়া রোদ", reading: "kôṛā rod" }] }
     examples:
-      - { target: "আজ কড়া রোদ।", reading: "āj kôṛā rod.", ipa: "adʒ kɔɽa rod̪" }
+      - { target: "আজ কড়া রোদ।", reading: "āj kôṛā rod.", ipa: "adʒ kɔɽa rod̪", bases: [{ word: "কড়া", base: "কড়া", reading: "kôṛā", ipa: "kɔɽa" }] }
       - { target: "রোদে ছাতা নাও।", reading: "rode chātā nāo.", ipa: "rod̪e tʃʰat̪a nao", bases: [{ word: "রোদে", base: "রোদ", reading: "rod", ipa: "rod̪" }, { word: "নাও", base: "নেওয়া", reading: "neoyā", ipa: "neoja" }] }
   - id: "bn-1571"
     target: "আকাশ"
@@ -110,7 +110,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "প্রবল বাতাস", reading: "prôbol bātās" }] }
     examples:
       - { target: "প্রবল ঝড় উঠেছে।", reading: "prôbol jhôṛ uṭheche.", ipa: "prɔbol dʒʱɔɽ uʈʰetʃʰe", bases: [{ word: "উঠেছে", base: "ওঠা", reading: "oṭhā", ipa: "oʈʰa" }] }
-      - { target: "প্রবল বাতাসে গাছ নড়ে।", reading: "prôbol bātāse gāch nôṛe.", ipa: "prɔbol bat̪ase ɡatʃʰ nɔɽe", bases: [{ word: "বাতাসে", ref: "bn-1578" }, { word: "নড়ে", base: "নড়া", reading: "nôṛā", ipa: "nɔɽa" }] }
+      - { target: "প্রবল বাতাসে গাছ নড়ে।", reading: "prôbol bātāse gāch nôṛe.", ipa: "prɔbol bat̪ase ɡatʃʰ nɔɽe", bases: [{ word: "বাতাসে", ref: "bn-1578" }, { word: "গাছ", base: "গাছ", reading: "gāch", ipa: "ɡatʃʰ" }, { word: "নড়ে", base: "নড়া", reading: "nôṛā", ipa: "nɔɽa" }] }
   - id: "bn-1577"
     target: "ফোঁটা"
     reading: "fom̐ṭā"
@@ -133,7 +133,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "ঠান্ডা বাতাস", reading: "ṭhānḍā bātās" }] }
     examples:
       - { target: "ঠান্ডা বাতাস বইছে।", reading: "ṭhānḍā bātās boiche.", ipa: "ʈʰanɖa bat̪as boitʃʰe", bases: [{ word: "বইছে", base: "বওয়া", reading: "boyā", ipa: "boja" }] }
-      - { target: "বাতাসে পাতা ওড়ে।", reading: "bātāse pātā oṛe.", ipa: "bat̪ase pat̪a oɽe", bases: [{ word: "বাতাসে", base: "বাতাস", reading: "bātās", ipa: "bat̪as" }, { word: "ওড়ে", base: "ওড়া", reading: "oṛā", ipa: "oɽa" }] }
+      - { target: "বাতাসে পাতা ওড়ে।", reading: "bātāse pātā oṛe.", ipa: "bat̪ase pat̪a oɽe", bases: [{ word: "বাতাসে", base: "বাতাস", reading: "bātās", ipa: "bat̪as" }, { word: "পাতা", base: "পাতা", reading: "pātā", ipa: "pat̪a" }, { word: "ওড়ে", base: "ওড়া", reading: "oṛā", ipa: "oɽa" }] }
   - id: "bn-1579"
     target: "হাওয়া"
     reading: "hāoyā"
@@ -178,7 +178,7 @@ cards:
       - { id: "n1", kind: "culture", words: [{ word: "ঘূর্ণিঝড়", reading: "ghurnijhoṛ" }], source: "https://en.wikipedia.org/wiki/1970_Bhola_cyclone" }
     examples:
       - { target: "উপকূলে ঘূর্ণিঝড় এসেছে।", reading: "upokule ghurnijhoṛ eseche.", ipa: "upokule ɡʱurnidʒʱoɽ esetʃʰe", bases: [{ word: "উপকূলে", base: "উপকূল", reading: "upokul", ipa: "upokul" }, { word: "এসেছে", base: "আসা", reading: "āśā", ipa: "aʃa" }] }
-      - { target: "ঘূর্ণিঝড়ের খবর শুনেছি।", reading: "ghurnijhoṛer khôbor śunechi.", ipa: "ɡʱurnidʒʱoɽer kʰɔbor ʃunetʃʰi", bases: [{ word: "ঘূর্ণিঝড়ের", base: "ঘূর্ণিঝড়", reading: "ghurnijhoṛ", ipa: "ɡʱurnidʒʱoɽ" }, { word: "শুনেছি", base: "শোনা", reading: "śonā", ipa: "ʃona" }] }
+      - { target: "ঘূর্ণিঝড়ের খবর শুনেছি।", reading: "ghurnijhoṛer khôbor śunechi.", ipa: "ɡʱurnidʒʱoɽer kʰɔbor ʃunetʃʰi", bases: [{ word: "ঘূর্ণিঝড়ের", base: "ঘূর্ণিঝড়", reading: "ghurnijhoṛ", ipa: "ɡʱurnidʒʱoɽ" }, { word: "খবর", base: "খবর", reading: "khôbor", ipa: "kʰɔbor" }, { word: "শুনেছি", base: "শোনা", reading: "śonā", ipa: "ʃona" }] }
   - id: "bn-1583"
     target: "বিদ্যুৎ"
     reading: "biddut"
@@ -199,7 +199,7 @@ cards:
     notes:
       - { id: "n1", kind: "note", words: [{ word: "বজ্রের শব্দ", reading: "bôjrer śôbdo" }, { word: "বজ্রপাত", reading: "bôjropāt" }] }
     examples:
-      - { target: "বজ্রের শব্দ শুনলাম।", reading: "bôjrer śôbdo śunlām.", ipa: "bɔdʒrer ʃɔbd̪o ʃunlam", bases: [{ word: "বজ্রের", base: "বজ্র", reading: "bôjro", ipa: "bɔdʒro" }, { word: "শুনলাম", base: "শোনা", reading: "śonā", ipa: "ʃona" }] }
+      - { target: "বজ্রের শব্দ শুনলাম।", reading: "bôjrer śôbdo śunlām.", ipa: "bɔdʒrer ʃɔbd̪o ʃunlam", bases: [{ word: "বজ্রের", base: "বজ্র", reading: "bôjro", ipa: "bɔdʒro" }, { word: "শব্দ", base: "শব্দ", reading: "śôbd", ipa: "ʃɔbd̪" }, { word: "শুনলাম", base: "শোনা", reading: "śonā", ipa: "ʃona" }] }
       - { target: "বজ্রের সময় জানালা বন্ধ রাখো।", reading: "bôjrer śômoy jānālā bôndho rākho.", ipa: "bɔdʒrer ʃɔmoj dʒanala bɔnd̪ʱo rakʰo", bases: [{ word: "বজ্রের", base: "বজ্র", reading: "bôjro", ipa: "bɔdʒro" }, { word: "রাখো", base: "রাখা", reading: "rākhā", ipa: "rakʰa" }] }
   - id: "bn-1585"
     target: "কুয়াশা"
@@ -210,7 +210,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ঘন কুয়াশা", reading: "ghôn kuyāśā" }] }
     examples:
-      - { target: "ভোরে ঘন কুয়াশা থাকে।", reading: "bhore ghôn kuyāśā thāke.", ipa: "bʱore ɡʱɔn kujaʃa t̪ʰake", bases: [{ word: "ভোরে", base: "ভোর", reading: "bhor", ipa: "bʱor" }, { word: "থাকে", base: "থাকা", reading: "thākā", ipa: "t̪ʰaka" }] }
+      - { target: "ভোরে ঘন কুয়াশা থাকে।", reading: "bhore ghôn kuyāśā thāke.", ipa: "bʱore ɡʱɔn kujaʃa t̪ʰake", bases: [{ word: "ভোরে", base: "ভোর", reading: "bhor", ipa: "bʱor" }, { word: "ঘন", base: "ঘন", reading: "ghôn", ipa: "ɡʱɔn" }, { word: "থাকে", base: "থাকা", reading: "thākā", ipa: "t̪ʰaka" }] }
       - { target: "কুয়াশায় গাড়ি ধীরে চলে।", reading: "kuyāśāy gāṛi dhire côle.", ipa: "kujaʃaj ɡaɽi d̪ʱire tʃɔle", bases: [{ word: "কুয়াশায়", base: "কুয়াশা", reading: "kuyāśā", ipa: "kujaʃa" }, { word: "চলে", base: "চলা", reading: "côlā", ipa: "tʃɔla" }] }
   - id: "bn-1586"
     target: "শিশির"
@@ -232,8 +232,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "শিলাবৃষ্টি", reading: "śilābriśṭi" }] }
     examples:
-      - { target: "আজ শিলাবৃষ্টি হয়েছে।", reading: "āj śilābriśṭi hôyeche.", ipa: "adʒ ʃilabriʃʈi ɦɔjetʃʰe", bases: [{ word: "হয়েছে", base: "হওয়া", reading: "hoyā", ipa: "ɦoja" }] }
-      - { target: "শিলার আঘাতে ফুল ঝরে গেল।", reading: "śilār āghāte phul jhôre gelo.", ipa: "ʃilar aɡʱat̪e pʰul dʒʱɔre ɡelo", bases: [{ word: "শিলার", base: "শিলা", reading: "śilā", ipa: "ʃila" }, { word: "আঘাতে", base: "আঘাত", reading: "āghāt", ipa: "aɡʱat̪" }, { word: "ঝরে", base: "ঝরা", reading: "jhôrā", ipa: "dʒʱɔra" }, { word: "গেল", base: "যাওয়া", reading: "jāoyā", ipa: "dʒaoja" }] }
+      - { target: "আজ শিলাবৃষ্টি হয়েছে।", reading: "āj śilābriśṭi hôyeche.", ipa: "adʒ ʃilabriʃʈi ɦɔjetʃʰe", bases: [{ word: "শিলাবৃষ্টি", base: "শিলাবৃষ্টি", reading: "śilābriśṭi", ipa: "ʃilabriʃʈi" }, { word: "হয়েছে", base: "হওয়া", reading: "hoyā", ipa: "ɦoja" }] }
+      - { target: "শিলার আঘাতে ফুল ঝরে গেল।", reading: "śilār āghāte phul jhôre gelo.", ipa: "ʃilar aɡʱat̪e pʰul dʒʱɔre ɡelo", bases: [{ word: "শিলার", base: "শিলা", reading: "śilā", ipa: "ʃila" }, { word: "আঘাতে", base: "আঘাত", reading: "āghāt", ipa: "aɡʱat̪" }, { word: "ফুল", base: "ফুল", reading: "phul", ipa: "pʰul" }, { word: "ঝরে", base: "ঝরা", reading: "jhôrā", ipa: "dʒʱɔra" }, { word: "গেল", base: "যাওয়া", reading: "jāoyā", ipa: "dʒaoja" }] }
   - id: "bn-1588"
     target: "তুষার"
     reading: "tuśār"
@@ -290,7 +290,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "উষ্ণ জল", reading: "uśno jôl" }] }
     examples:
-      - { target: "উষ্ণ জলে স্নান করো।", reading: "uśno jôle snān kôro.", ipa: "uʃno dʒɔle snan kɔro", bases: [{ word: "জলে", ref: "bn-1611" }, { word: "করো", base: "করা", reading: "kôrā", ipa: "kɔra" }] }
+      - { target: "উষ্ণ জলে স্নান করো।", reading: "uśno jôle snān kôro.", ipa: "uʃno dʒɔle snan kɔro", bases: [{ word: "জলে", ref: "bn-1611" }, { word: "স্নান", base: "স্নান", reading: "snān", ipa: "snan" }, { word: "করো", base: "করা", reading: "kôrā", ipa: "kɔra" }] }
       - { target: "ঘরটা উষ্ণ থাকে।", reading: "ghôrṭā uśno thāke.", ipa: "ɡʱɔrʈa uʃno t̪ʰake", bases: [{ word: "ঘরটা", base: "ঘর", reading: "ghôr", ipa: "ɡʱɔr" }, { word: "থাকে", base: "থাকা", reading: "thākā", ipa: "t̪ʰaka" }] }
   - id: "bn-1593"
     target: "ঠান্ডা"
@@ -361,7 +361,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "শুকনো মাটি", reading: "śukno māṭi" }] }
     examples:
-      - { target: "গ্রীষ্মে মাটি শুকনো থাকে।", reading: "griśme māṭi śukno thāke.", ipa: "ɡriʃme maʈi ʃukno t̪ʰake", bases: [{ word: "গ্রীষ্মে", ref: "bn-1605" }, { word: "থাকে", base: "থাকা", reading: "thākā", ipa: "t̪ʰaka" }] }
+      - { target: "গ্রীষ্মে মাটি শুকনো থাকে।", reading: "griśme māṭi śukno thāke.", ipa: "ɡriʃme maʈi ʃukno t̪ʰake", bases: [{ word: "গ্রীষ্মে", ref: "bn-1605" }, { word: "মাটি", base: "মাটি", reading: "māṭi", ipa: "maʈi" }, { word: "থাকে", base: "থাকা", reading: "thākā", ipa: "t̪ʰaka" }] }
       - { target: "কাপড় শুকনো হয়েছে।", reading: "kāpoṛ śukno hôyeche.", ipa: "kapoɽ ʃukno ɦɔjetʃʰe", bases: [{ word: "হয়েছে", base: "হওয়া", reading: "hoyā", ipa: "ɦoja" }] }
   - id: "bn-1599"
     target: "ভেজা"
@@ -384,7 +384,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "খরা", reading: "khôrā" }, { word: "বন্যা", reading: "bonnā" }] }
     examples:
-      - { target: "এবার খরা হয়েছে।", reading: "ebār khôrā hôyeche.", ipa: "ebar kʰɔra ɦɔjetʃʰe", bases: [{ word: "হয়েছে", base: "হওয়া", reading: "hoyā", ipa: "ɦoja" }] }
+      - { target: "এবার খরা হয়েছে।", reading: "ebār khôrā hôyeche.", ipa: "ebar kʰɔra ɦɔjetʃʰe", bases: [{ word: "এবার", base: "এবার", reading: "ebār", ipa: "ebar" }, { word: "হয়েছে", base: "হওয়া", reading: "hoyā", ipa: "ɦoja" }] }
       - { target: "খরার সময় জল কম থাকে।", reading: "khôrār śômoy jôl kôm thāke.", ipa: "kʰɔrar ʃɔmoj dʒɔl kɔm t̪ʰake", bases: [{ word: "খরার", base: "খরা", reading: "khôrā", ipa: "kʰɔra" }, { word: "থাকে", base: "থাকা", reading: "thākā", ipa: "t̪ʰaka" }] }
   - id: "bn-1601"
     target: "তাপমাত্রা"
@@ -395,7 +395,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "তাপমাত্রা কত?", reading: "tāpomātrā kôto?" }] }
     examples:
-      - { target: "আজ তাপমাত্রা ত্রিশ ডিগ্রি।", reading: "āj tāpomātrā triś ḍigri.", ipa: "adʒ t̪apomat̪ra t̪riʃ ɖiɡri" }
+      - { target: "আজ তাপমাত্রা ত্রিশ ডিগ্রি।", reading: "āj tāpomātrā triś ḍigri.", ipa: "adʒ t̪apomat̪ra t̪riʃ ɖiɡri", bases: [{ word: "ডিগ্রি", base: "ডিগ্রি", reading: "ḍigri", ipa: "ɖiɡri" }] }
       - { target: "তাপমাত্রা কমছে।", reading: "tāpomātrā kômche.", ipa: "t̪apomat̪ra kɔmtʃʰe", bases: [{ word: "কমছে", base: "কমা", reading: "kômā", ipa: "kɔma" }] }
   - id: "bn-1602"
     target: "ছাতা"
@@ -473,7 +473,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "হেমন্তকাল", reading: "hemontokāl" }] }
     examples:
-      - { target: "হেমন্তে ধান কাটা হয়।", reading: "hemonte dhān kāṭā hôy.", ipa: "ɦemont̪e d̪ʱan kaʈa ɦɔj", bases: [{ word: "হেমন্তে", base: "হেমন্ত", reading: "hemonto", ipa: "ɦemont̪o" }, { word: "হয়", base: "হওয়া", reading: "hoyā", ipa: "ɦoja" }] }
+      - { target: "হেমন্তে ধান কাটা হয়।", reading: "hemonte dhān kāṭā hôy.", ipa: "ɦemont̪e d̪ʱan kaʈa ɦɔj", bases: [{ word: "হেমন্তে", base: "হেমন্ত", reading: "hemonto", ipa: "ɦemont̪o" }, { word: "ধান", base: "ধান", reading: "dhān", ipa: "d̪ʱan" }, { word: "হয়", base: "হওয়া", reading: "hoyā", ipa: "ɦoja" }] }
       - { target: "হেমন্তে সকালে হালকা শীত।", reading: "hemonte śôkāle hālkā śit.", ipa: "ɦemont̪e ʃɔkale ɦalka ʃit̪", bases: [{ word: "হেমন্তে", base: "হেমন্ত", reading: "hemonto", ipa: "ɦemont̪o" }, { word: "সকালে", base: "সকাল", reading: "śôkāl", ipa: "ʃɔkal" }] }
   - id: "bn-1609"
     target: "বসন্ত"
@@ -484,7 +484,7 @@ cards:
     notes:
       - { id: "n1", kind: "note", words: [{ word: "বসন্তকাল", reading: "bôśontokāl" }] }
     examples:
-      - { target: "বসন্তে গাছে নতুন পাতা গজায়।", reading: "bôśonte gāche notun pātā gôjāy.", ipa: "bɔʃont̪e ɡatʃʰe not̪un pat̪a ɡɔdʒaj", bases: [{ word: "বসন্তে", base: "বসন্ত", reading: "bôśonto", ipa: "bɔʃont̪o" }, { word: "গাছে", base: "গাছ", reading: "gāch", ipa: "ɡatʃʰ" }, { word: "গজায়", base: "গজানো", reading: "gôjāno", ipa: "ɡɔdʒano" }] }
+      - { target: "বসন্তে গাছে নতুন পাতা গজায়।", reading: "bôśonte gāche notun pātā gôjāy.", ipa: "bɔʃont̪e ɡatʃʰe not̪un pat̪a ɡɔdʒaj", bases: [{ word: "বসন্তে", base: "বসন্ত", reading: "bôśonto", ipa: "bɔʃont̪o" }, { word: "গাছে", base: "গাছ", reading: "gāch", ipa: "ɡatʃʰ" }, { word: "পাতা", base: "পাতা", reading: "pātā", ipa: "pat̪a" }, { word: "গজায়", base: "গজানো", reading: "gôjāno", ipa: "ɡɔdʒano" }] }
       - { target: "বসন্তে আবহাওয়া ভালো থাকে।", reading: "bôśonte ābohāoyā bhālo thāke.", ipa: "bɔʃont̪e aboɦaoja bʱalo t̪ʰake", bases: [{ word: "বসন্তে", base: "বসন্ত", reading: "bôśonto", ipa: "bɔʃont̪o" }, { word: "থাকে", base: "থাকা", reading: "thākā", ipa: "t̪ʰaka" }] }
   - id: "bn-1610"
     target: "বন্যা"
@@ -496,7 +496,7 @@ cards:
       - { id: "n1", kind: "culture", words: [{ word: "বন্যা", reading: "bonnā" }], source: "https://en.wikipedia.org/wiki/Flood" }
     examples:
       - { target: "বন্যায় অনেক গ্রাম ডুবে গেছে।", reading: "bonnāy ônek grām ḍube geche.", ipa: "bonnaj ɔnek ɡram ɖube ɡetʃʰe", bases: [{ word: "বন্যায়", base: "বন্যা", reading: "bonnā", ipa: "bonna" }, { word: "ডুবে", base: "ডোবা", reading: "ḍobā", ipa: "ɖoba" }, { word: "গেছে", base: "যাওয়া", reading: "jāoyā", ipa: "dʒaoja" }] }
-      - { target: "বন্যার পানি কবে নামবে?", reading: "bonnār pāni kôbe nāmobe?", ipa: "bonnar pani kɔbe namobe", bases: [{ word: "বন্যার", base: "বন্যা", reading: "bonnā", ipa: "bonna" }, { word: "নামবে", base: "নামা", reading: "nāmā", ipa: "nama" }] }
+      - { target: "বন্যার পানি কবে নামবে?", reading: "bonnār pāni kôbe nāmobe?", ipa: "bonnar pani kɔbe namobe", bases: [{ word: "বন্যার", base: "বন্যা", reading: "bonnā", ipa: "bonna" }, { word: "পানি", base: "পানি", reading: "pāni", ipa: "pani" }, { word: "নামবে", base: "নামা", reading: "nāmā", ipa: "nama" }] }
   - id: "bn-1611"
     target: "জল"
     reading: "jôl"
