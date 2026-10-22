@@ -1,0 +1,53 @@
+schema: 1
+id: "hi-en-reading-who-is-who"
+name: "Reading: who is who"
+kind: reading
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short passages about family and friends, with the pronouns of the Pronouns and people words unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-who-is-who"
+    title: "Who is who"
+    theme: "pronouns"
+    sentences:
+      - text: "यह मेरी माँ है।"
+        reading: "yah merī mām̐ hai."
+      - text: "वह मेरे पिता हैं।"
+        reading: "vah merē pitā haim̐."
+    questions:
+      - id: "hi-0773"
+        prompt: { en: "In the first sentence, who is the speaker talking about?" }
+        options:
+          - { en: "Their mother" }
+          - { en: "Their father" }
+        answer: 1
+      - id: "hi-0774"
+        prompt: { en: "In the second sentence, who is the speaker talking about?" }
+        options:
+          - { en: "Their mother" }
+          - { en: "Their father" }
+        answer: 2
+  - id: "hi-seating-chart"
+    title: "Seating chart"
+    theme: "pronouns"
+    sentences:
+      - text: "मैं और तुम दोस्त हैं।"
+        reading: "maim̐ aur tum dōst haim̐."
+      - text: "वे हमारे पड़ोसी हैं।"
+        reading: "vē hamārē paṛosī haim̐."
+    questions:
+      - id: "hi-0775"
+        prompt: { en: "The first sentence says the speaker and 'you' are..." }
+        options:
+          - { en: "Friends" }
+          - { en: "Neighbours" }
+        answer: 1
+      - id: "hi-0776"
+        prompt: { en: "Who are 'they' in the second sentence?" }
+        options:
+          - { en: "Our friends" }
+          - { en: "Our neighbours" }
+        answer: 2

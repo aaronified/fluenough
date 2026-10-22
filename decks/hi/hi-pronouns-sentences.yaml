@@ -1,0 +1,42 @@
+schema: 1
+id: "hi-pronouns-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-0767"
+    target: "मैं और तुम दोस्त हैं।"
+    reading: "maim̐ aur tum dōst haim̐."
+    pos: "phrase"
+  - id: "hi-0768"
+    target: "वे हमारे पड़ोसी हैं।"
+    reading: "vē hamārē paṛosī haim̐."
+    pos: "phrase"
+    bases:
+      - { word: "हमारे", base: "हमारा", reading: "hamārā" }
+  - id: "hi-0769"
+    target: "कोई नहीं जानता।"
+    reading: "koī nahīm̐ jāntā."
+    pos: "phrase"
+    bases:
+      - { word: "जानता", base: "जानना", reading: "jānnā" }
+  - id: "hi-0770"
+    target: "तुम अपना काम करो।"
+    reading: "tum apnā kām karō."
+    pos: "phrase"
+    bases:
+      - { word: "करो", base: "करना", reading: "karnā" }
+  - id: "hi-0771"
+    target: "आप कहाँ से आए हैं?"
+    reading: "āp kahām̐ se āe haim̐?"
+    pos: "phrase"
+    bases:
+      - { word: "आए", base: "आना", reading: "ānā" }
+  - id: "hi-0772"
+    target: "हमारा परिवार बड़ा है।"
+    reading: "hamārā parivār baṛā hai."
+    pos: "phrase"
+    bases:
+      - { word: "बड़ा", base: "बड़ा", reading: "baṛā" }
