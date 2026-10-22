@@ -40,6 +40,30 @@ offline on your phone once a language's decks are downloaded.
 > and features not built yet are shown disabled, marked "Feature incoming". See
 > [docs/ROADMAP.md](docs/ROADMAP.md).
 
+## Screenshots
+
+A Bengali learner from English, three and a half weeks in, and the same phone
+in reviewer mode.
+
+<table align="center">
+  <tr>
+    <td align="center"><strong>Deck path</strong></td>
+    <td align="center"><strong>Today</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/deck-path.gif" width="220" alt="The Bengali course path: done units, the unit up next, milestones, and the units still being written, shown as Coming"></td>
+    <td align="center"><img src="docs/screenshots/today.gif" width="220" alt="Today: the day's lesson, the words due by skill, the streak, quick revision and the day's fact"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Progress</strong></td>
+    <td align="center"><strong>Reviewing</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/progress.gif" width="220" alt="Progress: reviews, what is remembered, the streak, twelve weeks of reviews, and how well each skill and tag is going"></td>
+    <td align="center"><img src="docs/screenshots/review.gif" width="220" alt="Reviewing the Bengali Family unit: the rater code, cards marked right, and cards still to check"></td>
+  </tr>
+</table>
+
 ## Why Fluenough is different
 
 Most drilling apps are built around one language and then stretched to fit
@@ -53,6 +77,32 @@ than hard-coded rules. Adding a language means adding files, never code.
 > from the design. Progress is saved on the phone, one database per profile,
 > and features not built yet are shown disabled, marked "Feature incoming". See
 > [the roadmap](https://github.com/aaronified/fluenough/wiki/Roadmap).
+
+## Courses
+
+Taught from English: Telugu, Bengali, Spanish, Marathi, Kannada, Assamese,
+Chinese (Mandarin), Hindustani, Japanese, Korean and Gujarati. Every course
+has a B1 plan in its path: the units up to B1, in teaching order, those not
+yet written shown as "Coming". Telugu is written to B1; Bengali has all but one of its A1
+units; the others have their first units, or more. Each Indic course
+starts with its script decks, digits included, and a script guide. Hindustani
+is one course in two scripts, Devanagari and Perso-Arabic, and Chinese in
+two, simplified and traditional: the learner chooses which to learn. A course
+is tagged Alpha until its A1 units are written and Beta until its B1 units
+are.
+
+Two courses teach a notation rather than a language: the International
+Phonetic Alphabet, and English Braille (uncontracted UEB, typed on the app's
+own six-dot keyboard). Each is tagged Complete once its path is written. See
+[docs/ROADMAP.md](docs/ROADMAP.md).
+
+The app comes with no decks. It downloads a language's decks from this
+repository's `main` branch when you choose it, and you can start once its
+first five are in; after that it works offline. Fixed and new decks arrive
+without an app update: once a day at most it asks whether to fetch them, and
+Settings > Deck downloads lists each language, with Update and Remove, and
+can turn the daily check off
+([ADR-0037](docs/adr/0037-decks-download-from-main.md)).
 
 ## Documentation
 
