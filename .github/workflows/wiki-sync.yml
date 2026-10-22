@@ -45,21 +45,21 @@ jobs:
           set -euo pipefail
           hint="Likely cause: GITHUB_TOKEN has no access to the wiki, or the wiki does not exist yet (create its first page in the web UI). Fallback: create a fine-grained PAT with Contents: write on this repository and save it as the secret WIKI_TOKEN."
 
-          if ! git clone --quiet "https://x-access-token:${TOKEN}@github.com/${REPO}.wiki.git" "$RUNNER_TEMP/wiki"; then
-            echo "::error::Could not clone the wiki. $hint"
-            exit 1
-          fi
-
-          # Mirror: remove every page, then copy wiki/*.md back in. Pages
-          # that no longer exist in wiki/ stay deleted.
-          find "$RUNNER_TEMP/wiki" -mindepth 1 -path "$RUNNER_TEMP/wiki/.git" -prune -o -type f -print -delete >/dev/null
-          find "$RUNNER_TEMP/wiki" -mindepth 1 -path "$RUNNER_TEMP/wiki/.git" -prune -o -type d -empty -print -delete >/dev/null
           shopt -s nullglob
           pages=(wiki/*.md)
           if [ ${#pages[@]} -eq 0 ]; then
             echo "::error::wiki/ has no .md pages; refusing to empty the wiki."
             exit 1
           fi
+
+          if ! git clone --quiet "https://x-access-token:${TOKEN}@github.com/${REPO}.wiki.git" "$RUNNER_TEMP/wiki"; then
+            echo "::error::Could not clone the wiki. $hint"
+            exit 1
+          fi
+
+          # Mirror: remove every tracked page, then copy wiki/*.md back in.
+          # Pages that no longer exist in wiki/ stay deleted.
+          git -C "$RUNNER_TEMP/wiki" rm -rfq --ignore-unmatch .
           cp "${pages[@]}" "$RUNNER_TEMP/wiki/"
 
           cd "$RUNNER_TEMP/wiki"
