@@ -1,4 +1,5 @@
 import '../core/scheduling/fsrs.dart';
+import '../core/scheduling/study_hours.dart';
 import 'skill.dart';
 
 /// What a drill session should cover. Passed to the drill route, which asks
@@ -142,9 +143,13 @@ class DrillRequest {
 
 /// One answer in a finished session, for the summary.
 class SessionAnswer {
-  const SessionAnswer({required this.skill, required this.grade});
+  const SessionAnswer({required this.skill, required this.grade, this.time});
 
   final Skill skill;
+
+  /// How long the answer took, from the question showing to the answer;
+  /// null where it was not timed.
+  final Duration? time;
 
   /// The grade recorded, 0–5 ([Fsrs.ratingOf]). Minimal pairs, which the scheduler does
   /// not know yet, use the same scale.
@@ -195,10 +200,21 @@ class SessionResult {
 
   Duration get elapsed => endedAt.difference(startedAt);
 
+  /// The time spent: each timed answer's time, capped as hours spent caps it
+  /// (#227), so a pause or the app in the background adds nothing. A result
+  /// whose answers are not timed gives the time between start and end.
+  Duration get spent {
+    if (answers.every((a) => a.time == null)) return elapsed;
+    var sum = Duration.zero;
+    for (final a in answers) {
+      sum += StudyHours.capped(a.time ?? Duration.zero);
+    }
+    return sum;
+  }
+
   /// Whole minutes spent, rounded, and at least 1 for any session.
-  int get minutes => total == 0
-      ? 0
-      : (elapsed.inSeconds / 60).round().clamp(1, 1 << 30).toInt();
+  int get minutes =>
+      total == 0 ? 0 : (spent.inSeconds / 60).round().clamp(1, 1 << 30).toInt();
 
   /// One score per skill drilled, in [Skill] order; skills not drilled are
   /// left out.
