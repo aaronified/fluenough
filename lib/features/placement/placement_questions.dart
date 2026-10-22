@@ -6,7 +6,9 @@ import '../../app/app_scope.dart';
 import '../../app/placement.dart';
 import '../../core/grading/romanised.dart';
 import '../../core/models/deck.dart';
+import '../../core/speech/speech_engine.dart';
 import '../../l10n/app_localizations.dart';
+import '../drill/speaking_practice.dart' show unheardMessage;
 import '../../ui/theme.dart';
 import '../../ui/widgets/target_text.dart';
 
@@ -447,17 +449,31 @@ class PlacementSay extends StatefulWidget {
 class _PlacementSayState extends State<PlacementSay> {
   bool _listening = false;
 
+  /// Why the last listen gave nothing to grade, or null. A miss is never a
+  /// wrong answer, as in the speaking drill: the learner can speak again, or
+  /// say they do not know.
+  SpeechFailure? _unheard;
+
   Future<void> _listen() async {
-    setState(() => _listening = true);
+    setState(() {
+      _listening = true;
+      _unheard = null;
+    });
     final heard = await AppScope.read(context)
         .listenFor(widget.question.language);
     if (!mounted) return;
+    if (heard.failed) {
+      setState(() {
+        _listening = false;
+        _unheard = heard.failure ?? SpeechFailure.noMatch;
+      });
+      return;
+    }
     setState(() => _listening = false);
     widget.onAnswer(
-      !heard.failed &&
-          widget.question.isRight(<String>[
-            for (final a in heard.alternatives) a.text,
-          ]),
+      widget.question.isRight(<String>[
+        for (final a in heard.alternatives) a.text,
+      ]),
     );
   }
 
@@ -478,6 +494,19 @@ class _PlacementSayState extends State<PlacementSay> {
             _listening ? l10n.placementSayListening : l10n.placementSayStart,
           ),
         ),
+        if (_unheard != null && !_listening)
+          Padding(
+            padding: const EdgeInsets.only(top: 12),
+            child: Semantics(
+              liveRegion: true,
+              child: Text(
+                unheardMessage(l10n, _unheard!, q.language),
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.bodyLarge!
+                    .copyWith(color: Theme.of(context).colorScheme.error),
+              ),
+            ),
+          ),
         _DontKnow(onTap: () => widget.onAnswer(false)),
       ],
     );
