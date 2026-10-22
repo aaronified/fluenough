@@ -117,8 +117,8 @@ code{font-size:13px}
 .blk{display:flex;gap:12px;align-items:flex-start;border-radius:16px;padding:14px 16px;background:var(--sHigh)}
 .blk .ic{flex:none;width:24px;height:24px}
 .blk.note .ic{color:var(--p)}
-.blk.warn{background:var(--eC);color:var(--onEC)}
-.blk.warn .ic{color:var(--onEC)}
+.blk.warn{background:var(--tC);color:var(--onTC)}
+.blk.warn .ic{color:var(--onTC)}
 .blk .tt{font-size:calc(12px*var(--t));line-height:1.3;font-weight:700;letter-spacing:.3px;margin:0 0 4px;text-transform:uppercase}
 .blk p{margin:0;font-size:calc(14px*var(--t));line-height:1.35}
 .blk .tx{min-width:0}
@@ -172,7 +172,7 @@ code{font-size:13px}
     <li><b>Word sheet.</b> A bottom sheet over the deck page with everything on the card, in the order: word, reading, IPA, audio; meaning, other meanings, accepted answers; part of speech and gender as one line; image; notes (exclamation icon); similarity warnings (sounds like, same spelling, differs by a dot or short mark, other meanings); the dictionary entry (Wiktionary senses and etymology, #692) and every example; tags, card id and Report.</li>
     <li><b>Teach card (#691).</b> The subset: word, reading, IPA, audio, main meaning, image, note, similarity warning, part of speech and gender, one example. Notes and warnings are separate blocks of the same shape; the note has an exclamation icon and the warning a triangle in the error colours. The same component fills the word sheet, which only adds blocks below it, so the three places cannot drift apart.</li>
     <li><b>Card transition.</b> Continue slides the next card in from the right in 200 ms (cubic-bezier .2, .8, .2, 1); the progress line moves with it. The slide is not a spring.</li>
-    <li><span class="prop">Proposed</span> The mastery chips: New is an outline, Learning the secondaryContainer, Known the primary. The warning block uses the theme's errorContainer. The dictionary and example content is invented for the mockup (the real one comes from #692).</li>
+    <li><span class="prop">Proposed</span> The mastery chips: New is an outline, Learning the secondaryContainer, Known the primary. Sounds like another word uses the app's own panel: tertiaryContainer with the hearing icon (word_sheet.dart; owner, 2026-10-22: "sounds alike, etc already has specific icons today"). Other meanings uses the same panel with a translate icon (proposed), and the new same-spelling and differs-by-a-mark warnings (#692) will take icons of their own the same way. The dictionary and example content is invented for the mockup (the real one comes from #692).</li>
     <li>Readings are transliteration, based on ISO 15919. Text size is 1.4x only (owner, 2026-10-17). Hindi कल is a card with a base-word note: it means both yesterday and tomorrow.</li>
   </ul>
 </section>
@@ -181,8 +181,8 @@ code{font-size:13px}
 <script>
 /* ColorScheme.fromSeed(forest), same values as language-wheel.html; error roles are the standard M3 ones */
 const SCHEMES={
-dark:{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sHigh":"#262b27","ol":"#8a938b","olv":"#404942","eC":"#93000a","onEC":"#ffdad6"},
-light:{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sHigh":"#e4eae3","ol":"#717972","olv":"#c0c9c0","eC":"#ffdad6","onEC":"#93000a"}};
+dark:{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sHigh":"#262b27","ol":"#8a938b","olv":"#404942","eC":"#93000a","onEC":"#ffdad6","tC":"#224c58","onTC":"#bfe9f8"},
+light:{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sHigh":"#e4eae3","ol":"#717972","olv":"#c0c9c0","eC":"#ffdad6","onEC":"#93000a","tC":"#bfe9f8","onTC":"#224c58"}};
 
 const I={
  back:'<svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>',
@@ -190,6 +190,8 @@ const I={
  bug:'<svg viewBox="0 0 24 24"><path d="M20 8h-2.81a5.985 5.985 0 0 0-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6.002 6.002 0 0 0-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z"/></svg>',
  vol:'<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>',
  excl:'<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>',
+ hear:'<svg viewBox="0 0 24 24"><path d="M17 20c-.29 0-.56-.06-.76-.15-.71-.37-1.21-.88-1.71-2.38-.51-1.56-1.47-2.29-2.39-3-.79-.61-1.61-1.24-2.32-2.53C9.29 10.98 9 9.93 9 9c0-2.8 2.2-5 5-5s5 2.2 5 5h2c0-3.93-3.07-7-7-7S7 5.07 7 9c0 1.26.38 2.65 1.07 3.9.91 1.65 1.98 2.48 2.85 3.15.81.62 1.39 1.07 1.71 2.05.6 1.82 1.37 2.84 2.73 3.55.51.23 1.07.35 1.64.35 2.21 0 4-1.79 4-4h-2c0 1.1-.9 2-2 2zM7.64 2.64L6.22 1.22C4.23 3.21 3 5.96 3 9s1.23 5.79 3.22 7.78l1.41-1.41C6.01 13.74 5 11.49 5 9s1.01-4.74 2.64-6.36zM11.5 9c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5-2.5 1.12-2.5 2.5z"/></svg>',
+ trans:'<svg viewBox="0 0 24 24"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>',
  warn:'<svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>',
  check:'<svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>',
  play:'<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>',
@@ -221,7 +223,7 @@ hi:{lang:'hi',th:'light',deck:'Time words',sub:'Hindustani · Devanagari · 12 w
  card:{
   0:{w:'कल',r:'kal',ipa:'/kəl/',mean:'yesterday; tomorrow',also:'the past or the next day, by context',accept:'yesterday, tomorrow',line:'adverb · noun, masculine',
      note:'One word for both days. The verb tense or a word such as “आने वाला” (coming) says which.',
-     warn:{k:'Sounds like',tx:'काल (kāl), “time”. The long ā is the only difference.'},
+     warn:{k:'Sounds like another word',tx:'काल (kāl), “time”. The long ā is the only difference.'},
      ex:['मैं कल आऊँगा।','maiṁ kal āūṅgā.','I will come tomorrow.'],
      dict:['The day before today.','The day after today.','(figurative) the near future or past.'],
      ety:'From Sanskrit कल्य (kalya), “tomorrow, dawn”.',tags:['day','time']},
@@ -249,7 +251,7 @@ bn:{lang:'bn',th:'dark',deck:'Time words',sub:'Bengali · Bengali script · 12 w
  card:{
   0:{w:'কাল',r:'kāl',ipa:'/kal/',mean:'yesterday; tomorrow',also:'time, era',accept:'yesterday, tomorrow',line:'adverb · noun',
      note:'One word for both days. The tense of the verb says which.',
-     warn:{k:'Sounds like',tx:'কালো (kālo), “black”. Only the final vowel differs.'},
+     warn:{k:'Sounds like another word',tx:'কালো (kālo), “black”. Only the final vowel differs.'},
      ex:['আমি কাল যাব।','āmi kāl yāba.','I will go tomorrow.'],
      dict:['The day before today.','The day after today.','Time, as an age or era.'],
      ety:'From Sanskrit কল্য (kalya), “tomorrow, dawn”.',tags:['day','time']},
@@ -269,8 +271,8 @@ function teachCard(c,full,lang,w){
  blocks.push(`<div><p class="mean">${c.mean}</p><p class="line">${c.line}</p>${full?`<p class="line">Also means: ${c.also}</p><p class="line">Also accepted: ${c.accept}</p>`:''}</div>`);
  blocks.push(`<div class="img" role="img" aria-label="Picture for ${c.mean}">${I.pic}<span>image on the card</span></div>`);
  if(c.note)blocks.push(`<div class="blk note"><span class="ic">${I.excl}</span><div class="tx"><p class="tt">Note</p><p>${c.note}</p></div></div>`);
- if(c.warn)blocks.push(`<div class="blk warn"><span class="ic">${I.warn}</span><div class="tx"><p class="tt">${c.warn.k}</p><p>${c.warn.tx}</p></div></div>`);
- if(full&&c.warn)blocks.push(`<div class="blk warn"><span class="ic">${I.warn}</span><div class="tx"><p class="tt">Other meanings</p><p>“${c.mean.split('; ')[0]}” also names another word in this course.</p></div></div>`);
+ if(c.warn)blocks.push(`<div class="blk warn"><span class="ic">${I.hear}</span><div class="tx"><p class="tt">${c.warn.k}</p><p>${c.warn.tx}</p></div></div>`);
+ if(full&&c.warn)blocks.push(`<div class="blk warn"><span class="ic">${I.trans}</span><div class="tx"><p class="tt">Other meanings</p><p>“${c.mean.split('; ')[0]}” also names another word in this course.</p></div></div>`);
  blocks.push(`<div class="ex"><p class="e1 script" ${L}>${c.ex[0]}</p><p class="e2">${c.ex[1]}</p><p class="e3">${c.ex[2]}</p></div>`);
  if(full){
   blocks.push(`<div class="dict"><p class="t-lab">Dictionary · Wiktionary</p><ol>${c.dict.map(d=>`<li>${d}</li>`).join('')}</ol><p class="et">Etymology: ${c.ety}</p></div>`);
@@ -376,7 +378,7 @@ function selfCheck(){
   add(th,'captions on the sheet: onSurfaceVariant on surfaceContainerLow',ratio(S.onSv,S.sLow),4.5);
   add(th,'note and block text: onSurface on surfaceContainerHigh',ratio(S.onS,S.sHigh),4.5);
   add(th,'note icon: primary on surfaceContainerHigh',ratio(S.p,S.sHigh),3);
-  add(th,'warning: onErrorContainer on errorContainer',ratio(S.onEC,S.eC),4.5);
+  add(th,'warning: onTertiaryContainer on tertiaryContainer (as the app)',ratio(S.onTC,S.tC),4.5);
   add(th,'chip selected / Learning / Practice: onSecondaryContainer on secondaryContainer',ratio(S.onSc,S.sc),4.5);
   add(th,'chip unselected and New chip: onSurfaceVariant on surface',ratio(S.onSv,S.s),4.5);
   add(th,'chip and New outline: outline on surface',ratio(S.ol,S.s),3);
