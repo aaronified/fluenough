@@ -211,3 +211,16 @@ larger parts.
 - How many harder words count as "complicated" for each script: one
   joined letter and one vowel mark, or a per-language list. The plan uses
   the native layer's script section.
+
+## Owner's answers, 2026-10-21
+
+- **Script check order:** "If user wants to learn it, then easy to hard, if
+  it is already in user's known list (and user still selected it), hard to
+  easy". A script the learner is learning is checked from a letter upward; a
+  script already in their known list is checked from a word read aloud
+  downward.
+- **Hindustani with both scripts:** placement asks the learner's first
+  (primary) script first.
+- **A script read through a known language** counts for every language,
+  single-script ones too: a Hindi reader starting Marathi skips the
+  Devanagari check.

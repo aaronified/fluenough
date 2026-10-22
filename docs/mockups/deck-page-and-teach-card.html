@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deck Page and Teach Card</title>
+<meta name="description" content="The deck page (#693), the word sheet and the one-screen teach card (#691) with its pronunciation and dictionary popups. Hindustani in light, Bengali in dark, 1.4x text.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&display=swap">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deck Page and Teach Card</title>
+<meta name="description" content="The deck page (#693), the word sheet and the one-screen teach card (#691) with its pronunciation and dictionary popups. Hindustani in light, Bengali in dark, 1.4x text.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&display=swap">
+<style>
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 16px 72px}
+.tw{display:flex;flex-wrap:wrap;gap:12px 24px;margin:0 0 20px}
+.tg{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--page-muted)}
+.seg{display:inline-flex;border:1px solid var(--page-line);border-radius:10px;overflow:hidden}
+.seg button{font:inherit;font-size:14px;min-height:40px;padding:0 16px;border:0;background:var(--page-card);color:var(--page-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg);font-weight:600}
+.cap1{margin:0 0 16px;color:var(--page-muted);font-size:14px}
+.stage{display:flex;justify-content:center}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;font-weight:700}
+section.opt{margin:0 0 44px}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:6px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+/* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed) =====
+   Every size is calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. */
+.ph{--t:1.4;width:360px;max-width:100%;height:740px;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph button{font-family:inherit;color:inherit;cursor:pointer}
+.fs{font-size:calc(var(--n)*1px*var(--t))}
+.appbar{flex:none;height:56px;display:flex;align-items:center;padding:0 4px;color:var(--onSv)}
+.ib{width:48px;height:48px;border:0;background:none;display:flex;align-items:center;justify-content:center;border-radius:24px;padding:0;color:var(--onSv)}
+.ib svg,.ic svg{width:24px;height:24px;fill:currentColor;display:block}
+.sp{flex:1}
+.scroll{flex:1;min-height:0;overflow-y:auto;padding:0 16px 16px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.t-title{font-size:calc(24px*var(--t));line-height:1.2;font-weight:600;margin:0}
+.t-body{font-size:calc(14px*var(--t));line-height:1.4;margin:0}
+.t-sm{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv)}
+.t-lab{font-size:calc(12px*var(--t));line-height:1.3;font-weight:600;letter-spacing:.4px;color:var(--onSv);text-transform:uppercase;margin:0 0 6px}
+.script{font-family:"Noto Sans Devanagari","Noto Sans Bengali",Roboto,sans-serif}
+
+/* deck page */
+.meta{margin:4px 0 18px}
+.meta .t-sm{margin-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.chip{border:1px solid var(--ol);background:none;border-radius:8px;min-height:32px;padding:0 12px;font-size:calc(14px*var(--t));line-height:1.3;font-weight:500;display:inline-flex;align-items:center;gap:6px;color:var(--onSv)}
+.chip[aria-pressed="true"]{background:var(--sc);color:var(--onSc);border-color:transparent}
+.chip svg{width:18px;height:18px;fill:currentColor}
+.chip:not([aria-pressed="true"]) svg{display:none}
+.count{margin:0 0 4px}
+.rows{list-style:none;margin:0;padding:0}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px 12px;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--olv);padding:12px 0;align-items:start}
+.row .w{display:block;white-space:nowrap;font-size:calc(20px*var(--t));line-height:1.25;font-weight:500}
+.row .rd{display:block;white-space:nowrap;font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv)}
+.row .mn{white-space:nowrap;font-size:calc(14px*var(--t));line-height:1.3;text-align:right}
+.row .mc{grid-column:2;justify-self:end}
+.mastery{display:inline-flex;align-items:center;gap:4px;height:calc(18px*var(--t));padding:0 8px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));line-height:1;font-weight:600;letter-spacing:.3px}
+.m-new{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.m-learning{background:var(--sc);color:var(--onSc)}
+.m-known{background:var(--p);color:var(--onP)}
+.empty{padding:24px 0;color:var(--onSv)}
+.bottom{flex:none;display:flex;gap:12px;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv)}
+.btn{flex:1;min-height:calc(40px*var(--t));border-radius:calc(20px*var(--t));border:0;font-size:calc(14px*var(--t));line-height:1.2;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 12px}
+.btn svg{width:20px;height:20px;fill:currentColor}
+.btn.tonal{background:var(--sc);color:var(--onSc)}
+.btn.fill{background:var(--p);color:var(--onP)}
+.btn.text{background:none;color:var(--p);flex:none;padding:0 14px}
+.btn[disabled]{opacity:.4;cursor:default}
+
+/* scrim, popup, sheet */
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.42);opacity:0;pointer-events:none;transition:opacity .2s;z-index:3}
+.scrim.on{opacity:1;pointer-events:auto}
+.dlg{position:absolute;z-index:4;left:16px;right:16px;top:50%;transform:translateY(-50%) scale(.96);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;background:var(--sHigh);border-radius:28px;padding:22px 20px 14px}
+.dlg.on{opacity:1;transform:translateY(-50%);pointer-events:auto}
+.dlg h3{white-space:nowrap;margin:0 0 4px;font-size:calc(20px*var(--t));line-height:1.2;font-weight:500}
+.dlg .t-sm{margin:0 0 8px}
+.opt-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;border:0;padding:6px 0;min-height:48px;font-size:calc(14px*var(--t));line-height:1.3}
+.box{flex:none;width:18px;height:18px;border-radius:3px;border:2px solid var(--onSv);display:flex;align-items:center;justify-content:center}
+.opt-row[aria-checked="true"] .box{background:var(--p);border-color:var(--p)}
+.box svg{width:16px;height:16px;fill:var(--onP);opacity:0}
+.opt-row[aria-checked="true"] .box svg{opacity:1}
+.opt-row.all{font-weight:600;border-bottom:1px solid var(--olv);margin-bottom:2px}
+.dacts{display:flex;justify-content:flex-end;gap:4px;margin-top:8px}
+.sheet{position:absolute;z-index:4;left:0;right:0;bottom:0;top:96px;background:var(--sLow);border-radius:28px 28px 0 0;transform:translateY(105%);transition:transform .25s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
+.sheet.on{transform:none}
+.grab{flex:none;width:32px;height:4px;border-radius:2px;background:var(--onSv);opacity:.4;margin:10px auto 6px;border:0;padding:0}
+.sheet .scroll{padding:6px 20px 24px}
+
+/* the teach card: one component in lessons, the walkthrough and the word sheet */
+.tc{display:flex;flex-direction:column;gap:14px;padding:4px 0}
+.slide .tc{height:100%;justify-content:space-evenly}
+.hero{display:flex;flex-direction:column;gap:2px}
+.hero .big{white-space:nowrap;font-size:calc(52px*var(--t));line-height:1.15;font-weight:500;margin:0}
+.hero .read{font-size:calc(18px*var(--t));line-height:1.3;color:var(--onSv)}
+.say{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px}
+.audio{width:48px;height:48px;border-radius:24px;border:0;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;flex:none}
+.audio svg{width:24px;height:24px;fill:currentColor}
+.ipa{font-size:calc(14px*var(--t));color:var(--onSv)}
+button.ipa{min-height:48px;padding:0 16px;border-radius:24px;border:1px solid var(--ol);background:none;color:var(--onS);font-size:calc(14px*var(--t));font-weight:500}
+.mrow{display:flex;gap:12px;align-items:center}
+.hrow{display:flex;gap:16px;align-items:center}.hrow .hero{flex:1;min-width:0}
+.mean{white-space:nowrap;font-size:calc(22px*var(--t));line-height:1.25;font-weight:500;margin:0}
+.line{font-size:calc(14px*var(--t));line-height:1.3;color:var(--onSv);margin:4px 0 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mdiv{flex:1;min-width:0}
+button.meanb{flex:1;min-width:0;text-align:left;border:0;background:var(--sHigh);color:var(--onS);border-radius:16px;padding:14px 14px 14px 16px;display:block}
+button.meanb .mt{flex:1;min-width:0}
+button.meanb svg{flex:none;width:24px;height:24px;fill:var(--p)}
+.lr{display:flex;align-items:center;gap:8px;margin-top:4px}
+.lr .line{flex:1;min-width:0;margin:0}
+.img{flex:none;width:104px;height:104px;aspect-ratio:1;border-radius:16px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
+.img svg{width:52px;height:52px;fill:currentColor;opacity:.9}
+.blk{display:flex;gap:12px;align-items:flex-start;border-radius:16px;padding:18px 16px;background:var(--sHigh)}
+.blk .ic{flex:none;width:24px;height:24px}
+.blk.note .ic{color:var(--p)}
+.blk.warn{background:var(--tC);color:var(--onTC)}
+.blk.warn .ic{color:var(--onTC)}
+.blk .tt{font-size:calc(12px*var(--t));line-height:1.3;font-weight:700;letter-spacing:.3px;margin:0 0 4px;text-transform:uppercase}
+.blk p{margin:0;font-size:calc(14px*var(--t));line-height:1.35}
+.clamp p:not(.tt){display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.blk .tx{min-width:0}
+.ex{border-left:3px solid var(--p);padding:2px 0 2px 14px;margin-bottom:12px}
+.ex .e1{font-size:calc(18px*var(--t));line-height:1.35;margin:0}
+.ex .e2{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv);margin:2px 0 0}
+.ex .e3{font-size:calc(14px*var(--t));line-height:1.35;margin:2px 0 0}
+.kv{display:flex;flex-wrap:wrap;gap:8px}
+.tag{border-radius:8px;padding:2px 10px;font-size:calc(12px*var(--t));line-height:1.4;background:var(--sc);color:var(--onSc)}
+.dict ol{margin:0;padding-left:22px;font-size:calc(14px*var(--t));line-height:1.4}
+.dict li{margin:0 0 4px}
+.dict .et{margin:8px 0 12px;font-size:calc(12px*var(--t));line-height:1.4;color:var(--onSv)}
+.foot{display:flex;align-items:center;gap:8px;justify-content:space-between;color:var(--onSv)}
+.rep{border:0;background:none;color:var(--p);font-size:calc(14px*var(--t));font-weight:600;display:flex;align-items:center;gap:6px;min-height:48px;padding:0 8px}
+.rep svg{width:20px;height:20px;fill:currentColor}
+/* IPA rows: in the pronunciation popup and inline on the word sheet */
+.sy{display:grid;grid-template-columns:56px minmax(0,1fr);gap:2px 12px;padding:10px 0;border-top:1px solid var(--olv)}
+.sy:first-child{border-top:0}
+.sy .g{font-size:calc(22px*var(--t));line-height:1.2;font-weight:500;color:var(--p)}
+.sy .d{font-size:calc(14px*var(--t));line-height:1.3}
+.sy .x{font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv)}
+.sy .a{grid-column:2;display:flex;align-items:center;gap:8px}
+.sy .audio{width:48px;height:48px}
+.btn.pr{flex:none;min-height:48px;padding:0 16px;background:none;box-shadow:inset 0 0 0 1px var(--ol);color:var(--p)}
+.ipahead{margin:0 0 4px}
+.dlg.big{max-height:calc(100% - 48px);display:flex;flex-direction:column}
+.dlg .db{overflow-y:auto;min-height:0;scrollbar-width:none}
+.dlg .db::-webkit-scrollbar{display:none}
+.btn.fill.lw{position:relative}
+.lwrap{flex:1;position:relative;display:flex}
+.badge{position:absolute;top:-8px;right:-4px;min-width:calc(20px*var(--t));height:calc(20px*var(--t));padding:0 6px;border-radius:calc(10px*var(--t));background:var(--E);color:var(--onE);font-size:calc(11px*var(--t));line-height:calc(20px*var(--t));font-weight:700;text-align:center;box-shadow:0 0 0 2px var(--sLow)}
+
+/* the walkthrough / lesson slide */
+.lbar{flex:none;display:flex;align-items:center;gap:12px;padding:0 16px 0 4px;height:52px}
+.prog{flex:1;height:4px;border-radius:2px;background:var(--olv);overflow:hidden}
+.prog i{display:block;height:100%;background:var(--p);transition:width .2s}
+.lbar .t-sm{white-space:nowrap}
+.vp{flex:1;min-height:0;overflow:hidden;position:relative}
+.track{display:flex;height:100%;width:200%}
+.track.s1{transform:translateX(-50%)}
+.vp,.track{touch-action:none;user-select:none;-webkit-user-select:none}
+.chev{position:absolute;top:50%;margin-top:-24px;z-index:2;width:40px;height:48px;border:0;padding:0;display:flex;align-items:center;justify-content:center;background:var(--sc);color:var(--onSc);opacity:0;transition:opacity .15s}
+.chev.off{pointer-events:none}
+.chev svg{width:24px;height:24px;fill:currentColor}
+.chev.l{left:0;border-radius:0 24px 24px 0}.chev.r{right:0;border-radius:24px 0 0 24px}
+.teachl.touch .chev:not(.off){opacity:.92}
+.teachl.touch .chev:not(.off) svg{animation:wig .25s ease-in-out 1}
+@keyframes wig{0%,100%{transform:translateX(0)}17%{transform:translateX(-3px)}34%{transform:translateX(3px)}51%{transform:translateX(-3px)}68%{transform:translateX(3px)}85%{transform:translateX(-2px)}}
+.slide{width:50%;height:100%;overflow:hidden;touch-action:none;padding:0 20px 8px}
+.slide::-webkit-scrollbar{display:none}
+.teachl{position:absolute;inset:0;z-index:6;display:flex;flex-direction:column;background:var(--s);visibility:hidden;opacity:0;transition:opacity .2s,visibility 0s .2s}
+.teachl.on{visibility:visible;opacity:1;transition:opacity .2s}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Deck page and teach card</h1>
+<p class="cap1">One phone: tap a word for the word sheet, tap + Learn for the teach cards (swipe or use the chevrons).</p>
+<div class="tw">
+  <div class="tg">Course <span class="seg" id="s-lang"><button type="button" data-v="hi" aria-pressed="true">Hindustani</button><button type="button" data-v="bn" aria-pressed="false">Bengali</button></span></div>
+  <div class="tg">Theme <span class="seg" id="s-th"><button type="button" data-v="light" aria-pressed="true">Light</button><button type="button" data-v="dark" aria-pressed="false">Dark</button></span></div>
+</div>
+<div class="stage" id="stage"></div>
+</div>
+
+<script>
+const SCHEMES={
+dark:{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sHigh":"#262b27","ol":"#8a938b","olv":"#404942","E":"#ffb4ab","onE":"#690005","tC":"#224c58","onTC":"#bfe9f8"},
+light:{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sHigh":"#e4eae3","ol":"#717972","olv":"#c0c9c0","E":"#ba1a1a","onE":"#ffffff","tC":"#bfe9f8","onTC":"#224c58"}};
+
+const I={
+ back:'<svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>',
+ close:'<svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>',
+ bug:'<svg viewBox="0 0 24 24"><path d="M20 8h-2.81a5.985 5.985 0 0 0-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6.002 6.002 0 0 0-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z"/></svg>',
+ vol:'<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>',
+ excl:'<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>',
+ hear:'<svg viewBox="0 0 24 24"><path d="M17 20c-.29 0-.56-.06-.76-.15-.71-.37-1.21-.88-1.71-2.38-.51-1.56-1.47-2.29-2.39-3-.79-.61-1.61-1.24-2.32-2.53C9.29 10.98 9 9.93 9 9c0-2.8 2.2-5 5-5s5 2.2 5 5h2c0-3.93-3.07-7-7-7S7 5.07 7 9c0 1.26.38 2.65 1.07 3.9.91 1.65 1.98 2.48 2.85 3.15.81.62 1.39 1.07 1.71 2.05.6 1.82 1.37 2.84 2.73 3.55.51.23 1.07.35 1.64.35 2.21 0 4-1.79 4-4h-2c0 1.1-.9 2-2 2zM7.64 2.64L6.22 1.22C4.23 3.21 3 5.96 3 9s1.23 5.79 3.22 7.78l1.41-1.41C6.01 13.74 5 11.49 5 9s1.01-4.74 2.64-6.36zM11.5 9c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5-2.5 1.12-2.5 2.5z"/></svg>',
+ deaf:'<svg viewBox="0 0 24 24"><path d="M17 20c-.29 0-.56-.06-.76-.15-.71-.37-1.21-.88-1.71-2.38-.51-1.56-1.47-2.29-2.39-3-.79-.61-1.61-1.24-2.32-2.53C9.29 10.98 9 9.93 9 9c0-2.8 2.2-5 5-5s5 2.2 5 5h2c0-3.93-3.07-7-7-7S7 5.07 7 9c0 1.26.38 2.65 1.07 3.9.91 1.65 1.98 2.48 2.85 3.15.81.62 1.39 1.07 1.71 2.05.6 1.82 1.37 2.84 2.73 3.55.51.23 1.07.35 1.64.35 2.21 0 4-1.79 4-4h-2c0 1.1-.9 2-2 2z"/><path d="M2.1 3.5 3.5 2.1 21.9 20.5 20.5 21.9z"/></svg>',
+ trans:'<svg viewBox="0 0 24 24"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>',
+ book:'<svg viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg>',
+ prev:'<svg viewBox="0 0 24 24"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>',
+ nextI:'<svg viewBox="0 0 24 24"><path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>',
+ check:'<svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>',
+ relearn:'<svg viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>',
+ add:'<svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>',
+ flag:'<svg viewBox="0 0 24 24"><path d="M14.4 6 14 4H5v17h2v-7h5.6l.4 2h7V6z"/></svg>',
+ pic:'<svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>'
+};
+
+/* ---------- IPA: the rows are generated from the IPA string with this symbol table ---------- */
+const D='̪',H='ʰ',B='ʱ',L='ː';   /* dental, aspirated, breathy-voiced, long */
+const SYM={};
+[['k','A k with no puff of air.','as in “skate”'],
+ ['k'+H,'A k with a puff of air.','as in “kit”'],
+ ['ɡ','A hard g.','as in “go”'],
+ ['tʃ','The ch of “church”.','as in “church”'],
+ ['dʒ','The j of “judge”.','as in “judge”'],
+ ['ʃ','The sh of “ship”.','as in “ship”'],
+ ['p','A p with no puff of air.','as in “spin”'],
+ ['b','A b.','as in “bat”'],
+ ['t'+D,'A t with the tongue at the teeth.','as in Spanish “tú”'],
+ ['t'+D+H,'A dental t with a puff of air.','as in Spanish “tú”, plus a puff'],
+ ['d'+D,'A d with the tongue at the teeth.','as in Spanish “donde”'],
+ ['d'+D+B,'A dental d with a breath after it.','like “mad house” said as one sound'],
+ ['d'+D+B+L,'A held dental d with a breath after it.','a long version of the one above'],
+ ['n','An n, tongue at the ridge behind the teeth.','as in “net”'],
+ ['m','An m.','as in “map”'],
+ ['l','A light l.','as in “leaf”'],
+ ['ɾ','A quick tapped r.','as in Spanish “pero”'],
+ ['s','An s.','as in “sun”'],
+ ['h','A breathy h.','as in “hat”'],
+ ['f','An f.','as in “fan”'],
+ ['j','The y of “yes”.','as in “yes”'],
+ ['ʋ','Between English v and w.','a soft “vine”'],
+ ['a','An open a.','as in “father”'],
+ ['a'+L,'A long, open a.','as in “father”'],
+ ['ə','A short, neutral vowel.','as in “about”'],
+ ['ɪ','A short, relaxed i.','as in “bit”'],
+ ['i','A close i.','as in “machine”, short'],
+ ['i'+L,'A long, close i.','as in “machine”'],
+ ['u','A close u.','as in “food”'],
+ ['ʊ','A short, relaxed u.','as in “put”'],
+ ['e','A close-mid e.','as in “say”, without the glide'],
+ ['o','A close-mid o.','as in “no”, without the glide'],
+ ['ɔ','An open, rounded o.','as in “thought”']
+].forEach(r=>SYM[r[0]]=[r[1],r[2]]);
+window.__ipaMissing=[];
+function segs(ipa){
+ const body=ipa.replace(/^\/|\/$/g,''), keys=Object.keys(SYM).sort((a,b)=>b.length-a.length), out=[];
+ for(let i=0;i<body.length;){
+  const k=keys.find(k=>body.startsWith(k,i));
+  if(!k){const bad=body[i];console.error('IPA segment with no entry: '+JSON.stringify(bad)+' (U+'+bad.codePointAt(0).toString(16)+') in '+ipa);window.__ipaMissing.push(bad);out.push(bad);i++;continue}
+  out.push(k);i+=k.length;
+ }
+ return [...new Set(out)];   /* each symbol once, in order of first appearance */
+}
+const symRows=c=>segs(c.ipa).map(k=>{const e=SYM[k]||['No entry in the symbol table.',''];return `<div class="sy" data-sym="${k}"><span class="g">${k}</span><div><div class="d">${e[0]}</div><div class="x">${e[1]}</div></div><div class="a"><button class="audio" type="button" aria-label="Play ${k}">${I.vol}</button><button class="btn pr" type="button">Practise</button></div></div>`}).join('');
+
+/* the courses */
+const COURSES={
+hi:{lang:'hi',deck:'Time words',sub:'Hindustani · Devanagari · 14 words',
+ tags:['time','day','calendar'],
+ skills:['Recognition','Writing','Listening','Speaking'],
+ words:[
+  {id:'hi.time.kal',w:'कल',r:'kal',m:'yesterday; tomorrow',s:'k',t:['day','time']},
+  {id:'hi.time.pratinidhitva',w:'प्रतिनिधित्व',r:'pratinidhitva',m:'representation',s:'l',t:['time']},
+  {id:'hi.time.aaj',w:'आज',r:'āj',m:'today',s:'k',t:['day']},
+  {id:'hi.time.ab',w:'अब',r:'ab',m:'now',s:'l',t:['time'],ipa:`/əb/`},
+  {id:'hi.time.kaal',w:'काल',r:'kāl',m:'time; era',s:'n',t:['time'],ipa:`/ka${L}l/`},
+  {id:'hi.time.subah',w:'सुबह',r:'subah',m:'morning',s:'l',t:['day'],ipa:`/sʊbəh/`},
+  {id:'hi.time.shaam',w:'शाम',r:'śām',m:'evening',s:'n',t:['day'],ipa:`/ʃa${L}m/`},
+  {id:'hi.time.raat',w:'रात',r:'rāt',m:'night',s:'k',t:['day'],ipa:`/ɾa${L}t${D}/`},
+  {id:'hi.time.din',w:'दिन',r:'din',m:'day',s:'k',t:['day','calendar'],ipa:`/d${D}ɪn/`},
+  {id:'hi.time.hafta',w:'हफ़्ता',r:'haftā',m:'week',s:'k',t:['calendar'],ipa:`/həft${D}a${L}/`},
+  {id:'hi.time.mahina',w:'महीना',r:'mahīnā',m:'month',s:'k',t:['calendar'],ipa:`/məhi${L}na${L}/`},
+  {id:'hi.time.saal',w:'साल',r:'sāl',m:'year',s:'k',t:['calendar'],ipa:`/sa${L}l/`},
+  {id:'hi.time.samay',w:'समय',r:'samay',m:'time; moment',s:'n',t:['time'],ipa:`/səməj/`},
+  {id:'hi.body.baal',w:'बाल',r:'bāl',m:'hair',s:'k',t:[],ipa:`/ba${L}l/`}],
+ card:{
+  0:{w:'कल',r:'kal',ipa:`/kəl/`,mean:'yesterday; tomorrow',also:'the past or the next day, by context',accept:'yesterday, tomorrow',line:'adverb · noun (m.)',
+     note:'One word for both days. The verb tense or a word such as “आने वाला” (coming) says which.',
+     pick:'warn',
+     look:{tt:'Looks like another word',tx:'काल has the ā sign (ा) after क; कल has none.'},
+     warn:{tt:'Sounds like another word',tx:'काल (kāl), “time”. One sound differs: ə against aː, the short and the long a.'},
+     other:{tt:'Other meanings',tx:'It also means “machine” and “ease, peace”.'},
+     exs:[['मैं कल आऊँगा।','maiṁ kal āūṅgā.','I will come tomorrow.'],['कल स्कूल बंद था।','kal skūl band thā.','School was closed yesterday.']],
+     dict:['The day before today.','The day after today.','(figurative) the near future or past.'],
+     ety:'From Sanskrit कल्य (kalya), “tomorrow, dawn”.',tags:['day','time']},
+  1:{w:'प्रतिनिधित्व',r:'pratinidhitva',ipa:`/pɾət${D}ɪnɪd${D}${B}ɪt${D}ʋ/`,mean:'representation',also:'a delegation',accept:'representation',line:'noun (m.)',
+     note:'The ending -त्व (-tva) turns प्रतिनिधि (pratinidhi), “representative”, into an abstract noun.',
+     warn:null,other:{tt:'Other meanings',tx:'It also means a delegation, the body of people who represent others.'},
+     exs:[['संसद में महिलाओं का प्रतिनिधित्व बढ़ा है।','saṁsad meṁ mahilāoṁ kā pratinidhitva baṛhā hai.','Women’s representation in parliament has grown.']],
+     dict:['The act of standing or speaking for others.','A delegation; those who represent a group.'],ety:'From Sanskrit प्रतिनिधि (pratinidhi), “representative”, with the suffix -त्व (-tva).',tags:['time']},
+  13:{w:'बाल',r:'bāl',ipa:`/ba${L}l/`,mean:'hair',also:'a child (बाल-)',accept:'hair',line:'noun (m.)',
+     note:'In compounds बाल- also means “child”, as in बाल-मन (a child’s mind).',
+     look:{tt:'Looks like another word',tx:'बाल has the ā sign (ा) after ब; बल has none.'},
+     warn:null,other:null,
+     exs:[['उसके बाल लंबे हैं।','uske bāl laṁbe haiṁ.','Her hair is long.']],
+     dict:['The hair of the head or body.','(in compounds) a child.'],ety:'From Sanskrit बाल (bāla), “hair; child”.',tags:[]},
+  2:{w:'आज',r:'āj',ipa:`/a${L}dʒ/`,mean:'today',also:'now, these days',accept:'today',line:'adverb · noun (m.)',
+     note:'Often paired with कल to talk about the days around now.',
+     warn:null,other:{tt:'Other meanings',tx:'“now, these days” is also आज, as in आज कल (nowadays).'},
+     exs:[['आज मौसम अच्छा है।','āj mausam acchā hai.','The weather is nice today.'],['आज मैं घर पर हूँ।','āj maiṁ ghar par hūṁ.','I am at home today.']],
+     dict:['This day.','At present, nowadays.'],ety:'From Sanskrit अद्य (adya), “today”.',tags:['day']}}},
+bn:{lang:'bn',deck:'Time words',sub:'Bengali · Bengali script · 13 words',
+ tags:['time','day','calendar'],
+ skills:['Recognition','Writing','Listening','Speaking'],
+ words:[
+  {id:'bn.time.kal',w:'কাল',r:'kāl',m:'yesterday; tomorrow',s:'k',t:['day','time']},
+  {id:'bn.time.paristhitigulor',w:'পরিস্থিতিগুলোর',r:'pôristhitigulor',m:'of the situations',s:'l',t:['time']},
+  {id:'bn.time.aj',w:'আজ',r:'āj',m:'today',s:'k',t:['day']},
+  {id:'bn.time.ekhon',w:'এখন',r:'ekhôn',m:'now',s:'l',t:['time'],ipa:`/ek${H}on/`},
+  {id:'bn.time.sakal',w:'সকাল',r:'sakāl',m:'morning',s:'l',t:['day'],ipa:`/ʃokal/`},
+  {id:'bn.time.sondha',w:'সন্ধ্যা',r:'sôndhyā',m:'evening',s:'n',t:['day'],ipa:`/ʃɔnd${D}${B}${L}a/`},
+  {id:'bn.time.rat',w:'রাত',r:'rāt',m:'night',s:'k',t:['day'],ipa:`/ɾat${D}/`},
+  {id:'bn.time.din',w:'দিন',r:'din',m:'day',s:'k',t:['day','calendar'],ipa:`/d${D}in/`},
+  {id:'bn.time.shopta',w:'সপ্তাহ',r:'sôptāh',m:'week',s:'k',t:['calendar'],ipa:`/ʃɔpt${D}ah/`},
+  {id:'bn.time.mash',w:'মাস',r:'mās',m:'month',s:'k',t:['calendar'],ipa:`/maʃ/`},
+  {id:'bn.time.bochor',w:'বছর',r:'bôchôr',m:'year',s:'k',t:['calendar'],ipa:`/bɔtʃɔɾ/`},
+  {id:'bn.time.somoy',w:'সময়',r:'sômôy',m:'time; moment',s:'n',t:['time'],ipa:`/ʃɔmɔj/`},
+  {id:'bn.time.kalo',w:'কালো',r:'kālo',m:'black',s:'n',t:['time'],ipa:`/kalo/`}],
+ card:{
+  0:{w:'কাল',r:'kāl',ipa:'/kal/',mean:'yesterday; tomorrow',also:'time, era',accept:'yesterday, tomorrow',line:'adverb · noun',
+     note:'One word for both days. The tense of the verb says which.',
+     pick:'look',
+     look:{tt:'Looks like another word',tx:'কাল has the ā sign (া) after ক; কল has none.'},
+     warn:{tt:'Sounds like another word',tx:'খাল (khāl), “canal”. One sound differs: k against kʰ, without a puff of air and with one.'},
+     other:{tt:'Other meanings',tx:'“time, era” is also কাল, as in the age of a ruler.'},
+     exs:[['আমি কাল যাব।','āmi kāl jābo.','I will go tomorrow.'],['কাল আমি বাড়িতে ছিলাম।','kāl āmi bāṛite chilām.','I was at home yesterday.']],
+     dict:['The day before today.','The day after today.','Time, as an age or era.'],
+     ety:'From Sanskrit কল্য (kalya), “tomorrow, dawn”.',tags:['day','time']},
+  1:{w:'পরিস্থিতিগুলোর',r:'pôristhitigulor',ipa:`/pɔɾist${D}${H}it${D}iɡuloɾ/`,mean:'of the situations',also:'of the circumstances',accept:'of the circumstances',line:'noun · genitive',
+     note:'The stem পরিস্থিতি (pôristhiti) keeps its form; -গুলো makes it plural and -র makes it genitive.',
+     warn:null,other:{tt:'Other meanings',tx:'It is also read “of the circumstances”.'},
+     exs:[['পরিস্থিতিগুলোর কারণে দেরি হলো।','pôristhitigulor kāroṇe deri hôlo.','There was a delay because of the situations.']],
+     dict:['Of the situations.','Genitive plural of পরিস্থিতি (pôristhiti), “situation”.'],ety:'From Sanskrit परिस्थिति (paristhiti), “situation”, with the plural -গুলো (-gulo) and the genitive -র (-r).',tags:['time']},
+  2:{w:'আজ',r:'āj',ipa:'/adʒ/',mean:'today',also:'these days',accept:'today',line:'adverb · noun',
+     note:'Pairs with কাল to speak of the days around now.',
+     warn:null,other:{tt:'Other meanings',tx:'“these days” is also আজ, as in আজকাল (nowadays).'},
+     exs:[['আজ বৃষ্টি হবে।','āj bṛṣṭi hôbe.','It will rain today.'],['আজ আমি ব্যস্ত।','āj āmi byôsto.','I am busy today.']],
+     dict:['This day.','At present.'],ety:'From Sanskrit অদ্য (adya), “today”.',tags:['day']}}}
+};
+const STAT={n:'New',l:'Learning',k:'Known'};
+
+/* only a teach card's headword shrinks to fit a long word; the deck list keeps its size */
+const FIT='.big,.mean,.row .w,.row .mn,.row .rd,.meanb .line,.dlg h3';
+function fit(root){
+ root.querySelectorAll(FIT).forEach(el=>{
+  el.style.fontSize='';let px=parseFloat(getComputedStyle(el).fontSize);
+  while(el.scrollWidth>el.clientWidth+0.5&&px>10){px-=0.5;el.style.fontSize=px+'px'}
+ });
+}
+const exHtml=(e,L)=>`<div class="ex"><p class="e1 script" ${L}>${e[0]}</p><p class="e2">${e[1]}</p><p class="e3">${e[2]}</p></div>`;
+const dictHtml=c=>`<div class="dict"><ol>${c.dict.map(d=>`<li>${d}</li>`).join('')}</ol><p class="et">Etymology: ${c.ety}</p></div>`;
+const blk=(cls,ic,b,titled)=>`<div class="blk ${cls}${titled?'':' clamp'}"><span class="ic">${ic}</span><div class="tx">${titled?`<p class="tt">${b.tt}</p>`:''}<p>${b.tx}</p></div></div>`;
+
+/* the one teach card. full=false: the lesson card, one screen. full=true: the word sheet, everything inline. */
+function teachCard(c,full,lang){
+ const L=`lang="${lang}"`, B=[];
+ const ipa=full?`<span class="ipa">${c.ipa}</span>`:`<button class="ipa" type="button" data-ipa aria-label="Pronunciation ${c.ipa}">${c.ipa}</button>`;
+ B.push(`<div class="hero"><p class="big script" ${L}>${c.w}</p><span class="read">${c.r}</span><div class="say"><button class="audio" type="button" aria-label="Play audio">${I.vol}</button>${ipa}</div></div>`);
+ if(full){
+  B.push(`<div><p class="t-lab">Pronunciation · IPA course</p>${symRows(c)}</div>`);
+  B.push(`<div><p class="mean">${c.mean}</p>${c.line?`<p class="line" style="white-space:normal">${c.line}</p>`:''}${c.also?`<p class="line" style="white-space:normal">Also means: ${c.also}</p><p class="line" style="white-space:normal">Also accepted: ${c.accept}</p>`:''}</div>`);
+  B.push(`<div class="img" role="img" aria-label="Picture" style="width:100%;height:120px">${I.pic}</div>`);
+  if(c.note)B.push(blk('note',I.excl,{tt:'Note',tx:c.note},true));
+  if(c.look)B.push(blk('warn',I.deaf,c.look,true));
+  if(c.warn)B.push(blk('warn',I.hear,c.warn,true));
+  if(c.other)B.push(blk('warn',I.trans,c.other,true));
+  if(c.dict)B.push(`<div><p class="t-lab">Dictionary · Wiktionary</p>${dictHtml(c)}</div>`);
+  if(c.exs)B.push(`<div><p class="t-lab">Examples</p>${c.exs.map(e=>exHtml(e,L)).join('')}</div>`);
+  B.push(`<div><p class="t-lab">Tags</p><div class="kv">${c.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div></div>`);
+  B.push(`<div class="foot"><span class="t-sm">${c.id}</span><button class="rep" type="button">${I.flag}Report</button></div>`);
+ }else{
+  // owner, 2026-10-22: "Just give the meaning more space": the picture moves up beside the word, the meaning takes the full width
+  const hi=B.findIndex(x=>x.startsWith('<div class="hero"'));
+  if(hi>=0)B[hi]=`<div class="hrow">${B[hi]}<div class="img" role="img" aria-label="Picture">${I.pic}</div></div>`;
+  B.push(`<div class="mrow"><button class="meanb" type="button" data-dict aria-label="Dictionary: ${c.mean}"><span class="mt"><p class="mean">${c.mean}</p><span class="lr"><p class="line">${c.line}</p>${I.book}</span></span></button></div>`);
+  const ws={look:['deaf',c.look],warn:['hear',c.warn],other:['trans',c.other]};
+  const pick=ws[c.pick]&&ws[c.pick][1]?ws[c.pick]:Object.values(ws).find(w=>w[1]);   /* one note and one warning, the most useful */
+  if(c.note)B.push(blk('note',I.excl,{tx:c.note},false));
+  if(pick)B.push(blk('warn',I[pick[0]],pick[1],false));
+ }
+ return `<div class="tc">${B.join('')}</div>`;
+}
+
+const state={lang:'hi',theme:'light'};
+let escHandler=null;
+
+function build(){
+ const C=COURSES[state.lang], vars=Object.entries(SCHEMES[state.theme]).map(([k,v])=>`--${k}:${v}`).join(';');
+ const stage=document.getElementById('stage');
+ stage.innerHTML=`
+ <div class="ph" style="${vars}" id="phone">
+  <div class="appbar"><button class="ib" type="button" aria-label="Back">${I.back}</button><span class="sp"></span><button class="ib" type="button" aria-label="Report a problem">${I.bug}</button></div>
+  <div class="scroll">
+   <div class="meta"><h3 class="t-title">${C.deck}</h3><div class="t-sm">${C.sub}</div></div>
+   <div class="chips" role="group" aria-label="Filter by tag">${C.tags.map(t=>`<button class="chip" type="button" aria-pressed="false" data-tag="${t}">${I.check}${t}</button>`).join('')}</div>
+   <p class="t-sm count" data-count></p>
+   <ul class="rows" data-rows></ul>
+  </div>
+  <div class="bottom"><button class="btn tonal" type="button" data-practice>Practice</button><span class="lwrap"><button class="btn fill" type="button" data-learn style="flex:1"></button><span class="badge" data-badge></span></span></div>
+  <div class="scrim" data-scrim></div>
+  <div class="dlg" role="dialog" aria-label="Practice skills"><h3>Practice</h3><p class="t-sm">Choose skills. Every taught word in them is drilled, due or not.</p>
+   <button class="opt-row all" type="button" role="checkbox" aria-checked="true" data-skill="all"><span class="box">${I.check}</span>All</button>
+   ${C.skills.map(s=>`<button class="opt-row" type="button" role="checkbox" aria-checked="true" data-skill="${s}"><span class="box">${I.check}</span>${s}</button>`).join('')}
+   <div class="dacts"><button class="btn text" type="button" data-cancel>Cancel</button><button class="btn text" type="button" data-start>Start</button></div></div>
+  <div class="sheet" role="dialog" aria-label="Word sheet"><button class="grab" type="button" aria-label="Close" data-close></button><div class="scroll" data-sheet></div></div>
+  <div class="teachl" data-teach role="dialog" aria-label="Teach cards">
+   <div class="lbar"><button class="ib" type="button" aria-label="Close" data-tclose>${I.close}</button><div class="prog"><i style="width:50%"></i></div><span class="t-sm" data-pos>1 / 2</span></div>
+   <div class="vp"><button class="chev l" type="button" data-back aria-label="Previous card">${I.prev}</button><button class="chev r" type="button" data-next aria-label="Next card">${I.nextI}</button><div class="track">
+    <div class="slide">${teachCard(C.card[0],false,C.lang)}</div>
+    <div class="slide">${teachCard(C.card[1],false,C.lang)}</div></div></div>
+   <div class="scrim" data-pscrim></div>
+   <div class="dlg big" role="dialog" aria-label="Pronunciation" data-p="ipa"><h3>Pronunciation</h3><p class="t-sm ipahead">From the IPA course. Practise each sound on its own.</p><div class="db" data-body></div><div class="dacts"><button class="btn text" type="button" data-x>Close</button></div></div>
+   <div class="dlg big" role="dialog" aria-label="Dictionary" data-p="dict"><h3 class="script" data-dt></h3><p class="t-sm ipahead">Senses, etymology and examples. From Wiktionary.</p><div class="db" data-body></div><div class="dacts"><button class="btn text" type="button" data-x>Close</button></div></div>
+  </div>
+ </div>`;
+ const ph=document.getElementById('phone');
+ const teach=wireTeach(ph,C);
+ const deck=wireDeck(ph,C,teach);
+ if(escHandler)document.removeEventListener('keydown',escHandler);
+ escHandler=e=>{if(e.key!=='Escape')return;
+  if(teach.closePopup())return;
+  if(teach.isOpen()){teach.close();return}
+  if(deck.closeTop())return};
+ document.addEventListener('keydown',escHandler);
+ fit(ph);if(document.fonts)document.fonts.ready.then(()=>fit(ph));
+}
+
+function wireDeck(ph,C,teach){
+ const sel=new Set(), rows=ph.querySelector('[data-rows]'), cnt=ph.querySelector('[data-count]'), learn=ph.querySelector('[data-learn]'), badge=ph.querySelector('[data-badge]');
+ const scrim=ph.querySelector('[data-scrim]'), dlg=ph.querySelector('.dlg'), sheet=ph.querySelector('.sheet');
+ const vis=()=>C.words.filter(x=>!sel.size||x.t.some(t=>sel.has(t)));
+ function paint(){
+  const v=vis(), fresh=v.filter(x=>x.s==='n').length;
+  cnt.textContent=`${v.length} of ${C.words.length} words`;
+  rows.innerHTML=v.length?v.map(x=>`<li><button class="row" type="button" data-id="${x.id}"><span><span class="w script" lang="${C.lang}">${x.w}</span><span class="rd">${x.r}</span></span><span class="mn">${x.m}</span><span class="mc"><span class="mastery m-${{n:'new',l:'learning',k:'known'}[x.s]}">${STAT[x.s]}</span></span></button></li>`).join(''):`<li class="empty">No words have these tags.</li>`;
+  const relearn=v.length&&!fresh;
+  learn.disabled=!v.length;
+  learn.innerHTML=relearn?`${I.relearn}Relearn`:`${I.add}Learn`;
+  badge.textContent=fresh;badge.hidden=!!relearn||!fresh;
+  ph.querySelector('[data-practice]').disabled=!v.length;fit(rows);
+ }
+ function openSheet(id){
+  const i=C.words.findIndex(w=>w.id===id), x=C.words[i];
+  const c=C.card[i]?Object.assign({id},C.card[i]):{id,w:x.w,r:x.r,ipa:x.ipa,mean:x.m,tags:x.t};
+  const s=ph.querySelector('[data-sheet]');s.innerHTML=teachCard(c,true,C.lang);s.scrollTop=0;fit(s);
+  scrim.classList.add('on');sheet.classList.add('on');
+ }
+ function closeTop(){const any=scrim.classList.contains('on');scrim.classList.remove('on');sheet.classList.remove('on');dlg.classList.remove('on');return any}
+ ph.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{
+  const t=b.dataset.tag, on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);on?sel.add(t):sel.delete(t);paint()}));
+ rows.addEventListener('click',e=>{const b=e.target.closest('.row');if(b)openSheet(b.dataset.id)});
+ ph.querySelector('[data-practice]').addEventListener('click',()=>{scrim.classList.add('on');dlg.classList.add('on')});
+ learn.addEventListener('click',()=>teach.open());
+ const skills=[...ph.querySelectorAll('[data-skill]')], all=skills[0], start=ph.querySelector('[data-start]');
+ const sync=()=>{const on=skills.slice(1).filter(b=>b.getAttribute('aria-checked')==='true').length;all.setAttribute('aria-checked',on===skills.length-1);start.disabled=!on};
+ skills.forEach(b=>b.addEventListener('click',()=>{
+  const on=b.getAttribute('aria-checked')!=='true';
+  if(b===all)skills.forEach(s=>s.setAttribute('aria-checked',on));else b.setAttribute('aria-checked',on);sync()}));
+ ph.querySelector('[data-cancel]').addEventListener('click',closeTop);
+ start.addEventListener('click',closeTop);
+ scrim.addEventListener('click',closeTop);
+ ph.querySelector('[data-close]').addEventListener('click',closeTop);
+ paint();
+ return {closeTop};
+}
+
+function wireTeach(ph,C){
+ const layer=ph.querySelector('[data-teach]'), tr=layer.querySelector('.track'), vp=layer.querySelector('.vp'), back=layer.querySelector('[data-back]'), next=layer.querySelector('[data-next]'), pos_=layer.querySelector('[data-pos]'), bar=layer.querySelector('.prog i');
+ const pscrim=layer.querySelector('[data-pscrim]'), P={ipa:layer.querySelector('[data-p=ipa]'),dict:layer.querySelector('[data-p=dict]')};
+ /* the approved tab-swipe spring (tab-swipe.html, #702): stiffness 400, damping ratio 0.75, mass 1 (c = 2*0.75*sqrt(400) = 30) */
+ const N=2, K=400, Z=0.75, SLOP=8, MIN_FLING=200, FAST=1500;
+ let i=0,pos=0,anim=null,raf=0,last=0,drag=null;
+ const W=()=>vp.clientWidth;
+ const rubber=x=>(0.3*x)/(1+x/(0.9*W()));
+ const withRubber=r=>r<0?-rubber(-r):r>(N-1)*W()?(N-1)*W()+rubber(r-(N-1)*W()):r;
+ function render(){
+  tr.style.transform=`translate3d(${-pos}px,0,0)`;
+  const n=Math.max(0,Math.min(N-1,Math.round(pos/W())));
+  i=n;back.classList.toggle('off',i===0);next.classList.toggle('off',i===N-1);pos_.textContent=`${i+1} / ${N}`;bar.style.width=(i+1)*100/N+'%';
+ }
+ function tick(now){
+  raf=0;if(!anim)return;
+  const dt=Math.min(now-last,40)/1000;last=now;
+  const h=1/480,steps=Math.max(1,Math.round(dt/h));
+  for(let k=0;k<steps;k++){const a=-K*(pos-anim.target)-anim.c*anim.v;anim.v+=a*h;pos+=anim.v*h}
+  if(Math.abs(pos-anim.target)<0.3&&Math.abs(anim.v)<8){pos=anim.target;anim=null}
+  render();
+  if(anim)raf=requestAnimationFrame(tick);
+ }
+ function spring(target,v0,zeta){
+  anim={target,v:v0,c:2*zeta*Math.sqrt(K)};
+  if(!raf){last=performance.now();raf=requestAnimationFrame(tick)}
+ }
+ const goTo=n=>{if(drag)return;n=Math.max(0,Math.min(N-1,n));spring(n*W(),0,Z)};
+ next.addEventListener('click',()=>goTo(i+1));
+ back.addEventListener('click',()=>goTo(i-1));
+ /* chevrons show 0.1 s after a touch starts (mouse down counts, and a quick tap still shows them), hide 0.3 s after it ends; they are tappable even while hidden */
+ let tIn=0,tOut=0;
+ layer.addEventListener('pointerdown',()=>{clearTimeout(tOut);clearTimeout(tIn);tIn=setTimeout(()=>{layer.classList.remove('touch');void layer.offsetWidth;layer.classList.add('touch')},100)});
+ const end=()=>{clearTimeout(tOut);tOut=setTimeout(()=>layer.classList.remove('touch'),300)};
+ layer.addEventListener('pointerup',end);layer.addEventListener('pointercancel',end);
+ /* swipe by mouse drag or touch: the card follows the pointer, then springs to the next, the previous, or back */
+ tr.addEventListener('pointerdown',e=>{
+  if(drag||(e.pointerType==='mouse'&&e.button!==0))return;
+  if(!e.target.closest('button'))e.preventDefault();   /* no text selection while dragging; buttons keep their clicks */
+  anim=null;const n=Math.max(0,Math.min(N-1,Math.round(pos/W())));
+  drag={id:e.pointerId,x0:e.clientX,y0:e.clientY,pos0:pos,startIdx:n,mode:'undecided',raw:pos,samples:[{t:performance.now(),p:pos}]};
+ });
+ tr.addEventListener('pointermove',e=>{
+  if(!drag||e.pointerId!==drag.id)return;
+  let dx=e.clientX-drag.x0,dy=e.clientY-drag.y0;
+  if(drag.mode==='undecided'){
+   if(Math.hypot(dx,dy)<SLOP)return;
+   if(Math.abs(dx)>Math.abs(dy)){drag.mode='h';try{tr.setPointerCapture(e.pointerId)}catch(_){}drag.x0=e.clientX;drag.pos0=pos;dx=0;drag.samples=[{t:performance.now(),p:pos}]}
+   else drag.mode='v';
+  }
+  if(drag.mode==='h'){
+   drag.raw=drag.pos0-dx;pos=withRubber(drag.raw);
+   const now=performance.now();drag.samples.push({t:now,p:drag.raw});
+   while(drag.samples.length>2&&now-drag.samples[0].t>100)drag.samples.shift();
+   render();
+  }
+ });
+ function release(e,cancelled){
+  if(!drag||e.pointerId!==drag.id)return;
+  const d=drag;drag=null;
+  if(d.mode!=='h')return;
+  const now=performance.now(),s=d.samples,f=s[0],l=s[s.length-1];let v=0;
+  if(now-l.t<80&&l.t>f.t)v=(l.p-f.p)/((l.t-f.t)/1000);
+  const dist=d.raw-d.startIdx*W();let t=d.startIdx;
+  if(!cancelled){if(Math.abs(v)>=MIN_FLING)t=d.startIdx+(v>0?1:-1);else if(Math.abs(dist)>W()/2)t=d.startIdx+(dist>0?1:-1)}
+  t=Math.max(0,Math.min(N-1,Math.max(d.startIdx-1,Math.min(d.startIdx+1,t))));
+  const mix=Math.max(0,Math.min(1,(Math.abs(v)-300)/(FAST-300)));
+  spring(t*W(),v,1+(Z-1)*mix);
+ }
+ tr.addEventListener('pointerup',e=>release(e,false));tr.addEventListener('pointercancel',e=>release(e,true));
+ /* popups: over the teach card, inside the phone, above everything */
+ const L=`lang="${C.lang}"`;
+ function openP(k){
+  const c=C.card[i];
+  if(k==='ipa')P.ipa.querySelector('[data-body]').innerHTML=symRows(c);
+  else{const t=P.dict.querySelector('[data-dt]');t.textContent=c.w;t.setAttribute('lang',C.lang);
+   P.dict.querySelector('[data-body]').innerHTML=dictHtml(c)+`<p class="t-lab">Examples</p>`+c.exs.map(e=>exHtml(e,L)).join('')}
+  P[k].querySelector('[data-body]').scrollTop=0;
+  pscrim.classList.add('on');P[k].classList.add('on');fit(P[k]);
+ }
+ function closePopup(){const any=P.ipa.classList.contains('on')||P.dict.classList.contains('on');pscrim.classList.remove('on');P.ipa.classList.remove('on');P.dict.classList.remove('on');return any}
+ layer.addEventListener('click',e=>{if(e.target.closest('[data-ipa]'))openP('ipa');else if(e.target.closest('[data-dict]'))openP('dict')});
+ pscrim.addEventListener('click',closePopup);
+ layer.querySelectorAll('[data-x]').forEach(b=>b.addEventListener('click',closePopup));
+ const open=()=>{anim=null;pos=0;render();closePopup();layer.classList.add('on');fit(layer)};
+ const close=()=>{closePopup();layer.classList.remove('on')};
+ layer.querySelector('[data-tclose]').addEventListener('click',close);
+ render();
+ return {open,close,closePopup,isOpen:()=>layer.classList.contains('on')};
+}
+
+/* ---------- contrast self-check: computed here, printed only in the console (results are in the .md) ---------- */
+const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const lum=c=>{const a=c.map(v=>{v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4)});return .2126*a[0]+.7152*a[1]+.0722*a[2]};
+const ratio=(a,b)=>{const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
+function selfCheck(){
+ const out=[];
+ for(const th of ['light','dark']){
+  const S=Object.fromEntries(Object.entries(SCHEMES[th]).map(([k,v])=>[k,hex(v)]));
+  const add=(what,fg,bg,need)=>{const r=ratio(S[fg],S[bg]);out.push({theme:th,pair:what,ratio:+r.toFixed(2),needs:need,ok:r>=need})};
+  add('body text: onS on s','onS','s',4.5);
+  add('reading, captions: onSv on s','onSv','s',4.5);
+  add('captions on bottom bar: onSv on sLow','onSv','sLow',4.5);
+  add('meaning button and note text: onS on sHigh','onS','sHigh',4.5);
+  add('dictionary icon and note icon: p on sHigh','p','sHigh',3);
+  add('IPA button text: onS on s','onS','s',4.5);
+  add('IPA button outline: ol on s','ol','s',3);
+  add('warning: onTC on tC','onTC','tC',4.5);
+  add('chip selected, Learning, Practice, play button, image tile, chevrons: onSc on sc','onSc','sc',4.5);
+  add('chip unselected and New: onSv on s','onSv','s',4.5);
+  add('chip and New outline: ol on s','ol','s',3);
+  add('Known chip and + Learn / Relearn: onP on p','onP','p',4.5);
+  add('badge: onE on E','onE','E',4.5);
+  add('badge against bottom bar: E on sLow','E','sLow',3);
+  add('popup text: onS on sHigh','onS','sHigh',4.5);
+  add('popup buttons, IPA symbols: p on sHigh','p','sHigh',4.5);
+  add('Practise outline: ol on sHigh','ol','sHigh',3);
+  add('popup captions: onSv on sHigh','onSv','sHigh',4.5);
+  add('example rule: p on s','p','s',3);
+  add('sheet text: onS on sLow','onS','sLow',4.5);
+  add('IPA symbols and buttons on sheet: p on sLow','p','sLow',4.5);
+ }
+ window.__check=out;
+ console.log('CONTRAST '+JSON.stringify(out));
+}
+function seg(id,key){document.querySelectorAll('#'+id+' button').forEach(b=>b.addEventListener('click',()=>{state[key]=b.dataset.v;document.querySelectorAll('#'+id+' button').forEach(x=>x.setAttribute('aria-pressed',x===b));build()}))}
+seg('s-lang','lang');seg('s-th','theme');
+build();
+selfCheck();
+</script>
+</body>
+</html>

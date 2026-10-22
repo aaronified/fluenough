@@ -1,5 +1,15 @@
 # Mockups
 
+## Awaiting approval
+
+- `progress-mastery.html`: the Progress tab's mastery view (#678): the
+  words count (**312** / 540), a 6-point star of mastery per skill (grammar,
+  script, read, write, hear, say; known / B1 total; the filled area is overall
+  mastery; it grows from the centre in 400 ms on open), and a line chart of
+  known / taught over time for words, phrases, script and grammar, in place of
+  #575's bars. Main state only, Hindi (Hindustani) in light and Bengali in
+  dark, 1.4x (owner, 2026-10-21). The page marks its Proposed choices.
+
 ## Current and approved
 
 Each is the spec for its screen. Don't rewrite one without the owner's
@@ -78,9 +88,35 @@ approval.
   (`git show 6715716:docs/mockups/reviewer-mode.html`). Approved by the owner, 2026-10-17, with the decisions the page marks
   Proposed ("The reviewer mode mockup looks fine. Build it.").
 
-## Awaiting approval
+## Approved
 
-None.
+- `deck-page-and-teach-card.html`: one phone with the new deck page (#693: every
+  word with its meaning and a mastery chip, live tag chips, Practice and
+  + Learn with a count badge that becomes Relearn, Inspect retired), the word
+  sheet with everything inline, and the one-screen teach card (#691) with its
+  pronunciation and dictionary popups, a tab-swipe spring and chevrons.
+  Course and theme are tweak controls. Hindustani and Bengali, 1.4x (owner,
+  2026-10-22). The self-check and notes, with Proposed items marked, are in
+  `deck-page-and-teach-card.md`.
+  Approved (owner, 2026-10-22: "Approved", with "Just give the meaning
+  more space": the picture sits beside the word and the meaning takes the
+  full width).
+
+- `language-wheel.html`: the language wheel (#703, #682): ratchet detents
+  with a tick and vibration, the round wheel, and the label under the bar,
+  as first drawn, plus the expansion. Owner, 2026-10-21: damping ratio 0.4,
+  stiffness 800 (mass 1), fling friction 8 per second, expansion 0.3 s.
+  "The tooltip should become the expansion via some animation that will
+  take that 0.3 seconds" (chose a cross-fade: the label fades out as the
+  pill grows); "After expanded, the two languages to either side will still
+  show, as per the wheel distance" (chose: pushed out, the same gap from
+  the pill's edge). The pill is centred, glyph and name.
+  Approved (owner, 2026-10-21: "Works. Approved.").
+
+- `tab-swipe.html`: the tab swipe spring (#702, #683): damping ratio 0.75,
+  stiffness 400, mass 1 (owner, 2026-10-21: "400, 0.75 approved for tab
+  swipe").
+
 
 ## Deleted (owner, 2026-10-12)
 

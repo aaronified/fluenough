@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- A card can set `picture_ask: true`: its `picture` is drawn with a small "?" badge, for question words (#707).
+
 ### Fixed
 
 - A one-word label on a number tile, such as "Remembered" on Progress, shrinks to fit at large text instead of breaking mid-word (#492).

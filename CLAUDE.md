@@ -77,6 +77,12 @@ wherever the table above allows it.
   cap, #505), a contrast self-check, and Hindi and Bengali examples, and
   is checked in Chromium. Remove a mockup once its feature is built
   (owner, 2026-10-16: "Remove when built").
+  The page holds only the screens and their tweak controls, with what
+  changed highlighted (not for a complete overhaul, where everything is
+  new); the self-checks and the notes go in a Markdown file of the same
+  name beside it, such as `progress-mastery.md` for `progress-mastery.html`
+  (owner, 2026-10-22: "keep the self checks and notes separate in an md
+  file with the same name as the mockup. Always. Keep the mockup clean").
 - **Text size: 1.4x only** (owner, 2026-10-17: "We are now only building
   for 1.4x text"). The app caps text at 1.4x (#505), so layouts, layout
   tests and bug reports go up to 1.4x; a phone set to 2x is drawn at 1.4x.
