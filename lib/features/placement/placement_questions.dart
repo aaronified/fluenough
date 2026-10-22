@@ -502,9 +502,8 @@ class _PlacementSayState extends State<PlacementSay> {
               child: Text(
                 unheardMessage(l10n, _unheard!, q.language),
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  color: Theme.of(context).colorScheme.error,
-                ),
+                style: Theme.of(context).textTheme.bodyLarge!
+                    .copyWith(color: Theme.of(context).colorScheme.error),
               ),
             ),
           ),
