@@ -592,7 +592,8 @@ cards:
 | `wiktionary` | no | `true` where the learner's language's Wiktionary has an entry for the target: see [The Wiktionary link](#the-wiktionary-link). |
 | `modes` | no | Which drills this card participates in. Defaults to all applicable, except that a `pos: phrase` card is not typed: it defaults to recognition, listening and speaking, and production by rearranging its words when it has two or more (ADR-0024). |
 | `pair` | no | The id of a word of the language that sounds almost the same, its minimal-pair partner: `te-0111`, కాలం (kālam), time, on కలం (kalam), pen. Hear offers the partner's meaning among its options, to catch a learner who confuses the two ([ADR-0034](adr/0034-hear-say-write.md)). It belongs to the word, so a ref cannot give it. A [pair note](#notes) gives it too: a card without `pair` takes its first pair note's partner, and a core card has no `pair` at all, only pair notes. |
-| `picture` | no | One emoji, quoted, showing what a concrete word means: `"🏠"` on house. Its picture, from [Noto Emoji](https://github.com/googlefonts/noto-emoji) (Apache-2.0), is a cue beside the meaning in Write and beside each meaning Hear offers ([ADR-0034](adr/0034-hear-say-write.md)). Only for a picture that means exactly the word: not for abstract words, kinship, or near misses. Run `python3 tools/pictures.py path/to/noto-emoji` to bundle its image; the validator checks it is there. It belongs to the word, so a ref cannot give it. |
+| `picture` | no | One emoji, quoted, showing what a concrete word means: `"🏠"` on house. Its picture, from [Noto Emoji](https://github.com/googlefonts/noto-emoji) (Apache-2.0), is a cue beside the meaning in Write and beside each meaning Hear offers ([ADR-0034](adr/0034-hear-say-write.md)). Only for a picture that means exactly the word: not for abstract words, kinship, or near misses; the one exception is a question word that sets [`picture_ask`](#a-question-words-picture-picture_ask). Run `python3 tools/pictures.py path/to/noto-emoji` to bundle its image; the validator checks it is there. It belongs to the word, so a ref cannot give it. |
+| `picture_ask` | no | `true` on a question word whose `picture` asks rather than shows: the app draws the emoji with a small "?" badge on its corner. Unquoted `true` or left out, never `false`. It requires `picture`, and belongs to the word, so a ref cannot give it. See [A question word's picture](#a-question-words-picture-picture_ask). A release that reads it must be out before a deck uses it: the released parser rejects unknown fields. |
 | `proposed` | no | Written by the review bot: changes reviewers proposed, waiting for agreement. See [Proposals](#proposals-proposed). Allowed on any card entry: a single-file card or ref, a core's card or ref, a layer's entry. |
 | `checked_by` | no | Written by the review bot: the rater codes of the reviewers who signed the card off, `["FL-7K3M-Q9TD-6"]`. See [Who checked it](#who-checked-it-checked_by). Allowed on any card entry, as `proposed` is. |
 
@@ -600,6 +601,40 @@ In a [core and its layers](#core-and-layer-files), the core card gives
 every field above but `native`, `alt_native`, `wiktionary` and `pair`; the
 layer gives `native`, `alt_native` and `wiktionary`, and the texts of the
 core's notes, examples and card data.
+
+### A question word's picture: `picture_ask`
+
+A question word (where, when, who, what, why, how, which, how many) has no
+picture that means exactly the word, so it is the one exception to the
+`picture` rule above: it may take a `picture` that stands for the sense, and
+`picture_ask: true` to say so. The app draws that emoji with a small "?" badge
+on its corner (owner, 2026-10-22). `picture_ask` needs a `picture`, is only
+`true`, and a ref cannot give it, as with `picture`.
+
+```yaml
+- id: "te-0120"
+  target: "ఎక్కడ"
+  native: "where"
+  reading: "ekkaḍa"
+  picture: "📍"
+  picture_ask: true
+```
+
+Suggested pictures; the deck pass picks each per course and per sense, and
+the review confirms it:
+
+| Word | Picture |
+|---|---|
+| where | 📍 |
+| when | 🕐 |
+| who | 👤 |
+| what | 📦 |
+| why | 💭 |
+| how | ⚙️ |
+| which | 👉 |
+| how many / how much | 🔢 |
+
+Bundle each emoji's image with `tools/pictures.py`, as for any `picture`.
 
 ### A card's other scripts: `target_scripts`
 

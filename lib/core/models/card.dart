@@ -320,6 +320,7 @@ class CardRef {
       modes: modes ?? written.modes,
       pair: written.pair,
       picture: written.picture,
+      pictureAsk: written.pictureAsk,
       image: written.image,
       imageCredit: written.imageCredit,
       phrasebook: written.phrasebook,
@@ -371,6 +372,7 @@ class Card {
     this.modes = const <DrillMode>{},
     this.pair,
     this.picture,
+    this.pictureAsk = false,
     this.image,
     this.imageCredit,
     this.phrasebook = false,
@@ -499,6 +501,11 @@ class Card {
   /// from Noto Emoji ([picturePath]). A cue beside the meaning in Write, and
   /// beside each meaning Hear offers (ADR-0034).
   final String? picture;
+
+  /// Whether [picture] is drawn with a small "?" badge on its corner: the
+  /// card is a question word (where, when, who, what, why, how, which, how
+  /// many), whose picture asks rather than shows (`picture_ask: true`).
+  final bool pictureAsk;
 
   /// Its own image, shown where [picture] is, and in its place: a photo
   /// from Wikimedia Commons or an OpenMoji drawing, shipped with the deck,

@@ -151,6 +151,7 @@ const _cardFields = {
   'modes',
   'pair',
   'picture',
+  'picture_ask',
   'image',
   'image_credit',
   'phrasebook',
@@ -237,6 +238,7 @@ const _coreCardFields = {
   'examples',
   'modes',
   'picture',
+  'picture_ask',
   'image',
   'image_credit',
   'notes',
@@ -867,6 +869,7 @@ class _Reader {
           fields.optionalString('pair', allowEmpty: false) ??
           notes.where((n) => n.kind == NoteKind.pair).firstOrNull?.ref,
       picture: fields.optionalString('picture', allowEmpty: false),
+      pictureAsk: pictureAsk(fields, path),
       image: fields.optionalString('image', allowEmpty: false),
       imageCredit: mediaCredit(
         fields.node('image_credit'),
@@ -1002,6 +1005,16 @@ class _Reader {
   }
 
   // The B1 format's card fields (DECK-FORMAT.md, Vocab decks).
+
+  /// `picture_ask: true`: the picture wears a "?" badge. It needs a
+  /// `picture`, as the validator requires.
+  bool pictureAsk(_Fields fields, String path) {
+    final ask = mark(fields, 'picture_ask', path, _pictureAskRule);
+    if (ask && fields.optionalString('picture', allowEmpty: false) == null) {
+      fail(fields.node('picture_ask')!, '$path: picture_ask needs a picture');
+    }
+    return ask;
+  }
 
   /// A mark such as `phrasebook: true`: true, or left out. False is refused
   /// too, as the validator refuses it. [rule] says what it must be.
@@ -1609,6 +1622,7 @@ class _Reader {
       examples: coreExamples(fields.node('examples'), '$path.examples'),
       modes: modes(fields.node('modes'), '$path.modes'),
       picture: fields.optionalString('picture', allowEmpty: false),
+      pictureAsk: pictureAsk(fields, path),
       image: fields.optionalString('image', allowEmpty: false),
       imageCredit: mediaCredit(
         fields.node('image_credit'),
@@ -2950,6 +2964,7 @@ typedef _NoteItem = ({
   List<String> regions,
 });
 
+const _pictureAskRule = 'true, unquoted, or left out';
 const _phrasebookRule = 'true, unquoted, or left out';
 const _wiktionaryRule = 'true, or left out where Wiktionary has no entry';
 

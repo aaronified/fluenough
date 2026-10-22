@@ -1036,6 +1036,11 @@ class Phrasebook(B1Case):
         self.assertError(EXTRA, "ref zz-9101", "a ref cannot give 'phrasebook': it belongs "
                                                "to the card itself, where it is written")
 
+    def _a_ref_cannot_give_picture_ask(self) -> None:
+        self.put(EXTRA, single(cards=[{"ref": "zz-9101", "picture_ask": True}]))
+        self.assertError(EXTRA, "ref zz-9101", "a ref cannot give 'picture_ask': it belongs "
+                                               "to the card itself, where it is written")
+
     def _a_course_has_15_to_25_phrasebook_cards(self) -> None:
         for n, ok in ((14, False), (15, True), (25, True), (26, False)):
             with self.subTest(n=n):
@@ -1176,6 +1181,7 @@ class Phrasebook(B1Case):
         cases = (
             self._phrasebook_is_true_or_left_out,
             self._a_ref_cannot_give_phrasebook,
+            self._a_ref_cannot_give_picture_ask,
             self._a_course_has_15_to_25_phrasebook_cards,
             self._none_is_an_error_only_with_a_plan,
             self._a_course_with_no_written_deck_has_no_phrasebook_size,
