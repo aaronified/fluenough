@@ -1,0 +1,619 @@
+schema: 1
+id: "bn-en-weather"
+kind: "layer"
+core: "bn-weather"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Weather and seasons"
+description: "The sun, rain, wind, storms and fog, the words for the sky, and the six seasons of the Bengali calendar. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-1568":
+    native: "weather"
+    notes:
+      "n1": "{1} means the weather is good: a fine day."
+    examples:
+      "আজ আবহাওয়া ভালো।":
+        native: "The weather is good today."
+      "আবহাওয়া কেমন?":
+        native: "How is the weather?"
+  "bn-1569":
+    native: "sun"
+    notes:
+      "n1": "{1}: the sun rises."
+    examples:
+      "সূর্য ওঠে।":
+        native: "The sun rises."
+        bases:
+          "ওঠে": { meaning: "to rise; to come up" }
+      "আজ সূর্য নেই।":
+        native: "There is no sun today."
+        bases:
+          "নেই": { meaning: "there is not; no" }
+  "bn-1570":
+    native: "sunshine; sunlight"
+    notes:
+      "n1": "{1}: strong sunshine."
+    examples:
+      "আজ কড়া রোদ।":
+        native: "The sunshine is strong today."
+      "রোদে ছাতা নাও।":
+        native: "Take an umbrella in the sun."
+        bases:
+          "রোদে": { meaning: "sunshine" }
+          "নাও": { meaning: "to take" }
+  "bn-1571":
+    native: "sky"
+    notes:
+      "n1": "{1}: a clear sky."
+    examples:
+      "আজ আকাশ পরিষ্কার।":
+        native: "The sky is clear today."
+      "আকাশের রং নীল।":
+        native: "The colour of the sky is blue."
+        bases:
+          "আকাশের": { meaning: "sky" }
+  "bn-1572":
+    native: "cloud"
+    notes:
+      "n1": "{1}: a dark cloud."
+    examples:
+      "আকাশে কালো মেঘ।":
+        native: "Dark clouds in the sky."
+      "মেঘ জমেছে।":
+        native: "Clouds have gathered."
+        bases:
+          "জমেছে": { meaning: "to gather" }
+  "bn-1573":
+    native: "cloudy; overcast"
+    notes:
+      "n1": "{1} is made from {2}, cloud. It describes a sky or a day covered in cloud."
+    examples:
+      "আজ আকাশ মেঘলা।":
+        native: "The sky is cloudy today."
+      "আজ মেঘলা থাকবে।":
+        native: "It will stay cloudy today."
+        bases:
+          "থাকবে": { meaning: "to stay; to be" }
+  "bn-1574":
+    native: "rain"
+    notes:
+      "n1": "{1}: heavy rain."
+    examples:
+      "আজ বৃষ্টি হবে।":
+        native: "It will rain today."
+        bases:
+          "হবে": { meaning: "to become; to happen" }
+      "বৃষ্টির পর ঠান্ডা লাগে।":
+        native: "After the rain it feels cold."
+        bases:
+          "বৃষ্টির": { meaning: "rain" }
+          "লাগে": { meaning: "to feel; to need" }
+  "bn-1575":
+    native: "drizzling; light and fine (of rain)"
+    notes:
+      "n1": "{1}: a fine, light rain that falls for a long time."
+    examples:
+      "আজ ঝিরিঝিরি বৃষ্টি।":
+        native: "There is a light drizzle today."
+      "সকাল থেকে ঝিরিঝিরি বৃষ্টি।":
+        native: "Light rain since the morning."
+  "bn-1576":
+    native: "strong; heavy; fierce (of rain or wind)"
+    notes:
+      "n1": "{1}: a strong wind."
+    examples:
+      "প্রবল ঝড় উঠেছে।":
+        native: "A fierce storm has risen."
+        bases:
+          "উঠেছে": { meaning: "to rise; to come up" }
+      "প্রবল বাতাসে গাছ নড়ে।":
+        native: "In a strong wind the tree sways."
+        bases:
+          "নড়ে": { meaning: "to sway" }
+  "bn-1577":
+    native: "drop"
+    notes:
+      "n1": "{1}: a raindrop. The word is also used for any drop."
+    examples:
+      "বৃষ্টির ফোঁটা পড়ছে।":
+        native: "Raindrops are falling."
+        bases:
+          "পড়ছে": { meaning: "to fall; to rain" }
+      "চোখে জলের ফোঁটা।":
+        native: "A drop of water in the eye."
+        bases:
+          "চোখে": { meaning: "eye" }
+  "bn-1578":
+    native: "wind; air"
+    notes:
+      "n1": "{1}: a cold wind."
+    examples:
+      "ঠান্ডা বাতাস বইছে।":
+        native: "A cold wind is blowing."
+        bases:
+          "বইছে": { meaning: "to blow" }
+      "বাতাসে পাতা ওড়ে।":
+        native: "Leaves fly in the wind."
+        bases:
+          "বাতাসে": { meaning: "wind" }
+          "ওড়ে": { meaning: "to fly" }
+  "bn-1579":
+    native: "breeze; air"
+    notes:
+      "n1": "{1}: a light breeze."
+    examples:
+      "সকালে হালকা হাওয়া দেয়।":
+        native: "A light breeze blows in the morning."
+        bases:
+          "সকালে": { meaning: "morning" }
+          "দেয়": { meaning: "to give" }
+      "জানালা দিয়ে হাওয়া আসে।":
+        native: "The breeze comes in through the window."
+        bases:
+          "দিয়ে": { meaning: "to give" }
+          "আসে": { meaning: "to come" }
+  "bn-1580":
+    native: "storm"
+    notes:
+      "n1": "{1}: a storm rising."
+    examples:
+      "আজ বিকেলে ঝড় উঠবে।":
+        native: "A storm will rise this afternoon."
+        bases:
+          "বিকেলে": { meaning: "afternoon" }
+          "উঠবে": { meaning: "to rise; to come up" }
+      "ঝড়ের সময় বাড়িতে থাকো।":
+        native: "Stay at home during the storm."
+        bases:
+          "ঝড়ের": { meaning: "storm" }
+          "বাড়িতে": { meaning: "house" }
+          "থাকো": { meaning: "to stay; to be" }
+  "bn-1581":
+    native: "stormy; windy"
+    notes:
+      "n1": "{1} is made from {2}, storm. It describes weather with a storm in it."
+    examples:
+      "ঝোড়ো হাওয়া বইছে।":
+        native: "A stormy wind is blowing."
+        bases:
+          "বইছে": { meaning: "to blow" }
+      "ঝোড়ো দিনে স্কুল বন্ধ।":
+        native: "School is closed on stormy days."
+        bases:
+          "দিনে": { meaning: "day" }
+  "bn-1582":
+    native: "cyclone"
+    notes:
+      "n1": "{1} is a cyclone. The 1970 Bhola cyclone, which struck the Bengal delta, was one of the deadliest on record."
+    examples:
+      "উপকূলে ঘূর্ণিঝড় এসেছে।":
+        native: "A cyclone has come to the coast."
+        bases:
+          "উপকূলে": { meaning: "coast" }
+          "এসেছে": { meaning: "to come" }
+      "ঘূর্ণিঝড়ের খবর শুনেছি।":
+        native: "I have heard the news of the cyclone."
+        bases:
+          "ঘূর্ণিঝড়ের": { meaning: "cyclone" }
+          "শুনেছি": { meaning: "to hear; to listen" }
+  "bn-1583":
+    native: "lightning; electricity"
+    notes:
+      "n1": "The same word means lightning and electricity. {1} is a flash of lightning."
+    examples:
+      "আকাশে বিদ্যুৎ চমকায়।":
+        native: "Lightning flashes in the sky."
+        bases:
+          "চমকায়": { meaning: "to flash" }
+      "বিদ্যুৎ চলে গেছে।":
+        native: "The power has gone off."
+        bases:
+          "চলে": { meaning: "to go; to move" }
+          "গেছে": { meaning: "to go" }
+  "bn-1584":
+    native: "thunder"
+    notes:
+      "n1": "{1} is the sound of thunder. {2} is a strike of lightning."
+    examples:
+      "বজ্রের শব্দ শুনলাম।":
+        native: "I heard the thunder."
+        bases:
+          "বজ্রের": { meaning: "thunder" }
+          "শুনলাম": { meaning: "to hear; to listen" }
+      "বজ্রের সময় জানালা বন্ধ রাখো।":
+        native: "Keep the windows closed during thunder."
+        bases:
+          "বজ্রের": { meaning: "thunder" }
+          "রাখো": { meaning: "to keep" }
+  "bn-1585":
+    native: "fog; mist"
+    notes:
+      "n1": "{1}: thick fog."
+    examples:
+      "ভোরে ঘন কুয়াশা থাকে।":
+        native: "There is thick fog at dawn."
+        bases:
+          "ভোরে": { meaning: "dawn" }
+          "থাকে": { meaning: "to stay; to be" }
+      "কুয়াশায় গাড়ি ধীরে চলে।":
+        native: "In fog the cars move slowly."
+        bases:
+          "কুয়াশায়": { meaning: "fog" }
+          "চলে": { meaning: "to go; to move" }
+  "bn-1586":
+    native: "dew"
+    notes:
+      "n1": "{1}: dew on the grass in the early morning."
+    examples:
+      "ভোরে ঘাসে শিশির পড়ে।":
+        native: "Dew falls on the grass at dawn."
+        bases:
+          "ভোরে": { meaning: "dawn" }
+          "ঘাসে": { meaning: "grass" }
+          "পড়ে": { meaning: "to fall; to rain" }
+      "শিশিরে পা ভিজে গেল।":
+        native: "My feet got wet with the dew."
+        bases:
+          "শিশিরে": { meaning: "dew" }
+          "গেল": { meaning: "to go" }
+  "bn-1587":
+    native: "hail"
+    notes:
+      "n1": "{1}: hail, rain that falls as ice."
+    examples:
+      "আজ শিলাবৃষ্টি হয়েছে।":
+        native: "There was hail today."
+        bases:
+          "হয়েছে": { meaning: "to become; to happen" }
+      "শিলার আঘাতে ফুল ঝরে গেল।":
+        native: "The flowers fell in the hail."
+        bases:
+          "শিলার": { meaning: "hail" }
+          "আঘাতে": { meaning: "blow; stroke" }
+          "ঝরে": { meaning: "to fall" }
+          "গেল": { meaning: "to go" }
+  "bn-1588":
+    native: "snow"
+    notes:
+      "n1": "{1} is snowfall. Bengal is too warm for snow, but the hills to the north get it."
+    examples:
+      "পাহাড়ে তুষার পড়েছে।":
+        native: "Snow has fallen on the hills."
+        bases:
+          "পাহাড়ে": { meaning: "hill" }
+          "পড়েছে": { meaning: "to fall; to rain" }
+      "তুষার সাদা।":
+        native: "Snow is white."
+  "bn-1589":
+    native: "ice"
+    notes:
+      "n1": "{1}: a piece of ice, as in a cold drink."
+    examples:
+      "জলে বরফ দাও।":
+        native: "Put ice in the water."
+        bases:
+          "দাও": { meaning: "to give" }
+      "ঠান্ডায় জল বরফ হয়ে যায়।":
+        native: "In the cold, water turns to ice."
+        bases:
+          "হয়ে": { meaning: "to become; to happen" }
+          "যায়": { meaning: "to go" }
+  "bn-1590":
+    native: "rainbow"
+    notes:
+      "n1": "{1}: a rainbow comes out after the rain."
+    examples:
+      "আকাশে রামধনু দেখা গেল।":
+        native: "A rainbow appeared in the sky."
+        bases:
+          "গেল": { meaning: "to go" }
+      "রামধনুর রং সাতটি।":
+        native: "A rainbow has seven colours."
+        bases:
+          "রামধনুর": { meaning: "rainbow" }
+          "সাতটি": { meaning: "seven" }
+  "bn-1591":
+    native: "hot; warm"
+    notes:
+      "n1": "{1}: hot tea. The same word also means the heat itself."
+    examples:
+      "আজ খুব গরম।":
+        native: "It is very hot today."
+      "গরমে ঘুম হয় না।":
+        native: "I cannot sleep in the heat."
+        bases:
+          "গরমে": { meaning: "hot; warm" }
+          "হয়": { meaning: "to become; to happen" }
+  "bn-1592":
+    native: "warm; hot (formal)"
+    notes:
+      "n1": "{1}: warm water. It is a bookish word; in speech people say গরম."
+    examples:
+      "উষ্ণ জলে স্নান করো।":
+        native: "Bathe in warm water."
+        bases:
+          "করো": { meaning: "to do" }
+      "ঘরটা উষ্ণ থাকে।":
+        native: "The room stays warm."
+        bases:
+          "ঘরটা": { meaning: "house; room" }
+          "থাকে": { meaning: "to stay; to be" }
+  "bn-1593":
+    native: "cold"
+    notes:
+      "n1": "{1}: to feel cold, or to catch a cold."
+    examples:
+      "আজ খুব ঠান্ডা।":
+        native: "It is very cold today."
+      "আমার ঠান্ডা লেগেছে।":
+        native: "I have caught a cold."
+        bases:
+          "আমার": { meaning: "I" }
+          "লেগেছে": { meaning: "to feel; to need" }
+  "bn-1594":
+    native: "cool; chilled (formal)"
+    notes:
+      "n1": "{1}: a cool breeze."
+    examples:
+      "শীতল বাতাস বইছে।":
+        native: "A cool breeze is blowing."
+        bases:
+          "বইছে": { meaning: "to blow" }
+      "ঘরটা শীতল রাখো।":
+        native: "Keep the room cool."
+        bases:
+          "ঘরটা": { meaning: "house; room" }
+          "রাখো": { meaning: "to keep" }
+  "bn-1595":
+    native: "winter; the cold season"
+    notes:
+      "n1": "{1} is the winter season, one of the six seasons."
+    examples:
+      "এখন শীত পড়েছে।":
+        native: "Winter has set in now."
+        bases:
+          "পড়েছে": { meaning: "to fall; to rain" }
+      "শীতে গরম কাপড় লাগে।":
+        native: "In winter you need warm clothes."
+        bases:
+          "শীতে": { meaning: "winter" }
+          "লাগে": { meaning: "to feel; to need" }
+  "bn-1596":
+    native: "muggy; hot and damp"
+    notes:
+      "n1": "{1}: hot, wet air that makes you sweat."
+    examples:
+      "আজ ভ্যাপসা গরম।":
+        native: "It is muggy and hot today."
+      "বৃষ্টির আগে ভ্যাপসা থাকে।":
+        native: "It stays muggy before the rain."
+        bases:
+          "থাকে": { meaning: "to stay; to be" }
+  "bn-1597":
+    native: "damp; soggy"
+    notes:
+      "n1": "{1}: a damp room, where things go mouldy."
+    examples:
+      "বর্ষায় ঘর স্যাঁতসেঁতে হয়।":
+        native: "In the monsoon the house gets damp."
+        bases:
+          "বর্ষায়": { meaning: "monsoon" }
+          "হয়": { meaning: "to become; to happen" }
+      "দেয়ালটা স্যাঁতসেঁতে।":
+        native: "The wall is damp."
+        bases:
+          "দেয়ালটা": { meaning: "wall" }
+  "bn-1598":
+    native: "dry"
+    notes:
+      "n1": "{1}: dry soil."
+    examples:
+      "গ্রীষ্মে মাটি শুকনো থাকে।":
+        native: "In summer the soil stays dry."
+        bases:
+          "থাকে": { meaning: "to stay; to be" }
+      "কাপড় শুকনো হয়েছে।":
+        native: "The clothes have dried."
+        bases:
+          "হয়েছে": { meaning: "to become; to happen" }
+  "bn-1599":
+    native: "wet"
+    notes:
+      "n1": "{1}: a wet shirt."
+    examples:
+      "বৃষ্টিতে আমার জামা ভেজা।":
+        native: "My shirt is wet from the rain."
+        bases:
+          "আমার": { meaning: "I" }
+      "সব কাপড় ভেজা।":
+        native: "All the clothes are wet."
+  "bn-1600":
+    native: "drought"
+    notes:
+      "n1": "{1} is a drought, and {2} a flood: the two ends of a bad year."
+    examples:
+      "এবার খরা হয়েছে।":
+        native: "There was a drought this year."
+        bases:
+          "হয়েছে": { meaning: "to become; to happen" }
+      "খরার সময় জল কম থাকে।":
+        native: "In a drought there is little water."
+        bases:
+          "খরার": { meaning: "drought" }
+          "থাকে": { meaning: "to stay; to be" }
+  "bn-1601":
+    native: "temperature"
+    notes:
+      "n1": "{1}: what is the temperature? {1} is said with কত, how much."
+    examples:
+      "আজ তাপমাত্রা ত্রিশ ডিগ্রি।":
+        native: "The temperature is thirty degrees today."
+      "তাপমাত্রা কমছে।":
+        native: "The temperature is falling."
+        bases:
+          "কমছে": { meaning: "to decrease" }
+  "bn-1602":
+    native: "umbrella"
+    notes:
+      "n1": "{1}: to take an umbrella with you."
+    examples:
+      "বৃষ্টি হবে, ছাতা নাও।":
+        native: "It will rain, take an umbrella."
+        bases:
+          "হবে": { meaning: "to become; to happen" }
+          "নাও": { meaning: "to take" }
+      "ছাতাটা কোথায়?":
+        native: "Where is the umbrella?"
+        bases:
+          "ছাতাটা": { meaning: "umbrella" }
+  "bn-1603":
+    native: "forecast"
+    notes:
+      "n1": "{1}: a weather forecast."
+    examples:
+      "আবহাওয়ার পূর্বাভাস শোনো।":
+        native: "Listen to the weather forecast."
+        bases:
+          "শোনো": { meaning: "to hear; to listen" }
+      "পূর্বাভাস বলছে কাল বৃষ্টি হবে।":
+        native: "The forecast says it will rain tomorrow."
+        bases:
+          "বলছে": { meaning: "to say" }
+          "হবে": { meaning: "to become; to happen" }
+  "bn-1604":
+    native: "season"
+    notes:
+      "n1": "{1} is a season. The Bengali calendar counts six of them, each about two months: see the set of seasons."
+    examples:
+      "বাংলায় ছয়টি ঋতু আছে।":
+        native: "Bengal has six seasons."
+        bases:
+          "বাংলায়": { meaning: "Bengal; Bengali" }
+          "ছয়টি": { meaning: "six" }
+          "আছে": { meaning: "to be; there is" }
+      "এখন কোন ঋতু?":
+        native: "Which season is it now?"
+  "bn-1605":
+    native: "summer"
+    notes:
+      "n1": "{1} is the summer season, the hot one."
+    examples:
+      "গ্রীষ্মকালে খুব গরম পড়ে।":
+        native: "In summer it gets very hot."
+        bases:
+          "গ্রীষ্মকালে": { meaning: "summer" }
+          "পড়ে": { meaning: "to fall; to rain" }
+      "গ্রীষ্মের ছুটিতে কোথায় যাবে?":
+        native: "Where will you go in the summer holidays?"
+        bases:
+          "গ্রীষ্মের": { meaning: "summer" }
+          "ছুটিতে": { meaning: "holiday" }
+          "যাবে": { meaning: "to go" }
+  "bn-1606":
+    native: "monsoon; rainy season"
+    notes:
+      "n1": "{1} is the monsoon, the rainy season, from about June to September in Bengal."
+    examples:
+      "বর্ষায় প্রচুর বৃষ্টি হয়।":
+        native: "In the monsoon there is a lot of rain."
+        bases:
+          "বর্ষায়": { meaning: "monsoon" }
+          "হয়": { meaning: "to become; to happen" }
+      "বর্ষার পর নদী ভরে যায়।":
+        native: "After the monsoon the rivers fill up."
+        bases:
+          "বর্ষার": { meaning: "monsoon" }
+          "ভরে": { meaning: "to fill up" }
+          "যায়": { meaning: "to go" }
+  "bn-1607":
+    native: "autumn"
+    notes:
+      "n1": "{1} is the autumn season, after the rains, when the sky is clear."
+    examples:
+      "শরতে আকাশ নীল থাকে।":
+        native: "In autumn the sky stays blue."
+        bases:
+          "শরতে": { meaning: "autumn" }
+          "থাকে": { meaning: "to stay; to be" }
+      "শরতের সকালে শিশির পড়ে।":
+        native: "On autumn mornings dew falls."
+        bases:
+          "শরতের": { meaning: "autumn" }
+          "সকালে": { meaning: "morning" }
+          "পড়ে": { meaning: "to fall; to rain" }
+  "bn-1608":
+    native: "late autumn"
+    notes:
+      "n1": "{1}: the season just before winter, when the paddy is harvested."
+    examples:
+      "হেমন্তে ধান কাটা হয়।":
+        native: "In late autumn the paddy is harvested."
+        bases:
+          "হেমন্তে": { meaning: "late autumn" }
+          "হয়": { meaning: "to become; to happen" }
+      "হেমন্তে সকালে হালকা শীত।":
+        native: "In late autumn there is a light chill in the mornings."
+        bases:
+          "হেমন্তে": { meaning: "late autumn" }
+          "সকালে": { meaning: "morning" }
+  "bn-1609":
+    native: "spring"
+    notes:
+      "n1": "{1}: the spring season, the time of new leaves."
+    examples:
+      "বসন্তে গাছে নতুন পাতা গজায়।":
+        native: "In spring new leaves sprout on the trees."
+        bases:
+          "বসন্তে": { meaning: "spring" }
+          "গাছে": { meaning: "tree" }
+          "গজায়": { meaning: "to sprout" }
+      "বসন্তে আবহাওয়া ভালো থাকে।":
+        native: "In spring the weather stays good."
+        bases:
+          "বসন্তে": { meaning: "spring" }
+          "থাকে": { meaning: "to stay; to be" }
+  "bn-1610":
+    native: "flood"
+    notes:
+      "n1": "{1} is a flood. In the monsoon the great rivers of Bengal can overflow onto the fields."
+    examples:
+      "বন্যায় অনেক গ্রাম ডুবে গেছে।":
+        native: "Many villages have sunk under the flood."
+        bases:
+          "বন্যায়": { meaning: "flood" }
+          "ডুবে": { meaning: "to sink" }
+          "গেছে": { meaning: "to go" }
+      "বন্যার পানি কবে নামবে?":
+        native: "When will the floodwater go down?"
+        bases:
+          "বন্যার": { meaning: "flood" }
+          "নামবে": { meaning: "to go down" }
+  "bn-1611":
+    native: "water"
+    notes:
+      "n1": "{1}: drink water."
+    examples:
+      "আমাকে একটু জল দাও।":
+        native: "Please give me some water."
+        bases:
+          "আমাকে": { meaning: "I" }
+          "দাও": { meaning: "to give" }
+      "বৃষ্টির জল জমেছে।":
+        native: "Rainwater has collected."
+        bases:
+          "জমেছে": { meaning: "to gather" }
+  "bn-1612":
+    native: "sunny; bright and clear"
+    notes:
+      "n1": "{1}: bright sunshine."
+    examples:
+      "আজ আকাশ ঝলমলে।":
+        native: "The sky is bright today."
+      "ঝলমলে রোদে নদী দেখা যায়।":
+        native: "In the bright sunshine the river can be seen."
+        bases:
+          "যায়": { meaning: "to go" }
+  "bn-1613":
+    native: "The six seasons"
+    explanation: "The six seasons of the Bengali calendar, in the order a year turns: গ্রীষ্ম (griśm), বর্ষা (bôrśā), শরৎ (śôrot), হেমন্ত (hemonto), শীত (śit), বসন্ত (bôśonto). Each is about two months."
