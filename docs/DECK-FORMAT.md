@@ -871,9 +871,9 @@ repeated until every note of the card has been shown once.
 
 | Kind | What it says |
 |---|---|
-| `pair` | A minimal pair: a word of the language that sounds almost the same. It names that word, the partner, by `ref`. |
-| `homograph` | The same spelling as another word of the language, with a different sound or meaning. It names that word by `ref`, like `pair`. |
-| `lookalike` | Differs from another word only by a dot, a length mark or another short mark, such as a nukta. It names that word by `ref`, like `pair`. |
+| `pair` | A minimal pair, shown with the ear icon ("Sounds like another word"): a word of the language whose IPA differs by exactly one segment, and only between very close sounds, such as a short and long vowel (e/eː), an unaspirated and aspirated consonant (k/kʰ) or a dental and retroflex one (t̪/ʈ). Its text names that sound difference. It names the partner by `ref` (owner, 2026-10-22). |
+| `homograph` | The same spelling as another word of the language, with a different sound or meaning. Shown with the ear-off icon ("Looks like another word"); its text is about the spelling. It names that word by `ref`, like `pair`. |
+| `lookalike` | Differs from another word only by a dot, a length mark or another short mark, such as a nukta. Shown with the ear-off icon ("Looks like another word"); its text says how the spelling differs, not how it sounds (owner, 2026-10-22). It names that word by `ref`, like `pair`. |
 | `culture` | The word's cultural significance. It names its `source`. |
 | `usage` | Another context it is used in, or another sense. |
 | `behaviour` | How it behaves unlike similar words: an irregular form, a gender, a use. |
