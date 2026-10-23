@@ -368,7 +368,7 @@ void lessonSiblingTests() {
     ),
     (
       name: 'hard (one-word phrase), typed: the answer is typed',
-      card: Card(
+      card: const Card(
         id: 'te-10',
         deckId: 'te-en-words',
         target: 'namaste',
@@ -380,7 +380,7 @@ void lessonSiblingTests() {
     ),
     (
       name: 'hard (one-word phrase), untyped: the word is chosen',
-      card: Card(
+      card: const Card(
         id: 'te-10',
         deckId: 'te-en-words',
         target: 'namaste',
@@ -432,7 +432,7 @@ void lessonSiblingTests() {
       mode: DrillMode.production,
       ask: Ask.rearrange,
     ));
-    final one = Card(
+    final one = const Card(
       id: 'te-10',
       deckId: 'te-en-words',
       target: 'namaste',
