@@ -1,0 +1,177 @@
+schema: 1
+id: "zh-en-addressing"
+kind: "layer"
+core: "zh-addressing"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Addressing people"
+description: "Twenty words for people and their titles: the polite you, teacher, Mr., Ms., Miss, classmate, friend, colleague, student and manager, the surnames Wang, Li and Zhang, and how to ask a name and say it is nice to meet someone."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "zh-0116":
+    native: "you (polite, respectful)"
+    notes:
+      "n1": "您 (nín) is the respectful 'you', used for an elder, a teacher or a stranger. 你 (nǐ) is for a friend, a peer or a child."
+    examples:
+      "您好，老师。":
+        native: "Hello, teacher."
+      "您是老师吗？":
+        native: "Are you a teacher?"
+  "zh-0117":
+    native: "teacher"
+    notes:
+      "n1": "老师 (lǎoshī) is 'teacher'. With a surname it is a title: 王老师 (Wáng lǎoshī), Teacher Wang."
+    examples:
+      "老师，你好吗？": "Teacher, how are you?"
+      "我是老师。": "I am a teacher."
+  "zh-0118":
+    native: "Mr.; sir"
+    notes:
+      "n1": "先生 (xiānsheng) is 'Mr.' or 'sir'. After a surname it is a title: 王先生 (Wáng xiānsheng), Mr. Wang."
+    examples:
+      "先生，您好。": "Hello, sir."
+      "他是王先生。": "He is Mr. Wang."
+  "zh-0119":
+    native: "Miss; young woman"
+    notes:
+      "n1": "小姐 (xiǎojiě) is 'Miss', after a surname, as 李小姐 (Lǐ xiǎojiě), Miss Li. It is also a polite way to call a young woman."
+    examples:
+      "小姐，请坐。":
+        native: "Please sit down, miss."
+        bases:
+          "坐": { meaning: "to sit" }
+      "李小姐来吗？":
+        native: "Is Miss Li coming?"
+  "zh-0120":
+    native: "Ms.; madam"
+    notes:
+      "n1": "女士 (nǚshì) is 'Ms.' or 'madam', a polite title for a woman. After a surname: 张女士 (Zhāng nǚshì), Ms. Zhang."
+    examples:
+      "女士，您好。": "Hello, madam."
+      "张女士来吗？":
+        native: "Is Ms. Zhang coming?"
+  "zh-0121":
+    native: "classmate; fellow student"
+    notes:
+      "n1": "同学 (tóngxué) is 'classmate', a fellow student. You can call one by it: 同学 (tóngxué), hello, classmate."
+    examples:
+      "他是我同学。":
+        native: "He is my classmate."
+      "同学，你好。": "Hello, classmate."
+  "zh-0122":
+    native: "friend"
+    notes:
+      "n1": "朋友 (péngyou) is 'friend', a man or a woman, close or not."
+    examples:
+      "他是我朋友。": "He is my friend."
+      "朋友来吗？": "Is your friend coming?"
+  "zh-0123":
+    native: "colleague"
+    notes:
+      "n1": "同事 (tóngshì) is 'colleague', someone you work with."
+    examples:
+      "同事都来。": "All my colleagues are coming."
+      "我同事很忙。":
+        native: "My colleague is very busy."
+        bases:
+          "忙": { meaning: "busy" }
+  "zh-0124":
+    native: "student"
+    notes:
+      "n1": "学生 (xuésheng) is 'student', at school, college or a language course."
+    examples:
+      "学生很多。": "There are many students."
+      "这个学生很好。":
+        native: "This student is very good."
+        bases:
+          "这个": { meaning: "this one" }
+  "zh-0125":
+    native: "manager"
+    notes:
+      "n1": "经理 (jīnglǐ) is 'manager'. As a title it comes after the surname: 李经理 (Lǐ jīnglǐ), Manager Li."
+    examples:
+      "我是经理。": "I am the manager."
+      "经理在吗？":
+        native: "Is the manager in?"
+        bases:
+          "在": { meaning: "in; at" }
+  "zh-0126":
+    native: "everyone; all of us"
+    notes:
+      "n1": "大家 (dàjiā) is 'everyone', 'all of us'. 大家好 (dàjiā hǎo) is hello, everyone."
+    examples:
+      "大家好！": "Hello, everyone!"
+      "大家都来。": "Everyone is coming."
+  "zh-0127":
+    native: "surname; to have as a surname"
+    notes:
+      "n1": "姓 (xìng) is 'surname', and 'to have as a surname', as in 我姓李 (wǒ xìng Lǐ), my surname is Li. The surname comes before the name."
+    examples:
+      "您姓什么？": "What is your surname?"
+      "我姓李。": "My surname is Li."
+  "zh-0128":
+    native: "name"
+    notes:
+      "n1": "名字 (míngzi) is 'name', the name you are called by in full."
+    examples:
+      "名字是什么？": "What is the name?"
+      "你的名字很好。":
+        native: "Your name is nice."
+        bases:
+          "的": { meaning: "particle: 'your' (linking word)" }
+  "zh-0129":
+    native: "to be called; to call"
+    notes:
+      "n1": "叫 (jiào) is 'to be called', and 'to call'. 叫什么 (jiào shénme) asks 'what is it called?'"
+    examples:
+      "我叫李。": "My name is Li."
+      "他叫什么？": "What is his name?"
+  "zh-0130":
+    native: "Wang (a surname)"
+    notes:
+      "n1": "王 (Wáng) is the surname Wang, one of the most common Chinese surnames."
+    examples:
+      "我姓王。": "My surname is Wang."
+      "王老师来吗？":
+        native: "Is Teacher Wang coming?"
+  "zh-0131":
+    native: "Li (a surname)"
+    notes:
+      "n1": "李 (Lǐ) is the surname Li, one of the most common Chinese surnames."
+    examples:
+      "李先生在吗？":
+        native: "Is Mr. Li in?"
+        bases:
+          "在": { meaning: "in; at" }
+      "李经理很好。": "Manager Li is very good."
+  "zh-0132":
+    native: "Zhang (a surname)"
+    notes:
+      "n1": "张 (Zhāng) is the surname Zhang, which is also written 張 (Zhāng) in traditional characters."
+    examples:
+      "张老师很好。": "Teacher Zhang is very good."
+      "我叫张。": "My name is Zhang."
+  "zh-0133":
+    native: "glad; happy"
+    notes:
+      "n1": "高兴 (gāoxìng) is 'glad' or 'happy'. 很高兴 (hěn gāoxìng) is 'pleased to meet you', said when you first meet."
+    examples:
+      "很高兴认识你。": "Pleased to meet you."
+      "你高兴吗？": "Are you glad?"
+  "zh-0134":
+    native: "to know (a person)"
+    notes:
+      "n1": "认识 (rènshi) is 'to know a person', as in 认识你 (rènshi nǐ), to know you. For knowing a fact, use 知道 (zhīdào)."
+    examples:
+      "我认识他。": "I know him."
+      "你认识王老师吗？": "Do you know Teacher Wang?"
+  "zh-0135":
+    native: "welcome"
+    notes:
+      "n1": "欢迎 (huānyíng) is 'welcome', said to a guest or a newcomer: 欢迎你 (huānyíng nǐ), welcome."
+    examples:
+      "欢迎你。": "Welcome."
+      "大家欢迎老师。": "Everyone welcomes the teacher."
+  "zh-0136":
+    native: "you (two words)"
+    explanation: "Chinese has two words for 'you': 你 (nǐ) with a friend, a peer or a child, and 您 (nín) with an elder, a teacher or a stranger."
