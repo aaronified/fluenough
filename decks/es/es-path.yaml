@@ -68,36 +68,21 @@ units:
     words: 15
   - decks: ["es-pronouns", "es-pronouns-sentences", "es-reading-pronouns", "*"]
     words: 20
-  - planned: { id: "es-family", theme: "family", words: 30 }
-    listening_passages:
-      - { id: "my-family", text: { "en": "Someone describes the people in a family photo" } }
-    reading_passages:
-      - { id: "family-tree", text: { "en": "A small family tree with names and relations" } }
-  - planned: { id: "es-numbers-1-20", theme: "numbers-1-20", words: 20 }
-    listening_passages:
-      - { id: "counting-aloud", text: { "en": "Counting objects aloud, from one to twenty" } }
-    reading_passages:
-      - { id: "room-numbers", text: { "en": "Room numbers on a row of doors" } }
+  - decks: ["es-family", "es-family-sentences", "es-reading-family", "*"]
+    words: 30
+  - decks: ["es-numbers-1-20", "es-numbers-1-20-sentences", "es-reading-numbers-1-20", "*"]
+    words: 21
   # 3. No script units: Spanish is written in Latin letters.
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
-  - planned: { id: "es-about-me", theme: "about-me", words: 25 }
-    listening_passages:
-      - { id: "introducing-yourself", text: { "en": "Introducing yourself to a new classmate" } }
-    reading_passages:
-      - { id: "registration-form", text: { "en": "A simple registration form: name, age, country, language" } }
+  - decks: ["es-about-me", "es-about-me-sentences", "es-reading-about-me", "*"]
+    words: 22
   - decks: ["es-core-100"]
     words: 26
-  - planned: { id: "es-everyday-verbs", theme: "everyday-verbs", words: 40 }
-    listening_passages:
-      - { id: "morning-routine", text: { "en": "A mother says what each person in the house does in the morning" } }
-    reading_passages:
-      - { id: "fridge-note", text: { "en": "A note on the fridge: what to eat, what to drink and where things are" } }
-  - planned: { id: "es-adverbs", theme: "adverbs", words: 35 }
-    listening_passages:
-      - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
-    reading_passages:
-      - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
+  - decks: ["es-everyday-verbs", "es-everyday-verbs-sentences", "es-reading-everyday-verbs", "*"]
+    words: 24
+  - decks: ["es-adverbs", "es-adverbs-sentences", "es-reading-adverbs", "*"]
+    words: 22
   - planned: { id: "es-quantities", theme: "quantities", words: 30 }
     listening_passages:
       - { id: "at-the-grocers", text: { "en": "Asking how much and how many at a grocer's" } }
