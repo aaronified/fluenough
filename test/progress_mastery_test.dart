@@ -9,6 +9,8 @@ import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/progress/mastery.dart';
 import 'package:fluenough/core/progress/practice_week.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
+import 'package:fluenough/features/decks/course_hours.dart';
+import 'package:fluenough/features/stats/hours_tiles.dart';
 import 'package:fluenough/features/stats/how_you_learn_page.dart';
 import 'package:fluenough/features/stats/leeches.dart';
 import 'package:fluenough/features/stats/level_badge.dart';
@@ -462,6 +464,66 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.byType(HowYouLearnPage), findsOneWidget);
       expect(tester.takeException(), isNull);
+    });
+  });
+
+  group('Progress hours', () {
+    Future<AppState> fixture() async {
+      final app = AppState.test();
+      await app.load();
+      final state = GalleryFixtures.state(app, features: FeatureRegistry.all());
+      await state.load();
+      return state;
+    }
+
+    testWidgets('the tile row shows hours spent and hours left to the end of '
+        'B1 for the language, and a tap lists every language in a popup', (
+      tester,
+    ) async {
+      usePhone(tester, textScale: 1.4);
+      final state = await fixture();
+      await pumpScreen(tester, const StatsPage(), state: state);
+      final l10n = l10nOf(tester);
+      final tiles = find.byKey(const ValueKey<String>('hours-tiles'));
+      expect(tiles, findsOneWidget);
+      expect(find.text(l10n.progressHoursSpentTitle), findsOneWidget);
+      expect(find.text(l10n.progressHoursLeftTitle), findsOneWidget);
+      expect(find.text(l10n.progressHoursToB1), findsOneWidget);
+      expect(tester.takeException(), isNull, reason: 'no overflow at 1.4x');
+
+      await tester.tap(tiles);
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.progressHoursPopupTitle), findsOneWidget);
+      for (final language in state.languageChoices) {
+        expect(find.text(language.name), findsWidgets);
+      }
+      expect(find.text(l10n.progressHoursTotal), findsOneWidget);
+      await tester.tap(find.text(l10n.commonClose));
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.progressHoursPopupTitle), findsNothing);
+    });
+
+    testWidgets('an answer left open counts for a minute, and hours left to '
+        'B1 are at least the hours left in the decks written so far', (
+      tester,
+    ) async {
+      final state = await fixture();
+      final code = state.languageChoices.first.code;
+      final before = ProgressHours.of(state, code);
+      final entry = state.decks.firstWhere((e) => e.language.code == code);
+      state.progress.record(
+        deckId: entry.id,
+        cardId: entry.cards.first.id,
+        mode: DrillMode.recognition,
+        grade: 4,
+        now: state.now(),
+        elapsed: const Duration(minutes: 30),
+      );
+      final after = ProgressHours.of(state, code);
+      expect(after.spent - before.spent, closeTo(1 / 60, 1e-9));
+      final toB1 = hoursLeftToB1(state, code);
+      expect(toB1, isNotNull);
+      expect(toB1!, greaterThanOrEqualTo(courseHours(state, code).left));
     });
   });
 
