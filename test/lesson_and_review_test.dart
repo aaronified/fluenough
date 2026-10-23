@@ -71,6 +71,7 @@ import 'package:fluenough/features/drill/rtl_fixture.dart';
 import 'package:fluenough/features/drill/set_drill.dart';
 import 'package:fluenough/features/drill/speaking_drill.dart';
 import 'package:fluenough/features/drill/taught_details.dart';
+import 'package:fluenough/features/drill/teach_card.dart';
 import 'package:fluenough/features/drill/teach_drill.dart';
 import 'package:fluenough/features/drill/typed_drill.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
@@ -2251,6 +2252,86 @@ void main() {
   });
 
   group('a lesson on screen', () {
+    testWidgets(
+      'a word is taught on one card: the IPA opens the pronunciation, the '
+      'meaning the dictionary, and a swipe goes on to its question',
+      (tester) async {
+        usePhone(tester);
+        final state = AppState.test(
+          decks: MemoryDeckSource(<String, String>{
+            'decks/es/es-en-teach.yaml': '''
+schema: 1
+id: es-en-teach
+name: "Teach"
+language: { code: es, iso639_3: spa, name: Spanish, script: latin }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+  - id: es-en-teach-0001
+    target: "hola"
+    native: "hello"
+    ipa: "ˈola"
+    notes: "Said when you meet."
+    examples:
+      - target: "Hola, Ana."
+        native: "Hello, Ana."
+  - id: es-en-teach-0002
+    target: "adiós"
+    native: "goodbye"
+''',
+          }),
+        );
+        await pumpScreen(
+          tester,
+          DrillPage(
+            request: DrillRequest.lesson(language: 'es', deckId: 'es-en-teach'),
+          ),
+          state: state,
+        );
+        final l10n = l10nOf(tester);
+        final first = sessionOf(tester).item.card;
+        expect(first.id, 'es-en-teach-0001');
+        expect(find.byType(TeachCard), findsOneWidget);
+        expect(find.text('hola'), findsOneWidget);
+        expect(find.text('Said when you meet.'), findsOneWidget);
+        expect(find.text(l10n.commonContinue), findsNothing);
+
+        // The IPA is a button: it opens the pronunciation, which asks for the
+        // IPA course where it is not on the phone.
+        await tester.tap(find.text(l10n.wordSheetIpa('ˈola')));
+        await tester.pumpAndSettle();
+        expect(find.text(l10n.teachPronunciationBody), findsOneWidget);
+        expect(find.text(l10n.ipaSymbolsNone), findsOneWidget);
+        await tester.tap(find.text(l10n.commonClose));
+        await tester.pumpAndSettle();
+        expect(find.text(l10n.teachPronunciationBody), findsNothing);
+
+        // The meaning is the dictionary button, with the examples in it.
+        expect(find.text('Hola, Ana.'), findsNothing);
+        await tester.tap(find.text('hello'));
+        await tester.pumpAndSettle();
+        expect(find.text(l10n.teachDictionaryBody), findsOneWidget);
+        expect(find.text('Hola, Ana.'), findsOneWidget);
+        await tester.tap(find.text(l10n.commonClose));
+        await tester.pumpAndSettle();
+
+        // Nothing behind the first card: a swipe toward the end edge is held
+        // back, and the card is where it was.
+        await tester.fling(find.byType(TeachCard), const Offset(300, 0), 1000);
+        await tester.pumpAndSettle();
+        expect(sessionOf(tester).ask, Ask.teach);
+        expect(find.byType(TeachCard), findsOneWidget);
+
+        // A swipe toward the start edge goes on, and records nothing.
+        await tester.fling(find.byType(TeachCard), const Offset(-300, 0), 1000);
+        await tester.pumpAndSettle();
+        expect(find.byType(TeachCard), findsNothing);
+        expect(sessionOf(tester).item.card.id, first.id);
+        expect(sessionOf(tester).ask, isNot(Ask.teach));
+        expect(state.progress.log, isEmpty);
+      },
+    );
+
     testWidgets('Today offers the lesson; it teaches each word, then asks it, '
         'and once done offers another', (tester) async {
       usePhone(tester);
@@ -2284,10 +2365,12 @@ void main() {
         await tester.pumpAndSettle();
       }
       expect(find.byType(TeachDrill), findsOneWidget);
-      expect(find.text(l10n.drillTeachTitle), findsOneWidget);
+      expect(find.byType(TeachCard), findsOneWidget);
       final first = sessionOf(tester).item.card;
       expect(find.text(first.native), findsOneWidget);
-      await tester.tap(find.text(l10n.commonContinue));
+      // No Continue: the chevron goes on, as a swipe does.
+      expect(find.text(l10n.commonContinue), findsNothing);
+      await tester.tap(find.byTooltip(l10n.drillNextCard));
       await tester.pumpAndSettle();
       expect(find.byType(ChoiceDrill), findsOneWidget);
       expect(sessionOf(tester).item.card.id, first.id);

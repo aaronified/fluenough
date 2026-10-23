@@ -2,7 +2,7 @@
 
 Companion to `today-chain.html` (owner, 2026-10-23: "Do all the mockups needed for the today chain together, in one screen."). The page holds only the screens and their tweak controls, with what is new or changed outlined in red. The checks and notes are here. Nothing below is decided; every open choice is a tweak control on the page.
 
-Phone 360 dp at 1.4x text (the app's cap, #505), `ColorScheme.fromSeed` of the forest seed (the tokens of `deck-page-and-teach-card.html`), light and dark, Hindustani and Bengali examples (readings follow the course: no final a in Bengali). Theme, course and highlight are global controls; each section has its own.
+Phone 360 dp at 1.4x text (the app's cap, #505), `ColorScheme.fromSeed` of the forest seed (the tokens of the deck page and teach card mockup, now built and removed), light and dark, Hindustani and Bengali examples (readings follow the course: no final a in Bengali). Theme, course and highlight are global controls; each section has its own.
 
 ## Screens
 
