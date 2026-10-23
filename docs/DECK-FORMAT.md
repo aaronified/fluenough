@@ -2261,10 +2261,11 @@ language: { code: "ipa", iso639_3: "zxx", name: "IPA", script: "ipa", typed: fal
   which. The sound is optional: an example in a language the phone has no
   voice for is shown without a speaker.
 - **Tags.** Each card's tags are the languages that use the sound, by code,
-  and `core` for the symbols every learner needs. They decide the
-  learner's **"IPA: my languages"** course, the symbols of the languages
-  they learn; **"IPA: whole chart"** has every card. The two are one
-  course and share progress.
+  and `core` for the symbols every learner needs. The course is the whole
+  chart, one entry in the list of languages; the tags are there for a learner
+  to focus on the symbols of their languages. (A second course, "IPA: my
+  languages", cut by these tags, was dropped on 2026-10-23, #735: its
+  learners keep their progress, which is keyed by card.)
 - **Order.** Symbols learners mix up are adjacent in a deck: ɒ and ɔ, ʈ and
   t̪, ɪ and i, ɾ and r.
 - **Answers.** A card's production is chosen, never typed (`typed: false`).
