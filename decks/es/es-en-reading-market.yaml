@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-market"
+name: "Reading: at the market"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts from a market: a buyer at a stall, and a price board. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-at-the-market"
+    title: "At the market"
+    theme: "market"
+    sentences:
+      - text: "Compro una manzana y dos plátanos."
+      - text: "¿Cuánto cuesta el pan?"
+      - text: "El precio es bajo."
+      - text: "La patata es barata."
+    questions:
+      - id: "es-0595"
+        prompt: { en: "How many bananas does the buyer buy?" }
+        options:
+          - { en: "Two" }
+          - { en: "One" }
+          - { en: "Ten" }
+        answer: 1
+      - id: "es-0596"
+        prompt: { en: "What does the buyer ask?" }
+        options:
+          - { en: "How much the bread costs" }
+          - { en: "Where the shop is" }
+          - { en: "Who the seller is" }
+        answer: 1
+      - id: "es-0597"
+        prompt: { en: "How is the price?" }
+        options:
+          - { en: "Low" }
+          - { en: "High" }
+          - { en: "Free" }
+        answer: 1
+  - id: "es-market-price-board"
+    title: "Price board"
+    theme: "market"
+    sentences:
+      - text: "La manzana: un euro."
+      - text: "El tomate: dos euros."
+      - text: "El precio de la patata: cinco euros."
+      - text: "Hay una oferta hoy."
+    questions:
+      - id: "es-0598"
+        prompt: { en: "How much is the apple?" }
+        options:
+          - { en: "One euro" }
+          - { en: "Two euros" }
+          - { en: "Five euros" }
+        answer: 1
+      - id: "es-0599"
+        prompt: { en: "How much is the tomato?" }
+        options:
+          - { en: "Two euros" }
+          - { en: "One euro" }
+          - { en: "Ten euros" }
+        answer: 1
+      - id: "es-0600"
+        prompt: { en: "Is there an offer today?" }
+        options:
+          - { en: "Yes" }
+          - { en: "No" }
+          - { en: "The shop is closed" }
+        answer: 1
