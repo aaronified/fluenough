@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Progress shows hours spent (each answer at most a minute) and about how many hours are left to the end of B1, in a tile row under Words and Level; tapping it opens a popup with each language's hours (#227).
+
 ### Changed
 
 - A rule is taught on its own card before its first question: its name, what it means and its forms on words you know. A grammar question asks you to choose among the forms of one word first, then to type; after an answer the word's forms in the rule are shown with the one asked marked. A rule's table on the unit page shows only words you know or have been asked, each form marked known, learning or not asked yet (#417).

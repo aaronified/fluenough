@@ -12,7 +12,6 @@ Every plan in the repo's docs/plans folder, one line each. Each plan has its own
 - [Deck Browser](Plan-Deck-Browser): reviewing decks in the app, sent by mail
 - [Explain Mistakes](Plan-Explain-Mistakes): explain the mistake on a wrong grammar answer
 - [Handwriting](Plan-Handwriting): handwriting the script, stroke by stroke
-- [Hours Per Language](Plan-Hours-Per-Language): hours spent, and hours left, for each language
 - [Import Text](Plan-Import-Text): import any text, and make cards from its words
 - [In App Readings](Plan-In-App-Readings): readings made in the app, for sentences the learner adds
 - [Ipa Course](Plan-Ipa-Course): the IPA, taught like a language

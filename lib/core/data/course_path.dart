@@ -249,6 +249,10 @@ mixin _B1Plan {
   Iterable<PlanUnit> get _upToB1 =>
       plan.take((milestoneIndex(Milestone.b1) ?? plan.length - 1) + 1);
 
+  /// How many units up to B1 have no decks to teach yet: planned units, and
+  /// written ones with no deck in this course (#227).
+  int get unitsToWrite => _upToB1.where((unit) => unit.isComing).length;
+
   /// The grammar topics planned up to B1, in order, each once.
   List<String> get grammarTopics =>
       <String>{for (final unit in _upToB1) ...unit.grammar}.toList();
