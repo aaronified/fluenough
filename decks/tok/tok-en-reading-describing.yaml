@@ -6,35 +6,35 @@ language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", ic
 native: { code: "en", iso639_3: "eng", name: "English" }
 license: "CC-BY-SA-4.0"
 source: "Written for this deck"
-description: "Two passages from the describing unit: a room described aloud, and a small ad for a thing that its owner wants to pass on. Not yet checked by a Toki Pona speaker: please report any mistake."
+description: "Two passages from the describing unit: a thing described aloud, and a small ad for a thing that its owner wants to give away. Not yet checked by a Toki Pona speaker: please report any mistake."
 tags: ["reading", "unreviewed"]
 passages:
   - id: "tok-describing-a-room"
-    title: "A room"
+    title: "A thing"
     theme: "describing"
     sentences:
-      - text: "tomo ni li suli."
-      - text: "tomo ni li sin."
-      - text: "tomo ni li lili ala."
+      - text: "ijo ni li suli."
+      - text: "ijo ni li sin."
+      - text: "ijo ni li lili ala."
       - text: "ijo mute li lon."
     questions:
       - id: "tok-0135"
-        prompt: { en: "The first sentence says how big the room is. How big is it?" }
+        prompt: { en: "The first sentence says how big the thing is. How big is it?" }
         options:
           - { en: "Big" }
           - { en: "Small" }
         answer: 1
       - id: "tok-0136"
-        prompt: { en: "The second sentence says what the room is. Is it new or bad?" }
+        prompt: { en: "The second sentence says what the thing is like. Is it new or bad?" }
         options:
           - { en: "New" }
           - { en: "Bad" }
         answer: 1
       - id: "tok-0137"
-        prompt: { en: "The room is small." }
+        prompt: { en: "The thing is small." }
         answer: false
   - id: "tok-for-sale"
-    title: "A small ad"
+    title: "A small ad: something to give away"
     theme: "describing"
     sentences:
       - text: "ijo ni li sin."
@@ -49,7 +49,7 @@ passages:
         prompt: { en: "The ad says the thing is big. Is that true?" }
         answer: false
       - id: "tok-0140"
-        prompt: { en: "The last sentence says what the seller wants to do. What is it?" }
+        prompt: { en: "The last sentence says what the writer wants to do. What is it?" }
         options:
           - { en: "To give the thing to someone else" }
           - { en: "To keep the thing" }

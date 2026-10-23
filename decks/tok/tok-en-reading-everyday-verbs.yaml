@@ -6,7 +6,7 @@ language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", ic
 native: { code: "en", iso639_3: "eng", name: "English" }
 license: "CC-BY-SA-4.0"
 source: "Written for this deck"
-description: "Two passages from the everyday verbs unit: a short spoken account of what someone eats, sees, hears and wants (heard), and a note left for a housemate about who is leaving, eating and sleeping. Not yet checked by a Toki Pona speaker: please report any mistake."
+description: "Two passages from the everyday verbs unit: a short spoken account of what someone eats, sees, hears and wants (heard), and a note left for a housemate about who is leaving, coming and sleeping. Not yet checked by a Toki Pona speaker: please report any mistake."
 tags: ["reading", "unreviewed"]
 passages:
   - id: "tok-what-i-do"
@@ -38,10 +38,10 @@ passages:
     title: "A note for a housemate"
     theme: "everyday-verbs"
     sentences:
-      - text: "mi: mi tawa."
-      - text: "ona: ona li moku e pan."
-      - text: "sina: sina moku e pan anu ala?"
-      - text: "mi: mi wile lape."
+      - text: "mi tawa."
+      - text: "jan pona li kama tawa sina."
+      - text: "sina wile e moku?"
+      - text: "mi wile lape."
     questions:
       - id: "tok-0098"
         prompt: { en: "Who is leaving?" }
@@ -52,7 +52,7 @@ passages:
       - id: "tok-0099"
         prompt: { en: "What does the third line ask?" }
         options:
-          - { en: "Whether you eat bread" }
+          - { en: "Whether you want food" }
           - { en: "Whether you sleep" }
         answer: 1
       - id: "tok-0100"

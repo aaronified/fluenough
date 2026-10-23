@@ -178,14 +178,15 @@ units:
   # a cat is left out, since soweli is taught in its own unit later) and the
   # reading passage three-lines (a three-line story: someone sees food, wants
   # it and eats it).
-  - decks: ["tok-grammar-sentence", "tok-grammar-sentence-sentences", "tok-reading-sentences"]
+  - decks: ["tok-grammar-sentence", "tok-grammar-sentence-sentences", "tok-reading-sentences", "*"]
     words: 0
     grammar: ["li-predicate", "mi-sina-without-li", "e-object", "word-roles"]
   # suli, lili, ike, sin, wawa, mute, ante and sama. Its sentences are
   # tok-describing-sentences, and its passages are in tok-en-reading-describing:
-  # the listening passage describing-a-room (someone describes a room: big,
-  # small, new) and the reading passage for-sale (a small ad for a thing).
-  - decks: ["tok-describing", "tok-describing-sentences", "tok-reading-describing"]
+  # the listening passage describing-a-room (someone describes a thing: big,
+  # small, new) and the reading passage for-sale (a small ad for something
+  # to give away).
+  - decks: ["tok-describing", "tok-describing-sentences", "tok-reading-describing", "*"]
     words: 8
   # ala after the word it denies; the X ala X question (sina pona ala
   # pona?); seme in the place of the answer; answering with the verb.
