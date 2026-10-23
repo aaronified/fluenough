@@ -1,0 +1,46 @@
+schema: 1
+id: "es-grammar-imperatives"
+part: "core"
+kind: "grammar"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "verbs", "unreviewed"]
+pattern:
+  slots: ["tú", "no + tú", "usted"]
+  entries:
+    - lemma: "hablar"
+      ipa: "aˈblaɾ"
+      forms: { "tú": "habla", "no + tú": "no hables", "usted": "hable" }
+      ipas: { "tú": "ˈabla", "no + tú": "no ˈables", "usted": "ˈable" }
+    - lemma: "mirar"
+      ipa: "miˈɾaɾ"
+      forms: { "tú": "mira", "no + tú": "no mires", "usted": "mire" }
+      ipas: { "tú": "ˈmiɾa", "no + tú": "no ˈmiɾes", "usted": "ˈmiɾe" }
+    - lemma: "escuchar"
+      ipa: "eskuˈtʃaɾ"
+      forms: { "tú": "escucha", "no + tú": "no escuches", "usted": "escuche" }
+      ipas: { "tú": "esˈkutʃa", "no + tú": "no esˈkutʃes", "usted": "esˈkutʃe" }
+    - lemma: "comer"
+      ipa: "koˈmeɾ"
+      forms: { "tú": "come", "no + tú": "no comas", "usted": "coma" }
+      ipas: { "tú": "ˈkome", "no + tú": "no ˈkomas", "usted": "ˈkoma" }
+    - lemma: "beber"
+      ipa: "beˈbeɾ"
+      forms: { "tú": "bebe", "no + tú": "no bebas", "usted": "beba" }
+      ipas: { "tú": "ˈbebe", "no + tú": "no ˈbebas", "usted": "ˈbeba" }
+    - lemma: "leer"
+      ipa: "leˈeɾ"
+      forms: { "tú": "lee", "no + tú": "no leas", "usted": "lea" }
+      ipas: { "tú": "ˈlee", "no + tú": "no ˈleas", "usted": "ˈlea" }
+    - lemma: "vivir"
+      ipa: "biˈbiɾ"
+      forms: { "tú": "vive", "no + tú": "no vivas", "usted": "viva" }
+      ipas: { "tú": "ˈbibe", "no + tú": "no ˈbibas", "usted": "ˈbiba" }
+    - lemma: "escribir"
+      ipa: "eskɾiˈbiɾ"
+      forms: { "tú": "escribe", "no + tú": "no escribas", "usted": "escriba" }
+      ipas: { "tú": "esˈkɾibe", "no + tú": "no esˈkɾibas", "usted": "esˈkɾiba" }
+    - lemma: "abrir"
+      ipa: "aˈbɾiɾ"
+      forms: { "tú": "abre", "no + tú": "no abras", "usted": "abra" }
+      ipas: { "tú": "ˈabɾe", "no + tú": "no ˈabɾas", "usted": "ˈabɾa" }
