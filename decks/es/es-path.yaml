@@ -98,16 +98,12 @@ units:
   - decks: ["es-grammar-adjective-agreement", "es-reading-adjective-agreement"]
     words: 0
     grammar: ["adjective-agreement"]
-  - planned: { id: "es-grammar-prepositions", grammar: "prepositions" }
-    listening_passages:
-      - { id: "where-is-it", text: { "en": "Saying where things are: in, on, under, next to" } }
-    reading_passages:
-      - { id: "room-description", text: { "en": "A short description of a room and where its furniture is" } }
-  - planned: { id: "es-grammar-ser-estar", grammar: "ser-estar" }
-    listening_passages:
-      - { id: "who-and-how", text: { "en": "Saying who someone is and how they are today" } }
-    reading_passages:
-      - { id: "introduction-card", text: { "en": "A short card introducing a person: who they are, where they are from, how they feel" } }
+  - decks: ["es-grammar-prepositions", "es-reading-prepositions"]
+    words: 0
+    grammar: ["prepositions"]
+  - decks: ["es-grammar-ser-estar", "es-reading-ser-estar"]
+    words: 0
+    grammar: ["ser-estar"]
   - decks: ["es-grammar-present-ar"]
     words: 0
     grammar: ["present-ar"]
