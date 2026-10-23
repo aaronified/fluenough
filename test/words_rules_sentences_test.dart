@@ -9,7 +9,6 @@ import 'package:fluenough/app/unlocks.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
-import 'package:fluenough/app/unlocks.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
