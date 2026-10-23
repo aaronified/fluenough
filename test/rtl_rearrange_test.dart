@@ -27,8 +27,8 @@ native: { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 cards:
   - id: ur-fixture-9001
-    target: "یہ میری کتاب ہے"
-    native: "this is my book"
+    target: "میری کتاب ہے"
+    native: "my book is"
 ''';
 
 const String _spanish = '''
@@ -41,8 +41,8 @@ native: { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 cards:
   - id: es-fixture-9001
-    target: "esta es mi casa"
-    native: "this is my house"
+    target: "mi casa grande"
+    native: "my big house"
 ''';
 
 Future<AppState> _pump(WidgetTester tester, String deck, String target) async {
@@ -92,8 +92,8 @@ void main() {
   testWidgets('an Urdu sentence builds from the right, a Spanish one from the '
       'left', (tester) async {
     for (final (deck, target, rtl) in <(String, String, bool)>[
-      ('ur-fixture-order', 'یہ میری کتاب ہے', true),
-      ('es-fixture-order', 'esta es mi casa', false),
+      ('ur-fixture-order', 'میری کتاب ہے', true),
+      ('es-fixture-order', 'mi casa grande', false),
     ]) {
       await _pump(tester, deck, target);
       expect(find.byType(RearrangeDrill), findsOneWidget);
@@ -116,12 +116,12 @@ void main() {
 
   testWidgets('a wrong order shows the answer with the sentence isolated, '
       'right to left', (tester) async {
-    await _pump(tester, 'ur-fixture-order', 'یہ میری کتاب ہے');
-    for (final word in 'ہے کتاب میری یہ'.split(' ')) {
+    await _pump(tester, 'ur-fixture-order', 'میری کتاب ہے');
+    for (final word in 'ہے کتاب میری'.split(' ')) {
       await tapText(tester, word);
     }
     await tapText(tester, l10nOf(tester).drillCheck);
-    final answer = l10nOf(tester).feedbackAnswer('⁧یہ میری کتاب ہے⁩');
+    final answer = l10nOf(tester).feedbackAnswer('\u2067میری کتاب ہے\u2069');
     expect(find.text(answer), findsOneWidget);
   });
 }
