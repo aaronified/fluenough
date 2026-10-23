@@ -6,11 +6,14 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 - `progress-mastery.html`: the Progress tab's mastery view (#678): the
   words count (**312** / 540), a 6-point star of mastery per skill (grammar,
-  script, read, write, hear, say; known / B1 total; the filled area is overall
-  mastery; it grows from the centre in 400 ms on open), and a line chart of
-  known / taught over time for words, phrases, script and grammar, in place of
-  #575's bars. Main state only, Hindi (Hindustani) in light and Bengali in
-  dark, 1.4x (owner, 2026-10-21). The page marks its Proposed choices.
+  script, read, write, hear, say; the filled shape is known / B1 total and is
+  overall mastery; an outline with no fill is known / taught, always on or
+  outside the filled shape, at the centre for an untaught skill; both grow from
+  the centre in 400 ms on open), the line chart of known / taught over time,
+  then the weakest tags, leeches and calendar (with streaks) the tab has today
+  (owner, 2026-10-23). Hindi (Hindustani) in light and Bengali in dark, 1.4x.
+  Open choices are tweak controls and are listed in `progress-mastery.md`, with
+  the self-check.
 
 - `today-chain.html`: every screen the Today chain needs on one page (owner,
   2026-10-23: "Do all the mockups needed for the today chain together, in one
