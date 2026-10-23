@@ -44,7 +44,7 @@ is separate from the child's own profile PIN.
 - **no sound-alike or look-alike warnings** either: the "Careful: said
   slightly wrong, this sounds like an offensive word" note is not shown,
   and nothing hints that an offensive word exists;
-- no offensive word in any drill, reading, search, Inspect or deck
+- no offensive word in any drill, reading, search, word sheet or deck
   page;
 - **a child can't become a reviewer** (owner, 2026-10-10: "And a child
   cannot become a reviewer"): "Become a reviewer" is not shown, reviewer

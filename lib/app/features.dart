@@ -34,6 +34,10 @@ enum Feature {
   hoursLeft(227),
   beyondCourse(215),
 
+  // A deck page's Relearn: every word in view, card by card, repeatable
+  // (#694).
+  walkthrough(694),
+
   // Data.
   persistence(5),
   stats(18),

@@ -540,7 +540,7 @@ class AppState extends ChangeNotifier {
 
   /// The catalog as the learner has it: the IPA course's decks cut to the
   /// cards of their [ipaScope] for the languages they learn, so that the
-  /// counts, lessons, finished decks and Inspect read one list
+  /// counts, lessons, finished decks and the word sheet read one list
   /// (ADR-0041).
   Catalog get _view {
     // Nothing to cut where no IPA deck is on the phone, the usual case.
@@ -2481,8 +2481,13 @@ class AppState extends ChangeNotifier {
 
   /// The cards a lesson in [language] can teach, in their order: from
   /// [deckId], or else from the pending units (ADR-0013). Those not taught
-  /// yet that can be drilled now.
-  List<Card> untaughtCards(String language, {String? deckId}) {
+  /// yet that can be drilled now, and with [tags] given, only those
+  /// carrying one of them: a deck page's tag chips.
+  List<Card> untaughtCards(
+    String language, {
+    String? deckId,
+    Set<String> tags = const <String>{},
+  }) {
     final cards = deckId != null
         ? deckById(deckId)?.cards ?? const <Card>[]
         : _alternating(<List<DeckEntry>>[
@@ -2492,7 +2497,8 @@ class AppState extends ChangeNotifier {
     final seen = <String>{};
     return <Card>[
       for (final card in cards)
-        if (seen.add(card.id) &&
+        if ((tags.isEmpty || card.tags.any(tags.contains)) &&
+            seen.add(card.id) &&
             !isTaught(card) &&
             drillableModes(card).isNotEmpty)
           card,
@@ -2518,6 +2524,7 @@ class AppState extends ChangeNotifier {
     final cards = untaughtCards(
       request.language!,
       deckId: request.deckIds?.single,
+      tags: request.tags,
     );
     if (cards.isEmpty) return const <SessionItem>[];
     final first = cards.first;

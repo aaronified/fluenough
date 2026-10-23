@@ -5,20 +5,24 @@ import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
+import '../../core/scheduling/skill_difficulty.dart';
 import '../../l10n/app_localizations.dart';
-import '../../ui/theme.dart';
 import '../../ui/widgets/card_picture.dart';
+import '../../ui/widgets/ipa_line.dart';
+import '../../ui/widgets/report_button.dart';
+import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
+import '../drill/ipa_examples.dart';
 import '../review/alike_warning.dart';
 import '../review/review_words.dart';
 import 'card_bases.dart';
+import 'card_blocks.dart';
 import 'card_facts.dart';
 import 'card_notes.dart';
-import '../drill/ipa_examples.dart';
-import 'card_top_line.dart';
 import 'checked_by_line.dart';
+import 'ipa_symbols.dart';
 import 'path_model.dart' show isSentence;
-import 'path_parts.dart' show masteryName;
+import 'path_parts.dart' show joinParts, masteryName;
 import 'word_mastery.dart';
 
 /// Opens [card]'s card in a sheet over a unit's screen.
@@ -47,18 +51,24 @@ bool isRude(Card card, DeckEntry? deck) =>
 /// word at once.
 bool adultContentOn(AppState state) => state.settings.adultContent;
 
-/// The card of a word on a unit's screen: a top line with its id, part of
-/// speech and where the learner stands with it, a speaker and the bug icon;
-/// then its picture, the word and its reading, how it is said in the IPA,
-/// its meaning, its notes, its base words ([BaseLine]) and its first
-/// example, and at the end the facts that name it ([CardFacts], #546).
+/// The word sheet: everything a card has, inline and unfolded, from a word's
+/// row on a deck's or a unit's screen (owner, 2026-10-22, #691; it replaces
+/// Inspect). Top to bottom: the word large, its reading, a speaker and its
+/// IPA; each sound of the IPA, from the IPA course, with its practice; the
+/// meaning, its part of speech and gender, other meanings and accepted
+/// answers; its picture; its notes; the base words of its forms; the
+/// warnings, each with its title; the dictionary entry; every example; the
+/// facts that name it; its tags; how hard it has been in each skill, for
+/// the learner; and last its id, where the learner stands with it, and
+/// Report.
 ///
 /// Where a minimal-pair partner, a word that sounds almost the same (its
-/// `pair` or a pair note's), is rude, it carries the warning the drill cards carry, "Careful when
-/// speaking" ([AlikeWarning]), which names the rude word only with adult
-/// content on (docs/plans/offensive-words.md). Any other partner it names,
-/// as "Sounds like another word". A pair note's text goes with its
-/// partner.
+/// `pair` or a pair note's), is rude, it carries the warning the drill cards
+/// carry, "Careful when speaking" ([AlikeWarning]), which names the rude
+/// word only with adult content on (docs/plans/offensive-words.md). Any
+/// other partner it names is a "Sounds like another word" block, a
+/// lookalike or homograph note a "Looks like another word" block
+/// ([SimilarBlock]).
 class WordSheet extends StatelessWidget {
   const WordSheet({
     super.key,
@@ -87,248 +97,217 @@ class WordSheet extends StatelessWidget {
     final scheme = theme.colorScheme;
     final state = AppScope.of(context);
     final reading = card.reading;
-    final ipa = card.ipa;
-    final notes = shownNotes(card);
-    final example = card.examples.firstOrNull;
+    final ipa = ipaToShow(context, card.ipa, target: card.target);
+    final notes = proseNotes(card);
     final bases = basesOf(state, card, language);
     final rudeAlikes = rudeAlikesOf(state, card);
     final rudeIds = <String>{for (final a in rudeAlikes) a.partner.id};
-    final partners = <({Card card, String? care})>[
-      for (final pair in pairsOf(card))
-        if (!rudeIds.contains(pair.id))
-          if (_find(state, pair.id) case final found?)
-            (card: found, care: pair.care),
-    ];
+    final similar = similarOf(state, card, except: rudeIds);
     final named = showRude ?? adultContentOn(state);
     final status = masteryName(
       l10n,
       RecentAnswers(state.progress.log).of(card.id),
       notOpen: isSentence(card) && !state.isTaught(card),
     );
-    final pos = card.pos;
+    final line = joinParts(l10n, <String>[?card.pos, ?card.gender]);
     final checked = checkedByOf(state.decks, card).length;
     final facts = state.factsNaming(card, language);
+    final dictionary = card.dictionary;
+    final difficulties = SkillDifficulty.of(card.id, state.progress.stateOf);
     return SafeArea(
       child: SingleChildScrollView(
-        padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 24),
+        padding: const EdgeInsetsDirectional.fromSTEB(20, 6, 20, 24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
+          spacing: 16,
           children: <Widget>[
-            CardTopLine(
-              text: pos == null
-                  ? l10n.wordSheetLine(card.id, status)
-                  : l10n.wordSheetLinePos(card.id, pos, status),
-              card: card,
-              language: language,
-              report: card.id,
-            ),
-            if (card.hasPicture) ...<Widget>[
-              Center(child: CardPicture(card, size: 88)),
-              const SizedBox(height: 12),
-            ],
-            TargetText(
-              card.target,
-              language: language,
-              fontSize: 44,
-              card: card,
-            ),
-            if (reading != null) ...<Widget>[
-              const SizedBox(height: 4),
-              Text(
-                reading,
-                textAlign: TextAlign.center,
-                style: theme.textTheme.titleMedium!.copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
-              ),
-            ],
-            if (ipa != null) ...<Widget>[
-              const SizedBox(height: 2),
-              Text(
-                l10n.wordSheetIpa(ipa),
-                textAlign: TextAlign.center,
-                style: theme.textTheme.bodyMedium!.copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
-              ),
-            ],
-            const SizedBox(height: 12),
-            Text(
-              card.native,
-              textAlign: TextAlign.center,
-              style: theme.textTheme.headlineSmall,
-            ),
-            if (checked > 0) ...<Widget>[
-              const SizedBox(height: 8),
-              CheckedByLine(count: checked),
-            ],
-            for (final note in notes) ...<Widget>[
-              const SizedBox(height: 12),
-              Text(
-                note,
-                textAlign: TextAlign.center,
-                style: theme.textTheme.bodyLarge!.copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
-              ),
-            ],
-            if (bases.isNotEmpty) ...<Widget>[
-              const SizedBox(height: 12),
-              BaseLine(bases: bases, language: language),
-            ],
-            if (example != null && language.isIpa) ...<Widget>[
-              const SizedBox(height: 16),
-              IpaExamples(card: card, language: language),
-            ] else if (example != null) ...<Widget>[
-              const SizedBox(height: 16),
-              Semantics(
-                container: true,
-                label: l10n.drillExample,
-                child: Container(
-                  padding: const EdgeInsetsDirectional.symmetric(
-                    horizontal: 14,
-                    vertical: 10,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                // One line: a word too wide for the sheet shrinks to fit.
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: AlignmentDirectional.centerStart,
+                  child: TargetText(
+                    card.target,
+                    language: language,
+                    fontSize: 52,
+                    fontWeight: FontWeight.w500,
+                    textAlign: TextAlign.start,
+                    card: card,
                   ),
-                  decoration: BoxDecoration(
-                    color: scheme.surfaceContainerLow,
-                    borderRadius: BorderRadius.circular(AppRadii.small),
+                ),
+                if (reading != null)
+                  Text(
+                    reading,
+                    style: theme.textTheme.titleMedium!.copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
                   ),
-                  child: Column(
-                    children: <Widget>[
-                      TargetText(
-                        example.target,
-                        language: language,
-                        fontSize: 17,
-                        color: scheme.onSurface,
+                Row(
+                  children: <Widget>[
+                    if (state.hasVoice(language))
+                      SpeakerIcon(
+                        onPlay: () => state.speakCard(card, language),
+                        label: l10n.drillPlay,
                       ),
-                      if (example.reading case final r?)
-                        Text(
-                          r,
-                          textAlign: TextAlign.center,
-                          style: theme.textTheme.bodyMedium!.copyWith(
-                            color: scheme.onSurfaceVariant,
-                          ),
-                        ),
-                      const SizedBox(height: 2),
-                      Text(
-                        example.native,
-                        textAlign: TextAlign.center,
-                        style: theme.textTheme.bodyLarge!.copyWith(
-                          color: scheme.onSurfaceVariant,
-                        ),
-                      ),
-                    ],
+                    if (ipa != null)
+                      Flexible(child: IpaLine(ipa, textAlign: TextAlign.start)),
+                  ],
+                ),
+              ],
+            ),
+            if (ipa != null)
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                spacing: 4,
+                children: <Widget>[
+                  CardLabel(l10n.cardIpaHeading),
+                  IpaSymbols(card: card),
+                ],
+              ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  card.native,
+                  style: theme.textTheme.headlineSmall!.copyWith(
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
-              ),
-            ],
-            for (final alike in rudeAlikes) ...<Widget>[
-              const SizedBox(height: 16),
+                if (line.isNotEmpty)
+                  Text(
+                    line,
+                    style: theme.textTheme.bodyMedium!.copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                if (card.altNative.isNotEmpty)
+                  Text(
+                    l10n.cardAlsoMeans(
+                      card.altNative.join(l10n.commonListSeparator),
+                    ),
+                    style: theme.textTheme.bodyMedium!.copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                if (card.altTarget.isNotEmpty)
+                  Text(
+                    l10n.cardAlsoAccepted(
+                      card.altTarget.join(l10n.commonListSeparator),
+                    ),
+                    style: theme.textTheme.bodyMedium!.copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                if (checked > 0) ...<Widget>[
+                  const SizedBox(height: 8),
+                  CheckedByLine(count: checked),
+                ],
+              ],
+            ),
+            if (card.hasPicture) Center(child: CardPicture(card, size: 120)),
+            for (final note in notes) NoteBlock(text: note, titled: true),
+            if (bases.isNotEmpty) BaseLine(bases: bases, language: language),
+            for (final alike in rudeAlikes)
               AlikeWarning(
                 kind: alike.kind,
                 named: named ? alike.partner : null,
                 language: language,
                 care: alike.care,
               ),
-            ],
-            for (final partner in partners) ...<Widget>[
-              const SizedBox(height: 16),
-              _SoundsLike(
-                partner: partner.card,
-                language: language,
-                care: partner.care,
+            for (final warning in similar)
+              SimilarBlock(similar: warning, language: language),
+            if (dictionary != null)
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                spacing: 8,
+                children: <Widget>[
+                  CardLabel(l10n.cardDictionaryHeading),
+                  DictionaryView(
+                    senses: dictionary.senses,
+                    etymology: dictionary.etymology,
+                    source: dictionary.source,
+                  ),
+                ],
               ),
-            ],
-            // Last, after the examples and notes (#546), and only when a
-            // fact names the card.
-            if (facts.isNotEmpty) ...<Widget>[
-              const SizedBox(height: 20),
-              CardFacts(facts: facts),
-            ],
+            if (card.examples.isNotEmpty)
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                spacing: 12,
+                children: <Widget>[
+                  CardLabel(l10n.cardExamples),
+                  // An IPA card shows every example, each marked as sounding
+                  // as the card says or not, and each with its own voice
+                  // (ADR-0041).
+                  if (language.isIpa)
+                    IpaExamples(card: card, language: language)
+                  else
+                    for (final example in card.examples)
+                      ExampleBlock(example: example, language: language),
+                ],
+              ),
+            // After the examples and notes (#546), and only when a fact names
+            // the card.
+            if (facts.isNotEmpty) CardFacts(facts: facts),
+            if (card.tags.isNotEmpty)
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                spacing: 8,
+                children: <Widget>[
+                  CardLabel(l10n.cardTags),
+                  CardTags(tags: card.tags),
+                ],
+              ),
+            if (difficulties.isNotEmpty) _Difficulties(difficulties),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child: Text(
+                    l10n.wordSheetLine(card.id, status),
+                    style: theme.textTheme.bodySmall!.copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                ),
+                TextButton.icon(
+                  onPressed: () => ReportButton.open(context, detail: card.id),
+                  icon: const Icon(Icons.flag_outlined, size: 20),
+                  label: Text(l10n.cardReport),
+                ),
+              ],
+            ),
           ],
         ),
       ),
     );
   }
-
-  /// The card with [id], from any deck: a partner [card] names.
-  static Card? _find(AppState state, String id) {
-    for (final entry in state.decks) {
-      for (final other in entry.cards) {
-        if (other.id == id) return other;
-      }
-    }
-    return null;
-  }
 }
 
-/// "Sounds almost like కలం (kalam), pen. Take care when you say it.": a
-/// partner that is not rude. A rude one has [AlikeWarning] instead.
-class _SoundsLike extends StatelessWidget {
-  const _SoundsLike({required this.partner, required this.language, this.care});
+/// How hard a card has been in each skill it has been answered in: a
+/// heading, then a line a skill, "Hear: 7 of 10, harder" (FSRS's D,
+/// docs/plans/difficulty-by-skill.md). Moved here from Inspect. Built only
+/// for a card with at least one skill answered.
+class _Difficulties extends StatelessWidget {
+  const _Difficulties(this.difficulties);
 
-  final Card partner;
-  final LanguageInfo language;
-
-  /// The pair note's own text, if it has one.
-  final String? care;
+  final List<SkillDifficulty> difficulties;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    final scheme = theme.colorScheme;
-    final reading = partner.reading;
-    final named = reading == null
-        ? l10n.wordSheetSoundsLikeNoReading(partner.target, partner.native)
-        : l10n.wordSheetSoundsLike(partner.target, reading, partner.native);
-    return MergeSemantics(
-      child: Container(
-        padding: const EdgeInsetsDirectional.fromSTEB(14, 12, 14, 12),
-        decoration: BoxDecoration(
-          color: scheme.tertiaryContainer,
-          borderRadius: BorderRadius.circular(AppRadii.small),
-        ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Icon(
-              Icons.hearing_outlined,
-              size: 22,
-              color: scheme.onTertiaryContainer,
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    l10n.wordSheetSoundsLikeTitle,
-                    style: theme.textTheme.titleSmall!.copyWith(
-                      color: scheme.onTertiaryContainer,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  const SizedBox(height: 2),
-                  Text.rich(
-                    quotingTarget(named, <String>[partner.target], language),
-                    style: theme.textTheme.bodyMedium!.copyWith(
-                      color: scheme.onTertiaryContainer,
-                    ),
-                  ),
-                  if (care case final care?)
-                    Text(
-                      care,
-                      style: theme.textTheme.bodyMedium!.copyWith(
-                        color: scheme.onTertiaryContainer,
-                      ),
-                    ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      spacing: 4,
+      children: <Widget>[
+        CardLabel(l10n.cardDifficulty),
+        for (final d in difficulties)
+          Text(
+            l10n.cardDifficultyIn(d.mode.name, d.shown, d.lean.name),
+            style: theme.textTheme.bodyMedium,
+          ),
+      ],
     );
   }
 }
