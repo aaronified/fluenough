@@ -20,6 +20,7 @@ import 'package:fluenough/features/stats/skill_star.dart';
 import 'package:fluenough/features/stats/stats_numbers.dart';
 import 'package:fluenough/features/stats/stats_page.dart';
 import 'package:fluenough/ui/widgets/language_bar.dart';
+import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/app/features.dart';
 import 'package:flutter/material.dart';
@@ -712,20 +713,14 @@ void main() {
       ).where((l) => l.card.deckId.startsWith('es-')).length;
       expect(leeches, greaterThan(0));
 
-      final list = find.byType(Scrollable).first;
-      await tester.scrollUntilVisible(
-        find.text(l10n.statsWeakestTags),
-        200,
-        scrollable: list,
-      );
+      // A page tall enough to hold the whole list, so that every section is
+      // built and drawn without scrolling to it.
+      tester.view.physicalSize = const Size(390 * 3, 4000 * 3);
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.statsWeakestTags), findsOneWidget);
       for (final tag in numbers.weakestTags.keys) {
         expect(find.text(tag), findsWidgets, reason: tag);
       }
-      await tester.scrollUntilVisible(
-        find.text(l10n.statsLeeches(leeches)),
-        200,
-        scrollable: list,
-      );
       expect(find.text(l10n.statsLeeches(leeches)), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
@@ -820,7 +815,18 @@ void main() {
     testWidgets('it grows over 400 ms, once, and not at all under reduced '
         'motion', (tester) async {
       final mastery = full(10);
-      await pumpStar(tester, mastery: mastery);
+      // Not through pumpStar, which settles the growth before the test can
+      // watch it: draw the star and pump frames by hand.
+      usePhone(tester, textScale: 1.4);
+      await tester.pumpWidget(
+        MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: Scaffold(
+            body: SkillStarCard(mastery: mastery, onTap: () {}),
+          ),
+        ),
+      );
       final grow = tester.widget<TweenAnimationBuilder<double>>(
         find.byType(TweenAnimationBuilder<double>),
       );
