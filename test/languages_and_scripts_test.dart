@@ -63,7 +63,8 @@ import 'package:fluenough/ui/widgets/reading_first.dart';
 import 'package:fluenough/ui/widgets/stat_tile.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show SystemChannels, rootBundle;
+import 'package:flutter/services.dart'
+    show LogicalKeyboardKey, SystemChannels, rootBundle;
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/braille_course.dart';
@@ -2332,6 +2333,157 @@ void main() {
         }
       },
     );
+
+    // The wheel's keys, reduced motion, slots, direction and screen reader
+    // (#703).
+    Future<AppState> pumpBar(
+      WidgetTester tester, {
+      LanguageBarScreen screen = LanguageBarScreen.today,
+      TextDirection direction = TextDirection.ltr,
+    }) {
+      usePhone(tester);
+      return pumpScreen(
+        tester,
+        Directionality(
+          textDirection: direction,
+          child: Scaffold(
+            body: LanguageBarFrame(
+              screen: screen,
+              reportDetail: 'Test',
+              child: const SizedBox.expand(),
+            ),
+          ),
+        ),
+        state: learnerLanguageBar(eight, choice: eight.first),
+      );
+    }
+
+    Future<void> focusWheel(WidgetTester tester) async {
+      Focus.of(tester.element(zone())).requestFocus();
+      await tester.pump();
+    }
+
+    testWidgets('the arrow keys move one language, round the wheel, and a '
+        'quick second press adds to the first', (tester) async {
+      final state = await pumpBar(tester);
+      await focusWheel(tester);
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowRight);
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(state.shownLanguage, 'bn');
+
+      // Two presses before the wheel has turned: two languages, not one.
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowLeft);
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowLeft);
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(state.shownLanguage, 'es');
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('with reduce motion a swipe lands on its language at once', (
+      tester,
+    ) async {
+      tester.platformDispatcher.accessibilityFeaturesTestValue =
+          const FakeAccessibilityFeatures(disableAnimations: true);
+      addTearDown(
+        tester.platformDispatcher.clearAccessibilityFeaturesTestValue,
+      );
+      final state = await pumpBar(tester);
+      await tester.drag(zone(), const Offset(-44, 0));
+      await tester.pump();
+      await tester.pump();
+      expect(state.shownLanguage, 'bn');
+      expect(
+        find.descendant(of: bar(), matching: find.text(nameOf(state, 'bn'))),
+        findsOneWidget,
+      );
+    });
+
+    testWidgets('the wheel is centred whether or not the All slot holds All, '
+        'which only Progress shows', (tester) async {
+      await pumpBar(tester);
+      final today = tester.getCenter(zone()).dx;
+      expect(allButton(), findsNothing);
+      final slot = find.byKey(const ValueKey<String>('language-bar-all-slot'));
+      expect(tester.getSize(slot).width, 48);
+
+      await pumpBar(tester, screen: LanguageBarScreen.progress);
+      expect(allButton(), findsOneWidget);
+      expect(tester.getSize(slot).width, 48);
+      expect(tester.getCenter(zone()).dx, closeTo(today, 0.5));
+      expect(today, closeTo(195, 1));
+    });
+
+    testWidgets('in a right to left layout the next language is to the '
+        'right and the arrow keys are flipped', (tester) async {
+      final state = await pumpBar(tester, direction: TextDirection.rtl);
+      await tester.drag(zone(), const Offset(44, 0));
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(state.shownLanguage, 'bn');
+      await tester.drag(zone(), const Offset(-44, 0));
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(state.shownLanguage, 'hi');
+
+      await focusWheel(tester);
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowLeft);
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(state.shownLanguage, 'bn');
+    });
+
+    testWidgets('a screen reader hears the language and its place, and can '
+        'step next and previous round the ends', (tester) async {
+      final handle = tester.ensureSemantics();
+      final state = await pumpBar(tester);
+      final label = find.bySemanticsLabel(RegExp('^Language shown'));
+      var node = tester.getSemantics(label);
+      expect(
+        node.label,
+        'Language shown: ${nameOf(state, 'hi')}, 1 of 8 languages',
+      );
+
+      Map<String, int> actions() => <String, int>{
+        for (final id in node.getSemanticsData().customSemanticsActionIds!)
+          CustomSemanticsAction.getAction(id)!.label: id,
+      };
+      // On the first language there is still a previous: the last one.
+      expect(
+        actions().keys,
+        containsAll(<String>[
+          'Next language: ${nameOf(state, 'bn')}',
+          'Previous language: ${nameOf(state, 'es')}',
+        ]),
+      );
+      tester.binding.pipelineOwner.semanticsOwner!.performAction(
+        node.id,
+        SemanticsAction.customAction,
+        actions()['Previous language: ${nameOf(state, 'es')}']!,
+      );
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(state.shownLanguage, 'es');
+
+      // And on the last, a next: the first.
+      node = tester.getSemantics(label);
+      expect(actions().keys, contains('Next language: ${nameOf(state, 'hi')}'));
+      handle.dispose();
+    });
+
+    testWidgets('a cancelled touch that caught the coast settles on a '
+        'language and shows its name', (tester) async {
+      final state = await pumpBar(tester);
+      await tester.fling(zone(), const Offset(-60, 0), 1200);
+      await tester.pump(const Duration(milliseconds: 150));
+      final touch = await tester.startGesture(tester.getCenter(zone()));
+      await tester.pump(const Duration(milliseconds: 50));
+      await touch.cancel();
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(find.byType(MenuItemButton), findsNothing);
+      expect(
+        find.descendant(
+          of: bar(),
+          matching: find.text(nameOf(state, state.shownLanguage!)),
+        ),
+        findsOneWidget,
+      );
+    });
 
     // Momentum (#682, #703).
     List<String> codesOf(AppState state) => <String>[
