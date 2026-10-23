@@ -1,0 +1,26 @@
+"schema": 1
+"id": "tok-en-grammar-joining"
+"kind": "layer"
+"core": "tok-grammar-joining"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "Joining subjects, verbs and clauses"
+"license": "CC-BY-SA-4.0"
+"description": "En joins subjects into one group, anu gives a choice, taso means only, and li comes again before each new clause. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "Joining subjects, verbs and clauses"
+  "slot_name": "joining"
+  "prompt": "{lemma} ({gloss}): {slot}"
+  "slots":
+    "en": "and joins the subjects (en)"
+    "anu": "or gives a choice (anu)"
+    "taso": "only (taso)"
+    "li-li": "two clauses, li repeated"
+  "entries":
+    "mi": "I"
+    "jan": "person"
+  "notes": "Mi en sina li pali is you and I work: one li for the whole group. Mi li moku, sina li pali is I eat, and you work: each clause takes its own li."
