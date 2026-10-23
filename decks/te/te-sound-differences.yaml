@@ -18,9 +18,10 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
   - ref: "te-0053"
-    tags: ["vowel-length"]
+    tags: ["vowel-length", "anusvara"]
     notes:
       - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "pair", ref: "te-0050" }
   - id: "te-0111"
     target: "కాలం"
     reading: "kālaṁ"
@@ -57,9 +58,11 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
   - ref: "te-0050"
-    tags: ["lateral"]
+    tags: ["lateral", "gemination", "anusvara"]
     notes:
       - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "pair", ref: "te-6526" }
+      - { id: "n3", kind: "pair", ref: "te-0053" }
   - id: "te-0116"
     target: "కళ"
     reading: "kaḷa"
@@ -67,3 +70,18 @@ cards:
     tags: ["lateral"]
     notes:
       - { id: "n1", kind: "note" }
+  - id: "te-6525"
+    target: "భావం"
+    reading: "bhāvaṁ"
+    ipa: "bʱaːʋam"
+    tags: ["aspiration"]
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "te-6526"
+    target: "కల్ల"
+    reading: "kalla"
+    ipa: "kalːa"
+    tags: ["gemination"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "pair", ref: "te-0050" }
