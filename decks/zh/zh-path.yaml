@@ -159,17 +159,20 @@ units:
       - { id: "teacher-and-classmate", text: { "en": "Meeting a teacher and a classmate: surnames, laoshi, xiansheng and nin" } }
     reading_passages:
       - { id: "name-cards", text: { "en": "Business cards exchanged at a meeting, surname first" } }
-  - planned: { id: "zh-pronouns", theme: "pronouns", words: 20 }
+  - decks: ["zh-pronouns", "zh-pronouns-sentences", "zh-reading-pronouns", "*"]
+    words: 10
     listening_passages:
       - { id: "who-is-that", text: { "en": "Pointing out who is who in a group photo: I, you, he, she, we" } }
     reading_passages:
       - { id: "class-photo-caption", text: { "en": "A caption under a class photo naming each person" } }
-  - planned: { id: "zh-family", theme: "family", words: 35 }
+  - decks: ["zh-family", "zh-family-sentences", "zh-reading-family", "*"]
+    words: 14
     listening_passages:
       - { id: "my-family", text: { "en": "Talking about your family, with the separate words for older and younger brothers and sisters" } }
     reading_passages:
       - { id: "family-introduction", text: { "en": "A short self-introduction naming the family" } }
-  - planned: { id: "zh-numbers-1-20", theme: "numbers-1-20", words: 25 }
+  - decks: ["zh-numbers-1-20", "zh-numbers-1-20-sentences", "zh-reading-numbers", "*"]
+    words: 9
     listening_passages:
       - { id: "counting-on-fingers", text: { "en": "Counting from one to twenty, and the two words for two: er and liang" } }
     reading_passages:
