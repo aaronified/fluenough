@@ -118,26 +118,29 @@ List<Card> formChoices(Card card, Ask ask, Iterable<Card> cells) {
 }
 
 /// The other forms of [card]'s word that its `bases` name (#522, step 4;
-/// owner, 2026-10-23, "Sibling cards"): the cards of [cards], other than
-/// [card] itself, that share a base with it, that is, whose `bases` ref the
-/// same base card, and whose target differs from [card]'s. Empty for a rules
-/// table's cell, which has its row, and for a card with no sibling.
+/// owner, 2026-10-23, "Sibling cards", narrowed the same day to "Same single
+/// base"): the cards of [cards], other than [card] itself, that are siblings
+/// of it, and whose target differs from [card]'s. Two cards are siblings only
+/// when each has exactly one base and that base is the same card, so a
+/// sentence of several words that shares one of them is no sibling. Empty for
+/// a rules table's cell, which has its row, and for a card with no sibling.
 List<Card> formSiblings(Card card, Iterable<Card> cards) {
   if (card.rule != null) return const <Card>[];
-  final refs = <String>{
-    for (final base in card.bases)
-      if (base.ref case final ref?) ref,
-  };
-  if (refs.isEmpty) return const <Card>[];
+  final ref = _singleBaseRef(card);
+  if (ref == null) return const <Card>[];
   return <Card>[
     for (final other in cards)
       if (other.id != card.id &&
           other.rule == null &&
           other.target != card.target &&
-          other.bases.any((base) => refs.contains(base.ref)))
+          _singleBaseRef(other) == ref)
         other,
   ];
 }
+
+/// The card [card]'s only base refs, or null when it has none or several.
+String? _singleBaseRef(Card card) =>
+    card.bases.length == 1 ? card.bases.single.ref : null;
 
 /// How many items a match pairs question matches.
 const int matchSize = 4;

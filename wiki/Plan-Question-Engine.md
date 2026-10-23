@@ -140,6 +140,11 @@ every card in the shipped decks, then deletes the old.
    refused by the parser on a card that is not a rules cell, so no shipped
    card gains a form question yet. A lesson does not read siblings yet
    (step 8).
+   **Narrowed to "Same single base"** (owner, 2026-10-23: "Two cards are
+   siblings only when each has exactly one base and that base is the same
+   card."): measured on the shipped decks, the literal rule caught about 600
+   multi-word sentences that share any word. `formSiblings` now requires
+   exactly one base on each card, the same card.
 5. **Rearrange by data (#3).** `eligible` is "the target has three or more
    tokens", whatever `pos` is. A two-word phrase stays eligible so that the
    1,098 cards keep it (word-order-tiles.md).
