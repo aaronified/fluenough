@@ -606,7 +606,10 @@ void main() {
         ),
       );
       // A FittedBox hides overflow by shrinking, so measure the shrinking:
-      // each line keeps at least 60% of its 1.4x size.
+      // each line keeps at least 60% of its 1.4x size. Tests draw every
+      // glyph a full em wide (the Ahem font), about 1.8 times Roboto's
+      // average, so a line that shrinks to 1/1.8 here keeps 60% on a phone.
+      const widerThanRoboto = 1.8;
       final fitted = find.descendant(
         of: find.byType(ProgressTiles),
         matching: find.byType(FittedBox),
@@ -618,7 +621,7 @@ void main() {
         final scale = child.width <= render.size.width
             ? 1.0
             : render.size.width / child.width;
-        expect(scale, greaterThanOrEqualTo(0.6));
+        expect(scale * widerThanRoboto, greaterThanOrEqualTo(0.6));
         expect(child.height, lessThan(70), reason: 'one line, never wrapped');
       }
       expect(tester.takeException(), isNull);
