@@ -150,6 +150,7 @@ class AppShell extends StatelessWidget {
           child: Scaffold(
             body: TabPager(
               tab: tab,
+              moving: AppScope.read(context).shellTabMoving,
               children: const <Widget>[
                 TodayPage(),
                 DecksPage(),

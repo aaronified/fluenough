@@ -5,7 +5,7 @@ import '../../app/shell_tab.dart';
 
 /// The four tabs side by side, which a sideways swipe moves between (#683).
 ///
-/// Built from `docs/mockups/tab-swipe.html`, approved by the owner
+/// Built from the approved mockup (since removed), approved by the owner
 /// (2026-10-21: "400, 0.75 approved for tab swipe"):
 ///
 /// * The pages follow the finger 1:1. Past Today or Settings they follow at
@@ -26,9 +26,20 @@ import '../../app/shell_tab.dart';
 /// pages then slide there. Every page stays built while another shows, so it
 /// keeps its scroll position.
 class TabPager extends StatefulWidget {
-  const TabPager({super.key, required this.tab, required this.children});
+  const TabPager({
+    super.key,
+    required this.tab,
+    required this.children,
+    this.moving,
+  });
 
   final ValueNotifier<ShellTab> tab;
+
+  /// Set to true while the pages are away from rest, and false once they
+  /// settle. The bar follows the pages through [tab] as they move, so a
+  /// listener that wants only the tab they settle on (the log) waits for
+  /// this to turn false.
+  final ValueNotifier<bool>? moving;
 
   /// One page per [ShellTab], in order.
   final List<Widget> children;
@@ -80,8 +91,12 @@ class _TabPagerState extends State<TabPager>
   double _px = 0;
 
   /// The pages are away from rest: dragged, or animating.
-  bool _moving = false;
+  bool _isMoving = false;
   bool _dragging = false;
+
+  /// A tap on the bar started the slide: its target is already the tab, so
+  /// the pages do not write the tab on the way.
+  bool _tapping = false;
 
   /// A touch has caught moving pages, and no drag has started yet.
   bool _held = false;
@@ -95,6 +110,12 @@ class _TabPagerState extends State<TabPager>
   double _raw = 0;
   int _start = 0;
   int _target = 0;
+
+  bool get _moving => _isMoving;
+  set _moving(bool value) {
+    _isMoving = value;
+    widget.moving?.value = value;
+  }
 
   int get _last => widget.children.length - 1;
 
@@ -140,7 +161,7 @@ class _TabPagerState extends State<TabPager>
     _px = px;
     if (_w > 0) {
       final nearest = (px / _w).round().clamp(0, _last);
-      if (nearest != widget.tab.value.index) {
+      if (!_tapping && nearest != widget.tab.value.index) {
         _at = nearest;
         _self = true;
         widget.tab.value = ShellTab.values[nearest];
@@ -153,13 +174,14 @@ class _TabPagerState extends State<TabPager>
   /// The pages are at [_target]: at rest.
   void _rest() {
     if (_dragging) return;
-    _moving = false;
+    _tapping = false;
     _at = _target;
     if (widget.tab.value.index != _target) {
       _self = true;
       widget.tab.value = ShellTab.values[_target];
       _self = false;
     }
+    _moving = false;
     if (mounted) setState(() {});
   }
 
@@ -172,6 +194,7 @@ class _TabPagerState extends State<TabPager>
     final from = _offset;
     _at = to;
     _target = to;
+    _tapping = false;
     if (_w <= 0 || MediaQuery.disableAnimationsOf(context)) {
       _c.stop();
       setState(() => _moving = false);
@@ -182,6 +205,7 @@ class _TabPagerState extends State<TabPager>
       return;
     }
     _moving = true;
+    _tapping = true;
     _px = from;
     _jump(from);
     _c.animateTo(
@@ -226,6 +250,7 @@ class _TabPagerState extends State<TabPager>
   void _dragStart(DragStartDetails _) {
     _c.stop();
     _held = false;
+    _tapping = false;
     _dragging = true;
     _start = (_offset / _w).round().clamp(0, _last);
     _raw = _offset;
@@ -261,6 +286,7 @@ class _TabPagerState extends State<TabPager>
 
   void _spring(int target, double velocity) {
     _target = target;
+    _tapping = false;
     _moving = true;
     final spring = SpringDescription.withDampingRatio(
       mass: TabPager.mass,
@@ -316,9 +342,13 @@ class _TabPagerState extends State<TabPager>
   /// touched, but stays built.
   Widget _page(int i, double x, Color background) => Offstage(
     offstage: _w > 0 && x.abs() >= _w,
-    child: Transform.translate(
-      offset: Offset(x, 0),
-      child: ColoredBox(color: background, child: widget.children[i]),
+    // Offstage alone leaves a hidden page's animations running.
+    child: TickerMode(
+      enabled: !(_w > 0 && x.abs() >= _w),
+      child: Transform.translate(
+        offset: Offset(x, 0),
+        child: ColoredBox(color: background, child: widget.children[i]),
+      ),
     ),
   );
 }
