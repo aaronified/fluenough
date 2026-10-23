@@ -8,78 +8,191 @@ tags: ["beginner", "grammar"]
 table:
   applies_to:
     pos: ["verb"]
-    except: ["hi-0240", "hi-0273", "hi-0290", "hi-0460", "hi-0602", "hi-0779", "hi-0781", "hi-0782", "hi-0783", "hi-0784", "hi-0785", "hi-0786", "hi-0787", "hi-0789", "hi-0790", "hi-0792", "hi-0794", "hi-0795", "hi-0796", "hi-0797", "hi-0798", "hi-0799", "hi-0800", "hi-0937", "hi-0938", "hi-0939", "hi-0940", "hi-0941", "hi-0942", "hi-0943", "hi-0950", "hi-0951", "hi-0952", "hi-0953", "hi-0954", "hi-0955", "hi-0956", "hi-0958", "hi-0961", "hi-1023", "hi-1071"]
-  slots: ["i-m", "i-f", "you-m", "you-f", "he-m", "he-f", "we-m", "we-f", "formal-m", "formal-f", "they-m", "they-f"]
+    except: ["hi-0240", "hi-0273", "hi-0290", "hi-0460"]
+  slots: ["i-m", "i-f", "you-m", "you-f", "he-m", "he-f", "we-m", "we-f", "formal-m", "formal-f", "they-m", "they-f", "object-masc-sg", "object-fem-sg", "object-masc-pl", "object-fem-pl"]
   rows:
     - word: "hi-0441"
-      forms: { "i-m": "उठा", "i-f": "उठी", "you-m": "उठे", "you-f": "उठीं", "he-m": "उठा", "he-f": "उठी", "we-m": "उठे", "we-f": "उठीं", "formal-m": "उठे", "formal-f": "उठीं", "they-m": "उठे", "they-f": "उठीं" }
+      forms: { "i-m": "उठा", "i-f": "उठी", "you-m": "उठे", "you-f": "उठीं", "he-m": "उठा", "he-f": "उठी", "we-m": "उठे", "we-f": "उठीं", "formal-m": "उठे", "formal-f": "उठीं", "they-m": "उठे", "they-f": "उठीं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "uṭhā", "i-f": "uṭhī", "you-m": "uṭhē", "you-f": "uṭhīm̐", "he-m": "uṭhā", "he-f": "uṭhī", "we-m": "uṭhē", "we-f": "uṭhīm̐", "formal-m": "uṭhē", "formal-f": "uṭhīm̐", "they-m": "uṭhē", "they-f": "uṭhīm̐" }
     - word: "hi-0442"
-      forms: { "i-m": "नहाया", "i-f": "नहाई", "you-m": "नहाए", "you-f": "नहाईं", "he-m": "नहाया", "he-f": "नहाई", "we-m": "नहाए", "we-f": "नहाईं", "formal-m": "नहाए", "formal-f": "नहाईं", "they-m": "नहाए", "they-f": "नहाईं" }
+      forms: { "i-m": "नहाया", "i-f": "नहाई", "you-m": "नहाए", "you-f": "नहाईं", "he-m": "नहाया", "he-f": "नहाई", "we-m": "नहाए", "we-f": "नहाईं", "formal-m": "नहाए", "formal-f": "नहाईं", "they-m": "नहाए", "they-f": "नहाईं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "nahāyā", "i-f": "nahāī", "you-m": "nahāē", "you-f": "nahāīm̐", "he-m": "nahāyā", "he-f": "nahāī", "we-m": "nahāē", "we-f": "nahāīm̐", "formal-m": "nahāē", "formal-f": "nahāīm̐", "they-m": "nahāē", "they-f": "nahāīm̐" }
     - word: "hi-0450"
-      forms: { "i-m": "सोया", "i-f": "सोई", "you-m": "सोए", "you-f": "सोईं", "he-m": "सोया", "he-f": "सोई", "we-m": "सोए", "we-f": "सोईं", "formal-m": "सोए", "formal-f": "सोईं", "they-m": "सोए", "they-f": "सोईं" }
+      forms: { "i-m": "सोया", "i-f": "सोई", "you-m": "सोए", "you-f": "सोईं", "he-m": "सोया", "he-f": "सोई", "we-m": "सोए", "we-f": "सोईं", "formal-m": "सोए", "formal-f": "सोईं", "they-m": "सोए", "they-f": "सोईं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "sōyā", "i-f": "sōī", "you-m": "sōē", "you-f": "sōīm̐", "he-m": "sōyā", "he-f": "sōī", "we-m": "sōē", "we-f": "sōīm̐", "formal-m": "sōē", "formal-f": "sōīm̐", "they-m": "sōē", "they-f": "sōīm̐" }
     - word: "hi-0513"
-      forms: { "i-m": "सका", "i-f": "सकी", "you-m": "सके", "you-f": "सकीं", "he-m": "सका", "he-f": "सकी", "we-m": "सके", "we-f": "सकीं", "formal-m": "सके", "formal-f": "सकीं", "they-m": "सके", "they-f": "सकीं" }
+      forms: { "i-m": "सका", "i-f": "सकी", "you-m": "सके", "you-f": "सकीं", "he-m": "सका", "he-f": "सकी", "we-m": "सके", "we-f": "सकीं", "formal-m": "सके", "formal-f": "सकीं", "they-m": "सके", "they-f": "सकीं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "sakā", "i-f": "sakī", "you-m": "sakē", "you-f": "sakīm̐", "he-m": "sakā", "he-f": "sakī", "we-m": "sakē", "we-f": "sakīm̐", "formal-m": "sakē", "formal-f": "sakīm̐", "they-m": "sakē", "they-f": "sakīm̐" }
+    - word: "hi-0602"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "पिया", "object-fem-sg": "पी", "object-masc-pl": "पिए", "object-fem-pl": "पीं" }
+      readings: { "object-masc-sg": "piyā", "object-fem-sg": "pī", "object-masc-pl": "piē", "object-fem-pl": "pīm̐" }
     - word: "hi-0777"
-      forms: { "i-m": "गया", "i-f": "गई", "you-m": "गए", "you-f": "गईं", "he-m": "गया", "he-f": "गई", "we-m": "गए", "we-f": "गईं", "formal-m": "गए", "formal-f": "गईं", "they-m": "गए", "they-f": "गईं" }
+      forms: { "i-m": "गया", "i-f": "गई", "you-m": "गए", "you-f": "गईं", "he-m": "गया", "he-f": "गई", "we-m": "गए", "we-f": "गईं", "formal-m": "गए", "formal-f": "गईं", "they-m": "गए", "they-f": "गईं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "gayā", "i-f": "gaī", "you-m": "gaē", "you-f": "gaīm̐", "he-m": "gayā", "he-f": "gaī", "we-m": "gaē", "we-f": "gaīm̐", "formal-m": "gaē", "formal-f": "gaīm̐", "they-m": "gaē", "they-f": "gaīm̐" }
     - word: "hi-0778"
-      forms: { "i-m": "आया", "i-f": "आई", "you-m": "आए", "you-f": "आईं", "he-m": "आया", "he-f": "आई", "we-m": "आए", "we-f": "आईं", "formal-m": "आए", "formal-f": "आईं", "they-m": "आए", "they-f": "आईं" }
+      forms: { "i-m": "आया", "i-f": "आई", "you-m": "आए", "you-f": "आईं", "he-m": "आया", "he-f": "आई", "we-m": "आए", "we-f": "आईं", "formal-m": "आए", "formal-f": "आईं", "they-m": "आए", "they-f": "आईं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "āyā", "i-f": "āī", "you-m": "āē", "you-f": "āīm̐", "he-m": "āyā", "he-f": "āī", "we-m": "āē", "we-f": "āīm̐", "formal-m": "āē", "formal-f": "āīm̐", "they-m": "āē", "they-f": "āīm̐" }
+    - word: "hi-0779"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "किया", "object-fem-sg": "की", "object-masc-pl": "किए", "object-fem-pl": "कीं" }
+      readings: { "object-masc-sg": "kiyā", "object-fem-sg": "kī", "object-masc-pl": "kiē", "object-fem-pl": "kīm̐" }
     - word: "hi-0780"
-      forms: { "i-m": "हुआ", "i-f": "हुई", "you-m": "हुए", "you-f": "हुईं", "he-m": "हुआ", "he-f": "हुई", "we-m": "हुए", "we-f": "हुईं", "formal-m": "हुए", "formal-f": "हुईं", "they-m": "हुए", "they-f": "हुईं" }
+      forms: { "i-m": "हुआ", "i-f": "हुई", "you-m": "हुए", "you-f": "हुईं", "he-m": "हुआ", "he-f": "हुई", "we-m": "हुए", "we-f": "हुईं", "formal-m": "हुए", "formal-f": "हुईं", "they-m": "हुए", "they-f": "हुईं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "huā", "i-f": "huī", "you-m": "huē", "you-f": "huīm̐", "he-m": "huā", "he-f": "huī", "we-m": "huē", "we-f": "huīm̐", "formal-m": "huē", "formal-f": "huīm̐", "they-m": "huē", "they-f": "huīm̐" }
+    - word: "hi-0781"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "लिखा", "object-fem-sg": "लिखी", "object-masc-pl": "लिखे", "object-fem-pl": "लिखीं" }
+      readings: { "object-masc-sg": "likhā", "object-fem-sg": "likhī", "object-masc-pl": "likhē", "object-fem-pl": "likhīm̐" }
+    - word: "hi-0782"
+      forms: { "i-m": "बोला", "i-f": "बोली", "you-m": "बोले", "you-f": "बोलीं", "he-m": "बोला", "he-f": "बोली", "we-m": "बोले", "we-f": "बोलीं", "formal-m": "बोले", "formal-f": "बोलीं", "they-m": "बोले", "they-f": "बोलीं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
+      readings: { "i-m": "bōlā", "i-f": "bōlī", "you-m": "bōlē", "you-f": "bōlīm̐", "he-m": "bōlā", "he-f": "bōlī", "we-m": "bōlē", "we-f": "bōlīm̐", "formal-m": "bōlē", "formal-f": "bōlīm̐", "they-m": "bōlē", "they-f": "bōlīm̐" }
+    - word: "hi-0783"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "सुना", "object-fem-sg": "सुनी", "object-masc-pl": "सुने", "object-fem-pl": "सुनीं" }
+      readings: { "object-masc-sg": "sunā", "object-fem-sg": "sunī", "object-masc-pl": "sunē", "object-fem-pl": "sunīm̐" }
+    - word: "hi-0784"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "देखा", "object-fem-sg": "देखी", "object-masc-pl": "देखे", "object-fem-pl": "देखीं" }
+      readings: { "object-masc-sg": "dēkhā", "object-fem-sg": "dēkhī", "object-masc-pl": "dēkhē", "object-fem-pl": "dēkhīm̐" }
+    - word: "hi-0785"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "दिया", "object-fem-sg": "दी", "object-masc-pl": "दिए", "object-fem-pl": "दीं" }
+      readings: { "object-masc-sg": "diyā", "object-fem-sg": "dī", "object-masc-pl": "diē", "object-fem-pl": "dīm̐" }
+    - word: "hi-0786"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "लिया", "object-fem-sg": "ली", "object-masc-pl": "लिए", "object-fem-pl": "लीं" }
+      readings: { "object-masc-sg": "liyā", "object-fem-sg": "lī", "object-masc-pl": "liē", "object-fem-pl": "līm̐" }
+    - word: "hi-0787"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "खेला", "object-fem-sg": "खेली", "object-masc-pl": "खेले", "object-fem-pl": "खेलीं" }
+      readings: { "object-masc-sg": "khēlā", "object-fem-sg": "khēlī", "object-masc-pl": "khēlē", "object-fem-pl": "khēlīm̐" }
     - word: "hi-0788"
-      forms: { "i-m": "बैठा", "i-f": "बैठी", "you-m": "बैठे", "you-f": "बैठीं", "he-m": "बैठा", "he-f": "बैठी", "we-m": "बैठे", "we-f": "बैठीं", "formal-m": "बैठे", "formal-f": "बैठीं", "they-m": "बैठे", "they-f": "बैठीं" }
+      forms: { "i-m": "बैठा", "i-f": "बैठी", "you-m": "बैठे", "you-f": "बैठीं", "he-m": "बैठा", "he-f": "बैठी", "we-m": "बैठे", "we-f": "बैठीं", "formal-m": "बैठे", "formal-f": "बैठीं", "they-m": "बैठे", "they-f": "बैठीं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "baiṭhā", "i-f": "baiṭhī", "you-m": "baiṭhē", "you-f": "baiṭhīm̐", "he-m": "baiṭhā", "he-f": "baiṭhī", "we-m": "baiṭhē", "we-f": "baiṭhīm̐", "formal-m": "baiṭhē", "formal-f": "baiṭhīm̐", "they-m": "baiṭhē", "they-f": "baiṭhīm̐" }
+    - word: "hi-0789"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "समझा", "object-fem-sg": "समझी", "object-masc-pl": "समझे", "object-fem-pl": "समझीं" }
+      readings: { "object-masc-sg": "samjhā", "object-fem-sg": "samjhī", "object-masc-pl": "samjhē", "object-fem-pl": "samjhīm̐" }
+    - word: "hi-0790"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "जाना", "object-fem-sg": "जानी", "object-masc-pl": "जाने", "object-fem-pl": "जानीं" }
+      readings: { "object-masc-sg": "jānā", "object-fem-sg": "jānī", "object-masc-pl": "jānē", "object-fem-pl": "jānīm̐" }
     - word: "hi-0791"
-      forms: { "i-m": "रहा", "i-f": "रही", "you-m": "रहे", "you-f": "रहीं", "he-m": "रहा", "he-f": "रही", "we-m": "रहे", "we-f": "रहीं", "formal-m": "रहे", "formal-f": "रहीं", "they-m": "रहे", "they-f": "रहीं" }
+      forms: { "i-m": "रहा", "i-f": "रही", "you-m": "रहे", "you-f": "रहीं", "he-m": "रहा", "he-f": "रही", "we-m": "रहे", "we-f": "रहीं", "formal-m": "रहे", "formal-f": "रहीं", "they-m": "रहे", "they-f": "रहीं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "rahā", "i-f": "rahī", "you-m": "rahē", "you-f": "rahīm̐", "he-m": "rahā", "he-f": "rahī", "we-m": "rahē", "we-f": "rahīm̐", "formal-m": "rahē", "formal-f": "rahīm̐", "they-m": "rahē", "they-f": "rahīm̐" }
+    - word: "hi-0792"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "चाहा", "object-fem-sg": "चाही", "object-masc-pl": "चाहे", "object-fem-pl": "चाहीं" }
+      readings: { "object-masc-sg": "cāhā", "object-fem-sg": "cāhī", "object-masc-pl": "cāhē", "object-fem-pl": "cāhīm̐" }
     - word: "hi-0793"
-      forms: { "i-m": "मिला", "i-f": "मिली", "you-m": "मिले", "you-f": "मिलीं", "he-m": "मिला", "he-f": "मिली", "we-m": "मिले", "we-f": "मिलीं", "formal-m": "मिले", "formal-f": "मिलीं", "they-m": "मिले", "they-f": "मिलीं" }
+      forms: { "i-m": "मिला", "i-f": "मिली", "you-m": "मिले", "you-f": "मिलीं", "he-m": "मिला", "he-f": "मिली", "we-m": "मिले", "we-f": "मिलीं", "formal-m": "मिले", "formal-f": "मिलीं", "they-m": "मिले", "they-f": "मिलीं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "milā", "i-f": "milī", "you-m": "milē", "you-f": "milīm̐", "he-m": "milā", "he-f": "milī", "we-m": "milē", "we-f": "milīm̐", "formal-m": "milē", "formal-f": "milīm̐", "they-m": "milē", "they-f": "milīm̐" }
+    - word: "hi-0794"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "ख़रीदा", "object-fem-sg": "ख़रीदी", "object-masc-pl": "ख़रीदे", "object-fem-pl": "ख़रीदीं" }
+      readings: { "object-masc-sg": "k͟harīdā", "object-fem-sg": "k͟harīdī", "object-masc-pl": "k͟harīdē", "object-fem-pl": "k͟harīdīm̐" }
+    - word: "hi-0795"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "बेचा", "object-fem-sg": "बेची", "object-masc-pl": "बेचे", "object-fem-pl": "बेचीं" }
+      readings: { "object-masc-sg": "bēcā", "object-fem-sg": "bēcī", "object-masc-pl": "bēcē", "object-fem-pl": "bēcīm̐" }
+    - word: "hi-0796"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "बताया", "object-fem-sg": "बताई", "object-masc-pl": "बताए", "object-fem-pl": "बताईं" }
+      readings: { "object-masc-sg": "batāyā", "object-fem-sg": "batāī", "object-masc-pl": "batāē", "object-fem-pl": "batāīm̐" }
+    - word: "hi-0797"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "भेजा", "object-fem-sg": "भेजी", "object-masc-pl": "भेजे", "object-fem-pl": "भेजीं" }
+      readings: { "object-masc-sg": "bhējā", "object-fem-sg": "bhējī", "object-masc-pl": "bhējē", "object-fem-pl": "bhējīm̐" }
+    - word: "hi-0798"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "धोया", "object-fem-sg": "धोई", "object-masc-pl": "धोए", "object-fem-pl": "धोईं" }
+      readings: { "object-masc-sg": "dhōyā", "object-fem-sg": "dhōī", "object-masc-pl": "dhōē", "object-fem-pl": "dhōīm̐" }
+    - word: "hi-0799"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "पूछा", "object-fem-sg": "पूछी", "object-masc-pl": "पूछे", "object-fem-pl": "पूछीं" }
+      readings: { "object-masc-sg": "pūchā", "object-fem-sg": "pūchī", "object-masc-pl": "pūchē", "object-fem-pl": "pūchīm̐" }
+    - word: "hi-0800"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "कहा", "object-fem-sg": "कही", "object-masc-pl": "कहे", "object-fem-pl": "कहीं" }
+      readings: { "object-masc-sg": "kahā", "object-fem-sg": "kahī", "object-masc-pl": "kahē", "object-fem-pl": "kahīm̐" }
     - word: "hi-0801"
-      forms: { "i-m": "चला", "i-f": "चली", "you-m": "चले", "you-f": "चलीं", "he-m": "चला", "he-f": "चली", "we-m": "चले", "we-f": "चलीं", "formal-m": "चले", "formal-f": "चलीं", "they-m": "चले", "they-f": "चलीं" }
+      forms: { "i-m": "चला", "i-f": "चली", "you-m": "चले", "you-f": "चलीं", "he-m": "चला", "he-f": "चली", "we-m": "चले", "we-f": "चलीं", "formal-m": "चले", "formal-f": "चलीं", "they-m": "चले", "they-f": "चलीं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "calā", "i-f": "calī", "you-m": "calē", "you-f": "calīm̐", "he-m": "calā", "he-f": "calī", "we-m": "calē", "we-f": "calīm̐", "formal-m": "calē", "formal-f": "calīm̐", "they-m": "calē", "they-f": "calīm̐" }
+    - word: "hi-0937"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "खोला", "object-fem-sg": "खोली", "object-masc-pl": "खोले", "object-fem-pl": "खोलीं" }
+      readings: { "object-masc-sg": "khōlā", "object-fem-sg": "khōlī", "object-masc-pl": "khōlē", "object-fem-pl": "khōlīm̐" }
+    - word: "hi-0938"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "पकाया", "object-fem-sg": "पकाई", "object-masc-pl": "पकाए", "object-fem-pl": "पकाईं" }
+      readings: { "object-masc-sg": "pakāyā", "object-fem-sg": "pakāī", "object-masc-pl": "pakāē", "object-fem-pl": "pakāīm̐" }
+    - word: "hi-0939"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "काटा", "object-fem-sg": "काटी", "object-masc-pl": "काटे", "object-fem-pl": "काटीं" }
+      readings: { "object-masc-sg": "kāṭā", "object-fem-sg": "kāṭī", "object-masc-pl": "kāṭē", "object-fem-pl": "kāṭīm̐" }
+    - word: "hi-0940"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "उबाला", "object-fem-sg": "उबाली", "object-masc-pl": "उबाले", "object-fem-pl": "उबालीं" }
+      readings: { "object-masc-sg": "ubālā", "object-fem-sg": "ubālī", "object-masc-pl": "ubālē", "object-fem-pl": "ubālīm̐" }
+    - word: "hi-0941"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "डाला", "object-fem-sg": "डाली", "object-masc-pl": "डाले", "object-fem-pl": "डालीं" }
+      readings: { "object-masc-sg": "ḍālā", "object-fem-sg": "ḍālī", "object-masc-pl": "ḍālē", "object-fem-pl": "ḍālīm̐" }
+    - word: "hi-0942"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "छाना", "object-fem-sg": "छानी", "object-masc-pl": "छाने", "object-fem-pl": "छानीं" }
+      readings: { "object-masc-sg": "chānā", "object-fem-sg": "chānī", "object-masc-pl": "chānē", "object-fem-pl": "chānīm̐" }
+    - word: "hi-0943"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "परोसा", "object-fem-sg": "परोसी", "object-masc-pl": "परोसे", "object-fem-pl": "परोसीं" }
+      readings: { "object-masc-sg": "parōsā", "object-fem-sg": "parōsī", "object-masc-pl": "parōsē", "object-fem-pl": "parōsīm̐" }
     - word: "hi-0944"
-      forms: { "i-m": "जागा", "i-f": "जागी", "you-m": "जागे", "you-f": "जागीं", "he-m": "जागा", "he-f": "जागी", "we-m": "जागे", "we-f": "जागीं", "formal-m": "जागे", "formal-f": "जागीं", "they-m": "जागे", "they-f": "जागीं" }
+      forms: { "i-m": "जागा", "i-f": "जागी", "you-m": "जागे", "you-f": "जागीं", "he-m": "जागा", "he-f": "जागी", "we-m": "जागे", "we-f": "जागीं", "formal-m": "जागे", "formal-f": "जागीं", "they-m": "जागे", "they-f": "जागीं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "jāgā", "i-f": "jāgī", "you-m": "jāgē", "you-f": "jāgīm̐", "he-m": "jāgā", "he-f": "jāgī", "we-m": "jāgē", "we-f": "jāgīm̐", "formal-m": "jāgē", "formal-f": "jāgīm̐", "they-m": "jāgē", "they-f": "jāgīm̐" }
     - word: "hi-0945"
-      forms: { "i-m": "भूला", "i-f": "भूली", "you-m": "भूले", "you-f": "भूलीं", "he-m": "भूला", "he-f": "भूली", "we-m": "भूले", "we-f": "भूलीं", "formal-m": "भूले", "formal-f": "भूलीं", "they-m": "भूले", "they-f": "भूलीं" }
+      forms: { "i-m": "भूला", "i-f": "भूली", "you-m": "भूले", "you-f": "भूलीं", "he-m": "भूला", "he-f": "भूली", "we-m": "भूले", "we-f": "भूलीं", "formal-m": "भूले", "formal-f": "भूलीं", "they-m": "भूले", "they-f": "भूलीं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "bhūlā", "i-f": "bhūlī", "you-m": "bhūlē", "you-f": "bhūlīm̐", "he-m": "bhūlā", "he-f": "bhūlī", "we-m": "bhūlē", "we-f": "bhūlīm̐", "formal-m": "bhūlē", "formal-f": "bhūlīm̐", "they-m": "bhūlē", "they-f": "bhūlīm̐" }
     - word: "hi-0946"
-      forms: { "i-m": "दौड़ा", "i-f": "दौड़ी", "you-m": "दौड़े", "you-f": "दौड़ीं", "he-m": "दौड़ा", "he-f": "दौड़ी", "we-m": "दौड़े", "we-f": "दौड़ीं", "formal-m": "दौड़े", "formal-f": "दौड़ीं", "they-m": "दौड़े", "they-f": "दौड़ीं" }
+      forms: { "i-m": "दौड़ा", "i-f": "दौड़ी", "you-m": "दौड़े", "you-f": "दौड़ीं", "he-m": "दौड़ा", "he-f": "दौड़ी", "we-m": "दौड़े", "we-f": "दौड़ीं", "formal-m": "दौड़े", "formal-f": "दौड़ीं", "they-m": "दौड़े", "they-f": "दौड़ीं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "dauṛā", "i-f": "dauṛī", "you-m": "dauṛē", "you-f": "dauṛīm̐", "he-m": "dauṛā", "he-f": "dauṛī", "we-m": "dauṛē", "we-f": "dauṛīm̐", "formal-m": "dauṛē", "formal-f": "dauṛīm̐", "they-m": "dauṛē", "they-f": "dauṛīm̐" }
     - word: "hi-0947"
-      forms: { "i-m": "गिरा", "i-f": "गिरी", "you-m": "गिरे", "you-f": "गिरीं", "he-m": "गिरा", "he-f": "गिरी", "we-m": "गिरे", "we-f": "गिरीं", "formal-m": "गिरे", "formal-f": "गिरीं", "they-m": "गिरे", "they-f": "गिरीं" }
+      forms: { "i-m": "गिरा", "i-f": "गिरी", "you-m": "गिरे", "you-f": "गिरीं", "he-m": "गिरा", "he-f": "गिरी", "we-m": "गिरे", "we-f": "गिरीं", "formal-m": "गिरे", "formal-f": "गिरीं", "they-m": "गिरे", "they-f": "गिरीं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "girā", "i-f": "girī", "you-m": "girē", "you-f": "girīm̐", "he-m": "girā", "he-f": "girī", "we-m": "girē", "we-f": "girīm̐", "formal-m": "girē", "formal-f": "girīm̐", "they-m": "girē", "they-f": "girīm̐" }
     - word: "hi-0948"
-      forms: { "i-m": "लौटा", "i-f": "लौटी", "you-m": "लौटे", "you-f": "लौटीं", "he-m": "लौटा", "he-f": "लौटी", "we-m": "लौटे", "we-f": "लौटीं", "formal-m": "लौटे", "formal-f": "लौटीं", "they-m": "लौटे", "they-f": "लौटीं" }
+      forms: { "i-m": "लौटा", "i-f": "लौटी", "you-m": "लौटे", "you-f": "लौटीं", "he-m": "लौटा", "he-f": "लौटी", "we-m": "लौटे", "we-f": "लौटीं", "formal-m": "लौटे", "formal-f": "लौटीं", "they-m": "लौटे", "they-f": "लौटीं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "lauṭā", "i-f": "lauṭī", "you-m": "lauṭē", "you-f": "lauṭīm̐", "he-m": "lauṭā", "he-f": "lauṭī", "we-m": "lauṭē", "we-f": "lauṭīm̐", "formal-m": "lauṭē", "formal-f": "lauṭīm̐", "they-m": "lauṭē", "they-f": "lauṭīm̐" }
     - word: "hi-0949"
-      forms: { "i-m": "लाया", "i-f": "लाई", "you-m": "लाए", "you-f": "लाईं", "he-m": "लाया", "he-f": "लाई", "we-m": "लाए", "we-f": "लाईं", "formal-m": "लाए", "formal-f": "लाईं", "they-m": "लाए", "they-f": "लाईं" }
+      forms: { "i-m": "लाया", "i-f": "लाई", "you-m": "लाए", "you-f": "लाईं", "he-m": "लाया", "he-f": "लाई", "we-m": "लाए", "we-f": "लाईं", "formal-m": "लाए", "formal-f": "लाईं", "they-m": "लाए", "they-f": "लाईं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "lāyā", "i-f": "lāī", "you-m": "lāē", "you-f": "lāīm̐", "he-m": "lāyā", "he-f": "lāī", "we-m": "lāē", "we-f": "lāīm̐", "formal-m": "lāē", "formal-f": "lāīm̐", "they-m": "lāē", "they-f": "lāīm̐" }
+    - word: "hi-0950"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "रखा", "object-fem-sg": "रखी", "object-masc-pl": "रखे", "object-fem-pl": "रखीं" }
+      readings: { "object-masc-sg": "rakhā", "object-fem-sg": "rakhī", "object-masc-pl": "rakhē", "object-fem-pl": "rakhīm̐" }
+    - word: "hi-0951"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "छोड़ा", "object-fem-sg": "छोड़ी", "object-masc-pl": "छोड़े", "object-fem-pl": "छोड़ीं" }
+      readings: { "object-masc-sg": "chōṛā", "object-fem-sg": "chōṛī", "object-masc-pl": "chōṛē", "object-fem-pl": "chōṛīm̐" }
+    - word: "hi-0952"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "सीखा", "object-fem-sg": "सीखी", "object-masc-pl": "सीखे", "object-fem-pl": "सीखीं" }
+      readings: { "object-masc-sg": "sīkhā", "object-fem-sg": "sīkhī", "object-masc-pl": "sīkhē", "object-fem-pl": "sīkhīm̐" }
+    - word: "hi-0953"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "सोचा", "object-fem-sg": "सोची", "object-masc-pl": "सोचे", "object-fem-pl": "सोचीं" }
+      readings: { "object-masc-sg": "sōcā", "object-fem-sg": "sōcī", "object-masc-pl": "sōcē", "object-fem-pl": "sōcīm̐" }
+    - word: "hi-0954"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "सिखाया", "object-fem-sg": "सिखाई", "object-masc-pl": "सिखाए", "object-fem-pl": "सिखाईं" }
+      readings: { "object-masc-sg": "sikhāyā", "object-fem-sg": "sikhāī", "object-masc-pl": "sikhāē", "object-fem-pl": "sikhāīm̐" }
+    - word: "hi-0955"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "ढूँढा", "object-fem-sg": "ढूँढी", "object-masc-pl": "ढूँढे", "object-fem-pl": "ढूँढीं" }
+      readings: { "object-masc-sg": "ḍhūm̐ḍhā", "object-fem-sg": "ḍhūm̐ḍhī", "object-masc-pl": "ḍhūm̐ḍhē", "object-fem-pl": "ḍhūm̐ḍhīm̐" }
+    - word: "hi-0956"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "जीता", "object-fem-sg": "जीती", "object-masc-pl": "जीते", "object-fem-pl": "जीतीं" }
+      readings: { "object-masc-sg": "jītā", "object-fem-sg": "jītī", "object-masc-pl": "jītē", "object-fem-pl": "jītīm̐" }
     - word: "hi-0957"
-      forms: { "i-m": "हारा", "i-f": "हारी", "you-m": "हारे", "you-f": "हारीं", "he-m": "हारा", "he-f": "हारी", "we-m": "हारे", "we-f": "हारीं", "formal-m": "हारे", "formal-f": "हारीं", "they-m": "हारे", "they-f": "हारीं" }
+      forms: { "i-m": "हारा", "i-f": "हारी", "you-m": "हारे", "you-f": "हारीं", "he-m": "हारा", "he-f": "हारी", "we-m": "हारे", "we-f": "हारीं", "formal-m": "हारे", "formal-f": "हारीं", "they-m": "हारे", "they-f": "हारीं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "hārā", "i-f": "hārī", "you-m": "hārē", "you-f": "hārīm̐", "he-m": "hārā", "he-f": "hārī", "we-m": "hārē", "we-f": "hārīm̐", "formal-m": "hārē", "formal-f": "hārīm̐", "they-m": "hārē", "they-f": "hārīm̐" }
+    - word: "hi-0958"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "कमाया", "object-fem-sg": "कमाई", "object-masc-pl": "कमाए", "object-fem-pl": "कमाईं" }
+      readings: { "object-masc-sg": "kamāyā", "object-fem-sg": "kamāī", "object-masc-pl": "kamāē", "object-fem-pl": "kamāīm̐" }
     - word: "hi-0959"
-      forms: { "i-m": "हँसा", "i-f": "हँसी", "you-m": "हँसे", "you-f": "हँसीं", "he-m": "हँसा", "he-f": "हँसी", "we-m": "हँसे", "we-f": "हँसीं", "formal-m": "हँसे", "formal-f": "हँसीं", "they-m": "हँसे", "they-f": "हँसीं" }
+      forms: { "i-m": "हँसा", "i-f": "हँसी", "you-m": "हँसे", "you-f": "हँसीं", "he-m": "हँसा", "he-f": "हँसी", "we-m": "हँसे", "we-f": "हँसीं", "formal-m": "हँसे", "formal-f": "हँसीं", "they-m": "हँसे", "they-f": "हँसीं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "ham̐sā", "i-f": "ham̐sī", "you-m": "ham̐sē", "you-f": "ham̐sīm̐", "he-m": "ham̐sā", "he-f": "ham̐sī", "we-m": "ham̐sē", "we-f": "ham̐sīm̐", "formal-m": "ham̐sē", "formal-f": "ham̐sīm̐", "they-m": "ham̐sē", "they-f": "ham̐sīm̐" }
     - word: "hi-0960"
-      forms: { "i-m": "रोया", "i-f": "रोई", "you-m": "रोए", "you-f": "रोईं", "he-m": "रोया", "he-f": "रोई", "we-m": "रोए", "we-f": "रोईं", "formal-m": "रोए", "formal-f": "रोईं", "they-m": "रोए", "they-f": "रोईं" }
+      forms: { "i-m": "रोया", "i-f": "रोई", "you-m": "रोए", "you-f": "रोईं", "he-m": "रोया", "he-f": "रोई", "we-m": "रोए", "we-f": "रोईं", "formal-m": "रोए", "formal-f": "रोईं", "they-m": "रोए", "they-f": "रोईं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "rōyā", "i-f": "rōī", "you-m": "rōē", "you-f": "rōīm̐", "he-m": "rōyā", "he-f": "rōī", "we-m": "rōē", "we-f": "rōīm̐", "formal-m": "rōē", "formal-f": "rōīm̐", "they-m": "rōē", "they-f": "rōīm̐" }
+    - word: "hi-0961"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "बुलाया", "object-fem-sg": "बुलाई", "object-masc-pl": "बुलाए", "object-fem-pl": "बुलाईं" }
+      readings: { "object-masc-sg": "bulāyā", "object-fem-sg": "bulāī", "object-masc-pl": "bulāē", "object-fem-pl": "bulāīm̐" }
+    - word: "hi-1023"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "चखा", "object-fem-sg": "चखी", "object-masc-pl": "चखे", "object-fem-pl": "चखीं" }
+      readings: { "object-masc-sg": "cakhā", "object-fem-sg": "cakhī", "object-masc-pl": "cakhē", "object-fem-pl": "cakhīm̐" }
     - word: "hi-1069"
-      forms: { "i-m": "दुखा", "i-f": "दुखी", "you-m": "दुखे", "you-f": "दुखीं", "he-m": "दुखा", "he-f": "दुखी", "we-m": "दुखे", "we-f": "दुखीं", "formal-m": "दुखे", "formal-f": "दुखीं", "they-m": "दुखे", "they-f": "दुखीं" }
+      forms: { "i-m": "दुखा", "i-f": "दुखी", "you-m": "दुखे", "you-f": "दुखीं", "he-m": "दुखा", "he-f": "दुखी", "we-m": "दुखे", "we-f": "दुखीं", "formal-m": "दुखे", "formal-f": "दुखीं", "they-m": "दुखे", "they-f": "दुखीं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "dukhā", "i-f": "dukhī", "you-m": "dukhē", "you-f": "dukhīm̐", "he-m": "dukhā", "he-f": "dukhī", "we-m": "dukhē", "we-f": "dukhīm̐", "formal-m": "dukhē", "formal-f": "dukhīm̐", "they-m": "dukhē", "they-f": "dukhīm̐" }
     - word: "hi-1070"
-      forms: { "i-m": "सूजा", "i-f": "सूजी", "you-m": "सूजे", "you-f": "सूजीं", "he-m": "सूजा", "he-f": "सूजी", "we-m": "सूजे", "we-f": "सूजीं", "formal-m": "सूजे", "formal-f": "सूजीं", "they-m": "सूजे", "they-f": "सूजीं" }
+      forms: { "i-m": "सूजा", "i-f": "सूजी", "you-m": "सूजे", "you-f": "सूजीं", "he-m": "सूजा", "he-f": "सूजी", "we-m": "सूजे", "we-f": "सूजीं", "formal-m": "सूजे", "formal-f": "सूजीं", "they-m": "सूजे", "they-f": "सूजीं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "sūjā", "i-f": "sūjī", "you-m": "sūjē", "you-f": "sūjīm̐", "he-m": "sūjā", "he-f": "sūjī", "we-m": "sūjē", "we-f": "sūjīm̐", "formal-m": "sūjē", "formal-f": "sūjīm̐", "they-m": "sūjē", "they-f": "sūjīm̐" }
+    - word: "hi-1071"
+      forms: { "i-m": null, "i-f": null, "you-m": null, "you-f": null, "he-m": null, "he-f": null, "we-m": null, "we-f": null, "formal-m": null, "formal-f": null, "they-m": null, "they-f": null, "object-masc-sg": "छुआ", "object-fem-sg": "छुई", "object-masc-pl": "छुए", "object-fem-pl": "छुईं" }
+      readings: { "object-masc-sg": "chuā", "object-fem-sg": "chuī", "object-masc-pl": "chuē", "object-fem-pl": "chuīm̐" }
     - word: "hi-1072"
-      forms: { "i-m": "लेटा", "i-f": "लेटी", "you-m": "लेटे", "you-f": "लेटीं", "he-m": "लेटा", "he-f": "लेटी", "we-m": "लेटे", "we-f": "लेटीं", "formal-m": "लेटे", "formal-f": "लेटीं", "they-m": "लेटे", "they-f": "लेटीं" }
+      forms: { "i-m": "लेटा", "i-f": "लेटी", "you-m": "लेटे", "you-f": "लेटीं", "he-m": "लेटा", "he-f": "लेटी", "we-m": "लेटे", "we-f": "लेटीं", "formal-m": "लेटे", "formal-f": "लेटीं", "they-m": "लेटे", "they-f": "लेटीं", "object-masc-sg": null, "object-fem-sg": null, "object-masc-pl": null, "object-fem-pl": null }
       readings: { "i-m": "leṭā", "i-f": "leṭī", "you-m": "leṭē", "you-f": "leṭīm̐", "he-m": "leṭā", "he-f": "leṭī", "we-m": "leṭē", "we-f": "leṭīm̐", "formal-m": "leṭē", "formal-f": "leṭīm̐", "they-m": "leṭē", "they-f": "leṭīm̐" }
 rules:
   - id: "hi-rule-past"
     slots: ["i-m", "i-f", "you-m", "you-f", "he-m", "he-f", "we-m", "we-f", "formal-m", "formal-f", "they-m", "they-f"]
+  - id: "hi-rule-ergative-past"
+    slots: ["object-masc-sg", "object-fem-sg", "object-masc-pl", "object-fem-pl"]

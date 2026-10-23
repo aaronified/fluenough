@@ -22,7 +22,14 @@ table:
     "formal-f": "you, formal, feminine"
     "they-m": "they, masculine"
     "they-f": "they, feminine"
+    "object-masc-sg": "object, masculine, singular"
+    "object-fem-sg": "object, feminine, singular"
+    "object-masc-pl": "object, masculine, plural"
+    "object-fem-pl": "object, feminine, plural"
 rules:
   "hi-rule-perfect":
     name: "The past form, then हूँ (hūm̐), हो (hō), है (hai) or हैं (haim̐): the present perfect"
-    explanation: "The past form of the verb, then हूँ (hūm̐), हो (hō), है (hai) or हैं (haim̐): आया हूँ (āyā hūm̐), I have come. A feminine doer takes the feminine singular form even in the plural: आई हैं (āī haim̐), they have come. Verbs that take no ने, such as आना (ānā) and जाना (jānā), are in this table. With an object, the doer takes ने (nē) as in the simple past, so लिखना (likhnā) is not here: मैंने चिट्ठी लिखी है (mainnē ciṭṭhī likhī hai), I have written the letter."
+    explanation: "The past form of the verb, then हूँ (hūm̐), हो (hō), है (hai) or हैं (haim̐): आया हूँ (āyā hūm̐), I have come. A feminine doer takes the feminine singular form even in the plural: आई हैं (āī haim̐), they have come. Verbs that take no ने, such as आना (ānā), जाना (jānā) and बोलना (bōlnā), are here."
+  "hi-rule-ergative-perfect":
+    name: "The object's form, then है (hai) or हैं (haim̐): the perfect with ने (nē)"
+    explanation: "With an object, the doer takes ने (nē) as in the simple past, and the verb agrees with the object: masculine singular किया है (kiyā hai), feminine singular की है (kī hai), masculine plural किए हैं (kiē haim̐), feminine plural की हैं (kī haim̐). मैंने चिट्ठी लिखी है (mainnē ciṭṭhī likhī hai), I have written the letter."
