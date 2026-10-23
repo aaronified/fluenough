@@ -27,7 +27,8 @@
 #    each its words, then its rules, then its sentences.
 # Assamese's grammar keeps the Indo-Aryan order of
 # docs/plans/language-paths-scheme.md within each level: be, the present,
-# the imperatives, postpositions, gender agreement, the oblique, the past,
+# the imperatives, postpositions, number and classifiers (no gender: nothing
+# agrees with gender), the oblique, the past,
 # the habitual past (right after the simple past, the tense, number and
 # gender audit of 2026-10-23), the perfect, compound and conjunct verbs,
 # then the subjunctive, the relative-correlative clauses and the rest of B1.
@@ -203,6 +204,12 @@ units:
   - decks: ["as-grammar-needs"]
     words: 3
     grammar: ["needs"]
+  # Number and classifiers, not gender: Assamese has no grammatical gender.
+  # The unit teaches the plural markers (-বোৰ bōr, -বিলাক bilāk, and -হঁত hõt
+  # for people) and the classifiers (-টো ṭo, -জন jon, -জনী jonī, -খন khon,
+  # -ডাল ḍāl). Natural-gender nouns take the feminine suffix -নী/-ী (শিক্ষক
+  # becomes শিক্ষয়িত্ৰী, and ককাই and বাইদেউ are separate words), but nothing
+  # agrees with gender.
   - decks: ["as-grammar-articles", "as-grammar-gender-number"]
     words: 5
     grammar: ["articles", "gender-number"]
