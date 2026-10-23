@@ -1,0 +1,251 @@
+schema: 1
+id: "es-pronouns"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "pronouns"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-0119"
+    target: "yo"
+    ipa: "ʝo"
+    pos: "pronoun"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Yo soy de Lima.", ipa: "ʝo soj de ˈlima", bases: [{ word: "Yo", base: "yo" }, { word: "soy", ref: "es-0022" }, { word: "de", base: "de" }, { word: "Lima", base: "Lima" }] }
+      - { target: "Yo hablo un poco de inglés.", ipa: "ʝo ˈablo un ˈpoko de inˈɡles", bases: [{ word: "Yo", base: "yo" }, { word: "hablo", ref: "es-0027" }, { word: "un", base: "un" }, { word: "poco", base: "poco" }, { word: "de", base: "de" }, { word: "inglés", base: "inglés" }] }
+  - id: "es-0120"
+    target: "él"
+    ipa: "el"
+    pos: "pronoun"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Él es mi tío.", ipa: "el es mi ˈtio", bases: [{ word: "Él", base: "él" }, { word: "es", ref: "es-0022" }, { word: "mi", ref: "es-0129" }, { word: "tío", base: "tío" }] }
+      - { target: "Él habla español.", ipa: "el ˈabla espaˈɲol", bases: [{ word: "Él", base: "él" }, { word: "habla", ref: "es-0027" }, { word: "español", base: "español" }] }
+  - id: "es-0121"
+    target: "ella"
+    ipa: "ˈeʝa"
+    pos: "pronoun"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ella es mi prima.", ipa: "ˈeʝa es mi ˈpɾima", bases: [{ word: "Ella", base: "ella" }, { word: "es", ref: "es-0022" }, { word: "mi", ref: "es-0129" }, { word: "prima", base: "prima" }] }
+      - { target: "Ella vive aquí.", ipa: "ˈeʝa ˈbibe aˈki", bases: [{ word: "Ella", base: "ella" }, { word: "vive", ref: "es-0030" }, { word: "aquí", ref: "es-0051" }] }
+  - id: "es-0122"
+    target: "nosotros"
+    ipa: "noˈsotɾos"
+    pos: "pronoun"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nosotros vivimos aquí.", ipa: "noˈsotɾos biˈbimos aˈki", bases: [{ word: "Nosotros", base: "nosotros" }, { word: "vivimos", ref: "es-0030" }, { word: "aquí", ref: "es-0051" }] }
+      - { target: "Nosotros somos amigos.", ipa: "noˈsotɾos ˈsomos aˈmiɡos", bases: [{ word: "Nosotros", base: "nosotros" }, { word: "somos", ref: "es-0022" }, { word: "amigos", ref: "es-0005" }] }
+  - id: "es-0123"
+    target: "nosotras"
+    ipa: "noˈsotɾas"
+    pos: "pronoun"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nosotras somos estudiantes.", ipa: "noˈsotɾas ˈsomos estuˈdjantes", bases: [{ word: "Nosotras", base: "nosotras" }, { word: "somos", ref: "es-0022" }, { word: "estudiantes", base: "estudiante" }] }
+      - { target: "Nosotras hablamos mucho.", ipa: "noˈsotɾas aˈblamos ˈmutʃo", bases: [{ word: "Nosotras", base: "nosotras" }, { word: "hablamos", ref: "es-0027" }, { word: "mucho", ref: "es-0053" }] }
+  - id: "es-0124"
+    target: "ellos"
+    ipa: "ˈeʝos"
+    pos: "pronoun"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ellos comen en casa.", ipa: "ˈeʝos ˈkomen en ˈkasa", bases: [{ word: "Ellos", base: "ellos" }, { word: "comen", ref: "es-0028" }, { word: "en", base: "en" }, { word: "casa", ref: "es-0006" }] }
+      - { target: "Ellos son mis amigos.", ipa: "ˈeʝos son mis aˈmiɡos", bases: [{ word: "Ellos", base: "ellos" }, { word: "son", ref: "es-0022" }, { word: "mis", ref: "es-0129" }, { word: "amigos", ref: "es-0005" }] }
+  - id: "es-0125"
+    target: "ellas"
+    ipa: "ˈeʝas"
+    pos: "pronoun"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ellas son mis hermanas.", ipa: "ˈeʝas son mis eɾˈmanas", bases: [{ word: "Ellas", base: "ellas" }, { word: "son", ref: "es-0022" }, { word: "mis", ref: "es-0129" }, { word: "hermanas", base: "hermana" }] }
+      - { target: "Ellas viven en la ciudad.", ipa: "ˈeʝas ˈbiben en la θjuˈdad", bases: [{ word: "Ellas", base: "ellas" }, { word: "viven", ref: "es-0030" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }] }
+  - id: "es-0126"
+    target: "ustedes"
+    ipa: "usˈtedes"
+    pos: "pronoun"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ustedes son muy amables.", ipa: "usˈtedes son mwi aˈmables", bases: [{ word: "Ustedes", base: "ustedes" }, { word: "son", ref: "es-0022" }, { word: "muy", base: "muy" }, { word: "amables", base: "amable" }] }
+      - { target: "¿Ustedes hablan inglés?", ipa: "usˈtedes ˈablan inˈɡles", bases: [{ word: "Ustedes", base: "ustedes" }, { word: "hablan", ref: "es-0027" }, { word: "inglés", base: "inglés" }] }
+  - id: "es-0127"
+    target: "esto"
+    ipa: "ˈesto"
+    pos: "pronoun"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Esto es un libro.", ipa: "ˈesto es un ˈlibɾo", bases: [{ word: "Esto", base: "esto" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "libro", ref: "es-0011" }] }
+      - { target: "Esto es muy bueno.", ipa: "ˈesto es mwi ˈbweno", bases: [{ word: "Esto", base: "esto" }, { word: "es", ref: "es-0022" }, { word: "muy", base: "muy" }, { word: "bueno", ref: "es-0033" }] }
+  - id: "es-0128"
+    target: "eso"
+    ipa: "ˈeso"
+    pos: "pronoun"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Eso es cierto.", ipa: "ˈeso es ˈθjeɾto", bases: [{ word: "Eso", base: "eso" }, { word: "es", ref: "es-0022" }, { word: "cierto", base: "cierto" }] }
+      - { target: "¿Eso es tu libro?", ipa: "ˈeso es tu ˈlibɾo", bases: [{ word: "Eso", base: "eso" }, { word: "es", ref: "es-0022" }, { word: "tu", ref: "es-0130" }, { word: "libro", ref: "es-0011" }] }
+  - id: "es-0129"
+    target: "mi"
+    ipa: "mi"
+    pos: "other"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mi casa es grande.", ipa: "mi ˈkasa es ˈɡɾande", bases: [{ word: "Mi", base: "mi" }, { word: "casa", ref: "es-0006" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }] }
+      - { target: "Mis amigos viven aquí.", ipa: "mis aˈmiɡos ˈbiben aˈki", bases: [{ word: "Mis", base: "mi" }, { word: "amigos", ref: "es-0005" }, { word: "viven", ref: "es-0030" }, { word: "aquí", ref: "es-0051" }] }
+  - id: "es-0130"
+    target: "tu"
+    ipa: "tu"
+    pos: "other"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tu casa es bonita.", ipa: "tu ˈkasa es boˈnita", bases: [{ word: "Tu", base: "tu" }, { word: "casa", ref: "es-0006" }, { word: "es", ref: "es-0022" }, { word: "bonita", base: "bonito" }] }
+      - { target: "¿Dónde está tu libro?", ipa: "ˈdonde esˈta tu ˈlibɾo", bases: [{ word: "Dónde", ref: "es-0056" }, { word: "está", ref: "es-0023" }, { word: "tu", base: "tu" }, { word: "libro", ref: "es-0011" }] }
+  - id: "es-0131"
+    target: "su"
+    ipa: "su"
+    pos: "other"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Su casa es grande.", ipa: "su ˈkasa es ˈɡɾande", bases: [{ word: "Su", base: "su" }, { word: "casa", ref: "es-0006" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }] }
+      - { target: "Ellos hablan con su madre.", ipa: "ˈeʝos ˈablan kon su ˈmadɾe", bases: [{ word: "Ellos", ref: "es-0124" }, { word: "hablan", ref: "es-0027" }, { word: "con", base: "con" }, { word: "su", base: "su" }, { word: "madre", base: "madre" }] }
+  - id: "es-0132"
+    target: "alguien"
+    ipa: "ˈalɡjen"
+    pos: "pronoun"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Alguien llama a la puerta.", ipa: "ˈalɡjen ˈʝama a la ˈpweɾta", bases: [{ word: "Alguien", base: "alguien" }, { word: "llama", base: "llamar" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "puerta", ref: "es-0007" }] }
+      - { target: "¿Hay alguien aquí?", ipa: "aj ˈalɡjen aˈki", bases: [{ word: "Hay", base: "haber" }, { word: "alguien", base: "alguien" }, { word: "aquí", ref: "es-0051" }] }
+  - id: "es-0133"
+    target: "nadie"
+    ipa: "ˈnadje"
+    pos: "pronoun"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nadie está en casa.", ipa: "ˈnadje esˈta en ˈkasa", bases: [{ word: "Nadie", base: "nadie" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "casa", ref: "es-0006" }] }
+      - { target: "No veo a nadie.", ipa: "no ˈbeo a ˈnadje", bases: [{ word: "No", ref: "es-0043" }, { word: "veo", base: "ver" }, { word: "a", base: "a" }, { word: "nadie", base: "nadie" }] }
+  - id: "es-0134"
+    target: "todos"
+    ipa: "ˈtodos"
+    pos: "pronoun"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Todos están en la mesa.", ipa: "ˈtodos esˈtan en la ˈmesa", bases: [{ word: "Todos", base: "todos" }, { word: "están", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }] }
+      - { target: "Todos los días como pan.", ipa: "ˈtodos los ˈdias ˈkomo pan", bases: [{ word: "Todos", base: "todos" }, { word: "los", base: "el" }, { word: "días", ref: "es-0019" }, { word: "como", ref: "es-0028" }, { word: "pan", ref: "es-0013" }] }
+  - id: "es-0135"
+    target: "la persona"
+    ipa: "la peɾˈsona"
+    pos: "noun"
+    gender: "f"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "la", base: "la" }
+      - { word: "persona", base: "persona" }
+    examples:
+      - { target: "La persona en la puerta es mi amiga.", ipa: "la peɾˈsona en la ˈpweɾta es mi aˈmiɡa", bases: [{ word: "La", base: "la" }, { word: "persona", base: "persona" }, { word: "en", base: "en" }, { word: "puerta", ref: "es-0007" }, { word: "es", ref: "es-0022" }, { word: "mi", ref: "es-0129" }, { word: "amiga", ref: "es-0005" }] }
+      - { target: "Hay muchas personas aquí.", ipa: "aj ˈmutʃas peɾˈsonas aˈki", bases: [{ word: "Hay", base: "haber" }, { word: "muchas", ref: "es-0053" }, { word: "personas", base: "persona" }, { word: "aquí", ref: "es-0051" }] }
+  - id: "es-0136"
+    target: "el chico"
+    ipa: "el ˈtʃiko"
+    pos: "noun"
+    gender: "m"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "el", base: "el" }
+      - { word: "chico", base: "chico" }
+    examples:
+      - { target: "El chico juega en el parque.", ipa: "el ˈtʃiko ˈxweɡa en el ˈpaɾke", bases: [{ word: "El", base: "el" }, { word: "chico", base: "chico" }, { word: "juega", base: "jugar" }, { word: "en", base: "en" }, { word: "parque", base: "parque" }] }
+      - { target: "El chico es muy simpático.", ipa: "el ˈtʃiko es mwi simˈpatiko", bases: [{ word: "El", base: "el" }, { word: "chico", base: "chico" }, { word: "es", ref: "es-0022" }, { word: "muy", base: "muy" }, { word: "simpático", base: "simpático" }] }
+  - id: "es-0137"
+    target: "la chica"
+    ipa: "la ˈtʃika"
+    pos: "noun"
+    gender: "f"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "la", base: "la" }
+      - { word: "chica", base: "chica" }
+    examples:
+      - { target: "La chica habla con la profesora.", ipa: "la ˈtʃika ˈabla kon la pɾofeˈsoɾa", bases: [{ word: "La", base: "la" }, { word: "chica", base: "chica" }, { word: "habla", ref: "es-0027" }, { word: "con", base: "con" }, { word: "profesora", ref: "es-0094" }] }
+      - { target: "Las chicas son amigas.", ipa: "las ˈtʃikas son aˈmiɡas", bases: [{ word: "Las", base: "la" }, { word: "chicas", base: "chica" }, { word: "son", ref: "es-0022" }, { word: "amigas", ref: "es-0005" }] }
+  - id: "es-0138"
+    target: "el bebé"
+    ipa: "el beˈbe"
+    pos: "noun"
+    gender: "m"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "el", base: "el" }
+      - { word: "bebé", base: "bebé" }
+    examples:
+      - { target: "El bebé duerme.", ipa: "el beˈbe ˈdweɾme", bases: [{ word: "El", base: "el" }, { word: "bebé", base: "bebé" }, { word: "duerme", base: "dormir" }] }
+      - { target: "Ella es la madre del bebé.", ipa: "ˈeʝa es la ˈmadɾe del beˈbe", bases: [{ word: "Ella", ref: "es-0121" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "madre", base: "madre" }, { word: "del", base: "de" }, { word: "bebé", base: "bebé" }] }
+  - id: "es-0139"
+    kind: "set"
+    members: [{ ref: "es-0119" }, { ref: "es-0120" }, { ref: "es-0121" }, { ref: "es-0122" }, { ref: "es-0123" }, { ref: "es-0124" }, { ref: "es-0125" }, { ref: "es-0126" }]
+  - id: "es-0140"
+    kind: "set"
+    members: [{ ref: "es-0127" }, { ref: "es-0128" }]
+  - id: "es-0141"
+    kind: "set"
+    members: [{ ref: "es-0129" }, { ref: "es-0130" }, { ref: "es-0131" }]

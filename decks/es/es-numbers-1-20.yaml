@@ -1,0 +1,223 @@
+schema: 1
+id: "es-numbers-1-20"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "numbers-1-20"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-0204"
+    target: "cero"
+    ipa: "ˈθeɾo"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "El resultado es cero.", ipa: "el resulˈtado es ˈθeɾo", bases: [{ word: "El", base: "el" }, { word: "resultado", base: "resultado" }, { word: "es", ref: "es-0022" }, { word: "cero", base: "cero" }] }
+      - { target: "Cero es un número.", ipa: "ˈθeɾo es un ˈnumeɾo", bases: [{ word: "Cero", base: "cero" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "número", base: "número" }] }
+  - id: "es-0205"
+    target: "uno"
+    ipa: "ˈuno"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Uno más uno son dos.", ipa: "ˈuno mas ˈuno son dos", bases: [{ word: "Uno", base: "uno" }, { word: "más", base: "más" }, { word: "son", ref: "es-0022" }, { word: "dos", ref: "es-0206" }] }
+      - { target: "Tengo solo uno.", ipa: "ˈtenɡo ˈsolo ˈuno", bases: [{ word: "Tengo", ref: "es-0024" }, { word: "solo", base: "solo" }, { word: "uno", base: "uno" }] }
+  - id: "es-0206"
+    target: "dos"
+    ipa: "dos"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Dos y dos son cuatro.", ipa: "dos i dos son ˈkwatɾo", bases: [{ word: "Dos", base: "dos" }, { word: "y", ref: "es-0048" }, { word: "son", ref: "es-0022" }, { word: "cuatro", ref: "es-0208" }] }
+      - { target: "Tengo dos hermanos.", ipa: "ˈtenɡo dos eɾˈmanos", bases: [{ word: "Tengo", ref: "es-0024" }, { word: "dos", base: "dos" }, { word: "hermanos", base: "hermano" }] }
+  - id: "es-0207"
+    target: "tres"
+    ipa: "tɾes"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mi hijo tiene tres años.", ipa: "mi ˈixo ˈtjene tɾes ˈaɲos", bases: [{ word: "Mi", ref: "es-0129" }, { word: "hijo", base: "hijo" }, { word: "tiene", ref: "es-0024" }, { word: "tres", base: "tres" }, { word: "años", base: "año" }] }
+      - { target: "Tres es un número impar.", ipa: "tɾes es un ˈnumeɾo imˈpaɾ", bases: [{ word: "Tres", base: "tres" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "número", base: "número" }, { word: "impar", base: "impar" }] }
+  - id: "es-0208"
+    target: "cuatro"
+    ipa: "ˈkwatɾo"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Dos y dos son cuatro.", ipa: "dos i dos son ˈkwatɾo", bases: [{ word: "Dos", ref: "es-0206" }, { word: "y", ref: "es-0048" }, { word: "son", ref: "es-0022" }, { word: "cuatro", base: "cuatro" }] }
+      - { target: "Hay cuatro sillas en la cocina.", ipa: "aj ˈkwatɾo ˈsiʝas en la koˈθina", bases: [{ word: "Hay", base: "haber" }, { word: "cuatro", base: "cuatro" }, { word: "sillas", base: "silla" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cocina", base: "cocina" }] }
+  - id: "es-0209"
+    target: "cinco"
+    ipa: "ˈθinko"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Son cinco minutos.", ipa: "son ˈθinko miˈnutos", bases: [{ word: "Son", ref: "es-0022" }, { word: "cinco", base: "cinco" }, { word: "minutos", base: "minutos" }] }
+      - { target: "Mi sobrina tiene cinco años.", ipa: "mi soˈbɾina ˈtjene ˈθinko ˈaɲos", bases: [{ word: "Mi", ref: "es-0129" }, { word: "sobrina", base: "sobrina" }, { word: "tiene", ref: "es-0024" }, { word: "cinco", base: "cinco" }, { word: "años", base: "año" }] }
+  - id: "es-0210"
+    target: "seis"
+    ipa: "sejs"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hay seis personas en la mesa.", ipa: "aj sejs peɾˈsonas en la ˈmesa", bases: [{ word: "Hay", base: "haber" }, { word: "seis", base: "seis" }, { word: "personas", base: "persona" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mesa", base: "mesa" }] }
+      - { target: "Seis más cuatro son diez.", ipa: "sejs mas ˈkwatɾo son djeθ", bases: [{ word: "Seis", base: "seis" }, { word: "más", base: "más" }, { word: "cuatro", ref: "es-0208" }, { word: "son", ref: "es-0022" }, { word: "diez", ref: "es-0214" }] }
+  - id: "es-0211"
+    target: "siete"
+    ipa: "ˈsjete"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La semana tiene siete días.", ipa: "la seˈmana ˈtjene ˈsjete ˈdias", bases: [{ word: "La", base: "la" }, { word: "semana", base: "semana" }, { word: "tiene", ref: "es-0024" }, { word: "siete", base: "siete" }, { word: "días", base: "día" }] }
+      - { target: "Mi hija tiene siete años.", ipa: "mi ˈixa ˈtjene ˈsjete ˈaɲos", bases: [{ word: "Mi", ref: "es-0129" }, { word: "hija", base: "hija" }, { word: "tiene", ref: "es-0024" }, { word: "siete", base: "siete" }, { word: "años", base: "año" }] }
+  - id: "es-0212"
+    target: "ocho"
+    ipa: "ˈotʃo"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Son las ocho de la mañana.", ipa: "son las ˈotʃo de la maˈɲana", bases: [{ word: "Son", ref: "es-0022" }, { word: "las", base: "las" }, { word: "ocho", base: "ocho" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "mañana", base: "mañana" }] }
+      - { target: "Ocho más dos son diez.", ipa: "ˈotʃo mas dos son djeθ", bases: [{ word: "Ocho", base: "ocho" }, { word: "más", base: "más" }, { word: "dos", ref: "es-0206" }, { word: "son", ref: "es-0022" }, { word: "diez", ref: "es-0214" }] }
+  - id: "es-0213"
+    target: "nueve"
+    ipa: "ˈnwebe"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nueve menos cuatro son cinco.", ipa: "ˈnwebe ˈmenos ˈkwatɾo son ˈθinko", bases: [{ word: "Nueve", base: "nueve" }, { word: "menos", base: "menos" }, { word: "cuatro", ref: "es-0208" }, { word: "son", ref: "es-0022" }, { word: "cinco", ref: "es-0209" }] }
+      - { target: "Mi hermano tiene nueve años.", ipa: "mi eɾˈmano ˈtjene ˈnwebe ˈaɲos", bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermano", base: "hermano" }, { word: "tiene", ref: "es-0024" }, { word: "nueve", base: "nueve" }, { word: "años", base: "año" }] }
+  - id: "es-0214"
+    target: "diez"
+    ipa: "djeθ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Diez es un número redondo.", ipa: "djeθ es un ˈnumeɾo reˈdondo", bases: [{ word: "Diez", base: "diez" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "número", base: "número" }, { word: "redondo", base: "redondo" }] }
+      - { target: "Mi hijo tiene diez años.", ipa: "mi ˈixo ˈtjene djeθ ˈaɲos", bases: [{ word: "Mi", ref: "es-0129" }, { word: "hijo", base: "hijo" }, { word: "tiene", ref: "es-0024" }, { word: "diez", base: "diez" }, { word: "años", base: "año" }] }
+  - id: "es-0215"
+    target: "once"
+    ipa: "ˈonθe"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Once jugadores forman un equipo de fútbol.", ipa: "ˈonθe xuɡaˈdoɾes ˈfoɾman un eˈkipo de ˈfutbol", bases: [{ word: "Once", base: "once" }, { word: "jugadores", base: "jugador" }, { word: "forman", base: "formar" }, { word: "un", base: "un" }, { word: "equipo", base: "equipo" }, { word: "de", base: "de" }, { word: "fútbol", base: "fútbol" }] }
+      - { target: "Mi sobrino tiene once años.", ipa: "mi soˈbɾino ˈtjene ˈonθe ˈaɲos", bases: [{ word: "Mi", ref: "es-0129" }, { word: "sobrino", base: "sobrino" }, { word: "tiene", ref: "es-0024" }, { word: "once", base: "once" }, { word: "años", base: "año" }] }
+  - id: "es-0216"
+    target: "doce"
+    ipa: "ˈdoθe"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Un año tiene doce meses.", ipa: "un ˈaɲo ˈtjene ˈdoθe ˈmeses", bases: [{ word: "Un", base: "un" }, { word: "año", base: "año" }, { word: "tiene", ref: "es-0024" }, { word: "doce", base: "doce" }, { word: "meses", base: "mes" }] }
+      - { target: "Doce menos ocho son cuatro.", ipa: "ˈdoθe ˈmenos ˈotʃo son ˈkwatɾo", bases: [{ word: "Doce", base: "doce" }, { word: "menos", base: "menos" }, { word: "ocho", ref: "es-0212" }, { word: "son", ref: "es-0022" }, { word: "cuatro", ref: "es-0208" }] }
+  - id: "es-0217"
+    target: "trece"
+    ipa: "ˈtɾeθe"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Trece es un número impar.", ipa: "ˈtɾeθe es un ˈnumeɾo imˈpaɾ", bases: [{ word: "Trece", base: "trece" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "número", base: "número" }, { word: "impar", base: "impar" }] }
+      - { target: "Mi abuela tiene trece nietos.", ipa: "mi aˈbwela ˈtjene ˈtɾeθe ˈnjetos", bases: [{ word: "Mi", ref: "es-0129" }, { word: "abuela", base: "abuela" }, { word: "tiene", ref: "es-0024" }, { word: "trece", base: "trece" }, { word: "nietos", base: "nieto" }] }
+  - id: "es-0218"
+    target: "catorce"
+    ipa: "kaˈtoɾθe"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Catorce días son dos semanas.", ipa: "kaˈtoɾθe ˈdias son dos seˈmanas", bases: [{ word: "Catorce", base: "catorce" }, { word: "días", base: "día" }, { word: "son", ref: "es-0022" }, { word: "dos", ref: "es-0206" }, { word: "semanas", base: "semana" }] }
+      - { target: "Mi hija tiene catorce años.", ipa: "mi ˈixa ˈtjene kaˈtoɾθe ˈaɲos", bases: [{ word: "Mi", ref: "es-0129" }, { word: "hija", base: "hija" }, { word: "tiene", ref: "es-0024" }, { word: "catorce", base: "catorce" }, { word: "años", base: "año" }] }
+  - id: "es-0219"
+    target: "quince"
+    ipa: "ˈkinθe"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quince minutos son un cuarto de hora.", ipa: "ˈkinθe miˈnutos son un ˈkwaɾto de ˈoɾa", bases: [{ word: "Quince", base: "quince" }, { word: "minutos", base: "minutos" }, { word: "son", ref: "es-0022" }, { word: "un", base: "un" }, { word: "cuarto", base: "cuarto" }, { word: "de", base: "de" }, { word: "hora", base: "hora" }] }
+      - { target: "Ana tiene quince años.", ipa: "ˈana ˈtjene ˈkinθe ˈaɲos", bases: [{ word: "Ana", base: "Ana" }, { word: "tiene", ref: "es-0024" }, { word: "quince", base: "quince" }, { word: "años", base: "año" }] }
+  - id: "es-0220"
+    target: "dieciséis"
+    ipa: "djeθiˈsejs"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ana tiene dieciséis años.", ipa: "ˈana ˈtjene djeθiˈsejs ˈaɲos", bases: [{ word: "Ana", base: "Ana" }, { word: "tiene", ref: "es-0024" }, { word: "dieciséis", base: "dieciséis" }, { word: "años", base: "año" }] }
+      - { target: "Dieciséis más cuatro son veinte.", ipa: "djeθiˈsejs mas ˈkwatɾo son ˈbejnte", bases: [{ word: "Dieciséis", base: "dieciséis" }, { word: "más", base: "más" }, { word: "cuatro", ref: "es-0208" }, { word: "son", ref: "es-0022" }, { word: "veinte", ref: "es-0224" }] }
+  - id: "es-0221"
+    target: "diecisiete"
+    ipa: "djeθiˈsjete"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mi hermana tiene diecisiete años.", ipa: "mi eɾˈmana ˈtjene djeθiˈsjete ˈaɲos", bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", base: "hermana" }, { word: "tiene", ref: "es-0024" }, { word: "diecisiete", base: "diecisiete" }, { word: "años", base: "año" }] }
+      - { target: "Diecisiete es un número impar.", ipa: "djeθiˈsjete es un ˈnumeɾo imˈpaɾ", bases: [{ word: "Diecisiete", base: "diecisiete" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "número", base: "número" }, { word: "impar", base: "impar" }] }
+  - id: "es-0222"
+    target: "dieciocho"
+    ipa: "djeˈθjotʃo"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mi primo tiene dieciocho años.", ipa: "mi ˈpɾimo ˈtjene djeˈθjotʃo ˈaɲos", bases: [{ word: "Mi", ref: "es-0129" }, { word: "primo", base: "primo" }, { word: "tiene", ref: "es-0024" }, { word: "dieciocho", base: "dieciocho" }, { word: "años", base: "año" }] }
+      - { target: "Dieciocho menos dos son dieciséis.", ipa: "djeˈθjotʃo ˈmenos dos son djeθiˈsejs", bases: [{ word: "Dieciocho", base: "dieciocho" }, { word: "menos", base: "menos" }, { word: "dos", ref: "es-0206" }, { word: "son", ref: "es-0022" }, { word: "dieciséis", ref: "es-0220" }] }
+  - id: "es-0223"
+    target: "diecinueve"
+    ipa: "djeθiˈnwebe"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Diecinueve es un número impar.", ipa: "djeθiˈnwebe es un ˈnumeɾo imˈpaɾ", bases: [{ word: "Diecinueve", base: "diecinueve" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "número", base: "número" }, { word: "impar", base: "impar" }] }
+      - { target: "Diecinueve más uno son veinte.", ipa: "djeθiˈnwebe mas ˈuno son ˈbejnte", bases: [{ word: "Diecinueve", base: "diecinueve" }, { word: "más", base: "más" }, { word: "uno", ref: "es-0205" }, { word: "son", ref: "es-0022" }, { word: "veinte", ref: "es-0224" }] }
+  - id: "es-0224"
+    target: "veinte"
+    ipa: "ˈbejnte"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Veinte es igual a dos veces diez.", ipa: "ˈbejnte es iˈɡwal a dos ˈbeθes djeθ", bases: [{ word: "Veinte", base: "veinte" }, { word: "es", ref: "es-0022" }, { word: "igual", base: "igual" }, { word: "a", base: "a" }, { word: "dos", ref: "es-0206" }, { word: "veces", base: "vez" }, { word: "diez", ref: "es-0214" }] }
+      - { target: "Hay veinte alumnos en la clase.", ipa: "aj ˈbejnte aˈlumnos en la ˈklase", bases: [{ word: "Hay", base: "haber" }, { word: "veinte", base: "veinte" }, { word: "alumnos", base: "alumno" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "clase", base: "clase" }] }
+  - id: "es-0241"
+    kind: "set"
+    members: [{ ref: "es-0205" }, { ref: "es-0206" }, { ref: "es-0207" }, { ref: "es-0208" }, { ref: "es-0209" }, { ref: "es-0210" }, { ref: "es-0211" }, { ref: "es-0212" }, { ref: "es-0213" }, { ref: "es-0214" }]
