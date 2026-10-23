@@ -2996,10 +2996,6 @@
       }
     }
   },
-  "drillTeachTitle": "New",
-  "@drillTeachTitle": {
-    "description": "A lesson teaching a word (ADR-0024): above the word, its reading and meaning, before it is asked."
-  },
   "setTitle": "The set",
   "@setTitle": {
     "description": "A set card (#515): its label at the top of the card, where a new word's card says New. A set card shows a closed group, such as the three words for 'you', before its words are drilled."
@@ -10246,5 +10242,45 @@
   "deckPracticeStart": "Start",
   "@deckPracticeStart": {
     "description": "The button of Practice's popup that starts the practice."
+  },
+  "drillNextCard": "Next card",
+  "@drillNextCard": {
+    "description": "Screen-reader label and tooltip of the chevron on the end edge of a teach card, which goes on to the next card. Swiping the card does the same."
+  },
+  "drillPreviousCard": "Previous card",
+  "@drillPreviousCard": {
+    "description": "Screen-reader label and tooltip of the chevron on the start edge of a teach card, which goes back to the previous card."
+  },
+  "teachDictionaryLabel": "Dictionary: {meaning}",
+  "@teachDictionaryLabel": {
+    "description": "Screen-reader label of the meaning on a teach card, which is a button that opens the word's dictionary.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "yesterday; tomorrow"
+      }
+    }
+  },
+  "teachPronunciationLabel": "Pronunciation: {ipa}",
+  "@teachPronunciationLabel": {
+    "description": "Screen-reader label of the IPA on a teach card, which is a button that opens the pronunciation popup.",
+    "placeholders": {
+      "ipa": {
+        "type": "String",
+        "example": "kəl"
+      }
+    }
+  },
+  "teachPronunciationTitle": "Pronunciation",
+  "@teachPronunciationTitle": {
+    "description": "Title of the popup the IPA on a teach card opens."
+  },
+  "teachPronunciationBody": "From the IPA course. Practise each sound on its own.",
+  "@teachPronunciationBody": {
+    "description": "The line under the title of the pronunciation popup, which lists each symbol of the word."
+  },
+  "teachDictionaryBody": "Meanings, etymology and examples.",
+  "@teachDictionaryBody": {
+    "description": "The line under the title of the dictionary popup the meaning on a teach card opens."
   }
 }

@@ -47,8 +47,9 @@ speaking. Phrases were never produced (ADR-0010).
   - **Difficulty by the word:** hard is a phrase, a sentence of three or more
     words, or a grammar cell; medium is two words, or one of seven letters
     or more, counted in the reading where there is one; easy is the rest.
-  - **Difficulty by the exercise:** each item is taught (word, reading,
-    meaning, played aloud), then checked at once: an easy one by choosing
+  - **Difficulty by the exercise:** each item is taught on the one-screen
+    teach card (#691: word, reading, IPA, meaning, played aloud; a swipe or
+    a chevron goes on), then checked at once: an easy one by choosing
     its meaning; a medium one by hearing it and choosing it, or without a
     voice by choosing the word; a hard one by typing it, or by rearranging
     it when it has three words or more, or is a phrase of two.

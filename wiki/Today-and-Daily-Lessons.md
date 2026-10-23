@@ -13,7 +13,7 @@ Today is the first tab. It shows what to do now.
 
 ## A lesson
 
-A lesson teaches new words in small groups. A word is shown with its reading and meaning, and you can hear it. Then you are asked about it. A set of related words, such as days of the week, is shown together first, with a "Full list" button, then asked one at a time. Words you already know are skipped, and the lesson names them.
+A lesson teaches new words in small groups. A word is shown on one screen with its reading and meaning, and you can hear it; swipe the card to go on. Then you are asked about it. A set of related words, such as days of the week, is shown together first, with a "Full list" button, then asked one at a time. Words you already know are skipped, and the lesson names them.
 
 Your answers during a lesson are recorded. See [Drills and skills](Drills-and-Skills) for the kinds of question.
 

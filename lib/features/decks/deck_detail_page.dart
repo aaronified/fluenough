@@ -44,7 +44,8 @@ import 'word_sheet.dart';
 ///   taught it is **Relearn**, with no badge: a walk through every word in
 ///   view (#694), which is incoming until it is built.
 ///
-/// Design screen `deck-page-and-teach-card`. The tag chips choose the words
+/// Built from the `deck-page-and-teach-card` mockup, removed once built (in
+/// git history). The tag chips choose the words
 /// that carry any of the chosen tags, as a session's tags do.
 class DeckDetailPage extends StatefulWidget {
   const DeckDetailPage({
