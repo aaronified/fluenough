@@ -12,6 +12,7 @@ import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/language_bar.dart';
 import '../../ui/widgets/language_glyph.dart';
 import '../../ui/widgets/page_parts.dart';
+import '../../ui/widgets/tab_pager.dart';
 import 'broken_deck_tile.dart';
 import 'course_card.dart';
 import 'course_hours.dart';
@@ -115,24 +116,26 @@ class _DecksPageState extends State<DecksPage> {
     child: MergeSemantics(
       child: Semantics(
         label: _search.text.isEmpty ? null : l10n.decksUnitSearchHint,
-        child: SearchBar(
-          controller: _search,
-          hintText: l10n.decksUnitSearchHint,
-          leading: const Icon(Icons.search),
-          trailing: <Widget>[
-            if (_search.text.isNotEmpty)
-              IconButton(
-                tooltip: l10n.decksSearchClose,
-                icon: const Icon(Icons.close),
-                onPressed: () => setState(_search.clear),
-              ),
-          ],
-          elevation: const WidgetStatePropertyAll<double>(0),
-          constraints: const BoxConstraints(minHeight: 56),
-          padding: const WidgetStatePropertyAll<EdgeInsetsGeometry>(
-            EdgeInsetsDirectional.symmetric(horizontal: 16),
+        child: TabSwipeArea(
+          child: SearchBar(
+            controller: _search,
+            hintText: l10n.decksUnitSearchHint,
+            leading: const Icon(Icons.search),
+            trailing: <Widget>[
+              if (_search.text.isNotEmpty)
+                IconButton(
+                  tooltip: l10n.decksSearchClose,
+                  icon: const Icon(Icons.close),
+                  onPressed: () => setState(_search.clear),
+                ),
+            ],
+            elevation: const WidgetStatePropertyAll<double>(0),
+            constraints: const BoxConstraints(minHeight: 56),
+            padding: const WidgetStatePropertyAll<EdgeInsetsGeometry>(
+              EdgeInsetsDirectional.symmetric(horizontal: 16),
+            ),
+            onChanged: (_) => setState(() {}),
           ),
-          onChanged: (_) => setState(() {}),
         ),
       ),
     ),

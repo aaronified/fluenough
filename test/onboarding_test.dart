@@ -272,6 +272,46 @@ void main() {
       expect(selected(tester), ShellTab.decks.index);
     });
 
+    testWidgets('a swipe that starts on the Decks search bar changes tab too, '
+        'and the bar still takes a tap (#773)', (tester) async {
+      final state = await pumpPager(tester);
+      await tester.tap(
+        find.descendant(
+          of: find.byType(NavigationBar),
+          matching: find.byIcon(Icons.style_outlined),
+        ),
+      );
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(state.shellTab.value, ShellTab.decks);
+
+      final search = find.byType(SearchBar).hitTestable();
+      await tester.tap(search);
+      await tester.pump();
+      expect(
+        tester
+            .widget<EditableText>(find.byType(EditableText))
+            .focusNode
+            .hasFocus,
+        isTrue,
+      );
+      FocusManager.instance.primaryFocus?.unfocus();
+      await tester.pump();
+
+      // Left: Progress. Right: back to Decks.
+      await tester.dragFrom(tester.getCenter(search), const Offset(-250, 0));
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(state.shellTab.value, ShellTab.progress);
+      await tester.dragFrom(
+        tester.getCenter(find.byType(StatsPage).hitTestable()),
+        const Offset(250, 0),
+      );
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(state.shellTab.value, ShellTab.decks);
+      await tester.dragFrom(tester.getCenter(search), const Offset(250, 0));
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(state.shellTab.value, ShellTab.today);
+    });
+
     testWidgets('a cancelled drag springs back to the page it started on', (
       tester,
     ) async {

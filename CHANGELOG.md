@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- A sideways swipe that starts on the Decks search bar changes tab, as it does anywhere else on the screen; the search bar took the drag itself before (#773).
+
 ## [0.6.0] - 2026-10-23
 
 ### Added

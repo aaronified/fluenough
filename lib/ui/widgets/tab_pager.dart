@@ -326,22 +326,25 @@ class _TabPagerState extends State<TabPager>
         _w = box.maxWidth;
         final offset = _offset;
         final dir = _dir;
-        return Listener(
-          onPointerDown: _down,
-          onPointerUp: _up,
-          onPointerCancel: _cancelTouch,
-          child: GestureDetector(
-            onHorizontalDragStart: _dragStart,
-            onHorizontalDragUpdate: _dragUpdate,
-            onHorizontalDragEnd: _dragEnd,
-            onHorizontalDragCancel: _dragCancel,
-            child: ClipRect(
-              child: Stack(
-                fit: StackFit.expand,
-                children: <Widget>[
-                  for (var i = 0; i < widget.children.length; i++)
-                    _page(i, (i * _w - offset) * dir, background),
-                ],
+        return _PagerHandle(
+          state: this,
+          child: Listener(
+            onPointerDown: _down,
+            onPointerUp: _up,
+            onPointerCancel: _cancelTouch,
+            child: GestureDetector(
+              onHorizontalDragStart: _dragStart,
+              onHorizontalDragUpdate: _dragUpdate,
+              onHorizontalDragEnd: _dragEnd,
+              onHorizontalDragCancel: _dragCancel,
+              child: ClipRect(
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: <Widget>[
+                    for (var i = 0; i < widget.children.length; i++)
+                      _page(i, (i * _w - offset) * dir, background),
+                  ],
+                ),
               ),
             ),
           ),
@@ -363,4 +366,51 @@ class _TabPagerState extends State<TabPager>
       ),
     ),
   );
+}
+
+/// Lets a [TabSwipeArea] reach the pager's drag.
+class _PagerHandle extends InheritedWidget {
+  const _PagerHandle({required this.state, required super.child});
+
+  final _TabPagerState state;
+
+  @override
+  bool updateShouldNotify(_PagerHandle old) => false;
+}
+
+/// Makes a sideways swipe that starts on [child] swipe the tabs, where
+/// [child] would take it itself (#773). A text field, such as the search bar
+/// on Decks, wins every horizontal drag on it before the pager above it can
+/// (a text field takes a drag eagerly, to select by it), so a swipe that
+/// started on it did nothing. The area lies over [child], takes only the
+/// sideways drag and hands it to the pager; a tap, a long press and a
+/// vertical scroll still reach [child] and the page beneath. Outside a
+/// [TabPager] it is [child] alone.
+class TabSwipeArea extends StatelessWidget {
+  const TabSwipeArea({super.key, required this.child});
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final pager = context.getInheritedWidgetOfExactType<_PagerHandle>()?.state;
+    if (pager == null) return child;
+    return Stack(
+      fit: StackFit.passthrough,
+      children: <Widget>[
+        child,
+        Positioned.fill(
+          child: ExcludeSemantics(
+            child: GestureDetector(
+              behavior: HitTestBehavior.translucent,
+              onHorizontalDragStart: pager._dragStart,
+              onHorizontalDragUpdate: pager._dragUpdate,
+              onHorizontalDragEnd: pager._dragEnd,
+              onHorizontalDragCancel: pager._dragCancel,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
 }
