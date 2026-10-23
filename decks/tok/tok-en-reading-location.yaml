@@ -1,0 +1,76 @@
+"schema": 1
+"id": "tok-en-reading-location"
+"name": "Reading: where things are"
+"kind": "reading"
+"language":
+  "code": "tok"
+  "iso639_3": "tok"
+  "name": "Toki Pona"
+  "script": "latin"
+  "icon": "Tp"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this deck"
+"description": "Two passages on where things are: a listening passage about looking for a tool, and a reading passage of shelf labels. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "reading"
+- "unreviewed"
+"passages":
+- "id": "tok-location-where-is-it"
+  "title": "Where is it?"
+  "theme": "location"
+  "sentences":
+  - "text": "ilo mi li anpa."
+  - "text": "ilo mi li insa poki."
+  - "text": "ilo mi li monsi tomo."
+  - "text": "ilo mi li sewi."
+  "questions":
+  - "id": "tok-0363"
+    "prompt":
+      "en": "Where is the tool at first?"
+    "options":
+    - "en": "Below"
+    - "en": "Inside"
+    - "en": "Above"
+    "answer": 1
+  - "id": "tok-0364"
+    "prompt":
+      "en": "In the second line, where is the tool?"
+    "options":
+    - "en": "Inside the box"
+    - "en": "Behind the building"
+    "answer": 1
+  - "id": "tok-0365"
+    "prompt":
+      "en": "The tool is above in the last line. Is that true?"
+    "answer": true
+- "id": "tok-location-shelf-labels"
+  "title": "Shelf labels"
+  "theme": "location"
+  "sentences":
+  - "text": "ilo suli li anpa."
+  - "text": "kili suwi li sewi."
+  - "text": "telo lete li insa poki."
+  - "text": "ilo lili li sinpin."
+  "questions":
+  - "id": "tok-0366"
+    "prompt":
+      "en": "Which shelf holds the sweet fruit?"
+    "options":
+    - "en": "The top shelf"
+    - "en": "The bottom shelf"
+    "answer": 1
+  - "id": "tok-0367"
+    "prompt":
+      "en": "Where are the big tools?"
+    "options":
+    - "en": "Below"
+    - "en": "Inside"
+    "answer": 1
+  - "id": "tok-0368"
+    "prompt":
+      "en": "The cold water is above. Is that true?"
+    "answer": false
