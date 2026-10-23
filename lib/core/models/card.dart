@@ -331,6 +331,7 @@ class CardRef {
           altNative ?? (sameNative ? written.altNative : const <String>[]),
       pos: written.pos,
       hears: written.hears,
+      warning: written.warning,
       gender: written.gender,
       tags: tags ?? (sameNative ? written.tags : const <String>[]),
       notes: notes ?? (sameNative ? written.notes : const <CardNote>[]),
@@ -388,6 +389,7 @@ class Card {
     this.altNative = const <String>[],
     this.pos,
     this.hears,
+    this.warning,
     this.gender,
     this.tags = const <String>[],
     this.notes = const <CardNote>[],
@@ -505,6 +507,13 @@ class Card {
   /// as the spelling decks' and the script reading decks' words are. A letter
   /// or a digit does so by its `pos` ([isLetterOrDigit]). Null otherwise.
   final String? hears;
+
+  /// The one warning the teach card shows (`warning`, #691): the id of one of
+  /// the card's pair, homograph or lookalike notes, `senses` for its other
+  /// meanings, or `none` for no warning. Null when the deck does not say, and
+  /// the card then shows the first warning in the fixed order. The word sheet
+  /// shows every warning either way.
+  final String? warning;
   final String? gender;
   final List<String> tags;
 

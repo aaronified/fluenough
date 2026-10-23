@@ -27,6 +27,79 @@ class DrillHeaderScope extends InheritedWidget {
   bool updateShouldNotify(DrillHeaderScope old) => true;
 }
 
+/// A drill's 64 px header, from the design: the close button, the progress
+/// wave, "3/8", whatever the page puts in the header (the sounds of the
+/// card's word, [DrillHeaderScope]) and the bug icon (ADR-0021). Every drill
+/// has it, through [DrillFrame]; the teach card, which fills the screen with
+/// no body to scroll, uses it on its own.
+class DrillHeader extends StatelessWidget {
+  const DrillHeader({
+    super.key,
+    required this.progress,
+    required this.position,
+    required this.total,
+    required this.onClose,
+    required this.reportDetail,
+  });
+
+  /// How far through the session the wave shows, 0–1.
+  final double progress;
+
+  /// The current card, 1-based, and how many the session has.
+  final int position;
+  final int total;
+
+  final VoidCallback onClose;
+
+  /// What a report from this screen says it showed.
+  final String reportDetail;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    return SizedBox(
+      height: 64,
+      child: Padding(
+        padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
+        child: Row(
+          children: <Widget>[
+            IconButton(
+              onPressed: onClose,
+              tooltip: l10n.drillEndSession,
+              icon: const Icon(Icons.close),
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: WaveProgress(
+                value: progress,
+                semanticsLabel: l10n.drillProgressLabel,
+                semanticsValue: l10n.drillPosition(position, total),
+              ),
+            ),
+            const SizedBox(width: 12),
+            ExcludeSemantics(
+              child: Text(
+                l10n.drillPositionShort(position, total),
+                style: theme.textTheme.labelLarge!.copyWith(
+                  fontWeight: FontWeight.w700,
+                  fontFeatures: const <FontFeature>[
+                    FontFeature.tabularFigures(),
+                  ],
+                ),
+              ),
+            ),
+            // What the page puts in the header, such as the sounds of the
+            // card's word (ADR-0041).
+            ?DrillHeaderScope.of(context),
+            ReportButton(detail: reportDetail),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 /// The layout every drill shares, from the design's drill screen:
 ///
 /// 1. A 64 px header: close button, the progress wave, "3/8", and the
@@ -106,7 +179,6 @@ class DrillFrame extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final done = total == 0 ? 0.0 : (position - 1) / total;
@@ -119,44 +191,12 @@ class DrillFrame extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            SizedBox(
-              height: 64,
-              child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
-                child: Row(
-                  children: <Widget>[
-                    IconButton(
-                      onPressed: onClose,
-                      tooltip: l10n.drillEndSession,
-                      icon: const Icon(Icons.close),
-                    ),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: WaveProgress(
-                        value: progress ?? done,
-                        semanticsLabel: l10n.drillProgressLabel,
-                        semanticsValue: l10n.drillPosition(position, total),
-                      ),
-                    ),
-                    const SizedBox(width: 12),
-                    ExcludeSemantics(
-                      child: Text(
-                        l10n.drillPositionShort(position, total),
-                        style: theme.textTheme.labelLarge!.copyWith(
-                          fontWeight: FontWeight.w700,
-                          fontFeatures: const <FontFeature>[
-                            FontFeature.tabularFigures(),
-                          ],
-                        ),
-                      ),
-                    ),
-                    // What the page puts in the header, such as the sounds
-                    // of the card's word (ADR-0041).
-                    ?DrillHeaderScope.of(context),
-                    ReportButton(detail: reportDetail ?? deckName),
-                  ],
-                ),
-              ),
+            DrillHeader(
+              progress: progress ?? done,
+              position: position,
+              total: total,
+              onClose: onClose,
+              reportDetail: reportDetail ?? deckName,
             ),
             Expanded(
               child: SingleChildScrollView(

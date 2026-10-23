@@ -43,6 +43,7 @@ import 'package:fluenough/features/decks/unit_search.dart';
 import 'package:fluenough/features/decks/word_mastery.dart';
 import 'package:fluenough/features/decks/word_sheet.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
+import 'package:fluenough/features/drill/teach_card.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/features/stats/how_you_learn_page.dart';
 import 'package:fluenough/features/stats/leeches.dart';
@@ -232,6 +233,40 @@ cards:
 /// Learns every word in [deckId], in every skill.
 void learnAll(AppState state, String deckId) {
   final request = DrillRequest.untaught(deckId);
+  while (state.buildSession(request).fresh.isNotEmpty) {
+    for (final item in state.buildSession(request).fresh) {
+      state.record(item, 5);
+    }
+  }
+}
+
+/// A deck of three words: "gato" and "perro" tagged `pets`, "casa" tagged
+/// `home`, for what a deck page does with its tag filter.
+AppState taggedState({ProgressStore? progress}) => AppState.test(
+  decks: MemoryDeckSource(<String, String>{
+    'decks/es/es-en-tagged.yaml': '''
+schema: 1
+id: es-en-tagged
+name: "Tagged"
+language: { code: es, iso639_3: spa, name: Spanish, script: latin }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+  - { id: es-en-tagged-0001, target: "gato", native: "cat", tags: ["pets"] }
+  - { id: es-en-tagged-0002, target: "perro", native: "dog", tags: ["pets"] }
+  - { id: es-en-tagged-0003, target: "casa", native: "house", tags: ["home"] }
+''',
+  }),
+  progress: progress,
+);
+
+/// Teaches every word of [deckId] that carries one of [tags], in every skill.
+void learnTagged(AppState state, String deckId, Set<String> tags) {
+  final request = DrillRequest(
+    deckIds: <String>{deckId},
+    untaught: true,
+    tags: tags,
+  );
   while (state.buildSession(request).fresh.isNotEmpty) {
     for (final item in state.buildSession(request).fresh) {
       state.record(item, 5);
@@ -1111,6 +1146,117 @@ void main() {
       expect(find.byType(WordSheet), findsOneWidget);
       expect(find.text(first.native), findsWidgets);
     });
+
+    testWidgets(
+      'Relearn waits for every card of the deck, not just those in view',
+      (tester) async {
+        usePhone(tester);
+        final state = taggedState();
+        await state.load();
+        learnTagged(state, 'es-en-tagged', const <String>{'pets'});
+        await pumpScreen(
+          tester,
+          const DeckDetailPage(
+            deckId: 'es-en-tagged',
+            initialTags: <String>{'pets'},
+          ),
+          state: state,
+        );
+        final l10n = l10nOf(tester);
+
+        // The words in view are taught, but "casa" is not: + Learn stays,
+        // with nothing in view left to teach.
+        expect(find.text(l10n.deckRelearn), findsNothing);
+        expect(find.text(l10n.deckLearn), findsOneWidget);
+        expect(
+          tester
+              .widget<FilledButton>(
+                find.ancestor(
+                  of: find.text(l10n.deckLearn),
+                  matching: find.byWidgetPredicate((w) => w is FilledButton),
+                ),
+              )
+              .onPressed,
+          isNull,
+        );
+
+        learnTagged(state, 'es-en-tagged', const <String>{'home'});
+        await tester.pumpAndSettle();
+        expect(find.text(l10n.deckRelearn), findsOneWidget);
+        expect(find.text(l10n.deckLearn), findsNothing);
+        expect(find.byType(Badge), findsNothing);
+      },
+    );
+
+    testWidgets(
+      'Relearn walks through the words in view on the teach card, forward '
+      'and back, and writes nothing',
+      (tester) async {
+        usePhone(tester);
+        final state = taggedState();
+        await state.load();
+        learnAll(state, 'es-en-tagged');
+        await pumpScreen(
+          tester,
+          const DeckDetailPage(
+            deckId: 'es-en-tagged',
+            initialTags: <String>{'pets'},
+          ),
+          state: state,
+        );
+        final l10n = l10nOf(tester);
+        final logged = state.progress.log.length;
+        final states = Map.of(state.progress.states);
+
+        await tester.tap(find.text(l10n.deckRelearn));
+        await tester.pumpAndSettle();
+        expect(find.byType(TeachCard), findsOneWidget);
+        expect(find.text('gato'), findsOneWidget);
+        expect(find.text(l10n.drillPositionShort(1, 2)), findsOneWidget);
+
+        // Toward the start edge goes on, to the second of the two in view;
+        // "casa", which the filter leaves out, is never shown.
+        await tester.fling(find.byType(TeachCard), const Offset(-300, 0), 1000);
+        await tester.pumpAndSettle();
+        expect(find.text('perro'), findsOneWidget);
+        expect(find.text(l10n.drillPositionShort(2, 2)), findsOneWidget);
+
+        // And back again.
+        await tester.fling(find.byType(TeachCard), const Offset(300, 0), 1000);
+        await tester.pumpAndSettle();
+        expect(find.text('gato'), findsOneWidget);
+        await tester.fling(find.byType(TeachCard), const Offset(-300, 0), 1000);
+        await tester.pumpAndSettle();
+        expect(find.text('casa'), findsNothing);
+
+        // Going on from the last card ends the walk, back on the deck's page.
+        await tester.fling(find.byType(TeachCard), const Offset(-300, 0), 1000);
+        await tester.pumpAndSettle();
+        expect(find.byType(TeachCard), findsNothing);
+        expect(find.byType(DeckDetailPage), findsOneWidget);
+        expect(state.progress.log, hasLength(logged));
+        expect(state.progress.states, states);
+      },
+    );
+
+    testWidgets(
+      'with no filter, Relearn walks through every card of the deck',
+      (tester) async {
+        usePhone(tester);
+        final state = taggedState();
+        await state.load();
+        learnAll(state, 'es-en-tagged');
+        await pumpScreen(
+          tester,
+          const DeckDetailPage(deckId: 'es-en-tagged'),
+          state: state,
+        );
+        final l10n = l10nOf(tester);
+        await tester.tap(find.text(l10n.deckRelearn));
+        await tester.pumpAndSettle();
+        expect(find.text(l10n.drillPositionShort(1, 3)), findsOneWidget);
+      },
+    );
 
     testWidgets(
       '+ Learn counts the words in view not taught, and teaches those',

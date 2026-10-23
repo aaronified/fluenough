@@ -1171,6 +1171,35 @@ cards:
       expect(house.senses.single.examples.single.native, 'The house is big.');
       expect(house.native, 'home; house');
     });
+
+    test('a core card says which warning its teach card shows (#691)', () {
+      Card withWarning(String? value) => merged(
+        value == null
+            ? '    pos: "noun"\n'
+            : '    pos: "noun"\n    warning: "$value"\n',
+        '',
+      );
+      expect(withWarning('stem').warning, 'stem');
+      expect(withWarning('senses').warning, 'senses');
+      expect(withWarning('none').warning, 'none');
+      expect(withWarning(null).warning, isNull);
+    });
+
+    test('an empty warning, or one on a card of a single file, is refused', () {
+      expect(
+        () => DeckParser.parseCore(
+          coreWith('    pos: "noun"\n    warning: ""\n'),
+          source: 'zz.yaml',
+        ),
+        throwsA(isA<DeckParseException>()),
+      );
+      // The key belongs to the core's language side, not to a single-file
+      // deck's card.
+      expect(
+        () => parseProbe(probeCard('    warning: "none"\n')),
+        throwsA(isA<DeckParseException>()),
+      );
+    });
   });
 
   group('refs', () {

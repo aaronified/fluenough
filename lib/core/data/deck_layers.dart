@@ -81,6 +81,7 @@ class CoreWritten extends CoreCard {
     this.words,
     this.pos,
     this.hears,
+    this.warning,
     this.gender,
     this.tags = const <String>[],
     this.audio,
@@ -114,6 +115,10 @@ class CoreWritten extends CoreCard {
   final List<String>? words;
   final String? pos;
   final String? hears;
+
+  /// Which warning the teach card shows (`warning`, #691): the id of a pair,
+  /// homograph or lookalike note, "senses", or "none". Null: the fixed order.
+  final String? warning;
   final String? gender;
   final List<String> tags;
   final String? audio;
@@ -789,6 +794,7 @@ class _Merge {
       altNative: entry.altNative ?? const <String>[],
       pos: card.pos,
       hears: card.hears,
+      warning: card.warning,
       gender: card.gender,
       tags: card.tags,
       notes: notes,
