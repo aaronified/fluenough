@@ -1,0 +1,169 @@
+schema: 1
+id: "es-en-time"
+kind: "layer"
+core: "es-time"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Time and days"
+license: "CC-BY-SA-4.0"
+description: "Time: the hour and the minute, the week, the morning, noon and midnight, the appointment and the date, open and closed, on time, with the verbs to start and to last. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-0838":
+    native: "hour; time"
+    notes: { n1: "Hora is an hour, and also the time of day: ¿Qué hora es? is what time it is." }
+    bases: {"la": "the", "hora": "hour"}
+    examples:
+      "La cena es a esta hora.":
+        native: "Dinner is at this time."
+        bases: {"La": "the", "a": "to", "esta": "this", "hora": "hour"}
+      "Tengo una hora libre.":
+        native: "I have a free hour."
+        bases: {"una": "a", "hora": "hour"}
+  "es-0839":
+    native: "minute"
+    notes: { n1: "Minuto is a minute, a part of an hour." }
+    bases: {"el": "the", "minuto": "minute"}
+    examples:
+      "Espero un minuto.":
+        native: "I wait a minute."
+        bases: {"un": "a", "minuto": "minute"}
+      "El tren sale en cinco minutos.":
+        native: "The train leaves in five minutes."
+        bases: {"El": "the", "en": "in", "minutos": "minute"}
+  "es-0840":
+    native: "week"
+    notes: { n1: "Semana is a week. Estudio cinco días a la semana: I study five days a week." }
+    bases: {"la": "the", "semana": "week"}
+    examples:
+      "Estudio cinco días a la semana.":
+        native: "I study five days a week."
+        bases: {"a": "to", "la": "the", "semana": "week"}
+      "La semana es larga.":
+        native: "The week is long."
+        bases: {"La": "the", "semana": "week"}
+  "es-0841":
+    native: "morning"
+    notes: { n1: "Mañana is the morning. Tomorrow is also mañana: the two words are not taught here together." }
+    bases: {"la": "the", "mañana": "morning"}
+    examples:
+      "Como pan por la mañana.":
+        native: "I eat bread in the morning."
+        bases: {"por": "for", "la": "the", "mañana": "morning"}
+      "La mañana es buena.":
+        native: "The morning is good."
+        bases: {"La": "the", "mañana": "morning"}
+  "es-0842":
+    native: "midday; noon"
+    notes: { n1: "Mediodía is midday, twelve o'clock in the day." }
+    bases: {"el": "the", "mediodía": "midday"}
+    examples:
+      "Almorzamos al mediodía.":
+        native: "We have lunch at midday."
+        bases: {"al": "to the", "mediodía": "midday"}
+      "El mediodía es a las doce.":
+        native: "Midday is at twelve."
+        bases: {"El": "the", "mediodía": "midday", "a": "to", "las": "the"}
+  "es-0843":
+    native: "midnight"
+    notes: { n1: "Medianoche is midnight, twelve o'clock at night." }
+    bases: {"la": "the", "medianoche": "midnight"}
+    examples:
+      "Cenamos antes de la medianoche.":
+        native: "We have dinner before midnight."
+        bases: {"de": "of", "la": "the", "medianoche": "midnight"}
+      "La medianoche es a las doce.":
+        native: "Midnight is at twelve."
+        bases: {"La": "the", "medianoche": "midnight", "a": "to", "las": "the"}
+  "es-0844":
+    native: "appointment"
+    notes: { n1: "Cita is an appointment, a set time to meet someone." }
+    bases: {"la": "the", "cita": "appointment"}
+    examples:
+      "Tengo una cita a las tres.":
+        native: "I have an appointment at three."
+        bases: {"una": "a", "cita": "appointment", "a": "to", "las": "the"}
+      "La cita es hoy.":
+        native: "The appointment is today."
+        bases: {"La": "the", "cita": "appointment"}
+  "es-0845":
+    native: "clock; watch"
+    notes: { n1: "Reloj is a clock or a watch, the object that shows the time." }
+    bases: {"el": "the", "reloj": "clock"}
+    examples:
+      "El reloj está en la pared.":
+        native: "The clock is on the wall."
+        bases: {"El": "the", "reloj": "clock", "en": "in", "la": "the"}
+      "Miro el reloj.":
+        native: "I look at the clock."
+        bases: {"el": "the", "reloj": "clock"}
+  "es-0846":
+    native: "date"
+    notes: { n1: "Fecha is the date: the day, month and year." }
+    bases: {"la": "the", "fecha": "date"}
+    examples:
+      "¿Cuál es la fecha?":
+        native: "What is the date?"
+        bases: {"la": "the", "fecha": "date"}
+      "La fecha es hoy.":
+        native: "The date is today."
+        bases: {"La": "the", "fecha": "date"}
+  "es-0847":
+    native: "moment"
+    notes: { n1: "Momento is a moment, a short time." }
+    bases: {"el": "the", "momento": "moment"}
+    examples:
+      "Un momento, por favor.":
+        native: "One moment, please."
+        bases: {"Un": "a", "momento": "moment", "por": "for", "favor": "please"}
+      "En este momento estoy aquí.":
+        native: "At this moment I am here."
+        bases: {"En": "in", "este": "this", "momento": "moment"}
+  "es-0848":
+    native: "open"
+    notes: { n1: "Abierto is open, the opposite of cerrado. It agrees: abierta." }
+    examples:
+      "El banco está abierto hoy.":
+        native: "The bank is open today."
+        bases: {"El": "the", "abierto": "open"}
+      "La tienda está abierta.":
+        native: "The shop is open."
+        bases: {"La": "the", "abierta": "open"}
+  "es-0849":
+    native: "closed"
+    notes: { n1: "Cerrado is closed, the opposite of abierto. It agrees: cerrada." }
+    examples:
+      "El banco está cerrado.":
+        native: "The bank is closed."
+        bases: {"El": "the", "cerrado": "closed"}
+      "La tienda está cerrada hoy.":
+        native: "The shop is closed today."
+        bases: {"La": "the", "cerrada": "closed"}
+  "es-0850":
+    native: "on time; punctual"
+    notes: { n1: "Puntual is on time, not late." }
+    examples:
+      "Llego puntual.":
+        native: "I arrive on time."
+        bases: {"puntual": "on time"}
+      "El tren es puntual.":
+        native: "The train is on time."
+        bases: {"El": "the", "puntual": "on time"}
+  "es-0851":
+    native: "to last"
+    notes: { n1: "Durar is to last, to take a length of time. It is a regular -ar verb." }
+    examples:
+      "El almuerzo dura una hora.":
+        native: "Lunch lasts an hour."
+        bases: {"El": "the", "dura": "last", "una": "a"}
+      "La reunión dura dos horas.":
+        native: "The meeting lasts two hours."
+        bases: {"La": "the", "dura": "last"}
+  "es-0852":
+    native: "to start; to begin"
+    notes: { n1: "Empezar is to start. Its stem changes: empiezo, empiezas, empieza, empiezan." }
+    examples:
+      "La reunión empieza a las nueve.":
+        native: "The meeting starts at nine."
+        bases: {"La": "the", "empieza": "start", "a": "to", "las": "the"}
+      "Empiezo a las ocho.":
+        native: "I start at eight."
+        bases: {"Empiezo": "start", "a": "to", "las": "the"}
