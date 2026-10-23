@@ -5,8 +5,8 @@
 # This is also Toki Pona's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"):
 # every unit from the first words to B1, with its size in words, its
 # grammar topics, the three milestones, and for each planned unit its
-# listening and reading passages. The first three units are written (their decks are
-# listed under units 1 to 3); every other unit is planned: the course teaches each
+# listening and reading passages. The first seven units are written (their decks are
+# listed under units 1 to 7); every other unit is planned: the course teaches each
 # as "Coming" until its deck is written.
 #
 # Toki Pona is small on purpose. Sonja Lang's first book (pu, 2014) has
@@ -162,25 +162,33 @@ units:
   - decks: ["tok-pronouns", "tok-pronouns-sentences", "tok-reading-pronouns", "*"]
     words: 4
   # moku, lape, pali, lukin, kute, jo, wile, kama and tawa.
-  - planned: { id: "tok-everyday-verbs", theme: "everyday-verbs", words: 9 }
-    listening_passages:
-      - { id: "what-i-do", text: { "en": "A short monologue: what I eat, see, hear and want today" } }
-    reading_passages:
-      - { id: "day-note", text: { "en": "A note left for a housemate about who is eating and sleeping when" } }
-  # The basic sentence: li before the predicate, no li after mi or sina
+  # Its sentences are tok-everyday-verbs-sentences, and its passages are in
+  # tok-reading-everyday-verbs: the listening passage what-i-do (a short
+  # spoken account of what someone eats, sees, hears and wants) and the
+  # reading passage day-note (a note for a housemate about who is leaving,
+  # eating and sleeping).
+  - decks: ["tok-everyday-verbs", "tok-everyday-verbs-sentences", "tok-reading-everyday-verbs", "*"]
+    words: 9
+  # 6. The basic sentence: li before the predicate, no li after mi or sina
   # alone, e before the object. Any word can be a noun, verb or modifier
-  # by its place: moku is food and to eat.
-  - planned: { id: "tok-grammar-sentence", grammar: ["li-predicate", "mi-sina-without-li", "e-object", "word-roles"] }
-    listening_passages:
-      - { id: "simple-statements", text: { "en": "Ten short statements about a cat, a person and some food" } }
-    reading_passages:
-      - { id: "three-lines", text: { "en": "A three-line story: someone sees food, wants it and eats it" } }
-  # suli, lili, ike, sin, wawa, mute, ante and sama.
-  - planned: { id: "tok-describing", theme: "describing", words: 8 }
-    listening_passages:
-      - { id: "describing-a-room", text: { "en": "Someone describes a room: big, small, new, strong" } }
-    reading_passages:
-      - { id: "for-sale", text: { "en": "A small ad describing something for sale" } }
+  # by its place: moku is food and to eat. The particles li and e are
+  # cards here (tok-0101 and tok-0102), taught on words already known, so
+  # they are its two words. Its sentences are tok-grammar-sentence-sentences,
+  # and its passages are in tok-en-reading-sentences: the listening passage
+  # simple-statements (ten short statements about a person and some food;
+  # a cat is left out, since soweli is taught in its own unit later) and the
+  # reading passage three-lines (a three-line story: someone sees food, wants
+  # it and eats it).
+  - decks: ["tok-grammar-sentence", "tok-grammar-sentence-sentences", "tok-reading-sentences", "tok-grammar-li-predicate", "tok-grammar-mi-sina-without-li", "tok-grammar-e-object", "tok-grammar-word-roles"]
+    words: 2
+    grammar: ["li-predicate", "mi-sina-without-li", "e-object", "word-roles"]
+  # suli, lili, ike, sin, wawa, mute, ante and sama. Its sentences are
+  # tok-describing-sentences, and its passages are in tok-en-reading-describing:
+  # the listening passage describing-a-room (someone describes a thing: big,
+  # small, new) and the reading passage for-sale (a small ad for something
+  # to give away).
+  - decks: ["tok-describing", "tok-describing-sentences", "tok-reading-describing", "*"]
+    words: 8
   # ala after the word it denies; the X ala X question (sina pona ala
   # pona?); seme in the place of the answer; answering with the verb.
   - planned: { id: "tok-grammar-negation-questions", grammar: ["negation-ala", "x-ala-x-questions", "seme-questions", "answering-yes-no"] }

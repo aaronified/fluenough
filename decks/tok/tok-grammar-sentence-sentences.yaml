@@ -1,0 +1,126 @@
+schema: 1
+id: "tok-grammar-sentence-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "tok-0103"
+    target: "ona li moku."
+    ipa: "ˈona li ˈmoku"
+    pos: "phrase"
+    bases:
+      - { word: "ona", ref: "tok-0062" }
+      - { word: "li", ref: "tok-0101" }
+      - { word: "moku", ref: "tok-0080" }
+    confusables:
+      - { id: "w1", ref: "tok-0003", kind: "word" }
+      - { id: "w2", ref: "tok-0005", kind: "word" }
+  - id: "tok-0104"
+    target: "ijo ni li moku."
+    ipa: "ˈijo ni li ˈmoku"
+    pos: "phrase"
+    bases:
+      - { word: "ijo", ref: "tok-0065" }
+      - { word: "ni", ref: "tok-0063" }
+      - { word: "li", ref: "tok-0101" }
+      - { word: "moku", ref: "tok-0080" }
+    confusables:
+      - { id: "w1", ref: "tok-0002", kind: "word" }
+      - { id: "w2", ref: "tok-0082", kind: "word" }
+  - id: "tok-0105"
+    target: "mi lukin e moku."
+    ipa: "mi ˈlukin e ˈmoku"
+    pos: "phrase"
+    bases:
+      - { word: "mi", ref: "tok-0003" }
+      - { word: "lukin", ref: "tok-0083" }
+      - { word: "e", ref: "tok-0102" }
+      - { word: "moku", ref: "tok-0080" }
+    confusables:
+      - { id: "w1", ref: "tok-0004", kind: "word" }
+      - { id: "w2", ref: "tok-0086", kind: "word" }
+  - id: "tok-0106"
+    target: "ona li wile e pan."
+    ipa: "ˈona li ˈwile e pan"
+    pos: "phrase"
+    bases:
+      - { word: "ona", ref: "tok-0062" }
+      - { word: "li", ref: "tok-0101" }
+      - { word: "wile", ref: "tok-0086" }
+      - { word: "e", ref: "tok-0102" }
+      - { word: "pan", ref: "tok-0034" }
+    confusables:
+      - { id: "w1", ref: "tok-0035", kind: "word" }
+      - { id: "w2", ref: "tok-0081", kind: "word" }
+  - id: "tok-0107"
+    target: "sina pona."
+    ipa: "ˈsina ˈpona"
+    pos: "phrase"
+    bases:
+      - { word: "sina", ref: "tok-0004" }
+      - { word: "pona", ref: "tok-0002" }
+    confusables:
+      - { id: "w1", ref: "tok-0003", kind: "word" }
+      - { id: "w2", ref: "tok-0005", kind: "word" }
+  - id: "tok-0108"
+    target: "mi moku e moku pona."
+    ipa: "mi ˈmoku e ˈmoku ˈpona"
+    pos: "phrase"
+    bases:
+      - { word: "mi", ref: "tok-0003" }
+      - { word: "moku", ref: "tok-0080" }
+      - { word: "e", ref: "tok-0102" }
+      - { word: "pona", ref: "tok-0002" }
+    confusables:
+      - { id: "w1", ref: "tok-0004", kind: "word" }
+      - { id: "w2", ref: "tok-0065", kind: "word" }
+  - id: "tok-0109"
+    target: "jan li lape."
+    ipa: "jan li ˈlape"
+    pos: "phrase"
+    bases:
+      - { word: "jan", ref: "tok-0064" }
+      - { word: "li", ref: "tok-0101" }
+      - { word: "lape", ref: "tok-0081" }
+    confusables:
+      - { id: "w1", ref: "tok-0003", kind: "word" }
+      - { id: "w2", ref: "tok-0002", kind: "word" }
+  - id: "tok-0110"
+    target: "mi jo e moku."
+    ipa: "mi jo e ˈmoku"
+    pos: "phrase"
+    bases:
+      - { word: "mi", ref: "tok-0003" }
+      - { word: "jo", ref: "tok-0085" }
+      - { word: "e", ref: "tok-0102" }
+      - { word: "moku", ref: "tok-0080" }
+    confusables:
+      - { id: "w1", ref: "tok-0035", kind: "word" }
+      - { id: "w2", ref: "tok-0005", kind: "word" }
+  - id: "tok-0111"
+    target: "ona li pali e moku."
+    ipa: "ˈona li ˈpali e ˈmoku"
+    pos: "phrase"
+    bases:
+      - { word: "ona", ref: "tok-0062" }
+      - { word: "li", ref: "tok-0101" }
+      - { word: "pali", ref: "tok-0082" }
+      - { word: "e", ref: "tok-0102" }
+      - { word: "moku", ref: "tok-0080" }
+    confusables:
+      - { id: "w1", ref: "tok-0083", kind: "word" }
+      - { id: "w2", ref: "tok-0081", kind: "word" }
+  - id: "tok-0112"
+    target: "sina wile e pan."
+    ipa: "ˈsina ˈwile e pan"
+    pos: "phrase"
+    bases:
+      - { word: "sina", ref: "tok-0004" }
+      - { word: "wile", ref: "tok-0086" }
+      - { word: "e", ref: "tok-0102" }
+      - { word: "pan", ref: "tok-0034" }
+    confusables:
+      - { id: "w1", ref: "tok-0003", kind: "word" }
+      - { id: "w2", ref: "tok-0005", kind: "word" }
