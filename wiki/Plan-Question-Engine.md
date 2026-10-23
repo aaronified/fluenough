@@ -207,7 +207,9 @@ every card in the shipped decks, then deletes the old.
    asked its grammar skills after its word's own, so they are reached when
    its `modes` leave no other skill for the exercise. `Difficulty.of` reads
    `Card.rearranges`; it still counts a one-word `pos: phrase` as hard, as
-   before. Same questions as before for every card without siblings.
+   before. Same questions as before for every card without siblings. A
+   pattern cell that has siblings now gets form questions too, which it did
+   not before.
 9. **Numbers as cards, reading as exam items (#5, #6).** `NumberCard`
    becomes a card with data, asked through the registry. Reading questions
    leave review: they are exam items, drawn by the exam screen (see
