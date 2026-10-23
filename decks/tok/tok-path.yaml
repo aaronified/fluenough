@@ -344,11 +344,9 @@ units:
     words: 3
   # Several contexts in one sentence: tenpo pini la, ma ni la, mi ...;
   # a la clause inside a story.
-  - planned: { id: "tok-grammar-la-chains", grammar: ["stacked-la"] }
-    listening_passages:
-      - { id: "childhood", text: { "en": "Someone remembers a place from their childhood" } }
-    reading_passages:
-      - { id: "travel-blog", text: { "en": "A paragraph of a travel blog" } }
+  - decks: ["tok-grammar-la-chains", "tok-grammar-la-chains-sentences", "tok-reading-la-chains"]
+    words: 0
+    grammar: ["stacked-la"]
   # monsuta, kijetesantakalu and lanpan: fear or monster, the raccoon
   # family (a well-known joke word), and to take.
   - planned: { id: "tok-stories", theme: "stories", words: 3 }
