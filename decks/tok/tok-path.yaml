@@ -315,11 +315,9 @@ units:
   # Describing what has no word: choosing the head (what kind of thing is
   # it?), then the modifiers, and pi chains for longer descriptions; why
   # two speakers may say the same thing differently.
-  - planned: { id: "tok-grammar-describing-unnamed", grammar: ["choosing-the-head", "pi-chains", "many-ways-to-say"] }
-    listening_passages:
-      - { id: "explain-a-job", text: { "en": "Someone explains their job, which has no word in toki pona" } }
-    reading_passages:
-      - { id: "riddles", text: { "en": "Five riddles, each describing a thing without naming it" } }
+  - decks: ["tok-grammar-describing-unnamed", "tok-grammar-describing-unnamed-sentences", "tok-reading-describing-unnamed"]
+    words: 0
+    grammar: ["choosing-the-head", "pi-chains", "many-ways-to-say"]
   # tonsi and unpa. unpa is in pu and in the sense of sex, taught with a
   # note; to confirm with the owner whether the course teaches it.
   - planned: { id: "tok-relationships", theme: "relationships", words: 2 }
