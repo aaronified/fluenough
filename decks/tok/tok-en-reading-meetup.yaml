@@ -1,0 +1,49 @@
+schema: 1
+id: "tok-en-reading-meetup"
+name: "Reading: meeting people"
+kind: reading
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short passages from the first words unit: a short chat when two people meet, and name tags at a meetup. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "tok-first-toki"
+    title: "Toki!"
+    sentences:
+      - text: "toki! sina pona ala pona?"
+      - text: "mi pona. nimi mi: Ana."
+      - text: "mi toki pona. sina toki pona?"
+    questions:
+      - id: "tok-0030"
+        prompt: { en: "What does the first speaker ask?" }
+        options:
+          - { en: "Whether the other person is well" }
+          - { en: "Where the other person lives" }
+        answer: 1
+      - id: "tok-0031"
+        prompt: { en: "What does the second speaker say their name is?" }
+        options:
+          - { en: "Ana" }
+          - { en: "Toki" }
+        answer: 1
+  - id: "tok-name-tags"
+    title: "Name tags"
+    sentences:
+      - text: "nimi: Ana. mi pona."
+      - text: "nimi: Sami. mi toki pona."
+      - text: "nimi: Jo. mi sona ala."
+    questions:
+      - id: "tok-0032"
+        prompt: { en: "Which name tag says its owner does not know?" }
+        options:
+          - { en: "Ana" }
+          - { en: "Jo" }
+        answer: 2
+      - id: "tok-0033"
+        prompt: { en: "Which name tag says its owner speaks Toki Pona?" }
+        options:
+          - { en: "Sami" }
+          - { en: "Ana" }
+        answer: 1
