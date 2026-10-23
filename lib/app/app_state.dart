@@ -2370,6 +2370,7 @@ class AppState extends ChangeNotifier {
         straightToQuestion: (card) =>
             card.rule != null && lesson.members.contains(card.id),
         typed: isTyped,
+        siblingsOf: siblingsOf,
       ))
         item.ask == Ask.hearMeaning && hearsForm(item.card)
             ? item.askedAs(Ask.hearAndChoose)

@@ -36,6 +36,7 @@ SessionItem item(Card card, DrillMode mode) =>
 
 void main() {
   siblingTests();
+  lessonSiblingTests();
   modesTests();
   test(
     'a cell with other forms is asked to choose its form and its meaning',
@@ -295,5 +296,71 @@ void modesTests() {
       'te-1:grammar',
       'te-2:grammar',
     });
+  });
+}
+
+void lessonSiblingTests() {
+  final amma = word('te-1', 'ammaki', 'to mother', base: 'te-amma');
+  final loc = word('te-2', 'ammalō', 'in mother', base: 'te-amma');
+  final alone = word('te-5', 'pustakam', 'book');
+
+  test('a lesson asks a card with siblings its word, then its forms', () {
+    expect(lessonQuestions(amma, siblings: [loc]), [
+      (mode: DrillMode.recognition, ask: Ask.chooseMeaning),
+      (mode: DrillMode.speaking, ask: Ask.own),
+      (mode: DrillMode.listening, ask: Ask.hearMeaning),
+      (mode: DrillMode.production, ask: Ask.chooseWord),
+      (mode: DrillMode.grammarUnderstood, ask: Ask.chooseFormMeaning),
+      (mode: DrillMode.grammar, ask: Ask.chooseForm),
+    ]);
+  });
+
+  test('a card with no sibling is asked only its word, and none is typed', () {
+    final questions = lessonQuestions(alone);
+    expect(questions.map((q) => q.mode), [
+      DrillMode.recognition,
+      DrillMode.speaking,
+      DrillMode.listening,
+      DrillMode.production,
+    ]);
+    expect(lessonQuestions(alone, siblings: const <Card>[]), questions);
+  });
+
+  test('a lesson reaches the forms of a card whose word skills are off', () {
+    final card = word(
+      'te-1',
+      'ammaki',
+      'to mother',
+      base: 'te-amma',
+      modes: {DrillMode.recognition, DrillMode.listening, DrillMode.speaking},
+    );
+    final plan = lessonPlan(
+      [card],
+      modesOf: (c) => c.modesIn(ttsAvailable: true, siblings: [loc]),
+      canChoose: (_, _) => true,
+      siblingsOf: (_) => [loc],
+    );
+    expect(plan.map((i) => (i.mode, i.ask)), [
+      (DrillMode.production, Ask.teach),
+      (DrillMode.production, Ask.chooseWord),
+      (DrillMode.grammarUnderstood, Ask.chooseFormMeaning),
+    ]);
+  });
+
+  test('a hard card is typed only in a typed language', () {
+    final phrase = word('te-9', 'amma illu pustakam', 'mother house book');
+    expect(lessonQuestions(phrase, typed: false).first, (
+      mode: DrillMode.production,
+      ask: Ask.rearrange,
+    ));
+    final one = Card(
+      id: 'te-10',
+      deckId: 'te-en-words',
+      target: 'namaste',
+      native: 'hello',
+      pos: 'phrase',
+    );
+    expect(lessonQuestions(one).first.ask, Ask.own);
+    expect(lessonQuestions(one, typed: false).first.ask, Ask.chooseWord);
   });
 }
