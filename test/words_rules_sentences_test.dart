@@ -18,6 +18,7 @@ import 'package:fluenough/features/drill/choice_drill.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/rule_card.dart';
 import 'package:fluenough/features/drill/teach_drill.dart';
+import 'package:flutter/widgets.dart' show Scrollable;
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/harness.dart';
