@@ -16,8 +16,10 @@ import '../core/models/romanisation.dart';
 import '../core/models/script_guide.dart';
 import '../core/models/sound_contrasts.dart';
 import '../core/numbers/number_practice.dart';
+import '../core/scheduling/daily_budget.dart';
 import '../core/scheduling/skill_map.dart';
 import '../core/scheduling/session_queue.dart';
+import '../core/scheduling/study_hours.dart';
 import '../core/sound/sound_check.dart';
 import '../core/speech/speech_engine.dart';
 import '../core/tts/clip_player.dart';
@@ -37,6 +39,7 @@ import '../core/decks/deck_index.dart';
 import 'app_log.dart';
 import 'card_media.dart';
 import 'card_sets.dart';
+import 'daily_plan.dart';
 import '../core/decks/ipa_course.dart';
 import 'deck_catalog.dart';
 import 'deck_downloads.dart';
@@ -2174,8 +2177,12 @@ class AppState extends ChangeNotifier {
 
   /// The items of the session for [request], each asked as a review asks it
   /// ([reviewAsks]): what a drill runs.
-  List<SessionItem> sessionItems(DrillRequest request) => reviewAsks(
-    _limited(buildSession(request).items, request.limit),
+  List<SessionItem> sessionItems(DrillRequest request) =>
+      _asked(_limited(buildSession(request).items, request.limit));
+
+  /// [items], each asked as a review asks it ([reviewAsks]).
+  List<SessionItem> _asked(List<SessionItem> items) => reviewAsks(
+    items,
     canChoose: (item) => canChoose(
       item.card,
       item.ask == Ask.own ? Ask.chooseMeaning : item.ask,
@@ -2185,6 +2192,128 @@ class AppState extends ChangeNotifier {
     typed: (item) => isTyped(item.card),
     siblingsOf: siblingsOf,
   );
+
+  // ---------------------------------------------------------------------------
+  // The day's session (#521, #485)
+
+  /// The most new words one daily session teaches: what a lesson teaches
+  /// (ADR-0024).
+  static const int dailyNewCap = 9;
+
+  /// What the log says of the time answers took, for [language] (every
+  /// language when null), worked out again only when the log has grown or
+  /// the day has changed: Today asks for it on every build.
+  final Map<String?, _AnswerTimes> _answerTimes = <String?, _AnswerTimes>{};
+
+  _AnswerTimes _timesIn(String? language, DateTime at) {
+    final log = progress.log;
+    final cached = _answerTimes[language];
+    if (cached != null &&
+        cached.logLength == log.length &&
+        identical(cached.lastEvent, log.lastOrNull) &&
+        isSameDay(cached.day, at)) {
+      return cached;
+    }
+    final seconds = <double>[];
+    var spent = Duration.zero;
+    for (final e in log) {
+      if (language != null && Abilities.languageOf(e.cardId) != language) {
+        continue;
+      }
+      final time = StudyHours.capped(e.elapsed);
+      seconds.add(time.inMilliseconds / 1000);
+      if (isSameDay(e.at, at)) spent += time;
+    }
+    return _answerTimes[language] = _AnswerTimes(
+      logLength: log.length,
+      lastEvent: log.lastOrNull,
+      day: at,
+      seconds: seconds,
+      spent: spent,
+    );
+  }
+
+  /// Seconds a card takes this learner in [language] (every language when
+  /// null): their own median once they have answered 20 cards, else 17.5.
+  double secondsPerCardIn(String? language) =>
+      DailyBudget.secondsPerCard(_timesIn(language, now()).seconds);
+
+  /// [language]'s day: its minutes, what is spent, what waits, and what
+  /// the rest of the budget buys.
+  DailyPlan dailyPlanFor(LanguageInfo language) {
+    final code = language.code;
+    final at = now();
+    final goal = settings.dailyMinutesFor(code);
+    final extra = settings.dailyExtraFor(code, at);
+    final minutes = max(DailyBudget.minMinutes, goal + extra);
+    final times = _timesIn(code, at);
+    final spent = times.spent;
+    final perCard = DailyBudget.secondsPerCard(times.seconds);
+    final due = buildSession(DrillRequest.today(language: code)).length;
+    final newAvailable = min(dailyNewCap, untaughtCards(code).length);
+    final left = minutes * 60 - spent.inSeconds;
+    // With the budget spent, the split is what "Keep going" would buy.
+    // Time left, however little, still buys a card, so the last seconds of a
+    // day's budget are not a dead end with "Keep going" hidden.
+    final budget = left > 0
+        ? max(1, (left / perCard).floor())
+        : DailyBudget.cardsFor(
+            DailyBudget.stepMinutes,
+            secondsPerCard: perCard,
+          );
+    return DailyPlan(
+      language: language,
+      goalMinutes: goal,
+      extraMinutes: extra,
+      spent: spent,
+      secondsPerCard: perCard,
+      due: due,
+      newAvailable: newAvailable,
+      split: DailyBudget.split(
+        due: due,
+        budget: budget,
+        dayBudget: DailyBudget.cardsFor(goal, secondsPerCard: perCard),
+        newAvailable: newAvailable,
+      ),
+    );
+  }
+
+  /// Adds [minutes] (negative to take off) to [language]'s day today, never
+  /// taking it below the least a day may be.
+  void addDailyMinutes(String language, int minutes) {
+    final at = now();
+    final goal = settings.dailyMinutesFor(language);
+    final extra = settings.dailyExtraFor(language, at) + minutes;
+    settings.setDailyExtra(
+      language,
+      max(DailyBudget.minMinutes - goal, extra),
+      at,
+    );
+  }
+
+  /// The items of the day's session for [request]: the reviews the rest of
+  /// the budget buys, the most forgotten first (lowest predicted recall,
+  /// then most overdue), then a lesson of the new words it buys.
+  List<SessionItem> dailyItems(DrillRequest request) {
+    final language = <LanguageInfo>[
+      for (final entry in decks)
+        if (entry.language.code == request.language) entry.language,
+    ].firstOrNull;
+    if (language == null) return const <SessionItem>[];
+    final plan = dailyPlanFor(language);
+    final due = DailyBudget.mostForgottenFirst(
+      buildSession(DrillRequest.today(language: language.code)).items,
+      now(),
+    );
+    return <SessionItem>[
+      ..._asked(due.take(plan.split.reviews).toList()),
+      if (plan.split.newWords > 0)
+        ...lessonFor(
+          DrillRequest.lesson(language: language.code),
+          words: plan.split.newWords,
+        ),
+    ];
+  }
 
   final Expando<FormSiblings> _siblingIndex = Expando<FormSiblings>();
 
@@ -2348,7 +2477,10 @@ class AppState extends ChangeNotifier {
   /// comes first, whole or in parts, with every new member of it taught in
   /// the lesson, whatever the cap; a rules table's cell it taught goes
   /// straight to its question ([lessonSets], #515).
-  List<SessionItem> lessonFor(DrillRequest request) {
+  ///
+  /// With [words], the lesson teaches that many words at most, the easiest
+  /// first: the new words of a day's session (#485).
+  List<SessionItem> lessonFor(DrillRequest request, {int? words}) {
     final cards = untaughtCards(
       request.language!,
       deckId: request.deckIds?.single,
@@ -2370,9 +2502,10 @@ class AppState extends ChangeNotifier {
               SessionItem(card: question, mode: mode, state: null),
       ]);
     }
-    final picked = lessonItems(
-      cards.takeWhile((card) => card is! QuestionCard),
-    );
+    final taught = cards.takeWhile((card) => card is! QuestionCard);
+    final picked = words == null
+        ? lessonItems(taught)
+        : lessonItems(taught, each: (words / 3).ceil()).take(words).toList();
     final modesOf = drillableModesNow();
     final lesson = lessonSets(
       picked,
@@ -2698,3 +2831,26 @@ typedef TodayFact = ({
   Fact fact,
   List<({String code, String text})> texts,
 });
+
+/// The time answers took in one language, as [AppState] caches it.
+class _AnswerTimes {
+  const _AnswerTimes({
+    required this.logLength,
+    required this.lastEvent,
+    required this.day,
+    required this.seconds,
+    required this.spent,
+  });
+
+  /// The log's length and last event when this was worked out (a replayed
+  /// log makes new events), and the day it counts.
+  final int logLength;
+  final Object? lastEvent;
+  final DateTime day;
+
+  /// What each answer took, in seconds, each capped as hours spent caps it.
+  final List<double> seconds;
+
+  /// The time answers took on [day].
+  final Duration spent;
+}

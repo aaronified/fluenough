@@ -15,6 +15,7 @@ class DrillRequest {
     this.untaught = false,
     this.revise = false,
     this.lesson = false,
+    this.daily = false,
     this.language,
     this.limit,
     this.cardIds,
@@ -34,6 +35,11 @@ class DrillRequest {
     Skill? skill,
     Set<String> tags = const <String>{},
   }) : this(deckIds: <String>{deckId}, skill: skill, tags: tags);
+
+  /// The day's session in [language] (#521): the reviews and new words the
+  /// daily minutes buy (#485), in one session.
+  const DrillRequest.daily({required String language})
+    : this(daily: true, language: language);
 
   /// A lesson (ADR-0024): new words from [language]'s pending units, or with
   /// [deckId] from that deck, taught, checked and practised.
@@ -126,6 +132,10 @@ class DrillRequest {
   /// A lesson, in [language], from [deckIds] if given.
   final bool lesson;
 
+  /// The day's mixed session in [language]: reviews, then new words, sized
+  /// by the daily minutes ([AppState.dailyItems]).
+  final bool daily;
+
   /// Only decks in this language, by code; null for every language.
   final String? language;
 
@@ -144,7 +154,7 @@ class DrillRequest {
       'DrillRequest(decks: ${deckIds ?? 'all'}, skill: ${skill?.name}, '
       'skills: ${skills?.map((s) => s.name)}, '
       'tags: $tags, newOnly: $newOnly, numbers: $numbers, '
-      'untaught: $untaught, revise: $revise, lesson: $lesson, '
+      'untaught: $untaught, revise: $revise, lesson: $lesson, daily: $daily, '
       'language: $language, limit: $limit, cards: $cardIds)';
 }
 

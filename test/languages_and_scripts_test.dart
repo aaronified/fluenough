@@ -55,7 +55,7 @@ import 'package:fluenough/features/placement/placement_page.dart';
 import 'package:fluenough/features/placement/placement_questions.dart';
 import 'package:fluenough/features/placement/script_test_page.dart';
 import 'package:fluenough/features/stats/stats_numbers.dart';
-import 'package:fluenough/features/today/lesson_card.dart';
+import 'package:fluenough/features/today/daily_card.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/script_name.dart';
 import 'package:fluenough/ui/widgets/language_bar.dart';
@@ -2204,11 +2204,9 @@ void main() {
         await tester.pumpAndSettle(const Duration(seconds: 2));
         expect(state.shownLanguage, 'bn');
 
-        // Today follows it: Bengali's lesson alone.
-        final lessons = tester
-            .widget<LessonCard>(find.byType(LessonCard))
-            .lessons;
-        expect(lessons.map((l) => l.language.code), <String>['bn']);
+        // Today follows it: Bengali's day alone.
+        final plans = tester.widget<DailyCard>(find.byType(DailyCard)).plans;
+        expect(plans.map((p) => p.language.code), <String>['bn']);
 
         {
           usePhone(tester);
@@ -2281,10 +2279,8 @@ void main() {
           // Today and Decks still show Spanish alone.
           state.shellTab.value = ShellTab.today;
           await tester.pumpAndSettle();
-          final lessons = tester
-              .widget<LessonCard>(find.byType(LessonCard))
-              .lessons;
-          expect(lessons.map((l) => l.language.code), <String>['es']);
+          final plans = tester.widget<DailyCard>(find.byType(DailyCard)).plans;
+          expect(plans.map((p) => p.language.code), <String>['es']);
           expect(tester.widget<LanguageBarChip>(chip()).selected, isTrue);
           state.shellTab.value = ShellTab.decks;
           await tester.pumpAndSettle();
