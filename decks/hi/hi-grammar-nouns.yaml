@@ -1,138 +1,887 @@
 schema: 1
 id: "hi-grammar-nouns"
 part: "core"
-kind: "grammar"
+kind: "rules"
 language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "grammar"]
-pattern:
-  slots: ["plural", "singular, before a postposition", "plural, before a postposition"]
-  entries:
-    - lemma: "लड़का"
-      key: "ladkaa"
-      reading: "laṛkā"
-      ipa: "ləɽkaː"
-      forms:
-        "plural": "लड़के"
-        "singular, before a postposition": "लड़के"
-        "plural, before a postposition": "लड़कों"
-      readings:
-        "plural": "laṛkē"
-        "singular, before a postposition": "laṛkē"
-        "plural, before a postposition": "laṛkōm̐"
-      ipas:
-        "plural": "ləɽkeː"
-        "singular, before a postposition": "ləɽkeː"
-        "plural, before a postposition": "ləɽkõː"
-    - lemma: "कमरा"
-      key: "kamraa"
-      reading: "kamrā"
-      ipa: "kəmraː"
-      forms:
-        "plural": "कमरे"
-        "singular, before a postposition": "कमरे"
-        "plural, before a postposition": "कमरों"
-      readings:
-        "plural": "kamrē"
-        "singular, before a postposition": "kamrē"
-        "plural, before a postposition": "kamrōm̐"
-      ipas:
-        "plural": "kəmreː"
-        "singular, before a postposition": "kəmreː"
-        "plural, before a postposition": "kəmrõː"
-    - lemma: "घर"
-      key: "ghar"
-      reading: "ghar"
-      ipa: "ɡʱər"
-      forms:
-        "plural": "घर"
-        "singular, before a postposition": "घर"
-        "plural, before a postposition": "घरों"
-      readings:
-        "plural": "ghar"
-        "singular, before a postposition": "ghar"
-        "plural, before a postposition": "gharōm̐"
-      ipas:
-        "plural": "ɡʱər"
-        "singular, before a postposition": "ɡʱər"
-        "plural, before a postposition": "ɡʱərõː"
-    - lemma: "आदमी"
-      key: "aadmii"
-      reading: "ādmī"
-      ipa: "aːd̪miː"
-      forms:
-        "plural": "आदमी"
-        "singular, before a postposition": "आदमी"
-        "plural, before a postposition": "आदमियों"
-      readings:
-        "plural": "ādmī"
-        "singular, before a postposition": "ādmī"
-        "plural, before a postposition": "ādmiyōm̐"
-      ipas:
-        "plural": "aːd̪miː"
-        "singular, before a postposition": "aːd̪miː"
-        "plural, before a postposition": "aːd̪mɪjõː"
-    - lemma: "लड़की"
-      key: "ladkii"
-      reading: "laṛkī"
-      ipa: "ləɽkiː"
-      forms:
-        "plural": "लड़कियाँ"
-        "singular, before a postposition": "लड़की"
-        "plural, before a postposition": "लड़कियों"
-      readings:
-        "plural": "laṛkiyām̐"
-        "singular, before a postposition": "laṛkī"
-        "plural, before a postposition": "laṛkiyōm̐"
-      ipas:
-        "plural": "ləɽkɪjãː"
-        "singular, before a postposition": "ləɽkiː"
-        "plural, before a postposition": "ləɽkɪjõː"
-    - lemma: "किताब"
-      key: "kitaab"
-      reading: "kitāb"
-      ipa: "kɪt̪aːb"
-      forms:
-        "plural": "किताबें"
-        "singular, before a postposition": "किताब"
-        "plural, before a postposition": "किताबों"
-      readings:
-        "plural": "kitābēm̐"
-        "singular, before a postposition": "kitāb"
-        "plural, before a postposition": "kitābōm̐"
-      ipas:
-        "plural": "kɪt̪aːbẽː"
-        "singular, before a postposition": "kɪt̪aːb"
-        "plural, before a postposition": "kɪt̪aːbõː"
-    - lemma: "बहन"
-      key: "bahan"
-      reading: "bahan"
-      ipa: "bəɦən"
-      forms:
-        "plural": "बहनें"
-        "singular, before a postposition": "बहन"
-        "plural, before a postposition": "बहनों"
-      readings:
-        "plural": "bahnēm̐"
-        "singular, before a postposition": "bahan"
-        "plural, before a postposition": "bahnōm̐"
-      ipas:
-        "plural": "bəɦnẽː"
-        "singular, before a postposition": "bəɦən"
-        "plural, before a postposition": "bəɦnõː"
-    - lemma: "भाषा"
-      key: "bhaashaa"
-      reading: "bhāśā"
-      ipa: "bʱaːʃaː"
-      forms:
-        "plural": "भाषाएँ"
-        "singular, before a postposition": "भाषा"
-        "plural, before a postposition": "भाषाओं"
-      readings:
-        "plural": "bhāśāēm̐"
-        "singular, before a postposition": "bhāśā"
-        "plural, before a postposition": "bhāśāōm̐"
-      ipas:
-        "plural": "bʱaːʃaːẽː"
-        "singular, before a postposition": "bʱaːʃaː"
-        "plural, before a postposition": "bʱaːʃaːõː"
+table:
+  applies_to:
+    pos: ["noun"]
+    except: ["hi-0320", "hi-0321", "hi-0322", "hi-0323", "hi-0324", "hi-0325", "hi-0326", "hi-0327", "hi-0328", "hi-0329", "hi-0330", "hi-0331", "hi-0241", "hi-1140", "hi-0873", "hi-0874", "hi-0310", "hi-0311", "hi-0312", "hi-0313", "hi-0314", "hi-0315", "hi-0316", "hi-0263"]
+  slots: ["singular", "plural", "oblique-singular", "oblique-plural"]
+  rows:
+    - word: "hi-0187"
+      forms: { "singular": "नाम", "plural": "नाम", "oblique-singular": "नाम", "oblique-plural": "नामों" }
+      readings: { "singular": "nām", "plural": "nām", "oblique-singular": "nām", "oblique-plural": "nāmōm̐" }
+    - word: "hi-0192"
+      forms: { "singular": "घर", "plural": "घर", "oblique-singular": "घर", "oblique-plural": "घरों" }
+      readings: { "singular": "ghar", "plural": "ghar", "oblique-singular": "ghar", "oblique-plural": "gharōm̐" }
+    - word: "hi-0193"
+      forms: { "singular": "परिवार", "plural": "परिवार", "oblique-singular": "परिवार", "oblique-plural": "परिवारों" }
+      readings: { "singular": "parivār", "plural": "parivār", "oblique-singular": "parivār", "oblique-plural": "parivārōm̐" }
+    - word: "hi-0194"
+      forms: { "singular": "काम", "plural": "काम", "oblique-singular": "काम", "oblique-plural": "कामों" }
+      readings: { "singular": "kām", "plural": "kām", "oblique-singular": "kām", "oblique-plural": "kāmōm̐" }
+    - word: "hi-0195"
+      forms: { "singular": "शहर", "plural": "शहर", "oblique-singular": "शहर", "oblique-plural": "शहरों" }
+      readings: { "singular": "śahar", "plural": "śahar", "oblique-singular": "śahar", "oblique-plural": "śahrōm̐" }
+    - word: "hi-0196"
+      forms: { "singular": "देश", "plural": "देश", "oblique-singular": "देश", "oblique-plural": "देशों" }
+      readings: { "singular": "dēś", "plural": "dēś", "oblique-singular": "dēś", "oblique-plural": "dēśōm̐" }
+    - word: "hi-0197"
+      forms: { "singular": "भाषा", "plural": "भाषाएँ", "oblique-singular": "भाषा", "oblique-plural": "भाषाओं" }
+      readings: { "singular": "bhāśā", "plural": "bhāśāēm̐", "oblique-singular": "bhāśā", "oblique-plural": "bhāśāōm̐" }
+    - word: "hi-0177"
+      forms: { "singular": "भैया", "plural": "भैये", "oblique-singular": "भैये", "oblique-plural": "भैयों" }
+      readings: { "singular": "bhaiyā", "plural": "bhaiyē", "oblique-singular": "bhaiyē", "oblique-plural": "bhaiyōm̐" }
+    - word: "hi-0178"
+      forms: { "singular": "दीदी", "plural": "दीदियाँ", "oblique-singular": "दीदी", "oblique-plural": "दीदियों" }
+      readings: { "singular": "dīdī", "plural": "dīdiyām̐", "oblique-singular": "dīdī", "oblique-plural": "dīdiyōm̐" }
+    - word: "hi-0180"
+      forms: { "singular": "अंकल", "plural": "अंकल", "oblique-singular": "अंकल", "oblique-plural": "अंकलों" }
+      readings: { "singular": "aṅkal", "plural": "aṅkal", "oblique-singular": "aṅkal", "oblique-plural": "aṅkalōm̐" }
+    - word: "hi-0181"
+      forms: { "singular": "आंटी", "plural": "आंटियाँ", "oblique-singular": "आंटी", "oblique-plural": "आंटियों" }
+      readings: { "singular": "āṇṭī", "plural": "āṇṭiyām̐", "oblique-singular": "āṇṭī", "oblique-plural": "āṇṭiyōm̐" }
+    - word: "hi-0182"
+      forms: { "singular": "साहब", "plural": "साहब", "oblique-singular": "साहब", "oblique-plural": "साहबों" }
+      readings: { "singular": "sāhab", "plural": "sāhab", "oblique-singular": "sāhab", "oblique-plural": "sāhbōm̐" }
+    - word: "hi-0183"
+      forms: { "singular": "मैडम", "plural": "मैडमें", "oblique-singular": "मैडम", "oblique-plural": "मैडमों" }
+      readings: { "singular": "maiḍam", "plural": "maiḍmēm̐", "oblique-singular": "maiḍam", "oblique-plural": "maiḍmōm̐" }
+    - word: "hi-0184"
+      forms: { "singular": "बेटा", "plural": "बेटे", "oblique-singular": "बेटे", "oblique-plural": "बेटों" }
+      readings: { "singular": "bēṭā", "plural": "bēṭē", "oblique-singular": "bēṭē", "oblique-plural": "bēṭōm̐" }
+    - word: "hi-0185"
+      forms: { "singular": "दोस्त", "plural": "दोस्त", "oblique-singular": "दोस्त", "oblique-plural": "दोस्तों" }
+      readings: { "singular": "dōst", "plural": "dōst", "oblique-singular": "dōst", "oblique-plural": "dōstōm̐" }
+    - word: "hi-1040"
+      forms: { "singular": "शरीर", "plural": "शरीर", "oblique-singular": "शरीर", "oblique-plural": "शरीरों" }
+      readings: { "singular": "śarīr", "plural": "śarīr", "oblique-singular": "śarīr", "oblique-plural": "śarīrōm̐" }
+    - word: "hi-1041"
+      forms: { "singular": "सिर", "plural": "सिर", "oblique-singular": "सिर", "oblique-plural": "सिरों" }
+      readings: { "singular": "sir", "plural": "sir", "oblique-singular": "sir", "oblique-plural": "sirōm̐" }
+    - word: "hi-1042"
+      forms: { "singular": "बाल", "plural": "बाल", "oblique-singular": "बाल", "oblique-plural": "बालों" }
+      readings: { "singular": "bāl", "plural": "bāl", "oblique-singular": "bāl", "oblique-plural": "bālōm̐" }
+    - word: "hi-1043"
+      forms: { "singular": "चेहरा", "plural": "चेहरे", "oblique-singular": "चेहरे", "oblique-plural": "चेहरों" }
+      readings: { "singular": "cehrā", "plural": "cēhrē", "oblique-singular": "cēhrē", "oblique-plural": "cēhrōm̐" }
+    - word: "hi-1044"
+      forms: { "singular": "आँख", "plural": "आँखें", "oblique-singular": "आँख", "oblique-plural": "आँखों" }
+      readings: { "singular": "āṅkh", "plural": "ām̐khēm̐", "oblique-singular": "āṅkh", "oblique-plural": "ām̐khōm̐" }
+    - word: "hi-1045"
+      forms: { "singular": "कान", "plural": "कान", "oblique-singular": "कान", "oblique-plural": "कानों" }
+      readings: { "singular": "kān", "plural": "kān", "oblique-singular": "kān", "oblique-plural": "kānōm̐" }
+    - word: "hi-1046"
+      forms: { "singular": "नाक", "plural": "नाकें", "oblique-singular": "नाक", "oblique-plural": "नाकों" }
+      readings: { "singular": "nāk", "plural": "nākēm̐", "oblique-singular": "nāk", "oblique-plural": "nākōm̐" }
+    - word: "hi-1047"
+      forms: { "singular": "मुँह", "plural": "मुँह", "oblique-singular": "मुँह", "oblique-plural": "मुँहों" }
+      readings: { "singular": "mum̐h", "plural": "mum̐h", "oblique-singular": "mum̐h", "oblique-plural": "mum̐hōm̐" }
+    - word: "hi-1048"
+      forms: { "singular": "होंठ", "plural": "होंठ", "oblique-singular": "होंठ", "oblique-plural": "होंठों" }
+      readings: { "singular": "hōm̐ṭh", "plural": "hōm̐ṭh", "oblique-singular": "hōm̐ṭh", "oblique-plural": "hōṇṭhōm̐" }
+    - word: "hi-1049"
+      forms: { "singular": "दाँत", "plural": "दाँत", "oblique-singular": "दाँत", "oblique-plural": "दाँतों" }
+      readings: { "singular": "dām̐t", "plural": "dām̐t", "oblique-singular": "dām̐t", "oblique-plural": "dām̐tōm̐" }
+    - word: "hi-1050"
+      forms: { "singular": "जीभ", "plural": "जीभें", "oblique-singular": "जीभ", "oblique-plural": "जीभों" }
+      readings: { "singular": "jībh", "plural": "jībhēm̐", "oblique-singular": "jībh", "oblique-plural": "jībhōm̐" }
+    - word: "hi-1051"
+      forms: { "singular": "गला", "plural": "गले", "oblique-singular": "गले", "oblique-plural": "गलों" }
+      readings: { "singular": "galā", "plural": "galē", "oblique-singular": "galē", "oblique-plural": "galōm̐" }
+    - word: "hi-1052"
+      forms: { "singular": "गर्दन", "plural": "गर्दनें", "oblique-singular": "गर्दन", "oblique-plural": "गर्दनों" }
+      readings: { "singular": "gardan", "plural": "gardanēm̐", "oblique-singular": "gardan", "oblique-plural": "gardanōm̐" }
+    - word: "hi-1053"
+      forms: { "singular": "कंधा", "plural": "कंधे", "oblique-singular": "कंधे", "oblique-plural": "कंधों" }
+      readings: { "singular": "kandhā", "plural": "kandhē", "oblique-singular": "kandhē", "oblique-plural": "kandhōm̐" }
+    - word: "hi-1054"
+      forms: { "singular": "छाती", "plural": "छातियाँ", "oblique-singular": "छाती", "oblique-plural": "छातियों" }
+      readings: { "singular": "chātī", "plural": "chātiyām̐", "oblique-singular": "chātī", "oblique-plural": "chātiyōm̐" }
+    - word: "hi-1055"
+      forms: { "singular": "पेट", "plural": "पेट", "oblique-singular": "पेट", "oblique-plural": "पेटों" }
+      readings: { "singular": "pēṭ", "plural": "pēṭ", "oblique-singular": "pēṭ", "oblique-plural": "pēṭōm̐" }
+    - word: "hi-1056"
+      forms: { "singular": "कमर", "plural": "कमरें", "oblique-singular": "कमर", "oblique-plural": "कमरों" }
+      readings: { "singular": "kamar", "plural": "kamrēm̐", "oblique-singular": "kamar", "oblique-plural": "kamrōm̐" }
+    - word: "hi-1057"
+      forms: { "singular": "पीठ", "plural": "पीठें", "oblique-singular": "पीठ", "oblique-plural": "पीठों" }
+      readings: { "singular": "pīṭh", "plural": "pīṭhēm̐", "oblique-singular": "pīṭh", "oblique-plural": "pīṭhōm̐" }
+    - word: "hi-1058"
+      forms: { "singular": "हाथ", "plural": "हाथ", "oblique-singular": "हाथ", "oblique-plural": "हाथों" }
+      readings: { "singular": "hāth", "plural": "hāth", "oblique-singular": "hāth", "oblique-plural": "hāthōm̐" }
+    - word: "hi-1059"
+      forms: { "singular": "उँगली", "plural": "उँगलियाँ", "oblique-singular": "उँगली", "oblique-plural": "उँगलियों" }
+      readings: { "singular": "um̐galī", "plural": "um̐galiyām̐", "oblique-singular": "um̐galī", "oblique-plural": "um̐galiyōm̐" }
+    - word: "hi-1060"
+      forms: { "singular": "पैर", "plural": "पैर", "oblique-singular": "पैर", "oblique-plural": "पैरों" }
+      readings: { "singular": "pair", "plural": "pair", "oblique-singular": "pair", "oblique-plural": "pairōm̐" }
+    - word: "hi-1061"
+      forms: { "singular": "घुटना", "plural": "घुटने", "oblique-singular": "घुटने", "oblique-plural": "घुटनों" }
+      readings: { "singular": "ghuṭnā", "plural": "ghuṭnē", "oblique-singular": "ghuṭnē", "oblique-plural": "ghuṭnōm̐" }
+    - word: "hi-1062"
+      forms: { "singular": "दिल", "plural": "दिल", "oblique-singular": "दिल", "oblique-plural": "दिलों" }
+      readings: { "singular": "dil", "plural": "dil", "oblique-singular": "dil", "oblique-plural": "dilōm̐" }
+    - word: "hi-1063"
+      forms: { "singular": "हड्डी", "plural": "हड्डियाँ", "oblique-singular": "हड्डी", "oblique-plural": "हड्डियों" }
+      readings: { "singular": "haḍḍī", "plural": "haḍḍiyām̐", "oblique-singular": "haḍḍī", "oblique-plural": "haḍḍiyōm̐" }
+    - word: "hi-1064"
+      forms: { "singular": "खून", "plural": null, "oblique-singular": "खून", "oblique-plural": null }
+      readings: { "singular": "khūn", "plural": null, "oblique-singular": "khūn", "oblique-plural": null }
+    - word: "hi-1065"
+      forms: { "singular": "त्वचा", "plural": "त्वचाएँ", "oblique-singular": "त्वचा", "oblique-plural": "त्वचाओं" }
+      readings: { "singular": "tvacā", "plural": "tvacāēm̐", "oblique-singular": "tvacā", "oblique-plural": "tvacāōm̐" }
+    - word: "hi-1066"
+      forms: { "singular": "साँस", "plural": "साँसें", "oblique-singular": "साँस", "oblique-plural": "साँसों" }
+      readings: { "singular": "sām̐s", "plural": "sām̐sēm̐", "oblique-singular": "sām̐s", "oblique-plural": "sām̐sōm̐" }
+    - word: "hi-1067"
+      forms: { "singular": "बुखार", "plural": null, "oblique-singular": "बुखार", "oblique-plural": null }
+      readings: { "singular": "bukhār", "plural": null, "oblique-singular": "bukhār", "oblique-plural": null }
+    - word: "hi-1068"
+      forms: { "singular": "चोट", "plural": "चोटें", "oblique-singular": "चोट", "oblique-plural": "चोटों" }
+      readings: { "singular": "cōṭ", "plural": "cōṭēm̐", "oblique-singular": "cōṭ", "oblique-plural": "cōṭōm̐" }
+    - word: "hi-0317"
+      forms: { "singular": "महीना", "plural": "महीने", "oblique-singular": "महीने", "oblique-plural": "महीनों" }
+      readings: { "singular": "mahīnā", "plural": "mahīnē", "oblique-singular": "mahīnē", "oblique-plural": "mahīnōm̐" }
+    - word: "hi-0318"
+      forms: { "singular": "साल", "plural": "साल", "oblique-singular": "साल", "oblique-plural": "सालों" }
+      readings: { "singular": "sāl", "plural": "sāl", "oblique-singular": "sāl", "oblique-plural": "sālōm̐" }
+    - word: "hi-0319"
+      forms: { "singular": "तारीख़", "plural": "तारीख़ें", "oblique-singular": "तारीख़", "oblique-plural": "तारीख़ों" }
+      readings: { "singular": "tārīk͟h", "plural": "tārīk͟hēm̐", "oblique-singular": "tārīk͟h", "oblique-plural": "tārīk͟hōm̐" }
+    - word: "hi-0444"
+      forms: { "singular": "नाश्ता", "plural": "नाश्ते", "oblique-singular": "नाश्ते", "oblique-plural": "नाश्तों" }
+      readings: { "singular": "nāśtā", "plural": "nāśtē", "oblique-singular": "nāśtē", "oblique-plural": "nāśtōm̐" }
+    - word: "hi-0297"
+      forms: { "singular": "रास्ता", "plural": "रास्ते", "oblique-singular": "रास्ते", "oblique-plural": "रास्तों" }
+      readings: { "singular": "rāstā", "plural": "rāstē", "oblique-singular": "rāstē", "oblique-plural": "rāstōm̐" }
+    - word: "hi-0298"
+      forms: { "singular": "सड़क", "plural": "सड़कें", "oblique-singular": "सड़क", "oblique-plural": "सड़कों" }
+      readings: { "singular": "saṛak", "plural": "saṛkēm̐", "oblique-singular": "saṛak", "oblique-plural": "saṛkōm̐" }
+    - word: "hi-0332"
+      forms: { "singular": "खाना", "plural": "खाने", "oblique-singular": "खाने", "oblique-plural": "खानों" }
+      readings: { "singular": "khānā", "plural": "khānē", "oblique-singular": "khānē", "oblique-plural": "khānōm̐" }
+    - word: "hi-0333"
+      forms: { "singular": "पानी", "plural": "पानी", "oblique-singular": "पानी", "oblique-plural": "पानियों" }
+      readings: { "singular": "pānī", "plural": "pānī", "oblique-singular": "pānī", "oblique-plural": "pāniyōm̐" }
+    - word: "hi-0334"
+      forms: { "singular": "चाय", "plural": "चायें", "oblique-singular": "चाय", "oblique-plural": "चायों" }
+      readings: { "singular": "cāy", "plural": "cāyēm̐", "oblique-singular": "cāy", "oblique-plural": "cāyōm̐" }
+    - word: "hi-0335"
+      forms: { "singular": "रोटी", "plural": "रोटियाँ", "oblique-singular": "रोटी", "oblique-plural": "रोटियों" }
+      readings: { "singular": "rōṭī", "plural": "rōṭiyām̐", "oblique-singular": "rōṭī", "oblique-plural": "rōṭiyōm̐" }
+    - word: "hi-0375"
+      forms: { "singular": null, "plural": "माता-पिता", "oblique-singular": null, "oblique-plural": "माता-पिताओं" }
+      readings: { "singular": null, "plural": "mātā-pitā", "oblique-singular": null, "oblique-plural": "mātā-pitāōm̐" }
+    - word: "hi-0376"
+      forms: { "singular": "पिता", "plural": "पिता", "oblique-singular": "पिता", "oblique-plural": "पिताओं" }
+      readings: { "singular": "pitā", "plural": "pitā", "oblique-singular": "pitā", "oblique-plural": "pitāōm̐" }
+    - word: "hi-0377"
+      forms: { "singular": "माँ", "plural": "माँएँ", "oblique-singular": "माँ", "oblique-plural": "माँओं" }
+      readings: { "singular": "mām̐", "plural": "mām̐ēm̐", "oblique-singular": "mām̐", "oblique-plural": "mām̐ōm̐" }
+    - word: "hi-0378"
+      forms: { "singular": "भाई", "plural": "भाई", "oblique-singular": "भाई", "oblique-plural": "भाइयों" }
+      readings: { "singular": "bhāī", "plural": "bhāī", "oblique-singular": "bhāī", "oblique-plural": "bhāiyōm̐" }
+    - word: "hi-0379"
+      forms: { "singular": "बहन", "plural": "बहनें", "oblique-singular": "बहन", "oblique-plural": "बहनों" }
+      readings: { "singular": "bahan", "plural": "bahnēm̐", "oblique-singular": "bahan", "oblique-plural": "bahnōm̐" }
+    - word: "hi-0380"
+      forms: { "singular": "बेटी", "plural": "बेटियाँ", "oblique-singular": "बेटी", "oblique-plural": "बेटियों" }
+      readings: { "singular": "bēṭī", "plural": "bēṭiyām̐", "oblique-singular": "bēṭī", "oblique-plural": "bēṭiyōm̐" }
+    - word: "hi-0381"
+      forms: { "singular": "पति", "plural": "पति", "oblique-singular": "पति", "oblique-plural": "पतियों" }
+      readings: { "singular": "pati", "plural": "pati", "oblique-singular": "pati", "oblique-plural": "patiyōm̐" }
+    - word: "hi-0382"
+      forms: { "singular": "पत्नी", "plural": "पत्नियाँ", "oblique-singular": "पत्नी", "oblique-plural": "पत्नियों" }
+      readings: { "singular": "patnī", "plural": "patniyām̐", "oblique-singular": "patnī", "oblique-plural": "patniyōm̐" }
+    - word: "hi-0383"
+      forms: { "singular": null, "plural": "बच्चे", "oblique-singular": null, "oblique-plural": "बच्चों" }
+      readings: { "singular": null, "plural": "baccē", "oblique-singular": null, "oblique-plural": "baccōm̐" }
+    - word: "hi-0384"
+      forms: { "singular": "दादा", "plural": "दादे", "oblique-singular": "दादे", "oblique-plural": "दादों" }
+      readings: { "singular": "dādā", "plural": "dādē", "oblique-singular": "dādē", "oblique-plural": "dādōm̐" }
+    - word: "hi-0385"
+      forms: { "singular": "दादी", "plural": "दादियाँ", "oblique-singular": "दादी", "oblique-plural": "दादियों" }
+      readings: { "singular": "dādī", "plural": "dādiyām̐", "oblique-singular": "dādī", "oblique-plural": "dādiyōm̐" }
+    - word: "hi-0386"
+      forms: { "singular": "नाना", "plural": "नाने", "oblique-singular": "नाने", "oblique-plural": "नानों" }
+      readings: { "singular": "nānā", "plural": "nānē", "oblique-singular": "nānē", "oblique-plural": "nānōm̐" }
+    - word: "hi-0387"
+      forms: { "singular": "नानी", "plural": "नानियाँ", "oblique-singular": "नानी", "oblique-plural": "नानियों" }
+      readings: { "singular": "nānī", "plural": "nāniyām̐", "oblique-singular": "nānī", "oblique-plural": "nāniyōm̐" }
+    - word: "hi-0388"
+      forms: { "singular": "चाचा", "plural": "चाचे", "oblique-singular": "चाचे", "oblique-plural": "चाचों" }
+      readings: { "singular": "cācā", "plural": "cācē", "oblique-singular": "cācē", "oblique-plural": "cācōm̐" }
+    - word: "hi-0389"
+      forms: { "singular": "ताऊ", "plural": "ताऊ", "oblique-singular": "ताऊ", "oblique-plural": "ताउओं" }
+      readings: { "singular": "tāū", "plural": "tāū", "oblique-singular": "tāū", "oblique-plural": "tāuōm̐" }
+    - word: "hi-0390"
+      forms: { "singular": "बुआ", "plural": "बुआएँ", "oblique-singular": "बुआ", "oblique-plural": "बुआओं" }
+      readings: { "singular": "buā", "plural": "buāēm̐", "oblique-singular": "buā", "oblique-plural": "buāōm̐" }
+    - word: "hi-0391"
+      forms: { "singular": "मामा", "plural": "मामे", "oblique-singular": "मामे", "oblique-plural": "मामों" }
+      readings: { "singular": "māmā", "plural": "māmē", "oblique-singular": "māmē", "oblique-plural": "māmōm̐" }
+    - word: "hi-0392"
+      forms: { "singular": "मौसी", "plural": "मौसियाँ", "oblique-singular": "मौसी", "oblique-plural": "मौसियों" }
+      readings: { "singular": "mausī", "plural": "mausiyām̐", "oblique-singular": "mausī", "oblique-plural": "mausiyōm̐" }
+    - word: "hi-0393"
+      forms: { "singular": "ससुर", "plural": "ससुर", "oblique-singular": "ससुर", "oblique-plural": "ससुरों" }
+      readings: { "singular": "sasur", "plural": "sasur", "oblique-singular": "sasur", "oblique-plural": "sasurōm̐" }
+    - word: "hi-0394"
+      forms: { "singular": "सास", "plural": "सासें", "oblique-singular": "सास", "oblique-plural": "सासों" }
+      readings: { "singular": "sās", "plural": "sāsēm̐", "oblique-singular": "sās", "oblique-plural": "sāsōm̐" }
+    - word: "hi-0395"
+      forms: { "singular": "रिश्तेदार", "plural": "रिश्तेदार", "oblique-singular": "रिश्तेदार", "oblique-plural": "रिश्तेदारों" }
+      readings: { "singular": "riśtēdār", "plural": "riśtēdār", "oblique-singular": "riśtēdār", "oblique-plural": "riśtēdārōm̐" }
+    - word: "hi-0977"
+      forms: { "singular": "केला", "plural": "केले", "oblique-singular": "केले", "oblique-plural": "केलों" }
+      readings: { "singular": "kēlā", "plural": "kēlē", "oblique-singular": "kēlē", "oblique-plural": "kēlōm̐" }
+    - word: "hi-0978"
+      forms: { "singular": "सेब", "plural": "सेब", "oblique-singular": "सेब", "oblique-plural": "सेबों" }
+      readings: { "singular": "sēb", "plural": "sēb", "oblique-singular": "sēb", "oblique-plural": "sēbōm̐" }
+    - word: "hi-0979"
+      forms: { "singular": "आम", "plural": "आम", "oblique-singular": "आम", "oblique-plural": "आमों" }
+      readings: { "singular": "ām", "plural": "ām", "oblique-singular": "ām", "oblique-plural": "āmōm̐" }
+    - word: "hi-0980"
+      forms: { "singular": "संतरा", "plural": "संतरे", "oblique-singular": "संतरे", "oblique-plural": "संतरों" }
+      readings: { "singular": "santarā", "plural": "santarē", "oblique-singular": "santarē", "oblique-plural": "santarōm̐" }
+    - word: "hi-0981"
+      forms: { "singular": "अंगूर", "plural": "अंगूर", "oblique-singular": "अंगूर", "oblique-plural": "अंगूरों" }
+      readings: { "singular": "aṅgūr", "plural": "aṅgūr", "oblique-singular": "aṅgūr", "oblique-plural": "aṅgūrōm̐" }
+    - word: "hi-0982"
+      forms: { "singular": "नींबू", "plural": "नींबू", "oblique-singular": "नींबू", "oblique-plural": "नींबुओं" }
+      readings: { "singular": "nīmbū", "plural": "nīmbū", "oblique-singular": "nīmbū", "oblique-plural": "nīmbuōm̐" }
+    - word: "hi-0983"
+      forms: { "singular": "गाजर", "plural": "गाजर", "oblique-singular": "गाजर", "oblique-plural": "गाजरों" }
+      readings: { "singular": "gājar", "plural": "gājar", "oblique-singular": "gājar", "oblique-plural": "gājrōm̐" }
+    - word: "hi-0984"
+      forms: { "singular": "गोभी", "plural": "गोभियाँ", "oblique-singular": "गोभी", "oblique-plural": "गोभियों" }
+      readings: { "singular": "gōbhī", "plural": "gōbhiyām̐", "oblique-singular": "gōbhī", "oblique-plural": "gōbhiyōm̐" }
+    - word: "hi-0985"
+      forms: { "singular": "पालक", "plural": null, "oblique-singular": "पालक", "oblique-plural": null }
+      readings: { "singular": "pālak", "plural": null, "oblique-singular": "pālak", "oblique-plural": null }
+    - word: "hi-0986"
+      forms: { "singular": "मटर", "plural": null, "oblique-singular": "मटर", "oblique-plural": null }
+      readings: { "singular": "maṭar", "plural": null, "oblique-singular": "maṭar", "oblique-plural": null }
+    - word: "hi-0987"
+      forms: { "singular": "धनिया", "plural": null, "oblique-singular": "धनिया", "oblique-plural": null }
+      readings: { "singular": "dhaniyā", "plural": null, "oblique-singular": "dhaniyā", "oblique-plural": null }
+    - word: "hi-0988"
+      forms: { "singular": "पनीर", "plural": null, "oblique-singular": "पनीर", "oblique-plural": null }
+      readings: { "singular": "panīr", "plural": null, "oblique-singular": "panīr", "oblique-plural": null }
+    - word: "hi-0989"
+      forms: { "singular": "दही", "plural": null, "oblique-singular": "दही", "oblique-plural": null }
+      readings: { "singular": "dahī", "plural": null, "oblique-singular": "dahī", "oblique-plural": null }
+    - word: "hi-0990"
+      forms: { "singular": "मक्खन", "plural": null, "oblique-singular": "मक्खन", "oblique-plural": null }
+      readings: { "singular": "makkhan", "plural": null, "oblique-singular": "makkhan", "oblique-plural": null }
+    - word: "hi-0991"
+      forms: { "singular": "घी", "plural": null, "oblique-singular": "घी", "oblique-plural": null }
+      readings: { "singular": "ghī", "plural": null, "oblique-singular": "ghī", "oblique-plural": null }
+    - word: "hi-0992"
+      forms: { "singular": "चीनी", "plural": null, "oblique-singular": "चीनी", "oblique-plural": null }
+      readings: { "singular": "cīnī", "plural": null, "oblique-singular": "cīnī", "oblique-plural": null }
+    - word: "hi-0993"
+      forms: { "singular": "आटा", "plural": null, "oblique-singular": "आटा", "oblique-plural": null }
+      readings: { "singular": "āṭā", "plural": null, "oblique-singular": "āṭā", "oblique-plural": null }
+    - word: "hi-0994"
+      forms: { "singular": "तेल", "plural": null, "oblique-singular": "तेल", "oblique-plural": null }
+      readings: { "singular": "tēl", "plural": null, "oblique-singular": "tēl", "oblique-plural": null }
+    - word: "hi-0995"
+      forms: { "singular": "मसाला", "plural": "मसाले", "oblique-singular": "मसाले", "oblique-plural": "मसालों" }
+      readings: { "singular": "masālā", "plural": "masālē", "oblique-singular": "masālē", "oblique-plural": "masālōm̐" }
+    - word: "hi-0996"
+      forms: { "singular": "शहद", "plural": null, "oblique-singular": "शहद", "oblique-plural": null }
+      readings: { "singular": "śahad", "plural": null, "oblique-singular": "śahad", "oblique-plural": null }
+    - word: "hi-0997"
+      forms: { "singular": "पूरी", "plural": "पूरियाँ", "oblique-singular": "पूरी", "oblique-plural": "पूरियों" }
+      readings: { "singular": "pūrī", "plural": "pūriyām̐", "oblique-singular": "pūrī", "oblique-plural": "pūriyōm̐" }
+    - word: "hi-0998"
+      forms: { "singular": "खिचड़ी", "plural": "खिचड़ियाँ", "oblique-singular": "खिचड़ी", "oblique-plural": "खिचड़ियों" }
+      readings: { "singular": "khicṛī", "plural": "khicṛiyām̐", "oblique-singular": "khicṛī", "oblique-plural": "khicṛiyōm̐" }
+    - word: "hi-0999"
+      forms: { "singular": "पराठा", "plural": "पराठे", "oblique-singular": "पराठे", "oblique-plural": "पराठों" }
+      readings: { "singular": "parāṭhā", "plural": "parāṭhē", "oblique-singular": "parāṭhē", "oblique-plural": "parāṭhōm̐" }
+    - word: "hi-1000"
+      forms: { "singular": "समोसा", "plural": "समोसे", "oblique-singular": "समोसे", "oblique-plural": "समोसों" }
+      readings: { "singular": "samōsā", "plural": "samōsē", "oblique-singular": "samōsē", "oblique-plural": "samōsōm̐" }
+    - word: "hi-1001"
+      forms: { "singular": "चटनी", "plural": "चटनियाँ", "oblique-singular": "चटनी", "oblique-plural": "चटनियों" }
+      readings: { "singular": "caṭnī", "plural": "caṭniyām̐", "oblique-singular": "caṭnī", "oblique-plural": "caṭniyōm̐" }
+    - word: "hi-1002"
+      forms: { "singular": "अचार", "plural": null, "oblique-singular": "अचार", "oblique-plural": null }
+      readings: { "singular": "acār", "plural": null, "oblique-singular": "acār", "oblique-plural": null }
+    - word: "hi-1003"
+      forms: { "singular": "सूप", "plural": "सूप", "oblique-singular": "सूप", "oblique-plural": "सूपों" }
+      readings: { "singular": "sūp", "plural": "sūp", "oblique-singular": "sūp", "oblique-plural": "sūpōm̐" }
+    - word: "hi-1004"
+      forms: { "singular": "सलाद", "plural": null, "oblique-singular": "सलाद", "oblique-plural": null }
+      readings: { "singular": "salād", "plural": null, "oblique-singular": "salād", "oblique-plural": null }
+    - word: "hi-1005"
+      forms: { "singular": "मिठाई", "plural": "मिठाइयाँ", "oblique-singular": "मिठाई", "oblique-plural": "मिठाइयों" }
+      readings: { "singular": "miṭhāī", "plural": "miṭhāiyām̐", "oblique-singular": "miṭhāī", "oblique-plural": "miṭhāiyōm̐" }
+    - word: "hi-1006"
+      forms: { "singular": "बिस्कुट", "plural": "बिस्कुट", "oblique-singular": "बिस्कुट", "oblique-plural": "बिस्कुटों" }
+      readings: { "singular": "biskuṭ", "plural": "biskuṭ", "oblique-singular": "biskuṭ", "oblique-plural": "biskuṭōm̐" }
+    - word: "hi-1007"
+      forms: { "singular": "केक", "plural": "केक", "oblique-singular": "केक", "oblique-plural": "केकों" }
+      readings: { "singular": "kēk", "plural": "kēk", "oblique-singular": "kēk", "oblique-plural": "kēkōm̐" }
+    - word: "hi-1008"
+      forms: { "singular": "चॉकलेट", "plural": "चॉकलेटें", "oblique-singular": "चॉकलेट", "oblique-plural": "चॉकलेटों" }
+      readings: { "singular": "côklēṭ", "plural": "côklēṭēm̐", "oblique-singular": "côklēṭ", "oblique-plural": "côklēṭōm̐" }
+    - word: "hi-1009"
+      forms: { "singular": "आइसक्रीम", "plural": "आइसक्रीमें", "oblique-singular": "आइसक्रीम", "oblique-plural": "आइसक्रीमों" }
+      readings: { "singular": "āisakrīm", "plural": "āiskrīmēm̐", "oblique-singular": "āisakrīm", "oblique-plural": "āiskrīmōm̐" }
+    - word: "hi-1010"
+      forms: { "singular": "ब्रेड", "plural": "ब्रेडें", "oblique-singular": "ब्रेड", "oblique-plural": "ब्रेडों" }
+      readings: { "singular": "brēḍ", "plural": "brēḍēm̐", "oblique-singular": "brēḍ", "oblique-plural": "brēḍōm̐" }
+    - word: "hi-1011"
+      forms: { "singular": "जूस", "plural": "जूस", "oblique-singular": "जूस", "oblique-plural": "जूसों" }
+      readings: { "singular": "jūs", "plural": "jūs", "oblique-singular": "jūs", "oblique-plural": "jūsōm̐" }
+    - word: "hi-1012"
+      forms: { "singular": "कॉफ़ी", "plural": null, "oblique-singular": "कॉफ़ी", "oblique-plural": null }
+      readings: { "singular": "kôfī", "plural": null, "oblique-singular": "kôfī", "oblique-plural": null }
+    - word: "hi-1013"
+      forms: { "singular": "स्वाद", "plural": null, "oblique-singular": "स्वाद", "oblique-plural": null }
+      readings: { "singular": "svād", "plural": null, "oblique-singular": "svād", "oblique-plural": null }
+    - word: "hi-1014"
+      forms: { "singular": "भूख", "plural": null, "oblique-singular": "भूख", "oblique-plural": null }
+      readings: { "singular": "bhūkh", "plural": null, "oblique-singular": "bhūkh", "oblique-plural": null }
+    - word: "hi-1015"
+      forms: { "singular": "प्यास", "plural": null, "oblique-singular": "प्यास", "oblique-plural": null }
+      readings: { "singular": "pyās", "plural": null, "oblique-singular": "pyās", "oblique-plural": null }
+    - word: "hi-1019"
+      forms: { "singular": "थाली", "plural": "थालियाँ", "oblique-singular": "थाली", "oblique-plural": "थालियों" }
+      readings: { "singular": "thālī", "plural": "thāliyām̐", "oblique-singular": "thālī", "oblique-plural": "thāliyōm̐" }
+    - word: "hi-1020"
+      forms: { "singular": "प्लेट", "plural": "प्लेटें", "oblique-singular": "प्लेट", "oblique-plural": "प्लेटों" }
+      readings: { "singular": "plēṭ", "plural": "plēṭēm̐", "oblique-singular": "plēṭ", "oblique-plural": "plēṭōm̐" }
+    - word: "hi-1021"
+      forms: { "singular": "कटोरी", "plural": "कटोरियाँ", "oblique-singular": "कटोरी", "oblique-plural": "कटोरियों" }
+      readings: { "singular": "kaṭōrī", "plural": "kaṭōriyām̐", "oblique-singular": "kaṭōrī", "oblique-plural": "kaṭōriyōm̐" }
+    - word: "hi-1022"
+      forms: { "singular": "चाकू", "plural": "चाकू", "oblique-singular": "चाकू", "oblique-plural": "चाकुओं" }
+      readings: { "singular": "cākū", "plural": "cākū", "oblique-singular": "cākū", "oblique-plural": "cākuōm̐" }
+    - word: "hi-0469"
+      forms: { "singular": "पसंद", "plural": null, "oblique-singular": "पसंद", "oblique-plural": null }
+      readings: { "singular": "pasand", "plural": null, "oblique-singular": "pasand", "oblique-plural": null }
+    - word: "hi-0475"
+      forms: { "singular": "प्यार", "plural": null, "oblique-singular": "प्यार", "oblique-plural": null }
+      readings: { "singular": "pyār", "plural": null, "oblique-singular": "pyār", "oblique-plural": null }
+    - word: "hi-0464"
+      forms: { "singular": "ज़रूरत", "plural": "ज़रूरतें", "oblique-singular": "ज़रूरत", "oblique-plural": "ज़रूरतों" }
+      readings: { "singular": "zarūrat", "plural": "zarūrtēm̐", "oblique-singular": "zarūrat", "oblique-plural": "zarūrtōm̐" }
+    - word: "hi-0249"
+      forms: { "singular": "सब्ज़ी", "plural": "सब्ज़ियाँ", "oblique-singular": "सब्ज़ी", "oblique-plural": "सब्ज़ियों" }
+      readings: { "singular": "sabzī", "plural": "sabziyām̐", "oblique-singular": "sabzī", "oblique-plural": "sabziyōm̐" }
+    - word: "hi-0250"
+      forms: { "singular": "आलू", "plural": "आलू", "oblique-singular": "आलू", "oblique-plural": "आलुओं" }
+      readings: { "singular": "ālū", "plural": "ālū", "oblique-singular": "ālū", "oblique-plural": "āluōm̐" }
+    - word: "hi-0251"
+      forms: { "singular": "प्याज़", "plural": "प्याज़", "oblique-singular": "प्याज़", "oblique-plural": "प्याज़ों" }
+      readings: { "singular": "pyāz", "plural": "pyāz", "oblique-singular": "pyāz", "oblique-plural": "pyāzōm̐" }
+    - word: "hi-0252"
+      forms: { "singular": "टमाटर", "plural": "टमाटर", "oblique-singular": "टमाटर", "oblique-plural": "टमाटरों" }
+      readings: { "singular": "ṭamāṭar", "plural": "ṭamāṭar", "oblique-singular": "ṭamāṭar", "oblique-plural": "ṭamāṭrōm̐" }
+    - word: "hi-0253"
+      forms: { "singular": "मिर्च", "plural": "मिर्चें", "oblique-singular": "मिर्च", "oblique-plural": "मिर्चों" }
+      readings: { "singular": "mirc", "plural": "mircēm̐", "oblique-singular": "mirc", "oblique-plural": "mircōm̐" }
+    - word: "hi-0254"
+      forms: { "singular": "लहसुन", "plural": null, "oblique-singular": "लहसुन", "oblique-plural": null }
+      readings: { "singular": "lahsun", "plural": null, "oblique-singular": "lahsun", "oblique-plural": null }
+    - word: "hi-0255"
+      forms: { "singular": "मछली", "plural": "मछलियाँ", "oblique-singular": "मछली", "oblique-plural": "मछलियों" }
+      readings: { "singular": "machlī", "plural": "machliyām̐", "oblique-singular": "machlī", "oblique-plural": "machliyōm̐" }
+    - word: "hi-0256"
+      forms: { "singular": "मटन", "plural": null, "oblique-singular": "मटन", "oblique-plural": null }
+      readings: { "singular": "maṭan", "plural": null, "oblique-singular": "maṭan", "oblique-plural": null }
+    - word: "hi-0257"
+      forms: { "singular": "चिकन", "plural": null, "oblique-singular": "चिकन", "oblique-plural": null }
+      readings: { "singular": "cikan", "plural": null, "oblique-singular": "cikan", "oblique-plural": null }
+    - word: "hi-0258"
+      forms: { "singular": "अंडा", "plural": "अंडे", "oblique-singular": "अंडे", "oblique-plural": "अंडों" }
+      readings: { "singular": "aṇḍā", "plural": "aṇḍē", "oblique-singular": "aṇḍē", "oblique-plural": "aṇḍōm̐" }
+    - word: "hi-0259"
+      forms: { "singular": "दूध", "plural": null, "oblique-singular": "दूध", "oblique-plural": null }
+      readings: { "singular": "dūdh", "plural": null, "oblique-singular": "dūdh", "oblique-plural": null }
+    - word: "hi-0260"
+      forms: { "singular": "चावल", "plural": null, "oblique-singular": "चावल", "oblique-plural": null }
+      readings: { "singular": "cāval", "plural": null, "oblique-singular": "cāval", "oblique-plural": null }
+    - word: "hi-0261"
+      forms: { "singular": "दाल", "plural": null, "oblique-singular": "दाल", "oblique-plural": null }
+      readings: { "singular": "dāl", "plural": null, "oblique-singular": "dāl", "oblique-plural": null }
+    - word: "hi-0352"
+      forms: { "singular": "मदद", "plural": null, "oblique-singular": "मदद", "oblique-plural": null }
+      readings: { "singular": "madad", "plural": null, "oblique-singular": "madad", "oblique-plural": null }
+    - word: "hi-0356"
+      forms: { "singular": "पुलिस", "plural": null, "oblique-singular": "पुलिस", "oblique-plural": null }
+      readings: { "singular": "pulis", "plural": null, "oblique-singular": "pulis", "oblique-plural": null }
+    - word: "hi-0357"
+      forms: { "singular": "डॉक्टर", "plural": "डॉक्टर", "oblique-singular": "डॉक्टर", "oblique-plural": "डॉक्टरों" }
+      readings: { "singular": "ḍôkṭar", "plural": "ḍôkṭar", "oblique-singular": "ḍôkṭar", "oblique-plural": "ḍôkṭarōm̐" }
+    - word: "hi-0358"
+      forms: { "singular": "अस्पताल", "plural": "अस्पताल", "oblique-singular": "अस्पताल", "oblique-plural": "अस्पतालों" }
+      readings: { "singular": "aspatāl", "plural": "aspatāl", "oblique-singular": "aspatāl", "oblique-plural": "aspatālōm̐" }
+    - word: "hi-0359"
+      forms: { "singular": "दवाई", "plural": "दवाइयाँ", "oblique-singular": "दवाई", "oblique-plural": "दवाइयों" }
+      readings: { "singular": "davāī", "plural": "davāiyām̐", "oblique-singular": "davāī", "oblique-plural": "davāiyōm̐" }
+    - word: "hi-0360"
+      forms: { "singular": "दर्द", "plural": null, "oblique-singular": "दर्द", "oblique-plural": null }
+      readings: { "singular": "dard", "plural": null, "oblique-singular": "dard", "oblique-plural": null }
+    - word: "hi-0419"
+      forms: { "singular": "मकान", "plural": "मकान", "oblique-singular": "मकान", "oblique-plural": "मकानों" }
+      readings: { "singular": "makān", "plural": "makān", "oblique-singular": "makān", "oblique-plural": "makānōm̐" }
+    - word: "hi-0420"
+      forms: { "singular": "फ़्लैट", "plural": "फ़्लैट", "oblique-singular": "फ़्लैट", "oblique-plural": "फ़्लैटों" }
+      readings: { "singular": "flaiṭ", "plural": "flaiṭ", "oblique-singular": "flaiṭ", "oblique-plural": "flaiṭōm̐" }
+    - word: "hi-0421"
+      forms: { "singular": "कमरा", "plural": "कमरे", "oblique-singular": "कमरे", "oblique-plural": "कमरों" }
+      readings: { "singular": "kamrā", "plural": "kamrē", "oblique-singular": "kamrē", "oblique-plural": "kamrōm̐" }
+    - word: "hi-0422"
+      forms: { "singular": "रसोई", "plural": "रसोइयाँ", "oblique-singular": "रसोई", "oblique-plural": "रसोइयों" }
+      readings: { "singular": "rasōī", "plural": "rasōiyām̐", "oblique-singular": "rasōī", "oblique-plural": "rasōiyōm̐" }
+    - word: "hi-0424"
+      forms: { "singular": "बैठक", "plural": "बैठकें", "oblique-singular": "बैठक", "oblique-plural": "बैठकों" }
+      readings: { "singular": "baiṭhak", "plural": "baiṭhkēm̐", "oblique-singular": "baiṭhak", "oblique-plural": "baiṭhkōm̐" }
+    - word: "hi-0425"
+      forms: { "singular": "बाथरूम", "plural": "बाथरूम", "oblique-singular": "बाथरूम", "oblique-plural": "बाथरूमों" }
+      readings: { "singular": "bāthrūm", "plural": "bāthrūm", "oblique-singular": "bāthrūm", "oblique-plural": "bāthrūmōm̐" }
+    - word: "hi-0426"
+      forms: { "singular": "दरवाज़ा", "plural": "दरवाज़े", "oblique-singular": "दरवाज़े", "oblique-plural": "दरवाज़ों" }
+      readings: { "singular": "darvāzā", "plural": "darvāzē", "oblique-singular": "darvāzē", "oblique-plural": "darvāzōm̐" }
+    - word: "hi-0427"
+      forms: { "singular": "खिड़की", "plural": "खिड़कियाँ", "oblique-singular": "खिड़की", "oblique-plural": "खिड़कियों" }
+      readings: { "singular": "khiṛkī", "plural": "khiṛkiyām̐", "oblique-singular": "khiṛkī", "oblique-plural": "khiṛkiyōm̐" }
+    - word: "hi-0428"
+      forms: { "singular": "छत", "plural": "छतें", "oblique-singular": "छत", "oblique-plural": "छतों" }
+      readings: { "singular": "chat", "plural": "chatēm̐", "oblique-singular": "chat", "oblique-plural": "chatōm̐" }
+    - word: "hi-0429"
+      forms: { "singular": null, "plural": "सीढ़ियाँ", "oblique-singular": null, "oblique-plural": "सीढ़ियों" }
+      readings: { "singular": null, "plural": "sīṛhiyām̐", "oblique-singular": null, "oblique-plural": "sīṛhiyōm̐" }
+    - word: "hi-0430"
+      forms: { "singular": "मंज़िल", "plural": "मंज़िलें", "oblique-singular": "मंज़िल", "oblique-plural": "मंज़िलों" }
+      readings: { "singular": "maṁzil", "plural": "mañzilēm̐", "oblique-singular": "maṁzil", "oblique-plural": "mañzilōm̐" }
+    - word: "hi-0431"
+      forms: { "singular": "चाबी", "plural": "चाबियाँ", "oblique-singular": "चाबी", "oblique-plural": "चाबियों" }
+      readings: { "singular": "cābī", "plural": "cābiyām̐", "oblique-singular": "cābī", "oblique-plural": "cābiyōm̐" }
+    - word: "hi-0432"
+      forms: { "singular": "बिस्तर", "plural": "बिस्तर", "oblique-singular": "बिस्तर", "oblique-plural": "बिस्तरों" }
+      readings: { "singular": "bistar", "plural": "bistar", "oblique-singular": "bistar", "oblique-plural": "bistarōm̐" }
+    - word: "hi-0433"
+      forms: { "singular": "कुर्सी", "plural": "कुर्सियाँ", "oblique-singular": "कुर्सी", "oblique-plural": "कुर्सियों" }
+      readings: { "singular": "kursī", "plural": "kursiyām̐", "oblique-singular": "kursī", "oblique-plural": "kursiyōm̐" }
+    - word: "hi-0434"
+      forms: { "singular": "मेज़", "plural": "मेज़ें", "oblique-singular": "मेज़", "oblique-plural": "मेज़ों" }
+      readings: { "singular": "mēz", "plural": "mēzēm̐", "oblique-singular": "mēz", "oblique-plural": "mēzōm̐" }
+    - word: "hi-0435"
+      forms: { "singular": "पंखा", "plural": "पंखे", "oblique-singular": "पंखे", "oblique-plural": "पंखों" }
+      readings: { "singular": "paṅkhā", "plural": "paṅkhē", "oblique-singular": "paṅkhē", "oblique-plural": "paṅkhōm̐" }
+    - word: "hi-0436"
+      forms: { "singular": "बत्ती", "plural": "बत्तियाँ", "oblique-singular": "बत्ती", "oblique-plural": "बत्तियों" }
+      readings: { "singular": "battī", "plural": "battiyām̐", "oblique-singular": "battī", "oblique-plural": "battiyōm̐" }
+    - word: "hi-0437"
+      forms: { "singular": "पड़ोसी", "plural": "पड़ोसी", "oblique-singular": "पड़ोसी", "oblique-plural": "पड़ोसियों" }
+      readings: { "singular": "paṛōsī", "plural": "paṛōsī", "oblique-singular": "paṛōsī", "oblique-plural": "paṛōsiyōm̐" }
+    - word: "hi-0438"
+      forms: { "singular": "मोहल्ला", "plural": "मोहल्ले", "oblique-singular": "मोहल्ले", "oblique-plural": "मोहल्लों" }
+      readings: { "singular": "mōhallā", "plural": "mōhllē", "oblique-singular": "mōhllē", "oblique-plural": "mōhllōm̐" }
+    - word: "hi-0232"
+      forms: { "singular": "दाम", "plural": "दाम", "oblique-singular": "दाम", "oblique-plural": "दामों" }
+      readings: { "singular": "dām", "plural": "dām", "oblique-singular": "dām", "oblique-plural": "dāmōm̐" }
+    - word: "hi-0233"
+      forms: { "singular": "रुपया", "plural": "रुपये", "oblique-singular": "रुपये", "oblique-plural": "रुपयों" }
+      readings: { "singular": "rupayā", "plural": "rupyē", "oblique-singular": "rupyē", "oblique-plural": "rupyōm̐" }
+    - word: "hi-0234"
+      forms: { "singular": null, "plural": "पैसे", "oblique-singular": null, "oblique-plural": "पैसों" }
+      readings: { "singular": null, "plural": "paisē", "oblique-singular": null, "oblique-plural": "paisōm̐" }
+    - word: "hi-0239"
+      forms: { "singular": "दुकान", "plural": "दुकानें", "oblique-singular": "दुकान", "oblique-plural": "दुकानों" }
+      readings: { "singular": "dukān", "plural": "dukānēm̐", "oblique-singular": "dukān", "oblique-plural": "dukānōm̐" }
+    - word: "hi-1091"
+      forms: { "singular": "बाज़ार", "plural": "बाज़ार", "oblique-singular": "बाज़ार", "oblique-plural": "बाज़ारों" }
+      readings: { "singular": "bāzār", "plural": "bāzār", "oblique-singular": "bāzār", "oblique-plural": "bāzārōm̐" }
+    - word: "hi-1092"
+      forms: { "singular": "स्कूल", "plural": "स्कूल", "oblique-singular": "स्कूल", "oblique-plural": "स्कूलों" }
+      readings: { "singular": "skūl", "plural": "skūl", "oblique-singular": "skūl", "oblique-plural": "skūlōm̐" }
+    - word: "hi-1093"
+      forms: { "singular": "बैंक", "plural": "बैंक", "oblique-singular": "बैंक", "oblique-plural": "बैंकों" }
+      readings: { "singular": "baiṅk", "plural": "baiṅk", "oblique-singular": "baiṅk", "oblique-plural": "baiṅkōm̐" }
+    - word: "hi-1094"
+      forms: { "singular": "मंदिर", "plural": "मंदिर", "oblique-singular": "मंदिर", "oblique-plural": "मंदिरों" }
+      readings: { "singular": "mandir", "plural": "mandir", "oblique-singular": "mandir", "oblique-plural": "mandirōm̐" }
+    - word: "hi-1095"
+      forms: { "singular": "मस्जिद", "plural": "मस्जिदें", "oblique-singular": "मस्जिद", "oblique-plural": "मस्जिदों" }
+      readings: { "singular": "masjid", "plural": "masjidēm̐", "oblique-singular": "masjid", "oblique-plural": "masjidōm̐" }
+    - word: "hi-1096"
+      forms: { "singular": "गुरुद्वारा", "plural": "गुरुद्वारे", "oblique-singular": "गुरुद्वारे", "oblique-plural": "गुरुद्वारों" }
+      readings: { "singular": "gurudvārā", "plural": "gurudvārē", "oblique-singular": "gurudvārē", "oblique-plural": "gurudvārōm̐" }
+    - word: "hi-1097"
+      forms: { "singular": "चर्च", "plural": "चर्च", "oblique-singular": "चर्च", "oblique-plural": "चर्चों" }
+      readings: { "singular": "carc", "plural": "carc", "oblique-singular": "carc", "oblique-plural": "carcōm̐" }
+    - word: "hi-1098"
+      forms: { "singular": "दवाखाना", "plural": "दवाखाने", "oblique-singular": "दवाखाने", "oblique-plural": "दवाखानों" }
+      readings: { "singular": "davākhānā", "plural": "davākhānē", "oblique-singular": "davākhānē", "oblique-plural": "davākhānōm̐" }
+    - word: "hi-1099"
+      forms: { "singular": "क्लिनिक", "plural": "क्लिनिक", "oblique-singular": "क्लिनिक", "oblique-plural": "क्लिनिकों" }
+      readings: { "singular": "klinik", "plural": "klinik", "oblique-singular": "klinik", "oblique-plural": "klinikōm̐" }
+    - word: "hi-1100"
+      forms: { "singular": "पार्क", "plural": "पार्क", "oblique-singular": "पार्क", "oblique-plural": "पार्कों" }
+      readings: { "singular": "pārk", "plural": "pārk", "oblique-singular": "pārk", "oblique-plural": "pārkōm̐" }
+    - word: "hi-1101"
+      forms: { "singular": "बगीचा", "plural": "बगीचे", "oblique-singular": "बगीचे", "oblique-plural": "बगीचों" }
+      readings: { "singular": "bagīcā", "plural": "bagīcē", "oblique-singular": "bagīcē", "oblique-plural": "bagīcōm̐" }
+    - word: "hi-1102"
+      forms: { "singular": "चौक", "plural": "चौक", "oblique-singular": "चौक", "oblique-plural": "चौकों" }
+      readings: { "singular": "cauk", "plural": "cauk", "oblique-singular": "cauk", "oblique-plural": "caukōm̐" }
+    - word: "hi-1103"
+      forms: { "singular": "गली", "plural": "गलियाँ", "oblique-singular": "गली", "oblique-plural": "गलियों" }
+      readings: { "singular": "galī", "plural": "galiyām̐", "oblique-singular": "galī", "oblique-plural": "galiyōm̐" }
+    - word: "hi-1104"
+      forms: { "singular": "नुक्कड़", "plural": "नुक्कड़", "oblique-singular": "नुक्कड़", "oblique-plural": "नुक्कड़ों" }
+      readings: { "singular": "nukkaṛ", "plural": "nukkaṛ", "oblique-singular": "nukkaṛ", "oblique-plural": "nukkaṛōm̐" }
+    - word: "hi-1105"
+      forms: { "singular": "चौराहा", "plural": "चौराहे", "oblique-singular": "चौराहे", "oblique-plural": "चौराहों" }
+      readings: { "singular": "caurāhā", "plural": "caurāhē", "oblique-singular": "caurāhē", "oblique-plural": "caurāhōm̐" }
+    - word: "hi-1106"
+      forms: { "singular": "डाकघर", "plural": "डाकघर", "oblique-singular": "डाकघर", "oblique-plural": "डाकघरों" }
+      readings: { "singular": "ḍākghar", "plural": "ḍākghar", "oblique-singular": "ḍākghar", "oblique-plural": "ḍākghrōm̐" }
+    - word: "hi-1107"
+      forms: { "singular": "होटल", "plural": "होटल", "oblique-singular": "होटल", "oblique-plural": "होटलों" }
+      readings: { "singular": "hōṭal", "plural": "hōṭal", "oblique-singular": "hōṭal", "oblique-plural": "hōṭlōm̐" }
+    - word: "hi-1108"
+      forms: { "singular": "रेस्तराँ", "plural": "रेस्तराँ", "oblique-singular": "रेस्तराँ", "oblique-plural": "रेस्तराँओं" }
+      readings: { "singular": "rēstarām̐", "plural": "rēstarām̐", "oblique-singular": "rēstarām̐", "oblique-plural": "rēstarām̐ōm̐" }
+    - word: "hi-1109"
+      forms: { "singular": "सिनेमा", "plural": "सिनेमे", "oblique-singular": "सिनेमे", "oblique-plural": "सिनेमों" }
+      readings: { "singular": "sinēmā", "plural": "sinēmē", "oblique-singular": "sinēmē", "oblique-plural": "sinēmōm̐" }
+    - word: "hi-1110"
+      forms: { "singular": "थाना", "plural": "थाने", "oblique-singular": "थाने", "oblique-plural": "थानों" }
+      readings: { "singular": "thānā", "plural": "thānē", "oblique-singular": "thānē", "oblique-plural": "thānōm̐" }
+    - word: "hi-1111"
+      forms: { "singular": "अदालत", "plural": "अदालतें", "oblique-singular": "अदालत", "oblique-plural": "अदालतों" }
+      readings: { "singular": "adālat", "plural": "adāltēm̐", "oblique-singular": "adālat", "oblique-plural": "adāltōm̐" }
+    - word: "hi-1112"
+      forms: { "singular": "शौचालय", "plural": "शौचालय", "oblique-singular": "शौचालय", "oblique-plural": "शौचालयों" }
+      readings: { "singular": "śaucālay", "plural": "śaucālay", "oblique-singular": "śaucālay", "oblique-plural": "śaucālyōm̐" }
+    - word: "hi-1113"
+      forms: { "singular": "मैदान", "plural": "मैदान", "oblique-singular": "मैदान", "oblique-plural": "मैदानों" }
+      readings: { "singular": "maidān", "plural": "maidān", "oblique-singular": "maidān", "oblique-plural": "maidānōm̐" }
+    - word: "hi-1114"
+      forms: { "singular": "खेत", "plural": "खेत", "oblique-singular": "खेत", "oblique-plural": "खेतों" }
+      readings: { "singular": "khēt", "plural": "khēt", "oblique-singular": "khēt", "oblique-plural": "khētōm̐" }
+    - word: "hi-1115"
+      forms: { "singular": "जंगल", "plural": "जंगल", "oblique-singular": "जंगल", "oblique-plural": "जंगलों" }
+      readings: { "singular": "jaṅgal", "plural": "jaṅgal", "oblique-singular": "jaṅgal", "oblique-plural": "jaṅgalōm̐" }
+    - word: "hi-1116"
+      forms: { "singular": "पेड़", "plural": "पेड़", "oblique-singular": "पेड़", "oblique-plural": "पेड़ों" }
+      readings: { "singular": "pēṛ", "plural": "pēṛ", "oblique-singular": "pēṛ", "oblique-plural": "pēṛōm̐" }
+    - word: "hi-1117"
+      forms: { "singular": "पहाड़", "plural": "पहाड़", "oblique-singular": "पहाड़", "oblique-plural": "पहाड़ों" }
+      readings: { "singular": "pahāṛ", "plural": "pahāṛ", "oblique-singular": "pahāṛ", "oblique-plural": "pahāṛōm̐" }
+    - word: "hi-1118"
+      forms: { "singular": "नदी", "plural": "नदियाँ", "oblique-singular": "नदी", "oblique-plural": "नदियों" }
+      readings: { "singular": "nadī", "plural": "nadiyām̐", "oblique-singular": "nadī", "oblique-plural": "nadiyōm̐" }
+    - word: "hi-1119"
+      forms: { "singular": "तालाब", "plural": "तालाब", "oblique-singular": "तालाब", "oblique-plural": "तालाबों" }
+      readings: { "singular": "tālāb", "plural": "tālāb", "oblique-singular": "tālāb", "oblique-plural": "tālābōm̐" }
+    - word: "hi-1120"
+      forms: { "singular": "झील", "plural": "झीलें", "oblique-singular": "झील", "oblique-plural": "झीलों" }
+      readings: { "singular": "jhīl", "plural": "jhīlēm̐", "oblique-singular": "jhīl", "oblique-plural": "jhīlōm̐" }
+    - word: "hi-1121"
+      forms: { "singular": "समुद्र", "plural": "समुद्र", "oblique-singular": "समुद्र", "oblique-plural": "समुद्रों" }
+      readings: { "singular": "samudr", "plural": "samudr", "oblique-singular": "samudr", "oblique-plural": "samudrōm̐" }
+    - word: "hi-1122"
+      forms: { "singular": "गाँव", "plural": "गाँव", "oblique-singular": "गाँव", "oblique-plural": "गाँवों" }
+      readings: { "singular": "gām̐v", "plural": "gām̐v", "oblique-singular": "gām̐v", "oblique-plural": "gām̐vōm̐" }
+    - word: "hi-1123"
+      forms: { "singular": "कस्बा", "plural": "कस्बे", "oblique-singular": "कस्बे", "oblique-plural": "कस्बों" }
+      readings: { "singular": "kasbā", "plural": "kasbē", "oblique-singular": "kasbē", "oblique-plural": "kasbōm̐" }
+    - word: "hi-1124"
+      forms: { "singular": "इलाका", "plural": "इलाके", "oblique-singular": "इलाके", "oblique-plural": "इलाकों" }
+      readings: { "singular": "ilākā", "plural": "ilākē", "oblique-singular": "ilākē", "oblique-plural": "ilākōm̐" }
+    - word: "hi-1125"
+      forms: { "singular": "जगह", "plural": "जगहें", "oblique-singular": "जगह", "oblique-plural": "जगहों" }
+      readings: { "singular": "jagah", "plural": "jaghēm̐", "oblique-singular": "jagah", "oblique-plural": "jaghōm̐" }
+    - word: "hi-1126"
+      forms: { "singular": "इमारत", "plural": "इमारतें", "oblique-singular": "इमारत", "oblique-plural": "इमारतों" }
+      readings: { "singular": "imārat", "plural": "imārtēm̐", "oblique-singular": "imārat", "oblique-plural": "imārtōm̐" }
+    - word: "hi-1127"
+      forms: { "singular": "कॉलेज", "plural": "कॉलेज", "oblique-singular": "कॉलेज", "oblique-plural": "कॉलेजों" }
+      readings: { "singular": "kôlēj", "plural": "kôlēj", "oblique-singular": "kôlēj", "oblique-plural": "kôlējōm̐" }
+    - word: "hi-1128"
+      forms: { "singular": "पुस्तकालय", "plural": "पुस्तकालय", "oblique-singular": "पुस्तकालय", "oblique-plural": "पुस्तकालयों" }
+      readings: { "singular": "pustakālay", "plural": "pustakālay", "oblique-singular": "pustakālay", "oblique-plural": "pustakālyōm̐" }
+    - word: "hi-1129"
+      forms: { "singular": "ढाबा", "plural": "ढाबे", "oblique-singular": "ढाबे", "oblique-plural": "ढाबों" }
+      readings: { "singular": "ḍhābā", "plural": "ḍhābē", "oblique-singular": "ḍhābē", "oblique-plural": "ḍhābōm̐" }
+    - word: "hi-1130"
+      forms: { "singular": "कार्यालय", "plural": "कार्यालय", "oblique-singular": "कार्यालय", "oblique-plural": "कार्यालयों" }
+      readings: { "singular": "kāryālay", "plural": "kāryālay", "oblique-singular": "kāryālay", "oblique-plural": "kāryālyōm̐" }
+    - word: "hi-1131"
+      forms: { "singular": "दरगाह", "plural": "दरगाहें", "oblique-singular": "दरगाह", "oblique-plural": "दरगाहों" }
+      readings: { "singular": "dargāh", "plural": "dargāhēm̐", "oblique-singular": "dargāh", "oblique-plural": "dargāhōm̐" }
+    - word: "hi-1132"
+      forms: { "singular": "पुल", "plural": "पुल", "oblique-singular": "पुल", "oblique-plural": "पुलों" }
+      readings: { "singular": "pul", "plural": "pul", "oblique-singular": "pul", "oblique-plural": "pulōm̐" }
+    - word: "hi-1133"
+      forms: { "singular": "मोड़", "plural": "मोड़", "oblique-singular": "मोड़", "oblique-plural": "मोड़ों" }
+      readings: { "singular": "mōṛ", "plural": "mōṛ", "oblique-singular": "mōṛ", "oblique-plural": "mōṛōm̐" }
+    - word: "hi-1134"
+      forms: { "singular": "सिग्नल", "plural": "सिग्नल", "oblique-singular": "सिग्नल", "oblique-plural": "सिग्नलों" }
+      readings: { "singular": "signal", "plural": "signal", "oblique-singular": "signal", "oblique-plural": "signalōm̐" }
+    - word: "hi-1135"
+      forms: { "singular": "मंडी", "plural": "मंडियाँ", "oblique-singular": "मंडी", "oblique-plural": "मंडियों" }
+      readings: { "singular": "maṇḍī", "plural": "maṇḍiyām̐", "oblique-singular": "maṇḍī", "oblique-plural": "maṇḍiyōm̐" }
+    - word: "hi-1136"
+      forms: { "singular": "गोदाम", "plural": "गोदाम", "oblique-singular": "गोदाम", "oblique-plural": "गोदामों" }
+      readings: { "singular": "godām", "plural": "godām", "oblique-singular": "godām", "oblique-plural": "gōdāmōm̐" }
+    - word: "hi-1137"
+      forms: { "singular": "कोना", "plural": "कोने", "oblique-singular": "कोने", "oblique-plural": "कोनों" }
+      readings: { "singular": "kōnā", "plural": "kōnē", "oblique-singular": "kōnē", "oblique-plural": "kōnōm̐" }
+    - word: "hi-1138"
+      forms: { "singular": "स्टेडियम", "plural": "स्टेडियम", "oblique-singular": "स्टेडियम", "oblique-plural": "स्टेडियमों" }
+      readings: { "singular": "sṭēḍiyam", "plural": "sṭēḍiyam", "oblique-singular": "sṭēḍiyam", "oblique-plural": "sṭēḍiymōm̐" }
+    - word: "hi-1139"
+      forms: { "singular": "बस्ती", "plural": "बस्तियाँ", "oblique-singular": "बस्ती", "oblique-plural": "बस्तियों" }
+      readings: { "singular": "bastī", "plural": "bastiyām̐", "oblique-singular": "bastī", "oblique-plural": "bastiyōm̐" }
+    - word: "hi-1141"
+      forms: { "singular": "सराय", "plural": "सरायें", "oblique-singular": "सराय", "oblique-plural": "सरायों" }
+      readings: { "singular": "sarāy", "plural": "sarāyēm̐", "oblique-singular": "sarāy", "oblique-plural": "sarāyōm̐" }
+    - word: "hi-1142"
+      forms: { "singular": "चिड़ियाघर", "plural": "चिड़ियाघर", "oblique-singular": "चिड़ियाघर", "oblique-plural": "चिड़ियाघरों" }
+      readings: { "singular": "ciṛiyāghar", "plural": "ciṛiyāghar", "oblique-singular": "ciṛiyāghar", "oblique-plural": "ciṛiyāghrōm̐" }
+    - word: "hi-1143"
+      forms: { "singular": "बंदरगाह", "plural": "बंदरगाह", "oblique-singular": "बंदरगाह", "oblique-plural": "बंदरगाहों" }
+      readings: { "singular": "bandargāh", "plural": "bandargāh", "oblique-singular": "bandargāh", "oblique-plural": "bandargāhōm̐" }
+    - word: "hi-1144"
+      forms: { "singular": "मीनार", "plural": "मीनारें", "oblique-singular": "मीनार", "oblique-plural": "मीनारों" }
+      readings: { "singular": "mīnār", "plural": "mīnārēm̐", "oblique-singular": "mīnār", "oblique-plural": "mīnārōm̐" }
+    - word: "hi-1145"
+      forms: { "singular": "घाट", "plural": "घाट", "oblique-singular": "घाट", "oblique-plural": "घाटों" }
+      readings: { "singular": "ghāṭ", "plural": "ghāṭ", "oblique-singular": "ghāṭ", "oblique-plural": "ghāṭōm̐" }
+    - word: "hi-1146"
+      forms: { "singular": "फ़ुटपाथ", "plural": "फ़ुटपाथ", "oblique-singular": "फ़ुटपाथ", "oblique-plural": "फ़ुटपाथों" }
+      readings: { "singular": "fuṭpāth", "plural": "fuṭpāth", "oblique-singular": "fuṭpāth", "oblique-plural": "fuṭpāthōm̐" }
+    - word: "hi-0761"
+      forms: { "singular": null, "plural": "लोग", "oblique-singular": null, "oblique-plural": "लोगों" }
+      readings: { "singular": null, "plural": "lōg", "oblique-singular": null, "oblique-plural": "lōgōm̐" }
+    - word: "hi-0762"
+      forms: { "singular": "आदमी", "plural": "आदमी", "oblique-singular": "आदमी", "oblique-plural": "आदमियों" }
+      readings: { "singular": "ādmī", "plural": "ādmī", "oblique-singular": "ādmī", "oblique-plural": "ādmiyōm̐" }
+    - word: "hi-0763"
+      forms: { "singular": "औरत", "plural": "औरतें", "oblique-singular": "औरत", "oblique-plural": "औरतों" }
+      readings: { "singular": "aurat", "plural": "aurtēm̐", "oblique-singular": "aurat", "oblique-plural": "aurtōm̐" }
+    - word: "hi-0871"
+      forms: { "singular": "ढेर", "plural": "ढेर", "oblique-singular": "ढेर", "oblique-plural": "ढेरों" }
+      readings: { "singular": "ḍhēr", "plural": "ḍhēr", "oblique-singular": "ḍhēr", "oblique-plural": "ḍhērōm̐" }
+    - word: "hi-0872"
+      forms: { "singular": "दर्जन", "plural": "दर्जन", "oblique-singular": "दर्जन", "oblique-plural": "दर्जनों" }
+      readings: { "singular": "darjan", "plural": "darjan", "oblique-singular": "darjan", "oblique-plural": "darjanōm̐" }
+    - word: "hi-0875"
+      forms: { "singular": "पाव", "plural": null, "oblique-singular": "पाव", "oblique-plural": null }
+      readings: { "singular": "pāv", "plural": null, "oblique-singular": "pāv", "oblique-plural": null }
+    - word: "hi-0876"
+      forms: { "singular": "चम्मच", "plural": "चम्मच", "oblique-singular": "चम्मच", "oblique-plural": "चम्मचों" }
+      readings: { "singular": "cammac", "plural": "cammac", "oblique-singular": "cammac", "oblique-plural": "cammacōm̐" }
+    - word: "hi-0877"
+      forms: { "singular": "कप", "plural": "कप", "oblique-singular": "कप", "oblique-plural": "कपों" }
+      readings: { "singular": "kap", "plural": "kap", "oblique-singular": "kap", "oblique-plural": "kapōm̐" }
+    - word: "hi-0878"
+      forms: { "singular": "गिलास", "plural": "गिलास", "oblique-singular": "गिलास", "oblique-plural": "गिलासों" }
+      readings: { "singular": "gilās", "plural": "gilās", "oblique-singular": "gilās", "oblique-plural": "gilāsōm̐" }
+    - word: "hi-0879"
+      forms: { "singular": "बोतल", "plural": "बोतलें", "oblique-singular": "बोतल", "oblique-plural": "बोतलों" }
+      readings: { "singular": "bōtal", "plural": "bōtlēm̐", "oblique-singular": "bōtal", "oblique-plural": "bōtlōm̐" }
+    - word: "hi-0880"
+      forms: { "singular": "टुकड़ा", "plural": "टुकड़े", "oblique-singular": "टुकड़े", "oblique-plural": "टुकड़ों" }
+      readings: { "singular": "ṭukṛā", "plural": "ṭukṛē", "oblique-singular": "ṭukṛē", "oblique-plural": "ṭukṛōm̐" }
+    - word: "hi-0881"
+      forms: { "singular": "जोड़ी", "plural": "जोड़ियाँ", "oblique-singular": "जोड़ी", "oblique-plural": "जोड़ियों" }
+      readings: { "singular": "jōṛī", "plural": "jōṛiyām̐", "oblique-singular": "jōṛī", "oblique-plural": "jōṛiyōm̐" }
+    - word: "hi-0595"
+      forms: { "singular": "यार", "plural": "यार", "oblique-singular": "यार", "oblique-plural": "यारों" }
+      readings: { "singular": "yār", "plural": "yār", "oblique-singular": "yār", "oblique-plural": "yārōm̐" }
+    - word: "hi-0596"
+      forms: { "singular": "जुगाड़", "plural": null, "oblique-singular": "जुगाड़", "oblique-plural": null }
+      readings: { "singular": "jugāṛ", "plural": null, "oblique-singular": "jugāṛ", "oblique-plural": null }
+    - word: "hi-0597"
+      forms: { "singular": "टाइमपास", "plural": null, "oblique-singular": "टाइमपास", "oblique-plural": null }
+      readings: { "singular": "ṭāimpās", "plural": null, "oblique-singular": "ṭāimpās", "oblique-plural": null }
+    - word: "hi-0600"
+      forms: { "singular": "बकवास", "plural": null, "oblique-singular": "बकवास", "oblique-plural": null }
+      readings: { "singular": "bakvās", "plural": null, "oblique-singular": "bakvās", "oblique-plural": null }
+    - word: "hi-0603"
+      forms: { "singular": "दारू", "plural": null, "oblique-singular": "दारू", "oblique-plural": null }
+      readings: { "singular": "dārū", "plural": null, "oblique-singular": "dārū", "oblique-plural": null }
+    - word: "hi-1163"
+      forms: { "singular": "किताब", "plural": "किताबें", "oblique-singular": "किताब", "oblique-plural": "किताबों" }
+      readings: { "singular": "kitāb", "plural": "kitābēm̐", "oblique-singular": "kitāb", "oblique-plural": "kitābōm̐" }
+    - word: "hi-1164"
+      forms: { "singular": "बैग", "plural": "बैग", "oblique-singular": "बैग", "oblique-plural": "बैगों" }
+      readings: { "singular": "baig", "plural": "baig", "oblique-singular": "baig", "oblique-plural": "baigōm̐" }
+    - word: "hi-1165"
+      forms: { "singular": "थैला", "plural": "थैले", "oblique-singular": "थैले", "oblique-plural": "थैलों" }
+      readings: { "singular": "thailā", "plural": "thailē", "oblique-singular": "thailē", "oblique-plural": "thailōm̐" }
+    - word: "hi-1166"
+      forms: { "singular": "बटुआ", "plural": "बटुए", "oblique-singular": "बटुए", "oblique-plural": "बटुओं" }
+      readings: { "singular": "baṭuā", "plural": "baṭuē", "oblique-singular": "baṭuē", "oblique-plural": "baṭuōm̐" }
+    - word: "hi-1167"
+      forms: { "singular": "पर्स", "plural": "पर्स", "oblique-singular": "पर्स", "oblique-plural": "पर्सों" }
+      readings: { "singular": "pars", "plural": "pars", "oblique-singular": "pars", "oblique-plural": "parsōm̐" }
+    - word: "hi-1168"
+      forms: { "singular": "छतरी", "plural": "छतरियाँ", "oblique-singular": "छतरी", "oblique-plural": "छतरियों" }
+      readings: { "singular": "chatrī", "plural": "chatriyām̐", "oblique-singular": "chatrī", "oblique-plural": "chatriyōm̐" }
+    - word: "hi-1169"
+      forms: { "singular": "घड़ी", "plural": "घड़ियाँ", "oblique-singular": "घड़ी", "oblique-plural": "घड़ियों" }
+      readings: { "singular": "ghaṛī", "plural": "ghaṛiyām̐", "oblique-singular": "ghaṛī", "oblique-plural": "ghaṛiyōm̐" }
+    - word: "hi-1170"
+      forms: { "singular": "चश्मा", "plural": "चश्मे", "oblique-singular": "चश्मे", "oblique-plural": "चश्मों" }
+      readings: { "singular": "caśmā", "plural": "caśmē", "oblique-singular": "caśmē", "oblique-plural": "caśmōm̐" }
+    - word: "hi-1171"
+      forms: { "singular": "चार्जर", "plural": "चार्जर", "oblique-singular": "चार्जर", "oblique-plural": "चार्जरों" }
+      readings: { "singular": "cārjar", "plural": "cārjar", "oblique-singular": "cārjar", "oblique-plural": "cārjarōm̐" }
+    - word: "hi-1172"
+      forms: { "singular": "कैमरा", "plural": "कैमरे", "oblique-singular": "कैमरे", "oblique-plural": "कैमरों" }
+      readings: { "singular": "kaimrā", "plural": "kaimrē", "oblique-singular": "kaimrē", "oblique-plural": "kaimrōm̐" }
+    - word: "hi-1173"
+      forms: { "singular": "नक्शा", "plural": "नक्शे", "oblique-singular": "नक्शे", "oblique-plural": "नक्शों" }
+      readings: { "singular": "nakśā", "plural": "nakśē", "oblique-singular": "nakśē", "oblique-plural": "nakśōm̐" }
+    - word: "hi-1174"
+      forms: { "singular": "अख़बार", "plural": "अख़बार", "oblique-singular": "अख़बार", "oblique-plural": "अख़बारों" }
+      readings: { "singular": "ak͟hbār", "plural": "ak͟hbār", "oblique-singular": "ak͟hbār", "oblique-plural": "ak͟hbārōm̐" }
+    - word: "hi-1175"
+      forms: { "singular": "काग़ज़", "plural": "काग़ज़", "oblique-singular": "काग़ज़", "oblique-plural": "काग़ज़ों" }
+      readings: { "singular": "kāġaz", "plural": "kāġaz", "oblique-singular": "kāġaz", "oblique-plural": "kāġzōm̐" }
+    - word: "hi-1176"
+      forms: { "singular": "तौलिया", "plural": "तौलिये", "oblique-singular": "तौलिये", "oblique-plural": "तौलियों" }
+      readings: { "singular": "tauliyā", "plural": "tauliyē", "oblique-singular": "tauliyē", "oblique-plural": "tauliyōm̐" }
+    - word: "hi-1177"
+      forms: { "singular": "साबुन", "plural": "साबुन", "oblique-singular": "साबुन", "oblique-plural": "साबुनों" }
+      readings: { "singular": "sābun", "plural": "sābun", "oblique-singular": "sābun", "oblique-plural": "sābunōm̐" }
+    - word: "hi-1178"
+      forms: { "singular": "ताला", "plural": "ताले", "oblique-singular": "ताले", "oblique-plural": "तालों" }
+      readings: { "singular": "tālā", "plural": "tālē", "oblique-singular": "tālē", "oblique-plural": "tālōm̐" }
+    - word: "hi-1179"
+      forms: { "singular": "रस्सी", "plural": "रस्सियाँ", "oblique-singular": "रस्सी", "oblique-plural": "रस्सियों" }
+      readings: { "singular": "rassī", "plural": "rassiyām̐", "oblique-singular": "rassī", "oblique-plural": "rassiyōm̐" }
+    - word: "hi-1180"
+      forms: { "singular": "डिब्बा", "plural": "डिब्बे", "oblique-singular": "डिब्बे", "oblique-plural": "डिब्बों" }
+      readings: { "singular": "ḍibbā", "plural": "ḍibbē", "oblique-singular": "ḍibbē", "oblique-plural": "ḍibbōm̐" }
+    - word: "hi-1181"
+      forms: { "singular": "सूटकेस", "plural": "सूटकेस", "oblique-singular": "सूटकेस", "oblique-plural": "सूटकेसों" }
+      readings: { "singular": "sūṭkēs", "plural": "sūṭkēs", "oblique-singular": "sūṭkēs", "oblique-plural": "sūṭkēsōm̐" }
+    - word: "hi-1182"
+      forms: { "singular": "शीशा", "plural": "शीशे", "oblique-singular": "शीशे", "oblique-plural": "शीशों" }
+      readings: { "singular": "śīśā", "plural": "śīśē", "oblique-singular": "śīśē", "oblique-plural": "śīśōm̐" }
+    - word: "hi-1183"
+      forms: { "singular": "ब्रश", "plural": "ब्रश", "oblique-singular": "ब्रश", "oblique-plural": "ब्रशों" }
+      readings: { "singular": "braś", "plural": "braś", "oblique-singular": "braś", "oblique-plural": "braśōm̐" }
+    - word: "hi-1184"
+      forms: { "singular": "सामान", "plural": null, "oblique-singular": "सामान", "oblique-plural": null }
+      readings: { "singular": "sāmān", "plural": null, "oblique-singular": "sāmān", "oblique-plural": null }
+    - word: "hi-1185"
+      forms: { "singular": "चीज़", "plural": "चीज़ें", "oblique-singular": "चीज़", "oblique-plural": "चीज़ों" }
+      readings: { "singular": "cīz", "plural": "cīzēm̐", "oblique-singular": "cīz", "oblique-plural": "cīzōm̐" }
+    - word: "hi-1186"
+      forms: { "singular": "लैपटॉप", "plural": "लैपटॉप", "oblique-singular": "लैपटॉप", "oblique-plural": "लैपटॉपों" }
+      readings: { "singular": "laipṭôp", "plural": "laipṭôp", "oblique-singular": "laipṭôp", "oblique-plural": "laipṭôpōm̐" }
+    - word: "hi-1187"
+      forms: { "singular": "चादर", "plural": "चादरें", "oblique-singular": "चादर", "oblique-plural": "चादरों" }
+      readings: { "singular": "cādar", "plural": "cādrēm̐", "oblique-singular": "cādar", "oblique-plural": "cādrōm̐" }
+    - word: "hi-0302"
+      forms: { "singular": "सुबह", "plural": "सुबहें", "oblique-singular": "सुबह", "oblique-plural": "सुबहों" }
+      readings: { "singular": "subah", "plural": "subhēm̐", "oblique-singular": "subah", "oblique-plural": "subhōm̐" }
+    - word: "hi-0303"
+      forms: { "singular": "शाम", "plural": "शामें", "oblique-singular": "शाम", "oblique-plural": "शामों" }
+      readings: { "singular": "śām", "plural": "śāmēm̐", "oblique-singular": "śām", "oblique-plural": "śāmōm̐" }
+    - word: "hi-0304"
+      forms: { "singular": "रात", "plural": "रातें", "oblique-singular": "रात", "oblique-plural": "रातों" }
+      readings: { "singular": "rāt", "plural": "rātēm̐", "oblique-singular": "rāt", "oblique-plural": "rātōm̐" }
+    - word: "hi-0308"
+      forms: { "singular": "दिन", "plural": "दिन", "oblique-singular": "दिन", "oblique-plural": "दिनों" }
+      readings: { "singular": "din", "plural": "din", "oblique-singular": "din", "oblique-plural": "dinōm̐" }
+    - word: "hi-0309"
+      forms: { "singular": "हफ़्ता", "plural": "हफ़्ते", "oblique-singular": "हफ़्ते", "oblique-plural": "हफ़्तों" }
+      readings: { "singular": "haftā", "plural": "haftē", "oblique-singular": "haftē", "oblique-plural": "haftōm̐" }
+    - word: "hi-0262"
+      forms: { "singular": "बस", "plural": "बसें", "oblique-singular": "बस", "oblique-plural": "बसों" }
+      readings: { "singular": "bas", "plural": "basēm̐", "oblique-singular": "bas", "oblique-plural": "basōm̐" }
+    - word: "hi-0264"
+      forms: { "singular": "टैक्सी", "plural": "टैक्सियाँ", "oblique-singular": "टैक्सी", "oblique-plural": "टैक्सियों" }
+      readings: { "singular": "ṭaiksī", "plural": "ṭaiksiyām̐", "oblique-singular": "ṭaiksī", "oblique-plural": "ṭaiksiyōm̐" }
+    - word: "hi-0265"
+      forms: { "singular": "किराया", "plural": "किराये", "oblique-singular": "किराये", "oblique-plural": "किरायों" }
+      readings: { "singular": "kirāyā", "plural": "kirāyē", "oblique-singular": "kirāyē", "oblique-plural": "kirāyōm̐" }
+    - word: "hi-0270"
+      forms: { "singular": "स्टेशन", "plural": "स्टेशन", "oblique-singular": "स्टेशन", "oblique-plural": "स्टेशनों" }
+      readings: { "singular": "sṭēśan", "plural": "sṭēśan", "oblique-singular": "sṭēśan", "oblique-plural": "sṭēśnōm̐" }
+    - word: "hi-0271"
+      forms: { "singular": "टिकट", "plural": "टिकट", "oblique-singular": "टिकट", "oblique-plural": "टिकटों" }
+      readings: { "singular": "ṭikaṭ", "plural": "ṭikaṭ", "oblique-singular": "ṭikaṭ", "oblique-plural": "ṭikṭōm̐" }
+    - word: "hi-0272"
+      forms: { "singular": "सीट", "plural": "सीटें", "oblique-singular": "सीट", "oblique-plural": "सीटों" }
+      readings: { "singular": "sīṭ", "plural": "sīṭēm̐", "oblique-singular": "sīṭ", "oblique-plural": "sīṭōm̐" }
+    - word: "hi-0399"
+      forms: { "singular": "नौकरी", "plural": "नौकरियाँ", "oblique-singular": "नौकरी", "oblique-plural": "नौकरियों" }
+      readings: { "singular": "naukrī", "plural": "naukriyām̐", "oblique-singular": "naukrī", "oblique-plural": "naukriyōm̐" }
+    - word: "hi-0400"
+      forms: { "singular": "दफ़्तर", "plural": "दफ़्तर", "oblique-singular": "दफ़्तर", "oblique-plural": "दफ़्तरों" }
+      readings: { "singular": "daftar", "plural": "daftar", "oblique-singular": "daftar", "oblique-plural": "daftarōm̐" }
+    - word: "hi-0401"
+      forms: { "singular": "अध्यापक", "plural": "अध्यापक", "oblique-singular": "अध्यापक", "oblique-plural": "अध्यापकों" }
+      readings: { "singular": "adhyāpak", "plural": "adhyāpak", "oblique-singular": "adhyāpak", "oblique-plural": "adhyāpkōm̐" }
+    - word: "hi-0402"
+      forms: { "singular": "दुकानदार", "plural": "दुकानदार", "oblique-singular": "दुकानदार", "oblique-plural": "दुकानदारों" }
+      readings: { "singular": "dukāndār", "plural": "dukāndār", "oblique-singular": "dukāndār", "oblique-plural": "dukāndārōm̐" }
+    - word: "hi-0403"
+      forms: { "singular": "ड्राइवर", "plural": "ड्राइवर", "oblique-singular": "ड्राइवर", "oblique-plural": "ड्राइवरों" }
+      readings: { "singular": "ḍrāivar", "plural": "ḍrāivar", "oblique-singular": "ḍrāivar", "oblique-plural": "ḍrāivrōm̐" }
+    - word: "hi-0404"
+      forms: { "singular": "इंजीनियर", "plural": "इंजीनियर", "oblique-singular": "इंजीनियर", "oblique-plural": "इंजीनियरों" }
+      readings: { "singular": "iñjīniyar", "plural": "iñjīniyar", "oblique-singular": "iñjīniyar", "oblique-plural": "iñjīniyrōm̐" }
+    - word: "hi-0405"
+      forms: { "singular": "वकील", "plural": "वकील", "oblique-singular": "वकील", "oblique-plural": "वकीलों" }
+      readings: { "singular": "vakīl", "plural": "vakīl", "oblique-singular": "vakīl", "oblique-plural": "vakīlōm̐" }
+    - word: "hi-0406"
+      forms: { "singular": "नर्स", "plural": "नर्सें", "oblique-singular": "नर्स", "oblique-plural": "नर्सों" }
+      readings: { "singular": "nars", "plural": "narsēm̐", "oblique-singular": "nars", "oblique-plural": "narsōm̐" }
+    - word: "hi-0407"
+      forms: { "singular": "किसान", "plural": "किसान", "oblique-singular": "किसान", "oblique-plural": "किसानों" }
+      readings: { "singular": "kisān", "plural": "kisān", "oblique-singular": "kisān", "oblique-plural": "kisānōm̐" }
+    - word: "hi-0408"
+      forms: { "singular": "रसोइया", "plural": "रसोइये", "oblique-singular": "रसोइये", "oblique-plural": "रसोइयों" }
+      readings: { "singular": "rasōiyā", "plural": "rasōiyē", "oblique-singular": "rasōiyē", "oblique-plural": "rasōiyōm̐" }
+    - word: "hi-0409"
+      forms: { "singular": "लेखक", "plural": "लेखक", "oblique-singular": "लेखक", "oblique-plural": "लेखकों" }
+      readings: { "singular": "lēkhak", "plural": "lēkhak", "oblique-singular": "lēkhak", "oblique-plural": "lēkhkōm̐" }
+    - word: "hi-0410"
+      forms: { "singular": "पत्रकार", "plural": "पत्रकार", "oblique-singular": "पत्रकार", "oblique-plural": "पत्रकारों" }
+      readings: { "singular": "patrakār", "plural": "patrakār", "oblique-singular": "patrakār", "oblique-plural": "patrakārōm̐" }
+    - word: "hi-0411"
+      forms: { "singular": "छात्र", "plural": "छात्र", "oblique-singular": "छात्र", "oblique-plural": "छात्रों" }
+      readings: { "singular": "chātra", "plural": "chātra", "oblique-singular": "chātra", "oblique-plural": "chātrōm̐" }
+    - word: "hi-0412"
+      forms: { "singular": "छुट्टी", "plural": "छुट्टियाँ", "oblique-singular": "छुट्टी", "oblique-plural": "छुट्टियों" }
+      readings: { "singular": "chuṭṭī", "plural": "chuṭṭiyām̐", "oblique-singular": "chuṭṭī", "oblique-plural": "chuṭṭiyōm̐" }
+    - word: "hi-0413"
+      forms: { "singular": "तनख़्वाह", "plural": "तनख़्वाहें", "oblique-singular": "तनख़्वाह", "oblique-plural": "तनख़्वाहों" }
+      readings: { "singular": "tank͟hvāh", "plural": "tank͟hvāhēm̐", "oblique-singular": "tank͟hvāh", "oblique-plural": "tank͟hvāhōm̐" }
+    - word: "hi-0414"
+      forms: { "singular": "व्यापार", "plural": "व्यापार", "oblique-singular": "व्यापार", "oblique-plural": "व्यापारों" }
+      readings: { "singular": "vyāpār", "plural": "vyāpār", "oblique-singular": "vyāpār", "oblique-plural": "vyāpārōm̐" }
+rules:
+  - id: "hi-rule-singular"
+    slots: ["singular"]
+    words: [{ word: "कमरा", reading: "kamrā" }]
+  - id: "hi-rule-plural"
+    slots: ["plural"]
+    words: [{ word: "लड़का", reading: "laṛkā" }, { word: "लड़के", reading: "laṛkē" }, { word: "लड़की", reading: "laṛkī" }, { word: "लड़कियाँ", reading: "laṛkiyām̐" }, { word: "किताब", reading: "kitāb" }, { word: "किताबें", reading: "kitābēm̐" }, { word: "घर", reading: "ghar" }]
+  - id: "hi-rule-oblique-singular"
+    slots: ["oblique-singular"]
+    words: [{ word: "में", reading: "mēm̐" }, { word: "से", reading: "sē" }, { word: "को", reading: "kō" }, { word: "कमरा", reading: "kamrā" }, { word: "कमरे में", reading: "kamrē mēm̐" }, { word: "घर", reading: "ghar" }]
+  - id: "hi-rule-oblique-plural"
+    slots: ["oblique-plural"]
+    words: [{ word: "कमरों में", reading: "kamrōm̐ mēm̐" }, { word: "लड़का", reading: "laṛkā" }, { word: "लड़कों", reading: "laṛkōm̐" }, { word: "आदमी", reading: "ādmī" }, { word: "आदमियों", reading: "ādmiyōm̐" }, { word: "लड़की", reading: "laṛkī" }, { word: "लड़कियों", reading: "laṛkiyōm̐" }]
