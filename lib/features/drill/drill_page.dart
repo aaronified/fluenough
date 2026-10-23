@@ -355,10 +355,12 @@ class _DrillPageState extends State<DrillPage> {
         session: session,
         onClose: _close,
       ),
-      // A pattern deck's cell, with its table; a rules table's cell
-      // typed is a typed word, its word and meaning the prompt (spec
-      // 4.6).
-      DrillMode.grammar when session.item.card.rule == null =>
+      // A pattern deck's cell, with its table; a rules table's cell, or a
+      // word asked its form by its siblings, typed is a typed word, its
+      // word and meaning the prompt (spec 4.6).
+      DrillMode.grammar
+          when session.item.card.rule == null &&
+              session.deck.deck.pattern != null =>
         GrammarDrill.live(
           key: ValueKey<int>(session.position),
           session: session,
