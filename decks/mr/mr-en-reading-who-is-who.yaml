@@ -1,0 +1,42 @@
+schema: 1
+id: "mr-en-reading-who-is-who"
+name: "Reading: who is who"
+kind: "reading"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short passages about family and friends, with the pronouns of the Pronouns and people words unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "mr-who-is-who"
+    title: "Who is who"
+    theme: "pronouns"
+    sentences:
+      - { text: "हा माझा भाऊ आहे.", reading: "hā mājhā bhāu āhe.", ipa: "ɦa madzʱa bʱau aɦe" }
+      - { text: "ही माझी बहीण आहे.", reading: "hi mājhi bahiṇ āhe.", ipa: "ɦi madʒʱi bəɦiɳ aɦe" }
+      - { text: "ती माझी मैत्रीण आहे.", reading: "ti mājhi maitriṇ āhe.", ipa: "t̪i madʒʱi məit̪riɳ aɦe" }
+    questions:
+      - id: "mr-0702"
+        prompt: { en: "In the first sentence, who is the speaker talking about?" }
+        options: [{ en: "Their brother" }, { en: "Their sister" }]
+        answer: 1
+      - id: "mr-0703"
+        prompt: { en: "In the second sentence, who is the speaker talking about?" }
+        options: [{ en: "Their brother" }, { en: "Their sister" }]
+        answer: 2
+      - { id: "mr-0704", prompt: { en: "The speaker's friend is a woman." }, answer: true }
+  - id: "mr-seating-chart"
+    title: "Seating chart"
+    theme: "pronouns"
+    sentences:
+      - { text: "आजी आणि आजोबा पुढे बसतात.", reading: "āji āṇi ājobā puḍhe bastāt.", ipa: "adʒi aɳi adzoba puɖʱe bəst̪at̪" }
+      - { text: "माझे नातेवाईक मागे बसतात.", reading: "mājhe nātevāik māge bastāt.", ipa: "madʒʱe nat̪eʋaik maɡe bəst̪at̪" }
+      - { text: "तुम्ही माझ्या शेजारी बसा.", reading: "tumhi mājhyā śejāri basā.", ipa: "t̪umɦi madʒʱja ʃedzari bəsa" }
+    glossary:
+      - { word: "पुढे", modern: "पुढे", reading: "puḍhe", ipa: "puɖʱe", meaning: { en: "in front" } }
+      - { word: "मागे", modern: "मागे", reading: "māge", ipa: "maɡe", meaning: { en: "at the back" } }
+    questions:
+      - { id: "mr-0705", prompt: { en: "Where do the grandparents sit?" }, options: [{ en: "At the front" }, { en: "At the back" }], answer: 1 }
+      - { id: "mr-0706", prompt: { en: "Who sits next to the speaker?" }, options: [{ en: "The listener" }, { en: "A relative" }], answer: 1 }
+      - { id: "mr-0707", prompt: { en: "The speaker's relatives sit at the front." }, answer: false }
