@@ -26,10 +26,11 @@
 # 6. sentences, each after its words and rules; then the other themes,
 #    each its words, then its rules, then its sentences.
 # Assamese's grammar keeps the Indo-Aryan order of
-# docs/plans/language-paths-scheme.md within each level: be,
-# postpositions, the present, gender agreement, the oblique, the past,
-# the perfect, compound and conjunct verbs, then the subjunctive, the
-# relative-correlative clauses and the rest of B1.
+# docs/plans/language-paths-scheme.md within each level: be, the present,
+# the imperatives, postpositions, gender agreement, the oblique, the past,
+# the habitual past (right after the simple past, the tense, number and
+# gender audit of 2026-10-23), the perfect, compound and conjunct verbs,
+# then the subjunctive, the relative-correlative clauses and the rest of B1.
 #
 # The core's order is by judgement, most common first:
 # about me, everyday verbs (planned), the common adverbs and function
@@ -133,6 +134,16 @@ units:
   - decks: ["as-grammar-be"]
     words: 0
     grammar: ["be"]
+  - planned: { id: "as-grammar-present", grammar: "present" }
+    listening_passages:
+      - { id: "daily-habits-talk", text: { "en": "Two friends say what they do every day, and where they go" } }
+    reading_passages:
+      - { id: "day-timetable", text: { "en": "A timetable of a working day" } }
+  - planned: { id: "as-grammar-imperatives", grammar: "imperatives" }
+    listening_passages:
+      - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
+    reading_passages:
+      - { id: "signs-and-rules", text: { "en": "Signs saying what to do and what not to do" } }
   - decks: ["as-grammar-demonstratives"]
     words: 0
     grammar: ["demonstratives"]
@@ -222,6 +233,16 @@ units:
   - decks: ["as-calendar", "as-grammar-past", "*"]
     words: 17
     grammar: ["past"]
+  - planned: { id: "as-grammar-habitual-past", grammar: "habitual-past" }
+    listening_passages:
+      - { id: "when-i-was-small", text: { "en": "Telling what you used to do when you were small" } }
+    reading_passages:
+      - { id: "memoir-extract", text: { "en": "An extract from a memoir about childhood" } }
+  - planned: { id: "as-grammar-perfect", grammar: "perfect" }
+    listening_passages:
+      - { id: "what-has-happened", text: { "en": "A neighbour says what has already been done and what is still left" } }
+    reading_passages:
+      - { id: "checklist-done", text: { "en": "A ticked checklist: what has been done and what has not" } }
   - planned: { id: "as-grammar-ordinals", grammar: "ordinals" }
     listening_passages:
       - { id: "which-floor", text: { "en": "Finding a flat: the first floor, the second, the third" } }
@@ -232,11 +253,6 @@ units:
       - { id: "festival-days", text: { "en": "Neighbours plan the days of a festival together" } }
     reading_passages:
       - { id: "festival-invitation", text: { "en": "An invitation to a festival meal" } }
-  - planned: { id: "as-grammar-perfect", grammar: "perfect" }
-    listening_passages:
-      - { id: "what-has-happened", text: { "en": "A neighbour says what has already been done and what is still left" } }
-    reading_passages:
-      - { id: "checklist-done", text: { "en": "A ticked checklist: what has been done and what has not" } }
   - planned: { id: "as-shopping", theme: "shopping", words: 50 }
     listening_passages:
       - { id: "bargaining", text: { "en": "Bargaining politely at a market stall" } }
@@ -275,11 +291,6 @@ units:
       - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends" } }
     reading_passages:
       - { id: "club-poster", text: { "en": "A poster for a sports and music club" } }
-  - planned: { id: "as-grammar-imperatives", grammar: "imperatives" }
-    listening_passages:
-      - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
-    reading_passages:
-      - { id: "signs-and-rules", text: { "en": "Signs saying what to do and what not to do" } }
   - planned: { id: "as-grammar-past-continuous", grammar: "past-continuous" }
     listening_passages:
       - { id: "what-was-happening", text: { "en": "Saying what you were doing when the lights went out" } }
@@ -524,11 +535,6 @@ units:
       - { id: "a-poem-read-aloud", text: { "en": "A teacher reads a short poem and explains it" } }
     reading_passages:
       - { id: "book-blurb", text: { "en": "The back-cover blurb of a novel" } }
-  - planned: { id: "as-grammar-habitual-past", grammar: "habitual-past" }
-    listening_passages:
-      - { id: "when-i-was-small", text: { "en": "Telling what you used to do when you were small" } }
-    reading_passages:
-      - { id: "memoir-extract", text: { "en": "An extract from a memoir about childhood" } }
   - planned: { id: "as-verbs-5", theme: "verbs-5", words: 45 }
     listening_passages:
       - { id: "what-happened-next", text: { "en": "Telling a long story with every step in order" } }
