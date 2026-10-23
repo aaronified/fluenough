@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Rearranging is eligible by the card's data (three or more words in the target, or two in a phrase) through the question-type registry, which never rearranges a reading question, with the same questions as before (#522, step 5).
+- The two grammar question types are now eligible by whether the card's word has other forms (`Card.hasOtherForms`) or has sibling cards (`formSiblings`: each has exactly one base, the same card), and a rules cell's lesson questions come from the registry, with the same questions as before (#522, step 4).
+- Wrong options in a choice question are now taken first from cards that share the answer's word family, part of speech or tags (`lib/core/scheduling/distractors.dart`), with the same pool as before (#522, step 3).
+- A question-type registry in `lib/core/scheduling/question_type.dart`: how a review asks each item is now chosen by one list of types, each with its skill and when it is eligible, with the same questions as before (#522, step 2).
 - Progress: Weakest tags has an "All tags ›" button to a page of every tag with its bar and share remembered in the chosen range, and a Practise button on each: a random set of up to 20 taught words with that tag, in the language chosen at the top, with every answer recorded (#499).
 - The `wiki/` folder is published to the GitHub wiki by a workflow whenever it changes on main.
 - A card can set `picture_ask: true`: its `picture` is drawn with a small "?" badge, for question words (#707).
