@@ -263,11 +263,8 @@ units:
     words: 6
   # len, kule, loje, jelo, laso, walo and pimeja: Toki Pona's five colour
   # words, and how other colours are mixed from them (laso jelo).
-  - planned: { id: "tok-clothes", theme: "clothes", words: 7 }
-    listening_passages:
-      - { id: "what-to-wear", text: { "en": "Two friends choose clothes and colours for an event" } }
-    reading_passages:
-      - { id: "flag-descriptions", text: { "en": "Three flags described by their colours and shapes" } }
+  - decks: ["tok-clothes", "tok-clothes-sentences", "tok-reading-clothes", "*"]
+    words: 7
   # The preverbs before a verb: wile, ken, kama, awen, sona, lukin, open
   # and pini (mi wile moku); kama with a modifier for becoming (kama
   # suli).
