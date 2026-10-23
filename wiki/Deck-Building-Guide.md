@@ -49,15 +49,8 @@ specification.
 **The app downloads these files; it does not bundle them** (#210, ADR-0037).
 `index.json` lists every language with its files, each with its size and
 SHA-256, and the app reads it from `main` on GitHub. Only `themes.yaml`
-ships inside the app. After changing anything here, write the index again
-and commit it with your change:
-
-```sh
-python3 tools/deck_index.py
-```
-
-Validating the whole of `decks/`, which is what CI does, fails while the
-index is out of date, because the app would then refuse the changed files.
+ships inside the app. After a merge touching `decks/`, a workflow writes the
+index again on main; do not run `tools/deck_index.py` or commit the index.
 Validating a single deck or one language directory only checks what you
 pointed it at. `decks/ja/` is left out of the index on purpose for now: it is
 listed in `HIDDEN` in `tools/deck_index.py`, and still validated.
