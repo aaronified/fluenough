@@ -5,15 +5,24 @@ core: "hi-grammar-perfect"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Present perfect"
 license: "CC-BY-SA-4.0"
-description: "I have come, she has gone: the present perfect of verbs without an object. Not yet checked by a Hindi speaker: please report any mistake."
 tags: ["unreviewed"]
-pattern:
-  name: "Present perfect, intransitive verbs"
+description: "I have come, she has gone: the present perfect of verbs without an object. Not yet checked by a Hindi speaker: please report any mistake."
+table:
   slot_name: "person and gender"
-  prompt: "{lemma} ({gloss}) — {slot}"
-  entries:
-    "aanaa": "to come"
-    "jaanaa": "to go"
-    "pahunchnaa": "to arrive"
-    "baithnaa": "to sit"
-  notes: "The past form of the verb, then हूँ (hūm̐), हो (hō), है (hai) or हैं (haim̐): आया हूँ (āyā hūm̐), I have come. With an object, the doer takes ने (nē) as in the simple past: मैंने खाना खाया है (mainnē khānā khāyā hai)."
+  slots:
+    "i-m": "I, masculine"
+    "i-f": "I, feminine"
+    "you-m": "you, informal, masculine"
+    "you-f": "you, informal, feminine"
+    "he-m": "he or she, masculine"
+    "he-f": "he or she, feminine"
+    "we-m": "we, masculine"
+    "we-f": "we, feminine"
+    "formal-m": "you, formal, masculine"
+    "formal-f": "you, formal, feminine"
+    "they-m": "they, masculine"
+    "they-f": "they, feminine"
+rules:
+  "hi-rule-perfect":
+    name: "The past form, then हूँ (hūm̐), हो (hō), है (hai) or हैं (haim̐): the present perfect"
+    explanation: "The past form of the verb, then हूँ (hūm̐), हो (hō), है (hai) or हैं (haim̐): आया हूँ (āyā hūm̐), I have come. A feminine doer takes the feminine singular form even in the plural: आई हैं (āī haim̐), they have come. Verbs that take no ने, such as आना (ānā) and जाना (jānā), are in this table. With an object, the doer takes ने (nē) as in the simple past, so लिखना (likhnā) is not here: मैंने चिट्ठी लिखी है (mainnē ciṭṭhī likhī hai), I have written the letter."
