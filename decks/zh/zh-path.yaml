@@ -116,9 +116,13 @@ regions:
   - id: "singapore-malaysia"
     name: { "en": "Singapore and Malaysia (Singapore, Kuala Lumpur, Penang, Johor Bahru)" }
 # The decks that need the script: a learner who learns without it skips
-# them. No script deck is written yet; the planned script units (strokes
-# and radicals, and the seven character sets) join this list as each is
-# written, so it is left out until then.
+# them. The planned script units (strokes and radicals, and the seven
+# character sets) join this list as each is written.
+alphabet:
+  - "zh-strokes-radicals"
+  - "zh-reading-strokes-radicals"
+  - "zh-characters-1"
+  - "zh-reading-characters-1"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
@@ -181,54 +185,64 @@ units:
   # who learns without it). Strokes, stroke order and the common radicals
   # first, then the first set of characters: numbers, people and the
   # simplest pictures.
-  - planned: { id: "zh-strokes-radicals", grammar: "script-strokes-radicals", words: 0 }
+  - decks: ["zh-strokes-radicals", "zh-reading-strokes-radicals"]
+    words: 10
     listening_passages:
       - { id: "naming-the-strokes", text: { "en": "A teacher names the basic strokes and the order they are written in, while writing ren, person, and kou, mouth" } }
     reading_passages:
       - { id: "radical-chart", text: { "en": "A chart of common radicals with their meanings: water, hand, mouth, person, wood" } }
-  - planned: { id: "zh-characters-1", grammar: "script-characters-1", words: 0 }
+  - decks: ["zh-characters-1", "zh-reading-characters-1"]
+    words: 10
     listening_passages:
       - { id: "one-two-three", text: { "en": "Hearing the words whose characters are taught: the numbers, person, big, small, I, you" } }
     reading_passages:
       - { id: "number-signs", text: { "en": "Simple signs in characters: floor numbers, prices, big and small sizes" } }
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
-  - planned: { id: "zh-about-me", theme: "about-me", words: 20 }
+  - decks: ["zh-about-me", "zh-about-me-sentences", "zh-reading-about-me", "*"]
+    words: 20
     listening_passages:
       - { id: "self-introduction", text: { "en": "A self-introduction on the first day at a language school" } }
     reading_passages:
       - { id: "registration-card", text: { "en": "A registration card: name, age, country, job" } }
-  - planned: { id: "zh-everyday-verbs", theme: "everyday-verbs", words: 35 }
+  - decks: ["zh-everyday-verbs", "zh-everyday-verbs-sentences", "zh-reading-everyday-verbs", "*"]
+    words: 35
     listening_passages:
       - { id: "a-morning-at-home", text: { "en": "A mother says what each person in the house does in the morning" } }
     reading_passages:
       - { id: "note-on-the-table", text: { "en": "A note on the table: what to eat, what to drink, when to come home" } }
-  - planned: { id: "zh-adverbs", theme: "adverbs", words: 30 }
+  - decks: ["zh-adverbs", "zh-adverbs-sentences", "zh-reading-adverbs", "*"]
+    words: 30
     listening_passages:
       - { id: "how-often", text: { "en": "Saying how often and how much: always, also, all, very, too" } }
     reading_passages:
       - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
-  - planned: { id: "zh-quantities", theme: "quantities", words: 25 }
+  - decks: ["zh-quantities", "zh-quantities-sentences", "zh-reading-quantities", "*"]
+    words: 25
     listening_passages:
       - { id: "how-many-do-you-want", text: { "en": "Asking how much and how many at a bakery: ji and duoshao" } }
     reading_passages:
       - { id: "recipe-amounts", text: { "en": "The amounts on a recipe card" } }
-  - planned: { id: "zh-describing", theme: "describing", words: 35 }
+  - decks: ["zh-describing", "zh-describing-sentences", "zh-reading-describing", "*"]
+    words: 36
     listening_passages:
       - { id: "how-is-it", text: { "en": "A friend asks about your new room: big, quiet, convenient" } }
     reading_passages:
       - { id: "postcard-from-hangzhou", text: { "en": "A short postcard: the weather, the food, the people" } }
-  - planned: { id: "zh-time", theme: "time", words: 25 }
+  - decks: ["zh-time", "zh-time-sentences", "zh-reading-time", "*"]
+    words: 25
     listening_passages:
       - { id: "what-time-is-it", text: { "en": "Asking and telling the time" } }
     reading_passages:
       - { id: "shop-hours", text: { "en": "The opening hours on a shop door" } }
-  - planned: { id: "zh-location", theme: "location", words: 15 }
+  - decks: ["zh-location", "zh-location-sentences", "zh-reading-location", "*"]
+    words: 18
     listening_passages:
       - { id: "where-is-my-key", text: { "en": "Looking for a key: on, under, in, next to" } }
     reading_passages:
       - { id: "room-layout", text: { "en": "A note saying where things are in a room" } }
-  - planned: { id: "zh-more-verbs", theme: "more-verbs", words: 30 }
+  - decks: ["zh-more-verbs", "zh-more-verbs-sentences", "zh-reading-more-verbs", "*"]
+    words: 30
     listening_passages:
       - { id: "weekend-chores", text: { "en": "Someone lists what they will do this weekend" } }
     reading_passages:
