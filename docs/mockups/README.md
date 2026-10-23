@@ -4,16 +4,16 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 ## Awaiting approval
 
-- `progress-mastery.html`: the Progress tab's mastery view (#678): the
-  words count (**312** / 540), a 6-point star of mastery per skill (grammar,
-  script, read, write, hear, say; the filled shape is known / B1 total and is
-  overall mastery; an outline with no fill is known / taught, always on or
-  outside the filled shape, at the centre for an untaught skill; both grow from
-  the centre in 400 ms on open), the line chart of known / taught over time,
-  then the weakest tags, leeches and calendar (with streaks) the tab has today
-  (owner, 2026-10-23). Hindi (Hindustani) in light and Bengali in dark, 1.4x.
-  Open choices are tweak controls and are listed in `progress-mastery.md`, with
-  the self-check.
+- `progress-mastery.html`: the Progress tab's mastery view (#678): the words
+  count (**312** / 540) and one streak tile, a 7-day running calendar with one
+  mark a day (fire for the quota met, two stacked fires for 2x or more, a
+  filled dot for some practice, an unfilled dot for none; #485's minutes), the
+  tappable 6-point star (a fill with no edge of known / B1 total, a solid blue
+  outline of known / taught, nothing written under it), then the weakest tags
+  and leeches (owner, 2026-10-23). Tapping the star opens a second screen with
+  the line chart of both measures over time. Hindi (Hindustani) in light and
+  Bengali in dark, 1.4x. The open choice is a tweak control and is listed in
+  `progress-mastery.md`, with the self-check.
 
 - `today-chain.html`: every screen the Today chain needs on one page (owner,
   2026-10-23: "Do all the mockups needed for the today chain together, in one
