@@ -1,0 +1,657 @@
+schema: 1
+id: "es-en-describing"
+kind: "layer"
+core: "es-describing"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Describing things and feelings"
+license: "CC-BY-SA-4.0"
+description: "Adjectives for looks, taste, price, difficulty, feelings and the state of things, each with its opposite. Not yet checked by a Spanish speaker: please report any mistake."
+
+cards:
+  "es-0404":
+    native: "ugly"
+    notes:
+      "n1": "Feo is ugly. Its opposite is bonito (pretty)."
+    examples:
+      "El edificio es feo.":
+        native: "The building is ugly."
+        bases:
+          "El": "the"
+          "edificio": "building"
+          "feo": "ugly"
+      "Ana tiene un perro feo.":
+        native: "Ana has an ugly dog."
+        bases:
+          "Ana": "Ana"
+          "un": "a"
+          "perro": "dog"
+          "feo": "ugly"
+  "es-0405":
+    native: "pretty; nice"
+    notes:
+      "n1": "Bonito is pretty, and it describes things and places more often than people."
+    examples:
+      "La casa es bonita.":
+        native: "The house is pretty."
+        bases:
+          "La": "the"
+          "bonita": "pretty"
+      "Qué bonito es el parque.":
+        native: "How pretty the park is."
+        bases:
+          "bonito": "pretty"
+          "el": "the"
+          "parque": "park"
+  "es-0406":
+    native: "handsome; good-looking"
+    notes:
+      "n1": "Guapo is handsome or good-looking. It is used for people."
+    examples:
+      "Mi hermano es muy guapo.":
+        native: "My brother is very handsome."
+        bases:
+          "guapo": "handsome"
+      "Ese chico es guapo.":
+        native: "That boy is handsome."
+        bases:
+          "Ese": "that"
+          "guapo": "handsome"
+  "es-0407":
+    native: "hot"
+    notes:
+      "n1": "Caliente is hot, for food and drink and for weather."
+    examples:
+      "La sopa está muy caliente.":
+        native: "The soup is very hot."
+        bases:
+          "La": "the"
+          "sopa": "soup"
+          "caliente": "hot"
+      "El café está caliente.":
+        native: "The coffee is hot."
+        bases:
+          "El": "the"
+          "café": "coffee"
+          "caliente": "hot"
+  "es-0408":
+    native: "cold"
+    notes:
+      "n1": "Frío is cold. Hace frío means it is cold (of the weather)."
+    examples:
+      "Hace frío en invierno.":
+        native: "It is cold in winter."
+        bases:
+          "frío": "cold"
+          "en": "in"
+          "invierno": "winter"
+      "El agua está fría.":
+        native: "The water is cold."
+        bases:
+          "El": "the"
+          "fría": "cold"
+  "es-0409":
+    native: "tasty; rich"
+    notes:
+      "n1": "Rico is tasty for food, and rich for money. Its opposite is soso (bland)."
+    examples:
+      "La comida es muy rica.":
+        native: "The food is very tasty."
+        bases:
+          "La": "the"
+          "rica": "tasty"
+      "El pan está rico.":
+        native: "The bread is tasty."
+        bases:
+          "El": "the"
+          "rico": "tasty"
+  "es-0410":
+    native: "tasty"
+    notes:
+      "n1": "Sabroso is tasty, for food. Rico is the more common word."
+    examples:
+      "Esta sopa es muy sabrosa.":
+        native: "This soup is very tasty."
+        bases:
+          "Esta": "this"
+          "sopa": "soup"
+          "sabrosa": "tasty"
+      "Comí un pastel sabroso.":
+        native: "I ate a tasty cake."
+        bases:
+          "un": "a"
+          "pastel": "cake"
+          "sabroso": "tasty"
+  "es-0411":
+    native: "cheap"
+    notes:
+      "n1": "Barato is cheap. Its opposite is caro (expensive)."
+    examples:
+      "Este libro es barato.":
+        native: "This book is cheap."
+        bases:
+          "Este": "this"
+          "barato": "cheap"
+      "La fruta está barata hoy.":
+        native: "The fruit is cheap today."
+        bases:
+          "La": "the"
+          "fruta": "fruit"
+          "barata": "cheap"
+  "es-0412":
+    native: "expensive"
+    notes:
+      "n1": "Caro is expensive. Its opposite is barato."
+    examples:
+      "El taxi es caro.":
+        native: "The taxi is expensive."
+        bases:
+          "El": "the"
+          "taxi": "taxi"
+          "caro": "expensive"
+      "Los zapatos son muy caros.":
+        native: "The shoes are very expensive."
+        bases:
+          "Los": "the"
+          "zapatos": "shoes"
+          "caros": "expensive"
+  "es-0413":
+    native: "easy"
+    notes:
+      "n1": "Fácil is easy. Its opposite is difícil."
+    examples:
+      "La lección es fácil.":
+        native: "The lesson is easy."
+        bases:
+          "La": "the"
+          "lección": "lesson"
+          "fácil": "easy"
+      "Hablar español es fácil.":
+        native: "Speaking Spanish is easy."
+        bases:
+          "español": "Spanish"
+          "fácil": "easy"
+  "es-0414":
+    native: "difficult; hard"
+    notes:
+      "n1": "Difícil is difficult. Its plural is difíciles."
+    examples:
+      "El examen es difícil.":
+        native: "The exam is difficult."
+        bases:
+          "El": "the"
+          "examen": "exam"
+          "difícil": "difficult"
+      "Es difícil leer sin gafas.":
+        native: "It is difficult to read without glasses."
+        bases:
+          "difícil": "difficult"
+          "sin": "without"
+          "gafas": "glasses"
+  "es-0415":
+    native: "slow"
+    notes:
+      "n1": "Lento is slow, for things and people. Its opposite is rápido."
+    examples:
+      "El tren es muy lento.":
+        native: "The train is very slow."
+        bases:
+          "El": "the"
+          "tren": "train"
+          "lento": "slow"
+      "Internet es lento hoy.":
+        native: "The internet is slow today."
+        bases:
+          "Internet": "internet"
+          "lento": "slow"
+  "es-0416":
+    native: "clean"
+    notes:
+      "n1": "Limpio is clean. Its opposite is sucio (dirty)."
+    examples:
+      "La cocina está limpia.":
+        native: "The kitchen is clean."
+        bases:
+          "La": "the"
+          "limpia": "clean"
+      "Mi camisa está limpia.":
+        native: "My shirt is clean."
+        bases:
+          "camisa": "shirt"
+          "limpia": "clean"
+  "es-0417":
+    native: "dirty"
+    notes:
+      "n1": "Sucio is dirty. Its opposite is limpio."
+    examples:
+      "El suelo está sucio.":
+        native: "The floor is dirty."
+        bases:
+          "El": "the"
+          "suelo": "floor"
+          "sucio": "dirty"
+      "Las manos están sucias.":
+        native: "The hands are dirty."
+        bases:
+          "Las": "the"
+          "manos": "hands"
+          "sucias": "dirty"
+  "es-0418":
+    native: "happy; pleased"
+    notes:
+      "n1": "Contento is happy or pleased, for a short time. Use estar with it: estoy contento."
+    examples:
+      "Estoy contento con el resultado.":
+        native: "I am happy with the result."
+        bases:
+          "contento": "happy"
+          "con": "with"
+          "el": "the"
+          "resultado": "result"
+      "Mi madre está contenta hoy.":
+        native: "My mother is happy today."
+        bases:
+          "contenta": "happy"
+  "es-0419":
+    native: "sad"
+    notes:
+      "n1": "Triste is sad. It is the same for both genders."
+    examples:
+      "¿Por qué estás triste?":
+        native: "Why are you sad?"
+        bases:
+          "Por": "by"
+          "triste": "sad"
+      "Ana está triste porque llueve.":
+        native: "Ana is sad because it is raining."
+        bases:
+          "Ana": "Ana"
+          "triste": "sad"
+          "porque": "because"
+          "llueve": "it rains"
+  "es-0420":
+    native: "tired"
+    notes:
+      "n1": "Cansado is tired. Use estar with it: estoy cansado."
+    examples:
+      "Estoy muy cansado hoy.":
+        native: "I am very tired today."
+        bases:
+          "cansado": "tired"
+      "Mi padre está cansado después de trabajar.":
+        native: "My father is tired after working."
+        bases:
+          "cansado": "tired"
+          "de": "of"
+  "es-0421":
+    native: "sick; ill"
+    notes:
+      "n1": "Enfermo is sick or ill. Its feminine is enferma."
+    examples:
+      "Mi hijo está enfermo.":
+        native: "My son is ill."
+        bases:
+          "enfermo": "sick"
+      "La madre de Ana está enferma.":
+        native: "Ana's mother is ill."
+        bases:
+          "La": "the"
+          "de": "of"
+          "Ana": "Ana"
+          "enferma": "sick"
+  "es-0422":
+    native: "nice; friendly"
+    notes:
+      "n1": "Simpático is nice or friendly, for people."
+    examples:
+      "Mi profesor es muy simpático.":
+        native: "My teacher is very nice."
+        bases:
+          "simpático": "nice"
+      "Ana es simpática con todos.":
+        native: "Ana is nice to everyone."
+        bases:
+          "Ana": "Ana"
+          "simpática": "nice"
+          "con": "with"
+  "es-0423":
+    native: "boring; bored"
+    notes:
+      "n1": "Aburrido is boring, for things, and bored, for people."
+    examples:
+      "La película es aburrida.":
+        native: "The film is boring."
+        bases:
+          "La": "the"
+          "película": "film"
+          "aburrida": "boring"
+      "Estoy aburrido en casa.":
+        native: "I am bored at home."
+        bases:
+          "aburrido": "boring"
+          "en": "in"
+  "es-0424":
+    native: "interesting"
+    notes:
+      "n1": "Interesante is interesting, for both genders and numbers."
+    examples:
+      "El libro es muy interesante.":
+        native: "The book is very interesting."
+        bases:
+          "El": "the"
+          "interesante": "interesting"
+      "Ana tiene una idea interesante.":
+        native: "Ana has an interesting idea."
+        bases:
+          "Ana": "Ana"
+          "una": "a"
+          "idea": "idea"
+          "interesante": "interesting"
+  "es-0425":
+    native: "busy; occupied"
+    notes:
+      "n1": "Ocupado is busy, or taken, as a seat is."
+    examples:
+      "Hoy estoy muy ocupado.":
+        native: "Today I am very busy."
+        bases:
+          "ocupado": "busy"
+      "La oficina está ocupada.":
+        native: "The office is busy."
+        bases:
+          "La": "the"
+          "oficina": "office"
+          "ocupada": "busy"
+  "es-0426":
+    native: "free"
+    notes:
+      "n1": "Libre is free, not busy and not taken. It is the same for both genders."
+    examples:
+      "¿Estás libre el sábado?":
+        native: "Are you free on Saturday?"
+        bases:
+          "libre": "free"
+          "el": "the"
+          "sábado": "Saturday"
+      "El baño está libre.":
+        native: "The bathroom is free."
+        bases:
+          "El": "the"
+          "baño": "bathroom"
+          "libre": "free"
+  "es-0427":
+    native: "full"
+    notes:
+      "n1": "Lleno is full. Its opposite is vacío."
+    examples:
+      "La botella está llena.":
+        native: "The bottle is full."
+        bases:
+          "La": "the"
+          "llena": "full"
+      "El autobús está lleno de gente.":
+        native: "The bus is full of people."
+        bases:
+          "El": "the"
+          "autobús": "bus"
+          "lleno": "full"
+          "de": "of"
+          "gente": "people"
+  "es-0428":
+    native: "empty"
+    notes:
+      "n1": "Vacío is empty. Its opposite is lleno."
+    examples:
+      "La caja está vacía.":
+        native: "The box is empty."
+        bases:
+          "La": "the"
+          "vacía": "empty"
+      "El vaso está vacío.":
+        native: "The glass is empty."
+        bases:
+          "El": "the"
+          "vaso": "glass"
+          "vacío": "empty"
+  "es-0429":
+    native: "long"
+    notes:
+      "n1": "Largo is long. Its opposite is corto."
+    examples:
+      "El río es muy largo.":
+        native: "The river is very long."
+        bases:
+          "El": "the"
+          "río": "river"
+          "largo": "long"
+      "La carta es larga.":
+        native: "The letter is long."
+        bases:
+          "La": "the"
+          "larga": "long"
+  "es-0430":
+    native: "short"
+    notes:
+      "n1": "Corto is short. Its opposite is largo."
+    examples:
+      "El pelo de Ana es corto.":
+        native: "Ana's hair is short."
+        bases:
+          "El": "the"
+          "pelo": "hair"
+          "de": "of"
+          "Ana": "Ana"
+          "corto": "short"
+      "La falda es muy corta{corto}.":
+        native: "The skirt is very short."
+        bases:
+          "La": "the"
+          "falda": "skirt"
+          "corta": "short"
+  "es-0431":
+    native: "old"
+    notes:
+      "n1": "Viejo is old, for people and things. Its opposite is nuevo."
+    examples:
+      "Mi abuelo es viejo.":
+        native: "My grandfather is old."
+        bases:
+          "viejo": "old"
+      "La casa es vieja.":
+        native: "The house is old."
+        bases:
+          "La": "the"
+          "vieja": "old"
+  "es-0432":
+    native: "strong; loud"
+    notes:
+      "n1": "Fuerte is strong, and loud or strong-flavoured for other things."
+    examples:
+      "Mi hermana es muy fuerte.":
+        native: "My sister is very strong."
+        bases:
+          "fuerte": "strong"
+      "El café es muy fuerte.":
+        native: "The coffee is very strong."
+        bases:
+          "El": "the"
+          "café": "coffee"
+          "fuerte": "strong"
+  "es-0433":
+    native: "comfortable"
+    notes:
+      "n1": "Cómodo is comfortable, for chairs, beds and clothes."
+    examples:
+      "La silla es muy cómoda.":
+        native: "The chair is very comfortable."
+        bases:
+          "La": "the"
+          "cómoda": "comfortable"
+      "Esta cama es cómoda.":
+        native: "This bed is comfortable."
+        bases:
+          "Esta": "this"
+          "cama": "bed"
+          "cómoda": "comfortable"
+  "es-0434":
+    native: "fun; amusing"
+    notes:
+      "n1": "Divertido is fun or amusing."
+    examples:
+      "La fiesta es muy divertida.":
+        native: "The party is very fun."
+        bases:
+          "La": "the"
+          "fiesta": "party"
+          "divertida": "fun"
+      "Ana es una persona divertida.":
+        native: "Ana is a fun person."
+        bases:
+          "Ana": "Ana"
+          "una": "a"
+          "divertida": "fun"
+  "es-0435":
+    native: "important"
+    notes:
+      "n1": "Importante is important, for both genders."
+    examples:
+      "Es importante comer bien.":
+        native: "It is important to eat well."
+        bases:
+          "importante": "important"
+      "La salud es importante.":
+        native: "Health is important."
+        bases:
+          "La": "the"
+          "salud": "health"
+          "importante": "important"
+  "es-0436":
+    native: "shy"
+    notes:
+      "n1": "Tímido is shy."
+    examples:
+      "Mi hijo es tímido.":
+        native: "My son is shy."
+        bases:
+          "tímido": "shy"
+      "Ana no es tímida con los niños.":
+        native: "Ana is not shy with children."
+        bases:
+          "Ana": "Ana"
+          "tímida": "shy"
+          "con": "with"
+          "los": "the"
+          "niños": "children"
+  "es-0437":
+    native: "thin; slim"
+    notes:
+      "n1": "Delgado is thin or slim, for people and things."
+    examples:
+      "El perro es muy delgado.":
+        native: "The dog is very thin."
+        bases:
+          "El": "the"
+          "perro": "dog"
+          "delgado": "thin"
+      "Ana es alta y delgada.":
+        native: "Ana is tall and thin."
+        bases:
+          "Ana": "Ana"
+          "delgada": "thin"
+  "es-0438":
+    native: "bright; clear"
+    notes:
+      "n1": "Claro is bright or light, and clear."
+    examples:
+      "La habitación es muy clara.":
+        native: "The room is very bright."
+        bases:
+          "La": "the"
+          "habitación": "room"
+          "clara": "bright"
+      "El cielo está claro hoy.":
+        native: "The sky is clear today."
+        bases:
+          "El": "the"
+          "cielo": "sky"
+          "claro": "bright"
+  "es-0439":
+    native: "dark"
+    notes:
+      "n1": "Oscuro is dark. Its opposite is claro."
+    examples:
+      "La noche es oscura.":
+        native: "The night is dark."
+        bases:
+          "La": "the"
+          "oscura": "dark"
+      "El pasillo está oscuro.":
+        native: "The corridor is dark."
+        bases:
+          "El": "the"
+          "pasillo": "corridor"
+          "oscuro": "dark"
+  "es-0440":
+    native: "wet"
+    notes:
+      "n1": "Mojado is wet. Its opposite is seco."
+    examples:
+      "La camisa está mojada.":
+        native: "The shirt is wet."
+        bases:
+          "La": "the"
+          "camisa": "shirt"
+          "mojada": "wet"
+      "Tengo las manos mojadas.":
+        native: "My hands are wet."
+        bases:
+          "las": "the"
+          "manos": "hands"
+          "mojadas": "wet"
+  "es-0441":
+    native: "dry"
+    notes:
+      "n1": "Seco is dry. Its opposite is mojado."
+    examples:
+      "La ropa está seca.":
+        native: "The clothes are dry."
+        bases:
+          "La": "the"
+          "ropa": "clothes"
+          "seca": "dry"
+      "El pan está seco.":
+        native: "The bread is dry."
+        bases:
+          "El": "the"
+          "seco": "dry"
+  "es-0442":
+    native: "happy"
+    notes:
+      "n1": "Feliz is happy, and it is the same for both genders. Its plural is felices."
+    examples:
+      "Ana está feliz hoy.":
+        native: "Ana is happy today."
+        bases:
+          "Ana": "Ana"
+          "feliz": "happy"
+      "Mis padres son muy felices.":
+        native: "My parents are very happy."
+        bases:
+          "Mis": "my"
+          "padres": "parents"
+          "felices": "happy"
+  "es-0443":
+    native: "nervous"
+    notes:
+      "n1": "Nervioso is nervous. Its feminine is nerviosa."
+    examples:
+      "Estoy nervioso antes del examen.":
+        native: "I am nervous before the exam."
+        bases:
+          "nervioso": "nervous"
+          "del": "of the"
+          "examen": "exam"
+      "Ana está nerviosa hoy.":
+        native: "Ana is nervous today."
+        bases:
+          "Ana": "Ana"
+          "nerviosa": "nervous"
