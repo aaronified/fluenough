@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-time"
+name: "Reading: what time is it?"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about time: a short talk about the time, and the opening hours on a shop door. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-what-time-is-it"
+    title: "What time is it?"
+    theme: "time"
+    sentences:
+      - text: "¿Qué hora es?"
+      - text: "Son las ocho."
+      - text: "La cita es a las tres."
+      - text: "El tren sale a las nueve."
+    questions:
+      - id: "es-0859"
+        prompt: { en: "What time is the appointment?" }
+        options:
+          - { en: "At three" }
+          - { en: "At eight" }
+          - { en: "At nine" }
+        answer: 0
+      - id: "es-0860"
+        prompt: { en: "What time does the train leave?" }
+        options:
+          - { en: "At nine" }
+          - { en: "At three" }
+          - { en: "At midnight" }
+        answer: 0
+      - id: "es-0861"
+        prompt: { en: "What time is it?" }
+        options:
+          - { en: "Eight o'clock" }
+          - { en: "Nine o'clock" }
+          - { en: "Three o'clock" }
+        answer: 0
+  - id: "es-opening-hours"
+    title: "Opening hours"
+    theme: "time"
+    sentences:
+      - text: "La tienda está abierta hoy."
+      - text: "El banco está cerrado."
+      - text: "La biblioteca cierra a las seis."
+      - text: "El museo empieza a las diez."
+    questions:
+      - id: "es-0862"
+        prompt: { en: "Is the shop open today?" }
+        options:
+          - { en: "Yes" }
+          - { en: "No" }
+          - { en: "It is closed" }
+        answer: 0
+      - id: "es-0863"
+        prompt: { en: "Is the bank open?" }
+        options:
+          - { en: "No" }
+          - { en: "Yes" }
+          - { en: "Only in the morning" }
+        answer: 0
+      - id: "es-0864"
+        prompt: { en: "When does the library close?" }
+        options:
+          - { en: "At six" }
+          - { en: "At ten" }
+          - { en: "At midnight" }
+        answer: 0
