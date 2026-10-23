@@ -80,7 +80,7 @@ class DrillRequest {
   /// words the learner has been taught that carry it, picked at random, due
   /// or not. Only [language]'s, the one the bar at the top shows, or every
   /// language's when null. Every answer is recorded (ADR-0033).
-  const DrillRequest.tag(String tag, {required int count, String? language})
+  DrillRequest.tag(String tag, {required int count, String? language})
     : this(revise: true, tags: <String>{tag}, limit: count, language: language);
 
   /// The sounds of a word (ADR-0041): the IPA course's cards [cardIds], in

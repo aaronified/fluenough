@@ -37,10 +37,13 @@ class _AllTagsPageState extends State<AllTagsPage> {
   Set<String>? _practisable;
   String? _practisableLanguage;
   int _practisableLog = -1;
+  String _practisableLearned = '';
 
   Set<String> _practisableFor(AppState state, String? language) {
     final log = state.progress.log.length;
+    final learned = (state.learningCodes.toList()..sort()).join(',');
     if (_practisable == null ||
+        _practisableLearned != learned ||
         _practisableLanguage != language ||
         _practisableLog != log) {
       _practisable = <String>{
@@ -52,6 +55,7 @@ class _AllTagsPageState extends State<AllTagsPage> {
       };
       _practisableLanguage = language;
       _practisableLog = log;
+      _practisableLearned = learned;
     }
     return _practisable!;
   }
@@ -98,6 +102,9 @@ class _AllTagsPageState extends State<AllTagsPage> {
             }
             final practisable = _practisableFor(state, language);
             final scheme = Theme.of(context).colorScheme;
+            // A tooltip only on a disabled button, to say why.
+            Widget withReason(bool enabled, String reason, Widget button) =>
+                enabled ? button : Tooltip(message: reason, child: button);
             Widget row(String tag, Tally? tally) => Padding(
               padding: const EdgeInsetsDirectional.only(bottom: 8),
               child: Column(
@@ -118,12 +125,14 @@ class _AllTagsPageState extends State<AllTagsPage> {
                     alignment: AlignmentDirectional.centerEnd,
                     child: Semantics(
                       label: l10n.statsTagPractiseLabel(tag),
+                      hint: practisable.contains(tag)
+                          ? null
+                          : l10n.statsTagNothingTaught,
                       excludeSemantics: true,
-                      child: Tooltip(
-                        message: practisable.contains(tag)
-                            ? ''
-                            : l10n.statsTagNothingTaught,
-                        child: TextButton(
+                      child: withReason(
+                        practisable.contains(tag),
+                        l10n.statsTagNothingTaught,
+                        TextButton(
                           onPressed: practisable.contains(tag)
                               ? () => AppNavigator.startDrill(
                                   context,
