@@ -1,0 +1,300 @@
+schema: 1
+id: "es-places"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "places"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-0769"
+    target: "el hotel"
+    ipa: "el oˈtel"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "hotel", base: "hotel" }]
+    examples:
+      - target: "El hotel está en una calle grande."
+        ipa: "el oˈtel esˈta en ˈuna ˈkaʝe ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "hotel", base: "hotel" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "calle", ref: "es-0017" }, { word: "grande", ref: "es-0031" }]
+      - target: "Mi tía trabaja en un hotel."
+        ipa: "mi ˈtia tɾaˈbaxa en un oˈtel"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "tía", ref: "es-0168" }, { word: "trabaja", ref: "es-0259" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "hotel", base: "hotel" }]
+  - id: "es-0770"
+    target: "el banco"
+    ipa: "el ˈbanko"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "banco", base: "banco" }]
+    examples:
+      - target: "El banco está cerca."
+        ipa: "el ˈbanko esˈta ˈθeɾka"
+        bases: [{ word: "El", base: "el" }, { word: "banco", base: "banco" }, { word: "está", ref: "es-0023" }, { word: "cerca", ref: "es-0717" }]
+      - target: "Mi hermana trabaja en el banco."
+        ipa: "mi eɾˈmana tɾaˈbaxa en el ˈbanko"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", ref: "es-0162" }, { word: "trabaja", ref: "es-0259" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "banco", base: "banco" }]
+  - id: "es-0771"
+    target: "la farmacia"
+    ipa: "la faɾˈmaθja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "farmacia", base: "farmacia" }]
+    examples:
+      - target: "La farmacia está cerca del banco."
+        ipa: "la faɾˈmaθja esˈta ˈθeɾka del ˈbanko"
+        bases: [{ word: "La", base: "la" }, { word: "farmacia", base: "farmacia" }, { word: "está", ref: "es-0023" }, { word: "cerca", ref: "es-0717" }, { word: "del", base: "del" }, { word: "banco", ref: "es-0770" }]
+      - target: "Una farmacia está en la calle grande."
+        ipa: "ˈuna faɾˈmaθja esˈta en la ˈkaʝe ˈɡɾande"
+        bases: [{ word: "Una", base: "una" }, { word: "farmacia", base: "farmacia" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "calle", ref: "es-0017" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-0772"
+    target: "el hospital"
+    ipa: "el ospiˈtal"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "hospital", base: "hospital" }]
+    examples:
+      - target: "El hospital es grande."
+        ipa: "el ospiˈtal es ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "hospital", base: "hospital" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+      - target: "Mi madre trabaja en el hospital."
+        ipa: "mi ˈmadɾe tɾaˈbaxa en el ospiˈtal"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "madre", ref: "es-0160" }, { word: "trabaja", ref: "es-0259" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "hospital", base: "hospital" }]
+  - id: "es-0773"
+    target: "el colegio"
+    ipa: "el koˈlexjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "colegio", base: "colegio" }]
+    examples:
+      - target: "El colegio está lejos."
+        ipa: "el koˈlexjo esˈta ˈlexos"
+        bases: [{ word: "El", base: "el" }, { word: "colegio", base: "colegio" }, { word: "está", ref: "es-0023" }, { word: "lejos", ref: "es-0718" }]
+      - target: "Mi hijo va al colegio."
+        ipa: "mi ˈixo ba al koˈlexjo"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hijo", ref: "es-0163" }, { word: "va", ref: "es-0026" }, { word: "al", base: "al" }, { word: "colegio", base: "colegio" }]
+  - id: "es-0774"
+    target: "la iglesia"
+    ipa: "la iˈɡlesja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "iglesia", base: "iglesia" }]
+    examples:
+      - target: "La iglesia es vieja."
+        ipa: "la iˈɡlesja es ˈbjexa"
+        bases: [{ word: "La", base: "la" }, { word: "iglesia", base: "iglesia" }, { word: "es", ref: "es-0022" }, { word: "vieja", ref: "es-0431" }]
+      - target: "Una iglesia está en la plaza."
+        ipa: "ˈuna iˈɡlesja esˈta en la ˈplaθa"
+        bases: [{ word: "Una", base: "una" }, { word: "iglesia", base: "iglesia" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "plaza", ref: "es-0782" }]
+  - id: "es-0775"
+    target: "la catedral"
+    ipa: "la kateˈdɾal"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "catedral", base: "catedral" }]
+    examples:
+      - target: "La catedral es grande."
+        ipa: "la kateˈdɾal es ˈɡɾande"
+        bases: [{ word: "La", base: "la" }, { word: "catedral", base: "catedral" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+      - target: "Visito la catedral."
+        ipa: "biˈsito la kateˈdɾal"
+        bases: [{ word: "Visito", ref: "es-0787" }, { word: "la", base: "la" }, { word: "catedral", base: "catedral" }]
+  - id: "es-0776"
+    target: "el museo"
+    ipa: "el muˈseo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "museo", base: "museo" }]
+    examples:
+      - target: "El museo es bonito."
+        ipa: "el muˈseo es boˈnito"
+        bases: [{ word: "El", base: "el" }, { word: "museo", base: "museo" }, { word: "es", ref: "es-0022" }, { word: "bonito", ref: "es-0405" }]
+      - target: "El museo está cerca."
+        ipa: "el muˈseo esˈta ˈθeɾka"
+        bases: [{ word: "El", base: "el" }, { word: "museo", base: "museo" }, { word: "está", ref: "es-0023" }, { word: "cerca", ref: "es-0717" }]
+  - id: "es-0777"
+    target: "el parque"
+    ipa: "el ˈpaɾke"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "parque", base: "parque" }]
+    examples:
+      - target: "El parque es grande."
+        ipa: "el ˈpaɾke es ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "parque", base: "parque" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+      - target: "Hay un parque cerca."
+        ipa: "aj un ˈpaɾke ˈθeɾka"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "parque", base: "parque" }, { word: "cerca", ref: "es-0717" }]
+  - id: "es-0778"
+    target: "el restaurante"
+    ipa: "el restawˈɾante"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "restaurante", base: "restaurante" }]
+    examples:
+      - target: "El restaurante es bueno."
+        ipa: "el restawˈɾante es ˈbweno"
+        bases: [{ word: "El", base: "el" }, { word: "restaurante", base: "restaurante" }, { word: "es", ref: "es-0022" }, { word: "bueno", ref: "es-0033" }]
+      - target: "Como en el restaurante."
+        ipa: "ˈkomo en el restawˈɾante"
+        bases: [{ word: "Como", ref: "es-0028" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "restaurante", base: "restaurante" }]
+  - id: "es-0779"
+    target: "el cine"
+    ipa: "el ˈθine"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "cine", base: "cine" }]
+    examples:
+      - target: "El cine está en la plaza."
+        ipa: "el ˈθine esˈta en la ˈplaθa"
+        bases: [{ word: "El", base: "el" }, { word: "cine", base: "cine" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "plaza", ref: "es-0782" }]
+      - target: "Voy al cine."
+        ipa: "boj al ˈθine"
+        bases: [{ word: "Voy", ref: "es-0026" }, { word: "al", base: "al" }, { word: "cine", base: "cine" }]
+  - id: "es-0780"
+    target: "el teatro"
+    ipa: "el teˈatɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "teatro", base: "teatro" }]
+    examples:
+      - target: "El teatro es grande."
+        ipa: "el teˈatɾo es ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "teatro", base: "teatro" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+      - target: "Hay un teatro en la ciudad."
+        ipa: "aj un teˈatɾo en la θjuˈdad"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "teatro", base: "teatro" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }]
+  - id: "es-0781"
+    target: "la biblioteca"
+    ipa: "la bibljoˈteka"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "biblioteca", base: "biblioteca" }]
+    examples:
+      - target: "La biblioteca es tranquila."
+        ipa: "la bibljoˈteka es tɾanˈkila"
+        bases: [{ word: "La", base: "la" }, { word: "biblioteca", base: "biblioteca" }, { word: "es", ref: "es-0022" }, { word: "tranquila", ref: "es-0257" }]
+      - target: "Estudio en la biblioteca."
+        ipa: "esˈtudjo en la bibljoˈteka"
+        bases: [{ word: "Estudio", ref: "es-0258" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "biblioteca", base: "biblioteca" }]
+  - id: "es-0782"
+    target: "la plaza"
+    ipa: "la ˈplaθa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "plaza", base: "plaza" }]
+    examples:
+      - target: "La plaza es bonita."
+        ipa: "la ˈplaθa es boˈnita"
+        bases: [{ word: "La", base: "la" }, { word: "plaza", base: "plaza" }, { word: "es", ref: "es-0022" }, { word: "bonita", ref: "es-0405" }]
+      - target: "La plaza está cerca."
+        ipa: "la ˈplaθa esˈta ˈθeɾka"
+        bases: [{ word: "La", base: "la" }, { word: "plaza", base: "plaza" }, { word: "está", ref: "es-0023" }, { word: "cerca", ref: "es-0717" }]
+  - id: "es-0783"
+    target: "el pueblo"
+    ipa: "el ˈpweblo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "pueblo", base: "pueblo" }]
+    examples:
+      - target: "El pueblo es pequeño."
+        ipa: "el ˈpweblo es peˈkeɲo"
+        bases: [{ word: "El", base: "el" }, { word: "pueblo", base: "pueblo" }, { word: "es", ref: "es-0022" }, { word: "pequeño", ref: "es-0032" }]
+      - target: "Vivo en un pueblo."
+        ipa: "ˈbibo en un ˈpweblo"
+        bases: [{ word: "Vivo", ref: "es-0030" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "pueblo", base: "pueblo" }]
+  - id: "es-0784"
+    target: "la playa"
+    ipa: "la ˈplaʝa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "playa", base: "playa" }]
+    examples:
+      - target: "La playa es bonita."
+        ipa: "la ˈplaʝa es boˈnita"
+        bases: [{ word: "La", base: "la" }, { word: "playa", base: "playa" }, { word: "es", ref: "es-0022" }, { word: "bonita", ref: "es-0405" }]
+      - target: "Voy a la playa."
+        ipa: "boj a la ˈplaʝa"
+        bases: [{ word: "Voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "playa", base: "playa" }]
+  - id: "es-0785"
+    target: "la universidad"
+    ipa: "la unibeɾsiˈdad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "universidad", base: "universidad" }]
+    examples:
+      - target: "La universidad está lejos."
+        ipa: "la unibeɾsiˈdad esˈta ˈlexos"
+        bases: [{ word: "La", base: "la" }, { word: "universidad", base: "universidad" }, { word: "está", ref: "es-0023" }, { word: "lejos", ref: "es-0718" }]
+      - target: "Estudio en la universidad."
+        ipa: "esˈtudjo en la unibeɾsiˈdad"
+        bases: [{ word: "Estudio", ref: "es-0258" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "universidad", base: "universidad" }]
+  - id: "es-0786"
+    target: "el edificio"
+    ipa: "el ediˈfiθjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "edificio", base: "edificio" }]
+    examples:
+      - target: "El edificio es alto."
+        ipa: "el ediˈfiθjo es ˈalto"
+        bases: [{ word: "El", base: "el" }, { word: "edificio", base: "edificio" }, { word: "es", ref: "es-0022" }, { word: "alto", ref: "es-0254" }]
+      - target: "El edificio está cerca."
+        ipa: "el ediˈfiθjo esˈta ˈθeɾka"
+        bases: [{ word: "El", base: "el" }, { word: "edificio", base: "edificio" }, { word: "está", ref: "es-0023" }, { word: "cerca", ref: "es-0717" }]
+  - id: "es-0787"
+    target: "visitar"
+    ipa: "bisiˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Visito la catedral."
+        ipa: "biˈsito la kateˈdɾal"
+        bases: [{ word: "Visito", base: "visitar" }, { word: "la", base: "la" }, { word: "catedral", ref: "es-0775" }]
+      - target: "Visitamos el museo."
+        ipa: "bisiˈtamos el muˈseo"
+        bases: [{ word: "Visitamos", base: "visitar" }, { word: "el", base: "el" }, { word: "museo", ref: "es-0776" }]
+  - id: "es-0788"
+    target: "entrar"
+    ipa: "enˈtɾaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Entro en el banco."
+        ipa: "ˈentɾo en el ˈbanko"
+        bases: [{ word: "Entro", base: "entrar" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "banco", ref: "es-0770" }]
+      - target: "Entramos en el cine."
+        ipa: "enˈtɾamos en el ˈθine"
+        bases: [{ word: "Entramos", base: "entrar" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "cine", ref: "es-0779" }]
+  - id: "es-0789"
+    target: "cerrar"
+    ipa: "θeˈraɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "El banco cierra a las cinco."
+        ipa: "el ˈbanko ˈθjera a las ˈθinko"
+        bases: [{ word: "El", base: "el" }, { word: "banco", ref: "es-0770" }, { word: "cierra", base: "cerrar" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "cinco", ref: "es-0209" }]
+      - target: "Cerramos la tienda."
+        ipa: "θeˈramos la ˈtjenda"
+        bases: [{ word: "Cerramos", base: "cerrar" }, { word: "la", base: "la" }, { word: "tienda", ref: "es-0584" }]
