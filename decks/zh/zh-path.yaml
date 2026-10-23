@@ -229,7 +229,8 @@ units:
       - { id: "how-is-it", text: { "en": "A friend asks about your new room: big, quiet, convenient" } }
     reading_passages:
       - { id: "postcard-from-hangzhou", text: { "en": "A short postcard: the weather, the food, the people" } }
-  - planned: { id: "zh-time", theme: "time", words: 25 }
+  - decks: ["zh-time", "zh-time-sentences", "zh-reading-time", "*"]
+    words: 25
     listening_passages:
       - { id: "what-time-is-it", text: { "en": "Asking and telling the time" } }
     reading_passages:
