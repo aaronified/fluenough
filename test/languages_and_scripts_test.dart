@@ -2689,8 +2689,9 @@ void main() {
               find.ancestor(of: glyph, matching: find.byType(Opacity)).first,
             )
             .opacity;
-        if (opacity > 0)
+        if (opacity > 0) {
           out.add((rect: rectOf(tester, glyph), opacity: opacity));
+        }
       }
       return out;
     }
