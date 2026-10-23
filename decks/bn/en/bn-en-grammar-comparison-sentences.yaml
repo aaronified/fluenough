@@ -1,0 +1,52 @@
+schema: 1
+id: "bn-en-grammar-comparison-sentences"
+kind: "layer"
+core: "bn-grammar-comparison-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Comparison: sentences"
+description: "Short sentences with bigger, biggest, even better and than. They unlock once their words and rules are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-1879":
+    native: "My phone is newer than yours."
+    confusables:
+      "more":
+        why: "Still more makes -er with no 'than'; this sentence says 'than yours' with চেয়ে (ceye)."
+      "old":
+        why: "The opposite of new is পুরোনো (purono), old; the sentence says the phone is newer."
+  "bn-1880":
+    native: "This is bigger than that."
+    confusables:
+      "small":
+        why: "Small is the reverse of bigger: ছোট (choṭo) says the first thing is smaller."
+      "most":
+        why: "সবচেয়ে (śôbceye) means 'than all'; this sentence compares only two things."
+  "bn-1881":
+    native: "This room is the biggest."
+    bases:
+      "এই": "this"
+      "সবচেয়ে": "the most; than all"
+    confusables:
+      "than":
+        why: "চেয়ে (ceye) needs a 'than' thing before it, and this sentence has none."
+      "more":
+        why: "আরও (āro) gives -er; this sentence needs -est."
+  "bn-1882":
+    native: "He is the tallest."
+    bases:
+      "সবচেয়ে": "the most; than all"
+    confusables:
+      "short":
+        why: "বেঁটে (bem̐ṭe) is the opposite: short of a person, not tall."
+      "more":
+        why: "আরও (āro) gives -er; this sentence says the -est."
+  "bn-1883":
+    native: "This book is even better."
+    bases:
+      "এই": "this"
+    confusables:
+      "most":
+        why: "সবচেয়ে (śôbceye) means 'than all'; this sentence has no 'all'."
+      "bad":
+        why: "খারাপ (khārāp) is the opposite: bad, not better."
