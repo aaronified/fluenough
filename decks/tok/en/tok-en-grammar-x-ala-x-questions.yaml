@@ -1,0 +1,22 @@
+schema: 1
+id: "tok-en-grammar-x-ala-x-questions"
+kind: "layer"
+core: "tok-grammar-x-ala-x-questions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Yes or no by repeating the verb"
+license: "CC-BY-SA-4.0"
+description: "A yes-no question with sina: the verb is said, then ala, then the verb again. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Yes or no by repeating the verb"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "statement": "a statement (you do it)", "question": "a yes-no question (do you do it?)" }
+  entries:
+    "moku": "to eat"
+    "lape": "to sleep"
+    "lukin": "to see"
+    "sona": "to know"
+    "kama": "to come"
+    "tawa": "to go"
+  notes: "Sina moku is you eat. To ask it, say the verb, ala, and the verb again: sina moku ala moku? is Do you eat? The answer repeats the verb: mi moku is I eat, and mi moku ala is I do not eat. Ala is the only word that makes the question, so no particle is added at the end."
