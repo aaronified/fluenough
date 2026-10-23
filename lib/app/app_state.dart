@@ -216,8 +216,10 @@ class AppState extends ChangeNotifier {
   /// state (#461), as the catalog loading or the profile changing do.
   String? _lastShown;
   bool _lastProgressAll = false;
+  bool _lastAdult = false;
 
   void _rememberShown() {
+    _lastAdult = settings.adultContent;
     _lastShown = shownLanguage;
     _lastProgressAll = progressShowsAll;
   }
@@ -225,7 +227,11 @@ class AppState extends ChangeNotifier {
   void _languageShownChanged() {
     final shown = shownLanguage;
     final all = progressShowsAll;
-    if (shown == _lastShown && all == _lastProgressAll) return;
+    final adult = settings.adultContent;
+    if (shown == _lastShown && all == _lastProgressAll && adult == _lastAdult) {
+      return;
+    }
+    _lastAdult = adult;
     _lastShown = shown;
     _lastProgressAll = all;
     notifyListeners();
@@ -538,11 +544,32 @@ class AppState extends ChangeNotifier {
   /// Every deck that parsed, in path order. Empty until loaded.
   List<DeckEntry> get decks => _view.decks;
 
+  /// Every deck, adult decks and rude cards too, whatever "Adult content"
+  /// says. Only what names a rude word to warn of it reads this: the sound-
+  /// alike warning, which hides the word itself (#628).
+  List<DeckEntry> get allDecks => _ipaView.decks;
+
   /// The catalog as the learner has it: the IPA course's decks cut to the
   /// cards of their [ipaScope] for the languages they learn, so that the
   /// counts, lessons, finished decks and the word sheet read one list
   /// (ADR-0041).
   Catalog get _view {
+    final base = _ipaView;
+    final adult = settings.adultContent;
+    if (!identical(_adultOf, base) || _adultOn != adult) {
+      _adultOf = base;
+      _adultOn = adult;
+      _adultScoped = base.forAdult(adult: adult);
+    }
+    return _adultScoped;
+  }
+
+  Catalog? _adultOf;
+  bool _adultOn = false;
+  Catalog _adultScoped = Catalog.empty;
+
+  /// [_catalog] cut to the IPA scope, before the adult gate.
+  Catalog get _ipaView {
     // Nothing to cut where no IPA deck is on the phone, the usual case.
     if (!_catalog.hasIpa) return _catalog;
     final scope = settings.ipaScope;

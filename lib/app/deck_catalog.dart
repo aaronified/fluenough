@@ -18,6 +18,7 @@ import '../core/data/number_rules_parser.dart';
 import '../core/data/pattern_expander.dart';
 import '../core/data/rule_expander.dart';
 import '../core/data/themes.dart';
+import '../core/decks/adult_gate.dart';
 import '../core/decks/ipa_course.dart';
 import '../core/models/fact.dart';
 import '../core/models/card.dart';
@@ -279,6 +280,41 @@ class Catalog {
     if (!changed) return this;
     return Catalog(
       decks: scoped,
+      broken: broken,
+      themes: themes,
+      facts: facts,
+      numberRules: numberRules,
+      paths: paths,
+      languagePaths: languagePaths,
+      sounds: sounds,
+      romanisations: romanisations,
+      scriptGuides: scriptGuides,
+    );
+  }
+
+  /// This catalog as a learner with adult content [adult] has it: with it
+  /// off, the adult decks and the rude cards are gone (#628). The same
+  /// catalog when nothing is left out, so that every screen reads one list.
+  Catalog forAdult({required bool adult}) {
+    if (adult) return this;
+    var changed = false;
+    final shown = <DeckEntry>[];
+    for (final entry in decks) {
+      final deck = deckForAdult(entry.deck, adult: adult);
+      if (identical(deck, entry.deck)) {
+        shown.add(entry);
+        continue;
+      }
+      changed = true;
+      if (deck != null) {
+        shown.add(
+          DeckEntry(path: entry.path, deck: deck, bundled: entry.bundled),
+        );
+      }
+    }
+    if (!changed) return this;
+    return Catalog(
+      decks: shown,
       broken: broken,
       themes: themes,
       facts: facts,
