@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-market-sentences"
+kind: "layer"
+core: "es-market-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: market"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about the market, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-0589":
+    native: "I buy an apple at the market."
+    bases: {"una": "a", "en": "in", "el": "the"}
+    confusables: {"tienda": { why: "Tienda is a shop with walls and a door, not a market stall." }, "fruta": { why: "Fruta is fruit in general, not one apple." }}
+  "es-0590":
+    native: "How much do the strawberries cost?"
+    bases: {"las": "the"}
+    confusables: {"precio": { why: "Precio is the price, the noun; cuesta is the verb." }, "pagar": { why: "Pagar is to pay, the buyer's action, not the cost." }}
+  "es-0591":
+    native: "The seller sells fruit and vegetables."
+    bases: {"El": "the"}
+    confusables: {"comprar": { why: "Comprar is to buy, the customer's verb." }, "cambiar": { why: "Cambiar is to change, not to sell." }}
+  "es-0592":
+    native: "There is an offer today at the shop."
+    bases: {"Hay": "there is", "una": "a", "en": "in", "la": "the"}
+    confusables: {"precio": { why: "Precio is the price, not an offer." }, "cambio": { why: "Cambio is change, the money given back." }}
+  "es-0593":
+    native: "The potato is cheap."
+    bases: {"La": "the"}
+    confusables: {"caro": { why: "Caro is expensive, the opposite of barato." }, "pequeno": { why: "Pequeño is small, not cheap." }}
+  "es-0594":
+    native: "I need the change, I have no money."
+    bases: {"el": "the"}
+    confusables: {"precio": { why: "Precio is the price, not the change." }, "pagar": { why: "Pagar is to pay, not to get change." }}

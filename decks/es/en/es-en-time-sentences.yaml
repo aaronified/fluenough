@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-time-sentences"
+kind: "layer"
+core: "es-time-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: time"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about the time of day and of appointments, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-0853":
+    native: "The meeting starts at nine."
+    bases: {"La": "the", "a": "to", "las": "the"}
+    confusables: {"cita": { why: "Cita is an appointment, a set time with someone." }, "durar": { why: "Durar is to last, how long something takes." }}
+  "es-0854":
+    native: "I have an appointment at three."
+    bases: {"una": "a", "a": "to", "las": "the"}
+    confusables: {"hora": { why: "Hora is an hour, the time of day." }, "minuto": { why: "Minuto is a minute, a smaller time." }}
+  "es-0855":
+    native: "The bank is closed today."
+    bases: {"El": "the"}
+    confusables: {"abierto": { why: "Abierto is open, the opposite of cerrado." }, "cerrar": { why: "Cerrar is to close, the verb." }}
+  "es-0856":
+    native: "I arrive on time at midday."
+    bases: {"al": "to the"}
+    confusables: {"medianoche": { why: "Medianoche is midnight, not midday." }, "temprano": { why: "Temprano is early, not on time." }}
+  "es-0857":
+    native: "Lunch lasts an hour."
+    bases: {"El": "the", "una": "a"}
+    confusables: {"reloj": { why: "Reloj is a clock or a watch, an object." }, "minuto": { why: "Minuto is a minute, a shorter time." }}
+  "es-0858":
+    native: "We have dinner before midnight."
+    bases: {"de": "of", "la": "the"}
+    confusables: {"manana": { why: "Mañana is a morning, not night." }, "noche": { why: "Noche is the night, close to midnight." }}

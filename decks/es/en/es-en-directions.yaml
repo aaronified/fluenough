@@ -1,0 +1,199 @@
+schema: 1
+id: "es-en-directions"
+kind: "layer"
+core: "es-directions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Directions"
+license: "CC-BY-SA-4.0"
+description: "Finding the way: the corner, the traffic light, the bridge, the map, north, south and west, left and right, near and far, with the verbs to turn, to cross, to follow and to find. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-0706":
+    native: "corner"
+    notes: { n1: "Esquina is a corner, where two streets meet." }
+    bases: {"la": "the", "esquina": "corner"}
+    examples:
+      "Hay una tienda en la esquina.":
+        native: "There is a shop on the corner."
+        bases: {"Hay": "there is", "una": "a", "en": "in", "la": "the", "esquina": "corner"}
+      "La esquina está aquí.":
+        native: "The corner is here."
+        bases: {"La": "the", "esquina": "corner"}
+  "es-0707":
+    native: "traffic light"
+    notes: { n1: "Semáforo is a traffic light." }
+    bases: {"el": "the", "semáforo": "traffic light"}
+    examples:
+      "El semáforo está lejos.":
+        native: "The traffic light is far."
+        bases: {"El": "the", "semáforo": "traffic light"}
+      "El semáforo está cerca.":
+        native: "The traffic light is near."
+        bases: {"El": "the", "semáforo": "traffic light"}
+  "es-0708":
+    native: "bridge"
+    notes: { n1: "Puente is a bridge." }
+    bases: {"el": "the", "puente": "bridge"}
+    examples:
+      "El puente es grande.":
+        native: "The bridge is big."
+        bases: {"El": "the", "puente": "bridge"}
+      "Cruzamos el puente.":
+        native: "We cross the bridge."
+        bases: {"el": "the", "puente": "bridge"}
+  "es-0709":
+    native: "crossing; junction"
+    notes: { n1: "Cruce is a crossing, where roads or streets meet." }
+    bases: {"el": "the", "cruce": "crossing"}
+    examples:
+      "Hay un cruce aquí.":
+        native: "There is a crossing here."
+        bases: {"Hay": "there is", "un": "a", "cruce": "crossing"}
+      "El cruce está en la calle grande.":
+        native: "The crossing is on the big street."
+        bases: {"El": "the", "cruce": "crossing", "en": "in", "la": "the"}
+  "es-0710":
+    native: "map"
+    notes: { n1: "Mapa is a map. It is masculine, el mapa, though it ends in -a." }
+    bases: {"el": "the", "mapa": "map"}
+    examples:
+      "Tengo un mapa.":
+        native: "I have a map."
+        bases: {"un": "a", "mapa": "map"}
+      "El mapa es grande.":
+        native: "The map is big."
+        bases: {"El": "the", "mapa": "map"}
+  "es-0711":
+    native: "north"
+    notes: { n1: "Norte is north. The others are sur, este and oeste." }
+    bases: {"el": "the", "norte": "north"}
+    examples:
+      "El norte está lejos.":
+        native: "The north is far."
+        bases: {"El": "the", "norte": "north"}
+      "Vivo en el norte de la ciudad.":
+        native: "I live in the north of the city."
+        bases: {"en": "in", "el": "the", "norte": "north", "de": "of", "la": "the"}
+  "es-0712":
+    native: "south"
+    notes: { n1: "Sur is south." }
+    bases: {"el": "the", "sur": "south"}
+    examples:
+      "El sur está cerca.":
+        native: "The south is near."
+        bases: {"El": "the", "sur": "south"}
+      "Vivo en el sur.":
+        native: "I live in the south."
+        bases: {"en": "in", "el": "the", "sur": "south"}
+  "es-0713":
+    native: "west"
+    notes: { n1: "Oeste is west." }
+    bases: {"el": "the", "oeste": "west"}
+    examples:
+      "El oeste está lejos.":
+        native: "The west is far."
+        bases: {"El": "the", "oeste": "west"}
+      "Vivo en el oeste.":
+        native: "I live in the west."
+        bases: {"en": "in", "el": "the", "oeste": "west"}
+  "es-0714":
+    native: "right"
+    notes: { n1: "Derecha is the right side. Girar a la derecha is to turn right." }
+    bases: {"la": "the", "derecha": "right"}
+    examples:
+      "El puente está a la derecha.":
+        native: "The bridge is on the right."
+        bases: {"El": "the", "a": "to", "la": "the", "derecha": "right"}
+      "Giro a la derecha.":
+        native: "I turn right."
+        bases: {"a": "to", "la": "the", "derecha": "right"}
+  "es-0715":
+    native: "left"
+    notes: { n1: "Izquierda is the left side. Girar a la izquierda is to turn left." }
+    bases: {"la": "the", "izquierda": "left"}
+    examples:
+      "El mercado está a la izquierda.":
+        native: "The market is on the left."
+        bases: {"El": "the", "a": "to", "la": "the", "izquierda": "left"}
+      "Giramos a la izquierda.":
+        native: "We turn left."
+        bases: {"a": "to", "la": "the", "izquierda": "left"}
+  "es-0716":
+    native: "straight ahead"
+    notes: { n1: "Recto is straight ahead, with no turn: seguir recto." }
+    examples:
+      "Sigo recto.":
+        native: "I go straight ahead."
+        bases: {"recto": "straight ahead"}
+      "Vamos recto.":
+        native: "We go straight ahead."
+        bases: {"recto": "straight ahead"}
+  "es-0717":
+    native: "near"
+    notes: { n1: "Cerca is near. The opposite is lejos." }
+    examples:
+      "El semáforo está cerca de la esquina.":
+        native: "The traffic light is near the corner."
+        bases: {"El": "the", "cerca": "near", "de": "of", "la": "the"}
+      "La estación está cerca.":
+        native: "The station is near."
+        bases: {"La": "the", "cerca": "near"}
+  "es-0718":
+    native: "far"
+    notes: { n1: "Lejos is far. The opposite is cerca." }
+    examples:
+      "El puente está lejos.":
+        native: "The bridge is far."
+        bases: {"El": "the", "lejos": "far"}
+      "El aeropuerto está lejos.":
+        native: "The airport is far."
+        bases: {"El": "the", "lejos": "far"}
+  "es-0719":
+    native: "between"
+    notes: { n1: "Entre is between two things: entre dos calles." }
+    examples:
+      "El mercado está entre dos calles.":
+        native: "The market is between two streets."
+        bases: {"El": "the", "entre": "between"}
+      "La esquina está entre dos calles.":
+        native: "The corner is between two streets."
+        bases: {"La": "the", "entre": "between"}
+  "es-0720":
+    native: "to turn"
+    notes: { n1: "Girar is to turn. It is a regular -ar verb." }
+    examples:
+      "Giro a la derecha en el cruce.":
+        native: "I turn right at the crossing."
+        bases: {"Giro": "turn", "a": "to", "la": "the", "en": "in", "el": "the"}
+      "Giramos a la izquierda.":
+        native: "We turn left."
+        bases: {"Giramos": "turn", "a": "to", "la": "the"}
+  "es-0721":
+    native: "to cross"
+    notes: { n1: "Cruzar is to cross a road or a bridge. It is a regular -ar verb." }
+    examples:
+      "Cruzo la calle.":
+        native: "I cross the street."
+        bases: {"Cruzo": "cross", "la": "the"}
+      "Cruzamos el puente.":
+        native: "We cross the bridge."
+        bases: {"Cruzamos": "cross", "el": "the"}
+  "es-0722":
+    native: "to follow; to continue"
+    notes: { n1: "Seguir is to follow or to go on. Its stem changes: sigo, sigues, sigue, siguen." }
+    examples:
+      "Sigo recto.":
+        native: "I go straight on."
+        bases: {"Sigo": "follow"}
+      "Seguimos la calle.":
+        native: "We follow the street."
+        bases: {"Seguimos": "follow", "la": "the"}
+  "es-0723":
+    native: "to find"
+    notes: { n1: "Encontrar is to find. Its stem changes: encuentro, encuentras, encuentra, encuentran." }
+    examples:
+      "Encuentro el mapa.":
+        native: "I find the map."
+        bases: {"Encuentro": "find", "el": "the"}
+      "¿Encuentras la estación?":
+        native: "Do you find the station?"
+        bases: {"Encuentras": "find", "la": "the"}

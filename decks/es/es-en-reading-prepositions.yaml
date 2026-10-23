@@ -1,0 +1,69 @@
+schema: 1
+id: "es-en-reading-prepositions"
+name: "Reading: where things are"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about where things are in a room: on, under, in front of and next to. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-where-is-it"
+    title: "Where is it?"
+    sentences:
+      - text: "El libro está en la mesa."
+      - text: "La silla está al lado de la mesa."
+      - text: "La cama está delante de la puerta."
+      - text: "El libro no está debajo de la cama."
+    questions:
+      - id: "es-0472"
+        prompt: { en: "Where is the book?" }
+        options:
+          - { en: "On the bed" }
+          - { en: "On the table" }
+          - { en: "Under the bed" }
+        answer: 2
+      - id: "es-0473"
+        prompt: { en: "What is next to the table?" }
+        options:
+          - { en: "The chair" }
+          - { en: "The door" }
+          - { en: "The bed" }
+        answer: 1
+      - id: "es-0474"
+        prompt: { en: "Where is the bed?" }
+        options:
+          - { en: "In front of the door" }
+          - { en: "Next to the book" }
+          - { en: "On the chair" }
+        answer: 1
+  - id: "es-room-description"
+    title: "A room"
+    sentences:
+      - text: "En mi casa hay una cama, una mesa y una silla."
+      - text: "La puerta está al lado de la cama."
+      - text: "Encima de la mesa hay un libro."
+      - text: "La ventana está delante de la silla."
+    questions:
+      - id: "es-0475"
+        prompt: { en: "How many beds are in the room?" }
+        options:
+          - { en: "One" }
+          - { en: "Two" }
+          - { en: "Three" }
+        answer: 1
+      - id: "es-0476"
+        prompt: { en: "What is on the table?" }
+        options:
+          - { en: "A book" }
+          - { en: "A chair" }
+          - { en: "A door" }
+        answer: 1
+      - id: "es-0477"
+        prompt: { en: "What is in front of the chair?" }
+        options:
+          - { en: "The window" }
+          - { en: "The door" }
+          - { en: "The bed" }
+        answer: 1
