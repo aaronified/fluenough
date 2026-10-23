@@ -33,9 +33,10 @@ import 'taught_details.dart' show TaughtReading;
 ///   the dictionary popup (the senses, the etymology and the examples) and
 ///   shows the part of speech and gender under it;
 /// - one note, with an exclamation icon;
-/// - one warning, with no title: a rude word it is like (always), else the
-///   first of the word it sounds like, the word it looks like or its other
-///   meanings. The word sheet shows them all, titled.
+/// - one warning, with no title: the one the card's `warning` names, or,
+///   without it, a rude word it is like (always), else the first of the word
+///   it sounds like, the word it looks like or its other meanings
+///   ([teachWarningOf]). The word sheet shows them all, titled.
 ///
 /// A language learned without its alphabet shows the reading first, as the
 /// card always has ([TaughtReading]).
@@ -77,12 +78,7 @@ class TeachCard extends StatelessWidget {
     final ipa = ipaToShow(context, card.ipa, target: card.target);
     final line = joinParts(l10n, <String>[?card.pos, ?card.gender]);
     final note = proseNotes(card).firstOrNull;
-    final rude = rudeAlikesOf(state, card);
-    final similar = similarOf(
-      state,
-      card,
-      except: <String>{for (final r in rude) r.partner.id},
-    ).firstOrNull;
+    final (:rude, :similar) = teachWarningOf(state, card);
     final named = adultContentOn(state);
 
     final Widget word;
@@ -422,5 +418,76 @@ Future<void> showDictionary(
         ],
       ),
     ),
+  );
+}
+
+/// The warning the teach card shows for [card] (#691, owner, 2026-10-23: "Deck
+/// field picks it"): a rude word it is like, or another [Similar] warning.
+///
+/// A card with a [Card.warning] shows what it names: the id of one of its
+/// pair, homograph or lookalike notes, `senses` for its other meanings, or
+/// `none` for nothing. A name that matches nothing the card has shows
+/// nothing. A card without the key keeps the fixed order: every rude word it
+/// is like, else the first word it sounds like, the first it looks like, then
+/// its other meanings.
+({List<RudeAlike> rude, Similar? similar}) teachWarningOf(
+  AppState state,
+  Card card,
+) {
+  const none = (rude: <RudeAlike>[], similar: null);
+  final rude = rudeAlikesOf(state, card);
+  final named = card.warning;
+  if (named == null) {
+    return (
+      rude: rude,
+      similar: rude.isNotEmpty ? null : similarOf(state, card).firstOrNull,
+    );
+  }
+  final all = similarOf(
+    state,
+    card,
+    except: <String>{for (final r in rude) r.partner.id},
+  );
+  if (named == 'none') return none;
+  if (named == 'senses') {
+    return (
+      rude: const <RudeAlike>[],
+      similar: all.where((s) => s.kind == SimilarKind.meanings).firstOrNull,
+    );
+  }
+  final note = card.notes
+      .where(
+        (n) =>
+            n.id == named &&
+            (n.kind == NoteKind.pair ||
+                n.kind == NoteKind.homograph ||
+                n.kind == NoteKind.lookalike),
+      )
+      .firstOrNull;
+  if (note == null) return none;
+  if (note.kind == NoteKind.pair) {
+    final rudeOne = rude.where((r) => r.partner.id == note.ref).firstOrNull;
+    if (rudeOne != null) {
+      return (rude: <RudeAlike>[rudeOne], similar: null);
+    }
+    return (
+      rude: const <RudeAlike>[],
+      similar: all
+          .where(
+            (s) => s.kind == SimilarKind.sound && s.partner?.id == note.ref,
+          )
+          .firstOrNull,
+    );
+  }
+  final text = note.text.trim().isEmpty ? null : note.text.trim();
+  return (
+    rude: const <RudeAlike>[],
+    similar: all
+        .where(
+          (s) =>
+              s.kind == SimilarKind.look &&
+              (note.ref == null ? s.text == text : s.partner?.id == note.ref),
+        )
+        .firstOrNull,
   );
 }
