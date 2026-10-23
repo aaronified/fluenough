@@ -194,11 +194,8 @@ units:
     words: 0
     grammar: ["negation-ala", "x-ala-x-questions", "seme-questions", "answering-yes-no"]
   # mama, mije, meli, kulupu, olin and poka (the people beside you).
-  - planned: { id: "tok-family", theme: "family", words: 6 }
-    listening_passages:
-      - { id: "my-family", text: { "en": "Someone describes the people in a family photo" } }
-    reading_passages:
-      - { id: "family-tree", text: { "en": "A small family tree, with each person described in toki pona" } }
+  - decks: ["tok-family", "tok-family-sentences", "tok-reading-family", "*"]
+    words: 6
   # o for commands (o moku!), o after a name to address someone (jan Ana
   # o, ...), and mi wile e ni: sina ... for a polite request.
   - planned: { id: "tok-grammar-o", grammar: ["o-commands", "o-address"] }
