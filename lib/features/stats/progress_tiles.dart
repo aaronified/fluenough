@@ -209,6 +209,7 @@ class LevelTile extends StatelessWidget {
 /// A tile of the top rows of Progress: a title over its figure.
 class ProgressTile extends StatelessWidget {
   const ProgressTile({
+    super.key,
     required this.color,
     required this.title,
     required this.titleColor,
