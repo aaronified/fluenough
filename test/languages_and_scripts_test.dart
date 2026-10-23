@@ -2601,6 +2601,9 @@ void main() {
       expect(shown(), findsOneWidget);
 
       final touch = await tester.startGesture(tester.getCenter(zone()));
+      // The touch is told after the press delay, in the first pump's timers;
+      // the fold's clock starts at that pump's frame, and runs in the next.
+      await tester.pump(const Duration(milliseconds: 400));
       await tester.pump(const Duration(milliseconds: 400));
       expect(shown(), findsNothing);
       await touch.cancel();
