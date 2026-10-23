@@ -1,3 +1,4 @@
+# modes: converted to an opt-out (#522, step 6)
 schema: 1
 id: "te-registers"
 part: "core"
@@ -7,11 +8,11 @@ license: "CC-BY-SA-4.0"
 tags: ["reading", "unreviewed"]
 cards:
   - ref: "te-0352"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - ref: "te-0140"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "te-0534"
@@ -19,7 +20,7 @@ cards:
     reading: "pustakamu"
     ipa: "pust̪akamu"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "te-0535"
@@ -27,7 +28,7 @@ cards:
     reading: "cēsenu"
     ipa: "tʃeːsenu"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "te-0536"
@@ -35,19 +36,19 @@ cards:
     reading: "vaccenu"
     ipa: "ʋatʃtʃenu"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
   - id: "te-0537"
     target: "అనెను"
     reading: "anenu"
     ipa: "anenu"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
   - id: "te-0538"
     target: "వచ్చిరి"
     reading: "vacciri"
     ipa: "ʋatʃtʃiri"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "te-0539"
@@ -55,7 +56,7 @@ cards:
     reading: "koṭṭinadi"
     ipa: "koʈʈinad̪i"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "te-0540"
@@ -63,19 +64,19 @@ cards:
     reading: "cēyucunnāḍu"
     ipa: "tʃeːjutʃunnaːɖu"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
   - id: "te-0541"
     target: "చేయుచు"
     reading: "cēyucu"
     ipa: "tʃeːjutʃu"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
   - id: "te-0542"
     target: "కలదు"
     reading: "kaladu"
     ipa: "kalad̪u"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "te-0543"
@@ -83,7 +84,7 @@ cards:
     reading: "yokka"
     ipa: "jokka"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "te-0544"
@@ -91,13 +92,13 @@ cards:
     reading: "ceppumu"
     ipa: "tʃeppumu"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
   - id: "te-0545"
     target: "జలము"
     reading: "jalamu"
     ipa: "dʒalamu"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
     picture: "💧"
     notes:
       - { id: "n1", kind: "note" }
@@ -106,7 +107,7 @@ cards:
     reading: "dayacēsi"
     ipa: "d̪ajatʃeːsi"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "te-0547"
@@ -114,7 +115,7 @@ cards:
     reading: "pravēśaṁ"
     ipa: "praʋeːʃam"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "te-0548"
@@ -122,7 +123,7 @@ cards:
     reading: "dhūmapānaṁ niṣēdhaṁ"
     ipa: "d̪ʱuːmapaːnam niʂeːd̪ʱam"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
     bases:
       - { word: "ధూమపానం", base: "ధూమపానం", reading: "dhūmapānaṁ" }
       - { word: "నిషేధం", base: "నిషేధం", reading: "niṣēdhaṁ" }
@@ -131,7 +132,7 @@ cards:
     reading: "marugudoḍḍi"
     ipa: "maruɡud̪oɖɖi"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
     picture: "🚽"
     notes:
       - { id: "n1", kind: "note" }
