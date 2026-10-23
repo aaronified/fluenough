@@ -1,0 +1,98 @@
+schema: 1
+id: "es-en-quantities-sentences"
+kind: "layer"
+core: "es-quantities-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: quantities"
+license: "CC-BY-SA-4.0"
+description: "Ten sentences with words of amount, each with the word it is most often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+
+cards:
+  "es-0388":
+    native: "I buy a kilo of apples, but I do not want anything else."
+    bases:
+      "un": "a"
+      "de": "of"
+      "manzanas": "apples"
+      "quiero": "want"
+    confusables:
+      "algo": { why: "Algo is something; here nada is the right word." }
+      "bastante": { why: "Bastante is quite or enough, not nothing." }
+  "es-0389":
+    native: "There is very little water in the bottle."
+    bases:
+      "Hay": "there is; there are"
+      "en": "in"
+      "la": "the"
+    confusables:
+      "mucho": { why: "Mucho is much or many, the opposite of poca." }
+      "demasiado": { why: "Demasiado is too much, not very little." }
+  "es-0390":
+    native: "I have to weigh the packet."
+    bases:
+      "que": "that"
+      "el": "the"
+    confusables:
+      "comprar": { why: "Comprar is to buy: the packet is weighed, not bought here." }
+      "lata": { why: "La lata is a tin, not the packet." }
+  "es-0391":
+    native: "Every day I drink two litres of water."
+    bases:
+      "de": "of"
+    confusables:
+      "medio": { why: "Medio is half, not two litres." }
+      "docena": { why: "Una docena is a dozen, not two litres." }
+  "es-0392":
+    native: "We buy twelve eggs and a litre of milk."
+    bases:
+      "huevos": "eggs"
+      "un": "a"
+      "de": "of"
+    confusables:
+      "docena": { why: "Una docena is a dozen; doce is the number twelve." }
+      "entero": { why: "Entero is whole, not a number." }
+  "es-0393":
+    native: "This bottle is almost empty."
+    bases:
+      "Esta": "this"
+      "vacía": "empty"
+    confusables:
+      "llena": { why: "Llena is full, the opposite of vacía." }
+      "bolsa": { why: "La bolsa is a bag, not a bottle." }
+  "es-0394":
+    native: "Half of the cake is for you."
+    bases:
+      "La": "the"
+      "del": "of the"
+      "pastel": "cake"
+      "para": "for"
+      "ti": "you"
+    confusables:
+      "entero": { why: "Entero is whole: the whole cake, not half." }
+      "doble": { why: "Doble is double, which is not half." }
+  "es-0395":
+    native: "There are a lot of people in the park."
+    bases:
+      "Hay": "there is; there are"
+      "un": "a"
+      "de": "of"
+      "gente": "people"
+      "en": "in"
+      "el": "the"
+      "parque": "park"
+    confusables:
+      "algo": { why: "Algo is something, not a lot." }
+      "nada": { why: "Nada is nothing, the opposite of a lot." }
+  "es-0396":
+    native: "How much does the rest of the bread weigh?"
+    bases:
+      "el": "the"
+      "del": "of the"
+    confusables:
+      "mucho": { why: "Mucho is a lot; here the question asks for an amount." }
+      "todo": { why: "Todo is all of something, not the rest." }
+  "es-0397":
+    native: "I need several packets, not one."
+    confusables:
+      "suficiente": { why: "Suficiente is enough: the learner needs several, not enough." }
+      "mas": { why: "Más is more, a different word from several." }
