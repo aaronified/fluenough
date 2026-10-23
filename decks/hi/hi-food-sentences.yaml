@@ -1,0 +1,162 @@
+schema: 1
+id: "hi-food-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-1024"
+    target: "माँ आज पूरी बनाएगी।"
+    target_scripts: { perso_arabic: "ماں آج پوری بنائے گی۔" }
+    reading: "mām̐ āj pūrī banāēgī."
+    ipa: "mãː aːdʒ puːriː bənaːeːɡiː"
+    pos: "phrase"
+    bases:
+          - { word: "माँ", ref: "hi-0377" }
+          - { word: "आज", ref: "hi-0299" }
+          - { word: "पूरी", ref: "hi-0997" }
+          - { word: "बनाएगी", base: "बनाना", reading: "banāēgī" }
+    confusables:
+      - { id: "f1", word: "बनाएगा", reading: "banāēgā", kind: "form" }
+      - { id: "w1", word: "खाएगी", reading: "khāēgī", kind: "word" }
+  - id: "hi-1025"
+    target: "हम शाम को चावल और दाल खाते हैं।"
+    target_scripts: { perso_arabic: "ہم شام کو چاول اور دال کھاتے ہیں۔" }
+    reading: "ham śām kō cāval aur dāl khātē haim̐."
+    ipa: "ɦəm ʃaːm koː tʃaːʋəl ɔːr d̪aːl kʰaːt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+          - { word: "हम", base: "हम", reading: "ham" }
+          - { word: "शाम", base: "शाम", reading: "śām" }
+          - { word: "को", ref: "hi-0277" }
+          - { word: "चावल", ref: "hi-0260" }
+          - { word: "और", ref: "hi-0337" }
+          - { word: "दाल", ref: "hi-0261" }
+          - { word: "खाते", base: "खाना", reading: "khātē" }
+          - { word: "हैं", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", word: "खाता", reading: "khātā", kind: "form" }
+      - { id: "w1", word: "पीते", reading: "pītē", kind: "word" }
+  - id: "hi-1026"
+    target: "बच्चा रोज़ दूध पीता है।"
+    target_scripts: { perso_arabic: "بچہ روز دودھ پیتا ہے۔" }
+    reading: "baccā rōz dūdh pītā hai."
+    ipa: "bətʃtʃaː roːz d̪uːd̪ʱ piːt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+          - { word: "बच्चा", base: "बच्चा", reading: "baccā" }
+          - { word: "रोज़", ref: "hi-0451" }
+          - { word: "दूध", ref: "hi-0259" }
+          - { word: "पीता", base: "पीना", reading: "pītā" }
+          - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", word: "पीती", reading: "pītī", kind: "form" }
+      - { id: "w1", word: "खाता", reading: "khātā", kind: "word" }
+  - id: "hi-1027"
+    target: "सब्ज़ी में नमक और मिर्च डालो।"
+    target_scripts: { perso_arabic: "سبزی میں نمک اور مرچ ڈالو۔" }
+    reading: "sabzī mēm̐ namak aur mirc ḍālō."
+    ipa: "səbziː mẽː nəmək ɔːr mɪrtʃ ɖaːloː"
+    pos: "phrase"
+    bases:
+          - { word: "सब्ज़ी", ref: "hi-0249" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "नमक", ref: "hi-0051" }
+          - { word: "और", ref: "hi-0337" }
+          - { word: "मिर्च", ref: "hi-0253" }
+          - { word: "डालो", base: "डालना", reading: "ḍālō" }
+    confusables:
+      - { id: "w1", word: "उबालो", reading: "ubālō", kind: "word" }
+      - { id: "w2", word: "परोसो", reading: "parōsō", kind: "word" }
+  - id: "hi-1028"
+    target: "पहले चीनी डालो, फिर चाय छानो।"
+    target_scripts: { perso_arabic: "پہلے چینی ڈالو، پھر چائے چھانو۔" }
+    reading: "pahlē cīnī ḍālō, phir cāy chānō."
+    ipa: "pəɦleː tʃiːniː ɖaːloː pʰɪr tʃaːj tʃʰaːnoː"
+    pos: "phrase"
+    bases:
+          - { word: "पहले", ref: "hi-0823" }
+          - { word: "चीनी", ref: "hi-0992" }
+          - { word: "डालो", base: "डालना", reading: "ḍālō" }
+          - { word: "फिर", ref: "hi-0351" }
+          - { word: "चाय", ref: "hi-0334" }
+          - { word: "छानो", base: "छानना", reading: "chānō" }
+    confusables:
+      - { id: "f1", word: "छानिए", reading: "chāniē", kind: "form" }
+      - { id: "w1", word: "पीओ", reading: "pīō", kind: "word" }
+  - id: "hi-1029"
+    target: "मुझे भूख लगी है, खाना दीजिए।"
+    target_scripts: { perso_arabic: "مجھے بھوک لگی ہے، کھانا دیجیے۔" }
+    reading: "mujhē bhūkh lagī hai, khānā dījiē."
+    ipa: "mʊdʒʱeː bʱuːkʰ ləɡiː ɦɛː kʰaːnaː d̪iːdʒɪeː"
+    pos: "phrase"
+    bases:
+          - { word: "मुझे", ref: "hi-0745" }
+          - { word: "भूख", ref: "hi-1014" }
+          - { word: "लगी", base: "लगना", reading: "lagī" }
+          - { word: "है", ref: "hi-0780" }
+          - { word: "खाना", ref: "hi-0332" }
+          - { word: "दीजिए", base: "देना", reading: "dījiē" }
+    confusables:
+      - { id: "f1", word: "लगा", reading: "lagā", kind: "form" }
+      - { id: "w1", word: "प्यास", reading: "pyās", kind: "word" }
+  - id: "hi-1030"
+    target: "यह आम बहुत मीठा है।"
+    target_scripts: { perso_arabic: "یہ آم بہت میٹھا ہے۔" }
+    reading: "yah ām bahut mīṭhā hai."
+    ipa: "jəɦ aːm bəɦʊt̪ miːʈʰaː ɦɛː"
+    pos: "phrase"
+    bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "आम", ref: "hi-0979" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "मीठा", ref: "hi-0339" }
+          - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", word: "मीठी", reading: "mīṭhī", kind: "form" }
+      - { id: "w1", word: "खट्टा", reading: "khaṭṭā", kind: "word" }
+  - id: "hi-1031"
+    target: "मुझे ठंडा जूस चाहिए।"
+    target_scripts: { perso_arabic: "مجھے ٹھنڈا جوس چاہیے۔" }
+    reading: "mujhē ṭhaṇḍā jūs cāhiē."
+    ipa: "mʊdʒʱeː ʈʰəɳɖaː dʒuːs tʃaːɦɪeː"
+    pos: "phrase"
+    bases:
+          - { word: "मुझे", ref: "hi-0745" }
+          - { word: "ठंडा", ref: "hi-0911" }
+          - { word: "जूस", ref: "hi-1011" }
+          - { word: "चाहिए", ref: "hi-0460" }
+    confusables:
+      - { id: "f1", word: "ठंडी", reading: "ṭhaṇḍī", kind: "form" }
+      - { id: "w1", word: "गरम", reading: "garam", kind: "word" }
+  - id: "hi-1032"
+    target: "माँ मटर पनीर बनाती है।"
+    target_scripts: { perso_arabic: "ماں مٹر پنیر بناتی ہے۔" }
+    reading: "mām̐ maṭar panīr banātī hai."
+    ipa: "mãː məʈər pəniːr bənaːt̪iː ɦɛː"
+    pos: "phrase"
+    bases:
+          - { word: "माँ", ref: "hi-0377" }
+          - { word: "मटर", ref: "hi-0986" }
+          - { word: "पनीर", ref: "hi-0988" }
+          - { word: "बनाती", base: "बनाना", reading: "banātī" }
+          - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", word: "बनाता", reading: "banātā", kind: "form" }
+      - { id: "w1", word: "खाती", reading: "khātī", kind: "word" }
+  - id: "hi-1033"
+    target: "मुझे एक कप कॉफ़ी चाहिए।"
+    target_scripts: { perso_arabic: "مجھے ایک کپ کافی چاہیے۔" }
+    reading: "mujhē ēk kap kôfī cāhiē."
+    ipa: "mʊdʒʱeː eːk kəp kɔfiː tʃaːɦɪeː"
+    pos: "phrase"
+    bases:
+          - { word: "मुझे", ref: "hi-0745" }
+          - { word: "एक", base: "एक", reading: "ēk" }
+          - { word: "कप", ref: "hi-0877" }
+          - { word: "कॉफ़ी", ref: "hi-1012" }
+          - { word: "चाहिए", ref: "hi-0460" }
+    confusables:
+      - { id: "f1", word: "चाहिएँ", reading: "cāhiēm̐", kind: "form" }
+      - { id: "w1", word: "चाय", reading: "cāy", kind: "word" }
