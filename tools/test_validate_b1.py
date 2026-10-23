@@ -16,10 +16,12 @@ from __future__ import annotations
 
 import contextlib
 import io
+import os
 import shutil
 import sys
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 import yaml
@@ -1229,7 +1231,10 @@ class RulesCore(B1Case):
         for pos in ("letter", "digit"):
             # A letter or a digit is a card's pos, never a rules deck's row kind.
             self.table(lambda t, pos=pos: t.update(applies_to={"pos": [pos]}))
-            self.assertError(RULES, "table.applies_to.pos", f"got ['{pos}']")
+            self.assertError(RULES, "table.applies_to.pos",
+                             "must be a non-empty list of parts of speech from ['adj', "
+                             "'adv', 'noun', 'other', 'particle', 'pronoun', 'verb'], "
+                             f"got ['{pos}']")
         self.table(lambda t: t.update(applies_to={"pos": ["noun"], "tags": "x",
                                                   "except": ["foo"]}))
         self.assertError(RULES, "table.applies_to", "tags must be a list")
@@ -2519,7 +2524,12 @@ class Compatibility(unittest.TestCase):
 
     def _todays_decks_get_no_info_and_no_b1_message(self) -> None:
         out = io.StringIO()
-        with contextlib.redirect_stdout(out):
+        # The committed index is regenerated on main after each merge, so a
+        # deck change is not checked against it here; this test is about the
+        # decks' own messages. The index check has tests of its own
+        # (test_validate_decks.py, test_deck_index.py).
+        with mock.patch.dict(os.environ, {"FLUENOUGH_SKIP_INDEX_CHECK": "1"}), \
+                contextlib.redirect_stdout(out):
             code = validate_decks.main(["validate_decks.py",
                                         str(validate_decks.ROOT / "decks")])
         lines = out.getvalue().splitlines()

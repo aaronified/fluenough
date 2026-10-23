@@ -302,7 +302,8 @@ void modesTests() {
 void lessonSiblingTests() {
   final amma = word('te-1', 'ammaki', 'to mother', base: 'te-amma');
   final loc = word('te-2', 'ammalō', 'in mother', base: 'te-amma');
-  final alone = word('te-5', 'pustakam', 'book');
+  // Four letters: an easy card (eight, as in 'pustakam', is medium).
+  final alone = word('te-5', 'puvvu', 'flower');
 
   test('a lesson asks a card with siblings its word, then its forms', () {
     expect(lessonQuestions(amma, siblings: [loc]), [

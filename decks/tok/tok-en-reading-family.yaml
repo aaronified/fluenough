@@ -1,0 +1,56 @@
+schema: 1
+id: "tok-en-reading-family"
+name: "Reading: family"
+kind: reading
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two passages from the family unit: someone describes the people in a family photo (heard), and a small family tree, each person in a line (read). Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "tok-my-family"
+    title: "My family"
+    sentences:
+      - text: "ni li mama mi."
+      - text: "ona li meli."
+      - text: "mije ni li mije mi."
+      - text: "ona li olin e mi."
+      - text: "mi lon poka ona."
+      - text: "kulupu ni li lili."
+    questions:
+      - id: "tok-0171"
+        prompt: { en: "What does the first line say?" }
+        options:
+          - { en: "This is my parent" }
+          - { en: "This is my group" }
+        answer: 1
+      - id: "tok-0172"
+        prompt: { en: "What is the person in the second line?" }
+        options:
+          - { en: "A woman" }
+          - { en: "A man" }
+        answer: 1
+      - id: "tok-0173"
+        prompt: { en: "They love the speaker." }
+        answer: true
+  - id: "tok-family-tree"
+    title: "Family tree"
+    sentences:
+      - text: "mama mi li meli."
+      - text: "mije mi li mije."
+      - text: "mi meli."
+      - text: "mama mi li olin e mi."
+    questions:
+      - id: "tok-0174"
+        prompt: { en: "What is the speaker?" }
+        options:
+          - { en: "A woman" }
+          - { en: "A man" }
+        answer: 1
+      - id: "tok-0175"
+        prompt: { en: "The speaker's mother loves the speaker." }
+        answer: true
+      - id: "tok-0176"
+        prompt: { en: "The speaker's parent is a man." }
+        answer: false
