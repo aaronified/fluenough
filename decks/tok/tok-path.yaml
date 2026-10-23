@@ -290,11 +290,9 @@ units:
     words: 4
   # Joining: en between subjects, several li and several e, anu for a
   # choice, and taso (but, only), its one word.
-  - planned: { id: "tok-grammar-joining", grammar: ["en-subjects", "repeated-li-e", "anu-choice", "taso-but"], words: 1 }
-    listening_passages:
-      - { id: "plans-for-two", text: { "en": "Two people plan a day: who does what, this or that" } }
-    reading_passages:
-      - { id: "shopping-list", text: { "en": "A note: buy bread and fruit, but not sweets" } }
+  - decks: ["tok-grammar-joining-words", "tok-grammar-joining", "tok-grammar-joining-sentences", "tok-reading-joining"]
+    words: 2
+    grammar: ["en-subjects", "repeated-li-e", "anu-choice", "taso-but"]
   # moli, utala, kalama and alasa.
   - planned: { id: "tok-more-verbs", theme: "more-verbs", words: 4 }
     listening_passages:
