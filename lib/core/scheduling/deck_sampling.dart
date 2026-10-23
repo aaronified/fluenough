@@ -1,8 +1,9 @@
 import 'fsrs.dart';
 
 /// How likely a pair was to be recalled at its last review, for it to count
-/// as known (owner, 2026-10-23: "Recall >=90% at last review").
-const double kKnownRecall = 0.9;
+/// as known (owner, 2026-10-23: "known bar 85%"). Below FSRS's own 90%
+/// target, so a card reviewed a few days late still counts.
+const double kKnownRecall = 0.85;
 
 /// More samples asked after the first fails, at least [kStressMin] and
 /// bringing the deck's passes up to [kStressTotal] (owner, 2026-10-20: "ask
@@ -24,32 +25,32 @@ bool isKnownState(FsrsState state) =>
 /// (#680), worked out from the deck's pair [states] alone, so that it holds
 /// after a restart and records nothing in the log.
 ///
-/// The deck became pending when its first known card, [due] oldest first,
-/// came due. Since then:
-/// - a known pair reviewed right and not due again holds the deck: its other
-///   due cards are not shown, until that pair comes due itself, which sends
-///   the deck round again, the cards reviewed longest ago first, so every
-///   card has a turn before any is repeated;
-/// - a pair reviewed and missed (a lapse, with no right answer since) is a
-///   failed sample: the first asks [kStressMin] to [kStressTotal] more, and a
-///   second brings every due known card of the deck.
+/// Each day a deck's known cards are sampled: [kSampleSize] of them, the
+/// ones reviewed longest ago, so the rest wait only for their turn, a day
+/// or so each, and every card is reviewed eventually. Today's samples are
+/// the pairs reviewed today:
+/// - known ones reviewed right count against the day's [kSampleSize], and
+///   once that many are done the deck's other due cards wait until tomorrow;
+/// - a pair reviewed and missed today (a lapse, even if it was then answered
+///   right the same day) is a failed sample: the first asks [kStressMin] to
+///   [kStressTotal] more, and a second brings every due known card of the
+///   deck.
 int sampleCount(
   List<FsrsState> due,
   Iterable<FsrsState> states, {
   required DateTime now,
 }) {
   if (due.isEmpty) return 0;
-  var since = due.first.dueAt;
-  for (final s in due) {
-    if (s.dueAt.isBefore(since)) since = s.dueAt;
-  }
   var passed = 0;
   var failed = 0;
   for (final s in states) {
-    if (!s.lastReviewAt.isAfter(since)) continue;
-    if (s.repetitions == 0 && s.lapses > 0) {
+    final l = s.lastReviewAt;
+    if (l.year != now.year || l.month != now.month || l.day != now.day) {
+      continue;
+    }
+    if (s.lapses > 0 && (s.repetitions == 0 || s.recallAtReview == 0)) {
       failed++;
-    } else if (isKnownState(s) && s.dueAt.isAfter(now)) {
+    } else if (isKnownState(s)) {
       passed++;
     }
   }
@@ -59,5 +60,5 @@ int sampleCount(
     final more = kStressTotal - passed;
     return more < kStressMin ? kStressMin : more;
   }
-  return passed > 0 ? 0 : kSampleSize;
+  return passed >= kSampleSize ? 0 : kSampleSize - passed;
 }

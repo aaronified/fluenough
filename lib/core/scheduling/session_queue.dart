@@ -191,7 +191,7 @@ class SessionQueue {
   ///
   /// With [sampleKnown], a deck whose known cards are due shows only some of
   /// them, as [sampleCount] says, the ones reviewed longest ago first; the
-  /// rest wait (#680).
+  /// rest wait for another day's sample (#680).
   ///
   /// A card gives either its most overdue pair or its first new one, unless
   /// [newEvenIfDue]: then its first new pair is offered as well, for a
