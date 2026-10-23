@@ -26,7 +26,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Nunca como carne.", ipa: "ˈnunka ˈkomo ˈkaɾne", bases: [{ word: "Nunca", base: "nunca" }, { word: "como", ref: "es-0028" }, { word: "carne", base: "carne" }] }
+      - { target: "Nunca como carne.", ipa: "ˈnunka ˈkomo ˈkaɾne", bases: [{ word: "Nunca", base: "nunca" }, { word: "como", ref: "es-0028" }, { word: "carne", ref: "es-0614" }] }
       - { target: "Mi padre nunca llega tarde.", ipa: "mi ˈpadɾe ˈnunka ˈʝeɡa ˈtaɾde", bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", base: "padre" }, { word: "nunca", base: "nunca" }, { word: "llega", ref: "es-0290" }, { word: "tarde", base: "tarde" }] }
   - id: "es-0322"
     target: "a veces"
@@ -57,7 +57,7 @@ cards:
     bases: [{ word: "a", base: "a" }, { word: "menudo", base: "menudo" }]
     examples:
       - { target: "Mi hermana escribe a menudo.", ipa: "mi eɾˈmana esˈkɾibe a meˈnudo", bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", base: "hermana" }, { word: "escribe", ref: "es-0297" }, { word: "a", base: "a" }, { word: "menudo", base: "menudo" }] }
-      - { target: "Visitamos a menudo a la abuela.", ipa: "bisiˈtamos a meˈnudo a la aˈbwela", bases: [{ word: "Visitamos", base: "visitar" }, { word: "a", base: "a" }, { word: "menudo", base: "menudo" }, { word: "la", base: "la" }, { word: "abuela", base: "abuela" }] }
+      - { target: "Visitamos a menudo a la abuela.", ipa: "bisiˈtamos a meˈnudo a la aˈbwela", bases: [{ word: "Visitamos", ref: "es-0787" }, { word: "a", base: "a" }, { word: "menudo", base: "menudo" }, { word: "la", base: "la" }, { word: "abuela", base: "abuela" }] }
   - id: "es-0325"
     target: "casi"
     ipa: "ˈkasi"
@@ -156,7 +156,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Luego trabajo en el jardín.", ipa: "ˈlweɡo tɾaˈbaxo en el xaɾˈdin", bases: [{ word: "Luego", base: "luego" }, { word: "trabajo", ref: "es-0259" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "jardín", base: "jardín" }] }
+      - { target: "Luego trabajo en el jardín.", ipa: "ˈlweɡo tɾaˈbaxo en el xaɾˈdin", bases: [{ word: "Luego", base: "luego" }, { word: "trabajo", ref: "es-0259" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "jardín", ref: "es-0810" }] }
       - { target: "Comemos y luego estudiamos.", ipa: "koˈmemos i ˈlweɡo estuˈdjamos", bases: [{ word: "Comemos", ref: "es-0028" }, { word: "y", ref: "es-0048" }, { word: "luego", base: "luego" }, { word: "estudiamos", ref: "es-0258" }] }
   - id: "es-0335"
     target: "antes"
@@ -167,7 +167,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Antes desayuno en casa.", ipa: "ˈantes desaˈʝuno en ˈkasa", bases: [{ word: "Antes", base: "antes" }, { word: "desayuno", ref: "es-0282" }, { word: "en", base: "en" }, { word: "casa", base: "casa" }] }
-      - { target: "Antes de salir, cenamos.", ipa: "ˈantes de saˈliɾ θeˈnamos", bases: [{ word: "Antes", base: "antes" }, { word: "de", base: "de" }, { word: "salir", base: "salir" }, { word: "cenamos", ref: "es-0283" }] }
+      - { target: "Antes de salir, cenamos.", ipa: "ˈantes de saˈliɾ θeˈnamos", bases: [{ word: "Antes", base: "antes" }, { word: "de", base: "de" }, { word: "salir", ref: "es-0690" }, { word: "cenamos", ref: "es-0283" }] }
   - id: "es-0336"
     target: "después"
     ipa: "desˈpwes"
@@ -186,7 +186,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Pronto llega el tren.", ipa: "ˈpɾonto ˈʝeɡa el tɾen", bases: [{ word: "Pronto", base: "pronto" }, { word: "llega", ref: "es-0290" }, { word: "el", base: "el" }, { word: "tren", base: "tren" }] }
+      - { target: "Pronto llega el tren.", ipa: "ˈpɾonto ˈʝeɡa el tɾen", bases: [{ word: "Pronto", base: "pronto" }, { word: "llega", ref: "es-0290" }, { word: "el", base: "el" }, { word: "tren", ref: "es-0676" }] }
       - { target: "Llego pronto a clase.", ipa: "ˈʝeɡo ˈpɾonto a ˈklase", bases: [{ word: "Llego", ref: "es-0290" }, { word: "pronto", base: "pronto" }, { word: "a", base: "a" }, { word: "clase", base: "clase" }] }
   - id: "es-0338"
     target: "temprano"
@@ -226,5 +226,5 @@ cards:
       - { id: "n1", kind: "note" }
     bases: [{ word: "todos", ref: "es-0134" }, { word: "los", base: "los" }, { word: "días", base: "día" }]
     examples:
-      - { target: "Todos los días bebo café.", ipa: "ˈtodos los ˈdias ˈbebo kaˈfe", bases: [{ word: "Todos", ref: "es-0134" }, { word: "los", base: "los" }, { word: "días", base: "día" }, { word: "bebo", ref: "es-0029" }, { word: "café", base: "café" }] }
+      - { target: "Todos los días bebo café.", ipa: "ˈtodos los ˈdias ˈbebo kaˈfe", bases: [{ word: "Todos", ref: "es-0134" }, { word: "los", base: "los" }, { word: "días", base: "día" }, { word: "bebo", ref: "es-0029" }, { word: "café", ref: "es-0611" }] }
       - { target: "Hago ejercicio todos los días.", ipa: "ˈaɡo exeɾˈθiθjo ˈtodos los ˈdias", bases: [{ word: "Hago", ref: "es-0025" }, { word: "ejercicio", base: "ejercicio" }, { word: "todos", ref: "es-0134" }, { word: "los", base: "los" }, { word: "días", base: "día" }] }
