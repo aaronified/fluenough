@@ -311,6 +311,8 @@ void main() {
     testWidgets('a touch catches the pages mid-slide and sets them down on '
         'the nearest tab', (tester) async {
       final state = await pumpPager(tester);
+      // Today is offstage once the pages slide away: read its width first.
+      final width = tester.getSize(find.byType(TodayPage)).width;
       await tester.tap(barIcon(Icons.insert_chart_outlined));
       await tester.pump(); // the slide's first frame starts its clock
       await tester.pump(const Duration(milliseconds: 100));
@@ -320,7 +322,6 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 200));
       expect(tester.getTopLeft(find.byType(StatsPage)).dx, closeTo(caught, 1));
-      final width = tester.getSize(find.byType(TodayPage)).width;
       // Stats is the third page: its left edge is two pages less the offset.
       final nearest = ShellTab.values[((2 * width - caught) / width).round()];
       await gesture.up();
