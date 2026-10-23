@@ -18,7 +18,7 @@ cards:
       - target: "तू कुठे आहेस?"
         reading: "tu kuṭhe āhes?"
         ipa: "t̪u kuʈʰe aɦes"
-        bases: [{ word: "कुठे", reading: "kuṭhe" }, { word: "आहेस", base: "असणे", reading: "āhes" }]
+        bases: [{ word: "कुठे", base: "कुठे", reading: "kuṭhe" }, { word: "आहेस", base: "असणे", reading: "āhes" }]
       - target: "तू माझा मित्र आहेस."
         reading: "tu mājhā mitra āhes."
         ipa: "t̪u madzʱa mit̪r aɦes"
@@ -64,7 +64,7 @@ cards:
       - target: "ते लोक इथे राहतात."
         reading: "te lok ithe rāhtāt."
         ipa: "t̪e lok it̪ʰe raɦt̪at̪"
-        bases: [{ word: "इथे", reading: "ithe" }, { word: "राहतात", base: "राहणे", reading: "rāhtāt" }]
+        bases: [{ word: "इथे", base: "इथे", reading: "ithe" }, { word: "राहतात", base: "राहणे", reading: "rāhtāt" }]
   - id: "mr-0679"
     target: "हा"
     reading: "hā"
@@ -76,7 +76,7 @@ cards:
       - target: "हा माणूस कोण आहे?"
         reading: "hā māṇus koṇ āhe?"
         ipa: "ɦa maɳus koɳ aɦe"
-        bases: [{ word: "कोण", reading: "koṇ" }, { word: "आहे", base: "असणे", reading: "āhe" }]
+        bases: [{ word: "कोण", base: "कोण", reading: "koṇ" }, { word: "आहे", base: "असणे", reading: "āhe" }]
       - target: "हा माझा नवरा आहे."
         reading: "hā mājhā navrā āhe."
         ipa: "ɦa madzʱa nəʋra aɦe"
@@ -92,7 +92,7 @@ cards:
       - target: "ही स्त्री कोण आहे?"
         reading: "hi stri koṇ āhe?"
         ipa: "ɦi st̪ri koɳ aɦe"
-        bases: [{ word: "कोण", reading: "koṇ" }, { word: "आहे", base: "असणे", reading: "āhe" }]
+        bases: [{ word: "कोण", base: "कोण", reading: "koṇ" }, { word: "आहे", base: "असणे", reading: "āhe" }]
       - target: "ही माझी मैत्रीण आहे."
         reading: "hi mājhi maitriṇ āhe."
         ipa: "ɦi madʒʱi məit̪riɳ aɦe"
@@ -108,11 +108,11 @@ cards:
       - target: "हे माझे घर आहे."
         reading: "he mājhe ghar āhe."
         ipa: "ɦe madʒʱe ɡʱər aɦe"
-        bases: [{ word: "माझे", base: "मी", reading: "mājhe" }, { word: "घर", reading: "ghar" }, { word: "आहे", base: "असणे", reading: "āhe" }]
+        bases: [{ word: "माझे", base: "मी", reading: "mājhe" }, { word: "घर", base: "घर", reading: "ghar" }, { word: "आहे", base: "असणे", reading: "āhe" }]
       - target: "हे लोक कुठे राहतात?"
         reading: "he lok kuṭhe rāhtāt?"
         ipa: "ɦe lok kuʈʰe raɦt̪at̪"
-        bases: [{ word: "कुठे", reading: "kuṭhe" }, { word: "राहतात", base: "राहणे", reading: "rāhtāt" }]
+        bases: [{ word: "कुठे", base: "कुठे", reading: "kuṭhe" }, { word: "राहतात", base: "राहणे", reading: "rāhtāt" }]
   - id: "mr-0682"
     target: "स्वतः"
     reading: "svataḥ"
@@ -131,8 +131,8 @@ cards:
     bases: "self"
     notes: [{ id: "n1", kind: "usage" }]
     examples:
-      - { target: "इथे कोणी नाही.", reading: "ithe koṇi nāhi.", ipa: "it̪ʰe koɳi naɦi", bases: [{ word: "इथे", reading: "ithe" }] }
-      - { target: "कोणी आले का?", reading: "koṇi āle kā?", ipa: "koɳi ale ka", bases: [{ word: "आले", base: "येणे", reading: "āle" }, { word: "का", reading: "kā" }] }
+      - { target: "इथे कोणी नाही.", reading: "ithe koṇi nāhi.", ipa: "it̪ʰe koɳi naɦi", bases: [{ word: "इथे", base: "इथे", reading: "ithe" }, { word: "नाही", base: "नाही", reading: "nāhi" }] }
+      - { target: "कोणी आले का?", reading: "koṇi āle kā?", ipa: "koɳi ale ka", bases: [{ word: "आले", base: "येणे", reading: "āle" }, { word: "का", base: "का", reading: "kā" }] }
   - id: "mr-0684"
     target: "सगळे"
     reading: "sagḷe"
@@ -144,7 +144,7 @@ cards:
       - target: "सगळे इथे आहेत."
         reading: "sagḷe ithe āhet."
         ipa: "səɡɭe it̪ʰe aɦet̪"
-        bases: [{ word: "इथे", reading: "ithe" }, { word: "आहेत", base: "असणे", reading: "āhet" }]
+        bases: [{ word: "इथे", base: "इथे", reading: "ithe" }, { word: "आहेत", base: "असणे", reading: "āhet" }]
       - { target: "सगळे लोक जेवतात.", reading: "sagḷe lok jevtāt.", ipa: "səɡɭe lok dʒeʋt̪at̪", bases: [{ word: "जेवतात", base: "जेवणे", reading: "jevtāt" }] }
   - id: "mr-0685"
     target: "दुसरा"
@@ -157,11 +157,11 @@ cards:
       - target: "दुसरा माणूस कुठे आहे?"
         reading: "dusrā māṇus kuṭhe āhe?"
         ipa: "d̪usra maɳus kuʈʰe aɦe"
-        bases: [{ word: "कुठे", reading: "kuṭhe" }, { word: "आहे", base: "असणे", reading: "āhe" }]
+        bases: [{ word: "कुठे", base: "कुठे", reading: "kuṭhe" }, { word: "आहे", base: "असणे", reading: "āhe" }]
       - target: "मला दुसरा चहा हवा."
         reading: "malā dusrā cahā havā."
         ipa: "məla d̪usra tsəɦa ɦəʋa"
-        bases: [{ word: "मला", reading: "malā" }, { word: "चहा", reading: "cahā" }, { word: "हवा", reading: "havā" }]
+        bases: [{ word: "मला", base: "मी", reading: "malā" }, { word: "चहा", base: "चहा", reading: "cahā" }, { word: "हवा", base: "हवा", reading: "havā" }]
   - id: "mr-0686"
     target: "माणूस"
     reading: "māṇus"
@@ -179,7 +179,7 @@ cards:
       - target: "माणसे कुठे राहतात?"
         reading: "māṇse kuṭhe rāhtāt?"
         ipa: "maɳse kuʈʰe raɦt̪at̪"
-        bases: [{ word: "माणसे", base: "माणूस", reading: "māṇse" }, { word: "कुठे", reading: "kuṭhe" }, { word: "राहतात", base: "राहणे", reading: "rāhtāt" }]
+        bases: [{ word: "माणसे", base: "माणूस", reading: "māṇse" }, { word: "कुठे", base: "कुठे", reading: "kuṭhe" }, { word: "राहतात", base: "राहणे", reading: "rāhtāt" }]
   - id: "mr-0687"
     target: "लोक"
     reading: "lok"
@@ -192,11 +192,11 @@ cards:
       - target: "इथे खूप लोक आहेत."
         reading: "ithe khup lok āhet."
         ipa: "it̪ʰe kʰup lok aɦet̪"
-        bases: [{ word: "इथे", reading: "ithe" }, { word: "खूप", reading: "khup" }, { word: "आहेत", base: "असणे", reading: "āhet" }]
+        bases: [{ word: "इथे", base: "इथे", reading: "ithe" }, { word: "खूप", base: "खूप", reading: "khup" }, { word: "आहेत", base: "असणे", reading: "āhet" }]
       - target: "लोकांना मदत करा."
         reading: "lokānnā madat karā."
         ipa: "lokanna məd̪ət̪ kəra"
-        bases: [{ word: "लोकांना", base: "लोक", reading: "lokānnā" }, { word: "मदत", reading: "madat" }, { word: "करा", base: "करणे", reading: "karā" }]
+        bases: [{ word: "लोकांना", base: "लोक", reading: "lokānnā" }, { word: "मदत", base: "मदत", reading: "madat" }, { word: "करा", base: "करणे", reading: "karā" }]
   - id: "mr-0688"
     target: "व्यक्ती"
     reading: "vyakti"
@@ -215,9 +215,9 @@ cards:
         reading: "pratyek vyaktilā hakk āhe."
         ipa: "prət̪jek ʋjəkt̪ila ɦəkk aɦe"
         bases:
-          - { word: "प्रत्येक", reading: "pratyek" }
+          - { word: "प्रत्येक", base: "प्रत्येक", reading: "pratyek" }
           - { word: "व्यक्तीला", base: "व्यक्ती", reading: "vyaktilā" }
-          - { word: "हक्क", reading: "hakk" }
+          - { word: "हक्क", base: "हक्क", reading: "hakk" }
           - { word: "आहे", base: "असणे", reading: "āhe" }
   - id: "mr-0689"
     target: "शेजारी"
@@ -231,11 +231,11 @@ cards:
       - target: "माझे शेजारी कुठे राहतात?"
         reading: "mājhe śejāri kuṭhe rāhtāt?"
         ipa: "madʒʱe ʃedzari kuʈʰe raɦt̪at̪"
-        bases: [{ word: "माझे", base: "मी", reading: "mājhe" }, { word: "कुठे", reading: "kuṭhe" }, { word: "राहतात", base: "राहणे", reading: "rāhtāt" }]
+        bases: [{ word: "माझे", base: "मी", reading: "mājhe" }, { word: "कुठे", base: "कुठे", reading: "kuṭhe" }, { word: "राहतात", base: "राहणे", reading: "rāhtāt" }]
       - target: "शेजारी इथे आहेत."
         reading: "śejāri ithe āhet."
         ipa: "ʃedzari it̪ʰe aɦet̪"
-        bases: [{ word: "इथे", reading: "ithe" }, { word: "आहेत", base: "असणे", reading: "āhet" }]
+        bases: [{ word: "इथे", base: "इथे", reading: "ithe" }, { word: "आहेत", base: "असणे", reading: "āhet" }]
   - id: "mr-0690"
     target: "पाहुणा"
     reading: "pāhuṇā"
@@ -269,7 +269,7 @@ cards:
       - target: "ते माझे नातेवाईक आहेत का?"
         reading: "te mājhe nātevāik āhet kā?"
         ipa: "t̪e madʒʱe nat̪eʋaik aɦet̪ ka"
-        bases: [{ word: "माझे", base: "मी", reading: "mājhe" }, { word: "आहेत", base: "असणे", reading: "āhet" }, { word: "का", reading: "kā" }]
+        bases: [{ word: "माझे", base: "मी", reading: "mājhe" }, { word: "आहेत", base: "असणे", reading: "āhet" }, { word: "का", base: "का", reading: "kā" }]
   - id: "mr-0692"
     target: "पुरुष"
     reading: "puruṣ"
@@ -284,7 +284,7 @@ cards:
       - target: "पुरुष आणि स्त्रिया इथे आहेत."
         reading: "puruṣ āṇi striyā ithe āhet."
         ipa: "puruʂ aɳi st̪rija it̪ʰe aɦet̪"
-        bases: [{ word: "स्त्रिया", base: "स्त्री", reading: "striyā" }, { word: "इथे", reading: "ithe" }, { word: "आहेत", base: "असणे", reading: "āhet" }]
+        bases: [{ word: "स्त्रिया", base: "स्त्री", reading: "striyā" }, { word: "इथे", base: "इथे", reading: "ithe" }, { word: "आहेत", base: "असणे", reading: "āhet" }]
   - id: "mr-0693"
     target: "स्त्री"
     reading: "stri"
@@ -299,13 +299,13 @@ cards:
       - target: "स्त्रिया इथे बोलतात."
         reading: "striyā ithe boltāt."
         ipa: "st̪rija it̪ʰe bolt̪at̪"
-        bases: [{ word: "स्त्रिया", base: "स्त्री", reading: "striyā" }, { word: "इथे", reading: "ithe" }, { word: "बोलतात", base: "बोलणे", reading: "boltāt" }]
+        bases: [{ word: "स्त्रिया", base: "स्त्री", reading: "striyā" }, { word: "इथे", base: "इथे", reading: "ithe" }, { word: "बोलतात", base: "बोलणे", reading: "boltāt" }]
   - ref: "mr-0080"
     examples:
       - target: "मी इथे आहे."
         reading: "mi ithe āhe."
         ipa: "mi it̪ʰe aɦe"
-        bases: [{ word: "इथे", reading: "ithe" }, { word: "आहे", base: "असणे", reading: "āhe" }]
+        bases: [{ word: "इथे", base: "इथे", reading: "ithe" }, { word: "आहे", base: "असणे", reading: "āhe" }]
       - target: "मी तुला ओळखतो."
         reading: "mi tulā oḷkhto."
         ipa: "mi t̪ula oɭkʰt̪o"
@@ -315,7 +315,7 @@ cards:
       - target: "तुम्ही कसे आहात?"
         reading: "tumhi kase āhāt?"
         ipa: "t̪umɦi kəse aɦat̪"
-        bases: [{ word: "कसे", reading: "kase" }, { word: "आहात", base: "असणे", reading: "āhāt" }]
+        bases: [{ word: "कसे", base: "कसे", reading: "kase" }, { word: "आहात", base: "असणे", reading: "āhāt" }]
       - target: "तुम्ही माझे पाहुणे आहात."
         reading: "tumhi mājhe pāhuṇe āhāt."
         ipa: "t̪umɦi madʒʱe paɦuɳe aɦat̪"
@@ -325,7 +325,7 @@ cards:
       - target: "आम्ही इथे राहतो."
         reading: "āmhi ithe rāhto."
         ipa: "amɦi it̪ʰe raɦt̪o"
-        bases: [{ word: "इथे", reading: "ithe" }, { word: "राहतो", base: "राहणे", reading: "rāhto" }]
+        bases: [{ word: "इथे", base: "इथे", reading: "ithe" }, { word: "राहतो", base: "राहणे", reading: "rāhto" }]
       - { target: "आम्ही मित्र आहोत.", reading: "āmhi mitra āhot.", ipa: "amɦi mit̪r aɦot̪", bases: [{ word: "आहोत", base: "असणे", reading: "āhot" }] }
   - ref: "mr-0137"
     examples:
@@ -336,7 +336,7 @@ cards:
       - target: "आपण आता निघू."
         reading: "āpaṇ ātā nighu."
         ipa: "apəɳ at̪a niɡʱu"
-        bases: [{ word: "आता", reading: "ātā" }, { word: "निघू", base: "निघणे", reading: "nighu" }]
+        bases: [{ word: "आता", base: "आता", reading: "ātā" }, { word: "निघू", base: "निघणे", reading: "nighu" }]
   - id: "mr-0694"
     kind: "set"
     members:
