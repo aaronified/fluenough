@@ -1,0 +1,785 @@
+schema: 1
+id: "es-en-family"
+kind: "layer"
+core: "es-family"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Family"
+license: "CC-BY-SA-4.0"
+description: "Words for people in a family: parents, children, grandparents, aunts, uncles, cousins and in-laws, each with its gender. Not yet checked by a Spanish speaker: please report any mistake."
+
+cards:
+  "es-0158":
+    native: "family"
+    notes:
+      "n1": "Familia is the whole family, of any size. The plural familias is rare: say la familia for the group."
+    bases:
+      "la": "the"
+      "familia": "family"
+    examples:
+      "La familia de Ana vive en Madrid.":
+        native: "Ana's family lives in Madrid."
+        bases:
+          "La": "the"
+          "familia": "family"
+          "de": "of"
+          "Ana": "Ana"
+          "en": "in"
+          "Madrid": "Madrid"
+      "Ayer conocí a la familia de Ana.":
+        native: "Yesterday I met Ana's family."
+        bases:
+          "Ayer": "yesterday"
+          "conocí": "I met"
+          "a": "to"
+          "la": "the"
+          "familia": "family"
+          "de": "of"
+          "Ana": "Ana"
+  "es-0159":
+    native: "father"
+    notes:
+      "n1": "Padre is father. The plural padres can mean parents: a mother and a father together."
+    bases:
+      "el": "the"
+      "padre": "father"
+    examples:
+      "El padre de Ana es médico.":
+        native: "Ana's father is a doctor."
+        bases:
+          "El": "the"
+          "padre": "father"
+          "de": "of"
+          "Ana": "Ana"
+          "médico": "doctor"
+      "Hablo con el padre de Ana.":
+        native: "I speak with Ana's father."
+        bases:
+          "con": "with"
+          "el": "the"
+          "padre": "father"
+          "de": "of"
+          "Ana": "Ana"
+  "es-0160":
+    native: "mother"
+    notes:
+      "n1": "Madre is mother. Mamá is the everyday, informal word for mum."
+    bases:
+      "la": "the"
+      "madre": "mother"
+    examples:
+      "La madre de Ana es médica.":
+        native: "Ana's mother is a doctor."
+        bases:
+          "La": "the"
+          "madre": "mother"
+          "de": "of"
+          "Ana": "Ana"
+          "médica": "doctor"
+      "Ayer hablé con la madre de Luis.":
+        native: "Yesterday I spoke with Luis's mother."
+        bases:
+          "Ayer": "yesterday"
+          "hablé": "I spoke"
+          "con": "with"
+          "la": "the"
+          "madre": "mother"
+          "de": "of"
+          "Luis": "Luis"
+  "es-0161":
+    native: "brother"
+    notes:
+      "n1": "Hermano is brother. The plural hermanos can mean brothers, or a brother and a sister together."
+    bases:
+      "el": "the"
+      "hermano": "brother"
+    examples:
+      "El hermano de Ana vive en Quito.":
+        native: "Ana's brother lives in Quito."
+        bases:
+          "El": "the"
+          "hermano": "brother"
+          "de": "of"
+          "Ana": "Ana"
+          "en": "in"
+          "Quito": "Quito"
+      "Luis es el hermano de Ana.":
+        native: "Luis is Ana's brother."
+        bases:
+          "Luis": "Luis"
+          "el": "the"
+          "hermano": "brother"
+          "de": "of"
+          "Ana": "Ana"
+  "es-0162":
+    native: "sister"
+    notes:
+      "n1": "Hermana is sister. Hermana mayor is older sister and hermana menor is younger sister."
+    bases:
+      "la": "the"
+      "hermana": "sister"
+    examples:
+      "Ana es la hermana mayor de Luis.":
+        native: "Ana is Luis's older sister."
+        bases:
+          "Ana": "Ana"
+          "la": "the"
+          "hermana": "sister"
+          "mayor": "older"
+          "de": "of"
+          "Luis": "Luis"
+      "La hermana de Rosa es enfermera.":
+        native: "Rosa's sister is a nurse."
+        bases:
+          "La": "the"
+          "hermana": "sister"
+          "de": "of"
+          "Rosa": "Rosa"
+          "enfermera": "nurse"
+  "es-0163":
+    native: "son"
+    notes:
+      "n1": "Hijo is son. The plural hijos can mean children of both sexes."
+    bases:
+      "el": "the"
+      "hijo": "son"
+    examples:
+      "El hijo de la señora Ruiz es profesor.":
+        native: "Mrs Ruiz's son is a teacher."
+        bases:
+          "El": "the"
+          "hijo": "son"
+          "de": "of"
+          "la": "the"
+          "señora": "Mrs; madam"
+          "Ruiz": "Ruiz"
+          "profesor": "teacher (man)"
+      "Ana dice que el hijo menor es muy listo.":
+        native: "Ana says the younger son is very clever."
+        bases:
+          "Ana": "Ana"
+          "dice": "says"
+          "que": "that"
+          "el": "the"
+          "hijo": "son"
+          "menor": "younger"
+          "muy": "very"
+          "listo": "clever"
+  "es-0164":
+    native: "daughter"
+    notes:
+      "n1": "Hija is daughter. Hija mayor is the older daughter."
+    bases:
+      "la": "the"
+      "hija": "daughter"
+    examples:
+      "La hija de Rosa tiene siete años.":
+        native: "Rosa's daughter is seven years old."
+        bases:
+          "La": "the"
+          "hija": "daughter"
+          "de": "of"
+          "Rosa": "Rosa"
+          "siete": "seven"
+          "años": "years"
+      "Ana es la hija mayor de la señora Ruiz.":
+        native: "Ana is Mrs Ruiz's older daughter."
+        bases:
+          "Ana": "Ana"
+          "la": "the"
+          "hija": "daughter"
+          "mayor": "older"
+          "de": "of"
+          "señora": "Mrs; madam"
+          "Ruiz": "Ruiz"
+  "es-0165":
+    native: "grandfather"
+    notes:
+      "n1": "Abuelo is grandfather. The plural abuelos can mean grandparents."
+    bases:
+      "el": "the"
+      "abuelo": "grandfather"
+    examples:
+      "El abuelo de Luis es muy alto.":
+        native: "Luis's grandfather is very tall."
+        bases:
+          "El": "the"
+          "abuelo": "grandfather"
+          "de": "of"
+          "Luis": "Luis"
+          "muy": "very"
+          "alto": "tall"
+      "Hablo con el abuelo todos los días.":
+        native: "I speak with my grandfather every day."
+        bases:
+          "con": "with"
+          "el": "the"
+          "abuelo": "grandfather"
+          "los": "the"
+          "días": "days"
+  "es-0166":
+    native: "grandmother"
+    notes:
+      "n1": "Abuela is grandmother. Abuela is also the everyday word for a grandmother."
+    bases:
+      "la": "the"
+      "abuela": "grandmother"
+    examples:
+      "La abuela de Luis es muy simpática.":
+        native: "Luis's grandmother is very friendly."
+        bases:
+          "La": "the"
+          "abuela": "grandmother"
+          "de": "of"
+          "Luis": "Luis"
+          "muy": "very"
+          "simpática": "friendly"
+      "Ayer visité a la abuela en Lima.":
+        native: "Yesterday I visited my grandmother in Lima."
+        bases:
+          "Ayer": "yesterday"
+          "visité": "I visited"
+          "a": "to"
+          "la": "the"
+          "abuela": "grandmother"
+          "en": "in"
+          "Lima": "Lima"
+  "es-0167":
+    native: "uncle"
+    notes:
+      "n1": "Tío is uncle. In speech, tío is also a friendly word for a man, like 'mate'."
+    bases:
+      "el": "the"
+      "tío": "uncle"
+    examples:
+      "El tío de Ana vive en Quito.":
+        native: "Ana's uncle lives in Quito."
+        bases:
+          "El": "the"
+          "tío": "uncle"
+          "de": "of"
+          "Ana": "Ana"
+          "en": "in"
+          "Quito": "Quito"
+      "Hoy hablo con el tío de Luis.":
+        native: "Today I talk with Luis's uncle."
+        bases:
+          "Hoy": "today"
+          "con": "with"
+          "el": "the"
+          "tío": "uncle"
+          "de": "of"
+          "Luis": "Luis"
+  "es-0168":
+    native: "aunt"
+    notes:
+      "n1": "Tía is aunt. In speech, tía is also a friendly word for a woman."
+    bases:
+      "la": "the"
+      "tía": "aunt"
+    examples:
+      "La tía de Luis es profesora.":
+        native: "Luis's aunt is a teacher."
+        bases:
+          "La": "the"
+          "tía": "aunt"
+          "de": "of"
+          "Luis": "Luis"
+          "profesora": "teacher (woman)"
+      "Ayer llamé a la tía de Luis.":
+        native: "Yesterday I called Luis's aunt."
+        bases:
+          "Ayer": "yesterday"
+          "llamé": "I called"
+          "a": "to"
+          "la": "the"
+          "tía": "aunt"
+          "de": "of"
+          "Luis": "Luis"
+  "es-0169":
+    native: "cousin (male)"
+    notes:
+      "n1": "Primo is a male cousin. The plural primos can mean cousins of both sexes."
+    bases:
+      "el": "the"
+      "primo": "cousin (male)"
+    examples:
+      "El primo de Ana juega al fútbol.":
+        native: "Ana's cousin plays football."
+        bases:
+          "El": "the"
+          "primo": "cousin (male)"
+          "de": "of"
+          "Ana": "Ana"
+          "juega": "plays"
+          "al": "to the"
+          "fútbol": "football"
+      "Ayer jugué con el primo de Ana.":
+        native: "Yesterday I played with Ana's cousin."
+        bases:
+          "Ayer": "yesterday"
+          "jugué": "I played"
+          "con": "with"
+          "el": "the"
+          "primo": "cousin (male)"
+          "de": "of"
+          "Ana": "Ana"
+  "es-0170":
+    native: "cousin (female)"
+    notes:
+      "n1": "Prima is a female cousin."
+    bases:
+      "la": "the"
+      "prima": "cousin (female)"
+    examples:
+      "La prima de Ana es muy alta.":
+        native: "Ana's cousin is very tall."
+        bases:
+          "La": "the"
+          "prima": "cousin (female)"
+          "de": "of"
+          "Ana": "Ana"
+          "muy": "very"
+          "alta": "tall"
+      "Ella es la prima de Luis.":
+        native: "She is Luis's cousin."
+        bases:
+          "la": "the"
+          "prima": "cousin (female)"
+          "de": "of"
+          "Luis": "Luis"
+  "es-0171":
+    native: "husband"
+    notes:
+      "n1": "Esposo is husband, the more formal or written word. Marido is more common in speech."
+    bases:
+      "el": "the"
+      "esposo": "husband"
+    examples:
+      "El esposo de Ana es ingeniero.":
+        native: "Ana's husband is an engineer."
+        bases:
+          "El": "the"
+          "esposo": "husband"
+          "de": "of"
+          "Ana": "Ana"
+          "ingeniero": "engineer"
+      "Luis es el esposo de Rosa.":
+        native: "Luis is Rosa's husband."
+        bases:
+          "Luis": "Luis"
+          "el": "the"
+          "esposo": "husband"
+          "de": "of"
+          "Rosa": "Rosa"
+  "es-0172":
+    native: "wife"
+    notes:
+      "n1": "Esposa is wife, a married woman. It is also the formal word."
+    bases:
+      "la": "the"
+      "esposa": "wife"
+    examples:
+      "La esposa de Luis es enfermera.":
+        native: "Luis's wife is a nurse."
+        bases:
+          "La": "the"
+          "esposa": "wife"
+          "de": "of"
+          "Luis": "Luis"
+          "enfermera": "nurse"
+      "Hoy conocí a la esposa de Luis.":
+        native: "Today I met Luis's wife."
+        bases:
+          "Hoy": "today"
+          "conocí": "I met"
+          "a": "to"
+          "la": "the"
+          "esposa": "wife"
+          "de": "of"
+          "Luis": "Luis"
+  "es-0173":
+    native: "husband (informal)"
+    notes:
+      "n1": "Marido is husband in everyday speech. Esposo is the more formal word."
+    bases:
+      "el": "the"
+      "marido": "husband (informal)"
+    examples:
+      "Ana dice que el marido es muy simpático.":
+        native: "Ana says her husband is very friendly."
+        bases:
+          "Ana": "Ana"
+          "dice": "says"
+          "que": "that"
+          "el": "the"
+          "marido": "husband (informal)"
+          "muy": "very"
+          "simpático": "friendly"
+      "El marido de Rosa trabaja de noche.":
+        native: "Rosa's husband works at night."
+        bases:
+          "El": "the"
+          "marido": "husband (informal)"
+          "de": "of"
+          "Rosa": "Rosa"
+          "trabaja": "works"
+          "noche": "night"
+  "es-0174":
+    native: "boyfriend; fiancé"
+    notes:
+      "n1": "Novio is boyfriend, or a man who is engaged to be married."
+    bases:
+      "el": "the"
+      "novio": "boyfriend; fiancé"
+    examples:
+      "El novio de Ana es médico.":
+        native: "Ana's boyfriend is a doctor."
+        bases:
+          "El": "the"
+          "novio": "boyfriend; fiancé"
+          "de": "of"
+          "Ana": "Ana"
+          "médico": "doctor"
+      "Ana dice que el novio viene mañana.":
+        native: "Ana says her boyfriend is coming tomorrow."
+        bases:
+          "Ana": "Ana"
+          "dice": "says"
+          "que": "that"
+          "el": "the"
+          "novio": "boyfriend; fiancé"
+          "viene": "comes"
+          "mañana": "tomorrow"
+  "es-0175":
+    native: "girlfriend; fiancée"
+    notes:
+      "n1": "Novia is girlfriend, or a woman who is engaged to be married."
+    bases:
+      "la": "the"
+      "novia": "girlfriend; fiancée"
+    examples:
+      "La novia de Luis vive en Lima.":
+        native: "Luis's girlfriend lives in Lima."
+        bases:
+          "La": "the"
+          "novia": "girlfriend; fiancée"
+          "de": "of"
+          "Luis": "Luis"
+          "en": "in"
+          "Lima": "Lima"
+      "Ana es la novia de Luis.":
+        native: "Ana is Luis's girlfriend."
+        bases:
+          "Ana": "Ana"
+          "la": "the"
+          "novia": "girlfriend; fiancée"
+          "de": "of"
+          "Luis": "Luis"
+  "es-0176":
+    native: "grandson"
+    notes:
+      "n1": "Nieto is grandson. The plural nietos can mean grandchildren of both sexes."
+    bases:
+      "el": "the"
+      "nieto": "grandson"
+    examples:
+      "El nieto de Rosa tiene cinco años.":
+        native: "Rosa's grandson is five years old."
+        bases:
+          "El": "the"
+          "nieto": "grandson"
+          "de": "of"
+          "Rosa": "Rosa"
+          "cinco": "five"
+          "años": "years"
+      "Rosa dice que el nieto es muy alto.":
+        native: "Rosa says her grandson is very tall."
+        bases:
+          "Rosa": "Rosa"
+          "dice": "says"
+          "que": "that"
+          "el": "the"
+          "nieto": "grandson"
+          "muy": "very"
+          "alto": "tall"
+  "es-0177":
+    native: "granddaughter"
+    notes:
+      "n1": "Nieta is granddaughter."
+    bases:
+      "la": "the"
+      "nieta": "granddaughter"
+    examples:
+      "La nieta de Rosa estudia en Bogotá.":
+        native: "Rosa's granddaughter studies in Bogotá."
+        bases:
+          "La": "the"
+          "nieta": "granddaughter"
+          "de": "of"
+          "Rosa": "Rosa"
+          "estudia": "studies"
+          "en": "in"
+          "Bogotá": "Bogotá"
+      "Ana es la nieta de Rosa.":
+        native: "Ana is Rosa's granddaughter."
+        bases:
+          "Ana": "Ana"
+          "la": "the"
+          "nieta": "granddaughter"
+          "de": "of"
+          "Rosa": "Rosa"
+  "es-0178":
+    native: "nephew"
+    notes:
+      "n1": "Sobrino is nephew. The plural sobrinos can mean nephews and nieces together."
+    bases:
+      "el": "the"
+      "sobrino": "nephew"
+    examples:
+      "El sobrino de Ana juega en el parque.":
+        native: "Ana's nephew plays in the park."
+        bases:
+          "El": "the"
+          "sobrino": "nephew"
+          "de": "of"
+          "Ana": "Ana"
+          "juega": "plays"
+          "en": "in"
+          "parque": "park"
+      "Luis es el sobrino de Rosa.":
+        native: "Luis is Rosa's nephew."
+        bases:
+          "Luis": "Luis"
+          "el": "the"
+          "sobrino": "nephew"
+          "de": "of"
+          "Rosa": "Rosa"
+  "es-0179":
+    native: "niece"
+    notes:
+      "n1": "Sobrina is niece."
+    bases:
+      "la": "the"
+      "sobrina": "niece"
+    examples:
+      "La sobrina de Ana es muy alta.":
+        native: "Ana's niece is very tall."
+        bases:
+          "La": "the"
+          "sobrina": "niece"
+          "de": "of"
+          "Ana": "Ana"
+          "muy": "very"
+          "alta": "tall"
+      "Rosa habla con la sobrina de Luis.":
+        native: "Rosa talks with Luis's niece."
+        bases:
+          "Rosa": "Rosa"
+          "con": "with"
+          "la": "the"
+          "sobrina": "niece"
+          "de": "of"
+          "Luis": "Luis"
+  "es-0180":
+    native: "father-in-law"
+    notes:
+      "n1": "Suegro is the father of your husband or wife."
+    bases:
+      "el": "the"
+      "suegro": "father-in-law"
+    examples:
+      "El suegro de Luis es abogado.":
+        native: "Luis's father-in-law is a lawyer."
+        bases:
+          "El": "the"
+          "suegro": "father-in-law"
+          "de": "of"
+          "Luis": "Luis"
+          "abogado": "lawyer"
+      "Ana habla con el suegro.":
+        native: "Ana talks with her father-in-law."
+        bases:
+          "Ana": "Ana"
+          "con": "with"
+          "el": "the"
+          "suegro": "father-in-law"
+  "es-0181":
+    native: "mother-in-law"
+    notes:
+      "n1": "Suegra is the mother of your husband or wife."
+    bases:
+      "la": "the"
+      "suegra": "mother-in-law"
+    examples:
+      "La suegra de Ana vive en Quito.":
+        native: "Ana's mother-in-law lives in Quito."
+        bases:
+          "La": "the"
+          "suegra": "mother-in-law"
+          "de": "of"
+          "Ana": "Ana"
+          "en": "in"
+          "Quito": "Quito"
+      "Luis quiere mucho a la suegra.":
+        native: "Luis loves his mother-in-law very much."
+        bases:
+          "Luis": "Luis"
+          "quiere": "wants"
+          "a": "to"
+          "la": "the"
+          "suegra": "mother-in-law"
+  "es-0182":
+    native: "brother-in-law"
+    notes:
+      "n1": "Cuñado is your sister's husband, or your husband's or wife's brother."
+    bases:
+      "el": "the"
+      "cuñado": "brother-in-law"
+    examples:
+      "El cuñado de Ana es ingeniero.":
+        native: "Ana's brother-in-law is an engineer."
+        bases:
+          "El": "the"
+          "cuñado": "brother-in-law"
+          "de": "of"
+          "Ana": "Ana"
+          "ingeniero": "engineer"
+      "Luis es el cuñado de Rosa.":
+        native: "Luis is Rosa's brother-in-law."
+        bases:
+          "Luis": "Luis"
+          "el": "the"
+          "cuñado": "brother-in-law"
+          "de": "of"
+          "Rosa": "Rosa"
+  "es-0183":
+    native: "sister-in-law"
+    notes:
+      "n1": "Cuñada is your sister-in-law: your husband's or wife's sister, or your brother's wife."
+    bases:
+      "la": "the"
+      "cuñada": "sister-in-law"
+    examples:
+      "La cuñada de Luis es enfermera.":
+        native: "Luis's sister-in-law is a nurse."
+        bases:
+          "La": "the"
+          "cuñada": "sister-in-law"
+          "de": "of"
+          "Luis": "Luis"
+          "enfermera": "nurse"
+      "Ana es la cuñada de Rosa.":
+        native: "Ana is Rosa's sister-in-law."
+        bases:
+          "Ana": "Ana"
+          "la": "the"
+          "cuñada": "sister-in-law"
+          "de": "of"
+          "Rosa": "Rosa"
+  "es-0184":
+    native: "twin (male)"
+    notes:
+      "n1": "Gemelo is a male twin. The plural gemelos can mean twins of both sexes."
+    bases:
+      "el": "the"
+      "gemelo": "twin (male)"
+    examples:
+      "El gemelo de Luis se llama Pedro.":
+        native: "Luis's twin is called Pedro."
+        bases:
+          "El": "the"
+          "gemelo": "twin (male)"
+          "de": "of"
+          "Luis": "Luis"
+          "se": "(oneself)"
+          "llama": "is called"
+          "Pedro": "Pedro"
+      "Luis y el gemelo de Ana son muy parecidos.":
+        native: "Luis and Ana's twin are very alike."
+        bases:
+          "Luis": "Luis"
+          "el": "the"
+          "gemelo": "twin (male)"
+          "de": "of"
+          "Ana": "Ana"
+          "muy": "very"
+          "parecidos": "alike"
+  "es-0185":
+    native: "twin (female)"
+    notes:
+      "n1": "Gemela is a female twin."
+    bases:
+      "la": "the"
+      "gemela": "twin (female)"
+    examples:
+      "La gemela de Ana es muy simpática.":
+        native: "Ana's twin is very friendly."
+        bases:
+          "La": "the"
+          "gemela": "twin (female)"
+          "de": "of"
+          "Ana": "Ana"
+          "muy": "very"
+          "simpática": "friendly"
+      "Ana y la gemela de Luis son muy parecidas.":
+        native: "Ana and Luis's twin are very alike."
+        bases:
+          "Ana": "Ana"
+          "la": "the"
+          "gemela": "twin (female)"
+          "de": "of"
+          "Luis": "Luis"
+          "muy": "very"
+          "parecidas": "alike"
+  "es-0186":
+    native: "godson"
+    notes:
+      "n1": "Ahijado is a godson: a child that an adult has promised to help raise in the faith."
+    bases:
+      "el": "the"
+      "ahijado": "godson"
+    examples:
+      "El ahijado de Rosa tiene diez años.":
+        native: "Rosa's godson is ten years old."
+        bases:
+          "El": "the"
+          "ahijado": "godson"
+          "de": "of"
+          "Rosa": "Rosa"
+          "diez": "ten"
+          "años": "years"
+      "Ana dice que el ahijado quiere ser médico.":
+        native: "Ana says her godson wants to be a doctor."
+        bases:
+          "Ana": "Ana"
+          "dice": "says"
+          "que": "that"
+          "el": "the"
+          "ahijado": "godson"
+          "quiere": "wants"
+          "médico": "doctor"
+  "es-0187":
+    native: "goddaughter"
+    notes:
+      "n1": "Ahijada is a goddaughter."
+    bases:
+      "la": "the"
+      "ahijada": "goddaughter"
+    examples:
+      "La ahijada de Rosa quiere ser médica.":
+        native: "Rosa's goddaughter wants to be a doctor."
+        bases:
+          "La": "the"
+          "ahijada": "goddaughter"
+          "de": "of"
+          "Rosa": "Rosa"
+          "quiere": "wants"
+          "médica": "doctor"
+      "Ana es la ahijada de Rosa.":
+        native: "Ana is Rosa's goddaughter."
+        bases:
+          "Ana": "Ana"
+          "la": "the"
+          "ahijada": "goddaughter"
+          "de": "of"
+          "Rosa": "Rosa"
