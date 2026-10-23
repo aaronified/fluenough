@@ -19,7 +19,7 @@ cards:
       - { id: "use", kind: "usage" }
     examples:
       - { target: "वह अक्सर स्कूल जाता है।", reading: "vah aksar skūl jātā hai.", ipa: "ʋəɦ əksər skuːl dʒaːt̪aː ɦɛː", bases: [{ word: "स्कूल", base: "स्कूल", reading: "skūl" }, { word: "जाता", base: "जाना", reading: "jānā" }, { word: "है", ref: "hi-0780" }] }
-      - { target: "मैं अक्सर चाय पीता हूँ।", reading: "maim̐ aksar cāy pītā hūm̐.", ipa: "mɛ̃ː əksər tʃaːj piːt̪aː ɦũː", bases: [{ word: "पीता", base: "पीना", reading: "pīnā" }, { word: "हूँ", ref: "hi-0780" }] }
+      - { target: "मैं अक्सर चाय पीता हूँ।", reading: "maim̐ aksar cāy pītā hūm̐.", ipa: "mɛ̃ː əksər tʃaːj piːt̪aː ɦũː", bases: [{ word: "पीता", base: "पीना", reading: "pīnā" }, { word: "हूँ", ref: "hi-0780" }] }
     synonyms:
       - { id: "often-sanskrit", word: "बहुधा", reading: "bahudhā", ipa: "bəɦʊd̪ʱaː" }
     antonyms:
@@ -43,15 +43,15 @@ cards:
     target: "कभी नहीं"
     target_scripts: { perso_arabic: "کبھی نہیں" }
     reading: "kabhī nahīm̐"
-    ipa: "kəbʱiː nəɦĩː"
+    ipa: "kəbʱiː nəɦĩː"
     pos: "adv"
-    bases: "self"
+    bases: [{ word: "कभी", base: "कभी", reading: "kabhī" }]
     register: "neutral"
     notes:
       - { id: "use", kind: "usage" }
     examples:
-      - { target: "वह कभी झूठ नहीं बोलता है।", reading: "vah kabhī jhūṭh nahīm̐ bōltā hai.", ipa: "ʋəɦ kəbʱiː dʒʱuːʈʰ nəɦĩː boːlt̪aː ɦɛː", bases: [{ word: "कभी", base: "कभी", reading: "kabhī" }, { word: "झूठ", base: "झूठ", reading: "jhūṭh" }, { word: "बोलता", base: "बोलना", reading: "bōlnā" }, { word: "है", ref: "hi-0780" }] }
-      - { target: "वह कभी नहीं आएगा।", reading: "vah kabhī nahīm̐ āēgā.", ipa: "ʋəɦ kəbʱiː nəɦĩː aːeːɡaː", bases: [{ word: "कभी", base: "कभी", reading: "kabhī" }, { word: "आएगा", base: "आना", reading: "ānā" }] }
+      - { target: "वह कभी झूठ नहीं बोलता है।", reading: "vah kabhī jhūṭh nahīm̐ bōltā hai.", ipa: "ʋəɦ kəbʱiː dʒʱuːʈʰ nəɦĩː boːlt̪aː ɦɛː", bases: [{ word: "कभी", base: "कभी", reading: "kabhī" }, { word: "झूठ", base: "झूठ", reading: "jhūṭh" }, { word: "बोलता", base: "बोलना", reading: "bōlnā" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "वह कभी नहीं आएगा।", reading: "vah kabhī nahīm̐ āēgā.", ipa: "ʋəɦ kəbʱiː nəɦĩː aːeːɡaː", bases: [{ word: "कभी", base: "कभी", reading: "kabhī" }, { word: "आएगा", base: "आना", reading: "ānā" }] }
     antonyms:
       - { id: "always", ref: "hi-0453" }
   - id: "hi-0815"
@@ -66,7 +66,7 @@ cards:
       - { id: "use", kind: "usage" }
     examples:
       - { target: "यह बात बिल्कुल सच है।", reading: "yah bāt bilkul sac hai.", ipa: "jəɦ baːt̪ bɪlkʊl sətʃ ɦɛː", bases: [{ word: "बात", base: "बात", reading: "bāt" }, { word: "सच", base: "सच", reading: "sac" }, { word: "है", ref: "hi-0780" }] }
-      - { target: "मुझे बिल्कुल पसंद नहीं।", reading: "mujhē bilkul pasand nahīm̐.", ipa: "mʊdʒʱeː bɪlkʊl pəsənd̪ nəɦĩː", bases: [{ word: "मुझे", ref: "hi-0745" }] }
+      - { target: "मुझे बिल्कुल पसंद नहीं।", reading: "mujhē bilkul pasand nahīm̐.", ipa: "mʊdʒʱeː bɪlkʊl pəsənd̪ nəɦĩː", bases: [{ word: "मुझे", ref: "hi-0745" }] }
     synonyms:
       - { id: "entirely", ref: "hi-0845" }
   - id: "hi-0816"
@@ -111,7 +111,7 @@ cards:
     reading: "acchī tarah"
     ipa: "ətʃtʃʰiː t̪ərəɦ"
     pos: "adv"
-    bases: "self"
+    bases: [{ word: "अच्छी", base: "अच्छा", reading: "acchā" }, { word: "तरह", base: "तरह", reading: "tarah" }]
     register: "neutral"
     notes:
       - { id: "use", kind: "usage" }
@@ -190,22 +190,22 @@ cards:
       - { id: "use", kind: "usage" }
     examples:
       - { target: "पहले चाय पीजिए।", reading: "pahlē cāy pījiē.", ipa: "pəɦleː tʃaːj piːdʒɪeː", bases: [{ word: "पीजिए", base: "पीना", reading: "pīnā" }] }
-      - { target: "मैं पहले घर जाऊँगा।", reading: "maim̐ pahlē ghar jāūm̐gā.", ipa: "mɛ̃ː pəɦleː ɡʱər dʒaːũːɡaː", bases: [{ word: "जाऊँगा", base: "जाना", reading: "jānā" }] }
+      - { target: "मैं पहले घर जाऊँगा।", reading: "maim̐ pahlē ghar jāūm̐gā.", ipa: "mɛ̃ː pəɦleː ɡʱər dʒaːũːɡaː", bases: [{ word: "जाऊँगा", base: "जाना", reading: "jānā" }] }
     antonyms:
       - { id: "later", ref: "hi-0824" }
   - id: "hi-0824"
     target: "बाद में"
     target_scripts: { perso_arabic: "بعد میں" }
     reading: "bād mēm̐"
-    ipa: "baːd̪ mẽː"
+    ipa: "baːd̪ mẽː"
     pos: "adv"
-    bases: "self"
+    bases: [{ word: "बाद", base: "बाद", reading: "bād" }]
     register: "neutral"
     notes:
       - { id: "use", kind: "usage" }
     examples:
-      - { target: "मैं बाद में फ़ोन करूँगा।", reading: "maim̐ bād mēm̐ fōn karūm̐gā.", ipa: "mɛ̃ː baːd̪ mẽː foːn kərũːɡaː", bases: [{ word: "बाद", base: "बाद", reading: "bād" }, { word: "फ़ोन", base: "फ़ोन", reading: "fōn" }, { word: "करूँगा", base: "करना", reading: "karnā" }] }
-      - { target: "हम बाद में मिलेंगे।", reading: "ham bād mēm̐ milēṅgē.", ipa: "ɦəm baːd̪ mẽː mɪleːŋɡeː", bases: [{ word: "बाद", base: "बाद", reading: "bād" }, { word: "मिलेंगे", base: "मिलना", reading: "milnā" }] }
+      - { target: "मैं बाद में फ़ोन करूँगा।", reading: "maim̐ bād mēm̐ fōn karūm̐gā.", ipa: "mɛ̃ː baːd̪ mẽː foːn kərũːɡaː", bases: [{ word: "बाद", base: "बाद", reading: "bād" }, { word: "फ़ोन", base: "फ़ोन", reading: "fōn" }, { word: "करूँगा", base: "करना", reading: "karnā" }] }
+      - { target: "हम बाद में मिलेंगे।", reading: "ham bād mēm̐ milēṅgē.", ipa: "ɦəm baːd̪ mẽː mɪleːŋɡeː", bases: [{ word: "बाद", base: "बाद", reading: "bād" }, { word: "मिलेंगे", base: "मिलना", reading: "milnā" }] }
     antonyms:
       - { id: "first", ref: "hi-0823" }
   - id: "hi-0825"
@@ -279,13 +279,13 @@ cards:
     reading: "bār-bār"
     ipa: "baːrbaːr"
     pos: "adv"
-    bases: "self"
+    bases: [{ word: "बार", base: "बार", reading: "bār" }]
     register: "neutral"
     notes:
       - { id: "use", kind: "usage" }
     examples:
-      - { target: "वह बार-बार यही बात कहता है।", reading: "vah bār-bār yahī bāt kahtā hai.", ipa: "ʋəɦ baːrbaːr jəɦiː baːt̪ kəɦt̪aː ɦɛː", bases: [{ word: "यही", base: "यही", reading: "yahī" }, { word: "बात", base: "बात", reading: "bāt" }, { word: "कहता", base: "कहना", reading: "kahnā" }, { word: "है", ref: "hi-0780" }] }
-      - { target: "मैं बार-बार फ़ोन करता हूँ।", reading: "maim̐ bār-bār fōn kartā hūm̐.", ipa: "mɛ̃ː baːrbaːr foːn kərt̪aː ɦũː", bases: [{ word: "फ़ोन", base: "फ़ोन", reading: "fōn" }, { word: "करता", base: "करना", reading: "karnā" }, { word: "हूँ", ref: "hi-0780" }] }
+      - { target: "वह बार-बार यही बात कहता है।", reading: "vah bār-bār yahī bāt kahtā hai.", ipa: "ʋəɦ baːrbaːr jəɦiː baːt̪ kəɦt̪aː ɦɛː", bases: [{ word: "बार", base: "बार", reading: "bār" }, { word: "यही", base: "यही", reading: "yahī" }, { word: "बात", base: "बात", reading: "bāt" }, { word: "कहता", base: "कहना", reading: "kahnā" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "मैं बार-बार फ़ोन करता हूँ।", reading: "maim̐ bār-bār fōn kartā hūm̐.", ipa: "mɛ̃ː baːrbaːr foːn kərt̪aː ɦũː", bases: [{ word: "बार", base: "बार", reading: "bār" }, { word: "फ़ोन", base: "फ़ोन", reading: "fōn" }, { word: "करता", base: "करना", reading: "karnā" }, { word: "हूँ", ref: "hi-0780" }] }
     collocations:
       - { id: "call", word: "फ़ोन", reading: "fōn", ipa: "foːn" }
   - id: "hi-0830"
@@ -431,27 +431,27 @@ cards:
     target: "कहीं"
     target_scripts: { perso_arabic: "کہیں" }
     reading: "kahīm̐"
-    ipa: "kəɦĩː"
+    ipa: "kəɦĩː"
     pos: "adv"
     bases: "self"
     register: "neutral"
     notes:
       - { id: "use", kind: "usage" }
     examples:
-      - { target: "मेरा फ़ोन कहीं है।", reading: "mērā fōn kahīm̐ hai.", ipa: "meːraː foːn kəɦĩː ɦɛː", bases: [{ word: "फ़ोन", base: "फ़ोन", reading: "fōn" }, { word: "है", ref: "hi-0780" }] }
-      - { target: "क्या तुमने चाबी कहीं देखी?", reading: "kyā tumnē cābī kahīm̐ dēkhī?", ipa: "kjaː t̪ʊmneː tʃaːbiː kəɦĩː d̪eːkʰiː", bases: [{ word: "तुमने", ref: "hi-0747" }, { word: "देखी", base: "देखना", reading: "dēkhnā" }] }
+      - { target: "मेरा फ़ोन कहीं है।", reading: "mērā fōn kahīm̐ hai.", ipa: "meːraː foːn kəɦĩː ɦɛː", bases: [{ word: "फ़ोन", base: "फ़ोन", reading: "fōn" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "क्या तुमने चाबी कहीं देखी?", reading: "kyā tumnē cābī kahīm̐ dēkhī?", ipa: "kjaː t̪ʊmneː tʃaːbiː kəɦĩː d̪eːkʰiː", bases: [{ word: "तुमने", ref: "hi-0747" }, { word: "देखी", base: "देखना", reading: "dēkhnā" }] }
   - id: "hi-0840"
     target: "कई बार"
     target_scripts: { perso_arabic: "کئی بار" }
     reading: "kaī bār"
     ipa: "kəiː baːr"
     pos: "adv"
-    bases: "self"
+    bases: [{ word: "कई", base: "कई", reading: "kaī" }, { word: "बार", base: "बार", reading: "bār" }]
     register: "neutral"
     notes:
       - { id: "use", kind: "usage" }
     examples:
-      - { target: "मैं कई बार वहाँ गया हूँ।", reading: "maim̐ kaī bār vahām̐ gayā hūm̐.", ipa: "mɛ̃ː kəiː baːr ʋəɦãː ɡəjaː ɦũː", bases: [{ word: "कई", base: "कई", reading: "kaī" }, { word: "बार", base: "बार", reading: "bār" }, { word: "गया", base: "जाना", reading: "jānā" }, { word: "हूँ", ref: "hi-0780" }] }
+      - { target: "मैं कई बार वहाँ गया हूँ।", reading: "maim̐ kaī bār vahām̐ gayā hūm̐.", ipa: "mɛ̃ː kəiː baːr ʋəɦãː ɡəjaː ɦũː", bases: [{ word: "कई", base: "कई", reading: "kaī" }, { word: "बार", base: "बार", reading: "bār" }, { word: "गया", base: "जाना", reading: "jānā" }, { word: "हूँ", ref: "hi-0780" }] }
       - { target: "उसने कई बार फ़ोन किया।", reading: "usnē kaī bār fōn kiyā.", ipa: "ʊsneː kəiː baːr foːn kɪjaː", bases: [{ word: "उसने", ref: "hi-0749" }, { word: "कई", base: "कई", reading: "kaī" }, { word: "बार", base: "बार", reading: "bār" }, { word: "फ़ोन", base: "फ़ोन", reading: "fōn" }, { word: "किया", base: "करना", reading: "karnā" }] }
   - id: "hi-0841"
     target: "हर बार"
@@ -459,7 +459,7 @@ cards:
     reading: "har bār"
     ipa: "ɦər baːr"
     pos: "adv"
-    bases: "self"
+    bases: [{ word: "हर", base: "हर", reading: "har" }, { word: "बार", base: "बार", reading: "bār" }]
     register: "neutral"
     notes:
       - { id: "use", kind: "usage" }
@@ -472,13 +472,13 @@ cards:
     reading: "har haftē"
     ipa: "ɦər ɦəft̪eː"
     pos: "adv"
-    bases: "self"
+    bases: [{ word: "हर", base: "हर", reading: "har" }, { word: "हफ़्ते", base: "हफ़्ता", reading: "haftā" }]
     register: "neutral"
     notes:
       - { id: "use", kind: "usage" }
     examples:
       - { target: "हम हर हफ़्ते फ़िल्म देखते हैं।", reading: "ham har haftē film dēkhtē haim̐.", ipa: "ɦəm ɦər ɦəft̪eː fɪlm d̪eːkʰt̪eː ɦɛ̃ː", bases: [{ word: "हर", base: "हर", reading: "har" }, { word: "हफ़्ते", base: "हफ़्ता", reading: "haftā" }, { word: "फ़िल्म", base: "फ़िल्म", reading: "film" }, { word: "देखते", base: "देखना", reading: "dēkhnā" }, { word: "हैं", ref: "hi-0780" }] }
-      - { target: "वह हर हफ़्ते माँ को फ़ोन करता है।", reading: "vah har haftē mām̐ kō fōn kartā hai.", ipa: "ʋəɦ ɦər ɦəft̪eː mãː koː foːn kərt̪aː ɦɛː", bases: [{ word: "हर", base: "हर", reading: "har" }, { word: "हफ़्ते", base: "हफ़्ता", reading: "haftā" }, { word: "फ़ोन", base: "फ़ोन", reading: "fōn" }, { word: "करता", base: "करना", reading: "karnā" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "वह हर हफ़्ते माँ को फ़ोन करता है।", reading: "vah har haftē mām̐ kō fōn kartā hai.", ipa: "ʋəɦ ɦər ɦəft̪eː mãː koː foːn kərt̪aː ɦɛː", bases: [{ word: "हर", base: "हर", reading: "har" }, { word: "हफ़्ते", base: "हफ़्ता", reading: "haftā" }, { word: "फ़ोन", base: "फ़ोन", reading: "fōn" }, { word: "करता", base: "करना", reading: "karnā" }, { word: "है", ref: "hi-0780" }] }
     collocations:
       - { id: "film", word: "फ़िल्म", reading: "film", ipa: "fɪlm" }
   - id: "hi-0843"
@@ -487,7 +487,7 @@ cards:
     reading: "kitnī bār"
     ipa: "kɪt̪niː baːr"
     pos: "adv"
-    bases: "self"
+    bases: [{ word: "कितनी", ref: "hi-0163" }, { word: "बार", base: "बार", reading: "bār" }]
     register: "neutral"
     notes:
       - { id: "use", kind: "usage" }
@@ -500,7 +500,7 @@ cards:
     reading: "āsānī sē"
     ipa: "aːsaːniː seː"
     pos: "adv"
-    bases: "self"
+    bases: [{ word: "आसानी", base: "आसानी", reading: "āsānī" }]
     register: "neutral"
     notes:
       - { id: "use", kind: "usage" }
@@ -513,12 +513,12 @@ cards:
     reading: "pūrī tarah"
     ipa: "puːriː t̪ərəɦ"
     pos: "adv"
-    bases: "self"
+    bases: [{ word: "पूरी", base: "पूरा", reading: "pūrā" }, { word: "तरह", base: "तरह", reading: "tarah" }]
     register: "neutral"
     notes:
       - { id: "use", kind: "usage" }
     examples:
-      - { target: "मैं पूरी तरह तैयार हूँ।", reading: "maim̐ pūrī tarah taiyār hūm̐.", ipa: "mɛ̃ː puːriː t̪ərəɦ t̪ɛːjaːr ɦũː", bases: [{ word: "पूरी", base: "पूरा", reading: "pūrā" }, { word: "तरह", base: "तरह", reading: "tarah" }, { word: "तैयार", base: "तैयार", reading: "taiyār" }, { word: "हूँ", ref: "hi-0780" }] }
+      - { target: "मैं पूरी तरह तैयार हूँ।", reading: "maim̐ pūrī tarah taiyār hūm̐.", ipa: "mɛ̃ː puːriː t̪ərəɦ t̪ɛːjaːr ɦũː", bases: [{ word: "पूरी", base: "पूरा", reading: "pūrā" }, { word: "तरह", base: "तरह", reading: "tarah" }, { word: "तैयार", base: "तैयार", reading: "taiyār" }, { word: "हूँ", ref: "hi-0780" }] }
       - { target: "वह पूरी तरह थका है।", reading: "vah pūrī tarah thakā hai.", ipa: "ʋəɦ puːriː t̪ərəɦ t̪ʰəkaː ɦɛː", bases: [{ word: "पूरी", base: "पूरा", reading: "pūrā" }, { word: "तरह", base: "तरह", reading: "tarah" }, { word: "थका", base: "थका", reading: "thakā" }, { word: "है", ref: "hi-0780" }] }
   - id: "hi-0846"
     target: "लगातार"
@@ -561,7 +561,7 @@ cards:
     notes:
       - { id: "use", kind: "usage" }
     examples:
-      - { target: "वैसे, मैं भी आऊँगा।", reading: "vaisē, maim̐ bhī āūm̐gā.", ipa: "ʋɛːseː mɛ̃ː bʱiː aːũːɡaː", bases: [{ word: "आऊँगा", base: "आना", reading: "ānā" }] }
+      - { target: "वैसे, मैं भी आऊँगा।", reading: "vaisē, maim̐ bhī āūm̐gā.", ipa: "ʋɛːseː mɛ̃ː bʱiː aːũːɡaː", bases: [{ word: "आऊँगा", base: "आना", reading: "ānā" }] }
       - { target: "वैसे तो यह ठीक है।", reading: "vaisē tō yah ṭhīk hai.", ipa: "ʋɛːseː t̪oː jəɦ ʈʰiːk ɦɛː", bases: [{ word: "तो", base: "तो", reading: "tō" }, { word: "ठीक", base: "ठीक", reading: "ṭhīk" }, { word: "है", ref: "hi-0780" }] }
   - id: "hi-0849"
     target: "ऐसे"
