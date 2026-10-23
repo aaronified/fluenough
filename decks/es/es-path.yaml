@@ -98,41 +98,28 @@ units:
   - decks: ["es-grammar-adjective-agreement", "es-reading-adjective-agreement"]
     words: 0
     grammar: ["adjective-agreement"]
-  - planned: { id: "es-grammar-prepositions", grammar: "prepositions" }
-    listening_passages:
-      - { id: "where-is-it", text: { "en": "Saying where things are: in, on, under, next to" } }
-    reading_passages:
-      - { id: "room-description", text: { "en": "A short description of a room and where its furniture is" } }
-  - planned: { id: "es-grammar-ser-estar", grammar: "ser-estar" }
-    listening_passages:
-      - { id: "who-and-how", text: { "en": "Saying who someone is and how they are today" } }
-    reading_passages:
-      - { id: "introduction-card", text: { "en": "A short card introducing a person: who they are, where they are from, how they feel" } }
+  - decks: ["es-grammar-prepositions", "es-reading-prepositions"]
+    words: 0
+    grammar: ["prepositions"]
+  - decks: ["es-grammar-ser-estar", "es-reading-ser-estar"]
+    words: 0
+    grammar: ["ser-estar"]
   - decks: ["es-grammar-present-ar"]
     words: 0
     grammar: ["present-ar"]
-  - planned: { id: "es-grammar-present-er-ir", grammar: "present-er-ir" }
-    listening_passages:
-      - { id: "what-we-eat", text: { "en": "Friends say what they eat, drink and where they live" } }
-    reading_passages:
-      - { id: "lunch-notes", text: { "en": "Short notes about who eats, drinks and lives where" } }
-  - planned: { id: "es-grammar-present-irregular", grammar: "present-irregular" }
-    listening_passages:
-      - { id: "what-do-you-have", text: { "en": "Saying what you have, what you do and where you go" } }
-    reading_passages:
-      - { id: "weekly-plan", text: { "en": "A weekly plan for a household: who goes where and does what" } }
-  - planned: { id: "es-grammar-imperatives", grammar: "imperatives" }
-    listening_passages:
-      - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
-    reading_passages:
-      - { id: "signs-and-rules", text: { "en": "Signs saying what to do and what not to do" } }
+  - decks: ["es-grammar-present-er-ir", "es-reading-present-er-ir"]
+    words: 0
+    grammar: ["present-er-ir"]
+  - decks: ["es-grammar-present-irregular", "es-reading-present-irregular"]
+    words: 0
+    grammar: ["present-irregular"]
+  - decks: ["es-grammar-imperatives", "es-reading-imperatives"]
+    words: 0
+    grammar: ["imperatives"]
   # 6. Then the other A1 themes, each its words, its rules, then its
   # sentences.
-  - planned: { id: "es-work", theme: "work", words: 40 }
-    listening_passages:
-      - { id: "what-do-you-do", text: { "en": "Two people ask each other what they do for a living" } }
-    reading_passages:
-      - { id: "business-card", text: { "en": "A business card and a short job description" } }
+  - decks: ["es-work", "es-work-sentences", "es-reading-work", "*"]
+    words: 22
   - planned: { id: "es-numbers-big", theme: "numbers-big", words: 40 }
     listening_passages:
       - { id: "big-numbers", text: { "en": "Hearing prices, years and phone numbers" } }
