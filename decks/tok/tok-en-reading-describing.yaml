@@ -1,0 +1,56 @@
+schema: 1
+id: "tok-en-reading-describing"
+name: "Reading: describing things"
+kind: reading
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two passages from the describing unit: a room described aloud, and a small ad for a thing that its owner wants to pass on. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "tok-describing-a-room"
+    title: "A room"
+    theme: "describing"
+    sentences:
+      - text: "tomo ni li suli."
+      - text: "tomo ni li sin."
+      - text: "tomo ni li lili ala."
+      - text: "ijo mute li lon."
+    questions:
+      - id: "tok-0135"
+        prompt: { en: "The first sentence says how big the room is. How big is it?" }
+        options:
+          - { en: "Big" }
+          - { en: "Small" }
+        answer: 1
+      - id: "tok-0136"
+        prompt: { en: "The second sentence says what the room is. Is it new or bad?" }
+        options:
+          - { en: "New" }
+          - { en: "Bad" }
+        answer: 1
+      - id: "tok-0137"
+        prompt: { en: "The room is small." }
+        answer: false
+  - id: "tok-for-sale"
+    title: "A small ad"
+    theme: "describing"
+    sentences:
+      - text: "ijo ni li sin."
+      - text: "ijo ni li lili."
+      - text: "ijo ni li ike ala."
+      - text: "mi wile pana e ijo ni tawa jan ante."
+    questions:
+      - id: "tok-0138"
+        prompt: { en: "The ad says the thing is new. Is that true?" }
+        answer: true
+      - id: "tok-0139"
+        prompt: { en: "The ad says the thing is big. Is that true?" }
+        answer: false
+      - id: "tok-0140"
+        prompt: { en: "The last sentence says what the seller wants to do. What is it?" }
+        options:
+          - { en: "To give the thing to someone else" }
+          - { en: "To keep the thing" }
+        answer: 1
