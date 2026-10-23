@@ -7,7 +7,7 @@ schema: 1
   "iso639_3": "eng"
   "name": "English"
 "name": "Numbers 1 to 20"
-"description": "Nine number words: one, two (two ways: 二 and 两), three, five, six, seven, eleven, and twenty. Four, eight, nine and ten are taught with the tones. Not yet checked by a Mandarin speaker:\
+"description": "Nine number words: one, two (two ways: 二 (èr) and 两 (liǎng)), three, five, six, seven, eleven, and twenty. Four, eight, nine and ten are taught with the tones. Not yet checked by a Mandarin speaker:\
   \ please report any mistake."
 "license": "CC-BY-SA-4.0"
 "tags":
@@ -24,17 +24,27 @@ schema: 1
   "zh-0210":
     "native": "two (in counting)"
     "notes":
-      "n1": "二 (èr) is two, in counting: 一，二，三 (yī, èr, sān) is one, two, three."
+      "n1": "二 (èr) is two, in counting: 一 (yī), 二 (èr), 三 (sān) is one, two, three."
     "examples":
       "二，四，六，八。": "Two, four, six, eight."
       "二，四，六。": "Two, four, six."
   "zh-0211":
     "native": "two (amount)"
     "notes":
-      "n1": "两 (liǎng) is also two, the word used for two in an amount. 两 and 二 (èr) both mean two: 两 is the form said before a measure."
+      "n1": "两 (liǎng) is also two, the word used for two of something, before a measure word, as in 两个 (liǎng ge), two of them. 二 (èr) is the two of counting and of numbers."
     "examples":
-      "一，两，三。": "One, two, three."
-      "两，四，六。": "Two, four, six."
+      "两个人。":
+        "native": "Two people."
+        "bases":
+          "个":
+            "meaning": "measure word for people and things"
+      "我有两个孩子。":
+        "native": "I have two children."
+        "bases":
+          "有":
+            "meaning": "to have"
+          "个":
+            "meaning": "measure word for people and things"
   "zh-0212":
     "native": "three"
     "notes":
@@ -45,7 +55,7 @@ schema: 1
   "zh-0213":
     "native": "five"
     "notes":
-      "n1": "五 (wǔ) is five. Five fingers make a hand: 五 is said with the hand in mind."
+      "n1": "五 (wǔ) is five. Its tone is the third tone, so the third-tone rules apply to it."
     "examples":
       "五，六，七。": "Five, six, seven."
       "五，十。": "Five, ten."
