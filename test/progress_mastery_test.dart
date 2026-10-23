@@ -2,22 +2,29 @@
 // level and start date, the 7-day calendar, and the screen they are drawn on.
 
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/core/data/course_path.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/progress/mastery.dart';
 import 'package:fluenough/core/progress/practice_week.dart';
+import 'package:fluenough/core/scheduling/fsrs.dart';
+import 'package:fluenough/features/stats/leeches.dart';
 import 'package:fluenough/features/stats/level_badge.dart';
 import 'package:fluenough/features/stats/over_time_page.dart';
 import 'package:fluenough/features/stats/progress_tiles.dart';
 import 'package:fluenough/features/stats/practice_week_card.dart';
+import 'package:fluenough/features/stats/progress_mastery.dart';
 import 'package:fluenough/features/stats/skill_star.dart';
+import 'package:fluenough/features/stats/stats_numbers.dart';
 import 'package:fluenough/features/stats/stats_page.dart';
 import 'package:fluenough/ui/widgets/language_bar.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/app/features.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:intl/intl.dart';
 
 import 'support/harness.dart';
 
@@ -92,32 +99,64 @@ void main() {
       expect(mastery[MasterySkill.say].fill, 0);
     });
 
-    test('over time, each week counts only what had happened by then', () {
+    test('a card is known by the tuned parameters of its skill, the ones that '
+        'schedule it', () {
       final progress = MemoryProgress();
       _answer(progress, 'a', 4, Duration.zero);
-      _answer(progress, 'a', 4, const Duration(days: 1));
-      final weeks = masteryOverTime(
+      _answer(progress, 'a', 4, const Duration(days: 5));
+      // A first Good lasts about 2.3 days: after 5, FSRS-6's defaults give
+      // about 84% recall, under the line. A fit that forgets more slowly
+      // after the due date gives about 89%.
+      final slow = <double>[...Fsrs.w]..[20] = 0.01;
+      expect(_mastery(progress)[MasterySkill.read].known, 0);
+      final tuned = masteryAt(
         progress.log,
         progress.scriptLog,
         totals: const <MasterySkill, int>{MasterySkill.read: 10},
         scriptCards: const <String>{},
-        now: _start.add(const Duration(days: 28)),
-        weeks: 5,
+        parametersOf: (_) => slow,
       );
-      expect(weeks.map((m) => m[MasterySkill.read].taught), <int>[
+      expect(tuned[MasterySkill.read].known, 1);
+      expect(
+        wordCounts(progress.log, parametersOf: (_) => slow).mastered,
         1,
-        1,
-        1,
-        1,
-        1,
-      ]);
-      expect(weeks.map((m) => m[MasterySkill.read].known), <int>[
-        0,
-        1,
-        1,
-        1,
-        1,
-      ]);
+        reason: 'the words use the same parameters',
+      );
+      expect(wordCounts(progress.log).mastered, 0);
+    });
+
+    test('a skill total is never under what is taught, and All sums the '
+        'languages', () {
+      final one = MemoryProgress();
+      for (final card in <String>['a', 'b', 'c']) {
+        _answer(one, card, 4, Duration.zero);
+        _answer(one, card, 4, const Duration(days: 1));
+      }
+      final two = MemoryProgress();
+      _answer(two, 'x', 4, Duration.zero);
+      _answer(two, 'x', 4, const Duration(days: 1));
+      Mastery of(MemoryProgress p, int total) => masteryAt(
+        p.log,
+        p.scriptLog,
+        totals: <MasterySkill, int>{
+          MasterySkill.read: total,
+          MasterySkill.grammar: 4,
+        },
+        scriptCards: const <String>{},
+      );
+      final small = of(one, 2);
+      expect(small[MasterySkill.read].total, 3, reason: 'taught is 3 of 2');
+      expect(small[MasterySkill.read].fill, 1.0);
+      expect(small[MasterySkill.grammar].total, 4);
+      expect(small[MasterySkill.grammar].fill, 0);
+      expect(small[MasterySkill.grammar].outline, isNull);
+
+      final all = sumMastery(<Mastery>[small, of(two, 10)]);
+      expect(all[MasterySkill.read].known, 4);
+      expect(all[MasterySkill.read].taught, 4);
+      expect(all[MasterySkill.read].total, 13);
+      expect(all[MasterySkill.grammar].total, 8);
+      expect(all[MasterySkill.read].fill, closeTo(4 / 13, 1e-9));
     });
 
     test('a word is mastered when every skill it was taught in is known', () {
@@ -230,6 +269,66 @@ void main() {
         false,
         false,
       ]);
+    });
+  });
+
+  group('days keep the zone of the answer', () {
+    ReviewEvent at(DateTime when, String card) => MemoryProgress().record(
+      deckId: 'xx-deck',
+      cardId: card,
+      mode: DrillMode.recognition,
+      grade: 4,
+      now: when,
+    );
+
+    test('a late-evening UTC answer stays on its own day, however the '
+        'device is set', () {
+      final late = at(DateTime.utc(2026, 9, 3, 23, 30), 'a');
+      expect(startedOn(<ReviewEvent>[late]), DateTime.utc(2026, 9, 3));
+      final week = practiceWeek(<ReviewEvent>[
+        late,
+      ], now: DateTime.utc(2026, 9, 7, 12));
+      expect(week.first.day, DateTime.utc(2026, 9, 1));
+      expect(week.map((d) => d.mark), <DayMark>[
+        DayMark.none,
+        DayMark.none,
+        DayMark.some,
+        DayMark.none,
+        DayMark.none,
+        DayMark.none,
+        DayMark.none,
+      ]);
+    });
+
+    test('a local late-evening answer stays on its own day too', () {
+      final late = at(DateTime(2026, 9, 3, 23, 45), 'a');
+      expect(startedOn(<ReviewEvent>[late]), DateTime(2026, 9, 3));
+      final week = practiceWeek(<ReviewEvent>[
+        late,
+      ], now: DateTime(2026, 9, 7, 8));
+      expect(week[2].mark, DayMark.some);
+      expect(week[3].mark, DayMark.none);
+    });
+
+    test('the second before midnight and the midnight after are two days, '
+        'joined', () {
+      final week = practiceWeek(<ReviewEvent>[
+        at(DateTime.utc(2026, 9, 3, 23, 59, 59), 'a'),
+        at(DateTime.utc(2026, 9, 4), 'b'),
+      ], now: DateTime.utc(2026, 9, 7, 12));
+      expect(week[2].mark, DayMark.some);
+      expect(week[3].mark, DayMark.some);
+      expect(week[4].mark, DayMark.none);
+      expect(week[2].joinsNext, isTrue);
+      expect(week[3].joinsNext, isFalse);
+    });
+
+    test('UTC answers are placed on the week of a local clock by their own '
+        'date', () {
+      final week = practiceWeek(<ReviewEvent>[
+        at(DateTime.utc(2026, 9, 3, 23, 30), 'a'),
+      ], now: DateTime(2026, 9, 7, 12));
+      expect(week[2].mark, DayMark.some);
     });
   });
 
@@ -350,6 +449,404 @@ void main() {
       expect(find.text(l10n.progressMasteryChart), findsOneWidget);
       expect(find.text(l10n.progressTaughtChart), findsOneWidget);
       expect(tester.takeException(), isNull);
+    });
+  });
+
+  group('Progress for a course', () {
+    Future<AppState> fixture() async {
+      final app = AppState.test();
+      await app.load();
+      final state = GalleryFixtures.state(app, features: FeatureRegistry.all());
+      await state.load();
+      return state;
+    }
+
+    DeckEntry spanish(AppState state) =>
+        state.decks.firstWhere((e) => e.id == 'es-en-core-100');
+
+    testWidgets('is worked out once per change of the progress, and again '
+        'after one', (tester) async {
+      final state = await fixture();
+      final first = ProgressMastery.of(state, 'es');
+      expect(
+        identical(ProgressMastery.of(state, 'es'), first),
+        isTrue,
+        reason: 'nothing changed: the weekly snapshots are not rebuilt',
+      );
+      final all = ProgressMastery.of(state, null);
+      expect(identical(ProgressMastery.of(state, null), all), isTrue);
+
+      final fresh = spanish(state).cards.last;
+      state.progress.record(
+        deckId: 'es-en-core-100',
+        cardId: fresh.id,
+        mode: DrillMode.recognition,
+        grade: 4,
+        now: state.now(),
+      );
+      final next = ProgressMastery.of(state, 'es');
+      expect(identical(next, first), isFalse);
+      expect(
+        next.now[MasterySkill.read].taught,
+        first.now[MasterySkill.read].taught + 1,
+      );
+    });
+
+    testWidgets('over time ends at now, and never taught less before it', (
+      tester,
+    ) async {
+      final state = await fixture();
+      final mastery = ProgressMastery.of(state, 'es');
+      final series = mastery.overTime();
+      expect(series, hasLength(12));
+      for (final skill in MasterySkill.values) {
+        expect(series.last[skill].known, mastery.now[skill].known);
+        expect(series.last[skill].taught, mastery.now[skill].taught);
+        for (var i = 1; i < series.length; i++) {
+          expect(
+            series[i][skill].taught,
+            greaterThanOrEqualTo(series[i - 1][skill].taught),
+          );
+        }
+      }
+      expect(
+        series.first[MasterySkill.read].taught,
+        lessThan(series.last[MasterySkill.read].taught),
+        reason: 'the history is twelve days, the series twelve weeks',
+      );
+    });
+
+    testWidgets('the totals are the B1 plan: words at least the planned '
+        'count, grammar and script from the course decks', (tester) async {
+      final state = await fixture();
+      final entry = spanish(state);
+      final path = state.pathOf(entry)!;
+      final inCourse = <DeckEntry>[
+        for (final id in path.deckIds)
+          if (state.deckById(id) case final e?) e,
+      ];
+      var words = 0;
+      var grammar = 0;
+      var script = 0;
+      for (final e in inCourse) {
+        for (final card in e.cards) {
+          if (path.alphabet.contains(e.id)) {
+            script++;
+          } else if (card.isGrammarCell) {
+            grammar++;
+          } else {
+            words++;
+          }
+        }
+      }
+      final now = ProgressMastery.of(state, 'es').now;
+      final expected = path.plannedWords < words ? words : path.plannedWords;
+      for (final skill in <MasterySkill>[
+        MasterySkill.read,
+        MasterySkill.write,
+        MasterySkill.hear,
+        MasterySkill.say,
+      ]) {
+        expect(now[skill].total, expected, reason: skill.name);
+      }
+      expect(now[MasterySkill.grammar].total, grammar);
+      expect(now[MasterySkill.script].total, script * 2);
+    });
+
+    testWidgets('on All, the words and the star count the same languages: a '
+        'review in a language that cannot be told counts in neither', (
+      tester,
+    ) async {
+      final state = await fixture();
+      final before = ProgressMastery.of(state, null);
+      for (final days in <int>[2, 1]) {
+        state.progress.record(
+          deckId: 'zz-unknown',
+          cardId: 'zz-card',
+          mode: DrillMode.recognition,
+          grade: 4,
+          now: state.now().subtract(Duration(days: days)),
+        );
+      }
+      final after = ProgressMastery.of(state, null);
+      expect(after.words, before.words);
+      expect(
+        after.now[MasterySkill.read].taught,
+        before.now[MasterySkill.read].taught,
+      );
+      expect(after.started, before.started);
+    });
+  });
+
+  group('Progress on screen', () {
+    testWidgets('the tiles do not shrink their text out of reach at 1.4x', (
+      tester,
+    ) async {
+      usePhone(tester, textScale: 1.4);
+      await pumpScreen(
+        tester,
+        Scaffold(
+          body: ProgressTiles(
+            words: (mastered: 312, taught: 540),
+            level: Milestone.a2,
+            started: DateTime(2026, 8, 3),
+            allLanguages: false,
+          ),
+        ),
+      );
+      // A FittedBox hides overflow by shrinking, so measure the shrinking:
+      // each line keeps at least 60% of its 1.4x size.
+      final fitted = find.descendant(
+        of: find.byType(ProgressTiles),
+        matching: find.byType(FittedBox),
+      );
+      expect(fitted, findsNWidgets(3));
+      for (final box in fitted.evaluate()) {
+        final render = box.renderObject! as RenderFittedBox;
+        final child = render.child!.size;
+        final scale = child.width <= render.size.width
+            ? 1.0
+            : render.size.width / child.width;
+        expect(scale, greaterThanOrEqualTo(0.6));
+        expect(child.height, lessThan(70), reason: 'one line, never wrapped');
+      }
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('each day is a labelled image saying its state and minutes', (
+      tester,
+    ) async {
+      final semantics = tester.ensureSemantics();
+      addTearDown(semantics.dispose);
+      usePhone(tester, textScale: 1.4);
+      const marks = <DayMark>[
+        DayMark.none,
+        DayMark.some,
+        DayMark.met,
+        DayMark.twice,
+        DayMark.none,
+        DayMark.some,
+        DayMark.met,
+      ];
+      final week = <PracticeDay>[
+        for (final (i, mark) in marks.indexed)
+          PracticeDay(
+            day: DateTime(2026, 9, 1 + i),
+            spent: Duration(minutes: const <int>[0, 4, 15, 31, 0, 6, 16][i]),
+            mark: mark,
+            joinsNext: false,
+          ),
+      ];
+      await pumpScreen(
+        tester,
+        Scaffold(
+          body: PracticeWeekCard(week: week, quota: kDefaultDailyQuota),
+        ),
+      );
+      final l10n = l10nOf(tester);
+      String state(DayMark m) => switch (m) {
+        DayMark.none => l10n.progressDayNone,
+        DayMark.some => l10n.progressDaySome,
+        DayMark.met => l10n.progressDayMet,
+        DayMark.twice => l10n.progressDayTwice,
+      };
+      for (final (i, day) in week.indexed) {
+        final name = DateFormat.EEEE('en').format(day.day);
+        final label = i == week.length - 1
+            ? l10n.progressDayLabelToday(
+                name,
+                state(day.mark),
+                day.spent.inMinutes,
+                15,
+              )
+            : l10n.progressDayLabel(
+                name,
+                state(day.mark),
+                day.spent.inMinutes,
+                15,
+              );
+        expect(
+          find.bySemanticsLabel(RegExp(RegExp.escape(label))),
+          findsOneWidget,
+          reason: label,
+        );
+      }
+    });
+
+    testWidgets('the weakest tags and the leeches are shown, for the '
+        'language chosen', (tester) async {
+      usePhone(tester, textScale: 1.4);
+      final app = AppState.test();
+      await app.load();
+      final state = GalleryFixtures.state(app, features: FeatureRegistry.all());
+      await pumpScreen(tester, const StatsPage(), state: state);
+      state.showLanguage('es', allOff: true);
+      await tester.pumpAndSettle();
+      final l10n = l10nOf(tester);
+      final cardOf = cardLookupOf(state);
+      final numbers = StatsNumbers.of(
+        state.progress,
+        now: state.now(),
+        range: StatsRange.all,
+        cardOf: cardOf,
+        deckFilter: (id) => id.startsWith('es-'),
+      );
+      expect(numbers.weakestTags, isNotEmpty);
+      final leeches = findLeeches(
+        state.progress,
+        cardOf: cardOf,
+      ).where((l) => l.card.deckId.startsWith('es-')).length;
+      expect(leeches, greaterThan(0));
+
+      final list = find.byType(Scrollable).first;
+      await tester.scrollUntilVisible(
+        find.text(l10n.statsWeakestTags),
+        200,
+        scrollable: list,
+      );
+      for (final tag in numbers.weakestTags.keys) {
+        expect(find.text(tag), findsWidgets, reason: tag);
+      }
+      await tester.scrollUntilVisible(
+        find.text(l10n.statsLeeches(leeches)),
+        200,
+        scrollable: list,
+      );
+      expect(find.text(l10n.statsLeeches(leeches)), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+  });
+
+  group('the star', () {
+    Mastery full(int value) => Mastery(<MasterySkill, SkillScore>{
+      for (final skill in MasterySkill.values)
+        skill: SkillScore(known: value, taught: value, total: value),
+    });
+
+    Future<void> pumpStar(
+      WidgetTester tester, {
+      required Mastery mastery,
+      double width = 360,
+      double textScale = 1.4,
+      TextDirection direction = TextDirection.ltr,
+      bool reducedMotion = false,
+    }) async {
+      usePhone(tester, textScale: textScale);
+      tester.view.physicalSize = Size(width * 3, 844 * 3);
+      await pumpScreen(
+        tester,
+        Builder(
+          builder: (context) => MediaQuery(
+            data: MediaQuery.of(context)
+                .copyWith(disableAnimations: reducedMotion),
+            child: Directionality(
+              textDirection: direction,
+              child: Scaffold(
+                body: Padding(
+                  padding: const EdgeInsetsDirectional.symmetric(
+                    horizontal: 16,
+                  ),
+                  child: SkillStarCard(mastery: mastery, onTap: () {}),
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
+    void expectLabelsInside(WidgetTester tester) {
+      final box = tester.getRect(find.byKey(const ValueKey<String>('star')));
+      for (var i = 0; i < 6; i++) {
+        final finder = find.byKey(ValueKey<String>('star-label-$i'));
+        final rect = tester.getRect(finder);
+        expect(rect.left, greaterThanOrEqualTo(box.left - 0.01), reason: '$i');
+        expect(rect.right, lessThanOrEqualTo(box.right + 0.01), reason: '$i');
+        expect(rect.top, greaterThanOrEqualTo(box.top - 0.01), reason: '$i');
+        expect(rect.bottom, lessThanOrEqualTo(box.bottom + 0.01), reason: '$i');
+        // Text that does not fit its box is clamped to it: its natural
+        // height at that width is what shows it.
+        final paragraph = tester.renderObject<RenderParagraph>(finder);
+        expect(
+          paragraph.getMaxIntrinsicHeight(rect.width),
+          lessThanOrEqualTo(rect.height + 0.5),
+          reason: 'label $i is not cut short',
+        );
+      }
+    }
+
+    for (final direction in TextDirection.values) {
+      testWidgets('every label stays inside the star at 1.4x on a 360 px '
+          'phone with 100% and 100% ($direction)', (tester) async {
+        await pumpStar(tester, mastery: full(100), direction: direction);
+        expectLabelsInside(tester);
+        expect(tester.takeException(), isNull);
+      });
+    }
+
+    testWidgets('the star mirrors in right-to-left text', (tester) async {
+      await pumpStar(tester, mastery: full(10));
+      final centre = tester
+          .getCenter(find.byKey(const ValueKey<String>('star')))
+          .dx;
+      expect(
+        tester.getCenter(find.byKey(const ValueKey<String>('star-label-1'))).dx,
+        greaterThan(centre),
+      );
+      await pumpStar(tester, mastery: full(10), direction: TextDirection.rtl);
+      final mirrored = tester
+          .getCenter(find.byKey(const ValueKey<String>('star')))
+          .dx;
+      expect(
+        tester.getCenter(find.byKey(const ValueKey<String>('star-label-1'))).dx,
+        lessThan(mirrored),
+      );
+    });
+
+    testWidgets('it grows over 400 ms, once, and not at all under reduced '
+        'motion', (tester) async {
+      final mastery = full(10);
+      await pumpStar(tester, mastery: mastery);
+      final grow = tester.widget<TweenAnimationBuilder<double>>(
+        find.byType(TweenAnimationBuilder<double>),
+      );
+      expect(grow.duration, kStarGrowTime);
+      expect(kStarGrowTime, const Duration(milliseconds: 400));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 200));
+      expect(
+        tester.binding.transientCallbackCount,
+        greaterThan(0),
+        reason: 'still growing at 200 ms',
+      );
+      await tester.pump(const Duration(milliseconds: 250));
+      expect(tester.binding.transientCallbackCount, 0, reason: 'done by 450');
+
+      await pumpStar(tester, mastery: mastery, reducedMotion: true);
+      final still = tester.widget<TweenAnimationBuilder<double>>(
+        find.byType(TweenAnimationBuilder<double>),
+      );
+      expect(still.duration, Duration.zero);
+      expect(still.tween.begin, 1.0, reason: 'drawn full-grown at once');
+      expect(tester.binding.transientCallbackCount, 0);
+    });
+
+    testWidgets('nothing is written under the star', (tester) async {
+      await pumpStar(tester, mastery: full(10));
+      final star = tester.getRect(find.byKey(const ValueKey<String>('star')));
+      final texts = find.descendant(
+        of: find.byType(SkillStarCard),
+        matching: find.byType(Text),
+      );
+      for (final text in texts.evaluate()) {
+        final rect = tester.getRect(find.byWidget(text.widget));
+        expect(rect.top, lessThan(star.bottom - 1));
+      }
+      expect(
+        tester.getRect(find.byType(SkillStarCard)).bottom - star.bottom,
+        lessThanOrEqualTo(20),
+        reason: 'the card ends where the star does, bar its padding',
+      );
     });
   });
 }

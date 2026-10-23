@@ -2,6 +2,7 @@ import '../data/course_path.dart';
 import '../models/drill_mode.dart';
 import '../models/review_event.dart';
 import '../scheduling/fsrs.dart';
+import 'practice_week.dart';
 
 /// The six skills Progress's star shows (#678).
 enum MasterySkill { grammar, script, read, write, hear, say }
@@ -25,11 +26,18 @@ MasterySkill? masterySkillOf(DrillMode mode) => switch (mode) {
 
 /// Whether [e] leaves its pair known: the answer was right and FSRS gave
 /// at least [kKnownRecall] chance of recall at that moment. A pair's first
-/// review has no recall to measure, so it does not.
-bool leavesKnown(ReviewEvent e) =>
+/// review has no recall to measure, so it does not. [parameters] are the
+/// ones that schedule the pair's skill (`SkillParameters.of`), so that
+/// Progress and the scheduler agree about a card.
+bool leavesKnown(ReviewEvent e, {List<double> parameters = Fsrs.w}) =>
     e.passed &&
     e.before != null &&
-    Fsrs.retrievability(e.before, e.at) >= kKnownRecall;
+    Fsrs.retrievability(e.before, e.at, parameters: parameters) >= kKnownRecall;
+
+/// The parameters that schedule a [mode], from the learner's fits.
+typedef ParametersOf = List<double> Function(DrillMode mode);
+
+List<double> _defaults(DrillMode mode) => Fsrs.w;
 
 /// What a skill has, and what B1 asks of it.
 class SkillScore {
@@ -90,6 +98,7 @@ Mastery masteryAt(
   required MasteryTotals totals,
   required Set<String> scriptCards,
   DateTime? asOf,
+  ParametersOf parametersOf = _defaults,
 }) {
   final last = <String, ReviewEvent>{};
   void take(ReviewEvent e) {
@@ -107,7 +116,8 @@ Mastery masteryAt(
   for (final e in last.values) {
     final skill = masterySkillOf(e.mode)!;
     taught[skill] = (taught[skill] ?? 0) + 1;
-    if (leavesKnown(e)) known[skill] = (known[skill] ?? 0) + 1;
+    if (leavesKnown(e, parameters: parametersOf(e.mode)))
+      known[skill] = (known[skill] ?? 0) + 1;
   }
   return Mastery(<MasterySkill, SkillScore>{
     for (final skill in MasterySkill.values)
@@ -131,33 +141,16 @@ Mastery sumMastery(Iterable<Mastery> all) => Mastery(<MasterySkill, SkillScore>{
     ),
 });
 
-/// The star's numbers each week for [weeks] weeks ending [now], oldest
-/// first: the last point is [now].
-List<Mastery> masteryOverTime(
-  Iterable<ReviewEvent> reviews,
-  Iterable<ReviewEvent> scriptReviews, {
-  required MasteryTotals totals,
-  required Set<String> scriptCards,
-  required DateTime now,
-  int weeks = 12,
-}) => <Mastery>[
-  for (var i = weeks - 1; i >= 0; i--)
-    masteryAt(
-      reviews,
-      scriptReviews,
-      totals: totals,
-      scriptCards: scriptCards,
-      asOf: now.subtract(Duration(days: 7 * i)),
-    ),
-];
-
 /// The words counted on Progress: [mastered] of the words [taught].
 typedef WordCounts = ({int mastered, int taught});
 
 /// Words taught are the distinct cards answered in a word skill (read,
 /// write, hear or say); one is mastered when every one of those skills it
 /// has been answered in leaves it known.
-WordCounts wordCounts(Iterable<ReviewEvent> reviews) {
+WordCounts wordCounts(
+  Iterable<ReviewEvent> reviews, {
+  ParametersOf parametersOf = _defaults,
+}) {
   final last = <String, ReviewEvent>{};
   for (final e in reviews) {
     final skill = masterySkillOf(e.mode);
@@ -170,7 +163,9 @@ WordCounts wordCounts(Iterable<ReviewEvent> reviews) {
   }
   final cards = <String, bool>{};
   for (final e in last.values) {
-    cards[e.cardId] = (cards[e.cardId] ?? true) && leavesKnown(e);
+    cards[e.cardId] =
+        (cards[e.cardId] ?? true) &&
+        leavesKnown(e, parameters: parametersOf(e.mode));
   }
   return (
     mastered: cards.values.where((known) => known).length,
@@ -205,5 +200,5 @@ DateTime? startedOn(Iterable<ReviewEvent> reviews) {
   for (final e in reviews) {
     if (first == null || e.at.isBefore(first)) first = e.at;
   }
-  return first == null ? null : DateTime(first.year, first.month, first.day);
+  return first == null ? null : calendarDay(first);
 }

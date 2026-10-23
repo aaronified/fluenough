@@ -98,10 +98,17 @@ class _Star extends StatelessWidget {
 
   final Mastery mastery;
 
-  static const double _radius = 70;
-  static const double _labelWidth = 92;
-  static const double _labelHeight = 56;
+  static const double _maxRadius = 70;
+  static const double _minRadius = 40;
+
+  /// The least width a label beside the star is given, so the star shrinks
+  /// to leave it, rather than the label running out of the card.
+  static const double _sideWidth = 84;
   static const double _gap = 6;
+
+  /// The lines a label is given room for: the skill's name and its two
+  /// shares, each of which may wrap.
+  static const int _lines = 4;
 
   @override
   Widget build(BuildContext context) {
@@ -109,74 +116,93 @@ class _Star extends StatelessWidget {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final reduced = MediaQuery.disableAnimationsOf(context);
-    final height = _labelHeight + _gap + _radius * 2 + _gap + _labelHeight;
-    final cy = _labelHeight + _gap + _radius;
+    final rtl = Directionality.of(context) == TextDirection.rtl;
+    final style = theme.textTheme.bodySmall!.copyWith(
+      color: scheme.onSurface,
+      height: 1.25,
+    );
+    final labelHeight =
+        (MediaQuery.textScalerOf(context).scale(style.fontSize!) *
+                style.height! *
+                _lines)
+            .ceilToDouble();
 
     return LayoutBuilder(
       builder: (context, box) {
-        final cx = box.maxWidth / 2;
-        Offset vertex(int i, [double scale = 1]) {
-          final a = -math.pi / 2 + i * math.pi / 3;
-          return Offset(
-            cx + _radius * scale * math.cos(a),
-            cy + _radius * scale * math.sin(a),
-          );
-        }
+        final width = box.maxWidth;
+        final cx = width / 2;
+        final radius = math
+            .min(_maxRadius, (cx - _sideWidth - _gap) / math.cos(math.pi / 6))
+            .clamp(_minRadius, _maxRadius);
+        final cy = labelHeight + _gap + radius;
+        final height = cy + radius + _gap + labelHeight;
+        final star = _StarShape(
+          center: Offset(cx, cy),
+          radius: radius,
+          rtl: rtl,
+        );
+
+        final line = labelHeight / _lines;
 
         Widget label(int i) {
           final skill = kStarSkills[i];
-          final p = vertex(i);
+          final p = star.at(i);
           final fill = l10n.commonPercent(mastery[skill].fill);
           final outline = mastery[skill].outline;
           // A dash while nothing is taught.
           final shownOutline = outline == null
               ? '–' // ui-literal-ok: a dash for "nothing taught" is not language
               : l10n.commonPercent(outline);
-          final TextAlign align;
           final double left;
           final double top;
-          if (i == 0) {
+          final double boxWidth;
+          final TextAlign align;
+          final Alignment alignment;
+          if (i == 0 || i == 3) {
+            boxWidth = math.min(width, 2 * radius * math.cos(math.pi / 6));
+            left = cx - boxWidth / 2;
+            top = i == 0 ? p.dy - _gap - labelHeight : p.dy + _gap;
             align = TextAlign.center;
-            left = p.dx - _labelWidth / 2;
-            top = p.dy - _gap - _labelHeight;
-          } else if (i == 3) {
-            align = TextAlign.center;
-            left = p.dx - _labelWidth / 2;
-            top = p.dy + _gap;
-          } else if (i < 3) {
-            align = TextAlign.start;
-            left = p.dx + _gap;
-            top = p.dy - _labelHeight / 2;
+            alignment = i == 0 ? Alignment.bottomCenter : Alignment.topCenter;
           } else {
-            align = TextAlign.end;
-            left = p.dx - _gap - _labelWidth;
-            top = p.dy - _labelHeight / 2;
+            final right = p.dx > cx;
+            if (right) {
+              left = p.dx + _gap;
+              boxWidth = width - left;
+              align = TextAlign.left;
+            } else {
+              left = 0;
+              boxWidth = p.dx - _gap;
+              align = TextAlign.right;
+            }
+            // The upper labels sit on their vertex and the lower hang from
+            // theirs, so that two on one side never overlap.
+            final upper = i == 1 || i == 5;
+            top = upper ? p.dy - labelHeight + line : p.dy - line;
+            alignment = upper
+                ? (right ? Alignment.bottomLeft : Alignment.bottomRight)
+                : (right ? Alignment.topLeft : Alignment.topRight);
           }
           return Positioned(
             left: left,
             top: top,
-            width: _labelWidth,
-            height: _labelHeight,
+            width: boxWidth,
+            height: labelHeight,
             child: Align(
-              alignment: i == 0
-                  ? Alignment.bottomCenter
-                  : i == 3
-                  ? Alignment.topCenter
-                  : Alignment.center,
+              alignment: alignment,
               child: Text(
                 '${masterySkillLabel(l10n, skill)}\n'
                 '${l10n.progressStarAxis(fill, shownOutline)}',
+                key: ValueKey<String>('star-label-$i'),
                 textAlign: align,
-                style: theme.textTheme.bodySmall!.copyWith(
-                  color: scheme.onSurface,
-                  height: 1.25,
-                ),
+                style: style,
               ),
             ),
           );
         }
 
         return SizedBox(
+          key: const ValueKey<String>('star'),
           height: height,
           child: Stack(
             children: <Widget>[
@@ -197,8 +223,7 @@ class _Star extends StatelessWidget {
                         for (final s in kStarSkills) mastery[s].taught > 0,
                       ],
                       grow: grow,
-                      center: Offset(cx, cy),
-                      radius: _radius,
+                      shape: star,
                       grid: scheme.outlineVariant,
                       fillColour: scheme.primary.withValues(alpha: 0.38),
                       outlineColour: starOutlineColour(theme.brightness),
@@ -216,14 +241,46 @@ class _Star extends StatelessWidget {
   }
 }
 
+/// Where the star's six vertices are: the first at the top, the rest
+/// clockwise, or anticlockwise when [rtl], which mirrors the star.
+class _StarShape {
+  const _StarShape({
+    required this.center,
+    required this.radius,
+    required this.rtl,
+  });
+
+  final Offset center;
+  final double radius;
+  final bool rtl;
+
+  Offset at(int i, [double value = 1]) {
+    final a = -math.pi / 2 + i * math.pi / 3;
+    final x = radius * value * math.cos(a);
+    return Offset(
+      center.dx + (rtl ? -x : x),
+      center.dy + radius * value * math.sin(a),
+    );
+  }
+
+  @override
+  bool operator ==(Object other) =>
+      other is _StarShape &&
+      other.center == center &&
+      other.radius == radius &&
+      other.rtl == rtl;
+
+  @override
+  int get hashCode => Object.hash(center, radius, rtl);
+}
+
 class _StarPainter extends CustomPainter {
   const _StarPainter({
     required this.fill,
     required this.outline,
     required this.taught,
     required this.grow,
-    required this.center,
-    required this.radius,
+    required this.shape,
     required this.grid,
     required this.fillColour,
     required this.outlineColour,
@@ -234,20 +291,13 @@ class _StarPainter extends CustomPainter {
   final List<double> outline;
   final List<bool> taught;
   final double grow;
-  final Offset center;
-  final double radius;
+  final _StarShape shape;
   final Color grid;
   final Color fillColour;
   final Color outlineColour;
   final Color markerFill;
 
-  Offset _at(int i, double value) {
-    final a = -math.pi / 2 + i * math.pi / 3;
-    return Offset(
-      center.dx + radius * value * math.cos(a),
-      center.dy + radius * value * math.sin(a),
-    );
-  }
+  Offset _at(int i, double value) => shape.at(i, value);
 
   Path _shape(List<double> values, double scale) {
     final path = Path();
@@ -272,7 +322,7 @@ class _StarPainter extends CustomPainter {
       canvas.drawPath(_shape(List<double>.filled(6, ring), 1), line);
     }
     for (var i = 0; i < 6; i++) {
-      canvas.drawLine(center, _at(i, 1), line);
+      canvas.drawLine(shape.center, _at(i, 1), line);
     }
     // The fill has no edge: a fill only.
     canvas.drawPath(_shape(fill, grow), Paint()..color = fillColour);
@@ -302,6 +352,7 @@ class _StarPainter extends CustomPainter {
   @override
   bool shouldRepaint(_StarPainter old) =>
       old.grow != grow ||
+      old.shape != shape ||
       old.fill != fill ||
       old.outline != outline ||
       old.fillColour != fillColour ||
