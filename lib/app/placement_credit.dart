@@ -29,6 +29,9 @@ extension PlacementCredit on AppState {
   /// - The cards of the other decks in [placed] get a review in each skill
   ///   the learner has switched on.
   ///
+  /// The course's `PlacedReview` choice decides whether these reviews are
+  /// ever asked for again.
+  ///
   /// The reviews are Easy answers given today, as if the learner had
   /// mastered the card, so each first comes due after the Easy interval and the
   /// card then comes up rarely. A pair that already has a review keeps it:
@@ -101,6 +104,10 @@ extension PlacementCredit on AppState {
         written++;
       }
     }
+    // The moment is kept, so that these reviews are known for the words
+    // placement credited (#761), and the course's choice of how they are
+    // reviewed applies to them alone.
+    settings.addPlacedAt(code, at.millisecondsSinceEpoch ~/ 1000);
     return written;
   }
 }
