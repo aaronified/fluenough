@@ -268,11 +268,9 @@ units:
   # The preverbs before a verb: wile, ken, kama, awen, sona, lukin, open
   # and pini (mi wile moku); kama with a modifier for becoming (kama
   # suli).
-  - planned: { id: "tok-grammar-preverbs", grammar: ["preverbs", "kama-becoming"] }
-    listening_passages:
-      - { id: "learning-plans", text: { "en": "Someone says what they want, can and are starting to learn" } }
-    reading_passages:
-      - { id: "new-year-wishes", text: { "en": "A list of wishes for the new year" } }
+  - decks: ["tok-grammar-preverbs", "tok-grammar-preverbs-sentences", "tok-reading-preverbs"]
+    words: 0
+    grammar: ["preverbs", "kama-becoming"]
   # palisa, sike, linja, lipu, sitelen and kiwen.
   - planned: { id: "tok-things", theme: "things", words: 6 }
     listening_passages:
