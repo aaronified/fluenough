@@ -27,6 +27,10 @@ from pathlib import Path
 
 VOCABULARY = ("recognition", "production", "listening", "speaking")
 
+# Written first in every file this converts, so that a second run, which would
+# flip every list back, is refused.
+MARKER = "# modes: converted to an opt-out (#522, step 6)"
+
 _LINE = re.compile(r"^(?P<head>\s*(?:-\s*)?(?:\{.*?)?)modes:\s*\[(?P<body>[^\]]*)\](?P<tail>.*)$")
 _BARE = re.compile(r"\bmodes:")
 _ID = re.compile(r"""\bid:\s*["']?([\w.\-]+)["']?""")
@@ -44,6 +48,8 @@ def complement(allowed: list[str]) -> list[str]:
 
 def convert_text(text: str) -> tuple[str, list[dict]]:
     """The file with every `modes` list converted, and what changed."""
+    if any(line.strip() == MARKER for line in text.splitlines()):
+        raise ValueError("already converted: a second run would flip every list back")
     out: list[str] = []
     changes: list[dict] = []
     card = None
@@ -62,7 +68,8 @@ def convert_text(text: str) -> tuple[str, list[dict]]:
             out.append(line)
             continue
         old = names(found["body"])
-        new = complement(old)
+        # `modes: []` named nothing, which meant every skill: no `modes`.
+        new = complement(old) if old else []
         newline = "\n" if line.endswith("\n") else ""
         head, tail = found["head"], found["tail"]
         if new:
@@ -70,12 +77,19 @@ def convert_text(text: str) -> tuple[str, list[dict]]:
             out.append(f"{head}modes: [{body}]{tail}{newline}")
         else:
             # Everything was allowed: no `modes` says the same.
+            if head.strip() == "-":
+                raise ValueError(
+                    f"line {lineno}: modes is the first key of its card and would be "
+                    "dropped; move it by hand"
+                )
             if not head.strip() and not tail.strip():
                 pass
             else:
                 kept = head.rstrip().rstrip(",").rstrip()
                 out.append(f"{kept}{tail if tail.startswith(' }') else ' ' + tail.lstrip(', ')}{newline}")
         changes.append({"line": lineno, "card": card, "old": old, "new": new})
+    if changes:
+        out.insert(0, MARKER + "\n")
     return "".join(out), changes
 
 
