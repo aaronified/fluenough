@@ -1,0 +1,72 @@
+"schema": 1
+"id": "tok-en-reading-pi"
+"name": "Reading: groups with pi"
+"kind": "reading"
+"language":
+  "code": "tok"
+  "iso639_3": "tok"
+  "name": "Toki Pona"
+  "script": "latin"
+  "icon": "Tp"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this deck"
+"description": "Two passages on pi: a listening passage on phrases with and without pi, and a reading passage of shop signs. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "reading"
+- "unreviewed"
+"passages":
+- "id": "tok-pi-two-meanings"
+  "title": "Two meanings"
+  "sentences":
+  - "text": "jan pi moku pona li kama."
+  - "text": "jan moku pona li kama."
+  - "text": "tomo pi kili suwi li suli."
+  - "text": "tomo kili suwi li suli."
+  "questions":
+  - "id": "tok-0344"
+    "prompt":
+      "en": "Which phrase names a person who cooks?"
+    "options":
+    - "en": "jan moku pona"
+    - "en": "jan pi moku pona"
+    "answer": 2
+  - "id": "tok-0345"
+    "prompt":
+      "en": "The sentence 'tomo pi kili suwi li suli' is about what?"
+    "options":
+    - "en": "A big building"
+    - "en": "A big piece of fruit"
+    "answer": 1
+  - "id": "tok-0346"
+    "prompt":
+      "en": "The building in the last line is big. Is that true?"
+    "answer": true
+- "id": "tok-pi-shop-signs"
+  "title": "Shop signs"
+  "sentences":
+  - "text": "tomo pi moku pona"
+  - "text": "tomo pi telo lete"
+  - "text": "ilo pi kili suwi"
+  "questions":
+  - "id": "tok-0347"
+    "prompt":
+      "en": "Which sign is for a place that sells cold drinks?"
+    "options":
+    - "en": "tomo pi telo lete"
+    - "en": "tomo pi moku pona"
+    "answer": 1
+  - "id": "tok-0348"
+    "prompt":
+      "en": "Which sign is for a tool?"
+    "options":
+    - "en": "tomo pi moku pona"
+    - "en": "ilo pi kili suwi"
+    "answer": 2
+  - "id": "tok-0349"
+    "prompt":
+      "en": "The sign 'tomo pi moku pona' is for a place that sells drinks. Is that true?"
+    "answer": false
