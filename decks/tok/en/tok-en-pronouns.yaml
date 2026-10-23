@@ -1,0 +1,51 @@
+schema: 1
+id: "tok-en-pronouns"
+kind: "layer"
+core: "tok-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns and people words"
+description: "The closed set of pronouns, mi, sina, ona and ni, with jan (a person) and ijo (a thing). Ona is he, she, it or they, and ni is this. Not yet checked by a Toki Pona speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "tok-0062":
+    native: "he; she; it; they"
+    notes:
+      "third": "The third person: someone or something that is neither the speaker nor the listener. It can be one or more of them."
+      "gender": "Toki Pona has no gender and no number for pronouns, so ona is his, her, its and their alike."
+    examples:
+      "ona li toki.": "They are talking."
+      "mi sona e ona.": "I know them."
+      "ona li pona.": "He is good."
+  "tok-0063":
+    native: "this; that"
+    notes:
+      "this": "Ni points at a person or thing here, or just spoken of. As a pronoun it stands on its own: ni li seme? is What is this?"
+      "after": "After a noun, ni makes it this one: jan ni is this person. It always follows the noun it points at."
+    examples:
+      "ni li pona.": "This is good."
+      "ni li seme?": "What is this?"
+      "jan ni li toki.": "This person is talking."
+  "tok-0064":
+    native: "person; people; someone; human"
+    notes:
+      "person": "A person or people. It does not change for more than one, so the context shows whether it means one person or a group."
+      "modifier": "A word after jan describes the person: jan pona is a friend, a good person."
+    collocations:
+      "pona": "good"
+    examples:
+      "jan ni li pona.": "This person is good."
+      "mi jan pona.": "I am a good person; I am a friend."
+      "jan li toki.": "Someone is talking."
+  "tok-0065":
+    native: "thing; object; something"
+    notes:
+      "thing": "A thing or object, anything that is not a person. With ni after it, ijo ni is this thing."
+      "nothing": "With ala after it, ijo ala means nothing: ijo ala li lon is There is nothing."
+    examples:
+      "ijo ni li pona.": "This thing is good."
+      "sina sona ala sona e ijo ni?": "Do you know this thing?"
+      "ijo ala li lon.": "There is nothing."
+  "tok-0066":
+    native: "the pronouns: mi, sina, ona, ni"
+    explanation: "Toki Pona's pronouns are mi (I, we), sina (you, one or more), ona (he, she, it, they) and ni (this). None of them changes for number or gender, and the set is closed: no other word is a pronoun."
