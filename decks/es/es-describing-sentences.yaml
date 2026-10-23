@@ -15,11 +15,11 @@ cards:
     bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermano", ref: "es-0161" }, { word: "es", ref: "es-0022" }, { word: "alto", ref: "es-0254" }, { word: "y", ref: "es-0048" }, { word: "guapo", ref: "es-0406" }]
     confusables: [{ id: "bajo", ref: "es-0255", kind: "word" }, { id: "feo", ref: "es-0404", kind: "word" }]
   - id: "es-0445"
-    target: "La sopa está muy caliente, pero el café es frío."
-    ipa: "la ˈsopa esˈta mwi kaˈljente ˈpeɾo el kaˈfe es ˈfɾio"
+    target: "El café está frío, pero la sopa muy caliente."
+    ipa: "el kaˈfe esˈta ˈfɾio ˈpeɾo la ˈsopa mwi kaˈljente"
     pos: "phrase"
     tags: ["sentence"]
-    bases: [{ word: "La", base: "la" }, { word: "sopa", base: "sopa" }, { word: "está", ref: "es-0023" }, { word: "muy", ref: "es-0330" }, { word: "caliente", ref: "es-0407" }, { word: "pero", ref: "es-0050" }, { word: "el", base: "el" }, { word: "café", base: "café" }, { word: "es", ref: "es-0022" }, { word: "frío", ref: "es-0408" }]
+    bases: [{ word: "El", base: "el" }, { word: "café", base: "café" }, { word: "está", ref: "es-0023" }, { word: "frío", ref: "es-0408" }, { word: "pero", ref: "es-0050" }, { word: "la", base: "la" }, { word: "sopa", base: "sopa" }, { word: "muy", ref: "es-0330" }, { word: "caliente", ref: "es-0407" }]
     confusables: [{ id: "lento", ref: "es-0415", kind: "word" }, { id: "rico", ref: "es-0409", kind: "word" }]
   - id: "es-0446"
     target: "Hoy estoy cansado y triste."
