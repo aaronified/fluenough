@@ -1,0 +1,55 @@
+schema: 1
+id: "tok-questions"
+part: "core"
+kind: "vocab"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+theme: "questions"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "tok-0044"
+    target: "seme"
+    ipa: "ˈseme"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "question", kind: "usage" }
+      - { id: "place", kind: "behaviour" }
+    examples:
+      - { target: "sina wile e seme?", ipa: "ˈsina ˈwile e ˈseme", bases: [{ word: "sina", ref: "tok-0004" }, { word: "wile", base: "wile" }, { word: "e", base: "e" }, { word: "seme", base: "seme" }] }
+      - { target: "mi sona ala e seme.", ipa: "mi ˈsona ˈala e ˈseme", bases: [{ word: "mi", ref: "tok-0003" }, { word: "sona", ref: "tok-0007" }, { word: "ala", ref: "tok-0005" }, { word: "e", base: "e" }, { word: "seme", base: "seme" }] }
+  - id: "tok-0045"
+    target: "anu"
+    ipa: "ˈanu"
+    pos: "other"
+    bases: "self"
+    notes:
+      - { id: "choice", kind: "usage" }
+      - { id: "question", kind: "behaviour" }
+    examples:
+      - { target: "pan anu ko?", ipa: "pan ˈanu ko", bases: [{ word: "pan", ref: "tok-0034" }, { word: "anu", base: "anu" }, { word: "ko", ref: "tok-0037" }] }
+      - { target: "sina pona anu ala?", ipa: "ˈsina ˈpona ˈanu ˈala", bases: [{ word: "sina", ref: "tok-0004" }, { word: "pona", ref: "tok-0002" }, { word: "anu", base: "anu" }, { word: "ala", ref: "tok-0005" }] }
+  - id: "tok-0046"
+    target: "lon"
+    ipa: "lon"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "true", kind: "usage" }
+      - { id: "place", kind: "behaviour" }
+    antonyms:
+      - { id: "weka", word: "weka", ipa: "ˈweka" }
+    examples:
+      - { target: "ni li lon.", ipa: "ni li lon", bases: [{ word: "ni", base: "ni" }, { word: "li", base: "li" }, { word: "lon", base: "lon" }] }
+      - { target: "mi lon ni.", ipa: "mi lon ni", bases: [{ word: "mi", ref: "tok-0003" }, { word: "lon", base: "lon" }, { word: "ni", base: "ni" }] }
+  - id: "tok-0047"
+    target: "a"
+    ipa: "a"
+    pos: "other"
+    bases: "self"
+    notes:
+      - { id: "feeling", kind: "usage" }
+      - { id: "after", kind: "behaviour" }
+    examples:
+      - { target: "pona a!", ipa: "ˈpona a", bases: [{ word: "pona", ref: "tok-0002" }, { word: "a", base: "a" }] }
+      - { target: "sina toki pona a!", ipa: "ˈsina ˈtoki ˈpona a", bases: [{ word: "sina", ref: "tok-0004" }, { word: "toki", ref: "tok-0001" }, { word: "pona", ref: "tok-0002" }, { word: "a", base: "a" }] }
