@@ -202,13 +202,13 @@ void main() {
     });
 
     test('two forms of one word are one word', () {
-      final form = Card(
+      const form = Card(
         id: 'xx-0004',
         deckId: 'xx-words',
         target: 'forms',
         native: 'forms',
         pos: 'noun',
-        bases: const <CardBase>[CardBase(word: 'forms', ref: 'xx-0001')],
+        bases: <CardBase>[CardBase(word: 'forms', ref: 'xx-0001')],
       );
       final all = <KindedCard>[
         (card: _word('xx-0001'), kind: DeckKind.vocab),
