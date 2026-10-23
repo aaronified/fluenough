@@ -349,11 +349,8 @@ units:
     grammar: ["stacked-la"]
   # monsuta, kijetesantakalu and lanpan: fear or monster, the raccoon
   # family (a well-known joke word), and to take.
-  - planned: { id: "tok-stories", theme: "stories", words: 3 }
-    listening_passages:
-      - { id: "bedtime-story", text: { "en": "A short bedtime story about a raccoon who takes food" } }
-    reading_passages:
-      - { id: "fable", text: { "en": "A fable written for the course, with a moral in the last line" } }
+  - decks: ["tok-stories", "tok-stories-sentences", "tok-reading-stories", "*"]
+    words: 3
   # The full number system, nasin nanpa pona: mute for twenty and ale
   # for a hundred, counted in a row (ale tu mute luka tu); the simple
   # system against it.
