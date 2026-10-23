@@ -4,16 +4,16 @@ The Progress tab shows how you are doing. It is recomputed from your review log,
 
 ## What it shows
 
-Pick a time range: 7 days, 30 days or All. The numbers are for the language picked in the language bar at the top, or for every language together.
+The numbers are for the language picked in the language bar at the top, or for every language together. From the top:
 
-- **Reviews**: how many answers you gave.
-- **Remembered**: the share of your reviews in the range that you remembered, that is, answers graded Good or better. It counts reviews, not cards. It shows a dash when there are no reviews.
-- **Day streak**, or **Longest streak** when the range is All.
-- **New cards learned**, or **Cards learned** when the range is All. A card counts as learned on its first remembered review.
-- **A calendar of daily reviews** for the last 12 weeks, from fewer to more. It does not follow the range. It says on how many days you reviewed.
-- **Correct, by skill**: the share correct in each skill you answered in the range, named as on the deck pills: Recognition, Write, Hear, Say, Grammar and Reading. A skill with no answers has no bar. Minimal pairs never has one. If you have learned a script, there are also Read and Write bars for it, such as "Read Devanagari". Under the bars is "How you learn", which opens your pacing.
-- **Weakest tags**: the three topics you miss most.
+- **Words**: the words you have mastered in bold, then how many you have been taught, such as **312** / 540 taught. A word is mastered when every skill you were taught it in is known.
+- **Level**: the course's level, A1, A2 or B1, from the path's milestones you have reached, with the day you started, the day of your first answer. The tile is bronze for A1, silver for A2 and gold for B1, and plain before A1. On All languages it shows only the earliest start date, since levels differ by course.
+- **The last 7 days**, oldest first, today last, with no legend. One mark a day: a filled flame when you met the day's quota, two overlapping flames (only the front one filled) at twice the quota or more, a filled dot for some practice, an empty dot for none. A line joins days you practised, which is your streak; on All languages any practice counts. The quota is 15 minutes a day until the daily commitment (#485) is built.
+- **Mastery by skill**: a six-point star of grammar, script, read, write, hear and say. The shaded shape is what you know of the whole B1 plan; the solid blue outline is what you know of what you have been taught, and sits at the centre for a skill with nothing taught yet. It grows once when you open the tab, and not at all with reduced motion. Tap it for **Over time**: two charts of the last 12 weeks, "Mastery over time" and "Taught over time", one line per skill, told apart by colour, dash and marker.
+- **Weakest tags**: the three topics you miss most, with "All tags" to the rest.
 - **Leeches**: cards you keep missing.
+
+A card is **known** when its last review was right and FSRS predicted at least 85% recall at that review (#680). The B1 total is the whole B1 plan: the planned words (or the words written, if more) for read, write, hear and say, the grammar cells written for grammar, and both skills of every letter of the alphabet decks for script.
 
 Until you finish a session, it says there are no reviews yet.
 
