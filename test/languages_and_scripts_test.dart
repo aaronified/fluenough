@@ -63,7 +63,10 @@ import 'package:fluenough/ui/widgets/reading_first.dart';
 import 'package:fluenough/ui/widgets/stat_tile.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter/semantics.dart'
+    show CustomSemanticsAction, SemanticsAction;
+import 'package:flutter/services.dart'
+    show LogicalKeyboardKey, SystemChannels, rootBundle;
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/braille_course.dart';
@@ -591,10 +594,19 @@ const List<String> eight = <String>[
 /// The bar on screen: the tab's, where the shell holds all three.
 Finder bar() => find.byType(LanguageBar).hitTestable();
 
-/// The shown language's chip on the bar on screen.
-Finder chip() => find
-    .descendant(of: bar(), matching: find.byType(LanguageBarChip))
-    .hitTestable();
+/// The selection at the centre of the wheel on the bar on screen. Not
+/// `hitTestable`: the centre language's glyph is drawn over it and takes
+/// the hit.
+Finder pill() => find.descendant(
+  of: bar(),
+  matching: find.byKey(const ValueKey<String>('language-bar-selection')),
+);
+
+/// Whether the selection is filled, as it is unless All is on, when it is
+/// an outline.
+bool pillFilled(WidgetTester tester) =>
+    (tester.widget<Container>(pill()).decoration! as BoxDecoration).color !=
+    null;
 
 /// The languages on the bar on screen, for a drag or a tap.
 Finder zone() => find
@@ -617,8 +629,10 @@ Future<void> openMenu(WidgetTester tester) async {
   await tester.pumpAndSettle();
 }
 
-Future<void> swipe(WidgetTester tester, double dx) async {
-  await tester.drag(zone(), Offset(dx, 0));
+/// One language is 44 dp of the wheel: a drag of [detents] languages to the
+/// next ones, or the previous with a negative number.
+Future<void> swipe(WidgetTester tester, int detents) async {
+  await tester.drag(zone(), Offset(-44.0 * detents, 0));
   await tester.pumpAndSettle(const Duration(seconds: 2));
 }
 
@@ -2182,23 +2196,25 @@ void main() {
         await pumpApp(tester, state: state);
 
         // Left: the next language.
-        await swipe(tester, -200);
+        await swipe(tester, 1);
         expect(state.shownLanguage, 'bn');
-        await swipe(tester, -200);
+        await swipe(tester, 1);
         expect(state.shownLanguage, 'te');
-        // At the last, it gives and springs back.
-        await swipe(tester, -200);
-        expect(state.shownLanguage, 'te');
+        // The wheel has no ends: after the last comes the first.
+        await swipe(tester, 1);
+        expect(state.shownLanguage, 'hi');
         expect(tester.takeException(), isNull);
 
-        // Right: the previous one.
-        await swipe(tester, 200);
+        // Right: the previous one, round the other way.
+        await swipe(tester, -1);
+        expect(state.shownLanguage, 'te');
+        await swipe(tester, -1);
         expect(state.shownLanguage, 'bn');
 
-        // A short, slow drag changes nothing.
+        // A drag of a few dp and a slow one changes nothing.
         await tester.timedDrag(
           zone(),
-          const Offset(-30, 0),
+          const Offset(-20, 0),
           const Duration(seconds: 1),
         );
         await tester.pumpAndSettle(const Duration(seconds: 2));
@@ -2271,17 +2287,16 @@ void main() {
           expect(state.settings.progressAll, isTrue);
           // Every review, Marathi's too.
           expect(statTile('44', l10n.statsReviews), findsOneWidget);
-          // The chip keeps its place, its outline only.
-          final chipWidget = tester.widget<LanguageBarChip>(chip());
-          expect(chipWidget.selected, isFalse);
-          expect(chipWidget.language.code, 'es');
+          // The wheel keeps its place, the selection an outline only.
+          expect(pillFilled(tester), isFalse);
+          expect(state.shownLanguage, 'es');
 
           // Today and Decks still show Spanish alone.
           state.shellTab.value = ShellTab.today;
           await tester.pumpAndSettle();
           final plans = tester.widget<DailyCard>(find.byType(DailyCard)).plans;
           expect(plans.map((p) => p.language.code), <String>['es']);
-          expect(tester.widget<LanguageBarChip>(chip()).selected, isTrue);
+          expect(pillFilled(tester), isTrue);
           state.shellTab.value = ShellTab.decks;
           await tester.pumpAndSettle();
           expect(
@@ -2296,11 +2311,8 @@ void main() {
           // On Progress, a swipe or the menu turns All off.
           state.shellTab.value = ShellTab.progress;
           await tester.pumpAndSettle();
-          final codes = <String>[for (final l in state.languageChoices) l.code];
-          await swipe(
-            tester,
-            codes.indexOf('hi') < codes.indexOf('es') ? 200 : -200,
-          );
+          // With two languages, either way round is the other one.
+          await swipe(tester, 1);
           expect(state.shownLanguage, 'hi');
           expect(state.settings.progressAll, isFalse);
           await tester.tap(allButton());
@@ -2320,32 +2332,282 @@ void main() {
       },
     );
 
-    // Momentum (#682).
-    testWidgets('a full-width fling moves at least five languages', (
+    // The wheel's keys, reduced motion, slots, direction and screen reader
+    // (#703).
+    Future<AppState> pumpBar(
+      WidgetTester tester, {
+      LanguageBarScreen screen = LanguageBarScreen.today,
+      TextDirection direction = TextDirection.ltr,
+    }) {
+      usePhone(tester);
+      return pumpScreen(
+        tester,
+        Directionality(
+          textDirection: direction,
+          child: Scaffold(
+            body: LanguageBarFrame(
+              screen: screen,
+              reportDetail: 'Test',
+              child: const SizedBox.expand(),
+            ),
+          ),
+        ),
+        state: learnerLanguageBar(eight, choice: eight.first),
+      );
+    }
+
+    Future<void> focusWheel(WidgetTester tester) async {
+      // The Focus on the wheel itself, not the swipe's detector above it.
+      final wheelFocus = find.descendant(
+        of: find.byType(LanguageBar),
+        matching: find.byWidgetPredicate(
+          (w) => w is Focus && w.onKeyEvent != null,
+        ),
+      );
+      final inside = find.descendant(
+        of: wheelFocus,
+        matching: find.byType(GestureDetector),
+      );
+      Focus.of(tester.element(inside.first)).requestFocus();
+      await tester.pump();
+    }
+
+    testWidgets('the arrow keys move one language, round the wheel, and a '
+        'quick second press adds to the first', (tester) async {
+      final state = await pumpBar(tester);
+      await focusWheel(tester);
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowRight);
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(state.shownLanguage, 'bn');
+
+      // Two presses before the wheel has turned: two languages, not one.
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowLeft);
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowLeft);
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(state.shownLanguage, 'es');
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('with reduce motion a swipe lands on its language at once', (
       tester,
     ) async {
+      tester.platformDispatcher.accessibilityFeaturesTestValue =
+          const FakeAccessibilityFeatures(disableAnimations: true);
+      addTearDown(
+        tester.platformDispatcher.clearAccessibilityFeaturesTestValue,
+      );
+      final state = await pumpBar(tester);
+      await tester.drag(zone(), const Offset(-44, 0));
+      await tester.pump();
+      await tester.pump();
+      expect(state.shownLanguage, 'bn');
+      expect(
+        find.descendant(of: bar(), matching: find.text(nameOf(state, 'bn'))),
+        findsOneWidget,
+      );
+    });
+
+    testWidgets('the wheel is centred whether or not the All slot holds All, '
+        'which only Progress shows', (tester) async {
+      await pumpBar(tester);
+      final today = tester.getCenter(zone()).dx;
+      expect(allButton(), findsNothing);
+      final slot = find.byKey(const ValueKey<String>('language-bar-all-slot'));
+      expect(tester.getSize(slot).width, 48);
+
+      await pumpBar(tester, screen: LanguageBarScreen.progress);
+      expect(allButton(), findsOneWidget);
+      expect(tester.getSize(slot).width, 48);
+      expect(tester.getCenter(zone()).dx, closeTo(today, 0.5));
+      expect(today, closeTo(195, 1));
+    });
+
+    testWidgets('in a right to left layout the next language is to the '
+        'right and the arrow keys are flipped', (tester) async {
+      final state = await pumpBar(tester, direction: TextDirection.rtl);
+      await tester.drag(zone(), const Offset(44, 0));
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(state.shownLanguage, 'bn');
+      await tester.drag(zone(), const Offset(-44, 0));
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(state.shownLanguage, 'hi');
+
+      await focusWheel(tester);
+      await tester.sendKeyEvent(LogicalKeyboardKey.arrowLeft);
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(state.shownLanguage, 'bn');
+    });
+
+    testWidgets('a screen reader hears the language and its place, and can '
+        'step next and previous round the ends', (tester) async {
+      final handle = tester.ensureSemantics();
+      final state = await pumpBar(tester);
+      final label = find.bySemanticsLabel(RegExp('^Language shown'));
+      var node = tester.getSemantics(label);
+      expect(
+        node.label,
+        'Language shown: ${nameOf(state, 'hi')}, 1 of 8 languages',
+      );
+
+      Map<String, int> actions() => <String, int>{
+        for (final id in node.getSemanticsData().customSemanticsActionIds!)
+          // The tap hint is an overriding action with no label.
+          if (CustomSemanticsAction.getAction(id)!.label != null)
+            CustomSemanticsAction.getAction(id)!.label!: id,
+      };
+      // On the first language there is still a previous: the last one.
+      expect(
+        actions().keys,
+        containsAll(<String>[
+          'Next language: ${nameOf(state, 'bn')}',
+          'Previous language: ${nameOf(state, 'es')}',
+        ]),
+      );
+      tester.binding.renderViews.first.owner!.semanticsOwner!.performAction(
+        node.id,
+        SemanticsAction.customAction,
+        actions()['Previous language: ${nameOf(state, 'es')}']!,
+      );
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(state.shownLanguage, 'es');
+
+      // And on the last, a next: the first.
+      node = tester.getSemantics(label);
+      expect(actions().keys, contains('Next language: ${nameOf(state, 'hi')}'));
+      handle.dispose();
+    });
+
+    testWidgets('a cancelled touch that caught the coast settles on a '
+        'language and shows its name', (tester) async {
+      final state = await pumpBar(tester);
+      await tester.fling(zone(), const Offset(-60, 0), 1200);
+      await tester.pump(const Duration(milliseconds: 150));
+      final touch = await tester.startGesture(tester.getCenter(zone()));
+      await tester.pump(const Duration(milliseconds: 50));
+      await touch.cancel();
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(find.byType(MenuItemButton), findsNothing);
+      expect(
+        find.descendant(
+          of: bar(),
+          matching: find.text(nameOf(state, state.shownLanguage!)),
+        ),
+        findsOneWidget,
+      );
+    });
+
+    // Momentum (#682, #703).
+    List<String> codesOf(AppState state) => <String>[
+      for (final l in state.languageChoices) l.code,
+    ];
+
+    testWidgets('a faster fling goes further, and the same fling always goes '
+        'the same distance', (tester) async {
+      usePhone(tester);
+      final state = learnerLanguageBar(eight, choice: eight.first);
+      await pumpApp(tester, state: state);
+      Future<int> flung(double speed) async {
+        final before = codesOf(state).indexOf(state.shownLanguage!);
+        await tester.fling(zone(), const Offset(-60, 0), speed);
+        await tester.pumpAndSettle(const Duration(seconds: 2));
+        final after = codesOf(state).indexOf(state.shownLanguage!);
+        return (after - before + eight.length) % eight.length;
+      }
+
+      final slow = await flung(300);
+      expect(slow, greaterThanOrEqualTo(1));
+      expect(await flung(300), slow);
+      expect(await flung(1200), greaterThan(slow));
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('a hard fling carries on round the wheel', (tester) async {
       usePhone(tester);
       final state = learnerLanguageBar(eight, choice: eight.first);
       await pumpApp(tester, state: state);
       final width = tester.getSize(zone()).width;
-      await tester.fling(zone(), Offset(-width * 0.9, 0), 3000);
+      // About 8 detents of drag and 5.7 of coast: past the last language and
+      // on from the first again, short of a whole number of turns.
+      await tester.fling(zone(), Offset(-width * 0.9, 0), 2000);
       await tester.pumpAndSettle(const Duration(seconds: 2));
-      final codes = <String>[for (final l in state.languageChoices) l.code];
-      expect(codes.indexOf(state.shownLanguage!), greaterThanOrEqualTo(5));
+      expect(state.shownLanguage, isNot(eight.first));
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('a short flick moves one language', (tester) async {
+    testWidgets('a touch stops the coast where it is, and does not open the '
+        'menu', (tester) async {
       usePhone(tester);
       final state = learnerLanguageBar(eight, choice: eight.first);
       await pumpApp(tester, state: state);
-      await tester.fling(zone(), const Offset(-60, 0), 800);
+      await tester.fling(zone(), const Offset(-60, 0), 1200);
       await tester.pumpAndSettle(const Duration(seconds: 2));
-      final codes = <String>[for (final l in state.languageChoices) l.code];
-      expect(codes.indexOf(state.shownLanguage!), 1);
+      final full = codesOf(state).indexOf(state.shownLanguage!);
+      state.showLanguage(eight.first);
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+
+      await tester.fling(zone(), const Offset(-60, 0), 1200);
+      await tester.pump(const Duration(milliseconds: 150));
+      final touch = await tester.startGesture(tester.getCenter(zone()));
+      await touch.up();
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(find.byType(MenuItemButton), findsNothing);
+      expect(codesOf(state).indexOf(state.shownLanguage!), lessThan(full));
     });
 
-    testWidgets('the language changes once, when the bar stops', (
+    testWidgets('each language passed is a detent with a tick', (tester) async {
+      usePhone(tester);
+      final state = learnerLanguageBar(eight, choice: eight.first);
+      await pumpApp(tester, state: state);
+      final ticks = <Object?>[];
+      tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
+        SystemChannels.platform,
+        (call) async {
+          if (call.method == 'HapticFeedback.vibrate') {
+            ticks.add(call.arguments);
+          }
+          return null;
+        },
+      );
+      addTearDown(
+        () => tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
+          SystemChannels.platform,
+          null,
+        ),
+      );
+      final finger = await tester.startGesture(tester.getCenter(zone()));
+      for (var i = 0; i < 3; i++) {
+        await finger.moveBy(const Offset(-44, 0));
+        await tester.pump(const Duration(milliseconds: 16));
+      }
+      await finger.up();
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(ticks, everyElement('HapticFeedbackType.selectionClick'));
+      expect(ticks, hasLength(3));
+      expect(codesOf(state).indexOf(state.shownLanguage!), 3);
+    });
+
+    testWidgets('at rest the selection shows the language\'s name; a touch '
+        'folds it and lifting grows it again', (tester) async {
+      usePhone(tester);
+      final state = learnerLanguageBar(eight, choice: eight.first);
+      await pumpApp(tester, state: state);
+      await swipe(tester, 1);
+      final name = nameOf(state, 'bn');
+      Finder shown() => find.descendant(of: bar(), matching: find.text(name));
+      expect(shown(), findsOneWidget);
+
+      final touch = await tester.startGesture(tester.getCenter(zone()));
+      // The touch is told after the press delay, in the first pump's timers;
+      // the fold's clock starts at that pump's frame, and runs in the next.
+      await tester.pump(const Duration(milliseconds: 400));
+      await tester.pump(const Duration(milliseconds: 400));
+      expect(shown(), findsNothing);
+      await touch.cancel();
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(shown(), findsOneWidget);
+    });
+
+    testWidgets('the language changes once, when the wheel stops', (
       tester,
     ) async {
       usePhone(tester);
@@ -2354,7 +2616,7 @@ void main() {
       final seen = <String?>[];
       state.addListener(() => seen.add(state.shownLanguage));
       final width = tester.getSize(zone()).width;
-      await tester.fling(zone(), Offset(-width * 0.9, 0), 3000);
+      await tester.fling(zone(), Offset(-width * 0.9, 0), 2000);
       await tester.pump(const Duration(milliseconds: 100));
       expect(state.shownLanguage, eight.first);
       await tester.pumpAndSettle(const Duration(seconds: 2));
