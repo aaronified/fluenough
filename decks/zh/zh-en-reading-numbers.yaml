@@ -1,0 +1,82 @@
+schema: 1
+"id": "zh-en-reading-numbers"
+"name": "Chinese reading: numbers 1 to 20"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-counting-on-fingers"
+  "title": "Counting on fingers"
+  "theme": "numbers-1-20"
+  "sentences":
+  - "text": "一，二，三，四，五。"
+    "reading": "yī, èr, sān, sì, wǔ."
+  - "text": "十，十一，二十。"
+    "reading": "shí, shíyī, èrshí."
+  - "text": "两是二。"
+    "reading": "liǎng shì èr."
+  "questions":
+  - "id": "zh-0227"
+    "prompt":
+      "en": "The first line counts up to:"
+    "options":
+    - "en": "Five"
+    - "en": "Ten"
+    "answer": 1
+  - "id": "zh-0228"
+    "prompt":
+      "en": "两是二 (liǎng shì èr) says that 两 (liǎng) means two."
+    answer: true
+  - "id": "zh-0229"
+    "prompt":
+      "en": "Which line goes up to twenty?"
+    "options":
+    - "en": "Line two"
+    - "en": "Line three"
+    "answer": 1
+- "id": "zh-locker-numbers"
+  "title": "Locker numbers"
+  "theme": "numbers-1-20"
+  "sentences":
+  - "text": "这是六。"
+    "reading": "zhè shì liù."
+  - "text": "那是二十。"
+    "reading": "nà shì èrshí."
+  - "text": "十一是谁？"
+    "reading": "shíyī shì shéi?"
+  "questions":
+  - "id": "zh-0230"
+    "prompt":
+      "en": "这是六 (zhè shì liù) means:"
+    "options":
+    - "en": "This is six."
+    - "en": "This is seven."
+    "answer": 1
+  - "id": "zh-0231"
+    "prompt":
+      "en": "那是二十 (nà shì èrshí) means that is twenty."
+    answer: true
+  - "id": "zh-0232"
+    "prompt":
+      "en": "十一是谁 (shíyī shì shéi) asks:"
+    "options":
+    - "en": "Who is eleven?"
+    - "en": "What is eleven?"
+    "answer": 1
