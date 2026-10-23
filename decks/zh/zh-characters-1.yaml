@@ -1,0 +1,292 @@
+schema: 1
+"id": "zh-characters-1"
+"part": "core"
+"kind": "vocab"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"license": "CC-BY-SA-4.0"
+"tags":
+- "beginner"
+- "unreviewed"
+- "script"
+"cards":
+- "id": "zh-0243"
+  "target": "大"
+  "words":
+  - "大"
+  "reading": "dà"
+  "pos": "adj"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "antonyms":
+  - { "id": "small", "ref": "zh-0244" }
+  "bases": "self"
+  "examples":
+  - "target": "这很大吗？"
+    "reading": "zhè hěn dà ma?"
+    "words":
+    - "这"
+    - "很"
+    - "大"
+    - "吗"
+    "bases":
+    - { "word": "这", "base": "这", "reading": "zhè" }
+  - "target": "房子很大。"
+    "reading": "fángzi hěn dà."
+    "words":
+    - "房子"
+    - "很"
+    - "大"
+    "bases":
+    - { "word": "房子", "base": "房子", "reading": "fángzi" }
+- "id": "zh-0244"
+  "target": "小"
+  "words":
+  - "小"
+  "reading": "xiǎo"
+  "pos": "adj"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "antonyms":
+  - { "id": "big", "ref": "zh-0243" }
+  "bases": "self"
+  "examples":
+  - "target": "他很小。"
+    "reading": "tā hěn xiǎo."
+    "words":
+    - "他"
+    - "很"
+    - "小"
+  - "target": "这很小。"
+    "reading": "zhè hěn xiǎo."
+    "words":
+    - "这"
+    - "很"
+    - "小"
+    "bases":
+    - { "word": "这", "base": "这", "reading": "zhè" }
+- "id": "zh-0245"
+  "target": "们"
+  "words":
+  - "们"
+  "reading": "men"
+  "pos": "particle"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "我们很好。"
+    "reading": "wǒmen hěn hǎo."
+    "words":
+    - "我们"
+    - "很"
+    - "好"
+    "bases":
+    - { "word": "我们", "ref": "zh-0157", "reading": "wǒmen" }
+  - "target": "你们很好吗？"
+    "reading": "nǐmen hěn hǎo ma?"
+    "words":
+    - "你们"
+    - "很"
+    - "好"
+    - "吗"
+    "bases":
+    - { "word": "你们", "ref": "zh-0158", "reading": "nǐmen" }
+- "id": "zh-0246"
+  "target": "千"
+  "words":
+  - "千"
+  "reading": "qiān"
+  "pos": "other"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "一千人。"
+    "reading": "yīqiān rén."
+    "words":
+    - "一"
+    - "千"
+    - "人"
+  - "target": "五千也很多。"
+    "reading": "wǔqiān yě hěn duō."
+    "words":
+    - "五"
+    - "千"
+    - "也"
+    - "很"
+    - "多"
+- "id": "zh-0247"
+  "target": "万"
+  "words":
+  - "万"
+  "reading": "wàn"
+  "pos": "other"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "一万人。"
+    "reading": "yí wàn rén."
+    "words":
+    - "一"
+    - "万"
+    - "人"
+  - "target": "十万人很多。"
+    "reading": "shí wàn rén hěn duō."
+    "words":
+    - "十"
+    - "万"
+    - "人"
+    - "很"
+    - "多"
+- "id": "zh-0248"
+  "target": "国"
+  "words":
+  - "国"
+  "reading": "guó"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "中国很大。"
+    "reading": "zhōngguó hěn dà."
+    "words":
+    - "中国"
+    - "很"
+    - "大"
+    "bases":
+    - { "word": "中国", "base": "中国", "reading": "zhōngguó" }
+  - "target": "国很大吗？"
+    "reading": "guó hěn dà ma?"
+    "words":
+    - "国"
+    - "很"
+    - "大"
+    - "吗"
+- "id": "zh-0249"
+  "target": "学"
+  "words":
+  - "学"
+  "reading": "xué"
+  "pos": "verb"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "我学中文。"
+    "reading": "wǒ xué Zhōngwén."
+    "words":
+    - "我"
+    - "学"
+    - "中文"
+    "bases":
+    - { "word": "中文", "base": "中文", "reading": "Zhōngwén" }
+  - "target": "你学中文吗？"
+    "reading": "nǐ xué Zhōngwén ma?"
+    "words":
+    - "你"
+    - "学"
+    - "中文"
+    - "吗"
+    "bases":
+    - { "word": "中文", "base": "中文", "reading": "Zhōngwén" }
+- "id": "zh-0250"
+  "target": "生"
+  "words":
+  - "生"
+  "reading": "shēng"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "他是学生。"
+    "reading": "tā shì xuésheng."
+    "words":
+    - "他"
+    - "是"
+    - "学生"
+    "bases":
+    - { "word": "学生", "base": "学生", "reading": "xuésheng" }
+  - "target": "学生很多。"
+    "reading": "xuésheng hěn duō."
+    "words":
+    - "学生"
+    - "很"
+    - "多"
+    "bases":
+    - { "word": "学生", "base": "学生", "reading": "xuésheng" }
+- "id": "zh-0251"
+  "target": "师"
+  "words":
+  - "师"
+  "reading": "shī"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "老师很好。"
+    "reading": "lǎoshī hěn hǎo."
+    "words":
+    - "老师"
+    - "很"
+    - "好"
+    "bases":
+    - { "word": "老师", "base": "老师", "reading": "lǎoshī" }
+  - "target": "他是老师吗？"
+    "reading": "tā shì lǎoshī ma?"
+    "words":
+    - "他"
+    - "是"
+    - "老师"
+    - "吗"
+    "bases":
+    - { "word": "老师", "base": "老师", "reading": "lǎoshī" }
+- "id": "zh-0252"
+  "target": "中"
+  "words":
+  - "中"
+  "reading": "zhōng"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "你是中国人吗？"
+    "reading": "nǐ shì Zhōngguórén ma?"
+    "words":
+    - "你"
+    - "是"
+    - "中国人"
+    - "吗"
+    "bases":
+    - { "word": "中国人", "base": "中国人", "reading": "Zhōngguórén" }
+  - "target": "中国人很多。"
+    "reading": "Zhōngguórén hěn duō."
+    "words":
+    - "中国人"
+    - "很"
+    - "多"
+    "bases":
+    - { "word": "中国人", "base": "中国人", "reading": "Zhōngguórén" }
