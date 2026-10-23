@@ -132,9 +132,9 @@ List<Card> formSiblings(Card card, Iterable<Card> cards) =>
 class FormSiblings {
   FormSiblings(Iterable<Card> cards) {
     for (final card in cards) {
-      if (card.rule == null && _singleBaseRef(card) case final ref?) {
-        (_byBase[ref] ??= <Card>[]).add(card);
-      }
+      if (card.rule != null) continue;
+      final ref = _singleBaseRef(card);
+      if (ref != null) (_byBase[ref] ??= <Card>[]).add(card);
     }
   }
 
