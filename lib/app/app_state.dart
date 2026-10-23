@@ -1601,9 +1601,7 @@ class AppState extends ChangeNotifier {
     final queue = queueOf(
       cards,
       newCardLimit: newLimit,
-      // A deck's new cards are those a lesson may teach now: no closed
-      // sentence, no cell of a word not known yet (ADR-0045).
-      canIntroduce: request.untaught ? unlocks.isOpen : isTaught,
+      canIntroduce: request.untaught ? null : isTaught,
     );
     return request.newOnly ? queue.withoutDue() : queue;
   }
@@ -1720,6 +1718,12 @@ class AppState extends ChangeNotifier {
     return out;
   }
 
+  /// Whether nothing is left that a lesson may teach in [entry]: it is
+  /// placed, this version can drill nothing in it, or every card a lesson
+  /// may teach is taught. A closed sentence does not count.
+  bool _isTaughtOut(DeckEntry entry) =>
+      isPlaced(entry) || !canDrill(entry) || notStudiedOpenIn(entry) == 0;
+
   /// Whether the path is past [entry]: it is placed, this version can drill
   /// nothing in it, or every card in it is learned in the skills on.
   bool isFinished(DeckEntry entry) =>
@@ -1745,7 +1749,7 @@ class AppState extends ChangeNotifier {
     };
     return List<List<DeckEntry>>.unmodifiable(<List<DeckEntry>>[
       for (final code in languages)
-        ...courseUnits(code).where((unit) => !unit.every(isFinished)).take(2),
+        ...courseUnits(code).where((unit) => !unit.every(_isTaughtOut)).take(2),
     ]);
   }
 
@@ -2667,6 +2671,21 @@ class AppState extends ChangeNotifier {
     ).fresh)
       if (!isTaught(item.card)) item.card.id,
   }.length;
+
+  /// [notStudiedIn] without the cards a lesson may not teach yet: a closed
+  /// sentence, a cell of a word not known yet (ADR-0045). The path moves on
+  /// from a unit when this is none, so that sentences waiting for their
+  /// words do not hold the unit back.
+  int notStudiedOpenIn(DeckEntry deck) {
+    final gate = unlocks;
+    return <String>{
+      for (final item in buildSession(
+        DrillRequest.untaught(deck.id),
+        ignorePauses: true,
+      ).fresh)
+        if (!isTaught(item.card) && gate.isOpen(item.card)) item.card.id,
+    }.length;
+  }
 
   /// How numbers are spelled in [language], or null for a language with no
   /// number rules (#54).
