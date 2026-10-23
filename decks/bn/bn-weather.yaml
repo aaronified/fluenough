@@ -1,0 +1,440 @@
+schema: 1
+id: "bn-weather"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "weather"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-1568"
+    target: "আবহাওয়া"
+    reading: "ābohāoyā"
+    ipa: "aboɦaoja"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "আবহাওয়া ভালো", reading: "ābohāoyā bhālo" }] }
+    examples:
+      - { target: "আজ আবহাওয়া ভালো।", reading: "āj ābohāoyā bhālo.", ipa: "adʒ aboɦaoja bʱalo" }
+      - { target: "আবহাওয়া কেমন?", reading: "ābohāoyā kemon?", ipa: "aboɦaoja kemon" }
+  - id: "bn-1569"
+    target: "সূর্য"
+    reading: "surjo"
+    ipa: "surdʒo"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সূর্য ওঠে", reading: "surjo oṭhe" }] }
+    examples:
+      - { target: "সূর্য ওঠে।", reading: "surjo oṭhe.", ipa: "surdʒo oʈʰe", bases: [{ word: "ওঠে", base: "ওঠা", reading: "oṭhā", ipa: "oʈʰa" }] }
+      - { target: "আজ সূর্য নেই।", reading: "āj surjo nei.", ipa: "adʒ surdʒo nei", bases: [{ word: "নেই", base: "নেই", reading: "nei", ipa: "nei" }] }
+  - id: "bn-1570"
+    target: "রোদ"
+    reading: "rod"
+    ipa: "rod̪"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "কড়া রোদ", reading: "kôṛā rod" }] }
+    examples:
+      - { target: "আজ কড়া রোদ।", reading: "āj kôṛā rod.", ipa: "adʒ kɔɽa rod̪", bases: [{ word: "কড়া", base: "কড়া", reading: "kôṛā", ipa: "kɔɽa" }] }
+      - { target: "রোদে ছাতা নাও।", reading: "rode chātā nāo.", ipa: "rod̪e tʃʰat̪a nao", bases: [{ word: "রোদে", base: "রোদ", reading: "rod", ipa: "rod̪" }, { word: "নাও", base: "নেওয়া", reading: "neoyā", ipa: "neoja" }] }
+  - id: "bn-1571"
+    target: "আকাশ"
+    reading: "ākāś"
+    ipa: "akaʃ"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "আকাশ পরিষ্কার", reading: "ākāś poriskār" }] }
+    examples:
+      - { target: "আজ আকাশ পরিষ্কার।", reading: "āj ākāś poriskār.", ipa: "adʒ akaʃ poriskar" }
+      - { target: "আকাশের রং নীল।", reading: "ākāśer rôṅ nil.", ipa: "akaʃer rɔŋ nil", bases: [{ word: "আকাশের", base: "আকাশ", reading: "ākāś", ipa: "akaʃ" }] }
+  - id: "bn-1572"
+    target: "মেঘ"
+    reading: "megh"
+    ipa: "meɡʱ"
+    pos: "noun"
+    bases: "self"
+    picture: "☁"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "কালো মেঘ", reading: "kālo megh" }] }
+    examples:
+      - { target: "আকাশে কালো মেঘ।", reading: "ākāśe kālo megh.", ipa: "akaʃe kalo meɡʱ", bases: [{ word: "আকাশে", ref: "bn-1571" }] }
+      - { target: "মেঘ জমেছে।", reading: "megh jômeche.", ipa: "meɡʱ dʒɔmetʃʰe", bases: [{ word: "জমেছে", base: "জমা", reading: "jômā", ipa: "dʒɔma" }] }
+  - id: "bn-1573"
+    target: "মেঘলা"
+    reading: "meghlā"
+    ipa: "meɡʱla"
+    pos: "adj"
+    bases: [{ word: "মেঘলা", ref: "bn-1572" }]
+    antonyms: [{ id: "jholmole", ref: "bn-1612" }]
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "মেঘলা", reading: "meghlā" }, { word: "মেঘ", reading: "megh" }] }
+    examples:
+      - { target: "আজ আকাশ মেঘলা।", reading: "āj ākāś meghlā.", ipa: "adʒ akaʃ meɡʱla" }
+      - { target: "আজ মেঘলা থাকবে।", reading: "āj meghlā thākbe.", ipa: "adʒ meɡʱla t̪ʰakbe", bases: [{ word: "থাকবে", base: "থাকা", reading: "thākā", ipa: "t̪ʰaka" }] }
+  - id: "bn-1574"
+    target: "বৃষ্টি"
+    reading: "briśṭi"
+    ipa: "briʃʈi"
+    pos: "noun"
+    bases: "self"
+    picture: "🌧"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ভারী বৃষ্টি", reading: "bhāri briśṭi" }] }
+    examples:
+      - { target: "আজ বৃষ্টি হবে।", reading: "āj briśṭi hôbe.", ipa: "adʒ briʃʈi ɦɔbe", bases: [{ word: "হবে", base: "হওয়া", reading: "hoyā", ipa: "ɦoja" }] }
+      - { target: "বৃষ্টির পর ঠান্ডা লাগে।", reading: "briśṭir pôr ṭhānḍā lāge.", ipa: "briʃʈir pɔr ʈʰanɖa laɡe", bases: [{ word: "বৃষ্টির", base: "বৃষ্টি", reading: "briśṭi", ipa: "briʃʈi" }, { word: "লাগে", base: "লাগা", reading: "lāgā", ipa: "laɡa" }] }
+  - id: "bn-1575"
+    target: "ঝিরিঝিরি"
+    reading: "jhirijhiri"
+    ipa: "dʒʱiridʒʱiri"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ঝিরিঝিরি বৃষ্টি", reading: "jhirijhiri briśṭi" }] }
+    examples:
+      - { target: "আজ ঝিরিঝিরি বৃষ্টি।", reading: "āj jhirijhiri briśṭi.", ipa: "adʒ dʒʱiridʒʱiri briʃʈi" }
+      - { target: "সকাল থেকে ঝিরিঝিরি বৃষ্টি।", reading: "sôkāl theke jhirijhiri briśṭi.", ipa: "sɔkal t̪ʰeke dʒʱiridʒʱiri briʃʈi" }
+  - id: "bn-1576"
+    target: "প্রবল"
+    reading: "prôbol"
+    ipa: "prɔbol"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "প্রবল বাতাস", reading: "prôbol bātās" }] }
+    examples:
+      - { target: "প্রবল ঝড় উঠেছে।", reading: "prôbol jhôṛ uṭheche.", ipa: "prɔbol dʒʱɔɽ uʈʰetʃʰe", bases: [{ word: "উঠেছে", base: "ওঠা", reading: "oṭhā", ipa: "oʈʰa" }] }
+      - { target: "প্রবল বাতাসে গাছ নড়ে।", reading: "prôbol bātāse gāch nôṛe.", ipa: "prɔbol bat̪ase ɡatʃʰ nɔɽe", bases: [{ word: "বাতাসে", ref: "bn-1578" }, { word: "গাছ", base: "গাছ", reading: "gāch", ipa: "ɡatʃʰ" }, { word: "নড়ে", base: "নড়া", reading: "nôṛā", ipa: "nɔɽa" }] }
+  - ref: "bn-1323"
+  - id: "bn-1578"
+    target: "বাতাস"
+    reading: "bātās"
+    ipa: "bat̪as"
+    pos: "noun"
+    bases: "self"
+    synonyms: [{ id: "hawa", ref: "bn-1579" }]
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ঠান্ডা বাতাস", reading: "ṭhānḍā bātās" }] }
+    examples:
+      - { target: "ঠান্ডা বাতাস বইছে।", reading: "ṭhānḍā bātās boiche.", ipa: "ʈʰanɖa bat̪as boitʃʰe", bases: [{ word: "বইছে", base: "বওয়া", reading: "boyā", ipa: "boja" }] }
+      - { target: "বাতাসে পাতা ওড়ে।", reading: "bātāse pātā oṛe.", ipa: "bat̪ase pat̪a oɽe", bases: [{ word: "বাতাসে", base: "বাতাস", reading: "bātās", ipa: "bat̪as" }, { word: "পাতা", base: "পাতা", reading: "pātā", ipa: "pat̪a" }, { word: "ওড়ে", base: "ওড়া", reading: "oṛā", ipa: "oɽa" }] }
+  - id: "bn-1579"
+    target: "হাওয়া"
+    reading: "hāoyā"
+    ipa: "ɦaoja"
+    pos: "noun"
+    bases: "self"
+    synonyms: [{ id: "batas", ref: "bn-1578" }]
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "হালকা হাওয়া", reading: "hālkā hāoyā" }] }
+    examples:
+      - { target: "সকালে হালকা হাওয়া দেয়।", reading: "śôkāle hālkā hāoyā dey.", ipa: "ʃɔkale ɦalka ɦaoja d̪ej", bases: [{ word: "সকালে", base: "সকাল", reading: "sôkāl", ipa: "sɔkal" }, { word: "দেয়", base: "দেওয়া", reading: "deoyā", ipa: "d̪eoja" }] }
+      - { target: "জানালা দিয়ে হাওয়া আসে।", reading: "jānālā diye hāoyā āse.", ipa: "dʒanala d̪ije ɦaoja ase", bases: [{ word: "দিয়ে", base: "দেওয়া", reading: "deoyā", ipa: "d̪eoja" }, { word: "আসে", base: "আসা", reading: "āśā", ipa: "aʃa" }] }
+  - id: "bn-1580"
+    target: "ঝড়"
+    reading: "jhôṛ"
+    ipa: "dʒʱɔɽ"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ঝড় ওঠা", reading: "jhôṛ oṭhā" }] }
+    examples:
+      - { target: "আজ বিকেলে ঝড় উঠবে।", reading: "āj bikele jhôṛ uṭhbe.", ipa: "adʒ bikele dʒʱɔɽ uʈʰbe", bases: [{ word: "বিকেলে", base: "বিকেল", reading: "bikel", ipa: "bikel" }, { word: "উঠবে", base: "ওঠা", reading: "oṭhā", ipa: "oʈʰa" }] }
+      - { target: "ঝড়ের সময় বাড়িতে থাকো।", reading: "jhôṛer śômoy bāṛite thāko.", ipa: "dʒʱɔɽer ʃɔmoj baɽit̪e t̪ʰako", bases: [{ word: "ঝড়ের", base: "ঝড়", reading: "jhôṛ", ipa: "dʒʱɔɽ" }, { word: "বাড়িতে", base: "বাড়ি", reading: "bāṛi", ipa: "baɽi" }, { word: "থাকো", base: "থাকা", reading: "thākā", ipa: "t̪ʰaka" }] }
+  - id: "bn-1581"
+    target: "ঝোড়ো"
+    reading: "jhoṛo"
+    ipa: "dʒʱoɽo"
+    pos: "adj"
+    bases: [{ word: "ঝোড়ো", ref: "bn-1580" }]
+    notes:
+      - { id: "n1", kind: "behaviour", words: [{ word: "ঝোড়ো", reading: "jhoṛo" }, { word: "ঝড়", reading: "jhôṛ" }] }
+    examples:
+      - { target: "ঝোড়ো হাওয়া বইছে।", reading: "jhoṛo hāoyā boiche.", ipa: "dʒʱoɽo ɦaoja boitʃʰe", bases: [{ word: "বইছে", base: "বওয়া", reading: "boyā", ipa: "boja" }] }
+      - { target: "ঝোড়ো দিনে স্কুল বন্ধ।", reading: "jhoṛo dine skul bôndho.", ipa: "dʒʱoɽo d̪ine skul bɔnd̪ʱo", bases: [{ word: "দিনে", base: "দিন", reading: "din", ipa: "d̪in" }] }
+  - id: "bn-1582"
+    target: "ঘূর্ণিঝড়"
+    reading: "ghurnijhoṛ"
+    ipa: "ɡʱurnidʒʱoɽ"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "culture", words: [{ word: "ঘূর্ণিঝড়", reading: "ghurnijhoṛ" }], source: "https://en.wikipedia.org/wiki/1970_Bhola_cyclone" }
+    examples:
+      - { target: "উপকূলে ঘূর্ণিঝড় এসেছে।", reading: "upokule ghurnijhoṛ eseche.", ipa: "upokule ɡʱurnidʒʱoɽ esetʃʰe", bases: [{ word: "উপকূলে", base: "উপকূল", reading: "upokul", ipa: "upokul" }, { word: "এসেছে", base: "আসা", reading: "āśā", ipa: "aʃa" }] }
+      - { target: "ঘূর্ণিঝড়ের খবর শুনেছি।", reading: "ghurnijhoṛer khôbor śunechi.", ipa: "ɡʱurnidʒʱoɽer kʰɔbor ʃunetʃʰi", bases: [{ word: "ঘূর্ণিঝড়ের", base: "ঘূর্ণিঝড়", reading: "ghurnijhoṛ", ipa: "ɡʱurnidʒʱoɽ" }, { word: "খবর", base: "খবর", reading: "khôbor", ipa: "kʰɔbor" }, { word: "শুনেছি", base: "শোনা", reading: "śonā", ipa: "ʃona" }] }
+  - id: "bn-1583"
+    target: "বিদ্যুৎ"
+    reading: "biddut"
+    ipa: "bid̪d̪ut̪"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note", words: [{ word: "বিদ্যুৎ চমকায়", reading: "biddut cômkāy" }] }
+    examples:
+      - { target: "আকাশে বিদ্যুৎ চমকায়।", reading: "ākāśe biddut cômkāy.", ipa: "akaʃe bid̪d̪ut̪ tʃɔmkaj", bases: [{ word: "আকাশে", ref: "bn-1571" }, { word: "চমকায়", base: "চমকানো", reading: "cômkāno", ipa: "tʃɔmkano" }] }
+      - { target: "বিদ্যুৎ চলে গেছে।", reading: "biddut côle geche.", ipa: "bid̪d̪ut̪ tʃɔle ɡetʃʰe", bases: [{ word: "চলে", base: "চলা", reading: "côlā", ipa: "tʃɔla" }, { word: "গেছে", base: "যাওয়া", reading: "jāoyā", ipa: "dʒaoja" }] }
+  - id: "bn-1584"
+    target: "বজ্র"
+    reading: "bôjro"
+    ipa: "bɔdʒro"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note", words: [{ word: "বজ্রের শব্দ", reading: "bôjrer śôbdo" }, { word: "বজ্রপাত", reading: "bôjropāt" }] }
+    examples:
+      - { target: "বজ্রের শব্দ শুনলাম।", reading: "bôjrer śôbdo śunlām.", ipa: "bɔdʒrer ʃɔbd̪o ʃunlam", bases: [{ word: "বজ্রের", base: "বজ্র", reading: "bôjro", ipa: "bɔdʒro" }, { word: "শব্দ", base: "শব্দ", reading: "śôbd", ipa: "ʃɔbd̪" }, { word: "শুনলাম", base: "শোনা", reading: "śonā", ipa: "ʃona" }] }
+      - { target: "বজ্রের সময় জানালা বন্ধ রাখো।", reading: "bôjrer śômoy jānālā bôndho rākho.", ipa: "bɔdʒrer ʃɔmoj dʒanala bɔnd̪ʱo rakʰo", bases: [{ word: "বজ্রের", base: "বজ্র", reading: "bôjro", ipa: "bɔdʒro" }, { word: "রাখো", base: "রাখা", reading: "rākhā", ipa: "rakʰa" }] }
+  - id: "bn-1585"
+    target: "কুয়াশা"
+    reading: "kuyāśā"
+    ipa: "kujaʃa"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ঘন কুয়াশা", reading: "ghôn kuyāśā" }] }
+    examples:
+      - { target: "ভোরে ঘন কুয়াশা থাকে।", reading: "bhore ghôn kuyāśā thāke.", ipa: "bʱore ɡʱɔn kujaʃa t̪ʰake", bases: [{ word: "ভোরে", base: "ভোর", reading: "bhor", ipa: "bʱor" }, { word: "ঘন", base: "ঘন", reading: "ghôn", ipa: "ɡʱɔn" }, { word: "থাকে", base: "থাকা", reading: "thākā", ipa: "t̪ʰaka" }] }
+      - { target: "কুয়াশায় গাড়ি ধীরে চলে।", reading: "kuyāśāy gāṛi dhire côle.", ipa: "kujaʃaj ɡaɽi d̪ʱire tʃɔle", bases: [{ word: "কুয়াশায়", base: "কুয়াশা", reading: "kuyāśā", ipa: "kujaʃa" }, { word: "চলে", base: "চলা", reading: "côlā", ipa: "tʃɔla" }] }
+  - id: "bn-1586"
+    target: "শিশির"
+    reading: "śiśir"
+    ipa: "ʃiʃir"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ঘাসে শিশির", reading: "ghāse śiśir" }] }
+    examples:
+      - { target: "ভোরে ঘাসে শিশির পড়ে।", reading: "bhore ghāse śiśir pôṛe.", ipa: "bʱore ɡʱase ʃiʃir pɔɽe", bases: [{ word: "ভোরে", base: "ভোর", reading: "bhor", ipa: "bʱor" }, { word: "ঘাসে", base: "ঘাস", reading: "ghās", ipa: "ɡʱas" }, { word: "পড়ে", base: "পড়া", reading: "pôṛā", ipa: "pɔɽa" }] }
+      - { target: "শিশিরে পা ভিজে গেল।", reading: "śiśire pā bhije gelo.", ipa: "ʃiʃire pa bʱidʒe ɡelo", bases: [{ word: "শিশিরে", base: "শিশির", reading: "śiśir", ipa: "ʃiʃir" }, { word: "ভিজে", ref: "bn-1599" }, { word: "গেল", base: "যাওয়া", reading: "jāoyā", ipa: "dʒaoja" }] }
+  - id: "bn-1587"
+    target: "শিলা"
+    reading: "śilā"
+    ipa: "ʃila"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "শিলাবৃষ্টি", reading: "śilābriśṭi" }] }
+    examples:
+      - { target: "আজ শিলাবৃষ্টি হয়েছে।", reading: "āj śilābriśṭi hôyeche.", ipa: "adʒ ʃilabriʃʈi ɦɔjetʃʰe", bases: [{ word: "শিলাবৃষ্টি", base: "শিলাবৃষ্টি", reading: "śilābriśṭi", ipa: "ʃilabriʃʈi" }, { word: "হয়েছে", base: "হওয়া", reading: "hoyā", ipa: "ɦoja" }] }
+      - { target: "শিলার আঘাতে ফুল ঝরে গেল।", reading: "śilār āghāte phul jhôre gelo.", ipa: "ʃilar aɡʱat̪e pʰul dʒʱɔre ɡelo", bases: [{ word: "শিলার", base: "শিলা", reading: "śilā", ipa: "ʃila" }, { word: "আঘাতে", base: "আঘাত", reading: "āghāt", ipa: "aɡʱat̪" }, { word: "ফুল", base: "ফুল", reading: "phul", ipa: "pʰul" }, { word: "ঝরে", base: "ঝরা", reading: "jhôrā", ipa: "dʒʱɔra" }, { word: "গেল", base: "যাওয়া", reading: "jāoyā", ipa: "dʒaoja" }] }
+  - id: "bn-1588"
+    target: "তুষার"
+    reading: "tuśār"
+    ipa: "t̪uʃar"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note", words: [{ word: "তুষারপাত", reading: "tuśārpāt" }] }
+    examples:
+      - { target: "পাহাড়ে তুষার পড়েছে।", reading: "pāhāṛe tuśār pôṛeche.", ipa: "paɦaɽe t̪uʃar pɔɽetʃʰe", bases: [{ word: "পাহাড়ে", base: "পাহাড়", reading: "pāhāṛ", ipa: "paɦaɽ" }, { word: "পড়েছে", base: "পড়া", reading: "pôṛā", ipa: "pɔɽa" }] }
+      - { target: "তুষার সাদা।", reading: "tuśār śādā.", ipa: "t̪uʃar ʃad̪a" }
+  - id: "bn-1589"
+    target: "বরফ"
+    reading: "bôroph"
+    ipa: "bɔropʰ"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বরফের টুকরো", reading: "bôropher ṭukro" }] }
+    examples:
+      - { target: "জলে বরফ দাও।", reading: "jôle bôroph dāo.", ipa: "dʒɔle bɔropʰ d̪ao", bases: [{ word: "জলে", ref: "bn-0350" }, { word: "দাও", base: "দেওয়া", reading: "deoyā", ipa: "d̪eoja" }] }
+      - { target: "ঠান্ডায় জল বরফ হয়ে যায়।", reading: "ṭhānḍāy jôl bôroph hôye jāy.", ipa: "ʈʰanɖaj dʒɔl bɔropʰ ɦɔje dʒaj", bases: [{ word: "ঠান্ডায়", ref: "bn-0622" }, { word: "হয়ে", base: "হওয়া", reading: "hoyā", ipa: "ɦoja" }, { word: "যায়", base: "যাওয়া", reading: "jāoyā", ipa: "dʒaoja" }] }
+  - id: "bn-1590"
+    target: "রামধনু"
+    reading: "rāmdhonu"
+    ipa: "ramd̪ʱonu"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "রামধনু ওঠে", reading: "rāmdhonu oṭhe" }] }
+    examples:
+      - { target: "আকাশে রামধনু দেখা গেল।", reading: "ākāśe rāmdhonu dekhā gelo.", ipa: "akaʃe ramd̪ʱonu d̪ekʰa ɡelo", bases: [{ word: "আকাশে", ref: "bn-1571" }, { word: "গেল", base: "যাওয়া", reading: "jāoyā", ipa: "dʒaoja" }] }
+      - { target: "রামধনুর রং সাতটি।", reading: "rāmdhonur rôṅ śātṭi.", ipa: "ramd̪ʱonur rɔŋ ʃat̪ʈi", bases: [{ word: "রামধনুর", base: "রামধনু", reading: "rāmdhonu", ipa: "ramd̪ʱonu" }, { word: "সাতটি", base: "সাত", reading: "śāt", ipa: "ʃat̪" }] }
+  - ref: "bn-0060"
+  - id: "bn-1592"
+    target: "উষ্ণ"
+    reading: "uśno"
+    ipa: "uʃno"
+    pos: "adj"
+    bases: "self"
+    synonyms: [{ id: "gorom", ref: "bn-0060" }]
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "উষ্ণ জল", reading: "uśno jôl" }] }
+    examples:
+      - { target: "উষ্ণ জলে স্নান করো।", reading: "uśno jôle snān kôro.", ipa: "uʃno dʒɔle snan kɔro", bases: [{ word: "জলে", ref: "bn-0350" }, { word: "স্নান", base: "স্নান", reading: "snān", ipa: "snan" }, { word: "করো", base: "করা", reading: "kôrā", ipa: "kɔra" }] }
+      - { target: "ঘরটা উষ্ণ থাকে।", reading: "ghôrṭā uśno thāke.", ipa: "ɡʱɔrʈa uʃno t̪ʰake", bases: [{ word: "ঘরটা", base: "ঘর", reading: "ghôr", ipa: "ɡʱɔr" }, { word: "থাকে", base: "থাকা", reading: "thākā", ipa: "t̪ʰaka" }] }
+  - ref: "bn-0622"
+  - id: "bn-1594"
+    target: "শীতল"
+    reading: "śitol"
+    ipa: "ʃit̪ol"
+    pos: "adj"
+    bases: "self"
+    synonyms: [{ id: "thanda", ref: "bn-0622" }]
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "শীতল বাতাস", reading: "śitol bātās" }] }
+    examples:
+      - { target: "শীতল বাতাস বইছে।", reading: "śitol bātās boiche.", ipa: "ʃit̪ol bat̪as boitʃʰe", bases: [{ word: "বইছে", base: "বওয়া", reading: "boyā", ipa: "boja" }] }
+      - { target: "ঘরটা শীতল রাখো।", reading: "ghôrṭā śitol rākho.", ipa: "ɡʱɔrʈa ʃit̪ol rakʰo", bases: [{ word: "ঘরটা", base: "ঘর", reading: "ghôr", ipa: "ɡʱɔr" }, { word: "রাখো", base: "রাখা", reading: "rākhā", ipa: "rakʰa" }] }
+  - id: "bn-1595"
+    target: "শীত"
+    reading: "śit"
+    ipa: "ʃit̪"
+    pos: "noun"
+    bases: "self"
+    antonyms: [{ id: "grishsho", ref: "bn-1605" }]
+    notes:
+      - { id: "n1", kind: "note", words: [{ word: "শীতকাল", reading: "śitkāl" }] }
+    examples:
+      - { target: "এখন শীত পড়েছে।", reading: "ekhon śit pôṛeche.", ipa: "ekʰon ʃit̪ pɔɽetʃʰe", bases: [{ word: "পড়েছে", base: "পড়া", reading: "pôṛā", ipa: "pɔɽa" }] }
+      - { target: "শীতে গরম কাপড় লাগে।", reading: "śite gôrom kāpoṛ lāge.", ipa: "ʃit̪e ɡɔrom kapoɽ laɡe", bases: [{ word: "শীতে", base: "শীত", reading: "śit", ipa: "ʃit̪" }, { word: "লাগে", base: "লাগা", reading: "lāgā", ipa: "laɡa" }] }
+  - id: "bn-1596"
+    target: "ভ্যাপসা"
+    reading: "bhêpśā"
+    ipa: "bʱæpʃa"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ভ্যাপসা গরম", reading: "bhêpśā gôrom" }] }
+    examples:
+      - { target: "আজ ভ্যাপসা গরম।", reading: "āj bhêpśā gôrom.", ipa: "adʒ bʱæpʃa ɡɔrom" }
+      - { target: "বৃষ্টির আগে ভ্যাপসা থাকে।", reading: "briśṭir āge bhêpśā thāke.", ipa: "briʃʈir aɡe bʱæpʃa t̪ʰake", bases: [{ word: "বৃষ্টির", ref: "bn-1574" }, { word: "থাকে", base: "থাকা", reading: "thākā", ipa: "t̪ʰaka" }] }
+  - id: "bn-1597"
+    target: "স্যাঁতসেঁতে"
+    reading: "śêm̐tśem̐te"
+    ipa: "ʃæ̃t̪ʃẽt̪e"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "স্যাঁতসেঁতে ঘর", reading: "śêm̐tśem̐te ghôr" }] }
+    examples:
+      - { target: "বর্ষায় ঘর স্যাঁতসেঁতে হয়।", reading: "bôrśāy ghôr śêm̐tśem̐te hôy.", ipa: "bɔrʃaj ɡʱɔr ʃæ̃t̪ʃẽt̪e ɦɔj", bases: [{ word: "বর্ষায়", base: "বর্ষা", reading: "bôrśā", ipa: "bɔrʃa" }, { word: "হয়", base: "হওয়া", reading: "hoyā", ipa: "ɦoja" }] }
+      - { target: "দেয়ালটা স্যাঁতসেঁতে।", reading: "deyālṭā śêm̐tśem̐te.", ipa: "d̪ejalʈa ʃæ̃t̪ʃẽt̪e", bases: [{ word: "দেয়ালটা", base: "দেয়াল", reading: "deyāl", ipa: "d̪ejal" }] }
+  - ref: "bn-1232"
+  - id: "bn-1599"
+    target: "ভেজা"
+    reading: "bhejā"
+    ipa: "bʱedʒa"
+    pos: "adj"
+    bases: "self"
+    antonyms: [{ id: "shukno", ref: "bn-1232" }]
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ভেজা জামা", reading: "bhejā jāmā" }] }
+    examples:
+      - { target: "বৃষ্টিতে আমার জামা ভেজা।", reading: "briśṭite āmār jāmā bhejā.", ipa: "briʃʈit̪e amar dʒama bʱedʒa", bases: [{ word: "বৃষ্টিতে", ref: "bn-1574" }, { word: "আমার", base: "আমি", reading: "āmi", ipa: "ami" }] }
+      - { target: "সব কাপড় ভেজা।", reading: "śôb kāpoṛ bhejā.", ipa: "ʃɔb kapoɽ bʱedʒa" }
+  - ref: "bn-0103"
+  - id: "bn-1601"
+    target: "তাপমাত্রা"
+    reading: "tāpomātrā"
+    ipa: "t̪apomat̪ra"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "তাপমাত্রা কত?", reading: "tāpomātrā kôto?" }] }
+    examples:
+      - { target: "আজ তাপমাত্রা ত্রিশ ডিগ্রি।", reading: "āj tāpomātrā triś ḍigri.", ipa: "adʒ t̪apomat̪ra t̪riʃ ɖiɡri", bases: [{ word: "ডিগ্রি", base: "ডিগ্রি", reading: "ḍigri", ipa: "ɖiɡri" }] }
+      - { target: "তাপমাত্রা কমছে।", reading: "tāpomātrā kômche.", ipa: "t̪apomat̪ra kɔmtʃʰe", bases: [{ word: "কমছে", base: "কমা", reading: "kômā", ipa: "kɔma" }] }
+  - ref: "bn-1148"
+  - id: "bn-1603"
+    target: "পূর্বাভাস"
+    reading: "purbābhāś"
+    ipa: "purbʱaʃ"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "আবহাওয়ার পূর্বাভাস", reading: "ābohāoyār purbābhāś" }] }
+    examples:
+      - { target: "আবহাওয়ার পূর্বাভাস শোনো।", reading: "ābohāoyār purbābhāś śono.", ipa: "aboɦaojar purbʱaʃ ʃono", bases: [{ word: "আবহাওয়ার", ref: "bn-1568" }, { word: "শোনো", base: "শোনা", reading: "śonā", ipa: "ʃona" }] }
+      - { target: "পূর্বাভাস বলছে কাল বৃষ্টি হবে।", reading: "purbābhāś bôlche kāl briśṭi hôbe.", ipa: "purbʱaʃ bɔltʃʰe kal briʃʈi ɦɔbe", bases: [{ word: "বলছে", base: "বলা", reading: "bôlā", ipa: "bɔla" }, { word: "হবে", base: "হওয়া", reading: "hoyā", ipa: "ɦoja" }] }
+  - ref: "bn-0706"
+  - id: "bn-1605"
+    target: "গ্রীষ্ম"
+    reading: "griśm"
+    ipa: "ɡriʃm"
+    pos: "noun"
+    bases: "self"
+    antonyms: [{ id: "shit", ref: "bn-1595" }]
+    notes:
+      - { id: "n1", kind: "note", words: [{ word: "গ্রীষ্মকাল", reading: "griśmokāl" }] }
+    examples:
+      - { target: "গ্রীষ্মকালে খুব গরম পড়ে।", reading: "griśmokāle khub gôrom pôṛe.", ipa: "ɡriʃmokale kʰub ɡɔrom pɔɽe", bases: [{ word: "গ্রীষ্মকালে", base: "গ্রীষ্মকাল", reading: "griśmokāl", ipa: "ɡriʃmokal" }, { word: "পড়ে", base: "পড়া", reading: "pôṛā", ipa: "pɔɽa" }] }
+      - { target: "গ্রীষ্মের ছুটিতে কোথায় যাবে?", reading: "griśmer chuṭite kothāy jābe?", ipa: "ɡriʃmer tʃʰuʈit̪e kot̪ʰaj dʒabe", bases: [{ word: "গ্রীষ্মের", base: "গ্রীষ্ম", reading: "griśm", ipa: "ɡriʃm" }, { word: "ছুটিতে", base: "ছুটি", reading: "chuṭi", ipa: "tʃʰuʈi" }, { word: "যাবে", base: "যাওয়া", reading: "jāoyā", ipa: "dʒaoja" }] }
+  - id: "bn-1606"
+    target: "বর্ষা"
+    reading: "bôrśā"
+    ipa: "bɔrʃa"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "culture", words: [{ word: "বর্ষাকাল", reading: "bôrśākāl" }], source: "https://en.wikipedia.org/wiki/Monsoon_of_South_Asia" }
+    examples:
+      - { target: "বর্ষায় প্রচুর বৃষ্টি হয়।", reading: "bôrśāy procur briśṭi hôy.", ipa: "bɔrʃaj protʃur briʃʈi ɦɔj", bases: [{ word: "বর্ষায়", base: "বর্ষা", reading: "bôrśā", ipa: "bɔrʃa" }, { word: "হয়", base: "হওয়া", reading: "hoyā", ipa: "ɦoja" }] }
+      - { target: "বর্ষার পর নদী ভরে যায়।", reading: "bôrśār pôr nodi bhôre jāy.", ipa: "bɔrʃar pɔr nod̪i bʱɔre dʒaj", bases: [{ word: "বর্ষার", base: "বর্ষা", reading: "bôrśā", ipa: "bɔrʃa" }, { word: "ভরে", base: "ভরা", reading: "bhôrā", ipa: "bʱɔra" }, { word: "যায়", base: "যাওয়া", reading: "jāoyā", ipa: "dʒaoja" }] }
+  - id: "bn-1607"
+    target: "শরৎ"
+    reading: "śôrot"
+    ipa: "ʃɔrot̪"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note", words: [{ word: "শরৎকাল", reading: "śôrotkāl" }] }
+    examples:
+      - { target: "শরতে আকাশ নীল থাকে।", reading: "śôrote ākāś nil thāke.", ipa: "ʃɔrot̪e akaʃ nil t̪ʰake", bases: [{ word: "শরতে", base: "শরৎ", reading: "śôrot", ipa: "ʃɔrot̪" }, { word: "থাকে", base: "থাকা", reading: "thākā", ipa: "t̪ʰaka" }] }
+      - { target: "শরতের সকালে শিশির পড়ে।", reading: "śôroter śôkāle śiśir pôṛe.", ipa: "ʃɔrot̪er ʃɔkale ʃiʃir pɔɽe", bases: [{ word: "শরতের", base: "শরৎ", reading: "śôrot", ipa: "ʃɔrot̪" }, { word: "সকালে", base: "সকাল", reading: "śôkāl", ipa: "ʃɔkal" }, { word: "পড়ে", base: "পড়া", reading: "pôṛā", ipa: "pɔɽa" }] }
+  - id: "bn-1608"
+    target: "হেমন্ত"
+    reading: "hemonto"
+    ipa: "ɦemont̪o"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "হেমন্তকাল", reading: "hemontokāl" }] }
+    examples:
+      - { target: "হেমন্তে ধান কাটা হয়।", reading: "hemonte dhān kāṭā hôy.", ipa: "ɦemont̪e d̪ʱan kaʈa ɦɔj", bases: [{ word: "হেমন্তে", base: "হেমন্ত", reading: "hemonto", ipa: "ɦemont̪o" }, { word: "ধান", base: "ধান", reading: "dhān", ipa: "d̪ʱan" }, { word: "হয়", base: "হওয়া", reading: "hoyā", ipa: "ɦoja" }] }
+      - { target: "হেমন্তে সকালে হালকা শীত।", reading: "hemonte śôkāle hālkā śit.", ipa: "ɦemont̪e ʃɔkale ɦalka ʃit̪", bases: [{ word: "হেমন্তে", base: "হেমন্ত", reading: "hemonto", ipa: "ɦemont̪o" }, { word: "সকালে", base: "সকাল", reading: "śôkāl", ipa: "ʃɔkal" }] }
+  - id: "bn-1609"
+    target: "বসন্ত"
+    reading: "bôśonto"
+    ipa: "bɔʃont̪o"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "note", words: [{ word: "বসন্তকাল", reading: "bôśontokāl" }] }
+    examples:
+      - { target: "বসন্তে গাছে নতুন পাতা গজায়।", reading: "bôśonte gāche notun pātā gôjāy.", ipa: "bɔʃont̪e ɡatʃʰe not̪un pat̪a ɡɔdʒaj", bases: [{ word: "বসন্তে", base: "বসন্ত", reading: "bôśonto", ipa: "bɔʃont̪o" }, { word: "গাছে", base: "গাছ", reading: "gāch", ipa: "ɡatʃʰ" }, { word: "পাতা", base: "পাতা", reading: "pātā", ipa: "pat̪a" }, { word: "গজায়", base: "গজানো", reading: "gôjāno", ipa: "ɡɔdʒano" }] }
+      - { target: "বসন্তে আবহাওয়া ভালো থাকে।", reading: "bôśonte ābohāoyā bhālo thāke.", ipa: "bɔʃont̪e aboɦaoja bʱalo t̪ʰake", bases: [{ word: "বসন্তে", base: "বসন্ত", reading: "bôśonto", ipa: "bɔʃont̪o" }, { word: "থাকে", base: "থাকা", reading: "thākā", ipa: "t̪ʰaka" }] }
+  - id: "bn-1610"
+    target: "বন্যা"
+    reading: "bonnā"
+    ipa: "bonna"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "culture", words: [{ word: "বন্যা", reading: "bonnā" }], source: "https://en.wikipedia.org/wiki/Flood" }
+    examples:
+      - { target: "বন্যায় অনেক গ্রাম ডুবে গেছে।", reading: "bonnāy ônek grām ḍube geche.", ipa: "bonnaj ɔnek ɡram ɖube ɡetʃʰe", bases: [{ word: "বন্যায়", base: "বন্যা", reading: "bonnā", ipa: "bonna" }, { word: "ডুবে", base: "ডোবা", reading: "ḍobā", ipa: "ɖoba" }, { word: "গেছে", base: "যাওয়া", reading: "jāoyā", ipa: "dʒaoja" }] }
+      - { target: "বন্যার পানি কবে নামবে?", reading: "bonnār pāni kôbe nāmobe?", ipa: "bonnar pani kɔbe namobe", bases: [{ word: "বন্যার", base: "বন্যা", reading: "bonnā", ipa: "bonna" }, { word: "পানি", base: "পানি", reading: "pāni", ipa: "pani" }, { word: "নামবে", base: "নামা", reading: "nāmā", ipa: "nama" }] }
+  - ref: "bn-0350"
+  - id: "bn-1612"
+    target: "ঝলমলে"
+    reading: "jhôlmole"
+    ipa: "dʒʱɔlmole"
+    pos: "adj"
+    bases: "self"
+    antonyms: [{ id: "meghla", ref: "bn-1573" }]
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ঝলমলে রোদ", reading: "jhôlmole rod" }] }
+    examples:
+      - { target: "আজ আকাশ ঝলমলে।", reading: "āj ākāś jhôlmole.", ipa: "adʒ akaʃ dʒʱɔlmole" }
+      - { target: "ঝলমলে রোদে নদী দেখা যায়।", reading: "jhôlmole rode nodi dekhā jāy.", ipa: "dʒʱɔlmole rod̪e nod̪i d̪ekʰa dʒaj", bases: [{ word: "রোদে", ref: "bn-1570" }, { word: "যায়", base: "যাওয়া", reading: "jāoyā", ipa: "dʒaoja" }] }
+  - id: "bn-1613"
+    kind: "set"
+    members: [{ ref: "bn-1605" }, { ref: "bn-1606" }, { ref: "bn-1607" }, { ref: "bn-1608" }, { ref: "bn-1595" }, { ref: "bn-1609" }]
