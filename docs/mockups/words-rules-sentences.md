@@ -107,5 +107,5 @@ WCAG contrast, computed in the page's JS (`window.__contrast`, console only) in 
 - A sentence names the rules it uses and its base words; it opens once all are known at the bar. Until then it is not offered and does not hold back its unit. Reviews never wait.
 - A rule's question tests the rule, never the word: the options are forms of the same word (घर में, घर पर, घर से, घर का), never a different word. The word is always one the learner knows.
 - Where a word changes its stem (लड़का to लड़के से; Bengali বই + এ to বইতে), the rule card and the answer say so, as `docs/DECK-FORMAT.md` asks of a card's notes.
-- The language bar is drawn simplified, as in `hours-per-language.html`; the lesson summary is the built one with its tiles reduced to three and the skill rows left out, to keep the page about the new card.
+- The language bar is drawn simplified; the lesson summary is the built one with its tiles reduced to three and the skill rows left out, to keep the page about the new card.
 - Fonts: Roboto, Noto Sans Devanagari and Noto Sans Bengali from Google Fonts.

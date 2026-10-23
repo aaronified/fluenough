@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Progress shows hours spent (each answer at most a minute) and about how many hours are left to the end of B1, in a tile row under Words and Level; tapping it opens a popup with each language's hours (#227).
+
 ### Changed
 
 - The IPA course is one entry in the list of languages, the whole chart: "IPA: my languages" is gone, with its setting, and the card tags that picked the symbols of your languages stay for focusing. Progress is shared by card, so nothing is lost; "The sounds of this word" is unchanged (#735).
