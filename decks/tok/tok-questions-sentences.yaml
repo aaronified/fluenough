@@ -11,8 +11,8 @@ cards:
     ipa: "ˈsina ˈwile e ˈseme"
     pos: "phrase"
     bases:
-      - { word: "wile", base: "wile" }
-      - { word: "e", base: "e" }
+      - { word: "wile", ref: "tok-0086" }
+      - { word: "e", ref: "tok-0102" }
     confusables:
       - { id: "w1", ref: "tok-0003", kind: "word" }
       - { id: "w2", ref: "tok-0002", kind: "word" }
@@ -29,7 +29,7 @@ cards:
     pos: "phrase"
     bases:
       - { word: "ni", ref: "tok-0063" }
-      - { word: "li", base: "li" }
+      - { word: "li", ref: "tok-0101" }
     confusables:
       - { id: "w1", ref: "tok-0004", kind: "word" }
       - { id: "w2", ref: "tok-0002", kind: "word" }
