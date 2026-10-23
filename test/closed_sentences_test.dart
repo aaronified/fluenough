@@ -78,11 +78,13 @@ void main() {
     final l10n = l10nOf(tester);
 
     final waiting = find.textContaining('Waiting for');
-    await tester.scrollUntilVisible(
-      waiting.first,
-      300,
-      scrollable: find.byType(Scrollable).first,
-    );
+    // The page is a lazy list: scroll until a closed sentence is built.
+    for (var i = 0; i < 40 && waiting.evaluate().isEmpty; i++) {
+      await tester.drag(find.byType(Scrollable).first, const Offset(0, -400));
+      await tester.pump();
+    }
+    await tester.ensureVisible(waiting.first);
+    await tester.pumpAndSettle();
     expect(waiting, findsWidgets);
     expect(tester.takeException(), isNull, reason: 'no overflow at 1.4x');
 
