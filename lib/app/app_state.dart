@@ -2102,7 +2102,7 @@ class AppState extends ChangeNotifier {
     bool alike(Card c) =>
         c.id != card.id &&
         c is! QuestionCard &&
-        c is! NumberCard &&
+        !c.practiceOnly &&
         c.isGrammarCell == cell &&
         ask.optionOf(c) != right;
     final own = entry.cards.where(alike).toList();
@@ -2220,9 +2220,9 @@ class AppState extends ChangeNotifier {
 
   /// Whether hearing [card] asks for what was heard rather than what it
   /// means: a letter or a digit (`pos`), a card marked `hears: form`
-  /// ([Card.hearsForm]), which is script practice (ADR-0034), or a generated
-  /// number.
-  bool hearsForm(Card card) => card is NumberCard || card.hearsForm;
+  /// ([Card.hearsForm]), which is script practice (ADR-0034); a generated
+  /// number is marked so.
+  bool hearsForm(Card card) => card.hearsForm;
 
   /// At most [limit] of [items], one per word, picked at random: a quick
   /// revision (ADR-0029). All of them, in order, when [limit] is null.

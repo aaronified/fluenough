@@ -1,9 +1,13 @@
 // What Hear asks, a form or a meaning, is a property of the card's own data
 // (#522, step 7): a letter or a digit by its `pos`, a word marked
 // `hears: form`, or a generated number; never the deck it sits in.
+import 'dart:io';
+import 'dart:math';
+
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/core/data/deck_parser.dart';
+import 'package:fluenough/core/data/number_rules_parser.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
@@ -32,7 +36,7 @@ $cards''';
 
 void main() {
   group('what Hear asks of a card', () {
-    final number = NumberCard(
+    final number = numberCard(
       number: 2,
       spellings: const <String>['do'],
       rulesId: 'hi',
@@ -49,6 +53,33 @@ void main() {
       expect(state.hearsForm(number), isTrue);
       expect(state.hearsForm(card('te-4', pos: 'noun')), isFalse);
       expect(state.hearsForm(card('te-5')), isFalse);
+    });
+
+    test('a generated number is ordinary card data: practice only, heard as '
+        'its form and typed as digits, where no other card is', () {
+      expect(number.practiceOnly, isTrue);
+      expect(number.hears, 'form');
+      expect(number.acceptedAnswers(DrillMode.listening), <String>['2']);
+      expect(number.acceptedAnswers(DrillMode.production), <String>['do']);
+      final word = card('te-6', pos: 'noun');
+      expect(word.practiceOnly, isFalse);
+      expect(word.acceptedAnswers(DrillMode.listening), <String>['అ']);
+    });
+
+    test('number practice is never logged: its items carry no review state '
+        'and every card is practice only', () {
+      final items = numberPractice(
+        parseNumberRules(
+          File('decks/hi/hi-numbers.yaml').readAsStringSync(),
+          source: 'hi-numbers.yaml',
+        ),
+        deckId: 'hi-en-numbers-big',
+        modes: DrillMode.vocabulary,
+        random: Random(1),
+      );
+      expect(items, isNotEmpty);
+      expect(items.every((i) => i.state == null), isTrue);
+      expect(items.every((i) => i.card.practiceOnly), isTrue);
     });
   });
 
