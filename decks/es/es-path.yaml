@@ -75,11 +75,8 @@ units:
   # 3. No script units: Spanish is written in Latin letters.
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
-  - planned: { id: "es-about-me", theme: "about-me", words: 25 }
-    listening_passages:
-      - { id: "introducing-yourself", text: { "en": "Introducing yourself to a new classmate" } }
-    reading_passages:
-      - { id: "registration-form", text: { "en": "A simple registration form: name, age, country, language" } }
+  - decks: ["es-about-me", "es-about-me-sentences", "es-reading-about-me", "*"]
+    words: 22
   - decks: ["es-core-100"]
     words: 26
   - planned: { id: "es-everyday-verbs", theme: "everyday-verbs", words: 40 }
