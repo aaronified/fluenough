@@ -895,41 +895,46 @@ class _Result extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    return ListView(
+    // Not a lazy list: the result is short, and every part of it, the way on
+    // included, is built, as it was before the choice was added (#761).
+    return SingleChildScrollView(
       padding: const EdgeInsetsDirectional.all(AppSizes.gutter),
-      children: <Widget>[
-        for (final (i, line) in lines.indexed) ...<Widget>[
-          Text(
-            line,
-            style: i == lines.length - 1 - (noFurther ? 1 : 0)
-                ? theme.textTheme.titleLarge
-                : theme.textTheme.bodyLarge,
-          ),
-          const SizedBox(height: 12),
-        ],
-        ?choice,
-        const SizedBox(height: 20),
-        FilledButton(
-          style: AppButtonStyles.tall(context),
-          onPressed: onNext,
-          child: Text(last ? l10n.placementDone : l10n.placementNext),
-        ),
-        if (onTryAgain != null) ...<Widget>[
-          const SizedBox(height: 24),
-          if (tryAgainNote case final note?)
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          for (final (i, line) in lines.indexed) ...<Widget>[
             Text(
-              note,
-              style: theme.textTheme.bodyMedium!.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
-              ),
+              line,
+              style: i == lines.length - 1 - (noFurther ? 1 : 0)
+                  ? theme.textTheme.titleLarge
+                  : theme.textTheme.bodyLarge,
             ),
-          const SizedBox(height: 8),
-          OutlinedButton(
-            onPressed: onTryAgain,
-            child: Text(l10n.placementTryAgain),
+            const SizedBox(height: 12),
+          ],
+          ?choice,
+          const SizedBox(height: 20),
+          FilledButton(
+            style: AppButtonStyles.tall(context),
+            onPressed: onNext,
+            child: Text(last ? l10n.placementDone : l10n.placementNext),
           ),
+          if (onTryAgain != null) ...<Widget>[
+            const SizedBox(height: 24),
+            if (tryAgainNote case final note?)
+              Text(
+                note,
+                style: theme.textTheme.bodyMedium!.copyWith(
+                  color: theme.colorScheme.onSurfaceVariant,
+                ),
+              ),
+            const SizedBox(height: 8),
+            OutlinedButton(
+              onPressed: onTryAgain,
+              child: Text(l10n.placementTryAgain),
+            ),
+          ],
         ],
-      ],
+      ),
     );
   }
 }

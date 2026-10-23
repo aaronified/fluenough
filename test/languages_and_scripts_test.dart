@@ -1478,7 +1478,10 @@ void main() {
       await answerShown(tester);
       await tapText(tester, l10n.placementStop);
       expect(find.text(l10n.placedReviewQuestion), findsOneWidget);
-      expect(find.text(l10n.placedReviewDefault), findsOneWidget);
+      expect(
+        find.text(l10n.placedReviewDefault, findRichText: true),
+        findsOneWidget,
+      );
       // Nothing changed: the default is what is saved.
       await tapText(tester, l10n.placementDone);
       expect(state.settings.placedReviewOf('hi'), PlacedReview.spotCheck);

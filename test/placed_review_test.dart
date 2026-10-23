@@ -8,7 +8,6 @@ import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/grading/self_grade.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
-import 'package:fluenough/core/models/review_event.dart' show ProgressKey;
 import 'package:fluenough/core/scheduling/deck_sampling.dart';
 import 'package:fluenough/core/scheduling/placed_review.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
@@ -20,20 +19,8 @@ void main() {
     final later = placedAt.add(const Duration(days: 90));
     final cards = <Card>[
       for (var i = 0; i < 10; i++)
-        Card(
-          id: 'p$i',
-          deckId: 'd',
-          target: 't$i',
-          native: 'n$i',
-          modes: const {DrillMode.recognition},
-        ),
-      const Card(
-        id: 'later',
-        deckId: 'd',
-        target: 'tl',
-        native: 'nl',
-        modes: {DrillMode.recognition},
-      ),
+        Card(id: 'p$i', deckId: 'd', target: 't$i', native: 'n$i'),
+      const Card(id: 'later', deckId: 'd', target: 'tl', native: 'nl'),
     ];
 
     /// Ten words placed as known, and one the learner learned the day after.
