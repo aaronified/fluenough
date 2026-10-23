@@ -121,6 +121,8 @@ regions:
 alphabet:
   - "zh-strokes-radicals"
   - "zh-reading-strokes-radicals"
+  - "zh-characters-1"
+  - "zh-reading-characters-1"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
@@ -189,7 +191,8 @@ units:
       - { id: "naming-the-strokes", text: { "en": "A teacher names the basic strokes and the order they are written in, while writing ren, person, and kou, mouth" } }
     reading_passages:
       - { id: "radical-chart", text: { "en": "A chart of common radicals with their meanings: water, hand, mouth, person, wood" } }
-  - planned: { id: "zh-characters-1", grammar: "script-characters-1", words: 0 }
+  - decks: ["zh-characters-1", "zh-reading-characters-1"]
+    words: 10
     listening_passages:
       - { id: "one-two-three", text: { "en": "Hearing the words whose characters are taught: the numbers, person, big, small, I, you" } }
     reading_passages:
