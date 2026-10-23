@@ -285,6 +285,9 @@ void main() {
       expect(state.shellTab.value, ShellTab.decks);
 
       final search = find.byType(SearchBar);
+      // The path opens scrolled to the unit up next, the bar above the screen.
+      await tester.ensureVisible(search);
+      await tester.pumpAndSettle();
       await tester.tap(search);
       await tester.pump();
       expect(
