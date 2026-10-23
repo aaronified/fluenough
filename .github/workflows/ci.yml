@@ -195,6 +195,15 @@ jobs:
       # generated file. Without this step the first PR that lands a drift
       # schema fails analyse, test and build on a file CI never made.
       - run: dart run build_runner build
+      # The tests read decks/index.json (RepositoryDeckSource, the catalog
+      # tests), and the committed one is regenerated only after merge, so
+      # write this change's own first.
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - name: Regenerate the index for this change's decks
+        run: python3 tools/deck_index.py
       - run: flutter test --total-shards 8 --shard-index ${{ matrix.shard }}
 
   # Real downloads from GitHub through the app's own fetcher: 0.4.0

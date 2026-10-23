@@ -28,6 +28,7 @@ permissions:
 jobs:
   index:
     name: Regenerate decks/index.json
+    timeout-minutes: 90
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -49,5 +50,13 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add decks/index.json README.md
           git commit -m "Regenerate decks/index.json"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push attempt $attempt failed."
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 5))
+          done
+          echo "::error::Could not push the regenerated decks/index.json to main. Most likely the token may not bypass main's pull-request rule: WIKI_TOKEN must be allowed to bypass it in the ruleset (GITHUB_TOKEN cannot)."
+          exit 1
