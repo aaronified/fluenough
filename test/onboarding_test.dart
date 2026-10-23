@@ -190,6 +190,10 @@ void main() {
         final gesture = await tester.startGesture(
           tester.getCenter(find.byType(TodayPage)),
         );
+        // The first move only wins the drag: the pages follow the finger from
+        // where it won, like a finger that moves in many small steps.
+        await gesture.moveBy(const Offset(-24, 0));
+        await tester.pump();
         await gesture.moveBy(Offset(-width * 0.3, 0));
         await tester.pump();
         expect(
@@ -217,6 +221,7 @@ void main() {
             matching: find.byIcon(Icons.insert_chart_outlined),
           ),
         );
+        await tester.pump(); // the slide's first frame starts its clock
         await tester.pump(const Duration(milliseconds: 150));
         expect(tester.getTopLeft(find.byType(StatsPage)).dx, greaterThan(0));
         await tester.pumpAndSettle(const Duration(seconds: 2));
@@ -275,6 +280,8 @@ void main() {
       final gesture = await tester.startGesture(
         tester.getCenter(find.byType(TodayPage)),
       );
+      await gesture.moveBy(const Offset(-24, 0)); // wins the drag
+      await tester.pump();
       await gesture.moveBy(Offset(-width * 0.7, 0));
       await tester.pump();
       expect(selected(tester), ShellTab.decks.index);
@@ -305,6 +312,7 @@ void main() {
         'the nearest tab', (tester) async {
       final state = await pumpPager(tester);
       await tester.tap(barIcon(Icons.insert_chart_outlined));
+      await tester.pump(); // the slide's first frame starts its clock
       await tester.pump(const Duration(milliseconds: 100));
       final caught = tester.getTopLeft(find.byType(StatsPage)).dx;
       expect(caught, greaterThan(0));
