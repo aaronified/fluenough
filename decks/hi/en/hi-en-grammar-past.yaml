@@ -21,7 +21,14 @@ table:
     "formal-f": "you, formal, feminine"
     "they-m": "they, masculine"
     "they-f": "they, feminine"
+    "object-masc-sg": "object, masculine, singular"
+    "object-fem-sg": "object, feminine, singular"
+    "object-masc-pl": "object, masculine, plural"
+    "object-fem-pl": "object, feminine, plural"
 rules:
   "hi-rule-past":
     name: "-आ (-ā), -ई (-ī), -ए (-ē), -ईं (-īm̐): the simple past"
-    explanation: "With a verb that takes no ने (nē), the past agrees with the doer: -आ (-ā), -ई (-ī), -ए (-ē), -ईं (-īm̐). जाना (jānā) is irregular: गया (gayā). Some writers spell आए (āē) and गई (gaī) as आये (āyē) and गयी (gayī). Verbs that take no ने, such as आना (ānā), जाना (jānā), लाना (lānā) and भूलना (bhūlnā), are in this table. Verbs that take ने, such as लिखना (likhnā), to write, are not: with an object, the doer takes ने and the verb agrees with the object, not the doer. मैंने चिट्ठी लिखी (mainnē ciṭṭhī likhī), I wrote the letter, with a feminine object; मैंने गीत लिखा (mainnē gīt likhā), I wrote the song, with a masculine one. The same rule holds for the present perfect."
+    explanation: "With a verb that takes no ने (nē), the past agrees with the doer: -आ (-ā), -ई (-ī), -ए (-ē), -ईं (-īm̐). जाना (jānā) is irregular: गया (gayā). Some writers spell आए (āē) and गई (gaī) as आये (āyē) and गयी (gayī). Verbs such as आना (ānā), जाना (jānā), लाना (lānā), भूलना (bhūlnā) and बोलना (bōlnā) are here: वह बोला (vah bōlā), he spoke. The rows are by the doer, as for any intransitive verb."
+  "hi-rule-ergative-past":
+    name: "The object's form: -ा (-ā), -ी (-ī), -े (-ē), -ीं (-īm̐) with ने (nē) on the doer"
+    explanation: "With an object, a verb such as करना (karnā), to do, or लिखना (likhnā), to write, takes ने (nē) on the doer, and the verb agrees with the object, not the doer. The four columns are the object's gender and number: a masculine singular object takes -ा (-ā), a feminine singular object -ी (-ī), a masculine plural object -े (-ē), a feminine plural object -ीं (-īm̐). मैंने चिट्ठी लिखी (mainnē ciṭṭhī likhī), I wrote the letter, with a feminine object; मैंने गीत लिखा (mainnē gīt likhā), I wrote the song, with a masculine one. Whatever the doer's gender, the verb does not change for it."

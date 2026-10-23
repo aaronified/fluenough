@@ -46,6 +46,10 @@ table:
     "pluperfect-formal-f": "had done, you, formal, feminine"
     "pluperfect-they-m": "had done, they, masculine"
     "pluperfect-they-f": "had done, they, feminine"
+    "pluperfect-object-masc-sg": "had done, object, masculine, singular"
+    "pluperfect-object-fem-sg": "had done, object, feminine, singular"
+    "pluperfect-object-masc-pl": "had done, object, masculine, plural"
+    "pluperfect-object-fem-pl": "had done, object, feminine, plural"
 rules:
   "hi-rule-past-continuous":
     name: "रहा (rahā), रही (rahī), रहे (rahē), then था (thā), थी (thī), थे (thē), थीं (thīm̐): was doing"
@@ -54,5 +58,8 @@ rules:
     name: "-ता (-tā), -ती (-tī), -ते (-tē), then था (thā): used to"
     explanation: "The present stem form, -ता (-tā), -ती (-tī) or -ते (-tē), joined to था (thā), थी (thī), थे (thē) or थीं (thīm̐): करता था (kartā thā), used to do. Any verb takes it, with or without an object."
   "hi-rule-past-pluperfect":
-    name: "The past form, then था (thā): had done"
-    explanation: "The simple past form, joined to था (thā), थी (thī), थे (thē) or थीं (thīm̐): गया था (gayā thā), had gone. गया था (gayā thā) is also the plain past for something further back: पिछले साल मैं दिल्ली गया था (pichlē sāl maim̐ dillī gayā thā), I went to Delhi last year. A verb that takes ने in the simple past takes it here too, so its cells are left empty rather than given an intransitive form."
+    name: "The past form, then था (thā): had gone, for a verb with no ने"
+    explanation: "The simple past form, joined to था (thā), थी (thī), थे (thē) or थीं (thīm̐): गया था (gayā thā), had gone. गया था (gayā thā) is also the plain past for something further back: पिछले साल मैं दिल्ली गया था (pichlē sāl maim̐ dillī gayā thā), I went to Delhi last year. A verb that takes ने is in the next rule."
+  "hi-rule-ergative-pluperfect":
+    name: "The object's form, then था (thā), थी (thī), थे (thē), थीं (thīm̐): had done, with ने (nē)"
+    explanation: "With an object, the doer takes ने (nē) as in the simple past, and the verb agrees with the object: किया था (kiyā thā), had done (masculine singular object); की थी (kī thī), feminine singular; किए थे (kiē thē), masculine plural; की थीं (kī thīm̐), feminine plural. मैंने चिट्ठी लिखी थी (mainnē ciṭṭhī likhī thī), I had written the letter."
