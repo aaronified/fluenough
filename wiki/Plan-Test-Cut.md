@@ -490,7 +490,7 @@ landed after it). Paths are under `test/`.
 | `features/decks/course_hours_test.dart` | 4 | delete | 0 | Study hours keeps the arithmetic; the card is drawn by the per-screen check. |
 | `features/decks/deck_content_test.dart` | 9 | merge into `progress_test.dart` | 1 | Search matches a deck, its language, theme or unit. |
 | `features/decks/deck_detail_page_test.dart` | 12 | merge into `progress_test.dart` | 1 | A skill button starts that skill on the deck; chosen tags narrow Review all due. |
-| `features/decks/deck_status_test.dart` | 8 | merge into `progress_test.dart` | 2 | Done once every card is learned in every skill on; a finished deck offers Revise, which records nothing. |
+| `features/decks/deck_status_test.dart` | 8 | merge into `progress_test.dart` | 2 | Done once every card is learned in every skill on; a finished deck offers Revise, which records every answer. |
 | `features/decks/decks_page_test.dart` | 21 | merge into `progress_test.dart` | 2 | The path opens at the unit up next; Where I am; a broken file shows its line; a failed catalog offers Try again. |
 | `features/decks/import_page_test.dart` | 5 | delete | 0 | The added-decks test shows a refused file's reason. |
 | `features/decks/inspect_page_test.dart` | 10 | merge into `progress_test.dart` | 1 | Inspect shows every card with its id and D per skill. |
