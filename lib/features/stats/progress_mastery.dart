@@ -19,10 +19,9 @@ class ProgressMastery {
     required this.started,
     required this.week,
     required this.now,
-    required List<_Part> parts,
-    required DateTime at,
-  }) : _parts = parts,
-       _at = at;
+    required this._parts,
+    required this._at,
+  });
 
   /// What Progress shows for [language] (every language when null), worked
   /// out again only when the progress, the decks or the day has changed:
@@ -70,10 +69,7 @@ class ProgressMastery {
     ];
     final codes = language != null
         ? <String>[language]
-        : <String>{
-            for (final e in log)
-              if (languageOf(e.deckId) case final code?) code,
-          }.toList();
+        : <String>{for (final e in log) ?languageOf(e.deckId)}.toList();
 
     final parts = <_Part>[];
     Milestone? level;
@@ -167,10 +163,7 @@ class ProgressMastery {
     final path = entries.isEmpty ? null : state.pathOf(entries.first);
     final inCourse = path == null
         ? entries
-        : <DeckEntry>[
-            for (final id in path.deckIds)
-              if (state.deckById(id) case final entry?) entry,
-          ];
+        : <DeckEntry>[for (final id in path.deckIds) ?state.deckById(id)];
     final alphabet = path?.alphabet ?? const <String>{};
     final scriptCards = <String>{};
     final words = <String>{};

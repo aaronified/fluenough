@@ -9,6 +9,7 @@ import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/progress/mastery.dart';
 import 'package:fluenough/core/progress/practice_week.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
+import 'package:fluenough/features/stats/how_you_learn_page.dart';
 import 'package:fluenough/features/stats/leeches.dart';
 import 'package:fluenough/features/stats/level_badge.dart';
 import 'package:fluenough/features/stats/over_time_page.dart';
@@ -24,7 +25,7 @@ import 'package:fluenough/app/features.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:intl/intl.dart';
+import 'package:intl/intl.dart' hide TextDirection;
 
 import 'support/harness.dart';
 
@@ -171,16 +172,16 @@ void main() {
   });
 
   group('level and start date', () {
-    CoursePath path() => CoursePath(
+    CoursePath path() => const CoursePath(
       id: 'xx-path',
       language: 'xx',
       native: 'en',
-      units: const <List<String>>[
+      units: <List<String>>[
         <String>['xx-en-a'],
         <String>['xx-en-b'],
         <String>['xx-en-c'],
       ],
-      plan: const <PlanUnit>[
+      plan: <PlanUnit>[
         PlanUnit(decks: <String>['xx-en-a'], milestone: Milestone.a1),
         PlanUnit(decks: <String>['xx-en-b'], milestone: Milestone.a2),
         PlanUnit(decks: <String>['xx-en-c'], milestone: Milestone.b1),
@@ -449,6 +450,17 @@ void main() {
       expect(find.text(l10n.progressMasteryChart), findsOneWidget);
       expect(find.text(l10n.progressTaughtChart), findsOneWidget);
       expect(tester.takeException(), isNull);
+
+      // How you learn is an entry below the two charts.
+      await tester.scrollUntilVisible(
+        find.text(l10n.howYouLearnTitle),
+        200,
+        scrollable: find.byType(Scrollable).first,
+      );
+      await tester.tap(find.text(l10n.howYouLearnTitle));
+      await tester.pumpAndSettle();
+      expect(find.byType(HowYouLearnPage), findsOneWidget);
+      expect(tester.takeException(), isNull);
     });
   });
 
@@ -522,8 +534,7 @@ void main() {
       final entry = spanish(state);
       final path = state.pathOf(entry)!;
       final inCourse = <DeckEntry>[
-        for (final id in path.deckIds)
-          if (state.deckById(id) case final e?) e,
+        for (final id in path.deckIds) ?state.deckById(id),
       ];
       var words = 0;
       var grammar = 0;

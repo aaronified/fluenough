@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
+import '../../app/routes.dart';
 import '../../core/progress/mastery.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/pace_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import 'progress_mastery.dart';
 import 'skill_lines.dart';
@@ -12,7 +14,8 @@ import 'skill_lines.dart';
 /// with one line per skill. "Mastery over time" is known ÷ the B1 total,
 /// which ends at the star's filled shape; "Taught over time" is known ÷
 /// taught, which ends at its outline, a skill with nothing taught staying at
-/// 0. A line is told apart by colour, dash and marker.
+/// 0. A line is told apart by colour, dash and marker. Below them, How you
+/// learn opens that page.
 ///
 /// Counts the language the bar shows, or every language with All on.
 class OverTimePage extends StatelessWidget {
@@ -53,6 +56,14 @@ class OverTimePage extends StatelessWidget {
                   // Nothing taught stays at 0.
                   value: (m) => m.outline ?? 0,
                   dashWhenUntaught: true,
+                ),
+                const SizedBox(height: 16),
+                PaceStrip(
+                  title: l10n.howYouLearnTitle,
+                  onTap: () => AppNavigator.openHowYouLearn(
+                    context,
+                    language: state.progressLanguage,
+                  ),
                 ),
               ],
             );
