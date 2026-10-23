@@ -292,6 +292,7 @@ AppState spanishLearner() => AppState.test(
 /// The session the drill page is running.
 DrillSession sessionOf(WidgetTester tester) {
   for (final widget in <Widget>[
+    ...tester.widgetList(find.byType(SetDrill)),
     ...tester.widgetList(find.byType(GrammarDrill)),
     ...tester.widgetList(find.byType(TeachDrill)),
     ...tester.widgetList(find.byType(ChoiceDrill)),
@@ -299,6 +300,7 @@ DrillSession sessionOf(WidgetTester tester) {
     ...tester.widgetList(find.byType(RearrangeDrill)),
   ]) {
     return switch (widget) {
+      SetDrill(:final session) => session,
       GrammarDrill(:final session?) => session,
       TeachDrill(:final session) => session,
       ChoiceDrill(:final session) => session,
@@ -1925,20 +1927,34 @@ void main() {
         final state = await loaded(features: vocabOnly);
         expect(state.buildSession(const DrillRequest.today()).isEmpty, isTrue);
         final lesson = state.lessonFor(DrillRequest.lesson(language: 'es'));
-        expect(lesson.where((i) => i.ask == Ask.teach), hasLength(9));
+        // Nine words, and more when a set one of them belongs to comes whole
+        // (the lesson's cap does not hold back a set's members).
+        expect(
+          lesson.where((i) => i.ask == Ask.teach),
+          hasLength(greaterThanOrEqualTo(9)),
+        );
 
         {
           final state = await loaded(features: vocabOnly)
             ..showLanguage('es');
           final lesson = DrillRequest.lesson(language: 'es');
-          final check = state.lessonFor(lesson)[1];
+          // The set cards come first and record nothing; the first question
+          // is the first item that is neither a teaching card nor a set.
+          final check = state
+              .lessonFor(lesson)
+              .firstWhere((i) => i.ask != Ask.teach && i.ask != Ask.showSet);
           state.record(check, 4);
           expect(state.isTaught(check.card), isTrue);
           final today = state.buildSession(const DrillRequest.today());
           expect(today.fresh.map((i) => i.card.id), <String>[check.card.id]);
           expect(today.fresh.single.mode, isNot(check.mode));
+          // A set card still shows a taught member, marked Known; it is not
+          // taught or asked again.
           expect(
-            state.lessonFor(lesson).map((i) => i.card.id),
+            state
+                .lessonFor(lesson)
+                .where((i) => i.ask != Ask.showSet)
+                .map((i) => i.card.id),
             isNot(contains(check.card.id)),
           );
         }
@@ -2242,18 +2258,30 @@ void main() {
       final l10n = l10nOf(tester);
       expect(find.byType(LessonCard), findsOneWidget);
       expect(find.text(l10n.todayLessonTitle), findsOneWidget);
-      expect(find.text(l10n.todayLessonWords(9)), findsOneWidget);
+      // Nine words, plus the members of a set one of them belongs to, which
+      // come whole; the card says how many the lesson teaches.
+      final taught = lessonCardCount(
+        state.lessonFor(DrillRequest.lesson(language: 'es')),
+      );
+      expect(taught, greaterThanOrEqualTo(9));
+      expect(find.text(l10n.todayLessonWords(taught)), findsOneWidget);
       // Nothing to review yet: new words come in lessons.
       expect(find.text(l10n.todayAllDoneTitle), findsOneWidget);
 
       final planned = <SessionItem>[
         for (final item in state.lessonFor(DrillRequest.lesson(language: 'es')))
-          if (item.ask != Ask.teach)
+          if (item.ask != Ask.teach && item.ask != Ask.showSet)
             ...item.group.isEmpty ? <SessionItem>[item] : item.group,
       ].length;
       await tester.tap(find.text(l10n.todayLessonStart));
       await tester.pumpAndSettle();
-      // The first word is taught before it is asked, and nothing is recorded.
+      // A set card comes first, whole or in parts, and records nothing; then
+      // the first word is taught before it is asked.
+      while (sessionOf(tester).ask == Ask.showSet) {
+        expect(find.byType(SetDrill), findsOneWidget);
+        sessionOf(tester).learnt();
+        await tester.pumpAndSettle();
+      }
       expect(find.byType(TeachDrill), findsOneWidget);
       expect(find.text(l10n.drillTeachTitle), findsOneWidget);
       final first = sessionOf(tester).item.card;
@@ -2266,10 +2294,10 @@ void main() {
 
       await finishLesson(tester);
       expect(find.byType(SummaryPage), findsOneWidget);
-      // Nine words, each recorded in two skills but a grammar cell, which has
+      // Every word taught, each recorded in two skills but a grammar cell, which has
       // one, all right.
       final log = state.progress.log;
-      expect(log.map((e) => e.cardId).toSet(), hasLength(9));
+      expect(log.map((e) => e.cardId).toSet(), hasLength(taught));
       expect(log, hasLength(planned));
       // A right choice in Hear or Write records 3, a right choice or match
       // of a meaning seen 4 (ADR-0034): every answer is right.
@@ -2289,7 +2317,7 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.text(l10n.todayLessonDoneTitle), findsOneWidget);
       expect(find.text(l10n.todayAnotherLesson), findsOneWidget);
-      expect(find.text(l10n.todayNewWords(9)), findsOneWidget);
+      expect(find.text(l10n.todayNewWords(taught)), findsOneWidget);
     });
 
     testWidgets('Start review asks the words taught in their other skills', (
