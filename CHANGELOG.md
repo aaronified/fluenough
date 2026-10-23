@@ -7,8 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-10-23
+
 ### Added
 
+- After placement, choose per course how the placed words are reviewed: Set in stone (kept out of Today and counted as known; from a deck page the words can still be revised or practised, without writing reviews), Spot-check (the default: sampled, a miss widens coverage) or Keep reviewing; changeable from a Placed words row in Languages I'm learning, and switching away from Set in stone returns the words to reviews. A placement taken before this release has no saved placement time, so the choice does not apply to it (#761).
 - Progress shows the words mastered, the course's level (bronze, silver or gold) with its start date, a 7-day calendar with the streak as a line, and a six-skill mastery star that opens charts over time, in place of the stat tiles and the 12-week grid (#678).
 - Today has one button for the day (#521, #485): a ring that fills toward your minutes a day, with "12 of 15 min" under it and the split of reviews and new words, which mixes both in one session, the reviews you are most likely to have forgotten first; when the minutes are done it reads "Done for today", with a smaller "Keep going" for five more. When reviews have piled up beyond three days of your minutes, Today says so with how long they take and how soon you will catch up, and a "+ 5 min" button adds five minutes each tap (a long press takes five away). Quick revision is now a separate minus, start and plus: 5 minutes to begin with, in steps of 5, reviewing only. Each language you are learning has a Minutes a day setting in Languages I'm learning, 15 to begin with, from 5 to 60. A Situations card for cheatsheets of everyday phrases (#724) waits below, marked as incoming.
 - A lesson asks each skill as the first question type the card's data allows (the registry, not a switch on difficulty), and reads a card's single-base siblings, so a card with sibling forms, or a pattern cell with siblings, is also asked its grammar skills (form questions); lessons of cards without siblings are unchanged (#522).

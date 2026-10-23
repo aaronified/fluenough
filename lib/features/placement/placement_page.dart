@@ -9,6 +9,7 @@ import '../../app/placement.dart';
 import '../../app/placement_plan.dart';
 import '../../core/grading/romanised.dart';
 import '../../core/models/deck.dart';
+import '../../core/scheduling/placed_review.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
@@ -16,17 +17,20 @@ import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/target_text.dart';
 import '../../ui/widgets/reading_first.dart';
 import 'native_choice.dart';
+import 'placed_review_choice.dart';
 import 'placement_questions.dart';
 
 /// What placement found, by language: the decks placed as known; for a
 /// language with an alphabet, whether it is learned; for a language taught
 /// from more than one the learner speaks, which they chose; and how well
-/// the learner reads each script checked.
+/// the learner reads each script checked; and, for a language with words
+/// placed, how the learner chose to have them reviewed (#761).
 typedef PlacementFound = ({
   Map<String, Set<String>> placed,
   Map<String, bool> alphabet,
   Map<String, String> natives,
   Map<String, Map<String, ScriptStanding>> scripts,
+  Map<String, PlacedReview> review,
 });
 
 /// Placement for each of [languages] in turn (#117, #481, ADR-0013,
@@ -105,6 +109,10 @@ class _PlacementPageState extends State<PlacementPage> {
       <String, Map<String, ScriptStanding>>{};
   late final Map<String, bool> _alphabet = <String, bool>{...widget.alphabet};
   late final Map<String, String> _natives = <String, String>{...widget.natives};
+
+  /// How each language's placed words are reviewed, as chosen on its result;
+  /// Spot-check until then (#761).
+  final Map<String, PlacedReview> _review = <String, PlacedReview>{};
 
   /// Whether placement of the language has begun: its check, or I'm new.
   bool _begun = false;
@@ -324,6 +332,10 @@ class _PlacementPageState extends State<PlacementPage> {
         alphabet: Map<String, bool>.unmodifiable(_alphabet),
         natives: Map<String, String>.unmodifiable(_natives),
         scripts: Map<String, Map<String, ScriptStanding>>.unmodifiable(_found),
+        review: Map<String, PlacedReview>.unmodifiable(<String, PlacedReview>{
+          for (final MapEntry(:key, :value) in _placed.entries)
+            if (value.isNotEmpty) key: _review[key] ?? PlacedReview.fallback,
+        }),
       ));
     }
   }
@@ -432,9 +444,47 @@ class _PlacementPageState extends State<PlacementPage> {
             onTryAgain: _offersTryAgain ? () => _tryAgain(state) : null,
             last: _index + 1 == widget.languages.length,
             onNext: _next,
+            choice: _reviewChoice(l10n, state),
           ),
         },
       ),
+    );
+  }
+
+  /// The question of how the words just placed are reviewed (#761), under
+  /// the result; null when nothing was placed.
+  Widget? _reviewChoice(AppLocalizations l10n, AppState state) {
+    final decks = <DeckEntry>[
+      for (final id in _placed[_code] ?? const <String>{}) ?state.deckById(id),
+    ];
+    final words = decks.fold<int>(0, (n, deck) => n + deck.cards.length);
+    if (words == 0) return null;
+    final theme = Theme.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        Text(
+          l10n.placedReviewSummary(words, decks.length),
+          style: theme.textTheme.bodyMedium!.copyWith(
+            color: theme.colorScheme.onSurfaceVariant,
+          ),
+        ),
+        const SizedBox(height: 12),
+        Text(l10n.placedReviewQuestion, style: theme.textTheme.titleLarge),
+        const SizedBox(height: 12),
+        PlacedReviewOptions(
+          value: _review[_code] ?? PlacedReview.fallback,
+          tagged: PlacedReview.fallback,
+          onChanged: (choice) => setState(() => _review[_code] = choice),
+        ),
+        Text(
+          l10n.placedReviewFoot,
+          textAlign: TextAlign.center,
+          style: theme.textTheme.bodySmall!.copyWith(
+            color: theme.colorScheme.onSurfaceVariant,
+          ),
+        ),
+      ],
     );
   }
 
@@ -828,6 +878,7 @@ class _Result extends StatelessWidget {
     required this.onTryAgain,
     required this.last,
     required this.onNext,
+    this.choice,
   });
 
   final List<String> lines;
@@ -837,44 +888,53 @@ class _Result extends StatelessWidget {
   final bool last;
   final VoidCallback onNext;
 
+  /// How the placed words are reviewed, asked before the way on.
+  final Widget? choice;
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    return ListView(
+    // Not a lazy list: the result is short, and every part of it, the way on
+    // included, is built, as it was before the choice was added (#761).
+    return SingleChildScrollView(
       padding: const EdgeInsetsDirectional.all(AppSizes.gutter),
-      children: <Widget>[
-        for (final (i, line) in lines.indexed) ...<Widget>[
-          Text(
-            line,
-            style: i == lines.length - 1 - (noFurther ? 1 : 0)
-                ? theme.textTheme.titleLarge
-                : theme.textTheme.bodyLarge,
-          ),
-          const SizedBox(height: 12),
-        ],
-        const SizedBox(height: 20),
-        FilledButton(
-          style: AppButtonStyles.tall(context),
-          onPressed: onNext,
-          child: Text(last ? l10n.placementDone : l10n.placementNext),
-        ),
-        if (onTryAgain != null) ...<Widget>[
-          const SizedBox(height: 24),
-          if (tryAgainNote case final note?)
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          for (final (i, line) in lines.indexed) ...<Widget>[
             Text(
-              note,
-              style: theme.textTheme.bodyMedium!.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
-              ),
+              line,
+              style: i == lines.length - 1 - (noFurther ? 1 : 0)
+                  ? theme.textTheme.titleLarge
+                  : theme.textTheme.bodyLarge,
             ),
-          const SizedBox(height: 8),
-          OutlinedButton(
-            onPressed: onTryAgain,
-            child: Text(l10n.placementTryAgain),
+            const SizedBox(height: 12),
+          ],
+          ?choice,
+          const SizedBox(height: 20),
+          FilledButton(
+            style: AppButtonStyles.tall(context),
+            onPressed: onNext,
+            child: Text(last ? l10n.placementDone : l10n.placementNext),
           ),
+          if (onTryAgain != null) ...<Widget>[
+            const SizedBox(height: 24),
+            if (tryAgainNote case final note?)
+              Text(
+                note,
+                style: theme.textTheme.bodyMedium!.copyWith(
+                  color: theme.colorScheme.onSurfaceVariant,
+                ),
+              ),
+            const SizedBox(height: 8),
+            OutlinedButton(
+              onPressed: onTryAgain,
+              child: Text(l10n.placementTryAgain),
+            ),
+          ],
         ],
-      ],
+      ),
     );
   }
 }

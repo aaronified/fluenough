@@ -16,6 +16,7 @@ import '../../core/decks/deck_index.dart' show decksBeforeReady;
 import '../../core/decks/ipa_course.dart';
 import '../../core/decks/language_catalog.dart';
 import '../../core/decks/notation.dart';
+import '../../core/scheduling/placed_review.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
@@ -356,6 +357,12 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         learned: learns,
         chosen: chosen,
         knows: spoken.contains(code),
+        // The words placement credited, for a course with some (#761).
+        placedReview: learns && state.settings.placedAtOf(code).isNotEmpty
+            ? state.settings.placedReviewOf(code)
+            : null,
+        onPlacedReview: (choice) =>
+            state.settings.setPlacedReview(code, choice),
         scripts: scripts,
         initialScripts: _scriptsFor(state, language),
         storage: size == null
@@ -626,6 +633,10 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
                   found.scripts[code] ?? const <String, ScriptStanding>{},
               native: native,
             );
+            settings.setPlacedReview(
+              code,
+              found.review[code] ?? settings.placedReviewOf(code),
+            );
             if (skipped && settings.learnsAlphabet(code)) {
               state.skipScriptLessons(code, true, native: native);
             }
@@ -811,6 +822,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
             chosen,
             found.placed,
             standings: found.scripts,
+            review: found.review,
             alphabet: <String, bool>{...alphabet, ...found.alphabet},
             scripts: scripts,
             natives: <String, String>{...natives, ...found.natives},
@@ -829,6 +841,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     Map<String, Set<String>> placed, {
     Map<String, Map<String, ScriptStanding>> standings =
         const <String, Map<String, ScriptStanding>>{},
+    Map<String, PlacedReview> review = const <String, PlacedReview>{},
     Map<String, bool> alphabet = const <String, bool>{},
     Map<String, Set<String>> scripts = const <String, Set<String>>{},
     Map<String, String> natives = const <String, String>{},
@@ -866,6 +879,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         standings: standings[key] ?? const <String, ScriptStanding>{},
         native: state.courseNative(key),
       );
+      settings.setPlacedReview(key, review[key] ?? PlacedReview.fallback);
     }
     // A passed script test places the script lessons, whatever placement
     // found (#554).
