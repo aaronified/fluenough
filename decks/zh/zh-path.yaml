@@ -241,7 +241,8 @@ units:
       - { id: "where-is-my-key", text: { "en": "Looking for a key: on, under, in, next to" } }
     reading_passages:
       - { id: "room-layout", text: { "en": "A note saying where things are in a room" } }
-  - planned: { id: "zh-more-verbs", theme: "more-verbs", words: 30 }
+  - decks: ["zh-more-verbs", "zh-more-verbs-sentences", "zh-reading-more-verbs", "*"]
+    words: 30
     listening_passages:
       - { id: "weekend-chores", text: { "en": "Someone lists what they will do this weekend" } }
     reading_passages:
