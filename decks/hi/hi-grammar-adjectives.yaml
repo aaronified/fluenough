@@ -1,88 +1,101 @@
 schema: 1
 id: "hi-grammar-adjectives"
 part: "core"
-kind: "grammar"
+kind: "rules"
 language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "grammar"]
-pattern:
-  slots: ["with a feminine noun", "with a masculine plural, or before a postposition"]
-  entries:
-    - lemma: "अच्छा"
-      key: "achchhaa"
-      reading: "acchā"
-      ipa: "ətʃtʃʰaː"
-      forms:
-        "with a feminine noun": "अच्छी"
-        "with a masculine plural, or before a postposition": "अच्छे"
-      readings:
-        "with a feminine noun": "acchī"
-        "with a masculine plural, or before a postposition": "acchē"
-      ipas:
-        "with a feminine noun": "ətʃtʃʰiː"
-        "with a masculine plural, or before a postposition": "ətʃtʃʰeː"
-    - lemma: "बड़ा"
-      key: "badaa"
-      reading: "baṛā"
-      ipa: "bəɽaː"
-      forms:
-        "with a feminine noun": "बड़ी"
-        "with a masculine plural, or before a postposition": "बड़े"
-      readings:
-        "with a feminine noun": "baṛī"
-        "with a masculine plural, or before a postposition": "baṛē"
-      ipas:
-        "with a feminine noun": "bəɽiː"
-        "with a masculine plural, or before a postposition": "bəɽeː"
-    - lemma: "छोटा"
-      key: "chhotaa"
-      reading: "chōṭā"
-      ipa: "tʃʰoːʈaː"
-      forms:
-        "with a feminine noun": "छोटी"
-        "with a masculine plural, or before a postposition": "छोटे"
-      readings:
-        "with a feminine noun": "chōṭī"
-        "with a masculine plural, or before a postposition": "chōṭē"
-      ipas:
-        "with a feminine noun": "tʃʰoːʈiː"
-        "with a masculine plural, or before a postposition": "tʃʰoːʈeː"
-    - lemma: "नया"
-      key: "nayaa"
-      reading: "nayā"
-      ipa: "nəjaː"
-      forms:
-        "with a feminine noun": "नई"
-        "with a masculine plural, or before a postposition": "नए"
-      readings:
-        "with a feminine noun": "naī"
-        "with a masculine plural, or before a postposition": "naē"
-      ipas:
-        "with a feminine noun": "nəiː"
-        "with a masculine plural, or before a postposition": "nəeː"
-    - lemma: "सुंदर"
-      key: "sundar"
-      reading: "sundar"
-      ipa: "sʊnd̪ər"
-      forms:
-        "with a feminine noun": "सुंदर"
-        "with a masculine plural, or before a postposition": "सुंदर"
-      readings:
-        "with a feminine noun": "sundar"
-        "with a masculine plural, or before a postposition": "sundar"
-      ipas:
-        "with a feminine noun": "sʊnd̪ər"
-        "with a masculine plural, or before a postposition": "sʊnd̪ər"
-    - lemma: "लाल"
-      key: "laal"
-      reading: "lāl"
-      ipa: "laːl"
-      forms:
-        "with a feminine noun": "लाल"
-        "with a masculine plural, or before a postposition": "लाल"
-      readings:
-        "with a feminine noun": "lāl"
-        "with a masculine plural, or before a postposition": "lāl"
-      ipas:
-        "with a feminine noun": "laːl"
-        "with a masculine plural, or before a postposition": "laːl"
+table:
+  applies_to:
+    pos: ["adj"]
+    except: ["hi-0900", "hi-0901", "hi-0904", "hi-0905", "hi-0908", "hi-0910", "hi-0912", "hi-0913", "hi-0916", "hi-0921", "hi-0340", "hi-1017", "hi-1018", "hi-0479", "hi-0598", "hi-0599", "hi-1073", "hi-1074"]
+  slots: ["masculine-singular", "masculine-plural", "feminine"]
+  rows:
+    - word: "hi-0894"
+      forms: { "masculine-singular": "बड़ा", "masculine-plural": "बड़े", "feminine": "बड़ी" }
+      readings: { "masculine-singular": "baṛā", "masculine-plural": "baṛē", "feminine": "baṛī" }
+    - word: "hi-0895"
+      forms: { "masculine-singular": "छोटा", "masculine-plural": "छोटे", "feminine": "छोटी" }
+      readings: { "masculine-singular": "chōṭā", "masculine-plural": "chōṭē", "feminine": "chōṭī" }
+    - word: "hi-0896"
+      forms: { "masculine-singular": "नया", "masculine-plural": "नए", "feminine": "नई" }
+      readings: { "masculine-singular": "nayā", "masculine-plural": "naē", "feminine": "naī" }
+    - word: "hi-0897"
+      forms: { "masculine-singular": "पुराना", "masculine-plural": "पुराने", "feminine": "पुरानी" }
+      readings: { "masculine-singular": "purānā", "masculine-plural": "purānē", "feminine": "purānī" }
+    - word: "hi-0898"
+      forms: { "masculine-singular": "अच्छा", "masculine-plural": "अच्छे", "feminine": "अच्छी" }
+      readings: { "masculine-singular": "acchā", "masculine-plural": "acchē", "feminine": "acchī" }
+    - word: "hi-0899"
+      forms: { "masculine-singular": "बुरा", "masculine-plural": "बुरे", "feminine": "बुरी" }
+      readings: { "masculine-singular": "burā", "masculine-plural": "burē", "feminine": "burī" }
+    - word: "hi-0902"
+      forms: { "masculine-singular": "गंदा", "masculine-plural": "गंदे", "feminine": "गंदी" }
+      readings: { "masculine-singular": "gandā", "masculine-plural": "gandē", "feminine": "gandī" }
+    - word: "hi-0903"
+      forms: { "masculine-singular": "ताज़ा", "masculine-plural": "ताज़े", "feminine": "ताज़ी" }
+      readings: { "masculine-singular": "tāzā", "masculine-plural": "tāzē", "feminine": "tāzī" }
+    - word: "hi-0906"
+      forms: { "masculine-singular": "लंबा", "masculine-plural": "लंबे", "feminine": "लंबी" }
+      readings: { "masculine-singular": "lambā", "masculine-plural": "lambē", "feminine": "lambī" }
+    - word: "hi-0907"
+      forms: { "masculine-singular": "ऊँचा", "masculine-plural": "ऊँचे", "feminine": "ऊँची" }
+      readings: { "masculine-singular": "ūm̐cā", "masculine-plural": "ūm̐cē", "feminine": "ūm̐cī" }
+    - word: "hi-0909"
+      forms: { "masculine-singular": "हल्का", "masculine-plural": "हल्के", "feminine": "हल्की" }
+      readings: { "masculine-singular": "halkā", "masculine-plural": "halkē", "feminine": "halkī" }
+    - word: "hi-0911"
+      forms: { "masculine-singular": "ठंडा", "masculine-plural": "ठंडे", "feminine": "ठंडी" }
+      readings: { "masculine-singular": "ṭhaṇḍā", "masculine-plural": "ṭhaṇḍē", "feminine": "ṭhaṇḍī" }
+    - word: "hi-0914"
+      forms: { "masculine-singular": "थका", "masculine-plural": "थके", "feminine": "थकी" }
+      readings: { "masculine-singular": "thakā", "masculine-plural": "thakē", "feminine": "thakī" }
+    - word: "hi-0915"
+      forms: { "masculine-singular": "भूखा", "masculine-plural": "भूखे", "feminine": "भूखी" }
+      readings: { "masculine-singular": "bhūkhā", "masculine-plural": "bhūkhē", "feminine": "bhūkhī" }
+    - word: "hi-0917"
+      forms: { "masculine-singular": "हरा", "masculine-plural": "हरे", "feminine": "हरी" }
+      readings: { "masculine-singular": "harā", "masculine-plural": "harē", "feminine": "harī" }
+    - word: "hi-0918"
+      forms: { "masculine-singular": "नीला", "masculine-plural": "नीले", "feminine": "नीली" }
+      readings: { "masculine-singular": "nīlā", "masculine-plural": "nīlē", "feminine": "nīlī" }
+    - word: "hi-0919"
+      forms: { "masculine-singular": "पीला", "masculine-plural": "पीले", "feminine": "पीली" }
+      readings: { "masculine-singular": "pīlā", "masculine-plural": "pīlē", "feminine": "pīlī" }
+    - word: "hi-0920"
+      forms: { "masculine-singular": "काला", "masculine-plural": "काले", "feminine": "काली" }
+      readings: { "masculine-singular": "kālā", "masculine-plural": "kālē", "feminine": "kālī" }
+    - word: "hi-0338"
+      forms: { "masculine-singular": "तीखा", "masculine-plural": "तीखे", "feminine": "तीखी" }
+      readings: { "masculine-singular": "tīkhā", "masculine-plural": "tīkhē", "feminine": "tīkhī" }
+    - word: "hi-0339"
+      forms: { "masculine-singular": "मीठा", "masculine-plural": "मीठे", "feminine": "मीठी" }
+      readings: { "masculine-singular": "mīṭhā", "masculine-plural": "mīṭhē", "feminine": "mīṭhī" }
+    - word: "hi-1016"
+      forms: { "masculine-singular": "खट्टा", "masculine-plural": "खट्टे", "feminine": "खट्टी" }
+      readings: { "masculine-singular": "khaṭṭā", "masculine-plural": "khaṭṭē", "feminine": "khaṭṭī" }
+    - word: "hi-0236"
+      forms: { "masculine-singular": "महँगा", "masculine-plural": "महँगे", "feminine": "महँगी" }
+      readings: { "masculine-singular": "maham̐gā", "masculine-plural": "maham̐gē", "feminine": "maham̐gī" }
+    - word: "hi-0237"
+      forms: { "masculine-singular": "सस्ता", "masculine-plural": "सस्ते", "feminine": "सस्ती" }
+      readings: { "masculine-singular": "sastā", "masculine-plural": "sastē", "feminine": "sastī" }
+    - word: "hi-0865"
+      forms: { "masculine-singular": "थोड़ा", "masculine-plural": "थोड़े", "feminine": "थोड़ी" }
+      readings: { "masculine-singular": "thōṛā", "masculine-plural": "thōṛē", "feminine": "thōṛī" }
+    - word: "hi-0867"
+      forms: { "masculine-singular": "सारा", "masculine-plural": "सारे", "feminine": "सारी" }
+      readings: { "masculine-singular": "sārā", "masculine-plural": "sārē", "feminine": "sārī" }
+    - word: "hi-0868"
+      forms: { "masculine-singular": "पूरा", "masculine-plural": "पूरे", "feminine": "पूरी" }
+      readings: { "masculine-singular": "pūrā", "masculine-plural": "pūrē", "feminine": "pūrī" }
+    - word: "hi-0869"
+      forms: { "masculine-singular": "आधा", "masculine-plural": "आधे", "feminine": "आधी" }
+      readings: { "masculine-singular": "ādhā", "masculine-plural": "ādhē", "feminine": "ādhī" }
+rules:
+  - id: "hi-rule-masculine-singular"
+    slots: ["masculine-singular"]
+  - id: "hi-rule-masculine-plural"
+    slots: ["masculine-plural"]
+  - id: "hi-rule-feminine"
+    slots: ["feminine"]
