@@ -51,6 +51,21 @@ class Case(B1Case):
         return self.section(self.run_main(), LAYER)
 
 
+class ScriptPos(Case):
+
+    def test_a_card_may_be_a_letter_or_a_digit_but_a_sense_may_not(self) -> None:
+        for pos in ("letter", "digit"):
+            with self.subTest(pos):
+                self.core(HOUSE, pos=pos)
+                self.assertNoError(CORE)
+        self.core(HOUSE, pos="thing")
+        self.assertError(CORE, f"card {HOUSE}", "pos must be one of ['adj', 'adv', 'digit', "
+                         "'letter', 'noun', 'other', 'particle', 'phrase', 'pronoun', "
+                         "'verb'], got 'thing'")
+        self.core(HOUSE, pos="noun", senses=[{"id": "a", "pos": "letter"}])
+        self.assertIn("senses[0].pos must be one of", "\n".join(self.errors(CORE)))
+
+
 class OwnRoot(Case):
 
     def _a_word_that_is_its_own_root(self) -> None:

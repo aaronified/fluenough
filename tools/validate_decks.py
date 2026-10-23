@@ -135,6 +135,10 @@ CODE_RE = re.compile(r"[a-z]{2,3}")
 MODES = {"recognition", "production", "listening", "grammar", "speaking",
          "grammarUnderstood"}
 POS = {"noun", "verb", "adj", "adv", "phrase", "particle", "other", "pronoun"}
+# A card of a script's decks may also be a letter or a digit (#522, step 7):
+# Hear asks for what was heard. Only a card has it, never a sense or a rules
+# deck's row.
+SCRIPT_POS = {"letter", "digit"}
 
 HEADER_KEYS = {
     "schema", "id", "name", "kind", "language", "native", "license",
@@ -876,8 +880,8 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
         check_media(r, where, card, field, cid, lang)
 
     pos = card.get("pos")
-    if pos is not None and pos not in POS:
-        r.error(where, f"pos must be one of {sorted(POS)}, got {pos!r}")
+    if pos is not None and pos not in POS | SCRIPT_POS:
+        r.error(where, f"pos must be one of {sorted(POS | SCRIPT_POS)}, got {pos!r}")
 
     if "register" in card and card["register"] not in REGISTERS:
         r.error(where, f"register must be one of {', '.join(REGISTERS)}, got "
