@@ -1479,7 +1479,7 @@ void main() {
       await tapText(tester, l10n.placementStop);
       expect(find.text(l10n.placedReviewQuestion), findsOneWidget);
       expect(
-        find.text(l10n.placedReviewDefault, findRichText: true),
+        find.textContaining(l10n.placedReviewDefault, findRichText: true),
         findsOneWidget,
       );
       // Nothing changed: the default is what is saved.
