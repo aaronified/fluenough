@@ -70,11 +70,8 @@ units:
     words: 20
   - decks: ["es-family", "es-family-sentences", "es-reading-family", "*"]
     words: 30
-  - planned: { id: "es-numbers-1-20", theme: "numbers-1-20", words: 20 }
-    listening_passages:
-      - { id: "counting-aloud", text: { "en": "Counting objects aloud, from one to twenty" } }
-    reading_passages:
-      - { id: "room-numbers", text: { "en": "Room numbers on a row of doors" } }
+  - decks: ["es-numbers-1-20", "es-numbers-1-20-sentences", "es-reading-numbers-1-20", "*"]
+    words: 21
   # 3. No script units: Spanish is written in Latin letters.
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
