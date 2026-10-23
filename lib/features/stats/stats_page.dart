@@ -11,6 +11,7 @@ import '../../ui/widgets/bar_row.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/language_bar.dart';
 import '../../ui/widgets/page_parts.dart';
+import 'hours_tiles.dart';
 import 'leeches.dart';
 import 'practice_week_card.dart';
 import 'progress_mastery.dart';
@@ -158,6 +159,8 @@ class _StatsBody extends StatelessWidget {
           started: mastery.started,
           allLanguages: language == null,
         ),
+        const SizedBox(height: 8),
+        HoursTiles(hours: ProgressHours.of(state, language)),
         const SizedBox(height: 8),
         PracticeWeekCard(week: mastery.week, quota: kDefaultDailyQuota),
         const SizedBox(height: 16),
