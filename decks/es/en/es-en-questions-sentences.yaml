@@ -1,0 +1,92 @@
+schema: 1
+id: "es-en-questions-sentences"
+kind: "layer"
+core: "es-questions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: asking questions"
+license: "CC-BY-SA-4.0"
+description: "Ten sentences that ask questions with the words of Questions, each with the words it is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+
+cards:
+  "es-0070":
+    native: "Where is the station?"
+    bases:
+      "Dónde": "where"
+      "la": "the"
+      "estación": "station"
+    confusables:
+      "when": { why: "Cuándo asks when, not where." }
+      "how": { why: "Cómo asks how, not where." }
+  "es-0071":
+    native: "When does the train arrive?"
+    bases:
+      "Cuándo": "when"
+      "llega": "arrive"
+      "el": "the"
+      "tren": "train"
+    confusables:
+      "where": { why: "Dónde asks where the train is, not when." }
+      "how-much": { why: "Cuánto asks how much, not when." }
+  "es-0072":
+    native: "How are you today?"
+    bases:
+      "hoy": "today"
+    confusables:
+      "who": { why: "Quién asks who, not how." }
+      "which": { why: "Cuál asks which one, not how." }
+  "es-0073":
+    native: "Who is knocking at the door?"
+    bases:
+      "llama": "knock"
+      "a": "at"
+      "la": "the"
+    confusables:
+      "what": { why: "Qué asks what, not who." }
+      "where": { why: "Dónde asks where, not who." }
+  "es-0074":
+    native: "Why aren't you eating?"
+    bases:
+      "Por": "for"
+    confusables:
+      "when": { why: "Cuándo asks when, not why." }
+      "how": { why: "Cómo asks how, not why." }
+  "es-0075":
+    native: "What is your name?"
+    confusables:
+      "what": { why: "Qué asks what, not which one." }
+      "who": { why: "Quién asks who, not which name." }
+  "es-0076":
+    native: "How much is the bread?"
+    bases:
+      "cuesta": "costs"
+      "el": "the"
+    confusables:
+      "when": { why: "Cuándo asks when, not how much." }
+      "how": { why: "Cómo asks how, not how much." }
+  "es-0077":
+    native: "Who are you going to the cinema with?"
+    bases:
+      "Con": "with"
+      "al": "to the"
+      "cine": "cinema"
+    confusables:
+      "what": { why: "Qué asks what, not who." }
+      "where": { why: "Dónde asks where, not who." }
+  "es-0078":
+    native: "Can you repeat, please?"
+    bases:
+      "Puedes": "can"
+      "repetir": "repeat"
+      "por": "for"
+      "favor": "favour"
+    confusables:
+      "sorry": { why: "Perdón asks pardon; it does not ask for a repeat." }
+      "thanks": { why: "Gracias thanks someone; it does not ask for a repeat." }
+  "es-0079":
+    native: "Are you hungry or thirsty?"
+    bases:
+      "hambre": "hunger"
+      "sed": "thirst"
+    confusables:
+      "which": { why: "Cuál asks which one, not what you have." }
+      "what": { why: "Qué asks what, not whether." }
