@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-directions-sentences"
+kind: "layer"
+core: "es-directions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: directions"
+license: "CC-BY-SA-4.0"
+description: "Six sentences that give directions, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-0724":
+    native: "I turn right at the crossing."
+    bases: {"a": "to", "la": "the", "en": "in", "el": "the"}
+    confusables: {"izquierda": { why: "Izquierda is left, the other way." }, "recto": { why: "Recto is straight ahead, with no turn." }}
+  "es-0725":
+    native: "We cross the bridge and go straight on."
+    bases: {"el": "the"}
+    confusables: {"esquina": { why: "Esquina is a corner, where two streets meet." }, "girar": { why: "Girar is to turn, not to cross." }}
+  "es-0726":
+    native: "The traffic light is near the corner."
+    bases: {"El": "the", "de": "of", "la": "the"}
+    confusables: {"lejos": { why: "Lejos is far, the opposite of cerca." }, "entre": { why: "Entre is between two things, a position." }}
+  "es-0727":
+    native: "The market is between two streets."
+    bases: {"El": "the"}
+    confusables: {"norte": { why: "Norte is north, a direction on a map." }, "oeste": { why: "Oeste is west, a direction." }}
+  "es-0728":
+    native: "I find the map on the table."
+    bases: {"el": "the", "en": "in", "la": "the"}
+    confusables: {"cruce": { why: "Cruce is a crossing, a place in the street." }, "esquina": { why: "Esquina is a corner, not a table." }}
+  "es-0729":
+    native: "The bridge is on the left."
+    bases: {"El": "the", "a": "to", "la": "the"}
+    confusables: {"derecha": { why: "Derecha is right, the other side." }, "sur": { why: "Sur is south, a direction, not a side." }}

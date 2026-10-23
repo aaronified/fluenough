@@ -1,0 +1,353 @@
+schema: 1
+id: "es-food"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "food"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-0637"
+    target: "el desayuno"
+    ipa: "el desaˈʝuno"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "desayuno", base: "desayuno" }]
+    examples:
+      - target: "Tomo un café en el desayuno."
+        ipa: "ˈtomo un kaˈfe en el desaˈʝuno"
+        bases: [{ word: "Tomo", ref: "es-0624" }, { word: "un", base: "un" }, { word: "café", ref: "es-0611" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "desayuno", base: "desayuno" }]
+      - target: "El desayuno es a las siete."
+        ipa: "el desaˈʝuno es a las ˈsjete"
+        bases: [{ word: "El", base: "el" }, { word: "desayuno", base: "desayuno" }, { word: "es", ref: "es-0022" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "siete", ref: "es-0211" }]
+  - id: "es-0638"
+    target: "el almuerzo"
+    ipa: "el alˈmweɾθo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "almuerzo", base: "almuerzo" }]
+    examples:
+      - target: "El almuerzo es a la una."
+        ipa: "el alˈmweɾθo es a la ˈuna"
+        bases: [{ word: "El", base: "el" }, { word: "almuerzo", base: "almuerzo" }, { word: "es", ref: "es-0022" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "una", base: "una" }]
+      - target: "Mi almuerzo es pan y queso."
+        ipa: "mi alˈmweɾθo es pan i ˈkeso"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "almuerzo", base: "almuerzo" }, { word: "es", ref: "es-0022" }, { word: "pan", ref: "es-0013" }, { word: "y", ref: "es-0048" }, { word: "queso", ref: "es-0603" }]
+  - id: "es-0639"
+    target: "la cena"
+    ipa: "la ˈθena"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "cena", base: "cena" }]
+    examples:
+      - target: "La cena es a las nueve."
+        ipa: "la ˈθena es a las ˈnwebe"
+        bases: [{ word: "La", base: "la" }, { word: "cena", base: "cena" }, { word: "es", ref: "es-0022" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "nueve", ref: "es-0213" }]
+      - target: "Cenamos pollo."
+        ipa: "θeˈnamos ˈpoʝo"
+        bases: [{ word: "Cenamos", ref: "es-0283" }, { word: "pollo", ref: "es-0615" }]
+  - id: "es-0640"
+    target: "el menú"
+    ipa: "el meˈnu"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "menú", base: "menú" }]
+    examples:
+      - target: "El menú cuesta diez euros."
+        ipa: "el meˈnu ˈkwesta djeθ ˈewɾos"
+        bases: [{ word: "El", base: "el" }, { word: "menú", base: "menú" }, { word: "cuesta", ref: "es-0587" }, { word: "diez", ref: "es-0214" }, { word: "euros", ref: "es-0550" }]
+      - target: "¿Tiene el menú?"
+        ipa: "ˈtjene el meˈnu"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "el", base: "el" }, { word: "menú", base: "menú" }]
+  - id: "es-0641"
+    target: "el plato"
+    ipa: "el ˈplato"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "plato", base: "plato" }]
+    examples:
+      - target: "El plato es grande."
+        ipa: "el ˈplato es ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "plato", base: "plato" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+      - target: "Pido un plato de sopa."
+        ipa: "ˈpido un ˈplato de ˈsopa"
+        bases: [{ word: "Pido", ref: "es-0659" }, { word: "un", base: "un" }, { word: "plato", base: "plato" }, { word: "de", base: "de" }, { word: "sopa", ref: "es-0644" }]
+  - id: "es-0642"
+    target: "el postre"
+    ipa: "el ˈpostɾe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "postre", base: "postre" }]
+    examples:
+      - target: "¿Hay postre?"
+        ipa: "aj ˈpostɾe"
+        bases: [{ word: "Hay", base: "haber" }, { word: "postre", base: "postre" }]
+      - target: "El postre es rico."
+        ipa: "el ˈpostɾe es ˈriko"
+        bases: [{ word: "El", base: "el" }, { word: "postre", base: "postre" }, { word: "es", ref: "es-0022" }, { word: "rico", ref: "es-0409" }]
+  - id: "es-0643"
+    target: "la ensalada"
+    ipa: "la ensaˈlada"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "ensalada", base: "ensalada" }]
+    examples:
+      - target: "Pido una ensalada."
+        ipa: "ˈpido ˈuna ensaˈlada"
+        bases: [{ word: "Pido", ref: "es-0659" }, { word: "una", base: "una" }, { word: "ensalada", base: "ensalada" }]
+      - target: "La ensalada es buena."
+        ipa: "la ensaˈlada es ˈbwena"
+        bases: [{ word: "La", base: "la" }, { word: "ensalada", base: "ensalada" }, { word: "es", ref: "es-0022" }, { word: "buena", ref: "es-0033" }]
+  - id: "es-0644"
+    target: "la sopa"
+    ipa: "la ˈsopa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "sopa", base: "sopa" }]
+    examples:
+      - target: "La sopa está caliente."
+        ipa: "la ˈsopa esˈta kaˈljente"
+        bases: [{ word: "La", base: "la" }, { word: "sopa", base: "sopa" }, { word: "está", ref: "es-0023" }, { word: "caliente", ref: "es-0407" }]
+      - target: "Tomo sopa en la cena."
+        ipa: "ˈtomo ˈsopa en la ˈθena"
+        bases: [{ word: "Tomo", ref: "es-0624" }, { word: "sopa", base: "sopa" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cena", ref: "es-0639" }]
+  - id: "es-0645"
+    target: "la tortilla"
+    ipa: "la toɾˈtiʝa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "tortilla", base: "tortilla" }]
+    examples:
+      - target: "La tortilla es rica."
+        ipa: "la toɾˈtiʝa es ˈrika"
+        bases: [{ word: "La", base: "la" }, { word: "tortilla", base: "tortilla" }, { word: "es", ref: "es-0022" }, { word: "rica", ref: "es-0409" }]
+      - target: "Como tortilla con pan."
+        ipa: "ˈkomo toɾˈtiʝa kon pan"
+        bases: [{ word: "Como", ref: "es-0028" }, { word: "tortilla", base: "tortilla" }, { word: "con", base: "con" }, { word: "pan", ref: "es-0013" }]
+  - id: "es-0646"
+    target: "la pizza"
+    ipa: "la ˈpitsa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "pizza", base: "pizza" }]
+    examples:
+      - target: "Pido una pizza."
+        ipa: "ˈpido ˈuna ˈpitsa"
+        bases: [{ word: "Pido", ref: "es-0659" }, { word: "una", base: "una" }, { word: "pizza", base: "pizza" }]
+      - target: "La pizza está caliente."
+        ipa: "la ˈpitsa esˈta kaˈljente"
+        bases: [{ word: "La", base: "la" }, { word: "pizza", base: "pizza" }, { word: "está", ref: "es-0023" }, { word: "caliente", ref: "es-0407" }]
+  - id: "es-0647"
+    target: "el bocadillo"
+    ipa: "el bokaˈdiʝo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "bocadillo", base: "bocadillo" }]
+    examples:
+      - target: "Como un bocadillo."
+        ipa: "ˈkomo un bokaˈdiʝo"
+        bases: [{ word: "Como", ref: "es-0028" }, { word: "un", base: "un" }, { word: "bocadillo", base: "bocadillo" }]
+      - target: "El bocadillo es grande."
+        ipa: "el bokaˈdiʝo es ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "bocadillo", base: "bocadillo" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-0648"
+    target: "la hamburguesa"
+    ipa: "la ambuɾˈɡesa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "hamburguesa", base: "hamburguesa" }]
+    examples:
+      - target: "Como una hamburguesa."
+        ipa: "ˈkomo ˈuna ambuɾˈɡesa"
+        bases: [{ word: "Como", ref: "es-0028" }, { word: "una", base: "una" }, { word: "hamburguesa", base: "hamburguesa" }]
+      - target: "La hamburguesa cuesta cinco euros."
+        ipa: "la ambuɾˈɡesa ˈkwesta ˈθinko ˈewɾos"
+        bases: [{ word: "La", base: "la" }, { word: "hamburguesa", base: "hamburguesa" }, { word: "cuesta", ref: "es-0587" }, { word: "cinco", ref: "es-0209" }, { word: "euros", ref: "es-0550" }]
+  - id: "es-0649"
+    target: "el helado"
+    ipa: "el eˈlado"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "helado", base: "helado" }]
+    examples:
+      - target: "Tomo un helado."
+        ipa: "ˈtomo un eˈlado"
+        bases: [{ word: "Tomo", ref: "es-0624" }, { word: "un", base: "un" }, { word: "helado", base: "helado" }]
+      - target: "El helado es frío."
+        ipa: "el eˈlado es ˈfɾio"
+        bases: [{ word: "El", base: "el" }, { word: "helado", base: "helado" }, { word: "es", ref: "es-0022" }, { word: "frío", ref: "es-0408" }]
+  - id: "es-0650"
+    target: "la tarta"
+    ipa: "la ˈtaɾta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "tarta", base: "tarta" }]
+    examples:
+      - target: "La tarta es rica."
+        ipa: "la ˈtaɾta es ˈrika"
+        bases: [{ word: "La", base: "la" }, { word: "tarta", base: "tarta" }, { word: "es", ref: "es-0022" }, { word: "rica", ref: "es-0409" }]
+      - target: "Compro una tarta."
+        ipa: "ˈkompɾo ˈuna ˈtaɾta"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "una", base: "una" }, { word: "tarta", base: "tarta" }]
+  - id: "es-0651"
+    target: "el camarero"
+    ipa: "el kamaˈɾeɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "camarero", base: "camarero" }]
+    examples:
+      - target: "El camarero es alto."
+        ipa: "el kamaˈɾeɾo es ˈalto"
+        bases: [{ word: "El", base: "el" }, { word: "camarero", base: "camarero" }, { word: "es", ref: "es-0022" }, { word: "alto", ref: "es-0254" }]
+      - target: "El camarero trabaja por la noche."
+        ipa: "el kamaˈɾeɾo tɾaˈbaxa poɾ la ˈnotʃe"
+        bases: [{ word: "El", base: "el" }, { word: "camarero", base: "camarero" }, { word: "trabaja", ref: "es-0259" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "noche", ref: "es-0020" }]
+  - id: "es-0652"
+    target: "la camarera"
+    ipa: "la kamaˈɾeɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "camarera", base: "camarera" }]
+    examples:
+      - target: "La camarera es simpática."
+        ipa: "la kamaˈɾeɾa es simˈpatika"
+        bases: [{ word: "La", base: "la" }, { word: "camarera", base: "camarera" }, { word: "es", ref: "es-0022" }, { word: "simpática", ref: "es-0422" }]
+      - target: "La camarera tiene un plato."
+        ipa: "la kamaˈɾeɾa ˈtjene un ˈplato"
+        bases: [{ word: "La", base: "la" }, { word: "camarera", base: "camarera" }, { word: "tiene", ref: "es-0024" }, { word: "un", base: "un" }, { word: "plato", ref: "es-0641" }]
+  - id: "es-0653"
+    target: "la cuenta"
+    ipa: "la ˈkwenta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "cuenta", base: "cuenta" }]
+    examples:
+      - target: "La cuenta, por favor."
+        ipa: "la ˈkwenta poɾ faˈboɾ"
+        bases: [{ word: "La", base: "la" }, { word: "cuenta", base: "cuenta" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+      - target: "La cuenta es cara."
+        ipa: "la ˈkwenta es ˈkaɾa"
+        bases: [{ word: "La", base: "la" }, { word: "cuenta", base: "cuenta" }, { word: "es", ref: "es-0022" }, { word: "cara", ref: "es-0412" }]
+  - id: "es-0654"
+    target: "la propina"
+    ipa: "la pɾoˈpina"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "propina", base: "propina" }]
+    examples:
+      - target: "La propina es pequeña."
+        ipa: "la pɾoˈpina es peˈkeɲa"
+        bases: [{ word: "La", base: "la" }, { word: "propina", base: "propina" }, { word: "es", ref: "es-0022" }, { word: "pequeña", ref: "es-0032" }]
+      - target: "No tengo propina."
+        ipa: "no ˈtenɡo pɾoˈpina"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "tengo", ref: "es-0024" }, { word: "propina", base: "propina" }]
+  - id: "es-0655"
+    target: "la bebida"
+    ipa: "la beˈbida"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "bebida", base: "bebida" }]
+    examples:
+      - target: "¿Qué bebida tomas?"
+        ipa: "ke beˈbida ˈtomas"
+        bases: [{ word: "Qué", ref: "es-0054" }, { word: "bebida", base: "bebida" }, { word: "tomas", ref: "es-0624" }]
+      - target: "La bebida está fría."
+        ipa: "la beˈbida esˈta ˈfɾia"
+        bases: [{ word: "La", base: "la" }, { word: "bebida", base: "bebida" }, { word: "está", ref: "es-0023" }, { word: "fría", ref: "es-0408" }]
+  - id: "es-0656"
+    target: "picante"
+    ipa: "piˈkante"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "La sopa es picante."
+        ipa: "la ˈsopa es piˈkante"
+        bases: [{ word: "La", base: "la" }, { word: "sopa", ref: "es-0644" }, { word: "es", ref: "es-0022" }, { word: "picante", base: "picante" }]
+      - target: "El pollo no es picante."
+        ipa: "el ˈpoʝo no es piˈkante"
+        bases: [{ word: "El", base: "el" }, { word: "pollo", ref: "es-0615" }, { word: "no", ref: "es-0043" }, { word: "es", ref: "es-0022" }, { word: "picante", base: "picante" }]
+  - id: "es-0657"
+    target: "dulce"
+    ipa: "ˈdulθe"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "El postre es dulce."
+        ipa: "el ˈpostɾe es ˈdulθe"
+        bases: [{ word: "El", base: "el" }, { word: "postre", ref: "es-0642" }, { word: "es", ref: "es-0022" }, { word: "dulce", base: "dulce" }]
+      - target: "El café no es dulce."
+        ipa: "el kaˈfe no es ˈdulθe"
+        bases: [{ word: "El", base: "el" }, { word: "café", ref: "es-0611" }, { word: "no", ref: "es-0043" }, { word: "es", ref: "es-0022" }, { word: "dulce", base: "dulce" }]
+  - id: "es-0658"
+    target: "salado"
+    ipa: "saˈlado"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "La sopa está salada."
+        ipa: "la ˈsopa esˈta saˈlada"
+        bases: [{ word: "La", base: "la" }, { word: "sopa", ref: "es-0644" }, { word: "está", ref: "es-0023" }, { word: "salada", base: "salado" }]
+      - target: "El pan no es salado."
+        ipa: "el pan no es saˈlado"
+        bases: [{ word: "El", base: "el" }, { word: "pan", ref: "es-0013" }, { word: "no", ref: "es-0043" }, { word: "es", ref: "es-0022" }, { word: "salado", base: "salado" }]
+  - id: "es-0659"
+    target: "pedir"
+    ipa: "peˈdiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Pido pollo."
+        ipa: "ˈpido ˈpoʝo"
+        bases: [{ word: "Pido", base: "pedir" }, { word: "pollo", ref: "es-0615" }]
+      - target: "Pedimos una pizza."
+        ipa: "peˈdimos ˈuna ˈpitsa"
+        bases: [{ word: "Pedimos", base: "pedir" }, { word: "una", base: "una" }, { word: "pizza", ref: "es-0646" }]
+  - id: "es-0660"
+    target: "almorzar"
+    ipa: "almoɾˈθaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Almorzamos a la una."
+        ipa: "almoɾˈθamos a la ˈuna"
+        bases: [{ word: "Almorzamos", base: "almorzar" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "una", base: "una" }]
+      - target: "Mi hermana almuerza pan."
+        ipa: "mi eɾˈmana alˈmweɾθa pan"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", ref: "es-0162" }, { word: "almuerza", base: "almorzar" }, { word: "pan", ref: "es-0013" }]
+  - id: "es-0661"
+    target: "querer"
+    ipa: "keˈɾeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Quiero un café."
+        ipa: "ˈkjeɾo un kaˈfe"
+        bases: [{ word: "Quiero", base: "querer" }, { word: "un", base: "un" }, { word: "café", ref: "es-0611" }]
+      - target: "¿Qué quieres?"
+        ipa: "ke ˈkjeɾes"
+        bases: [{ word: "Qué", ref: "es-0054" }, { word: "quieres", base: "querer" }]
