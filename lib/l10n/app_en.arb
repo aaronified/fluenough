@@ -10565,13 +10565,63 @@
   "@progressHoursPopupNote": {
     "description": "Note under the rows of the hours popup."
   },
-  "progressWordsTitle": "Words mastered",
-  "@progressWordsTitle": {
-    "description": "Title of the Progress tile that counts the words learned."
+  "summaryUnlockedTitle": "Unlocked in this lesson",
+  "@summaryUnlockedTitle": {
+    "description": "Heading of the card at the end of a lesson that counts the words and rules that became known and the sentences that opened."
   },
-  "progressWordsTaught": "/ {count} taught",
-  "@progressWordsTaught": {
-    "description": "The total beside the mastered count in the Words tile, such as '/ 540 taught'. Stays on one line.",
+  "summaryUnlockedWords": "{count, plural, =1{1 word known} other{{count} words known}}",
+  "@summaryUnlockedWords": {
+    "description": "A line of the unlocked card: how many words became known in the lesson.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "summaryUnlockedRules": "{count, plural, =1{1 rule known} other{{count} rules known}}",
+  "@summaryUnlockedRules": {
+    "description": "A line of the unlocked card: how many rules became known in the lesson.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "summaryUnlockedSentences": "{count, plural, =1{1 sentence open} other{{count} sentences open}}",
+  "@summaryUnlockedSentences": {
+    "description": "A line of the unlocked card: how many sentences opened in the lesson.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "progressWordsTitle": "Words",
+  "@progressWordsTitle": {
+    "description": "Title of the Progress tile that counts the words known, by base word."
+  },
+  "progressRulesTitle": "Rules",
+  "@progressRulesTitle": {
+    "description": "Title of the Progress tile that counts the rules known."
+  },
+  "progressSentencesTitle": "Sentences",
+  "@progressSentencesTitle": {
+    "description": "Title of the Progress tile that counts the sentences open."
+  },
+  "progressKnown": "known",
+  "@progressKnown": {
+    "description": "Under the figure of the Words and Rules tiles: what is counted."
+  },
+  "progressOpen": "open",
+  "@progressOpen": {
+    "description": "Under the figure of the Sentences tile: what is counted. A sentence is open once its words and rules are known."
+  },
+  "progressOfTaught": "of {count} taught",
+  "@progressOfTaught": {
+    "description": "Under a Progress tile's count: what it is out of, what is taught so far. May wrap to two lines.",
     "placeholders": {
       "count": {
         "type": "String",
@@ -10579,17 +10629,45 @@
       }
     }
   },
-  "progressWordsSemantics": "Words mastered: {mastered} of {taught} taught",
+  "progressWordsSemantics": "Words: {known} known of {taught} taught",
   "@progressWordsSemantics": {
     "description": "Screen-reader label of the Words tile.",
     "placeholders": {
-      "mastered": {
+      "known": {
         "type": "String",
         "example": "312"
       },
       "taught": {
         "type": "String",
         "example": "540"
+      }
+    }
+  },
+  "progressRulesSemantics": "Rules: {known} known of {taught} taught",
+  "@progressRulesSemantics": {
+    "description": "Screen-reader label of the Rules tile.",
+    "placeholders": {
+      "known": {
+        "type": "String",
+        "example": "14"
+      },
+      "taught": {
+        "type": "String",
+        "example": "22"
+      }
+    }
+  },
+  "progressSentencesSemantics": "Sentences: {open} open of {taught} taught",
+  "@progressSentencesSemantics": {
+    "description": "Screen-reader label of the Sentences tile.",
+    "placeholders": {
+      "open": {
+        "type": "String",
+        "example": "86"
+      },
+      "taught": {
+        "type": "String",
+        "example": "210"
       }
     }
   },

@@ -3,6 +3,9 @@
 // end of a lesson show.
 
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/features.dart';
+import 'package:fluenough/app/skill.dart';
+import 'package:fluenough/app/unlocks.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
@@ -18,6 +21,9 @@ import 'package:fluenough/features/drill/choice_drill.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/rule_card.dart';
 import 'package:fluenough/features/drill/teach_drill.dart';
+import 'package:fluenough/features/stats/progress_tiles.dart';
+import 'package:fluenough/features/stats/stats_page.dart';
+import 'package:fluenough/features/summary/summary_page.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/harness.dart';
@@ -361,6 +367,95 @@ void main() {
       know(state, state.deckById(nounForms)!.cards.first.rule!.word);
       await tester.pumpAndSettle();
       expect(find.text(l10n.unitCellNotAsked), findsWidgets);
+    });
+  });
+
+  group('progress in words, rules and sentences', () {
+    const nounForms = 'bn-en-grammar-noun-forms';
+
+    Future<AppState> bengali() async {
+      final state = AppState.test(
+        features: FeatureRegistry.all(),
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: const <String>['bn'],
+        ),
+      );
+      addTearDown(state.dispose);
+      await state.load();
+      return state;
+    }
+
+    /// Answers the card [id] right ten times, ending [ago] before now.
+    void know(AppState state, String id, {Duration ago = Duration.zero}) {
+      final entry = state.decks.firstWhere(
+        (e) => e.cards.any((c) => c.id == id),
+      );
+      for (var i = 0; i < 10; i++) {
+        state.progress.record(
+          deckId: entry.id,
+          cardId: id,
+          mode: DrillMode.recognition,
+          grade: 4,
+          now: state.now().subtract(ago + Duration(minutes: 10 - i)),
+        );
+      }
+    }
+
+    testWidgets('Progress shows three tiles, words, rules and sentences, '
+        'counted against what is taught so far, at 1.4x', (tester) async {
+      usePhone(tester, textScale: 1.4);
+      final state = await bengali();
+      know(state, state.deckById(nounForms)!.cards.first.rule!.word);
+      await pumpScreen(tester, const StatsPage(), state: state);
+      final l10n = l10nOf(tester);
+
+      final tiles = tester.widgetList<UnlockTile>(find.byType(UnlockTile));
+      expect(tiles.map((t) => t.title), <String>[
+        l10n.progressWordsTitle,
+        l10n.progressRulesTitle,
+        l10n.progressSentencesTitle,
+      ]);
+      final words = tiles.first;
+      expect(words.figure, '1');
+      expect(words.outOf, l10n.progressOfTaught('1'));
+      expect(find.byType(LevelTile), findsOneWidget);
+      expect(tester.takeException(), isNull, reason: 'no overflow at 1.4x');
+    });
+
+    testWidgets('the end of a lesson counts what it unlocked: the words that '
+        'became known, not those known before', (tester) async {
+      usePhone(tester, textScale: 1.4);
+      final state = await bengali();
+      final words = <String>[
+        for (final entry in state.decks)
+          if (entry.language.code == 'bn' && entry.deck.kind == DeckKind.vocab)
+            for (final card in entry.cards)
+              if (card.pos == 'noun') card.id,
+      ].toSet().take(2).toList();
+      // One word known long before the lesson, one during it.
+      know(state, words[0], ago: const Duration(hours: 5));
+      know(state, words[1]);
+      final start = state.now().subtract(const Duration(hours: 1));
+      await pumpScreen(
+        tester,
+        SummaryPage(
+          result: SessionResult(
+            answers: const <SessionAnswer>[
+              SessionAnswer(skill: Skill.recognition, grade: 4),
+            ],
+            startedAt: start,
+            endedAt: state.now(),
+            language: 'bn',
+          ),
+        ),
+        state: state,
+      );
+      final l10n = l10nOf(tester);
+      expect(find.text(l10n.summaryUnlockedTitle), findsOneWidget);
+      expect(find.text(l10n.summaryUnlockedWords(1)), findsOneWidget);
+      expect(find.text(l10n.summaryUnlockedRules(1)), findsNothing);
+      expect(tester.takeException(), isNull);
     });
   });
 }

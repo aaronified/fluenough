@@ -420,7 +420,7 @@ void main() {
   });
 
   group('the Progress tab', () {
-    testWidgets('shows words, level, the week and the star; the star opens '
+    testWidgets('shows words, rules, sentences, level, the week and the star; the star opens '
         'the two charts over time; All languages shows the start date '
         'only', (tester) async {
       usePhone(tester, textScale: 1.4);
@@ -441,7 +441,7 @@ void main() {
       state.showLanguage('es', allOff: true);
       await tester.pumpAndSettle();
       expect(find.text(l10n.progressLevelTitle), findsOneWidget);
-      expect(find.byType(WordsTile), findsOneWidget);
+      expect(find.byType(UnlockTile), findsNWidgets(3));
       expect(find.byType(LevelTile), findsOneWidget);
       expect(find.byType(PracticeWeekCard), findsOneWidget);
       expect(find.byType(SkillStarCard), findsOneWidget);
@@ -661,7 +661,14 @@ void main() {
         tester,
         Scaffold(
           body: ProgressTiles(
-            words: (mastered: 312, taught: 540),
+            counts: (
+              wordsKnown: 312,
+              wordsTaught: 540,
+              rulesKnown: 14,
+              rulesTaught: 22,
+              sentencesOpen: 86,
+              sentencesTotal: 210,
+            ),
             level: Milestone.a2,
             started: DateTime(2026, 8, 3),
             allLanguages: false,
@@ -677,7 +684,7 @@ void main() {
         of: find.byType(ProgressTiles),
         matching: find.byType(FittedBox),
       );
-      expect(fitted, findsNWidgets(3));
+      expect(fitted, findsNWidgets(5), reason: 'three counts, the level');
       for (final box in fitted.evaluate()) {
         final render = box.renderObject! as RenderFittedBox;
         final child = render.child!.size;
