@@ -225,6 +225,7 @@ const _layerHeaderFields = {
 };
 const _coreCardFields = {
   'hears',
+  'warning',
   'id',
   'target',
   'reading',
@@ -1625,6 +1626,7 @@ class _Reader {
       words: words(fields, path),
       pos: fields.optionalString('pos', allowEmpty: false),
       hears: hears(fields, path),
+      warning: fields.optionalString('warning', allowEmpty: false),
       gender: fields.optionalString('gender'),
       tags: fields.strings('tags'),
       audio: fields.optionalString('audio'),
