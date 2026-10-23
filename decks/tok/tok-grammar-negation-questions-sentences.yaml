@@ -1,0 +1,134 @@
+schema: 1
+id: "tok-grammar-negation-questions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "tok-0141"
+    target: "mi wile ala e moku."
+    ipa: "mi ˈwile ˈala e ˈmoku"
+    pos: "phrase"
+    bases:
+      - { word: "mi", ref: "tok-0003" }
+      - { word: "wile", ref: "tok-0086" }
+      - { word: "ala", ref: "tok-0005" }
+      - { word: "e", ref: "tok-0102" }
+      - { word: "moku", ref: "tok-0080" }
+    confusables:
+      - { id: "w1", ref: "tok-0083", kind: "word" }
+      - { id: "w2", ref: "tok-0007", kind: "word" }
+  - id: "tok-0142"
+    target: "ona li wile e seme?"
+    ipa: "ˈona li ˈwile e ˈseme"
+    pos: "phrase"
+    bases:
+      - { word: "ona", ref: "tok-0062" }
+      - { word: "li", ref: "tok-0101" }
+      - { word: "wile", ref: "tok-0086" }
+      - { word: "e", ref: "tok-0102" }
+      - { word: "seme", ref: "tok-0044" }
+    confusables:
+      - { id: "w1", ref: "tok-0080", kind: "word" }
+      - { id: "w2", ref: "tok-0083", kind: "word" }
+  - id: "tok-0143"
+    target: "ni li pona ala?"
+    ipa: "ni li ˈpona ˈala"
+    pos: "phrase"
+    bases:
+      - { word: "ni", ref: "tok-0063" }
+      - { word: "li", ref: "tok-0101" }
+      - { word: "pona", ref: "tok-0002" }
+      - { word: "ala", ref: "tok-0005" }
+    confusables:
+      - { id: "w1", ref: "tok-0119", kind: "word" }
+      - { id: "w2", ref: "tok-0121", kind: "word" }
+  - id: "tok-0144"
+    target: "jan ni li lape ala."
+    ipa: "jan ni li ˈlape ˈala"
+    pos: "phrase"
+    bases:
+      - { word: "jan", ref: "tok-0064" }
+      - { word: "ni", ref: "tok-0063" }
+      - { word: "li", ref: "tok-0101" }
+      - { word: "lape", ref: "tok-0081" }
+      - { word: "ala", ref: "tok-0005" }
+    confusables:
+      - { id: "w1", ref: "tok-0088", kind: "word" }
+      - { id: "w2", ref: "tok-0087", kind: "word" }
+  - id: "tok-0145"
+    target: "ona li sona ala e ni."
+    ipa: "ˈona li ˈsona ˈala e ni"
+    pos: "phrase"
+    bases:
+      - { word: "ona", ref: "tok-0062" }
+      - { word: "li", ref: "tok-0101" }
+      - { word: "sona", ref: "tok-0007" }
+      - { word: "ala", ref: "tok-0005" }
+      - { word: "e", ref: "tok-0102" }
+      - { word: "ni", ref: "tok-0063" }
+    confusables:
+      - { id: "w1", ref: "tok-0083", kind: "word" }
+      - { id: "w2", ref: "tok-0086", kind: "word" }
+  - id: "tok-0146"
+    target: "sina kama anu ala?"
+    ipa: "ˈsina ˈkama ˈanu ˈala"
+    pos: "phrase"
+    bases:
+      - { word: "sina", ref: "tok-0004" }
+      - { word: "kama", ref: "tok-0087" }
+      - { word: "anu", ref: "tok-0045" }
+      - { word: "ala", ref: "tok-0005" }
+    confusables:
+      - { id: "w1", ref: "tok-0088", kind: "word" }
+      - { id: "w2", ref: "tok-0086", kind: "word" }
+  - id: "tok-0147"
+    target: "mi kute e seme?"
+    ipa: "mi ˈkute e ˈseme"
+    pos: "phrase"
+    bases:
+      - { word: "mi", ref: "tok-0003" }
+      - { word: "kute", ref: "tok-0084" }
+      - { word: "e", ref: "tok-0102" }
+      - { word: "seme", ref: "tok-0044" }
+    confusables:
+      - { id: "w1", ref: "tok-0083", kind: "word" }
+      - { id: "w2", ref: "tok-0085", kind: "word" }
+  - id: "tok-0148"
+    target: "jan ala li kama."
+    ipa: "jan ˈala li ˈkama"
+    pos: "phrase"
+    bases:
+      - { word: "jan", ref: "tok-0064" }
+      - { word: "ala", ref: "tok-0005" }
+      - { word: "li", ref: "tok-0101" }
+      - { word: "kama", ref: "tok-0087" }
+    confusables:
+      - { id: "w1", ref: "tok-0065", kind: "word" }
+      - { id: "w2", ref: "tok-0088", kind: "word" }
+  - id: "tok-0149"
+    target: "pan ala li lon."
+    ipa: "ˈpan ˈala li lon"
+    pos: "phrase"
+    bases:
+      - { word: "pan", ref: "tok-0034" }
+      - { word: "ala", ref: "tok-0005" }
+      - { word: "li", ref: "tok-0101" }
+      - { word: "lon", ref: "tok-0046" }
+    confusables:
+      - { id: "w1", ref: "tok-0065", kind: "word" }
+      - { id: "w2", ref: "tok-0036", kind: "word" }
+  - id: "tok-0150"
+    target: "ijo ni li ike ala."
+    ipa: "ˈijo ni li ˈike ˈala"
+    pos: "phrase"
+    bases:
+      - { word: "ijo", ref: "tok-0065" }
+      - { word: "ni", ref: "tok-0063" }
+      - { word: "li", ref: "tok-0101" }
+      - { word: "ike", ref: "tok-0121" }
+      - { word: "ala", ref: "tok-0005" }
+    confusables:
+      - { id: "w1", ref: "tok-0119", kind: "word" }
+      - { id: "w2", ref: "tok-0125", kind: "word" }
