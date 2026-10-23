@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart' show Listenable;
+
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/memory_progress.dart';
@@ -22,11 +24,42 @@ class ProgressMastery {
   }) : _parts = parts,
        _at = at;
 
+  /// What Progress shows for [language] (every language when null), worked
+  /// out again only when the progress, the decks or the day has changed:
+  /// the weekly snapshots walk the whole log.
   factory ProgressMastery.of(AppState state, String? language) {
+    final memo = _memos[state] ??= _Memo(state.progress);
+    final key = (
+      progress: state.progress,
+      decks: state.decks,
+      day: calendarDay(state.now()),
+      native: language == null ? null : state.courseNative(language),
+    );
+    final cached = memo.byLanguage[language];
+    if (cached != null &&
+        cached.revision == memo.revision &&
+        cached.key == key) {
+      return cached.value;
+    }
+    final value = ProgressMastery._compute(state, language);
+    memo.byLanguage[language] = (
+      revision: memo.revision,
+      key: key,
+      value: value,
+    );
+    return value;
+  }
+
+  static final Expando<_Memo> _memos = Expando<_Memo>('ProgressMastery');
+
+  static ProgressMastery _compute(AppState state, String? language) {
     final languageOf = languageLookupOf(state);
     final at = state.now();
-    bool counts(String deckId) =>
-        language == null || languageOf(deckId) == language;
+    // On All, only reviews in a language that can be told count, so the
+    // words and the star are of the same languages.
+    bool counts(String deckId) => language == null
+        ? languageOf(deckId) != null
+        : languageOf(deckId) == language;
     final log = <ReviewEvent>[
       for (final e in state.progress.log)
         if (counts(e.deckId)) e,
@@ -58,13 +91,14 @@ class ProgressMastery {
           ],
           totals: inputs.totals,
           scriptCards: inputs.scriptCards,
+          parametersOf: (mode) => state.progress.parameters.of(code, mode),
         ),
       );
       if (language != null) level = inputs.level;
     }
     final now = _combine(parts, null);
     return ProgressMastery._(
-      words: wordCounts(log),
+      words: _words(parts),
       level: level,
       started: startedOn(log),
       week: practiceWeek(log, now: at),
@@ -99,6 +133,17 @@ class ProgressMastery {
       _combine(_parts, _at.subtract(Duration(days: 7 * i))),
   ];
 
+  static WordCounts _words(List<_Part> parts) {
+    var mastered = 0;
+    var taught = 0;
+    for (final p in parts) {
+      final counts = wordCounts(p.log, parametersOf: p.parametersOf);
+      mastered += counts.mastered;
+      taught += counts.taught;
+    }
+    return (mastered: mastered, taught: taught);
+  }
+
   static Mastery _combine(List<_Part> parts, DateTime? asOf) =>
       sumMastery(<Mastery>[
         for (final p in parts)
@@ -108,6 +153,7 @@ class ProgressMastery {
             totals: p.totals,
             scriptCards: p.scriptCards,
             asOf: asOf,
+            parametersOf: p.parametersOf,
           ),
       ]);
 
@@ -169,10 +215,24 @@ class _Part {
     required this.scriptLog,
     required this.totals,
     required this.scriptCards,
+    required this.parametersOf,
   });
 
+  final ParametersOf parametersOf;
   final List<ReviewEvent> log;
   final List<ReviewEvent> scriptLog;
   final MasteryTotals totals;
   final Set<String> scriptCards;
+}
+
+/// What [ProgressMastery.of] has worked out for one state, and the number of
+/// times its progress has changed since.
+class _Memo {
+  _Memo(Listenable progress) {
+    progress.addListener(() => revision++);
+  }
+
+  int revision = 0;
+  final Map<String?, ({int revision, Object key, ProgressMastery value})>
+  byLanguage = <String?, ({int revision, Object key, ProgressMastery value})>{};
 }

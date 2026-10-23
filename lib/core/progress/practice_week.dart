@@ -5,6 +5,18 @@ import '../scheduling/study_hours.dart';
 /// (#485: the default for existing learners).
 const Duration kDefaultDailyQuota = Duration(minutes: 15);
 
+/// Midnight at the start of [time]'s calendar day, in its own time zone (a
+/// UTC time stays UTC), the way the app's `dateOnly` does. Core cannot
+/// import the app, so this is its twin.
+DateTime calendarDay(DateTime time) => time.isUtc
+    ? DateTime.utc(time.year, time.month, time.day)
+    : DateTime(time.year, time.month, time.day);
+
+/// [day] moved by whole calendar days, safe across daylight saving changes.
+DateTime _addDays(DateTime day, int days) => day.isUtc
+    ? DateTime.utc(day.year, day.month, day.day + days)
+    : DateTime(day.year, day.month, day.day + days);
+
 /// What one day of practice looks like on the 7-day calendar.
 enum DayMark {
   /// No practice at all.
@@ -57,21 +69,22 @@ List<PracticeDay> practiceWeek(
   Duration quota = kDefaultDailyQuota,
   int days = 7,
 }) {
-  DateTime dayOf(DateTime at) => DateTime(at.year, at.month, at.day);
-  final today = dayOf(now);
-  final first = DateTime(today.year, today.month, today.day - (days - 1));
+  final today = calendarDay(now);
+  final first = _addDays(today, -(days - 1));
   final byDay = <DateTime, List<ReviewEvent>>{};
   for (final e in reviews) {
-    final day = dayOf(e.at);
+    // The event's own calendar date, as a day in [now]'s zone, so that the
+    // days compare and key together.
+    final date = calendarDay(e.at);
+    final day = today.isUtc
+        ? DateTime.utc(date.year, date.month, date.day)
+        : DateTime(date.year, date.month, date.day);
     if (day.isBefore(first) || day.isAfter(today)) continue;
     (byDay[day] ??= <ReviewEvent>[]).add(e);
   }
   // DateTime's own day arithmetic, so a daylight saving change does not
   // skip or repeat a day.
-  final dates = <DateTime>[
-    for (var i = 0; i < days; i++)
-      DateTime(first.year, first.month, first.day + i),
-  ];
+  final dates = <DateTime>[for (var i = 0; i < days; i++) _addDays(first, i)];
   return <PracticeDay>[
     for (final (i, day) in dates.indexed)
       PracticeDay(

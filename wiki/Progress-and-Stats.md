@@ -13,7 +13,7 @@ The numbers are for the language picked in the language bar at the top, or for e
 - **Weakest tags**: the three topics you miss most, with "All tags" to the rest.
 - **Leeches**: cards you keep missing.
 
-A card is **known** when its last review was right and FSRS predicted at least 85% recall at that review (#680). The B1 total is the whole B1 plan: the planned words (or the words written, if more) for read, write, hear and say, the grammar cells written for grammar, and both skills of every letter of the alphabet decks for script.
+A card is **known** when its last review was right and FSRS predicted at least 85% recall at that review (#680), by the parameters that schedule that skill, so Progress and the scheduler agree. The B1 total is the whole B1 plan: the planned words (or the words written, if more) for read, write, hear and say, the grammar cells written for grammar, and both skills of every letter of the alphabet decks for script.
 
 Until you finish a session, it says there are no reviews yet.
 
