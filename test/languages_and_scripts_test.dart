@@ -2722,8 +2722,15 @@ void main() {
         );
       expect(drawn.length, greaterThanOrEqualTo(4));
       for (var i = 1; i < drawn.length; i++) {
-        expect(drawn[i].rect.width, lessThanOrEqualTo(drawn[i - 1].rect.width));
-        expect(drawn[i].opacity, lessThanOrEqualTo(drawn[i - 1].opacity));
+        // A glyph either side at the same distance is as big, to the pixel.
+        expect(
+          drawn[i].rect.width,
+          lessThanOrEqualTo(drawn[i - 1].rect.width + 0.01),
+        );
+        expect(
+          drawn[i].opacity,
+          lessThanOrEqualTo(drawn[i - 1].opacity + 0.01),
+        );
       }
       expect(drawn.last.rect.width, lessThan(drawn.first.rect.width));
       expect(drawn.last.opacity, lessThan(drawn.first.opacity));
