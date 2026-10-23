@@ -4058,9 +4058,27 @@
   "@statsAllTagsTitle": {
     "description": "Title of the page listing every tag with the share remembered."
   },
-  "statsAllTagsEmpty": "No tags answered yet in this range.",
+  "statsAllTagsEmpty": "No tags in the languages you learn yet.",
   "@statsAllTagsEmpty": {
-    "description": "The All tags page when no card with a tag was answered in the chosen range."
+    "description": "The All tags page when no card in the languages counted has a tag."
+  },
+  "statsTagUnansweredValue": "–",
+  "@statsTagUnansweredValue": {
+    "description": "Where a tag's share remembered would be, for a tag with no answer in the chosen range."
+  },
+  "statsTagUnansweredLabel": "{tag}: not answered in this range",
+  "@statsTagUnansweredLabel": {
+    "description": "Screen-reader label of a tag's bar when it has no answer in the chosen range.",
+    "placeholders": {
+      "tag": {
+        "type": "String",
+        "example": "food"
+      }
+    }
+  },
+  "statsTagNothingTaught": "No word with this tag is taught yet",
+  "@statsTagNothingTaught": {
+    "description": "Tooltip of a disabled Practise button: no taught word carries the tag."
   },
   "statsTagPractise": "Practise",
   "@statsTagPractise": {

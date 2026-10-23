@@ -102,7 +102,10 @@ class DrillSession extends ChangeNotifier {
     this.recordsRevision = false,
     math.Random? random,
   }) : assert(items.isNotEmpty, 'an empty queue shows the empty state'),
-       assert(!revising || !recorded, 'revising is never recorded'),
+       assert(
+         !revising || !recorded,
+         'a revision records through recordsRevision, not recorded',
+       ),
        _state = state,
        _chosenMode = inputMode,
        _random = random ?? state.random,

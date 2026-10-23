@@ -4248,7 +4248,7 @@ void main() {
     test('a tag\'s practice is a capped set of taught words carrying the tag, '
         'and records every answer', () async {
       final state = await knowing(8);
-      final tag = state.profileDecks.first.cards.first.tags.first;
+      final tag = state.deckById('hi-en-phrasebook')!.cards.first.tags.first;
       final request = DrillRequest.tag(tag, count: 3, language: 'hi');
       expect(request.recordsRevision, isTrue);
       final items = state.sessionItems(request);
