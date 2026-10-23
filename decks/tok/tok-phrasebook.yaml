@@ -124,7 +124,7 @@ cards:
     phrasebook: true
     bases:
       - { word: "mi", ref: "tok-0003" }
-      - { word: "wile", base: "wile" }
+      - { word: "wile", ref: "tok-0086" }
       - { word: "e", base: "e" }
       - { word: "telo", base: "telo" }
   - id: "tok-0020"
@@ -135,8 +135,8 @@ cards:
     phrasebook: true
     bases:
       - { word: "mi", ref: "tok-0003" }
-      - { word: "wile", base: "wile" }
-      - { word: "moku", base: "moku" }
+      - { word: "wile", ref: "tok-0086" }
+      - { word: "moku", ref: "tok-0080" }
   - id: "tok-0021"
     target: "awen pona!"
     ipa: "ˈawen ˈpona"
@@ -153,5 +153,5 @@ cards:
     tags: ["leaving"]
     phrasebook: true
     bases:
-      - { word: "tawa", base: "tawa" }
+      - { word: "tawa", ref: "tok-0088" }
       - { word: "pona", ref: "tok-0002" }

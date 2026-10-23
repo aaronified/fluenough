@@ -1,0 +1,60 @@
+schema: 1
+id: "tok-en-reading-everyday-verbs"
+name: "Reading: everyday verbs"
+kind: reading
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two passages from the everyday verbs unit: a short spoken account of what someone eats, sees, hears and wants (heard), and a note left for a housemate about who is leaving, eating and sleeping. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "tok-what-i-do"
+    title: "What I do"
+    theme: "everyday-verbs"
+    sentences:
+      - text: "mi moku e pan."
+      - text: "mi lukin e ona."
+      - text: "mi kute e toki pona."
+      - text: "mi pali e moku."
+      - text: "mi wile lape."
+    questions:
+      - id: "tok-0095"
+        prompt: { en: "What does the speaker want to do?" }
+        options:
+          - { en: "To sleep" }
+          - { en: "To come" }
+        answer: 1
+      - id: "tok-0096"
+        prompt: { en: "What does the speaker hear?" }
+        options:
+          - { en: "Toki pona, the language" }
+          - { en: "Bread" }
+        answer: 1
+      - id: "tok-0097"
+        prompt: { en: "The speaker eats bread." }
+        answer: true
+  - id: "tok-day-note"
+    title: "A note for a housemate"
+    theme: "everyday-verbs"
+    sentences:
+      - text: "mi: mi tawa."
+      - text: "ona: ona li moku e pan."
+      - text: "sina: sina moku e pan anu ala?"
+      - text: "mi: mi wile lape."
+    questions:
+      - id: "tok-0098"
+        prompt: { en: "Who is leaving?" }
+        options:
+          - { en: "The writer (mi)" }
+          - { en: "The listener (sina)" }
+        answer: 1
+      - id: "tok-0099"
+        prompt: { en: "What does the third line ask?" }
+        options:
+          - { en: "Whether you eat bread" }
+          - { en: "Whether you sleep" }
+        answer: 1
+      - id: "tok-0100"
+        prompt: { en: "The writer wants to sleep." }
+        answer: true
