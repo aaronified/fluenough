@@ -1,0 +1,60 @@
+schema: 1
+id: "te-en-reading-perfect"
+name: "Reading: have done"
+kind: reading
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+description: "Two short passages with the -ి (-i) ఉన్నాను (unnānu) form: a friend saying what they have already done, heard, and a to-do list with its finished items. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [reading, beginner, unreviewed]
+passages:
+  - id: "te-a-friend-has-done"
+    title: "A friend says what they have done"
+    sentences:
+      - text: "నేను భోజనం చేసి ఉన్నాను."
+        reading: "nēnu bhōjanaṁ cēsi unnānu."
+      - text: "నేను పుస్తకం చదివి ఉన్నాను."
+        reading: "nēnu pustakaṁ cadivi unnānu."
+      - text: "నేను ఫోన్ చేసి ఉన్నాను."
+        reading: "nēnu fōn cēsi unnānu."
+      - text: "స్నేహితుడు వచ్చి ఉన్నాడు."
+        reading: "snēhituḍu vacci unnāḍu."
+    questions:
+      - id: "te-6534"
+        prompt: { en: "The friend has already had a meal." }
+        answer: true
+      - id: "te-6535"
+        prompt: { en: "What has the friend already read?" }
+        options: [{ en: "A letter" }, { en: "A book" }, { en: "Nothing" }]
+        answer: 2
+      - id: "te-6536"
+        prompt: { en: "The friend has not made a call." }
+        answer: false
+      - id: "te-6537"
+        prompt: { en: "Who has come?" }
+        options: [{ en: "The friend" }, { en: "Mother" }, { en: "The children" }]
+        answer: 1
+  - id: "te-to-do-ticks"
+    title: "A to-do list with the finished items ticked"
+    sentences:
+      - text: "కూరగాయలు కొని ఉన్నాను."
+        reading: "kūragāyalu koni unnānu."
+      - text: "తలుపు తెరిచి ఉన్నాను."
+        reading: "talupu terici unnānu."
+      - text: "పుస్తకం చదివి ఉన్నాను."
+        reading: "pustakaṁ cadivi unnānu."
+      - text: "ఇంకా పని మిగిలి ఉంది."
+        reading: "iṅkā pani migili undi."
+    questions:
+      - id: "te-6538"
+        prompt: { en: "Which item is not finished yet?" }
+        options: [{ en: "Buying vegetables" }, { en: "Reading the book" }, { en: "Work still to do" }]
+        answer: 3
+      - id: "te-6539"
+        prompt: { en: "The door has been opened." }
+        answer: true
+      - id: "te-6540"
+        prompt: { en: "How many items are finished?" }
+        options: [{ en: "Two" }, { en: "Three" }, { en: "Four" }]
+        answer: 2
