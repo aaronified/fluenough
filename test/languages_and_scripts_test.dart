@@ -33,7 +33,6 @@ import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/core/decks/deck_fetch.dart';
 import 'package:fluenough/core/decks/deck_index.dart' show decksBeforeReady;
-import 'package:fluenough/core/decks/ipa_course.dart';
 import 'package:fluenough/core/decks/notation.dart';
 import 'package:fluenough/core/models/card.dart' as model;
 import 'package:fluenough/core/models/deck.dart';
@@ -874,12 +873,11 @@ List<String> ids(Iterable<dynamic> cards) => <String>[
 // From ipa_entries_test.dart.
 Future<AppState> pumpPickerIpaEntries(
   WidgetTester tester,
-  List<String> learning, {
-  IpaScope? scope,
-}) async {
+  List<String> learning,
+) async {
   usePhone(tester);
   tester.view.physicalSize = const Size(390 * 3, 3000 * 3);
-  final state = ipaApp(learning, scope: scope);
+  final state = ipaApp(learning);
   addTearDown(state.dispose);
   await pumpScreen(tester, const LanguagePickerPage(), state: state);
   return state;
@@ -2932,16 +2930,11 @@ void main() {
 
   group('the IPA course', () {
     group('the IPA course for the languages learned', () {
-      test('the IPA course follows the languages learned, and its production '
-          'is chosen, not typed', () async {
+      test('the IPA course is the whole chart, whatever languages are '
+          'learned, and its production is chosen, not typed', () async {
         final state = ipaApp(<String>['hi', 'ipa']);
         addTearDown(state.dispose);
         await state.load();
-        expect(state.deckById('ipa-en-rare'), isNull);
-        state.settings.ipaScope = IpaScope.whole;
-        expect(state.deckById('ipa-en-rare'), isNotNull);
-        state.settings.ipaScope = IpaScope.mine;
-        state.setLearningLanguages(<String>['hi', 'es', 'ipa']);
         expect(ids(state.deckById('ipa-en-basics')!.cards), [
           'ipa-0001',
           'ipa-0002',
@@ -2953,9 +2946,10 @@ void main() {
           'ipa-0006',
           'ipa-0007',
         ]);
+        expect(state.deckById('ipa-en-rare'), isNotNull);
 
         {
-          final state = ipaApp(<String>['ipa'], scope: IpaScope.whole);
+          final state = ipaApp(<String>['ipa']);
           addTearDown(state.dispose);
           await state.load();
           expect(
@@ -2982,17 +2976,14 @@ void main() {
   });
 
   group('choosing the IPA', () {
-    testWidgets('choosing "my languages" learns the IPA with that scope, and '
-        'places nothing', (tester) async {
-      final state = await pumpPickerIpaEntries(tester, <String>[
-        'hi',
-      ], scope: IpaScope.whole);
-      await pickLanguage(tester, 'ipa:mine');
-      expect(isPicked(tester, 'ipa:mine'), isTrue);
-      expect(isPicked(tester, 'ipa:whole'), isFalse);
+    testWidgets('choosing the IPA learns it, as the one whole course', (
+      tester,
+    ) async {
+      final state = await pumpPickerIpaEntries(tester, <String>['hi']);
+      await pickLanguage(tester, 'ipa');
+      expect(isPicked(tester, 'ipa'), isTrue);
       await proceed(tester);
       expect(state.learningCodes, {'hi', 'ipa'});
-      expect(state.settings.ipaScope, IpaScope.mine);
     });
   });
 
