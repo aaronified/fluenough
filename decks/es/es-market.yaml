@@ -1,0 +1,315 @@
+schema: 1
+id: "es-market"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "market"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-0567"
+    target: "el mercado"
+    ipa: "el meɾˈkado"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "mercado", base: "mercado" }]
+    examples:
+      - target: "El mercado está en la ciudad."
+        ipa: "el meɾˈkado esˈta en la θjuˈdad"
+        bases: [{ word: "El", base: "el" }, { word: "mercado", base: "mercado" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }]
+      - target: "Compro pan en el mercado."
+        ipa: "ˈkompɾo pan en el meɾˈkado"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "pan", ref: "es-0013" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "mercado", base: "mercado" }]
+  - id: "es-0568"
+    target: "la fruta"
+    ipa: "la ˈfɾuta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "fruta", base: "fruta" }]
+    examples:
+      - target: "La fruta es buena."
+        ipa: "la ˈfɾuta es ˈbwena"
+        bases: [{ word: "La", base: "la" }, { word: "fruta", base: "fruta" }, { word: "es", ref: "es-0022" }, { word: "buena", ref: "es-0033" }]
+      - target: "Compro fruta en el mercado."
+        ipa: "ˈkompɾo ˈfɾuta en el meɾˈkado"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "fruta", base: "fruta" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "mercado", ref: "es-0567" }]
+  - id: "es-0569"
+    target: "la manzana"
+    ipa: "la manˈθana"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "manzana", base: "manzana" }]
+    examples:
+      - target: "Compro una manzana."
+        ipa: "ˈkompɾo ˈuna manˈθana"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "una", base: "una" }, { word: "manzana", base: "manzana" }]
+      - target: "Las manzanas son buenas."
+        ipa: "las manˈθanas son ˈbwenas"
+        bases: [{ word: "Las", base: "las" }, { word: "manzanas", base: "manzana" }, { word: "son", ref: "es-0022" }, { word: "buenas", ref: "es-0033" }]
+  - id: "es-0570"
+    target: "la naranja"
+    ipa: "la naˈɾanxa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "naranja", base: "naranja" }]
+    examples:
+      - target: "Compro una naranja."
+        ipa: "ˈkompɾo ˈuna naˈɾanxa"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "una", base: "una" }, { word: "naranja", base: "naranja" }]
+      - target: "La naranja es buena."
+        ipa: "la naˈɾanxa es ˈbwena"
+        bases: [{ word: "La", base: "la" }, { word: "naranja", base: "naranja" }, { word: "es", ref: "es-0022" }, { word: "buena", ref: "es-0033" }]
+  - id: "es-0571"
+    target: "la pera"
+    ipa: "la ˈpeɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "pera", base: "pera" }]
+    examples:
+      - target: "Ana compra una pera."
+        ipa: "ˈana ˈkompɾa ˈuna ˈpeɾa"
+        bases: [{ word: "Ana", base: "ana" }, { word: "compra", ref: "es-0280" }, { word: "una", base: "una" }, { word: "pera", base: "pera" }]
+      - target: "La pera es grande."
+        ipa: "la ˈpeɾa es ˈɡɾande"
+        bases: [{ word: "La", base: "la" }, { word: "pera", base: "pera" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-0572"
+    target: "la fresa"
+    ipa: "la ˈfɾesa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "fresa", base: "fresa" }]
+    examples:
+      - target: "Compro fresas."
+        ipa: "ˈkompɾo ˈfɾesas"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "fresas", base: "fresa" }]
+      - target: "Las fresas son buenas."
+        ipa: "las ˈfɾesas son ˈbwenas"
+        bases: [{ word: "Las", base: "las" }, { word: "fresas", base: "fresa" }, { word: "son", ref: "es-0022" }, { word: "buenas", ref: "es-0033" }]
+  - id: "es-0573"
+    target: "el plátano"
+    ipa: "el ˈplatano"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "plátano", base: "plátano" }]
+    examples:
+      - target: "Compro dos plátanos."
+        ipa: "ˈkompɾo dos ˈplatanos"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "dos", ref: "es-0206" }, { word: "plátanos", base: "plátano" }]
+      - target: "El plátano es bueno."
+        ipa: "el ˈplatano es ˈbweno"
+        bases: [{ word: "El", base: "el" }, { word: "plátano", base: "plátano" }, { word: "es", ref: "es-0022" }, { word: "bueno", ref: "es-0033" }]
+  - id: "es-0574"
+    target: "el tomate"
+    ipa: "el toˈmate"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "tomate", base: "tomate" }]
+    examples:
+      - target: "Compro un kilo de tomates."
+        ipa: "ˈkompɾo un ˈkilo de toˈmates"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "un", base: "un" }, { word: "kilo", ref: "es-0375" }, { word: "de", base: "de" }, { word: "tomates", base: "tomate" }]
+      - target: "El tomate es rico."
+        ipa: "el toˈmate es ˈriko"
+        bases: [{ word: "El", base: "el" }, { word: "tomate", base: "tomate" }, { word: "es", ref: "es-0022" }, { word: "rico", ref: "es-0409" }]
+  - id: "es-0575"
+    target: "la cebolla"
+    ipa: "la θeˈboʝa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "cebolla", base: "cebolla" }]
+    examples:
+      - target: "Necesito una cebolla."
+        ipa: "neθeˈsito ˈuna θeˈboʝa"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "una", base: "una" }, { word: "cebolla", base: "cebolla" }]
+      - target: "La cebolla es pequeña."
+        ipa: "la θeˈboʝa es peˈkeɲa"
+        bases: [{ word: "La", base: "la" }, { word: "cebolla", base: "cebolla" }, { word: "es", ref: "es-0022" }, { word: "pequeña", ref: "es-0032" }]
+  - id: "es-0576"
+    target: "la patata"
+    ipa: "la paˈtata"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "patata", base: "patata" }]
+    examples:
+      - target: "Compro patatas."
+        ipa: "ˈkompɾo paˈtatas"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "patatas", base: "patata" }]
+      - target: "La patata es barata."
+        ipa: "la paˈtata es baˈɾata"
+        bases: [{ word: "La", base: "la" }, { word: "patata", base: "patata" }, { word: "es", ref: "es-0022" }, { word: "barata", ref: "es-0411" }]
+  - id: "es-0577"
+    target: "la zanahoria"
+    ipa: "la θanaˈoɾja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "zanahoria", base: "zanahoria" }]
+    examples:
+      - target: "Mi madre compra zanahorias."
+        ipa: "mi ˈmadɾe ˈkompɾa θanaˈoɾjas"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "madre", ref: "es-0160" }, { word: "compra", ref: "es-0280" }, { word: "zanahorias", base: "zanahoria" }]
+      - target: "La zanahoria es larga."
+        ipa: "la θanaˈoɾja es ˈlaɾɡa"
+        bases: [{ word: "La", base: "la" }, { word: "zanahoria", base: "zanahoria" }, { word: "es", ref: "es-0022" }, { word: "larga", ref: "es-0429" }]
+  - id: "es-0578"
+    target: "la lechuga"
+    ipa: "la leˈtʃuɡa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "lechuga", base: "lechuga" }]
+    examples:
+      - target: "Compro una lechuga."
+        ipa: "ˈkompɾo ˈuna leˈtʃuɡa"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "una", base: "una" }, { word: "lechuga", base: "lechuga" }]
+      - target: "La lechuga es grande."
+        ipa: "la leˈtʃuɡa es ˈɡɾande"
+        bases: [{ word: "La", base: "la" }, { word: "lechuga", base: "lechuga" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-0579"
+    target: "la verdura"
+    ipa: "la beɾˈduɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "verdura", base: "verdura" }]
+    examples:
+      - target: "Compro verdura en el mercado."
+        ipa: "ˈkompɾo beɾˈduɾa en el meɾˈkado"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "verdura", base: "verdura" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "mercado", ref: "es-0567" }]
+      - target: "La verdura es buena."
+        ipa: "la beɾˈduɾa es ˈbwena"
+        bases: [{ word: "La", base: "la" }, { word: "verdura", base: "verdura" }, { word: "es", ref: "es-0022" }, { word: "buena", ref: "es-0033" }]
+  - id: "es-0580"
+    target: "el precio"
+    ipa: "el ˈpɾeθjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "precio", base: "precio" }]
+    examples:
+      - target: "El precio es bajo."
+        ipa: "el ˈpɾeθjo es ˈbaxo"
+        bases: [{ word: "El", base: "el" }, { word: "precio", base: "precio" }, { word: "es", ref: "es-0022" }, { word: "bajo", ref: "es-0255" }]
+      - target: "¿Cuál es el precio?"
+        ipa: "kwal es el ˈpɾeθjo"
+        bases: [{ word: "Cuál", ref: "es-0059" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "precio", base: "precio" }]
+  - id: "es-0581"
+    target: "el puesto"
+    ipa: "el ˈpwesto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "puesto", base: "puesto" }]
+    examples:
+      - target: "El puesto de fruta está aquí."
+        ipa: "el ˈpwesto de ˈfɾuta esˈta aˈki"
+        bases: [{ word: "El", base: "el" }, { word: "puesto", base: "puesto" }, { word: "de", base: "de" }, { word: "fruta", ref: "es-0568" }, { word: "está", ref: "es-0023" }, { word: "aquí", ref: "es-0051" }]
+      - target: "Compro pan en el puesto."
+        ipa: "ˈkompɾo pan en el ˈpwesto"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "pan", ref: "es-0013" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "puesto", base: "puesto" }]
+  - id: "es-0582"
+    target: "el vendedor"
+    ipa: "el bendeˈdoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "vendedor", base: "vendedor" }]
+    examples:
+      - target: "El vendedor es simpático."
+        ipa: "el bendeˈdoɾ es simˈpatiko"
+        bases: [{ word: "El", base: "el" }, { word: "vendedor", base: "vendedor" }, { word: "es", ref: "es-0022" }, { word: "simpático", ref: "es-0422" }]
+      - target: "El vendedor vende fruta."
+        ipa: "el bendeˈdoɾ ˈbende ˈfɾuta"
+        bases: [{ word: "El", base: "el" }, { word: "vendedor", base: "vendedor" }, { word: "vende", ref: "es-0522" }, { word: "fruta", ref: "es-0568" }]
+  - id: "es-0583"
+    target: "la vendedora"
+    ipa: "la bendeˈdoɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "vendedora", base: "vendedora" }]
+    examples:
+      - target: "La vendedora es simpática."
+        ipa: "la bendeˈdoɾa es simˈpatika"
+        bases: [{ word: "La", base: "la" }, { word: "vendedora", base: "vendedora" }, { word: "es", ref: "es-0022" }, { word: "simpática", ref: "es-0422" }]
+      - target: "La vendedora vende pan."
+        ipa: "la bendeˈdoɾa ˈbende pan"
+        bases: [{ word: "La", base: "la" }, { word: "vendedora", base: "vendedora" }, { word: "vende", ref: "es-0522" }, { word: "pan", ref: "es-0013" }]
+  - id: "es-0584"
+    target: "la tienda"
+    ipa: "la ˈtjenda"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "tienda", base: "tienda" }]
+    examples:
+      - target: "La tienda está en una calle grande."
+        ipa: "la ˈtjenda esˈta en ˈuna ˈkaʝe ˈɡɾande"
+        bases: [{ word: "La", base: "la" }, { word: "tienda", base: "tienda" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "calle", ref: "es-0017" }, { word: "grande", ref: "es-0031" }]
+      - target: "Compro pan en la tienda."
+        ipa: "ˈkompɾo pan en la ˈtjenda"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "pan", ref: "es-0013" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "tienda", base: "tienda" }]
+  - id: "es-0585"
+    target: "la oferta"
+    ipa: "la oˈfeɾta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "oferta", base: "oferta" }]
+    examples:
+      - target: "Hay una oferta hoy."
+        ipa: "aj ˈuna oˈfeɾta oj"
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "oferta", base: "oferta" }, { word: "hoy", ref: "es-0331" }]
+      - target: "La fruta está en oferta."
+        ipa: "la ˈfɾuta esˈta en oˈfeɾta"
+        bases: [{ word: "La", base: "la" }, { word: "fruta", ref: "es-0568" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "oferta", base: "oferta" }]
+  - id: "es-0586"
+    target: "el cambio"
+    ipa: "el ˈkambjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "cambio", base: "cambio" }]
+    examples:
+      - target: "No tengo cambio."
+        ipa: "no ˈtenɡo ˈkambjo"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "tengo", ref: "es-0024" }, { word: "cambio", base: "cambio" }]
+      - target: "Necesito el cambio."
+        ipa: "neθeˈsito el ˈkambjo"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "el", base: "el" }, { word: "cambio", base: "cambio" }]
+  - id: "es-0587"
+    target: "costar"
+    ipa: "kosˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "¿Cuánto cuesta el pan?"
+        ipa: "ˈkwanto ˈkwesta el pan"
+        bases: [{ word: "Cuánto", ref: "es-0060" }, { word: "cuesta", base: "costar" }, { word: "el", base: "el" }, { word: "pan", ref: "es-0013" }]
+      - target: "Esta manzana cuesta poco."
+        ipa: "ˈesta manˈθana ˈkwesta ˈpoko"
+        bases: [{ word: "Esta", base: "esta" }, { word: "manzana", ref: "es-0569" }, { word: "cuesta", base: "costar" }, { word: "poco", ref: "es-0358" }]
+  - id: "es-0588"
+    target: "cambiar"
+    ipa: "kamˈbjaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Necesito cambiar el dinero."
+        ipa: "neθeˈsito kamˈbjaɾ el diˈneɾo"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "cambiar", base: "cambiar" }, { word: "el", base: "el" }, { word: "dinero", ref: "es-0513" }]
+      - target: "Él cambia dinero en la tienda."
+        ipa: "el ˈkambja diˈneɾo en la ˈtjenda"
+        bases: [{ word: "Él", ref: "es-0120" }, { word: "cambia", base: "cambiar" }, { word: "dinero", ref: "es-0513" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "tienda", ref: "es-0584" }]

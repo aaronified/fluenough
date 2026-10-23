@@ -27,6 +27,7 @@ import '../downloads/download_text.dart';
 import '../downloads/language_download_row.dart';
 import '../downloads/update_escape.dart';
 import '../profiles/spoken_languages_picker.dart';
+import '../settings/daily_minutes.dart';
 import 'language_row.dart';
 import 'language_sheet.dart';
 import 'language_download.dart';
@@ -1446,6 +1447,9 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
             )
           : null,
       below: <Widget>[
+        // Minutes a day, on a course the learner has (#485).
+        if (learningGroup && learns && !widget.firstRun)
+          DailyMinutes(language: code),
         if (learningGroup &&
             ticked &&
             !learns &&

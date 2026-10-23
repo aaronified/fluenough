@@ -8,6 +8,7 @@ import '../core/decks/ipa_course.dart';
 import '../core/review/deck_review.dart';
 import '../core/review/rater_code.dart';
 import '../core/review/review_pairs.dart';
+import '../core/scheduling/daily_budget.dart';
 import '../core/updates/release_check.dart';
 import 'language_choice.dart';
 import 'skill.dart';
@@ -232,6 +233,49 @@ class SettingsNotifier extends ChangeNotifier {
     _lessonsDone = Map<String, DateTime>.unmodifiable(<String, DateTime>{
       ..._lessonsDone,
       language: at,
+    });
+    notifyListeners();
+  }
+
+  Map<String, int> _dailyMinutes = const <String, int>{};
+
+  /// Minutes a day the learner gives [language] (#485): 15 until they
+  /// choose, from 5 to 60.
+  int dailyMinutesFor(String language) =>
+      _dailyMinutes[language] ?? DailyBudget.defaultMinutes;
+
+  Map<String, ({DateTime day, int minutes})> _dailyExtra =
+      const <String, ({DateTime day, int minutes})>{};
+
+  /// Minutes added to [language]'s day today with "+ 5 min" or "Keep going"
+  /// (#521), negative when taken off: 0 once the day has changed.
+  int dailyExtraFor(String language, DateTime now) {
+    final extra = _dailyExtra[language];
+    if (extra == null || !_sameDay(extra.day, now)) return 0;
+    return extra.minutes;
+  }
+
+  /// Sets what is added to [language]'s day today.
+  void setDailyExtra(String language, int minutes, DateTime now) {
+    _dailyExtra = Map<String, ({DateTime day, int minutes})>.unmodifiable(
+      <String, ({DateTime day, int minutes})>{
+        ..._dailyExtra,
+        language: (day: now, minutes: minutes),
+      },
+    );
+    notifyListeners();
+  }
+
+  static bool _sameDay(DateTime a, DateTime b) =>
+      a.year == b.year && a.month == b.month && a.day == b.day;
+
+  /// Sets [language]'s minutes a day, held between 5 and 60.
+  void setDailyMinutes(String language, int minutes) {
+    final next = DailyBudget.clampMinutes(minutes);
+    if (dailyMinutesFor(language) == next) return;
+    _dailyMinutes = Map<String, int>.unmodifiable(<String, int>{
+      ..._dailyMinutes,
+      language: next,
     });
     notifyListeners();
   }
@@ -815,6 +859,11 @@ class SettingsNotifier extends ChangeNotifier {
       for (final MapEntry(:key, :value) in _lessonsDone.entries)
         key: value.millisecondsSinceEpoch,
     }),
+    'daily_minutes': jsonEncode(_dailyMinutes),
+    'daily_extra': jsonEncode(<String, List<int>>{
+      for (final MapEntry(:key, :value) in _dailyExtra.entries)
+        key: <int>[value.day.millisecondsSinceEpoch, value.minutes],
+    }),
     'review_decks': '$_reviewDecks',
     'adult_content': '$_adultContent',
     'tts_voices': jsonEncode(_voices),
@@ -919,6 +968,28 @@ class SettingsNotifier extends ChangeNotifier {
     if (pick('lessons_done', _parseShown) case final v?) {
       _lessonsDone = Map<String, DateTime>.unmodifiable(v);
       notifyListeners();
+    }
+    if (pick('daily_minutes', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (RegExp(r'^[a-z]{2,3}$').hasMatch(key) && value is int) {
+          setDailyMinutes(key, value);
+        }
+      }
+    }
+    if (pick('daily_extra', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (RegExp(r'^[a-z]{2,3}$').hasMatch(key) &&
+            value is List &&
+            value.length == 2 &&
+            value[0] is int &&
+            value[1] is int) {
+          setDailyExtra(
+            key,
+            value[1] as int,
+            DateTime.fromMillisecondsSinceEpoch(value[0] as int),
+          );
+        }
+      }
     }
     if (pick('spoken_languages', (t) => t) case final v?) {
       spokenLanguages = <String>[

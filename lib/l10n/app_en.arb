@@ -677,26 +677,6 @@
   "@todayDueSection": {
     "description": "Screen-reader name of the card showing what is due."
   },
-  "todayWordsDue": "{count, plural, =1{word due} other{words due}}",
-  "@todayWordsDue": {
-    "description": "Beside the large number of words due today, which is shown separately. A word counts once, however many of its skills are due: today's review asks it in one. The count only picks the form.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "23"
-      }
-    }
-  },
-  "todayMinutes": "{count, plural, =1{about 1 min} other{about {count} min}}",
-  "@todayMinutes": {
-    "description": "Estimated time for today's review.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "8"
-      }
-    }
-  },
   "todaySkillSemantics": "{skill}: {count, plural, =0{none due} =1{1 due} other{{count} due}}",
   "@todaySkillSemantics": {
     "description": "Screen-reader label of one skill tile on Today.",
@@ -753,60 +733,6 @@
       }
     }
   },
-  "todayLessonSection": "Lessons",
-  "@todayLessonSection": {
-    "description": "Screen-reader label of Today's card of lessons (ADR-0024), above the reviews."
-  },
-  "todayLessonTitle": "Today’s lesson",
-  "@todayLessonTitle": {
-    "description": "Title of Today's lesson card, while the day's lesson is not done."
-  },
-  "todayLessonTitleIn": "Today’s {language} lesson",
-  "@todayLessonTitleIn": {
-    "description": "Title of a lesson card on Today when more than one language is learned.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Hindi"
-      }
-    }
-  },
-  "todayLessonDoneTitle": "Today’s lesson is done",
-  "@todayLessonDoneTitle": {
-    "description": "Title of Today's lesson card once the day's lesson is finished; Another lesson is offered under it."
-  },
-  "todayLessonDoneTitleIn": "Today’s {language} lesson is done",
-  "@todayLessonDoneTitleIn": {
-    "description": "As todayLessonDoneTitle, when more than one language is learned.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Hindi"
-      }
-    }
-  },
-  "todayLessonWords": "{count, plural, =1{1 new word, taught then practised} other{{count} new words, easy to hard, taught then practised}}",
-  "@todayLessonWords": {
-    "description": "Under a lesson card's title: how many new words the lesson teaches.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "9"
-      }
-    }
-  },
-  "todayLessonReading": "A passage to hear and read, with questions",
-  "@todayLessonReading": {
-    "description": "Under a lesson card's title when the next lesson is a reading passage."
-  },
-  "todayLessonStart": "Start lesson",
-  "@todayLessonStart": {
-    "description": "Button on a lesson card that starts the day's lesson."
-  },
-  "todayAnotherLesson": "Another lesson",
-  "@todayAnotherLesson": {
-    "description": "Button on a lesson card once the day's lesson is done: one more, optional."
-  },
   "todayNewWords": "{count, plural, =0{No new words yet today} =1{1 new word today} other{{count} new words today}}",
   "@todayNewWords": {
     "description": "Under the streak: the words taught today in lessons.",
@@ -816,28 +742,6 @@
         "example": "9"
       }
     }
-  },
-  "todayStartReview": "Start review",
-  "@todayStartReview": {
-    "description": "The main button on Today, which starts a session of everything due."
-  },
-  "todayStartLanguage": "Start with {language}",
-  "@todayStartLanguage": {
-    "description": "The main button on Today when more than one language has something due: it starts that language's part of the day, and the others follow one at a time.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Hindi"
-      }
-    }
-  },
-  "todayAllDoneTitle": "All done for now",
-  "@todayAllDoneTitle": {
-    "description": "Shown on Today when nothing is due."
-  },
-  "todayAllDoneBody": "No reviews are due. New words come in lessons.",
-  "@todayAllDoneBody": {
-    "description": "Under todayAllDoneTitle."
   },
   "todayStreakSection": "Streak",
   "@todayStreakSection": {
@@ -871,7 +775,7 @@
   "@todayRevisionTitle": {
     "description": "Today: the heading of the quick revision buttons, which revise words already learned."
   },
-  "todayRevisionBody": "Words you know, picked at random. A miss brings a word back sooner.",
+  "todayRevisionBody": "Words you know, picked at random, for as long as you choose. A miss brings a word back sooner.",
   "@todayRevisionBody": {
     "description": "Under Quick revision: what it does. Every answer is recorded (ADR-0033)."
   },
@@ -901,14 +805,241 @@
       }
     }
   },
-  "todayRevisionCards": "{count, plural, =1{Revise 1 word} other{Revise {count} words}}",
-  "@todayRevisionCards": {
-    "description": "Screen-reader label of a quick revision button, which shows only the number.",
+  "todayRevisionStart": "{minutes} min",
+  "@todayRevisionStart": {
+    "description": "Quick revision's start button on Today: how many minutes it lasts, between the minus and plus buttons.",
     "placeholders": {
-      "count": {
-        "type": "int"
+      "minutes": {
+        "type": "int",
+        "example": "5"
       }
     }
+  },
+  "todayRevisionMinutes": "{count, plural, =1{Revise for 1 minute} other{Revise for {count} minutes}}",
+  "@todayRevisionMinutes": {
+    "description": "Screen-reader label of quick revision's start button, which shows the minutes.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "todayRevisionLess": "{minutes, plural, =1{1 minute less} other{{minutes} minutes less}}",
+  "@todayRevisionLess": {
+    "description": "Screen-reader label and tooltip of quick revision's minus button.",
+    "placeholders": {
+      "minutes": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "todayRevisionMore": "{minutes, plural, =1{1 minute more} other{{minutes} minutes more}}",
+  "@todayRevisionMore": {
+    "description": "Screen-reader label and tooltip of quick revision's plus button.",
+    "placeholders": {
+      "minutes": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "todayDailyStart": "Start",
+  "@todayDailyStart": {
+    "description": "The button inside Today's ring, before anything is done today (#521)."
+  },
+  "todayDailyContinue": "Continue",
+  "@todayDailyContinue": {
+    "description": "The button inside Today's ring once some of today's minutes are spent."
+  },
+  "todayDailyDone": "Done for today",
+  "@todayDailyDone": {
+    "description": "The button inside Today's ring when today's minutes are spent or nothing is left (#521)."
+  },
+  "todayDailyKeepGoing": "Keep going",
+  "@todayDailyKeepGoing": {
+    "description": "Under the ring, once today's minutes are done: starts another five minutes."
+  },
+  "todayDailyProgress": "{done} of {goal} min",
+  "@todayDailyProgress": {
+    "description": "Under Today's ring: the minutes done against the day's minutes, as in 12 of 15 min.",
+    "placeholders": {
+      "done": {
+        "type": "int",
+        "example": "12"
+      },
+      "goal": {
+        "type": "int",
+        "example": "15"
+      }
+    }
+  },
+  "todayDailyReviews": "{count, plural, =1{1 review} other{{count} reviews}}",
+  "@todayDailyReviews": {
+    "description": "Today's split: how many reviews the day's session holds.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "8"
+      }
+    }
+  },
+  "todayDailyNew": "{count} new",
+  "@todayDailyNew": {
+    "description": "Today's split: how many new words the day's session teaches.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "6"
+      }
+    }
+  },
+  "todayDailyCatchingUp": "Catching up: no new words today",
+  "@todayDailyCatchingUp": {
+    "description": "Today's banner when reviews have piled up over three days of the daily minutes (#485)."
+  },
+  "todayDailyCatchingUpPlan": "{reviews, plural, =1{1 review} other{{reviews} reviews}}, about {minutes} min. At {goal} min a day you will catch up in {days, plural, =1{1 day} other{{days} days}}.",
+  "@todayDailyCatchingUpPlan": {
+    "description": "Under Catching up: how long the waiting reviews take and how soon the daily minutes clear them.",
+    "placeholders": {
+      "reviews": {
+        "type": "int",
+        "example": "80"
+      },
+      "minutes": {
+        "type": "int",
+        "example": "23"
+      },
+      "goal": {
+        "type": "int",
+        "example": "15"
+      },
+      "days": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "todayDailyAddMinutes": "+ {minutes} min",
+  "@todayDailyAddMinutes": {
+    "description": "The catching-up button: each tap adds these minutes to today's session.",
+    "placeholders": {
+      "minutes": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "todayDailyAddHint": "Adds {minutes} minutes to today. Press and hold to take {minutes} away.",
+  "@todayDailyAddHint": {
+    "description": "The hint of the catching-up button for screen readers.",
+    "placeholders": {
+      "minutes": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "todayDailyTakeAway": "Take {minutes} minutes away",
+  "@todayDailyTakeAway": {
+    "description": "The screen-reader action that does what a long press on the catching-up button does.",
+    "placeholders": {
+      "minutes": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "todaySituationsTitle": "Situations",
+  "@todaySituationsTitle": {
+    "description": "The Situations card on Today, under the buttons (#724)."
+  },
+  "todaySituationsBody": "Hailing a cab, groceries, the doctor and more: key phrases, offline",
+  "@todaySituationsBody": {
+    "description": "Under Situations on Today: what the cheatsheets hold."
+  },
+  "minutesTitle": "Minutes a day",
+  "@minutesTitle": {
+    "description": "Languages I'm learning: the row on a course's card that sets how long a day the learner gives it (#485)."
+  },
+  "minutesValue": "{count} min",
+  "@minutesValue": {
+    "description": "A number of minutes, as in 15 min.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "15"
+      }
+    }
+  },
+  "minutesCustom": "Custom",
+  "@minutesCustom": {
+    "description": "The chip that opens the sheet for a number of minutes of the learner's own, when none of the presets is chosen."
+  },
+  "minutesCustomValue": "Custom {count}",
+  "@minutesCustomValue": {
+    "description": "The custom chip once a custom number of minutes is chosen.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "25"
+      }
+    }
+  },
+  "minutesCards": "About {cards} cards a day, at {seconds} seconds a card. Reviews come first; some new words always fit.",
+  "@minutesCards": {
+    "description": "Under the minutes a day: what they buy.",
+    "placeholders": {
+      "cards": {
+        "type": "int",
+        "example": "51"
+      },
+      "seconds": {
+        "type": "String",
+        "example": "17.5"
+      }
+    }
+  },
+  "minutesCustomTitle": "Custom minutes a day",
+  "@minutesCustomTitle": {
+    "description": "Title of the sheet for a custom number of minutes a day."
+  },
+  "minutesCustomHint": "From {min} to {max} minutes.",
+  "@minutesCustomHint": {
+    "description": "Under the sheet's title: the range allowed.",
+    "placeholders": {
+      "min": {
+        "type": "int",
+        "example": "5"
+      },
+      "max": {
+        "type": "int",
+        "example": "60"
+      }
+    }
+  },
+  "minutesCustomCards": "About {cards} cards a day",
+  "@minutesCustomCards": {
+    "description": "In the custom minutes sheet: what the number buys.",
+    "placeholders": {
+      "cards": {
+        "type": "int",
+        "example": "51"
+      }
+    }
+  },
+  "minutesLess": "One minute less",
+  "@minutesLess": {
+    "description": "Screen-reader label of the custom minutes sheet's minus button."
+  },
+  "minutesMore": "One minute more",
+  "@minutesMore": {
+    "description": "Screen-reader label of the custom minutes sheet's plus button."
+  },
+  "minutesSave": "Save",
+  "@minutesSave": {
+    "description": "The custom minutes sheet's button that keeps the number."
   },
   "todayNoDecks": "No decks for your languages yet.",
   "@todayNoDecks": {
@@ -3667,93 +3798,6 @@
   "@summaryEmpty": {
     "description": "Summary line when a session ended before any answer."
   },
-  "statsRangeGroup": "Time range",
-  "@statsRangeGroup": {
-    "description": "Screen-reader name of the range choice."
-  },
-  "statsRangeDays": "{count, plural, =1{1 day} other{{count} days}}",
-  "@statsRangeDays": {
-    "description": "A time range choice.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "30"
-      }
-    }
-  },
-  "statsRangeAll": "All time",
-  "@statsRangeAll": {
-    "description": "The time range covering every review."
-  },
-  "statsReviews": "Reviews",
-  "@statsReviews": {
-    "description": "Stat: reviews given in the range."
-  },
-  "statsRemembered": "Remembered",
-  "@statsRemembered": {
-    "description": "Stat: share of reviews remembered."
-  },
-  "statsDayStreak": "Day streak",
-  "@statsDayStreak": {
-    "description": "Stat: the current streak."
-  },
-  "statsLongestStreak": "Longest streak",
-  "@statsLongestStreak": {
-    "description": "Stat: the longest streak ever, for All time."
-  },
-  "statsNewCardsLearned": "New cards learned",
-  "@statsNewCardsLearned": {
-    "description": "Stat: new cards learned in the range."
-  },
-  "statsCardsLearned": "Cards learned",
-  "@statsCardsLearned": {
-    "description": "Stat: every card learned, for All time."
-  },
-  "statsHeatmapTitle": "{weeks, plural, =1{Reviews, last week} other{Reviews, last {weeks} weeks}}",
-  "@statsHeatmapTitle": {
-    "description": "Title of the activity grid.",
-    "placeholders": {
-      "weeks": {
-        "type": "int",
-        "example": "12"
-      }
-    }
-  },
-  "statsHeatmapLabel": "Daily review activity",
-  "@statsHeatmapLabel": {
-    "description": "Screen-reader name of the activity grid."
-  },
-  "statsHeatmapSummary": "Reviewed on {active} of {days} days, {reviews, plural, =0{no reviews} =1{1 review} other{{reviews} reviews}} in all",
-  "@statsHeatmapSummary": {
-    "description": "Screen-reader summary of the activity grid, which is otherwise colour only.",
-    "placeholders": {
-      "active": {
-        "type": "int",
-        "example": "71"
-      },
-      "days": {
-        "type": "int",
-        "example": "84"
-      },
-      "reviews": {
-        "type": "int",
-        "example": "412",
-        "format": "decimalPattern"
-      }
-    }
-  },
-  "statsFewer": "Fewer",
-  "@statsFewer": {
-    "description": "Legend of the activity grid: the lightest colour."
-  },
-  "statsMore": "More",
-  "@statsMore": {
-    "description": "Legend of the activity grid: the strongest colour."
-  },
-  "statsBySkill": "Correct, by skill",
-  "@statsBySkill": {
-    "description": "Heading of the per-skill bars."
-  },
   "statsWeakestTags": "Weakest tags",
   "@statsWeakestTags": {
     "description": "Heading of the per-tag bars. The tags come from the decks."
@@ -3764,7 +3808,7 @@
   },
   "statsAllTagsTitle": "All tags",
   "@statsAllTagsTitle": {
-    "description": "Title of the page listing every tag with the share remembered."
+    "description": "Title of the page listing every tag with the share of its taught pairs known now."
   },
   "statsAllTagsEmpty": "No tags in the languages you learn yet.",
   "@statsAllTagsEmpty": {
@@ -3772,11 +3816,11 @@
   },
   "statsTagUnansweredValue": "–",
   "@statsTagUnansweredValue": {
-    "description": "Where a tag's share remembered would be, for a tag with no answer in the chosen range."
+    "description": "Where a tag's share known would be, for a tag with nothing taught yet."
   },
   "statsTagUnansweredLabel": "{tag}: not answered",
   "@statsTagUnansweredLabel": {
-    "description": "Screen-reader label of a tag's bar when it has no answer in the chosen range.",
+    "description": "Screen-reader label of a tag's bar when it has nothing taught yet.",
     "placeholders": {
       "tag": {
         "type": "String",
@@ -3830,10 +3874,6 @@
   "statsLeechesSubtitle": "Cards you keep missing",
   "@statsLeechesSubtitle": {
     "description": "Under statsLeeches."
-  },
-  "statsFootnote": "Recomputed from your review log, so nothing here is ever lost.",
-  "@statsFootnote": {
-    "description": "Note at the foot of Progress."
   },
   "statsIncomingTitle": "Progress is on its way",
   "@statsIncomingTitle": {
@@ -10246,5 +10286,316 @@
   "deckPracticeStart": "Start",
   "@deckPracticeStart": {
     "description": "The button of Practice's popup that starts the practice."
+  },
+  "progressWordsTitle": "Words mastered",
+  "@progressWordsTitle": {
+    "description": "Title of the Progress tile that counts the words learned."
+  },
+  "progressWordsTaught": "/ {count} taught",
+  "@progressWordsTaught": {
+    "description": "The total beside the mastered count in the Words tile, such as '/ 540 taught'. Stays on one line.",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "540"
+      }
+    }
+  },
+  "progressWordsSemantics": "Words mastered: {mastered} of {taught} taught",
+  "@progressWordsSemantics": {
+    "description": "Screen-reader label of the Words tile.",
+    "placeholders": {
+      "mastered": {
+        "type": "String",
+        "example": "312"
+      },
+      "taught": {
+        "type": "String",
+        "example": "540"
+      }
+    }
+  },
+  "progressLevelTitle": "Level",
+  "@progressLevelTitle": {
+    "description": "Title of the Progress tile that shows the course's level."
+  },
+  "progressStartedTitle": "Started",
+  "@progressStartedTitle": {
+    "description": "Title of the Progress tile on All languages, which shows only the day the first course was started."
+  },
+  "progressLevelStarted": "Started {date}",
+  "@progressLevelStarted": {
+    "description": "Under the level on Progress: the day of the first answer.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "3 Aug 2026"
+      }
+    }
+  },
+  "progressLevelA1": "A1",
+  "@progressLevelA1": {
+    "description": "The first level a course's path reaches. Same in every language."
+  },
+  "progressLevelA2": "A2",
+  "@progressLevelA2": {
+    "description": "The second level a course's path reaches."
+  },
+  "progressLevelB1": "B1",
+  "@progressLevelB1": {
+    "description": "The third level a course's path reaches."
+  },
+  "progressLevelNone": "Not yet",
+  "@progressLevelNone": {
+    "description": "The Level tile before the first level, A1, is reached."
+  },
+  "progressLevelSemantics": "Level {level}, started {date}",
+  "@progressLevelSemantics": {
+    "description": "Screen-reader label of the Level tile.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A2"
+      },
+      "date": {
+        "type": "String",
+        "example": "3 Aug 2026"
+      }
+    }
+  },
+  "progressLevelNoneSemantics": "No level reached yet, started {date}",
+  "@progressLevelNoneSemantics": {
+    "description": "Screen-reader label of the Level tile before A1.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "3 Aug 2026"
+      }
+    }
+  },
+  "progressStartedSemantics": "Started {date}",
+  "@progressStartedSemantics": {
+    "description": "Screen-reader label of the Level tile on All languages.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "3 Aug 2026"
+      }
+    }
+  },
+  "progressWeekLabel": "Practice in the last 7 days, daily quota {minutes} minutes",
+  "@progressWeekLabel": {
+    "description": "Screen-reader label of the 7-day calendar.",
+    "placeholders": {
+      "minutes": {
+        "type": "int",
+        "example": "15"
+      }
+    }
+  },
+  "progressDayNone": "no practice",
+  "@progressDayNone": {
+    "description": "One calendar day's state, for screen readers."
+  },
+  "progressDaySome": "some practice, under the quota",
+  "@progressDaySome": {
+    "description": "One calendar day's state, for screen readers."
+  },
+  "progressDayMet": "quota met",
+  "@progressDayMet": {
+    "description": "One calendar day's state, for screen readers."
+  },
+  "progressDayTwice": "twice the quota or more",
+  "@progressDayTwice": {
+    "description": "One calendar day's state, for screen readers."
+  },
+  "progressDayLabel": "{day}: {state}, {minutes} of {quota} minutes",
+  "@progressDayLabel": {
+    "description": "Screen-reader label of one calendar day.",
+    "placeholders": {
+      "day": {
+        "type": "String",
+        "example": "Tuesday"
+      },
+      "state": {
+        "type": "String",
+        "example": "quota met"
+      },
+      "minutes": {
+        "type": "int",
+        "example": "15"
+      },
+      "quota": {
+        "type": "int",
+        "example": "15"
+      }
+    }
+  },
+  "progressDayLabelToday": "{day}, today: {state}, {minutes} of {quota} minutes",
+  "@progressDayLabelToday": {
+    "description": "Screen-reader label of today on the calendar.",
+    "placeholders": {
+      "day": {
+        "type": "String",
+        "example": "Friday"
+      },
+      "state": {
+        "type": "String",
+        "example": "quota met"
+      },
+      "minutes": {
+        "type": "int",
+        "example": "15"
+      },
+      "quota": {
+        "type": "int",
+        "example": "15"
+      }
+    }
+  },
+  "progressStarTitle": "Mastery by skill",
+  "@progressStarTitle": {
+    "description": "Title of the six-skill star on Progress."
+  },
+  "progressStarOverall": "Overall mastery {percent}",
+  "@progressStarOverall": {
+    "description": "Under the star's title: how much of the star is filled.",
+    "placeholders": {
+      "percent": {
+        "type": "double",
+        "example": "0.22",
+        "format": "percentPattern"
+      }
+    }
+  },
+  "progressOverTime": "Over time",
+  "@progressOverTime": {
+    "description": "Button at the end of the star's title, which opens the charts over time."
+  },
+  "progressSkillScript": "Script",
+  "@progressSkillScript": {
+    "description": "One of the star's six skills: reading and writing the writing system."
+  },
+  "progressSkillRead": "Read",
+  "@progressSkillRead": {
+    "description": "One of the star's six skills: recognising words."
+  },
+  "progressNothingTaught": "nothing taught yet",
+  "@progressNothingTaught": {
+    "description": "A skill on the star with nothing taught, for screen readers."
+  },
+  "progressStarSemantics": "{title}, overall {overall}. Opens mastery over time. {details}",
+  "@progressStarSemantics": {
+    "description": "Screen-reader label of the star.",
+    "placeholders": {
+      "title": {
+        "type": "String",
+        "example": "Mastery by skill"
+      },
+      "overall": {
+        "type": "double",
+        "example": "0.22",
+        "format": "percentPattern"
+      },
+      "details": {
+        "type": "String",
+        "example": "Grammar 34%"
+      }
+    }
+  },
+  "progressStarSkill": "{skill} {fill}, {outline}",
+  "@progressStarSkill": {
+    "description": "One skill's values in the star's screen-reader label: known of the B1 total, then known of what is taught.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Grammar"
+      },
+      "fill": {
+        "type": "double",
+        "example": "0.34",
+        "format": "percentPattern"
+      },
+      "outline": {
+        "type": "String",
+        "example": "57%"
+      }
+    }
+  },
+  "progressOverTimeTitle": "Over time",
+  "@progressOverTimeTitle": {
+    "description": "Title of the screen the star opens."
+  },
+  "progressMasteryChart": "Mastery over time",
+  "@progressMasteryChart": {
+    "description": "Title of the chart of known words, by skill, against the whole B1 plan."
+  },
+  "progressMasteryChartSub": "Known ÷ B1 total, last 12 weeks",
+  "@progressMasteryChartSub": {
+    "description": "Under the mastery chart's title."
+  },
+  "progressTaughtChart": "Taught over time",
+  "@progressTaughtChart": {
+    "description": "Title of the chart of known words, by skill, against what has been taught."
+  },
+  "progressTaughtChartSub": "Known ÷ taught, last 12 weeks",
+  "@progressTaughtChartSub": {
+    "description": "Under the taught chart's title."
+  },
+  "progressChartSemantics": "{title}, last 12 weeks, now: {values}",
+  "@progressChartSemantics": {
+    "description": "Screen-reader label of a chart over time.",
+    "placeholders": {
+      "title": {
+        "type": "String",
+        "example": "Mastery over time"
+      },
+      "values": {
+        "type": "String",
+        "example": "Grammar 34%, Script 71%"
+      }
+    }
+  },
+  "progressChartSkillValue": "{skill} {value}",
+  "@progressChartSkillValue": {
+    "description": "One skill's current value in a chart's label and legend.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Grammar"
+      },
+      "value": {
+        "type": "String",
+        "example": "34%"
+      }
+    }
+  },
+  "progressWeeksAgo": "{weeks} wk",
+  "@progressWeeksAgo": {
+    "description": "A chart's time axis: that many weeks ago.",
+    "placeholders": {
+      "weeks": {
+        "type": "int",
+        "example": "8"
+      }
+    }
+  },
+  "progressNow": "Now",
+  "@progressNow": {
+    "description": "A chart's time axis: the latest point."
+  },
+  "progressStarAxis": "{fill} · {outline}",
+  "@progressStarAxis": {
+    "description": "Under a skill's name on the star: the share of the B1 plan known, then the share of what is taught known. The second is a dash while nothing is taught.",
+    "placeholders": {
+      "fill": {
+        "type": "String",
+        "example": "34%"
+      },
+      "outline": {
+        "type": "String",
+        "example": "57%"
+      }
+    }
   }
 }

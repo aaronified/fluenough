@@ -1,0 +1,285 @@
+schema: 1
+id: "es-transport"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "transport"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-0674"
+    target: "el autobús"
+    ipa: "el awtoˈbus"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "autobús", base: "autobús" }]
+    examples:
+      - target: "El autobús llega a las ocho."
+        ipa: "el awtoˈbus ˈʝeɡa a las ˈotʃo"
+        bases: [{ word: "El", base: "el" }, { word: "autobús", base: "autobús" }, { word: "llega", ref: "es-0290" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "ocho", ref: "es-0212" }]
+      - target: "Tomo el autobús a casa."
+        ipa: "ˈtomo el awtoˈbus a ˈkasa"
+        bases: [{ word: "Tomo", ref: "es-0624" }, { word: "el", base: "el" }, { word: "autobús", base: "autobús" }, { word: "a", base: "a" }, { word: "casa", ref: "es-0006" }]
+  - id: "es-0675"
+    target: "el metro"
+    ipa: "el ˈmetɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "metro", base: "metro" }]
+    examples:
+      - target: "Tomo el metro en la ciudad."
+        ipa: "ˈtomo el ˈmetɾo en la θjuˈdad"
+        bases: [{ word: "Tomo", ref: "es-0624" }, { word: "el", base: "el" }, { word: "metro", base: "metro" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }]
+      - target: "El metro es rápido."
+        ipa: "el ˈmetɾo es ˈrapido"
+        bases: [{ word: "El", base: "el" }, { word: "metro", base: "metro" }, { word: "es", ref: "es-0022" }, { word: "rápido", ref: "es-0329" }]
+  - id: "es-0676"
+    target: "el tren"
+    ipa: "el tɾen"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "tren", base: "tren" }]
+    examples:
+      - target: "El tren llega a las ocho."
+        ipa: "el tɾen ˈʝeɡa a las ˈotʃo"
+        bases: [{ word: "El", base: "el" }, { word: "tren", base: "tren" }, { word: "llega", ref: "es-0290" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "ocho", ref: "es-0212" }]
+      - target: "El tren sale a las nueve."
+        ipa: "el tɾen ˈsale a las ˈnwebe"
+        bases: [{ word: "El", base: "el" }, { word: "tren", base: "tren" }, { word: "sale", ref: "es-0690" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "nueve", ref: "es-0213" }]
+  - id: "es-0677"
+    target: "el taxi"
+    ipa: "el ˈtaksi"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "taxi", base: "taxi" }]
+    examples:
+      - target: "Tomo un taxi."
+        ipa: "ˈtomo un ˈtaksi"
+        bases: [{ word: "Tomo", ref: "es-0624" }, { word: "un", base: "un" }, { word: "taxi", base: "taxi" }]
+      - target: "El taxi es caro."
+        ipa: "el ˈtaksi es ˈkaɾo"
+        bases: [{ word: "El", base: "el" }, { word: "taxi", base: "taxi" }, { word: "es", ref: "es-0022" }, { word: "caro", ref: "es-0412" }]
+  - id: "es-0678"
+    target: "el coche"
+    ipa: "el ˈkotʃe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "coche", base: "coche" }]
+    examples:
+      - target: "El coche es nuevo."
+        ipa: "el ˈkotʃe es ˈnwebo"
+        bases: [{ word: "El", base: "el" }, { word: "coche", base: "coche" }, { word: "es", ref: "es-0022" }, { word: "nuevo", ref: "es-0035" }]
+      - target: "Mi padre tiene un coche."
+        ipa: "mi ˈpadɾe ˈtjene un ˈkotʃe"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", ref: "es-0159" }, { word: "tiene", ref: "es-0024" }, { word: "un", base: "un" }, { word: "coche", base: "coche" }]
+  - id: "es-0679"
+    target: "el avión"
+    ipa: "el aˈbjon"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "avión", base: "avión" }]
+    examples:
+      - target: "El avión llega hoy."
+        ipa: "el aˈbjon ˈʝeɡa oj"
+        bases: [{ word: "El", base: "el" }, { word: "avión", base: "avión" }, { word: "llega", ref: "es-0290" }, { word: "hoy", ref: "es-0331" }]
+      - target: "El avión es grande."
+        ipa: "el aˈbjon es ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "avión", base: "avión" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-0680"
+    target: "la bicicleta"
+    ipa: "la biθiˈkleta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "bicicleta", base: "bicicleta" }]
+    examples:
+      - target: "Tengo una bicicleta."
+        ipa: "ˈtenɡo ˈuna biθiˈkleta"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "bicicleta", base: "bicicleta" }]
+      - target: "La bicicleta es nueva."
+        ipa: "la biθiˈkleta es ˈnweba"
+        bases: [{ word: "La", base: "la" }, { word: "bicicleta", base: "bicicleta" }, { word: "es", ref: "es-0022" }, { word: "nueva", ref: "es-0035" }]
+  - id: "es-0681"
+    target: "la moto"
+    ipa: "la ˈmoto"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "moto", base: "moto" }]
+    examples:
+      - target: "Mi hermano tiene una moto."
+        ipa: "mi eɾˈmano ˈtjene ˈuna ˈmoto"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermano", ref: "es-0161" }, { word: "tiene", ref: "es-0024" }, { word: "una", base: "una" }, { word: "moto", base: "moto" }]
+      - target: "La moto es pequeña."
+        ipa: "la ˈmoto es peˈkeɲa"
+        bases: [{ word: "La", base: "la" }, { word: "moto", base: "moto" }, { word: "es", ref: "es-0022" }, { word: "pequeña", ref: "es-0032" }]
+  - id: "es-0682"
+    target: "el barco"
+    ipa: "el ˈbaɾko"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "barco", base: "barco" }]
+    examples:
+      - target: "El barco es grande."
+        ipa: "el ˈbaɾko es ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "barco", base: "barco" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+      - target: "Tengo un barco."
+        ipa: "ˈtenɡo un ˈbaɾko"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "un", base: "un" }, { word: "barco", base: "barco" }]
+  - id: "es-0683"
+    target: "la parada"
+    ipa: "la paˈɾada"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "parada", base: "parada" }]
+    examples:
+      - target: "La parada está en una calle."
+        ipa: "la paˈɾada esˈta en ˈuna ˈkaʝe"
+        bases: [{ word: "La", base: "la" }, { word: "parada", base: "parada" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "calle", ref: "es-0017" }]
+      - target: "¿Dónde está la parada?"
+        ipa: "ˈdonde esˈta la paˈɾada"
+        bases: [{ word: "Dónde", ref: "es-0056" }, { word: "está", ref: "es-0023" }, { word: "la", base: "la" }, { word: "parada", base: "parada" }]
+  - id: "es-0684"
+    target: "la estación"
+    ipa: "la estaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "estación", base: "estación" }]
+    examples:
+      - target: "La estación está lejos."
+        ipa: "la estaˈθjon esˈta ˈlexos"
+        bases: [{ word: "La", base: "la" }, { word: "estación", base: "estación" }, { word: "está", ref: "es-0023" }, { word: "lejos", ref: "es-0718" }]
+      - target: "La estación es grande."
+        ipa: "la estaˈθjon es ˈɡɾande"
+        bases: [{ word: "La", base: "la" }, { word: "estación", base: "estación" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-0685"
+    target: "el billete"
+    ipa: "el biˈʝete"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "billete", base: "billete" }]
+    examples:
+      - target: "Compro un billete."
+        ipa: "ˈkompɾo un biˈʝete"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "un", base: "un" }, { word: "billete", base: "billete" }]
+      - target: "El billete cuesta cinco euros."
+        ipa: "el biˈʝete ˈkwesta ˈθinko ˈewɾos"
+        bases: [{ word: "El", base: "el" }, { word: "billete", base: "billete" }, { word: "cuesta", ref: "es-0587" }, { word: "cinco", ref: "es-0209" }, { word: "euros", ref: "es-0550" }]
+  - id: "es-0686"
+    target: "el aeropuerto"
+    ipa: "el aeɾoˈpweɾto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "aeropuerto", base: "aeropuerto" }]
+    examples:
+      - target: "El aeropuerto está lejos."
+        ipa: "el aeɾoˈpweɾto esˈta ˈlexos"
+        bases: [{ word: "El", base: "el" }, { word: "aeropuerto", base: "aeropuerto" }, { word: "está", ref: "es-0023" }, { word: "lejos", ref: "es-0718" }]
+      - target: "El aeropuerto es grande."
+        ipa: "el aeɾoˈpweɾto es ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "aeropuerto", base: "aeropuerto" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-0687"
+    target: "la carretera"
+    ipa: "la kareˈteɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "carretera", base: "carretera" }]
+    examples:
+      - target: "La carretera es larga."
+        ipa: "la kareˈteɾa es ˈlaɾɡa"
+        bases: [{ word: "La", base: "la" }, { word: "carretera", base: "carretera" }, { word: "es", ref: "es-0022" }, { word: "larga", ref: "es-0429" }]
+      - target: "La carretera es buena."
+        ipa: "la kareˈteɾa es ˈbwena"
+        bases: [{ word: "La", base: "la" }, { word: "carretera", base: "carretera" }, { word: "es", ref: "es-0022" }, { word: "buena", ref: "es-0033" }]
+  - id: "es-0688"
+    target: "la llegada"
+    ipa: "la ʝeˈɡada"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "llegada", base: "llegada" }]
+    examples:
+      - target: "La llegada es a las diez."
+        ipa: "la ʝeˈɡada es a las djeθ"
+        bases: [{ word: "La", base: "la" }, { word: "llegada", base: "llegada" }, { word: "es", ref: "es-0022" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "diez", ref: "es-0214" }]
+      - target: "Hay una llegada hoy."
+        ipa: "aj ˈuna ʝeˈɡada oj"
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "llegada", base: "llegada" }, { word: "hoy", ref: "es-0331" }]
+  - id: "es-0689"
+    target: "la salida"
+    ipa: "la saˈlida"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "salida", base: "salida" }]
+    examples:
+      - target: "La salida es a las nueve."
+        ipa: "la saˈlida es a las ˈnwebe"
+        bases: [{ word: "La", base: "la" }, { word: "salida", base: "salida" }, { word: "es", ref: "es-0022" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "nueve", ref: "es-0213" }]
+      - target: "¿Cuál es la salida?"
+        ipa: "kwal es la saˈlida"
+        bases: [{ word: "Cuál", ref: "es-0059" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "salida", base: "salida" }]
+  - id: "es-0690"
+    target: "salir"
+    ipa: "saˈliɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Salgo a las ocho."
+        ipa: "ˈsalɡo a las ˈotʃo"
+        bases: [{ word: "Salgo", base: "salir" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "ocho", ref: "es-0212" }]
+      - target: "El tren sale a las nueve."
+        ipa: "el tɾen ˈsale a las ˈnwebe"
+        bases: [{ word: "El", base: "el" }, { word: "tren", ref: "es-0676" }, { word: "sale", base: "salir" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "nueve", ref: "es-0213" }]
+  - id: "es-0691"
+    target: "subir"
+    ipa: "suˈbiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Subo al autobús."
+        ipa: "ˈsubo al awtoˈbus"
+        bases: [{ word: "Subo", base: "subir" }, { word: "al", base: "al" }, { word: "autobús", ref: "es-0674" }]
+      - target: "Subimos al tren."
+        ipa: "suˈbimos al tɾen"
+        bases: [{ word: "Subimos", base: "subir" }, { word: "al", base: "al" }, { word: "tren", ref: "es-0676" }]
+  - id: "es-0692"
+    target: "bajar"
+    ipa: "baˈxaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Bajo en la parada."
+        ipa: "ˈbaxo en la paˈɾada"
+        bases: [{ word: "Bajo", ref: "es-0255" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "parada", ref: "es-0683" }]
+      - target: "Bajamos del tren."
+        ipa: "baˈxamos del tɾen"
+        bases: [{ word: "Bajamos", base: "bajar" }, { word: "del", base: "del" }, { word: "tren", ref: "es-0676" }]
+  - id: "es-0693"
+    target: "esperar"
+    ipa: "espeˈɾaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Espero el autobús."
+        ipa: "esˈpeɾo el awtoˈbus"
+        bases: [{ word: "Espero", base: "esperar" }, { word: "el", base: "el" }, { word: "autobús", ref: "es-0674" }]
+      - target: "Esperamos el tren."
+        ipa: "espeˈɾamos el tɾen"
+        bases: [{ word: "Esperamos", base: "esperar" }, { word: "el", base: "el" }, { word: "tren", ref: "es-0676" }]

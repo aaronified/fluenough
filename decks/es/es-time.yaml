@@ -1,0 +1,214 @@
+schema: 1
+id: "es-time"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "time"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-0838"
+    target: "la hora"
+    ipa: "la ˈoɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "hora", base: "hora" }]
+    examples:
+      - target: "La cena es a esta hora."
+        ipa: "la ˈθena es a ˈesta ˈoɾa"
+        bases: [{ word: "La", base: "la" }, { word: "cena", ref: "es-0639" }, { word: "es", ref: "es-0022" }, { word: "a", base: "a" }, { word: "esta", base: "esta" }, { word: "hora", base: "hora" }]
+      - target: "Tengo una hora libre."
+        ipa: "ˈtenɡo ˈuna ˈoɾa ˈlibɾe"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "hora", base: "hora" }, { word: "libre", ref: "es-0426" }]
+  - id: "es-0839"
+    target: "el minuto"
+    ipa: "el miˈnuto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "minuto", base: "minuto" }]
+    examples:
+      - target: "Espero un minuto."
+        ipa: "esˈpeɾo un miˈnuto"
+        bases: [{ word: "Espero", ref: "es-0693" }, { word: "un", base: "un" }, { word: "minuto", base: "minuto" }]
+      - target: "El tren sale en cinco minutos."
+        ipa: "el tɾen ˈsale en ˈθinko miˈnutos"
+        bases: [{ word: "El", base: "el" }, { word: "tren", ref: "es-0676" }, { word: "sale", ref: "es-0690" }, { word: "en", base: "en" }, { word: "cinco", ref: "es-0209" }, { word: "minutos", base: "minuto" }]
+  - id: "es-0840"
+    target: "la semana"
+    ipa: "la seˈmana"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "semana", base: "semana" }]
+    examples:
+      - target: "Estudio cinco días a la semana."
+        ipa: "esˈtudjo ˈθinko ˈdias a la seˈmana"
+        bases: [{ word: "Estudio", ref: "es-0258" }, { word: "cinco", ref: "es-0209" }, { word: "días", ref: "es-0019" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "semana", base: "semana" }]
+      - target: "La semana es larga."
+        ipa: "la seˈmana es ˈlaɾɡa"
+        bases: [{ word: "La", base: "la" }, { word: "semana", base: "semana" }, { word: "es", ref: "es-0022" }, { word: "larga", ref: "es-0429" }]
+  - id: "es-0841"
+    target: "la mañana"
+    ipa: "la maˈɲana"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "mañana", base: "mañana" }]
+    examples:
+      - target: "Como pan por la mañana."
+        ipa: "ˈkomo pan poɾ la maˈɲana"
+        bases: [{ word: "Como", ref: "es-0028" }, { word: "pan", ref: "es-0013" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "mañana", base: "mañana" }]
+      - target: "La mañana es buena."
+        ipa: "la maˈɲana es ˈbwena"
+        bases: [{ word: "La", base: "la" }, { word: "mañana", base: "mañana" }, { word: "es", ref: "es-0022" }, { word: "buena", ref: "es-0033" }]
+  - id: "es-0842"
+    target: "el mediodía"
+    ipa: "el medjoˈdia"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "mediodía", base: "mediodía" }]
+    examples:
+      - target: "Almorzamos al mediodía."
+        ipa: "almoɾˈθamos al medjoˈdia"
+        bases: [{ word: "Almorzamos", ref: "es-0660" }, { word: "al", base: "al" }, { word: "mediodía", base: "mediodía" }]
+      - target: "El mediodía es a las doce."
+        ipa: "el medjoˈdia es a las ˈdoθe"
+        bases: [{ word: "El", base: "el" }, { word: "mediodía", base: "mediodía" }, { word: "es", ref: "es-0022" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "doce", ref: "es-0216" }]
+  - id: "es-0843"
+    target: "la medianoche"
+    ipa: "la medjaˈnotʃe"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "medianoche", base: "medianoche" }]
+    examples:
+      - target: "Cenamos antes de la medianoche."
+        ipa: "θeˈnamos ˈantes de la medjaˈnotʃe"
+        bases: [{ word: "Cenamos", ref: "es-0283" }, { word: "antes", ref: "es-0335" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "medianoche", base: "medianoche" }]
+      - target: "La medianoche es a las doce."
+        ipa: "la medjaˈnotʃe es a las ˈdoθe"
+        bases: [{ word: "La", base: "la" }, { word: "medianoche", base: "medianoche" }, { word: "es", ref: "es-0022" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "doce", ref: "es-0216" }]
+  - id: "es-0844"
+    target: "la cita"
+    ipa: "la ˈθita"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "cita", base: "cita" }]
+    examples:
+      - target: "Tengo una cita a las tres."
+        ipa: "ˈtenɡo ˈuna ˈθita a las tɾes"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "cita", base: "cita" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "tres", ref: "es-0207" }]
+      - target: "La cita es hoy."
+        ipa: "la ˈθita es oj"
+        bases: [{ word: "La", base: "la" }, { word: "cita", base: "cita" }, { word: "es", ref: "es-0022" }, { word: "hoy", ref: "es-0331" }]
+  - id: "es-0845"
+    target: "el reloj"
+    ipa: "el reˈlox"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "reloj", base: "reloj" }]
+    examples:
+      - target: "El reloj está en la pared."
+        ipa: "el reˈlox esˈta en la paˈɾed"
+        bases: [{ word: "El", base: "el" }, { word: "reloj", base: "reloj" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "pared", ref: "es-0818" }]
+      - target: "Miro el reloj."
+        ipa: "ˈmiɾo el reˈlox"
+        bases: [{ word: "Miro", ref: "es-0292" }, { word: "el", base: "el" }, { word: "reloj", base: "reloj" }]
+  - id: "es-0846"
+    target: "la fecha"
+    ipa: "la ˈfetʃa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "fecha", base: "fecha" }]
+    examples:
+      - target: "¿Cuál es la fecha?"
+        ipa: "kwal es la ˈfetʃa"
+        bases: [{ word: "Cuál", ref: "es-0059" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "fecha", base: "fecha" }]
+      - target: "La fecha es hoy."
+        ipa: "la ˈfetʃa es oj"
+        bases: [{ word: "La", base: "la" }, { word: "fecha", base: "fecha" }, { word: "es", ref: "es-0022" }, { word: "hoy", ref: "es-0331" }]
+  - id: "es-0847"
+    target: "el momento"
+    ipa: "el moˈmento"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "momento", base: "momento" }]
+    examples:
+      - target: "Un momento, por favor."
+        ipa: "un moˈmento poɾ faˈboɾ"
+        bases: [{ word: "Un", base: "un" }, { word: "momento", base: "momento" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+      - target: "En este momento estoy aquí."
+        ipa: "en ˈeste moˈmento esˈtoj aˈki"
+        bases: [{ word: "En", base: "en" }, { word: "este", base: "este" }, { word: "momento", base: "momento" }, { word: "estoy", ref: "es-0023" }, { word: "aquí", ref: "es-0051" }]
+  - id: "es-0848"
+    target: "abierto"
+    ipa: "aˈbjeɾto"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "El banco está abierto hoy."
+        ipa: "el ˈbanko esˈta aˈbjeɾto oj"
+        bases: [{ word: "El", base: "el" }, { word: "banco", ref: "es-0770" }, { word: "está", ref: "es-0023" }, { word: "abierto", base: "abierto" }, { word: "hoy", ref: "es-0331" }]
+      - target: "La tienda está abierta."
+        ipa: "la ˈtjenda esˈta aˈbjeɾta"
+        bases: [{ word: "La", base: "la" }, { word: "tienda", ref: "es-0584" }, { word: "está", ref: "es-0023" }, { word: "abierta", base: "abierto" }]
+  - id: "es-0849"
+    target: "cerrado"
+    ipa: "θeˈrado"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "El banco está cerrado."
+        ipa: "el ˈbanko esˈta θeˈrado"
+        bases: [{ word: "El", base: "el" }, { word: "banco", ref: "es-0770" }, { word: "está", ref: "es-0023" }, { word: "cerrado", base: "cerrado" }]
+      - target: "La tienda está cerrada hoy."
+        ipa: "la ˈtjenda esˈta θeˈrada oj"
+        bases: [{ word: "La", base: "la" }, { word: "tienda", ref: "es-0584" }, { word: "está", ref: "es-0023" }, { word: "cerrada", base: "cerrado" }, { word: "hoy", ref: "es-0331" }]
+  - id: "es-0850"
+    target: "puntual"
+    ipa: "punˈtwal"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Llego puntual."
+        ipa: "ˈʝeɡo punˈtwal"
+        bases: [{ word: "Llego", ref: "es-0290" }, { word: "puntual", base: "puntual" }]
+      - target: "El tren es puntual."
+        ipa: "el tɾen es punˈtwal"
+        bases: [{ word: "El", base: "el" }, { word: "tren", ref: "es-0676" }, { word: "es", ref: "es-0022" }, { word: "puntual", base: "puntual" }]
+  - id: "es-0851"
+    target: "durar"
+    ipa: "duˈɾaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "El almuerzo dura una hora."
+        ipa: "el alˈmweɾθo ˈduɾa ˈuna ˈoɾa"
+        bases: [{ word: "El", base: "el" }, { word: "almuerzo", ref: "es-0638" }, { word: "dura", base: "durar" }, { word: "una", base: "una" }, { word: "hora", ref: "es-0838" }]
+      - target: "La reunión dura dos horas."
+        ipa: "la rewˈnjon ˈduɾa dos ˈoɾas"
+        bases: [{ word: "La", base: "la" }, { word: "reunión", ref: "es-0511" }, { word: "dura", base: "durar" }, { word: "dos", ref: "es-0206" }, { word: "horas", ref: "es-0838" }]
+  - id: "es-0852"
+    target: "empezar"
+    ipa: "empeˈθaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "La reunión empieza a las nueve."
+        ipa: "la rewˈnjon emˈpjeθa a las ˈnwebe"
+        bases: [{ word: "La", base: "la" }, { word: "reunión", ref: "es-0511" }, { word: "empieza", base: "empezar" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "nueve", ref: "es-0213" }]
+      - target: "Empiezo a las ocho."
+        ipa: "emˈpjeθo a las ˈotʃo"
+        bases: [{ word: "Empiezo", base: "empezar" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "ocho", ref: "es-0212" }]
