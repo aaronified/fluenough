@@ -7,7 +7,6 @@ import '../../core/grading/answer_grader.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
-import '../../core/numbers/number_practice.dart';
 import '../../core/speech/speech_engine.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/target_text.dart';
@@ -42,7 +41,7 @@ List<Card> speechTestWords(AppState state, LanguageInfo language) {
   return <Card>[
     for (final deck in decks)
       for (final card in deck.cards)
-        if (card is! NumberCard && !isRude(card, deck) && seen.add(card.id))
+        if (!card.practiceOnly && !isRude(card, deck) && seen.add(card.id))
           card,
   ];
 }

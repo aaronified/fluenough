@@ -2682,7 +2682,7 @@ void main() {
       const numbersBig = 'hi-en-numbers-big';
 
       /// The generated number on screen now.
-      NumberCard current(WidgetTester tester) {
+      Card current(WidgetTester tester) {
         final drill = tester.widget(
           find.byWidgetPredicate(
             (w) => w is RecognitionDrill || w is TypedDrill,
@@ -2691,7 +2691,7 @@ void main() {
         final session = drill is RecognitionDrill
             ? drill.session
             : (drill as TypedDrill).session;
-        return session.item.card as NumberCard;
+        return session.item.card;
       }
 
       testWidgets(
@@ -4051,7 +4051,7 @@ cards:
         isEmpty,
       );
 
-      final card = NumberCard(
+      final card = numberCard(
         number: 2020,
         spellings: spellNumber(hi, 2020),
         rulesId: hi.id,
