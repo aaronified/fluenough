@@ -5,9 +5,9 @@
 # This is also Toki Pona's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"):
 # every unit from the first words to B1, with its size in words, its
 # grammar topics, the three milestones, and for each planned unit its
-# listening and reading passages. No Toki Pona deck is written yet, so
-# every unit is planned: the course teaches each as "Coming" until its
-# deck is written.
+# listening and reading passages. The first unit is written (its decks are
+# listed under unit 1); every other unit is planned: the course teaches each
+# as "Coming" until its deck is written.
 #
 # Toki Pona is small on purpose. Sonja Lang's first book (pu, 2014) has
 # 120 words; her dictionary (ku, 2021) names the 137 words most speakers
@@ -128,14 +128,13 @@ units:
   # commands, modifiers and time.
   #
   # 1. The phrasebook, taught whole from the first lesson: toki!, mi pona,
-  # sina pona ala pona?, nimi mi li ..., mi sona ala, tawa pona, awen pona.
-  # tok-first-words joins it when written. Its 7 words: toki, pona, mi,
-  # sina, ala, nimi, sona.
-  - planned: { id: "tok-phrasebook", theme: "first-words", words: 7 }
-    listening_passages:
-      - { id: "first-toki", text: { "en": "Toki and tawa pona: two people meet in an online voice chat, say their names and leave" } }
-    reading_passages:
-      - { id: "name-tags", text: { "en": "Name tags at a meetup: nimi mi li ... and where each person comes from" } }
+  # sina pona ala pona?, nimi mi li Ana, mi sona ala, tawa pona, awen pona
+  # and 8 more (15 phrases in tok-phrasebook). Its 7 words are in
+  # tok-first-words: toki, pona, mi, sina, ala, nimi, sona. The sentences
+  # (tok-first-words-sentences) and the reading passages (tok-reading-meetup,
+  # the listening and the reading passage) belong to the unit too.
+  - decks: ["tok-phrasebook", "tok-first-words", "tok-first-words-sentences", "tok-reading-meetup", "*"]
+    words: 7
   # 2. The sounds: 9 consonants and 5 vowels, j said y, the stress always
   # on the first syllable, the syllables the language forbids (wu, wo, ji,
   # ti, and n before m or n), and capitals only for names. No new words:
