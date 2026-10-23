@@ -66,7 +66,7 @@ cards:
       - { id: "use", kind: "usage" }
     examples:
       - { target: "यह बात बिल्कुल सच है।", reading: "yah bāt bilkul sac hai.", ipa: "jəɦ baːt̪ bɪlkʊl sətʃ ɦɛː", bases: [{ word: "बात", base: "बात", reading: "bāt" }, { word: "सच", base: "सच", reading: "sac" }, { word: "है", ref: "hi-0780" }] }
-      - { target: "मुझे बिल्कुल पसंद नहीं।", reading: "mujhē bilkul pasand nahīm̐.", ipa: "mʊdʒʱeː bɪlkʊl pəsənd̪ nəɦĩː", bases: [{ word: "मुझे", ref: "hi-0745" }] }
+      - { target: "मुझे यह बिल्कुल पसंद नहीं है।", reading: "mujhē yah bilkul pasand nahīm̐ hai.", ipa: "mʊdʒʱeː jəɦ bɪlkʊl pəsənd̪ nəɦĩː ɦɛː", bases: [{ word: "मुझे", ref: "hi-0745" }, { word: "यह", ref: "hi-0748" }, { word: "पसंद", ref: "hi-0469" }, { word: "नहीं", ref: "hi-0156" }, { word: "है", ref: "hi-0780" }] }
     synonyms:
       - { id: "entirely", ref: "hi-0845" }
   - id: "hi-0816"
@@ -210,7 +210,7 @@ cards:
       - { id: "first", ref: "hi-0823" }
   - id: "hi-0825"
     target: "तुरंत"
-    target_scripts: { perso_arabic: "فوراً" }
+    target_scripts: { perso_arabic: "ترنت" }
     reading: "turant"
     ipa: "t̪ʊrənt̪"
     pos: "adv"
@@ -589,8 +589,6 @@ cards:
     examples:
       - { target: "वह अभी-अभी घर आया।", reading: "vah abhī-abhī ghar āyā.", ipa: "ʋəɦ əbʱiːəbʱiː ɡʱər aːjaː", bases: [{ word: "आया", base: "आना", reading: "ānā" }] }
       - { target: "मैंने अभी-अभी चाय पी।", reading: "maim̐nē abhī-abhī cāy pī.", ipa: "mɛ̃ːneː əbʱiːəbʱiː tʃaːj piː", bases: [{ word: "मैंने", ref: "hi-0745" }, { word: "पी", base: "पीना", reading: "pīnā" }] }
-    synonyms:
-      - { id: "now", ref: "hi-0301" }
     collocations:
       - { id: "tea", ref: "hi-0334" }
   - id: "hi-0851"
