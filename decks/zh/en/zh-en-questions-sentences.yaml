@@ -1,0 +1,33 @@
+schema: 1
+id: "zh-en-questions-sentences"
+kind: "layer"
+core: "zh-questions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences that ask questions"
+description: "Six questions with the question words: when, where, why, how is it, which, and whether one or the other."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "zh-0106":
+    native: "What time are you coming?"
+    bases:
+      "几点": { meaning: "what time" }
+  "zh-0107":
+    native: "Where are we going?"
+    bases:
+      "我们": { meaning: "we; us" }
+  "zh-0108":
+    native: "Why don't you drink it?"
+  "zh-0109":
+    native: "How is this one?"
+    bases:
+      "这个": { meaning: "this one" }
+      "怎么样": { meaning: "how is it" }
+  "zh-0110":
+    native: "Shall we eat fish or chicken?"
+    bases:
+      "我们": { meaning: "we; us" }
+  "zh-0111":
+    native: "Are you all coming?"
+    bases:
+      "你们": { meaning: "you (plural)" }
