@@ -1,0 +1,80 @@
+schema: 1
+id: "tok-everyday-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "tok-0089"
+    target: "mi moku e pan."
+    ipa: "mi ˈmoku e pan"
+    pos: "phrase"
+    bases:
+      - { word: "mi", ref: "tok-0003" }
+      - { word: "moku", ref: "tok-0080" }
+      - { word: "e", base: "e" }
+      - { word: "pan", ref: "tok-0034" }
+    confusables:
+      - { id: "w1", ref: "tok-0035", kind: "word" }
+      - { id: "w2", ref: "tok-0081", kind: "word" }
+  - id: "tok-0090"
+    target: "ona li lape."
+    ipa: "ˈona li ˈlape"
+    pos: "phrase"
+    bases:
+      - { word: "ona", ref: "tok-0062" }
+      - { word: "li", base: "li" }
+      - { word: "lape", ref: "tok-0081" }
+    confusables:
+      - { id: "w1", ref: "tok-0087", kind: "word" }
+      - { id: "w2", ref: "tok-0005", kind: "word" }
+  - id: "tok-0091"
+    target: "sina wile e moku?"
+    ipa: "ˈsina ˈwile e ˈmoku"
+    pos: "phrase"
+    bases:
+      - { word: "sina", ref: "tok-0004" }
+      - { word: "wile", ref: "tok-0086" }
+      - { word: "e", base: "e" }
+      - { word: "moku", ref: "tok-0080" }
+    confusables:
+      - { id: "w1", ref: "tok-0088", kind: "word" }
+      - { id: "w2", ref: "tok-0003", kind: "word" }
+  - id: "tok-0092"
+    target: "mi lukin e ni."
+    ipa: "mi ˈlukin e ni"
+    pos: "phrase"
+    bases:
+      - { word: "mi", ref: "tok-0003" }
+      - { word: "lukin", ref: "tok-0083" }
+      - { word: "e", base: "e" }
+      - { word: "ni", ref: "tok-0063" }
+    confusables:
+      - { id: "w1", ref: "tok-0084", kind: "word" }
+      - { id: "w2", ref: "tok-0007", kind: "word" }
+  - id: "tok-0093"
+    target: "jan ni li kama."
+    ipa: "jan ni li ˈkama"
+    pos: "phrase"
+    bases:
+      - { word: "jan", ref: "tok-0064" }
+      - { word: "ni", ref: "tok-0063" }
+      - { word: "li", base: "li" }
+      - { word: "kama", ref: "tok-0087" }
+    confusables:
+      - { id: "w1", ref: "tok-0088", kind: "word" }
+      - { id: "w2", ref: "tok-0081", kind: "word" }
+  - id: "tok-0094"
+    target: "mi jo e ijo ala."
+    ipa: "mi jo e ˈijo ˈala"
+    pos: "phrase"
+    bases:
+      - { word: "mi", ref: "tok-0003" }
+      - { word: "jo", ref: "tok-0085" }
+      - { word: "e", base: "e" }
+      - { word: "ijo", ref: "tok-0065" }
+      - { word: "ala", ref: "tok-0005" }
+    confusables:
+      - { id: "w1", ref: "tok-0002", kind: "word" }
+      - { id: "w2", ref: "tok-0046", kind: "word" }
