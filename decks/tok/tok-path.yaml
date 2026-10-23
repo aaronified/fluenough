@@ -272,11 +272,8 @@ units:
     words: 0
     grammar: ["preverbs", "kama-becoming"]
   # palisa, sike, linja, lipu, sitelen and kiwen.
-  - planned: { id: "tok-things", theme: "things", words: 6 }
-    listening_passages:
-      - { id: "whats-in-the-bag", text: { "en": "Someone lists what is in their bag and what each is for" } }
-    reading_passages:
-      - { id: "craft-steps", text: { "en": "The steps of a simple craft: a stick, a stone, some paper" } }
+  - decks: ["tok-things", "tok-things-sentences", "tok-reading-things", "*"]
+    words: 6
   # esun and mani: the market and money.
   - planned: { id: "tok-market", theme: "market", words: 2 }
     listening_passages:
