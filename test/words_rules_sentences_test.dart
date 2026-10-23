@@ -2,14 +2,25 @@
 // gate, lessons without the quota, and the counts Progress, a unit and the
 // end of a lesson show.
 
+import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/memory_progress.dart';
+import 'package:fluenough/app/session.dart';
+import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/models/rule.dart';
 import 'package:fluenough/core/progress/recent_answers.dart';
 import 'package:fluenough/core/progress/unlocks.dart';
+import 'package:fluenough/core/scheduling/ask.dart';
+import 'package:fluenough/features/decks/unit_page.dart';
+import 'package:fluenough/features/drill/choice_drill.dart';
+import 'package:fluenough/features/drill/drill_page.dart';
+import 'package:fluenough/features/drill/rule_card.dart';
+import 'package:fluenough/features/drill/teach_drill.dart';
 import 'package:flutter_test/flutter_test.dart';
+
+import 'support/harness.dart';
 
 final DateTime _start = DateTime(2026, 9, 1, 9);
 
@@ -223,6 +234,133 @@ void main() {
       ).counts(all);
       expect(counts.wordsTaught, 1);
       expect(counts.wordsKnown, 1);
+    });
+  });
+
+  group('a rule in a lesson', () {
+    const nounForms = 'bn-en-grammar-noun-forms';
+
+    Future<AppState> bengali() async {
+      final state = AppState.test(
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: const <String>['bn'],
+        ),
+      );
+      addTearDown(state.dispose);
+      await state.load();
+      return state;
+    }
+
+    /// Answers the word card [id] right ten times, so that it is known.
+    void know(AppState state, String id) {
+      final entry = state.decks.firstWhere(
+        (e) => e.cards.any((c) => c.id == id),
+      );
+      for (var i = 0; i < 10; i++) {
+        state.progress.record(
+          deckId: entry.id,
+          cardId: id,
+          mode: DrillMode.recognition,
+          grade: 4,
+          now: state.now().subtract(Duration(days: 20 - i)),
+        );
+      }
+    }
+
+    DrillRequest lesson() =>
+        DrillRequest.lesson(language: 'bn', deckId: nounForms);
+
+    test('a rules table is taught only for a known word, three cells a '
+        'lesson, each rule introduced by its rule card first', () async {
+      final state = await bengali();
+      expect(
+        state.lessonFor(lesson()),
+        isEmpty,
+        reason: 'no word of the table is known yet',
+      );
+
+      final word = state.deckById(nounForms)!.cards.first.rule!.word;
+      know(state, word);
+      final items = state.lessonFor(lesson());
+      final asked = <String>{
+        for (final item in items)
+          if (!item.ask.onlyShows) item.card.id,
+      };
+      expect(asked, hasLength(3), reason: 'three new cells a lesson');
+      expect(
+        items.where((i) => i.card.rule != null).map((i) => i.card.rule!.word),
+        everyElement(word),
+        reason: 'only the known word is asked',
+      );
+      final rules = <String>{};
+      for (final item in items) {
+        final rule = item.card.rule!.ruleId;
+        if (item.ask == Ask.teachRule) {
+          expect(rules.add(rule), isTrue, reason: 'one rule card a rule');
+        } else {
+          expect(rules, contains(rule), reason: 'the rule card comes first');
+        }
+      }
+    });
+
+    testWidgets('the rule card comes first; after an answer the word\'s '
+        'forms in the rule are shown with the cell asked marked', (
+      tester,
+    ) async {
+      usePhone(tester, textScale: 1.4);
+      final state = await bengali();
+      know(state, state.deckById(nounForms)!.cards.first.rule!.word);
+      await pumpScreen(tester, DrillPage(request: lesson()), state: state);
+      final l10n = l10nOf(tester);
+
+      expect(find.byType(RuleCard), findsOneWidget);
+      final session = tester
+          .widget<TeachDrill>(find.byType(TeachDrill))
+          .session;
+      final card = session.item.card;
+      final rule = state.ruleOf(card.rule!.ruleId)!.rule;
+      expect(find.text(rule.name), findsOneWidget);
+      expect(find.text(l10n.ruleCardWords), findsOneWidget);
+
+      session.learnt();
+      await tester.pumpAndSettle();
+      final choice = tester.widget<ChoiceDrill>(find.byType(ChoiceDrill));
+      final question = choice.session;
+      expect(find.byType(RuleCard), findsNothing);
+      final cell = question.item.card.rule!;
+      final word = cell.wordReading == null
+          ? cell.wordTarget
+          : '${cell.wordTarget} (${cell.wordReading})';
+      expect(find.text(l10n.ruleFormsTitle(word)), findsNothing);
+      question.pick(
+        question.options.firstWhere((o) => o.id == question.item.card.id),
+      );
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.ruleFormsTitle(word)), findsOneWidget);
+      expect(tester.takeException(), isNull, reason: 'no overflow at 1.4x');
+    });
+
+    testWidgets('a rule\'s table on the unit page hides words not taught, and '
+        'grows as a word is known', (tester) async {
+      usePhone(tester, textScale: 1.4);
+      final state = await bengali();
+      await pumpScreen(
+        tester,
+        const UnitPage(deckId: nounForms, openTables: true),
+        state: state,
+      );
+      final l10n = l10nOf(tester);
+      await tester.scrollUntilVisible(
+        find.text(l10n.unitRuleGrows),
+        300,
+        scrollable: find.byType(Scrollable).first,
+      );
+      expect(find.text(l10n.unitCellNotAsked), findsNothing);
+
+      know(state, state.deckById(nounForms)!.cards.first.rule!.word);
+      await tester.pumpAndSettle();
+      expect(find.text(l10n.unitCellNotAsked), findsWidgets);
     });
   });
 }
