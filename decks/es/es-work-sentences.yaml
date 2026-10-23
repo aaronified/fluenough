@@ -1,0 +1,81 @@
+schema: 1
+id: "es-work-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-0524"
+    target: "El jefe llega temprano y trabaja hasta las cinco."
+    ipa: "el ˈxefe ˈʝeɡa temˈpɾano i tɾaˈbaxa ˈasta las ˈθinko"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "El", base: "el" }
+      - { word: "jefe", ref: "es-0504" }
+      - { word: "llega", ref: "es-0290" }
+      - { word: "temprano", ref: "es-0338" }
+      - { word: "y", ref: "es-0048" }
+      - { word: "trabaja", ref: "es-0259" }
+      - { word: "hasta", base: "hasta" }
+      - { word: "las", base: "las" }
+      - { word: "cinco", ref: "es-0209" }
+    confusables: [{ id: "ganar", ref: "es-0520", kind: "word" }, { id: "terminar", ref: "es-0521", kind: "word" }]
+  - id: "es-0525"
+    target: "Mi hermana gana bien en su empresa."
+    ipa: "mi eɾˈmana ˈɡana bjen en su emˈpɾesa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mi", ref: "es-0129" }
+      - { word: "hermana", ref: "es-0162" }
+      - { word: "gana", ref: "es-0520" }
+      - { word: "bien", ref: "es-0326" }
+      - { word: "en", base: "en" }
+      - { word: "su", base: "su" }
+      - { word: "empresa", ref: "es-0514" }
+    confusables: [{ id: "vender", ref: "es-0522", kind: "word" }, { id: "pagar", ref: "es-0295", kind: "word" }]
+  - id: "es-0526"
+    target: "El médico llama a la enfermera."
+    ipa: "el ˈmediko ˈʝama a la enfeɾˈmeɾa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "médico", ref: "es-0506" }, { word: "llama", ref: "es-0302" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "enfermera", ref: "es-0507" }]
+    confusables: [{ id: "ayudar", ref: "es-0303", kind: "word" }, { id: "mirar", ref: "es-0292", kind: "word" }]
+  - id: "es-0527"
+    target: "Hoy tengo una reunión a las nueve."
+    ipa: "oj ˈtenɡo ˈuna rewˈnjon a las ˈnwebe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Hoy", ref: "es-0331" }
+      - { word: "tengo", ref: "es-0024" }
+      - { word: "una", base: "una" }
+      - { word: "reunión", ref: "es-0511" }
+      - { word: "a", base: "a" }
+      - { word: "las", base: "las" }
+      - { word: "nueve", ref: "es-0213" }
+    confusables: [{ id: "ir", ref: "es-0026", kind: "word" }, { id: "hacer", ref: "es-0025", kind: "word" }]
+  - id: "es-0528"
+    target: "El cliente compra pan y paga con dinero."
+    ipa: "el ˈkljente ˈkompɾa pan i ˈpaɡa kon diˈneɾo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "El", base: "el" }
+      - { word: "cliente", ref: "es-0515" }
+      - { word: "compra", ref: "es-0280" }
+      - { word: "pan", ref: "es-0013" }
+      - { word: "y", ref: "es-0048" }
+      - { word: "paga", ref: "es-0295" }
+      - { word: "con", base: "con" }
+      - { word: "dinero", ref: "es-0513" }
+    confusables: [{ id: "vender", ref: "es-0522", kind: "word" }, { id: "ganar", ref: "es-0520", kind: "word" }]
+  - id: "es-0529"
+    target: "¿Dónde está el documento?"
+    ipa: "ˈdonde esˈta el dokuˈmento"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Dónde", ref: "es-0056" }, { word: "está", ref: "es-0023" }, { word: "el", base: "el" }, { word: "documento", ref: "es-0519" }]
+    confusables: [{ id: "que", ref: "es-0054", kind: "word" }, { id: "cual", ref: "es-0059", kind: "word" }]

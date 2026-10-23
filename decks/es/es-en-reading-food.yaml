@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-food"
+name: "Reading: a menu and a meal"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about food: a day's meals and a short restaurant menu with its prices. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-ordering-a-meal"
+    title: "Ordering a meal"
+    theme: "food"
+    sentences:
+      - text: "El almuerzo es a la una."
+      - text: "Pido una ensalada."
+      - text: "Quiero un café."
+      - text: "La cuenta, por favor."
+    questions:
+      - id: "es-0668"
+        prompt: { en: "When is lunch?" }
+        options:
+          - { en: "At one" }
+          - { en: "At seven" }
+          - { en: "At nine" }
+        answer: 1
+      - id: "es-0669"
+        prompt: { en: "What does the customer order first?" }
+        options:
+          - { en: "A salad" }
+          - { en: "A pizza" }
+          - { en: "A cake" }
+        answer: 1
+      - id: "es-0670"
+        prompt: { en: "What does the customer ask for at the end?" }
+        options:
+          - { en: "The bill" }
+          - { en: "The menu" }
+          - { en: "A tip" }
+        answer: 1
+  - id: "es-menu-card"
+    title: "Menu card"
+    theme: "food"
+    sentences:
+      - text: "El menú cuesta diez euros."
+      - text: "La sopa es picante."
+      - text: "La tortilla es rica."
+      - text: "El postre es dulce."
+    questions:
+      - id: "es-0671"
+        prompt: { en: "How much does the set menu cost?" }
+        options:
+          - { en: "Ten euros" }
+          - { en: "Five euros" }
+          - { en: "One hundred euros" }
+        answer: 1
+      - id: "es-0672"
+        prompt: { en: "Which dish is spicy?" }
+        options:
+          - { en: "The soup" }
+          - { en: "The dessert" }
+          - { en: "The omelette" }
+        answer: 1
+      - id: "es-0673"
+        prompt: { en: "Which dish is sweet?" }
+        options:
+          - { en: "The dessert" }
+          - { en: "The soup" }
+          - { en: "The bread" }
+        answer: 1

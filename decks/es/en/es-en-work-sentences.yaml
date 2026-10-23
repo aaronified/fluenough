@@ -1,0 +1,45 @@
+schema: 1
+id: "es-en-work-sentences"
+kind: "layer"
+core: "es-work-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: work"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about work, with the words of Work and the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  es-0524:
+    native: "The boss arrives early and works until five."
+    bases: { El: "the", hasta: "until", las: "the" }
+    confusables:
+      ganar: { why: "Ganar is to earn money, not to work hours." }
+      terminar: { why: "Terminar is to finish, the end of a job, not the hours of the day." }
+  es-0525:
+    native: "My sister earns well at her company."
+    bases: { en: "at", su: "her" }
+    confusables:
+      vender: { why: "Vender is to sell, the other side of a sale." }
+      pagar: { why: "Pagar is to pay: the customer pays, the worker earns." }
+  es-0526:
+    native: "The doctor calls the nurse."
+    bases: { El: "the", a: "to", la: "the" }
+    confusables:
+      ayudar: { why: "Ayudar is to help, not to call." }
+      mirar: { why: "Mirar is to look at, not to call." }
+  es-0527:
+    native: "Today I have a meeting at nine."
+    bases: { una: "a", a: "at", las: "the" }
+    confusables:
+      ir: { why: "Ir is to go, to be going somewhere." }
+      hacer: { why: "Hacer is to do or to make." }
+  es-0528:
+    native: "The customer buys bread and pays with money."
+    bases: { El: "the", con: "with" }
+    confusables:
+      vender: { why: "Vender is to sell: the shop sells, the customer buys." }
+      ganar: { why: "Ganar is to earn, the worker's side of the money." }
+  es-0529:
+    native: "Where is the document?"
+    bases: { el: "the" }
+    confusables:
+      que: { why: "Qué is what; here the sentence asks where, so use dónde." }
+      cual: { why: "Cuál is which one, used when there is a choice." }

@@ -1,0 +1,32 @@
+schema: 1
+id: "tok-relationships"
+part: "core"
+kind: "vocab"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+theme: "relationships"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "tok-0758"
+    target: "tonsi"
+    ipa: "ˈtonsi"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "person", kind: "usage" }
+      - { id: "jan-tonsi", kind: "behaviour" }
+    examples:
+      - { target: "jan tonsi li pona.", ipa: "jan ˈtonsi li ˈpona", bases: [{ word: "jan", ref: "tok-0064" }, { word: "tonsi", base: "tonsi" }, { word: "li", ref: "tok-0101" }, { word: "pona", ref: "tok-0002" }] }
+      - { target: "ona li jan tonsi.", ipa: "ˈona li jan ˈtonsi", bases: [{ word: "ona", ref: "tok-0062" }, { word: "li", ref: "tok-0101" }, { word: "jan", ref: "tok-0064" }, { word: "tonsi", base: "tonsi" }] }
+  - id: "tok-0759"
+    target: "unpa"
+    ipa: "ˈunpa"
+    pos: "verb"
+    bases: "self"
+    register: "offensive"
+    notes:
+      - { id: "adult", kind: "usage" }
+      - { id: "act", kind: "behaviour" }
+    examples:
+      - { target: "jan olin li unpa.", ipa: "jan ˈolin li ˈunpa", bases: [{ word: "jan", ref: "tok-0064" }, { word: "olin", ref: "tok-0161" }, { word: "li", ref: "tok-0101" }, { word: "unpa", base: "unpa" }] }
+      - { target: "meli en mije li unpa.", ipa: "ˈmeli en ˈmije li ˈunpa", bases: [{ word: "meli", ref: "tok-0159" }, { word: "en", ref: "tok-0540" }, { word: "mije", ref: "tok-0158" }, { word: "li", ref: "tok-0101" }, { word: "unpa", base: "unpa" }] }

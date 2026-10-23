@@ -6233,7 +6233,18 @@ def main(argv: list[str]) -> int:
     ok = len(reports) - failed
     print(f"\n{ok}/{len(reports)} decks valid"
           f"{f', {warned} with warnings' if warned else ''}.")
-    return 1 if failed or unbundled or across else 0
+    if failed or unbundled or across:
+        # CI logs run to thousands of lines and the cross-file errors print
+        # near the top, so repeat every error at the very end, where the
+        # log's tail shows it.
+        print("\nErrors:")
+        for problem in unbundled + across:
+            print(f"  error: {problem}")
+        for rep in reports:
+            for e in rep.errors:
+                print(f"  error: {rep.path}: {e}")
+        return 1
+    return 0
 
 
 if __name__ == "__main__":
