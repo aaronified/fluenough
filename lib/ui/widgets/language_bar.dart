@@ -391,7 +391,12 @@ class _LanguageBarState extends State<LanguageBar>
 
   void _tapCancel() => Future<void>.microtask(() {
     if (!mounted || _dragging || _run.isAnimating) return;
-    _caught = false;
+    if (_caught) {
+      // Caught mid-coast: settle on the detent first; arriving regrows.
+      _caught = false;
+      _release(0);
+      return;
+    }
     _regrow();
   });
 
@@ -458,12 +463,14 @@ class _LanguageBarState extends State<LanguageBar>
   /// Moves one detent, for a key.
   void _step(int by) {
     if (_pos == null || _count < 2) return;
+    // A second press while the wheel still turns adds to where it is going.
+    final from = (_run.isAnimating ? _target : _pos!).round();
     _run.stop();
     _dragging = false;
     _caught = false;
     _collapse();
     _showLabel();
-    final target = _pos!.round() + by;
+    final target = from + by;
     if (_still) {
       _setPos(target.toDouble());
       _target = target.toDouble();
@@ -688,8 +695,10 @@ class _LanguageBarState extends State<LanguageBar>
 
     Widget zone = const SizedBox.shrink();
     if (choices.isNotEmpty && at >= 0) {
-      final next = at + 1 < choices.length ? choices[at + 1] : null;
-      final previous = at > 0 ? choices[at - 1] : null;
+      // The wheel loops, so there is always a next and a previous.
+      final n = choices.length;
+      final next = n > 1 ? choices[(at + 1) % n] : null;
+      final previous = n > 1 ? choices[(at - 1 + n) % n] : null;
       final here = choices[_mod(_pos!.round())];
       final glyph = languageGlyph(here, state.decks);
       Widget wheel = SizedBox(
@@ -915,8 +924,8 @@ class LanguageBarChip extends StatelessWidget {
   final String glyph;
   final bool selected;
 
-  /// Whether the chip draws its own fill while [selected]. On the bar the
-  /// sliding selection behind the row draws it instead.
+  /// Whether the chip draws its own fill while [selected]. False leaves it
+  /// transparent, as where the fill is drawn behind it.
   final bool filled;
 
   @override
