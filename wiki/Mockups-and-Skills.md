@@ -105,9 +105,6 @@ approval.
   more space": the picture sits beside the word and the meaning takes the
   full width).
 
-- `tab-swipe.html`: the tab swipe spring (#702, #683): damping ratio 0.75,
-  stiffness 400, mass 1 (owner, 2026-10-21: "400, 0.75 approved for tab
-  swipe").
 
 
 ## Deleted (owner, 2026-10-12)

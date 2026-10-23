@@ -28,6 +28,7 @@ import 'package:fluenough/features/profiles/pin_page.dart';
 import 'package:fluenough/features/report/report_page.dart';
 import 'package:fluenough/features/settings/activities_page.dart';
 import 'package:fluenough/features/settings/app_log_page.dart';
+import 'package:fluenough/features/settings/daily_minutes.dart';
 import 'package:fluenough/features/settings/appearance_page.dart';
 import 'package:fluenough/features/settings/languages_page.dart';
 import 'package:fluenough/features/settings/reviewing_page.dart';
@@ -597,6 +598,54 @@ void main() {
         ModeColors.of(tester.element(find.byType(SettingsPage))).listening,
         ModeColors.light.listening,
       );
+    });
+  });
+
+  group('minutes a day', () {
+    test('a language starts at 15, takes 5 to 60, and keeps it after a '
+        'restart', () {
+      final settings = SettingsNotifier();
+      expect(settings.dailyMinutesFor('hi'), 15);
+      settings.setDailyMinutes('hi', 25);
+      settings.setDailyMinutes('bn', 2);
+      settings.setDailyMinutes('te', 90);
+      final restored = SettingsNotifier()..restore(settings.toStored());
+      expect(restored.dailyMinutesFor('hi'), 25);
+      expect(restored.dailyMinutesFor('bn'), 5);
+      expect(restored.dailyMinutesFor('te'), 60);
+      expect(restored.dailyMinutesFor('es'), 15, reason: 'untouched');
+      // Existing learners, from before the setting, start at 15.
+      expect(
+        (SettingsNotifier()..restore(const <String, String>{})).dailyMinutesFor(
+          'hi',
+        ),
+        15,
+      );
+    });
+
+    testWidgets('the row sets it with a preset or a custom value', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final state = await pumpScreen(
+        tester,
+        const Scaffold(body: DailyMinutes(language: 'hi')),
+      );
+      final l10n = l10nOf(tester);
+      expect(state.settings.dailyMinutesFor('hi'), 15);
+      expect(find.text(l10n.minutesValue(15)), findsOneWidget);
+      await tester.tap(find.byKey(const ValueKey<String>('minutes-hi-20')));
+      await tester.pumpAndSettle();
+      expect(state.settings.dailyMinutesFor('hi'), 20);
+      expect(find.text(l10n.minutesValue(20)), findsOneWidget);
+      await tester.tap(find.byKey(const ValueKey<String>('minutes-hi-custom')));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byTooltip(l10n.minutesMore));
+      await tester.pump();
+      await tester.tap(find.text(l10n.minutesSave));
+      await tester.pumpAndSettle();
+      expect(state.settings.dailyMinutesFor('hi'), 21);
+      expect(find.text(l10n.minutesCustomValue(21)), findsOneWidget);
     });
   });
 
