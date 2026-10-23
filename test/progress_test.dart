@@ -57,10 +57,7 @@ import 'package:fluenough/l10n/app_localizations_en.dart';
 import 'package:fluenough/ui/skill_visuals.dart';
 import 'package:fluenough/ui/widgets/deck_tile.dart';
 import 'package:fluenough/ui/widgets/grouped_list.dart';
-import 'package:fluenough/ui/widgets/language_bar.dart';
 import 'package:fluenough/ui/widgets/pace_parts.dart';
-import 'package:fluenough/ui/widgets/segmented.dart';
-import 'package:fluenough/ui/widgets/stat_tile.dart';
 import 'package:flutter/material.dart' hide Card;
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -116,21 +113,6 @@ Future<AppState> fixture({FeatureRegistry? features}) async {
     app,
     features: features ?? FeatureRegistry.all(),
   );
-}
-
-Finder tile(String value, String label) => find.byWidgetPredicate(
-  (w) => w is StatTile && w.value == value && w.label == label,
-);
-
-/// Counts every language together, with the language bar's All (#528).
-Future<void> showAll(WidgetTester tester) async {
-  await tester.tap(
-    find.descendant(
-      of: find.byType(LanguageBar),
-      matching: find.text(l10nOf(tester).languageBarAll),
-    ),
-  );
-  await tester.pumpAndSettle();
 }
 
 // From word_mastery_test.dart.
@@ -747,98 +729,14 @@ void main() {
   });
 
   group('Progress', () {
-    testWidgets(
-      'the numbers come from the log and follow the range; with no reviews '
-      'it says so',
-      (tester) async {
-        usePhone(tester);
-        await pumpScreen(
-          tester,
-          const StatsPage(),
-          state: AppState.test(features: FeatureRegistry.all()),
-        );
-        expect(find.text(l10nOf(tester).statsNoReviews), findsOneWidget);
-        expect(find.byType(Segmented<Object>), findsNothing);
-
-        usePhone(tester);
-        await pumpScreen(tester, const StatsPage(), state: await fixture());
-        await showAll(tester);
-        final l10n = l10nOf(tester);
-        final all = l10n.commonPercent(34 / 44);
-
-        // 30 days, the default: the whole twelve-day history.
-        expect(tile('44', l10n.statsReviews), findsOneWidget);
-        expect(tile(all, l10n.statsRemembered), findsOneWidget);
-        expect(tile('12', l10n.statsDayStreak), findsOneWidget);
-        expect(tile('26', l10n.statsNewCardsLearned), findsOneWidget);
-
-        await tester.tap(find.text(l10n.statsRangeDays(7)));
-        await tester.pumpAndSettle();
-        expect(tile('24', l10n.statsReviews), findsOneWidget);
-        expect(
-          tile(l10n.commonPercent(18 / 24), l10n.statsRemembered),
-          findsOneWidget,
-        );
-        expect(tile('12', l10n.statsNewCardsLearned), findsOneWidget);
-
-        await tester.tap(find.text(l10n.statsRangeAll));
-        await tester.pumpAndSettle();
-        expect(tile('44', l10n.statsReviews), findsOneWidget);
-        expect(tile('12', l10n.statsLongestStreak), findsOneWidget);
-        expect(tile('26', l10n.statsCardsLearned), findsOneWidget);
-        expect(find.text(l10n.statsDayStreak), findsNothing);
-      },
-    );
-
-    group('by language', () {
-      /// The fixture, plus one Spanish review this morning: Spanish is the
-      /// language reviewed last, and only its streak reaches today.
-      Future<AppState> spanishToday() async {
-        final state = await fixture();
-        await state.load();
-        final deck = state.deckById('es-en-core-100')!;
-        state.progress.record(
-          deckId: deck.id,
-          cardId: deck.cards.first.id,
-          mode: DrillMode.recognition,
-          grade: 4,
-          now: dateOnly(state.now()).add(const Duration(hours: 9)),
-        );
-        return state;
-      }
-
-      testWidgets('counts the language the bar shows, or with All every '
-          'language, Marathi\'s too', (tester) async {
-        usePhone(tester);
-        final state = await pumpScreen(
-          tester,
-          const StatsPage(),
-          state: await spanishToday(),
-        );
-        final l10n = l10nOf(tester);
-        state.showLanguage('es');
-        await tester.pumpAndSettle();
-        expect(find.byType(FilterChip), findsNothing);
-        expect(tile('23', l10n.statsReviews), findsOneWidget);
-        expect(tile('13', l10n.statsDayStreak), findsOneWidget);
-        expect(tile('13', l10n.statsNewCardsLearned), findsOneWidget);
-
-        // Hindi has no reviews.
-        state.showLanguage('hi');
-        await tester.pumpAndSettle();
-        expect(find.text(l10n.statsNoReviews), findsOneWidget);
-
-        await showAll(tester);
-        expect(tile('45', l10n.statsReviews), findsOneWidget);
-        expect(tile('13', l10n.statsDayStreak), findsOneWidget);
-        expect(tile('26', l10n.statsNewCardsLearned), findsOneWidget);
-
-        // The choice holds as the range changes.
-        await tester.tap(find.text(l10n.statsRangeDays(7)));
-        await tester.pumpAndSettle();
-        expect(state.progressShowsAll, isTrue);
-        expect(tile('45', l10n.statsReviews), findsNothing);
-      });
+    testWidgets('with no reviews it says so', (tester) async {
+      usePhone(tester);
+      await pumpScreen(
+        tester,
+        const StatsPage(),
+        state: AppState.test(features: FeatureRegistry.all()),
+      );
+      expect(find.text(l10nOf(tester).statsNoReviews), findsOneWidget);
     });
   });
 

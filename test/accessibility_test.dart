@@ -52,6 +52,7 @@ import 'package:fluenough/features/settings/activities_page.dart';
 import 'package:fluenough/features/settings/appearance_page.dart';
 import 'package:fluenough/features/settings/your_data_page.dart';
 import 'package:fluenough/features/stats/how_you_learn_page.dart';
+import 'package:fluenough/features/stats/over_time_page.dart';
 import 'package:fluenough/features/summary/summary_page.dart';
 import 'package:fluenough/ui/theme.dart';
 import 'package:fluenough/ui/widgets/braille_keyboard.dart';
@@ -473,6 +474,14 @@ void main() {
 
   group('Progress and settings', () {
     screen('Progress', tab(ShellTab.progress));
+    screen(
+      'Progress, over time',
+      page(
+        const OverTimePage(),
+        state: () =>
+            pacedLearner(Paced.fewer, also: <Paced>{Paced.more, Paced.same}),
+      ),
+    );
     screen('Inspect', page(const InspectPage(deckId: 'hi-en-market')));
     screen(
       'How you learn',
