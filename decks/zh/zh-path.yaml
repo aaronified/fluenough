@@ -217,7 +217,8 @@ units:
       - { id: "how-often", text: { "en": "Saying how often and how much: always, also, all, very, too" } }
     reading_passages:
       - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
-  - planned: { id: "zh-quantities", theme: "quantities", words: 25 }
+  - decks: ["zh-quantities", "zh-quantities-sentences", "zh-reading-quantities", "*"]
+    words: 25
     listening_passages:
       - { id: "how-many-do-you-want", text: { "en": "Asking how much and how many at a bakery: ji and duoshao" } }
     reading_passages:
