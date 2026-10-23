@@ -4,6 +4,7 @@ import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/memory_progress.dart';
 import '../../core/data/course_path.dart';
+import '../../core/models/deck.dart' show countsAsWord;
 import '../../core/progress/mastery.dart';
 import '../../core/progress/practice_week.dart';
 import 'stats_numbers.dart';
@@ -174,7 +175,8 @@ class ProgressMastery {
           scriptCards.add(card.id);
         } else if (card.isGrammarCell) {
           grammar.add(card.id);
-        } else {
+        } else if (countsAsWord(card, entry.deck.kind)) {
+          // Roots only (#615): a phrase is no word of a level.
           words.add(card.id);
         }
       }
