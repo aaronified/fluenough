@@ -336,11 +336,9 @@ units:
     words: 3
   # Reporting speech: ona li toki e ni: ... and the quoted sentence; ni
   # pointing to what follows or what came before.
-  - planned: { id: "tok-grammar-reported-speech", grammar: ["ni-colon-quote", "reported-speech"] }
-    listening_passages:
-      - { id: "phone-message", text: { "en": "Someone passes on what a friend said on the phone" } }
-    reading_passages:
-      - { id: "news-item", text: { "en": "A short news item quoting two people" } }
+  - decks: ["tok-grammar-reported-speech", "tok-grammar-reported-speech-sentences", "tok-reading-reported-speech"]
+    words: 0
+    grammar: ["ni-colon-quote", "reported-speech"]
   # jasima, epiku and leko: mirror or reflect, epic, and block or step.
   - planned: { id: "tok-arts", theme: "arts", words: 3 }
     listening_passages:
