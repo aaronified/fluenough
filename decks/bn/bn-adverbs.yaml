@@ -36,6 +36,8 @@ cards:
     pos: "adv"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "মাঝে মাঝে", reading: "mājhe mājhe" }] }
+    bases:
+      - { word: "মাঝে", base: "মাঝে", reading: "mājhe", ipa: "madʒʱe" }
     examples:
       - { target: "মাঝে মাঝে বৃষ্টি হয়।", reading: "mājhe mājhe briśṭi hôy.", ipa: "madʒʱe madʒʱe briʃʈi ɦɔj", bases: [{ word: "মাঝে", base: "মাঝে", reading: "mājhe", ipa: "madʒʱe" }, { word: "হয়", base: "হওয়া", reading: "hôoyā", ipa: "ɦɔja" }] }
       - { target: "মাঝে মাঝে আমি বই পড়ি।", reading: "mājhe mājhe āmi boi poṛi.", ipa: "madʒʱe madʒʱe ami boi poɽi", bases: [{ word: "মাঝে", base: "মাঝে", reading: "mājhe", ipa: "madʒʱe" }, { word: "পড়ি", base: "পড়া", reading: "pôṛā", ipa: "pɔɽa" }] }
@@ -56,6 +58,9 @@ cards:
     pos: "adv"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "কখনোই না দেখা", reading: "kôkhonoi nā dekhā" }] }
+    bases:
+      - { word: "কখনোই", base: "কখনোই", reading: "kôkhonoi", ipa: "kɔkʰonoi" }
+      - { word: "না", ref: "bn-0160" }
     examples:
       - { target: "আমি এই ছবিটা কখনোই দেখিনি।", reading: "āmi ei chobiṭā kôkhonoi dekhini.", ipa: "ami ei tʃʰobiʈa kɔkʰonoi d̪ekʰini", bases: [{ word: "এই", base: "এই", reading: "ei", ipa: "ei" }, { word: "ছবিটা", ref: "bn-1145" }, { word: "কখনোই", base: "কখনোই", reading: "kôkhonoi", ipa: "kɔkʰonoi" }, { word: "দেখিনি", base: "দেখা", reading: "dekhā", ipa: "d̪ekʰa" }] }
       - { target: "সে কখনোই দেরি করে না।", reading: "se kôkhonoi deri kôre nā.", ipa: "se kɔkʰonoi d̪eri kɔre na", bases: [{ word: "কখনোই", base: "কখনোই", reading: "kôkhonoi", ipa: "kɔkʰonoi" }, { word: "দেরি", base: "দেরি", reading: "deri", ipa: "d̪eri" }, { word: "করে", base: "করা", reading: "kôrā", ipa: "kɔra" }] }
