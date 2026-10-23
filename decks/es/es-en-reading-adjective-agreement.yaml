@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-adjective-agreement"
+name: "Reading: describing a house and a flat"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts that describe a house, its windows and its people, and a flat for the holidays, with adjectives that agree with their nouns. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-a-big-red-house"
+    title: "A big house"
+    sentences:
+      - text: "Tengo una casa grande."
+      - text: "Es una casa bonita y nueva."
+      - text: "Las ventanas son grandes."
+      - text: "Mis padres son simpáticos."
+      - text: "Mi hermana es alta."
+    questions:
+      - id: "es-0466"
+        prompt: { en: "How is the house?" }
+        options:
+          - { en: "Big, pretty and new" }
+          - { en: "Small and old" }
+          - { en: "Dark and dirty" }
+        answer: 0
+      - id: "es-0467"
+        prompt: { en: "How are the windows?" }
+        options:
+          - { en: "Big" }
+          - { en: "Small" }
+          - { en: "Dirty" }
+        answer: 0
+      - id: "es-0468"
+        prompt: { en: "What are the speaker's parents like?" }
+        options:
+          - { en: "Nice" }
+          - { en: "Sick" }
+          - { en: "Busy" }
+        answer: 0
+  - id: "es-holiday-flat-ad"
+    title: "A flat for the holidays"
+    sentences:
+      - text: "Piso bonito para vacaciones."
+      - text: "La cocina es nueva y limpia."
+      - text: "Las habitaciones son grandes."
+      - text: "El precio es barato."
+      - text: "Las vistas son muy bonitas."
+    questions:
+      - id: "es-0469"
+        prompt: { en: "What is the kitchen like?" }
+        options:
+          - { en: "New and clean" }
+          - { en: "Old and dirty" }
+          - { en: "Small" }
+        answer: 0
+      - id: "es-0470"
+        prompt: { en: "What are the rooms like?" }
+        options:
+          - { en: "Small" }
+          - { en: "Big" }
+          - { en: "Cold" }
+        answer: 1
+      - id: "es-0471"
+        prompt: { en: "How is the price?" }
+        options:
+          - { en: "Cheap" }
+          - { en: "Expensive" }
+          - { en: "Free" }
+        answer: 0
