@@ -15,7 +15,7 @@ import '../models/rule.dart';
 /// - **native** the layer's prompt for the cell, else the slot's label with
 ///   `{meaning}` filled with the word's meaning, the first part of its
 ///   card's native; a label without `{meaning}` follows the meaning.
-/// - **modes** `grammarUnderstood` and `grammar`.
+/// - **modes** the four vocabulary skills, so that it is only a grammar cell.
 /// - **rule** its rule, its word and the row's other forms it makes.
 ///
 /// [wordOf] gives a row's word card as this deck's learners are taught it,
@@ -54,10 +54,7 @@ List<Card> expandRules(
           altReading: row.readings[slot]?.skip(1).toList() ?? const <String>[],
           ipa: row.ipas[slot],
           native: native,
-          modes: const <DrillMode>{
-            DrillMode.grammarUnderstood,
-            DrillMode.grammar,
-          },
+          modes: DrillMode.vocabulary,
           rule: RuleCell(
             ruleId: ruleOf[slot]!,
             word: row.word,

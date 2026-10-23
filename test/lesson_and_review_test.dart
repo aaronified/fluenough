@@ -236,7 +236,7 @@ language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari }
 native: { code: $native, iso639_3: ${native == 'en' ? 'eng' : 'ben'}, name: ${native == 'en' ? 'English' : 'Bengali'} }
 license: CC0-1.0
 cards:
-  - { id: hi-$native-$name-0001, target: "क", native: "k", reading: "k", modes: [production] }
+  - { id: hi-$native-$name-0001, target: "क", native: "k", reading: "k", modes: [recognition, listening, speaking] }
 ''';
   final order = <String>[
     first,
@@ -942,7 +942,7 @@ Card cellSetCards(String row, String slot, String target) => Card(
   deckId: 'te-en-grammar-verb-present',
   target: target,
   native: '$row $slot',
-  modes: const <DrillMode>{DrillMode.grammar},
+  modes: DrillMode.vocabulary,
   rule: RuleCell(
     ruleId: 'te-rule-present',
     word: 'te-$row',
@@ -1821,7 +1821,14 @@ void main() {
         () {
           final queue = build(
             [
-              card('a', modes: {DrillMode.listening}),
+              card(
+                'a',
+                modes: {
+                  DrillMode.recognition,
+                  DrillMode.production,
+                  DrillMode.speaking,
+                },
+              ),
               card('b'),
             ],
             states: {
@@ -2200,7 +2207,7 @@ void main() {
             'h2:speaking:own',
           ]);
 
-          final cell = cardLesson('g', 'voy', modes: {DrillMode.grammar});
+          final cell = cardLesson('g', 'voy', modes: DrillMode.vocabulary);
           expect(plan(<Card>[cell]), <String>[
             'g:grammar:teach',
             'g:grammar:own',
