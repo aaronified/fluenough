@@ -1,0 +1,74 @@
+schema: 1
+id: "es-en-reading-quantities"
+name: "Reading: how much and how many"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about buying food and about a recipe, with the amounts of the Quantities unit. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-at-the-grocers"
+    title: "At the grocer's"
+    theme: "quantities"
+    sentences:
+      - text: "Buenos días."
+      - text: "Quiero un kilo de manzanas."
+      - text: "Y medio kilo de queso."
+      - text: "¿Algo más?"
+      - text: "No, nada más. Gracias."
+      - text: "Son dos euros."
+    questions:
+      - id: "es-0398"
+        prompt: { en: "How many kilos of apples does the customer want?" }
+        options:
+          - { en: "One kilo" }
+          - { en: "Two kilos" }
+          - { en: "Half a kilo" }
+        answer: 0
+      - id: "es-0399"
+        prompt: { en: "How much cheese does the customer want?" }
+        options:
+          - { en: "Half a kilo" }
+          - { en: "A kilo" }
+          - { en: "A hundred grams" }
+        answer: 0
+      - id: "es-0400"
+        prompt: { en: "How much is the shopping?" }
+        options:
+          - { en: "Two euros" }
+          - { en: "Ten euros" }
+          - { en: "Half a euro" }
+        answer: 0
+  - id: "es-recipe-amounts"
+    title: "A recipe card"
+    theme: "quantities"
+    sentences:
+      - text: "Pastel de manzana para cuatro personas."
+      - text: "Necesitas una taza de harina, medio kilo de manzanas y tres huevos."
+      - text: "Pesa la mantequilla: doscientos gramos."
+      - text: "Añade un poco de azúcar."
+      - text: "Cocina el pastel una hora."
+    questions:
+      - id: "es-0401"
+        prompt: { en: "How many people is the cake for?" }
+        options:
+          - { en: "Two" }
+          - { en: "Four" }
+          - { en: "Six" }
+        answer: 1
+      - id: "es-0402"
+        prompt: { en: "How much flour is needed?" }
+        options:
+          - { en: "A cup" }
+          - { en: "A kilo" }
+          - { en: "A bottle" }
+        answer: 0
+      - id: "es-0403"
+        prompt: { en: "How many eggs are needed?" }
+        options:
+          - { en: "Two" }
+          - { en: "Three" }
+          - { en: "Twelve" }
+        answer: 1
