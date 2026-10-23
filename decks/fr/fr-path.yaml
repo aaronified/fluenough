@@ -35,8 +35,9 @@
 # scheme's French adjustments: a single "to be" (etre, taught with avoir,
 # which the compound past needs), and no ser/estar step. So: articles and
 # gender, the plural (the tense, number and gender audit of 2026-10-23),
-# to be and to have, the regular present, the irregular present,
-# prepositions, object pronouns (with y and en), reflexives, the past
+# to be and to have, the regular present, the irregular present, the
+# imperatives (right after the present, before any past), prepositions,
+# object pronouns (with y and en), reflexives, the past
 # (passe compose and imparfait), the future and the conditional, the
 # subjunctive, and the compound tenses. French adds the partitive, the
 # near future (aller + infinitive), the two auxiliaries of the passe
@@ -213,6 +214,11 @@ units:
       - { id: "what-do-you-do-today", text: { "en": "Saying what you do, where you go and what you can and want to do" } }
     reading_passages:
       - { id: "weekly-plan", text: { "en": "A weekly plan for a household: who goes where and does what" } }
+  - planned: { id: "fr-grammar-imperatives", grammar: "imperatives" }
+    listening_passages:
+      - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
+    reading_passages:
+      - { id: "signs-and-rules", text: { "en": "Signs saying what to do and what not to do" } }
   # 6. Then the other A1 themes, each its words, its rules, then its
   # sentences.
   - planned: { id: "fr-work", theme: "work", words: 30 }
@@ -388,11 +394,6 @@ units:
       - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
     reading_passages:
       - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
-  - planned: { id: "fr-grammar-imperatives", grammar: "imperatives" }
-    listening_passages:
-      - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
-    reading_passages:
-      - { id: "signs-and-rules", text: { "en": "Signs saying what to do and what not to do" } }
   - planned: { id: "fr-chores", theme: "chores", words: 35 }
     listening_passages:
       - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
