@@ -1228,6 +1228,13 @@ class RulesCore(B1Case):
         self.assertError(RULES, "table.applies_to.pos",
                          "must be a non-empty list of parts of speech from ['adj', 'adv', "
                          "'noun', 'other', 'particle', 'pronoun', 'verb'], got ['phrase']")
+        for pos in ("letter", "digit"):
+            # A letter or a digit is a card's pos, never a rules deck's row kind.
+            self.table(lambda t, pos=pos: t.update(applies_to={"pos": [pos]}))
+            self.assertError(RULES, "table.applies_to.pos",
+                             "must be a non-empty list of parts of speech from ['adj', "
+                             "'adv', 'noun', 'other', 'particle', 'pronoun', 'verb'], "
+                             f"got ['{pos}']")
         self.table(lambda t: t.update(applies_to={"pos": ["noun"], "tags": "x",
                                                   "except": ["foo"]}))
         self.assertError(RULES, "table.applies_to", "tags must be a list")

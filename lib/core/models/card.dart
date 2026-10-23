@@ -310,6 +310,7 @@ class CardRef {
       altNative:
           altNative ?? (sameNative ? written.altNative : const <String>[]),
       pos: written.pos,
+      hears: written.hears,
       gender: written.gender,
       tags: tags ?? (sameNative ? written.tags : const <String>[]),
       notes: notes ?? (sameNative ? written.notes : const <CardNote>[]),
@@ -329,6 +330,8 @@ class CardRef {
       wiktionary: wiktionary ?? (sameNative && written.wiktionary),
       rule: written.rule,
       ownRoot: written.ownRoot,
+      practiceOnly: written.practiceOnly,
+      heardAs: written.heardAs,
       register: written.register,
       frequency: written.frequency,
       synonyms: sameNative ? written.synonyms : const <CardItem>[],
@@ -363,6 +366,7 @@ class Card {
     this.words,
     this.altNative = const <String>[],
     this.pos,
+    this.hears,
     this.gender,
     this.tags = const <String>[],
     this.notes = const <CardNote>[],
@@ -381,6 +385,8 @@ class Card {
     this.wiktionary = false,
     this.rule,
     this.ownRoot = false,
+    this.practiceOnly = false,
+    this.heardAs,
     this.register,
     this.frequency,
     this.synonyms = const <CardItem>[],
@@ -471,6 +477,12 @@ class Card {
   final List<String> altNative;
 
   final String? pos;
+
+  /// `form` (`hears: "form"`, #522 step 7): hearing the card asks for what
+  /// was heard, typed as its form, though it is a word with a part of speech,
+  /// as the spelling decks' and the script reading decks' words are. A letter
+  /// or a digit does so by its `pos` ([isLetterOrDigit]). Null otherwise.
+  final String? hears;
   final String? gender;
   final List<String> tags;
 
@@ -545,6 +557,18 @@ class Card {
   /// Whether the word is its own root, `bases: self` (#513).
   final bool ownRoot;
 
+  /// Whether the card is generated practice (a number, #54, #522 step 9a):
+  /// it is drilled but nothing drilled from it is recorded, it is not a unit's
+  /// word, and it is never a wrong option for another card. Set only by code
+  /// that generates cards; it is not a deck key, so no deck file carries it
+  /// and released apps are unaffected.
+  final bool practiceOnly;
+
+  /// What is typed when this card is heard, where that is not its [target]: a
+  /// generated number is heard and typed as its digits. Null for every other
+  /// card. Like [practiceOnly], it is never read from a deck.
+  final String? heardAs;
+
   /// How formal or rude the word is (#517): `formal`, `neutral`,
   /// `informal`, `slang` or `offensive`.
   final String? register;
@@ -611,6 +635,16 @@ class Card {
           mode,
     };
   }
+
+  /// Whether the card is one letter or digit of a script (`pos: letter` or
+  /// `pos: digit`, #522 step 7): what is heard of it is its form, so Hear
+  /// types the form, and a card of the script decks is found by this, not by
+  /// where its deck stands on the path.
+  bool get isLetterOrDigit => pos == 'letter' || pos == 'digit';
+
+  /// Whether hearing this card asks for what was heard: a letter or a digit,
+  /// or a card marked `hears: form` ([hears]), as a generated number is.
+  bool get hearsForm => isLetterOrDigit || hears == 'form';
 
   /// Whether this is a grammar cell: a rules table's cell, or a card that
   /// excludes all four vocabulary skills, as a pattern's cell does. It is
@@ -681,6 +715,7 @@ class Card {
     DrillMode.reading ||
     DrillMode.readScript => <String>[native, ...altNative],
     DrillMode.grammarUnderstood => <String>[native],
+    DrillMode.listening when heardAs != null => <String>[heardAs!],
     DrillMode.production ||
     DrillMode.listening ||
     DrillMode.grammar ||
