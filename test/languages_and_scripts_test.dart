@@ -2444,7 +2444,7 @@ void main() {
 
       Map<String, int> actions() => <String, int>{
         for (final id in node.getSemanticsData().customSemanticsActionIds!)
-          CustomSemanticsAction.getAction(id)!.label: id,
+          CustomSemanticsAction.getAction(id)!.label!: id,
       };
       // On the first language there is still a previous: the last one.
       expect(
