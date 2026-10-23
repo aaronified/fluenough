@@ -275,11 +275,9 @@ units:
       - { id: "a-friend-has-done", text: { "en": "A friend says what they have already done this week" } }
     reading_passages:
       - { id: "to-do-ticks", text: { "en": "A to-do list with the finished items ticked" } }
-  - planned: { id: "te-grammar-past-continuous", grammar: "past-continuous" }
-    listening_passages:
-      - { id: "what-was-going-on", text: { "en": "Saying what was going on when the bell rang" } }
-    reading_passages:
-      - { id: "witness-note", text: { "en": "A short note from a witness of a busy street" } }
+  - decks: ["te-grammar-past-continuous", "te-past-continuous-sentences", "te-reading-past-continuous"]
+    words: 0
+    grammar: ["past-continuous"]
   - decks: ["te-shopping", "*"]
     words: 55
     listening_passages:

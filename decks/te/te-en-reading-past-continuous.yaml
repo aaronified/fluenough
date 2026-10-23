@@ -1,0 +1,60 @@
+schema: 1
+id: "te-en-reading-past-continuous"
+name: "Reading: was doing"
+kind: reading
+language: { code: te, iso639_3: tel, name: Telugu, script: telugu, tts: te-IN, icon: "తె" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short passages about what was going on at a time in the past: a bell, a window, a street. They use the past continuous with the words of the course. Not yet checked by a Telugu speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "te-what-was-going-on"
+    title: "When the bell rang"
+    sentences:
+      - text: "గంట మోగినప్పుడు పిల్లలు పాడుతూ ఉన్నారు."
+        reading: "gaṇṭa mōginappuḍu pillalu pāḍutū unnāru."
+      - text: "నాన్న కిటికీని కడుగుతూ ఉన్నాడు."
+        reading: "nānna kiṭikīni kaḍugutū unnāḍu."
+      - text: "నేను బయట తిరుగుతూ ఉన్నాను."
+        reading: "nēnu bayaṭa tirugutū unnānu."
+    questions:
+      - id: "te-6533"
+        prompt: { en: "What were the children doing when the bell rang?" }
+        options:
+          - { en: "Singing" }
+          - { en: "Sleeping" }
+          - { en: "Eating" }
+        answer: 1
+      - id: "te-6534"
+        prompt: { en: "Where was the speaker walking?" }
+        options:
+          - { en: "Outside" }
+          - { en: "Inside the house" }
+        answer: 1
+      - id: "te-6535"
+        prompt: { en: "Dad was washing the window when the bell rang." }
+        answer: true
+  - id: "te-witness-note"
+    title: "A busy street"
+    sentences:
+      - text: "రోడ్డు మీద బస్సు వస్తూ ఉంది."
+        reading: "rōḍḍu mīda bassu vastū undi."
+      - text: "పిల్లలు బయట పరిగెత్తుతూ ఉన్నారు."
+        reading: "pillalu bayaṭa parigettutū unnāru."
+    questions:
+      - id: "te-6536"
+        prompt: { en: "What was coming down the road?" }
+        options:
+          - { en: "A bus" }
+          - { en: "A train" }
+        answer: 1
+      - id: "te-6537"
+        prompt: { en: "What were the children doing outside?" }
+        options:
+          - { en: "Running" }
+          - { en: "Reading" }
+        answer: 1
+      - id: "te-6538"
+        prompt: { en: "The children were sitting still." }
+        answer: false
