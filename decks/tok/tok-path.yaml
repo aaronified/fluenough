@@ -328,11 +328,9 @@ units:
   # Proper names: an unofficial word used as a modifier after its head
   # (jan Ali, ma Inli, toki Inli), with a capital; adapting a foreign
   # name to Toki Pona's sounds and syllables.
-  - planned: { id: "tok-grammar-names", grammar: ["proper-names", "name-adaptation"] }
-    listening_passages:
-      - { id: "where-from", text: { "en": "People at a meetup say their names and countries in toki pona" } }
-    reading_passages:
-      - { id: "world-map", text: { "en": "A map's labels: countries and languages written as toki pona names" } }
+  - decks: ["tok-grammar-names", "tok-grammar-names-sentences", "tok-reading-names"]
+    words: 0
+    grammar: ["proper-names", "name-adaptation"]
   # namako, kipisi and soko: spice or extra, to cut, and mushroom.
   - planned: { id: "tok-cooking", theme: "cooking", words: 3 }
     listening_passages:
