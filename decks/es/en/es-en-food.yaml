@@ -1,0 +1,277 @@
+schema: 1
+id: "es-en-food"
+kind: "layer"
+core: "es-food"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Food and drink"
+license: "CC-BY-SA-4.0"
+description: "Meals, dishes and drinks, the menu, the waiter and the bill, the taste words spicy, sweet and salty, and the verbs to order, to want and to have lunch. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-0637":
+    native: "breakfast"
+    notes: { n1: "Desayuno is breakfast, the first meal of the day. The verb is desayunar." }
+    bases: {"el": "the", "desayuno": "breakfast"}
+    examples:
+      "Tomo un café en el desayuno.":
+        native: "I have a coffee at breakfast."
+        bases: {"un": "a", "en": "in", "el": "the", "desayuno": "breakfast"}
+      "El desayuno es a las siete.":
+        native: "Breakfast is at seven."
+        bases: {"El": "the", "desayuno": "breakfast", "a": "to", "las": "the"}
+  "es-0638":
+    native: "lunch"
+    notes: { n1: "Almuerzo is lunch, the meal in the middle of the day." }
+    bases: {"el": "the", "almuerzo": "lunch"}
+    examples:
+      "El almuerzo es a la una.":
+        native: "Lunch is at one."
+        bases: {"El": "the", "almuerzo": "lunch", "a": "to", "la": "the", "una": "a"}
+      "Mi almuerzo es pan y queso.":
+        native: "My lunch is bread and cheese."
+        bases: {"almuerzo": "lunch"}
+  "es-0639":
+    native: "dinner; supper"
+    notes: { n1: "Cena is the evening meal. The verb is cenar." }
+    bases: {"la": "the", "cena": "dinner"}
+    examples:
+      "La cena es a las nueve.":
+        native: "Dinner is at nine."
+        bases: {"La": "the", "cena": "dinner", "a": "to", "las": "the"}
+      "Cenamos pollo.":
+        native: "We have chicken for dinner."
+  "es-0640":
+    native: "menu; set menu"
+    notes: { n1: "Menú is the menu, the list of dishes, or a set meal at a fixed price." }
+    bases: {"el": "the", "menú": "menu"}
+    examples:
+      "El menú cuesta diez euros.":
+        native: "The set menu costs ten euros."
+        bases: {"El": "the", "menú": "menu"}
+      "¿Tiene el menú?":
+        native: "Do you have the menu?"
+        bases: {"el": "the", "menú": "menu"}
+  "es-0641":
+    native: "plate; dish"
+    notes: { n1: "Plato is a plate, or a dish of food: un plato de sopa." }
+    bases: {"el": "the", "plato": "plate"}
+    examples:
+      "El plato es grande.":
+        native: "The plate is big."
+        bases: {"El": "the", "plato": "plate"}
+      "Pido un plato de sopa.":
+        native: "I order a bowl of soup."
+        bases: {"un": "a", "plato": "plate", "de": "of"}
+  "es-0642":
+    native: "dessert"
+    notes: { n1: "Postre is dessert, the sweet food at the end of a meal." }
+    bases: {"el": "the", "postre": "dessert"}
+    examples:
+      "¿Hay postre?":
+        native: "Is there dessert?"
+        bases: {"Hay": "there is", "postre": "dessert"}
+      "El postre es rico.":
+        native: "The dessert is tasty."
+        bases: {"El": "the", "postre": "dessert"}
+  "es-0643":
+    native: "salad"
+    notes: { n1: "Ensalada is a salad, mostly raw vegetables." }
+    bases: {"la": "the", "ensalada": "salad"}
+    examples:
+      "Pido una ensalada.":
+        native: "I order a salad."
+        bases: {"una": "a", "ensalada": "salad"}
+      "La ensalada es buena.":
+        native: "The salad is good."
+        bases: {"La": "the", "ensalada": "salad"}
+  "es-0644":
+    native: "soup"
+    notes: { n1: "Sopa is soup. A hot soup is sopa caliente." }
+    bases: {"la": "the", "sopa": "soup"}
+    examples:
+      "La sopa está caliente.":
+        native: "The soup is hot."
+        bases: {"La": "the", "sopa": "soup"}
+      "Tomo sopa en la cena.":
+        native: "I have soup at dinner."
+        bases: {"sopa": "soup", "en": "in", "la": "the"}
+  "es-0645":
+    native: "Spanish omelette"
+    notes: { n1: "Tortilla is an omelette. In Spain it is potato and egg; in Mexico it is a flat bread." }
+    bases: {"la": "the", "tortilla": "Spanish omelette"}
+    examples:
+      "La tortilla es rica.":
+        native: "The omelette is tasty."
+        bases: {"La": "the", "tortilla": "Spanish omelette"}
+      "Como tortilla con pan.":
+        native: "I eat omelette with bread."
+        bases: {"tortilla": "Spanish omelette", "con": "with"}
+  "es-0646":
+    native: "pizza"
+    notes: { n1: "Pizza is pizza." }
+    bases: {"la": "the", "pizza": "pizza"}
+    examples:
+      "Pido una pizza.":
+        native: "I order a pizza."
+        bases: {"una": "a", "pizza": "pizza"}
+      "La pizza está caliente.":
+        native: "The pizza is hot."
+        bases: {"La": "the", "pizza": "pizza"}
+  "es-0647":
+    native: "sandwich"
+    notes: { n1: "Bocadillo is a sandwich, in a long roll." }
+    bases: {"el": "the", "bocadillo": "sandwich"}
+    examples:
+      "Como un bocadillo.":
+        native: "I eat a sandwich."
+        bases: {"un": "a", "bocadillo": "sandwich"}
+      "El bocadillo es grande.":
+        native: "The sandwich is big."
+        bases: {"El": "the", "bocadillo": "sandwich"}
+  "es-0648":
+    native: "hamburger"
+    notes: { n1: "Hamburguesa is a hamburger." }
+    bases: {"la": "the", "hamburguesa": "hamburger"}
+    examples:
+      "Como una hamburguesa.":
+        native: "I eat a hamburger."
+        bases: {"una": "a", "hamburguesa": "hamburger"}
+      "La hamburguesa cuesta cinco euros.":
+        native: "The hamburger costs five euros."
+        bases: {"La": "the", "hamburguesa": "hamburger"}
+  "es-0649":
+    native: "ice cream"
+    notes: { n1: "Helado is ice cream." }
+    bases: {"el": "the", "helado": "ice cream"}
+    examples:
+      "Tomo un helado.":
+        native: "I have an ice cream."
+        bases: {"un": "a", "helado": "ice cream"}
+      "El helado es frío.":
+        native: "The ice cream is cold."
+        bases: {"El": "the", "helado": "ice cream"}
+  "es-0650":
+    native: "cake; tart"
+    notes: { n1: "Tarta is a cake or a tart." }
+    bases: {"la": "the", "tarta": "cake"}
+    examples:
+      "La tarta es rica.":
+        native: "The cake is tasty."
+        bases: {"La": "the", "tarta": "cake"}
+      "Compro una tarta.":
+        native: "I buy a cake."
+        bases: {"una": "a", "tarta": "cake"}
+  "es-0651":
+    native: "waiter"
+    notes: { n1: "Camarero is a waiter. The feminine is la camarera." }
+    bases: {"el": "the", "camarero": "waiter"}
+    examples:
+      "El camarero es alto.":
+        native: "The waiter is tall."
+        bases: {"El": "the", "camarero": "waiter"}
+      "El camarero trabaja por la noche.":
+        native: "The waiter works at night."
+        bases: {"El": "the", "camarero": "waiter", "por": "for", "la": "the"}
+  "es-0652":
+    native: "waitress"
+    notes: { n1: "Camarera is a waitress, a woman who serves in a café or restaurant." }
+    bases: {"la": "the", "camarera": "waitress"}
+    examples:
+      "La camarera es simpática.":
+        native: "The waitress is friendly."
+        bases: {"La": "the", "camarera": "waitress"}
+      "La camarera tiene un plato.":
+        native: "The waitress has a plate."
+        bases: {"La": "the", "camarera": "waitress", "un": "a"}
+  "es-0653":
+    native: "bill"
+    notes: { n1: "Cuenta is the bill in a restaurant. Say La cuenta, por favor." }
+    bases: {"la": "the", "cuenta": "bill"}
+    examples:
+      "La cuenta, por favor.":
+        native: "The bill, please."
+        bases: {"La": "the", "cuenta": "bill", "por": "for", "favor": "please"}
+      "La cuenta es cara.":
+        native: "The bill is expensive."
+        bases: {"La": "the", "cuenta": "bill"}
+  "es-0654":
+    native: "tip"
+    notes: { n1: "Propina is a tip, the extra money left for a waiter." }
+    bases: {"la": "the", "propina": "tip"}
+    examples:
+      "La propina es pequeña.":
+        native: "The tip is small."
+        bases: {"La": "the", "propina": "tip"}
+      "No tengo propina.":
+        native: "I have no tip."
+        bases: {"propina": "tip"}
+  "es-0655":
+    native: "drink"
+    notes: { n1: "Bebida is a drink. The verb is beber." }
+    bases: {"la": "the", "bebida": "drink"}
+    examples:
+      "¿Qué bebida tomas?":
+        native: "Which drink do you have?"
+        bases: {"bebida": "drink"}
+      "La bebida está fría.":
+        native: "The drink is cold."
+        bases: {"La": "the", "bebida": "drink"}
+  "es-0656":
+    native: "spicy"
+    notes: { n1: "Picante is spicy, hot with chilli. It agrees with the noun: picantes." }
+    examples:
+      "La sopa es picante.":
+        native: "The soup is spicy."
+        bases: {"La": "the", "picante": "spicy"}
+      "El pollo no es picante.":
+        native: "The chicken is not spicy."
+        bases: {"El": "the", "picante": "spicy"}
+  "es-0657":
+    native: "sweet"
+    notes: { n1: "Dulce is sweet, the taste of sugar." }
+    examples:
+      "El postre es dulce.":
+        native: "The dessert is sweet."
+        bases: {"El": "the", "dulce": "sweet"}
+      "El café no es dulce.":
+        native: "The coffee is not sweet."
+        bases: {"El": "the", "dulce": "sweet"}
+  "es-0658":
+    native: "salty"
+    notes: { n1: "Salado is salty. It agrees with the noun: salada, salados, saladas." }
+    examples:
+      "La sopa está salada.":
+        native: "The soup is salty."
+        bases: {"La": "the", "salada": "salty"}
+      "El pan no es salado.":
+        native: "The bread is not salty."
+        bases: {"El": "the", "salado": "salty"}
+  "es-0659":
+    native: "to order; to ask for"
+    notes: { n1: "Pedir is to order food or to ask for something. Its stem changes: pido, pides, pide, piden." }
+    examples:
+      "Pido pollo.":
+        native: "I order chicken."
+        bases: {"Pido": "order"}
+      "Pedimos una pizza.":
+        native: "We order a pizza."
+        bases: {"Pedimos": "order", "una": "a"}
+  "es-0660":
+    native: "to have lunch"
+    notes: { n1: "Almorzar is to have lunch. Its stem changes: almuerzo, almuerzas, almuerza, almuerzan." }
+    examples:
+      "Almorzamos a la una.":
+        native: "We have lunch at one."
+        bases: {"Almorzamos": "have lunch", "a": "to", "la": "the", "una": "a"}
+      "Mi hermana almuerza pan.":
+        native: "My sister has bread for lunch."
+        bases: {"almuerza": "have lunch"}
+  "es-0661":
+    native: "to want; to love"
+    notes: { n1: "Querer is to want, or to love a person. Its stem changes: quiero, quieres, quiere, quieren." }
+    examples:
+      "Quiero un café.":
+        native: "I want a coffee."
+        bases: {"Quiero": "want", "un": "a"}
+      "¿Qué quieres?":
+        native: "What do you want?"
+        bases: {"quieres": "want"}
