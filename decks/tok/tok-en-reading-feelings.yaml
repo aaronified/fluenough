@@ -1,0 +1,75 @@
+"schema": 1
+"id": "tok-en-reading-feelings"
+"name": "Reading: how it went"
+"kind": "reading"
+"language":
+  "code": "tok"
+  "iso639_3": "tok"
+  "name": "Toki Pona"
+  "script": "latin"
+  "icon": "Tp"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this deck"
+"description": "Two passages on feelings: a listening passage about how a party felt to each friend, and a reading passage of one-line mood diary entries. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "reading"
+- "unreviewed"
+"passages":
+- "id": "tok-feelings-how-was-it"
+  "title": "How was it?"
+  "theme": "feelings"
+  "sentences":
+  - "text": "mi pilin pona ala."
+  - "text": "ona li pilin nasa."
+  - "text": "musi li mute."
+  - "text": "sina pilin ike."
+  "questions":
+  - "id": "tok-0534"
+    "prompt":
+      "en": "How did the first friend feel?"
+    "options":
+    - "en": "Good"
+    - "en": "Not good"
+    "answer": 2
+  - "id": "tok-0535"
+    "prompt":
+      "en": "How did the second friend feel?"
+    "options":
+    - "en": "Strange"
+    - "en": "Happy"
+    "answer": 1
+  - "id": "tok-0536"
+    "prompt":
+      "en": "The party had a lot of fun. Is that true?"
+    "answer": true
+- "id": "tok-feelings-mood-diary"
+  "title": "Mood diary"
+  "theme": "feelings"
+  "sentences":
+  - "text": "mi pilin pona ale."
+  - "text": "tenpo pimeja li pilin ike."
+  - "text": "musi li pona."
+  - "text": "mi pilin nasa."
+  "questions":
+  - "id": "tok-0537"
+    "prompt":
+      "en": "What did the writer feel first?"
+    "options":
+    - "en": "Good all day"
+    - "en": "Bad"
+    "answer": 1
+  - "id": "tok-0538"
+    "prompt":
+      "en": "What felt bad?"
+    "options":
+    - "en": "The night"
+    - "en": "The game"
+    "answer": 1
+  - "id": "tok-0539"
+    "prompt":
+      "en": "The writer felt strange. Is that true?"
+    "answer": true

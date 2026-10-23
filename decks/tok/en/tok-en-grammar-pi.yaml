@@ -1,0 +1,25 @@
+"schema": 1
+"id": "tok-en-grammar-pi"
+"kind": "layer"
+"core": "tok-grammar-pi"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "Pi groups the modifiers"
+"license": "CC-BY-SA-4.0"
+"description": "Pi groups the words after it into one, so that they describe the word before pi as a whole. Without pi, each word after the head describes everything before it in turn. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "Pi groups the modifiers"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}): {slot}"
+  "slots":
+    "no pi": "without pi: each word describes what comes before it"
+    "with pi": "with pi: the words after pi are one group"
+  "entries":
+    "tomo": "building"
+    "jan": "person"
+    "ilo": "tool"
+  "notes": "Without pi, tomo telo suli is a big building of water, each word describing all that comes before it. With pi, tomo pi telo suli is a building of big water: the words after pi are one group, and the whole group describes the building."

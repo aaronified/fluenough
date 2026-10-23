@@ -1,0 +1,76 @@
+"schema": 1
+"id": "tok-en-reading-animals"
+"name": "Reading: animals"
+"kind": "reading"
+"language":
+  "code": "tok"
+  "iso639_3": "tok"
+  "name": "Toki Pona"
+  "script": "latin"
+  "icon": "Tp"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this deck"
+"description": "Two passages on animals: a listening passage from a child's game naming animals and their sounds, and a reading passage of zoo signs. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "reading"
+- "unreviewed"
+"passages":
+- "id": "tok-animals-farm-sounds"
+  "title": "Farm sounds"
+  "theme": "animals"
+  "sentences":
+  - "text": "soweli mi li mu."
+  - "text": "waso li toki."
+  - "text": "kala li lon telo lili."
+  - "text": "akesi li mu ala."
+  - "text": "pipi li lon poki."
+  "questions":
+  - "id": "tok-0414"
+    "prompt":
+      "en": "Which animal says mu?"
+    "options":
+    - "en": "The animal"
+    - "en": "The fish"
+    "answer": 1
+  - "id": "tok-0415"
+    "prompt":
+      "en": "Which animal is in the water?"
+    "options":
+    - "en": "The fish"
+    - "en": "The bird"
+    "answer": 1
+  - "id": "tok-0416"
+    "prompt":
+      "en": "The reptile says mu. Is that true?"
+    "answer": false
+- "id": "tok-animals-zoo-signs"
+  "title": "Zoo signs"
+  "theme": "animals"
+  "sentences":
+  - "text": "soweli suli li lon ni."
+  - "text": "waso li lon monsi."
+  - "text": "akesi li lon anpa."
+  - "text": "pipi li lili ala."
+  "questions":
+  - "id": "tok-0417"
+    "prompt":
+      "en": "Which animal is behind something?"
+    "options":
+    - "en": "The bird"
+    - "en": "The reptile"
+    "answer": 1
+  - "id": "tok-0418"
+    "prompt":
+      "en": "Which sign says the bug is not small?"
+    "options":
+    - "en": "The reptile sign"
+    - "en": "The bug sign"
+    "answer": 2
+  - "id": "tok-0419"
+    "prompt":
+      "en": "The reptile is below the sign. Is that true?"
+    "answer": true
