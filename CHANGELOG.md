@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Progress shows hours spent (each answer at most a minute) and about how many hours are left to the end of B1, in a tile row under Words and Level; tapping it opens a popup with each language's hours (#227).
+
 ### Changed
 
 - The word-order drill lays its tiles out in the deck's direction: an Urdu sentence is built from the right in an English app. Where the interface quotes right-to-left deck text, as in "Answer: …", the quote is isolated from the words around it (#619). Checking an Urdu deck on a device, and the interface itself laid out right to left, are not done.

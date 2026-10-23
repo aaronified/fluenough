@@ -69,7 +69,7 @@ class WordsTile extends StatelessWidget {
         count.format(words.mastered),
         count.format(words.taught),
       ),
-      child: _Tile(
+      child: ProgressTile(
         color: scheme.surfaceContainerLow,
         title: l10n.progressWordsTitle,
         titleColor: scheme.onSurfaceVariant,
@@ -156,7 +156,7 @@ class LevelTile extends StatelessWidget {
       container: true,
       excludeSemantics: true,
       label: label,
-      child: _Tile(
+      child: ProgressTile(
         color: scheme.surfaceContainerLow,
         gradient: badge?.gradient,
         title: allLanguages
@@ -206,8 +206,9 @@ class LevelTile extends StatelessWidget {
   }
 }
 
-class _Tile extends StatelessWidget {
-  const _Tile({
+/// A tile of the top rows of Progress: a title over its figure.
+class ProgressTile extends StatelessWidget {
+  const ProgressTile({
     required this.color,
     required this.title,
     required this.titleColor,
