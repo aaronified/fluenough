@@ -4,7 +4,6 @@ import '../../app/skill.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
-import '../../core/models/review_event.dart';
 import '../../core/progress/tag_strength.dart';
 
 /// Finds a card by its id, as [deckId] lists it if that deck still does,

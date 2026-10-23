@@ -3,7 +3,6 @@
 
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
-import 'package:fluenough/core/models/review_event.dart';
 import 'package:fluenough/core/progress/tag_strength.dart';
 import 'package:flutter_test/flutter_test.dart';
 
