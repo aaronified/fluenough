@@ -298,24 +298,34 @@ units:
   - decks: ["bn-grammar-perfect", "bn-grammar-past-negative"]
     words: 0
     grammar: ["perfect", "past-negative"]
-  - planned: { id: "bn-shopping", theme: "shopping", words: 50 }
+  - decks: ["bn-shopping", "bn-shopping-sentences", "*"]
+    words: 49
     listening_passages:
       - { id: "bargaining", text: { "en": "Bargaining politely at a market stall" } }
     reading_passages:
       - { id: "price-list", text: { "en": "A shop's price list and its offers" } }
+  - decks: ["bn-reading-shopping"]
+    words: 0
   - decks: ["bn-grammar-past-more"]
     words: 0
     grammar: ["past-more"]
-  - planned: { id: "bn-illness", theme: "illness", words: 50 }
+  - decks: ["bn-illness", "bn-illness-sentences", "*"]
+    words: 50
     listening_passages:
       - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
     reading_passages:
       - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
-  - planned: { id: "bn-grammar-compound-verbs", grammar: "compound-verbs" }
+  - decks: ["bn-reading-illness"]
+    words: 0
+  - decks: ["bn-grammar-compound-verbs", "bn-grammar-compound-verbs-sentences"]
+    words: 0
+    grammar: ["compound-verbs"]
     listening_passages:
       - { id: "what-just-happened", text: { "en": "A neighbour tells what suddenly happened: fell down, sat down, went away" } }
     reading_passages:
       - { id: "small-accident-news", text: { "en": "A short news item about a small accident on the road" } }
+  - decks: ["bn-reading-compound-verbs"]
+    words: 0
   - decks: ["bn-eating-out", "*"]
     words: 9
   - planned: { id: "bn-cooking", theme: "cooking", words: 50 }

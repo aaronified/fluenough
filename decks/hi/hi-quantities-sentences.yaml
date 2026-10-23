@@ -1,0 +1,88 @@
+schema: 1
+id: "hi-quantities-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-0882"
+    target: "मुझे दो कप चाय चाहिए।"
+    target_scripts: { perso_arabic: "مجھے دو کپ چائے چاہیے۔" }
+    reading: "mujhē dō kap cāy cāhiē."
+    ipa: "mʊdʒʱeː d̪oː kəp tʃaːj tʃaːɦɪeː"
+    pos: "phrase"
+    bases: [{ word: "मुझे", ref: "hi-0745" }, { word: "दो", ref: "hi-0199" }, { word: "कप", ref: "hi-0877" }, { word: "चाय", ref: "hi-0334" }, { word: "चाहिए", ref: "hi-0792" }]
+    confusables:
+      - { id: "w1", ref: "hi-0225", kind: "word" }
+      - { id: "w2", word: "लीजिए", reading: "lījiē", ipa: "liːdʒɪeː", kind: "word" }
+  - id: "hi-0883"
+    target: "हमें दो लीटर दूध चाहिए।"
+    target_scripts: { perso_arabic: "ہمیں دو لیٹر دودھ چاہیے۔" }
+    reading: "hamēm̐ dō līṭar dūdh cāhiē."
+    ipa: "ɦəmẽː d̪oː liːʈər d̪uːd̪ʱ tʃaːɦɪeː"
+    pos: "phrase"
+    bases: [{ word: "हमें", ref: "hi-0053" }, { word: "दो", ref: "hi-0199" }, { word: "लीटर", ref: "hi-0874" }, { word: "दूध", ref: "hi-0259" }, { word: "चाहिए", ref: "hi-0792" }]
+    confusables:
+      - { id: "w1", ref: "hi-0878", kind: "word" }
+      - { id: "w2", word: "पैकेट", reading: "paikēṭ", ipa: "pɛːkeːʈ", kind: "word" }
+  - id: "hi-0884"
+    target: "आधा किलो आलू काफ़ी है।"
+    target_scripts: { perso_arabic: "آدھا کلو آلو کافی ہے۔" }
+    reading: "ādhā kilō ālū kāfī hai."
+    ipa: "aːd̪ʱaː kɪloː aːluː kaːfiː ɦɛː"
+    pos: "phrase"
+    bases: [{ word: "आधा", ref: "hi-0869" }, { word: "किलो", ref: "hi-0241" }, { word: "आलू", ref: "hi-0250" }, { word: "काफ़ी", ref: "hi-0870" }, { word: "है", ref: "hi-0780" }]
+    confusables:
+      - { id: "w1", ref: "hi-0868", kind: "word" }
+      - { id: "f1", word: "आधी", reading: "ādhī", ipa: "aːd̪ʱiː", kind: "form" }
+  - id: "hi-0885"
+    target: "सारे बच्चे दूध पीते हैं।"
+    target_scripts: { perso_arabic: "سارے بچے دودھ پیتے ہیں۔" }
+    reading: "sārē baccē dūdh pītē haim̐."
+    ipa: "saːreː bətʃtʃeː d̪uːd̪ʱ piːt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases: [{ word: "सारे", ref: "hi-0867" }, { word: "बच्चे", ref: "hi-0111" }, { word: "दूध", ref: "hi-0259" }, { word: "पीते", ref: "hi-0602" }, { word: "हैं", ref: "hi-0780" }]
+    confusables:
+      - { id: "w1", ref: "hi-0866", kind: "word" }
+      - { id: "f1", word: "थोड़े", reading: "thōṛē", ipa: "t̪ʰoːɽeː", kind: "form" }
+  - id: "hi-0886"
+    target: "उसने पूरा काम कर दिया।"
+    target_scripts: { perso_arabic: "اس نے پورا کام کر دیا۔" }
+    reading: "usnē pūrā kām kar diyā."
+    ipa: "ʊsneː puːraː kaːm kər d̪ɪjaː"
+    pos: "phrase"
+    bases: [{ word: "उसने", ref: "hi-0749" }, { word: "पूरा", ref: "hi-0868" }, { word: "काम", ref: "hi-0194" }, { word: "कर", ref: "hi-0779" }, { word: "दिया", ref: "hi-0785" }]
+    confusables:
+      - { id: "w1", ref: "hi-0869", kind: "word" }
+      - { id: "f1", word: "पूरी", reading: "pūrī", ipa: "puːriː", kind: "form" }
+  - id: "hi-0887"
+    target: "मेरे पास चम्मच नहीं है।"
+    target_scripts: { perso_arabic: "میرے پاس چمچ نہیں ہے۔" }
+    reading: "mērē pās cammac nahīm̐ hai."
+    ipa: "meːreː paːs tʃəmmətʃ nəɦĩː ɦɛː"
+    pos: "phrase"
+    bases: [{ word: "मेरे", ref: "hi-0752" }, { word: "पास", ref: "hi-0293" }, { word: "चम्मच", ref: "hi-0876" }, { word: "नहीं", ref: "hi-0156" }, { word: "है", ref: "hi-0780" }]
+    confusables:
+      - { id: "w1", ref: "hi-0877", kind: "word" }
+      - { id: "w2", ref: "hi-0878", kind: "word" }
+  - id: "hi-0888"
+    target: "सौ ग्राम पनीर लाइए।"
+    target_scripts: { perso_arabic: "سو گرام پنیر لائیے۔" }
+    reading: "sau grām panīr lāiē."
+    ipa: "sɔː ɡraːm pəniːr laːɪeː"
+    pos: "phrase"
+    bases: [{ word: "सौ", ref: "hi-0225" }, { word: "ग्राम", ref: "hi-0873" }, { word: "पनीर", base: "पनीर", reading: "panīr" }, { word: "लाइए", base: "लाना", reading: "lānā" }]
+    confusables:
+      - { id: "w1", ref: "hi-0874", kind: "word" }
+      - { id: "f1", word: "लाओ", reading: "lāō", ipa: "laːoː", kind: "form" }
+  - id: "hi-0889"
+    target: "बोतल में थोड़ा पानी है।"
+    target_scripts: { perso_arabic: "بوتل میں تھوڑا پانی ہے۔" }
+    reading: "bōtal mēm̐ thōṛā pānī hai."
+    ipa: "boːt̪əl mẽː t̪ʰoːɽaː paːniː ɦɛː"
+    pos: "phrase"
+    bases: [{ word: "बोतल", ref: "hi-0879" }, { word: "में", ref: "hi-0274" }, { word: "थोड़ा", ref: "hi-0865" }, { word: "पानी", ref: "hi-0333" }, { word: "है", ref: "hi-0780" }]
+    confusables:
+      - { id: "w1", ref: "hi-0878", kind: "word" }
+      - { id: "f1", word: "थोड़ी", reading: "thōṛī", ipa: "t̪ʰoːɽiː", kind: "form" }
