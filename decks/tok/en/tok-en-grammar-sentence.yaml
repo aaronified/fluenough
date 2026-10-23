@@ -1,0 +1,26 @@
+schema: 1
+id: "tok-en-grammar-sentence"
+kind: "layer"
+core: "tok-grammar-sentence"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The basic sentence: li and e"
+description: "The two particles of the basic sentence. Li comes before the predicate of a subject that is not mi or sina alone, and e comes before the object. Each is taught with examples from the words the learner knows. Not yet checked by a Toki Pona speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "tok-0101":
+    native: "marks the predicate"
+    notes:
+      "n1": "Li comes after the subject and before what it does or is: ona li moku is they eat. Mi and sina alone take no li: mi moku is I eat."
+      "n2": "Li is not a word with a meaning of its own; it only shows where the predicate starts."
+    examples:
+      "ona li lukin.": "They look."
+      "ijo li pona.": "The thing is good."
+  "tok-0102":
+    native: "marks the object"
+    notes:
+      "n1": "E comes after the verb and before the thing it acts on: mi pali e pan is I make bread. A verb with no object takes no e: mi pali is I work."
+      "n2": "A phrase as the object takes one e before all of it: mi moku e moku pona is I eat good food."
+    examples:
+      "mi pali e pan.": "I make bread."
+      "sina pana e ijo.": "You give the thing."
