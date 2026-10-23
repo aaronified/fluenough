@@ -32,9 +32,10 @@
 # imperatives (right after the present), object pronouns, reflexives, the
 # past (perfective and imperfective, and the contrast between them), the
 # future and the conditional, the subjunctive, and the compound tenses.
-# Spanish has four decks today,
-# the phrasebook, the core vocabulary, articles and gender, and the
-# regular -ar present; the rest is planned. Which Spanish to teach
+# Spanish has these decks today: the phrasebook, the first words, the core
+# vocabulary, articles and gender, the regular -ar present, and the first three
+# themes with their sentences and readings (questions, addressing, pronouns);
+# the rest is planned. Which Spanish to teach
 # (Latin American or Spain) is still open (docs/plans/language-paths.md);
 # the plan names nothing that differs between them.
 #
@@ -61,11 +62,8 @@ units:
   - decks: ["es-phrasebook", "es-first-words", "*"]
     words: 10
   # 2. The first word units.
-  - planned: { id: "es-questions", theme: "questions", words: 15 }
-    listening_passages:
-      - { id: "asking-around", text: { "en": "Asking who, what, where and when at a station" } }
-    reading_passages:
-      - { id: "tourist-leaflet", text: { "en": "A leaflet answering the questions a visitor asks" } }
+  - decks: ["es-questions", "es-questions-sentences", "es-reading-questions", "*"]
+    words: 15
   - planned: { id: "es-addressing", theme: "addressing", words: 15 }
     listening_passages:
       - { id: "meeting-a-neighbour", text: { "en": "Greeting a neighbour and an older stranger, tú and usted" } }

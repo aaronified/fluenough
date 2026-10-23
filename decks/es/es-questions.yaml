@@ -1,0 +1,195 @@
+schema: 1
+id: "es-questions"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "questions"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-0054"
+    target: "qué"
+    ipa: "ke"
+    pos: "pronoun"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "¿Qué es esto?", ipa: "ke es ˈesto", bases: [{ word: "Qué", base: "qué" }, { word: "es", ref: "es-0022" }, { word: "esto", ref: "es-0127" }] }
+      - { target: "¿Qué dices?", ipa: "ke ˈdiθes", bases: [{ word: "Qué", base: "qué" }, { word: "dices", base: "decir" }] }
+  - id: "es-0055"
+    target: "quién"
+    ipa: "kjen"
+    pos: "pronoun"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "¿Quién es ella?", ipa: "kjen es ˈeʝa", bases: [{ word: "Quién", base: "quién" }, { word: "es", ref: "es-0022" }, { word: "ella", ref: "es-0121" }] }
+      - { target: "¿Quién tiene el libro?", ipa: "kjen ˈtjene el ˈlibɾo", bases: [{ word: "Quién", base: "quién" }, { word: "tiene", ref: "es-0024" }, { word: "el", base: "el" }, { word: "libro", ref: "es-0011" }] }
+  - id: "es-0056"
+    target: "dónde"
+    ipa: "ˈdonde"
+    pos: "adv"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "¿Dónde está el baño?", ipa: "ˈdonde esˈta el ˈbaɲo", bases: [{ word: "Dónde", base: "dónde" }, { word: "está", ref: "es-0023" }, { word: "el", base: "el" }, { word: "baño", base: "baño" }] }
+      - { target: "No sé dónde estoy.", ipa: "no se ˈdonde esˈtoj", bases: [{ word: "No", ref: "es-0043" }, { word: "sé", base: "saber" }, { word: "dónde", base: "dónde" }, { word: "estoy", ref: "es-0023" }] }
+  - id: "es-0057"
+    target: "cuándo"
+    ipa: "ˈkwando"
+    pos: "adv"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "¿Cuándo es la cita?", ipa: "ˈkwando es la ˈθita", bases: [{ word: "Cuándo", base: "cuándo" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "cita", base: "cita" }] }
+      - { target: "¿Cuándo llegas a casa?", ipa: "ˈkwando ˈʝeɡas a ˈkasa", bases: [{ word: "Cuándo", base: "cuándo" }, { word: "llegas", base: "llegar" }, { word: "a", base: "a" }, { word: "casa", ref: "es-0006" }] }
+  - id: "es-0058"
+    target: "cómo"
+    ipa: "ˈkomo"
+    pos: "adv"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "¿Cómo estás?", ipa: "ˈkomo esˈtas", bases: [{ word: "Cómo", base: "cómo" }, { word: "estás", ref: "es-0023" }] }
+      - { target: "¿Cómo va el trabajo?", ipa: "ˈkomo ba el tɾaˈbaxo", bases: [{ word: "Cómo", base: "cómo" }, { word: "va", ref: "es-0026" }, { word: "el", base: "el" }, { word: "trabajo", base: "trabajo" }] }
+  - id: "es-0059"
+    target: "cuál"
+    ipa: "kwal"
+    pos: "pronoun"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "¿Cuál es tu nombre?", ipa: "kwal es tu ˈnombɾe", bases: [{ word: "Cuál", base: "cuál" }, { word: "es", ref: "es-0022" }, { word: "tu", ref: "es-0130" }, { word: "nombre", ref: "es-0091" }] }
+      - { target: "¿Cuál prefieres?", ipa: "kwal pɾeˈfjeɾes", bases: [{ word: "Cuál", base: "cuál" }, { word: "prefieres", base: "preferir" }] }
+  - id: "es-0060"
+    target: "cuánto"
+    ipa: "ˈkwanto"
+    pos: "adj"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "¿Cuánto cuesta?", ipa: "ˈkwanto ˈkwesta", bases: [{ word: "Cuánto", base: "cuánto" }, { word: "cuesta", base: "costar" }] }
+      - { target: "¿Cuántos años tienes?", ipa: "ˈkwantos ˈaɲos ˈtjenes", bases: [{ word: "Cuántos", base: "cuánto" }, { word: "años", ref: "es-0021" }, { word: "tienes", ref: "es-0024" }] }
+  - id: "es-0061"
+    target: "por qué"
+    ipa: "poɾ ke"
+    pos: "phrase"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "por", base: "por" }
+      - { word: "qué", ref: "es-0054" }
+    examples:
+      - { target: "¿Por qué estás triste?", ipa: "poɾ ke esˈtas ˈtɾiste", bases: [{ word: "Por", base: "por" }, { word: "qué", ref: "es-0054" }, { word: "estás", ref: "es-0023" }, { word: "triste", base: "triste" }] }
+      - { target: "No sé por qué llora.", ipa: "no se poɾ ke ˈʝoɾa", bases: [{ word: "No", ref: "es-0043" }, { word: "sé", base: "saber" }, { word: "por", base: "por" }, { word: "qué", ref: "es-0054" }, { word: "llora", base: "llorar" }] }
+  - id: "es-0062"
+    target: "¿verdad?"
+    ipa: "beɾˈdad"
+    pos: "phrase"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "verdad", base: "verdad" }
+    examples:
+      - { target: "Es muy bonito, ¿verdad?", ipa: "es mwi boˈnito beɾˈdad", bases: [{ word: "Es", ref: "es-0022" }, { word: "muy", base: "muy" }, { word: "bonito", base: "bonito" }, { word: "verdad", base: "verdad" }] }
+      - { target: "Hoy llueve, ¿verdad?", ipa: "oj ˈʝwebe beɾˈdad", bases: [{ word: "Hoy", base: "hoy" }, { word: "llueve", base: "llover" }, { word: "verdad", base: "verdad" }] }
+  - id: "es-0063"
+    target: "qué tal"
+    ipa: "ke tal"
+    pos: "phrase"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "qué", ref: "es-0054" }
+      - { word: "tal", base: "tal" }
+    examples:
+      - { target: "Hola, ¿qué tal?", ipa: "ˈola ke tal", bases: [{ word: "Hola", ref: "es-0036" }, { word: "qué", ref: "es-0054" }, { word: "tal", base: "tal" }] }
+      - { target: "¿Qué tal el viaje?", ipa: "ke tal el ˈbjaxe", bases: [{ word: "Qué", ref: "es-0054" }, { word: "tal", base: "tal" }, { word: "el", base: "el" }, { word: "viaje", base: "viaje" }] }
+  - id: "es-0064"
+    target: "de dónde"
+    ipa: "de ˈdonde"
+    pos: "phrase"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "de", base: "de" }
+      - { word: "dónde", ref: "es-0056" }
+    examples:
+      - { target: "¿De dónde eres?", ipa: "de ˈdonde ˈeɾes", bases: [{ word: "De", base: "de" }, { word: "dónde", ref: "es-0056" }, { word: "eres", ref: "es-0022" }] }
+      - { target: "No sé de dónde es.", ipa: "no se de ˈdonde es", bases: [{ word: "No", ref: "es-0043" }, { word: "sé", base: "saber" }, { word: "de", base: "de" }, { word: "dónde", ref: "es-0056" }, { word: "es", ref: "es-0022" }] }
+  - id: "es-0065"
+    target: "a qué hora"
+    ipa: "a ke ˈoɾa"
+    pos: "phrase"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "a", base: "a" }
+      - { word: "qué", ref: "es-0054" }
+      - { word: "hora", base: "hora" }
+    examples:
+      - { target: "¿A qué hora empieza la película?", ipa: "a ke ˈoɾa emˈpjeθa la peˈlikula", bases: [{ word: "A", base: "a" }, { word: "qué", ref: "es-0054" }, { word: "hora", base: "hora" }, { word: "empieza", base: "empezar" }, { word: "la", base: "la" }, { word: "película", base: "película" }] }
+      - { target: "¿A qué hora cenamos?", ipa: "a ke ˈoɾa θeˈnamos", bases: [{ word: "A", base: "a" }, { word: "qué", ref: "es-0054" }, { word: "hora", base: "hora" }, { word: "cenamos", base: "cenar" }] }
+  - id: "es-0066"
+    target: "con quién"
+    ipa: "kon kjen"
+    pos: "phrase"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "con", base: "con" }
+      - { word: "quién", ref: "es-0055" }
+    examples:
+      - { target: "¿Con quién hablas?", ipa: "kon kjen ˈablas", bases: [{ word: "Con", base: "con" }, { word: "quién", ref: "es-0055" }, { word: "hablas", ref: "es-0027" }] }
+      - { target: "¿Con quién vas al cine?", ipa: "kon kjen bas al ˈθine", bases: [{ word: "Con", base: "con" }, { word: "quién", ref: "es-0055" }, { word: "vas", ref: "es-0026" }, { word: "al", base: "al" }, { word: "cine", base: "cine" }] }
+  - id: "es-0067"
+    target: "para qué"
+    ipa: "ˈpaɾa ke"
+    pos: "phrase"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "para", base: "para" }
+      - { word: "qué", ref: "es-0054" }
+    examples:
+      - { target: "¿Para qué sirve esto?", ipa: "ˈpaɾa ke ˈsiɾbe ˈesto", bases: [{ word: "Para", base: "para" }, { word: "qué", ref: "es-0054" }, { word: "sirve", base: "servir" }, { word: "esto", ref: "es-0127" }] }
+      - { target: "¿Para qué es el papel?", ipa: "ˈpaɾa ke es el paˈpel", bases: [{ word: "Para", base: "para" }, { word: "qué", ref: "es-0054" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "papel", base: "papel" }] }
+  - id: "es-0068"
+    target: "qué hora es"
+    ipa: "ke ˈoɾa es"
+    pos: "phrase"
+    tags: ["question"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "qué", ref: "es-0054" }
+      - { word: "hora", base: "hora" }
+      - { word: "es", ref: "es-0022" }
+    examples:
+      - { target: "Perdón, ¿qué hora es ahora?", ipa: "peɾˈdon ke ˈoɾa es aˈoɾa", bases: [{ word: "Perdón", ref: "es-0045" }, { word: "qué", ref: "es-0054" }, { word: "hora", base: "hora" }, { word: "es", ref: "es-0022" }, { word: "ahora", base: "ahora" }] }
+      - { target: "Son las dos y media.", ipa: "son las dos i ˈmedja", bases: [{ word: "Son", ref: "es-0022" }, { word: "las", base: "la" }, { word: "dos", base: "dos" }, { word: "y", ref: "es-0048" }, { word: "media", base: "medio" }] }
+  - id: "es-0069"
+    kind: "set"
+    members: [{ ref: "es-0054" }, { ref: "es-0055" }, { ref: "es-0056" }, { ref: "es-0057" }, { ref: "es-0058" }, { ref: "es-0059" }, { ref: "es-0060" }]

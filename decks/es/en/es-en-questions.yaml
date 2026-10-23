@@ -1,0 +1,262 @@
+schema: 1
+id: "es-en-questions"
+kind: "layer"
+core: "es-questions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Questions: who, what, where, when and how much"
+license: "CC-BY-SA-4.0"
+description: "The question words, who, what, where, when, how, which and how much, with the phrases built on them such as a qué hora (at what time). Not yet checked by a Spanish speaker: please report any mistake."
+
+cards:
+  "es-0054":
+    native: "what"
+    notes:
+      "n1": "Written with an accent in a question: ¿Qué? (What?). Without it, que means 'that' and joins two clauses."
+    examples:
+      "¿Qué es esto?":
+        native: "What is this?"
+        bases:
+          "Qué": "what"
+      "¿Qué dices?":
+        native: "What are you saying?"
+        bases:
+          "Qué": "what"
+          "dices": "say"
+  "es-0055":
+    native: "who"
+    notes:
+      "n1": "Plural quiénes (who, for more than one person): ¿Quiénes son? (Who are they?)."
+    examples:
+      "¿Quién es ella?":
+        native: "Who is she?"
+        bases:
+          "Quién": "who"
+      "¿Quién tiene el libro?":
+        native: "Who has the book?"
+        bases:
+          "Quién": "who"
+          "el": "the"
+  "es-0056":
+    native: "where"
+    notes:
+      "n1": "Written with an accent in a question: ¿Dónde? Without it, donde joins a clause: la casa donde vivo (the house where I live)."
+    examples:
+      "¿Dónde está el baño?":
+        native: "Where is the bathroom?"
+        bases:
+          "Dónde": "where"
+          "el": "the"
+          "baño": "bathroom"
+      "No sé dónde estoy.":
+        native: "I don't know where I am."
+        bases:
+          "sé": "know"
+          "dónde": "where"
+  "es-0057":
+    native: "when"
+    notes:
+      "n1": "Written with an accent in a question: ¿Cuándo? Without it, cuando means 'when' inside a sentence: cuando llego (when I arrive)."
+    examples:
+      "¿Cuándo es la cita?":
+        native: "When is the appointment?"
+        bases:
+          "Cuándo": "when"
+          "la": "the"
+          "cita": "appointment"
+      "¿Cuándo llegas a casa?":
+        native: "When do you get home?"
+        bases:
+          "Cuándo": "when"
+          "llegas": "get"
+          "a": "to"
+  "es-0058":
+    native: "how"
+    notes:
+      "n1": "Written with an accent in a question: ¿Cómo? Como without it means 'as' or 'like', or 'I eat': como un libro (like a book)."
+    examples:
+      "¿Cómo estás?":
+        native: "How are you?"
+        bases:
+          "Cómo": "how"
+      "¿Cómo va el trabajo?":
+        native: "How is work going?"
+        bases:
+          "Cómo": "how"
+          "el": "the"
+          "trabajo": "work"
+  "es-0059":
+    native: "which (one)"
+    notes:
+      "n1": "Plural cuáles (which ones). Use it when choosing from a set: ¿Cuál prefieres? (Which one do you prefer?)."
+    examples:
+      "¿Cuál es tu nombre?":
+        native: "What is your name?"
+        bases:
+          "Cuál": "which"
+      "¿Cuál prefieres?":
+        native: "Which one do you prefer?"
+        bases:
+          "Cuál": "which"
+          "prefieres": "prefer"
+  "es-0060":
+    native: "how much; how many"
+    notes:
+      "n1": "It agrees with its noun: cuánta (f.), cuántos (m. plural), cuántas (f. plural). ¿Cuántos años tienes? is 'how old are you?', literally 'how many years do you have?'."
+    examples:
+      "¿Cuánto cuesta?":
+        native: "How much does it cost?"
+        bases:
+          "Cuánto": "how much"
+          "cuesta": "cost"
+      "¿Cuántos años tienes?":
+        native: "How old are you?"
+        bases:
+          "Cuántos": "how many"
+  "es-0061":
+    native: "why"
+    notes:
+      "n1": "Two words, written apart: por qué. The answer begins with porque (because), written as one word."
+    examples:
+      "¿Por qué estás triste?":
+        native: "Why are you sad?"
+        bases:
+          "Por": "for"
+          "triste": "sad"
+      "No sé por qué llora.":
+        native: "I don't know why she is crying."
+        bases:
+          "sé": "know"
+          "por": "for"
+          "llora": "cry"
+    bases:
+      "por": "for"
+  "es-0062":
+    native: "right?; isn't it?"
+    notes:
+      "n1": "Added to a statement to ask for agreement: Hace calor, ¿verdad? (It is hot, isn't it?)."
+    examples:
+      "Es muy bonito, ¿verdad?":
+        native: "It is very pretty, isn't it?"
+        bases:
+          "muy": "very"
+          "bonito": "pretty"
+          "verdad": "truth"
+      "Hoy llueve, ¿verdad?":
+        native: "It is raining today, isn't it?"
+        bases:
+          "Hoy": "today"
+          "llueve": "rain"
+          "verdad": "truth"
+    bases:
+      "verdad": "truth"
+  "es-0063":
+    native: "how are things?; how was it?"
+    notes:
+      "n1": "A greeting question: ¿Qué tal? asks how things are. Answer with bien (well) or regular (so-so)."
+    examples:
+      "Hola, ¿qué tal?":
+        native: "Hi, how's it going?"
+        bases:
+          "tal": "so"
+      "¿Qué tal el viaje?":
+        native: "How was the trip?"
+        bases:
+          "tal": "so"
+          "el": "the"
+          "viaje": "trip"
+    bases:
+      "tal": "so"
+  "es-0064":
+    native: "from where"
+    notes:
+      "n1": "Where someone comes from: ¿De dónde eres? (Where are you from?)."
+    examples:
+      "¿De dónde eres?":
+        native: "Where are you from?"
+        bases:
+          "De": "from"
+      "No sé de dónde es.":
+        native: "I don't know where he is from."
+        bases:
+          "sé": "know"
+          "de": "from"
+    bases:
+      "de": "from"
+  "es-0065":
+    native: "at what time"
+    notes:
+      "n1": "Asks for a time: ¿A qué hora abre? (At what time does it open?)."
+    examples:
+      "¿A qué hora empieza la película?":
+        native: "What time does the film start?"
+        bases:
+          "A": "at"
+          "hora": "time"
+          "empieza": "start"
+          "la": "the"
+          "película": "film"
+      "¿A qué hora cenamos?":
+        native: "What time do we have dinner?"
+        bases:
+          "A": "at"
+          "hora": "time"
+          "cenamos": "have dinner"
+    bases:
+      "a": "at"
+      "hora": "time"
+  "es-0066":
+    native: "with whom"
+    notes:
+      "n1": "With whom: ¿Con quién hablas? (Who are you talking to?). Quién is the question word; con is 'with'."
+    examples:
+      "¿Con quién hablas?":
+        native: "Who are you talking to?"
+        bases:
+          "Con": "with"
+      "¿Con quién vas al cine?":
+        native: "Who are you going to the cinema with?"
+        bases:
+          "Con": "with"
+          "al": "to the"
+          "cine": "cinema"
+    bases:
+      "con": "with"
+  "es-0067":
+    native: "what for"
+    notes:
+      "n1": "What something is for: ¿Para qué sirve? (What is it for?)."
+    examples:
+      "¿Para qué sirve esto?":
+        native: "What is this for?"
+        bases:
+          "Para": "for"
+          "sirve": "serve"
+      "¿Para qué es el papel?":
+        native: "What is the paper for?"
+        bases:
+          "Para": "for"
+          "el": "the"
+          "papel": "paper"
+    bases:
+      "para": "for"
+  "es-0068":
+    native: "what time is it?"
+    notes:
+      "n1": "Asked for the time. Answer with Son las ... (It is ... o'clock) or Es la ... (It is one o'clock)."
+    examples:
+      "Perdón, ¿qué hora es ahora?":
+        native: "Excuse me, what time is it now?"
+        bases:
+          "hora": "time"
+          "ahora": "now"
+      "Son las dos y media.":
+        native: "It is half past two."
+        bases:
+          "las": "the"
+          "dos": "two"
+          "media": "half"
+    bases:
+      "hora": "time"
+  "es-0069":
+    native: "Question words: who, what, where, when, how, which, how many"
+    explanation: "Most questions begin with one of these. Learn them as a set, since each one answers a different question: who, what, where, when, how, which one, and how much or how many."
