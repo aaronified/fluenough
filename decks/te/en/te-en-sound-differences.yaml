@@ -4,7 +4,7 @@ kind: "layer"
 core: "te-sound-differences"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Sounds to tell apart"
-description: "Pairs of everyday words that differ in one sound: a short or long vowel, the tongue on the teeth or curled back, and the two l's."
+description: "Pairs of everyday words that differ in one sound: a short or long vowel, the tongue on the teeth or curled back, the two l's, a single or double l, a closing m or none, and a breath after an aspirated consonant."
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
@@ -18,6 +18,7 @@ cards:
   "te-0053":
     notes:
       "n1": "Vowel length: కాలం (kālam, time) has the long a where కలం (kalam, pen) has the short a."
+      "n2": "A closing m: కలం (kalaṁ), 'pen', ends in the sign ం, a closing m; కల (kala), 'dream', does not."
   "te-0111":
     native: "time; season"
     notes:
@@ -40,8 +41,19 @@ cards:
       "n1": "Dental against curled back: కోత (kōta, harvest) has the tongue on the teeth; కోట (kōṭa, fort) has it curled back."
   "te-0050":
     notes:
-      "n1": "The two l's: కల (kala, dream) has the l on the teeth; కళ (kaḷa, art) has it curled back."
+      "n1": "The two l's: కల (kala), 'dream', has the l on the teeth; కళ (kaḷa), 'art', has it curled back."
+      "n2": "One l or two: కల (kala), 'dream', has one l; కల్ల (kalla), 'lie', holds it twice as long. English says the double l in 'ball' once, so the length is new."
+      "n3": "A closing m: కల (kala), 'dream', against కలం (kalaṁ), 'pen'. The sign ం adds a closing m, which English also has, but Telugu writes it on many nouns."
   "te-0116":
     native: "art"
     notes:
-      "n1": "The two l's: కల (kala, dream) has the l on the teeth; కళ (kaḷa, art) has it curled back."
+      "n1": "The two l's: కల (kala), 'dream', has the l on the teeth; కళ (kaḷa), 'art', has it curled back."
+  "te-6525":
+    native: "thought; idea; feeling"
+    notes:
+      "n1": "Aspirated against plain: భ (bh) is a b with a breath after it, as in భావం (bhāvaṁ), 'thought'. English has no such contrast, so it is new. Telugu బ (ba) is the same sound as English b."
+  "te-6526":
+    native: "lie; falsehood"
+    notes:
+      "n1": "One l or two: కల్ల (kalla), 'lie', holds the l twice as long as కల (kala), 'dream'. English says the double l in 'ball' once, so the length is new."
+      "n2": "Its partner: కల (kala), 'dream', has one l where కల్ల (kalla), 'lie', has two. Say the first l once and the word becomes 'dream'."
