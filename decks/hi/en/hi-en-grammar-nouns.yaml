@@ -6,17 +6,23 @@ native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Nouns: plural and oblique"
 license: "CC-BY-SA-4.0"
 description: "How a noun changes for the plural, and before a postposition."
-pattern:
-  name: "Noun forms"
+table:
   slot_name: "form"
-  prompt: "{lemma} ({gloss}) — {slot}"
-  entries:
-    "ladkaa": "boy, m"
-    "kamraa": "room, m"
-    "ghar": "house, m"
-    "aadmii": "man, m"
-    "ladkii": "girl, f"
-    "kitaab": "book, f"
-    "bahan": "sister, f"
-    "bhaashaa": "language, f"
-  notes: "Before a postposition such as में (mēm̐), से (sē) or को (kō), a noun takes its oblique form: कमरा (kamrā) → कमरे में (kamrē mēm̐), in the room. Masculine nouns in -आ (-ā) change; other masculine nouns only change in the oblique plural, which always ends in -ओं (-ōm̐). Feminine nouns change only in the plural."
+  slots:
+    "singular": "{meaning}, one"
+    "plural": "{meaning}, more than one"
+    "oblique-singular": "{meaning}, one, before a postposition"
+    "oblique-plural": "{meaning}, more than one, before a postposition"
+rules:
+  "hi-rule-singular":
+    name: "The singular: the word as taught"
+    explanation: "{1}, room, is the singular: the noun as the card teaches it, with nothing added. It is the form for one thing when no postposition follows it."
+  "hi-rule-plural":
+    name: "-े (-ē), -ियाँ (-iyām̐), -ें (-ēm̐): more than one"
+    explanation: "A masculine noun in -आ (-ā) makes the plural in -े (-ē): {1}, boy, becomes {2}, boys. A feminine noun in -ई (-ī) makes it in -ियाँ (-iyām̐): {3}, girl, becomes {4}, girls. A feminine noun ending in a consonant makes it in -ें (-ēm̐): {5}, book, becomes {6}, books. Other masculine nouns only change in the oblique plural, so {7}, house, is the same in the plural."
+  "hi-rule-oblique-singular":
+    name: "-े (-ē): before a postposition"
+    explanation: "Before a postposition such as {1} (in), {2} (from) or {3} (to), a noun takes its oblique form. A masculine noun in -आ (-ā) changes in the singular too: {4}, room, becomes {5}, in the room. Other singular nouns stay the same: {6}, house, is {6} before {1}."
+  "hi-rule-oblique-plural":
+    name: "-ों (-ōm̐), -ियों (-iyōm̐): before a postposition"
+    explanation: "Before a postposition the oblique plural always ends in -ओं (-ōm̐): {1}, in the rooms. A masculine noun in -आ (-ā) drops its ending and takes -ों (-ōm̐): {2} becomes {3}, boys. A masculine noun in -ई (-ī) takes -ियों (-iyōm̐): {4} becomes {5}, men. A feminine noun in -ई (-ī) does the same: {6} becomes {7}, girls."
