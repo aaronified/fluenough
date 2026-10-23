@@ -138,8 +138,7 @@ every card in the shipped decks, then deletes the old.
    `reviewAsks(siblingsOf:)`. A card still reaches a grammar skill only by
    its `modes` (step 6 changes that), and `grammarUnderstood` is still
    refused by the parser on a card that is not a rules cell, so no shipped
-   card gains a form question yet. A lesson does not read siblings yet
-   (step 8).
+   card gains a form question yet. A lesson reads them in step 8.
    **Narrowed to "Same single base"** (owner, 2026-10-23: "Two cards are
    siblings only when each has exactly one base and that base is the same
    card."): measured on the shipped decks, the literal rule caught about 600
@@ -199,6 +198,18 @@ every card in the shipped decks, then deletes the old.
    `tools/set_script_pos.py` sets both (`--set pos`, `--set hears`).
 8. **Lessons from the registry (#2).** `lessonQuestions` and `Difficulty`
    read the registry and the card's data; the switch on kind is deleted.
+   **Built (#522):** `lessonQuestions` no longer switches on difficulty to
+   name asks. Difficulty only orders the skills (`_lessonSkills`); each ask is
+   the first registry type the card's data makes eligible for the skill
+   (`lessonTypeFor`), or `Ask.own`, so a grammar cell and a rules cell come
+   from `grammarLessonQuestions` the same way. A lesson reads siblings
+   (`lessonPlan(siblingsOf:)`, "Same single base"): a card with siblings is
+   asked its grammar skills after its word's own, so they are reached when
+   its `modes` leave no other skill for the exercise. `Difficulty.of` reads
+   `Card.rearranges`; it still counts a one-word `pos: phrase` as hard, as
+   before. Same questions as before for every card without siblings. A
+   pattern cell that has siblings now gets form questions too, which it did
+   not before.
 9. **Numbers as cards, reading as exam items (#5, #6).** `NumberCard`
    becomes a card with data, asked through the registry. Reading questions
    leave review: they are exam items, drawn by the exam screen (see
