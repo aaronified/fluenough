@@ -242,11 +242,9 @@ units:
     words: 6
   # pi groups the modifiers after it into one: tomo pi telo nasa (a
   # building of strange water: a bar) against tomo telo nasa.
-  - planned: { id: "tok-grammar-pi", grammar: ["pi-grouping"] }
-    listening_passages:
-      - { id: "two-meanings", text: { "en": "Pairs of phrases with and without pi, and what each means" } }
-    reading_passages:
-      - { id: "shop-signs", text: { "en": "Shop signs on a street, each a phrase with pi" } }
+  - decks: ["tok-grammar-pi-words", "tok-grammar-pi", "tok-grammar-pi-sentences", "tok-reading-pi"]
+    words: 1
+    grammar: ["pi-grouping"]
   # anpa, insa, monsi, sinpin and sewi: below, inside, behind, in front,
   # above. Placed with lon in the next unit (lon insa tomo).
   - planned: { id: "tok-location", theme: "location", words: 5 }
