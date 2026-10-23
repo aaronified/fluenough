@@ -1,0 +1,72 @@
+schema: 1
+id: "es-en-reading-addressing"
+name: "Reading: names and titles"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about greeting people and how to name them. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-meeting-a-neighbour"
+    title: "Meeting a neighbour"
+    theme: "addressing"
+    sentences:
+      - text: "Hola, Marta, ¿qué tal?"
+      - text: "Bien, gracias. ¿Y tú?"
+      - text: "Perdone, señora, ¿usted vive aquí?"
+      - text: "Sí, vivo en el segundo piso."
+      - text: "Mucho gusto. Me llamo Ana."
+    questions:
+      - id: "es-0113"
+        prompt: { en: "Which word does the speaker use for 'you' with Marta?" }
+        options:
+          - { en: "tú" }
+          - { en: "usted" }
+          - { en: "ustedes" }
+        answer: 1
+      - id: "es-0114"
+        prompt: { en: "Which word does the speaker use with the older woman?" }
+        options:
+          - { en: "tú" }
+          - { en: "usted" }
+          - { en: "ustedes" }
+        answer: 2
+      - id: "es-0115"
+        prompt: { en: "What does the speaker say to introduce themselves?" }
+        options:
+          - { en: "Pleased to meet you. My name is Ana." }
+          - { en: "Goodbye, see you tomorrow." }
+          - { en: "Thank you very much." }
+        answer: 1
+  - id: "es-name-badges"
+    title: "Name badges"
+    theme: "addressing"
+    sentences:
+      - text: "Señor Martín Vega, profesor de historia."
+      - text: "Señora Carmen Ruiz, directora."
+      - text: "Señorita Lucía Paz, estudiante."
+      - text: "Apellido: Martín. Nombre: Ana."
+    questions:
+      - id: "es-0116"
+        prompt: { en: "Which person is a teacher?" }
+        options:
+          - { en: "Señor Martín Vega" }
+          - { en: "Señora Carmen Ruiz" }
+          - { en: "Señorita Lucía Paz" }
+        answer: 1
+      - id: "es-0117"
+        prompt: { en: "What is Ana's surname?" }
+        options:
+          - { en: "Ana" }
+          - { en: "Martín" }
+          - { en: "Vega" }
+        answer: 2
+      - id: "es-0118"
+        prompt: { en: "Which title is used for the woman who is a director?" }
+        options:
+          - { en: "Señor" }
+          - { en: "Señora" }
+          - { en: "Señorita" }
+        answer: 2

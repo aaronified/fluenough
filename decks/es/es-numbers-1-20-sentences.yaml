@@ -1,0 +1,79 @@
+schema: 1
+id: "es-numbers-1-20-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-0225"
+    target: "Dos y dos son cuatro."
+    ipa: "dos i dos son ˈkwatɾo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Dos", ref: "es-0206" }, { word: "y", ref: "es-0048" }, { word: "son", ref: "es-0022" }, { word: "cuatro", ref: "es-0208" }]
+    confusables: [{ id: "three", ref: "es-0207", kind: "word" }, { id: "six", ref: "es-0210", kind: "word" }]
+  - id: "es-0226"
+    target: "Hay cinco sillas en la cocina."
+    ipa: "aj ˈθinko ˈsiʝas en la koˈθina"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hay", base: "haber" }, { word: "cinco", ref: "es-0209" }, { word: "sillas", base: "silla" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cocina", base: "cocina" }]
+    confusables: [{ id: "six", ref: "es-0210", kind: "word" }, { id: "seven", ref: "es-0211", kind: "word" }]
+  - id: "es-0227"
+    target: "Son las ocho de la mañana."
+    ipa: "son las ˈotʃo de la maˈɲana"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Son", ref: "es-0022" }, { word: "las", base: "las" }, { word: "ocho", ref: "es-0212" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "mañana", base: "mañana" }]
+    confusables: [{ id: "two", ref: "es-0206", kind: "word" }, { id: "ten", ref: "es-0214", kind: "word" }]
+  - id: "es-0228"
+    target: "La semana tiene siete días."
+    ipa: "la seˈmana ˈtjene ˈsjete ˈdias"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "semana", base: "semana" }, { word: "tiene", ref: "es-0024" }, { word: "siete", ref: "es-0211" }, { word: "días", base: "día" }]
+    confusables: [{ id: "six", ref: "es-0210", kind: "word" }, { id: "nine", ref: "es-0213", kind: "word" }]
+  - id: "es-0229"
+    target: "Mi primo tiene dieciocho años."
+    ipa: "mi ˈpɾimo ˈtjene djeˈθjotʃo ˈaɲos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "primo", base: "primo" }, { word: "tiene", ref: "es-0024" }, { word: "dieciocho", ref: "es-0222" }, { word: "años", base: "año" }]
+    confusables: [{ id: "ten", ref: "es-0214", kind: "word" }, { id: "eight", ref: "es-0212", kind: "word" }]
+  - id: "es-0230"
+    target: "Uno más uno son dos."
+    ipa: "ˈuno mas ˈuno son dos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Uno", ref: "es-0205" }, { word: "más", base: "más" }, { word: "son", ref: "es-0022" }, { word: "dos", ref: "es-0206" }]
+    confusables: [{ id: "three", ref: "es-0207", kind: "word" }, { id: "ten", ref: "es-0214", kind: "word" }]
+  - id: "es-0231"
+    target: "Un año tiene doce meses."
+    ipa: "un ˈaɲo ˈtjene ˈdoθe ˈmeses"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Un", base: "un" }, { word: "año", base: "año" }, { word: "tiene", ref: "es-0024" }, { word: "doce", ref: "es-0216" }, { word: "meses", base: "mes" }]
+    confusables: [{ id: "ten", ref: "es-0214", kind: "word" }, { id: "fourteen", ref: "es-0218", kind: "word" }]
+  - id: "es-0232"
+    target: "Nueve menos cuatro son cinco."
+    ipa: "ˈnwebe ˈmenos ˈkwatɾo son ˈθinko"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Nueve", ref: "es-0213" }, { word: "menos", base: "menos" }, { word: "cuatro", ref: "es-0208" }, { word: "son", ref: "es-0022" }, { word: "cinco", ref: "es-0209" }]
+    confusables: [{ id: "seven", ref: "es-0211", kind: "word" }, { id: "three", ref: "es-0207", kind: "word" }]
+  - id: "es-0233"
+    target: "Once jugadores forman un equipo."
+    ipa: "ˈonθe xuɡaˈdoɾes ˈfoɾman un eˈkipo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Once", ref: "es-0215" }, { word: "jugadores", base: "jugador" }, { word: "forman", base: "formar" }, { word: "un", base: "un" }, { word: "equipo", base: "equipo" }]
+    confusables: [{ id: "twelve", ref: "es-0216", kind: "word" }, { id: "fifteen", ref: "es-0219", kind: "word" }]
+  - id: "es-0234"
+    target: "Veinte es igual a dos veces diez."
+    ipa: "ˈbejnte es iˈɡwal a dos ˈbeθes djeθ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Veinte", ref: "es-0224" }, { word: "es", ref: "es-0022" }, { word: "igual", base: "igual" }, { word: "a", base: "a" }, { word: "dos", ref: "es-0206" }, { word: "veces", base: "vez" }, { word: "diez", ref: "es-0214" }]
+    confusables: [{ id: "twelve", ref: "es-0216", kind: "word" }, { id: "fifteen", ref: "es-0219", kind: "word" }]
