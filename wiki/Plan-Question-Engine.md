@@ -214,6 +214,18 @@ every card in the shipped decks, then deletes the old.
    becomes a card with data, asked through the registry. Reading questions
    leave review: they are exam items, drawn by the exam screen (see
    Reading passages). The reading page stays, for exams.
+
+   **Built (#522), 9a, numbers (owner, 2026-10-23: "Split it").** A
+   generated number is now an ordinary `Card` made by `numberCard`; the class
+   `NumberCard` is gone. "Practice only, never logged" is the card's
+   `practiceOnly`, and what is typed when it is heard is its `heardAs` (the
+   digits); both are set only by the generator, are not deck keys, and so no
+   deck file or released app is affected. Hearing goes through step 7's rule
+   (`hears: form`, `Card.hearsForm`). The `is NumberCard` checks in
+   `app_state.dart`, `drill_session.dart`, `unit_search.dart`,
+   `path_model.dart` and `speech_test_sheet.dart` read the data instead.
+   **9b, reading questions as exam items, is not built:** it waits for
+   #509's exam screen, and passages stay in lessons and review until then.
 10. **Retire `pattern.prompt` (#10).** A pattern's cards are asked by the
     types their data allows. The field is read for old decks and flagged
     by the validator, and removed from DECK-FORMAT.md in the same step.

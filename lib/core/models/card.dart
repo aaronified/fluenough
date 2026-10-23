@@ -383,6 +383,8 @@ class Card {
     this.wiktionary = false,
     this.rule,
     this.ownRoot = false,
+    this.practiceOnly = false,
+    this.heardAs,
     this.register,
     this.frequency,
     this.synonyms = const <CardItem>[],
@@ -553,6 +555,18 @@ class Card {
   /// Whether the word is its own root, `bases: self` (#513).
   final bool ownRoot;
 
+  /// Whether the card is generated practice (a number, #54, #522 step 9a):
+  /// it is drilled but nothing drilled from it is recorded, it is not a unit's
+  /// word, and it is never a wrong option for another card. Set only by code
+  /// that generates cards; it is not a deck key, so no deck file carries it
+  /// and released apps are unaffected.
+  final bool practiceOnly;
+
+  /// What is typed when this card is heard, where that is not its [target]: a
+  /// generated number is heard and typed as its digits. Null for every other
+  /// card. Like [practiceOnly], it is never read from a deck.
+  final String? heardAs;
+
   /// How formal or rude the word is (#517): `formal`, `neutral`,
   /// `informal`, `slang` or `offensive`.
   final String? register;
@@ -627,8 +641,7 @@ class Card {
   bool get isLetterOrDigit => pos == 'letter' || pos == 'digit';
 
   /// Whether hearing this card asks for what was heard: a letter or a digit,
-  /// or a card marked `hears: form` ([hears]). A generated number does too
-  /// (`NumberCard`).
+  /// or a card marked `hears: form` ([hears]), as a generated number is.
   bool get hearsForm => isLetterOrDigit || hears == 'form';
 
   /// Whether this is a grammar cell: a rules table's cell, or a card that
@@ -700,6 +713,7 @@ class Card {
     DrillMode.reading ||
     DrillMode.readScript => <String>[native, ...altNative],
     DrillMode.grammarUnderstood => <String>[native],
+    DrillMode.listening when heardAs != null => <String>[heardAs!],
     DrillMode.production ||
     DrillMode.listening ||
     DrillMode.grammar ||

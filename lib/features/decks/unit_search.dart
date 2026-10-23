@@ -9,7 +9,6 @@ import '../../core/grading/diacritics.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/reading.dart' show QuestionCard;
-import '../../core/numbers/number_practice.dart' show NumberCard;
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/deck_tile.dart';
@@ -118,7 +117,7 @@ List<_IndexedCard> _indexOf(DeckEntry entry) =>
           entry.deck.kind != DeckKind.reading &&
           entry.deck.kind != DeckKind.rules)
         for (final card in entry.cards)
-          if (card is! QuestionCard && card is! NumberCard)
+          if (card is! QuestionCard && !card.practiceOnly)
             (
               card: card,
               fields: <String>[
