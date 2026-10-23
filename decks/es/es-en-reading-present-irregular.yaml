@@ -1,0 +1,70 @@
+schema: 1
+id: "es-en-reading-present-irregular"
+name: "Reading: what we have and where we go"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts with tener, ir and hacer: what a person has, where people go, and what a family makes and does. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-what-do-you-have"
+    title: "What I have"
+    sentences:
+      - text: "Yo tengo una casa."
+      - text: "Tú tienes un libro."
+      - text: "Voy a casa."
+      - text: "Hacemos la cama."
+    questions:
+      - id: "es-0490"
+        prompt: { en: "What does the speaker have?" }
+        options:
+          - { en: "A house" }
+          - { en: "A car" }
+          - { en: "A dog" }
+        answer: 0
+      - id: "es-0491"
+        prompt: { en: "Where does the speaker go?" }
+        options:
+          - { en: "Home" }
+          - { en: "To the city" }
+          - { en: "To the bed" }
+        answer: 0
+      - id: "es-0492"
+        prompt: { en: "What do we make?" }
+        options:
+          - { en: "The bed" }
+          - { en: "The table" }
+          - { en: "The door" }
+        answer: 0
+  - id: "es-weekly-plan"
+    title: "Weekly plan"
+    sentences:
+      - text: "Mi padre tiene un libro."
+      - text: "Mi hermana hace la comida."
+      - text: "Nosotros vamos a la ciudad."
+      - text: "Mis abuelos tienen una casa."
+      - text: "Ellos van a casa."
+    questions:
+      - id: "es-0493"
+        prompt: { en: "What does the sister make?" }
+        options:
+          - { en: "Food" }
+          - { en: "A bed" }
+          - { en: "A house" }
+        answer: 0
+      - id: "es-0494"
+        prompt: { en: "Where do we go?" }
+        options:
+          - { en: "To the city" }
+          - { en: "To school" }
+          - { en: "To the park" }
+        answer: 0
+      - id: "es-0495"
+        prompt: { en: "What do the grandparents have?" }
+        options:
+          - { en: "A house" }
+          - { en: "A book" }
+          - { en: "A window" }
+        answer: 0
