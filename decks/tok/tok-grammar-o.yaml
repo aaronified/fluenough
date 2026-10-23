@@ -1,0 +1,19 @@
+schema: 1
+id: "tok-grammar-o"
+part: "core"
+kind: "vocab"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "tok-0177"
+    target: "o"
+    ipa: "o"
+    pos: "particle"
+    bases: "self"
+    notes:
+      - { id: "command", kind: "usage" }
+      - { id: "address", kind: "behaviour" }
+    examples:
+      - { target: "o lukin e pan!", ipa: "o ˈlukin e pan", bases: [{ word: "o", base: "o" }, { word: "lukin", ref: "tok-0083" }, { word: "e", ref: "tok-0102" }, { word: "pan", ref: "tok-0034" }] }
+      - { target: "o pali e moku!", ipa: "o ˈpali e ˈmoku", bases: [{ word: "o", base: "o" }, { word: "pali", ref: "tok-0082" }, { word: "e", ref: "tok-0102" }, { word: "moku", ref: "tok-0080" }] }

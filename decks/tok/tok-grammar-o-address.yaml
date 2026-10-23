@@ -1,0 +1,26 @@
+schema: 1
+id: "tok-grammar-o-address"
+part: "core"
+kind: "grammar"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["plain", "addressed"]
+  entries:
+    - lemma: "toki"
+      forms:
+        "plain": "mi toki"
+        "addressed": "Ana o, mi toki"
+    - lemma: "pali"
+      forms:
+        "plain": "mi pali"
+        "addressed": "Ana o, mi pali"
+    - lemma: "kute"
+      forms:
+        "plain": "mi kute"
+        "addressed": "Ana o, mi kute"
+    - lemma: "jo"
+      forms:
+        "plain": "mi jo"
+        "addressed": "Ana o, mi jo"

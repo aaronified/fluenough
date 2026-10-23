@@ -1,0 +1,26 @@
+schema: 1
+id: "tok-grammar-o-commands"
+part: "core"
+kind: "grammar"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["statement", "command"]
+  entries:
+    - lemma: "pali"
+      forms:
+        "statement": "sina pali"
+        "command": "o pali!"
+    - lemma: "toki"
+      forms:
+        "statement": "sina toki"
+        "command": "o toki!"
+    - lemma: "kute"
+      forms:
+        "statement": "sina kute"
+        "command": "o kute!"
+    - lemma: "lukin"
+      forms:
+        "statement": "sina lukin"
+        "command": "o lukin!"
