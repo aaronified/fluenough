@@ -1,0 +1,100 @@
+schema: 1
+id: "es-en-about-me-sentences"
+kind: "layer"
+core: "es-about-me-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: about me"
+license: "CC-BY-SA-4.0"
+description: "Ten sentences about yourself, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+
+cards:
+  "es-0264":
+    native: "My name is Ana, and I am from Lima."
+    bases:
+      "nombre": "name"
+      "Ana": "Ana"
+      "de": "of"
+      "Lima": "Lima"
+    confusables:
+      "age": { why: "Edad is age, not name." }
+      "nationality": { why: "Nacionalidad is nationality, not where you are from." }
+  "es-0265":
+    native: "I am twenty years old and I am a student."
+    bases:
+      "años": "years"
+      "estudiante": "student"
+    confusables:
+      "single": { why: "Soltero is single, not a student." }
+      "young": { why: "Joven is young; it does not tell your age." }
+  "es-0266":
+    native: "What is your job?"
+    bases:
+      "profesión": "job"
+    confusables:
+      "language": { why: "Idioma is language, not job." }
+      "nationality": { why: "Nacionalidad is nationality, not job." }
+  "es-0267":
+    native: "My birthday is in May."
+    bases:
+      "cumpleaños": "birthdays"
+      "en": "in"
+      "mayo": "May"
+    confusables:
+      "age": { why: "Edad is age, not birthday." }
+      "number": { why: "Número is number, not birthday." }
+  "es-0268":
+    native: "What is your phone number?"
+    bases:
+      "número": "number"
+      "de": "of"
+      "teléfono": "telephone; phone number"
+    confusables:
+      "address": { why: "Dirección is address, not phone number." }
+      "email": { why: "Correo is email, not phone." }
+  "es-0269":
+    native: "I live in a quiet neighbourhood."
+    bases:
+      "en": "in"
+      "un": "a"
+      "barrio": "neighbourhood"
+    confusables:
+      "address": { why: "Dirección is address, the exact place: barrio is the area." }
+      "city": { why: "Ciudad is city, a bigger place than a barrio." }
+  "es-0270":
+    native: "Pedro is tall, but Luis is short."
+    bases:
+      "Pedro": "Pedro"
+      "Luis": "Luis"
+    confusables:
+      "young": { why: "Joven is young, not tall." }
+      "married": { why: "Casado is married, not tall." }
+  "es-0271":
+    native: "Ana is married, and her husband is a teacher."
+    bases:
+      "Ana": "Ana"
+      "casada": "married (woman)"
+      "marido": "husband"
+      "profesor": "teacher (man)"
+    confusables:
+      "single": { why: "Soltero is single: the opposite of married." }
+      "wife": { why: "Esposa is wife, a man's partner, not the woman herself." }
+  "es-0272":
+    native: "I want to study medicine and work in a hospital."
+    bases:
+      "Quiero": "I want"
+      "medicina": "medicine"
+      "en": "in"
+      "un": "a"
+      "hospital": "hospital"
+    confusables:
+      "live": { why: "Vivir is to live, not to study." }
+      "speak": { why: "Hablar is to speak, not to study." }
+  "es-0273":
+    native: "How old are you, Ana?"
+    bases:
+      "Cuántos": "how many"
+      "años": "years"
+      "Ana": "Ana"
+    confusables:
+      "age": { why: "Edad is age; this question asks it with años." }
+      "birthday": { why: "Cumpleaños is birthday, not age." }
