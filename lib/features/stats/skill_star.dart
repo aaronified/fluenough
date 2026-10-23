@@ -107,8 +107,9 @@ class _Star extends StatelessWidget {
   static const double _gap = 6;
 
   /// The lines a label is given room for: the skill's name and its two
-  /// shares, each of which may wrap.
-  static const int _lines = 4;
+  /// shares, each of which may wrap. A name that breaks mid-word in the
+  /// narrow side box takes two lines and the shares three.
+  static const int _lines = 5;
 
   @override
   Widget build(BuildContext context) {
