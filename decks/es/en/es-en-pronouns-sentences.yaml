@@ -1,0 +1,93 @@
+schema: 1
+id: "es-en-pronouns-sentences"
+kind: "layer"
+core: "es-pronouns-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: pronouns"
+license: "CC-BY-SA-4.0"
+description: "Ten sentences about who is who, with the pronouns of Pronouns and people words, each with the words it is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+
+cards:
+  "es-0142":
+    native: "I am from Lima, and she is from Quito."
+    bases:
+      "de": "from"
+      "Lima": "Lima"
+      "Quito": "Quito"
+    confusables:
+      "we": { why: "Nosotros is 'we', not 'I'." }
+      "usted": { why: "Usted is 'you' (formal), not 'I'." }
+  "es-0143":
+    native: "He is tall and she is short."
+    bases:
+      "alto": "tall"
+      "baja": "short"
+    confusables:
+      "they": { why: "Ellos is 'they' for more than one person." }
+      "i": { why: "Yo is 'I', not 'he'." }
+  "es-0144":
+    native: "They are my sisters."
+    bases:
+      "hermanas": "sisters"
+    confusables:
+      "men": { why: "Ellos is 'they' for men or a mixed group." }
+      "we": { why: "Nosotras is 'we', all women." }
+  "es-0145":
+    native: "They are my father's friends."
+    bases:
+      "los": "the"
+      "de": "of"
+      "padre": "father"
+    confusables:
+      "she": { why: "Ellas is 'they' for women only." }
+      "he": { why: "Él is one man: he." }
+  "es-0146":
+    native: "We live in the same house."
+    bases:
+      "en": "in"
+      "la": "the"
+      "misma": "same"
+    confusables:
+      "i": { why: "Yo is 'I', one person." }
+      "you-all": { why: "Ustedes is 'you all', not 'we'." }
+  "es-0147":
+    native: "Everyone is at the table."
+    bases:
+      "en": "at"
+      "la": "the"
+    confusables:
+      "nobody": { why: "Nadie means nobody; the sentence says everyone." }
+      "someone": { why: "Alguien means someone, one person." }
+  "es-0148":
+    native: "Someone is knocking at the door."
+    bases:
+      "llama": "knock"
+      "a": "at"
+      "la": "the"
+    confusables:
+      "nobody": { why: "Nadie means nobody, not someone." }
+      "everyone": { why: "Todos means everyone, not someone." }
+  "es-0149":
+    native: "This is my book and that is your chair."
+    confusables:
+      "his": { why: "Su is his, her, their or your formal, not my or your." }
+      "informal": { why: "Tú is 'you', not 'your'." }
+  "es-0150":
+    native: "The boy is Mrs Ruiz's son."
+    bases:
+      "El": "the"
+      "hijo": "son"
+      "de": "of"
+      "la": "the"
+      "Ruiz": "Ruiz"
+    confusables:
+      "she": { why: "Ella is 'she', not a boy." }
+      "nobody": { why: "Nadie is nobody." }
+  "es-0151":
+    native: "The person at the door is my friend."
+    bases:
+      "La": "the"
+      "en": "at"
+    confusables:
+      "girl": { why: "Chica is a girl; persona is any person." }
+      "boy": { why: "Chico is a boy, not any person." }
