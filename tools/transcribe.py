@@ -632,6 +632,14 @@ def transcribe(text: str, lang: str, hint: str | None = None
     """[text]'s reading in ISO 15919 letters as said, and its broad IPA."""
     if lang == "es":
         return Transcription(text, spanish_ipa(text), True)
+    if lang == "ja":
+        return japanese(text)
+    if lang == "ko":
+        return korean(text)
+    if lang == "zh":
+        return mandarin(text, hint)
+    if lang == "tok":
+        return toki_pona(text)
     if (lang, text) in WORDS:
         reading, ipa = WORDS[(lang, text)]
         return Transcription(reading, ipa, True)
@@ -1023,6 +1031,270 @@ def _es_word(word: str) -> str:
 
 def _es_letter(p: str) -> str:
     return {"ɡ": "g", "ɾ": "r", "θ": "z"}.get(p, p)
+
+
+# --- Japanese, Korean, Mandarin and Toki Pona (#612) -------------------------
+
+class CannotRead(ValueError):
+    """A text the tables cannot read: Han characters with no romanisation
+    to go by, or a script with no table here."""
+
+
+# Hiragana to (Hepburn without macrons, IPA), as the Japanese decks write
+# them: long vowels are doubled (`ohayou`, `ookii`), ん is `n`.
+_KANA = {
+    "あ": ("a", "a"), "い": ("i", "i"), "う": ("u", "ɯ"), "え": ("e", "e"),
+    "お": ("o", "o"),
+    "か": ("ka", "ka"), "き": ("ki", "ki"), "く": ("ku", "kɯ"),
+    "け": ("ke", "ke"), "こ": ("ko", "ko"),
+    "さ": ("sa", "sa"), "し": ("shi", "ɕi"), "す": ("su", "sɯ"),
+    "せ": ("se", "se"), "そ": ("so", "so"),
+    "た": ("ta", "ta"), "ち": ("chi", "tɕi"), "つ": ("tsu", "tsɯ"),
+    "て": ("te", "te"), "と": ("to", "to"),
+    "な": ("na", "na"), "に": ("ni", "ni"), "ぬ": ("nu", "nɯ"),
+    "ね": ("ne", "ne"), "の": ("no", "no"),
+    "は": ("ha", "ha"), "ひ": ("hi", "çi"), "ふ": ("fu", "ɸɯ"),
+    "へ": ("he", "he"), "ほ": ("ho", "ho"),
+    "ま": ("ma", "ma"), "み": ("mi", "mi"), "む": ("mu", "mɯ"),
+    "め": ("me", "me"), "も": ("mo", "mo"),
+    "や": ("ya", "ja"), "ゆ": ("yu", "jɯ"), "よ": ("yo", "jo"),
+    "ら": ("ra", "ɾa"), "り": ("ri", "ɾi"), "る": ("ru", "ɾɯ"),
+    "れ": ("re", "ɾe"), "ろ": ("ro", "ɾo"),
+    "わ": ("wa", "wa"), "を": ("o", "o"),
+    "が": ("ga", "ɡa"), "ぎ": ("gi", "ɡi"), "ぐ": ("gu", "ɡɯ"),
+    "げ": ("ge", "ɡe"), "ご": ("go", "ɡo"),
+    "ざ": ("za", "dza"), "じ": ("ji", "dʑi"), "ず": ("zu", "dzɯ"),
+    "ぜ": ("ze", "dze"), "ぞ": ("zo", "dzo"),
+    "だ": ("da", "da"), "ぢ": ("ji", "dʑi"), "づ": ("zu", "dzɯ"),
+    "で": ("de", "de"), "ど": ("do", "do"),
+    "ば": ("ba", "ba"), "び": ("bi", "bi"), "ぶ": ("bu", "bɯ"),
+    "べ": ("be", "be"), "ぼ": ("bo", "bo"),
+    "ぱ": ("pa", "pa"), "ぴ": ("pi", "pi"), "ぷ": ("pu", "pɯ"),
+    "ぺ": ("pe", "pe"), "ぽ": ("po", "po"),
+    "ゔ": ("vu", "vɯ"),
+}
+_SMALL_VOWELS = {"ぁ": "a", "ぃ": "i", "ぅ": "u", "ぇ": "e", "ぉ": "o"}
+_SMALL_IPA = {"a": "a", "i": "i", "u": "ɯ", "e": "e", "o": "o"}
+_YOON = {"ゃ": "a", "ゅ": "u", "ょ": "o"}
+_YOON_IPA = {"a": "a", "u": "ɯ", "o": "o"}
+# The three letters Hepburn writes whole before a small ya, yu or yo.
+_YOON_WHOLE = {"shi": ("sh", "ɕ"), "chi": ("ch", "tɕ"), "ji": ("j", "dʑ")}
+_YOON_IPA_STEM = {"hi": "ç", "ni": "ɲ", "ri": "ɾj"}
+_KANA_PUNCT = {"。": ".", "、": ",", "？": "?", "！": "!", "，": ",",
+               "．": ".", "・": " ", "　": " ", "「": "'", "」": "'"}
+_LONG = {("a", "a"), ("i", "i"), ("u", "u"), ("e", "e"), ("e", "i"),
+         ("o", "o"), ("o", "u")}
+_HAN = ((0x3400, 0x4DBF), (0x4E00, 0x9FFF), (0xF900, 0xFAFF))
+
+
+def kana_to_hiragana(text: str) -> str:
+    """[text] with its katakana written as hiragana; ー is kept."""
+    return "".join(chr(ord(c) - 0x60) if 0x30A1 <= ord(c) <= 0x30F6
+                   else c for c in text)
+
+
+def japanese(text: str) -> Transcription:
+    """[text], in kana, as Hepburn letters without macrons and as IPA.
+
+    Han characters cannot be read from their shape, so they raise
+    CannotRead: the importer takes Wiktionary's romaji for them. は and へ
+    are read `ha` and `he`; as particles they are `wa` and `e`, which only
+    the sentence shows. ん is `n`, and `n'` before a vowel or y."""
+    tokens: list[list[str]] = []      # [romaji, ipa, last vowel or ""]
+    chars = list(kana_to_hiragana(text))
+    sokuon = False
+    i = 0
+    while i < len(chars):
+        c = chars[i]
+        nxt = chars[i + 1] if i + 1 < len(chars) else ""
+        if any(lo <= ord(c) <= hi for lo, hi in _HAN):
+            raise CannotRead(text)
+        if c in _KANA:
+            rom, ipa = _KANA[c]
+            if nxt in _YOON:
+                v = _YOON[nxt]
+                stem, ipa_stem = _YOON_WHOLE.get(
+                    rom, (rom[:-1] + "y", _YOON_IPA_STEM.get(rom, rom[:-1] + "j")))
+                rom, ipa = stem + v, ipa_stem + _YOON_IPA[v]
+                i += 1
+            elif nxt in _SMALL_VOWELS:
+                v = _SMALL_VOWELS[nxt]
+                if rom == "u":
+                    rom, ipa = "w" + v, "w" + _SMALL_IPA[v]
+                else:
+                    stem, ipa_stem = _YOON_WHOLE.get(
+                        rom, (rom[:-1], ipa[:-1]))
+                    rom, ipa = stem + v, ipa_stem + _SMALL_IPA[v]
+                i += 1
+            if sokuon:
+                rom = ("t" if rom.startswith("ch") else rom[0]) + rom
+                ipa = ipa[0] + ipa
+                sokuon = False
+            tokens.append([rom, ipa, rom[-1]])
+        elif c == "っ":
+            sokuon = True
+        elif c == "ん":
+            nxt_rom = _KANA.get(nxt, ("",))[0] if nxt else ""
+            apostrophe = bool(nxt_rom) and nxt_rom[0] in "aiueoy" \
+                or (nxt in _KANA and nxt_rom[:1] in "aiueoy")
+            tokens.append(["n'" if apostrophe else "n", "ɴ", ""])
+        elif c == "ー":
+            if tokens and tokens[-1][2]:
+                tokens[-1][0] += tokens[-1][2]
+                tokens[-1][1] += "ː"
+        elif c in _KANA_PUNCT:
+            tokens.append([_KANA_PUNCT[c], "", ""])
+        elif c.isascii() or c == " ":
+            tokens.append([c, c if c.isalpha() or c == " " else "", ""])
+        else:
+            raise CannotRead(text)
+        i += 1
+    # A vowel after the same vowel, or o after u, is one long vowel.
+    out: list[list[str]] = []
+    for tok in tokens:
+        prev = out[-1] if out else None
+        if (prev and prev[2] and tok[0] in ("a", "i", "u", "e", "o")
+                and (prev[2], tok[0]) in _LONG and not prev[1].endswith("ː")):
+            prev[0] += tok[0]
+            prev[1] += "ː"
+            prev[2] = tok[0]
+            continue
+        out.append(tok)
+    return Transcription("".join(t[0] for t in out).strip(),
+                         "".join(t[1] for t in out).strip(), True)
+
+
+# Revised Romanization of Korean. Initials, vowels and the sound each final
+# letter has, in Unicode's order.
+_HG_INITIAL = ["g", "kk", "n", "d", "tt", "r", "m", "b", "pp", "s", "ss", "",
+               "j", "jj", "ch", "k", "t", "p", "h"]
+_HG_VOWEL = ["a", "ae", "ya", "yae", "eo", "e", "yeo", "ye", "o", "wa", "wae",
+             "oe", "yo", "u", "wo", "we", "wi", "yu", "eu", "ui", "i"]
+_HG_FINAL = ["", "ㄱ", "ㄲ", "ㄳ", "ㄴ", "ㄵ", "ㄶ", "ㄷ", "ㄹ", "ㄺ", "ㄻ", "ㄼ",
+             "ㄽ", "ㄾ", "ㄿ", "ㅀ", "ㅁ", "ㅂ", "ㅄ", "ㅅ", "ㅆ", "ㅇ", "ㅈ",
+             "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"]
+_HG_INITIAL_JAMO = ["ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ",
+                    "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"]
+# A final letter's parts, and how a single final letter is said at the end of
+# a syllable.
+_HG_PARTS = {"ㄳ": "ㄱㅅ", "ㄵ": "ㄴㅈ", "ㄶ": "ㄴㅎ", "ㄺ": "ㄹㄱ", "ㄻ": "ㄹㅁ",
+             "ㄼ": "ㄹㅂ", "ㄽ": "ㄹㅅ", "ㄾ": "ㄹㅌ", "ㄿ": "ㄹㅍ", "ㅀ": "ㄹㅎ",
+             "ㅄ": "ㅂㅅ"}
+_HG_SAID = {"ㄲ": "ㄱ", "ㅋ": "ㄱ", "ㅅ": "ㄷ", "ㅆ": "ㄷ", "ㅈ": "ㄷ",
+            "ㅊ": "ㄷ", "ㅌ": "ㄷ", "ㅍ": "ㅂ"}
+_HG_CODA_ROM = {"ㄱ": "k", "ㄴ": "n", "ㄷ": "t", "ㄹ": "l", "ㅁ": "m",
+                "ㅂ": "p", "ㅇ": "ng"}
+_HG_ASPIRATE = {"ㄱ": "ㅋ", "ㄷ": "ㅌ", "ㅈ": "ㅊ", "ㅂ": "ㅍ"}
+_HG_NASAL = {"ㄱ": "ㅇ", "ㄷ": "ㄴ", "ㅂ": "ㅁ"}
+_HG_INITIAL_ROM = dict(zip(_HG_INITIAL_JAMO, _HG_INITIAL)) | {"ㅍ": "p"}
+
+
+def _hangul_word(word: str) -> str:
+    """One word's Revised Romanization, with the sound changes between its
+    syllables: liaison (`한국어` hangugeo), nasalisation (`학문` hangmun),
+    ㄹ's changes (`신라` silla, `종로` jongno) and ㅎ's (`좋다` jota). Tensing
+    is not written, as the standard has it."""
+    syl = []   # [initial jamo, vowel romanised, final jamo(s) or ""]
+    for ch in word:
+        n = ord(ch) - 0xAC00
+        if 0 <= n < 11172:
+            syl.append([_HG_INITIAL_JAMO[n // 588],
+                        _HG_VOWEL[n % 588 // 28], _HG_FINAL[n % 28]])
+        else:
+            syl.append([None, ch, ""])
+    for k in range(len(syl) - 1):
+        a, b = syl[k], syl[k + 1]
+        if a[0] is None or b[0] is None or not a[2]:
+            continue
+        coda = a[2]
+        if b[0] == "ㅇ":
+            if coda == "ㅇ":
+                continue
+            parts = _HG_PARTS.get(coda, coda)
+            if parts[-1] == "ㅎ":
+                parts = parts[:-1]
+                a[2] = parts
+                continue
+            b[0] = parts[-1]
+            a[2] = parts[:-1]
+            continue
+        parts = _HG_PARTS.get(coda, coda)
+        if parts[-1] == "ㅎ" and b[0] in _HG_ASPIRATE:
+            b[0] = _HG_ASPIRATE[b[0]]
+            a[2] = parts[:-1]
+            continue
+        if b[0] == "ㅎ" and parts[-1] in _HG_ASPIRATE:
+            b[0] = _HG_ASPIRATE[parts[-1]]
+            a[2] = parts[:-1] if len(parts) > 1 else ""
+            continue
+        if len(parts) == 2 and parts not in ("ㄹㅁ",):
+            # Of two final letters, the first is said, except ㄺ ㄻ ㄼ ㄿ's
+            # second in some words; the standard's common case.
+            parts = parts[0] if parts[0] != "ㄹ" or parts[1] in "ㅅㅌㅎ" else (
+                "ㅁ" if parts == "ㄹㅁ" else "ㄱ" if parts == "ㄹㄱ" else
+                "ㄹ" if parts == "ㄹㅂ" else "ㅂ")
+        elif parts == "ㄹㅁ":
+            parts = "ㅁ"
+        coda = _HG_SAID.get(parts, parts)
+        init = b[0]
+        if init in ("ㄴ", "ㅁ") and coda in _HG_NASAL:
+            coda = _HG_NASAL[coda]
+        elif init == "ㄹ":
+            if coda in ("ㅁ", "ㅇ"):
+                b[0] = "ㄴ"
+            elif coda in ("ㄱ", "ㅂ"):
+                coda = _HG_NASAL[coda]
+                b[0] = "ㄴ"
+            elif coda == "ㄴ":
+                coda = "ㄹ"
+        elif init == "ㄴ" and coda == "ㄹ":
+            b[0] = "ㄹ"
+        a[2] = coda
+    out = []
+    for k, (init, vowel, final) in enumerate(syl):
+        if init is None:
+            out.append(vowel)
+            continue
+        rom = _HG_INITIAL_ROM[init]
+        if init == "ㄹ" and k and syl[k - 1][2] == "ㄹ":
+            rom = "l"
+        out.append(rom + vowel)
+        for jamo in _HG_PARTS.get(final, final):
+            jamo = _HG_SAID.get(jamo, jamo)
+            out.append(_HG_CODA_ROM.get(jamo, ""))
+    return "".join(out)
+
+
+def korean(text: str) -> Transcription:
+    """[text] in Hangul, in the Revised Romanization the Korean decks use.
+    Spaces end a word: no change runs across them."""
+    if any(ord(c) > 0x7F and not 0xAC00 <= ord(c) <= 0xD7A3
+           and not unicodedata.category(c).startswith("P") for c in text):
+        raise CannotRead(text)
+    words = [_hangul_word(w) for w in text.split(" ")]
+    return Transcription(" ".join(words), "", True)
+
+
+def mandarin(text: str, hint: str | None) -> Transcription:
+    """Pinyin cannot be derived from characters, so it is the hint's:
+    Wiktionary's, with its tone marks, as it was given. Sandhi is not
+    applied; a card writes the citation tones."""
+    if not hint or not hint.strip():
+        raise CannotRead(text)
+    return Transcription(unicodedata.normalize("NFC", hint.strip()), "", True)
+
+
+def toki_pona(text: str) -> Transcription:
+    """Toki Pona is written as it is said: no reading is needed, and its
+    IPA puts stress on the first syllable of a word of two or more. The
+    letters are the IPA's, except that a capital marks a name."""
+    out = []
+    for w in text.lower().replace(".", " ").replace(",", " ").split():
+        if not w.isalpha():
+            continue
+        vowels = sum(c in "aeiou" for c in w)
+        out.append(("ˈ" if vowels > 1 else "") + w)
+    return Transcription(text, " ".join(out), True)
 
 
 def main(argv: list[str]) -> int:

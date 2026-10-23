@@ -322,8 +322,19 @@ def choose(t: Target, entries: list[dict]) -> tuple[dict | None, list[dict]]:
     return (fits[0] if len(fits) == 1 else None), fits
 
 
-def ipa_of(entry: dict) -> str | None:
-    found = [s["ipa"] for s in entry.get("sounds", []) if isinstance(s.get("ipa"), str)]
+# Wiktionary tags a Chinese pronunciation with its variety; the deck teaches
+# Mandarin only.
+MANDARIN_TAG = "Mandarin"
+
+
+def ipa_of(entry: dict, code: str | None = None) -> str | None:
+    """The entry's first phonemic IPA, else its first phonetic one. For
+    Chinese ([code] `zh`) only a pronunciation tagged Mandarin counts: the
+    first one in the dump may be Cantonese or Hokkien."""
+    sounds = [s for s in entry.get("sounds", []) if isinstance(s.get("ipa"), str)]
+    if code == "zh":
+        sounds = [s for s in sounds if MANDARIN_TAG in (s.get("tags") or [])]
+    found = [s["ipa"] for s in sounds]
     for ipa in found:
         if ipa.startswith("/") and ipa.endswith("/"):
             return ipa.strip("/").replace(".", "").strip() or None
@@ -358,6 +369,21 @@ def derived(entry: dict, code: str) -> bool:
 # table of its own for.
 SCRIPT_LANG = {"devanagari": "hi", "bengali": "bn", "gujarati": "gu", "telugu": "te",
                "kannada": "kn"}
+# Languages written in a script above that do not share its rules (#612):
+# Maithili says dekhalahũ for देखलहुँ, where Hindi's rules give dēkhlhum̐. Their
+# words are left out rather than read wrongly.
+OWN_RULES = {"mai", "bho", "mag", "awa", "doi", "kok", "ne", "sa"}
+# Languages with a reader of their own in `tools/transcribe.py`, that is not
+# an Indic table: kana and Hangul from their letters, Mandarin from
+# Wiktionary's pinyin, Han in Japanese from its romaji.
+READERS = {"ja", "ko", "zh"}
+
+
+def _romaji(hint: str) -> str:
+    """Wiktionary's Hepburn, as the Japanese decks write it: no macrons, a
+    long vowel doubled (ō as ou, the commoner reading)."""
+    return hint.strip().translate(str.maketrans(
+        {"ā": "aa", "ī": "ii", "ū": "uu", "ē": "ei", "ō": "ou"}))
 
 
 def reading(word: str, code: str, script: str, hint: str | None) -> str | None:
@@ -366,6 +392,16 @@ def reading(word: str, code: str, script: str, hint: str | None) -> str | None:
     transcriber cannot read, which leaves the item out (NoReading)."""
     if script in vd.NO_READING:
         return None
+    if code in READERS:
+        try:
+            if code == "ja" and hint and any(
+                    0x3400 <= ord(c) <= 0x9FFF for c in word):
+                return _romaji(hint)
+            return transcribe.transcribe(word, code, hint).reading
+        except transcribe.CannotRead:
+            raise NoReading(word) from None
+    if code in OWN_RULES:
+        raise NoReading(word)
     lang = code if code in transcribe.BLOCKS else SCRIPT_LANG.get(script)
     if lang is None:
         raise NoReading(word)
@@ -456,7 +492,7 @@ class Importer:
             return f
         if entry is None:
             r.ambiguous.append(t)
-            ipas = {ipa_of(e) for e in fits}
+            ipas = {ipa_of(e, code) for e in fits}
             if "ipa" not in card and len(ipas) == 1 and None not in ipas:
                 f.core.append(("reading", [f"    ipa: {q(ipas.pop())}"]))
                 f.fields.append("ipa")
@@ -466,7 +502,7 @@ class Importer:
         word = nfc(entry["word"])
         src = self.source(word)
 
-        if "ipa" not in card and (ipa := ipa_of(entry)):
+        if "ipa" not in card and (ipa := ipa_of(entry, code)):
             f.core.append(("reading", [f"    ipa: {q(ipa)}"]))
             f.fields.append("ipa")
 
