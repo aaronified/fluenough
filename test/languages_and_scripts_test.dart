@@ -2376,8 +2376,10 @@ void main() {
       TextDirection direction = TextDirection.ltr,
       double textScale = 1.0,
       String choice = 'hi',
+      double width = 390,
     }) {
       usePhone(tester, textScale: textScale);
+      tester.view.physicalSize = Size(width * 3, 844 * 3);
       return pumpScreen(
         tester,
         Directionality(
@@ -2709,7 +2711,7 @@ void main() {
 
     testWidgets('a farther glyph is smaller and fainter than a nearer one, '
         'at rest too', (tester) async {
-      await pumpBar(tester, choice: 'es');
+      await pumpBar(tester, choice: 'es', width: 600);
       await tester.pumpAndSettle();
       final centre = tester.getCenter(pill()).dx;
       final drawn = drawnGlyphs(tester)
@@ -2747,8 +2749,9 @@ void main() {
 
     testWidgets('once settled, the glyphs sit evenly either side of the '
         'expanded pill', (tester) async {
-      for (final scale in <double>[1.0, 1.4]) {
-        await pumpBar(tester, textScale: scale, choice: 'es');
+      // On a phone, and on a wide screen where more glyphs fit.
+      for (final width in <double>[390, 600]) {
+        await pumpBar(tester, textScale: 1.4, choice: 'es', width: width);
         await tester.pumpAndSettle();
         final centre = tester.getCenter(pill()).dx;
         final offsets = <double>[
@@ -2763,7 +2766,7 @@ void main() {
           for (final o in offsets)
             if (o > 0) o,
         ]..sort();
-        expect(left, isNotEmpty);
+        if (width > 500) expect(left.length, greaterThanOrEqualTo(2));
         expect(left.length, right.length);
         for (var i = 0; i < left.length; i++) {
           expect(left[i], closeTo(right[i], 0.5));

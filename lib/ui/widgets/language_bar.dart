@@ -573,11 +573,11 @@ class _LanguageBarState extends State<LanguageBar>
       // An even grid: a detent apart, the pill's growth pushing both sides
       // out alike.
       final offset = d * LanguageBar.detent + pushed;
-      // Nothing is drawn past the wheel's own width.
-      if (offset.abs() + LanguageBar.detent / 2 > half) continue;
-      final x = offset * dir;
       final t = math.min(1.0, d.abs() / LanguageBar.falloff);
       final scale = 1 - (1 - LanguageBar.farScale) * t;
+      // Nothing is drawn past the wheel's own width.
+      if (offset.abs() + LanguageBar.detent / 2 * scale > half) continue;
+      final x = offset * dir;
       final opacity = 1 - (1 - LanguageBar.farOpacity) * t;
       final hidden = _expanded && k == centre;
       out.add(
