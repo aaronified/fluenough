@@ -1815,6 +1815,40 @@
   "@unitRuleCells": {
     "description": "Under a rule's table: each form in it is asked in grammar drills."
   },
+  "unitRuleGrows": "A row appears when you know a word of this kind. Each lesson asks 3 new cells.",
+  "@unitRuleGrows": {
+    "description": "Under a rules table on a unit's screen: the table grows with the learner's words."
+  },
+  "unitCellKnown": "known",
+  "@unitCellKnown": {
+    "description": "Under a form in a rules table: the learner knows this form."
+  },
+  "unitCellLearning": "learning",
+  "@unitCellLearning": {
+    "description": "Under a form in a rules table: the learner is being asked this form."
+  },
+  "unitCellNotAsked": "not asked yet",
+  "@unitCellNotAsked": {
+    "description": "Under a form in a rules table: no lesson has asked this form yet."
+  },
+  "ruleCardKind": "Rule",
+  "@ruleCardKind": {
+    "description": "Label on the rule card, shown once before the first question about a rule."
+  },
+  "ruleCardWords": "Words you know",
+  "@ruleCardWords": {
+    "description": "Heading on the rule card above the rule's forms on words the learner knows."
+  },
+  "ruleFormsTitle": "{word} in the rule",
+  "@ruleFormsTitle": {
+    "description": "Above a word's forms in a rule, shown under the answer to a question about one of them.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "घर (ghar)"
+      }
+    }
+  },
   "unitSentencesCount": "{open} of {total} open",
   "@unitSentencesCount": {
     "description": "Beside the sentences heading: how many of the unit's sentences are open.",

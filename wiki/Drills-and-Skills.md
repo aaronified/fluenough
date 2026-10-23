@@ -25,7 +25,8 @@ A right answer also counts in part for the skills it implies ([ADR-0034](ADR-003
 - **Type.** Type the word in its script, or in Latin letters. The screen shows an example of the Latin spelling. If you have no keyboard for the script, a hint suggests one.
 - **Put in order.** Build a sentence from word tiles.
 - **Say.** Say the word. See [Speaking and listening](Speaking-and-Listening).
-- **Grammar.** Pick or type the right form of a word.
+- **Grammar.** Pick or type the right form of a word. You pick first, then type once you have it right. The options are forms of the same word, never another word. After you answer, the word's forms in the rule are shown with the one asked marked.
+- **Rule.** A rule shown once before its first question: its name, what it means, and its forms on words you know. Nothing is recorded; swipe the card to go on ([ADR-0045](ADR-0045-Lessons-Take-The-Next-Eligible-Items)).
 - **Read.** A passage with questions.
 - **Set.** A group of related words shown together in a lesson. Nothing is recorded; Continue goes on.
 - **Teach.** A new word shown before you are asked about it, on one screen with no scrolling: the word large, with its reading, a speaker and its IPA; the picture beside it; the meaning; a note; and one warning. Tap the IPA for each sound of the word, from the IPA course, with its practice. Tap the meaning for the dictionary: the senses, the etymology and the examples. There is no Continue button: swipe the card, or tap the chevron that shows while you touch the screen, to go on.

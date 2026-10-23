@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 
+import '../../core/scheduling/ask.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/teach_swipe.dart';
 import 'drill_session.dart';
+import 'rule_card.dart';
 import 'taught_details.dart' show TaughtReading;
 import 'teach_card.dart';
 
+/// A lesson teaching a rule (#417): the rule card, with the rule's name, its
+/// explanation and its forms on words the learner knows, gone on from the
+/// same way, with nothing recorded.
+///
 /// A lesson teaching a word (ADR-0024): the one-screen teach card (#691),
 /// with the word played aloud as it shows where the phone has a voice and
 /// sound is on. The learner goes on to the word's first question by swiping
@@ -38,26 +44,28 @@ class TeachDrill extends StatelessWidget {
             Expanded(
               child: TeachSwipe(
                 onNext: session.learnt,
-                child: TeachCard(
-                  card: card,
-                  language: session.deck.language,
-                  // Reading first until the script is expected of the
-                  // learner; else under the word, whatever Latin-letter
-                  // readings says.
-                  reading: session.expectsScript
-                      ? TaughtReading.always
-                      : TaughtReading.first,
-                  // Played as it shows, whatever Play words automatically
-                  // says.
-                  audio: session.canPlay
-                      ? Speaker(
-                          onPlay: session.play,
-                          playing: session.playing,
-                          size: 48,
-                          playOnAppear: true,
-                        )
-                      : null,
-                ),
+                child: session.ask == Ask.teachRule
+                    ? RuleCard(card: card, language: session.deck.language)
+                    : TeachCard(
+                        card: card,
+                        language: session.deck.language,
+                        // Reading first until the script is expected of the
+                        // learner; else under the word, whatever Latin-letter
+                        // readings says.
+                        reading: session.expectsScript
+                            ? TaughtReading.always
+                            : TaughtReading.first,
+                        // Played as it shows, whatever Play words automatically
+                        // says.
+                        audio: session.canPlay
+                            ? Speaker(
+                                onPlay: session.play,
+                                playing: session.playing,
+                                size: 48,
+                                playOnAppear: true,
+                              )
+                            : null,
+                      ),
               ),
             ),
           ],
