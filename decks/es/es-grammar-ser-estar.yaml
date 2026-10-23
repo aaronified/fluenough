@@ -1,0 +1,18 @@
+schema: 1
+id: "es-grammar-ser-estar"
+part: "core"
+kind: "grammar"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "verbs", "unreviewed"]
+pattern:
+  slots: ["yo", "tú", "él/ella", "nosotros", "vosotros", "ellos"]
+  entries:
+    - lemma: "ser"
+      ipa: "seɾ"
+      forms: { "yo": "soy", "tú": "eres", "él/ella": "es", "nosotros": "somos", "vosotros": "sois", "ellos": "son" }
+      ipas: { "yo": "soj", "tú": "ˈeɾes", "él/ella": "es", "nosotros": "ˈsomos", "vosotros": "sojs", "ellos": "son" }
+    - lemma: "estar"
+      ipa: "esˈtaɾ"
+      forms: { "yo": "estoy", "tú": "estás", "él/ella": "está", "nosotros": "estamos", "vosotros": "estáis", "ellos": "están" }
+      ipas: { "yo": "esˈtoj", "tú": "esˈtas", "él/ella": "esˈta", "nosotros": "esˈtamos", "vosotros": "esˈtajs", "ellos": "esˈtan" }

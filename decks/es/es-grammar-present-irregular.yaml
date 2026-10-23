@@ -1,0 +1,22 @@
+schema: 1
+id: "es-grammar-present-irregular"
+part: "core"
+kind: "grammar"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "verbs", "unreviewed"]
+pattern:
+  slots: ["yo", "tú", "él/ella", "nosotros", "vosotros", "ellos"]
+  entries:
+    - lemma: "tener"
+      ipa: "teˈneɾ"
+      forms: { "yo": "tengo", "tú": "tienes", "él/ella": "tiene", "nosotros": "tenemos", "vosotros": "tenéis", "ellos": "tienen" }
+      ipas: { "yo": "ˈtenɡo", "tú": "ˈtjenes", "él/ella": "ˈtjene", "nosotros": "teˈnemos", "vosotros": "teˈnejs", "ellos": "ˈtjenen" }
+    - lemma: "ir"
+      ipa: "iɾ"
+      forms: { "yo": "voy", "tú": "vas", "él/ella": "va", "nosotros": "vamos", "vosotros": "vais", "ellos": "van" }
+      ipas: { "yo": "boj", "tú": "bas", "él/ella": "ba", "nosotros": "ˈbamos", "vosotros": "bajs", "ellos": "ban" }
+    - lemma: "hacer"
+      ipa: "aˈθeɾ"
+      forms: { "yo": "hago", "tú": "haces", "él/ella": "hace", "nosotros": "hacemos", "vosotros": "hacéis", "ellos": "hacen" }
+      ipas: { "yo": "ˈaɡo", "tú": "ˈaθes", "él/ella": "ˈaθe", "nosotros": "aˈθemos", "vosotros": "aˈθejs", "ellos": "ˈaθen" }
