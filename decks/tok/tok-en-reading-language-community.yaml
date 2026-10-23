@@ -1,0 +1,73 @@
+"schema": 1
+"id": "tok-en-reading-language-community"
+"name": "Reading: the community"
+"kind": "reading"
+"language":
+  "code": "tok"
+  "iso639_3": "tok"
+  "name": "Toki Pona"
+  "script": "latin"
+  "icon": "Tp"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this deck"
+"description": "Two passages from the community: a listening podcast clip about how a speaker learned, and a reading welcome page for new speakers. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "reading"
+- "unreviewed"
+"passages":
+- "id": "tok-language-community-podcast"
+  "title": "A podcast clip"
+  "theme": "language-community"
+  "sentences":
+  - "text": "mi kama toki pona tan pu."
+  - "text": "mi lukin e ku."
+  - "text": "ku li pona tawa mi."
+  "questions":
+  - "id": "tok-0752"
+    "prompt":
+      "en": "How did the speaker come to toki pona?"
+    "options":
+    - "en": "From the book"
+    - "en": "From a film"
+    "answer": 1
+  - "id": "tok-0753"
+    "prompt":
+      "en": "What did the speaker look at?"
+    "options":
+    - "en": "The dictionary"
+    - "en": "The sea"
+    "answer": 1
+  - "id": "tok-0754"
+    "prompt":
+      "en": "The dictionary is good for the speaker. Is that true?"
+    "answer": true
+- "id": "tok-language-community-welcome"
+  "title": "Welcome, new speaker"
+  "theme": "language-community"
+  "sentences":
+  - "text": "toki pona li lon kulupu suli."
+  - "text": "o kepeken e pu."
+  - "text": "ku li pona."
+  "questions":
+  - "id": "tok-0755"
+    "prompt":
+      "en": "What does the page say new speakers should do?"
+    "options":
+    - "en": "Use the book"
+    - "en": "Sleep"
+    "answer": 1
+  - "id": "tok-0756"
+    "prompt":
+      "en": "What is the community?"
+    "options":
+    - "en": "A big group"
+    - "en": "A tool"
+    "answer": 1
+  - "id": "tok-0757"
+    "prompt":
+      "en": "The page says the dictionary is bad. Is that true?"
+    "answer": false

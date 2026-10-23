@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-groceries"
+name: "Reading: the shopping list"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about food shopping: a handwritten list and a short chat at the supermarket. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-shopping-list"
+    title: "Shopping list"
+    theme: "groceries"
+    sentences:
+      - text: "Queso, huevos y arroz."
+      - text: "Aceite y mantequilla."
+      - text: "Una lista larga."
+      - text: "Tengo leche y azúcar."
+    questions:
+      - id: "es-0631"
+        prompt: { en: "What is on the list?" }
+        options:
+          - { en: "Cheese, eggs and rice" }
+          - { en: "Fish and meat" }
+          - { en: "Wine and beer" }
+        answer: 1
+      - id: "es-0632"
+        prompt: { en: "Is the list long or short?" }
+        options:
+          - { en: "Long" }
+          - { en: "Short" }
+          - { en: "Empty" }
+        answer: 1
+      - id: "es-0633"
+        prompt: { en: "What does the writer already have?" }
+        options:
+          - { en: "Milk and sugar" }
+          - { en: "Eggs and oil" }
+          - { en: "Wine" }
+        answer: 1
+  - id: "es-at-the-supermarket"
+    title: "At the supermarket"
+    theme: "groceries"
+    sentences:
+      - text: "Compro carne y pollo."
+      - text: "El café es caro."
+      - text: "Llevo el zumo a casa."
+      - text: "Las galletas son ricas."
+    questions:
+      - id: "es-0634"
+        prompt: { en: "What meat does the buyer buy?" }
+        options:
+          - { en: "Chicken and meat" }
+          - { en: "Only fish" }
+          - { en: "Only cheese" }
+        answer: 1
+      - id: "es-0635"
+        prompt: { en: "What is expensive?" }
+        options:
+          - { en: "The coffee" }
+          - { en: "The juice" }
+          - { en: "The biscuits" }
+        answer: 1
+      - id: "es-0636"
+        prompt: { en: "Where does the buyer take the juice?" }
+        options:
+          - { en: "Home" }
+          - { en: "To the market" }
+          - { en: "To the shop" }
+        answer: 1

@@ -1,0 +1,26 @@
+"schema": 1
+"id": "tok-en-grammar-describing-unnamed"
+"kind": "layer"
+"core": "tok-grammar-describing-unnamed"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "Describing what has no word"
+"license": "CC-BY-SA-4.0"
+"description": "A thing with no word of its own is described with known words. Choose the head first, the kind of thing it is, then add modifiers after it; pi groups a longer description so that its words act together. Two speakers may choose different heads for the same thing, and both can be right. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "Describing what has no word"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}): {slot}"
+  "slots":
+    "head": "the head: what kind of thing (the first word)"
+    "described": "the head with one modifier"
+    "pi-chain": "the head with a pi group"
+  "entries":
+    "ilo": "tool"
+    "jan": "person"
+    "tomo": "building"
+  "notes": "Ilo lipu is a paper tool, and ilo pi lipu suli pona is a tool of big good paper. The head, ilo, stays first, and pi makes the description one group."

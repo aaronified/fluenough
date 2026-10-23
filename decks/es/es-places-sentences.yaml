@@ -1,0 +1,50 @@
+schema: 1
+id: "es-places-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-0790"
+    target: "La farmacia está cerca del banco."
+    ipa: "la faɾˈmaθja esˈta ˈθeɾka del ˈbanko"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "farmacia", ref: "es-0771" }, { word: "está", ref: "es-0023" }, { word: "cerca", ref: "es-0717" }, { word: "del", base: "del" }, { word: "banco", ref: "es-0770" }]
+    confusables: [{ id: "hospital", ref: "es-0772", kind: "word" }, { id: "colegio", ref: "es-0773", kind: "word" }]
+  - id: "es-0791"
+    target: "Visitamos el museo y la catedral."
+    ipa: "bisiˈtamos el muˈseo i la kateˈdɾal"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Visitamos", ref: "es-0787" }, { word: "el", base: "el" }, { word: "museo", ref: "es-0776" }, { word: "y", ref: "es-0048" }, { word: "la", base: "la" }, { word: "catedral", ref: "es-0775" }]
+    confusables: [{ id: "teatro", ref: "es-0780", kind: "word" }, { id: "iglesia", ref: "es-0774", kind: "word" }]
+  - id: "es-0792"
+    target: "Voy al cine con mi amigo."
+    ipa: "boj al ˈθine kon mi aˈmiɡo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Voy", ref: "es-0026" }, { word: "al", base: "al" }, { word: "cine", ref: "es-0779" }, { word: "con", base: "con" }, { word: "mi", ref: "es-0129" }, { word: "amigo", ref: "es-0005" }]
+    confusables: [{ id: "teatro", ref: "es-0780", kind: "word" }, { id: "restaurante", ref: "es-0778", kind: "word" }]
+  - id: "es-0793"
+    target: "La biblioteca cierra a las seis."
+    ipa: "la bibljoˈteka ˈθjera a las sejs"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "biblioteca", ref: "es-0781" }, { word: "cierra", ref: "es-0789" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "seis", ref: "es-0210" }]
+    confusables: [{ id: "abrir", ref: "es-0298", kind: "word" }, { id: "entrar", ref: "es-0788", kind: "word" }]
+  - id: "es-0794"
+    target: "Mi hermana trabaja en el hospital."
+    ipa: "mi eɾˈmana tɾaˈbaxa en el ospiˈtal"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", ref: "es-0162" }, { word: "trabaja", ref: "es-0259" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "hospital", ref: "es-0772" }]
+    confusables: [{ id: "farmacia", ref: "es-0771", kind: "word" }, { id: "colegio", ref: "es-0773", kind: "word" }]
+  - id: "es-0795"
+    target: "El pueblo está lejos de la playa."
+    ipa: "el ˈpweblo esˈta ˈlexos de la ˈplaʝa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "pueblo", ref: "es-0783" }, { word: "está", ref: "es-0023" }, { word: "lejos", ref: "es-0718" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "playa", ref: "es-0784" }]
+    confusables: [{ id: "cerca", ref: "es-0717", kind: "word" }, { id: "ciudad", ref: "es-0016", kind: "word" }]

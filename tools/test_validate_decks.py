@@ -183,6 +183,41 @@ class IndexCheck(unittest.TestCase):
         result = self.run_validator("decks/es/es-en-core-100.yaml", self.tmp)
         self.assertEqual(result.returncode, 0, result.stdout)
 
+    def test_a_failing_run_ends_with_every_error_and_a_passing_one_has_none(self) -> None:
+        """CI's log is long and the tail is what can be read, so a failing
+        run repeats each error, cross-file and per-file, in a closing
+        "Errors:" section; a passing run has no such section."""
+        passing = self.run_validator("decks/", self.tmp)
+        self.assertEqual(passing.returncode, 0, passing.stdout + passing.stderr)
+        self.assertNotIn("Errors:", passing.stdout)
+
+        (self.tmp / "decks" / "index.json").unlink()
+        deck = self.tmp / "decks" / "es" / "es-en-core-100.yaml"
+        deck.write_text(
+            deck.read_text(encoding="utf-8").replace("schema: 1", "schema: 9"),
+            encoding="utf-8",
+        )
+        failing = self.run_validator("decks/", self.tmp)
+        self.assertEqual(failing.returncode, 1, failing.stdout)
+        out = failing.stdout
+        head, sep, tail = out.rpartition("\nErrors:\n")
+        self.assertTrue(sep, out)
+        self.assertEqual(out.count("\nErrors:\n"), 1)
+        # The section is the last thing printed and holds only error lines.
+        lines = tail.splitlines()
+        self.assertTrue(lines and all(x.startswith("  error: ") for x in lines), tail)
+        # The cross-file error, as printed above, is repeated.
+        self.assertIn("error: decks/index.json is missing", head)
+        self.assertTrue(any("decks/index.json is missing" in x for x in lines), tail)
+        # Every per-file error is repeated with its file.
+        per_file = [x.strip().removeprefix("error   ") for x in head.splitlines()
+                    if x.startswith("  error   ")]
+        self.assertTrue(per_file, head)
+        for e in per_file:
+            self.assertIn(f"  error: decks/es/es-en-core-100.yaml: {e}", lines)
+        # The deck summary stays where it was, before the section.
+        self.assertIn("decks valid", head)
+
     def test_the_index_check_passes_only_while_the_index_is_current(self) -> None:
         cases = (
             self._passes_when_the_index_is_current,

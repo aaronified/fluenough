@@ -16,7 +16,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Quiero comprar pan.", ipa: "ˈkjeɾo komˈpɾaɾ pan", bases: [{ word: "Quiero", base: "querer" }, { word: "comprar", base: "comprar" }, { word: "pan", base: "pan" }] }
+      - { target: "Quiero comprar pan.", ipa: "ˈkjeɾo komˈpɾaɾ pan", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "comprar", base: "comprar" }, { word: "pan", base: "pan" }] }
       - { target: "Voy a comprar leche.", ipa: "boj a komˈpɾaɾ ˈletʃe", bases: [{ word: "Voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "comprar", base: "comprar" }, { word: "leche", base: "leche" }] }
   - id: "es-0281"
     target: "caminar"
@@ -26,8 +26,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Me gusta caminar por el parque.", ipa: "me ˈɡusta kamiˈnaɾ poɾ el ˈpaɾke", bases: [{ word: "Me", base: "me" }, { word: "gusta", base: "gustar" }, { word: "caminar", base: "caminar" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "parque", base: "parque" }] }
-      - { target: "Quiero caminar a casa.", ipa: "ˈkjeɾo kamiˈnaɾ a ˈkasa", bases: [{ word: "Quiero", base: "querer" }, { word: "caminar", base: "caminar" }, { word: "a", base: "a" }, { word: "casa", base: "casa" }] }
+      - { target: "Me gusta caminar por el parque.", ipa: "me ˈɡusta kamiˈnaɾ poɾ el ˈpaɾke", bases: [{ word: "Me", base: "me" }, { word: "gusta", base: "gustar" }, { word: "caminar", base: "caminar" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "parque", ref: "es-0777" }] }
+      - { target: "Quiero caminar a casa.", ipa: "ˈkjeɾo kamiˈnaɾ a ˈkasa", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "caminar", base: "caminar" }, { word: "a", base: "a" }, { word: "casa", base: "casa" }] }
   - id: "es-0282"
     target: "desayunar"
     ipa: "desaʝuˈnaɾ"
@@ -36,8 +36,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Quiero desayunar a las siete.", ipa: "ˈkjeɾo desaʝuˈnaɾ a las ˈsjete", bases: [{ word: "Quiero", base: "querer" }, { word: "desayunar", base: "desayunar" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "siete", ref: "es-0211" }] }
-      - { target: "Antes de salir, quiero desayunar.", ipa: "ˈantes de saˈliɾ ˈkjeɾo desaʝuˈnaɾ", bases: [{ word: "Antes", base: "antes" }, { word: "de", base: "de" }, { word: "salir", base: "salir" }, { word: "quiero", base: "querer" }, { word: "desayunar", base: "desayunar" }] }
+      - { target: "Quiero desayunar a las siete.", ipa: "ˈkjeɾo desaʝuˈnaɾ a las ˈsjete", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "desayunar", base: "desayunar" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "siete", ref: "es-0211" }] }
+      - { target: "Antes de salir, quiero desayunar.", ipa: "ˈantes de saˈliɾ ˈkjeɾo desaʝuˈnaɾ", bases: [{ word: "Antes", base: "antes" }, { word: "de", base: "de" }, { word: "salir", ref: "es-0690" }, { word: "quiero", ref: "es-0661" }, { word: "desayunar", base: "desayunar" }] }
   - id: "es-0283"
     target: "cenar"
     ipa: "θeˈnaɾ"
@@ -67,7 +67,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Hay que limpiar la mesa.", ipa: "aj ke limˈpjaɾ la ˈmesa", bases: [{ word: "Hay", base: "haber" }, { word: "que", base: "que" }, { word: "limpiar", base: "limpiar" }, { word: "la", base: "la" }, { word: "mesa", base: "mesa" }] }
-      - { target: "Voy a limpiar el baño.", ipa: "boj a limˈpjaɾ el ˈbaɲo", bases: [{ word: "Voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "limpiar", base: "limpiar" }, { word: "el", base: "el" }, { word: "baño", base: "baño" }] }
+      - { target: "Voy a limpiar el baño.", ipa: "boj a limˈpjaɾ el ˈbaɲo", bases: [{ word: "Voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "limpiar", base: "limpiar" }, { word: "el", base: "el" }, { word: "baño", ref: "es-0805" }] }
   - id: "es-0286"
     target: "lavar"
     ipa: "laˈbaɾ"
@@ -76,8 +76,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Hay que lavar los platos.", ipa: "aj ke laˈbaɾ los ˈplatos", bases: [{ word: "Hay", base: "haber" }, { word: "que", base: "que" }, { word: "lavar", base: "lavar" }, { word: "los", base: "los" }, { word: "platos", base: "plato" }] }
-      - { target: "Quiero lavar la ropa.", ipa: "ˈkjeɾo laˈbaɾ la ˈropa", bases: [{ word: "Quiero", base: "querer" }, { word: "lavar", base: "lavar" }, { word: "la", base: "la" }, { word: "ropa", base: "ropa" }] }
+      - { target: "Hay que lavar los platos.", ipa: "aj ke laˈbaɾ los ˈplatos", bases: [{ word: "Hay", base: "haber" }, { word: "que", base: "que" }, { word: "lavar", base: "lavar" }, { word: "los", base: "los" }, { word: "platos", ref: "es-0641" }] }
+      - { target: "Quiero lavar la ropa.", ipa: "ˈkjeɾo laˈbaɾ la ˈropa", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "lavar", base: "lavar" }, { word: "la", base: "la" }, { word: "ropa", base: "ropa" }] }
   - id: "es-0287"
     target: "usar"
     ipa: "uˈsaɾ"
@@ -87,7 +87,7 @@ cards:
     bases: "self"
     examples:
       - { target: "¿Puedo usar tu teléfono?", ipa: "ˈpwedo uˈsaɾ tu teˈlefono", bases: [{ word: "Puedo", base: "poder" }, { word: "usar", base: "usar" }, { word: "tu", ref: "es-0130" }, { word: "teléfono", base: "teléfono" }] }
-      - { target: "Quiero usar el libro para estudiar.", ipa: "ˈkjeɾo uˈsaɾ el ˈlibɾo ˈpaɾa estuˈdjaɾ", bases: [{ word: "Quiero", base: "querer" }, { word: "usar", base: "usar" }, { word: "el", base: "el" }, { word: "libro", base: "libro" }, { word: "para", base: "para" }, { word: "estudiar", ref: "es-0258" }] }
+      - { target: "Quiero usar el libro para estudiar.", ipa: "ˈkjeɾo uˈsaɾ el ˈlibɾo ˈpaɾa estuˈdjaɾ", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "usar", base: "usar" }, { word: "el", base: "el" }, { word: "libro", base: "libro" }, { word: "para", base: "para" }, { word: "estudiar", ref: "es-0258" }] }
   - id: "es-0288"
     target: "necesitar"
     ipa: "neθesiˈtaɾ"
@@ -106,8 +106,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Voy a buscar las llaves.", ipa: "boj a busˈkaɾ las ˈʝabes", bases: [{ word: "Voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "buscar", base: "buscar" }, { word: "las", base: "las" }, { word: "llaves", base: "llave" }] }
-      - { target: "Quiero buscar un piso.", ipa: "ˈkjeɾo busˈkaɾ un ˈpiso", bases: [{ word: "Quiero", base: "querer" }, { word: "buscar", base: "buscar" }, { word: "un", base: "un" }, { word: "piso", base: "piso" }] }
+      - { target: "Voy a buscar las llaves.", ipa: "boj a busˈkaɾ las ˈʝabes", bases: [{ word: "Voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "buscar", base: "buscar" }, { word: "las", base: "las" }, { word: "llaves", ref: "es-0877" }] }
+      - { target: "Quiero buscar un piso.", ipa: "ˈkjeɾo busˈkaɾ un ˈpiso", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "buscar", base: "buscar" }, { word: "un", base: "un" }, { word: "piso", ref: "es-0803" }] }
   - id: "es-0290"
     target: "llegar"
     ipa: "ʝeˈɡaɾ"
@@ -116,7 +116,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Quiero llegar a tiempo.", ipa: "ˈkjeɾo ʝeˈɡaɾ a ˈtjempo", bases: [{ word: "Quiero", base: "querer" }, { word: "llegar", base: "llegar" }, { word: "a", base: "a" }, { word: "tiempo", base: "tiempo" }] }
+      - { target: "Quiero llegar a tiempo.", ipa: "ˈkjeɾo ʝeˈɡaɾ a ˈtjempo", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "llegar", base: "llegar" }, { word: "a", base: "a" }, { word: "tiempo", base: "tiempo" }] }
       - { target: "Ana va a llegar mañana.", ipa: "ˈana ba a ʝeˈɡaɾ maˈɲana", bases: [{ word: "Ana", base: "Ana" }, { word: "va", ref: "es-0026" }, { word: "a", base: "a" }, { word: "llegar", base: "llegar" }, { word: "mañana", base: "mañana" }] }
   - id: "es-0291"
     target: "escuchar"
@@ -127,7 +127,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Me gusta escuchar música.", ipa: "me ˈɡusta eskuˈtʃaɾ ˈmusika", bases: [{ word: "Me", base: "me" }, { word: "gusta", base: "gustar" }, { word: "escuchar", base: "escuchar" }, { word: "música", base: "música" }] }
-      - { target: "Quiero escuchar el mensaje.", ipa: "ˈkjeɾo eskuˈtʃaɾ el menˈsaxe", bases: [{ word: "Quiero", base: "querer" }, { word: "escuchar", base: "escuchar" }, { word: "el", base: "el" }, { word: "mensaje", base: "mensaje" }] }
+      - { target: "Quiero escuchar el mensaje.", ipa: "ˈkjeɾo eskuˈtʃaɾ el menˈsaxe", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "escuchar", base: "escuchar" }, { word: "el", base: "el" }, { word: "mensaje", base: "mensaje" }] }
   - id: "es-0292"
     target: "mirar"
     ipa: "miˈɾaɾ"
@@ -137,7 +137,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Me gusta mirar la televisión.", ipa: "me ˈɡusta miˈɾaɾ la telebiˈsjon", bases: [{ word: "Me", base: "me" }, { word: "gusta", base: "gustar" }, { word: "mirar", base: "mirar" }, { word: "la", base: "la" }, { word: "televisión", base: "televisión" }] }
-      - { target: "Voy a mirar el mapa.", ipa: "boj a miˈɾaɾ el ˈmapa", bases: [{ word: "Voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "mirar", base: "mirar" }, { word: "el", base: "el" }, { word: "mapa", base: "mapa" }] }
+      - { target: "Voy a mirar el mapa.", ipa: "boj a miˈɾaɾ el ˈmapa", bases: [{ word: "Voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "mirar", base: "mirar" }, { word: "el", base: "el" }, { word: "mapa", ref: "es-0710" }] }
   - id: "es-0293"
     target: "preparar"
     ipa: "pɾepaˈɾaɾ"
@@ -147,7 +147,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Voy a preparar la comida.", ipa: "boj a pɾepaˈɾaɾ la koˈmida", bases: [{ word: "Voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "preparar", base: "preparar" }, { word: "la", base: "la" }, { word: "comida", base: "comida" }] }
-      - { target: "Quiero preparar un café.", ipa: "ˈkjeɾo pɾepaˈɾaɾ un kaˈfe", bases: [{ word: "Quiero", base: "querer" }, { word: "preparar", base: "preparar" }, { word: "un", base: "un" }, { word: "café", base: "café" }] }
+      - { target: "Quiero preparar un café.", ipa: "ˈkjeɾo pɾepaˈɾaɾ un kaˈfe", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "preparar", base: "preparar" }, { word: "un", base: "un" }, { word: "café", ref: "es-0611" }] }
   - id: "es-0294"
     target: "bailar"
     ipa: "bajˈlaɾ"
@@ -157,7 +157,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Me gusta bailar con mis amigos.", ipa: "me ˈɡusta bajˈlaɾ kon mis aˈmiɡos", bases: [{ word: "Me", base: "me" }, { word: "gusta", base: "gustar" }, { word: "bailar", base: "bailar" }, { word: "con", base: "con" }, { word: "mis", base: "mi" }, { word: "amigos", base: "amigo" }] }
-      - { target: "Ana quiere bailar esta noche.", ipa: "ˈana ˈkjeɾe bajˈlaɾ ˈesta ˈnotʃe", bases: [{ word: "Ana", base: "Ana" }, { word: "quiere", base: "querer" }, { word: "bailar", base: "bailar" }, { word: "esta", ref: "es-0023" }, { word: "noche", base: "noche" }] }
+      - { target: "Ana quiere bailar esta noche.", ipa: "ˈana ˈkjeɾe bajˈlaɾ ˈesta ˈnotʃe", bases: [{ word: "Ana", base: "Ana" }, { word: "quiere", ref: "es-0661" }, { word: "bailar", base: "bailar" }, { word: "esta", ref: "es-0023" }, { word: "noche", base: "noche" }] }
   - id: "es-0295"
     target: "pagar"
     ipa: "paˈɡaɾ"
@@ -166,8 +166,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Quiero pagar con tarjeta.", ipa: "ˈkjeɾo paˈɡaɾ kon taɾˈxeta", bases: [{ word: "Quiero", base: "querer" }, { word: "pagar", base: "pagar" }, { word: "con", base: "con" }, { word: "tarjeta", base: "tarjeta" }] }
-      - { target: "Voy a pagar la cuenta.", ipa: "boj a paˈɡaɾ la ˈkwenta", bases: [{ word: "Voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "pagar", base: "pagar" }, { word: "la", base: "la" }, { word: "cuenta", base: "cuenta" }] }
+      - { target: "Quiero pagar con tarjeta.", ipa: "ˈkjeɾo paˈɡaɾ kon taɾˈxeta", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "pagar", base: "pagar" }, { word: "con", base: "con" }, { word: "tarjeta", ref: "es-0879" }] }
+      - { target: "Voy a pagar la cuenta.", ipa: "boj a paˈɡaɾ la ˈkwenta", bases: [{ word: "Voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "pagar", base: "pagar" }, { word: "la", base: "la" }, { word: "cuenta", ref: "es-0653" }] }
   - id: "es-0296"
     target: "leer"
     ipa: "leˈeɾ"
@@ -177,7 +177,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Me gusta leer por la noche.", ipa: "me ˈɡusta leˈeɾ poɾ la ˈnotʃe", bases: [{ word: "Me", base: "me" }, { word: "gusta", base: "gustar" }, { word: "leer", base: "leer" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "noche", base: "noche" }] }
-      - { target: "Quiero leer el periódico.", ipa: "ˈkjeɾo leˈeɾ el peˈɾjodiko", bases: [{ word: "Quiero", base: "querer" }, { word: "leer", base: "leer" }, { word: "el", base: "el" }, { word: "periódico", base: "periódico" }] }
+      - { target: "Quiero leer el periódico.", ipa: "ˈkjeɾo leˈeɾ el peˈɾjodiko", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "leer", base: "leer" }, { word: "el", base: "el" }, { word: "periódico", base: "periódico" }] }
   - id: "es-0297"
     target: "escribir"
     ipa: "eskɾiˈbiɾ"
@@ -186,7 +186,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Quiero escribir una carta.", ipa: "ˈkjeɾo eskɾiˈbiɾ ˈuna ˈkaɾta", bases: [{ word: "Quiero", base: "querer" }, { word: "escribir", base: "escribir" }, { word: "una", base: "una" }, { word: "carta", base: "carta" }] }
+      - { target: "Quiero escribir una carta.", ipa: "ˈkjeɾo eskɾiˈbiɾ ˈuna ˈkaɾta", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "escribir", base: "escribir" }, { word: "una", base: "una" }, { word: "carta", base: "carta" }] }
       - { target: "Voy a escribir a Luis.", ipa: "boj a eskɾiˈbiɾ a lwis", bases: [{ word: "Voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "escribir", base: "escribir" }, { word: "Luis", base: "Luis" }] }
   - id: "es-0298"
     target: "abrir"
@@ -206,7 +206,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Quiero aprender español.", ipa: "ˈkjeɾo apɾenˈdeɾ espaˈɲol", bases: [{ word: "Quiero", base: "querer" }, { word: "aprender", base: "aprender" }, { word: "español", base: "español" }] }
+      - { target: "Quiero aprender español.", ipa: "ˈkjeɾo apɾenˈdeɾ espaˈɲol", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "aprender", base: "aprender" }, { word: "español", base: "español" }] }
       - { target: "Me gusta aprender idiomas.", ipa: "me ˈɡusta apɾenˈdeɾ iˈdjomas", bases: [{ word: "Me", base: "me" }, { word: "gusta", base: "gustar" }, { word: "aprender", base: "aprender" }, { word: "idiomas", base: "idioma" }] }
   - id: "es-0300"
     target: "decidir"
@@ -226,7 +226,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Quiero recibir un correo.", ipa: "ˈkjeɾo reθiˈbiɾ un koˈreo", bases: [{ word: "Quiero", base: "querer" }, { word: "recibir", base: "recibir" }, { word: "un", base: "un" }, { word: "correo", base: "correo" }] }
+      - { target: "Quiero recibir un correo.", ipa: "ˈkjeɾo reθiˈbiɾ un koˈreo", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "recibir", base: "recibir" }, { word: "un", base: "un" }, { word: "correo", base: "correo" }] }
       - { target: "Voy a recibir una carta.", ipa: "boj a reθiˈbiɾ ˈuna ˈkaɾta", bases: [{ word: "Voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "recibir", base: "recibir" }, { word: "una", base: "una" }, { word: "carta", base: "carta" }] }
   - id: "es-0302"
     target: "llamar"
@@ -237,7 +237,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Voy a llamar a mi madre.", ipa: "boj a ʝaˈmaɾ a mi ˈmadɾe", bases: [{ word: "Voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "llamar", base: "llamar" }, { word: "mi", ref: "es-0129" }, { word: "madre", base: "madre" }] }
-      - { target: "Quiero llamar al médico.", ipa: "ˈkjeɾo ʝaˈmaɾ al ˈmediko", bases: [{ word: "Quiero", base: "querer" }, { word: "llamar", base: "llamar" }, { word: "al", base: "al" }, { word: "médico", base: "médico" }] }
+      - { target: "Quiero llamar al médico.", ipa: "ˈkjeɾo ʝaˈmaɾ al ˈmediko", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "llamar", base: "llamar" }, { word: "al", base: "al" }, { word: "médico", base: "médico" }] }
   - id: "es-0303"
     target: "ayudar"
     ipa: "aʝuˈdaɾ"
@@ -246,5 +246,5 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Quiero ayudar a mi hermano.", ipa: "ˈkjeɾo aʝuˈdaɾ a mi eɾˈmano", bases: [{ word: "Quiero", base: "querer" }, { word: "ayudar", base: "ayudar" }, { word: "a", base: "a" }, { word: "mi", ref: "es-0129" }, { word: "hermano", base: "hermano" }] }
+      - { target: "Quiero ayudar a mi hermano.", ipa: "ˈkjeɾo aʝuˈdaɾ a mi eɾˈmano", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "ayudar", base: "ayudar" }, { word: "a", base: "a" }, { word: "mi", ref: "es-0129" }, { word: "hermano", base: "hermano" }] }
       - { target: "Es bueno ayudar a los vecinos.", ipa: "es ˈbweno aʝuˈdaɾ a los beˈθinos", bases: [{ word: "Es", ref: "es-0022" }, { word: "bueno", ref: "es-0033" }, { word: "ayudar", base: "ayudar" }, { word: "a", base: "a" }, { word: "los", base: "los" }, { word: "vecinos", base: "vecino" }] }

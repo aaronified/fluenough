@@ -1,0 +1,50 @@
+schema: 1
+id: "es-time-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-0853"
+    target: "La reunión empieza a las nueve."
+    ipa: "la rewˈnjon emˈpjeθa a las ˈnwebe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "reunión", ref: "es-0511" }, { word: "empieza", ref: "es-0852" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "nueve", ref: "es-0213" }]
+    confusables: [{ id: "cita", ref: "es-0844", kind: "word" }, { id: "durar", ref: "es-0851", kind: "word" }]
+  - id: "es-0854"
+    target: "Tengo una cita a las tres."
+    ipa: "ˈtenɡo ˈuna ˈθita a las tɾes"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "cita", ref: "es-0844" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "tres", ref: "es-0207" }]
+    confusables: [{ id: "hora", ref: "es-0838", kind: "word" }, { id: "minuto", ref: "es-0839", kind: "word" }]
+  - id: "es-0855"
+    target: "El banco está cerrado hoy."
+    ipa: "el ˈbanko esˈta θeˈrado oj"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "banco", ref: "es-0770" }, { word: "está", ref: "es-0023" }, { word: "cerrado", ref: "es-0849" }, { word: "hoy", ref: "es-0331" }]
+    confusables: [{ id: "abierto", ref: "es-0848", kind: "word" }, { id: "cerrar", ref: "es-0789", kind: "word" }]
+  - id: "es-0856"
+    target: "Llego puntual al mediodía."
+    ipa: "ˈʝeɡo punˈtwal al medjoˈdia"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Llego", ref: "es-0290" }, { word: "puntual", ref: "es-0850" }, { word: "al", base: "al" }, { word: "mediodía", ref: "es-0842" }]
+    confusables: [{ id: "medianoche", ref: "es-0843", kind: "word" }, { id: "temprano", ref: "es-0338", kind: "word" }]
+  - id: "es-0857"
+    target: "El almuerzo dura una hora."
+    ipa: "el alˈmweɾθo ˈduɾa ˈuna ˈoɾa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "almuerzo", ref: "es-0638" }, { word: "dura", ref: "es-0851" }, { word: "una", base: "una" }, { word: "hora", ref: "es-0838" }]
+    confusables: [{ id: "reloj", ref: "es-0845", kind: "word" }, { id: "minuto", ref: "es-0839", kind: "word" }]
+  - id: "es-0858"
+    target: "Cenamos antes de la medianoche."
+    ipa: "θeˈnamos ˈantes de la medjaˈnotʃe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Cenamos", ref: "es-0283" }, { word: "antes", ref: "es-0335" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "medianoche", ref: "es-0843" }]
+    confusables: [{ id: "manana", ref: "es-0841", kind: "word" }, { id: "noche", ref: "es-0020", kind: "word" }]
