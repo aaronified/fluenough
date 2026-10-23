@@ -1,0 +1,72 @@
+"schema": 1
+"id": "tok-en-reading-things"
+"name": "Reading: things"
+"kind": "reading"
+"language":
+  "code": "tok"
+  "iso639_3": "tok"
+  "name": "Toki Pona"
+  "script": "latin"
+  "icon": "Tp"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this deck"
+"description": "Two passages on things: a listening passage about what is in a bag, and a reading passage with the steps of a simple craft. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "reading"
+- "unreviewed"
+"passages":
+- "id": "tok-things-whats-in-the-bag"
+  "title": "What is in the bag"
+  "theme": "things"
+  "sentences":
+  - "text": "poki mi li lon ijo mute."
+  - "text": "lipu lili li lon."
+  - "text": "kiwen li lon."
+  - "text": "linja li lon."
+  "questions":
+  - "id": "tok-0470"
+    "prompt":
+      "en": "Which thing is paper?"
+    "options":
+    - "en": "The paper"
+    - "en": "The stone"
+    "answer": 1
+  - "id": "tok-0471"
+    "prompt":
+      "en": "Is there a stone in the bag?"
+    "answer": true
+  - "id": "tok-0472"
+    "prompt":
+      "en": "The bag has many things. Is that true?"
+    "answer": true
+- "id": "tok-things-craft-steps"
+  "title": "Steps of a craft"
+  "theme": "things"
+  "sentences":
+  - "text": "o pali e palisa."
+  - "text": "o pali e linja kepeken palisa."
+  - "text": "o lukin e sitelen."
+  - "text": "o pana e lipu tawa jan ni."
+  "questions":
+  - "id": "tok-0473"
+    "prompt":
+      "en": "What is made first?"
+    "options":
+    - "en": "The stick"
+    - "en": "The rope"
+    "answer": 1
+  - "id": "tok-0474"
+    "prompt":
+      "en": "What is the rope made with?"
+    "options":
+    - "en": "A stone"
+    - "en": "A stick"
+    "answer": 2
+  - "id": "tok-0475"
+    "prompt":
+      "en": "The last step is to look at a picture. Is that true?"
+    "answer": false

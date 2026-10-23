@@ -1,0 +1,42 @@
+schema: 1
+id: "mr-en-pronouns-sentences"
+kind: "layer"
+core: "mr-pronouns-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with pronouns"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the pronouns and people words of this unit. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-0696":
+    native: "He and she are friends."
+    bases: { "आहेत": "are" }
+    confusables: { "w1": { why: "I, not he and she: मी (mi) means I." }, "f1": { why: "Singular: आहे (āhe) is for one person or thing; two or more take आहेत (āhet)." } }
+  "mr-0697":
+    native: "Let's all eat together."
+    bases: { "एकत्र": "together", "जेवू": "let's eat" }
+    confusables:
+      "w1": { why: "We, not you: आम्ही (āmhi) leaves the listener out, and this sentence includes you." }
+      "f1": { why: "One man eating: जेवतो (jevto) is for one man; आपण (āpaṇ) takes जेवू (jevū)." }
+  "mr-0698":
+    native: "Where does this man live?"
+    bases: { "कुठे": "where", "राहतो": "live" }
+    confusables:
+      "w1": { why: "She, not this man: ती (ti) means she." }
+      "f1": { why: "Feminine: राहते (rāhte) agrees with a woman, not with a man." }
+      "w2": { why: "Who, not where: कोण (koṇ) asks who." }
+  "mr-0699":
+    native: "These neighbours are my relatives."
+    bases: { "माझे": "my", "आहेत": "are" }
+    confusables:
+      "w1": { why: "This, for one masculine noun: a plural subject takes हे (he)." }
+      "f1": { why: "Singular: आहे (āhe) is for one thing; the plural subject takes आहेत (āhet)." }
+      "w2": { why: "They, not these: ते (te) means they or those, and this sentence says these." }
+  "mr-0700":
+    native: "Is anyone going to come here?"
+    bases: { "इथे": "here", "येणार": "will come", "आहे": "is", "का": "a question marker" }
+    confusables: { "w1": { why: "Anyone at all, not a question: कोणीही (koṇīhi) means anyone at all." }, "w2": { why: "When, not who: कधी (kadhi) asks when." } }
+  "mr-0701":
+    native: "The guests now go home."
+    bases: { "पाहुणे": "guests", "आता": "now", "घरी": "home", "जातात": "go" }
+    confusables: { "w1": { why: "They, not guests: ते (te) means they." }, "f1": { why: "One man: जातो (jāto) is for one man; many guests take जातात (jātāt)." } }

@@ -1,0 +1,69 @@
+schema: 1
+id: "es-en-reading-ser-estar"
+name: "Reading: who is it and how are they"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts with ser and estar: a woman who says who she is and how she is today, and a card that introduces a man. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-who-and-how"
+    title: "Who and how"
+    sentences:
+      - text: "Soy Ana y soy profesora."
+      - text: "Hoy estoy bien."
+      - text: "Mi hermano es alto."
+      - text: "Mi madre está en casa."
+    questions:
+      - id: "es-0478"
+        prompt: { en: "What is Ana's job?" }
+        options:
+          - { en: "A teacher" }
+          - { en: "A nurse" }
+          - { en: "A driver" }
+        answer: 1
+      - id: "es-0479"
+        prompt: { en: "How is Ana today?" }
+        options:
+          - { en: "Well" }
+          - { en: "Tired" }
+          - { en: "Ill" }
+        answer: 1
+      - id: "es-0480"
+        prompt: { en: "Where is the mother?" }
+        options:
+          - { en: "At home" }
+          - { en: "At work" }
+          - { en: "At school" }
+        answer: 1
+  - id: "es-introduction-card"
+    title: "Introduction card"
+    sentences:
+      - text: "Pedro es profesor."
+      - text: "Pedro está aquí hoy."
+      - text: "Está contento."
+      - text: "Es muy simpático."
+    questions:
+      - id: "es-0481"
+        prompt: { en: "What is Pedro's job?" }
+        options:
+          - { en: "A teacher" }
+          - { en: "A doctor" }
+          - { en: "A cook" }
+        answer: 1
+      - id: "es-0482"
+        prompt: { en: "How does Pedro feel?" }
+        options:
+          - { en: "Happy" }
+          - { en: "Sad" }
+          - { en: "Tired" }
+        answer: 1
+      - id: "es-0483"
+        prompt: { en: "What is Pedro like?" }
+        options:
+          - { en: "Friendly" }
+          - { en: "Lazy" }
+          - { en: "Tall" }
+        answer: 1
