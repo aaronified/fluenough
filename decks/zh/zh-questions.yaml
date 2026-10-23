@@ -19,9 +19,9 @@ cards:
       - target: "他是谁？"
         reading: "tā shì shéi?"
         words: ["他", "是", "谁"]
-      - target: "谁来吗？"
-        reading: "shéi lái ma?"
-        words: ["谁", "来", "吗"]
+      - target: "谁来？"
+        reading: "shéi lái?"
+        words: ["谁", "来"]
   - id: "zh-0091"
     target: "哪"
     words: ["哪"]
@@ -48,10 +48,11 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "你有几个人？"
-        reading: "nǐ yǒu jǐ ge rén?"
-        words: ["你", "有", "几", "个", "人"]
+      - target: "这里有几个人？"
+        reading: "zhèlǐ yǒu jǐ ge rén?"
+        words: ["这里", "有", "几", "个", "人"]
         bases:
+          - { word: "这里", base: "这里", reading: "zhèlǐ" }
           - { word: "有", base: "有", reading: "yǒu" }
           - { word: "个", base: "个", reading: "ge" }
       - target: "现在几点？"
@@ -235,9 +236,9 @@ cards:
       - target: "多吃鱼。"
         reading: "duō chī yú."
         words: ["多", "吃", "鱼"]
-      - target: "他多喝茶。"
-        reading: "tā duō hē chá."
-        words: ["他", "多", "喝", "茶"]
+      - target: "他喝很多茶。"
+        reading: "tā hē hěn duō chá."
+        words: ["他", "喝", "很", "多", "茶"]
         bases:
           - { word: "茶", base: "茶", reading: "chá" }
   - id: "zh-0104"

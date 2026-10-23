@@ -12,6 +12,7 @@ cards:
     words: ["您"]
     reading: "nín"
     pos: "pronoun"
+    register: "formal"
     tags: ["polite"]
     notes:
       - { id: "n1", kind: "note" }
@@ -226,9 +227,11 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - target: "我叫李。"
-        reading: "wǒ jiào Lǐ."
-        words: ["我", "叫", "李"]
+      - target: "我叫李明。"
+        reading: "wǒ jiào Lǐ Míng."
+        words: ["我", "叫", "李明"]
+        bases:
+          - { word: "李明", base: "李明", reading: "Lǐ Míng" }
       - target: "他叫什么？"
         reading: "tā jiào shénme?"
         words: ["他", "叫", "什么"]
@@ -277,9 +280,11 @@ cards:
       - target: "张老师很好。"
         reading: "Zhāng lǎoshī hěn hǎo."
         words: ["张", "老师", "很", "好"]
-      - target: "我叫张。"
-        reading: "wǒ jiào Zhāng."
-        words: ["我", "叫", "张"]
+      - target: "我叫张伟。"
+        reading: "wǒ jiào Zhāng Wěi."
+        words: ["我", "叫", "张伟"]
+        bases:
+          - { word: "张伟", base: "张伟", reading: "Zhāng Wěi" }
   - id: "zh-0133"
     target: "高兴"
     target_scripts: { han_traditional: "高興" }

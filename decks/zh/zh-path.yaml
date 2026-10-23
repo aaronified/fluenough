@@ -128,32 +128,32 @@ units:
   - decks: ["zh-phrasebook", "zh-first-words", "*"]
     words: 12
   # 2. The first word units, read in pinyin: the tones first.
-  - decks: ["zh-tones", "zh-tones-sentences", "*"]
+  - decks: ["zh-tones", "zh-tones-sentences", "zh-reading-tones", "*"]
     words: 16
     listening_passages:
       - { id: "four-tones", text: { "en": "One syllable in the four tones and the neutral tone: ma, mother, hemp, horse, to scold" } }
     reading_passages:
       - { id: "tone-pairs-list", text: { "en": "A list of word pairs in pinyin told apart only by their tone marks" } }
-  - decks: ["zh-pinyin", "zh-pinyin-sentences", "*"]
+  - decks: ["zh-pinyin", "zh-pinyin-sentences", "zh-reading-pinyin", "zh-grammar-pinyin-spelling", "zh-grammar-tone-sandhi"]
     words: 8
     grammar: ["pinyin-spelling", "tone-sandhi"]
     listening_passages:
       - { id: "ni-hao-is-ni-hao", text: { "en": "Hearing two third tones meet: ni hao said as ni hao with a rising first syllable, and yi and bu changing their tone" } }
     reading_passages:
       - { id: "pinyin-spelling-chart", text: { "en": "A chart of pinyin spellings: where the tone mark sits, yu and u after j, q and x, and the shortened iu, ui and un" } }
-  - decks: ["zh-sound-differences"]
+  - decks: ["zh-sound-differences", "zh-sound-differences-sentences", "zh-reading-sound-differences", "*"]
     words: 16
     listening_passages:
       - { id: "zh-ch-sh-and-j-q-x", text: { "en": "Pairs of words told apart by sounds English lacks: zhi and ji, chi and qi, shi and xi, lu and lü" } }
     reading_passages:
       - { id: "sound-pairs-list", text: { "en": "A list of word pairs in pinyin that differ by one sound" } }
-  - decks: ["zh-questions", "zh-questions-sentences", "*"]
+  - decks: ["zh-questions", "zh-questions-sentences", "zh-reading-questions", "*"]
     words: 15
     listening_passages:
       - { id: "at-the-information-desk", text: { "en": "Asking who, what, where and when at an information desk" } }
     reading_passages:
       - { id: "visitor-faq", text: { "en": "A short visitor's sheet of questions and answers" } }
-  - decks: ["zh-addressing", "zh-addressing-sentences", "*"]
+  - decks: ["zh-addressing", "zh-addressing-sentences", "zh-reading-addressing", "*"]
     words: 20
     listening_passages:
       - { id: "teacher-and-classmate", text: { "en": "Meeting a teacher and a classmate: surnames, laoshi, xiansheng and nin" } }
