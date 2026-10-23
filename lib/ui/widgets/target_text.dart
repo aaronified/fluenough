@@ -281,10 +281,20 @@ Locale targetLocale(LanguageInfo language) => switch (language.script) {
   _ => Locale(language.code),
 };
 
+/// Right-to-left isolate and pop directional isolate (Unicode bidi).
+const String _rli = '\u2067';
+const String _pdi = '\u2069';
+
 /// [text], an interface string that quotes deck content, with each of
 /// [quotes] in it marked as [language]'s: drawn in its font and read by a
 /// screen reader in its voice, while the rest stays the interface's (#26).
 /// "Answer: el niño" is read in English up to the colon and in Spanish after.
+///
+/// A quote in a right-to-left language is wrapped in a bidi isolate (#619),
+/// so that the interface's words around it never reorder it, nor it them:
+/// a trailing full stop stays at the end of the sentence, not beside the
+/// quote's last letter. Left-to-right quotes in the left-to-right interface
+/// need none.
 TextSpan quotingTarget(
   String text,
   Iterable<String> quotes,
@@ -310,7 +320,9 @@ TextSpan quotingTarget(
     }
     if (found == null) break;
     if (at > start) spans.add(TextSpan(text: text.substring(start, at)));
-    spans.add(TextSpan(text: found, locale: locale));
+    spans.add(
+      TextSpan(text: language.rtl ? '$_rli$found$_pdi' : found, locale: locale),
+    );
     start = at + found.length;
   }
   if (start < text.length) spans.add(TextSpan(text: text.substring(start)));

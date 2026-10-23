@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Languages you know lists the living and constructed languages the course paths teach: French, Spanish, German, Mandarin Chinese, Japanese, Korean, Esperanto, Toki Pona, Lojban and Interslavic, in new families (Romance, Sinitic, Koreanic, Japonic, Constructed) with names for the Han (simplified and traditional), Kana, Hangul and Cyrillic scripts. Ancient languages nobody speaks (Sumerian, Egyptian, Mycenaean Greek, Proto-Indo-European) stay off the list (#613).
+- The word-order drill lays its tiles out in the deck's direction: an Urdu sentence is built from the right in an English app. Where the interface quotes right-to-left deck text, as in "Answer: …", the quote is isolated from the words around it (#619). Checking an Urdu deck on a device, and the interface itself laid out right to left, are not done.
 
 ## [0.6.0] - 2026-10-23
 
