@@ -103,6 +103,11 @@ every card in the shipped decks, then deletes the old.
    `chooseMeaning`, `chooseWord`, `hearAndChoose`, `matchPairs`, typed
    production and listening, and speaking into it. `reviewAsks` (#9) asks
    the registry. Same output as step 1.
+   **Built (#522):** `lib/core/scheduling/question_type.dart` holds `QuestionType`,
+   `QuestionContext` and the ordered `questionTypes`; `reviewAsks` asks
+   `questionTypeFor`. The two grammar types moved in with their current
+   eligibility, which step 4 changes. Typed production and listening, and
+   speaking, are what no type claims, so they stay `Ask.own`.
 3. **Distractor sources by data (#8).** Replace the pool by kind and class
    with sources named by data: same `pos`, same theme or tags, `pair`,
    `bases`. Where a pool is too small, fall back as today. The test checks
