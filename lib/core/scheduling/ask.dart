@@ -1,6 +1,6 @@
 import '../models/card.dart';
 import '../models/drill_mode.dart';
-import '../models/reading.dart';
+import 'question_type.dart';
 import 'session_queue.dart';
 
 /// How a session item is asked (ADR-0024). Whichever way, it records the
@@ -139,6 +139,7 @@ const int matchSize = 4;
 ///   among others ([Ask.chooseWord]), where [canChoose] finds enough to
 ///   choose from.
 ///
+/// Which type asks an item is the registry's to say ([questionTypes]).
 /// Reading questions and every other mode are asked their own way.
 List<SessionItem> reviewAsks(
   List<SessionItem> items, {
@@ -147,11 +148,16 @@ List<SessionItem> reviewAsks(
   bool Function(SessionItem item)? recallsFirst,
   bool Function(SessionItem item)? typed,
 }) {
+  final context = QuestionContext(
+    canChoose: canChoose,
+    hearsForm: hearsForm,
+    recallsFirst: recallsFirst,
+    typed: typed,
+  );
   final recognised = <int>[
     for (final (i, item) in items.indexed)
       if (item.mode == DrillMode.recognition &&
-          item.card is! QuestionCard &&
-          canChoose(item))
+          chooseMeaningType.eligible(item, context))
         i,
   ];
   // By index: the item asked another way, or null where a match took it.
@@ -173,32 +179,9 @@ List<SessionItem> reviewAsks(
     }
   }
   for (final (i, item) in items.indexed) {
-    if (item.mode == DrillMode.production && item.card.rearranges) {
-      asked[i] = item.askedAs(Ask.rearrange);
-    } else if (item.mode == DrillMode.production &&
-        item.card is! QuestionCard &&
-        !(typed?.call(item) ?? true) &&
-        canChoose(item.askedAs(Ask.chooseWord))) {
-      asked[i] = item.askedAs(Ask.chooseWord);
-    }
-    if (item.mode == DrillMode.listening &&
-        item.card is! QuestionCard &&
-        !(hearsForm?.call(item) ?? false) &&
-        (item.state?.repetitions ?? 0) == 0 &&
-        !(item.state == null && (recallsFirst?.call(item) ?? false)) &&
-        canChoose(item.askedAs(Ask.hearMeaning))) {
-      asked[i] = item.askedAs(Ask.hearMeaning);
-    }
-    if (item.mode == DrillMode.grammarUnderstood) {
-      asked[i] = item.askedAs(Ask.chooseFormMeaning);
-    }
-    if (item.mode == DrillMode.grammar &&
-        item.card.choosesForm &&
-        (item.state?.repetitions ?? 0) == 0 &&
-        !(item.state == null && (recallsFirst?.call(item) ?? false)) &&
-        canChoose(item.askedAs(Ask.chooseForm))) {
-      asked[i] = item.askedAs(Ask.chooseForm);
-    }
+    if (item.mode == DrillMode.recognition) continue;
+    final type = questionTypeFor(item, context);
+    if (type != null) asked[i] = item.askedAs(type.ask);
   }
   return <SessionItem>[
     for (final (i, item) in items.indexed)
