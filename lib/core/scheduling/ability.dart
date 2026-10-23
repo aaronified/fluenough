@@ -75,7 +75,7 @@ class Abilities {
     final result = grade >= Fsrs.passingGrade ? 1.0 : 0.0;
     _move(cardId, mode, result, 1);
     for (final MapEntry(key: other, value: share)
-        in skills.impliedBy(mode, deckId).entries) {
+        in skills.impliedBy(mode, deckId, cardId: cardId).entries) {
       _move(cardId, other, result, share, counted: false);
     }
   }

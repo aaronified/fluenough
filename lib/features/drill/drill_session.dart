@@ -16,7 +16,6 @@ import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
 import '../../core/models/reading.dart';
 import '../../core/models/sound_contrasts.dart';
-import '../../core/numbers/number_practice.dart';
 import '../../core/scheduling/distractors.dart';
 import '../../core/scheduling/fsrs.dart';
 import '../../core/scheduling/question_type.dart';
@@ -237,7 +236,7 @@ class DrillSession extends ChangeNotifier {
   bool get canTransliterate =>
       _typedModes.contains(item.mode) &&
       !hearsMeaning &&
-      item.card is! NumberCard &&
+      !item.card.practiceOnly &&
       item.card.reading != null &&
       deck.language.needsReading &&
       !_state.needsAlphabet(deck);
@@ -398,7 +397,7 @@ class DrillSession extends ChangeNotifier {
 
   /// Whether the answer is a number in digits: a generated number heard.
   bool get typesDigits =>
-      item.card is NumberCard && item.mode == DrillMode.listening;
+      item.card.heardAs != null && item.mode == DrillMode.listening;
 
   /// Grades [typed]. A near miss waits for [judge]; every other outcome is
   /// recorded now.
