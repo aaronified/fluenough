@@ -92,11 +92,9 @@ units:
   - decks: ["es-grammar-articles-gender"]
     words: 0
     grammar: ["articles-gender"]
-  - planned: { id: "es-grammar-plural", grammar: "plural" }
-    listening_passages:
-      - { id: "more-than-one", text: { "en": "Saying there are two cats, three cars and one bus" } }
-    reading_passages:
-      - { id: "shelf-labels", text: { "en": "Shop shelf labels for one item and for several" } }
+  - decks: ["es-grammar-plural", "es-reading-plural"]
+    words: 0
+    grammar: ["plural"]
   - planned: { id: "es-grammar-adjective-agreement", grammar: "adjective-agreement" }
     listening_passages:
       - { id: "a-big-red-house", text: { "en": "Describing a house and the people in it" } }
