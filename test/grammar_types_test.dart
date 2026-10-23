@@ -84,13 +84,22 @@ void main() {
   });
 }
 
-Card word(String id, String target, String native, {String? base}) => Card(
+Card word(
+  String id,
+  String target,
+  String native, {
+  String? base,
+  List<String> bases = const <String>[],
+}) => Card(
   id: id,
   deckId: 'te-en-words',
   target: target,
   native: native,
   modes: const <DrillMode>{DrillMode.grammar},
-  bases: <CardBase>[if (base != null) CardBase(word: target, ref: base)],
+  bases: <CardBase>[
+    for (final ref in <String>[?base, ...bases])
+      CardBase(word: target, ref: ref),
+  ],
 );
 
 void siblingTests() {
@@ -99,17 +108,36 @@ void siblingTests() {
   final same = word('te-3', 'ammaki', 'for mother', base: 'te-amma');
   final other = word('te-4', 'illu', 'house', base: 'te-illu');
   final alone = word('te-5', 'pustakam', 'book');
-  final all = <Card>[amma, loc, same, other, alone];
+  // A sentence of several words, one of them amma, is no form of amma.
+  final sentence = word(
+    'te-6',
+    'amma illu',
+    'mother house',
+    bases: ['te-amma', 'te-illu'],
+  );
+  final sentence2 = word(
+    'te-7',
+    'amma pustakam',
+    'mother book',
+    bases: ['te-amma', 'te-pustakam'],
+  );
+  final all = <Card>[amma, loc, same, other, alone, sentence, sentence2];
   List<Card> siblingsOf(Card c) => formSiblings(c, all);
   final withSiblings = QuestionContext(canChoose: _yes, siblingsOf: siblingsOf);
 
+  test('siblings are single-base cards with another form of the base', () {
+    expect(siblingsOf(amma), [loc]);
+    expect(siblingsOf(loc), [amma, same]);
+    expect(siblingsOf(other), isEmpty);
+    expect(siblingsOf(alone), isEmpty);
+  });
+
   test(
-    'siblings are the other cards with a different form of the same base',
+    'a multi-base sentence sharing one word is no sibling of either side',
     () {
+      expect(siblingsOf(sentence), isEmpty);
+      expect(siblingsOf(sentence2), isEmpty);
       expect(siblingsOf(amma), [loc]);
-      expect(siblingsOf(loc), [amma, same]);
-      expect(siblingsOf(other), isEmpty);
-      expect(siblingsOf(alone), isEmpty);
     },
   );
 
