@@ -1,0 +1,229 @@
+schema: 1
+id: "es-en-work"
+kind: "layer"
+core: "es-work"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Work"
+license: "CC-BY-SA-4.0"
+description: "Work and the workplace: jobs, the office, the boss, pay and the shift, and the verbs to earn, finish, sell and answer. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  es-0502:
+    native: "work; job"
+    notes: { n1: "Trabajo is the noun, work or a job. The verb is trabajar, to work." }
+    examples:
+      "Tengo un trabajo nuevo.":
+        native: "I have a new job."
+        bases: { un: "a", trabajo: "job" }
+      "Mi trabajo es en la oficina.":
+        native: "My job is in the office."
+        bases: { trabajo: "job", en: "in", la: "the" }
+  es-0503:
+    native: "office"
+    notes: { n1: "Oficina is the office: the room or building where people work." }
+    examples:
+      "La oficina está abierta hoy.":
+        native: "The office is open today."
+        bases: { La: "the", oficina: "office", abierta: "open" }
+      "Trabajo en la oficina.":
+        native: "I work in the office."
+        bases: { en: "in", la: "the", oficina: "office" }
+  es-0504:
+    native: "boss"
+    notes: { n1: "Jefe is the boss. The feminine form, la jefa, is used for a woman boss." }
+    examples:
+      "Mi jefe es simpático.":
+        native: "My boss is friendly."
+        bases: { jefe: "boss" }
+      "El jefe llega temprano.":
+        native: "The boss arrives early."
+        bases: { El: "the", jefe: "boss" }
+  es-0505:
+    native: "employee"
+    notes: { n1: "Empleado is an employee. The feminine form is la empleada." }
+    examples:
+      "El empleado trabaja en la empresa.":
+        native: "The employee works at the company."
+        bases: { El: "the", empleado: "employee", en: "in", la: "the" }
+      "Un empleado nuevo llega hoy.":
+        native: "A new employee arrives today."
+        bases: { Un: "a", empleado: "employee" }
+  es-0506:
+    native: "doctor"
+    notes: { n1: "Médico is a doctor. The word is the same for a man or a woman, with el or la." }
+    examples:
+      "El médico trabaja en el hospital.":
+        native: "The doctor works in the hospital."
+        bases: { El: "the", "médico": "doctor", en: "in", el: "the", hospital: "hospital" }
+      "Llamo al médico.":
+        native: "I call the doctor."
+        bases: { al: "to", "médico": "doctor" }
+  es-0507:
+    native: "nurse"
+    notes: { n1: "Enfermera is a nurse. The masculine form is enfermero." }
+    examples:
+      "La enfermera ayuda al médico.":
+        native: "The nurse helps the doctor."
+        bases: { La: "the", enfermera: "nurse", al: "to" }
+      "La enfermera trabaja por la noche.":
+        native: "The nurse works at night."
+        bases: { La: "the", enfermera: "nurse", por: "at", la: "the" }
+  es-0508:
+    native: "cook"
+    notes: { n1: "Cocinero is a cook. Cocinar is the verb, to cook." }
+    examples:
+      "El cocinero cocina la comida.":
+        native: "The cook makes the food."
+        bases: { El: "the", cocinero: "cook", la: "the" }
+      "Mi hermano es cocinero.":
+        native: "My brother is a cook."
+        bases: { cocinero: "cook" }
+  es-0509:
+    native: "driver"
+    notes: { n1: "Conductor is a driver, of a car, a bus or a train." }
+    examples:
+      "El conductor conduce el coche.":
+        native: "The driver drives the car."
+        bases: { El: "the", conductor: "driver", conduce: "drives", el: "the", coche: "car" }
+      "Un conductor llega tarde.":
+        native: "A driver arrives late."
+        bases: { Un: "a", conductor: "driver", tarde: "late" }
+  es-0510:
+    native: "engineer"
+    notes: { n1: "Ingeniero is an engineer. The feminine form is ingeniera." }
+    examples:
+      "Mi padre es ingeniero.":
+        native: "My father is an engineer."
+        bases: { ingeniero: "engineer" }
+      "El ingeniero necesita el documento.":
+        native: "The engineer needs the document."
+        bases: { El: "the", ingeniero: "engineer", el: "the" }
+  es-0511:
+    native: "meeting"
+    notes: { n1: "Reunión is a meeting. Reunirse is the verb, to meet together." }
+    examples:
+      "La reunión empieza a las nueve.":
+        native: "The meeting starts at nine."
+        bases: { La: "the", "reunión": "meeting", empieza: "starts", a: "at", las: "the" }
+      "Hay una reunión hoy en la oficina.":
+        native: "There is a meeting today in the office."
+        bases: { Hay: "there", una: "a", "reunión": "meeting", en: "in", la: "the" }
+  es-0512:
+    native: "timetable; working hours"
+    notes: { n1: "Horario is a timetable, and also the hours someone works." }
+    examples:
+      "El horario es nuevo.":
+        native: "The timetable is new."
+        bases: { El: "the", horario: "timetable" }
+      "Mi horario es de ocho a cuatro.":
+        native: "My working hours are from eight to four."
+        bases: { horario: "timetable", de: "from", a: "to" }
+  es-0513:
+    native: "money"
+    notes: { n1: "Dinero is money. Use mucho dinero for a lot of money." }
+    examples:
+      "No tengo dinero.":
+        native: "I have no money."
+        bases: { dinero: "money" }
+      "El dinero no es todo.":
+        native: "Money is not everything."
+        bases: { El: "the", dinero: "money", todo: "everything" }
+  es-0514:
+    native: "company"
+    notes: { n1: "Empresa is a company or a business." }
+    examples:
+      "La empresa tiene dos oficinas.":
+        native: "The company has two offices."
+        bases: { La: "the", empresa: "company", oficinas: "offices" }
+      "Mi hermana trabaja para una empresa grande.":
+        native: "My sister works for a big company."
+        bases: { para: "for", una: "a", empresa: "company" }
+  es-0515:
+    native: "customer"
+    notes: { n1: "Cliente is a customer. The word is the same for a man or a woman." }
+    examples:
+      "El cliente pide agua.":
+        native: "The customer asks for water."
+        bases: { El: "the", cliente: "customer", pide: "asks" }
+      "Hoy hay muchos clientes.":
+        native: "Today there are many customers."
+        bases: { hay: "there", muchos: "many", clientes: "customers" }
+  es-0516:
+    native: "shift"
+    notes: { n1: "Turno is a shift at work, or a turn in a queue." }
+    examples:
+      "Mi turno empieza a las siete.":
+        native: "My shift starts at seven."
+        bases: { turno: "shift", empieza: "starts", a: "at", las: "the" }
+      "Hoy tengo el turno de la noche.":
+        native: "Today I have the night shift."
+        bases: { el: "the", turno: "shift", de: "of", la: "the" }
+  es-0517:
+    native: "salary; pay"
+    notes: { n1: "Sueldo is the salary or pay a person gets each month." }
+    examples:
+      "El sueldo es bueno.":
+        native: "The salary is good."
+        bases: { El: "the", sueldo: "salary" }
+      "Mi sueldo es bajo.":
+        native: "My salary is low."
+        bases: { sueldo: "salary" }
+  es-0518:
+    native: "break; pause"
+    notes: { n1: "Pausa is a short break, such as a break for coffee." }
+    examples:
+      "Tengo una pausa a las once.":
+        native: "I have a break at eleven."
+        bases: { una: "a", pausa: "break", a: "at", las: "the" }
+      "La pausa es corta.":
+        native: "The break is short."
+        bases: { La: "the", pausa: "break" }
+  es-0519:
+    native: "document"
+    notes: { n1: "Documento is a document, such as a form or a letter." }
+    examples:
+      "Necesito el documento.":
+        native: "I need the document."
+        bases: { el: "the", documento: "document" }
+      "¿Dónde está el documento?":
+        native: "Where is the document?"
+        bases: { el: "the", documento: "document" }
+  es-0520:
+    native: "to earn; to win"
+    notes: { n1: "Ganar is to earn money, or to win a game. It is a regular -ar verb: gano, ganas, gana." }
+    examples:
+      "Gano mucho dinero.":
+        native: "I earn a lot of money."
+        bases: { Gano: "earn" }
+      "Mi hermano gana bien.":
+        native: "My brother earns well."
+        bases: { gana: "earns" }
+  es-0521:
+    native: "to finish"
+    notes: { n1: "Terminar is to finish or to end. It is a regular -ar verb: termino, terminas, termina." }
+    examples:
+      "Termino el trabajo a las cinco.":
+        native: "I finish work at five."
+        bases: { Termino: "finish", el: "the", a: "at", las: "the" }
+      "¿Cuándo terminas la reunión?":
+        native: "When do you finish the meeting?"
+        bases: { terminas: "finish", la: "the" }
+  es-0522:
+    native: "to sell"
+    notes: { n1: "Vender is to sell. It is a regular -er verb: vendo, vendes, vende." }
+    examples:
+      "Vendemos pan en la tienda.":
+        native: "We sell bread in the shop."
+        bases: { Vendemos: "sell", en: "in", la: "the", tienda: "shop" }
+      "La empresa vende muchos productos.":
+        native: "The company sells many products."
+        bases: { La: "the", vende: "sells", muchos: "many", productos: "products" }
+  es-0523:
+    native: "to answer"
+    notes: { n1: "Contestar is to answer, a question, a letter or a phone call. It is a regular -ar verb: contesto, contestas, contesta." }
+    examples:
+      "Contesto el teléfono.":
+        native: "I answer the phone."
+        bases: { Contesto: "answer", el: "the" }
+      "Por favor contesta la pregunta.":
+        native: "Please answer the question."
+        bases: { Por: "please", favor: "please", contesta: "answer", la: "the", pregunta: "question" }
