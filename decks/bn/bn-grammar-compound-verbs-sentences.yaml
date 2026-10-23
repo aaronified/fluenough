@@ -1,0 +1,64 @@
+schema: 1
+id: "bn-grammar-compound-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-1830"
+    target: "সে পড়ে গেল।"
+    reading: "se pôṛe gel."
+    ipa: "se pɔɽe ɡel"
+    pos: "phrase"
+    rules: ["bn-rule-compound-verbs"]
+    bases:
+      - { word: "পড়ে", ref: "bn-0119" }
+      - { word: "গেল", ref: "bn-0873" }
+  - id: "bn-1831"
+    target: "সে বসে পড়ল।"
+    reading: "se bôse pôṛol."
+    ipa: "se bɔse pɔɽol"
+    pos: "phrase"
+    rules: ["bn-rule-compound-verbs"]
+    bases:
+      - { word: "বসে", ref: "bn-0884" }
+      - { word: "পড়ল", ref: "bn-0119" }
+  - id: "bn-1832"
+    target: "সে উঠে গেল।"
+    reading: "se uṭhe gel."
+    ipa: "se uʈʰe ɡel"
+    pos: "phrase"
+    rules: ["bn-rule-compound-verbs"]
+    bases:
+      - { word: "উঠে", ref: "bn-0885" }
+      - { word: "গেল", ref: "bn-0873" }
+  - id: "bn-1833"
+    target: "সে খেয়ে ফেলল।"
+    reading: "se kheye phelol."
+    ipa: "se kʰeje pʰelol"
+    pos: "phrase"
+    rules: ["bn-rule-compound-verbs"]
+    bases:
+      - { word: "খেয়ে", ref: "bn-0876" }
+      - { word: "ফেলল", ref: "bn-1103" }
+  - id: "bn-1834"
+    target: "সে পড়ে যায়।"
+    reading: "se pôṛe jāy."
+    ipa: "se pɔɽe dʒaj"
+    pos: "phrase"
+    rules: ["bn-rule-compound-verbs"]
+    bases:
+      - { word: "পড়ে", ref: "bn-0119" }
+      - { word: "যায়", ref: "bn-0873" }
+  - id: "bn-1835"
+    target: "সে ফোন রেখে যায়।"
+    reading: "se phon rekhe jāy."
+    ipa: "se pʰon rekʰe dʒaj"
+    pos: "phrase"
+    rules: ["bn-rule-compound-verbs"]
+    bases:
+      - { word: "রেখে", ref: "bn-0894" }
+      - { word: "যায়", ref: "bn-0873" }

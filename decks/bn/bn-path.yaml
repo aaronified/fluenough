@@ -311,11 +311,15 @@ units:
       - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
   - decks: ["bn-reading-illness"]
     words: 0
-  - planned: { id: "bn-grammar-compound-verbs", grammar: "compound-verbs" }
+  - decks: ["bn-grammar-compound-verbs", "bn-grammar-compound-verbs-sentences"]
+    words: 0
+    grammar: ["compound-verbs"]
     listening_passages:
       - { id: "what-just-happened", text: { "en": "A neighbour tells what suddenly happened: fell down, sat down, went away" } }
     reading_passages:
       - { id: "small-accident-news", text: { "en": "A short news item about a small accident on the road" } }
+  - decks: ["bn-reading-compound-verbs"]
+    words: 0
   - decks: ["bn-eating-out", "*"]
     words: 9
   - planned: { id: "bn-cooking", theme: "cooking", words: 50 }
