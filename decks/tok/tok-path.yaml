@@ -207,19 +207,14 @@ units:
   # wan, tu, luka, ale and nanpa; mute is already known. The simple
   # system (wan, tu, mute) and counting with luka; nanpa for ordinals.
   # The full nasin nanpa pona is B1's.
-  - planned: { id: "tok-numbers-1-20", theme: "numbers-1-20", words: 5 }
-    listening_passages:
-      - { id: "counting-fruit", text: { "en": "Counting pieces of fruit aloud, with wan, tu, luka and mute" } }
-    reading_passages:
-      - { id: "scoreboard", text: { "en": "A game's scoreboard: who is nanpa wan and nanpa tu" } }
+  - decks: ["tok-numbers-1-20", "tok-numbers-1-20-sentences", "tok-reading-numbers", "*"]
+    words: 5
   # Modifiers follow their head (jan pona, tomo lili), several in a row
   # each modify the whole before them, and a number or mute after a noun
   # makes a plural; nouns never change.
-  - planned: { id: "tok-grammar-modifiers", grammar: ["head-first-modifiers", "number-after-noun"] }
-    listening_passages:
-      - { id: "which-one", text: { "en": "Choosing between things: the big red one, the two small ones" } }
-    reading_passages:
-      - { id: "lost-and-found", text: { "en": "A lost-and-found notice describing a lost bag" } }
+  - decks: ["tok-grammar-modifiers", "tok-grammar-number-after-noun", "tok-grammar-modifiers-sentences", "tok-reading-modifiers"]
+    words: 0
+    grammar: ["head-first-modifiers", "number-after-noun"]
   # tomo, supa, poki, lupa and ilo.
   - planned: { id: "tok-home", theme: "home", words: 5 }
     listening_passages:
