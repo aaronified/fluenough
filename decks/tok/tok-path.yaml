@@ -354,11 +354,9 @@ units:
   # The full number system, nasin nanpa pona: mute for twenty and ale
   # for a hundred, counted in a row (ale tu mute luka tu); the simple
   # system against it.
-  - planned: { id: "tok-grammar-numbers", grammar: ["nasin-nanpa-pona"] }
-    listening_passages:
-      - { id: "how-old", text: { "en": "People say their ages in the full number system" } }
-    reading_passages:
-      - { id: "scores-table", text: { "en": "A table of scores written in the full number system" } }
+  - decks: ["tok-grammar-numbers", "tok-grammar-numbers-sentences", "tok-reading-full-numbers"]
+    words: 0
+    grammar: ["nasin-nanpa-pona"]
   # pu and ku: the books, and to use or interact with them; the
   # community: its servers, meetups, podcasts, its Wikipedia-like wikis,
   # the word lists (pu, ku suli, nimi sin) and how speakers differ on
