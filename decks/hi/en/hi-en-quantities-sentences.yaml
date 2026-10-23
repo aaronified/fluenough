@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-quantities-sentences"
+kind: "layer"
+core: "hi-quantities-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with how much and how many"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the words of this unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-0882":
+    native: "I want two cups of tea."
+    confusables: { "w1": { why: "A hundred, not two: सौ (sau) means a hundred." }, "w2": { why: "Take, not want: लीजिए (lījiē) is a polite order to take." } }
+  "hi-0883":
+    native: "We need two litres of milk."
+    confusables: { "w1": { why: "A glass, not a litre: गिलास (gilās) is a glass." }, "w2": { why: "A packet, not a litre: पैकेट (paikēṭ) is a packet." } }
+  "hi-0884":
+    native: "Half a kilo of potatoes is enough."
+    confusables: { "w1": { why: "Whole, not half: पूरा (pūrā) means whole." }, "f1": { why: "Feminine: आधी (ādhī) would agree with a feminine noun; आलू (ālū) is masculine." } }
+  "hi-0885":
+    native: "All the children drink milk."
+    confusables: { "w1": { why: "Very or many, not all: बहुत (bahut) means very or many." }, "f1": { why: "A few, not all: थोड़े (thōṛē) means a few." } }
+  "hi-0886":
+    native: "He finished the whole job."
+    confusables: { "w1": { why: "Half, not the whole: आधा (ādhā) means half." }, "f1": { why: "Feminine: पूरी (pūrī) would agree with a feminine noun; काम (kām) is masculine." } }
+  "hi-0887":
+    native: "I do not have a spoon."
+    confusables: { "w1": { why: "A cup, not a spoon: कप (kap) means a cup." }, "w2": { why: "A glass, not a spoon: गिलास (gilās) means a glass." } }
+  "hi-0888":
+    native: "Bring a hundred grams of paneer."
+    confusables: { "w1": { why: "A litre, a measure of liquids, not weight: लीटर (līṭar) is for liquids." }, "f1": { why: "Informal: लाओ (lāō) is said to a friend; लाइए (lāiē) is the polite form." } }
+    bases: { "पनीर": "paneer", "लाइए": "to bring" }
+  "hi-0889":
+    native: "There is a little water in the bottle."
+    confusables: { "w1": { why: "A glass, not a bottle: गिलास (gilās) is a glass." }, "f1": { why: "Feminine: थोड़ी (thōṛī) would agree with a feminine noun; पानी (pānī) is masculine." } }

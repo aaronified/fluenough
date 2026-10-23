@@ -1,0 +1,977 @@
+schema: 1
+id: "hi-more-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "more-verbs"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-0937"
+    target: "खोलना"
+    target_scripts: { perso_arabic: "کھولنا" }
+    reading: "khōlnā"
+    ipa: "kʰoːlnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "खोला", reading: "khōlā" }
+          - { word: "खोली", reading: "khōlī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "खिड़की खोलना", reading: "khiṛkī khōlnā" }
+    examples:
+      - target: "वह दरवाज़ा खोलता है।"
+        reading: "vah darvāzā khōltā hai."
+        ipa: "ʋəɦ d̪ərʋaːzaː kʰoːlt̪aː ɦɛː"
+        bases:
+          - { word: "वह", ref: "hi-0749" }
+          - { word: "दरवाज़ा", ref: "hi-0426" }
+          - { word: "खोलता", base: "खोलना", reading: "khōltā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मैंने खिड़की खोली।"
+        reading: "mainnē khiṛkī khōlī."
+        ipa: "mɛːnneː kʰɪɽkiː kʰoːliː"
+        bases:
+          - { word: "मैंने", ref: "hi-0745" }
+          - { word: "खिड़की", ref: "hi-0427" }
+          - { word: "खोली", base: "खोलना", reading: "khōlī" }
+    collocations:
+      - { id: "door", ref: "hi-0426" }
+  - id: "hi-0938"
+    target: "पकाना"
+    target_scripts: { perso_arabic: "پکانا" }
+    reading: "pakānā"
+    ipa: "pəkaːnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "पकाया", reading: "pakāyā" }
+          - { word: "पकाई", reading: "pakāī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "खाना पकाना", reading: "khānā pakānā" }
+    examples:
+      - target: "माँ रोटी पकाती है।"
+        reading: "mām̐ rōṭī pakātī hai."
+        ipa: "mãː roːʈiː pəkaːt̪iː ɦɛː"
+        bases:
+          - { word: "माँ", ref: "hi-0377" }
+          - { word: "रोटी", ref: "hi-0335" }
+          - { word: "पकाती", base: "पकाना", reading: "pakātī" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "उसने दाल पकाई।"
+        reading: "usnē dāl pakāī."
+        ipa: "ʊsneː d̪aːl pəkaːiː"
+        bases:
+          - { word: "उसने", ref: "hi-0749" }
+          - { word: "दाल", ref: "hi-0261" }
+          - { word: "पकाई", base: "पकाना", reading: "pakāī" }
+    collocations:
+      - { id: "dal", ref: "hi-0261" }
+  - id: "hi-0939"
+    target: "काटना"
+    target_scripts: { perso_arabic: "کاٹنا" }
+    reading: "kāṭnā"
+    ipa: "kaːʈnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "काटा", reading: "kāṭā" }
+          - { word: "काटी", reading: "kāṭī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "सब्ज़ी काटना", reading: "sabzī kāṭnā" }
+    examples:
+      - target: "वह सब्ज़ी काटता है।"
+        reading: "vah sabzī kāṭtā hai."
+        ipa: "ʋəɦ səbziː kaːʈt̪aː ɦɛː"
+        bases:
+          - { word: "वह", ref: "hi-0749" }
+          - { word: "सब्ज़ी", ref: "hi-0249" }
+          - { word: "काटता", base: "काटना", reading: "kāṭtā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "प्याज़ और टमाटर काटो।"
+        reading: "pyāz aur ṭamāṭar kāṭō."
+        ipa: "pjaːz ɔːr ʈəmaːʈər kaːʈoː"
+        bases:
+          - { word: "प्याज़", ref: "hi-0251" }
+          - { word: "और", ref: "hi-0337" }
+          - { word: "टमाटर", ref: "hi-0252" }
+          - { word: "काटो", base: "काटना", reading: "kāṭō" }
+    collocations:
+      - { id: "vegetables", ref: "hi-0249" }
+  - id: "hi-0940"
+    target: "उबालना"
+    target_scripts: { perso_arabic: "ابالنا" }
+    reading: "ubālnā"
+    ipa: "ʊbaːlnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "उबाला", reading: "ubālā" }
+          - { word: "उबाली", reading: "ubālī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "पानी उबालना", reading: "pānī ubālnā" }
+    examples:
+      - target: "हम दूध उबालते हैं।"
+        reading: "ham dūdh ubāltē haim̐."
+        ipa: "ɦəm d̪uːd̪ʱ ʊbaːlt̪eː ɦɛ̃ː"
+        bases:
+          - { word: "हम", ref: "hi-0053" }
+          - { word: "दूध", ref: "hi-0259" }
+          - { word: "उबालते", base: "उबालना", reading: "ubāltē" }
+          - { word: "हैं", ref: "hi-0780" }
+      - target: "पहले पानी उबालो।"
+        reading: "pahlē pānī ubālō."
+        ipa: "pəɦleː paːniː ʊbaːloː"
+        bases:
+          - { word: "पहले", ref: "hi-0823" }
+          - { word: "पानी", ref: "hi-0333" }
+          - { word: "उबालो", base: "उबालना", reading: "ubālō" }
+    collocations:
+      - { id: "water", ref: "hi-0333" }
+  - id: "hi-0941"
+    target: "डालना"
+    target_scripts: { perso_arabic: "ڈالنا" }
+    reading: "ḍālnā"
+    ipa: "ɖaːlnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "डाला", reading: "ḍālā" }
+          - { word: "डाली", reading: "ḍālī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "पानी में नमक डालना", reading: "pānī mēm̐ namak ḍālnā" }
+    examples:
+      - target: "उसने चाय में दूध डाला।"
+        reading: "usnē cāy mēm̐ dūdh ḍālā."
+        ipa: "ʊsneː tʃaːj mẽː d̪uːd̪ʱ ɖaːlaː"
+        bases:
+          - { word: "उसने", ref: "hi-0749" }
+          - { word: "चाय", ref: "hi-0334" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "दूध", ref: "hi-0259" }
+          - { word: "डाला", base: "डालना", reading: "ḍālā" }
+      - target: "पानी में नमक डालो।"
+        reading: "pānī mēm̐ namak ḍālō."
+        ipa: "paːniː mẽː nəmək ɖaːloː"
+        bases:
+          - { word: "पानी", ref: "hi-0333" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "नमक", ref: "hi-0051" }
+          - { word: "डालो", base: "डालना", reading: "ḍālō" }
+    collocations:
+      - { id: "milk", ref: "hi-0259" }
+  - id: "hi-0942"
+    target: "छानना"
+    target_scripts: { perso_arabic: "چھاننا" }
+    reading: "chānnā"
+    ipa: "tʃʰaːnnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "छाना", reading: "chānā" }
+          - { word: "छानी", reading: "chānī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "चाय छानना", reading: "cāy chānnā" }
+    examples:
+      - target: "वह चाय छानता है।"
+        reading: "vah cāy chāntā hai."
+        ipa: "ʋəɦ tʃaːj tʃʰaːnt̪aː ɦɛː"
+        bases:
+          - { word: "वह", ref: "hi-0749" }
+          - { word: "चाय", ref: "hi-0334" }
+          - { word: "छानता", base: "छानना", reading: "chāntā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "चाय छानकर कप में डालो।"
+        reading: "cāy chānkar kap mēm̐ ḍālō."
+        ipa: "tʃaːj tʃʰaːnkər kəp mẽː ɖaːloː"
+        bases:
+          - { word: "चाय", ref: "hi-0334" }
+          - { word: "छानकर", base: "छानना", reading: "chānkar" }
+          - { word: "कप", ref: "hi-0877" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "डालो", ref: "hi-0941" }
+    collocations:
+      - { id: "tea", ref: "hi-0334" }
+  - id: "hi-0943"
+    target: "परोसना"
+    target_scripts: { perso_arabic: "پروسنا" }
+    reading: "parōsnā"
+    ipa: "pəroːsnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "परोसा", reading: "parōsā" }
+          - { word: "परोसी", reading: "parōsī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "खाना परोसना", reading: "khānā parōsnā" }
+    examples:
+      - target: "माँ खाना परोसती है।"
+        reading: "mām̐ khānā parōstī hai."
+        ipa: "mãː kʰaːnaː pəroːst̪iː ɦɛː"
+        bases:
+          - { word: "माँ", ref: "hi-0377" }
+          - { word: "खाना", ref: "hi-0332" }
+          - { word: "परोसती", base: "परोसना", reading: "parōstī" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "कप में चाय परोसो।"
+        reading: "kap mēm̐ cāy parōsō."
+        ipa: "kəp mẽː tʃaːj pəroːsoː"
+        bases:
+          - { word: "कप", ref: "hi-0877" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "चाय", ref: "hi-0334" }
+          - { word: "परोसो", base: "परोसना", reading: "parōsō" }
+    collocations:
+      - { id: "food", ref: "hi-0332" }
+  - id: "hi-0944"
+    target: "जागना"
+    target_scripts: { perso_arabic: "جاگنا" }
+    reading: "jāgnā"
+    ipa: "dʒaːɡnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "जागा", reading: "jāgā" }
+          - { word: "जागी", reading: "jāgī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "सुबह जागना", reading: "subah jāgnā" }
+    examples:
+      - target: "मैं रोज़ सुबह जागता हूँ।"
+        reading: "maim̐ rōz subah jāgtā hūm̐."
+        ipa: "mɛ̃ː roːz sʊbəɦ dʒaːɡt̪aː ɦũː"
+        bases:
+          - { word: "मैं", ref: "hi-0745" }
+          - { word: "रोज़", ref: "hi-0451" }
+          - { word: "सुबह", ref: "hi-0302" }
+          - { word: "जागता", base: "जागना", reading: "jāgtā" }
+          - { word: "हूँ", ref: "hi-0780" }
+      - target: "बच्चे रात को नहीं जागे।"
+        reading: "baccē rāt kō nahīm̐ jāgē."
+        ipa: "bətʃtʃeː raːt̪ koː nəɦĩː dʒaːɡeː"
+        bases:
+          - { word: "बच्चे", ref: "hi-0383" }
+          - { word: "रात", ref: "hi-0304" }
+          - { word: "को", ref: "hi-0277" }
+          - { word: "नहीं", ref: "hi-0156" }
+          - { word: "जागे", base: "जागना", reading: "jāgē" }
+    antonyms:
+      - { id: "sleep", ref: "hi-0450" }
+    collocations:
+      - { id: "morning", ref: "hi-0302" }
+  - id: "hi-0945"
+    target: "भूलना"
+    target_scripts: { perso_arabic: "بھولنا" }
+    reading: "bhūlnā"
+    ipa: "bʱuːlnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "भूला", reading: "bhūlā" }
+          - { word: "भूली", reading: "bhūlī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "नाम भूलना", reading: "nām bhūlnā" }
+    examples:
+      - target: "मैं अपना नाम कभी नहीं भूलता।"
+        reading: "maim̐ apnā nām kabhī nahīm̐ bhūltā."
+        ipa: "mɛ̃ː əpnaː naːm kəbʱiː nəɦĩː bʱuːlt̪aː"
+        bases:
+          - { word: "मैं", ref: "hi-0745" }
+          - { word: "अपना", base: "अपना", reading: "apnā" }
+          - { word: "नाम", ref: "hi-0187" }
+          - { word: "कभी", base: "कभी", reading: "kabhī" }
+          - { word: "नहीं", ref: "hi-0156" }
+          - { word: "भूलता", base: "भूलना", reading: "bhūltā" }
+      - target: "वह मेरा नाम भूल गया।"
+        reading: "vah mērā nām bhūl gayā."
+        ipa: "ʋəɦ meːraː naːm bʱuːl ɡəjaː"
+        bases:
+          - { word: "वह", ref: "hi-0749" }
+          - { word: "मेरा", ref: "hi-0752" }
+          - { word: "नाम", ref: "hi-0187" }
+          - { word: "भूल", base: "भूलना", reading: "bhūl" }
+          - { word: "गया", base: "जाना", reading: "gayā" }
+    collocations:
+      - { id: "name", ref: "hi-0187" }
+  - id: "hi-0946"
+    target: "दौड़ना"
+    target_scripts: { perso_arabic: "دوڑنا" }
+    reading: "dauṛnā"
+    ipa: "d̪ɔːɽnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "दौड़ा", reading: "dauṛā" }
+          - { word: "दौड़ी", reading: "dauṛī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "जल्दी दौड़ना", reading: "jaldī dauṛnā" }
+    examples:
+      - target: "बच्चे घर में दौड़ते हैं।"
+        reading: "baccē ghar mēm̐ dauṛtē haim̐."
+        ipa: "bətʃtʃeː ɡʱər mẽː d̪ɔːɽt̪eː ɦɛ̃ː"
+        bases:
+          - { word: "बच्चे", ref: "hi-0383" }
+          - { word: "घर", ref: "hi-0192" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "दौड़ते", base: "दौड़ना", reading: "dauṛtē" }
+          - { word: "हैं", ref: "hi-0780" }
+      - target: "वह जल्दी दौड़ा।"
+        reading: "vah jaldī dauṛā."
+        ipa: "ʋəɦ dʒəld̪iː d̪ɔːɽaː"
+        bases:
+          - { word: "वह", ref: "hi-0749" }
+          - { word: "जल्दी", ref: "hi-0819" }
+          - { word: "दौड़ा", base: "दौड़ना", reading: "dauṛā" }
+    collocations:
+      - { id: "quickly", ref: "hi-0819" }
+  - id: "hi-0947"
+    target: "गिरना"
+    target_scripts: { perso_arabic: "گرنا" }
+    reading: "girnā"
+    ipa: "ɡɪrnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "गिरा", reading: "girā" }
+          - { word: "गिरी", reading: "girī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "नीचे गिरना", reading: "nīcē girnā" }
+    examples:
+      - target: "गिलास मेज़ से गिरा।"
+        reading: "gilās mēz sē girā."
+        ipa: "ɡɪlaːs meːz seː ɡɪraː"
+        bases:
+          - { word: "गिलास", ref: "hi-0878" }
+          - { word: "मेज़", ref: "hi-0434" }
+          - { word: "से", ref: "hi-0276" }
+          - { word: "गिरा", base: "गिरना", reading: "girā" }
+      - target: "छत से पानी गिरता है।"
+        reading: "chat sē pānī girtā hai."
+        ipa: "tʃʰət̪ seː paːniː ɡɪrt̪aː ɦɛː"
+        bases:
+          - { word: "छत", ref: "hi-0428" }
+          - { word: "से", ref: "hi-0276" }
+          - { word: "पानी", ref: "hi-0333" }
+          - { word: "गिरता", base: "गिरना", reading: "girtā" }
+          - { word: "है", ref: "hi-0780" }
+    antonyms:
+      - { id: "get-up", ref: "hi-0441" }
+    collocations:
+      - { id: "table", ref: "hi-0434" }
+  - id: "hi-0948"
+    target: "लौटना"
+    target_scripts: { perso_arabic: "لوٹنا" }
+    reading: "lauṭnā"
+    ipa: "lɔːʈnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "लौटा", reading: "lauṭā" }
+          - { word: "लौटी", reading: "lauṭī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "घर लौटना", reading: "ghar lauṭnā" }
+    examples:
+      - target: "वह कल जल्दी घर लौटेगा।"
+        reading: "vah kal jaldī ghar lauṭēgā."
+        ipa: "ʋəɦ kəl dʒəld̪iː ɡʱər lɔːʈeːɡaː"
+        bases:
+          - { word: "वह", ref: "hi-0749" }
+          - { word: "कल", ref: "hi-0300" }
+          - { word: "जल्दी", ref: "hi-0819" }
+          - { word: "घर", ref: "hi-0192" }
+          - { word: "लौटेगा", base: "लौटना", reading: "lauṭēgā" }
+      - target: "हम शाम को घर लौटे।"
+        reading: "ham śām kō ghar lauṭē."
+        ipa: "ɦəm ʃaːm koː ɡʱər lɔːʈeː"
+        bases:
+          - { word: "हम", ref: "hi-0053" }
+          - { word: "शाम", ref: "hi-0303" }
+          - { word: "को", ref: "hi-0277" }
+          - { word: "घर", ref: "hi-0192" }
+          - { word: "लौटे", base: "लौटना", reading: "lauṭē" }
+    collocations:
+      - { id: "home", ref: "hi-0192" }
+  - id: "hi-0949"
+    target: "लाना"
+    target_scripts: { perso_arabic: "لانا" }
+    reading: "lānā"
+    ipa: "laːnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "लाया", reading: "lāyā" }
+          - { word: "लाई", reading: "lāī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "पानी लाना", reading: "pānī lānā" }
+    examples:
+      - target: "वह चाय लाया।"
+        reading: "vah cāy lāyā."
+        ipa: "ʋəɦ tʃaːj laːjaː"
+        bases:
+          - { word: "वह", ref: "hi-0749" }
+          - { word: "चाय", ref: "hi-0334" }
+          - { word: "लाया", base: "लाना", reading: "lāyā" }
+      - target: "क्या तुम पानी ला सकते हो?"
+        reading: "kyā tum pānī lā saktē hō?"
+        ipa: "kjaː t̪ʊm paːniː laː səkt̪eː ɦoː"
+        bases:
+          - { word: "क्या", ref: "hi-0157" }
+          - { word: "तुम", ref: "hi-0747" }
+          - { word: "पानी", ref: "hi-0333" }
+          - { word: "ला", base: "लाना", reading: "lā" }
+          - { word: "सकते", ref: "hi-0513" }
+          - { word: "हो", ref: "hi-0780" }
+    collocations:
+      - { id: "water", ref: "hi-0333" }
+  - id: "hi-0950"
+    target: "रखना"
+    target_scripts: { perso_arabic: "رکھنا" }
+    reading: "rakhnā"
+    ipa: "rəkʰnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "रखा", reading: "rakhā" }
+          - { word: "रखी", reading: "rakhī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "मेज़ पर रखना", reading: "mēz par rakhnā" }
+    examples:
+      - target: "चम्मच मेज़ पर रखो।"
+        reading: "cammac mēz par rakhō."
+        ipa: "tʃəmmətʃ meːz pər rəkʰoː"
+        bases:
+          - { word: "चम्मच", ref: "hi-0876" }
+          - { word: "मेज़", ref: "hi-0434" }
+          - { word: "पर", ref: "hi-0275" }
+          - { word: "रखो", base: "रखना", reading: "rakhō" }
+      - target: "माँ चाय रसोई में रखती है।"
+        reading: "mām̐ cāy rasōī mēm̐ rakhtī hai."
+        ipa: "mãː tʃaːj rəsoːiː mẽː rəkʰt̪iː ɦɛː"
+        bases:
+          - { word: "माँ", ref: "hi-0377" }
+          - { word: "चाय", ref: "hi-0334" }
+          - { word: "रसोई", ref: "hi-0422" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "रखती", base: "रखना", reading: "rakhtī" }
+          - { word: "है", ref: "hi-0780" }
+    collocations:
+      - { id: "kitchen", ref: "hi-0422" }
+  - id: "hi-0951"
+    target: "छोड़ना"
+    target_scripts: { perso_arabic: "چھوڑنا" }
+    reading: "chōṛnā"
+    ipa: "tʃʰoːɽnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "छोड़ा", reading: "chōṛā" }
+          - { word: "छोड़ी", reading: "chōṛī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "शहर छोड़ना", reading: "śahar chōṛnā" }
+    examples:
+      - target: "वह कल शहर छोड़ेगा।"
+        reading: "vah kal śahar chōṛēgā."
+        ipa: "ʋəɦ kəl ʃəɦər tʃʰoːɽeːɡaː"
+        bases:
+          - { word: "वह", ref: "hi-0749" }
+          - { word: "कल", ref: "hi-0300" }
+          - { word: "शहर", ref: "hi-0195" }
+          - { word: "छोड़ेगा", base: "छोड़ना", reading: "chōṛēgā" }
+      - target: "उसने मेरा हाथ छोड़ा।"
+        reading: "usnē mērā hāth chōṛā."
+        ipa: "ʊsneː meːraː ɦaːt̪ʰ tʃʰoːɽaː"
+        bases:
+          - { word: "उसने", ref: "hi-0749" }
+          - { word: "मेरा", ref: "hi-0752" }
+          - { word: "हाथ", base: "हाथ", reading: "hāth" }
+          - { word: "छोड़ा", base: "छोड़ना", reading: "chōṛā" }
+    collocations:
+      - { id: "city", ref: "hi-0195" }
+  - id: "hi-0952"
+    target: "सीखना"
+    target_scripts: { perso_arabic: "سیکھنا" }
+    reading: "sīkhnā"
+    ipa: "siːkʰnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "सीखा", reading: "sīkhā" }
+          - { word: "सीखी", reading: "sīkhī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "हिंदी सीखना", reading: "hindī sīkhnā" }
+    examples:
+      - target: "मैं हिंदी सीखता हूँ।"
+        reading: "maim̐ hindī sīkhtā hūm̐."
+        ipa: "mɛ̃ː ɦɪnd̪iː siːkʰt̪aː ɦũː"
+        bases:
+          - { word: "मैं", ref: "hi-0745" }
+          - { word: "हिंदी", base: "हिंदी", reading: "hindī" }
+          - { word: "सीखता", base: "सीखना", reading: "sīkhtā" }
+          - { word: "हूँ", ref: "hi-0780" }
+      - target: "वह गाना सीखती है।"
+        reading: "vah gānā sīkhtī hai."
+        ipa: "ʋəɦ ɡaːnaː siːkʰt̪iː ɦɛː"
+        bases:
+          - { word: "वह", ref: "hi-0749" }
+          - { word: "गाना", base: "गाना", reading: "gānā" }
+          - { word: "सीखती", base: "सीखना", reading: "sīkhtī" }
+          - { word: "है", ref: "hi-0780" }
+    collocations:
+      - { id: "language", ref: "hi-0197" }
+  - id: "hi-0953"
+    target: "सोचना"
+    target_scripts: { perso_arabic: "سوچنا" }
+    reading: "sōcnā"
+    ipa: "soːtʃnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "सोचा", reading: "sōcā" }
+          - { word: "सोची", reading: "sōcī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "कुछ सोचना", reading: "kuch sōcnā" }
+    examples:
+      - target: "मैं इस बारे में सोचता हूँ।"
+        reading: "maim̐ is bārē mēm̐ sōctā hūm̐."
+        ipa: "mɛ̃ː ɪs baːreː mẽː soːtʃt̪aː ɦũː"
+        bases:
+          - { word: "मैं", ref: "hi-0745" }
+          - { word: "इस", ref: "hi-0748" }
+          - { word: "बारे", base: "बारे", reading: "bārē" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "सोचता", base: "सोचना", reading: "sōctā" }
+          - { word: "हूँ", ref: "hi-0780" }
+      - target: "वे रोज़ क्या सोचते हैं?"
+        reading: "vē rōz kyā sōctē haim̐?"
+        ipa: "ʋeː roːz kjaː soːtʃt̪eː ɦɛ̃ː"
+        bases:
+          - { word: "वे", ref: "hi-0751" }
+          - { word: "रोज़", ref: "hi-0451" }
+          - { word: "क्या", ref: "hi-0157" }
+          - { word: "सोचते", base: "सोचना", reading: "sōctē" }
+          - { word: "हैं", ref: "hi-0780" }
+    collocations:
+      - { id: "matter", word: "बात", reading: "bāt", ipa: "baːt̪" }
+  - id: "hi-0954"
+    target: "सिखाना"
+    target_scripts: { perso_arabic: "سکھانا" }
+    reading: "sikhānā"
+    ipa: "sɪkʰaːnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "सिखाया", reading: "sikhāyā" }
+          - { word: "सिखाई", reading: "sikhāī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "हिंदी सिखाना", reading: "hindī sikhānā" }
+    examples:
+      - target: "वह बच्चे को हिंदी सिखाता है।"
+        reading: "vah baccē kō hindī sikhātā hai."
+        ipa: "ʋəɦ bətʃtʃeː koː ɦɪnd̪iː sɪkʰaːt̪aː ɦɛː"
+        bases:
+          - { word: "वह", ref: "hi-0749" }
+          - { word: "बच्चे", ref: "hi-0383" }
+          - { word: "को", ref: "hi-0277" }
+          - { word: "हिंदी", base: "हिंदी", reading: "hindī" }
+          - { word: "सिखाता", base: "सिखाना", reading: "sikhātā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "माँ मुझे गाना सिखाती है।"
+        reading: "mām̐ mujhē gānā sikhātī hai."
+        ipa: "mãː mʊdʒʱeː ɡaːnaː sɪkʰaːt̪iː ɦɛː"
+        bases:
+          - { word: "माँ", ref: "hi-0377" }
+          - { word: "मुझे", ref: "hi-0745" }
+          - { word: "गाना", base: "गाना", reading: "gānā" }
+          - { word: "सिखाती", base: "सिखाना", reading: "sikhātī" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "teach-school", word: "पढ़ाना", reading: "paṛhānā", ipa: "pəɽʱaːnaː" }
+    collocations:
+      - { id: "song", word: "गाना", reading: "gānā", ipa: "ɡaːnaː" }
+  - id: "hi-0955"
+    target: "ढूँढना"
+    target_scripts: { perso_arabic: "ڈھونڈنا" }
+    reading: "ḍhūm̐ḍhnā"
+    ipa: "ɖʱũːɖʱnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "ढूँढा", reading: "ḍhūm̐ḍhā" }
+          - { word: "ढूँढी", reading: "ḍhūm̐ḍhī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "चाबी ढूँढना", reading: "cābī ḍhūm̐ḍhnā" }
+    examples:
+      - target: "मैं अपनी चाबी ढूँढता हूँ।"
+        reading: "maim̐ apnī cābī ḍhūm̐ḍhtā hūm̐."
+        ipa: "mɛ̃ː əpniː tʃaːbiː ɖʱũːɖʱt̪aː ɦũː"
+        bases:
+          - { word: "मैं", ref: "hi-0745" }
+          - { word: "अपनी", base: "अपनी", reading: "apnī" }
+          - { word: "चाबी", ref: "hi-0431" }
+          - { word: "ढूँढता", base: "ढूँढना", reading: "ḍhūm̐ḍhtā" }
+          - { word: "हूँ", ref: "hi-0780" }
+      - target: "उसने पूरा घर ढूँढा।"
+        reading: "usnē pūrā ghar ḍhūm̐ḍhā."
+        ipa: "ʊsneː puːraː ɡʱər ɖʱũːɖʱaː"
+        bases:
+          - { word: "उसने", ref: "hi-0749" }
+          - { word: "पूरा", ref: "hi-0868" }
+          - { word: "घर", ref: "hi-0192" }
+          - { word: "ढूँढा", base: "ढूँढना", reading: "ḍhūm̐ḍhā" }
+    synonyms:
+      - { id: "search-formal", word: "खोजना", reading: "khōjnā", ipa: "kʰoːdʒnaː" }
+    collocations:
+      - { id: "key", ref: "hi-0431" }
+  - id: "hi-0956"
+    target: "जीतना"
+    target_scripts: { perso_arabic: "جیتنا" }
+    reading: "jītnā"
+    ipa: "dʒiːt̪naː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "जीता", reading: "jītā" }
+          - { word: "जीती", reading: "jītī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "मैच जीतना", reading: "maic jītnā" }
+    examples:
+      - target: "हमारी टीम ने मैच जीता।"
+        reading: "hamārī ṭīm nē maic jītā."
+        ipa: "ɦəmaːriː ʈiːm neː mɛːtʃ dʒiːt̪aː"
+        bases:
+          - { word: "हमारी", ref: "hi-0756" }
+          - { word: "टीम", base: "टीम", reading: "ṭīm" }
+          - { word: "ने", base: "ने", reading: "nē" }
+          - { word: "मैच", base: "मैच", reading: "maic" }
+          - { word: "जीता", base: "जीतना", reading: "jītā" }
+      - target: "वह हर खेल जीतता है।"
+        reading: "vah har khēl jīttā hai."
+        ipa: "ʋəɦ ɦər kʰeːl dʒiːt̪t̪aː ɦɛː"
+        bases:
+          - { word: "वह", ref: "hi-0749" }
+          - { word: "हर", base: "हर", reading: "har" }
+          - { word: "खेल", base: "खेल", reading: "khēl" }
+          - { word: "जीतता", base: "जीतना", reading: "jīttā" }
+          - { word: "है", ref: "hi-0780" }
+    antonyms:
+      - { id: "lose", ref: "hi-0957" }
+    collocations:
+      - { id: "match", word: "मैच", reading: "maic", ipa: "mɛːtʃ" }
+  - id: "hi-0957"
+    target: "हारना"
+    target_scripts: { perso_arabic: "ہارنا" }
+    reading: "hārnā"
+    ipa: "ɦaːrnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "हारा", reading: "hārā" }
+          - { word: "हारी", reading: "hārī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "मैच हारना", reading: "maic hārnā" }
+    examples:
+      - target: "हम दूसरा मैच हार गए।"
+        reading: "ham dūsrā maic hār gaē."
+        ipa: "ɦəm d̪uːsraː mɛːtʃ ɦaːr ɡəeː"
+        bases:
+          - { word: "हम", ref: "hi-0053" }
+          - { word: "दूसरा", base: "दूसरा", reading: "dūsrā" }
+          - { word: "मैच", base: "मैच", reading: "maic" }
+          - { word: "हार", base: "हारना", reading: "hār" }
+          - { word: "गए", base: "जाना", reading: "gaē" }
+      - target: "वह खेल में कभी नहीं हारता।"
+        reading: "vah khēl mēm̐ kabhī nahīm̐ hārtā."
+        ipa: "ʋəɦ kʰeːl mẽː kəbʱiː nəɦĩː ɦaːrt̪aː"
+        bases:
+          - { word: "वह", ref: "hi-0749" }
+          - { word: "खेल", base: "खेल", reading: "khēl" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "कभी", base: "कभी", reading: "kabhī" }
+          - { word: "नहीं", ref: "hi-0156" }
+          - { word: "हारता", base: "हारना", reading: "hārtā" }
+    antonyms:
+      - { id: "win", ref: "hi-0956" }
+    collocations:
+      - { id: "match", word: "मैच", reading: "maic", ipa: "mɛːtʃ" }
+  - id: "hi-0958"
+    target: "कमाना"
+    target_scripts: { perso_arabic: "کمانا" }
+    reading: "kamānā"
+    ipa: "kəmaːnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "कमाया", reading: "kamāyā" }
+          - { word: "कमाई", reading: "kamāī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "पैसे कमाना", reading: "paisē kamānā" }
+    examples:
+      - target: "वह शहर में पैसे कमाता है।"
+        reading: "vah śahar mēm̐ paisē kamātā hai."
+        ipa: "ʋəɦ ʃəɦər mẽː pɛːseː kəmaːt̪aː ɦɛː"
+        bases:
+          - { word: "वह", ref: "hi-0749" }
+          - { word: "शहर", ref: "hi-0195" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "पैसे", ref: "hi-0234" }
+          - { word: "कमाता", base: "कमाना", reading: "kamātā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मैंने काम से पैसे कमाए।"
+        reading: "mainnē kām sē paisē kamāē."
+        ipa: "mɛːnneː kaːm seː pɛːseː kəmaːeː"
+        bases:
+          - { word: "मैंने", ref: "hi-0745" }
+          - { word: "काम", ref: "hi-0194" }
+          - { word: "से", ref: "hi-0276" }
+          - { word: "पैसे", ref: "hi-0234" }
+          - { word: "कमाए", base: "कमाना", reading: "kamāē" }
+    collocations:
+      - { id: "money", ref: "hi-0234" }
+  - id: "hi-0959"
+    target: "हँसना"
+    target_scripts: { perso_arabic: "ہنسنا" }
+    reading: "ham̐snā"
+    ipa: "ɦə̃snaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "हँसा", reading: "ham̐sā" }
+          - { word: "हँसी", reading: "ham̐sī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "खूब हँसना", reading: "khūb ham̐snā" }
+    examples:
+      - target: "बच्चे खूब हँसते हैं।"
+        reading: "baccē khūb ham̐stē haim̐."
+        ipa: "bətʃtʃeː kʰuːb ɦə̃st̪eː ɦɛ̃ː"
+        bases:
+          - { word: "बच्चे", ref: "hi-0383" }
+          - { word: "खूब", ref: "hi-0833" }
+          - { word: "हँसते", base: "हँसना", reading: "ham̐stē" }
+          - { word: "हैं", ref: "hi-0780" }
+      - target: "उसकी बात सुनकर सब हँसे।"
+        reading: "uskī bāt sunkar sab ham̐sē."
+        ipa: "ʊskiː baːt̪ sʊnkər səb ɦə̃seː"
+        bases:
+          - { word: "उसकी", ref: "hi-0757" }
+          - { word: "बात", base: "बात", reading: "bāt" }
+          - { word: "सुनकर", base: "सुनना", reading: "sunkar" }
+          - { word: "सब", ref: "hi-0054" }
+          - { word: "हँसे", base: "हँसना", reading: "ham̐sē" }
+    antonyms:
+      - { id: "cry", ref: "hi-0960" }
+    collocations:
+      - { id: "joke", word: "मज़ाक", reading: "mazāk", ipa: "məzaːk" }
+  - id: "hi-0960"
+    target: "रोना"
+    target_scripts: { perso_arabic: "رونا" }
+    reading: "rōnā"
+    ipa: "roːnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "रोया", reading: "rōyā" }
+          - { word: "रोई", reading: "rōī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "ज़ोर से रोना", reading: "zōr sē rōnā" }
+    examples:
+      - target: "बच्चा रोता है।"
+        reading: "baccā rōtā hai."
+        ipa: "bətʃtʃaː roːt̪aː ɦɛː"
+        bases:
+          - { word: "बच्चा", base: "बच्चा", reading: "baccā" }
+          - { word: "रोता", base: "रोना", reading: "rōtā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "वह बहुत थकी, लेकिन नहीं रोई।"
+        reading: "vah bahut thakī, lēkin nahīm̐ rōī."
+        ipa: "ʋəɦ bəɦʊt̪ t̪ʰəkiː leːkɪn nəɦĩː roːiː"
+        bases:
+          - { word: "वह", ref: "hi-0749" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "थकी", ref: "hi-0914" }
+          - { word: "लेकिन", ref: "hi-0343" }
+          - { word: "नहीं", ref: "hi-0156" }
+          - { word: "रोई", base: "रोना", reading: "rōī" }
+    antonyms:
+      - { id: "laugh", ref: "hi-0959" }
+    collocations:
+      - { id: "tears", word: "आँसू", reading: "ām̐sū", ipa: "ãːsuː" }
+  - id: "hi-0961"
+    target: "बुलाना"
+    target_scripts: { perso_arabic: "بلانا" }
+    reading: "bulānā"
+    ipa: "bʊlaːnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - id: "past"
+        kind: "behaviour"
+        words:
+          - { word: "बुलाया", reading: "bulāyā" }
+          - { word: "बुलाई", reading: "bulāī" }
+      - id: "use"
+        kind: "usage"
+        words:
+          - { word: "दोस्त को बुलाना", reading: "dōst kō bulānā" }
+    examples:
+      - target: "माँ मुझे बुलाती है।"
+        reading: "mām̐ mujhē bulātī hai."
+        ipa: "mãː mʊdʒʱeː bʊlaːt̪iː ɦɛː"
+        bases:
+          - { word: "माँ", ref: "hi-0377" }
+          - { word: "मुझे", ref: "hi-0745" }
+          - { word: "बुलाती", base: "बुलाना", reading: "bulātī" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "उसने दोस्त को बुलाया।"
+        reading: "usnē dōst kō bulāyā."
+        ipa: "ʊsneː d̪oːst̪ koː bʊlaːjaː"
+        bases:
+          - { word: "उसने", ref: "hi-0749" }
+          - { word: "दोस्त", ref: "hi-0185" }
+          - { word: "को", ref: "hi-0277" }
+          - { word: "बुलाया", base: "बुलाना", reading: "bulāyā" }
+    collocations:
+      - { id: "friend", ref: "hi-0185" }

@@ -1,0 +1,88 @@
+schema: 1
+id: "hi-describing-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-0923"
+    target: "मेरा कमरा बड़ा और साफ़ है।"
+    target_scripts: { perso_arabic: "میرا کمرہ بڑا اور صاف ہے۔" }
+    reading: "mērā kamrā baṛā aur sāf hai."
+    ipa: "meːraː kəmraː bəɽaː ɔːr saːf ɦɛː"
+    pos: "phrase"
+    bases: [{ word: "मेरा", ref: "hi-0752" }, { word: "कमरा", ref: "hi-0421" }, { word: "बड़ा", ref: "hi-0894" }, { word: "और", ref: "hi-0337" }, { word: "साफ़", ref: "hi-0901" }, { word: "है", ref: "hi-0780" }]
+    confusables:
+      - { id: "w1", ref: "hi-0902", kind: "word" }
+      - { id: "f1", word: "बड़ी", reading: "baṛī", ipa: "bəɽiː", kind: "form" }
+  - id: "hi-0924"
+    target: "छोटे बच्चे खुश हैं।"
+    target_scripts: { perso_arabic: "چھوٹے بچے خوش ہیں۔" }
+    reading: "chōṭē baccē khuś haim̐."
+    ipa: "tʃʰoːʈeː bətʃtʃeː kʰʊʃ ɦɛ̃ː"
+    pos: "phrase"
+    bases: [{ word: "छोटे", base: "छोटा", reading: "chōṭā" }, { word: "बच्चे", ref: "hi-0111" }, { word: "खुश", ref: "hi-0912" }, { word: "हैं", ref: "hi-0780" }]
+    confusables:
+      - { id: "w1", ref: "hi-0913", kind: "word" }
+      - { id: "f1", word: "छोटी", reading: "chōṭī", ipa: "tʃʰoːʈiː", kind: "form" }
+  - id: "hi-0925"
+    target: "आज का काम आसान नहीं है।"
+    target_scripts: { perso_arabic: "آج کا کام آسان نہیں ہے۔" }
+    reading: "āj kā kām āsān nahīm̐ hai."
+    ipa: "aːdʒ kaː kaːm aːsaːn nəɦĩː ɦɛː"
+    pos: "phrase"
+    bases: [{ word: "आज", ref: "hi-0299" }, { word: "का", ref: "hi-0279" }, { word: "काम", ref: "hi-0194" }, { word: "आसान", ref: "hi-0904" }, { word: "नहीं", ref: "hi-0156" }, { word: "है", ref: "hi-0780" }]
+    confusables:
+      - { id: "w1", ref: "hi-0906", kind: "word" }
+      - { id: "w2", ref: "hi-0901", kind: "word" }
+  - id: "hi-0926"
+    target: "दूध गरम नहीं, ठंडा है।"
+    target_scripts: { perso_arabic: "دودھ گرم نہیں، ٹھنڈا ہے۔" }
+    reading: "dūdh garam nahīm̐, ṭhaṇḍā hai."
+    ipa: "d̪uːd̪ʱ ɡərəm nəɦĩː ʈʰəɳɖaː ɦɛː"
+    pos: "phrase"
+    bases: [{ word: "दूध", ref: "hi-0259" }, { word: "गरम", ref: "hi-0910" }, { word: "नहीं", ref: "hi-0156" }, { word: "ठंडा", ref: "hi-0911" }, { word: "है", ref: "hi-0780" }]
+    confusables:
+      - { id: "w1", ref: "hi-0912", kind: "word" }
+      - { id: "f1", word: "ठंडी", reading: "ṭhaṇḍī", ipa: "ʈʰəɳɖiː", kind: "form" }
+  - id: "hi-0927"
+    target: "वह बहुत थकी, लेकिन खुश है।"
+    target_scripts: { perso_arabic: "وہ بہت تھکی، لیکن خوش ہے۔" }
+    reading: "vah bahut thakī, lēkin khuś hai."
+    ipa: "ʋəɦ bəɦʊt̪ t̪ʰəkiː leːkɪn kʰʊʃ ɦɛː"
+    pos: "phrase"
+    bases: [{ word: "वह", ref: "hi-0749" }, { word: "बहुत", ref: "hi-0866" }, { word: "थकी", base: "थका", reading: "thakā" }, { word: "लेकिन", ref: "hi-0343" }, { word: "खुश", ref: "hi-0912" }, { word: "है", ref: "hi-0780" }]
+    confusables:
+      - { id: "w1", ref: "hi-0915", kind: "word" }
+      - { id: "f1", word: "थका", reading: "thakā", ipa: "t̪ʰəkaː", kind: "form" }
+  - id: "hi-0928"
+    target: "आसमान नीला है और बादल सफ़ेद हैं।"
+    target_scripts: { perso_arabic: "آسمان نیلا ہے اور بادل سفید ہیں۔" }
+    reading: "āsmān nīlā hai aur bādal safēd haim̐."
+    ipa: "aːsmaːn niːlaː ɦɛː ɔːr baːd̪əl səfeːd̪ ɦɛ̃ː"
+    pos: "phrase"
+    bases: [{ word: "आसमान", base: "आसमान", reading: "āsmān" }, { word: "नीला", ref: "hi-0918" }, { word: "है", ref: "hi-0780" }, { word: "और", ref: "hi-0337" }, { word: "बादल", base: "बादल", reading: "bādal" }, { word: "सफ़ेद", ref: "hi-0921" }, { word: "हैं", ref: "hi-0780" }]
+    confusables:
+      - { id: "w1", ref: "hi-0917", kind: "word" }
+      - { id: "w2", ref: "hi-0919", kind: "word" }
+  - id: "hi-0929"
+    target: "मेरा दोस्त लंबा है।"
+    target_scripts: { perso_arabic: "میرا دوست لمبا ہے۔" }
+    reading: "mērā dōst lambā hai."
+    ipa: "meːraː d̪oːst̪ ləmbaː ɦɛː"
+    pos: "phrase"
+    bases: [{ word: "मेरा", ref: "hi-0752" }, { word: "दोस्त", ref: "hi-0185" }, { word: "लंबा", ref: "hi-0906" }, { word: "है", ref: "hi-0780" }]
+    confusables:
+      - { id: "w1", ref: "hi-0895", kind: "word" }
+      - { id: "w2", ref: "hi-0909", kind: "word" }
+  - id: "hi-0930"
+    target: "आज मौसम अच्छा है।"
+    target_scripts: { perso_arabic: "آج موسم اچھا ہے۔" }
+    reading: "āj mausam acchā hai."
+    ipa: "aːdʒ mɔːsəm ətʃtʃʰaː ɦɛː"
+    pos: "phrase"
+    bases: [{ word: "आज", ref: "hi-0299" }, { word: "मौसम", base: "मौसम", reading: "mausam" }, { word: "अच्छा", ref: "hi-0898" }, { word: "है", ref: "hi-0780" }]
+    confusables:
+      - { id: "w1", ref: "hi-0899", kind: "word" }
+      - { id: "f1", word: "अच्छी", reading: "acchī", ipa: "ətʃtʃʰiː", kind: "form" }
