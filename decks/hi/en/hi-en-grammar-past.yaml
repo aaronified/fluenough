@@ -6,12 +6,22 @@ native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Past tense"
 license: "CC-BY-SA-4.0"
 description: "I came, she went: the simple past of verbs without an object."
-pattern:
-  name: "Simple past, intransitive verbs"
+table:
   slot_name: "person and gender"
-  prompt: "{lemma} ({gloss}) — {slot}"
-  entries:
-    "aanaa": "to come"
-    "jaanaa": "to go"
-    "baithnaa": "to sit"
-  notes: "With a verb that takes no object, the past agrees with the doer: -आ (-ā), -ई (-ī), -ए (-ē), -ईं (-īm̐). जाना (jānā) is irregular: गया (gayā). Some writers spell आए (āē) and गई (gaī) as आये (āyē) and गयी (gayī). With an object, the rule is different: see Pitfalls."
+  slots:
+    "i-m": "I, masculine"
+    "i-f": "I, feminine"
+    "you-m": "you, informal, masculine"
+    "you-f": "you, informal, feminine"
+    "he-m": "he or she, masculine"
+    "he-f": "he or she, feminine"
+    "we-m": "we, masculine"
+    "we-f": "we, feminine"
+    "formal-m": "you, formal, masculine"
+    "formal-f": "you, formal, feminine"
+    "they-m": "they, masculine"
+    "they-f": "they, feminine"
+rules:
+  "hi-rule-past":
+    name: "-आ (-ā), -ई (-ī), -ए (-ē), -ईं (-īm̐): the simple past"
+    explanation: "With a verb that takes no ने (nē), the past agrees with the doer: -आ (-ā), -ई (-ī), -ए (-ē), -ईं (-īm̐). जाना (jānā) is irregular: गया (gayā). Some writers spell आए (āē) and गई (gaī) as आये (āyē) and गयी (gayī). Verbs that take no ने, such as आना (ānā), जाना (jānā), लाना (lānā) and भूलना (bhūlnā), are in this table. Verbs that take ने, such as लिखना (likhnā), to write, are not: with an object, the doer takes ने and the verb agrees with the object, not the doer. मैंने चिट्ठी लिखी (mainnē ciṭṭhī likhī), I wrote the letter, with a feminine object; मैंने गीत लिखा (mainnē gīt likhā), I wrote the song, with a masculine one. The same rule holds for the present perfect."
