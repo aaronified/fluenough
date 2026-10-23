@@ -4,7 +4,7 @@ Source of truth: this wiki page.
 
 
 - **Status:** Accepted. Amended by ADR-0033: revisions from Today and by
-  skill are recorded; a deck's Revise still records nothing.
+  skill are recorded; a deck's Revise records too since 2026-10-23 (ADR-0033).
 - **Date:** 2026-10-02
 
 ## Context

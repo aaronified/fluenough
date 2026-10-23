@@ -48,8 +48,9 @@ none twice.
 ## `deck_index.py`
 
 Writes `decks/index.json`, the list the app downloads decks from (#210,
-ADR-0037). Run it after changing anything under `decks/`, and commit the
-result with your change.
+ADR-0037). The `deck-index.yml` workflow runs it on main after each merge
+that touches `decks/` and commits the result (owner, 2026-10-23); builders
+do not run it (it runs the full validator, up to an hour).
 
 ```sh
 python3 tools/deck_index.py            # write it
@@ -176,7 +177,6 @@ English text goes to `en/<lang>-en-script.yaml`.
 ```sh
 python3 tools/split_deck.py decks/te/te-en-home.yaml     # te-home + en/te-en-home
 python3 tools/split_deck.py --check decks/te/te-en-*.yaml  # try, write nothing
-python3 tools/deck_index.py
 ```
 
 Reading decks stay single-file, and so do paths, facts, numbers and
@@ -211,7 +211,6 @@ python3 tools/import_wiktionary.py hi Hindi.jsonl --dump-date 2026-10-13 --write
 python3 tools/import_wiktionary.py hi Hindi.jsonl --dump-date 2026-10-13 --write --audio --images
 # The image proposals a reviewer approved, by card id.
 python3 tools/import_wiktionary.py hi Hindi.jsonl --dump-date 2026-10-13 --write --images --approve hi-0419,hi-0420
-python3 tools/deck_index.py
 python3 tools/validate_decks.py decks/
 ```
 

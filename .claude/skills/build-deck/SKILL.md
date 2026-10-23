@@ -165,15 +165,11 @@ Before you start:
    ```sh
    python3 tools/wikipedia_frequency.py <lang> <lang>wiki-<date>-pages-articles.xml.bz2 --write
    ```
-7. **Check.** Run both until clean:
-
-   ```sh
-   python3 tools/deck_index.py
-   python3 tools/validate_decks.py decks/
-   ```
-
-   Errors block; read every warning and fix or explain it. Commit
-   `decks/index.json` with the decks. Tools details: `tools/README.md`.
+7. **Check.** CI runs the validator
+   (`python3 tools/validate_decks.py decks/`); read its result, and fix every
+   error and each warning or explain it. Do not run `tools/deck_index.py` or
+   commit `decks/index.json`: a workflow regenerates it on main after the
+   merge (owner, 2026-10-23). Tools details: `tools/README.md`.
 8. **Ship.** Never create tags. For the owner's work, open a pull request
    (owner, 2026-10-16: "Do use PRs for everything"); a deck-only change
    needs only "Validate decks" and "Released app reads the decks" green
