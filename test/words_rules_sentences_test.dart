@@ -428,12 +428,12 @@ void main() {
         'became known, not those known before', (tester) async {
       usePhone(tester, textScale: 1.4);
       final state = await bengali();
-      final words = <String>[
+      final words = <String>{
         for (final entry in state.decks)
           if (entry.language.code == 'bn' && entry.deck.kind == DeckKind.vocab)
             for (final card in entry.cards)
               if (card.pos == 'noun') card.id,
-      ].toSet().take(2).toList();
+      }.take(2).toList();
       // One word known long before the lesson, one during it.
       know(state, words[0], ago: const Duration(hours: 5));
       know(state, words[1]);
