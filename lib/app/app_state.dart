@@ -650,7 +650,7 @@ class AppState extends ChangeNotifier {
     return today;
   }
 
-  DeckEntry? deckById(String id) => _catalog.byId(id);
+  DeckEntry? deckById(String id) => _view.byId(id);
 
   /// The path of [entry]'s course (ADR-0013), or null if it has none.
   CoursePath? pathOf(DeckEntry entry) => _catalog.pathOf(entry);
@@ -662,7 +662,7 @@ class AppState extends ChangeNotifier {
       _catalog.languagePaths[language];
 
   /// The deck a card came from.
-  DeckEntry? deckOf(Card card) => _catalog.byId(card.deckId);
+  DeckEntry? deckOf(Card card) => _view.byId(card.deckId);
 
   /// The decks in the languages the current profile learns, and of those,
   /// only the [shownLanguage]'s while one is chosen (#461): what Today
@@ -701,7 +701,7 @@ class AppState extends ChangeNotifier {
   }
 
   /// Every language the catalog teaches, one per code.
-  List<LanguageInfo> get languages => _catalog.languages;
+  List<LanguageInfo> get languages => _view.languages;
 
   /// The languages the language bar at the top of Today, Decks and
   /// Progress offers (#461, #528): those the profile learns that have
