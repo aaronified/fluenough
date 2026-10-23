@@ -28,7 +28,7 @@ class QuestionContext {
   final bool Function(SessionItem item)? typed;
 
   /// The other forms of a card's word named by its `bases`: the cards that
-  /// share a base with it ([formSiblings]). Null where none are known.
+  /// are its siblings ([formSiblings]). Null where none are known.
   final List<Card> Function(Card card)? siblingsOf;
 }
 
