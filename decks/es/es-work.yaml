@@ -1,0 +1,341 @@
+schema: 1
+id: "es-work"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "work"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-0502"
+    target: "el trabajo"
+    ipa: "el tɾaˈbaxo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "trabajo", base: "trabajo" }]
+    examples:
+      - target: "Tengo un trabajo nuevo."
+        ipa: "ˈtenɡo un tɾaˈbaxo ˈnwebo"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "un", base: "un" }, { word: "trabajo", base: "trabajo" }, { word: "nuevo", ref: "es-0035" }]
+      - target: "Mi trabajo es en la oficina."
+        ipa: "mi tɾaˈbaxo es en la ofiˈθina"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "trabajo", base: "trabajo" }, { word: "es", ref: "es-0022" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "oficina", ref: "es-0503" }]
+  - id: "es-0503"
+    target: "la oficina"
+    ipa: "la ofiˈθina"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "oficina", base: "oficina" }]
+    examples:
+      - target: "La oficina está abierta hoy."
+        ipa: "la ofiˈθina esˈta aˈbjeɾta oj"
+        bases: [{ word: "La", base: "la" }, { word: "oficina", base: "oficina" }, { word: "está", ref: "es-0023" }, { word: "abierta", base: "abierto" }, { word: "hoy", ref: "es-0331" }]
+      - target: "Trabajo en la oficina."
+        ipa: "tɾaˈbaxo en la ofiˈθina"
+        bases: [{ word: "Trabajo", ref: "es-0259" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "oficina", base: "oficina" }]
+  - id: "es-0504"
+    target: "el jefe"
+    ipa: "el ˈxefe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "jefe", base: "jefe" }]
+    examples:
+      - target: "Mi jefe es simpático."
+        ipa: "mi ˈxefe es simˈpatiko"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "jefe", base: "jefe" }, { word: "es", ref: "es-0022" }, { word: "simpático", ref: "es-0422" }]
+      - target: "El jefe llega temprano."
+        ipa: "el ˈxefe ˈʝeɡa temˈpɾano"
+        bases: [{ word: "El", base: "el" }, { word: "jefe", base: "jefe" }, { word: "llega", ref: "es-0290" }, { word: "temprano", ref: "es-0338" }]
+  - id: "es-0505"
+    target: "el empleado"
+    ipa: "el empleˈado"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "empleado", base: "empleado" }]
+    examples:
+      - target: "El empleado trabaja en la empresa."
+        ipa: "el empleˈado tɾaˈbaxa en la emˈpɾesa"
+        bases: [{ word: "El", base: "el" }, { word: "empleado", base: "empleado" }, { word: "trabaja", ref: "es-0259" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "empresa", ref: "es-0514" }]
+      - target: "Un empleado nuevo llega hoy."
+        ipa: "un empleˈado ˈnwebo ˈʝeɡa oj"
+        bases: [{ word: "Un", base: "un" }, { word: "empleado", base: "empleado" }, { word: "nuevo", ref: "es-0035" }, { word: "llega", ref: "es-0290" }, { word: "hoy", ref: "es-0331" }]
+  - id: "es-0506"
+    target: "el médico"
+    ipa: "el ˈmediko"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "médico", base: "médico" }]
+    examples:
+      - target: "El médico trabaja en el hospital."
+        ipa: "el ˈmediko tɾaˈbaxa en el ospiˈtal"
+        bases: [{ word: "El", base: "el" }, { word: "médico", base: "médico" }, { word: "trabaja", ref: "es-0259" }, { word: "en", base: "en" }, { word: "hospital", base: "hospital" }]
+      - target: "Llamo al médico."
+        ipa: "ˈʝamo al ˈmediko"
+        bases: [{ word: "Llamo", ref: "es-0302" }, { word: "al", base: "al" }, { word: "médico", base: "médico" }]
+  - id: "es-0507"
+    target: "la enfermera"
+    ipa: "la enfeɾˈmeɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "enfermera", base: "enfermera" }]
+    examples:
+      - target: "La enfermera ayuda al médico."
+        ipa: "la enfeɾˈmeɾa aˈʝuda al ˈmediko"
+        bases: [{ word: "La", base: "la" }, { word: "enfermera", base: "enfermera" }, { word: "ayuda", ref: "es-0303" }, { word: "al", base: "al" }, { word: "médico", ref: "es-0506" }]
+      - target: "La enfermera trabaja por la noche."
+        ipa: "la enfeɾˈmeɾa tɾaˈbaxa poɾ la ˈnotʃe"
+        bases: [{ word: "La", base: "la" }, { word: "enfermera", base: "enfermera" }, { word: "trabaja", ref: "es-0259" }, { word: "por", base: "por" }, { word: "noche", ref: "es-0020" }]
+  - id: "es-0508"
+    target: "el cocinero"
+    ipa: "el koθiˈneɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "cocinero", base: "cocinero" }]
+    examples:
+      - target: "El cocinero cocina la comida."
+        ipa: "el koθiˈneɾo koˈθina la koˈmida"
+        bases: [{ word: "El", base: "el" }, { word: "cocinero", base: "cocinero" }, { word: "cocina", ref: "es-0284" }, { word: "la", base: "la" }, { word: "comida", ref: "es-0015" }]
+      - target: "Mi hermano es cocinero."
+        ipa: "mi eɾˈmano es koθiˈneɾo"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermano", ref: "es-0161" }, { word: "es", ref: "es-0022" }, { word: "cocinero", base: "cocinero" }]
+  - id: "es-0509"
+    target: "el conductor"
+    ipa: "el kondukˈtoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "conductor", base: "conductor" }]
+    examples:
+      - target: "El conductor conduce el coche."
+        ipa: "el kondukˈtoɾ konˈduθe el ˈkotʃe"
+        bases: [{ word: "El", base: "el" }, { word: "conductor", base: "conductor" }, { word: "conduce", base: "conducir" }, { word: "coche", base: "coche" }]
+      - target: "Un conductor llega tarde."
+        ipa: "un kondukˈtoɾ ˈʝeɡa ˈtaɾde"
+        bases: [{ word: "Un", base: "un" }, { word: "conductor", base: "conductor" }, { word: "llega", ref: "es-0290" }, { word: "tarde", base: "tarde" }]
+  - id: "es-0510"
+    target: "el ingeniero"
+    ipa: "el inxeˈnjeɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "ingeniero", base: "ingeniero" }]
+    examples:
+      - target: "Mi padre es ingeniero."
+        ipa: "mi ˈpadɾe es inxeˈnjeɾo"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", ref: "es-0159" }, { word: "es", ref: "es-0022" }, { word: "ingeniero", base: "ingeniero" }]
+      - target: "El ingeniero necesita el documento."
+        ipa: "el inxeˈnjeɾo neθeˈsita el dokuˈmento"
+        bases: [{ word: "El", base: "el" }, { word: "ingeniero", base: "ingeniero" }, { word: "necesita", ref: "es-0288" }, { word: "documento", ref: "es-0519" }]
+  - id: "es-0511"
+    target: "la reunión"
+    ipa: "la rewˈnjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "reunión", base: "reunión" }]
+    examples:
+      - target: "La reunión empieza a las nueve."
+        ipa: "la rewˈnjon emˈpjeθa a las ˈnwebe"
+        bases: [{ word: "La", base: "la" }, { word: "reunión", base: "reunión" }, { word: "empieza", base: "empezar" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "nueve", ref: "es-0213" }]
+      - target: "Hay una reunión hoy en la oficina."
+        ipa: "aj ˈuna rewˈnjon oj en la ofiˈθina"
+        bases:
+          - { word: "Hay", base: "haber" }
+          - { word: "una", base: "una" }
+          - { word: "reunión", base: "reunión" }
+          - { word: "hoy", ref: "es-0331" }
+          - { word: "en", base: "en" }
+          - { word: "la", base: "la" }
+          - { word: "oficina", ref: "es-0503" }
+  - id: "es-0512"
+    target: "el horario"
+    ipa: "el oˈɾaɾjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "horario", base: "horario" }]
+    examples:
+      - target: "El horario es nuevo."
+        ipa: "el oˈɾaɾjo es ˈnwebo"
+        bases: [{ word: "El", base: "el" }, { word: "horario", base: "horario" }, { word: "es", ref: "es-0022" }, { word: "nuevo", ref: "es-0035" }]
+      - target: "Mi horario es de ocho a cuatro."
+        ipa: "mi oˈɾaɾjo es de ˈotʃo a ˈkwatɾo"
+        bases:
+          - { word: "Mi", ref: "es-0129" }
+          - { word: "horario", base: "horario" }
+          - { word: "es", ref: "es-0022" }
+          - { word: "de", base: "de" }
+          - { word: "ocho", ref: "es-0212" }
+          - { word: "a", base: "a" }
+          - { word: "cuatro", ref: "es-0208" }
+  - id: "es-0513"
+    target: "el dinero"
+    ipa: "el diˈneɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "dinero", base: "dinero" }]
+    examples:
+      - target: "No tengo dinero."
+        ipa: "no ˈtenɡo diˈneɾo"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "tengo", ref: "es-0024" }, { word: "dinero", base: "dinero" }]
+      - target: "El dinero no es todo."
+        ipa: "el diˈneɾo no es ˈtodo"
+        bases: [{ word: "El", base: "el" }, { word: "dinero", base: "dinero" }, { word: "no", ref: "es-0043" }, { word: "es", ref: "es-0022" }, { word: "todo", base: "todo" }]
+  - id: "es-0514"
+    target: "la empresa"
+    ipa: "la emˈpɾesa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "empresa", base: "empresa" }]
+    examples:
+      - target: "La empresa tiene dos oficinas."
+        ipa: "la emˈpɾesa ˈtjene dos ofiˈθinas"
+        bases: [{ word: "La", base: "la" }, { word: "empresa", base: "empresa" }, { word: "tiene", ref: "es-0024" }, { word: "dos", ref: "es-0206" }, { word: "oficinas", base: "oficina" }]
+      - target: "Mi hermana trabaja para una empresa grande."
+        ipa: "mi eɾˈmana tɾaˈbaxa ˈpaɾa ˈuna emˈpɾesa ˈɡɾande"
+        bases:
+          - { word: "Mi", ref: "es-0129" }
+          - { word: "hermana", ref: "es-0162" }
+          - { word: "trabaja", ref: "es-0259" }
+          - { word: "para", base: "para" }
+          - { word: "una", base: "una" }
+          - { word: "empresa", base: "empresa" }
+          - { word: "grande", ref: "es-0031" }
+  - id: "es-0515"
+    target: "el cliente"
+    ipa: "el ˈkljente"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "cliente", base: "cliente" }]
+    examples:
+      - target: "El cliente pide agua."
+        ipa: "el ˈkljente ˈpide ˈaɡwa"
+        bases: [{ word: "El", base: "el" }, { word: "cliente", base: "cliente" }, { word: "pide", base: "pedir" }, { word: "agua", ref: "es-0012" }]
+      - target: "Hoy hay muchos clientes."
+        ipa: "oj aj ˈmutʃos ˈkljentes"
+        bases: [{ word: "Hoy", ref: "es-0331" }, { word: "hay", base: "haber" }, { word: "muchos", base: "muchos" }, { word: "clientes", base: "cliente" }]
+  - id: "es-0516"
+    target: "el turno"
+    ipa: "el ˈtuɾno"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "turno", base: "turno" }]
+    examples:
+      - target: "Mi turno empieza a las siete."
+        ipa: "mi ˈtuɾno emˈpjeθa a las ˈsjete"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "turno", base: "turno" }, { word: "empieza", base: "empezar" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "siete", ref: "es-0211" }]
+      - target: "Hoy tengo el turno de la noche."
+        ipa: "oj ˈtenɡo el ˈtuɾno de la ˈnotʃe"
+        bases:
+          - { word: "Hoy", ref: "es-0331" }
+          - { word: "tengo", ref: "es-0024" }
+          - { word: "el", base: "el" }
+          - { word: "turno", base: "turno" }
+          - { word: "de", base: "de" }
+          - { word: "la", base: "la" }
+          - { word: "noche", ref: "es-0020" }
+  - id: "es-0517"
+    target: "el sueldo"
+    ipa: "el ˈsweldo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "sueldo", base: "sueldo" }]
+    examples:
+      - target: "El sueldo es bueno."
+        ipa: "el ˈsweldo es ˈbweno"
+        bases: [{ word: "El", base: "el" }, { word: "sueldo", base: "sueldo" }, { word: "es", ref: "es-0022" }, { word: "bueno", ref: "es-0033" }]
+      - target: "Mi sueldo es bajo."
+        ipa: "mi ˈsweldo es ˈbaxo"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "sueldo", base: "sueldo" }, { word: "es", ref: "es-0022" }, { word: "bajo", ref: "es-0255" }]
+  - id: "es-0518"
+    target: "la pausa"
+    ipa: "la ˈpawsa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "pausa", base: "pausa" }]
+    examples:
+      - target: "Tengo una pausa a las once."
+        ipa: "ˈtenɡo ˈuna ˈpawsa a las ˈonθe"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "pausa", base: "pausa" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "once", ref: "es-0215" }]
+      - target: "La pausa es corta."
+        ipa: "la ˈpawsa es ˈkoɾta"
+        bases: [{ word: "La", base: "la" }, { word: "pausa", base: "pausa" }, { word: "es", ref: "es-0022" }, { word: "corta", ref: "es-0430" }]
+  - id: "es-0519"
+    target: "el documento"
+    ipa: "el dokuˈmento"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "documento", base: "documento" }]
+    examples:
+      - target: "Necesito el documento."
+        ipa: "neθeˈsito el dokuˈmento"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "el", base: "el" }, { word: "documento", base: "documento" }]
+      - target: "¿Dónde está el documento?"
+        ipa: "ˈdonde esˈta el dokuˈmento"
+        bases: [{ word: "Dónde", ref: "es-0056" }, { word: "está", ref: "es-0023" }, { word: "el", base: "el" }, { word: "documento", base: "documento" }]
+  - id: "es-0520"
+    target: "ganar"
+    ipa: "ɡaˈnaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Gano mucho dinero."
+        ipa: "ˈɡano ˈmutʃo diˈneɾo"
+        bases: [{ word: "Gano", base: "ganar" }, { word: "mucho", ref: "es-0053" }, { word: "dinero", ref: "es-0513" }]
+      - target: "Mi hermano gana bien."
+        ipa: "mi eɾˈmano ˈɡana bjen"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermano", ref: "es-0161" }, { word: "gana", base: "ganar" }, { word: "bien", ref: "es-0326" }]
+  - id: "es-0521"
+    target: "terminar"
+    ipa: "teɾmiˈnaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Termino el trabajo a las cinco."
+        ipa: "teɾˈmino el tɾaˈbaxo a las ˈθinko"
+        bases: [{ word: "Termino", base: "terminar" }, { word: "el", base: "el" }, { word: "trabajo", ref: "es-0502" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "cinco", ref: "es-0209" }]
+      - target: "¿Cuándo terminas la reunión?"
+        ipa: "ˈkwando teɾˈminas la rewˈnjon"
+        bases: [{ word: "Cuándo", ref: "es-0057" }, { word: "terminas", base: "terminar" }, { word: "la", base: "la" }, { word: "reunión", ref: "es-0511" }]
+  - id: "es-0522"
+    target: "vender"
+    ipa: "benˈdeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Vendemos pan en la tienda."
+        ipa: "benˈdemos pan en la ˈtjenda"
+        bases: [{ word: "Vendemos", base: "vender" }, { word: "pan", ref: "es-0013" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "tienda", base: "tienda" }]
+      - target: "La empresa vende muchos productos."
+        ipa: "la emˈpɾesa ˈbende ˈmutʃos pɾoˈduktos"
+        bases: [{ word: "La", base: "la" }, { word: "empresa", ref: "es-0514" }, { word: "vende", base: "vender" }, { word: "muchos", base: "muchos" }, { word: "productos", base: "producto" }]
+  - id: "es-0523"
+    target: "contestar"
+    ipa: "kontesˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Contesto el teléfono."
+        ipa: "konˈtesto el teˈlefono"
+        bases: [{ word: "Contesto", base: "contestar" }, { word: "el", base: "el" }, { word: "teléfono", ref: "es-0247" }]
+      - target: "Por favor contesta la pregunta."
+        ipa: "poɾ faˈboɾ konˈtesta la pɾeˈɡunta"
+        bases: [{ word: "Por", base: "por" }, { word: "favor", base: "favor" }, { word: "contesta", base: "contestar" }, { word: "la", base: "la" }, { word: "pregunta", base: "pregunta" }]

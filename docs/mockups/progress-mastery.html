@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Progress Mastery</title>
-<meta name="description" content="Progress's mastery view (#678): a words count, a 6-point star of mastery per skill, and a line chart of known over taught. Hindi in light, Bengali in dark, 1.4x text.">
+<meta name="description" content="Progress's mastery view (#678): the words count and a streak tile, a 7-day running calendar, a tappable 6-point star (a fill of known over B1 total, a solid blue outline of known over taught), weakest tags and leeches, and the two line charts the star opens. Hindi in light, Bengali in dark, 1.4x text.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&display=swap">
@@ -34,7 +34,7 @@ th,td{border-bottom:1px solid var(--page-line);padding:6px 8px;text-align:left;v
 code{font-size:13px}
 
 /* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed, contrast 0) ===== */
-.ph{--t:1.4;width:360px;max-width:100%;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+.ph{--t:1.4;container-type:inline-size;width:360px;max-width:100%;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
  background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",sans-serif;
  box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
 /* the language bar, static: All at the left, the settled wheel (pill with glyph and name), bug report at the right */
@@ -56,6 +56,8 @@ code{font-size:13px}
 .words span{font-size:calc(16px*var(--t));color:var(--onSv);font-variant-numeric:tabular-nums}
 svg.ch{display:block;width:100%;height:auto;overflow:visible}
 svg.ch text{font-family:inherit;font-size:calc(12px*var(--t))}
+.legend.one{grid-template-columns:1fr}
+.tap{display:inline-flex;align-items:center;gap:2px}.tap svg{width:calc(20px*var(--t));height:calc(20px*var(--t));fill:currentColor}
 .legend{display:grid;grid-template-columns:1fr 1fr;gap:4px 8px;margin-top:6px}
 .legend div{display:flex;align-items:center;gap:6px;font-size:calc(12px*var(--t));line-height:calc(16px*var(--t));color:var(--onS)}
 .legend svg{flex:none;width:26px;height:10px;overflow:visible}
@@ -66,6 +68,49 @@ svg.ch text{font-family:inherit;font-size:calc(12px*var(--t))}
 .nd i{width:64px;height:32px;border-radius:16px;display:flex;align-items:center;justify-content:center}
 .nd svg{width:24px;height:24px;fill:currentColor}
 .nd.on{color:var(--onS);font-weight:700}.nd.on i{background:var(--sc);color:var(--onSc)}
+
+.sticky{position:sticky;top:0;z-index:5;background:var(--page-bg);padding:8px 0 10px;border-bottom:1px solid var(--page-line);margin:0 0 20px}
+.tw{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center}
+.tg{display:flex;align-items:center;gap:8px;font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+.seg{display:inline-flex;border:1px solid var(--page-line);border-radius:10px;overflow:hidden}
+.seg button{font:inherit;font-size:13px;line-height:18px;font-weight:600;padding:5px 10px;border:0;background:var(--page-card);color:var(--page-fg);cursor:pointer;min-height:32px}
+.seg button+button{border-left:1px solid var(--page-line)}
+.seg button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg)}
+.hl-on .chg{outline:2px dashed #E5484D;outline-offset:3px;position:relative}
+.hl-on .chg::after{content:"added";position:absolute;top:-11px;right:8px;background:#B3261E;color:#fff;font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:2;letter-spacing:.3px}
+.hl-on .chg.upd::after{content:"changed"}
+.card.chg{position:relative}
+.top .card.chg{overflow:visible}
+.rowh{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.tbtn{font-size:calc(14px*var(--t));line-height:calc(20px*var(--t));font-weight:500;color:var(--p);padding:4px 0 4px 8px;white-space:nowrap}
+.brow{display:flex;align-items:center;gap:12px;margin-top:12px}
+.brow .l{width:92px;flex:none;font-size:calc(14px*var(--t));line-height:calc(20px*var(--t));color:var(--onS)}
+.brow .tr{flex:1;height:12px;border-radius:6px;background:var(--sc);overflow:hidden}
+.brow .tr i{display:block;height:100%;border-radius:6px;background:var(--ter)}
+.brow .v{width:calc(40px*var(--t));text-align:end;font-size:calc(14px*var(--t));color:var(--onS);font-variant-numeric:tabular-nums;flex:none}
+.leech{display:flex;align-items:center;gap:16px;border-radius:16px;padding:16px 16px 16px 18px}
+.leech.has{background:var(--eC);color:var(--onEC)}
+.leech.none{background:var(--sLow);color:var(--onS);box-shadow:0 0 0 1px var(--olv)}
+.leech svg{width:24px;height:24px;fill:currentColor;flex:none}
+.leech .tx{flex:1;min-width:0}
+.leech b{display:block;font-size:calc(16px*var(--t));line-height:calc(22px*var(--t));font-weight:700}
+.leech span{display:block;font-size:calc(14px*var(--t));line-height:calc(20px*var(--t))}
+.leech.none span{color:var(--onSv)}
+.top{display:flex;gap:8px}
+.top .card{flex:7;min-width:0;padding:12px 10px}
+.top .card.w{flex:8}
+.top .ct{font-size:5cqw;line-height:7cqw;white-space:nowrap}
+.top .words{flex-wrap:nowrap;white-space:nowrap;gap:4px;align-items:baseline}
+.top .words b{font-size:7.8cqw}
+.top .words span{font-size:3.9cqw}
+.top .cs{white-space:nowrap;font-size:3.6cqw;line-height:5.2cqw}
+.week{display:flex;list-style:none;margin:0;padding:0}
+.day{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:4px}
+.day .mk{position:relative;width:100%;height:calc(24px*var(--t));display:flex;align-items:center;justify-content:center}
+.day .mk svg{height:calc(22px*var(--t));width:auto;display:block;overflow:visible}
+.day .jn{position:absolute;top:50%;left:calc(50% + 15px);width:calc(100% - 30px);height:3px;margin-top:-1.5px;border-radius:2px;background:var(--fire)}
+.day .in{font-size:calc(12px*var(--t));line-height:calc(16px*var(--t));color:var(--onSv);font-weight:500}
+.day.today .in{color:var(--onS);font-weight:700}
 /* the star grows from the centre once, in 400 ms, then stays still */
 .grow{transform-box:view-box;transform-origin:var(--cx) var(--cy);animation:grow .4s cubic-bezier(.2,.8,.2,1) both}
 @keyframes grow{from{transform:scale(0)}to{transform:scale(1)}}
@@ -75,150 +120,218 @@ svg.ch text{font-family:inherit;font-size:calc(12px*var(--t))}
 <body>
 <div class="wrap">
 <h1>Progress: mastery</h1>
-<p class="lede">The Progress tab's new mastery view (#678): a words count, a 6-point star and a line chart, in place of #575's per-skill bars. Main state only (owner, 2026-10-21). Hindi (Hindustani) in light, Bengali in dark; 360 dp wide at 1.4x text, the app's cap (#505), in the app's real theme (forest seed). Numbers are plausible, not real.</p>
-<div id="check">Self-check running…</div>
+<p class="lede">The Progress tab's mastery view (#678): the words count and a level tile (level and start date), a 7-day running calendar whose lines show the streak, the 6-point star (a fill with no edge, and a solid blue known ÷ taught outline), then the weakest tags and leeches the tab has today. Tapping the star opens the second screen, two line charts over time, one line per skill. Hindi (Hindustani) in light, Bengali in dark; 360 dp at 1.4x text (#505). Red dashed outlines mark what is new or changed. The one open choice is a tweak control. The self-check, notes and open questions are in <code>progress-mastery.md</code>.</p>
+<div class="sticky"><div class="tw" id="tw"></div></div>
 <div class="frames" id="frames"></div>
-
-<section class="notes">
-  <h2>Notes</h2>
-  <p>From the owner's decisions (2026-10-20 and 2026-10-21). Choices I made are marked <span class="prop">Proposed</span>.</p>
-  <ul>
-    <li><b>Words</b> are a number, not a skill: the mastered count in bold, then the taught count lighter, like <b>312</b> / 540.</li>
-    <li><b>The star</b> has six axes: grammar, script, read, write, hear, say. Each point is known ÷ B1 total (#575: FSRS at least 90% recall and past learning; the B1 total is the whole plan, built units plus the planned sizes of those to come; script totals are the <code>alphabet:</code> decks). The points are joined and filled; the filled area is overall mastery. On open it grows from the centre to its values once, in 400 ms, then stays still (no motion with reduced motion).</li>
-    <li><b>The line chart</b> shows one line each for words, phrases, script and grammar; each line's score is known ÷ taught. Lines differ by colour, dash and marker, so colour is not the only cue.</li>
-    <li><b>Only these three parts</b> replace #575's bars. The language bar and bottom bar are drawn static as on the built Progress tab (All at the left, the wheel settled and expanded, bug report at the right).</li>
-    <li><span class="prop">Proposed</span> The hexagon rings mark 25, 50, 75 and 100%. Each axis shows its percentage under its name.</li>
-    <li><span class="prop">Proposed</span> The star's caption states overall mastery as a number: the filled area as a share of the full hexagon, so it is read straight from the shape.</li>
-    <li><span class="prop">Proposed</span> The line chart covers the last 12 weeks, one point a week, with the y axis fixed at 0 to 100%. Line colours are theme tokens plus two extra hues (amber and rose), checked for 3:1 against the surface.</li>
-    <li><span class="dec">Not mocked</span> Other states (All languages, a new course with no data, the achievements grid #323, the share image #411), the tab icons' exact glyphs, and right-to-left. Readings in decks stay based on ISO 15919, though none show here.</li>
-  </ul>
-</section>
 </div>
-
 <script>
-/* ColorScheme.fromSeed(forest), contrast 0 (as language-wheel.html), plus chart line colours l1..l4 */
+/* ColorScheme.fromSeed(forest), contrast 0, plus chart line colours l1..l4 */
 const SCHEMES={
-dark:{"p":"#92d5ab","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sCont":"#1b211d","ol":"#8a938b","olv":"#404942",
- "l1":"#92d5ab","l2":"#8fc9e6","l3":"#e8c46a","l4":"#f2a9b8"},
-light:{"p":"#296a48","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sCont":"#eaefe8","ol":"#717972","olv":"#c0c9c0",
- "l1":"#296a48","l2":"#1f6584","l3":"#8a5a00","l4":"#a23a55"}};
+dark:{"p":"#92d5ab","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sCont":"#1b211d","sHighest":"#313632","ol":"#8a938b","olv":"#404942","ter":"#a3cddc","eC":"#93000a","onEC":"#ffdad6",
+ "l1":"#92d5ab","l2":"#8fc9e6","l3":"#e8c46a","l4":"#f2a9b8","fire":"#ffb77c","k1":"#8fc9e6","k2":"#e8c46a","k3":"#92d5ab","k4":"#f2a9b8","k5":"#c9b0f0","k6":"#b8c0c4"},
+light:{"p":"#296a48","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sCont":"#eaefe8","sHighest":"#dfe4dd","ol":"#717972","olv":"#c0c9c0","ter":"#3b6471","eC":"#ffdad6","onEC":"#410002",
+ "l1":"#296a48","l2":"#1f6584","l3":"#8a5a00","l4":"#a23a55","fire":"#a84300","k1":"#1f6584","k2":"#8a5a00","k3":"#296a48","k4":"#a23a55","k5":"#6b4c9a","k6":"#596064"}};
 const SKILLS=['Grammar','Script','Read','Write','Hear','Say'];
-const LINES=[['Words','l1','solid','circle'],['Phrases','l2','dash','square'],['Script','l3','dot','diamond'],['Grammar','l4','dashdot','triangle']];
-const DASH={solid:'',dash:'7 4',dot:'1.5 4',dashdot:'8 3 1.5 3'};
+/* the second screen: one line per skill, a distinct colour (k1..k6), dash and marker each */
+const LINES=[['Grammar','k1','solid','circle'],['Script','k2','dash','square'],['Read','k3','dot','diamond'],['Write','k4','dashdot','triangle'],['Hear','k5','long','down'],['Say','k6','dd','ring']];
+const DASH={solid:'',dash:'7 4',dot:'1.5 4',dashdot:'8 3 1.5 3',long:'14 4',dd:'3 3'};
+/* star: fill = known / B1 total, out = known / taught (null: nothing taught yet, drawn at the centre) */
 const DATA={
- light:{code:'hi',lang:'Hindustani',glyph:'हि',th:'light',left:'বা',right:'తె',mastered:312,taught:540,
-  star:[34,71,46,38,52,41],
-  lines:{Words:[88,82,74,70,66,62,60,57,56,57,58,58],Phrases:[80,72,66,60,55,52,50,48,49,51,52,53],Script:[60,66,70,74,78,80,82,84,85,86,86,87],Grammar:[75,68,62,55,50,46,44,42,40,41,42,43]}},
- dark:{code:'bn',lang:'Bengali',glyph:'বা',th:'dark',mastered:187,taught:360,
-  star:[22,58,31,27,35,24],
-  lines:{Words:[85,78,70,64,60,56,54,52,51,52,52,52],Phrases:[78,70,62,56,50,46,44,42,43,44,45,46],Script:[50,58,63,68,72,75,77,79,80,81,81,82],Grammar:[70,62,55,48,44,40,38,36,35,36,37,38]}}};
+ light:{code:'hi',lang:'Hindustani',glyph:'हि',th:'light',mastered:312,taught:540,level:'A2',started:'3 Aug 2026',quota:15,min:[0,12,15,34,20,30,15],leeches:4,
+  fill:[34,71,46,38,52,41],out:[57,71,64,55,70,60],
+  tags:[['Transport',41],['Numbers',48],['Kitchen',55],['Family',61]]},
+ dark:{code:'bn',lang:'Bengali',glyph:'বা',th:'dark',mastered:187,taught:360,level:'A1',started:'14 Sep 2026',quota:10,min:[12,25,0,5,10,22,8],leeches:0,
+  fill:[22,58,31,27,35,0],out:[49,58,52,44,61,null],
+  tags:[['Directions',38],['Numbers',44],['Market',52],['Body',60]]}};
+/* the one open choice is a tweak control */
+const S={hl:'1',order:'stl'};
+const ORDERS={stl:['star','tags','leech'],slt:['star','leech','tags'],tls:['tags','leech','star']};
+
 const BUG='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 8h-2.81a5.985 5.985 0 0 0-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6.002 6.002 0 0 0-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z"/></svg>';
+const BACK='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>';
+const WARN='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>';
+const CHEV='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>';
 const ICON={today:'<svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10z"/></svg>',
  decks:'<svg viewBox="0 0 24 24"><path d="M4 6H2v14a2 2 0 0 0 2 2h14v-2H4V6zm16-4H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/></svg>',
  progress:'<svg viewBox="0 0 24 24"><path d="M3 17h3v4H3zm5-6h3v10H8zm5-4h3v14h-3zm5-5h3v19h-3z"/></svg>'};
 
 function marker(kind,x,y,c){const r=3.4;
+ if(kind==='down')return `<path d="M${x-r-1} ${y-r}L${x+r+1} ${y-r}L${x} ${y+r+1}Z" fill="${c}"/>`;
+ if(kind==='ring')return `<circle cx="${x}" cy="${y}" r="${r}" fill="var(--sLow)" stroke="${c}" stroke-width="2"/>`;
  if(kind==='circle')return `<circle cx="${x}" cy="${y}" r="${r}" fill="${c}"/>`;
  if(kind==='square')return `<rect x="${x-r}" y="${y-r}" width="${2*r}" height="${2*r}" fill="${c}"/>`;
  if(kind==='diamond')return `<path d="M${x} ${y-r-1}L${x+r+1} ${y}L${x} ${y+r+1}L${x-r-1} ${y}Z" fill="${c}"/>`;
  return `<path d="M${x} ${y-r-1}L${x+r+1} ${y+r}L${x-r-1} ${y+r}Z" fill="${c}"/>`}
 
-function starSvg(vals){
- const W=296,H=268,cx=W/2,cy=130,R=88,cl='var(--olv)';
+const outCol=()=>'var(--l2)'; /* solid blue (owner, 2026-10-23) */
+
+function starSvg(fill,out){
+ const W=296,H=268,cx=W/2,cy=130,R=84,cl='var(--olv)';
  const pt=(i,f)=>{const a=-Math.PI/2+i*Math.PI/3;return [cx+R*f*Math.cos(a),cy+R*f*Math.sin(a)]};
  const poly=f=>SKILLS.map((_,i)=>pt(i,f).map(v=>v.toFixed(1)).join(',')).join(' ');
- let s=`<svg class="ch" viewBox="0 0 ${W} ${H}" role="img" aria-label="Mastery per skill: ${SKILLS.map((k,i)=>k+' '+vals[i]+'%').join(', ')}">`;
+ const str=ps=>ps.map(p=>p.map(v=>v.toFixed(1)).join(',')).join(' ');
+ let s=`<svg class="ch" viewBox="0 0 ${W} ${H}" role="img" aria-label="Mastery per skill. Opens the line chart. Known over B1 total then known over taught: ${SKILLS.map((k,i)=>k+' '+fill[i]+'%, '+(out[i]==null?'nothing taught yet':out[i]+'%')).join('; ')}">`;
  for(const f of [.25,.5,.75,1])s+=`<polygon points="${poly(f)}" fill="none" stroke="${cl}" stroke-width="1"/>`;
  SKILLS.forEach((_,i)=>{const p=pt(i,1);s+=`<line x1="${cx}" y1="${cy}" x2="${p[0].toFixed(1)}" y2="${p[1].toFixed(1)}" stroke="${cl}" stroke-width="1"/>`});
- const vp=vals.map((v,i)=>pt(i,v/100));
- s+=`<g class="grow" style="--cx:${cx}px;--cy:${cy}px"><polygon points="${vp.map(p=>p.map(v=>v.toFixed(1)).join(',')).join(' ')}" fill="var(--p)" fill-opacity=".38" stroke="var(--p)" stroke-width="2.5" stroke-linejoin="round"/>`;
- vp.forEach(p=>s+=`<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="4" fill="var(--p)"/>`);
+ const vp=fill.map((v,i)=>pt(i,v/100));
+ const op=out.map((v,i)=>pt(i,(v||0)/100));
+ s+=`<g class="grow" style="--cx:${cx}px;--cy:${cy}px"><polygon points="${str(vp)}" fill="var(--p)" fill-opacity=".38" stroke="none"/>`;
+ s+=`<polygon points="${str(op)}" fill="none" stroke="${outCol()}" stroke-width="2.5" stroke-linejoin="round"/>`;
+ op.forEach((p,i)=>{if(out[i]!=null)s+=`<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="3" fill="var(--s)" stroke="${outCol()}" stroke-width="2"/>`});
  s+='</g>';
- // axis labels: name, then the percentage
  SKILLS.forEach((k,i)=>{const p=pt(i,1.0),a=-Math.PI/2+i*Math.PI/3,c=Math.cos(a);
   const anchor=Math.abs(c)<.2?'middle':(c>0?'start':'end');
   const dx=Math.abs(c)<.2?0:(c>0?10:-10);
   const top=i===0, bot=i===3;
   const y=top?p[1]-30:(bot?p[1]+20:p[1]-(Math.sin(a)<0?8:-6));
   s+=`<text x="${(p[0]+dx).toFixed(1)}" y="${y.toFixed(1)}" text-anchor="${anchor}" fill="var(--onS)" font-weight="600">${k}</text>`;
-  s+=`<text x="${(p[0]+dx).toFixed(1)}" y="${(y+19).toFixed(1)}" text-anchor="${anchor}" fill="var(--onSv)">${vals[i]}%</text>`});
+  s+=`<text x="${(p[0]+dx).toFixed(1)}" y="${(y+19).toFixed(1)}" text-anchor="${anchor}" fill="var(--onSv)">${fill[i]}% · ${out[i]==null?'–':out[i]+'%'}</text>`});
  return s+'</svg>';
 }
 function overall(vals){let s=0;for(let i=0;i<6;i++)s+=vals[i]*vals[(i+1)%6]/10000;return Math.round(s/6*100)}
-
-function lineSvg(lines){
+/* 12 weekly points per skill: known ÷ B1 total climbs to the star's filled value, known ÷ taught eases down to the outline value (a skill with nothing taught stays at 0) */
+function series(D,kind){return SKILLS.map((_,i)=>{const F=D.fill[i],O=D.out[i]||0;
+ return Array.from({length:12},(_,w)=>{const u=w/11;
+  if(kind==='b1')return Math.round(F*(.1+.9*Math.pow(u,.9+.05*i)));
+  const st=O?Math.min(97,O+16+(i*5)%11):0;return Math.round(O+(st-O)*Math.pow(1-u,1.6))})})}
+function lineSvg(ser,what){
  const W=296,H=214,L=34,Rr=8,T=10,B=44,iw=W-L-Rr,ih=H-T-B;
  const X=i=>L+iw*i/11,Y=v=>T+ih*(1-v/100);
- let s=`<svg class="ch" viewBox="0 0 ${W} ${H}" role="img" aria-label="Known over taught, last 12 weeks">`;
+ let s=`<svg class="ch" viewBox="0 0 ${W} ${H}" role="img" aria-label="${what}, last 12 weeks, now: ${SKILLS.map((k,i)=>k+' '+ser[i][11]+'%').join(', ')}">`;
  for(const v of [0,25,50,75,100]){s+=`<line x1="${L}" x2="${W-Rr}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--olv)" stroke-width="1"/><text x="${L-5}" y="${Y(v)+5}" text-anchor="end" fill="var(--onSv)">${v}</text>`}
- [[0,'12 wk'],[4,'8 wk'],[8,'4 wk'],[11,'Now']].forEach(([i,t])=>{s+=`<text x="${X(i)}" y="${H-24}" text-anchor="${i===0?'start':i===11?'end':'middle'}" fill="var(--onSv)">${t}</text>`});
- s+=`<text x="${(L+W-Rr)/2}" y="${H-4}" text-anchor="middle" fill="var(--onSv)">Weeks ago (known ÷ taught, %)</text>`;
- for(const [n,col,dash,mk] of LINES){const d=lines[n];
+ [[0,'12 wk'],[4,'8 wk'],[8,'4 wk'],[11,'Now']].forEach(([i,x])=>{s+=`<text x="${X(i)}" y="${H-24}" text-anchor="${i===0?'start':i===11?'end':'middle'}" fill="var(--onSv)">${x}</text>`});
+ s+=`<text x="${(L+W-Rr)/2}" y="${H-4}" text-anchor="middle" fill="var(--onSv)">Weeks ago (%)</text>`;
+ LINES.forEach(([n,col,dash,mk],k)=>{const d=ser[k];
   s+=`<polyline fill="none" stroke="var(--${col})" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" ${DASH[dash]?`stroke-dasharray="${DASH[dash]}"`:''} points="${d.map((v,i)=>X(i).toFixed(1)+','+Y(v).toFixed(1)).join(' ')}"/>`;
-  s+=marker(mk,X(11),Y(d[11]),`var(--${col})`)}
+  for(const i of [2,5,8,11])s+=marker(mk,X(i),Y(d[i]),`var(--${col})`)});
  return s+'</svg>';
 }
 function legendItem(n,col,dash,mk,v){
- return `<div><svg viewBox="0 0 26 10" aria-hidden="true"><line x1="1" x2="25" y1="5" y2="5" stroke="var(--${col})" stroke-width="2.5" ${DASH[dash]?`stroke-dasharray="${DASH[dash]}"`:''}/>${marker(mk,13,5,`var(--${col})`)}</svg>${n}<span class="v">${v}%</span></div>`}
+ return `<div><svg viewBox="0 0 26 10" aria-hidden="true"><line x1="1" x2="25" y1="5" y2="5" stroke="var(--${col})" stroke-width="2.5" ${DASH[dash]?`stroke-dasharray="${DASH[dash]}"`:''}/>${marker(mk,13,5,`var(--${col})`)}</svg>${n}<span class="v">${v}</span></div>`}
 
+/* the 7-day running calendar: oldest first, today last; one mark a day, no legend; each day has a screen-reader label */
+/* Tabler icons, inline paths (owner, 2026-10-23): flame (drawn filled, owner: "Fill the fire icon"), circle-filled, circle; stroke or fill in theme colours */
+const FLAME='<path d="M12 12c2 -2.96 0 -7 -1 -8c0 3.038 -1.773 4.741 -3 6c-1.226 1.26 -2 3.24 -2 5a6 6 0 1 0 12 0c0 -1.532 -1.056 -3.94 -2 -5c-1.786 3 -2.791 3 -4 2z"/>';
+const SVGF='viewBox="0 0 24 24" fill="var(--fire)" stroke="var(--fire)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"';
+const WD=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const TODAY=5; /* 2026-10-23 is a Friday */
+function state(m,q){return m>=2*q?'double':m>=q?'met':m>0?'some':'none'}
+const STT={double:'twice the quota or more',met:'quota met',some:'some practice, under the quota',none:'no practice'};
+function mark(st){
+ if(st==='met')return `<svg ${SVGF}>${FLAME}</svg>`;
+ if(st==='double')return `<svg ${SVGF}><g transform="translate(5 -1) scale(.8)" stroke-width="2.5" fill="none">${FLAME}</g><g transform="translate(0 4) scale(.8)" stroke-width="2.5">${FLAME}</g></svg>`;
+ if(st==='some')return `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="var(--p)" d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z"/></svg>`;
+ return `<svg viewBox="0 0 24 24" fill="none" stroke="var(--onSv)" stroke-width="2" aria-hidden="true"><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/></svg>`}
+function weekDays(D){return D.min.map((m,i)=>{const dow=(TODAY-6+i+7)%7,st=state(m,D.quota);
+ return {st,m,dow,today:i===6,join:m>0&&i<6&&D.min[i+1]>0,label:`${WD[dow]}${i===6?', today':''}: ${STT[st]}, ${m} of ${D.quota} minutes`}})}
+function topRow(D){
+ return `<div class="top"><div class="card chg w"><p class="ct">Words mastered</p>
+   <div class="words"><b>${D.mastered}</b><span>/ ${D.taught} taught</span></div></div>
+  <div class="card chg"><p class="ct">Level</p>
+   <div class="words"><b>${D.level}</b></div>
+   <p class="cs">Started ${D.started}</p></div></div>`}
+function calendar(D){
+ return `<div class="card chg"><ul class="week" aria-label="Practice in the last 7 days, daily quota ${D.quota} minutes">${weekDays(D).map(d=>`<li class="day${d.today?' today':''}"><span class="mk" role="img" aria-label="${d.label}">${mark(d.st)}${d.join?'<i class="jn" aria-hidden="true"></i>':''}</span><span class="in" aria-hidden="true">${WD[d.dow][0]}</span></li>`).join('')}</ul></div>`}
+function tagsCard(D){
+ return `<div class="card chg"><div class="rowh"><p class="ct">Weakest tags</p><span class="tbtn">All tags ›</span></div>
+  ${D.tags.map(([t,v])=>`<div class="brow"><span class="l">${t}</span><span class="tr"><i style="width:${v}%"></i></span><span class="v">${v}%</span></div>`).join('')}</div>`}
+function leechCard(D){
+ const n=D.leeches,t=n===0?'No leeches':n===1?'1 leech':n+' leeches';
+ return `<div class="leech chg ${n?'has':'none'}">${WARN}<div class="tx"><b>${t}</b><span>Cards you keep missing</span></div>${CHEV}</div>`}
+
+function chartFrame(key,cap){
+ const D=DATA[key],sch=SCHEMES[D.th],vars=Object.entries(sch).map(([k,v])=>`--${k}:${v}`).join(';');
+ const card=(t,sub,kind)=>{const ser=series(D,kind);
+  return `<div class="card chg"><p class="ct">${t}</p><p class="cs">${sub}, last 12 weeks</p>${lineSvg(ser,t)}
+   <div class="legend">${LINES.map(([n,c,d,m],k)=>legendItem(n,c,d,m,(kind==='taught'&&D.out[k]==null)?'–':ser[k][11]+'%')).join('')}</div></div>`};
+ return `<div class="fcol"><span class="fcap">${cap} · Opens from the star · ${D.th==='light'?'Light':'Dark'} · 1.4x</span>
+ <div class="ph" style="${vars}" data-th="${D.th}">
+  <div class="lbar"><span class="ibtn">${BACK}</span><p class="ct" style="flex:1;padding-left:4px">Over time</p></div>
+  <div class="body">${card('Mastery over time','Known ÷ B1 total','b1')}${card('Taught over time','Known ÷ taught','taught')}</div>
+ </div></div>`}
 function frame(key,cap){
  const D=DATA[key],sch=SCHEMES[D.th],vars=Object.entries(sch).map(([k,v])=>`--${k}:${v}`).join(';');
- const ov=overall(D.star);
- const legend=LINES.map(([n,c,d,m])=>legendItem(n,c,d,m,D.lines[n][11])).join('');
+ const ov=overall(D.fill);
  const nav=[['today','Today'],['decks','Decks'],['progress','Progress']].map(([k,t])=>`<div class="nd ${k==='progress'?'on':''}"><i>${ICON[k]}</i>${t}</div>`).join('');
+ const parts={tags:tagsCard(D),leech:leechCard(D),
+  star:`<div class="card chg upd" role="button" tabindex="0" aria-label="Mastery by skill, overall ${ov}%. Opens known over time"><div class="rowh"><p class="ct">Mastery by skill</p><span class="tbtn tap">Over time ${CHEV}</span></div>
+    <p class="cs">Overall mastery ${ov}%</p>
+    ${starSvg(D.fill,D.out)}</div>`
+  };
  return `<div class="fcol"><span class="fcap">${cap} · Progress · ${D.th==='light'?'Light':'Dark'} · 1.4x</span>
  <div class="ph" style="${vars}" data-th="${D.th}">
   <div class="lbar"><span class="slot allb"><span>All</span></span>
    <div class="wheel"><span class="pill"><span class="pg" lang="${D.code}">${D.glyph}</span>${D.lang}</span></div>
    <span class="ibtn">${BUG}</span></div>
   <div class="body">
-   <div class="card"><p class="ct">Words</p>
-    <div class="words"><b>${D.mastered}</b><span>/ ${D.taught}</span></div>
-    <p class="cs">mastered / taught</p></div>
-   <div class="card"><p class="ct">Mastery by skill</p>
-    <p class="cs">Known ÷ B1 total · overall mastery ${ov}%</p>
-    ${starSvg(D.star)}</div>
-   <div class="card"><p class="ct">Known over taught</p>
-    <p class="cs">Last 12 weeks</p>
-    ${lineSvg(D.lines)}
-    <div class="legend">${legend}</div></div>
+   ${topRow(D)}
+   ${calendar(D)}
+   ${ORDERS[S.order].map(k=>parts[k]).join('')}
   </div>
   <div class="nav">${nav}</div>
  </div></div>`;
 }
-document.getElementById('frames').innerHTML=frame('light','Hindi (Hindustani)')+frame('dark','Bengali');
 
-/* ---------- self-check: WCAG contrast (text 4.5:1, graphics 3:1) ---------- */
+const CTRL=[
+ ['hl','Highlight changes',[['1','On'],['0','Off']]],
+ ['order','Section order under the calendar',[['stl','Star, tags, leeches'],['slt','Star, leeches, tags'],['tls','Tags, leeches, star']]]];
+function render(){
+ document.getElementById('tw').innerHTML=CTRL.map(([k,l,o])=>`<div class="tg">${l}<span class="seg" data-k="${k}">${o.map(([v,t])=>`<button data-v="${v}" aria-pressed="${S[k]===v}">${t}</button>`).join('')}</span></div>`).join('');
+ const f=document.getElementById('frames');
+ f.className='frames'+(S.hl==='1'?' hl-on':'');
+ f.innerHTML=frame('light','Hindi (Hindustani)')+frame('dark','Bengali')+chartFrame('light','Hindi (Hindustani)')+chartFrame('dark','Bengali');
+ check();
+}
+document.getElementById('tw').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;S[b.parentNode.dataset.k]=b.dataset.v;render()});
+
+/* ---------- self-check: WCAG contrast (text 4.5:1, graphics 3:1); console only, results in progress-mastery.md ---------- */
 const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
 const mix=(f,b,a)=>f.map((v,i)=>v*a+b[i]*(1-a));
 const lum=c=>{const a=c.map(v=>{v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4)});return .2126*a[0]+.7152*a[1]+.0722*a[2]};
 const ratio=(a,b)=>{const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
-(function(){
+function check(){
  const rows=[];let bad=0;
- const add=(th,what,r,need)=>{const ok=r>=need;if(!ok)bad++;rows.push(`<tr><td>${th}</td><td>${what}</td><td>${r.toFixed(2)}:1</td><td>${need}:1</td><td>${ok?'pass':'FAIL'}</td></tr>`)};
+ const add=(th,what,r,need)=>{const ok=r>=need;if(!ok)bad++;rows.push({th,what,r:+r.toFixed(2),need,ok})};
  for(const th of ['light','dark']){
-  const S=Object.fromEntries(Object.entries(SCHEMES[th]).map(([k,v])=>[k,hex(v)]));
-  const card=S.sLow;
-  add(th,'text (onSurface) on card',ratio(S.onS,card),4.5);
-  add(th,'secondary text (onSurfaceVariant) on card',ratio(S.onSv,card),4.5);
-  add(th,'words total (onSurfaceVariant) on card',ratio(S.onSv,card),4.5);
-  add(th,'All, off: onSurface at 64% on surface',ratio(mix(S.onS,S.s,.64),S.s),4.5);
-  add(th,'language pill: onSecondaryContainer on secondaryContainer',ratio(S.onSc,S.sc),4.5);
-  add(th,'selected nav label: onSurface on navigation bar',ratio(S.onS,S.sCont),4.5);
-  add(th,'unselected nav label: onSurfaceVariant on navigation bar',ratio(S.onSv,S.sCont),4.5);
-  add(th,'selected nav icon: onSecondaryContainer on its pill',ratio(S.onSc,S.sc),3);
-  add(th,'bug report icon on surface',ratio(S.onSv,S.s),3);
-  const star=mix(S.p,card,.38);
-  add(th,'star outline (primary) on card',ratio(S.p,card),3);
-  add(th,'star outline (primary) on the filled star',ratio(S.p,star),3);
-  add(th,'axis text (onSurface) on the filled star',ratio(S.onS,star),4.5);
-  add(th,'ring and axis lines (outlineVariant) on card, decorative',ratio(S.olv,card),1.0);
-  for(const [n,c] of LINES.map(l=>[l[0],l[1]]))add(th,`line “${n}” on card`,ratio(S[c],card),3);
+  const S2=Object.fromEntries(Object.entries(SCHEMES[th]).map(([k,v])=>[k,hex(v)]));
+  const card=S2.sLow,star=mix(S2.p,card,.38);
+  add(th,'text (onSurface) on card',ratio(S2.onS,card),4.5);
+  add(th,'secondary text (onSurfaceVariant) on card',ratio(S2.onSv,card),4.5);
+  add(th,'All, off: onSurface at 64% on surface',ratio(mix(S2.onS,S2.s,.64),S2.s),4.5);
+  add(th,'language pill: onSecondaryContainer on secondaryContainer',ratio(S2.onSc,S2.sc),4.5);
+  add(th,'selected nav label: onSurface on navigation bar',ratio(S2.onS,S2.sCont),4.5);
+  add(th,'unselected nav label: onSurfaceVariant on navigation bar',ratio(S2.onSv,S2.sCont),4.5);
+  add(th,'selected nav icon on its pill',ratio(S2.onSc,S2.sc),3);
+  add(th,'Over time chevron (primary) on card',ratio(S2.p,card),3);
+  add(th,'back arrow on surface',ratio(S2.onSv,S2.s),3);
+  add(th,'bug report icon on surface',ratio(S2.onSv,S2.s),3);
+  add(th,'star fill (primary at 38%) vs card, informational: the fill has no edge, the exact values are the axis percentages and the markers',ratio(star,card),1);
+  add(th,'axis text (onSurface) on the filled star',ratio(S2.onS,star),4.5);
+  add(th,'axis percentages (onSurfaceVariant) on card',ratio(S2.onSv,card),4.5);
+  add(th,'outline (solid blue) on card',ratio(S2.l2,card),3);
+  add(th,'outline (solid blue) on the filled star',ratio(S2.l2,star),3);
+  add(th,'outline point (surface fill) vs blue ring',ratio(S2.l2,S2.s),3);
+  for(const l of LINES)add(th,`chart line “${l[0]}” (${l[1]}) on card`,ratio(S2[l[1]],card),3);
+  add(th,'legend text (onSurfaceVariant) on card',ratio(S2.onSv,card),4.5);
+  add(th,'weakest tags bar (tertiary) on its track (secondaryContainer)',ratio(S2.ter,S2.sc),3);
+  add(th,'tag name and percent (onSurface) on card',ratio(S2.onS,card),4.5);
+  add(th,'leeches, some: onErrorContainer on errorContainer',ratio(S2.onEC,S2.eC),4.5);
+  add(th,'leeches, none: onSurfaceVariant on card',ratio(S2.onSv,card),4.5);
+  add(th,'Words and Level labels (onSurfaceVariant) on card',ratio(S2.onSv,card),4.5);
+  add(th,'Words and Level values (onSurface) on card',ratio(S2.onS,card),4.5);
+  add(th,'All tags button (primary) on card',ratio(S2.p,card),4.5);
+  add(th,'calendar fire icon and streak join line on card',ratio(S2.fire,card),3);
+  add(th,'calendar filled dot (primary) on card',ratio(S2.p,card),3);
+  add(th,'calendar unfilled dot ring (onSurfaceVariant) on card',ratio(S2.onSv,card),3);
+  add(th,'calendar day initials (onSurfaceVariant) on card',ratio(S2.onSv,card),4.5);
+  add(th,'calendar today initial (onSurface) on card',ratio(S2.onS,card),4.5);
  }
- const c=document.getElementById('check');c.classList.toggle('bad',bad>0);
- c.innerHTML=`<b>Self-check: ${bad} problem${bad===1?'':'s'}.</b> Text needs 4.5:1, lines and icons 3:1; the grid lines are decorative. Chart text is 12 dp at 1.4x (about 17 px); the page was also checked at 360 px wide for sideways scroll.<table><thead><tr><th>Theme</th><th>Pair</th><th>Ratio</th><th>Needs</th><th></th></tr></thead><tbody>${rows.join('')}</tbody></table>`;
- window.__checkBad=bad;
-})();
+ /* the data rule: the outline is never inside the fill, and is at the centre only where nothing is taught */
+ let rule=true;for(const k in DATA){const D=DATA[k];D.fill.forEach((f,i)=>{const o=D.out[i];if(o==null?f!==0:o<f)rule=false})}
+ let cal=true;for(const k in DATA){const D=DATA[k];const st=D.min.map(m=>state(m,D.quota));if(new Set(st).size<3||st.length!==7)cal=false}
+ window.__check={bad,rule,cal,rows};
+}
+render();
 </script>
 </body>
 </html>

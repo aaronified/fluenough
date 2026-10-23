@@ -1,0 +1,73 @@
+schema: 1
+id: "es-en-reading-about-me"
+name: "Reading: about me"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about yourself: introducing someone, and filling in a registration form. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-introducing-yourself"
+    title: "Introducing yourself"
+    theme: "about-me"
+    sentences:
+      - text: "Hola, me llamo Luis."
+      - text: "Soy de Quito y vivo en un barrio tranquilo."
+      - text: "Tengo treinta años y soy profesor."
+      - text: "Hablo español y un poco de inglés."
+      - text: "Mi cumpleaños es en mayo."
+    questions:
+      - id: "es-0274"
+        prompt: { en: "Where is Luis from?" }
+        options:
+          - { en: "Quito" }
+          - { en: "Lima" }
+          - { en: "Madrid" }
+        answer: 1
+      - id: "es-0275"
+        prompt: { en: "What is Luis's job?" }
+        options:
+          - { en: "Doctor" }
+          - { en: "Teacher" }
+          - { en: "Student" }
+        answer: 2
+      - id: "es-0276"
+        prompt: { en: "What languages does Luis speak?" }
+        options:
+          - { en: "Only English" }
+          - { en: "Spanish and a little English" }
+          - { en: "French" }
+        answer: 2
+  - id: "es-registration-form"
+    title: "Registration form"
+    theme: "about-me"
+    sentences:
+      - text: "Nombre: Ana Ruiz."
+      - text: "Edad: veintidós años."
+      - text: "Nacionalidad: peruana."
+      - text: "Profesión: estudiante."
+      - text: "Idioma: español."
+    questions:
+      - id: "es-0277"
+        prompt: { en: "What is the applicant's age?" }
+        options:
+          - { en: "Twenty-two" }
+          - { en: "Twenty" }
+          - { en: "Twelve" }
+        answer: 1
+      - id: "es-0278"
+        prompt: { en: "What is her nationality?" }
+        options:
+          - { en: "Peruvian" }
+          - { en: "Spanish" }
+          - { en: "Chilean" }
+        answer: 1
+      - id: "es-0279"
+        prompt: { en: "What is her job?" }
+        options:
+          - { en: "Teacher" }
+          - { en: "Student" }
+          - { en: "Nurse" }
+        answer: 2
