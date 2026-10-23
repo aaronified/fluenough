@@ -1,10 +1,8 @@
 // The grammar question types are eligible by the card's data: whether the
 // card's word has other forms (ADR-0039, #522 step 4).
-import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/models/rule.dart';
-import 'package:fluenough/core/numbers/number_practice.dart';
 import 'package:fluenough/core/scheduling/ask.dart';
 import 'package:fluenough/core/scheduling/lesson.dart';
 import 'package:fluenough/core/scheduling/question_type.dart';
@@ -40,7 +38,6 @@ SessionItem item(Card card, DrillMode mode) =>
 void main() {
   siblingTests();
   modesTests();
-  hearTests();
   test(
     'a cell with other forms is asked to choose its form and its meaning',
     () {
@@ -299,32 +296,5 @@ void modesTests() {
       'te-1:grammar',
       'te-2:grammar',
     });
-  });
-}
-
-void hearTests() {
-  Card scriptCard(String? pos) => Card(
-    id: 'te-1',
-    deckId: 'te-script-vowels',
-    target: 'అ',
-    native: 'a',
-    pos: pos,
-  );
-
-  test('what is heard of a letter, a digit or a number is its form, of a '
-      'word its meaning, whatever deck it is in', () {
-    final state = AppState.test();
-    addTearDown(state.dispose);
-    expect(state.hearsForm(scriptCard('letter')), isTrue);
-    expect(state.hearsForm(scriptCard('digit')), isTrue);
-    expect(state.hearsForm(scriptCard('noun')), isFalse);
-    expect(state.hearsForm(scriptCard(null)), isFalse);
-    final number = NumberCard(
-      number: 2,
-      spellings: const <String>['do'],
-      rulesId: 'hi',
-      deckId: 'hi-en-numbers-big',
-    );
-    expect(state.hearsForm(number), isTrue);
   });
 }

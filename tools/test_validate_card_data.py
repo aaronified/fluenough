@@ -65,6 +65,13 @@ class ScriptPos(Case):
         self.core(HOUSE, pos="noun", senses=[{"id": "a", "pos": "letter"}])
         self.assertIn("senses[0].pos must be one of", "\n".join(self.errors(CORE)))
 
+    def test_hears_is_form_or_left_out(self) -> None:
+        self.core(HOUSE, hears="form")
+        self.assertNoError(CORE)
+        self.core(HOUSE, hears="meaning")
+        self.assertError(CORE, f"card {HOUSE}", 'hears must be "form", or left out; '
+                         "got 'meaning'")
+
 
 class OwnRoot(Case):
 
