@@ -592,7 +592,7 @@ cards:
 | `synonyms`, `antonyms`, `collocations`, `confusables`, `forms`, `senses` | no | A core card's [card data](#card-data), its text in each layer by id. Not on a single-file card or a layer's own card. |
 | `rules` | no | On a sentence: the ids of the rules it uses, `["te-rule-ki"]`. See [Sentences and their rules](#sentences-and-their-rules-rules). |
 | `wiktionary` | no | `true` where the learner's language's Wiktionary has an entry for the target: see [The Wiktionary link](#the-wiktionary-link). |
-| `modes` | no | Which drills this card participates in. Defaults to all applicable, except that a `pos: phrase` card is not typed: it defaults to recognition, listening and speaking, and production by rearranging its words when it has two or more (ADR-0024). |
+| `modes` | no | The skills this card is excluded from (an opt-out, #522 step 6: `recognition`, `production`, `listening`, `speaking`, or `grammar` for both grammar skills). Defaults to every skill the card's data allows, except that a `pos: phrase` card is not typed: it defaults to recognition, listening and speaking, and production by rearranging its words when it has two or more (ADR-0024). |
 | `pair` | no | The id of a word of the language that sounds almost the same, its minimal-pair partner: `te-0111`, కాలం (kālam), time, on కలం (kalam), pen. Hear offers the partner's meaning among its options, to catch a learner who confuses the two ([ADR-0034](adr/0034-hear-say-write.md)). It belongs to the word, so a ref cannot give it. A [pair note](#notes) gives it too: a card without `pair` takes its first pair note's partner, and a core card has no `pair` at all, only pair notes. |
 | `picture` | no | One emoji, quoted, showing what a concrete word means: `"🏠"` on house. Its picture, from [Noto Emoji](https://github.com/googlefonts/noto-emoji) (Apache-2.0), is a cue beside the meaning in Write and beside each meaning Hear offers ([ADR-0034](adr/0034-hear-say-write.md)). Only for a picture that means exactly the word: not for abstract words, kinship, or near misses; the one exception is a question word that sets [`picture_ask`](#a-question-words-picture-picture_ask). Run `python3 tools/pictures.py path/to/noto-emoji` to bundle its image; the validator checks it is there. It belongs to the word, so a ref cannot give it. |
 | `picture_ask` | no | `true` on a question word whose `picture` asks rather than shows: the app draws the emoji with a small "?" badge on its corner. Unquoted `true` or left out, never `false`. It requires `picture`, and belongs to the word, so a ref cannot give it. See [A question word's picture](#a-question-words-picture-picture_ask). A release that reads it must be out before a deck uses it: the released parser rejects unknown fields. |
@@ -1805,7 +1805,7 @@ Each `(entry, slot)` pair becomes one production card:
 - **target** — `forms[slot]`, the first form where a cell lists several, and
   **alt_target** the rest
 - **native** — `prompt` with substitutions applied
-- **modes** — `grammar` only
+- **modes** — the four vocabulary skills (recognition, production, listening, speaking), so a pattern's cell is only a grammar cell
 
 A grammar deck may also be written as [a core and its
 layers](#a-grammar-core). Split, it keeps every cell id, as long as the
@@ -2004,7 +2004,7 @@ with a form whose rule the layer explains, the deck has one card:
 - **native:** the layer's `prompts` for the cell, or else the slot's label
   with `{meaning}` filled. The meaning is the first meaning of the word's
   card in this language, up to its first `/`, `;` or `,`: "with mother".
-- **modes:** `grammarUnderstood` and `grammar` (below).
+- **modes:** the four vocabulary skills, so a cell is only a grammar cell (below).
 
 A rule itself is not a card. It is taught before its cells, with its name
 and explanation, and it counts as known once its cells are.

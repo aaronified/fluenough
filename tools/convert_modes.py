@@ -53,7 +53,7 @@ def convert_text(text: str) -> tuple[str, list[dict]]:
             m = _ID.search(stripped) or _REF.search(stripped)
             if m:
                 card = m.group(1)
-        elif (m := re.match(r"id:\s*[\"']?([\w.\-]+)", stripped)) and line.startswith("    id:"):
+        elif m := re.match(r"id:\s*[\"']?([\w.\-]+)", stripped):
             card = m.group(1)
         found = _LINE.match(line.rstrip("\n"))
         if not found:
@@ -70,11 +70,11 @@ def convert_text(text: str) -> tuple[str, list[dict]]:
             out.append(f"{head}modes: [{body}]{tail}{newline}")
         else:
             # Everything was allowed: no `modes` says the same.
-            rest = (head.rstrip().rstrip(",") + tail).rstrip()
-            if rest.strip():
-                raise ValueError(f"line {lineno}: modes shares a line with other fields")
-            if tail.strip():
-                out.append(f"{head}{tail.lstrip(', ')}{newline}")
+            if not head.strip() and not tail.strip():
+                pass
+            else:
+                kept = head.rstrip().rstrip(",").rstrip()
+                out.append(f"{kept}{tail if tail.startswith(' }') else ' ' + tail.lstrip(', ')}{newline}")
         changes.append({"line": lineno, "card": card, "old": old, "new": new})
     return "".join(out), changes
 
