@@ -283,11 +283,8 @@ units:
     words: 0
     grammar: ["la-clause-context"]
   # kasi and ma.
-  - planned: { id: "tok-nature", theme: "nature", words: 2 }
-    listening_passages:
-      - { id: "a-walk", text: { "en": "Someone describes a walk in the country" } }
-    reading_passages:
-      - { id: "park-notice", text: { "en": "A notice at a park entrance" } }
+  - decks: ["tok-nature", "tok-nature-sentences", "tok-reading-nature", "*"]
+    words: 2
   # pilin, musi, nasa and jaki.
   - planned: { id: "tok-feelings", theme: "feelings", words: 4 }
     listening_passages:
