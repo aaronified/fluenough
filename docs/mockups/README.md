@@ -4,6 +4,20 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 ## Awaiting approval
 
+- `hours-per-language.html`: hours spent and hours left, per language, on
+  the rebuilt Progress (#227; owner, 2026-10-23: "mockup right away"), in
+  three possible places, with All languages and a "How it is counted" sheet.
+  Replaces the hours part of `session-result-and-hours.html` once approved.
+  Hindustani and Bengali, light and dark, 1.4x. Open choices are tweak
+  controls and are listed in `hours-per-language.md`, with the self-check.
+- `words-rules-sentences.html`: lessons with no quota and the unlock gate
+  (#416), the rule card drill (#417) and progress in words, rules and
+  sentences unlocked (#418), parts of #413 (owner, 2026-10-23: "mockup right
+  away"). The unit page with closed sentences, the lesson start, the rule
+  card, its drill and table, the end of a lesson and Progress. Hindustani and
+  Bengali, light and dark, 1.4x. Open choices are tweak controls and are
+  listed in `words-rules-sentences.md`, with the self-check.
+
 - `today-chain.html`: the Today chain's screens still to build (owner,
   2026-10-23: "Do all the mockups needed for the today chain together, in one
   screen."): situation cheatsheets and their inspect view (#724), the decks
@@ -12,14 +26,6 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
   setting (#485) are built, so their screens are removed. Hindustani and
   Bengali, light and dark, 1.4x. Open choices are tweak controls and are
   listed in `today-chain.md`, with the self-check.
-
-- `placement-review-choice.html`: after placement, how placed-out words are
-  reviewed (#761): the end-of-placement question (Counted as known, Sampled,
-  Normal) and the per-course Placed words setting in Languages I'm learning
-  with its change sheet (owner, 2026-10-23). Hindustani in light (placed except
-  the script decks) and Bengali in dark, 1.4x. The open choices (default,
-  script decks exempt, wording) are tweak controls and are listed in
-  `placement-review-choice.md`, with the self-check.
 
 ## Current and approved
 
