@@ -1,0 +1,42 @@
+schema: 1
+id: "zh-addressing-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "zh-0137"
+    target: "老师，您好吗？"
+    words: ["老师", "您", "好", "吗"]
+    reading: "lǎoshī, nín hǎo ma?"
+    pos: "phrase"
+  - id: "zh-0138"
+    target: "朋友姓王。"
+    words: ["朋友", "姓", "王"]
+    reading: "péngyou xìng Wáng."
+    pos: "phrase"
+  - id: "zh-0139"
+    target: "我们都是同学。"
+    words: ["我们", "都", "是", "同学"]
+    reading: "wǒmen dōu shì tóngxué."
+    pos: "phrase"
+    bases:
+      - { word: "我们", base: "我们", reading: "wǒmen" }
+  - id: "zh-0140"
+    target: "大家欢迎你们。"
+    words: ["大家", "欢迎", "你们"]
+    reading: "dàjiā huānyíng nǐmen."
+    pos: "phrase"
+    bases:
+      - { word: "你们", base: "你们", reading: "nǐmen" }
+  - id: "zh-0141"
+    target: "张经理，很高兴认识你。"
+    words: ["张", "经理", "很", "高兴", "认识", "你"]
+    reading: "Zhāng jīnglǐ, hěn gāoxìng rènshi nǐ."
+    pos: "phrase"
+  - id: "zh-0142"
+    target: "您叫什么名字？"
+    words: ["您", "叫", "什么", "名字"]
+    reading: "nín jiào shénme míngzi?"
+    pos: "phrase"
