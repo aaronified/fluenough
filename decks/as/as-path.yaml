@@ -207,12 +207,11 @@ units:
     grammar: ["needs"]
   # Number and classifiers, not gender: Assamese has no grammatical gender.
   # The unit teaches the plural markers (-বোৰ bur, -হঁত hôm̐t for people,
-  # -সকল xokol) and the classifiers (-খন khon, -জন zôn, -জনী zôni). Nothing
-  # agrees with gender; a natural-gender noun takes the feminine classifier
-  # (-জনী zôni) instead.
+  # -সকল xôkôl) and the classifiers (-খন khôn, -জন zôn, -জনী zoni). Nothing
+  # agrees with gender; a word for a woman takes the classifier -জনী (zoni).
   - decks: ["as-grammar-articles", "as-grammar-gender-number"]
     words: 5
-    grammar: ["articles", "gender-number"]
+    grammar: ["articles", "number"]
   - planned: { id: "as-clothes", theme: "clothes", words: 26 }
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
