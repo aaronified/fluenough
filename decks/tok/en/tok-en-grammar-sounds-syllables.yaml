@@ -1,0 +1,23 @@
+schema: 1
+id: "tok-en-grammar-sounds-syllables"
+kind: "layer"
+core: "tok-grammar-sounds-syllables"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The sounds and syllables"
+license: "CC-BY-SA-4.0"
+description: "Toki Pona has 9 consonants and 5 vowels, each said one way, and a word is built of syllables. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "The sounds and syllables"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}): {slot}"
+  slots: { "syllables": "split into syllables", "said like": "said like (English respelling)" }
+  entries:
+    "toki": "language; to talk"
+    "pona": "good"
+    "sina": "you"
+    "nimi": "name; word"
+    "ala": "no; not"
+    "pana": "to give"
+    "kon": "air; spirit"
+  notes: "Toki Pona has 9 consonants (p t k s m n l j w) and 5 vowels (a e i o u), and each letter is always said the same way. J is said like English y: jan (person) is said yahn. A syllable is a consonant and a vowel, with an n after the vowel allowed (kon), or a vowel alone, but only the first syllable of a word may start with a vowel. Some syllables never occur: wu, wo, ji and ti, and n before m or n. A word starts with a capital letter only when it is a name. The respelling is only a guide: the vowels are short and clean, as in Spanish or Japanese."

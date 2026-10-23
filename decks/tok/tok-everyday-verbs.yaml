@@ -1,0 +1,135 @@
+schema: 1
+id: "tok-everyday-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+theme: "everyday-verbs"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "tok-0080"
+    target: "moku"
+    ipa: "ˈmoku"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "food", kind: "usage" }
+      - { id: "object", kind: "behaviour" }
+    examples:
+      - { target: "mi moku.", ipa: "mi ˈmoku", bases: [{ word: "mi", ref: "tok-0003" }, { word: "moku", base: "moku" }] }
+      - { target: "ona li moku e pan.", ipa: "ˈona li ˈmoku e pan", bases: [{ word: "ona", ref: "tok-0062" }, { word: "li", ref: "tok-0101" }, { word: "moku", base: "moku" }, { word: "e", ref: "tok-0102" }, { word: "pan", ref: "tok-0034" }] }
+      - { target: "moku li pona.", ipa: "ˈmoku li ˈpona", bases: [{ word: "moku", base: "moku" }, { word: "li", ref: "tok-0101" }, { word: "pona", ref: "tok-0002" }] }
+    senses:
+      - { id: "food", pos: "noun" }
+    collocations:
+      - { id: "pona", ref: "tok-0002" }
+  - id: "tok-0081"
+    target: "lape"
+    ipa: "ˈlape"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "rest", kind: "usage" }
+      - { id: "ala", kind: "behaviour" }
+    examples:
+      - { target: "mi lape.", ipa: "mi ˈlape", bases: [{ word: "mi", ref: "tok-0003" }, { word: "lape", base: "lape" }] }
+      - { target: "ona li lape ala.", ipa: "ˈona li ˈlape ˈala", bases: [{ word: "ona", ref: "tok-0062" }, { word: "li", ref: "tok-0101" }, { word: "lape", base: "lape" }, { word: "ala", ref: "tok-0005" }] }
+      - { target: "jan ni li lape.", ipa: "jan ni li ˈlape", bases: [{ word: "jan", ref: "tok-0064" }, { word: "ni", ref: "tok-0063" }, { word: "li", ref: "tok-0101" }, { word: "lape", base: "lape" }] }
+  - id: "tok-0082"
+    target: "pali"
+    ipa: "ˈpali"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "work", kind: "usage" }
+      - { id: "object", kind: "behaviour" }
+    examples:
+      - { target: "mi pali e moku.", ipa: "mi ˈpali e ˈmoku", bases: [{ word: "mi", ref: "tok-0003" }, { word: "pali", base: "pali" }, { word: "e", ref: "tok-0102" }, { word: "moku", ref: "tok-0080" }] }
+      - { target: "ona li pali.", ipa: "ˈona li ˈpali", bases: [{ word: "ona", ref: "tok-0062" }, { word: "li", ref: "tok-0101" }, { word: "pali", base: "pali" }] }
+      - { target: "jan pali li toki.", ipa: "jan ˈpali li ˈtoki", bases: [{ word: "jan", ref: "tok-0064" }, { word: "pali", base: "pali" }, { word: "li", ref: "tok-0101" }, { word: "toki", ref: "tok-0001" }] }
+    senses:
+      - { id: "work", pos: "noun" }
+    collocations:
+      - { id: "moku", ref: "tok-0080" }
+  - id: "tok-0083"
+    target: "lukin"
+    ipa: "ˈlukin"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "see", kind: "usage" }
+      - { id: "at", kind: "behaviour" }
+    examples:
+      - { target: "mi lukin.", ipa: "mi ˈlukin", bases: [{ word: "mi", ref: "tok-0003" }, { word: "lukin", base: "lukin" }] }
+      - { target: "mi lukin e ona.", ipa: "mi ˈlukin e ˈona", bases: [{ word: "mi", ref: "tok-0003" }, { word: "lukin", base: "lukin" }, { word: "e", ref: "tok-0102" }, { word: "ona", ref: "tok-0062" }] }
+      - { target: "sina lukin e ijo ni.", ipa: "ˈsina ˈlukin e ˈijo ni", bases: [{ word: "sina", ref: "tok-0004" }, { word: "lukin", base: "lukin" }, { word: "e", ref: "tok-0102" }, { word: "ijo", ref: "tok-0065" }, { word: "ni", ref: "tok-0063" }] }
+  - id: "tok-0084"
+    target: "kute"
+    ipa: "ˈkute"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "ear", kind: "usage" }
+      - { id: "object", kind: "behaviour" }
+    examples:
+      - { target: "mi kute e toki.", ipa: "mi ˈkute e ˈtoki", bases: [{ word: "mi", ref: "tok-0003" }, { word: "kute", base: "kute" }, { word: "e", ref: "tok-0102" }, { word: "toki", ref: "tok-0001" }] }
+      - { target: "sina kute ala.", ipa: "ˈsina ˈkute ˈala", bases: [{ word: "sina", ref: "tok-0004" }, { word: "kute", base: "kute" }, { word: "ala", ref: "tok-0005" }] }
+      - { target: "ona li kute e nimi.", ipa: "ˈona li ˈkute e ˈnimi", bases: [{ word: "ona", ref: "tok-0062" }, { word: "li", ref: "tok-0101" }, { word: "kute", base: "kute" }, { word: "e", ref: "tok-0102" }, { word: "nimi", ref: "tok-0006" }] }
+    senses:
+      - { id: "ear", pos: "noun" }
+    collocations:
+      - { id: "toki", ref: "tok-0001" }
+  - id: "tok-0085"
+    target: "jo"
+    ipa: "jo"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "hold", kind: "usage" }
+      - { id: "object", kind: "behaviour" }
+    examples:
+      - { target: "mi jo e pan.", ipa: "mi jo e pan", bases: [{ word: "mi", ref: "tok-0003" }, { word: "jo", base: "jo" }, { word: "e", ref: "tok-0102" }, { word: "pan", ref: "tok-0034" }] }
+      - { target: "ona li jo e ijo.", ipa: "ˈona li jo e ˈijo", bases: [{ word: "ona", ref: "tok-0062" }, { word: "li", ref: "tok-0101" }, { word: "jo", base: "jo" }, { word: "e", ref: "tok-0102" }, { word: "ijo", ref: "tok-0065" }] }
+      - { target: "mi jo ala.", ipa: "mi jo ˈala", bases: [{ word: "mi", ref: "tok-0003" }, { word: "jo", base: "jo" }, { word: "ala", ref: "tok-0005" }] }
+  - id: "tok-0086"
+    target: "wile"
+    ipa: "ˈwile"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "need", kind: "usage" }
+      - { id: "verb", kind: "behaviour" }
+    examples:
+      - { target: "mi wile e moku.", ipa: "mi ˈwile e ˈmoku", bases: [{ word: "mi", ref: "tok-0003" }, { word: "wile", base: "wile" }, { word: "e", ref: "tok-0102" }, { word: "moku", ref: "tok-0080" }] }
+      - { target: "ona li wile lape.", ipa: "ˈona li ˈwile ˈlape", bases: [{ word: "ona", ref: "tok-0062" }, { word: "li", ref: "tok-0101" }, { word: "wile", base: "wile" }, { word: "lape", ref: "tok-0081" }] }
+      - { target: "sina wile e seme?", ipa: "ˈsina ˈwile e ˈseme", bases: [{ word: "sina", ref: "tok-0004" }, { word: "wile", base: "wile" }, { word: "e", ref: "tok-0102" }, { word: "seme", ref: "tok-0044" }] }
+    collocations:
+      - { id: "moku", ref: "tok-0080" }
+  - id: "tok-0087"
+    target: "kama"
+    ipa: "ˈkama"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "arrive", kind: "usage" }
+      - { id: "become", kind: "usage" }
+    examples:
+      - { target: "mi kama.", ipa: "mi ˈkama", bases: [{ word: "mi", ref: "tok-0003" }, { word: "kama", base: "kama" }] }
+      - { target: "ona li kama.", ipa: "ˈona li ˈkama", bases: [{ word: "ona", ref: "tok-0062" }, { word: "li", ref: "tok-0101" }, { word: "kama", base: "kama" }] }
+      - { target: "jan pona li kama tawa mi.", ipa: "jan ˈpona li ˈkama ˈtawa mi", bases: [{ word: "jan", ref: "tok-0064" }, { word: "pona", ref: "tok-0002" }, { word: "li", ref: "tok-0101" }, { word: "kama", base: "kama" }, { word: "tawa", ref: "tok-0088" }, { word: "mi", ref: "tok-0003" }] }
+    antonyms:
+      - { id: "tawa", ref: "tok-0088" }
+  - id: "tok-0088"
+    target: "tawa"
+    ipa: "ˈtawa"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "leave", kind: "usage" }
+      - { id: "move", kind: "usage" }
+    examples:
+      - { target: "mi tawa.", ipa: "mi ˈtawa", bases: [{ word: "mi", ref: "tok-0003" }, { word: "tawa", base: "tawa" }] }
+      - { target: "ona li tawa.", ipa: "ˈona li ˈtawa", bases: [{ word: "ona", ref: "tok-0062" }, { word: "li", ref: "tok-0101" }, { word: "tawa", base: "tawa" }] }
+      - { target: "sina tawa anu ala?", ipa: "ˈsina ˈtawa ˈanu ˈala", bases: [{ word: "sina", ref: "tok-0004" }, { word: "tawa", base: "tawa" }, { word: "anu", ref: "tok-0045" }, { word: "ala", ref: "tok-0005" }] }
+    antonyms:
+      - { id: "kama", ref: "tok-0087" }

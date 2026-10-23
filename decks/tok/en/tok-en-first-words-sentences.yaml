@@ -1,0 +1,46 @@
+schema: 1
+id: "tok-en-first-words-sentences"
+kind: "layer"
+core: "tok-first-words-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with the first words"
+description: "Short sentences that use only the first words: say what you speak, know and are, and put the words in order. Not yet checked by a Toki Pona speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "tok-0023":
+    native: "You don't speak."
+    confusables:
+      "w1": { why: "Sona means to know, not to speak: toki (speak) is the verb here." }
+      "w2": { why: "Mi means I, not you: sina (you) is the one who does not speak." }
+  "tok-0024":
+    native: "You speak Toki Pona."
+    confusables:
+      "w1": { why: "Mi means I, not you: sina (you) is the one spoken to." }
+      "w2": { why: "Sona means to know: it is not the verb for speaking." }
+  "tok-0025":
+    native: "You don't know."
+    confusables:
+      "w1": { why: "Toki means to speak, not to know: sona (know) is the verb here." }
+      "w2": { why: "Pona means good, not to know: here the verb is sona." }
+  "tok-0026":
+    native: "You are not well."
+    confusables:
+      "w1": { why: "Mi means I, not you: sina (you) is the subject." }
+      "w2": { why: "Nimi means word or name, not how someone is: pona is the word that describes the person." }
+  "tok-0027":
+    native: "I am not fine."
+    confusables:
+      "w1": { why: "Sina means you, not I: mi (I) is the subject." }
+      "w2": { why: "Nimi means word or name, not how someone is: pona is the word that describes the person." }
+  "tok-0028":
+    native: "I don't speak."
+    confusables:
+      "w1": { why: "Pona means good: the verb here is toki, to speak." }
+      "w2": { why: "Sina means you, not I: mi (I) is the subject." }
+  "tok-0029":
+    native: "I know Toki Pona."
+    confusables:
+      "w1": { why: "Sina means you, not I: mi (I) is the subject." }
+      "w2": { why: "Ala would make it I don't know Toki Pona: the sentence is positive." }
+      "w3": { why: "Nimi means word or name: it is not the word for the language." }

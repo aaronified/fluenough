@@ -1,0 +1,19 @@
+schema: 1
+id: "bn-en-grammar-compound-verbs"
+kind: "layer"
+core: "bn-grammar-compound-verbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Compound verbs: fell down, sat down, went away"
+description: "Two verbs that make one action: the first joins, the second takes the tense. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "conj": "{meaning}, as the first verb of a pair (joined form)"
+    "past": "{meaning}, as the second verb, past tense"
+    "pres": "{meaning}, as the second verb, present tense"
+rules:
+  "bn-rule-compound-verbs":
+    name: "Two verbs, one action: -ে (-e) or -িয়ে (-iye), then the tense"
+    explanation: "A compound verb joins two verbs. The first takes its joined form, {1}, which is the stem with -ে (-e) or -িয়ে (-iye). The second verb carries the tense: {2} is its past and {3} its present. Together they name one act: {4}, he fell down; {5}, he falls down."
