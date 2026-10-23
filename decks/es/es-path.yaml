@@ -83,31 +83,21 @@ units:
     words: 24
   - decks: ["es-adverbs", "es-adverbs-sentences", "es-reading-adverbs", "*"]
     words: 22
-  - planned: { id: "es-quantities", theme: "quantities", words: 30 }
-    listening_passages:
-      - { id: "at-the-grocers", text: { "en": "Asking how much and how many at a grocer's" } }
-    reading_passages:
-      - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
-  - planned: { id: "es-describing", theme: "describing", words: 40 }
-    listening_passages:
-      - { id: "how-are-you-feeling", text: { "en": "A friend asks how you feel today, and you answer" } }
-    reading_passages:
-      - { id: "postcard-from-the-coast", text: { "en": "A short postcard: the weather and the food" } }
+  - decks: ["es-quantities", "es-quantities-sentences", "es-reading-quantities", "*"]
+    words: 30
+  - decks: ["es-describing", "es-describing-sentences", "es-reading-describing", "*"]
+    words: 40
   # 5. Rules as forms, practised on the words known: articles and gender
   # and prepositions first, then the verb forms.
   - decks: ["es-grammar-articles-gender"]
     words: 0
     grammar: ["articles-gender"]
-  - planned: { id: "es-grammar-plural", grammar: "plural" }
-    listening_passages:
-      - { id: "more-than-one", text: { "en": "Saying there are two cats, three cars and one bus" } }
-    reading_passages:
-      - { id: "shelf-labels", text: { "en": "Shop shelf labels for one item and for several" } }
-  - planned: { id: "es-grammar-adjective-agreement", grammar: "adjective-agreement" }
-    listening_passages:
-      - { id: "a-big-red-house", text: { "en": "Describing a house and the people in it" } }
-    reading_passages:
-      - { id: "holiday-flat-ad", text: { "en": "An advert describing a flat for the holidays" } }
+  - decks: ["es-grammar-plural", "es-reading-plural"]
+    words: 0
+    grammar: ["plural"]
+  - decks: ["es-grammar-adjective-agreement", "es-reading-adjective-agreement"]
+    words: 0
+    grammar: ["adjective-agreement"]
   - planned: { id: "es-grammar-prepositions", grammar: "prepositions" }
     listening_passages:
       - { id: "where-is-it", text: { "en": "Saying where things are: in, on, under, next to" } }
