@@ -191,30 +191,20 @@ units:
     words: 8
   # ala after the word it denies; the X ala X question (sina pona ala
   # pona?); seme in the place of the answer; answering with the verb.
-  - planned: { id: "tok-grammar-negation-questions", grammar: ["negation-ala", "x-ala-x-questions", "seme-questions", "answering-yes-no"] }
-    listening_passages:
-      - { id: "yes-no-game", text: { "en": "A guessing game played with yes-no questions" } }
-    reading_passages:
-      - { id: "faq", text: { "en": "A short question-and-answer page about a club" } }
+  - decks: ["tok-grammar-negation-ala", "tok-grammar-x-ala-x-questions", "tok-grammar-seme-questions", "tok-grammar-answering-yes-no", "tok-grammar-negation-questions-sentences", "tok-reading-negation-questions"]
+    words: 0
+    grammar: ["negation-ala", "x-ala-x-questions", "seme-questions", "answering-yes-no"]
   # mama, mije, meli, kulupu, olin and poka (the people beside you).
-  - planned: { id: "tok-family", theme: "family", words: 6 }
-    listening_passages:
-      - { id: "my-family", text: { "en": "Someone describes the people in a family photo" } }
-    reading_passages:
-      - { id: "family-tree", text: { "en": "A small family tree, with each person described in toki pona" } }
+  - decks: ["tok-family", "tok-family-sentences", "tok-reading-family", "*"]
+    words: 6
   # o for commands (o moku!), o after a name to address someone (jan Ana
   # o, ...), and mi wile e ni: sina ... for a polite request.
-  - planned: { id: "tok-grammar-o", grammar: ["o-commands", "o-address"] }
-    listening_passages:
-      - { id: "kitchen-orders", text: { "en": "Someone gives orders while cooking: o pana e telo!" } }
-    reading_passages:
-      - { id: "house-rules", text: { "en": "A list of house rules, each starting with o" } }
+  - decks: ["tok-grammar-o", "tok-grammar-o-commands", "tok-grammar-o-address", "tok-grammar-o-sentences", "tok-reading-o"]
+    words: 1
+    grammar: ["o-commands", "o-address"]
   # telo, kili, suwi, seli and lete.
-  - planned: { id: "tok-food", theme: "food", words: 5 }
-    listening_passages:
-      - { id: "what-to-eat", text: { "en": "Two friends decide what to eat and drink" } }
-    reading_passages:
-      - { id: "simple-menu", text: { "en": "A simple café menu described in toki pona words" } }
+  - decks: ["tok-food", "tok-food-sentences", "tok-reading-food", "*"]
+    words: 5
   # wan, tu, luka, ale and nanpa; mute is already known. The simple
   # system (wan, tu, mute) and counting with luka; nanpa for ordinals.
   # The full nasin nanpa pona is B1's.

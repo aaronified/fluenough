@@ -124,18 +124,31 @@ List<Card> formChoices(Card card, Ask ask, Iterable<Card> cells) {
 /// when each has exactly one base and that base is the same card, so a
 /// sentence of several words that shares one of them is no sibling. Empty for
 /// a rules table's cell, which has its row, and for a card with no sibling.
-List<Card> formSiblings(Card card, Iterable<Card> cards) {
-  if (card.rule != null) return const <Card>[];
-  final ref = _singleBaseRef(card);
-  if (ref == null) return const <Card>[];
-  return <Card>[
-    for (final other in cards)
-      if (other.id != card.id &&
-          other.rule == null &&
-          other.target != card.target &&
-          _singleBaseRef(other) == ref)
-        other,
-  ];
+List<Card> formSiblings(Card card, Iterable<Card> cards) =>
+    FormSiblings(cards).of(card);
+
+/// [formSiblings] for many cards of the same [cards], with the cards grouped
+/// by their single base once.
+class FormSiblings {
+  FormSiblings(Iterable<Card> cards) {
+    for (final card in cards) {
+      if (card.rule != null) continue;
+      final ref = _singleBaseRef(card);
+      if (ref != null) (_byBase[ref] ??= <Card>[]).add(card);
+    }
+  }
+
+  final Map<String, List<Card>> _byBase = <String, List<Card>>{};
+
+  /// The siblings of [card]: see [formSiblings].
+  List<Card> of(Card card) {
+    final ref = card.rule == null ? _singleBaseRef(card) : null;
+    if (ref == null) return const <Card>[];
+    return <Card>[
+      for (final other in _byBase[ref] ?? const <Card>[])
+        if (other.id != card.id && other.target != card.target) other,
+    ];
+  }
 }
 
 /// The card [card]'s only base refs, or null when it has none or several.

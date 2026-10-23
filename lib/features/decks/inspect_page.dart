@@ -448,9 +448,14 @@ class _CardRow extends StatelessWidget {
     final language = entry.language;
     final separator = l10n.commonListSeparator;
     final notes = notesText(card);
+    final modes = card.modesIn(
+      ttsAvailable: true,
+      speechAvailable: true,
+      siblings: AppScope.of(context).siblingsOf(card),
+    );
     final skills = <String>[
       for (final skill in Skill.values)
-        if (skill.modes.any(card.modes.contains)) skill.label(l10n),
+        if (skill.modes.any(modes.contains)) skill.label(l10n),
     ];
     return _Line(
       top: _Script(

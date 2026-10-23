@@ -204,6 +204,7 @@ class SessionQueue {
     VoiceLookup? canHear,
     PairFilter? isSetAside,
     bool Function(Card card)? canIntroduce,
+    List<Card> Function(Card card)? siblingsOf,
     bool reviseAll = false,
     bool newEvenIfDue = false,
     Set<DrillMode> modes = const <DrillMode>{
@@ -226,6 +227,7 @@ class SessionQueue {
       final allowed = card.modesIn(
         ttsAvailable: hasVoice(card),
         speechAvailable: canHear?.call(card) ?? false,
+        siblings: siblingsOf?.call(card) ?? const <Card>[],
       );
       SessionItem? mostOverdue;
       SessionItem? firstNew;
