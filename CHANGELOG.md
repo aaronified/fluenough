@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `letter` and `digit` are parts of speech of a card, and Hear asks for the form of a letter, a digit or a generated number by the card's own data, not by whether its deck is on the alphabet list (#522, step 7).
+- `letter` and `digit` are parts of speech of a card, and a card may be marked `hears: form`; Hear asks for the form of such a card, and of a generated number, by the card's own data, not by whether its deck is on the alphabet list (#522, step 7).
 - `modes` on a card is now an opt-out: the skills it is excluded from, so a card with none is asked every skill its data allows, including the grammar skills where it has single-base siblings; `tools/convert_modes.py` converts the shipped lists, merged with the release that reads them this way (#522, step 6).
 - Rearranging is eligible by the card's data (three or more words in the target, or two in a phrase) through the question-type registry, which never rearranges a reading question, with the same questions as before (#522, step 5).
 - The two grammar question types are now eligible by whether the card's word has other forms (`Card.hasOtherForms`) or has sibling cards (`formSiblings`: each has exactly one base, the same card), and a rules cell's lesson questions come from the registry, with the same questions as before (#522, step 4).

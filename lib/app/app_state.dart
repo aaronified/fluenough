@@ -936,9 +936,9 @@ class AppState extends ChangeNotifier {
     await deckDownloads!.remove(language);
   }
 
-  /// Tells progress which decks ask for what is heard rather than what it
-  /// means, so that a right answer there implies Write, not Recognition
-  /// (ADR-0034).
+  /// Tells progress which cards ask for what is heard rather than what it
+  /// means ([hearsForm]), so that a right answer there implies Write, not
+  /// Recognition (ADR-0034).
   void _mapSkills() {
     final scriptDecks = <String>{
       for (final entry in decks)
@@ -950,7 +950,11 @@ class AppState extends ChangeNotifier {
     // Script-deck answers from before the script was kept per answer
     // count for the course's primary script (#653).
     progress.skills = SkillMap(
-      formHeardIn: scriptDecks,
+      formHeardCards: <String>{
+        for (final entry in decks)
+          for (final card in entry.cards)
+            if (hearsForm(card)) card.id,
+      },
       scriptDecks: scriptDecks,
       primaryScripts: <String, String>{
         for (final code in <String>{for (final e in decks) e.language.code})
@@ -2215,9 +2219,10 @@ class AppState extends ChangeNotifier {
   }
 
   /// Whether hearing [card] asks for what was heard rather than what it
-  /// means: a letter or a digit (`pos`, [Card.isLetterOrDigit]), which is
-  /// script practice (ADR-0034), or a generated number.
-  bool hearsForm(Card card) => card is NumberCard || card.isLetterOrDigit;
+  /// means: a letter or a digit (`pos`), a card marked `hears: form`
+  /// ([Card.hearsForm]), which is script practice (ADR-0034), or a generated
+  /// number.
+  bool hearsForm(Card card) => card is NumberCard || card.hearsForm;
 
   /// At most [limit] of [items], one per word, picked at random: a quick
   /// revision (ADR-0029). All of them, in order, when [limit] is null.

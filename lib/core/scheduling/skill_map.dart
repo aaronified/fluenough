@@ -40,13 +40,20 @@ import 'replay.dart';
 class SkillMap {
   const SkillMap({
     this.formHeardIn = const <String>{},
+    this.formHeardCards = const <String>{},
     this.scriptDecks = const <String>{},
     this.primaryScripts = const <String, String>{},
   });
 
   /// The decks where hearing asks for what was heard rather than what it
-  /// means: those that teach the alphabet.
+  /// means, for every card in them. The app leaves it empty and lists the
+  /// cards instead ([formHeardCards]).
   final Set<String> formHeardIn;
+
+  /// The cards where hearing asks for what was heard rather than what it
+  /// means: a letter or a digit, a card marked `hears: form`, by the card's
+  /// own data (#522, step 7), the rule `AppState.hearsForm` asks.
+  final Set<String> formHeardCards;
 
   /// The decks listed under `alphabet:` in their language's path: the
   /// script decks, whose answers also feed the script skills (#556).
@@ -119,34 +126,39 @@ class SkillMap {
 
   /// The skills a right answer in [mode], in [deckId], implies, each with
   /// the share of a review it counts for.
-  Map<DrillMode, double> impliedBy(DrillMode mode, String deckId) =>
-      switch (mode) {
-        DrillMode.production || DrillMode.speaking => const <DrillMode, double>{
-          DrillMode.recognition: implied,
-        },
-        DrillMode.listening =>
-          formHeardIn.contains(deckId)
-              ? const <DrillMode, double>{DrillMode.production: implied}
-              : const <DrillMode, double>{DrillMode.recognition: implied},
-        // Grammar understood (a form's meaning chosen) and produced (the
-        // form chosen or typed) imply nothing, of each other or of a word's
-        // skills: the research finds grammar practice skill-specific
-        // (DeKeyser 1997; Shintani et al. 2013) and gives no figure for a
-        // rule's forms and their meanings (DECK-FORMAT.md, Rules decks). Should
-        // one appear, produced implying understood is one arm here, as Write's.
-        DrillMode.recognition ||
-        DrillMode.grammarUnderstood ||
-        DrillMode.grammar ||
-        DrillMode.reading ||
-        DrillMode.readScript ||
-        DrillMode.writeScript => const <DrillMode, double>{},
-      };
+  Map<DrillMode, double> impliedBy(
+    DrillMode mode,
+    String deckId, {
+    String cardId = '',
+  }) => switch (mode) {
+    DrillMode.production || DrillMode.speaking => const <DrillMode, double>{
+      DrillMode.recognition: implied,
+    },
+    DrillMode.listening =>
+      formHeardIn.contains(deckId) || formHeardCards.contains(cardId)
+          ? const <DrillMode, double>{DrillMode.production: implied}
+          : const <DrillMode, double>{DrillMode.recognition: implied},
+    // Grammar understood (a form's meaning chosen) and produced (the
+    // form chosen or typed) imply nothing, of each other or of a word's
+    // skills: the research finds grammar practice skill-specific
+    // (DeKeyser 1997; Shintani et al. 2013) and gives no figure for a
+    // rule's forms and their meanings (DECK-FORMAT.md, Rules decks). Should
+    // one appear, produced implying understood is one arm here, as Write's.
+    DrillMode.recognition ||
+    DrillMode.grammarUnderstood ||
+    DrillMode.grammar ||
+    DrillMode.reading ||
+    DrillMode.readScript ||
+    DrillMode.writeScript => const <DrillMode, double>{},
+  };
 
   @override
   bool operator ==(Object other) =>
       other is SkillMap &&
       other.formHeardIn.length == formHeardIn.length &&
       other.formHeardIn.containsAll(formHeardIn) &&
+      other.formHeardCards.length == formHeardCards.length &&
+      other.formHeardCards.containsAll(formHeardCards) &&
       other.scriptDecks.length == scriptDecks.length &&
       other.scriptDecks.containsAll(scriptDecks) &&
       other.primaryScripts.length == primaryScripts.length &&
@@ -157,6 +169,7 @@ class SkillMap {
   @override
   int get hashCode => Object.hash(
     Object.hashAllUnordered(formHeardIn),
+    Object.hashAllUnordered(formHeardCards),
     Object.hashAllUnordered(scriptDecks),
     Object.hashAllUnordered(<String>[
       for (final e in primaryScripts.entries) '${e.key}=${e.value}',
