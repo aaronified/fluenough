@@ -358,7 +358,6 @@ void main() {
     ) async {
       usePhone(tester, textScale: 1.4);
       final semantics = tester.ensureSemantics();
-      addTearDown(semantics.dispose);
       final started = DateTime(2026, 8, 3);
       Future<void> show(Milestone? level, {bool all = false}) => pumpScreen(
         tester,
@@ -413,6 +412,7 @@ void main() {
       expect(find.text('Level'), findsNothing);
       expect(find.text('Started'), findsOneWidget);
       expect(tester.takeException(), isNull);
+      semantics.dispose();
     });
   });
 
@@ -628,7 +628,6 @@ void main() {
       tester,
     ) async {
       final semantics = tester.ensureSemantics();
-      addTearDown(semantics.dispose);
       usePhone(tester, textScale: 1.4);
       const marks = <DayMark>[
         DayMark.none,
@@ -682,6 +681,7 @@ void main() {
           reason: label,
         );
       }
+      semantics.dispose();
     });
 
     testWidgets('the weakest tags and the leeches are shown, for the '
