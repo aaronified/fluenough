@@ -1,0 +1,50 @@
+schema: 1
+id: "es-market-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-0589"
+    target: "Compro una manzana en el mercado."
+    ipa: "ˈkompɾo ˈuna manˈθana en el meɾˈkado"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Compro", ref: "es-0280" }, { word: "una", base: "una" }, { word: "manzana", ref: "es-0569" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "mercado", ref: "es-0567" }]
+    confusables: [{ id: "tienda", ref: "es-0584", kind: "word" }, { id: "fruta", ref: "es-0568", kind: "word" }]
+  - id: "es-0590"
+    target: "¿Cuánto cuesta el pan?"
+    ipa: "ˈkwanto ˈkwesta el pan"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Cuánto", ref: "es-0060" }, { word: "cuesta", ref: "es-0587" }, { word: "el", base: "el" }, { word: "pan", ref: "es-0013" }]
+    confusables: [{ id: "precio", ref: "es-0580", kind: "word" }, { id: "pagar", ref: "es-0295", kind: "word" }]
+  - id: "es-0591"
+    target: "El vendedor vende fruta y verdura."
+    ipa: "el bendeˈdoɾ ˈbende ˈfɾuta i beɾˈduɾa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "vendedor", ref: "es-0582" }, { word: "vende", ref: "es-0522" }, { word: "fruta", ref: "es-0568" }, { word: "y", ref: "es-0048" }, { word: "verdura", ref: "es-0579" }]
+    confusables: [{ id: "comprar", ref: "es-0280", kind: "word" }, { id: "cambiar", ref: "es-0588", kind: "word" }]
+  - id: "es-0592"
+    target: "Hay una oferta hoy en la tienda."
+    ipa: "aj ˈuna oˈfeɾta oj en la ˈtjenda"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "oferta", ref: "es-0585" }, { word: "hoy", ref: "es-0331" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "tienda", ref: "es-0584" }]
+    confusables: [{ id: "precio", ref: "es-0580", kind: "word" }, { id: "cambio", ref: "es-0586", kind: "word" }]
+  - id: "es-0593"
+    target: "La patata es barata."
+    ipa: "la paˈtata es baˈɾata"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "patata", ref: "es-0576" }, { word: "es", ref: "es-0022" }, { word: "barata", ref: "es-0411" }]
+    confusables: [{ id: "caro", ref: "es-0412", kind: "word" }, { id: "pequeno", ref: "es-0032", kind: "word" }]
+  - id: "es-0594"
+    target: "Necesito el cambio, no tengo dinero."
+    ipa: "neθeˈsito el ˈkambjo no ˈtenɡo diˈneɾo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Necesito", ref: "es-0288" }, { word: "el", base: "el" }, { word: "cambio", ref: "es-0586" }, { word: "no", ref: "es-0043" }, { word: "tengo", ref: "es-0024" }, { word: "dinero", ref: "es-0513" }]
+    confusables: [{ id: "precio", ref: "es-0580", kind: "word" }, { id: "pagar", ref: "es-0295", kind: "word" }]
