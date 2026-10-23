@@ -1,8 +1,8 @@
 import 'fsrs.dart';
 
-/// How long a pair's interval is, in days, for it to count as known: past
-/// learning (`docs/plans/progress-revamp.md`, "FSRS 90%, past learning").
-const int kKnownIntervalDays = 7;
+/// How likely a pair was to be recalled at its last review, for it to count
+/// as known (owner, 2026-10-23: "Recall >=90% at last review").
+const double kKnownRecall = 0.9;
 
 /// More samples asked after the first fails, at least [kStressMin] and
 /// bringing the deck's passes up to [kStressTotal] (owner, 2026-10-20: "ask
@@ -14,10 +14,11 @@ const int kStressTotal = 5;
 /// 2026-10-20: "ask 1-2 as review").
 const int kSampleSize = 2;
 
-/// Whether [state] is a known pair: reviewed right, with an interval past
-/// learning.
+/// Whether [state] is a known pair: its last review was right, and FSRS
+/// predicted at least [kKnownRecall] recall for it at that moment
+/// ([FsrsState.recallAtReview]).
 bool isKnownState(FsrsState state) =>
-    state.repetitions > 0 && state.intervalDays >= kKnownIntervalDays;
+    state.repetitions > 0 && state.recallAtReview >= kKnownRecall;
 
 /// How many of a deck's due known cards to show now, out of [due] of them
 /// (#680), worked out from the deck's pair [states] alone, so that it holds

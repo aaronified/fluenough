@@ -4703,6 +4703,7 @@ void main() {
       intervalDays: 20,
       dueAt: at.subtract(const Duration(days: 1)),
       lastReviewAt: at.subtract(Duration(days: daysAgo)),
+      recallAtReview: 0.92,
     );
 
     /// A known card reviewed right at [at], so not due for weeks.
@@ -4713,6 +4714,7 @@ void main() {
       intervalDays: 25,
       dueAt: at.add(const Duration(days: 25)),
       lastReviewAt: at,
+      recallAtReview: 0.93,
     );
 
     FsrsState missed(DateTime at) => FsrsState(
@@ -4769,6 +4771,49 @@ void main() {
       expect(more.first, 'k2');
       states['k2'] = missed(now);
       expect(due(states), <String>[for (var i = 3; i < 12; i++) 'k$i']);
+    });
+
+    test('a card is known when it was likely recalled at its last review, '
+        'not by how long its interval is', () {
+      final states = pending();
+      // k0 and k1 were remembered at 60%, reviewed late: not known, so they
+      // come up whatever the sample is.
+      for (final id in <String>['k0', 'k1']) {
+        final s = states[id]!;
+        states[id] = FsrsState(
+          stability: s.stability,
+          difficulty: s.difficulty,
+          repetitions: s.repetitions,
+          intervalDays: 60,
+          dueAt: s.dueAt,
+          lastReviewAt: s.lastReviewAt,
+          recallAtReview: 0.6,
+        );
+      }
+      expect(
+        due(states),
+        containsAll(<String>['k0', 'k1']),
+        reason: 'not known, so never held back',
+      );
+      expect(due(states), hasLength(4), reason: 'and two known samples');
+    });
+
+    test('sampling rotates through the whole deck, so every card is '
+        'eventually reviewed', () {
+      final states = pending();
+      final reviewed = <String>{};
+      var shownOnFirstDay = -1;
+      for (var day = 0; day < 1500 && reviewed.length < 12; day++) {
+        final at = now.add(Duration(days: day));
+        final ids = due(states, at: at);
+        if (day == 0) shownOnFirstDay = ids.length;
+        for (final id in ids) {
+          states[id] = Fsrs.next(states[id], 4, now: at);
+          reviewed.add(id);
+        }
+      }
+      expect(shownOnFirstDay, 2, reason: 'sampling was on');
+      expect(reviewed, hasLength(12));
     });
 
     test('cards still being learned are not sampled', () {

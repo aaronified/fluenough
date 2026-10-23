@@ -25,6 +25,7 @@ class FsrsState {
     required this.lastReviewAt,
     this.repetitions = 0,
     this.lapses = 0,
+    this.recallAtReview = 0,
   });
 
   /// Days until the chance of recall falls to 90%.
@@ -46,6 +47,15 @@ class FsrsState {
   /// How many times the pair was missed after a review that was not.
   /// Not used by FSRS itself; surfaced in statistics to identify leeches.
   final int lapses;
+
+  /// The chance, from 0 to 1, that the pair was recalled at its last review,
+  /// as FSRS predicted it from the state before that review: 0 for a first
+  /// review. A review in the same day as the one before is no test of memory,
+  /// so it keeps the earlier value. It is what makes a pair known (#680).
+  ///
+  /// Not stored in the `card_states` cache: the state is always rebuilt by
+  /// replaying the log, which fills it.
+  final double recallAtReview;
 
   bool isDue(DateTime now) => !dueAt.isAfter(now);
 
@@ -171,6 +181,15 @@ abstract final class Fsrs {
     }
     final interval = intervalFor(stability, parameters: w);
     final missed = rating == Rating.again;
+    final recall = state == null
+        ? 0.0
+        : elapsedDays(state.lastReviewAt, now) < 1
+        ? state.recallAtReview
+        : _retrievability(
+            w,
+            elapsedDays(state.lastReviewAt, now),
+            state.stability,
+          );
     return FsrsState(
       stability: stability,
       difficulty: difficulty,
@@ -181,6 +200,7 @@ abstract final class Fsrs {
       lapses:
           (state?.lapses ?? 0) +
           (missed && state != null && state.repetitions > 0 ? 1 : 0),
+      recallAtReview: recall,
     );
   }
 
@@ -234,6 +254,7 @@ abstract final class Fsrs {
       lastReviewAt: state.lastReviewAt,
       repetitions: state.repetitions,
       lapses: state.lapses,
+      recallAtReview: state.recallAtReview,
     );
   }
 
@@ -276,6 +297,7 @@ abstract final class Fsrs {
       lastReviewAt: now,
       repetitions: full.repetitions,
       lapses: full.lapses,
+      recallAtReview: full.recallAtReview,
     );
   }
 
