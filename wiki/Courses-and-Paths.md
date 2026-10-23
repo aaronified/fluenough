@@ -20,7 +20,7 @@ A course has a path: its units in teaching order, from A1 to B1.
 
 Units not yet written show as "Coming". Each unit shows its words, rules and passages and how many you know. A script unit shows its letters.
 
-Open a unit to see its phrasebook, words, rules and sentences in teaching order, and its decks. "Continue" reviews what is due in it, or teaches its next words. A phrasebook chunk is taught whole from the start. A sentence opens once every word and rule in it is known; until then it is greyed, with what it waits for, and a tap says why and offers to practise the rule. Reviews never wait: only new sentences do. A lesson takes the next items in the path's order, fewer while the words and rules you were taught are not yet known ([ADR-0045](ADR-0045-Lessons-Take-The-Next-Eligible-Items)).
+Open a unit to see its phrasebook, words, rules and sentences in teaching order, and its decks. "Continue" reviews what is due in it, or teaches its next words. A phrasebook chunk is taught whole from the start. A sentence opens once every word and rule in it is known; until then it is greyed, with what it waits for, and a tap says why and offers to practise the rule. Reviews never wait: only new sentences do. A lesson takes the next items in the path's order, fewer while the words and rules you were taught are not yet known ([ADR-0046](ADR-0046-Lessons-Take-The-Next-Eligible-Items)).
 
 A word counts as known once you were right on 9 of your last 10 answers to it; a rule, over all the cells of its table. Known words are marked on their cards.
 

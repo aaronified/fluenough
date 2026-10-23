@@ -3,6 +3,7 @@ import 'package:flutter/material.dart' hide Card;
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
+import '../../core/decks/adult_gate.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/scheduling/skill_difficulty.dart';
@@ -39,11 +40,10 @@ Future<void> showWordSheet(
 
 /// The tag that marks a rude card: one an `audience: adult` deck would hold
 /// (#96, docs/plans/offensive-words.md). No bundled card carries it yet.
-const String rudeTag = 'offensive';
+const String rudeTag = adultTag;
 
 /// Whether [card] is a rude word: tagged so, or in a deck tagged so.
-bool isRude(Card card, DeckEntry? deck) =>
-    card.tags.contains(rudeTag) || (deck?.deck.tags.contains(rudeTag) ?? false);
+bool isRude(Card card, DeckEntry? deck) => isRudeCard(card, deck?.deck);
 
 /// Whether the learner has turned adult content on, in Settings' "Adult
 /// content (18+)" (#96). Off, a rude word is hidden. Read it inside a

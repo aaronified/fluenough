@@ -124,6 +124,7 @@ Future<AppState> reviewState({
   TtsEngine tts = const NullTtsEngine(),
   MailShare share = const NullMailShare(),
   bool reviewing = false,
+  bool adult = true,
   SettingsNotifier? settings,
 }) async {
   final state = AppState.test(
@@ -149,6 +150,8 @@ Future<AppState> reviewState({
         ),
   );
   await state.load();
+  // A reviewer reads the offensive words with adult content on (#628).
+  state.settings.adultContent = adult;
   if (reviewing) state.reviewing.turnOn();
   return state;
 }
