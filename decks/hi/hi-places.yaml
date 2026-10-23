@@ -1,0 +1,1773 @@
+schema: 1
+id: "hi-places"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "places"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-1091"
+    target: "बाज़ार"
+    target_scripts: { perso_arabic: "بازار" }
+    reading: "bāzār"
+    ipa: "baːzaːr"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "मैं बाज़ार जाता हूँ।"
+        reading: "maim̐ bāzār jātā hūm̐."
+        ipa: "mɛːm baːzaːr dʒaːt̪aː ɦũː"
+        bases:
+          - { word: "मैं", ref: "hi-0745" }
+          - { word: "बाज़ार", base: "बाज़ार", reading: "bāzār" }
+          - { word: "जाता", ref: "hi-0777" }
+          - { word: "हूँ", ref: "hi-0780" }
+      - target: "बाज़ार में सब्ज़ियाँ सस्ती हैं।"
+        reading: "bāzār mēm̐ sabziyām̐ sastī haim̐."
+        ipa: "baːzaːr mẽː səbzɪjãː səst̪iː ɦɛːm"
+        bases:
+          - { word: "बाज़ार", base: "बाज़ार", reading: "bāzār" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "सब्ज़ियाँ", base: "सब्ज़ी", reading: "sabzī" }
+          - { word: "सस्ती", ref: "hi-0237" }
+          - { word: "हैं", ref: "hi-0780" }
+    synonyms:
+      - { id: "haat", word: "हाट", reading: "hāṭ" }
+
+  - id: "hi-1092"
+    target: "स्कूल"
+    target_scripts: { perso_arabic: "اسکول" }
+    reading: "skūl"
+    ipa: "skuːl"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "बच्चे स्कूल जाते हैं।"
+        reading: "baccē skūl jātē haim̐."
+        ipa: "bətʃtʃeː skuːl dʒaːt̪eː ɦɛːm"
+        bases:
+          - { word: "बच्चे", ref: "hi-0383" }
+          - { word: "स्कूल", base: "स्कूल", reading: "skūl" }
+          - { word: "जाते", ref: "hi-0777" }
+          - { word: "हैं", ref: "hi-0780" }
+      - target: "मेरा बेटा स्कूल में है।"
+        reading: "merā bēṭā skūl mēm̐ hai."
+        ipa: "meːraː beːʈaː skuːl mẽː ɦɛː"
+        bases:
+          - { word: "मेरा", ref: "hi-0752" }
+          - { word: "बेटा", base: "बेटा", reading: "bēṭā" }
+          - { word: "स्कूल", base: "स्कूल", reading: "skūl" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "vidyalay", word: "विद्यालय", reading: "vidyālay" }
+
+  - id: "hi-1093"
+    target: "बैंक"
+    target_scripts: { perso_arabic: "بینک" }
+    reading: "baiṅk"
+    ipa: "bɛːŋk"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "बैंक बंद है।"
+        reading: "baiṅk band hai."
+        ipa: "bɛːŋk bənd̪ ɦɛː"
+        bases:
+          - { word: "बैंक", base: "बैंक", reading: "baiṅk" }
+          - { word: "बंद", base: "बंद", reading: "band" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मेरा बैंक मंदिर के पास है।"
+        reading: "merā baiṅk mandir kē pās hai."
+        ipa: "meːraː bɛːŋk mənd̪ɪr keː paːs ɦɛː"
+        bases:
+          - { word: "मेरा", ref: "hi-0752" }
+          - { word: "बैंक", base: "बैंक", reading: "baiṅk" }
+          - { word: "मंदिर", ref: "hi-1094" }
+          - { word: "के", ref: "hi-0279" }
+          - { word: "पास", ref: "hi-0293" }
+          - { word: "है", ref: "hi-0780" }
+
+  - id: "hi-1094"
+    target: "मंदिर"
+    target_scripts: { perso_arabic: "مندر" }
+    reading: "mandir"
+    ipa: "mənd̪ɪr"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "मंदिर सुबह खुलता है।"
+        reading: "mandir subah khultā hai."
+        ipa: "mənd̪ɪr sʊbəɦ kʰʊlt̪aː ɦɛː"
+        bases:
+          - { word: "मंदिर", base: "मंदिर", reading: "mandir" }
+          - { word: "सुबह", ref: "hi-0302" }
+          - { word: "खुलता", base: "खुलना", reading: "khulnā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मंदिर में बहुत लोग हैं।"
+        reading: "mandir mēm̐ bahut log haim̐."
+        ipa: "mənd̪ɪr mẽː bəɦʊt̪ loːɡ ɦɛːm"
+        bases:
+          - { word: "मंदिर", base: "मंदिर", reading: "mandir" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "लोग", ref: "hi-0761" }
+          - { word: "हैं", ref: "hi-0780" }
+    synonyms:
+      - { id: "devalay", word: "देवालय", reading: "devālay" }
+
+  - id: "hi-1095"
+    target: "मस्जिद"
+    target_scripts: { perso_arabic: "مسجد" }
+    reading: "masjid"
+    ipa: "məsdʒɪd̪"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "यह मस्जिद बड़ी है।"
+        reading: "yah masjid baṛī hai."
+        ipa: "jəɦ məsdʒɪd̪ bəɽiː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "मस्जिद", base: "मस्जिद", reading: "masjid" }
+          - { word: "बड़ी", ref: "hi-0894" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मस्जिद के पास एक दुकान है।"
+        reading: "masjid kē pās ēk dukān hai."
+        ipa: "məsdʒɪd̪ keː paːs eːk d̪ʊkaːn ɦɛː"
+        bases:
+          - { word: "मस्जिद", base: "मस्जिद", reading: "masjid" }
+          - { word: "के", ref: "hi-0279" }
+          - { word: "पास", ref: "hi-0293" }
+          - { word: "एक", ref: "hi-0198" }
+          - { word: "दुकान", ref: "hi-0239" }
+          - { word: "है", ref: "hi-0780" }
+
+  - id: "hi-1096"
+    target: "गुरुद्वारा"
+    target_scripts: { perso_arabic: "گرودوارہ" }
+    reading: "gurudvārā"
+    ipa: "ɡʊrʊd̪ʋaːraː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "गुरुद्वारा बहुत साफ़ है।"
+        reading: "gurudvārā bahut sāf hai."
+        ipa: "ɡʊrʊd̪ʋaːraː bəɦʊt̪ saːf ɦɛː"
+        bases:
+          - { word: "गुरुद्वारा", base: "गुरुद्वारा", reading: "gurudvārā" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "साफ़", base: "साफ़", reading: "sāf" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "गुरुद्वारा सड़क के किनारे है।"
+        reading: "gurudvārā saṛak kē kinārē hai."
+        ipa: "ɡʊrʊd̪ʋaːraː səɽək keː kɪnaːreː ɦɛː"
+        bases:
+          - { word: "गुरुद्वारा", base: "गुरुद्वारा", reading: "gurudvārā" }
+          - { word: "सड़क", ref: "hi-0298" }
+          - { word: "के", ref: "hi-0279" }
+          - { word: "किनारे", base: "किनारा", reading: "kinārā" }
+          - { word: "है", ref: "hi-0780" }
+
+  - id: "hi-1097"
+    target: "चर्च"
+    target_scripts: { perso_arabic: "چرچ" }
+    reading: "carc"
+    ipa: "tʃərtʃ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "चर्च नया है।"
+        reading: "carc nayā hai."
+        ipa: "tʃərtʃ nəjaː ɦɛː"
+        bases:
+          - { word: "चर्च", base: "चर्च", reading: "carc" }
+          - { word: "नया", ref: "hi-0896" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "चर्च में प्रार्थना होती है।"
+        reading: "carc mēm̐ prārthanā hōtī hai."
+        ipa: "tʃərtʃ mẽː praːrt̪ʰənaː ɦoːt̪iː ɦɛː"
+        bases:
+          - { word: "चर्च", base: "चर्च", reading: "carc" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "प्रार्थना", base: "प्रार्थना", reading: "prārthanā" }
+          - { word: "होती", ref: "hi-0780" }
+          - { word: "है", ref: "hi-0780" }
+
+  - id: "hi-1098"
+    target: "दवाखाना"
+    target_scripts: { perso_arabic: "دواخانہ" }
+    reading: "davākhānā"
+    ipa: "d̪əʋaːkʰaːnaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "दवाखाना यहाँ से दूर है।"
+        reading: "davākhānā yahām̐ sē dūr hai."
+        ipa: "d̪əʋaːkʰaːnaː jəɦãː seː d̪uːr ɦɛː"
+        bases:
+          - { word: "दवाखाना", base: "दवाखाना", reading: "davākhānā" }
+          - { word: "यहाँ", ref: "hi-0295" }
+          - { word: "से", ref: "hi-0276" }
+          - { word: "दूर", ref: "hi-0294" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "दवाखाने में दवाई मिलती है।"
+        reading: "davākhānē mēm̐ davāī milatī hai."
+        ipa: "d̪əʋaːkʰaːneː mẽː d̪əʋaːiː mɪlt̪iː ɦɛː"
+        bases:
+          - { word: "दवाखाने", base: "दवाखाना", reading: "davākhānā" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "दवाई", ref: "hi-0359" }
+          - { word: "मिलती", base: "मिलना", reading: "milnā" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "aushadhalay", word: "औषधालय", reading: "auṣadhālay" }
+
+  - id: "hi-1099"
+    target: "क्लिनिक"
+    target_scripts: { perso_arabic: "کلینک" }
+    reading: "klinik"
+    ipa: "klɪnɪk"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "क्लिनिक में डॉक्टर मरीज़ देखते हैं।"
+        reading: "klinik mēm̐ ḍôkṭar marīz dēkhtē haim̐."
+        ipa: "klɪnɪk mẽː ɖɔkʈər məriːz d̪eːkʰt̪eː ɦɛːm"
+        bases:
+          - { word: "क्लिनिक", base: "क्लिनिक", reading: "klinik" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "डॉक्टर", ref: "hi-0357" }
+          - { word: "मरीज़", base: "मरीज़", reading: "marīz" }
+          - { word: "देखते", base: "देखना", reading: "dēkhnā" }
+          - { word: "हैं", ref: "hi-0780" }
+      - target: "मेरा क्लिनिक सुबह खुलता है।"
+        reading: "merā klinik subah khultā hai."
+        ipa: "meːraː klɪnɪk sʊbəɦ kʰʊlt̪aː ɦɛː"
+        bases:
+          - { word: "मेरा", ref: "hi-0752" }
+          - { word: "क्लिनिक", base: "क्लिनिक", reading: "klinik" }
+          - { word: "सुबह", ref: "hi-0302" }
+          - { word: "खुलता", base: "खुलना", reading: "khulnā" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "chikitsalay", word: "चिकित्सालय", reading: "cikitsālay" }
+
+  - id: "hi-1100"
+    target: "पार्क"
+    target_scripts: { perso_arabic: "پارک" }
+    reading: "pārk"
+    ipa: "paːrk"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "बच्चे पार्क में खेलते हैं।"
+        reading: "baccē pārk mēm̐ khēltē haim̐."
+        ipa: "bətʃtʃeː paːrk mẽː kʰeːlt̪eː ɦɛːm"
+        bases:
+          - { word: "बच्चे", ref: "hi-0383" }
+          - { word: "पार्क", base: "पार्क", reading: "pārk" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "खेलते", base: "खेलना", reading: "khēlnā" }
+          - { word: "हैं", ref: "hi-0780" }
+      - target: "पार्क के पास दुकान है।"
+        reading: "pārk kē pās dukān hai."
+        ipa: "paːrk keː paːs d̪ʊkaːn ɦɛː"
+        bases:
+          - { word: "पार्क", base: "पार्क", reading: "pārk" }
+          - { word: "के", ref: "hi-0279" }
+          - { word: "पास", ref: "hi-0293" }
+          - { word: "दुकान", ref: "hi-0239" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "udyan", word: "उद्यान", reading: "udyān" }
+
+  - id: "hi-1101"
+    target: "बगीचा"
+    target_scripts: { perso_arabic: "باغیچہ" }
+    reading: "bagīcā"
+    ipa: "bəɡiːtʃaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "बगीचे में फूल खिले हैं।"
+        reading: "bagīcē mēm̐ phūl khilē haim̐."
+        ipa: "bəɡiːtʃeː mẽː pʰuːl kʰɪleː ɦɛːm"
+        bases:
+          - { word: "बगीचे", base: "बगीचा", reading: "bagīcā" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "फूल", base: "फूल", reading: "phūl" }
+          - { word: "खिले", base: "खिलना", reading: "khilnā" }
+          - { word: "हैं", ref: "hi-0780" }
+      - target: "मेरे बगीचे में आम का पेड़ है।"
+        reading: "mērē bagīcē mēm̐ ām kā pēṛ hai."
+        ipa: "meːreː bəɡiːtʃeː mẽː aːm kaː peːɽ ɦɛː"
+        bases:
+          - { word: "मेरे", ref: "hi-0752" }
+          - { word: "बगीचे", base: "बगीचा", reading: "bagīcā" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "आम", base: "आम", reading: "ām" }
+          - { word: "का", ref: "hi-0279" }
+          - { word: "पेड़", ref: "hi-1116" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "bagh", word: "बाग़", reading: "bāġ" }
+
+  - id: "hi-1102"
+    target: "चौक"
+    target_scripts: { perso_arabic: "چوک" }
+    reading: "cauk"
+    ipa: "tʃɔːk"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "चौक पर बहुत भीड़ है।"
+        reading: "cauk par bahut bhīṛ hai."
+        ipa: "tʃɔːk pər bəɦʊt̪ bʱiːɽ ɦɛː"
+        bases:
+          - { word: "चौक", base: "चौक", reading: "cauk" }
+          - { word: "पर", ref: "hi-0275" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "भीड़", base: "भीड़", reading: "bhīṛ" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "चौक से दाएँ मुड़िए।"
+        reading: "cauk sē dāēm̐ muṛiē."
+        ipa: "tʃɔːk seː d̪aːẽː mʊɽɪeː"
+        bases:
+          - { word: "चौक", base: "चौक", reading: "cauk" }
+          - { word: "से", ref: "hi-0276" }
+          - { word: "दाएँ", ref: "hi-0287" }
+          - { word: "मुड़िए", ref: "hi-0290" }
+
+  - id: "hi-1103"
+    target: "गली"
+    target_scripts: { perso_arabic: "گلی" }
+    reading: "galī"
+    ipa: "ɡəliː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "यह गली छोटी है।"
+        reading: "yah galī chōṭī hai."
+        ipa: "jəɦ ɡəliː tʃʰoːʈiː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "गली", base: "गली", reading: "galī" }
+          - { word: "छोटी", ref: "hi-0895" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "गली में बच्चे खेलते हैं।"
+        reading: "galī mēm̐ baccē khēltē haim̐."
+        ipa: "ɡəliː mẽː bətʃtʃeː kʰeːlt̪eː ɦɛːm"
+        bases:
+          - { word: "गली", base: "गली", reading: "galī" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "बच्चे", ref: "hi-0383" }
+          - { word: "खेलते", base: "खेलना", reading: "khēlnā" }
+          - { word: "हैं", ref: "hi-0780" }
+    synonyms:
+      - { id: "kucha", word: "कूचा", reading: "kūcā" }
+
+  - id: "hi-1104"
+    target: "नुक्कड़"
+    target_scripts: { perso_arabic: "نکڑ" }
+    reading: "nukkaṛ"
+    ipa: "nʊkkəɽ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "नुक्कड़ पर एक दुकान है।"
+        reading: "nukkaṛ par ēk dukān hai."
+        ipa: "nʊkkəɽ pər eːk d̪ʊkaːn ɦɛː"
+        bases:
+          - { word: "नुक्कड़", base: "नुक्कड़", reading: "nukkaṛ" }
+          - { word: "पर", ref: "hi-0275" }
+          - { word: "एक", ref: "hi-0198" }
+          - { word: "दुकान", ref: "hi-0239" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "गली के नुक्कड़ पर मेरा घर है।"
+        reading: "galī kē nukkaṛ par merā ghar hai."
+        ipa: "ɡəliː keː nʊkkəɽ pər meːraː ɡʱər ɦɛː"
+        bases:
+          - { word: "गली", base: "गली", reading: "galī" }
+          - { word: "के", ref: "hi-0279" }
+          - { word: "नुक्कड़", base: "नुक्कड़", reading: "nukkaṛ" }
+          - { word: "पर", ref: "hi-0275" }
+          - { word: "मेरा", ref: "hi-0752" }
+          - { word: "घर", ref: "hi-0192" }
+          - { word: "है", ref: "hi-0780" }
+
+  - id: "hi-1105"
+    target: "चौराहा"
+    target_scripts: { perso_arabic: "چوراہا" }
+    reading: "caurāhā"
+    ipa: "tʃɔːraːɦaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "चौराहे पर पुलिस खड़ी है।"
+        reading: "caurāhē par pulis khaṛī hai."
+        ipa: "tʃɔːraːɦeː pər pʊlɪs kʰəɽiː ɦɛː"
+        bases:
+          - { word: "चौराहे", base: "चौराहा", reading: "caurāhā" }
+          - { word: "पर", ref: "hi-0275" }
+          - { word: "पुलिस", ref: "hi-0356" }
+          - { word: "खड़ी", base: "खड़ा", reading: "khaṛā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "चौराहे से बाएँ मुड़िए।"
+        reading: "caurāhē sē bāēm̐ muṛiē."
+        ipa: "tʃɔːraːɦeː seː baːẽː mʊɽɪeː"
+        bases:
+          - { word: "चौराहे", base: "चौराहा", reading: "caurāhā" }
+          - { word: "से", ref: "hi-0276" }
+          - { word: "बाएँ", ref: "hi-0288" }
+          - { word: "मुड़िए", ref: "hi-0290" }
+    synonyms:
+      - { id: "chatushpath", word: "चतुष्पथ", reading: "catuṣpath" }
+
+  - id: "hi-1106"
+    target: "डाकघर"
+    target_scripts: { perso_arabic: "ڈاکخانہ" }
+    reading: "ḍākghar"
+    ipa: "ɖaːkɡʱər"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "डाकघर सुबह खुलता है।"
+        reading: "ḍākghar subah khultā hai."
+        ipa: "ɖaːkɡʱər sʊbəɦ kʰʊlt̪aː ɦɛː"
+        bases:
+          - { word: "डाकघर", base: "डाकघर", reading: "ḍākghar" }
+          - { word: "सुबह", ref: "hi-0302" }
+          - { word: "खुलता", base: "खुलना", reading: "khulnā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "डाकघर बस स्टेशन के पास है।"
+        reading: "ḍākghar bas sṭēśan kē pās hai."
+        ipa: "ɖaːkɡʱər bəs sʈeːʃən keː paːs ɦɛː"
+        bases:
+          - { word: "डाकघर", base: "डाकघर", reading: "ḍākghar" }
+          - { word: "बस", ref: "hi-0262" }
+          - { word: "स्टेशन", ref: "hi-0270" }
+          - { word: "के", ref: "hi-0279" }
+          - { word: "पास", ref: "hi-0293" }
+          - { word: "है", ref: "hi-0780" }
+
+  - id: "hi-1107"
+    target: "होटल"
+    target_scripts: { perso_arabic: "ہوٹل" }
+    reading: "hōṭal"
+    ipa: "ɦoːʈəl"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "होटल का कमरा बड़ा है।"
+        reading: "hōṭal kā kamrā baṛā hai."
+        ipa: "ɦoːʈəl kaː kəmraː bəɽaː ɦɛː"
+        bases:
+          - { word: "होटल", base: "होटल", reading: "hōṭal" }
+          - { word: "का", ref: "hi-0279" }
+          - { word: "कमरा", ref: "hi-0421" }
+          - { word: "बड़ा", ref: "hi-0894" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "हम एक होटल में रहते हैं।"
+        reading: "ham ēk hōṭal mēm̐ rahtē haim̐."
+        ipa: "ɦəm eːk ɦoːʈəl mẽː rəɦt̪eː ɦɛːm"
+        bases:
+          - { word: "हम", ref: "hi-0053" }
+          - { word: "एक", ref: "hi-0198" }
+          - { word: "होटल", base: "होटल", reading: "hōṭal" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "रहते", ref: "hi-0791" }
+          - { word: "हैं", ref: "hi-0780" }
+    synonyms:
+      - { id: "sarai", ref: "hi-1141" }
+
+  - id: "hi-1108"
+    target: "रेस्तराँ"
+    target_scripts: { perso_arabic: "ریستوراں" }
+    reading: "rēstarām̐"
+    ipa: "reːst̪ərãː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "इस रेस्तराँ में अच्छा खाना मिलता है।"
+        reading: "is rēstarām̐ mēm̐ acchā khānā miltā hai."
+        ipa: "ɪs reːst̪ərãː mẽː ətʃtʃʰaː kʰaːnaː mɪlt̪aː ɦɛː"
+        bases:
+          - { word: "इस", base: "इस", reading: "is" }
+          - { word: "रेस्तराँ", base: "रेस्तराँ", reading: "rēstarām̐" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "अच्छा", ref: "hi-0898" }
+          - { word: "खाना", base: "खाना", reading: "khānā" }
+          - { word: "मिलता", base: "मिलना", reading: "milnā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "रेस्तराँ बड़ा और साफ़ है।"
+        reading: "rēstarām̐ baṛā aur sāf hai."
+        ipa: "reːst̪ərãː bəɽaː ɔːr saːf ɦɛː"
+        bases:
+          - { word: "रेस्तराँ", base: "रेस्तराँ", reading: "rēstarām̐" }
+          - { word: "बड़ा", ref: "hi-0894" }
+          - { word: "और", ref: "hi-0337" }
+          - { word: "साफ़", base: "साफ़", reading: "sāf" }
+          - { word: "है", ref: "hi-0780" }
+
+  - id: "hi-1109"
+    target: "सिनेमा"
+    target_scripts: { perso_arabic: "سینما" }
+    reading: "sinēmā"
+    ipa: "sɪneːmaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "सिनेमा बाज़ार के पास है।"
+        reading: "sinēmā bāzār kē pās hai."
+        ipa: "sɪneːmaː baːzaːr keː paːs ɦɛː"
+        bases:
+          - { word: "सिनेमा", base: "सिनेमा", reading: "sinēmā" }
+          - { word: "बाज़ार", ref: "hi-1091" }
+          - { word: "के", ref: "hi-0279" }
+          - { word: "पास", ref: "hi-0293" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "हम सिनेमा देखने जाते हैं।"
+        reading: "ham sinēmā dēkhnē jātē haim̐."
+        ipa: "ɦəm sɪneːmaː d̪eːkʰneː dʒaːt̪eː ɦɛːm"
+        bases:
+          - { word: "हम", ref: "hi-0053" }
+          - { word: "सिनेमा", base: "सिनेमा", reading: "sinēmā" }
+          - { word: "देखने", base: "देखना", reading: "dēkhnā" }
+          - { word: "जाते", ref: "hi-0777" }
+          - { word: "हैं", ref: "hi-0780" }
+
+  - id: "hi-1110"
+    target: "थाना"
+    target_scripts: { perso_arabic: "تھانہ" }
+    reading: "thānā"
+    ipa: "t̪ʰaːnaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "थाना स्कूल के सामने है।"
+        reading: "thānā skūl kē sāmnē hai."
+        ipa: "t̪ʰaːnaː skuːl keː saːmneː ɦɛː"
+        bases:
+          - { word: "थाना", base: "थाना", reading: "thānā" }
+          - { word: "स्कूल", ref: "hi-1092" }
+          - { word: "के", ref: "hi-0279" }
+          - { word: "सामने", base: "सामने", reading: "sāmnē" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "थाने में पुलिस है।"
+        reading: "thānē mēm̐ pulis hai."
+        ipa: "t̪ʰaːneː mẽː pʊlɪs ɦɛː"
+        bases:
+          - { word: "थाने", base: "थाना", reading: "thānā" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "पुलिस", ref: "hi-0356" }
+          - { word: "है", ref: "hi-0780" }
+
+  - id: "hi-1111"
+    target: "अदालत"
+    target_scripts: { perso_arabic: "عدالت" }
+    reading: "adālat"
+    ipa: "əd̪aːlət̪"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "अदालत बड़ी है।"
+        reading: "adālat baṛī hai."
+        ipa: "əd̪aːlət̪ bəɽiː ɦɛː"
+        bases:
+          - { word: "अदालत", base: "अदालत", reading: "adālat" }
+          - { word: "बड़ी", ref: "hi-0894" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "वकील अदालत में जाता है।"
+        reading: "vakīl adālat mēm̐ jātā hai."
+        ipa: "ʋəkiːl əd̪aːlət̪ mẽː dʒaːt̪aː ɦɛː"
+        bases:
+          - { word: "वकील", base: "वकील", reading: "vakīl" }
+          - { word: "अदालत", base: "अदालत", reading: "adālat" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "जाता", ref: "hi-0777" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "nyayalay", word: "न्यायालय", reading: "nyāyālay" }
+
+  - id: "hi-1112"
+    target: "शौचालय"
+    target_scripts: { perso_arabic: "بیت الخلا" }
+    reading: "śaucālay"
+    ipa: "ʃɔːtʃaːləj"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "शौचालय कहाँ है?"
+        reading: "śaucālay kahām̐ hai?"
+        ipa: "ʃɔːtʃaːləj kəɦãː ɦɛː"
+        bases:
+          - { word: "शौचालय", base: "शौचालय", reading: "śaucālay" }
+          - { word: "कहाँ", ref: "hi-0159" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "यह शौचालय साफ़ है।"
+        reading: "yah śaucālay sāf hai."
+        ipa: "jəɦ ʃɔːtʃaːləj saːf ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "शौचालय", base: "शौचालय", reading: "śaucālay" }
+          - { word: "साफ़", base: "साफ़", reading: "sāf" }
+          - { word: "है", ref: "hi-0780" }
+
+  - id: "hi-1113"
+    target: "मैदान"
+    target_scripts: { perso_arabic: "میدان" }
+    reading: "maidān"
+    ipa: "mɛːd̪aːn"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "मैदान बड़ा है।"
+        reading: "maidān baṛā hai."
+        ipa: "mɛːd̪aːn bəɽaː ɦɛː"
+        bases:
+          - { word: "मैदान", base: "मैदान", reading: "maidān" }
+          - { word: "बड़ा", ref: "hi-0894" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मैदान के किनारे एक दुकान है।"
+        reading: "maidān kē kinārē ēk dukān hai."
+        ipa: "mɛːd̪aːn keː kɪnaːreː eːk d̪ʊkaːn ɦɛː"
+        bases:
+          - { word: "मैदान", base: "मैदान", reading: "maidān" }
+          - { word: "के", ref: "hi-0279" }
+          - { word: "किनारे", base: "किनारा", reading: "kinārā" }
+          - { word: "एक", ref: "hi-0198" }
+          - { word: "दुकान", ref: "hi-0239" }
+          - { word: "है", ref: "hi-0780" }
+
+  - id: "hi-1114"
+    target: "खेत"
+    target_scripts: { perso_arabic: "کھیت" }
+    reading: "khēt"
+    ipa: "kʰeːt̪"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "खेत में गेहूँ है।"
+        reading: "khēt mēm̐ gēhūm̐ hai."
+        ipa: "kʰeːt̪ mẽː ɡeːɦũː ɦɛː"
+        bases:
+          - { word: "खेत", base: "खेत", reading: "khēt" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "गेहूँ", base: "गेहूँ", reading: "gēhūm̐" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "किसान सुबह खेत जाता है।"
+        reading: "kisān subah khēt jātā hai."
+        ipa: "kɪsaːn sʊbəɦ kʰeːt̪ dʒaːt̪aː ɦɛː"
+        bases:
+          - { word: "किसान", base: "किसान", reading: "kisān" }
+          - { word: "सुबह", ref: "hi-0302" }
+          - { word: "खेत", base: "खेत", reading: "khēt" }
+          - { word: "जाता", ref: "hi-0777" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "kshetr", word: "क्षेत्र", reading: "kṣētr" }
+
+  - id: "hi-1115"
+    target: "जंगल"
+    target_scripts: { perso_arabic: "جنگل" }
+    reading: "jaṅgal"
+    ipa: "dʒəŋɡəl"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "जंगल में बहुत पेड़ हैं।"
+        reading: "jaṅgal mēm̐ bahut pēṛ haim̐."
+        ipa: "dʒəŋɡəl mẽː bəɦʊt̪ peːɽ ɦɛːm"
+        bases:
+          - { word: "जंगल", base: "जंगल", reading: "jaṅgal" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "पेड़", ref: "hi-1116" }
+          - { word: "हैं", ref: "hi-0780" }
+      - target: "जंगल में शेर रहता है।"
+        reading: "jaṅgal mēm̐ śēr rahtā hai."
+        ipa: "dʒəŋɡəl mẽː ʃeːr rəɦt̪aː ɦɛː"
+        bases:
+          - { word: "जंगल", base: "जंगल", reading: "jaṅgal" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "शेर", base: "शेर", reading: "śēr" }
+          - { word: "रहता", ref: "hi-0791" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "van", word: "वन", reading: "van" }
+
+  - id: "hi-1116"
+    target: "पेड़"
+    target_scripts: { perso_arabic: "پیڑ" }
+    reading: "pēṛ"
+    ipa: "peːɽ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "पेड़ पर पत्ते हैं।"
+        reading: "pēṛ par pattē haim̐."
+        ipa: "peːɽ pər pət̪t̪eː ɦɛːm"
+        bases:
+          - { word: "पेड़", base: "पेड़", reading: "pēṛ" }
+          - { word: "पर", ref: "hi-0275" }
+          - { word: "पत्ते", base: "पत्ता", reading: "pattā" }
+          - { word: "हैं", ref: "hi-0780" }
+      - target: "यह पेड़ बहुत ऊँचा है।"
+        reading: "yah pēṛ bahut ūm̐cā hai."
+        ipa: "jəɦ peːɽ bəɦʊt̪ ũːtʃaː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "पेड़", base: "पेड़", reading: "pēṛ" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "ऊँचा", ref: "hi-0907" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "vriksh", word: "वृक्ष", reading: "vṛkṣ" }
+
+  - id: "hi-1117"
+    target: "पहाड़"
+    target_scripts: { perso_arabic: "پہاڑ" }
+    reading: "pahāṛ"
+    ipa: "pəɦaːɽ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "पहाड़ पर बर्फ़ है।"
+        reading: "pahāṛ par barf hai."
+        ipa: "pəɦaːɽ pər bərf ɦɛː"
+        bases:
+          - { word: "पहाड़", base: "पहाड़", reading: "pahāṛ" }
+          - { word: "पर", ref: "hi-0275" }
+          - { word: "बर्फ़", base: "बर्फ़", reading: "barf" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "पहाड़ से नदी आती है।"
+        reading: "pahāṛ sē nadī ātī hai."
+        ipa: "pəɦaːɽ seː nəd̪iː aːt̪iː ɦɛː"
+        bases:
+          - { word: "पहाड़", base: "पहाड़", reading: "pahāṛ" }
+          - { word: "से", ref: "hi-0276" }
+          - { word: "नदी", ref: "hi-1118" }
+          - { word: "आती", base: "आना", reading: "ānā" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "parvat", word: "पर्वत", reading: "parvat" }
+    antonyms:
+      - { id: "plain", ref: "hi-1113" }
+
+  - id: "hi-1118"
+    target: "नदी"
+    target_scripts: { perso_arabic: "ندی" }
+    reading: "nadī"
+    ipa: "nəd̪iː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "नदी का पानी साफ़ है।"
+        reading: "nadī kā pānī sāf hai."
+        ipa: "nəd̪iː kaː paːniː saːf ɦɛː"
+        bases:
+          - { word: "नदी", base: "नदी", reading: "nadī" }
+          - { word: "का", ref: "hi-0279" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
+          - { word: "साफ़", base: "साफ़", reading: "sāf" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "नदी पर पुल है।"
+        reading: "nadī par pul hai."
+        ipa: "nəd̪iː pər pʊl ɦɛː"
+        bases:
+          - { word: "नदी", base: "नदी", reading: "nadī" }
+          - { word: "पर", ref: "hi-0275" }
+          - { word: "पुल", ref: "hi-1132" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "darya", word: "दरिया", reading: "daryā" }
+      - { id: "sarita", word: "सरिता", reading: "saritā" }
+
+  - id: "hi-1119"
+    target: "तालाब"
+    target_scripts: { perso_arabic: "تالاب" }
+    reading: "tālāb"
+    ipa: "t̪aːlaːb"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "तालाब में मछलियाँ हैं।"
+        reading: "tālāb mēm̐ machliyām̐ haim̐."
+        ipa: "t̪aːlaːb mẽː mətʃʰlɪjãː ɦɛːm"
+        bases:
+          - { word: "तालाब", base: "तालाब", reading: "tālāb" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "मछलियाँ", base: "मछली", reading: "machlī" }
+          - { word: "हैं", ref: "hi-0780" }
+      - target: "तालाब के किनारे पेड़ हैं।"
+        reading: "tālāb kē kinārē pēṛ haim̐."
+        ipa: "t̪aːlaːb keː kɪnaːreː peːɽ ɦɛːm"
+        bases:
+          - { word: "तालाब", base: "तालाब", reading: "tālāb" }
+          - { word: "के", ref: "hi-0279" }
+          - { word: "किनारे", base: "किनारा", reading: "kinārā" }
+          - { word: "पेड़", ref: "hi-1116" }
+          - { word: "हैं", ref: "hi-0780" }
+    synonyms:
+      - { id: "tadag", word: "तड़ाग", reading: "taṛāg" }
+
+  - id: "hi-1120"
+    target: "झील"
+    target_scripts: { perso_arabic: "جھیل" }
+    reading: "jhīl"
+    ipa: "dʒʱiːl"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "झील बहुत सुंदर है।"
+        reading: "jhīl bahut sundar hai."
+        ipa: "dʒʱiːl bəɦʊt̪ sʊnd̪ər ɦɛː"
+        bases:
+          - { word: "झील", base: "झील", reading: "jhīl" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "सुंदर", base: "सुंदर", reading: "sundar" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "झील में नाव चलती है।"
+        reading: "jhīl mēm̐ nāv calatī hai."
+        ipa: "dʒʱiːl mẽː naːʋ tʃəlt̪iː ɦɛː"
+        bases:
+          - { word: "झील", base: "झील", reading: "jhīl" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "नाव", base: "नाव", reading: "nāv" }
+          - { word: "चलती", base: "चलना", reading: "calnā" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "sarovar", word: "सरोवर", reading: "sarōvar" }
+
+  - id: "hi-1121"
+    target: "समुद्र"
+    target_scripts: { perso_arabic: "سمندر" }
+    reading: "samudr"
+    ipa: "səmʊd̪r"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "समुद्र बहुत बड़ा है।"
+        reading: "samudr bahut baṛā hai."
+        ipa: "səmʊd̪r bəɦʊt̪ bəɽaː ɦɛː"
+        bases:
+          - { word: "समुद्र", base: "समुद्र", reading: "samudr" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "बड़ा", ref: "hi-0894" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "समुद्र का पानी नमकीन है।"
+        reading: "samudr kā pānī namkīn hai."
+        ipa: "səmʊd̪r kaː paːniː nəmkiːn ɦɛː"
+        bases:
+          - { word: "समुद्र", base: "समुद्र", reading: "samudr" }
+          - { word: "का", ref: "hi-0279" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
+          - { word: "नमकीन", base: "नमकीन", reading: "namkīn" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "bahr", word: "बहर", reading: "bahr" }
+
+  - id: "hi-1122"
+    target: "गाँव"
+    target_scripts: { perso_arabic: "گاؤں" }
+    reading: "gām̐v"
+    ipa: "ɡãːʋ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "गाँव में खेत हैं।"
+        reading: "gām̐v mēm̐ khēt haim̐."
+        ipa: "ɡãːʋ mẽː kʰeːt̪ ɦɛːm"
+        bases:
+          - { word: "गाँव", base: "गाँव", reading: "gām̐v" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "खेत", ref: "hi-1114" }
+          - { word: "हैं", ref: "hi-0780" }
+      - target: "मेरा गाँव छोटा है।"
+        reading: "merā gām̐v chōṭā hai."
+        ipa: "meːraː ɡãːʋ tʃʰoːʈaː ɦɛː"
+        bases:
+          - { word: "मेरा", ref: "hi-0752" }
+          - { word: "गाँव", base: "गाँव", reading: "gām̐v" }
+          - { word: "छोटा", ref: "hi-0895" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "gram", word: "ग्राम", reading: "grām" }
+    antonyms:
+      - { id: "city", ref: "hi-0195" }
+
+  - id: "hi-1123"
+    target: "कस्बा"
+    target_scripts: { perso_arabic: "قصبہ" }
+    reading: "kasbā"
+    ipa: "kəsbaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "यह कस्बा छोटा है।"
+        reading: "yah kasbā chōṭā hai."
+        ipa: "jəɦ kəsbaː tʃʰoːʈaː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "कस्बा", base: "कस्बा", reading: "kasbā" }
+          - { word: "छोटा", ref: "hi-0895" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "कस्बे में एक बाज़ार है।"
+        reading: "kasbē mēm̐ ēk bāzār hai."
+        ipa: "kəsbeː mẽː eːk baːzaːr ɦɛː"
+        bases:
+          - { word: "कस्बे", base: "कस्बा", reading: "kasbā" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "एक", ref: "hi-0198" }
+          - { word: "बाज़ार", ref: "hi-1091" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "nagar", word: "नगर", reading: "nagar" }
+
+  - id: "hi-1124"
+    target: "इलाका"
+    target_scripts: { perso_arabic: "علاقہ" }
+    reading: "ilākā"
+    ipa: "ɪlaːkaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "इस इलाके में बहुत दुकानें हैं।"
+        reading: "is ilākē mēm̐ bahut dukānēm̐ haim̐."
+        ipa: "ɪs ɪlaːkeː mẽː bəɦʊt̪ d̪ʊkaːnẽː ɦɛːm"
+        bases:
+          - { word: "इस", base: "इस", reading: "is" }
+          - { word: "इलाके", base: "इलाका", reading: "ilākā" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "दुकानें", ref: "hi-0239" }
+          - { word: "हैं", ref: "hi-0780" }
+      - target: "हमारा इलाका शांत है।"
+        reading: "hamārā ilākā śānt hai."
+        ipa: "ɦəmaːraː ɪlaːkaː ʃaːnt̪ ɦɛː"
+        bases:
+          - { word: "हमारा", ref: "hi-0756" }
+          - { word: "इलाका", base: "इलाका", reading: "ilākā" }
+          - { word: "शांत", base: "शांत", reading: "śānt" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "anchal", word: "अंचल", reading: "aṅcal" }
+
+  - id: "hi-1125"
+    target: "जगह"
+    target_scripts: { perso_arabic: "جگہ" }
+    reading: "jagah"
+    ipa: "dʒəɡəɦ"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "यह जगह अच्छी है।"
+        reading: "yah jagah acchī hai."
+        ipa: "jəɦ dʒəɡəɦ ətʃtʃʰiː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "जगह", base: "जगह", reading: "jagah" }
+          - { word: "अच्छी", ref: "hi-0898" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मुझे एक अच्छी जगह चाहिए।"
+        reading: "mujhē ēk acchī jagah cāhiē."
+        ipa: "mʊdʒʱeː eːk ətʃtʃʰiː dʒəɡəɦ tʃaːɦɪeː"
+        bases:
+          - { word: "मुझे", ref: "hi-0745" }
+          - { word: "एक", ref: "hi-0198" }
+          - { word: "अच्छी", ref: "hi-0898" }
+          - { word: "जगह", base: "जगह", reading: "jagah" }
+          - { word: "चाहिए", base: "चाहना", reading: "cāhnā" }
+    synonyms:
+      - { id: "sthan", word: "स्थान", reading: "sthān" }
+
+  - id: "hi-1126"
+    target: "इमारत"
+    target_scripts: { perso_arabic: "عمارت" }
+    reading: "imārat"
+    ipa: "ɪmaːrət̪"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "यह इमारत बहुत ऊँची है।"
+        reading: "yah imārat bahut ūm̐cī hai."
+        ipa: "jəɦ ɪmaːrət̪ bəɦʊt̪ ũːtʃiː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "इमारत", base: "इमारत", reading: "imārat" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "ऊँची", ref: "hi-0907" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "इमारत में दफ़्तर है।"
+        reading: "imārat mēm̐ daftar hai."
+        ipa: "ɪmaːrət̪ mẽː d̪əft̪ər ɦɛː"
+        bases:
+          - { word: "इमारत", base: "इमारत", reading: "imārat" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "दफ़्तर", ref: "hi-0400" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "bhavan", word: "भवन", reading: "bhavan" }
+
+  - id: "hi-1127"
+    target: "कॉलेज"
+    target_scripts: { perso_arabic: "کالج" }
+    reading: "kôlēj"
+    ipa: "kɔleːdʒ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "मेरा भाई कॉलेज जाता है।"
+        reading: "merā bhāī kôlēj jātā hai."
+        ipa: "meːraː bʱaːiː kɔleːdʒ dʒaːt̪aː ɦɛː"
+        bases:
+          - { word: "मेरा", ref: "hi-0752" }
+          - { word: "भाई", base: "भाई", reading: "bhāī" }
+          - { word: "कॉलेज", base: "कॉलेज", reading: "kôlēj" }
+          - { word: "जाता", ref: "hi-0777" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "कॉलेज बड़ा है।"
+        reading: "kôlēj baṛā hai."
+        ipa: "kɔleːdʒ bəɽaː ɦɛː"
+        bases:
+          - { word: "कॉलेज", base: "कॉलेज", reading: "kôlēj" }
+          - { word: "बड़ा", ref: "hi-0894" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "mahavidyalay", word: "महाविद्यालय", reading: "mahāvidyālay" }
+
+  - id: "hi-1128"
+    target: "पुस्तकालय"
+    target_scripts: { perso_arabic: "کتب خانہ" }
+    reading: "pustakālay"
+    ipa: "pʊst̪əkaːləj"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "पुस्तकालय सुबह खुलता है।"
+        reading: "pustakālay subah khultā hai."
+        ipa: "pʊst̪əkaːləj sʊbəɦ kʰʊlt̪aː ɦɛː"
+        bases:
+          - { word: "पुस्तकालय", base: "पुस्तकालय", reading: "pustakālay" }
+          - { word: "सुबह", ref: "hi-0302" }
+          - { word: "खुलता", base: "खुलना", reading: "khulnā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "पुस्तकालय में बहुत किताबें हैं।"
+        reading: "pustakālay mēm̐ bahut kitābēm̐ haim̐."
+        ipa: "pʊst̪əkaːləj mẽː bəɦʊt̪ kɪt̪aːbẽː ɦɛːm"
+        bases:
+          - { word: "पुस्तकालय", base: "पुस्तकालय", reading: "pustakālay" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "किताबें", base: "किताब", reading: "kitāb" }
+          - { word: "हैं", ref: "hi-0780" }
+    synonyms:
+      - { id: "kitabghar", word: "किताबघर", reading: "kitābghar" }
+
+  - id: "hi-1129"
+    target: "ढाबा"
+    target_scripts: { perso_arabic: "ڈھابا" }
+    reading: "ḍhābā"
+    ipa: "ɖʱaːbaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "सड़क पर एक ढाबा है।"
+        reading: "saṛak par ēk ḍhābā hai."
+        ipa: "səɽək pər eːk ɖʱaːbaː ɦɛː"
+        bases:
+          - { word: "सड़क", ref: "hi-0298" }
+          - { word: "पर", ref: "hi-0275" }
+          - { word: "एक", ref: "hi-0198" }
+          - { word: "ढाबा", base: "ढाबा", reading: "ḍhābā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "ढाबे का खाना अच्छा है।"
+        reading: "ḍhābē kā khānā acchā hai."
+        ipa: "ɖʱaːbeː kaː kʰaːnaː ətʃtʃʰaː ɦɛː"
+        bases:
+          - { word: "ढाबे", base: "ढाबा", reading: "ḍhābā" }
+          - { word: "का", ref: "hi-0279" }
+          - { word: "खाना", base: "खाना", reading: "khānā" }
+          - { word: "अच्छा", ref: "hi-0898" }
+          - { word: "है", ref: "hi-0780" }
+
+  - id: "hi-1130"
+    target: "कार्यालय"
+    target_scripts: { perso_arabic: "کاریالیہ" }
+    reading: "kāryālay"
+    ipa: "kaːrjaːləj"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "कार्यालय में सब लोग काम करते हैं।"
+        reading: "kāryālay mēm̐ sab log kām kartē haim̐."
+        ipa: "kaːrjaːləj mẽː səb loːɡ kaːm kərt̪eː ɦɛːm"
+        bases:
+          - { word: "कार्यालय", base: "कार्यालय", reading: "kāryālay" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "सब", base: "सब", reading: "sab" }
+          - { word: "लोग", ref: "hi-0761" }
+          - { word: "काम", base: "काम", reading: "kām" }
+          - { word: "करते", base: "करना", reading: "karnā" }
+          - { word: "हैं", ref: "hi-0780" }
+      - target: "मेरा कार्यालय बड़ा है।"
+        reading: "merā kāryālay baṛā hai."
+        ipa: "meːraː kaːrjaːləj bəɽaː ɦɛː"
+        bases:
+          - { word: "मेरा", ref: "hi-0752" }
+          - { word: "कार्यालय", base: "कार्यालय", reading: "kāryālay" }
+          - { word: "बड़ा", ref: "hi-0894" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "daftar", ref: "hi-0400" }
+
+  - id: "hi-1131"
+    target: "दरगाह"
+    target_scripts: { perso_arabic: "درگاہ" }
+    reading: "dargāh"
+    ipa: "d̪ərɡaːɦ"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "दरगाह बहुत पुरानी है।"
+        reading: "dargāh bahut purānī hai."
+        ipa: "d̪ərɡaːɦ bəɦʊt̪ pʊraːniː ɦɛː"
+        bases:
+          - { word: "दरगाह", base: "दरगाह", reading: "dargāh" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "पुरानी", ref: "hi-0897" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "दरगाह के पास बाज़ार है।"
+        reading: "dargāh kē pās bāzār hai."
+        ipa: "d̪ərɡaːɦ keː paːs baːzaːr ɦɛː"
+        bases:
+          - { word: "दरगाह", base: "दरगाह", reading: "dargāh" }
+          - { word: "के", ref: "hi-0279" }
+          - { word: "पास", ref: "hi-0293" }
+          - { word: "बाज़ार", ref: "hi-1091" }
+          - { word: "है", ref: "hi-0780" }
+
+  - id: "hi-1132"
+    target: "पुल"
+    target_scripts: { perso_arabic: "پل" }
+    reading: "pul"
+    ipa: "pʊl"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "पुल लंबा है।"
+        reading: "pul lambā hai."
+        ipa: "pʊl ləmbaː ɦɛː"
+        bases:
+          - { word: "पुल", base: "पुल", reading: "pul" }
+          - { word: "लंबा", ref: "hi-0906" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "पुल के नीचे पानी है।"
+        reading: "pul kē nīcē pānī hai."
+        ipa: "pʊl keː niːtʃeː paːniː ɦɛː"
+        bases:
+          - { word: "पुल", base: "पुल", reading: "pul" }
+          - { word: "के", ref: "hi-0279" }
+          - { word: "नीचे", ref: "hi-0835" }
+          - { word: "पानी", base: "पानी", reading: "pānī" }
+          - { word: "है", ref: "hi-0780" }
+
+  - id: "hi-1133"
+    target: "मोड़"
+    target_scripts: { perso_arabic: "موڑ" }
+    reading: "mōṛ"
+    ipa: "moːɽ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "आगे एक मोड़ है।"
+        reading: "āgē ēk mōṛ hai."
+        ipa: "aːɡeː eːk moːɽ ɦɛː"
+        bases:
+          - { word: "आगे", ref: "hi-0291" }
+          - { word: "एक", ref: "hi-0198" }
+          - { word: "मोड़", base: "मोड़", reading: "mōṛ" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मोड़ पर सावधानी रखिए।"
+        reading: "mōṛ par sāvdhānī rakhiē."
+        ipa: "moːɽ pər saːʋd̪ʱaːniː rəkʰɪeː"
+        bases:
+          - { word: "मोड़", base: "मोड़", reading: "mōṛ" }
+          - { word: "पर", ref: "hi-0275" }
+          - { word: "सावधानी", base: "सावधानी", reading: "sāvdhānī" }
+          - { word: "रखिए", base: "रखना", reading: "rakhnā" }
+
+  - id: "hi-1134"
+    target: "सिग्नल"
+    target_scripts: { perso_arabic: "سگنل" }
+    reading: "signal"
+    ipa: "sɪɡnəl"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "सिग्नल हरा है।"
+        reading: "signal harā hai."
+        ipa: "sɪɡnəl ɦəraː ɦɛː"
+        bases:
+          - { word: "सिग्नल", base: "सिग्नल", reading: "signal" }
+          - { word: "हरा", base: "हरा", reading: "harā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "सिग्नल पर रुकिए।"
+        reading: "signal par rukiē."
+        ipa: "sɪɡnəl pər rʊkɪeː"
+        bases:
+          - { word: "सिग्नल", base: "सिग्नल", reading: "signal" }
+          - { word: "पर", ref: "hi-0275" }
+          - { word: "रुकिए", base: "रुकना", reading: "ruknā" }
+
+  - id: "hi-1135"
+    target: "मंडी"
+    target_scripts: { perso_arabic: "منڈی" }
+    reading: "maṇḍī"
+    ipa: "məɳɖiː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "मंडी में सब्ज़ियाँ बिकती हैं।"
+        reading: "maṇḍī mēm̐ sabziyām̐ bikatī haim̐."
+        ipa: "məɳɖiː mẽː səbzɪjãː bɪkt̪iː ɦɛːm"
+        bases:
+          - { word: "मंडी", base: "मंडी", reading: "maṇḍī" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "सब्ज़ियाँ", base: "सब्ज़ी", reading: "sabzī" }
+          - { word: "बिकती", base: "बिकना", reading: "biknā" }
+          - { word: "हैं", ref: "hi-0780" }
+      - target: "मंडी सुबह भरती है।"
+        reading: "maṇḍī subah bharatī hai."
+        ipa: "məɳɖiː sʊbəɦ bʱərt̪iː ɦɛː"
+        bases:
+          - { word: "मंडी", base: "मंडी", reading: "maṇḍī" }
+          - { word: "सुबह", ref: "hi-0302" }
+          - { word: "भरती", base: "भरना", reading: "bharnā" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "bazaar", ref: "hi-1091" }
+
+  - id: "hi-1136"
+    target: "गोदाम"
+    target_scripts: { perso_arabic: "گودام" }
+    reading: "godām"
+    ipa: "ɡoːd̪aːm"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "गोदाम में सामान है।"
+        reading: "godām mēm̐ sāmān hai."
+        ipa: "ɡoːd̪aːm mẽː saːmaːn ɦɛː"
+        bases:
+          - { word: "गोदाम", base: "गोदाम", reading: "godām" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "सामान", base: "सामान", reading: "sāmān" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "यह गोदाम बड़ा है।"
+        reading: "yah godām baṛā hai."
+        ipa: "jəɦ ɡoːd̪aːm bəɽaː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "गोदाम", base: "गोदाम", reading: "godām" }
+          - { word: "बड़ा", ref: "hi-0894" }
+          - { word: "है", ref: "hi-0780" }
+
+  - id: "hi-1137"
+    target: "कोना"
+    target_scripts: { perso_arabic: "کونا" }
+    reading: "kōnā"
+    ipa: "koːnaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "कमरे का कोना साफ़ है।"
+        reading: "kamrē kā kōnā sāf hai."
+        ipa: "kəmreː kaː koːnaː saːf ɦɛː"
+        bases:
+          - { word: "कमरे", ref: "hi-0421" }
+          - { word: "का", ref: "hi-0279" }
+          - { word: "कोना", base: "कोना", reading: "kōnā" }
+          - { word: "साफ़", base: "साफ़", reading: "sāf" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "दूसरे कोने में पेड़ है।"
+        reading: "dūsrē kōnē mēm̐ pēṛ hai."
+        ipa: "d̪uːsreː koːneː mẽː peːɽ ɦɛː"
+        bases:
+          - { word: "दूसरे", base: "दूसरा", reading: "dūsrā" }
+          - { word: "कोने", base: "कोना", reading: "kōnā" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "पेड़", ref: "hi-1116" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "kon", word: "कोण", reading: "kōṇ" }
+
+  - id: "hi-1138"
+    target: "स्टेडियम"
+    target_scripts: { perso_arabic: "اسٹیڈیم" }
+    reading: "sṭēḍiyam"
+    ipa: "sʈeːɖɪjəm"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "स्टेडियम बड़ा है।"
+        reading: "sṭēḍiyam baṛā hai."
+        ipa: "sʈeːɖɪjəm bəɽaː ɦɛː"
+        bases:
+          - { word: "स्टेडियम", base: "स्टेडियम", reading: "sṭēḍiyam" }
+          - { word: "बड़ा", ref: "hi-0894" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मैं स्टेडियम जाता हूँ।"
+        reading: "maim̐ sṭēḍiyam jātā hūm̐."
+        ipa: "mɛːm sʈeːɖɪjəm dʒaːt̪aː ɦũː"
+        bases:
+          - { word: "मैं", ref: "hi-0745" }
+          - { word: "स्टेडियम", base: "स्टेडियम", reading: "sṭēḍiyam" }
+          - { word: "जाता", ref: "hi-0777" }
+          - { word: "हूँ", ref: "hi-0780" }
+
+  - id: "hi-1139"
+    target: "बस्ती"
+    target_scripts: { perso_arabic: "بستی" }
+    reading: "bastī"
+    ipa: "bəst̪iː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "बस्ती में बहुत बच्चे हैं।"
+        reading: "bastī mēm̐ bahut baccē haim̐."
+        ipa: "bəst̪iː mẽː bəɦʊt̪ bətʃtʃeː ɦɛːm"
+        bases:
+          - { word: "बस्ती", base: "बस्ती", reading: "bastī" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "बच्चे", ref: "hi-0383" }
+          - { word: "हैं", ref: "hi-0780" }
+      - target: "यह बस्ती नदी के पास है।"
+        reading: "yah bastī nadī kē pās hai."
+        ipa: "jəɦ bəst̪iː nəd̪iː keː paːs ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "बस्ती", base: "बस्ती", reading: "bastī" }
+          - { word: "नदी", ref: "hi-1118" }
+          - { word: "के", ref: "hi-0279" }
+          - { word: "पास", ref: "hi-0293" }
+          - { word: "है", ref: "hi-0780" }
+
+  - id: "hi-1140"
+    target: "मेट्रो"
+    target_scripts: { perso_arabic: "میٹرو" }
+    reading: "mēṭrō"
+    ipa: "meːʈroː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "मेट्रो स्टेशन बाज़ार के पास है।"
+        reading: "mēṭrō sṭēśan bāzār kē pās hai."
+        ipa: "meːʈroː sʈeːʃən baːzaːr keː paːs ɦɛː"
+        bases:
+          - { word: "मेट्रो", base: "मेट्रो", reading: "mēṭrō" }
+          - { word: "स्टेशन", ref: "hi-0270" }
+          - { word: "बाज़ार", ref: "hi-1091" }
+          - { word: "के", ref: "hi-0279" }
+          - { word: "पास", ref: "hi-0293" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मैं मेट्रो से दफ़्तर जाता हूँ।"
+        reading: "maim̐ mēṭrō sē daftar jātā hūm̐."
+        ipa: "mɛːm meːʈroː seː d̪əft̪ər dʒaːt̪aː ɦũː"
+        bases:
+          - { word: "मैं", ref: "hi-0745" }
+          - { word: "मेट्रो", base: "मेट्रो", reading: "mēṭrō" }
+          - { word: "से", ref: "hi-0276" }
+          - { word: "दफ़्तर", ref: "hi-0400" }
+          - { word: "जाता", ref: "hi-0777" }
+          - { word: "हूँ", ref: "hi-0780" }
+
+  - id: "hi-1141"
+    target: "सराय"
+    target_scripts: { perso_arabic: "سرائے" }
+    reading: "sarāy"
+    ipa: "səraːj"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "सराय सड़क के पास है।"
+        reading: "sarāy saṛak kē pās hai."
+        ipa: "səraːj səɽək keː paːs ɦɛː"
+        bases:
+          - { word: "सराय", base: "सराय", reading: "sarāy" }
+          - { word: "सड़क", ref: "hi-0298" }
+          - { word: "के", ref: "hi-0279" }
+          - { word: "पास", ref: "hi-0293" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "सराय में एक कमरा है।"
+        reading: "sarāy mēm̐ ēk kamrā hai."
+        ipa: "səraːj mẽː eːk kəmraː ɦɛː"
+        bases:
+          - { word: "सराय", base: "सराय", reading: "sarāy" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "एक", ref: "hi-0198" }
+          - { word: "कमरा", ref: "hi-0421" }
+          - { word: "है", ref: "hi-0780" }
+
+  - id: "hi-1142"
+    target: "चिड़ियाघर"
+    target_scripts: { perso_arabic: "چڑیا گھر" }
+    reading: "ciṛiyāghar"
+    ipa: "tʃɪɽɪjaːɡʱər"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "चिड़ियाघर में शेर है।"
+        reading: "ciṛiyāghar mēm̐ śēr hai."
+        ipa: "tʃɪɽɪjaːɡʱər mẽː ʃeːr ɦɛː"
+        bases:
+          - { word: "चिड़ियाघर", base: "चिड़ियाघर", reading: "ciṛiyāghar" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "शेर", base: "शेर", reading: "śēr" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "बच्चे चिड़ियाघर जाते हैं।"
+        reading: "baccē ciṛiyāghar jātē haim̐."
+        ipa: "bətʃtʃeː tʃɪɽɪjaːɡʱər dʒaːt̪eː ɦɛːm"
+        bases:
+          - { word: "बच्चे", ref: "hi-0383" }
+          - { word: "चिड़ियाघर", base: "चिड़ियाघर", reading: "ciṛiyāghar" }
+          - { word: "जाते", ref: "hi-0777" }
+          - { word: "हैं", ref: "hi-0780" }
+
+  - id: "hi-1143"
+    target: "बंदरगाह"
+    target_scripts: { perso_arabic: "بندرگاہ" }
+    reading: "bandargāh"
+    ipa: "bənd̪ərɡaːɦ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "बंदरगाह पर जहाज़ हैं।"
+        reading: "bandargāh par jahāz haim̐."
+        ipa: "bənd̪ərɡaːɦ pər dʒəɦaːz ɦɛːm"
+        bases:
+          - { word: "बंदरगाह", base: "बंदरगाह", reading: "bandargāh" }
+          - { word: "पर", ref: "hi-0275" }
+          - { word: "जहाज़", base: "जहाज़", reading: "jahāz" }
+          - { word: "हैं", ref: "hi-0780" }
+      - target: "बंदरगाह समुद्र के किनारे है।"
+        reading: "bandargāh samudr kē kinārē hai."
+        ipa: "bənd̪ərɡaːɦ səmʊd̪r keː kɪnaːreː ɦɛː"
+        bases:
+          - { word: "बंदरगाह", base: "बंदरगाह", reading: "bandargāh" }
+          - { word: "समुद्र", ref: "hi-1121" }
+          - { word: "के", ref: "hi-0279" }
+          - { word: "किनारे", base: "किनारा", reading: "kinārā" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "pattan", word: "पत्तन", reading: "pattan" }
+
+  - id: "hi-1144"
+    target: "मीनार"
+    target_scripts: { perso_arabic: "مینار" }
+    reading: "mīnār"
+    ipa: "miːnaːr"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "मीनार बहुत ऊँची है।"
+        reading: "mīnār bahut ūm̐cī hai."
+        ipa: "miːnaːr bəɦʊt̪ ũːtʃiː ɦɛː"
+        bases:
+          - { word: "मीनार", base: "मीनार", reading: "mīnār" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "ऊँची", ref: "hi-0907" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मस्जिद की मीनार दूर से दिखती है।"
+        reading: "masjid kī mīnār dūr sē dikhtī hai."
+        ipa: "məsdʒɪd̪ kiː miːnaːr d̪uːr seː d̪ɪkʰt̪iː ɦɛː"
+        bases:
+          - { word: "मस्जिद", ref: "hi-1095" }
+          - { word: "की", ref: "hi-0279" }
+          - { word: "मीनार", base: "मीनार", reading: "mīnār" }
+          - { word: "दूर", ref: "hi-0294" }
+          - { word: "से", ref: "hi-0276" }
+          - { word: "दिखती", base: "दिखना", reading: "dikhnā" }
+          - { word: "है", ref: "hi-0780" }
+
+  - id: "hi-1145"
+    target: "घाट"
+    target_scripts: { perso_arabic: "گھاٹ" }
+    reading: "ghāṭ"
+    ipa: "ɡʱaːʈ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "घाट पर बहुत लोग हैं।"
+        reading: "ghāṭ par bahut log haim̐."
+        ipa: "ɡʱaːʈ pər bəɦʊt̪ loːɡ ɦɛːm"
+        bases:
+          - { word: "घाट", base: "घाट", reading: "ghāṭ" }
+          - { word: "पर", ref: "hi-0275" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "लोग", ref: "hi-0761" }
+          - { word: "हैं", ref: "hi-0780" }
+      - target: "नदी के घाट पर मंदिर है।"
+        reading: "nadī kē ghāṭ par mandir hai."
+        ipa: "nəd̪iː keː ɡʱaːʈ pər mənd̪ɪr ɦɛː"
+        bases:
+          - { word: "नदी", ref: "hi-1118" }
+          - { word: "के", ref: "hi-0279" }
+          - { word: "घाट", base: "घाट", reading: "ghāṭ" }
+          - { word: "पर", ref: "hi-0275" }
+          - { word: "मंदिर", ref: "hi-1094" }
+          - { word: "है", ref: "hi-0780" }
+
+  - id: "hi-1146"
+    target: "फ़ुटपाथ"
+    target_scripts: { perso_arabic: "فٹ پاتھ" }
+    reading: "fuṭpāth"
+    ipa: "fʊʈpaːt̪ʰ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "फ़ुटपाथ पर दुकानें हैं।"
+        reading: "fuṭpāth par dukānēm̐ haim̐."
+        ipa: "fʊʈpaːt̪ʰ pər d̪ʊkaːnẽː ɦɛːm"
+        bases:
+          - { word: "फ़ुटपाथ", base: "फ़ुटपाथ", reading: "fuṭpāth" }
+          - { word: "पर", ref: "hi-0275" }
+          - { word: "दुकानें", ref: "hi-0239" }
+          - { word: "हैं", ref: "hi-0780" }
+      - target: "फ़ुटपाथ पर लोग चलते हैं।"
+        reading: "fuṭpāth par log caltē haim̐."
+        ipa: "fʊʈpaːt̪ʰ pər loːɡ tʃəlt̪eː ɦɛːm"
+        bases:
+          - { word: "फ़ुटपाथ", base: "फ़ुटपाथ", reading: "fuṭpāth" }
+          - { word: "पर", ref: "hi-0275" }
+          - { word: "लोग", ref: "hi-0761" }
+          - { word: "चलते", base: "चलना", reading: "calnā" }
+          - { word: "हैं", ref: "hi-0780" }
+

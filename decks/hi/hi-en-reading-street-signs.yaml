@@ -1,0 +1,29 @@
+schema: 1
+id: "hi-en-reading-street-signs"
+name: "Reading: street signs"
+kind: reading
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Signs along a street: a pharmacy, a school, a bank and a temple. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-street-signs"
+    title: "Street signs"
+    theme: "places"
+    sentences:
+      - { text: "दवाखाना आगे है।", reading: "davākhānā āgē hai." }
+      - { text: "स्कूल, सीधे जाइए।", reading: "skūl, sīdhē jāiē." }
+      - { text: "बैंक दाएँ है।", reading: "baiṅk dāēm̐ hai." }
+      - { text: "मंदिर पीछे है।", reading: "mandir pīchē hai." }
+    questions:
+      - id: "hi-1161"
+        prompt: { en: "Where is the pharmacy?" }
+        options:
+          - { en: "Straight ahead" }
+          - { en: "Behind" }
+        answer: 1
+      - id: "hi-1162"
+        prompt: { en: "The temple is in front of you." }
+        answer: false

@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-walk-to-the-market"
+name: "Reading: walk to the market"
+kind: reading
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A neighbour names the places on the way to the market, with the place words of this unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-walk-to-the-market"
+    title: "Walk to the market"
+    theme: "places"
+    sentences:
+      - { text: "हम बाज़ार जाते हैं।", reading: "ham bāzār jātē haim̐." }
+      - { text: "रास्ते में मंदिर है।", reading: "rāstē mēm̐ mandir hai." }
+      - { text: "मंदिर के सामने एक स्कूल है।", reading: "mandir kē sāmnē ēk skūl hai." }
+      - { text: "स्कूल के पास बैंक है।", reading: "skūl kē pās baiṅk hai." }
+      - { text: "बैंक के सामने एक पार्क है।", reading: "baiṅk kē sāmnē ēk pārk hai." }
+      - { text: "फिर बाएँ मुड़िए।", reading: "phir bāēm̐ muṛiē." }
+      - { text: "बाज़ार सामने है।", reading: "bāzār sāmnē hai." }
+    questions:
+      - id: "hi-1159"
+        prompt: { en: "What is in front of the temple?" }
+        options:
+          - { en: "A school" }
+          - { en: "A bank" }
+        answer: 1
+      - id: "hi-1160"
+        prompt: { en: "Where is the park?" }
+        options:
+          - { en: "In front of the bank" }
+          - { en: "Near the market" }
+        answer: 1
