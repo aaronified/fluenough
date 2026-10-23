@@ -335,14 +335,15 @@ cards:
           - { word: "कभी", base: "कभी", reading: "kabhī" }
           - { word: "नहीं", ref: "hi-0156" }
           - { word: "भूलता", base: "भूलना", reading: "bhūltā" }
-      - target: "उसने मेरा नाम भूला।"
-        reading: "usnē mērā nām bhūlā."
-        ipa: "ʊsneː meːraː naːm bʱuːlaː"
+      - target: "वह मेरा नाम भूल गया।"
+        reading: "vah mērā nām bhūl gayā."
+        ipa: "ʋəɦ meːraː naːm bʱuːl ɡəjaː"
         bases:
-          - { word: "उसने", ref: "hi-0749" }
+          - { word: "वह", ref: "hi-0749" }
           - { word: "मेरा", ref: "hi-0752" }
           - { word: "नाम", ref: "hi-0187" }
-          - { word: "भूला", base: "भूलना", reading: "bhūlā" }
+          - { word: "भूल", base: "भूलना", reading: "bhūl" }
+          - { word: "गया", base: "जाना", reading: "gayā" }
     collocations:
       - { id: "name", ref: "hi-0187" }
   - id: "hi-0946"
@@ -610,8 +611,6 @@ cards:
           - { word: "गाना", base: "गाना", reading: "gānā" }
           - { word: "सीखती", base: "सीखना", reading: "sīkhtī" }
           - { word: "है", ref: "hi-0780" }
-    synonyms:
-      - { id: "study-school", ref: "hi-0114" }
     collocations:
       - { id: "language", ref: "hi-0197" }
   - id: "hi-0953"
@@ -633,13 +632,14 @@ cards:
         words:
           - { word: "कुछ सोचना", reading: "kuch sōcnā" }
     examples:
-      - target: "मैं यह बात सोचता हूँ।"
-        reading: "maim̐ yah bāt sōctā hūm̐."
-        ipa: "mɛ̃ː jəɦ baːt̪ soːtʃt̪aː ɦũː"
+      - target: "मैं इस बारे में सोचता हूँ।"
+        reading: "maim̐ is bārē mēm̐ sōctā hūm̐."
+        ipa: "mɛ̃ː ɪs baːreː mẽː soːtʃt̪aː ɦũː"
         bases:
           - { word: "मैं", ref: "hi-0745" }
-          - { word: "यह", ref: "hi-0748" }
-          - { word: "बात", base: "बात", reading: "bāt" }
+          - { word: "इस", ref: "hi-0748" }
+          - { word: "बारे", base: "बारे", reading: "bārē" }
+          - { word: "में", ref: "hi-0274" }
           - { word: "सोचता", base: "सोचना", reading: "sōctā" }
           - { word: "हूँ", ref: "hi-0780" }
       - target: "वे रोज़ क्या सोचते हैं?"
@@ -754,14 +754,15 @@ cards:
         words:
           - { word: "मैच जीतना", reading: "maic jītnā" }
     examples:
-      - target: "हमारी टीम मैच जीती।"
-        reading: "hamārī ṭīm maic jītī."
-        ipa: "ɦəmaːriː ʈiːm mɛːtʃ dʒiːt̪iː"
+      - target: "हमारी टीम ने मैच जीता।"
+        reading: "hamārī ṭīm nē maic jītā."
+        ipa: "ɦəmaːriː ʈiːm neː mɛːtʃ dʒiːt̪aː"
         bases:
           - { word: "हमारी", ref: "hi-0756" }
           - { word: "टीम", base: "टीम", reading: "ṭīm" }
+          - { word: "ने", base: "ने", reading: "nē" }
           - { word: "मैच", base: "मैच", reading: "maic" }
-          - { word: "जीती", base: "जीतना", reading: "jītī" }
+          - { word: "जीता", base: "जीतना", reading: "jītā" }
       - target: "वह हर खेल जीतता है।"
         reading: "vah har khēl jīttā hai."
         ipa: "ʋəɦ ɦər kʰeːl dʒiːt̪t̪aː ɦɛː"
@@ -794,14 +795,15 @@ cards:
         words:
           - { word: "मैच हारना", reading: "maic hārnā" }
     examples:
-      - target: "हम दूसरा मैच हारे।"
-        reading: "ham dūsrā maic hārē."
-        ipa: "ɦəm d̪uːsraː mɛːtʃ ɦaːreː"
+      - target: "हम दूसरा मैच हार गए।"
+        reading: "ham dūsrā maic hār gaē."
+        ipa: "ɦəm d̪uːsraː mɛːtʃ ɦaːr ɡəeː"
         bases:
           - { word: "हम", ref: "hi-0053" }
           - { word: "दूसरा", base: "दूसरा", reading: "dūsrā" }
           - { word: "मैच", base: "मैच", reading: "maic" }
-          - { word: "हारे", base: "हारना", reading: "hārē" }
+          - { word: "हार", base: "हारना", reading: "hār" }
+          - { word: "गए", base: "जाना", reading: "gaē" }
       - target: "वह खेल में कभी नहीं हारता।"
         reading: "vah khēl mēm̐ kabhī nahīm̐ hārtā."
         ipa: "ʋəɦ kʰeːl mẽː kəbʱiː nəɦĩː ɦaːrt̪aː"
