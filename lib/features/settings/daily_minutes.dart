@@ -5,7 +5,6 @@ import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../core/scheduling/daily_budget.dart';
 import '../../l10n/app_localizations.dart';
-import '../../ui/theme.dart';
 
 /// "Minutes a day" on a learned course in Languages I'm learning (#485): how
 /// long a day the learner gives it, as presets of 5, 10, 15, 20 and 30

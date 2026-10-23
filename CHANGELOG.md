@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Words you know come up a few at a time (#680). A word is known when FSRS gave it an 85% or better chance of being remembered at its last review. When a deck's known words come due, Today asks two of them a day, the ones you reviewed longest ago; once they are right, the deck's other due known words wait for another day, so each has its turn within a few days and none is left out. If one is wrong, three to five more are asked, and if those go wrong too, all of the deck's due known words come up.
 - A finished deck's Revise now records its answers and moves the schedule, like quick revision; only number practice is unrecorded (#499, ADR-0033).
 
 ### Fixed
