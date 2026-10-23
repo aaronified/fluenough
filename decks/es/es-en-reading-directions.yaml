@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-directions"
+name: "Reading: the way and a simple map"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about finding the way: a short direction, and a map in words. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-asking-the-way"
+    title: "Asking the way"
+    theme: "directions"
+    sentences:
+      - text: "¿Dónde está la estación?"
+      - text: "Vamos recto y giramos a la derecha."
+      - text: "Cruzamos el puente."
+      - text: "La estación está cerca."
+    questions:
+      - id: "es-0730"
+        prompt: { en: "Which way do they go first?" }
+        options:
+          - { en: "Straight ahead" }
+          - { en: "To the left" }
+          - { en: "Back" }
+        answer: 0
+      - id: "es-0731"
+        prompt: { en: "What do they cross?" }
+        options:
+          - { en: "The bridge" }
+          - { en: "The road" }
+          - { en: "The river" }
+        answer: 0
+      - id: "es-0732"
+        prompt: { en: "Where is the station?" }
+        options:
+          - { en: "Near" }
+          - { en: "Far" }
+          - { en: "Between two streets" }
+        answer: 0
+  - id: "es-simple-map"
+    title: "A simple map"
+    theme: "directions"
+    sentences:
+      - text: "El norte está lejos."
+      - text: "La esquina está entre dos calles."
+      - text: "El puente está a la izquierda."
+      - text: "El mapa está en la mesa."
+    questions:
+      - id: "es-0733"
+        prompt: { en: "Where is the bridge?" }
+        options:
+          - { en: "On the left" }
+          - { en: "On the right" }
+          - { en: "In the north" }
+        answer: 0
+      - id: "es-0734"
+        prompt: { en: "Where is the corner?" }
+        options:
+          - { en: "Between two streets" }
+          - { en: "Far away" }
+          - { en: "Inside a shop" }
+        answer: 0
+      - id: "es-0735"
+        prompt: { en: "Where is the map?" }
+        options:
+          - { en: "On the table" }
+          - { en: "On the bridge" }
+          - { en: "In the car" }
+        answer: 0
