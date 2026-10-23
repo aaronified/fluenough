@@ -286,11 +286,8 @@ units:
   - decks: ["tok-nature", "tok-nature-sentences", "tok-reading-nature", "*"]
     words: 2
   # pilin, musi, nasa and jaki.
-  - planned: { id: "tok-feelings", theme: "feelings", words: 4 }
-    listening_passages:
-      - { id: "how-was-it", text: { "en": "Friends say how a party felt to each of them" } }
-    reading_passages:
-      - { id: "mood-diary", text: { "en": "A week of one-line mood diary entries" } }
+  - decks: ["tok-feelings", "tok-feelings-sentences", "tok-reading-feelings", "*"]
+    words: 4
   # Joining: en between subjects, several li and several e, anu for a
   # choice, and taso (but, only), its one word.
   - planned: { id: "tok-grammar-joining", grammar: ["en-subjects", "repeated-li-e", "anu-choice", "taso-but"], words: 1 }
