@@ -222,7 +222,7 @@ file uses: nothing overflows or is clipped, nothing sits under the
 three-button bar, tap targets are 48 dp, every control is labelled, text
 meets contrast. The screens, one state each (the busiest the gallery has):
 
-- Learn: Today, Decks path, unit, deck page, Inspect, Languages on the
+- Learn: Today, Decks path, unit, deck page, Languages on the
   phone, summary (7).
 - Drills: teach card, recognition, choice, match, rearrange, typed
   production with the keyboard open and its feedback, listening, speaking
@@ -409,7 +409,7 @@ landed after it). Paths are under `test/`.
 | `session_queue_reading_test.dart` | 6 | merge into `lesson_and_review_test.dart` | 1 | A passage is read before it is heard. |
 | `session_queue_test.dart` | 24 | merge into `lesson_and_review_test.dart` | 4 | Due first, most overdue first; new-card cap; one mode per card; switched-off and voiceless modes never offered; revise all. |
 | `set_cards_test.dart` | 22 | merge into `lesson_and_review_test.dart` | 3 | Set read from the layer, shown first in a lesson, known member marked, form taught once, aksharas never broken. |
-| `skill_difficulty_test.dart` | 7 | delete | 0 | The Inspect test shows D per skill. |
+| `skill_difficulty_test.dart` | 7 | delete | 0 | The word sheet test shows D per skill. |
 | `skill_fit_test.dart` | 29 | merge into `scheduling_test.dart` | 3 | Window rule, keep a new set only if it predicts better, a good learner gets longer intervals, too little gives nothing, deterministic. |
 | `skill_map_test.dart` | 8 | merge into `scheduling_test.dart` | 1 | Write and Say imply Recognition; a miss does not touch it. |
 | `skill_parameters_test.dart` | 12 | merge into `scheduling_test.dart` | 1 | Which set schedules a skill; replay uses it. |
@@ -489,11 +489,11 @@ landed after it). Paths are under `test/`.
 | `features/decks/checked_by_line_test.dart` | 3 | delete | 0 | Wording. |
 | `features/decks/course_hours_test.dart` | 4 | delete | 0 | Study hours keeps the arithmetic; the card is drawn by the per-screen check. |
 | `features/decks/deck_content_test.dart` | 9 | merge into `progress_test.dart` | 1 | Search matches a deck, its language, theme or unit. |
-| `features/decks/deck_detail_page_test.dart` | 12 | merge into `progress_test.dart` | 1 | A skill button starts that skill on the deck; chosen tags narrow Review all due. |
-| `features/decks/deck_status_test.dart` | 8 | merge into `progress_test.dart` | 2 | Done once every card is learned in every skill on; a finished deck offers Revise, which records every answer. |
+| `features/decks/deck_detail_page_test.dart` | 12 | merge into `progress_test.dart` | 1 | Every word is listed and the tag chips narrow it live; Practice asks the skills and records; + Learn counts the words in view not taught and teaches them. |
+| `features/decks/deck_status_test.dart` | 8 | merge into `progress_test.dart` | 2 | Done once every card is learned in every skill on; a finished deck offers Relearn, and Practice records every answer. |
 | `features/decks/decks_page_test.dart` | 21 | merge into `progress_test.dart` | 2 | The path opens at the unit up next; Where I am; a broken file shows its line; a failed catalog offers Try again. |
 | `features/decks/import_page_test.dart` | 5 | delete | 0 | The added-decks test shows a refused file's reason. |
-| `features/decks/inspect_page_test.dart` | 10 | merge into `progress_test.dart` | 1 | Inspect shows every card with its id and D per skill. |
+| `features/decks/inspect_page_test.dart` | 10 | merge into `progress_test.dart` | 1 | The word sheet (which replaced Inspect, #693) shows the card inline with its id and D per skill. |
 | `features/decks/layout_test.dart` | 18 | delete | 0 | 2.0x and dark per state; the per-screen 1.4x check replaces it. |
 | `features/decks/path_levels_test.dart` | 3 | delete | 0 | Folding a level is a view preference. |
 | `features/decks/path_model_test.dart` | 10 | merge into `progress_test.dart` | 2 | Fresh course: unit 1 up next; learned units done; A1 reached once its units are. |

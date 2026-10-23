@@ -704,7 +704,7 @@ class SettingsNotifier extends ChangeNotifier {
 
   /// Whether a word's IPA line, `/paːlu/`, shows where the deck gives one:
   /// on the teach card, under a word the question shows, with the answer
-  /// once it is in, in passages and in Inspect (ADR-0025, #533).
+  /// once it is in, in passages and on the word sheet (ADR-0025, #533).
   bool get showIpa => _showIpa;
   set showIpa(bool value) => _set(_showIpa, value, (v) => _showIpa = v);
 

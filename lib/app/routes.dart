@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import '../core/feedback/report.dart';
 import '../features/decks/deck_detail_page.dart';
 import '../features/decks/import_page.dart';
-import '../features/decks/inspect_page.dart';
 import '../features/decks/unit_page.dart';
 import '../features/drill/drill_page.dart';
 import '../features/gallery/gallery_page.dart';
@@ -127,10 +126,6 @@ abstract final class AppRoutes {
   /// [ReportRequest].
   static const String report = '/report';
 
-  /// Every card of a deck in full, for reviewers. Argument: the deck id, a
-  /// [String].
-  static const String inspect = '/inspect';
-
   /// Reviewing a unit's cards (docs/plans/deck-browser.md). Argument: the
   /// id of a deck in the unit, a [String].
   static const String review = '/review';
@@ -184,7 +179,6 @@ abstract final class AppRoutes {
       newProfile => const NewProfilePage(),
       gallery when kDebugMode => const GalleryPage(),
       report when args is ReportRequest => ReportPage(request: args),
-      inspect when args is String => InspectPage(deckId: args),
       review when args is String => ReviewPage(deckId: args),
       waitingForReview => const WaitingForReviewPage(),
       reviewedNotSent => const ReviewedNotSentPage(),
@@ -212,10 +206,6 @@ abstract final class AppNavigator {
   /// A report from the screen [request] was raised on.
   static Future<void> openReport(BuildContext context, ReportRequest request) =>
       Navigator.of(context).pushNamed(AppRoutes.report, arguments: request);
-
-  /// Every card of [deckId] in full, with its id.
-  static Future<void> openInspect(BuildContext context, String deckId) =>
-      Navigator.of(context).pushNamed(AppRoutes.inspect, arguments: deckId);
 
   /// Reviewing the unit of its course's path that [deckId] is in.
   static Future<void> openReview(BuildContext context, String deckId) =>

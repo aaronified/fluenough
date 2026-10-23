@@ -207,6 +207,26 @@ class CardSense {
   final List<CardExample> examples;
 }
 
+/// A short dictionary entry for a card, imported from Wiktionary into a
+/// deck's layer (DECK-FORMAT.md, A layer): the word's meanings, its
+/// etymology and the page it came from, for the CC BY-SA credit.
+class CardDictionary {
+  const CardDictionary({
+    required this.senses,
+    required this.source,
+    this.etymology,
+  });
+
+  /// The word's meanings, in the learner's language, one per line.
+  final List<String> senses;
+
+  /// Where the word comes from, or null when the entry gives none.
+  final String? etymology;
+
+  /// The Wiktionary page the entry was taken from.
+  final String source;
+}
+
 /// Where a card's own recording or image came from (#518, #523): the file
 /// it was made from, its licence and whom to credit. Shown on the deck
 /// screen and the Sources screen.
@@ -340,6 +360,7 @@ class CardRef {
       confusables: sameNative ? written.confusables : const <CardItem>[],
       forms: sameNative ? written.forms : const <CardItem>[],
       senses: sameNative ? written.senses : const <CardSense>[],
+      dictionary: sameNative ? written.dictionary : null,
     );
   }
 }
@@ -395,6 +416,7 @@ class Card {
     this.confusables = const <CardItem>[],
     this.forms = const <CardItem>[],
     this.senses = const <CardSense>[],
+    this.dictionary,
   });
 
   /// Stable for the life of the card. This is the key the user's entire review
@@ -590,6 +612,10 @@ class Card {
 
   /// Its separate meanings (#517), each the layer gives a meaning.
   final List<CardSense> senses;
+
+  /// Its Wiktionary entry, when the deck's layer gives one: what the word
+  /// sheet and the teach card's dictionary show.
+  final CardDictionary? dictionary;
 
   /// The drills this card can actually be used for, given whether the device
   /// has a voice for the language, and whether it can recognise speech in it.

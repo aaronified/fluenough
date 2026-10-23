@@ -60,6 +60,6 @@ A card you miss again and again is a leech. Drilling it harder rarely helps. Pro
 
 ## Cards and their bases
 
-A word built on another shows its base on the card, such as "Base: जाना (jānā) · to go". Inspect, on a deck, shows each card as the deck file writes it, and how hard you have found it in each skill.
+A word built on another shows its base on the card, such as "Base: जाना (jānā) · to go". A word's sheet, opened from its row on a deck's or a unit's page, shows everything the card has, unfolded: how it is said symbol by symbol, its meanings, notes, warnings, dictionary entry and examples, its tags and id, and how hard you have found it in each skill. A deck's page lists every word with its meaning and where you stand with it; its tag chips filter the words as you tap them; Practice drills the words in view in the skills you choose, and + Learn teaches the ones not taught yet.
 
 See also: [Learner guide](Learner-Guide), [Home](Home).
