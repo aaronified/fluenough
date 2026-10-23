@@ -4521,9 +4521,9 @@ cards:
         extraMinutes: 0,
         spent: Duration.zero,
         secondsPerCard: 17.5,
-        due: 80,
+        due: 160,
         newAvailable: 9,
-        split: DailyBudget.split(due: 80, budget: 51),
+        split: DailyBudget.split(due: 160, budget: 51),
       );
       expect(plan.split.catchingUp, isTrue);
       await pumpScreen(
@@ -4536,7 +4536,7 @@ cards:
       final l10n = l10nOf(tester);
       expect(find.text(l10n.todayDailyCatchingUp), findsOneWidget);
       expect(
-        find.text(l10n.todayDailyCatchingUpPlan(80, 23, 15, 2)),
+        find.text(l10n.todayDailyCatchingUpPlan(160, 47, 15, 4)),
         findsOneWidget,
       );
       // No new words in the split.
