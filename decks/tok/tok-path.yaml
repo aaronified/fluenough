@@ -275,11 +275,8 @@ units:
   - decks: ["tok-things", "tok-things-sentences", "tok-reading-things", "*"]
     words: 6
   # esun and mani: the market and money.
-  - planned: { id: "tok-market", theme: "market", words: 2 }
-    listening_passages:
-      - { id: "at-the-stall", text: { "en": "Buying fruit at a market stall" } }
-    reading_passages:
-      - { id: "price-list", text: { "en": "A market stall's price list, in toki pona numbers" } }
+  - decks: ["tok-market", "tok-market-sentences", "tok-reading-market", "*"]
+    words: 2
   # la with a whole clause as the context: sina kama la mi pilin pona (if
   # or when you come, I feel good).
   - planned: { id: "tok-grammar-la-clauses", grammar: ["la-clause-context"] }
