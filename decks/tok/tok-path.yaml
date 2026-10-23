@@ -5,8 +5,8 @@
 # This is also Toki Pona's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"):
 # every unit from the first words to B1, with its size in words, its
 # grammar topics, the three milestones, and for each planned unit its
-# listening and reading passages. The first two units are written (their decks are
-# listed under units 1 and 2); every other unit is planned: the course teaches each
+# listening and reading passages. The first three units are written (their decks are
+# listed under units 1 to 3); every other unit is planned: the course teaches each
 # as "Coming" until its deck is written.
 #
 # Toki Pona is small on purpose. Sonja Lang's first book (pu, 2014) has
@@ -144,13 +144,14 @@ units:
   - decks: ["tok-sound-differences", "tok-reading-sounds-alike", "tok-reading-fourteen-letters"]
     words: 4
     grammar: ["sounds-syllables", "first-syllable-stress"]
-  # seme, anu, lon (true, yes, there) and a. The question forms are rules,
-  # in units 6 and 8.
-  - planned: { id: "tok-questions", theme: "questions", words: 4 }
-    listening_passages:
-      - { id: "what-is-it", text: { "en": "Someone asks what things are and is told: ni li seme?" } }
-    reading_passages:
-      - { id: "quiz-card", text: { "en": "A short quiz card with four simple questions" } }
+  # 3. Questions: seme (what), anu (or), lon (to be here or there, true,
+  # yes) and a (an exclamation). Its sentences are tok-questions-sentences,
+  # and its passages are in tok-en-reading-questions: the listening passage
+  # what-is-it (someone asks what things are: ni li seme?) and the reading
+  # passage quiz-card (a quiz card with four simple questions). The
+  # yes-no and seme question forms are rules, in units 6 and 8.
+  - decks: ["tok-questions", "tok-questions-sentences", "tok-reading-questions"]
+    words: 4
   # ona, ni, jan and ijo: with mi and sina, every pronoun the language has.
   - planned: { id: "tok-pronouns", theme: "pronouns", words: 4 }
     listening_passages:
