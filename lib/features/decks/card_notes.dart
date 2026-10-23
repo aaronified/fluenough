@@ -57,3 +57,27 @@ CardNote? regionNoteOf(Card card) {
   }
   return null;
 }
+
+/// The texts of [card]'s notes as prose, for the notes block of its sheet or
+/// teach card: every note but one that is a warning of its own, a pair note
+/// (a sound-alike), a homograph or a lookalike, whose text goes with its
+/// partner ([lookalikesOf], [pairsOf]).
+List<String> proseNotes(Card card) => <String>[
+  for (final note in card.notes)
+    if (note.kind != NoteKind.pair &&
+        note.kind != NoteKind.homograph &&
+        note.kind != NoteKind.lookalike &&
+        note.text.trim().isNotEmpty)
+      note.text,
+];
+
+/// The words [card] looks like but does not sound like, by card id where
+/// the note names one: its homograph and lookalike notes, in order, each
+/// with the note's text, which says how the spelling differs.
+List<({String? id, String? text})> lookalikesOf(
+  Card card,
+) => <({String? id, String? text})>[
+  for (final note in card.notes)
+    if (note.kind == NoteKind.homograph || note.kind == NoteKind.lookalike)
+      (id: note.ref, text: note.text.trim().isEmpty ? null : note.text.trim()),
+];

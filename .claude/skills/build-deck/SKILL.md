@@ -103,6 +103,18 @@ Before you start:
      word shares its spelling with another, or differs only by a dot or mark,
      and a layer's `dictionary` (senses, etymology, `source`) for an entry
      imported from Wiktionary.
+   - Set `warning` on a core card that has more than one warning (owner,
+     2026-10-23: "Newly written decks will choose the order when building").
+     It names the one warning the teach card shows: the `id` of a `pair`,
+     `homograph` or `lookalike` note, `"senses"` for its other meanings, or
+     `"none"`. Choose the one that matters most to the learner: a rude
+     sound-alike only when it is very close (one IPA segment apart) and very
+     rude, else a close sound-alike, a homograph or a one-mark look-alike,
+     then further ones, then two or more other meanings, then a single one
+     ("Which warning the teach card shows" in the Deck-Format wiki page;
+     `tools/pick_warning.py` applies the same order). A card with none leaves
+     it out. Released apps reject a card key they do not know, so a deck that
+     sets `warning` waits for the release whose app reads it.
    - Every word card gets at least 2 examples ("Card data", "Examples"):
      natural sentences that use the word, each with its `reading` and `ipa`
      in the core and its translation in each layer, keyed by the target.
