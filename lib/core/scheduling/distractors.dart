@@ -32,8 +32,9 @@ Set<DistractorSource> distractorSources(Card card, Card other) {
   if (_family(card).intersection(_family(other)).isNotEmpty) {
     sources.add(DistractorSource.base);
   }
-  if (card.pos != null && card.pos == other.pos)
+  if (card.pos != null && card.pos == other.pos) {
     sources.add(DistractorSource.pos);
+  }
   if (card.tags.any(other.tags.contains)) sources.add(DistractorSource.tag);
   return sources.isEmpty ? <DistractorSource>{DistractorSource.other} : sources;
 }
