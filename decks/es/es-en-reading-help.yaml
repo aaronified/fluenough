@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-help"
+name: "Reading: lost in the city"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about asking for help: a short call for help when lost, and a card of emergency words. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-lost-in-the-city"
+    title: "Lost in the city"
+    theme: "help"
+    sentences:
+      - text: "Estoy perdido."
+      - text: "Necesito ayuda, por favor."
+      - text: "Llamo a la policía."
+      - text: "La policía está cerca."
+    questions:
+      - id: "es-0887"
+        prompt: { en: "What is the speaker?" }
+        options:
+          - { en: "Lost" }
+          - { en: "Hungry" }
+          - { en: "Tired" }
+        answer: 0
+      - id: "es-0888"
+        prompt: { en: "Who does the speaker call?" }
+        options:
+          - { en: "The police" }
+          - { en: "A doctor" }
+          - { en: "A friend" }
+        answer: 0
+      - id: "es-0889"
+        prompt: { en: "Where is the police?" }
+        options:
+          - { en: "Near" }
+          - { en: "Far" }
+          - { en: "At home" }
+        answer: 0
+  - id: "es-emergency-numbers"
+    title: "Emergency card"
+    theme: "help"
+    sentences:
+      - text: "Policía: para la ayuda."
+      - text: "Ambulancia: para un accidente."
+      - text: "Hospital: para el dolor."
+      - text: "Llave perdida: la oficina."
+    questions:
+      - id: "es-0890"
+        prompt: { en: "What is the ambulance for?" }
+        options:
+          - { en: "An accident" }
+          - { en: "Lost keys" }
+          - { en: "A bill" }
+        answer: 0
+      - id: "es-0891"
+        prompt: { en: "What is the hospital for?" }
+        options:
+          - { en: "Pain" }
+          - { en: "Shopping" }
+          - { en: "Lost property" }
+        answer: 0
+      - id: "es-0892"
+        prompt: { en: "What is the police for?" }
+        options:
+          - { en: "Help" }
+          - { en: "Medicine" }
+          - { en: "Bread" }
+        answer: 0

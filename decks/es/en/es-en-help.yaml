@@ -1,0 +1,180 @@
+schema: 1
+id: "es-en-help"
+kind: "layer"
+core: "es-help"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Help"
+license: "CC-BY-SA-4.0"
+description: "Asking for help: help, the police, an ambulance, an accident and an emergency, the words to lose, to understand and to repeat, and things to keep safe. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-0865":
+    native: "help"
+    notes: { n1: "Ayuda is help. Ayudar is the verb, to help." }
+    bases: {"la": "the", "ayuda": "help"}
+    examples:
+      "Necesito ayuda.":
+        native: "I need help."
+        bases: {"ayuda": "help"}
+      "Gracias por la ayuda.":
+        native: "Thank you for the help."
+        bases: {"por": "for", "la": "the", "ayuda": "help"}
+  "es-0866":
+    native: "lost"
+    notes: { n1: "Perdido is lost, not knowing where you are. It agrees: perdida." }
+    examples:
+      "Estoy perdido.":
+        native: "I am lost."
+        bases: {"perdido": "lost"}
+      "Estoy perdido en la ciudad.":
+        native: "I am lost in the city."
+        bases: {"perdido": "lost", "en": "in", "la": "the"}
+  "es-0867":
+    native: "urgent"
+    notes: { n1: "Urgente is urgent, needing action now." }
+    examples:
+      "Es urgente, por favor.":
+        native: "It is urgent, please."
+        bases: {"urgente": "urgent", "por": "for", "favor": "please"}
+      "La ayuda es urgente.":
+        native: "The help is urgent."
+        bases: {"La": "the", "urgente": "urgent"}
+  "es-0868":
+    native: "police"
+    notes: { n1: "Policía is the police. Llame a la policía is to call the police." }
+    bases: {"la": "the", "policía": "police"}
+    examples:
+      "Llamo a la policía.":
+        native: "I call the police."
+        bases: {"a": "to", "la": "the", "policía": "police"}
+      "La policía está cerca.":
+        native: "The police are near."
+        bases: {"La": "the", "policía": "police"}
+  "es-0869":
+    native: "emergency"
+    notes: { n1: "Emergencia is an emergency, a sudden danger that needs help now." }
+    bases: {"la": "the", "emergencia": "emergency"}
+    examples:
+      "Es una emergencia, por favor.":
+        native: "It is an emergency, please."
+        bases: {"una": "a", "emergencia": "emergency", "por": "for", "favor": "please"}
+      "La emergencia está en el hospital.":
+        native: "The emergency is at the hospital."
+        bases: {"La": "the", "emergencia": "emergency", "en": "in", "el": "the"}
+  "es-0870":
+    native: "ambulance"
+    notes: { n1: "Ambulancia is an ambulance, the car that takes a hurt person to hospital." }
+    bases: {"la": "the", "ambulancia": "ambulance"}
+    examples:
+      "Llamo a una ambulancia.":
+        native: "I call an ambulance."
+        bases: {"a": "to", "una": "a", "ambulancia": "ambulance"}
+      "La ambulancia llega rápido.":
+        native: "The ambulance arrives quickly."
+        bases: {"La": "the", "ambulancia": "ambulance"}
+  "es-0871":
+    native: "accident"
+    notes: { n1: "Accidente is an accident, a sudden event that hurts someone." }
+    bases: {"el": "the", "accidente": "accident"}
+    examples:
+      "Hay un accidente aquí.":
+        native: "There is an accident here."
+        bases: {"Hay": "there is", "un": "a", "accidente": "accident"}
+      "El accidente está cerca.":
+        native: "The accident is near."
+        bases: {"El": "the", "accidente": "accident"}
+  "es-0872":
+    native: "firefighter"
+    notes: { n1: "Bombero is a firefighter. The feminine is la bombera." }
+    bases: {"el": "the", "bombero": "firefighter"}
+    examples:
+      "El bombero trabaja en la calle.":
+        native: "The firefighter works in the street."
+        bases: {"El": "the", "bombero": "firefighter", "en": "in", "la": "the"}
+      "El bombero es alto.":
+        native: "The firefighter is tall."
+        bases: {"El": "the", "bombero": "firefighter"}
+  "es-0873":
+    native: "pain"
+    notes: { n1: "Dolor is pain. Tengo dolor de cabeza: I have a headache." }
+    bases: {"el": "the", "dolor": "pain"}
+    examples:
+      "Tengo dolor de cabeza.":
+        native: "I have a headache."
+        bases: {"dolor": "pain", "de": "of"}
+      "El dolor es fuerte.":
+        native: "The pain is strong."
+        bases: {"El": "the", "dolor": "pain"}
+  "es-0874":
+    native: "to lose"
+    notes: { n1: "Perder is to lose something, or to miss a bus or a train. Its stem changes: pierdo, pierdes, pierde, pierden." }
+    examples:
+      "Pierdo el libro.":
+        native: "I lose the book."
+        bases: {"Pierdo": "lose", "el": "the"}
+      "Perdemos el tren.":
+        native: "We miss the train."
+        bases: {"Perdemos": "lose", "el": "the"}
+  "es-0875":
+    native: "to understand"
+    notes: { n1: "Entender is to understand. Its stem changes: entiendo, entiendes, entiende, entienden." }
+    examples:
+      "No entiendo.":
+        native: "I do not understand."
+        bases: {"entiendo": "understand"}
+      "¿Entiendes?":
+        native: "Do you understand?"
+        bases: {"Entiendes": "understand"}
+  "es-0876":
+    native: "to repeat"
+    notes: { n1: "Repetir is to repeat. Its stem changes: repito, repites, repite, repiten." }
+    examples:
+      "Repito el número.":
+        native: "I repeat the number."
+        bases: {"Repito": "repeat", "el": "the"}
+      "Repite, por favor.":
+        native: "Repeat, please."
+        bases: {"Repite": "repeat", "por": "for", "favor": "please"}
+  "es-0877":
+    native: "key"
+    notes: { n1: "Llave is a key, for a door or a car." }
+    bases: {"la": "the", "llave": "key"}
+    examples:
+      "Tengo la llave.":
+        native: "I have the key."
+        bases: {"la": "the", "llave": "key"}
+      "Pierdo la llave.":
+        native: "I lose the key."
+        bases: {"la": "the", "llave": "key"}
+  "es-0878":
+    native: "passport"
+    notes: { n1: "Pasaporte is a passport, the document for travel." }
+    bases: {"el": "the", "pasaporte": "passport"}
+    examples:
+      "Necesito el pasaporte.":
+        native: "I need the passport."
+        bases: {"el": "the", "pasaporte": "passport"}
+      "El pasaporte está en la mesa.":
+        native: "The passport is on the table."
+        bases: {"El": "the", "pasaporte": "passport", "en": "in", "la": "the"}
+  "es-0879":
+    native: "card"
+    notes: { n1: "Tarjeta is a card, such as a bank card." }
+    bases: {"la": "the", "tarjeta": "card"}
+    examples:
+      "Pago con tarjeta.":
+        native: "I pay by card."
+        bases: {"con": "with", "tarjeta": "card"}
+      "La tarjeta es nueva.":
+        native: "The card is new."
+        bases: {"La": "the", "tarjeta": "card"}
+  "es-0880":
+    native: "bag; handbag"
+    notes: { n1: "Bolso is a handbag, or a bag you carry." }
+    bases: {"el": "the", "bolso": "bag"}
+    examples:
+      "Mi bolso está en el coche.":
+        native: "My bag is in the car."
+        bases: {"bolso": "bag", "en": "in", "el": "the"}
+      "El bolso es grande.":
+        native: "The bag is big."
+        bases: {"El": "the", "bolso": "bag"}
