@@ -1,0 +1,173 @@
+schema: 1
+id: "hi-things-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-1188"
+    target: "मेरी किताब बैग में है।"
+    target_scripts: { perso_arabic: "میری کتاب بیگ میں ہے۔" }
+    reading: "mērī kitāb baig mēm̐ hai."
+    ipa: "meːriː kɪt̪aːb bɛːɡ mẽː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", ref: "hi-0752" }
+      - { word: "किताब", ref: "hi-1163" }
+      - { word: "बैग", ref: "hi-1164" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "f1", word: "मेरे", reading: "mērē", kind: "form" }
+      - { id: "w1", ref: "hi-0434", kind: "word" }
+
+  - id: "hi-1189"
+    target: "चाबी मेज़ पर नहीं है।"
+    target_scripts: { perso_arabic: "چابی میز پر نہیں ہے۔" }
+    reading: "cābī mēz par nahīm̐ hai."
+    ipa: "tʃaːbiː meːz pər nəɦĩː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "चाबी", ref: "hi-0431" }
+      - { word: "मेज़", ref: "hi-0434" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "नहीं", ref: "hi-0156" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "f1", ref: "hi-0113", kind: "form" }
+      - { id: "w1", ref: "hi-0295", kind: "word" }
+
+  - id: "hi-1190"
+    target: "पैसे बटुए में हैं, पर्स में नहीं।"
+    target_scripts: { perso_arabic: "پیسے بٹوے میں ہیں، پرس میں نہیں۔" }
+    reading: "paisē baṭuē mēm̐ haim̐, pars mēm̐ nahīm̐."
+    ipa: "pɛːseː bəʈʊeː mẽː ɦɛ̃ː pərs mẽː nəɦĩː"
+    pos: "phrase"
+    bases:
+      - { word: "पैसे", ref: "hi-0234" }
+      - { word: "बटुए", ref: "hi-1166" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "हैं", ref: "hi-0113" }
+      - { word: "पर्स", ref: "hi-1167" }
+      - { word: "नहीं", ref: "hi-0156" }
+    confusables:
+      - { id: "f1", word: "बटुआ", reading: "baṭuā", kind: "form" }
+      - { id: "w1", ref: "hi-0433", kind: "word" }
+
+  - id: "hi-1191"
+    target: "कमरे की चाबी कहाँ है?"
+    target_scripts: { perso_arabic: "کمرے کی چابی کہاں ہے؟" }
+    reading: "kamrē kī cābī kahām̐ hai?"
+    ipa: "kəmreː kiː tʃaːbiː kəɦãː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "कमरे", ref: "hi-0421" }
+      - { word: "की", ref: "hi-0279" }
+      - { word: "चाबी", ref: "hi-0431" }
+      - { word: "कहाँ", ref: "hi-0159" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "f1", word: "का", reading: "kā", kind: "form" }
+      - { id: "w1", ref: "hi-0157", kind: "word" }
+
+  - id: "hi-1192"
+    target: "मेज़ पर नक्शा, काग़ज़ और कलम हैं।"
+    target_scripts: { perso_arabic: "میز پر نقشہ، کاغذ اور قلم ہیں۔" }
+    reading: "mēz par nakśā, kāġaz aur kalam haim̐."
+    ipa: "meːz pər nəkʃaː kaːɣəz ɔːr kələm ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "मेज़", ref: "hi-0434" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "नक्शा", ref: "hi-1173" }
+      - { word: "काग़ज़", ref: "hi-1175" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "कलम", ref: "hi-0057" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "f1", word: "नक्शे", reading: "nakśē", kind: "form" }
+      - { id: "w1", word: "दीवार", reading: "dīvār", kind: "word" }
+
+  - id: "hi-1193"
+    target: "साबुन और ब्रश बाथरूम में हैं।"
+    target_scripts: { perso_arabic: "صابن اور برش باتھ روم میں ہیں۔" }
+    reading: "sābun aur braś bāthrūm mēm̐ haim̐."
+    ipa: "saːbʊn ɔːr brəʃ baːt̪ʰruːm mẽː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "साबुन", ref: "hi-1177" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "ब्रश", ref: "hi-1183" }
+      - { word: "बाथरूम", ref: "hi-0425" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "f1", ref: "hi-0112", kind: "form" }
+      - { id: "w1", ref: "hi-0295", kind: "word" }
+
+  - id: "hi-1194"
+    target: "सूटकेस और बैग दोनों भारी हैं।"
+    target_scripts: { perso_arabic: "سوٹ کیس اور بیگ دونوں بھاری ہیں۔" }
+    reading: "sūṭkēs aur baig dōnōm̐ bhārī haim̐."
+    ipa: "suːʈkeːs ɔːr bɛːɡ d̪oːnõː bʱaːriː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "सूटकेस", ref: "hi-1181" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "बैग", ref: "hi-1164" }
+      - { word: "दोनों", base: "दोनों", reading: "dōnōm̐" }
+      - { word: "भारी", ref: "hi-0908" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "f1", ref: "hi-0909", kind: "word" }
+      - { id: "w1", ref: "hi-0895", kind: "word" }
+
+  - id: "hi-1195"
+    target: "दीवार पर शीशा है।"
+    target_scripts: { perso_arabic: "دیوار پر شیشہ ہے۔" }
+    reading: "dīvār par śīśā hai."
+    ipa: "d̪iːʋaːr pər ʃiːʃaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "दीवार", base: "दीवार", reading: "dīvār" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "शीशा", ref: "hi-1182" }
+      - { word: "है", ref: "hi-0112" }
+    confusables:
+      - { id: "f1", ref: "hi-0293", kind: "word" }
+      - { id: "w1", ref: "hi-0835", kind: "word" }
+
+  - id: "hi-1196"
+    target: "नहाने के बाद तौलिया लो।"
+    target_scripts: { perso_arabic: "نہانے کے بعد تولیہ لو۔" }
+    reading: "nahānē kē bād tauliyā lō."
+    ipa: "nəɦaːneː keː baːd̪ t̪ɔːlɪjaː loː"
+    pos: "phrase"
+    bases:
+      - { word: "नहाने", ref: "hi-0442" }
+      - { word: "के", ref: "hi-0279" }
+      - { word: "बाद", base: "बाद", reading: "bād" }
+      - { word: "तौलिया", ref: "hi-1176" }
+      - { word: "लो", ref: "hi-0786" }
+    confusables:
+      - { id: "f1", word: "नहाना", reading: "nahānā", kind: "form" }
+      - { id: "w1", ref: "hi-0798", kind: "word" }
+
+  - id: "hi-1197"
+    target: "सब्ज़ी के थैले में सेब हैं।"
+    target_scripts: { perso_arabic: "سبزی کے تھیلے میں سیب ہیں۔" }
+    reading: "sabzī kē thailē mēm̐ sēb haim̐."
+    ipa: "səbziː keː t̪ʰɛːleː mẽː seːb ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "सब्ज़ी", ref: "hi-0249" }
+      - { word: "के", ref: "hi-0279" }
+      - { word: "थैले", ref: "hi-1165" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "सेब", ref: "hi-0978" }
+      - { word: "हैं", ref: "hi-0113" }
+    confusables:
+      - { id: "f1", word: "थैला", reading: "thailā", kind: "form" }
+      - { id: "w1", ref: "hi-1164", kind: "word" }
+

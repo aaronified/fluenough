@@ -1,0 +1,34 @@
+schema: 1
+id: "hi-en-reading-packing-for-a-trip"
+name: "Reading: packing for a trip"
+kind: reading
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two people pack a bag for a trip to the hills. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-packing-for-a-trip"
+    title: "Packing for a trip"
+    theme: "things"
+    sentences:
+      - { text: "मेरा सूटकेस बिस्तर पर है।", reading: "mērā sūṭkēs bistar par hai." }
+      - { text: "किताब, चश्मा और चार्जर बैग में हैं।", reading: "kitāb, caśmā aur cārjar baig mēm̐ haim̐." }
+      - { text: "छतरी बैग में है।", reading: "chatrī baig mēm̐ hai." }
+    questions:
+      - id: "hi-1201"
+        prompt: { en: "Where is the suitcase?" }
+        options:
+          - { en: "On the bed" }
+          - { en: "In the car" }
+        answer: 1
+      - id: "hi-1202"
+        prompt: { en: "Which of these is in the bag?" }
+        options:
+          - { en: "A book, glasses and a charger" }
+          - { en: "A map and a pen" }
+        answer: 1
+      - id: "hi-1203"
+        prompt: { en: "The umbrella is in the bag." }
+        answer: true

@@ -1,0 +1,166 @@
+schema: 1
+id: "hi-en-things"
+kind: "layer"
+core: "hi-things"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Things around you"
+license: "CC-BY-SA-4.0"
+description: "Things to carry and use: bags, a wallet, glasses, a lock, a laptop and more. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-1163":
+    native: "book"
+    notes: { "n1": "A book to read or to study. Many books together are किताबें (kitābēm̐), 'books'." }
+    examples:
+      "मेरी किताब मेज़ पर है।": { native: "My book is on the table.", bases: { "किताब": "book" } }
+      "यह किताब बहुत अच्छी है।": { native: "This book is very good.", bases: { "किताब": "book" } }
+  "hi-1164":
+    native: "bag"
+    notes: { "n1": "A bag for carrying things, a word from English. A cloth or plastic bag is थैला (thailā), 'bag'." }
+    examples:
+      "मेरा बैग भारी है।": { native: "My bag is heavy.", bases: { "बैग": "bag" } }
+      "बैग में किताब है।": { native: "There is a book in the bag.", bases: { "बैग": "bag" } }
+  "hi-1165":
+    native: "cloth bag"
+    notes: { "n1": "A cloth or plastic bag, carried by its handles, for shopping. An English-style bag is बैग (baig), 'bag'." }
+    examples:
+      "सब्ज़ी का थैला मेज़ पर है।": { native: "The vegetable bag is on the table.", bases: { "थैला": "cloth bag" } }
+      "यह थैला हल्का है।": { native: "This bag is light.", bases: { "थैला": "cloth bag" } }
+  "hi-1166":
+    native: "wallet"
+    notes: { "n1": "A wallet, for coins and notes. Money is पैसे (paisē), 'money'." }
+    examples:
+      "मेरा बटुआ जेब में है।": { native: "My wallet is in my pocket.", bases: { "बटुआ": "wallet", "जेब": "pocket" } }
+      "बटुए में पैसे हैं।": { native: "There is money in the wallet.", bases: { "बटुए": "wallet" } }
+  "hi-1167":
+    native: "handbag"
+    notes: { "n1": "A handbag, carried by hand or on the shoulder. A wallet for money alone is बटुआ (baṭuā), 'wallet'." }
+    examples:
+      "मेरा पर्स कुर्सी पर है।": { native: "My handbag is on the chair.", bases: { "पर्स": "handbag" } }
+      "पर्स में चाबी है?": { native: "Is the key in the handbag?", bases: { "पर्स": "handbag" } }
+  "hi-1168":
+    native: "umbrella"
+    notes: { "n1": "An umbrella, against the rain or the sun. Another word for it is छाता (chātā), 'umbrella'." }
+    examples:
+      "धूप तेज़ है, छतरी लो।": { native: "The sun is strong, take an umbrella.", bases: { "धूप": "sun", "तेज़": "strong", "छतरी": "umbrella" } }
+      "यह छतरी नीली है।": { native: "This umbrella is blue.", bases: { "छतरी": "umbrella" } }
+    synonyms: { "chata": "umbrella" }
+  "hi-1169":
+    native: "watch"
+    notes: { "n1": "A watch, or a clock on the wall. An hour is घंटा (ghaṇṭā), 'hour'." }
+    examples:
+      "मेरी घड़ी खराब है।": { native: "My watch is broken.", bases: { "घड़ी": "watch", "खराब": "broken" } }
+      "मुझे नई घड़ी चाहिए।": { native: "I need a new watch.", bases: { "घड़ी": "watch" } }
+  "hi-1170":
+    native: "glasses"
+    notes: { "n1": "Glasses, to see better. Several pairs are चश्मे (caśmē), 'glasses'." }
+    examples:
+      "मेरा चश्मा कहाँ है?": { native: "Where are my glasses?", bases: { "चश्मा": "glasses" } }
+      "मेज़ के नीचे चश्मा है।": { native: "The glasses are under the table.", bases: { "चश्मा": "glasses" } }
+    synonyms: { "ainak": "glasses (Persian-leaning)" }
+  "hi-1171":
+    native: "charger"
+    notes: { "n1": "A charger for a phone or a laptop, which charges its battery." }
+    examples:
+      "मेरे फोन का चार्जर कहाँ है?": { native: "Where is my phone charger?", bases: { "चार्जर": "charger" } }
+      "चार्जर बिस्तर के पास है।": { native: "The charger is near the bed.", bases: { "चार्जर": "charger" } }
+  "hi-1172":
+    native: "camera"
+    notes: { "n1": "A camera, for taking photographs. A photograph is तस्वीर (tasvīr), 'picture'." }
+    examples:
+      "मेरे पास कैमरा है।": { native: "I have a camera.", bases: { "कैमरा": "camera" } }
+      "कैमरा बैग में रखो।": { native: "Put the camera in the bag.", bases: { "कैमरा": "camera" } }
+  "hi-1173":
+    native: "map"
+    notes: { "n1": "A map of a town, a region or a building. The Sanskrit-leaning word is मानचित्र (māncitr), 'map'." }
+    examples:
+      "इस शहर का नक्शा दीजिए।": { native: "Please give me the map of this city.", bases: { "नक्शा": "map" } }
+      "नक्शा मेज़ पर है।": { native: "The map is on the table.", bases: { "नक्शा": "map" } }
+    synonyms: { "manchitra": "map (Sanskrit-leaning)" }
+  "hi-1174":
+    native: "newspaper"
+    notes: { "n1": "A newspaper, printed every day and read in the morning, often with चाय (cāy), 'tea'." }
+    examples:
+      "सुबह अख़बार आता है।": { native: "The newspaper comes in the morning.", bases: { "अख़बार": "newspaper" } }
+      "मेरे पिता रोज़ अख़बार पढ़ते हैं।": { native: "My father reads the newspaper every day.", bases: { "अख़बार": "newspaper" } }
+  "hi-1175":
+    native: "paper"
+    notes: { "n1": "Paper to write or print on. One sheet of it is एक (ēk) काग़ज़ (kāġaz), 'one sheet of paper'." }
+    examples:
+      "मेज़ पर काग़ज़ है।": { native: "There is paper on the table.", bases: { "काग़ज़": "paper" } }
+      "मुझे एक काग़ज़ दीजिए।": { native: "Please give me a sheet of paper.", bases: { "काग़ज़": "paper" } }
+  "hi-1176":
+    native: "towel"
+    notes: { "n1": "A towel, for drying yourself after a bath. Bathing is नहाना (nahānā), 'to bathe'." }
+    examples:
+      "नहाने के बाद तौलिया लो।": { native: "Take the towel after the bath.", bases: { "बाद": "after", "तौलिया": "towel" } }
+      "तौलिया बाथरूम में है।": { native: "The towel is in the bathroom.", bases: { "तौलिया": "towel" } }
+  "hi-1177":
+    native: "soap"
+    notes: { "n1": "Soap, for washing the hands and the body. To wash is धोना (dhōnā), 'to wash'." }
+    examples:
+      "हाथ धोने के लिए साबुन लो।": { native: "Take soap to wash your hands.", bases: { "लिए": "for", "साबुन": "soap" } }
+      "साबुन नया है।": { native: "The soap is new.", bases: { "साबुन": "soap" } }
+  "hi-1178":
+    native: "lock"
+    notes: { "n1": "A lock, which is opened with a key: the key is चाबी (cābī), 'key'." }
+    examples:
+      "दरवाज़े पर ताला है।": { native: "There is a lock on the door.", bases: { "ताला": "lock" } }
+      "ताला बंद है।": { native: "The lock is locked.", bases: { "ताला": "lock", "बंद": "locked" } }
+  "hi-1179":
+    native: "rope"
+    notes: { "n1": "A rope or a thick string, for tying a bag or a box. A thin string is डोरी (ḍōrī), 'cord'." }
+    examples:
+      "बक्से पर रस्सी बाँधो।": { native: "Tie the rope on the box.", bases: { "बक्से": "box", "रस्सी": "rope", "बाँधो": "tie" } }
+      "रस्सी लंबी है।": { native: "The rope is long.", bases: { "रस्सी": "rope" } }
+    synonyms: { "dori": "cord; string" }
+  "hi-1180":
+    native: "box"
+    notes: { "n1": "A box or a tin, for food or small things. A large box is बक्सा (baksā), 'trunk'." }
+    examples:
+      "डिब्बे में मिठाई है।": { native: "There are sweets in the box.", bases: { "डिब्बे": "box" } }
+      "यह डिब्बा खाली है।": { native: "This box is empty.", bases: { "डिब्बा": "box", "खाली": "empty" } }
+  "hi-1181":
+    native: "suitcase"
+    notes: { "n1": "A large case for clothes on a trip. A cloth bag is थैला (thailā), 'bag'." }
+    examples:
+      "सूटकेस कमरे में रखो।": { native: "Put the suitcase in the room.", bases: { "सूटकेस": "suitcase" } }
+      "सूटकेस बिस्तर पर है।": { native: "The suitcase is on the bed.", bases: { "सूटकेस": "suitcase" } }
+  "hi-1182":
+    native: "mirror"
+    notes: { "n1": "A mirror, or glass. A mirror for your face is also आईना (āīnā), 'mirror'." }
+    examples:
+      "दीवार पर शीशा है।": { native: "There is a mirror on the wall.", bases: { "दीवार": "wall", "शीशा": "mirror" } }
+      "शीशा साफ़ करो।": { native: "Clean the mirror.", bases: { "शीशा": "mirror" } }
+    synonyms: { "aaina": "mirror (Persian-leaning)" }
+  "hi-1183":
+    native: "brush"
+    notes: { "n1": "A brush, for teeth or hair. A comb is कंघी (kaṅghī), 'comb'." }
+    examples:
+      "मेरा ब्रश बाथरूम में है।": { native: "My brush is in the bathroom.", bases: { "ब्रश": "brush" } }
+      "ब्रश छोटा है।": { native: "The brush is small.", bases: { "ब्रश": "brush" } }
+  "hi-1184":
+    native: "luggage"
+    notes: { "n1": "Things you carry or own together, such as luggage on a trip. One thing is चीज़ (cīz), 'thing'." }
+    examples:
+      "सारा सामान गाड़ी में रखो।": { native: "Put all the luggage in the car.", bases: { "सामान": "luggage", "गाड़ी": "car" } }
+      "सामान बहुत है।": { native: "There is a lot of luggage.", bases: { "सामान": "luggage" } }
+  "hi-1185":
+    native: "thing"
+    notes: { "n1": "Any thing that you can see or name. Plural: चीज़ें (cīzēm̐), 'things'." }
+    examples:
+      "यह चीज़ क्या है?": { native: "What is this thing?", bases: { "चीज़": "thing" } }
+      "यहाँ कोई चीज़ नहीं है।": { native: "There is nothing here.", bases: { "चीज़": "thing" } }
+    synonyms: { "vastu": "thing (Sanskrit-leaning)" }
+  "hi-1186":
+    native: "laptop"
+    notes: { "n1": "A laptop computer. A computer is कंप्यूटर (kampyūṭar), 'computer'." }
+    examples:
+      "लैपटॉप बैग में है।": { native: "The laptop is in the bag.", bases: { "लैपटॉप": "laptop" } }
+      "लैपटॉप का चार्जर कहाँ है?": { native: "Where is the laptop charger?", bases: { "लैपटॉप": "laptop" } }
+  "hi-1187":
+    native: "sheet"
+    notes: { "n1": "A sheet for a bed, or a cloth to cover it. A blanket is कंबल (kambal), 'blanket'." }
+    examples:
+      "बिस्तर पर नई चादर है।": { native: "There is a new sheet on the bed.", bases: { "चादर": "sheet" } }
+      "चादर साफ़ है।": { native: "The sheet is clean.", bases: { "चादर": "sheet" } }
