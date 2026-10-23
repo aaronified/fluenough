@@ -1,0 +1,56 @@
+schema: 1
+id: "zh-tones-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "zh-0047"
+    target: "我吃八个。"
+    words: ["我", "吃", "八", "个"]
+    reading: "wǒ chī bā ge."
+    pos: "phrase"
+    bases:
+      - { word: "个", base: "个", reading: "ge" }
+  - id: "zh-0048"
+    target: "爸，你喝茶吗？"
+    words: ["爸", "你", "喝", "茶", "吗"]
+    reading: "bà, nǐ hē chá ma?"
+    pos: "phrase"
+    bases:
+      - { word: "茶", base: "茶", reading: "chá" }
+  - id: "zh-0049"
+    target: "我不骂他。"
+    words: ["我", "不", "骂", "他"]
+    reading: "wǒ bú mà tā."
+    pos: "phrase"
+  - id: "zh-0050"
+    target: "白马在这里。"
+    words: ["白", "马", "在", "这里"]
+    reading: "bái mǎ zài zhèlǐ."
+    pos: "phrase"
+    bases:
+      - { word: "在", base: "在", reading: "zài" }
+      - { word: "这里", base: "这里", reading: "zhèlǐ" }
+  - id: "zh-0051"
+    target: "妈妈不卖马。"
+    words: ["妈妈", "不", "卖", "马"]
+    reading: "māma bú mài mǎ."
+    pos: "phrase"
+    bases:
+      - { word: "妈妈", base: "妈妈", reading: "māma" }
+  - id: "zh-0052"
+    target: "他十点来。"
+    words: ["他", "十点", "来"]
+    reading: "tā shí diǎn lái."
+    pos: "phrase"
+    bases:
+      - { word: "十点", base: "十点", reading: "shí diǎn" }
+  - id: "zh-0053"
+    target: "妈，你吃四个吗？"
+    words: ["妈", "你", "吃", "四", "个", "吗"]
+    reading: "mā, nǐ chī sì ge ma?"
+    pos: "phrase"
+    bases:
+      - { word: "个", base: "个", reading: "ge" }
