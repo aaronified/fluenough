@@ -6,11 +6,22 @@ native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Future tense"
 license: "CC-BY-SA-4.0"
 description: "I will go, they will speak."
-pattern:
-  name: "Future"
+table:
   slot_name: "person and gender"
-  prompt: "{lemma} ({gloss}) — {slot}"
-  entries:
-    "jaanaa": "to go"
-    "bolnaa": "to speak"
-  notes: "The stem, a vowel for the person (-ऊँ (-ūm̐), -ओ (-ō), -ए (-ē), -एँ (-ēm̐)), then -गा (-gā), -गी (-gī) or -गे (-gē) for gender and number. Some writers spell जाएगा (jāēgā) as जायेगा (jāyēgā)."
+  slots:
+    "i-m": "I, masculine"
+    "i-f": "I, feminine"
+    "you-m": "you, informal, masculine"
+    "you-f": "you, informal, feminine"
+    "he-m": "he or she, masculine"
+    "he-f": "he or she, feminine"
+    "we-m": "we, masculine"
+    "we-f": "we, feminine"
+    "formal-m": "you, formal, masculine"
+    "formal-f": "you, formal, feminine"
+    "they-m": "they, masculine"
+    "they-f": "they, feminine"
+rules:
+  "hi-rule-future":
+    name: "-गा (-gā), -गी (-gī), -गे (-gē): the future"
+    explanation: "The stem, a vowel for the person (-ऊँ (-ūm̐), -ओ (-ō), -ए (-ē), -एँ (-ēm̐)), then -गा (-gā), -गी (-gī) or -गे (-gē) for gender and number. Some writers spell जाएगा (jāēgā) as जायेगा (jāyēgā). Some verbs are irregular: देना (dēnā) gives दूँगा (dūm̐gā), I will give, and होना (hōnā) gives होगा (hōgā), he will be."

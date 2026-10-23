@@ -1,96 +1,196 @@
 schema: 1
 id: "hi-grammar-future"
 part: "core"
-kind: "grammar"
+kind: "rules"
 language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "grammar"]
-pattern:
-  slots: ["मैं (m)", "मैं (f)", "तुम (m)", "तुम (f)", "वह (m)", "वह (f)", "हम (m)", "हम (f)", "आप (m)", "आप (f)", "वे (m)", "वे (f)"]
-  entries:
-    - lemma: "जाना"
-      key: "jaanaa"
-      reading: "jānā"
-      ipa: "dʒaːnaː"
-      forms:
-        "मैं (m)": "जाऊँगा"
-        "मैं (f)": "जाऊँगी"
-        "तुम (m)": "जाओगे"
-        "तुम (f)": "जाओगी"
-        "वह (m)": "जाएगा"
-        "वह (f)": "जाएगी"
-        "हम (m)": "जाएँगे"
-        "हम (f)": "जाएँगी"
-        "आप (m)": "जाएँगे"
-        "आप (f)": "जाएँगी"
-        "वे (m)": "जाएँगे"
-        "वे (f)": "जाएँगी"
-      readings:
-        "मैं (m)": "jāūm̐gā"
-        "मैं (f)": "jāūm̐gī"
-        "तुम (m)": "jāōgē"
-        "तुम (f)": "jāōgī"
-        "वह (m)": "jāēgā"
-        "वह (f)": "jāēgī"
-        "हम (m)": "jāēm̐gē"
-        "हम (f)": "jāēm̐gī"
-        "आप (m)": "jāēm̐gē"
-        "आप (f)": "jāēm̐gī"
-        "वे (m)": "jāēm̐gē"
-        "वे (f)": "jāēm̐gī"
-      ipas:
-        "मैं (m)": "dʒaːũːɡaː"
-        "मैं (f)": "dʒaːũːɡiː"
-        "तुम (m)": "dʒaːoːɡeː"
-        "तुम (f)": "dʒaːoːɡiː"
-        "वह (m)": "dʒaːeːɡaː"
-        "वह (f)": "dʒaːeːɡiː"
-        "हम (m)": "dʒaːẽːɡeː"
-        "हम (f)": "dʒaːẽːɡiː"
-        "आप (m)": "dʒaːẽːɡeː"
-        "आप (f)": "dʒaːẽːɡiː"
-        "वे (m)": "dʒaːẽːɡeː"
-        "वे (f)": "dʒaːẽːɡiː"
-    - lemma: "बोलना"
-      key: "bolnaa"
-      reading: "bōlnā"
-      ipa: "boːlnaː"
-      forms:
-        "मैं (m)": "बोलूँगा"
-        "मैं (f)": "बोलूँगी"
-        "तुम (m)": "बोलोगे"
-        "तुम (f)": "बोलोगी"
-        "वह (m)": "बोलेगा"
-        "वह (f)": "बोलेगी"
-        "हम (m)": "बोलेंगे"
-        "हम (f)": "बोलेंगी"
-        "आप (m)": "बोलेंगे"
-        "आप (f)": "बोलेंगी"
-        "वे (m)": "बोलेंगे"
-        "वे (f)": "बोलेंगी"
-      readings:
-        "मैं (m)": "bōlūm̐gā"
-        "मैं (f)": "bōlūm̐gī"
-        "तुम (m)": "bōlōgē"
-        "तुम (f)": "bōlōgī"
-        "वह (m)": "bōlēgā"
-        "वह (f)": "bōlēgī"
-        "हम (m)": "bōlēṅgē"
-        "हम (f)": "bōlēṅgī"
-        "आप (m)": "bōlēṅgē"
-        "आप (f)": "bōlēṅgī"
-        "वे (m)": "bōlēṅgē"
-        "वे (f)": "bōlēṅgī"
-      ipas:
-        "मैं (m)": "boːlũːɡaː"
-        "मैं (f)": "boːlũːɡiː"
-        "तुम (m)": "boːloːɡeː"
-        "तुम (f)": "boːloːɡiː"
-        "वह (m)": "boːleːɡaː"
-        "वह (f)": "boːleːɡiː"
-        "हम (m)": "boːleːŋɡeː"
-        "हम (f)": "boːleːŋɡiː"
-        "आप (m)": "boːleːŋɡeː"
-        "आप (f)": "boːleːŋɡiː"
-        "वे (m)": "boːleːŋɡeː"
-        "वे (f)": "boːleːŋɡiː"
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["hi-0240", "hi-0273", "hi-0290", "hi-0460"]
+  slots: ["i-m", "i-f", "you-m", "you-f", "he-m", "he-f", "we-m", "we-f", "formal-m", "formal-f", "they-m", "they-f"]
+  rows:
+    - word: "hi-0441"
+      forms: { "i-m": "उठूँगा", "i-f": "उठूँगी", "you-m": "उठोगे", "you-f": "उठोगी", "he-m": "उठेगा", "he-f": "उठेगी", "we-m": "उठेंगे", "we-f": "उठेंगी", "formal-m": "उठेंगे", "formal-f": "उठेंगी", "they-m": "उठेंगे", "they-f": "उठेंगी" }
+      readings: { "i-m": "uṭhūm̐gā", "i-f": "uṭhūm̐gī", "you-m": "uṭhōgē", "you-f": "uṭhōgī", "he-m": "uṭhēgā", "he-f": "uṭhēgī", "we-m": "uṭhēm̐gē", "we-f": "uṭhēm̐gī", "formal-m": "uṭhēm̐gē", "formal-f": "uṭhēm̐gī", "they-m": "uṭhēm̐gē", "they-f": "uṭhēm̐gī" }
+    - word: "hi-0442"
+      forms: { "i-m": "नहाऊँगा", "i-f": "नहाऊँगी", "you-m": "नहाओगे", "you-f": "नहाओगी", "he-m": "नहाएगा", "he-f": "नहाएगी", "we-m": "नहाएँगे", "we-f": "नहाएँगी", "formal-m": "नहाएँगे", "formal-f": "नहाएँगी", "they-m": "नहाएँगे", "they-f": "नहाएँगी" }
+      readings: { "i-m": "nahāūm̐gā", "i-f": "nahāūm̐gī", "you-m": "nahāōgē", "you-f": "nahāōgī", "he-m": "nahāēgā", "he-f": "nahāēgī", "we-m": "nahāēm̐gē", "we-f": "nahāēm̐gī", "formal-m": "nahāēm̐gē", "formal-f": "nahāēm̐gī", "they-m": "nahāēm̐gē", "they-f": "nahāēm̐gī" }
+    - word: "hi-0450"
+      forms: { "i-m": "सोऊँगा", "i-f": "सोऊँगी", "you-m": "सोओगे", "you-f": "सोओगी", "he-m": "सोएगा", "he-f": "सोएगी", "we-m": "सोएँगे", "we-f": "सोएँगी", "formal-m": "सोएँगे", "formal-f": "सोएँगी", "they-m": "सोएँगे", "they-f": "सोएँगी" }
+      readings: { "i-m": "sōūm̐gā", "i-f": "sōūm̐gī", "you-m": "sōōgē", "you-f": "sōōgī", "he-m": "sōēgā", "he-f": "sōēgī", "we-m": "sōēm̐gē", "we-f": "sōēm̐gī", "formal-m": "sōēm̐gē", "formal-f": "sōēm̐gī", "they-m": "sōēm̐gē", "they-f": "sōēm̐gī" }
+    - word: "hi-0513"
+      forms: { "i-m": "सकूँगा", "i-f": "सकूँगी", "you-m": "सकोगे", "you-f": "सकोगी", "he-m": "सकेगा", "he-f": "सकेगी", "we-m": "सकेंगे", "we-f": "सकेंगी", "formal-m": "सकेंगे", "formal-f": "सकेंगी", "they-m": "सकेंगे", "they-f": "सकेंगी" }
+      readings: { "i-m": "sakūm̐gā", "i-f": "sakūm̐gī", "you-m": "sakōgē", "you-f": "sakōgī", "he-m": "sakēgā", "he-f": "sakēgī", "we-m": "sakēm̐gē", "we-f": "sakēm̐gī", "formal-m": "sakēm̐gē", "formal-f": "sakēm̐gī", "they-m": "sakēm̐gē", "they-f": "sakēm̐gī" }
+    - word: "hi-0602"
+      forms: { "i-m": "पीऊँगा", "i-f": "पीऊँगी", "you-m": "पीओगे", "you-f": "पीओगी", "he-m": "पीएगा", "he-f": "पीएगी", "we-m": "पीएँगे", "we-f": "पीएँगी", "formal-m": "पीएँगे", "formal-f": "पीएँगी", "they-m": "पीएँगे", "they-f": "पीएँगी" }
+      readings: { "i-m": "pīūm̐gā", "i-f": "pīūm̐gī", "you-m": "pīōgē", "you-f": "pīōgī", "he-m": "pīēgā", "he-f": "pīēgī", "we-m": "pīēm̐gē", "we-f": "pīēm̐gī", "formal-m": "pīēm̐gē", "formal-f": "pīēm̐gī", "they-m": "pīēm̐gē", "they-f": "pīēm̐gī" }
+    - word: "hi-0777"
+      forms: { "i-m": "जाऊँगा", "i-f": "जाऊँगी", "you-m": "जाओगे", "you-f": "जाओगी", "he-m": "जाएगा", "he-f": "जाएगी", "we-m": "जाएँगे", "we-f": "जाएँगी", "formal-m": "जाएँगे", "formal-f": "जाएँगी", "they-m": "जाएँगे", "they-f": "जाएँगी" }
+      readings: { "i-m": "jāūm̐gā", "i-f": "jāūm̐gī", "you-m": "jāōgē", "you-f": "jāōgī", "he-m": "jāēgā", "he-f": "jāēgī", "we-m": "jāēm̐gē", "we-f": "jāēm̐gī", "formal-m": "jāēm̐gē", "formal-f": "jāēm̐gī", "they-m": "jāēm̐gē", "they-f": "jāēm̐gī" }
+    - word: "hi-0778"
+      forms: { "i-m": "आऊँगा", "i-f": "आऊँगी", "you-m": "आओगे", "you-f": "आओगी", "he-m": "आएगा", "he-f": "आएगी", "we-m": "आएँगे", "we-f": "आएँगी", "formal-m": "आएँगे", "formal-f": "आएँगी", "they-m": "आएँगे", "they-f": "आएँगी" }
+      readings: { "i-m": "āūm̐gā", "i-f": "āūm̐gī", "you-m": "āōgē", "you-f": "āōgī", "he-m": "āēgā", "he-f": "āēgī", "we-m": "āēm̐gē", "we-f": "āēm̐gī", "formal-m": "āēm̐gē", "formal-f": "āēm̐gī", "they-m": "āēm̐gē", "they-f": "āēm̐gī" }
+    - word: "hi-0779"
+      forms: { "i-m": "करूँगा", "i-f": "करूँगी", "you-m": "करोगे", "you-f": "करोगी", "he-m": "करेगा", "he-f": "करेगी", "we-m": "करेंगे", "we-f": "करेंगी", "formal-m": "करेंगे", "formal-f": "करेंगी", "they-m": "करेंगे", "they-f": "करेंगी" }
+      readings: { "i-m": "karūm̐gā", "i-f": "karūm̐gī", "you-m": "karōgē", "you-f": "karōgī", "he-m": "karēgā", "he-f": "karēgī", "we-m": "karēm̐gē", "we-f": "karēm̐gī", "formal-m": "karēm̐gē", "formal-f": "karēm̐gī", "they-m": "karēm̐gē", "they-f": "karēm̐gī" }
+    - word: "hi-0780"
+      forms: { "i-m": "होऊँगा", "i-f": "होऊँगी", "you-m": "होगे", "you-f": "होगी", "he-m": "होगा", "he-f": "होगी", "we-m": "होंगे", "we-f": "होंगी", "formal-m": "होंगे", "formal-f": "होंगी", "they-m": "होंगे", "they-f": "होंगी" }
+      readings: { "i-m": "hōūm̐gā", "i-f": "hōūm̐gī", "you-m": "hōgē", "you-f": "hōgī", "he-m": "hōgā", "he-f": "hōgī", "we-m": "hōm̐gē", "we-f": "hōm̐gī", "formal-m": "hōm̐gē", "formal-f": "hōm̐gī", "they-m": "hōm̐gē", "they-f": "hōm̐gī" }
+    - word: "hi-0781"
+      forms: { "i-m": "लिखूँगा", "i-f": "लिखूँगी", "you-m": "लिखोगे", "you-f": "लिखोगी", "he-m": "लिखेगा", "he-f": "लिखेगी", "we-m": "लिखेंगे", "we-f": "लिखेंगी", "formal-m": "लिखेंगे", "formal-f": "लिखेंगी", "they-m": "लिखेंगे", "they-f": "लिखेंगी" }
+      readings: { "i-m": "likhūm̐gā", "i-f": "likhūm̐gī", "you-m": "likhōgē", "you-f": "likhōgī", "he-m": "likhēgā", "he-f": "likhēgī", "we-m": "likhēm̐gē", "we-f": "likhēm̐gī", "formal-m": "likhēm̐gē", "formal-f": "likhēm̐gī", "they-m": "likhēm̐gē", "they-f": "likhēm̐gī" }
+    - word: "hi-0782"
+      forms: { "i-m": "बोलूँगा", "i-f": "बोलूँगी", "you-m": "बोलोगे", "you-f": "बोलोगी", "he-m": "बोलेगा", "he-f": "बोलेगी", "we-m": "बोलेंगे", "we-f": "बोलेंगी", "formal-m": "बोलेंगे", "formal-f": "बोलेंगी", "they-m": "बोलेंगे", "they-f": "बोलेंगी" }
+      readings: { "i-m": "bōlūm̐gā", "i-f": "bōlūm̐gī", "you-m": "bōlōgē", "you-f": "bōlōgī", "he-m": "bōlēgā", "he-f": "bōlēgī", "we-m": "bōlēm̐gē", "we-f": "bōlēm̐gī", "formal-m": "bōlēm̐gē", "formal-f": "bōlēm̐gī", "they-m": "bōlēm̐gē", "they-f": "bōlēm̐gī" }
+    - word: "hi-0783"
+      forms: { "i-m": "सुनूँगा", "i-f": "सुनूँगी", "you-m": "सुनोगे", "you-f": "सुनोगी", "he-m": "सुनेगा", "he-f": "सुनेगी", "we-m": "सुनेंगे", "we-f": "सुनेंगी", "formal-m": "सुनेंगे", "formal-f": "सुनेंगी", "they-m": "सुनेंगे", "they-f": "सुनेंगी" }
+      readings: { "i-m": "sunūm̐gā", "i-f": "sunūm̐gī", "you-m": "sunōgē", "you-f": "sunōgī", "he-m": "sunēgā", "he-f": "sunēgī", "we-m": "sunēm̐gē", "we-f": "sunēm̐gī", "formal-m": "sunēm̐gē", "formal-f": "sunēm̐gī", "they-m": "sunēm̐gē", "they-f": "sunēm̐gī" }
+    - word: "hi-0784"
+      forms: { "i-m": "देखूँगा", "i-f": "देखूँगी", "you-m": "देखोगे", "you-f": "देखोगी", "he-m": "देखेगा", "he-f": "देखेगी", "we-m": "देखेंगे", "we-f": "देखेंगी", "formal-m": "देखेंगे", "formal-f": "देखेंगी", "they-m": "देखेंगे", "they-f": "देखेंगी" }
+      readings: { "i-m": "dēkhūm̐gā", "i-f": "dēkhūm̐gī", "you-m": "dēkhōgē", "you-f": "dēkhōgī", "he-m": "dēkhēgā", "he-f": "dēkhēgī", "we-m": "dēkhēm̐gē", "we-f": "dēkhēm̐gī", "formal-m": "dēkhēm̐gē", "formal-f": "dēkhēm̐gī", "they-m": "dēkhēm̐gē", "they-f": "dēkhēm̐gī" }
+    - word: "hi-0785"
+      forms: { "i-m": "दूँगा", "i-f": "दूँगी", "you-m": "दोगे", "you-f": "दोगी", "he-m": "देगा", "he-f": "देगी", "we-m": "देंगे", "we-f": "देंगी", "formal-m": "देंगे", "formal-f": "देंगी", "they-m": "देंगे", "they-f": "देंगी" }
+      readings: { "i-m": "dūm̐gā", "i-f": "dūm̐gī", "you-m": "dōgē", "you-f": "dōgī", "he-m": "dēgā", "he-f": "dēgī", "we-m": "dēm̐gē", "we-f": "dēm̐gī", "formal-m": "dēm̐gē", "formal-f": "dēm̐gī", "they-m": "dēm̐gē", "they-f": "dēm̐gī" }
+    - word: "hi-0786"
+      forms: { "i-m": "लूँगा", "i-f": "लूँगी", "you-m": "लोगे", "you-f": "लोगी", "he-m": "लेगा", "he-f": "लेगी", "we-m": "लेंगे", "we-f": "लेंगी", "formal-m": "लेंगे", "formal-f": "लेंगी", "they-m": "लेंगे", "they-f": "लेंगी" }
+      readings: { "i-m": "lūm̐gā", "i-f": "lūm̐gī", "you-m": "lōgē", "you-f": "lōgī", "he-m": "lēgā", "he-f": "lēgī", "we-m": "lēm̐gē", "we-f": "lēm̐gī", "formal-m": "lēm̐gē", "formal-f": "lēm̐gī", "they-m": "lēm̐gē", "they-f": "lēm̐gī" }
+    - word: "hi-0787"
+      forms: { "i-m": "खेलूँगा", "i-f": "खेलूँगी", "you-m": "खेलोगे", "you-f": "खेलोगी", "he-m": "खेलेगा", "he-f": "खेलेगी", "we-m": "खेलेंगे", "we-f": "खेलेंगी", "formal-m": "खेलेंगे", "formal-f": "खेलेंगी", "they-m": "खेलेंगे", "they-f": "खेलेंगी" }
+      readings: { "i-m": "khēlūm̐gā", "i-f": "khēlūm̐gī", "you-m": "khēlōgē", "you-f": "khēlōgī", "he-m": "khēlēgā", "he-f": "khēlēgī", "we-m": "khēlēm̐gē", "we-f": "khēlēm̐gī", "formal-m": "khēlēm̐gē", "formal-f": "khēlēm̐gī", "they-m": "khēlēm̐gē", "they-f": "khēlēm̐gī" }
+    - word: "hi-0788"
+      forms: { "i-m": "बैठूँगा", "i-f": "बैठूँगी", "you-m": "बैठोगे", "you-f": "बैठोगी", "he-m": "बैठेगा", "he-f": "बैठेगी", "we-m": "बैठेंगे", "we-f": "बैठेंगी", "formal-m": "बैठेंगे", "formal-f": "बैठेंगी", "they-m": "बैठेंगे", "they-f": "बैठेंगी" }
+      readings: { "i-m": "baiṭhūm̐gā", "i-f": "baiṭhūm̐gī", "you-m": "baiṭhōgē", "you-f": "baiṭhōgī", "he-m": "baiṭhēgā", "he-f": "baiṭhēgī", "we-m": "baiṭhēm̐gē", "we-f": "baiṭhēm̐gī", "formal-m": "baiṭhēm̐gē", "formal-f": "baiṭhēm̐gī", "they-m": "baiṭhēm̐gē", "they-f": "baiṭhēm̐gī" }
+    - word: "hi-0789"
+      forms: { "i-m": "समझूँगा", "i-f": "समझूँगी", "you-m": "समझोगे", "you-f": "समझोगी", "he-m": "समझेगा", "he-f": "समझेगी", "we-m": "समझेंगे", "we-f": "समझेंगी", "formal-m": "समझेंगे", "formal-f": "समझेंगी", "they-m": "समझेंगे", "they-f": "समझेंगी" }
+      readings: { "i-m": "samjhūm̐gā", "i-f": "samjhūm̐gī", "you-m": "samjhōgē", "you-f": "samjhōgī", "he-m": "samjhēgā", "he-f": "samjhēgī", "we-m": "samjhēm̐gē", "we-f": "samjhēm̐gī", "formal-m": "samjhēm̐gē", "formal-f": "samjhēm̐gī", "they-m": "samjhēm̐gē", "they-f": "samjhēm̐gī" }
+    - word: "hi-0790"
+      forms: { "i-m": "जानूँगा", "i-f": "जानूँगी", "you-m": "जानोगे", "you-f": "जानोगी", "he-m": "जानेगा", "he-f": "जानेगी", "we-m": "जानेंगे", "we-f": "जानेंगी", "formal-m": "जानेंगे", "formal-f": "जानेंगी", "they-m": "जानेंगे", "they-f": "जानेंगी" }
+      readings: { "i-m": "jānūm̐gā", "i-f": "jānūm̐gī", "you-m": "jānōgē", "you-f": "jānōgī", "he-m": "jānēgā", "he-f": "jānēgī", "we-m": "jānēm̐gē", "we-f": "jānēm̐gī", "formal-m": "jānēm̐gē", "formal-f": "jānēm̐gī", "they-m": "jānēm̐gē", "they-f": "jānēm̐gī" }
+    - word: "hi-0791"
+      forms: { "i-m": "रहूँगा", "i-f": "रहूँगी", "you-m": "रहोगे", "you-f": "रहोगी", "he-m": "रहेगा", "he-f": "रहेगी", "we-m": "रहेंगे", "we-f": "रहेंगी", "formal-m": "रहेंगे", "formal-f": "रहेंगी", "they-m": "रहेंगे", "they-f": "रहेंगी" }
+      readings: { "i-m": "rahūm̐gā", "i-f": "rahūm̐gī", "you-m": "rahōgē", "you-f": "rahōgī", "he-m": "rahēgā", "he-f": "rahēgī", "we-m": "rahēm̐gē", "we-f": "rahēm̐gī", "formal-m": "rahēm̐gē", "formal-f": "rahēm̐gī", "they-m": "rahēm̐gē", "they-f": "rahēm̐gī" }
+    - word: "hi-0792"
+      forms: { "i-m": "चाहूँगा", "i-f": "चाहूँगी", "you-m": "चाहोगे", "you-f": "चाहोगी", "he-m": "चाहेगा", "he-f": "चाहेगी", "we-m": "चाहेंगे", "we-f": "चाहेंगी", "formal-m": "चाहेंगे", "formal-f": "चाहेंगी", "they-m": "चाहेंगे", "they-f": "चाहेंगी" }
+      readings: { "i-m": "cāhūm̐gā", "i-f": "cāhūm̐gī", "you-m": "cāhōgē", "you-f": "cāhōgī", "he-m": "cāhēgā", "he-f": "cāhēgī", "we-m": "cāhēm̐gē", "we-f": "cāhēm̐gī", "formal-m": "cāhēm̐gē", "formal-f": "cāhēm̐gī", "they-m": "cāhēm̐gē", "they-f": "cāhēm̐gī" }
+    - word: "hi-0793"
+      forms: { "i-m": "मिलूँगा", "i-f": "मिलूँगी", "you-m": "मिलोगे", "you-f": "मिलोगी", "he-m": "मिलेगा", "he-f": "मिलेगी", "we-m": "मिलेंगे", "we-f": "मिलेंगी", "formal-m": "मिलेंगे", "formal-f": "मिलेंगी", "they-m": "मिलेंगे", "they-f": "मिलेंगी" }
+      readings: { "i-m": "milūm̐gā", "i-f": "milūm̐gī", "you-m": "milōgē", "you-f": "milōgī", "he-m": "milēgā", "he-f": "milēgī", "we-m": "milēm̐gē", "we-f": "milēm̐gī", "formal-m": "milēm̐gē", "formal-f": "milēm̐gī", "they-m": "milēm̐gē", "they-f": "milēm̐gī" }
+    - word: "hi-0794"
+      forms: { "i-m": "ख़रीदूँगा", "i-f": "ख़रीदूँगी", "you-m": "ख़रीदोगे", "you-f": "ख़रीदोगी", "he-m": "ख़रीदेगा", "he-f": "ख़रीदेगी", "we-m": "ख़रीदेंगे", "we-f": "ख़रीदेंगी", "formal-m": "ख़रीदेंगे", "formal-f": "ख़रीदेंगी", "they-m": "ख़रीदेंगे", "they-f": "ख़रीदेंगी" }
+      readings: { "i-m": "kharīdūm̐gā", "i-f": "kharīdūm̐gī", "you-m": "kharīdōgē", "you-f": "kharīdōgī", "he-m": "kharīdēgā", "he-f": "kharīdēgī", "we-m": "kharīdēm̐gē", "we-f": "kharīdēm̐gī", "formal-m": "kharīdēm̐gē", "formal-f": "kharīdēm̐gī", "they-m": "kharīdēm̐gē", "they-f": "kharīdēm̐gī" }
+    - word: "hi-0795"
+      forms: { "i-m": "बेचूँगा", "i-f": "बेचूँगी", "you-m": "बेचोगे", "you-f": "बेचोगी", "he-m": "बेचेगा", "he-f": "बेचेगी", "we-m": "बेचेंगे", "we-f": "बेचेंगी", "formal-m": "बेचेंगे", "formal-f": "बेचेंगी", "they-m": "बेचेंगे", "they-f": "बेचेंगी" }
+      readings: { "i-m": "bēcūm̐gā", "i-f": "bēcūm̐gī", "you-m": "bēcōgē", "you-f": "bēcōgī", "he-m": "bēcēgā", "he-f": "bēcēgī", "we-m": "bēcēm̐gē", "we-f": "bēcēm̐gī", "formal-m": "bēcēm̐gē", "formal-f": "bēcēm̐gī", "they-m": "bēcēm̐gē", "they-f": "bēcēm̐gī" }
+    - word: "hi-0796"
+      forms: { "i-m": "बताऊँगा", "i-f": "बताऊँगी", "you-m": "बताओगे", "you-f": "बताओगी", "he-m": "बताएगा", "he-f": "बताएगी", "we-m": "बताएँगे", "we-f": "बताएँगी", "formal-m": "बताएँगे", "formal-f": "बताएँगी", "they-m": "बताएँगे", "they-f": "बताएँगी" }
+      readings: { "i-m": "batāūm̐gā", "i-f": "batāūm̐gī", "you-m": "batāōgē", "you-f": "batāōgī", "he-m": "batāēgā", "he-f": "batāēgī", "we-m": "batāēm̐gē", "we-f": "batāēm̐gī", "formal-m": "batāēm̐gē", "formal-f": "batāēm̐gī", "they-m": "batāēm̐gē", "they-f": "batāēm̐gī" }
+    - word: "hi-0797"
+      forms: { "i-m": "भेजूँगा", "i-f": "भेजूँगी", "you-m": "भेजोगे", "you-f": "भेजोगी", "he-m": "भेजेगा", "he-f": "भेजेगी", "we-m": "भेजेंगे", "we-f": "भेजेंगी", "formal-m": "भेजेंगे", "formal-f": "भेजेंगी", "they-m": "भेजेंगे", "they-f": "भेजेंगी" }
+      readings: { "i-m": "bhējūm̐gā", "i-f": "bhējūm̐gī", "you-m": "bhējōgē", "you-f": "bhējōgī", "he-m": "bhējēgā", "he-f": "bhējēgī", "we-m": "bhējēm̐gē", "we-f": "bhējēm̐gī", "formal-m": "bhējēm̐gē", "formal-f": "bhējēm̐gī", "they-m": "bhējēm̐gē", "they-f": "bhējēm̐gī" }
+    - word: "hi-0798"
+      forms: { "i-m": "धोऊँगा", "i-f": "धोऊँगी", "you-m": "धोओगे", "you-f": "धोओगी", "he-m": "धोएगा", "he-f": "धोएगी", "we-m": "धोएँगे", "we-f": "धोएँगी", "formal-m": "धोएँगे", "formal-f": "धोएँगी", "they-m": "धोएँगे", "they-f": "धोएँगी" }
+      readings: { "i-m": "dhōūm̐gā", "i-f": "dhōūm̐gī", "you-m": "dhōōgē", "you-f": "dhōōgī", "he-m": "dhōēgā", "he-f": "dhōēgī", "we-m": "dhōēm̐gē", "we-f": "dhōēm̐gī", "formal-m": "dhōēm̐gē", "formal-f": "dhōēm̐gī", "they-m": "dhōēm̐gē", "they-f": "dhōēm̐gī" }
+    - word: "hi-0799"
+      forms: { "i-m": "पूछूँगा", "i-f": "पूछूँगी", "you-m": "पूछोगे", "you-f": "पूछोगी", "he-m": "पूछेगा", "he-f": "पूछेगी", "we-m": "पूछेंगे", "we-f": "पूछेंगी", "formal-m": "पूछेंगे", "formal-f": "पूछेंगी", "they-m": "पूछेंगे", "they-f": "पूछेंगी" }
+      readings: { "i-m": "pūchūm̐gā", "i-f": "pūchūm̐gī", "you-m": "pūchōgē", "you-f": "pūchōgī", "he-m": "pūchēgā", "he-f": "pūchēgī", "we-m": "pūchēm̐gē", "we-f": "pūchēm̐gī", "formal-m": "pūchēm̐gē", "formal-f": "pūchēm̐gī", "they-m": "pūchēm̐gē", "they-f": "pūchēm̐gī" }
+    - word: "hi-0800"
+      forms: { "i-m": "कहूँगा", "i-f": "कहूँगी", "you-m": "कहोगे", "you-f": "कहोगी", "he-m": "कहेगा", "he-f": "कहेगी", "we-m": "कहेंगे", "we-f": "कहेंगी", "formal-m": "कहेंगे", "formal-f": "कहेंगी", "they-m": "कहेंगे", "they-f": "कहेंगी" }
+      readings: { "i-m": "kahūm̐gā", "i-f": "kahūm̐gī", "you-m": "kahōgē", "you-f": "kahōgī", "he-m": "kahēgā", "he-f": "kahēgī", "we-m": "kahēm̐gē", "we-f": "kahēm̐gī", "formal-m": "kahēm̐gē", "formal-f": "kahēm̐gī", "they-m": "kahēm̐gē", "they-f": "kahēm̐gī" }
+    - word: "hi-0801"
+      forms: { "i-m": "चलूँगा", "i-f": "चलूँगी", "you-m": "चलोगे", "you-f": "चलोगी", "he-m": "चलेगा", "he-f": "चलेगी", "we-m": "चलेंगे", "we-f": "चलेंगी", "formal-m": "चलेंगे", "formal-f": "चलेंगी", "they-m": "चलेंगे", "they-f": "चलेंगी" }
+      readings: { "i-m": "calūm̐gā", "i-f": "calūm̐gī", "you-m": "calōgē", "you-f": "calōgī", "he-m": "calēgā", "he-f": "calēgī", "we-m": "calēm̐gē", "we-f": "calēm̐gī", "formal-m": "calēm̐gē", "formal-f": "calēm̐gī", "they-m": "calēm̐gē", "they-f": "calēm̐gī" }
+    - word: "hi-0937"
+      forms: { "i-m": "खोलूँगा", "i-f": "खोलूँगी", "you-m": "खोलोगे", "you-f": "खोलोगी", "he-m": "खोलेगा", "he-f": "खोलेगी", "we-m": "खोलेंगे", "we-f": "खोलेंगी", "formal-m": "खोलेंगे", "formal-f": "खोलेंगी", "they-m": "खोलेंगे", "they-f": "खोलेंगी" }
+      readings: { "i-m": "khōlūm̐gā", "i-f": "khōlūm̐gī", "you-m": "khōlōgē", "you-f": "khōlōgī", "he-m": "khōlēgā", "he-f": "khōlēgī", "we-m": "khōlēm̐gē", "we-f": "khōlēm̐gī", "formal-m": "khōlēm̐gē", "formal-f": "khōlēm̐gī", "they-m": "khōlēm̐gē", "they-f": "khōlēm̐gī" }
+    - word: "hi-0938"
+      forms: { "i-m": "पकाऊँगा", "i-f": "पकाऊँगी", "you-m": "पकाओगे", "you-f": "पकाओगी", "he-m": "पकाएगा", "he-f": "पकाएगी", "we-m": "पकाएँगे", "we-f": "पकाएँगी", "formal-m": "पकाएँगे", "formal-f": "पकाएँगी", "they-m": "पकाएँगे", "they-f": "पकाएँगी" }
+      readings: { "i-m": "pakāūm̐gā", "i-f": "pakāūm̐gī", "you-m": "pakāōgē", "you-f": "pakāōgī", "he-m": "pakāēgā", "he-f": "pakāēgī", "we-m": "pakāēm̐gē", "we-f": "pakāēm̐gī", "formal-m": "pakāēm̐gē", "formal-f": "pakāēm̐gī", "they-m": "pakāēm̐gē", "they-f": "pakāēm̐gī" }
+    - word: "hi-0939"
+      forms: { "i-m": "काटूँगा", "i-f": "काटूँगी", "you-m": "काटोगे", "you-f": "काटोगी", "he-m": "काटेगा", "he-f": "काटेगी", "we-m": "काटेंगे", "we-f": "काटेंगी", "formal-m": "काटेंगे", "formal-f": "काटेंगी", "they-m": "काटेंगे", "they-f": "काटेंगी" }
+      readings: { "i-m": "kāṭūm̐gā", "i-f": "kāṭūm̐gī", "you-m": "kāṭōgē", "you-f": "kāṭōgī", "he-m": "kāṭēgā", "he-f": "kāṭēgī", "we-m": "kāṭēm̐gē", "we-f": "kāṭēm̐gī", "formal-m": "kāṭēm̐gē", "formal-f": "kāṭēm̐gī", "they-m": "kāṭēm̐gē", "they-f": "kāṭēm̐gī" }
+    - word: "hi-0940"
+      forms: { "i-m": "उबालूँगा", "i-f": "उबालूँगी", "you-m": "उबालोगे", "you-f": "उबालोगी", "he-m": "उबालेगा", "he-f": "उबालेगी", "we-m": "उबालेंगे", "we-f": "उबालेंगी", "formal-m": "उबालेंगे", "formal-f": "उबालेंगी", "they-m": "उबालेंगे", "they-f": "उबालेंगी" }
+      readings: { "i-m": "ubālūm̐gā", "i-f": "ubālūm̐gī", "you-m": "ubālōgē", "you-f": "ubālōgī", "he-m": "ubālēgā", "he-f": "ubālēgī", "we-m": "ubālēm̐gē", "we-f": "ubālēm̐gī", "formal-m": "ubālēm̐gē", "formal-f": "ubālēm̐gī", "they-m": "ubālēm̐gē", "they-f": "ubālēm̐gī" }
+    - word: "hi-0941"
+      forms: { "i-m": "डालूँगा", "i-f": "डालूँगी", "you-m": "डालोगे", "you-f": "डालोगी", "he-m": "डालेगा", "he-f": "डालेगी", "we-m": "डालेंगे", "we-f": "डालेंगी", "formal-m": "डालेंगे", "formal-f": "डालेंगी", "they-m": "डालेंगे", "they-f": "डालेंगी" }
+      readings: { "i-m": "ḍālūm̐gā", "i-f": "ḍālūm̐gī", "you-m": "ḍālōgē", "you-f": "ḍālōgī", "he-m": "ḍālēgā", "he-f": "ḍālēgī", "we-m": "ḍālēm̐gē", "we-f": "ḍālēm̐gī", "formal-m": "ḍālēm̐gē", "formal-f": "ḍālēm̐gī", "they-m": "ḍālēm̐gē", "they-f": "ḍālēm̐gī" }
+    - word: "hi-0942"
+      forms: { "i-m": "छानूँगा", "i-f": "छानूँगी", "you-m": "छानोगे", "you-f": "छानोगी", "he-m": "छानेगा", "he-f": "छानेगी", "we-m": "छानेंगे", "we-f": "छानेंगी", "formal-m": "छानेंगे", "formal-f": "छानेंगी", "they-m": "छानेंगे", "they-f": "छानेंगी" }
+      readings: { "i-m": "chānūm̐gā", "i-f": "chānūm̐gī", "you-m": "chānōgē", "you-f": "chānōgī", "he-m": "chānēgā", "he-f": "chānēgī", "we-m": "chānēm̐gē", "we-f": "chānēm̐gī", "formal-m": "chānēm̐gē", "formal-f": "chānēm̐gī", "they-m": "chānēm̐gē", "they-f": "chānēm̐gī" }
+    - word: "hi-0943"
+      forms: { "i-m": "परोसूँगा", "i-f": "परोसूँगी", "you-m": "परोसोगे", "you-f": "परोसोगी", "he-m": "परोसेगा", "he-f": "परोसेगी", "we-m": "परोसेंगे", "we-f": "परोसेंगी", "formal-m": "परोसेंगे", "formal-f": "परोसेंगी", "they-m": "परोसेंगे", "they-f": "परोसेंगी" }
+      readings: { "i-m": "parōsūm̐gā", "i-f": "parōsūm̐gī", "you-m": "parōsōgē", "you-f": "parōsōgī", "he-m": "parōsēgā", "he-f": "parōsēgī", "we-m": "parōsēm̐gē", "we-f": "parōsēm̐gī", "formal-m": "parōsēm̐gē", "formal-f": "parōsēm̐gī", "they-m": "parōsēm̐gē", "they-f": "parōsēm̐gī" }
+    - word: "hi-0944"
+      forms: { "i-m": "जागूँगा", "i-f": "जागूँगी", "you-m": "जागोगे", "you-f": "जागोगी", "he-m": "जागेगा", "he-f": "जागेगी", "we-m": "जागेंगे", "we-f": "जागेंगी", "formal-m": "जागेंगे", "formal-f": "जागेंगी", "they-m": "जागेंगे", "they-f": "जागेंगी" }
+      readings: { "i-m": "jāgūm̐gā", "i-f": "jāgūm̐gī", "you-m": "jāgōgē", "you-f": "jāgōgī", "he-m": "jāgēgā", "he-f": "jāgēgī", "we-m": "jāgēm̐gē", "we-f": "jāgēm̐gī", "formal-m": "jāgēm̐gē", "formal-f": "jāgēm̐gī", "they-m": "jāgēm̐gē", "they-f": "jāgēm̐gī" }
+    - word: "hi-0945"
+      forms: { "i-m": "भूलूँगा", "i-f": "भूलूँगी", "you-m": "भूलोगे", "you-f": "भूलोगी", "he-m": "भूलेगा", "he-f": "भूलेगी", "we-m": "भूलेंगे", "we-f": "भूलेंगी", "formal-m": "भूलेंगे", "formal-f": "भूलेंगी", "they-m": "भूलेंगे", "they-f": "भूलेंगी" }
+      readings: { "i-m": "bhūlūm̐gā", "i-f": "bhūlūm̐gī", "you-m": "bhūlōgē", "you-f": "bhūlōgī", "he-m": "bhūlēgā", "he-f": "bhūlēgī", "we-m": "bhūlēm̐gē", "we-f": "bhūlēm̐gī", "formal-m": "bhūlēm̐gē", "formal-f": "bhūlēm̐gī", "they-m": "bhūlēm̐gē", "they-f": "bhūlēm̐gī" }
+    - word: "hi-0946"
+      forms: { "i-m": "दौड़ूँगा", "i-f": "दौड़ूँगी", "you-m": "दौड़ोगे", "you-f": "दौड़ोगी", "he-m": "दौड़ेगा", "he-f": "दौड़ेगी", "we-m": "दौड़ेंगे", "we-f": "दौड़ेंगी", "formal-m": "दौड़ेंगे", "formal-f": "दौड़ेंगी", "they-m": "दौड़ेंगे", "they-f": "दौड़ेंगी" }
+      readings: { "i-m": "dauṛūm̐gā", "i-f": "dauṛūm̐gī", "you-m": "dauṛōgē", "you-f": "dauṛōgī", "he-m": "dauṛēgā", "he-f": "dauṛēgī", "we-m": "dauṛēm̐gē", "we-f": "dauṛēm̐gī", "formal-m": "dauṛēm̐gē", "formal-f": "dauṛēm̐gī", "they-m": "dauṛēm̐gē", "they-f": "dauṛēm̐gī" }
+    - word: "hi-0947"
+      forms: { "i-m": "गिरूँगा", "i-f": "गिरूँगी", "you-m": "गिरोगे", "you-f": "गिरोगी", "he-m": "गिरेगा", "he-f": "गिरेगी", "we-m": "गिरेंगे", "we-f": "गिरेंगी", "formal-m": "गिरेंगे", "formal-f": "गिरेंगी", "they-m": "गिरेंगे", "they-f": "गिरेंगी" }
+      readings: { "i-m": "girūm̐gā", "i-f": "girūm̐gī", "you-m": "girōgē", "you-f": "girōgī", "he-m": "girēgā", "he-f": "girēgī", "we-m": "girēm̐gē", "we-f": "girēm̐gī", "formal-m": "girēm̐gē", "formal-f": "girēm̐gī", "they-m": "girēm̐gē", "they-f": "girēm̐gī" }
+    - word: "hi-0948"
+      forms: { "i-m": "लौटूँगा", "i-f": "लौटूँगी", "you-m": "लौटोगे", "you-f": "लौटोगी", "he-m": "लौटेगा", "he-f": "लौटेगी", "we-m": "लौटेंगे", "we-f": "लौटेंगी", "formal-m": "लौटेंगे", "formal-f": "लौटेंगी", "they-m": "लौटेंगे", "they-f": "लौटेंगी" }
+      readings: { "i-m": "lauṭūm̐gā", "i-f": "lauṭūm̐gī", "you-m": "lauṭōgē", "you-f": "lauṭōgī", "he-m": "lauṭēgā", "he-f": "lauṭēgī", "we-m": "lauṭēm̐gē", "we-f": "lauṭēm̐gī", "formal-m": "lauṭēm̐gē", "formal-f": "lauṭēm̐gī", "they-m": "lauṭēm̐gē", "they-f": "lauṭēm̐gī" }
+    - word: "hi-0949"
+      forms: { "i-m": "लाऊँगा", "i-f": "लाऊँगी", "you-m": "लाओगे", "you-f": "लाओगी", "he-m": "लाएगा", "he-f": "लाएगी", "we-m": "लाएँगे", "we-f": "लाएँगी", "formal-m": "लाएँगे", "formal-f": "लाएँगी", "they-m": "लाएँगे", "they-f": "लाएँगी" }
+      readings: { "i-m": "lāūm̐gā", "i-f": "lāūm̐gī", "you-m": "lāōgē", "you-f": "lāōgī", "he-m": "lāēgā", "he-f": "lāēgī", "we-m": "lāēm̐gē", "we-f": "lāēm̐gī", "formal-m": "lāēm̐gē", "formal-f": "lāēm̐gī", "they-m": "lāēm̐gē", "they-f": "lāēm̐gī" }
+    - word: "hi-0950"
+      forms: { "i-m": "रखूँगा", "i-f": "रखूँगी", "you-m": "रखोगे", "you-f": "रखोगी", "he-m": "रखेगा", "he-f": "रखेगी", "we-m": "रखेंगे", "we-f": "रखेंगी", "formal-m": "रखेंगे", "formal-f": "रखेंगी", "they-m": "रखेंगे", "they-f": "रखेंगी" }
+      readings: { "i-m": "rakhūm̐gā", "i-f": "rakhūm̐gī", "you-m": "rakhōgē", "you-f": "rakhōgī", "he-m": "rakhēgā", "he-f": "rakhēgī", "we-m": "rakhēm̐gē", "we-f": "rakhēm̐gī", "formal-m": "rakhēm̐gē", "formal-f": "rakhēm̐gī", "they-m": "rakhēm̐gē", "they-f": "rakhēm̐gī" }
+    - word: "hi-0951"
+      forms: { "i-m": "छोड़ूँगा", "i-f": "छोड़ूँगी", "you-m": "छोड़ोगे", "you-f": "छोड़ोगी", "he-m": "छोड़ेगा", "he-f": "छोड़ेगी", "we-m": "छोड़ेंगे", "we-f": "छोड़ेंगी", "formal-m": "छोड़ेंगे", "formal-f": "छोड़ेंगी", "they-m": "छोड़ेंगे", "they-f": "छोड़ेंगी" }
+      readings: { "i-m": "chōṛūm̐gā", "i-f": "chōṛūm̐gī", "you-m": "chōṛōgē", "you-f": "chōṛōgī", "he-m": "chōṛēgā", "he-f": "chōṛēgī", "we-m": "chōṛēm̐gē", "we-f": "chōṛēm̐gī", "formal-m": "chōṛēm̐gē", "formal-f": "chōṛēm̐gī", "they-m": "chōṛēm̐gē", "they-f": "chōṛēm̐gī" }
+    - word: "hi-0952"
+      forms: { "i-m": "सीखूँगा", "i-f": "सीखूँगी", "you-m": "सीखोगे", "you-f": "सीखोगी", "he-m": "सीखेगा", "he-f": "सीखेगी", "we-m": "सीखेंगे", "we-f": "सीखेंगी", "formal-m": "सीखेंगे", "formal-f": "सीखेंगी", "they-m": "सीखेंगे", "they-f": "सीखेंगी" }
+      readings: { "i-m": "sīkhūm̐gā", "i-f": "sīkhūm̐gī", "you-m": "sīkhōgē", "you-f": "sīkhōgī", "he-m": "sīkhēgā", "he-f": "sīkhēgī", "we-m": "sīkhēm̐gē", "we-f": "sīkhēm̐gī", "formal-m": "sīkhēm̐gē", "formal-f": "sīkhēm̐gī", "they-m": "sīkhēm̐gē", "they-f": "sīkhēm̐gī" }
+    - word: "hi-0953"
+      forms: { "i-m": "सोचूँगा", "i-f": "सोचूँगी", "you-m": "सोचोगे", "you-f": "सोचोगी", "he-m": "सोचेगा", "he-f": "सोचेगी", "we-m": "सोचेंगे", "we-f": "सोचेंगी", "formal-m": "सोचेंगे", "formal-f": "सोचेंगी", "they-m": "सोचेंगे", "they-f": "सोचेंगी" }
+      readings: { "i-m": "sōcūm̐gā", "i-f": "sōcūm̐gī", "you-m": "sōcōgē", "you-f": "sōcōgī", "he-m": "sōcēgā", "he-f": "sōcēgī", "we-m": "sōcēm̐gē", "we-f": "sōcēm̐gī", "formal-m": "sōcēm̐gē", "formal-f": "sōcēm̐gī", "they-m": "sōcēm̐gē", "they-f": "sōcēm̐gī" }
+    - word: "hi-0954"
+      forms: { "i-m": "सिखाऊँगा", "i-f": "सिखाऊँगी", "you-m": "सिखाओगे", "you-f": "सिखाओगी", "he-m": "सिखाएगा", "he-f": "सिखाएगी", "we-m": "सिखाएँगे", "we-f": "सिखाएँगी", "formal-m": "सिखाएँगे", "formal-f": "सिखाएँगी", "they-m": "सिखाएँगे", "they-f": "सिखाएँगी" }
+      readings: { "i-m": "sikhāūm̐gā", "i-f": "sikhāūm̐gī", "you-m": "sikhāōgē", "you-f": "sikhāōgī", "he-m": "sikhāēgā", "he-f": "sikhāēgī", "we-m": "sikhāēm̐gē", "we-f": "sikhāēm̐gī", "formal-m": "sikhāēm̐gē", "formal-f": "sikhāēm̐gī", "they-m": "sikhāēm̐gē", "they-f": "sikhāēm̐gī" }
+    - word: "hi-0955"
+      forms: { "i-m": "ढूँढूँगा", "i-f": "ढूँढूँगी", "you-m": "ढूँढोगे", "you-f": "ढूँढोगी", "he-m": "ढूँढेगा", "he-f": "ढूँढेगी", "we-m": "ढूँढेंगे", "we-f": "ढूँढेंगी", "formal-m": "ढूँढेंगे", "formal-f": "ढूँढेंगी", "they-m": "ढूँढेंगे", "they-f": "ढूँढेंगी" }
+      readings: { "i-m": "ḍhūm̐ḍhūm̐gā", "i-f": "ḍhūm̐ḍhūm̐gī", "you-m": "ḍhūm̐ḍhōgē", "you-f": "ḍhūm̐ḍhōgī", "he-m": "ḍhūm̐ḍhēgā", "he-f": "ḍhūm̐ḍhēgī", "we-m": "ḍhūm̐ḍhēm̐gē", "we-f": "ḍhūm̐ḍhēm̐gī", "formal-m": "ḍhūm̐ḍhēm̐gē", "formal-f": "ḍhūm̐ḍhēm̐gī", "they-m": "ḍhūm̐ḍhēm̐gē", "they-f": "ḍhūm̐ḍhēm̐gī" }
+    - word: "hi-0956"
+      forms: { "i-m": "जीतूँगा", "i-f": "जीतूँगी", "you-m": "जीतोगे", "you-f": "जीतोगी", "he-m": "जीतेगा", "he-f": "जीतेगी", "we-m": "जीतेंगे", "we-f": "जीतेंगी", "formal-m": "जीतेंगे", "formal-f": "जीतेंगी", "they-m": "जीतेंगे", "they-f": "जीतेंगी" }
+      readings: { "i-m": "jītūm̐gā", "i-f": "jītūm̐gī", "you-m": "jītōgē", "you-f": "jītōgī", "he-m": "jītēgā", "he-f": "jītēgī", "we-m": "jītēm̐gē", "we-f": "jītēm̐gī", "formal-m": "jītēm̐gē", "formal-f": "jītēm̐gī", "they-m": "jītēm̐gē", "they-f": "jītēm̐gī" }
+    - word: "hi-0957"
+      forms: { "i-m": "हारूँगा", "i-f": "हारूँगी", "you-m": "हारोगे", "you-f": "हारोगी", "he-m": "हारेगा", "he-f": "हारेगी", "we-m": "हारेंगे", "we-f": "हारेंगी", "formal-m": "हारेंगे", "formal-f": "हारेंगी", "they-m": "हारेंगे", "they-f": "हारेंगी" }
+      readings: { "i-m": "hārūm̐gā", "i-f": "hārūm̐gī", "you-m": "hārōgē", "you-f": "hārōgī", "he-m": "hārēgā", "he-f": "hārēgī", "we-m": "hārēm̐gē", "we-f": "hārēm̐gī", "formal-m": "hārēm̐gē", "formal-f": "hārēm̐gī", "they-m": "hārēm̐gē", "they-f": "hārēm̐gī" }
+    - word: "hi-0958"
+      forms: { "i-m": "कमाऊँगा", "i-f": "कमाऊँगी", "you-m": "कमाओगे", "you-f": "कमाओगी", "he-m": "कमाएगा", "he-f": "कमाएगी", "we-m": "कमाएँगे", "we-f": "कमाएँगी", "formal-m": "कमाएँगे", "formal-f": "कमाएँगी", "they-m": "कमाएँगे", "they-f": "कमाएँगी" }
+      readings: { "i-m": "kamāūm̐gā", "i-f": "kamāūm̐gī", "you-m": "kamāōgē", "you-f": "kamāōgī", "he-m": "kamāēgā", "he-f": "kamāēgī", "we-m": "kamāēm̐gē", "we-f": "kamāēm̐gī", "formal-m": "kamāēm̐gē", "formal-f": "kamāēm̐gī", "they-m": "kamāēm̐gē", "they-f": "kamāēm̐gī" }
+    - word: "hi-0959"
+      forms: { "i-m": "हँसूँगा", "i-f": "हँसूँगी", "you-m": "हँसोगे", "you-f": "हँसोगी", "he-m": "हँसेगा", "he-f": "हँसेगी", "we-m": "हँसेंगे", "we-f": "हँसेंगी", "formal-m": "हँसेंगे", "formal-f": "हँसेंगी", "they-m": "हँसेंगे", "they-f": "हँसेंगी" }
+      readings: { "i-m": "ham̐sūm̐gā", "i-f": "ham̐sūm̐gī", "you-m": "ham̐sōgē", "you-f": "ham̐sōgī", "he-m": "ham̐sēgā", "he-f": "ham̐sēgī", "we-m": "ham̐sēm̐gē", "we-f": "ham̐sēm̐gī", "formal-m": "ham̐sēm̐gē", "formal-f": "ham̐sēm̐gī", "they-m": "ham̐sēm̐gē", "they-f": "ham̐sēm̐gī" }
+    - word: "hi-0960"
+      forms: { "i-m": "रोऊँगा", "i-f": "रोऊँगी", "you-m": "रोओगे", "you-f": "रोओगी", "he-m": "रोएगा", "he-f": "रोएगी", "we-m": "रोएँगे", "we-f": "रोएँगी", "formal-m": "रोएँगे", "formal-f": "रोएँगी", "they-m": "रोएँगे", "they-f": "रोएँगी" }
+      readings: { "i-m": "rōūm̐gā", "i-f": "rōūm̐gī", "you-m": "rōōgē", "you-f": "rōōgī", "he-m": "rōēgā", "he-f": "rōēgī", "we-m": "rōēm̐gē", "we-f": "rōēm̐gī", "formal-m": "rōēm̐gē", "formal-f": "rōēm̐gī", "they-m": "rōēm̐gē", "they-f": "rōēm̐gī" }
+    - word: "hi-0961"
+      forms: { "i-m": "बुलाऊँगा", "i-f": "बुलाऊँगी", "you-m": "बुलाओगे", "you-f": "बुलाओगी", "he-m": "बुलाएगा", "he-f": "बुलाएगी", "we-m": "बुलाएँगे", "we-f": "बुलाएँगी", "formal-m": "बुलाएँगे", "formal-f": "बुलाएँगी", "they-m": "बुलाएँगे", "they-f": "बुलाएँगी" }
+      readings: { "i-m": "bulāūm̐gā", "i-f": "bulāūm̐gī", "you-m": "bulāōgē", "you-f": "bulāōgī", "he-m": "bulāēgā", "he-f": "bulāēgī", "we-m": "bulāēm̐gē", "we-f": "bulāēm̐gī", "formal-m": "bulāēm̐gē", "formal-f": "bulāēm̐gī", "they-m": "bulāēm̐gē", "they-f": "bulāēm̐gī" }
+    - word: "hi-1023"
+      forms: { "i-m": "चखूँगा", "i-f": "चखूँगी", "you-m": "चखोगे", "you-f": "चखोगी", "he-m": "चखेगा", "he-f": "चखेगी", "we-m": "चखेंगे", "we-f": "चखेंगी", "formal-m": "चखेंगे", "formal-f": "चखेंगी", "they-m": "चखेंगे", "they-f": "चखेंगी" }
+      readings: { "i-m": "cakhūm̐gā", "i-f": "cakhūm̐gī", "you-m": "cakhōgē", "you-f": "cakhōgī", "he-m": "cakhēgā", "he-f": "cakhēgī", "we-m": "cakhēm̐gē", "we-f": "cakhēm̐gī", "formal-m": "cakhēm̐gē", "formal-f": "cakhēm̐gī", "they-m": "cakhēm̐gē", "they-f": "cakhēm̐gī" }
+    - word: "hi-1069"
+      forms: { "i-m": "दुखूँगा", "i-f": "दुखूँगी", "you-m": "दुखोगे", "you-f": "दुखोगी", "he-m": "दुखेगा", "he-f": "दुखेगी", "we-m": "दुखेंगे", "we-f": "दुखेंगी", "formal-m": "दुखेंगे", "formal-f": "दुखेंगी", "they-m": "दुखेंगे", "they-f": "दुखेंगी" }
+      readings: { "i-m": "dukhūm̐gā", "i-f": "dukhūm̐gī", "you-m": "dukhōgē", "you-f": "dukhōgī", "he-m": "dukhēgā", "he-f": "dukhēgī", "we-m": "dukhēm̐gē", "we-f": "dukhēm̐gī", "formal-m": "dukhēm̐gē", "formal-f": "dukhēm̐gī", "they-m": "dukhēm̐gē", "they-f": "dukhēm̐gī" }
+    - word: "hi-1070"
+      forms: { "i-m": "सूजूँगा", "i-f": "सूजूँगी", "you-m": "सूजोगे", "you-f": "सूजोगी", "he-m": "सूजेगा", "he-f": "सूजेगी", "we-m": "सूजेंगे", "we-f": "सूजेंगी", "formal-m": "सूजेंगे", "formal-f": "सूजेंगी", "they-m": "सूजेंगे", "they-f": "सूजेंगी" }
+      readings: { "i-m": "sūjūm̐gā", "i-f": "sūjūm̐gī", "you-m": "sūjōgē", "you-f": "sūjōgī", "he-m": "sūjēgā", "he-f": "sūjēgī", "we-m": "sūjēm̐gē", "we-f": "sūjēm̐gī", "formal-m": "sūjēm̐gē", "formal-f": "sūjēm̐gī", "they-m": "sūjēm̐gē", "they-f": "sūjēm̐gī" }
+    - word: "hi-1071"
+      forms: { "i-m": "छूऊँगा", "i-f": "छूऊँगी", "you-m": "छूओगे", "you-f": "छूओगी", "he-m": "छूएगा", "he-f": "छूएगी", "we-m": "छूएँगे", "we-f": "छूएँगी", "formal-m": "छूएँगे", "formal-f": "छूएँगी", "they-m": "छूएँगे", "they-f": "छूएँगी" }
+      readings: { "i-m": "chūūm̐gā", "i-f": "chūūm̐gī", "you-m": "chūōgē", "you-f": "chūōgī", "he-m": "chūēgā", "he-f": "chūēgī", "we-m": "chūēm̐gē", "we-f": "chūēm̐gī", "formal-m": "chūēm̐gē", "formal-f": "chūēm̐gī", "they-m": "chūēm̐gē", "they-f": "chūēm̐gī" }
+    - word: "hi-1072"
+      forms: { "i-m": "लेटूँगा", "i-f": "लेटूँगी", "you-m": "लेटोगे", "you-f": "लेटोगी", "he-m": "लेटेगा", "he-f": "लेटेगी", "we-m": "लेटेंगे", "we-f": "लेटेंगी", "formal-m": "लेटेंगे", "formal-f": "लेटेंगी", "they-m": "लेटेंगे", "they-f": "लेटेंगी" }
+      readings: { "i-m": "leṭūm̐gā", "i-f": "leṭūm̐gī", "you-m": "leṭōgē", "you-f": "leṭōgī", "he-m": "leṭēgā", "he-f": "leṭēgī", "we-m": "leṭēm̐gē", "we-f": "leṭēm̐gī", "formal-m": "leṭēm̐gē", "formal-f": "leṭēm̐gī", "they-m": "leṭēm̐gē", "they-f": "leṭēm̐gī" }
+rules:
+  - id: "hi-rule-future"
+    slots: ["i-m", "i-f", "you-m", "you-f", "he-m", "he-f", "we-m", "we-f", "formal-m", "formal-f", "they-m", "they-f"]
