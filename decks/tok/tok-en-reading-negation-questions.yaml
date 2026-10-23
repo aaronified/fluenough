@@ -1,0 +1,57 @@
+schema: 1
+id: "tok-en-reading-negation-questions"
+name: "Reading: negatives and questions"
+kind: reading
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two passages from the negation and questions unit: a short guessing game with yes-no questions (heard), and a small question-and-answer page (read). Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "tok-yes-no-game"
+    title: "Yes-no game"
+    sentences:
+      - text: "ni li pan anu ala?"
+      - text: "ni li pan ala."
+      - text: "ni li ko anu ala?"
+      - text: "ni li ko."
+    questions:
+      - id: "tok-0151"
+        prompt: { en: "What does the first line ask?" }
+        options:
+          - { en: "Whether the thing is bread or not" }
+          - { en: "Where the thing is" }
+        answer: 1
+      - id: "tok-0152"
+        prompt: { en: "The thing is not bread." }
+        answer: true
+      - id: "tok-0153"
+        prompt: { en: "What does the last line say?" }
+        options:
+          - { en: "It is paste" }
+          - { en: "It is bread" }
+        answer: 1
+  - id: "tok-faq"
+    title: "Questions and answers"
+    sentences:
+      - text: "sina toki pona anu ala?"
+      - text: "mi toki ala."
+      - text: "sina wile e seme?"
+      - text: "mi wile e toki pona."
+    questions:
+      - id: "tok-0154"
+        prompt: { en: "What does the first line ask?" }
+        options:
+          - { en: "Whether you speak Toki Pona" }
+          - { en: "Where you live" }
+        answer: 1
+      - id: "tok-0155"
+        prompt: { en: "The speaker speaks Toki Pona." }
+        answer: false
+      - id: "tok-0156"
+        prompt: { en: "What does the third line ask?" }
+        options:
+          - { en: "What you want" }
+          - { en: "Where you are" }
+        answer: 1
