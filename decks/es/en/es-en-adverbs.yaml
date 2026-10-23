@@ -1,0 +1,385 @@
+schema: 1
+id: "es-en-adverbs"
+kind: "layer"
+core: "es-adverbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Adverbs: how often, how well, when"
+license: "CC-BY-SA-4.0"
+description: "Adverbs of how often (always, never, often, sometimes), how well (well, badly, slowly, quickly), and when (today, yesterday, now, before, after, early, soon). Not yet checked by a Spanish speaker: please report any mistake."
+
+cards:
+  "es-0320":
+    native: "always"
+    notes:
+      "n1": "Siempre is always. Its opposite is nunca (never)."
+    examples:
+      "Siempre desayuno a las siete.":
+        native: "I always have breakfast at seven."
+        bases:
+          "Siempre": "always"
+          "a": "to"
+          "las": "the"
+      "Ana siempre llega temprano.":
+        native: "Ana always arrives early."
+        bases:
+          "Ana": "Ana"
+          "siempre": "always"
+  "es-0321":
+    native: "never"
+    notes:
+      "n1": "Nunca is never. In a sentence with no, use no before the verb and nunca after it: no como carne (I do not eat meat) is not nunca."
+    examples:
+      "Nunca como carne.":
+        native: "I never eat meat."
+        bases:
+          "Nunca": "never"
+          "carne": "meat"
+      "Mi padre nunca llega tarde.":
+        native: "My father never arrives late."
+        bases:
+          "padre": "father"
+          "nunca": "never"
+          "tarde": "late"
+  "es-0322":
+    native: "sometimes"
+    notes:
+      "n1": "A veces is sometimes. It has two words, and both are taught here."
+    bases:
+      "a": "to"
+      "veces": "times"
+    examples:
+      "A veces cocino con mi madre.":
+        native: "Sometimes I cook with my mother."
+        bases:
+          "A": "to"
+          "veces": "times"
+          "con": "with"
+          "madre": "mother"
+      "Ana y yo estudiamos juntos a veces.":
+        native: "Ana and I sometimes study together."
+        bases:
+          "Ana": "Ana"
+          "juntos": "together"
+          "a": "to"
+          "veces": "times"
+  "es-0323":
+    native: "usually"
+    notes:
+      "n1": "Normalmente is usually. It is the usual pattern, not always."
+    examples:
+      "Normalmente ceno a las nueve.":
+        native: "I usually have dinner at nine."
+        bases:
+          "Normalmente": "usually"
+          "a": "to"
+          "las": "the"
+      "Normalmente hablo con mi madre.":
+        native: "I usually talk with my mother."
+        bases:
+          "Normalmente": "usually"
+          "con": "with"
+          "madre": "mother"
+  "es-0324":
+    native: "often"
+    notes:
+      "n1": "A menudo is often: it happens many times. It has two words."
+    bases:
+      "a": "to"
+      "menudo": "often"
+    examples:
+      "Mi hermana escribe a menudo.":
+        native: "My sister writes often."
+        bases:
+          "hermana": "sister"
+          "a": "to"
+          "menudo": "often"
+      "Visitamos a menudo a la abuela.":
+        native: "We often visit grandmother."
+        bases:
+          "Visitamos": "we visit"
+          "a": "to"
+          "menudo": "often"
+          "la": "the"
+          "abuela": "grandmother"
+  "es-0325":
+    native: "almost"
+    notes:
+      "n1": "Casi is almost, nearly. It is followed by the word it changes: casi siempre (almost always)."
+    examples:
+      "Casi nunca llego tarde.":
+        native: "I almost never arrive late."
+        bases:
+          "Casi": "almost"
+          "tarde": "late"
+      "Casi siempre compro pan.":
+        native: "I almost always buy bread."
+        bases:
+          "Casi": "almost"
+          "pan": "bread"
+  "es-0326":
+    native: "well"
+    notes:
+      "n1": "Bien is well, how good something is. Its opposite is mal (badly)."
+    examples:
+      "Ana habla bien el español.":
+        native: "Ana speaks Spanish well."
+        bases:
+          "Ana": "Ana"
+          "bien": "well"
+          "el": "the"
+          "español": "Spanish"
+      "Cocino bien.":
+        native: "I cook well."
+        bases:
+          "bien": "well"
+  "es-0327":
+    native: "badly"
+    notes:
+      "n1": "Mal is badly. Its opposite is bien."
+    examples:
+      "Hablo mal el inglés.":
+        native: "I speak English badly."
+        bases:
+          "mal": "badly"
+          "el": "the"
+          "inglés": "English"
+      "Ana come mal cuando está triste.":
+        native: "Ana eats badly when she is sad."
+        bases:
+          "Ana": "Ana"
+          "mal": "badly"
+          "cuando": "when"
+          "triste": "sad"
+  "es-0328":
+    native: "slowly"
+    notes:
+      "n1": "Despacio is slowly. Rápido is quickly, the opposite."
+    examples:
+      "Ana camina despacio.":
+        native: "Ana walks slowly."
+        bases:
+          "Ana": "Ana"
+          "despacio": "slowly"
+      "Habla despacio, por favor.":
+        native: "Speak slowly, please."
+        bases:
+          "despacio": "slowly"
+          "por": "through"
+          "favor": "favour"
+  "es-0329":
+    native: "quickly"
+    notes:
+      "n1": "Rápido is quickly, fast. It is the opposite of despacio."
+    examples:
+      "Mi hermano come rápido.":
+        native: "My brother eats quickly."
+        bases:
+          "hermano": "brother"
+          "rápido": "quickly"
+      "Escribo rápido en el teclado.":
+        native: "I type quickly on the keyboard."
+        bases:
+          "rápido": "quickly"
+          "en": "in"
+          "el": "the"
+          "teclado": "keyboard"
+  "es-0330":
+    native: "very"
+    notes:
+      "n1": "Muy is very. It goes before an adjective or another adverb: muy bien (very well)."
+    examples:
+      "Esta casa es muy grande.":
+        native: "This house is very big."
+        bases:
+          "casa": "house"
+          "muy": "very"
+      "Ana es muy simpática.":
+        native: "Ana is very friendly."
+        bases:
+          "Ana": "Ana"
+          "muy": "very"
+          "simpática": "friendly"
+  "es-0331":
+    native: "today"
+    notes:
+      "n1": "Hoy is today. Ayer is yesterday and mañana is tomorrow."
+    examples:
+      "Hoy hablo con mi madre.":
+        native: "Today I speak with my mother."
+        bases:
+          "Hoy": "today"
+          "con": "with"
+          "madre": "mother"
+      "Hoy es lunes.":
+        native: "Today is Monday."
+        bases:
+          "Hoy": "today"
+          "lunes": "Monday"
+  "es-0332":
+    native: "yesterday"
+    notes:
+      "n1": "Ayer is yesterday."
+    examples:
+      "Ayer llegué tarde a casa.":
+        native: "Yesterday I arrived home late."
+        bases:
+          "Ayer": "yesterday"
+          "llegué": "I arrived"
+          "tarde": "late"
+          "a": "to"
+          "casa": "house"
+      "Ayer compré pan.":
+        native: "Yesterday I bought bread."
+        bases:
+          "Ayer": "yesterday"
+          "compré": "I bought"
+          "pan": "bread"
+  "es-0333":
+    native: "now"
+    notes:
+      "n1": "Ahora is now, at this moment."
+    examples:
+      "Ahora trabajo en Lima.":
+        native: "Now I work in Lima."
+        bases:
+          "Ahora": "now"
+          "en": "in"
+          "Lima": "Lima"
+      "Ahora estudio español.":
+        native: "Now I study Spanish."
+        bases:
+          "Ahora": "now"
+          "español": "Spanish"
+  "es-0334":
+    native: "then; later"
+    notes:
+      "n1": "Luego is then, after that, or later. Después means after."
+    examples:
+      "Luego trabajo en el jardín.":
+        native: "Later I work in the garden."
+        bases:
+          "Luego": "then"
+          "en": "in"
+          "el": "the"
+          "jardín": "garden"
+      "Comemos y luego estudiamos.":
+        native: "We eat and then we study."
+        bases:
+          "luego": "then"
+  "es-0335":
+    native: "before"
+    notes:
+      "n1": "Antes is before. Its opposite is después."
+    examples:
+      "Antes desayuno en casa.":
+        native: "Before, I have breakfast at home."
+        bases:
+          "Antes": "before"
+          "en": "in"
+          "casa": "house"
+      "Antes de salir, cenamos.":
+        native: "Before leaving, we have dinner."
+        bases:
+          "Antes": "before"
+          "de": "of"
+          "salir": "to leave"
+  "es-0336":
+    native: "after"
+    notes:
+      "n1": "Después is after. It is the opposite of antes."
+    examples:
+      "Después limpio la casa.":
+        native: "After that I clean the house."
+        bases:
+          "Después": "after"
+          "la": "the"
+          "casa": "house"
+      "Después de cenar, escucho música.":
+        native: "After dinner, I listen to music."
+        bases:
+          "Después": "after"
+          "de": "of"
+          "música": "music"
+  "es-0337":
+    native: "soon"
+    notes:
+      "n1": "Pronto is soon, in a little time."
+    examples:
+      "Pronto llega el tren.":
+        native: "The train arrives soon."
+        bases:
+          "Pronto": "soon"
+          "el": "the"
+          "tren": "train"
+      "Llego pronto a clase.":
+        native: "I arrive soon at class."
+        bases:
+          "pronto": "soon"
+          "a": "to"
+          "clase": "class"
+  "es-0338":
+    native: "early"
+    notes:
+      "n1": "Temprano is early. Its opposite is tarde (late)."
+    examples:
+      "Ana llega temprano.":
+        native: "Ana arrives early."
+        bases:
+          "Ana": "Ana"
+          "temprano": "early"
+      "Me levanto temprano.":
+        native: "I get up early."
+        bases:
+          "Me": "me"
+          "levanto": "I get up"
+          "temprano": "early"
+  "es-0339":
+    native: "still; yet"
+    notes:
+      "n1": "Todavía is still or yet, for something that has not finished. Ya is already."
+    examples:
+      "Todavía no sé la respuesta.":
+        native: "I still do not know the answer."
+        bases:
+          "Todavía": "still; yet"
+          "sé": "I know"
+          "la": "the"
+          "respuesta": "answer"
+      "¿Todavía trabajas aquí?":
+        native: "Do you still work here?"
+        bases:
+          "Todavía": "still; yet"
+  "es-0340":
+    native: "already"
+    notes:
+      "n1": "Ya is already, something that has happened earlier than expected."
+    examples:
+      "Ya como.":
+        native: "I am already eating."
+        bases:
+          "Ya": "already"
+      "Ya es tarde.":
+        native: "It is already late."
+        bases:
+          "Ya": "already"
+          "tarde": "late"
+  "es-0341":
+    native: "every day"
+    notes:
+      "n1": "Todos los días is every day: all the days, one by one."
+    bases:
+      "los": "the"
+      "días": "days"
+    examples:
+      "Todos los días bebo café.":
+        native: "I drink coffee every day."
+        bases:
+          "los": "the"
+          "días": "days"
+          "café": "coffee"
+      "Hago ejercicio todos los días.":
+        native: "I exercise every day."
+        bases:
+          "ejercicio": "exercise"
+          "los": "the"
+          "días": "days"
