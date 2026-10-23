@@ -2162,6 +2162,7 @@ class AppState extends ChangeNotifier {
     hearsForm: (item) => hearsForm(item.card),
     recallsFirst: (item) => recallsFirst(item.card, item.mode),
     typed: (item) => isTyped(item.card),
+    siblingsOf: (card) => formSiblings(card, deckOf(card)?.cards ?? const []),
   );
 
   /// Whether an answer about [card] can be typed: false for the IPA

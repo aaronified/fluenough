@@ -1,0 +1,345 @@
+schema: 1
+id: "bn-en-adverbs"
+kind: "layer"
+core: "bn-adverbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Adverbs: how often, how well, when"
+description: "Adverbs of how often, when, how well and how much: always, often, sometimes, never, now, soon, slowly, very, almost and the rest. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-1524":
+    native: "often"
+    notes:
+      "n1": "{1}, often late, is said of a person who is often late."
+    examples:
+      "আমরা প্রায়ই বাজারে যাই।":
+        native: "We often go to the market."
+        bases:
+          "যাই": { meaning: "to go" }
+      "তুমি প্রায়ই দেরি করো।":
+        native: "You are often late."
+        bases:
+          "করো": { meaning: "to do" }
+  "bn-1526":
+    native: "ever; at any time"
+    notes:
+      "n1": "With a question, {1} means ever. The strong form for never is {2}."
+    examples:
+      "তুমি কি কখনো ঢাকায় গেছ?":
+        native: "Have you ever been to Dhaka?"
+        bases:
+          "গেছ": { meaning: "to go" }
+      "আমি কখনো মিথ্যা বলি না।":
+        native: "I never tell lies."
+        bases:
+          "বলি": { meaning: "to say" }
+  "bn-1527":
+    native: "never"
+    notes:
+      "n1": "{1}: I have never seen it. The verb comes before না (nā)."
+    examples:
+      "আমি এই ছবিটা কখনোই দেখিনি।":
+        native: "I have never seen this film."
+        bases:
+          "দেখিনি": { meaning: "to see" }
+      "সে কখনোই দেরি করে না।":
+        native: "He is never late."
+        bases:
+          "করে": { meaning: "to do" }
+  "bn-1528":
+    native: "every day; daily"
+    notes:
+      "n1": "{1} is the usual way to say that something happens every day."
+    examples:
+      "আমি রোজ হাঁটি।":
+        native: "I walk every day."
+        bases:
+          "হাঁটি": { meaning: "to walk" }
+      "রোজ সকালে খবরের কাগজ আসে।":
+        native: "The newspaper comes every morning."
+        bases:
+          "আসে": { meaning: "to come" }
+  "bn-1530":
+    native: "again and again; repeatedly"
+    notes:
+      "n1": "{1} is said of a thing done many times over, not just once."
+    examples:
+      "সে বারবার একই কথা বলে।":
+        native: "He says the same thing again and again."
+        bases:
+          "বলে": { meaning: "to say" }
+      "বারবার চেষ্টা করো।":
+        native: "Try again and again."
+        bases:
+          "করো": { meaning: "to do" }
+  "bn-1531":
+    native: "again; once more"
+    notes:
+      "n1": "{1}: it is raining again, and we will meet again."
+    examples:
+      "আবার বৃষ্টি হচ্ছে।":
+        native: "It is raining again."
+        bases:
+          "হচ্ছে": { meaning: "to happen" }
+      "আবার দেখা হবে।":
+        native: "We will meet again."
+        bases:
+          "হবে": { meaning: "to happen" }
+  "bn-1533":
+    native: "still; yet"
+    notes:
+      "n1": "{1} is said of something that goes on: there is still time."
+    examples:
+      "সে এখনো ঘুমায়।":
+        native: "He is still sleeping."
+        bases:
+          "ঘুমায়": { meaning: "to sleep" }
+      "এখনো সময় আছে।":
+        native: "There is still time."
+        bases:
+          "আছে": { meaning: "to stay; to be (in a place)" }
+  "bn-1535":
+    native: "then; at that time"
+    notes:
+      "n1": "{1} refers back to a time already named."
+    examples:
+      "তখন বৃষ্টি হচ্ছিল।":
+        native: "It was raining then."
+        bases:
+          "হচ্ছিল": { meaning: "to happen" }
+      "তখন আমি ছোট ছিলাম।": "I was small then."
+  "bn-1538":
+    native: "suddenly"
+    notes:
+      "n1": "{1} is said of a sudden change, all at once and without warning."
+    examples:
+      "হঠাৎ আলো নিভে গেল।":
+        native: "The light suddenly went out."
+        bases:
+          "গেল": { meaning: "to go" }
+      "সে হঠাৎ চলে গেল।":
+        native: "He suddenly left."
+        bases:
+          "চলে": { meaning: "to move on; to leave" }
+          "গেল": { meaning: "to go" }
+  "bn-1539":
+    native: "soon; shortly"
+    notes:
+      "n1": "{1}: it is soon, not yet. The train will come soon."
+    examples:
+      "শীঘ্রই আমি ফিরব।":
+        native: "I will be back soon."
+        bases:
+          "ফিরব": { meaning: "to return" }
+      "ট্রেনটা শীঘ্রই আসবে।":
+        native: "The train will come soon."
+        bases:
+          "আসবে": { meaning: "to come" }
+  "bn-1540":
+    native: "quickly; early"
+    notes:
+      "n1": "{1} is quickly. Said of time it can mean early."
+    examples:
+      "একটু তাড়াতাড়ি এসো।":
+        native: "Come a little early."
+        bases:
+          "এসো": { meaning: "to come" }
+      "তাড়াতাড়ি খাও।":
+        native: "Eat quickly."
+        bases:
+          "খাও": { meaning: "to eat" }
+  "bn-1542":
+    native: "nowadays; these days"
+    notes:
+      "n1": "{1} is nowadays, as a comment on how things are now."
+    examples:
+      "আজকাল সবাই মোবাইলে কথা বলে।":
+        native: "Nowadays everyone talks on the phone."
+        bases:
+          "বলে": { meaning: "to say" }
+      "আজকাল ঠান্ডা কম পড়ে।":
+        native: "These days it is less cold."
+        bases:
+          "পড়ে": { meaning: "to fall" }
+  "bn-1545":
+    native: "in the morning"
+    notes:
+      "n1": "{1} is in the morning, as a time when things happen."
+    examples:
+      "আমি সকালে ব্যায়াম করি।":
+        native: "I exercise in the morning."
+        bases:
+          "করি": { meaning: "to do" }
+      "সে সকালে অফিসে যায়।":
+        native: "He goes to the office in the morning."
+        bases:
+          "যায়": { meaning: "to go" }
+  "bn-1546":
+    native: "in the afternoon"
+    notes:
+      "n1": "{1}: in the afternoon, as in going to the park."
+    examples:
+      "বিকেলে আমরা পার্কে যাই।":
+        native: "In the afternoon we go to the park."
+        bases:
+          "যাই": { meaning: "to go" }
+      "বিকেলে মেঘ করেছিল।":
+        native: "Clouds had gathered in the afternoon."
+        bases:
+          "করেছিল": { meaning: "to do" }
+  "bn-1547":
+    native: "at night"
+    notes:
+      "n1": "{1} is at night, as the time for sleep."
+    examples:
+      "আমি রাতে ঘুমাতে যাই।":
+        native: "I go to sleep at night."
+        bases:
+          "যাই": { meaning: "to go" }
+      "রাতে খুব ঠান্ডা লাগে।":
+        native: "At night it feels very cold."
+        bases:
+          "লাগে": { meaning: "to feel" }
+  "bn-1553":
+    native: "well; properly"
+    notes:
+      "n1": "{1}: understand well."
+    examples:
+      "সে ভালোভাবে বাংলা বলে।":
+        native: "He speaks Bengali well."
+        bases:
+          "বলে": { meaning: "to say" }
+      "ভালোভাবে পড়ো।":
+        native: "Study well."
+        bases:
+          "পড়ো": { meaning: "to read" }
+  "bn-1554":
+    native: "slowly"
+    notes:
+      "n1": "{1} is the phrase for slowly, a bit at a time."
+    examples:
+      "ধীরে কথা বলো।":
+        native: "Speak slowly."
+        bases:
+          "বলো": { meaning: "to say" }
+      "ট্রেনটা ধীরে চলছে।":
+        native: "The train is moving slowly."
+        bases:
+          "চলছে": { meaning: "to move" }
+  "bn-1555":
+    native: "loudly; fast"
+    notes:
+      "n1": "{1}: walk fast."
+    examples:
+      "জোরে কথা বোলো না।":
+        native: "Don't speak loudly."
+        bases:
+          "বোলো": { meaning: "to say" }
+      "জোরে গাড়ি চালিও না।":
+        native: "Don't drive fast."
+        bases:
+          "চালিও": { meaning: "to drive" }
+  "bn-1556":
+    native: "softly; gently"
+    notes:
+      "n1": "{1} means softly, gently. Said twice it means bit by bit."
+    examples:
+      "আস্তে কথা বলো।":
+        native: "Speak softly."
+        bases:
+          "বলো": { meaning: "to say" }
+      "দরজাটা আস্তে বন্ধ করো।":
+        native: "Close the door gently."
+        bases:
+          "করো": { meaning: "to do" }
+  "bn-1557":
+    native: "completely; fully"
+    notes:
+      "n1": "{1} means completely well."
+    examples:
+      "আমি পুরোপুরি ভালো আছি।":
+        native: "I am completely well."
+        bases:
+          "আছি": { meaning: "to stay; to be (in a place)" }
+      "কাজটা পুরোপুরি শেষ হয়েছে।":
+        native: "The work is completely finished."
+        bases:
+          "হয়েছে": { meaning: "to happen" }
+  "bn-1558":
+    native: "almost; nearly"
+    notes:
+      "n1": "{1} means almost all, most of."
+    examples:
+      "প্রায় দশটা বাজে।":
+        native: "It is almost ten o'clock."
+        bases:
+          "বাজে": { meaning: "to strike (of the clock)" }
+      "সে প্রায় এসে গেছে।":
+        native: "He has almost arrived."
+        bases:
+          "গেছে": { meaning: "to go" }
+  "bn-1561":
+    native: "certainly; surely"
+    notes:
+      "n1": "{1}: you surely know."
+    examples:
+      "নিশ্চয়ই যাব।":
+        native: "Certainly I will go."
+        bases:
+          "যাব": { meaning: "to go" }
+      "তুমি নিশ্চয়ই জানো।":
+        native: "You surely know."
+        bases:
+          "জানো": { meaning: "to know" }
+  "bn-1562":
+    native: "probably"
+    notes:
+      "n1": "{1}: it will probably rain today."
+    examples:
+      "সম্ভবত আজ বৃষ্টি হবে।":
+        native: "It will probably rain today."
+        bases:
+          "হবে": { meaning: "to happen" }
+      "সম্ভবত সে এখন ঘুমিয়ে আছে।":
+        native: "He is probably sleeping now."
+        bases:
+          "ঘুমিয়ে": { meaning: "to sleep" }
+          "আছে": { meaning: "to stay; to be (in a place)" }
+  "bn-1564":
+    native: "together"
+    notes:
+      "n1": "{1}: eat together."
+    examples:
+      "আমরা একসঙ্গে খাই।":
+        native: "We eat together."
+        bases:
+          "খাই": { meaning: "to eat" }
+      "চলো একসঙ্গে যাই।":
+        native: "Let's go together."
+        bases:
+          "যাই": { meaning: "to go" }
+  "bn-1565":
+    native: "alone"
+    notes:
+      "n1": "{1}: alone, by oneself."
+    examples:
+      "সে একা থাকে।":
+        native: "He lives alone."
+        bases:
+          "থাকে": { meaning: "to stay" }
+      "একা যেতে ভয় লাগে।":
+        native: "I am scared to go alone."
+        bases:
+          "যেতে": { meaning: "to go" }
+          "লাগে": { meaning: "to feel" }
+  "bn-1566":
+    native: "above; upstairs"
+    notes:
+      "n1": "{1}: go upstairs, or on top of something."
+    examples:
+      "উপরে আসো।":
+        native: "Come upstairs."
+        bases:
+          "আসো": { meaning: "to come" }
+      "বইটা টেবিলের উপরে।": "The book is on the table."

@@ -1,37 +1,54 @@
+The wiki is the source of truth for documentation: https://github.com/aaronified/fluenough/wiki
+
 See [AGENTS.md](AGENTS.md) for how to work in this repository.
 
 Read it before making changes. It is short, and three of its rules — card ids
 are permanent, YAML scalars must be quoted, and `lib/core` stays free of
 Flutter imports — protect against mistakes that pass every test.
 
-## Which model does what (owner, 2026-10-09)
+## Which model does what (owner, 2026-10-22)
 
-When work is handed to subagents or workflows, pick the model by the job:
+The main session only orchestrates agents; it does not write code or decks
+itself. Pick the model by the job:
 
 | Job | Model |
 |---|---|
-| Docs, reviews and audits | Sonnet |
-| Writing decks | Haiku at low effort, reviewed by Sonnet at medium effort (owner, 2026-10-17) |
+| All coding, small or multi-file, and bug fixes | Sonnet |
+| UI mockups | Sonnet |
+| Building decks | Haiku |
+| Reviews (one per PR, decks included) | Sonnet |
+| Routine doc updates, CHANGELOG lines, find-and-replace | Haiku |
+| Skills, ADRs, audits, keeping several docs consistent | Sonnet |
 | Fan-outs and large reads | Haiku |
-| Small coding jobs and bug fixes | Sonnet, reviewed by Opus (owner, 2026-10-16) |
-| Complex coding that touches several files | Opus |
-| UI mockups | Opus (Sonnet was not enough, owner, 2026-10-12) |
 
-"All small coding jobs will be by sonnet from now on. Only complex ones that
-touch multiple files will be via opus." (owner, 2026-10-16)
+At most **three agents run at the same time, and never more than two
+Sonnet** (owner, 2026-10-22). This replaces the earlier Opus rules
+(2026-10-09, 2026-10-12, 2026-10-16, 2026-10-17).
+
+**Slots** (owner, 2026-10-23: "1 haiku and 1 sonnet (reviews and associated
+bug fixes) keep on decks. 1 sonnet on the today chain."): one Haiku and one
+Sonnet keep on decks, and the Sonnet takes reviews and their associated bug
+fixes. One Sonnet runs the Today chain (#722, #723, #724; their mockups are
+done together on one page). This replaces the earlier slot rules (2 Haiku
+deck agents; reviews only in the coder's gaps).
+
+**Opus only when the owner explicitly asks**, reviews included (owner,
+2026-10-22). Nothing defaults to Opus.
+
+**Reviews** (owner, 2026-10-22): one Sonnet review per pull request. A second
+review runs only if the first caught a breaking bug, and it is also Sonnet.
+Ratings are opt in (`.claude/skills/work-rating/SKILL.md`).
 
 **Bug fixes are only for decks and reviews** (owner, 2026-10-16: "Don't do
 bugfixes that are not relevant to decks and reviews"). Others wait for a
 contributor.
 
-At most **two Opus agents run at the same time** (owner, 2026-10-09). The
-quota is shared: each Opus slot left unused buys 1.5 Sonnet agents, and each
-Sonnet slot 1.5 Haiku agents (so one Opus slot = 1.5 Sonnet = 2.25 Haiku).
-Pause and queue Opus work rather than run a third; prefer the cheaper model
-wherever the table above allows it.
-
 ## How the owner works (owner, 2026-10-11)
 
+- **Docs live in the wiki** (owner, 2026-10-22). The repo's wiki/ folder is
+  the source of truth, published to the GitHub wiki by
+  `.github/workflows/wiki-sync.yml`. Repo docs are pointers, except files
+  tools or agents read from disk.
 - **Docs straight to main** (owner, 2026-10-17: "Docs go straight to main,
   no PR"). A change to documentation only (Markdown such as `docs/`,
   `CLAUDE.md`, `AGENTS.md`, the READMEs and the skills) is pushed straight to
@@ -42,10 +59,8 @@ wherever the table above allows it.
   change goes through a pull request to main
   (or to `decks-next`). Before it merges, CI's checks pass (`flutter
   analyze`, the full `flutter test`, the deck validator and the tools'
-  tests) and one review finds nothing blocking. Never run the tests or
-  the deck validator locally (owner, 2026-10-17: "You should not run tests
-  locally at all"; on the validator: "Why not let ci do it?"): commit,
-  push, and read CI's result. The owner approves it in review; then merge it
+  tests) and one review finds nothing blocking (see "Which model does what").
+  The owner approves it in review; then merge it
   once CI is green (owner, 2026-10-16, on #529: "I have approved it in
   review. So you should be able to merge").
 - **Commit and push often** (owner, 2026-10-15: "Keep committing and pushing
@@ -63,7 +78,9 @@ wherever the table above allows it.
   changelog, commits, tags and builds (`tools/prepare_release.py`). There is
   no release pull request.
 - **Questions.** Ask them as soon as they come up. Record the owner's
-  answers, quoted and dated, in the plan and the issue they belong to.
+  answers, quoted and dated, in the plan and the issue they belong to. For a
+  decision, explain the options (what each means and its main downside), then
+  ask (owner, 2026-10-22).
 - **Readings.** Readings are *based on* ISO 15919. Never say they strictly
   follow it.
 - **Milestones are releases** (0.4.4, 0.5.0, 0.6.0, 0.7.0). The milestone's
@@ -77,6 +94,12 @@ wherever the table above allows it.
   cap, #505), a contrast self-check, and Hindi and Bengali examples, and
   is checked in Chromium. Remove a mockup once its feature is built
   (owner, 2026-10-16: "Remove when built").
+  The page holds only the screens and their tweak controls, with what
+  changed highlighted (not for a complete overhaul, where everything is
+  new); the self-checks and the notes go in a Markdown file of the same
+  name beside it, such as `progress-mastery.md` for `progress-mastery.html`
+  (owner, 2026-10-22: "keep the self checks and notes separate in an md
+  file with the same name as the mockup. Always. Keep the mockup clean").
 - **Text size: 1.4x only** (owner, 2026-10-17: "We are now only building
   for 1.4x text"). The app caps text at 1.4x (#505), so layouts, layout
   tests and bug reports go up to 1.4x; a phone set to 2x is drawn at 1.4x.
@@ -86,21 +109,33 @@ wherever the table above allows it.
   (owner, 2026-10-19).
 - **Reviewers** are bilingual and the meaning of a card never changes; new
   themes come only by pull request (`docs/plans/reviewing-scope.md`).
-- **Tests check behaviour** (owner, 2026-10-20: "there is no need for 4000+
-  tests. That can easily be cut down to about 100-500. You are testing every
-  code change. No point in that at all. You should only check behaviour.").
-  A test says what a learner or a deck author sees happen, not how the code
-  does it; a change adds a test only for a behaviour no test covers yet.
-- **CI.** A deck-only change needs only "Validate decks" and "Released app
-  reads the decks" green (#524, owner, 2026-10-17).
-- **Budget.** Tokens are limited: one review per change, no extra
-  verification passes, and no new work unless the owner asks for it.
+- **Tests check behaviour** (owner, 2026-10-20). The rule is in
+  [AGENTS.md](AGENTS.md), "Tests check behaviour".
+- **Tests run only in CI** (owner, 2026-10-17: "You should not run tests
+  locally at all"; on the validator: "Why not let ci do it?"; 2026-10-22: "Doc
+  pushes do not need CI.").
+  No agent runs the tests or the deck validator locally, and none is launched
+  just to run tests. CI runs them for free. Code and deck commits are checked
+  by CI: after pushing, read CI's result. A docs-only push to main needs no CI
+  check.
+- **Irrelevant checks** (owner, 2026-10-22). When reading CI for a change,
+  ignore failing checks that are irrelevant to it. A deck-only change needs
+  only "Validate decks" and "Released app reads the decks" green (#524, owner,
+  2026-10-17). An irrelevant failure is fixed in its own pull request, never
+  by widening the current change or pushing a fix straight to main.
+- **Budget.** Tokens are limited: one review per change (see "Which model
+  does what"), no extra verification passes, and no new work unless the owner asks for it.
+- **Never stop anything** unless the owner explicitly asks (owner, 2026-10-23:
+  "Never stop anything unless i explicitly ask to.").
+- **Deck index** (owner, 2026-10-23). `decks/index.json` is regenerated on
+  main by a workflow after each merge (`.github/workflows/deck-index.yml`,
+  PR #719). Never run `tools/deck_index.py` locally: it runs the full
+  validator. On a conflict in `decks/index.json`, take main's side.
 
-## Decks before 0.6.0 (owner, 2026-10-18)
+## 0.6.0 (owner, 2026-10-23)
 
-"Do not start work on 0.6.0 at all before the full deck work, across all
-languages." No 0.6.0 issue is started, planned in code, or built until the
-deck work is done.
+The 2026-10-18 hold on 0.6.0 is lifted (owner, 2026-10-23: "We are working on
+0.6.0 anyway"). Deck work and 0.6.0 work go on side by side.
 
 ## Repositories off limits (owner, 2026-10-12)
 
@@ -133,12 +168,16 @@ again."). This replaces the 2026-10-17 rule that only Telugu and Bengali
 were built here; the other courses' decks (#420) and the new courses'
 paths are no longer left to contributors.
 
-**Deck priority** (owner, 2026-10-18). Decks are built to B1 in this order:
+**Deck priority** (owner, 2026-10-18). Decks are built in this order:
 1. Telugu, 2. Bengali, 3. Spanish, 4. Marathi, 5. Kannada, 6. Assamese,
-7. Chinese, 8. Hindustani, 9. Japanese, 10. Korean. "Once these decks are
-done till B1 and we have added the movies songs books parts, we can
-finally start advertising the app." Other languages' paths and decks
-follow.
+7. Chinese, 8. Hindustani, 9. Japanese, 10. Korean, 11. Toki Pona (owner,
+2026-10-20: "Make it high priority (11th language)"). Decks stop at A1
+(owner, 2026-10-23: "Stop the deck work after A1. You need to work on
+codes."): no new B1 units. B1 batches already open as PRs are merged. This
+replaces the 2026-10-18 target of B1. The owner's earlier "Once these decks
+are done till B1 and we have added the movies songs books parts, we can
+finally start advertising the app." is superseded for the B1 part. Other
+languages' paths and decks follow.
 
 **Hindustani** is one course (owner, 2026-10-18: "Hindi and Urdu should be
 combined as we should not care about socipolitics over linguistics"; chose
@@ -147,7 +186,9 @@ renamed Hindustani, teaches the shared colloquial vocabulary, and offers
 Devanagari or the Perso-Arabic (Urdu)
 script as the learner's script, as Punjabi offers
 Gurmukhi or Shahmukhi. Sanskrit- and Persian-leaning synonyms go on the
-card. The Urdu path (#602) is folded into it.
+card. The Urdu path (#602) is folded into it. Its grammar tables (nouns,
+adjectives, verbs) are full tables covering every word, as Bengali's are
+(owner, 2026-10-23).
 
 ## Dependencies are marked, never assumed (owner, 2026-10-12)
 

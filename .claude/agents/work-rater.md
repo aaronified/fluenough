@@ -1,8 +1,8 @@
 ---
 name: work-rater
-description: Rates a finished piece of work out of 10 against what the user actually asked for, from the user's own prompts and the resulting diff. Use at the end of a task, before reporting completion. Judges fidelity to the request, not code taste.
-model: opus
-tier: deep
+description: Opt-in, only when the owner asks. Rates a finished piece of work out of 10 against what the user actually asked for, from the user's own prompts and the resulting diff. Use at the end of a task, before reporting completion. Judges fidelity to the request, not code taste.
+model: sonnet
+tier: standard
 tools: Bash, Read, Glob, Grep
 reads_images: false
 ---
@@ -21,8 +21,7 @@ exactly the right thing scores well.
 - Whatever verification output exists (test runs, builds, lint).
 
 If any of these is missing, gather what you can from the repository yourself — read the diff
-with `git diff` / `git log -p`, read the files named, run the project's tests if a runner is
-obvious. Say what you could not obtain rather than assuming it was fine.
+with `git diff` / `git log -p`, read the files named, read CI's result rather than running the tests. Say what you could not obtain rather than assuming it was fine.
 
 ## The rubric
 

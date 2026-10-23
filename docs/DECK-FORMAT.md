@@ -1,5 +1,7 @@
 # Deck format, schema 1
 
+The wiki is the source of truth for documentation: https://github.com/aaronified/fluenough/wiki
+
 **This file is the guide; `tools/validate_decks.py` is the test.** When the
 two disagree, what the validator does is what passes CI, and this guide is
 fixed to match it (owner, 2026-10-13, #506: "validator is the test.
@@ -413,6 +415,7 @@ readings against the core's language and its
 | `examples` | A mapping from a core example's `target`, exactly as the core writes it, to its translation: text, or `{ native, bases }`, where `bases` gives the example's inline bases their meanings as the card's `bases` below does. |
 | `bases` | A mapping from the `word` of one of the core card's inline bases to its meaning: text, or `{ meaning, wiktionary }` ([Base words](#base-words-bases)). |
 | `wiktionary` | `true` ([The Wiktionary link](#the-wiktionary-link)). |
+| `dictionary` | A short entry imported from Wiktionary, `{ senses, etymology?, source }` ([A dictionary entry](#a-dictionary-entry-dictionary)). |
 | `explanation` | Only on a [set card's](#set-cards) entry, which gives `native`, its name, and `explanation`, both required, and nothing else. |
 
 Anything else, `target`, `reading`, `ipa`, `pos`, `tags`, `modes` and the
@@ -591,7 +594,8 @@ cards:
 | `wiktionary` | no | `true` where the learner's language's Wiktionary has an entry for the target: see [The Wiktionary link](#the-wiktionary-link). |
 | `modes` | no | Which drills this card participates in. Defaults to all applicable, except that a `pos: phrase` card is not typed: it defaults to recognition, listening and speaking, and production by rearranging its words when it has two or more (ADR-0024). |
 | `pair` | no | The id of a word of the language that sounds almost the same, its minimal-pair partner: `te-0111`, కాలం (kālam), time, on కలం (kalam), pen. Hear offers the partner's meaning among its options, to catch a learner who confuses the two ([ADR-0034](adr/0034-hear-say-write.md)). It belongs to the word, so a ref cannot give it. A [pair note](#notes) gives it too: a card without `pair` takes its first pair note's partner, and a core card has no `pair` at all, only pair notes. |
-| `picture` | no | One emoji, quoted, showing what a concrete word means: `"🏠"` on house. Its picture, from [Noto Emoji](https://github.com/googlefonts/noto-emoji) (Apache-2.0), is a cue beside the meaning in Write and beside each meaning Hear offers ([ADR-0034](adr/0034-hear-say-write.md)). Only for a picture that means exactly the word: not for abstract words, kinship, or near misses. Run `python3 tools/pictures.py path/to/noto-emoji` to bundle its image; the validator checks it is there. It belongs to the word, so a ref cannot give it. |
+| `picture` | no | One emoji, quoted, showing what a concrete word means: `"🏠"` on house. Its picture, from [Noto Emoji](https://github.com/googlefonts/noto-emoji) (Apache-2.0), is a cue beside the meaning in Write and beside each meaning Hear offers ([ADR-0034](adr/0034-hear-say-write.md)). Only for a picture that means exactly the word: not for abstract words, kinship, or near misses; the one exception is a question word that sets [`picture_ask`](#a-question-words-picture-picture_ask). Run `python3 tools/pictures.py path/to/noto-emoji` to bundle its image; the validator checks it is there. It belongs to the word, so a ref cannot give it. |
+| `picture_ask` | no | `true` on a question word whose `picture` asks rather than shows: the app draws the emoji with a small "?" badge on its corner. Unquoted `true` or left out, never `false`. It requires `picture`, and belongs to the word, so a ref cannot give it. See [A question word's picture](#a-question-words-picture-picture_ask). A release that reads it must be out before a deck uses it: the released parser rejects unknown fields. |
 | `proposed` | no | Written by the review bot: changes reviewers proposed, waiting for agreement. See [Proposals](#proposals-proposed). Allowed on any card entry: a single-file card or ref, a core's card or ref, a layer's entry. |
 | `checked_by` | no | Written by the review bot: the rater codes of the reviewers who signed the card off, `["FL-7K3M-Q9TD-6"]`. See [Who checked it](#who-checked-it-checked_by). Allowed on any card entry, as `proposed` is. |
 
@@ -599,6 +603,40 @@ In a [core and its layers](#core-and-layer-files), the core card gives
 every field above but `native`, `alt_native`, `wiktionary` and `pair`; the
 layer gives `native`, `alt_native` and `wiktionary`, and the texts of the
 core's notes, examples and card data.
+
+### A question word's picture: `picture_ask`
+
+A question word (where, when, who, what, why, how, which, how many) has no
+picture that means exactly the word, so it is the one exception to the
+`picture` rule above: it may take a `picture` that stands for the sense, and
+`picture_ask: true` to say so. The app draws that emoji with a small "?" badge
+on its corner (owner, 2026-10-22). `picture_ask` needs a `picture`, is only
+`true`, and a ref cannot give it, as with `picture`.
+
+```yaml
+- id: "te-0120"
+  target: "ఎక్కడ"
+  native: "where"
+  reading: "ekkaḍa"
+  picture: "📍"
+  picture_ask: true
+```
+
+Suggested pictures; the deck pass picks each per course and per sense, and
+the review confirms it:
+
+| Word | Picture |
+|---|---|
+| where | 📍 |
+| when | 🕐 |
+| who | 👤 |
+| what | 📦 |
+| why | 💭 |
+| how | ⚙️ |
+| which | 👉 |
+| how many / how much | 🔢 |
+
+Bundle each emoji's image with `tools/pictures.py`, as for any `picture`.
 
 ### A card's other scripts: `target_scripts`
 
@@ -870,7 +908,9 @@ repeated until every note of the card has been shown once.
 
 | Kind | What it says |
 |---|---|
-| `pair` | A minimal pair: a word of the language that sounds almost the same. It names that word, the partner, by `ref`. |
+| `pair` | A minimal pair, shown with the ear icon ("Sounds like another word"): a word of the language whose IPA differs by exactly one segment, and only between very close sounds, such as a short and long vowel (e/eː), an unaspirated and aspirated consonant (k/kʰ) or a dental and retroflex one (t̪/ʈ). Its text names that sound difference. It names the partner by `ref` (owner, 2026-10-22). |
+| `homograph` | The same spelling as another word of the language, with a different sound or meaning. Shown with the ear-off icon ("Looks like another word"); its text is about the spelling. It names that word by `ref`, like `pair`. |
+| `lookalike` | Differs from another word only by a dot, a length mark or another short mark, such as a nukta. Shown with the ear-off icon ("Looks like another word"); its text says how the spelling differs, not how it sounds (owner, 2026-10-22). It names that word by `ref`, like `pair`. |
 | `culture` | The word's cultural significance. It names its `source`. |
 | `usage` | Another context it is used in, or another sense. |
 | `behaviour` | How it behaves unlike similar words: an irregular form, a gender, a use. |
@@ -881,6 +921,8 @@ repeated until every note of the card has been shown once.
 ```yaml
     notes:
       - { kind: "pair", ref: "te-9007", text: "Not కాలం (kālam), time: the a is long there." }
+      - { kind: "homograph", ref: "te-9008", text: "Spelled like కలం (kalaṁ), a pen, but read with another vowel: a different word." }
+      - { kind: "lookalike", ref: "te-9009", text: "Only the dot differs from కలం (kalaṁ), a pen." }
       - { kind: "culture", text: "A pen was a gift for the first day at school.", source: "https://example.org/telugu-school-customs" }
       - { kind: "usage", text: "Also a pen-name, in old usage." }
       - { kind: "behaviour", id: "plural", text: "Its plural is {1}.", words: [{ word: "కలాలు", reading: "kalālu" }] }
@@ -889,10 +931,10 @@ repeated until every note of the card has been shown once.
 
 | Field | Required | Notes |
 |---|---|---|
-| `kind` | yes | `pair`, `culture`, `usage`, `behaviour` or `note`. |
+| `kind` | yes | `pair`, `homograph`, `lookalike`, `culture`, `usage`, `behaviour` or `note`. |
 | `text` | yes | The note, in the deck's native language. [Script in prose](#script-in-prose-always-with-its-reading) applies. |
 | `id` | no | The note's id: starts with a letter, `[a-z0-9-]+`, not one of `yes`, `no`, `on`, `off`, `true`, `false`, `y`, `n`, and unique in the card. Without one, a note's id is its place, `"1"`, `"2"`. The app remembers which notes it has shown by card and note id, so give ids once a card's notes may be reordered. |
-| `ref` | on a `pair` note, and only there | The partner: another card of the language that sounds almost the same. |
+| `ref` | on a `pair`, `homograph` or `lookalike` note, and only there | The other word: another card of the language. For a `pair`, the partner that sounds almost the same; for a `homograph`, the word with the same spelling; for a `lookalike`, the word that differs by a mark. |
 | `source` | on a `culture` note; optional on the rest | Where the claim can be checked: a URL, or a book with its author and year. |
 | `words` | no | The words of the language the text quotes, `{ word, reading, ipa? }`, `reading` required in a script that needs one. The text names them `{1}`, `{2}` (below). |
 | `region` | no | On a note of any kind: the [regions](#regions) of the language it is about, a region id or a list of them, each a region of the language's path. |
@@ -924,6 +966,8 @@ own:
 ```yaml
     notes:
       - { id: "pair", kind: "pair", ref: "te-9007" }
+      - { id: "same", kind: "homograph", ref: "te-9008" }
+      - { id: "dot", kind: "lookalike", ref: "te-9009" }
       - { id: "school", kind: "culture", source: "https://example.org/telugu-school-customs" }
       - { id: "plural", kind: "behaviour", words: [{ word: "కలాలు", reading: "kalālu" }] }
 ```
@@ -962,9 +1006,14 @@ its reading.
   it shows its button only where the partner is in the catalog in the
   learner's native language, so a deck a learner adds cannot open a panel
   on a word with no meaning.
-- **Errors on a note:** a `kind` other than the five; no `text` in a
-  single-file note; a `ref` on a note that is not `pair`, on a pair note
-  that names its own card, or that no deck writes; no `source` on a culture
+- **A homograph or lookalike note's `ref` follows the pair note's rules**
+  but for the minimal-pair panel: it is a card of the language, not the
+  card itself, and a card some deck writes. It need not be taught from the
+  learner's language, since no panel shows the two words side by side yet.
+- **Errors on a note:** a `kind` other than the seven; no `text` in a
+  single-file note; a `ref` on a note that is not `pair`, `homograph` or
+  `lookalike`, on one of those that names its own card or no card of the
+  language, or that no deck writes; no `source` on a culture
   note; a `region` that is not a region of the language's
   [path](#regions); an `id` used twice in a card; an empty list. An
   all-blank string reads as no notes.
@@ -977,6 +1026,34 @@ its reading.
   that holds the claim: the core for a core card's culture note, the layer
   for a layer's own card. A layer may carry `unreviewed` for its own texts
   too.
+
+### A dictionary entry: `dictionary`
+
+A layer's entry may carry a short entry imported from Wiktionary, in the
+layer's language: the word's other meanings, and where it comes from. It is
+the native language's, so it is never in a core.
+
+```yaml
+  "te-9001":
+    native: "home; house"
+    wiktionary: true
+    dictionary:
+      senses: ["household", "family", "a square of a chessboard"]
+      etymology: "From Proto-Dravidian *il, house."
+      source: "https://en.wiktionary.org/wiki/ఇల్లు"
+```
+
+| Field | Required | Notes |
+|---|---|---|
+| `senses` | yes | A non-empty list of the word's other meanings, each text in the layer's language. |
+| `etymology` | no | Text, in the layer's language. |
+| `source` | yes | The Wiktionary page the entry was imported from, `https://en.wiktionary.org/wiki/<word>`: the page only, with no fragment or query, as for any `source` that names Wiktionary. It is the credit that CC BY-SA 4.0 asks for, which is why it is required. |
+
+Anything else is an error. `dictionary` goes with [the `wiktionary`
+mark](#the-wiktionary-link) but does not need it: `wiktionary: true` says an
+entry exists, `dictionary` carries a copy of part of it. Only the layer's own
+entry for a card of its core may carry it; a layer's own card (one the core
+does not have) and a set card's entry may not. The app does not show it yet.
 
 ### The Wiktionary link
 
@@ -1458,7 +1535,7 @@ pipeline yet again)."
 
 **Proposed rollout** for the checks that are enforced: a warning first, naming
 the card and the field; an error per language once its fill issue is closed;
-each new field lands with its check and its entry here, with tests.
+each new field lands with its check and its entry here; a test only for a behaviour no test covers yet (AGENTS.md, "Tests check behaviour").
 
 ### Card data: decided on 2026-10-13
 
@@ -2641,8 +2718,8 @@ error before moving on. Read the warnings; do not leave them unexplained.
     - every deck on the path once, and every split deck's old file gone;
     - `python3 tools/deck_index.py` run, and its `decks/index.json`
       committed with the decks;
-    - `python3 tools/validate_decks.py decks/` with no error, and
-      `flutter test`, which parses every deck the index lists;
+    - CI's "Validate decks" and `flutter test`, which parses every deck the
+      index lists, green (never run locally, CLAUDE.md);
     - the work reviewed once, as [CLAUDE.md](../CLAUDE.md) says: one
       review per change, and no extra verification passes. A contributor's
       pull request is reviewed in the pull request

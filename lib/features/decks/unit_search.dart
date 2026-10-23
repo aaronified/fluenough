@@ -1,11 +1,15 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/routes.dart';
 import '../../app/session.dart';
+import '../../core/grading/diacritics.dart';
+import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
+import '../../core/models/reading.dart' show QuestionCard;
+import '../../core/numbers/number_practice.dart' show NumberCard;
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/deck_tile.dart';
@@ -14,6 +18,9 @@ import 'broken_deck_tile.dart';
 import 'deck_content.dart';
 import 'path_model.dart';
 import 'path_parts.dart';
+import 'unit_page.dart' show CardRow;
+import 'word_mastery.dart';
+import 'word_sheet.dart';
 
 /// One thing a search on the Decks tab finds.
 sealed class SearchHit {
@@ -52,23 +59,106 @@ final class DeckHit extends SearchHit {
   final DeckEntry entry;
 }
 
-/// Whether every word of [query] is found, ignoring case, in one of
-/// [fields]. An empty query matches nothing: the search shows nothing until
-/// something is typed.
-bool matchesAll(String query, Iterable<String> fields) {
+/// One card a search found: its own row, never grouped by meaning (#527).
+final class CardHit extends SearchHit {
+  const CardHit(super.language, this.card);
+
+  final Card card;
+}
+
+/// [text] as the search compares it: lower case, Latin diacritics folded
+/// away, so that `kalam` is found in `kalaṁ`.
+String searchForm(String text) => foldDiacritics(text.toLowerCase());
+
+/// Whether every word of [query] is found, ignoring case and Latin
+/// diacritics, in one of [fields]. An empty query matches nothing: the
+/// search shows nothing until something is typed. With [folded] the fields
+/// are already in [searchForm], as a cached index holds them.
+bool matchesAll(String query, Iterable<String> fields, {bool folded = false}) {
   final words = <String>[
-    for (final word in query.toLowerCase().split(RegExp(r'\s+')))
+    for (final word in searchForm(query).split(RegExp(r'\s+')))
       if (word.isNotEmpty) word,
   ];
   if (words.isEmpty) return false;
-  final lower = <String>[for (final f in fields) f.toLowerCase()];
-  return words.every((word) => lower.any((field) => field.contains(word)));
+  final searchable = folded
+      ? fields
+      : <String>[for (final f in fields) searchForm(f)];
+  return words.every((word) => searchable.any((field) => field.contains(word)));
+}
+
+/// The most card rows one search lists: the rows are built at once, inside
+/// the Decks tab's own scrolling.
+const int maxCardHits = 60;
+
+/// A card and its searchable text, folded once.
+typedef _IndexedCard = ({Card card, List<String> fields});
+
+/// A deck's searchable cards, built the first time it is searched and kept
+/// as long as the deck is.
+final Expando<List<_IndexedCard>> _cardIndex = Expando<List<_IndexedCard>>(
+  'card search index',
+);
+
+/// What a search can find a card by: its target, its spellings in the
+/// course's other scripts, its readings, its meaning and its other meanings.
+List<String> _cardFields(Card card) => <String>[
+  card.target,
+  ...card.targetScripts.values,
+  ...card.readings,
+  card.native,
+  ...card.altNative,
+  for (final sense in card.senses) sense.native,
+];
+
+List<_IndexedCard> _indexOf(DeckEntry entry) =>
+    _cardIndex[entry] ??= <_IndexedCard>[
+      // A grammar deck's cells and a rules deck's are forms of words taught
+      // elsewhere, as on a unit's screen; set cards are not cards at all.
+      if (entry.deck.pattern == null &&
+          entry.deck.kind != DeckKind.reading &&
+          entry.deck.kind != DeckKind.rules)
+        for (final card in entry.cards)
+          if (card is! QuestionCard && card is! NumberCard)
+            (
+              card: card,
+              fields: <String>[
+                for (final field in _cardFields(card))
+                  if (field.isNotEmpty) searchForm(field),
+              ],
+            ),
+    ];
+
+/// The cards of [language]'s course that [query] finds, each card once.
+List<CardHit> searchCards(
+  AppState state,
+  String query,
+  LanguageInfo language, {
+  int limit = maxCardHits,
+}) {
+  final native = state.courseNative(language.code);
+  final seen = <String>{};
+  final hits = <CardHit>[];
+  for (final entry in state.decks) {
+    if (entry.language.code != language.code ||
+        entry.deck.native.code != native) {
+      continue;
+    }
+    for (final indexed in _indexOf(entry)) {
+      if (hits.length >= limit) return hits;
+      if (matchesAll(query, indexed.fields, folded: true) &&
+          seen.add(indexed.card.id)) {
+        hits.add(CardHit(language, indexed.card));
+      }
+    }
+  }
+  return hits;
 }
 
 /// What [query] finds in every course, in the order of [languages]: units by
 /// their name, their decks' names, kinds and themes, their level or their
 /// language; units still being written by name; and decks a course leaves
-/// out, as the old deck list found them.
+/// out, as the old deck list found them; then the course's cards, one row
+/// each (#527).
 List<SearchHit> searchCourses(
   AppState state,
   AppLocalizations l10n,
@@ -78,6 +168,7 @@ List<SearchHit> searchCourses(
 }) {
   final themes = state.themesByDeck;
   final hits = <SearchHit>[];
+  final cards = <SearchHit>[];
   for (final language in languages) {
     final code = language.code;
     final plan = planOf?.call(code) ?? coursePlanOf(state, code);
@@ -129,8 +220,9 @@ List<SearchHit> searchCourses(
         hits.add(DeckHit(language, entry));
       }
     }
+    cards.addAll(searchCards(state, query, language));
   }
-  return hits;
+  return hits..addAll(cards);
 }
 
 /// The search's results: a row per unit found, with its course, level and
@@ -162,6 +254,7 @@ class SearchResults extends StatelessWidget {
             ? const <SearchHit>[]
             : searchCourses(state, l10n, query, languages, planOf: planOf);
         final q = query.trim().toLowerCase();
+        final answers = RecentAnswers(state.progress.log);
         final broken = <BrokenDeck>[
           if (q.isNotEmpty)
             for (final file in state.brokenDecks)
@@ -195,7 +288,20 @@ class SearchResults extends StatelessWidget {
                 outerRadius: AppRadii.card,
                 gap: 4,
                 children: <Widget>[
-                  for (final hit in hits) _HitTile(hit: hit, state: state),
+                  for (final hit in hits)
+                    if (hit is CardHit)
+                      CardRow(
+                        card: hit.card,
+                        language: hit.language,
+                        mastery: answers.of(hit.card.id),
+                        onTap: () => showWordSheet(
+                          context,
+                          card: hit.card,
+                          language: hit.language,
+                        ),
+                      )
+                    else
+                      _HitTile(hit: hit, state: state),
                 ],
               ),
             if (broken.isNotEmpty) ...<Widget>[
@@ -264,6 +370,8 @@ class _HitTile extends StatelessWidget {
         ),
         null,
       ),
+      // Drawn as a CardRow, not as a tile.
+      CardHit() => (hit.card.target, language, const SizedBox.shrink(), null),
       DeckHit() => (
         hit.entry.deck.name,
         joinParts(l10n, <String>[language, deckKindLabel(l10n, hit.entry)]),

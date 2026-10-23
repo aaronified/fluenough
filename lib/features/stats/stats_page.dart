@@ -278,6 +278,10 @@ class _StatsBody extends StatelessWidget {
           const SizedBox(height: 16),
           StatsSection(
             title: l10n.statsWeakestTags,
+            trailing: TextButton(
+              onPressed: () => AppNavigator.openAllTags(context, range),
+              child: Text(l10n.statsAllTags),
+            ),
             children: <Widget>[
               for (final MapEntry(key: tag, value: tally)
                   in numbers.weakestTags.entries)

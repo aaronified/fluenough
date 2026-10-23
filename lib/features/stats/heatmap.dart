@@ -102,9 +102,17 @@ class ReviewHeatmap extends StatelessWidget {
 
 /// One of Progress's rounded panels: a heading and its rows, 12 apart.
 class StatsSection extends StatelessWidget {
-  const StatsSection({super.key, required this.title, required this.children});
+  const StatsSection({
+    super.key,
+    required this.title,
+    required this.children,
+    this.trailing,
+  });
 
   final String title;
+
+  /// A button at the end of the title's line, such as "All tags".
+  final Widget? trailing;
   final List<Widget> children;
 
   @override
@@ -119,9 +127,16 @@ class StatsSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          Semantics(
-            header: true,
-            child: Text(title, style: theme.textTheme.titleMedium),
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: Semantics(
+                  header: true,
+                  child: Text(title, style: theme.textTheme.titleMedium),
+                ),
+              ),
+              ?trailing,
+            ],
           ),
           for (final child in children) ...<Widget>[
             const SizedBox(height: 12),

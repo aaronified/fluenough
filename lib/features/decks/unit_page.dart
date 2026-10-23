@@ -264,7 +264,7 @@ class _UnitPageState extends State<UnitPage> {
                         in _allWords
                             ? content.words
                             : content.words.take(_firstWords))
-                      _CardRow(
+                      CardRow(
                         card: card,
                         language: language,
                         mastery: answers.of(card.id),
@@ -322,7 +322,7 @@ class _UnitPageState extends State<UnitPage> {
                   gap: 4,
                   children: <Widget>[
                     for (final card in content.sentences)
-                      _CardRow(
+                      CardRow(
                         card: card,
                         language: language,
                         mastery: answers.of(card.id),
@@ -570,8 +570,9 @@ class _SectionHeading extends StatelessWidget {
 
 /// A word or a sentence: the target, its meaning and reading, and where it
 /// stands. Tapping it opens its card.
-class _CardRow extends StatelessWidget {
-  const _CardRow({
+class CardRow extends StatelessWidget {
+  const CardRow({
+    super.key,
     required this.card,
     required this.language,
     required this.mastery,
