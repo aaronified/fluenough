@@ -1,0 +1,180 @@
+schema: 1
+id: "es-en-numbers-big"
+kind: "layer"
+core: "es-numbers-big"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Tens and big numbers"
+license: "CC-BY-SA-4.0"
+description: "The tens from thirty to ninety, one hundred, two hundred, five hundred, a thousand and a million, with the euro and the first and second. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-0536":
+    native: "thirty"
+    notes: { n1: "Treinta is thirty. Above twenty, the tens are one word: treinta, cuarenta, cincuenta." }
+    examples:
+      "Mi madre tiene treinta años.":
+        native: "My mother is thirty."
+        bases: {"treinta": "thirty"}
+      "Hay treinta personas en la casa.":
+        native: "There are thirty people in the house."
+        bases: {"Hay": "there is", "treinta": "thirty", "en": "in", "la": "the"}
+  "es-0537":
+    native: "forty"
+    notes: { n1: "Cuarenta is forty. It is written as one word, like the other tens." }
+    examples:
+      "Mi tía tiene cuarenta años.":
+        native: "My aunt is forty."
+        bases: {"cuarenta": "forty"}
+      "Hay cuarenta casas en la calle.":
+        native: "There are forty houses in the street."
+        bases: {"Hay": "there is", "cuarenta": "forty", "en": "in", "la": "the"}
+  "es-0538":
+    native: "fifty"
+    notes: { n1: "Cincuenta is fifty. Its first part sounds like cinco, five." }
+    examples:
+      "Mi padre tiene cincuenta años.":
+        native: "My father is fifty."
+        bases: {"cincuenta": "fifty"}
+      "Hay cincuenta libros en la mesa.":
+        native: "There are fifty books on the table."
+        bases: {"Hay": "there is", "cincuenta": "fifty", "en": "in", "la": "the"}
+  "es-0539":
+    native: "sixty"
+    notes: { n1: "Sesenta is sixty. Read the tens with the same ending: -enta." }
+    examples:
+      "Mi suegra tiene sesenta años.":
+        native: "My mother-in-law is sixty."
+        bases: {"sesenta": "sixty"}
+      "La ciudad tiene sesenta barrios.":
+        native: "The city has sixty neighbourhoods."
+        bases: {"La": "the", "sesenta": "sixty"}
+  "es-0540":
+    native: "seventy"
+    notes: { n1: "Setenta is seventy. Its first part sounds like siete, seven." }
+    examples:
+      "Mi abuela tiene setenta años.":
+        native: "My grandmother is seventy."
+        bases: {"setenta": "seventy"}
+      "Hay setenta casas en el barrio.":
+        native: "There are seventy houses in the neighbourhood."
+        bases: {"Hay": "there is", "setenta": "seventy", "en": "in", "el": "the"}
+  "es-0541":
+    native: "eighty"
+    notes: { n1: "Ochenta is eighty. Its first part sounds like ocho, eight." }
+    examples:
+      "Mi abuelo tiene ochenta años.":
+        native: "My grandfather is eighty."
+        bases: {"ochenta": "eighty"}
+      "Hay ochenta niños en el barrio.":
+        native: "There are eighty children in the neighbourhood."
+        bases: {"Hay": "there is", "ochenta": "eighty", "en": "in", "el": "the"}
+  "es-0542":
+    native: "ninety"
+    notes: { n1: "Noventa is ninety. Its first part sounds like nueve, nine." }
+    examples:
+      "Mi tío tiene noventa años.":
+        native: "My uncle is ninety."
+        bases: {"noventa": "ninety"}
+      "Tengo noventa euros.":
+        native: "I have ninety euros."
+        bases: {"noventa": "ninety"}
+  "es-0543":
+    native: "one hundred"
+    notes: { n1: "Cien is one hundred. It becomes ciento when more follows: ciento dos, one hundred and two." }
+    examples:
+      "Hay cien personas en la calle.":
+        native: "There are one hundred people in the street."
+        bases: {"Hay": "there is", "cien": "one hundred", "en": "in", "la": "the"}
+      "Cien es un número grande.":
+        native: "One hundred is a big number."
+        bases: {"Cien": "one hundred", "un": "a"}
+  "es-0544":
+    native: "two hundred"
+    notes: { n1: "Doscientos is two hundred. It agrees with a feminine noun: doscientas personas." }
+    examples:
+      "Hay doscientas personas en la ciudad.":
+        native: "There are two hundred people in the city."
+        bases: {"Hay": "there is", "doscientas": "two hundred", "en": "in", "la": "the"}
+      "Doscientos es más que cien.":
+        native: "Two hundred is more than one hundred."
+        bases: {"Doscientos": "two hundred", "que": "that"}
+  "es-0545":
+    native: "five hundred"
+    notes: { n1: "Quinientos is five hundred. It agrees with a feminine noun: quinientas." }
+    examples:
+      "Hay quinientas casas en la ciudad.":
+        native: "There are five hundred houses in the city."
+        bases: {"Hay": "there is", "quinientas": "five hundred", "en": "in", "la": "the"}
+      "Quinientos es la mitad de mil.":
+        native: "Five hundred is half of a thousand."
+        bases: {"Quinientos": "five hundred", "la": "the", "de": "of"}
+  "es-0546":
+    native: "one thousand"
+    notes: { n1: "Mil is one thousand. It never takes an s: dos mil, two thousand." }
+    examples:
+      "Mil personas viven aquí.":
+        native: "A thousand people live here."
+        bases: {"Mil": "one thousand"}
+      "Tengo mil euros.":
+        native: "I have a thousand euros."
+        bases: {"mil": "one thousand"}
+  "es-0547":
+    native: "one million"
+    notes: { n1: "Millón is one million. Before a noun it needs de: un millón de personas." }
+    examples:
+      "Hay un millón de personas en la ciudad.":
+        native: "There are a million people in the city."
+        bases: {"Hay": "there is", "un": "a", "millón": "one million", "de": "of", "en": "in", "la": "the"}
+      "Un millón es mucho más que cien mil.":
+        native: "A million is much more than one hundred thousand."
+        bases: {"Un": "a", "millón": "one million", "que": "that"}
+  "es-0548":
+    native: "twenty-two"
+    notes: { n1: "Veintidós is twenty-two. Between twenty and thirty the numbers are written as one word." }
+    examples:
+      "Tengo veintidós años.":
+        native: "I am twenty-two."
+        bases: {"veintidós": "twenty-two"}
+      "Hay veintidós personas en la oficina.":
+        native: "There are twenty-two people in the office."
+        bases: {"Hay": "there is", "veintidós": "twenty-two", "en": "in", "la": "the"}
+  "es-0549":
+    native: "twenty-one"
+    notes: { n1: "Veintiuno is twenty-one. Before a masculine noun it shortens to veintiún: veintiún años." }
+    examples:
+      "Veintiuno más uno son veintidós.":
+        native: "Twenty-one plus one is twenty-two."
+        bases: {"Veintiuno": "twenty-one"}
+      "Tengo veintiún años.":
+        native: "I am twenty-one."
+        bases: {"veintiún": "twenty-one"}
+  "es-0550":
+    native: "euro (money)"
+    bases: {"el": "the", "euro": "euro"}
+    notes: { n1: "El euro is the euro, the money. Its plural is euros: dos euros." }
+    examples:
+      "Tengo cinco euros.":
+        native: "I have five euros."
+        bases: {"euros": "euro (money)"}
+      "Hoy tengo diez euros.":
+        native: "Today I have ten euros."
+        bases: {"euros": "euro (money)"}
+  "es-0551":
+    native: "first"
+    notes: { n1: "Primero is first. Before a masculine noun it shortens to primer: el primer día." }
+    examples:
+      "Es mi primer día en la oficina.":
+        native: "It is my first day at the office."
+        bases: {"primer": "first", "en": "in", "la": "the"}
+      "Vivo en la primera casa del barrio.":
+        native: "I live in the first house in the neighbourhood."
+        bases: {"en": "in", "la": "the", "primera": "first", "del": "of the"}
+  "es-0552":
+    native: "second"
+    notes: { n1: "Segundo is second, the one after the first: el segundo, la segunda." }
+    examples:
+      "Es mi segundo año aquí.":
+        native: "It is my second year here."
+        bases: {"segundo": "second"}
+      "La segunda reunión es hoy.":
+        native: "The second meeting is today."
+        bases: {"La": "the", "segunda": "second"}

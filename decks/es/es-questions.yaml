@@ -39,7 +39,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "¿Dónde está el baño?", ipa: "ˈdonde esˈta el ˈbaɲo", bases: [{ word: "Dónde", base: "dónde" }, { word: "está", ref: "es-0023" }, { word: "el", base: "el" }, { word: "baño", base: "baño" }] }
+      - { target: "¿Dónde está el baño?", ipa: "ˈdonde esˈta el ˈbaɲo", bases: [{ word: "Dónde", base: "dónde" }, { word: "está", ref: "es-0023" }, { word: "el", base: "el" }, { word: "baño", ref: "es-0805" }] }
       - { target: "No sé dónde estoy.", ipa: "no se ˈdonde esˈtoj", bases: [{ word: "No", ref: "es-0043" }, { word: "sé", base: "saber" }, { word: "dónde", base: "dónde" }, { word: "estoy", ref: "es-0023" }] }
   - id: "es-0057"
     target: "cuándo"
@@ -50,7 +50,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "¿Cuándo es la cita?", ipa: "ˈkwando es la ˈθita", bases: [{ word: "Cuándo", base: "cuándo" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "cita", base: "cita" }] }
+      - { target: "¿Cuándo es la cita?", ipa: "ˈkwando es la ˈθita", bases: [{ word: "Cuándo", base: "cuándo" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "cita", ref: "es-0844" }] }
       - { target: "¿Cuándo llegas a casa?", ipa: "ˈkwando ˈʝeɡas a ˈkasa", bases: [{ word: "Cuándo", base: "cuándo" }, { word: "llegas", base: "llegar" }, { word: "a", base: "a" }, { word: "casa", ref: "es-0006" }] }
   - id: "es-0058"
     target: "cómo"
@@ -83,7 +83,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "¿Cuánto cuesta?", ipa: "ˈkwanto ˈkwesta", bases: [{ word: "Cuánto", base: "cuánto" }, { word: "cuesta", base: "costar" }] }
+      - { target: "¿Cuánto cuesta?", ipa: "ˈkwanto ˈkwesta", bases: [{ word: "Cuánto", base: "cuánto" }, { word: "cuesta", ref: "es-0587" }] }
       - { target: "¿Cuántos años tienes?", ipa: "ˈkwantos ˈaɲos ˈtjenes", bases: [{ word: "Cuántos", base: "cuánto" }, { word: "años", ref: "es-0021" }, { word: "tienes", ref: "es-0024" }] }
   - id: "es-0061"
     target: "por qué"
@@ -146,10 +146,10 @@ cards:
     bases:
       - { word: "a", base: "a" }
       - { word: "qué", ref: "es-0054" }
-      - { word: "hora", base: "hora" }
+      - { word: "hora", ref: "es-0838" }
     examples:
-      - { target: "¿A qué hora empieza la película?", ipa: "a ke ˈoɾa emˈpjeθa la peˈlikula", bases: [{ word: "A", base: "a" }, { word: "qué", ref: "es-0054" }, { word: "hora", base: "hora" }, { word: "empieza", base: "empezar" }, { word: "la", base: "la" }, { word: "película", base: "película" }] }
-      - { target: "¿A qué hora cenamos?", ipa: "a ke ˈoɾa θeˈnamos", bases: [{ word: "A", base: "a" }, { word: "qué", ref: "es-0054" }, { word: "hora", base: "hora" }, { word: "cenamos", base: "cenar" }] }
+      - { target: "¿A qué hora empieza la película?", ipa: "a ke ˈoɾa emˈpjeθa la peˈlikula", bases: [{ word: "A", base: "a" }, { word: "qué", ref: "es-0054" }, { word: "hora", ref: "es-0838" }, { word: "empieza", ref: "es-0852" }, { word: "la", base: "la" }, { word: "película", base: "película" }] }
+      - { target: "¿A qué hora cenamos?", ipa: "a ke ˈoɾa θeˈnamos", bases: [{ word: "A", base: "a" }, { word: "qué", ref: "es-0054" }, { word: "hora", ref: "es-0838" }, { word: "cenamos", base: "cenar" }] }
   - id: "es-0066"
     target: "con quién"
     ipa: "kon kjen"
@@ -162,7 +162,7 @@ cards:
       - { word: "quién", ref: "es-0055" }
     examples:
       - { target: "¿Con quién hablas?", ipa: "kon kjen ˈablas", bases: [{ word: "Con", base: "con" }, { word: "quién", ref: "es-0055" }, { word: "hablas", ref: "es-0027" }] }
-      - { target: "¿Con quién vas al cine?", ipa: "kon kjen bas al ˈθine", bases: [{ word: "Con", base: "con" }, { word: "quién", ref: "es-0055" }, { word: "vas", ref: "es-0026" }, { word: "al", base: "al" }, { word: "cine", base: "cine" }] }
+      - { target: "¿Con quién vas al cine?", ipa: "kon kjen bas al ˈθine", bases: [{ word: "Con", base: "con" }, { word: "quién", ref: "es-0055" }, { word: "vas", ref: "es-0026" }, { word: "al", base: "al" }, { word: "cine", ref: "es-0779" }] }
   - id: "es-0067"
     target: "para qué"
     ipa: "ˈpaɾa ke"
@@ -185,11 +185,11 @@ cards:
       - { id: "n1", kind: "note" }
     bases:
       - { word: "qué", ref: "es-0054" }
-      - { word: "hora", base: "hora" }
+      - { word: "hora", ref: "es-0838" }
       - { word: "es", ref: "es-0022" }
     examples:
-      - { target: "Perdón, ¿qué hora es ahora?", ipa: "peɾˈdon ke ˈoɾa es aˈoɾa", bases: [{ word: "Perdón", ref: "es-0045" }, { word: "qué", ref: "es-0054" }, { word: "hora", base: "hora" }, { word: "es", ref: "es-0022" }, { word: "ahora", base: "ahora" }] }
-      - { target: "¿Sabes qué hora es?", ipa: "ˈsabes ke ˈoɾa es", bases: [{ word: "Sabes", base: "saber" }, { word: "qué", ref: "es-0054" }, { word: "hora", base: "hora" }, { word: "es", ref: "es-0022" }] }
+      - { target: "Perdón, ¿qué hora es ahora?", ipa: "peɾˈdon ke ˈoɾa es aˈoɾa", bases: [{ word: "Perdón", ref: "es-0045" }, { word: "qué", ref: "es-0054" }, { word: "hora", ref: "es-0838" }, { word: "es", ref: "es-0022" }, { word: "ahora", base: "ahora" }] }
+      - { target: "¿Sabes qué hora es?", ipa: "ˈsabes ke ˈoɾa es", bases: [{ word: "Sabes", base: "saber" }, { word: "qué", ref: "es-0054" }, { word: "hora", ref: "es-0838" }, { word: "es", ref: "es-0022" }] }
   - id: "es-0069"
     kind: "set"
     members: [{ ref: "es-0054" }, { ref: "es-0055" }, { ref: "es-0056" }, { ref: "es-0057" }, { ref: "es-0058" }, { ref: "es-0059" }, { ref: "es-0060" }]

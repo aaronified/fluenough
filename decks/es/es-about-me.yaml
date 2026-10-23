@@ -186,7 +186,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Quiero estudiar medicina.", ipa: "ˈkjeɾo estuˈdjaɾ mediˈθina", bases: [{ word: "Quiero", base: "querer" }, { word: "estudiar", base: "estudiar" }, { word: "medicina", base: "medicina" }] }
+      - { target: "Quiero estudiar medicina.", ipa: "ˈkjeɾo estuˈdjaɾ mediˈθina", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "estudiar", base: "estudiar" }, { word: "medicina", base: "medicina" }] }
       - { target: "Vamos a estudiar juntos.", ipa: "ˈbamos a estuˈdjaɾ ˈxuntos", bases: [{ word: "Vamos", ref: "es-0026" }, { word: "a", base: "a" }, { word: "estudiar", base: "estudiar" }, { word: "juntos", base: "juntos" }] }
   - id: "es-0259"
     target: "trabajar"
@@ -196,8 +196,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Quiero trabajar en un hospital.", ipa: "ˈkjeɾo tɾabaˈxaɾ en un ospiˈtal", bases: [{ word: "Quiero", base: "querer" }, { word: "trabajar", base: "trabajar" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "hospital", base: "hospital" }] }
-      - { target: "Ana quiere trabajar con su padre.", ipa: "ˈana ˈkjeɾe tɾabaˈxaɾ kon su ˈpadɾe", bases: [{ word: "Ana", base: "Ana" }, { word: "quiere", base: "querer" }, { word: "trabajar", base: "trabajar" }, { word: "con", base: "con" }, { word: "su", ref: "es-0131" }, { word: "padre", base: "padre" }] }
+      - { target: "Quiero trabajar en un hospital.", ipa: "ˈkjeɾo tɾabaˈxaɾ en un ospiˈtal", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "trabajar", base: "trabajar" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "hospital", ref: "es-0772" }] }
+      - { target: "Ana quiere trabajar con su padre.", ipa: "ˈana ˈkjeɾe tɾabaˈxaɾ kon su ˈpadɾe", bases: [{ word: "Ana", base: "Ana" }, { word: "quiere", ref: "es-0661" }, { word: "trabajar", base: "trabajar" }, { word: "con", base: "con" }, { word: "su", ref: "es-0131" }, { word: "padre", base: "padre" }] }
   - id: "es-0260"
     target: "soy de"
     ipa: "soj de"
