@@ -1,0 +1,57 @@
+schema: 1
+id: "tok-en-reading-food"
+name: "Reading: food and drink"
+kind: reading
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two passages from the food unit: two friends decide what to eat and drink (heard), and a small café menu in toki pona words (read). Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "tok-what-to-eat"
+    title: "What to eat"
+    sentences:
+      - text: "sina wile e kili anu ala?"
+      - text: "mi wile e kili suwi."
+      - text: "telo ni li lete anu ala?"
+      - text: "mi wile e telo lete."
+      - text: "o lukin e kili!"
+    questions:
+      - id: "tok-0205"
+        prompt: { en: "What does the first line ask?" }
+        options:
+          - { en: "Whether the other person wants fruit" }
+          - { en: "Where the fruit is" }
+        answer: 1
+      - id: "tok-0206"
+        prompt: { en: "The speaker wants sweet fruit." }
+        answer: true
+      - id: "tok-0207"
+        prompt: { en: "What does the speaker want to drink?" }
+        options:
+          - { en: "Cold water" }
+          - { en: "Sweet water" }
+        answer: 1
+  - id: "tok-simple-menu"
+    title: "Simple menu"
+    sentences:
+      - text: "kili lete li pona."
+      - text: "telo lete li suwi ala."
+      - text: "moku ni li suli."
+    questions:
+      - id: "tok-0208"
+        prompt: { en: "What does the first line say about the fruit?" }
+        options:
+          - { en: "It is good" }
+          - { en: "It is big" }
+        answer: 1
+      - id: "tok-0209"
+        prompt: { en: "Cold water is sweet." }
+        answer: false
+      - id: "tok-0210"
+        prompt: { en: "What does the third line say about the food?" }
+        options:
+          - { en: "It is big" }
+          - { en: "It is cold" }
+        answer: 1

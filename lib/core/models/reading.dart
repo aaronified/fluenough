@@ -175,11 +175,18 @@ class QuestionCard extends Card {
          target: passage.sentences.first.text,
          reading: passage.sentences.first.reading,
          native: question.prompt['en'] ?? question.prompt.values.first,
-         modes: const <DrillMode>{DrillMode.reading, DrillMode.listening},
        );
 
   final Passage passage;
   final ReadingQuestion question;
+
+  /// Read, and heard where there is a voice; nothing else (ADR-0039).
+  @override
+  Set<DrillMode> modesIn({
+    required bool ttsAvailable,
+    bool speechAvailable = false,
+    List<Card> siblings = const <Card>[],
+  }) => <DrillMode>{DrillMode.reading, if (ttsAvailable) DrillMode.listening};
 
   /// Where the passage comes from: its own source, or else its deck's.
   final String? source;
