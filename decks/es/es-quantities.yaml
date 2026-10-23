@@ -1,0 +1,326 @@
+schema: 1
+id: "es-quantities"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "quantities"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-0358"
+    target: "poco"
+    ipa: "ˈpoko"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tengo poco tiempo hoy.", ipa: "ˈtenɡo ˈpoko ˈtjempo oj", bases: [{ word: "Tengo", ref: "es-0024" }, { word: "poco", base: "poco" }, { word: "tiempo", base: "tiempo" }, { word: "hoy", ref: "es-0331" }] }
+      - { target: "Hay poco pan en la mesa.", ipa: "aj ˈpoko pan en la ˈmesa", bases: [{ word: "Hay", base: "haber" }, { word: "poco", base: "poco" }, { word: "pan", ref: "es-0013" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }] }
+  - id: "es-0359"
+    target: "algo"
+    ipa: "ˈalɡo"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "¿Quieres algo de beber?", ipa: "ˈkjeɾes ˈalɡo de beˈbeɾ", bases: [{ word: "Quieres", base: "querer" }, { word: "algo", base: "algo" }, { word: "de", base: "de" }, { word: "beber", ref: "es-0029" }] }
+      - { target: "Tengo algo para ti.", ipa: "ˈtenɡo ˈalɡo ˈpaɾa ti", bases: [{ word: "Tengo", ref: "es-0024" }, { word: "algo", base: "algo" }, { word: "para", base: "para" }, { word: "ti", base: "ti" }] }
+  - id: "es-0360"
+    target: "nada"
+    ipa: "ˈnada"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "No tengo nada.", ipa: "no ˈtenɡo ˈnada", bases: [{ word: "No", ref: "es-0043" }, { word: "tengo", ref: "es-0024" }, { word: "nada", base: "nada" }] }
+      - { target: "Ana no come nada.", ipa: "ˈana no ˈkome ˈnada", bases: [{ word: "Ana", base: "Ana" }, { word: "no", ref: "es-0043" }, { word: "come", ref: "es-0028" }, { word: "nada", base: "nada" }] }
+  - id: "es-0361"
+    target: "bastante"
+    ipa: "basˈtante"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La comida es bastante buena.", ipa: "la koˈmida es basˈtante ˈbwena", bases: [{ word: "La", base: "la" }, { word: "comida", ref: "es-0015" }, { word: "es", ref: "es-0022" }, { word: "bastante", base: "bastante" }, { word: "buena", ref: "es-0033" }] }
+      - { target: "Hay bastante agua para todos.", ipa: "aj basˈtante ˈaɡwa ˈpaɾa ˈtodos", bases: [{ word: "Hay", base: "haber" }, { word: "bastante", base: "bastante" }, { word: "agua", ref: "es-0012" }, { word: "para", base: "para" }, { word: "todos", ref: "es-0134" }] }
+  - id: "es-0362"
+    target: "demasiado"
+    ipa: "demaˈsjado"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hablas demasiado rápido.", ipa: "ˈablas demaˈsjado ˈrapido", bases: [{ word: "Hablas", ref: "es-0027" }, { word: "demasiado", base: "demasiado" }, { word: "rápido", ref: "es-0329" }] }
+      - { target: "Comemos demasiado pan.", ipa: "koˈmemos demaˈsjado pan", bases: [{ word: "Comemos", ref: "es-0028" }, { word: "demasiado", base: "demasiado" }, { word: "pan", ref: "es-0013" }] }
+  - id: "es-0363"
+    target: "más"
+    ipa: "mas"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quiero más agua.", ipa: "ˈkjeɾo mas ˈaɡwa", bases: [{ word: "Quiero", base: "querer" }, { word: "más", base: "más" }, { word: "agua", ref: "es-0012" }] }
+      - { target: "Ana come más que yo.", ipa: "ˈana ˈkome mas ke ʝo", bases: [{ word: "Ana", base: "Ana" }, { word: "come", ref: "es-0028" }, { word: "más", base: "más" }, { word: "que", base: "que" }, { word: "yo", ref: "es-0119" }] }
+  - id: "es-0364"
+    target: "menos"
+    ipa: "ˈmenos"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Trabajo menos los sábados.", ipa: "tɾaˈbaxo ˈmenos los ˈsabados", bases: [{ word: "Trabajo", ref: "es-0259" }, { word: "menos", base: "menos" }, { word: "los", base: "los" }, { word: "sábados", base: "sábados" }] }
+      - { target: "Bebo menos café que antes.", ipa: "ˈbebo ˈmenos kaˈfe ke ˈantes", bases: [{ word: "Bebo", ref: "es-0029" }, { word: "menos", base: "menos" }, { word: "café", base: "café" }, { word: "que", base: "que" }, { word: "antes", ref: "es-0335" }] }
+  - id: "es-0365"
+    target: "suficiente"
+    ipa: "sufiˈθjente"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tengo suficiente dinero para el viaje.", ipa: "ˈtenɡo sufiˈθjente diˈneɾo ˈpaɾa el ˈbjaxe", bases: [{ word: "Tengo", ref: "es-0024" }, { word: "suficiente", base: "suficiente" }, { word: "dinero", base: "dinero" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "viaje", base: "viaje" }] }
+      - { target: "¿Es suficiente para cuatro?", ipa: "es sufiˈθjente ˈpaɾa ˈkwatɾo", bases: [{ word: "Es", ref: "es-0022" }, { word: "suficiente", base: "suficiente" }, { word: "para", base: "para" }, { word: "cuatro", ref: "es-0208" }] }
+  - id: "es-0366"
+    target: "cada"
+    ipa: "ˈkada"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Como pan cada día.", ipa: "ˈkomo pan ˈkada ˈdia", bases: [{ word: "Como", ref: "es-0028" }, { word: "pan", ref: "es-0013" }, { word: "cada", base: "cada" }, { word: "día", ref: "es-0019" }] }
+      - { target: "Cada persona tiene un nombre.", ipa: "ˈkada peɾˈsona ˈtjene un ˈnombɾe", bases: [{ word: "Cada", base: "cada" }, { word: "persona", ref: "es-0135" }, { word: "tiene", ref: "es-0024" }, { word: "un", base: "un" }, { word: "nombre", ref: "es-0091" }] }
+  - id: "es-0367"
+    target: "varios"
+    ipa: "ˈbaɾjos"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Compré varios libros.", ipa: "komˈpɾe ˈbaɾjos ˈlibɾos", bases: [{ word: "Compré", ref: "es-0280" }, { word: "varios", base: "varios" }, { word: "libros", base: "libros" }] }
+      - { target: "Hay varias personas en la calle.", ipa: "aj ˈbaɾjas peɾˈsonas en la ˈkaʝe", bases: [{ word: "Hay", base: "haber" }, { word: "varias", base: "varios" }, { word: "personas", ref: "es-0135" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "calle", ref: "es-0017" }] }
+  - id: "es-0368"
+    target: "medio"
+    ipa: "ˈmedjo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quiero medio kilo de queso.", ipa: "ˈkjeɾo ˈmedjo ˈkilo de ˈkeso", bases: [{ word: "Quiero", base: "querer" }, { word: "medio", base: "medio" }, { word: "kilo", ref: "es-0375" }, { word: "de", base: "de" }, { word: "queso", base: "queso" }] }
+      - { target: "Comí media manzana.", ipa: "koˈmi ˈmedja manˈθana", bases: [{ word: "Comí", ref: "es-0028" }, { word: "media", base: "medio" }, { word: "manzana", base: "manzana" }] }
+  - id: "es-0369"
+    target: "la mitad"
+    ipa: "la miˈtad"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "mitad", base: "mitad" }]
+    examples:
+      - { target: "Comí la mitad del pan.", ipa: "koˈmi la miˈtad del pan", bases: [{ word: "Comí", ref: "es-0028" }, { word: "la", base: "la" }, { word: "mitad", base: "mitad" }, { word: "del", base: "del" }, { word: "pan", ref: "es-0013" }] }
+      - { target: "Ana bebe la mitad del agua.", ipa: "ˈana ˈbebe la miˈtad del ˈaɡwa", bases: [{ word: "Ana", base: "Ana" }, { word: "bebe", ref: "es-0029" }, { word: "la", base: "la" }, { word: "mitad", base: "mitad" }, { word: "del", base: "del" }, { word: "agua", ref: "es-0012" }] }
+  - id: "es-0370"
+    target: "doble"
+    ipa: "ˈdoble"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Un café cuesta el doble.", ipa: "un kaˈfe ˈkwesta el ˈdoble", bases: [{ word: "Un", base: "un" }, { word: "café", base: "café" }, { word: "cuesta", base: "costar" }, { word: "el", base: "el" }, { word: "doble", base: "doble" }] }
+      - { target: "Ahora gano el doble que antes.", ipa: "aˈoɾa ˈɡano el ˈdoble ke ˈantes", bases: [{ word: "Ahora", ref: "es-0333" }, { word: "gano", base: "ganar" }, { word: "el", base: "el" }, { word: "doble", base: "doble" }, { word: "que", base: "que" }, { word: "antes", ref: "es-0335" }] }
+  - id: "es-0371"
+    target: "entero"
+    ipa: "enˈteɾo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Comí una manzana entera.", ipa: "koˈmi ˈuna manˈθana enˈteɾa", bases: [{ word: "Comí", ref: "es-0028" }, { word: "una", base: "una" }, { word: "manzana", base: "manzana" }, { word: "entera", base: "entero" }] }
+      - { target: "Ana leyó el libro entero.", ipa: "ˈana leˈʝo el ˈlibɾo enˈteɾo", bases: [{ word: "Ana", base: "Ana" }, { word: "leyó", ref: "es-0296" }, { word: "el", base: "el" }, { word: "libro", ref: "es-0011" }, { word: "entero", base: "entero" }] }
+  - id: "es-0372"
+    target: "la cantidad"
+    ipa: "la kantiˈdad"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "cantidad", base: "cantidad" }]
+    examples:
+      - { target: "Hay una cantidad grande de arroz.", ipa: "aj ˈuna kantiˈdad ˈɡɾande de aˈroθ", bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "cantidad", base: "cantidad" }, { word: "grande", ref: "es-0031" }, { word: "de", base: "de" }, { word: "arroz", base: "arroz" }] }
+      - { target: "La cantidad de sal es pequeña.", ipa: "la kantiˈdad de sal es peˈkeɲa", bases: [{ word: "La", base: "la" }, { word: "cantidad", base: "cantidad" }, { word: "de", base: "de" }, { word: "sal", base: "sal" }, { word: "es", ref: "es-0022" }, { word: "pequeña", ref: "es-0032" }] }
+  - id: "es-0373"
+    target: "el par"
+    ipa: "el paɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "par", base: "par" }]
+    examples:
+      - { target: "Necesito un par de huevos.", ipa: "neθeˈsito un paɾ de ˈwebos", bases: [{ word: "Necesito", ref: "es-0288" }, { word: "un", base: "un" }, { word: "par", base: "par" }, { word: "de", base: "de" }, { word: "huevos", base: "huevos" }] }
+      - { target: "Ana compró un par de zapatos.", ipa: "ˈana komˈpɾo un paɾ de θaˈpatos", bases: [{ word: "Ana", base: "Ana" }, { word: "compró", ref: "es-0280" }, { word: "un", base: "un" }, { word: "par", base: "par" }, { word: "de", base: "de" }, { word: "zapatos", base: "zapatos" }] }
+  - id: "es-0374"
+    target: "la docena"
+    ipa: "la doˈθena"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "docena", base: "docena" }]
+    examples:
+      - { target: "Compré una docena de huevos.", ipa: "komˈpɾe ˈuna doˈθena de ˈwebos", bases: [{ word: "Compré", ref: "es-0280" }, { word: "una", base: "una" }, { word: "docena", base: "docena" }, { word: "de", base: "de" }, { word: "huevos", base: "huevos" }] }
+      - { target: "Hay una docena de rosas en el jarrón.", ipa: "aj ˈuna doˈθena de ˈrosas en el xaˈron", bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "docena", base: "docena" }, { word: "de", base: "de" }, { word: "rosas", base: "rosas" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "jarrón", base: "jarrón" }] }
+  - id: "es-0375"
+    target: "el kilo"
+    ipa: "el ˈkilo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "kilo", base: "kilo" }]
+    examples:
+      - { target: "Quiero un kilo de manzanas.", ipa: "ˈkjeɾo un ˈkilo de manˈθanas", bases: [{ word: "Quiero", base: "querer" }, { word: "un", base: "un" }, { word: "kilo", base: "kilo" }, { word: "de", base: "de" }, { word: "manzanas", base: "manzanas" }] }
+      - { target: "El kilo de pan cuesta dos euros.", ipa: "el ˈkilo de pan ˈkwesta dos ˈewɾos", bases: [{ word: "El", base: "el" }, { word: "kilo", base: "kilo" }, { word: "de", base: "de" }, { word: "pan", ref: "es-0013" }, { word: "cuesta", base: "costar" }, { word: "dos", ref: "es-0206" }, { word: "euros", base: "euros" }] }
+  - id: "es-0376"
+    target: "el gramo"
+    ipa: "el ˈɡɾamo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "gramo", base: "gramo" }]
+    examples:
+      - { target: "Necesito cien gramos de queso.", ipa: "neθeˈsito θjen ˈɡɾamos de ˈkeso", bases: [{ word: "Necesito", ref: "es-0288" }, { word: "cien", base: "cien" }, { word: "gramos", base: "gramo" }, { word: "de", base: "de" }, { word: "queso", base: "queso" }] }
+      - { target: "Un gramo de sal es muy poco.", ipa: "un ˈɡɾamo de sal es mwi ˈpoko", bases: [{ word: "Un", base: "un" }, { word: "gramo", base: "gramo" }, { word: "de", base: "de" }, { word: "sal", base: "sal" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "poco", ref: "es-0358" }] }
+  - id: "es-0377"
+    target: "el litro"
+    ipa: "el ˈlitɾo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "litro", base: "litro" }]
+    examples:
+      - { target: "Bebo dos litros de agua al día.", ipa: "ˈbebo dos ˈlitɾos de ˈaɡwa al ˈdia", bases: [{ word: "Bebo", ref: "es-0029" }, { word: "dos", ref: "es-0206" }, { word: "litros", base: "litro" }, { word: "de", base: "de" }, { word: "agua", ref: "es-0012" }, { word: "al", base: "al" }, { word: "día", ref: "es-0019" }] }
+      - { target: "Compro un litro de leche.", ipa: "ˈkompɾo un ˈlitɾo de ˈletʃe", bases: [{ word: "Compro", ref: "es-0280" }, { word: "un", base: "un" }, { word: "litro", base: "litro" }, { word: "de", base: "de" }, { word: "leche", ref: "es-0014" }] }
+  - id: "es-0378"
+    target: "el paquete"
+    ipa: "el paˈkete"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "paquete", base: "paquete" }]
+    examples:
+      - { target: "Compré un paquete de galletas.", ipa: "komˈpɾe un paˈkete de ɡaˈʝetas", bases: [{ word: "Compré", ref: "es-0280" }, { word: "un", base: "un" }, { word: "paquete", base: "paquete" }, { word: "de", base: "de" }, { word: "galletas", base: "galletas" }] }
+      - { target: "El paquete de arroz es grande.", ipa: "el paˈkete de aˈroθ es ˈɡɾande", bases: [{ word: "El", base: "el" }, { word: "paquete", base: "paquete" }, { word: "de", base: "de" }, { word: "arroz", base: "arroz" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }] }
+  - id: "es-0379"
+    target: "la botella"
+    ipa: "la boˈteʝa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "botella", base: "botella" }]
+    examples:
+      - { target: "Hay una botella de vino en la mesa.", ipa: "aj ˈuna boˈteʝa de ˈbino en la ˈmesa", bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "botella", base: "botella" }, { word: "de", base: "de" }, { word: "vino", base: "vino" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }] }
+      - { target: "Ana abre la botella.", ipa: "ˈana ˈabɾe la boˈteʝa", bases: [{ word: "Ana", base: "Ana" }, { word: "abre", ref: "es-0298" }, { word: "la", base: "la" }, { word: "botella", base: "botella" }] }
+  - id: "es-0380"
+    target: "la bolsa"
+    ipa: "la ˈbolsa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "bolsa", base: "bolsa" }]
+    examples:
+      - { target: "Ana lleva una bolsa grande.", ipa: "ˈana ˈʝeba ˈuna ˈbolsa ˈɡɾande", bases: [{ word: "Ana", base: "Ana" }, { word: "lleva", base: "llevar" }, { word: "una", base: "una" }, { word: "bolsa", base: "bolsa" }, { word: "grande", ref: "es-0031" }] }
+      - { target: "Pongo la bolsa en el suelo.", ipa: "ˈponɡo la ˈbolsa en el ˈswelo", bases: [{ word: "Pongo", base: "poner" }, { word: "la", base: "la" }, { word: "bolsa", base: "bolsa" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "suelo", base: "suelo" }] }
+  - id: "es-0381"
+    target: "la lata"
+    ipa: "la ˈlata"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "lata", base: "lata" }]
+    examples:
+      - { target: "Compré una lata de tomates.", ipa: "komˈpɾe ˈuna ˈlata de toˈmates", bases: [{ word: "Compré", ref: "es-0280" }, { word: "una", base: "una" }, { word: "lata", base: "lata" }, { word: "de", base: "de" }, { word: "tomates", base: "tomates" }] }
+      - { target: "Esta lata está vacía.", ipa: "ˈesta ˈlata esˈta baˈθia", bases: [{ word: "Esta", base: "esta" }, { word: "lata", base: "lata" }, { word: "está", ref: "es-0023" }, { word: "vacía", base: "vacío" }] }
+  - id: "es-0382"
+    target: "la caja"
+    ipa: "la ˈkaxa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "caja", base: "caja" }]
+    examples:
+      - { target: "Hay una caja de galletas en el armario.", ipa: "aj ˈuna ˈkaxa de ɡaˈʝetas en el aɾˈmaɾjo", bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "caja", base: "caja" }, { word: "de", base: "de" }, { word: "galletas", base: "galletas" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "armario", base: "armario" }] }
+      - { target: "La caja está abierta.", ipa: "la ˈkaxa esˈta aˈbjeɾta", bases: [{ word: "La", base: "la" }, { word: "caja", base: "caja" }, { word: "está", ref: "es-0023" }, { word: "abierta", base: "abierto" }] }
+  - id: "es-0383"
+    target: "la taza"
+    ipa: "la ˈtaθa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "taza", base: "taza" }]
+    examples:
+      - { target: "Tomo una taza de café.", ipa: "ˈtomo ˈuna ˈtaθa de kaˈfe", bases: [{ word: "Tomo", base: "tomar" }, { word: "una", base: "una" }, { word: "taza", base: "taza" }, { word: "de", base: "de" }, { word: "café", base: "café" }] }
+      - { target: "Ana lava la taza.", ipa: "ˈana ˈlaba la ˈtaθa", bases: [{ word: "Ana", base: "Ana" }, { word: "lava", ref: "es-0286" }, { word: "la", base: "la" }, { word: "taza", base: "taza" }] }
+  - id: "es-0384"
+    target: "el trozo"
+    ipa: "el ˈtɾoθo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "trozo", base: "trozo" }]
+    examples:
+      - { target: "Como un trozo de pan.", ipa: "ˈkomo un ˈtɾoθo de pan", bases: [{ word: "Como", ref: "es-0028" }, { word: "un", base: "un" }, { word: "trozo", base: "trozo" }, { word: "de", base: "de" }, { word: "pan", ref: "es-0013" }] }
+      - { target: "Ana corta un trozo de queso.", ipa: "ˈana ˈkoɾta un ˈtɾoθo de ˈkeso", bases: [{ word: "Ana", base: "Ana" }, { word: "corta", base: "cortar" }, { word: "un", base: "un" }, { word: "trozo", base: "trozo" }, { word: "de", base: "de" }, { word: "queso", base: "queso" }] }
+  - id: "es-0385"
+    target: "el montón"
+    ipa: "el monˈton"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "montón", base: "montón" }]
+    examples:
+      - { target: "Tengo un montón de trabajo.", ipa: "ˈtenɡo un monˈton de tɾaˈbaxo", bases: [{ word: "Tengo", ref: "es-0024" }, { word: "un", base: "un" }, { word: "montón", base: "montón" }, { word: "de", base: "de" }, { word: "trabajo", ref: "es-0259" }] }
+      - { target: "Hay un montón de gente en la calle.", ipa: "aj un monˈton de ˈxente en la ˈkaʝe", bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "montón", base: "montón" }, { word: "de", base: "de" }, { word: "gente", base: "gente" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "calle", ref: "es-0017" }] }
+  - id: "es-0386"
+    target: "el resto"
+    ipa: "el ˈresto"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "resto", base: "resto" }]
+    examples:
+      - { target: "Como el resto del pan.", ipa: "ˈkomo el ˈresto del pan", bases: [{ word: "Como", ref: "es-0028" }, { word: "el", base: "el" }, { word: "resto", base: "resto" }, { word: "del", base: "del" }, { word: "pan", ref: "es-0013" }] }
+      - { target: "Ana lee el resto del libro.", ipa: "ˈana ˈlee el ˈresto del ˈlibɾo", bases: [{ word: "Ana", base: "Ana" }, { word: "lee", ref: "es-0296" }, { word: "el", base: "el" }, { word: "resto", base: "resto" }, { word: "del", base: "del" }, { word: "libro", ref: "es-0011" }] }
+  - id: "es-0387"
+    target: "pesar"
+    ipa: "peˈsaɾ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Esta maleta pesa mucho.", ipa: "ˈesta maˈleta ˈpesa ˈmutʃo", bases: [{ word: "Esta", base: "esta" }, { word: "maleta", base: "maleta" }, { word: "pesa", base: "pesar" }, { word: "mucho", ref: "es-0053" }] }
+      - { target: "¿Cuánto pesas?", ipa: "ˈkwanto ˈpesas", bases: [{ word: "Cuánto", ref: "es-0060" }, { word: "pesas", base: "pesar" }] }
