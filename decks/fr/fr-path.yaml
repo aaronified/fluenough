@@ -24,8 +24,8 @@
 #    sounds in the sounds file (fr-sounds.yaml), when they are written;
 # 4. a core of about 200 common words in themed units, before the large
 #    tables ("Yes, smaller (~200)");
-# 5. rules as forms: articles and gender (with elision), the one verb "to
-#    be" and "to have", the regular present, negation and questions,
+# 5. rules as forms: articles and gender (with elision), the plural, the
+#    one verb "to be" and "to have", the regular present, negation and questions,
 #    prepositions and their contractions, then the other verb forms,
 #    practised on the words already known;
 # 6. sentences, each after its words and rules; then the other themes,
@@ -34,7 +34,8 @@
 # docs/plans/language-paths-scheme.md within each level, with the
 # scheme's French adjustments: a single "to be" (etre, taught with avoir,
 # which the compound past needs), and no ser/estar step. So: articles and
-# gender, to be and to have, the regular present, the irregular present,
+# gender, the plural (the tense, number and gender audit of 2026-10-23),
+# to be and to have, the regular present, the irregular present,
 # prepositions, object pronouns (with y and en), reflexives, the past
 # (passe compose and imparfait), the future and the conditional, the
 # subjunctive, and the compound tenses. French adds the partitive, the
@@ -172,6 +173,11 @@ units:
       - { id: "le-or-la", text: { "en": "Naming things in a kitchen with le, la, l' and les, un and une" } }
     reading_passages:
       - { id: "shop-labels", text: { "en": "Labels on the shelves of a small shop" } }
+  - planned: { id: "fr-grammar-plural", grammar: "plural" }
+    listening_passages:
+      - { id: "several-things", text: { "en": "Naming several things in a kitchen: les, des and the plural endings" } }
+    reading_passages:
+      - { id: "plural-labels", text: { "en": "Shop labels for one item and for several" } }
   - planned: { id: "fr-grammar-etre-avoir", grammar: ["etre", "avoir"] }
     listening_passages:
       - { id: "who-and-what-they-have", text: { "en": "Saying who someone is and what they have" } }
