@@ -1,6 +1,5 @@
 import '../models/drill_mode.dart';
 import '../models/reading.dart';
-import 'ask.dart';
 import 'session_queue.dart';
 
 /// What the app knows about an item that the registry cannot read from its
@@ -57,7 +56,7 @@ bool _startsTyped(SessionItem item, QuestionContext context) =>
     item.state == null && (context.recallsFirst?.call(item) ?? false);
 
 /// Shown the target, choose its meaning. Recognition, and the types of the
-/// same skill that group several items ([matchPairs]) start from it.
+/// same skill that group several items ([matchPairsType]) start from it.
 final QuestionType chooseMeaningType = QuestionType(
   ask: Ask.chooseMeaning,
   skill: DrillMode.recognition,
