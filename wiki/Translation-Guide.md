@@ -77,4 +77,6 @@ Decks are licensed CC BY-SA 4.0 ([Deck licences and quoted books](Deck-Licences-
 
 A learner says which languages they know from `assets/languages.yaml`. A new language is a new entry there, with no code change. A new script's name is added to `scriptName` in `app_en.arb`.
 
+The list holds the languages people speak, living or constructed: every language a course path teaches, except the ancient ones nobody speaks (Sumerian, Egyptian, Mycenaean Greek, Proto-Indo-European), which are left out (owner, 2026-10-23: "Spoken ones only"). Each entry has a `family`, one of `indo_aryan`, `dravidian`, `tibeto_burman`, `austroasiatic`, `germanic`, `romance`, `sinitic`, `koreanic`, `japonic` or `constructed`; a new family is named in `knownFamily` in `app_en.arb`. The scripts a language is written in are named as the deck files name them (`han_simplified`, `han_traditional`, `kana`, `hangul`, `cyrillic`), each with a name in `scriptName`. No test fixes how many languages there are, so adding one changes no test.
+
 See also: [Home](Home), [Contributing](Contributing).
