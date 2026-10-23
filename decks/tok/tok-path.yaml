@@ -202,11 +202,8 @@ units:
     words: 0
     grammar: ["o-commands", "o-address"]
   # telo, kili, suwi, seli and lete.
-  - planned: { id: "tok-food", theme: "food", words: 5 }
-    listening_passages:
-      - { id: "what-to-eat", text: { "en": "Two friends decide what to eat and drink" } }
-    reading_passages:
-      - { id: "simple-menu", text: { "en": "A simple café menu described in toki pona words" } }
+  - decks: ["tok-food", "tok-food-sentences", "tok-reading-food", "*"]
+    words: 5
   # wan, tu, luka, ale and nanpa; mute is already known. The simple
   # system (wan, tu, mute) and counting with luka; nanpa for ordinals.
   # The full nasin nanpa pona is B1's.
