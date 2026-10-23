@@ -1,14 +1,18 @@
 // How placed words are reviewed (#761): each choice's effect on the queue,
 // switching back, and that the choice is kept for the course.
 import 'package:flutter_test/flutter_test.dart';
+import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/memory_progress.dart';
+import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/core/grading/self_grade.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/models/review_event.dart' show ProgressKey;
 import 'package:fluenough/core/scheduling/deck_sampling.dart';
 import 'package:fluenough/core/scheduling/placed_review.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
+import 'package:fluenough/features/drill/drill_session.dart';
 
 void main() {
   group('placed words follow their course\'s choice', () {
@@ -123,6 +127,88 @@ void main() {
       expect(again.placedReviewOf('hi'), PlacedReview.setInStone);
       expect(again.placedAtOf('hi'), <int>{1767607200});
       expect(again.placedReviewOf('bn'), PlacedReview.spotCheck);
+    });
+  });
+
+  group('Set in stone from a deck page (#761)', () {
+    late AppState state;
+    late List<Card> placed;
+    late Card learnt;
+
+    setUp(() async {
+      state = AppState.test();
+      await state.load();
+      final deck = state.deckById('es-en-core-100')!;
+      final code = deck.language.code;
+      final placedAt = state.now().subtract(const Duration(days: 90));
+      placed = deck.cards.take(5).toList();
+      learnt = deck.cards[6];
+      for (final card in placed) {
+        state.progress.record(
+          deckId: deck.id,
+          cardId: card.id,
+          mode: DrillMode.recognition,
+          grade: 5,
+          now: placedAt,
+        );
+      }
+      state.settings
+        ..addPlacedAt(code, placedAt.millisecondsSinceEpoch ~/ 1000)
+        ..setPlacedReview(code, PlacedReview.setInStone)
+        ..learningLanguages = <String>[code];
+    });
+
+    tearDown(() => state.dispose());
+
+    Set<String> dueIn(DrillRequest request) => {
+      for (final item in state.buildSession(request).due) item.card.id,
+    };
+
+    test('Today never asks the placed words', () {
+      final today = dueIn(const DrillRequest.today(language: 'es'));
+      expect(today.intersection({for (final c in placed) c.id}), isEmpty);
+    });
+
+    test('the deck page still offers them for review', () {
+      final due = dueIn(DrillRequest.deck('es-en-core-100'));
+      expect(due, containsAll(<String>[for (final c in placed) c.id]));
+    });
+
+    test('answering a placed word writes no review, and a word learned '
+        'after placement still does', () {
+      final before = state.progress.log.length;
+      final placedSession = DrillSession(
+        state: state,
+        items: <SessionItem>[
+          SessionItem(
+            card: placed.first,
+            mode: DrillMode.recognition,
+            state: state.progress.stateOf(
+              placed.first.id,
+              DrillMode.recognition,
+            ),
+          ),
+        ],
+      )..reveal();
+      placedSession.rate(SelfGrade.good);
+      addTearDown(placedSession.dispose);
+      expect(placedSession.answers, hasLength(1));
+      expect(state.progress.log, hasLength(before));
+
+      final learntSession = DrillSession(
+        state: state,
+        items: <SessionItem>[
+          SessionItem(card: learnt, mode: DrillMode.recognition, state: null),
+        ],
+      )..reveal();
+      learntSession.rate(SelfGrade.good);
+      addTearDown(learntSession.dispose);
+      expect(state.progress.log, hasLength(before + 1));
+    });
+
+    test('the deck counts them as learnt', () {
+      final counts = state.countsFor(state.deckById('es-en-core-100')!);
+      expect(counts.learned, greaterThanOrEqualTo(placed.length));
     });
   });
 }

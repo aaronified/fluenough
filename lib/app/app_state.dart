@@ -1598,6 +1598,12 @@ class AppState extends ChangeNotifier {
             !settings.isOffFor(Skill.speaking, entry.language.code),
     };
     final leeches = progress.leechEffects;
+    final fromToday =
+        ids == null &&
+        request.cardIds == null &&
+        !request.revise &&
+        !request.lesson &&
+        !request.numbers;
     SessionQueue queueOf(
       List<Card> cards, {
       required int newCardLimit,
@@ -1619,15 +1625,11 @@ class AppState extends ChangeNotifier {
       // Today and a language's review show a few of a deck's known cards
       // for the deck (#680); a deck's own review, a lesson and revising
       // show them all.
-      sampleKnown:
-          ids == null &&
-          request.cardIds == null &&
-          !request.revise &&
-          !request.lesson &&
-          !request.numbers,
-      // What placement credited follows its course's choice (#761);
-      // revising shows every word.
-      placedOf: request.revise ? null : placedReviewOf,
+      sampleKnown: fromToday,
+      // What placement credited follows its course's choice (#761), but
+      // only in Today: from a deck page the learner can revise or practise
+      // placed words, whatever the choice.
+      placedOf: fromToday ? placedReviewOf : null,
       modes: modes,
       canIntroduce: canIntroduce,
       siblingsOf: siblingsOf,
@@ -1701,6 +1703,12 @@ class AppState extends ChangeNotifier {
     final choice = settings.placedReviewOf(code);
     return choice == PlacedReview.keepReviewing ? null : choice;
   }
+
+  /// Whether answering [item] writes no review (#761): a pair placement
+  /// credited in a course set to Set in stone, which the learner can still
+  /// revise or practise from a deck page, as it counts as learnt already.
+  bool keepsOutOfLog(SessionItem item) =>
+      placedReviewOf(item.card, item.mode) == PlacedReview.setInStone;
 
   Set<String> _placedAcross() {
     final placed = settings.placedDecks;

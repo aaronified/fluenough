@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- After placement, choose per course how the placed words are reviewed: Set in stone (no reviews, counted as known), Spot-check (the default: sampled, a miss widens coverage) or Keep reviewing; changeable from a Placed words row in Languages I'm learning, and switching away from Set in stone returns the words to reviews (#761).
+- After placement, choose per course how the placed words are reviewed: Set in stone (kept out of Today and counted as known; from a deck page the words can still be revised or practised, without writing reviews), Spot-check (the default: sampled, a miss widens coverage) or Keep reviewing; changeable from a Placed words row in Languages I'm learning, and switching away from Set in stone returns the words to reviews (#761).
 - A lesson asks each skill as the first question type the card's data allows (the registry, not a switch on difficulty), and reads a card's single-base siblings, so a card with sibling forms, or a pattern cell with siblings, is also asked its grammar skills (form questions); lessons of cards without siblings are unchanged (#522).
 - `letter` and `digit` are parts of speech of a card, and a card may be marked `hears: form`; Hear asks for the form of such a card, and of a generated number, by the card's own data, not by whether its deck is on the alphabet list (#522, step 7).
 - `modes` on a card is now an opt-out: the skills it is excluded from, so a card with none is asked every skill its data allows, including the grammar skills where it has single-base siblings; `tools/convert_modes.py` converts the shipped lists, merged with the release that reads them this way (#522, step 6).

@@ -34,7 +34,7 @@ Settings is a list of pages.
 
 In Languages I'm learning, a course you have been placed in has a "Placed words" row under Find my level. It opens a sheet with the three choices: Set in stone, Spot-check (the default) and Keep reviewing. Tapping one applies it at once.
 
-- **Set in stone:** the words placement found you know get no reviews, and count as known.
+- **Set in stone:** the words placement found you know stay out of Today and count as known. You can still revise or practise them from the deck's page; those answers are not logged as reviews, and the deck shows the words as learnt.
 - **Spot-check:** a few of them are tested each day, and a miss brings more of that deck back, then all of it.
 - **Keep reviewing:** they are reviewed like any other word.
 
