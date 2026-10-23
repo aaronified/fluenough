@@ -1,0 +1,96 @@
+"schema": 1
+"id": "bn-en-reading-school"
+"name": "Reading: school"
+"kind": "reading"
+"language":
+  "code": "bn"
+  "iso639_3": "ben"
+  "name": "Bengali"
+  "script": "bengali"
+  "tts": "bn-IN"
+  "icon": "বা"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for the Fluenough Bengali course"
+"description": "A school day and a class timetable, each with its questions. Not yet checked by a Bengali speaker: please report any mistake."
+"tags":
+  - "reading"
+  - "unreviewed"
+"passages":
+  - "id": "bn-school-day"
+    "title": "A school day"
+    "theme": "school"
+    "sentences":
+      - "text": "আমি সকালে স্কুলে যাই।"
+        "reading": "āmi śôkāle skule jāi."
+        "ipa": "ami sɔkale skule dʒai"
+      - "text": "প্রথম ক্লাসে ইংরেজী পড়ি।"
+        "reading": "prôthom klāse iṅrejī pôṛi."
+        "ipa": "prɔt̪ʰom klase iŋredʒi poɽi"
+      - "text": "দুপুরে টিফিনের ছুটি হয়।"
+        "reading": "dupure ṭiphiner chuṭi hôy."
+        "ipa": "d̪upure ʈipʰiner tʃʰuʈi ɦɔj"
+      - "text": "আমার প্রিয় বিষয় বিজ্ঞান।"
+        "reading": "āmār priyo biśoy bijñān."
+        "ipa": "amar prij biʃoj biɡɡan"
+    "questions":
+      - "id": "bn-1925"
+        "prompt":
+          "en": "The speaker goes to school in the evening."
+        "answer": false
+      - "id": "bn-1926"
+        "prompt":
+          "en": "What is the speaker's favourite subject?"
+        "options":
+          - "en": "Science"
+          - "en": "Maths"
+          - "en": "Geography"
+        "answer": 1
+      - "id": "bn-1927"
+        "prompt":
+          "en": "When is the break?"
+        "options":
+          - "en": "At midday"
+          - "en": "In the morning"
+          - "en": "At night"
+        "answer": 1
+  - "id": "bn-class-timetable"
+    "title": "A class timetable"
+    "theme": "school"
+    "sentences":
+      - "text": "প্রথম ক্লাস: ইংরেজী।"
+        "reading": "prôthom klās iṅrejī."
+        "ipa": "prɔt̪ʰom klas iŋredʒi"
+      - "text": "দ্বিতীয় ক্লাস: অঙ্ক।"
+        "reading": "ditiyo klās ôṅk."
+        "ipa": "d̪it̪ij klas ɔŋk"
+      - "text": "টিফিন।"
+        "reading": "ṭiphin."
+        "ipa": "ʈipʰin"
+      - "text": "শেষ ক্লাস: ইতিহাস।"
+        "reading": "śeś klās itihās."
+        "ipa": "ʃeʃ klas it̪iɦas"
+    "questions":
+      - "id": "bn-1928"
+        "prompt":
+          "en": "The second class is maths."
+        "answer": true
+      - "id": "bn-1929"
+        "prompt":
+          "en": "Which is the last class?"
+        "options":
+          - "en": "History"
+          - "en": "Science"
+          - "en": "English"
+        "answer": 1
+      - "id": "bn-1930"
+        "prompt":
+          "en": "What comes between the second class and the last class?"
+        "options":
+          - "en": "Tiffin"
+          - "en": "English"
+          - "en": "Maths"
+        "answer": 1
