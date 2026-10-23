@@ -76,18 +76,33 @@ schema: 1
     "kind": "note"
   "bases": "self"
   "examples":
-  - "target": "一，两，三。"
-    "reading": "yī, liǎng, sān."
-    "words":
-    - "一"
-    - "两"
-    - "三"
-  - "target": "两，四，六。"
-    "reading": "liǎng, sì, liù."
+  - "target": "两个人。"
+    "reading": "liǎng ge rén."
     "words":
     - "两"
-    - "四"
-    - "六"
+    - "个"
+    - "人"
+    "bases":
+    - "word": "个"
+      "base": "个"
+      "reading": "ge"
+  - "target": "我有两个孩子。"
+    "reading": "wǒ yǒu liǎng ge háizi."
+    "words":
+    - "我"
+    - "有"
+    - "两"
+    - "个"
+    - "孩子"
+    "bases":
+    - "word": "有"
+      "base": "有"
+      "reading": "yǒu"
+    - "word": "个"
+      "base": "个"
+      "reading": "ge"
+    - "word": "孩子"
+      "ref": "zh-0193"
 - "id": "zh-0212"
   "target": "三"
   "words":

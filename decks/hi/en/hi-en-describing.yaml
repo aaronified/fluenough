@@ -1,0 +1,191 @@
+schema: 1
+id: "hi-en-describing"
+kind: "layer"
+core: "hi-describing"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Describing things and feelings"
+license: "CC-BY-SA-4.0"
+description: "Words that describe things and feelings: big and small, new and old, good and bad, the colours, hot and cold, and how you feel. Each adjective shows how it changes with its noun. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-0894":
+    native: "big"
+    notes: { use: "बड़ा (baṛā), 'big'. It agrees with its noun: बड़ी (baṛī) before a feminine noun, बड़े (baṛē) before a masculine plural or a postposition." }
+    examples:
+      "यह घर बड़ा है।": { native: "This house is big.", bases: { "बड़ा": "big" } }
+      "बहुत बड़ा शहर है।": { native: "It is a very big city.", bases: { "बड़ा": "big" } }
+    collocations: { "city": "city" }
+  "hi-0895":
+    native: "small"
+    notes: { use: "छोटा (chōṭā), 'small'. It agrees with its noun: छोटी (chōṭī) before a feminine noun, छोटे (chōṭē) before a masculine plural or a postposition." }
+    examples:
+      "यह बच्चा छोटा है।": { native: "This child is small.", bases: { "छोटा": "small" } }
+      "छोटे बच्चे स्कूल गए।": { native: "The small children went to school.", bases: { "छोटे": "small", "स्कूल": "school" } }
+  "hi-0896":
+    native: "new"
+    notes: { use: "नया (nayā), 'new'. It agrees with its noun: नई (naī) before a feminine noun, नए (naē) before a masculine plural or a postposition." }
+    examples:
+      "यह मेरा नया घर है।": { native: "This is my new house.", bases: { "नया": "new" } }
+      "नई कुर्सी काफ़ी अच्छी है।": { native: "The new chair is quite good.", bases: { "नई": "new", "अच्छी": "good" } }
+  "hi-0897":
+    native: "old"
+    notes: { use: "पुराना (purānā), 'old'. It agrees with its noun: पुरानी (purānī) before a feminine noun, पुराने (purānē) before a masculine plural or a postposition." }
+    examples:
+      "यह पुरानी कुर्सी है।": { native: "This is an old chair.", bases: { "पुरानी": "old" } }
+      "हमारा घर बहुत पुराना है।": { native: "Our house is very old.", bases: { "पुराना": "old" } }
+  "hi-0898":
+    native: "good"
+    notes: { use: "अच्छा (acchā), 'good'. It agrees with its noun: अच्छी (acchī) before a feminine noun, अच्छे (acchē) before a masculine plural or a postposition." }
+    examples:
+      "चाय अच्छी है।": { native: "The tea is good.", bases: { "अच्छी": "good" } }
+      "आज का दिन अच्छा है।": { native: "Today is a good day.", bases: { "अच्छा": "good" } }
+  "hi-0899":
+    native: "bad"
+    notes: { use: "बुरा (burā), 'bad'. It agrees with its noun: बुरी (burī) before a feminine noun, बुरे (burē) before a masculine plural or a postposition." }
+    examples:
+      "यह बुरा नहीं है।": { native: "This is not bad.", bases: { "बुरा": "bad" } }
+      "बुरे लोग नहीं हैं।": { native: "There are no bad people.", bases: { "बुरे": "bad" } }
+  "hi-0900":
+    native: "beautiful"
+    notes: { use: "सुंदर (sundar), 'beautiful'. It does not change: सुंदर (sundar) stays the same before a feminine noun, a masculine plural or a postposition." }
+    examples:
+      "यह फूल सुंदर है।": { native: "This flower is beautiful.", bases: { "फूल": "flower", "सुंदर": "beautiful" } }
+      "वह सुंदर है।": { native: "She is beautiful.", bases: { "सुंदर": "beautiful" } }
+    synonyms: { "beautiful-persian": "beautiful (Persian-leaning)" }
+  "hi-0901":
+    native: "clean"
+    notes: { use: "साफ़ (sāf), 'clean'. It does not change: साफ़ (sāf) stays the same before any noun." }
+    examples:
+      "कमरा साफ़ है।": { native: "The room is clean.", bases: { "साफ़": "clean" } }
+      "पानी साफ़ है।": { native: "The water is clean.", bases: { "साफ़": "clean" } }
+    synonyms: { "clean-sanskrit": "clean (Sanskrit-leaning)" }
+  "hi-0902":
+    native: "dirty"
+    notes: { use: "गंदा (gandā), 'dirty'. It agrees with its noun: गंदी (gandī) before a feminine noun, गंदे (gandē) before a masculine plural or a postposition." }
+    examples:
+      "यह मेज़ गंदी है।": { native: "This table is dirty.", bases: { "गंदी": "dirty" } }
+      "सड़क बहुत गंदी है।": { native: "The road is very dirty.", bases: { "गंदी": "dirty" } }
+  "hi-0903":
+    native: "fresh"
+    notes: { use: "ताज़ा (tāzā), 'fresh'. It agrees with its noun: ताज़ी (tāzī) before a feminine noun, ताज़े (tāzē) before a masculine plural or a postposition." }
+    examples:
+      "यह दूध ताज़ा है।": { native: "This milk is fresh.", bases: { "ताज़ा": "fresh" } }
+      "ताज़े अंडे लीजिए।": { native: "Take fresh eggs.", bases: { "ताज़े": "fresh" } }
+  "hi-0904":
+    native: "easy"
+    notes: { use: "आसान (āsān), 'easy'. It does not change: आसान (āsān) stays the same before any noun." }
+    examples:
+      "यह काम आसान है।": { native: "This work is easy.", bases: { "आसान": "easy" } }
+      "यह आसान नहीं है।": { native: "This is not easy.", bases: { "आसान": "easy" } }
+    synonyms: { "easy-sanskrit": "easy, simple (Sanskrit-leaning)" }
+  "hi-0905":
+    native: "difficult"
+    notes: { use: "मुश्किल (muśkil), 'difficult'. It does not change: मुश्किल (muśkil) stays the same before any noun." }
+    examples:
+      "यह काम मुश्किल है।": { native: "This work is difficult.", bases: { "मुश्किल": "difficult" } }
+      "सुबह का काम थोड़ा मुश्किल है।": { native: "This morning's work is a little difficult.", bases: { "मुश्किल": "difficult" } }
+    synonyms: { "difficult-sanskrit": "difficult, hard (Sanskrit-leaning)" }
+  "hi-0906":
+    native: "long, tall"
+    notes: { use: "लंबा (lambā), 'long, tall'. It agrees with its noun: लंबी (lambī) before a feminine noun, लंबे (lambē) before a masculine plural or a postposition. Of a person it means tall." }
+    examples:
+      "वह लंबा आदमी है।": { native: "He is a tall man.", bases: { "लंबा": "tall" } }
+      "लंबी सड़क है।": { native: "It is a long road.", bases: { "लंबी": "long" } }
+  "hi-0907":
+    native: "high, tall"
+    notes: { use: "ऊँचा (ūm̐cā), 'high, tall'. Of a thing it means high or tall. It agrees with its noun: ऊँची (ūm̐cī) before a feminine noun, ऊँचे (ūm̐cē) before a masculine plural or a postposition." }
+    examples:
+      "यह पेड़ ऊँचा है।": { native: "This tree is tall.", bases: { "पेड़": "tree", "ऊँचा": "tall" } }
+      "हमारा घर ऊँचा नहीं है।": { native: "Our house is not tall.", bases: { "ऊँचा": "tall" } }
+  "hi-0908":
+    native: "heavy"
+    notes: { use: "भारी (bhārī), 'heavy'. It does not change: भारी (bhārī) stays the same before any noun." }
+    examples:
+      "यह बैग भारी है।": { native: "This bag is heavy.", bases: { "बैग": "bag", "भारी": "heavy" } }
+      "यह मेज़ भारी है।": { native: "This table is heavy.", bases: { "भारी": "heavy" } }
+  "hi-0909":
+    native: "light, not heavy"
+    notes: { use: "हल्का (halkā), 'light, not heavy'. It agrees with its noun: हल्की (halkī) before a feminine noun, हल्के (halkē) before a masculine plural or a postposition." }
+    examples:
+      "यह बैग हल्का है।": { native: "This bag is light.", bases: { "बैग": "bag", "हल्का": "light" } }
+      "मुझे हल्का खाना चाहिए।": { native: "I need light food.", bases: { "हल्का": "light" } }
+  "hi-0910":
+    native: "hot"
+    notes: { use: "गरम (garam), 'hot'. It does not change: गरम (garam) stays the same before any noun." }
+    examples:
+      "चाय बहुत गरम है।": { native: "The tea is very hot.", bases: { "गरम": "hot" } }
+      "पानी गरम है।": { native: "The water is hot.", bases: { "गरम": "hot" } }
+    collocations: { "tea": "tea" }
+  "hi-0911":
+    native: "cold"
+    notes: { use: "ठंडा (ṭhaṇḍā), 'cold'. It agrees with its noun: ठंडी (ṭhaṇḍī) before a feminine noun, ठंडे (ṭhaṇḍē) before a masculine plural or a postposition." }
+    examples:
+      "यह पानी ठंडा है।": { native: "This water is cold.", bases: { "ठंडा": "cold" } }
+      "ठंडी चाय पीजिए।": { native: "Drink the cold tea.", bases: { "ठंडी": "cold" } }
+    collocations: { "water": "water" }
+  "hi-0912":
+    native: "happy"
+    notes: { use: "खुश (khuś), 'happy'. It does not change: खुश (khuś) stays the same before any noun." }
+    examples:
+      "मैं खुश हूँ।": { native: "I am happy.", bases: { "खुश": "happy" } }
+      "वह आज बहुत खुश है।": { native: "She is very happy today.", bases: { "खुश": "happy" } }
+    synonyms: { "happy-sanskrit": "happy, pleased (Sanskrit-leaning)" }
+  "hi-0913":
+    native: "sad"
+    notes: { use: "दुखी (dukhī), 'sad'. It does not change: दुखी (dukhī) stays the same before any noun." }
+    examples:
+      "वह दुखी है।": { native: "He is sad.", bases: { "दुखी": "sad" } }
+      "बच्चे दुखी हैं।": { native: "The children are sad.", bases: { "दुखी": "sad" } }
+    synonyms: { "sad-persian": "sad, sorrowful (Persian-leaning)" }
+  "hi-0914":
+    native: "tired"
+    notes: { use: "थका (thakā), 'tired'. It agrees with its noun: थकी (thakī) before a feminine noun, थके (thakē) before a masculine plural or a postposition." }
+    examples:
+      "मैं थका हूँ।": { native: "I am tired.", bases: { "थका": "tired" } }
+      "वह बहुत थकी है।": { native: "She is very tired.", bases: { "थकी": "tired" } }
+  "hi-0915":
+    native: "hungry"
+    notes: { use: "भूखा (bhūkhā), 'hungry'. It agrees with its noun: भूखी (bhūkhī) before a feminine noun, भूखे (bhūkhē) before a masculine plural or a postposition." }
+    examples:
+      "बच्चा भूखा है।": { native: "The child is hungry.", bases: { "भूखा": "hungry" } }
+      "हम सब भूखे हैं।": { native: "We are all hungry.", bases: { "भूखे": "hungry" } }
+  "hi-0916":
+    native: "red"
+    notes: { use: "लाल (lāl), 'red'. It does not change: लाल (lāl) stays the same before any noun." }
+    examples:
+      "यह सेब लाल है।": { native: "This apple is red.", bases: { "सेब": "apple", "लाल": "red" } }
+      "लाल फूल सुंदर है।": { native: "The red flower is beautiful.", bases: { "लाल": "red", "फूल": "flower" } }
+  "hi-0917":
+    native: "green"
+    notes: { use: "हरा (harā), 'green'. It agrees with its noun: हरी (harī) before a feminine noun, हरे (harē) before a masculine plural or a postposition." }
+    examples:
+      "यह मेज़ हरी है।": { native: "This table is green.", bases: { "हरी": "green" } }
+      "हरी चाय अच्छी है।": { native: "Green tea is good.", bases: { "हरी": "green", "अच्छी": "good" } }
+  "hi-0918":
+    native: "blue"
+    notes: { use: "नीला (nīlā), 'blue'. It agrees with its noun: नीली (nīlī) before a feminine noun, नीले (nīlē) before a masculine plural or a postposition." }
+    examples:
+      "आसमान नीला है।": { native: "The sky is blue.", bases: { "आसमान": "sky", "नीला": "blue" } }
+      "यह नीली जोड़ी है।": { native: "This is a blue pair.", bases: { "नीली": "blue" } }
+  "hi-0919":
+    native: "yellow"
+    notes: { use: "पीला (pīlā), 'yellow'. It agrees with its noun: पीली (pīlī) before a feminine noun, पीले (pīlē) before a masculine plural or a postposition." }
+    examples:
+      "केला पीला है।": { native: "The banana is yellow.", bases: { "केला": "banana", "पीला": "yellow" } }
+      "पीले फूल सुंदर हैं।": { native: "Yellow flowers are beautiful.", bases: { "पीले": "yellow", "फूल": "flower" } }
+  "hi-0920":
+    native: "black"
+    notes: { use: "काला (kālā), 'black'. It agrees with its noun: काली (kālī) before a feminine noun, काले (kālē) before a masculine plural or a postposition." }
+    examples:
+      "यह बिल्ली काली है।": { native: "This cat is black.", bases: { "बिल्ली": "cat", "काली": "black" } }
+      "मेरा बैग काला है।": { native: "My bag is black.", bases: { "बैग": "bag", "काला": "black" } }
+  "hi-0921":
+    native: "white"
+    notes: { use: "सफ़ेद (safēd), 'white'. It does not change: सफ़ेद (safēd) stays the same before any noun." }
+    examples:
+      "दूध सफ़ेद है।": { native: "Milk is white.", bases: { "सफ़ेद": "white" } }
+      "सफ़ेद बादल आसमान में हैं।": { native: "White clouds are in the sky.", bases: { "सफ़ेद": "white", "बादल": "cloud", "आसमान": "sky" } }
+    synonyms: { "white-sanskrit": "white (Sanskrit-leaning)" }
+  "hi-0922":
+    native: "Colours: six words"
+    explanation: "Six colours: red, green, blue, yellow, black and white. Four of them agree with their noun, as any adjective ending in ā does; लाल (lāl) and सफ़ेद (safēd) never change."
