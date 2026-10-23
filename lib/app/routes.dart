@@ -34,6 +34,7 @@ import '../features/settings/release_notes_page.dart';
 import '../features/settings/sources_page.dart';
 import '../features/settings/voices_page.dart';
 import '../features/stats/all_tags_page.dart';
+import '../features/stats/over_time_page.dart';
 import '../features/stats/how_you_learn_page.dart';
 import '../features/stats/leeches_page.dart';
 import '../features/stats/stats_numbers.dart';
@@ -73,6 +74,9 @@ abstract final class AppRoutes {
   /// Every tag with its bar and a Practise button. Argument: the
   /// [StatsRange] counted.
   static const String allTags = '/all-tags';
+
+  /// The charts over time that the Progress star opens.
+  static const String progressOverTime = '/progress-over-time';
 
   /// How you learn: each skill's pace beside how it started. Argument: a
   /// language code, a [String], for that language's only; none for every
@@ -157,6 +161,7 @@ abstract final class AppRoutes {
       summary when args is SessionResult => SummaryPage(result: args),
       leeches => LeechesPage(language: args is String ? args : null),
       allTags when args is StatsRange => AllTagsPage(range: args),
+      progressOverTime => const OverTimePage(),
       howYouLearn => HowYouLearnPage(language: args is String ? args : null),
       appearance => const AppearancePage(),
       settingsLanguages => const LanguagesSettingsPage(),
@@ -263,6 +268,10 @@ abstract final class AppNavigator {
   /// The All tags page, counting [range].
   static Future<void> openAllTags(BuildContext context, StatsRange range) =>
       Navigator.of(context).pushNamed(AppRoutes.allTags, arguments: range);
+
+  /// The charts over time, opened from the Progress star.
+  static Future<void> openOverTime(BuildContext context) =>
+      Navigator.of(context).pushNamed(AppRoutes.progressOverTime);
 
   /// How you learn, in [language] only when given. With [replacing], in
   /// place of the route on top, such as the sheet that links to it.
