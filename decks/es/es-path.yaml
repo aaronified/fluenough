@@ -26,10 +26,13 @@
 #    each its words, then its rules, then its sentences.
 # Spanish's grammar keeps the Romance order of
 # docs/plans/language-paths-scheme.md within each level: articles and
-# gender, prepositions, the two verbs "to be", the regular present,
-# the irregular present, object pronouns, reflexives, the past
-# (perfective and imperfective), the future and the conditional, the
-# subjunctive, and the compound tenses. Spanish has four decks today,
+# gender, the plural, adjective agreement (the tense, number and gender
+# audit of 2026-10-23: it is needed from the first lessons), prepositions,
+# the two verbs "to be", the regular present, the irregular present, the
+# imperatives (right after the present), object pronouns, reflexives, the
+# past (perfective and imperfective, and the contrast between them), the
+# future and the conditional, the subjunctive, and the compound tenses.
+# Spanish has four decks today,
 # the phrasebook, the core vocabulary, articles and gender, and the
 # regular -ar present; the rest is planned. Which Spanish to teach
 # (Latin American or Spain) is still open (docs/plans/language-paths.md);
@@ -118,6 +121,16 @@ units:
   - decks: ["es-grammar-articles-gender"]
     words: 0
     grammar: ["articles-gender"]
+  - planned: { id: "es-grammar-plural", grammar: "plural" }
+    listening_passages:
+      - { id: "more-than-one", text: { "en": "Saying there are two cats, three cars and one bus" } }
+    reading_passages:
+      - { id: "shelf-labels", text: { "en": "Shop shelf labels for one item and for several" } }
+  - planned: { id: "es-grammar-adjective-agreement", grammar: "adjective-agreement" }
+    listening_passages:
+      - { id: "a-big-red-house", text: { "en": "Describing a house and the people in it" } }
+    reading_passages:
+      - { id: "holiday-flat-ad", text: { "en": "An advert describing a flat for the holidays" } }
   - planned: { id: "es-grammar-prepositions", grammar: "prepositions" }
     listening_passages:
       - { id: "where-is-it", text: { "en": "Saying where things are: in, on, under, next to" } }
@@ -141,6 +154,11 @@ units:
       - { id: "what-do-you-have", text: { "en": "Saying what you have, what you do and where you go" } }
     reading_passages:
       - { id: "weekly-plan", text: { "en": "A weekly plan for a household: who goes where and does what" } }
+  - planned: { id: "es-grammar-imperatives", grammar: "imperatives" }
+    listening_passages:
+      - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
+    reading_passages:
+      - { id: "signs-and-rules", text: { "en": "Signs saying what to do and what not to do" } }
   # 6. Then the other A1 themes, each its words, its rules, then its
   # sentences.
   - planned: { id: "es-work", theme: "work", words: 40 }
@@ -231,11 +249,6 @@ units:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
     reading_passages:
       - { id: "shop-offer-sign", text: { "en": "A clothes shop's sign with its offers" } }
-  - planned: { id: "es-grammar-adjective-agreement", grammar: "adjective-agreement" }
-    listening_passages:
-      - { id: "a-big-red-house", text: { "en": "Describing a house and the people in it" } }
-    reading_passages:
-      - { id: "holiday-flat-ad", text: { "en": "An advert describing a flat for the holidays" } }
   - planned: { id: "es-animals", theme: "animals", words: 35 }
     listening_passages:
       - { id: "a-farm-visit", text: { "en": "A child names the animals seen on a visit to a farm" } }
@@ -301,11 +314,6 @@ units:
       - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
     reading_passages:
       - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
-  - planned: { id: "es-grammar-imperatives", grammar: "imperatives" }
-    listening_passages:
-      - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
-    reading_passages:
-      - { id: "signs-and-rules", text: { "en": "Signs saying what to do and what not to do" } }
   - planned: { id: "es-chores", theme: "chores", words: 35 }
     listening_passages:
       - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
@@ -341,6 +349,11 @@ units:
       - { id: "when-i-was-small", text: { "en": "Telling what you used to do when you were small" } }
     reading_passages:
       - { id: "childhood-note", text: { "en": "A short note remembering a childhood summer" } }
+  - planned: { id: "es-grammar-preterite-imperfect", grammar: "preterite-imperfect" }
+    listening_passages:
+      - { id: "was-doing-then-did", text: { "en": "Telling what was going on when something happened" } }
+    reading_passages:
+      - { id: "story-of-the-trip", text: { "en": "A short story of a trip, with what happened and what was usual" } }
   - planned: { id: "es-nature", theme: "nature", words: 40 }
     listening_passages:
       - { id: "walk-by-the-river", text: { "en": "Two people describe a walk by the river at dusk" } }

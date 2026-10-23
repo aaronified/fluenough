@@ -17,6 +17,7 @@ import '../../core/models/drill_mode.dart';
 import '../../core/models/reading.dart';
 import '../../core/models/sound_contrasts.dart';
 import '../../core/numbers/number_practice.dart';
+import '../../core/scheduling/distractors.dart';
 import '../../core/scheduling/fsrs.dart';
 import '../../core/scheduling/session_queue.dart';
 import '../../core/sound/sound_check.dart';
@@ -975,12 +976,18 @@ class DrillSession extends ChangeNotifier {
   /// hand-picked wrong alternatives, its [Card.confusables] that name a card
   /// of the course, in random order (a confusable written out as a word is
   /// not a card, so it is not used here). The rest are drawn from
-  /// [AppState.choicePool].
+  /// [AppState.choicePool], those sharing most with the card (its word
+  /// family, part of speech, tags) first.
   List<Card> get options => _options ??= _pickOptions();
 
   List<Card> _pickOptions() {
     final card = item.card;
-    final pool = _state.choicePool(card, ask)..shuffle(_random);
+    // The pool by what its cards share with this one (rankDistractors),
+    // shuffled within each rank, so that the likelier mistakes come first.
+    final pool = <Card>[
+      for (final group in rankDistractors(card, _state.choicePool(card, ask)))
+        ...group..shuffle(_random),
+    ];
     final shown = <String>{ask.optionOf(card)};
     final picked = <Card>[card];
     final partner = ask == Ask.hearMeaning ? _state.pairOf(card) : null;
