@@ -1,0 +1,73 @@
+"schema": 1
+"id": "tok-en-reading-preverbs"
+"name": "Reading: plans and wishes"
+"kind": "reading"
+"language":
+  "code": "tok"
+  "iso639_3": "tok"
+  "name": "Toki Pona"
+  "script": "latin"
+  "icon": "Tp"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this deck"
+"description": "Two passages with preverbs: a listening passage on what someone wants, can and is starting to learn, and a reading passage of new-year wishes. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "reading"
+- "unreviewed"
+"passages":
+- "id": "tok-preverbs-learning-plans"
+  "title": "Learning plans"
+  "sentences":
+  - "text": "mi wile toki pona."
+  - "text": "mi ken pali."
+  - "text": "mi open sona."
+  - "text": "mi kama suli."
+  "questions":
+  - "id": "tok-0450"
+    "prompt":
+      "en": "What does the speaker want to do?"
+    "options":
+    - "en": "Speak toki pona"
+    - "en": "Sleep"
+    "answer": 1
+  - "id": "tok-0451"
+    "prompt":
+      "en": "What can the speaker do?"
+    "options":
+    - "en": "Work"
+    - "en": "Fly"
+    "answer": 1
+  - "id": "tok-0452"
+    "prompt":
+      "en": "The speaker is starting to know things. Is that true?"
+    "answer": true
+- "id": "tok-preverbs-new-year"
+  "title": "New-year wishes"
+  "sentences":
+  - "text": "mi wile lape pona."
+  - "text": "sina ken awen pona."
+  - "text": "ona li kama pona."
+  - "text": "mi pini pali pona."
+  "questions":
+  - "id": "tok-0453"
+    "prompt":
+      "en": "What does the first wish want?"
+    "options":
+    - "en": "To sleep well"
+    - "en": "To eat fruit"
+    "answer": 1
+  - "id": "tok-0454"
+    "prompt":
+      "en": "Which wish says someone can keep doing something?"
+    "options":
+    - "en": "The second"
+    - "en": "The third"
+    "answer": 1
+  - "id": "tok-0455"
+    "prompt":
+      "en": "The last wish is to finish the work well. Is that true?"
+    "answer": true
