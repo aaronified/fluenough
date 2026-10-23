@@ -320,11 +320,21 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 200));
       expect(tester.getTopLeft(find.byType(StatsPage)).dx, closeTo(caught, 1));
+      final width = tester.getSize(find.byType(TodayPage)).width;
+      // Stats is the third page: its left edge is two pages less the offset.
+      final nearest = ShellTab.values[((2 * width - caught) / width).round()];
       await gesture.up();
       await tester.pumpAndSettle(const Duration(seconds: 2));
-      expect(tester.getTopLeft(find.byType(StatsPage)).dx, 0);
-      expect(state.shellTab.value, anyOf(ShellTab.decks, ShellTab.progress));
-      expect(selected(tester), state.shellTab.value.index);
+      expect(state.shellTab.value, nearest);
+      expect(selected(tester), nearest.index);
+      expect(
+        tester
+            .getTopLeft(
+              find.byType(nearest == ShellTab.decks ? DecksPage : StatsPage),
+            )
+            .dx,
+        0,
+      );
     });
 
     testWidgets('a tap on the bar selects the target throughout, with no '
