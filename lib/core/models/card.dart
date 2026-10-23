@@ -330,6 +330,8 @@ class CardRef {
       wiktionary: wiktionary ?? (sameNative && written.wiktionary),
       rule: written.rule,
       ownRoot: written.ownRoot,
+      practiceOnly: written.practiceOnly,
+      heardAs: written.heardAs,
       register: written.register,
       frequency: written.frequency,
       synonyms: sameNative ? written.synonyms : const <CardItem>[],
