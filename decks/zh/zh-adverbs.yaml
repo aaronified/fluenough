@@ -58,8 +58,6 @@
   - "id": "n1"
     "kind": "note"
   "bases": "self"
-  "target_scripts":
-    "han_traditional": "常常"
   "synonyms":
   - "id": "regularly"
     "ref": "zh-0346"
@@ -158,13 +156,14 @@
     - "不"
     - "买"
     - "鱼"
-  - "target": "你从来不走吗？"
-    "reading": "nǐ cónglái bù zǒu ma?"
+  - "target": "你从来不喝水吗？"
+    "reading": "nǐ cónglái bù hē shuǐ ma?"
     "words":
     - "你"
     - "从来"
     - "不"
-    - "走"
+    - "喝"
+    - "水"
     - "吗"
 - "id": "zh-0349"
   "target": "已经"
@@ -179,19 +178,29 @@
   "target_scripts":
     "han_traditional": "已經"
   "examples":
-  - "target": "妈妈已经起床。"
-    "reading": "māma yǐjīng qǐchuáng."
+  - "target": "妈妈已经起床了。"
+    "reading": "māma yǐjīng qǐchuáng le."
     "words":
     - "妈妈"
     - "已经"
     - "起床"
-  - "target": "你已经回家吗？"
-    "reading": "nǐ yǐjīng huíjiā ma?"
+    - "了"
+    "bases":
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+  - "target": "你已经回家了吗？"
+    "reading": "nǐ yǐjīng huíjiā le ma?"
     "words":
     - "你"
     - "已经"
     - "回家"
+    - "了"
     - "吗"
+    "bases":
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
 - "id": "zh-0350"
   "target": "刚"
   "words":
@@ -254,8 +263,6 @@
   - "id": "n1"
     "kind": "note"
   "bases": "self"
-  "target_scripts":
-    "han_traditional": "再"
   "examples":
   - "target": "请再说。"
     "reading": "qǐng zài shuō."
@@ -279,23 +286,31 @@
   - "id": "n1"
     "kind": "note"
   "bases": "self"
-  "target_scripts":
-    "han_traditional": "又"
   "examples":
-  - "target": "他又来。"
-    "reading": "tā yòu lái."
+  - "target": "他又来了。"
+    "reading": "tā yòu lái le."
     "words":
     - "他"
     - "又"
     - "来"
-  - "target": "你又买鱼吗？"
-    "reading": "nǐ yòu mǎi yú ma?"
+    - "了"
+    "bases":
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+  - "target": "你又买鱼了吗？"
+    "reading": "nǐ yòu mǎi yú le ma?"
     "words":
     - "你"
     - "又"
     - "买"
     - "鱼"
+    - "了"
     - "吗"
+    "bases":
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
 - "id": "zh-0354"
   "target": "太"
   "words":
@@ -306,8 +321,6 @@
   - "id": "n1"
     "kind": "note"
   "bases": "self"
-  "target_scripts":
-    "han_traditional": "太"
   "examples":
   - "target": "太好！"
     "reading": "tài hǎo!"
@@ -330,8 +343,6 @@
   - "id": "n1"
     "kind": "note"
   "bases": "self"
-  "target_scripts":
-    "han_traditional": "非常"
   "examples":
   - "target": "我非常高兴。"
     "reading": "wǒ fēicháng gāoxìng."
@@ -381,8 +392,6 @@
   - "id": "n1"
     "kind": "note"
   "bases": "self"
-  "target_scripts":
-    "han_traditional": "更"
   "examples":
   - "target": "你更好。"
     "reading": "nǐ gèng hǎo."
@@ -407,8 +416,6 @@
   - "id": "n1"
     "kind": "note"
   "bases": "self"
-  "target_scripts":
-    "han_traditional": "最"
   "examples":
   - "target": "我最喜欢鱼。"
     "reading": "wǒ zuì xǐhuan yú."
@@ -433,8 +440,6 @@
   - "id": "n1"
     "kind": "note"
   "bases": "self"
-  "target_scripts":
-    "han_traditional": "一起"
   "examples":
   - "target": "我们一起吃饭。"
     "reading": "wǒmen yìqǐ chīfàn."
@@ -459,8 +464,6 @@
   - "id": "n1"
     "kind": "note"
   "bases": "self"
-  "target_scripts":
-    "han_traditional": "一定"
   "synonyms":
   - "id": "surely"
     "ref": "zh-0362"
@@ -488,8 +491,6 @@
   - "id": "n1"
     "kind": "note"
   "bases": "self"
-  "target_scripts":
-    "han_traditional": "可能"
   "examples":
   - "target": "他可能来。"
     "reading": "tā kěnéng lái."
@@ -566,8 +567,6 @@
   - "id": "n1"
     "kind": "note"
   "bases": "self"
-  "target_scripts":
-    "han_traditional": "先"
   "examples":
   - "target": "你先吃。"
     "reading": "nǐ xiān chī."
@@ -618,8 +617,6 @@
   - "id": "n1"
     "kind": "note"
   "bases": "self"
-  "target_scripts":
-    "han_traditional": "一共"
   "examples":
   - "target": "一共多少？"
     "reading": "yígòng duōshao?"
@@ -641,8 +638,6 @@
   - "id": "n1"
     "kind": "note"
   "bases": "self"
-  "target_scripts":
-    "han_traditional": "隻"
   "examples":
   - "target": "我只喝水。"
     "reading": "wǒ zhǐ hē shuǐ."
@@ -651,12 +646,13 @@
     - "只"
     - "喝"
     - "水"
-  - "target": "你只来吗？"
-    "reading": "nǐ zhǐ lái ma?"
+  - "target": "你只吃鱼吗？"
+    "reading": "nǐ zhǐ chī yú ma?"
     "words":
     - "你"
     - "只"
-    - "来"
+    - "吃"
+    - "鱼"
     - "吗"
 - "id": "zh-0368"
   "target": "别"
@@ -676,11 +672,16 @@
     "words":
     - "别"
     - "走"
-  - "target": "别忘。"
-    "reading": "bié wàng."
+  - "target": "别忘了。"
+    "reading": "bié wàng le."
     "words":
     - "别"
     - "忘"
+    - "了"
+    "bases":
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
 - "id": "zh-0369"
   "target": "其实"
   "words":
@@ -718,8 +719,6 @@
   - "id": "n1"
     "kind": "note"
   "bases": "self"
-  "target_scripts":
-    "han_traditional": "真"
   "examples":
   - "target": "真好！"
     "reading": "zhēn hǎo!"
@@ -742,8 +741,6 @@
   - "id": "n1"
     "kind": "note"
   "bases": "self"
-  "target_scripts":
-    "han_traditional": "差不多"
   "examples":
   - "target": "差不多吗？"
     "reading": "chàbuduō ma?"
@@ -765,8 +762,6 @@
   - "id": "n1"
     "kind": "note"
   "bases": "self"
-  "target_scripts":
-    "han_traditional": "大概"
   "synonyms":
   - "id": "maybe"
     "ref": "zh-0361"
@@ -792,8 +787,6 @@
   - "id": "n1"
     "kind": "note"
   "bases": "self"
-  "target_scripts":
-    "han_traditional": "就"
   "examples":
   - "target": "我就来。"
     "reading": "wǒ jiù lái."

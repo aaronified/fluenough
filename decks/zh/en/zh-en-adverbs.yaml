@@ -47,14 +47,21 @@
       "n1": "Used with a negative: 从来不 (cónglái bù), never. 不 (bù) is the negative."
     "examples":
       "他从来不买鱼。": "He never buys fish."
-      "你从来不走吗？": "Do you never leave?"
+      "你从来不喝水吗？": "Do you never drink water?"
   "zh-0349":
     "native": "already"
     "notes":
       "n1": "Already, for a thing done before the time one thought. It comes before the verb."
     "examples":
-      "妈妈已经起床。": "Mum has already got up."
-      "你已经回家吗？": "Have you already gone home?"
+      "妈妈已经起床了。":
+        "native": "Mum has already got up."
+        "bases":
+          "了": &id001
+            "meaning": "(marks a change or a completed action)"
+      "你已经回家了吗？":
+        "native": "Have you already gone home?"
+        "bases":
+          "了": *id001
   "zh-0350":
     "native": "just; only just"
     "notes":
@@ -79,10 +86,16 @@
   "zh-0353":
     "native": "again; also"
     "notes":
-      "n1": "Again, for a thing that happened before and happened once more. 再 (zài) is for the future."
+      "n1": "Again, for a thing that happened before and happened once more, often with 了 (le) after the verb. 再 (zài) is for the future."
     "examples":
-      "他又来。": "He came again."
-      "你又买鱼吗？": "Are you buying fish again?"
+      "他又来了。":
+        "native": "He came again."
+        "bases":
+          "了": *id001
+      "你又买鱼了吗？":
+        "native": "Did you buy fish again?"
+        "bases":
+          "了": *id001
   "zh-0354":
     "native": "too; so"
     "notes":
@@ -182,14 +195,17 @@
       "n1": "Only, and nothing more. It comes before the verb or the noun."
     "examples":
       "我只喝水。": "I only drink water."
-      "你只来吗？": "Are you the only one coming?"
+      "你只吃鱼吗？": "Do you eat only fish?"
   "zh-0368":
     "native": "do not; don't"
     "notes":
       "n1": "Do not, for a request or a warning, before a verb: 别走 (bié zǒu), don't go."
     "examples":
       "别走。": "Don't go."
-      "别忘。": "Don't forget."
+      "别忘了。":
+        "native": "Don't forget."
+        "bases":
+          "了": *id001
   "zh-0369":
     "native": "actually; in fact"
     "notes":

@@ -72,7 +72,7 @@
   "zh-0303":
     "native": "to say; to speak"
     "notes":
-      "n1": "To say words, or to speak. It is for words that are said, not for a language."
+      "n1": "To say something, or to speak a language: 说中文 (shuō zhōngwén), speak Chinese. 说 (shuō) is for speech, not for reading aloud."
     "examples":
       "妈妈说什么？": "What is mum saying?"
       "老师说，大家听。": "The teacher says, everyone listen."
@@ -82,14 +82,14 @@
       "n1": "To read a text, such as a book or a sign. It is also used for studying a subject."
     "examples":
       "妹妹读什么？": "What is my younger sister reading?"
-      "你们读吗？": "Are you reading?"
+      "你们读什么？": "What are you reading?"
   "zh-0305":
     "native": "to do; to make"
     "notes":
       "n1": "To do or make a thing. 做 (zuò) is for most tasks, and it does not name one action."
     "examples":
       "我们做什么？": "What shall we do?"
-      "你做吗？": "Are you doing it?"
+      "你做什么？": "What are you doing?"
   "zh-0306":
     "native": "to go home"
     "notes":
@@ -187,7 +187,9 @@
       "n1": "To put on clothes or shoes, or to wear them. Its opposite is 脱 (tuō), to take off."
     "examples":
       "你穿什么？": "What are you wearing?"
-      "他穿吗？": "Is he wearing it?"
+      "他们穿什么？": "What are they wearing?"
+    "antonyms":
+      "take-off": "to take off (clothes)"
   "zh-0320":
     "native": "to play; to have fun"
     "notes":
@@ -229,7 +231,7 @@
       "n1": "To think about a thing, or to want to do it: 想去 (xiǎng qù), want to go."
     "examples":
       "我想去。": "I want to go."
-      "你想吗？": "Do you want to?"
+      "你想去吗？": "Do you want to go?"
   "zh-0326":
     "native": "to rest"
     "notes":
@@ -249,7 +251,7 @@
     "notes":
       "n1": "To begin a thing. Its opposite is 结束 (jiéshù), to end."
     "examples":
-      "老师开始。": "The teacher begins."
+      "我们开始。": "Let's begin."
       "开始吗？": "Shall we begin?"
     "antonyms":
       "end": "to end; to finish"
@@ -258,5 +260,14 @@
     "notes":
       "n1": "To forget a thing or a name. Its opposite is 记得 (jìde), to remember."
     "examples":
-      "你忘什么？": "What did you forget?"
-      "你忘吗？": "Do you forget?"
+      "你忘了什么？":
+        "native": "What did you forget?"
+        "bases":
+          "了": &id001
+            "meaning": "(marks a change or a completed action)"
+      "你忘了吗？":
+        "native": "Did you forget?"
+        "bases":
+          "了": *id001
+    "antonyms":
+      "remember": "to remember"
