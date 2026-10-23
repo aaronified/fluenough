@@ -1936,7 +1936,11 @@ void main() {
           final state = await loaded(features: vocabOnly)
             ..showLanguage('es');
           final lesson = DrillRequest.lesson(language: 'es');
-          final check = state.lessonFor(lesson)[1];
+          // The set cards come first and record nothing; the first question
+          // is the first item that is neither a teaching card nor a set.
+          final check = state
+              .lessonFor(lesson)
+              .firstWhere((i) => i.ask != Ask.teach && i.ask != Ask.showSet);
           state.record(check, 4);
           expect(state.isTaught(check.card), isTrue);
           final today = state.buildSession(const DrillRequest.today());
@@ -2247,11 +2251,11 @@ void main() {
       final l10n = l10nOf(tester);
       expect(find.byType(LessonCard), findsOneWidget);
       expect(find.text(l10n.todayLessonTitle), findsOneWidget);
-      // Nine words, plus the members of a set one of them belongs to.
-      final taught = <String>{
-        for (final item in state.lessonFor(DrillRequest.lesson(language: 'es')))
-          if (item.ask == Ask.teach) item.card.id,
-      }.length;
+      // Nine words, plus the members of a set one of them belongs to, which
+      // come whole; the card says how many the lesson teaches.
+      final taught = lessonCardCount(
+        state.lessonFor(DrillRequest.lesson(language: 'es')),
+      );
       expect(taught, greaterThanOrEqualTo(9));
       expect(find.text(l10n.todayLessonWords(taught)), findsOneWidget);
       // Nothing to review yet: new words come in lessons.
@@ -2259,12 +2263,18 @@ void main() {
 
       final planned = <SessionItem>[
         for (final item in state.lessonFor(DrillRequest.lesson(language: 'es')))
-          if (item.ask != Ask.teach)
+          if (item.ask != Ask.teach && item.ask != Ask.showSet)
             ...item.group.isEmpty ? <SessionItem>[item] : item.group,
       ].length;
       await tester.tap(find.text(l10n.todayLessonStart));
       await tester.pumpAndSettle();
-      // The first word is taught before it is asked, and nothing is recorded.
+      // A set card comes first, whole or in parts, and records nothing; then
+      // the first word is taught before it is asked.
+      while (sessionOf(tester).ask == Ask.showSet) {
+        expect(find.byType(SetDrill), findsOneWidget);
+        sessionOf(tester).learnt();
+        await tester.pumpAndSettle();
+      }
       expect(find.byType(TeachDrill), findsOneWidget);
       expect(find.text(l10n.drillTeachTitle), findsOneWidget);
       final first = sessionOf(tester).item.card;
