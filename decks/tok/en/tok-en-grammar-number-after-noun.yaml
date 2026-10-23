@@ -1,0 +1,20 @@
+schema: 1
+id: "tok-en-grammar-number-after-noun"
+kind: "layer"
+core: "tok-grammar-number-after-noun"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "A number after a noun"
+license: "CC-BY-SA-4.0"
+description: "A number or mute after a noun says how many: nothing changes in the noun. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "A number after a noun"
+  slot_name: "count"
+  prompt: "{lemma} ({gloss}): {slot}"
+  slots: { "one": "one (wan)", "two": "two (tu)", "many": "many (mute)" }
+  entries:
+    "jan": "person"
+    "kili": "fruit"
+    "pan": "bread"
+    "ijo": "thing"
+  notes: "The number comes straight after the noun: jan tu is two people, kili mute is many fruits. English changes the noun for its plural, and Toki Pona adds a word after it instead: jan is a person, and jan tu is two people."

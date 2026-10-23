@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-time"
+"name": "Chinese reading: time and days"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-what-time-is-it"
+  "title": "What time is it?"
+  "theme": "time"
+  "sentences":
+  - "text": "现在几点？"
+    "reading": "xiànzài jǐ diǎn?"
+  - "text": "现在三点五分。"
+    "reading": "xiànzài sān diǎn wǔ fēn."
+  - "text": "我明天上午十点来。"
+    "reading": "wǒ míngtiān shàngwǔ shí diǎn lái."
+  - "text": "你昨天几点回家？"
+    "reading": "nǐ zuótiān jǐ diǎn huíjiā?"
+  "questions":
+  - "id": "zh-0513"
+    "prompt":
+      "en": "现在三点五分 (xiànzài sān diǎn wǔ fēn) means:"
+    "options":
+    - "en": "It is five to three."
+    - "en": "It is five past three."
+    "answer": 2
+  - "id": "zh-0514"
+    "prompt":
+      "en": "我明天上午十点来 (wǒ míngtiān shàngwǔ shí diǎn lái) says that the speaker comes tomorrow at ten in the morning."
+    "answer": true
+  - "id": "zh-0515"
+    "prompt":
+      "en": "你昨天几点回家 (nǐ zuótiān jǐ diǎn huíjiā?) asks:"
+    "options":
+    - "en": "when you went home yesterday"
+    - "en": "when you will go home tomorrow"
+    "answer": 1
+- "id": "zh-shop-hours"
+  "title": "Shop hours"
+  "theme": "time"
+  "sentences":
+  - "text": "早上九点开门。"
+    "reading": "zǎoshang jiǔ diǎn kāimén."
+  - "text": "中午不关。"
+    "reading": "zhōngwǔ bù guān."
+  - "text": "晚上十一点关。"
+    "reading": "wǎnshang shíyī diǎn guān."
+  - "text": "星期天营业吗？"
+    "reading": "xīngqītiān yíngyè ma?"
+  "questions":
+  - "id": "zh-0516"
+    "prompt":
+      "en": "早上九点开门 (zǎoshang jiǔ diǎn kāimén) means:"
+    "options":
+    - "en": "It opens at nine in the morning."
+    - "en": "It closes at nine in the morning."
+    "answer": 1
+  - "id": "zh-0517"
+    "prompt":
+      "en": "晚上十一点关 (wǎnshang shíyī diǎn guān) says that it closes at eleven in the evening."
+    "answer": true
+  - "id": "zh-0518"
+    "prompt":
+      "en": "星期天营业吗 (xīngqītiān yíngyè ma?) asks:"
+    "options":
+    - "en": "whether it is open on Sunday"
+    - "en": "whether it is open on Monday"
+    "answer": 1

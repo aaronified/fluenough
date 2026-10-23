@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-location"
+"name": "Chinese reading: where things are"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-where-is-my-key"
+  "title": "Where is my key?"
+  "theme": "location"
+  "sentences":
+  - "text": "钥匙在哪里？"
+    "reading": "yàoshi zài nǎlǐ?"
+  - "text": "钥匙在椅子下。"
+    "reading": "yàoshi zài yǐzi xia."
+  - "text": "你看，书在床上。"
+    "reading": "nǐ kàn, shū zài chuáng shang."
+  - "text": "钥匙不在左边，在右边。"
+    "reading": "yàoshi bú zài zuǒbian, zài yòubian."
+  "questions":
+  - "id": "zh-0546"
+    "prompt":
+      "en": "钥匙在椅子下 (yàoshi zài yǐzi xia) means:"
+    "options":
+    - "en": "The key is under the chair."
+    - "en": "The key is on the chair."
+    "answer": 1
+  - "id": "zh-0547"
+    "prompt":
+      "en": "书在床上 (shū zài chuáng shang) says that the book is on the bed."
+    "answer": true
+  - "id": "zh-0548"
+    "prompt":
+      "en": "钥匙在哪里 (yàoshi zài nǎlǐ?) asks:"
+    "options":
+    - "en": "where the key is"
+    - "en": "how many keys there are"
+    "answer": 1
+- "id": "zh-room-layout"
+  "title": "Room layout"
+  "theme": "location"
+  "sentences":
+  - "text": "房间很大。"
+    "reading": "fángjiān hěn dà."
+  - "text": "桌子在中间。"
+    "reading": "zhuōzi zài zhōngjiān."
+  - "text": "床在后面，椅子在旁边。"
+    "reading": "chuáng zài hòumiàn, yǐzi zài pángbiān."
+  - "text": "这儿很暖和。"
+    "reading": "zhèr hěn nuǎnhuo."
+  "questions":
+  - "id": "zh-0549"
+    "prompt":
+      "en": "桌子在中间 (zhuōzi zài zhōngjiān) means:"
+    "options":
+    - "en": "The table is in the middle."
+    - "en": "The table is at the back."
+    "answer": 1
+  - "id": "zh-0550"
+    "prompt":
+      "en": "床在后面 (chuáng zài hòumiàn) says that the bed is at the front."
+    "answer": false
+  - "id": "zh-0551"
+    "prompt":
+      "en": "这儿很暖和 (zhèr hěn nuǎnhuo) means:"
+    "options":
+    - "en": "It is warm here."
+    - "en": "It is far from here."
+    "answer": 1

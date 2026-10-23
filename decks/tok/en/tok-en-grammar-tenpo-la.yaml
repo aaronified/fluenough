@@ -1,0 +1,22 @@
+schema: 1
+id: "tok-en-grammar-tenpo-la"
+kind: "layer"
+core: "tok-grammar-tenpo-la"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Time with la"
+license: "CC-BY-SA-4.0"
+description: "A time phrase, then la, then the sentence: tenpo pini la is the past, tenpo ni la is now, tenpo kama la is the future. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Time with la"
+  slot_name: "time"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "past": "in the past (tenpo pini la)", "now": "now (tenpo ni la)", "future": "in the future (tenpo kama la)" }
+  entries:
+    "moku": "to eat"
+    "lape": "to sleep"
+    "pali": "to make; to work"
+    "tawa": "to go"
+    "toki": "to talk"
+    "lukin": "to see"
+  notes: "Tenpo pini la, ona li moku is In the past, they ate: the time comes first, then la, then the sentence. Tenpo ni la is now and tenpo kama la is later. The verb keeps one form in every slot, since Toki Pona has no tense endings; only the time phrase changes."
