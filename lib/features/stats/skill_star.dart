@@ -57,6 +57,7 @@ class SkillStarCard extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsetsDirectional.all(18),
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Row(
