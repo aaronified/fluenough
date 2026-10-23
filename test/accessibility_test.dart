@@ -30,7 +30,6 @@ import 'package:fluenough/core/scheduling/session_queue.dart' show Ask;
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/decks/decks_page.dart';
-import 'package:fluenough/features/decks/inspect_page.dart';
 import 'package:fluenough/features/decks/path_fixture.dart';
 import 'package:fluenough/features/decks/unit_page.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
@@ -473,7 +472,6 @@ void main() {
 
   group('Progress and settings', () {
     screen('Progress', tab(ShellTab.progress));
-    screen('Inspect', page(const InspectPage(deckId: 'hi-en-market')));
     screen(
       'How you learn',
       page(

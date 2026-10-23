@@ -816,6 +816,14 @@ class _Merge {
       confusables: items(card, entry, 'confusables', path),
       forms: items(card, entry, 'forms', path),
       senses: senses(card.senses, entry.senses, '$path.senses'),
+      dictionary: switch (entry.dictionary) {
+        final d? => CardDictionary(
+          senses: d.senses,
+          etymology: d.etymology,
+          source: d.source,
+        ),
+        null => null,
+      },
     );
   }
 

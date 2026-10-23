@@ -32,7 +32,7 @@ enum IpaScope {
 /// Whether [card] of the IPA course is in [scope], when the learner learns
 /// [learned], the codes of their languages: the one place cards are
 /// filtered by their tags against them, so that counts, lessons, finished
-/// decks and Inspect agree (ADR-0041).
+/// decks and the word sheet agree (ADR-0041).
 ///
 /// A card in [kept], such as one the learner has answered, is always in.
 bool ipaCardInScope(
