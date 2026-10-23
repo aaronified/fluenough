@@ -1,0 +1,410 @@
+schema: 1
+id: "es-describing"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "describing"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-0404"
+    target: "feo"
+    ipa: "ˈfeo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "El edificio es feo.", ipa: "el ediˈfiθjo es ˈfeo", bases: [{ word: "El", base: "el" }, { word: "edificio", base: "edificio" }, { word: "es", ref: "es-0022" }, { word: "feo", base: "feo" }] }
+      - { target: "Ana tiene un perro feo.", ipa: "ˈana ˈtjene un ˈpero ˈfeo", bases: [{ word: "Ana", base: "Ana" }, { word: "tiene", ref: "es-0024" }, { word: "un", base: "un" }, { word: "perro", base: "perro" }, { word: "feo", base: "feo" }] }
+  - id: "es-0405"
+    target: "bonito"
+    ipa: "boˈnito"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La casa es bonita.", ipa: "la ˈkasa es boˈnita", bases: [{ word: "La", base: "la" }, { word: "casa", ref: "es-0006" }, { word: "es", ref: "es-0022" }, { word: "bonita", base: "bonito" }] }
+      - { target: "Qué bonito es el parque.", ipa: "ke boˈnito es el ˈpaɾke", bases: [{ word: "Qué", ref: "es-0054" }, { word: "bonito", base: "bonito" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "parque", base: "parque" }] }
+  - id: "es-0406"
+    target: "guapo"
+    ipa: "ˈɡwapo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mi hermano es muy guapo.", ipa: "mi eɾˈmano es mwi ˈɡwapo", bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermano", ref: "es-0161" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "guapo", base: "guapo" }] }
+      - { target: "Ese chico es guapo.", ipa: "ˈese ˈtʃiko es ˈɡwapo", bases: [{ word: "Ese", base: "ese" }, { word: "chico", ref: "es-0136" }, { word: "es", ref: "es-0022" }, { word: "guapo", base: "guapo" }] }
+  - id: "es-0407"
+    target: "caliente"
+    ipa: "kaˈljente"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La sopa está muy caliente.", ipa: "la ˈsopa esˈta mwi kaˈljente", bases: [{ word: "La", base: "la" }, { word: "sopa", base: "sopa" }, { word: "está", ref: "es-0023" }, { word: "muy", ref: "es-0330" }, { word: "caliente", base: "caliente" }] }
+      - { target: "El café está caliente.", ipa: "el kaˈfe esˈta kaˈljente", bases: [{ word: "El", base: "el" }, { word: "café", base: "café" }, { word: "está", ref: "es-0023" }, { word: "caliente", base: "caliente" }] }
+  - id: "es-0408"
+    target: "frío"
+    ipa: "ˈfɾio"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hace frío en invierno.", ipa: "ˈaθe ˈfɾio en inˈbjeɾno", bases: [{ word: "Hace", ref: "es-0025" }, { word: "frío", base: "frío" }, { word: "en", base: "en" }, { word: "invierno", base: "invierno" }] }
+      - { target: "El agua está fría.", ipa: "el ˈaɡwa esˈta ˈfɾia", bases: [{ word: "El", base: "el" }, { word: "agua", ref: "es-0012" }, { word: "está", ref: "es-0023" }, { word: "fría", base: "frío" }] }
+  - id: "es-0409"
+    target: "rico"
+    ipa: "ˈriko"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La comida es muy rica.", ipa: "la koˈmida es mwi ˈrika", bases: [{ word: "La", base: "la" }, { word: "comida", ref: "es-0015" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "rica", base: "rico" }] }
+      - { target: "El pan está rico.", ipa: "el pan esˈta ˈriko", bases: [{ word: "El", base: "el" }, { word: "pan", ref: "es-0013" }, { word: "está", ref: "es-0023" }, { word: "rico", base: "rico" }] }
+  - id: "es-0410"
+    target: "sabroso"
+    ipa: "saˈbɾoso"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Esta sopa es muy sabrosa.", ipa: "ˈesta ˈsopa es mwi saˈbɾosa", bases: [{ word: "Esta", base: "esta" }, { word: "sopa", base: "sopa" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "sabrosa", base: "sabroso" }] }
+      - { target: "Comí un pastel sabroso.", ipa: "koˈmi un pasˈtel saˈbɾoso", bases: [{ word: "Comí", ref: "es-0028" }, { word: "un", base: "un" }, { word: "pastel", base: "pastel" }, { word: "sabroso", base: "sabroso" }] }
+  - id: "es-0411"
+    target: "barato"
+    ipa: "baˈɾato"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Este libro es barato.", ipa: "ˈeste ˈlibɾo es baˈɾato", bases: [{ word: "Este", base: "este" }, { word: "libro", ref: "es-0426" }, { word: "es", ref: "es-0022" }, { word: "barato", base: "barato" }] }
+      - { target: "La fruta está barata hoy.", ipa: "la ˈfɾuta esˈta baˈɾata oj", bases: [{ word: "La", base: "la" }, { word: "fruta", base: "fruta" }, { word: "está", ref: "es-0023" }, { word: "barata", base: "barato" }, { word: "hoy", ref: "es-0331" }] }
+  - id: "es-0412"
+    target: "caro"
+    ipa: "ˈkaɾo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "El taxi es caro.", ipa: "el ˈtaksi es ˈkaɾo", bases: [{ word: "El", base: "el" }, { word: "taxi", base: "taxi" }, { word: "es", ref: "es-0022" }, { word: "caro", base: "caro" }] }
+      - { target: "Los zapatos son muy caros.", ipa: "los θaˈpatos son mwi ˈkaɾos", bases: [{ word: "Los", base: "los" }, { word: "zapatos", base: "zapatos" }, { word: "son", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "caros", base: "caro" }] }
+  - id: "es-0413"
+    target: "fácil"
+    ipa: "ˈfaθil"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La lección es fácil.", ipa: "la lekˈθjon es ˈfaθil", bases: [{ word: "La", base: "la" }, { word: "lección", base: "lección" }, { word: "es", ref: "es-0022" }, { word: "fácil", base: "fácil" }] }
+      - { target: "Hablar español es fácil.", ipa: "aˈblaɾ espaˈɲol es ˈfaθil", bases: [{ word: "Hablar", ref: "es-0027" }, { word: "español", base: "español" }, { word: "es", ref: "es-0022" }, { word: "fácil", base: "fácil" }] }
+  - id: "es-0414"
+    target: "difícil"
+    ipa: "diˈfiθil"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "El examen es difícil.", ipa: "el ekˈsamen es diˈfiθil", bases: [{ word: "El", base: "el" }, { word: "examen", base: "examen" }, { word: "es", ref: "es-0022" }, { word: "difícil", base: "difícil" }] }
+      - { target: "Es difícil leer sin gafas.", ipa: "es diˈfiθil leˈeɾ sin ˈɡafas", bases: [{ word: "Es", ref: "es-0022" }, { word: "difícil", base: "difícil" }, { word: "leer", ref: "es-0296" }, { word: "sin", base: "sin" }, { word: "gafas", base: "gafas" }] }
+  - id: "es-0415"
+    target: "lento"
+    ipa: "ˈlento"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "El tren es muy lento.", ipa: "el tɾen es mwi ˈlento", bases: [{ word: "El", base: "el" }, { word: "tren", base: "tren" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "lento", base: "lento" }] }
+      - { target: "Internet es lento hoy.", ipa: "inteɾˈnet es ˈlento oj", bases: [{ word: "Internet", base: "internet" }, { word: "es", ref: "es-0022" }, { word: "lento", base: "lento" }, { word: "hoy", ref: "es-0331" }] }
+  - id: "es-0416"
+    target: "limpio"
+    ipa: "ˈlimpjo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La cocina está limpia.", ipa: "la koˈθina esˈta ˈlimpja", bases: [{ word: "La", base: "la" }, { word: "cocina", ref: "es-0284" }, { word: "está", ref: "es-0023" }, { word: "limpia", base: "limpio" }] }
+      - { target: "Mi camisa está limpia.", ipa: "mi kaˈmisa esˈta ˈlimpja", bases: [{ word: "Mi", ref: "es-0129" }, { word: "camisa", base: "camisa" }, { word: "está", ref: "es-0023" }, { word: "limpia", base: "limpio" }] }
+  - id: "es-0417"
+    target: "sucio"
+    ipa: "ˈsuθjo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "El suelo está sucio.", ipa: "el ˈswelo esˈta ˈsuθjo", bases: [{ word: "El", base: "el" }, { word: "suelo", base: "suelo" }, { word: "está", ref: "es-0023" }, { word: "sucio", base: "sucio" }] }
+      - { target: "Las manos están sucias.", ipa: "las ˈmanos esˈtan ˈsuθjas", bases: [{ word: "Las", base: "las" }, { word: "manos", base: "manos" }, { word: "están", ref: "es-0023" }, { word: "sucias", base: "sucio" }] }
+  - id: "es-0418"
+    target: "contento"
+    ipa: "konˈtento"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Estoy contento con el resultado.", ipa: "esˈtoj konˈtento kon el resulˈtado", bases: [{ word: "Estoy", ref: "es-0023" }, { word: "contento", base: "contento" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "resultado", base: "resultado" }] }
+      - { target: "Mi madre está contenta hoy.", ipa: "mi ˈmadɾe esˈta konˈtenta oj", bases: [{ word: "Mi", ref: "es-0129" }, { word: "madre", ref: "es-0160" }, { word: "está", ref: "es-0023" }, { word: "contenta", base: "contento" }, { word: "hoy", ref: "es-0331" }] }
+  - id: "es-0419"
+    target: "triste"
+    ipa: "ˈtɾiste"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "¿Por qué estás triste?", ipa: "poɾ ke esˈtas ˈtɾiste", bases: [{ word: "Por", base: "por" }, { word: "qué", ref: "es-0054" }, { word: "estás", ref: "es-0023" }, { word: "triste", base: "triste" }] }
+      - { target: "Ana está triste porque llueve.", ipa: "ˈana esˈta ˈtɾiste ˈpoɾke ˈʝwebe", bases: [{ word: "Ana", base: "Ana" }, { word: "está", ref: "es-0023" }, { word: "triste", base: "triste" }, { word: "porque", base: "porque" }, { word: "llueve", base: "llover" }] }
+  - id: "es-0420"
+    target: "cansado"
+    ipa: "kanˈsado"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Estoy muy cansado hoy.", ipa: "esˈtoj mwi kanˈsado oj", bases: [{ word: "Estoy", ref: "es-0023" }, { word: "muy", ref: "es-0330" }, { word: "cansado", base: "cansado" }, { word: "hoy", ref: "es-0331" }] }
+      - { target: "Mi padre está cansado después de trabajar.", ipa: "mi ˈpadɾe esˈta kanˈsado desˈpwes de tɾabaˈxaɾ", bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", ref: "es-0159" }, { word: "está", ref: "es-0023" }, { word: "cansado", base: "cansado" }, { word: "después", ref: "es-0336" }, { word: "de", base: "de" }, { word: "trabajar", ref: "es-0259" }] }
+  - id: "es-0421"
+    target: "enfermo"
+    ipa: "enˈfeɾmo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mi hijo está enfermo.", ipa: "mi ˈixo esˈta enˈfeɾmo", bases: [{ word: "Mi", ref: "es-0129" }, { word: "hijo", ref: "es-0163" }, { word: "está", ref: "es-0023" }, { word: "enfermo", base: "enfermo" }] }
+      - { target: "La madre de Ana está enferma.", ipa: "la ˈmadɾe de ˈana esˈta enˈfeɾma", bases: [{ word: "La", base: "la" }, { word: "madre", ref: "es-0160" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "está", ref: "es-0023" }, { word: "enferma", base: "enfermo" }] }
+  - id: "es-0422"
+    target: "simpático"
+    ipa: "simˈpatiko"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mi profesor es muy simpático.", ipa: "mi pɾofeˈsoɾ es mwi simˈpatiko", bases: [{ word: "Mi", ref: "es-0129" }, { word: "profesor", ref: "es-0093" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "simpático", base: "simpático" }] }
+      - { target: "Ana es simpática con todos.", ipa: "ˈana es simˈpatika kon ˈtodos", bases: [{ word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "simpática", base: "simpático" }, { word: "con", base: "con" }, { word: "todos", ref: "es-0134" }] }
+  - id: "es-0423"
+    target: "aburrido"
+    ipa: "abuˈrido"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La película es aburrida.", ipa: "la peˈlikula es abuˈrida", bases: [{ word: "La", base: "la" }, { word: "película", base: "película" }, { word: "es", ref: "es-0022" }, { word: "aburrida", base: "aburrido" }] }
+      - { target: "Estoy aburrido en casa.", ipa: "esˈtoj abuˈrido en ˈkasa", bases: [{ word: "Estoy", ref: "es-0023" }, { word: "aburrido", base: "aburrido" }, { word: "en", base: "en" }, { word: "casa", ref: "es-0006" }] }
+  - id: "es-0424"
+    target: "interesante"
+    ipa: "inteɾeˈsante"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "El libro es muy interesante.", ipa: "el ˈlibɾo es mwi inteɾeˈsante", bases: [{ word: "El", base: "el" }, { word: "libro", ref: "es-0426" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "interesante", base: "interesante" }] }
+      - { target: "Ana tiene una idea interesante.", ipa: "ˈana ˈtjene ˈuna iˈdea inteɾeˈsante", bases: [{ word: "Ana", base: "Ana" }, { word: "tiene", ref: "es-0024" }, { word: "una", base: "una" }, { word: "idea", base: "idea" }, { word: "interesante", base: "interesante" }] }
+  - id: "es-0425"
+    target: "ocupado"
+    ipa: "okuˈpado"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hoy estoy muy ocupado.", ipa: "oj esˈtoj mwi okuˈpado", bases: [{ word: "Hoy", ref: "es-0331" }, { word: "estoy", ref: "es-0023" }, { word: "muy", ref: "es-0330" }, { word: "ocupado", base: "ocupado" }] }
+      - { target: "La oficina está ocupada.", ipa: "la ofiˈθina esˈta okuˈpada", bases: [{ word: "La", base: "la" }, { word: "oficina", base: "oficina" }, { word: "está", ref: "es-0023" }, { word: "ocupada", base: "ocupado" }] }
+  - id: "es-0426"
+    target: "libre"
+    ipa: "ˈlibɾe"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "¿Estás libre el sábado?", ipa: "esˈtas ˈlibɾe el ˈsabado", bases: [{ word: "Estás", ref: "es-0023" }, { word: "libre", base: "libre" }, { word: "el", base: "el" }, { word: "sábado", base: "sábado" }] }
+      - { target: "El baño está libre.", ipa: "el ˈbaɲo esˈta ˈlibɾe", bases: [{ word: "El", base: "el" }, { word: "baño", base: "baño" }, { word: "está", ref: "es-0023" }, { word: "libre", base: "libre" }] }
+  - id: "es-0427"
+    target: "lleno"
+    ipa: "ˈʝeno"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La botella está llena.", ipa: "la boˈteʝa esˈta ˈʝena", bases: [{ word: "La", base: "la" }, { word: "botella", ref: "es-0379" }, { word: "está", ref: "es-0023" }, { word: "llena", base: "lleno" }] }
+      - { target: "El autobús está lleno de gente.", ipa: "el awtoˈbus esˈta ˈʝeno de ˈxente", bases: [{ word: "El", base: "el" }, { word: "autobús", base: "autobús" }, { word: "está", ref: "es-0023" }, { word: "lleno", base: "lleno" }, { word: "de", base: "de" }, { word: "gente", base: "gente" }] }
+  - id: "es-0428"
+    target: "vacío"
+    ipa: "baˈθio"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La caja está vacía.", ipa: "la ˈkaxa esˈta baˈθia", bases: [{ word: "La", base: "la" }, { word: "caja", ref: "es-0382" }, { word: "está", ref: "es-0023" }, { word: "vacía", base: "vacío" }] }
+      - { target: "El vaso está vacío.", ipa: "el ˈbaso esˈta baˈθio", bases: [{ word: "El", base: "el" }, { word: "vaso", base: "vaso" }, { word: "está", ref: "es-0023" }, { word: "vacío", base: "vacío" }] }
+  - id: "es-0429"
+    target: "largo"
+    ipa: "ˈlaɾɡo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "El río es muy largo.", ipa: "el ˈrio es mwi ˈlaɾɡo", bases: [{ word: "El", base: "el" }, { word: "río", base: "río" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "largo", base: "largo" }] }
+      - { target: "La carta es larga.", ipa: "la ˈkaɾta es ˈlaɾɡa", bases: [{ word: "La", base: "la" }, { word: "carta", ref: "es-0412" }, { word: "es", ref: "es-0022" }, { word: "larga", base: "largo" }] }
+  - id: "es-0430"
+    target: "corto"
+    ipa: "ˈkoɾto"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "El pelo de Ana es corto.", ipa: "el ˈpelo de ˈana es ˈkoɾto", bases: [{ word: "El", base: "el" }, { word: "pelo", base: "pelo" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "corto", base: "corto" }] }
+      - { target: "La falda es muy corta{corto}.", ipa: "la ˈfalda es mwi koɾtaˈkoɾto", bases: [{ word: "La", base: "la" }, { word: "falda", base: "falda" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "corta", base: "corto" }] }
+  - id: "es-0431"
+    target: "viejo"
+    ipa: "ˈbjexo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mi abuelo es viejo.", ipa: "mi aˈbwelo es ˈbjexo", bases: [{ word: "Mi", ref: "es-0129" }, { word: "abuelo", ref: "es-0165" }, { word: "es", ref: "es-0022" }, { word: "viejo", base: "viejo" }] }
+      - { target: "La casa es vieja.", ipa: "la ˈkasa es ˈbjexa", bases: [{ word: "La", base: "la" }, { word: "casa", ref: "es-0006" }, { word: "es", ref: "es-0022" }, { word: "vieja", base: "viejo" }] }
+  - id: "es-0432"
+    target: "fuerte"
+    ipa: "ˈfweɾte"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mi hermana es muy fuerte.", ipa: "mi eɾˈmana es mwi ˈfweɾte", bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", ref: "es-0162" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "fuerte", base: "fuerte" }] }
+      - { target: "El café es muy fuerte.", ipa: "el kaˈfe es mwi ˈfweɾte", bases: [{ word: "El", base: "el" }, { word: "café", base: "café" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "fuerte", base: "fuerte" }] }
+  - id: "es-0433"
+    target: "cómodo"
+    ipa: "ˈkomodo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La silla es muy cómoda.", ipa: "la ˈsiʝa es mwi ˈkomoda", bases: [{ word: "La", base: "la" }, { word: "silla", ref: "es-0010" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "cómoda", base: "cómodo" }] }
+      - { target: "Esta cama es cómoda.", ipa: "ˈesta ˈkama es ˈkomoda", bases: [{ word: "Esta", base: "esta" }, { word: "cama", base: "cama" }, { word: "es", ref: "es-0022" }, { word: "cómoda", base: "cómodo" }] }
+  - id: "es-0434"
+    target: "divertido"
+    ipa: "dibeɾˈtido"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La fiesta es muy divertida.", ipa: "la ˈfjesta es mwi dibeɾˈtida", bases: [{ word: "La", base: "la" }, { word: "fiesta", base: "fiesta" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "divertida", base: "divertido" }] }
+      - { target: "Ana es una persona divertida.", ipa: "ˈana es ˈuna peɾˈsona dibeɾˈtida", bases: [{ word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "persona", ref: "es-0135" }, { word: "divertida", base: "divertido" }] }
+  - id: "es-0435"
+    target: "importante"
+    ipa: "impoɾˈtante"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Es importante comer bien.", ipa: "es impoɾˈtante koˈmeɾ bjen", bases: [{ word: "Es", ref: "es-0022" }, { word: "importante", base: "importante" }, { word: "comer", ref: "es-0028" }, { word: "bien", ref: "es-0326" }] }
+      - { target: "La salud es importante.", ipa: "la saˈlud es impoɾˈtante", bases: [{ word: "La", base: "la" }, { word: "salud", base: "salud" }, { word: "es", ref: "es-0022" }, { word: "importante", base: "importante" }] }
+  - id: "es-0436"
+    target: "tímido"
+    ipa: "ˈtimido"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mi hijo es tímido.", ipa: "mi ˈixo es ˈtimido", bases: [{ word: "Mi", ref: "es-0129" }, { word: "hijo", ref: "es-0163" }, { word: "es", ref: "es-0022" }, { word: "tímido", base: "tímido" }] }
+      - { target: "Ana no es tímida con los niños.", ipa: "ˈana no es ˈtimida kon los ˈniɲos", bases: [{ word: "Ana", base: "Ana" }, { word: "no", ref: "es-0043" }, { word: "es", ref: "es-0022" }, { word: "tímida", base: "tímido" }, { word: "con", base: "con" }, { word: "los", base: "los" }, { word: "niños", base: "niños" }] }
+  - id: "es-0437"
+    target: "delgado"
+    ipa: "delˈɡado"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "El perro es muy delgado.", ipa: "el ˈpero es mwi delˈɡado", bases: [{ word: "El", base: "el" }, { word: "perro", base: "perro" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "delgado", base: "delgado" }] }
+      - { target: "Ana es alta y delgada.", ipa: "ˈana es ˈalta i delˈɡada", bases: [{ word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "alta", ref: "es-0254" }, { word: "y", ref: "es-0048" }, { word: "delgada", base: "delgado" }] }
+  - id: "es-0438"
+    target: "claro"
+    ipa: "ˈklaɾo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La habitación es muy clara.", ipa: "la abitaˈθjon es mwi ˈklaɾa", bases: [{ word: "La", base: "la" }, { word: "habitación", base: "habitación" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "clara", base: "claro" }] }
+      - { target: "El cielo está claro hoy.", ipa: "el ˈθjelo esˈta ˈklaɾo oj", bases: [{ word: "El", base: "el" }, { word: "cielo", base: "cielo" }, { word: "está", ref: "es-0023" }, { word: "claro", base: "claro" }, { word: "hoy", ref: "es-0331" }] }
+  - id: "es-0439"
+    target: "oscuro"
+    ipa: "osˈkuɾo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La noche es oscura.", ipa: "la ˈnotʃe es osˈkuɾa", bases: [{ word: "La", base: "la" }, { word: "noche", ref: "es-0020" }, { word: "es", ref: "es-0022" }, { word: "oscura", base: "oscuro" }] }
+      - { target: "El pasillo está oscuro.", ipa: "el paˈsiʝo esˈta osˈkuɾo", bases: [{ word: "El", base: "el" }, { word: "pasillo", base: "pasillo" }, { word: "está", ref: "es-0023" }, { word: "oscuro", base: "oscuro" }] }
+  - id: "es-0440"
+    target: "mojado"
+    ipa: "moˈxado"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La camisa está mojada.", ipa: "la kaˈmisa esˈta moˈxada", bases: [{ word: "La", base: "la" }, { word: "camisa", base: "camisa" }, { word: "está", ref: "es-0023" }, { word: "mojada", base: "mojado" }] }
+      - { target: "Tengo las manos mojadas.", ipa: "ˈtenɡo las ˈmanos moˈxadas", bases: [{ word: "Tengo", ref: "es-0024" }, { word: "las", base: "las" }, { word: "manos", base: "manos" }, { word: "mojadas", base: "mojado" }] }
+  - id: "es-0441"
+    target: "seco"
+    ipa: "ˈseko"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La ropa está seca.", ipa: "la ˈropa esˈta ˈseka", bases: [{ word: "La", base: "la" }, { word: "ropa", base: "ropa" }, { word: "está", ref: "es-0023" }, { word: "seca", base: "seco" }] }
+      - { target: "El pan está seco.", ipa: "el pan esˈta ˈseko", bases: [{ word: "El", base: "el" }, { word: "pan", ref: "es-0013" }, { word: "está", ref: "es-0023" }, { word: "seco", base: "seco" }] }
+  - id: "es-0442"
+    target: "feliz"
+    ipa: "feˈliθ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ana está feliz hoy.", ipa: "ˈana esˈta feˈliθ oj", bases: [{ word: "Ana", base: "Ana" }, { word: "está", ref: "es-0023" }, { word: "feliz", base: "feliz" }, { word: "hoy", ref: "es-0331" }] }
+      - { target: "Mis padres son muy felices.", ipa: "mis ˈpadɾes son mwi feˈliθes", bases: [{ word: "Mis", base: "mis" }, { word: "padres", base: "padres" }, { word: "son", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "felices", base: "feliz" }] }
+  - id: "es-0443"
+    target: "nervioso"
+    ipa: "neɾˈbjoso"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Estoy nervioso antes del examen.", ipa: "esˈtoj neɾˈbjoso ˈantes del ekˈsamen", bases: [{ word: "Estoy", ref: "es-0023" }, { word: "nervioso", base: "nervioso" }, { word: "antes", ref: "es-0335" }, { word: "del", base: "del" }, { word: "examen", base: "examen" }] }
+      - { target: "Ana está nerviosa hoy.", ipa: "ˈana esˈta neɾˈbjosa oj", bases: [{ word: "Ana", base: "Ana" }, { word: "está", ref: "es-0023" }, { word: "nerviosa", base: "nervioso" }, { word: "hoy", ref: "es-0331" }] }
