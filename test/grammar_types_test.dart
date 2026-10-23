@@ -3,7 +3,6 @@
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/models/rule.dart';
-import 'package:fluenough/core/scheduling/ask.dart';
 import 'package:fluenough/core/scheduling/lesson.dart';
 import 'package:fluenough/core/scheduling/question_type.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
