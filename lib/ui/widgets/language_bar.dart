@@ -363,6 +363,8 @@ class _LanguageBarState extends State<LanguageBar>
     _expanded = true;
     _labelOn = false;
     if (_still) {
+      // The label's fade has no end to hide it by: hide it now.
+      if (_labelPortal.isShowing) _labelPortal.hide();
       _grow.value = 1;
     } else {
       _grow.forward();
