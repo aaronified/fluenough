@@ -1,0 +1,79 @@
+schema: 1
+id: "es-quantities-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-0388"
+    target: "Compro un kilo de manzanas, pero no quiero nada más."
+    ipa: "ˈkompɾo un ˈkilo de manˈθanas ˈpeɾo no ˈkjeɾo ˈnada mas"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Compro", ref: "es-0280" }, { word: "un", base: "un" }, { word: "kilo", ref: "es-0375" }, { word: "de", base: "de" }, { word: "manzanas", base: "manzanas" }, { word: "pero", ref: "es-0050" }, { word: "no", ref: "es-0043" }, { word: "quiero", base: "querer" }, { word: "nada", ref: "es-0360" }, { word: "más", ref: "es-0363" }]
+    confusables: [{ id: "algo", ref: "es-0359", kind: "word" }, { id: "bastante", ref: "es-0361", kind: "word" }]
+  - id: "es-0389"
+    target: "Hay muy poca agua en la botella."
+    ipa: "aj mwi ˈpoka ˈaɡwa en la boˈteʝa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hay", base: "haber" }, { word: "muy", ref: "es-0330" }, { word: "poca", ref: "es-0358" }, { word: "agua", ref: "es-0012" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "botella", ref: "es-0379" }]
+    confusables: [{ id: "mucho", ref: "es-0053", kind: "word" }, { id: "demasiado", ref: "es-0362", kind: "word" }]
+  - id: "es-0390"
+    target: "Tengo que pesar el paquete."
+    ipa: "ˈtenɡo ke peˈsaɾ el paˈkete"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tengo", ref: "es-0024" }, { word: "que", base: "que" }, { word: "pesar", ref: "es-0387" }, { word: "el", base: "el" }, { word: "paquete", ref: "es-0378" }]
+    confusables: [{ id: "comprar", ref: "es-0280", kind: "word" }, { id: "lata", ref: "es-0381", kind: "word" }]
+  - id: "es-0391"
+    target: "Cada día bebo dos litros de agua."
+    ipa: "ˈkada ˈdia ˈbebo dos ˈlitɾos de ˈaɡwa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Cada", ref: "es-0366" }, { word: "día", ref: "es-0019" }, { word: "bebo", ref: "es-0029" }, { word: "dos", ref: "es-0206" }, { word: "litros", ref: "es-0377" }, { word: "de", base: "de" }, { word: "agua", ref: "es-0012" }]
+    confusables: [{ id: "medio", ref: "es-0368", kind: "word" }, { id: "docena", ref: "es-0374", kind: "word" }]
+  - id: "es-0392"
+    target: "Compramos doce huevos y un litro de leche."
+    ipa: "komˈpɾamos ˈdoθe ˈwebos i un ˈlitɾo de ˈletʃe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Compramos", ref: "es-0280" }, { word: "doce", ref: "es-0216" }, { word: "huevos", base: "huevos" }, { word: "y", ref: "es-0048" }, { word: "un", base: "un" }, { word: "litro", ref: "es-0377" }, { word: "de", base: "de" }, { word: "leche", ref: "es-0014" }]
+    confusables: [{ id: "docena", ref: "es-0374", kind: "word" }, { id: "entero", ref: "es-0371", kind: "word" }]
+  - id: "es-0393"
+    target: "Esta botella está casi vacía."
+    ipa: "ˈesta boˈteʝa esˈta ˈkasi baˈθia"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Esta", base: "esta" }, { word: "botella", ref: "es-0379" }, { word: "está", ref: "es-0023" }, { word: "casi", ref: "es-0325" }, { word: "vacía", base: "vacío" }]
+    confusables: [{ id: "llena", word: "llena", kind: "word" }, { id: "bolsa", ref: "es-0380", kind: "word" }]
+  - id: "es-0394"
+    target: "La mitad del pastel es para ti."
+    ipa: "la miˈtad del pasˈtel es ˈpaɾa ti"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "mitad", ref: "es-0369" }, { word: "del", base: "del" }, { word: "pastel", base: "pastel" }, { word: "es", ref: "es-0022" }, { word: "para", base: "para" }, { word: "ti", base: "ti" }]
+    confusables: [{ id: "entero", ref: "es-0371", kind: "word" }, { id: "doble", ref: "es-0370", kind: "word" }]
+  - id: "es-0395"
+    target: "Hay un montón de gente en el parque."
+    ipa: "aj un monˈton de ˈxente en el ˈpaɾke"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "montón", ref: "es-0385" }, { word: "de", base: "de" }, { word: "gente", base: "gente" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "parque", base: "parque" }]
+    confusables: [{ id: "algo", ref: "es-0359", kind: "word" }, { id: "nada", ref: "es-0360", kind: "word" }]
+  - id: "es-0396"
+    target: "¿Cuánto pesa el resto del pan?"
+    ipa: "ˈkwanto ˈpesa el ˈresto del pan"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Cuánto", ref: "es-0060" }, { word: "pesa", ref: "es-0387" }, { word: "el", base: "el" }, { word: "resto", ref: "es-0386" }, { word: "del", base: "del" }, { word: "pan", ref: "es-0013" }]
+    confusables: [{ id: "mucho", ref: "es-0053", kind: "word" }, { id: "todo", word: "todo", kind: "word" }]
+  - id: "es-0397"
+    target: "Necesito varios paquetes, no uno."
+    ipa: "neθeˈsito ˈbaɾjos paˈketes no ˈuno"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Necesito", ref: "es-0288" }, { word: "varios", ref: "es-0367" }, { word: "paquetes", ref: "es-0378" }, { word: "no", ref: "es-0043" }, { word: "uno", ref: "es-0205" }]
+    confusables: [{ id: "suficiente", ref: "es-0365", kind: "word" }, { id: "mas", ref: "es-0363", kind: "word" }]

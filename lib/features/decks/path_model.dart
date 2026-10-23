@@ -5,7 +5,6 @@ import '../../core/data/course_path.dart' show Milestone, PlanUnit;
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/reading.dart' show QuestionCard;
-import '../../core/numbers/number_practice.dart' show NumberCard;
 import 'word_mastery.dart';
 
 /// What the Decks tab and a unit's screen read out of a course's path, kept
@@ -216,7 +215,7 @@ class UnitContent {
         continue;
       }
       for (final card in entry.cards) {
-        if (card is QuestionCard || card is NumberCard) continue;
+        if (card is QuestionCard || card.practiceOnly) continue;
         if (!seen.add(card.id)) continue;
         (isSentence(card) ? sentences : words).add(card);
       }

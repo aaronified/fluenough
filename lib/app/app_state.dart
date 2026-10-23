@@ -1614,6 +1614,15 @@ class AppState extends ChangeNotifier {
       // another of its pairs is due, so a deck with reviews due is not
       // taken for finished.
       newEvenIfDue: request.newOnly,
+      // Today and a language's review show a few of a deck's known cards
+      // for the deck (#680); a deck's own review, a lesson and revising
+      // show them all.
+      sampleKnown:
+          ids == null &&
+          request.cardIds == null &&
+          !request.revise &&
+          !request.lesson &&
+          !request.numbers,
       modes: modes,
       canIntroduce: canIntroduce,
       siblingsOf: siblingsOf,
@@ -2102,7 +2111,7 @@ class AppState extends ChangeNotifier {
     bool alike(Card c) =>
         c.id != card.id &&
         c is! QuestionCard &&
-        c is! NumberCard &&
+        !c.practiceOnly &&
         c.isGrammarCell == cell &&
         ask.optionOf(c) != right;
     final own = entry.cards.where(alike).toList();
@@ -2220,9 +2229,9 @@ class AppState extends ChangeNotifier {
 
   /// Whether hearing [card] asks for what was heard rather than what it
   /// means: a letter or a digit (`pos`), a card marked `hears: form`
-  /// ([Card.hearsForm]), which is script practice (ADR-0034), or a generated
-  /// number.
-  bool hearsForm(Card card) => card is NumberCard || card.hearsForm;
+  /// ([Card.hearsForm]), which is script practice (ADR-0034); a generated
+  /// number is marked so.
+  bool hearsForm(Card card) => card.hearsForm;
 
   /// At most [limit] of [items], one per word, picked at random: a quick
   /// revision (ADR-0029). All of them, in order, when [limit] is null.
@@ -2370,6 +2379,7 @@ class AppState extends ChangeNotifier {
         straightToQuestion: (card) =>
             card.rule != null && lesson.members.contains(card.id),
         typed: isTyped,
+        siblingsOf: siblingsOf,
       ))
         item.ask == Ask.hearMeaning && hearsForm(item.card)
             ? item.askedAs(Ask.hearAndChoose)

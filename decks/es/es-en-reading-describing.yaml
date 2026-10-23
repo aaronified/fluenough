@@ -1,0 +1,73 @@
+schema: 1
+id: "es-en-reading-describing"
+name: "Reading: how things and people are"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about how a person feels and about a place, with the describing words of the Describing unit. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-how-are-you-feeling"
+    title: "How are you today?"
+    theme: "describing"
+    sentences:
+      - text: "¿Cómo estás hoy?"
+      - text: "Estoy cansado, pero contento."
+      - text: "Mi hermana está enferma."
+      - text: "¿Y tú? ¿Estás bien?"
+      - text: "Estoy bien, gracias."
+    questions:
+      - id: "es-0454"
+        prompt: { en: "How does the speaker feel today?" }
+        options:
+          - { en: "Tired but happy" }
+          - { en: "Sad and sick" }
+          - { en: "Busy and cold" }
+        answer: 1
+      - id: "es-0455"
+        prompt: { en: "How is the speaker's sister?" }
+        options:
+          - { en: "Sick" }
+          - { en: "Happy" }
+          - { en: "Busy" }
+        answer: 1
+      - id: "es-0456"
+        prompt: { en: "What does the friend ask?" }
+        options:
+          - { en: "Where are you?" }
+          - { en: "Are you well?" }
+          - { en: "What is the time?" }
+        answer: 2
+  - id: "es-postcard-from-the-coast"
+    title: "A postcard"
+    theme: "describing"
+    sentences:
+      - text: "Hola, Ana. Estoy en la ciudad."
+      - text: "El tiempo es bueno, pero el agua está fría."
+      - text: "La comida es muy rica y barata."
+      - text: "El hotel es bonito, pero la habitación es pequeña."
+      - text: "Te escribo desde aquí."
+    questions:
+      - id: "es-0457"
+        prompt: { en: "Where is the writer?" }
+        options:
+          - { en: "At home" }
+          - { en: "In the city" }
+          - { en: "In a shop" }
+        answer: 2
+      - id: "es-0458"
+        prompt: { en: "How is the food?" }
+        options:
+          - { en: "Tasty and cheap" }
+          - { en: "Cold and expensive" }
+          - { en: "Old and dirty" }
+        answer: 1
+      - id: "es-0459"
+        prompt: { en: "How is the room?" }
+        options:
+          - { en: "Big" }
+          - { en: "Small" }
+          - { en: "Clean and new" }
+        answer: 2
