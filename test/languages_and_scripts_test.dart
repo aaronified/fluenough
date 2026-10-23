@@ -59,7 +59,6 @@ import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/script_name.dart';
 import 'package:fluenough/ui/widgets/language_bar.dart';
 import 'package:fluenough/ui/widgets/reading_first.dart';
-import 'package:fluenough/ui/widgets/stat_tile.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart'
@@ -618,10 +617,6 @@ Finder zone() => find
 
 Finder allButton() =>
     find.descendant(of: bar(), matching: find.text('All')).hitTestable();
-
-Finder statTile(String value, String label) => find.byWidgetPredicate(
-  (w) => w is StatTile && w.value == value && w.label == label,
-);
 
 Future<void> openMenu(WidgetTester tester) async {
   await tester.tap(zone());
@@ -2278,13 +2273,14 @@ void main() {
           }
           state.shellTab.value = ShellTab.progress;
           await tester.pumpAndSettle();
-          // Spanish's 22 reviews.
-          expect(statTile('22', l10n.statsReviews), findsOneWidget);
+          // One language: the Level tile.
+          expect(find.text(l10n.progressLevelTitle), findsOneWidget);
           await tester.tap(allButton());
           await tester.pumpAndSettle();
           expect(state.settings.progressAll, isTrue);
-          // Every review, Marathi's too.
-          expect(statTile('44', l10n.statsReviews), findsOneWidget);
+          // Every language: the start date alone, as levels differ by course.
+          expect(find.text(l10n.progressStartedTitle), findsOneWidget);
+          expect(find.text(l10n.progressLevelTitle), findsNothing);
           // The wheel keeps its place, the selection an outline only.
           expect(pillFilled(tester), isFalse);
           expect(state.shownLanguage, 'es');
@@ -2325,7 +2321,7 @@ void main() {
           );
           await tester.pumpAndSettle();
           expect(state.settings.progressAll, isFalse);
-          expect(statTile('22', l10n.statsReviews), findsOneWidget);
+          expect(find.text(l10n.progressLevelTitle), findsOneWidget);
         }
       },
     );
