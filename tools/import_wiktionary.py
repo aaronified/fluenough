@@ -381,9 +381,10 @@ READERS = {"ja", "ko", "zh"}
 
 def _romaji(hint: str) -> str:
     """Wiktionary's Hepburn, as the Japanese decks write it: no macrons, a
-    long vowel doubled (ō as ou, the commoner reading)."""
+    long vowel doubled (ō as ou, the commoner reading; ē as ee, since
+    Hepburn writes えい as ei)."""
     return hint.strip().translate(str.maketrans(
-        {"ā": "aa", "ī": "ii", "ū": "uu", "ē": "ei", "ō": "ou"}))
+        {"ā": "aa", "ī": "ii", "ū": "uu", "ē": "ee", "ō": "ou"}))
 
 
 def reading(word: str, code: str, script: str, hint: str | None) -> str | None:

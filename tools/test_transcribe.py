@@ -114,6 +114,12 @@ class NewLanguagesTest(unittest.TestCase):
         self.assertEqual(transcribe("jan suli li toki.", "tok").ipa,
                          "jan ˈsuli li ˈtoki")
 
+    def test_toki_pona_words_next_to_punctuation_are_kept(self) -> None:
+        self.assertEqual(transcribe("toki pona! sina pilin seme?", "tok").ipa,
+                         "ˈtoki ˈpona ˈsina ˈpilin ˈseme")
+        self.assertEqual(transcribe("\"mi moku\": o kama.", "tok").ipa,
+                         "mi ˈmoku o ˈkama")
+
 
 if __name__ == "__main__":
     unittest.main()
