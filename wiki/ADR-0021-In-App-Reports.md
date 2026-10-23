@@ -41,7 +41,7 @@ consent from the user." The app keeps no log yet; that is #162.
     and every drill's frame. Screens with no bar get it through
     `WithReportButton`: Today, onboarding, the summary and profiles.
   - The same report is also behind an unchecked deck's "Report a mistake",
-    and behind each card's Report in Inspect.
+    and behind the Report at the foot of each card's sheet.
   - `test/gallery_test.dart` fails for any screen in the gallery without
     the icon.
 - **Text only.** No screenshot is taken or sent.

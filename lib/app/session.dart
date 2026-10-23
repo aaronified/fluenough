@@ -36,13 +36,34 @@ class DrillRequest {
   }) : this(deckIds: <String>{deckId}, skill: skill, tags: tags);
 
   /// A lesson (ADR-0024): new words from [language]'s pending units, or with
-  /// [deckId] from that deck, taught, checked and practised.
-  DrillRequest.lesson({required String language, String? deckId})
-    : this(
-        deckIds: deckId == null ? null : <String>{deckId},
-        lesson: true,
-        language: language,
-      );
+  /// [deckId] from that deck, taught, checked and practised. With [tags], only
+  /// words carrying one of them: a deck page's "+ Learn" as its tag chips
+  /// filter it.
+  DrillRequest.lesson({
+    required String language,
+    String? deckId,
+    Set<String> tags = const <String>{},
+  }) : this(
+         deckIds: deckId == null ? null : <String>{deckId},
+         lesson: true,
+         language: language,
+         tags: tags,
+       );
+
+  /// Practice of the words of one deck, as a deck page's Practice asks it:
+  /// every word taught, due or not, in [skills] (every skill switched on when
+  /// null), narrowed by [tags]. Like any revision, every answer is
+  /// recorded (ADR-0033).
+  DrillRequest.practice(
+    String deckId, {
+    Set<Skill>? skills,
+    Set<String> tags = const <String>{},
+  }) : this(
+         deckIds: <String>{deckId},
+         skills: skills,
+         tags: tags,
+         revise: true,
+       );
 
   /// Number practice in the language of [deckId], a number deck: generated
   /// numbers, drilled and not recorded (#54, ADR-0011).

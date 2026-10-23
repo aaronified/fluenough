@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- A deck's page lists every word with its meaning and where you stand with it, and its tag chips filter the words as you tap them. At the foot, Practice asks which skills and drills the words in view in them, due or not, and + Learn, with a badge counting the words in view not taught yet, teaches them; once all are taught it becomes Relearn (coming). The per-skill buttons and Inspect are gone: a word's sheet now shows everything its card has, unfolded, including how it is said symbol by symbol, its dictionary entry, every example and warning with its title, and how hard you have found it in each skill (#693).
 - Words you know come up a few at a time (#680). A word is known when FSRS gave it an 85% or better chance of being remembered at its last review. When a deck's known words come due, Today asks two of them a day, the ones you reviewed longest ago; once they are right, the deck's other due known words wait for another day, so each has its turn within a few days and none is left out. If one is wrong, three to five more are asked, and if those go wrong too, all of the deck's due known words come up.
 - A finished deck's Revise now records its answers and moves the schedule, like quick revision; only number practice is unrecorded (#499, ADR-0033).
 
