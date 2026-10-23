@@ -6,6 +6,7 @@
 - [Today and Daily Lessons](Today-and-Daily-Lessons)
 - [Drills and Skills](Drills-and-Skills)
 - [Courses and Paths](Courses-and-Paths)
+- [Proficiency Levels](Proficiency-Levels)
 - [Scripts and Readings](Scripts-and-Readings)
 - [Readings ISO 15919](Readings-ISO-15919)
 - [Speaking and Listening](Speaking-and-Listening)
