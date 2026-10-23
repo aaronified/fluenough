@@ -22,8 +22,7 @@ enum DistractorSource {
 /// The ids that tie [card] to its word family: its own and its bases'.
 Set<String> _family(Card card) => <String>{
   card.id,
-  for (final base in card.bases)
-    if (base.ref case final id?) id,
+  for (final base in card.bases) ?base.ref,
 };
 
 /// What [other] shares with [card], as the sources it comes from.
