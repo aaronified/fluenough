@@ -2361,7 +2361,18 @@ void main() {
     }
 
     Future<void> focusWheel(WidgetTester tester) async {
-      Focus.of(tester.element(zone())).requestFocus();
+      // The Focus on the wheel itself, not the swipe's detector above it.
+      final wheelFocus = find.descendant(
+        of: find.byType(LanguageBar),
+        matching: find.byWidgetPredicate(
+          (w) => w is Focus && w.onKeyEvent != null,
+        ),
+      );
+      final inside = find.descendant(
+        of: wheelFocus,
+        matching: find.byType(GestureDetector),
+      );
+      Focus.of(tester.element(inside.first)).requestFocus();
       await tester.pump();
     }
 
@@ -2444,7 +2455,9 @@ void main() {
 
       Map<String, int> actions() => <String, int>{
         for (final id in node.getSemanticsData().customSemanticsActionIds!)
-          CustomSemanticsAction.getAction(id)!.label!: id,
+          // The tap hint is an overriding action with no label.
+          if (CustomSemanticsAction.getAction(id)!.label != null)
+            CustomSemanticsAction.getAction(id)!.label!: id,
       };
       // On the first language there is still a previous: the last one.
       expect(
@@ -2517,9 +2530,10 @@ void main() {
       final state = learnerLanguageBar(eight, choice: eight.first);
       await pumpApp(tester, state: state);
       final width = tester.getSize(zone()).width;
-      await tester.fling(zone(), Offset(-width * 0.9, 0), 3000);
+      // About 8 detents of drag and 5.7 of coast: past the last language and
+      // on from the first again, short of a whole number of turns.
+      await tester.fling(zone(), Offset(-width * 0.9, 0), 2000);
       await tester.pumpAndSettle(const Duration(seconds: 2));
-      // Past the last language and on from the first again.
       expect(state.shownLanguage, isNot(eight.first));
       expect(tester.takeException(), isNull);
     });
