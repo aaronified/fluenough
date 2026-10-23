@@ -361,10 +361,7 @@ units:
   # community: its servers, meetups, podcasts, its Wikipedia-like wikis,
   # the word lists (pu, ku suli, nimi sin) and how speakers differ on
   # them.
-  - planned: { id: "tok-language-community", theme: "language-community", words: 2 }
-    listening_passages:
-      - { id: "podcast-clip", text: { "en": "A podcast-style chat between two speakers about how they learned toki pona" } }
-    reading_passages:
-      - { id: "community-intro", text: { "en": "A welcome page for new speakers on a community site" } }
+  - decks: ["tok-language-community", "tok-language-community-sentences", "tok-reading-language-community", "*"]
+    words: 2
     milestone: "B1"
   - ["*"]
