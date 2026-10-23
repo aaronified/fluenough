@@ -2682,7 +2682,7 @@ void main() {
       const numbersBig = 'hi-en-numbers-big';
 
       /// The generated number on screen now.
-      NumberCard current(WidgetTester tester) {
+      Card current(WidgetTester tester) {
         final drill = tester.widget(
           find.byWidgetPredicate(
             (w) => w is RecognitionDrill || w is TypedDrill,
@@ -2691,7 +2691,7 @@ void main() {
         final session = drill is RecognitionDrill
             ? drill.session
             : (drill as TypedDrill).session;
-        return session.item.card as NumberCard;
+        return session.item.card;
       }
 
       testWidgets(
@@ -2736,7 +2736,7 @@ void main() {
           await tester.tap(find.byType(PlayButton));
           await tester.pumpAndSettle();
           expect(tts.spoken.single.text, card.target);
-          final n = card.number;
+          final n = int.parse(card.native);
           await typeAndCheck(
             tester,
             '${n ~/ 1000},${(n % 1000).toString().padLeft(3, '0')}',
@@ -4051,7 +4051,7 @@ cards:
         isEmpty,
       );
 
-      final card = NumberCard(
+      final card = numberCard(
         number: 2020,
         spellings: spellNumber(hi, 2020),
         rulesId: hi.id,
