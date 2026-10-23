@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-10-23
+
 ### Added
 
 - With Adult content off (the default), a deck of offensive words and any rude card (tagged or registered `offensive`) are hidden everywhere: not listed, not taught in lessons, and not in Today, reviews or practice; they come back when Adult content is turned on. The warning on a word that sounds like a rude one still shows, without the rude word (#628).
