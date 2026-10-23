@@ -182,6 +182,13 @@ every card in the shipped decks, then deletes the old.
    typed is a property of the card's data (a letter, a digit, a number),
    not of the deck's presence on the path. Script practice stays as it
    is, found by the card.
+   **Built (#522)** (owner, 2026-10-23: "New pos letter/digit"): `letter`
+   and `digit` are valid `pos` values on a card (the validator accepts them
+   on a card, not on a sense or in a rules deck's `applies_to`), and
+   `AppState.hearsForm` is `card is NumberCard || card.isLetterOrDigit`;
+   `needsAlphabet` is no longer read for it. A deck that has no such `pos`
+   asks Hear for the meaning, so the decks are converted by a script in a
+   `decks-next` pull request that merges with the release.
 8. **Lessons from the registry (#2).** `lessonQuestions` and `Difficulty`
    read the registry and the card's data; the switch on kind is deleted.
 9. **Numbers as cards, reading as exam items (#5, #6).** `NumberCard`

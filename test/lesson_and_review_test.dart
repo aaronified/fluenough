@@ -3062,8 +3062,21 @@ void main() {
     group('script practice', () {
       testWidgets('a card is typed as heard, in the script', (tester) async {
         usePhone(tester);
+        final decks = MemoryDeckSource(const <String, String>{
+          'decks/hi/hi-en-script-reading.yaml': '''
+schema: 1
+id: hi-en-script-reading
+name: "Script reading"
+language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+  - { id: hi-9001, target: "क", native: "ka", reading: "ka", pos: "letter" }
+  - { id: hi-9002, target: "ख", native: "kha", reading: "kha", pos: "letter" }
+''',
+        });
         final card = (await () async {
-          final s = AppState.test();
+          final s = AppState.test(decks: decks);
           await s.load();
           return s.deckById(script)!.cards.firstWhere((c) => c.reading != null);
         }());
@@ -3073,7 +3086,10 @@ void main() {
             request: DrillRequest.untaught(script, skill: Skill.listening),
             preset: DrillPreset(target: card.target),
           ),
-          state: AppState.test(tts: FixedTtsEngine(const <String>{'hi'})),
+          state: AppState.test(
+            decks: decks,
+            tts: FixedTtsEngine(const <String>{'hi'}),
+          ),
         );
         final l10n = l10nOf(tester);
         final session = tester

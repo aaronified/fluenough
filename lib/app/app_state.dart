@@ -2215,13 +2215,9 @@ class AppState extends ChangeNotifier {
   }
 
   /// Whether hearing [card] asks for what was heard rather than what it
-  /// means: a card of a deck that teaches the alphabet, which is script
-  /// practice (ADR-0034), or a generated number.
-  bool hearsForm(Card card) {
-    if (card is NumberCard) return true;
-    final entry = deckOf(card);
-    return entry != null && needsAlphabet(entry);
-  }
+  /// means: a letter or a digit (`pos`, [Card.isLetterOrDigit]), which is
+  /// script practice (ADR-0034), or a generated number.
+  bool hearsForm(Card card) => card is NumberCard || card.isLetterOrDigit;
 
   /// At most [limit] of [items], one per word, picked at random: a quick
   /// revision (ADR-0029). All of them, in order, when [limit] is null.

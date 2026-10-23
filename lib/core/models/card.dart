@@ -612,6 +612,12 @@ class Card {
     };
   }
 
+  /// Whether the card is one letter or digit of a script (`pos: letter` or
+  /// `pos: digit`, #522 step 7): what is heard of it is its form, so Hear
+  /// types the form, and a card of the script decks is found by this, not by
+  /// where its deck stands on the path.
+  bool get isLetterOrDigit => pos == 'letter' || pos == 'digit';
+
   /// Whether this is a grammar cell: a rules table's cell, or a card that
   /// excludes all four vocabulary skills, as a pattern's cell does. It is
   /// drilled in grammar alone, not as a word.
