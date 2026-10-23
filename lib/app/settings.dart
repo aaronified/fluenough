@@ -4,7 +4,6 @@ import 'package:flutter/material.dart' show ThemeMode, TimeOfDay;
 import 'package:flutter/foundation.dart';
 
 import '../core/data/spoken_languages.dart';
-import '../core/decks/ipa_course.dart';
 import '../core/review/deck_review.dart';
 import '../core/review/rater_code.dart';
 import '../core/review/review_pairs.dart';
@@ -116,7 +115,6 @@ class SettingsNotifier extends ChangeNotifier {
   bool _progressAll;
   Set<String> _placedDecks;
   bool _learningChosen;
-  IpaScope _ipaScope = IpaScope.mine;
   Set<String> _speechOnline;
   Set<String> _noAlphabet;
   Map<String, Set<String>> _scriptsLearned;
@@ -372,12 +370,6 @@ class SettingsNotifier extends ChangeNotifier {
   bool get learningChosen => _learningChosen;
   set learningChosen(bool value) =>
       _set(_learningChosen, value, (v) => _learningChosen = v);
-
-  /// Which of the IPA course the learner has: "IPA: my languages", the
-  /// symbols of the languages they learn, or "IPA: whole chart". One course
-  /// and one progress between them (ADR-0041).
-  IpaScope get ipaScope => _ipaScope;
-  set ipaScope(IpaScope value) => _set(_ipaScope, value, (v) => _ipaScope = v);
 
   /// The languages, by code, whose speech the learner allows to be
   /// recognised online, where the phone cannot recognise them itself
@@ -865,7 +857,6 @@ class SettingsNotifier extends ChangeNotifier {
     'progress_all': '$_progressAll',
     'placed_decks': (_placedDecks.toList()..sort()).join(','),
     'learning_chosen': '$_learningChosen',
-    'ipa_scope': _ipaScope.name,
     'speech_online': (_speechOnline.toList()..sort()).join(','),
     'no_alphabet': (_noAlphabet.toList()..sort()).join(','),
     'scripts_learned': jsonEncode(<String, List<String>>{
@@ -1069,7 +1060,6 @@ class SettingsNotifier extends ChangeNotifier {
       }
     }
     if (pick('learning_chosen', flag) case final v?) learningChosen = v;
-    if (pick('ipa_scope', IpaScope.tryParse) case final v?) ipaScope = v;
     if (pick('progress_all', flag) case final v?) progressAll = v;
     if (pick('paused_until', _parseJsonMap) case final v?) {
       for (final MapEntry(:key, :value) in v.entries) {

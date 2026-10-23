@@ -61,10 +61,6 @@ class DrillPage extends StatefulWidget {
 class _DrillPageState extends State<DrillPage> {
   DrillSession? _session;
 
-  /// The app, kept from initState: a sounds session's IPA cards are let go
-  /// of in [dispose], where the tree can no longer be read.
-  late final AppState _app;
-
   /// The script guides to show before the session (#30, ADR-0016), in
   /// turn: one for each language with script cards in it whose guide is
   /// unseen, in the order the session reaches them.
@@ -81,7 +77,7 @@ class _DrillPageState extends State<DrillPage> {
   @override
   void initState() {
     super.initState();
-    final state = _app = AppScope.read(context);
+    final state = AppScope.read(context);
     // `load` also waits for the voice check, which decides whether
     // listening cards are in the queue. It is safe to call again.
     _await(state, state.load());
@@ -214,7 +210,6 @@ class _DrillPageState extends State<DrillPage> {
 
   @override
   void dispose() {
-    if (widget.request.cardIds != null) _app.unpinIpaCards();
     _session
       ?..removeListener(_onSession)
       ..dispose();
