@@ -6,15 +6,19 @@ native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Adjectives: gender and number"
 license: "CC-BY-SA-4.0"
 description: "Adjectives in -आ (-ā) agree with their noun; the others never change."
-pattern:
-  name: "Adjective agreement"
-  slot_name: "agreement"
-  prompt: "{lemma} ({gloss}) — {slot}"
-  entries:
-    "achchhaa": "good"
-    "badaa": "big"
-    "chhotaa": "small"
-    "nayaa": "new"
-    "sundar": "beautiful"
-    "laal": "red"
-  notes: "An adjective ending in -आ (-ā) agrees: अच्छा लड़का (acchā laṛkā), अच्छी लड़की (acchī laṛkī), अच्छे लड़के (acchē laṛkē). Any other adjective stays the same: सुंदर लड़का (sundar laṛkā), सुंदर लड़की (sundar laṛkī). A feminine plural takes the feminine form: अच्छी लड़कियाँ (acchī laṛkiyām̐)."
+table:
+  slot_name: "form"
+  slots:
+    "masculine-singular": "{meaning}, masculine, one"
+    "masculine-plural": "{meaning}, masculine, more than one, or before a postposition"
+    "feminine": "{meaning}, feminine, with a feminine noun"
+rules:
+  "hi-rule-masculine-singular":
+    name: "-आ (-ā): the masculine singular"
+    explanation: "An adjective in -आ (-ā) keeps its form with a masculine noun in the singular, when no postposition follows: अच्छा लड़का (acchā laṛkā), a good boy. Any other adjective stays the same in every slot, such as सुंदर (sundar), beautiful: सुंदर लड़का (sundar laṛkā), a beautiful boy."
+  "hi-rule-masculine-plural":
+    name: "-े (-ē): a masculine plural noun, or before a postposition"
+    explanation: "An adjective in -आ (-ā) becomes -े (-ē) before a masculine plural noun, and before a postposition, even when the noun is singular: अच्छे लड़के (acchē laṛkē), good boys; अच्छे लड़के के साथ (acchē laṛkē ke sāth), with a good boy."
+  "hi-rule-feminine":
+    name: "-ी (-ī): with a feminine noun"
+    explanation: "With a feminine noun, an adjective in -आ (-ā) becomes -ी (-ī): अच्छी लड़की (acchī laṛkī), a good girl. A feminine plural takes the feminine form: अच्छी लड़कियाँ (acchī laṛkiyām̐), good girls."
