@@ -1,0 +1,50 @@
+schema: 1
+id: "es-transport-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-0694"
+    target: "Espero el autobús en la parada."
+    ipa: "esˈpeɾo el awtoˈbus en la paˈɾada"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Espero", ref: "es-0693" }, { word: "el", base: "el" }, { word: "autobús", ref: "es-0674" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "parada", ref: "es-0683" }]
+    confusables: [{ id: "tomar", ref: "es-0624", kind: "word" }, { id: "llegar", ref: "es-0290", kind: "word" }]
+  - id: "es-0695"
+    target: "El tren sale a las nueve."
+    ipa: "el tɾen ˈsale a las ˈnwebe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "tren", ref: "es-0676" }, { word: "sale", ref: "es-0690" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "nueve", ref: "es-0213" }]
+    confusables: [{ id: "llegar", ref: "es-0290", kind: "word" }, { id: "llegada", ref: "es-0688", kind: "word" }]
+  - id: "es-0696"
+    target: "Tomo el metro en la ciudad."
+    ipa: "ˈtomo el ˈmetɾo en la θjuˈdad"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tomo", ref: "es-0624" }, { word: "el", base: "el" }, { word: "metro", ref: "es-0675" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }]
+    confusables: [{ id: "coche", ref: "es-0678", kind: "word" }, { id: "bicicleta", ref: "es-0680", kind: "word" }]
+  - id: "es-0697"
+    target: "Subimos al tren y bajamos en la estación."
+    ipa: "suˈbimos al tɾen i baˈxamos en la estaˈθjon"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Subimos", ref: "es-0691" }, { word: "al", base: "al" }, { word: "tren", ref: "es-0676" }, { word: "y", ref: "es-0048" }, { word: "bajamos", ref: "es-0692" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "estación", ref: "es-0684" }]
+    confusables: [{ id: "salir", ref: "es-0690", kind: "word" }, { id: "esperar", ref: "es-0693", kind: "word" }]
+  - id: "es-0698"
+    target: "El billete cuesta cinco euros."
+    ipa: "el biˈʝete ˈkwesta ˈθinko ˈewɾos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "billete", ref: "es-0685" }, { word: "cuesta", ref: "es-0587" }, { word: "cinco", ref: "es-0209" }, { word: "euros", ref: "es-0550" }]
+    confusables: [{ id: "precio", ref: "es-0580", kind: "word" }, { id: "cambio", ref: "es-0586", kind: "word" }]
+  - id: "es-0699"
+    target: "La carretera es buena y el aeropuerto está lejos."
+    ipa: "la kareˈteɾa es ˈbwena i el aeɾoˈpweɾto esˈta ˈlexos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "carretera", ref: "es-0687" }, { word: "es", ref: "es-0022" }, { word: "buena", ref: "es-0033" }, { word: "y", ref: "es-0048" }, { word: "el", base: "el" }, { word: "aeropuerto", ref: "es-0686" }, { word: "está", ref: "es-0023" }, { word: "lejos", base: "lejos" }]
+    confusables: [{ id: "calle", ref: "es-0017", kind: "word" }, { id: "barco", ref: "es-0682", kind: "word" }]
