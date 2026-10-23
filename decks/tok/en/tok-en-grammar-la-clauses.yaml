@@ -1,0 +1,26 @@
+"schema": 1
+"id": "tok-en-grammar-la-clauses"
+"kind": "layer"
+"core": "tok-grammar-la-clauses"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "La with a whole clause"
+"license": "CC-BY-SA-4.0"
+"description": "A whole clause can come before la and set the context for the clause after it: sina kama la, mi lape is if you come, I sleep. The condition is a clause with its own subject and verb, and the main clause follows it. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "La with a whole clause"
+  "slot_name": "condition"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "kama": "if you come (sina kama la)"
+    "kama ala": "if you do not come (sina kama ala la)"
+    "lon": "if it is there (ilo li lon la)"
+    "lon ala": "if it is not there (ilo li lon ala la)"
+  "entries":
+    "mi": "I"
+    "ona": "they"
+  "notes": "Sina kama la is if you come, and sina kama ala la is if you do not come. Ala turns the condition into its negative, and the main clause keeps its form."

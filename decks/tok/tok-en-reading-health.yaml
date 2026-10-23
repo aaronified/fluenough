@@ -1,0 +1,73 @@
+"schema": 1
+"id": "tok-en-reading-health"
+"name": "Reading: at the clinic"
+"kind": "reading"
+"language":
+  "code": "tok"
+  "iso639_3": "tok"
+  "name": "Toki Pona"
+  "script": "latin"
+  "icon": "Tp"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this deck"
+"description": "Two passages on health: a listening passage about a visit to a clinic, and a reading passage that is a medicine label. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "reading"
+- "unreviewed"
+"passages":
+- "id": "tok-health-clinic-visit"
+  "title": "A visit to the clinic"
+  "theme": "health"
+  "sentences":
+  - "text": "oko mi li pakala."
+  - "text": "mi moku e misikeke tenpo kama."
+  - "text": "tenpo pini la, oko mi li pona."
+  "questions":
+  - "id": "tok-0584"
+    "prompt":
+      "en": "What hurts?"
+    "options":
+    - "en": "The eye"
+    - "en": "The foot"
+    "answer": 1
+  - "id": "tok-0585"
+    "prompt":
+      "en": "When is the medicine taken?"
+    "options":
+    - "en": "Later"
+    - "en": "Before"
+    "answer": 1
+  - "id": "tok-0586"
+    "prompt":
+      "en": "The eye was fine before. Is that true?"
+    "answer": true
+- "id": "tok-health-medicine-label"
+  "title": "A medicine label"
+  "theme": "health"
+  "sentences":
+  - "text": "misikeke ni li tu la, o moku."
+  - "text": "o pana ala e misikeke tawa soweli."
+  - "text": "oko li pakala la, o lukin e jan misikeke."
+  "questions":
+  - "id": "tok-0587"
+    "prompt":
+      "en": "How many does the label say to take?"
+    "options":
+    - "en": "Two"
+    - "en": "Five"
+    "answer": 1
+  - "id": "tok-0588"
+    "prompt":
+      "en": "May you give the medicine to an animal?"
+    "answer": false
+  - "id": "tok-0589"
+    "prompt":
+      "en": "If the eye hurts, who should you see?"
+    "options":
+    - "en": "The doctor"
+    - "en": "The animal"
+    "answer": 1

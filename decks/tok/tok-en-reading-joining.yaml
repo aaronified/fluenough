@@ -1,0 +1,71 @@
+"schema": 1
+"id": "tok-en-reading-joining"
+"name": "Reading: plans and lists"
+"kind": "reading"
+"language":
+  "code": "tok"
+  "iso639_3": "tok"
+  "name": "Toki Pona"
+  "script": "latin"
+  "icon": "Tp"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this deck"
+"description": "Two passages on joining: a listening passage about a day's plans for two people, and a reading passage that is a shopping list. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "reading"
+- "unreviewed"
+"passages":
+- "id": "tok-joining-plans-for-two"
+  "title": "Plans for two"
+  "sentences":
+  - "text": "mi en sina li tawa esun."
+  - "text": "sina anu ona li kama."
+  - "text": "mi wile lape taso."
+  "questions":
+  - "id": "tok-0550"
+    "prompt":
+      "en": "Who goes to the market?"
+    "options":
+    - "en": "The speaker only"
+    - "en": "The speaker and a friend"
+    "answer": 2
+  - "id": "tok-0551"
+    "prompt":
+      "en": "What does the speaker want?"
+    "options":
+    - "en": "To sleep only"
+    - "en": "To eat"
+    "answer": 1
+  - "id": "tok-0552"
+    "prompt":
+      "en": "The line 'sina anu ona li kama' gives a choice. True or false: it says you or they come."
+    "answer": true
+- "id": "tok-joining-shopping-list"
+  "title": "A shopping list"
+  "sentences":
+  - "text": "o tawa esun lili."
+  - "text": "o jo e kili en telo."
+  - "text": "o jo ala e kili jaki."
+  "questions":
+  - "id": "tok-0553"
+    "prompt":
+      "en": "Where should you go?"
+    "options":
+    - "en": "To the small market"
+    - "en": "To the water"
+    "answer": 1
+  - "id": "tok-0554"
+    "prompt":
+      "en": "What should you have?"
+    "options":
+    - "en": "Fruit and water"
+    - "en": "Dirty fruit"
+    "answer": 1
+  - "id": "tok-0555"
+    "prompt":
+      "en": "The list says to get dirty fruit. Is that true?"
+    "answer": false

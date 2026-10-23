@@ -1,0 +1,22 @@
+schema: 1
+id: "es-en-grammar-ir-a"
+kind: "layer"
+core: "es-grammar-ir-a"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Going to: ir a and an infinitive"
+license: "CC-BY-SA-4.0"
+description: "To say what you are going to do, use the present of ir (to go), then a, then the infinitive: voy a comer, I am going to eat. Learn the six forms of ir with each verb. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "Going to: ir a and the infinitive"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "comer": "to eat"
+    "beber": "to drink"
+    "comprar": "to buy"
+    "estudiar": "to study"
+    "trabajar": "to work"
+    "llegar": "to arrive"
+    "cenar": "to have dinner"
+    "cocinar": "to cook"
+  notes: "The present of ir is irregular: voy, vas, va, vamos, vais, van. The a is always there, and the infinitive does not change."

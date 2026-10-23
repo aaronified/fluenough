@@ -1,0 +1,71 @@
+"schema": 1
+"id": "tok-en-reading-la-chains"
+"name": "Reading: memories and a trip"
+"kind": "reading"
+"language":
+  "code": "tok"
+  "iso639_3": "tok"
+  "name": "Toki Pona"
+  "script": "latin"
+  "icon": "Tp"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this deck"
+"description": "Two passages with stacked contexts: a listening passage in which someone remembers a place from childhood, and a reading passage from a travel blog. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "reading"
+- "unreviewed"
+"passages":
+- "id": "tok-la-chains-childhood"
+  "title": "Childhood"
+  "sentences":
+  - "text": "tenpo pini la, ma mi la, mi lili."
+  - "text": "tenpo pini la, tomo mi la, mi musi."
+  - "text": "tenpo pini la, mi lukin e kasi suli."
+  "questions":
+  - "id": "tok-0705"
+    "prompt":
+      "en": "When is the memory?"
+    "options":
+    - "en": "Now"
+    - "en": "In the past"
+    "answer": 2
+  - "id": "tok-0706"
+    "prompt":
+      "en": "Where is the speaker in the memory?"
+    "options":
+    - "en": "In the house"
+    - "en": "On the water"
+    "answer": 1
+  - "id": "tok-0707"
+    "prompt":
+      "en": "The speaker was small in their country. Is that true?"
+    "answer": true
+- "id": "tok-la-chains-travel-blog"
+  "title": "A travel blog"
+  "sentences":
+  - "text": "tenpo ni la, ma ni la, mi lon tomo suli."
+  - "text": "tenpo pini la, ma ni la, mi tawa kepeken ilo."
+  - "text": "tenpo kama la, ma ni la, mi moku e kili."
+  "questions":
+  - "id": "tok-0708"
+    "prompt":
+      "en": "Where is the writer now?"
+    "options":
+    - "en": "In a big building"
+    - "en": "On the water"
+    "answer": 1
+  - "id": "tok-0709"
+    "prompt":
+      "en": "How did the writer go in the past?"
+    "options":
+    - "en": "By tool"
+    - "en": "By water"
+    "answer": 1
+  - "id": "tok-0710"
+    "prompt":
+      "en": "In the future the writer will eat fruit. Is that true?"
+    "answer": true

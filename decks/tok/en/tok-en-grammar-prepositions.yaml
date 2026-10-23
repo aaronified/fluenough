@@ -1,0 +1,28 @@
+"schema": 1
+"id": "tok-en-grammar-prepositions"
+"kind": "layer"
+"core": "tok-grammar-prepositions"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "Prepositions: lon, tawa, tan, kepeken, sama"
+"license": "CC-BY-SA-4.0"
+"description": "The five prepositions of the course. Each is a word of its own with its own place: lon for where, tawa for to or for, tan for from or because of, kepeken for using, and sama for like. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "Prepositions: lon, tawa, tan, kepeken, sama"
+  "slot_name": "preposition"
+  "prompt": "{lemma} ({gloss}): {slot}"
+  "slots":
+    "lon": "at or in (lon)"
+    "tawa": "to or for (tawa)"
+    "tan": "from (tan)"
+    "kepeken": "using (kepeken)"
+    "sama": "like (sama)"
+  "entries":
+    "mi": "I"
+    "ona": "they"
+    "sina": "you"
+  "notes": "A preposition comes after its verb and before its object: mi pana tawa jan is I give to a person. Lon, tawa, tan, kepeken and sama are all also verbs or describing words; the phrase after them is what they point at."

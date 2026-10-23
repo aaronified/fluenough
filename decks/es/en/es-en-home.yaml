@@ -1,0 +1,272 @@
+schema: 1
+id: "es-en-home"
+kind: "layer"
+core: "es-home"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Home and neighbourhood"
+license: "CC-BY-SA-4.0"
+description: "The rooms and the things in a home, the flat, the rent and the verb to rent. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-0802":
+    native: "room; bedroom"
+    notes: { n1: "Habitación is a room in a flat or a hotel. Cuarto is also a room, often a bedroom." }
+    bases: {"la": "the", "habitación": "room"}
+    examples:
+      "La habitación es grande.":
+        native: "The room is big."
+        bases: {"La": "the", "habitación": "room"}
+      "Mi habitación está en el piso.":
+        native: "My room is in the flat."
+        bases: {"habitación": "room", "en": "in", "el": "the"}
+  "es-0803":
+    native: "flat; floor"
+    notes: { n1: "Piso is a flat, a home in a building. It also means floor, as in the first floor." }
+    bases: {"el": "the", "piso": "flat"}
+    examples:
+      "El piso es nuevo.":
+        native: "The flat is new."
+        bases: {"El": "the", "piso": "flat"}
+      "Vivo en un piso.":
+        native: "I live in a flat."
+        bases: {"en": "in", "un": "a", "piso": "flat"}
+  "es-0804":
+    native: "room; bedroom"
+    notes: { n1: "Cuarto is a room, often a bedroom." }
+    bases: {"el": "the", "cuarto": "room"}
+    examples:
+      "Mi cuarto tiene una cama.":
+        native: "My room has a bed."
+        bases: {"cuarto": "room", "una": "a"}
+      "Mi cuarto es pequeño.":
+        native: "My room is small."
+        bases: {"cuarto": "room"}
+  "es-0805":
+    native: "bathroom"
+    notes: { n1: "Baño is a bathroom, with the toilet and the shower. It also means a bath." }
+    bases: {"el": "the", "baño": "bathroom"}
+    examples:
+      "El baño es pequeño.":
+        native: "The bathroom is small."
+        bases: {"El": "the", "baño": "bathroom"}
+      "Hay un baño en el piso.":
+        native: "There is a bathroom in the flat."
+        bases: {"Hay": "there is", "un": "a", "baño": "bathroom", "en": "in", "el": "the"}
+  "es-0806":
+    native: "kitchen"
+    notes: { n1: "Cocina is a kitchen, and also the cooking." }
+    bases: {"la": "the", "cocina": "kitchen"}
+    examples:
+      "La cocina es grande.":
+        native: "The kitchen is big."
+        bases: {"La": "the", "cocina": "kitchen"}
+      "Cocino en la cocina.":
+        native: "I cook in the kitchen."
+        bases: {"en": "in", "la": "the", "cocina": "kitchen"}
+  "es-0807":
+    native: "living room"
+    notes: { n1: "Salón is the living room, the room for sitting and guests." }
+    bases: {"el": "the", "salón": "living room"}
+    examples:
+      "El salón tiene un sofá.":
+        native: "The living room has a sofa."
+        bases: {"El": "the", "salón": "living room", "un": "a"}
+      "El salón es grande.":
+        native: "The living room is big."
+        bases: {"El": "the", "salón": "living room"}
+  "es-0808":
+    native: "bedroom"
+    notes: { n1: "Dormitorio is a bedroom, the room for sleeping." }
+    bases: {"el": "the", "dormitorio": "bedroom"}
+    examples:
+      "El dormitorio es tranquilo.":
+        native: "The bedroom is quiet."
+        bases: {"El": "the", "dormitorio": "bedroom"}
+      "Mi dormitorio es grande.":
+        native: "My bedroom is big."
+        bases: {"dormitorio": "bedroom"}
+  "es-0809":
+    native: "hall; corridor"
+    notes: { n1: "Pasillo is a hall or corridor inside a flat." }
+    bases: {"el": "the", "pasillo": "hall"}
+    examples:
+      "El pasillo es largo.":
+        native: "The hall is long."
+        bases: {"El": "the", "pasillo": "hall"}
+      "El pasillo está en un piso.":
+        native: "The hall is in a flat."
+        bases: {"El": "the", "pasillo": "hall", "en": "in", "un": "a"}
+  "es-0810":
+    native: "garden"
+    notes: { n1: "Jardín is a garden." }
+    bases: {"el": "the", "jardín": "garden"}
+    examples:
+      "El jardín es bonito.":
+        native: "The garden is nice."
+        bases: {"El": "the", "jardín": "garden"}
+      "Hay un jardín en la casa.":
+        native: "There is a garden at the house."
+        bases: {"Hay": "there is", "un": "a", "jardín": "garden", "en": "in", "la": "the"}
+  "es-0811":
+    native: "terrace; balcony"
+    notes: { n1: "Terraza is a terrace, an outside space on a flat or a café." }
+    bases: {"la": "the", "terraza": "terrace"}
+    examples:
+      "La terraza es grande.":
+        native: "The terrace is big."
+        bases: {"La": "the", "terraza": "terrace"}
+      "Tengo una terraza.":
+        native: "I have a terrace."
+        bases: {"una": "a", "terraza": "terrace"}
+  "es-0812":
+    native: "bed"
+    notes: { n1: "Cama is a bed." }
+    bases: {"la": "the", "cama": "bed"}
+    examples:
+      "La cama es cómoda.":
+        native: "The bed is comfortable."
+        bases: {"La": "the", "cama": "bed"}
+      "Mi cama está en la habitación.":
+        native: "My bed is in the bedroom."
+        bases: {"cama": "bed", "en": "in", "la": "the"}
+  "es-0813":
+    native: "sofa"
+    notes: { n1: "Sofá is a sofa. Its plural is sofás." }
+    bases: {"el": "the", "sofá": "sofa"}
+    examples:
+      "El sofá es cómodo.":
+        native: "The sofa is comfortable."
+        bases: {"El": "the", "sofá": "sofa"}
+      "Hay un sofá en el salón.":
+        native: "There is a sofa in the living room."
+        bases: {"Hay": "there is", "un": "a", "sofá": "sofa", "en": "in", "el": "the"}
+  "es-0814":
+    native: "wardrobe; cupboard"
+    notes: { n1: "Armario is a wardrobe, a cupboard for clothes." }
+    bases: {"el": "the", "armario": "wardrobe"}
+    examples:
+      "El armario es grande.":
+        native: "The wardrobe is big."
+        bases: {"El": "the", "armario": "wardrobe"}
+      "Mi libro está en el armario.":
+        native: "My book is in the cupboard."
+        bases: {"en": "in", "el": "the", "armario": "wardrobe"}
+  "es-0815":
+    native: "fridge"
+    notes: { n1: "Frigorífico is a fridge. Many people say la nevera instead." }
+    bases: {"el": "the", "frigorífico": "fridge"}
+    examples:
+      "El frigorífico tiene leche.":
+        native: "The fridge has milk."
+        bases: {"El": "the", "frigorífico": "fridge"}
+      "El frigorífico está en la cocina.":
+        native: "The fridge is in the kitchen."
+        bases: {"El": "the", "frigorífico": "fridge", "en": "in", "la": "the"}
+  "es-0816":
+    native: "oven"
+    notes: { n1: "Horno is an oven." }
+    bases: {"el": "the", "horno": "oven"}
+    examples:
+      "El horno está caliente.":
+        native: "The oven is hot."
+        bases: {"El": "the", "horno": "oven"}
+      "El horno es nuevo.":
+        native: "The oven is new."
+        bases: {"El": "the", "horno": "oven"}
+  "es-0817":
+    native: "shower"
+    notes: { n1: "Ducha is a shower." }
+    bases: {"la": "the", "ducha": "shower"}
+    examples:
+      "Tomo una ducha.":
+        native: "I have a shower."
+        bases: {"una": "a", "ducha": "shower"}
+      "La ducha es buena.":
+        native: "The shower is good."
+        bases: {"La": "the", "ducha": "shower"}
+  "es-0818":
+    native: "wall"
+    notes: { n1: "Pared is a wall." }
+    bases: {"la": "the", "pared": "wall"}
+    examples:
+      "La pared es alta.":
+        native: "The wall is high."
+        bases: {"La": "the", "pared": "wall"}
+      "La pared está sucia.":
+        native: "The wall is dirty."
+        bases: {"La": "the", "pared": "wall"}
+  "es-0819":
+    native: "floor"
+    notes: { n1: "Suelo is the floor, the ground you walk on." }
+    bases: {"el": "the", "suelo": "floor"}
+    examples:
+      "El suelo está limpio.":
+        native: "The floor is clean."
+        bases: {"El": "the", "suelo": "floor"}
+      "El suelo está sucio.":
+        native: "The floor is dirty."
+        bases: {"El": "the", "suelo": "floor"}
+  "es-0820":
+    native: "ceiling; roof"
+    notes: { n1: "Techo is a ceiling or a roof." }
+    bases: {"el": "the", "techo": "ceiling"}
+    examples:
+      "El techo es alto.":
+        native: "The ceiling is high."
+        bases: {"El": "the", "techo": "ceiling"}
+      "El techo está sucio.":
+        native: "The ceiling is dirty."
+        bases: {"El": "the", "techo": "ceiling"}
+  "es-0821":
+    native: "lamp"
+    notes: { n1: "Lámpara is a lamp, for light." }
+    bases: {"la": "the", "lámpara": "lamp"}
+    examples:
+      "La lámpara es nueva.":
+        native: "The lamp is new."
+        bases: {"La": "the", "lámpara": "lamp"}
+      "Hay una lámpara en la mesa.":
+        native: "There is a lamp on the table."
+        bases: {"Hay": "there is", "una": "a", "lámpara": "lamp", "en": "in", "la": "the"}
+  "es-0822":
+    native: "rug; carpet"
+    notes: { n1: "Alfombra is a rug or a carpet on the floor." }
+    bases: {"la": "the", "alfombra": "rug"}
+    examples:
+      "La alfombra es bonita.":
+        native: "The rug is nice."
+        bases: {"La": "the", "alfombra": "rug"}
+      "Hay una alfombra en el salón.":
+        native: "There is a rug in the living room."
+        bases: {"Hay": "there is", "una": "a", "alfombra": "rug", "en": "in", "el": "the"}
+  "es-0823":
+    native: "mirror"
+    notes: { n1: "Espejo is a mirror." }
+    bases: {"el": "the", "espejo": "mirror"}
+    examples:
+      "Hay un espejo en el baño.":
+        native: "There is a mirror in the bathroom."
+        bases: {"Hay": "there is", "un": "a", "espejo": "mirror", "en": "in", "el": "the"}
+      "El espejo es grande.":
+        native: "The mirror is big."
+        bases: {"El": "the", "espejo": "mirror"}
+  "es-0824":
+    native: "rent"
+    notes: { n1: "Alquiler is rent, the money paid to live in a home that you do not own." }
+    bases: {"el": "the", "alquiler": "rent"}
+    examples:
+      "El alquiler es caro.":
+        native: "The rent is expensive."
+        bases: {"El": "the", "alquiler": "rent"}
+      "Pago el alquiler.":
+        native: "I pay the rent."
+        bases: {"el": "the", "alquiler": "rent"}
+  "es-0825":
+    native: "to rent"
+    notes: { n1: "Alquilar is to rent a home or a car. It is a regular -ar verb." }
+    examples:
+      "Alquilo un piso.":
+        native: "I rent a flat."
+        bases: {"Alquilo": "rent", "un": "a"}
+      "Alquilamos una casa.":
+        native: "We rent a house."
+        bases: {"Alquilamos": "rent", "una": "a"}
