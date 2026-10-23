@@ -487,7 +487,7 @@ function wireDeck(ph,C,teach){
 function wireTeach(ph,C){
  const layer=ph.querySelector('[data-teach]'), tr=layer.querySelector('.track'), vp=layer.querySelector('.vp'), back=layer.querySelector('[data-back]'), next=layer.querySelector('[data-next]'), pos_=layer.querySelector('[data-pos]'), bar=layer.querySelector('.prog i');
  const pscrim=layer.querySelector('[data-pscrim]'), P={ipa:layer.querySelector('[data-p=ipa]'),dict:layer.querySelector('[data-p=dict]')};
- /* the approved tab-swipe spring (tab-swipe.html, #702): stiffness 400, damping ratio 0.75, mass 1 (c = 2*0.75*sqrt(400) = 30) */
+ /* the approved tab-swipe spring (lib/ui/widgets/tab_pager.dart, #702): stiffness 400, damping ratio 0.75, mass 1 (c = 2*0.75*sqrt(400) = 30) */
  const N=2, K=400, Z=0.75, SLOP=8, MIN_FLING=200, FAST=1500;
  let i=0,pos=0,anim=null,raf=0,last=0,drag=null;
  const W=()=>vp.clientWidth;

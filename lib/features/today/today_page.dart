@@ -13,15 +13,16 @@ import '../../ui/widgets/language_bar.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/profile_avatar.dart';
 import '../placement/native_choice.dart';
+import 'daily_card.dart';
 import 'due_card.dart';
-import 'lesson_card.dart';
 import 'quick_revision.dart';
+import 'situations_card.dart';
 import 'streak_card.dart';
 import 'today_numbers.dart';
 
-/// Today: each language's lesson (ADR-0024), cards due by skill, Start
-/// review, the streak and week, quick revision (ADR-0029), and the fact
-/// of the day.
+/// Today: each language's one button for the day (#521), cards due by
+/// skill, the streak and week, quick revision (ADR-0029), the Situations
+/// card, and the fact of the day.
 ///
 /// Design screen `today`. Every number is computed ([TodayNumbers]); none is
 /// the design's sample. Also here, beyond the design: the banner saying that
@@ -132,17 +133,18 @@ class _TodayContent extends StatelessWidget {
         // Which language to learn a course from, once one the learner
         // speaks starts teaching it (ADR-0036).
         const NativeChoiceCards(),
-        if (numbers.lessons.isNotEmpty) ...<Widget>[
-          LessonCard(lessons: numbers.lessons),
-          const SizedBox(height: 16),
-        ],
-        if (numbers.hasDecks) DueCard(numbers: numbers) else const _NoDecks(),
-        const SizedBox(height: 16),
+        if (numbers.hasDecks) ...<Widget>[
+          DailyCard(plans: numbers.daily),
+          const SizedBox(height: 24),
+          DueCard(numbers: numbers),
+        ] else ...<Widget>[const _NoDecks(), const SizedBox(height: 16)],
         StreakCard(numbers: numbers),
         if (numbers.hasDecks) ...<Widget>[
           const SizedBox(height: 24),
           const QuickRevision(),
         ],
+        const SizedBox(height: 16),
+        const SituationsCard(),
         if (state.features.isIncoming(Feature.dailyFacts)) ...<Widget>[
           const SizedBox(height: 16),
           const _FactCard(),
