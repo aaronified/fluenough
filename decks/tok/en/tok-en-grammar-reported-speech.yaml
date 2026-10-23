@@ -1,0 +1,24 @@
+"schema": 1
+"id": "tok-en-grammar-reported-speech"
+"kind": "layer"
+"core": "tok-grammar-reported-speech"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "Quoting what someone said"
+"license": "CC-BY-SA-4.0"
+"description": "To report what someone said, use toki e ni: and then the words, as in ona li toki e ni: mi lape, they say: I sleep. Ni points at what came before or what follows, so that ni li pona is that is good. The quoted words keep their form. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "Quoting what someone said"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}): {slot}"
+  "slots":
+    "quote": "a quote: the words after e ni:"
+    "ni points back": "ni pointing back at what came before"
+  "entries":
+    "toki": "to say"
+    "kute": "to hear"
+  "notes": "Toki e ni: is the reporting frame. The quote is what was said, after the colon, with its own subject and verb."

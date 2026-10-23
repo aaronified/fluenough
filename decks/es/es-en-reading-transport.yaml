@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-transport"
+name: "Reading: the stop and the timetable"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about getting around: a short talk at a bus stop, and a timetable. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-bus-stop"
+    title: "At the bus stop"
+    theme: "transport"
+    sentences:
+      - text: "¿Dónde está la parada?"
+      - text: "Está en la calle grande."
+      - text: "Espero el autobús."
+      - text: "El autobús llega a las ocho."
+    questions:
+      - id: "es-0700"
+        prompt: { en: "Where is the stop?" }
+        options:
+          - { en: "On the big street" }
+          - { en: "At the station" }
+          - { en: "At the airport" }
+        answer: 1
+      - id: "es-0701"
+        prompt: { en: "What is the speaker waiting for?" }
+        options:
+          - { en: "The bus" }
+          - { en: "The train" }
+          - { en: "A taxi" }
+        answer: 1
+      - id: "es-0702"
+        prompt: { en: "When does the bus arrive?" }
+        options:
+          - { en: "At eight" }
+          - { en: "At nine" }
+          - { en: "At ten" }
+        answer: 1
+  - id: "es-timetable"
+    title: "Timetable"
+    theme: "transport"
+    sentences:
+      - text: "Tren: sale a las nueve."
+      - text: "Autobús: llega a las ocho."
+      - text: "Avión: llegada a las diez."
+      - text: "Salida: hoy."
+    questions:
+      - id: "es-0703"
+        prompt: { en: "What leaves at nine?" }
+        options:
+          - { en: "The train" }
+          - { en: "The bus" }
+          - { en: "The plane" }
+        answer: 1
+      - id: "es-0704"
+        prompt: { en: "When does the bus arrive?" }
+        options:
+          - { en: "At eight" }
+          - { en: "At nine" }
+          - { en: "At ten" }
+        answer: 1
+      - id: "es-0705"
+        prompt: { en: "When does the plane arrive?" }
+        options:
+          - { en: "At ten" }
+          - { en: "At eight" }
+          - { en: "At nine" }
+        answer: 1

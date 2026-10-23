@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-numbers-big"
+name: "Reading: tens and big numbers"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts with big numbers: a few sentences about people's ages and a price tag board. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-big-numbers"
+    title: "Big numbers"
+    theme: "numbers-big"
+    sentences:
+      - text: "Mi abuela tiene setenta años."
+      - text: "Hay cien personas en la calle."
+      - text: "La ciudad tiene un millón de personas."
+      - text: "Mil personas viven aquí."
+    questions:
+      - id: "es-0561"
+        prompt: { en: "How old is the grandmother?" }
+        options:
+          - { en: "Seventy" }
+          - { en: "Eighty" }
+          - { en: "Ninety" }
+        answer: 1
+      - id: "es-0562"
+        prompt: { en: "How many people are in the street?" }
+        options:
+          - { en: "One hundred" }
+          - { en: "Two hundred" }
+          - { en: "Ten" }
+        answer: 1
+      - id: "es-0563"
+        prompt: { en: "How many people live here?" }
+        options:
+          - { en: "One thousand" }
+          - { en: "One hundred" }
+          - { en: "One million" }
+        answer: 1
+  - id: "es-price-tags"
+    title: "Price tags"
+    theme: "numbers-big"
+    sentences:
+      - text: "El pan: dos euros."
+      - text: "La leche: un euro."
+      - text: "La mesa: cien euros."
+      - text: "La casa: un millón de euros."
+    questions:
+      - id: "es-0564"
+        prompt: { en: "How much is the bread?" }
+        options:
+          - { en: "Two euros" }
+          - { en: "One euro" }
+          - { en: "Twenty euros" }
+        answer: 1
+      - id: "es-0565"
+        prompt: { en: "How much is the milk?" }
+        options:
+          - { en: "One euro" }
+          - { en: "Two euros" }
+          - { en: "One hundred euros" }
+        answer: 1
+      - id: "es-0566"
+        prompt: { en: "How much is the table?" }
+        options:
+          - { en: "One hundred euros" }
+          - { en: "Ten euros" }
+          - { en: "A million euros" }
+        answer: 1

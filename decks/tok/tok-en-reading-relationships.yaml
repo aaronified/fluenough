@@ -1,0 +1,61 @@
+schema: 1
+id: "tok-en-reading-relationships"
+name: "Reading: relationships"
+kind: reading
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two passages from the relationships unit: a person tells how they met someone (heard), and a wedding invitation (read). Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "tok-how-we-met"
+    title: "How we met"
+    theme: "relationships"
+    sentences:
+      - text: "tenpo pini la, mi lon tomo musi."
+      - text: "ona li jan tonsi pona."
+      - text: "mi lukin e ona lon tomo musi."
+      - text: "mi toki tawa ona."
+      - text: "ona li toki tawa mi."
+      - text: "mi olin e ona. ona li olin e mi."
+    questions:
+      - id: "tok-0766"
+        prompt: { en: "Where was the speaker, before they met?" }
+        options:
+          - { en: "At home" }
+          - { en: "At a fun place" }
+        answer: 2
+      - id: "tok-0767"
+        prompt: { en: "The person the speaker met is a non-binary person." }
+        answer: true
+      - id: "tok-0768"
+        prompt: { en: "The speaker and the other person did not talk to each other." }
+        answer: false
+  - id: "tok-wedding-invite"
+    title: "Wedding invitation"
+    theme: "relationships"
+    sentences:
+      - text: "jan pona o!"
+      - text: "mi en ona li wile e tenpo olin."
+      - text: "tenpo olin li lon tomo suli."
+      - text: "tenpo olin li tenpo kama."
+      - text: "jan mute li kama lon tomo suli."
+      - text: "o kama tawa tomo suli!"
+      - text: "ona li olin e sina."
+    questions:
+      - id: "tok-0769"
+        prompt: { en: "The invitation asks the reader to come." }
+        answer: true
+      - id: "tok-0770"
+        prompt: { en: "Where is the wedding?" }
+        options:
+          - { en: "In a small house" }
+          - { en: "In a big building" }
+        answer: 2
+      - id: "tok-0771"
+        prompt: { en: "When is the wedding?" }
+        options:
+          - { en: "Now" }
+          - { en: "In the future" }
+        answer: 2

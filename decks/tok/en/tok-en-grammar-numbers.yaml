@@ -1,0 +1,25 @@
+"schema": 1
+"id": "tok-en-grammar-numbers"
+"kind": "layer"
+"core": "tok-grammar-numbers"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "The full number system"
+"license": "CC-BY-SA-4.0"
+"description": "The full number system, nasin nanpa pona, uses mute for twenty and ale for a hundred. The number words are added up, largest first: mute tu is 20 + 2, twenty-two, and ale tu mute tu is 100 + 2 + 20 + 2, one hundred and twenty-four. The simple system, with wan, tu and luka, counts up to twenty. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "The full number system"
+  "slot_name": "number"
+  "prompt": "{lemma} ({gloss}): {slot}"
+  "slots":
+    "two": "two (tu)"
+    "twenty-two": "twenty-two: twenty and two (mute tu)"
+    "one hundred and twenty-four": "one hundred and twenty-four: a hundred, two, twenty and two (ale tu mute tu)"
+  "entries":
+    "nanpa": "number"
+    "ijo": "thing"
+  "notes": "Mute tu is twenty and two, twenty-two. Ale tu mute tu is a hundred and two and twenty and two, one hundred and twenty-four. The values are added, never multiplied: forty is mute mute."
