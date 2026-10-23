@@ -9,8 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Progress: Weakest tags has an "All tags ›" button to a page of every tag with its bar and share remembered in the chosen range, and a Practise button on each: a random set of up to 20 taught words with that tag, in the language chosen at the top, with every answer recorded (#499).
 - The `wiki/` folder is published to the GitHub wiki by a workflow whenever it changes on main.
 - A card can set `picture_ask: true`: its `picture` is drawn with a small "?" badge, for question words (#707).
+
+### Changed
+
+- A finished deck's Revise now records its answers and moves the schedule, like quick revision; only number practice is unrecorded (#499, ADR-0033).
 
 ### Fixed
 

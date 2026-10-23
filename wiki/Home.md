@@ -46,6 +46,7 @@ Code and decks live in the [repository](https://github.com/aaronified/fluenough)
 
 - [Roadmap](Roadmap): what is shipped, built and next
 - [Plans Index](Plans-Index): every plan, one line each
+- [Audit: Tense, Number, Gender](Audit-Tense-Number-Gender): what each path teaches
 
 ## 7. Sources and attributions
 

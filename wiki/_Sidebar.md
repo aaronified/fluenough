@@ -34,6 +34,7 @@
 **6. Roadmap**
 - [Roadmap](Roadmap)
 - [Plans Index](Plans-Index)
+- [Audit: Tense, Number, Gender](Audit-Tense-Number-Gender)
 
 **7. Sources and attributions**
 - [Sources and Attributions](Sources-and-Attributions)
