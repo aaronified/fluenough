@@ -130,6 +130,8 @@ class _StatsBody extends StatelessWidget {
       range: range,
       cardOf: cardOf,
       deckFilter: language == null ? null : _counts,
+      parametersOf: (e) =>
+          state.progress.parameters.of(languageOf(e.deckId) ?? '', e.mode),
     );
     final leeches = findLeeches(state.progress, cardOf: cardOf)
         .where(

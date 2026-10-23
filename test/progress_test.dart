@@ -606,8 +606,13 @@ void main() {
       expect(n.bySkill.keys, <Skill>[Skill.recognition, Skill.production]);
       expect(n.bySkill[Skill.recognition]!.ratio, 1.0);
       expect(n.bySkill[Skill.production]!.ratio, 0.0);
-      expect(n.weakestTags.keys, <String>['home', 'people']);
-      expect(n.weakestTags['home']!.ratio, 3 / 4);
+      // Weakest tags are of what is known now, whatever the range: of the
+      // five home pairs only 0007 (two days running) is known; neither
+      // people pair is.
+      expect(n.weakestTags.keys, <String>['people', 'home']);
+      expect(n.weakestTags['home']!.correct, 1);
+      expect(n.weakestTags['home']!.total, 5);
+      expect(n.weakestTags['people']!.ratio, 0.0);
 
       final month = numbers(StatsRange.month);
       expect(month.reviews, 7);
@@ -620,8 +625,8 @@ void main() {
       expect(all.learned, 5);
       expect(all.longestStreak, 4);
       expect(all.bySkill[Skill.production]!.ratio, 0.0);
-      expect(all.weakestTags.keys, <String>['people', 'home']);
-      expect(all.weakestTags['people']!.ratio, 2 / 3);
+      expect(all.weakestTags.keys, n.weakestTags.keys);
+      expect(all.weakestTags['home']!.ratio, 1 / 5);
     });
 
     test('a card remembered in two decks is learned once; one language counts '

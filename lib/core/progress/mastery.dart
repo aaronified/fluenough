@@ -116,8 +116,9 @@ Mastery masteryAt(
   for (final e in last.values) {
     final skill = masterySkillOf(e.mode)!;
     taught[skill] = (taught[skill] ?? 0) + 1;
-    if (leavesKnown(e, parameters: parametersOf(e.mode)))
+    if (leavesKnown(e, parameters: parametersOf(e.mode))) {
       known[skill] = (known[skill] ?? 0) + 1;
+    }
   }
   return Mastery(<MasterySkill, SkillScore>{
     for (final skill in MasterySkill.values)
