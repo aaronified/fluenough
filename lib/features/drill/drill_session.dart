@@ -1182,7 +1182,7 @@ class DrillSession extends ChangeNotifier {
       _recordItem(item, grade, answerGiven: answerGiven);
 
   void _recordItem(SessionItem entry, int grade, {String? answerGiven}) {
-    if (recorded || recordsRevision) {
+    if ((recorded || recordsRevision) && !_state.keepsOutOfLog(entry)) {
       _state.record(
         entry,
         grade,
