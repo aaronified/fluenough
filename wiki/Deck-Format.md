@@ -501,8 +501,7 @@ checks the same deck:
 `python3 tools/split_deck.py decks/te/te-en-home.yaml` does all of this
 (#397): it writes the core and the English layer, deletes the old file,
 and refuses to write a split that, merged back, would not be the old deck.
-`--check` tries it without writing. Run `python3 tools/deck_index.py` after
-it. By hand, or checking what the tool did:
+`--check` tries it without writing. By hand, or checking what the tool did:
 
 1. The core is `decks/<lang>/<lang>-<name>.yaml`, its id the old deck id
    without the native language: `te-en-home` gives `te-home`.
@@ -520,8 +519,8 @@ it. By hand, or checking what the tool did:
    two side by side: they have the same id.
 6. **Nothing goes in `pubspec.yaml`.** The app bundles no deck: it downloads
    them from `main` ([ADR-0037](ADR-0037-Decks-Download-From-Main)), so a
-   new layer folder needs no asset line. Run `python3 tools/deck_index.py`
-   and commit `decks/index.json` with the split
+   new layer folder needs no asset line. `decks/index.json` is regenerated
+   on main after the merge
    ([How the app gets decks](#how-the-app-gets-decks-indexjson)).
 7. The path does not change: it lists the deck's core id, `te-home`, which
    the single-file deck had too. Once a language has a core, its path needs
@@ -2717,8 +2716,6 @@ error before moving on. Read the warnings; do not leave them unexplained.
     - each unit's `words` at least what it counts, and the levels near 700,
       900 and 1,200 words;
     - every deck on the path once, and every split deck's old file gone;
-    - `python3 tools/deck_index.py` run, and its `decks/index.json`
-      committed with the decks;
     - CI's "Validate decks" and `flutter test`, which parses every deck the
       index lists, green (never run locally, CLAUDE.md);
     - the work reviewed once, as [Agentic-Coding](Agentic-Coding) says: one
@@ -2779,17 +2776,11 @@ downloads is listed in `decks/index.json`:
 - **`bundled`**: `decks/themes.yaml`, which ships inside the app and is
   not downloaded.
 
-**After changing anything under `decks/`, write the index again and commit
-it with your change:**
-
-```sh
-python3 tools/deck_index.py
-```
-
-`tools/validate_decks.py decks/` fails while the index is out of date, and
-so does CI: a phone checks each file against its hash and refuses one that
-does not match. One file is one line of the index, so a changed deck is a
-one-line diff there too.
+**You do not write the index.** A workflow (`deck-index.yml`) runs
+`python3 tools/deck_index.py` on main after each merge that touches `decks/`
+and commits the result (owner, 2026-10-23), so a pull request is not failed
+for a stale index. The validator still checks it when run locally. A phone
+checks each file against its hash and refuses one that does not match.
 
 What a learner downloads for a language: its own files (path, facts,
 romanisation, sounds, number rules, script guide), its cores, and its decks
