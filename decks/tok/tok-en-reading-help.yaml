@@ -1,0 +1,55 @@
+schema: 1
+id: "tok-en-reading-help"
+name: "Reading: help"
+kind: reading
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two passages from the help unit, the last of the A1 units: someone asks for help when a thing is broken and another is missing (heard), and a notice on what to do when a door is broken (read). Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "tok-something-broke"
+    title: "Something broke"
+    sentences:
+      - text: "supa li pakala."
+      - text: "ilo mi li weka."
+      - text: "sina ken pali e ni anu ala?"
+    questions:
+      - id: "tok-0310"
+        prompt: { en: "What is broken?" }
+        options:
+          - { en: "The table" }
+          - { en: "The door" }
+        answer: 1
+      - id: "tok-0311"
+        prompt: { en: "The speaker's tool is gone." }
+        answer: true
+      - id: "tok-0312"
+        prompt: { en: "What does the speaker ask?" }
+        options:
+          - { en: "Whether you can do this" }
+          - { en: "Where you live" }
+        answer: 1
+  - id: "tok-help-notice"
+    title: "Help notice"
+    sentences:
+      - text: "lupa ni li pakala."
+      - text: "o toki e jan pona!"
+      - text: "ona ken pali e lupa."
+    questions:
+      - id: "tok-0313"
+        prompt: { en: "What is the notice about?" }
+        options:
+          - { en: "A broken door" }
+          - { en: "A broken table" }
+        answer: 1
+      - id: "tok-0314"
+        prompt: { en: "The notice says to tell a good person." }
+        answer: true
+      - id: "tok-0315"
+        prompt: { en: "Who can fix the door?" }
+        options:
+          - { en: "They" }
+          - { en: "No one" }
+        answer: 1
