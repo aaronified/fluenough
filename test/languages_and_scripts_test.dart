@@ -310,6 +310,19 @@ Future<void> giveUp(WidgetTester tester) async {
       await tapText(tester, l10n.placementScriptNo);
     } else if (find.text(l10n.placementDontKnow).evaluate().isNotEmpty) {
       await tapText(tester, l10n.placementDontKnow);
+    } else if (find.byType(PlacementChoice).evaluate().isNotEmpty) {
+      // Long options push "I don't know" below the fold, where the list has
+      // not built it yet.
+      await tester.scrollUntilVisible(
+        find.text(l10n.placementDontKnow),
+        100,
+        scrollable: find
+            .descendant(
+              of: find.byType(PlacementChoice),
+              matching: find.byType(Scrollable),
+            )
+            .first,
+      );
     } else {
       return;
     }
