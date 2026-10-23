@@ -47,16 +47,14 @@ cards:
       - { id: "formal", ref: "es-0087", kind: "word" }
       - { id: "third", word: "es", kind: "form" }
   - id: "es-0106"
-    target: "Encantado de conocer a usted."
-    ipa: "enkanˈtado de konoˈθeɾ a usˈted"
+    target: "Encantado de conocerla."
+    ipa: "enkanˈtado de konoˈθeɾla"
     pos: "phrase"
     tags: ["sentence"]
     bases:
       - { word: "Encantado", ref: "es-0099" }
       - { word: "de", base: "de" }
-      - { word: "conocer", base: "conocer" }
-      - { word: "a", base: "a" }
-      - { word: "usted", ref: "es-0087" }
+      - { word: "conocerla", base: "conocer" }
     confusables:
       - { id: "sorry", ref: "es-0045", kind: "word" }
       - { id: "thanks", ref: "es-0037", kind: "word" }
