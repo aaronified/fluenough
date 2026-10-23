@@ -1,0 +1,154 @@
+schema: 1
+id: "zh-en-questions"
+kind: "layer"
+core: "zh-questions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Yes, no and questions"
+description: "The question words who, which, how many, how, why and when, and the small words that answer, agree and ask back: right, fine, and, too, please and the question word endings."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "zh-0090":
+    native: "who"
+    notes:
+      "n1": "谁 (shéi) is 'who'. With 都 (dōu) after it, 谁都 (shéi dōu) is 'everyone'."
+    examples:
+      "他是谁？": "Who is he?"
+      "谁来吗？": "Who is coming?"
+  "zh-0091":
+    native: "which"
+    notes:
+      "n1": "哪 (nǎ) is 'which'. Before a measure word or a noun, 哪个 (nǎge) is 'which one'."
+    examples:
+      "你买哪个？":
+        native: "Which one will you buy?"
+        bases:
+          "哪个": { meaning: "which one" }
+      "你去哪里？": "Where are you going?"
+  "zh-0092":
+    native: "how many (a small number)"
+    notes:
+      "n1": "几 (jǐ) asks 'how many' for a small number, usually under ten. For a bigger number, use 多少 (duōshao)."
+    examples:
+      "你有几个人？":
+        native: "How many people do you have?"
+        bases:
+          "有": { meaning: "to have" }
+          "个": { meaning: "measure word for people and things" }
+      "现在几点？":
+        native: "What time is it now?"
+        bases:
+          "现在": { meaning: "now" }
+          "几点": { meaning: "what time" }
+  "zh-0093":
+    native: "how"
+    notes:
+      "n1": "怎么 (zěnme) asks 'how', for the way a thing is done. For 'why', use 为什么 (wèishénme)."
+    examples:
+      "这个怎么写？":
+        native: "How do you write this?"
+        bases:
+          "这个": { meaning: "this one" }
+      "你怎么来？": "How are you coming?"
+  "zh-0094":
+    native: "why"
+    notes:
+      "n1": "为什么 (wèishénme) is 'why'. It comes before the verb, or before 不 (bù), 'not'."
+    examples:
+      "你为什么不吃？": "Why don't you eat?"
+      "为什么不去？": "Why not go?"
+  "zh-0095":
+    native: "right; correct"
+    notes:
+      "n1": "对 (duì) is 'right' or 'correct', used to agree. Its opposite is 不对 (bú duì), wrong."
+    examples:
+      "你对。": "You're right."
+      "对，我去。": "Right, I'll go."
+  "zh-0096":
+    native: "fine; OK"
+    notes:
+      "n1": "行 (xíng) is 'fine' or 'OK', used to agree to a plan. 行吗 (xíng ma) asks 'is that all right?'"
+    examples:
+      "行，我来。": "Fine, I'll come."
+      "明天行吗？":
+        native: "Is tomorrow all right?"
+        bases:
+          "明天": { meaning: "tomorrow" }
+  "zh-0097":
+    native: "or (in a question)"
+    notes:
+      "n1": "还是 (háishi) is 'or' in a question that offers two choices. In a statement, 'or' is 或者 (huòzhě)."
+    examples:
+      "你喝茶还是吃鱼？":
+        native: "Will you drink tea or eat fish?"
+        bases:
+          "茶": { meaning: "tea" }
+      "你去还是我去？": "Are you going, or am I?"
+  "zh-0098":
+    native: "and ...? (asking back)"
+    notes:
+      "n1": "呢 (ne) goes at the end of a short question, 你呢 (nǐ ne), 'and you?', to ask the same thing back."
+    examples:
+      "你呢？": "And you?"
+      "我很好，你呢？": "I'm well. And you?"
+  "zh-0099":
+    native: "particle: let's; go on (a suggestion)"
+    notes:
+      "n1": "吧 (ba) softens a suggestion: 去吧 (qù ba), let's go, or 吃吧 (chī ba), go on and eat."
+    examples:
+      "我们去吧。":
+        native: "Let's go."
+        bases:
+          "我们": { meaning: "we; us" }
+      "你吃吧。": "Go on, eat."
+  "zh-0100":
+    native: "also; too"
+    notes:
+      "n1": "也 (yě) is 'also' or 'too'. It comes after the subject and before the verb: 我也 (wǒ yě), I too."
+    examples:
+      "我也去。": "I'm going too."
+      "他也吃鱼。": "He eats fish too."
+  "zh-0101":
+    native: "please; to invite"
+    notes:
+      "n1": "请 (qǐng) is 'please', in a request or an invitation: 请坐 (qǐng zuò), please sit down."
+    examples:
+      "请坐。":
+        native: "Please sit down."
+        bases:
+          "坐": { meaning: "to sit" }
+      "请吃。": "Please eat."
+  "zh-0102":
+    native: "time; moment"
+    notes:
+      "n1": "时候 (shíhou) is 'time' or 'moment'. 什么时候 (shénme shíhou) is 'when'."
+    examples:
+      "什么时候来？": "When are you coming?"
+      "那时候我很忙。":
+        native: "At that time I was busy."
+        bases:
+          "那": { meaning: "that" }
+          "忙": { meaning: "busy" }
+  "zh-0103":
+    native: "many; much"
+    notes:
+      "n1": "多 (duō) is 'many' or 'much', and 'more' before a verb: 多吃 (duō chī), eat more. 多少 (duōshao) asks 'how many'."
+    examples:
+      "多吃鱼。": "Eat more fish."
+      "他多喝茶。":
+        native: "He drinks a lot of tea."
+        bases:
+          "茶": { meaning: "tea" }
+  "zh-0104":
+    native: "how is it; what is it like"
+    notes:
+      "n1": "怎样 (zěnyàng) asks 'how is it' or 'what is it like', as in 这个怎样 (zhège zěnyàng), how is this one?"
+    examples:
+      "这个怎样？":
+        native: "How is this one?"
+        bases:
+          "这个": { meaning: "this one" }
+      "你怎样？": "How are you?"
+  "zh-0105":
+    native: "question words"
+    explanation: "The question words take the place of the answer, and the sentence keeps its order: 谁 (shéi) who, 哪 (nǎ) which, 几 (jǐ) how many, 怎么 (zěnme) how, 为什么 (wèishénme) why, 什么 (shénme) what, 哪里 (nǎlǐ) where, 多少 (duōshao) how much, and 怎样 (zěnyàng) how is it."
