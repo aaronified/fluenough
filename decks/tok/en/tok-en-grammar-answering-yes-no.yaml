@@ -1,0 +1,22 @@
+schema: 1
+id: "tok-en-grammar-answering-yes-no"
+kind: "layer"
+core: "tok-grammar-answering-yes-no"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Answering yes or no"
+license: "CC-BY-SA-4.0"
+description: "A yes-no answer repeats the verb, as the question did, and adds ala for no. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Answering yes or no"
+  slot_name: "answer"
+  prompt: "{lemma} ({gloss}): {slot}"
+  slots: { "answer yes": "answering yes", "answer no": "answering no" }
+  entries:
+    "moku": "to eat"
+    "lape": "to sleep"
+    "lukin": "to see"
+    "wile": "to want"
+    "kama": "to come"
+    "tawa": "to go"
+  notes: "Asked sina moku ala moku? (do you eat?), answer yes with mi moku (I eat), and no with mi moku ala (I do not eat). The verb is said again in the answer, and ala comes after it for no. Yes needs no word of its own."

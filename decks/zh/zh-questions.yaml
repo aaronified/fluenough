@@ -1,0 +1,263 @@
+schema: 1
+id: "zh-questions"
+part: "core"
+kind: "vocab"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+theme: "questions"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "zh-0090"
+    target: "谁"
+    words: ["谁"]
+    reading: "shéi"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "他是谁？"
+        reading: "tā shì shéi?"
+        words: ["他", "是", "谁"]
+      - target: "谁来？"
+        reading: "shéi lái?"
+        words: ["谁", "来"]
+  - id: "zh-0091"
+    target: "哪"
+    words: ["哪"]
+    reading: "nǎ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "你买哪个？"
+        reading: "nǐ mǎi nǎge?"
+        words: ["你", "买", "哪个"]
+        bases:
+          - { word: "哪个", base: "哪个", reading: "nǎge" }
+      - target: "你去哪里？"
+        reading: "nǐ qù nǎlǐ?"
+        words: ["你", "去", "哪里"]
+  - id: "zh-0092"
+    target: "几"
+    words: ["几"]
+    reading: "jǐ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "这里有几个人？"
+        reading: "zhèlǐ yǒu jǐ ge rén?"
+        words: ["这里", "有", "几", "个", "人"]
+        bases:
+          - { word: "这里", base: "这里", reading: "zhèlǐ" }
+          - { word: "有", base: "有", reading: "yǒu" }
+          - { word: "个", base: "个", reading: "ge" }
+      - target: "现在几点？"
+        reading: "xiànzài jǐ diǎn?"
+        words: ["现在", "几点"]
+        bases:
+          - { word: "现在", base: "现在", reading: "xiànzài" }
+          - { word: "几点", base: "几点", reading: "jǐ diǎn" }
+  - id: "zh-0093"
+    target: "怎么"
+    words: ["怎么"]
+    reading: "zěnme"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "这个怎么写？"
+        reading: "zhège zěnme xiě?"
+        words: ["这个", "怎么", "写"]
+        bases:
+          - { word: "这个", base: "这个", reading: "zhège" }
+      - target: "你怎么来？"
+        reading: "nǐ zěnme lái?"
+        words: ["你", "怎么", "来"]
+  - id: "zh-0094"
+    target: "为什么"
+    words: ["为什么"]
+    reading: "wèishénme"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "你为什么不吃？"
+        reading: "nǐ wèishénme bù chī?"
+        words: ["你", "为什么", "不", "吃"]
+      - target: "为什么不去？"
+        reading: "wèishénme bú qù?"
+        words: ["为什么", "不", "去"]
+  - id: "zh-0095"
+    target: "对"
+    words: ["对"]
+    reading: "duì"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "你对。"
+        reading: "nǐ duì."
+        words: ["你", "对"]
+      - target: "对，我去。"
+        reading: "duì, wǒ qù."
+        words: ["对", "我", "去"]
+  - id: "zh-0096"
+    target: "行"
+    words: ["行"]
+    reading: "xíng"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "行，我来。"
+        reading: "xíng, wǒ lái."
+        words: ["行", "我", "来"]
+      - target: "明天行吗？"
+        reading: "míngtiān xíng ma?"
+        words: ["明天", "行", "吗"]
+        bases:
+          - { word: "明天", base: "明天", reading: "míngtiān" }
+  - id: "zh-0097"
+    target: "还是"
+    words: ["还是"]
+    reading: "háishi"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "你喝茶还是吃鱼？"
+        reading: "nǐ hē chá háishi chī yú?"
+        words: ["你", "喝", "茶", "还是", "吃", "鱼"]
+        bases:
+          - { word: "茶", base: "茶", reading: "chá" }
+      - target: "你去还是我去？"
+        reading: "nǐ qù háishi wǒ qù?"
+        words: ["你", "去", "还是", "我", "去"]
+  - id: "zh-0098"
+    target: "呢"
+    words: ["呢"]
+    reading: "ne"
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "你呢？"
+        reading: "nǐ ne?"
+        words: ["你", "呢"]
+      - target: "我很好，你呢？"
+        reading: "wǒ hěn hǎo, nǐ ne?"
+        words: ["我", "很", "好", "你", "呢"]
+  - id: "zh-0099"
+    target: "吧"
+    words: ["吧"]
+    reading: "ba"
+    pos: "particle"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "我们去吧。"
+        reading: "wǒmen qù ba."
+        words: ["我们", "去", "吧"]
+        bases:
+          - { word: "我们", ref: "zh-0157" }
+      - target: "你吃吧。"
+        reading: "nǐ chī ba."
+        words: ["你", "吃", "吧"]
+  - id: "zh-0100"
+    target: "也"
+    words: ["也"]
+    reading: "yě"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "我也去。"
+        reading: "wǒ yě qù."
+        words: ["我", "也", "去"]
+      - target: "他也吃鱼。"
+        reading: "tā yě chī yú."
+        words: ["他", "也", "吃", "鱼"]
+  - id: "zh-0101"
+    target: "请"
+    words: ["请"]
+    reading: "qǐng"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "请坐。"
+        reading: "qǐng zuò."
+        words: ["请", "坐"]
+        bases:
+          - { word: "坐", base: "坐", reading: "zuò" }
+      - target: "请吃。"
+        reading: "qǐng chī."
+        words: ["请", "吃"]
+  - id: "zh-0102"
+    target: "时候"
+    words: ["时候"]
+    reading: "shíhou"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "什么时候来？"
+        reading: "shénme shíhou lái?"
+        words: ["什么", "时候", "来"]
+      - target: "那时候我很忙。"
+        reading: "nà shíhou wǒ hěn máng."
+        words: ["那", "时候", "我", "很", "忙"]
+        bases:
+          - { word: "那", base: "那", reading: "nà" }
+          - { word: "忙", base: "忙", reading: "máng" }
+  - id: "zh-0103"
+    target: "多"
+    words: ["多"]
+    reading: "duō"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "多吃鱼。"
+        reading: "duō chī yú."
+        words: ["多", "吃", "鱼"]
+      - target: "他喝很多茶。"
+        reading: "tā hē hěn duō chá."
+        words: ["他", "喝", "很", "多", "茶"]
+        bases:
+          - { word: "茶", base: "茶", reading: "chá" }
+  - id: "zh-0104"
+    target: "怎样"
+    words: ["怎样"]
+    reading: "zěnyàng"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "这个怎样？"
+        reading: "zhège zěnyàng?"
+        words: ["这个", "怎样"]
+        bases:
+          - { word: "这个", base: "这个", reading: "zhège" }
+      - target: "你怎样？"
+        reading: "nǐ zěnyàng?"
+        words: ["你", "怎样"]
+  - id: "zh-0105"
+    kind: "set"
+    members: [{ ref: "zh-0090" }, { ref: "zh-0091" }, { ref: "zh-0092" }, { ref: "zh-0093" }, { ref: "zh-0094" }, { ref: "zh-0026" }, { ref: "zh-0027" }, { ref: "zh-0028" }, { ref: "zh-0104" }]

@@ -1,0 +1,51 @@
+schema: 1
+id: "hi-en-reading-describing"
+name: "Reading: describing things and feelings"
+kind: reading
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts, one a conversation and one a postcard from the hills, with the words for describing things and feelings from this unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-how-are-you-feeling"
+    title: "How are you today?"
+    theme: "describing"
+    sentences:
+      - { text: "आज तुम कैसे हो?", reading: "āj tum kaisē ho?", ipa: "aːdʒ t̪ʊm kɛːseː ɦoː" }
+      - { text: "मैं अच्छा हूँ, पर थोड़ा थका हूँ।", reading: "maim̐ acchā hūm̐, par thōṛā thakā hūm̐.", ipa: "mɛ̃ː ətʃtʃʰaː ɦũː pər t̪ʰoːɽaː t̪ʰəkaː ɦũː" }
+      - { text: "यह चाय गरम है।", reading: "yah cāy garam hai.", ipa: "jəɦ tʃaːj ɡərəm ɦɛː" }
+      - { text: "अब मैं खुश हूँ।", reading: "ab maim̐ khuś hūm̐.", ipa: "əb mɛ̃ː kʰʊʃ ɦũː" }
+    questions:
+      - id: "hi-0931"
+        prompt: { en: "How does the speaker feel at first?" }
+        options: [{ en: "Fine, but a little tired" }, { en: "Very hungry" }]
+        answer: 1
+      - id: "hi-0932"
+        prompt: { en: "What is hot?" }
+        options: [{ en: "The tea" }, { en: "The water" }]
+        answer: 1
+      - id: "hi-0933"
+        prompt: { en: "The speaker is sad at the end." }
+        answer: false
+  - id: "hi-postcard-from-the-hills"
+    title: "A postcard from the hills"
+    theme: "describing"
+    sentences:
+      - { text: "यहाँ का मौसम बहुत अच्छा है।", reading: "yahām̐ kā mausam bahut acchā hai.", ipa: "jəɦãː kaː mɔːsəm bəɦʊt̪ ətʃtʃʰaː ɦɛː" }
+      - { text: "सुबह हवा ठंडी है।", reading: "subah havā ṭhaṇḍī hai.", ipa: "sʊbəɦ ɦəʋaː ʈʰəɳɖiː ɦɛː" }
+      - { text: "यहाँ का खाना बहुत ताज़ा है।", reading: "yahām̐ kā khānā bahut tāzā hai.", ipa: "jəɦãː kaː kʰaːnaː bəɦʊt̪ t̪aːzaː ɦɛː" }
+      - { text: "आसमान साफ़ है और पेड़ हरे हैं।", reading: "āsmān sāf hai aur pēṛ harē haim̐.", ipa: "aːsmaːn saːf ɦɛː ɔːr peːɽ ɦəreː ɦɛ̃ː" }
+    questions:
+      - id: "hi-0934"
+        prompt: { en: "What is the weather like?" }
+        options: [{ en: "Bad" }, { en: "Good" }]
+        answer: 2
+      - id: "hi-0935"
+        prompt: { en: "What is the sky like?" }
+        options: [{ en: "Black" }, { en: "Clear" }]
+        answer: 2
+      - id: "hi-0936"
+        prompt: { en: "The food there is fresh." }
+        answer: true

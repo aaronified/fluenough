@@ -1,0 +1,20 @@
+schema: 1
+id: "tok-en-grammar-o-address"
+kind: "layer"
+core: "tok-grammar-o-address"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Calling someone with o"
+license: "CC-BY-SA-4.0"
+description: "After a name, o calls the person by it, before the rest of what is said. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Calling someone with o"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "plain": "plain (no name)", "addressed": "addressed (by name)" }
+  entries:
+    "toki": "to talk"
+    "pali": "to make; to work"
+    "kute": "to hear"
+    "jo": "to have"
+  notes: "Ana o, mi toki is Ana, I talk: the name comes first, then o, then the sentence. Without a name, the sentence is plain: mi toki. The name is a person's name, and o follows it directly."
