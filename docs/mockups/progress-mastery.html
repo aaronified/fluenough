@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Progress Mastery</title>
-<meta name="description" content="Progress's mastery view (#678): the words count and a streak tile, a 7-day running calendar, a tappable 6-point star (a fill of known over B1 total, a solid blue outline of known over taught), weakest tags and leeches, and the line chart screen the star opens. Hindi in light, Bengali in dark, 1.4x text.">
+<meta name="description" content="Progress's mastery view (#678): the words count and a streak tile, a 7-day running calendar, a tappable 6-point star (a fill of known over B1 total, a solid blue outline of known over taught), weakest tags and leeches, and the two line charts the star opens. Hindi in light, Bengali in dark, 1.4x text.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&display=swap">
@@ -97,11 +97,16 @@ svg.ch text{font-family:inherit;font-size:calc(12px*var(--t))}
 .leech span{display:block;font-size:calc(14px*var(--t));line-height:calc(20px*var(--t))}
 .leech.none span{color:var(--onSv)}
 .top{display:flex;gap:8px}
-.top .card{flex:1;min-width:0;padding:12px 14px}
-.top .words{flex-wrap:wrap;gap:2px 6px}
+.top .card{flex:2;min-width:0;padding:12px}
+.top .card.w{flex:3}
+.top .ct{font-size:calc(13px*var(--t));line-height:calc(18px*var(--t));white-space:nowrap}
+.top .words{flex-wrap:nowrap;white-space:nowrap;gap:4px;align-items:baseline}
+.top .words b{font-size:calc(22px*var(--t))}
+.top .words span{font-size:calc(11px*var(--t))}
+.top .cs{white-space:nowrap}
 .stk{display:flex;align-items:center;gap:6px;margin-top:2px}
-.stk b{font-size:calc(28px*var(--t));line-height:1.15;font-weight:700;color:var(--onS);font-variant-numeric:tabular-nums}
-.stk svg{width:calc(24px*var(--t));height:calc(24px*var(--t));fill:var(--fire);flex:none}
+.stk b{font-size:calc(24px*var(--t));line-height:1.15;font-weight:700;color:var(--onS);font-variant-numeric:tabular-nums}
+.stk svg{width:calc(24px*var(--t));height:calc(24px*var(--t));flex:none}
 .week{display:flex;list-style:none;margin:0;padding:0}
 .day{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:4px}
 .day .mk{height:calc(24px*var(--t));display:flex;align-items:center;justify-content:center}
@@ -121,7 +126,7 @@ svg.ch text{font-family:inherit;font-size:calc(12px*var(--t))}
 <body>
 <div class="wrap">
 <h1>Progress: mastery</h1>
-<p class="lede">The Progress tab's mastery view (#678): the words count and one streak tile, a 7-day running calendar, the 6-point star (a fill with no edge, and a solid blue known ÷ taught outline), then the weakest tags and leeches the tab has today. Tapping the star opens the second screen, the line chart of both measures over time. Hindi (Hindustani) in light, Bengali in dark; 360 dp at 1.4x text (#505). Red dashed outlines mark what is new or changed. The one open choice is a tweak control. The self-check, notes and open questions are in <code>progress-mastery.md</code>.</p>
+<p class="lede">The Progress tab's mastery view (#678): the words count and one streak tile, a 7-day running calendar, the 6-point star (a fill with no edge, and a solid blue known ÷ taught outline), then the weakest tags and leeches the tab has today. Tapping the star opens the second screen, two line charts over time, one line per skill. Hindi (Hindustani) in light, Bengali in dark; 360 dp at 1.4x text (#505). Red dashed outlines mark what is new or changed. The one open choice is a tweak control. The self-check, notes and open questions are in <code>progress-mastery.md</code>.</p>
 <div class="sticky"><div class="tw" id="tw"></div></div>
 <div class="frames" id="frames"></div>
 </div>
@@ -129,23 +134,21 @@ svg.ch text{font-family:inherit;font-size:calc(12px*var(--t))}
 /* ColorScheme.fromSeed(forest), contrast 0, plus chart line colours l1..l4 */
 const SCHEMES={
 dark:{"p":"#92d5ab","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sCont":"#1b211d","sHighest":"#313632","ol":"#8a938b","olv":"#404942","ter":"#a3cddc","eC":"#93000a","onEC":"#ffdad6",
- "l1":"#92d5ab","l2":"#8fc9e6","l3":"#e8c46a","l4":"#f2a9b8","fire":"#ffb77c"},
+ "l1":"#92d5ab","l2":"#8fc9e6","l3":"#e8c46a","l4":"#f2a9b8","fire":"#ffb77c","k1":"#8fc9e6","k2":"#e8c46a","k3":"#92d5ab","k4":"#f2a9b8","k5":"#c9b0f0","k6":"#b8c0c4"},
 light:{"p":"#296a48","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sCont":"#eaefe8","sHighest":"#dfe4dd","ol":"#717972","olv":"#c0c9c0","ter":"#3b6471","eC":"#ffdad6","onEC":"#410002",
- "l1":"#296a48","l2":"#1f6584","l3":"#8a5a00","l4":"#a23a55","fire":"#a84300"}};
+ "l1":"#296a48","l2":"#1f6584","l3":"#8a5a00","l4":"#a23a55","fire":"#a84300","k1":"#1f6584","k2":"#8a5a00","k3":"#296a48","k4":"#a23a55","k5":"#6b4c9a","k6":"#596064"}};
 const SKILLS=['Grammar','Script','Read','Write','Hear','Say'];
-/* the second screen's two lines: known / B1 total (the star's fill), known / taught (the star's solid blue outline) */
-const LINES=[['Known ÷ B1 total','l1','dash','circle','b1'],['Known ÷ taught','l2','solid','square','taught']];
-const DASH={solid:'',dash:'7 4',dot:'1.5 4',dashdot:'8 3 1.5 3'};
+/* the second screen: one line per skill, a distinct colour (k1..k6), dash and marker each */
+const LINES=[['Grammar','k1','solid','circle'],['Script','k2','dash','square'],['Read','k3','dot','diamond'],['Write','k4','dashdot','triangle'],['Hear','k5','long','down'],['Say','k6','dd','ring']];
+const DASH={solid:'',dash:'7 4',dot:'1.5 4',dashdot:'8 3 1.5 3',long:'14 4',dd:'3 3'};
 /* star: fill = known / B1 total, out = known / taught (null: nothing taught yet, drawn at the centre) */
 const DATA={
- light:{code:'hi',lang:'Hindustani',glyph:'हि',th:'light',mastered:312,taught:540,quota:15,min:[0,12,15,34,20,30,15],leeches:4,
+ light:{code:'hi',lang:'Hindustani',glyph:'हि',th:'light',mastered:312,taught:540,best:21,quota:15,min:[0,12,15,34,20,30,15],leeches:4,
   fill:[34,71,46,38,52,41],out:[57,71,64,55,70,60],
-  tags:[['Transport',41],['Numbers',48],['Kitchen',55],['Family',61]],
-  time:{b1:[2,4,6,8,10,12,14,16,18,19,20,21],taught:[88,82,74,70,66,62,60,57,56,57,58,58]}},
- dark:{code:'bn',lang:'Bengali',glyph:'বা',th:'dark',mastered:187,taught:360,quota:10,min:[12,25,0,5,10,22,8],leeches:0,
+  tags:[['Transport',41],['Numbers',48],['Kitchen',55],['Family',61]]},
+ dark:{code:'bn',lang:'Bengali',glyph:'বা',th:'dark',mastered:187,taught:360,best:9,quota:10,min:[12,25,0,5,10,22,8],leeches:0,
   fill:[22,58,31,27,35,0],out:[49,58,52,44,61,null],
-  tags:[['Directions',38],['Numbers',44],['Market',52],['Body',60]],
-  time:{b1:[1,2,3,4,5,6,8,9,10,11,12,12],taught:[85,78,70,64,60,56,54,52,51,52,52,52]}}};
+  tags:[['Directions',38],['Numbers',44],['Market',52],['Body',60]]}};
 /* the one open choice is a tweak control */
 const S={hl:'1',order:'stl'};
 const ORDERS={stl:['star','tags','leech'],slt:['star','leech','tags'],tls:['tags','leech','star']};
@@ -159,6 +162,8 @@ const ICON={today:'<svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2
  progress:'<svg viewBox="0 0 24 24"><path d="M3 17h3v4H3zm5-6h3v10H8zm5-4h3v14h-3zm5-5h3v19h-3z"/></svg>'};
 
 function marker(kind,x,y,c){const r=3.4;
+ if(kind==='down')return `<path d="M${x-r-1} ${y-r}L${x+r+1} ${y-r}L${x} ${y+r+1}Z" fill="${c}"/>`;
+ if(kind==='ring')return `<circle cx="${x}" cy="${y}" r="${r}" fill="var(--sLow)" stroke="${c}" stroke-width="2"/>`;
  if(kind==='circle')return `<circle cx="${x}" cy="${y}" r="${r}" fill="${c}"/>`;
  if(kind==='square')return `<rect x="${x-r}" y="${y-r}" width="${2*r}" height="${2*r}" fill="${c}"/>`;
  if(kind==='diamond')return `<path d="M${x} ${y-r-1}L${x+r+1} ${y}L${x} ${y+r+1}L${x-r-1} ${y}Z" fill="${c}"/>`;
@@ -190,42 +195,48 @@ function starSvg(fill,out){
  return s+'</svg>';
 }
 function overall(vals){let s=0;for(let i=0;i<6;i++)s+=vals[i]*vals[(i+1)%6]/10000;return Math.round(s/6*100)}
-function lineSvg(t){
+/* 12 weekly points per skill: known ÷ B1 total climbs to the star's filled value, known ÷ taught eases down to the outline value (a skill with nothing taught stays at 0) */
+function series(D,kind){return SKILLS.map((_,i)=>{const F=D.fill[i],O=D.out[i]||0;
+ return Array.from({length:12},(_,w)=>{const u=w/11;
+  if(kind==='b1')return Math.round(F*(.1+.9*Math.pow(u,.9+.05*i)));
+  const st=O?Math.min(97,O+16+(i*5)%11):0;return Math.round(O+(st-O)*Math.pow(1-u,1.6))})})}
+function lineSvg(ser,what){
  const W=296,H=214,L=34,Rr=8,T=10,B=44,iw=W-L-Rr,ih=H-T-B;
  const X=i=>L+iw*i/11,Y=v=>T+ih*(1-v/100);
- let s=`<svg class="ch" viewBox="0 0 ${W} ${H}" role="img" aria-label="Last 12 weeks. Known over B1 total ${t.b1[0]}% to ${t.b1[11]}%. Known over taught ${t.taught[0]}% to ${t.taught[11]}%.">`;
+ let s=`<svg class="ch" viewBox="0 0 ${W} ${H}" role="img" aria-label="${what}, last 12 weeks, now: ${SKILLS.map((k,i)=>k+' '+ser[i][11]+'%').join(', ')}">`;
  for(const v of [0,25,50,75,100]){s+=`<line x1="${L}" x2="${W-Rr}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--olv)" stroke-width="1"/><text x="${L-5}" y="${Y(v)+5}" text-anchor="end" fill="var(--onSv)">${v}</text>`}
  [[0,'12 wk'],[4,'8 wk'],[8,'4 wk'],[11,'Now']].forEach(([i,x])=>{s+=`<text x="${X(i)}" y="${H-24}" text-anchor="${i===0?'start':i===11?'end':'middle'}" fill="var(--onSv)">${x}</text>`});
  s+=`<text x="${(L+W-Rr)/2}" y="${H-4}" text-anchor="middle" fill="var(--onSv)">Weeks ago (%)</text>`;
- for(const [n,col,dash,mk,key] of LINES){const d=t[key];
+ LINES.forEach(([n,col,dash,mk],k)=>{const d=ser[k];
   s+=`<polyline fill="none" stroke="var(--${col})" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" ${DASH[dash]?`stroke-dasharray="${DASH[dash]}"`:''} points="${d.map((v,i)=>X(i).toFixed(1)+','+Y(v).toFixed(1)).join(' ')}"/>`;
-  s+=marker(mk,X(11),Y(d[11]),`var(--${col})`)}
+  for(const i of [2,5,8,11])s+=marker(mk,X(i),Y(d[i]),`var(--${col})`)});
  return s+'</svg>';
 }
 function legendItem(n,col,dash,mk,v){
- return `<div><svg viewBox="0 0 26 10" aria-hidden="true"><line x1="1" x2="25" y1="5" y2="5" stroke="var(--${col})" stroke-width="2.5" ${DASH[dash]?`stroke-dasharray="${DASH[dash]}"`:''}/>${marker(mk,13,5,`var(--${col})`)}</svg>${n}<span class="v">${v}%</span></div>`}
+ return `<div><svg viewBox="0 0 26 10" aria-hidden="true"><line x1="1" x2="25" y1="5" y2="5" stroke="var(--${col})" stroke-width="2.5" ${DASH[dash]?`stroke-dasharray="${DASH[dash]}"`:''}/>${marker(mk,13,5,`var(--${col})`)}</svg>${n}<span class="v">${v}</span></div>`}
 
 /* the 7-day running calendar: oldest first, today last; one mark a day, no legend; each day has a screen-reader label */
-const FIRE='<path fill-rule="evenodd" d="M19.48 12.35c-1.57-4.08-7.16-4.3-5.81-10.23.1-.44-.37-.78-.75-.55C9.29 3.71 6.68 8 8.87 13.62c.18.46-.36.89-.75.59-1.81-1.37-2-3.34-1.84-4.75.06-.52-.62-.77-.91-.34C4.69 10.16 4 11.84 4 14.37c.38 5.6 5.11 7.32 6.81 7.54 2.43.31 5.06-.14 6.95-1.87 2.08-1.93 2.84-5.01 1.72-7.69zM10.2 17.38c1.44-.35 2.18-1.39 2.38-2.31.33-1.43-.96-2.83-.09-5.09.33 1.87 3.27 3.04 3.27 5.08 0 2.53-2.74 4.7-5.64 2.32z"/>';
+/* Tabler icons, inline paths (owner, 2026-10-23): flame, circle-filled, circle; stroke or fill in theme colours */
+const FLAME='<path d="M12 12c2 -2.96 0 -7 -1 -8c0 3.038 -1.773 4.741 -3 6c-1.226 1.26 -2 3.24 -2 5a6 6 0 1 0 12 0c0 -1.532 -1.056 -3.94 -2 -5c-1.786 3 -2.791 3 -4 2z"/>';
+const SVGF='viewBox="0 0 24 24" fill="none" stroke="var(--fire)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"';
 const WD=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 const TODAY=5; /* 2026-10-23 is a Friday */
 function state(m,q){return m>=2*q?'double':m>=q?'met':m>0?'some':'none'}
 const STT={double:'twice the quota or more',met:'quota met',some:'some practice, under the quota',none:'no practice'};
 function mark(st){
- if(st==='met')return `<svg viewBox="0 0 24 24" fill="var(--fire)" aria-hidden="true">${FIRE}</svg>`;
- if(st==='double')return `<svg viewBox="0 0 24 24" fill="var(--fire)" aria-hidden="true"><g transform="translate(5 0) scale(.8)">${FIRE}</g><g transform="translate(0 4.2) scale(.8)" stroke="var(--sLow)" stroke-width="1.4" paint-order="stroke">${FIRE}</g></svg>`;
- if(st==='some')return `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="6" fill="var(--p)"/></svg>`;
- return `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5.25" fill="none" stroke="var(--onSv)" stroke-width="2"/></svg>`}
+ if(st==='met')return `<svg ${SVGF}>${FLAME}</svg>`;
+ if(st==='double')return `<svg ${SVGF}><g transform="translate(5 -1) scale(.8)" stroke-width="2.5">${FLAME}</g><g transform="translate(0 4) scale(.8)" stroke-width="2.5" fill="var(--sLow)">${FLAME}</g></svg>`;
+ if(st==='some')return `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="var(--p)" d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z"/></svg>`;
+ return `<svg viewBox="0 0 24 24" fill="none" stroke="var(--onSv)" stroke-width="2" aria-hidden="true"><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/></svg>`}
 function weekDays(D){return D.min.map((m,i)=>{const dow=(TODAY-6+i+7)%7,st=state(m,D.quota);
  return {st,m,dow,today:i===6,label:`${WD[dow]}${i===6?', today':''}: ${STT[st]}, ${m} of ${D.quota} minutes`}})}
 function streakOf(D){let n=0;for(let i=6;i>=0&&D.min[i]>0;i--)n++;return n}
 function topRow(D){
- return `<div class="top"><div class="card chg"><p class="ct">Words</p>
-   <div class="words"><b>${D.mastered}</b><span>/ ${D.taught}</span></div>
-   <p class="cs">mastered / taught</p></div>
+ return `<div class="top"><div class="card chg w"><p class="ct">Words mastered</p>
+   <div class="words"><b>${D.mastered}</b><span>/ ${D.taught} taught</span></div></div>
   <div class="card chg"><p class="ct">Streak</p>
-   <div class="stk"><svg viewBox="0 0 24 24" aria-hidden="true">${FIRE}</svg><b>${streakOf(D)}</b></div>
-   <p class="cs">day streak</p></div></div>`}
+   <div class="stk"><svg ${SVGF}>${FLAME}</svg><b>${streakOf(D)}</b></div>
+   <p class="cs">day streak</p><p class="cs">best ${D.best}</p></div></div>`}
 function calendar(D){
  return `<div class="card chg"><ul class="week" aria-label="Practice in the last 7 days, daily quota ${D.quota} minutes">${weekDays(D).map(d=>`<li class="day${d.today?' today':''}"><span class="mk" role="img" aria-label="${d.label}">${mark(d.st)}</span><span class="in" aria-hidden="true">${WD[d.dow][0]}</span></li>`).join('')}</ul></div>`}
 function tagsCard(D){
@@ -237,18 +248,17 @@ function leechCard(D){
 
 function chartFrame(key,cap){
  const D=DATA[key],sch=SCHEMES[D.th],vars=Object.entries(sch).map(([k,v])=>`--${k}:${v}`).join(';');
- const legend=LINES.map(([n,c,d,m,k])=>legendItem(n,c,d,m,D.time[k][11])).join('');
+ const card=(t,sub,kind)=>{const ser=series(D,kind);
+  return `<div class="card chg"><p class="ct">${t}</p><p class="cs">${sub}, last 12 weeks</p>${lineSvg(ser,t)}
+   <div class="legend">${LINES.map(([n,c,d,m],k)=>legendItem(n,c,d,m,(kind==='taught'&&D.out[k]==null)?'–':ser[k][11]+'%')).join('')}</div></div>`};
  return `<div class="fcol"><span class="fcap">${cap} · Opens from the star · ${D.th==='light'?'Light':'Dark'} · 1.4x</span>
  <div class="ph" style="${vars}" data-th="${D.th}">
-  <div class="lbar"><span class="ibtn">${BACK}</span><p class="ct" style="flex:1;padding-left:4px">Mastery over time</p></div>
-  <div class="body"><div class="card chg"><p class="ct">Known over time</p><p class="cs">Last 12 weeks</p>
-   ${lineSvg(D.time)}<div class="legend one">${legend}</div></div></div>
-  <div style="height:120px"></div>
+  <div class="lbar"><span class="ibtn">${BACK}</span><p class="ct" style="flex:1;padding-left:4px">Over time</p></div>
+  <div class="body">${card('Mastery over time','Known ÷ B1 total','b1')}${card('Taught over time','Known ÷ taught','taught')}</div>
  </div></div>`}
 function frame(key,cap){
  const D=DATA[key],sch=SCHEMES[D.th],vars=Object.entries(sch).map(([k,v])=>`--${k}:${v}`).join(';');
  const ov=overall(D.fill);
- const legend=LINES.map(([n,c,d,m,k])=>legendItem(n,c,d,m,D.time[k][11])).join('');
  const nav=[['today','Today'],['decks','Decks'],['progress','Progress']].map(([k,t])=>`<div class="nd ${k==='progress'?'on':''}"><i>${ICON[k]}</i>${t}</div>`).join('');
  const parts={tags:tagsCard(D),leech:leechCard(D),
   star:`<div class="card chg upd" role="button" tabindex="0" aria-label="Mastery by skill, overall ${ov}%. Opens known over time"><div class="rowh"><p class="ct">Mastery by skill</p><span class="tbtn tap">Over time ${CHEV}</span></div>
@@ -308,7 +318,8 @@ function check(){
   add(th,'outline (solid blue) on card',ratio(S2.l2,card),3);
   add(th,'outline (solid blue) on the filled star',ratio(S2.l2,star),3);
   add(th,'outline point (surface fill) vs blue ring',ratio(S2.l2,S2.s),3);
-  for(const l of LINES)add(th,`line “${l[0]}” on card`,ratio(S2[l[1]],card),3);
+  for(const l of LINES)add(th,`chart line “${l[0]}” (${l[1]}) on card`,ratio(S2[l[1]],card),3);
+  add(th,'best streak and legend text (onSurfaceVariant) on card',ratio(S2.onSv,card),4.5);
   add(th,'weakest tags bar (tertiary) on its track (secondaryContainer)',ratio(S2.ter,S2.sc),3);
   add(th,'tag name and percent (onSurface) on card',ratio(S2.onS,card),4.5);
   add(th,'leeches, some: onErrorContainer on errorContainer',ratio(S2.onEC,S2.eC),4.5);

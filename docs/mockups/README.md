@@ -11,7 +11,8 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
   tappable 6-point star (a fill with no edge of known / B1 total, a solid blue
   outline of known / taught, nothing written under it), then the weakest tags
   and leeches (owner, 2026-10-23). Tapping the star opens a second screen with
-  the line chart of both measures over time. Hindi (Hindustani) in light and
+  two line charts over time, one line per skill. The Words tile is one line,
+  the Streak tile adds the best streak, and the icons are Tabler. Hindi (Hindustani) in light and
   Bengali in dark, 1.4x. The open choice is a tweak control and is listed in
   `progress-mastery.md`, with the self-check.
 
