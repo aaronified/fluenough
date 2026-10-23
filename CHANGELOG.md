@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Progress shows hours spent (each answer at most a minute) and about how many hours are left to the end of B1, in a tile row under Words and Level; tapping it opens a popup with each language's hours (#227).
+
 ### Changed
 
 - A lesson takes the next items in the path's order instead of three of each difficulty, fewer new ones while the words and rules you were taught are not yet known (9 of your last 10 answers right), and a sentence waits until every word and rule in it is known. A rules table's cell is taught only for a word you know. The unit page counts sentences open by that rule, lists the phrasebook on its own, and greys a closed sentence with what it waits for; a tap says why (#416).

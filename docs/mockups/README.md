@@ -4,12 +4,6 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 ## Awaiting approval
 
-- `hours-per-language.html`: hours spent and hours left, per language, on
-  the rebuilt Progress (#227; owner, 2026-10-23: "mockup right away"), in
-  three possible places, with All languages and a "How it is counted" sheet.
-  Replaces the hours part of `session-result-and-hours.html` once approved.
-  Hindustani and Bengali, light and dark, 1.4x. Open choices are tweak
-  controls and are listed in `hours-per-language.md`, with the self-check.
 - `words-rules-sentences.html`: lessons with no quota and the unlock gate
   (#416), the rule card drill (#417) and progress in words, rules and
   sentences unlocked (#418), parts of #413 (owner, 2026-10-23: "mockup right
