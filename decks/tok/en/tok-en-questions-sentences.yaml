@@ -1,0 +1,45 @@
+schema: 1
+id: "tok-en-questions-sentences"
+kind: "layer"
+core: "tok-questions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Asking questions"
+description: "Sentences that ask what things are, what someone wants, or whether something is so, with an or-choice or an exclamation. Each uses the words of the questions unit. Not yet checked by a Toki Pona speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "tok-0048":
+    native: "What do you want?"
+    confusables:
+      "w1": { why: "Mi (I) could fill the place of sina (you), but the sentence is about the other person." }
+      "w2": { why: "Pona (good) is a modifier, not a word that asks; it cannot stand where seme goes." }
+  "tok-0049":
+    native: "Bread or paste?"
+    confusables:
+      "w1": { why: "Mi (I) is a pronoun and cannot be one of the two choices." }
+      "w2": { why: "Ala (not) denies a word; it is not a choice, so it cannot stand in the place of ko." }
+  "tok-0050":
+    native: "This is true."
+    confusables:
+      "w1": { why: "Sina (you) is a pronoun for a person, not the subject of a sentence about this." }
+      "w2": { why: "Pona (good) describes a thing; here the sentence says it is true, not good." }
+  "tok-0051":
+    native: "I am here."
+    confusables:
+      "w1": { why: "Sina (you) would make it about you, not about the speaker." }
+      "w2": { why: "Ala (not) would make the sentence say I am not here." }
+  "tok-0052":
+    native: "How good!"
+    confusables:
+      "w1": { why: "Mi (I) describes the speaker and would not give the exclamation." }
+      "w2": { why: "Ala (not) turns good into not good." }
+  "tok-0053":
+    native: "Wow, you speak Toki Pona!"
+    confusables:
+      "w1": { why: "Mi (I) would make the sentence about the speaker, not the person spoken to." }
+      "w2": { why: "Ala (not) would turn the sentence into a denial." }
+  "tok-0054":
+    native: "Do you know, or not?"
+    confusables:
+      "w1": { why: "Mi (I) would ask about the speaker, not the person spoken to." }
+      "w2": { why: "Pona (good) is not what the question asks about: it asks about knowing." }

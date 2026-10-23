@@ -1,0 +1,65 @@
+schema: 1
+id: "tok-questions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "tok-0048"
+    target: "sina wile e seme?"
+    ipa: "ˈsina ˈwile e ˈseme"
+    pos: "phrase"
+    bases:
+      - { word: "wile", base: "wile" }
+      - { word: "e", base: "e" }
+    confusables:
+      - { id: "w1", ref: "tok-0003", kind: "word" }
+      - { id: "w2", ref: "tok-0002", kind: "word" }
+  - id: "tok-0049"
+    target: "pan anu ko?"
+    ipa: "pan ˈanu ko"
+    pos: "phrase"
+    confusables:
+      - { id: "w1", ref: "tok-0003", kind: "word" }
+      - { id: "w2", ref: "tok-0005", kind: "word" }
+  - id: "tok-0050"
+    target: "ni li lon."
+    ipa: "ni li lon"
+    pos: "phrase"
+    bases:
+      - { word: "ni", base: "ni" }
+      - { word: "li", base: "li" }
+    confusables:
+      - { id: "w1", ref: "tok-0004", kind: "word" }
+      - { id: "w2", ref: "tok-0002", kind: "word" }
+  - id: "tok-0051"
+    target: "mi lon ni."
+    ipa: "mi lon ni"
+    pos: "phrase"
+    bases:
+      - { word: "ni", base: "ni" }
+    confusables:
+      - { id: "w1", ref: "tok-0004", kind: "word" }
+      - { id: "w2", ref: "tok-0005", kind: "word" }
+  - id: "tok-0052"
+    target: "pona a!"
+    ipa: "ˈpona a"
+    pos: "phrase"
+    confusables:
+      - { id: "w1", ref: "tok-0003", kind: "word" }
+      - { id: "w2", ref: "tok-0005", kind: "word" }
+  - id: "tok-0053"
+    target: "sina toki pona a!"
+    ipa: "ˈsina ˈtoki ˈpona a"
+    pos: "phrase"
+    confusables:
+      - { id: "w1", ref: "tok-0003", kind: "word" }
+      - { id: "w2", ref: "tok-0005", kind: "word" }
+  - id: "tok-0054"
+    target: "sina sona anu ala?"
+    ipa: "ˈsina ˈsona ˈanu ˈala"
+    pos: "phrase"
+    confusables:
+      - { id: "w1", ref: "tok-0003", kind: "word" }
+      - { id: "w2", ref: "tok-0002", kind: "word" }
