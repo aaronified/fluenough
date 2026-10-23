@@ -1,0 +1,520 @@
+"schema": 1
+"id": "zh-location"
+"part": "core"
+"kind": "vocab"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"license": "CC-BY-SA-4.0"
+"theme": "location"
+"tags":
+- "beginner"
+- "unreviewed"
+"cards":
+- "id": "zh-0519"
+  "target": "在"
+  "words":
+  - "在"
+  "reading": "zài"
+  "pos": "verb"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "钥匙在桌子上。"
+    "reading": "yàoshi zài zhuōzi shang."
+    "words":
+    - "钥匙"
+    - "在"
+    - "桌子"
+    - "上"
+  - "target": "我在家。"
+    "reading": "wǒ zài jiā."
+    "words":
+    - "我"
+    - "在"
+    - "家"
+- "id": "zh-0520"
+  "target": "里"
+  "words":
+  - "里"
+  "reading": "lǐ"
+  "pos": "other"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "target_scripts":
+    "han_traditional": "裡"
+  "antonyms":
+  - "id": "outside"
+    "ref": "zh-0529"
+  "examples":
+  - "target": "房间里很安静。"
+    "reading": "fángjiān li hěn ānjìng."
+    "words":
+    - "房间"
+    - "里"
+    - "很"
+    - "安静"
+  - "target": "茶在杯里。"
+    "reading": "chá zài bēi li."
+    "words":
+    - "茶"
+    - "在"
+    - "杯"
+    - "里"
+- "id": "zh-0521"
+  "target": "上"
+  "words":
+  - "上"
+  "reading": "shàng"
+  "pos": "other"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "antonyms":
+  - "id": "under"
+    "ref": "zh-0522"
+  "examples":
+  - "target": "书在桌子上。"
+    "reading": "shū zài zhuōzi shang."
+    "words":
+    - "书"
+    - "在"
+    - "桌子"
+    - "上"
+  - "target": "衣服在床上。"
+    "reading": "yīfu zài chuáng shang."
+    "words":
+    - "衣服"
+    - "在"
+    - "床"
+    - "上"
+- "id": "zh-0522"
+  "target": "下"
+  "words":
+  - "下"
+  "reading": "xià"
+  "pos": "other"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "antonyms":
+  - "id": "above"
+    "ref": "zh-0521"
+  "examples":
+  - "target": "鞋在床下。"
+    "reading": "xié zài chuáng xia."
+    "words":
+    - "鞋"
+    - "在"
+    - "床"
+    - "下"
+  - "target": "钱在桌子下。"
+    "reading": "qián zài zhuōzi xia."
+    "words":
+    - "钱"
+    - "在"
+    - "桌子"
+    - "下"
+- "id": "zh-0523"
+  "target": "前面"
+  "words":
+  - "前面"
+  "reading": "qiánmiàn"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "antonyms":
+  - "id": "behind"
+    "ref": "zh-0524"
+  "examples":
+  - "target": "椅子在桌子前面。"
+    "reading": "yǐzi zài zhuōzi qiánmiàn."
+    "words":
+    - "椅子"
+    - "在"
+    - "桌子"
+    - "前面"
+  - "target": "学校在前面。"
+    "reading": "xuéxiào zài qiánmiàn."
+    "words":
+    - "学校"
+    - "在"
+    - "前面"
+- "id": "zh-0524"
+  "target": "后面"
+  "words":
+  - "后面"
+  "reading": "hòumiàn"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "target_scripts":
+    "han_traditional": "後面"
+  "antonyms":
+  - "id": "in-front"
+    "ref": "zh-0523"
+  "examples":
+  - "target": "床在后面。"
+    "reading": "chuáng zài hòumiàn."
+    "words":
+    - "床"
+    - "在"
+    - "后面"
+  - "target": "你在我后面。"
+    "reading": "nǐ zài wǒ hòumiàn."
+    "words":
+    - "你"
+    - "在"
+    - "我"
+    - "后面"
+- "id": "zh-0525"
+  "target": "旁边"
+  "words":
+  - "旁边"
+  "reading": "pángbiān"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "target_scripts":
+    "han_traditional": "旁邊"
+  "examples":
+  - "target": "椅子在桌子旁边。"
+    "reading": "yǐzi zài zhuōzi pángbiān."
+    "words":
+    - "椅子"
+    - "在"
+    - "桌子"
+    - "旁边"
+  - "target": "他在我旁边。"
+    "reading": "tā zài wǒ pángbiān."
+    "words":
+    - "他"
+    - "在"
+    - "我"
+    - "旁边"
+- "id": "zh-0526"
+  "target": "左边"
+  "words":
+  - "左边"
+  "reading": "zuǒbian"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "target_scripts":
+    "han_traditional": "左邊"
+  "antonyms":
+  - "id": "right-side"
+    "ref": "zh-0527"
+  "examples":
+  - "target": "学校在左边。"
+    "reading": "xuéxiào zài zuǒbian."
+    "words":
+    - "学校"
+    - "在"
+    - "左边"
+  - "target": "桌子在左边。"
+    "reading": "zhuōzi zài zuǒbian."
+    "words":
+    - "桌子"
+    - "在"
+    - "左边"
+- "id": "zh-0527"
+  "target": "右边"
+  "words":
+  - "右边"
+  "reading": "yòubian"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "target_scripts":
+    "han_traditional": "右邊"
+  "antonyms":
+  - "id": "left-side"
+    "ref": "zh-0526"
+  "examples":
+  - "target": "床在右边。"
+    "reading": "chuáng zài yòubian."
+    "words":
+    - "床"
+    - "在"
+    - "右边"
+  - "target": "钥匙在右边吗？"
+    "reading": "yàoshi zài yòubian ma?"
+    "words":
+    - "钥匙"
+    - "在"
+    - "右边"
+    - "吗"
+- "id": "zh-0528"
+  "target": "中间"
+  "words":
+  - "中间"
+  "reading": "zhōngjiān"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "target_scripts":
+    "han_traditional": "中間"
+  "examples":
+  - "target": "桌子在中间。"
+    "reading": "zhuōzi zài zhōngjiān."
+    "words":
+    - "桌子"
+    - "在"
+    - "中间"
+  - "target": "椅子在中间吗？"
+    "reading": "yǐzi zài zhōngjiān ma?"
+    "words":
+    - "椅子"
+    - "在"
+    - "中间"
+    - "吗"
+- "id": "zh-0529"
+  "target": "外面"
+  "words":
+  - "外面"
+  "reading": "wàimiàn"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "antonyms":
+  - "id": "inside"
+    "ref": "zh-0520"
+  "examples":
+  - "target": "外面很冷。"
+    "reading": "wàimiàn hěn lěng."
+    "words":
+    - "外面"
+    - "很"
+    - "冷"
+  - "target": "你在外面吗？"
+    "reading": "nǐ zài wàimiàn ma?"
+    "words":
+    - "你"
+    - "在"
+    - "外面"
+    - "吗"
+- "id": "zh-0530"
+  "target": "东西"
+  "words":
+  - "东西"
+  "reading": "dōngxi"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "target_scripts":
+    "han_traditional": "東西"
+  "examples":
+  - "target": "东西在桌子上。"
+    "reading": "dōngxi zài zhuōzi shang."
+    "words":
+    - "东西"
+    - "在"
+    - "桌子"
+    - "上"
+  - "target": "东西很多。"
+    "reading": "dōngxi hěn duō."
+    "words":
+    - "东西"
+    - "很"
+    - "多"
+- "id": "zh-0531"
+  "target": "钥匙"
+  "words":
+  - "钥匙"
+  "reading": "yàoshi"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "target_scripts":
+    "han_traditional": "鑰匙"
+  "examples":
+  - "target": "钥匙在哪里？"
+    "reading": "yàoshi zài nǎlǐ?"
+    "words":
+    - "钥匙"
+    - "在"
+    - "哪里"
+  - "target": "钥匙在床上吗？"
+    "reading": "yàoshi zài chuáng shang ma?"
+    "words":
+    - "钥匙"
+    - "在"
+    - "床"
+    - "上"
+    - "吗"
+- "id": "zh-0532"
+  "target": "桌子"
+  "words":
+  - "桌子"
+  "reading": "zhuōzi"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "桌子很大。"
+    "reading": "zhuōzi hěn dà."
+    "words":
+    - "桌子"
+    - "很"
+    - "大"
+  - "target": "茶在桌子上。"
+    "reading": "chá zài zhuōzi shang."
+    "words":
+    - "茶"
+    - "在"
+    - "桌子"
+    - "上"
+- "id": "zh-0533"
+  "target": "椅子"
+  "words":
+  - "椅子"
+  "reading": "yǐzi"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "椅子很旧。"
+    "reading": "yǐzi hěn jiù."
+    "words":
+    - "椅子"
+    - "很"
+    - "旧"
+  - "target": "你坐在椅子上吗？"
+    "reading": "nǐ zuò zài yǐzi shang ma?"
+    "words":
+    - "你"
+    - "坐"
+    - "在"
+    - "椅子"
+    - "上"
+    - "吗"
+- "id": "zh-0534"
+  "target": "床"
+  "words":
+  - "床"
+  "reading": "chuáng"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "床很小。"
+    "reading": "chuáng hěn xiǎo."
+    "words":
+    - "床"
+    - "很"
+    - "小"
+  - "target": "你在床上吗？"
+    "reading": "nǐ zài chuáng shang ma?"
+    "words":
+    - "你"
+    - "在"
+    - "床"
+    - "上"
+    - "吗"
+- "id": "zh-0535"
+  "target": "这儿"
+  "words":
+  - "这儿"
+  "reading": "zhèr"
+  "pos": "pronoun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "target_scripts":
+    "han_traditional": "這兒"
+  "antonyms":
+  - "id": "there"
+    "ref": "zh-0536"
+  "examples":
+  - "target": "这儿很好。"
+    "reading": "zhèr hěn hǎo."
+    "words":
+    - "这儿"
+    - "很"
+    - "好"
+  - "target": "这儿很安静。"
+    "reading": "zhèr hěn ānjìng."
+    "words":
+    - "这儿"
+    - "很"
+    - "安静"
+- "id": "zh-0536"
+  "target": "那儿"
+  "words":
+  - "那儿"
+  "reading": "nàr"
+  "pos": "pronoun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "target_scripts":
+    "han_traditional": "那兒"
+  "antonyms":
+  - "id": "here"
+    "ref": "zh-0535"
+  "examples":
+  - "target": "那儿很远。"
+    "reading": "nàr hěn yuǎn."
+    "words":
+    - "那儿"
+    - "很"
+    - "远"
+  - "target": "钥匙在那儿。"
+    "reading": "yàoshi zài nàr."
+    "words":
+    - "钥匙"
+    - "在"
+    - "那儿"
+- "id": "zh-0599"
+  "kind": "set"
+  "members":
+  - "ref": "zh-0520"
+  - "ref": "zh-0521"
+  - "ref": "zh-0522"
+  - "ref": "zh-0523"
+  - "ref": "zh-0524"
+  - "ref": "zh-0525"
+  - "ref": "zh-0526"
+  - "ref": "zh-0527"
+  - "ref": "zh-0528"
+  - "ref": "zh-0529"

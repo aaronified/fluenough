@@ -175,7 +175,9 @@ void implyReview(
 }) {
   if (review.grade < Fsrs.passingGrade) return;
   for (final MapEntry(key: mode, value: share)
-      in skills.impliedBy(review.key.mode, review.deckId).entries) {
+      in skills
+          .impliedBy(review.key.mode, review.deckId, cardId: review.key.cardId)
+          .entries) {
     final key = (cardId: review.key.cardId, mode: mode);
     final state = states[key];
     if (state != null) {
