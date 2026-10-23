@@ -64,6 +64,10 @@ Decided in #575 (owner, 2026-10-18), reused here:
 - **Mockup first, by Sonnet** ("Sonnet mockup"), following
   `docs/mockups/README.md`.
 
+## Built (2026-10-23)
+
+Built as the approved mockup (#678): see [Progress and stats](Progress-and-Stats). Known is as #680 decides (the last review right and FSRS recall at least 85% at that review), not the 90% of #575. The star's outline (known ÷ taught) and the charts behind it replace the single line chart; there is no separate area chart.
+
 ## Order
 
 Milestone "Any order"; the mockup comes "Later. When we pick it up"
