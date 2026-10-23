@@ -110,20 +110,24 @@ schema: 1
     "kind": "note"
   "bases": "self"
   "examples":
-  - "target": "木也很老。"
-    "reading": "mù yě hěn lǎo."
+  - "target": "这木头很老。"
+    "reading": "zhè mùtou hěn lǎo."
     "words":
-    - "木"
-    - "也"
+    - "这"
+    - "木头"
     - "很"
     - "老"
-  - "target": "木很多吗？"
-    "reading": "mù hěn duō ma?"
+    "bases":
+    - { "word": "木头", "base": "木头", "reading": "mùtou" }
+  - "target": "木头很多吗？"
+    "reading": "mùtou hěn duō ma?"
     "words":
-    - "木"
+    - "木头"
     - "很"
     - "多"
     - "吗"
+    "bases":
+    - { "word": "木头", "base": "木头", "reading": "mùtou" }
 - "id": "zh-0237"
   "target": "日"
   "words":
@@ -135,21 +139,20 @@ schema: 1
     "kind": "note"
   "bases": "self"
   "examples":
-  - "target": "是几日？"
-    "reading": "shì jǐ rì?"
+  - "target": "三月五日。"
+    "reading": "sān yuè wǔ rì."
     "words":
-    - "是"
+    - "三"
+    - "月"
+    - "五"
+    - "日"
+  - "target": "几月几日？"
+    "reading": "jǐ yuè jǐ rì?"
+    "words":
+    - "几"
+    - "月"
     - "几"
     - "日"
-  - "target": "日很热吗？"
-    "reading": "rì hěn rè ma?"
-    "words":
-    - "日"
-    - "很"
-    - "热"
-    - "吗"
-    "bases":
-    - { "word": "热", "base": "热", "reading": "rè" }
 - "id": "zh-0238"
   "target": "月"
   "words":
