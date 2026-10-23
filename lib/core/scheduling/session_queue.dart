@@ -3,6 +3,7 @@ import '../models/drill_mode.dart';
 import '../models/reading.dart';
 import 'ask.dart';
 import 'deck_sampling.dart';
+import 'placed_review.dart';
 import 'fsrs.dart';
 import 'lesson_sets.dart';
 
@@ -193,6 +194,11 @@ class SessionQueue {
   /// them, as [sampleCount] says, the ones reviewed longest ago first; the
   /// rest wait for another day's sample (#680).
   ///
+  /// [placedOf] says how a pair placement credited is reviewed (#761): a
+  /// [PlacedReview.setInStone] pair is never offered, and with [sampleKnown]
+  /// a [PlacedReview.spotCheck] pair counts as known until the learner has
+  /// reviewed it.
+  ///
   /// A card gives either its most overdue pair or its first new one, unless
   /// [newEvenIfDue]: then its first new pair is offered as well, for a
   /// session of new cards only, which drops the due ones.
@@ -213,6 +219,7 @@ class SessionQueue {
     bool reviseAll = false,
     bool newEvenIfDue = false,
     bool sampleKnown = false,
+    PlacedLookup? placedOf,
     Set<DrillMode> modes = const <DrillMode>{
       DrillMode.recognition,
       DrillMode.production,
@@ -240,6 +247,7 @@ class SessionQueue {
       for (final mode in DrillMode.drills) {
         if (!allowed.contains(mode) || !modes.contains(mode)) continue;
         if (isSetAside?.call(card, mode) ?? false) continue;
+        if (placedOf?.call(card, mode) == PlacedReview.setInStone) continue;
         final state = stateOf(card, mode);
         if (state == null) {
           firstNew ??= SessionItem(card: card, mode: mode, state: null);
@@ -324,7 +332,10 @@ class SessionQueue {
       }
       final knownDue = <String, List<SessionItem>>{};
       for (final item in shown) {
-        if (isKnownState(item.state!)) {
+        final state = item.state!;
+        final spot =
+            placedOf?.call(item.card, item.mode) == PlacedReview.spotCheck;
+        if (spot ? isPlacedKnown(state) : isKnownState(state)) {
           (knownDue[item.card.deckId] ??= <SessionItem>[]).add(item);
         }
       }

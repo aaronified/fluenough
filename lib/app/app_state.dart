@@ -12,10 +12,12 @@ import '../core/models/deck.dart';
 import '../core/models/drill_mode.dart';
 import '../core/models/number_rules.dart';
 import '../core/models/reading.dart';
+import '../core/models/review_event.dart' show ProgressKey;
 import '../core/models/romanisation.dart';
 import '../core/models/script_guide.dart';
 import '../core/models/sound_contrasts.dart';
 import '../core/numbers/number_practice.dart';
+import '../core/scheduling/placed_review.dart';
 import '../core/scheduling/skill_map.dart';
 import '../core/scheduling/session_queue.dart';
 import '../core/sound/sound_check.dart';
@@ -1623,6 +1625,9 @@ class AppState extends ChangeNotifier {
           !request.revise &&
           !request.lesson &&
           !request.numbers,
+      // What placement credited follows its course's choice (#761);
+      // revising shows every word.
+      placedOf: request.revise ? null : placedReviewOf,
       modes: modes,
       canIntroduce: canIntroduce,
       siblingsOf: siblingsOf,
@@ -1674,6 +1679,28 @@ class AppState extends ChangeNotifier {
   /// another course.
   bool isPlaced(DeckEntry entry) =>
       (_placed ??= _placedAcross()).contains(entry.id);
+
+  /// How the pair of [card] in [mode] is reviewed, if placement credited it
+  /// (#761): by its course's choice, [SettingsNotifier.placedReviewOf]. Null for a
+  /// word learned after placement, and for a course set to Keep reviewing,
+  /// whose placed words are reviewed as any are.
+  PlacedReview? placedReviewOf(Card card, DrillMode mode) {
+    final pairs = derived<Set<ProgressKey>>(
+      #placedPairs,
+      () => settings.hasPlacedCredit
+          ? placedPairs(
+              progress.log,
+              placedAt: (deckId) =>
+                  settings.placedAtOf(deckById(deckId)?.language.code ?? ''),
+            )
+          : const <ProgressKey>{},
+    );
+    if (!pairs.contains((cardId: card.id, mode: mode))) return null;
+    final code = deckById(card.deckId)?.language.code;
+    if (code == null) return null;
+    final choice = settings.placedReviewOf(code);
+    return choice == PlacedReview.keepReviewing ? null : choice;
+  }
 
   Set<String> _placedAcross() {
     final placed = settings.placedDecks;

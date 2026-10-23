@@ -5407,6 +5407,74 @@
   "@placementDone": {
     "description": "Button on the last placement result: start where placement placed the learner, and go on to the app."
   },
+  "placedReviewQuestion": "Do you want to keep reviewing what you already know?",
+  "@placedReviewQuestion": {
+    "description": "Question on the end-of-placement screen and heading of the Placed words sheet: how the words placement found the learner knows are reviewed from now on."
+  },
+  "placedReviewSetInStone": "Set in stone",
+  "@placedReviewSetInStone": {
+    "description": "Choice: the words placement found known are never reviewed and count as known."
+  },
+  "placedReviewSetInStoneBody": "Never reviewed. Counted as known on Progress.",
+  "@placedReviewSetInStoneBody": {
+    "description": "Explanation of the Set in stone choice."
+  },
+  "placedReviewSpotCheck": "Spot-check",
+  "@placedReviewSpotCheck": {
+    "description": "Choice: a few of the placed words are tested now and then; a miss brings more of them back to review."
+  },
+  "placedReviewSpotCheckBody": "A few tested now and then. A miss brings more back.",
+  "@placedReviewSpotCheckBody": {
+    "description": "Explanation of the Spot-check choice."
+  },
+  "placedReviewKeep": "Keep reviewing",
+  "@placedReviewKeep": {
+    "description": "Choice: the placed words are reviewed like any other word."
+  },
+  "placedReviewKeepBody": "Review them like any other word.",
+  "@placedReviewKeepBody": {
+    "description": "Explanation of the Keep reviewing choice."
+  },
+  "placedReviewDefault": "Default",
+  "@placedReviewDefault": {
+    "description": "Small tag on the choice that is preselected."
+  },
+  "placedReviewFoot": "You can change this later in Languages I’m learning.",
+  "@placedReviewFoot": {
+    "description": "Under the placed-words question at the end of placement."
+  },
+  "placedReviewRow": "Placed words",
+  "@placedReviewRow": {
+    "description": "Row in a learned language's sheet in Languages I'm learning: opens the choice of how the words placement found known are reviewed. Its line under it names the current choice."
+  },
+  "placedReviewSheetTitle": "Placed words in {language}",
+  "@placedReviewSheetTitle": {
+    "description": "Heading of the sheet that changes how a course reviews its placed words.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "placedReviewSheetNote": "Switching from Set in stone back to Spot-check or Keep reviewing returns the placed words to reviews. Words you learn from now on are always reviewed as usual.",
+  "@placedReviewSheetNote": {
+    "description": "Under the choices in the Placed words sheet."
+  },
+  "placedReviewSummary": "{words, plural, =1{{words} word} other{{words} words}} placed, in {decks, plural, =1{{decks} deck} other{{decks} decks}}",
+  "@placedReviewSummary": {
+    "description": "Summary on the end-of-placement screen: how many words and decks placement found known.",
+    "placeholders": {
+      "words": {
+        "type": "int",
+        "example": "412"
+      },
+      "decks": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
   "placementQuestionNumber": "Question {number}",
   "@placementQuestionNumber": {
     "description": "Above a placement question: how many have been asked, counting this one. There is no total: placement ends as soon as it knows where to start.",

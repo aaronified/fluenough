@@ -8,6 +8,7 @@ import '../core/decks/ipa_course.dart';
 import '../core/review/deck_review.dart';
 import '../core/review/rater_code.dart';
 import '../core/review/review_pairs.dart';
+import '../core/scheduling/placed_review.dart';
 import '../core/updates/release_check.dart';
 import 'language_choice.dart';
 import 'skill.dart';
@@ -122,6 +123,8 @@ class SettingsNotifier extends ChangeNotifier {
   Set<String> _speechUnsupported = const <String>{};
   Set<String> _scriptGuidesSeen = const <String>{};
   Map<String, Set<String>> _collapsedLevels = const <String, Set<String>>{};
+  Map<String, PlacedReview> _placedReview = const <String, PlacedReview>{};
+  Map<String, Set<int>> _placedAt = const <String, Set<int>>{};
   Set<String> _waitingOpen = const <String>{};
   Map<Skill, DateTime> _pausedUntil = const <Skill, DateTime>{};
   Map<Skill, Set<String>> _offFor = const <Skill, Set<String>>{};
@@ -500,6 +503,40 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// How [language]'s course reviews the words placement credited (#761),
+  /// [PlacedReview.fallback] until the learner chooses.
+  PlacedReview placedReviewOf(String language) =>
+      _placedReview[language] ?? PlacedReview.fallback;
+
+  void setPlacedReview(String language, PlacedReview choice) {
+    if (placedReviewOf(language) == choice &&
+        _placedReview.containsKey(language)) {
+      return;
+    }
+    _placedReview = Map<String, PlacedReview>.unmodifiable(
+      <String, PlacedReview>{..._placedReview, language: choice},
+    );
+    notifyListeners();
+  }
+
+  /// The moments, in whole seconds since the epoch, at which placement
+  /// credited [language]'s words: the reviews it wrote then are the placed
+  /// words (`placedPairs`).
+  Set<int> placedAtOf(String language) => _placedAt[language] ?? const <int>{};
+
+  /// Whether placement has credited any course's words.
+  bool get hasPlacedCredit => _placedAt.isNotEmpty;
+
+  void addPlacedAt(String language, int seconds) {
+    final was = _placedAt[language] ?? const <int>{};
+    if (was.contains(seconds)) return;
+    _placedAt = Map<String, Set<int>>.unmodifiable(<String, Set<int>>{
+      ..._placedAt,
+      language: Set<int>.unmodifiable(<int>{...was, seconds}),
+    });
+    notifyListeners();
+  }
+
   /// Whether the reviewer unfolded [language] on Waiting for review (#471).
   /// Folded by default; what is unfolded is remembered.
   bool isWaitingLanguageOpen(String language) =>
@@ -794,6 +831,14 @@ class SettingsNotifier extends ChangeNotifier {
     'speech_not_on_device': (_speechNotOnDevice.toList()..sort()).join(','),
     'speech_unsupported': (_speechUnsupported.toList()..sort()).join(','),
     'script_guides_seen': (_scriptGuidesSeen.toList()..sort()).join(','),
+    'placed_review': jsonEncode(<String, String>{
+      for (final MapEntry(:key, :value) in _placedReview.entries)
+        key: value.name,
+    }),
+    'placed_at': jsonEncode(<String, List<int>>{
+      for (final MapEntry(:key, :value) in _placedAt.entries)
+        key: value.toList()..sort(),
+    }),
     'collapsed_levels': jsonEncode(<String, List<String>>{
       for (final MapEntry(:key, :value) in _collapsedLevels.entries)
         key: value.toList()..sort(),
@@ -1012,6 +1057,24 @@ class SettingsNotifier extends ChangeNotifier {
       for (final code in v.split(',')) {
         if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) {
           setWaitingLanguageOpen(code, true);
+        }
+      }
+    }
+    if (pick('placed_review', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! String) {
+          continue;
+        }
+        if (PlacedReview.parse(value) case final choice?) {
+          setPlacedReview(key, choice);
+        }
+      }
+    }
+    if (pick('placed_at', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! List) continue;
+        for (final seconds in value) {
+          if (seconds is int) addPlacedAt(key, seconds);
         }
       }
     }

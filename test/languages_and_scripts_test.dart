@@ -39,6 +39,7 @@ import 'package:fluenough/core/models/card.dart' as model;
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
+import 'package:fluenough/core/scheduling/placed_review.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
 import 'package:fluenough/core/speech/speech_engine.dart';
 import 'package:fluenough/core/tts/tts_engine.dart';
@@ -1461,6 +1462,41 @@ void main() {
       expect(find.text(l10n.placementTryAgain), findsNothing);
       await tapText(tester, l10n.placementDone);
       expect(state.settings.placedDecks, before(askable[2]));
+    });
+
+    testWidgets('the end of placement asks how the placed words are reviewed, '
+        'Spot-check picked, and keeps the choice for the course', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final state = await pumpFirstLaunch(tester);
+      final l10n = l10nOf(tester);
+
+      await pickLanguage(tester, 'hi');
+      await tapText(tester, l10n.commonContinue);
+      await tapText(tester, l10n.placementScriptYes);
+      await answerShown(tester);
+      await tapText(tester, l10n.placementStop);
+      expect(find.text(l10n.placedReviewQuestion), findsOneWidget);
+      expect(find.text(l10n.placedReviewDefault), findsOneWidget);
+      // Nothing changed: the default is what is saved.
+      await tapText(tester, l10n.placementDone);
+      expect(state.settings.placedReviewOf('hi'), PlacedReview.spotCheck);
+      expect(state.settings.placedAtOf('hi'), isNotEmpty);
+
+      {
+        usePhone(tester);
+        final state = await pumpFirstLaunch(tester);
+        final l10n = l10nOf(tester);
+        await pickLanguage(tester, 'hi');
+        await tapText(tester, l10n.commonContinue);
+        await tapText(tester, l10n.placementScriptYes);
+        await answerShown(tester);
+        await tapText(tester, l10n.placementStop);
+        await tapText(tester, l10n.placedReviewSetInStone);
+        await tapText(tester, l10n.placementDone);
+        expect(state.settings.placedReviewOf('hi'), PlacedReview.setInStone);
+      }
     });
 
     testWidgets('two languages are placed one after the other', (tester) async {
