@@ -1,0 +1,51 @@
+schema: 1
+id: "bn-grammar-compound-verbs"
+part: "core"
+kind: "rules"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    tags: ["compound"]
+  slots: ["conj", "past", "pres"]
+  rows:
+    - word: "bn-0872"
+      forms: { "conj": "এসে", "past": "এল", "pres": "আসে" }
+      readings: { "conj": "ese", "past": "el", "pres": "āśe" }
+    - word: "bn-0873"
+      forms: { "conj": "গিয়ে", "past": "গেল", "pres": "যায়" }
+      readings: { "conj": "giye", "past": "gelo", "pres": "jāy" }
+    - word: "bn-0884"
+      forms: { "conj": "বসে", "past": "বসল", "pres": "বসে" }
+      readings: { "conj": "bôśe", "past": "bôśol", "pres": "bôśe" }
+    - word: "bn-0885"
+      forms: { "conj": "উঠে", "past": "উঠল", "pres": "ওঠে" }
+      readings: { "conj": "uṭhe", "past": "uṭhol", "pres": "oṭhe" }
+    - word: "bn-0888"
+      forms: { "conj": "দিয়ে", "past": "দিল", "pres": "দেয়" }
+      readings: { "conj": "diye", "past": "dil", "pres": "dey" }
+    - word: "bn-0889"
+      forms: { "conj": "নিয়ে", "past": "নিল", "pres": "নেয়" }
+      readings: { "conj": "niye", "past": "nil", "pres": "ney" }
+    - word: "bn-0894"
+      forms: { "conj": "রেখে", "past": "রাখল", "pres": "রাখে" }
+      readings: { "conj": "rekhe", "past": "rākhol", "pres": "rākhe" }
+    - word: "bn-1103"
+      forms: { "conj": "ফেলে", "past": "ফেলল", "pres": "ফেলে" }
+      readings: { "conj": "phele", "past": "phelol", "pres": "phele" }
+    - word: "bn-0119"
+      forms: { "conj": "পড়ে", "past": "পড়ল", "pres": "পড়ে" }
+      readings: { "conj": "pôṛe", "past": "pôṛol", "pres": "pôṛe" }
+rules:
+  - id: "bn-rule-compound-verbs"
+    slots: ["conj", "past", "pres"]
+    words:
+      - { word: "পড়ে", reading: "pôṛe" }
+      - { word: "গেল", reading: "gelo" }
+      - { word: "যায়", reading: "jāy" }
+      - { word: "সে পড়ে গেল", reading: "śe pôṛe gelo" }
+      - { word: "সে পড়ে যায়", reading: "śe pôṛe jāy" }
