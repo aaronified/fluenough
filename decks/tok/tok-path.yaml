@@ -190,11 +190,9 @@ units:
     words: 8
   # ala after the word it denies; the X ala X question (sina pona ala
   # pona?); seme in the place of the answer; answering with the verb.
-  - planned: { id: "tok-grammar-negation-questions", grammar: ["negation-ala", "x-ala-x-questions", "seme-questions", "answering-yes-no"] }
-    listening_passages:
-      - { id: "yes-no-game", text: { "en": "A guessing game played with yes-no questions" } }
-    reading_passages:
-      - { id: "faq", text: { "en": "A short question-and-answer page about a club" } }
+  - decks: ["tok-grammar-negation-questions", "tok-grammar-x-ala-x-questions", "tok-grammar-seme-questions", "tok-grammar-answering-yes-no", "tok-grammar-negation-questions-sentences", "tok-reading-negation-questions"]
+    words: 0
+    grammar: ["negation-ala", "x-ala-x-questions", "seme-questions", "answering-yes-no"]
   # mama, mije, meli, kulupu, olin and poka (the people beside you).
   - planned: { id: "tok-family", theme: "family", words: 6 }
     listening_passages:
