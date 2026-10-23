@@ -1,0 +1,206 @@
+schema: 1
+id: "zh-en-tones"
+kind: "layer"
+core: "zh-tones"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The four tones"
+description: "Sixteen words that show the four tones: mother, hemp, horse and to scold; dad and eight; white and hundred; to buy and to sell; to open and to come; four, ten, to drink and to eat."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "zh-0031":
+    native: "mother; mum"
+    notes:
+      "n1": "妈 (mā) is 'mother', and it is what a child calls its mother. In speech 妈妈 (māma) is more common; 妈 (mā) alone is mostly a call."
+      "pair-ma": "Only the tone differs from 麻 (má), hemp: 妈 (mā) is high and level, 麻 (má) rises."
+    examples:
+      "妈，你来吗？": "Mum, are you coming?"
+      "我妈妈是老师。":
+        native: "My mother is a teacher."
+        bases:
+          "妈妈": { meaning: "mother" }
+          "老师": { meaning: "teacher" }
+  "zh-0032":
+    native: "hemp (the plant and its fibre)"
+    notes:
+      "n1": "麻 (má) is 'hemp', the plant and the cloth made from it. Its tone rises, the second tone."
+      "pair-ma": "Only the tone differs from 妈 (mā), mother: 麻 (má) rises, 妈 (mā) stays high and level."
+    examples:
+      "这是麻，不是马。":
+        native: "This is hemp, not a horse."
+        bases:
+          "这": { meaning: "this" }
+      "我不买麻。":
+        native: "I don't buy hemp."
+  "zh-0033":
+    native: "horse"
+    alt_native: ["horses"]
+    notes:
+      "n1": "马 (mǎ) is 'horse'. Its tone is the third: it falls and then rises, so say it with a dip."
+      "pair-scold": "Only the tone differs from 骂 (mà), to scold: 马 (mǎ) dips, 骂 (mà) falls."
+    examples:
+      "这是马。":
+        native: "This is a horse."
+        bases:
+          "这": { meaning: "this" }
+      "他不买马。":
+        native: "He doesn't buy horses."
+  "zh-0034":
+    native: "to scold; to curse"
+    notes:
+      "n1": "骂 (mà) is 'to scold', said of someone who shouts at another. Its tone falls sharply, the fourth tone. Before a fourth tone, 不 (bù) is said bú, as in 不骂 (bú mà)."
+      "pair-scold": "Only the tone differs from 马 (mǎ), horse: 骂 (mà) falls, 马 (mǎ) dips."
+    examples:
+      "他骂我。": "He scolds me."
+      "妈不骂我。": "Mum doesn't scold me."
+  "zh-0035":
+    native: "eight"
+    notes:
+      "n1": "八 (bā) is 'eight'. Its tone is the first, high and level, as in the numbers you say first."
+      "pair-dad": "Only the tone differs from 爸 (bà), dad: 八 (bā) stays level, 爸 (bà) falls."
+    examples:
+      "我们有八个人。":
+        native: "There are eight of us."
+        bases:
+          "我们": { meaning: "we; us" }
+          "有": { meaning: "to have" }
+          "个": { meaning: "measure word for people and things" }
+      "爸，八点来吗？":
+        native: "Dad, will you come at eight o'clock?"
+        bases:
+          "八点": { meaning: "eight o'clock" }
+  "zh-0036":
+    native: "dad; father"
+    notes:
+      "n1": "爸 (bà) is 'dad', as a child says it. 爸爸 (bàba) is the more usual form in speech."
+      "pair-dad": "Only the tone differs from 八 (bā), eight: 爸 (bà) falls, 八 (bā) stays level."
+    examples:
+      "爸，你来吗？": "Dad, are you coming?"
+      "爸爸不吃。":
+        native: "Dad isn't eating."
+        bases:
+          "爸爸": { meaning: "dad" }
+  "zh-0037":
+    native: "white; pale"
+    notes:
+      "n1": "白 (bái) is 'white', and 'pale' for a face. Its tone rises, the second tone."
+      "pair-white": "Only the tone differs from 百 (bǎi), hundred: 白 (bái) rises, 百 (bǎi) dips."
+    antonyms:
+      "black": "black"
+    examples:
+      "这马很白。":
+        native: "This horse is very white."
+        bases:
+          "这": { meaning: "this" }
+      "我买白的。":
+        native: "I buy the white ones."
+        bases:
+          "的": { meaning: "particle; here it means 'the ones'" }
+  "zh-0038":
+    native: "hundred"
+    notes:
+      "n1": "百 (bǎi) is 'hundred'. 八百 (bābǎi) is eight hundred, and 一百 (yībǎi) is one hundred."
+      "pair-white": "Only the tone differs from 白 (bái), white: 百 (bǎi) dips, 白 (bái) rises."
+    examples:
+      "这里有八百人。":
+        native: "There are eight hundred people here."
+        bases:
+          "这里": { meaning: "here" }
+          "有": { meaning: "to have" }
+          "八百": { meaning: "eight hundred" }
+      "我买一百个。":
+        native: "I buy a hundred of them."
+        bases:
+          "一百": { meaning: "one hundred" }
+          "个": { meaning: "measure word for people and things" }
+  "zh-0039":
+    native: "to buy"
+    notes:
+      "n1": "买 (mǎi) is 'to buy'. Its tone dips, the third tone."
+      "pair-buy": "Only the tone differs from 卖 (mài), to sell: 买 (mǎi) dips, 卖 (mài) falls."
+    examples:
+      "妈，我买书。":
+        native: "Mum, I'm buying a book."
+        bases:
+          "书": { meaning: "book" }
+      "你买吗？": "Are you buying?"
+  "zh-0040":
+    native: "to sell"
+    notes:
+      "n1": "卖 (mài) is 'to sell'. Its tone falls, the fourth tone."
+      "pair-buy": "Only the tone differs from 买 (mǎi), to buy: 卖 (mài) falls, 买 (mǎi) dips."
+    examples:
+      "他卖马。": "He sells horses."
+      "你卖书吗？":
+        native: "Do you sell books?"
+        bases:
+          "书": { meaning: "book" }
+  "zh-0041":
+    native: "to open"
+    notes:
+      "n1": "开 (kāi) is 'to open'. It is also used of a shop that opens for business, as in 店开 (diàn kāi)."
+    antonyms:
+      "close": "to close"
+    examples:
+      "我开门。":
+        native: "I open the door."
+        bases:
+          "门": { meaning: "door" }
+      "店不开。":
+        native: "The shop isn't open."
+        bases:
+          "店": { meaning: "shop" }
+  "zh-0042":
+    native: "to come"
+    notes:
+      "n1": "来 (lái) is 'to come'. It is used for coming towards the speaker or the listener."
+    examples:
+      "他来吗？": "Is he coming?"
+      "我不来。": "I'm not coming."
+  "zh-0043":
+    native: "ten"
+    notes:
+      "n1": "十 (shí) is 'ten'. Eleven and twelve start with it: 十一 (shíyī) and 十二 (shíèr)."
+    examples:
+      "这里有十个人。":
+        native: "There are ten people here."
+        bases:
+          "这里": { meaning: "here" }
+          "有": { meaning: "to have" }
+          "个": { meaning: "measure word for people and things" }
+      "十点来吗？":
+        native: "Will you come at ten o'clock?"
+        bases:
+          "十点": { meaning: "ten o'clock" }
+  "zh-0044":
+    native: "four"
+    notes:
+      "n1": "四 (sì) is 'four'. Its tone falls. Do not confuse it with 十 (shí), ten, which rises."
+    examples:
+      "这里有四个人。":
+        native: "There are four people here."
+        bases:
+          "这里": { meaning: "here" }
+          "有": { meaning: "to have" }
+          "个": { meaning: "measure word for people and things" }
+      "我吃四个。":
+        native: "I eat four of them."
+        bases:
+          "个": { meaning: "measure word for people and things" }
+  "zh-0045":
+    native: "to drink"
+    notes:
+      "n1": "喝 (hē) is 'to drink'. Its tone is the first, high and level."
+    examples:
+      "你喝吗？": "Do you drink?"
+      "我喝茶。":
+        native: "I drink tea."
+        bases:
+          "茶": { meaning: "tea" }
+  "zh-0046":
+    native: "to eat"
+    notes:
+      "n1": "吃 (chī) is 'to eat'. Its tone is the first, high and level."
+    examples:
+      "妈，我不吃。": "Mum, I'm not eating."
+      "你吃吗？": "Are you eating?"
