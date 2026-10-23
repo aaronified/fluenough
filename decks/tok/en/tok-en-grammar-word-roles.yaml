@@ -1,0 +1,20 @@
+schema: 1
+id: "tok-en-grammar-word-roles"
+kind: "layer"
+core: "tok-grammar-word-roles"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "One word, three roles"
+license: "CC-BY-SA-4.0"
+description: "A Toki Pona word has no fixed part of speech: its place in the sentence makes it a noun, a verb or a modifier. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "One word, three roles"
+  slot_name: "role"
+  prompt: "{lemma} ({gloss}): {slot}"
+  slots: { "noun": "as a noun (the subject)", "verb": "as a verb (after mi)", "modifier": "as a modifier (after jan)" }
+  entries:
+    "moku": "food; to eat"
+    "pali": "work; to make"
+    "toki": "language; to talk"
+    "lape": "sleep; to sleep"
+  notes: "The same word can be a noun, a verb or a modifier, and its place shows which. Moku is food in moku li pona (the food is good), to eat in mi moku (I eat), and describes a person in jan moku (a person who eats). A modifier comes after the word it describes. The meaning of a word used in a new role follows from its basic meaning, so check it in context."
