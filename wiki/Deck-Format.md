@@ -2780,7 +2780,7 @@ downloads is listed in `decks/index.json`:
 **You do not write the index.** A workflow (`deck-index.yml`) runs
 `python3 tools/deck_index.py` on main after each merge that touches `decks/`
 and commits the result (owner, 2026-10-23), so a pull request is not failed
-for a stale index. The validator still checks it when run locally. A phone
+for a stale index: the validate job and the tools' test that validates the real decks set `FLUENOUGH_SKIP_INDEX_CHECK`. The validator still checks it when run locally. A phone
 checks each file against its hash and refuses one that does not match.
 
 What a learner downloads for a language: its own files (path, facts,
