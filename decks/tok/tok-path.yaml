@@ -306,11 +306,9 @@ units:
   # Composition: how a head and its modifiers make a meaning, and the
   # conventional compounds speakers share (jan pona, tomo tawa, ilo
   # toki, telo nasa), each a phrase built from known words.
-  - planned: { id: "tok-grammar-compounds", grammar: ["compound-meaning", "conventional-compounds"] }
-    listening_passages:
-      - { id: "guess-the-thing", text: { "en": "A guessing game: players describe everyday objects without their English names" } }
-    reading_passages:
-      - { id: "compound-glossary", text: { "en": "A short glossary of common compounds, with what each part adds" } }
+  - decks: ["tok-grammar-compounds", "tok-grammar-compounds-sentences", "tok-reading-compounds"]
+    words: 0
+    grammar: ["compound-meaning", "conventional-compounds"]
   # kin, n and meso: indeed, a thinking sound, and the middle.
   - planned: { id: "tok-opinions", theme: "opinions", words: 3 }
     listening_passages:
