@@ -6,32 +6,27 @@ import '../models/number_rules.dart';
 import '../scheduling/session_queue.dart';
 import 'number_speller.dart';
 
-/// A generated number as a card: the words as its target, the digits as its
-/// meaning (#54, ADR-0011).
-///
-/// Practice only: nothing drilled from it is recorded, so its id is never
-/// written to the review log and rule 1 does not reach it.
-class NumberCard extends Card {
-  NumberCard({
-    required this.number,
-    required List<String> spellings,
-    required String rulesId,
-    required super.deckId,
-  }) : super(
-         id: '$rulesId-$number',
-         target: spellings.first,
-         altTarget: spellings.sublist(1),
-         native: '$number',
-       );
-
-  final int number;
-
-  /// Heard, the learner types the digits, not the words.
-  @override
-  List<String> acceptedAnswers(DrillMode mode) => mode == DrillMode.listening
-      ? <String>[native]
-      : super.acceptedAnswers(mode);
-}
+/// A generated number as an ordinary card with data: the words as its target,
+/// the digits as its meaning (#54, ADR-0011). It is [Card.practiceOnly], so
+/// nothing drilled from it is recorded and its id is never written to the
+/// review log (rule 1 does not reach it); it is heard as its form
+/// (`hears: form`) and typed as the digits ([Card.heardAs]). None of this is
+/// a deck key: the card is generated, never in a deck file.
+Card numberCard({
+  required int number,
+  required List<String> spellings,
+  required String rulesId,
+  required String deckId,
+}) => Card(
+  id: '$rulesId-$number',
+  deckId: deckId,
+  target: spellings.first,
+  altTarget: spellings.sublist(1),
+  native: '$number',
+  hears: 'form',
+  heardAs: '$number',
+  practiceOnly: true,
+);
 
 /// The drills a number is practised in, in this order.
 const List<DrillMode> numberPracticeModes = <DrillMode>[
@@ -64,7 +59,7 @@ List<SessionItem> numberPractice(
   return <SessionItem>[
     for (final (i, n) in numbers.take(count).indexed)
       SessionItem(
-        card: NumberCard(
+        card: numberCard(
           number: n,
           spellings: spellNumber(rules, n),
           rulesId: rules.id,

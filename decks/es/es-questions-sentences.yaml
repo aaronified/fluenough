@@ -1,0 +1,140 @@
+schema: 1
+id: "es-questions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-0070"
+    target: "¿Dónde está la estación?"
+    ipa: "ˈdonde esˈta la estaˈθjon"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Dónde", base: "dónde" }
+      - { word: "está", ref: "es-0023" }
+      - { word: "la", base: "la" }
+      - { word: "estación", base: "estación" }
+    confusables:
+      - { id: "when", ref: "es-0057", kind: "word" }
+      - { id: "how", ref: "es-0058", kind: "word" }
+  - id: "es-0071"
+    target: "¿Cuándo llega el tren?"
+    ipa: "ˈkwando ˈʝeɡa el tɾen"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Cuándo", base: "cuándo" }
+      - { word: "llega", base: "llegar" }
+      - { word: "el", base: "el" }
+      - { word: "tren", base: "tren" }
+    confusables:
+      - { id: "where", ref: "es-0056", kind: "word" }
+      - { id: "how-much", ref: "es-0060", kind: "word" }
+  - id: "es-0072"
+    target: "¿Cómo estás hoy?"
+    ipa: "ˈkomo esˈtas oj"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Cómo", ref: "es-0058" }
+      - { word: "estás", ref: "es-0023" }
+      - { word: "hoy", base: "hoy" }
+    confusables:
+      - { id: "who", ref: "es-0055", kind: "word" }
+      - { id: "which", ref: "es-0059", kind: "word" }
+  - id: "es-0073"
+    target: "¿Quién llama a la puerta?"
+    ipa: "kjen ˈʝama a la ˈpweɾta"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Quién", ref: "es-0055" }
+      - { word: "llama", base: "llamar" }
+      - { word: "a", base: "a" }
+      - { word: "la", base: "la" }
+      - { word: "puerta", ref: "es-0007" }
+    confusables:
+      - { id: "what", ref: "es-0054", kind: "word" }
+      - { id: "where", ref: "es-0056", kind: "word" }
+  - id: "es-0074"
+    target: "¿Por qué no comes?"
+    ipa: "poɾ ke no ˈkomes"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Por", base: "por" }
+      - { word: "qué", ref: "es-0054" }
+      - { word: "no", ref: "es-0043" }
+      - { word: "comes", ref: "es-0028" }
+    confusables:
+      - { id: "when", ref: "es-0057", kind: "word" }
+      - { id: "how", ref: "es-0058", kind: "word" }
+  - id: "es-0075"
+    target: "¿Cuál es tu nombre?"
+    ipa: "kwal es tu ˈnombɾe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Cuál", ref: "es-0059" }
+      - { word: "es", ref: "es-0022" }
+      - { word: "tu", ref: "es-0130" }
+      - { word: "nombre", ref: "es-0091" }
+    confusables:
+      - { id: "what", ref: "es-0054", kind: "word" }
+      - { id: "who", ref: "es-0055", kind: "word" }
+  - id: "es-0076"
+    target: "¿Cuánto cuesta el pan?"
+    ipa: "ˈkwanto ˈkwesta el pan"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Cuánto", ref: "es-0060" }
+      - { word: "cuesta", base: "costar" }
+      - { word: "el", base: "el" }
+      - { word: "pan", ref: "es-0013" }
+    confusables:
+      - { id: "when", ref: "es-0057", kind: "word" }
+      - { id: "how", ref: "es-0058", kind: "word" }
+  - id: "es-0077"
+    target: "¿Con quién vas al cine?"
+    ipa: "kon kjen bas al ˈθine"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Con", base: "con" }
+      - { word: "quién", ref: "es-0055" }
+      - { word: "vas", ref: "es-0026" }
+      - { word: "al", base: "al" }
+      - { word: "cine", base: "cine" }
+    confusables:
+      - { id: "what", ref: "es-0054", kind: "word" }
+      - { id: "where", ref: "es-0056", kind: "word" }
+  - id: "es-0078"
+    target: "¿Puedes repetir, por favor?"
+    ipa: "ˈpwedes repeˈtiɾ poɾ faˈboɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Puedes", base: "poder" }
+      - { word: "repetir", base: "repetir" }
+      - { word: "por", base: "por" }
+      - { word: "favor", base: "favor" }
+    confusables:
+      - { id: "sorry", ref: "es-0045", kind: "word" }
+      - { id: "thanks", ref: "es-0037", kind: "word" }
+  - id: "es-0079"
+    target: "¿Tienes hambre o sed?"
+    ipa: "ˈtjenes ˈambɾe o sed"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Tienes", ref: "es-0024" }
+      - { word: "hambre", base: "hambre" }
+      - { word: "o", ref: "es-0049" }
+      - { word: "sed", base: "sed" }
+    confusables:
+      - { id: "which", ref: "es-0059", kind: "word" }
+      - { id: "what", ref: "es-0054", kind: "word" }
