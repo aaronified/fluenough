@@ -1,0 +1,70 @@
+"schema": 1
+"id": "tok-en-grammar-la-chains-sentences"
+"kind": "layer"
+"core": "tok-grammar-la-chains-sentences"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "Stacked la in sentences"
+"description": "Sentences that stack several contexts, each with la: a time, then a place, then the sentence. Not yet checked by a Toki Pona speaker: please report any mistake."
+"license": "CC-BY-SA-4.0"
+"tags":
+- "unreviewed"
+"cards":
+  "tok-0697":
+    "native": "In the past, in this building, I slept."
+    "confusables":
+      "w1":
+        "why": "Tenpo is time: the first context in the stack, the past."
+      "w2":
+        "why": "Tomo is a building: the second context, the place."
+  "tok-0698":
+    "native": "In this land, they eat."
+    "confusables":
+      "w1":
+        "why": "Ma is land: the context of place, before the sentence."
+      "w2":
+        "why": "Moku is to eat: the sentence after the context."
+  "tok-0699":
+    "native": "Later, in this land, I go."
+    "confusables":
+      "w1":
+        "why": "Tenpo is time: the first context, later."
+      "w2":
+        "why": "Tawa is to go: the sentence after both contexts."
+  "tok-0700":
+    "native": "Now, this person works."
+    "confusables":
+      "w1":
+        "why": "Tenpo is time: the context of now."
+      "w2":
+        "why": "Jan is a person: the subject of the sentence after la."
+  "tok-0701":
+    "native": "In the past, I looked at the picture."
+    "confusables":
+      "w1":
+        "why": "Lukin is to look: the verb of the sentence after la."
+      "w2":
+        "why": "Sitelen is a picture: the thing looked at."
+  "tok-0702":
+    "native": "In this land, in this building, they sleep."
+    "confusables":
+      "w1":
+        "why": "Ma is land: the first context, the place."
+      "w2":
+        "why": "Lape is to sleep: the sentence after both contexts."
+  "tok-0703":
+    "native": "At night, I eat."
+    "confusables":
+      "w1":
+        "why": "Pimeja is dark: it describes the time, night."
+      "w2":
+        "why": "Moku is to eat: the sentence after la."
+  "tok-0704":
+    "native": "In the past, when you came, I played."
+    "confusables":
+      "w1":
+        "why": "Kama is to come: the clause in the second context, when you come."
+      "w2":
+        "why": "Musi is to play: the sentence after the contexts."
