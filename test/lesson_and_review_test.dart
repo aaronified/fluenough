@@ -4357,7 +4357,29 @@ cards:
         expect(queue.length, greaterThan(0));
         final numbers = TodayNumbers.of(state);
         expect(numbers.due, queue.length);
-        expect(find.byType(DailyCard), findsAtLeastNWidgets(1));
+        // Each language's day: its reviews add up to the session's, and the
+        // card shows each one's split and minutes spent (none yet today).
+        final plans = numbers.daily;
+        expect(plans, isNotEmpty);
+        expect(plans.map((p) => p.due).fold(0, (a, b) => a + b), queue.length);
+        expect(find.byType(DailyCard), findsOneWidget);
+        expect(
+          find.text(l10n.todayDailyStart),
+          findsNWidgets(plans.where((p) => !p.done && !p.inProgress).length),
+        );
+        for (final plan in plans) {
+          expect(plan.spent, Duration.zero);
+          expect(
+            find.text(l10n.todayDailyReviews(plan.split.reviews)),
+            findsNWidgets(
+              plans.where((p) => p.split.reviews == plan.split.reviews).length,
+            ),
+          );
+          expect(
+            find.text(l10n.todayDailyProgress(0, plan.minutes)),
+            findsNWidgets(plans.where((p) => p.minutes == plan.minutes).length),
+          );
+        }
 
         final byMode = queue.countByMode();
         // Recognition is scheduled, so it has a tile (ADR-0034).
@@ -4494,6 +4516,179 @@ cards:
       await tester.longPress(add);
       await tester.pump();
       expect(state.settings.dailyExtraFor('es', state.now()), 5);
+
+      // A screen reader gets the same two actions on the button's own node:
+      // a tap adds five, a custom action takes five away.
+      final handle = tester.ensureSemantics();
+      final button = find.byType(OutlinedButton);
+      expect(
+        tester.getSemantics(button),
+        containsSemantics(
+          label: l10n.todayDailyAddMinutes(5),
+          hint: l10n.todayDailyAddHint(5),
+          isButton: true,
+          hasTapAction: true,
+          customActions: <CustomSemanticsAction>[
+            CustomSemanticsAction(label: l10n.todayDailyTakeAway(5)),
+          ],
+        ),
+      );
+      tester.semantics.tap(button);
+      await tester.pump();
+      expect(state.settings.dailyExtraFor('es', state.now()), 10);
+      final takeAway = CustomSemanticsAction.getIdentifier(
+        CustomSemanticsAction(label: l10n.todayDailyTakeAway(5)),
+      );
+      tester.semantics.performAction(
+        button,
+        SemanticsAction.customAction,
+        args: takeAway,
+      );
+      await tester.pump();
+      expect(state.settings.dailyExtraFor('es', state.now()), 5);
+      handle.dispose();
+    });
+
+    test('the extra minutes last the day: the next day starts at the goal, '
+        'and a day never goes below five minutes', () async {
+      final settings = SettingsNotifier(
+        spokenLanguages: const <String>['en'],
+        learningLanguages: const <String>['es'],
+      );
+      final today = DateTime(2026, 9, 28, 19);
+      final state = AppState.test(settings: settings, now: today);
+      await state.load();
+      final spanish = state.languages.firstWhere((l) => l.code == 'es');
+
+      state.addDailyMinutes('es', 10);
+      expect(state.dailyPlanFor(spanish).extraMinutes, 10);
+      expect(state.dailyPlanFor(spanish).minutes, 25);
+
+      // Tomorrow, with the same settings, it is the goal again.
+      final tomorrow = AppState.test(
+        settings: settings,
+        now: today.add(const Duration(days: 1)),
+      );
+      await tomorrow.load();
+      final plan = tomorrow.dailyPlanFor(
+        tomorrow.languages.firstWhere((l) => l.code == 'es'),
+      );
+      expect(plan.extraMinutes, 0);
+      expect(plan.minutes, 15);
+
+      // Taking minutes away stops at five minutes in all, however often.
+      for (var i = 0; i < 5; i++) {
+        state.addDailyMinutes('es', -5);
+      }
+      expect(state.dailyPlanFor(spanish).minutes, 5);
+      expect(state.dailyPlanFor(spanish).extraMinutes, 5 - 15);
+      state.addDailyMinutes('es', 5);
+      expect(state.dailyPlanFor(spanish).minutes, 10);
+    });
+
+    test('the extra minutes are saved with their day and restored, and '
+        'dropped the next day', () {
+      final day = DateTime(2026, 9, 28, 19);
+      final settings = SettingsNotifier()..setDailyExtra('es', 10, day);
+      final restored = SettingsNotifier()..restore(settings.toStored());
+      expect(restored.dailyExtraFor('es', day), 10);
+      expect(
+        restored.dailyExtraFor('es', day.add(const Duration(hours: 3))),
+        10,
+      );
+      expect(restored.dailyExtraFor('es', day.add(const Duration(days: 1))), 0);
+      expect(restored.dailyExtraFor('hi', day), 0);
+    });
+
+    test('with 14 minutes 47 seconds spent, the ring reads 14 of 15, the '
+        'button stays on Continue, and Keep going is not yet needed', () async {
+      final base = spanishLearner();
+      await base.load();
+      final card = base.decks
+          .firstWhere((d) => d.language.code == 'es')
+          .cards
+          .first;
+      final progress = MemoryProgress();
+      for (var i = 0; i < 50; i++) {
+        progress.record(
+          deckId: card.deckId,
+          cardId: card.id,
+          mode: DrillMode.recognition,
+          grade: 4,
+          now: base.now(),
+          elapsed: Duration(seconds: i < 49 ? 18 : 5),
+        );
+      }
+      final state = AppState.test(
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: const <String>['es'],
+        ),
+        progress: progress,
+      );
+      await state.load();
+      final plan = state.dailyPlanFor(
+        state.languages.firstWhere((l) => l.code == 'es'),
+      );
+      expect(plan.spent, const Duration(seconds: 49 * 18 + 5));
+      expect(plan.budgetDone, isFalse);
+      expect(plan.minutesDone, 14);
+      expect(plan.inProgress, isTrue);
+      // Under one card of time is left, and there are new words to teach:
+      // the day is not done and the split still has a card to ask.
+      expect(plan.split.cards, greaterThan(0));
+      expect(plan.done, isFalse);
+    });
+
+    test('the time spent is counted again when the log grows', () async {
+      final state = spanishLearner();
+      await state.load();
+      final spanish = state.languages.firstWhere((l) => l.code == 'es');
+      expect(state.dailyPlanFor(spanish).spent, Duration.zero);
+      final card = state.decks
+          .firstWhere((d) => d.language.code == 'es')
+          .cards
+          .first;
+      state.progress.record(
+        deckId: card.deckId,
+        cardId: card.id,
+        mode: DrillMode.recognition,
+        grade: 4,
+        now: state.now(),
+        elapsed: const Duration(seconds: 30),
+      );
+      expect(state.dailyPlanFor(spanish).spent, const Duration(seconds: 30));
+    });
+
+    testWidgets('Quick revision\'s minus and plus change the minutes and the '
+        'number of cards it asks for', (tester) async {
+      usePhone(tester);
+      final state = await hindiReviewed(<DrillMode, Duration>{
+        DrillMode.production: const Duration(days: 3),
+      });
+      await pumpToday(tester, state: state);
+      final l10n = l10nOf(tester);
+      IconButton minus() => tester.widget<IconButton>(
+        find.widgetWithIcon(IconButton, Icons.remove),
+      );
+      expect(find.text(l10n.todayRevisionStart(5)), findsOneWidget);
+      expect(minus().onPressed, isNull);
+
+      await tapVisible(tester, find.byTooltip(l10n.todayRevisionMore(5)));
+      await tapVisible(tester, find.byTooltip(l10n.todayRevisionMore(5)));
+      expect(find.text(l10n.todayRevisionStart(15)), findsOneWidget);
+      await tapVisible(tester, find.byTooltip(l10n.todayRevisionLess(5)));
+      expect(find.text(l10n.todayRevisionStart(10)), findsOneWidget);
+      expect(minus().onPressed, isNotNull);
+
+      await tapVisible(tester, find.text(l10n.todayRevisionStart(10)));
+      final drill = tester.widget<DrillPage>(find.byType(DrillPage));
+      expect(drill.request.revise, isTrue);
+      expect(
+        drill.request.limit,
+        DailyBudget.cardsFor(10, secondsPerCard: state.secondsPerCardIn(null)),
+      );
+      expect(drill.request.limit, 34);
     });
 
     testWidgets('with the minutes spent the button reads Done for today, and '
@@ -4604,7 +4799,19 @@ cards:
       await pumpToday(tester, state: state);
       final l10n = l10nOf(tester);
 
-      expect(TodayNumbers.of(state).allDone, isTrue);
+      final numbers = TodayNumbers.of(state);
+      expect(numbers.allDone, isTrue);
+      // Nothing is left to review in any language: each day's card says so,
+      // with no reviews badge unless new words are still to come.
+      final plans = numbers.daily;
+      expect(plans, isNotEmpty);
+      expect(plans.every((p) => p.due == 0 && p.split.reviews == 0), isTrue);
+      final splitting = plans.where((p) => p.showsSplit).length;
+      expect(find.text(l10n.todayDailyReviews(0)), findsNWidgets(splitting));
+      expect(
+        find.text(l10n.todayDailyDone),
+        findsNWidgets(plans.length - splitting),
+      );
       // Today now counts towards the streak.
       expect(find.text(l10n.todayStreak(13)), findsOneWidget);
     });

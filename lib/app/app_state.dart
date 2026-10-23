@@ -2177,14 +2177,43 @@ class AppState extends ChangeNotifier {
   /// (ADR-0024).
   static const int dailyNewCap = 9;
 
+  /// What the log says of the time answers took, for [language] (every
+  /// language when null), worked out again only when the log has grown or
+  /// the day has changed: Today asks for it on every build.
+  final Map<String?, _AnswerTimes> _answerTimes = <String?, _AnswerTimes>{};
+
+  _AnswerTimes _timesIn(String? language, DateTime at) {
+    final log = progress.log;
+    final cached = _answerTimes[language];
+    if (cached != null &&
+        cached.logLength == log.length &&
+        identical(cached.lastEvent, log.lastOrNull) &&
+        isSameDay(cached.day, at)) {
+      return cached;
+    }
+    final seconds = <double>[];
+    var spent = Duration.zero;
+    for (final e in log) {
+      if (language != null && Abilities.languageOf(e.cardId) != language) {
+        continue;
+      }
+      final time = StudyHours.capped(e.elapsed);
+      seconds.add(time.inMilliseconds / 1000);
+      if (isSameDay(e.at, at)) spent += time;
+    }
+    return _answerTimes[language] = _AnswerTimes(
+      logLength: log.length,
+      lastEvent: log.lastOrNull,
+      day: at,
+      seconds: seconds,
+      spent: spent,
+    );
+  }
+
   /// Seconds a card takes this learner in [language] (every language when
   /// null): their own median once they have answered 20 cards, else 17.5.
   double secondsPerCardIn(String? language) =>
-      DailyBudget.secondsPerCard(<double>[
-        for (final e in progress.log)
-          if (language == null || Abilities.languageOf(e.cardId) == language)
-            StudyHours.capped(e.elapsed).inMilliseconds / 1000,
-      ]);
+      DailyBudget.secondsPerCard(_timesIn(language, now()).seconds);
 
   /// [language]'s day: its minutes, what is spent, what waits, and what
   /// the rest of the budget buys.
@@ -2194,21 +2223,17 @@ class AppState extends ChangeNotifier {
     final goal = settings.dailyMinutesFor(code);
     final extra = settings.dailyExtraFor(code, at);
     final minutes = max(DailyBudget.minMinutes, goal + extra);
-    final seconds = <double>[];
-    var spent = Duration.zero;
-    for (final e in progress.log) {
-      if (Abilities.languageOf(e.cardId) != code) continue;
-      final time = StudyHours.capped(e.elapsed);
-      seconds.add(time.inMilliseconds / 1000);
-      if (isSameDay(e.at, at)) spent += time;
-    }
-    final perCard = DailyBudget.secondsPerCard(seconds);
+    final times = _timesIn(code, at);
+    final spent = times.spent;
+    final perCard = DailyBudget.secondsPerCard(times.seconds);
     final due = buildSession(DrillRequest.today(language: code)).length;
     final newAvailable = min(dailyNewCap, untaughtCards(code).length);
     final left = minutes * 60 - spent.inSeconds;
     // With the budget spent, the split is what "Keep going" would buy.
+    // Time left, however little, still buys a card, so the last seconds of a
+    // day's budget are not a dead end with "Keep going" hidden.
     final budget = left > 0
-        ? (left / perCard).floor()
+        ? max(1, (left / perCard).floor())
         : DailyBudget.cardsFor(
             DailyBudget.stepMinutes,
             secondsPerCard: perCard,
@@ -2780,3 +2805,26 @@ typedef TodayFact = ({
   Fact fact,
   List<({String code, String text})> texts,
 });
+
+/// The time answers took in one language, as [AppState] caches it.
+class _AnswerTimes {
+  const _AnswerTimes({
+    required this.logLength,
+    required this.lastEvent,
+    required this.day,
+    required this.seconds,
+    required this.spent,
+  });
+
+  /// The log's length and last event when this was worked out (a replayed
+  /// log makes new events), and the day it counts.
+  final int logLength;
+  final Object? lastEvent;
+  final DateTime day;
+
+  /// What each answer took, in seconds, each capped as hours spent caps it.
+  final List<double> seconds;
+
+  /// The time answers took on [day].
+  final Duration spent;
+}
