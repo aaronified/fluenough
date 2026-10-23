@@ -216,6 +216,11 @@ class NewLanguageReadings(unittest.TestCase):
         self.assertEqual(iw.reading("你好", "zh", "han_simplified", "nǐ hǎo"),
                          "nǐ hǎo")
 
+    def test_romaji_macrons_are_written_as_the_decks_write_them(self) -> None:
+        self.assertEqual(iw._romaji("onēsan"), "oneesan")
+        self.assertEqual(iw._romaji("ōkii"), "oukii")
+        self.assertEqual(iw._romaji("yūmei"), "yuumei")
+
     def test_a_word_with_nothing_to_read_it_by_is_left_out(self) -> None:
         for word, code, script, hint in (
             ("你好", "zh", "han_simplified", None),

@@ -22,6 +22,7 @@ Standard library only, like the other deck tools.
 
 from __future__ import annotations
 
+import re
 import sys
 import unicodedata
 from dataclasses import dataclass, field
@@ -1289,9 +1290,7 @@ def toki_pona(text: str) -> Transcription:
     IPA puts stress on the first syllable of a word of two or more. The
     letters are the IPA's, except that a capital marks a name."""
     out = []
-    for w in text.lower().replace(".", " ").replace(",", " ").split():
-        if not w.isalpha():
-            continue
+    for w in re.findall(r"[^\W\d_]+", text.lower()):
         vowels = sum(c in "aeiou" for c in w)
         out.append(("ˈ" if vowels > 1 else "") + w)
     return Transcription(text, " ".join(out), True)
