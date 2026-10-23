@@ -1,0 +1,53 @@
+schema: 1
+id: "hi-en-pronouns-sentences"
+kind: "layer"
+core: "hi-pronouns-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with pronouns"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the pronouns and people words of this unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-0767":
+    native: "You and I are friends."
+    confusables:
+      "w1": { why: "They, not you and me: वे (vē) means they." }
+      "f1": { why: "Singular: है (hai) is for one person; two friends take हैं (haim̐)." }
+  "hi-0768":
+    native: "They are our neighbours."
+    bases:
+      "हमारे": "our"
+    confusables:
+      "w1": { why: "This, not they: यह (yah) means this." }
+      "f1": { why: "Singular: है (hai) is for one neighbour; the plural subject वे (vē) takes हैं (haim̐)." }
+      "w2": { why: "Your, not our: आपके (āpkē) means your." }
+  "hi-0769":
+    native: "Nobody knows."
+    bases:
+      "जानता": "to know"
+    confusables:
+      "w1": { why: "Some or something, not nobody: कुछ (kuch) means some, or something." }
+      "f1": { why: "Feminine: जानती (jāntī) agrees with a feminine subject; here the verb is masculine, so जानता (jāntā)." }
+  "hi-0770":
+    native: "Do your own work."
+    bases:
+      "करो": "to do"
+    confusables:
+      "w1": { why: "Say, not do: कहो (kahō) means say." }
+      "f1": { why: "Feminine: अपनी (apnī) agrees with a feminine noun; काम (kām) is masculine, so अपना (apnā)." }
+  "hi-0771":
+    native: "Where have you come from?"
+    bases:
+      "आए": "to come"
+    confusables:
+      "w1": { why: "Went, not came: गए (gaē) means went." }
+      "w2": { why: "When, not where: कब (kab) means when." }
+      "f1": { why: "Feminine plural: आईं (āīm̐) is for women; the masculine plural आए (āē) is used here." }
+  "hi-0772":
+    native: "Our family is big."
+    bases:
+      "बड़ा": "big"
+    confusables:
+      "w1": { why: "Small, not big: छोटा (chōṭā) means small." }
+      "f1": { why: "Feminine: बड़ी (baṛī) would agree with a feminine noun; परिवार (parivār) is masculine, so बड़ा (baṛā)." }
+      "f2": { why: "Feminine: हमारी (hamārī) agrees with a feminine noun; परिवार (parivār) is masculine, so हमारा (hamārā)." }
