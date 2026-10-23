@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-food-sentences"
+kind: "layer"
+core: "es-food-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: food and drink"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about meals and ordering food, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-0662":
+    native: "I want a salad and a bowl of soup."
+    bases: {"una": "a", "un": "a", "de": "of"}
+    confusables: {"pedir": { why: "Pedir is to order, the action in a restaurant." }, "postre": { why: "Postre is dessert, not the main dish." }}
+  "es-0663":
+    native: "The waiter has the bill."
+    bases: {"El": "the", "la": "the"}
+    confusables: {"propina": { why: "Propina is a tip, the money left extra." }, "menu": { why: "Menú is the menu, not the bill." }}
+  "es-0664":
+    native: "The omelette is tasty, but the chicken is not spicy."
+    bases: {"La": "the", "el": "the"}
+    confusables: {"dulce": { why: "Dulce is sweet, the opposite of spicy." }, "salado": { why: "Salado is salty, another taste." }}
+  "es-0665":
+    native: "We have lunch at one and have chicken for dinner."
+    bases: {"a": "to", "la": "the", "una": "a"}
+    confusables: {"desayuno": { why: "Desayuno is breakfast, the first meal." }, "postre": { why: "Postre is dessert, the last part of a meal." }}
+  "es-0666":
+    native: "I have an ice cream after dinner."
+    bases: {"un": "a", "de": "of", "la": "the"}
+    confusables: {"tarta": { why: "Tarta is a cake, not an ice cream." }, "bebida": { why: "Bebida is a drink, not food." }}
+  "es-0667":
+    native: "The waitress is friendly."
+    bases: {"La": "the"}
+    confusables: {"camarero": { why: "Camarero is a waiter, the masculine form." }, "cliente": { why: "Cliente is a customer, not the server." }}

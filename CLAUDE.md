@@ -137,6 +137,11 @@ contributor.
 The 2026-10-18 hold on 0.6.0 is lifted (owner, 2026-10-23: "We are working on
 0.6.0 anyway"). Deck work and 0.6.0 work go on side by side.
 
+Milestones by week (owner, 2026-10-23: "This week is 0.6.x, next week is
+0.7.x"). This week's work, and deck content for existing courses, goes in
+0.6.0; next week's (focus tracks #723, cheatsheets #724, the reviewer-mode
+overhaul with its onboarding) goes in 0.7.0.
+
 ## Repositories off limits (owner, 2026-10-12)
 
 `homelab-stacks` is not part of this work. Never clone or download it, never

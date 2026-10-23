@@ -26,7 +26,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "¿Quieres algo de beber?", ipa: "ˈkjeɾes ˈalɡo de beˈbeɾ", bases: [{ word: "Quieres", base: "querer" }, { word: "algo", base: "algo" }, { word: "de", base: "de" }, { word: "beber", ref: "es-0029" }] }
+      - { target: "¿Quieres algo de beber?", ipa: "ˈkjeɾes ˈalɡo de beˈbeɾ", bases: [{ word: "Quieres", ref: "es-0661" }, { word: "algo", base: "algo" }, { word: "de", base: "de" }, { word: "beber", ref: "es-0029" }] }
       - { target: "Tengo algo para ti.", ipa: "ˈtenɡo ˈalɡo ˈpaɾa ti", bases: [{ word: "Tengo", ref: "es-0024" }, { word: "algo", base: "algo" }, { word: "para", base: "para" }, { word: "ti", base: "ti" }] }
   - id: "es-0360"
     target: "nada"
@@ -66,7 +66,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Quiero más agua.", ipa: "ˈkjeɾo mas ˈaɡwa", bases: [{ word: "Quiero", base: "querer" }, { word: "más", base: "más" }, { word: "agua", ref: "es-0012" }] }
+      - { target: "Quiero más agua.", ipa: "ˈkjeɾo mas ˈaɡwa", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "más", base: "más" }, { word: "agua", ref: "es-0012" }] }
       - { target: "Ana come más que yo.", ipa: "ˈana ˈkome mas ke ʝo", bases: [{ word: "Ana", base: "Ana" }, { word: "come", ref: "es-0028" }, { word: "más", base: "más" }, { word: "que", base: "que" }, { word: "yo", ref: "es-0119" }] }
   - id: "es-0364"
     target: "menos"
@@ -77,7 +77,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Trabajo menos los sábados.", ipa: "tɾaˈbaxo ˈmenos los ˈsabados", bases: [{ word: "Trabajo", ref: "es-0259" }, { word: "menos", base: "menos" }, { word: "los", base: "los" }, { word: "sábados", base: "sábados" }] }
-      - { target: "Bebo menos café que antes.", ipa: "ˈbebo ˈmenos kaˈfe ke ˈantes", bases: [{ word: "Bebo", ref: "es-0029" }, { word: "menos", base: "menos" }, { word: "café", base: "café" }, { word: "que", base: "que" }, { word: "antes", ref: "es-0335" }] }
+      - { target: "Bebo menos café que antes.", ipa: "ˈbebo ˈmenos kaˈfe ke ˈantes", bases: [{ word: "Bebo", ref: "es-0029" }, { word: "menos", base: "menos" }, { word: "café", ref: "es-0611" }, { word: "que", base: "que" }, { word: "antes", ref: "es-0335" }] }
   - id: "es-0365"
     target: "suficiente"
     ipa: "sufiˈθjente"
@@ -116,8 +116,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Quiero medio kilo de queso.", ipa: "ˈkjeɾo ˈmedjo ˈkilo de ˈkeso", bases: [{ word: "Quiero", base: "querer" }, { word: "medio", base: "medio" }, { word: "kilo", ref: "es-0375" }, { word: "de", base: "de" }, { word: "queso", base: "queso" }] }
-      - { target: "Comí media manzana.", ipa: "koˈmi ˈmedja manˈθana", bases: [{ word: "Comí", ref: "es-0028" }, { word: "media", base: "medio" }, { word: "manzana", base: "manzana" }] }
+      - { target: "Quiero medio kilo de queso.", ipa: "ˈkjeɾo ˈmedjo ˈkilo de ˈkeso", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "medio", base: "medio" }, { word: "kilo", ref: "es-0375" }, { word: "de", base: "de" }, { word: "queso", ref: "es-0603" }] }
+      - { target: "Comí media manzana.", ipa: "koˈmi ˈmedja manˈθana", bases: [{ word: "Comí", ref: "es-0028" }, { word: "media", base: "medio" }, { word: "manzana", ref: "es-0569" }] }
   - id: "es-0369"
     target: "la mitad"
     ipa: "la miˈtad"
@@ -137,7 +137,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Un café cuesta el doble.", ipa: "un kaˈfe ˈkwesta el ˈdoble", bases: [{ word: "Un", base: "un" }, { word: "café", base: "café" }, { word: "cuesta", base: "costar" }, { word: "el", base: "el" }, { word: "doble", base: "doble" }] }
+      - { target: "Un café cuesta el doble.", ipa: "un kaˈfe ˈkwesta el ˈdoble", bases: [{ word: "Un", base: "un" }, { word: "café", ref: "es-0611" }, { word: "cuesta", ref: "es-0587" }, { word: "el", base: "el" }, { word: "doble", base: "doble" }] }
       - { target: "Ahora gano el doble que antes.", ipa: "aˈoɾa ˈɡano el ˈdoble ke ˈantes", bases: [{ word: "Ahora", ref: "es-0333" }, { word: "gano", base: "ganar" }, { word: "el", base: "el" }, { word: "doble", base: "doble" }, { word: "que", base: "que" }, { word: "antes", ref: "es-0335" }] }
   - id: "es-0371"
     target: "entero"
@@ -147,7 +147,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Comí una manzana entera.", ipa: "koˈmi ˈuna manˈθana enˈteɾa", bases: [{ word: "Comí", ref: "es-0028" }, { word: "una", base: "una" }, { word: "manzana", base: "manzana" }, { word: "entera", base: "entero" }] }
+      - { target: "Comí una manzana entera.", ipa: "koˈmi ˈuna manˈθana enˈteɾa", bases: [{ word: "Comí", ref: "es-0028" }, { word: "una", base: "una" }, { word: "manzana", ref: "es-0569" }, { word: "entera", base: "entero" }] }
       - { target: "Ana leyó el libro entero.", ipa: "ˈana leˈʝo el ˈlibɾo enˈteɾo", bases: [{ word: "Ana", base: "Ana" }, { word: "leyó", ref: "es-0296" }, { word: "el", base: "el" }, { word: "libro", ref: "es-0011" }, { word: "entero", base: "entero" }] }
   - id: "es-0372"
     target: "la cantidad"
@@ -158,8 +158,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: [{ word: "la", base: "la" }, { word: "cantidad", base: "cantidad" }]
     examples:
-      - { target: "Hay una cantidad grande de arroz.", ipa: "aj ˈuna kantiˈdad ˈɡɾande de aˈroθ", bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "cantidad", base: "cantidad" }, { word: "grande", ref: "es-0031" }, { word: "de", base: "de" }, { word: "arroz", base: "arroz" }] }
-      - { target: "La cantidad de sal es pequeña.", ipa: "la kantiˈdad de sal es peˈkeɲa", bases: [{ word: "La", base: "la" }, { word: "cantidad", base: "cantidad" }, { word: "de", base: "de" }, { word: "sal", base: "sal" }, { word: "es", ref: "es-0022" }, { word: "pequeña", ref: "es-0032" }] }
+      - { target: "Hay una cantidad grande de arroz.", ipa: "aj ˈuna kantiˈdad ˈɡɾande de aˈroθ", bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "cantidad", base: "cantidad" }, { word: "grande", ref: "es-0031" }, { word: "de", base: "de" }, { word: "arroz", ref: "es-0605" }] }
+      - { target: "La cantidad de sal es pequeña.", ipa: "la kantiˈdad de sal es peˈkeɲa", bases: [{ word: "La", base: "la" }, { word: "cantidad", base: "cantidad" }, { word: "de", base: "de" }, { word: "sal", ref: "es-0607" }, { word: "es", ref: "es-0022" }, { word: "pequeña", ref: "es-0032" }] }
   - id: "es-0373"
     target: "el par"
     ipa: "el paɾ"
@@ -191,8 +191,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: [{ word: "el", base: "el" }, { word: "kilo", base: "kilo" }]
     examples:
-      - { target: "Quiero un kilo de manzanas.", ipa: "ˈkjeɾo un ˈkilo de manˈθanas", bases: [{ word: "Quiero", base: "querer" }, { word: "un", base: "un" }, { word: "kilo", base: "kilo" }, { word: "de", base: "de" }, { word: "manzanas", base: "manzanas" }] }
-      - { target: "El kilo de pan cuesta dos euros.", ipa: "el ˈkilo de pan ˈkwesta dos ˈewɾos", bases: [{ word: "El", base: "el" }, { word: "kilo", base: "kilo" }, { word: "de", base: "de" }, { word: "pan", ref: "es-0013" }, { word: "cuesta", base: "costar" }, { word: "dos", ref: "es-0206" }, { word: "euros", base: "euros" }] }
+      - { target: "Quiero un kilo de manzanas.", ipa: "ˈkjeɾo un ˈkilo de manˈθanas", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "un", base: "un" }, { word: "kilo", base: "kilo" }, { word: "de", base: "de" }, { word: "manzanas", base: "manzanas" }] }
+      - { target: "El kilo de pan cuesta dos euros.", ipa: "el ˈkilo de pan ˈkwesta dos ˈewɾos", bases: [{ word: "El", base: "el" }, { word: "kilo", base: "kilo" }, { word: "de", base: "de" }, { word: "pan", ref: "es-0013" }, { word: "cuesta", ref: "es-0587" }, { word: "dos", ref: "es-0206" }, { word: "euros", base: "euros" }] }
   - id: "es-0376"
     target: "el gramo"
     ipa: "el ˈɡɾamo"
@@ -202,8 +202,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: [{ word: "el", base: "el" }, { word: "gramo", base: "gramo" }]
     examples:
-      - { target: "Necesito cien gramos de queso.", ipa: "neθeˈsito θjen ˈɡɾamos de ˈkeso", bases: [{ word: "Necesito", ref: "es-0288" }, { word: "cien", base: "cien" }, { word: "gramos", base: "gramo" }, { word: "de", base: "de" }, { word: "queso", base: "queso" }] }
-      - { target: "Un gramo de sal es muy poco.", ipa: "un ˈɡɾamo de sal es mwi ˈpoko", bases: [{ word: "Un", base: "un" }, { word: "gramo", base: "gramo" }, { word: "de", base: "de" }, { word: "sal", base: "sal" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "poco", ref: "es-0358" }] }
+      - { target: "Necesito cien gramos de queso.", ipa: "neθeˈsito θjen ˈɡɾamos de ˈkeso", bases: [{ word: "Necesito", ref: "es-0288" }, { word: "cien", ref: "es-0543" }, { word: "gramos", base: "gramo" }, { word: "de", base: "de" }, { word: "queso", ref: "es-0603" }] }
+      - { target: "Un gramo de sal es muy poco.", ipa: "un ˈɡɾamo de sal es mwi ˈpoko", bases: [{ word: "Un", base: "un" }, { word: "gramo", base: "gramo" }, { word: "de", base: "de" }, { word: "sal", ref: "es-0607" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "poco", ref: "es-0358" }] }
   - id: "es-0377"
     target: "el litro"
     ipa: "el ˈlitɾo"
@@ -225,7 +225,7 @@ cards:
     bases: [{ word: "el", base: "el" }, { word: "paquete", base: "paquete" }]
     examples:
       - { target: "Compré un paquete de galletas.", ipa: "komˈpɾe un paˈkete de ɡaˈʝetas", bases: [{ word: "Compré", ref: "es-0280" }, { word: "un", base: "un" }, { word: "paquete", base: "paquete" }, { word: "de", base: "de" }, { word: "galletas", base: "galletas" }] }
-      - { target: "El paquete de arroz es grande.", ipa: "el paˈkete de aˈroθ es ˈɡɾande", bases: [{ word: "El", base: "el" }, { word: "paquete", base: "paquete" }, { word: "de", base: "de" }, { word: "arroz", base: "arroz" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }] }
+      - { target: "El paquete de arroz es grande.", ipa: "el paˈkete de aˈroθ es ˈɡɾande", bases: [{ word: "El", base: "el" }, { word: "paquete", base: "paquete" }, { word: "de", base: "de" }, { word: "arroz", ref: "es-0605" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }] }
   - id: "es-0379"
     target: "la botella"
     ipa: "la boˈteʝa"
@@ -235,7 +235,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: [{ word: "la", base: "la" }, { word: "botella", base: "botella" }]
     examples:
-      - { target: "Hay una botella de vino en la mesa.", ipa: "aj ˈuna boˈteʝa de ˈbino en la ˈmesa", bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "botella", base: "botella" }, { word: "de", base: "de" }, { word: "vino", base: "vino" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }] }
+      - { target: "Hay una botella de vino en la mesa.", ipa: "aj ˈuna boˈteʝa de ˈbino en la ˈmesa", bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "botella", base: "botella" }, { word: "de", base: "de" }, { word: "vino", ref: "es-0620" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }] }
       - { target: "Ana abre la botella.", ipa: "ˈana ˈabɾe la boˈteʝa", bases: [{ word: "Ana", base: "Ana" }, { word: "abre", ref: "es-0298" }, { word: "la", base: "la" }, { word: "botella", base: "botella" }] }
   - id: "es-0380"
     target: "la bolsa"
@@ -246,8 +246,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: [{ word: "la", base: "la" }, { word: "bolsa", base: "bolsa" }]
     examples:
-      - { target: "Ana lleva una bolsa grande.", ipa: "ˈana ˈʝeba ˈuna ˈbolsa ˈɡɾande", bases: [{ word: "Ana", base: "Ana" }, { word: "lleva", base: "llevar" }, { word: "una", base: "una" }, { word: "bolsa", base: "bolsa" }, { word: "grande", ref: "es-0031" }] }
-      - { target: "Pongo la bolsa en el suelo.", ipa: "ˈponɡo la ˈbolsa en el ˈswelo", bases: [{ word: "Pongo", base: "poner" }, { word: "la", base: "la" }, { word: "bolsa", base: "bolsa" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "suelo", base: "suelo" }] }
+      - { target: "Ana lleva una bolsa grande.", ipa: "ˈana ˈʝeba ˈuna ˈbolsa ˈɡɾande", bases: [{ word: "Ana", base: "Ana" }, { word: "lleva", ref: "es-0623" }, { word: "una", base: "una" }, { word: "bolsa", base: "bolsa" }, { word: "grande", ref: "es-0031" }] }
+      - { target: "Pongo la bolsa en el suelo.", ipa: "ˈponɡo la ˈbolsa en el ˈswelo", bases: [{ word: "Pongo", base: "poner" }, { word: "la", base: "la" }, { word: "bolsa", base: "bolsa" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "suelo", ref: "es-0819" }] }
   - id: "es-0381"
     target: "la lata"
     ipa: "la ˈlata"
@@ -268,8 +268,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: [{ word: "la", base: "la" }, { word: "caja", base: "caja" }]
     examples:
-      - { target: "Hay una caja de galletas en el armario.", ipa: "aj ˈuna ˈkaxa de ɡaˈʝetas en el aɾˈmaɾjo", bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "caja", base: "caja" }, { word: "de", base: "de" }, { word: "galletas", base: "galletas" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "armario", base: "armario" }] }
-      - { target: "La caja está abierta.", ipa: "la ˈkaxa esˈta aˈbjeɾta", bases: [{ word: "La", base: "la" }, { word: "caja", base: "caja" }, { word: "está", ref: "es-0023" }, { word: "abierta", base: "abierto" }] }
+      - { target: "Hay una caja de galletas en el armario.", ipa: "aj ˈuna ˈkaxa de ɡaˈʝetas en el aɾˈmaɾjo", bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "caja", base: "caja" }, { word: "de", base: "de" }, { word: "galletas", base: "galletas" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "armario", ref: "es-0814" }] }
+      - { target: "La caja está abierta.", ipa: "la ˈkaxa esˈta aˈbjeɾta", bases: [{ word: "La", base: "la" }, { word: "caja", base: "caja" }, { word: "está", ref: "es-0023" }, { word: "abierta", ref: "es-0848" }] }
   - id: "es-0383"
     target: "la taza"
     ipa: "la ˈtaθa"
@@ -279,7 +279,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: [{ word: "la", base: "la" }, { word: "taza", base: "taza" }]
     examples:
-      - { target: "Tomo una taza de café.", ipa: "ˈtomo ˈuna ˈtaθa de kaˈfe", bases: [{ word: "Tomo", base: "tomar" }, { word: "una", base: "una" }, { word: "taza", base: "taza" }, { word: "de", base: "de" }, { word: "café", base: "café" }] }
+      - { target: "Tomo una taza de café.", ipa: "ˈtomo ˈuna ˈtaθa de kaˈfe", bases: [{ word: "Tomo", ref: "es-0624" }, { word: "una", base: "una" }, { word: "taza", base: "taza" }, { word: "de", base: "de" }, { word: "café", ref: "es-0611" }] }
       - { target: "Ana lava la taza.", ipa: "ˈana ˈlaba la ˈtaθa", bases: [{ word: "Ana", base: "Ana" }, { word: "lava", ref: "es-0286" }, { word: "la", base: "la" }, { word: "taza", base: "taza" }] }
   - id: "es-0384"
     target: "el trozo"
@@ -291,7 +291,7 @@ cards:
     bases: [{ word: "el", base: "el" }, { word: "trozo", base: "trozo" }]
     examples:
       - { target: "Como un trozo de pan.", ipa: "ˈkomo un ˈtɾoθo de pan", bases: [{ word: "Como", ref: "es-0028" }, { word: "un", base: "un" }, { word: "trozo", base: "trozo" }, { word: "de", base: "de" }, { word: "pan", ref: "es-0013" }] }
-      - { target: "Ana corta un trozo de queso.", ipa: "ˈana ˈkoɾta un ˈtɾoθo de ˈkeso", bases: [{ word: "Ana", base: "Ana" }, { word: "corta", base: "cortar" }, { word: "un", base: "un" }, { word: "trozo", base: "trozo" }, { word: "de", base: "de" }, { word: "queso", base: "queso" }] }
+      - { target: "Ana corta un trozo de queso.", ipa: "ˈana ˈkoɾta un ˈtɾoθo de ˈkeso", bases: [{ word: "Ana", base: "Ana" }, { word: "corta", base: "cortar" }, { word: "un", base: "un" }, { word: "trozo", base: "trozo" }, { word: "de", base: "de" }, { word: "queso", ref: "es-0603" }] }
   - id: "es-0385"
     target: "el montón"
     ipa: "el monˈton"

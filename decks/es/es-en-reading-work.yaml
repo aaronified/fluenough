@@ -1,0 +1,69 @@
+schema: 1
+id: "es-en-reading-work"
+name: "Reading: jobs, offices and hours"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about work: a person who says what they do and when they finish, and a business card with the job, the office and the hours. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-what-do-you-do"
+    title: "What do you do?"
+    sentences:
+      - text: "Trabajo en una oficina."
+      - text: "Soy enfermera."
+      - text: "Mi jefe es simpático."
+      - text: "Termino a las cinco."
+    questions:
+      - id: "es-0530"
+        prompt: { en: "Where does the speaker work?" }
+        options:
+          - { en: "In an office" }
+          - { en: "In a school" }
+          - { en: "At home" }
+        answer: 1
+      - id: "es-0531"
+        prompt: { en: "What is the speaker's job?" }
+        options:
+          - { en: "A nurse" }
+          - { en: "A doctor" }
+          - { en: "A teacher" }
+        answer: 1
+      - id: "es-0532"
+        prompt: { en: "When does the speaker finish?" }
+        options:
+          - { en: "At five" }
+          - { en: "At eight" }
+          - { en: "At nine" }
+        answer: 1
+  - id: "es-business-card"
+    title: "Business card"
+    sentences:
+      - text: "Pedro es ingeniero."
+      - text: "Oficina: en la calle grande."
+      - text: "Teléfono: nueve, cuatro, cero."
+      - text: "Horario: de ocho a cuatro."
+    questions:
+      - id: "es-0533"
+        prompt: { en: "What is Pedro's job?" }
+        options:
+          - { en: "An engineer" }
+          - { en: "A cook" }
+          - { en: "A driver" }
+        answer: 1
+      - id: "es-0534"
+        prompt: { en: "What are the working hours on the card?" }
+        options:
+          - { en: "From eight to four" }
+          - { en: "From nine to five" }
+          - { en: "From two to ten" }
+        answer: 1
+      - id: "es-0535"
+        prompt: { en: "Where is the office?" }
+        options:
+          - { en: "On the big street" }
+          - { en: "In the school" }
+          - { en: "At the door" }
+        answer: 1

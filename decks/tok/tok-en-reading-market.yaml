@@ -1,0 +1,74 @@
+"schema": 1
+"id": "tok-en-reading-market"
+"name": "Reading: market and money"
+"kind": "reading"
+"language":
+  "code": "tok"
+  "iso639_3": "tok"
+  "name": "Toki Pona"
+  "script": "latin"
+  "icon": "Tp"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this deck"
+"description": "Two passages on the market: a listening passage buying fruit at a stall, and a reading passage that is a stall's price list. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "reading"
+- "unreviewed"
+"passages":
+- "id": "tok-market-at-the-stall"
+  "title": "At the stall"
+  "theme": "market"
+  "sentences":
+  - "text": "mi wile e kili ni."
+  - "text": "mani ni li luka."
+  - "text": "mi jo e mani tu."
+  - "text": "o pana e mani tawa jan ni."
+  "questions":
+  - "id": "tok-0486"
+    "prompt":
+      "en": "How much is the fruit?"
+    "options":
+    - "en": "Five"
+    - "en": "Two"
+    "answer": 1
+  - "id": "tok-0487"
+    "prompt":
+      "en": "How much money does the buyer have?"
+    "options":
+    - "en": "Two"
+    - "en": "Five"
+    "answer": 1
+  - "id": "tok-0488"
+    "prompt":
+      "en": "The buyer gives money to the person. Is that true?"
+    "answer": true
+- "id": "tok-market-price-list"
+  "title": "The price list"
+  "theme": "market"
+  "sentences":
+  - "text": "kili suwi li wan."
+  - "text": "telo lete li tu."
+  - "text": "ilo lili li luka."
+  "questions":
+  - "id": "tok-0489"
+    "prompt":
+      "en": "Which item costs two?"
+    "options":
+    - "en": "Cold water"
+    - "en": "Sweet fruit"
+    "answer": 1
+  - "id": "tok-0490"
+    "prompt":
+      "en": "Which item costs one?"
+    "options":
+    - "en": "Sweet fruit"
+    - "en": "A small tool"
+    "answer": 1
+  - "id": "tok-0491"
+    "prompt":
+      "en": "The small tool costs five. Is that true?"
+    "answer": true

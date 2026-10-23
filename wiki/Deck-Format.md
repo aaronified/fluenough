@@ -38,6 +38,12 @@ python3 tools/validate_decks.py decks/
   never changes the exit code or the `N/M decks valid` line: it reports
   coverage, such as how much of a core a layer teaches. Each is printed
   under its file, `error`, `warning` or `info`, with where in the file it is.
+- **Errors again at the end.** When a run fails, it ends with an `Errors:`
+  section, after the `N/M decks valid` line, repeating every error: each
+  cross-file error as `error: {message}` and each file's errors as
+  `error: {file}: {where}: {message}`. CI's log is thousands of lines long
+  and the cross-file errors print near the top, so the end of the log is
+  where to read them. A passing run has no such section.
 - **Checks across files** (card ids, refs, the path, phrasebook sizes, rows,
   bases coverage) print an error as `error: {file}: {where}: {message}`, and
   attach a warning or an info line to the file it is about. They report only

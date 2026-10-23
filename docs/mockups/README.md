@@ -13,6 +13,14 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
   Open choices are tweak controls and are listed in `today-chain.md`, with the
   self-check.
 
+- `placement-review-choice.html`: after placement, how placed-out words are
+  reviewed (#761): the end-of-placement question (Counted as known, Sampled,
+  Normal) and the per-course Placed words setting in Languages I'm learning
+  with its change sheet (owner, 2026-10-23). Hindustani in light (placed except
+  the script decks) and Bengali in dark, 1.4x. The open choices (default,
+  script decks exempt, wording) are tweak controls and are listed in
+  `placement-review-choice.md`, with the self-check.
+
 ## Current and approved
 
 Each is the spec for its screen. Don't rewrite one without the owner's
