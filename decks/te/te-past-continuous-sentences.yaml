@@ -1,0 +1,126 @@
+schema: 1
+id: "te-past-continuous-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "grammar", "unreviewed"]
+cards:
+  - id: "te-6525"
+    target: "నేను అప్పుడు పాడుతూ ఉన్నాను."
+    reading: "nēnu appuḍu pāḍutū unnānu."
+    ipa: "neːnu appuɖu paːɖut̪uː unnaːnu"
+    pos: "phrase"
+    rules: ["te-rule-past-continuous"]
+    confusables:
+      - { id: "present", word: "పాడుతున్నాను", reading: "pāḍutunnānu", kind: "form" }
+      - { id: "past", word: "పాడాను", reading: "pāḍānu", kind: "form" }
+    bases:
+      - { word: "నేను", ref: "te-0593" }
+      - { word: "అప్పుడు", base: "అప్పుడు", reading: "appuḍu" }
+      - { word: "పాడుతూ", ref: "te-0821" }
+      - { word: "ఉన్నాను", ref: "te-0633" }
+  - id: "te-6526"
+    target: "ఆమె అప్పుడు కిటికీని కడుగుతూ ఉంది."
+    reading: "āme appuḍu kiṭikīni kaḍugutū undi."
+    ipa: "aːme appuɖu kiʈikiːni kaɖuɡut̪uː und̪i"
+    pos: "phrase"
+    rules: ["te-rule-past-continuous"]
+    confusables:
+      - { id: "present", word: "కడుగుతోంది", reading: "kaḍugutōndi", kind: "form" }
+      - { id: "past", word: "కడిగింది", reading: "kaḍigindi", kind: "form" }
+    bases:
+      - { word: "ఆమె", ref: "te-0596" }
+      - { word: "అప్పుడు", base: "అప్పుడు", reading: "appuḍu" }
+      - { word: "కిటికీని", ref: "te-0426" }
+      - { word: "కడుగుతూ", ref: "te-0824" }
+      - { word: "ఉంది", ref: "te-0633" }
+  - id: "te-6527"
+    target: "పిల్లలు అప్పుడు పాట పాడుతూ ఉన్నారు."
+    reading: "pillalu appuḍu pāṭa pāḍutū unnāru."
+    ipa: "pillalu appuɖu paːʈa paːɖut̪uː unnaːru"
+    pos: "phrase"
+    rules: ["te-rule-past-continuous"]
+    confusables:
+      - { id: "present", word: "పాడుతున్నారు", reading: "pāḍutunnāru", kind: "form" }
+      - { id: "past", word: "పాడారు", reading: "pāḍāru", kind: "form" }
+    bases:
+      - { word: "పిల్లలు", ref: "te-0387" }
+      - { word: "అప్పుడు", base: "అప్పుడు", reading: "appuḍu" }
+      - { word: "పాట", ref: "te-0113" }
+      - { word: "పాడుతూ", ref: "te-0821" }
+      - { word: "ఉన్నారు", ref: "te-0633" }
+  - id: "te-6528"
+    target: "మేము బయట తిరుగుతూ ఉన్నాము."
+    reading: "mēmu bayaṭa tirugutū unnāmu."
+    ipa: "meːmu bajaʈa t̪iruɡut̪uː unnaːmu"
+    pos: "phrase"
+    rules: ["te-rule-past-continuous"]
+    confusables:
+      - { id: "present", word: "తిరుగుతున్నాము", reading: "tirugutunnāmu", kind: "form" }
+      - { id: "past", word: "తిరిగాము", reading: "tirigāmu", kind: "form" }
+    bases:
+      - { word: "మేము", ref: "te-0128" }
+      - { word: "బయట", ref: "te-0801" }
+      - { word: "తిరుగుతూ", ref: "te-0841" }
+      - { word: "ఉన్నాము", ref: "te-0633" }
+  - id: "te-6529"
+    target: "నువ్వు అప్పుడు ఆలోచిస్తూ ఉన్నావు."
+    reading: "nuvvu appuḍu ālōcistū unnāvu."
+    ipa: "nuʋʋu appuɖu aːloːtʃist̪uː unnaːʋu"
+    pos: "phrase"
+    rules: ["te-rule-past-continuous"]
+    confusables:
+      - { id: "present", word: "ఆలోచిస్తున్నావు", reading: "ālōcistunnāvu", kind: "form" }
+      - { id: "past", word: "ఆలోచించావు", reading: "ālōciñcāvu", kind: "form" }
+    bases:
+      - { word: "నువ్వు", ref: "te-0594" }
+      - { word: "అప్పుడు", base: "అప్పుడు", reading: "appuḍu" }
+      - { word: "ఆలోచిస్తూ", ref: "te-0834" }
+      - { word: "ఉన్నావు", ref: "te-0633" }
+  - id: "te-6530"
+    target: "మీరు అప్పుడు పరిగెత్తుతూ ఉన్నారు."
+    reading: "mīru appuḍu parigettutū unnāru."
+    ipa: "miːru appuɖu pariɡet̪t̪ut̪uː unnaːru"
+    pos: "phrase"
+    rules: ["te-rule-past-continuous"]
+    confusables:
+      - { id: "present", word: "పరిగెత్తుతున్నారు", reading: "parigettutunnāru", kind: "form" }
+      - { id: "past", word: "పరిగెత్తారు", reading: "parigettāru", kind: "form" }
+    bases:
+      - { word: "మీరు", ref: "te-0136" }
+      - { word: "అప్పుడు", base: "అప్పుడు", reading: "appuḍu" }
+      - { word: "పరిగెత్తుతూ", ref: "te-0843" }
+      - { word: "ఉన్నారు", ref: "te-0633" }
+  - id: "te-6531"
+    target: "అతను అప్పుడు బస్సును పట్టుకుంటూ ఉన్నాడు."
+    reading: "atanu appuḍu bassunu paṭṭukuṇṭū unnāḍu."
+    ipa: "at̪anu appuɖu bassunu paʈʈukuɳʈuː unnaːɖu"
+    pos: "phrase"
+    rules: ["te-rule-past-continuous"]
+    confusables:
+      - { id: "present", word: "పట్టుకుంటున్నాడు", reading: "paṭṭukuṇṭunnāḍu", kind: "form" }
+      - { id: "past", word: "పట్టుకున్నాడు", reading: "paṭṭukunnāḍu", kind: "form" }
+    bases:
+      - { word: "అతను", ref: "te-0595" }
+      - { word: "అప్పుడు", base: "అప్పుడు", reading: "appuḍu" }
+      - { word: "బస్సును", ref: "te-0271" }
+      - { word: "పట్టుకుంటూ", ref: "te-0829" }
+      - { word: "ఉన్నాడు", ref: "te-0633" }
+  - id: "te-6532"
+    target: "అమ్మ అప్పుడు పాలు కలుపుతూ ఉంది."
+    reading: "amma appuḍu pālu kaluputū undi."
+    ipa: "amma appuɖu paːlu kaluput̪uː und̪i"
+    pos: "phrase"
+    rules: ["te-rule-past-continuous"]
+    confusables:
+      - { id: "present", word: "కలుపుతోంది", reading: "kaluputōndi", kind: "form" }
+      - { id: "past", word: "కలిపింది", reading: "kalipindi", kind: "form" }
+    bases:
+      - { word: "అమ్మ", ref: "te-0059" }
+      - { word: "అప్పుడు", base: "అప్పుడు", reading: "appuḍu" }
+      - { word: "పాలు", ref: "te-0265" }
+      - { word: "కలుపుతూ", ref: "te-0850" }
+      - { word: "ఉంది", ref: "te-0633" }

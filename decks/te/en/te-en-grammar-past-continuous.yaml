@@ -1,0 +1,23 @@
+schema: 1
+id: "te-en-grammar-past-continuous"
+kind: "layer"
+core: "te-grammar-past-continuous"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Was doing: the past continuous"
+description: "Something going on at a time in the past, for each person: I was doing it when the bell rang. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "person"
+  slots:
+    "nenu": "I was in the middle of it"
+    "memu": "we were in the middle of it"
+    "nuvvu": "you (a friend or child) were in the middle of it"
+    "miru": "you (respectful or plural) were in the middle of it"
+    "atanu": "he was in the middle of it"
+    "ame-adi": "she, or it, was in the middle of it"
+    "vallu": "they (people) were in the middle of it"
+rules:
+  "te-rule-past-continuous":
+    name: "-తూ ఉన్నాను (-tū unnānu): was doing"
+    explanation: "{1} follows the verb's stem, and then a form of 'to be', ఉండడం (uṇḍaḍaṁ): {2} for I, {3} for we, {4} for you, a friend or child, {5} for you, respectful or plural, and for they, {6} for he, and {7} for she or it. It tells of something going on at a time in the past, such as అప్పుడు (appuḍu), then, or గంట మోగినప్పుడు (gaṇṭa mōginappuḍu), when the bell rang. The same stem with -తున్నాను (-tunnānu) is the present: 'I am singing'."
