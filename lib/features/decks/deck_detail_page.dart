@@ -10,6 +10,7 @@ import '../../app/skill.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/bottom_actions.dart';
 import '../../ui/widgets/deck_tile.dart';
