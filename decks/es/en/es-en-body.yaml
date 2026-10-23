@@ -1,0 +1,237 @@
+schema: 1
+id: "es-en-body"
+kind: "layer"
+core: "es-body"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The body"
+license: "CC-BY-SA-4.0"
+description: "The parts of the body, what hurts and how to say it with me duele, and the verbs to breathe and to stretch. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-0736":
+    native: "head"
+    notes: { n1: "Cabeza is the head. Me duele la cabeza: my head hurts." }
+    bases: {"la": "the", "cabeza": "head"}
+    examples:
+      "Me duele la cabeza.":
+        native: "My head hurts."
+        bases: {"Me": "(to) me", "la": "the", "cabeza": "head"}
+      "La cabeza es grande.":
+        native: "The head is big."
+        bases: {"La": "the", "cabeza": "head"}
+  "es-0737":
+    native: "arm"
+    notes: { n1: "Brazo is an arm, from the shoulder to the hand." }
+    bases: {"el": "the", "brazo": "arm"}
+    examples:
+      "El brazo es fuerte.":
+        native: "The arm is strong."
+        bases: {"El": "the", "brazo": "arm"}
+      "Tengo el brazo cansado.":
+        native: "My arm is tired."
+        bases: {"el": "the", "brazo": "arm"}
+  "es-0738":
+    native: "hand"
+    notes: { n1: "Mano is a hand. Its plural is manos." }
+    bases: {"la": "the", "mano": "hand"}
+    examples:
+      "Tengo las manos sucias.":
+        native: "My hands are dirty."
+        bases: {"las": "the", "manos": "hand"}
+      "La mano es pequeña.":
+        native: "The hand is small."
+        bases: {"La": "the", "mano": "hand"}
+  "es-0739":
+    native: "foot"
+    notes: { n1: "Pie is a foot. Its plural is pies." }
+    bases: {"el": "the", "pie": "foot"}
+    examples:
+      "El pie está cansado.":
+        native: "The foot is tired."
+        bases: {"El": "the", "pie": "foot"}
+      "Tengo un pie grande.":
+        native: "I have a big foot."
+        bases: {"un": "a", "pie": "foot"}
+  "es-0740":
+    native: "leg"
+    notes: { n1: "Pierna is a leg." }
+    bases: {"la": "the", "pierna": "leg"}
+    examples:
+      "La pierna es larga.":
+        native: "The leg is long."
+        bases: {"La": "the", "pierna": "leg"}
+      "Mi pierna está cansada.":
+        native: "My leg is tired."
+        bases: {"pierna": "leg"}
+  "es-0741":
+    native: "eye"
+    notes: { n1: "Ojo is an eye. Its plural is ojos." }
+    bases: {"el": "the", "ojo": "eye"}
+    examples:
+      "Tengo los ojos cansados.":
+        native: "My eyes are tired."
+        bases: {"los": "the", "ojos": "eye"}
+      "El ojo es pequeño.":
+        native: "The eye is small."
+        bases: {"El": "the", "ojo": "eye"}
+  "es-0742":
+    native: "ear"
+    notes: { n1: "Oreja is an ear, the outside part." }
+    bases: {"la": "the", "oreja": "ear"}
+    examples:
+      "La oreja es pequeña.":
+        native: "The ear is small."
+        bases: {"La": "the", "oreja": "ear"}
+      "Tengo una oreja fría.":
+        native: "I have one cold ear."
+        bases: {"una": "a", "oreja": "ear"}
+  "es-0743":
+    native: "nose"
+    notes: { n1: "Nariz is a nose. Its plural is narices." }
+    bases: {"la": "the", "nariz": "nose"}
+    examples:
+      "La nariz es grande.":
+        native: "The nose is big."
+        bases: {"La": "the", "nariz": "nose"}
+      "Mi nariz está fría.":
+        native: "My nose is cold."
+        bases: {"nariz": "nose"}
+  "es-0744":
+    native: "mouth"
+    notes: { n1: "Boca is a mouth." }
+    bases: {"la": "the", "boca": "mouth"}
+    examples:
+      "La boca es grande.":
+        native: "The mouth is big."
+        bases: {"La": "the", "boca": "mouth"}
+      "Hablo con la boca llena.":
+        native: "I speak with my mouth full."
+        bases: {"con": "with", "la": "the", "boca": "mouth"}
+  "es-0745":
+    native: "stomach"
+    notes: { n1: "Estómago is a stomach." }
+    bases: {"el": "the", "estómago": "stomach"}
+    examples:
+      "Me duele el estómago.":
+        native: "My stomach hurts."
+        bases: {"Me": "(to) me", "el": "the", "estómago": "stomach"}
+      "El estómago está vacío.":
+        native: "The stomach is empty."
+        bases: {"El": "the", "estómago": "stomach"}
+  "es-0746":
+    native: "back"
+    notes: { n1: "Espalda is the back of the body." }
+    bases: {"la": "the", "espalda": "back"}
+    examples:
+      "Me duele la espalda.":
+        native: "My back hurts."
+        bases: {"Me": "(to) me", "la": "the", "espalda": "back"}
+      "La espalda es fuerte.":
+        native: "The back is strong."
+        bases: {"La": "the", "espalda": "back"}
+  "es-0747":
+    native: "finger; toe"
+    notes: { n1: "Dedo is a finger, or a toe on the foot." }
+    bases: {"el": "the", "dedo": "finger"}
+    examples:
+      "Tengo un dedo sucio.":
+        native: "I have a dirty finger."
+        bases: {"un": "a", "dedo": "finger"}
+      "El dedo es pequeño.":
+        native: "The finger is small."
+        bases: {"El": "the", "dedo": "finger"}
+  "es-0748":
+    native: "hair"
+    notes: { n1: "Pelo is hair, on the head or on the body." }
+    bases: {"el": "the", "pelo": "hair"}
+    examples:
+      "Tengo el pelo largo.":
+        native: "My hair is long."
+        bases: {"el": "the", "pelo": "hair"}
+      "El pelo es corto.":
+        native: "The hair is short."
+        bases: {"El": "the", "pelo": "hair"}
+  "es-0749":
+    native: "neck"
+    notes: { n1: "Cuello is a neck." }
+    bases: {"el": "the", "cuello": "neck"}
+    examples:
+      "Me duele el cuello.":
+        native: "My neck hurts."
+        bases: {"Me": "(to) me", "el": "the", "cuello": "neck"}
+      "El cuello es largo.":
+        native: "The neck is long."
+        bases: {"El": "the", "cuello": "neck"}
+  "es-0750":
+    native: "heart"
+    notes: { n1: "Corazón is a heart, the organ and the feeling." }
+    bases: {"el": "the", "corazón": "heart"}
+    examples:
+      "El corazón es fuerte.":
+        native: "The heart is strong."
+        bases: {"El": "the", "corazón": "heart"}
+      "Mi corazón está contento.":
+        native: "My heart is happy."
+        bases: {"corazón": "heart"}
+  "es-0751":
+    native: "throat"
+    notes: { n1: "Garganta is a throat." }
+    bases: {"la": "the", "garganta": "throat"}
+    examples:
+      "Me duele la garganta.":
+        native: "My throat hurts."
+        bases: {"Me": "(to) me", "la": "the", "garganta": "throat"}
+      "Tengo la garganta seca.":
+        native: "My throat is dry."
+        bases: {"la": "the", "garganta": "throat"}
+  "es-0752":
+    native: "tooth"
+    notes: { n1: "Diente is a tooth. Its plural is dientes." }
+    bases: {"el": "the", "diente": "tooth"}
+    examples:
+      "Tengo un diente malo.":
+        native: "I have a bad tooth."
+        bases: {"un": "a", "diente": "tooth"}
+      "El diente está sucio.":
+        native: "The tooth is dirty."
+        bases: {"El": "the", "diente": "tooth"}
+  "es-0753":
+    native: "knee"
+    notes: { n1: "Rodilla is a knee." }
+    bases: {"la": "the", "rodilla": "knee"}
+    examples:
+      "Me duele la rodilla.":
+        native: "My knee hurts."
+        bases: {"Me": "(to) me", "la": "the", "rodilla": "knee"}
+      "La rodilla está fría.":
+        native: "The knee is cold."
+        bases: {"La": "the", "rodilla": "knee"}
+  "es-0754":
+    native: "to hurt; to ache"
+    notes: { n1: "Doler is to hurt. It is used with me, te, le: me duele. Its stem changes: duele, duelen." }
+    examples:
+      "Me duele la cabeza.":
+        native: "My head hurts."
+        bases: {"Me": "(to) me", "duele": "hurt", "la": "the"}
+      "Me duelen los ojos.":
+        native: "My eyes hurt."
+        bases: {"Me": "(to) me", "duelen": "hurt", "los": "the"}
+  "es-0755":
+    native: "to breathe"
+    notes: { n1: "Respirar is to breathe. It is a regular -ar verb." }
+    examples:
+      "Respiro con la nariz.":
+        native: "I breathe through my nose."
+        bases: {"Respiro": "breathe", "con": "with", "la": "the"}
+      "Respiro bien.":
+        native: "I breathe well."
+        bases: {"Respiro": "breathe"}
+  "es-0756":
+    native: "to stretch"
+    notes: { n1: "Estirar is to stretch a part of the body. It is a regular -ar verb." }
+    examples:
+      "Estiro el brazo.":
+        native: "I stretch my arm."
+        bases: {"Estiro": "stretch", "el": "the"}
+      "Estiro las piernas.":
+        native: "I stretch my legs."
+        bases: {"Estiro": "stretch", "las": "the"}
