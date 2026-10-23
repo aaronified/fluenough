@@ -112,6 +112,15 @@ every card in the shipped decks, then deletes the old.
    with sources named by data: same `pos`, same theme or tags, `pair`,
    `bases`. Where a pool is too small, fall back as today. The test checks
    no pool gets smaller for a shipped card.
+   **Built (#522):** `lib/core/scheduling/distractors.dart` ranks a pool by
+   what its cards share with the answer, read from data: its word family
+   (`bases`), `pos`, then tags. A choice question takes its wrong options
+   from the best rank first, at random within a rank (`DrillSession`). The
+   pool's membership is unchanged (it is still the deck's cards, then the
+   course's, as `choicePool` builds it), so no pool gets smaller and every
+   ask stays as pinned; the ranking only changes which of the pool is shown.
+   `pair` still leads in Hear, and the card's own `confusables` still come
+   before the pool.
 4. **Grammar by data (#1, #2).** `chooseForm` and `chooseFormMeaning` become
    types whose `eligible` is "the card has other forms of its word"
    (`bases` or the rule row), not `rule != null`. `lessonQuestions` for a
