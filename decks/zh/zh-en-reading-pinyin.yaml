@@ -1,0 +1,45 @@
+schema: 1
+id: "zh-en-reading-pinyin"
+name: "Chinese reading: pinyin spelling"
+kind: reading
+language: { code: zh, iso639_3: cmn, name: "Mandarin Chinese", script: han_simplified, scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "zh-spelling-chart"
+    title: "A spelling chart"
+    sentences:
+      - text: "去，女，绿。"
+        reading: "qù, nǚ, lǜ."
+      - text: "鱼，西，九。"
+        reading: "yú, xī, jiǔ."
+      - text: "写，老。"
+        reading: "xiě, lǎo."
+    questions:
+      - id: "zh-0070"
+        prompt: { en: "Which is the correct pinyin spelling of 去 (qù)?" }
+        options:
+          - { en: "qu" }
+          - { en: "qü" }
+        answer: 1
+      - id: "zh-0071"
+        prompt: { en: "Which word means 'fish'?" }
+        options:
+          - { en: "nine" }
+          - { en: "fish" }
+          - { en: "west" }
+        answer: 2
+  - id: "zh-ni-hao-tones"
+    title: "Two third tones"
+    sentences:
+      - text: "你好，我很好。"
+        reading: "ní hǎo, wǒ hěn hǎo."
+    questions:
+      - id: "zh-0072"
+        prompt: { en: "In 你好 (ní hǎo), the first word is said with a second tone, because it comes before another third tone." }
+        answer: true
+      - id: "zh-0073"
+        prompt: { en: "The first word of 你好 is written nǐ in pinyin, even though it is said ní." }
+        answer: true
