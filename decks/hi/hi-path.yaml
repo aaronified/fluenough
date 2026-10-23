@@ -201,11 +201,8 @@ units:
     words: 8
   - decks: ["hi-body", "hi-body-sentences", "hi-reading-at-the-doctors", "hi-reading-stretching-chart", "*"]
     words: 35
-  - planned: { id: "hi-places", theme: "places", words: 56 }
-    listening_passages:
-      - { id: "walk-to-the-market", text: { "en": "A neighbour names the places you pass on the way to the market" } }
-    reading_passages:
-      - { id: "street-signs", text: { "en": "Signs along a street: pharmacy, school, bank, temple" } }
+  - decks: ["hi-places", "hi-places-sentences", "hi-reading-walk-to-the-market", "hi-reading-street-signs", "*"]
+    words: 56
   - planned: { id: "hi-things", theme: "things", words: 32 }
     listening_passages:
       - { id: "packing-for-a-trip", text: { "en": "Two people pack a bag for a trip to the hills" } }

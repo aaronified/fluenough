@@ -1,0 +1,201 @@
+schema: 1
+id: "hi-places-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-1147"
+    target: "मेरा घर बाज़ार के पास है।"
+    target_scripts: { perso_arabic: "میرا گھر بازار کے پاس ہے۔" }
+    reading: "merā ghar bāzār kē pās hai."
+    ipa: "meːraː ɡʱər baːzaːr keː paːs ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "घर", ref: "hi-0192" }
+      - { word: "बाज़ार", ref: "hi-1091" }
+      - { word: "के", ref: "hi-0279" }
+      - { word: "पास", ref: "hi-0293" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", word: "मेरे", reading: "mērē", kind: "form" }
+      - { id: "w1", ref: "hi-0294", kind: "word" }
+
+  - id: "hi-1148"
+    target: "स्कूल के सामने एक पार्क है।"
+    target_scripts: { perso_arabic: "اسکول کے سامنے ایک پارک ہے۔" }
+    reading: "skūl kē sāmnē ēk pārk hai."
+    ipa: "skuːl keː saːmneː eːk paːrk ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "स्कूल", ref: "hi-1092" }
+      - { word: "के", ref: "hi-0279" }
+      - { word: "सामने", base: "सामने", reading: "sāmnē" }
+      - { word: "एक", ref: "hi-0198" }
+      - { word: "पार्क", ref: "hi-1100" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", ref: "hi-0292", kind: "word" }
+      - { id: "w1", ref: "hi-0294", kind: "word" }
+
+  - id: "hi-1149"
+    target: "बैंक चौक के पास है।"
+    target_scripts: { perso_arabic: "بینک چوک کے پاس ہے۔" }
+    reading: "baiṅk cauk kē pās hai."
+    ipa: "bɛːŋk tʃɔːk keː paːs ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "बैंक", ref: "hi-1093" }
+      - { word: "चौक", ref: "hi-1102" }
+      - { word: "के", ref: "hi-0279" }
+      - { word: "पास", ref: "hi-0293" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", ref: "hi-0294", kind: "word" }
+      - { id: "w1", ref: "hi-1105", kind: "word" }
+
+  - id: "hi-1150"
+    target: "बाएँ मुड़िए, फिर सीधे जाइए।"
+    target_scripts: { perso_arabic: "بائیں مڑیے، پھر سیدھے جائیے۔" }
+    reading: "bāēm̐ muṛiē, phir sīdhē jāiē."
+    ipa: "baːẽː mʊɽɪeː pʰɪr siːd̪ʱeː dʒaːɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "बाएँ", ref: "hi-0288" }
+      - { word: "मुड़िए", ref: "hi-0290" }
+      - { word: "फिर", base: "फिर", reading: "phir" }
+      - { word: "सीधे", ref: "hi-0289" }
+      - { word: "जाइए", base: "जाना", reading: "jāiē" }
+    confusables:
+      - { id: "f1", ref: "hi-0287", kind: "word" }
+      - { id: "w1", ref: "hi-0291", kind: "word" }
+
+  - id: "hi-1151"
+    target: "सड़क के किनारे पेड़ हैं।"
+    target_scripts: { perso_arabic: "سڑک کے کنارے پیڑ ہیں۔" }
+    reading: "saṛak kē kinārē pēṛ haim̐."
+    ipa: "səɽək keː kɪnaːreː peːɽ ɦɛːm"
+    pos: "phrase"
+    bases:
+      - { word: "सड़क", ref: "hi-0298" }
+      - { word: "के", ref: "hi-0279" }
+      - { word: "किनारे", base: "किनारा", reading: "kinārā" }
+      - { word: "पेड़", ref: "hi-1116" }
+      - { word: "हैं", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", word: "पेड़ों", reading: "pēṛōm̐", kind: "form" }
+      - { id: "w1", ref: "hi-1118", kind: "word" }
+
+  - id: "hi-1152"
+    target: "नदी पर पुल लंबा है।"
+    target_scripts: { perso_arabic: "ندی پر پل لمبا ہے۔" }
+    reading: "nadī par pul lambā hai."
+    ipa: "nəd̪iː pər pʊl ləmbaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "नदी", ref: "hi-1118" }
+      - { word: "पर", ref: "hi-0275" }
+      - { word: "पुल", ref: "hi-1132" }
+      - { word: "लंबा", ref: "hi-0906" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", word: "लंबी", reading: "lambī", kind: "form" }
+      - { id: "w1", ref: "hi-1119", kind: "word" }
+
+  - id: "hi-1153"
+    target: "गाँव में खेत बड़े हैं।"
+    target_scripts: { perso_arabic: "گاؤں میں کھیت بڑے ہیں۔" }
+    reading: "gām̐v mēm̐ khēt baṛē haim̐."
+    ipa: "ɡãːʋ mẽː kʰeːt̪ bəɽeː ɦɛːm"
+    pos: "phrase"
+    bases:
+      - { word: "गाँव", ref: "hi-1122" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "खेत", ref: "hi-1114" }
+      - { word: "बड़े", ref: "hi-0894" }
+      - { word: "हैं", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", word: "बड़ा", reading: "baṛā", kind: "form" }
+      - { id: "w1", ref: "hi-0195", kind: "word" }
+
+  - id: "hi-1154"
+    target: "मस्जिद के पास कौन है?"
+    target_scripts: { perso_arabic: "مسجد کے پاس کون ہے؟" }
+    reading: "masjid kē pās kaun hai?"
+    ipa: "məsdʒɪd̪ keː paːs kɔːn ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मस्जिद", ref: "hi-1095" }
+      - { word: "के", ref: "hi-0279" }
+      - { word: "पास", ref: "hi-0293" }
+      - { word: "कौन", ref: "hi-0158" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", ref: "hi-0159", kind: "word" }
+      - { id: "w2", ref: "hi-0157", kind: "word" }
+
+  - id: "hi-1155"
+    target: "पार्क में बच्चे खेल रहे हैं।"
+    target_scripts: { perso_arabic: "پارک میں بچے کھیل رہے ہیں۔" }
+    reading: "pārk mēm̐ baccē khēl rahē haim̐."
+    ipa: "paːrk mẽː bətʃtʃeː kʰeːl rəɦeː ɦɛːm"
+    pos: "phrase"
+    bases:
+      - { word: "पार्क", ref: "hi-1100" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "बच्चे", ref: "hi-0383" }
+      - { word: "खेल", base: "खेलना", reading: "khēlnā" }
+      - { word: "रहे", ref: "hi-0791" }
+      - { word: "हैं", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", word: "खेलते", reading: "khēltē", kind: "form" }
+      - { id: "w1", word: "सोते", reading: "sōtē", kind: "word" }
+
+  - id: "hi-1156"
+    target: "स्टेडियम कहाँ है?"
+    target_scripts: { perso_arabic: "اسٹیڈیم کہاں ہے؟" }
+    reading: "sṭēḍiyam kahām̐ hai?"
+    ipa: "sʈeːɖɪjəm kəɦãː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "स्टेडियम", ref: "hi-1138" }
+      - { word: "कहाँ", ref: "hi-0159" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", ref: "hi-0158", kind: "word" }
+      - { id: "w2", ref: "hi-0295", kind: "word" }
+
+  - id: "hi-1157"
+    target: "यह दवाखाना सुबह खुलता है।"
+    target_scripts: { perso_arabic: "یہ دواخانہ صبح کھلتا ہے۔" }
+    reading: "yah davākhānā subah khultā hai."
+    ipa: "jəɦ d̪əʋaːkʰaːnaː sʊbəɦ kʰʊlt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "दवाखाना", ref: "hi-1098" }
+      - { word: "सुबह", ref: "hi-0302" }
+      - { word: "खुलता", base: "खुलना", reading: "khulnā" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", word: "खुलती", reading: "khultī", kind: "form" }
+      - { id: "w1", word: "बंद", reading: "band", kind: "word" }
+
+  - id: "hi-1158"
+    target: "होटल के पीछे मंदिर है।"
+    target_scripts: { perso_arabic: "ہوٹل کے پیچھے مندر ہے۔" }
+    reading: "hōṭal kē pīchē mandir hai."
+    ipa: "ɦoːʈəl keː piːtʃʰeː mənd̪ɪr ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "होटल", ref: "hi-1107" }
+      - { word: "के", ref: "hi-0279" }
+      - { word: "पीछे", ref: "hi-0292" }
+      - { word: "मंदिर", ref: "hi-1094" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", ref: "hi-0291", kind: "word" }
+      - { id: "w1", word: "सामने", reading: "sāmnē", kind: "word" }
+

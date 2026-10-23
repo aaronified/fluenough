@@ -1,0 +1,429 @@
+schema: 1
+id: "hi-en-places"
+kind: "layer"
+core: "hi-places"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Places"
+license: "CC-BY-SA-4.0"
+description: "Places in a town and in the country: the market, school, a temple, the street and the roads. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-1091":
+    native: "market"
+    notes: { "n1": "The market, where many shops sell together. A shopkeeper is दुकानदार (dukāndār), 'shopkeeper'." }
+    examples:
+      "मैं बाज़ार जाता हूँ।": { native: "I go to the market.", bases: { "बाज़ार": "market" } }
+      "बाज़ार में सब्ज़ियाँ सस्ती हैं।": { native: "Vegetables are cheap at the market.", bases: { "बाज़ार": "market", "सब्ज़ियाँ": "vegetables" } }
+    synonyms: { "haat": "market (Sanskrit-leaning)" }
+
+  "hi-1092":
+    native: "school"
+    notes: { "n1": "The school. Its pupils are बच्चे (baccē), 'children', and its teachers are अध्यापक (adhyāpak), 'teachers'." }
+    examples:
+      "बच्चे स्कूल जाते हैं।": { native: "The children go to school.", bases: { "स्कूल": "school" } }
+      "मेरा बेटा स्कूल में है।": { native: "My son is at school.", bases: { "बेटा": "son", "स्कूल": "school" } }
+    synonyms: { "vidyalay": "school (Sanskrit-leaning)" }
+
+  "hi-1093":
+    native: "bank"
+    notes: { "n1": "The bank, where money is kept. Money is पैसे (paisē), 'money'." }
+    examples:
+      "बैंक बंद है।": { native: "The bank is closed.", bases: { "बैंक": "bank", "बंद": "closed" } }
+      "मेरा बैंक मंदिर के पास है।": { native: "My bank is near the temple.", bases: { "बैंक": "bank" } }
+
+  "hi-1094":
+    native: "temple"
+    notes: { "n1": "A Hindu temple, where people pray. Its priest is पुजारी (pujārī), 'priest'." }
+    examples:
+      "मंदिर सुबह खुलता है।": { native: "The temple opens in the morning.", bases: { "मंदिर": "temple", "खुलता": "to open" } }
+      "मंदिर में बहुत लोग हैं।": { native: "There are many people in the temple.", bases: { "मंदिर": "temple" } }
+    synonyms: { "devalay": "temple (Sanskrit-leaning)" }
+
+  "hi-1095":
+    native: "mosque"
+    notes: { "n1": "A mosque, where Muslims pray. It is feminine, so बड़ी (baṛī), 'big', is said of it." }
+    examples:
+      "यह मस्जिद बड़ी है।": { native: "This mosque is big.", bases: { "मस्जिद": "mosque" } }
+      "मस्जिद के पास एक दुकान है।": { native: "There is a shop near the mosque.", bases: { "मस्जिद": "mosque" } }
+
+  "hi-1096":
+    native: "gurdwara"
+    notes: { "n1": "A Sikh place of worship. Hindi and Urdu speakers use the same word for it." }
+    examples:
+      "गुरुद्वारा बहुत साफ़ है।": { native: "The gurdwara is very clean.", bases: { "गुरुद्वारा": "gurdwara", "साफ़": "clean" } }
+      "गुरुद्वारा सड़क के किनारे है।": { native: "The gurdwara is at the side of the road.", bases: { "गुरुद्वारा": "gurdwara", "किनारे": "side" } }
+
+  "hi-1097":
+    native: "church"
+    notes: { "n1": "A Christian church. Its priest is पादरी (pādrī), 'priest'." }
+    examples:
+      "चर्च नया है।": { native: "The church is new.", bases: { "चर्च": "church" } }
+      "चर्च में प्रार्थना होती है।": { native: "Prayers are held in the church.", bases: { "चर्च": "church", "प्रार्थना": "prayer" } }
+
+  "hi-1098":
+    native: "pharmacy"
+    notes: { "n1": "A small shop or clinic, where you can buy दवाई (davāī), 'medicine'." }
+    examples:
+      "दवाखाना यहाँ से दूर है।": { native: "The pharmacy is far from here.", bases: { "दवाखाना": "pharmacy" } }
+      "दवाखाने में दवाई मिलती है।": { native: "You can get medicine at the pharmacy.", bases: { "दवाखाने": "pharmacy", "मिलती": "to be found" } }
+    synonyms: { "aushadhalay": "dispensary (Sanskrit-leaning)" }
+
+  "hi-1099":
+    native: "clinic"
+    notes: { "n1": "A small hospital, where a doctor sees patients. The doctor is डॉक्टर (ḍôkṭar), 'doctor'." }
+    examples:
+      "क्लिनिक में डॉक्टर मरीज़ देखते हैं।": { native: "The doctors see patients in the clinic.", bases: { "क्लिनिक": "clinic", "मरीज़": "patient", "देखते": "to see" } }
+      "मेरा क्लिनिक सुबह खुलता है।": { native: "My clinic opens in the morning.", bases: { "क्लिनिक": "clinic", "खुलता": "to open" } }
+    synonyms: { "chikitsalay": "clinic (Sanskrit-leaning)" }
+
+  "hi-1100":
+    native: "park"
+    notes: { "n1": "A public park, with trees and grass. A garden with flowers is बगीचा (bagīcā), 'garden'." }
+    examples:
+      "बच्चे पार्क में खेलते हैं।": { native: "The children play in the park.", bases: { "पार्क": "park", "खेलते": "to play" } }
+      "पार्क के पास दुकान है।": { native: "The shop is near the park.", bases: { "पार्क": "park" } }
+    synonyms: { "udyan": "park (Sanskrit-leaning)" }
+
+  "hi-1101":
+    native: "garden"
+    notes: { "n1": "A garden with flowers. A flower is फूल (phūl), 'flower'." }
+    examples:
+      "बगीचे में फूल खिले हैं।": { native: "The flowers have bloomed in the garden.", bases: { "बगीचे": "garden", "फूल": "flower", "खिले": "to bloom" } }
+      "मेरे बगीचे में आम का पेड़ है।": { native: "In my garden there is a mango tree.", bases: { "बगीचे": "garden", "आम": "mango" } }
+    synonyms: { "bagh": "garden (Persian-leaning)" }
+
+  "hi-1102":
+    native: "square"
+    notes: { "n1": "A square or open place in a town. A crossroads is चौराहा (caurāhā), 'crossroads'." }
+    examples:
+      "चौक पर बहुत भीड़ है।": { native: "There is a big crowd at the square.", bases: { "चौक": "square", "भीड़": "crowd" } }
+      "चौक से दाएँ मुड़िए।": { native: "Turn right at the square.", bases: { "चौक": "square" } }
+
+  "hi-1103":
+    native: "lane"
+    notes: { "n1": "A small lane. It is feminine, so छोटी (chōṭī), 'small', is said of it." }
+    examples:
+      "यह गली छोटी है।": { native: "This lane is narrow.", bases: { "गली": "lane" } }
+      "गली में बच्चे खेलते हैं।": { native: "Children play in the lane.", bases: { "गली": "lane", "खेलते": "to play" } }
+    synonyms: { "kucha": "lane (Persian-leaning)" }
+
+  "hi-1104":
+    native: "street corner"
+    notes: { "n1": "The corner where two streets meet. At a corner there is often a पान (pān), 'paan', shop." }
+    examples:
+      "नुक्कड़ पर एक दुकान है।": { native: "There is a shop at the corner.", bases: { "नुक्कड़": "street corner" } }
+      "गली के नुक्कड़ पर मेरा घर है।": { native: "My house is at the corner of the lane.", bases: { "गली": "lane", "नुक्कड़": "street corner" } }
+
+  "hi-1105":
+    native: "crossroads"
+    notes: { "n1": "A place where roads meet. Some have a traffic light, called सिग्नल (signal), 'signal'." }
+    examples:
+      "चौराहे पर पुलिस खड़ी है।": { native: "The police are standing at the crossroads.", bases: { "चौराहे": "crossroads", "खड़ी": "standing" } }
+      "चौराहे से बाएँ मुड़िए।": { native: "Turn left at the crossroads.", bases: { "चौराहे": "crossroads" } }
+    synonyms: { "chatushpath": "crossroads (Sanskrit-leaning)" }
+
+  "hi-1106":
+    native: "post office"
+    notes: { "n1": "The post office, where letters are sent. A letter is चिट्ठी (ciṭṭhī), 'letter'." }
+    examples:
+      "डाकघर सुबह खुलता है।": { native: "The post office opens in the morning.", bases: { "डाकघर": "post office", "खुलता": "to open" } }
+      "डाकघर बस स्टेशन के पास है।": { native: "The post office is near the bus station.", bases: { "डाकघर": "post office" } }
+
+  "hi-1107":
+    native: "hotel"
+    notes: { "n1": "A place to stay for a night, paid for by the day. A room in a hotel is कमरा (kamrā), 'room'." }
+    examples:
+      "होटल का कमरा बड़ा है।": { native: "The hotel room is big.", bases: { "होटल": "hotel" } }
+      "हम एक होटल में रहते हैं।": { native: "We stay in a hotel.", bases: { "होटल": "hotel" } }
+
+  "hi-1108":
+    native: "restaurant"
+    notes: { "n1": "A place to eat out. Its food is खाना (khānā), 'food'." }
+    examples:
+      "इस रेस्तराँ में अच्छा खाना मिलता है।": { native: "This restaurant has good food.", bases: { "इस": "this", "रेस्तराँ": "restaurant", "खाना": "food", "मिलता": "to be found" } }
+      "रेस्तराँ बड़ा और साफ़ है।": { native: "The restaurant is big and clean.", bases: { "रेस्तराँ": "restaurant", "साफ़": "clean" } }
+
+  "hi-1109":
+    native: "cinema"
+    notes: { "n1": "A cinema hall, where films are shown. A film is फ़िल्म (film), 'film'." }
+    examples:
+      "सिनेमा बाज़ार के पास है।": { native: "The cinema is near the market.", bases: { "सिनेमा": "cinema" } }
+      "हम सिनेमा देखने जाते हैं।": { native: "We go to the cinema to watch a film.", bases: { "सिनेमा": "cinema", "देखने": "to see" } }
+
+  "hi-1110":
+    native: "police station"
+    notes: { "n1": "A police station, where a complaint is written. The police are पुलिस (pulis), 'police'." }
+    examples:
+      "थाना स्कूल के सामने है।": { native: "The police station is in front of the school.", bases: { "थाना": "police station", "सामने": "in front" } }
+      "थाने में पुलिस है।": { native: "There are police at the police station.", bases: { "थाने": "police station" } }
+
+  "hi-1111":
+    native: "court"
+    notes: { "n1": "A court of law. A lawyer is वकील (vakīl), 'lawyer'." }
+    examples:
+      "अदालत बड़ी है।": { native: "The court is big.", bases: { "अदालत": "court" } }
+      "वकील अदालत में जाता है।": { native: "The lawyer goes to court.", bases: { "वकील": "lawyer", "अदालत": "court" } }
+    synonyms: { "nyayalay": "court (Sanskrit-leaning)" }
+
+  "hi-1112":
+    native: "toilet"
+    notes: { "n1": "A toilet. In a house, a bathroom is बाथरूम (bāthrūm), 'bathroom'." }
+    examples:
+      "शौचालय कहाँ है?": { native: "Where is the toilet?", bases: { "शौचालय": "toilet" } }
+      "यह शौचालय साफ़ है।": { native: "This toilet is clean.", bases: { "शौचालय": "toilet", "साफ़": "clean" } }
+
+  "hi-1113":
+    native: "ground"
+    notes: { "n1": "An open field or ground, where people play sport. A game is खेल (khēl), 'game'." }
+    examples:
+      "मैदान बड़ा है।": { native: "The ground is big.", bases: { "मैदान": "ground" } }
+      "मैदान के किनारे एक दुकान है।": { native: "There is a shop at the edge of the ground.", bases: { "मैदान": "ground", "किनारे": "edge" } }
+
+  "hi-1114":
+    native: "field"
+    notes: { "n1": "A field for growing crops. A farmer is किसान (kisān), 'farmer'." }
+    examples:
+      "खेत में गेहूँ है।": { native: "There is wheat in the field.", bases: { "खेत": "field", "गेहूँ": "wheat" } }
+      "किसान सुबह खेत जाता है।": { native: "The farmer goes to the field in the morning.", bases: { "किसान": "farmer", "खेत": "field" } }
+    synonyms: { "kshetr": "field (Sanskrit-leaning)" }
+
+  "hi-1115":
+    native: "forest"
+    notes: { "n1": "A forest, with many trees. A tree is पेड़ (pēṛ), 'tree'." }
+    examples:
+      "जंगल में बहुत पेड़ हैं।": { native: "There are many trees in the forest.", bases: { "जंगल": "forest" } }
+      "जंगल में शेर रहता है।": { native: "A lion lives in the forest.", bases: { "जंगल": "forest", "शेर": "lion" } }
+    synonyms: { "van": "forest (Sanskrit-leaning)" }
+
+  "hi-1116":
+    native: "tree"
+    notes: { "n1": "A tree. The leaves of a tree are पत्ते (pattē), 'leaves'." }
+    examples:
+      "पेड़ पर पत्ते हैं।": { native: "There are leaves on the tree.", bases: { "पेड़": "tree", "पत्ते": "leaf" } }
+      "यह पेड़ बहुत ऊँचा है।": { native: "This tree is very tall.", bases: { "पेड़": "tree" } }
+    synonyms: { "vriksh": "tree (Sanskrit-leaning)" }
+
+  "hi-1117":
+    native: "hill"
+    notes: { "n1": "A hill or mountain. A flat land is मैदान (maidān), 'plain'." }
+    examples:
+      "पहाड़ पर बर्फ़ है।": { native: "There is snow on the mountain.", bases: { "पहाड़": "mountain", "बर्फ़": "snow" } }
+      "पहाड़ से नदी आती है।": { native: "A river comes down from the mountain.", bases: { "पहाड़": "mountain", "आती": "to come" } }
+    synonyms: { "parvat": "mountain (Sanskrit-leaning)" }
+
+  "hi-1118":
+    native: "river"
+    notes: { "n1": "A river. It is feminine, so बड़ी (baṛī), 'big', takes the feminine form." }
+    examples:
+      "नदी का पानी साफ़ है।": { native: "The river's water is clean.", bases: { "नदी": "river", "पानी": "water", "साफ़": "clean" } }
+      "नदी पर पुल है।": { native: "There is a bridge over the river.", bases: { "नदी": "river" } }
+    synonyms: { "darya": "river (Persian-leaning)", "sarita": "river (Sanskrit-leaning)" }
+
+  "hi-1119":
+    native: "pond"
+    notes: { "n1": "A pond, smaller than a lake. A lake is झील (jhīl), 'lake'." }
+    examples:
+      "तालाब में मछलियाँ हैं।": { native: "There are fish in the pond.", bases: { "तालाब": "pond", "मछलियाँ": "fish" } }
+      "तालाब के किनारे पेड़ हैं।": { native: "There are trees at the edge of the pond.", bases: { "तालाब": "pond", "किनारे": "edge" } }
+    synonyms: { "tadag": "pond (Sanskrit-leaning)" }
+
+  "hi-1120":
+    native: "lake"
+    notes: { "n1": "A lake, bigger than a pond. A pond is तालाब (tālāb), 'pond'." }
+    examples:
+      "झील बहुत सुंदर है।": { native: "The lake is very beautiful.", bases: { "झील": "lake", "सुंदर": "beautiful" } }
+      "झील में नाव चलती है।": { native: "A boat sails on the lake.", bases: { "झील": "lake", "नाव": "boat", "चलती": "to move" } }
+    synonyms: { "sarovar": "lake (Sanskrit-leaning)" }
+
+  "hi-1121":
+    native: "sea"
+    notes: { "n1": "The sea or ocean. A Persian-leaning word for it is बहर (bahr), 'sea'." }
+    examples:
+      "समुद्र बहुत बड़ा है।": { native: "The sea is very big.", bases: { "समुद्र": "sea" } }
+      "समुद्र का पानी नमकीन है।": { native: "The sea water is salty.", bases: { "समुद्र": "sea", "पानी": "water", "नमकीन": "salty" } }
+    synonyms: { "bahr": "sea (Persian-leaning)" }
+
+  "hi-1122":
+    native: "village"
+    notes: { "n1": "A village. A city is शहर (śahar), 'city'." }
+    examples:
+      "गाँव में खेत हैं।": { native: "There are fields in the village.", bases: { "गाँव": "village" } }
+      "मेरा गाँव छोटा है।": { native: "My village is small.", bases: { "गाँव": "village" } }
+    synonyms: { "gram": "village (Sanskrit-leaning)" }
+
+  "hi-1123":
+    native: "town"
+    notes: { "n1": "A town, bigger than a village and smaller than a city. A city is शहर (śahar), 'city'." }
+    examples:
+      "यह कस्बा छोटा है।": { native: "This town is small.", bases: { "कस्बा": "town" } }
+      "कस्बे में एक बाज़ार है।": { native: "There is a market in the town.", bases: { "कस्बे": "town" } }
+    synonyms: { "nagar": "town (Sanskrit-leaning)" }
+
+  "hi-1124":
+    native: "area"
+    notes: { "n1": "An area or district of a town. The area around your home is आसपास (āspās), 'around'." }
+    examples:
+      "इस इलाके में बहुत दुकानें हैं।": { native: "There are many shops in this area.", bases: { "इस": "this", "इलाके": "area" } }
+      "हमारा इलाका शांत है।": { native: "Our area is quiet.", bases: { "इलाका": "area", "शांत": "quiet" } }
+    synonyms: { "anchal": "region (Sanskrit-leaning)" }
+
+  "hi-1125":
+    native: "place"
+    notes: { "n1": "A place or spot. To say 'here' or 'there', use यहाँ (yahām̐) or वहाँ (vahām̐)." }
+    examples:
+      "यह जगह अच्छी है।": { native: "This place is good.", bases: { "जगह": "place" } }
+      "मुझे एक अच्छी जगह चाहिए।": { native: "I need a good place.", bases: { "जगह": "place", "चाहिए": "to want" } }
+    synonyms: { "sthan": "place (Sanskrit-leaning)" }
+
+  "hi-1126":
+    native: "building"
+    notes: { "n1": "A building. A house is मकान (makān), 'house'." }
+    examples:
+      "यह इमारत बहुत ऊँची है।": { native: "This building is very tall.", bases: { "इमारत": "building" } }
+      "इमारत में दफ़्तर है।": { native: "There is an office in the building.", bases: { "इमारत": "building" } }
+    synonyms: { "bhavan": "building (Sanskrit-leaning)" }
+
+  "hi-1127":
+    native: "college"
+    notes: { "n1": "A college, after school. A school is स्कूल (skūl), 'school'." }
+    examples:
+      "मेरा भाई कॉलेज जाता है।": { native: "My brother goes to college.", bases: { "भाई": "brother", "कॉलेज": "college" } }
+      "कॉलेज बड़ा है।": { native: "The college is big.", bases: { "कॉलेज": "college" } }
+    synonyms: { "mahavidyalay": "college (Sanskrit-leaning)" }
+
+  "hi-1128":
+    native: "library"
+    notes: { "n1": "A library, where books are kept and read. A book is किताब (kitāb), 'book'." }
+    examples:
+      "पुस्तकालय सुबह खुलता है।": { native: "The library opens in the morning.", bases: { "पुस्तकालय": "library", "खुलता": "to open" } }
+      "पुस्तकालय में बहुत किताबें हैं।": { native: "There are many books in the library.", bases: { "पुस्तकालय": "library", "किताबें": "book" } }
+    synonyms: { "kitabghar": "library (Persian-leaning)" }
+
+  "hi-1129":
+    native: "roadside eatery"
+    notes: { "n1": "A small, cheap place to eat by the road. It serves खाना (khānā), 'food'." }
+    examples:
+      "सड़क पर एक ढाबा है।": { native: "There is a roadside eatery on the road.", bases: { "ढाबा": "roadside eatery" } }
+      "ढाबे का खाना अच्छा है।": { native: "The food at the roadside eatery is good.", bases: { "ढाबे": "roadside eatery", "खाना": "food" } }
+
+  "hi-1130":
+    native: "office"
+    notes: { "n1": "An office, a formal word. In everyday speech, people say दफ़्तर (daftar), 'office'." }
+    examples:
+      "कार्यालय में सब लोग काम करते हैं।": { native: "Everyone works in the office.", bases: { "कार्यालय": "office", "सब": "all", "काम": "work", "करते": "to do" } }
+      "मेरा कार्यालय बड़ा है।": { native: "My office is big.", bases: { "कार्यालय": "office" } }
+
+  "hi-1131":
+    native: "shrine"
+    notes: { "n1": "A Sufi shrine, where people go to pray. It is feminine, so बड़ी (baṛī), 'big', fits it." }
+    examples:
+      "दरगाह बहुत पुरानी है।": { native: "The shrine is very old.", bases: { "दरगाह": "shrine" } }
+      "दरगाह के पास बाज़ार है।": { native: "There is a market near the shrine.", bases: { "दरगाह": "shrine" } }
+
+  "hi-1132":
+    native: "bridge"
+    notes: { "n1": "A bridge over a river or a road. A river is नदी (nadī), 'river'." }
+    examples:
+      "पुल लंबा है।": { native: "The bridge is long.", bases: { "पुल": "bridge" } }
+      "पुल के नीचे पानी है।": { native: "There is water under the bridge.", bases: { "पुल": "bridge", "पानी": "water" } }
+
+  "hi-1133":
+    native: "bend"
+    notes: { "n1": "A bend or turn in a road. To turn, say मुड़िए (muṛiē), 'turn'." }
+    examples:
+      "आगे एक मोड़ है।": { native: "There is a bend ahead.", bases: { "मोड़": "bend" } }
+      "मोड़ पर सावधानी रखिए।": { native: "Take care at the bend.", bases: { "मोड़": "bend", "सावधानी": "care", "रखिए": "to keep" } }
+
+  "hi-1134":
+    native: "traffic light"
+    notes: { "n1": "A traffic signal at a crossing. A crossroads is चौराहा (caurāhā), 'crossroads'." }
+    examples:
+      "सिग्नल हरा है।": { native: "The signal is green.", bases: { "सिग्नल": "signal", "हरा": "green" } }
+      "सिग्नल पर रुकिए।": { native: "Stop at the signal.", bases: { "सिग्नल": "signal", "रुकिए": "to stop" } }
+
+  "hi-1135":
+    native: "wholesale market"
+    notes: { "n1": "A wholesale market for fruit and vegetables. Fruit is फल (phal), 'fruit'." }
+    examples:
+      "मंडी में सब्ज़ियाँ बिकती हैं।": { native: "Vegetables are sold in the wholesale market.", bases: { "मंडी": "wholesale market", "सब्ज़ियाँ": "vegetables", "बिकती": "to be sold" } }
+      "मंडी सुबह भरती है।": { native: "The wholesale market fills up in the morning.", bases: { "मंडी": "wholesale market", "भरती": "to fill up" } }
+
+  "hi-1136":
+    native: "warehouse"
+    notes: { "n1": "A warehouse, where goods are stored. Goods are सामान (sāmān), 'goods'." }
+    examples:
+      "गोदाम में सामान है।": { native: "There are goods in the warehouse.", bases: { "गोदाम": "warehouse", "सामान": "goods" } }
+      "यह गोदाम बड़ा है।": { native: "This warehouse is big.", bases: { "गोदाम": "warehouse" } }
+
+  "hi-1137":
+    native: "corner"
+    notes: { "n1": "A corner of a room or of a street. A street corner is नुक्कड़ (nukkaṛ), 'street corner'." }
+    examples:
+      "कमरे का कोना साफ़ है।": { native: "The corner of the room is clean.", bases: { "कोना": "corner", "साफ़": "clean" } }
+      "दूसरे कोने में पेड़ है।": { native: "There is a tree in the other corner.", bases: { "दूसरे": "other", "कोने": "corner" } }
+    synonyms: { "kon": "corner (Sanskrit-leaning)" }
+
+  "hi-1138":
+    native: "stadium"
+    notes: { "n1": "A stadium for sport. A player is खिलाड़ी (khilāṛī), 'player'." }
+    examples:
+      "स्टेडियम बड़ा है।": { native: "The stadium is big.", bases: { "स्टेडियम": "stadium" } }
+      "मैं स्टेडियम जाता हूँ।": { native: "I go to the stadium.", bases: { "स्टेडियम": "stadium" } }
+
+  "hi-1139":
+    native: "settlement"
+    notes: { "n1": "A settlement or a poor neighbourhood. It is feminine, so छोटी (chōṭī), 'small', is said of it." }
+    examples:
+      "बस्ती में बहुत बच्चे हैं।": { native: "There are many children in the settlement.", bases: { "बस्ती": "settlement" } }
+      "यह बस्ती नदी के पास है।": { native: "This settlement is near the river.", bases: { "बस्ती": "settlement" } }
+
+  "hi-1140":
+    native: "metro"
+    notes: { "n1": "A metro railway. A railway station is स्टेशन (sṭēśan), 'station'." }
+    examples:
+      "मेट्रो स्टेशन बाज़ार के पास है।": { native: "The metro station is near the market.", bases: { "मेट्रो": "metro" } }
+      "मैं मेट्रो से दफ़्तर जाता हूँ।": { native: "I go to the office by metro.", bases: { "मेट्रो": "metro" } }
+
+  "hi-1141":
+    native: "inn"
+    notes: { "n1": "A roadside inn where travellers stay. It is feminine, so छोटी (chōṭī), 'small', fits it." }
+    examples:
+      "सराय सड़क के पास है।": { native: "The inn is near the road.", bases: { "सराय": "inn" } }
+      "सराय में एक कमरा है।": { native: "There is a room in the inn.", bases: { "सराय": "inn" } }
+
+  "hi-1142":
+    native: "zoo"
+    notes: { "n1": "A zoo, where animals are kept for people to see. An animal is जानवर (jānvar), 'animal'." }
+    examples:
+      "चिड़ियाघर में शेर है।": { native: "There is a lion in the zoo.", bases: { "चिड़ियाघर": "zoo", "शेर": "lion" } }
+      "बच्चे चिड़ियाघर जाते हैं।": { native: "Children go to the zoo.", bases: { "चिड़ियाघर": "zoo" } }
+
+  "hi-1143":
+    native: "port"
+    notes: { "n1": "A port, where ships come in. A ship is जहाज़ (jahāz), 'ship'." }
+    examples:
+      "बंदरगाह पर जहाज़ हैं।": { native: "There are ships at the port.", bases: { "बंदरगाह": "port", "जहाज़": "ship" } }
+      "बंदरगाह समुद्र के किनारे है।": { native: "The port is at the edge of the sea.", bases: { "बंदरगाह": "port", "किनारे": "edge" } }
+    synonyms: { "pattan": "port (Sanskrit-leaning)" }
+
+  "hi-1144":
+    native: "tower"
+    notes: { "n1": "A tall tower, such as the minaret of a mosque. It is feminine, so ऊँची (ūm̐cī), 'tall', is said of it." }
+    examples:
+      "मीनार बहुत ऊँची है।": { native: "The tower is very tall.", bases: { "मीनार": "tower" } }
+      "मस्जिद की मीनार दूर से दिखती है।": { native: "The minaret of the mosque can be seen from far away.", bases: { "मीनार": "tower", "दिखती": "to be seen" } }
+
+  "hi-1145":
+    native: "ghat"
+    notes: { "n1": "Steps down to a river, where people bathe. A river is नदी (nadī), 'river'." }
+    examples:
+      "घाट पर बहुत लोग हैं।": { native: "There are many people at the ghat.", bases: { "घाट": "ghat" } }
+      "नदी के घाट पर मंदिर है।": { native: "There is a temple at the river steps.", bases: { "घाट": "ghat" } }
+
+  "hi-1146":
+    native: "pavement"
+    notes: { "n1": "The raised path for walkers at the side of a road. A road is सड़क (saṛak), 'road'." }
+    examples:
+      "फ़ुटपाथ पर दुकानें हैं।": { native: "There are shops on the pavement.", bases: { "फ़ुटपाथ": "pavement" } }
+      "फ़ुटपाथ पर लोग चलते हैं।": { native: "People walk on the pavement.", bases: { "फ़ुटपाथ": "pavement", "चलते": "to walk" } }
+

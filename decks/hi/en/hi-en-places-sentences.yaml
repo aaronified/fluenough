@@ -1,0 +1,63 @@
+schema: 1
+id: "hi-en-places-sentences"
+kind: "layer"
+core: "hi-places-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with places"
+license: "CC-BY-SA-4.0"
+description: "Short sentences with the place words of this unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-1147":
+    native: "My house is near the market."
+    confusables: { "f1": { why: "Oblique: मेरे (mērē) is the form before a postposition, and here it is the subject's form." }, "w1": { why: "Far, not near: दूर (dūr) means far." } }
+
+  "hi-1148":
+    native: "There is a park in front of the school."
+    bases: { "सामने": "in front" }
+    confusables: { "f1": { why: "Behind, not in front: पीछे (pīchē) means behind." }, "w1": { why: "Far, not in front: दूर (dūr) means far." } }
+
+  "hi-1149":
+    native: "The bank is near the square."
+    confusables: { "f1": { why: "Far, not near: दूर (dūr) means far." }, "w1": { why: "A crossroads, a different place: चौराहा (caurāhā) means crossroads." } }
+
+  "hi-1150":
+    native: "Turn left, then go straight."
+    bases: { "फिर": "then", "जाइए": "to go" }
+    confusables: { "f1": { why: "Right, not left: दाएँ (dāēm̐) means right." }, "w1": { why: "Ahead: आगे (āgē) means forward, a different direction word." } }
+
+  "hi-1151":
+    native: "There are trees along the road."
+    bases: { "किनारे": "edge" }
+    confusables: { "f1": { why: "Oblique plural: पेड़ों (pēṛōm̐) comes before a postposition, not as the subject of हैं (haim̐)." }, "w1": { why: "River, not road: नदी (nadī) means river." } }
+
+  "hi-1152":
+    native: "The bridge over the river is long."
+    confusables: { "f1": { why: "Feminine: लंबी (lambī) goes with a feminine noun, and पुल (pul) is masculine." }, "w1": { why: "Pond, not bridge: तालाब (tālāb) means pond." } }
+
+  "hi-1153":
+    native: "The fields in the village are big."
+    confusables: { "f1": { why: "Singular: बड़ा (baṛā) is for one masculine thing, and the sentence has several fields." }, "w1": { why: "City, not village: शहर (śahar) means city." } }
+
+  "hi-1154":
+    native: "Who is near the mosque?"
+    confusables: { "w1": { why: "Where, not who: कहाँ (kahām̐) means where." }, "w2": { why: "What, not who: क्या (kyā) means what." } }
+
+  "hi-1155":
+    native: "The children are playing in the park."
+    bases: { "खेल": "to play" }
+    confusables: { "f1": { why: "Habit, not now: खेलते (khēltē) says that children play as a habit." }, "w1": { why: "Sleep, not play: सोते (sōtē) means sleeping." } }
+
+  "hi-1156":
+    native: "Where is the stadium?"
+    confusables: { "w1": { why: "Who, not where: कौन (kaun) means who." }, "w2": { why: "Here, not where: यहाँ (yahām̐) means here." } }
+
+  "hi-1157":
+    native: "This pharmacy opens in the morning."
+    bases: { "खुलता": "to open" }
+    confusables: { "f1": { why: "Feminine: खुलती (khultī) goes with a feminine subject, and दवाखाना (davākhānā) is masculine." }, "w1": { why: "Closed, not open: बंद (band) means closed." } }
+
+  "hi-1158":
+    native: "The temple is behind the hotel."
+    confusables: { "f1": { why: "Ahead, not behind: आगे (āgē) means ahead." }, "w1": { why: "In front, not behind: सामने (sāmnē) means in front." } }
+
