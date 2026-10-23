@@ -46,7 +46,7 @@ class ReportButton extends StatelessWidget {
 
   /// A report from the screen [context] is on, saying it showed [detail].
   /// For a button of a screen's own too, such as an unchecked deck's
-  /// "Report a mistake" or a card's Report in Inspect.
+  /// "Report a mistake" or a card's Report on its sheet.
   static Future<void> open(BuildContext context, {String? detail}) async {
     final screen = ModalRoute.of(context)?.settings.name ?? '';
     final system = await AppInfo.system();

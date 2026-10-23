@@ -72,10 +72,11 @@ void main() {
         final glyph = _boxOf(tester, find.byType(TargetText).first);
         final reading = _boxOf(tester, find.text('pa'));
         expect(glyph.bottom, lessThanOrEqualTo(reading.top));
-        // The line holds the script's full height, not the Latin 1.25.
+        // The line holds the script's full height, not the Latin 1.25. The
+        // word sheet draws the word at 52 (#693).
         expect(
           glyph.height,
-          greaterThanOrEqualTo(44 * 1.4 * TargetSizes.rtlHeight - 0.5),
+          greaterThanOrEqualTo(52 * 1.4 * TargetSizes.rtlHeight - 0.5),
         );
       });
 
@@ -111,7 +112,7 @@ void main() {
         ),
       );
       final glyph = _boxOf(tester, find.byType(TargetText).first);
-      expect(glyph.height, closeTo(44 * 1.4 * TargetSizes.ltrHeight, 0.5));
+      expect(glyph.height, closeTo(52 * 1.4 * TargetSizes.ltrHeight, 0.5));
     });
   });
 }
