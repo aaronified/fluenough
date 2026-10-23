@@ -1,0 +1,271 @@
+schema: 1
+id: "es-en-groceries"
+kind: "layer"
+core: "es-groceries"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Groceries"
+license: "CC-BY-SA-4.0"
+description: "Groceries and the shopping list: staples, dairy, meat and fish, drinks, with the supermarket and the verbs to carry and to take. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-0601":
+    native: "supermarket"
+    notes: { n1: "Supermercado is a supermarket, a large shop for food and other goods." }
+    bases: {"el": "the", "supermercado": "supermarket"}
+    examples:
+      "El supermercado está en la calle grande.":
+        native: "The supermarket is on the big street."
+        bases: {"El": "the", "supermercado": "supermarket", "en": "in", "la": "the"}
+      "Compro leche en el supermercado.":
+        native: "I buy milk at the supermarket."
+        bases: {"en": "in", "el": "the", "supermercado": "supermarket"}
+  "es-0602":
+    native: "list"
+    notes: { n1: "Lista is a list. A shopping list is una lista." }
+    bases: {"la": "the", "lista": "list"}
+    examples:
+      "Tengo una lista.":
+        native: "I have a list."
+        bases: {"una": "a", "lista": "list"}
+      "La lista es larga.":
+        native: "The list is long."
+        bases: {"La": "the", "lista": "list"}
+  "es-0603":
+    native: "cheese"
+    notes: { n1: "Queso is cheese. Its plural is quesos." }
+    bases: {"el": "the", "queso": "cheese"}
+    examples:
+      "Compro queso y leche.":
+        native: "I buy cheese and milk."
+        bases: {"queso": "cheese"}
+      "El queso es caro.":
+        native: "The cheese is expensive."
+        bases: {"El": "the", "queso": "cheese"}
+  "es-0604":
+    native: "egg"
+    notes: { n1: "Huevo is an egg. The plural is huevos: una docena de huevos is a dozen eggs." }
+    bases: {"el": "the", "huevo": "egg"}
+    examples:
+      "Compro una docena de huevos.":
+        native: "I buy a dozen eggs."
+        bases: {"una": "a", "de": "of", "huevos": "egg"}
+      "Los huevos son baratos.":
+        native: "The eggs are cheap."
+        bases: {"Los": "the", "huevos": "egg"}
+  "es-0605":
+    native: "rice"
+    notes: { n1: "Arroz is rice, the grain, cooked or uncooked." }
+    bases: {"el": "the", "arroz": "rice"}
+    examples:
+      "Compro arroz.":
+        native: "I buy rice."
+        bases: {"arroz": "rice"}
+      "El arroz es barato.":
+        native: "The rice is cheap."
+        bases: {"El": "the", "arroz": "rice"}
+  "es-0606":
+    native: "sugar"
+    notes: { n1: "Azúcar is sugar. It is masculine: el azúcar." }
+    bases: {"el": "the", "azúcar": "sugar"}
+    examples:
+      "Necesito azúcar.":
+        native: "I need sugar."
+        bases: {"azúcar": "sugar"}
+      "El azúcar cuesta poco.":
+        native: "The sugar costs little."
+        bases: {"El": "the", "azúcar": "sugar"}
+  "es-0607":
+    native: "salt"
+    notes: { n1: "Sal is salt. It is feminine, la sal, even though it ends in -l." }
+    bases: {"la": "the", "sal": "salt"}
+    examples:
+      "Necesito sal y pan.":
+        native: "I need salt and bread."
+        bases: {"sal": "salt"}
+      "La sal está en una mesa.":
+        native: "The salt is on the table."
+        bases: {"La": "the", "sal": "salt", "en": "in", "una": "a"}
+  "es-0608":
+    native: "oil"
+    notes: { n1: "Aceite is oil, for cooking and for salad." }
+    bases: {"el": "the", "aceite": "oil"}
+    examples:
+      "Compro aceite.":
+        native: "I buy oil."
+        bases: {"aceite": "oil"}
+      "El aceite está en la mesa.":
+        native: "The oil is on the table."
+        bases: {"El": "the", "aceite": "oil", "en": "in", "la": "the"}
+  "es-0609":
+    native: "butter"
+    notes: { n1: "Mantequilla is butter." }
+    bases: {"la": "the", "mantequilla": "butter"}
+    examples:
+      "Compro mantequilla.":
+        native: "I buy butter."
+        bases: {"mantequilla": "butter"}
+      "La mantequilla es cara.":
+        native: "The butter is expensive."
+        bases: {"La": "the", "mantequilla": "butter"}
+  "es-0610":
+    native: "biscuit"
+    notes: { n1: "Galleta is a biscuit. The plural is galletas." }
+    bases: {"la": "the", "galleta": "biscuit"}
+    examples:
+      "Compro galletas.":
+        native: "I buy biscuits."
+        bases: {"galletas": "biscuit"}
+      "Las galletas son ricas.":
+        native: "The biscuits are tasty."
+        bases: {"Las": "the", "galletas": "biscuit"}
+  "es-0611":
+    native: "coffee"
+    notes: { n1: "Café is coffee, a drink, and also a café, a place to drink it." }
+    bases: {"el": "the", "café": "coffee"}
+    examples:
+      "Bebo café cada día.":
+        native: "I drink coffee every day."
+        bases: {"café": "coffee"}
+      "El café está frío.":
+        native: "The coffee is cold."
+        bases: {"El": "the", "café": "coffee"}
+  "es-0612":
+    native: "tea"
+    notes: { n1: "Té is tea. Té con leche is tea with milk." }
+    bases: {"el": "the", "té": "tea"}
+    examples:
+      "Bebo té con leche.":
+        native: "I drink tea with milk."
+        bases: {"té": "tea", "con": "with"}
+      "El té está caliente.":
+        native: "The tea is hot."
+        bases: {"El": "the", "té": "tea"}
+  "es-0613":
+    native: "juice"
+    notes: { n1: "Zumo is juice, mostly fruit juice: zumo de naranja." }
+    bases: {"el": "the", "zumo": "juice"}
+    examples:
+      "Compro zumo de naranja.":
+        native: "I buy orange juice."
+        bases: {"zumo": "juice", "de": "of"}
+      "El zumo es bueno.":
+        native: "The juice is good."
+        bases: {"El": "the", "zumo": "juice"}
+  "es-0614":
+    native: "meat"
+    notes: { n1: "Carne is meat, from animals." }
+    bases: {"la": "the", "carne": "meat"}
+    examples:
+      "Compro carne.":
+        native: "I buy meat."
+        bases: {"carne": "meat"}
+      "La carne es cara.":
+        native: "The meat is expensive."
+        bases: {"La": "the", "carne": "meat"}
+  "es-0615":
+    native: "chicken"
+    notes: { n1: "Pollo is chicken, the bird and its meat." }
+    bases: {"el": "the", "pollo": "chicken"}
+    examples:
+      "Cocino pollo.":
+        native: "I cook chicken."
+        bases: {"pollo": "chicken"}
+      "El pollo está caliente.":
+        native: "The chicken is hot."
+        bases: {"El": "the", "pollo": "chicken"}
+  "es-0616":
+    native: "fish"
+    notes: { n1: "Pescado is fish, as food. The animal in the water is un pez." }
+    bases: {"el": "the", "pescado": "fish"}
+    examples:
+      "Compro pescado.":
+        native: "I buy fish."
+        bases: {"pescado": "fish"}
+      "El pescado es caro.":
+        native: "The fish is expensive."
+        bases: {"El": "the", "pescado": "fish"}
+  "es-0617":
+    native: "yoghurt"
+    notes: { n1: "Yogur is yoghurt. Its plural is yogures." }
+    bases: {"el": "the", "yogur": "yoghurt"}
+    examples:
+      "Compro yogur.":
+        native: "I buy yoghurt."
+        bases: {"yogur": "yoghurt"}
+      "El yogur es bueno.":
+        native: "The yoghurt is good."
+        bases: {"El": "the", "yogur": "yoghurt"}
+  "es-0618":
+    native: "jam"
+    notes: { n1: "Mermelada is jam, usually made from fruit." }
+    bases: {"la": "the", "mermelada": "jam"}
+    examples:
+      "Compro mermelada.":
+        native: "I buy jam."
+        bases: {"mermelada": "jam"}
+      "La mermelada es buena.":
+        native: "The jam is good."
+        bases: {"La": "the", "mermelada": "jam"}
+  "es-0619":
+    native: "flour"
+    notes: { n1: "Harina is flour, for bread and cakes." }
+    bases: {"la": "the", "harina": "flour"}
+    examples:
+      "Necesito harina.":
+        native: "I need flour."
+        bases: {"harina": "flour"}
+      "La harina está en una mesa.":
+        native: "The flour is on the table."
+        bases: {"La": "the", "harina": "flour", "en": "in", "una": "a"}
+  "es-0620":
+    native: "wine"
+    notes: { n1: "Vino is wine." }
+    bases: {"el": "the", "vino": "wine"}
+    examples:
+      "Bebo vino.":
+        native: "I drink wine."
+        bases: {"vino": "wine"}
+      "El vino es bueno.":
+        native: "The wine is good."
+        bases: {"El": "the", "vino": "wine"}
+  "es-0621":
+    native: "beer"
+    notes: { n1: "Cerveza is beer." }
+    bases: {"la": "the", "cerveza": "beer"}
+    examples:
+      "Bebo cerveza.":
+        native: "I drink beer."
+        bases: {"cerveza": "beer"}
+      "La cerveza está fría.":
+        native: "The beer is cold."
+        bases: {"La": "the", "cerveza": "beer"}
+  "es-0622":
+    native: "chocolate"
+    notes: { n1: "Chocolate is chocolate, the sweet food or the drink." }
+    bases: {"el": "the", "chocolate": "chocolate"}
+    examples:
+      "Compro chocolate.":
+        native: "I buy chocolate."
+        bases: {"chocolate": "chocolate"}
+      "El chocolate es rico.":
+        native: "The chocolate is tasty."
+        bases: {"El": "the", "chocolate": "chocolate"}
+  "es-0623":
+    native: "to carry; to take"
+    notes: { n1: "Llevar is to carry, or to take something somewhere. It is a regular -ar verb." }
+    examples:
+      "Llevo la lista.":
+        native: "I carry the list."
+        bases: {"Llevo": "carry", "la": "the"}
+      "¿Llevas dinero?":
+        native: "Do you have money with you?"
+        bases: {"Llevas": "carry"}
+  "es-0624":
+    native: "to take; to have (a drink)"
+    notes: { n1: "Tomar is to take, or to have a drink or food. It is a regular -ar verb." }
+    examples:
+      "Tomo café cada día.":
+        native: "I have coffee every day."
+        bases: {"Tomo": "take"}
+      "Tomamos zumo en una mesa.":
+        native: "We have juice at the table."
+        bases: {"Tomamos": "take", "en": "in", "una": "a"}
