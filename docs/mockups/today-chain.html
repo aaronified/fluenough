@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Today Chain</title>
+<meta name="description" content="Every screen the Today chain needs: Today with one button (#521), minutes a day (#485), situation cheatsheets and their inspect view (#724), the decks page focus options (#723) and the conversation screen (#722). Hindustani and Bengali, light and dark, 1.4x text.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&display=swap">
+<style>
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;font-weight:700}
+.cap1{margin:0 0 16px;color:var(--page-muted);font-size:14px}
+.tw{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 14px}
+.tg{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--page-muted);flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--page-line);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:inherit;font-size:14px;min-height:40px;padding:0 14px;border:0;background:var(--page-card);color:var(--page-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg);font-weight:600}
+section.opt{margin:0 0 52px;padding-top:20px;border-top:1px solid var(--page-line)}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:6px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+.sticky{position:sticky;top:0;z-index:20;background:var(--page-bg);padding:10px 0 4px;margin-bottom:12px;border-bottom:1px solid var(--page-line)}
+/* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed) =====
+   Every size is calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. */
+.ph{--t:1.4;width:360px;max-width:100%;height:740px;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph button{font-family:inherit;color:inherit;cursor:pointer}
+.appbar{flex:none;min-height:56px;display:flex;align-items:center;padding:0 4px 0 8px;color:var(--onSv);gap:2px}
+.appbar .ttl{flex:1;min-width:0;font-size:calc(20px*var(--t));line-height:1.2;font-weight:500;color:var(--onS);padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ib{width:48px;height:48px;border:0;background:none;display:flex;align-items:center;justify-content:center;border-radius:24px;padding:0;color:var(--onSv);flex:none}
+svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
+.sp{flex:1}
+.scroll{flex:1;min-height:0;overflow-y:auto;padding:0 16px 16px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.t-body{font-size:calc(14px*var(--t));line-height:1.4;margin:0}
+.t-sm{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv);margin:0}
+.t-lab{font-size:calc(12px*var(--t));line-height:1.3;font-weight:600;letter-spacing:.4px;color:var(--onSv);text-transform:uppercase;margin:14px 0 6px}
+.t-h{font-size:calc(16px*var(--t));line-height:1.3;font-weight:500;margin:0}
+.script{font-family:"Noto Sans Devanagari","Noto Sans Bengali",Roboto,sans-serif}
+.nowrap{white-space:nowrap}
+/* language bar */
+.lbar{display:flex;gap:8px;padding:0 16px 10px;flex:none}
+.pill{border:1px solid var(--ol);border-radius:8px;min-height:32px;padding:0 12px;font-size:calc(14px*var(--t));font-weight:500;display:inline-flex;align-items:center;gap:6px;background:none;color:var(--onSv)}
+.pill.on{background:var(--sc);color:var(--onSc);border-color:transparent}
+/* buttons */
+.btn{min-height:calc(40px*var(--t));border-radius:calc(20px*var(--t));border:0;font-size:calc(14px*var(--t));line-height:1.2;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 16px}
+.btn.fill{background:var(--p);color:var(--onP)}
+.btn.tonal{background:var(--sc);color:var(--onSc)}
+.btn.out{background:none;border:1px solid var(--ol);color:var(--p)}
+.btn.text{background:none;color:var(--p);padding:6px 12px}
+.btn.full{width:100%}
+.btn.sm{min-height:48px;border-radius:24px}
+/* cards */
+.card{background:var(--sLow);border-radius:16px;padding:14px 16px;margin:0 0 12px;display:flex;gap:12px;align-items:center;width:100%;text-align:left;border:0}
+.card .tx{flex:1;min-width:0}
+.card .ic{flex:none;width:40px;height:40px;border-radius:20px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
+.banner{border-radius:16px;padding:14px 16px;margin:0 0 12px;display:flex;gap:12px;align-items:flex-start;background:var(--tC);color:var(--onTC)}
+.banner p{margin:0;font-size:calc(14px*var(--t));line-height:1.35}
+.banner b{font-weight:700}
+.banner .t-sm{color:var(--onTC)}
+.banner .btn{margin-top:10px;background:none;border:1px solid var(--onTC);color:var(--onTC)}
+/* today ring */
+.ringbox{display:flex;flex-direction:column;align-items:center;padding:6px 0 12px;gap:6px}
+.ring{position:relative;width:200px;height:200px}
+.ring svg.r{width:200px;height:200px;transform:rotate(-90deg)}
+.ring .trk{fill:none;stroke:var(--sc);stroke-width:12}
+.ring .fil{fill:none;stroke:var(--p);stroke-width:12;stroke-linecap:round}
+.ring .go{position:absolute;inset:24px;border-radius:50%;border:0;background:var(--p);color:var(--onP);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:calc(16px*var(--t));font-weight:600;line-height:1.1}
+.ring .go svg.i{width:32px;height:32px}
+.ring .go.done{background:var(--sc);color:var(--onSc)}
+.mins{font-size:calc(16px*var(--t));font-weight:500;line-height:1.2;text-align:center}
+.split{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.sbadge{display:inline-flex;align-items:center;gap:6px;border-radius:calc(9px*var(--t));height:calc(18px*var(--t));padding:0 10px;font-size:calc(11px*var(--t));font-weight:600;letter-spacing:.3px}
+.sb-rev{background:var(--sc);color:var(--onSc)}
+.sb-new{background:var(--p);color:var(--onP)}
+.sb-none{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+/* bottom nav */
+.nav{flex:none;display:flex;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);padding:8px 4px 10px}
+.nav div{flex:1;text-align:center;font-size:calc(11px*var(--t));line-height:1.2;color:var(--onSv);display:flex;flex-direction:column;align-items:center;gap:2px}
+.nav div .pl{width:56px;height:28px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+.nav div.on{color:var(--onS);font-weight:600}
+.nav div.on .pl{background:var(--sc);color:var(--onSc)}
+/* settings rows */
+.lcard{background:var(--sLow);border-radius:16px;padding:16px;margin:0 0 12px}
+.lcard h3{margin:0;font-size:calc(18px*var(--t));font-weight:500;line-height:1.25;display:flex;align-items:center;gap:8px}
+.lrow{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;min-height:48px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0}
+.chip{border:1px solid var(--ol);background:none;border-radius:8px;min-height:40px;padding:0 12px;font-size:calc(14px*var(--t));line-height:1.3;font-weight:500;display:inline-flex;align-items:center;gap:6px;color:var(--onSv)}
+.chip[aria-pressed="true"]{background:var(--sc);color:var(--onSc);border-color:transparent}
+.chip svg.i{width:18px;height:18px}
+.chip:not([aria-pressed="true"]) svg.i.ck{display:none}
+.slider{position:relative;height:48px;margin:6px 0 0}
+.slider .rail{position:absolute;left:0;right:0;top:22px;height:4px;border-radius:2px;background:var(--sc)}
+.slider .rf{position:absolute;left:0;top:22px;height:4px;border-radius:2px;background:var(--p)}
+.slider .th{position:absolute;top:12px;width:24px;height:24px;margin-left:-12px;border-radius:12px;background:var(--p)}
+.stepper{display:flex;align-items:center;justify-content:center;gap:16px;margin:8px 0}
+.stepper .v{font-size:calc(32px*var(--t));font-weight:500;min-width:2.2em;text-align:center;line-height:1}
+.stepper .ib{border:1px solid var(--ol);color:var(--p)}
+/* sheet */
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.42);z-index:3}
+.sheet{position:absolute;z-index:4;left:0;right:0;bottom:0;background:var(--sLow);border-radius:28px 28px 0 0;display:flex;flex-direction:column;max-height:88%}
+.sheet .grab{flex:none;width:32px;height:4px;border-radius:2px;background:var(--onSv);opacity:.4;margin:10px auto 6px}
+.sheet .scroll{padding:6px 20px 20px}
+.sheet h3{margin:0 0 4px;font-size:calc(20px*var(--t));font-weight:500;line-height:1.2}
+.opt-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;border:0;padding:6px 0;min-height:48px;font-size:calc(14px*var(--t));line-height:1.3}
+.opt-row .tx{flex:1;min-width:0}
+.opt-row .tx small{display:block;font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.3}
+.box{flex:none;width:20px;height:20px;border-radius:3px;border:2px solid var(--onSv);display:flex;align-items:center;justify-content:center}
+.box.rd{border-radius:50%}
+.opt-row[aria-checked="true"] .box{background:var(--p);border-color:var(--p)}
+.box svg{width:16px;height:16px;fill:var(--onP);opacity:0}
+.opt-row[aria-checked="true"] .box svg{opacity:1}
+.sep{border-top:1px solid var(--olv);margin:6px 0}
+/* word rows */
+.wrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;align-items:center;border-top:1px solid var(--olv);padding:10px 0;width:100%;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0}
+.wrow .w{font-size:calc(20px*var(--t));line-height:1.25;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .rd{font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .mn{font-size:calc(14px*var(--t));line-height:1.3;grid-column:1}
+.wrow .act{grid-column:2;grid-row:1/4;display:flex;align-items:center;gap:0}
+.wrow.unl .w,.wrow.unl .rd,.wrow.unl .mn{opacity:.78}
+.mastery{display:inline-flex;align-items:center;height:calc(18px*var(--t));padding:0 8px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));line-height:1;font-weight:600;letter-spacing:.3px}
+.m-new{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.m-learning{background:var(--sc);color:var(--onSc)}
+.m-known{background:var(--p);color:var(--onP)}
+.audio{width:48px;height:48px;border-radius:24px;border:0;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;flex:none}
+.audio.sm{width:40px;height:40px}
+.bottom{flex:none;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv)}
+/* key-value (inspect) */
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;margin:0}
+.kv dt{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.5}
+.kv dd{margin:0;font-size:calc(14px*var(--t));line-height:1.4;min-width:0;overflow-wrap:anywhere}
+.mono{font-family:ui-monospace,"Roboto Mono",monospace;font-size:calc(12px*var(--t))}
+.blk{display:flex;gap:12px;align-items:flex-start;border-radius:16px;padding:12px 14px;background:var(--sHigh);margin:8px 0}
+.blk p{margin:0;font-size:calc(14px*var(--t));line-height:1.35}
+.blk .tt{font-size:calc(12px*var(--t));font-weight:700;letter-spacing:.3px;text-transform:uppercase;margin:0 0 2px;color:var(--onSv)}
+/* conversation */
+.turns{display:flex;flex-direction:column;gap:12px;padding:4px 0}
+.turn{max-width:92%;border-radius:20px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.turn.a{align-self:flex-start;background:var(--sLow);border-bottom-left-radius:6px}
+.turn.b{align-self:flex-end;background:var(--sc);color:var(--onSc);border-bottom-right-radius:6px}
+.turn .who{font-size:calc(11px*var(--t));font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+.turn.a .who{color:var(--onSv)}
+.turn .tl{font-size:calc(20px*var(--t));line-height:1.45;font-weight:500}
+.turn .tl button{background:none;border:0;padding:0 1px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dotted currentColor}
+.turn .tl button.sel{background:var(--p);color:var(--onP);border-radius:6px;border-bottom-color:transparent}
+.turn .rdg{font-size:calc(13px*var(--t));line-height:1.3;opacity:.95}
+.turn .ml{font-size:calc(14px*var(--t));line-height:1.3;opacity:.95}
+.turn.live .tl{opacity:.85}
+.live-dot{display:inline-block;width:8px;height:8px;border-radius:4px;background:var(--E);margin-right:6px}
+.mic{display:flex;gap:12px;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);align-items:stretch}
+.mic .btn{flex:1;min-height:calc(48px*var(--t));flex-direction:column;gap:2px;border-radius:24px;font-size:calc(13px*var(--t))}
+.mic .btn svg.i{width:28px;height:28px}
+.mic .btn.on{outline:3px solid var(--onS);outline-offset:2px}
+.status{display:flex;align-items:center;gap:8px;padding:0 16px 8px;flex:none}
+/* highlight of what changed */
+.hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;position:relative;border-radius:14px}
+.hl-on .chg::after{content:"new";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:2;letter-spacing:.3px}
+.hl-on .chg.upd::after{content:"changed"}
+.hl-on .chg.gone::after{content:"removed"}
+.ghost{opacity:.55;text-decoration:line-through;pointer-events:none}
+.hide{display:none!important}
+.note{font-size:13px;color:var(--page-muted);margin:6px 0 14px;max-width:760px}
+</style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+<h1>The Today chain</h1>
+<p class="cap1">One page for #521, #485, #680, #724, #723 and #722 (owner, 2026-10-23: "Do all the mockups needed for the today chain together, in one screen."). Phone 360 dp at 1.4x text, ColorScheme.fromSeed of the forest seed. Red dashed outlines mark what is new or changed against the app today. Where an issue leaves a choice open, it is a tweak control; none is decided here. The self-check, notes and open questions are in <code>today-chain.md</code>.</p>
+<div class="sticky tw" id="g-tw">
+ <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
+ <div class="tg">Course <span class="seg" data-k="course"><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></span></div>
+ <div class="tg">Highlight changes <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
+</div>
+<div id="root"></div>
+</div>
+<script>
+/* ===== palette: ColorScheme.fromSeed(forest), as in the other mockups ===== */
+const PAL={
+dark:{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sHigh":"#262b27","ol":"#8a938b","olv":"#404942","E":"#ffb4ab","onE":"#690005","tC":"#224c58","onTC":"#bfe9f8"},
+light:{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sHigh":"#e4eae3","ol":"#717972","olv":"#c0c9c0","E":"#ba1a1a","onE":"#ffffff","tC":"#bfe9f8","onTC":"#224c58"}};
+const IC={
+ back:'M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z',
+ close:'M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
+ vol:'M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z',
+ play:'M8 5v14l11-7z',
+ check:'M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z',
+ more:'M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z',
+ info:'M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z',
+ car:'M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z',
+ cart:'M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z',
+ med:'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z',
+ way:'M21.71 11.29l-9-9a.996.996 0 0 0-1.41 0l-9 9a.996.996 0 0 0 0 1.41l9 9c.39.39 1.02.39 1.41 0l9-9a.996.996 0 0 0 0-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z',
+ food:'M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z',
+ mic:'M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z',
+ today:'M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 16H5V8h14v11z',
+ decks:'M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z',
+ prog:'M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z',
+ gear:'M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.48.48 0 0 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z',
+ tag:'M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58s1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z',
+ chev:'M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z',
+ drop:'M7 10l5 5 5-5z',
+ plus:'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z',
+ minus:'M19 13H5v-2h14z',
+ spk:'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z',
+ book:'M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z',
+ abc:'M11 4h2v2h5v2h-2.1c-.5 2.3-1.6 4.1-3.1 5.4.9.6 1.9 1 3 1.3l-.7 1.9c-1.4-.4-2.6-1-3.7-1.8-1.1.8-2.4 1.4-3.8 1.8l-.7-1.9c1.2-.3 2.3-.8 3.2-1.4-1.1-1.1-1.9-2.4-2.3-3.9h2.1c.3 1 .8 1.8 1.5 2.5 1-1 1.7-2.3 2-3.9H5V6h6V4z'
+};
+const ic=(k,cls='')=>`<svg class="i ${cls}" viewBox="0 0 24 24" aria-hidden="true"><path d="${IC[k]}"/></svg>`;
+
+/* ===== course content ===== */
+const C={
+hi:{lang:'hi',name:'Hindustani',native:'हिन्दुस्तानी',
+ sit:[
+  {id:'taxi',t:'Hailing a cab',ic:'car',n:5,k:3,w:[
+   {id:'hi.sit.taxi.1',w:'मुझे टैक्सी चाहिए।',r:'mujhe ṭaiksī chāhie.',m:'I need a taxi.',s:'known',deck:'Getting around'},
+   {id:'hi.sit.taxi.2',w:'यहाँ रुकिए।',r:'yahāṁ rukie.',m:'Stop here.',s:'known',deck:'Getting around'},
+   {id:'hi.sit.taxi.3',w:'कितना किराया होगा?',r:'kitnā kirāyā hogā?',m:'How much will the fare be?',s:'learning',deck:'Money and prices'},
+   {id:'hi.sit.taxi.4',w:'मीटर चालू कीजिए।',r:'mīṭar chālū kījie.',m:'Please turn the meter on.',s:'new',deck:'Getting around'},
+   {id:'hi.sit.taxi.5',w:'सीधे चलिए।',r:'sīdhe chalie.',m:'Go straight.',s:'new',deck:'Directions'}]},
+  {id:'groc',t:'Grocery shopping',ic:'cart',n:6,k:4},
+  {id:'doc',t:'At the doctor',ic:'med',n:7,k:1},
+  {id:'way',t:'Asking the way',ic:'way',n:5,k:5},
+  {id:'eat',t:'Ordering food',ic:'food',n:6,k:2}],
+ inspect:{id:'hi.sit.taxi.3',card:'hi.vocab.kirayaa.0412',lemma:'किराया',script:'कितना किराया होगा?',reading:'kitnā kirāyā hogā?',ipa:'/kɪt̪naː kɪɾaːjaː hoɡaː/',meaning:'How much will the fare be?',pos:'phrase',deck:'Money and prices',unit:'Unit 14',notes:'किराया is "fare" or "rent". It does not change its stem; होगा agrees with a masculine subject, so a woman asking says होगी.',ex:'किराया बहुत ज़्यादा है। kirāyā bahut zyādā hai. The fare is far too high.',audio:'hi/kirayaa-0412.opus, 1.8 s',alt:'किराया कितना होगा? (word order)'},
+  conv:{a:'आप कहाँ से हैं?',ar:'āp kahāṁ se haiṁ?',am:'Where are you from?',b:'मैं हैदराबाद से हूँ।',br:'maiṁ haidarābād se hūṁ.',bm:'I am from Hyderabad.',live:'और आप?',liver:'aur āp?',
+  words:[['आप','āp','you (polite)'],['कहाँ','kahāṁ','where'],['से','se','from'],['हैं','haiṁ','are']],sel:'कहाँ',selr:'kahāṁ',selm:'where',sels:'new'}},
+bn:{lang:'bn',name:'Bengali',native:'বাংলা',
+ sit:[
+  {id:'taxi',t:'Hailing a cab',ic:'car',n:5,k:3,w:[
+   {id:'bn.sit.taxi.1',w:'আমার একটা ট্যাক্সি দরকার।',r:'āmār ekṭā ṭyāksi darkār.',m:'I need a taxi.',s:'known',deck:'Getting around'},
+   {id:'bn.sit.taxi.2',w:'এখানে থামুন।',r:'ekhāne thāmun.',m:'Stop here.',s:'known',deck:'Getting around'},
+   {id:'bn.sit.taxi.3',w:'ভাড়া কত হবে?',r:'bhāṛā kata habe?',m:'How much will the fare be?',s:'learning',deck:'Money and prices'},
+   {id:'bn.sit.taxi.4',w:'মিটার চালু করুন।',r:'miṭār cālu karun.',m:'Please turn the meter on.',s:'new',deck:'Getting around'},
+   {id:'bn.sit.taxi.5',w:'সোজা চলুন।',r:'sojā calun.',m:'Go straight.',s:'new',deck:'Directions'}]},
+  {id:'groc',t:'Grocery shopping',ic:'cart',n:6,k:4},
+  {id:'doc',t:'At the doctor',ic:'med',n:7,k:1},
+  {id:'way',t:'Asking the way',ic:'way',n:5,k:5},
+  {id:'eat',t:'Ordering food',ic:'food',n:6,k:2}],
+ inspect:{id:'bn.sit.taxi.3',card:'bn.vocab.bhara.0388',lemma:'ভাড়া',script:'ভাড়া কত হবে?',reading:'bhāṛā kata habe?',ipa:'/bʱaɾa kɔto hɔbe/',meaning:'How much will the fare be?',pos:'phrase',deck:'Money and prices',unit:'Unit 14',notes:'ভাড়া means "fare" and also "rent". The verb হবে is the future of হওয়া "to be" and does not change for the subject.',ex:'ভাড়া অনেক বেশি। bhāṛā anek beśi. The fare is very high.',audio:'bn/bhara-0388.opus, 1.6 s',alt:'কত ভাড়া হবে? (word order)'},
+ conv:{a:'আপনি কোথা থেকে এসেছেন?',ar:'āpni kothā theke esechen?',am:'Where have you come from?',b:'আমি কলকাতা থেকে এসেছি।',br:'āmi kalkātā theke esechi.',bm:'I have come from Kolkata.',live:'আর আপনি?',liver:'ār āpni?',
+  words:[['আপনি','āpni','you (polite)'],['কোথা','kothā','where'],['থেকে','theke','from'],['এসেছেন','esechen','have come']],sel:'কোথা',selr:'kothā',selm:'where',sels:'new'}}
+};
+
+/* ===== state: every tweak control ===== */
+const S={theme:null,course:'hi',hl:'1',
+ // Today
+ tState:'start',ringMode:'done',splitLine:'show',backlogMsg:'short',sampleNote:'off',sitePlace:'card',
+ // minutes setting
+ minCtl:'chips',minutes:15,minOpen:false,
+ // cheatsheet
+ shUnl:'all',inspEntry:'row',
+ // focus
+ scriptDoes:'show',fcourse:'hi',fsel:null,focusEntry:'button',focusOpen:true,
+ // conversation
+ cWho:'one',cShow:'mean',cSave:'words',cRec:'device',cSel:false,cEndSave:false};
+try{S.theme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}catch(e){S.theme='light'}
+const root=document.getElementById('root');
+
+/* ===== helpers ===== */
+const seg=(k,opts,label)=>`<div class="tg">${label}<span class="seg" data-sk="${k}">${opts.map(([v,t])=>`<button data-v="${v}" aria-pressed="${String(S[k])===String(v)}">${t}</button>`).join('')}</span></div>`;
+const chg=(c,x)=>`<div class="chg ${c||''}">${x}</div>`;
+const mast=s=>`<span class="mastery m-${s}">${{known:'Known',learning:'Learning',new:'New'}[s]}</span>`;
+const sc=(c,t)=>`<span class="script" lang="${c.lang}">${t}</span>`;
+function phone(inner,cap,extra=''){return `<div class="fcol"><div class="fcap">${cap}</div><div class="ph" ${extra}>${inner}</div></div>`}
+function nav(on){const it=[['today','Today'],['decks','Decks'],['prog','Progress'],['gear','Settings']];
+ return `<div class="nav">${it.map(([k,t])=>`<div class="${k===on?'on':''}"><span class="pl">${ic(k)}</span>${t}</div>`).join('')}</div>`}
+function lbar(c){return `<div class="lbar"><span class="pill on">${sc(c,c.native)} ${c.name} ${ic('drop','')}</span></div>`}
+
+/* ===== 1. Today ===== */
+function budgetCards(m){return Math.round(m*60/17.5)}
+function today(c){
+ const B=15, st=S.tState;
+ let done=st==='start'?0:st==='mid'?12:st==='done'?15:0, queued=st==='catch'?15:15;
+ const catching=st==='catch';
+ const shown=S.ringMode==='done'?done:(st==='catch'?15:12);
+ const frac=Math.min(1,shown/B), R=88, circ=2*Math.PI*R;
+ const label=st==='done'?'Done':st==='mid'?'Continue':'Start';
+ const minsTxt=S.ringMode==='done'?`${shown} of ${B} min`:`${shown} of ${B} min queued`;
+ const split=catching?`<span class="sbadge sb-rev">17 reviews</span><span class="sbadge sb-none">0 new</span>`:
+  st==='done'?'':`<span class="sbadge sb-rev">${st==='mid'?'8':'11'} reviews</span><span class="sbadge sb-new">${st==='mid'?'2':'3'} new</span>`;
+ const msg=S.backlogMsg==='short'?`<p><b>Catching up: no new words today.</b></p>`:
+  `<p><b>Catching up: no new words today.</b></p><p class="t-sm" style="margin-top:4px">80 reviews, about 23 min. At 15 min a day you will catch up in 2 days.</p>`;
+ const sit=`<button class="card"><span class="ic">${ic('car')}</span><span class="tx"><span class="t-h" style="display:block">Situations</span><span class="t-sm">Hailing a cab, groceries, the doctor and more: key phrases, offline</span></span>${ic('chev')}</button>`;
+ const tagp=`<button class="card"><span class="ic">${ic('tag')}</span><span class="tx"><span class="t-h" style="display:block">Practise a theme</span><span class="t-sm">Pick a theme and drill its words</span></span>${ic('chev')}</button>`;
+ const sample=S.sampleNote==='on'?`<p class="t-sm" style="text-align:center;margin:0 8px 12px">Known words come up a few at a time: 1 or 2 stand for each deck.</p>`:'';
+ const old=`<div class="ghost" style="display:flex;gap:8px;margin:0 0 12px"><span class="btn tonal" style="flex:1">Start lesson</span><span class="btn tonal" style="flex:1">Review</span></div>`;
+ const inner=`${''}<div class="appbar"><span class="ttl">Today</span><button class="ib" aria-label="Menu">${ic('more')}</button></div>
+ ${lbar(c)}
+ <div class="scroll">
+  ${S.hl==='1'?chg('gone',old):''}
+  ${chg('upd',`<div class="ringbox"><div class="ring"><svg class="r" viewBox="0 0 200 200"><circle class="trk" cx="100" cy="100" r="${R}"/><circle class="fil" cx="100" cy="100" r="${R}" stroke-dasharray="${(circ*frac).toFixed(1)} ${circ.toFixed(1)}" ${frac===0?'stroke-opacity="0"':''}/></svg>
+   <button class="go ${st==='done'?'done':''}">${ic(st==='done'?'check':'play')}<span>${label}</span></button></div>
+   <div class="mins">${minsTxt}</div>
+   ${S.splitLine==='show'?`<div class="split">${split}</div>`:''}</div>`)}
+  ${catching?chg('',`<div class="banner">${ic('info')}<div>${msg}</div></div>`):''}
+  ${sample}
+  ${S.sitePlace==='card'?chg('',sit):''}
+  ${tagp}
+ </div>${nav('today')}`;
+ const cap={start:'Nothing done yet',mid:'In progress',done:'Budget reached',catch:'Backlog over 3 days of budget'}[st];
+ return phone(inner,`Today: ${cap}`);
+}
+
+/* ===== 2. Minutes a day ===== */
+function minCtl(c){
+ const m=S.minutes,preset=[5,10,15,20,30];
+ let ctl='';
+ if(S.minCtl==='chips'){
+  ctl=`<div class="chips">${preset.map(v=>`<button class="chip" data-min="${v}" aria-pressed="${m===v}">${ic('check','ck')}${v}</button>`).join('')}<button class="chip" data-act="minOpen" aria-pressed="${!preset.includes(m)}">${ic('check','ck')}Custom${!preset.includes(m)?' '+m:''}</button></div>`;
+ }else if(S.minCtl==='slider'){
+  const p=(m-5)/55*100;
+  ctl=`<div class="slider"><div class="rail"></div><div class="rf" style="width:${p}%"></div><div class="th" style="left:${p}%"></div></div><div class="t-sm" style="display:flex;justify-content:space-between"><span>5</span><span>60</span></div>`;
+ }else{
+  ctl=`<div class="stepper"><button class="ib" data-minstep="-5" aria-label="Less">${ic('minus')}</button><span class="v">${m}</span><button class="ib" data-minstep="5" aria-label="More">${ic('plus')}</button></div>`;
+ }
+ const other=`<div class="lcard"><h3>${sc(C.bn,C.bn.native)} ${C.bn.name}</h3><div class="lrow"><span class="t-body">Minutes a day</span><b class="t-body">15 min</b></div></div>`;
+ const main=`<div class="appbar"><button class="ib" aria-label="Back">${ic('back')}</button><span class="ttl">Languages I'm learning</span></div>
+ <div class="scroll"><div class="t-lab" style="margin-top:4px">Your courses</div>
+ ${chg('upd',`<div class="lcard"><h3>${sc(c,c.native)} ${c.name}</h3>
+  <div class="lrow"><span class="t-body">Minutes a day</span><b class="t-body">${m} min</b></div>
+  ${ctl}
+  <p class="t-sm" style="margin-top:10px">About ${budgetCards(m)} cards a day, at 17.5 seconds a card. Reviews come first; some new words always fit.</p></div>`)}
+ ${other}
+ <p class="t-sm">Existing learners start at 15 minutes for every course.</p></div>${nav('gear')}`;
+ const sheet=`<div class="appbar"><button class="ib" aria-label="Back">${ic('back')}</button><span class="ttl">Languages I'm learning</span></div><div class="scroll"><div class="lcard"><h3>${sc(c,c.native)} ${c.name}</h3><div class="lrow"><span class="t-body">Minutes a day</span><b class="t-body">${m} min</b></div></div></div>${nav('gear')}
+ <div class="scrim"></div><div class="sheet chg" style="outline-offset:-3px"><div class="grab"></div><div class="scroll"><h3>Custom minutes a day</h3><p class="t-sm">From 5 to 60 minutes.</p>
+  <div class="stepper"><button class="ib" aria-label="Less">${ic('minus')}</button><span class="v">${m}</span><button class="ib" aria-label="More">${ic('plus')}</button></div>
+  <p class="t-sm" style="text-align:center">About ${budgetCards(m)} cards a day</p>
+  <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px"><button class="btn text">Cancel</button><button class="btn fill">Save</button></div></div></div>`;
+ return phone(main,'Languages I’m learning: the course card')+(S.minCtl==='chips'?phone(sheet,'Custom value (when a control has no free value)'):'');
+}
+
+/* ===== 3. Cheatsheets ===== */
+function situations(c){
+ const rows=c.sit.map(s=>`<button class="card" style="margin-bottom:8px"><span class="ic">${ic(s.ic)}</span><span class="tx"><span class="t-h" style="display:block">${s.t}</span><span class="t-sm">${s.n} phrases, ${s.k} known</span></span>${ic('chev')}</button>`).join('');
+ return phone(`<div class="appbar"><button class="ib" aria-label="Back">${ic('back')}</button><span class="ttl">Situations</span></div><div class="scroll"><p class="t-sm" style="margin:0 0 12px">Key phrases for everyday moments. They work offline.</p>${chg('',rows)}</div>${nav('today')}`,'Situations (from the Today card)');
+}
+function sheet(c){
+ const t=c.sit[0];
+ const ws=t.w.filter(w=>S.shUnl==='all'||w.s!=='new');
+ const rows=ws.map(w=>`<div class="wrow ${w.s==='new'?'unl':''}"><span class="w">${sc(c,w.w)}</span><span class="rd">${w.r}</span><span class="mn">${w.m} ${S.shUnl==='all'?mast(w.s):''}</span><span class="act"><button class="audio sm" aria-label="Play">${ic('vol')}</button>${S.inspEntry==='row'?`<button class="ib" data-act="insp" aria-label="Inspect">${ic('info')}</button>`:''}</span></div>`).join('');
+ const hidden=S.shUnl==='learned'?t.w.length-ws.length:0;
+ return phone(`<div class="appbar"><button class="ib" aria-label="Back">${ic('back')}</button><span class="ttl">${t.t}</span>${S.inspEntry==='bar'?`<button class="ib" data-act="insp" aria-label="Inspect this sheet">${ic('info')}</button>`:''}</div>
+ <div class="scroll"><p class="t-sm" style="margin:0 0 4px">${ws.length} of ${t.w.length} phrases${hidden?`. ${hidden} not learnt yet are hidden.`:S.shUnl==='all'?'. Unlearned ones are marked New.':'.'}</p>${chg('',rows)}</div>
+ <div class="bottom">${chg('',`<button class="btn fill full">Practise this sheet</button>`)}</div>`,'A sheet: Hailing a cab');
+}
+function inspect(c){
+ const x=c.inspect;
+ return phone(`<div class="appbar"><button class="ib" aria-label="Back">${ic('back')}</button><span class="ttl">Inspect: Hailing a cab</span></div>
+ <div class="scroll">
+  <div class="t-lab" style="margin-top:2px">Card 3 of 5</div>
+  ${chg('',`<div style="display:flex;align-items:center;gap:8px"><div style="flex:1;min-width:0"><div style="font-size:calc(26px*1.4);line-height:1.25;font-weight:500">${sc(c,x.script)}</div><div class="t-sm">${x.reading}</div></div><button class="audio" aria-label="Play">${ic('vol')}</button></div>`)}
+  <div class="blk"><div><p class="tt">Notes</p><p>${x.notes}</p></div></div>
+  <div class="blk"><div><p class="tt">Example</p><p>${sc(c,x.ex.split('. ')[0]+'.')}</p><p class="t-sm" style="margin-top:2px">${x.ex.split('. ').slice(1).join('. ')}</p></div></div>
+  <div class="t-lab">Card data</div>
+  <dl class="kv"><dt>Meaning</dt><dd>${x.meaning}</dd><dt>IPA</dt><dd>${x.ipa}</dd><dt>Type</dt><dd>${x.pos}</dd><dt>Card id</dt><dd class="mono">${x.card}</dd><dt>Deck</dt><dd>${x.deck}, ${x.unit}</dd><dt>Audio</dt><dd class="mono">${x.audio}</dd><dt>Also</dt><dd>${sc(c,x.alt)}</dd><dt>On sheets</dt><dd>Hailing a cab, Asking the way</dd></dl>
+  <div class="t-lab">Your progress</div><p class="t-body">${mast('learning')} next review in 2 days</p>
+ </div><div class="bottom" style="display:flex;gap:8px"><button class="btn out" style="flex:1">Open in deck</button><button class="btn tonal" style="flex:1">Next card</button></div>`,'Inspect view of one sheet card');
+}
+
+/* ===== 4. Decks focus: generic per course; the data each course defines drives the options ===== */
+const FC={
+ hi:{lang:'hi',name:'Hindustani',native:'हिन्दुस्तानी',scripts:[['dev','Devanagari'],['perso','Perso-Arabic (Urdu)']],layers:[['per','Persian-leaning vocabulary','ज़िंदगी, मुश्किल, दुनिया'],['san','Sanskrit-leaning vocabulary','जीवन, कठिन, संसार']],themes:true},
+ bn:{lang:'bn',name:'Bengali',native:'বাংলা',scripts:[['bn','Bengali']],layers:[['san','Sanskrit-leaning (tatsama) vocabulary','জীবন, কঠিন, সংসার']],themes:true},
+ es:{lang:'es',name:'Spanish',native:'Español',scripts:[],layers:[],themes:true}};
+function focus(){
+ const c=FC[S.fcourse];
+ if(!S.fsel||S.fsel.course!==S.fcourse)S.fsel={course:S.fcourse,script:c.scripts[0]?c.scripts[0][0]:null,layers:{}};
+ const F=S.fsel,multi=c.scripts.length>1,single=c.scripts.length===1;
+ const scriptRows=c.scripts.map(([k,n])=>`<button class="opt-row" role="radio" data-focus="${k}" aria-checked="${F.script===k}"><span class="box rd">${ic('check')}</span><span class="tx">${n}<small>${S.scriptDoes==='show'?'Show the whole course in this script':'Learn the letters and reading of this script'}</small></span></button>`).join('');
+ const layerRows=c.layers.map(([k,n,ex])=>`<button class="opt-row" role="checkbox" data-vk="${k}" aria-checked="${!!F.layers[k]}"><span class="box">${ic('check')}</span><span class="tx">${n}<small>${sc(c,ex)}</small></span></button>`).join('');
+ const grp=(t,body)=>`<div class="t-lab" style="margin-top:8px">${t}</div>${body}<div class="sep"></div>`;
+ const parts=`<button class="opt-row" role="radio" aria-checked="false"><span class="box rd">${ic('check')}</span><span class="tx">Grammar primer<small>The rules decks</small></span></button>
+  <button class="opt-row" role="radio" aria-checked="false"><span class="box rd">${ic('check')}</span><span class="tx">Verb forms<small>The verb tables</small></span></button>
+  <button class="opt-row" role="radio" aria-checked="false"><span class="box rd">${ic('check')}</span><span class="tx">A theme…<small>Travel, family, food and more</small></span></button>`;
+ const chooser=`<div class="grab"></div><div class="scroll"><h3>Learn only…</h3><p class="t-sm" style="margin:0 0 6px">Built from this course's decks, in the path's order. ${c.name} offers ${c.scripts.length+c.layers.length?'what its data defines':'only the parts below'}.</p>
+  ${c.scripts.length?grp('Script'+(multi?' (pick one)':' (the course has one)'),scriptRows):''}
+  ${c.layers.length?grp('Vocabulary layers (separate from script)',layerRows):''}
+  ${grp('Parts of the course',parts)}
+  <button class="btn fill full" style="margin-top:4px">Show the track</button></div>`;
+ const decks=`<div class="appbar"><span class="ttl">Decks</span><button class="ib" aria-label="Search">${ic('more')}</button></div>${lbar(c)}
+  <div class="scroll">
+   ${S.focusEntry==='button'?chg('',`<button class="card"><span class="ic">${ic('abc')}</span><span class="tx"><span class="t-h" style="display:block">Learn only…</span><span class="t-sm">${[c.scripts.length?'a script':'',c.layers.length?'vocabulary':'','grammar','verbs','a theme'].filter(Boolean).join(', ')}</span></span>${ic('chev')}</button>`):''}
+   <div class="t-lab" style="margin-top:4px">Path</div>
+   <div class="wrow"><span class="w">Unit 1: First words</span><span class="mn">12 decks</span><span class="act">${ic('chev')}</span></div>
+   <div class="wrow"><span class="w">Unit 2: People</span><span class="mn">9 decks</span><span class="act">${ic('chev')}</span></div>
+   <div class="wrow"><span class="w">Unit 3: Getting around</span><span class="mn">8 decks</span><span class="act">${ic('chev')}</span></div></div>${nav('decks')}
+  ${S.focusOpen?`<div class="scrim"></div><div class="sheet chg" style="max-height:92%">${chooser}</div>`:''}`;
+ const showMode=S.scriptDoes==='show';
+ const scName=(c.scripts.find(x=>x[0]===F.script)||[0,''])[1];
+ const tracks=[];
+ if(c.scripts.length){
+  if(showMode)tracks.push(['Whole path in '+scName,'every deck, '+scName+' script','learning']);
+  else{tracks.push(['Script guide: '+scName,'letters, signs, joining','known']);tracks.push(['Reading: signs and shops',scName,'learning']);tracks.push(['Reading: short words',scName,'new'])}
+ }
+ c.layers.forEach(([k,n,ex])=>{if(F.layers[k])tracks.push([n,ex,'new'])});
+ const pieces=[];if(c.scripts.length)pieces.push((showMode?'Show ':'Learn ')+scName);c.layers.forEach(([k,n])=>{if(F.layers[k])pieces.push(n.replace(' vocabulary',''))});
+ const title=pieces.length?pieces.join(' + '):'Nothing picked from the data';
+ const trackView=`<div class="appbar"><button class="ib" aria-label="Back">${ic('back')}</button><span class="ttl">Learn only</span></div><div class="scroll">
+  ${chg('',`<div class="t-h" style="margin:4px 0 2px">${title}</div><p class="t-sm" style="margin:0 0 8px">${tracks.length} decks, in the path's order</p>${tracks.map(t=>`<div class="wrow"><span class="w script" style="white-space:normal;font-size:calc(16px*var(--t))" lang="${c.lang}">${t[0]}</span><span class="mn t-sm">${t[1]}</span><span class="act">${mast(t[2])}</span></div>`).join('')||'<p class="t-sm">Tick a layer or pick a part in the chooser.</p>'}`)}
+  </div><div class="bottom">${chg('',`<button class="btn fill full" ${tracks.length?'':'disabled style="opacity:.4"'}>Start</button>`)}</div>`;
+ return phone(decks,`Decks page and chooser: ${c.name}`)+phone(trackView,'The track that results');
+}
+
+/* ===== 5. Conversation ===== */
+function convo(c){
+ const v=c.conv;
+ const wordBtns=(txt,sel)=>S.cShow==='lookup'?txt.split(' ').map(w=>{const k=w.replace(/[?।.]/g,'');return `<button class="${k===v.sel&&S.cSel?'sel':''}" data-act="cword">${w}</button>`}).join(' '):txt;
+ const show=S.cShow;
+ const turn=(who,cls,t,r,m)=>`<div class="turn ${cls}"><span class="who">${who}</span><span class="tl script" lang="${c.lang}">${cls==='a'||1?wordBtns(t):t}</span><span class="rdg">${r}</span>${show!=='script'?`<span class="ml">${m}</span>`:''}</div>`;
+ const twoPhone=S.cWho==='two';
+ const bar=twoPhone?`<div class="status"><span class="pill on">Paired: Maya's phone</span></div>`:
+  `<div class="status"><span class="pill">One phone, tap to take turns</span></div>`;
+ const rec=S.cRec==='device'?'On this phone':S.cRec==='online'?'Online recognition':'On this phone, online if missing';
+ const live=`<div class="turn b live"><span class="who"><span class="live-dot"></span>Speaking</span><span class="tl script" lang="${c.lang}">${v.live}</span><span class="rdg">${v.liver}</span></div>`;
+ const controls=twoPhone?`<div class="mic"><button class="btn fill on">${ic('mic')}Listening</button></div>`:
+  `<div class="mic"><button class="btn tonal">${ic('spk')}Person A</button><button class="btn fill on">${ic('mic')}Person B</button></div>`;
+ const lookup=S.cShow==='lookup'&&S.cSel?`<div class="scrim"></div><div class="sheet chg" style="outline-offset:-3px"><div class="grab"></div><div class="scroll"><div style="display:flex;align-items:center;gap:8px"><div style="flex:1;min-width:0"><div style="font-size:calc(32px*1.4);line-height:1.2;font-weight:500">${sc(c,v.sel)}</div><div class="t-sm">${v.selr}</div></div><button class="audio" aria-label="Play">${ic('vol')}</button></div><p class="t-body" style="margin:8px 0">${v.selm} ${mast(v.sels)}</p>
+  <button class="btn fill full">${ic('plus')}Add to my words</button></div></div>`:'';
+ const save=`<button class="btn text" style="min-height:48px">${S.cSave==='none'?'Not saved':'Save transcript'}</button>`;
+ const main=`<div class="appbar"><button class="ib" aria-label="Back">${ic('back')}</button><span class="ttl">Conversation</span></div>
+  ${chg('',bar)}
+  <div class="status" style="padding-top:0"><span class="t-sm">${sc(c,c.native)} ${c.name} · ${rec} \u00b7 ${S.cSave==='none'?'not saved':'saving'}</span></div>
+  <div class="scroll"><div class="turns">${turn('Person A','a',v.a,v.ar,v.am)}${turn('Person B','b',v.b,v.br,v.bm)}${live}</div></div>
+  ${controls}${lookup}`;
+ const endSheet=`<div class="appbar"><button class="ib" aria-label="Back">${ic('back')}</button><span class="ttl">Conversation</span></div><div class="scroll"><div class="turns"><div class="turn a"><span class="who">Person A</span><span class="tl script" lang="${c.lang}">${v.a}</span></div></div></div>${controls}
+  <div class="scrim"></div><div class="sheet chg" style="outline-offset:-3px"><div class="grab"></div><div class="scroll"><h3>Conversation ended</h3><p class="t-sm">12 turns, 4 minutes</p>
+  <button class="opt-row" role="checkbox" aria-checked="true"><span class="box">${ic('check')}</span><span class="tx">Save the transcript<small>Kept on this phone</small></span></button>
+  <button class="opt-row" role="checkbox" aria-checked="${S.cSave==='words'}"><span class="box">${ic('check')}</span><span class="tx">Add 7 new words to my reviews<small>Words from this talk that are in your course</small></span></button>
+  <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px"><button class="btn text">Discard</button><button class="btn fill">Done</button></div></div></div>`;
+ return phone(main,'Conversation, live')+(S.cSave!=='none'?phone(endSheet,'When it ends (only if saving is on)'):'');
+}
+
+/* ===== page ===== */
+function render(){
+ const c=C[S.course];
+ const d=document.documentElement;d.setAttribute('data-theme',S.theme);
+ const P=PAL[S.theme];
+ root.className=S.hl==='1'?'hl-on':'';
+ root.style.cssText=Object.entries(P).map(([k,v])=>`--${k}:${v}`).join(';');
+ root.innerHTML=`
+ <section class="opt" id="s1"><h2>1. Today: one button (#521), minutes (#485), sampling (#680)</h2>
+  <p class="note">The two starts become one ring that fills toward the daily budget (owner, 2026-10-21: "Ring progress"), with the button inside. The app decides the split of reviews and new words. Known cards come up a few at a time per deck (#680), so reviews stay short.</p>
+  <div class="tw">${seg('tState',[['start','Not started'],['mid','In progress'],['done','Done'],['catch','Catching up']],'State')}${seg('ringMode',[['done','Minutes done'],['queued','Minutes queued']],'Ring and "12 of 15 min" show')}${seg('splitLine',[['show','Show split'],['hide','Hide split']],'Split line')}${seg('backlogMsg',[['short','Short'],['long','With catch-up estimate']],'Catching-up text')}${seg('sampleNote',[['off','Off'],['on','On']],'Sampling note')}${seg('sitePlace',[['card','Situations card here'],['none','Not on Today']],'Situations')}</div>
+  <div class="frames">${today(c)}</div></section>
+ <section class="opt" id="s2"><h2>2. Minutes a day, in Languages I'm learning (#485)</h2>
+  <p class="note">Settings part now (owner, 2026-10-23). Default 15 minutes. Cards a day is minutes x 60 / 17.5. The onboarding step waits for #474 and is not drawn.</p>
+  <div class="tw">${seg('minCtl',[['chips','Presets + custom'],['slider','Slider'],['stepper','Stepper']],'Control')}</div>
+  <div class="frames">${minCtl(c)}</div></section>
+ <section class="opt" id="s3"><h2>3. Situation cheatsheets and inspect (#724)</h2>
+  <p class="note">Sheets point to cards, so nothing is written twice. Each phrase shows script, reading, meaning and audio. Practise this sheet drills its cards. Inspect shows a card in full.</p>
+  <div class="tw">${seg('shUnl',[['all','Everything, unlearned marked'],['learned','Learned only']],'Unlearned items')}${seg('inspEntry',[['row','Info icon per row'],['bar','Inspect in the app bar']],'Inspect opens from')}</div>
+  <div class="frames">${situations(c)}${sheet(c)}${inspect(c)}</div></section>
+ <section class="opt" id="s4"><h2>4. Decks page: Learn only… (#723)</h2>
+  <p class="note">Tracks are built from the decks' data. Script, Persian vocabulary and Sanskrit vocabulary are separate options (owner, 2026-10-23); the script option lists every script of the course. The chooser is one generic feature for every course (owner, 2026-10-23: \"These focus groups will need to be present in all languages.\"): the script list and the vocabulary layers come from data each course defines. Pick the example course: Hindustani (two scripts, two layers), Bengali (one script, one layer) and Spanish (none, so only the parts of the course).</p>
+  <div class="tw">${seg('fcourse',[['hi','Hindustani'],['bn','Bengali'],['es','Spanish (no options)']],'Example course')}${seg('scriptDoes',[['show','Shows the course in the script'],['teach','Teaches the script itself']],'Script option')}${seg('focusEntry',[['button','Button on the Decks page'],['none','No button (chooser only)']],'Entry')}${seg('focusOpen',[['true','Chooser open'],['false','Chooser closed']],'Decks page')}</div>
+  <div class="frames">${focus()}</div></section>
+ <section class="opt" id="s5"><h2>5. Conversation (#722)</h2>
+  <p class="note">Two people talk and the app transcribes each turn live in the script, with the reading under it. The mockup draws the options the issue lists; none is chosen. Tap a word in "tap to look up" to open its sheet.</p>
+  <div class="tw">${seg('cWho',[['one','One phone'],['two','Two phones']],'Who talks')}${seg('cShow',[['script','Transcript only'],['mean','Plus meaning'],['lookup','Meaning and tap to look up']],'Shown')}${seg('cSave',[['none','Not saved'],['save','Saved'],['words','Saved, words join reviews']],'Saving')}${seg('cRec',[['device','On-device only'],['online','Online'],['both','On-device, online if missing']],'Recognition')}</div>
+  <div class="frames">${convo(c)}</div></section>`;
+ // global seg pressed state
+ document.querySelectorAll('#g-tw .seg').forEach(s=>{const k=s.dataset.k;s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(S[k])===b.dataset.v))});
+ document.title='Today Chain';
+}
+document.addEventListener('click',e=>{
+ const gb=e.target.closest('#g-tw .seg button');
+ if(gb){S[gb.parentNode.dataset.k]=gb.dataset.v;render();return}
+ const b=e.target.closest('[data-sk] button');
+ if(b){let v=b.dataset.v;if(v==='true')v=true;if(v==='false')v=false;S[b.parentNode.dataset.sk]=v;if(b.parentNode.dataset.sk==='cShow'&&v!=='lookup')S.cSel=false;render();return}
+ const m=e.target.closest('[data-min]');if(m){S.minutes=+m.dataset.min;render();return}
+ const st=e.target.closest('[data-minstep]');if(st){S.minutes=Math.max(5,Math.min(60,S.minutes+ +st.dataset.minstep));render();return}
+ const fc=e.target.closest('[data-focus]');if(fc){S.fsel.script=fc.dataset.focus;render();return}
+ const vk=e.target.closest('[data-vk]');if(vk){S.fsel.layers[vk.dataset.vk]=!S.fsel.layers[vk.dataset.vk];render();return}
+ const cw=e.target.closest('[data-act="cword"]');if(cw){S.cSel=!S.cSel;render();return}
+});
+render();
+
+/* ===== contrast self-check: console only ===== */
+function lum(h){const c=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]}
+function cr(a,b){const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
+const PAIRS=[['body text','onS','s',4.5],['captions, readings','onSv','s',4.5],['captions on cards','onSv','sLow',4.5],['text on cards','onS','sLow',4.5],['text on raised blocks','onS','sHigh',4.5],['captions on raised blocks','onSv','sHigh',4.5],['chip selected, tonal button, audio, Learning, ring button done','onSc','sc',4.5],['filled button, Known, New split, ring button','onP','p',4.5],['banner (Catching up)','onTC','tC',4.5],['text button and info icon on cards','p','sLow',4.5],['icon on raised block','p','sHigh',3],['outline against page','ol','s',3],['outline against card','ol','sLow',3],['ring fill against track','p','sc',3],['ring fill against page','p','s',3],['unselected chip text on page','onSv','s',4.5],['unselected chip text on card','onSv','sLow',4.5],['checkbox border on sheet','onSv','sLow',3],['change tag','onE','E',4.5],['change outline on page','E','s',3],['change outline on card','E','sLow',3],['live dot on card','E','s',3],['sheet title on sheet','onS','sLow',4.5],['own turn bubble','onSc','sc',4.5],['own turn bubble selected word','onP','p',4.5],['selected word against own bubble','p','sc',3]];
+window.__contrast=[];
+['light','dark'].forEach(t=>PAIRS.forEach(([n,f,b,need])=>{const r=cr(PAL[t][f],PAL[t][b]);window.__contrast.push({theme:t,pair:n,fg:f,bg:b,ratio:+r.toFixed(2),need,pass:r>=need})}));
+console.log('contrast',JSON.stringify(window.__contrast));
+</script>
+</body>
+</html>

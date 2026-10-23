@@ -1,0 +1,294 @@
+schema: 1
+id: "hi-quantities"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "quantities"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-0865"
+    target: "थोड़ा"
+    target_scripts: { perso_arabic: "تھوڑا" }
+    reading: "thōṛā"
+    ipa: "t̪ʰoːɽaː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "fem", kind: "feminine", word: "थोड़ी", reading: "thōṛī" }
+      - { id: "pl", kind: "plural", word: "थोड़े", reading: "thōṛē" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "मुझे थोड़ा पानी चाहिए।", reading: "mujhē thōṛā pānī cāhiē.", ipa: "mʊdʒʱeː t̪ʰoːɽaː paːniː tʃaːɦɪeː", bases: [{ word: "मुझे", ref: "hi-0745" }, { word: "पानी", ref: "hi-0333" }, { word: "चाहिए", ref: "hi-0792" }] }
+      - { target: "चाय में थोड़ी चीनी डालिए।", reading: "cāy mēm̐ thōṛī cīnī ḍāliē.", ipa: "tʃaːj mẽː t̪ʰoːɽiː tʃiːniː ɖaːlɪeː", bases: [{ word: "चाय", ref: "hi-0334" }, { word: "में", ref: "hi-0274" }, { word: "थोड़ी", base: "थोड़ा", reading: "thōṛā" }, { word: "चीनी", base: "चीनी", reading: "cīnī" }, { word: "डालिए", base: "डालना", reading: "ḍālnā" }] }
+    antonyms:
+      - { id: "little-more", ref: "hi-0866" }
+  - id: "hi-0866"
+    target: "बहुत"
+    target_scripts: { perso_arabic: "بہت" }
+    reading: "bahut"
+    ipa: "bəɦʊt̪"
+    pos: "adv"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "यह बहुत अच्छा है।", reading: "yah bahut acchā hai.", ipa: "jəɦ bəɦʊt̪ ətʃtʃʰaː ɦɛː", bases: [{ word: "यह", ref: "hi-0748" }, { word: "अच्छा", base: "अच्छा", reading: "acchā" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "बहुत से लोग आए।", reading: "bahut sē lōg āē.", ipa: "bəɦʊt̪ seː loːɡ aːeː", bases: [{ word: "से", ref: "hi-0276" }, { word: "लोग", ref: "hi-0761" }, { word: "आए", ref: "hi-0778" }] }
+    synonyms:
+      - { id: "very-sanskrit", word: "अत्यंत", reading: "atyant", ipa: "ət̪jənt̪" }
+      - { id: "very-persian", word: "बेहद", reading: "bēhad", ipa: "beːɦəd̪" }
+    antonyms:
+      - { id: "little", ref: "hi-0865" }
+  - id: "hi-0867"
+    target: "सारा"
+    target_scripts: { perso_arabic: "سارا" }
+    reading: "sārā"
+    ipa: "saːraː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "fem", kind: "feminine", word: "सारी", reading: "sārī" }
+      - { id: "pl", kind: "plural", word: "सारे", reading: "sārē" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "सारा काम हो गया।", reading: "sārā kām hō gayā.", ipa: "saːraː kaːm ɦoː ɡəjaː", bases: [{ word: "काम", ref: "hi-0194" }, { word: "हो", ref: "hi-0780" }, { word: "गया", ref: "hi-0777" }] }
+      - { target: "सारे बच्चे स्कूल गए।", reading: "sārē baccē skūl gaē.", ipa: "saːreː bətʃtʃeː skuːl ɡəeː", bases: [{ word: "सारे", base: "सारा", reading: "sārā" }, { word: "बच्चे", ref: "hi-0111" }, { word: "स्कूल", base: "स्कूल", reading: "skūl" }, { word: "गए", ref: "hi-0777" }] }
+    synonyms:
+      - { id: "whole", ref: "hi-0868" }
+  - id: "hi-0868"
+    target: "पूरा"
+    target_scripts: { perso_arabic: "پورا" }
+    reading: "pūrā"
+    ipa: "puːraː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "fem", kind: "feminine", word: "पूरी", reading: "pūrī" }
+      - { id: "pl", kind: "plural", word: "पूरे", reading: "pūrē" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "मेरा काम पूरा हो गया।", reading: "mērā kām pūrā hō gayā.", ipa: "meːraː kaːm puːraː ɦoː ɡəjaː", bases: [{ word: "मेरा", ref: "hi-0752" }, { word: "काम", ref: "hi-0194" }, { word: "हो", ref: "hi-0780" }, { word: "गया", ref: "hi-0777" }] }
+      - { target: "पूरे दस मिनट लगे।", reading: "pūrē das minaṭ lagē.", ipa: "puːreː d̪əs mɪnəʈ ləɡeː", bases: [{ word: "पूरे", base: "पूरा", reading: "pūrā" }, { word: "दस", ref: "hi-0207" }, { word: "मिनट", base: "मिनट", reading: "minaṭ" }, { word: "लगे", base: "लगना", reading: "lagnā" }] }
+    synonyms:
+      - { id: "entire", ref: "hi-0867" }
+    collocations:
+      - { id: "fully", ref: "hi-0845" }
+  - id: "hi-0869"
+    target: "आधा"
+    target_scripts: { perso_arabic: "آدھا" }
+    reading: "ādhā"
+    ipa: "aːd̪ʱaː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "fem", kind: "feminine", word: "आधी", reading: "ādhī" }
+      - { id: "pl", kind: "plural", word: "आधे", reading: "ādhē" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "आधी रोटी खाओ।", reading: "ādhī rōṭī khāō.", ipa: "aːd̪ʱiː roːʈiː kʰaːoː", bases: [{ word: "आधी", base: "आधा", reading: "ādhā" }, { word: "रोटी", ref: "hi-0335" }, { word: "खाओ", ref: "hi-0332" }] }
+      - { target: "मुझे आधा किलो आलू चाहिए।", reading: "mujhē ādhā kilō ālū cāhiē.", ipa: "mʊdʒʱeː aːd̪ʱaː kɪloː aːluː tʃaːɦɪeː", bases: [{ word: "मुझे", ref: "hi-0745" }, { word: "किलो", ref: "hi-0241" }, { word: "आलू", ref: "hi-0250" }, { word: "चाहिए", ref: "hi-0792" }] }
+    antonyms:
+      - { id: "whole", ref: "hi-0868" }
+    collocations:
+      - { id: "kilo", ref: "hi-0241" }
+  - id: "hi-0870"
+    target: "काफ़ी"
+    target_scripts: { perso_arabic: "کافی" }
+    reading: "kāfī"
+    ipa: "kaːfiː"
+    pos: "adv"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "एक कप चाय काफ़ी है।", reading: "ēk kap cāy kāfī hai.", ipa: "eːk kəp tʃaːj kaːfiː ɦɛː", bases: [{ word: "एक", ref: "hi-0198" }, { word: "कप", ref: "hi-0877" }, { word: "चाय", ref: "hi-0334" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "यह काफ़ी नहीं है।", reading: "yah kāfī nahīm̐ hai.", ipa: "jəɦ kaːfiː nəɦĩː ɦɛː", bases: [{ word: "यह", ref: "hi-0748" }, { word: "नहीं", ref: "hi-0156" }, { word: "है", ref: "hi-0780" }] }
+    synonyms:
+      - { id: "enough-sanskrit", word: "पर्याप्त", reading: "paryāpt", ipa: "pərjaːpt̪" }
+  - id: "hi-0871"
+    target: "ढेर"
+    target_scripts: { perso_arabic: "ڈھیر" }
+    reading: "ḍhēr"
+    ipa: "ɖʱeːr"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "मेज़ पर किताबों का ढेर है।", reading: "mēz par kitābōm̐ kā ḍhēr hai.", ipa: "meːz pər kɪt̪aːbõː kaː ɖʱeːr ɦɛː", bases: [{ word: "मेज़", ref: "hi-0434" }, { word: "पर", ref: "hi-0275" }, { word: "किताबों", base: "किताब", reading: "kitāb" }, { word: "का", ref: "hi-0279" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "उसके पास पैसों का ढेर है।", reading: "uskē pās paisōm̐ kā ḍhēr hai.", ipa: "ʊskeː paːs pɛːsõː kaː ɖʱeːr ɦɛː", bases: [{ word: "उसके", ref: "hi-0749" }, { word: "पास", ref: "hi-0293" }, { word: "पैसों", base: "पैसा", reading: "paisā" }, { word: "का", ref: "hi-0279" }, { word: "है", ref: "hi-0780" }] }
+    collocations:
+      - { id: "money", ref: "hi-0234" }
+  - id: "hi-0872"
+    target: "दर्जन"
+    target_scripts: { perso_arabic: "درجن" }
+    reading: "darjan"
+    ipa: "d̪ərdʒən"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "मुझे एक दर्जन अंडे चाहिए।", reading: "mujhē ēk darjan aṇḍē cāhiē.", ipa: "mʊdʒʱeː eːk d̪ərdʒən əɳɖeː tʃaːɦɪeː", bases: [{ word: "मुझे", ref: "hi-0745" }, { word: "एक", ref: "hi-0198" }, { word: "अंडे", ref: "hi-0258" }, { word: "चाहिए", ref: "hi-0792" }] }
+      - { target: "दो दर्जन केले लीजिए।", reading: "dō darjan kēlē lījiē.", ipa: "d̪oː d̪ərdʒən keːleː liːdʒɪeː", bases: [{ word: "दो", ref: "hi-0199" }, { word: "केले", base: "केला", reading: "kēlā" }, { word: "लीजिए", ref: "hi-0786" }] }
+  - id: "hi-0873"
+    target: "ग्राम"
+    target_scripts: { perso_arabic: "گرام" }
+    reading: "grām"
+    ipa: "ɡraːm"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "मुझे दो सौ ग्राम दाल चाहिए।", reading: "mujhē dō sau grām dāl cāhiē.", ipa: "mʊdʒʱeː d̪oː sɔː ɡraːm d̪aːl tʃaːɦɪeː", bases: [{ word: "मुझे", ref: "hi-0745" }, { word: "दो", ref: "hi-0199" }, { word: "सौ", ref: "hi-0225" }, { word: "दाल", ref: "hi-0261" }, { word: "चाहिए", ref: "hi-0792" }] }
+      - { target: "पाँच सौ ग्राम पनीर दीजिए।", reading: "pām̐c sau grām panīr dījiē.", ipa: "pãːtʃ sɔː ɡraːm pəniːr d̪iːdʒɪeː", bases: [{ word: "पाँच", ref: "hi-0202" }, { word: "सौ", ref: "hi-0225" }, { word: "पनीर", base: "पनीर", reading: "panīr" }, { word: "दीजिए", ref: "hi-0785" }] }
+  - id: "hi-0874"
+    target: "लीटर"
+    target_scripts: { perso_arabic: "لیٹر" }
+    reading: "līṭar"
+    ipa: "liːʈər"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "एक लीटर दूध दीजिए।", reading: "ēk līṭar dūdh dījiē.", ipa: "eːk liːʈər d̪uːd̪ʱ d̪iːdʒɪeː", bases: [{ word: "एक", ref: "hi-0198" }, { word: "दूध", ref: "hi-0259" }, { word: "दीजिए", ref: "hi-0785" }] }
+      - { target: "दो लीटर पानी लाओ।", reading: "dō līṭar pānī lāō.", ipa: "d̪oː liːʈər paːniː laːoː", bases: [{ word: "दो", ref: "hi-0199" }, { word: "पानी", ref: "hi-0333" }, { word: "लाओ", base: "लाना", reading: "lānā" }] }
+    collocations:
+      - { id: "milk", ref: "hi-0259" }
+  - id: "hi-0875"
+    target: "पाव"
+    target_scripts: { perso_arabic: "پاؤ" }
+    reading: "pāv"
+    ipa: "paːʋ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "एक पाव मक्खन लीजिए।", reading: "ēk pāv makkhan lījiē.", ipa: "eːk paːʋ məkkʰən liːdʒɪeː", bases: [{ word: "एक", ref: "hi-0198" }, { word: "मक्खन", base: "मक्खन", reading: "makkhan" }, { word: "लीजिए", ref: "hi-0786" }] }
+      - { target: "एक पाव चीनी काफ़ी है।", reading: "ēk pāv cīnī kāfī hai.", ipa: "eːk paːʋ tʃiːniː kaːfiː ɦɛː", bases: [{ word: "एक", ref: "hi-0198" }, { word: "चीनी", base: "चीनी", reading: "cīnī" }, { word: "काफ़ी", ref: "hi-0870" }, { word: "है", ref: "hi-0780" }] }
+  - id: "hi-0876"
+    target: "चम्मच"
+    target_scripts: { perso_arabic: "چمچ" }
+    reading: "cammac"
+    ipa: "tʃəmmətʃ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "एक चम्मच चीनी डालिए।", reading: "ēk cammac cīnī ḍāliē.", ipa: "eːk tʃəmmətʃ tʃiːniː ɖaːlɪeː", bases: [{ word: "एक", ref: "hi-0198" }, { word: "चीनी", base: "चीनी", reading: "cīnī" }, { word: "डालिए", base: "डालना", reading: "ḍālnā" }] }
+      - { target: "रोज़ सुबह एक चम्मच शहद लीजिए।", reading: "rōz subah ēk cammac śahad lījiē.", ipa: "roːz sʊbəɦ eːk tʃəmmətʃ ʃəɦəd̪ liːdʒɪeː", bases: [{ word: "रोज़", ref: "hi-0451" }, { word: "सुबह", ref: "hi-0302" }, { word: "एक", ref: "hi-0198" }, { word: "शहद", base: "शहद", reading: "śahad" }, { word: "लीजिए", ref: "hi-0786" }] }
+    collocations:
+      - { id: "honey", word: "शहद", reading: "śahad", ipa: "ʃəɦəd̪" }
+  - id: "hi-0877"
+    target: "कप"
+    target_scripts: { perso_arabic: "کپ" }
+    reading: "kap"
+    ipa: "kəp"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "एक कप चाय दीजिए।", reading: "ēk kap cāy dījiē.", ipa: "eːk kəp tʃaːj d̪iːdʒɪeː", bases: [{ word: "एक", ref: "hi-0198" }, { word: "चाय", ref: "hi-0334" }, { word: "दीजिए", ref: "hi-0785" }] }
+      - { target: "हर सुबह एक कप चाय पीता हूँ।", reading: "har subah ēk kap cāy pītā hūm̐.", ipa: "ɦər sʊbəɦ eːk kəp tʃaːj piːt̪aː ɦũː", bases: [{ word: "हर", base: "हर", reading: "har" }, { word: "सुबह", ref: "hi-0302" }, { word: "एक", ref: "hi-0198" }, { word: "चाय", ref: "hi-0334" }, { word: "पीता", ref: "hi-0602" }, { word: "हूँ", ref: "hi-0780" }] }
+    collocations:
+      - { id: "tea", ref: "hi-0334" }
+  - id: "hi-0878"
+    target: "गिलास"
+    target_scripts: { perso_arabic: "گلاس" }
+    reading: "gilās"
+    ipa: "ɡɪlaːs"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "एक गिलास पानी दीजिए।", reading: "ēk gilās pānī dījiē.", ipa: "eːk ɡɪlaːs paːniː d̪iːdʒɪeː", bases: [{ word: "एक", ref: "hi-0198" }, { word: "पानी", ref: "hi-0333" }, { word: "दीजिए", ref: "hi-0785" }] }
+      - { target: "दो गिलास दूध पीजिए।", reading: "dō gilās dūdh pījiē.", ipa: "d̪oː ɡɪlaːs d̪uːd̪ʱ piːdʒɪeː", bases: [{ word: "दो", ref: "hi-0199" }, { word: "दूध", ref: "hi-0259" }, { word: "पीजिए", ref: "hi-0602" }] }
+  - id: "hi-0879"
+    target: "बोतल"
+    target_scripts: { perso_arabic: "بوتل" }
+    reading: "bōtal"
+    ipa: "boːt̪əl"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "pl", kind: "plural", word: "बोतलें", reading: "bōtalēm̐" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "एक बोतल पानी लाओ।", reading: "ēk bōtal pānī lāō.", ipa: "eːk boːt̪əl paːniː laːoː", bases: [{ word: "एक", ref: "hi-0198" }, { word: "पानी", ref: "hi-0333" }, { word: "लाओ", base: "लाना", reading: "lānā" }] }
+      - { target: "मेरे बैग में पानी की बोतल है।", reading: "mērē baig mēm̐ pānī kī bōtal hai.", ipa: "meːreː bɛːɡ mẽː paːniː kiː boːt̪əl ɦɛː", bases: [{ word: "मेरे", ref: "hi-0752" }, { word: "बैग", base: "बैग", reading: "baig" }, { word: "में", ref: "hi-0274" }, { word: "पानी", ref: "hi-0333" }, { word: "की", ref: "hi-0279" }, { word: "है", ref: "hi-0780" }] }
+    collocations:
+      - { id: "water", ref: "hi-0333" }
+  - id: "hi-0880"
+    target: "टुकड़ा"
+    target_scripts: { perso_arabic: "ٹکڑا" }
+    reading: "ṭukṛā"
+    ipa: "ʈʊkɽaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "एक टुकड़ा केक दीजिए।", reading: "ēk ṭukṛā kēk dījiē.", ipa: "eːk ʈʊkɽaː keːk d̪iːdʒɪeː", bases: [{ word: "एक", ref: "hi-0198" }, { word: "केक", base: "केक", reading: "kēk" }, { word: "दीजिए", ref: "hi-0785" }] }
+      - { target: "उसने रोटी का एक टुकड़ा खाया।", reading: "usnē rōṭī kā ēk ṭukṛā khāyā.", ipa: "ʊsneː roːʈiː kaː eːk ʈʊkɽaː kʰaːjaː", bases: [{ word: "उसने", ref: "hi-0749" }, { word: "रोटी", ref: "hi-0335" }, { word: "का", ref: "hi-0279" }, { word: "एक", ref: "hi-0198" }, { word: "खाया", ref: "hi-0332" }] }
+    collocations:
+      - { id: "cake", word: "केक", reading: "kēk", ipa: "keːk" }
+  - id: "hi-0881"
+    target: "जोड़ी"
+    target_scripts: { perso_arabic: "جوڑی" }
+    reading: "jōṛī"
+    ipa: "dʒoːɽiː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "pl", kind: "plural", word: "जोड़ियाँ", reading: "jōṛiyām̐" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "मुझे जूतों की एक जोड़ी चाहिए।", reading: "mujhē jūtōm̐ kī ēk jōṛī cāhiē.", ipa: "mʊdʒʱeː dʒuːt̪õː kiː eːk dʒoːɽiː tʃaːɦɪeː", bases: [{ word: "मुझे", ref: "hi-0745" }, { word: "जूतों", base: "जूता", reading: "jūtā" }, { word: "की", ref: "hi-0279" }, { word: "एक", ref: "hi-0198" }, { word: "चाहिए", ref: "hi-0792" }] }
+      - { target: "मैंने जूतों की नई जोड़ी ख़रीदी।", reading: "mainnē jūtōm̐ kī naī jōṛī k͟harīdī.", ipa: "mɛːnneː dʒuːt̪õː kiː nəiː dʒoːɽiː xəriːd̪iː", bases: [{ word: "मैंने", ref: "hi-0745" }, { word: "जूतों", base: "जूता", reading: "jūtōm̐" }, { word: "की", ref: "hi-0279" }, { word: "नई", base: "नया", reading: "naī" }, { word: "ख़रीदी", ref: "hi-0794" }] }
+  - ref: "hi-0163"
+  - ref: "hi-0816"
+  - ref: "hi-0105"
+  - ref: "hi-0241"
+  - ref: "hi-0759"
+  - ref: "hi-0831"
