@@ -80,11 +80,15 @@ final QuestionType matchPairsType = QuestionType(
   eligible: chooseMeaningType.eligible,
 );
 
-/// Put the target's words in order. Production of a card that rearranges.
+/// Put the target's words in order. Production of a card that rearranges:
+/// whose target has three or more words, whatever its `pos` is, or two where
+/// it is a phrase ([Card.rearranges], ADR-0024). Read from the card's data
+/// only; a reading question is an exam item and never rearranged.
 final QuestionType rearrangeType = QuestionType(
   ask: Ask.rearrange,
   skill: DrillMode.production,
-  eligible: (item, context) => item.card.rearranges,
+  eligible: (item, context) =>
+      item.card is! QuestionCard && item.card.rearranges,
 );
 
 /// Shown the meaning, choose the word, where the language is not typed.
