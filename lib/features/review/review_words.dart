@@ -62,7 +62,7 @@ List<RudeAlike> rudeAlikesOf(AppState state, Card card) {
   final out = <RudeAlike>[];
   for (final pair in pairs) {
     found:
-    for (final entry in state.decks) {
+    for (final entry in state.allDecks) {
       for (final other in entry.cards) {
         if (other.id == pair.id && isRude(other, entry)) {
           out.add((partner: other, kind: AlikeKind.sound, care: pair.care));

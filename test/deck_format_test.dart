@@ -278,6 +278,9 @@ $units''';
 CoursePath fromEnglish(String text) =>
     parseLanguagePath(text).forNative('en', exists: (_) => true);
 
+CoursePath fromEnglishPath(LanguagePath language) =>
+    language.forNative('en', exists: (_) => true);
+
 Matcher refusing(String why) => throwsA(
   isA<DeckParseException>().having((e) => e.message, 'message', contains(why)),
 );
@@ -1322,6 +1325,51 @@ pattern:
           reason: units,
         );
       }
+    });
+
+    test('a path may give its own words per level, which are the B1 total; '
+        'without them the units\' sizes are', () {
+      const units =
+          '  - decks: [hi-first-words]\n    words: 40\n    milestone: A1\n'
+          '  - decks: [hi-market]\n    words: 30\n    milestone: A2\n'
+          '  - decks: [hi-home]\n    words: 20\n    milestone: B1\n';
+      expect(parseLanguagePath(pathFile(units)).plannedWords, 90);
+      final own = parseLanguagePath(
+        '${pathFile(units)}levels: { A1: 120, A2: 60, B1: 80 }\n',
+      );
+      expect(own.levels, {
+        Milestone.a1: 120,
+        Milestone.a2: 60,
+        Milestone.b1: 80,
+      });
+      expect(own.plannedWords, 260);
+      expect(fromEnglishPath(own).plannedWords, 260);
+
+      for (final (levels, why) in <(String, String)>[
+        ('levels: { A1: 120, A2: 60 }', 'levels needs B1'),
+        ('levels: { A1: 120, A2: 60, B1: 80, C1: 5 }', 'unknown level "C1"'),
+        ('levels: { A1: 0, A2: 60, B1: 80 }', 'levels.A1 must be a whole'),
+        ('levels: { A1: "9", A2: 60, B1: 80 }', 'levels.A1 must be a whole'),
+        ('levels: [120, 60, 80]', 'levels must be a mapping'),
+      ]) {
+        expect(
+          () => parseLanguagePath('${pathFile(units)}$levels\n'),
+          refusing(why),
+          reason: levels,
+        );
+      }
+    });
+
+    test('a planned theme unit may plan no new roots: words 0', () {
+      String theme(int words) => pathFile(
+        '  - planned: { id: hi-colours, theme: colours, words: $words }\n'
+        '    listening_passages:\n'
+        '      - { id: heard, text: { en: "Heard" } }\n'
+        '    reading_passages:\n'
+        '      - { id: read, text: { en: "Read" } }\n',
+      );
+      expect(parseLanguagePath(theme(0)).plan.single.words, 0);
+      expect(() => parseLanguagePath(theme(-1)), refusing('0 or more'));
     });
 
     group('one path, every native language', () {
