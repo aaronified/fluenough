@@ -13,6 +13,7 @@ toolchain. Exits non-zero if any deck fails. See docs/DECK-FORMAT.md.
 
 from __future__ import annotations
 
+import os
 import re
 import sys
 import unicodedata
@@ -6142,6 +6143,11 @@ def check_index(targets: list[Path], reports: list[Report]) -> list[str]:
     working directory: a check that quietly passes when run from the wrong
     directory is worse than no check, because it is trusted."""
     if not any(t.resolve() == ROOT / "decks" for t in targets):
+        return []
+    # CI sets this: the index is regenerated on main after each merge
+    # (.github/workflows/deck-index.yml), so a pull request is not failed
+    # for it. Unset, as locally, the check stays.
+    if os.environ.get("FLUENOUGH_SKIP_INDEX_CHECK"):
         return []
     # The index tool reads decks through this module: share it, so that the
     # checks across files are not run twice.
