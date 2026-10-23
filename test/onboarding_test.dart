@@ -149,7 +149,7 @@ void main() {
               )
               .hitTestable()
               .first,
-          const Offset(-200, 0),
+          const Offset(-44, 0),
         );
         await tester.pumpAndSettle(const Duration(seconds: 2));
         expect(state.shownLanguage, 'bn');

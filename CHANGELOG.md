@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- The language bar is a centred, looping wheel with the selection fixed at the centre (All moves to the left on Progress): it follows the finger 1:1, ticks at each language, coasts to a detent on a fling and settles on a spring, a touch stops it, and the pill then grows over 0.3 s to the language's name (#703, #682).
 - A finished deck's Revise now records its answers and moves the schedule, like quick revision; only number practice is unrecorded (#499, ADR-0033).
 
 ### Fixed

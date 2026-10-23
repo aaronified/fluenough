@@ -1,12 +1,14 @@
-import 'dart:async';
+import 'dart:math' as math;
 
+import 'package:flutter/gestures.dart' show DragStartBehavior;
 import 'package:flutter/material.dart';
+import 'package:flutter/physics.dart';
 import 'package:flutter/semantics.dart';
 import 'package:flutter/services.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
-import '../../app/language_choice.dart';
+import '../../app/deck_catalog.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import 'language_glyph.dart';
@@ -71,19 +73,39 @@ class _LanguageBarFrameState extends State<LanguageBarFrame> {
   );
 }
 
-/// The language bar at the top of Today, Decks and Progress (#528,
-/// its approved mockup, in git history): always folded, 56 high. The language
-/// shown is its chip, glyph and name; every other language the learner
-/// learns is its bare glyph, faded to 64%, in the learner's order, the chip
-/// in its own place. Then a 48 wide slot, which on Progress holds the All
-/// button and elsewhere stays empty so that nothing moves between the
-/// tabs, and the bug report button.
+/// The language bar at the top of Today, Decks and Progress: a wheel of the
+/// languages the learner learns, turning under a fixed selection at its
+/// centre (#703, #682; `docs/mockups/language-wheel.html`, approved by the
+/// owner, 2026-10-21: "Works. Approved.", removed once built).
 ///
-/// A sideways swipe on the bar shows the next or previous language, and a
-/// tap opens the menu of every language with its chip. Where the row does
-/// not fit, it scrolls to keep the chip clear, and each end with more
-/// beyond it fades out over 16. For a screen reader the languages are one
-/// button, with the swipe as two actions.
+/// * The wheel is centred between two 48 wide slots: on Progress the left
+///   one holds the All button, elsewhere it stays empty so that nothing
+///   moves between the tabs; the bug report button is the right one.
+/// * The selection is a pill fixed at the centre and the languages' glyphs
+///   pass it, drawn as a wheel seen edge on: a glyph [detent] times its
+///   offset round a wheel of [radius] sits at the sine of that angle, and is
+///   smaller and fainter the further it is. Both ends fade out. There are
+///   no ends to the wheel: past the last language comes the first, and a
+///   few languages repeat round it.
+/// * A finger moves the wheel 1:1, a long drag passes many languages. Each
+///   language is a detent, with a tick (`HapticFeedback.selectionClick`),
+///   in a drag and in a fling.
+/// * On release the wheel keeps the finger's speed and coasts to the
+///   detent that plain friction ([friction] per second) would stop at,
+///   carried there by a spring (damping ratio [dampingRatio], stiffness
+///   [stiffness], mass 1). The same fling goes the same distance. A touch
+///   stops it where it is; lifting without dragging settles it on the
+///   nearest detent.
+/// * The language at the centre when it rests is the one shown. As soon as
+///   it rests, the pill grows over [expansion] to the glyph and full name,
+///   and the neighbours are pushed out the same gap from its edge; the
+///   label under the bar, which names the language at the centre while the
+///   wheel moves, fades out as it does. A touch collapses it.
+///
+/// A tap opens the menu of every language with its chip. Where the phone
+/// asks for reduced motion, the wheel lands on its detent at once and the
+/// pill grows without animation. For a screen reader the languages are one
+/// button, with the swipe as two actions; the arrow keys move one detent.
 class LanguageBar extends StatefulWidget {
   const LanguageBar({
     super.key,
@@ -100,8 +122,28 @@ class LanguageBar extends StatefulWidget {
   /// Whether the screen has scrolled under the bar: a thin line parts them.
   final bool scrolledUnder;
 
-  /// How wide each fading end is.
-  static const double fade = 16;
+  /// The distance between two languages on the wheel, in dp.
+  static const double detent = 44;
+
+  /// The wheel's radius, in dp (owner's mockup).
+  static const double radius = 150;
+
+  /// How far from the centre a glyph is still drawn, in detents.
+  static const double visible = 4.9;
+
+  /// The settle spring (owner, 2026-10-21).
+  static const double dampingRatio = 0.4;
+  static const double stiffness = 800;
+
+  /// The fling's friction, per second (owner, 2026-10-21): a fling of speed
+  /// `v` detents per second stops `v / friction` detents on.
+  static const double friction = 8;
+
+  /// How long the pill takes to grow to the name (owner, 2026-10-21).
+  static const Duration expansion = Duration(milliseconds: 300);
+
+  /// The pill's width folded, in dp: wide enough for "हि" and "Es".
+  static const double pillWidth = 52;
 
   /// The faded languages' alpha (owner, 2026-10-16: "64% is right").
   static const double fadedAlpha = 0.64;
@@ -111,86 +153,90 @@ class LanguageBar extends StatefulWidget {
 }
 
 class _LanguageBarState extends State<LanguageBar>
-    with SingleTickerProviderStateMixin {
-  final ScrollController _row = ScrollController();
-  final GlobalKey _scrollKey = GlobalKey();
-  final GlobalKey _rowKey = GlobalKey();
-  final GlobalKey _stackKey = GlobalKey();
-  final Map<String, GlobalKey> _itemKeys = <String, GlobalKey>{};
+    with TickerProviderStateMixin {
   final MenuController _menu = MenuController();
   final OverlayPortalController _labelPortal = OverlayPortalController();
   final LayerLink _link = LayerLink();
 
-  bool _fadeStart = false;
-  bool _fadeEnd = false;
+  /// The settle and the coast: a spring on the wheel's position.
+  late final AnimationController _run =
+      AnimationController.unbounded(vsync: this)
+        ..addListener(_runTick)
+        ..addStatusListener(_runStatus);
 
-  /// The language the row was last scrolled to keep clear.
-  String? _centredOn;
+  /// The pill growing to the name, 0 to 1.
+  late final AnimationController _grow = AnimationController(
+    vsync: this,
+    duration: LanguageBar.expansion,
+  )..addListener(_repaint);
+
+  /// The pill's pulse at a detent.
+  late final AnimationController _pulse = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 110),
+  )..addListener(_repaint);
+
+  /// Where the wheel is, in detents: language `i` is at the centre at
+  /// `i + n * k`. Null until the first build.
+  double? _pos;
+  int _count = 0;
+  int _lastDetent = 0;
+  double _target = 0;
 
   bool _dragging = false;
-  double _drag = 0;
+  double _from = 0;
+  double _dx = 0;
 
-  /// The scroll offset the row is animating to, while it is.
-  double? _animatingTo;
+  /// A touch stopped the coast, so its tap does not open the menu.
+  bool _caught = false;
 
-  /// While dragging, the language the swipe would show.
-  String? _target;
-
-  /// How far the row gives at an end, where there is no language to go to.
-  double _give = 0;
-
-  /// Each language's place in the row, measured after layout, for the
-  /// selection to slide between.
-  Map<String, Rect> _rects = const <String, Rect>{};
-
-  /// How far a swipe has taken the selection toward [_target], 0 to 1: it
-  /// follows the finger, and a swipe past a third of the bar commits.
-  double _progress = 0;
-
-  /// The momentum after a fling: it runs from 0 to 1 while the selection
-  /// passes through [_flingSteps] languages from [_flingFrom] (#682).
-  late final AnimationController _fling = AnimationController(vsync: this)
-    ..addListener(_flingTick)
-    ..addStatusListener(_flingStatus);
-  List<String> _flingCodes = const <String>[];
-  int _flingFrom = 0;
-  int _flingSteps = 0;
-  int _flingLast = 0;
-  AppState? _flingState;
-
-  /// Where the selection is while the momentum runs.
-  Rect? _flingRect;
-
-  bool get _flinging => _fling.isAnimating;
-
-  /// Whether the bar follows its animation with no easing of its own.
-  bool get _instant => _dragging || _flinging || _flingRect != null;
-
-  GlobalKey _keyFor(String code) => _itemKeys.putIfAbsent(code, GlobalKey.new);
-
-  /// The language the label under the bar names, and whether it shows.
-  String? _labelCode;
+  /// The label under the bar shows, while the wheel moves.
   bool _labelOn = false;
-  Timer? _labelTimer;
+
+  /// The pill shows the name and the centre glyph is hidden.
+  bool _expanded = false;
+  double _fullWidth = LanguageBar.pillWidth;
+  double _push = 0;
+
+  bool _focused = false;
+
+  /// This bar's own menu or screen-reader action chose the language, so the
+  /// wheel turns to it; the bar on another tab just moves there.
+  bool _chosenHere = false;
+  bool _building = false;
+
+  void _repaint() {
+    if (mounted && !_building) setState(() {});
+  }
 
   @override
   void dispose() {
-    _labelTimer?.cancel();
-    _fling.dispose();
-    _row.dispose();
+    _run.dispose();
+    _grow.dispose();
+    _pulse.dispose();
     super.dispose();
   }
 
   bool get _onProgress => widget.screen == LanguageBarScreen.progress;
+  bool get _rtl => Directionality.of(context) == TextDirection.rtl;
+
+  /// 1, or -1 where the next language is to the left.
+  double get _dir => _rtl ? -1 : 1;
+
+  bool get _still => MediaQuery.disableAnimationsOf(context);
+
+  bool get _busy => _dragging || _run.isAnimating || _caught;
+
+  int _mod(int i) => _count <= 0 ? 0 : ((i % _count) + _count) % _count;
 
   void _toggleMenu() => _menu.isOpen ? _menu.close() : _menu.open();
 
   void _choose(AppState state, LanguageInfo language) {
     _menu.close();
     final changed = language.code != state.shownLanguage;
+    _chosenHere = changed;
     state.showLanguage(language.code, allOff: _onProgress);
     if (!changed) return;
-    _showLabel(language.code, fadeAfter: true);
     final l10n = AppLocalizations.of(context)!;
     SemanticsService.sendAnnouncement(
       View.of(context),
@@ -199,265 +245,413 @@ class _LanguageBarState extends State<LanguageBar>
     );
   }
 
-  void _showLabel(String code, {required bool fadeAfter}) {
-    _labelTimer?.cancel();
-    setState(() {
-      _labelCode = code;
-      _labelOn = true;
-    });
-    _labelPortal.show();
-    if (fadeAfter) {
-      _labelTimer = Timer(const Duration(seconds: 1), _hideLabel);
-    }
-  }
+  // ---- the wheel's motion ----
 
-  void _hideLabel() {
-    _labelTimer?.cancel();
-    if (mounted && _labelOn) setState(() => _labelOn = false);
-  }
-
-  bool get _rtl => Directionality.of(context) == TextDirection.rtl;
-
-  void _dragUpdate(DragUpdateDetails details, List<String> codes, String? at) {
-    _drag += details.delta.dx;
-    final forward = (_drag < 0) != _rtl;
-    final next = LanguageChoice.step(at, codes, forward ? 1 : -1);
-    final target = _drag.abs() >= 8 ? next : null;
-    final commitAt = (context.size?.width ?? 300) / 3;
-    setState(() {
-      _target = target;
-      _progress = target == null ? 0 : (_drag.abs() / commitAt).clamp(0.0, 1.0);
-      _give = next == null ? (_drag * 0.25).clamp(-12.0, 12.0) : 0;
-    });
-    if (target != null) {
-      if (_labelCode != target || !_labelOn) {
-        _showLabel(target, fadeAfter: false);
-      }
-    } else if (_labelOn) {
-      _hideLabel();
-    }
-  }
-
-  /// How many languages a drag and a fling carry the selection past: one
-  /// for a short flick, and five for the whole bar's width. The fling's
-  /// speed adds the distance it would still travel.
-  static int _stepsFor(double drag, double velocity, double width) {
-    if (width <= 0) return 1;
-    final carried = drag + velocity * 0.2;
-    final fraction = carried.abs() / width;
-    final steps = (5 * fraction * fraction).floor();
-    return steps < 1 ? 1 : steps;
-  }
-
-  void _dragEnd(DragEndDetails details, AppState state) {
-    final velocity = details.primaryVelocity ?? 0;
-    final flick = velocity.abs() > 300 && (velocity < 0) == (_drag < 0);
-    final target = _target;
-    final width = context.size?.width ?? 0;
-    // Past a third of the whole bar's width, as the mockup says (#528).
-    final far = _drag.abs() > width / 3;
-    final forward = (_drag < 0) != _rtl;
-    final steps = _stepsFor(_drag, flick ? velocity : 0, width);
-    setState(() {
-      _dragging = false;
-      _drag = 0;
-      _target = null;
-      _progress = 0;
-      _give = 0;
-    });
-    if (target != null && (far || flick)) {
-      final codes = <String>[for (final l in state.languageChoices) l.code];
-      final from = codes.indexOf(state.shownLanguage ?? '');
-      final to = (from + (forward ? steps : -steps)).clamp(0, codes.length - 1);
-      if (from >= 0 && to != from) {
-        _startFling(state, codes, from, to - from);
-        return;
-      }
-    }
-    _hideLabel();
-  }
-
-  /// Carries the selection [delta] languages on from [from], slowing as a
-  /// list does, ticking at each language it passes, and then settles.
-  void _startFling(AppState state, List<String> codes, int from, int delta) {
-    _flingState = state;
-    _flingCodes = codes;
-    _flingFrom = from;
-    _flingSteps = delta;
-    _flingLast = from;
-    final ms = (300 + 110 * delta.abs()).clamp(300, 1400);
-    _fling
-      ..duration = Duration(milliseconds: ms)
-      ..forward(from: 0);
-  }
-
-  /// Where the selection is, in languages, as the momentum slows.
-  double get _flingAt =>
-      _flingFrom + _flingSteps * Curves.easeOutCubic.transform(_fling.value);
-
-  void _flingTick() {
-    if (!mounted || _flingCodes.isEmpty) return;
-    final at = _flingAt.clamp(0.0, _flingCodes.length - 1.0);
-    final low = at.floor();
-    final high = at.ceil();
-    final a = _rects[_flingCodes[low]];
-    final b = _rects[_flingCodes[high]];
-    final nearest = at.round();
-    final passed = nearest != _flingLast;
-    _flingLast = nearest;
-    setState(() {
-      _flingRect = a == null || b == null ? null : Rect.lerp(a, b, at - low);
-      _target = _flingCodes[nearest];
-    });
-    if (passed) {
+  /// Moves the wheel to [x] detents, with a tick for a detent crossed.
+  void _setPos(double x) {
+    _pos = x;
+    final detent = x.round();
+    if (detent != _lastDetent) {
+      _lastDetent = detent;
       HapticFeedback.selectionClick();
-      _showLabel(_flingCodes[nearest], fadeAfter: false);
+      if (!_still) _pulse.forward(from: 0);
     }
-    _keepClear(_flingRect);
+    _repaint();
   }
 
-  /// Scrolls the row so the moving selection stays in view.
-  void _keepClear(Rect? rect) {
-    final stack = _stackKey.currentContext?.findRenderObject() as RenderBox?;
-    if (rect == null || stack == null || !_row.hasClients) return;
-    final position = _row.position;
-    if (!position.hasContentDimensions) return;
-    final centre = rect.center.dx;
-    final fromStart = _rtl ? stack.size.width - centre : centre;
-    _row.jumpTo(
-      (fromStart - position.viewportDimension / 2).clamp(
-        position.minScrollExtent,
-        position.maxScrollExtent,
+  void _showLabel() {
+    if (!_labelOn) {
+      _labelOn = true;
+      _labelPortal.show();
+    }
+    _repaint();
+  }
+
+  /// A touch or a move: the pill folds and the label names the language.
+  void _collapse() {
+    _expanded = false;
+    _grow.stop();
+    if (_still) {
+      _grow.value = 0;
+    } else {
+      _grow.reverse();
+    }
+    _repaint();
+  }
+
+  void _runTo(double target, double velocity) {
+    _target = target;
+    final spring = SpringDescription.withDampingRatio(
+      mass: 1,
+      stiffness: LanguageBar.stiffness,
+      ratio: LanguageBar.dampingRatio,
+    );
+    _run.animateWith(
+      SpringSimulation(
+        spring,
+        _pos!,
+        target,
+        velocity,
+        snapToEnd: true,
+        tolerance: const Tolerance(distance: 0.002, velocity: 0.02),
       ),
     );
   }
 
-  void _flingStatus(AnimationStatus status) {
-    if (status != AnimationStatus.completed) return;
-    _settle();
+  void _runTick() {
+    if (_dragging) return;
+    _setPos(_run.value);
   }
 
-  /// The momentum has stopped: the screen switches, once.
-  void _settle() {
-    final state = _flingState;
-    final code = _flingCodes.isEmpty ? null : _flingCodes[_flingLast];
-    _flingState = null;
-    setState(() {
-      _flingRect = null;
-      _target = null;
-    });
-    final language = state?.languageChoices
-        .where((l) => l.code == code)
-        .firstOrNull;
-    if (state != null && language != null) {
-      _choose(state, language);
-    } else {
-      _hideLabel();
+  void _runStatus(AnimationStatus status) {
+    if (status == AnimationStatus.completed && !_dragging) _arrive();
+  }
+
+  /// The wheel is at rest on [_target]: the language there is the one
+  /// shown, and the pill grows to its name.
+  void _arrive() {
+    final detent = _target.round();
+    final i = _mod(detent);
+    _lastDetent = i;
+    _pos = i.toDouble();
+    _target = _pos!;
+    _dragging = false;
+    _caught = false;
+    final state = AppScope.read(context);
+    final choices = state.languageChoices;
+    if (i < choices.length && choices[i].code != state.shownLanguage) {
+      _choose(state, choices[i]);
+      _chosenHere = false;
     }
+    _grownTo(choices, i);
+    _repaint();
+  }
+
+  /// Starts the pill growing to the name of the language at [i].
+  void _grownTo(List<LanguageInfo> choices, int i) {
+    if (i >= choices.length) return;
+    final theme = Theme.of(context);
+    final scaler = MediaQuery.textScalerOf(context);
+    final direction = Directionality.of(context);
+    final language = choices[i];
+    final glyph = languageGlyph(language, AppScope.read(context).decks);
+    double width(String text, TextStyle style) => (TextPainter(
+      text: TextSpan(text: text, style: style),
+      textDirection: direction,
+      textScaler: scaler,
+      locale: Locale(language.code),
+      maxLines: 1,
+    )..layout()).width;
+    final label = theme.textTheme.labelLarge!.copyWith(
+      fontSize: 14,
+      fontWeight: FontWeight.w500,
+    );
+    final wanted =
+        16 +
+        width(glyph, label.copyWith(fontWeight: FontWeight.w400)) +
+        10 +
+        width(language.name, label) +
+        16;
+    // The wheel is between the two slots and the bar's own padding.
+    final room = (context.size?.width ?? 390) - 104;
+    _fullWidth = math.min(
+      math.max(wanted, LanguageBar.pillWidth),
+      math.max(room, LanguageBar.pillWidth),
+    );
+    // The neighbours keep the gap they have from the folded pill's edge.
+    _push = (_fullWidth - LanguageBar.pillWidth) / 2;
+    _expanded = true;
+    _labelOn = false;
+    if (_still) {
+      _grow.value = 1;
+    } else {
+      _grow.forward();
+    }
+  }
+
+  /// A touch on the wheel: it folds, and a coast stops where it is.
+  void _touch() {
+    _caught = _run.isAnimating;
+    if (_caught) {
+      _run.stop();
+      _showLabel();
+    }
+    _collapse();
+  }
+
+  void _tap() {
+    if (_caught) {
+      _caught = false;
+      _release(0);
+      return;
+    }
+    _toggleMenu();
+    _regrow();
+  }
+
+  void _tapCancel() => Future<void>.microtask(() {
+    if (!mounted || _dragging || _run.isAnimating) return;
+    _caught = false;
+    _regrow();
+  });
+
+  /// The wheel is at rest, and its pill grows to the name again.
+  void _regrow() {
+    if (_pos == null || _busy) return;
+    final choices = AppScope.read(context).languageChoices;
+    _grownTo(choices, _mod(_pos!.round()));
+  }
+
+  void _dragStart(DragStartDetails _) {
+    // A touch while it is still carrying on takes it where it is.
+    _run.stop();
+    _caught = false;
+    _dragging = true;
+    _dx = 0;
+    _from = _pos ?? 0;
+    _collapse();
+    _showLabel();
+  }
+
+  void _dragUpdate(DragUpdateDetails details) {
+    if (!_dragging) return;
+    // One dp of finger is one dp of wheel at the centre; a drag to the left
+    // brings the next language.
+    _dx += details.primaryDelta ?? 0;
+    _setPos(_from - _dx * _dir / LanguageBar.detent);
+  }
+
+  void _dragEnd(DragEndDetails details) {
+    if (!_dragging) return;
+    _dragging = false;
+    _release(-(details.primaryVelocity ?? 0) * _dir / LanguageBar.detent);
   }
 
   void _dragCancel() {
-    setState(() {
-      _dragging = false;
-      _drag = 0;
-      _target = null;
-      _progress = 0;
-      _give = 0;
-    });
-    _hideLabel();
+    if (!_dragging) return;
+    _dragging = false;
+    _release(0);
   }
 
-  /// After layout: scrolls the row to keep the chip centred where the ends
-  /// allow, and sets which ends fade.
-  void _afterLayout(String? shown) {
-    if (!mounted) return;
-    _measure();
-    if (!_row.hasClients || _dragging || _flinging) return;
-    final position = _row.position;
-    if (!position.hasContentDimensions) return;
-    final chip =
-        _itemKeys[shown]?.currentContext?.findRenderObject() as RenderBox?;
-    final row = _rowKey.currentContext?.findRenderObject() as RenderBox?;
-    if (chip != null && row != null && chip.attached && row.attached) {
-      final centre = chip
-          .localToGlobal(chip.size.center(Offset.zero), ancestor: row)
-          .dx;
-      final fromStart = _rtl ? row.size.width - centre : centre;
-      final viewport = position.viewportDimension;
-      final target = (fromStart - viewport / 2).clamp(
-        position.minScrollExtent,
-        position.maxScrollExtent,
+  /// Lets go at [velocity] detents per second: coasts to the detent plain
+  /// friction would stop at, or settles on the nearest one.
+  void _release(double velocity) {
+    final x0 = _pos ?? 0;
+    var target = (x0 + velocity / LanguageBar.friction).roundToDouble();
+    var d = target - x0;
+    if (velocity.abs() < 1.5 || d * velocity <= 0 || d.abs() < 0.02) {
+      // Too slow to coast, or it would have to turn back: settle.
+      target = x0.roundToDouble();
+      d = target - x0;
+      velocity = 0;
+    }
+    _showLabel();
+    if (_still || (d.abs() < 0.004 && velocity == 0)) {
+      _setPos(target);
+      _target = target;
+      _arrive();
+      return;
+    }
+    _runTo(target, velocity);
+  }
+
+  /// Moves one detent, for a key.
+  void _step(int by) {
+    if (_pos == null || _count < 2) return;
+    _run.stop();
+    _dragging = false;
+    _caught = false;
+    _collapse();
+    _showLabel();
+    final target = _pos!.round() + by;
+    if (_still) {
+      _setPos(target.toDouble());
+      _target = target.toDouble();
+      _arrive();
+      return;
+    }
+    _runTo(target.toDouble(), 0);
+  }
+
+  KeyEventResult _key(FocusNode _, KeyEvent event) {
+    if (event is KeyUpEvent) return KeyEventResult.ignored;
+    final by = event.logicalKey == LogicalKeyboardKey.arrowRight
+        ? 1
+        : event.logicalKey == LogicalKeyboardKey.arrowLeft
+        ? -1
+        : 0;
+    if (by == 0) return KeyEventResult.ignored;
+    _step(by * _dir.round());
+    return KeyEventResult.handled;
+  }
+
+  /// The language shown changed from outside the wheel, such as in the
+  /// menu: the wheel turns to it by the shorter way round.
+  void _follow(int at, int count) {
+    if (!mounted || _busy || _pos == null || count != _count) return;
+    final here = _mod(_pos!.round());
+    final animate = _chosenHere;
+    _chosenHere = false;
+    if (here == at) return;
+    var d = at - here;
+    if (d > count / 2) d -= count;
+    if (d < -count / 2) d += count;
+    final target = (_pos!.round() + d).toDouble();
+    if (!animate) {
+      // Another tab's bar changed the language: this one moves there with
+      // no tick, already showing its name.
+      _pos = target;
+      _target = target;
+      _arrive();
+      return;
+    }
+    _collapse();
+    _showLabel();
+    if (_still) {
+      _setPos(target);
+      _target = target;
+      _arrive();
+      return;
+    }
+    _runTo(target, 0);
+  }
+
+  // ---- drawing ----
+
+  /// The wheel's glyphs, each at its place round the wheel.
+  List<Widget> _glyphs(
+    List<LanguageInfo> choices,
+    List<DeckEntry> decks,
+    ColorScheme scheme,
+    TextTheme text,
+  ) {
+    final pos = _pos!;
+    final centre = pos.round();
+    final dir = _dir;
+    const step = LanguageBar.detent / LanguageBar.radius;
+    final out = <Widget>[];
+    for (var k = centre - 5; k <= centre + 5; k++) {
+      final d = k - pos;
+      if (d.abs() > LanguageBar.visible) continue;
+      if (_count == 1 && k != centre) continue;
+      final language = choices[_mod(k)];
+      final theta = d * step;
+      final c = math.cos(theta);
+      final pushed = d.abs() > 0.5 ? d.sign * _push * _growAmount : 0.0;
+      final x = (LanguageBar.radius * math.sin(theta) + pushed) * dir;
+      final hidden = _expanded && k == centre;
+      out.add(
+        Align(
+          key: ValueKey<int>(k),
+          child: Transform.translate(
+            offset: Offset(x, 0),
+            child: Transform.scale(
+              scale: 0.65 + 0.35 * c,
+              child: Opacity(
+                opacity: hidden ? 0 : 0.35 + 0.65 * c,
+                child: SizedBox(
+                  width: LanguageBar.detent,
+                  height: 32,
+                  child: Center(
+                    child: Text(
+                      languageGlyph(language, decks),
+                      locale: Locale(language.code),
+                      textScaler: TextScaler.noScaling,
+                      maxLines: 1,
+                      softWrap: false,
+                      style: text.titleMedium!.copyWith(
+                        fontSize: 18,
+                        height: 24 / 18,
+                        fontWeight: FontWeight.w600,
+                        color: scheme.onSurface,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
       );
-      final animating = _animatingTo;
-      if (animating != null && (animating - target).abs() <= 0.5) {
-        // Already on its way there: a rebuild meanwhile does not cut the
-        // animation short with a jump.
-      } else if ((target - position.pixels).abs() > 0.5) {
-        if (_centredOn != null && _centredOn != shown) {
-          _animatingTo = target;
-          _row
-              .animateTo(
-                target,
-                duration: const Duration(milliseconds: 250),
-                curve: Curves.easeOut,
-              )
-              .whenComplete(() {
-                if (_animatingTo == target) _animatingTo = null;
-              });
-        } else {
-          _animatingTo = null;
-          _row.jumpTo(target);
-        }
-      }
     }
-    _centredOn = shown;
-    _setFades();
+    return out;
   }
 
-  /// Measures where each language sits in the row, for the selection.
-  void _measure() {
-    final stack = _stackKey.currentContext?.findRenderObject() as RenderBox?;
-    if (stack == null || !stack.attached || !stack.hasSize) return;
-    final rects = <String, Rect>{};
-    for (final MapEntry(:key, :value) in _itemKeys.entries) {
-      final box = value.currentContext?.findRenderObject() as RenderBox?;
-      if (box == null || !box.attached || !box.hasSize) continue;
-      rects[key] = box.localToGlobal(Offset.zero, ancestor: stack) & box.size;
-    }
-    bool same(Rect? a, Rect? b) =>
-        a != null &&
-        b != null &&
-        (a.left - b.left).abs() < 0.5 &&
-        (a.top - b.top).abs() < 0.5 &&
-        (a.width - b.width).abs() < 0.5 &&
-        (a.height - b.height).abs() < 0.5;
-    final changed =
-        rects.length != _rects.length ||
-        rects.entries.any((e) => !same(e.value, _rects[e.key]));
-    if (changed) setState(() => _rects = rects);
-  }
+  /// How far the pill has grown, 0 to 1, as the neighbours follow it.
+  double get _growAmount => _expansionCurve.transform(_grow.value);
 
-  void _setFades() {
-    if (!mounted || !_row.hasClients) return;
-    final position = _row.position;
-    if (!position.hasContentDimensions) return;
-    final start = position.pixels > position.minScrollExtent + 0.5;
-    final end = position.pixels < position.maxScrollExtent - 0.5;
-    if (start != _fadeStart || end != _fadeEnd) {
-      setState(() {
-        _fadeStart = start;
-        _fadeEnd = end;
-      });
-    }
-  }
+  static const Curve _expansionCurve = Cubic(0.2, 0.8, 0.2, 1);
 
-  bool _onRowScroll(Notification notification) {
-    if (notification is ScrollUpdateNotification ||
-        notification is ScrollEndNotification ||
-        notification is ScrollMetricsNotification) {
-      WidgetsBinding.instance.addPostFrameCallback((_) => _setFades());
-    }
-    return false;
+  /// The name fades in over the last two thirds of the growth.
+  static const Curve _nameFade = Interval(1 / 3, 1);
+
+  /// The selection: a pill at the centre, with the name once it has grown.
+  Widget _pill(
+    ThemeData theme,
+    LanguageInfo language,
+    String glyph,
+    bool allOn,
+  ) {
+    final scheme = theme.colorScheme;
+    final scale = MediaQuery.textScalerOf(context).scale(1);
+    final grow = _growAmount;
+    final width =
+        LanguageBar.pillWidth + (_fullWidth - LanguageBar.pillWidth) * grow;
+    final shown = _nameFade.transform(_grow.value);
+    final label = theme.textTheme.labelLarge!.copyWith(
+      fontSize: 14,
+      fontWeight: FontWeight.w500,
+      color: scheme.onSecondaryContainer,
+    );
+    return Transform.scale(
+      scale: 1 + 0.14 * math.sin(math.pi * _pulse.value),
+      child: Container(
+        key: const ValueKey<String>('language-bar-selection'),
+        width: width,
+        height: 32 + 12 * (scale - 1),
+        decoration: BoxDecoration(
+          color: allOn ? null : scheme.secondaryContainer,
+          border: allOn ? Border.all(color: scheme.outline) : null,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: _grow.value == 0
+              ? null
+              : OverflowBox(
+                  minWidth: 0,
+                  maxWidth: _fullWidth,
+                  child: Opacity(
+                    opacity: shown,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Text(
+                            glyph,
+                            locale: Locale(language.code),
+                            maxLines: 1,
+                            style: label.copyWith(fontWeight: FontWeight.w400),
+                          ),
+                          const SizedBox(width: 10),
+                          Flexible(
+                            child: Text(
+                              language.name,
+                              maxLines: 1,
+                              softWrap: false,
+                              overflow: TextOverflow.ellipsis,
+                              style: label,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+        ),
+      ),
+    );
   }
 
   @override
@@ -471,107 +665,58 @@ class _LanguageBarState extends State<LanguageBar>
     final codes = <String>[for (final l in choices) l.code];
     final at = codes.indexOf(shown ?? '');
     final allOn = _onProgress && state.progressShowsAll;
-    WidgetsBinding.instance.addPostFrameCallback((_) => _afterLayout(shown));
+
+    _building = true;
+    if (choices.isNotEmpty && at >= 0) {
+      if (_pos == null || choices.length != _count) {
+        // First build, or languages added or removed: no turning.
+        _run.stop();
+        _count = choices.length;
+        _pos = at.toDouble();
+        _target = _pos!;
+        _lastDetent = at;
+        _dragging = false;
+        _caught = false;
+        _expanded = false;
+        _grow.value = 0;
+      } else if (!_busy && _mod(_pos!.round()) != at) {
+        final count = _count;
+        WidgetsBinding.instance.addPostFrameCallback((_) => _follow(at, count));
+      }
+    }
+    _building = false;
 
     Widget zone = const SizedBox.shrink();
     if (choices.isNotEmpty && at >= 0) {
       final next = at + 1 < choices.length ? choices[at + 1] : null;
       final previous = at > 0 ? choices[at - 1] : null;
-      // The selection is drawn behind the row, so it can slide with the
-      // finger toward the language a swipe would show (owner, 2026-10-17:
-      // "The selection rectangle should move with my gesture in real
-      // time"), as a Material tab indicator follows a swipe.
-      final from = _rects[shown];
-      final to = _target == null ? null : _rects[_target];
-      final selection =
-          _flingRect ??
-          (from == null
-              ? null
-              : (to == null ? from : Rect.lerp(from, to, _progress)!));
-      final slides = !allOn && selection != null;
-      final items = <Widget>[
-        for (final language in choices)
-          if (language.code == shown)
-            LanguageBarChip(
-              key: _keyFor(language.code),
-              language: language,
-              glyph: languageGlyph(language, state.decks),
-              selected: !allOn,
-              filled: !slides,
-            )
-          else
-            KeyedSubtree(
-              key: _keyFor(language.code),
-              child: _BareGlyph(
-                glyph: languageGlyph(language, state.decks),
-                language: language,
-                full: language.code == _target,
-              ),
-            ),
-      ];
-      Widget row = NotificationListener<Notification>(
-        onNotification: _onRowScroll,
-        child: SingleChildScrollView(
-          key: _scrollKey,
-          controller: _row,
-          scrollDirection: Axis.horizontal,
-          // The swipe changes the language; a finger does not scroll the
-          // row freely (#528).
-          physics: const NeverScrollableScrollPhysics(),
-          child: AnimatedContainer(
-            duration: _instant
-                ? Duration.zero
-                : const Duration(milliseconds: 200),
-            curve: Curves.easeOut,
-            transform: Matrix4.translationValues(_give, 0, 0),
-            child: Stack(
-              key: _stackKey,
-              children: <Widget>[
-                if (slides)
-                  AnimatedPositioned.fromRect(
-                    key: const ValueKey<String>('language-bar-selection'),
-                    rect: selection,
-                    duration: _instant
-                        ? Duration.zero
-                        : const Duration(milliseconds: 200),
-                    curve: Curves.easeOut,
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: scheme.secondaryContainer,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ),
-                Row(key: _rowKey, children: items),
-              ],
-            ),
-          ),
+      final here = choices[_mod(_pos!.round())];
+      final glyph = languageGlyph(here, state.decks);
+      Widget wheel = SizedBox(
+        height: 48,
+        child: Stack(
+          alignment: Alignment.center,
+          children: <Widget>[
+            _pill(theme, here, glyph, allOn),
+            ..._glyphs(choices, state.decks, scheme, theme.textTheme),
+          ],
         ),
       );
-      if (_fadeStart || _fadeEnd) {
-        final rtl = _rtl;
-        final left = rtl ? _fadeEnd : _fadeStart;
-        final right = rtl ? _fadeStart : _fadeEnd;
-        row = ShaderMask(
-          key: const ValueKey<String>('language-bar-mask'),
-          blendMode: BlendMode.dstIn,
-          shaderCallback: (rect) {
-            final f = rect.width <= 0
-                ? 0.0
-                : (LanguageBar.fade / rect.width).clamp(0.0, 0.5);
-            return LinearGradient(
-              colors: <Color>[
-                left ? Colors.transparent : Colors.black,
-                Colors.black,
-                Colors.black,
-                right ? Colors.transparent : Colors.black,
-              ],
-              stops: <double>[0, f, 1 - f, 1],
-            ).createShader(rect);
-          },
-          child: row,
-        );
-      }
+      // Both ends fade out, as if the wheel turned away out of sight.
+      wheel = ShaderMask(
+        key: const ValueKey<String>('language-bar-mask'),
+        blendMode: BlendMode.dstIn,
+        shaderCallback: (rect) => const LinearGradient(
+          colors: <Color>[
+            Colors.transparent,
+            Colors.black,
+            Colors.black,
+            Colors.transparent,
+          ],
+          stops: <double>[0, 0.3, 0.7, 1],
+        ).createShader(rect),
+        child: wheel,
+      );
       zone = MenuAnchor(
         controller: _menu,
         menuChildren: <Widget>[
@@ -616,17 +761,23 @@ class _LanguageBarState extends State<LanguageBar>
                   _choose(state, previous),
           },
           excludeSemantics: true,
-          child: InkWell(
-            borderRadius: BorderRadius.circular(24),
-            onTap: _toggleMenu,
-            child: SizedBox(
-              height: 48,
-              child: Padding(
-                padding: const EdgeInsetsDirectional.symmetric(horizontal: 4),
-                child: Align(
-                  alignment: AlignmentDirectional.centerStart,
-                  child: row,
+          child: Focus(
+            onKeyEvent: _key,
+            onFocusChange: (focused) => setState(() => _focused = focused),
+            child: GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTapDown: (_) => _touch(),
+              onTap: _tap,
+              onTapCancel: _tapCancel,
+              child: DecoratedBox(
+                position: DecorationPosition.foreground,
+                decoration: BoxDecoration(
+                  border: _focused
+                      ? Border.all(color: scheme.primary, width: 2)
+                      : null,
+                  borderRadius: BorderRadius.circular(24),
                 ),
+                child: wheel,
               ),
             ),
           ),
@@ -649,7 +800,6 @@ class _LanguageBarState extends State<LanguageBar>
       ),
       child: Row(
         children: <Widget>[
-          Expanded(child: zone),
           SizedBox(
             key: const ValueKey<String>('language-bar-all-slot'),
             width: 48,
@@ -661,28 +811,22 @@ class _LanguageBarState extends State<LanguageBar>
                   )
                 : null,
           ),
+          Expanded(child: zone),
           ReportButton(detail: widget.reportDetail),
         ],
       ),
     );
 
-    // The swipe works the same wherever it starts on the bar: on a glyph,
-    // the chip, the space between, the edges or the buttons (owner,
-    // 2026-10-17: "It should be consistent").
+    // The turn works the same wherever it starts on the bar: on the wheel,
+    // the slots or the buttons (owner, 2026-10-17: "It should be
+    // consistent"). The drag is tracked from where the finger went down.
     if (choices.length > 1 && at >= 0) {
       bar = GestureDetector(
         behavior: HitTestBehavior.opaque,
-        onHorizontalDragStart: (_) {
-          if (_flinging) {
-            // A touch while it is still carrying on takes it where it is.
-            _fling.stop();
-            _settle();
-          }
-          _dragging = true;
-          _drag = 0;
-        },
-        onHorizontalDragUpdate: (d) => _dragUpdate(d, codes, shown),
-        onHorizontalDragEnd: (d) => _dragEnd(d, state),
+        dragStartBehavior: DragStartBehavior.down,
+        onHorizontalDragStart: _dragStart,
+        onHorizontalDragUpdate: _dragUpdate,
+        onHorizontalDragEnd: _dragEnd,
         onHorizontalDragCancel: _dragCancel,
         child: bar,
       );
@@ -695,13 +839,14 @@ class _LanguageBarState extends State<LanguageBar>
     );
   }
 
-  /// Under the bar, while dragging and for a second after a change: the
-  /// language's glyph and name.
+  /// Under the bar, while the wheel moves: the glyph and name of the
+  /// language at the centre. It fades out as the pill grows to the name.
   Widget _buildLabel(BuildContext context, AppState state) {
-    final language = state.languageChoices
-        .where((l) => l.code == _labelCode)
-        .firstOrNull;
-    if (language == null) return const SizedBox.shrink();
+    final choices = state.languageChoices;
+    if (_pos == null || choices.isEmpty || _count != choices.length) {
+      return const SizedBox.shrink();
+    }
+    final language = choices[_mod(_pos!.round())];
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     return Align(
@@ -716,7 +861,7 @@ class _LanguageBarState extends State<LanguageBar>
           child: ExcludeSemantics(
             child: AnimatedOpacity(
               opacity: _labelOn ? 1 : 0,
-              duration: const Duration(milliseconds: 200),
+              duration: _still ? Duration.zero : LanguageBar.expansion,
               onEnd: () {
                 if (!_labelOn) _labelPortal.hide();
               },
@@ -815,44 +960,6 @@ class LanguageBarChip extends StatelessWidget {
             style: theme.textTheme.labelLarge!.copyWith(color: foreground),
           ),
         ],
-      ),
-    );
-  }
-}
-
-/// A language that is not shown: its glyph alone, faded, or at full alpha
-/// while a swipe would show it ([full]). Its size does not follow the text
-/// size.
-class _BareGlyph extends StatelessWidget {
-  const _BareGlyph({
-    required this.glyph,
-    required this.language,
-    required this.full,
-  });
-
-  final String glyph;
-  final LanguageInfo language;
-  final bool full;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final onSurface = theme.colorScheme.onSurface;
-    return Container(
-      constraints: const BoxConstraints(minWidth: 23, minHeight: 32),
-      alignment: Alignment.center,
-      child: Text(
-        glyph,
-        locale: Locale(language.code),
-        textScaler: TextScaler.noScaling,
-        style: theme.textTheme.titleMedium!.copyWith(
-          fontSize: 18,
-          height: 24 / 18,
-          fontWeight: FontWeight.w600,
-          color: full
-              ? onSurface
-              : onSurface.withValues(alpha: LanguageBar.fadedAlpha),
-        ),
       ),
     );
   }
