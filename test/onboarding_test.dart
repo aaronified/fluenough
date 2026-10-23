@@ -284,7 +284,7 @@ void main() {
       await tester.pumpAndSettle(const Duration(seconds: 2));
       expect(state.shellTab.value, ShellTab.decks);
 
-      final search = find.byType(SearchBar).hitTestable();
+      final search = find.byType(SearchBar);
       await tester.tap(search);
       await tester.pump();
       expect(
