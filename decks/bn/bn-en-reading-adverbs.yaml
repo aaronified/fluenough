@@ -1,0 +1,54 @@
+schema: 1
+id: "bn-en-reading-adverbs"
+name: "Reading: how often"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A short family talk, to be heard, and a short survey about everyday habits, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-how-often"
+    title: "How often the family does things"
+    theme: "adverbs"
+    sentences:
+      - { text: "আমার বাবা সবসময় সকালে খবরের কাগজ পড়েন।", reading: "āmār bābā sôbosomoy sôkāle khôborer kāgoj poṛen.", ipa: "amar baba sɔbosomoj sɔkale kʰɔborer kaɡodʒ pɔɽen" }
+      - { text: "মা প্রায়ই বাজারে যান।", reading: "mā prāyoi bājāre jān.", ipa: "ma prajoi badʒare dʒan" }
+      - { text: "দাদা মাঝে মাঝে ফুটবল খেলেন।", reading: "dādā mājhe mājhe phuṭbol khelen.", ipa: "d̪ad̪a madʒʱe madʒʱe pʰuʈbol kʰelen" }
+      - { text: "আমি কখনো রাতে ভাত খাই না।", reading: "āmi kôkhono rāte bhāt khāi nā.", ipa: "ami kɔkʰono rat̪e bʱat̪ kʰai na" }
+      - { text: "বোন খুব ভালো গান গায়।", reading: "bon khub bhālo gān gāy.", ipa: "bon kʰub bʱalo ɡan ɡaj" }
+      - { text: "ছোট ভাই একটু দেরিতে ঘুম থেকে ওঠে।", reading: "choṭ bhāi ekṭu derite ghum theke oṭhe.", ipa: "tʃʰoʈo bʱai ekʈu d̪erit̪e ɡʱum t̪ʰeke oʈʰe" }
+    questions:
+      - id: "bn-1685"
+        prompt: { "en": "The father always reads the newspaper in the morning." }
+        answer: true
+      - id: "bn-1686"
+        prompt: { "en": "How often does the mother go to the market?" }
+        options: [{ "en": "Always" }, { "en": "Often" }]
+        answer: 2
+      - id: "bn-1687"
+        prompt: { "en": "What does the speaker never eat at night?" }
+        options: [{ "en": "Rice" }, { "en": "Sweets" }]
+        answer: 1
+  - id: "bn-habit-survey"
+    title: "A survey about everyday habits"
+    theme: "adverbs"
+    sentences:
+      - { text: "এই জরিপে একটি প্রশ্ন ছিল: তুমি কত ঘন ঘন বই পড়ো?", reading: "ei jôripe ekṭi prôśno chilo: tumi kôto ghôn ghôn boi poṛo?", ipa: "ei dʒoripe ekʈi prɔʃno tʃʰilo t̪umi kɔt̪o ɡʱɔn ɡʱɔn boi pɔɽo" }
+      - { text: "উত্তর চারটি: সবসময়, প্রায়ই, মাঝে মাঝে আর কখনো না।", reading: "uttor cārṭi: sôbosomoy, prāyoi, mājhe mājhe ār kôkhono nā.", ipa: "ut̪t̪or tʃarʈi sɔbosomoj prajoi madʒʱe madʒʱe ar kɔkʰono na" }
+      - { text: "অনেক মানুষ প্রায়ই চা খায়।", reading: "ônek mānuś prāyoi cā khāy.", ipa: "ɔnek manuʃ prajoi tʃa kʰaj" }
+      - { text: "খুব কম মানুষ সবসময় রাত জেগে থাকে।", reading: "khub kôm mānuś sôbosomoy rāt jege thāke.", ipa: "kʰub kɔm manuʃ sɔbosomoj rat̪ dʒeɡe t̪ʰake" }
+      - { text: "বেশির ভাগ মানুষ মাঝে মাঝে মিষ্টি খায়।", reading: "beśir bhāg mānuś mājhe mājhe miśṭi khāy.", ipa: "beʃir bʱaɡ manuʃ madʒʱe madʒʱe miʃʈi kʰaj" }
+    questions:
+      - id: "bn-1688"
+        prompt: { "en": "How many answers does the survey give for how often?" }
+        options: [{ "en": "Two" }, { "en": "Four" }]
+        answer: 2
+      - id: "bn-1689"
+        prompt: { "en": "Most people in the survey eat sweets every day." }
+        answer: false
+      - id: "bn-1690"
+        prompt: { "en": "What is the survey question about?" }
+        options: [{ "en": "How often people read books" }, { "en": "How often people travel by train" }]
+        answer: 1
