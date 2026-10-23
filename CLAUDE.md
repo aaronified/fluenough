@@ -23,7 +23,9 @@ itself. Pick the model by the job:
 
 At most **three agents run at the same time, and never more than two
 Sonnet** (owner, 2026-10-22). This replaces the earlier Opus rules
-(2026-10-09, 2026-10-12, 2026-10-16, 2026-10-17).
+(2026-10-09, 2026-10-12, 2026-10-16, 2026-10-17). One Sonnet slot is kept
+for coding (owner, 2026-10-23); reviews and other Sonnet work share the
+other.
 
 **Opus only when the owner explicitly asks**, reviews included (owner,
 2026-10-22). Nothing defaults to Opus.
@@ -118,12 +120,15 @@ contributor.
   by widening the current change or pushing a fix straight to main.
 - **Budget.** Tokens are limited: one review per change (see "Which model
   does what"), no extra verification passes, and no new work unless the owner asks for it.
+- **Deck index** (owner, 2026-10-23). `decks/index.json` is regenerated on
+  main by a workflow after each merge (`.github/workflows/deck-index.yml`,
+  PR #719). Never run `tools/deck_index.py` locally: it runs the full
+  validator. On a conflict in `decks/index.json`, take main's side.
 
-## Decks before 0.6.0 (owner, 2026-10-18)
+## 0.6.0 (owner, 2026-10-23)
 
-"Do not start work on 0.6.0 at all before the full deck work, across all
-languages." No 0.6.0 issue is started, planned in code, or built until the
-deck work is done.
+The 2026-10-18 hold on 0.6.0 is lifted (owner, 2026-10-23: "We are working on
+0.6.0 anyway"). Deck work and 0.6.0 work go on side by side.
 
 ## Repositories off limits (owner, 2026-10-12)
 
@@ -171,7 +176,9 @@ renamed Hindustani, teaches the shared colloquial vocabulary, and offers
 Devanagari or the Perso-Arabic (Urdu)
 script as the learner's script, as Punjabi offers
 Gurmukhi or Shahmukhi. Sanskrit- and Persian-leaning synonyms go on the
-card. The Urdu path (#602) is folded into it.
+card. The Urdu path (#602) is folded into it. Its grammar tables (nouns,
+adjectives, verbs) are full tables covering every word, as Bengali's are
+(owner, 2026-10-23).
 
 ## Dependencies are marked, never assumed (owner, 2026-10-12)
 
