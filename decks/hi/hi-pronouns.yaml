@@ -21,6 +21,7 @@ cards:
       - { target: "मैं तैयार हूँ।", reading: "maim̐ taiyār hūm̐.", bases: [{ word: "तैयार", base: "तैयार", reading: "taiyār" }, { word: "हूँ", base: "होना", reading: "hōnā" }] }
   - id: "hi-0746"
     target: "तू"
+    target_scripts: { perso_arabic: "تو" }
     reading: "tū"
     ipa: "t̪uː"
     pos: "pronoun"
@@ -29,9 +30,10 @@ cards:
       - { id: "use", kind: "usage" }
     examples:
       - { target: "तू कैसा है?", reading: "tū kaisā hai?", bases: [{ word: "कैसा", base: "कैसा", reading: "kaisā" }] }
-      - { target: "तू मेरा दोस्त है।", reading: "tū merā dōst hai." }
+      - { target: "तू मेरा दोस्त है।", reading: "tū mērā dōst hai." }
   - id: "hi-0747"
     target: "तुम"
+    target_scripts: { perso_arabic: "تم" }
     reading: "tum"
     ipa: "t̪ʊm"
     pos: "pronoun"
@@ -39,10 +41,11 @@ cards:
     notes:
       - { id: "use", kind: "usage" }
     examples:
-      - { target: "तुम कैसे हो?", reading: "tum kaise ho?", bases: [{ word: "हो", base: "होना", reading: "hōnā" }] }
+      - { target: "तुम कैसे हो?", reading: "tum kaisē hō?", bases: [{ word: "हो", base: "होना", reading: "hōnā" }] }
       - { target: "तुम्हारा नाम क्या है?", reading: "tumhārā nām kyā hai?" }
   - id: "hi-0748"
     target: "यह"
+    target_scripts: { perso_arabic: "یہ" }
     reading: "yah"
     ipa: "jəɦ"
     pos: "pronoun"
@@ -50,10 +53,11 @@ cards:
     notes:
       - { id: "near", kind: "behaviour", words: [{ word: "ये", reading: "yē" }] }
     examples:
-      - { target: "यह मेरा घर है।", reading: "yah merā ghar hai." }
-      - { target: "यह मेरी बहन है।", reading: "yah merī bahan hai.", bases: [{ word: "मेरी", base: "मेरा", reading: "mērā" }] }
+      - { target: "यह मेरा घर है।", reading: "yah mērā ghar hai." }
+      - { target: "यह मेरी बहन है।", reading: "yah mērī bahan hai.", bases: [{ word: "मेरी", base: "मेरा", reading: "mērā" }] }
   - id: "hi-0749"
     target: "वह"
+    target_scripts: { perso_arabic: "وہ" }
     reading: "vah"
     ipa: "ʋəɦ"
     pos: "pronoun"
@@ -61,10 +65,11 @@ cards:
     notes:
       - { id: "far", kind: "behaviour", words: [{ word: "उसका", reading: "uskā" }] }
     examples:
-      - { target: "वह मेरा भाई है।", reading: "vah merā bhāī hai." }
+      - { target: "वह मेरा भाई है।", reading: "vah mērā bhāī hai." }
       - { target: "उसका नाम क्या है?", reading: "uskā nām kyā hai?" }
   - id: "hi-0750"
     target: "ये"
+    target_scripts: { perso_arabic: "یہ" }
     reading: "yē"
     ipa: "jeː"
     pos: "pronoun"
@@ -72,10 +77,11 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { target: "ये मेरे दोस्त हैं।", reading: "yē merē dōst haim̐.", bases: [{ word: "मेरे", base: "मेरा", reading: "mērā" }] }
-      - { target: "ये लोग कौन हैं?", reading: "yē log kaun haim̐?" }
+      - { target: "ये मेरे दोस्त हैं।", reading: "yē mērē dōst haim̐.", bases: [{ word: "मेरे", base: "मेरा", reading: "mērā" }] }
+      - { target: "ये लोग कौन हैं?", reading: "yē lōg kaun haim̐?" }
   - id: "hi-0751"
     target: "वे"
+    target_scripts: { perso_arabic: "وہ" }
     reading: "vē"
     ipa: "ʋeː"
     pos: "pronoun"
@@ -83,10 +89,11 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { target: "वे मेरे दोस्त हैं।", reading: "vē merē dōst haim̐.", bases: [{ word: "मेरे", base: "मेरा", reading: "mērā" }] }
-      - { target: "वे लोग कहाँ हैं?", reading: "vē log kahām̐ haim̐?" }
+      - { target: "वे मेरे दोस्त हैं।", reading: "vē mērē dōst haim̐.", bases: [{ word: "मेरे", base: "मेरा", reading: "mērā" }] }
+      - { target: "वे लोग कहाँ हैं?", reading: "vē lōg kahām̐ haim̐?" }
   - id: "hi-0752"
     target: "मेरा"
+    target_scripts: { perso_arabic: "میرا" }
     reading: "mērā"
     ipa: "meːraː"
     pos: "pronoun"
@@ -98,6 +105,7 @@ cards:
       - { target: "मेरे दोस्त कहाँ हैं?", reading: "mērē dōst kahām̐ haim̐?", bases: [{ word: "मेरे", base: "मेरा", reading: "mērā" }] }
   - id: "hi-0753"
     target: "तेरा"
+    target_scripts: { perso_arabic: "تیرا" }
     reading: "tērā"
     ipa: "t̪eːraː"
     pos: "pronoun"
@@ -109,6 +117,7 @@ cards:
       - { target: "तेरे दोस्त कहाँ हैं?", reading: "tērē dōst kahām̐ haim̐?", bases: [{ word: "तेरे", base: "तेरा", reading: "tērā" }] }
   - id: "hi-0754"
     target: "तुम्हारा"
+    target_scripts: { perso_arabic: "تمہارا" }
     reading: "tumhārā"
     ipa: "t̪ʊmɦaːraː"
     pos: "pronoun"
@@ -120,6 +129,7 @@ cards:
       - { target: "तुम्हारे भाई यहाँ हैं।", reading: "tumhārē bhāī yahām̐ haim̐.", bases: [{ word: "तुम्हारे", base: "तुम्हारा", reading: "tumhārā" }] }
   - id: "hi-0755"
     target: "आपका"
+    target_scripts: { perso_arabic: "آپ کا" }
     reading: "āpkā"
     ipa: "aːpkaː"
     pos: "pronoun"
@@ -131,6 +141,7 @@ cards:
       - { target: "आपकी बहन कहाँ है?", reading: "āpkī bahan kahām̐ hai?", bases: [{ word: "आपकी", base: "आपका", reading: "āpkā" }] }
   - id: "hi-0756"
     target: "हमारा"
+    target_scripts: { perso_arabic: "ہمارا" }
     reading: "hamārā"
     ipa: "ɦəmaːraː"
     pos: "pronoun"
@@ -139,9 +150,10 @@ cards:
       - { id: "stem", kind: "behaviour", words: [{ word: "हमारे", reading: "hamārē" }, { word: "हमारी", reading: "hamārī" }] }
     examples:
       - { target: "हमारा घर यहाँ है।", reading: "hamārā ghar yahām̐ hai." }
-      - { target: "हमारे पड़ोसी कौन हैं?", reading: "hamārē paṛosī kaun haim̐?", bases: [{ word: "हमारे", base: "हमारा", reading: "hamārā" }] }
+      - { target: "हमारे पड़ोसी कौन हैं?", reading: "hamārē paṛōsī kaun haim̐?", bases: [{ word: "हमारे", base: "हमारा", reading: "hamārā" }] }
   - id: "hi-0757"
     target: "उसका"
+    target_scripts: { perso_arabic: "اس کا" }
     reading: "uskā"
     ipa: "ʊskaː"
     pos: "pronoun"
@@ -153,28 +165,31 @@ cards:
       - { target: "उसके दोस्त यहाँ हैं।", reading: "uskē dōst yahām̐ haim̐.", bases: [{ word: "उसके", base: "उसका", reading: "uskā" }] }
   - id: "hi-0758"
     target: "कोई"
+    target_scripts: { perso_arabic: "کوئی" }
     reading: "kōī"
     ipa: "koːiː"
     pos: "pronoun"
     bases: "self"
     notes:
-      - { id: "nobody", kind: "behaviour", words: [{ word: "कोई नहीं", reading: "koī nahīm̐" }] }
+      - { id: "nobody", kind: "behaviour", words: [{ word: "कोई नहीं", reading: "kōī nahīm̐" }] }
     examples:
-      - { target: "कोई आया है।", reading: "koī āyā hai.", bases: [{ word: "आया", base: "आना", reading: "ānā" }] }
-      - { target: "क्या कोई है?", reading: "kyā koī hai?" }
+      - { target: "कोई आया है।", reading: "kōī āyā hai.", bases: [{ word: "आया", base: "आना", reading: "ānā" }] }
+      - { target: "क्या कोई है?", reading: "kyā kōī hai?" }
   - id: "hi-0759"
     target: "कुछ"
+    target_scripts: { perso_arabic: "کچھ" }
     reading: "kuch"
     ipa: "kʊtʃʰ"
     pos: "pronoun"
     bases: "self"
     notes:
-      - { id: "some", kind: "behaviour", words: [{ word: "कुछ लोग", reading: "kuch log" }] }
+      - { id: "some", kind: "behaviour", words: [{ word: "कुछ लोग", reading: "kuch lōg" }] }
     examples:
       - { target: "मुझे कुछ चाहिए।", reading: "mujhē kuch cāhiē.", bases: [{ word: "मुझे", base: "मैं", reading: "mujhē" }, { word: "चाहिए", base: "चाहिए", reading: "cāhiē" }] }
-      - { target: "कुछ लोग आए।", reading: "kuch log āe.", bases: [{ word: "आए", base: "आना", reading: "ānā" }] }
+      - { target: "कुछ लोग आए।", reading: "kuch lōg āē.", bases: [{ word: "आए", base: "आना", reading: "ānā" }] }
   - id: "hi-0760"
     target: "अपना"
+    target_scripts: { perso_arabic: "اپنا" }
     reading: "apnā"
     ipa: "əpnaː"
     pos: "pronoun"
@@ -182,10 +197,11 @@ cards:
     notes:
       - { id: "own", kind: "behaviour", words: [{ word: "अपने", reading: "apnē" }, { word: "अपनी", reading: "apnī" }] }
     examples:
-      - { target: "यह मेरा अपना घर है।", reading: "yah merā apnā ghar hai." }
+      - { target: "यह मेरा अपना घर है।", reading: "yah mērā apnā ghar hai." }
       - { target: "उसने अपना नाम बताया।", reading: "usnē apnā nām batāyā.", bases: [{ word: "उसने", base: "वह", reading: "vah" }, { word: "बताया", base: "बताना", reading: "batānā" }] }
   - id: "hi-0761"
     target: "लोग"
+    target_scripts: { perso_arabic: "لوگ" }
     reading: "lōg"
     ipa: "loːɡ"
     pos: "noun"
@@ -193,10 +209,11 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     examples:
-      - { target: "सब लोग यहाँ रहते हैं।", reading: "sab log yahām̐ rahte haim̐.", bases: [{ word: "रहते", base: "रहना", reading: "rahnā" }] }
-      - { target: "लोग क्या कहते हैं?", reading: "log kyā kahte haim̐?", bases: [{ word: "कहते", base: "कहना", reading: "kahnā" }] }
+      - { target: "सब लोग यहाँ रहते हैं।", reading: "sab lōg yahām̐ rahtē haim̐.", bases: [{ word: "रहते", base: "रहना", reading: "rahnā" }] }
+      - { target: "लोग क्या कहते हैं?", reading: "lōg kyā kahtē haim̐?", bases: [{ word: "कहते", base: "कहना", reading: "kahnā" }] }
   - id: "hi-0762"
     target: "आदमी"
+    target_scripts: { perso_arabic: "آدمی" }
     reading: "ādmī"
     ipa: "aːd̪miː"
     pos: "noun"
@@ -205,9 +222,10 @@ cards:
       - { id: "n1", kind: "note" }
     examples:
       - { target: "वह आदमी कहाँ है?", reading: "vah ādmī kahām̐ hai?" }
-      - { target: "यह आदमी मेरा भाई है।", reading: "yah ādmī merā bhāī hai." }
+      - { target: "यह आदमी मेरा भाई है।", reading: "yah ādmī mērā bhāī hai." }
   - id: "hi-0763"
     target: "औरत"
+    target_scripts: { perso_arabic: "عورت" }
     reading: "aurat"
     ipa: "ɔːrət̪"
     pos: "noun"
@@ -216,7 +234,7 @@ cards:
       - { id: "n1", kind: "note" }
     examples:
       - { target: "वह औरत कौन है?", reading: "vah aurat kaun hai?" }
-      - { target: "यह औरत मेरी बहन है।", reading: "yah aurat merī bahan hai.", bases: [{ word: "मेरी", base: "मेरा", reading: "mērā" }] }
+      - { target: "यह औरत मेरी बहन है।", reading: "yah aurat mērī bahan hai.", bases: [{ word: "मेरी", base: "मेरा", reading: "mērā" }] }
   - id: "hi-0764"
     kind: "set"
     members: [{ ref: "hi-0745" }, { ref: "hi-0053" }]
