@@ -190,8 +190,17 @@ class _LanguageBarState extends State<LanguageBar>
   /// A touch stopped the coast, so its tap does not open the menu.
   bool _caught = false;
 
-  /// The label under the bar shows, while the wheel moves.
-  bool _labelOn = false;
+  /// The label under the bar shows, while the wheel moves: it fades in and
+  /// out, and the overlay goes once it is out. Driven by hand, as a fade
+  /// that never ran (shown and hidden between two frames) has no end to
+  /// hide the overlay by.
+  late final AnimationController _labelFade =
+      AnimationController(vsync: this, duration: LanguageBar.expansion)
+        ..addStatusListener((status) {
+          if (status == AnimationStatus.dismissed && _labelPortal.isShowing) {
+            _labelPortal.hide();
+          }
+        });
 
   /// The pill shows the name and the centre glyph is hidden.
   bool _expanded = false;
@@ -214,6 +223,7 @@ class _LanguageBarState extends State<LanguageBar>
     _run.dispose();
     _grow.dispose();
     _pulse.dispose();
+    _labelFade.dispose();
     super.dispose();
   }
 
@@ -260,11 +270,18 @@ class _LanguageBarState extends State<LanguageBar>
   }
 
   void _showLabel() {
-    if (!_labelOn) {
-      _labelOn = true;
-      _labelPortal.show();
-    }
+    if (!_labelPortal.isShowing) _labelPortal.show();
+    _labelFade.forward();
     _repaint();
+  }
+
+  void _hideLabel() {
+    if (_still) {
+      _labelFade.value = 0;
+      if (_labelPortal.isShowing) _labelPortal.hide();
+    } else {
+      _labelFade.reverse();
+    }
   }
 
   /// A touch or a move: the pill folds and the label names the language.
@@ -361,10 +378,8 @@ class _LanguageBarState extends State<LanguageBar>
     // The neighbours keep the gap they have from the folded pill's edge.
     _push = (_fullWidth - LanguageBar.pillWidth) / 2;
     _expanded = true;
-    _labelOn = false;
+    _hideLabel();
     if (_still) {
-      // The label's fade has no end to hide it by: hide it now.
-      if (_labelPortal.isShowing) _labelPortal.hide();
       _grow.value = 1;
     } else {
       _grow.forward();
@@ -870,12 +885,8 @@ class _LanguageBarState extends State<LanguageBar>
         offset: const Offset(0, 4),
         child: IgnorePointer(
           child: ExcludeSemantics(
-            child: AnimatedOpacity(
-              opacity: _labelOn ? 1 : 0,
-              duration: _still ? Duration.zero : LanguageBar.expansion,
-              onEnd: () {
-                if (!_labelOn) _labelPortal.hide();
-              },
+            child: FadeTransition(
+              opacity: _labelFade,
               child: Material(
                 key: const ValueKey<String>('language-bar-label'),
                 color: scheme.inverseSurface,
