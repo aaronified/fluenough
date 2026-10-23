@@ -2,6 +2,7 @@ import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
 import '../../app/routes.dart';
+import '../../app/session.dart';
 import '../../core/models/card.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/snack.dart';
@@ -32,10 +33,10 @@ class SoundsOfWordButton extends StatelessWidget {
   }
 }
 
-/// Opens the session of [card]'s sounds. A learner not learning the IPA is
-/// asked first whether to add the course, and the course is downloaded if it
-/// is not on the phone yet.
-Future<void> openSoundsOfWord(BuildContext context, Card card) async {
+/// Asks a learner not learning the IPA whether to add the course, and
+/// downloads it if it is not on the phone yet. False when they decline or
+/// leave.
+Future<bool> _ensureIpaCourse(BuildContext context) async {
   final state = AppScope.read(context);
   final l10n = AppLocalizations.of(context)!;
   if (!state.learnsIpa) {
@@ -56,7 +57,7 @@ Future<void> openSoundsOfWord(BuildContext context, Card card) async {
         ],
       ),
     );
-    if (add != true || !context.mounted) return;
+    if (add != true || !context.mounted) return false;
     state.addIpaCourse();
   }
   if (state.languagesToDownload(const <String>['ipa']).isNotEmpty) {
@@ -68,12 +69,33 @@ Future<void> openSoundsOfWord(BuildContext context, Card card) async {
         ),
       ),
     );
-    if (ready != true || !context.mounted) return;
+    if (ready != true || !context.mounted) return false;
   }
+  return true;
+}
+
+/// Opens the session of [card]'s sounds. A learner not learning the IPA is
+/// asked first whether to add the course, and the course is downloaded if it
+/// is not on the phone yet.
+Future<void> openSoundsOfWord(BuildContext context, Card card) async {
+  if (!await _ensureIpaCourse(context) || !context.mounted) return;
+  final state = AppScope.read(context);
   final request = state.soundsOfWordRequest(card);
   if (request == null) {
-    showAppSnackBar(context, l10n.soundsOfWordNone);
+    showAppSnackBar(context, AppLocalizations.of(context)!.soundsOfWordNone);
     return;
   }
   await AppNavigator.startDrill(context, request);
+}
+
+/// Opens the practice of one sound, [symbol], a card of the IPA course, as
+/// "The sounds of this word" does for all of a word's: recorded in the IPA
+/// course. The course is offered and downloaded first where it is not
+/// there.
+Future<void> openSoundPractice(BuildContext context, Card symbol) async {
+  if (!await _ensureIpaCourse(context) || !context.mounted) return;
+  await AppNavigator.startDrill(
+    context,
+    DrillRequest.sounds(<String>{symbol.id}),
+  );
 }

@@ -30,6 +30,16 @@ Settings is a list of pages.
 - **Card text size:** makes card text larger, for scripts with small marks, like matras and dots. Menus follow your phone's font size. The app goes up to 1.4 times the normal size, and no further ([#505](https://github.com/aaronified/fluenough/issues/505)). If your phone is already at that size, cards cannot be made bigger.
 - **App language:** the app's menus are in English only for now.
 
+## Placed words
+
+In Languages I'm learning, a course you have been placed in has a "Placed words" row under Find my level. It opens a sheet with the three choices: Set in stone, Spot-check (the default) and Keep reviewing. Tapping one applies it at once.
+
+- **Set in stone:** the words placement found you know stay out of Today and count as known. You can still revise or practise them from the deck's page; those answers are not logged as reviews, and the deck shows the words as learnt.
+- **Spot-check:** a few of them are tested each day, and a miss brings more of that deck back, then all of it.
+- **Keep reviewing:** they are reviewed like any other word.
+
+Switching away from Set in stone returns the placed words to reviews. Words you learn after placement are always reviewed as usual. The choice is kept for each course. A placement taken before this release has no saved placement time, so the choice does not apply to it.
+
 ## Readings, IPA and adult content
 
 These three switches are on the Your languages page.

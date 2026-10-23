@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hours per Language</title>
+<meta name="description" content="Hours spent and hours left, per language, on the rebuilt Progress page (#227). Hindustani and Bengali, light and dark, 1.4x text.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&display=swap">
+<style>
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;font-weight:700}
+.cap1{margin:0 0 16px;color:var(--page-muted);font-size:14px}
+.tw{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 14px}
+.tg{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--page-muted);flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--page-line);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:inherit;font-size:14px;min-height:40px;padding:0 14px;border:0;background:var(--page-card);color:var(--page-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg);font-weight:600}
+section.opt{margin:0 0 52px;padding-top:20px;border-top:1px solid var(--page-line)}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:6px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+.sticky{position:sticky;top:0;z-index:20;background:var(--page-bg);padding:10px 0 4px;margin-bottom:12px;border-bottom:1px solid var(--page-line)}
+/* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed) =====
+   Every size is calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. */
+.ph{--t:1.4;width:360px;max-width:100%;height:740px;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph button{font-family:inherit;color:inherit;cursor:pointer}
+.appbar{flex:none;min-height:56px;display:flex;align-items:center;padding:0 4px 0 8px;color:var(--onSv);gap:2px}
+.appbar .ttl{flex:1;min-width:0;font-size:calc(20px*var(--t));line-height:1.2;font-weight:500;color:var(--onS);padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ib{width:48px;height:48px;border:0;background:none;display:flex;align-items:center;justify-content:center;border-radius:24px;padding:0;color:var(--onSv);flex:none}
+svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
+.sp{flex:1}
+.scroll{flex:1;min-height:0;overflow-y:auto;padding:0 16px 16px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.t-body{font-size:calc(14px*var(--t));line-height:1.4;margin:0}
+.t-sm{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv);margin:0}
+.t-lab{font-size:calc(12px*var(--t));line-height:1.3;font-weight:600;letter-spacing:.4px;color:var(--onSv);text-transform:uppercase;margin:14px 0 6px}
+.t-h{font-size:calc(16px*var(--t));line-height:1.3;font-weight:500;margin:0}
+.script{font-family:"Noto Sans Devanagari","Noto Sans Bengali",Roboto,sans-serif}
+.nowrap{white-space:nowrap}
+/* language bar */
+.lbar{display:flex;gap:8px;padding:0 16px 10px;flex:none}
+.pill{border:1px solid var(--ol);border-radius:8px;min-height:32px;padding:0 12px;font-size:calc(14px*var(--t));font-weight:500;display:inline-flex;align-items:center;gap:6px;background:none;color:var(--onSv)}
+.pill.on{background:var(--sc);color:var(--onSc);border-color:transparent}
+/* buttons */
+.btn{min-height:calc(40px*var(--t));border-radius:calc(20px*var(--t));border:0;font-size:calc(14px*var(--t));line-height:1.2;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 16px}
+.btn.fill{background:var(--p);color:var(--onP)}
+.btn.tonal{background:var(--sc);color:var(--onSc)}
+.btn.out{background:none;border:1px solid var(--ol);color:var(--p)}
+.btn.text{background:none;color:var(--p);padding:6px 12px}
+.btn.full{width:100%}
+.btn.sm{min-height:48px;border-radius:24px}
+/* cards */
+.card{background:var(--sLow);border-radius:16px;padding:14px 16px;margin:0 0 12px;display:flex;gap:12px;align-items:center;width:100%;text-align:left;border:0}
+.card .tx{flex:1;min-width:0}
+.card .ic{flex:none;width:40px;height:40px;border-radius:20px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
+/* bottom nav */
+.nav{flex:none;display:flex;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);padding:8px 4px 10px}
+.nav div{flex:1;text-align:center;font-size:calc(11px*var(--t));line-height:1.2;color:var(--onSv);display:flex;flex-direction:column;align-items:center;gap:2px}
+.nav div .pl{width:56px;height:28px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+.nav div.on{color:var(--onS);font-weight:600}
+.nav div.on .pl{background:var(--sc);color:var(--onSc)}
+/* settings rows */
+/* sheet */
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.42);z-index:3}
+.sheet{position:absolute;z-index:4;left:0;right:0;bottom:0;background:var(--sLow);border-radius:28px 28px 0 0;display:flex;flex-direction:column;max-height:88%}
+.sheet .grab{flex:none;width:32px;height:4px;border-radius:2px;background:var(--onSv);opacity:.4;margin:10px auto 6px}
+.sheet .scroll{padding:6px 20px 20px}
+.sheet h3{margin:0 0 4px;font-size:calc(20px*var(--t));font-weight:500;line-height:1.2}
+.opt-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;border:0;padding:6px 0;min-height:48px;font-size:calc(14px*var(--t));line-height:1.3}
+.opt-row .tx{flex:1;min-width:0}
+.opt-row .tx small{display:block;font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.3}
+.box{flex:none;width:20px;height:20px;border-radius:3px;border:2px solid var(--onSv);display:flex;align-items:center;justify-content:center}
+.box.rd{border-radius:50%}
+.opt-row[aria-checked="true"] .box{background:var(--p);border-color:var(--p)}
+.box svg{width:16px;height:16px;fill:var(--onP);opacity:0}
+.opt-row[aria-checked="true"] .box svg{opacity:1}
+.sep{border-top:1px solid var(--olv);margin:6px 0}
+/* word rows */
+.wrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;align-items:center;border-top:1px solid var(--olv);padding:10px 0;width:100%;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0}
+.wrow .w{font-size:calc(20px*var(--t));line-height:1.25;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .rd{font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .mn{font-size:calc(14px*var(--t));line-height:1.3;grid-column:1}
+.wrow .act{grid-column:2;grid-row:1/4;display:flex;align-items:center;gap:0}
+.wrow.unl .w,.wrow.unl .rd,.wrow.unl .mn{opacity:.78}
+.mastery{display:inline-flex;align-items:center;height:calc(18px*var(--t));padding:0 8px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));line-height:1;font-weight:600;letter-spacing:.3px}
+.m-new{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.m-learning{background:var(--sc);color:var(--onSc)}
+.m-known{background:var(--p);color:var(--onP)}
+.audio{width:48px;height:48px;border-radius:24px;border:0;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;flex:none}
+.audio.sm{width:40px;height:40px}
+.bottom{flex:none;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv)}
+/* key-value (inspect) */
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;margin:0}
+.kv dt{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.5}
+.kv dd{margin:0;font-size:calc(14px*var(--t));line-height:1.4;min-width:0;overflow-wrap:anywhere}
+.mono{font-family:ui-monospace,"Roboto Mono",monospace;font-size:calc(12px*var(--t))}
+.blk{display:flex;gap:12px;align-items:flex-start;border-radius:16px;padding:12px 14px;background:var(--sHigh);margin:8px 0}
+.blk p{margin:0;font-size:calc(14px*var(--t));line-height:1.35}
+.blk .tt{font-size:calc(12px*var(--t));font-weight:700;letter-spacing:.3px;text-transform:uppercase;margin:0 0 2px;color:var(--onSv)}
+/* conversation */
+.turns{display:flex;flex-direction:column;gap:12px;padding:4px 0}
+.turn{max-width:92%;border-radius:20px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.turn.a{align-self:flex-start;background:var(--sLow);border-bottom-left-radius:6px}
+.turn.b{align-self:flex-end;background:var(--sc);color:var(--onSc);border-bottom-right-radius:6px}
+.turn .who{font-size:calc(11px*var(--t));font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+.turn.a .who{color:var(--onSv)}
+.turn .tl{font-size:calc(20px*var(--t));line-height:1.45;font-weight:500}
+.turn .tl button{background:none;border:0;padding:0 1px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dotted currentColor}
+.turn .tl button.sel{background:var(--p);color:var(--onP);border-radius:6px;border-bottom-color:transparent}
+.turn .rdg{font-size:calc(13px*var(--t));line-height:1.3;opacity:.95}
+.turn .ml{font-size:calc(14px*var(--t));line-height:1.3;opacity:.95}
+.turn.live .tl{opacity:.85}
+.live-dot{display:inline-block;width:8px;height:8px;border-radius:4px;background:var(--E);margin-right:6px}
+.mic{display:flex;gap:12px;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);align-items:stretch}
+.mic .btn{flex:1;min-height:calc(48px*var(--t));flex-direction:column;gap:2px;border-radius:24px;font-size:calc(13px*var(--t))}
+.mic .btn svg.i{width:28px;height:28px}
+.mic .btn.on{outline:3px solid var(--onS);outline-offset:2px}
+.status{display:flex;align-items:center;gap:8px;padding:0 16px 8px;flex:none}
+/* highlight of what changed */
+.hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;position:relative;border-radius:14px}
+.hl-on .chg::after{content:"new";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:2;letter-spacing:.3px}
+.hl-on .chg.upd::after{content:"changed"}
+.hl-on .chg.gone::after{content:"removed"}
+.ghost{opacity:.55;text-decoration:line-through;pointer-events:none}
+.hide{display:none!important}
+.note{font-size:13px;color:var(--page-muted);margin:6px 0 14px;max-width:760px}
+/* Progress (lib/features/stats): tiles, week card, star card, bars */
+.tiles{display:flex;gap:8px;margin:0 0 8px;align-items:stretch}
+.tile{background:var(--sLow);border-radius:28px;padding:12px;min-width:0;flex:1;display:flex;flex-direction:column;gap:4px}
+.tile.w8{flex:8}.tile.w7{flex:7}
+.tile .tl{font-size:calc(14px*var(--t));line-height:1.3;font-weight:500;color:var(--onSv)}
+.tile .big{font-size:calc(28px*var(--t));line-height:1.15;font-weight:800;color:var(--onS);white-space:nowrap}
+.tile .big small{font-size:calc(14px*var(--t));font-weight:400;color:var(--onSv)}
+.tile .sub{font-size:calc(14px*var(--t));line-height:1.3;color:var(--onSv)}
+.tile.lvl{background:linear-gradient(135deg,#d9dde3,#aab1bb);color:#1b1f24}
+.tile.lvl .tl,.tile.lvl .big,.tile.lvl .sub{color:#1b1f24}
+.big2{font-size:calc(28px*var(--t));font-weight:800;line-height:1.15;display:block;white-space:nowrap;color:var(--onS)}
+.big2 small{font-size:calc(14px*var(--t));font-weight:400;color:var(--onSv)}
+.panel{background:var(--sLow);border-radius:28px;padding:18px;margin:0 0 16px}
+.panel h4{margin:0;font-size:calc(16px*var(--t));line-height:1.3;font-weight:500}
+.panel .head{display:flex;align-items:center;gap:8px}
+.panel .head .sp{flex:1}
+.link{color:var(--p);font-size:calc(14px*var(--t));font-weight:500;display:flex;align-items:center}
+.week{display:flex;padding:12px 8px;background:var(--sLow);border-radius:28px;margin:0 0 16px}
+.week div{flex:1;text-align:center;font-size:calc(12px*var(--t));color:var(--onSv)}
+.week div b{display:block;height:32px;line-height:32px;font-weight:400}
+.week .today{color:var(--onS);font-weight:700}
+.fire{color:var(--fire)}
+.bar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 8px;margin:12px 0 0;align-items:center}
+.bar .lb{font-size:calc(14px*var(--t));min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar .vl{font-size:calc(14px*var(--t));color:var(--onSv)}
+.bar .tr{grid-column:1/3;height:8px;border-radius:4px;background:var(--sHigh);overflow:hidden}
+.bar .tr i{display:block;height:100%;background:var(--tC2);border-radius:4px}
+.leech{display:flex;align-items:center;gap:16px;border-radius:28px;background:var(--sLow);padding:16px 16px 16px 18px;margin:0 0 16px}
+.leech .tx{flex:1;min-width:0}
+.pbar{height:8px;border-radius:4px;background:var(--sHigh);overflow:hidden;margin:6px 0 0}
+.pbar i{display:block;height:100%;background:var(--p);border-radius:4px}
+.lrow{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:2px 12px;align-items:baseline;padding:10px 0;border-top:1px solid var(--olv)}
+.lrow:first-of-type{border-top:0}
+.lrow .nm{font-size:calc(14px*var(--t));line-height:1.3;font-weight:500;min-width:0}
+.lrow .n1{font-size:calc(16px*var(--t));font-weight:700;text-align:right;white-space:nowrap}
+.lrow .n1 small{font-size:calc(11px*var(--t));font-weight:400;color:var(--onSv);display:block}
+.wheel{display:flex;align-items:center;gap:4px;padding:4px 4px 6px;flex:none}
+.wheel .mid{flex:1;display:flex;align-items:center;justify-content:center;gap:10px;min-width:0}
+.wheel .gl{width:34px;text-align:center;font-size:calc(14px*var(--t));color:var(--onSv);opacity:.64}
+.wheel .selp{border-radius:20px;background:var(--sc);color:var(--onSc);min-height:36px;padding:0 14px;display:flex;align-items:center;gap:8px;font-size:calc(14px*var(--t));font-weight:500;white-space:nowrap}
+.allb{border:1px solid var(--ol);border-radius:8px;min-height:32px;padding:0 10px;font-size:calc(14px*var(--t));font-weight:500;background:none;color:var(--onSv);margin-left:6px}
+.allb.on{background:var(--sc);color:var(--onSc);border-color:transparent}
+svg.star text{font-family:Roboto,sans-serif;fill:var(--onS)}
+</style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+<h1>Hours per language on Progress</h1>
+<p class="cap1">For #227 (hours spent, at most 60 s a card, and hours left). Progress was rebuilt in #760, so the new element is drawn in the rebuilt page, using its tiles and panels. Phone 360 dp at 1.4x text, ColorScheme.fromSeed of the forest seed. Red dashed outlines mark what is new against the app today. Where a choice is open it is a tweak control; none is decided here. The numbers are examples. The self-check, notes and open questions are in <code>hours-per-language.md</code>.</p>
+<div class="sticky tw" id="g-tw">
+ <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
+ <div class="tg">Course <span class="seg" data-k="course"><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></span></div>
+ <div class="tg">Highlight changes <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
+</div>
+<div id="root"></div>
+</div>
+<script>
+const PAL={
+dark:{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sHigh":"#262b27","ol":"#8a938b","olv":"#404942","E":"#ffb4ab","onE":"#690005","tC":"#224c58","onTC":"#bfe9f8","tC2":"#a2cedb","fire":"#FFB77C"},
+light:{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sHigh":"#e4eae3","ol":"#717972","olv":"#c0c9c0","E":"#ba1a1a","onE":"#ffffff","tC":"#bfe9f8","onTC":"#224c58","tC2":"#3a656f","fire":"#A84300"}};
+const IC={
+ back:'M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z',
+ close:'M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
+ chev:'M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z',
+ info:'M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z',
+ warn:'M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z',
+ bug:'M20 8h-2.81a5.985 5.985 0 0 0-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a5.9 5.9 0 0 0-2.84 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8z',
+ today:'M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 16H5V8h14v11z',
+ decks:'M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z',
+ prog:'M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z',
+ gear:'M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.48.48 0 0 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z',
+ flame:'M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67z',
+ dot:'M12 6a6 6 0 1 0 0 12 6 6 0 0 0 0-12z',
+ ring:'M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0-2a7 7 0 1 0 0 14 7 7 0 0 0 0-14z'
+};
+const ic=(k,cls='')=>`<svg class="i ${cls}" viewBox="0 0 24 24" aria-hidden="true"><path d="${IC[k]}"/></svg>`;
+const sc=(c,t)=>`<span class="script" lang="${c.lang}">${t}</span>`;
+
+/* ===== example data per course: every number is an example ===== */
+const D={
+hi:{lang:'hi',name:'Hindustani',native:'हिन्दुस्तानी',glyph:'हि',prev:'বা',next:'Es',
+ mastered:312,taught:540,level:'A2',started:'Mar 4, 2026',
+ spent:12.4,week:1.3,left:140,leftB1:410,
+ tags:[['Numbers',38],['Past tense',46],['Food and drink',55]],leeches:4,
+ star:[['Grammar',12,40],['Script',35,70],['Read',20,55],['Write',18,50],['Hear',25,60],['Say',14,45]],
+ sample:['घर','किराया','नमस्ते']},
+bn:{lang:'bn',name:'Bengali',native:'বাংলা',glyph:'বা',prev:'হি',next:'Es',
+ mastered:96,taught:210,level:'A1',started:'Aug 19, 2026',
+ spent:31.7,week:3.9,left:96,leftB1:380,
+ tags:[['Family',41],['Verb endings',48],['Greetings',63]],leeches:0,
+ star:[['Grammar',6,30],['Script',28,66],['Read',9,44],['Write',7,38],['Hear',12,52],['Say',8,41]],
+ sample:['ঘর','ভাড়া','নমস্কার']}};
+const ALL={spent:44.1,week:5.2,left:236,leftB1:790,rows:[['hi',12.4,140,410],['bn',31.7,96,380]]};
+
+/* ===== state ===== */
+const S={theme:null,course:'hi',hl:'1',
+ place:'tiles',basis:'decks',spentAs:'all',bar:'off',tap:'sheet',data:'normal',allRows:'rows'};
+try{S.theme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}catch(e){S.theme='light'}
+const root=document.getElementById('root');
+const seg=(k,opts,label)=>`<div class="tg">${label}<span class="seg" data-sk="${k}">${opts.map(([v,t])=>`<button data-v="${v}" aria-pressed="${String(S[k])===String(v)}">${t}</button>`).join('')}</span></div>`;
+const chg=(c,x,st='')=>`<div class="chg ${c||''}" ${st?`style="${st}"`:''}>${x}</div>`;
+function phone(inner,cap,tall){return `<div class="fcol"><div class="fcap">${cap}</div><div class="ph" ${tall?'style="height:1060px"':''}>${inner}</div></div>`}
+function nav(on){const it=[['today','Today'],['decks','Decks'],['prog','Progress'],['gear','Settings']];
+ return `<div class="nav">${it.map(([k,t])=>`<div class="${k===on?'on':''}"><span class="pl">${ic(k)}</span>${t}</div>`).join('')}</div>`}
+const fmt=n=>n.toLocaleString('en-US');
+
+/* ===== the new element ===== */
+function figures(c,all){
+ const d=all?ALL:c;
+ const early=S.data==='early'&&!all;
+ const spent=early?0.4:d.spent;
+ const week=early?0.4:d.week;
+ let left=S.basis==='decks'?d.left:d.leftB1;
+ if(early)left=S.basis==='decks'?'180':'520';
+ return {spent,week,left,early,all};
+}
+function basisLabel(){return S.basis==='decks'?'in the decks so far':'to finish B1'}
+function hoursTiles(c,all){
+ const f=figures(c,all);
+ const sp=S.spentAs==='both'?`<span class="sub">${f.week} this week</span>`:'';
+ return `<div class="tiles">
+  <div class="tile w7"><span class="tl">Hours spent</span><span class="big">${f.spent}</span>${sp}</div>
+  <div class="tile w8"><span class="tl">Hours left</span><span class="big"><small>About</small> ${f.left}</span><span class="sub">${basisLabel()}</span></div></div>`;
+}
+function hoursCard(c,all){
+ const f=figures(c,all);
+ const total=(+f.spent)+(+f.left);
+ const pct=Math.round(f.spent/total*100);
+ const bar=S.bar==='on'?`<div class="pbar" role="img" aria-label="${pct}% of the hours done"><i style="width:${pct}%"></i></div>`:'';
+ const sp=S.spentAs==='both'?`<span class="sub">${f.week} this week</span>`:'';
+ return `<div class="panel" style="padding:12px 12px 14px">
+  <div class="head"><h4>Time</h4><span class="sp"></span>${S.tap==='sheet'?`<span class="link">How it is counted ${ic('chev')}</span>`:''}</div>
+  <div style="display:flex;gap:16px;margin-top:8px"><div style="flex:1;min-width:0"><span class="t-sm" style="display:block">Hours spent</span><span class="big2">${f.spent}</span>${sp}</div>
+  <div style="flex:1;min-width:0"><span class="t-sm" style="display:block">Hours left</span><span class="big2"><small>About</small> ${f.left}</span><span class="sub t-sm">${basisLabel()}</span></div></div>${bar}</div>`;
+}
+function earlyNote(c,all){
+ return (S.data==='early'&&!all)?`<p class="t-sm" style="margin:-4px 4px 12px">Until you have answered 20 times in each skill, hours left uses 20 seconds an answer, so it can move a lot.</p>`:'';
+}
+function perLang(){
+ const rows=ALL.rows.map(([k,sp,l,lb])=>`<div class="lrow"><span class="nm">${sc(D[k],D[k].native)}<br><span class="t-sm">${D[k].name}</span></span><span class="n1">${sp}<small>spent</small></span><span class="n1">${S.basis==='decks'?l:lb}<small>left</small></span></div>`).join('');
+ return `<div class="panel"><div class="head"><h4>Hours by language</h4></div>${rows}</div>`;
+}
+const hoursBlock=(c,all)=>{
+ const el=S.place==='tiles'?hoursTiles(c,all):S.place==='card'?hoursCard(c,all):'';
+ return chg('',el)+earlyNote(c,all)+(all&&S.allRows==='rows'?chg('',perLang()):'');
+};
+
+/* ===== Progress as rebuilt (#760) ===== */
+function star(c){
+ const cx=150,cy=140,R=62;
+ const ang=i=>-Math.PI/2+i*Math.PI/3;
+ const pt=(i,r)=>[cx+r*Math.cos(ang(i)),cy+r*Math.sin(ang(i))];
+ const poly=(f)=>c.star.map((s,i)=>pt(i,R*f(s)).map(v=>v.toFixed(1)).join(',')).join(' ');
+ const grid=[1,.66,.33].map(k=>`<polygon points="${c.star.map((s,i)=>pt(i,R*k).join(',')).join(' ')}" fill="none" stroke="var(--olv)" stroke-width="1"/>`).join('');
+ const lab=c.star.map((s,i)=>{const [x,y]=pt(i,R+14);const a=i===0||i===3?'middle':(i<3?'start':'end');const dy=i===0?-34:(i===3?24:i<3?(i===1?-8:6):(i===5?-8:6));
+  return `<text x="${x.toFixed(1)}" y="${(y+dy).toFixed(1)}" text-anchor="${a}" font-size="17" font-weight="600">${s[0]}</text><text x="${x.toFixed(1)}" y="${(y+dy+18).toFixed(1)}" text-anchor="${a}" font-size="17" style="fill:var(--onSv)">${s[1]} · ${s[2]}%</text>`}).join('');
+ return `<div class="panel"><div class="head"><h4>Mastery by skill</h4><span class="sp"></span><span class="link">Over time ${ic('chev')}</span></div><p class="t-sm" style="margin:0">Overall mastery 36%</p>
+ <svg class="star" viewBox="0 0 300 275" width="100%" role="img" aria-label="Six-axis star of mastery by skill">${grid}<polygon points="${poly(s=>s[2]/100*.6)}" fill="var(--p)" fill-opacity=".45" stroke="none"/><polygon points="${poly(s=>s[2]/100)}" fill="none" stroke="var(--tC2)" stroke-width="2"/>${lab}</svg></div>`;
+}
+function progress(c,all,cap){
+ const d=all?{mastered:408,taught:750,level:null,started:'Mar 4, 2026',tags:c.tags,leeches:4}:c;
+ const lv=all?`<div class="tile w7"><span class="tl">Started</span><span class="big" style="font-size:calc(17px*var(--t))">${d.started}</span></div>`:
+   `<div class="tile w7 lvl"><span class="tl">Level</span><span class="big">${d.level}</span><span class="sub">Started ${d.started}</span></div>`;
+ const top=`<div class="tiles"><div class="tile w8"><span class="tl">Words mastered</span><span class="big" style="font-size:calc(24px*var(--t))">${d.mastered} <small style="font-size:calc(12px*var(--t))">/ ${d.taught} taught</small></span></div>${lv}</div>`;
+ const wk=`<div class="week">${['M','T','W','T','F','S','S'].map((x,i)=>`<div class="${i===6?'today':''}"><b>${i===2||i===3?`<span class="fire">${ic('flame')}</span>`:i===4||i===5?`${ic('dot')}`:i===6?`<span class="fire">${ic('flame')}</span>`:`${ic('ring')}`}</b>${x}</div>`).join('')}</div>`;
+ const tags=`<div class="panel"><div class="head"><h4>Weakest tags</h4><span class="sp"></span><span class="link">All tags ›</span></div>${d.tags.map(([t,v])=>`<div class="bar"><span class="lb">${t}</span><span class="vl">${v}%</span><span class="tr"><i style="width:${v}%"></i></span></div>`).join('')}</div>`;
+ const leech=`<div class="leech" ${d.leeches?'style="background:var(--tC);color:var(--onTC)"':''}>${ic('warn')}<span class="tx"><span class="t-h" style="display:block;font-weight:700">${d.leeches?d.leeches+' leeches':'No leeches'}</span><span class="t-sm" style="${d.leeches?'color:var(--onTC)':''}">Cards you keep missing</span></span>${ic('chev')}</div>`;
+ const h=hoursBlock(c,all);
+ const bar=`<div class="wheel"><button class="allb ${all?'on':''}" aria-pressed="${all}">All</button><span class="mid"><span class="gl script">${all?'':c.prev}</span><span class="selp">${all?'All languages':`<span class="script" lang="${c.lang}">${c.glyph}</span> ${c.name}`}</span><span class="gl">${all?'':c.next}</span></span><button class="ib" aria-label="Report a bug">${ic('bug')}</button></div>`;
+ const place=S.place;
+ const body=top+(place==='tiles'?h:'')+wk+(place==='card'?h:'')+star(c)+(place==='end'?h:'')+tags+leech;
+ return phone(`${bar}<div class="scroll" style="padding-top:4px">${body}</div>${nav('prog')}`,cap,true);
+}
+/* the explanation sheet */
+function howSheet(c){
+ return phone(`${`<div class="wheel"><button class="allb">All</button><span class="mid"><span class="gl script">${c.prev}</span><span class="selp"><span class="script" lang="${c.lang}">${c.glyph}</span> ${c.name}</span><span class="gl">${c.next}</span></span><button class="ib">${ic('bug')}</button></div><div class="scroll" style="padding-top:4px">${hoursTiles(c,false)}<div class="week" style="height:40px"></div></div>${nav('prog')}`}
+ <div class="scrim"></div><div class="sheet chg" style="outline-offset:-3px"><div class="grab"></div><div class="scroll"><h3>How hours are counted</h3>
+ <div class="blk"><div><p class="tt">Hours spent</p><p>Time you took to answer cards in ${c.name}, from the moment a question showed to your answer. Each answer counts for at most 60 seconds, so a question left open adds nothing more. Reading the feedback and teach cards are not counted.</p></div></div>
+ <div class="blk"><div><p class="tt">Hours left</p><p>${S.basis==='decks'?`For the units whose decks exist, the answers each card still needs to be remembered (an interval of 21 days), at your own time per answer. It grows as decks are added.`:`For every unit of the B1 plan, including those whose decks are not written yet, at your own time per answer. Units without decks use the average of the units that have them.`}</p></div></div>
+ <p class="t-sm" style="margin:8px 0 12px">Skills you switched off and script decks you skip are left out.</p>
+ <button class="btn tonal full">Got it</button></div></div>`,'Tap on the figures: how hours are counted');
+}
+function render(){
+ const c=D[S.course];
+ document.documentElement.setAttribute('data-theme',S.theme);
+ root.className=S.hl==='1'?'hl-on':'';
+ root.style.cssText=Object.entries(PAL[S.theme]).map(([k,v])=>`--${k}:${v}`).join(';');
+ const opts=`<div class="tw">${seg('place',[['tiles','A. A tile row under Words and Level'],['card','B. A Time card under the week'],['end','C. A Time card after the star']],'Where')}${seg('basis',[['decks','Decks so far (owner, 2026-10-10)'],['b1','To the end of B1']],'Hours left counts')}${seg('spentAs',[['all','All time'],['both','All time and this week']],'Hours spent shows')}${seg('tap',[['sheet','Tap opens "How it is counted"'],['none','Not tappable']],'Figures')}${seg('data',[['normal','Plenty of answers'],['early','Few answers (new learner)']],'Data')}</div>`;
+ const cardOpt=S.place==='card'?`<div class="tw">${seg('bar',[['off','No bar'],['on','Spent share bar']],'Time card')}</div>`:'';
+ const sheetPhone=S.tap==='sheet'?howSheet(c):'';
+ root.innerHTML=`
+ <section class="opt"><h2>1. Progress with hours</h2>
+ <p class="note">Progress counts the language the language bar shows. The element is drawn in all three places; the choice is the "Where" control. A language with no decks yet shows "–" for hours left, as the Decks card shows no hours row for it. "About" is a small word before the number so the figure keeps its room at 1.4x.</p>
+ ${opts}${cardOpt}
+ <div class="frames">${progress(c,false,'One language: '+c.name)}${progress(c,true,'All languages (the bar’s All button)')}${sheetPhone}</div></section>`;
+ document.querySelectorAll('#g-tw .seg').forEach(s=>{const k=s.dataset.k;s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(S[k])===b.dataset.v))});
+}
+document.addEventListener('click',e=>{
+ const gb=e.target.closest('#g-tw .seg button');
+ if(gb){S[gb.parentNode.dataset.k]=gb.dataset.v;render();return}
+ const b=e.target.closest('[data-sk] button');
+ if(b){S[b.parentNode.dataset.sk]=b.dataset.v;render();return}
+});
+render();
+
+/* ===== contrast self-check: console only ===== */
+function lum(h){const c=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]}
+function cr(a,b){const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
+const PAIRS=[['body text','onS','s',4.5],['captions, readings','onSv','s',4.5],['text on cards','onS','sLow',4.5],['captions on cards','onSv','sLow',4.5],['text on raised blocks','onS','sHigh',4.5],['captions on raised blocks','onSv','sHigh',4.5],['tonal button, selected pill','onSc','sc',4.5],['filled button','onP','p',4.5],['link and icon on cards','p','sLow',4.5],['leech text','onTC','tC',4.5],['star outline, bar fill on card','tC2','sLow',3],['bar fill on track','tC2','sHigh',3],['filled star shape on card','p','sLow',3],['flame on card','fire','sLow',3],['outline against page','ol','s',3],['change tag','onE','E',4.5],['change outline on page','E','s',3],['change outline on card','E','sLow',3]];
+window.__contrast=[];
+['light','dark'].forEach(t=>PAIRS.forEach(([n,f,b,need])=>{const r=cr(PAL[t][f],PAL[t][b]);window.__contrast.push({theme:t,pair:n,fg:f,bg:b,ratio:+r.toFixed(2),need,pass:r>=need})}));
+console.log('contrast',JSON.stringify(window.__contrast));
+</script>
+</body>
+</html>

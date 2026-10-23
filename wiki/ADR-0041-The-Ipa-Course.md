@@ -36,7 +36,7 @@ a voice, and the IPA is neither.
    gives its `language`, and `sounds: false` where the card's letter is not
    said with the card's sound. The card shows each example marked "Has this
    sound" or "Does not have this sound", by an icon and words, never by colour
-   alone, and in Inspect.
+   alone, and on the word sheet.
 3. **One language, two entries, one progress.** The language list offers
    "IPA: my languages" and "IPA: whole chart". Choosing either learns `ipa`;
    choosing the other while it is learned changes only the learner's scope,
@@ -45,7 +45,7 @@ a voice, and the IPA is neither.
    is in the course when it is `core` or tagged with a language the learner
    learns. **This is filtered in one place**, `Catalog.forIpa`, applied by
    `AppState` to what every screen reads (`decks`, `deckById`, `deckOf`), so
-   counts, lessons, finished decks and Inspect agree. A deck left with no card
+   counts, lessons, finished decks and the word sheet agree. A deck left with no card
    is not on offer. A card the learner has answered stays in their course
    whatever its tags: it is scheduled.
 4. **The IPA is learned only when chosen.** A profile that learns "every
@@ -95,7 +95,7 @@ a voice, and the IPA is neither.
   two languages would need the same cards twice or a ref from one to the
   other, and a learner switching would see two progresses. One language with
   a scope is simpler and is what the owner asked for ("They share progress").
-- **Filtering in each screen.** Counts, lessons, finished decks and Inspect
+- **Filtering in each screen.** Counts, lessons, finished decks and the word sheet
   would disagree the first time one forgot; the plan says "in one place".
 - **A keyboard of IPA symbols for typing.** Phone keyboards have none and an
   on-screen one is a project of its own; choosing the symbol is a fair test of

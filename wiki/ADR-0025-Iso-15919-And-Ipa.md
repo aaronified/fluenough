@@ -38,7 +38,7 @@ decided:
 - where the script and the sound differ, follow the sound: "Follow IPA".
   ISO 15919 letters, spelled as the word is said;
 - a typed answer with the wrong length or retroflex is right, as before;
-- the IPA shows on the teach card, after an answer, in Inspect, and on
+- the IPA shows on the teach card, after an answer, on the word sheet, and on
   questions too, unless the question is about pronunciation;
 - the IPA is broad: /paːlu/.
 
