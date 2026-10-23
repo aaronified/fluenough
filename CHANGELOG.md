@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - The language bar is a centred, looping wheel with the selection fixed at the centre (All moves to the left on Progress): it follows the finger 1:1, ticks at each language, coasts to a detent on a fling and settles on a spring, a touch stops it, and the pill then grows over 0.3 s to the language's name (#703, #682).
+- The deck validator ends a failing run with an `Errors:` section repeating every error (cross-file ones, and each file's with its file), so CI's log shows them at its tail; a passing run is unchanged.
 - Words you know come up a few at a time (#680). A word is known when FSRS gave it an 85% or better chance of being remembered at its last review. When a deck's known words come due, Today asks two of them a day, the ones you reviewed longest ago; once they are right, the deck's other due known words wait for another day, so each has its turn within a few days and none is left out. If one is wrong, three to five more are asked, and if those go wrong too, all of the deck's due known words come up.
 - A finished deck's Revise now records its answers and moves the schedule, like quick revision; only number practice is unrecorded (#499, ADR-0033).
 

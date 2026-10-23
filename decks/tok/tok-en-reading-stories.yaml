@@ -1,0 +1,77 @@
+"schema": 1
+"id": "tok-en-reading-stories"
+"name": "Reading: stories for bedtime and fables"
+"kind": "reading"
+"language":
+  "code": "tok"
+  "iso639_3": "tok"
+  "name": "Toki Pona"
+  "script": "latin"
+  "icon": "Tp"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this deck"
+"description": "Two passages from stories: a listening bedtime story about a raccoon who takes food, and a reading fable with a moral in its last line. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "reading"
+- "unreviewed"
+"passages":
+- "id": "tok-stories-bedtime"
+  "title": "A bedtime story"
+  "theme": "stories"
+  "sentences":
+  - "text": "kijetesantakalu li lanpan e moku."
+  - "text": "ona li moku e kili ni."
+  - "text": "monsuta li lon tenpo pimeja."
+  - "text": "o lape."
+  "questions":
+  - "id": "tok-0722"
+    "prompt":
+      "en": "What does the raccoon take?"
+    "options":
+    - "en": "Food"
+    - "en": "A tool"
+    "answer": 1
+  - "id": "tok-0723"
+    "prompt":
+      "en": "When is the monster there?"
+    "options":
+    - "en": "At night"
+    - "en": "At noon"
+    "answer": 1
+  - "id": "tok-0724"
+    "prompt":
+      "en": "The story ends with a command to sleep. Is that true?"
+    "answer": true
+- "id": "tok-stories-fable"
+  "title": "A fable"
+  "theme": "stories"
+  "sentences":
+  - "text": "kijetesantakalu li lanpan e kili suwi."
+  - "text": "soweli li pilin ike."
+  - "text": "o lanpan ala e kili ona."
+  "questions":
+  - "id": "tok-0725"
+    "prompt":
+      "en": "What does the raccoon take?"
+    "options":
+    - "en": "Sweet fruit"
+    - "en": "A stone"
+    "answer": 1
+  - "id": "tok-0726"
+    "prompt":
+      "en": "How does the animal feel?"
+    "options":
+    - "en": "Bad"
+    - "en": "Good"
+    "answer": 1
+  - "id": "tok-0727"
+    "prompt":
+      "en": "What is the moral in the last line?"
+    "options":
+    - "en": "Do not take what is not yours"
+    - "en": "Take as much as you can"
+    "answer": 1
