@@ -1925,7 +1925,12 @@ void main() {
         final state = await loaded(features: vocabOnly);
         expect(state.buildSession(const DrillRequest.today()).isEmpty, isTrue);
         final lesson = state.lessonFor(DrillRequest.lesson(language: 'es'));
-        expect(lesson.where((i) => i.ask == Ask.teach), hasLength(9));
+        // Nine words, and more when a set one of them belongs to comes whole
+        // (the lesson's cap does not hold back a set's members).
+        expect(
+          lesson.where((i) => i.ask == Ask.teach),
+          hasLength(greaterThanOrEqualTo(9)),
+        );
 
         {
           final state = await loaded(features: vocabOnly)
@@ -2242,7 +2247,13 @@ void main() {
       final l10n = l10nOf(tester);
       expect(find.byType(LessonCard), findsOneWidget);
       expect(find.text(l10n.todayLessonTitle), findsOneWidget);
-      expect(find.text(l10n.todayLessonWords(9)), findsOneWidget);
+      // Nine words, plus the members of a set one of them belongs to.
+      final taught = <String>{
+        for (final item in state.lessonFor(DrillRequest.lesson(language: 'es')))
+          if (item.ask == Ask.teach) item.card.id,
+      }.length;
+      expect(taught, greaterThanOrEqualTo(9));
+      expect(find.text(l10n.todayLessonWords(taught)), findsOneWidget);
       // Nothing to review yet: new words come in lessons.
       expect(find.text(l10n.todayAllDoneTitle), findsOneWidget);
 
@@ -2266,10 +2277,10 @@ void main() {
 
       await finishLesson(tester);
       expect(find.byType(SummaryPage), findsOneWidget);
-      // Nine words, each recorded in two skills but a grammar cell, which has
+      // Every word taught, each recorded in two skills but a grammar cell, which has
       // one, all right.
       final log = state.progress.log;
-      expect(log.map((e) => e.cardId).toSet(), hasLength(9));
+      expect(log.map((e) => e.cardId).toSet(), hasLength(taught));
       expect(log, hasLength(planned));
       // A right choice in Hear or Write records 3, a right choice or match
       // of a meaning seen 4 (ADR-0034): every answer is right.
@@ -2289,7 +2300,7 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.text(l10n.todayLessonDoneTitle), findsOneWidget);
       expect(find.text(l10n.todayAnotherLesson), findsOneWidget);
-      expect(find.text(l10n.todayNewWords(9)), findsOneWidget);
+      expect(find.text(l10n.todayNewWords(taught)), findsOneWidget);
     });
 
     testWidgets('Start review asks the words taught in their other skills', (
