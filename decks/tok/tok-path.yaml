@@ -5,9 +5,9 @@
 # This is also Toki Pona's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"):
 # every unit from the first words to B1, with its size in words, its
 # grammar topics, the three milestones, and for each planned unit its
-# listening and reading passages. No Toki Pona deck is written yet, so
-# every unit is planned: the course teaches each as "Coming" until its
-# deck is written.
+# listening and reading passages. The first three units are written (their decks are
+# listed under units 1 to 3); every other unit is planned: the course teaches each
+# as "Coming" until its deck is written.
 #
 # Toki Pona is small on purpose. Sonja Lang's first book (pu, 2014) has
 # 120 words; her dictionary (ku, 2021) names the 137 words most speakers
@@ -39,11 +39,11 @@
 #
 # What the levels mean here, by what a learner can do (the CEFR's
 # descriptors, not its word counts):
-# - A1 (64 words): greet, say who you are and what you want, describe a
+# - A1 (66 words): greet, say who you are and what you want, describe a
 #   person or thing in a simple sentence, ask and answer yes-no and seme
 #   questions, give a command, and place a sentence in the past or future
 #   with tenpo ... la.
-# - A2 (+48, 112 in all): every word of pu but two; group modifiers with
+# - A2 (+46, 112 in all): every word of pu but two; group modifiers with
 #   pi; say where, from where, with what and how, with the prepositions;
 #   use the preverbs; join subjects, predicates and objects; read a short
 #   simple text and follow a slow conversation on familiar things.
@@ -69,7 +69,7 @@
 # 3. no script units: Toki Pona is written in 14 Latin letters (a e i o
 #    u, j k l m n p s t w), taught in the script guide (tok-script.yaml)
 #    and the sounds unit, so the path has no `alphabet`;
-# 4. a core of common words in themed units: here A1's 64 words, about
+# 4. a core of common words in themed units: here A1's 66 words, about
 #    half the language, ordered by judgement, most common first;
 # 5. rules as forms, practised on the words already known: here the
 #    particles and word order, since there are no forms;
@@ -128,38 +128,41 @@ units:
   # commands, modifiers and time.
   #
   # 1. The phrasebook, taught whole from the first lesson: toki!, mi pona,
-  # sina pona ala pona?, nimi mi li ..., mi sona ala, tawa pona, awen pona.
-  # tok-first-words joins it when written. Its 7 words: toki, pona, mi,
-  # sina, ala, nimi, sona.
-  - planned: { id: "tok-phrasebook", theme: "first-words", words: 7 }
-    listening_passages:
-      - { id: "first-toki", text: { "en": "Toki and tawa pona: two people meet in an online voice chat, say their names and leave" } }
-    reading_passages:
-      - { id: "name-tags", text: { "en": "Name tags at a meetup: nimi mi li ... and where each person comes from" } }
+  # sina pona ala pona?, nimi mi li Ana, mi sona ala, tawa pona, awen pona
+  # and 8 more (15 phrases in tok-phrasebook). Its 7 words are in
+  # tok-first-words: toki, pona, mi, sina, ala, nimi, sona. The sentences
+  # (tok-first-words-sentences) and the reading passages (tok-reading-meetup,
+  # the listening and the reading passage) belong to the unit too.
+  - decks: ["tok-phrasebook", "tok-first-words", "tok-first-words-sentences", "tok-reading-meetup", "*"]
+    words: 7
   # 2. The sounds: 9 consonants and 5 vowels, j said y, the stress always
   # on the first syllable, the syllables the language forbids (wu, wo, ji,
-  # ti, and n before m or n), and capitals only for names. No new words:
-  # its pairs are the phrasebook's words and the next units'.
-  - planned: { id: "tok-sound-differences", grammar: ["sounds-syllables", "first-syllable-stress"] }
-    listening_passages:
-      - { id: "sounds-alike", text: { "en": "Pairs said one after the other: sina and sona, pan and pana, kon and ko" } }
-    reading_passages:
-      - { id: "fourteen-letters", text: { "en": "The fourteen letters, each with a word that starts with it" } }
-  # seme, anu, lon (true, yes, there) and a. The question forms are rules,
-  # in units 6 and 8.
-  - planned: { id: "tok-questions", theme: "questions", words: 4 }
-    listening_passages:
-      - { id: "what-is-it", text: { "en": "Someone asks what things are and is told: ni li seme?" } }
-    reading_passages:
-      - { id: "quiz-card", text: { "en": "A short quiz card with four simple questions" } }
+  # ti, and n before m or n), and capitals only for names. Its 4 words are
+  # pan, pana, kon and ko, taught here for its pairs, so the units that
+  # would teach them count them no more. sina and sona are taught in
+  # tok-first-words and are refs here; the validator counts them in this
+  # unit too, so the unit says 6.
+  - decks: ["tok-sound-differences", "tok-reading-sounds-alike", "tok-reading-fourteen-letters", "tok-grammar-sounds-syllables", "tok-grammar-first-syllable-stress"]
+    words: 6
+    grammar: ["sounds-syllables", "first-syllable-stress"]
+  # 3. Questions: seme (what), anu (or), lon (to be here or there, true,
+  # yes) and a (an exclamation). Its sentences are tok-questions-sentences,
+  # and its passages are in tok-en-reading-questions: the listening passage
+  # what-is-it (someone asks what things are: ni li seme?) and the reading
+  # passage quiz-card (a quiz card with four simple questions). The
+  # yes-no and seme question forms are rules, in units 6 and 8.
+  - decks: ["tok-questions", "tok-questions-sentences", "tok-reading-questions", "*"]
+    words: 4
   # ona, ni, jan and ijo: with mi and sina, every pronoun the language has.
-  - planned: { id: "tok-pronouns", theme: "pronouns", words: 4 }
-    listening_passages:
-      - { id: "who-is-who", text: { "en": "Pointing out who is who in a group photo: ona, ni, jan ni" } }
-    reading_passages:
-      - { id: "group-chat", text: { "en": "Messages in a group chat, each saying who is writing" } }
-  # moku, lape, pali, lukin, kute, jo, pana, wile, kama and tawa.
-  - planned: { id: "tok-everyday-verbs", theme: "everyday-verbs", words: 10 }
+  # The set card tok-0066 is the pronoun group (mi, sina, ona, ni). Its
+  # sentences are tok-pronouns-sentences, and its passages are in
+  # tok-reading-pronouns: the listening passage who-is-who (pointing out who
+  # is who in a group photo) and the reading passage group-chat (messages in
+  # a group chat, each saying who is writing).
+  - decks: ["tok-pronouns", "tok-pronouns-sentences", "tok-reading-pronouns", "*"]
+    words: 4
+  # moku, lape, pali, lukin, kute, jo, wile, kama and tawa.
+  - planned: { id: "tok-everyday-verbs", theme: "everyday-verbs", words: 9 }
     listening_passages:
       - { id: "what-i-do", text: { "en": "A short monologue: what I eat, see, hear and want today" } }
     reading_passages:
@@ -198,8 +201,8 @@ units:
       - { id: "kitchen-orders", text: { "en": "Someone gives orders while cooking: o pana e telo!" } }
     reading_passages:
       - { id: "house-rules", text: { "en": "A list of house rules, each starting with o" } }
-  # telo, kili, pan, suwi, seli and lete.
-  - planned: { id: "tok-food", theme: "food", words: 6 }
+  # telo, kili, suwi, seli and lete.
+  - planned: { id: "tok-food", theme: "food", words: 5 }
     listening_passages:
       - { id: "what-to-eat", text: { "en": "Two friends decide what to eat and drink" } }
     reading_passages:
@@ -305,8 +308,8 @@ units:
       - { id: "learning-plans", text: { "en": "Someone says what they want, can and are starting to learn" } }
     reading_passages:
       - { id: "new-year-wishes", text: { "en": "A list of wishes for the new year" } }
-  # palisa, sike, linja, lipu, sitelen, kiwen and ko.
-  - planned: { id: "tok-things", theme: "things", words: 7 }
+  # palisa, sike, linja, lipu, sitelen and kiwen.
+  - planned: { id: "tok-things", theme: "things", words: 6 }
     listening_passages:
       - { id: "whats-in-the-bag", text: { "en": "Someone lists what is in their bag and what each is for" } }
     reading_passages:
@@ -324,8 +327,8 @@ units:
       - { id: "if-it-rains", text: { "en": "A friend's plans if it rains and if it does not" } }
     reading_passages:
       - { id: "game-rules", text: { "en": "The rules of a simple game, each in an if-then sentence" } }
-  # kasi, kon and ma.
-  - planned: { id: "tok-nature", theme: "nature", words: 3 }
+  # kasi and ma.
+  - planned: { id: "tok-nature", theme: "nature", words: 2 }
     listening_passages:
       - { id: "a-walk", text: { "en": "Someone describes a walk in the country" } }
     reading_passages:
