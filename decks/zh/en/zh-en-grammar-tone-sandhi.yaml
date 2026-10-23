@@ -1,0 +1,26 @@
+schema: 1
+id: "zh-en-grammar-tone-sandhi"
+kind: "layer"
+core: "zh-grammar-tone-sandhi"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Tone sandhi: tones that change"
+license: "CC-BY-SA-4.0"
+description: "Some tones change when words meet: two third tones, 不 (bù) and 一 (yī). Pinyin writes the tone a word has on its own, but it is said differently. Not yet checked by a Mandarin speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Tone sandhi: tones that change"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}): {slot}"
+  slots: { "written": "as written in pinyin", "said": "as it is said" }
+  entries:
+    "nihao": "hello"
+    "maima": "to buy a horse"
+    "jiudian": "nine o'clock"
+    "bushi": "is not"
+    "buqu": "does not go"
+    "buma": "does not scold"
+    "buchi": "does not eat"
+    "yige": "one (of them)"
+    "yibai": "one hundred"
+    "yici": "once"
+  notes: "Two third tones in a row: the first is said as a second tone, so 你好 (nǐ hǎo) is said ní hǎo, though it is written nǐ hǎo. 不 (bù) is said bú before a fourth tone: 不是 (bú shì), but 不吃 (bù chī) keeps its tone before a first tone. 一 (yī) is said yí before a fourth tone (一个 (yí ge)) and yì before the first, second and third tones (一百 (yì bǎi)). Pinyin dictionaries write the tone a word has on its own. In running text, 不 (bù) and 一 (yī) are often written as said, as in 不是 (bú shì)."

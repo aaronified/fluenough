@@ -26,13 +26,13 @@ cards:
     reading: "nǐ wèishénme bù hē?"
     pos: "phrase"
   - id: "zh-0109"
-    target: "这个怎么样？"
-    words: ["这个", "怎么样"]
-    reading: "zhège zěnmeyàng?"
+    target: "这个怎样？"
+    words: ["这个", "怎样"]
+    reading: "zhège zěnyàng?"
     pos: "phrase"
     bases:
       - { word: "这个", base: "这个", reading: "zhège" }
-      - { word: "怎么样", base: "怎么样", reading: "zěnmeyàng" }
+      - { word: "怎样", ref: "zh-0104" }
   - id: "zh-0110"
     target: "我们吃鱼还是吃鸡？"
     words: ["我们", "吃", "鱼", "还是", "吃", "鸡"]

@@ -167,11 +167,11 @@ cards:
           - { word: "有", base: "有", reading: "yǒu" }
           - { word: "八百", base: "八百", reading: "bābǎi" }
       - target: "我买一百个。"
-        reading: "wǒ mǎi yībǎi ge."
+        reading: "wǒ mǎi yìbǎi ge."
         words: ["我", "买", "一百", "个"]
         bases:
           - { word: "买", ref: "zh-0039" }
-          - { word: "一百", base: "一百", reading: "yībǎi" }
+          - { word: "一百", base: "一百", reading: "yìbǎi" }
           - { word: "个", base: "个", reading: "ge" }
   - id: "zh-0039"
     target: "买"
@@ -230,11 +230,12 @@ cards:
         words: ["我", "开", "门"]
         bases:
           - { word: "门", base: "门", reading: "mén" }
-      - target: "店不开。"
-        reading: "diàn bù kāi."
-        words: ["店", "不", "开"]
+      - target: "店不开门。"
+        reading: "diàn bù kāi mén."
+        words: ["店", "不", "开", "门"]
         bases:
           - { word: "店", base: "店", reading: "diàn" }
+          - { word: "门", base: "门", reading: "mén" }
   - id: "zh-0042"
     target: "来"
     target_scripts: { han_traditional: "來" }
