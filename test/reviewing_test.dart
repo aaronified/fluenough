@@ -1527,7 +1527,7 @@ void main() {
             request: request,
             preset: const DrillPreset(target: 'విధవ'),
           ),
-          state: await reviewState(),
+          state: await reviewState(adult: false),
         );
         expect(find.byType(AlikeWarning), findsNothing);
 
@@ -1538,7 +1538,7 @@ void main() {
             request: request,
             preset: const DrillPreset(target: 'విధవ', reveal: true),
           ),
-          state: await reviewState(),
+          state: await reviewState(adult: false),
         );
         final l10n = l10nOf(tester);
         expect(find.byType(AlikeWarning), findsOneWidget);
@@ -1549,7 +1549,8 @@ void main() {
 
         {
           usePhone(tester);
-          final state = await reviewState();
+          final state = await reviewState(adult: false);
+          final rudeEntry = (await reviewState()).deckById(rudeDeck)!;
           await pumpScreen(
             tester,
             Scaffold(
@@ -1569,8 +1570,8 @@ void main() {
             Scaffold(
               body: AlikeWarning(
                 kind: AlikeKind.sound,
-                named: state.deckById(rudeDeck)!.cards.single,
-                language: state.deckById(rudeDeck)!.language,
+                named: rudeEntry.cards.single,
+                language: rudeEntry.language,
                 care: 'Keep the short i.',
               ),
             ),
