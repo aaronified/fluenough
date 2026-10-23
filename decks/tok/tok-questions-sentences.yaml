@@ -28,7 +28,7 @@ cards:
     ipa: "ni li lon"
     pos: "phrase"
     bases:
-      - { word: "ni", base: "ni" }
+      - { word: "ni", ref: "tok-0063" }
       - { word: "li", base: "li" }
     confusables:
       - { id: "w1", ref: "tok-0004", kind: "word" }
@@ -38,7 +38,7 @@ cards:
     ipa: "mi lon ni"
     pos: "phrase"
     bases:
-      - { word: "ni", base: "ni" }
+      - { word: "ni", ref: "tok-0063" }
     confusables:
       - { id: "w1", ref: "tok-0004", kind: "word" }
       - { id: "w2", ref: "tok-0005", kind: "word" }
