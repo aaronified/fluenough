@@ -116,9 +116,13 @@ regions:
   - id: "singapore-malaysia"
     name: { "en": "Singapore and Malaysia (Singapore, Kuala Lumpur, Penang, Johor Bahru)" }
 # The decks that need the script: a learner who learns without it skips
-# them. No script deck is written yet; the planned script units (strokes
-# and radicals, and the seven character sets) join this list as each is
-# written, so it is left out until then.
+# them. The planned script units (strokes and radicals, and the seven
+# character sets) join this list as each is written.
+alphabet:
+  - "zh-strokes-radicals"
+  - "zh-reading-strokes-radicals"
+  - "zh-characters-1"
+  - "zh-reading-characters-1"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
@@ -181,12 +185,14 @@ units:
   # who learns without it). Strokes, stroke order and the common radicals
   # first, then the first set of characters: numbers, people and the
   # simplest pictures.
-  - planned: { id: "zh-strokes-radicals", grammar: "script-strokes-radicals", words: 0 }
+  - decks: ["zh-strokes-radicals", "zh-reading-strokes-radicals"]
+    words: 10
     listening_passages:
       - { id: "naming-the-strokes", text: { "en": "A teacher names the basic strokes and the order they are written in, while writing ren, person, and kou, mouth" } }
     reading_passages:
       - { id: "radical-chart", text: { "en": "A chart of common radicals with their meanings: water, hand, mouth, person, wood" } }
-  - planned: { id: "zh-characters-1", grammar: "script-characters-1", words: 0 }
+  - decks: ["zh-characters-1", "zh-reading-characters-1"]
+    words: 10
     listening_passages:
       - { id: "one-two-three", text: { "en": "Hearing the words whose characters are taught: the numbers, person, big, small, I, you" } }
     reading_passages:
