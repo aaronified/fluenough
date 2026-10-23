@@ -2355,6 +2355,7 @@ units:
 | `alphabet` | no | The core ids of the decks that need the alphabet: the script, spelling and reading decks. Each must be on the path. A learner who learns the language without its alphabet is not taught them. |
 | `regions` | no | The language's regions ([Regions](#regions)). |
 | `genders` | no | The language's gender classes, such as `["m", "f"]`, or `[]` for a language without gender: what a noun's `gender` may be ([Gender](#gender)). |
+| `levels` | no | The words per level, such as `{ A1: 120, A2: 60, B1: 80 }`, in place of the default sizes ([The sizes](#the-b1-plan), [ADR-0045](ADR-0045-Path-Level-Sizes)). |
 | `description` | no | Free text. |
 
 **A deck's core id** is `<lang>-<name>`: a core's own id, a layer's core
@@ -2492,7 +2493,7 @@ A unit is a list of core ids, as before, or a mapping:
 |---|---|
 | `decks` | A written unit's core ids, as the list form, wildcard and all. |
 | `planned` | A unit not written yet: `{ id, theme, words }` for a theme unit, `{ id, grammar, words? }` for a grammar unit. `id` is the core id its decks will have (`te-health`; each course's deck for it is then `te-en-health`, `te-bn-health`, …), which must not exist yet: no core of that id, and no deck `te-<native>-health` in any course. When the first of them is written, the unit turns into `decks` in the same change; the courses still without a deck for it see it as "Coming". |
-| `words` | The unit's planned size in words, a whole number: 0 or more on a written unit (a unit of grammar or reading decks gives 0), 1 or more on a planned theme unit. One size for every native language. On a planned unit, inside `planned` or beside it, not both. |
+| `words` | The unit's planned size in words, a whole number, 0 or more: a unit of grammar or reading decks gives 0, and so does a planned theme unit with no new roots. One size for every native language. On a planned unit, inside `planned` or beside it, not both. |
 | `grammar` | The grammar topics it teaches, below: a list, or one as text. On a planned unit, inside `planned` or beside it, not both. |
 | `milestone` | `"A1"`, `"A2"` or `"B1"`, on the unit where that level ends. A unit of `"*"` alone carries none. |
 | `listening_passages`, `reading_passages` | The unit's listening and reading passages, each `{ id, text }`. **Both are required on every planned unit.** A written unit's passages are its [reading decks](#reading-decks), and it need not list them. |
@@ -2564,6 +2565,17 @@ milestones are already there.
   its size, of planned words up to B1 outside 2,000–3,500, of a written unit
   with more words than it plans for learners from some native language
   (raise `words`), and of a planned theme not yet in `decks/themes.yaml`.
+- **A path's own sizes:** `levels: { A1: 120, A2: 60, B1: 80 }` gives the
+  words per level, A1 and then A2 and B1 each in addition, and replaces the
+  sizes above for that path
+  ([ADR-0045](ADR-0045-Path-Level-Sizes)). All three levels are given, each
+  a whole number of 1 or more. The level warnings and the info line use
+  them, and the planned words up to B1 are held to half to one and a half
+  times their sum. The app counts toward that sum. A path without `levels`
+  keeps the defaults. **Roots only:** a compound of several words is written
+  `pos: "phrase"` and counts toward no level. A released app refuses a path
+  with an unknown key, so a path first sets `levels` one release after the
+  app that reads it.
 
 ### Regions
 
