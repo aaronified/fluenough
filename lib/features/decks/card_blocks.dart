@@ -88,12 +88,20 @@ List<Similar> similarOf(
       meanings: const <String>[],
     ));
   }
-  if (card.altNative.isNotEmpty) {
+  // Its other meanings: the layer's `alt_native` and the card's `senses`,
+  // which `warning: "senses"` names (DECK-FORMAT.md), each once.
+  final meanings = <String>[
+    ...card.altNative,
+    for (final sense in card.senses)
+      if (sense.native != card.native && !card.altNative.contains(sense.native))
+        sense.native,
+  ];
+  if (meanings.isNotEmpty) {
     out.add((
       kind: SimilarKind.meanings,
       partner: null,
       text: null,
-      meanings: card.altNative,
+      meanings: meanings,
     ));
   }
   return out;

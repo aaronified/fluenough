@@ -124,6 +124,24 @@ void main() {
       expect(shown.similar?.meanings, <String>['kitty']);
     });
 
+    test('"senses" on a card whose other meanings are its `senses`', () async {
+      final state = await _state();
+      const card = Card(
+        id: 'es-9005',
+        deckId: _deck,
+        target: 'banco',
+        native: 'bank',
+        warning: 'senses',
+        senses: <CardSense>[
+          CardSense(id: 'bench', native: 'bench'),
+          CardSense(id: 'bank', native: 'bank'),
+        ],
+      );
+      final shown = teachWarningOf(state, card);
+      expect(shown.similar?.kind, SimilarKind.meanings);
+      expect(shown.similar?.meanings, <String>['bench']);
+    });
+
     test('"none" shows nothing, whatever the card is like', () async {
       final state = await _state();
       final shown = teachWarningOf(state, _gato(warning: 'none'));

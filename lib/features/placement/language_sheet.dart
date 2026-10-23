@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/decks/language_catalog.dart';
+import '../../core/scheduling/placed_review.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
@@ -8,6 +9,7 @@ import '../profiles/spoken_languages_picker.dart' show PickerHeading;
 import 'course_line.dart';
 import 'language_card.dart' show NativeChoiceField;
 import 'language_row.dart';
+import 'placed_review_choice.dart';
 
 /// What the sheet of Languages I'm learning says about one of a language's
 /// scripts (#626): learning it already, or a choice to make.
@@ -129,6 +131,8 @@ class LanguageSheet extends StatefulWidget {
     this.confirmStop,
     this.scriptTest,
     this.scriptPassed = false,
+    this.placedReview,
+    this.onPlacedReview,
   });
 
   final CatalogLanguage language;
@@ -193,6 +197,14 @@ class LanguageSheet extends StatefulWidget {
   /// Whether the script test was passed before.
   final bool scriptPassed;
 
+  /// How the course reviews the words placement credited (#761), for a
+  /// course that has some: its "Placed words" row, which opens the choice.
+  /// Null for a course with none.
+  final PlacedReview? placedReview;
+
+  /// Called at once with a choice made in the Placed words sheet.
+  final ValueChanged<PlacedReview>? onPlacedReview;
+
   @override
   State<LanguageSheet> createState() => _LanguageSheetState();
 }
@@ -209,6 +221,7 @@ class _LanguageSheetState extends State<LanguageSheet> {
   };
   late String? _native = widget.native;
   late bool _passed = widget.scriptPassed;
+  late PlacedReview? _placedReview = widget.placedReview;
 
   bool get _hasScripts => widget.scripts.isNotEmpty;
 
@@ -414,6 +427,8 @@ class _LanguageSheetState extends State<LanguageSheet> {
               ],
             ),
           ),
+          if (_placedReview case final choice?)
+            _placedWordsRow(context, language.name, choice),
         ],
         if (widget.learned && _hasScripts) ...<Widget>[
           PickerHeading(l10n.pickerSectionScripts),
@@ -853,6 +868,33 @@ class _LanguageSheetState extends State<LanguageSheet> {
           child: Text(label),
         ),
       ],
+    );
+  }
+
+  /// The "Placed words" row (#761): how the course reviews what placement
+  /// credited, opening the choice. A choice applies at once.
+  Widget _placedWordsRow(
+    BuildContext context,
+    String language,
+    PlacedReview choice,
+  ) {
+    final l10n = AppLocalizations.of(context)!;
+    return ListTile(
+      key: const ValueKey<String>('sheet-placed-words'),
+      contentPadding: const EdgeInsetsDirectional.symmetric(horizontal: 24),
+      leading: const Icon(Icons.layers_outlined),
+      title: Text(l10n.placedReviewRow),
+      subtitle: Text(choice.title(l10n)),
+      trailing: const Icon(Icons.chevron_right),
+      onTap: () => showPlacedReviewSheet(
+        context,
+        language: language,
+        current: choice,
+        onChanged: (picked) {
+          setState(() => _placedReview = picked);
+          widget.onPlacedReview?.call(picked);
+        },
+      ),
     );
   }
 }
