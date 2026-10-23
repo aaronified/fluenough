@@ -35,10 +35,12 @@ decided (2026-10-16 to 2026-10-23, #414, #416):
   - a phrasebook chunk, and a sentence naming nothing, are never closed;
   - a rules table's cell is taught only for a word that is known, so a
     table grows as words are learned.
-- **A closed sentence is not new.** It is left out of a lesson's new cards
-  and of a deck's count of what is left to learn, so it does not hold back
-  its unit. A sentence already taught stays open. Reviews never wait: the
-  gate decides only when a new sentence appears.
+- **A closed sentence is not new.** It is left out of a lesson's new cards,
+  and the path moves on from a unit when nothing else in it is left to
+  teach (`notStudiedOpenIn`), so a sentence waiting for its words does not
+  hold the unit back. A unit still shows Done only when every card in it is
+  taught. A sentence already taught stays open. Reviews never wait: the gate
+  decides only when a new sentence appears.
 - **A lesson** takes the next eligible items in the path's order: at most
   nine, less the words and rules taught and not known yet, never fewer than
   two, and at most three cells of a rules table (owner, 2026-10-16: "3 per
