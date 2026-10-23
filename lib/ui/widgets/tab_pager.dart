@@ -101,6 +101,10 @@ class _TabPagerState extends State<TabPager>
   /// A touch has caught moving pages, and no drag has started yet.
   bool _held = false;
 
+  /// The finger's touch was cancelled by the system. A drag recognizer ends
+  /// a cancelled drag like a finished one, so the pager notes it here.
+  bool _touchCancelled = false;
+
   /// The controller is being set to where the pages are, not moved.
   bool _quiet = false;
 
@@ -247,7 +251,13 @@ class _TabPagerState extends State<TabPager>
     _spring((_px / _w).round().clamp(0, _last), 0);
   }
 
+  void _cancelTouch(PointerCancelEvent event) {
+    _touchCancelled = true;
+    _up(event);
+  }
+
   void _dragStart(DragStartDetails _) {
+    _touchCancelled = false;
     _c.stop();
     _held = false;
     _tapping = false;
@@ -264,8 +274,10 @@ class _TabPagerState extends State<TabPager>
     _show(_withRubber(_raw));
   }
 
-  void _dragEnd(DragEndDetails details) =>
-      _release(-(details.primaryVelocity ?? 0) * _dir, cancelled: false);
+  void _dragEnd(DragEndDetails details) => _release(
+    -(details.primaryVelocity ?? 0) * _dir,
+    cancelled: _touchCancelled,
+  );
 
   void _dragCancel() => _release(0, cancelled: true);
 
@@ -317,7 +329,7 @@ class _TabPagerState extends State<TabPager>
         return Listener(
           onPointerDown: _down,
           onPointerUp: _up,
-          onPointerCancel: _up,
+          onPointerCancel: _cancelTouch,
           child: GestureDetector(
             onHorizontalDragStart: _dragStart,
             onHorizontalDragUpdate: _dragUpdate,
