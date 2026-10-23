@@ -44,7 +44,7 @@ a voice, and the IPA is neither.
    gives its `language`, and `sounds: false` where the card's letter is not
    said with the card's sound. The card shows each example marked "Has this
    sound" or "Does not have this sound", by an icon and words, never by colour
-   alone, and in Inspect.
+   alone, and on the word sheet.
 3. **One language, one entry, the whole chart.** The language list offers
    "IPA", and choosing it learns `ipa`. Cards still carry the languages that
    use their sound as tags, with `core` for the symbols everyone needs; the

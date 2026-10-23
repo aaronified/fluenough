@@ -35,14 +35,15 @@ import 'package:fluenough/features/decks/course_card.dart';
 import 'package:fluenough/features/decks/deck_content.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/decks/decks_page.dart';
-import 'package:fluenough/features/decks/inspect_page.dart';
 import 'package:fluenough/features/decks/path_fixture.dart';
 import 'package:fluenough/features/decks/path_model.dart';
 import 'package:fluenough/features/decks/path_parts.dart';
 import 'package:fluenough/features/decks/unit_page.dart';
 import 'package:fluenough/features/decks/unit_search.dart';
 import 'package:fluenough/features/decks/word_mastery.dart';
+import 'package:fluenough/features/decks/word_sheet.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
+import 'package:fluenough/features/drill/teach_card.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/features/stats/how_you_learn_page.dart';
 import 'package:fluenough/features/stats/leeches.dart';
@@ -56,13 +57,13 @@ import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/l10n/app_localizations_en.dart';
 import 'package:fluenough/ui/skill_visuals.dart';
 import 'package:fluenough/ui/widgets/deck_tile.dart';
-import 'package:fluenough/ui/widgets/grouped_list.dart';
 import 'package:fluenough/ui/widgets/pace_parts.dart';
 import 'package:flutter/material.dart' hide Card;
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/harness.dart';
+import 'support/ipa_course.dart';
 import 'support/paced_learner.dart';
 
 // From stats_numbers_test.dart.
@@ -239,6 +240,40 @@ void learnAll(AppState state, String deckId) {
   }
 }
 
+/// A deck of three words: "gato" and "perro" tagged `pets`, "casa" tagged
+/// `home`, for what a deck page does with its tag filter.
+AppState taggedState({ProgressStore? progress}) => AppState.test(
+  decks: MemoryDeckSource(<String, String>{
+    'decks/es/es-en-tagged.yaml': '''
+schema: 1
+id: es-en-tagged
+name: "Tagged"
+language: { code: es, iso639_3: spa, name: Spanish, script: latin }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+  - { id: es-en-tagged-0001, target: "gato", native: "cat", tags: ["pets"] }
+  - { id: es-en-tagged-0002, target: "perro", native: "dog", tags: ["pets"] }
+  - { id: es-en-tagged-0003, target: "casa", native: "house", tags: ["home"] }
+''',
+  }),
+  progress: progress,
+);
+
+/// Teaches every word of [deckId] that carries one of [tags], in every skill.
+void learnTagged(AppState state, String deckId, Set<String> tags) {
+  final request = DrillRequest(
+    deckIds: <String>{deckId},
+    untaught: true,
+    tags: tags,
+  );
+  while (state.buildSession(request).fresh.isNotEmpty) {
+    for (final item in state.buildSession(request).fresh) {
+      state.record(item, 5);
+    }
+  }
+}
+
 DeckBadgeKind badgeOf(AppState state, String deckId) =>
     DeckBadge.forEntry(state, state.deckById(deckId)!).kind;
 
@@ -268,9 +303,6 @@ Future<AppState> withSpanishVoice() => withDeckTaught(
   spanish,
   count: 6,
 );
-
-Finder skillRow(AppLocalizations l10n, Skill skill) =>
-    find.widgetWithText(GroupedTile, skill.label(l10n));
 
 /// Taps [finder] after scrolling it into view.
 Future<void> tapVisible(WidgetTester tester, Finder finder) async {
@@ -413,10 +445,6 @@ Future<AppState> learner({String native = 'en', String? path}) async {
   await state.load();
   return state;
 }
-
-// From inspect_page_test.dart.
-Future<void> scrollToInspectPage(WidgetTester tester, Finder finder) => tester
-    .scrollUntilVisible(finder, 300, scrollable: find.byType(Scrollable).first);
 
 // From language_catalog_test.dart.
 /// The language picker's catalog (#211, `docs/plans/language-picker.md`):
@@ -1030,7 +1058,7 @@ void main() {
     });
 
     testWidgets(
-      'a finished deck offers Revise, and revising records every answer',
+      'a finished deck offers Relearn, and Practice records every answer',
       (tester) async {
         usePhone(tester);
         final state = tinyState();
@@ -1043,9 +1071,13 @@ void main() {
         );
         final l10n = l10nOf(tester);
 
-        expect(find.text(l10n.deckReviewAll(0)), findsNothing);
-        expect(find.text(l10n.deckReviseNote), findsOneWidget);
-        await tester.tap(find.text(l10n.deckRevise(2)));
+        // Every word is taught: + Learn has become Relearn, with no badge.
+        expect(find.text(l10n.deckLearn), findsNothing);
+        expect(find.text(l10n.deckRelearn), findsOneWidget);
+        expect(find.byType(Badge), findsNothing);
+        await tester.tap(find.text(l10n.deckPractice));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text(l10n.deckPracticeStart));
         await tester.pumpAndSettle();
         expect(find.byType(DrillPage), findsOneWidget);
         // Titled with the deck, not as number practice.
@@ -1073,64 +1105,238 @@ void main() {
 
   group('a deck\'s page', () {
     testWidgets(
-      'a skill button starts that skill on this deck, and chosen tags '
-      'narrow what Review all due starts',
+      'lists every word, and a tag chip narrows the list as it is tapped',
+      (tester) async {
+        usePhone(tester);
+        final state = await pumpDeck(tester, spanish);
+        final l10n = l10nOf(tester);
+        final cards = state.deckById(spanish)!.cards;
+        final first = cards.first;
+        expect(
+          find.text(l10n.deckWordCount(cards.length, cards.length)),
+          findsOneWidget,
+        );
+        expect(find.text(first.target), findsOneWidget);
+
+        await tapVisible(tester, find.widgetWithText(FilterChip, 'food'));
+        final food = cards.where((c) => c.tags.contains('food')).length;
+        expect(food, inExclusiveRange(0, cards.length));
+        expect(first.tags, isNot(contains('food')));
+        expect(
+          find.text(l10n.deckWordCount(food, cards.length)),
+          findsOneWidget,
+        );
+        expect(find.text(first.target), findsNothing);
+
+        await tapVisible(tester, find.widgetWithText(FilterChip, 'food'));
+        expect(
+          find.text(l10n.deckWordCount(cards.length, cards.length)),
+          findsOneWidget,
+        );
+        expect(find.text(first.target), findsOneWidget);
+      },
+    );
+
+    testWidgets('tapping a word opens its sheet', (tester) async {
+      usePhone(tester);
+      final state = await pumpDeck(tester, spanish);
+      final first = state.deckById(spanish)!.cards.first;
+      await tester.tap(find.text(first.target));
+      await tester.pumpAndSettle();
+      expect(find.byType(WordSheet), findsOneWidget);
+      expect(find.text(first.native), findsWidgets);
+    });
+
+    testWidgets(
+      'Relearn waits for every card of the deck, not just those in view',
+      (tester) async {
+        usePhone(tester);
+        final state = taggedState();
+        await state.load();
+        learnTagged(state, 'es-en-tagged', const <String>{'pets'});
+        await pumpScreen(
+          tester,
+          const DeckDetailPage(
+            deckId: 'es-en-tagged',
+            initialTags: <String>{'pets'},
+          ),
+          state: state,
+        );
+        final l10n = l10nOf(tester);
+
+        // The words in view are taught, but "casa" is not: + Learn stays,
+        // with nothing in view left to teach.
+        expect(find.text(l10n.deckRelearn), findsNothing);
+        expect(find.text(l10n.deckLearn), findsOneWidget);
+        expect(
+          tester
+              .widget<FilledButton>(
+                find.ancestor(
+                  of: find.text(l10n.deckLearn),
+                  matching: find.byWidgetPredicate((w) => w is FilledButton),
+                ),
+              )
+              .onPressed,
+          isNull,
+        );
+
+        learnTagged(state, 'es-en-tagged', const <String>{'home'});
+        await tester.pumpAndSettle();
+        expect(find.text(l10n.deckRelearn), findsOneWidget);
+        expect(find.text(l10n.deckLearn), findsNothing);
+        expect(find.byType(Badge), findsNothing);
+      },
+    );
+
+    testWidgets(
+      'Relearn walks through the words in view on the teach card, forward '
+      'and back, and writes nothing',
+      (tester) async {
+        usePhone(tester);
+        final state = taggedState();
+        await state.load();
+        learnAll(state, 'es-en-tagged');
+        await pumpScreen(
+          tester,
+          const DeckDetailPage(
+            deckId: 'es-en-tagged',
+            initialTags: <String>{'pets'},
+          ),
+          state: state,
+        );
+        final l10n = l10nOf(tester);
+        final logged = state.progress.log.length;
+        final states = Map.of(state.progress.states);
+
+        await tester.tap(find.text(l10n.deckRelearn));
+        await tester.pumpAndSettle();
+        expect(find.byType(TeachCard), findsOneWidget);
+        expect(find.text('gato'), findsOneWidget);
+        expect(find.text(l10n.drillPositionShort(1, 2)), findsOneWidget);
+
+        // Toward the start edge goes on, to the second of the two in view;
+        // "casa", which the filter leaves out, is never shown.
+        await tester.fling(find.byType(TeachCard), const Offset(-300, 0), 1000);
+        await tester.pumpAndSettle();
+        expect(find.text('perro'), findsOneWidget);
+        expect(find.text(l10n.drillPositionShort(2, 2)), findsOneWidget);
+
+        // And back again.
+        await tester.fling(find.byType(TeachCard), const Offset(300, 0), 1000);
+        await tester.pumpAndSettle();
+        expect(find.text('gato'), findsOneWidget);
+        await tester.fling(find.byType(TeachCard), const Offset(-300, 0), 1000);
+        await tester.pumpAndSettle();
+        expect(find.text('casa'), findsNothing);
+
+        // Going on from the last card ends the walk, back on the deck's page.
+        await tester.fling(find.byType(TeachCard), const Offset(-300, 0), 1000);
+        await tester.pumpAndSettle();
+        expect(find.byType(TeachCard), findsNothing);
+        expect(find.byType(DeckDetailPage), findsOneWidget);
+        expect(state.progress.log, hasLength(logged));
+        expect(state.progress.states, states);
+      },
+    );
+
+    testWidgets(
+      'with no filter, Relearn walks through every card of the deck',
+      (tester) async {
+        usePhone(tester);
+        final state = taggedState();
+        await state.load();
+        learnAll(state, 'es-en-tagged');
+        await pumpScreen(
+          tester,
+          const DeckDetailPage(deckId: 'es-en-tagged'),
+          state: state,
+        );
+        final l10n = l10nOf(tester);
+        await tester.tap(find.text(l10n.deckRelearn));
+        await tester.pumpAndSettle();
+        expect(find.text(l10n.drillPositionShort(1, 3)), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      '+ Learn counts the words in view not taught, and teaches those',
+      (tester) async {
+        usePhone(tester);
+        final state = await pumpDeck(tester, spanish);
+        final l10n = l10nOf(tester);
+        final all = state.untaughtCards('es', deckId: spanish).length;
+        Finder badge(int n) =>
+            find.descendant(of: find.byType(Badge), matching: find.text('$n'));
+        expect(all, greaterThan(2));
+        expect(badge(all), findsOneWidget);
+
+        await tapVisible(tester, find.widgetWithText(FilterChip, 'food'));
+        final food = state
+            .untaughtCards('es', deckId: spanish, tags: const {'food'})
+            .length;
+        expect(food, inExclusiveRange(0, all));
+        expect(badge(food), findsOneWidget);
+
+        await tester.tap(find.text(l10n.deckLearn));
+        await tester.pumpAndSettle();
+        final request = tester
+            .widget<DrillPage>(find.byType(DrillPage))
+            .request;
+        expect(request.lesson, isTrue);
+        expect(request.deckIds, <String>{spanish});
+        expect(request.tags, <String>{'food'});
+      },
+    );
+
+    testWidgets(
+      'Practice drills the words in view in every skill, due or not, and '
+      'every answer is recorded',
       (tester) async {
         usePhone(tester);
         await pumpDeck(tester, spanish, state: await withSpanishVoice());
         final l10n = l10nOf(tester);
-
-        await tapVisible(
-          tester,
-          find.descendant(
-            of: skillRow(l10n, Skill.production),
-            matching: find.byType(FilledButton),
-          ),
-        );
+        await tapVisible(tester, find.widgetWithText(FilterChip, 'people'));
+        await tester.tap(find.text(l10n.deckPractice));
+        await tester.pumpAndSettle();
+        expect(find.text(l10n.deckPracticeBody), findsOneWidget);
+        await tester.tap(find.text(l10n.deckPracticeStart));
+        await tester.pumpAndSettle();
         final request = tester
             .widget<DrillPage>(find.byType(DrillPage))
             .request;
         expect(request.deckIds, <String>{spanish});
-        expect(request.skill, Skill.production);
-        expect(request.tags, isEmpty);
-
-        {
-          usePhone(tester);
-          // Every word taught, so that each tag has something due.
-          final state = await pumpDeck(
-            tester,
-            spanish,
-            state: await withDeckTaught(
-              (progress) => AppState.test(progress: progress),
-              spanish,
-              // Known in Write, one of the schedules (ADR-0034).
-              mode: DrillMode.production,
-            ),
-          );
-          final l10n = l10nOf(tester);
-          final entry = state.deckById(spanish)!;
-          final counts = state.countsFor(entry);
-          await tester.scrollUntilVisible(find.text(l10n.deckOnlyTags), 200);
-
-          await tapVisible(tester, find.widgetWithText(FilterChip, 'food'));
-          final narrowed = state
-              .buildSession(DrillRequest.deck(spanish, tags: const {'food'}))
-              .items
-              .length;
-          expect(narrowed, lessThan(counts.due + counts.fresh));
-          expect(find.text(l10n.deckReviewAll(narrowed)), findsOneWidget);
-
-          await tester.tap(find.text(l10n.deckReviewAll(narrowed)));
-          await tester.pumpAndSettle();
-          final request = tester
-              .widget<DrillPage>(find.byType(DrillPage))
-              .request;
-          expect(request.deckIds, <String>{spanish});
-          expect(request.skill, isNull);
-          expect(request.tags, <String>{'food'});
-        }
+        expect(request.revise, isTrue);
+        expect(request.recordsRevision, isTrue);
+        expect(request.skills, isNull);
+        expect(request.tags, <String>{'people'});
       },
     );
+
+    testWidgets('Practice with some skills ticked names them', (tester) async {
+      usePhone(tester);
+      await pumpDeck(tester, spanish, state: await withSpanishVoice());
+      final l10n = l10nOf(tester);
+      await tester.tap(find.text(l10n.deckPractice));
+      await tester.pumpAndSettle();
+      // Unticking All clears every skill, and Start waits for one.
+      await tester.tap(find.text(l10n.deckPracticeAll));
+      await tester.pumpAndSettle();
+      expect(
+        tester
+            .widget<TextButton>(
+              find.widgetWithText(TextButton, l10n.deckPracticeStart),
+            )
+            .onPressed,
+        isNull,
+      );
+      await tester.tap(find.text(Skill.production.label(l10n)));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(l10n.deckPracticeStart));
+      await tester.pumpAndSettle();
+      final request = tester.widget<DrillPage>(find.byType(DrillPage)).request;
+      expect(request.skills, <Skill>{Skill.production});
+      expect(request.revise, isTrue);
+    });
   });
 
   group('searching decks', () {
@@ -1426,155 +1632,228 @@ void main() {
     });
   });
 
-  group('Inspect', () {
+  group('the word sheet', () {
     testWidgets(
-      'Inspect shows every card in full with its id, and its D in each '
-      'skill answered',
+      'shows what the card has, inline: its note under a title, its tags, '
+      'its id with where the learner stands, and Report',
       (tester) async {
         usePhone(tester);
-        final state = await pumpScreen(
+        final state = AppState.test();
+        await state.load();
+        final entry = state.deckById('hi-en-market')!;
+        final card = entry.cards.firstWhere(
+          (c) => c.tags.isNotEmpty && c.notes.isNotEmpty,
+        );
+        await pumpScreen(
           tester,
-          const InspectPage(deckId: 'hi-en-market'),
+          Scaffold(
+            body: WordSheet(card: card, language: entry.language),
+          ),
+          state: state,
         );
         final l10n = l10nOf(tester);
-        final cards = state.deckById('hi-en-market')!.cards;
-        final first = cards.first;
-        expect(find.text(l10n.inspectTitle('Market')), findsOneWidget);
-        expect(find.text(l10n.inspectId(first.id)), findsOneWidget);
-        expect(find.text(first.native), findsWidgets);
-        expect(find.text(first.reading!), findsWidgets);
+        expect(find.text(card.native), findsWidgets);
+        expect(find.text(card.notes.first.text), findsOneWidget);
+        expect(find.text(l10n.cardNoteTitle), findsWidgets);
+        for (final tag in card.tags) {
+          expect(find.text(tag), findsOneWidget);
+        }
+        expect(find.textContaining(card.id), findsOneWidget);
+        expect(find.text(l10n.cardReport), findsOneWidget);
+        // Never answered: nothing to say of how hard it is.
+        expect(find.text(l10n.cardDifficulty), findsNothing);
+      },
+    );
 
-        // Two or three lines a card; the rest opens in place.
-        final noted = cards.firstWhere((c) => c.notes.isNotEmpty);
-        expect(find.textContaining(noted.notes.first.text), findsNothing);
-        await scrollToInspectPage(tester, find.text(l10n.inspectId(noted.id)));
-        await tester.tap(find.text(l10n.inspectId(noted.id)));
-        await tester.pumpAndSettle();
-        await scrollToInspectPage(
-          tester,
-          find.textContaining(noted.notes.first.text),
+    testWidgets(
+      'warns, with titles, of a word it looks like and of its other meanings, '
+      'and shows its dictionary entry',
+      (tester) async {
+        usePhone(tester);
+        final state = AppState.test(
+          decks: MemoryDeckSource(<String, String>{
+            'decks/es/es-words.yaml': '''
+schema: 1
+id: "es-words"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin" }
+license: "CC0-1.0"
+cards:
+  - id: "es-9001"
+    target: "casa"
+    notes:
+      - { id: "mark", kind: "lookalike", ref: "es-9002" }
+  - id: "es-9002"
+    target: "caza"
+''',
+            'decks/es/en/es-en-words.yaml': '''
+schema: 1
+id: "es-en-words"
+kind: "layer"
+core: "es-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Words"
+license: "CC0-1.0"
+cards:
+  "es-9001":
+    native: "house"
+    alt_native: ["home"]
+    notes:
+      "mark": "casa is spelled with an s; caza with a z."
+    dictionary:
+      senses: ["A building to live in."]
+      etymology: "From Latin casa."
+      source: "wiktionary.org/wiki/casa"
+  "es-9002":
+    native: "hunt"
+''',
+          }),
         );
-
-        await scrollToInspectPage(
+        await state.load();
+        expect(state.brokenDecks, isEmpty);
+        final entry = state.deckById('es-en-words')!;
+        final card = entry.cards.firstWhere((c) => c.id == 'es-9001');
+        await pumpScreen(
           tester,
-          find.text(l10n.inspectId(cards.last.id)),
+          Scaffold(
+            body: WordSheet(card: card, language: entry.language),
+          ),
+          state: state,
         );
+        final l10n = l10nOf(tester);
+        expect(find.text(l10n.cardLooksLikeTitle), findsOneWidget);
+        expect(
+          find.text('casa is spelled with an s; caza with a z.'),
+          findsOneWidget,
+        );
+        expect(find.text(l10n.cardOtherMeaningsTitle), findsOneWidget);
+        expect(find.text(l10n.cardOtherMeaningsText('home')), findsOneWidget);
+        expect(find.text(l10n.cardDictionaryHeading), findsOneWidget);
+        expect(find.text('A building to live in.'), findsOneWidget);
+        expect(
+          find.text(l10n.cardDictionaryEtymology('From Latin casa.')),
+          findsOneWidget,
+        );
+        expect(
+          find.text(l10n.cardDictionaryCredit('wiktionary.org/wiki/casa')),
+          findsOneWidget,
+        );
+      },
+    );
 
-        {
-          final monday = DateTime(2026, 10, 5, 19);
+    testWidgets(
+      'lists each sound of the word\'s IPA, in order, from the IPA course, '
+      'each with its practice',
+      (tester) async {
+        usePhone(tester);
+        final state = ipaApp(<String>['hi']);
+        await state.load();
+        final entry = state.deckById('hi-en-words')!;
+        final card = entry.cards.first;
+        await pumpScreen(
+          tester,
+          Scaffold(
+            body: WordSheet(card: card, language: entry.language),
+          ),
+          state: state,
+        );
+        final l10n = l10nOf(tester);
+        expect(find.text(l10n.cardIpaHeading), findsOneWidget);
+        final aspirated = find.text('the sound pʰ');
+        final retroflex = find.text('the sound ɳ');
+        expect(aspirated, findsOneWidget);
+        expect(retroflex, findsOneWidget);
+        expect(find.text(l10n.ipaSymbolPractise), findsNWidgets(2));
+        // pʰəɳ: the aspirated p comes before the retroflex n.
+        expect(
+          tester.getTopLeft(aspirated).dy,
+          lessThan(tester.getTopLeft(retroflex).dy),
+        );
+      },
+    );
 
-          Future<void> open(WidgetTester tester, String id) async {
-            final l10n = l10nOf(tester);
-            await scrollToInspectPage(tester, find.text(l10n.inspectId(id)));
-            await tester.ensureVisible(find.text(l10n.inspectId(id)));
-            await tester.pumpAndSettle();
-            await tester.tap(find.text(l10n.inspectId(id)));
-            await tester.pumpAndSettle();
-          }
-
-          usePhone(tester);
-          final progress = MemoryProgress();
-          final state = AppState.test(progress: progress);
-          await state.load();
-          final card = state.deckById('hi-en-market')!.cards.first;
-          for (final (i, (mode, grade)) in const <(DrillMode, int)>[
-            (DrillMode.listening, 1),
-            (DrillMode.listening, 0),
-            (DrillMode.listening, 1),
-            (DrillMode.production, 4),
-          ].indexed) {
-            progress.record(
-              deckId: 'hi-en-market',
-              cardId: card.id,
-              mode: mode,
-              grade: grade,
-              now: monday.add(Duration(days: i)),
-              answerGiven: 'typed',
-            );
-          }
-          await pumpScreen(
-            tester,
-            const InspectPage(deckId: 'hi-en-market'),
-            state: state,
-          );
-          final l10n = l10nOf(tester);
-          final hear = SkillDifficulty(
-            DrillMode.listening,
-            progress.stateOf(card.id, DrillMode.listening)!.difficulty,
-          );
-          final write = SkillDifficulty(
-            DrillMode.production,
-            progress.stateOf(card.id, DrillMode.production)!.difficulty,
-          );
-          expect(hear.lean, DifficultyLean.harder);
-          expect(write.lean, DifficultyLean.easier);
-          String line(SkillDifficulty d) =>
-              l10n.inspectDifficultyIn(d.mode.name, d.shown, d.lean.name);
-
-          // Closed, the row shows none of it.
-          expect(find.text(l10n.inspectDifficulty), findsNothing);
-          await open(tester, card.id);
-          await scrollToInspectPage(tester, find.text(line(hear)));
-          expect(find.text(l10n.inspectDifficulty), findsOneWidget);
-          expect(find.text(line(hear)), findsOneWidget);
-          expect(find.text(line(write)), findsOneWidget);
-          expect(line(hear), contains('Hear: ${hear.shown} of 10, harder'));
-          expect(line(write), contains('Write: ${write.shown} of 10, easier'));
-          // Write is listed before Hear, as the skills are ordered.
-          expect(
-            tester.getTopLeft(find.text(line(write))).dy,
-            lessThan(tester.getTopLeft(find.text(line(hear))).dy),
-          );
-          for (final mode in <DrillMode>[
-            DrillMode.recognition,
-            DrillMode.speaking,
-            DrillMode.grammarUnderstood,
-            DrillMode.grammar,
-          ]) {
-            final skill = l10n.inspectDifficultyIn(mode.name, 1, 'easier');
-            expect(
-              find.text(skill),
-              findsNothing,
-              reason: '${mode.name} was never answered',
-            );
-            expect(
-              find.textContaining(skill.substring(0, skill.indexOf(':') + 1)),
-              findsNothing,
-              reason: '${mode.name} was never answered',
-            );
-          }
-
-          // Another card, never answered, shows no difficulty in its own row,
-          // opened: the page still has the one heading, the first card's.
-          final other = state
-              .deckById('hi-en-market')!
-              .cards
-              .firstWhere((c) => c.id != card.id && c.notes.isNotEmpty);
-          await open(tester, other.id);
-          final otherRow = find.ancestor(
-            of: find.text(l10n.inspectId(other.id)),
-            matching: find.byType(ExpansionTile),
-          );
-          expect(otherRow, findsOneWidget);
-          expect(
-            find.descendant(
-              of: otherRow,
-              matching: find.text(l10n.inspectDifficulty),
-            ),
-            findsNothing,
-          );
-          expect(
-            find.descendant(
-              of: otherRow,
-              matching: find.textContaining(' of 10, '),
-            ),
-            findsNothing,
-          );
-          expect(
-            find.text(l10n.inspectDifficulty, skipOffstage: false),
-            findsOneWidget,
+    testWidgets(
+      'shows how hard the card has been in each skill answered, and nothing '
+      'for a card never answered',
+      (tester) async {
+        final monday = DateTime(2026, 10, 5, 19);
+        usePhone(tester);
+        final progress = MemoryProgress();
+        final state = AppState.test(progress: progress);
+        await state.load();
+        final entry = state.deckById('hi-en-market')!;
+        final card = entry.cards.first;
+        for (final (i, (mode, grade)) in const <(DrillMode, int)>[
+          (DrillMode.listening, 1),
+          (DrillMode.listening, 0),
+          (DrillMode.listening, 1),
+          (DrillMode.production, 4),
+        ].indexed) {
+          progress.record(
+            deckId: 'hi-en-market',
+            cardId: card.id,
+            mode: mode,
+            grade: grade,
+            now: monday.add(Duration(days: i)),
+            answerGiven: 'typed',
           );
         }
+        await pumpScreen(
+          tester,
+          Scaffold(
+            body: WordSheet(card: card, language: entry.language),
+          ),
+          state: state,
+        );
+        final l10n = l10nOf(tester);
+        final hear = SkillDifficulty(
+          DrillMode.listening,
+          progress.stateOf(card.id, DrillMode.listening)!.difficulty,
+        );
+        final write = SkillDifficulty(
+          DrillMode.production,
+          progress.stateOf(card.id, DrillMode.production)!.difficulty,
+        );
+        expect(hear.lean, DifficultyLean.harder);
+        expect(write.lean, DifficultyLean.easier);
+        String line(SkillDifficulty d) =>
+            l10n.cardDifficultyIn(d.mode.name, d.shown, d.lean.name);
+
+        expect(find.text(l10n.cardDifficulty), findsOneWidget);
+        expect(find.text(line(hear)), findsOneWidget);
+        expect(find.text(line(write)), findsOneWidget);
+        expect(line(hear), contains('Hear: ${hear.shown} of 10, harder'));
+        expect(line(write), contains('Write: ${write.shown} of 10, easier'));
+        // Write is listed before Hear, as the skills are ordered.
+        expect(
+          tester.getTopLeft(find.text(line(write))).dy,
+          lessThan(tester.getTopLeft(find.text(line(hear))).dy),
+        );
+        for (final mode in <DrillMode>[
+          DrillMode.recognition,
+          DrillMode.speaking,
+          DrillMode.grammarUnderstood,
+          DrillMode.grammar,
+        ]) {
+          final skill = l10n.cardDifficultyIn(mode.name, 1, 'easier');
+          expect(
+            find.textContaining(skill.substring(0, skill.indexOf(':') + 1)),
+            findsNothing,
+            reason: '${mode.name} was never answered',
+          );
+        }
+
+        // Another card, never answered, shows no difficulty at all.
+        final other = entry.cards.firstWhere((c) => c.id != card.id);
+        await pumpScreen(
+          tester,
+          Scaffold(
+            body: WordSheet(card: other, language: entry.language),
+          ),
+          state: state,
+        );
+        expect(find.text(l10n.cardDifficulty), findsNothing);
       },
     );
   });

@@ -1887,56 +1887,6 @@
       }
     }
   },
-  "wordSheetLinePos": "{id} · {pos} · {state}",
-  "@wordSheetLinePos": {
-    "description": "Top line of a word's card on a unit's screen: its id, its part of speech as the deck gives it, and where the learner stands with it.",
-    "placeholders": {
-      "id": {
-        "type": "String",
-        "example": "te-0384"
-      },
-      "pos": {
-        "type": "String",
-        "example": "noun"
-      },
-      "state": {
-        "type": "String",
-        "example": "Learning 58%"
-      }
-    }
-  },
-  "wordSheetSoundsLike": "Sounds almost like {word} ({reading}), {meaning}. Take care when you say it.",
-  "@wordSheetSoundsLike": {
-    "description": "Warning on a word's card: another word sounds almost the same.",
-    "placeholders": {
-      "word": {
-        "type": "String",
-        "example": "కలం"
-      },
-      "reading": {
-        "type": "String",
-        "example": "kalam"
-      },
-      "meaning": {
-        "type": "String",
-        "example": "pen"
-      }
-    }
-  },
-  "wordSheetSoundsLikeNoReading": "Sounds almost like {word}, {meaning}. Take care when you say it.",
-  "@wordSheetSoundsLikeNoReading": {
-    "description": "Warning on a word's card: another word, with no reading, sounds almost the same.",
-    "placeholders": {
-      "word": {
-        "type": "String",
-        "example": "pero"
-      },
-      "meaning": {
-        "type": "String",
-        "example": "but"
-      }
-    }
-  },
   "wordSheetFacts": "Facts",
   "@wordSheetFacts": {
     "description": "Heading of the section at the end of a word's card that lists the facts naming it (#546). Only shown when a fact names the card."
@@ -1975,146 +1925,6 @@
       }
     }
   },
-  "deckDue": "Due",
-  "@deckDue": {
-    "description": "Label under the number of reviews due in this deck."
-  },
-  "deckNewToday": "New today",
-  "@deckNewToday": {
-    "description": "Label under the number of new cards this deck can introduce today."
-  },
-  "deckLearned": "Learned",
-  "@deckLearned": {
-    "description": "Label under the number of cards in this deck remembered at least once."
-  },
-  "deckPractiseOne": "Practise one skill",
-  "@deckPractiseOne": {
-    "description": "Heading above the skill rows on a deck's screen."
-  },
-  "deckNoVoice": "No {language} voice on this phone. You can download one.",
-  "@deckNoVoice": {
-    "description": "Under Listening when the phone cannot speak the deck's language. Says a voice can be downloaded: Set up beside it opens the Voices page, which lists the apps that add one (#641).",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Japanese"
-      }
-    }
-  },
-  "deckSkillOffFor": "Off for {language}",
-  "@deckSkillOffFor": {
-    "description": "Under Listening or Speaking on a deck's page, when the learner switched that skill off for the deck's language (#89). Turn on beside it switches it back on.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Spanish"
-      }
-    }
-  },
-  "deckTurnOn": "Turn on",
-  "@deckTurnOn": {
-    "description": "Button beside a skill switched off for the deck's language: switches it back on for that language."
-  },
-  "deckSoundOff": "Sound is off in Settings",
-  "@deckSoundOff": {
-    "description": "Under Listening on a deck's screen while sound is off for the whole app: listening is not drilled. Beside a button that turns sound on."
-  },
-  "deckInspect": "Inspect all cards",
-  "@deckInspect": {
-    "description": "Button under a deck's header that opens every card in full, for reviewers."
-  },
-  "inspectTitle": "{deck}: every card",
-  "@inspectTitle": {
-    "description": "Title of the Inspect screen.",
-    "placeholders": {
-      "deck": {
-        "type": "String",
-        "example": "Market"
-      }
-    }
-  },
-  "inspectIntro": "Every card as the deck file {file} writes it, with its id. Select any text to copy it.",
-  "@inspectIntro": {
-    "description": "Line at the top of the Inspect screen. file is the deck's id.",
-    "placeholders": {
-      "file": {
-        "type": "String",
-        "example": "hi-en-market"
-      }
-    }
-  },
-  "inspectId": "id {id}",
-  "@inspectId": {
-    "description": "A card's, passage's or question's id on the Inspect screen.",
-    "placeholders": {
-      "id": {
-        "type": "String",
-        "example": "hi-0231"
-      }
-    }
-  },
-  "inspectAlsoAccepted": "Also accepted",
-  "@inspectAlsoAccepted": {
-    "description": "Inspect: other forms accepted as the answer."
-  },
-  "inspectAlsoMeans": "Also means",
-  "@inspectAlsoMeans": {
-    "description": "Inspect: other meanings accepted."
-  },
-  "inspectPartOfSpeech": "Part of speech",
-  "@inspectPartOfSpeech": {
-    "description": "Inspect: the card's part of speech, as the deck file writes it."
-  },
-  "inspectGender": "Gender",
-  "@inspectGender": {
-    "description": "Inspect: the card's grammatical gender, as the deck file writes it."
-  },
-  "inspectTags": "Tags",
-  "@inspectTags": {
-    "description": "Inspect: the card's tags."
-  },
-  "inspectOnlyIn": "Only drilled in",
-  "@inspectOnlyIn": {
-    "description": "Inspect: the skills a card is limited to, when it is."
-  },
-  "inspectNotes": "Notes",
-  "@inspectNotes": {
-    "description": "Inspect: the card's notes."
-  },
-  "inspectExamples": "Examples",
-  "@inspectExamples": {
-    "description": "Inspect: the card's example sentences."
-  },
-  "inspectReport": "Report this card",
-  "@inspectReport": {
-    "description": "Button beside each card's id on the Inspect screen: reports that card."
-  },
-  "inspectQuestions": "Questions",
-  "@inspectQuestions": {
-    "description": "Inspect: a passage's questions, the right answer marked."
-  },
-  "inspectDifficulty": "How hard, for you",
-  "@inspectDifficulty": {
-    "description": "Inspect: heading over a card's difficulty in each skill it has been answered in, learned from the learner's own answers. Shown only when some skill has been answered."
-  },
-  "inspectDifficultyIn": "{mode, select, recognition{Recognition} production{Write} listening{Hear} speaking{Say} grammarUnderstood{Grammar understood} grammar{Grammar produced} reading{Reading} other{Other}}: {value} of 10, {lean, select, easier{easier} harder{harder} other{middling}}",
-  "@inspectDifficultyIn": {
-    "description": "Inspect: a card's difficulty in one skill, 1 the easiest and 10 the hardest, from the learner's own answers. mode is the skill (recognition, production, listening, speaking, grammarUnderstood, grammar or reading): production is Write, listening is Hear, speaking is Say, as the skills are named elsewhere; grammarUnderstood is choosing what a form means, grammar is giving the form. lean says which way the value leans: easier (1 to 4), harder (7 to 10), or other (5 or 6).",
-    "placeholders": {
-      "mode": {
-        "type": "String",
-        "example": "listening"
-      },
-      "value": {
-        "type": "int",
-        "example": "7"
-      },
-      "lean": {
-        "type": "String",
-        "example": "harder"
-      }
-    }
-  },
   "deckScriptTips": "Tips: {guide}",
   "@deckScriptTips": {
     "description": "Button on a script deck's page (#30): opens the guide to the script's recurring features, such as Bengali's headline. The placeholder is the guide's own title, from its file.",
@@ -2129,26 +1939,6 @@
   "@scriptGuideStart": {
     "description": "Button at the foot of a script's guide when it is shown before the first script card: goes on to the drill.",
     "placeholders": {}
-  },
-  "deckNoSpeech": "This phone can’t recognise {language} speech yet",
-  "@deckNoSpeech": {
-    "description": "Under Speaking when the phone's speech recogniser cannot hear the deck's language, or speaking has not been set up since launch. Set up opens Voices.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Telugu"
-      }
-    }
-  },
-  "deckSpeechOnlineOnly": "{language} speech can be recognised only online",
-  "@deckSpeechOnlineOnly": {
-    "description": "Under Speaking when the deck's language can be recognised only online and the learner has not allowed it. Set up opens Voices, where it can be allowed.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Telugu"
-      }
-    }
   },
   "deckUnreviewed": "No {language} speaker has checked this deck yet. If you speak {language}, please report any mistake you find.",
   "@deckUnreviewed": {
@@ -2167,28 +1957,6 @@
   "deckSetUpVoice": "Set up",
   "@deckSetUpVoice": {
     "description": "Button that opens Voices, beside a skill that needs one."
-  },
-  "deckStartSkill": "Start {skill}, {count, plural, =1{1 due} other{{count} due}}",
-  "@deckStartSkill": {
-    "description": "Screen-reader label of the button that starts one skill.",
-    "placeholders": {
-      "skill": {
-        "type": "String",
-        "example": "Recognition"
-      },
-      "count": {
-        "type": "int",
-        "example": "5"
-      }
-    }
-  },
-  "deckOnlyTags": "Only these tags",
-  "@deckOnlyTags": {
-    "description": "Heading above the tag chips that narrow a session."
-  },
-  "deckCards": "Cards",
-  "@deckCards": {
-    "description": "Heading above the card preview."
   },
   "deckLicence": "Content licence",
   "@deckLicence": {
@@ -2269,62 +2037,6 @@
   "deckId": "Deck id",
   "@deckId": {
     "description": "Label for the deck's permanent id."
-  },
-  "deckReviewAll": "{count, plural, =0{Nothing due} other{Review all due · {count}}}",
-  "@deckReviewAll": {
-    "description": "The button at the foot of a deck's screen.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "9"
-      }
-    }
-  },
-  "deckLesson": "{count, plural, =1{Learn 1 new word} other{Learn {count} new words}}",
-  "@deckLesson": {
-    "description": "The button at the foot of a deck's screen when nothing is due and the deck has words not taught yet: a lesson from this deck. The count is how many the lesson teaches.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "9"
-      }
-    }
-  },
-  "deckLessonReading": "Read the next passage",
-  "@deckLessonReading": {
-    "description": "The button at the foot of a reading deck's screen when nothing is due and a passage is left: a lesson of its next passage and questions."
-  },
-  "deckLessonNote": "Nothing is due here. A lesson teaches this deck’s next words.",
-  "@deckLessonNote": {
-    "description": "Above the deck lesson button."
-  },
-  "deckRevise": "Revise · {count}",
-  "@deckRevise": {
-    "description": "The button at the foot of a finished deck's screen, when nothing is due: practise every learned card again. The count is how many cards.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "13"
-      }
-    }
-  },
-  "deckReviseNote": "You’ve learned every card here. Revise them whenever you like — your answers count, like any review.",
-  "@deckReviseNote": {
-    "description": "Above Revise on a finished deck's screen: revising is recorded, like any review (ADR-0033)."
-  },
-  "deckGrammarCell": "{lemma} — {slot}",
-  "@deckGrammarCell": {
-    "description": "A grammar card in the preview: the dictionary form and the slot, like \"hablar — nosotros\".",
-    "placeholders": {
-      "lemma": {
-        "type": "String",
-        "example": "hablar"
-      },
-      "slot": {
-        "type": "String",
-        "example": "nosotros"
-      }
-    }
   },
   "deckNotFound": "This deck isn’t loaded.",
   "@deckNotFound": {
@@ -3024,10 +2736,6 @@
   "@skillReadingSettingsOff": {
     "description": "Under a skill’s switch in Settings, while it is off. The skill is reading: short passages with questions. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
-  "skillListeningReadingDeckDesc": "Hear a passage, answer questions",
-  "@skillListeningReadingDeckDesc": {
-    "description": "Under Listening on a reading deck's screen, where listening means hearing the passage read aloud."
-  },
   "readingIntro": "{count, plural, =1{Read it, then answer a question} other{Read it, then answer {count} questions}}",
   "@readingIntro": {
     "description": "Above a passage, before its questions.",
@@ -3418,10 +3126,6 @@
         "format": "decimalPattern"
       }
     }
-  },
-  "drillTeachTitle": "New",
-  "@drillTeachTitle": {
-    "description": "A lesson teaching a word (ADR-0024): above the word, its reading and meaning, before it is asked."
   },
   "setTitle": "The set",
   "@setTitle": {
@@ -5446,6 +5150,74 @@
   "placementDone": "Start here",
   "@placementDone": {
     "description": "Button on the last placement result: start where placement placed the learner, and go on to the app."
+  },
+  "placedReviewQuestion": "Do you want to keep reviewing what you already know?",
+  "@placedReviewQuestion": {
+    "description": "Question on the end-of-placement screen and heading of the Placed words sheet: how the words placement found the learner knows are reviewed from now on."
+  },
+  "placedReviewSetInStone": "Set in stone",
+  "@placedReviewSetInStone": {
+    "description": "Choice: the words placement found known are never reviewed and count as known."
+  },
+  "placedReviewSetInStoneBody": "Never reviewed. Counted as known on Progress.",
+  "@placedReviewSetInStoneBody": {
+    "description": "Explanation of the Set in stone choice."
+  },
+  "placedReviewSpotCheck": "Spot-check",
+  "@placedReviewSpotCheck": {
+    "description": "Choice: a few of the placed words are tested now and then; a miss brings more of them back to review."
+  },
+  "placedReviewSpotCheckBody": "A few tested now and then. A miss brings more back.",
+  "@placedReviewSpotCheckBody": {
+    "description": "Explanation of the Spot-check choice."
+  },
+  "placedReviewKeep": "Keep reviewing",
+  "@placedReviewKeep": {
+    "description": "Choice: the placed words are reviewed like any other word."
+  },
+  "placedReviewKeepBody": "Review them like any other word.",
+  "@placedReviewKeepBody": {
+    "description": "Explanation of the Keep reviewing choice."
+  },
+  "placedReviewDefault": "Default",
+  "@placedReviewDefault": {
+    "description": "Small tag on the choice that is preselected."
+  },
+  "placedReviewFoot": "You can change this later in Languages I’m learning.",
+  "@placedReviewFoot": {
+    "description": "Under the placed-words question at the end of placement."
+  },
+  "placedReviewRow": "Placed words",
+  "@placedReviewRow": {
+    "description": "Row in a learned language's sheet in Languages I'm learning: opens the choice of how the words placement found known are reviewed. Its line under it names the current choice."
+  },
+  "placedReviewSheetTitle": "Placed words in {language}",
+  "@placedReviewSheetTitle": {
+    "description": "Heading of the sheet that changes how a course reviews its placed words.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "placedReviewSheetNote": "Switching from Set in stone back to Spot-check or Keep reviewing returns the placed words to reviews. Words you learn from now on are always reviewed as usual.",
+  "@placedReviewSheetNote": {
+    "description": "Under the choices in the Placed words sheet."
+  },
+  "placedReviewSummary": "{words, plural, =1{{words} word} other{{words} words}} placed, in {decks, plural, =1{{decks} deck} other{{decks} decks}}",
+  "@placedReviewSummary": {
+    "description": "Summary on the end-of-placement screen: how many words and decks placement found known.",
+    "placeholders": {
+      "words": {
+        "type": "int",
+        "example": "412"
+      },
+      "decks": {
+        "type": "int",
+        "example": "14"
+      }
+    }
   },
   "placementQuestionNumber": "Question {number}",
   "@placementQuestionNumber": {
@@ -10263,16 +10035,6 @@
       }
     }
   },
-  "deckListenBackup": "Backup voice in use: {backup}, reading the card’s other spelling",
-  "@deckListenBackup": {
-    "description": "Under Listening on a deck's page when the deck's own voice is not on the phone and the course's other voice says its cards instead, from each card's spelling in that voice's script (#641). backup is that voice's BCP-47 tag.",
-    "placeholders": {
-      "backup": {
-        "type": "String",
-        "example": "hi-IN"
-      }
-    }
-  },
   "voicesInUseChosen": "In use: {name}",
   "@voicesInUseChosen": {
     "description": "On a language's card on the Voices page: the voice the learner chose for it. name is the phone's name for the voice.",
@@ -10358,6 +10120,268 @@
   "voiceAppLinkCopied": "Couldn’t open the link, so it’s copied.",
   "@voiceAppLinkCopied": {
     "description": "SnackBar when nothing on the phone could open a voice app's store link, so its address was copied instead."
+  },
+  "cardNoteTitle": "Note",
+  "@cardNoteTitle": {
+    "description": "Title of a card's note on the word sheet, over the note. The teach card shows the note without a title."
+  },
+  "cardLooksLikeTitle": "Looks like another word",
+  "@cardLooksLikeTitle": {
+    "description": "Title of the warning on the word sheet for a word that looks the same as, or almost the same as, another word of the language, with another sound or meaning: a homograph, or a word that differs by a dot or a short mark. The teach card shows it without a title."
+  },
+  "cardOtherMeaningsTitle": "Other meanings",
+  "@cardOtherMeaningsTitle": {
+    "description": "Title of the warning on the word sheet that the card's word has other meanings. The teach card shows it without a title."
+  },
+  "cardOtherMeaningsText": "It also means {meanings}.",
+  "@cardOtherMeaningsText": {
+    "description": "The warning that a word has other meanings, on its card and sheet. {meanings} is the other meanings, joined by the list separator.",
+    "placeholders": {
+      "meanings": {
+        "type": "String",
+        "example": "“machine” and “ease”"
+      }
+    }
+  },
+  "cardPartner": "{word} ({reading}), {meaning}",
+  "@cardPartner": {
+    "description": "A word that sounds or looks like the card's, in a warning: the word in its script, its reading and its meaning.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "काल"
+      },
+      "reading": {
+        "type": "String",
+        "example": "kāl"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "time"
+      }
+    }
+  },
+  "cardPartnerNoReading": "{word}, {meaning}",
+  "@cardPartnerNoReading": {
+    "description": "A word that sounds or looks like the card's, in a warning, for a word with no reading: the word and its meaning.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "el niño"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "the boy"
+      }
+    }
+  },
+  "cardAlsoMeans": "Also means: {meanings}",
+  "@cardAlsoMeans": {
+    "description": "A line on the word sheet under the meaning: the word's other meanings, joined by the list separator.",
+    "placeholders": {
+      "meanings": {
+        "type": "String",
+        "example": "time, era"
+      }
+    }
+  },
+  "cardAlsoAccepted": "Also accepted: {forms}",
+  "@cardAlsoAccepted": {
+    "description": "A line on the word sheet under the meaning: other spellings of the word that are accepted as the answer, joined by the list separator.",
+    "placeholders": {
+      "forms": {
+        "type": "String",
+        "example": "कल, काल"
+      }
+    }
+  },
+  "cardIpaHeading": "Pronunciation · IPA course",
+  "@cardIpaHeading": {
+    "description": "Heading over a word's sounds on its sheet, one row for each symbol of its IPA, taken from the IPA course."
+  },
+  "cardDictionaryHeading": "Dictionary · Wiktionary",
+  "@cardDictionaryHeading": {
+    "description": "Heading over a word's dictionary entry on its sheet, which comes from Wiktionary."
+  },
+  "cardDictionaryEtymology": "Etymology: {text}",
+  "@cardDictionaryEtymology": {
+    "description": "A dictionary entry's line on where the word comes from.",
+    "placeholders": {
+      "text": {
+        "type": "String",
+        "example": "From Sanskrit कल्य (kalya), “tomorrow”."
+      }
+    }
+  },
+  "cardDictionaryCredit": "Wiktionary, {source}. CC BY-SA 4.0.",
+  "@cardDictionaryCredit": {
+    "description": "The credit under a dictionary entry: the Wiktionary page it was taken from and its licence.",
+    "placeholders": {
+      "source": {
+        "type": "String",
+        "example": "wiktionary.org/wiki/कल"
+      }
+    }
+  },
+  "cardExamples": "Examples",
+  "@cardExamples": {
+    "description": "Heading over a word's example sentences on its sheet."
+  },
+  "cardTags": "Tags",
+  "@cardTags": {
+    "description": "Heading over a word's tags on its sheet."
+  },
+  "cardReport": "Report",
+  "@cardReport": {
+    "description": "The button at the foot of a word's sheet that reports a mistake in the card."
+  },
+  "cardDifficulty": "How hard, for you",
+  "@cardDifficulty": {
+    "description": "Heading over how hard a word has been for the learner in each skill, on its sheet."
+  },
+  "cardDifficultyIn": "{mode, select, recognition{Recognition} production{Write} listening{Hear} speaking{Say} grammarUnderstood{Grammar understood} grammar{Grammar produced} reading{Reading} other{Other}}: {value} of 10, {lean, select, easier{easier} harder{harder} other{middling}}",
+  "@cardDifficultyIn": {
+    "description": "One line under \"How hard, for you\": a skill, how hard the word has been in it from 1 to 10, and whether that is easier or harder than for most words.",
+    "placeholders": {
+      "mode": {
+        "type": "String",
+        "example": "listening"
+      },
+      "value": {
+        "type": "int",
+        "example": "7"
+      },
+      "lean": {
+        "type": "String",
+        "example": "harder"
+      }
+    }
+  },
+  "ipaSymbolsNone": "Add the IPA course to see, hear and practise each sound of this word.",
+  "@ipaSymbolsNone": {
+    "description": "On a word's sheet or pronunciation popup, where the IPA course is not on the phone: what adding it gives."
+  },
+  "ipaSymbolsAdd": "Add the IPA course",
+  "@ipaSymbolsAdd": {
+    "description": "The button under ipaSymbolsNone that offers to add the IPA course."
+  },
+  "ipaSymbolExample": "Example: {word}, {meaning}",
+  "@ipaSymbolExample": {
+    "description": "Under a sound of a word's IPA: a word that has the sound, and its meaning.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "sit"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "sit"
+      }
+    }
+  },
+  "ipaSymbolPractise": "Practise",
+  "@ipaSymbolPractise": {
+    "description": "The button on a sound of a word's IPA that opens the practice of that one sound in the IPA course."
+  },
+  "deckWordCount": "{shown} of {total, plural, =1{1 word} other{{total} words}}",
+  "@deckWordCount": {
+    "description": "On a deck's page, above its words: how many the tag chips leave in view, of how many it has.",
+    "placeholders": {
+      "shown": {
+        "type": "int",
+        "example": "12"
+      },
+      "total": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "deckNoWordsWithTags": "No words have these tags.",
+  "@deckNoWordsWithTags": {
+    "description": "On a deck's page, where the chosen tag chips leave no word in view."
+  },
+  "deckTagsLabel": "Filter by tag",
+  "@deckTagsLabel": {
+    "description": "Screen reader name of the group of tag chips on a deck's page."
+  },
+  "deckPractice": "Practice",
+  "@deckPractice": {
+    "description": "The button at the foot of a deck's page, left of Learn: it asks which skills, then drills every word taught in them, due or not."
+  },
+  "deckLearn": "Learn",
+  "@deckLearn": {
+    "description": "The button at the foot of a deck's page, beside Practice, with a plus icon and a badge counting the words in view not taught yet: it teaches them."
+  },
+  "deckLearnBadge": "{count, plural, =1{1 new word} other{{count} new words}}",
+  "@deckLearnBadge": {
+    "description": "Screen reader text of the count badge on a deck page's Learn button.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "deckRelearn": "Relearn",
+  "@deckRelearn": {
+    "description": "The button at the foot of a deck's page once every word of the deck is taught: it walks through the words in view, card by card, and writes nothing."
+  },
+  "deckPracticeTitle": "Practice",
+  "@deckPracticeTitle": {
+    "description": "Title of the popup a deck page's Practice opens."
+  },
+  "deckPracticeBody": "Choose skills. Every word you have been taught in them is drilled, due or not.",
+  "@deckPracticeBody": {
+    "description": "The line under the title of Practice's popup."
+  },
+  "deckPracticeAll": "All",
+  "@deckPracticeAll": {
+    "description": "The first option of Practice's popup: every skill the deck offers."
+  },
+  "deckPracticeStart": "Start",
+  "@deckPracticeStart": {
+    "description": "The button of Practice's popup that starts the practice."
+  },
+  "drillNextCard": "Next card",
+  "@drillNextCard": {
+    "description": "Screen-reader label and tooltip of the chevron on the end edge of a teach card, which goes on to the next card. Swiping the card does the same."
+  },
+  "drillPreviousCard": "Previous card",
+  "@drillPreviousCard": {
+    "description": "Screen-reader label and tooltip of the chevron on the start edge of a teach card, which goes back to the previous card."
+  },
+  "teachDictionaryLabel": "Dictionary: {meaning}",
+  "@teachDictionaryLabel": {
+    "description": "Screen-reader label of the meaning on a teach card, which is a button that opens the word's dictionary.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "yesterday; tomorrow"
+      }
+    }
+  },
+  "teachPronunciationLabel": "Pronunciation: {ipa}",
+  "@teachPronunciationLabel": {
+    "description": "Screen-reader label of the IPA on a teach card, which is a button that opens the pronunciation popup.",
+    "placeholders": {
+      "ipa": {
+        "type": "String",
+        "example": "kəl"
+      }
+    }
+  },
+  "teachPronunciationTitle": "Pronunciation",
+  "@teachPronunciationTitle": {
+    "description": "Title of the popup the IPA on a teach card opens."
+  },
+  "teachPronunciationBody": "From the IPA course. Practise each sound on its own.",
+  "@teachPronunciationBody": {
+    "description": "The line under the title of the pronunciation popup, which lists each symbol of the word."
+  },
+  "teachDictionaryBody": "Meanings, etymology and examples.",
+  "@teachDictionaryBody": {
+    "description": "The line under the title of the dictionary popup the meaning on a teach card opens."
   },
   "progressWordsTitle": "Words mastered",
   "@progressWordsTitle": {
