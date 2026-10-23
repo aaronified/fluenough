@@ -1,0 +1,38 @@
+schema: 1
+id: "es-en-numbers-big-sentences"
+kind: "layer"
+core: "es-numbers-big-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: big numbers"
+license: "CC-BY-SA-4.0"
+description: "Eight sentences with the tens, the hundreds, the thousands and the ordinals, with the numbers each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-0553":
+    native: "My father is fifty."
+    confusables: {"tres": { why: "Tres is three, a small number; cuarenta is forty." }, "cinco": { why: "Cinco is five; cincuenta is fifty." }}
+  "es-0554":
+    native: "There are one hundred people in the street."
+    bases: {"Hay": "there is", "en": "in", "la": "the"}
+    confusables: {"mil": { why: "Mil is one thousand, ten times one hundred." }, "doscientos": { why: "Doscientos is two hundred, twice one hundred." }}
+  "es-0555":
+    native: "I have five euros today."
+    confusables: {"cincuenta": { why: "Cincuenta is fifty, ten times five." }, "quince": { why: "Quince is fifteen." }}
+  "es-0556":
+    native: "A thousand people live here."
+    confusables: {"millon": { why: "Un millón is a million, a thousand times larger." }, "cien": { why: "Cien is one hundred, a tenth of a thousand." }}
+  "es-0557":
+    native: "It is my first day at the office."
+    bases: {"en": "in", "la": "the"}
+    confusables: {"segundo": { why: "Segundo is second, the one after the first." }, "dos": { why: "Dos is two, a number, not an order." }}
+  "es-0558":
+    native: "The second meeting is today."
+    bases: {"La": "the"}
+    confusables: {"primero": { why: "Primero is first, before the second." }, "dos": { why: "Dos is two, a count, not a position." }}
+  "es-0559":
+    native: "There are twenty-two people in the office."
+    bases: {"Hay": "there is", "en": "in", "la": "the"}
+    confusables: {"veintiuno": { why: "Veintiuno is twenty-one, one less." }, "veinte": { why: "Veinte is twenty, two less." }}
+  "es-0560":
+    native: "One hundred is a big number."
+    bases: {"un": "a"}
+    confusables: {"treinta": { why: "Treinta is thirty, not a hundred." }, "mil": { why: "Mil is one thousand, a bigger number." }}
