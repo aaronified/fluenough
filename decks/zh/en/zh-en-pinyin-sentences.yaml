@@ -1,0 +1,27 @@
+schema: 1
+id: "zh-en-pinyin-sentences"
+kind: "layer"
+core: "zh-pinyin-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences with the spelling words"
+description: "Four short sentences with the words of the pinyin unit: west, green tea, the teacher, and nine characters."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "zh-0066":
+    native: "Is Mum going to the west?"
+    bases:
+      "西边": { meaning: "west side" }
+  "zh-0067":
+    native: "I drink green tea; do you drink it?"
+    bases:
+      "绿茶": { meaning: "green tea" }
+  "zh-0068":
+    native: "The teacher buys fish."
+    bases:
+      "老师": { meaning: "teacher" }
+  "zh-0069":
+    native: "I write nine characters."
+    bases:
+      "个": { meaning: "measure word for people and things" }
+      "字": { meaning: "character; word" }

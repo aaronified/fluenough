@@ -27,9 +27,12 @@
 #    each its words, then its rules, then its sentences.
 # Marathi's grammar keeps the Indo-Aryan order of
 # docs/plans/language-paths-scheme.md within each level: be,
-# postpositions, the present, gender agreement, the oblique, the past,
-# the perfect, compound and conjunct verbs, then the subjunctive, the
-# relative-correlative clauses and the rest of B1.
+# postpositions, the present, the imperatives, gender agreement, the
+# oblique, the past, then the written past-more unit with its conjunct and
+# compound verbs (right after the simple past; its decks already teach the
+# habitual past, so no habitual unit is planned), the ergative past, the
+# perfect, then the subjunctive, the relative-correlative clauses and the
+# rest of B1.
 #
 # The core's order is by judgement, most common first:
 # about me, everyday verbs (planned), the common adverbs and function
@@ -138,6 +141,11 @@ units:
   - decks: ["mr-grammar-present"]
     words: 0
     grammar: ["present"]
+  - planned: { id: "mr-grammar-imperatives", grammar: "imperatives" }
+    listening_passages:
+      - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
+    reading_passages:
+      - { id: "signs-and-rules", text: { "en": "Signs saying what to do and what not to do" } }
   - decks: ["mr-grammar-demonstratives"]
     words: 0
     grammar: ["demonstratives"]
@@ -224,6 +232,19 @@ units:
   - decks: ["mr-calendar", "mr-grammar-past", "*"]
     words: 20
     grammar: ["past"]
+  - decks: ["mr-grammar-past-more", "mr-grammar-conjunct-verbs", "mr-grammar-compound-verbs"]
+    words: 0
+    grammar: ["past-more", "conjunct-verbs", "compound-verbs"]
+  - planned: { id: "mr-grammar-ergative-past", grammar: "ergative-past" }
+    listening_passages:
+      - { id: "who-did-it", text: { "en": "Asking who cooked, wrote or bought something" } }
+    reading_passages:
+      - { id: "shop-receipts", text: { "en": "Two shop receipts: who bought what" } }
+  - planned: { id: "mr-grammar-perfect", grammar: "perfect" }
+    listening_passages:
+      - { id: "what-has-happened", text: { "en": "A neighbour says what has already been done and what is still left" } }
+    reading_passages:
+      - { id: "checklist-done", text: { "en": "A ticked checklist: what has been done and what has not" } }
   - planned: { id: "mr-grammar-ordinals", grammar: "ordinals" }
     listening_passages:
       - { id: "which-floor", text: { "en": "Finding a flat: the first floor, the second, the third" } }
@@ -234,19 +255,11 @@ units:
       - { id: "festival-days", text: { "en": "Neighbours plan the days of a festival together" } }
     reading_passages:
       - { id: "festival-invitation", text: { "en": "An invitation to a festival meal" } }
-  - planned: { id: "mr-grammar-perfect", grammar: "perfect" }
-    listening_passages:
-      - { id: "what-has-happened", text: { "en": "A neighbour says what has already been done and what is still left" } }
-    reading_passages:
-      - { id: "checklist-done", text: { "en": "A ticked checklist: what has been done and what has not" } }
   - planned: { id: "mr-shopping", theme: "shopping", words: 50 }
     listening_passages:
       - { id: "bargaining", text: { "en": "Bargaining politely at a market stall" } }
     reading_passages:
       - { id: "price-list", text: { "en": "A shop's price list and its offers" } }
-  - decks: ["mr-grammar-past-more", "mr-grammar-conjunct-verbs", "mr-grammar-compound-verbs"]
-    words: 0
-    grammar: ["past-more", "conjunct-verbs", "compound-verbs"]
   - planned: { id: "mr-illness", theme: "illness", words: 50 }
     listening_passages:
       - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
@@ -277,11 +290,6 @@ units:
       - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends" } }
     reading_passages:
       - { id: "club-poster", text: { "en": "A poster for a sports and music club" } }
-  - planned: { id: "mr-grammar-imperatives", grammar: "imperatives" }
-    listening_passages:
-      - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
-    reading_passages:
-      - { id: "signs-and-rules", text: { "en": "Signs saying what to do and what not to do" } }
   - planned: { id: "mr-grammar-past-continuous", grammar: "past-continuous" }
     listening_passages:
       - { id: "what-was-happening", text: { "en": "Saying what you were doing when the lights went out" } }
@@ -526,11 +534,6 @@ units:
       - { id: "a-poem-read-aloud", text: { "en": "A teacher reads a short poem and explains it" } }
     reading_passages:
       - { id: "book-blurb", text: { "en": "The back-cover blurb of a novel" } }
-  - planned: { id: "mr-grammar-habitual-past", grammar: "habitual-past" }
-    listening_passages:
-      - { id: "when-i-was-small", text: { "en": "Telling what you used to do when you were small" } }
-    reading_passages:
-      - { id: "memoir-extract", text: { "en": "An extract from a memoir about childhood" } }
   - planned: { id: "mr-verbs-5", theme: "verbs-5", words: 45 }
     listening_passages:
       - { id: "what-happened-next", text: { "en": "Telling a long story with every step in order" } }

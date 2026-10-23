@@ -1,0 +1,37 @@
+schema: 1
+id: "hi-en-describing-sentences"
+kind: "layer"
+core: "hi-describing-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences describing things and feelings"
+license: "CC-BY-SA-4.0"
+description: "Short sentences that use the words of this unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-0923":
+    native: "My room is big and clean."
+    confusables: { "w1": { why: "Dirty, not clean: गंदा (gandā) means dirty." }, "f1": { why: "Feminine: बड़ी (baṛī) would agree with a feminine noun; कमरा (kamrā) is masculine." } }
+  "hi-0924":
+    native: "The small children are happy."
+    confusables: { "w1": { why: "Sad, not happy: दुखी (dukhī) means sad." }, "f1": { why: "Feminine: छोटी (chōṭī) would agree with a feminine noun; बच्चे (baccē) is a masculine plural." } }
+  "hi-0925":
+    native: "Today's work is not easy."
+    confusables: { "w1": { why: "Long, not easy: लंबा (lambā) means long." }, "w2": { why: "Clean, not easy: साफ़ (sāf) means clean." } }
+  "hi-0926":
+    native: "The milk is not hot, it is cold."
+    confusables: { "w1": { why: "Happy, not cold: खुश (khuś) means happy." }, "f1": { why: "Feminine: ठंडी (ṭhaṇḍī) would agree with a feminine noun; दूध (dūdh) is masculine." } }
+  "hi-0927":
+    native: "She is very tired, but happy."
+    confusables: { "w1": { why: "Hungry, not tired: भूखा (bhūkhā) means hungry." }, "f1": { why: "Masculine: थका (thakā) is for a man; थकी (thakī) agrees with वह (vah) here, meaning she." } }
+    bases: { "थकी": "tired" }
+  "hi-0928":
+    native: "The sky is blue and the clouds are white."
+    confusables: { "w1": { why: "Green, not blue: हरा (harā) means green." }, "w2": { why: "Yellow, not white: पीला (pīlā) means yellow." } }
+    bases: { "आसमान": "sky", "बादल": "cloud" }
+  "hi-0929":
+    native: "My friend is tall."
+    confusables: { "w1": { why: "Short, not tall: छोटा (chōṭā) means small." }, "w2": { why: "Light, not tall: हल्का (halkā) means light, not heavy." } }
+  "hi-0930":
+    native: "The weather is good today."
+    confusables: { "w1": { why: "Bad, not good: बुरा (burā) means bad." }, "f1": { why: "Feminine: अच्छी (acchī) would agree with a feminine noun; मौसम (mausam) is masculine." } }
+    bases: { "मौसम": "weather" }

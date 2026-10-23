@@ -9,11 +9,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Rearranging is eligible by the card's data (three or more words in the target, or two in a phrase) through the question-type registry, which never rearranges a reading question, with the same questions as before (#522, step 5).
+- The two grammar question types are now eligible by whether the card's word has other forms (`Card.hasOtherForms`) or has sibling cards (`formSiblings`: each has exactly one base, the same card), and a rules cell's lesson questions come from the registry, with the same questions as before (#522, step 4).
+- Wrong options in a choice question are now taken first from cards that share the answer's word family, part of speech or tags (`lib/core/scheduling/distractors.dart`), with the same pool as before (#522, step 3).
+- A question-type registry in `lib/core/scheduling/question_type.dart`: how a review asks each item is now chosen by one list of types, each with its skill and when it is eligible, with the same questions as before (#522, step 2).
+- Progress: Weakest tags has an "All tags ›" button to a page of every tag with its bar and share remembered in the chosen range, and a Practise button on each: a random set of up to 20 taught words with that tag, in the language chosen at the top, with every answer recorded (#499).
 - The `wiki/` folder is published to the GitHub wiki by a workflow whenever it changes on main.
 - A card can set `picture_ask: true`: its `picture` is drawn with a small "?" badge, for question words (#707).
 
+### Changed
+
+- A finished deck's Revise now records its answers and moves the schedule, like quick revision; only number practice is unrecorded (#499, ADR-0033).
+
 ### Fixed
 
+- CI: the deck tools' tests no longer fail on every deck pull request for a stale `decks/index.json`; the test that validates the real decks skips the index check, which is regenerated on main after merge and still tested on its own.
 - A read-aloud question in the placement check no longer ends the moment the phone's recogniser hears nothing: it says it did not hear, and lets the learner speak again or say they don't know, as the speaking drill does.
 - A one-word label on a number tile, such as "Remembered" on Progress, shrinks to fit at large text instead of breaking mid-word (#492).
 - The session result counts the time spent answering, each answer capped at 60 seconds, instead of the time the app was open, so a short lesson no longer reads 31 minutes (#486, minutes only; the card count is still open).
