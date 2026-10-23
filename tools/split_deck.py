@@ -55,7 +55,7 @@ from validate_decks import DeckLoader  # noqa: E402
 
 # What a core card may give; the rest of a card is the layer's (DECK-FORMAT
 # "A core").
-CORE_CARD = ("id", "target", "reading", "ipa", "alt_target", "pos", "gender",
+CORE_CARD = ("id", "target", "reading", "ipa", "alt_target", "pos", "hears", "gender",
              "tags", "audio", "audio_credit", "examples", "modes", "picture",
              "image", "image_credit", "notes", "phrasebook", "bases", "rules",
              "proposed", "checked_by")
