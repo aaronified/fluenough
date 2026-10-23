@@ -217,27 +217,32 @@ units:
       - { id: "how-often", text: { "en": "Saying how often and how much: always, also, all, very, too" } }
     reading_passages:
       - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
-  - planned: { id: "zh-quantities", theme: "quantities", words: 25 }
+  - decks: ["zh-quantities", "zh-quantities-sentences", "zh-reading-quantities", "*"]
+    words: 25
     listening_passages:
       - { id: "how-many-do-you-want", text: { "en": "Asking how much and how many at a bakery: ji and duoshao" } }
     reading_passages:
       - { id: "recipe-amounts", text: { "en": "The amounts on a recipe card" } }
-  - planned: { id: "zh-describing", theme: "describing", words: 35 }
+  - decks: ["zh-describing", "zh-describing-sentences", "zh-reading-describing", "*"]
+    words: 36
     listening_passages:
       - { id: "how-is-it", text: { "en": "A friend asks about your new room: big, quiet, convenient" } }
     reading_passages:
       - { id: "postcard-from-hangzhou", text: { "en": "A short postcard: the weather, the food, the people" } }
-  - planned: { id: "zh-time", theme: "time", words: 25 }
+  - decks: ["zh-time", "zh-time-sentences", "zh-reading-time", "*"]
+    words: 25
     listening_passages:
       - { id: "what-time-is-it", text: { "en": "Asking and telling the time" } }
     reading_passages:
       - { id: "shop-hours", text: { "en": "The opening hours on a shop door" } }
-  - planned: { id: "zh-location", theme: "location", words: 15 }
+  - decks: ["zh-location", "zh-location-sentences", "zh-reading-location", "*"]
+    words: 18
     listening_passages:
       - { id: "where-is-my-key", text: { "en": "Looking for a key: on, under, in, next to" } }
     reading_passages:
       - { id: "room-layout", text: { "en": "A note saying where things are in a room" } }
-  - planned: { id: "zh-more-verbs", theme: "more-verbs", words: 30 }
+  - decks: ["zh-more-verbs", "zh-more-verbs-sentences", "zh-reading-more-verbs", "*"]
+    words: 30
     listening_passages:
       - { id: "weekend-chores", text: { "en": "Someone lists what they will do this weekend" } }
     reading_passages:
