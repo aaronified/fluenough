@@ -435,6 +435,47 @@ void main() {
     });
   });
 
+  group('transliteration letters', () {
+    final plain = RomanisedSpelling(null);
+    AnswerOutcome grade(String typed, String reading) =>
+        plain.grade(typed, <String>[reading]).outcome;
+
+    test('pinyin with caron tones is typed without them', () {
+      expect(grade('lu', 'lǔ'), AnswerOutcome.exact);
+      expect(grade('nihao', 'nǐ hǎo'), AnswerOutcome.exact);
+      expect(grade('nu', 'nǚ'), AnswerOutcome.exact);
+    });
+
+    test('Egyptian letters are typed as plain ones, and none empties a '
+        'word', () {
+      expect(grade('ankh', 'ꜥnḫ'), isNot(AnswerOutcome.wrong));
+      expect(grade('anh', 'ꜥnḫ'), AnswerOutcome.exact);
+      expect(grade('dd', 'ḏd'), AnswerOutcome.exact);
+      expect(grade('tz', 'ṯz'), AnswerOutcome.exact);
+      expect(plain.key('ꜥꜣ'), isNotEmpty);
+    });
+
+    test('sign indices and laryngeal subscripts are typed as digits', () {
+      expect(grade('du3', 'du₃'), AnswerOutcome.exact);
+      expect(grade('h2owis', 'h₂ówis'), AnswerOutcome.exact);
+      expect(grade('kwetwores', 'kʷetwóres'), AnswerOutcome.exact);
+      expect(grade('bhreh2ter', 'bʰréh₂ter'), AnswerOutcome.exact);
+    });
+
+    test('a mark typed apart from its letter folds away like a composed '
+        'one', () {
+      expect(grade('ksatriya', 'k\u1E63atriya'), AnswerOutcome.exact);
+      expect(grade('ma', 'ma\u0304'), AnswerOutcome.exact);
+      expect(grade('lu', 'lu\u030C'), AnswerOutcome.exact);
+    });
+
+    test('the half-ring letters and the apostrophe are not typed', () {
+      expect(grade('ayn', 'ʿayn'), AnswerOutcome.exact);
+      expect(grade('quran', 'qurʾān'), AnswerOutcome.exact);
+      expect(grade('mana', 'maʻnā'), AnswerOutcome.exact);
+    });
+  });
+
   group('romanised answers', () {
     final spelling = RomanisedSpelling(hindi);
 

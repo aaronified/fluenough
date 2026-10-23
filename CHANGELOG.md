@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- A typed answer no longer loses transliteration letters: pinyin's caron vowels (ǎ ǐ ǒ ǔ ǚ), Egyptian ꜣ ꜥ ḫ ẖ ṯ ḏ ḳ, subscript digits (du₃, h₂) and ʰ ʷ are folded to the letters and digits a keyboard types, so `lu` is right for lǔ and `h2owis` for h₂ówis (#616). Arabic-script, Lojban and Mycenaean typing are not done.
 - The language bar is expanded at launch, not only after the first drag; its glyphs sit evenly a detent apart on both sides of the expanded name; the further a glyph is from the centre the smaller and fainter it is, at rest as well as while dragged; and nothing is drawn under the bug button (#774).
 
 ## [0.6.0] - 2026-10-23
