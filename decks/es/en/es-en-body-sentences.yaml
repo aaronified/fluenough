@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-body-sentences"
+kind: "layer"
+core: "es-body-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: the body"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about the body and how it feels, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-0757":
+    native: "My head and my neck hurt."
+    bases: {"Me": "(to) me", "la": "the", "el": "the"}
+    confusables: {"pie": { why: "Pie is a foot, far from the head." }, "garganta": { why: "Garganta is the throat, not the neck." }}
+  "es-0758":
+    native: "I breathe well through my nose."
+    bases: {"con": "with", "la": "the"}
+    confusables: {"boca": { why: "Boca is the mouth, another way to breathe." }, "oreja": { why: "Oreja is an ear, not used for breathing." }}
+  "es-0759":
+    native: "My eyes are tired."
+    bases: {"los": "the"}
+    confusables: {"oreja": { why: "Oreja is an ear, not an eye." }, "cabeza": { why: "Cabeza is the head, the whole top part." }}
+  "es-0760":
+    native: "My stomach hurts."
+    bases: {"Me": "(to) me", "el": "the"}
+    confusables: {"garganta": { why: "Garganta is the throat, higher up." }, "corazon": { why: "Corazón is the heart, another organ." }}
+  "es-0761":
+    native: "I stretch my legs and my arms."
+    bases: {"las": "the", "los": "the"}
+    confusables: {"pie": { why: "Pie is a foot, a part of the leg." }, "mano": { why: "Mano is a hand, not an arm." }}
+  "es-0762":
+    native: "The hair is short."
+    bases: {"El": "the"}
+    confusables: {"dedo": { why: "Dedo is a finger, not hair." }, "cuello": { why: "Cuello is a neck, not hair." }}

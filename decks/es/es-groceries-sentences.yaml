@@ -1,0 +1,50 @@
+schema: 1
+id: "es-groceries-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-0625"
+    target: "Compro queso y leche en el supermercado."
+    ipa: "ˈkompɾo ˈkeso i ˈletʃe en el supeɾmeɾˈkado"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Compro", ref: "es-0280" }, { word: "queso", ref: "es-0603" }, { word: "y", ref: "es-0048" }, { word: "leche", ref: "es-0014" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "supermercado", ref: "es-0601" }]
+    confusables: [{ id: "tienda", ref: "es-0584", kind: "word" }, { id: "mercado", ref: "es-0567", kind: "word" }]
+  - id: "es-0626"
+    target: "Tengo una lista."
+    ipa: "ˈtenɡo ˈuna ˈlista"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "lista", ref: "es-0602" }]
+    confusables: [{ id: "cambio", ref: "es-0586", kind: "word" }, { id: "precio", ref: "es-0580", kind: "word" }]
+  - id: "es-0627"
+    target: "Necesito huevos y arroz."
+    ipa: "neθeˈsito ˈwebos i aˈroθ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Necesito", ref: "es-0288" }, { word: "huevos", ref: "es-0604" }, { word: "y", ref: "es-0048" }, { word: "arroz", ref: "es-0605" }]
+    confusables: [{ id: "pollo", ref: "es-0615", kind: "word" }, { id: "aceite", ref: "es-0608", kind: "word" }]
+  - id: "es-0628"
+    target: "Bebo café con azúcar."
+    ipa: "ˈbebo kaˈfe kon aˈθukaɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Bebo", ref: "es-0029" }, { word: "café", ref: "es-0611" }, { word: "con", base: "con" }, { word: "azúcar", ref: "es-0606" }]
+    confusables: [{ id: "te", ref: "es-0612", kind: "word" }, { id: "zumo", ref: "es-0613", kind: "word" }]
+  - id: "es-0629"
+    target: "La carne es cara."
+    ipa: "la ˈkaɾne es ˈkaɾa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "carne", ref: "es-0614" }, { word: "es", ref: "es-0022" }, { word: "cara", ref: "es-0412" }]
+    confusables: [{ id: "pescado", ref: "es-0616", kind: "word" }, { id: "pollo", ref: "es-0615", kind: "word" }]
+  - id: "es-0630"
+    target: "Llevo chocolate y galletas a casa."
+    ipa: "ˈʝebo tʃokoˈlate i ɡaˈʝetas a ˈkasa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Llevo", ref: "es-0623" }, { word: "chocolate", ref: "es-0622" }, { word: "y", ref: "es-0048" }, { word: "galletas", ref: "es-0610" }, { word: "a", base: "a" }, { word: "casa", ref: "es-0006" }]
+    confusables: [{ id: "tomar", ref: "es-0624", kind: "word" }, { id: "comprar", ref: "es-0280", kind: "word" }]

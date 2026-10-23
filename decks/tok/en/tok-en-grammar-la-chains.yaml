@@ -1,0 +1,25 @@
+"schema": 1
+"id": "tok-en-grammar-la-chains"
+"kind": "layer"
+"core": "tok-grammar-la-chains"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "Stacked contexts with la"
+"license": "CC-BY-SA-4.0"
+"description": "Each context is a word or phrase followed by la, and several can come one after another before the sentence: tenpo pini la, ma ni la, mi moku is in the past, in this land, I ate. Each la adds one context, and the sentence after the last la is the one that happens. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "Stacked contexts with la"
+  "slot_name": "contexts"
+  "prompt": "{lemma} ({gloss}): {slot}"
+  "slots":
+    "one context": "one context before la"
+    "two contexts": "two contexts, each with la"
+  "entries":
+    "moku": "to eat"
+    "lape": "to sleep"
+    "tawa": "to go"
+  "notes": "The contexts stack before the sentence, usually from the wider to the narrower: time first, then place. The order is the speaker's choice. Each one ends with la, and the verb keeps one form in every slot."

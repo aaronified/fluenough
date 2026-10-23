@@ -1,0 +1,26 @@
+"schema": 1
+"id": "tok-en-grammar-compounds"
+"kind": "layer"
+"core": "tok-grammar-compounds"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "Compounds: a head and its modifier"
+"license": "CC-BY-SA-4.0"
+"description": "A compound is a head word with a modifier after it, read as one phrase: tomo tawa is a building that moves, a car. Speakers share some compounds, such as jan pona for a friend and ilo toki for a phone, and a new meaning can be made from known words in the same way. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "Compounds: a head and its modifier"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}): {slot}"
+  "slots":
+    "compound": "the compound (a head and a modifier)"
+    "sentence": "the compound in a sentence"
+  "entries":
+    "tomo": "building"
+    "ilo": "tool"
+    "jan": "person"
+    "telo": "water"
+  "notes": "The head comes first and the modifier describes it: tomo tawa is a moving building, and ilo toki is a tool for talking. A shared compound has its own meaning, which can differ from the words put together."

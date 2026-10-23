@@ -1,0 +1,50 @@
+schema: 1
+id: "es-body-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-0757"
+    target: "Me duele la cabeza y el cuello."
+    ipa: "me ˈdwele la kaˈbeθa i el ˈkweʝo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Me", base: "me" }, { word: "duele", ref: "es-0754" }, { word: "la", base: "la" }, { word: "cabeza", ref: "es-0736" }, { word: "y", ref: "es-0048" }, { word: "el", base: "el" }, { word: "cuello", ref: "es-0749" }]
+    confusables: [{ id: "pie", ref: "es-0739", kind: "word" }, { id: "garganta", ref: "es-0751", kind: "word" }]
+  - id: "es-0758"
+    target: "Respiro bien con la nariz."
+    ipa: "resˈpiɾo bjen kon la naˈɾiθ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Respiro", ref: "es-0755" }, { word: "bien", ref: "es-0326" }, { word: "con", base: "con" }, { word: "la", base: "la" }, { word: "nariz", ref: "es-0743" }]
+    confusables: [{ id: "boca", ref: "es-0744", kind: "word" }, { id: "oreja", ref: "es-0742", kind: "word" }]
+  - id: "es-0759"
+    target: "Tengo los ojos cansados."
+    ipa: "ˈtenɡo los ˈoxos kanˈsados"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tengo", ref: "es-0024" }, { word: "los", base: "los" }, { word: "ojos", ref: "es-0741" }, { word: "cansados", ref: "es-0420" }]
+    confusables: [{ id: "oreja", ref: "es-0742", kind: "word" }, { id: "cabeza", ref: "es-0736", kind: "word" }]
+  - id: "es-0760"
+    target: "Me duele el estómago."
+    ipa: "me ˈdwele el esˈtomaɡo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Me", base: "me" }, { word: "duele", ref: "es-0754" }, { word: "el", base: "el" }, { word: "estómago", ref: "es-0745" }]
+    confusables: [{ id: "garganta", ref: "es-0751", kind: "word" }, { id: "corazon", ref: "es-0750", kind: "word" }]
+  - id: "es-0761"
+    target: "Estiro las piernas y los brazos."
+    ipa: "esˈtiɾo las ˈpjeɾnas i los ˈbɾaθos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Estiro", ref: "es-0756" }, { word: "las", base: "las" }, { word: "piernas", ref: "es-0740" }, { word: "y", ref: "es-0048" }, { word: "los", base: "los" }, { word: "brazos", ref: "es-0737" }]
+    confusables: [{ id: "pie", ref: "es-0739", kind: "word" }, { id: "mano", ref: "es-0738", kind: "word" }]
+  - id: "es-0762"
+    target: "El pelo es corto."
+    ipa: "el ˈpelo es ˈkoɾto"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "pelo", ref: "es-0748" }, { word: "es", ref: "es-0022" }, { word: "corto", ref: "es-0430" }]
+    confusables: [{ id: "dedo", ref: "es-0747", kind: "word" }, { id: "cuello", ref: "es-0749", kind: "word" }]

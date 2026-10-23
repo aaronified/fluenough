@@ -1,0 +1,69 @@
+schema: 1
+id: "es-en-reading-ir-a"
+name: "Reading: going to do things"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about plans: a weekend plan and a short invitation note. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-plans-for-the-weekend"
+    title: "Plans for the weekend"
+    sentences:
+      - text: "Voy a comer con mi hermana."
+      - text: "Vamos a estudiar en la biblioteca."
+      - text: "Mi amigo va a llegar a las ocho."
+      - text: "Vamos a cenar pollo."
+    questions:
+      - id: "es-0893"
+        prompt: { en: "What will the speaker do with the sister?" }
+        options:
+          - { en: "Eat" }
+          - { en: "Study" }
+          - { en: "Work" }
+        answer: 1
+      - id: "es-0894"
+        prompt: { en: "Where will they study?" }
+        options:
+          - { en: "In the library" }
+          - { en: "At the bank" }
+          - { en: "At the school" }
+        answer: 1
+      - id: "es-0895"
+        prompt: { en: "When will the friend arrive?" }
+        options:
+          - { en: "At eight" }
+          - { en: "At nine" }
+          - { en: "At ten" }
+        answer: 1
+  - id: "es-invitation-note"
+    title: "Invitation note"
+    sentences:
+      - text: "Hola, Ana: voy a cenar en casa."
+      - text: "Vamos a beber vino y a comer pizza."
+      - text: "¿Vas a llegar a las ocho?"
+      - text: "Hasta luego."
+    questions:
+      - id: "es-0896"
+        prompt: { en: "What is the writer going to do?" }
+        options:
+          - { en: "Have dinner at home" }
+          - { en: "Work late" }
+          - { en: "Study" }
+        answer: 1
+      - id: "es-0897"
+        prompt: { en: "What will they drink?" }
+        options:
+          - { en: "Wine" }
+          - { en: "Tea" }
+          - { en: "Milk" }
+        answer: 1
+      - id: "es-0898"
+        prompt: { en: "At what time does the writer ask if Ana will arrive?" }
+        options:
+          - { en: "At eight" }
+          - { en: "At nine" }
+          - { en: "At ten" }
+        answer: 1
