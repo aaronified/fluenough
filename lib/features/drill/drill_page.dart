@@ -132,7 +132,9 @@ class _DrillPageState extends State<DrillPage> {
       return;
     }
     // A preset keeps each item asked its own way, but for its first.
-    var items = request.lesson
+    var items = request.daily
+        ? state.dailyItems(request)
+        : request.lesson
         ? state.lessonFor(request)
         : preset == null
         ? state.sessionItems(request)
@@ -199,7 +201,7 @@ class _DrillPageState extends State<DrillPage> {
     if (session.finished && !_summaryShown) {
       _summaryShown = true;
       final request = widget.request;
-      if (request.lesson) {
+      if (request.lesson || request.daily) {
         final state = AppScope.read(context);
         state.settings.markLessonDone(request.language!, state.now());
       }
