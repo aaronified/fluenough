@@ -8,6 +8,7 @@ import 'package:fluenough/app/unlocks.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/progress/unlocks.dart';
 import 'package:fluenough/features/decks/unit_page.dart';
+import 'package:flutter/widgets.dart' show Scrollable;
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/harness.dart';
