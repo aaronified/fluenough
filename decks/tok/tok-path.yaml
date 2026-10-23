@@ -172,14 +172,14 @@ units:
   # alone, e before the object. Any word can be a noun, verb or modifier
   # by its place: moku is food and to eat. The particles li and e are
   # cards here (tok-0101 and tok-0102), taught on words already known, so
-  # they count no word. Its sentences are tok-grammar-sentence-sentences,
+  # they are its two words. Its sentences are tok-grammar-sentence-sentences,
   # and its passages are in tok-en-reading-sentences: the listening passage
   # simple-statements (ten short statements about a person and some food;
   # a cat is left out, since soweli is taught in its own unit later) and the
   # reading passage three-lines (a three-line story: someone sees food, wants
   # it and eats it).
-  - decks: ["tok-grammar-sentence", "tok-grammar-sentence-sentences", "tok-reading-sentences", "*"]
-    words: 0
+  - decks: ["tok-grammar-sentence", "tok-grammar-sentence-sentences", "tok-reading-sentences", "tok-grammar-li-predicate", "tok-grammar-mi-sina-without-li", "tok-grammar-e-object", "tok-grammar-word-roles"]
+    words: 2
     grammar: ["li-predicate", "mi-sina-without-li", "e-object", "word-roles"]
   # suli, lili, ike, sin, wawa, mute, ante and sama. Its sentences are
   # tok-describing-sentences, and its passages are in tok-en-reading-describing:
