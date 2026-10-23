@@ -1,0 +1,95 @@
+schema: 1
+id: "es-en-numbers-1-20-sentences"
+kind: "layer"
+core: "es-numbers-1-20-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: numbers"
+license: "CC-BY-SA-4.0"
+description: "Ten sentences that use the numbers zero to twenty, each with the number it is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+
+cards:
+  "es-0225":
+    native: "Two and two are four."
+    confusables:
+      "three": { why: "Tres is three, not two." }
+      "six": { why: "Seis is six, not four." }
+  "es-0226":
+    native: "There are five chairs in the kitchen."
+    bases:
+      "Hay": "there is"
+      "sillas": "chairs"
+      "en": "in"
+      "la": "the"
+      "cocina": "kitchen"
+    confusables:
+      "six": { why: "Seis is six, one more than five." }
+      "seven": { why: "Siete is seven, not five." }
+  "es-0227":
+    native: "It is eight in the morning."
+    bases:
+      "las": "the"
+      "de": "of"
+      "la": "the"
+      "mañana": "morning"
+    confusables:
+      "two": { why: "Dos is two, not eight." }
+      "ten": { why: "Diez is ten, not eight." }
+  "es-0228":
+    native: "The week has seven days."
+    bases:
+      "La": "the"
+      "semana": "week"
+      "días": "days"
+    confusables:
+      "six": { why: "Seis is six, not seven." }
+      "nine": { why: "Nueve is nine, not seven." }
+  "es-0229":
+    native: "My cousin is eighteen years old."
+    bases:
+      "primo": "cousin (male)"
+      "años": "years"
+    confusables:
+      "ten": { why: "Diez is ten: dieciocho starts with dieci-, but it is eighteen." }
+      "eight": { why: "Ocho is eight. Dieciocho is eighteen." }
+  "es-0230":
+    native: "One plus one is two."
+    bases:
+      "más": "plus"
+    confusables:
+      "three": { why: "Tres is three, not two." }
+      "ten": { why: "Diez is ten, not two." }
+  "es-0231":
+    native: "A year has twelve months."
+    bases:
+      "Un": "a"
+      "año": "year"
+      "meses": "months"
+    confusables:
+      "ten": { why: "Diez is ten, not twelve." }
+      "fourteen": { why: "Catorce is fourteen, not twelve." }
+  "es-0232":
+    native: "Nine minus four is five."
+    bases:
+      "menos": "minus"
+    confusables:
+      "seven": { why: "Siete is seven, not nine." }
+      "three": { why: "Tres is three, not five." }
+  "es-0233":
+    native: "Eleven players make up a team."
+    bases:
+      "jugadores": "players"
+      "forman": "make up"
+      "un": "a"
+      "equipo": "team"
+    confusables:
+      "twelve": { why: "Doce is twelve, one more than eleven." }
+      "fifteen": { why: "Quince is fifteen, not eleven." }
+  "es-0234":
+    native: "Twenty is equal to two times ten."
+    bases:
+      "igual": "equal"
+      "a": "to"
+      "veces": "times"
+    confusables:
+      "twelve": { why: "Doce is twelve, not twenty." }
+      "fifteen": { why: "Quince is fifteen, not twenty." }

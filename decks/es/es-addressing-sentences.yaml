@@ -1,0 +1,143 @@
+schema: 1
+id: "es-addressing-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-0103"
+    target: "¿Cómo se llama usted?"
+    ipa: "ˈkomo se ˈʝama usˈted"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Cómo", ref: "es-0058" }
+      - { word: "se", base: "se" }
+      - { word: "llama", base: "llamar" }
+      - { word: "usted", ref: "es-0087" }
+    confusables:
+      - { id: "informal-you", ref: "es-0086", kind: "word" }
+      - { id: "informal-your", word: "te", kind: "form" }
+  - id: "es-0104"
+    target: "Buenas tardes, señor López."
+    ipa: "ˈbwenas ˈtaɾdes seˈɲoɾ ˈlopeθ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Buenas", ref: "es-0033" }
+      - { word: "tardes", base: "tarde" }
+      - { word: "señor", ref: "es-0088" }
+      - { word: "López", base: "López" }
+    confusables:
+      - { id: "morning", ref: "es-0039", kind: "word" }
+      - { id: "night", ref: "es-0040", kind: "word" }
+  - id: "es-0105"
+    target: "¿Tú eres la profesora?"
+    ipa: "tu ˈeɾes la pɾofeˈsoɾa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Tú", ref: "es-0086" }
+      - { word: "eres", ref: "es-0022" }
+      - { word: "la", base: "la" }
+      - { word: "profesora", ref: "es-0094" }
+    confusables:
+      - { id: "formal", ref: "es-0087", kind: "word" }
+      - { id: "third", word: "es", kind: "form" }
+  - id: "es-0106"
+    target: "Encantado de conocerla."
+    ipa: "enkanˈtado de konoˈθeɾla"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Encantado", ref: "es-0099" }
+      - { word: "de", base: "de" }
+      - { word: "conocerla", base: "conocer" }
+    confusables:
+      - { id: "sorry", ref: "es-0045", kind: "word" }
+      - { id: "thanks", ref: "es-0037", kind: "word" }
+  - id: "es-0107"
+    target: "Mi compañero se llama Pedro."
+    ipa: "mi kompaˈɲeɾo se ˈʝama ˈpedɾo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mi", ref: "es-0129" }
+      - { word: "compañero", ref: "es-0095" }
+      - { word: "se", base: "se" }
+      - { word: "llama", base: "llamar" }
+      - { word: "Pedro", base: "Pedro" }
+    confusables:
+      - { id: "feminine", word: "compañera", kind: "form" }
+      - { id: "i-am", ref: "es-0096", kind: "word" }
+  - id: "es-0108"
+    target: "¿Cuál es tu apellido?"
+    ipa: "kwal es tu apeˈʝido"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Cuál", ref: "es-0059" }
+      - { word: "es", ref: "es-0022" }
+      - { word: "tu", ref: "es-0130" }
+      - { word: "apellido", ref: "es-0092" }
+    confusables:
+      - { id: "first-name", ref: "es-0091", kind: "word" }
+      - { id: "what", ref: "es-0054", kind: "word" }
+  - id: "es-0109"
+    target: "La señora Ruiz es la directora."
+    ipa: "la seˈɲoɾa rwiθ es la diɾekˈtoɾa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", base: "la" }
+      - { word: "señora", ref: "es-0089" }
+      - { word: "Ruiz", base: "Ruiz" }
+      - { word: "es", ref: "es-0022" }
+      - { word: "directora", base: "director" }
+    confusables:
+      - { id: "man", ref: "es-0088", kind: "word" }
+      - { id: "young", ref: "es-0090", kind: "word" }
+  - id: "es-0110"
+    target: "Hola, profesor, ¿dónde está el libro?"
+    ipa: "ˈola pɾofeˈsoɾ ˈdonde esˈta el ˈlibɾo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Hola", ref: "es-0036" }
+      - { word: "profesor", ref: "es-0093" }
+      - { word: "dónde", ref: "es-0056" }
+      - { word: "está", ref: "es-0023" }
+      - { word: "el", base: "el" }
+      - { word: "libro", ref: "es-0011" }
+    confusables:
+      - { id: "who", ref: "es-0055", kind: "word" }
+      - { id: "when", ref: "es-0057", kind: "word" }
+  - id: "es-0111"
+    target: "Buenos días, señora. ¿Cómo está usted?"
+    ipa: "ˈbwenos ˈdias seˈɲoɾa ˈkomo esˈta usˈted"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Buenos", ref: "es-0033" }
+      - { word: "días", ref: "es-0019" }
+      - { word: "señora", ref: "es-0089" }
+      - { word: "Cómo", ref: "es-0058" }
+      - { word: "está", ref: "es-0023" }
+      - { word: "usted", ref: "es-0087" }
+    confusables:
+      - { id: "informal", ref: "es-0086", kind: "word" }
+      - { id: "thanks", ref: "es-0037", kind: "word" }
+  - id: "es-0112"
+    target: "¿Qué tal, compañero?"
+    ipa: "ke tal kompaˈɲeɾo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Qué", ref: "es-0054" }
+      - { word: "tal", base: "tal" }
+      - { word: "compañero", ref: "es-0095" }
+    confusables:
+      - { id: "hello", ref: "es-0036", kind: "word" }
+      - { id: "goodbye", ref: "es-0046", kind: "word" }
