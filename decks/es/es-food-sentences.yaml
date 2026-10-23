@@ -1,0 +1,50 @@
+schema: 1
+id: "es-food-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-0662"
+    target: "Quiero una ensalada y un plato de sopa."
+    ipa: "ˈkjeɾo ˈuna ensaˈlada i un ˈplato de ˈsopa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Quiero", ref: "es-0661" }, { word: "una", base: "una" }, { word: "ensalada", ref: "es-0643" }, { word: "y", ref: "es-0048" }, { word: "un", base: "un" }, { word: "plato", ref: "es-0641" }, { word: "de", base: "de" }, { word: "sopa", ref: "es-0644" }]
+    confusables: [{ id: "pedir", ref: "es-0659", kind: "word" }, { id: "postre", ref: "es-0642", kind: "word" }]
+  - id: "es-0663"
+    target: "El camarero tiene la cuenta."
+    ipa: "el kamaˈɾeɾo ˈtjene la ˈkwenta"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "camarero", ref: "es-0651" }, { word: "tiene", ref: "es-0024" }, { word: "la", base: "la" }, { word: "cuenta", ref: "es-0653" }]
+    confusables: [{ id: "propina", ref: "es-0654", kind: "word" }, { id: "menu", ref: "es-0640", kind: "word" }]
+  - id: "es-0664"
+    target: "La tortilla está rica, pero el pollo no es picante."
+    ipa: "la toɾˈtiʝa esˈta ˈrika ˈpeɾo el ˈpoʝo no es piˈkante"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "tortilla", ref: "es-0645" }, { word: "está", ref: "es-0023" }, { word: "rica", ref: "es-0409" }, { word: "pero", ref: "es-0050" }, { word: "el", base: "el" }, { word: "pollo", ref: "es-0615" }, { word: "no", ref: "es-0043" }, { word: "es", ref: "es-0022" }, { word: "picante", ref: "es-0656" }]
+    confusables: [{ id: "dulce", ref: "es-0657", kind: "word" }, { id: "salado", ref: "es-0658", kind: "word" }]
+  - id: "es-0665"
+    target: "Almorzamos a la una y cenamos pollo."
+    ipa: "almoɾˈθamos a la ˈuna i θeˈnamos ˈpoʝo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Almorzamos", ref: "es-0660" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "una", base: "una" }, { word: "y", ref: "es-0048" }, { word: "cenamos", ref: "es-0283" }, { word: "pollo", ref: "es-0615" }]
+    confusables: [{ id: "desayuno", ref: "es-0637", kind: "word" }, { id: "postre", ref: "es-0642", kind: "word" }]
+  - id: "es-0666"
+    target: "Tomo un helado después de la cena."
+    ipa: "ˈtomo un eˈlado desˈpwes de la ˈθena"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tomo", ref: "es-0624" }, { word: "un", base: "un" }, { word: "helado", ref: "es-0649" }, { word: "después", ref: "es-0336" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "cena", ref: "es-0639" }]
+    confusables: [{ id: "tarta", ref: "es-0650", kind: "word" }, { id: "bebida", ref: "es-0655", kind: "word" }]
+  - id: "es-0667"
+    target: "La camarera es simpática."
+    ipa: "la kamaˈɾeɾa es simˈpatika"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "camarera", ref: "es-0652" }, { word: "es", ref: "es-0022" }, { word: "simpática", ref: "es-0422" }]
+    confusables: [{ id: "camarero", ref: "es-0651", kind: "word" }, { id: "cliente", ref: "es-0515", kind: "word" }]

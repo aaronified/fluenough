@@ -126,11 +126,8 @@ units:
     words: 22
   - decks: ["es-groceries", "es-groceries-sentences", "es-reading-groceries", "*"]
     words: 24
-  - planned: { id: "es-food", theme: "food", words: 60 }
-    listening_passages:
-      - { id: "ordering-a-meal", text: { "en": "Choosing dishes from a menu" } }
-    reading_passages:
-      - { id: "menu-card", text: { "en": "A restaurant menu card with dishes and prices" } }
+  - decks: ["es-food", "es-food-sentences", "es-reading-food", "*"]
+    words: 25
   - planned: { id: "es-transport", theme: "transport", words: 40 }
     listening_passages:
       - { id: "bus-stop", text: { "en": "Asking which bus goes to the centre" } }
