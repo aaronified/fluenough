@@ -1,182 +1,85 @@
 schema: 1
 id: "hi-grammar-perfect"
 part: "core"
-kind: "grammar"
+kind: "rules"
 language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed", "grammar"]
-pattern:
-  slots: ["मैं (m)", "मैं (f)", "तुम (m)", "तुम (f)", "वह (m)", "वह (f)", "हम (m)", "हम (f)", "आप (m)", "आप (f)", "वे (m)", "वे (f)"]
-  entries:
-    - lemma: "आना"
-      key: "aanaa"
-      reading: "ānā"
-      ipa: "aːnaː"
-      forms:
-        "मैं (m)": "आया हूँ"
-        "मैं (f)": "आई हूँ"
-        "तुम (m)": "आए हो"
-        "तुम (f)": "आई हो"
-        "वह (m)": "आया है"
-        "वह (f)": "आई है"
-        "हम (m)": "आए हैं"
-        "हम (f)": "आई हैं"
-        "आप (m)": "आए हैं"
-        "आप (f)": "आई हैं"
-        "वे (m)": "आए हैं"
-        "वे (f)": "आई हैं"
-      readings:
-        "मैं (m)": "āyā hūm̐"
-        "मैं (f)": "āī hūm̐"
-        "तुम (m)": "āē hō"
-        "तुम (f)": "āī hō"
-        "वह (m)": "āyā hai"
-        "वह (f)": "āī hai"
-        "हम (m)": "āē haim̐"
-        "हम (f)": "āī haim̐"
-        "आप (m)": "āē haim̐"
-        "आप (f)": "āī haim̐"
-        "वे (m)": "āē haim̐"
-        "वे (f)": "āī haim̐"
-      ipas:
-        "मैं (m)": "aːjaː ɦũː"
-        "मैं (f)": "aːiː ɦũː"
-        "तुम (m)": "aːeː ɦoː"
-        "तुम (f)": "aːiː ɦoː"
-        "वह (m)": "aːjaː ɦɛː"
-        "वह (f)": "aːiː ɦɛː"
-        "हम (m)": "aːeː ɦɛ̃ː"
-        "हम (f)": "aːiː ɦɛ̃ː"
-        "आप (m)": "aːeː ɦɛ̃ː"
-        "आप (f)": "aːiː ɦɛ̃ː"
-        "वे (m)": "aːeː ɦɛ̃ː"
-        "वे (f)": "aːiː ɦɛ̃ː"
-    - lemma: "जाना"
-      key: "jaanaa"
-      reading: "jānā"
-      ipa: "dʒaːnaː"
-      forms:
-        "मैं (m)": "गया हूँ"
-        "मैं (f)": "गई हूँ"
-        "तुम (m)": "गए हो"
-        "तुम (f)": "गई हो"
-        "वह (m)": "गया है"
-        "वह (f)": "गई है"
-        "हम (m)": "गए हैं"
-        "हम (f)": "गई हैं"
-        "आप (m)": "गए हैं"
-        "आप (f)": "गई हैं"
-        "वे (m)": "गए हैं"
-        "वे (f)": "गई हैं"
-      readings:
-        "मैं (m)": "gayā hūm̐"
-        "मैं (f)": "gaī hūm̐"
-        "तुम (m)": "gaē hō"
-        "तुम (f)": "gaī hō"
-        "वह (m)": "gayā hai"
-        "वह (f)": "gaī hai"
-        "हम (m)": "gaē haim̐"
-        "हम (f)": "gaī haim̐"
-        "आप (m)": "gaē haim̐"
-        "आप (f)": "gaī haim̐"
-        "वे (m)": "gaē haim̐"
-        "वे (f)": "gaī haim̐"
-      ipas:
-        "मैं (m)": "ɡəjaː ɦũː"
-        "मैं (f)": "ɡəiː ɦũː"
-        "तुम (m)": "ɡəeː ɦoː"
-        "तुम (f)": "ɡəiː ɦoː"
-        "वह (m)": "ɡəjaː ɦɛː"
-        "वह (f)": "ɡəiː ɦɛː"
-        "हम (m)": "ɡəeː ɦɛ̃ː"
-        "हम (f)": "ɡəiː ɦɛ̃ː"
-        "आप (m)": "ɡəeː ɦɛ̃ː"
-        "आप (f)": "ɡəiː ɦɛ̃ː"
-        "वे (m)": "ɡəeː ɦɛ̃ː"
-        "वे (f)": "ɡəiː ɦɛ̃ː"
-    - lemma: "पहुँचना"
-      key: "pahunchnaa"
-      reading: "pahum̐cnā"
-      ipa: "pəɦʊ̃tʃnaː"
-      forms:
-        "मैं (m)": "पहुँचा हूँ"
-        "मैं (f)": "पहुँची हूँ"
-        "तुम (m)": "पहुँचे हो"
-        "तुम (f)": "पहुँची हो"
-        "वह (m)": "पहुँचा है"
-        "वह (f)": "पहुँची है"
-        "हम (m)": "पहुँचे हैं"
-        "हम (f)": "पहुँची हैं"
-        "आप (m)": "पहुँचे हैं"
-        "आप (f)": "पहुँची हैं"
-        "वे (m)": "पहुँचे हैं"
-        "वे (f)": "पहुँची हैं"
-      readings:
-        "मैं (m)": "pahum̐cā hūm̐"
-        "मैं (f)": "pahum̐cī hūm̐"
-        "तुम (m)": "pahum̐cē hō"
-        "तुम (f)": "pahum̐cī hō"
-        "वह (m)": "pahum̐cā hai"
-        "वह (f)": "pahum̐cī hai"
-        "हम (m)": "pahum̐cē haim̐"
-        "हम (f)": "pahum̐cī haim̐"
-        "आप (m)": "pahum̐cē haim̐"
-        "आप (f)": "pahum̐cī haim̐"
-        "वे (m)": "pahum̐cē haim̐"
-        "वे (f)": "pahum̐cī haim̐"
-      ipas:
-        "मैं (m)": "pəɦʊ̃tʃaː ɦũː"
-        "मैं (f)": "pəɦʊ̃tʃiː ɦũː"
-        "तुम (m)": "pəɦʊ̃tʃeː ɦoː"
-        "तुम (f)": "pəɦʊ̃tʃiː ɦoː"
-        "वह (m)": "pəɦʊ̃tʃaː ɦɛː"
-        "वह (f)": "pəɦʊ̃tʃiː ɦɛː"
-        "हम (m)": "pəɦʊ̃tʃeː ɦɛ̃ː"
-        "हम (f)": "pəɦʊ̃tʃiː ɦɛ̃ː"
-        "आप (m)": "pəɦʊ̃tʃeː ɦɛ̃ː"
-        "आप (f)": "pəɦʊ̃tʃiː ɦɛ̃ː"
-        "वे (m)": "pəɦʊ̃tʃeː ɦɛ̃ː"
-        "वे (f)": "pəɦʊ̃tʃiː ɦɛ̃ː"
-    - lemma: "बैठना"
-      key: "baithnaa"
-      reading: "baiṭhnā"
-      ipa: "bɛːʈʰnaː"
-      forms:
-        "मैं (m)": "बैठा हूँ"
-        "मैं (f)": "बैठी हूँ"
-        "तुम (m)": "बैठे हो"
-        "तुम (f)": "बैठी हो"
-        "वह (m)": "बैठा है"
-        "वह (f)": "बैठी है"
-        "हम (m)": "बैठे हैं"
-        "हम (f)": "बैठी हैं"
-        "आप (m)": "बैठे हैं"
-        "आप (f)": "बैठी हैं"
-        "वे (m)": "बैठे हैं"
-        "वे (f)": "बैठी हैं"
-      readings:
-        "मैं (m)": "baiṭhā hūm̐"
-        "मैं (f)": "baiṭhī hūm̐"
-        "तुम (m)": "baiṭhē hō"
-        "तुम (f)": "baiṭhī hō"
-        "वह (m)": "baiṭhā hai"
-        "वह (f)": "baiṭhī hai"
-        "हम (m)": "baiṭhē haim̐"
-        "हम (f)": "baiṭhī haim̐"
-        "आप (m)": "baiṭhē haim̐"
-        "आप (f)": "baiṭhī haim̐"
-        "वे (m)": "baiṭhē haim̐"
-        "वे (f)": "baiṭhī haim̐"
-      ipas:
-        "मैं (m)": "bɛːʈʰaː ɦũː"
-        "मैं (f)": "bɛːʈʰiː ɦũː"
-        "तुम (m)": "bɛːʈʰeː ɦoː"
-        "तुम (f)": "bɛːʈʰiː ɦoː"
-        "वह (m)": "bɛːʈʰaː ɦɛː"
-        "वह (f)": "bɛːʈʰiː ɦɛː"
-        "हम (m)": "bɛːʈʰeː ɦɛ̃ː"
-        "हम (f)": "bɛːʈʰiː ɦɛ̃ː"
-        "आप (m)": "bɛːʈʰeː ɦɛ̃ː"
-        "आप (f)": "bɛːʈʰiː ɦɛ̃ː"
-        "वे (m)": "bɛːʈʰeː ɦɛ̃ː"
-        "वे (f)": "bɛːʈʰiː ɦɛ̃ː"
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["hi-0240", "hi-0273", "hi-0290", "hi-0460", "hi-0602", "hi-0779", "hi-0781", "hi-0782", "hi-0783", "hi-0784", "hi-0785", "hi-0786", "hi-0787", "hi-0789", "hi-0790", "hi-0792", "hi-0794", "hi-0795", "hi-0796", "hi-0797", "hi-0798", "hi-0799", "hi-0800", "hi-0937", "hi-0938", "hi-0939", "hi-0940", "hi-0941", "hi-0942", "hi-0943", "hi-0950", "hi-0951", "hi-0952", "hi-0953", "hi-0954", "hi-0955", "hi-0956", "hi-0958", "hi-0961", "hi-1023", "hi-1071"]
+  slots: ["i-m", "i-f", "you-m", "you-f", "he-m", "he-f", "we-m", "we-f", "formal-m", "formal-f", "they-m", "they-f"]
+  rows:
+    - word: "hi-0441"
+      forms: { "i-m": "उठा हूँ", "i-f": "उठी हूँ", "you-m": "उठे हो", "you-f": "उठी हो", "he-m": "उठा है", "he-f": "उठी है", "we-m": "उठे हैं", "we-f": "उठी हैं", "formal-m": "उठे हैं", "formal-f": "उठी हैं", "they-m": "उठे हैं", "they-f": "उठी हैं" }
+      readings: { "i-m": "uṭhā hūm̐", "i-f": "uṭhī hūm̐", "you-m": "uṭhē hō", "you-f": "uṭhī hō", "he-m": "uṭhā hai", "he-f": "uṭhī hai", "we-m": "uṭhē haim̐", "we-f": "uṭhī haim̐", "formal-m": "uṭhē haim̐", "formal-f": "uṭhī haim̐", "they-m": "uṭhē haim̐", "they-f": "uṭhī haim̐" }
+    - word: "hi-0442"
+      forms: { "i-m": "नहाया हूँ", "i-f": "नहाई हूँ", "you-m": "नहाए हो", "you-f": "नहाई हो", "he-m": "नहाया है", "he-f": "नहाई है", "we-m": "नहाए हैं", "we-f": "नहाई हैं", "formal-m": "नहाए हैं", "formal-f": "नहाई हैं", "they-m": "नहाए हैं", "they-f": "नहाई हैं" }
+      readings: { "i-m": "nahāyā hūm̐", "i-f": "nahāī hūm̐", "you-m": "nahāē hō", "you-f": "nahāī hō", "he-m": "nahāyā hai", "he-f": "nahāī hai", "we-m": "nahāē haim̐", "we-f": "nahāī haim̐", "formal-m": "nahāē haim̐", "formal-f": "nahāī haim̐", "they-m": "nahāē haim̐", "they-f": "nahāī haim̐" }
+    - word: "hi-0450"
+      forms: { "i-m": "सोया हूँ", "i-f": "सोई हूँ", "you-m": "सोए हो", "you-f": "सोई हो", "he-m": "सोया है", "he-f": "सोई है", "we-m": "सोए हैं", "we-f": "सोई हैं", "formal-m": "सोए हैं", "formal-f": "सोई हैं", "they-m": "सोए हैं", "they-f": "सोई हैं" }
+      readings: { "i-m": "sōyā hūm̐", "i-f": "sōī hūm̐", "you-m": "sōē hō", "you-f": "sōī hō", "he-m": "sōyā hai", "he-f": "sōī hai", "we-m": "sōē haim̐", "we-f": "sōī haim̐", "formal-m": "sōē haim̐", "formal-f": "sōī haim̐", "they-m": "sōē haim̐", "they-f": "sōī haim̐" }
+    - word: "hi-0513"
+      forms: { "i-m": "सका हूँ", "i-f": "सकी हूँ", "you-m": "सके हो", "you-f": "सकी हो", "he-m": "सका है", "he-f": "सकी है", "we-m": "सके हैं", "we-f": "सकी हैं", "formal-m": "सके हैं", "formal-f": "सकी हैं", "they-m": "सके हैं", "they-f": "सकी हैं" }
+      readings: { "i-m": "sakā hūm̐", "i-f": "sakī hūm̐", "you-m": "sakē hō", "you-f": "sakī hō", "he-m": "sakā hai", "he-f": "sakī hai", "we-m": "sakē haim̐", "we-f": "sakī haim̐", "formal-m": "sakē haim̐", "formal-f": "sakī haim̐", "they-m": "sakē haim̐", "they-f": "sakī haim̐" }
+    - word: "hi-0777"
+      forms: { "i-m": "गया हूँ", "i-f": "गई हूँ", "you-m": "गए हो", "you-f": "गई हो", "he-m": "गया है", "he-f": "गई है", "we-m": "गए हैं", "we-f": "गई हैं", "formal-m": "गए हैं", "formal-f": "गई हैं", "they-m": "गए हैं", "they-f": "गई हैं" }
+      readings: { "i-m": "gayā hūm̐", "i-f": "gaī hūm̐", "you-m": "gaē hō", "you-f": "gaī hō", "he-m": "gayā hai", "he-f": "gaī hai", "we-m": "gaē haim̐", "we-f": "gaī haim̐", "formal-m": "gaē haim̐", "formal-f": "gaī haim̐", "they-m": "gaē haim̐", "they-f": "gaī haim̐" }
+    - word: "hi-0778"
+      forms: { "i-m": "आया हूँ", "i-f": "आई हूँ", "you-m": "आए हो", "you-f": "आई हो", "he-m": "आया है", "he-f": "आई है", "we-m": "आए हैं", "we-f": "आई हैं", "formal-m": "आए हैं", "formal-f": "आई हैं", "they-m": "आए हैं", "they-f": "आई हैं" }
+      readings: { "i-m": "āyā hūm̐", "i-f": "āī hūm̐", "you-m": "āē hō", "you-f": "āī hō", "he-m": "āyā hai", "he-f": "āī hai", "we-m": "āē haim̐", "we-f": "āī haim̐", "formal-m": "āē haim̐", "formal-f": "āī haim̐", "they-m": "āē haim̐", "they-f": "āī haim̐" }
+    - word: "hi-0780"
+      forms: { "i-m": "हुआ हूँ", "i-f": "हुई हूँ", "you-m": "हुए हो", "you-f": "हुई हो", "he-m": "हुआ है", "he-f": "हुई है", "we-m": "हुए हैं", "we-f": "हुई हैं", "formal-m": "हुए हैं", "formal-f": "हुई हैं", "they-m": "हुए हैं", "they-f": "हुई हैं" }
+      readings: { "i-m": "huā hūm̐", "i-f": "huī hūm̐", "you-m": "huē hō", "you-f": "huī hō", "he-m": "huā hai", "he-f": "huī hai", "we-m": "huē haim̐", "we-f": "huī haim̐", "formal-m": "huē haim̐", "formal-f": "huī haim̐", "they-m": "huē haim̐", "they-f": "huī haim̐" }
+    - word: "hi-0788"
+      forms: { "i-m": "बैठा हूँ", "i-f": "बैठी हूँ", "you-m": "बैठे हो", "you-f": "बैठी हो", "he-m": "बैठा है", "he-f": "बैठी है", "we-m": "बैठे हैं", "we-f": "बैठी हैं", "formal-m": "बैठे हैं", "formal-f": "बैठी हैं", "they-m": "बैठे हैं", "they-f": "बैठी हैं" }
+      readings: { "i-m": "baiṭhā hūm̐", "i-f": "baiṭhī hūm̐", "you-m": "baiṭhē hō", "you-f": "baiṭhī hō", "he-m": "baiṭhā hai", "he-f": "baiṭhī hai", "we-m": "baiṭhē haim̐", "we-f": "baiṭhī haim̐", "formal-m": "baiṭhē haim̐", "formal-f": "baiṭhī haim̐", "they-m": "baiṭhē haim̐", "they-f": "baiṭhī haim̐" }
+    - word: "hi-0791"
+      forms: { "i-m": "रहा हूँ", "i-f": "रही हूँ", "you-m": "रहे हो", "you-f": "रही हो", "he-m": "रहा है", "he-f": "रही है", "we-m": "रहे हैं", "we-f": "रही हैं", "formal-m": "रहे हैं", "formal-f": "रही हैं", "they-m": "रहे हैं", "they-f": "रही हैं" }
+      readings: { "i-m": "rahā hūm̐", "i-f": "rahī hūm̐", "you-m": "rahē hō", "you-f": "rahī hō", "he-m": "rahā hai", "he-f": "rahī hai", "we-m": "rahē haim̐", "we-f": "rahī haim̐", "formal-m": "rahē haim̐", "formal-f": "rahī haim̐", "they-m": "rahē haim̐", "they-f": "rahī haim̐" }
+    - word: "hi-0793"
+      forms: { "i-m": "मिला हूँ", "i-f": "मिली हूँ", "you-m": "मिले हो", "you-f": "मिली हो", "he-m": "मिला है", "he-f": "मिली है", "we-m": "मिले हैं", "we-f": "मिली हैं", "formal-m": "मिले हैं", "formal-f": "मिली हैं", "they-m": "मिले हैं", "they-f": "मिली हैं" }
+      readings: { "i-m": "milā hūm̐", "i-f": "milī hūm̐", "you-m": "milē hō", "you-f": "milī hō", "he-m": "milā hai", "he-f": "milī hai", "we-m": "milē haim̐", "we-f": "milī haim̐", "formal-m": "milē haim̐", "formal-f": "milī haim̐", "they-m": "milē haim̐", "they-f": "milī haim̐" }
+    - word: "hi-0801"
+      forms: { "i-m": "चला हूँ", "i-f": "चली हूँ", "you-m": "चले हो", "you-f": "चली हो", "he-m": "चला है", "he-f": "चली है", "we-m": "चले हैं", "we-f": "चली हैं", "formal-m": "चले हैं", "formal-f": "चली हैं", "they-m": "चले हैं", "they-f": "चली हैं" }
+      readings: { "i-m": "calā hūm̐", "i-f": "calī hūm̐", "you-m": "calē hō", "you-f": "calī hō", "he-m": "calā hai", "he-f": "calī hai", "we-m": "calē haim̐", "we-f": "calī haim̐", "formal-m": "calē haim̐", "formal-f": "calī haim̐", "they-m": "calē haim̐", "they-f": "calī haim̐" }
+    - word: "hi-0944"
+      forms: { "i-m": "जागा हूँ", "i-f": "जागी हूँ", "you-m": "जागे हो", "you-f": "जागी हो", "he-m": "जागा है", "he-f": "जागी है", "we-m": "जागे हैं", "we-f": "जागी हैं", "formal-m": "जागे हैं", "formal-f": "जागी हैं", "they-m": "जागे हैं", "they-f": "जागी हैं" }
+      readings: { "i-m": "jāgā hūm̐", "i-f": "jāgī hūm̐", "you-m": "jāgē hō", "you-f": "jāgī hō", "he-m": "jāgā hai", "he-f": "jāgī hai", "we-m": "jāgē haim̐", "we-f": "jāgī haim̐", "formal-m": "jāgē haim̐", "formal-f": "jāgī haim̐", "they-m": "jāgē haim̐", "they-f": "jāgī haim̐" }
+    - word: "hi-0945"
+      forms: { "i-m": "भूला हूँ", "i-f": "भूली हूँ", "you-m": "भूले हो", "you-f": "भूली हो", "he-m": "भूला है", "he-f": "भूली है", "we-m": "भूले हैं", "we-f": "भूली हैं", "formal-m": "भूले हैं", "formal-f": "भूली हैं", "they-m": "भूले हैं", "they-f": "भूली हैं" }
+      readings: { "i-m": "bhūlā hūm̐", "i-f": "bhūlī hūm̐", "you-m": "bhūlē hō", "you-f": "bhūlī hō", "he-m": "bhūlā hai", "he-f": "bhūlī hai", "we-m": "bhūlē haim̐", "we-f": "bhūlī haim̐", "formal-m": "bhūlē haim̐", "formal-f": "bhūlī haim̐", "they-m": "bhūlē haim̐", "they-f": "bhūlī haim̐" }
+    - word: "hi-0946"
+      forms: { "i-m": "दौड़ा हूँ", "i-f": "दौड़ी हूँ", "you-m": "दौड़े हो", "you-f": "दौड़ी हो", "he-m": "दौड़ा है", "he-f": "दौड़ी है", "we-m": "दौड़े हैं", "we-f": "दौड़ी हैं", "formal-m": "दौड़े हैं", "formal-f": "दौड़ी हैं", "they-m": "दौड़े हैं", "they-f": "दौड़ी हैं" }
+      readings: { "i-m": "dauṛā hūm̐", "i-f": "dauṛī hūm̐", "you-m": "dauṛē hō", "you-f": "dauṛī hō", "he-m": "dauṛā hai", "he-f": "dauṛī hai", "we-m": "dauṛē haim̐", "we-f": "dauṛī haim̐", "formal-m": "dauṛē haim̐", "formal-f": "dauṛī haim̐", "they-m": "dauṛē haim̐", "they-f": "dauṛī haim̐" }
+    - word: "hi-0947"
+      forms: { "i-m": "गिरा हूँ", "i-f": "गिरी हूँ", "you-m": "गिरे हो", "you-f": "गिरी हो", "he-m": "गिरा है", "he-f": "गिरी है", "we-m": "गिरे हैं", "we-f": "गिरी हैं", "formal-m": "गिरे हैं", "formal-f": "गिरी हैं", "they-m": "गिरे हैं", "they-f": "गिरी हैं" }
+      readings: { "i-m": "girā hūm̐", "i-f": "girī hūm̐", "you-m": "girē hō", "you-f": "girī hō", "he-m": "girā hai", "he-f": "girī hai", "we-m": "girē haim̐", "we-f": "girī haim̐", "formal-m": "girē haim̐", "formal-f": "girī haim̐", "they-m": "girē haim̐", "they-f": "girī haim̐" }
+    - word: "hi-0948"
+      forms: { "i-m": "लौटा हूँ", "i-f": "लौटी हूँ", "you-m": "लौटे हो", "you-f": "लौटी हो", "he-m": "लौटा है", "he-f": "लौटी है", "we-m": "लौटे हैं", "we-f": "लौटी हैं", "formal-m": "लौटे हैं", "formal-f": "लौटी हैं", "they-m": "लौटे हैं", "they-f": "लौटी हैं" }
+      readings: { "i-m": "lauṭā hūm̐", "i-f": "lauṭī hūm̐", "you-m": "lauṭē hō", "you-f": "lauṭī hō", "he-m": "lauṭā hai", "he-f": "lauṭī hai", "we-m": "lauṭē haim̐", "we-f": "lauṭī haim̐", "formal-m": "lauṭē haim̐", "formal-f": "lauṭī haim̐", "they-m": "lauṭē haim̐", "they-f": "lauṭī haim̐" }
+    - word: "hi-0949"
+      forms: { "i-m": "लाया हूँ", "i-f": "लाई हूँ", "you-m": "लाए हो", "you-f": "लाई हो", "he-m": "लाया है", "he-f": "लाई है", "we-m": "लाए हैं", "we-f": "लाई हैं", "formal-m": "लाए हैं", "formal-f": "लाई हैं", "they-m": "लाए हैं", "they-f": "लाई हैं" }
+      readings: { "i-m": "lāyā hūm̐", "i-f": "lāī hūm̐", "you-m": "lāē hō", "you-f": "lāī hō", "he-m": "lāyā hai", "he-f": "lāī hai", "we-m": "lāē haim̐", "we-f": "lāī haim̐", "formal-m": "lāē haim̐", "formal-f": "lāī haim̐", "they-m": "lāē haim̐", "they-f": "lāī haim̐" }
+    - word: "hi-0957"
+      forms: { "i-m": "हारा हूँ", "i-f": "हारी हूँ", "you-m": "हारे हो", "you-f": "हारी हो", "he-m": "हारा है", "he-f": "हारी है", "we-m": "हारे हैं", "we-f": "हारी हैं", "formal-m": "हारे हैं", "formal-f": "हारी हैं", "they-m": "हारे हैं", "they-f": "हारी हैं" }
+      readings: { "i-m": "hārā hūm̐", "i-f": "hārī hūm̐", "you-m": "hārē hō", "you-f": "hārī hō", "he-m": "hārā hai", "he-f": "hārī hai", "we-m": "hārē haim̐", "we-f": "hārī haim̐", "formal-m": "hārē haim̐", "formal-f": "hārī haim̐", "they-m": "hārē haim̐", "they-f": "hārī haim̐" }
+    - word: "hi-0959"
+      forms: { "i-m": "हँसा हूँ", "i-f": "हँसी हूँ", "you-m": "हँसे हो", "you-f": "हँसी हो", "he-m": "हँसा है", "he-f": "हँसी है", "we-m": "हँसे हैं", "we-f": "हँसी हैं", "formal-m": "हँसे हैं", "formal-f": "हँसी हैं", "they-m": "हँसे हैं", "they-f": "हँसी हैं" }
+      readings: { "i-m": "ham̐sā hūm̐", "i-f": "ham̐sī hūm̐", "you-m": "ham̐sē hō", "you-f": "ham̐sī hō", "he-m": "ham̐sā hai", "he-f": "ham̐sī hai", "we-m": "ham̐sē haim̐", "we-f": "ham̐sī haim̐", "formal-m": "ham̐sē haim̐", "formal-f": "ham̐sī haim̐", "they-m": "ham̐sē haim̐", "they-f": "ham̐sī haim̐" }
+    - word: "hi-0960"
+      forms: { "i-m": "रोया हूँ", "i-f": "रोई हूँ", "you-m": "रोए हो", "you-f": "रोई हो", "he-m": "रोया है", "he-f": "रोई है", "we-m": "रोए हैं", "we-f": "रोई हैं", "formal-m": "रोए हैं", "formal-f": "रोई हैं", "they-m": "रोए हैं", "they-f": "रोई हैं" }
+      readings: { "i-m": "rōyā hūm̐", "i-f": "rōī hūm̐", "you-m": "rōē hō", "you-f": "rōī hō", "he-m": "rōyā hai", "he-f": "rōī hai", "we-m": "rōē haim̐", "we-f": "rōī haim̐", "formal-m": "rōē haim̐", "formal-f": "rōī haim̐", "they-m": "rōē haim̐", "they-f": "rōī haim̐" }
+    - word: "hi-1069"
+      forms: { "i-m": "दुखा हूँ", "i-f": "दुखी हूँ", "you-m": "दुखे हो", "you-f": "दुखी हो", "he-m": "दुखा है", "he-f": "दुखी है", "we-m": "दुखे हैं", "we-f": "दुखी हैं", "formal-m": "दुखे हैं", "formal-f": "दुखी हैं", "they-m": "दुखे हैं", "they-f": "दुखी हैं" }
+      readings: { "i-m": "dukhā hūm̐", "i-f": "dukhī hūm̐", "you-m": "dukhē hō", "you-f": "dukhī hō", "he-m": "dukhā hai", "he-f": "dukhī hai", "we-m": "dukhē haim̐", "we-f": "dukhī haim̐", "formal-m": "dukhē haim̐", "formal-f": "dukhī haim̐", "they-m": "dukhē haim̐", "they-f": "dukhī haim̐" }
+    - word: "hi-1070"
+      forms: { "i-m": "सूजा हूँ", "i-f": "सूजी हूँ", "you-m": "सूजे हो", "you-f": "सूजी हो", "he-m": "सूजा है", "he-f": "सूजी है", "we-m": "सूजे हैं", "we-f": "सूजी हैं", "formal-m": "सूजे हैं", "formal-f": "सूजी हैं", "they-m": "सूजे हैं", "they-f": "सूजी हैं" }
+      readings: { "i-m": "sūjā hūm̐", "i-f": "sūjī hūm̐", "you-m": "sūjē hō", "you-f": "sūjī hō", "he-m": "sūjā hai", "he-f": "sūjī hai", "we-m": "sūjē haim̐", "we-f": "sūjī haim̐", "formal-m": "sūjē haim̐", "formal-f": "sūjī haim̐", "they-m": "sūjē haim̐", "they-f": "sūjī haim̐" }
+    - word: "hi-1072"
+      forms: { "i-m": "लेटा हूँ", "i-f": "लेटी हूँ", "you-m": "लेटे हो", "you-f": "लेटी हो", "he-m": "लेटा है", "he-f": "लेटी है", "we-m": "लेटे हैं", "we-f": "लेटी हैं", "formal-m": "लेटे हैं", "formal-f": "लेटी हैं", "they-m": "लेटे हैं", "they-f": "लेटी हैं" }
+      readings: { "i-m": "leṭā hūm̐", "i-f": "leṭī hūm̐", "you-m": "leṭē hō", "you-f": "leṭī hō", "he-m": "leṭā hai", "he-f": "leṭī hai", "we-m": "leṭē haim̐", "we-f": "leṭī haim̐", "formal-m": "leṭē haim̐", "formal-f": "leṭī haim̐", "they-m": "leṭē haim̐", "they-f": "leṭī haim̐" }
+rules:
+  - id: "hi-rule-perfect"
+    slots: ["i-m", "i-f", "you-m", "you-f", "he-m", "he-f", "we-m", "we-f", "formal-m", "formal-f", "they-m", "they-f"]
