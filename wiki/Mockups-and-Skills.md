@@ -95,16 +95,6 @@ approval.
   more space": the picture sits beside the word and the meaning takes the
   full width).
 
-- `language-wheel.html`: the language wheel (#703, #682): ratchet detents
-  with a tick and vibration, the round wheel, and the label under the bar,
-  as first drawn, plus the expansion. Owner, 2026-10-21: damping ratio 0.4,
-  stiffness 800 (mass 1), fling friction 8 per second, expansion 0.3 s.
-  "The tooltip should become the expansion via some animation that will
-  take that 0.3 seconds" (chose a cross-fade: the label fades out as the
-  pill grows); "After expanded, the two languages to either side will still
-  show, as per the wheel distance" (chose: pushed out, the same gap from
-  the pill's edge). The pill is centred, glyph and name.
-  Approved (owner, 2026-10-21: "Works. Approved.").
 
 
 ## Deleted (owner, 2026-10-12)
