@@ -24,6 +24,7 @@ import 'package:fluenough/features/drill/teach_drill.dart';
 import 'package:fluenough/features/stats/progress_tiles.dart';
 import 'package:fluenough/features/stats/stats_page.dart';
 import 'package:fluenough/features/summary/summary_page.dart';
+import 'package:flutter/widgets.dart' show Scrollable;
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/harness.dart';
