@@ -140,11 +140,9 @@ units:
     words: 24
   - decks: ["es-time", "es-time-sentences", "es-reading-time", "*"]
     words: 15
-  - planned: { id: "es-grammar-ir-a", grammar: "ir-a" }
-    listening_passages:
-      - { id: "plans-for-the-weekend", text: { "en": "Saying what you are going to do this weekend" } }
-    reading_passages:
-      - { id: "invitation-note", text: { "en": "A note inviting a friend, with plans for the day" } }
+  - decks: ["es-grammar-ir-a", "es-reading-ir-a"]
+    words: 0
+    grammar: ["ir-a"]
   - planned: { id: "es-help", theme: "help", words: 20 }
     listening_passages:
       - { id: "lost-in-the-city", text: { "en": "Asking for help when lost" } }
