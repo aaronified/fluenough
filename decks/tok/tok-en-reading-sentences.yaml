@@ -1,0 +1,65 @@
+schema: 1
+id: "tok-en-reading-sentences"
+name: "Reading: the basic sentence"
+kind: reading
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two passages from the basic-sentence unit: ten short statements about a person and some food (heard), and a three-line story of someone who sees food, wants it and eats it. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "tok-simple-statements"
+    title: "Simple statements"
+    sentences:
+      - text: "sina jan pona."
+      - text: "jan ni li moku."
+      - text: "mi lukin e pan."
+      - text: "pan ni li pona."
+      - text: "ona li kama tawa sina."
+      - text: "sina jo e pan."
+      - text: "jan ni li pali e moku."
+      - text: "moku ni li pona."
+      - text: "mi jo e pan ni."
+      - text: "sina lukin e ona."
+    questions:
+      - id: "tok-0113"
+        prompt: { en: "The second statement says what this person does. What do they do?" }
+        options:
+          - { en: "They eat." }
+          - { en: "They sleep." }
+        answer: 1
+      - id: "tok-0114"
+        prompt: { en: "The sixth statement says who has bread. Who is it?" }
+        options:
+          - { en: "You" }
+          - { en: "Me" }
+        answer: 1
+      - id: "tok-0115"
+        prompt: { en: "The fifth statement says someone comes to whom?" }
+        options:
+          - { en: "To you" }
+          - { en: "To me" }
+        answer: 1
+  - id: "tok-three-lines"
+    title: "Three lines"
+    sentences:
+      - text: "jan li lukin e moku."
+      - text: "ona li wile e moku."
+      - text: "ona li moku e moku ni."
+    questions:
+      - id: "tok-0116"
+        prompt: { en: "In the first line, what does the person see?" }
+        options:
+          - { en: "Food" }
+          - { en: "The person" }
+        answer: 1
+      - id: "tok-0117"
+        prompt: { en: "What does the second line say they want?" }
+        options:
+          - { en: "The food" }
+          - { en: "To sleep" }
+        answer: 1
+      - id: "tok-0118"
+        prompt: { en: "The third line says they eat this food." }
+        answer: true
