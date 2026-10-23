@@ -5,6 +5,7 @@ import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/core/data/course_path.dart';
+import 'package:fluenough/core/models/deck.dart' show countsAsWord;
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/progress/mastery.dart';
 import 'package:fluenough/core/progress/practice_week.dart';
@@ -608,7 +609,7 @@ void main() {
             script++;
           } else if (card.isGrammarCell) {
             grammar++;
-          } else {
+          } else if (countsAsWord(card, e.deck.kind)) {
             words++;
           }
         }

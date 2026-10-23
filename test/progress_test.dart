@@ -17,7 +17,8 @@ import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/shell_tab.dart';
 import 'package:fluenough/app/skill.dart';
-import 'package:fluenough/core/data/course_path.dart' show Milestone;
+import 'package:fluenough/core/data/course_path.dart'
+    show CoursePath, Milestone, PlanUnit;
 import 'package:fluenough/core/data/log_jsonl.dart';
 import 'package:fluenough/core/decks/language_catalog.dart';
 import 'package:fluenough/core/models/deck.dart' show LanguageInfo;
@@ -1859,6 +1860,33 @@ cards:
   });
 
   group('toward B1', () {
+    test('a path\'s own words per level are the words B1 holds, else the sum '
+        'of its units up to B1', () {
+      const units = <PlanUnit>[
+        PlanUnit(words: 5, milestone: Milestone.a1),
+        PlanUnit(words: 5, milestone: Milestone.a2),
+        PlanUnit(words: 5, milestone: Milestone.b1),
+        PlanUnit(words: 500),
+      ];
+      CoursePath path(Map<Milestone, int>? levels) => CoursePath(
+        id: 'zz-path',
+        language: 'zz',
+        native: 'en',
+        units: const <List<String>>[],
+        plan: units,
+        levels: levels,
+      );
+      expect(path(null).plannedWords, 15);
+      expect(
+        path(<Milestone, int>{
+          Milestone.a1: 120,
+          Milestone.a2: 60,
+          Milestone.b1: 80,
+        }).plannedWords,
+        260,
+      );
+    });
+
     group('completeness toward B1', () {
       test(
         'completeness is the words written over the words planned, up to B1, '

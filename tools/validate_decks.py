@@ -89,7 +89,7 @@ KINDS = {"vocab", "grammar", "facts", "themes", "numbers", "path", "sounds", "sc
 THEMES_KEYS = {"schema", "kind", "description", "themes"}
 # A language's path (ADR-0013), one per language learnt (ADR-0036).
 PATH_KEYS = {"schema", "kind", "id", "language", "description", "units", "alphabet",
-             "regions", "genders"}
+             "regions", "genders", "levels"}
 # Ends a path's unit to take decks the path does not list (#22).
 WILDCARD = "*"
 SOUNDS_KEYS = {"schema", "kind", "id", "language", "description", "contrasts"}
@@ -289,6 +289,9 @@ MILESTONES = ("A1", "A2", "B1")
 # B1 1,200 more. A level outside half to one and a half times is warned of.
 LEVEL_WORDS = {"A1": 700, "A2": 900, "B1": 1200}
 B1_TOTAL = (2000, 3500)
+# A path may give its own sizes, `levels: { A1: 120, A2: 60, B1: 80 }` (#615,
+# ADR-0045); then they replace both constants for that path, and the B1 total
+# is held to half to one and a half times their sum.
 # A course's phrasebook (words-rules-sentences.md, section 1).
 PHRASEBOOK_SIZE = (15, 25)
 # Parts of speech whose several-word cards still count as one word.
@@ -493,6 +496,9 @@ class PathPlan:
     # Its gender classes (#512); [] for a language without gender, None when
     # the path does not list them.
     genders: list[str] | None = None
+    # Its own words per level (#615); None when the path gives none, and the
+    # defaults (LEVEL_WORDS, B1_TOTAL) apply.
+    levels: dict[str, int] | None = None
 
 
 @dataclass
@@ -4325,6 +4331,7 @@ def check_path_file(r: Report, raw: dict, path: Path) -> None:
     _check_optional_text(r, "root", raw, "description")
     regions = check_regions(r, raw)
     genders = check_genders(r, raw)
+    levels = check_levels(r, raw)
     if not isinstance(units, list) or not units:
         r.error("units", "must be a non-empty list")
         return
@@ -4401,7 +4408,7 @@ def check_path_file(r: Report, raw: dict, path: Path) -> None:
     if lang_ok:
         r.course_path = (lang, listed)
         r.plan = PathPlan(lang, parsed, [d for d in alphabet if isinstance(d, str)],
-                          has_plan, marks, end, regions, genders)
+                          has_plan, marks, end, regions, genders, levels)
 
 
 def check_regions(r: Report, raw: dict) -> list[str] | None:
@@ -4469,6 +4476,36 @@ def check_genders(r: Report, raw: dict) -> list[str] | None:
         else:
             classes.append(value)
     return classes
+
+
+def check_levels(r: Report, raw: dict) -> dict[str, int] | None:
+    """A path's own words per level (#615, ADR-0045), such as
+    { A1: 120, A2: 60, B1: 80 }: what the level checks hold the plan to,
+    instead of the fixed sizes. All three levels, each a whole number of 1 or
+    more. Returns them, or None when the path gives none or they are
+    malformed."""
+    if "levels" not in raw:
+        return None
+    levels = raw["levels"]
+    shape = 'must be a mapping of the words per level, such as { A1: 120, A2: 60, B1: 80 }'
+    if not isinstance(levels, dict):
+        r.error("levels", f"{shape}, got {levels!r}")
+        return None
+    ok = True
+    for key in sorted(set(levels) - set(MILESTONES), key=str):
+        r.error("levels", f"unknown level {key!r}; the levels are A1, A2 and B1")
+        ok = False
+    for level in MILESTONES:
+        if level not in levels:
+            r.error("levels", f"needs {level}; give the words for A1, A2 and B1")
+            ok = False
+            continue
+        value = levels[level]
+        if isinstance(value, bool) or not isinstance(value, int) or value < 1:
+            r.error(f"levels.{level}", f"must be a whole number of words, 1 or more, "
+                                       f"got {value!r}")
+            ok = False
+    return {level: levels[level] for level in MILESTONES} if ok else None
 
 
 def _check_passages(r: Report, where: str, i: int, key: str, value: object,
@@ -4566,9 +4603,8 @@ def _check_unit(r: Report, where: str, i: int, unit: dict, check_decks,
     words_given = (inner and "words" in planned) or "words" in unit
     if words_given:
         value = planned["words"] if inner and "words" in planned else unit["words"]
-        least = 1 if theme_unit else 0
-        if isinstance(value, bool) or not isinstance(value, int) or value < least:
-            r.error(f"{where}.words", f"must be a whole number of words, {least} or "
+        if isinstance(value, bool) or not isinstance(value, int) or value < 0:
+            r.error(f"{where}.words", f"must be a whole number of words, 0 or "
                                       f"more, got {value!r}")
         else:
             u.words = value
@@ -6077,10 +6113,16 @@ def check_plans_across(reports: list[Report]) -> list[str]:
                         rep.warn(f"units[{u.i}].{passage.key}[{passage.j}]",
                                  f"no description in {name}, so learners from {name} "
                                  f"see none")
+        level_words = plan.levels or LEVEL_WORDS
+        if plan.levels:
+            whole = sum(plan.levels.values())
+            b1_total = (whole // 2, whole * 3 // 2)
+        else:
+            b1_total = B1_TOTAL
         total = sum(u.words or 0 for u in plan.units if u.i <= plan.end)
-        if not B1_TOTAL[0] <= total <= B1_TOTAL[1]:
-            rep.warn("units", f"plans {total} words up to B1, outside 2,000–3,500; "
-                              f"check the sizes")
+        if not b1_total[0] <= total <= b1_total[1]:
+            rep.warn("units", f"plans {total} words up to B1, outside "
+                              f"{b1_total[0]:,}–{b1_total[1]:,}; check the sizes")
         if known is not None:
             for u in plan.units:
                 theme = u.planned["theme"] if u.planned is not None else None
@@ -6096,12 +6138,13 @@ def check_plans_across(reports: list[Report]) -> list[str]:
                      "B1": words(marks["A2"], marks["B1"])}
             topics = {t for u in plan.units if u.i <= marks["B1"] for t in u.grammar}
             planned = sum(1 for u in plan.units if u.planned is not None)
-            rep.info("units", f"B1 plan: A1 {sizes['A1']} words (about 700), A2 "
-                              f"+{sizes['A2']} (about 900), B1 +{sizes['B1']} (about "
-                              f"1,200); {sum(sizes.values())} in all; {len(topics)} "
+            rep.info("units", f"B1 plan: A1 {sizes['A1']} words (about "
+                              f"{level_words['A1']:,}), A2 +{sizes['A2']} (about "
+                              f"{level_words['A2']:,}), B1 +{sizes['B1']} (about "
+                              f"{level_words['B1']:,}); {sum(sizes.values())} in all; {len(topics)} "
                               f"grammar topics; {planned} units planned")
             for level, n in sizes.items():
-                size = LEVEL_WORDS[level]
+                size = level_words[level]
                 lo, hi = size // 2, size * 3 // 2
                 if not lo <= n <= hi:
                     rep.warn("units", f"{level} plans {n} words, far from about "
