@@ -244,7 +244,7 @@ units:
   # building of strange water: a bar) against tomo telo nasa.
   - decks: ["tok-grammar-pi-words", "tok-grammar-pi", "tok-grammar-pi-sentences", "tok-reading-pi"]
     words: 1
-    grammar: ["pi-grouping"]
+    grammar: ["pi", "pi-words"]
   # anpa, insa, monsi, sinpin and sewi: below, inside, behind, in front,
   # above. Placed with lon in the next unit (lon insa tomo).
   - decks: ["tok-location", "tok-location-sentences", "tok-reading-location", "*"]
@@ -257,7 +257,7 @@ units:
   # li or after the object, never with e.
   - decks: ["tok-grammar-prepositions", "tok-grammar-prepositions-sentences", "tok-reading-prepositions"]
     words: 0
-    grammar: ["lon-prep", "tawa-prep", "tan-prep", "kepeken-prep", "sama-prep"]
+    grammar: ["prepositions"]
   # soweli, waso, kala, pipi, akesi and mu (an animal's sound).
   - decks: ["tok-animals", "tok-animals-sentences", "tok-reading-animals", "*"]
     words: 6
@@ -270,7 +270,7 @@ units:
   # suli).
   - decks: ["tok-grammar-preverbs", "tok-grammar-preverbs-sentences", "tok-reading-preverbs"]
     words: 0
-    grammar: ["preverbs", "kama-becoming"]
+    grammar: ["preverbs"]
   # palisa, sike, linja, lipu, sitelen and kiwen.
   - decks: ["tok-things", "tok-things-sentences", "tok-reading-things", "*"]
     words: 6
@@ -281,7 +281,7 @@ units:
   # or when you come, I feel good).
   - decks: ["tok-grammar-la-clauses", "tok-grammar-la-clauses-sentences", "tok-reading-la-clauses"]
     words: 0
-    grammar: ["la-clause-context"]
+    grammar: ["la-clauses"]
   # kasi and ma.
   - decks: ["tok-nature", "tok-nature-sentences", "tok-reading-nature", "*"]
     words: 2
@@ -292,7 +292,7 @@ units:
   # choice, and taso (but, only), its one word.
   - decks: ["tok-grammar-joining-words", "tok-grammar-joining", "tok-grammar-joining-sentences", "tok-reading-joining"]
     words: 2
-    grammar: ["en-subjects", "repeated-li-e", "anu-choice", "taso-but"]
+    grammar: ["joining-words", "joining"]
   # moli, utala, kalama and alasa.
   - decks: ["tok-more-verbs", "tok-more-verbs-sentences", "tok-reading-more-verbs", "*"]
     words: 4
@@ -308,7 +308,7 @@ units:
   # toki, telo nasa), each a phrase built from known words.
   - decks: ["tok-grammar-compounds", "tok-grammar-compounds-sentences", "tok-reading-compounds"]
     words: 0
-    grammar: ["compound-meaning", "conventional-compounds"]
+    grammar: ["compounds"]
   # kin, n and meso: indeed, a thinking sound, and the middle.
   - decks: ["tok-opinions", "tok-opinions-sentences", "tok-reading-opinions", "*"]
     words: 3
@@ -317,7 +317,7 @@ units:
   # two speakers may say the same thing differently.
   - decks: ["tok-grammar-describing-unnamed", "tok-grammar-describing-unnamed-sentences", "tok-reading-describing-unnamed"]
     words: 0
-    grammar: ["choosing-the-head", "pi-chains", "many-ways-to-say"]
+    grammar: ["describing-unnamed"]
   # tonsi (a non-binary person) and unpa (to have sex: crude, taught with a
   # usage note, and rated offensive, so the app hides it unless Adult
   # content is on; owner, 2026-10-23). Its sentences are
@@ -331,7 +331,7 @@ units:
   # name to Toki Pona's sounds and syllables.
   - decks: ["tok-grammar-names", "tok-grammar-names-sentences", "tok-reading-names"]
     words: 0
-    grammar: ["proper-names", "name-adaptation"]
+    grammar: ["names"]
   # namako, kipisi and soko: spice or extra, to cut, and mushroom.
   - decks: ["tok-cooking", "tok-cooking-sentences", "tok-reading-cooking", "*"]
     words: 3
@@ -339,7 +339,7 @@ units:
   # pointing to what follows or what came before.
   - decks: ["tok-grammar-reported-speech", "tok-grammar-reported-speech-sentences", "tok-reading-reported-speech"]
     words: 0
-    grammar: ["ni-colon-quote", "reported-speech"]
+    grammar: ["reported-speech"]
   # jasima, epiku and leko: mirror or reflect, epic, and block or step.
   - decks: ["tok-arts", "tok-arts-sentences", "tok-reading-arts", "*"]
     words: 3
@@ -347,7 +347,7 @@ units:
   # a la clause inside a story.
   - decks: ["tok-grammar-la-chains", "tok-grammar-la-chains-sentences", "tok-reading-la-chains"]
     words: 0
-    grammar: ["stacked-la"]
+    grammar: ["la-chains"]
   # monsuta, kijetesantakalu and lanpan: fear or monster, the raccoon
   # family (a well-known joke word), and to take.
   - decks: ["tok-stories", "tok-stories-sentences", "tok-reading-stories", "*"]
@@ -357,7 +357,7 @@ units:
   # system against it.
   - decks: ["tok-grammar-numbers", "tok-grammar-numbers-sentences", "tok-reading-full-numbers"]
     words: 0
-    grammar: ["nasin-nanpa-pona"]
+    grammar: ["numbers"]
   # pu and ku: the books, and to use or interact with them; the
   # community: its servers, meetups, podcasts, its Wikipedia-like wikis,
   # the word lists (pu, ku suli, nimi sin) and how speakers differ on
