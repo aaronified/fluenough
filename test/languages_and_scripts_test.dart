@@ -63,6 +63,8 @@ import 'package:fluenough/ui/widgets/reading_first.dart';
 import 'package:fluenough/ui/widgets/stat_tile.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/semantics.dart'
+    show CustomSemanticsAction, SemanticsAction;
 import 'package:flutter/services.dart'
     show LogicalKeyboardKey, SystemChannels, rootBundle;
 import 'package:flutter_test/flutter_test.dart';
@@ -2452,7 +2454,7 @@ void main() {
           'Previous language: ${nameOf(state, 'es')}',
         ]),
       );
-      tester.binding.pipelineOwner.semanticsOwner!.performAction(
+      tester.binding.renderViews.first.owner!.semanticsOwner!.performAction(
         node.id,
         SemanticsAction.customAction,
         actions()['Previous language: ${nameOf(state, 'es')}']!,
