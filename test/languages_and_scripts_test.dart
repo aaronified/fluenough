@@ -308,8 +308,10 @@ Future<void> scrollToInFrame(WidgetTester tester, Finder target) async {
   if (frame.evaluate().isEmpty) {
     await tester.ensureVisible(target.first);
   } else {
+    // Not `target.first`: a `.first` finder throws while nothing matches,
+    // which is just when the list has not built the target yet.
     await tester.scrollUntilVisible(
-      target.first,
+      target,
       100,
       scrollable: find
           .descendant(of: frame.first, matching: find.byType(Scrollable))
