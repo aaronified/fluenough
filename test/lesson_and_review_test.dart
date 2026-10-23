@@ -15,6 +15,7 @@ import 'dart:math';
 
 import 'package:fluenough/app.dart';
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/daily_plan.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/features.dart';
 import 'package:fluenough/app/memory_progress.dart';
@@ -42,6 +43,7 @@ import 'package:fluenough/core/models/reading.dart';
 import 'package:fluenough/core/models/rule.dart';
 import 'package:fluenough/core/numbers/number_practice.dart';
 import 'package:fluenough/core/numbers/number_speller.dart';
+import 'package:fluenough/core/scheduling/daily_budget.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
 import 'package:fluenough/core/scheduling/lesson.dart';
 import 'package:fluenough/core/scheduling/lesson_sets.dart';
@@ -75,9 +77,8 @@ import 'package:fluenough/features/drill/typed_drill.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/features/script/script_guide_page.dart';
 import 'package:fluenough/features/summary/summary_page.dart';
+import 'package:fluenough/features/today/daily_card.dart';
 import 'package:fluenough/features/today/due_card.dart';
-import 'package:fluenough/features/today/lesson_card.dart';
-import 'package:fluenough/features/today/quick_revision.dart';
 import 'package:fluenough/features/today/today_fixtures.dart';
 import 'package:fluenough/features/today/today_numbers.dart';
 import 'package:fluenough/features/today/today_page.dart';
@@ -2234,24 +2235,25 @@ void main() {
   });
 
   group('a lesson on screen', () {
-    testWidgets('Today offers the lesson; it teaches each word, then asks it, '
-        'and once done offers another', (tester) async {
+    testWidgets('Today\'s one button starts the day: with nothing to review it '
+        'teaches the new words, each taught, then asked', (tester) async {
       usePhone(tester);
       final state = spanishLearner();
       await pumpScreen(tester, const TodayPage(), state: state);
       final l10n = l10nOf(tester);
-      expect(find.byType(LessonCard), findsOneWidget);
-      expect(find.text(l10n.todayLessonTitle), findsOneWidget);
-      expect(find.text(l10n.todayLessonWords(9)), findsOneWidget);
-      // Nothing to review yet: new words come in lessons.
-      expect(find.text(l10n.todayAllDoneTitle), findsOneWidget);
+      expect(find.byType(DailyCard), findsOneWidget);
+      expect(find.text(l10n.todayDailyStart), findsOneWidget);
+      // The split: nothing to review yet, a lesson's nine words new.
+      expect(find.text(l10n.todayDailyReviews(0)), findsOneWidget);
+      expect(find.text(l10n.todayDailyNew(9)), findsOneWidget);
+      expect(find.text(l10n.todayDailyProgress(0, 15)), findsOneWidget);
 
       final planned = <SessionItem>[
         for (final item in state.lessonFor(DrillRequest.lesson(language: 'es')))
           if (item.ask != Ask.teach)
             ...item.group.isEmpty ? <SessionItem>[item] : item.group,
       ].length;
-      await tester.tap(find.text(l10n.todayLessonStart));
+      await tester.tap(find.text(l10n.todayDailyStart));
       await tester.pumpAndSettle();
       // The first word is taught before it is asked, and nothing is recorded.
       expect(find.byType(TeachDrill), findsOneWidget);
@@ -2282,13 +2284,12 @@ void main() {
       );
       expect(state.lessonDoneToday('es'), isTrue);
 
-      // The summary offers another; back on Today, so does its card.
+      // The summary offers another; back on Today, the day goes on.
       expect(find.text(l10n.summaryAnotherLesson), findsOneWidget);
       Navigator.of(tester.element(find.byType(SummaryPage)))
           .popUntil((route) => route.isFirst);
       await tester.pumpAndSettle();
-      expect(find.text(l10n.todayLessonDoneTitle), findsOneWidget);
-      expect(find.text(l10n.todayAnotherLesson), findsOneWidget);
+      expect(find.byType(DailyCard), findsOneWidget);
       expect(find.text(l10n.todayNewWords(9)), findsOneWidget);
     });
 
@@ -4329,7 +4330,8 @@ void main() {
 
   group('Today', () {
     testWidgets(
-      'the due count comes from the session, and Start review opens it',
+      'the skill tiles count what the session asks, and the one button opens '
+      'the day\'s session',
       (tester) async {
         usePhone(tester);
         final state = await pumpToday(tester, state: await fixtureState());
@@ -4339,17 +4341,7 @@ void main() {
         expect(queue.length, greaterThan(0));
         final numbers = TodayNumbers.of(state);
         expect(numbers.due, queue.length);
-        expect(
-          find.byWidgetPredicate(
-            (w) =>
-                w is Text &&
-                w.data == '${queue.length}' &&
-                w.style?.fontSize == 72,
-          ),
-          findsOneWidget,
-        );
-        expect(find.text(l10n.todayWordsDue(queue.length)), findsOneWidget);
-        expect(find.text(l10n.todayMinutes(numbers.minutes)), findsOneWidget);
+        expect(find.byType(DailyCard), findsAtLeastNWidgets(1));
 
         final byMode = queue.countByMode();
         // Recognition is scheduled, so it has a tile (ADR-0034).
@@ -4387,13 +4379,144 @@ void main() {
             const <String>['hi'],
           ),
         );
-        await tapVisible(tester, find.text(l10nOf(tester).todayStartReview));
+        await tapVisible(
+          tester,
+          find.descendant(
+            of: find.byType(DailyCard),
+            matching: find.byType(FilledButton),
+          ),
+        );
         final drill = tester.widget<DrillPage>(find.byType(DrillPage));
+        expect(drill.request.daily, isTrue);
+        expect(drill.request.language, 'hi');
         expect(drill.request.deckIds, isNull);
-        expect(drill.request.newOnly, isFalse);
-        expect(drill.request.language, isNull, reason: 'one language');
+        expect(drill.request.revise, isFalse);
       },
     );
+
+    testWidgets(
+      'the day\'s session holds the words due, then the new words, and a '
+      'shorter day buys fewer cards',
+      (tester) async {
+        usePhone(tester);
+        final state = await hindiReviewed(<DrillMode, Duration>{
+          DrillMode.production: const Duration(days: 3),
+        });
+        final hindi = state.languages.firstWhere((l) => l.code == 'hi');
+        final plan = state.dailyPlanFor(hindi);
+        expect(plan.goalMinutes, 15);
+        expect(plan.due, 8);
+        expect(plan.split.catchingUp, isFalse);
+        expect(plan.split.reviews, 8);
+        expect(plan.split.newWords, greaterThanOrEqualTo(3));
+
+        final dueIds = <String>{
+          for (final item
+              in state.buildSession(DrillRequest.today(language: 'hi')).items)
+            item.card.id,
+        };
+        final items = state.dailyItems(DrillRequest.daily(language: 'hi'));
+        final askedIds = <String>{
+          for (final item in items)
+            for (final entry
+                in item.group.isEmpty ? <SessionItem>[item] : item.group)
+              entry.card.id,
+        };
+        expect(askedIds.containsAll(dueIds), isTrue);
+        // The reviews come first, the lesson's teaching after them.
+        final firstTeach = items.indexWhere((i) => i.ask == Ask.teach);
+        expect(firstTeach, greaterThan(0));
+        expect(items.take(firstTeach).every((i) => i.ask != Ask.teach), isTrue);
+
+        // A 5 minute day buys 17 cards: the 8 reviews and the new words fill
+        // them, and a day over by a few reviews keeps its 3 new words.
+        state.settings.setDailyMinutes('hi', 5);
+        final five = state.dailyPlanFor(hindi);
+        expect(five.split.reviews + five.split.newWords, 17);
+        expect(five.split.newWords, greaterThanOrEqualTo(3));
+      },
+    );
+
+    testWidgets('catching up says so, and "+ 5 min" adds five minutes a tap '
+        'while a long press takes five away', (tester) async {
+      usePhone(tester);
+      final state = spanishLearner();
+      await state.load();
+      final spanish = state.languages.firstWhere((l) => l.code == 'es');
+      final plan = DailyPlan(
+        language: spanish,
+        goalMinutes: 15,
+        extraMinutes: 0,
+        spent: Duration.zero,
+        secondsPerCard: 17.5,
+        due: 80,
+        newAvailable: 9,
+        split: DailyBudget.split(due: 80, budget: 51),
+      );
+      expect(plan.split.catchingUp, isTrue);
+      await pumpScreen(
+        tester,
+        Scaffold(
+          body: SingleChildScrollView(child: DailyCard(plans: [plan])),
+        ),
+        state: state,
+      );
+      final l10n = l10nOf(tester);
+      expect(find.text(l10n.todayDailyCatchingUp), findsOneWidget);
+      expect(
+        find.text(l10n.todayDailyCatchingUpPlan(80, 23, 15, 2)),
+        findsOneWidget,
+      );
+      // No new words in the split.
+      expect(find.text(l10n.todayDailyNew(0)), findsOneWidget);
+      final add = find.text(l10n.todayDailyAddMinutes(5));
+      await tester.tap(add);
+      await tester.pump();
+      await tester.tap(add);
+      await tester.pump();
+      expect(state.settings.dailyExtraFor('es', state.now()), 10);
+      await tester.longPress(add);
+      await tester.pump();
+      expect(state.settings.dailyExtraFor('es', state.now()), 5);
+    });
+
+    testWidgets('with the minutes spent the button reads Done for today, and '
+        'Keep going starts five more', (tester) async {
+      usePhone(tester);
+      final state = spanishLearner();
+      await state.load();
+      final spanish = state.languages.firstWhere((l) => l.code == 'es');
+      final plan = DailyPlan(
+        language: spanish,
+        goalMinutes: 15,
+        extraMinutes: 0,
+        spent: const Duration(minutes: 15),
+        secondsPerCard: 17.5,
+        due: 10,
+        newAvailable: 9,
+        split: DailyBudget.split(due: 10, budget: 17),
+      );
+      expect(plan.done, isTrue);
+      await pumpScreen(
+        tester,
+        Scaffold(
+          body: SingleChildScrollView(child: DailyCard(plans: [plan])),
+        ),
+        state: state,
+      );
+      final l10n = l10nOf(tester);
+      expect(find.text(l10n.todayDailyDone), findsOneWidget);
+      expect(find.text(l10n.todayDailyProgress(15, 15)), findsOneWidget);
+      expect(find.text(l10n.todayDailyStart), findsNothing);
+      // The split is for a day still to do.
+      expect(find.text(l10n.todayDailyNew(7)), findsNothing);
+      await tester.tap(find.text(l10n.todayDailyKeepGoing));
+      await tester.pumpAndSettle();
+      expect(state.settings.dailyExtraFor('es', state.now()), 5);
+      final drill = tester.widget<DrillPage>(find.byType(DrillPage));
+      expect(drill.request.daily, isTrue);
+      expect(drill.request.language, 'es');
+    });
 
     testWidgets(
       'Quick revision offers its sizes, and a tile with cards due reviews '
@@ -4404,14 +4527,15 @@ void main() {
         final l10n = l10nOf(tester);
         expect(find.text(l10n.todayRevisionTitle), findsOneWidget);
         expect(find.byType(DeckTile), findsNothing);
-        for (final size in QuickRevision.sizes) {
-          expect(find.text('$size'), findsOneWidget);
-        }
-        // Nothing taught yet: the buttons are off, and the line says why.
+        // Five minutes to begin with, between a minus and a plus.
+        expect(find.text(l10n.todayRevisionStart(5)), findsOneWidget);
+        expect(find.byTooltip(l10n.todayRevisionLess(5)), findsOneWidget);
+        expect(find.byTooltip(l10n.todayRevisionMore(5)), findsOneWidget);
+        // Nothing taught yet: the start button is off, and the line says why.
         expect(find.text(l10n.todayRevisionNone), findsOneWidget);
         final five = tester.widget<FilledButton>(
           find.ancestor(
-            of: find.text('5'),
+            of: find.text(l10n.todayRevisionStart(5)),
             matching: find.byType(FilledButton),
           ),
         );
@@ -4454,7 +4578,9 @@ void main() {
       },
     );
 
-    testWidgets('with everything answered, Today is all done', (tester) async {
+    testWidgets('with everything answered, no skill tile is due', (
+      tester,
+    ) async {
       usePhone(tester);
       final state = await fixtureState();
       await state.load();
@@ -4462,9 +4588,7 @@ void main() {
       await pumpToday(tester, state: state);
       final l10n = l10nOf(tester);
 
-      expect(find.text(l10n.todayAllDoneTitle), findsOneWidget);
-      expect(find.text(l10n.todayAllDoneBody), findsOneWidget);
-      expect(find.text(l10n.todayStartReview), findsNothing);
+      expect(TodayNumbers.of(state).allDone, isTrue);
       // Today now counts towards the streak.
       expect(find.text(l10n.todayStreak(13)), findsOneWidget);
     });
