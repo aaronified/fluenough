@@ -1,0 +1,37 @@
+schema: 1
+id: "zh-pinyin-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "zh-0066"
+    target: "妈去西边吗？"
+    words: ["妈", "去", "西边", "吗"]
+    reading: "mā qù xībian ma?"
+    pos: "phrase"
+    bases:
+      - { word: "西边", base: "西边", reading: "xībian" }
+  - id: "zh-0067"
+    target: "我喝绿茶，你喝吗？"
+    words: ["我", "喝", "绿茶", "你", "喝", "吗"]
+    reading: "wǒ hē lǜchá, nǐ hē ma?"
+    pos: "phrase"
+    bases:
+      - { word: "绿茶", base: "绿茶", reading: "lǜchá" }
+  - id: "zh-0068"
+    target: "老师买鱼。"
+    words: ["老师", "买", "鱼"]
+    reading: "lǎoshī mǎi yú."
+    pos: "phrase"
+    bases:
+      - { word: "老师", base: "老师", reading: "lǎoshī" }
+  - id: "zh-0069"
+    target: "我写九个字。"
+    words: ["我", "写", "九", "个", "字"]
+    reading: "wǒ xiě jiǔ ge zì."
+    pos: "phrase"
+    bases:
+      - { word: "个", base: "个", reading: "ge" }
+      - { word: "字", base: "字", reading: "zì" }
