@@ -197,7 +197,9 @@ class AppState extends ChangeNotifier {
     for (final source in <Listenable>[this, this.settings, progress]) {
       source.addListener(_forgetPending);
     }
+    _loggedTab = shellTab.value;
     shellTab.addListener(_logTab);
+    shellTabMoving.addListener(_logTab);
     deckDownloads?.onFilesChanged = _filesDownloaded;
     this.settings.addListener(_reviewerToDownloads);
     _reviewerToDownloads();
@@ -229,7 +231,16 @@ class AppState extends ChangeNotifier {
   /// they see them; a learner is not (#444).
   void _reviewerToDownloads() => deckDownloads?.reviewer = settings.reviewDecks;
 
-  void _logTab() => log.event('Opened tab ${shellTab.value.name}');
+  /// Logs the tab the shell settled on. While the pages slide the bar
+  /// follows them through tabs nobody opened, so nothing is logged until
+  /// they stop, and a drag that springs back logs nothing.
+  void _logTab() {
+    if (shellTabMoving.value || shellTab.value == _loggedTab) return;
+    _loggedTab = shellTab.value;
+    log.event('Opened tab ${_loggedTab.name}');
+  }
+
+  ShellTab _loggedTab = ShellTab.today;
 
   /// Where a drill's chance comes from, such as the order of a question's
   /// options: seeded in tests and the gallery, so that they repeat.
@@ -502,6 +513,9 @@ class AppState extends ChangeNotifier {
   final ValueNotifier<ShellTab> shellTab = ValueNotifier<ShellTab>(
     ShellTab.today,
   );
+
+  /// True while the tab pages slide; see `TabPager.moving`.
+  final ValueNotifier<bool> shellTabMoving = ValueNotifier<bool>(false);
 
   // ---------------------------------------------------------------------------
   // Decks
@@ -2659,6 +2673,9 @@ class AppState extends ChangeNotifier {
       ..removeListener(_languageShownChanged);
     progress.removeListener(_forgetPending);
     shellTab
+      ..removeListener(_logTab)
+      ..dispose();
+    shellTabMoving
       ..removeListener(_logTab)
       ..dispose();
     updates.dispose();
