@@ -594,13 +594,13 @@ const List<String> eight = <String>[
 /// The bar on screen: the tab's, where the shell holds all three.
 Finder bar() => find.byType(LanguageBar).hitTestable();
 
-/// The selection at the centre of the wheel on the bar on screen.
-Finder pill() => find
-    .descendant(
-      of: bar(),
-      matching: find.byKey(const ValueKey<String>('language-bar-selection')),
-    )
-    .hitTestable();
+/// The selection at the centre of the wheel on the bar on screen. Not
+/// `hitTestable`: the centre language's glyph is drawn over it and takes
+/// the hit.
+Finder pill() => find.descendant(
+  of: bar(),
+  matching: find.byKey(const ValueKey<String>('language-bar-selection')),
+);
 
 /// Whether the selection is filled, as it is unless All is on, when it is
 /// an outline.
@@ -2617,7 +2617,7 @@ void main() {
       final seen = <String?>[];
       state.addListener(() => seen.add(state.shownLanguage));
       final width = tester.getSize(zone()).width;
-      await tester.fling(zone(), Offset(-width * 0.9, 0), 3000);
+      await tester.fling(zone(), Offset(-width * 0.9, 0), 2000);
       await tester.pump(const Duration(milliseconds: 100));
       expect(state.shownLanguage, eight.first);
       await tester.pumpAndSettle(const Duration(seconds: 2));
