@@ -14,7 +14,7 @@ Card cell({List<RuleOption> options = const <RuleOption>[]}) => Card(
   deckId: 'te-en-grammar',
   target: 'ammalō',
   native: 'in mother',
-  modes: const <DrillMode>{DrillMode.grammarUnderstood, DrillMode.grammar},
+  modes: DrillMode.vocabulary,
   rule: RuleCell(
     ruleId: 'te-rule-in',
     word: 'te-amma',
@@ -37,6 +37,7 @@ SessionItem item(Card card, DrillMode mode) =>
 
 void main() {
   siblingTests();
+  modesTests();
   test(
     'a cell with other forms is asked to choose its form and its meaning',
     () {
@@ -90,12 +91,13 @@ Card word(
   String native, {
   String? base,
   List<String> bases = const <String>[],
+  Set<DrillMode> modes = const <DrillMode>{},
 }) => Card(
   id: id,
   deckId: 'te-en-words',
   target: target,
   native: native,
-  modes: const <DrillMode>{DrillMode.grammar},
+  modes: modes,
   bases: <CardBase>[
     for (final ref in <String>[?base, ...bases])
       CardBase(word: target, ref: ref),
@@ -186,5 +188,113 @@ void siblingTests() {
       ),
       isNull,
     );
+  });
+}
+
+const Set<DrillMode> fourSkills = DrillMode.vocabulary;
+
+void modesTests() {
+  Card plain({Set<DrillMode> modes = const <DrillMode>{}}) => Card(
+    id: 'te-9',
+    deckId: 'te-en-words',
+    target: 'ammaki',
+    native: 'to mother',
+    modes: modes,
+  );
+  final loc = word('te-2', 'ammalō', 'in mother', base: 'te-amma');
+  final same = word('te-3', 'ammalō', 'to mother', base: 'te-amma');
+  final sentence = word(
+    'te-6',
+    'amma illu',
+    'mother house',
+    bases: ['te-amma', 'te-illu'],
+  );
+
+  Set<DrillMode> modesOf(Card c, [List<Card> siblings = const <Card>[]]) =>
+      c.modesIn(ttsAvailable: true, speechAvailable: true, siblings: siblings);
+
+  test('a card that names no modes takes every vocabulary skill', () {
+    expect(modesOf(plain()), fourSkills);
+  });
+
+  test('modes are the skills a card is excluded from', () {
+    expect(modesOf(plain(modes: {DrillMode.recognition, DrillMode.speaking})), {
+      DrillMode.production,
+      DrillMode.listening,
+    });
+  });
+
+  test('a card with siblings is also asked the grammar skills', () {
+    final card = word('te-1', 'ammaki', 'to mother', base: 'te-amma');
+    expect(modesOf(card, [loc]), {
+      ...fourSkills,
+      DrillMode.grammar,
+      DrillMode.grammarUnderstood,
+    });
+  });
+
+  test('a sibling that means the same lets the form be produced, not '
+      'understood', () {
+    final card = word('te-1', 'ammaki', 'to mother', base: 'te-amma');
+    expect(modesOf(card, [same]), {...fourSkills, DrillMode.grammar});
+  });
+
+  test('a card with no siblings is not asked grammar', () {
+    expect(
+      modesOf(word('te-1', 'ammaki', 'to mother', base: 'te-amma')),
+      fourSkills,
+    );
+    expect(modesOf(sentence, const <Card>[]), fourSkills);
+  });
+
+  test('excluding grammar excludes both grammar skills', () {
+    final card = word(
+      'te-1',
+      'ammaki',
+      'to mother',
+      base: 'te-amma',
+      modes: {DrillMode.grammar},
+    );
+    expect(modesOf(card, [loc]), fourSkills);
+  });
+
+  test('a card that excludes the four vocabulary skills is a grammar cell', () {
+    final cell = plain(modes: fourSkills);
+    expect(cell.isGrammarCell, isTrue);
+    expect(modesOf(cell), {DrillMode.grammar});
+  });
+
+  test('a rules cell is asked grammar alone, understood where it means '
+      'something else', () {
+    expect(modesOf(cell(options: others)), {
+      DrillMode.grammarUnderstood,
+      DrillMode.grammar,
+    });
+    expect(modesOf(cell()), {DrillMode.grammar});
+  });
+
+  test('without a voice or a recogniser those skills are left out', () {
+    expect(plain().modesIn(ttsAvailable: false), {
+      DrillMode.recognition,
+      DrillMode.production,
+    });
+  });
+
+  test('a session offers a card with siblings a new grammar pair', () {
+    final a = word('te-1', 'ammaki', 'to mother', base: 'te-amma');
+    final cards = <Card>[a, loc, sentence];
+    final queue = SessionQueue.build(
+      cards: cards,
+      stateOf: (card, mode) => null,
+      hasVoice: (card) => false,
+      now: DateTime(2026, 10, 23),
+      newCardLimit: 10,
+      modes: {DrillMode.grammar},
+      siblingsOf: (card) => formSiblings(card, cards),
+    );
+    expect(queue.items.map((i) => '${i.card.id}:${i.mode.name}').toSet(), {
+      'te-1:grammar',
+      'te-2:grammar',
+    });
   });
 }

@@ -16,9 +16,7 @@ enum Difficulty {
   /// rest.
   static Difficulty of(Card card) {
     final words = card.wordCount;
-    if (card.pos == 'phrase' ||
-        words >= 3 ||
-        card.modes.contains(DrillMode.grammar)) {
+    if (card.pos == 'phrase' || words >= 3 || card.isGrammarCell) {
       return hard;
     }
     final letters = _letter.allMatches(card.reading ?? card.target).length;
@@ -74,7 +72,7 @@ typedef LessonQuestion = ({DrillMode mode, Ask ask});
 /// choosing the word, whatever its difficulty: nothing is typed.
 List<LessonQuestion> lessonQuestions(Card card, {bool typed = true}) {
   if (card.rule != null) return grammarLessonQuestions(card);
-  if (card.modes.contains(DrillMode.grammar)) {
+  if (card.isGrammarCell) {
     return const <LessonQuestion>[(mode: DrillMode.grammar, ask: Ask.own)];
   }
   return switch (Difficulty.of(card)) {

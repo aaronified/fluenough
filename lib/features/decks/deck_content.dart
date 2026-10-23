@@ -6,6 +6,7 @@ import '../../app/settings.dart';
 import '../../app/skill.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
+import '../../core/scheduling/ask.dart';
 import '../../l10n/app_localizations.dart';
 
 /// What the deck screens read out of a deck, kept apart from the widgets so
@@ -20,9 +21,14 @@ import '../../l10n/app_localizations.dart';
 /// disabled (ADR-0008). Nor does a missing voice or speech recogniser: the
 /// row says why and how to fix it.
 List<Skill> deckSkills(DeckEntry entry, SettingsNotifier settings) {
+  final siblings = FormSiblings(entry.cards);
   final modes = <DrillMode>{
     for (final card in entry.cards)
-      ...card.modesIn(ttsAvailable: true, speechAvailable: true),
+      ...card.modesIn(
+        ttsAvailable: true,
+        speechAvailable: true,
+        siblings: siblings.of(card),
+      ),
     if (entry.deck.pattern != null) DrillMode.grammar,
   };
   return <Skill>[

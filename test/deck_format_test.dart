@@ -1063,10 +1063,7 @@ cards:
         expect(withMother.target, 'అమ్మతో');
         expect(withMother.reading, 'ammatō');
         expect(withMother.deckId, 'zz-en-grammar-case-endings');
-        expect(withMother.modes, {
-          DrillMode.grammarUnderstood,
-          DrillMode.grammar,
-        });
+        expect(withMother.modes, DrillMode.vocabulary);
         expect(withMother.notes, isEmpty);
       });
     });
@@ -1352,7 +1349,10 @@ pattern:
         expect(first.passage.title, 'At the shop');
         expect(first.target, 'নমস্কার। কত দাম?');
         expect(first.native, 'What does the buyer ask first?');
-        expect(first.modes, {DrillMode.reading, DrillMode.listening});
+        expect(first.modesIn(ttsAvailable: true), {
+          DrillMode.reading,
+          DrillMode.listening,
+        });
         expect(first.source, readingFixtureSource);
         expect(first.passage.theme, 'market');
         // The second passage names no source, so its deck's is used.

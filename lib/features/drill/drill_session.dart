@@ -19,6 +19,7 @@ import '../../core/models/sound_contrasts.dart';
 import '../../core/numbers/number_practice.dart';
 import '../../core/scheduling/distractors.dart';
 import '../../core/scheduling/fsrs.dart';
+import '../../core/scheduling/question_type.dart';
 import '../../core/scheduling/session_queue.dart';
 import '../../core/sound/sound_check.dart';
 import '../../core/speech/speech_engine.dart';
@@ -948,8 +949,17 @@ class DrillSession extends ChangeNotifier {
 
   /// How the current item is asked. Grammar understood is only ever
   /// asked by choosing the meaning (DECK-FORMAT.md, Rules decks), whatever
-  /// built the item.
-  Ask get ask => item.mode == DrillMode.grammarUnderstood && item.ask == Ask.own
+  /// built the item, where the card's forms allow it ([chooseFormMeaningType]).
+  Ask get ask =>
+      item.mode == DrillMode.grammarUnderstood &&
+          item.ask == Ask.own &&
+          chooseFormMeaningType.eligible(
+            item,
+            QuestionContext(
+              canChoose: (_) => true,
+              siblingsOf: _state.siblingsOf,
+            ),
+          )
       ? Ask.chooseFormMeaning
       : item.ask;
 

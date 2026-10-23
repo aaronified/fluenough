@@ -488,8 +488,10 @@ class Card {
 
   final List<CardExample> examples;
 
-  /// Which drills this card takes part in. Empty means "all applicable",
-  /// resolved against the deck by [modesIn].
+  /// The skills this card is excluded from (#522, step 6, ADR-0039). Empty
+  /// means every skill its data allows, resolved by [modesIn]. Excluding
+  /// [DrillMode.grammar] excludes both grammar skills; a card that excludes
+  /// all four [DrillMode.vocabulary] skills is a grammar cell.
   final Set<DrillMode> modes;
 
   /// The id of a word that sounds almost the same, its minimal-pair partner,
@@ -568,39 +570,53 @@ class Card {
   /// The drills this card can actually be used for, given whether the device
   /// has a voice for the language, and whether it can recognise speech in it.
   ///
-  /// A card that declares no modes gets recognition, production, listening
-  /// and speaking, except that a phrase (`pos: phrase`) is not typed: a
-  /// whole sentence is too hard to grade fairly (ADR-0010). A phrase of two
-  /// words or more is produced by putting its words in order instead
-  /// ([rearranges], ADR-0024). A phrase can be spoken, since the recogniser
-  /// does the writing (ADR-0014).
+  /// Every skill the card's data allows, less those [modes] excludes. A card
+  /// is recognised, produced, heard and spoken, except that a phrase
+  /// (`pos: phrase`) is not typed: a whole sentence is too hard to grade
+  /// fairly (ADR-0010). A phrase of two words or more is produced by putting
+  /// its words in order instead ([rearranges], ADR-0024). A phrase can be
+  /// spoken, since the recogniser does the writing (ADR-0014).
   ///
-  /// A rules table's cell is understood ([DrillMode.grammarUnderstood]) only
-  /// where its form can be told from the row's others by what it means
-  /// ([choosesMeaning]); otherwise it is only produced (DECK-FORMAT.md, Rules
-  /// decks).
+  /// The grammar skills come from the card's forms: a rules table's cell
+  /// (produced always, and understood only where its form can be told from
+  /// the row's others by what it means, [choosesMeaning]), a card with
+  /// [siblings] (cards each with the same single base, `formSiblings`; those
+  /// give it other forms, and understood where one means something else), and
+  /// a card that excludes all four vocabulary skills, a pattern's cell, which
+  /// is produced.
   Set<DrillMode> modesIn({
     required bool ttsAvailable,
     bool speechAvailable = false,
+    List<Card> siblings = const <Card>[],
   }) {
-    final declared = modes.isNotEmpty
-        ? modes
-        : pos == 'phrase' && !rearranges
-        ? const {DrillMode.recognition, DrillMode.listening, DrillMode.speaking}
-        : const {
-            DrillMode.recognition,
-            DrillMode.production,
-            DrillMode.listening,
-            DrillMode.speaking,
-          };
+    final forms = rule == null ? siblings : const <Card>[];
+    final allowed = <DrillMode>{
+      if (pos == 'phrase' && !rearranges) ...const <DrillMode>{
+        DrillMode.recognition,
+        DrillMode.listening,
+        DrillMode.speaking,
+      } else
+        ...DrillMode.vocabulary,
+      if (isGrammarCell || forms.isNotEmpty) DrillMode.grammar,
+      if (choosesMeaning || forms.any((s) => s.native != native))
+        DrillMode.grammarUnderstood,
+    };
+    final noGrammar = modes.contains(DrillMode.grammar);
     return <DrillMode>{
-      for (final mode in declared)
-        if ((ttsAvailable || mode != DrillMode.listening) &&
+      for (final mode in allowed)
+        if (!modes.contains(mode) &&
+            (ttsAvailable || mode != DrillMode.listening) &&
             (speechAvailable || mode != DrillMode.speaking) &&
-            (mode != DrillMode.grammarUnderstood || choosesMeaning))
+            !(noGrammar && mode == DrillMode.grammarUnderstood))
           mode,
     };
   }
+
+  /// Whether this is a grammar cell: a rules table's cell, or a card that
+  /// excludes all four vocabulary skills, as a pattern's cell does. It is
+  /// drilled in grammar alone, not as a word.
+  bool get isGrammarCell =>
+      rule != null || modes.containsAll(DrillMode.vocabulary);
 
   /// Whether this rules table's cell can be asked what its form means
   /// (`Ask.chooseFormMeaning`, DECK-FORMAT.md, Rules decks): another form of
