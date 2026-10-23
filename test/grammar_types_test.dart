@@ -36,6 +36,7 @@ SessionItem item(Card card, DrillMode mode) =>
     SessionItem(card: card, mode: mode, state: null);
 
 void main() {
+  siblingTests();
   test(
     'a cell with other forms is asked to choose its form and its meaning',
     () {
@@ -80,5 +81,82 @@ void main() {
       (mode: DrillMode.grammarUnderstood, ask: Ask.chooseFormMeaning),
       (mode: DrillMode.grammar, ask: Ask.chooseForm),
     ]);
+  });
+}
+
+Card word(String id, String target, String native, {String? base}) => Card(
+  id: id,
+  deckId: 'te-en-words',
+  target: target,
+  native: native,
+  modes: const <DrillMode>{DrillMode.grammar},
+  bases: <CardBase>[if (base != null) CardBase(word: target, ref: base)],
+);
+
+void siblingTests() {
+  final amma = word('te-1', 'ammaki', 'to mother', base: 'te-amma');
+  final loc = word('te-2', 'ammalō', 'in mother', base: 'te-amma');
+  final same = word('te-3', 'ammaki', 'for mother', base: 'te-amma');
+  final other = word('te-4', 'illu', 'house', base: 'te-illu');
+  final alone = word('te-5', 'pustakam', 'book');
+  final all = <Card>[amma, loc, same, other, alone];
+  List<Card> siblingsOf(Card c) => formSiblings(c, all);
+  final withSiblings = QuestionContext(canChoose: _yes, siblingsOf: siblingsOf);
+
+  test(
+    'siblings are the other cards with a different form of the same base',
+    () {
+      expect(siblingsOf(amma), [loc]);
+      expect(siblingsOf(loc), [amma, same]);
+      expect(siblingsOf(other), isEmpty);
+      expect(siblingsOf(alone), isEmpty);
+    },
+  );
+
+  test(
+    'a card with siblings is asked the form questions, one without is not',
+    () {
+      expect(
+        questionTypeFor(item(amma, DrillMode.grammar), withSiblings)?.ask,
+        Ask.chooseForm,
+      );
+      expect(
+        questionTypeFor(item(other, DrillMode.grammar), withSiblings),
+        isNull,
+      );
+      expect(
+        questionTypeFor(item(alone, DrillMode.grammar), withSiblings),
+        isNull,
+      );
+      expect(questionTypeFor(item(amma, DrillMode.grammar), context), isNull);
+    },
+  );
+
+  test('a sibling that shows nothing new is no option; a form needs a '
+      'different meaning to be understood', () {
+    expect(
+      questionTypeFor(
+        item(amma, DrillMode.grammarUnderstood),
+        withSiblings,
+      )?.ask,
+      Ask.chooseFormMeaning,
+    );
+    expect(formChoices(loc, Ask.chooseForm, all).map((c) => c.id), ['te-1']);
+    expect(formChoices(loc, Ask.chooseFormMeaning, all).map((c) => c.id), [
+      'te-1',
+      'te-3',
+    ]);
+    // A sibling with the same form is no other form: not asked.
+    final onlySame = <Card>[amma, same];
+    expect(
+      questionTypeFor(
+        item(amma, DrillMode.grammar),
+        QuestionContext(
+          canChoose: _yes,
+          siblingsOf: (c) => formSiblings(c, onlySame),
+        ),
+      ),
+      isNull,
+    );
   });
 }

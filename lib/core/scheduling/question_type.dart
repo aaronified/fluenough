@@ -13,6 +13,7 @@ class QuestionContext {
     this.hearsForm,
     this.recallsFirst,
     this.typed,
+    this.siblingsOf,
   });
 
   /// Whether the item, asked as it now is, has enough to choose from.
@@ -26,6 +27,10 @@ class QuestionContext {
 
   /// Whether an answer can be typed in the card's language.
   final bool Function(SessionItem item)? typed;
+
+  /// The other forms of a card's word named by its `bases`: the cards that
+  /// share a base with it ([formSiblings]). Null where none are known.
+  final List<Card> Function(Card card)? siblingsOf;
 }
 
 /// One way of asking (ADR-0039): the [ask] it produces, the skill it asks
@@ -106,12 +111,18 @@ final QuestionType hearMeaningType = QuestionType(
       context.canChoose(item.askedAs(Ask.hearMeaning)),
 );
 
-/// Shown a rules table's form, choose what it means (DECK-FORMAT.md, Rules
-/// decks). Always chosen.
+List<Card> _siblings(SessionItem item, QuestionContext context) =>
+    context.siblingsOf?.call(item.card) ?? const <Card>[];
+
+/// Shown a form, choose what it means (DECK-FORMAT.md, Rules decks). Eligible
+/// where another form of the card's word means something else: a rules
+/// table's other cells ([Card.choosesMeaning]), or a sibling sharing its base.
 final QuestionType chooseFormMeaningType = QuestionType(
   ask: Ask.chooseFormMeaning,
   skill: DrillMode.grammarUnderstood,
-  eligible: (item, context) => true,
+  eligible: (item, context) =>
+      item.card.choosesMeaning ||
+      _siblings(item, context).any((s) => s.native != item.card.native),
 );
 
 /// Shown a rules table's word and a meaning, choose its form, while the pair
@@ -120,7 +131,7 @@ final QuestionType chooseFormType = QuestionType(
   ask: Ask.chooseForm,
   skill: DrillMode.grammar,
   eligible: (item, context) =>
-      item.card.hasOtherForms &&
+      (item.card.hasOtherForms || _siblings(item, context).isNotEmpty) &&
       _isNew(item) &&
       !_startsTyped(item, context) &&
       context.canChoose(item.askedAs(Ask.chooseForm)),
