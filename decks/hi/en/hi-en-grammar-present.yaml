@@ -6,12 +6,22 @@ native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Present tense"
 license: "CC-BY-SA-4.0"
 description: "I go, she speaks: the everyday present, by person and gender."
-pattern:
-  name: "Present habitual"
+table:
   slot_name: "person and gender"
-  prompt: "{lemma} ({gloss}) — {slot}"
-  entries:
-    "jaanaa": "to go"
-    "bolnaa": "to speak"
-    "khaanaa": "to eat"
-  notes: "The verb's stem, then -ता (-tā), -ती (-tī) or -ते (-tē) for the doer's gender and number, then हूँ (hūm̐), हो (hō), है (hai) or हैं (haim̐). वह (vah), हम (ham), आप (āp) and वे (vē) do not show gender; the verb does."
+  slots:
+    "i-m": "I, masculine"
+    "i-f": "I, feminine"
+    "you-m": "you, informal, masculine"
+    "you-f": "you, informal, feminine"
+    "he-m": "he or she, masculine"
+    "he-f": "he or she, feminine"
+    "we-m": "we, masculine"
+    "we-f": "we, feminine"
+    "formal-m": "you, formal, masculine"
+    "formal-f": "you, formal, feminine"
+    "they-m": "they, masculine"
+    "they-f": "they, feminine"
+rules:
+  "hi-rule-present":
+    name: "-ता (-tā), -ती (-tī), -ते (-tē): the present"
+    explanation: "The verb's stem, then -ता (-tā), -ती (-tī) or -ते (-tē) for the doer's gender and number, then हूँ (hūm̐), हो (hō), है (hai) or हैं (haim̐). वह (vah), हम (ham), आप (āp) and वे (vē) do not show gender; the verb does. जाता हूँ (jātā hūm̐), I go; जाती हो (jātī hō), you go (she); जाते हैं (jātē haim̐), we go. One form serves for a habit and for what is happening in general."
