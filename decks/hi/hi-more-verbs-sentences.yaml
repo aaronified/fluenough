@@ -1,0 +1,122 @@
+schema: 1
+id: "hi-more-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-0962"
+    target: "मैं रोज़ सुबह जल्दी जागता हूँ।"
+    reading: "maim̐ rōz subah jaldī jāgtā hūm̐."
+    ipa: "mɛ̃ː roːz sʊbəɦ dʒəld̪iː dʒaːɡt̪aː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "रोज़", ref: "hi-0451" }
+      - { word: "सुबह", ref: "hi-0302" }
+      - { word: "जल्दी", ref: "hi-0819" }
+      - { word: "जागता", ref: "hi-0944" }
+      - { word: "हूँ", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", word: "जागती", reading: "jāgtī", kind: "form" }
+      - { id: "w1", word: "सोता", reading: "sōtā", kind: "word" }
+  - id: "hi-0963"
+    target: "माँ आज खाना परोसेगी।"
+    reading: "mām̐ āj khānā parōsēgī."
+    ipa: "mãː aːdʒ kʰaːnaː pəroːseːɡiː"
+    pos: "phrase"
+    bases:
+      - { word: "माँ", ref: "hi-0377" }
+      - { word: "आज", ref: "hi-0299" }
+      - { word: "खाना", ref: "hi-0332" }
+      - { word: "परोसेगी", ref: "hi-0943" }
+    confusables:
+      - { id: "f1", word: "परोसेगा", reading: "parōsēgā", kind: "form" }
+      - { id: "w1", word: "पकाएगी", reading: "pakāēgī", kind: "word" }
+  - id: "hi-0964"
+    target: "आप चाकू से सब्ज़ी काटिए।"
+    reading: "āp cākū sē sabzī kāṭiē."
+    ipa: "aːp tʃaːkuː seː səbziː kaːʈɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "आप", ref: "hi-0134" }
+      - { word: "चाकू", base: "चाकू", reading: "cākū" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "सब्ज़ी", ref: "hi-0249" }
+      - { word: "काटिए", ref: "hi-0939" }
+    confusables:
+      - { id: "w1", word: "छानिए", reading: "chāniē", kind: "word" }
+      - { id: "w2", word: "उबालिए", reading: "ubāliē", kind: "word" }
+  - id: "hi-0965"
+    target: "पहले पानी उबालिए, फिर चाय डालिए।"
+    reading: "pahlē pānī ubāliē, phir cāy ḍāliē."
+    ipa: "pəɦleː paːniː ʊbaːlɪeː pʰɪr tʃaːj ɖaːlɪeː"
+    pos: "phrase"
+    bases:
+      - { word: "पहले", ref: "hi-0823" }
+      - { word: "पानी", ref: "hi-0333" }
+      - { word: "उबालिए", ref: "hi-0940" }
+      - { word: "फिर", ref: "hi-0351" }
+      - { word: "चाय", ref: "hi-0334" }
+      - { word: "डालिए", ref: "hi-0941" }
+    confusables:
+      - { id: "w1", word: "पीजिए", reading: "pījiē", kind: "word" }
+      - { id: "w2", word: "परोसिए", reading: "parōsiē", kind: "word" }
+  - id: "hi-0966"
+    target: "मेरा भाई शाम को खूब हँसता है।"
+    reading: "mērā bhāī śām kō khūb ham̐stā hai."
+    ipa: "meːraː bʱaːiː ʃaːm koː kʰuːb ɦə̃st̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "भाई", ref: "hi-0378" }
+      - { word: "शाम", ref: "hi-0303" }
+      - { word: "को", ref: "hi-0277" }
+      - { word: "खूब", ref: "hi-0833" }
+      - { word: "हँसता", ref: "hi-0959" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", word: "हँसती", reading: "ham̐stī", kind: "form" }
+      - { id: "w1", word: "रोता", reading: "rōtā", kind: "word" }
+  - id: "hi-0967"
+    target: "तुम मुझे हिंदी सिखाओगे?"
+    reading: "tum mujhē hindī sikhāōgē?"
+    ipa: "t̪ʊm mʊdʒʱeː ɦɪnd̪iː sɪkʰaːoːɡeː"
+    pos: "phrase"
+    bases:
+      - { word: "तुम", ref: "hi-0747" }
+      - { word: "मुझे", ref: "hi-0745" }
+      - { word: "हिंदी", base: "हिंदी", reading: "hindī" }
+      - { word: "सिखाओगे", ref: "hi-0954" }
+    confusables:
+      - { id: "f1", word: "सिखाएगा", reading: "sikhāēgā", kind: "form" }
+      - { id: "w1", word: "सुनाओगे", reading: "sunāōgē", kind: "word" }
+  - id: "hi-0968"
+    target: "तुम मेरी बात सुनकर हँसोगे?"
+    reading: "tum mērī bāt sunkar ham̐sōgē?"
+    ipa: "t̪ʊm meːriː baːt̪ sʊnkər ɦə̃soːɡeː"
+    pos: "phrase"
+    bases:
+      - { word: "तुम", ref: "hi-0747" }
+      - { word: "मेरी", ref: "hi-0752" }
+      - { word: "बात", base: "बात", reading: "bāt" }
+      - { word: "सुनकर", ref: "hi-0783" }
+      - { word: "हँसोगे", ref: "hi-0959" }
+    confusables:
+      - { id: "f1", word: "हँसोगी", reading: "ham̐sōgī", kind: "form" }
+      - { id: "w1", word: "रोओगे", reading: "rōōgē", kind: "word" }
+  - id: "hi-0969"
+    target: "मैं अक्सर चाबी भूलता हूँ।"
+    reading: "maim̐ aksar cābī bhūltā hūm̐."
+    ipa: "mɛ̃ː əksər tʃaːbiː bʱuːlt̪aː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "अक्सर", ref: "hi-0812" }
+      - { word: "चाबी", ref: "hi-0431" }
+      - { word: "भूलता", ref: "hi-0945" }
+      - { word: "हूँ", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", word: "भूलती", reading: "bhūltī", kind: "form" }
+      - { id: "w1", word: "झूलता", reading: "jhūltā", kind: "word" }

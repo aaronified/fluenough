@@ -34,7 +34,7 @@
 # The core's order is by judgement, most common first:
 # about me, everyday verbs, the common adverbs and function
 # words (planned), how much and how many (planned), describing words
-# (planned), time, more verbs (planned), work.
+# (planned), time, more verbs, work.
 # It was meant to come from Wikipedia's counts
 # (tools/wikipedia_frequency.py, #516), but
 # no Hindi Wikipedia dump could be fetched here (2026-10-17):
@@ -141,11 +141,8 @@ units:
     words: 28
   - decks: ["hi-time", "*"]
     words: 17
-  - planned: { id: "hi-more-verbs", theme: "more-verbs", words: 25 }
-    listening_passages:
-      - { id: "kitchen-help", text: { "en": "Someone tells a helper what to do in the kitchen" } }
-    reading_passages:
-      - { id: "how-to-make-tea", text: { "en": "A short card on how to make tea" } }
+  - decks: ["hi-more-verbs", "hi-more-verbs-sentences", "hi-reading-kitchen-help", "hi-reading-how-to-make-tea", "*"]
+    words: 25
   - decks: ["hi-work", "*"]
     words: 19
   # 5. Rules as forms, practised on the words known: noun forms,

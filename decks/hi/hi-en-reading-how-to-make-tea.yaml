@@ -1,0 +1,39 @@
+schema: 1
+id: "hi-en-reading-how-to-make-tea"
+name: "Reading: how to make tea"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A short card on how to make tea, with the verbs of this unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-how-to-make-tea"
+    title: "How to make tea"
+    theme: "more-verbs"
+    sentences:
+      - { text: "पहले पानी उबालो।", reading: "pahlē pānī ubālō." }
+      - { text: "फिर उसमें चाय और दूध डालो।", reading: "phir usmēm̐ cāy aur dūdh ḍālō." }
+      - { text: "दो मिनट तक उबालो।", reading: "dō minaṭ tak ubālō." }
+      - { text: "फिर चाय छानो और कप में परोसो।", reading: "phir cāy chānō aur kap mēm̐ parōsō." }
+      - { text: "गरम-गरम पियो।", reading: "garam-garam piyō." }
+    questions:
+      - id: "hi-0973"
+        prompt: { en: "What do you boil first?" }
+        options:
+          - { en: "Water" }
+          - { en: "Milk" }
+        answer: 1
+      - id: "hi-0974"
+        prompt: { en: "What goes into the water along with the tea?" }
+        options:
+          - { en: "Milk" }
+          - { en: "Salt" }
+        answer: 1
+      - id: "hi-0975"
+        prompt: { en: "The tea is served in a cup." }
+        answer: true
+      - id: "hi-0976"
+        prompt: { en: "The tea should be drunk cold." }
+        answer: false
