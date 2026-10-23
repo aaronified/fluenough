@@ -1,0 +1,73 @@
+schema: 1
+id: "es-en-reading-questions"
+name: "Reading: questions"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about asking who, what, where, when and how much. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-asking-around"
+    title: "Asking around"
+    theme: "questions"
+    sentences:
+      - text: "Perdón, ¿dónde está la taquilla?"
+      - text: "Está allí, al lado de la puerta."
+      - text: "¿Cuándo sale el tren a Sevilla?"
+      - text: "Sale a las diez y media."
+    questions:
+      - id: "es-0080"
+        prompt: { en: "Where is the ticket office?" }
+        options:
+          - { en: "Next to the door" }
+          - { en: "Upstairs" }
+          - { en: "At the bus stop" }
+        answer: 1
+      - id: "es-0081"
+        prompt: { en: "When does the train to Seville leave?" }
+        options:
+          - { en: "At half past ten" }
+          - { en: "At ten" }
+          - { en: "At eleven" }
+        answer: 1
+      - id: "es-0082"
+        prompt: { en: "What does the speaker ask first?" }
+        options:
+          - { en: "Where the ticket office is" }
+          - { en: "How much a ticket costs" }
+          - { en: "Who the train is for" }
+        answer: 1
+  - id: "es-tourist-leaflet"
+    title: "A tourist leaflet"
+    theme: "questions"
+    sentences:
+      - text: "¿Dónde está el museo?"
+      - text: "El museo está en la plaza mayor."
+      - text: "¿Cuánto cuesta la entrada?"
+      - text: "Cuesta cinco euros."
+      - text: "¿Por qué es famoso el pueblo?"
+      - text: "Porque tiene una catedral muy bonita."
+    questions:
+      - id: "es-0083"
+        prompt: { en: "Where is the museum?" }
+        options:
+          - { en: "Near the station" }
+          - { en: "In the main square" }
+          - { en: "By the river" }
+        answer: 2
+      - id: "es-0084"
+        prompt: { en: "How much is the entrance?" }
+        options:
+          - { en: "Five euros" }
+          - { en: "Nine euros" }
+          - { en: "It is free" }
+        answer: 1
+      - id: "es-0085"
+        prompt: { en: "Why is the town famous?" }
+        options:
+          - { en: "It has a big station" }
+          - { en: "It has a pretty cathedral" }
+          - { en: "It has good food" }
+        answer: 2
