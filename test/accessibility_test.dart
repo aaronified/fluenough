@@ -26,7 +26,6 @@ import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/core/feedback/report.dart';
 import 'package:fluenough/core/models/deck.dart';
-import 'package:fluenough/core/numbers/number_practice.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart' show Ask;
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
@@ -710,9 +709,11 @@ void main() {
         settings: settings,
       ),
     );
-    final card =
-        tester.widget<TypedDrill>(find.byType(TypedDrill)).session.item.card
-            as NumberCard;
+    final card = tester
+        .widget<TypedDrill>(find.byType(TypedDrill))
+        .session
+        .item
+        .card;
     await tester.enterText(find.byType(TextField), '1');
     await tester.pump();
     await tester.tap(find.text(l10n.drillCheck));
