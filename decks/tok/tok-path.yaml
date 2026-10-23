@@ -294,11 +294,8 @@ units:
     words: 2
     grammar: ["en-subjects", "repeated-li-e", "anu-choice", "taso-but"]
   # moli, utala, kalama and alasa.
-  - planned: { id: "tok-more-verbs", theme: "more-verbs", words: 4 }
-    listening_passages:
-      - { id: "a-hunt", text: { "en": "A short story told aloud: someone tries to catch a noisy bird" } }
-    reading_passages:
-      - { id: "game-report", text: { "en": "A report of a game: who fought, who tried, who lost" } }
+  - decks: ["tok-more-verbs", "tok-more-verbs-sentences", "tok-reading-more-verbs", "*"]
+    words: 4
     milestone: "A2"
   # B1: the nimi ku suli, composition, proper names, reported speech,
   # chained contexts, and real community texts.
