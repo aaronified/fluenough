@@ -77,6 +77,7 @@ extension PlacementCredit on AppState {
         for (final mode in card.modesIn(
           ttsAvailable: true,
           speechAvailable: speaks,
+          siblings: siblingsOf(card),
         )) {
           if (on.contains(mode)) want(card, id, mode, null);
         }

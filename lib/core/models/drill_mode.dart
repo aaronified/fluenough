@@ -74,6 +74,15 @@ enum DrillMode {
     values.where((mode) => !mode.isScript),
   );
 
+  /// The four vocabulary skills: what a card is asked unless it opts out, and
+  /// what a rules or pattern cell opts out of (#522, step 6).
+  static const Set<DrillMode> vocabulary = <DrillMode>{
+    recognition,
+    production,
+    listening,
+    speaking,
+  };
+
   /// Whether the app grades this mode itself.
   ///
   /// Recognition is self-assessed: judging a free-text translation is beyond

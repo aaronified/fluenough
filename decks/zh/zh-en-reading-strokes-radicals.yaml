@@ -1,0 +1,42 @@
+schema: 1
+id: "zh-en-reading-strokes-radicals"
+name: "Chinese reading: strokes and radicals"
+kind: reading
+language: { code: zh, iso639_3: cmn, name: "Mandarin Chinese", script: han_simplified, scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed", "script"]
+passages:
+  - id: "zh-naming-the-strokes"
+    title: "Naming the strokes"
+    sentences:
+      - text: "人，口，水。"
+        reading: "rén, kǒu, shuǐ."
+    questions:
+      - id: "zh-0253"
+        prompt: { en: "Which character does the teacher write first?" }
+        options:
+          - { en: "人 (rén), person" }
+          - { en: "口 (kǒu), mouth" }
+          - { en: "水 (shuǐ), water" }
+        answer: 1
+      - id: "zh-0254"
+        prompt: { en: "口 (kǒu) means mouth." }
+        answer: true
+  - id: "zh-radical-chart"
+    title: "A radical chart"
+    sentences:
+      - text: "水，手，木，火，口。"
+        reading: "shuǐ, shǒu, mù, huǒ, kǒu."
+    questions:
+      - id: "zh-0255"
+        prompt: { en: "Which character in the chart means wood?" }
+        options:
+          - { en: "水 (shuǐ), water" }
+          - { en: "木 (mù), wood" }
+          - { en: "火 (huǒ), fire" }
+        answer: 2
+      - id: "zh-0256"
+        prompt: { en: "火 (huǒ) means fire." }
+        answer: true

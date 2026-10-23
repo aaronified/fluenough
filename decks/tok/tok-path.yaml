@@ -21,7 +21,9 @@
 # - Words. A unit's words are the roots it teaches for the first time,
 #   each counted once in the whole path: the 114 words of pu that are not
 #   particles, then the 16 nimi ku suli, 130 in all. The six particles
-#   li, e, la, pi, en and o are taught as rules and count no word.
+#   li, e, la, pi, en and o are taught as rules. Those that have a card (li,
+#   e, o and la, so far) count one word in their unit, as the validator
+#   counts them, so the unit sizes add up to 4 more than the 130 (and 2 more for sina and sona, refs in unit 2).
 # - Rules. Toki Pona has no inflection: no word ever changes its form. Its
 #   grammar is the particles and word order: li before the predicate, e
 #   before the object, modifiers after their head, pi to group them, la
@@ -39,11 +41,11 @@
 #
 # What the levels mean here, by what a learner can do (the CEFR's
 # descriptors, not its word counts):
-# - A1 (66 words): greet, say who you are and what you want, describe a
+# - A1 (72 words, counted as the validator does: 66, the four particle cards li, e, o and la, and sina and sona again in unit 2): greet, say who you are and what you want, describe a
 #   person or thing in a simple sentence, ask and answer yes-no and seme
 #   questions, give a command, and place a sentence in the past or future
 #   with tenpo ... la.
-# - A2 (+46, 112 in all): every word of pu but two; group modifiers with
+# - A2 (+46, 118 in all): every word of pu but two; group modifiers with
 #   pi; say where, from where, with what and how, with the prepositions;
 #   use the preverbs; join subjects, predicates and objects; read a short
 #   simple text and follow a slow conversation on familiar things.
@@ -69,7 +71,7 @@
 # 3. no script units: Toki Pona is written in 14 Latin letters (a e i o
 #    u, j k l m n p s t w), taught in the script guide (tok-script.yaml)
 #    and the sounds unit, so the path has no `alphabet`;
-# 4. a core of common words in themed units: here A1's 66 words, about
+# 4. a core of common words in themed units: here A1's 72 words, about
 #    half the language, ordered by judgement, most common first;
 # 5. rules as forms, practised on the words already known: here the
 #    particles and word order, since there are no forms;
@@ -191,72 +193,46 @@ units:
     words: 8
   # ala after the word it denies; the X ala X question (sina pona ala
   # pona?); seme in the place of the answer; answering with the verb.
-  - planned: { id: "tok-grammar-negation-questions", grammar: ["negation-ala", "x-ala-x-questions", "seme-questions", "answering-yes-no"] }
-    listening_passages:
-      - { id: "yes-no-game", text: { "en": "A guessing game played with yes-no questions" } }
-    reading_passages:
-      - { id: "faq", text: { "en": "A short question-and-answer page about a club" } }
+  - decks: ["tok-grammar-negation-ala", "tok-grammar-x-ala-x-questions", "tok-grammar-seme-questions", "tok-grammar-answering-yes-no", "tok-grammar-negation-questions-sentences", "tok-reading-negation-questions"]
+    words: 0
+    grammar: ["negation-ala", "x-ala-x-questions", "seme-questions", "answering-yes-no"]
   # mama, mije, meli, kulupu, olin and poka (the people beside you).
-  - planned: { id: "tok-family", theme: "family", words: 6 }
-    listening_passages:
-      - { id: "my-family", text: { "en": "Someone describes the people in a family photo" } }
-    reading_passages:
-      - { id: "family-tree", text: { "en": "A small family tree, with each person described in toki pona" } }
+  - decks: ["tok-family", "tok-family-sentences", "tok-reading-family", "*"]
+    words: 6
   # o for commands (o moku!), o after a name to address someone (jan Ana
   # o, ...), and mi wile e ni: sina ... for a polite request.
-  - planned: { id: "tok-grammar-o", grammar: ["o-commands", "o-address"] }
-    listening_passages:
-      - { id: "kitchen-orders", text: { "en": "Someone gives orders while cooking: o pana e telo!" } }
-    reading_passages:
-      - { id: "house-rules", text: { "en": "A list of house rules, each starting with o" } }
+  - decks: ["tok-grammar-o", "tok-grammar-o-commands", "tok-grammar-o-address", "tok-grammar-o-sentences", "tok-reading-o"]
+    words: 1
+    grammar: ["o-commands", "o-address"]
   # telo, kili, suwi, seli and lete.
-  - planned: { id: "tok-food", theme: "food", words: 5 }
-    listening_passages:
-      - { id: "what-to-eat", text: { "en": "Two friends decide what to eat and drink" } }
-    reading_passages:
-      - { id: "simple-menu", text: { "en": "A simple café menu described in toki pona words" } }
+  - decks: ["tok-food", "tok-food-sentences", "tok-reading-food", "*"]
+    words: 5
   # wan, tu, luka, ale and nanpa; mute is already known. The simple
   # system (wan, tu, mute) and counting with luka; nanpa for ordinals.
   # The full nasin nanpa pona is B1's.
-  - planned: { id: "tok-numbers-1-20", theme: "numbers-1-20", words: 5 }
-    listening_passages:
-      - { id: "counting-fruit", text: { "en": "Counting pieces of fruit aloud, with wan, tu, luka and mute" } }
-    reading_passages:
-      - { id: "scoreboard", text: { "en": "A game's scoreboard: who is nanpa wan and nanpa tu" } }
+  - decks: ["tok-numbers-1-20", "tok-numbers-1-20-sentences", "tok-reading-numbers", "*"]
+    words: 5
   # Modifiers follow their head (jan pona, tomo lili), several in a row
   # each modify the whole before them, and a number or mute after a noun
   # makes a plural; nouns never change.
-  - planned: { id: "tok-grammar-modifiers", grammar: ["head-first-modifiers", "number-after-noun"] }
-    listening_passages:
-      - { id: "which-one", text: { "en": "Choosing between things: the big red one, the two small ones" } }
-    reading_passages:
-      - { id: "lost-and-found", text: { "en": "A lost-and-found notice describing a lost bag" } }
+  - decks: ["tok-grammar-head-first-modifiers", "tok-grammar-number-after-noun", "tok-grammar-modifiers-sentences", "tok-reading-modifiers"]
+    words: 0
+    grammar: ["head-first-modifiers", "number-after-noun"]
   # tomo, supa, poki, lupa and ilo.
-  - planned: { id: "tok-home", theme: "home", words: 5 }
-    listening_passages:
-      - { id: "house-tour", text: { "en": "A short tour of a small house" } }
-    reading_passages:
-      - { id: "room-for-rent", text: { "en": "A notice offering a room, with what is in it" } }
+  - decks: ["tok-home", "tok-home-sentences", "tok-reading-home", "*"]
+    words: 5
   # tenpo, suno, mun, open and pini.
-  - planned: { id: "tok-time", theme: "time", words: 5 }
-    listening_passages:
-      - { id: "my-day", text: { "en": "Someone says what they do in the morning, by day and at night" } }
-    reading_passages:
-      - { id: "event-times", text: { "en": "A club's notice of when a meeting starts and ends" } }
+  - decks: ["tok-time", "tok-time-sentences", "tok-reading-time", "*"]
+    words: 5
   # Time with la: tenpo pini la (before, the past), tenpo ni la (now),
   # tenpo kama la (later, the future). Toki Pona has no tense; la is how
   # a sentence is placed in time.
-  - planned: { id: "tok-grammar-time-la", grammar: ["tenpo-la"] }
-    listening_passages:
-      - { id: "yesterday-tomorrow", text: { "en": "Someone says what they did and what they will do" } }
-    reading_passages:
-      - { id: "diary-entry", text: { "en": "A three-line diary entry about yesterday and tomorrow" } }
+  - decks: ["tok-grammar-time-la", "tok-grammar-tenpo-la", "tok-grammar-time-la-sentences", "tok-reading-time-la"]
+    words: 1
+    grammar: ["tenpo-la"]
   # pakala, awen, ken and weka: something goes wrong, wait, can, gone.
-  - planned: { id: "tok-help", theme: "help", words: 4 }
-    listening_passages:
-      - { id: "something-broke", text: { "en": "Someone asks for help: something is broken and a thing is missing" } }
-    reading_passages:
-      - { id: "help-notice", text: { "en": "A notice: what to do if the door is broken" } }
+  - decks: ["tok-help", "tok-help-sentences", "tok-reading-help", "*"]
+    words: 4
     milestone: "A1"
   # A2: the rest of pu, pi, the prepositions, the preverbs, la clauses and
   # joining. Reading and listening to short texts.

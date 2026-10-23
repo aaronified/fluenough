@@ -83,7 +83,7 @@ name: "Rude words"
 $header
 tags: [offensive, unreviewed]
 cards:
-  - { id: $rudeCard, target: "వెధవ", native: "idiot, good-for-nothing", reading: "vedhava", modes: [recognition]${rudeNotes == null ? '' : ', notes: $rudeNotes'} }
+  - { id: $rudeCard, target: "వెధవ", native: "idiot, good-for-nothing", reading: "vedhava", modes: [production, listening, speaking]${rudeNotes == null ? '' : ', notes: $rudeNotes'} }
 ''',
     if (more)
       'decks/te/$moreDeck.yaml':
