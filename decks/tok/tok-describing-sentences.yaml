@@ -1,0 +1,107 @@
+schema: 1
+id: "tok-describing-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "tok-0127"
+    target: "ijo ni li suli."
+    ipa: "ˈijo ni li ˈsuli"
+    pos: "phrase"
+    bases:
+      - { word: "ijo", ref: "tok-0065" }
+      - { word: "ni", ref: "tok-0063" }
+      - { word: "li", ref: "tok-0101" }
+      - { word: "suli", ref: "tok-0119" }
+    confusables:
+      - { id: "w1", ref: "tok-0120", kind: "word" }
+      - { id: "w2", ref: "tok-0121", kind: "word" }
+  - id: "tok-0128"
+    target: "ona li lili."
+    ipa: "ˈona li ˈlili"
+    pos: "phrase"
+    bases:
+      - { word: "ona", ref: "tok-0062" }
+      - { word: "li", ref: "tok-0101" }
+      - { word: "lili", ref: "tok-0120" }
+    confusables:
+      - { id: "w1", ref: "tok-0119", kind: "word" }
+      - { id: "w2", ref: "tok-0122", kind: "word" }
+  - id: "tok-0129"
+    target: "sina lukin e ijo sin."
+    ipa: "ˈsina ˈlukin e ˈijo sin"
+    pos: "phrase"
+    bases:
+      - { word: "sina", ref: "tok-0004" }
+      - { word: "lukin", ref: "tok-0083" }
+      - { word: "e", ref: "tok-0102" }
+      - { word: "ijo", ref: "tok-0065" }
+      - { word: "sin", ref: "tok-0122" }
+    confusables:
+      - { id: "w1", ref: "tok-0003", kind: "word" }
+      - { id: "w2", ref: "tok-0007", kind: "word" }
+  - id: "tok-0130"
+    target: "jan wawa li lape."
+    ipa: "jan ˈwawa li ˈlape"
+    pos: "phrase"
+    bases:
+      - { word: "jan", ref: "tok-0064" }
+      - { word: "wawa", ref: "tok-0123" }
+      - { word: "li", ref: "tok-0101" }
+      - { word: "lape", ref: "tok-0081" }
+    confusables:
+      - { id: "w1", ref: "tok-0121", kind: "word" }
+      - { id: "w2", ref: "tok-0002", kind: "word" }
+  - id: "tok-0131"
+    target: "jan mute li moku."
+    ipa: "jan ˈmute li ˈmoku"
+    pos: "phrase"
+    bases:
+      - { word: "jan", ref: "tok-0064" }
+      - { word: "mute", ref: "tok-0124" }
+      - { word: "li", ref: "tok-0101" }
+      - { word: "moku", ref: "tok-0080" }
+    confusables:
+      - { id: "w1", ref: "tok-0119", kind: "word" }
+      - { id: "w2", ref: "tok-0087", kind: "word" }
+  - id: "tok-0132"
+    target: "ijo ante li pona ala."
+    ipa: "ˈijo ˈante li ˈpona ˈala"
+    pos: "phrase"
+    bases:
+      - { word: "ijo", ref: "tok-0065" }
+      - { word: "ante", ref: "tok-0125" }
+      - { word: "li", ref: "tok-0101" }
+      - { word: "pona", ref: "tok-0002" }
+      - { word: "ala", ref: "tok-0005" }
+    confusables:
+      - { id: "w1", ref: "tok-0126", kind: "word" }
+      - { id: "w2", ref: "tok-0121", kind: "word" }
+  - id: "tok-0133"
+    target: "ijo sama li ike ala."
+    ipa: "ˈijo ˈsama li ˈike ˈala"
+    pos: "phrase"
+    bases:
+      - { word: "ijo", ref: "tok-0065" }
+      - { word: "sama", ref: "tok-0126" }
+      - { word: "li", ref: "tok-0101" }
+      - { word: "ike", ref: "tok-0121" }
+      - { word: "ala", ref: "tok-0005" }
+    confusables:
+      - { id: "w1", ref: "tok-0002", kind: "word" }
+      - { id: "w2", ref: "tok-0125", kind: "word" }
+  - id: "tok-0134"
+    target: "mi wile e ijo suli."
+    ipa: "mi ˈwile e ˈijo ˈsuli"
+    pos: "phrase"
+    bases:
+      - { word: "mi", ref: "tok-0003" }
+      - { word: "wile", ref: "tok-0086" }
+      - { word: "e", ref: "tok-0102" }
+      - { word: "ijo", ref: "tok-0065" }
+      - { word: "suli", ref: "tok-0119" }
+    confusables:
+      - { id: "w1", ref: "tok-0120", kind: "word" }
+      - { id: "w2", ref: "tok-0083", kind: "word" }
