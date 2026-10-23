@@ -163,6 +163,224 @@ void main() {
         expect(selected(), ShellTab.settings.index);
       },
     );
+
+    testWidgets(
+      'the pages follow the finger and the bar follows them; a short slow '
+      'drag springs back, a tap on the bar slides to the tab (#683)',
+      (tester) async {
+        usePhone(tester);
+        final state = await pumpApp(
+          tester,
+          state: AppState.test(
+            settings: SettingsNotifier(
+              spokenLanguages: const <String>['en'],
+              learningLanguages: const <String>['hi', 'bn'],
+              learningChosen: true,
+              languageChoice: 'hi',
+            ),
+          ),
+        );
+        int selected() => tester
+            .widget<NavigationBar>(find.byType(NavigationBar))
+            .selectedIndex;
+        final width = tester.getSize(find.byType(TodayPage)).width;
+
+        // Held a little way across, the pages are between the two tabs, and
+        // the bar is on the nearer one.
+        final gesture = await tester.startGesture(
+          tester.getCenter(find.byType(TodayPage)),
+        );
+        // The first move only wins the drag: the pages follow the finger from
+        // where it won, like a finger that moves in many small steps.
+        await gesture.moveBy(const Offset(-24, 0));
+        await tester.pump();
+        await gesture.moveBy(Offset(-width * 0.3, 0));
+        await tester.pump();
+        expect(
+          tester.getTopLeft(find.byType(DecksPage)).dx,
+          closeTo(width * 0.7, 30),
+        );
+        expect(selected(), ShellTab.today.index);
+        await gesture.moveBy(Offset(-width * 0.3, 0));
+        await tester.pump();
+        expect(selected(), ShellTab.decks.index);
+
+        // Let go slowly, less than half a page from Home: it springs back.
+        await gesture.moveBy(Offset(width * 0.4, 0));
+        await tester.pump(const Duration(seconds: 1));
+        await gesture.up();
+        await tester.pumpAndSettle(const Duration(seconds: 2));
+        expect(state.shellTab.value, ShellTab.today);
+        expect(selected(), ShellTab.today.index);
+        expect(tester.getTopLeft(find.byType(TodayPage)).dx, 0);
+
+        // A tap on the bar slides there.
+        await tester.tap(
+          find.descendant(
+            of: find.byType(NavigationBar),
+            matching: find.byIcon(Icons.insert_chart_outlined),
+          ),
+        );
+        await tester.pump(); // the slide's first frame starts its clock
+        await tester.pump(const Duration(milliseconds: 150));
+        expect(tester.getTopLeft(find.byType(StatsPage)).dx, greaterThan(0));
+        await tester.pumpAndSettle(const Duration(seconds: 2));
+        expect(state.shellTab.value, ShellTab.progress);
+        expect(showing(tester, StatsPage), isTrue);
+        expect(tester.getTopLeft(find.byType(StatsPage)).dx, 0);
+      },
+    );
+  });
+
+  group('the tab pager', () {
+    Future<AppState> pumpPager(WidgetTester tester) async {
+      usePhone(tester);
+      return pumpApp(
+        tester,
+        state: AppState.test(
+          settings: SettingsNotifier(
+            spokenLanguages: const <String>['en'],
+            learningLanguages: const <String>['hi', 'bn'],
+            learningChosen: true,
+            languageChoice: 'hi',
+          ),
+        ),
+      );
+    }
+
+    int selected(WidgetTester tester) =>
+        tester.widget<NavigationBar>(find.byType(NavigationBar)).selectedIndex;
+
+    Finder barIcon(IconData icon) => find.descendant(
+      of: find.byType(NavigationBar),
+      matching: find.byIcon(icon),
+    );
+
+    List<String> opened(AppState state) => <String>[
+      for (final e in state.log.entries)
+        if (e.message.startsWith('Opened tab')) e.message,
+    ];
+
+    testWidgets('a fast fling commits to the next tab however short it is', (
+      tester,
+    ) async {
+      final state = await pumpPager(tester);
+      await tester.fling(find.byType(TodayPage), const Offset(-60, 0), 1500);
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(state.shellTab.value, ShellTab.decks);
+      expect(showing(tester, DecksPage), isTrue);
+      expect(selected(tester), ShellTab.decks.index);
+    });
+
+    testWidgets('a cancelled drag springs back to the page it started on', (
+      tester,
+    ) async {
+      final state = await pumpPager(tester);
+      final width = tester.getSize(find.byType(TodayPage)).width;
+      final gesture = await tester.startGesture(
+        tester.getCenter(find.byType(TodayPage)),
+      );
+      await gesture.moveBy(const Offset(-24, 0)); // wins the drag
+      await tester.pump();
+      await gesture.moveBy(Offset(-width * 0.7, 0));
+      await tester.pump();
+      expect(selected(tester), ShellTab.decks.index);
+      await gesture.cancel();
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(state.shellTab.value, ShellTab.today);
+      expect(selected(tester), ShellTab.today.index);
+      expect(tester.getTopLeft(find.byType(TodayPage)).dx, 0);
+    });
+
+    testWidgets('with reduce motion a tap on the bar switches at once', (
+      tester,
+    ) async {
+      tester.platformDispatcher.accessibilityFeaturesTestValue =
+          const FakeAccessibilityFeatures(disableAnimations: true);
+      addTearDown(
+        tester.platformDispatcher.clearAccessibilityFeaturesTestValue,
+      );
+      final state = await pumpPager(tester);
+      await tester.tap(barIcon(Icons.insert_chart_outlined));
+      await tester.pump();
+      expect(state.shellTab.value, ShellTab.progress);
+      expect(tester.getTopLeft(find.byType(StatsPage)).dx, 0);
+      expect(showing(tester, StatsPage), isTrue);
+    });
+
+    testWidgets('a touch catches the pages mid-slide and sets them down on '
+        'the nearest tab', (tester) async {
+      final state = await pumpPager(tester);
+      // Today is offstage once the pages slide away: read its width first.
+      final width = tester.getSize(find.byType(TodayPage)).width;
+      await tester.tap(barIcon(Icons.insert_chart_outlined));
+      await tester.pump(); // the slide's first frame starts its clock
+      await tester.pump(const Duration(milliseconds: 100));
+      final caught = tester.getTopLeft(find.byType(StatsPage)).dx;
+      expect(caught, greaterThan(0));
+      final gesture = await tester.startGesture(const Offset(200, 300));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 200));
+      expect(tester.getTopLeft(find.byType(StatsPage)).dx, closeTo(caught, 1));
+      // Stats is the third page: its left edge is two pages less the offset.
+      final nearest = ShellTab.values[((2 * width - caught) / width).round()];
+      await gesture.up();
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(state.shellTab.value, nearest);
+      expect(selected(tester), nearest.index);
+      expect(
+        tester
+            .getTopLeft(
+              find.byType(nearest == ShellTab.decks ? DecksPage : StatsPage),
+            )
+            .dx,
+        0,
+      );
+    });
+
+    testWidgets('a tap on the bar selects the target throughout, with no '
+        'flicker back and no walk through the middle tabs', (tester) async {
+      final state = await pumpPager(tester);
+      await tester.tap(barIcon(Icons.settings_outlined));
+      for (var i = 0; i < 25; i++) {
+        await tester.pump(const Duration(milliseconds: 16));
+        expect(selected(tester), ShellTab.settings.index);
+        expect(state.shellTab.value, ShellTab.settings);
+      }
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(showing(tester, SettingsPage), isTrue);
+    });
+
+    testWidgets('only the tab the pages settle on is logged', (tester) async {
+      final state = await pumpPager(tester);
+      final width = tester.getSize(find.byType(TodayPage)).width;
+
+      // Over halfway and back: the bar passes Decks, nothing is logged.
+      final gesture = await tester.startGesture(
+        tester.getCenter(find.byType(TodayPage)),
+      );
+      await gesture.moveBy(Offset(-width * 0.7, 0));
+      await tester.pump();
+      await gesture.moveBy(Offset(width * 0.6, 0));
+      await tester.pump(const Duration(seconds: 1));
+      await gesture.up();
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(state.shellTab.value, ShellTab.today);
+      expect(opened(state), isEmpty);
+
+      // A tap two tabs away logs the target once, not Decks on the way.
+      await tester.tap(barIcon(Icons.settings_outlined));
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(opened(state), <String>['Opened tab settings']);
+
+      // A swipe back one tab logs that tab once.
+      await tester.fling(find.byType(SettingsPage), const Offset(300, 0), 1500);
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+      expect(opened(state), <String>[
+        'Opened tab settings',
+        'Opened tab progress',
+      ]);
+    });
   });
 
   group('the tour', () {
