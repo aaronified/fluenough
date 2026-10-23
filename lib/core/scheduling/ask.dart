@@ -92,11 +92,18 @@ enum Ask {
 /// the cells of its own row, the same word, that its expansion lists as
 /// options, each showing something different from [card] and from the others.
 /// Never another word's form, nor a form of a rule its layer leaves out, since
-/// such a cell is not among the options. Empty for a card that is not a
-/// rules table's cell, or for another kind of question.
+/// such a cell is not among the options. For a card that is not a rules
+/// table's cell, its [formSiblings]. Empty for another kind of question.
 List<Card> formChoices(Card card, Ask ask, Iterable<Card> cells) {
+  if (!ask.choosesAmongForms) return const <Card>[];
   final rule = card.rule;
-  if (rule == null || !ask.choosesAmongForms) return const <Card>[];
+  if (rule == null) {
+    final shown = <String>{ask.optionOf(card)};
+    return <Card>[
+      for (final other in formSiblings(card, cells))
+        if (shown.add(ask.optionOf(other))) other,
+    ];
+  }
   final forms = <String>{for (final option in rule.options) option.form};
   final shown = <String>{ask.optionOf(card)};
   return <Card>[
@@ -106,6 +113,28 @@ List<Card> formChoices(Card card, Ask ask, Iterable<Card> cells) {
           other.deckId == card.deckId &&
           forms.contains(other.target) &&
           shown.add(ask.optionOf(other)))
+        other,
+  ];
+}
+
+/// The other forms of [card]'s word that its `bases` name (#522, step 4;
+/// owner, 2026-10-23, "Sibling cards"): the cards of [cards], other than
+/// [card] itself, that share a base with it, that is, whose `bases` ref the
+/// same base card, and whose target differs from [card]'s. Empty for a rules
+/// table's cell, which has its row, and for a card with no sibling.
+List<Card> formSiblings(Card card, Iterable<Card> cards) {
+  if (card.rule != null) return const <Card>[];
+  final refs = <String>{
+    for (final base in card.bases)
+      if (base.ref case final ref?) ref,
+  };
+  if (refs.isEmpty) return const <Card>[];
+  return <Card>[
+    for (final other in cards)
+      if (other.id != card.id &&
+          other.rule == null &&
+          other.target != card.target &&
+          other.bases.any((base) => refs.contains(base.ref)))
         other,
   ];
 }
@@ -147,12 +176,14 @@ List<SessionItem> reviewAsks(
   bool Function(SessionItem item)? hearsForm,
   bool Function(SessionItem item)? recallsFirst,
   bool Function(SessionItem item)? typed,
+  List<Card> Function(Card card)? siblingsOf,
 }) {
   final context = QuestionContext(
     canChoose: canChoose,
     hearsForm: hearsForm,
     recallsFirst: recallsFirst,
     typed: typed,
+    siblingsOf: siblingsOf,
   );
   final recognised = <int>[
     for (final (i, item) in items.indexed)

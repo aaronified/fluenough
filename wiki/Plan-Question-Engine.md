@@ -125,15 +125,21 @@ every card in the shipped decks, then deletes the old.
    types whose `eligible` is "the card has other forms of its word"
    (`bases` or the rule row), not `rule != null`. `lessonQuestions` for a
    rules cell comes from the registry.
-   **Built (#522), in part:** `chooseFormMeaning` is eligible when another
-   form of the word means something else (`Card.choosesMeaning`) and
-   `chooseForm` when the word has other forms (`Card.hasOtherForms`), not
-   when the card is a rules cell; `lessonQuestions` asks the registry
+   **Built (#522):** `chooseFormMeaning` is eligible when another form of
+   the word means something else (`Card.choosesMeaning`) and `chooseForm`
+   when the word has other forms (`Card.hasOtherForms`), not when the card
+   is a rules cell; `lessonQuestions` asks the registry
    (`grammarLessonQuestions`) for a rules cell. Same questions as pinned.
-   Not built: forms named by `bases`. A `bases` entry points at the base
-   word, not at sibling forms, so there is no source of the wrong options
-   or of the "form" and "meaning" to show. Open question for the owner:
-   what are a base-word card's other forms, and where do they come from?
+   **Forms named by `bases`** (owner, 2026-10-23, asked what a base-word
+   card's other forms are: "Sibling cards"): the other cards whose `bases`
+   ref the same base card, with a different target (`formSiblings`), supply
+   the wrong options (`formChoices`) and make the types eligible; a card
+   with no sibling stays ineligible. The review gets them through
+   `reviewAsks(siblingsOf:)`. A card still reaches a grammar skill only by
+   its `modes` (step 6 changes that), and `grammarUnderstood` is still
+   refused by the parser on a card that is not a rules cell, so no shipped
+   card gains a form question yet. A lesson does not read siblings yet
+   (step 8).
 5. **Rearrange by data (#3).** `eligible` is "the target has three or more
    tokens", whatever `pos` is. A two-word phrase stays eligible so that the
    1,098 cards keep it (word-order-tiles.md).
