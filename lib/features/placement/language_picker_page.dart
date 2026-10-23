@@ -13,7 +13,6 @@ import '../../app/placement_credit.dart';
 import '../../app/script_test.dart';
 import '../../core/data/spoken_languages.dart';
 import '../../core/decks/deck_index.dart' show decksBeforeReady;
-import '../../core/decks/ipa_course.dart';
 import '../../core/decks/language_catalog.dart';
 import '../../core/decks/notation.dart';
 import '../../l10n/app_localizations.dart';
@@ -97,39 +96,12 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
   late final Set<String> _learning = _learningOf(_app);
   late Set<String> _ticked = <String>{..._learning, ...widget.initialChosen};
 
-  /// Which of the IPA course is chosen, "my languages" or "whole chart":
-  /// two entries of one language in the list, with one progress between
-  /// them (ADR-0041). Only meaningful while the IPA is [_ticked].
-  late IpaScope _scope = _app.settings.ipaScope;
-
-  /// The scope as it was saved, which the entry of the IPA the learner
-  /// already has is.
-  late final IpaScope _savedScope = _app.settings.ipaScope;
-
-  /// Whether [language]'s entry is the one chosen: a language with one
-  /// entry when its code is, the IPA when its scope is too.
-  bool _isTicked(CatalogLanguage language) =>
-      _ticked.contains(language.code) &&
-      (language.variant == null || language.variant == _scope.name);
+  /// Whether [language]'s entry is the one chosen.
+  bool _isTicked(CatalogLanguage language) => _ticked.contains(language.code);
 
   /// Whether [language]'s entry is the one the learner already learns.
   bool _isLearned(CatalogLanguage language) =>
-      _learning.contains(language.code) &&
-      (language.variant == null || language.variant == _savedScope.name);
-
-  /// The IPA as the two entries it is offered as, in the place of its one:
-  /// "IPA: my languages" and "IPA: whole chart".
-  List<CatalogLanguage> _withIpaEntries(
-    AppLocalizations l10n,
-    List<CatalogLanguage> all,
-  ) => <CatalogLanguage>[
-    for (final language in all)
-      if (language.code == ipaLanguageCode) ...<CatalogLanguage>[
-        language.asVariant(IpaScope.mine.name, l10n.pickerIpaMine),
-        language.asVariant(IpaScope.whole.name, l10n.pickerIpaWhole),
-      ] else
-        language,
-  ];
+      _learning.contains(language.code);
 
   /// The scripts each language's sheet chose to learn, by language: none
   /// is Latin letters only. Applied on Continue, the language's own script
@@ -278,12 +250,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
   void _learn(AppState state, CatalogLanguage language, SheetReply reply) {
     final code = language.code;
     final l10n = AppLocalizations.of(context)!;
-    final variant = language.variant;
     final already = _learnsNow(language);
-    // The other entry of the IPA, while it is chosen: its scope changes,
-    // and it is still the one language, learned once.
-    final switchScope =
-        variant != null && _ticked.contains(code) && variant != _scope.name;
     setState(() {
       _scriptsChosen[code] = reply.scripts;
       if (already) return;
@@ -292,11 +259,10 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
       _scriptPassed[code] = reply.scriptPassed;
       if (reply.native case final native?) _native[code] = native;
       _ticked = <String>{..._ticked, code};
-      if (variant != null) _scope = IpaScope.tryParse(variant) ?? _scope;
     });
     if (already) return;
     _announce(l10n.pickerAnnounceChosen(language.name));
-    if (!switchScope) _startDownload(state, code);
+    _startDownload(state, code);
     _showCard(language.key);
   }
 
@@ -835,7 +801,6 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
   }) {
     _saved = true;
     final settings = state.settings;
-    settings.ipaScope = _scope;
     for (final MapEntry(:key, :value) in alphabet.entries) {
       settings.setLearnsAlphabet(key, value);
     }
@@ -1021,8 +986,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final spoken = state.settings.spokenLanguages;
-    final base = state.catalogLanguages(ownNames: _ownNames);
-    final all = _withIpaEntries(l10n, base);
+    final all = state.catalogLanguages(ownNames: _ownNames);
     final query = _search.text;
     final searching = query.trim().isNotEmpty;
     final shown = <CatalogLanguage>[
@@ -1046,7 +1010,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     };
     final added = _added(all);
     final waiting = _waiting(state, added);
-    final names = <String, String>{for (final l in base) l.code: l.name};
+    final names = <String, String>{for (final l in all) l.code: l.name};
     String join(List<String> codes) =>
         <String>[for (final code in codes) names[code] ?? code]
             .join(l10n.commonListSeparator);

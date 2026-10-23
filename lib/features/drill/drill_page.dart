@@ -214,7 +214,6 @@ class _DrillPageState extends State<DrillPage> {
 
   @override
   void dispose() {
-    if (widget.request.cardIds != null) _app.unpinIpaCards();
     _session
       ?..removeListener(_onSession)
       ..dispose();

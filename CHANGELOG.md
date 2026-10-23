@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- The IPA course is one entry in the list of languages, the whole chart: "IPA: my languages" is gone, with its setting, and the card tags that picked the symbols of your languages stay for focusing. Progress is shared by card, so nothing is lost; "The sounds of this word" is unchanged (#735).
 - The language bar is a centred, looping wheel with the selection fixed at the centre (All moves to the left on Progress): it follows the finger 1:1, ticks at each language, coasts to a detent on a fling and settles on a spring, a touch stops it, and the pill then grows over 0.3 s to the language's name (#703, #682).
 - The four tabs slide: the pages follow the finger and settle on a tab with a spring (stiffness 400, damping ratio 0.75, no bounce on a slow release), a tap on the bar slides in 0.3 s, a touch catches the pages mid-way, and the pages rubber-band at Today and Settings (#683).
 - The deck validator ends a failing run with an `Errors:` section repeating every error (cross-file ones, and each file's with its file), so CI's log shows them at its tail; a passing run is unchanged.

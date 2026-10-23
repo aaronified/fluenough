@@ -1,4 +1,4 @@
-# ADR-0041: The IPA is taught as a language, in two courses that share progress
+# ADR-0041: The IPA is taught as a language, as one course
 
 Source of truth: this wiki page.
 
@@ -8,6 +8,14 @@ Source of truth: this wiki page.
   offer to add"; the design is the plan
   [ipa-course.md](Plan-Ipa-Course)).
 - **Date:** 2026-10-16
+- **Amended 2026-10-23 (#735):** the "my languages" scope is dropped (owner:
+  "drop the only your languages IPA course. Doesn't matter. We anyway have
+  the tags."). The course is the whole chart, one entry in the list, and
+  `Settings.ipaScope`, `Catalog.forIpa` and the pinning of "sounds" cards are
+  gone. Where the text below speaks of two entries or a scope, it is what was
+  built first. A learner who had "my languages" keeps all their progress: it
+  was always keyed by card, and the course now also offers the cards they had
+  not been given.
 - **Number:** the drafted `0026-ipa-course-and-icons` was never merged and
   0026 is taken ([ADR-0026](ADR-0026-Sound-On-Every-Card)); this is the next
   free number. The language icons are [ADR-0027](ADR-0027-Language-Icons).
@@ -37,17 +45,13 @@ a voice, and the IPA is neither.
    said with the card's sound. The card shows each example marked "Has this
    sound" or "Does not have this sound", by an icon and words, never by colour
    alone, and in Inspect.
-3. **One language, two entries, one progress.** The language list offers
-   "IPA: my languages" and "IPA: whole chart". Choosing either learns `ipa`;
-   choosing the other while it is learned changes only the learner's scope,
-   `Settings.ipaScope`. Cards carry the languages that use their sound as
-   tags, with `core` for the symbols everyone needs; in "my languages" a card
-   is in the course when it is `core` or tagged with a language the learner
-   learns. **This is filtered in one place**, `Catalog.forIpa`, applied by
-   `AppState` to what every screen reads (`decks`, `deckById`, `deckOf`), so
-   counts, lessons, finished decks and Inspect agree. A deck left with no card
-   is not on offer. A card the learner has answered stays in their course
-   whatever its tags: it is scheduled.
+3. **One language, one entry, the whole chart.** The language list offers
+   "IPA", and choosing it learns `ipa`. Cards still carry the languages that
+   use their sound as tags, with `core` for the symbols everyone needs; the
+   tags are for a learner to focus on their languages' symbols, and no
+   screen cuts the course by them. (Until 2026-10-23 a second entry,
+   "IPA: my languages", cut the course to the symbols of the languages the
+   learner learns, filtered in `Catalog.forIpa`: dropped, #735.)
 4. **The IPA is learned only when chosen.** A profile that learns "every
    language" because it never chose does not learn the IPA
    (`Profile.learns`). The picker does not place it: there is no level to
@@ -69,14 +73,11 @@ a voice, and the IPA is neither.
    as IPA course practice and are scheduled. For a learner who is not
    learning the IPA the button still shows and first offers to add the course
    ("Show, offer to add"), downloading its decks if they are not on the phone.
-   The cards are of the whole chart, whatever the scope: the symbols of a word
-   are what the word needs.
+   The cards are of the whole chart: the symbols of a word are what the word
+   needs.
 
 ## Consequences
 
-- A symbol card out of a learner's "my languages" tags reaches their course
-  by being practised from the button, and stays in it. Without that, the
-  schedule would hold cards no screen shows.
 - Every drill's header has one more button. It is empty on cards with no
   IPA, which is every card until the Wiktionary IPA lands
   (`wiktionary-ipa.md`, removed; see git history; now `tools/import_wiktionary.py`); Indic decks have theirs.
@@ -84,19 +85,18 @@ a voice, and the IPA is neither.
   plain letter as well as the marked one, which is a fair review and costs a
   card more; a segmenter needs a list of every symbol and its marks, which is
   the course's own data and may come later.
-- Two entries in the picker share one language's card state (download,
-  alpha notice, its progress) and differ only in their name, tick and scope.
 - The decks are `CC-BY-SA-4.0`, as every deck is since
   [ADR-0040](ADR-0040-Decks-Are-Cc-By-Sa).
 
 ## Alternatives considered
 
-- **Two languages, `ipa` and `ipa-mine`.** Progress is keyed by card id, so
-  two languages would need the same cards twice or a ref from one to the
-  other, and a learner switching would see two progresses. One language with
-  a scope is simpler and is what the owner asked for ("They share progress").
-- **Filtering in each screen.** Counts, lessons, finished decks and Inspect
-  would disagree the first time one forgot; the plan says "in one place".
+- **A scope: "my languages" beside the whole chart** (built first, dropped
+  2026-10-23, #735). Two entries of one language with one progress, the
+  course cut by tags in one place. The tags already let a learner focus on
+  their languages' symbols, so the second entry cost a setting, a filter and
+  a pin for the "sounds" session for little.
+- **Two languages, `ipa` and `ipa-mine`.** Progress is keyed by card, so two
+  languages would need the same cards twice or a ref from one to the other.
 - **A keyboard of IPA symbols for typing.** Phone keyboards have none and an
   on-screen one is a project of its own; choosing the symbol is a fair test of
   recognition and recall, and is what `typed: false` asks.
