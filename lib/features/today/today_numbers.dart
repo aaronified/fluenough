@@ -1,18 +1,11 @@
-import 'dart:math' as math;
-
 import '../../app/app_state.dart';
+import '../../app/daily_plan.dart';
 import '../../app/memory_progress.dart';
 import '../../app/session.dart';
 import '../../app/skill.dart';
 import '../../core/models/deck.dart';
-import '../../core/models/reading.dart';
 import '../../core/scheduling/skill_fit.dart';
-import '../../core/scheduling/lesson.dart';
 import '../../ui/widgets/pace_parts.dart';
-
-/// How long the design allows for one card when it estimates a session:
-/// "about 4 min" for 12 cards.
-const int secondsPerCard = 20;
 
 /// The skills Today draws a tile for: Recognition, Hear, Say, Write and
 /// Grammar (ADR-0034). Minimal pairs have none: they are drilled from their
@@ -40,16 +33,6 @@ enum WeekDayStatus {
 
 /// One of the last seven days, and whether it was practised.
 typedef WeekDay = ({DateTime date, WeekDayStatus status});
-
-/// A language's next lesson (ADR-0024): how many words it teaches, or
-/// whether it is a passage to read, and whether today's is done already,
-/// so that this one is another.
-typedef TodayLesson = ({
-  LanguageInfo language,
-  int words,
-  bool reading,
-  bool done,
-});
 
 /// What Today shows of the learner's pace (ADR-0035,
 /// "Shown prominently"): the strip on the due card, and a mark on each
@@ -128,7 +111,7 @@ class TodayNumbers {
     required this.newWords,
     required this.week,
     this.languages = const <LanguageInfo>[],
-    this.lessons = const <TodayLesson>[],
+    this.daily = const <DailyPlan>[],
     this.dueIn = const <Skill, int>{},
     this.revisable = const <Skill, int>{},
     this.pace,
@@ -164,22 +147,22 @@ class TodayNumbers {
         if (isSameDay(e.at, now) && !earlier.contains(e.cardId)) e.cardId,
     }.length;
 
-    // Each language's next lesson, in the order the learner chose them.
+    // Each language's day, in the order the learner chose them. A language
+    // with nothing left today and nothing spent has no ring of its own, but
+    // the first keeps one, so that Today always says where the day stands.
     final chosen = state.settings.learningLanguages;
-    final lessons = <TodayLesson>[
+    final plans = <DailyPlan>[
       for (final code in <String>[
         ...chosen.where(languages.containsKey),
         ...languages.keys.where((code) => !chosen.contains(code)),
       ])
-        if (state.lessonFor(DrillRequest.lesson(language: code))
-            case final items when items.isNotEmpty)
-          (
-            language: languages[code]!,
-            words: lessonCardCount(items),
-            reading: items.first.card is QuestionCard,
-            done: state.lessonDoneToday(code),
-          ),
+        state.dailyPlanFor(languages[code]!),
     ];
+    final daily = <DailyPlan>[
+      for (final plan in plans)
+        if (!plan.nothingLeft || plan.spent > Duration.zero) plan,
+    ];
+    if (daily.isEmpty && plans.isNotEmpty) daily.add(plans.first);
     WeekDay dayOf(int back) {
       final date = addDays(today, -back);
       final status = progress.practisedOn(date)
@@ -221,7 +204,7 @@ class TodayNumbers {
       newWords: newWords,
       week: <WeekDay>[for (var back = 6; back >= 0; back--) dayOf(back)],
       languages: state.todayLanguages,
-      lessons: lessons,
+      daily: daily,
       pace: todayPaceOf(state, onScreen: onScreen),
     );
   }
@@ -259,9 +242,8 @@ class TodayNumbers {
   /// Words taught today, in lessons.
   final int newWords;
 
-  /// Each language's next lesson, in the order the learner chose them; a
-  /// language with nothing left to teach has none.
-  final List<TodayLesson> lessons;
+  /// Each language's day, in the order the learner chose them (#521).
+  final List<DailyPlan> daily;
 
   /// The last seven days, oldest first, ending today.
   final List<WeekDay> week;
@@ -270,20 +252,9 @@ class TodayNumbers {
   /// drilled: one session each, with a break between.
   final List<LanguageInfo> languages;
 
-  /// What Start review runs: the first language's session when there is more
-  /// than one, so that languages come one at a time.
-  DrillRequest get start => languages.length > 1
-      ? DrillRequest.today(language: languages.first.code)
-      : const DrillRequest.today();
-
   /// The learner's pace, once some skill is adjusted; null before.
   final TodayPace? pace;
 
   /// Nothing to drill now.
   bool get allDone => due == 0;
-
-  /// The estimated length of today's session in whole minutes, at least 1
-  /// for any session.
-  int get minutes =>
-      due == 0 ? 0 : math.max(1, (due * secondsPerCard / 60).round());
 }

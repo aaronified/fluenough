@@ -14,9 +14,9 @@ import 'stats_numbers.dart';
 /// largest size does.
 const int kTagPracticeCount = 20;
 
-/// Every tag of the languages counted, weakest first: the tags answered in
-/// [range] with their bar and share remembered, then those not answered, as
-/// such. Each has a Practise button (#499).
+/// Every tag of the languages counted, weakest first: the tags taught, with
+/// their bar and the share of their taught pairs known now (the measure of
+/// Weakest tags, [range] not applying), then those not taught, as such. Each has a Practise button (#499).
 ///
 /// Counts the language the bar at the top shows, or every language with its
 /// All button on, as Progress does. Practise starts a capped, random set of
@@ -85,6 +85,10 @@ class _AllTagsPageState extends State<AllTagsPage> {
                   ? null
                   : (id) => languageOf(id) == language,
               tagCount: 1 << 30,
+              parametersOf: (e) => state.progress.parameters.of(
+                languageOf(e.deckId) ?? '',
+                e.mode,
+              ),
             );
             // Every tag of the decks learned, answered or not.
             final unanswered = <String>{

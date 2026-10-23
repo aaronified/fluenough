@@ -1,0 +1,249 @@
+schema: 1
+id: "es-en-market"
+kind: "layer"
+core: "es-market"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Market"
+license: "CC-BY-SA-4.0"
+description: "The market and its stalls: fruit and vegetables, the price and the offer, the seller and the shop, with the verbs to cost and to change. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-0567":
+    native: "market"
+    notes: { n1: "El mercado is the market, the place with stalls where people buy food." }
+    bases: {"el": "the", "mercado": "market"}
+    examples:
+      "El mercado está en la ciudad.":
+        native: "The market is in the city."
+        bases: {"El": "the", "mercado": "market", "en": "in", "la": "the"}
+      "Compro pan en el mercado.":
+        native: "I buy bread at the market."
+        bases: {"en": "in", "el": "the", "mercado": "market"}
+  "es-0568":
+    native: "fruit"
+    notes: { n1: "Fruta is fruit in general. One piece is una fruta; apples and pears are frutas." }
+    bases: {"la": "the", "fruta": "fruit"}
+    examples:
+      "La fruta es buena.":
+        native: "The fruit is good."
+        bases: {"La": "the", "fruta": "fruit"}
+      "Compro fruta en el mercado.":
+        native: "I buy fruit at the market."
+        bases: {"fruta": "fruit", "en": "in", "el": "the"}
+  "es-0569":
+    native: "apple"
+    notes: { n1: "Manzana is an apple. The plural is manzanas." }
+    bases: {"la": "the", "manzana": "apple"}
+    examples:
+      "Compro una manzana.":
+        native: "I buy an apple."
+        bases: {"una": "a", "manzana": "apple"}
+      "Las manzanas son buenas.":
+        native: "The apples are good."
+        bases: {"Las": "the", "manzanas": "apple"}
+  "es-0570":
+    native: "orange"
+    notes: { n1: "Naranja is an orange, the fruit. The colour is the same word." }
+    bases: {"la": "the", "naranja": "orange"}
+    examples:
+      "Compro una naranja.":
+        native: "I buy an orange."
+        bases: {"una": "a", "naranja": "orange"}
+      "La naranja es buena.":
+        native: "The orange is good."
+        bases: {"La": "the", "naranja": "orange"}
+  "es-0571":
+    native: "pear"
+    notes: { n1: "Pera is a pear. Its plural is peras." }
+    bases: {"la": "the", "pera": "pear"}
+    examples:
+      "Ana compra una pera.":
+        native: "Ana buys a pear."
+        bases: {"Ana": "Ana", "una": "a", "pera": "pear"}
+      "La pera es grande.":
+        native: "The pear is big."
+        bases: {"La": "the", "pera": "pear"}
+  "es-0572":
+    native: "strawberry"
+    notes: { n1: "Fresa is a strawberry. Its plural is fresas." }
+    bases: {"la": "the", "fresa": "strawberry"}
+    examples:
+      "Compro fresas.":
+        native: "I buy strawberries."
+        bases: {"fresas": "strawberry"}
+      "Las fresas son buenas.":
+        native: "The strawberries are good."
+        bases: {"Las": "the", "fresas": "strawberry"}
+  "es-0573":
+    native: "banana"
+    notes: { n1: "Plátano is a banana. In some countries it also means a plantain." }
+    bases: {"el": "the", "plátano": "banana"}
+    examples:
+      "Compro dos plátanos.":
+        native: "I buy two bananas."
+        bases: {"plátanos": "banana"}
+      "El plátano es bueno.":
+        native: "The banana is good."
+        bases: {"El": "the", "plátano": "banana"}
+  "es-0574":
+    native: "tomato"
+    notes: { n1: "Tomate is a tomato. It is a masculine word, el tomate." }
+    bases: {"el": "the", "tomate": "tomato"}
+    examples:
+      "Compro un kilo de tomates.":
+        native: "I buy a kilo of tomatoes."
+        bases: {"un": "a", "de": "of", "tomates": "tomato"}
+      "El tomate es rico.":
+        native: "The tomato is tasty."
+        bases: {"El": "the", "tomate": "tomato"}
+  "es-0575":
+    native: "onion"
+    notes: { n1: "Cebolla is an onion. It is used in many dishes." }
+    bases: {"la": "the", "cebolla": "onion"}
+    examples:
+      "Necesito una cebolla.":
+        native: "I need an onion."
+        bases: {"una": "a", "cebolla": "onion"}
+      "La cebolla es pequeña.":
+        native: "The onion is small."
+        bases: {"La": "the", "cebolla": "onion"}
+  "es-0576":
+    native: "potato"
+    notes: { n1: "Patata is a potato. In Spain it is often called patata; in some countries papa." }
+    bases: {"la": "the", "patata": "potato"}
+    examples:
+      "Compro patatas.":
+        native: "I buy potatoes."
+        bases: {"patatas": "potato"}
+      "La patata es barata.":
+        native: "The potato is cheap."
+        bases: {"La": "the", "patata": "potato"}
+  "es-0577":
+    native: "carrot"
+    notes: { n1: "Zanahoria is a carrot. Its plural is zanahorias." }
+    bases: {"la": "the", "zanahoria": "carrot"}
+    examples:
+      "Mi madre compra zanahorias.":
+        native: "My mother buys carrots."
+        bases: {"zanahorias": "carrot"}
+      "La zanahoria es larga.":
+        native: "The carrot is long."
+        bases: {"La": "the", "zanahoria": "carrot"}
+  "es-0578":
+    native: "lettuce"
+    notes: { n1: "Lechuga is lettuce, for a salad." }
+    bases: {"la": "the", "lechuga": "lettuce"}
+    examples:
+      "Compro una lechuga.":
+        native: "I buy a lettuce."
+        bases: {"una": "a", "lechuga": "lettuce"}
+      "La lechuga es grande.":
+        native: "The lettuce is big."
+        bases: {"La": "the", "lechuga": "lettuce"}
+  "es-0579":
+    native: "vegetables"
+    notes: { n1: "Verdura is vegetables in general; one vegetable is una verdura." }
+    bases: {"la": "the", "verdura": "vegetables"}
+    examples:
+      "Compro verdura en el mercado.":
+        native: "I buy vegetables at the market."
+        bases: {"verdura": "vegetables", "en": "in", "el": "the"}
+      "La verdura es buena.":
+        native: "The vegetables are good."
+        bases: {"La": "the", "verdura": "vegetables"}
+  "es-0580":
+    native: "price"
+    notes: { n1: "Precio is the price. Ask ¿Cuál es el precio? for what it costs." }
+    bases: {"el": "the", "precio": "price"}
+    examples:
+      "El precio es bajo.":
+        native: "The price is low."
+        bases: {"El": "the", "precio": "price"}
+      "¿Cuál es el precio?":
+        native: "What is the price?"
+        bases: {"el": "the", "precio": "price"}
+  "es-0581":
+    native: "stall"
+    notes: { n1: "Puesto is a market stall, a small shop in the open air." }
+    bases: {"el": "the", "puesto": "stall"}
+    examples:
+      "El puesto de fruta está aquí.":
+        native: "The fruit stall is here."
+        bases: {"El": "the", "puesto": "stall", "de": "of"}
+      "Compro pan en el puesto.":
+        native: "I buy bread at the stall."
+        bases: {"en": "in", "el": "the", "puesto": "stall"}
+  "es-0582":
+    native: "seller (man)"
+    notes: { n1: "Vendedor is a seller, a man who sells. The feminine is la vendedora." }
+    bases: {"el": "the", "vendedor": "seller (man)"}
+    examples:
+      "El vendedor es simpático.":
+        native: "The seller is friendly."
+        bases: {"El": "the", "vendedor": "seller (man)"}
+      "El vendedor vende fruta.":
+        native: "The seller sells fruit."
+        bases: {"El": "the", "vendedor": "seller (man)"}
+  "es-0583":
+    native: "seller (woman)"
+    notes: { n1: "Vendedora is a seller, a woman who sells." }
+    bases: {"la": "the", "vendedora": "seller (woman)"}
+    examples:
+      "La vendedora es simpática.":
+        native: "The seller is friendly."
+        bases: {"La": "the", "vendedora": "seller (woman)"}
+      "La vendedora vende pan.":
+        native: "The seller sells bread."
+        bases: {"La": "the", "vendedora": "seller (woman)"}
+  "es-0584":
+    native: "shop"
+    notes: { n1: "Tienda is a shop, a place where you buy things." }
+    bases: {"la": "the", "tienda": "shop"}
+    examples:
+      "La tienda está en una calle grande.":
+        native: "The shop is on a big street."
+        bases: {"La": "the", "tienda": "shop", "en": "in", "una": "a"}
+      "Compro pan en la tienda.":
+        native: "I buy bread at the shop."
+        bases: {"en": "in", "la": "the", "tienda": "shop"}
+  "es-0585":
+    native: "offer; special price"
+    notes: { n1: "Oferta is an offer, a special low price. En oferta means on offer." }
+    bases: {"la": "the", "oferta": "offer"}
+    examples:
+      "Hay una oferta hoy.":
+        native: "There is an offer today."
+        bases: {"Hay": "there is", "una": "a", "oferta": "offer"}
+      "La fruta está en oferta.":
+        native: "The fruit is on offer."
+        bases: {"La": "the", "en": "in", "oferta": "offer"}
+  "es-0586":
+    native: "change (money back)"
+    notes: { n1: "Cambio is the change: the coins given back after paying." }
+    bases: {"el": "the", "cambio": "change (money back)"}
+    examples:
+      "No tengo cambio.":
+        native: "I have no change."
+        bases: {"cambio": "change (money back)"}
+      "Necesito el cambio.":
+        native: "I need the change."
+        bases: {"el": "the", "cambio": "change (money back)"}
+  "es-0587":
+    native: "to cost"
+    notes: { n1: "Costar is to cost. It changes its stem: cuesta, cuestan. Use ¿Cuánto cuesta? for how much." }
+    examples:
+      "¿Cuánto cuesta el pan?":
+        native: "How much does the bread cost?"
+        bases: {"cuesta": "cost", "el": "the"}
+      "Esta manzana cuesta poco.":
+        native: "This apple costs little."
+        bases: {"Esta": "this", "cuesta": "cost"}
+  "es-0588":
+    native: "to change"
+    notes: { n1: "Cambiar is to change: money for other money, or one thing for another. It is a regular -ar verb." }
+    examples:
+      "Necesito cambiar el dinero.":
+        native: "I need to change the money."
+        bases: {"cambiar": "change", "el": "the"}
+      "Él cambia dinero en la tienda.":
+        native: "He changes money at the shop."
+        bases: {"cambia": "change", "en": "in", "la": "the"}

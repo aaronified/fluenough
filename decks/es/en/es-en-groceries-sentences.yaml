@@ -1,0 +1,32 @@
+schema: 1
+id: "es-en-groceries-sentences"
+kind: "layer"
+core: "es-groceries-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: groceries"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about shopping for food, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-0625":
+    native: "I buy cheese and milk at the supermarket."
+    bases: {"en": "in", "el": "the"}
+    confusables: {"tienda": { why: "Tienda is a shop, a smaller and more general word." }, "mercado": { why: "Mercado is a market, with stalls outside." }}
+  "es-0626":
+    native: "I have a list."
+    bases: {"una": "a"}
+    confusables: {"cambio": { why: "Cambio is change, not a list." }, "precio": { why: "Precio is a price, not a list." }}
+  "es-0627":
+    native: "I need eggs and rice."
+    confusables: {"pollo": { why: "Pollo is chicken, not eggs." }, "aceite": { why: "Aceite is oil, used in cooking." }}
+  "es-0628":
+    native: "I drink coffee with sugar."
+    bases: {"con": "with"}
+    confusables: {"te": { why: "Té is tea, a different drink." }, "zumo": { why: "Zumo is juice, not coffee." }}
+  "es-0629":
+    native: "The meat is expensive."
+    bases: {"La": "the"}
+    confusables: {"pescado": { why: "Pescado is fish, not meat." }, "pollo": { why: "Pollo is chicken, one kind of meat." }}
+  "es-0630":
+    native: "I take chocolate and biscuits home."
+    bases: {"a": "to"}
+    confusables: {"tomar": { why: "Tomar is to take or to drink, a different verb." }, "comprar": { why: "Comprar is to buy, not to carry." }}

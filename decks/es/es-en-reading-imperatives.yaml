@@ -1,0 +1,69 @@
+schema: 1
+id: "es-en-reading-imperatives"
+name: "Reading: class and signs"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts with commands: a teacher's instructions in class, and signs that say what to do and what not to do. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-class-instructions"
+    title: "Class instructions"
+    sentences:
+      - text: "Escucha, por favor."
+      - text: "Lee el libro."
+      - text: "Escribe tu nombre."
+      - text: "No hables ahora."
+    questions:
+      - id: "es-0496"
+        prompt: { en: "What does the teacher ask the class to do first?" }
+        options:
+          - { en: "To listen" }
+          - { en: "To eat" }
+          - { en: "To sleep" }
+        answer: 1
+      - id: "es-0497"
+        prompt: { en: "What should the student write?" }
+        options:
+          - { en: "Their name" }
+          - { en: "The door" }
+          - { en: "A window" }
+        answer: 1
+      - id: "es-0498"
+        prompt: { en: "What should the student not do now?" }
+        options:
+          - { en: "Speak" }
+          - { en: "Read" }
+          - { en: "Write" }
+        answer: 1
+  - id: "es-signs-and-rules"
+    title: "Signs and rules"
+    sentences:
+      - text: "No comas aquí."
+      - text: "Abra la puerta, por favor."
+      - text: "Mire la mesa."
+      - text: "Escriba su nombre aquí."
+    questions:
+      - id: "es-0499"
+        prompt: { en: "What does the first sign say?" }
+        options:
+          - { en: "Do not eat here" }
+          - { en: "Eat here" }
+          - { en: "Eat outside" }
+        answer: 1
+      - id: "es-0500"
+        prompt: { en: "What is the reader asked to open?" }
+        options:
+          - { en: "The door" }
+          - { en: "The window" }
+          - { en: "The book" }
+        answer: 1
+      - id: "es-0501"
+        prompt: { en: "What should you write on the form?" }
+        options:
+          - { en: "Your name" }
+          - { en: "Your address" }
+          - { en: "Your age" }
+        answer: 1
