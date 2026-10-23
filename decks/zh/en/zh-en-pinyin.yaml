@@ -1,0 +1,105 @@
+schema: 1
+id: "zh-en-pinyin"
+kind: "layer"
+core: "zh-pinyin"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pinyin: how the spelling works"
+description: "Eight words that show how pinyin is spelled: the two dots of ü, which drop after j, q and x, the short spellings of iu and ui, the tone mark's place, and the third-tone change."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "zh-0058":
+    native: "woman; female"
+    notes:
+      "n1": "女 (nǚ) is 'woman' and 'female'. After n and l the two dots over the u stay, as in 女 (nǚ) and 绿 (lǜ). 女人 (nǚrén) is 'woman' as a noun."
+    examples:
+      "我是女人。":
+        native: "I am a woman."
+        bases:
+          "女人": { meaning: "woman" }
+      "女人很好。":
+        native: "The woman is good."
+        bases:
+          "女人": { meaning: "woman" }
+  "zh-0059":
+    native: "to go"
+    notes:
+      "n1": "去 (qù) is 'to go'. After j, q and x the two dots over the u are dropped, so it is written qu, not qü."
+    examples:
+      "我去店里。":
+        native: "I'm going to the shop."
+        bases:
+          "店里": { meaning: "in the shop; the shop" }
+      "你去吗？": "Are you going?"
+  "zh-0060":
+    native: "fish"
+    notes:
+      "n1": "鱼 (yú) is 'fish'. After y the sound is written yu, without the two dots."
+    examples:
+      "我买鱼。": "I buy fish."
+      "你吃鱼吗？": "Do you eat fish?"
+  "zh-0061":
+    native: "west"
+    notes:
+      "n1": "西 (xī) is 'west'. 西瓜 (xīguā) is watermelon, which uses the same first sound."
+    examples:
+      "他去西边。":
+        native: "He goes to the west."
+        bases:
+          "西边": { meaning: "west side" }
+      "我买西瓜。":
+        native: "I buy a watermelon."
+        bases:
+          "西瓜": { meaning: "watermelon" }
+  "zh-0062":
+    native: "green"
+    notes:
+      "n1": "绿 (lǜ) is 'green'. Its two dots stay after l. 绿茶 (lǜchá) is green tea."
+    examples:
+      "我喝绿茶。":
+        native: "I drink green tea."
+        bases:
+          "绿茶": { meaning: "green tea" }
+      "这是绿的。":
+        native: "This one is green."
+        bases:
+          "这": { meaning: "this" }
+          "的": { meaning: "particle; here it means 'one'" }
+  "zh-0063":
+    native: "nine"
+    notes:
+      "n1": "九 (jiǔ) is 'nine'. Its vowels iu are written short, from iou, with the tone mark on the u."
+    examples:
+      "这里有九个人。":
+        native: "There are nine people here."
+        bases:
+          "这里": { meaning: "here" }
+          "有": { meaning: "to have" }
+          "个": { meaning: "measure word for people and things" }
+      "九点来吗？":
+        native: "Will you come at nine o'clock?"
+        bases:
+          "九点": { meaning: "nine o'clock" }
+  "zh-0064":
+    native: "old"
+    notes:
+      "n1": "老 (lǎo) is 'old'. Before another third tone it is said with a second tone, as in 老板 (láobǎn), boss, though it is written with its third tone."
+    examples:
+      "这马很老。":
+        native: "This horse is very old."
+        bases:
+          "这": { meaning: "this" }
+      "老师很好。":
+        native: "The teacher is very good."
+        bases:
+          "老师": { meaning: "teacher" }
+  "zh-0065":
+    native: "to write"
+    notes:
+      "n1": "写 (xiě) is 'to write'. The tone mark goes on the e, because a and e always take the mark before other vowels."
+    examples:
+      "我写字。":
+        native: "I write characters."
+        bases:
+          "字": { meaning: "character; word" }
+      "妈写吗？": "Does Mum write?"

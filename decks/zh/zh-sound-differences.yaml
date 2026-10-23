@@ -1,0 +1,334 @@
+schema: 1
+id: "zh-sound-differences"
+part: "core"
+kind: "vocab"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+theme: "sound-differences"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "zh-0074"
+    target: "知"
+    words: ["知"]
+    reading: "zhī"
+    pos: "verb"
+    tags: ["retroflex-palatal"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-chicken", kind: "pair", ref: "zh-0075" }
+    bases: "self"
+    examples:
+      - target: "我不知道。"
+        reading: "wǒ bù zhīdào."
+        words: ["我", "不", "知道"]
+        bases:
+          - { word: "知道", base: "知道", reading: "zhīdào" }
+      - target: "你知道吗？"
+        reading: "nǐ zhīdào ma?"
+        words: ["你", "知道", "吗"]
+        bases:
+          - { word: "知道", base: "知道", reading: "zhīdào" }
+  - id: "zh-0075"
+    target: "鸡"
+    target_scripts: { han_traditional: "雞" }
+    words: ["鸡"]
+    reading: "jī"
+    pos: "noun"
+    tags: ["retroflex-palatal"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-know", kind: "pair", ref: "zh-0074" }
+    bases: "self"
+    examples:
+      - target: "我吃鸡。"
+        reading: "wǒ chī jī."
+        words: ["我", "吃", "鸡"]
+      - target: "他卖鸡。"
+        reading: "tā mài jī."
+        words: ["他", "卖", "鸡"]
+  - id: "zh-0076"
+    target: "池"
+    words: ["池"]
+    reading: "chí"
+    pos: "noun"
+    tags: ["retroflex-palatal"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-flag", kind: "pair", ref: "zh-0077" }
+    bases: "self"
+    examples:
+      - target: "池里有鱼。"
+        reading: "chílǐ yǒu yú."
+        words: ["池里", "有", "鱼"]
+        bases:
+          - { word: "池里", base: "池里", reading: "chílǐ" }
+          - { word: "有", base: "有", reading: "yǒu" }
+      - target: "我去池边。"
+        reading: "wǒ qù chíbiān."
+        words: ["我", "去", "池边"]
+        bases:
+          - { word: "池边", base: "池边", reading: "chíbiān" }
+  - id: "zh-0077"
+    target: "旗"
+    words: ["旗"]
+    reading: "qí"
+    pos: "noun"
+    tags: ["retroflex-palatal"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-pond", kind: "pair", ref: "zh-0076" }
+    bases: "self"
+    examples:
+      - target: "这是旗。"
+        reading: "zhè shì qí."
+        words: ["这", "是", "旗"]
+        bases:
+          - { word: "这", base: "这", reading: "zhè" }
+      - target: "他买旗。"
+        reading: "tā mǎi qí."
+        words: ["他", "买", "旗"]
+  - id: "zh-0078"
+    target: "石"
+    words: ["石"]
+    reading: "shí"
+    pos: "noun"
+    tags: ["retroflex-palatal"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-practise", kind: "pair", ref: "zh-0079" }
+    bases: "self"
+    examples:
+      - target: "这里有石头。"
+        reading: "zhèlǐ yǒu shítou."
+        words: ["这里", "有", "石头"]
+        bases:
+          - { word: "这里", base: "这里", reading: "zhèlǐ" }
+          - { word: "有", base: "有", reading: "yǒu" }
+          - { word: "石头", base: "石头", reading: "shítou" }
+      - target: "这是石。"
+        reading: "zhè shì shí."
+        words: ["这", "是", "石"]
+        bases:
+          - { word: "这", base: "这", reading: "zhè" }
+  - id: "zh-0079"
+    target: "习"
+    words: ["习"]
+    reading: "xí"
+    pos: "other"
+    tags: ["retroflex-palatal"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-stone", kind: "pair", ref: "zh-0078" }
+    bases: "self"
+    examples:
+      - target: "我习惯喝茶。"
+        reading: "wǒ xíguàn hē chá."
+        words: ["我", "习惯", "喝", "茶"]
+        bases:
+          - { word: "习惯", base: "习惯", reading: "xíguàn" }
+          - { word: "茶", base: "茶", reading: "chá" }
+      - target: "他习惯吃鱼。"
+        reading: "tā xíguàn chī yú."
+        words: ["他", "习惯", "吃", "鱼"]
+        bases:
+          - { word: "习惯", base: "习惯", reading: "xíguàn" }
+  - id: "zh-0080"
+    target: "饱"
+    words: ["饱"]
+    reading: "bǎo"
+    pos: "adj"
+    tags: ["aspiration"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-run", kind: "pair", ref: "zh-0081" }
+    bases: "self"
+    examples:
+      - target: "我很饱。"
+        reading: "wǒ hěn bǎo."
+        words: ["我", "很", "饱"]
+      - target: "你饱吗？"
+        reading: "nǐ bǎo ma?"
+        words: ["你", "饱", "吗"]
+  - id: "zh-0081"
+    target: "跑"
+    words: ["跑"]
+    reading: "pǎo"
+    pos: "verb"
+    tags: ["aspiration"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-full", kind: "pair", ref: "zh-0080" }
+    bases: "self"
+    examples:
+      - target: "他跑吗？"
+        reading: "tā pǎo ma?"
+        words: ["他", "跑", "吗"]
+      - target: "我不跑。"
+        reading: "wǒ bù pǎo."
+        words: ["我", "不", "跑"]
+  - id: "zh-0082"
+    target: "都"
+    words: ["都"]
+    reading: "dōu"
+    pos: "adv"
+    tags: ["aspiration"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-steal", kind: "pair", ref: "zh-0083" }
+    bases: "self"
+    examples:
+      - target: "我们都吃鱼。"
+        reading: "wǒmen dōu chī yú."
+        words: ["我们", "都", "吃", "鱼"]
+        bases:
+          - { word: "我们", base: "我们", reading: "wǒmen" }
+      - target: "他们都来。"
+        reading: "tāmen dōu lái."
+        words: ["他们", "都", "来"]
+        bases:
+          - { word: "他们", base: "他们", reading: "tāmen" }
+  - id: "zh-0083"
+    target: "偷"
+    words: ["偷"]
+    reading: "tōu"
+    pos: "verb"
+    tags: ["aspiration"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-all", kind: "pair", ref: "zh-0082" }
+    bases: "self"
+    examples:
+      - target: "他偷鱼。"
+        reading: "tā tōu yú."
+        words: ["他", "偷", "鱼"]
+      - target: "他不偷。"
+        reading: "tā bù tōu."
+        words: ["他", "不", "偷"]
+  - id: "zh-0084"
+    target: "苦"
+    words: ["苦"]
+    reading: "kǔ"
+    pos: "adj"
+    tags: ["aspiration"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-drum", kind: "pair", ref: "zh-0085" }
+    bases: "self"
+    examples:
+      - target: "茶很苦。"
+        reading: "chá hěn kǔ."
+        words: ["茶", "很", "苦"]
+        bases:
+          - { word: "茶", base: "茶", reading: "chá" }
+      - target: "我不喝苦的。"
+        reading: "wǒ bù hē kǔ de."
+        words: ["我", "不", "喝", "苦", "的"]
+        bases:
+          - { word: "的", base: "的", reading: "de" }
+  - id: "zh-0085"
+    target: "鼓"
+    words: ["鼓"]
+    reading: "gǔ"
+    pos: "noun"
+    tags: ["aspiration"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-bitter", kind: "pair", ref: "zh-0084" }
+    bases: "self"
+    examples:
+      - target: "这是鼓。"
+        reading: "zhè shì gǔ."
+        words: ["这", "是", "鼓"]
+        bases:
+          - { word: "这", base: "这", reading: "zhè" }
+      - target: "他打鼓。"
+        reading: "tā dǎ gǔ."
+        words: ["他", "打", "鼓"]
+        bases:
+          - { word: "打", base: "打", reading: "dǎ" }
+  - id: "zh-0086"
+    target: "驴"
+    target_scripts: { han_traditional: "驢" }
+    words: ["驴"]
+    reading: "lǘ"
+    pos: "noun"
+    tags: ["front-rounded-vowel"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-stove", kind: "pair", ref: "zh-0087" }
+    bases: "self"
+    examples:
+      - target: "这是驴，不是马。"
+        reading: "zhè shì lǘ, bú shì mǎ."
+        words: ["这", "是", "驴", "不", "是", "马"]
+        bases:
+          - { word: "这", base: "这", reading: "zhè" }
+          - { word: "马", ref: "zh-0033" }
+      - target: "他卖驴吗？"
+        reading: "tā mài lǘ ma?"
+        words: ["他", "卖", "驴", "吗"]
+  - id: "zh-0087"
+    target: "炉"
+    target_scripts: { han_traditional: "爐" }
+    words: ["炉"]
+    reading: "lú"
+    pos: "noun"
+    tags: ["front-rounded-vowel"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-donkey", kind: "pair", ref: "zh-0086" }
+    bases: "self"
+    examples:
+      - target: "炉在这里。"
+        reading: "lú zài zhèlǐ."
+        words: ["炉", "在", "这里"]
+        bases:
+          - { word: "在", base: "在", reading: "zài" }
+          - { word: "这里", base: "这里", reading: "zhèlǐ" }
+      - target: "这是炉。"
+        reading: "zhè shì lú."
+        words: ["这", "是", "炉"]
+        bases:
+          - { word: "这", base: "这", reading: "zhè" }
+  - id: "zh-0088"
+    target: "字"
+    words: ["字"]
+    reading: "zì"
+    pos: "noun"
+    tags: ["aspiration"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-time", kind: "pair", ref: "zh-0089" }
+    bases: "self"
+    examples:
+      - target: "这个字是什么？"
+        reading: "zhège zì shì shénme?"
+        words: ["这个", "字", "是", "什么"]
+        bases:
+          - { word: "这个", base: "这个", reading: "zhège" }
+          - { word: "什么", ref: "zh-0026" }
+      - target: "你写字吗？"
+        reading: "nǐ xiě zì ma?"
+        words: ["你", "写", "字", "吗"]
+  - id: "zh-0089"
+    target: "次"
+    words: ["次"]
+    reading: "cì"
+    pos: "noun"
+    tags: ["aspiration"]
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-character", kind: "pair", ref: "zh-0088" }
+    bases: "self"
+    examples:
+      - target: "我去一次。"
+        reading: "wǒ qù yí cì."
+        words: ["我", "去", "一次"]
+        bases:
+          - { word: "一次", base: "一次", reading: "yícì" }
+      - target: "这是第一次。"
+        reading: "zhè shì dì yī cì."
+        words: ["这", "是", "第一次"]
+        bases:
+          - { word: "这", base: "这", reading: "zhè" }
+          - { word: "第一次", base: "第一次", reading: "dìyīcì" }
