@@ -7,7 +7,7 @@ Source of truth: this wiki page.
   rearranging), ADR-0013 (the pending units feed lessons) and ADR-0019 (no
   daily cap for a passage to pass). Amended by ADR-0034: how listening is
   asked, and what a right choice records. Amended by
-  [ADR-0045](ADR-0045-Lessons-Take-The-Next-Eligible-Items): a lesson has no
+  [ADR-0046](ADR-0046-Lessons-Take-The-Next-Eligible-Items): a lesson has no
   fixed quota of each difficulty, and a sentence waits for its words and
   rules.
 - **Date:** 2026-10-04

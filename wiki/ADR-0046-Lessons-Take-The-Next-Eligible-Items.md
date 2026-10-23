@@ -1,4 +1,4 @@
-# ADR-0045: A lesson takes the next eligible items, and a sentence waits until its words and rules are known
+# ADR-0046: A lesson takes the next eligible items, and a sentence waits until its words and rules are known
 
 Source of truth: this wiki page.
 

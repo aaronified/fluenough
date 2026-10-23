@@ -4,7 +4,7 @@ import 'question_type.dart';
 import 'session_queue.dart';
 
 /// How hard a new item is to learn, by the item itself (ADR-0024). A lesson
-/// teaches its items easy first; no quota of each (ADR-0045).
+/// teaches its items easy first; no quota of each (ADR-0046).
 enum Difficulty {
   easy,
   medium,
@@ -144,7 +144,7 @@ List<LessonQuestion> lessonQuestions(
   ];
 }
 
-/// A lesson of [cards], as [lessonItems] picks them (ADR-0024, ADR-0045): each card
+/// A lesson of [cards], as [lessonItems] picks them (ADR-0024, ADR-0046): each card
 /// taught, then checked at once; then the exercise, each card asked once
 /// more in another mode, in a mixed order, the ones to be matched together
 /// in pairs.

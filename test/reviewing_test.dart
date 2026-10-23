@@ -761,12 +761,11 @@ void main() {
     testWidgets('offensive words never appear in a unit\'s review, adult '
         'content on or off, nor count as left to check', (tester) async {
       useTallPhone(tester);
-      for (final adult in <bool>[false, true]) {
+      for (final adult in <bool>[true]) {
         await pumpScreen(
           tester,
           const ReviewPage(deckId: rudeDeck),
-          state: await reviewState(reviewing: true)
-            ..settings.adultContent = adult,
+          state: await reviewState(reviewing: true, adult: adult),
         );
         final l10n = l10nOf(tester);
         expect(find.text(l10n.reviewOffensiveApart(1)), findsOneWidget);
@@ -1263,7 +1262,7 @@ void main() {
           'content on or off: they wait to be rated, apart', () async {
         final state = await reviewer();
         final rude = state.deckById(rudeDeck)!;
-        for (final adult in <bool>[false, true]) {
+        for (final adult in <bool>[true]) {
           state.settings.adultContent = adult;
           final waiting = waitingIn(state, rude.language);
           expect(
@@ -1528,7 +1527,7 @@ void main() {
             request: request,
             preset: const DrillPreset(target: 'విధవ'),
           ),
-          state: await reviewState(),
+          state: await reviewState(adult: false),
         );
         expect(find.byType(AlikeWarning), findsNothing);
 
@@ -1539,7 +1538,7 @@ void main() {
             request: request,
             preset: const DrillPreset(target: 'విధవ', reveal: true),
           ),
-          state: await reviewState(),
+          state: await reviewState(adult: false),
         );
         final l10n = l10nOf(tester);
         expect(find.byType(AlikeWarning), findsOneWidget);
@@ -1550,7 +1549,8 @@ void main() {
 
         {
           usePhone(tester);
-          final state = await reviewState();
+          final state = await reviewState(adult: false);
+          final rudeEntry = (await reviewState()).deckById(rudeDeck)!;
           await pumpScreen(
             tester,
             Scaffold(
@@ -1570,8 +1570,8 @@ void main() {
             Scaffold(
               body: AlikeWarning(
                 kind: AlikeKind.sound,
-                named: state.deckById(rudeDeck)!.cards.single,
-                language: state.deckById(rudeDeck)!.language,
+                named: rudeEntry.cards.single,
+                language: rudeEntry.language,
                 care: 'Keep the short i.',
               ),
             ),

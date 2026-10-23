@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- The deck validator rejects a unit whose planned theme comes with a grammar list beside `planned`, as the app already does, and a planned grammar unit may give its grammar beside `planned` (#622).
+- A path may set its own words per level with `levels:` (for example `{ A1: 120, A2: 60, B1: 80 }`), which the deck validator and the app both read; a planned theme unit may plan 0 words, and phrases count toward no level's words (#615).
 - Progress shows hours spent (each answer at most a minute) and about how many hours are left to the end of B1, in a tile row under Words and Level; tapping it opens a popup with each language's hours (#227).
 
 ### Changed
@@ -17,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The IPA course is one entry in the list of languages, the whole chart: "IPA: my languages" is gone, with its setting, and the card tags that picked the symbols of your languages stay for focusing. Progress is shared by card, so nothing is lost; "The sounds of this word" is unchanged (#735).
 - Languages you know lists the living and constructed languages the course paths teach: French, Spanish, German, Mandarin Chinese, Japanese, Korean, Esperanto, Toki Pona, Lojban and Interslavic, in new families (Romance, Sinitic, Koreanic, Japonic, Constructed) with names for the Han (simplified and traditional), Kana, Hangul and Cyrillic scripts. Ancient languages nobody speaks (Sumerian, Egyptian, Mycenaean Greek, Proto-Indo-European) stay off the list (#613).
 - The word-order drill lays its tiles out in the deck's direction: an Urdu sentence is built from the right in an English app. Where the interface quotes right-to-left deck text, as in "Answer: …", the quote is isolated from the words around it (#619). Checking an Urdu deck on a device, and the interface itself laid out right to left, are not done.
+- With Adult content off (the default), a deck of offensive words and any rude card (tagged or registered `offensive`) are hidden everywhere: not listed, not taught in lessons, and not in Today, reviews or practice; they come back when Adult content is turned on. The warning on a word that sounds like a rude one still shows, without the rude word (#628).
 
 ### Fixed
 
