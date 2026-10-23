@@ -163,6 +163,21 @@ every card in the shipped decks, then deletes the old.
    the script lists every deck it changed and each card whose `modes`
    changed meaning, and a reviewer checks that list. Card ids and meanings
    do not change.
+   **Built (#522):** `Card.modes` is read as "excluded from" and
+   `Card.modesIn` returns every skill the data allows less those: the
+   vocabulary skills (`DrillMode.vocabulary`), grammar for a rules cell, a
+   card with siblings (`FormSiblings`, "Same single base") or a card that
+   excludes all four vocabulary skills, and grammar understood where a form
+   means something else. The expanders write the four vocabulary skills on
+   rules and pattern cells. `modesIn` takes the card's siblings, passed at
+   its call sites (`AppState.siblingsOf`, `SessionQueue.build(siblingsOf:)`).
+   The drill's fallback to `chooseFormMeaning` is gated on that type's
+   eligibility. **Convert at release** (owner, 2026-10-23: "Convert at
+   release"): the code lands on main first; `tools/convert_modes.py`
+   rewrites every shipped list to its complement over the four vocabulary
+   skills, with no grammar names, on `decks-next`, merged when the release
+   that reads the new meaning ships, so installed apps never read converted
+   lists. The validator's "excludes every skill" check is not built.
 7. **Hear form or meaning by the card (#7).** Whether the heard form is
    typed is a property of the card's data (a letter, a digit, a number),
    not of the deck's presence on the path. Script practice stays as it

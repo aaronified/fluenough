@@ -1,0 +1,34 @@
+schema: 1
+id: "tok-grammar-answering-yes-no"
+part: "core"
+kind: "grammar"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["answer yes", "answer no"]
+  entries:
+    - lemma: "moku"
+      forms:
+        "answer yes": "mi moku"
+        "answer no": "mi moku ala"
+    - lemma: "lape"
+      forms:
+        "answer yes": "mi lape"
+        "answer no": "mi lape ala"
+    - lemma: "lukin"
+      forms:
+        "answer yes": "mi lukin"
+        "answer no": "mi lukin ala"
+    - lemma: "wile"
+      forms:
+        "answer yes": "mi wile"
+        "answer no": "mi wile ala"
+    - lemma: "kama"
+      forms:
+        "answer yes": "mi kama"
+        "answer no": "mi kama ala"
+    - lemma: "tawa"
+      forms:
+        "answer yes": "mi tawa"
+        "answer no": "mi tawa ala"
