@@ -1,0 +1,64 @@
+schema: 1
+id: "mr-pronouns-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-0696"
+    target: "तो आणि ती मित्र आहेत."
+    reading: "to āṇi ti mitra āhet."
+    ipa: "t̪o aɳi t̪i mit̪r aɦet̪"
+    pos: "phrase"
+    bases: [{ word: "आहेत", reading: "āhet", base: "असणे" }]
+    confusables: [{ id: "w1", ref: "mr-0080", kind: "word" }, { id: "f1", word: "आहे", reading: "āhe", kind: "form" }]
+  - id: "mr-0697"
+    target: "आपण सगळे एकत्र जेवू."
+    reading: "āpaṇ sagḷe ekatr jevu."
+    ipa: "apəɳ səɡɭe ekət̪r dʒeʋu"
+    pos: "phrase"
+    bases: [{ word: "एकत्र", base: "एकत्र", reading: "ekatr" }, { word: "जेवू", reading: "jevu", base: "जेवणे" }]
+    confusables: [{ id: "w1", ref: "mr-0138", kind: "word" }, { id: "f1", word: "जेवतो", reading: "jevto", kind: "form" }]
+  - id: "mr-0698"
+    target: "हा माणूस कुठे राहतो?"
+    reading: "hā māṇus kuṭhe rāhto?"
+    ipa: "ɦa maɳus kuʈʰe raɦt̪o"
+    pos: "phrase"
+    bases: [{ word: "कुठे", base: "कुठे", reading: "kuṭhe" }, { word: "राहतो", reading: "rāhto", base: "राहणे" }]
+    confusables:
+      - { id: "w1", word: "ती", reading: "ti", kind: "word" }
+      - { id: "f1", word: "राहते", reading: "rāhte", kind: "form" }
+      - { id: "w2", word: "कोण", reading: "koṇ", kind: "word" }
+  - id: "mr-0699"
+    target: "हे शेजारी माझे नातेवाईक आहेत."
+    reading: "he śejāri mājhe nātevāik āhet."
+    ipa: "ɦe ʃedzari madʒʱe nat̪eʋaik aɦet̪"
+    pos: "phrase"
+    bases: [{ word: "माझे", reading: "mājhe", base: "मी" }, { word: "आहेत", reading: "āhet", base: "असणे" }]
+    confusables:
+      - { id: "w1", word: "हा", reading: "hā", kind: "word" }
+      - { id: "f1", word: "आहे", reading: "āhe", kind: "form" }
+      - { id: "w2", word: "ते", reading: "te", kind: "word" }
+  - id: "mr-0700"
+    target: "कोणी इथे येणार आहे का?"
+    reading: "koṇi ithe yeṇār āhe kā?"
+    ipa: "koɳi it̪ʰe jeɳar aɦe ka"
+    pos: "phrase"
+    bases:
+      - { word: "इथे", base: "इथे", reading: "ithe" }
+      - { word: "येणार", reading: "yeṇār", base: "येणे" }
+      - { word: "आहे", reading: "āhe", base: "असणे" }
+      - { word: "का", base: "का", reading: "kā" }
+    confusables: [{ id: "w1", word: "कोणीही", reading: "koṇihi", kind: "word" }, { id: "w2", word: "कधी", reading: "kadhi", kind: "word" }]
+  - id: "mr-0701"
+    target: "पाहुणे आता घरी जातात."
+    reading: "pāhuṇe ātā ghari jātāt."
+    ipa: "paɦuɳe at̪a ɡʱəri dzat̪at̪"
+    pos: "phrase"
+    bases:
+      - { word: "पाहुणे", reading: "pāhuṇe", base: "पाहुणा" }
+      - { word: "आता", base: "आता", reading: "ātā" }
+      - { word: "घरी", base: "घर", reading: "ghari" }
+      - { word: "जातात", reading: "jātāt", base: "जाणे" }
+    confusables: [{ id: "w1", word: "ते", reading: "te", kind: "word" }, { id: "f1", word: "जातो", reading: "jāto", kind: "form" }]

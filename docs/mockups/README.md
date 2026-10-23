@@ -4,18 +4,6 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 ## Awaiting approval
 
-- `progress-mastery.html`: the Progress tab's mastery view (#678): the words
-  count (**312** / 540) and one streak tile, a 7-day running calendar with one
-  mark a day (fire for the quota met, two stacked fires for 2x or more, a
-  filled dot for some practice, an unfilled dot for none; #485's minutes), the
-  tappable 6-point star (a fill with no edge of known / B1 total, a solid blue
-  outline of known / taught, nothing written under it), then the weakest tags
-  and leeches (owner, 2026-10-23). Tapping the star opens a second screen with
-  two line charts over time, one line per skill. The Words tile is one line,
-  the Streak tile adds the best streak, and the icons are Tabler. Hindi (Hindustani) in light and
-  Bengali in dark, 1.4x. The open choice is a tweak control and is listed in
-  `progress-mastery.md`, with the self-check.
-
 - `today-chain.html`: the Today chain's screens still to build (owner,
   2026-10-23: "Do all the mockups needed for the today chain together, in one
   screen."): situation cheatsheets and their inspect view (#724), the decks
@@ -117,16 +105,6 @@ approval.
   more space": the picture sits beside the word and the meaning takes the
   full width).
 
-- `language-wheel.html`: the language wheel (#703, #682): ratchet detents
-  with a tick and vibration, the round wheel, and the label under the bar,
-  as first drawn, plus the expansion. Owner, 2026-10-21: damping ratio 0.4,
-  stiffness 800 (mass 1), fling friction 8 per second, expansion 0.3 s.
-  "The tooltip should become the expansion via some animation that will
-  take that 0.3 seconds" (chose a cross-fade: the label fades out as the
-  pill grows); "After expanded, the two languages to either side will still
-  show, as per the wheel distance" (chose: pushed out, the same gap from
-  the pill's edge). The pill is centred, glyph and name.
-  Approved (owner, 2026-10-21: "Works. Approved.").
 
 
 ## Deleted (owner, 2026-10-12)

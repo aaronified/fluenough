@@ -38,7 +38,7 @@ In Languages I'm learning, a course you have been placed in has a "Placed words"
 - **Spot-check:** a few of them are tested each day, and a miss brings more of that deck back, then all of it.
 - **Keep reviewing:** they are reviewed like any other word.
 
-Switching away from Set in stone returns the placed words to reviews. Words you learn after placement are always reviewed as usual. The choice is kept for each course.
+Switching away from Set in stone returns the placed words to reviews. Words you learn after placement are always reviewed as usual. The choice is kept for each course. A placement taken before this release has no saved placement time, so the choice does not apply to it.
 
 ## Readings, IPA and adult content
 
