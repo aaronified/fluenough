@@ -238,11 +238,8 @@ units:
   # joining. Reading and listening to short texts.
   #
   # sijelo, lawa, noka, uta, selo and nena; luka is already known.
-  - planned: { id: "tok-body", theme: "body", words: 6 }
-    listening_passages:
-      - { id: "at-the-doctor", text: { "en": "Someone tells a friend where it hurts" } }
-    reading_passages:
-      - { id: "stretching", text: { "en": "A short stretching routine: head, hands, legs" } }
+  - decks: ["tok-body", "tok-body-sentences", "tok-reading-body", "*"]
+    words: 6
   # pi groups the modifiers after it into one: tomo pi telo nasa (a
   # building of strange water: a bar) against tomo telo nasa.
   - planned: { id: "tok-grammar-pi", grammar: ["pi-grouping"] }
