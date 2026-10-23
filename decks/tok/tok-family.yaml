@@ -1,0 +1,79 @@
+schema: 1
+id: "tok-family"
+part: "core"
+kind: "vocab"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+theme: "family"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "tok-0157"
+    target: "mama"
+    ipa: "ˈmama"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "parent", kind: "usage" }
+      - { id: "possessive", kind: "behaviour" }
+    examples:
+      - { target: "mama mi li pona.", ipa: "ˈmama mi li ˈpona", bases: [{ word: "mama", base: "mama" }, { word: "mi", ref: "tok-0003" }, { word: "li", ref: "tok-0101" }, { word: "pona", ref: "tok-0002" }] }
+      - { target: "ona li mama mi.", ipa: "ona li ˈmama mi", bases: [{ word: "ona", ref: "tok-0062" }, { word: "li", ref: "tok-0101" }, { word: "mama", base: "mama" }, { word: "mi", ref: "tok-0003" }] }
+  - id: "tok-0158"
+    target: "mije"
+    ipa: "ˈmije"
+    pos: "noun"
+    bases: "self"
+    antonyms:
+      - { id: "meli", ref: "tok-0159" }
+    notes:
+      - { id: "man", kind: "usage" }
+      - { id: "jan-mije", kind: "behaviour" }
+    examples:
+      - { target: "jan mije li pali.", ipa: "jan ˈmije li ˈpali", bases: [{ word: "jan", ref: "tok-0064" }, { word: "mije", base: "mije" }, { word: "li", ref: "tok-0101" }, { word: "pali", ref: "tok-0082" }] }
+      - { target: "jan mije ni li pona.", ipa: "jan ˈmije ni li ˈpona", bases: [{ word: "jan", ref: "tok-0064" }, { word: "mije", base: "mije" }, { word: "ni", ref: "tok-0063" }, { word: "li", ref: "tok-0101" }, { word: "pona", ref: "tok-0002" }] }
+  - id: "tok-0159"
+    target: "meli"
+    ipa: "ˈmeli"
+    pos: "noun"
+    bases: "self"
+    antonyms:
+      - { id: "mije", ref: "tok-0158" }
+    notes:
+      - { id: "woman", kind: "usage" }
+      - { id: "jan-meli", kind: "behaviour" }
+    examples:
+      - { target: "jan meli li lukin e moku.", ipa: "jan ˈmeli li ˈlukin e ˈmoku", bases: [{ word: "jan", ref: "tok-0064" }, { word: "meli", base: "meli" }, { word: "li", ref: "tok-0101" }, { word: "lukin", ref: "tok-0083" }, { word: "e", ref: "tok-0102" }, { word: "moku", ref: "tok-0080" }] }
+      - { target: "meli ni li kama.", ipa: "ˈmeli ni li ˈkama", bases: [{ word: "meli", base: "meli" }, { word: "ni", ref: "tok-0063" }, { word: "li", ref: "tok-0101" }, { word: "kama", ref: "tok-0087" }] }
+  - id: "tok-0160"
+    target: "kulupu"
+    ipa: "kuˈlupu"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "group", kind: "usage" }
+      - { id: "one-thing", kind: "behaviour" }
+    examples:
+      - { target: "kulupu ni li suli.", ipa: "ˈkulupu ni li ˈsuli", bases: [{ word: "kulupu", base: "kulupu" }, { word: "ni", ref: "tok-0063" }, { word: "li", ref: "tok-0101" }, { word: "suli", ref: "tok-0119" }] }
+      - { target: "mi lon kulupu ni.", ipa: "mi lon ˈkulupu ni", bases: [{ word: "mi", ref: "tok-0003" }, { word: "lon", ref: "tok-0046" }, { word: "kulupu", base: "kulupu" }, { word: "ni", ref: "tok-0063" }] }
+  - id: "tok-0161"
+    target: "olin"
+    ipa: "ˈolin"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "love", kind: "usage" }
+      - { id: "object", kind: "behaviour" }
+    examples:
+      - { target: "mi olin e ona.", ipa: "mi ˈolin e ˈona", bases: [{ word: "mi", ref: "tok-0003" }, { word: "olin", base: "olin" }, { word: "e", ref: "tok-0102" }, { word: "ona", ref: "tok-0062" }] }
+      - { target: "meli li olin e mije.", ipa: "ˈmeli li ˈolin e ˈmije", bases: [{ word: "meli", ref: "tok-0159" }, { word: "li", ref: "tok-0101" }, { word: "olin", base: "olin" }, { word: "e", ref: "tok-0102" }, { word: "mije", ref: "tok-0158" }] }
+  - id: "tok-0162"
+    target: "poka"
+    ipa: "ˈpoka"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "side", kind: "usage" }
+      - { id: "lon-poka", kind: "behaviour" }
+    examples:
+      - { target: "ona li lon poka mi.", ipa: "ona li lon ˈpoka mi", bases: [{ word: "ona", ref: "tok-0062" }, { word: "li", ref: "tok-0101" }, { word: "lon", ref: "tok-0046" }, { word: "poka", base: "poka" }, { word: "mi", ref: "tok-0003" }] }
+      - { target: "jan ni li lon poka sina.", ipa: "jan ni li lon ˈpoka ˈsina", bases: [{ word: "jan", ref: "tok-0064" }, { word: "ni", ref: "tok-0063" }, { word: "li", ref: "tok-0101" }, { word: "lon", ref: "tok-0046" }, { word: "poka", base: "poka" }, { word: "sina", ref: "tok-0004" }] }
