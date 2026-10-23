@@ -608,10 +608,11 @@ class Card {
   bool get choosesMeaning =>
       rule?.options.any((option) => option.prompt != native) ?? false;
 
-  /// Whether this rules table's cell can be asked to choose its form among
-  /// its row's (`Ask.chooseForm`, DECK-FORMAT.md, Rules decks): the row has
-  /// another form. False for any other card.
-  bool get choosesForm => rule?.options.isNotEmpty ?? false;
+  /// Whether the card's word has other forms to choose among
+  /// (`Ask.chooseForm`, DECK-FORMAT.md, Rules decks): for a rules table's
+  /// cell, its row has another form. False for any other card, until a card
+  /// can name the forms of its word's family another way (#522, step 4).
+  bool get hasOtherForms => rule?.options.isNotEmpty ?? false;
 
   /// Whether producing this card is asked by putting its words in order
   /// rather than typing it (ADR-0024): a sentence of three words or more,

@@ -1,3 +1,4 @@
+import '../models/card.dart';
 import '../models/drill_mode.dart';
 import '../models/reading.dart';
 import 'ask.dart';
@@ -119,7 +120,7 @@ final QuestionType chooseFormType = QuestionType(
   ask: Ask.chooseForm,
   skill: DrillMode.grammar,
   eligible: (item, context) =>
-      item.card.choosesForm &&
+      item.card.hasOtherForms &&
       _isNew(item) &&
       !_startsTyped(item, context) &&
       context.canChoose(item.askedAs(Ask.chooseForm)),
@@ -137,6 +138,39 @@ final List<QuestionType> questionTypes = <QuestionType>[
   chooseFormMeaningType,
   chooseFormType,
 ];
+
+/// The questions a lesson asks a card of the grammar skills, in the order
+/// the skills are learnt: understood, then produced (ADR-0024). Each skill is
+/// asked as its first eligible type, as a new pair; a skill with no eligible
+/// type is typed ([Ask.own]), except grammar understood, which is left out.
+List<({DrillMode mode, Ask ask})> grammarLessonQuestions(Card card) {
+  const context = QuestionContext(canChoose: _always);
+  return <({DrillMode mode, Ask ask})>[
+    for (final skill in const [DrillMode.grammarUnderstood, DrillMode.grammar])
+      if (_lessonTypeFor(card, skill, context) case final type?)
+        (mode: skill, ask: type.ask)
+      else if (skill == DrillMode.grammar)
+        (mode: skill, ask: Ask.own),
+  ];
+}
+
+bool _always(SessionItem item) => true;
+
+QuestionType? _lessonTypeFor(
+  Card card,
+  DrillMode skill,
+  QuestionContext context,
+) {
+  final item = SessionItem(card: card, mode: skill, state: null);
+  for (final type in questionTypes) {
+    if (type.groupSize == 1 &&
+        type.skill == skill &&
+        type.eligible(item, context)) {
+      return type;
+    }
+  }
+  return null;
+}
 
 /// The type [item] is asked as, or null where it is asked its own way. Types
 /// that group items ([QuestionType.groupSize] above one) are skipped: the
