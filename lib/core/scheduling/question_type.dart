@@ -1,3 +1,4 @@
+import '../models/card.dart';
 import '../models/drill_mode.dart';
 import '../models/reading.dart';
 import 'session_queue.dart';
@@ -11,6 +12,7 @@ class QuestionContext {
     this.hearsForm,
     this.recallsFirst,
     this.typed,
+    this.siblingsOf,
   });
 
   /// Whether the item, asked as it now is, has enough to choose from.
@@ -24,6 +26,10 @@ class QuestionContext {
 
   /// Whether an answer can be typed in the card's language.
   final bool Function(SessionItem item)? typed;
+
+  /// The other forms of a card's word named by its `bases`: the cards that
+  /// are its siblings ([formSiblings]). Null where none are known.
+  final List<Card> Function(Card card)? siblingsOf;
 }
 
 /// One way of asking (ADR-0039): the [ask] it produces, the skill it asks
@@ -104,12 +110,18 @@ final QuestionType hearMeaningType = QuestionType(
       context.canChoose(item.askedAs(Ask.hearMeaning)),
 );
 
-/// Shown a rules table's form, choose what it means (DECK-FORMAT.md, Rules
-/// decks). Always chosen.
+List<Card> _siblings(SessionItem item, QuestionContext context) =>
+    context.siblingsOf?.call(item.card) ?? const <Card>[];
+
+/// Shown a form, choose what it means (DECK-FORMAT.md, Rules decks). Eligible
+/// where another form of the card's word means something else: a rules
+/// table's other cells ([Card.choosesMeaning]), or a sibling sharing its base.
 final QuestionType chooseFormMeaningType = QuestionType(
   ask: Ask.chooseFormMeaning,
   skill: DrillMode.grammarUnderstood,
-  eligible: (item, context) => true,
+  eligible: (item, context) =>
+      item.card.choosesMeaning ||
+      _siblings(item, context).any((s) => s.native != item.card.native),
 );
 
 /// Shown a rules table's word and a meaning, choose its form, while the pair
@@ -118,7 +130,7 @@ final QuestionType chooseFormType = QuestionType(
   ask: Ask.chooseForm,
   skill: DrillMode.grammar,
   eligible: (item, context) =>
-      item.card.choosesForm &&
+      (item.card.hasOtherForms || _siblings(item, context).isNotEmpty) &&
       _isNew(item) &&
       !_startsTyped(item, context) &&
       context.canChoose(item.askedAs(Ask.chooseForm)),
@@ -136,6 +148,39 @@ final List<QuestionType> questionTypes = <QuestionType>[
   chooseFormMeaningType,
   chooseFormType,
 ];
+
+/// The questions a lesson asks a card of the grammar skills, in the order
+/// the skills are learnt: understood, then produced (ADR-0024). Each skill is
+/// asked as its first eligible type, as a new pair; a skill with no eligible
+/// type is typed ([Ask.own]), except grammar understood, which is left out.
+List<({DrillMode mode, Ask ask})> grammarLessonQuestions(Card card) {
+  const context = QuestionContext(canChoose: _always);
+  return <({DrillMode mode, Ask ask})>[
+    for (final skill in const [DrillMode.grammarUnderstood, DrillMode.grammar])
+      if (_lessonTypeFor(card, skill, context) case final type?)
+        (mode: skill, ask: type.ask)
+      else if (skill == DrillMode.grammar)
+        (mode: skill, ask: Ask.own),
+  ];
+}
+
+bool _always(SessionItem item) => true;
+
+QuestionType? _lessonTypeFor(
+  Card card,
+  DrillMode skill,
+  QuestionContext context,
+) {
+  final item = SessionItem(card: card, mode: skill, state: null);
+  for (final type in questionTypes) {
+    if (type.groupSize == 1 &&
+        type.skill == skill &&
+        type.eligible(item, context)) {
+      return type;
+    }
+  }
+  return null;
+}
 
 /// The type [item] is asked as, or null where it is asked its own way. Types
 /// that group items ([QuestionType.groupSize] above one) are skipped: the

@@ -1,5 +1,6 @@
 import '../models/card.dart';
 import '../models/drill_mode.dart';
+import 'question_type.dart';
 import 'session_queue.dart';
 
 /// How hard a new item is to learn, by the item itself (ADR-0024). A lesson
@@ -72,16 +73,7 @@ typedef LessonQuestion = ({DrillMode mode, Ask ask});
 /// A card of a language that is not [typed], as the IPA's, is produced by
 /// choosing the word, whatever its difficulty: nothing is typed.
 List<LessonQuestion> lessonQuestions(Card card, {bool typed = true}) {
-  if (card.rule != null) {
-    return <LessonQuestion>[
-      if (card.choosesMeaning)
-        (mode: DrillMode.grammarUnderstood, ask: Ask.chooseFormMeaning),
-      (
-        mode: DrillMode.grammar,
-        ask: card.choosesForm ? Ask.chooseForm : Ask.own,
-      ),
-    ];
-  }
+  if (card.rule != null) return grammarLessonQuestions(card);
   if (card.modes.contains(DrillMode.grammar)) {
     return const <LessonQuestion>[(mode: DrillMode.grammar, ask: Ask.own)];
   }
