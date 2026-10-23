@@ -1,0 +1,64 @@
+schema: 1
+id: "tok-numbers-1-20"
+part: "core"
+kind: "vocab"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+theme: "numbers-1-20"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "tok-0211"
+    target: "wan"
+    ipa: "wan"
+    pos: "other"
+    bases: "self"
+    notes:
+      - { id: "one", kind: "usage" }
+      - { id: "count", kind: "behaviour" }
+    examples:
+      - { target: "mi jo e wan.", ipa: "mi jo e wan", bases: [{ word: "mi", ref: "tok-0003" }, { word: "jo", ref: "tok-0085" }, { word: "e", ref: "tok-0102" }, { word: "wan", base: "wan" }] }
+      - { target: "jan wan li kama.", ipa: "jan wan li ˈkama", bases: [{ word: "jan", ref: "tok-0064" }, { word: "wan", base: "wan" }, { word: "li", ref: "tok-0101" }, { word: "kama", ref: "tok-0087" }] }
+  - id: "tok-0212"
+    target: "tu"
+    ipa: "tu"
+    pos: "other"
+    bases: "self"
+    notes:
+      - { id: "two", kind: "usage" }
+      - { id: "count", kind: "behaviour" }
+    examples:
+      - { target: "mi wile e tu.", ipa: "mi ˈwile e tu", bases: [{ word: "mi", ref: "tok-0003" }, { word: "wile", ref: "tok-0086" }, { word: "e", ref: "tok-0102" }, { word: "tu", base: "tu" }] }
+      - { target: "mi lukin e tu.", ipa: "mi ˈlukin e tu", bases: [{ word: "mi", ref: "tok-0003" }, { word: "lukin", ref: "tok-0083" }, { word: "e", ref: "tok-0102" }, { word: "tu", base: "tu" }] }
+  - id: "tok-0213"
+    target: "luka"
+    ipa: "ˈluka"
+    pos: "other"
+    bases: "self"
+    notes:
+      - { id: "five", kind: "usage" }
+      - { id: "hand", kind: "usage" }
+    examples:
+      - { target: "ona li jo e luka.", ipa: "ˈona li jo e ˈluka", bases: [{ word: "ona", ref: "tok-0062" }, { word: "li", ref: "tok-0101" }, { word: "jo", ref: "tok-0085" }, { word: "e", ref: "tok-0102" }, { word: "luka", base: "luka" }] }
+      - { target: "mi lukin e luka.", ipa: "mi ˈlukin e ˈluka", bases: [{ word: "mi", ref: "tok-0003" }, { word: "lukin", ref: "tok-0083" }, { word: "e", ref: "tok-0102" }, { word: "luka", base: "luka" }] }
+  - id: "tok-0214"
+    target: "ale"
+    ipa: "ˈale"
+    pos: "other"
+    bases: "self"
+    notes:
+      - { id: "all", kind: "usage" }
+      - { id: "hundred", kind: "behaviour" }
+    examples:
+      - { target: "ale li pona.", ipa: "ˈale li ˈpona", bases: [{ word: "ale", base: "ale" }, { word: "li", ref: "tok-0101" }, { word: "pona", ref: "tok-0002" }] }
+      - { target: "mi lukin e ale.", ipa: "mi ˈlukin e ˈale", bases: [{ word: "mi", ref: "tok-0003" }, { word: "lukin", ref: "tok-0083" }, { word: "e", ref: "tok-0102" }, { word: "ale", base: "ale" }] }
+  - id: "tok-0215"
+    target: "nanpa"
+    ipa: "ˈnanpa"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "number", kind: "usage" }
+      - { id: "order", kind: "behaviour" }
+    examples:
+      - { target: "nanpa ni li suli.", ipa: "ˈnanpa ni li ˈsuli", bases: [{ word: "nanpa", base: "nanpa" }, { word: "ni", ref: "tok-0063" }, { word: "li", ref: "tok-0101" }, { word: "suli", ref: "tok-0119" }] }
+      - { target: "mi sona e nanpa.", ipa: "mi ˈsona e ˈnanpa", bases: [{ word: "mi", ref: "tok-0003" }, { word: "sona", ref: "tok-0007" }, { word: "e", ref: "tok-0102" }, { word: "nanpa", base: "nanpa" }] }

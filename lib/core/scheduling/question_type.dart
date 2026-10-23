@@ -153,31 +153,27 @@ final List<QuestionType> questionTypes = <QuestionType>[
   chooseFormType,
 ];
 
-/// The questions a lesson asks a card of the grammar skills, in the order
-/// the skills are learnt: understood, then produced (ADR-0024). Each skill is
-/// asked as its first eligible type, as a new pair; a skill with no eligible
-/// type is typed ([Ask.own]), except grammar understood, which is left out.
-List<({DrillMode mode, Ask ask})> grammarLessonQuestions(Card card) {
-  const context = QuestionContext(canChoose: _always);
-  return <({DrillMode mode, Ask ask})>[
-    for (final skill in const [DrillMode.grammarUnderstood, DrillMode.grammar])
-      if (_lessonTypeFor(card, skill, context) case final type?)
-        (mode: skill, ask: type.ask)
-      else if (skill == DrillMode.grammar)
-        (mode: skill, ask: Ask.own),
-  ];
-}
-
-bool _always(SessionItem item) => true;
-
-QuestionType? _lessonTypeFor(
+/// The first type of [skill] that [card] is eligible for as a new pair in a
+/// lesson (ADR-0024), or null where it is asked its own way. A lesson always
+/// has options to choose from, so only the card's data and [typed] decide.
+/// [grouped] picks among the types that take several items, as match pairs
+/// does, instead of among those that take one. [siblings] are the card's
+/// other forms by its base ([formSiblings]).
+QuestionType? lessonTypeFor(
   Card card,
-  DrillMode skill,
-  QuestionContext context,
-) {
+  DrillMode skill, {
+  bool typed = false,
+  bool grouped = false,
+  List<Card> siblings = const <Card>[],
+}) {
+  final context = QuestionContext(
+    canChoose: _always,
+    typed: (_) => typed,
+    siblingsOf: (_) => siblings,
+  );
   final item = SessionItem(card: card, mode: skill, state: null);
   for (final type in questionTypes) {
-    if (type.groupSize == 1 &&
+    if ((type.groupSize > 1) == grouped &&
         type.skill == skill &&
         type.eligible(item, context)) {
       return type;
@@ -185,6 +181,26 @@ QuestionType? _lessonTypeFor(
   }
   return null;
 }
+
+/// The questions a lesson asks a card of the grammar skills, in the order
+/// the skills are learnt: understood, then produced (ADR-0024). Each skill is
+/// asked as its first eligible type, as a new pair; a skill with no eligible
+/// type is typed ([Ask.own]), except grammar understood, which is left out.
+/// With [typedFallback] false, a skill with no eligible type is left out
+/// too: a card that is also a word is not typed for its grammar.
+List<({DrillMode mode, Ask ask})> grammarLessonQuestions(
+  Card card, {
+  List<Card> siblings = const <Card>[],
+  bool typedFallback = true,
+}) => <({DrillMode mode, Ask ask})>[
+  for (final skill in const [DrillMode.grammarUnderstood, DrillMode.grammar])
+    if (lessonTypeFor(card, skill, siblings: siblings) case final type?)
+      (mode: skill, ask: type.ask)
+    else if (skill == DrillMode.grammar && typedFallback)
+      (mode: skill, ask: Ask.own),
+];
+
+bool _always(SessionItem item) => true;
 
 /// The type [item] is asked as, or null where it is asked its own way. Types
 /// that group items ([QuestionType.groupSize] above one) are skipped: the

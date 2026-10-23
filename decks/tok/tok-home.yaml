@@ -1,0 +1,64 @@
+schema: 1
+id: "tok-home"
+part: "core"
+kind: "vocab"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+theme: "home"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "tok-0245"
+    target: "tomo"
+    ipa: "ˈtomo"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "house", kind: "usage" }
+      - { id: "room", kind: "behaviour" }
+    examples:
+      - { target: "tomo mi li suli.", ipa: "ˈtomo mi li ˈsuli", bases: [{ word: "tomo", base: "tomo" }, { word: "mi", ref: "tok-0003" }, { word: "li", ref: "tok-0101" }, { word: "suli", ref: "tok-0119" }] }
+      - { target: "mi lon tomo.", ipa: "mi lon ˈtomo", bases: [{ word: "mi", ref: "tok-0003" }, { word: "lon", ref: "tok-0046" }, { word: "tomo", base: "tomo" }] }
+  - id: "tok-0246"
+    target: "supa"
+    ipa: "ˈsupa"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "table", kind: "usage" }
+      - { id: "place", kind: "behaviour" }
+    examples:
+      - { target: "moku li lon supa.", ipa: "ˈmoku li lon ˈsupa", bases: [{ word: "moku", ref: "tok-0080" }, { word: "li", ref: "tok-0101" }, { word: "lon", ref: "tok-0046" }, { word: "supa", base: "supa" }] }
+      - { target: "supa ni li suli.", ipa: "ˈsupa ni li ˈsuli", bases: [{ word: "supa", base: "supa" }, { word: "ni", ref: "tok-0063" }, { word: "li", ref: "tok-0101" }, { word: "suli", ref: "tok-0119" }] }
+  - id: "tok-0247"
+    target: "poki"
+    ipa: "ˈpoki"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "box", kind: "usage" }
+      - { id: "bag", kind: "behaviour" }
+    examples:
+      - { target: "poki ni li lili.", ipa: "ˈpoki ni li ˈlili", bases: [{ word: "poki", base: "poki" }, { word: "ni", ref: "tok-0063" }, { word: "li", ref: "tok-0101" }, { word: "lili", ref: "tok-0120" }] }
+      - { target: "mi jo e poki.", ipa: "mi jo e ˈpoki", bases: [{ word: "mi", ref: "tok-0003" }, { word: "jo", ref: "tok-0085" }, { word: "e", ref: "tok-0102" }, { word: "poki", base: "poki" }] }
+  - id: "tok-0248"
+    target: "lupa"
+    ipa: "ˈlupa"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "door", kind: "usage" }
+      - { id: "hole", kind: "behaviour" }
+    examples:
+      - { target: "mi lukin e lupa.", ipa: "mi ˈlukin e ˈlupa", bases: [{ word: "mi", ref: "tok-0003" }, { word: "lukin", ref: "tok-0083" }, { word: "e", ref: "tok-0102" }, { word: "lupa", base: "lupa" }] }
+      - { target: "lupa ni li suli.", ipa: "ˈlupa ni li ˈsuli", bases: [{ word: "lupa", base: "lupa" }, { word: "ni", ref: "tok-0063" }, { word: "li", ref: "tok-0101" }, { word: "suli", ref: "tok-0119" }] }
+  - id: "tok-0249"
+    target: "ilo"
+    ipa: "ˈilo"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "tool", kind: "usage" }
+      - { id: "device", kind: "behaviour" }
+    examples:
+      - { target: "ilo ni li pona.", ipa: "ˈilo ni li ˈpona", bases: [{ word: "ilo", base: "ilo" }, { word: "ni", ref: "tok-0063" }, { word: "li", ref: "tok-0101" }, { word: "pona", ref: "tok-0002" }] }
+      - { target: "mi pali e ilo.", ipa: "mi ˈpali e ˈilo", bases: [{ word: "mi", ref: "tok-0003" }, { word: "pali", ref: "tok-0082" }, { word: "e", ref: "tok-0102" }, { word: "ilo", base: "ilo" }] }

@@ -26,21 +26,21 @@ passages:
           - { en: "One kilo" }
           - { en: "Two kilos" }
           - { en: "Half a kilo" }
-        answer: 0
+        answer: 1
       - id: "es-0399"
         prompt: { en: "How much cheese does the customer want?" }
         options:
           - { en: "Half a kilo" }
           - { en: "A kilo" }
           - { en: "A hundred grams" }
-        answer: 0
+        answer: 1
       - id: "es-0400"
         prompt: { en: "How much is the shopping?" }
         options:
           - { en: "Two euros" }
           - { en: "Ten euros" }
           - { en: "Half a euro" }
-        answer: 0
+        answer: 1
   - id: "es-recipe-amounts"
     title: "A recipe card"
     theme: "quantities"
@@ -57,18 +57,18 @@ passages:
           - { en: "Two" }
           - { en: "Four" }
           - { en: "Six" }
-        answer: 1
+        answer: 2
       - id: "es-0402"
         prompt: { en: "How much milk is needed?" }
         options:
           - { en: "A cup" }
           - { en: "A kilo" }
           - { en: "A bottle" }
-        answer: 0
+        answer: 1
       - id: "es-0403"
         prompt: { en: "How many eggs are needed?" }
         options:
           - { en: "Two" }
           - { en: "Three" }
           - { en: "Twelve" }
-        answer: 1
+        answer: 2
