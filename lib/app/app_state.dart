@@ -40,6 +40,7 @@ import '../core/decks/deck_index.dart';
 import 'app_log.dart';
 import 'card_media.dart';
 import 'card_sets.dart';
+import 'unlocks.dart';
 import 'daily_plan.dart';
 import '../core/decks/ipa_course.dart';
 import 'deck_catalog.dart';
@@ -1600,7 +1601,9 @@ class AppState extends ChangeNotifier {
     final queue = queueOf(
       cards,
       newCardLimit: newLimit,
-      canIntroduce: request.untaught ? null : isTaught,
+      // A deck's new cards are those a lesson may teach now: no closed
+      // sentence, no cell of a word not known yet (ADR-0045).
+      canIntroduce: request.untaught ? unlocks.isOpen : isTaught,
     );
     return request.newOnly ? queue.withoutDue() : queue;
   }
@@ -2428,7 +2431,9 @@ class AppState extends ChangeNotifier {
   /// The cards a lesson in [language] can teach, in their order: from
   /// [deckId], or else from the pending units (ADR-0013). Those not taught
   /// yet that can be drilled now, and with [tags] given, only those
-  /// carrying one of them: a deck page's tag chips.
+  /// carrying one of them: a deck page's tag chips. A sentence waits until
+  /// its words and rules are known, and a rules table's cell until its word
+  /// is ([Unlocks.isOpen], ADR-0045).
   List<Card> untaughtCards(
     String language, {
     String? deckId,
@@ -2441,11 +2446,13 @@ class AppState extends ChangeNotifier {
               if (unit.first.language.code == language) unit,
           ]);
     final seen = <String>{};
+    final gate = unlocks;
     return <Card>[
       for (final card in cards)
         if ((tags.isEmpty || card.tags.any(tags.contains)) &&
             seen.add(card.id) &&
             !isTaught(card) &&
+            gate.isOpen(card) &&
             drillableModes(card).isNotEmpty)
           card,
     ];
@@ -2490,9 +2497,13 @@ class AppState extends ChangeNotifier {
       ]);
     }
     final taught = cards.takeWhile((card) => card is! QuestionCard);
-    final picked = words == null
-        ? lessonItems(taught)
-        : lessonItems(taught, each: (words / 3).ceil()).take(words).toList();
+    // As many new items as the mastery bar allows (ADR-0045): fewer while
+    // words and rules taught are not known yet.
+    final room = lessonRoom(inProgressIn(request.language!));
+    final picked = lessonItems(
+      taught,
+      room: words == null ? room : min(room, words),
+    );
     final modesOf = drillableModesNow();
     final lesson = lessonSets(
       picked,
