@@ -1,0 +1,52 @@
+schema: 1
+id: "tok-en-reading-numbers"
+name: "Reading: numbers 1 to 20"
+kind: reading
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two passages from the numbers unit: someone counts pieces of fruit aloud (heard), and a game's scoreboard, with who is first and second (read). Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "tok-counting-fruit"
+    title: "Counting fruit"
+    sentences:
+      - text: "kili wan li suwi."
+      - text: "kili tu li lete ala."
+      - text: "kili luka li lon."
+    questions:
+      - id: "tok-0225"
+        prompt: { en: "How many fruits does the third line count?" }
+        options:
+          - { en: "Five" }
+          - { en: "Two" }
+        answer: 1
+      - id: "tok-0226"
+        prompt: { en: "The first fruit is sweet." }
+        answer: true
+      - id: "tok-0227"
+        prompt: { en: "The two fruits are cold." }
+        answer: false
+  - id: "tok-scoreboard"
+    title: "Scoreboard"
+    sentences:
+      - text: "nanpa wan li mi."
+      - text: "nanpa tu li ona."
+      - text: "ale li lon."
+    questions:
+      - id: "tok-0228"
+        prompt: { en: "Who is first?" }
+        options:
+          - { en: "The speaker" }
+          - { en: "They" }
+        answer: 1
+      - id: "tok-0229"
+        prompt: { en: "Who is second?" }
+        options:
+          - { en: "They" }
+          - { en: "The speaker" }
+        answer: 1
+      - id: "tok-0230"
+        prompt: { en: "Everyone is here." }
+        answer: true

@@ -1494,7 +1494,9 @@ class AppState extends ChangeNotifier {
         if (features.isAvailable(skill.feature)) ...skill.modes,
     };
     return entry.cards.any(
-      (card) => card.modesIn(ttsAvailable: true).any(shipped.contains),
+      (card) => card
+          .modesIn(ttsAvailable: true, siblings: siblingsOf(card))
+          .any(shipped.contains),
     );
   }
 
@@ -1619,6 +1621,7 @@ class AppState extends ChangeNotifier {
           !request.numbers,
       modes: modes,
       canIntroduce: canIntroduce,
+      siblingsOf: siblingsOf,
     );
 
     final queue = queueOf(
@@ -2100,12 +2103,12 @@ class AppState extends ChangeNotifier {
     if (entry == null) return const <Card>[];
     if (ask.choosesAmongForms) return formChoices(card, ask, entry.cards);
     final right = ask.optionOf(card);
-    final cell = card.modes.contains(DrillMode.grammar);
+    final cell = card.isGrammarCell;
     bool alike(Card c) =>
         c.id != card.id &&
         c is! QuestionCard &&
         c is! NumberCard &&
-        c.modes.contains(DrillMode.grammar) == cell &&
+        c.isGrammarCell == cell &&
         ask.optionOf(c) != right;
     final own = entry.cards.where(alike).toList();
     if (own.map(ask.optionOf).toSet().length >= 3) return own;
@@ -2162,8 +2165,18 @@ class AppState extends ChangeNotifier {
     hearsForm: (item) => hearsForm(item.card),
     recallsFirst: (item) => recallsFirst(item.card, item.mode),
     typed: (item) => isTyped(item.card),
-    siblingsOf: (card) => formSiblings(card, deckOf(card)?.cards ?? const []),
+    siblingsOf: siblingsOf,
   );
+
+  final Expando<FormSiblings> _siblingIndex = Expando<FormSiblings>();
+
+  /// The siblings of [card] in its deck ([formSiblings]), the deck's cards
+  /// grouped once.
+  List<Card> siblingsOf(Card card) {
+    final entry = deckOf(card);
+    if (entry == null) return const <Card>[];
+    return (_siblingIndex[entry] ??= FormSiblings(entry.cards)).of(card);
+  }
 
   /// Whether an answer about [card] can be typed: false for the IPA
   /// (`typed: false` in its language block), whose production is chosen
@@ -2280,6 +2293,7 @@ class AppState extends ChangeNotifier {
         speechAvailable:
             canHear(language) &&
             !settings.isOffFor(Skill.speaking, language.code),
+        siblings: siblingsOf(card),
       ))
         if (modes.contains(mode) &&
             !leeches.isSetAside((cardId: card.id, mode: mode)))

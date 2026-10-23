@@ -1,0 +1,56 @@
+schema: 1
+id: "tok-en-reading-time-la"
+name: "Reading: time with la"
+kind: reading
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two passages from the time with la unit: someone says what they did yesterday and what they will do tomorrow (heard), and a three-line diary entry (read). Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "tok-yesterday-tomorrow"
+    title: "Yesterday and tomorrow"
+    sentences:
+      - text: "tenpo pini la, mi pali."
+      - text: "tenpo kama la, mi tawa tomo."
+      - text: "tenpo pini la, mi moku e kili."
+      - text: "tenpo ni la, mi lape."
+    questions:
+      - id: "tok-0292"
+        prompt: { en: "When did the speaker eat fruit?" }
+        options:
+          - { en: "Yesterday, in the past" }
+          - { en: "Tomorrow, in the future" }
+        answer: 1
+      - id: "tok-0293"
+        prompt: { en: "The speaker will go home." }
+        answer: true
+      - id: "tok-0294"
+        prompt: { en: "What does the speaker do now?" }
+        options:
+          - { en: "Sleeps" }
+          - { en: "Works" }
+        answer: 1
+  - id: "tok-diary-entry"
+    title: "Diary entry"
+    sentences:
+      - text: "tenpo pini la, mi lukin e mun."
+      - text: "tenpo ni la, mi kute e jan."
+      - text: "tenpo kama la, ona li pona."
+    questions:
+      - id: "tok-0295"
+        prompt: { en: "What did the writer see yesterday?" }
+        options:
+          - { en: "The moon" }
+          - { en: "The table" }
+        answer: 1
+      - id: "tok-0296"
+        prompt: { en: "The writer listens to someone now." }
+        answer: true
+      - id: "tok-0297"
+        prompt: { en: "What will happen tomorrow?" }
+        options:
+          - { en: "They will be good" }
+          - { en: "They will be bad" }
+        answer: 1
