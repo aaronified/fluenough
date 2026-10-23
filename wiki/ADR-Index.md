@@ -47,5 +47,6 @@ Every architecture decision record in the repo's docs/adr folder. Each one has i
 - [ADR-0042](ADR-0042-Script-Fonts-Download-Per-Course): Script fonts are downloaded per course
 - [ADR-0043](ADR-0043-English-Braille-Course): English Braille is a notation course, typed on the app's own keyboard
 - [ADR-0044](ADR-0044-Documentation-Lives-In-The-Wiki): Documentation lives in the wiki, mirrored from the repo by a workflow
+- [ADR-0045](ADR-0045-Path-Level-Sizes): A path sets its own level sizes, and a level counts roots only
 
 See also: [Contributing](Contributing) · [ADR-Index](ADR-Index) · [Home](Home)
