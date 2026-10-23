@@ -1,0 +1,482 @@
+schema: 1
+id: "hi-describing"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "describing"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-0894"
+    target: "बड़ा"
+    target_scripts: { perso_arabic: "بڑا" }
+    reading: "baṛā"
+    ipa: "bəɽaː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "fem", kind: "feminine", word: "बड़ी", reading: "baṛī" }
+      - { id: "pl", kind: "plural", word: "बड़े", reading: "baṛē" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "यह घर बड़ा है।", reading: "yah ghar baṛā hai.", ipa: "jəɦ ɡʱər bəɽaː ɦɛː", bases: [{ word: "यह", ref: "hi-0748" }, { word: "घर", ref: "hi-0192" }, { word: "बड़ा", base: "बड़ा", reading: "baṛā" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "बहुत बड़ा शहर है।", reading: "bahut baṛā śahar hai.", ipa: "bəɦʊt̪ bəɽaː ʃəɦər ɦɛː", bases: [{ word: "बहुत", ref: "hi-0866" }, { word: "बड़ा", base: "बड़ा", reading: "baṛā" }, { word: "शहर", ref: "hi-0195" }, { word: "है", ref: "hi-0780" }] }
+    antonyms:
+      - { id: "small", ref: "hi-0895" }
+    collocations:
+      - { id: "city", ref: "hi-0195" }
+  - id: "hi-0895"
+    target: "छोटा"
+    target_scripts: { perso_arabic: "چھوٹا" }
+    reading: "chōṭā"
+    ipa: "tʃʰoːʈaː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "fem", kind: "feminine", word: "छोटी", reading: "chōṭī" }
+      - { id: "pl", kind: "plural", word: "छोटे", reading: "chōṭē" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "यह बच्चा छोटा है।", reading: "yah baccā chōṭā hai.", ipa: "jəɦ bətʃtʃaː tʃʰoːʈaː ɦɛː", bases: [{ word: "यह", ref: "hi-0748" }, { word: "बच्चा", ref: "hi-0111" }, { word: "छोटा", base: "छोटा", reading: "chōṭā" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "छोटे बच्चे स्कूल गए।", reading: "chōṭē baccē skūl gaē.", ipa: "tʃʰoːʈeː bətʃtʃeː skuːl ɡəeː", bases: [{ word: "छोटे", base: "छोटा", reading: "chōṭā" }, { word: "बच्चे", ref: "hi-0111" }, { word: "स्कूल", base: "स्कूल", reading: "skūl" }, { word: "गए", ref: "hi-0777" }] }
+    antonyms:
+      - { id: "big", ref: "hi-0894" }
+  - id: "hi-0896"
+    target: "नया"
+    target_scripts: { perso_arabic: "نیا" }
+    reading: "nayā"
+    ipa: "nəjaː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "fem", kind: "feminine", word: "नई", reading: "naī" }
+      - { id: "pl", kind: "plural", word: "नए", reading: "naē" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "यह मेरा नया घर है।", reading: "yah mērā nayā ghar hai.", ipa: "jəɦ meːraː nəjaː ɡʱər ɦɛː", bases: [{ word: "यह", ref: "hi-0748" }, { word: "मेरा", ref: "hi-0752" }, { word: "नया", base: "नया", reading: "nayā" }, { word: "घर", ref: "hi-0192" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "नई कुर्सी काफ़ी अच्छी है।", reading: "naī kursī kāfī acchī hai.", ipa: "nəiː kʊrsiː kaːfiː ətʃtʃʰiː ɦɛː", bases: [{ word: "नई", base: "नया", reading: "nayā" }, { word: "कुर्सी", ref: "hi-0433" }, { word: "काफ़ी", ref: "hi-0870" }, { word: "अच्छी", base: "अच्छा", reading: "acchā" }, { word: "है", ref: "hi-0780" }] }
+    antonyms:
+      - { id: "old", ref: "hi-0897" }
+  - id: "hi-0897"
+    target: "पुराना"
+    target_scripts: { perso_arabic: "پرانا" }
+    reading: "purānā"
+    ipa: "pʊraːnaː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "fem", kind: "feminine", word: "पुरानी", reading: "purānī" }
+      - { id: "pl", kind: "plural", word: "पुराने", reading: "purānē" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "यह पुरानी कुर्सी है।", reading: "yah purānī kursī hai.", ipa: "jəɦ pʊraːniː kʊrsiː ɦɛː", bases: [{ word: "यह", ref: "hi-0748" }, { word: "पुरानी", base: "पुराना", reading: "purānā" }, { word: "कुर्सी", ref: "hi-0433" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "हमारा घर बहुत पुराना है।", reading: "hamārā ghar bahut purānā hai.", ipa: "ɦəmaːraː ɡʱər bəɦʊt̪ pʊraːnaː ɦɛː", bases: [{ word: "हमारा", ref: "hi-0756" }, { word: "घर", ref: "hi-0192" }, { word: "बहुत", ref: "hi-0866" }, { word: "पुराना", base: "पुराना", reading: "purānā" }, { word: "है", ref: "hi-0780" }] }
+    antonyms:
+      - { id: "new", ref: "hi-0896" }
+  - id: "hi-0898"
+    target: "अच्छा"
+    target_scripts: { perso_arabic: "اچھا" }
+    reading: "acchā"
+    ipa: "ətʃtʃʰaː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "fem", kind: "feminine", word: "अच्छी", reading: "acchī" }
+      - { id: "pl", kind: "plural", word: "अच्छे", reading: "acchē" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "चाय अच्छी है।", reading: "cāy acchī hai.", ipa: "tʃaːj ətʃtʃʰiː ɦɛː", bases: [{ word: "चाय", ref: "hi-0334" }, { word: "अच्छी", base: "अच्छा", reading: "acchā" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "आज का दिन अच्छा है।", reading: "āj kā din acchā hai.", ipa: "aːdʒ kaː d̪ɪn ətʃtʃʰaː ɦɛː", bases: [{ word: "आज", ref: "hi-0299" }, { word: "का", ref: "hi-0279" }, { word: "दिन", ref: "hi-0308" }, { word: "अच्छा", base: "अच्छा", reading: "acchā" }, { word: "है", ref: "hi-0780" }] }
+    antonyms:
+      - { id: "bad", ref: "hi-0899" }
+  - id: "hi-0899"
+    target: "बुरा"
+    target_scripts: { perso_arabic: "برا" }
+    reading: "burā"
+    ipa: "bʊraː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "fem", kind: "feminine", word: "बुरी", reading: "burī" }
+      - { id: "pl", kind: "plural", word: "बुरे", reading: "burē" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "यह बुरा नहीं है।", reading: "yah burā nahīm̐ hai.", ipa: "jəɦ bʊraː nəɦĩː ɦɛː", bases: [{ word: "यह", ref: "hi-0748" }, { word: "बुरा", base: "बुरा", reading: "burā" }, { word: "नहीं", ref: "hi-0156" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "बुरे लोग नहीं हैं।", reading: "burē lōg nahīm̐ haim̐.", ipa: "bʊreː loːɡ nəɦĩː ɦɛ̃ː", bases: [{ word: "बुरे", base: "बुरा", reading: "burā" }, { word: "लोग", ref: "hi-0761" }, { word: "नहीं", ref: "hi-0156" }, { word: "हैं", ref: "hi-0780" }] }
+    antonyms:
+      - { id: "good", ref: "hi-0898" }
+  - id: "hi-0900"
+    target: "सुंदर"
+    target_scripts: { perso_arabic: "سندر" }
+    reading: "sundar"
+    ipa: "sʊnd̪ər"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "यह फूल सुंदर है।", reading: "yah phūl sundar hai.", ipa: "jəɦ pʰuːl sʊnd̪ər ɦɛː", bases: [{ word: "यह", ref: "hi-0748" }, { word: "फूल", base: "फूल", reading: "phūl" }, { word: "सुंदर", base: "सुंदर", reading: "sundar" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "वह सुंदर है।", reading: "vah sundar hai.", ipa: "ʋəɦ sʊnd̪ər ɦɛː", bases: [{ word: "वह", ref: "hi-0749" }, { word: "सुंदर", base: "सुंदर", reading: "sundar" }, { word: "है", ref: "hi-0780" }] }
+    synonyms:
+      - { id: "beautiful-persian", word: "ख़ूबसूरत", reading: "khūbsūrat", ipa: "kʰuːbsuːrət̪" }
+  - id: "hi-0901"
+    target: "साफ़"
+    target_scripts: { perso_arabic: "صاف" }
+    reading: "sāf"
+    ipa: "saːf"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "कमरा साफ़ है।", reading: "kamrā sāf hai.", ipa: "kəmraː saːf ɦɛː", bases: [{ word: "कमरा", ref: "hi-0421" }, { word: "साफ़", base: "साफ़", reading: "sāf" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "पानी साफ़ है।", reading: "pānī sāf hai.", ipa: "paːniː saːf ɦɛː", bases: [{ word: "पानी", ref: "hi-0333" }, { word: "साफ़", base: "साफ़", reading: "sāf" }, { word: "है", ref: "hi-0780" }] }
+    synonyms:
+      - { id: "clean-sanskrit", word: "स्वच्छ", reading: "svacch", ipa: "sʋətʃtʃʰ" }
+    antonyms:
+      - { id: "dirty", ref: "hi-0902" }
+  - id: "hi-0902"
+    target: "गंदा"
+    target_scripts: { perso_arabic: "گندا" }
+    reading: "gandā"
+    ipa: "ɡənd̪aː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "fem", kind: "feminine", word: "गंदी", reading: "gandī" }
+      - { id: "pl", kind: "plural", word: "गंदे", reading: "gandē" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "यह मेज़ गंदी है।", reading: "yah mēz gandī hai.", ipa: "jəɦ meːz ɡənd̪iː ɦɛː", bases: [{ word: "यह", ref: "hi-0748" }, { word: "मेज़", ref: "hi-0434" }, { word: "गंदी", base: "गंदा", reading: "gandā" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "सड़क बहुत गंदी है।", reading: "saṛak bahut gandī hai.", ipa: "səɽək bəɦʊt̪ ɡənd̪iː ɦɛː", bases: [{ word: "सड़क", ref: "hi-0298" }, { word: "बहुत", ref: "hi-0866" }, { word: "गंदी", base: "गंदा", reading: "gandā" }, { word: "है", ref: "hi-0780" }] }
+    antonyms:
+      - { id: "clean", ref: "hi-0901" }
+  - id: "hi-0903"
+    target: "ताज़ा"
+    target_scripts: { perso_arabic: "تازہ" }
+    reading: "tāzā"
+    ipa: "t̪aːzaː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "fem", kind: "feminine", word: "ताज़ी", reading: "tāzī" }
+      - { id: "pl", kind: "plural", word: "ताज़े", reading: "tāzē" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "यह दूध ताज़ा है।", reading: "yah dūdh tāzā hai.", ipa: "jəɦ d̪uːd̪ʱ t̪aːzaː ɦɛː", bases: [{ word: "यह", ref: "hi-0748" }, { word: "दूध", ref: "hi-0259" }, { word: "ताज़ा", base: "ताज़ा", reading: "tāzā" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "ताज़े अंडे लीजिए।", reading: "tāzē aṇḍē lījiē.", ipa: "t̪aːzeː əɳɖeː liːdʒɪeː", bases: [{ word: "ताज़े", base: "ताज़ा", reading: "tāzā" }, { word: "अंडे", ref: "hi-0258" }, { word: "लीजिए", ref: "hi-0786" }] }
+  - id: "hi-0904"
+    target: "आसान"
+    target_scripts: { perso_arabic: "آسان" }
+    reading: "āsān"
+    ipa: "aːsaːn"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "यह काम आसान है।", reading: "yah kām āsān hai.", ipa: "jəɦ kaːm aːsaːn ɦɛː", bases: [{ word: "यह", ref: "hi-0748" }, { word: "काम", ref: "hi-0194" }, { word: "आसान", base: "आसान", reading: "āsān" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "यह आसान नहीं है।", reading: "yah āsān nahīm̐ hai.", ipa: "jəɦ aːsaːn nəɦĩː ɦɛː", bases: [{ word: "यह", ref: "hi-0748" }, { word: "आसान", base: "आसान", reading: "āsān" }, { word: "नहीं", ref: "hi-0156" }, { word: "है", ref: "hi-0780" }] }
+    synonyms:
+      - { id: "easy-sanskrit", word: "सरल", reading: "saral", ipa: "sərəl" }
+    antonyms:
+      - { id: "difficult", ref: "hi-0905" }
+  - id: "hi-0905"
+    target: "मुश्किल"
+    target_scripts: { perso_arabic: "مشکل" }
+    reading: "muśkil"
+    ipa: "mʊʃkɪl"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "यह काम मुश्किल है।", reading: "yah kām muśkil hai.", ipa: "jəɦ kaːm mʊʃkɪl ɦɛː", bases: [{ word: "यह", ref: "hi-0748" }, { word: "काम", ref: "hi-0194" }, { word: "मुश्किल", base: "मुश्किल", reading: "muśkil" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "सुबह का काम थोड़ा मुश्किल है।", reading: "subah kā kām thōṛā muśkil hai.", ipa: "sʊbəɦ kaː kaːm t̪ʰoːɽaː mʊʃkɪl ɦɛː", bases: [{ word: "सुबह", ref: "hi-0302" }, { word: "का", ref: "hi-0279" }, { word: "काम", ref: "hi-0194" }, { word: "थोड़ा", ref: "hi-0865" }, { word: "मुश्किल", base: "मुश्किल", reading: "muśkil" }, { word: "है", ref: "hi-0780" }] }
+    synonyms:
+      - { id: "difficult-sanskrit", word: "कठिन", reading: "kaṭhin", ipa: "kəʈʰɪn" }
+    antonyms:
+      - { id: "easy", ref: "hi-0904" }
+  - id: "hi-0906"
+    target: "लंबा"
+    target_scripts: { perso_arabic: "لمبا" }
+    reading: "lambā"
+    ipa: "ləmbaː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "fem", kind: "feminine", word: "लंबी", reading: "lambī" }
+      - { id: "pl", kind: "plural", word: "लंबे", reading: "lambē" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "वह लंबा आदमी है।", reading: "vah lambā ādmī hai.", ipa: "ʋəɦ ləmbaː aːd̪miː ɦɛː", bases: [{ word: "वह", ref: "hi-0749" }, { word: "लंबा", base: "लंबा", reading: "lambā" }, { word: "आदमी", ref: "hi-0762" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "लंबी सड़क है।", reading: "lambī saṛak hai.", ipa: "ləmbiː səɽək ɦɛː", bases: [{ word: "लंबी", base: "लंबा", reading: "lambā" }, { word: "सड़क", ref: "hi-0298" }, { word: "है", ref: "hi-0780" }] }
+  - id: "hi-0907"
+    target: "ऊँचा"
+    target_scripts: { perso_arabic: "اونچا" }
+    reading: "ūm̐cā"
+    ipa: "ũːtʃaː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "fem", kind: "feminine", word: "ऊँची", reading: "ūm̐cī" }
+      - { id: "pl", kind: "plural", word: "ऊँचे", reading: "ūm̐cē" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "यह पेड़ ऊँचा है।", reading: "yah pēṛ ūm̐cā hai.", ipa: "jəɦ peːɽ ũːtʃaː ɦɛː", bases: [{ word: "यह", ref: "hi-0748" }, { word: "पेड़", base: "पेड़", reading: "pēṛ" }, { word: "ऊँचा", base: "ऊँचा", reading: "ūm̐cā" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "हमारा घर ऊँचा नहीं है।", reading: "hamārā ghar ūm̐cā nahīm̐ hai.", ipa: "ɦəmaːraː ɡʱər ũːtʃaː nəɦĩː ɦɛː", bases: [{ word: "हमारा", ref: "hi-0756" }, { word: "घर", ref: "hi-0192" }, { word: "ऊँचा", base: "ऊँचा", reading: "ūm̐cā" }, { word: "नहीं", ref: "hi-0156" }, { word: "है", ref: "hi-0780" }] }
+  - id: "hi-0908"
+    target: "भारी"
+    target_scripts: { perso_arabic: "بھاری" }
+    reading: "bhārī"
+    ipa: "bʱaːriː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "यह बैग भारी है।", reading: "yah baig bhārī hai.", ipa: "jəɦ bɛːɡ bʱaːriː ɦɛː", bases: [{ word: "यह", ref: "hi-0748" }, { word: "बैग", base: "बैग", reading: "baig" }, { word: "भारी", base: "भारी", reading: "bhārī" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "यह मेज़ भारी है।", reading: "yah mēz bhārī hai.", ipa: "jəɦ meːz bʱaːriː ɦɛː", bases: [{ word: "यह", ref: "hi-0748" }, { word: "मेज़", ref: "hi-0434" }, { word: "भारी", base: "भारी", reading: "bhārī" }, { word: "है", ref: "hi-0780" }] }
+    antonyms:
+      - { id: "light", ref: "hi-0909" }
+  - id: "hi-0909"
+    target: "हल्का"
+    target_scripts: { perso_arabic: "ہلکا" }
+    reading: "halkā"
+    ipa: "ɦəlkaː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "fem", kind: "feminine", word: "हल्की", reading: "halkī" }
+      - { id: "pl", kind: "plural", word: "हल्के", reading: "halkē" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "यह बैग हल्का है।", reading: "yah baig halkā hai.", ipa: "jəɦ bɛːɡ ɦəlkaː ɦɛː", bases: [{ word: "यह", ref: "hi-0748" }, { word: "बैग", base: "बैग", reading: "baig" }, { word: "हल्का", base: "हल्का", reading: "halkā" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "मुझे हल्का खाना चाहिए।", reading: "mujhē halkā khānā cāhiē.", ipa: "mʊdʒʱeː ɦəlkaː kʰaːnaː tʃaːɦɪeː", bases: [{ word: "मुझे", ref: "hi-0745" }, { word: "हल्का", base: "हल्का", reading: "halkā" }, { word: "खाना", ref: "hi-0332" }, { word: "चाहिए", ref: "hi-0792" }] }
+    antonyms:
+      - { id: "heavy", ref: "hi-0908" }
+  - id: "hi-0910"
+    target: "गरम"
+    target_scripts: { perso_arabic: "گرم" }
+    reading: "garam"
+    ipa: "ɡərəm"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "चाय बहुत गरम है।", reading: "cāy bahut garam hai.", ipa: "tʃaːj bəɦʊt̪ ɡərəm ɦɛː", bases: [{ word: "चाय", ref: "hi-0334" }, { word: "बहुत", ref: "hi-0866" }, { word: "गरम", base: "गरम", reading: "garam" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "पानी गरम है।", reading: "pānī garam hai.", ipa: "paːniː ɡərəm ɦɛː", bases: [{ word: "पानी", ref: "hi-0333" }, { word: "गरम", base: "गरम", reading: "garam" }, { word: "है", ref: "hi-0780" }] }
+    collocations:
+      - { id: "tea", ref: "hi-0334" }
+    antonyms:
+      - { id: "cold", ref: "hi-0911" }
+  - id: "hi-0911"
+    target: "ठंडा"
+    target_scripts: { perso_arabic: "ٹھنڈا" }
+    reading: "ṭhaṇḍā"
+    ipa: "ʈʰəɳɖaː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "fem", kind: "feminine", word: "ठंडी", reading: "ṭhaṇḍī" }
+      - { id: "pl", kind: "plural", word: "ठंडे", reading: "ṭhaṇḍē" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "यह पानी ठंडा है।", reading: "yah pānī ṭhaṇḍā hai.", ipa: "jəɦ paːniː ʈʰəɳɖaː ɦɛː", bases: [{ word: "यह", ref: "hi-0748" }, { word: "पानी", ref: "hi-0333" }, { word: "ठंडा", base: "ठंडा", reading: "ṭhaṇḍā" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "ठंडी चाय पीजिए।", reading: "ṭhaṇḍī cāy pījiē.", ipa: "ʈʰəɳɖiː tʃaːj piːdʒɪeː", bases: [{ word: "ठंडी", base: "ठंडा", reading: "ṭhaṇḍā" }, { word: "चाय", ref: "hi-0334" }, { word: "पीजिए", ref: "hi-0602" }] }
+    collocations:
+      - { id: "water", ref: "hi-0333" }
+    antonyms:
+      - { id: "hot", ref: "hi-0910" }
+  - id: "hi-0912"
+    target: "खुश"
+    target_scripts: { perso_arabic: "خوش" }
+    reading: "khuś"
+    ipa: "kʰʊʃ"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "मैं खुश हूँ।", reading: "maim̐ khuś hūm̐.", ipa: "mɛ̃ː kʰʊʃ ɦũː", bases: [{ word: "मैं", ref: "hi-0745" }, { word: "खुश", base: "खुश", reading: "khuś" }, { word: "हूँ", ref: "hi-0780" }] }
+      - { target: "वह आज बहुत खुश है।", reading: "vah āj bahut khuś hai.", ipa: "ʋəɦ aːdʒ bəɦʊt̪ kʰʊʃ ɦɛː", bases: [{ word: "वह", ref: "hi-0749" }, { word: "आज", ref: "hi-0299" }, { word: "बहुत", ref: "hi-0866" }, { word: "खुश", base: "खुश", reading: "khuś" }, { word: "है", ref: "hi-0780" }] }
+    synonyms:
+      - { id: "happy-sanskrit", word: "प्रसन्न", reading: "prasann", ipa: "prəsənn" }
+    antonyms:
+      - { id: "sad", ref: "hi-0913" }
+  - id: "hi-0913"
+    target: "दुखी"
+    target_scripts: { perso_arabic: "دکھی" }
+    reading: "dukhī"
+    ipa: "d̪ʊkʰiː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "वह दुखी है।", reading: "vah dukhī hai.", ipa: "ʋəɦ d̪ʊkʰiː ɦɛː", bases: [{ word: "वह", ref: "hi-0749" }, { word: "दुखी", base: "दुखी", reading: "dukhī" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "बच्चे दुखी हैं।", reading: "baccē dukhī haim̐.", ipa: "bətʃtʃeː d̪ʊkʰiː ɦɛ̃ː", bases: [{ word: "बच्चे", ref: "hi-0111" }, { word: "दुखी", base: "दुखी", reading: "dukhī" }, { word: "हैं", ref: "hi-0780" }] }
+    synonyms:
+      - { id: "sad-persian", word: "ग़मगीन", reading: "ġamgīn", ipa: "ɣəmɡiːn" }
+    antonyms:
+      - { id: "happy", ref: "hi-0912" }
+  - id: "hi-0914"
+    target: "थका"
+    target_scripts: { perso_arabic: "تھکا" }
+    reading: "thakā"
+    ipa: "t̪ʰəkaː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "fem", kind: "feminine", word: "थकी", reading: "thakī" }
+      - { id: "pl", kind: "plural", word: "थके", reading: "thakē" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "मैं थका हूँ।", reading: "maim̐ thakā hūm̐.", ipa: "mɛ̃ː t̪ʰəkaː ɦũː", bases: [{ word: "मैं", ref: "hi-0745" }, { word: "थका", base: "थका", reading: "thakā" }, { word: "हूँ", ref: "hi-0780" }] }
+      - { target: "वह बहुत थकी है।", reading: "vah bahut thakī hai.", ipa: "ʋəɦ bəɦʊt̪ t̪ʰəkiː ɦɛː", bases: [{ word: "वह", ref: "hi-0749" }, { word: "बहुत", ref: "hi-0866" }, { word: "थकी", base: "थका", reading: "thakā" }, { word: "है", ref: "hi-0780" }] }
+  - id: "hi-0915"
+    target: "भूखा"
+    target_scripts: { perso_arabic: "بھوکا" }
+    reading: "bhūkhā"
+    ipa: "bʱuːkʰaː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "fem", kind: "feminine", word: "भूखी", reading: "bhūkhī" }
+      - { id: "pl", kind: "plural", word: "भूखे", reading: "bhūkhē" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "बच्चा भूखा है।", reading: "baccā bhūkhā hai.", ipa: "bətʃtʃaː bʱuːkʰaː ɦɛː", bases: [{ word: "बच्चा", ref: "hi-0111" }, { word: "भूखा", base: "भूखा", reading: "bhūkhā" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "हम सब भूखे हैं।", reading: "ham sab bhūkhē haim̐.", ipa: "ɦəm səb bʱuːkʰeː ɦɛ̃ː", bases: [{ word: "हम", ref: "hi-0053" }, { word: "सब", ref: "hi-0054" }, { word: "भूखे", base: "भूखा", reading: "bhūkhā" }, { word: "हैं", ref: "hi-0780" }] }
+  - id: "hi-0916"
+    target: "लाल"
+    target_scripts: { perso_arabic: "لال" }
+    reading: "lāl"
+    ipa: "laːl"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "यह सेब लाल है।", reading: "yah sēb lāl hai.", ipa: "jəɦ seːb laːl ɦɛː", bases: [{ word: "यह", ref: "hi-0748" }, { word: "सेब", base: "सेब", reading: "sēb" }, { word: "लाल", base: "लाल", reading: "lāl" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "लाल फूल सुंदर है।", reading: "lāl phūl sundar hai.", ipa: "laːl pʰuːl sʊnd̪ər ɦɛː", bases: [{ word: "लाल", base: "लाल", reading: "lāl" }, { word: "फूल", base: "फूल", reading: "phūl" }, { word: "सुंदर", ref: "hi-0900" }, { word: "है", ref: "hi-0780" }] }
+  - id: "hi-0917"
+    target: "हरा"
+    target_scripts: { perso_arabic: "ہرا" }
+    reading: "harā"
+    ipa: "ɦəraː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "fem", kind: "feminine", word: "हरी", reading: "harī" }
+      - { id: "pl", kind: "plural", word: "हरे", reading: "harē" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "यह मेज़ हरी है।", reading: "yah mēz harī hai.", ipa: "jəɦ meːz ɦəriː ɦɛː", bases: [{ word: "यह", ref: "hi-0748" }, { word: "मेज़", ref: "hi-0434" }, { word: "हरी", base: "हरा", reading: "harā" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "हरी चाय अच्छी है।", reading: "harī cāy acchī hai.", ipa: "ɦəriː tʃaːj ətʃtʃʰiː ɦɛː", bases: [{ word: "हरी", base: "हरा", reading: "harā" }, { word: "चाय", ref: "hi-0334" }, { word: "अच्छी", base: "अच्छा", reading: "acchā" }, { word: "है", ref: "hi-0780" }] }
+  - id: "hi-0918"
+    target: "नीला"
+    target_scripts: { perso_arabic: "نیلا" }
+    reading: "nīlā"
+    ipa: "niːlaː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "fem", kind: "feminine", word: "नीली", reading: "nīlī" }
+      - { id: "pl", kind: "plural", word: "नीले", reading: "nīlē" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "आसमान नीला है।", reading: "āsmān nīlā hai.", ipa: "aːsmaːn niːlaː ɦɛː", bases: [{ word: "आसमान", base: "आसमान", reading: "āsmān" }, { word: "नीला", base: "नीला", reading: "nīlā" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "यह नीली जोड़ी है।", reading: "yah nīlī jōṛī hai.", ipa: "jəɦ niːliː dʒoːɽiː ɦɛː", bases: [{ word: "यह", ref: "hi-0748" }, { word: "नीली", base: "नीला", reading: "nīlā" }, { word: "जोड़ी", ref: "hi-0881" }, { word: "है", ref: "hi-0780" }] }
+  - id: "hi-0919"
+    target: "पीला"
+    target_scripts: { perso_arabic: "پیلا" }
+    reading: "pīlā"
+    ipa: "piːlaː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "fem", kind: "feminine", word: "पीली", reading: "pīlī" }
+      - { id: "pl", kind: "plural", word: "पीले", reading: "pīlē" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "केला पीला है।", reading: "kēlā pīlā hai.", ipa: "keːlaː piːlaː ɦɛː", bases: [{ word: "केला", base: "केला", reading: "kēlā" }, { word: "पीला", base: "पीला", reading: "pīlā" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "पीले फूल सुंदर हैं।", reading: "pīlē phūl sundar haim̐.", ipa: "piːleː pʰuːl sʊnd̪ər ɦɛ̃ː", bases: [{ word: "पीले", base: "पीला", reading: "pīlā" }, { word: "फूल", base: "फूल", reading: "phūl" }, { word: "सुंदर", ref: "hi-0900" }, { word: "हैं", ref: "hi-0780" }] }
+  - id: "hi-0920"
+    target: "काला"
+    target_scripts: { perso_arabic: "کالا" }
+    reading: "kālā"
+    ipa: "kaːlaː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    forms:
+      - { id: "fem", kind: "feminine", word: "काली", reading: "kālī" }
+      - { id: "pl", kind: "plural", word: "काले", reading: "kālē" }
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "यह बिल्ली काली है।", reading: "yah billī kālī hai.", ipa: "jəɦ bɪlliː kaːliː ɦɛː", bases: [{ word: "यह", ref: "hi-0748" }, { word: "बिल्ली", base: "बिल्ली", reading: "billī" }, { word: "काली", base: "काला", reading: "kālā" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "मेरा बैग काला है।", reading: "mērā baig kālā hai.", ipa: "meːraː bɛːɡ kaːlaː ɦɛː", bases: [{ word: "मेरा", ref: "hi-0752" }, { word: "बैग", base: "बैग", reading: "baig" }, { word: "काला", base: "काला", reading: "kālā" }, { word: "है", ref: "hi-0780" }] }
+  - id: "hi-0921"
+    target: "सफ़ेद"
+    target_scripts: { perso_arabic: "سفید" }
+    reading: "safēd"
+    ipa: "səfeːd̪"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "use", kind: "usage" }
+    examples:
+      - { target: "दूध सफ़ेद है।", reading: "dūdh safēd hai.", ipa: "d̪uːd̪ʱ səfeːd̪ ɦɛː", bases: [{ word: "दूध", ref: "hi-0259" }, { word: "सफ़ेद", base: "सफ़ेद", reading: "safēd" }, { word: "है", ref: "hi-0780" }] }
+      - { target: "सफ़ेद बादल आसमान में हैं।", reading: "safēd bādal āsmān mēm̐ haim̐.", ipa: "səfeːd̪ baːd̪əl aːsmaːn mẽː ɦɛ̃ː", bases: [{ word: "सफ़ेद", base: "सफ़ेद", reading: "safēd" }, { word: "बादल", base: "बादल", reading: "bādal" }, { word: "आसमान", base: "आसमान", reading: "āsmān" }, { word: "में", ref: "hi-0274" }, { word: "हैं", ref: "hi-0780" }] }
+    synonyms:
+      - { id: "white-sanskrit", word: "श्वेत", reading: "śvēt", ipa: "ʃʋeːt̪" }
+  - id: "hi-0922"
+    kind: "set"
+    members: [{ ref: "hi-0916" }, { ref: "hi-0917" }, { ref: "hi-0918" }, { ref: "hi-0919" }, { ref: "hi-0920" }, { ref: "hi-0921" }]

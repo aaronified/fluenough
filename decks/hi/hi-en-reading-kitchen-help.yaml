@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-kitchen-help"
+name: "Reading: kitchen help"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A helper is told what to do in the kitchen: a short spoken passage with the verbs of this unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-kitchen-help"
+    title: "Kitchen help"
+    theme: "more-verbs"
+    sentences:
+      - { text: "सुनो, पहले चावल धोकर रखो।", reading: "sunō, pahlē cāval dhōkar rakhō.", ipa: "sʊnoː pəɦleː tʃaːʋəl d̪ʱoːkər rəkʰoː" }
+      - { text: "फिर पानी उबालो और उसमें दाल डालो।", reading: "phir pānī ubālō aur usmēm̐ dāl ḍālō.", ipa: "pʰɪr paːniː ʊbaːloː ɔːr ʊsmẽː d̪aːl ɖaːloː" }
+      - { text: "प्याज़ और टमाटर काटो।", reading: "pyāz aur ṭamāṭar kāṭō.", ipa: "pjaːz ɔːr ʈəmaːʈər kaːʈoː" }
+      - { text: "जल्दी करो, वे आ रहे हैं।", reading: "jaldī karō, vē ā rahē haim̐.", ipa: "dʒəld̪iː kəroː ʋeː aː rəɦeː ɦɛ̃ː" }
+    questions:
+      - id: "hi-0970"
+        prompt: { en: "What should be washed first?" }
+        options:
+          - { en: "The rice" }
+          - { en: "The milk" }
+        answer: 1
+      - id: "hi-0971"
+        prompt: { en: "What goes into the water?" }
+        options:
+          - { en: "Lentils" }
+          - { en: "Onions" }
+        answer: 1
+      - id: "hi-0972"
+        prompt: { en: "The helper must cut the onions and the tomatoes." }
+        answer: true
