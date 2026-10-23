@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- The word-order drill lays its tiles out in the deck's direction: an Urdu sentence is built from the right in an English app. Where the interface quotes right-to-left deck text, as in "Answer: …", the quote is isolated from the words around it (#619). Checking an Urdu deck on a device, and the interface itself laid out right to left, are not done.
+
+## [0.6.0] - 2026-10-23
+
 ### Added
 
 - After placement, choose per course how the placed words are reviewed: Set in stone (kept out of Today and counted as known; from a deck page the words can still be revised or practised, without writing reviews), Spot-check (the default: sampled, a miss widens coverage) or Keep reviewing; changeable from a Placed words row in Languages I'm learning, and switching away from Set in stone returns the words to reviews. A placement taken before this release has no saved placement time, so the choice does not apply to it (#761).
@@ -38,7 +44,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- The word-order drill lays its tiles out in the deck's direction: an Urdu sentence is built from the right in an English app. Where the interface quotes right-to-left deck text, as in "Answer: …", the quote is isolated from the words around it (#619). Checking an Urdu deck on a device, and the interface itself laid out right to left, are not done.
 - Perso-Arabic letters, such as the three dots of پ, no longer overlap the reading under them in the word sheet and sit centred in their rows: a script that runs right to left (Hindustani's Perso-Arabic as well as Urdu) gets the tall line height with its extra space shared evenly above and below, wherever it is drawn (#762).
 - CI: the deck tools' tests no longer fail on every deck pull request for a stale `decks/index.json`; the test that validates the real decks skips the index check, which is regenerated on main after merge and still tested on its own.
 - A read-aloud question in the placement check no longer ends the moment the phone's recogniser hears nothing: it says it did not hear, and lets the learner speak again or say they don't know, as the speaking drill does.
