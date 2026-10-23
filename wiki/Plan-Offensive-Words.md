@@ -55,6 +55,17 @@ speaker reviews every card before it ships, Telugu included.
   offensive decks and the warnings as part of their courses, shipping
   only once a speaker has reviewed them.
 
+## Built: the adult gate (#628, owner, 2026-10-23)
+
+With Adult content off, an adult deck is "Hidden everywhere": not listed,
+not taught, and not in Today, reviews or practice; it comes back when the
+setting is turned on. The setting is off by default. An adult deck is one
+tagged `offensive`; a rude card is one tagged or registered `offensive`, and
+one inside an ordinary deck follows the same rule. The sound-alike warning
+still shows with the setting off, with the rude word hidden. The
+`audience: adult` deck field, the per-profile 18+ confirmation, the
+disclaimer and the child-profile rule are not built yet.
+
 ## Register rules deferred here (owner, 2026-10-15, #517)
 
 > Defer both to the offensive-words work
