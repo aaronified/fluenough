@@ -120,11 +120,8 @@ units:
   # sentences.
   - decks: ["es-work", "es-work-sentences", "es-reading-work", "*"]
     words: 22
-  - planned: { id: "es-numbers-big", theme: "numbers-big", words: 40 }
-    listening_passages:
-      - { id: "big-numbers", text: { "en": "Hearing prices, years and phone numbers" } }
-    reading_passages:
-      - { id: "price-tags", text: { "en": "Price tags and a bus-route number board" } }
+  - decks: ["es-numbers-big", "es-numbers-big-sentences", "es-reading-numbers-big", "*"]
+    words: 17
   - planned: { id: "es-market", theme: "market", words: 45 }
     listening_passages:
       - { id: "at-the-market", text: { "en": "Buying fruit and vegetables at a market stall" } }
