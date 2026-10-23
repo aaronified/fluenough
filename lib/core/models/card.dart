@@ -310,6 +310,7 @@ class CardRef {
       altNative:
           altNative ?? (sameNative ? written.altNative : const <String>[]),
       pos: written.pos,
+      hears: written.hears,
       gender: written.gender,
       tags: tags ?? (sameNative ? written.tags : const <String>[]),
       notes: notes ?? (sameNative ? written.notes : const <CardNote>[]),
@@ -363,6 +364,7 @@ class Card {
     this.words,
     this.altNative = const <String>[],
     this.pos,
+    this.hears,
     this.gender,
     this.tags = const <String>[],
     this.notes = const <CardNote>[],
@@ -471,6 +473,12 @@ class Card {
   final List<String> altNative;
 
   final String? pos;
+
+  /// `form` (`hears: "form"`, #522 step 7): hearing the card asks for what
+  /// was heard, typed as its form, though it is a word with a part of speech,
+  /// as the spelling decks' and the script reading decks' words are. A letter
+  /// or a digit does so by its `pos` ([isLetterOrDigit]). Null otherwise.
+  final String? hears;
   final String? gender;
   final List<String> tags;
 
@@ -611,6 +619,17 @@ class Card {
           mode,
     };
   }
+
+  /// Whether the card is one letter or digit of a script (`pos: letter` or
+  /// `pos: digit`, #522 step 7): what is heard of it is its form, so Hear
+  /// types the form, and a card of the script decks is found by this, not by
+  /// where its deck stands on the path.
+  bool get isLetterOrDigit => pos == 'letter' || pos == 'digit';
+
+  /// Whether hearing this card asks for what was heard: a letter or a digit,
+  /// or a card marked `hears: form` ([hears]). A generated number does too
+  /// (`NumberCard`).
+  bool get hearsForm => isLetterOrDigit || hears == 'form';
 
   /// Whether this is a grammar cell: a rules table's cell, or a card that
   /// excludes all four vocabulary skills, as a pattern's cell does. It is

@@ -80,6 +80,7 @@ class CoreWritten extends CoreCard {
     this.targetScripts = const <String, String>{},
     this.words,
     this.pos,
+    this.hears,
     this.gender,
     this.tags = const <String>[],
     this.audio,
@@ -112,6 +113,7 @@ class CoreWritten extends CoreCard {
   /// [target]'s words, where the core gives them (`words`).
   final List<String>? words;
   final String? pos;
+  final String? hears;
   final String? gender;
   final List<String> tags;
   final String? audio;
@@ -786,6 +788,7 @@ class _Merge {
       words: card.words,
       altNative: entry.altNative ?? const <String>[],
       pos: card.pos,
+      hears: card.hears,
       gender: card.gender,
       tags: card.tags,
       notes: notes,
