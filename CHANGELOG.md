@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- The language bar is expanded at launch, not only after the first drag; its glyphs sit evenly a detent apart on both sides of the expanded name; the further a glyph is from the centre the smaller and fainter it is, at rest as well as while dragged; and nothing is drawn under the bug button (#774).
+
 ## [0.6.0] - 2026-10-23
 
 ### Added

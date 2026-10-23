@@ -61,6 +61,7 @@ import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/script_name.dart';
 import 'package:fluenough/ui/widgets/language_bar.dart';
 import 'package:fluenough/ui/widgets/reading_first.dart';
+import 'package:fluenough/ui/widgets/report_button.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart'
@@ -2373,8 +2374,10 @@ void main() {
       WidgetTester tester, {
       LanguageBarScreen screen = LanguageBarScreen.today,
       TextDirection direction = TextDirection.ltr,
+      double textScale = 1.0,
+      String choice = 'hi',
     }) {
-      usePhone(tester);
+      usePhone(tester, textScale: textScale);
       return pumpScreen(
         tester,
         Directionality(
@@ -2387,7 +2390,7 @@ void main() {
             ),
           ),
         ),
-        state: learnerLanguageBar(eight, choice: eight.first),
+        state: learnerLanguageBar(eight, choice: choice),
       );
     }
 
@@ -2657,6 +2660,117 @@ void main() {
       await tester.pumpAndSettle(const Duration(seconds: 2));
       expect(state.shownLanguage, isNot(eight.first));
       expect(seen.where((l) => l != eight.first).toSet().length, 1);
+    });
+
+    // The settled, expanded wheel (#774), as the owner saw it on a phone.
+    Finder glyphs() => find.descendant(
+      of: find.byType(LanguageBar),
+      matching: find.byWidgetPredicate((w) {
+        final key = w.key;
+        return key is ValueKey<String> &&
+            key.value.startsWith('language-bar-glyph-');
+      }),
+    );
+
+    Rect rectOf(WidgetTester tester, Finder finder) => Rect.fromPoints(
+      tester.getTopLeft(finder),
+      tester.getBottomRight(finder),
+    );
+
+    /// The glyphs drawn on the wheel (not the one hidden under the pill),
+    /// as their rect on screen, which the wheel's scale shrinks, and their
+    /// opacity.
+    List<({Rect rect, double opacity})> drawnGlyphs(WidgetTester tester) {
+      final out = <({Rect rect, double opacity})>[];
+      for (var i = 0; i < glyphs().evaluate().length; i++) {
+        final glyph = glyphs().at(i);
+        final opacity = tester
+            .widget<Opacity>(
+              find.ancestor(of: glyph, matching: find.byType(Opacity)).first,
+            )
+            .opacity;
+        if (opacity > 0)
+          out.add((rect: rectOf(tester, glyph), opacity: opacity));
+      }
+      return out;
+    }
+
+    testWidgets('at launch, with no gesture, the selection shows the '
+        'language\'s name', (tester) async {
+      usePhone(tester, textScale: 1.4);
+      final state = learnerLanguageBar(eight, choice: 'hi');
+      await pumpApp(tester, state: state);
+      expect(
+        find.descendant(of: bar(), matching: find.text(nameOf(state, 'hi'))),
+        findsOneWidget,
+      );
+    });
+
+    testWidgets('a farther glyph is smaller and fainter than a nearer one, '
+        'at rest too', (tester) async {
+      await pumpBar(tester, choice: 'es');
+      await tester.pumpAndSettle();
+      final centre = tester.getCenter(pill()).dx;
+      final drawn = drawnGlyphs(tester)
+        ..sort(
+          (a, b) => (a.rect.center.dx - centre).abs().compareTo(
+            (b.rect.center.dx - centre).abs(),
+          ),
+        );
+      expect(drawn.length, greaterThanOrEqualTo(4));
+      for (var i = 1; i < drawn.length; i++) {
+        expect(drawn[i].rect.width, lessThanOrEqualTo(drawn[i - 1].rect.width));
+        expect(drawn[i].opacity, lessThanOrEqualTo(drawn[i - 1].opacity));
+      }
+      expect(drawn.last.rect.width, lessThan(drawn.first.rect.width));
+      expect(drawn.last.opacity, lessThan(drawn.first.opacity));
+    });
+
+    testWidgets('nothing on the wheel overlaps the bug button, at 1.4x text', (
+      tester,
+    ) async {
+      await pumpBar(tester, textScale: 1.4);
+      await tester.pumpAndSettle();
+      final report = rectOf(
+        tester,
+        find.descendant(
+          of: find.byType(LanguageBar),
+          matching: find.byType(ReportButton),
+        ),
+      );
+      expect(rectOf(tester, pill()).overlaps(report), isFalse);
+      for (final glyph in drawnGlyphs(tester)) {
+        expect(glyph.rect.overlaps(report), isFalse);
+      }
+    });
+
+    testWidgets('once settled, the glyphs sit evenly either side of the '
+        'expanded pill', (tester) async {
+      for (final scale in <double>[1.0, 1.4]) {
+        await pumpBar(tester, textScale: scale, choice: 'es');
+        await tester.pumpAndSettle();
+        final centre = tester.getCenter(pill()).dx;
+        final offsets = <double>[
+          for (final glyph in drawnGlyphs(tester))
+            glyph.rect.center.dx - centre,
+        ];
+        final left = <double>[
+          for (final o in offsets)
+            if (o < 0) -o,
+        ]..sort();
+        final right = <double>[
+          for (final o in offsets)
+            if (o > 0) o,
+        ]..sort();
+        expect(left, isNotEmpty);
+        expect(left.length, right.length);
+        for (var i = 0; i < left.length; i++) {
+          expect(left[i], closeTo(right[i], 0.5));
+          if (i > 0) {
+            expect(left[i] - left[i - 1], closeTo(LanguageBar.detent, 0.5));
+          }
+        }
+      }
     });
 
     // The swipe works the same wherever it starts on the bar (owner,
