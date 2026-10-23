@@ -51,7 +51,7 @@ Asked how, they decided:
 - **A drill request names its skills** with `skills`, a set, or `skill`,
   one. `named` reads either.
 - `recordsMisses` is now true for any revision from Today, which is any
-  revise request over every deck. A deck's Revise still records nothing.
+  revise request over every deck. A deck's Revise records too since 2026-10-23 (ADR-0033).
 
 ## Consequences
 

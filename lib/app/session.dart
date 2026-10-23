@@ -55,9 +55,8 @@ class DrillRequest {
   DrillRequest.untaught(String deckId, {Skill? skill})
     : this(deckIds: <String>{deckId}, skill: skill, untaught: true);
 
-  /// Every card already learned in one deck, due or not, and not recorded:
-  /// a finished deck's "Revise". Recording an early review would stretch
-  /// its interval as if it had been remembered for the whole of it.
+  /// Every card already learned in one deck, due or not: a finished deck's
+  /// "Revise". Every answer is recorded, like a quick revision's (ADR-0033).
   DrillRequest.revise(String deckId, {Set<String> tags = const <String>{}})
     : this(deckIds: <String>{deckId}, tags: tags, revise: true);
 
@@ -76,6 +75,13 @@ class DrillRequest {
   /// answer is recorded (ADR-0030, ADR-0033).
   const DrillRequest.reviseSkill(Skill skill)
     : this(revise: true, skill: skill);
+
+  /// Practice of one [tag] from Progress's All tags page: up to [count]
+  /// words the learner has been taught that carry it, picked at random, due
+  /// or not. Only [language]'s, the one the bar at the top shows, or every
+  /// language's when null. Every answer is recorded (ADR-0033).
+  const DrillRequest.tag(String tag, {required int count, String? language})
+    : this(revise: true, tags: <String>{tag}, limit: count, language: language);
 
   /// The sounds of a word (ADR-0041): the IPA course's cards [cardIds], in
   /// their order, each taught, checked and practised as a lesson does. Every
@@ -127,10 +133,11 @@ class DrillRequest {
   /// all of them, in order.
   final int? limit;
 
-  /// Whether answers are recorded although the session revises: a revision
-  /// from Today, of every deck (ADR-0029, ADR-0030, as ADR-0033 amends
-  /// them). A deck's Revise records nothing.
-  bool get recordsRevision => revise && deckIds == null;
+  /// Whether answers are recorded although the session revises: every
+  /// revision of cards, from Today, a finished deck's Revise or a tag
+  /// (ADR-0029, ADR-0030, as ADR-0033 amends them). Only number practice,
+  /// which has no cards, records nothing.
+  bool get recordsRevision => revise;
 
   @override
   String toString() =>

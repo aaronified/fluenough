@@ -4245,6 +4245,22 @@ void main() {
   });
 
   group('quick revision', () {
+    test('a tag\'s practice is a capped set of taught words carrying the tag, '
+        'and records every answer', () async {
+      final state = await knowing(8);
+      final tag = state.profileDecks.first.cards.first.tags.first;
+      final request = DrillRequest.tag(tag, count: 3, language: 'hi');
+      expect(request.recordsRevision, isTrue);
+      final items = state.sessionItems(request);
+      final words = <String>{for (final item in items) item.card.id};
+      expect(words, isNotEmpty);
+      expect(words.length, lessThanOrEqualTo(3));
+      for (final item in items) {
+        expect(item.card.tags, contains(tag));
+        expect(state.isTaught(item.card), isTrue);
+      }
+    });
+
     test('quick revision revises that many known words once each, and records '
         'every answer', () async {
       final state = await knowing(8);

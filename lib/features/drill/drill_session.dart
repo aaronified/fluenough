@@ -123,16 +123,15 @@ class DrillSession extends ChangeNotifier {
   final DateTime startedAt;
 
   /// Whether answers go to the review log. False for number practice, which
-  /// has no schedule, for [revising], and for quick revision, which
-  /// [recordsRevision] records instead.
+  /// has no schedule, and for [revising], which [recordsRevision] records
+  /// instead.
   final bool recorded;
 
-  /// Revising a finished deck's cards ahead of their dates. Titled with the
-  /// deck, like a recorded session, but never [recorded]: a deck's Revise
-  /// records nothing.
+  /// Revising cards ahead of their dates: a finished deck's, titled with the
+  /// deck, or a tag's. Never [recorded], but see [recordsRevision].
   final bool revising;
 
-  /// Whether answers are recorded although the session is not: a quick
+  /// Whether answers are recorded although the session is not: every
   /// revision (ADR-0029, as ADR-0033 amends it). FSRS takes an early review
   /// for what it is, so a right answer stretches the interval only a little,
   /// and a miss brings the card back sooner.

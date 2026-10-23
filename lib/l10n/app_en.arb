@@ -2177,9 +2177,9 @@
       }
     }
   },
-  "deckReviseNote": "You’ve learned every card here. Revise them whenever you like — it won’t change when they’re next due.",
+  "deckReviseNote": "You’ve learned every card here. Revise them whenever you like — your answers count, like any review.",
   "@deckReviseNote": {
-    "description": "Above Revise on a finished deck's screen: revising is not recorded, so the schedule stays as it is."
+    "description": "Above Revise on a finished deck's screen: revising is recorded, like any review (ADR-0033)."
   },
   "deckGrammarCell": "{lemma} — {slot}",
   "@deckGrammarCell": {
@@ -3630,7 +3630,7 @@
   },
   "drillEndBodyNotRecorded": "This session isn’t recorded, so ending it changes nothing.",
   "@drillEndBodyNotRecorded": {
-    "description": "Body of the end-session dialog in a session that is not recorded: number practice, or revising a finished deck."
+    "description": "Body of the end-session dialog in a session that is not recorded: number practice."
   },
   "drillEndKeepGoing": "Keep going",
   "@drillEndKeepGoing": {
@@ -4049,6 +4049,32 @@
   "statsWeakestTags": "Weakest tags",
   "@statsWeakestTags": {
     "description": "Heading of the per-tag bars. The tags come from the decks."
+  },
+  "statsAllTags": "All tags ›",
+  "@statsAllTags": {
+    "description": "Button at the end of the Weakest tags heading: opens every tag, to practise any of them."
+  },
+  "statsAllTagsTitle": "All tags",
+  "@statsAllTagsTitle": {
+    "description": "Title of the page listing every tag with the share remembered."
+  },
+  "statsAllTagsEmpty": "No tags answered yet in this range.",
+  "@statsAllTagsEmpty": {
+    "description": "The All tags page when no card with a tag was answered in the chosen range."
+  },
+  "statsTagPractise": "Practise",
+  "@statsTagPractise": {
+    "description": "Button beside a tag: practise a random set of the words taught that carry it. Answers are recorded."
+  },
+  "statsTagPractiseLabel": "Practise {tag}",
+  "@statsTagPractiseLabel": {
+    "description": "Screen-reader label of a tag's Practise button.",
+    "placeholders": {
+      "tag": {
+        "type": "String",
+        "example": "food"
+      }
+    }
   },
   "statsBarSemantics": "{label}: {value}",
   "@statsBarSemantics": {

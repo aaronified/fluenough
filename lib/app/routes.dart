@@ -20,6 +20,8 @@ import '../features/review/reviewed_not_sent_page.dart';
 import '../features/review/reviewed_sent_page.dart';
 import '../features/review/waiting_page.dart';
 import '../features/script/script_guide_page.dart';
+import '../features/stats/all_tags_page.dart';
+import '../features/stats/stats_numbers.dart';
 import '../features/settings/app_log_page.dart';
 import '../features/settings/activities_page.dart';
 import '../features/settings/appearance_page.dart';
@@ -67,6 +69,10 @@ abstract final class AppRoutes {
   /// Leeches. Argument: a language code, a [String], for that language's
   /// only; none for every language.
   static const String leeches = '/leeches';
+
+  /// Every tag with its bar and a Practise button. Argument: the
+  /// [StatsRange] counted.
+  static const String allTags = '/all-tags';
 
   /// How you learn: each skill's pace beside how it started. Argument: a
   /// language code, a [String], for that language's only; none for every
@@ -150,6 +156,7 @@ abstract final class AppRoutes {
       drill when args is DrillRequest => DrillPage(request: args),
       summary when args is SessionResult => SummaryPage(result: args),
       leeches => LeechesPage(language: args is String ? args : null),
+      allTags when args is StatsRange => AllTagsPage(range: args),
       howYouLearn => HowYouLearnPage(language: args is String ? args : null),
       appearance => const AppearancePage(),
       settingsLanguages => const LanguagesSettingsPage(),
@@ -252,6 +259,10 @@ abstract final class AppNavigator {
   /// Leeches, in [language] only when given.
   static Future<void> openLeeches(BuildContext context, {String? language}) =>
       Navigator.of(context).pushNamed(AppRoutes.leeches, arguments: language);
+
+  /// The All tags page, counting [range].
+  static Future<void> openAllTags(BuildContext context, StatsRange range) =>
+      Navigator.of(context).pushNamed(AppRoutes.allTags, arguments: range);
 
   /// How you learn, in [language] only when given. With [replacing], in
   /// place of the route on top, such as the sheet that links to it.
