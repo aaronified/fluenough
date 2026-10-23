@@ -103,17 +103,58 @@ every card in the shipped decks, then deletes the old.
    `chooseMeaning`, `chooseWord`, `hearAndChoose`, `matchPairs`, typed
    production and listening, and speaking into it. `reviewAsks` (#9) asks
    the registry. Same output as step 1.
+   **Built (#522):** `lib/core/scheduling/question_type.dart` holds `QuestionType`,
+   `QuestionContext` and the ordered `questionTypes`; `reviewAsks` asks
+   `questionTypeFor`. The two grammar types moved in with their current
+   eligibility, which step 4 changes. Typed production and listening, and
+   speaking, are what no type claims, so they stay `Ask.own`.
 3. **Distractor sources by data (#8).** Replace the pool by kind and class
    with sources named by data: same `pos`, same theme or tags, `pair`,
    `bases`. Where a pool is too small, fall back as today. The test checks
    no pool gets smaller for a shipped card.
+   **Built (#522):** `lib/core/scheduling/distractors.dart` ranks a pool by
+   what its cards share with the answer, read from data: its word family
+   (`bases`), `pos`, then tags. A choice question takes its wrong options
+   from the best rank first, at random within a rank (`DrillSession`). The
+   pool's membership is unchanged (it is still the deck's cards, then the
+   course's, as `choicePool` builds it), so no pool gets smaller and every
+   ask stays as pinned; the ranking only changes which of the pool is shown.
+   `pair` still leads in Hear, and the card's own `confusables` still come
+   before the pool.
 4. **Grammar by data (#1, #2).** `chooseForm` and `chooseFormMeaning` become
    types whose `eligible` is "the card has other forms of its word"
    (`bases` or the rule row), not `rule != null`. `lessonQuestions` for a
    rules cell comes from the registry.
+   **Built (#522):** `chooseFormMeaning` is eligible when another form of
+   the word means something else (`Card.choosesMeaning`) and `chooseForm`
+   when the word has other forms (`Card.hasOtherForms`), not when the card
+   is a rules cell; `lessonQuestions` asks the registry
+   (`grammarLessonQuestions`) for a rules cell. Same questions as pinned.
+   **Forms named by `bases`** (owner, 2026-10-23, asked what a base-word
+   card's other forms are: "Sibling cards"): the other cards whose `bases`
+   ref the same base card, with a different target (`formSiblings`), supply
+   the wrong options (`formChoices`) and make the types eligible; a card
+   with no sibling stays ineligible. The review gets them through
+   `reviewAsks(siblingsOf:)`. A card still reaches a grammar skill only by
+   its `modes` (step 6 changes that), and `grammarUnderstood` is still
+   refused by the parser on a card that is not a rules cell, so no shipped
+   card gains a form question yet. A lesson does not read siblings yet
+   (step 8).
+   **Narrowed to "Same single base"** (owner, 2026-10-23: "Two cards are
+   siblings only when each has exactly one base and that base is the same
+   card."): measured on the shipped decks, the literal rule caught about 600
+   multi-word sentences that share any word. `formSiblings` now requires
+   exactly one base on each card, the same card.
 5. **Rearrange by data (#3).** `eligible` is "the target has three or more
    tokens", whatever `pos` is. A two-word phrase stays eligible so that the
    1,098 cards keep it (word-order-tiles.md).
+   **Built (#522):** `rearrangeType` is eligible by the card's data alone:
+   three or more words in the target (its `words`, else its spaces), whatever
+   its `pos`, or two where it is a phrase, as `Card.rearranges` already read
+   it before this step, so no shipped card changes its ask and the pin is
+   unchanged. The step adds the registry's guard that a reading question is
+   never rearranged, and `test/rearrange_types_test.dart` pins the rule by
+   behaviour. The two-word phrase still reads `pos`, as the plan keeps it.
 6. **`modes` as an opt-out (#4).** Read `modes` as "excluded from". The
    expanders stop writing it as a marker. A card with no `modes` is asked
    every skill its data allows. The validator reports any `modes` that

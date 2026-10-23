@@ -1,0 +1,119 @@
+schema: 1
+id: "tok-describing"
+part: "core"
+kind: "vocab"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+theme: "describing"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "tok-0119"
+    target: "suli"
+    ipa: "ˈsuli"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "adult", kind: "usage" }
+      - { id: "after", kind: "behaviour" }
+    examples:
+      - { target: "jan suli li toki.", ipa: "jan ˈsuli li ˈtoki", bases: [{ word: "jan", ref: "tok-0064" }, { word: "suli", base: "suli" }, { word: "li", ref: "tok-0101" }, { word: "toki", ref: "tok-0001" }] }
+      - { target: "mi lukin e ijo suli.", ipa: "mi ˈlukin e ˈijo ˈsuli", bases: [{ word: "mi", ref: "tok-0003" }, { word: "lukin", ref: "tok-0083" }, { word: "e", ref: "tok-0102" }, { word: "ijo", ref: "tok-0065" }, { word: "suli", base: "suli" }] }
+      - { target: "ona li suli.", ipa: "ˈona li ˈsuli", bases: [{ word: "ona", ref: "tok-0062" }, { word: "li", ref: "tok-0101" }, { word: "suli", base: "suli" }] }
+    antonyms:
+      - { id: "lili", ref: "tok-0120" }
+    collocations:
+      - { id: "jan", ref: "tok-0064" }
+  - id: "tok-0120"
+    target: "lili"
+    ipa: "ˈlili"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "child", kind: "usage" }
+      - { id: "after", kind: "behaviour" }
+    examples:
+      - { target: "jan lili li lape.", ipa: "jan ˈlili li ˈlape", bases: [{ word: "jan", ref: "tok-0064" }, { word: "lili", base: "lili" }, { word: "li", ref: "tok-0101" }, { word: "lape", ref: "tok-0081" }] }
+      - { target: "ijo lili li pona.", ipa: "ˈijo ˈlili li ˈpona", bases: [{ word: "ijo", ref: "tok-0065" }, { word: "lili", base: "lili" }, { word: "li", ref: "tok-0101" }, { word: "pona", ref: "tok-0002" }] }
+      - { target: "ona li lili ala.", ipa: "ˈona li ˈlili ˈala", bases: [{ word: "ona", ref: "tok-0062" }, { word: "li", ref: "tok-0101" }, { word: "lili", base: "lili" }, { word: "ala", ref: "tok-0005" }] }
+    antonyms:
+      - { id: "suli", ref: "tok-0119" }
+  - id: "tok-0121"
+    target: "ike"
+    ipa: "ˈike"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "wrong", kind: "usage" }
+      - { id: "after", kind: "behaviour" }
+    examples:
+      - { target: "ona li moku e ijo ike.", ipa: "ˈona li ˈmoku e ˈijo ˈike", bases: [{ word: "ona", ref: "tok-0062" }, { word: "li", ref: "tok-0101" }, { word: "moku", ref: "tok-0080" }, { word: "e", ref: "tok-0102" }, { word: "ijo", ref: "tok-0065" }, { word: "ike", base: "ike" }] }
+      - { target: "ijo ike li lon.", ipa: "ˈijo ˈike li lon", bases: [{ word: "ijo", ref: "tok-0065" }, { word: "ike", base: "ike" }, { word: "li", ref: "tok-0101" }, { word: "lon", ref: "tok-0046" }] }
+      - { target: "mi wile ala e ijo ike.", ipa: "mi ˈwile ˈala e ˈijo ˈike", bases: [{ word: "mi", ref: "tok-0003" }, { word: "wile", ref: "tok-0086" }, { word: "ala", ref: "tok-0005" }, { word: "e", ref: "tok-0102" }, { word: "ijo", ref: "tok-0065" }, { word: "ike", base: "ike" }] }
+    antonyms:
+      - { id: "pona", ref: "tok-0002" }
+  - id: "tok-0122"
+    target: "sin"
+    ipa: "sin"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "more", kind: "usage" }
+      - { id: "after", kind: "behaviour" }
+    examples:
+      - { target: "mi lukin e ijo sin.", ipa: "mi ˈlukin e ˈijo sin", bases: [{ word: "mi", ref: "tok-0003" }, { word: "lukin", ref: "tok-0083" }, { word: "e", ref: "tok-0102" }, { word: "ijo", ref: "tok-0065" }, { word: "sin", base: "sin" }] }
+      - { target: "ona li pali e ijo sin.", ipa: "ˈona li ˈpali e ˈijo sin", bases: [{ word: "ona", ref: "tok-0062" }, { word: "li", ref: "tok-0101" }, { word: "pali", ref: "tok-0082" }, { word: "e", ref: "tok-0102" }, { word: "ijo", ref: "tok-0065" }, { word: "sin", base: "sin" }] }
+      - { target: "moku sin li pona.", ipa: "ˈmoku sin li ˈpona", bases: [{ word: "moku", ref: "tok-0080" }, { word: "sin", base: "sin" }, { word: "li", ref: "tok-0101" }, { word: "pona", ref: "tok-0002" }] }
+  - id: "tok-0123"
+    target: "wawa"
+    ipa: "ˈwawa"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "sure", kind: "usage" }
+      - { id: "after", kind: "behaviour" }
+    examples:
+      - { target: "ona li wawa.", ipa: "ˈona li ˈwawa", bases: [{ word: "ona", ref: "tok-0062" }, { word: "li", ref: "tok-0101" }, { word: "wawa", base: "wawa" }] }
+      - { target: "jan wawa li pali e moku.", ipa: "jan ˈwawa li ˈpali e ˈmoku", bases: [{ word: "jan", ref: "tok-0064" }, { word: "wawa", base: "wawa" }, { word: "li", ref: "tok-0101" }, { word: "pali", ref: "tok-0082" }, { word: "e", ref: "tok-0102" }, { word: "moku", ref: "tok-0080" }] }
+      - { target: "mi wawa ala.", ipa: "mi ˈwawa ˈala", bases: [{ word: "mi", ref: "tok-0003" }, { word: "wawa", base: "wawa" }, { word: "ala", ref: "tok-0005" }] }
+  - id: "tok-0124"
+    target: "mute"
+    ipa: "ˈmute"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "plural", kind: "usage" }
+      - { id: "after", kind: "behaviour" }
+    examples:
+      - { target: "jan mute li kama.", ipa: "jan ˈmute li ˈkama", bases: [{ word: "jan", ref: "tok-0064" }, { word: "mute", base: "mute" }, { word: "li", ref: "tok-0101" }, { word: "kama", ref: "tok-0087" }] }
+      - { target: "mi jo e moku mute.", ipa: "mi jo e ˈmoku ˈmute", bases: [{ word: "mi", ref: "tok-0003" }, { word: "jo", ref: "tok-0085" }, { word: "e", ref: "tok-0102" }, { word: "moku", ref: "tok-0080" }, { word: "mute", base: "mute" }] }
+      - { target: "ijo mute li lon.", ipa: "ˈijo ˈmute li lon", bases: [{ word: "ijo", ref: "tok-0065" }, { word: "mute", base: "mute" }, { word: "li", ref: "tok-0101" }, { word: "lon", ref: "tok-0046" }] }
+    collocations:
+      - { id: "jan", ref: "tok-0064" }
+  - id: "tok-0125"
+    target: "ante"
+    ipa: "ˈante"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "change", kind: "usage" }
+      - { id: "after", kind: "behaviour" }
+    examples:
+      - { target: "jan ante li toki.", ipa: "jan ˈante li ˈtoki", bases: [{ word: "jan", ref: "tok-0064" }, { word: "ante", base: "ante" }, { word: "li", ref: "tok-0101" }, { word: "toki", ref: "tok-0001" }] }
+      - { target: "ijo ante li suli.", ipa: "ˈijo ˈante li ˈsuli", bases: [{ word: "ijo", ref: "tok-0065" }, { word: "ante", base: "ante" }, { word: "li", ref: "tok-0101" }, { word: "suli", ref: "tok-0119" }] }
+      - { target: "ona li moku e ijo ante.", ipa: "ˈona li ˈmoku e ˈijo ˈante", bases: [{ word: "ona", ref: "tok-0062" }, { word: "li", ref: "tok-0101" }, { word: "moku", ref: "tok-0080" }, { word: "e", ref: "tok-0102" }, { word: "ijo", ref: "tok-0065" }, { word: "ante", base: "ante" }] }
+    antonyms:
+      - { id: "sama", ref: "tok-0126" }
+  - id: "tok-0126"
+    target: "sama"
+    ipa: "ˈsama"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - { id: "similar", kind: "usage" }
+      - { id: "after", kind: "behaviour" }
+    examples:
+      - { target: "ona li sama.", ipa: "ˈona li ˈsama", bases: [{ word: "ona", ref: "tok-0062" }, { word: "li", ref: "tok-0101" }, { word: "sama", base: "sama" }] }
+      - { target: "mi pali e ijo sama.", ipa: "mi ˈpali e ˈijo ˈsama", bases: [{ word: "mi", ref: "tok-0003" }, { word: "pali", ref: "tok-0082" }, { word: "e", ref: "tok-0102" }, { word: "ijo", ref: "tok-0065" }, { word: "sama", base: "sama" }] }
+      - { target: "ijo sama li pona.", ipa: "ˈijo ˈsama li ˈpona", bases: [{ word: "ijo", ref: "tok-0065" }, { word: "sama", base: "sama" }, { word: "li", ref: "tok-0101" }, { word: "pona", ref: "tok-0002" }] }
+    antonyms:
+      - { id: "ante", ref: "tok-0125" }
