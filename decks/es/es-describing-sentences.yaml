@@ -1,0 +1,79 @@
+schema: 1
+id: "es-describing-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-0444"
+    target: "Mi hermano es alto y guapo."
+    ipa: "mi eɾˈmano es ˈalto i ˈɡwapo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermano", ref: "es-0161" }, { word: "es", ref: "es-0022" }, { word: "alto", ref: "es-0254" }, { word: "y", ref: "es-0048" }, { word: "guapo", ref: "es-0406" }]
+    confusables: [{ id: "bajo", ref: "es-0255", kind: "word" }, { id: "feo", ref: "es-0404", kind: "word" }]
+  - id: "es-0445"
+    target: "La sopa está muy caliente, pero el café es frío."
+    ipa: "la ˈsopa esˈta mwi kaˈljente ˈpeɾo el kaˈfe es ˈfɾio"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "sopa", base: "sopa" }, { word: "está", ref: "es-0023" }, { word: "muy", ref: "es-0330" }, { word: "caliente", ref: "es-0407" }, { word: "pero", ref: "es-0050" }, { word: "el", base: "el" }, { word: "café", base: "café" }, { word: "es", ref: "es-0022" }, { word: "frío", ref: "es-0408" }]
+    confusables: [{ id: "lento", ref: "es-0415", kind: "word" }, { id: "rico", ref: "es-0409", kind: "word" }]
+  - id: "es-0446"
+    target: "Hoy estoy cansado y triste."
+    ipa: "oj esˈtoj kanˈsado i ˈtɾiste"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hoy", ref: "es-0331" }, { word: "estoy", ref: "es-0023" }, { word: "cansado", ref: "es-0420" }, { word: "y", ref: "es-0048" }, { word: "triste", ref: "es-0419" }]
+    confusables: [{ id: "contento", ref: "es-0418", kind: "word" }, { id: "feliz", ref: "es-0442", kind: "word" }]
+  - id: "es-0447"
+    target: "El examen es difícil, pero fácil para Ana."
+    ipa: "el ekˈsamen es diˈfiθil ˈpeɾo ˈfaθil ˈpaɾa ˈana"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "examen", base: "examen" }, { word: "es", ref: "es-0022" }, { word: "difícil", ref: "es-0414" }, { word: "pero", ref: "es-0050" }, { word: "fácil", ref: "es-0413" }, { word: "para", base: "para" }, { word: "Ana", base: "Ana" }]
+    confusables: [{ id: "importante", ref: "es-0435", kind: "word" }, { id: "interesante", ref: "es-0424", kind: "word" }]
+  - id: "es-0448"
+    target: "Las manos están sucias y mojadas."
+    ipa: "las ˈmanos esˈtan ˈsuθjas i moˈxadas"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Las", base: "las" }, { word: "manos", base: "manos" }, { word: "están", ref: "es-0023" }, { word: "sucias", ref: "es-0417" }, { word: "y", ref: "es-0048" }, { word: "mojadas", ref: "es-0440" }]
+    confusables: [{ id: "limpio", ref: "es-0416", kind: "word" }, { id: "seco", ref: "es-0441", kind: "word" }]
+  - id: "es-0449"
+    target: "Mi madre dice que la casa es bonita."
+    ipa: "mi ˈmadɾe ˈdiθe ke la ˈkasa es boˈnita"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "madre", ref: "es-0160" }, { word: "dice", base: "decir" }, { word: "que", base: "que" }, { word: "la", base: "la" }, { word: "casa", ref: "es-0006" }, { word: "es", ref: "es-0022" }, { word: "bonita", ref: "es-0405" }]
+    confusables: [{ id: "viejo", ref: "es-0431", kind: "word" }, { id: "largo", ref: "es-0429", kind: "word" }]
+  - id: "es-0450"
+    target: "Ana no está ocupada, pero es muy nerviosa."
+    ipa: "ˈana no esˈta okuˈpada ˈpeɾo es mwi neɾˈbjosa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Ana", base: "Ana" }, { word: "no", ref: "es-0043" }, { word: "está", ref: "es-0023" }, { word: "ocupada", ref: "es-0425" }, { word: "pero", ref: "es-0050" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "nerviosa", ref: "es-0443" }]
+    confusables: [{ id: "libre", ref: "es-0426", kind: "word" }, { id: "timido", ref: "es-0436", kind: "word" }]
+  - id: "es-0451"
+    target: "El agua del lago está fría."
+    ipa: "el ˈaɡwa del ˈlaɡo esˈta ˈfɾia"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "agua", ref: "es-0012" }, { word: "del", base: "del" }, { word: "lago", base: "lago" }, { word: "está", ref: "es-0023" }, { word: "fría", ref: "es-0408" }]
+    confusables: [{ id: "caliente", ref: "es-0407", kind: "word" }, { id: "claro", ref: "es-0438", kind: "word" }]
+  - id: "es-0452"
+    target: "Es importante comer bien."
+    ipa: "es impoɾˈtante koˈmeɾ bjen"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Es", ref: "es-0022" }, { word: "importante", ref: "es-0435" }, { word: "comer", ref: "es-0028" }, { word: "bien", ref: "es-0326" }]
+    confusables: [{ id: "facil", ref: "es-0413", kind: "word" }, { id: "bueno", ref: "es-0033", kind: "word" }]
+  - id: "es-0453"
+    target: "La botella está llena, pero el vaso queda vacío."
+    ipa: "la boˈteʝa esˈta ˈʝena ˈpeɾo el ˈbaso ˈkeda baˈθio"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "botella", ref: "es-0379" }, { word: "está", ref: "es-0023" }, { word: "llena", ref: "es-0427" }, { word: "pero", ref: "es-0050" }, { word: "el", base: "el" }, { word: "vaso", base: "vaso" }, { word: "queda", base: "quedar" }, { word: "vacío", ref: "es-0428" }]
+    confusables: [{ id: "claro", ref: "es-0438", kind: "word" }, { id: "oscuro", ref: "es-0439", kind: "word" }]
