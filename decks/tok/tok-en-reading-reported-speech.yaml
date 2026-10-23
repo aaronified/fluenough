@@ -1,0 +1,71 @@
+"schema": 1
+"id": "tok-en-reading-reported-speech"
+"name": "Reading: what someone said"
+"kind": "reading"
+"language":
+  "code": "tok"
+  "iso639_3": "tok"
+  "name": "Toki Pona"
+  "script": "latin"
+  "icon": "Tp"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this deck"
+"description": "Two passages of reported speech: a listening passage about a phone message from a friend, and a reading passage of a short news item quoting two people. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "reading"
+- "unreviewed"
+"passages":
+- "id": "tok-reported-phone-message"
+  "title": "A phone message"
+  "sentences":
+  - "text": "jan Ali li toki e ni: mi kama tenpo kama."
+  - "text": "ona li toki e ni: mi moku e telo."
+  - "text": "ni li lete."
+  "questions":
+  - "id": "tok-0674"
+    "prompt":
+      "en": "Who is the friend?"
+    "options":
+    - "en": "Ali"
+    - "en": "Ana"
+    "answer": 1
+  - "id": "tok-0675"
+    "prompt":
+      "en": "When will Ali come?"
+    "options":
+    - "en": "Later"
+    - "en": "Before"
+    "answer": 1
+  - "id": "tok-0676"
+    "prompt":
+      "en": "The friend says they eat water. Is that true?"
+    "answer": true
+- "id": "tok-reported-news-item"
+  "title": "A news item"
+  "sentences":
+  - "text": "jan lili li toki e ni: ilo ni li pona."
+  - "text": "jan suli li toki e ni: mi pilin pona."
+  - "text": "ni li wawa."
+  "questions":
+  - "id": "tok-0677"
+    "prompt":
+      "en": "What does the small person say about the tool?"
+    "options":
+    - "en": "It is good"
+    - "en": "It is bad"
+    "answer": 1
+  - "id": "tok-0678"
+    "prompt":
+      "en": "What does the big person say they feel?"
+    "options":
+    - "en": "Good"
+    - "en": "Bad"
+    "answer": 1
+  - "id": "tok-0679"
+    "prompt":
+      "en": "The news says the small person feels bad. Is that true?"
+    "answer": false

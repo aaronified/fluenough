@@ -1,0 +1,71 @@
+"schema": 1
+"id": "tok-en-reading-full-numbers"
+"name": "Reading: numbers in full"
+"kind": "reading"
+"language":
+  "code": "tok"
+  "iso639_3": "tok"
+  "name": "Toki Pona"
+  "script": "latin"
+  "icon": "Tp"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this deck"
+"description": "Two passages in the full number system: a listening passage where people say their ages, and a reading passage of a table of scores. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "reading"
+- "unreviewed"
+"passages":
+- "id": "tok-full-numbers-how-old"
+  "title": "How old are you?"
+  "sentences":
+  - "text": "mi mute tu."
+  - "text": "ona li tu."
+  - "text": "ijo ni li ale."
+  "questions":
+  - "id": "tok-0736"
+    "prompt":
+      "en": "How old is the first speaker?"
+    "options":
+    - "en": "Twenty-two"
+    - "en": "Two"
+    "answer": 1
+  - "id": "tok-0737"
+    "prompt":
+      "en": "What number is the second speaker's?"
+    "options":
+    - "en": "Two"
+    - "en": "Twenty"
+    "answer": 1
+  - "id": "tok-0738"
+    "prompt":
+      "en": "The thing is a hundred. Is that true?"
+    "answer": true
+- "id": "tok-full-numbers-scores"
+  "title": "A table of scores"
+  "sentences":
+  - "text": "ilo mute tu."
+  - "text": "lipu ale tu."
+  - "text": "kili ale tu mute tu."
+  "questions":
+  - "id": "tok-0739"
+    "prompt":
+      "en": "What is the score for the tool?"
+    "options":
+    - "en": "Twenty-two"
+    - "en": "Two"
+    "answer": 1
+  - "id": "tok-0740"
+    "prompt":
+      "en": "Which score is the biggest?"
+    "options":
+    - "en": "Twenty-two"
+    - "en": "One hundred and twenty-four"
+    "answer": 2
+  - "id": "tok-0741"
+    "prompt":
+      "en": "The paper's score is twenty-two. Is that true?"
+    "answer": false
