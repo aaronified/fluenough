@@ -1,0 +1,344 @@
+schema: 1
+id: "es-family"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "family"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-0158"
+    target: "la familia"
+    ipa: "la faˈmilja"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "familia", base: "familia" }]
+    examples:
+      - { target: "La familia de Ana vive en Madrid.", ipa: "la faˈmilja de ˈana ˈbibe en maˈdɾid", bases: [{ word: "La", base: "la" }, { word: "familia", base: "familia" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "vive", ref: "es-0030" }, { word: "en", base: "en" }, { word: "Madrid", base: "Madrid" }] }
+      - { target: "Ayer conocí a la familia de Ana.", ipa: "aˈʝeɾ konoˈθi a la faˈmilja de ˈana", bases: [{ word: "Ayer", base: "ayer" }, { word: "conocí", base: "conocer" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "familia", base: "familia" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }] }
+  - id: "es-0159"
+    target: "el padre"
+    ipa: "el ˈpadɾe"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "padre", base: "padre" }]
+    examples:
+      - { target: "El padre de Ana es médico.", ipa: "el ˈpadɾe de ˈana es ˈmediko", bases: [{ word: "El", base: "el" }, { word: "padre", base: "padre" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "médico", base: "médico" }] }
+      - { target: "Hablo con el padre de Ana.", ipa: "ˈablo kon el ˈpadɾe de ˈana", bases: [{ word: "Hablo", ref: "es-0027" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "padre", base: "padre" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }] }
+  - id: "es-0160"
+    target: "la madre"
+    ipa: "la ˈmadɾe"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "madre", base: "madre" }]
+    examples:
+      - { target: "La madre de Ana es médica.", ipa: "la ˈmadɾe de ˈana es ˈmedika", bases: [{ word: "La", base: "la" }, { word: "madre", base: "madre" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "médica", base: "médico" }] }
+      - { target: "Ayer hablé con la madre de Luis.", ipa: "aˈʝeɾ aˈble kon la ˈmadɾe de lwis", bases: [{ word: "Ayer", base: "ayer" }, { word: "hablé", base: "hablar" }, { word: "con", base: "con" }, { word: "la", base: "la" }, { word: "madre", base: "madre" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }] }
+  - id: "es-0161"
+    target: "el hermano"
+    ipa: "el eɾˈmano"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "hermano", base: "hermano" }]
+    examples:
+      - { target: "El hermano de Ana vive en Quito.", ipa: "el eɾˈmano de ˈana ˈbibe en ˈkito", bases: [{ word: "El", base: "el" }, { word: "hermano", base: "hermano" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "vive", ref: "es-0030" }, { word: "en", base: "en" }, { word: "Quito", base: "Quito" }] }
+      - { target: "Luis es el hermano de Ana.", ipa: "lwis es el eɾˈmano de ˈana", bases: [{ word: "Luis", base: "Luis" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "hermano", base: "hermano" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }] }
+  - id: "es-0162"
+    target: "la hermana"
+    ipa: "la eɾˈmana"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "hermana", base: "hermana" }]
+    examples:
+      - { target: "Ana es la hermana mayor de Luis.", ipa: "ˈana es la eɾˈmana maˈʝoɾ de lwis", bases: [{ word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "hermana", base: "hermana" }, { word: "mayor", base: "mayor" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }] }
+      - { target: "La hermana de Rosa es enfermera.", ipa: "la eɾˈmana de ˈrosa es enfeɾˈmeɾa", bases: [{ word: "La", base: "la" }, { word: "hermana", base: "hermana" }, { word: "de", base: "de" }, { word: "Rosa", base: "Rosa" }, { word: "es", ref: "es-0022" }, { word: "enfermera", base: "enfermera" }] }
+  - id: "es-0163"
+    target: "el hijo"
+    ipa: "el ˈixo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "hijo", base: "hijo" }]
+    examples:
+      - { target: "El hijo de la señora Ruiz es profesor.", ipa: "el ˈixo de la seˈɲoɾa rwiθ es pɾofeˈsoɾ", bases: [{ word: "El", base: "el" }, { word: "hijo", base: "hijo" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "señora", base: "señora" }, { word: "Ruiz", base: "Ruiz" }, { word: "es", ref: "es-0022" }, { word: "profesor", base: "profesor" }] }
+      - { target: "Ana dice que el hijo menor es muy listo.", ipa: "ˈana ˈdiθe ke el ˈixo meˈnoɾ es mwi ˈlisto", bases: [{ word: "Ana", base: "Ana" }, { word: "dice", base: "decir" }, { word: "que", base: "que" }, { word: "el", base: "el" }, { word: "hijo", base: "hijo" }, { word: "menor", base: "menor" }, { word: "es", ref: "es-0022" }, { word: "muy", base: "muy" }, { word: "listo", base: "listo" }] }
+  - id: "es-0164"
+    target: "la hija"
+    ipa: "la ˈixa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "hija", base: "hija" }]
+    examples:
+      - { target: "La hija de Rosa tiene siete años.", ipa: "la ˈixa de ˈrosa ˈtjene ˈsjete ˈaɲos", bases: [{ word: "La", base: "la" }, { word: "hija", base: "hija" }, { word: "de", base: "de" }, { word: "Rosa", base: "Rosa" }, { word: "tiene", ref: "es-0024" }, { word: "siete", base: "siete" }, { word: "años", base: "año" }] }
+      - { target: "Ana es la hija mayor de la señora Ruiz.", ipa: "ˈana es la ˈixa maˈʝoɾ de la seˈɲoɾa rwiθ", bases: [{ word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "hija", base: "hija" }, { word: "mayor", base: "mayor" }, { word: "de", base: "de" }, { word: "señora", base: "señora" }, { word: "Ruiz", base: "Ruiz" }] }
+  - id: "es-0165"
+    target: "el abuelo"
+    ipa: "el aˈbwelo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "abuelo", base: "abuelo" }]
+    examples:
+      - { target: "El abuelo de Luis es muy alto.", ipa: "el aˈbwelo de lwis es mwi ˈalto", bases: [{ word: "El", base: "el" }, { word: "abuelo", base: "abuelo" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }, { word: "es", ref: "es-0022" }, { word: "muy", base: "muy" }, { word: "alto", base: "alto" }] }
+      - { target: "Hablo con el abuelo todos los días.", ipa: "ˈablo kon el aˈbwelo ˈtodos los ˈdias", bases: [{ word: "Hablo", ref: "es-0027" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "abuelo", base: "abuelo" }, { word: "todos", ref: "es-0134" }, { word: "los", base: "los" }, { word: "días", base: "día" }] }
+  - id: "es-0166"
+    target: "la abuela"
+    ipa: "la aˈbwela"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "abuela", base: "abuela" }]
+    examples:
+      - { target: "La abuela de Luis es muy simpática.", ipa: "la aˈbwela de lwis es mwi simˈpatika", bases: [{ word: "La", base: "la" }, { word: "abuela", base: "abuela" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }, { word: "es", ref: "es-0022" }, { word: "muy", base: "muy" }, { word: "simpática", base: "simpático" }] }
+      - { target: "Ayer visité a la abuela en Lima.", ipa: "aˈʝeɾ bisiˈte a la aˈbwela en ˈlima", bases: [{ word: "Ayer", base: "ayer" }, { word: "visité", base: "visitar" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "abuela", base: "abuela" }, { word: "en", base: "en" }, { word: "Lima", base: "Lima" }] }
+  - id: "es-0167"
+    target: "el tío"
+    ipa: "el ˈtio"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "tío", base: "tío" }]
+    examples:
+      - { target: "El tío de Ana vive en Quito.", ipa: "el ˈtio de ˈana ˈbibe en ˈkito", bases: [{ word: "El", base: "el" }, { word: "tío", base: "tío" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "vive", ref: "es-0030" }, { word: "en", base: "en" }, { word: "Quito", base: "Quito" }] }
+      - { target: "Hoy hablo con el tío de Luis.", ipa: "oj ˈablo kon el ˈtio de lwis", bases: [{ word: "Hoy", base: "hoy" }, { word: "hablo", ref: "es-0027" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "tío", base: "tío" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }] }
+  - id: "es-0168"
+    target: "la tía"
+    ipa: "la ˈtia"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "tía", base: "tía" }]
+    examples:
+      - { target: "La tía de Luis es profesora.", ipa: "la ˈtia de lwis es pɾofeˈsoɾa", bases: [{ word: "La", base: "la" }, { word: "tía", base: "tía" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }, { word: "es", ref: "es-0022" }, { word: "profesora", base: "profesora" }] }
+      - { target: "Ayer llamé a la tía de Luis.", ipa: "aˈʝeɾ ʝaˈme a la ˈtia de lwis", bases: [{ word: "Ayer", base: "ayer" }, { word: "llamé", base: "llamar" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "tía", base: "tía" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }] }
+  - id: "es-0169"
+    target: "el primo"
+    ipa: "el ˈpɾimo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "primo", base: "primo" }]
+    examples:
+      - { target: "El primo de Ana juega al fútbol.", ipa: "el ˈpɾimo de ˈana ˈxweɡa al ˈfutbol", bases: [{ word: "El", base: "el" }, { word: "primo", base: "primo" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "juega", base: "jugar" }, { word: "al", base: "al" }, { word: "fútbol", base: "fútbol" }] }
+      - { target: "Ayer jugué con el primo de Ana.", ipa: "aˈʝeɾ xuˈɡe kon el ˈpɾimo de ˈana", bases: [{ word: "Ayer", base: "ayer" }, { word: "jugué", base: "jugar" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "primo", base: "primo" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }] }
+  - id: "es-0170"
+    target: "la prima"
+    ipa: "la ˈpɾima"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "prima", base: "prima" }]
+    examples:
+      - { target: "La prima de Ana es muy alta.", ipa: "la ˈpɾima de ˈana es mwi ˈalta", bases: [{ word: "La", base: "la" }, { word: "prima", base: "prima" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "muy", base: "muy" }, { word: "alta", base: "alto" }] }
+      - { target: "Ella es la prima de Luis.", ipa: "ˈeʝa es la ˈpɾima de lwis", bases: [{ word: "Ella", ref: "es-0121" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "prima", base: "prima" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }] }
+  - id: "es-0171"
+    target: "el esposo"
+    ipa: "el esˈposo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "esposo", base: "esposo" }]
+    synonyms:
+      - { id: "husband", ref: "es-0173" }
+    examples:
+      - { target: "El esposo de Ana es ingeniero.", ipa: "el esˈposo de ˈana es inxeˈnjeɾo", bases: [{ word: "El", base: "el" }, { word: "esposo", base: "esposo" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "ingeniero", base: "ingeniero" }] }
+      - { target: "Luis es el esposo de Rosa.", ipa: "lwis es el esˈposo de ˈrosa", bases: [{ word: "Luis", base: "Luis" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "esposo", base: "esposo" }, { word: "de", base: "de" }, { word: "Rosa", base: "Rosa" }] }
+  - id: "es-0172"
+    target: "la esposa"
+    ipa: "la esˈposa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "esposa", base: "esposa" }]
+    examples:
+      - { target: "La esposa de Luis es enfermera.", ipa: "la esˈposa de lwis es enfeɾˈmeɾa", bases: [{ word: "La", base: "la" }, { word: "esposa", base: "esposa" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }, { word: "es", ref: "es-0022" }, { word: "enfermera", base: "enfermera" }] }
+      - { target: "Hoy conocí a la esposa de Luis.", ipa: "oj konoˈθi a la esˈposa de lwis", bases: [{ word: "Hoy", base: "hoy" }, { word: "conocí", base: "conocer" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "esposa", base: "esposa" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }] }
+  - id: "es-0173"
+    target: "el marido"
+    ipa: "el maˈɾido"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "marido", base: "marido" }]
+    synonyms:
+      - { id: "husband", ref: "es-0171" }
+    examples:
+      - { target: "Ana dice que el marido es muy simpático.", ipa: "ˈana ˈdiθe ke el maˈɾido es mwi simˈpatiko", bases: [{ word: "Ana", base: "Ana" }, { word: "dice", base: "decir" }, { word: "que", base: "que" }, { word: "el", base: "el" }, { word: "marido", base: "marido" }, { word: "es", ref: "es-0022" }, { word: "muy", base: "muy" }, { word: "simpático", base: "simpático" }] }
+      - { target: "El marido de Rosa trabaja de noche.", ipa: "el maˈɾido de ˈrosa tɾaˈbaxa de ˈnotʃe", bases: [{ word: "El", base: "el" }, { word: "marido", base: "marido" }, { word: "de", base: "de" }, { word: "Rosa", base: "Rosa" }, { word: "trabaja", base: "trabajar" }, { word: "noche", base: "noche" }] }
+  - id: "es-0174"
+    target: "el novio"
+    ipa: "el ˈnobjo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "novio", base: "novio" }]
+    examples:
+      - { target: "El novio de Ana es médico.", ipa: "el ˈnobjo de ˈana es ˈmediko", bases: [{ word: "El", base: "el" }, { word: "novio", base: "novio" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "médico", base: "médico" }] }
+      - { target: "Ana dice que el novio viene mañana.", ipa: "ˈana ˈdiθe ke el ˈnobjo ˈbjene maˈɲana", bases: [{ word: "Ana", base: "Ana" }, { word: "dice", base: "decir" }, { word: "que", base: "que" }, { word: "el", base: "el" }, { word: "novio", base: "novio" }, { word: "viene", base: "venir" }, { word: "mañana", base: "mañana" }] }
+  - id: "es-0175"
+    target: "la novia"
+    ipa: "la ˈnobja"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "novia", base: "novia" }]
+    examples:
+      - { target: "La novia de Luis vive en Lima.", ipa: "la ˈnobja de lwis ˈbibe en ˈlima", bases: [{ word: "La", base: "la" }, { word: "novia", base: "novia" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }, { word: "vive", ref: "es-0030" }, { word: "en", base: "en" }, { word: "Lima", base: "Lima" }] }
+      - { target: "Ana es la novia de Luis.", ipa: "ˈana es la ˈnobja de lwis", bases: [{ word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "novia", base: "novia" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }] }
+  - id: "es-0176"
+    target: "el nieto"
+    ipa: "el ˈnjeto"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "nieto", base: "nieto" }]
+    examples:
+      - { target: "El nieto de Rosa tiene cinco años.", ipa: "el ˈnjeto de ˈrosa ˈtjene ˈθinko ˈaɲos", bases: [{ word: "El", base: "el" }, { word: "nieto", base: "nieto" }, { word: "de", base: "de" }, { word: "Rosa", base: "Rosa" }, { word: "tiene", ref: "es-0024" }, { word: "cinco", base: "cinco" }, { word: "años", base: "año" }] }
+      - { target: "Rosa dice que el nieto es muy alto.", ipa: "ˈrosa ˈdiθe ke el ˈnjeto es mwi ˈalto", bases: [{ word: "Rosa", base: "Rosa" }, { word: "dice", base: "decir" }, { word: "que", base: "que" }, { word: "el", base: "el" }, { word: "nieto", base: "nieto" }, { word: "es", ref: "es-0022" }, { word: "muy", base: "muy" }, { word: "alto", base: "alto" }] }
+  - id: "es-0177"
+    target: "la nieta"
+    ipa: "la ˈnjeta"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "nieta", base: "nieta" }]
+    examples:
+      - { target: "La nieta de Rosa estudia en Bogotá.", ipa: "la ˈnjeta de ˈrosa esˈtudja en boɡoˈta", bases: [{ word: "La", base: "la" }, { word: "nieta", base: "nieta" }, { word: "de", base: "de" }, { word: "Rosa", base: "Rosa" }, { word: "estudia", base: "estudiar" }, { word: "en", base: "en" }, { word: "Bogotá", base: "Bogotá" }] }
+      - { target: "Ana es la nieta de Rosa.", ipa: "ˈana es la ˈnjeta de ˈrosa", bases: [{ word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "nieta", base: "nieta" }, { word: "de", base: "de" }, { word: "Rosa", base: "Rosa" }] }
+  - id: "es-0178"
+    target: "el sobrino"
+    ipa: "el soˈbɾino"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "sobrino", base: "sobrino" }]
+    examples:
+      - { target: "El sobrino de Ana juega en el parque.", ipa: "el soˈbɾino de ˈana ˈxweɡa en el ˈpaɾke", bases: [{ word: "El", base: "el" }, { word: "sobrino", base: "sobrino" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "juega", base: "jugar" }, { word: "en", base: "en" }, { word: "parque", base: "parque" }] }
+      - { target: "Luis es el sobrino de Rosa.", ipa: "lwis es el soˈbɾino de ˈrosa", bases: [{ word: "Luis", base: "Luis" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "sobrino", base: "sobrino" }, { word: "de", base: "de" }, { word: "Rosa", base: "Rosa" }] }
+  - id: "es-0179"
+    target: "la sobrina"
+    ipa: "la soˈbɾina"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "sobrina", base: "sobrina" }]
+    examples:
+      - { target: "La sobrina de Ana es muy alta.", ipa: "la soˈbɾina de ˈana es mwi ˈalta", bases: [{ word: "La", base: "la" }, { word: "sobrina", base: "sobrina" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "muy", base: "muy" }, { word: "alta", base: "alto" }] }
+      - { target: "Rosa habla con la sobrina de Luis.", ipa: "ˈrosa ˈabla kon la soˈbɾina de lwis", bases: [{ word: "Rosa", base: "Rosa" }, { word: "habla", ref: "es-0027" }, { word: "con", base: "con" }, { word: "la", base: "la" }, { word: "sobrina", base: "sobrina" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }] }
+  - id: "es-0180"
+    target: "el suegro"
+    ipa: "el ˈsweɡɾo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "suegro", base: "suegro" }]
+    examples:
+      - { target: "El suegro de Luis es abogado.", ipa: "el ˈsweɡɾo de lwis es aboˈɡado", bases: [{ word: "El", base: "el" }, { word: "suegro", base: "suegro" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }, { word: "es", ref: "es-0022" }, { word: "abogado", base: "abogado" }] }
+      - { target: "Ana habla con el suegro.", ipa: "ˈana ˈabla kon el ˈsweɡɾo", bases: [{ word: "Ana", base: "Ana" }, { word: "habla", ref: "es-0027" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "suegro", base: "suegro" }] }
+  - id: "es-0181"
+    target: "la suegra"
+    ipa: "la ˈsweɡɾa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "suegra", base: "suegra" }]
+    examples:
+      - { target: "La suegra de Ana vive en Quito.", ipa: "la ˈsweɡɾa de ˈana ˈbibe en ˈkito", bases: [{ word: "La", base: "la" }, { word: "suegra", base: "suegra" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "vive", ref: "es-0030" }, { word: "en", base: "en" }, { word: "Quito", base: "Quito" }] }
+      - { target: "Luis quiere mucho a la suegra.", ipa: "lwis ˈkjeɾe ˈmutʃo a la ˈsweɡɾa", bases: [{ word: "Luis", base: "Luis" }, { word: "quiere", base: "querer" }, { word: "mucho", ref: "es-0053" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "suegra", base: "suegra" }] }
+  - id: "es-0182"
+    target: "el cuñado"
+    ipa: "el kuˈɲado"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "cuñado", base: "cuñado" }]
+    examples:
+      - { target: "El cuñado de Ana es ingeniero.", ipa: "el kuˈɲado de ˈana es inxeˈnjeɾo", bases: [{ word: "El", base: "el" }, { word: "cuñado", base: "cuñado" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "ingeniero", base: "ingeniero" }] }
+      - { target: "Luis es el cuñado de Rosa.", ipa: "lwis es el kuˈɲado de ˈrosa", bases: [{ word: "Luis", base: "Luis" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "cuñado", base: "cuñado" }, { word: "de", base: "de" }, { word: "Rosa", base: "Rosa" }] }
+  - id: "es-0183"
+    target: "la cuñada"
+    ipa: "la kuˈɲada"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "cuñada", base: "cuñada" }]
+    examples:
+      - { target: "La cuñada de Luis es enfermera.", ipa: "la kuˈɲada de lwis es enfeɾˈmeɾa", bases: [{ word: "La", base: "la" }, { word: "cuñada", base: "cuñada" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }, { word: "es", ref: "es-0022" }, { word: "enfermera", base: "enfermera" }] }
+      - { target: "Ana es la cuñada de Rosa.", ipa: "ˈana es la kuˈɲada de ˈrosa", bases: [{ word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "cuñada", base: "cuñada" }, { word: "de", base: "de" }, { word: "Rosa", base: "Rosa" }] }
+  - id: "es-0184"
+    target: "el gemelo"
+    ipa: "el xeˈmelo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "gemelo", base: "gemelo" }]
+    examples:
+      - { target: "El gemelo de Luis se llama Pedro.", ipa: "el xeˈmelo de lwis se ˈʝama ˈpedɾo", bases: [{ word: "El", base: "el" }, { word: "gemelo", base: "gemelo" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }, { word: "se", base: "se" }, { word: "llama", base: "llamar" }, { word: "Pedro", base: "Pedro" }] }
+      - { target: "Luis y el gemelo de Ana son muy parecidos.", ipa: "lwis i el xeˈmelo de ˈana son mwi paɾeˈθidos", bases: [{ word: "Luis", base: "Luis" }, { word: "y", ref: "es-0048" }, { word: "el", base: "el" }, { word: "gemelo", base: "gemelo" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "son", ref: "es-0022" }, { word: "muy", base: "muy" }, { word: "parecidos", base: "parecido" }] }
+  - id: "es-0185"
+    target: "la gemela"
+    ipa: "la xeˈmela"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "gemela", base: "gemela" }]
+    examples:
+      - { target: "La gemela de Ana es muy simpática.", ipa: "la xeˈmela de ˈana es mwi simˈpatika", bases: [{ word: "La", base: "la" }, { word: "gemela", base: "gemela" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "muy", base: "muy" }, { word: "simpática", base: "simpático" }] }
+      - { target: "Ana y la gemela de Luis son muy parecidas.", ipa: "ˈana i la xeˈmela de lwis son mwi paɾeˈθidas", bases: [{ word: "Ana", base: "Ana" }, { word: "y", ref: "es-0048" }, { word: "la", base: "la" }, { word: "gemela", base: "gemela" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }, { word: "son", ref: "es-0022" }, { word: "muy", base: "muy" }, { word: "parecidas", base: "parecido" }] }
+  - id: "es-0186"
+    target: "el ahijado"
+    ipa: "el aiˈxado"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "ahijado", base: "ahijado" }]
+    examples:
+      - { target: "El ahijado de Rosa tiene diez años.", ipa: "el aiˈxado de ˈrosa ˈtjene djeθ ˈaɲos", bases: [{ word: "El", base: "el" }, { word: "ahijado", base: "ahijado" }, { word: "de", base: "de" }, { word: "Rosa", base: "Rosa" }, { word: "tiene", ref: "es-0024" }, { word: "diez", base: "diez" }, { word: "años", base: "año" }] }
+      - { target: "Ana dice que el ahijado quiere ser médico.", ipa: "ˈana ˈdiθe ke el aiˈxado ˈkjeɾe seɾ ˈmediko", bases: [{ word: "Ana", base: "Ana" }, { word: "dice", base: "decir" }, { word: "que", base: "que" }, { word: "el", base: "el" }, { word: "ahijado", base: "ahijado" }, { word: "quiere", base: "querer" }, { word: "ser", ref: "es-0022" }, { word: "médico", base: "médico" }] }
+  - id: "es-0187"
+    target: "la ahijada"
+    ipa: "la aiˈxada"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "ahijada", base: "ahijada" }]
+    examples:
+      - { target: "La ahijada de Rosa quiere ser médica.", ipa: "la aiˈxada de ˈrosa ˈkjeɾe seɾ ˈmedika", bases: [{ word: "La", base: "la" }, { word: "ahijada", base: "ahijada" }, { word: "de", base: "de" }, { word: "Rosa", base: "Rosa" }, { word: "quiere", base: "querer" }, { word: "ser", ref: "es-0022" }, { word: "médica", base: "médico" }] }
+      - { target: "Ana es la ahijada de Rosa.", ipa: "ˈana es la aiˈxada de ˈrosa", bases: [{ word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "ahijada", base: "ahijada" }, { word: "de", base: "de" }, { word: "Rosa", base: "Rosa" }] }

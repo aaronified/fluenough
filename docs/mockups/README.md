@@ -4,13 +4,17 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 ## Awaiting approval
 
-- `progress-mastery.html`: the Progress tab's mastery view (#678): the
-  words count (**312** / 540), a 6-point star of mastery per skill (grammar,
-  script, read, write, hear, say; known / B1 total; the filled area is overall
-  mastery; it grows from the centre in 400 ms on open), and a line chart of
-  known / taught over time for words, phrases, script and grammar, in place of
-  #575's bars. Main state only, Hindi (Hindustani) in light and Bengali in
-  dark, 1.4x (owner, 2026-10-21). The page marks its Proposed choices.
+- `progress-mastery.html`: the Progress tab's mastery view (#678): the words
+  count (**312** / 540) and one streak tile, a 7-day running calendar with one
+  mark a day (fire for the quota met, two stacked fires for 2x or more, a
+  filled dot for some practice, an unfilled dot for none; #485's minutes), the
+  tappable 6-point star (a fill with no edge of known / B1 total, a solid blue
+  outline of known / taught, nothing written under it), then the weakest tags
+  and leeches (owner, 2026-10-23). Tapping the star opens a second screen with
+  two line charts over time, one line per skill. The Words tile is one line,
+  the Streak tile adds the best streak, and the icons are Tabler. Hindi (Hindustani) in light and
+  Bengali in dark, 1.4x. The open choice is a tweak control and is listed in
+  `progress-mastery.md`, with the self-check.
 
 - `today-chain.html`: every screen the Today chain needs on one page (owner,
   2026-10-23: "Do all the mockups needed for the today chain together, in one
@@ -20,6 +24,14 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
   conversation screen (#722). Hindustani and Bengali, light and dark, 1.4x.
   Open choices are tweak controls and are listed in `today-chain.md`, with the
   self-check.
+
+- `placement-review-choice.html`: after placement, how placed-out words are
+  reviewed (#761): the end-of-placement question (Counted as known, Sampled,
+  Normal) and the per-course Placed words setting in Languages I'm learning
+  with its change sheet (owner, 2026-10-23). Hindustani in light (placed except
+  the script decks) and Bengali in dark, 1.4x. The open choices (default,
+  script decks exempt, wording) are tweak controls and are listed in
+  `placement-review-choice.md`, with the self-check.
 
 ## Current and approved
 

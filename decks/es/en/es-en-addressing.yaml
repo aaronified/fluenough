@@ -1,0 +1,281 @@
+schema: 1
+id: "es-en-addressing"
+kind: "layer"
+core: "es-addressing"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Addressing people: tú, usted and titles"
+license: "CC-BY-SA-4.0"
+description: "Tú and usted, the titles señor, señora and señorita, and how to give your name and meet someone. Not yet checked by a Spanish speaker: please report any mistake."
+
+cards:
+  "es-0086":
+    native: "you (informal)"
+    notes:
+      "n1": "The informal you, for a friend, a child or someone of your age. Usted is the formal one. Without the accent, tu means your."
+    examples:
+      "Tú eres mi amigo.":
+        native: "You are my friend."
+        bases:
+          "Tú": "you"
+      "¿Tú hablas inglés?":
+        native: "Do you speak English?"
+        bases:
+          "Tú": "you"
+          "inglés": "English"
+  "es-0087":
+    native: "you (formal)"
+    notes:
+      "n1": "The formal you, for a stranger, an older person or someone you respect. It takes the verb form for he and she: usted habla (you speak). Written Ud. or Vd. in short."
+    examples:
+      "Usted es muy amable, señora.":
+        native: "You are very kind, madam."
+        bases:
+          "Usted": "you"
+          "muy": "very"
+          "amable": "kind"
+      "Perdone, ¿usted es el profesor?":
+        native: "Excuse me, are you the teacher?"
+        bases:
+          "Perdone": "excuse"
+          "usted": "you"
+          "el": "the"
+  "es-0088":
+    native: "Mr; sir; gentleman"
+    notes:
+      "n1": "Señor is Mr before a surname (el señor García) and sir on its own, as a way to speak to a man you do not know. Its short form is Sr."
+    examples:
+      "El señor es médico.":
+        native: "The gentleman is a doctor."
+        bases:
+          "El": "the"
+          "señor": "gentleman"
+          "médico": "doctor"
+      "Buenos días, señor.":
+        native: "Good morning, sir."
+        bases:
+          "señor": "sir"
+    bases:
+      "el": "the"
+      "señor": "gentleman"
+  "es-0089":
+    native: "Mrs; madam; lady"
+    notes:
+      "n1": "Señora is Mrs before a surname (la señora Ruiz) and madam on its own. It is the polite word for a grown woman you do not know well."
+    examples:
+      "La señora Ruiz vive aquí.":
+        native: "Mrs Ruiz lives here."
+        bases:
+          "La": "the"
+          "señora": "Mrs"
+          "Ruiz": "Ruiz"
+      "Buenas tardes, señora.":
+        native: "Good afternoon, madam."
+        bases:
+          "tardes": "afternoon"
+          "señora": "madam"
+    bases:
+      "la": "the"
+      "señora": "lady"
+  "es-0090":
+    native: "Miss; young lady"
+    notes:
+      "n1": "Señorita is Miss before a surname, and is kept for a young woman. Many people now say señora for any woman, so when unsure, señora is the safer word."
+    examples:
+      "La señorita Lee es nueva aquí.":
+        native: "Miss Lee is new here."
+        bases:
+          "La": "the"
+          "señorita": "Miss"
+          "Lee": "Lee"
+      "Gracias, señorita.":
+        native: "Thank you, miss."
+        bases:
+          "señorita": "miss"
+    bases:
+      "la": "the"
+      "señorita": "Miss"
+  "es-0091":
+    native: "name; first name"
+    notes:
+      "n1": "On a form, nombre is the first name; the surname is apellido."
+    examples:
+      "Mi nombre es Ana.":
+        native: "My name is Ana."
+        bases:
+          "nombre": "name"
+          "Ana": "Ana"
+      "Escribe tu nombre aquí.":
+        native: "Write your name here."
+        bases:
+          "Escribe": "write"
+          "nombre": "name"
+    bases:
+      "el": "the"
+      "nombre": "name"
+  "es-0092":
+    native: "surname; last name"
+    notes:
+      "n1": "Many Spanish speakers have two surnames: the father's first, then the mother's. On most forms only the first is asked for."
+    examples:
+      "¿Cuál es tu apellido?":
+        native: "What is your surname?"
+        bases:
+          "apellido": "surname"
+      "Mi apellido es Martín.":
+        native: "My surname is Martín."
+        bases:
+          "apellido": "surname"
+          "Martín": "Martín"
+    bases:
+      "el": "the"
+      "apellido": "surname"
+  "es-0093":
+    native: "teacher (man)"
+    notes:
+      "n1": "The feminine is la profesora. The plural los profesores can mean men only, or men and women together."
+    examples:
+      "El profesor habla despacio.":
+        native: "The teacher speaks slowly."
+        bases:
+          "El": "the"
+          "profesor": "teacher"
+          "despacio": "slowly"
+      "Hola, profesor.":
+        native: "Hello, teacher."
+        bases:
+          "profesor": "teacher"
+    bases:
+      "el": "the"
+      "profesor": "teacher"
+  "es-0094":
+    native: "teacher (woman)"
+    notes:
+      "n1": "The masculine is el profesor. Use profesora when speaking to or about a woman teacher."
+    examples:
+      "La profesora es muy simpática.":
+        native: "The teacher is very friendly."
+        bases:
+          "La": "the"
+          "profesora": "teacher"
+          "muy": "very"
+          "simpática": "friendly"
+      "Buenos días, profesora.":
+        native: "Good morning, teacher."
+        bases:
+          "profesora": "teacher"
+    bases:
+      "la": "the"
+      "profesora": "teacher"
+  "es-0095":
+    native: "classmate; friend; partner"
+    notes:
+      "n1": "The feminine is la compañera. In a class it means a classmate, and in a pair exercise, the partner."
+    examples:
+      "Mi compañero de clase es alto.":
+        native: "My classmate is tall."
+        bases:
+          "compañero": "classmate"
+          "de": "of"
+          "clase": "class"
+          "alto": "tall"
+      "Ella es mi compañera de trabajo.":
+        native: "She is my work colleague."
+        bases:
+          "compañera": "colleague"
+          "de": "of"
+          "trabajo": "work"
+    bases:
+      "el": "the"
+      "compañero": "classmate"
+  "es-0096":
+    native: "my name is; I am called"
+    notes:
+      "n1": "Use it to say your own name. To ask someone's name, see ¿cómo te llamas? (what is your name?)."
+    examples:
+      "Me llamo Carmen.":
+        native: "My name is Carmen."
+        bases:
+          "Me": "myself"
+          "llamo": "am called"
+          "Carmen": "Carmen"
+      "Hola, me llamo Javier.":
+        native: "Hello, my name is Javier."
+        bases:
+          "me": "myself"
+          "llamo": "am called"
+          "Javier": "Javier"
+    bases:
+      "me": "myself"
+      "llamo": "am called"
+  "es-0097":
+    native: "what is your name?"
+    notes:
+      "n1": "Asks a friend or a child their name. To a stranger, say ¿Cómo se llama usted? (What is your name?)."
+    examples:
+      "Hola, ¿cómo te llamas?":
+        native: "Hi, what is your name?"
+        bases:
+          "te": "you"
+          "llamas": "are called"
+      "Perdón, ¿cómo te llamas?":
+        native: "Sorry, what is your name?"
+        bases:
+          "te": "you"
+          "llamas": "are called"
+    bases:
+      "te": "you"
+      "llamas": "are called"
+  "es-0098":
+    native: "pleased to meet you"
+    notes:
+      "n1": "Said on meeting someone. The answer is igualmente (likewise), or mucho gusto again."
+    examples:
+      "Mucho gusto, señora.":
+        native: "Pleased to meet you, madam."
+        bases:
+          "gusto": "pleasure"
+      "Mucho gusto en conocerte.":
+        native: "Pleased to meet you."
+        bases:
+          "gusto": "pleasure"
+          "en": "in"
+          "conocerte": "meet"
+    bases:
+      "gusto": "pleasure"
+  "es-0099":
+    native: "pleased (said by a man)"
+    notes:
+      "n1": "Said on meeting someone. A woman says encantada. It agrees with the speaker, not with the person met: Encantado de conocerte is 'pleased to meet you'."
+    examples:
+      "Encantado de conocerte.":
+        native: "Pleased to meet you."
+        bases:
+          "Encantado": "pleased"
+          "de": "to"
+          "conocerte": "meet"
+      "Encantada, señora Ruiz.":
+        native: "Pleased to meet you, Mrs Ruiz."
+        bases:
+          "Encantada": "pleased"
+          "Ruiz": "Ruiz"
+  "es-0100":
+    native: "good afternoon"
+    notes:
+      "n1": "Said from lunchtime until dusk. Buenas noches is said from dusk onward, and to say goodnight."
+    examples:
+      "Buenas tardes, señor.":
+        native: "Good afternoon, sir."
+        bases:
+          "tardes": "afternoon"
+      "Buenas tardes, profesora.":
+        native: "Good afternoon, teacher."
+        bases:
+          "tardes": "afternoon"
+    bases:
+      "tardes": "afternoon"
+  "es-0101":
+    native: "Two words for you: informal and formal"
+    explanation: "Tú is for a friend, a child or someone of your age. Usted is for an older person, a stranger or someone you respect. Usted takes the same verb form as he or she."
+  "es-0102":
+    native: "Titles: Mr, Mrs and Miss"
+    explanation: "Señor, señora and señorita come before a surname, or stand alone to speak to someone: Buenos días, señor (Good morning, sir)."

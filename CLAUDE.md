@@ -179,6 +179,13 @@ are done till B1 and we have added the movies songs books parts, we can
 finally start advertising the app." is superseded for the B1 part. Other
 languages' paths and decks follow.
 
+**Toki Pona to B1, then stop** (owner, 2026-10-23: "once the current one is
+done fully complete toki pona to B1. then stop the deck work"; "1 PR").
+Toki Pona is the one exception to the A1 stop: its units 18 to the B1
+milestone are written in a single PR. After that no new deck work starts;
+open deck PRs are still reviewed and merged. Conversations (#722) are a
+long-horizon ask (owner, 2026-10-23).
+
 **Hindustani** is one course (owner, 2026-10-18: "Hindi and Urdu should be
 combined as we should not care about socipolitics over linguistics"; chose
 "One course, two scripts"). The `hi` course and its card ids stay; it is
