@@ -259,11 +259,8 @@ units:
     words: 0
     grammar: ["lon-prep", "tawa-prep", "tan-prep", "kepeken-prep", "sama-prep"]
   # soweli, waso, kala, pipi, akesi and mu (an animal's sound).
-  - planned: { id: "tok-animals", theme: "animals", words: 6 }
-    listening_passages:
-      - { id: "farm-sounds", text: { "en": "A child's game naming animals and the sounds they make" } }
-    reading_passages:
-      - { id: "zoo-signs", text: { "en": "Signs at a small zoo describing each animal" } }
+  - decks: ["tok-animals", "tok-animals-sentences", "tok-reading-animals", "*"]
+    words: 6
   # len, kule, loje, jelo, laso, walo and pimeja: Toki Pona's five colour
   # words, and how other colours are mixed from them (laso jelo).
   - planned: { id: "tok-clothes", theme: "clothes", words: 7 }
