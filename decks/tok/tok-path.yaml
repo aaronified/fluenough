@@ -318,13 +318,14 @@ units:
   - decks: ["tok-grammar-describing-unnamed", "tok-grammar-describing-unnamed-sentences", "tok-reading-describing-unnamed"]
     words: 0
     grammar: ["choosing-the-head", "pi-chains", "many-ways-to-say"]
-  # tonsi and unpa. unpa is in pu and in the sense of sex, taught with a
-  # note; to confirm with the owner whether the course teaches it.
-  - planned: { id: "tok-relationships", theme: "relationships", words: 2 }
-    listening_passages:
-      - { id: "how-we-met", text: { "en": "A couple tells how they met" } }
-    reading_passages:
-      - { id: "wedding-invite", text: { "en": "A wedding invitation" } }
+  # tonsi (a non-binary person) and unpa (to have sex: crude, taught with a
+  # usage note, and rated offensive, so the app hides it unless Adult
+  # content is on; owner, 2026-10-23). Its sentences are
+  # tok-relationships-sentences, and its passages are in
+  # tok-en-reading-relationships: the listening passage how-we-met (a
+  # person tells how they met) and the reading passage wedding-invite.
+  - decks: ["tok-relationships", "tok-relationships-sentences", "tok-reading-relationships", "*"]
+    words: 2
   # Proper names: an unofficial word used as a modifier after its head
   # (jan Ali, ma Inli, toki Inli), with a capital; adapting a foreign
   # name to Toki Pona's sounds and syllables.
