@@ -11,6 +11,9 @@
 # and are one number for every native language. A theme named here that
 # decks/themes.yaml does not list yet is added to it with its first deck.
 #
+# Tense order (the tense, number and gender audit, 2026-10-23): the
+# imperatives come straight after the present, before any past; the
+# perfect and the past continuous are planned after past-more.
 # The order follows docs/plans/words-rules-sentences.md (owner, 2026-10-07,
 # and 2026-10-17: "build the path files for all present languages via an
 # opus agent, as per our current path design"):
@@ -122,6 +125,13 @@ units:
   - decks: ["te-grammar-verb-present"]
     words: 0
     grammar: ["present-first", "present-second", "present-third"]
+  - decks: ["te-grammar-imperatives"]
+    words: 0
+    grammar: ["imperatives"]
+    listening_passages:
+      - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
+    reading_passages:
+      - { id: "signs-and-rules", text: { "en": "Signs saying what to do and not to do" } }
   - decks: ["te-grammar-demonstratives"]
     words: 0
     grammar: ["demonstratives"]
@@ -266,6 +276,16 @@ units:
   - decks: ["te-grammar-past-more"]
     words: 0
     grammar: ["past-more"]
+  - planned: { id: "te-grammar-perfect", grammar: "perfect" }
+    listening_passages:
+      - { id: "a-friend-has-done", text: { "en": "A friend says what they have already done this week" } }
+    reading_passages:
+      - { id: "to-do-ticks", text: { "en": "A to-do list with the finished items ticked" } }
+  - planned: { id: "te-grammar-past-continuous", grammar: "past-continuous" }
+    listening_passages:
+      - { id: "what-was-going-on", text: { "en": "Saying what was going on when the bell rang" } }
+    reading_passages:
+      - { id: "witness-note", text: { "en": "A short note from a witness of a busy street" } }
   - decks: ["te-shopping", "*"]
     words: 55
     listening_passages:
@@ -318,13 +338,6 @@ units:
       - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends" } }
     reading_passages:
       - { id: "club-poster", text: { "en": "A poster for a sports and music club" } }
-  - decks: ["te-grammar-imperatives"]
-    words: 0
-    grammar: ["imperatives"]
-    listening_passages:
-      - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
-    reading_passages:
-      - { id: "signs-and-rules", text: { "en": "Signs saying what to do and not to do" } }
   - decks: ["te-chores", "*"]
     words: 45
     listening_passages:
