@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart' show kMinFlingVelocity;
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -17,6 +16,7 @@ import 'features/stats/stats_page.dart';
 import 'features/today/today_page.dart';
 import 'l10n/app_localizations.dart';
 import 'ui/theme.dart';
+import 'ui/widgets/tab_pager.dart';
 
 /// The app: [AppState] at the top, then [MaterialApp] with the interface
 /// strings, the light and dark themes and the routes, opening on [AppShell].
@@ -148,17 +148,14 @@ class AppShell extends StatelessWidget {
         // Asks whether to download a deck update the daily check found.
         child: DeckUpdatePrompt(
           child: Scaffold(
-            body: _TabSwipe(
+            body: TabPager(
               tab: tab,
-              child: IndexedStack(
-                index: current.index,
-                children: const <Widget>[
-                  TodayPage(),
-                  DecksPage(),
-                  StatsPage(),
-                  SettingsPage(),
-                ],
-              ),
+              children: const <Widget>[
+                TodayPage(),
+                DecksPage(),
+                StatsPage(),
+                SettingsPage(),
+              ],
             ),
             bottomNavigationBar: NavigationBar(
               selectedIndex: current.index,
@@ -191,53 +188,6 @@ class AppShell extends StatelessWidget {
       ),
     );
   }
-}
-
-/// A sideways swipe on the tab's page moves to the next or previous tab,
-/// stopping at the ends (#683). It is a horizontal drag: a drag that passes
-/// the touch slop mostly upright goes to the page's scroll instead, and a
-/// horizontal drag inside the page, such as the language bar's, wins over
-/// this one because it is nearer the finger.
-class _TabSwipe extends StatefulWidget {
-  const _TabSwipe({required this.tab, required this.child});
-
-  final ValueNotifier<ShellTab> tab;
-  final Widget child;
-
-  @override
-  State<_TabSwipe> createState() => _TabSwipeState();
-}
-
-class _TabSwipeState extends State<_TabSwipe> {
-  double _dx = 0;
-
-  void _end(DragEndDetails details) {
-    final velocity = details.primaryVelocity ?? 0;
-    final width = context.size?.width ?? 0;
-    final double toward;
-    if (velocity.abs() >= kMinFlingVelocity) {
-      toward = velocity;
-    } else if (width > 0 && _dx.abs() >= width / 4) {
-      toward = _dx;
-    } else {
-      return;
-    }
-    // A swipe left shows what is to the right: the next tab, or in a right
-    // to left layout the previous one.
-    final rtl = Directionality.of(context) == TextDirection.rtl;
-    final step = (toward < 0) != rtl ? 1 : -1;
-    final next = widget.tab.value.index + step;
-    if (next < 0 || next >= ShellTab.values.length) return;
-    widget.tab.value = ShellTab.values[next];
-  }
-
-  @override
-  Widget build(BuildContext context) => GestureDetector(
-    onHorizontalDragStart: (_) => _dx = 0,
-    onHorizontalDragUpdate: (details) => _dx += details.primaryDelta ?? 0,
-    onHorizontalDragEnd: _end,
-    child: widget.child,
-  );
 }
 
 /// The Settings tab's [icon], with a dot while a newer version is out

@@ -163,6 +163,68 @@ void main() {
         expect(selected(), ShellTab.settings.index);
       },
     );
+
+    testWidgets(
+      'the pages follow the finger and the bar follows them; a short slow '
+      'drag springs back, a tap on the bar slides to the tab (#683)',
+      (tester) async {
+        usePhone(tester);
+        final state = await pumpApp(
+          tester,
+          state: AppState.test(
+            settings: SettingsNotifier(
+              spokenLanguages: const <String>['en'],
+              learningLanguages: const <String>['hi', 'bn'],
+              learningChosen: true,
+              languageChoice: 'hi',
+            ),
+          ),
+        );
+        int selected() => tester
+            .widget<NavigationBar>(find.byType(NavigationBar))
+            .selectedIndex;
+        final width = tester.getSize(find.byType(TodayPage)).width;
+
+        // Held a little way across, the pages are between the two tabs, and
+        // the bar is on the nearer one.
+        final gesture = await tester.startGesture(
+          tester.getCenter(find.byType(TodayPage)),
+        );
+        await gesture.moveBy(Offset(-width * 0.3, 0));
+        await tester.pump();
+        expect(
+          tester.getTopLeft(find.byType(DecksPage)).dx,
+          closeTo(width * 0.7, 30),
+        );
+        expect(selected(), ShellTab.today.index);
+        await gesture.moveBy(Offset(-width * 0.3, 0));
+        await tester.pump();
+        expect(selected(), ShellTab.decks.index);
+
+        // Let go slowly, less than half a page from Home: it springs back.
+        await gesture.moveBy(Offset(width * 0.4, 0));
+        await tester.pump(const Duration(seconds: 1));
+        await gesture.up();
+        await tester.pumpAndSettle(const Duration(seconds: 2));
+        expect(state.shellTab.value, ShellTab.today);
+        expect(selected(), ShellTab.today.index);
+        expect(tester.getTopLeft(find.byType(TodayPage)).dx, 0);
+
+        // A tap on the bar slides there.
+        await tester.tap(
+          find.descendant(
+            of: find.byType(NavigationBar),
+            matching: find.byIcon(Icons.insert_chart_outlined),
+          ),
+        );
+        await tester.pump(const Duration(milliseconds: 150));
+        expect(tester.getTopLeft(find.byType(StatsPage)).dx, greaterThan(0));
+        await tester.pumpAndSettle(const Duration(seconds: 2));
+        expect(state.shellTab.value, ShellTab.progress);
+        expect(showing(tester, StatsPage), isTrue);
+        expect(tester.getTopLeft(find.byType(StatsPage)).dx, 0);
+      },
+    );
   });
 
   group('the tour', () {
