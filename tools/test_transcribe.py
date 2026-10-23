@@ -3,7 +3,7 @@
 
 import unittest
 
-from transcribe import spanish_ipa, transcribe
+from transcribe import CannotRead, spanish_ipa, transcribe
 
 
 class ReadingTest(unittest.TestCase):
@@ -62,6 +62,57 @@ class ReadingTest(unittest.TestCase):
                     getattr(fresh, case.__name__)()
                 finally:
                     fresh.doCleanups()
+
+
+class NewLanguagesTest(unittest.TestCase):
+    """Japanese, Korean, Mandarin and Toki Pona (#612), read the way the
+    decks write them."""
+
+    def test_kana_are_read_in_hepburn_with_long_vowels_doubled(self) -> None:
+        for kana, reading, ipa in (
+            ("わたし", "watashi", "wataɕi"),
+            ("おはよう", "ohayou", "ohajoː"),
+            ("おおきい", "ookii", "oːkiː"),
+            ("コーヒー", "koohii", "koːçiː"),
+            ("がっこう", "gakkou", "ɡakkoː"),
+            ("きょう", "kyou", "kjoː"),
+            ("ほんや", "hon'ya", "hoɴja"),
+            ("ファイル", "fairu", "ɸaiɾɯ"),
+        ):
+            with self.subTest(kana):
+                t = transcribe(kana, "ja")
+                self.assertEqual((t.reading, t.ipa), (reading, ipa))
+
+    def test_han_cannot_be_read_from_their_shape(self) -> None:
+        with self.assertRaises(CannotRead):
+            transcribe("日本語", "ja")
+
+    def test_hangul_sound_changes_between_syllables(self) -> None:
+        for hangul, reading in (
+            ("선생님", "seonsaengnim"),
+            ("한국어", "hangugeo"),       # liaison
+            ("학문", "hangmun"),          # nasalisation
+            ("신라", "silla"),
+            ("종로", "jongno"),
+            ("좋다", "jota"),             # ㅎ aspirates
+            ("좋아요", "joayo"),          # ㅎ is silent
+            ("괜찮아요", "gwaenchanayo"),
+            ("읽어요", "ilgeoyo"),
+            ("감사합니다", "gamsahamnida"),
+            ("안녕하세요 커피", "annyeonghaseyo keopi"),
+        ):
+            with self.subTest(hangul):
+                self.assertEqual(transcribe(hangul, "ko").reading, reading)
+
+    def test_mandarin_is_the_hint_and_nothing_without_one(self) -> None:
+        self.assertEqual(
+            transcribe("你好", "zh", "nǐ hǎo").reading, "nǐ hǎo")
+        with self.assertRaises(CannotRead):
+            transcribe("你好", "zh")
+
+    def test_toki_pona_stress_is_on_the_first_syllable(self) -> None:
+        self.assertEqual(transcribe("jan suli li toki.", "tok").ipa,
+                         "jan ˈsuli li ˈtoki")
 
 
 if __name__ == "__main__":

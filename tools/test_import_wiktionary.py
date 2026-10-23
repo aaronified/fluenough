@@ -206,5 +206,34 @@ def page_with(name: str, licence: str = "CC BY 2.0") -> Network:
         "openmoji": b"PNG"})
 
 
+class NewLanguageReadings(unittest.TestCase):
+    """What the importer reads for the courses beyond the Indic ones (#612)."""
+
+    def test_korean_and_kana_are_read_and_mandarin_takes_the_hint(self) -> None:
+        self.assertEqual(iw.reading("학생", "ko", "hangul", None), "haksaeng")
+        self.assertEqual(iw.reading("わたし", "ja", "kana", None), "watashi")
+        self.assertEqual(iw.reading("日本", "ja", "kana", "nihon"), "nihon")
+        self.assertEqual(iw.reading("你好", "zh", "han_simplified", "nǐ hǎo"),
+                         "nǐ hǎo")
+
+    def test_a_word_with_nothing_to_read_it_by_is_left_out(self) -> None:
+        for word, code, script, hint in (
+            ("你好", "zh", "han_simplified", None),
+            ("日本", "ja", "kana", None),
+        ):
+            with self.subTest(word), self.assertRaises(iw.NoReading):
+                iw.reading(word, code, script, hint)
+
+    def test_maithili_is_not_read_by_hindis_rules(self) -> None:
+        with self.assertRaises(iw.NoReading):
+            iw.reading("देखलहुँ", "mai", "devanagari", "dekhalahũ")
+
+    def test_chinese_ipa_is_the_mandarin_one(self) -> None:
+        entry = {"sounds": [{"ipa": "/kɐu̯²⁵/", "tags": ["Cantonese"]},
+                            {"ipa": "/ni²¹⁴/", "tags": ["Mandarin"]}]}
+        self.assertEqual(iw.ipa_of(entry, "zh"), "ni²¹⁴")
+        self.assertIsNone(iw.ipa_of({"sounds": entry["sounds"][:1]}, "zh"))
+
+
 if __name__ == "__main__":
     unittest.main()
