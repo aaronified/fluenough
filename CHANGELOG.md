@@ -7,10 +7,43 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Rearranging is eligible by the card's data (three or more words in the target, or two in a phrase) through the question-type registry, which never rearranges a reading question, with the same questions as before (#522, step 5).
+- The two grammar question types are now eligible by whether the card's word has other forms (`Card.hasOtherForms`) or has sibling cards (`formSiblings`: each has exactly one base, the same card), and a rules cell's lesson questions come from the registry, with the same questions as before (#522, step 4).
+- Wrong options in a choice question are now taken first from cards that share the answer's word family, part of speech or tags (`lib/core/scheduling/distractors.dart`), with the same pool as before (#522, step 3).
+- A question-type registry in `lib/core/scheduling/question_type.dart`: how a review asks each item is now chosen by one list of types, each with its skill and when it is eligible, with the same questions as before (#522, step 2).
+- Progress: Weakest tags has an "All tags ›" button to a page of every tag with its bar and share remembered in the chosen range, and a Practise button on each: a random set of up to 20 taught words with that tag, in the language chosen at the top, with every answer recorded (#499).
+- The `wiki/` folder is published to the GitHub wiki by a workflow whenever it changes on main.
+- A card can set `picture_ask: true`: its `picture` is drawn with a small "?" badge, for question words (#707).
+
 ### Changed
 
 - Words you know come up a few at a time (#680). When a deck's known words come due, Today asks one or two of them, the ones you reviewed longest ago; if you get them right, the deck's other due known words wait until those two come due again, and every word has a turn before any is asked twice. If one is wrong, three to five more are asked, and if those go wrong too, all of the deck's due known words come up.
+- A finished deck's Revise now records its answers and moves the schedule, like quick revision; only number practice is unrecorded (#499, ADR-0033).
+
+### Fixed
+
+- CI: the deck tools' tests no longer fail on every deck pull request for a stale `decks/index.json`; the test that validates the real decks skips the index check, which is regenerated on main after merge and still tested on its own.
+- A read-aloud question in the placement check no longer ends the moment the phone's recogniser hears nothing: it says it did not hear, and lets the learner speak again or say they don't know, as the speaking drill does.
+- A one-word label on a number tile, such as "Remembered" on Progress, shrinks to fit at large text instead of breaking mid-word (#492).
+- The session result counts the time spent answering, each answer capped at 60 seconds, instead of the time the app was open, so a short lesson no longer reads 31 minutes (#486, minutes only; the card count is still open).
+
+## [0.5.4] - 2026-10-21
+
+0.5.3 was never published: its build failed, so its changes ship here.
+
+### Added
+
+- The Decks tab search finds cards (#527): a word, its spelling in another script, its reading or its meaning, ignoring case and accents, one row for each card, listed after the units and decks. Tapping a row opens the word.
+- The deck reader accepts the `homograph` and `lookalike` note kinds and a layer's `dictionary` entry (#692). Nothing shows them yet.
+
+### Changed
+
+- A sideways swipe on Home, Decks, Progress or Settings moves to the next or previous tab, stopping at the ends (#683). An upright drag still scrolls the page, and the language bar keeps its own swipe.
+- The language bar scrolls with momentum (#682): a drag or fling across its width passes at least five languages, each highlighted with a light tick as it goes by, and it settles on the nearest one, switching the screen once, at the end. A short flick still moves one, and it stops at the ends.
 - Find my level is shorter and checks each script (#481). It asks "Do you read Devanagari?" for each of a course's scripts, saying so when you read it through a language you know; No starts its script decks from the first letters with no questions, and Yes asks up to five questions, from a letter to a word read aloud, with one more try at each. Then it walks the word decks one question each, skipping ahead and jumping to the end while you know them, says where you start and why, and lets you try again from there.
+- Find my level credits what it found (#677). A script you read is credited Read and Write on Progress; one it stopped part-way in is credited Read for its letters and joined letters only. The cards of the decks it placed are recorded as Easy answers today, as if mastered, so they come up rarely. A card you have already reviewed keeps its own.
 
 ### Fixed
 

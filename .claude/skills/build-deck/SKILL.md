@@ -3,6 +3,8 @@ name: build-deck
 description: Use when building or extending a Fluenough deck, including writing the next planned unit of a language's B1 plan (a core in decks/<lang>/ plus its English layer in decks/<lang>/en/). Not for app code.
 ---
 
+The wiki is the source of truth for documentation: https://github.com/aaronified/fluenough/wiki
+
 # Build a deck
 
 An ordered checklist. It does not copy the format: [docs/DECK-FORMAT.md](../../../docs/DECK-FORMAT.md)
@@ -38,15 +40,19 @@ Before you start:
   DECK-FORMAT requires it. When a field lands, DECK-FORMAT and this list
   are updated in the same change. New text for the learner goes in each
   native layer.
+- Every question-word card (where, when, who, what, why, how, which, how
+  many) gets a `picture` plus `picture_ask: true` (DECK-FORMAT, "A question
+  word's picture"; owner, 2026-10-22, #707: "So that all future decks can
+  start adding them"). A deck can use `picture_ask` only once a release that
+  reads it is out: the released parser rejects unknown fields.
 - Closed groups (articles, pronouns, genders, cases and postpositions,
   demonstratives, question words, conjunctions, days, months, number words
   1-10, colours) need a set card that introduces the whole set, "Teach only"
-  (owner, 2026-10-13, #506); its format is approved (kind `set`,
-  members by card id, explanation in the layer; DECK-FORMAT, "Set cards")
-  and DECK-FORMAT does not allow it yet.
-- Model: Haiku at low effort writes decks, and Sonnet at medium effort reviews them (CLAUDE.md, owner, 2026-10-17). Haiku for large reads. A small
-  change to a tool or the validator is Sonnet, reviewed by Opus; only a
-  complex change across several files is Opus (owner, 2026-10-16).
+  (owner, 2026-10-13, #506), and verb forms too (#515). Every deck that
+  teaches such a group writes one: kind `set`, members by ref, its name
+  and explanation in each layer (DECK-FORMAT, "Set cards"). It gives the
+  learner the set's button after answering a member (owner, 2026-10-20).
+- Model: Haiku writes decks, and Sonnet reviews them once (CLAUDE.md, owner, 2026-10-22). Haiku for large reads. Any tool or validator change is Sonnet (CLAUDE.md, owner, 2026-10-22).
 
 ## Checklist
 
@@ -93,6 +99,10 @@ Before you start:
    - Tag the files `"unreviewed"`; a culture note needs a `source`
      ([docs/REVIEWING.md](../../../docs/REVIEWING.md) is how a speaker clears it).
    - Every word card gets at least one typed note ("Notes").
+   - Use the `homograph` and `lookalike` note kinds (each with a `ref`) where a
+     word shares its spelling with another, or differs only by a dot or mark,
+     and a layer's `dictionary` (senses, etymology, `source`) for an entry
+     imported from Wiktionary.
    - Every word card gets at least 2 examples ("Card data", "Examples"):
      natural sentences that use the word, each with its `reading` and `ipa`
      in the core and its translation in each layer, keyed by the target.
@@ -155,19 +165,17 @@ Before you start:
    ```sh
    python3 tools/wikipedia_frequency.py <lang> <lang>wiki-<date>-pages-articles.xml.bz2 --write
    ```
-7. **Check.** Run both until clean:
-
-   ```sh
-   python3 tools/deck_index.py
-   python3 tools/validate_decks.py decks/
-   ```
-
-   Errors block; read every warning and fix or explain it. Commit
-   `decks/index.json` with the decks. Tools details: `tools/README.md`.
+7. **Check.** CI runs the validator
+   (`python3 tools/validate_decks.py decks/`); read its result, and fix every
+   error and each warning or explain it. Do not run `tools/deck_index.py` or
+   commit `decks/index.json`: a workflow regenerates it on main after the
+   merge (owner, 2026-10-23). Tools details: `tools/README.md`.
 8. **Ship.** Never create tags. For the owner's work, open a pull request
    (owner, 2026-10-16: "Do use PRs for everything"); a deck-only change
    needs only "Validate decks" and "Released app reads the decks" green
    (CLAUDE.md). Contributors open a pull request on a branch
    `deck/<name>` ([CONTRIBUTING.md](../../../CONTRIBUTING.md), AGENTS.md
    "Branches, commits, pull requests"). Get one independent review (Sonnet)
-   before finishing; no extra passes. Say what you verified.
+   before finishing (CLAUDE.md, "Which model does what"); no extra passes.
+   Do not run the validator locally: push and read CI's result, ignoring
+   checks irrelevant to a deck. Say what you verified.

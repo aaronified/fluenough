@@ -1,0 +1,86 @@
+schema: 1
+"id": "zh-en-reading-family"
+"name": "Chinese reading: family"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-my-family"
+  "title": "My family"
+  "theme": "family"
+  "sentences":
+  - "text": "这是我爸爸。"
+    "reading": "zhè shì wǒ bàba."
+  - "text": "这是我妈妈。"
+    "reading": "zhè shì wǒ māma."
+  - "text": "这是我哥哥，那是我弟弟。"
+    "reading": "zhè shì wǒ gēge, nà shì wǒ dìdi."
+  - "text": "我妹妹很高兴。"
+    "reading": "wǒ mèimei hěn gāoxìng."
+  "questions":
+  - "id": "zh-0203"
+    "prompt":
+      "en": "哥哥 (gēge), in the third line, means:"
+    "options":
+    - "en": "older brother"
+    - "en": "younger brother"
+    answer: 1
+  - "id": "zh-0204"
+    "prompt":
+      "en": "我妹妹很高兴 (wǒ mèimei hěn gāoxìng) says my younger sister is happy."
+    answer: true
+  - "id": "zh-0205"
+    "prompt":
+      "en": "这是我妈妈 (zhè shì wǒ māma) means:"
+    "options":
+    - "en": "This is my father."
+    - "en": "This is my mother."
+    answer: 2
+- "id": "zh-family-introduction"
+  "title": "Family introduction"
+  "theme": "family"
+  "sentences":
+  - "text": "我叫王明。"
+    "reading": "wǒ jiào Wáng Míng."
+  - "text": "我家人很好。"
+    "reading": "wǒ jiārén hěn hǎo."
+  - "text": "我父母是老师。"
+    "reading": "wǒ fùmǔ shì lǎoshī."
+  - "text": "我妹妹是学生。"
+    "reading": "wǒ mèimei shì xuésheng."
+  "questions":
+  - "id": "zh-0206"
+    "prompt":
+      "en": "我叫王明 (wǒ jiào Wáng Míng) means:"
+    "options":
+    - "en": "My name is Wang Ming."
+    - "en": "I am a teacher."
+    answer: 1
+  - "id": "zh-0207"
+    "prompt":
+      "en": "我家人很好 (wǒ jiārén hěn hǎo) says my family is well."
+    answer: true
+  - "id": "zh-0208"
+    "prompt":
+      "en": "我父母是老师 (wǒ fùmǔ shì lǎoshī) means:"
+    "options":
+    - "en": "My parents are teachers."
+    - "en": "My parents are students."
+    answer: 1

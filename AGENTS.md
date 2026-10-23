@@ -1,5 +1,7 @@
 # Working on Fluenough
 
+The wiki is the source of truth for documentation: https://github.com/aaronified/fluenough/wiki
+
 Guidance for contributors and the coding agents they work with.
 
 Several people are building this at once, most of them with an agent. That
@@ -47,7 +49,7 @@ it on macOS or Windows, or generated the iOS folder.
 
 ```sh
 # Decks — no Flutter toolchain needed, just Python 3.11+ and PyYAML
-python3 tools/deck_index.py                     # after any change to decks/
+python3 tools/deck_index.py                     # CI does this on main; rarely by hand
 python3 tools/validate_decks.py decks/          # 0 ok, 1 errors, 2 bad args
 
 # Code — needs the Flutter SDK (3.47+)
@@ -85,7 +87,7 @@ and why Waydroid cannot test audio, is in
 | `lib/features/` | UI, one directory per screen area | low if you stay in yours |
 | `lib/l10n/` | Interface strings, one ARB file per locale | low |
 | `decks/<lang>/` | Content, one YAML file per deck, or a core and its layers (`decks/<lang>/<native>/`); the language's path, `<lang>-path.yaml`, shared by every native language. The app downloads them from `main` (ADR-0037) | very low |
-| `decks/index.json` | What the app downloads, written by `tools/deck_index.py`; CI fails while it is stale | low — regenerate, never hand-edit |
+| `decks/index.json` | What the app downloads, written by `tools/deck_index.py`; regenerated on main after each merge (`deck-index.yml`) | low — never hand-edit |
 | `tools/` | Python deck validator and importer | low |
 | `docs/adr/` | Architecture decision records | low |
 | `pubspec.yaml` | Dependencies | **high — coordinate** |
@@ -274,10 +276,7 @@ same repository interface is the most expensive outcome available here.
 
 ### How agents should run work
 
-Two rules, both about where effort is spent. They come from
-[claude-kit](https://github.com/aaronified/claude-kit) (MIT), and the procedure
-they name is copied into `.claude/` so it travels with this checkout rather than
-depending on a repository you may not be able to read.
+Two rules, both about where effort is spent.
 
 **Fan out on the cheap tier.** Establishing what this repository already does —
 its conventions, its layout, which files a rule reaches, what a document says on
@@ -288,21 +287,37 @@ people fall into under time pressure.
 
 | Tier | Work | Model |
 | --- | --- | --- |
-| cheap | Searching, extraction, parsing, grouping, transcribing, running a test suite, running a linter | Haiku |
-| standard | Writing and synthesis with judgement | Sonnet |
-| deep | Adversarial review, correctness reasoning | Opus |
+| cheap | Searching, extraction, parsing, grouping, transcribing | Haiku |
+| standard | Writing, synthesis and review with judgement | Sonnet |
 
 For work done for the owner, the table in [CLAUDE.md](CLAUDE.md) decides
-instead: reviews and audits are Sonnet; small coding jobs and bug fixes are
-Sonnet, reviewed by Opus; Opus is for complex coding that touches several
-files and for UI mockups, never more than two at once.
+instead, along with how many agents may run at once. Opus is used only when
+the owner asks (CLAUDE.md, owner, 2026-10-22).
 
 **One review before calling it done** (owner, 2026-10-12: the independent
 8/10 rating is dropped; "the review is enough"). A change gets one
-independent review, which reports only blocking defects it has confirmed.
-Fix those, then finish. The work-rating skill
-(`.claude/skills/work-rating/SKILL.md`) is still there for anyone who wants a
-score, but nothing requires it.
+independent Sonnet review, which reports only blocking defects it has
+confirmed. Fix those, then finish. No rating, no extra verification pass; a
+second review runs only if the first caught a breaking bug (CLAUDE.md, owner,
+2026-10-22). The work-rating skill (`.claude/skills/work-rating/SKILL.md`) runs only
+when the owner asks for a score.
+
+**Tests run only in CI.** No agent runs the tests or the validator locally,
+and none is launched just to run them. Push code and deck changes, then read
+CI's result, ignoring checks irrelevant to the change (CLAUDE.md, "How the
+owner works"). A docs-only push to main needs no CI check (owner, 2026-10-22:
+"Doc pushes do not need CI.").
+
+### Tests check behaviour
+
+The owner, 2026-10-20: "there is no need for 4000+ tests. That can easily be
+cut down to about 100-500. You are testing every code change. No point in
+that at all. You should only check behaviour." A test says what a learner or
+a deck author sees happen, not how the code does it. A change adds a test
+only for a behaviour no test covers yet, never one per code change, and not
+for coverage, for every branch or for every case of a loop. The suite is
+already cut down ([docs/plans/test-cut.md](docs/plans/test-cut.md)). Other
+documents point here.
 
 ### Files where you should expect contention
 
@@ -385,7 +400,7 @@ Specific to this repository, roughly in order of likelihood:
 | Putting scheduling logic in a widget | Makes it untestable without a device. Rule 3. |
 | Treating a `flutter analyze` error as a broken design | It analysed clean on 3.47.1; an error means your change. Fix it. |
 | Typing an English label straight into a widget | Every screen has to be re-laid-out later, not just re-strung. Rule 10. |
-| Fanning out repository reading on a flagship model | Searching is cheap-tier work. See *How agents should run work*. |
+| Fanning out repository reading on a pricier model than Haiku | Searching is cheap-tier work. See *How agents should run work*. |
 | Making the grader stricter so tests look cleaner | Typo tolerance is deliberate — see `docs/DECK-FORMAT.md`. |
 | Bundling a neural TTS model | Covers ~10 languages against a language-agnostic goal. [ADR-0002](docs/adr/0002-system-tts.md). |
 
@@ -434,7 +449,7 @@ explain most of what is otherwise surprising about this codebase.
       (vaccindi)) says so in its notes
 - [ ] A new language has `iso639_3` on every language block, and a
       `<code>-facts.yaml` with 30+ facts or an issue for one
-- [ ] Tests added for anything touching scheduling or grading
+- [ ] A test added only if the change adds a behaviour no test covers yet (*Tests check behaviour*)
 - [ ] An ADR added if an architectural decision was made
 - [ ] No user-visible string is a literal in a widget; new tokens are in
       `lib/l10n/app_en.arb`

@@ -151,6 +151,7 @@ const _cardFields = {
   'modes',
   'pair',
   'picture',
+  'picture_ask',
   'image',
   'image_credit',
   'phrasebook',
@@ -237,6 +238,7 @@ const _coreCardFields = {
   'examples',
   'modes',
   'picture',
+  'picture_ask',
   'image',
   'image_credit',
   'notes',
@@ -301,6 +303,8 @@ const _layerEntryFields = {
   'examples',
   'bases',
   'wiktionary',
+  // A short entry imported from Wiktionary (DECK-FORMAT.md, A layer).
+  'dictionary',
   // Card data (DECK-FORMAT.md, Card data): the fields of [_itemFields].
   'synonyms',
   'antonyms',
@@ -865,6 +869,7 @@ class _Reader {
           fields.optionalString('pair', allowEmpty: false) ??
           notes.where((n) => n.kind == NoteKind.pair).firstOrNull?.ref,
       picture: fields.optionalString('picture', allowEmpty: false),
+      pictureAsk: pictureAsk(fields, path),
       image: fields.optionalString('image', allowEmpty: false),
       imageCredit: mediaCredit(
         fields.node('image_credit'),
@@ -1001,6 +1006,16 @@ class _Reader {
 
   // The B1 format's card fields (DECK-FORMAT.md, Vocab decks).
 
+  /// `picture_ask: true`: the picture wears a "?" badge. It needs a
+  /// `picture`, as the validator requires.
+  bool pictureAsk(_Fields fields, String path) {
+    final ask = mark(fields, 'picture_ask', path, _pictureAskRule);
+    if (ask && fields.optionalString('picture', allowEmpty: false) == null) {
+      fail(fields.node('picture_ask')!, '$path: picture_ask needs a picture');
+    }
+    return ask;
+  }
+
   /// A mark such as `phrasebook: true`: true, or left out. False is refused
   /// too, as the validator refuses it. [rule] says what it must be.
   bool mark(_Fields fields, String key, String path, String rule) {
@@ -1100,10 +1115,13 @@ class _Reader {
       'culture' => NoteKind.culture,
       'usage' => NoteKind.usage,
       'behaviour' => NoteKind.behaviour,
+      'homograph' => NoteKind.homograph,
+      'lookalike' => NoteKind.lookalike,
       'note' => NoteKind.note,
       _ => fail(
         kindNode,
-        '$path.kind must be one of behaviour, culture, note, pair, usage, '
+        '$path.kind must be one of behaviour, culture, homograph, lookalike, '
+        'note, pair, usage, '
         'got ${_describe(kindNode)}',
       ),
     };
@@ -1152,18 +1170,24 @@ class _Reader {
 
     final refNode = fields.node('ref');
     String? ref;
-    if (kind == NoteKind.pair) {
+    if (kind == NoteKind.pair ||
+        kind == NoteKind.homograph ||
+        kind == NoteKind.lookalike) {
       ref = this.id(
         refNode ??
             fail(
               node,
-              '$path.ref: a pair note names its partner, the id of another '
-              '$lang card',
+              '$path.ref: a ${kind.name} note names '
+              '${kind == NoteKind.pair ? 'its partner' : 'the other word'}, '
+              'the id of another $lang card',
             ),
         '$path.ref',
       );
     } else if (refNode != null) {
-      fail(fields.keyNode('ref'), '$path.ref is only for a pair note');
+      fail(
+        fields.keyNode('ref'),
+        '$path.ref is only for a pair, homograph or lookalike note',
+      );
     }
 
     final String? source;
@@ -1598,6 +1622,7 @@ class _Reader {
       examples: coreExamples(fields.node('examples'), '$path.examples'),
       modes: modes(fields.node('modes'), '$path.modes'),
       picture: fields.optionalString('picture', allowEmpty: false),
+      pictureAsk: pictureAsk(fields, path),
       image: fields.optionalString('image', allowEmpty: false),
       imageCredit: mediaCredit(
         fields.node('image_credit'),
@@ -2166,7 +2191,8 @@ class _Reader {
         fail(
           at,
           '$path: "$name" belongs to the word, in the core; a layer gives '
-          'native, alt_native, notes, examples, bases and wiktionary',
+          'native, alt_native, notes, examples, bases, wiktionary and '
+          'dictionary',
         );
       }
     }
@@ -2200,6 +2226,9 @@ class _Reader {
       senses: fields.has('senses')
           ? layerSenses(fields.require('senses'), '$path.senses')
           : null,
+      dictionary: fields.has('dictionary')
+          ? layerDictionary(fields.require('dictionary'), '$path.dictionary')
+          : null,
       key: key,
     );
   }
@@ -2231,6 +2260,22 @@ class _Reader {
       }
     }
     return Map<String, LayerText>.unmodifiable(texts);
+  }
+
+  /// A layer's Wiktionary entry for a card: `{ senses, etymology, source }`.
+  /// Showing it is later work; the parser only reads it.
+  LayerDictionary layerDictionary(YamlNode node, String path) {
+    final fields = this.fields(node, path);
+    fields.allowOnly(const {'senses', 'etymology', 'source'});
+    final senses = fields.strings('senses');
+    if (senses.isEmpty) {
+      fail(node, '$path.senses must be a non-empty list of text');
+    }
+    return LayerDictionary(
+      senses: senses,
+      etymology: fields.optionalString('etymology', allowEmpty: false),
+      source: fields.string('source'),
+    );
   }
 
   /// A layer's senses of a core card (#517), by id: `{ native, examples }`.
@@ -2919,6 +2964,7 @@ typedef _NoteItem = ({
   List<String> regions,
 });
 
+const _pictureAskRule = 'true, unquoted, or left out';
 const _phrasebookRule = 'true, unquoted, or left out';
 const _wiktionaryRule = 'true, or left out where Wiktionary has no entry';
 

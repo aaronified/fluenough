@@ -1,0 +1,41 @@
+schema: 1
+id: "hi-en-reading-morning-at-home"
+name: "Reading: a morning at home"
+kind: reading
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short passages about a morning at home, with the everyday verbs of the Everyday verbs unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-morning-routine"
+    title: "A morning at home"
+    theme: "everyday-verbs"
+    sentences:
+      - { text: "माँ सुबह सबसे पहले उठती है।", reading: "mām̐ subah sabsē pahlē uṭhtī hai." }
+      - { text: "पिताजी अख़बार पढ़ते हैं।", reading: "pitājī akhbār paṛhtē haim̐." }
+    questions:
+      - id: "hi-0808"
+        prompt: { en: "Who gets up first in the morning?" }
+        options: [{ en: "Mother" }, { en: "Father" }]
+        answer: 1
+      - id: "hi-0809"
+        prompt: { en: "What does Father read?" }
+        options: [{ en: "The newspaper" }, { en: "A letter" }]
+        answer: 1
+  - id: "hi-fridge-note"
+    title: "A note on the fridge"
+    theme: "everyday-verbs"
+    sentences:
+      - { text: "फ़्रिज में दूध है।", reading: "frij mēm̐ dūdh hai." }
+      - { text: "मैं दोपहर को घर आऊँगा।", reading: "maim̐ dōpahar kō ghar āūm̐gā." }
+    questions:
+      - id: "hi-0810"
+        prompt: { en: "Where is the milk?" }
+        options: [{ en: "In the fridge" }, { en: "On the table" }]
+        answer: 1
+      - id: "hi-0811"
+        prompt: { en: "Who will come home at noon?" }
+        options: [{ en: "The writer of the note" }, { en: "The guests" }]
+        answer: 1

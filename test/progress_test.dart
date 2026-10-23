@@ -20,6 +20,7 @@ import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/data/course_path.dart' show Milestone;
 import 'package:fluenough/core/data/log_jsonl.dart';
 import 'package:fluenough/core/decks/language_catalog.dart';
+import 'package:fluenough/core/models/deck.dart' show LanguageInfo;
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
 import 'package:fluenough/core/scheduling/replay.dart';
@@ -39,6 +40,7 @@ import 'package:fluenough/features/decks/path_fixture.dart';
 import 'package:fluenough/features/decks/path_model.dart';
 import 'package:fluenough/features/decks/path_parts.dart';
 import 'package:fluenough/features/decks/unit_page.dart';
+import 'package:fluenough/features/decks/unit_search.dart';
 import 'package:fluenough/features/decks/word_mastery.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/gallery/fixtures.dart';
@@ -1124,45 +1126,46 @@ void main() {
       expect(badge.count, 2);
     });
 
-    testWidgets('a finished deck offers Revise, and revising records nothing', (
-      tester,
-    ) async {
-      usePhone(tester);
-      final state = tinyState();
-      await state.load();
-      learnAll(state, tiny);
-      await pumpScreen(
-        tester,
-        const DeckDetailPage(deckId: tiny),
-        state: state,
-      );
-      final l10n = l10nOf(tester);
+    testWidgets(
+      'a finished deck offers Revise, and revising records every answer',
+      (tester) async {
+        usePhone(tester);
+        final state = tinyState();
+        await state.load();
+        learnAll(state, tiny);
+        await pumpScreen(
+          tester,
+          const DeckDetailPage(deckId: tiny),
+          state: state,
+        );
+        final l10n = l10nOf(tester);
 
-      expect(find.text(l10n.deckReviewAll(0)), findsNothing);
-      expect(find.text(l10n.deckReviseNote), findsOneWidget);
-      await tester.tap(find.text(l10n.deckRevise(2)));
-      await tester.pumpAndSettle();
-      expect(find.byType(DrillPage), findsOneWidget);
-      // Titled with the deck, not as number practice.
-      expect(find.text('Tiny'), findsOneWidget);
+        expect(find.text(l10n.deckReviewAll(0)), findsNothing);
+        expect(find.text(l10n.deckReviseNote), findsOneWidget);
+        await tester.tap(find.text(l10n.deckRevise(2)));
+        await tester.pumpAndSettle();
+        expect(find.byType(DrillPage), findsOneWidget);
+        // Titled with the deck, not as number practice.
+        expect(find.text('Tiny'), findsOneWidget);
 
-      final logged = state.progress.log.length;
-      final states = Map.of(state.progress.states);
-      // Recognition comes first (ADR-0034), rated with only two cards to
-      // choose among.
-      await tester.tap(find.text(l10n.drillShowAnswer));
-      await tester.pumpAndSettle();
-      await tester.tap(find.text(l10n.rateGood));
-      await tester.pumpAndSettle();
-      expect(state.progress.log, hasLength(logged));
-      expect(state.progress.states, states);
+        final logged = state.progress.log.length;
+        final states = Map.of(state.progress.states);
+        // Recognition comes first (ADR-0034), rated with only two cards to
+        // choose among.
+        await tester.tap(find.text(l10n.drillShowAnswer));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text(l10n.rateGood));
+        await tester.pumpAndSettle();
+        expect(state.progress.log, hasLength(logged + 1));
+        expect(state.progress.states, isNot(states));
 
-      // Ending part-way says so, rather than that answers were recorded.
-      await tester.tap(find.byTooltip(l10n.drillEndSession));
-      await tester.pumpAndSettle();
-      expect(find.text(l10n.drillEndBodyNotRecorded), findsOneWidget);
-      expect(find.text(l10n.drillEndBody), findsNothing);
-    });
+        // Ending part-way says the answers so far are recorded (ADR-0033).
+        await tester.tap(find.byTooltip(l10n.drillEndSession));
+        await tester.pumpAndSettle();
+        expect(find.text(l10n.drillEndBody), findsOneWidget);
+        expect(find.text(l10n.drillEndBodyNotRecorded), findsNothing);
+      },
+    );
   });
 
   group('a deck\'s page', () {
@@ -1251,6 +1254,43 @@ void main() {
       // deck to lend one.
       expect(themes['hi-en-grammar-nouns'], isNull);
       expect(themes['hi-en-grammar-continuous']?.id, 'directions');
+    });
+  });
+
+  group('searching cards', () {
+    late AppState state;
+    late List<LanguageInfo> telugu;
+
+    setUpAll(() async {
+      state = AppState.test();
+      await state.load();
+      telugu = <LanguageInfo>[
+        for (final l in state.languages)
+          if (l.code == 'te') l,
+      ];
+    });
+
+    List<String> cardIds(String query) => <String>[
+      for (final hit in searchCourses(
+        state,
+        AppLocalizationsEn(),
+        query,
+        telugu,
+      ))
+        if (hit is CardHit) hit.card.id,
+    ];
+
+    test('a meaning finds the Telugu word for it', () {
+      expect(cardIds('why'), contains('te-0164'));
+    });
+
+    test('Telugu script finds the word', () {
+      expect(cardIds('ఎందుకు'), contains('te-0164'));
+    });
+
+    test('a reading without its accents finds the word', () {
+      expect(cardIds('namaskaram'), contains('te-0135'));
+      expect(cardIds('NAMASKARAM'), contains('te-0135'));
     });
   });
 

@@ -1,0 +1,112 @@
+schema: 1
+id: "hi-adverbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-0853"
+    target: "मैं रोज़ सुबह धीरे चलता हूँ।"
+    target_scripts: { perso_arabic: "میں روز صبح آہستہ چلتا ہوں۔" }
+    reading: "maim̐ rōz subah dhīrē caltā hūm̐."
+    ipa: "mɛ̃ː roːz sʊbəɦ d̪ʱiːreː tʃəlt̪aː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "चलता", base: "चलना", reading: "calnā" }
+      - { word: "हूँ", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "दौड़ता", reading: "dauṛtā", ipa: "d̪ɔːɽt̪aː", kind: "word" }
+      - { id: "f1", word: "चलती", reading: "caltī", ipa: "tʃəlt̪iː", kind: "form" }
+  - id: "hi-0854"
+    target: "वह हमेशा सही बोलता है।"
+    target_scripts: { perso_arabic: "وہ ہمیشہ صحیح بولتا ہے۔" }
+    reading: "vah hamēśā sahī bōltā hai."
+    ipa: "ʋəɦ ɦəmeːʃaː səɦiː boːlt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "बोलता", base: "बोलना", reading: "bōlnā" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "गलत", reading: "galat", ipa: "ɡələt̪", kind: "word" }
+      - { id: "f1", word: "बोलती", reading: "bōltī", ipa: "boːlt̪iː", kind: "form" }
+  - id: "hi-0855"
+    target: "क्या तुम कभी-कभी फ़िल्म देखते हो?"
+    target_scripts: { perso_arabic: "کیا تم کبھی کبھی فلم دیکھتے ہو؟" }
+    reading: "kyā tum kabhī-kabhī film dēkhtē hō?"
+    ipa: "kjaː t̪ʊm kəbʱiːkəbʱiː fɪlm d̪eːkʰt̪eː ɦoː"
+    pos: "phrase"
+    bases:
+      - { word: "फ़िल्म", base: "फ़िल्म", reading: "film" }
+      - { word: "देखते", base: "देखना", reading: "dēkhnā" }
+      - { word: "हो", ref: "hi-0780" }
+      - { word: "कभी", base: "कभी", reading: "kabhī" }
+    confusables:
+      - { id: "w1", word: "सुनते", reading: "suntē", ipa: "sʊnt̪eː", kind: "word" }
+      - { id: "f1", word: "देखती", reading: "dēkhtī", ipa: "d̪eːkʰt̪iː", kind: "form" }
+  - id: "hi-0856"
+    target: "मेरा दोस्त पहले यहाँ रहता था।"
+    target_scripts: { perso_arabic: "میرا دوست پہلے یہاں رہتا تھا۔" }
+    reading: "mērā dōst pahlē yahām̐ rahtā thā."
+    ipa: "meːraː d̪oːst̪ pəɦleː jəɦãː rəɦt̪aː t̪ʰaː"
+    pos: "phrase"
+    bases:
+      - { word: "रहता", base: "रहना", reading: "rahnā" }
+      - { word: "था", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "आगे", reading: "āgē", ipa: "aːɡeː", kind: "word" }
+      - { id: "f1", word: "रहती", reading: "rahtī", ipa: "rəɦt̪iː", kind: "form" }
+  - id: "hi-0857"
+    target: "अभी-अभी बारिश रुकी है।"
+    target_scripts: { perso_arabic: "ابھی ابھی بارش رکی ہے۔" }
+    reading: "abhī-abhī bāriś rukī hai."
+    ipa: "əbʱiːəbʱiː baːrɪʃ rʊkiː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "बारिश", base: "बारिश", reading: "bāriś" }
+      - { word: "रुकी", base: "रुकना", reading: "ruknā" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "शुरू", reading: "śurū", ipa: "ʃʊruː", kind: "word" }
+      - { id: "f1", word: "रुका", reading: "rukā", ipa: "rʊkaː", kind: "form" }
+  - id: "hi-0858"
+    target: "वे दोनों रोज़ साथ मिलते हैं।"
+    target_scripts: { perso_arabic: "وہ دونوں روز ساتھ ملتے ہیں۔" }
+    reading: "vē dōnōm̐ rōz sāth miltē haim̐."
+    ipa: "ʋeː d̪oːnõː roːz saːt̪ʰ mɪlt̪eː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "दोनों", base: "दोनों", reading: "dōnōm̐" }
+      - { word: "रोज़", ref: "hi-0451" }
+      - { word: "साथ", ref: "hi-0838" }
+      - { word: "मिलते", base: "मिलना", reading: "milnā" }
+      - { word: "हैं", ref: "hi-0780" }
+    confusables:
+      - { id: "w1", word: "अलग", reading: "alag", ipa: "ələɡ", kind: "word" }
+      - { id: "f1", word: "मिलतीं", reading: "miltīm̐", ipa: "mɪlt̪ĩː", kind: "form" }
+  - id: "hi-0859"
+    target: "उसने सचमुच बहुत अच्छा काम किया।"
+    target_scripts: { perso_arabic: "اس نے سچ مچ بہت اچھا کام کیا۔" }
+    reading: "usnē sacmuc bahut acchā kām kiyā."
+    ipa: "ʊsneː sətʃmʊtʃ bəɦʊt̪ ətʃtʃʰaː kaːm kɪjaː"
+    pos: "phrase"
+    bases:
+      - { word: "उसने", ref: "hi-0749" }
+      - { word: "बहुत", base: "बहुत", reading: "bahut" }
+      - { word: "अच्छा", base: "अच्छा", reading: "acchā" }
+      - { word: "किया", base: "करना", reading: "karnā" }
+    confusables:
+      - { id: "w1", word: "बुरा", reading: "burā", ipa: "bʊraː", kind: "word" }
+      - { id: "f1", word: "अच्छी", reading: "acchī", ipa: "ətʃtʃʰiː", kind: "form" }
+  - id: "hi-0860"
+    target: "पहले मैं ऐसे करता था।"
+    target_scripts: { perso_arabic: "پہلے میں ایسے کرتا تھا۔" }
+    reading: "pahlē maim̐ aisē kartā thā."
+    ipa: "pəɦleː mɛ̃ː ɛːseː kərt̪aː t̪ʰaː"
+    pos: "phrase"
+    bases:
+      - { word: "करता", base: "करना", reading: "karnā" }
+      - { word: "था", base: "होना", reading: "hōnā" }
+    confusables:
+      - { id: "w1", word: "वैसे", reading: "vaisē", ipa: "ʋɛːseː", kind: "word" }
+      - { id: "f1", word: "करती", reading: "kartī", ipa: "kərt̪iː", kind: "form" }

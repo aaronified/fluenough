@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
+import 'package:flutter/services.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
@@ -109,7 +110,8 @@ class LanguageBar extends StatefulWidget {
   State<LanguageBar> createState() => _LanguageBarState();
 }
 
-class _LanguageBarState extends State<LanguageBar> {
+class _LanguageBarState extends State<LanguageBar>
+    with SingleTickerProviderStateMixin {
   final ScrollController _row = ScrollController();
   final GlobalKey _scrollKey = GlobalKey();
   final GlobalKey _rowKey = GlobalKey();
@@ -145,6 +147,25 @@ class _LanguageBarState extends State<LanguageBar> {
   /// follows the finger, and a swipe past a third of the bar commits.
   double _progress = 0;
 
+  /// The momentum after a fling: it runs from 0 to 1 while the selection
+  /// passes through [_flingSteps] languages from [_flingFrom] (#682).
+  late final AnimationController _fling = AnimationController(vsync: this)
+    ..addListener(_flingTick)
+    ..addStatusListener(_flingStatus);
+  List<String> _flingCodes = const <String>[];
+  int _flingFrom = 0;
+  int _flingSteps = 0;
+  int _flingLast = 0;
+  AppState? _flingState;
+
+  /// Where the selection is while the momentum runs.
+  Rect? _flingRect;
+
+  bool get _flinging => _fling.isAnimating;
+
+  /// Whether the bar follows its animation with no easing of its own.
+  bool get _instant => _dragging || _flinging || _flingRect != null;
+
   GlobalKey _keyFor(String code) => _itemKeys.putIfAbsent(code, GlobalKey.new);
 
   /// The language the label under the bar names, and whether it shows.
@@ -155,6 +176,7 @@ class _LanguageBarState extends State<LanguageBar> {
   @override
   void dispose() {
     _labelTimer?.cancel();
+    _fling.dispose();
     _row.dispose();
     super.dispose();
   }
@@ -216,6 +238,17 @@ class _LanguageBarState extends State<LanguageBar> {
     }
   }
 
+  /// How many languages a drag and a fling carry the selection past: one
+  /// for a short flick, and five for the whole bar's width. The fling's
+  /// speed adds the distance it would still travel.
+  static int _stepsFor(double drag, double velocity, double width) {
+    if (width <= 0) return 1;
+    final carried = drag + velocity * 0.2;
+    final fraction = carried.abs() / width;
+    final steps = (5 * fraction * fraction).floor();
+    return steps < 1 ? 1 : steps;
+  }
+
   void _dragEnd(DragEndDetails details, AppState state) {
     final velocity = details.primaryVelocity ?? 0;
     final flick = velocity.abs() > 300 && (velocity < 0) == (_drag < 0);
@@ -224,13 +257,7 @@ class _LanguageBarState extends State<LanguageBar> {
     // Past a third of the whole bar's width, as the mockup says (#528).
     final far = _drag.abs() > width / 3;
     final forward = (_drag < 0) != _rtl;
-    // A long drag or a hard fling goes past several languages, as a list
-    // does (owner, 2026-10-19: "The language bar only scrolls one at a
-    // time"): one for each third of the bar dragged, or each 1500 a second
-    // of the fling, and at least one.
-    final byDrag = width <= 0 ? 1 : (_drag.abs() / (width / 3)).floor();
-    final byFling = flick ? 1 + (velocity.abs() / 1500).floor() : 1;
-    final steps = byDrag > byFling ? byDrag : byFling;
+    final steps = _stepsFor(_drag, flick ? velocity : 0, width);
     setState(() {
       _dragging = false;
       _drag = 0;
@@ -240,21 +267,93 @@ class _LanguageBarState extends State<LanguageBar> {
     });
     if (target != null && (far || flick)) {
       final codes = <String>[for (final l in state.languageChoices) l.code];
-      var code = target;
-      for (var i = 1; i < steps; i++) {
-        final more = LanguageChoice.step(code, codes, forward ? 1 : -1);
-        if (more == null) break;
-        code = more;
-      }
-      final language = state.languageChoices
-          .where((l) => l.code == code)
-          .firstOrNull;
-      if (language != null) {
-        _choose(state, language);
+      final from = codes.indexOf(state.shownLanguage ?? '');
+      final to = (from + (forward ? steps : -steps)).clamp(0, codes.length - 1);
+      if (from >= 0 && to != from) {
+        _startFling(state, codes, from, to - from);
         return;
       }
     }
     _hideLabel();
+  }
+
+  /// Carries the selection [delta] languages on from [from], slowing as a
+  /// list does, ticking at each language it passes, and then settles.
+  void _startFling(AppState state, List<String> codes, int from, int delta) {
+    _flingState = state;
+    _flingCodes = codes;
+    _flingFrom = from;
+    _flingSteps = delta;
+    _flingLast = from;
+    final ms = (300 + 110 * delta.abs()).clamp(300, 1400);
+    _fling
+      ..duration = Duration(milliseconds: ms)
+      ..forward(from: 0);
+  }
+
+  /// Where the selection is, in languages, as the momentum slows.
+  double get _flingAt =>
+      _flingFrom + _flingSteps * Curves.easeOutCubic.transform(_fling.value);
+
+  void _flingTick() {
+    if (!mounted || _flingCodes.isEmpty) return;
+    final at = _flingAt.clamp(0.0, _flingCodes.length - 1.0);
+    final low = at.floor();
+    final high = at.ceil();
+    final a = _rects[_flingCodes[low]];
+    final b = _rects[_flingCodes[high]];
+    final nearest = at.round();
+    final passed = nearest != _flingLast;
+    _flingLast = nearest;
+    setState(() {
+      _flingRect = a == null || b == null ? null : Rect.lerp(a, b, at - low);
+      _target = _flingCodes[nearest];
+    });
+    if (passed) {
+      HapticFeedback.selectionClick();
+      _showLabel(_flingCodes[nearest], fadeAfter: false);
+    }
+    _keepClear(_flingRect);
+  }
+
+  /// Scrolls the row so the moving selection stays in view.
+  void _keepClear(Rect? rect) {
+    final stack = _stackKey.currentContext?.findRenderObject() as RenderBox?;
+    if (rect == null || stack == null || !_row.hasClients) return;
+    final position = _row.position;
+    if (!position.hasContentDimensions) return;
+    final centre = rect.center.dx;
+    final fromStart = _rtl ? stack.size.width - centre : centre;
+    _row.jumpTo(
+      (fromStart - position.viewportDimension / 2).clamp(
+        position.minScrollExtent,
+        position.maxScrollExtent,
+      ),
+    );
+  }
+
+  void _flingStatus(AnimationStatus status) {
+    if (status != AnimationStatus.completed) return;
+    _settle();
+  }
+
+  /// The momentum has stopped: the screen switches, once.
+  void _settle() {
+    final state = _flingState;
+    final code = _flingCodes.isEmpty ? null : _flingCodes[_flingLast];
+    _flingState = null;
+    setState(() {
+      _flingRect = null;
+      _target = null;
+    });
+    final language = state?.languageChoices
+        .where((l) => l.code == code)
+        .firstOrNull;
+    if (state != null && language != null) {
+      _choose(state, language);
+    } else {
+      _hideLabel();
+    }
   }
 
   void _dragCancel() {
@@ -273,7 +372,7 @@ class _LanguageBarState extends State<LanguageBar> {
   void _afterLayout(String? shown) {
     if (!mounted) return;
     _measure();
-    if (!_row.hasClients || _dragging) return;
+    if (!_row.hasClients || _dragging || _flinging) return;
     final position = _row.position;
     if (!position.hasContentDimensions) return;
     final chip =
@@ -384,9 +483,11 @@ class _LanguageBarState extends State<LanguageBar> {
       // time"), as a Material tab indicator follows a swipe.
       final from = _rects[shown];
       final to = _target == null ? null : _rects[_target];
-      final selection = from == null
-          ? null
-          : (to == null ? from : Rect.lerp(from, to, _progress)!);
+      final selection =
+          _flingRect ??
+          (from == null
+              ? null
+              : (to == null ? from : Rect.lerp(from, to, _progress)!));
       final slides = !allOn && selection != null;
       final items = <Widget>[
         for (final language in choices)
@@ -418,7 +519,7 @@ class _LanguageBarState extends State<LanguageBar> {
           // row freely (#528).
           physics: const NeverScrollableScrollPhysics(),
           child: AnimatedContainer(
-            duration: _dragging
+            duration: _instant
                 ? Duration.zero
                 : const Duration(milliseconds: 200),
             curve: Curves.easeOut,
@@ -430,7 +531,7 @@ class _LanguageBarState extends State<LanguageBar> {
                   AnimatedPositioned.fromRect(
                     key: const ValueKey<String>('language-bar-selection'),
                     rect: selection,
-                    duration: _dragging
+                    duration: _instant
                         ? Duration.zero
                         : const Duration(milliseconds: 200),
                     curve: Curves.easeOut,
@@ -572,6 +673,11 @@ class _LanguageBarState extends State<LanguageBar> {
       bar = GestureDetector(
         behavior: HitTestBehavior.opaque,
         onHorizontalDragStart: (_) {
+          if (_flinging) {
+            // A touch while it is still carrying on takes it where it is.
+            _fling.stop();
+            _settle();
+          }
           _dragging = true;
           _drag = 0;
         },

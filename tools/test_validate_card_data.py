@@ -1281,6 +1281,35 @@ class Pictures(Validated):
         self.assertEqual(validate_decks.picture_file("🧑‍🏫"),
                          "emoji_u1f9d1_200d_1f3eb.png")
 
+    def with_ask(self, picture: str, ask: str) -> str:
+        text = self.with_picture(picture) if picture else VOCAB
+        return text.replace('    reading: "ghar"\n',
+                            f'    reading: "ghar"\n    picture_ask: {ask}\n')
+
+    def _a_question_picture_is_valid(self) -> None:
+        self.assertValid(self.with_ask('"🏠"', "true"))
+
+    def _picture_ask_needs_a_picture(self) -> None:
+        self.assertRejected(self.with_ask("", "true"), "picture_ask needs a picture")
+
+    def _picture_ask_is_only_true(self) -> None:
+        for bad in ("false", '"true"', "yes"):
+            with self.subTest(bad=bad):
+                self.assertRejected(self.with_ask('"🏠"', bad),
+                                    "picture_ask must be true, unquoted")
+
+    def test_a_question_word_picture_asks(self) -> None:
+        for case in (self._a_question_picture_is_valid,
+                     self._picture_ask_needs_a_picture,
+                     self._picture_ask_is_only_true):
+            with self.subTest(case.__name__.lstrip("_")):
+                fresh = type(self)(case.__name__)
+                fresh.setUp()
+                try:
+                    getattr(fresh, case.__name__)()
+                finally:
+                    fresh.doCleanups()
+
     def test_a_picture_is_an_emoji_named_as_the_app_names_it(self) -> None:
         cases = (
             self._a_bundled_picture_is_valid,

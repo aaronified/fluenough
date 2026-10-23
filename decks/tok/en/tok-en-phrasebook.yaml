@@ -1,0 +1,50 @@
+schema: 1
+id: "tok-en-phrasebook"
+kind: "layer"
+core: "tok-phrasebook"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Phrasebook: first phrases"
+description: "Fifteen things to say from the first lesson, before their words are taught: hello, goodbye, asking how someone is, giving your name, saying what you speak, know or want, and saying no. Their words come in the first words unit. Not yet checked by a Toki Pona speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "tok-0008":
+    native: "hello!"
+  "tok-0009":
+    native: "I am fine."
+  "tok-0010":
+    native: "Are you well?"
+  "tok-0011":
+    native: "My name is Ana."
+    bases:
+      "Ana": "Ana, a name"
+  "tok-0012":
+    native: "What is your name?"
+    bases:
+      "seme": "what"
+  "tok-0013":
+    native: "I speak Toki Pona."
+  "tok-0014":
+    native: "Toki Pona is good."
+  "tok-0015":
+    native: "I know."
+  "tok-0016":
+    native: "I don't know."
+  "tok-0017":
+    native: "I don't understand this."
+  "tok-0018":
+    native: "What is this?"
+    bases:
+      "seme": "what"
+  "tok-0019":
+    native: "I want water."
+    bases:
+      "telo": "water, liquid"
+  "tok-0020":
+    native: "I want to eat."
+  "tok-0021":
+    native: "Stay well!"
+    bases:
+      "awen": "to stay, to remain"
+  "tok-0022":
+    native: "Goodbye!"

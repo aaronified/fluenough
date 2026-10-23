@@ -13,6 +13,7 @@ toolchain. Exits non-zero if any deck fails. See docs/DECK-FORMAT.md.
 
 from __future__ import annotations
 
+import os
 import re
 import sys
 import unicodedata
@@ -143,7 +144,8 @@ HEADER_KEYS = {
 CARD_KEYS = {
     "id", "target", "native", "reading", "ipa", "alt_target", "alt_native",
     "pos", "gender", "tags", "notes", "audio", "examples", "modes", "pair",
-    "picture", "phrasebook", "bases", "rules", "wiktionary", "register", "frequency",
+    "picture", "picture_ask", "phrasebook", "bases", "rules", "wiktionary",
+    "register", "frequency",
     "audio_credit", "image", "image_credit", "target_scripts", "words",
 }
 # A ref lists a card written in another deck (ADR-0018). It may give its own
@@ -178,6 +180,7 @@ LAYER_HEADER_KEYS = {"schema", "id", "kind", "core", "native", "name",
 CORE_KINDS = ("vocab", "grammar", "rules")
 CORE_CARD_KEYS = {"id", "target", "reading", "ipa", "alt_target", "pos",
                   "gender", "tags", "audio", "examples", "modes", "picture",
+                  "picture_ask",
                   "notes", "phrasebook", "bases", "rules", "register", "frequency",
                   "synonyms", "antonyms", "collocations", "confusables", "forms",
                   "senses", "audio_credit", "image", "image_credit",
@@ -242,7 +245,8 @@ MEDIA_LICENSE_RE = re.compile(r"CC0-1\.0|public-domain|CC-BY(?:-SA)?-(?:2\.0|2\.
 # What a native language gives a card: never written in a core.
 NATIVE_SIDE = ("native", "alt_native", "wiktionary")
 LAYER_ENTRY_KEYS = {"native", "alt_native", "notes", "examples", "bases",
-                    "wiktionary", *CARD_DATA}
+                    "wiktionary", "dictionary", *CARD_DATA}
+DICTIONARY_KEYS = {"senses", "etymology", "source"}
 CORE_ENTRY_KEYS = {"lemma", "key", "forms", "reading", "readings", "ipa", "ipas"}
 LAYER_PATTERN_KEYS = {"name", "slot_name", "prompt", "slots", "entries", "notes"}
 TABLE_KEYS = {"applies_to", "slots", "rows"}
@@ -251,7 +255,10 @@ ROW_KEYS = {"word", "key", "forms", "readings", "ipas"}
 RULE_KEYS = {"id", "slots", "words"}
 LAYER_TABLE_KEYS = {"slot_name", "slots", "prompts"}
 LAYER_RULE_KEYS = {"name", "explanation"}
-NOTE_KINDS = ("behaviour", "culture", "note", "pair", "usage")
+NOTE_KINDS = ("behaviour", "culture", "homograph", "lookalike", "note", "pair", "usage")
+# The kinds that name another card of the language by `ref`; a pair's partner
+# must also be taught, since the minimal-pair panel shows both words.
+REF_NOTE_KINDS = ("homograph", "lookalike", "pair")
 NOTE_KEYS = {"kind", "text", "id", "ref", "source", "words", "region"}
 BASE_KEYS = {"word", "ref", "base", "reading", "ipa", "meaning", "wiktionary"}
 # A slot key or a note id: it starts with a letter, so YAML never reads it as
@@ -533,6 +540,8 @@ class Report:
     # and facts name, (ref, where, the field, such as `bases[0].ref`), each
     # checked across files.
     note_refs: list[tuple[str, str, int]] = field(default_factory=list)
+    # The same for homograph and lookalike notes: (ref, where, i, kind).
+    like_refs: list[tuple[str, str, int, str]] = field(default_factory=list)
     base_refs: list[tuple[str, str, str]] = field(default_factory=list)
     # A confusable by ref on a sentence put in order: (ref, where, its place,
     # the tiles the answer needs), so that the card it names is no needed tile.
@@ -902,6 +911,12 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
 
     if "picture" in card:
         check_picture(r, where, card["picture"])
+    if "picture_ask" in card:
+        if card["picture_ask"] is not True:
+            r.error(where, f"picture_ask must be true, unquoted, or left out; "
+                           f"got {card['picture_ask']!r}")
+        elif "picture" not in card:
+            r.error(where, "picture_ask needs a picture: it puts a ? badge on it")
 
     if "phrasebook" in card and card["phrasebook"] is not True:
         r.error(where, f"phrasebook must be true, unquoted, or left out; got "
@@ -1101,19 +1116,22 @@ def check_notes(r: Report, where: str, notes: object, cid: str | None,
         elif not _is_str(text):
             r.error(where, f"{p}.text is required and must be non-empty text")
         ref = note.get("ref")
-        if kind == "pair":
+        if kind in REF_NOTE_KINDS:
+            the = "its partner" if kind == "pair" else "the other word"
             if not _is_str(ref) or not id_re.fullmatch(ref):
-                r.error(where, f"{p}.ref: a pair note names its partner, the id of "
+                r.error(where, f"{p}.ref: a {kind} note names {the}, the id of "
                                f"another {lang} card, got {ref!r}")
                 ref = None
             elif ref == cid:
                 r.error(where, f"{p}.ref names the card itself")
                 ref = None
-            else:
+            elif kind == "pair":
                 r.note_refs.append((ref, where, i))
+            else:
+                r.like_refs.append((ref, where, i, kind))
         else:
             if "ref" in note:
-                r.error(where, f"{p}.ref is only for a pair note")
+                r.error(where, f"{p}.ref is only for a pair, homograph or lookalike note")
             ref = None
         source = note.get("source")
         if kind == "culture":
@@ -3455,6 +3473,31 @@ def _check_layer_cards(r: Report, raw: dict, core: dict, core_path: Path,
             words=c.words, example_words=c.example_words))
 
 
+def _check_dictionary(r: Report, where: str, value: object) -> None:
+    """A layer entry's `dictionary`: a short entry imported from Wiktionary,
+    `{ senses, etymology?, source }`. `source` is the Wiktionary page, for the
+    CC BY-SA credit."""
+    if not isinstance(value, dict):
+        r.error(where, "dictionary must be a mapping of senses, etymology and source")
+        return
+    for unknown in sorted(set(value) - DICTIONARY_KEYS, key=str):
+        r.error(where, f"dictionary: unknown field {unknown!r}")
+    senses = value.get("senses")
+    if (not isinstance(senses, list) or not senses
+            or not all(_is_str(x) for x in senses)):
+        r.error(where, "dictionary.senses must be a non-empty list of text, the "
+                       "word's other meanings")
+    if "etymology" in value and not _is_str(value["etymology"]):
+        r.error(where, "dictionary.etymology must be non-empty text, or left out")
+    source = value.get("source")
+    if not _is_str(source):
+        r.error(where, "dictionary.source is required: the Wiktionary page the entry "
+                       "was imported from, for the CC BY-SA credit")
+    elif not WIKTIONARY_SOURCE_RE.fullmatch(source):
+        r.error(where, f"dictionary.source must be the Wiktionary page only, "
+                       f"https://en.wiktionary.org/wiki/<word>, got {source!r}")
+
+
 def _check_layer_entry(r: Report, where: str, cid: str, entry: object,
                        known: _CoreCard, nname: str, lang: str
                        ) -> tuple[bool, set[str], set[str]]:
@@ -3465,7 +3508,8 @@ def _check_layer_entry(r: Report, where: str, cid: str, entry: object,
         return False, set(), set()
     for unknown in sorted(set(entry) - LAYER_ENTRY_KEYS, key=str):
         r.error(where, f"{unknown!r} belongs to the word, in the core; a layer gives "
-                       f"native, alt_native, notes, examples, bases and wiktionary")
+                       f"native, alt_native, notes, examples, bases, wiktionary and "
+                       f"dictionary")
     native = entry.get("native")
     if "native" in entry:
         if isinstance(native, bool):
@@ -3481,6 +3525,8 @@ def _check_layer_entry(r: Report, where: str, cid: str, entry: object,
         _check_str_list(r, where, "alt_native", entry["alt_native"])
     if "wiktionary" in entry:
         _check_wiktionary(r, where, "", entry["wiktionary"])
+    if "dictionary" in entry:
+        _check_dictionary(r, where, entry["dictionary"])
     shown = gives or not known.written
 
     notes: set[str] = set()
@@ -5188,6 +5234,10 @@ def check_cards_across(reports: list[Report]) -> list[str]:
             if find(rep, ref) is None:
                 problems.append(f"{rep.path}: {where}: notes[{i}].ref names card "
                                 f"{ref}, which no deck writes")
+        for ref, where, i, kind in rep.like_refs:
+            if find(rep, ref) is None:
+                problems.append(f"{rep.path}: {where}: notes[{i}].ref names card "
+                                f"{ref}, which no deck writes ({kind} note)")
         for ref, where, place in rep.base_refs:
             if find(rep, ref) is None:
                 problems.append(f"{rep.path}: {where}: {place} names card {ref}, "
@@ -6093,6 +6143,11 @@ def check_index(targets: list[Path], reports: list[Report]) -> list[str]:
     working directory: a check that quietly passes when run from the wrong
     directory is worse than no check, because it is trusted."""
     if not any(t.resolve() == ROOT / "decks" for t in targets):
+        return []
+    # CI sets this: the index is regenerated on main after each merge
+    # (.github/workflows/deck-index.yml), so a pull request is not failed
+    # for it. Unset, as locally, the check stays.
+    if os.environ.get("FLUENOUGH_SKIP_INDEX_CHECK"):
         return []
     # The index tool reads decks through this module: share it, so that the
     # checks across files are not run twice.

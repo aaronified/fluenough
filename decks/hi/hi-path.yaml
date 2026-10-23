@@ -32,9 +32,9 @@
 # subjunctive, the relative-correlative clauses and the rest of B1.
 #
 # The core's order is by judgement, most common first:
-# about me, everyday verbs (planned), the common adverbs and function
+# about me, everyday verbs, the common adverbs and function
 # words (planned), how much and how many (planned), describing words
-# (planned), time, more verbs (planned), work.
+# (planned), time, more verbs, work.
 # It was meant to come from Wikipedia's counts
 # (tools/wikipedia_frequency.py, #516), but
 # no Hindi Wikipedia dump could be fetched here (2026-10-17):
@@ -100,11 +100,8 @@ units:
     words: 9
   - decks: ["hi-addressing", "*"]
     words: 9
-  - planned: { id: "hi-pronouns", theme: "pronouns", words: 24 }
-    listening_passages:
-      - { id: "who-is-who", text: { "en": "Pointing out who is who at a family gathering: he, she, they" } }
-    reading_passages:
-      - { id: "seating-chart", text: { "en": "A seating chart for a wedding lunch, with names and who is related to whom" } }
+  - decks: ["hi-pronouns", "hi-pronouns-sentences", "hi-reading-who-is-who", "*"]
+    words: 24
   - decks: ["hi-family", "*"]
     words: 23
   # 3. The script, after the first six units (#554: skipped by a learner
@@ -134,33 +131,18 @@ units:
   # until the Wikipedia counts are written, #516).
   - decks: ["hi-about-me", "*"]
     words: 7
-  - planned: { id: "hi-verbs", theme: "everyday-verbs", words: 30 }
-    listening_passages:
-      - { id: "morning-routine", text: { "en": "A mother says what each person in the house does in the morning" } }
-    reading_passages:
-      - { id: "fridge-note", text: { "en": "A note on the fridge: what to eat, what to drink and where things are" } }
-  - planned: { id: "hi-adverbs", theme: "adverbs", words: 45 }
-    listening_passages:
-      - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
-    reading_passages:
-      - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
-  - planned: { id: "hi-quantities", theme: "quantities", words: 23 }
-    listening_passages:
-      - { id: "at-the-grocers", text: { "en": "Asking how much and how many at a grocer's" } }
-    reading_passages:
-      - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
-  - planned: { id: "hi-describing", theme: "describing", words: 28 }
-    listening_passages:
-      - { id: "how-are-you-feeling", text: { "en": "A friend asks how you feel today, and you answer" } }
-    reading_passages:
-      - { id: "postcard-from-the-hills", text: { "en": "A short postcard: the weather and the food" } }
+  - decks: ["hi-verbs", "hi-verbs-sentences", "hi-reading-morning-at-home", "*"]
+    words: 30
+  - decks: ["hi-adverbs", "hi-adverbs-sentences", "hi-reading-adverbs", "*"]
+    words: 45
+  - decks: ["hi-quantities", "hi-quantities-sentences", "hi-reading-quantities", "*"]
+    words: 23
+  - decks: ["hi-describing", "hi-describing-sentences", "hi-reading-describing", "*"]
+    words: 28
   - decks: ["hi-time", "*"]
     words: 17
-  - planned: { id: "hi-more-verbs", theme: "more-verbs", words: 25 }
-    listening_passages:
-      - { id: "kitchen-help", text: { "en": "Someone tells a helper what to do in the kitchen" } }
-    reading_passages:
-      - { id: "how-to-make-tea", text: { "en": "A short card on how to make tea" } }
+  - decks: ["hi-more-verbs", "hi-more-verbs-sentences", "hi-reading-kitchen-help", "hi-reading-how-to-make-tea", "*"]
+    words: 25
   - decks: ["hi-work", "*"]
     words: 19
   # 5. Rules as forms, practised on the words known: noun forms,
