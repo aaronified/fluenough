@@ -1,0 +1,30 @@
+schema: 1
+id: "tok-grammar-word-roles"
+part: "core"
+kind: "grammar"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["noun", "verb", "modifier"]
+  entries:
+    - lemma: "moku"
+      forms:
+        "noun": "moku li pona"
+        "verb": "mi moku"
+        "modifier": "jan moku"
+    - lemma: "pali"
+      forms:
+        "noun": "pali li pona"
+        "verb": "mi pali"
+        "modifier": "jan pali"
+    - lemma: "toki"
+      forms:
+        "noun": "toki li pona"
+        "verb": "mi toki"
+        "modifier": "jan toki"
+    - lemma: "lape"
+      forms:
+        "noun": "lape li pona"
+        "verb": "mi lape"
+        "modifier": "jan lape"
