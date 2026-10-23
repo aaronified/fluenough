@@ -1,0 +1,22 @@
+schema: 1
+id: "tok-en-grammar-li-predicate"
+kind: "layer"
+core: "tok-grammar-li-predicate"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Li marks the predicate"
+license: "CC-BY-SA-4.0"
+description: "After a subject that is not mi or sina alone, the particle li comes before what the subject does or is. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Li marks the predicate"
+  slot_name: "subject"
+  prompt: "{lemma} ({gloss}): {slot}"
+  slots: { "ona": "they (ona)", "jan ni": "this person (jan ni)" }
+  entries:
+    "moku": "to eat"
+    "lape": "to sleep"
+    "pali": "to make; to work"
+    "kama": "to come"
+    "tawa": "to go"
+    "toki": "to talk"
+  notes: "Li comes after the subject and before the predicate: ona li moku is they eat, and jan ni li lape is this person sleeps. Li is not a word with a meaning of its own: it only shows where the predicate starts. The predicate can be a verb (ona li moku) or a describing word (ona li pona)."

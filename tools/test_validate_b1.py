@@ -16,10 +16,12 @@ from __future__ import annotations
 
 import contextlib
 import io
+import os
 import shutil
 import sys
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 import yaml
@@ -2519,7 +2521,12 @@ class Compatibility(unittest.TestCase):
 
     def _todays_decks_get_no_info_and_no_b1_message(self) -> None:
         out = io.StringIO()
-        with contextlib.redirect_stdout(out):
+        # The committed index is regenerated on main after each merge, so a
+        # deck change is not checked against it here; this test is about the
+        # decks' own messages. The index check has tests of its own
+        # (test_validate_decks.py, test_deck_index.py).
+        with mock.patch.dict(os.environ, {"FLUENOUGH_SKIP_INDEX_CHECK": "1"}), \
+                contextlib.redirect_stdout(out):
             code = validate_decks.main(["validate_decks.py",
                                         str(validate_decks.ROOT / "decks")])
         lines = out.getvalue().splitlines()

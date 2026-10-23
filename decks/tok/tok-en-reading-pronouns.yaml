@@ -1,0 +1,68 @@
+schema: 1
+id: "tok-en-reading-pronouns"
+name: "Reading: pronouns and people"
+kind: reading
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two passages from the pronouns unit: pointing out who is who in a photo (heard), and a group chat in which each message says who is writing. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "tok-who-is-who"
+    title: "Who is who"
+    theme: "pronouns"
+    sentences:
+      - text: "ni li mi."
+      - text: "ona li jan pona."
+      - text: "jan ni li sina."
+      - text: "ona li toki."
+    questions:
+      - id: "tok-0073"
+        prompt: { en: "In the first line, who is the speaker pointing at?" }
+        options:
+          - { en: "The speaker" }
+          - { en: "The listener" }
+        answer: 1
+      - id: "tok-0074"
+        prompt: { en: "What does the second line say about ona?" }
+        options:
+          - { en: "They are a good person" }
+          - { en: "They are not here" }
+        answer: 1
+      - id: "tok-0075"
+        prompt: { en: "The third line says this person is who?" }
+        options:
+          - { en: "You" }
+          - { en: "Me" }
+        answer: 1
+  - id: "tok-group-chat"
+    title: "Group chat"
+    theme: "pronouns"
+    sentences:
+      - text: "mi: mi lon ni."
+      - text: "sina: sina lon anu ala?"
+      - text: "ona: ona lon ni."
+      - text: "mi: ijo ni li pona."
+    questions:
+      - id: "tok-0076"
+        prompt: { en: "Who writes the first message?" }
+        options:
+          - { en: "The speaker (mi)" }
+          - { en: "The listener (sina)" }
+        answer: 1
+      - id: "tok-0077"
+        prompt: { en: "Which word in the second message means or?" }
+        options:
+          - { en: "anu" }
+          - { en: "lon" }
+        answer: 1
+      - id: "tok-0078"
+        prompt: { en: "The third message says someone is here. Who is it?" }
+        options:
+          - { en: "They" }
+          - { en: "You" }
+        answer: 1
+      - id: "tok-0079"
+        prompt: { en: "The last message says that this thing is good." }
+        answer: true

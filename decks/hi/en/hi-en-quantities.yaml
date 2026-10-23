@@ -1,0 +1,122 @@
+schema: 1
+id: "hi-en-quantities"
+kind: "layer"
+core: "hi-quantities"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "How much and how many"
+license: "CC-BY-SA-4.0"
+description: "Words for how much and how many: a little, a lot, half, a dozen, and the measures of food. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-0865":
+    native: "a little, a few"
+    notes: { use: "थोड़ा (thōṛā), 'a little, a few'. It agrees with its noun: थोड़ी (thōṛī) before a feminine noun, थोड़े (thōṛē) before a plural." }
+    examples:
+      "मुझे थोड़ा पानी चाहिए।": { native: "I need a little water." }
+      "चाय में थोड़ी चीनी डालिए।": { native: "Put a little sugar in the tea.", bases: { "थोड़ी": "a little, a few", "चीनी": "sugar", "डालिए": "to put in, to add" } }
+  "hi-0866":
+    native: "very, a lot of, many"
+    notes: { use: "Very, or a lot of. Before an adjective it means very; before a noun it means many or much." }
+    examples:
+      "यह बहुत अच्छा है।": { native: "This is very good.", bases: { "अच्छा": "good" } }
+      "बहुत से लोग आए।": { native: "Many people came." }
+    synonyms: { "very-sanskrit": "very, extremely (Sanskrit-leaning)", "very-persian": "very, extremely (Persian-leaning)" }
+  "hi-0867":
+    native: "all, the whole"
+    notes: { use: "All, or the whole of something. It agrees with its noun: सारी (sārī) before a feminine noun, सारे (sārē) before a plural." }
+    examples:
+      "सारा काम हो गया।": { native: "All the work is finished." }
+      "सारे बच्चे स्कूल गए।": { native: "All the children went to school.", bases: { "सारे": "all, the whole", "स्कूल": "school" } }
+  "hi-0868":
+    native: "complete, full, whole"
+    notes: { use: "Full, complete, whole. पूरी तरह (pūrī tarah) means completely." }
+    examples:
+      "मेरा काम पूरा हो गया।": { native: "My work is finished." }
+      "पूरे दस मिनट लगे।": { native: "It took a full ten minutes.", bases: { "पूरे": "complete, whole", "मिनट": "minute", "लगे": "to take (time)" } }
+    collocations: { "fully": "completely" }
+  "hi-0869":
+    native: "half"
+    notes: { use: "Half. It agrees with its noun: आधी (ādhī) before a feminine noun, आधे (ādhē) before a plural." }
+    examples:
+      "आधी रोटी खाओ।": { native: "Eat half of the bread.", bases: { "आधी": "half" } }
+      "मुझे आधा किलो आलू चाहिए।": { native: "I need half a kilo of potatoes." }
+    collocations: { "kilo": "kilogram" }
+  "hi-0870":
+    native: "enough, quite a lot"
+    notes: { use: "Enough, or quite a lot. Said of what is enough: 'One cup of tea is enough.'" }
+    examples:
+      "एक कप चाय काफ़ी है।": { native: "One cup of tea is enough." }
+      "यह काफ़ी नहीं है।": { native: "This is not enough." }
+    synonyms: { "enough-sanskrit": "enough (Sanskrit-leaning)" }
+  "hi-0871":
+    native: "a heap, a pile, a great deal"
+    notes: { use: "A heap, or a great deal of something. It takes का (kā) before the thing piled up: a heap of books." }
+    examples:
+      "मेज़ पर किताबों का ढेर है।": { native: "There is a pile of books on the table.", bases: { "किताबों": "book" } }
+      "उसके पास पैसों का ढेर है।": { native: "He has a heap of money.", bases: { "पैसों": "money" } }
+    collocations: { "money": "money" }
+  "hi-0872":
+    native: "a dozen"
+    notes: { use: "A dozen, or twelve. It comes after a number, as in two dozen." }
+    examples:
+      "मुझे एक दर्जन अंडे चाहिए।": { native: "I need a dozen eggs." }
+      "दो दर्जन केले लीजिए।": { native: "Take two dozen bananas.", bases: { "केले": "banana" } }
+  "hi-0873":
+    native: "gram"
+    notes: { use: "A gram. It is used with a number before it, as सौ ग्राम (sau grām) means a hundred grams." }
+    examples:
+      "मुझे दो सौ ग्राम दाल चाहिए।": { native: "I need two hundred grams of lentils." }
+      "पाँच सौ ग्राम पनीर दीजिए।": { native: "Give me five hundred grams of paneer.", bases: { "पनीर": "paneer" } }
+  "hi-0874":
+    native: "litre"
+    notes: { use: "A litre, for liquids. It is used with a number before it, like ग्राम (grām)." }
+    examples:
+      "एक लीटर दूध दीजिए।": { native: "Give me one litre of milk." }
+      "दो लीटर पानी लाओ।": { native: "Bring two litres of water.", bases: { "लाओ": "to bring" } }
+    collocations: { "milk": "milk" }
+  "hi-0875":
+    native: "a quarter (of a kilo)"
+    notes: { use: "A quarter, that is a quarter of a kilo. It is used with a number before it." }
+    examples:
+      "एक पाव मक्खन लीजिए।": { native: "Take a quarter kilo of butter.", bases: { "मक्खन": "butter" } }
+      "एक पाव चीनी काफ़ी है।": { native: "A quarter kilo of sugar is enough.", bases: { "चीनी": "sugar" } }
+  "hi-0876":
+    native: "spoon"
+    notes: { use: "A spoon, and the amount one spoon holds. It is used with a number before it." }
+    examples:
+      "एक चम्मच चीनी डालिए।": { native: "Add a spoon of sugar.", bases: { "चीनी": "sugar", "डालिए": "to put in, to add" } }
+      "रोज़ सुबह एक चम्मच शहद लीजिए।": { native: "Take a spoonful of honey every morning.", bases: { "शहद": "honey" } }
+    collocations: { "honey": "honey" }
+  "hi-0877":
+    native: "cup"
+    notes: { use: "A cup, and the amount one cup holds. It is used with a number before it." }
+    examples:
+      "एक कप चाय दीजिए।": { native: "Give me one cup of tea." }
+      "हर सुबह एक कप चाय पीता हूँ।": { native: "I drink a cup of tea every morning.", bases: { "हर": "every" } }
+    collocations: { "tea": "tea" }
+  "hi-0878":
+    native: "glass"
+    notes: { use: "A glass, and the amount one glass holds. It is used with a number before it." }
+    examples:
+      "एक गिलास पानी दीजिए।": { native: "Give me a glass of water." }
+      "दो गिलास दूध पीजिए।": { native: "Drink two glasses of milk." }
+  "hi-0879":
+    native: "bottle"
+    notes: { use: "A bottle, and what it holds. Its plural is बोतलें (bōtalēm̐)." }
+    examples:
+      "एक बोतल पानी लाओ।": { native: "Bring a bottle of water.", bases: { "लाओ": "to bring" } }
+      "मेरे बैग में पानी की बोतल है।": { native: "There is a water bottle in my bag.", bases: { "बैग": "bag" } }
+    collocations: { "water": "water" }
+  "hi-0880":
+    native: "piece"
+    notes: { use: "A piece, a bit cut or broken off something. It takes का (kā) before the thing: a piece of bread." }
+    examples:
+      "एक टुकड़ा केक दीजिए।": { native: "Give me a piece of cake.", bases: { "केक": "cake" } }
+      "उसने रोटी का एक टुकड़ा खाया।": { native: "He ate a piece of bread." }
+    collocations: { "cake": "cake" }
+  "hi-0881":
+    native: "pair"
+    notes: { use: "A pair of two things that go together, such as shoes. It takes का (kā) before the things." }
+    examples:
+      "मुझे जूतों की एक जोड़ी चाहिए।": { native: "I need a pair of shoes.", bases: { "जूतों": "shoe" } }
+      "मैंने जूतों की नई जोड़ी ख़रीदी।": { native: "I bought a new pair of shoes.", bases: { "जूतों": "shoe", "नई": "new" } }

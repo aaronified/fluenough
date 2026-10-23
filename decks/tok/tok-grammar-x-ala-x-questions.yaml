@@ -1,0 +1,34 @@
+schema: 1
+id: "tok-grammar-x-ala-x-questions"
+part: "core"
+kind: "grammar"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["statement", "question"]
+  entries:
+    - lemma: "moku"
+      forms:
+        "statement": "sina moku"
+        "question": "sina moku ala moku?"
+    - lemma: "lape"
+      forms:
+        "statement": "sina lape"
+        "question": "sina lape ala lape?"
+    - lemma: "lukin"
+      forms:
+        "statement": "sina lukin"
+        "question": "sina lukin ala lukin?"
+    - lemma: "sona"
+      forms:
+        "statement": "sina sona"
+        "question": "sina sona ala sona?"
+    - lemma: "kama"
+      forms:
+        "statement": "sina kama"
+        "question": "sina kama ala kama?"
+    - lemma: "tawa"
+      forms:
+        "statement": "sina tawa"
+        "question": "sina tawa ala tawa?"
