@@ -1,0 +1,49 @@
+schema: 1
+id: "zh-questions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "zh-0106"
+    target: "你几点来？"
+    words: ["你", "几点", "来"]
+    reading: "nǐ jǐ diǎn lái?"
+    pos: "phrase"
+    bases:
+      - { word: "几点", base: "几点", reading: "jǐ diǎn" }
+  - id: "zh-0107"
+    target: "我们去哪里？"
+    words: ["我们", "去", "哪里"]
+    reading: "wǒmen qù nǎlǐ?"
+    pos: "phrase"
+    bases:
+      - { word: "我们", base: "我们", reading: "wǒmen" }
+  - id: "zh-0108"
+    target: "你为什么不喝？"
+    words: ["你", "为什么", "不", "喝"]
+    reading: "nǐ wèishénme bù hē?"
+    pos: "phrase"
+  - id: "zh-0109"
+    target: "这个怎样？"
+    words: ["这个", "怎样"]
+    reading: "zhège zěnyàng?"
+    pos: "phrase"
+    bases:
+      - { word: "这个", base: "这个", reading: "zhège" }
+      - { word: "怎样", ref: "zh-0104" }
+  - id: "zh-0110"
+    target: "我们吃鱼还是吃鸡？"
+    words: ["我们", "吃", "鱼", "还是", "吃", "鸡"]
+    reading: "wǒmen chī yú háishi chī jī?"
+    pos: "phrase"
+    bases:
+      - { word: "我们", base: "我们", reading: "wǒmen" }
+  - id: "zh-0111"
+    target: "你们都来吗？"
+    words: ["你们", "都", "来", "吗"]
+    reading: "nǐmen dōu lái ma?"
+    pos: "phrase"
+    bases:
+      - { word: "你们", base: "你们", reading: "nǐmen" }

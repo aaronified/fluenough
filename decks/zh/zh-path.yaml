@@ -6,8 +6,9 @@
 # This is also Mandarin's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"):
 # every unit from the first words to B1, planned, with its size in words,
 # its grammar topics, the three milestones, and for each unit its listening
-# and reading passages. Only the first unit is written (the phrasebook and
-# the first words); every other unit is planned: the course teaches it as
+# and reading passages. The first six units are written (the phrasebook and
+# the first words, the tones, the pinyin spelling, the sounds English
+# lacks, the questions, and addressing); every other unit is planned: the course teaches it as
 # "Coming" until a deck is written. A
 # theme named here that decks/themes.yaml does not list yet is added to it
 # with its first deck.
@@ -127,27 +128,33 @@ units:
   - decks: ["zh-phrasebook", "zh-first-words", "*"]
     words: 12
   # 2. The first word units, read in pinyin: the tones first.
-  - planned: { id: "zh-tones", theme: "tones", words: 16 }
+  - decks: ["zh-tones", "zh-tones-sentences", "zh-reading-tones", "*"]
+    words: 16
     listening_passages:
       - { id: "four-tones", text: { "en": "One syllable in the four tones and the neutral tone: ma, mother, hemp, horse, to scold" } }
     reading_passages:
       - { id: "tone-pairs-list", text: { "en": "A list of word pairs in pinyin told apart only by their tone marks" } }
-  - planned: { id: "zh-pinyin", grammar: ["pinyin-spelling", "tone-sandhi"] }
+  - decks: ["zh-pinyin", "zh-pinyin-sentences", "zh-reading-pinyin", "zh-grammar-pinyin-spelling", "zh-grammar-tone-sandhi"]
+    words: 8
+    grammar: ["pinyin-spelling", "tone-sandhi"]
     listening_passages:
       - { id: "ni-hao-is-ni-hao", text: { "en": "Hearing two third tones meet: ni hao said as ni hao with a rising first syllable, and yi and bu changing their tone" } }
     reading_passages:
       - { id: "pinyin-spelling-chart", text: { "en": "A chart of pinyin spellings: where the tone mark sits, yu and u after j, q and x, and the shortened iu, ui and un" } }
-  - planned: { id: "zh-sound-differences", theme: "sound-differences", words: 16 }
+  - decks: ["zh-sound-differences", "zh-sound-differences-sentences", "zh-reading-sound-differences", "*"]
+    words: 16
     listening_passages:
       - { id: "zh-ch-sh-and-j-q-x", text: { "en": "Pairs of words told apart by sounds English lacks: zhi and ji, chi and qi, shi and xi, lu and lü" } }
     reading_passages:
       - { id: "sound-pairs-list", text: { "en": "A list of word pairs in pinyin that differ by one sound" } }
-  - planned: { id: "zh-questions", theme: "questions", words: 15 }
+  - decks: ["zh-questions", "zh-questions-sentences", "zh-reading-questions", "*"]
+    words: 15
     listening_passages:
       - { id: "at-the-information-desk", text: { "en": "Asking who, what, where and when at an information desk" } }
     reading_passages:
       - { id: "visitor-faq", text: { "en": "A short visitor's sheet of questions and answers" } }
-  - planned: { id: "zh-addressing", theme: "addressing", words: 20 }
+  - decks: ["zh-addressing", "zh-addressing-sentences", "zh-reading-addressing", "*"]
+    words: 20
     listening_passages:
       - { id: "teacher-and-classmate", text: { "en": "Meeting a teacher and a classmate: surnames, laoshi, xiansheng and nin" } }
     reading_passages:

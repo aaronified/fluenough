@@ -1,0 +1,340 @@
+schema: 1
+id: "zh-addressing"
+part: "core"
+kind: "vocab"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+theme: "addressing"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "zh-0116"
+    target: "您"
+    words: ["您"]
+    reading: "nín"
+    pos: "pronoun"
+    register: "formal"
+    tags: ["polite"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "您好，老师。"
+        reading: "nín hǎo, lǎoshī."
+        words: ["您", "好", "老师"]
+      - target: "您是老师吗？"
+        reading: "nín shì lǎoshī ma?"
+        words: ["您", "是", "老师", "吗"]
+  - id: "zh-0117"
+    target: "老师"
+    target_scripts: { han_traditional: "老師" }
+    words: ["老师"]
+    reading: "lǎoshī"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "老师，你好吗？"
+        reading: "lǎoshī, nǐ hǎo ma?"
+        words: ["老师", "你", "好", "吗"]
+      - target: "我是老师。"
+        reading: "wǒ shì lǎoshī."
+        words: ["我", "是", "老师"]
+  - id: "zh-0118"
+    target: "先生"
+    words: ["先生"]
+    reading: "xiānsheng"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "先生，您好。"
+        reading: "xiānsheng, nín hǎo."
+        words: ["先生", "您", "好"]
+      - target: "他是王先生。"
+        reading: "tā shì Wáng xiānsheng."
+        words: ["他", "是", "王", "先生"]
+  - id: "zh-0119"
+    target: "小姐"
+    words: ["小姐"]
+    reading: "xiǎojiě"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "小姐，请坐。"
+        reading: "xiǎojiě, qǐng zuò."
+        words: ["小姐", "请", "坐"]
+        bases:
+          - { word: "坐", base: "坐", reading: "zuò" }
+      - target: "李小姐来吗？"
+        reading: "Lǐ xiǎojiě lái ma?"
+        words: ["李", "小姐", "来", "吗"]
+  - id: "zh-0120"
+    target: "女士"
+    words: ["女士"]
+    reading: "nǚshì"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "女士，您好。"
+        reading: "nǚshì, nín hǎo."
+        words: ["女士", "您", "好"]
+      - target: "张女士来吗？"
+        reading: "Zhāng nǚshì lái ma?"
+        words: ["张", "女士", "来", "吗"]
+  - id: "zh-0121"
+    target: "同学"
+    target_scripts: { han_traditional: "同學" }
+    words: ["同学"]
+    reading: "tóngxué"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "他是我同学。"
+        reading: "tā shì wǒ tóngxué."
+        words: ["他", "是", "我", "同学"]
+      - target: "同学，你好。"
+        reading: "tóngxué, nǐ hǎo."
+        words: ["同学", "你", "好"]
+  - id: "zh-0122"
+    target: "朋友"
+    words: ["朋友"]
+    reading: "péngyou"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "他是我朋友。"
+        reading: "tā shì wǒ péngyou."
+        words: ["他", "是", "我", "朋友"]
+      - target: "朋友来吗？"
+        reading: "péngyou lái ma?"
+        words: ["朋友", "来", "吗"]
+  - id: "zh-0123"
+    target: "同事"
+    words: ["同事"]
+    reading: "tóngshì"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "同事都来。"
+        reading: "tóngshì dōu lái."
+        words: ["同事", "都", "来"]
+      - target: "我同事很忙。"
+        reading: "wǒ tóngshì hěn máng."
+        words: ["我", "同事", "很", "忙"]
+        bases:
+          - { word: "忙", base: "忙", reading: "máng" }
+  - id: "zh-0124"
+    target: "学生"
+    target_scripts: { han_traditional: "學生" }
+    words: ["学生"]
+    reading: "xuésheng"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "学生很多。"
+        reading: "xuésheng hěn duō."
+        words: ["学生", "很", "多"]
+      - target: "这个学生很好。"
+        reading: "zhège xuésheng hěn hǎo."
+        words: ["这个", "学生", "很", "好"]
+        bases:
+          - { word: "这个", base: "这个", reading: "zhège" }
+  - id: "zh-0125"
+    target: "经理"
+    target_scripts: { han_traditional: "經理" }
+    words: ["经理"]
+    reading: "jīnglǐ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "我是经理。"
+        reading: "wǒ shì jīnglǐ."
+        words: ["我", "是", "经理"]
+      - target: "经理在吗？"
+        reading: "jīnglǐ zài ma?"
+        words: ["经理", "在", "吗"]
+        bases:
+          - { word: "在", base: "在", reading: "zài" }
+  - id: "zh-0126"
+    target: "大家"
+    words: ["大家"]
+    reading: "dàjiā"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "大家好！"
+        reading: "dàjiā hǎo!"
+        words: ["大家", "好"]
+      - target: "大家都来。"
+        reading: "dàjiā dōu lái."
+        words: ["大家", "都", "来"]
+  - id: "zh-0127"
+    target: "姓"
+    words: ["姓"]
+    reading: "xìng"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "您姓什么？"
+        reading: "nín xìng shénme?"
+        words: ["您", "姓", "什么"]
+      - target: "我姓李。"
+        reading: "wǒ xìng Lǐ."
+        words: ["我", "姓", "李"]
+  - id: "zh-0128"
+    target: "名字"
+    words: ["名字"]
+    reading: "míngzi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "名字是什么？"
+        reading: "míngzi shì shénme?"
+        words: ["名字", "是", "什么"]
+      - target: "你的名字很好。"
+        reading: "nǐ de míngzi hěn hǎo."
+        words: ["你", "的", "名字", "很", "好"]
+        bases:
+          - { word: "的", base: "的", reading: "de" }
+  - id: "zh-0129"
+    target: "叫"
+    words: ["叫"]
+    reading: "jiào"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "我叫李明。"
+        reading: "wǒ jiào Lǐ Míng."
+        words: ["我", "叫", "李明"]
+        bases:
+          - { word: "李明", base: "李明", reading: "Lǐ Míng" }
+      - target: "他叫什么？"
+        reading: "tā jiào shénme?"
+        words: ["他", "叫", "什么"]
+  - id: "zh-0130"
+    target: "王"
+    words: ["王"]
+    reading: "Wáng"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "我姓王。"
+        reading: "wǒ xìng Wáng."
+        words: ["我", "姓", "王"]
+      - target: "王老师来吗？"
+        reading: "Wáng lǎoshī lái ma?"
+        words: ["王", "老师", "来", "吗"]
+  - id: "zh-0131"
+    target: "李"
+    words: ["李"]
+    reading: "Lǐ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "李先生在吗？"
+        reading: "Lǐ xiānsheng zài ma?"
+        words: ["李", "先生", "在", "吗"]
+        bases:
+          - { word: "在", base: "在", reading: "zài" }
+      - target: "李经理很好。"
+        reading: "Lǐ jīnglǐ hěn hǎo."
+        words: ["李", "经理", "很", "好"]
+  - id: "zh-0132"
+    target: "张"
+    target_scripts: { han_traditional: "張" }
+    words: ["张"]
+    reading: "Zhāng"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "张老师很好。"
+        reading: "Zhāng lǎoshī hěn hǎo."
+        words: ["张", "老师", "很", "好"]
+      - target: "我叫张伟。"
+        reading: "wǒ jiào Zhāng Wěi."
+        words: ["我", "叫", "张伟"]
+        bases:
+          - { word: "张伟", base: "张伟", reading: "Zhāng Wěi" }
+  - id: "zh-0133"
+    target: "高兴"
+    target_scripts: { han_traditional: "高興" }
+    words: ["高兴"]
+    reading: "gāoxìng"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "很高兴认识你。"
+        reading: "hěn gāoxìng rènshi nǐ."
+        words: ["很", "高兴", "认识", "你"]
+        bases:
+          - { word: "认识", ref: "zh-0134" }
+      - target: "你高兴吗？"
+        reading: "nǐ gāoxìng ma?"
+        words: ["你", "高兴", "吗"]
+  - id: "zh-0134"
+    target: "认识"
+    target_scripts: { han_traditional: "認識" }
+    words: ["认识"]
+    reading: "rènshi"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "我认识他。"
+        reading: "wǒ rènshi tā."
+        words: ["我", "认识", "他"]
+      - target: "你认识王老师吗？"
+        reading: "nǐ rènshi Wáng lǎoshī ma?"
+        words: ["你", "认识", "王", "老师", "吗"]
+  - id: "zh-0135"
+    target: "欢迎"
+    target_scripts: { han_traditional: "歡迎" }
+    words: ["欢迎"]
+    reading: "huānyíng"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "欢迎你。"
+        reading: "huānyíng nǐ."
+        words: ["欢迎", "你"]
+      - target: "大家欢迎老师。"
+        reading: "dàjiā huānyíng lǎoshī."
+        words: ["大家", "欢迎", "老师"]
+  - id: "zh-0136"
+    kind: "set"
+    members: [{ ref: "zh-0020" }, { ref: "zh-0116" }]

@@ -1,0 +1,36 @@
+schema: 1
+id: "zh-sound-differences-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "zh-0147"
+    target: "茶很苦，我们都不喝。"
+    words: ["茶", "很", "苦", "我们", "都", "不", "喝"]
+    reading: "chá hěn kǔ, wǒmen dōu bù hē."
+    pos: "phrase"
+    bases:
+      - { word: "茶", base: "茶", reading: "chá" }
+      - { word: "我们", base: "我们", reading: "wǒmen" }
+  - id: "zh-0148"
+    target: "我很饱，我不跑。"
+    words: ["我", "很", "饱", "我", "不", "跑"]
+    reading: "wǒ hěn bǎo, wǒ bù pǎo."
+    pos: "phrase"
+  - id: "zh-0149"
+    target: "这里有鼓，也有旗。"
+    words: ["这里", "有", "鼓", "也", "有", "旗"]
+    reading: "zhèlǐ yǒu gǔ, yě yǒu qí."
+    pos: "phrase"
+    bases:
+      - { word: "这里", base: "这里", reading: "zhèlǐ" }
+      - { word: "有", base: "有", reading: "yǒu" }
+  - id: "zh-0150"
+    target: "他知道你卖驴。"
+    words: ["他", "知道", "你", "卖", "驴"]
+    reading: "tā zhīdào nǐ mài lǘ."
+    pos: "phrase"
+    bases:
+      - { word: "知道", base: "知道", reading: "zhīdào" }
