@@ -1,0 +1,23 @@
+schema: 1
+id: "tok-en-grammar-first-syllable-stress"
+kind: "layer"
+core: "tok-grammar-first-syllable-stress"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Stress on the first syllable"
+license: "CC-BY-SA-4.0"
+description: "In every Toki Pona word of two or more syllables, the stress falls on the first syllable. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Stress on the first syllable"
+  slot_name: "syllable"
+  prompt: "{lemma} ({gloss}): {slot}"
+  slots: { "stressed syllable": "the stressed (first) syllable", "unstressed syllable": "the unstressed (second) syllable" }
+  entries:
+    "toki": "language; to talk"
+    "pona": "good"
+    "sina": "you"
+    "nimi": "name; word"
+    "ala": "no; not"
+    "pana": "to give"
+    "sona": "to know"
+  notes: "The stress is always on the first syllable: TO-ki, PO-na, A-nu. A word of one syllable (jan, mi, pan) has just the one. Stress never changes a word's meaning, and the stress mark is not written."
