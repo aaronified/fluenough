@@ -1,0 +1,118 @@
+schema: 1
+id: "te-grammar-perfect-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "te", iso639_3: "tel", name: "Telugu", script: "telugu", tts: "te-IN", icon: "తె" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+cards:
+  - id: "te-6525"
+    target: "నేను భోజనం చేసి ఉన్నాను."
+    reading: "nēnu bhōjanaṁ cēsi unnānu."
+    ipa: "neːnu bʱoːdʒanam tʃeːsi unnaːnu"
+    pos: "phrase"
+    rules: ["te-rule-perfect"]
+    bases:
+      - { word: "చేసి", ref: "te-0621" }
+      - { word: "ఉన్నాను", ref: "te-0633" }
+    confusables:
+      - { id: "c1", word: "ఉన్నావు", reading: "unnāvu", kind: "form" }
+      - { id: "c2", word: "చేశాను", reading: "cēśānu", kind: "form" }
+  - id: "te-6526"
+    target: "మేము ఇప్పటికే సినిమా చూసి ఉన్నాము."
+    reading: "mēmu ippaṭikē sinimā cūsi unnāmu."
+    ipa: "meːmu ippaʈikeː sinimaː tʃuːsi unnaːmu"
+    pos: "phrase"
+    rules: ["te-rule-perfect"]
+    bases:
+      - { word: "చూసి", ref: "te-0626" }
+      - { word: "ఉన్నాము", ref: "te-0633" }
+    confusables:
+      - { id: "c1", word: "ఉన్నాం", reading: "unnāṁ", kind: "form" }
+      - { id: "c2", word: "చూస్తాము", reading: "cūstāmu", kind: "form" }
+  - id: "te-6527"
+    target: "నువ్వు పుస్తకం కొని ఉన్నావు."
+    reading: "nuvvu pustakaṁ koni unnāvu."
+    ipa: "nuʋʋu pust̪akam koni unnaːʋu"
+    pos: "phrase"
+    rules: ["te-rule-perfect"]
+    bases:
+      - { word: "కొని", ref: "te-0641" }
+      - { word: "ఉన్నావు", ref: "te-0633" }
+    confusables:
+      - { id: "c1", word: "ఉన్నాను", reading: "unnānu", kind: "form" }
+      - { id: "c2", word: "కొన్నావు", reading: "konnāvu", kind: "form" }
+  - id: "te-6528"
+    target: "మీరు తలుపు తెరిచి ఉన్నారు."
+    reading: "mīru talupu terici unnāru."
+    ipa: "miːru t̪alupu t̪eritʃi unnaːru"
+    pos: "phrase"
+    rules: ["te-rule-perfect"]
+    bases:
+      - { word: "తెరిచి", ref: "te-0825" }
+      - { word: "ఉన్నారు", ref: "te-0633" }
+    confusables:
+      - { id: "c1", word: "ఉన్నావు", reading: "unnāvu", kind: "form" }
+      - { id: "c2", word: "తెరిచారు", reading: "tericāru", kind: "form" }
+  - id: "te-6529"
+    target: "అతను పుస్తకం చదివి ఉన్నాడు."
+    reading: "atanu pustakaṁ cadivi unnāḍu."
+    ipa: "at̪anu pust̪akam tʃad̪iʋi unnaːɖu"
+    pos: "phrase"
+    rules: ["te-rule-perfect"]
+    bases:
+      - { word: "చదివి", ref: "te-0638" }
+      - { word: "ఉన్నాడు", ref: "te-0633" }
+    confusables:
+      - { id: "c1", word: "ఉన్నారు", reading: "unnāru", kind: "form" }
+      - { id: "c2", word: "చదువుతాడు", reading: "caduvutāḍu", kind: "form" }
+  - id: "te-6530"
+    target: "ఆమె టీ తాగి ఉంది."
+    reading: "āme ṭī tāgi undi."
+    ipa: "aːme ʈiː t̪aːɡi und̪i"
+    pos: "phrase"
+    rules: ["te-rule-perfect"]
+    bases:
+      - { word: "తాగి", ref: "te-0625" }
+      - { word: "ఉంది", ref: "te-0633" }
+    confusables:
+      - { id: "c1", word: "తాగుతుంది", reading: "tāgutundi", kind: "form" }
+      - { id: "c2", word: "తాగింది", reading: "tāgindi", kind: "form" }
+  - id: "te-6531"
+    target: "అమ్మ అన్నం వండి ఉంది."
+    reading: "amma annaṁ vaṇḍi undi."
+    ipa: "amma annam ʋaɳɖi und̪i"
+    pos: "phrase"
+    rules: ["te-rule-perfect"]
+    bases:
+      - { word: "వండి", ref: "te-0643" }
+      - { word: "ఉంది", ref: "te-0633" }
+    confusables:
+      - { id: "c1", word: "ఉన్నారు", reading: "unnāru", kind: "form" }
+      - { id: "c2", word: "వండింది", reading: "vaṇḍindi", kind: "form" }
+  - id: "te-6532"
+    target: "వాళ్ళు కూరగాయలు కొని ఉన్నారు."
+    reading: "vāḷḷu kūragāyalu koni unnāru."
+    ipa: "ʋaːɭɭu kuːraɡaːjalu koni unnaːru"
+    pos: "phrase"
+    rules: ["te-rule-perfect"]
+    bases:
+      - { word: "కొని", ref: "te-0641" }
+      - { word: "ఉన్నారు", ref: "te-0633" }
+    confusables:
+      - { id: "c1", word: "ఉన్నాము", reading: "unnāmu", kind: "form" }
+      - { id: "c2", word: "కొన్నారు", reading: "konnāru", kind: "form" }
+  - id: "te-6533"
+    target: "నేను ఈరోజు బస్సు ఎక్కి ఉన్నాను."
+    reading: "nēnu īrōju bassu ekki unnānu."
+    ipa: "neːnu iːroːdʒu bassu ekki unnaːnu"
+    pos: "phrase"
+    rules: ["te-rule-perfect"]
+    bases:
+      - { word: "ఎక్కి", ref: "te-0827" }
+      - { word: "ఉన్నాను", ref: "te-0633" }
+    confusables:
+      - { id: "c1", word: "ఉన్నావు", reading: "unnāvu", kind: "form" }
+      - { id: "c2", word: "ఎక్కుతాను", reading: "ekkutānu", kind: "form" }
