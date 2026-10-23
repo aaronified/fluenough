@@ -46,7 +46,7 @@ These three switches are on the Your languages page.
 
 - **Latin-letter readings:** a reading under words in other scripts. See [Scripts and readings](Scripts-and-Readings).
 - **IPA:** how each word is pronounced, under the word.
-- **Adult content (18+):** rude and offensive words are shown, so you know one when you hear it. It asks if you are 18 or over. A word that sounds almost like a rude word always carries a "Careful when speaking" warning. With Adult content off, the warning does not name the rude word. With it on, the word is named. Rude words are never said in a speaking test.
+- **Adult content (18+):** off by default. Off, a deck of offensive words, and any rude card in another deck, is hidden everywhere: not listed, not taught, and not in Today, reviews or practice. On, they come back, so you know one when you hear it. It asks if you are 18 or over. A word that sounds almost like a rude word always carries a "Careful when speaking" warning. With Adult content off, the warning does not name the rude word. With it on, the word is named. Rude words are never said in a speaking test.
 
 The app's menus are in English only. Translation is explained in the [Translation guide](Translation-Guide).
 
