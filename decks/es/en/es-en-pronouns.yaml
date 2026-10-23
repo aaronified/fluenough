@@ -1,0 +1,342 @@
+schema: 1
+id: "es-en-pronouns"
+kind: "layer"
+core: "es-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns and people words"
+license: "CC-BY-SA-4.0"
+description: "The pronouns yo, él, ella and their plurals, this and that, the words mi, tu and su, and people words such as la persona and el chico. Not yet checked by a Spanish speaker: please report any mistake."
+
+cards:
+  "es-0119":
+    native: "I"
+    notes:
+      "n1": "Yo is written with a capital only at the start of a sentence. Spanish often leaves it out, since the verb ending shows the person: Soy de Lima (I am from Lima)."
+    examples:
+      "Yo soy de Lima.":
+        native: "I am from Lima."
+        bases:
+          "Yo": "I"
+          "de": "from"
+          "Lima": "Lima"
+      "Yo hablo un poco de inglés.":
+        native: "I speak a little English."
+        bases:
+          "Yo": "I"
+          "un": "a"
+          "poco": "little"
+          "de": "of"
+          "inglés": "English"
+  "es-0120":
+    native: "he"
+    notes:
+      "n1": "With an accent, él means he. Without it, el means the, as in el libro (the book)."
+    examples:
+      "Él es mi tío.":
+        native: "He is my uncle."
+        bases:
+          "Él": "he"
+          "tío": "uncle"
+      "Él habla español.":
+        native: "He speaks Spanish."
+        bases:
+          "Él": "he"
+          "español": "Spanish"
+  "es-0121":
+    native: "she"
+    notes:
+      "n1": "Ella is she. The plural ellas (they, all women) has its own card."
+    examples:
+      "Ella es mi prima.":
+        native: "She is my cousin."
+        bases:
+          "Ella": "she"
+          "prima": "cousin"
+      "Ella vive aquí.":
+        native: "She lives here."
+        bases:
+          "Ella": "she"
+  "es-0122":
+    native: "we (men, or men and women)"
+    notes:
+      "n1": "Nosotras is the form for a group of women. Spanish often drops it: Vivimos aquí (we live here)."
+    examples:
+      "Nosotros vivimos aquí.":
+        native: "We live here."
+        bases:
+          "Nosotros": "we"
+      "Nosotros somos amigos.":
+        native: "We are friends."
+        bases:
+          "Nosotros": "we"
+  "es-0123":
+    native: "we (all women)"
+    notes:
+      "n1": "The feminine of nosotros. Use it when everyone in the group is a woman."
+    examples:
+      "Nosotras somos estudiantes.":
+        native: "We are students."
+        bases:
+          "Nosotras": "we"
+          "estudiantes": "students"
+      "Nosotras hablamos mucho.":
+        native: "We talk a lot."
+        bases:
+          "Nosotras": "we"
+  "es-0124":
+    native: "they (men, or men and women)"
+    notes:
+      "n1": "Ellas is the form for a group of women. Ellos also covers a mixed group."
+    examples:
+      "Ellos comen en casa.":
+        native: "They eat at home."
+        bases:
+          "Ellos": "they"
+          "en": "at"
+      "Ellos son mis amigos.":
+        native: "They are my friends."
+        bases:
+          "Ellos": "they"
+  "es-0125":
+    native: "they (all women)"
+    notes:
+      "n1": "The feminine plural of ellos. Use it only when every person is a woman."
+    examples:
+      "Ellas son mis hermanas.":
+        native: "They are my sisters."
+        bases:
+          "Ellas": "they"
+          "hermanas": "sisters"
+      "Ellas viven en la ciudad.":
+        native: "They live in the city."
+        bases:
+          "Ellas": "they"
+          "en": "in"
+          "la": "the"
+  "es-0126":
+    native: "you (plural)"
+    notes:
+      "n1": "The plural of usted, for more than one person. In Latin America it is used for formal and informal you alike; in Spain the informal plural is vosotros."
+    examples:
+      "Ustedes son muy amables.":
+        native: "You are very kind."
+        bases:
+          "Ustedes": "you"
+          "muy": "very"
+          "amables": "kind"
+      "¿Ustedes hablan inglés?":
+        native: "Do you speak English?"
+        bases:
+          "Ustedes": "you"
+          "inglés": "English"
+  "es-0127":
+    native: "this"
+    notes:
+      "n1": "For a thing near the speaker, with no noun after it: Esto es un libro (this is a book)."
+    examples:
+      "Esto es un libro.":
+        native: "This is a book."
+        bases:
+          "Esto": "this"
+          "un": "a"
+      "Esto es muy bueno.":
+        native: "This is very good."
+        bases:
+          "Esto": "this"
+          "muy": "very"
+  "es-0128":
+    native: "that"
+    notes:
+      "n1": "For a thing further from the speaker, or one already mentioned: Eso es cierto (that is true)."
+    examples:
+      "Eso es cierto.":
+        native: "That is true."
+        bases:
+          "Eso": "that"
+          "cierto": "true"
+      "¿Eso es tu silla?":
+        native: "Is that your chair?"
+        bases:
+          "Eso": "that"
+  "es-0129":
+    native: "my"
+    notes:
+      "n1": "The possessive my. Its plural is mis. It takes no accent: mi casa (my house). The accent only goes on tú (you)."
+    examples:
+      "Mi casa es grande.":
+        native: "My house is big."
+        bases:
+          "Mi": "my"
+      "Mis amigos viven aquí.":
+        native: "My friends live here."
+        bases:
+          "Mis": "my"
+  "es-0130":
+    native: "your (informal)"
+    notes:
+      "n1": "Without the accent, tu means your, as in tu nombre (your name). With the accent, tú is you."
+    examples:
+      "Tu casa es bonita.":
+        native: "Your house is pretty."
+        bases:
+          "Tu": "your"
+          "bonita": "pretty"
+      "¿Dónde está tu libro?":
+        native: "Where is your book?"
+        bases:
+          "tu": "your"
+  "es-0131":
+    native: "his; her; your (formal); their"
+    notes:
+      "n1": "Su is his, her, its, your (formal) or their, so the context decides: su casa can be his, her or their house."
+    examples:
+      "Su casa es grande.":
+        native: "Her house is big."
+        bases:
+          "Su": "her"
+      "Ellos hablan con su madre.":
+        native: "They are talking to their mother."
+        bases:
+          "con": "to"
+          "su": "their"
+          "madre": "mother"
+  "es-0132":
+    native: "someone; anyone"
+    notes:
+      "n1": "Alguien is someone. Its opposite is nadie (nobody). It has no plural."
+    examples:
+      "Alguien llama a la puerta.":
+        native: "Someone is knocking at the door."
+        bases:
+          "Alguien": "someone"
+          "llama": "knock"
+          "a": "at"
+          "la": "the"
+      "¿Hay alguien aquí?":
+        native: "Is anyone here?"
+        bases:
+          "Hay": "there is"
+          "alguien": "anyone"
+  "es-0133":
+    native: "nobody; no one"
+    notes:
+      "n1": "Nadie can come before the verb: Nadie llama. After the verb, no is needed: No llama nadie (nobody calls)."
+    examples:
+      "Nadie está en casa.":
+        native: "Nobody is at home."
+        bases:
+          "Nadie": "nobody"
+          "en": "at"
+      "No veo a nadie.":
+        native: "I can't see anyone."
+        bases:
+          "veo": "see"
+          "a": "to"
+          "nadie": "anyone"
+  "es-0134":
+    native: "everyone; all"
+    notes:
+      "n1": "Todos is the masculine plural; the feminine is todas (all women). Todos los días means every day."
+    examples:
+      "Todos están en la mesa.":
+        native: "Everyone is at the table."
+        bases:
+          "Todos": "everyone"
+          "en": "at"
+          "la": "the"
+      "Todos los días como pan.":
+        native: "I eat bread every day."
+        bases:
+          "Todos": "every"
+          "los": "the"
+  "es-0135":
+    native: "person"
+    notes:
+      "n1": "Plural las personas. Persona is any person. For a boy or a girl, see chico and chica."
+    examples:
+      "La persona en la puerta es mi amiga.":
+        native: "The person at the door is my friend."
+        bases:
+          "La": "the"
+          "persona": "person"
+          "en": "at"
+      "Hay muchas personas aquí.":
+        native: "There are many people here."
+        bases:
+          "Hay": "there are"
+          "personas": "people"
+    bases:
+      "la": "the"
+      "persona": "person"
+  "es-0136":
+    native: "boy; guy"
+    notes:
+      "n1": "Its feminine is la chica (girl). Among friends, chico is also said to a man: ¡Hola, chico! (Hi, mate!)."
+    examples:
+      "El chico juega en el parque.":
+        native: "The boy plays in the park."
+        bases:
+          "El": "the"
+          "chico": "boy"
+          "juega": "play"
+          "en": "in"
+          "parque": "park"
+      "El chico es muy simpático.":
+        native: "The boy is very friendly."
+        bases:
+          "El": "the"
+          "chico": "boy"
+          "muy": "very"
+          "simpático": "friendly"
+    bases:
+      "el": "the"
+      "chico": "boy"
+  "es-0137":
+    native: "girl"
+    notes:
+      "n1": "Plural las chicas. Chica can also mean a young woman, and is used among friends: ¡Hola, chica! (Hi, girl!)."
+    examples:
+      "La chica habla con la profesora.":
+        native: "The girl is talking to the teacher."
+        bases:
+          "La": "the"
+          "chica": "girl"
+          "con": "to"
+      "Las chicas son amigas.":
+        native: "The girls are friends."
+        bases:
+          "Las": "the"
+          "chicas": "girls"
+    bases:
+      "la": "the"
+      "chica": "girl"
+  "es-0138":
+    native: "baby"
+    notes:
+      "n1": "Plural los bebés. The word is the same for a boy or a girl."
+    examples:
+      "El bebé duerme.":
+        native: "The baby is sleeping."
+        bases:
+          "El": "the"
+          "bebé": "baby"
+          "duerme": "sleep"
+      "Ella es la madre del bebé.":
+        native: "She is the baby's mother."
+        bases:
+          "la": "the"
+          "madre": "mother"
+          "del": "of the"
+          "bebé": "baby"
+    bases:
+      "el": "the"
+      "bebé": "baby"
+  "es-0139":
+    native: "Subject pronouns: I, he, she, we, they, you all"
+    explanation: "Spanish often leaves these out, because the verb ending already shows the person. Learn them as a set: one word for each person, with separate plural words for men and women."
+  "es-0140":
+    native: "This and that"
+    explanation: "Esto is for a thing near the speaker, eso for a thing further away or one already mentioned."
+  "es-0141":
+    native: "My, your, his, her and their"
+    explanation: "Possessives come before the noun and agree with it in number: mi and mis, tu and tus, su and sus. Su can mean his, her, your (formal) or their."
