@@ -292,6 +292,7 @@ AppState spanishLearner() => AppState.test(
 /// The session the drill page is running.
 DrillSession sessionOf(WidgetTester tester) {
   for (final widget in <Widget>[
+    ...tester.widgetList(find.byType(SetDrill)),
     ...tester.widgetList(find.byType(GrammarDrill)),
     ...tester.widgetList(find.byType(TeachDrill)),
     ...tester.widgetList(find.byType(ChoiceDrill)),
@@ -299,6 +300,7 @@ DrillSession sessionOf(WidgetTester tester) {
     ...tester.widgetList(find.byType(RearrangeDrill)),
   ]) {
     return switch (widget) {
+      SetDrill(:final session) => session,
       GrammarDrill(:final session?) => session,
       TeachDrill(:final session) => session,
       ChoiceDrill(:final session) => session,
@@ -1946,8 +1948,13 @@ void main() {
           final today = state.buildSession(const DrillRequest.today());
           expect(today.fresh.map((i) => i.card.id), <String>[check.card.id]);
           expect(today.fresh.single.mode, isNot(check.mode));
+          // A set card still shows a taught member, marked Known; it is not
+          // taught or asked again.
           expect(
-            state.lessonFor(lesson).map((i) => i.card.id),
+            state
+                .lessonFor(lesson)
+                .where((i) => i.ask != Ask.showSet)
+                .map((i) => i.card.id),
             isNot(contains(check.card.id)),
           );
         }
