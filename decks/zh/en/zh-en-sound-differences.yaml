@@ -1,0 +1,208 @@
+schema: 1
+id: "zh-en-sound-differences"
+kind: "layer"
+core: "zh-sound-differences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sounds English lacks: word pairs"
+description: "Sixteen words in eight pairs, each pair told apart by one sound English does not have or hears differently: the curled and flat tongue (zh and j, ch and q, sh and x), a breath after the consonant, and the ü vowel."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "zh-0074":
+    native: "to know"
+    notes:
+      "n1": "知 (zhī) is 'to know'. 知道 (zhīdào) is 'to know a fact', and it is the usual form in speech."
+      "pair-chicken": "Only the first sound differs from 鸡 (jī), chicken: zh is said with the tongue curled back, j with it flat behind the teeth."
+    examples:
+      "我不知道。":
+        native: "I don't know."
+        bases:
+          "知道": { meaning: "to know a fact" }
+      "你知道吗？":
+        native: "Do you know?"
+        bases:
+          "知道": { meaning: "to know a fact" }
+  "zh-0075":
+    native: "chicken"
+    notes:
+      "n1": "鸡 (jī) is 'chicken', the bird and its meat."
+      "pair-know": "Only the first sound differs from 知 (zhī), to know: j is said with the tongue flat behind the teeth, zh with it curled back."
+    examples:
+      "我吃鸡。": "I eat chicken."
+      "他卖鸡。": "He sells chickens."
+  "zh-0076":
+    native: "pond"
+    notes:
+      "n1": "池 (chí) is 'pond', a small body of still water. 池边 (chíbiān) is the edge of a pond."
+      "pair-flag": "Only the first sound differs from 旗 (qí), flag: ch is said with the tongue curled back, q with it flat behind the teeth. Both have a breath."
+    examples:
+      "池里有鱼。":
+        native: "There are fish in the pond."
+        bases:
+          "池里": { meaning: "in the pond" }
+          "有": { meaning: "to have" }
+      "我去池边。":
+        native: "I go to the edge of the pond."
+        bases:
+          "池边": { meaning: "the edge of a pond" }
+  "zh-0077":
+    native: "flag"
+    notes:
+      "n1": "旗 (qí) is 'flag'."
+      "pair-pond": "Only the first sound differs from 池 (chí), pond: q is said with the tongue flat behind the teeth, ch with it curled back."
+    examples:
+      "这是旗。":
+        native: "This is a flag."
+        bases:
+          "这": { meaning: "this" }
+      "他买旗。": "He buys a flag."
+  "zh-0078":
+    native: "stone"
+    notes:
+      "n1": "石 (shí) is 'stone'. 石头 (shítou) is the everyday word for a stone or a rock."
+      "pair-practise": "Only the first sound differs from 习 (xí), to practise: sh is said with the tongue curled back, x with it flat behind the teeth."
+    examples:
+      "这里有石头。":
+        native: "There are stones here."
+        bases:
+          "这里": { meaning: "here" }
+          "有": { meaning: "to have" }
+          "石头": { meaning: "stone; rock" }
+      "这是石。":
+        native: "This is a stone."
+        bases:
+          "这": { meaning: "this" }
+  "zh-0079":
+    native: "to practise; to get used to"
+    notes:
+      "n1": "习 (xí) is 'to practise' and 'to get used to'. It is rare alone. 习惯 (xíguàn) is 'habit', and 'to be used to'."
+      "pair-stone": "Only the first sound differs from 石 (shí), stone: x is said with the tongue flat behind the teeth, sh with it curled back."
+    examples:
+      "我习惯喝茶。":
+        native: "I am used to drinking tea."
+        bases:
+          "习惯": { meaning: "to be used to; habit" }
+          "茶": { meaning: "tea" }
+      "他习惯吃鱼。":
+        native: "He is used to eating fish."
+        bases:
+          "习惯": { meaning: "to be used to; habit" }
+  "zh-0080":
+    native: "full (after eating)"
+    notes:
+      "n1": "饱 (bǎo) is 'full', from having eaten enough."
+      "pair-run": "Only the first sound differs from 跑 (pǎo), to run: b has no breath after it, p has one."
+    examples:
+      "我很饱。":
+        native: "I am full."
+      "你饱吗？": "Are you full?"
+  "zh-0081":
+    native: "to run"
+    notes:
+      "n1": "跑 (pǎo) is 'to run'."
+      "pair-full": "Only the first sound differs from 饱 (bǎo), full: p has a breath after it, b does not."
+    examples:
+      "他跑吗？": "Is he running?"
+      "我不跑。": "I'm not running."
+  "zh-0082":
+    native: "all; both; also"
+    notes:
+      "n1": "都 (dōu) is 'all' and 'both'. It comes before the verb, as in 我们都吃鱼 (wǒmen dōu chī yú), we all eat fish."
+      "pair-steal": "Only the first sound differs from 偷 (tōu), to steal: d has no breath after it, t has one."
+    examples:
+      "我们都吃鱼。":
+        native: "We all eat fish."
+        bases:
+          "我们": { meaning: "we; us" }
+      "妈妈都来。":
+        native: "Mum is coming too."
+        bases:
+          "妈妈": { meaning: "mum" }
+  "zh-0083":
+    native: "to steal"
+    notes:
+      "n1": "偷 (tōu) is 'to steal'."
+      "pair-all": "Only the first sound differs from 都 (dōu), all: t has a breath after it, d does not."
+    examples:
+      "他偷鱼。": "He steals fish."
+      "他不偷。": "He doesn't steal."
+  "zh-0084":
+    native: "bitter"
+    notes:
+      "n1": "苦 (kǔ) is 'bitter', as a taste."
+      "pair-drum": "Only the first sound differs from 鼓 (gǔ), drum: k has a breath after it, g does not."
+    examples:
+      "茶很苦。":
+        native: "The tea is bitter."
+        bases:
+          "茶": { meaning: "tea" }
+      "我不喝苦的。":
+        native: "I don't drink bitter things."
+        bases:
+          "的": { meaning: "particle; here 'the ones that are'" }
+  "zh-0085":
+    native: "drum"
+    notes:
+      "n1": "鼓 (gǔ) is 'drum'."
+      "pair-bitter": "Only the first sound differs from 苦 (kǔ), bitter: g has no breath, k has one."
+    examples:
+      "这是鼓。":
+        native: "This is a drum."
+        bases:
+          "这": { meaning: "this" }
+      "他打鼓。":
+        native: "He plays the drum."
+        bases:
+          "打": { meaning: "to hit; to play" }
+  "zh-0086":
+    native: "donkey"
+    notes:
+      "n1": "驴 (lǘ) is 'donkey'."
+      "pair-stove": "Only the vowel differs from 炉 (lú), stove: the ü in 驴 (lǘ) is said with the lips rounded and the tongue forward, the u in 炉 (lú) with the tongue back."
+    examples:
+      "这是驴，不是马。":
+        native: "This is a donkey, not a horse."
+        bases:
+          "这": { meaning: "this" }
+      "他卖驴吗？": "Does he sell donkeys?"
+  "zh-0087":
+    native: "stove"
+    notes:
+      "n1": "炉 (lú) is 'stove', or a small oven."
+      "pair-donkey": "Only the vowel differs from 驴 (lǘ), donkey: u is said with the tongue back, ü with the tongue forward and the lips rounded."
+    examples:
+      "炉在这里。":
+        native: "The stove is here."
+        bases:
+          "在": { meaning: "at; in" }
+          "这里": { meaning: "here" }
+      "这是炉。":
+        native: "This is a stove."
+        bases:
+          "这": { meaning: "this" }
+  "zh-0088":
+    native: "character (a written sign)"
+    notes:
+      "n1": "字 (zì) is 'character', one written sign of Chinese."
+      "pair-time": "Only the first sound differs from 次 (cì), time: z has no breath after it, c has one."
+    examples:
+      "这个字是什么？":
+        native: "What character is this?"
+        bases:
+          "这个": { meaning: "this" }
+      "你写字吗？": "Do you write characters?"
+  "zh-0089":
+    native: "time (once, twice)"
+    notes:
+      "n1": "次 (cì) is 'time', as in once or twice. 一次 (yícì) is 'once'."
+      "pair-character": "Only the first sound differs from 字 (zì), character: c has a breath after it, z does not."
+    examples:
+      "我去一次。":
+        native: "I go once."
+        bases:
+          "一次": { meaning: "once" }
+      "这是第一次。":
+        native: "This is the first time."
+        bases:
+          "这": { meaning: "this" }
+          "第一次": { meaning: "the first time" }
