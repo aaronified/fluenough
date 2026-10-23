@@ -446,13 +446,30 @@ void main() {
       expect(grade('nu', 'nǚ'), AnswerOutcome.exact);
     });
 
-    test('Egyptian letters are typed as plain ones, and none empties a '
-        'word', () {
-      expect(grade('ankh', 'ꜥnḫ'), isNot(AnswerOutcome.wrong));
-      expect(grade('anh', 'ꜥnḫ'), AnswerOutcome.exact);
-      expect(grade('dd', 'ḏd'), AnswerOutcome.exact);
-      expect(grade('tz', 'ṯz'), AnswerOutcome.exact);
+    test('Egyptian letters are typed as their own spellings, and none '
+        'empties a word', () {
+      expect(grade('ankh', 'ꜥnḫ'), AnswerOutcome.exact);
+      expect(grade('dhd', 'ḏd'), AnswerOutcome.exact);
+      expect(grade('thz', 'ṯz'), AnswerOutcome.exact);
+      expect(grade('3st', 'Ꜣst'), AnswerOutcome.exact);
       expect(plain.key('ꜥꜣ'), isNotEmpty);
+    });
+
+    test('a different Egyptian word is not marked right', () {
+      // ꜣ and ꜥ, ḫ and h, ṯ and t, ḏ and d are different letters.
+      expect(grade('ra', 'Rꜥ'), AnswerOutcome.exact);
+      expect(grade('r3', 'Rꜥ'), isNot(AnswerOutcome.exact));
+      expect(grade('hrw', 'ḫrw'), isNot(AnswerOutcome.exact));
+      expect(grade('khrw', 'hrw'), isNot(AnswerOutcome.exact));
+      expect(grade('ntr', 'nṯr'), isNot(AnswerOutcome.exact));
+      expect(grade('dt', 'ḏt'), isNot(AnswerOutcome.exact));
+    });
+
+    test('Proto-Indo-European palatovelars and long accented vowels are '
+        'typed plain', () {
+      expect(grade('kmtom', 'ḱm̥tóm'), AnswerOutcome.exact);
+      expect(grade('gneh3', 'ǵneh₃'), AnswerOutcome.exact);
+      expect(grade('pH2ter', 'ph₂tḗr'), AnswerOutcome.exact);
     });
 
     test('sign indices and laryngeal subscripts are typed as digits', () {

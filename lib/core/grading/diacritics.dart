@@ -22,7 +22,7 @@ String foldCharacter(String char) => _diacriticFolding[char] ?? char;
 /// Diacritic folding for Latin and Cyrillic-adjacent scripts, for the
 /// letters ISO 15919 adds, which the Indic readings use (ADR-0025), for
 /// pinyin's caron vowels, and for the transliteration letters of Egyptian
-/// (ꜣ ꜥ ḫ ẖ ṯ ḏ) and of Proto-Indo-European and Sumerian (ʰ ʷ, subscripts).
+/// (ꜣ ꜥ ḫ ẖ ṯ ḏ ḳ) and of Proto-Indo-European and Sumerian (ʰ ʷ, subscripts).
 /// The apostrophe-like letters ʾ ʿ ʼ ʻ are not here: [RomanisedSpelling.key]
 /// drops everything but letters and digits, so they cost nothing to leave off.
 ///
@@ -32,22 +32,22 @@ String foldCharacter(String char) => _diacriticFolding[char] ?? char;
 /// for. Scripts needing real NFD handling will need a normalisation package;
 /// tracked in the roadmap.
 final Map<String, String> _diacriticFolding = _buildFolding({
-  'a': 'áàâäãåāăąǎǻꜣꜥ',
+  'a': 'áàâäãåāăąǎǻꜥ',
   'c': 'çćĉċč',
-  'd': 'ďđḍḏ',
-  'e': 'éèêëēĕėęě',
-  'g': 'ĝğġģ',
-  'h': 'ĥħḥḫẖʰ',
+  'd': 'ďđḍ',
+  'e': 'éèêëēĕėęěḗẽ',
+  'g': 'ĝğġģǵ',
+  'h': 'ĥħḥʰ',
   'i': 'íìîïĩīĭįıǐ',
   'j': 'ĵ',
-  'k': 'ķḳḵ',
+  'k': 'ķḵḱ',
   'l': 'ĺļľłŀḷḻḹ',
-  'm': 'ṁṃ',
+  'm': 'ṁṃḿ',
   'n': 'ñńņňŉṇṅṉ',
-  'o': 'óòôöõōŏőøǒ',
+  'o': 'óòôöõōŏőøǒṓ',
   'r': 'ŕŗřṛṟṝ',
   's': 'śŝşšṣ',
-  't': 'ţťŧṭṯ',
+  't': 'ţťŧṭ',
   'u': 'úùûüũūŭůűųǔǖǘǚǜ',
   'w': 'ŵʷ',
   'y': 'ýÿŷẏ',
@@ -64,6 +64,17 @@ final Map<String, String> _diacriticFolding = _buildFolding({
   '7': '₇',
   '8': '₈',
   '9': '₉',
+  // Egyptian letters, each kept apart from the plain one it is not: a
+  // folded ꜣ ꜥ ḫ ẖ ṯ ḏ ḳ would let ḫrw (voice) pass for hrw (day) and Rꜥ
+  // for Rꜣ. ꜥ is typed a, ꜣ as the 3 of ASCII Egyptology, ḫ ṯ ḏ as kh th dh,
+  // ẖ as ch and ḳ as q (the course writes q). ḥ still folds to h, as it does
+  // for the Indic readings.
+  '3': 'ꜣ',
+  'kh': 'ḫ',
+  'ch': 'ẖ',
+  'th': 'ṯ',
+  'dh': 'ḏ',
+  'q': 'ḳ',
   'ae': 'æ',
   'oe': 'œ',
   'ss': 'ß',
@@ -78,7 +89,7 @@ final Map<String, String> _diacriticFolding = _buildFolding({
       '\u0304\u0323\u0310\u0325\u0303\u035F'
       // Acute, grave, circumflex, dot above, diaeresis, caron and macron
       // below, as a tone mark or a letter's mark may be typed apart from it.
-      '\u0300\u0301\u0302\u0307\u0308\u030C\u0331',
+      '\u0300\u0301\u0302\u0307\u0308\u030C\u0311\u0331',
 });
 
 Map<String, String> _buildFolding(Map<String, String> groups) {
