@@ -85,11 +85,8 @@ units:
     words: 22
   - decks: ["es-quantities", "es-quantities-sentences", "es-reading-quantities", "*"]
     words: 30
-  - planned: { id: "es-describing", theme: "describing", words: 40 }
-    listening_passages:
-      - { id: "how-are-you-feeling", text: { "en": "A friend asks how you feel today, and you answer" } }
-    reading_passages:
-      - { id: "postcard-from-the-coast", text: { "en": "A short postcard: the weather and the food" } }
+  - decks: ["es-describing", "es-describing-sentences", "es-reading-describing", "*"]
+    words: 40
   # 5. Rules as forms, practised on the words known: articles and gender
   # and prepositions first, then the verb forms.
   - decks: ["es-grammar-articles-gender"]
