@@ -1,0 +1,69 @@
+schema: 1
+id: "es-en-reading-present-er-ir"
+name: "Reading: what we eat and where we live"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts with -er and -ir verbs: what people eat and drink, where they live, and what they open, read and learn. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-what-we-eat"
+    title: "What we eat"
+    sentences:
+      - text: "Yo como pan con leche."
+      - text: "Mi hermana bebe agua."
+      - text: "Mis amigos viven en la ciudad."
+      - text: "Nosotros leemos un libro."
+    questions:
+      - id: "es-0484"
+        prompt: { en: "What does the speaker eat?" }
+        options:
+          - { en: "Bread with milk" }
+          - { en: "Rice" }
+          - { en: "Soup" }
+        answer: 0
+      - id: "es-0485"
+        prompt: { en: "What does the sister drink?" }
+        options:
+          - { en: "Water" }
+          - { en: "Milk" }
+          - { en: "Coffee" }
+        answer: 0
+      - id: "es-0486"
+        prompt: { en: "Where do the friends live?" }
+        options:
+          - { en: "In the city" }
+          - { en: "At home" }
+          - { en: "At school" }
+        answer: 0
+  - id: "es-lunch-notes"
+    title: "Lunch notes"
+    sentences:
+      - text: "Mi padre come en casa."
+      - text: "Mi madre aprende algo nuevo."
+      - text: "Nosotros decidimos ir a casa."
+      - text: "Tú abres la ventana."
+    questions:
+      - id: "es-0487"
+        prompt: { en: "Who eats at home?" }
+        options:
+          - { en: "The father" }
+          - { en: "The sister" }
+          - { en: "The friends" }
+        answer: 0
+      - id: "es-0488"
+        prompt: { en: "What does the mother learn?" }
+        options:
+          - { en: "Something new" }
+          - { en: "Nothing" }
+          - { en: "A song" }
+        answer: 0
+      - id: "es-0489"
+        prompt: { en: "What does the person open?" }
+        options:
+          - { en: "The window" }
+          - { en: "The door" }
+          - { en: "The book" }
+        answer: 0

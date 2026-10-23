@@ -107,21 +107,15 @@ units:
   - decks: ["es-grammar-present-ar"]
     words: 0
     grammar: ["present-ar"]
-  - planned: { id: "es-grammar-present-er-ir", grammar: "present-er-ir" }
-    listening_passages:
-      - { id: "what-we-eat", text: { "en": "Friends say what they eat, drink and where they live" } }
-    reading_passages:
-      - { id: "lunch-notes", text: { "en": "Short notes about who eats, drinks and lives where" } }
-  - planned: { id: "es-grammar-present-irregular", grammar: "present-irregular" }
-    listening_passages:
-      - { id: "what-do-you-have", text: { "en": "Saying what you have, what you do and where you go" } }
-    reading_passages:
-      - { id: "weekly-plan", text: { "en": "A weekly plan for a household: who goes where and does what" } }
-  - planned: { id: "es-grammar-imperatives", grammar: "imperatives" }
-    listening_passages:
-      - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
-    reading_passages:
-      - { id: "signs-and-rules", text: { "en": "Signs saying what to do and what not to do" } }
+  - decks: ["es-grammar-present-er-ir", "es-reading-present-er-ir"]
+    words: 0
+    grammar: ["present-er-ir"]
+  - decks: ["es-grammar-present-irregular", "es-reading-present-irregular"]
+    words: 0
+    grammar: ["present-irregular"]
+  - decks: ["es-grammar-imperatives", "es-reading-imperatives"]
+    words: 0
+    grammar: ["imperatives"]
   # 6. Then the other A1 themes, each its words, its rules, then its
   # sentences.
   - planned: { id: "es-work", theme: "work", words: 40 }
