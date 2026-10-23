@@ -118,11 +118,8 @@ units:
     grammar: ["imperatives"]
   # 6. Then the other A1 themes, each its words, its rules, then its
   # sentences.
-  - planned: { id: "es-work", theme: "work", words: 40 }
-    listening_passages:
-      - { id: "what-do-you-do", text: { "en": "Two people ask each other what they do for a living" } }
-    reading_passages:
-      - { id: "business-card", text: { "en": "A business card and a short job description" } }
+  - decks: ["es-work", "es-work-sentences", "es-reading-work", "*"]
+    words: 22
   - planned: { id: "es-numbers-big", theme: "numbers-big", words: 40 }
     listening_passages:
       - { id: "big-numbers", text: { "en": "Hearing prices, years and phone numbers" } }
