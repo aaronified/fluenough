@@ -7,7 +7,7 @@ import 'fsrs.dart';
 /// There is no other measure. A pair has no D until its first answer in
 /// that skill, so a skill never answered has no [SkillDifficulty] at all,
 /// and new words are still picked by `Difficulty.of(card)`. Reviews and
-/// quick revision do not read it (owner, 2026-10-10); Inspect shows it.
+/// quick revision do not read it (owner, 2026-10-10); the word sheet shows it.
 ///
 /// Pure: nothing here imports Flutter.
 class SkillDifficulty {

@@ -56,47 +56,6 @@ List<String> cardTagsOf(DeckEntry entry) =>
 /// choosing one filters nothing out.
 bool showsTagFilter(DeckEntry entry) => cardTagsOf(entry).length >= 2;
 
-/// One line of a deck's card preview: deck content, never a card id.
-typedef PreviewLine = ({
-  String target,
-  String native,
-  String? reading,
-  String? ipa,
-});
-
-/// The first [count] cards of [entry], as its screen previews them. A
-/// grammar deck previews its pattern's cells that have a form: the form, and
-/// "lemma — slot", which reads better than its cards' full prompts.
-List<PreviewLine> previewOf(
-  DeckEntry entry,
-  AppLocalizations l10n, {
-  int count = 4,
-}) {
-  final pattern = entry.deck.pattern;
-  if (pattern != null) {
-    return <PreviewLine>[
-      for (final row in pattern.entries)
-        for (final slot in pattern.slots)
-          if (row.forms[slot] case final form?)
-            (
-              target: form,
-              native: l10n.deckGrammarCell(row.lemma, slot),
-              reading: null,
-              ipa: row.ipas[slot],
-            ),
-    ].take(count).toList();
-  }
-  return <PreviewLine>[
-    for (final card in entry.cards.take(count))
-      (
-        target: card.target,
-        native: card.native,
-        reading: card.reading,
-        ipa: card.ipa,
-      ),
-  ];
-}
-
 /// "Script" for a deck tagged `script` (there is no such deck kind), then
 /// the deck's own kind.
 String deckKindLabel(AppLocalizations l10n, DeckEntry entry) => entry.isScript

@@ -584,6 +584,7 @@ cards:
 | `alt_native` | no | Additional meanings accepted when the meaning is typed, in Hear (ADR-0034). |
 | `pos` | no | Part of speech: `noun`, `verb`, `adj`, `adv`, `pronoun`, `phrase`, `particle`, `other`; a script's letter or sign is `letter` and its digit `digit` (#522 step 7), and Hear asks for what was heard of it, typing its form. A [rules deck](#rules-decks) picks its rows by it, so give every word its own: a pronoun is `pronoun`, not `other`. |
 | `hears` | no | `form`: a word that is heard and typed as its form, as a letter or digit is, though it keeps its part of speech: a script reading or spelling word. Only `form` is a value. An app older than the release that added it rejects the card, so decks give it a release after the app that reads it (#522 step 7). |
+| `warning` | no | The one warning the card's teach card shows ([Which warning the teach card shows](#which-warning-the-teach-card-shows-warning)): the `id` of one of its `pair`, `homograph` or `lookalike` notes, `"senses"`, or `"none"`. A core card only. An app older than the release that added it rejects the card, so decks give it a release after the app that reads it (#691). |
 | `gender` | no | Grammatical gender, as text. On a noun it is one of its language's classes, which the language's path lists (`genders`): see [Gender](#gender). |
 | `tags` | no | Card-level tags. Drills can be filtered by tag. In a script deck, `own-letter` marks a letter the language adds to, or writes differently from, a script it shares with other languages: Assamese ৰ (rô) and ৱ (wô) in Eastern Nagari. The app's script test, which lets a learner who reads the shared script skip the course's script lessons, always asks these (#554). |
 | `notes` | no | Text, or a list of typed notes: see [Notes](#notes). Shown when the word is taught and after answering. |
@@ -1033,6 +1034,48 @@ its reading.
   that holds the claim: the core for a core card's culture note, the layer
   for a layer's own card. A layer may carry `unreviewed` for its own texts
   too.
+
+### Which warning the teach card shows: `warning`
+
+A word can warn of several things: a word it sounds like (`pair`), a word it
+looks like (`homograph`, `lookalike`) and its other meanings (`senses`). The
+teach card has room for one, so a core card says which with `warning`
+(owner, 2026-10-23: "Deck field picks it"). The [word sheet](#notes) still
+shows every one of them, titled.
+
+```yaml
+  - id: "te-0110"
+    target: "కలం"
+    warning: "pen-sound"     # the id of one of this card's notes
+    notes:
+      - { id: "pen-sound", kind: "pair", ref: "te-0111" }
+      - { id: "same", kind: "homograph", ref: "te-9008" }
+```
+
+| Value | The teach card shows |
+|---|---|
+| The `id` of a `pair`, `homograph` or `lookalike` note | That note's warning. A note written without an `id` is named by its place in the list, `"1"`, `"2"`. |
+| `"senses"` | The word's other meanings. The card must have `senses`. |
+| `"none"` | No warning, for a word whose only warning is a rude word that is not close and rude enough to show. |
+
+- **Without the key** the card keeps the fixed order: a rude word it is like,
+  else the word it sounds like, the word it looks like, then its other
+  meanings.
+- **A rude word** is picked only when it is very close (its IPA differs by at
+  most one segment) and very rude (the partner's `level` is `strong` or
+  `strongest`). Otherwise another warning, or `"none"`.
+- **Errors:** a value that is not text; one that names no `pair`, `homograph`
+  or `lookalike` note of the card; `"senses"` on a card with no `senses`;
+  `warning` on a card that is not a core card's.
+- **A new deck sets `warning` when it is written** (owner, 2026-10-23: "Newly
+  written decks will choose the order when building"), choosing the warning
+  that matters most to the learner. A reviewer can change it. For decks
+  already written, `tools/pick_warning.py` fills the field: the most
+  important warning wins, equals are drawn at random seeded by the card id,
+  and a card that already has a `warning` is left alone.
+- **Two releases.** Released apps reject a card key they do not know, so the
+  app and the validator learn `warning` first and the decks set it one
+  release later, as for `hears`.
 
 ### A dictionary entry: `dictionary`
 
