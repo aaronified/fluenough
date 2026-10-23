@@ -2326,8 +2326,8 @@ cards:
         await tester.fling(find.byType(TeachCard), const Offset(-300, 0), 1000);
         await tester.pumpAndSettle();
         expect(find.byType(TeachCard), findsNothing);
-        expect(sessionOf(tester).item.card.id, first.id);
-        expect(sessionOf(tester).ask, isNot(Ask.teach));
+        expect(find.byType(TeachDrill), findsNothing);
+        expect(find.byType(DrillPage), findsOneWidget);
         expect(state.progress.log, isEmpty);
       },
     );
