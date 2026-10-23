@@ -188,7 +188,7 @@ CORE_CARD_KEYS = {"id", "target", "reading", "ipa", "alt_target", "pos", "hears"
                   "notes", "phrasebook", "bases", "rules", "register", "frequency",
                   "synonyms", "antonyms", "collocations", "confusables", "forms",
                   "senses", "audio_credit", "image", "image_credit",
-                  "target_scripts", "words"}
+                  "target_scripts", "words", "warning"}
 CORE_REF_KEYS = {"ref", "reading", "ipa", "tags", "modes", "examples", "notes"}
 # A set card (DECK-FORMAT.md, Set cards; #506, #515): a closed group shown
 # together before its members are drilled. It is a card of a vocab core,
@@ -888,6 +888,9 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
     if "hears" in card and card["hears"] != "form":
         r.error(where, f'hears must be "form", or left out; got {card["hears"]!r}')
 
+    if "warning" in card and core:
+        _check_warning(r, where, card["warning"], notes, card.get("senses"))
+
     if "register" in card and card["register"] not in REGISTERS:
         r.error(where, f"register must be one of {', '.join(REGISTERS)}, got "
                        f"{card['register']!r}")
@@ -1059,6 +1062,27 @@ def check_note_words(r: Report, where: str, prefix: str, words: object,
         else:
             found.append(w["word"])
     return found
+
+
+def _check_warning(r: Report, where: str, value: object, notes: list[Note],
+                   senses: object) -> None:
+    """A core card's `warning` (#691): the one warning its teach card shows.
+    The id of a pair, homograph or lookalike note (its place, "1", "2", for a
+    note with no id), "senses" for the card's other meanings, or "none". Older
+    apps reject the key, so the decks give it only a release after the app
+    that reads it."""
+    named = sorted({n.nid for n in notes if n.kind in REF_NOTE_KINDS})
+    if not _is_str(value):
+        r.error(where, f"warning must be text naming a warning, got {value!r}")
+    elif value == "none":
+        pass
+    elif value == "senses":
+        if not (isinstance(senses, list) and senses):
+            r.error(where, 'warning "senses" needs the card to have senses')
+    elif value not in named:
+        r.error(where, f"warning {value!r} names no pair, homograph or lookalike "
+                       f"note of this card (its notes: {', '.join(named) or 'none'}); "
+                       f'use such a note\'s id, "senses" or "none"')
 
 
 def check_notes(r: Report, where: str, notes: object, cid: str | None,

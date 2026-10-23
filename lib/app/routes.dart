@@ -6,6 +6,7 @@ import '../features/decks/deck_detail_page.dart';
 import '../features/decks/import_page.dart';
 import '../features/decks/unit_page.dart';
 import '../features/drill/drill_page.dart';
+import '../features/drill/walkthrough_page.dart';
 import '../features/gallery/gallery_page.dart';
 import '../features/placement/language_picker_page.dart';
 import '../features/profiles/new_profile_page.dart';
@@ -62,6 +63,10 @@ abstract final class AppRoutes {
 
   /// A drill session. Argument: a [DrillRequest].
   static const String drill = '/drill';
+
+  /// A deck page's Relearn: its cards walked through on the teach card.
+  /// Argument: a [WalkthroughRequest].
+  static const String walkthrough = '/walkthrough';
 
   /// The session summary. Argument: a [SessionResult].
   static const String summary = '/summary';
@@ -153,6 +158,9 @@ abstract final class AppRoutes {
       unit when args is String => UnitPage(deckId: args),
       import => const ImportPage(),
       drill when args is DrillRequest => DrillPage(request: args),
+      walkthrough when args is WalkthroughRequest => WalkthroughPage(
+        request: args,
+      ),
       summary when args is SessionResult => SummaryPage(result: args),
       leeches => LeechesPage(language: args is String ? args : null),
       allTags when args is StatsRange => AllTagsPage(range: args),
@@ -238,6 +246,17 @@ abstract final class AppNavigator {
   /// Starts a session. The drill page builds its queue from [request].
   static Future<void> startDrill(BuildContext context, DrillRequest request) =>
       Navigator.of(context).pushNamed(AppRoutes.drill, arguments: request);
+
+  /// Relearn: walks through [deckId]'s cards, or with [tags] only those
+  /// carrying one of them, on the teach card. Records nothing.
+  static Future<void> openWalkthrough(
+    BuildContext context,
+    String deckId, {
+    Set<String> tags = const <String>{},
+  }) => Navigator.of(context).pushNamed(
+    AppRoutes.walkthrough,
+    arguments: WalkthroughRequest(deckId: deckId, tags: tags),
+  );
 
   /// Replaces the summary with another session: the next language's, which
   /// the summary offers, so finished summaries do not pile up behind it.

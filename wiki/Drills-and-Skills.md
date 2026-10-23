@@ -28,7 +28,7 @@ A right answer also counts in part for the skills it implies ([ADR-0034](ADR-003
 - **Grammar.** Pick or type the right form of a word.
 - **Read.** A passage with questions.
 - **Set.** A group of related words shown together in a lesson. Nothing is recorded; Continue goes on.
-- **Teach.** A new word shown before you are asked about it.
+- **Teach.** A new word shown before you are asked about it, on one screen with no scrolling: the word large, with its reading, a speaker and its IPA; the picture beside it; the meaning; a note; and one warning. Tap the IPA for each sound of the word, from the IPA course, with its practice. Tap the meaning for the dictionary: the senses, the etymology and the examples. There is no Continue button: swipe the card, or tap the chevron that shows while you touch the screen, to go on.
 
 ## How answers are marked
 
