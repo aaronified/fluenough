@@ -1,0 +1,60 @@
+"schema": 1
+"id": "bn-en-reading-comparison"
+"name": "Reading: comparison"
+"kind": "reading"
+"language":
+  "code": "bn"
+  "iso639_3": "ben"
+  "name": "Bengali"
+  "script": "bengali"
+  "tts": "bn-IN"
+  "icon": "বা"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for the Fluenough Bengali course"
+"description": "Two friends compare two phones, and a short text compares two cities, each with its questions. Not yet checked by a Bengali speaker: please report any mistake."
+"tags":
+  - "reading"
+  - "unreviewed"
+"passages":
+  - "id": "bn-which-is-better"
+    "title": "Which phone is better"
+    "sentences":
+      - "text": "তোমার ফোন আমার চেয়ে ভালো।"
+        "reading": "tomār phon āmār ceye bhālo."
+      - "text": "কিন্তু আমার ফোন আরও হালকা।"
+        "reading": "kintu āmār phon āro hālkā."
+    "questions":
+      - "id": "bn-1884"
+        "prompt":
+          "en": "According to the first line, whose phone is better?"
+        "options":
+          - "en": "The phone of the friend being spoken to"
+          - "en": "The speaker's own phone"
+        "answer": 1
+      - "id": "bn-1885"
+        "prompt":
+          "en": "The speaker's own phone is lighter."
+        "answer": true
+  - "id": "bn-two-cities"
+    "title": "Two cities"
+    "sentences":
+      - "text": "ঢাকা আরও বড় শহর।"
+        "reading": "ḍhākā āro bôṛo śôhor."
+      - "text": "কলকাতা ছোট শহর।"
+        "reading": "kôlkātā choṭo śôhor."
+    "questions":
+      - "id": "bn-1886"
+        "prompt":
+          "en": "According to the text, Dhaka is the bigger city."
+        "answer": true
+      - "id": "bn-1887"
+        "prompt":
+          "en": "Which city is smaller?"
+        "options":
+          - "en": "Kolkata"
+          - "en": "Dhaka"
+        "answer": 1

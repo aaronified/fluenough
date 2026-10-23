@@ -330,11 +330,15 @@ units:
       - { id: "recipe-card", text: { "en": "A recipe card with its steps" } }
   - decks: ["bn-reading-cooking"]
     words: 0
-  - planned: { id: "bn-grammar-comparison", grammar: "comparison" }
+  - decks: ["bn-grammar-comparison", "bn-grammar-comparison-sentences"]
+    words: 0
+    grammar: ["comparison"]
     listening_passages:
       - { id: "which-is-better", text: { "en": "Two friends compare two phones" } }
     reading_passages:
       - { id: "two-cities", text: { "en": "A short text comparing Kolkata and Dhaka" } }
+  - decks: ["bn-reading-comparison"]
+    words: 0
   - decks: ["bn-help", "bn-grammar-irregular", "bn-grammar-pitfalls", "*"]
     words: 14
     grammar: ["irregular", "pitfalls"]

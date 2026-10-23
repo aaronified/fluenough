@@ -1,0 +1,60 @@
+schema: 1
+id: "bn-grammar-comparison-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-1879"
+    target: "আমার ফোন তোমার চেয়ে নতুন।"
+    reading: "āmār phon tomār ceye notun."
+    ipa: "amar pʰon t̪omar tʃeje not̪un"
+    pos: "phrase"
+    rules: ["bn-rule-comparison-more"]
+    bases: [{ "word": "আমার", "ref": "bn-0833" }, { "word": "তোমার", "ref": "bn-0835" }]
+    confusables:
+      - { id: "more", word: "আরও", reading: "āro", kind: "word" }
+      - { id: "old", word: "পুরোনো", reading: "purono", kind: "word" }
+  - id: "bn-1880"
+    target: "এটা ওটার চেয়ে বড়।"
+    reading: "eṭā oṭār ceye bôṛo."
+    ipa: "eʈa oʈar tʃeje bɔɽ"
+    pos: "phrase"
+    rules: ["bn-rule-comparison-more"]
+    bases: [{ "word": "ওটার", "ref": "bn-0850" }]
+    confusables:
+      - { id: "small", word: "ছোট", reading: "choṭo", kind: "word" }
+      - { id: "most", word: "সবচেয়ে", reading: "śôbceye", kind: "word" }
+  - id: "bn-1881"
+    target: "এই ঘর সবচেয়ে বড়।"
+    reading: "ei ghôr śôbceye bôṛo."
+    ipa: "ei ɡʱɔr sɔbotʃeje bɔɽ"
+    pos: "phrase"
+    rules: ["bn-rule-comparison-most"]
+    bases: [{ "word": "এই", "base": "এই", "reading": "ei" }, { "word": "সবচেয়ে", "base": "সবচেয়ে", "reading": "śôbceye" }]
+    confusables:
+      - { id: "than", word: "চেয়ে", reading: "ceye", kind: "word" }
+      - { id: "more", word: "আরও", reading: "āro", kind: "word" }
+  - id: "bn-1882"
+    target: "সে সবচেয়ে লম্বা।"
+    reading: "śe śôbceye lômbā."
+    ipa: "se sɔbotʃeje lɔmba"
+    pos: "phrase"
+    rules: ["bn-rule-comparison-most"]
+    bases: [{ "word": "সবচেয়ে", "base": "সবচেয়ে", "reading": "śôbceye" }]
+    confusables:
+      - { id: "short", word: "বেঁটে", reading: "bem̐ṭe", kind: "word" }
+      - { id: "more", word: "আরও", reading: "āro", kind: "word" }
+  - id: "bn-1883"
+    target: "এই বই আরও ভালো।"
+    reading: "ei boi āro bhālo."
+    ipa: "ei boi aroo bʱalo"
+    pos: "phrase"
+    rules: ["bn-rule-comparison-more"]
+    bases: [{ "word": "এই", "base": "এই", "reading": "ei" }]
+    confusables:
+      - { id: "most", word: "সবচেয়ে", reading: "śôbceye", kind: "word" }
+      - { id: "bad", word: "খারাপ", reading: "khārāp", kind: "word" }

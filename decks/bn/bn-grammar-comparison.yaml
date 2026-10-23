@@ -1,0 +1,265 @@
+schema: 1
+id: "bn-grammar-comparison"
+part: "core"
+kind: "rules"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["adj"]
+    except: ["bn-0303", "bn-0304", "bn-0698", "bn-0699", "bn-0700", "bn-0421", "bn-0422", "bn-1243", "bn-1244", "bn-1237", "bn-1238", "bn-1315", "bn-1316", "bn-1317", "bn-1332", "bn-1670", "bn-1709", "bn-1733", "bn-0358", "bn-1841"]
+  slots: ["more", "most"]
+  rows:
+    - word: "bn-0060"
+      forms: { "more": "আরও গরম", "most": "সবচেয়ে গরম" }
+      readings: { "more": "āro gôrom", "most": "śôbceye gôrom" }
+    - word: "bn-0247"
+      forms: { "more": "আরও দামি", "most": "সবচেয়ে দামি" }
+      readings: { "more": "āro dāmi", "most": "śôbceye dāmi" }
+    - word: "bn-0248"
+      forms: { "more": "আরও সস্তা", "most": "সবচেয়ে সস্তা" }
+      readings: { "more": "āro śôstā", "most": "śôbceye śôstā" }
+    - word: "bn-0356"
+      forms: { "more": "আরও ঝাল", "most": "সবচেয়ে ঝাল" }
+      readings: { "more": "āro jhāl", "most": "śôbceye jhāl" }
+    - word: "bn-0357"
+      forms: { "more": "আরও মিষ্টি", "most": "সবচেয়ে মিষ্টি" }
+      readings: { "more": "āro miśṭi", "most": "śôbceye miśṭi" }
+    - word: "bn-0617"
+      forms: { "more": "আরও ভালো", "most": "সবচেয়ে ভালো" }
+      readings: { "more": "āro bhālo", "most": "śôbceye bhālo" }
+    - word: "bn-0618"
+      forms: { "more": "আরও খারাপ", "most": "সবচেয়ে খারাপ" }
+      readings: { "more": "āro khārāp", "most": "śôbceye khārāp" }
+    - word: "bn-0619"
+      forms: { "more": "আরও ছোট", "most": "সবচেয়ে ছোট" }
+      readings: { "more": "āro choṭo", "most": "śôbceye choṭo" }
+    - word: "bn-0620"
+      forms: { "more": "আরও নতুন", "most": "সবচেয়ে নতুন" }
+      readings: { "more": "āro notun", "most": "śôbceye notun" }
+    - word: "bn-0621"
+      forms: { "more": "আরও পুরোনো", "most": "সবচেয়ে পুরোনো" }
+      readings: { "more": "āro purono", "most": "śôbceye purono" }
+    - word: "bn-0622"
+      forms: { "more": "আরও ঠান্ডা", "most": "সবচেয়ে ঠান্ডা" }
+      readings: { "more": "āro ṭhānḍā", "most": "śôbceye ṭhānḍā" }
+    - word: "bn-0623"
+      forms: { "more": "আরও সহজ", "most": "সবচেয়ে সহজ" }
+      readings: { "more": "āro śôhoj", "most": "śôbceye śôhoj" }
+    - word: "bn-0624"
+      forms: { "more": "আরও কঠিন", "most": "সবচেয়ে কঠিন" }
+      readings: { "more": "āro koṭhin", "most": "śôbceye koṭhin" }
+    - word: "bn-0625"
+      forms: { "more": "আরও সুন্দর", "most": "সবচেয়ে সুন্দর" }
+      readings: { "more": "āro śundor", "most": "śôbceye śundor" }
+    - word: "bn-0626"
+      forms: { "more": "আরও পরিষ্কার", "most": "সবচেয়ে পরিষ্কার" }
+      readings: { "more": "āro poriśkār", "most": "śôbceye poriśkār" }
+    - word: "bn-0627"
+      forms: { "more": "আরও নোংরা", "most": "সবচেয়ে নোংরা" }
+      readings: { "more": "āro noṅrā", "most": "śôbceye noṅrā" }
+    - word: "bn-0628"
+      forms: { "more": "আরও লম্বা", "most": "সবচেয়ে লম্বা" }
+      readings: { "more": "āro lômbā", "most": "śôbceye lômbā" }
+    - word: "bn-0629"
+      forms: { "more": "আরও বেঁটে", "most": "সবচেয়ে বেঁটে" }
+      readings: { "more": "āro bem̐ṭe", "most": "śôbceye bem̐ṭe" }
+    - word: "bn-0630"
+      forms: { "more": "আরও মোটা", "most": "সবচেয়ে মোটা" }
+      readings: { "more": "āro moṭā", "most": "śôbceye moṭā" }
+    - word: "bn-0631"
+      forms: { "more": "আরও রোগা", "most": "সবচেয়ে রোগা" }
+      readings: { "more": "āro rogā", "most": "śôbceye rogā" }
+    - word: "bn-0632"
+      forms: { "more": "আরও ভারী", "most": "সবচেয়ে ভারী" }
+      readings: { "more": "āro bhāri", "most": "śôbceye bhāri" }
+    - word: "bn-0633"
+      forms: { "more": "আরও হালকা", "most": "সবচেয়ে হালকা" }
+      readings: { "more": "āro hālkā", "most": "śôbceye hālkā" }
+    - word: "bn-0634"
+      forms: { "more": "আরও গরিব", "most": "সবচেয়ে গরিব" }
+      readings: { "more": "āro gorib", "most": "śôbceye gorib" }
+    - word: "bn-0635"
+      forms: { "more": "আরও খুশি", "most": "সবচেয়ে খুশি" }
+      readings: { "more": "āro khuśi", "most": "śôbceye khuśi" }
+    - word: "bn-0636"
+      forms: { "more": "আরও ক্লান্ত", "most": "সবচেয়ে ক্লান্ত" }
+      readings: { "more": "āro klānto", "most": "śôbceye klānto" }
+    - word: "bn-0637"
+      forms: { "more": "আরও ব্যস্ত", "most": "সবচেয়ে ব্যস্ত" }
+      readings: { "more": "āro bêsto", "most": "śôbceye bêsto" }
+    - word: "bn-0638"
+      forms: { "more": "আরও শক্ত", "most": "সবচেয়ে শক্ত" }
+      readings: { "more": "āro śôkto", "most": "śôbceye śôkto" }
+    - word: "bn-0639"
+      forms: { "more": "আরও নরম", "most": "সবচেয়ে নরম" }
+      readings: { "more": "āro nôrom", "most": "śôbceye nôrom" }
+    - word: "bn-0640"
+      forms: { "more": "আরও প্রিয়", "most": "সবচেয়ে প্রিয়" }
+      readings: { "more": "āro priyo", "most": "śôbceye priyo" }
+    - word: "bn-0984"
+      forms: { "more": "আরও টক", "most": "সবচেয়ে টক" }
+      readings: { "more": "āro ṭôk", "most": "śôbceye ṭôk" }
+    - word: "bn-0985"
+      forms: { "more": "আরও তেতো", "most": "সবচেয়ে তেতো" }
+      readings: { "more": "āro teto", "most": "śôbceye teto" }
+    - word: "bn-0986"
+      forms: { "more": "আরও নোনতা", "most": "সবচেয়ে নোনতা" }
+      readings: { "more": "āro nontā", "most": "śôbceye nontā" }
+    - word: "bn-0987"
+      forms: { "more": "আরও সুস্বাদু", "most": "সবচেয়ে সুস্বাদু" }
+      readings: { "more": "āro śuśśādu", "most": "śôbceye śuśśādu" }
+    - word: "bn-0988"
+      forms: { "more": "আরও কাঁচা", "most": "সবচেয়ে কাঁচা" }
+      readings: { "more": "āro kām̐cā", "most": "śôbceye kām̐cā" }
+    - word: "bn-0989"
+      forms: { "more": "আরও ভাজা", "most": "সবচেয়ে ভাজা" }
+      readings: { "more": "āro bhājā", "most": "śôbceye bhājā" }
+    - word: "bn-1204"
+      forms: { "more": "আরও লাল", "most": "সবচেয়ে লাল" }
+      readings: { "more": "āro lāl", "most": "śôbceye lāl" }
+    - word: "bn-1205"
+      forms: { "more": "আরও নীল", "most": "সবচেয়ে নীল" }
+      readings: { "more": "āro nil", "most": "śôbceye nil" }
+    - word: "bn-1206"
+      forms: { "more": "আরও সবুজ", "most": "সবচেয়ে সবুজ" }
+      readings: { "more": "āro śobuj", "most": "śôbceye śobuj" }
+    - word: "bn-1207"
+      forms: { "more": "আরও সাদা", "most": "সবচেয়ে সাদা" }
+      readings: { "more": "āro śādā", "most": "śôbceye śādā" }
+    - word: "bn-1208"
+      forms: { "more": "আরও কালো", "most": "সবচেয়ে কালো" }
+      readings: { "more": "āro kālo", "most": "śôbceye kālo" }
+    - word: "bn-1209"
+      forms: { "more": "আরও বাদামি", "most": "সবচেয়ে বাদামি" }
+      readings: { "more": "āro bādāmi", "most": "śôbceye bādāmi" }
+    - word: "bn-1210"
+      forms: { "more": "আরও গোলাপি", "most": "সবচেয়ে গোলাপি" }
+      readings: { "more": "āro golāpi", "most": "śôbceye golāpi" }
+    - word: "bn-1211"
+      forms: { "more": "আরও ধূসর", "most": "সবচেয়ে ধূসর" }
+      readings: { "more": "āro dhuśor", "most": "śôbceye dhuśor" }
+    - word: "bn-1227"
+      forms: { "more": "আরও ধনী", "most": "সবচেয়ে ধনী" }
+      readings: { "more": "āro dhoni", "most": "śôbceye dhoni" }
+    - word: "bn-1228"
+      forms: { "more": "আরও খালি", "most": "সবচেয়ে খালি" }
+      readings: { "more": "āro khāli", "most": "śôbceye khāli" }
+    - word: "bn-1229"
+      forms: { "more": "আরও ভরা", "most": "সবচেয়ে ভরা" }
+      readings: { "more": "āro bhôrā", "most": "śôbceye bhôrā" }
+    - word: "bn-1230"
+      forms: { "more": "আরও বন্ধ", "most": "সবচেয়ে বন্ধ" }
+      readings: { "more": "āro bôndho", "most": "śôbceye bôndho" }
+    - word: "bn-1231"
+      forms: { "more": "আরও ভিজে", "most": "সবচেয়ে ভিজে" }
+      readings: { "more": "āro bhije", "most": "śôbceye bhije" }
+    - word: "bn-1232"
+      forms: { "more": "আরও শুকনো", "most": "সবচেয়ে শুকনো" }
+      readings: { "more": "āro śukno", "most": "śôbceye śukno" }
+    - word: "bn-1233"
+      forms: { "more": "আরও পাতলা", "most": "সবচেয়ে পাতলা" }
+      readings: { "more": "āro pātlā", "most": "śôbceye pātlā" }
+    - word: "bn-1234"
+      forms: { "more": "আরও চওড়া", "most": "সবচেয়ে চওড়া" }
+      readings: { "more": "āro côoṛā", "most": "śôbceye côoṛā" }
+    - word: "bn-1235"
+      forms: { "more": "আরও সরু", "most": "সবচেয়ে সরু" }
+      readings: { "more": "āro soru", "most": "śôbceye soru" }
+    - word: "bn-1236"
+      forms: { "more": "আরও উঁচু", "most": "সবচেয়ে উঁচু" }
+      readings: { "more": "āro um̐cu", "most": "śôbceye um̐cu" }
+    - word: "bn-1239"
+      forms: { "more": "আরও শান্ত", "most": "সবচেয়ে শান্ত" }
+      readings: { "more": "āro śānto", "most": "śôbceye śānto" }
+    - word: "bn-1240"
+      forms: { "more": "আরও অসুস্থ", "most": "সবচেয়ে অসুস্থ" }
+      readings: { "more": "āro ôśustho", "most": "śôbceye ôśustho" }
+    - word: "bn-1241"
+      forms: { "more": "আরও সুস্থ", "most": "সবচেয়ে সুস্থ" }
+      readings: { "more": "āro śustho", "most": "śôbceye śustho" }
+    - word: "bn-1242"
+      forms: { "more": "আরও মজার", "most": "সবচেয়ে মজার" }
+      readings: { "more": "āro môjār", "most": "śôbceye môjār" }
+    - word: "bn-1311"
+      forms: { "more": "আরও অল্প", "most": "সবচেয়ে অল্প" }
+      readings: { "more": "āro ôlpo", "most": "śôbceye ôlpo" }
+    - word: "bn-1313"
+      forms: { "more": "আরও প্রচুর", "most": "সবচেয়ে প্রচুর" }
+      readings: { "more": "āro procur", "most": "śôbceye procur" }
+    - word: "bn-1314"
+      forms: { "more": "আরও সামান্য", "most": "সবচেয়ে সামান্য" }
+      readings: { "more": "āro śāmānno", "most": "śôbceye śāmānno" }
+    - word: "bn-1573"
+      forms: { "more": "আরও মেঘলা", "most": "সবচেয়ে মেঘলা" }
+      readings: { "more": "āro meghlā", "most": "śôbceye meghlā" }
+    - word: "bn-1575"
+      forms: { "more": "আরও ঝিরিঝিরি", "most": "সবচেয়ে ঝিরিঝিরি" }
+      readings: { "more": "āro jhirijhiri", "most": "śôbceye jhirijhiri" }
+    - word: "bn-1576"
+      forms: { "more": "আরও প্রবল", "most": "সবচেয়ে প্রবল" }
+      readings: { "more": "āro prôbol", "most": "śôbceye prôbol" }
+    - word: "bn-1581"
+      forms: { "more": "আরও ঝোড়ো", "most": "সবচেয়ে ঝোড়ো" }
+      readings: { "more": "āro jhoṛo", "most": "śôbceye jhoṛo" }
+    - word: "bn-1591"
+      forms: { "more": "আরও গরম", "most": "সবচেয়ে গরম" }
+      readings: { "more": "āro gôrom", "most": "śôbceye gôrom" }
+    - word: "bn-1592"
+      forms: { "more": "আরও উষ্ণ", "most": "সবচেয়ে উষ্ণ" }
+      readings: { "more": "āro uśno", "most": "śôbceye uśno" }
+    - word: "bn-1593"
+      forms: { "more": "আরও ঠান্ডা", "most": "সবচেয়ে ঠান্ডা" }
+      readings: { "more": "āro ṭhānḍā", "most": "śôbceye ṭhānḍā" }
+    - word: "bn-1594"
+      forms: { "more": "আরও শীতল", "most": "সবচেয়ে শীতল" }
+      readings: { "more": "āro śitol", "most": "śôbceye śitol" }
+    - word: "bn-1596"
+      forms: { "more": "আরও ভ্যাপসা", "most": "সবচেয়ে ভ্যাপসা" }
+      readings: { "more": "āro bhêpśā", "most": "śôbceye bhêpśā" }
+    - word: "bn-1597"
+      forms: { "more": "আরও স্যাঁতসেঁতে", "most": "সবচেয়ে স্যাঁতসেঁতে" }
+      readings: { "more": "āro śêm̐tśem̐te", "most": "śôbceye śêm̐tśem̐te" }
+    - word: "bn-1598"
+      forms: { "more": "আরও শুকনো", "most": "সবচেয়ে শুকনো" }
+      readings: { "more": "āro śukno", "most": "śôbceye śukno" }
+    - word: "bn-1599"
+      forms: { "more": "আরও ভেজা", "most": "সবচেয়ে ভেজা" }
+      readings: { "more": "āro bhejā", "most": "śôbceye bhejā" }
+    - word: "bn-1612"
+      forms: { "more": "আরও ঝলমলে", "most": "সবচেয়ে ঝলমলে" }
+      readings: { "more": "āro jhôlmole", "most": "śôbceye jhôlmole" }
+    - word: "bn-1732"
+      forms: { "more": "আরও সাশ্রয়ী", "most": "সবচেয়ে সাশ্রয়ী" }
+      readings: { "more": "āro sāśroyi", "most": "śôbceye sāśroyi" }
+    - word: "bn-1763"
+      forms: { "more": "আরও দুর্বল", "most": "সবচেয়ে দুর্বল" }
+      readings: { "more": "āro durrol", "most": "śôbceye durrol" }
+    - word: "bn-1778"
+      forms: { "more": "আরও জরুরি", "most": "সবচেয়ে জরুরি" }
+      readings: { "more": "āro joruri", "most": "śôbceye joruri" }
+    - word: "bn-1781"
+      forms: { "more": "আরও ফোলা", "most": "সবচেয়ে ফোলা" }
+      readings: { "more": "āro pholā", "most": "śôbceye pholā" }
+    - word: "bn-1850"
+      forms: { "more": "আরও টক", "most": "সবচেয়ে টক" }
+      readings: { "more": "āro ṭôk", "most": "śôbceye ṭôk" }
+    - word: "bn-1851"
+      forms: { "more": "আরও তিতা", "most": "সবচেয়ে তিতা" }
+      readings: { "more": "āro titā", "most": "śôbceye titā" }
+    - word: "bn-1852"
+      forms: { "more": "আরও পাকা", "most": "সবচেয়ে পাকা" }
+      readings: { "more": "āro pākā", "most": "śôbceye pākā" }
+rules:
+  - id: "bn-rule-comparison-more"
+    slots: ["more"]
+    words:
+      - { word: "আরও", reading: "āro" }
+      - { word: "চেয়ে", reading: "ceye" }
+  - id: "bn-rule-comparison-most"
+    slots: ["most"]
+    words:
+      - { word: "সবচেয়ে", reading: "śôbceye" }
