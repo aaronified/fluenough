@@ -1,0 +1,228 @@
+schema: 1
+id: "es-help"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "help"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-0865"
+    target: "la ayuda"
+    ipa: "la aˈʝuda"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "ayuda", base: "ayuda" }]
+    examples:
+      - target: "Necesito ayuda."
+        ipa: "neθeˈsito aˈʝuda"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "ayuda", base: "ayuda" }]
+      - target: "Gracias por la ayuda."
+        ipa: "ˈɡɾaθjas poɾ la aˈʝuda"
+        bases: [{ word: "Gracias", ref: "es-0037" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "ayuda", base: "ayuda" }]
+  - id: "es-0866"
+    target: "perdido"
+    ipa: "peɾˈdido"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Estoy perdido."
+        ipa: "esˈtoj peɾˈdido"
+        bases: [{ word: "Estoy", ref: "es-0023" }, { word: "perdido", base: "perdido" }]
+      - target: "Estoy perdido en la ciudad."
+        ipa: "esˈtoj peɾˈdido en la θjuˈdad"
+        bases: [{ word: "Estoy", ref: "es-0023" }, { word: "perdido", base: "perdido" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }]
+  - id: "es-0867"
+    target: "urgente"
+    ipa: "uɾˈxente"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Es urgente, por favor."
+        ipa: "es uɾˈxente poɾ faˈboɾ"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "urgente", base: "urgente" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+      - target: "La ayuda es urgente."
+        ipa: "la aˈʝuda es uɾˈxente"
+        bases: [{ word: "La", base: "la" }, { word: "ayuda", ref: "es-0865" }, { word: "es", ref: "es-0022" }, { word: "urgente", base: "urgente" }]
+  - id: "es-0868"
+    target: "la policía"
+    ipa: "la poliˈθia"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "policía", base: "policía" }]
+    examples:
+      - target: "Llamo a la policía."
+        ipa: "ˈʝamo a la poliˈθia"
+        bases: [{ word: "Llamo", ref: "es-0302" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "policía", base: "policía" }]
+      - target: "La policía está cerca."
+        ipa: "la poliˈθia esˈta ˈθeɾka"
+        bases: [{ word: "La", base: "la" }, { word: "policía", base: "policía" }, { word: "está", ref: "es-0023" }, { word: "cerca", ref: "es-0717" }]
+  - id: "es-0869"
+    target: "la emergencia"
+    ipa: "la emeɾˈxenθja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "emergencia", base: "emergencia" }]
+    examples:
+      - target: "Es una emergencia, por favor."
+        ipa: "es ˈuna emeɾˈxenθja poɾ faˈboɾ"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "emergencia", base: "emergencia" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+      - target: "La emergencia está en el hospital."
+        ipa: "la emeɾˈxenθja esˈta en el ospiˈtal"
+        bases: [{ word: "La", base: "la" }, { word: "emergencia", base: "emergencia" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "hospital", ref: "es-0772" }]
+  - id: "es-0870"
+    target: "la ambulancia"
+    ipa: "la ambuˈlanθja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "ambulancia", base: "ambulancia" }]
+    examples:
+      - target: "Llamo a una ambulancia."
+        ipa: "ˈʝamo a ˈuna ambuˈlanθja"
+        bases: [{ word: "Llamo", ref: "es-0302" }, { word: "a", base: "a" }, { word: "una", base: "una" }, { word: "ambulancia", base: "ambulancia" }]
+      - target: "La ambulancia llega rápido."
+        ipa: "la ambuˈlanθja ˈʝeɡa ˈrapido"
+        bases: [{ word: "La", base: "la" }, { word: "ambulancia", base: "ambulancia" }, { word: "llega", ref: "es-0290" }, { word: "rápido", ref: "es-0329" }]
+  - id: "es-0871"
+    target: "el accidente"
+    ipa: "el akθiˈdente"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "accidente", base: "accidente" }]
+    examples:
+      - target: "Hay un accidente aquí."
+        ipa: "aj un akθiˈdente aˈki"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "accidente", base: "accidente" }, { word: "aquí", ref: "es-0051" }]
+      - target: "El accidente está cerca."
+        ipa: "el akθiˈdente esˈta ˈθeɾka"
+        bases: [{ word: "El", base: "el" }, { word: "accidente", base: "accidente" }, { word: "está", ref: "es-0023" }, { word: "cerca", ref: "es-0717" }]
+  - id: "es-0872"
+    target: "el bombero"
+    ipa: "el bomˈbeɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "bombero", base: "bombero" }]
+    examples:
+      - target: "El bombero trabaja en la calle."
+        ipa: "el bomˈbeɾo tɾaˈbaxa en la ˈkaʝe"
+        bases: [{ word: "El", base: "el" }, { word: "bombero", base: "bombero" }, { word: "trabaja", ref: "es-0259" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "calle", ref: "es-0017" }]
+      - target: "El bombero es alto."
+        ipa: "el bomˈbeɾo es ˈalto"
+        bases: [{ word: "El", base: "el" }, { word: "bombero", base: "bombero" }, { word: "es", ref: "es-0022" }, { word: "alto", ref: "es-0254" }]
+  - id: "es-0873"
+    target: "el dolor"
+    ipa: "el doˈloɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "dolor", base: "dolor" }]
+    examples:
+      - target: "Tengo dolor de cabeza."
+        ipa: "ˈtenɡo doˈloɾ de kaˈbeθa"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "dolor", base: "dolor" }, { word: "de", base: "de" }, { word: "cabeza", ref: "es-0736" }]
+      - target: "El dolor es fuerte."
+        ipa: "el doˈloɾ es ˈfweɾte"
+        bases: [{ word: "El", base: "el" }, { word: "dolor", base: "dolor" }, { word: "es", ref: "es-0022" }, { word: "fuerte", ref: "es-0432" }]
+  - id: "es-0874"
+    target: "perder"
+    ipa: "peɾˈdeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Pierdo el libro."
+        ipa: "ˈpjeɾdo el ˈlibɾo"
+        bases: [{ word: "Pierdo", base: "perder" }, { word: "el", base: "el" }, { word: "libro", ref: "es-0011" }]
+      - target: "Perdemos el tren."
+        ipa: "peɾˈdemos el tɾen"
+        bases: [{ word: "Perdemos", base: "perder" }, { word: "el", base: "el" }, { word: "tren", ref: "es-0676" }]
+  - id: "es-0875"
+    target: "entender"
+    ipa: "entenˈdeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "No entiendo."
+        ipa: "no enˈtjendo"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "entiendo", base: "entender" }]
+      - target: "¿Entiendes?"
+        ipa: "enˈtjendes"
+        bases: [{ word: "Entiendes", base: "entender" }]
+  - id: "es-0876"
+    target: "repetir"
+    ipa: "repeˈtiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Repito el número."
+        ipa: "reˈpito el ˈnumeɾo"
+        bases: [{ word: "Repito", base: "repetir" }, { word: "el", base: "el" }, { word: "número", ref: "es-0250" }]
+      - target: "Repite, por favor."
+        ipa: "reˈpite poɾ faˈboɾ"
+        bases: [{ word: "Repite", base: "repetir" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+  - id: "es-0877"
+    target: "la llave"
+    ipa: "la ˈʝabe"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "llave", base: "llave" }]
+    examples:
+      - target: "Tengo la llave."
+        ipa: "ˈtenɡo la ˈʝabe"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "la", base: "la" }, { word: "llave", base: "llave" }]
+      - target: "Pierdo la llave."
+        ipa: "ˈpjeɾdo la ˈʝabe"
+        bases: [{ word: "Pierdo", ref: "es-0874" }, { word: "la", base: "la" }, { word: "llave", base: "llave" }]
+  - id: "es-0878"
+    target: "el pasaporte"
+    ipa: "el pasaˈpoɾte"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "pasaporte", base: "pasaporte" }]
+    examples:
+      - target: "Necesito el pasaporte."
+        ipa: "neθeˈsito el pasaˈpoɾte"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "el", base: "el" }, { word: "pasaporte", base: "pasaporte" }]
+      - target: "El pasaporte está en la mesa."
+        ipa: "el pasaˈpoɾte esˈta en la ˈmesa"
+        bases: [{ word: "El", base: "el" }, { word: "pasaporte", base: "pasaporte" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }]
+  - id: "es-0879"
+    target: "la tarjeta"
+    ipa: "la taɾˈxeta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "tarjeta", base: "tarjeta" }]
+    examples:
+      - target: "Pago con tarjeta."
+        ipa: "ˈpaɡo kon taɾˈxeta"
+        bases: [{ word: "Pago", ref: "es-0295" }, { word: "con", base: "con" }, { word: "tarjeta", base: "tarjeta" }]
+      - target: "La tarjeta es nueva."
+        ipa: "la taɾˈxeta es ˈnweba"
+        bases: [{ word: "La", base: "la" }, { word: "tarjeta", base: "tarjeta" }, { word: "es", ref: "es-0022" }, { word: "nueva", ref: "es-0035" }]
+  - id: "es-0880"
+    target: "el bolso"
+    ipa: "el ˈbolso"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "bolso", base: "bolso" }]
+    examples:
+      - target: "Mi bolso está en el coche."
+        ipa: "mi ˈbolso esˈta en el ˈkotʃe"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "bolso", base: "bolso" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "coche", ref: "es-0678" }]
+      - target: "El bolso es grande."
+        ipa: "el ˈbolso es ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "bolso", base: "bolso" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
