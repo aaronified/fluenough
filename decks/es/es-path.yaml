@@ -64,11 +64,8 @@ units:
   # 2. The first word units.
   - decks: ["es-questions", "es-questions-sentences", "es-reading-questions", "*"]
     words: 15
-  - planned: { id: "es-addressing", theme: "addressing", words: 15 }
-    listening_passages:
-      - { id: "meeting-a-neighbour", text: { "en": "Greeting a neighbour and an older stranger, tú and usted" } }
-    reading_passages:
-      - { id: "name-badges", text: { "en": "Name badges at a meeting with titles and surnames" } }
+  - decks: ["es-addressing", "es-addressing-sentences", "es-reading-addressing", "*"]
+    words: 15
   - planned: { id: "es-pronouns", theme: "pronouns", words: 20 }
     listening_passages:
       - { id: "who-is-who", text: { "en": "Pointing out who is who at a family gathering: he, she, they" } }
