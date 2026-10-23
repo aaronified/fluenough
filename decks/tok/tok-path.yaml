@@ -279,11 +279,9 @@ units:
     words: 2
   # la with a whole clause as the context: sina kama la mi pilin pona (if
   # or when you come, I feel good).
-  - planned: { id: "tok-grammar-la-clauses", grammar: ["la-clause-context"] }
-    listening_passages:
-      - { id: "if-it-rains", text: { "en": "A friend's plans if it rains and if it does not" } }
-    reading_passages:
-      - { id: "game-rules", text: { "en": "The rules of a simple game, each in an if-then sentence" } }
+  - decks: ["tok-grammar-la-clauses", "tok-grammar-la-clauses-sentences", "tok-reading-la-clauses"]
+    words: 0
+    grammar: ["la-clause-context"]
   # kasi and ma.
   - planned: { id: "tok-nature", theme: "nature", words: 2 }
     listening_passages:
