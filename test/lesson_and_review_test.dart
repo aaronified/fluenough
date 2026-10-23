@@ -42,6 +42,7 @@ import 'package:fluenough/core/models/reading.dart';
 import 'package:fluenough/core/models/rule.dart';
 import 'package:fluenough/core/numbers/number_practice.dart';
 import 'package:fluenough/core/numbers/number_speller.dart';
+import 'package:fluenough/core/scheduling/deck_sampling.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
 import 'package:fluenough/core/scheduling/lesson.dart';
 import 'package:fluenough/core/scheduling/lesson_sets.dart';
@@ -4725,5 +4726,232 @@ cards:
         expect(state.shellTab.value, ShellTab.today);
       },
     );
+  });
+  group('a deck\'s known cards come up a few at a time', () {
+    final cards = <Card>[
+      for (var i = 0; i < 12; i++)
+        Card(
+          id: 'k$i',
+          deckId: 'known',
+          target: 't$i',
+          native: 'n$i',
+          modes: const {DrillMode.recognition},
+        ),
+    ];
+
+    /// A known card due a day before [at], last reviewed [daysAgo] days
+    /// before it.
+    FsrsState known(DateTime at, {int daysAgo = 30}) => FsrsState(
+      stability: 20,
+      difficulty: 5,
+      repetitions: 3,
+      intervalDays: 20,
+      dueAt: at.subtract(const Duration(days: 1)),
+      lastReviewAt: at.subtract(Duration(days: daysAgo)),
+      recallAtReview: 0.92,
+    );
+
+    /// A known card reviewed right at [at], so not due for weeks.
+    FsrsState passed(DateTime at) => FsrsState(
+      stability: 25,
+      difficulty: 5,
+      repetitions: 4,
+      intervalDays: 25,
+      dueAt: at.add(const Duration(days: 25)),
+      lastReviewAt: at,
+      recallAtReview: 0.93,
+    );
+
+    FsrsState missed(DateTime at) => FsrsState(
+      stability: 1,
+      difficulty: 6,
+      repetitions: 0,
+      intervalDays: 1,
+      dueAt: at.add(const Duration(days: 1)),
+      lastReviewAt: at,
+      lapses: 1,
+    );
+
+    List<String> due(
+      Map<String, FsrsState> states, {
+      DateTime? at,
+      int take = 12,
+    }) => SessionQueue.build(
+      cards: cards.take(take),
+      stateOf: (c, m) => states[c.id],
+      hasVoice: (_) => false,
+      now: at ?? now,
+      newCardLimit: 0,
+      sampleKnown: true,
+    ).due.map((i) => i.card.id).toList();
+
+    // k0 was reviewed longest ago, then k1, and so on.
+    Map<String, FsrsState> pending() => {
+      for (var i = 0; i < 12; i++) 'k$i': known(now, daysAgo: 60 - i),
+    };
+
+    test('a pending deck shows two, the ones reviewed longest ago', () {
+      expect(due(pending()), <String>['k0', 'k1']);
+    });
+
+    test('a passed sample holds the rest for the day, and the cards not '
+        'sampled have their turn before any is sampled again', () {
+      final states = pending();
+      for (final id in <String>['k0', 'k1']) {
+        states[id] = passed(now);
+      }
+      expect(due(states), isEmpty);
+      // The next day the deck is sampled again, the cards not yet reviewed
+      // first, though the others are due too.
+      final later = now.add(const Duration(days: 1));
+      expect(due(states, at: later), <String>['k2', 'k3']);
+    });
+
+    test('a failed sample asks more, and a second failure brings every due '
+        'known card of the deck', () {
+      final states = pending();
+      states['k0'] = missed(now);
+      states['k1'] = passed(now);
+      final more = due(states);
+      expect(more.length, inInclusiveRange(3, 5));
+      expect(more.first, 'k2');
+      states['k2'] = missed(now);
+      expect(due(states), <String>[for (var i = 3; i < 12; i++) 'k$i']);
+    });
+
+    test('a card is known when it was likely recalled at its last review, '
+        'not by how long its interval is', () {
+      final states = pending();
+      // k0 and k1 were remembered at 60%, reviewed late: not known, so they
+      // come up whatever the sample is.
+      for (final id in <String>['k0', 'k1']) {
+        final s = states[id]!;
+        states[id] = FsrsState(
+          stability: s.stability,
+          difficulty: s.difficulty,
+          repetitions: s.repetitions,
+          intervalDays: 60,
+          dueAt: s.dueAt,
+          lastReviewAt: s.lastReviewAt,
+          recallAtReview: 0.6,
+        );
+      }
+      expect(
+        due(states),
+        containsAll(<String>['k0', 'k1']),
+        reason: 'not known, so never held back',
+      );
+      expect(due(states), hasLength(4), reason: 'and two known samples');
+    });
+
+    /// A known card reviewed on time: last reviewed [interval] days before
+    /// it came due, a minute apart per [i], so the order is fixed.
+    FsrsState onTime(DateTime at, int i, {int interval = 20}) {
+      final dueAt = at.subtract(Duration(minutes: 11 - i));
+      return FsrsState(
+        stability: interval + 0.4,
+        difficulty: 5,
+        repetitions: 3,
+        intervalDays: interval,
+        dueAt: dueAt,
+        lastReviewAt: dueAt.subtract(Duration(days: interval)),
+        recallAtReview: 0.9,
+      );
+    }
+
+    /// Plays days of sessions on a deck of 12 known cards, all due on day 0,
+    /// each shown card reviewed right when it is shown. Returns the day each
+    /// card was reviewed on, and checks the day's rules on the way.
+    Map<String, int> playDays(int interval, int days) {
+      final states = <String, FsrsState>{
+        for (var i = 0; i < 12; i++) 'k$i': onTime(now, i, interval: interval),
+      };
+      final reviewedOn = <String, int>{};
+      for (var day = 0; day < days; day++) {
+        final at = now.add(Duration(days: day));
+        final shown = due(states, at: at);
+        expect(
+          shown.length,
+          lessThanOrEqualTo(kSampleSize),
+          reason: 'day $day: only a small sample of the known cards',
+        );
+        for (final id in shown) {
+          expect(
+            reviewedOn,
+            isNot(contains(id)),
+            reason: '$id asked again before every card had a turn',
+          );
+          states[id] = Fsrs.next(states[id], 4, now: at);
+          expect(
+            isKnownState(states[id]!),
+            isTrue,
+            reason: '$id is still known after a right review on time',
+          );
+          reviewedOn[id] = day;
+        }
+        expect(
+          due(states, at: at),
+          isEmpty,
+          reason: 'day $day: a passed sample holds the rest until tomorrow',
+        );
+      }
+      return reviewedOn;
+    }
+
+    test('sampling rotates through the whole deck, so every card is '
+        'eventually reviewed, the ones reviewed longest ago first', () {
+      final reviewedOn = playDays(20, 12);
+      expect(reviewedOn, hasLength(12));
+      // Two a day, in the order they were last reviewed.
+      expect(reviewedOn.keys.toList(), <String>[
+        for (var i = 0; i < 12; i++) 'k$i',
+      ]);
+    });
+
+    test('a known card due waits a few days, not its whole interval, for '
+        'its turn', () {
+      // At 30-day intervals, holding the deck for the samples' interval
+      // would leave the last of 12 cards waiting months.
+      final reviewedOn = playDays(30, 12);
+      expect(reviewedOn, hasLength(12));
+      expect(
+        reviewedOn.values.reduce(max),
+        lessThanOrEqualTo(12 ~/ kSampleSize - 1),
+        reason: 'every card is reviewed within six days of being due',
+      );
+    });
+
+    test('a card missed and then answered right the same day is not '
+        'known, and its miss still counts as a failed sample', () {
+      var s = FsrsState(
+        stability: 20.4,
+        difficulty: 5,
+        repetitions: 3,
+        intervalDays: 20,
+        dueAt: now.add(const Duration(days: 15)),
+        lastReviewAt: now.subtract(const Duration(days: 5)),
+        recallAtReview: 0.9,
+      );
+      s = Fsrs.review(s, Rating.again, now: now);
+      expect(s.recallAtReview, greaterThan(0.9), reason: 'it was well known');
+      s = Fsrs.review(s, Rating.good, now: now.add(const Duration(hours: 1)));
+      expect(s.repetitions, 1);
+      expect(isKnownState(s), isFalse);
+
+      final states = pending();
+      states['k0'] = s;
+      expect(
+        due(states, at: now.add(const Duration(hours: 1))).length,
+        inInclusiveRange(kStressMin, kStressTotal),
+        reason: 'the failed sample asks more, not the usual two',
+      );
+    });
+
+    test('cards still being learned are not sampled', () {
+      final states = <String, FsrsState>{
+        for (var i = 0; i < 5; i++) 'k$i': dueDaysAgo(1),
+      };
+      expect(due(states, take: 5), hasLength(5));
+    });
   });
 }

@@ -1,0 +1,88 @@
+schema: 1
+id: "es-en-describing-sentences"
+kind: "layer"
+core: "es-describing-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: describing"
+license: "CC-BY-SA-4.0"
+description: "Ten sentences with describing words, each with the word it is most often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+
+cards:
+  "es-0444":
+    native: "My brother is tall and handsome."
+    confusables:
+      "bajo": { why: "Bajo is short or low: the opposite of alto." }
+      "feo": { why: "Feo is ugly, the opposite of guapo." }
+  "es-0445":
+    native: "The coffee is cold, but the soup is very hot."
+    bases:
+      "El": "the"
+      "café": "coffee"
+      "la": "the"
+      "sopa": "soup"
+    confusables:
+      "lento": { why: "Lento is slow, not cold." }
+      "rico": { why: "Rico is tasty, which the sentence does not say." }
+  "es-0446":
+    native: "Today I am tired and sad."
+    confusables:
+      "contento": { why: "Contento is happy, the opposite of triste." }
+      "feliz": { why: "Feliz is happy, a word the sentence does not use." }
+  "es-0447":
+    native: "The exam is difficult, but easy for Ana."
+    bases:
+      "El": "the"
+      "examen": "exam"
+      "para": "for"
+      "Ana": "Ana"
+    confusables:
+      "importante": { why: "Importante is important, a different idea." }
+      "interesante": { why: "Interesante is interesting, not easy." }
+  "es-0448":
+    native: "The hands are dirty and wet."
+    bases:
+      "Las": "the"
+      "manos": "hands"
+    confusables:
+      "limpio": { why: "Limpio is clean, the opposite of sucio." }
+      "seco": { why: "Seco is dry, the opposite of mojado." }
+  "es-0449":
+    native: "My mother says that the house is pretty."
+    bases:
+      "dice": "says"
+      "que": "that"
+      "la": "the"
+    confusables:
+      "viejo": { why: "Viejo is old, not pretty." }
+      "largo": { why: "Largo is long, not pretty." }
+  "es-0450":
+    native: "Ana is not busy, but she is very nervous."
+    bases:
+      "Ana": "Ana"
+    confusables:
+      "libre": { why: "Libre is free, which is close in meaning to not busy." }
+      "timido": { why: "Tímido is shy, not nervous." }
+  "es-0451":
+    native: "The water of the lake is cold."
+    bases:
+      "El": "the"
+      "del": "of the"
+      "lago": "lake"
+    confusables:
+      "caliente": { why: "Caliente is hot, the opposite of fría." }
+      "claro": { why: "Claro is clear or bright, not cold." }
+  "es-0452":
+    native: "It is important to eat well."
+    confusables:
+      "facil": { why: "Fácil is easy, not important." }
+      "bueno": { why: "Bueno is good, a different word from well." }
+  "es-0453":
+    native: "The bottle is full, but the glass is left empty."
+    bases:
+      "La": "the"
+      "el": "the"
+      "vaso": "glass"
+      "queda": "remain"
+    confusables:
+      "claro": { why: "Claro is clear, not empty." }
+      "oscuro": { why: "Oscuro is dark, not empty." }

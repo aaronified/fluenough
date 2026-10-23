@@ -1628,6 +1628,15 @@ class AppState extends ChangeNotifier {
       // another of its pairs is due, so a deck with reviews due is not
       // taken for finished.
       newEvenIfDue: request.newOnly,
+      // Today and a language's review show a few of a deck's known cards
+      // for the deck (#680); a deck's own review, a lesson and revising
+      // show them all.
+      sampleKnown:
+          ids == null &&
+          request.cardIds == null &&
+          !request.revise &&
+          !request.lesson &&
+          !request.numbers,
       modes: modes,
       canIntroduce: canIntroduce,
       siblingsOf: siblingsOf,
