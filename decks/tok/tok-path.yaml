@@ -153,11 +153,13 @@ units:
   - decks: ["tok-questions", "tok-questions-sentences", "tok-reading-questions"]
     words: 4
   # ona, ni, jan and ijo: with mi and sina, every pronoun the language has.
-  - planned: { id: "tok-pronouns", theme: "pronouns", words: 4 }
-    listening_passages:
-      - { id: "who-is-who", text: { "en": "Pointing out who is who in a group photo: ona, ni, jan ni" } }
-    reading_passages:
-      - { id: "group-chat", text: { "en": "Messages in a group chat, each saying who is writing" } }
+  # The set card tok-0066 is the pronoun group (mi, sina, ona, ni). Its
+  # sentences are tok-pronouns-sentences, and its passages are in
+  # tok-reading-pronouns: the listening passage who-is-who (pointing out who
+  # is who in a group photo) and the reading passage group-chat (messages in
+  # a group chat, each saying who is writing).
+  - decks: ["tok-pronouns", "tok-pronouns-sentences", "tok-reading-pronouns", "*"]
+    words: 4
   # moku, lape, pali, lukin, kute, jo, wile, kama and tawa.
   - planned: { id: "tok-everyday-verbs", theme: "everyday-verbs", words: 9 }
     listening_passages:
