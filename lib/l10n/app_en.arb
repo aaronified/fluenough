@@ -1617,7 +1617,7 @@
   },
   "unitSentencesOpen": "sentences open",
   "@unitSentencesOpen": {
-    "description": "Under a number on a unit's screen: how many of its sentences are open, that is, taught."
+    "description": "Under a number on a unit's screen: how many of its sentences are open, that is, taught or with every word and rule in them known."
   },
   "unitFraction": "{count}/{total}",
   "@unitFraction": {
@@ -1673,15 +1673,95 @@
       }
     }
   },
-  "unitKnownMeans": "Known means right on {percent}% of recent answers",
+  "unitKnownMeans": "Known means {right} of the last {window} answers right",
   "@unitKnownMeans": {
-    "description": "Beside the words heading: what \"Known\" means.",
+    "description": "Beside the words heading: what \"Known\" means, the mastery bar.",
     "placeholders": {
-      "percent": {
+      "right": {
         "type": "int",
-        "example": "85"
+        "example": "9"
+      },
+      "window": {
+        "type": "int",
+        "example": "10"
       }
     }
+  },
+  "unitSectionPhrasebook": "{number} · Phrasebook",
+  "@unitSectionPhrasebook": {
+    "description": "Heading of a unit's phrasebook chunks: short phrases taught whole, never held back.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "unitPhrasebook": "Phrasebook",
+  "@unitPhrasebook": {
+    "description": "Label on a phrasebook chunk's row, in place of its status."
+  },
+  "unitWaitingFor": "Waiting for {things}",
+  "@unitWaitingFor": {
+    "description": "Under a sentence that is not open yet: the words and rules in it that are not known yet, separated by commas.",
+    "placeholders": {
+      "things": {
+        "type": "String",
+        "example": "ghar, में, पर, से"
+      }
+    }
+  },
+  "unitWhyClosedHint": "Says why it is closed",
+  "@unitWhyClosedHint": {
+    "description": "What a screen reader hears after a closed sentence's row: tapping it says what it waits for."
+  },
+  "whyClosedTitle": "Why it is closed",
+  "@whyClosedTitle": {
+    "description": "Title of the sheet a closed sentence opens."
+  },
+  "whyClosedIntro": "It opens when everything in it is known: {right} of the last {window} answers right.",
+  "@whyClosedIntro": {
+    "description": "Under the sentence on the why-it-is-closed sheet: the bar.",
+    "placeholders": {
+      "right": {
+        "type": "int",
+        "example": "9"
+      },
+      "window": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "whyClosedWord": "word",
+  "@whyClosedWord": {
+    "description": "Beside a word's name on the why-it-is-closed sheet."
+  },
+  "whyClosedRule": "rule",
+  "@whyClosedRule": {
+    "description": "Beside a rule's name on the why-it-is-closed sheet."
+  },
+  "whyClosedRight": "{right} of {window}",
+  "@whyClosedRight": {
+    "description": "Status of a word or rule being learned on the why-it-is-closed sheet: how many of its last answers were right.",
+    "placeholders": {
+      "right": {
+        "type": "int",
+        "example": "7"
+      },
+      "window": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "whyClosedPractise": "Practise the rule",
+  "@whyClosedPractise": {
+    "description": "Button on the why-it-is-closed sheet: starts a session on the rule the sentence waits for."
+  },
+  "whyClosedReviewsNeverWait": "Reviews never wait: only new sentences do.",
+  "@whyClosedReviewsNeverWait": {
+    "description": "Last line of the why-it-is-closed sheet."
   },
   "unitKnown": "Known",
   "@unitKnown": {
@@ -1749,7 +1829,7 @@
       }
     }
   },
-  "unitSentencesNote": "A sentence opens when a lesson teaches it. Reviews never wait.",
+  "unitSentencesNote": "A sentence opens when its words and rules are known. Reviews never wait.",
   "@unitSentencesNote": {
     "description": "Under a unit's sentences."
   },

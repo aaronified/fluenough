@@ -2140,7 +2140,8 @@ void main() {
         for (var i = 0; i < 5; i++) cardLesson('h$i', 'hola', pos: 'phrase'),
       ];
 
-      test('takes the first three of each difficulty, easy first', () {
+      test('takes the next nine in path order, easy first, with no quota of '
+          'each difficulty', () {
         final mixed = <Card>[
           hard[0],
           medium[0],
@@ -2159,12 +2160,30 @@ void main() {
           'e0',
           'e1',
           'e2',
+          'e3',
           'm0',
           'm1',
-          'm2',
           'h0',
           'h1',
           'h2',
+        ]);
+      });
+
+      test('a lesson takes fewer new items while words in progress have not '
+          'reached the bar, never fewer than two', () {
+        expect(lessonRoom(0), 9);
+        expect(lessonRoom(3), 6);
+        expect(lessonRoom(20), 2);
+        expect(idsLesson(lessonItems(easy, room: lessonRoom(3))), <String>[
+          'e0',
+          'e1',
+          'e2',
+          'e3',
+          'e4',
+        ]);
+        expect(idsLesson(lessonItems(easy, room: lessonRoom(20))), <String>[
+          'e0',
+          'e1',
         ]);
       });
     });

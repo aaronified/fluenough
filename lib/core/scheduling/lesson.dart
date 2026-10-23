@@ -4,7 +4,7 @@ import 'question_type.dart';
 import 'session_queue.dart';
 
 /// How hard a new item is to learn, by the item itself (ADR-0024). A lesson
-/// teaches some of each, easy first.
+/// teaches its items easy first; no quota of each (ADR-0045).
 enum Difficulty {
   easy,
   medium,
@@ -25,35 +25,50 @@ enum Difficulty {
   }
 }
 
-/// The new items of one lesson, from [cards] in the order given: the first
-/// [each] of each [Difficulty], and, when a difficulty has fewer, the next
-/// cards of the others in order, up to `3 × each` in all. Easy ones first,
-/// then medium, then hard, each in the order given.
-///
-/// A card given twice, as in two decks of a unit, is taken once.
-List<Card> lessonItems(Iterable<Card> cards, {int each = 3}) {
+/// The most new items a lesson takes: nine, as a lesson always held at most.
+const int lessonMaxNew = 9;
+
+/// The fewest new items a lesson takes, however many are still in progress,
+/// so that a lesson is never only reviews.
+const int lessonMinNew = 2;
+
+/// The most new cells of a rules table a lesson takes (owner, 2026-10-16:
+/// "3 per lesson").
+const int ruleCellsPerLesson = 3;
+
+/// How many new items a lesson takes when [inProgress] words and rules have
+/// been taught and are not known yet (owner, 2026-10-18: "Fewer, by the
+/// mastery bar"): [lessonMaxNew] less those in progress, never fewer than
+/// [lessonMinNew]. There is no fixed quota of each difficulty.
+int lessonRoom(int inProgress) =>
+    (lessonMaxNew - inProgress).clamp(lessonMinNew, lessonMaxNew);
+
+/// The new items of one lesson, from [cards] in the order of the path: the
+/// next [room] of them, at most [ruleCells] of them cells of a rules table,
+/// each card once. [cards] are the ones a lesson may teach now, the closed
+/// sentences and the cells of unknown words already left out (`Unlocks`).
+/// They are taught easy first, then medium, then hard ([Difficulty]), each
+/// in the order given.
+List<Card> lessonItems(
+  Iterable<Card> cards, {
+  int room = lessonMaxNew,
+  int ruleCells = ruleCellsPerLesson,
+}) {
   final seen = <String>{};
-  final all = <Card>[
-    for (final card in cards)
-      if (seen.add(card.id)) card,
-  ];
-  final taken = <Card>{};
-  final counts = <Difficulty, int>{};
-  for (final card in all) {
-    final difficulty = Difficulty.of(card);
-    if ((counts[difficulty] ?? 0) < each) {
-      taken.add(card);
-      counts[difficulty] = (counts[difficulty] ?? 0) + 1;
+  final taken = <Card>[];
+  var cells = 0;
+  for (final card in cards) {
+    if (taken.length >= room) break;
+    if (!seen.add(card.id)) continue;
+    if (card.rule != null) {
+      if (cells >= ruleCells) continue;
+      cells++;
     }
-  }
-  final size = each * Difficulty.values.length;
-  for (final card in all) {
-    if (taken.length >= size) break;
     taken.add(card);
   }
   return <Card>[
     for (final difficulty in Difficulty.values)
-      ...all.where((c) => taken.contains(c) && Difficulty.of(c) == difficulty),
+      ...taken.where((c) => Difficulty.of(c) == difficulty),
   ];
 }
 
@@ -129,7 +144,7 @@ List<LessonQuestion> lessonQuestions(
   ];
 }
 
-/// A lesson of [cards], as [lessonItems] picks them (ADR-0024): each card
+/// A lesson of [cards], as [lessonItems] picks them (ADR-0024, ADR-0045): each card
 /// taught, then checked at once; then the exercise, each card asked once
 /// more in another mode, in a mixed order, the ones to be matched together
 /// in pairs.
@@ -260,8 +275,8 @@ List<SessionItem> _matched(
 final RegExp _letter = RegExp(r'\p{L}', unicode: true);
 
 /// How many cards [items], a lesson, teaches: those it shows a teaching card
-/// for, and the members its set cards taught that go straight to their
-/// question (#515).
+/// for, and the members its set cards taught that go straight to their question
+/// (#515).
 int lessonCardCount(List<SessionItem> items) => <String>{
   for (final item in items)
     if (item.ask == Ask.teach) item.card.id,
