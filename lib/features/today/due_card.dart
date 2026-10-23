@@ -35,14 +35,16 @@ const double _tilePadding = 24;
 const double _pillWidth = 36;
 const double _tileGap = 10;
 
-/// Today's first card: how many words are due and roughly how long they take,
-/// the four skills, and Start review. Or, with nothing due, "All done".
+/// The skill tiles under Today's one button (#521): what is due in each
+/// skill, and a tile starts a review of its skill alone (ADR-0030). The
+/// start and the count moved to the button ([DailyCard]).
 ///
 /// Once some skill is adjusted to the learner ([TodayNumbers.pace]), the
-/// settled "Adjusted to you" strip sits under the count, with the 30-day
+/// settled "Adjusted to you" strip sits above the tiles, with the 30-day
 /// change, and opens How you learn; each adjusted skill's tile carries a
 /// mark (mockup `docs/mockups/adapted-to-you.html`, screen 2). Before the
-/// first fit, neither shows.
+/// first fit, neither shows. With nothing due, the card holds the strip
+/// alone, or nothing.
 ///
 /// Design screen `today`, the `primaryContainer` section named "Due now".
 class DueCard extends StatelessWidget {
@@ -54,103 +56,29 @@ class DueCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
-    return Semantics(
-      container: true,
-      explicitChildNodes: true,
-      label: l10n.todayDueSection,
-      child: Container(
-        padding: const EdgeInsetsDirectional.all(24),
-        decoration: BoxDecoration(
-          color: scheme.primaryContainer,
-          borderRadius: BorderRadius.circular(AppRadii.hero),
+    final pace = numbers.pace;
+    if (numbers.allDone && pace == null) return const SizedBox.shrink();
+    return Padding(
+      padding: const EdgeInsetsDirectional.only(bottom: 16),
+      child: Semantics(
+        container: true,
+        explicitChildNodes: true,
+        label: l10n.todayDueSection,
+        child: Container(
+          padding: const EdgeInsetsDirectional.all(24),
+          decoration: BoxDecoration(
+            color: scheme.primaryContainer,
+            borderRadius: BorderRadius.circular(AppRadii.hero),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              if (pace != null) _AdjustedStrip(pace: pace),
+              if (pace != null && !numbers.allDone) const SizedBox(height: 16),
+              if (!numbers.allDone) _SkillGrid(numbers: numbers),
+            ],
+          ),
         ),
-        child: numbers.allDone
-            ? Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  const _AllDone(),
-                  if (numbers.pace case final pace?) ...<Widget>[
-                    const SizedBox(height: 16),
-                    _AdjustedStrip(pace: pace),
-                  ],
-                ],
-              )
-            : Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  _DueCount(due: numbers.due, minutes: numbers.minutes),
-                  if (numbers.pace case final pace?) ...<Widget>[
-                    const SizedBox(height: 16),
-                    _AdjustedStrip(pace: pace),
-                    const SizedBox(height: 16),
-                  ] else
-                    const SizedBox(height: 20),
-                  _SkillGrid(numbers: numbers),
-                  const SizedBox(height: 20),
-                  FilledButton.icon(
-                    style: AppButtonStyles.tall(context),
-                    onPressed: () =>
-                        AppNavigator.startDrill(context, numbers.start),
-                    icon: const Icon(Icons.play_arrow_rounded, size: 24),
-                    label: Text(
-                      numbers.languages.length > 1
-                          ? l10n.todayStartLanguage(
-                              numbers.languages.first.name,
-                            )
-                          : l10n.todayStartReview,
-                    ),
-                  ),
-                ],
-              ),
-      ),
-    );
-  }
-}
-
-/// "41 words due, about 14 min": the large number and its two lines, which
-/// move under the number when they do not fit beside it.
-class _DueCount extends StatelessWidget {
-  const _DueCount({required this.due, required this.minutes});
-
-  final int due;
-  final int minutes;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    final fg = theme.colorScheme.onPrimaryContainer;
-    final locale = Localizations.localeOf(context).toLanguageTag();
-    return MergeSemantics(
-      child: Wrap(
-        spacing: 12,
-        runSpacing: 4,
-        crossAxisAlignment: WrapCrossAlignment.end,
-        children: <Widget>[
-          Text(
-            NumberFormat.decimalPattern(locale).format(due),
-            style: theme.textTheme.hero.copyWith(color: fg),
-          ),
-          Padding(
-            padding: const EdgeInsetsDirectional.only(bottom: 6),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  l10n.todayWordsDue(due),
-                  style: theme.textTheme.sectionTitle.copyWith(color: fg),
-                ),
-                Text(
-                  l10n.todayMinutes(minutes),
-                  style: theme.textTheme.bodyMedium!.copyWith(
-                    color: fg.withValues(alpha: 0.8),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
       ),
     );
   }
@@ -176,47 +104,6 @@ class _AdjustedStrip extends StatelessWidget {
           : l10n.paceReviews(totals.reviews, totals.was),
       onTap: () => AppNavigator.openHowYouLearn(context),
       underTitle: true,
-    );
-  }
-}
-
-/// With nothing due: a tick, "All done for now" and when more arrives.
-class _AllDone extends StatelessWidget {
-  const _AllDone();
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    final fg = theme.colorScheme.onPrimaryContainer;
-    return MergeSemantics(
-      child: Row(
-        children: <Widget>[
-          Icon(Icons.task_alt, size: 40, color: fg),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  l10n.todayAllDoneTitle,
-                  style: theme.textTheme.titleLarge!.copyWith(
-                    color: fg,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  l10n.todayAllDoneBody,
-                  style: theme.textTheme.bodyMedium!.copyWith(
-                    color: fg.withValues(alpha: 0.8),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
     );
   }
 }

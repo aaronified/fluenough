@@ -1,0 +1,75 @@
+"schema": 1
+"id": "tok-en-reading-directions"
+"name": "Reading: the way"
+"kind": "reading"
+"language":
+  "code": "tok"
+  "iso639_3": "tok"
+  "name": "Toki Pona"
+  "script": "latin"
+  "icon": "Tp"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this deck"
+"description": "Two passages on directions: a listening passage asking the way to a friend's house, and a reading passage giving a route from the station. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "reading"
+- "unreviewed"
+"passages":
+- "id": "tok-directions-which-way"
+  "title": "Which way?"
+  "theme": "directions"
+  "sentences":
+  - "text": "mi wile tawa tomo sina."
+  - "text": "nasin li lon sinpin."
+  - "text": "o tawa anpa tomo ni."
+  - "text": "tomo sina li suli."
+  "questions":
+  - "id": "tok-0380"
+    "prompt":
+      "en": "What does the friend want to do?"
+    "options":
+    - "en": "Go to a house"
+    - "en": "Eat"
+    "answer": 1
+  - "id": "tok-0381"
+    "prompt":
+      "en": "Where is the way?"
+    "options":
+    - "en": "In front"
+    - "en": "Above"
+    "answer": 1
+  - "id": "tok-0382"
+    "prompt":
+      "en": "The house is big. Is that true?"
+    "answer": true
+- "id": "tok-directions-route-note"
+  "title": "A note from the station"
+  "theme": "directions"
+  "sentences":
+  - "text": "o tawa tan telo."
+  - "text": "nasin li suli."
+  - "text": "o tawa kepeken nasin suli."
+  - "text": "tomo mi li monsi kili."
+  "questions":
+  - "id": "tok-0383"
+    "prompt":
+      "en": "Where does the route start?"
+    "options":
+    - "en": "From the water"
+    - "en": "From the box"
+    "answer": 1
+  - "id": "tok-0384"
+    "prompt":
+      "en": "What is behind the fruit?"
+    "options":
+    - "en": "My house"
+    - "en": "The water"
+    "answer": 1
+  - "id": "tok-0385"
+    "prompt":
+      "en": "The way is small. Is that true?"
+    "answer": false

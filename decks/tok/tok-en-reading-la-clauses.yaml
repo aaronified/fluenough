@@ -1,0 +1,74 @@
+"schema": 1
+"id": "tok-en-reading-la-clauses"
+"name": "Reading: if and when"
+"kind": "reading"
+"language":
+  "code": "tok"
+  "iso639_3": "tok"
+  "name": "Toki Pona"
+  "script": "latin"
+  "icon": "Tp"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this deck"
+"description": "Two passages with a la clause: a listening passage on a friend's plans if water is above, and a reading passage of the rules of a simple game, each an if-then sentence. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "reading"
+- "unreviewed"
+"passages":
+- "id": "tok-la-clauses-if-it-rains"
+  "title": "If it rains"
+  "sentences":
+  - "text": "telo li lon sewi la, mi tawa tomo mi."
+  - "text": "telo li lon sewi ala la, mi tawa esun."
+  - "text": "sina kama la, mi moku e kili."
+  "questions":
+  - "id": "tok-0500"
+    "prompt":
+      "en": "Where does the speaker go if water is above?"
+    "options":
+    - "en": "Home"
+    - "en": "The market"
+    "answer": 1
+  - "id": "tok-0501"
+    "prompt":
+      "en": "Where does the speaker go if no water is above?"
+    "options":
+    - "en": "Home"
+    - "en": "The market"
+    "answer": 2
+  - "id": "tok-0502"
+    "prompt":
+      "en": "The friend comes. What does the speaker eat?"
+    "options":
+    - "en": "Fruit"
+    - "en": "Water"
+    "answer": 1
+- "id": "tok-la-clauses-game-rules"
+  "title": "The rules of a game"
+  "sentences":
+  - "text": "ilo li pakala la, o pali e ilo ante."
+  - "text": "sina pini la, o pana e kiwen tawa mi."
+  - "text": "ona li lukin e sitelen la, ona li moku."
+  "questions":
+  - "id": "tok-0503"
+    "prompt":
+      "en": "What do you do if the tool is broken?"
+    "options":
+    - "en": "Make another tool"
+    - "en": "Eat the tool"
+    "answer": 1
+  - "id": "tok-0504"
+    "prompt":
+      "en": "What do you do when you finish?"
+    "options":
+    - "en": "Give the stone to me"
+    - "en": "Sleep"
+    "answer": 1
+  - "id": "tok-0505"
+    "prompt":
+      "en": "The rules say they eat after they look at a picture. Is that true?"
+    "answer": true

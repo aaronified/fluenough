@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-home-sentences"
+kind: "layer"
+core: "es-home-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: home"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about the rooms of a home and renting one, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-0826":
+    native: "My room has a bed."
+    bases: {"una": "a"}
+    confusables: {"sofa": { why: "Sofá is a sofa, a seat for the living room." }, "mesa": { why: "Mesa is a table, not a bed." }}
+  "es-0827":
+    native: "The living room has a sofa."
+    bases: {"El": "the", "un": "a"}
+    confusables: {"cocina": { why: "Cocina is the kitchen, where food is cooked." }, "bano": { why: "Baño is the bathroom, not the living room." }}
+  "es-0828":
+    native: "The fridge is in the kitchen."
+    bases: {"El": "the", "en": "in", "la": "the"}
+    confusables: {"horno": { why: "Horno is an oven, for cooking." }, "armario": { why: "Armario is a cupboard, for clothes." }}
+  "es-0829":
+    native: "The shower is in the bathroom."
+    bases: {"La": "the", "en": "in", "el": "the"}
+    confusables: {"espejo": { why: "Espejo is a mirror, also found in the bathroom." }, "cama": { why: "Cama is a bed, not a shower." }}
+  "es-0830":
+    native: "The rent is expensive."
+    bases: {"El": "the"}
+    confusables: {"precio": { why: "Precio is the price of things to buy, not rent." }, "pagar": { why: "Pagar is to pay, the action, not the cost of a home." }}
+  "es-0831":
+    native: "I rent a flat near the beach."
+    bases: {"un": "a", "de": "of", "la": "the"}
+    confusables: {"casa": { why: "Casa is a house, a whole building." }, "habitacion": { why: "Habitación is a room, not a whole flat." }}
