@@ -156,13 +156,14 @@
     - "不"
     - "买"
     - "鱼"
-  - "target": "你从来不走吗？"
-    "reading": "nǐ cónglái bù zǒu ma?"
+  - "target": "你从来不喝水吗？"
+    "reading": "nǐ cónglái bù hē shuǐ ma?"
     "words":
     - "你"
     - "从来"
     - "不"
-    - "走"
+    - "喝"
+    - "水"
     - "吗"
 - "id": "zh-0349"
   "target": "已经"
@@ -177,19 +178,29 @@
   "target_scripts":
     "han_traditional": "已經"
   "examples":
-  - "target": "妈妈已经起床。"
-    "reading": "māma yǐjīng qǐchuáng."
+  - "target": "妈妈已经起床了。"
+    "reading": "māma yǐjīng qǐchuáng le."
     "words":
     - "妈妈"
     - "已经"
     - "起床"
-  - "target": "你已经回家吗？"
-    "reading": "nǐ yǐjīng huíjiā ma?"
+    - "了"
+    "bases":
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+  - "target": "你已经回家了吗？"
+    "reading": "nǐ yǐjīng huíjiā le ma?"
     "words":
     - "你"
     - "已经"
     - "回家"
+    - "了"
     - "吗"
+    "bases":
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
 - "id": "zh-0350"
   "target": "刚"
   "words":
@@ -276,20 +287,30 @@
     "kind": "note"
   "bases": "self"
   "examples":
-  - "target": "他又来。"
-    "reading": "tā yòu lái."
+  - "target": "他又来了。"
+    "reading": "tā yòu lái le."
     "words":
     - "他"
     - "又"
     - "来"
-  - "target": "你又买鱼吗？"
-    "reading": "nǐ yòu mǎi yú ma?"
+    - "了"
+    "bases":
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+  - "target": "你又买鱼了吗？"
+    "reading": "nǐ yòu mǎi yú le ma?"
     "words":
     - "你"
     - "又"
     - "买"
     - "鱼"
+    - "了"
     - "吗"
+    "bases":
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
 - "id": "zh-0354"
   "target": "太"
   "words":
@@ -617,8 +638,6 @@
   - "id": "n1"
     "kind": "note"
   "bases": "self"
-  "target_scripts":
-    "han_traditional": "隻"
   "examples":
   - "target": "我只喝水。"
     "reading": "wǒ zhǐ hē shuǐ."
@@ -627,12 +646,13 @@
     - "只"
     - "喝"
     - "水"
-  - "target": "你只来吗？"
-    "reading": "nǐ zhǐ lái ma?"
+  - "target": "你只吃鱼吗？"
+    "reading": "nǐ zhǐ chī yú ma?"
     "words":
     - "你"
     - "只"
-    - "来"
+    - "吃"
+    - "鱼"
     - "吗"
 - "id": "zh-0368"
   "target": "别"
@@ -652,11 +672,16 @@
     "words":
     - "别"
     - "走"
-  - "target": "别忘。"
-    "reading": "bié wàng."
+  - "target": "别忘了。"
+    "reading": "bié wàng le."
     "words":
     - "别"
     - "忘"
+    - "了"
+    "bases":
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
 - "id": "zh-0369"
   "target": "其实"
   "words":
