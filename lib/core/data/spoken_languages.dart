@@ -71,8 +71,9 @@ class SpokenLanguage {
   }
 
   /// The group it is listed in, folded by default (`indo_aryan`,
-  /// `dravidian`, `tibeto_burman`, `austroasiatic`, `germanic`), or null for
-  /// a language the list puts in none (#490).
+  /// `dravidian`, `tibeto_burman`, `austroasiatic`, `germanic`, `romance`,
+  /// `sinitic`, `koreanic`, `japonic`, `constructed`), or null for a language
+  /// the list puts in none (#490, #613).
   final String? family;
 
   /// The sheet's question, "Can you read the Bengali script?", written in
