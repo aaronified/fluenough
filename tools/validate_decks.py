@@ -4584,13 +4584,16 @@ def _check_unit(r: Report, where: str, i: int, unit: dict, check_decks,
                                                f"{pid!r}")
             else:
                 u.planned["id"] = pid
-            if "theme" in planned and "grammar" in planned:
+            # The unit's own `grammar` counts as the planned one (#622), as the
+            # app reads it.
+            has_grammar = "grammar" in planned or "grammar" in unit
+            if "theme" in planned and has_grammar:
                 r.error(f"{where}.planned", "names theme or grammar, not both")
-            elif "theme" not in planned and "grammar" not in planned:
+            elif "theme" not in planned and not has_grammar:
                 r.error(f"{where}.planned", "needs a theme or a grammar topic")
             if "theme" in planned:
                 theme = planned["theme"]
-                theme_unit = "grammar" not in planned
+                theme_unit = not has_grammar
                 if not _is_str(theme) or not ID_RE.fullmatch(theme):
                     r.error(f"{where}.planned.theme", f"must be a theme id, got {theme!r}")
                 else:
