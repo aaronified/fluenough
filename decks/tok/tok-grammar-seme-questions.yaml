@@ -1,0 +1,34 @@
+schema: 1
+id: "tok-grammar-seme-questions"
+part: "core"
+kind: "grammar"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["statement", "question"]
+  entries:
+    - lemma: "moku"
+      forms:
+        "statement": "sina moku e pan"
+        "question": "sina moku e seme?"
+    - lemma: "wile"
+      forms:
+        "statement": "mi wile e moku"
+        "question": "mi wile e seme?"
+    - lemma: "lukin"
+      forms:
+        "statement": "ona li lukin e pan"
+        "question": "ona li lukin e seme?"
+    - lemma: "pali"
+      forms:
+        "statement": "jan ni li pali e pan"
+        "question": "jan ni li pali e seme?"
+    - lemma: "kute"
+      forms:
+        "statement": "sina kute e jan"
+        "question": "sina kute e seme?"
+    - lemma: "jo"
+      forms:
+        "statement": "mi jo e pan"
+        "question": "mi jo e seme?"
