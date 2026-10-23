@@ -247,11 +247,8 @@ units:
     grammar: ["pi-grouping"]
   # anpa, insa, monsi, sinpin and sewi: below, inside, behind, in front,
   # above. Placed with lon in the next unit (lon insa tomo).
-  - planned: { id: "tok-location", theme: "location", words: 5 }
-    listening_passages:
-      - { id: "where-is-it", text: { "en": "Looking for keys: under the table, inside the box, behind the door" } }
-    reading_passages:
-      - { id: "shelf-labels", text: { "en": "Labels on shelves saying what is where" } }
+  - decks: ["tok-location", "tok-location-sentences", "tok-reading-location", "*"]
+    words: 5
   # nasin, tan and kepeken: the way, from or because, and using.
   - planned: { id: "tok-directions", theme: "directions", words: 3 }
     listening_passages:
