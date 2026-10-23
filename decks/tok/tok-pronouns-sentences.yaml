@@ -66,12 +66,13 @@ cards:
       - { id: "w1", ref: "tok-0003", kind: "word" }
       - { id: "w2", ref: "tok-0007", kind: "word" }
   - id: "tok-0072"
-    target: "sina sona e ona?"
-    ipa: "ˈsina ˈsona e ˈona"
+    target: "sina sona ala sona e ona?"
+    ipa: "ˈsina ˈsona ˈala ˈsona e ˈona"
     pos: "phrase"
     bases:
       - { word: "sina", ref: "tok-0004" }
       - { word: "sona", ref: "tok-0007" }
+      - { word: "ala", ref: "tok-0005" }
       - { word: "e", base: "e" }
       - { word: "ona", ref: "tok-0062" }
     confusables:
