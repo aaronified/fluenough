@@ -1,0 +1,22 @@
+schema: 1
+id: "tok-en-grammar-negation-questions"
+kind: "layer"
+core: "tok-grammar-negation-questions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Ala makes a negative"
+license: "CC-BY-SA-4.0"
+description: "Ala makes a sentence say no: it comes straight after the verb or describing word it denies, and never before li. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Ala makes a negative"
+  slot_name: "subject"
+  prompt: "Negative, {lemma} ({gloss}): {slot}"
+  slots: { "ona": "they (ona)", "jan ni": "this person (jan ni)" }
+  entries:
+    "moku": "to eat"
+    "wile": "to want"
+    "lukin": "to see"
+    "sona": "to know"
+    "tawa": "to go"
+    "pona": "good"
+  notes: "Ala comes after the word it denies: ona li moku ala is they do not eat, and jan ni li wile ala is this person does not want. The li stays before the predicate, and ala comes after it. There is no separate word for not: ala is the same word in every place, and it always comes after what it denies."
