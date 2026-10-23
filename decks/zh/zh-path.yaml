@@ -199,7 +199,8 @@ units:
       - { id: "number-signs", text: { "en": "Simple signs in characters: floor numbers, prices, big and small sizes" } }
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
-  - planned: { id: "zh-about-me", theme: "about-me", words: 20 }
+  - decks: ["zh-about-me", "zh-about-me-sentences", "zh-reading-about-me", "*"]
+    words: 20
     listening_passages:
       - { id: "self-introduction", text: { "en": "A self-introduction on the first day at a language school" } }
     reading_passages:
