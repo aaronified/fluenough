@@ -107,11 +107,14 @@ units:
     words: 12
   - decks: ["bn-verbs", "*"]
     words: 30
-  - planned: { id: "bn-adverbs", theme: "adverbs", words: 45 }
+  - decks: ["bn-adverbs", "*"]
+    words: 45
     listening_passages:
       - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
     reading_passages:
       - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
+  - decks: ["bn-reading-adverbs"]
+    words: 0
   - decks: ["bn-quantities", "*"]
     words: 23
   - decks: ["bn-describing", "*"]
@@ -263,27 +266,35 @@ units:
   - decks: ["bn-daily-life", "bn-grammar-conjunct-verbs", "*"]
     words: 26
     grammar: ["conjunct-verbs"]
-  - planned: { id: "bn-weather", theme: "weather", words: 45 }
+  - decks: ["bn-weather", "bn-weather-sentences", "*"]
+    words: 45
     listening_passages:
       - { id: "radio-forecast", text: { "en": "A radio forecast: sun, rain and storms over the delta" } }
     reading_passages:
       - { id: "monsoon-message", text: { "en": "A message to a friend about the first monsoon rains" } }
+  - decks: ["bn-reading-weather"]
+    words: 0
   - decks: ["bn-sadhu-cholito"]
     words: 23
   - ["bn-reading-sahaj-path-1"]
   - decks: ["bn-calendar", "bn-grammar-past", "*"]
     words: 27
     grammar: ["past"]
-  - planned: { id: "bn-grammar-ordinals", grammar: "ordinals" }
+  - decks: ["bn-grammar-ordinals", "bn-reading-ordinals"]
+    words: 0
+    grammar: ["ordinals"]
     listening_passages:
       - { id: "which-floor", text: { "en": "Finding a flat: the first floor, the second, the third" } }
     reading_passages:
       - { id: "month-calendar", text: { "en": "A calendar of events: the first, second and third week of the month" } }
-  - planned: { id: "bn-festivals", theme: "festivals", words: 40 }
+  - decks: ["bn-festivals", "bn-festivals-sentences", "*"]
+    words: 40
     listening_passages:
       - { id: "puja-plans", text: { "en": "Neighbours plan the days of a festival together" } }
     reading_passages:
       - { id: "festival-invitation", text: { "en": "An invitation to a festival meal" } }
+  - decks: ["bn-reading-festivals"]
+    words: 0
   - decks: ["bn-grammar-perfect", "bn-grammar-past-negative"]
     words: 0
     grammar: ["perfect", "past-negative"]

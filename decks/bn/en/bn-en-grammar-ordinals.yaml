@@ -1,0 +1,26 @@
+schema: 1
+id: "bn-en-grammar-ordinals"
+kind: "layer"
+core: "bn-grammar-ordinals"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First to tenth: ordinal numbers"
+description: "First to tenth: how Bengali makes an ordinal from its number, and that it comes before its noun. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "grammar"]
+pattern:
+  name: "Ordinal numbers"
+  slot_name: "order"
+  slots: { "ক্রম (krom)": "before a noun" }
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "prothom": "first"
+    "ditiyo": "second"
+    "tritiyo": "third"
+    "coturtho": "fourth"
+    "poncom": "fifth"
+    "shoshth": "sixth"
+    "soptom": "seventh"
+    "oshtom": "eighth"
+    "nobom": "ninth"
+    "doshom": "tenth"
+  notes: "The first three do not come from their numbers in a regular way: প্রথম (prôthom), first; দ্বিতীয় (ditiyo), second; তৃতীয় (tritiyo), third. From four on, the ordinal comes from the number, with a change to its stem: চার (cār), four, becomes চতুর্থ (coturtho), fourth; পাঁচ (pām̐c), five, becomes পঞ্চম (pôncom), fifth; দশ (dôś), ten, keeps its stem and becomes দশম (dôśom), tenth. An ordinal stands before its noun, as in English: প্রথম দিন (prôthom din), the first day, and দশম দিন (dôśom din), the tenth day."

@@ -300,6 +300,34 @@ Future<void> tapText(WidgetTester tester, String text) async {
   await tester.pumpAndSettle();
 }
 
+/// Scrolls [target] into view in the placement question on screen. Each
+/// question is a lazy list whose last child is "I don't know", so what sits
+/// below the fold is not built, and `ensureVisible` cannot find it.
+Future<void> scrollToInFrame(WidgetTester tester, Finder target) async {
+  final frame = find.byType(PlacementFrame);
+  if (frame.evaluate().isEmpty) {
+    await tester.ensureVisible(target.first);
+  } else {
+    // Not `target.first`: a `.first` finder throws while nothing matches,
+    // which is just when the list has not built the target yet.
+    await tester.scrollUntilVisible(
+      target,
+      100,
+      scrollable: find
+          .descendant(of: frame.first, matching: find.byType(Scrollable))
+          .first,
+    );
+  }
+  await tester.pumpAndSettle();
+}
+
+/// Taps [target] in the placement question on screen, scrolling to it first.
+Future<void> tapInFrame(WidgetTester tester, Finder target) async {
+  await scrollToInFrame(tester, target);
+  await tester.tap(target.first);
+  await tester.pumpAndSettle();
+}
+
 /// Answers "No" to each script and "I don't know" to each word until the
 /// check ends in its result.
 Future<void> giveUp(WidgetTester tester) async {
@@ -308,8 +336,9 @@ Future<void> giveUp(WidgetTester tester) async {
   while (guard++ < 60) {
     if (find.text(l10n.placementScriptNo).evaluate().isNotEmpty) {
       await tapText(tester, l10n.placementScriptNo);
-    } else if (find.text(l10n.placementDontKnow).evaluate().isNotEmpty) {
-      await tapText(tester, l10n.placementDontKnow);
+    } else if (find.text(l10n.placementDontKnow).evaluate().isNotEmpty ||
+        find.byType(PlacementFrame).evaluate().isNotEmpty) {
+      await tapInFrame(tester, find.text(l10n.placementDontKnow));
     } else {
       return;
     }
@@ -320,13 +349,8 @@ Future<void> giveUp(WidgetTester tester) async {
 /// or with "I don't know".
 Future<void> answerShown(WidgetTester tester, {bool right = true}) async {
   final l10n = l10nOf(tester);
-  if (!right) return tapText(tester, l10n.placementDontKnow);
-  Future<void> tap(Finder f) async {
-    await tester.ensureVisible(f);
-    await tester.pumpAndSettle();
-    await tester.tap(f);
-    await tester.pumpAndSettle();
-  }
+  if (!right) return tapInFrame(tester, find.text(l10n.placementDontKnow));
+  Future<void> tap(Finder f) => tapInFrame(tester, f);
 
   final match = find.byType(PlacementMatch);
   if (match.evaluate().isNotEmpty) {
@@ -356,20 +380,8 @@ Future<void> answerShown(WidgetTester tester, {bool right = true}) async {
   final q = tester
       .widget<PlacementChoice>(find.byType(PlacementChoice))
       .question;
-  // The options are shuffled, so the right one may sit below the fold, where
-  // the list has not built it yet.
-  final option = find.widgetWithText(OutlinedButton, q.answer);
-  await tester.scrollUntilVisible(
-    option,
-    100,
-    scrollable: find
-        .descendant(
-          of: find.byType(PlacementChoice),
-          matching: find.byType(Scrollable),
-        )
-        .first,
-  );
-  return tap(option);
+  // The options are shuffled, so the right one may sit below the fold.
+  return tap(find.widgetWithText(OutlinedButton, q.answer));
 }
 
 /// Whether a placement question is on screen.
