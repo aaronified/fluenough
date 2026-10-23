@@ -1,0 +1,151 @@
+schema: 1
+id: "mr-en-pronouns"
+kind: "layer"
+core: "mr-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns and people words"
+license: "CC-BY-SA-4.0"
+description: "I, you, he, she, we and they, this and that, and the words for a person, a guest, a neighbour and a relative. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-0675":
+    native: "you, familiar (to a friend or a child)"
+    notes: { "n1": "Said to a friend, a child or someone younger, and within a family. To an elder or a stranger, use तुम्ही (tumhi)." }
+    examples:
+      "तू कुठे आहेस?": { native: "Where are you?", bases: { "कुठे": "where", "आहेस": "are" } }
+      "तू माझा मित्र आहेस.": { native: "You are my friend.", bases: { "माझा": "my", "आहेस": "are" } }
+  "mr-0676":
+    native: "he; that (m)"
+    notes: { "n1": "He, for a man or a boy. Before a noun it means that: तो माणूस (to māṇus), that man. For a respectful he, use ते (te)." }
+    examples:
+      "तो माझा भाऊ आहे.": { native: "He is my brother.", bases: { "माझा": "my", "आहे": "is" } }
+      "तो शेजारी आहे.": { native: "He is a neighbour.", bases: { "आहे": "is" } }
+  "mr-0677":
+    native: "she; that (f)"
+    notes: { "n1": "She, for a woman or a girl. Before a feminine noun it means that: ती स्त्री (ti strī), that woman." }
+    examples:
+      "ती माझी बहीण आहे.": { native: "She is my sister.", bases: { "माझी": "my", "आहे": "is" } }
+      "ती स्त्री आहे.": { native: "She is a woman.", bases: { "आहे": "is" } }
+  "mr-0678":
+    native: "they; those; that (n)"
+    notes:
+      "n1": "The plural of he and she: they. Before a neuter or plural noun it means those or that: ते घर (te ghar), that house. It is also a respectful he or she."
+    examples:
+      "ते माझे पाहुणे आहेत.": { native: "They are my guests.", bases: { "माझे": "my", "पाहुणे": "guests", "आहेत": "are" } }
+      "ते लोक इथे राहतात.": { native: "Those people live here.", bases: { "इथे": "here", "राहतात": "live" } }
+  "mr-0679":
+    native: "this (m)"
+    notes: { "n1": "This, before a masculine noun in the singular: हा माणूस (hā māṇus), this man. It also stands alone: हा कोण आहे? (hā koṇ āhe?), who is this?" }
+    examples:
+      "हा माणूस कोण आहे?": { native: "Who is this man?", bases: { "कोण": "who", "आहे": "is" } }
+      "हा माझा नवरा आहे.": { native: "This is my husband.", bases: { "माझा": "my", "आहे": "is" } }
+  "mr-0680":
+    native: "this (f)"
+    notes: { "n1": "This, before a feminine noun: ही स्त्री (hī strī), this woman." }
+    examples:
+      "ही स्त्री कोण आहे?": { native: "Who is this woman?", bases: { "कोण": "who", "आहे": "is" } }
+      "ही माझी मैत्रीण आहे.": { native: "This is my friend.", bases: { "माझी": "my", "आहे": "is" } }
+  "mr-0681":
+    native: "this (n); these"
+    notes: { "n1": "This, before a neuter noun or a plural one: हे घर (he ghar), this house; हे लोक (he lok), these people." }
+    examples:
+      "हे माझे घर आहे.": { native: "This is my house.", bases: { "माझे": "my", "घर": "house", "आहे": "is" } }
+      "हे लोक कुठे राहतात?": { native: "Where do these people live?", bases: { "कुठे": "where", "राहतात": "live" } }
+  "mr-0682":
+    native: "oneself; myself, yourself"
+    notes: { "n1": "Adds emphasis to the person: मी स्वतः (mi svataḥ), I myself." }
+    examples:
+      "मी स्वतः येईन.": { native: "I will come myself.", bases: { "येईन": "will come" } }
+      "तू स्वतः हे कर.": { native: "Do this yourself.", bases: { "कर": "do" } }
+  "mr-0683":
+    native: "someone; anyone; (with नाही (nāhi)) nobody"
+    notes: { "n1": "कोणी (koṇi) means someone, and in a question anyone. With नाही (nāhi) it means nobody: कोणी नाही (koṇi nāhi)." }
+    examples:
+      "इथे कोणी नाही.": { native: "There is nobody here.", bases: { "इथे": "here", "नाही": "not" } }
+      "कोणी आले का?": { native: "Has anyone come?", bases: { "आले": "came", "का": "a question marker" } }
+  "mr-0684":
+    native: "everyone; all"
+    notes: { "n1": "A plural: all of them, or everyone. Before a noun it means all the: सगळे लोक (sagḷe lok), all the people." }
+    examples:
+      "सगळे इथे आहेत.": { native: "Everyone is here.", bases: { "इथे": "here", "आहेत": "are" } }
+      "सगळे लोक जेवतात.": { native: "All the people eat.", bases: { "जेवतात": "eat" } }
+  "mr-0685":
+    native: "other; another; second (m)"
+    notes: { "n1": "Masculine: दुसरा (dusrā). Feminine: दुसरी (dusrī). Neuter: दुसरे (dusre)." }
+    examples:
+      "दुसरा माणूस कुठे आहे?": { native: "Where is the other man?", bases: { "कुठे": "where", "आहे": "is" } }
+      "मला दुसरा चहा हवा.": { native: "I want another tea.", bases: { "मला": "to me", "चहा": "tea", "हवा": "needed" } }
+  "mr-0686":
+    native: "person; man (m)"
+    notes: { "n1": "Plural माणसे (māṇse), people. For a man as opposed to a woman, use पुरुष (puruṣ)." }
+    examples:
+      "तो चांगला माणूस आहे.": { native: "He is a good man.", bases: { "चांगला": "good", "आहे": "is" } }
+      "माणसे कुठे राहतात?": { native: "Where do people live?", bases: { "माणसे": "people", "कुठे": "where", "राहतात": "live" } }
+  "mr-0687":
+    native: "people (m)"
+    notes: { "n1": "People in general, or a group of people. Before a postposition it takes -ां (-ā): लोकांना (lokānnā), to people." }
+    examples:
+      "इथे खूप लोक आहेत.": { native: "There are many people here.", bases: { "इथे": "here", "खूप": "many; very", "आहेत": "are" } }
+      "लोकांना मदत करा.": { native: "Help people.", bases: { "लोकांना": "to people", "मदत": "help", "करा": "do" } }
+  "mr-0688":
+    native: "person; individual (f)"
+    notes: { "n1": "A more formal word for one person, as an individual: प्रत्येक व्यक्ती (pratyek vyakti), every person." }
+    examples:
+      "ही एक चांगली व्यक्ती आहे.": { native: "She is a good person.", bases: { "चांगली": "good (f)", "आहे": "is" } }
+      "प्रत्येक व्यक्तीला हक्क आहे.": { native: "Every person has a right.", bases: { "प्रत्येक": "every", "व्यक्तीला": "to a person", "हक्क": "right", "आहे": "is" } }
+  "mr-0689":
+    native: "neighbour (m)"
+    notes: { "n1": "A neighbour, a man or a woman. Before a postposition it takes -ऱ्या (-ryā): शेजाऱ्याला (śejāryālā), to a neighbour." }
+    examples:
+      "माझे शेजारी कुठे राहतात?": { native: "Where do my neighbours live?", bases: { "माझे": "my", "कुठे": "where", "राहतात": "live" } }
+      "शेजारी इथे आहेत.": { native: "The neighbours are here.", bases: { "इथे": "here", "आहेत": "are" } }
+  "mr-0690":
+    native: "guest (m)"
+    notes: { "n1": "A guest. Plural पाहुणे (pāhuṇe). Before a postposition: पाहुण्याला (pāhuṇyālā), to a guest." }
+    examples:
+      "पाहुणे आले आहेत.": { native: "The guests have come.", bases: { "पाहुणे": "guests", "आले": "came", "आहेत": "have" } }
+      "तू माझा पाहुणा आहेस.": { native: "You are my guest.", bases: { "माझा": "my", "आहेस": "are" } }
+  "mr-0691":
+    native: "relative (m)"
+    notes: { "n1": "A relative, a person of the family or the kin. The plural is the same: नातेवाईक (nātevāik)." }
+    examples:
+      "माझे नातेवाईक पुण्यात राहतात.": { native: "My relatives live in Pune.", bases: { "माझे": "my", "पुण्यात": "in Pune", "राहतात": "live" } }
+      "ते माझे नातेवाईक आहेत का?": { native: "Are they my relatives?", bases: { "माझे": "my", "आहेत": "are", "का": "a question marker" } }
+  "mr-0692":
+    native: "man; adult male (m)"
+    notes: { "n1": "An adult man, the opposite of स्त्री (strī), a woman. The plural is the same: पुरुष (puruṣ)." }
+    examples:
+      "तो एक पुरुष आहे.": { native: "He is a man.", bases: { "आहे": "is" } }
+      "पुरुष आणि स्त्रिया इथे आहेत.": { native: "Men and women are here.", bases: { "स्त्रिया": "women", "इथे": "here", "आहेत": "are" } }
+  "mr-0693":
+    native: "woman (f)"
+    notes: { "n1": "An adult woman, the opposite of पुरुष (puruṣ), a man. The plural is स्त्रिया (striyā)." }
+    examples:
+      "ती एक स्त्री आहे.": { native: "She is a woman.", bases: { "आहे": "is" } }
+      "स्त्रिया इथे बोलतात.": { native: "The women talk here.", bases: { "स्त्रिया": "women", "इथे": "here", "बोलतात": "talk" } }
+  "mr-0080":
+    native: "I"
+    examples:
+      "मी इथे आहे.": { native: "I am here.", bases: { "इथे": "here", "आहे": "am" } }
+      "मी तुला ओळखतो.": { native: "I know you.", bases: { "तुला": "to you", "ओळखतो": "know" } }
+  "mr-0145":
+    native: "you, respectful or plural"
+    examples:
+      "तुम्ही कसे आहात?": { native: "How are you? (respectful)", bases: { "कसे": "how", "आहात": "are" } }
+      "तुम्ही माझे पाहुणे आहात.": { native: "You are my guests.", bases: { "माझे": "my", "पाहुणे": "guests", "आहात": "are" } }
+  "mr-0138":
+    native: "we, not you"
+    examples:
+      "आम्ही इथे राहतो.": { native: "We live here.", bases: { "इथे": "here", "राहतो": "live" } }
+      "आम्ही मित्र आहोत.": { native: "We are friends.", bases: { "आहोत": "are" } }
+  "mr-0137":
+    native: "we, you and I"
+    examples:
+      "आपण जेवायला जाऊ.": { native: "Let's go and eat.", bases: { "जेवायला": "to eat", "जाऊ": "let's go" } }
+      "आपण आता निघू.": { native: "Let's leave now.", bases: { "आता": "now", "निघू": "let's leave" } }
+  "mr-0694":
+    native: "Personal pronouns: I, you, he, she, we, they"
+    explanation: "Marathi has four words for you, and two for we. तू (tu) is for a friend or a child; तुम्ही (tumhi) is for an elder, a stranger or more than one person. आपण (āpaṇ) for we includes the listener; आम्ही (āmhi) leaves them out. तो (to), ती (ti) and ते (te) are he, she and they, and ते (te) is also respectful. मी (mi) is I."
+  "mr-0695":
+    native: "This: हा (hā), ही (hī), हे (he)"
+    explanation: "This takes the gender of the noun it points to: हा (hā) before a masculine noun, ही (hī) before a feminine one, and हे (he) before a neuter or a plural noun: हा माणूस (hā māṇus), ही स्त्री (hī strī), हे घर (he ghar)."

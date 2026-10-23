@@ -4090,93 +4090,6 @@
   "@summaryEmpty": {
     "description": "Summary line when a session ended before any answer."
   },
-  "statsRangeGroup": "Time range",
-  "@statsRangeGroup": {
-    "description": "Screen-reader name of the range choice."
-  },
-  "statsRangeDays": "{count, plural, =1{1 day} other{{count} days}}",
-  "@statsRangeDays": {
-    "description": "A time range choice.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "30"
-      }
-    }
-  },
-  "statsRangeAll": "All time",
-  "@statsRangeAll": {
-    "description": "The time range covering every review."
-  },
-  "statsReviews": "Reviews",
-  "@statsReviews": {
-    "description": "Stat: reviews given in the range."
-  },
-  "statsRemembered": "Remembered",
-  "@statsRemembered": {
-    "description": "Stat: share of reviews remembered."
-  },
-  "statsDayStreak": "Day streak",
-  "@statsDayStreak": {
-    "description": "Stat: the current streak."
-  },
-  "statsLongestStreak": "Longest streak",
-  "@statsLongestStreak": {
-    "description": "Stat: the longest streak ever, for All time."
-  },
-  "statsNewCardsLearned": "New cards learned",
-  "@statsNewCardsLearned": {
-    "description": "Stat: new cards learned in the range."
-  },
-  "statsCardsLearned": "Cards learned",
-  "@statsCardsLearned": {
-    "description": "Stat: every card learned, for All time."
-  },
-  "statsHeatmapTitle": "{weeks, plural, =1{Reviews, last week} other{Reviews, last {weeks} weeks}}",
-  "@statsHeatmapTitle": {
-    "description": "Title of the activity grid.",
-    "placeholders": {
-      "weeks": {
-        "type": "int",
-        "example": "12"
-      }
-    }
-  },
-  "statsHeatmapLabel": "Daily review activity",
-  "@statsHeatmapLabel": {
-    "description": "Screen-reader name of the activity grid."
-  },
-  "statsHeatmapSummary": "Reviewed on {active} of {days} days, {reviews, plural, =0{no reviews} =1{1 review} other{{reviews} reviews}} in all",
-  "@statsHeatmapSummary": {
-    "description": "Screen-reader summary of the activity grid, which is otherwise colour only.",
-    "placeholders": {
-      "active": {
-        "type": "int",
-        "example": "71"
-      },
-      "days": {
-        "type": "int",
-        "example": "84"
-      },
-      "reviews": {
-        "type": "int",
-        "example": "412",
-        "format": "decimalPattern"
-      }
-    }
-  },
-  "statsFewer": "Fewer",
-  "@statsFewer": {
-    "description": "Legend of the activity grid: the lightest colour."
-  },
-  "statsMore": "More",
-  "@statsMore": {
-    "description": "Legend of the activity grid: the strongest colour."
-  },
-  "statsBySkill": "Correct, by skill",
-  "@statsBySkill": {
-    "description": "Heading of the per-skill bars."
-  },
   "statsWeakestTags": "Weakest tags",
   "@statsWeakestTags": {
     "description": "Heading of the per-tag bars. The tags come from the decks."
@@ -4187,7 +4100,7 @@
   },
   "statsAllTagsTitle": "All tags",
   "@statsAllTagsTitle": {
-    "description": "Title of the page listing every tag with the share remembered."
+    "description": "Title of the page listing every tag with the share of its taught pairs known now."
   },
   "statsAllTagsEmpty": "No tags in the languages you learn yet.",
   "@statsAllTagsEmpty": {
@@ -4195,11 +4108,11 @@
   },
   "statsTagUnansweredValue": "–",
   "@statsTagUnansweredValue": {
-    "description": "Where a tag's share remembered would be, for a tag with no answer in the chosen range."
+    "description": "Where a tag's share known would be, for a tag with nothing taught yet."
   },
   "statsTagUnansweredLabel": "{tag}: not answered",
   "@statsTagUnansweredLabel": {
-    "description": "Screen-reader label of a tag's bar when it has no answer in the chosen range.",
+    "description": "Screen-reader label of a tag's bar when it has nothing taught yet.",
     "placeholders": {
       "tag": {
         "type": "String",
@@ -4253,10 +4166,6 @@
   "statsLeechesSubtitle": "Cards you keep missing",
   "@statsLeechesSubtitle": {
     "description": "Under statsLeeches."
-  },
-  "statsFootnote": "Recomputed from your review log, so nothing here is ever lost.",
-  "@statsFootnote": {
-    "description": "Note at the foot of Progress."
   },
   "statsIncomingTitle": "Progress is on its way",
   "@statsIncomingTitle": {
@@ -10449,5 +10358,316 @@
   "voiceAppLinkCopied": "Couldn’t open the link, so it’s copied.",
   "@voiceAppLinkCopied": {
     "description": "SnackBar when nothing on the phone could open a voice app's store link, so its address was copied instead."
+  },
+  "progressWordsTitle": "Words mastered",
+  "@progressWordsTitle": {
+    "description": "Title of the Progress tile that counts the words learned."
+  },
+  "progressWordsTaught": "/ {count} taught",
+  "@progressWordsTaught": {
+    "description": "The total beside the mastered count in the Words tile, such as '/ 540 taught'. Stays on one line.",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "540"
+      }
+    }
+  },
+  "progressWordsSemantics": "Words mastered: {mastered} of {taught} taught",
+  "@progressWordsSemantics": {
+    "description": "Screen-reader label of the Words tile.",
+    "placeholders": {
+      "mastered": {
+        "type": "String",
+        "example": "312"
+      },
+      "taught": {
+        "type": "String",
+        "example": "540"
+      }
+    }
+  },
+  "progressLevelTitle": "Level",
+  "@progressLevelTitle": {
+    "description": "Title of the Progress tile that shows the course's level."
+  },
+  "progressStartedTitle": "Started",
+  "@progressStartedTitle": {
+    "description": "Title of the Progress tile on All languages, which shows only the day the first course was started."
+  },
+  "progressLevelStarted": "Started {date}",
+  "@progressLevelStarted": {
+    "description": "Under the level on Progress: the day of the first answer.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "3 Aug 2026"
+      }
+    }
+  },
+  "progressLevelA1": "A1",
+  "@progressLevelA1": {
+    "description": "The first level a course's path reaches. Same in every language."
+  },
+  "progressLevelA2": "A2",
+  "@progressLevelA2": {
+    "description": "The second level a course's path reaches."
+  },
+  "progressLevelB1": "B1",
+  "@progressLevelB1": {
+    "description": "The third level a course's path reaches."
+  },
+  "progressLevelNone": "Not yet",
+  "@progressLevelNone": {
+    "description": "The Level tile before the first level, A1, is reached."
+  },
+  "progressLevelSemantics": "Level {level}, started {date}",
+  "@progressLevelSemantics": {
+    "description": "Screen-reader label of the Level tile.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A2"
+      },
+      "date": {
+        "type": "String",
+        "example": "3 Aug 2026"
+      }
+    }
+  },
+  "progressLevelNoneSemantics": "No level reached yet, started {date}",
+  "@progressLevelNoneSemantics": {
+    "description": "Screen-reader label of the Level tile before A1.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "3 Aug 2026"
+      }
+    }
+  },
+  "progressStartedSemantics": "Started {date}",
+  "@progressStartedSemantics": {
+    "description": "Screen-reader label of the Level tile on All languages.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "3 Aug 2026"
+      }
+    }
+  },
+  "progressWeekLabel": "Practice in the last 7 days, daily quota {minutes} minutes",
+  "@progressWeekLabel": {
+    "description": "Screen-reader label of the 7-day calendar.",
+    "placeholders": {
+      "minutes": {
+        "type": "int",
+        "example": "15"
+      }
+    }
+  },
+  "progressDayNone": "no practice",
+  "@progressDayNone": {
+    "description": "One calendar day's state, for screen readers."
+  },
+  "progressDaySome": "some practice, under the quota",
+  "@progressDaySome": {
+    "description": "One calendar day's state, for screen readers."
+  },
+  "progressDayMet": "quota met",
+  "@progressDayMet": {
+    "description": "One calendar day's state, for screen readers."
+  },
+  "progressDayTwice": "twice the quota or more",
+  "@progressDayTwice": {
+    "description": "One calendar day's state, for screen readers."
+  },
+  "progressDayLabel": "{day}: {state}, {minutes} of {quota} minutes",
+  "@progressDayLabel": {
+    "description": "Screen-reader label of one calendar day.",
+    "placeholders": {
+      "day": {
+        "type": "String",
+        "example": "Tuesday"
+      },
+      "state": {
+        "type": "String",
+        "example": "quota met"
+      },
+      "minutes": {
+        "type": "int",
+        "example": "15"
+      },
+      "quota": {
+        "type": "int",
+        "example": "15"
+      }
+    }
+  },
+  "progressDayLabelToday": "{day}, today: {state}, {minutes} of {quota} minutes",
+  "@progressDayLabelToday": {
+    "description": "Screen-reader label of today on the calendar.",
+    "placeholders": {
+      "day": {
+        "type": "String",
+        "example": "Friday"
+      },
+      "state": {
+        "type": "String",
+        "example": "quota met"
+      },
+      "minutes": {
+        "type": "int",
+        "example": "15"
+      },
+      "quota": {
+        "type": "int",
+        "example": "15"
+      }
+    }
+  },
+  "progressStarTitle": "Mastery by skill",
+  "@progressStarTitle": {
+    "description": "Title of the six-skill star on Progress."
+  },
+  "progressStarOverall": "Overall mastery {percent}",
+  "@progressStarOverall": {
+    "description": "Under the star's title: how much of the star is filled.",
+    "placeholders": {
+      "percent": {
+        "type": "double",
+        "example": "0.22",
+        "format": "percentPattern"
+      }
+    }
+  },
+  "progressOverTime": "Over time",
+  "@progressOverTime": {
+    "description": "Button at the end of the star's title, which opens the charts over time."
+  },
+  "progressSkillScript": "Script",
+  "@progressSkillScript": {
+    "description": "One of the star's six skills: reading and writing the writing system."
+  },
+  "progressSkillRead": "Read",
+  "@progressSkillRead": {
+    "description": "One of the star's six skills: recognising words."
+  },
+  "progressNothingTaught": "nothing taught yet",
+  "@progressNothingTaught": {
+    "description": "A skill on the star with nothing taught, for screen readers."
+  },
+  "progressStarSemantics": "{title}, overall {overall}. Opens mastery over time. {details}",
+  "@progressStarSemantics": {
+    "description": "Screen-reader label of the star.",
+    "placeholders": {
+      "title": {
+        "type": "String",
+        "example": "Mastery by skill"
+      },
+      "overall": {
+        "type": "double",
+        "example": "0.22",
+        "format": "percentPattern"
+      },
+      "details": {
+        "type": "String",
+        "example": "Grammar 34%"
+      }
+    }
+  },
+  "progressStarSkill": "{skill} {fill}, {outline}",
+  "@progressStarSkill": {
+    "description": "One skill's values in the star's screen-reader label: known of the B1 total, then known of what is taught.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Grammar"
+      },
+      "fill": {
+        "type": "double",
+        "example": "0.34",
+        "format": "percentPattern"
+      },
+      "outline": {
+        "type": "String",
+        "example": "57%"
+      }
+    }
+  },
+  "progressOverTimeTitle": "Over time",
+  "@progressOverTimeTitle": {
+    "description": "Title of the screen the star opens."
+  },
+  "progressMasteryChart": "Mastery over time",
+  "@progressMasteryChart": {
+    "description": "Title of the chart of known words, by skill, against the whole B1 plan."
+  },
+  "progressMasteryChartSub": "Known ÷ B1 total, last 12 weeks",
+  "@progressMasteryChartSub": {
+    "description": "Under the mastery chart's title."
+  },
+  "progressTaughtChart": "Taught over time",
+  "@progressTaughtChart": {
+    "description": "Title of the chart of known words, by skill, against what has been taught."
+  },
+  "progressTaughtChartSub": "Known ÷ taught, last 12 weeks",
+  "@progressTaughtChartSub": {
+    "description": "Under the taught chart's title."
+  },
+  "progressChartSemantics": "{title}, last 12 weeks, now: {values}",
+  "@progressChartSemantics": {
+    "description": "Screen-reader label of a chart over time.",
+    "placeholders": {
+      "title": {
+        "type": "String",
+        "example": "Mastery over time"
+      },
+      "values": {
+        "type": "String",
+        "example": "Grammar 34%, Script 71%"
+      }
+    }
+  },
+  "progressChartSkillValue": "{skill} {value}",
+  "@progressChartSkillValue": {
+    "description": "One skill's current value in a chart's label and legend.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Grammar"
+      },
+      "value": {
+        "type": "String",
+        "example": "34%"
+      }
+    }
+  },
+  "progressWeeksAgo": "{weeks} wk",
+  "@progressWeeksAgo": {
+    "description": "A chart's time axis: that many weeks ago.",
+    "placeholders": {
+      "weeks": {
+        "type": "int",
+        "example": "8"
+      }
+    }
+  },
+  "progressNow": "Now",
+  "@progressNow": {
+    "description": "A chart's time axis: the latest point."
+  },
+  "progressStarAxis": "{fill} · {outline}",
+  "@progressStarAxis": {
+    "description": "Under a skill's name on the star: the share of the B1 plan known, then the share of what is taught known. The second is a dash while nothing is taught.",
+    "placeholders": {
+      "fill": {
+        "type": "String",
+        "example": "34%"
+      },
+      "outline": {
+        "type": "String",
+        "example": "57%"
+      }
+    }
   }
 }

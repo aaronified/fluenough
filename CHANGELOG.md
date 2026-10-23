@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Progress shows the words mastered, the course's level (bronze, silver or gold) with its start date, a 7-day calendar with the streak as a line, and a six-skill mastery star that opens charts over time, in place of the stat tiles and the 12-week grid (#678).
 - Today has one button for the day (#521, #485): a ring that fills toward your minutes a day, with "12 of 15 min" under it and the split of reviews and new words, which mixes both in one session, the reviews you are most likely to have forgotten first; when the minutes are done it reads "Done for today", with a smaller "Keep going" for five more. When reviews have piled up beyond three days of your minutes, Today says so with how long they take and how soon you will catch up, and a "+ 5 min" button adds five minutes each tap (a long press takes five away). Quick revision is now a separate minus, start and plus: 5 minutes to begin with, in steps of 5, reviewing only. Each language you are learning has a Minutes a day setting in Languages I'm learning, 15 to begin with, from 5 to 60. A Situations card for cheatsheets of everyday phrases (#724) waits below, marked as incoming.
 - A lesson asks each skill as the first question type the card's data allows (the registry, not a switch on difficulty), and reads a card's single-base siblings, so a card with sibling forms, or a pattern cell with siblings, is also asked its grammar skills (form questions); lessons of cards without siblings are unchanged (#522).
 - `letter` and `digit` are parts of speech of a card, and a card may be marked `hears: form`; Hear asks for the form of such a card, and of a generated number, by the card's own data, not by whether its deck is on the alphabet list (#522, step 7).
@@ -25,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - The IPA course is one entry in the list of languages, the whole chart: "IPA: my languages" is gone, with its setting, and the card tags that picked the symbols of your languages stay for focusing. Progress is shared by card, so nothing is lost; "The sounds of this word" is unchanged (#735).
+- Progress: Weakest tags and All tags rank by what you know now, not by the share of right answers all time: a tag's weakness is the share of its taught words and forms that are not known now (the star's rule), ties going to the lower recall now, then the name; the bars show the share known. The Over time page ends with a How you learn entry that opens that page (#678).
 - The language bar is a centred, looping wheel with the selection fixed at the centre (All moves to the left on Progress): it follows the finger 1:1, ticks at each language, coasts to a detent on a fling and settles on a spring, a touch stops it, and the pill then grows over 0.3 s to the language's name (#703, #682).
 - The four tabs slide: the pages follow the finger and settle on a tab with a spring (stiffness 400, damping ratio 0.75, no bounce on a slow release), a tap on the bar slides in 0.3 s, a touch catches the pages mid-way, and the pages rubber-band at Today and Settings (#683).
 - The deck validator ends a failing run with an `Errors:` section repeating every error (cross-file ones, and each file's with its file), so CI's log shows them at its tail; a passing run is unchanged.
@@ -33,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Perso-Arabic letters, such as the three dots of پ, no longer overlap the reading under them in the word sheet and sit centred in their rows: a script that runs right to left (Hindustani's Perso-Arabic as well as Urdu) gets the tall line height with its extra space shared evenly above and below, wherever it is drawn (#762).
 - CI: the deck tools' tests no longer fail on every deck pull request for a stale `decks/index.json`; the test that validates the real decks skips the index check, which is regenerated on main after merge and still tested on its own.
 - A read-aloud question in the placement check no longer ends the moment the phone's recogniser hears nothing: it says it did not hear, and lets the learner speak again or say they don't know, as the speaking drill does.
 - A one-word label on a number tile, such as "Remembered" on Progress, shrinks to fit at large text instead of breaking mid-word (#492).

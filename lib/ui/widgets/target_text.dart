@@ -13,12 +13,15 @@ import 'drill_frame.dart';
 /// Every piece of target-language text goes through this, because it gets
 /// three things right in one place:
 ///
-/// - **Direction** from the deck ([LanguageInfo.rtl]), not from the
-///   interface language: an Urdu card is right to left in an English app.
+/// - **Direction** from the deck ([LanguageInfo.rightToLeft]), not from the
+///   interface language: an Urdu card is right to left in an English app,
+///   and so is Hindustani in its Perso-Arabic script.
 /// - **Locale** from the deck's language code, so a character shared between
 ///   scripts takes the right regional form.
 /// - **Line height** of 1.9 for right-to-left scripts, whose Nastaliq forms
-///   climb and descend far more than Latin, and 1.25 otherwise.
+///   climb and descend far more than Latin, shared evenly above and below
+///   so that the glyphs sit in the middle of their line (#762), and 1.25
+///   otherwise.
 /// - **Font** of the script, once the course's font is downloaded and loaded
 ///   (ADR-0042): phones often draw Indic and Nastaliq text wrongly or lack
 ///   the script. Until then, or without one, the phone's own font.
@@ -200,7 +203,9 @@ class TargetText extends StatelessWidget {
       shown,
       semanticsLabel: shown == text ? null : text,
       textAlign: textAlign,
-      textDirection: language.rtl ? TextDirection.rtl : TextDirection.ltr,
+      textDirection: language.rightToLeft
+          ? TextDirection.rtl
+          : TextDirection.ltr,
       locale: targetLocale(language),
       style: TextStyle(
         fontSize: size,
@@ -208,7 +213,12 @@ class TargetText extends StatelessWidget {
         fontFamily: family,
         fontVariations: _variations(family, fontWeight),
         color: color,
-        height: language.rtl ? TargetSizes.rtlHeight : TargetSizes.ltrHeight,
+        height: language.rightToLeft
+            ? TargetSizes.rtlHeight
+            : TargetSizes.ltrHeight,
+        leadingDistribution: language.rightToLeft
+            ? TextLeadingDistribution.even
+            : null,
       ),
     );
   }
@@ -244,7 +254,9 @@ class TargetText extends StatelessWidget {
         ),
         locale: targetLocale(language),
       ),
-      textDirection: language.rtl ? TextDirection.rtl : TextDirection.ltr,
+      textDirection: language.rightToLeft
+          ? TextDirection.rtl
+          : TextDirection.ltr,
       textScaler: MediaQuery.textScalerOf(context),
       maxLines: 1,
     )..layout();
