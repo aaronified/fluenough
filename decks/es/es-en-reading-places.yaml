@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-places"
+name: "Reading: walking through town"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about places in town: a neighbour's walk and the signs along a street. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-walk-to-the-market"
+    title: "Walk to the market"
+    theme: "places"
+    sentences:
+      - text: "Aquí está la farmacia."
+      - text: "El banco está cerca de la iglesia."
+      - text: "El mercado está en la plaza."
+      - text: "El colegio está lejos."
+    questions:
+      - id: "es-0796"
+        prompt: { en: "Where is the pharmacy?" }
+        options:
+          - { en: "Here" }
+          - { en: "Far away" }
+          - { en: "At the school" }
+        answer: 0
+      - id: "es-0797"
+        prompt: { en: "What is near the church?" }
+        options:
+          - { en: "The bank" }
+          - { en: "The school" }
+          - { en: "The museum" }
+        answer: 0
+      - id: "es-0798"
+        prompt: { en: "Where is the market?" }
+        options:
+          - { en: "In the square" }
+          - { en: "At the bank" }
+          - { en: "At the school" }
+        answer: 0
+  - id: "es-street-signs"
+    title: "Street signs"
+    theme: "places"
+    sentences:
+      - text: "Parque: a la derecha."
+      - text: "Museo: cerca."
+      - text: "Banco: aquí."
+      - text: "Teatro: en la plaza."
+    questions:
+      - id: "es-0799"
+        prompt: { en: "Where is the park?" }
+        options:
+          - { en: "On the right" }
+          - { en: "On the left" }
+          - { en: "Far away" }
+        answer: 0
+      - id: "es-0800"
+        prompt: { en: "What is near?" }
+        options:
+          - { en: "The museum" }
+          - { en: "The theatre" }
+          - { en: "The school" }
+        answer: 0
+      - id: "es-0801"
+        prompt: { en: "Where is the theatre?" }
+        options:
+          - { en: "In the square" }
+          - { en: "Near the park" }
+          - { en: "At the bank" }
+        answer: 0

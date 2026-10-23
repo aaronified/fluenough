@@ -1,0 +1,237 @@
+schema: 1
+id: "es-en-places"
+kind: "layer"
+core: "es-places"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Places"
+license: "CC-BY-SA-4.0"
+description: "Places in town: the hotel, the bank, the pharmacy, the hospital, the school, the church, the museum, the park, the cinema and the library, with the verbs to visit, to enter and to close. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-0769":
+    native: "hotel"
+    notes: { n1: "Hotel is a hotel, where you sleep when you travel." }
+    bases: {"el": "the", "hotel": "hotel"}
+    examples:
+      "El hotel está en una calle grande.":
+        native: "The hotel is on a big street."
+        bases: {"El": "the", "hotel": "hotel", "en": "in", "una": "a"}
+      "Mi tía trabaja en un hotel.":
+        native: "My aunt works in a hotel."
+        bases: {"en": "in", "un": "a", "hotel": "hotel"}
+  "es-0770":
+    native: "bank"
+    notes: { n1: "Banco is a bank, the place for money. It also means a bench." }
+    bases: {"el": "the", "banco": "bank"}
+    examples:
+      "El banco está cerca.":
+        native: "The bank is near."
+        bases: {"El": "the", "banco": "bank"}
+      "Mi hermana trabaja en el banco.":
+        native: "My sister works at the bank."
+        bases: {"en": "in", "el": "the", "banco": "bank"}
+  "es-0771":
+    native: "pharmacy"
+    notes: { n1: "Farmacia is a pharmacy, where you buy medicine." }
+    bases: {"la": "the", "farmacia": "pharmacy"}
+    examples:
+      "La farmacia está cerca del banco.":
+        native: "The pharmacy is near the bank."
+        bases: {"La": "the", "farmacia": "pharmacy", "del": "of the"}
+      "Una farmacia está en la calle grande.":
+        native: "A pharmacy is on the big street."
+        bases: {"Una": "a", "farmacia": "pharmacy", "en": "in", "la": "the"}
+  "es-0772":
+    native: "hospital"
+    notes: { n1: "Hospital is a hospital, a larger place for medical care." }
+    bases: {"el": "the", "hospital": "hospital"}
+    examples:
+      "El hospital es grande.":
+        native: "The hospital is big."
+        bases: {"El": "the", "hospital": "hospital"}
+      "Mi madre trabaja en el hospital.":
+        native: "My mother works at the hospital."
+        bases: {"en": "in", "el": "the", "hospital": "hospital"}
+  "es-0773":
+    native: "school"
+    notes: { n1: "Colegio is a school for children." }
+    bases: {"el": "the", "colegio": "school"}
+    examples:
+      "El colegio está lejos.":
+        native: "The school is far."
+        bases: {"El": "the", "colegio": "school"}
+      "Mi hijo va al colegio.":
+        native: "My son goes to school."
+        bases: {"al": "to the", "colegio": "school"}
+  "es-0774":
+    native: "church"
+    notes: { n1: "Iglesia is a church." }
+    bases: {"la": "the", "iglesia": "church"}
+    examples:
+      "La iglesia es vieja.":
+        native: "The church is old."
+        bases: {"La": "the", "iglesia": "church"}
+      "Una iglesia está en la plaza.":
+        native: "A church is in the square."
+        bases: {"Una": "a", "iglesia": "church", "en": "in", "la": "the"}
+  "es-0775":
+    native: "cathedral"
+    notes: { n1: "Catedral is a cathedral, a large church." }
+    bases: {"la": "the", "catedral": "cathedral"}
+    examples:
+      "La catedral es grande.":
+        native: "The cathedral is big."
+        bases: {"La": "the", "catedral": "cathedral"}
+      "Visito la catedral.":
+        native: "I visit the cathedral."
+        bases: {"la": "the", "catedral": "cathedral"}
+  "es-0776":
+    native: "museum"
+    notes: { n1: "Museo is a museum." }
+    bases: {"el": "the", "museo": "museum"}
+    examples:
+      "El museo es bonito.":
+        native: "The museum is nice."
+        bases: {"El": "the", "museo": "museum"}
+      "El museo está cerca.":
+        native: "The museum is near."
+        bases: {"El": "the", "museo": "museum"}
+  "es-0777":
+    native: "park"
+    notes: { n1: "Parque is a park." }
+    bases: {"el": "the", "parque": "park"}
+    examples:
+      "El parque es grande.":
+        native: "The park is big."
+        bases: {"El": "the", "parque": "park"}
+      "Hay un parque cerca.":
+        native: "There is a park nearby."
+        bases: {"Hay": "there is", "un": "a", "parque": "park"}
+  "es-0778":
+    native: "restaurant"
+    notes: { n1: "Restaurante is a restaurant, where you eat out." }
+    bases: {"el": "the", "restaurante": "restaurant"}
+    examples:
+      "El restaurante es bueno.":
+        native: "The restaurant is good."
+        bases: {"El": "the", "restaurante": "restaurant"}
+      "Como en el restaurante.":
+        native: "I eat in the restaurant."
+        bases: {"en": "in", "el": "the", "restaurante": "restaurant"}
+  "es-0779":
+    native: "cinema"
+    notes: { n1: "Cine is a cinema, and also the films." }
+    bases: {"el": "the", "cine": "cinema"}
+    examples:
+      "El cine está en la plaza.":
+        native: "The cinema is in the square."
+        bases: {"El": "the", "cine": "cinema", "en": "in", "la": "the"}
+      "Voy al cine.":
+        native: "I go to the cinema."
+        bases: {"al": "to the", "cine": "cinema"}
+  "es-0780":
+    native: "theatre"
+    notes: { n1: "Teatro is a theatre, for plays." }
+    bases: {"el": "the", "teatro": "theatre"}
+    examples:
+      "El teatro es grande.":
+        native: "The theatre is big."
+        bases: {"El": "the", "teatro": "theatre"}
+      "Hay un teatro en la ciudad.":
+        native: "There is a theatre in the city."
+        bases: {"Hay": "there is", "un": "a", "teatro": "theatre", "en": "in", "la": "the"}
+  "es-0781":
+    native: "library"
+    notes: { n1: "Biblioteca is a library, for books." }
+    bases: {"la": "the", "biblioteca": "library"}
+    examples:
+      "La biblioteca es tranquila.":
+        native: "The library is quiet."
+        bases: {"La": "the", "biblioteca": "library"}
+      "Estudio en la biblioteca.":
+        native: "I study in the library."
+        bases: {"en": "in", "la": "the", "biblioteca": "library"}
+  "es-0782":
+    native: "square"
+    notes: { n1: "Plaza is a square, an open space in a town." }
+    bases: {"la": "the", "plaza": "square"}
+    examples:
+      "La plaza es bonita.":
+        native: "The square is nice."
+        bases: {"La": "the", "plaza": "square"}
+      "La plaza está cerca.":
+        native: "The square is near."
+        bases: {"La": "the", "plaza": "square"}
+  "es-0783":
+    native: "village; small town"
+    notes: { n1: "Pueblo is a village, or a small town." }
+    bases: {"el": "the", "pueblo": "village"}
+    examples:
+      "El pueblo es pequeño.":
+        native: "The village is small."
+        bases: {"El": "the", "pueblo": "village"}
+      "Vivo en un pueblo.":
+        native: "I live in a village."
+        bases: {"en": "in", "un": "a", "pueblo": "village"}
+  "es-0784":
+    native: "beach"
+    notes: { n1: "Playa is a beach." }
+    bases: {"la": "the", "playa": "beach"}
+    examples:
+      "La playa es bonita.":
+        native: "The beach is nice."
+        bases: {"La": "the", "playa": "beach"}
+      "Voy a la playa.":
+        native: "I go to the beach."
+        bases: {"a": "to", "la": "the", "playa": "beach"}
+  "es-0785":
+    native: "university"
+    notes: { n1: "Universidad is a university." }
+    bases: {"la": "the", "universidad": "university"}
+    examples:
+      "La universidad está lejos.":
+        native: "The university is far."
+        bases: {"La": "the", "universidad": "university"}
+      "Estudio en la universidad.":
+        native: "I study at the university."
+        bases: {"en": "in", "la": "the", "universidad": "university"}
+  "es-0786":
+    native: "building"
+    notes: { n1: "Edificio is a building." }
+    bases: {"el": "the", "edificio": "building"}
+    examples:
+      "El edificio es alto.":
+        native: "The building is tall."
+        bases: {"El": "the", "edificio": "building"}
+      "El edificio está cerca.":
+        native: "The building is near."
+        bases: {"El": "the", "edificio": "building"}
+  "es-0787":
+    native: "to visit"
+    notes: { n1: "Visitar is to visit a place or a person. It is a regular -ar verb." }
+    examples:
+      "Visito la catedral.":
+        native: "I visit the cathedral."
+        bases: {"Visito": "visit", "la": "the"}
+      "Visitamos el museo.":
+        native: "We visit the museum."
+        bases: {"Visitamos": "visit", "el": "the"}
+  "es-0788":
+    native: "to enter"
+    notes: { n1: "Entrar is to go in. The opposite is salir." }
+    examples:
+      "Entro en el banco.":
+        native: "I go into the bank."
+        bases: {"Entro": "enter", "en": "in", "el": "the"}
+      "Entramos en el cine.":
+        native: "We go into the cinema."
+        bases: {"Entramos": "enter", "en": "in", "el": "the"}
+  "es-0789":
+    native: "to close"
+    notes: { n1: "Cerrar is to close. Its stem changes: cierro, cierras, cierra, cierran. The opposite is abrir." }
+    examples:
+      "El banco cierra a las cinco.":
+        native: "The bank closes at five."
+        bases: {"El": "the", "cierra": "close", "a": "to", "las": "the"}
+      "Cerramos la tienda.":
+        native: "We close the shop."
+        bases: {"Cerramos": "close", "la": "the"}

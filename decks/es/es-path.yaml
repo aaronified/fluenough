@@ -134,11 +134,8 @@ units:
     words: 18
   - decks: ["es-body", "es-body-sentences", "es-reading-body", "*"]
     words: 21
-  - planned: { id: "es-places", theme: "places", words: 45 }
-    listening_passages:
-      - { id: "walk-to-the-market", text: { "en": "A neighbour names the places you pass on the way to the market" } }
-    reading_passages:
-      - { id: "street-signs", text: { "en": "Signs along a street: pharmacy, school, bank, church" } }
+  - decks: ["es-places", "es-places-sentences", "es-reading-places", "*"]
+    words: 21
   - planned: { id: "es-home", theme: "home", words: 45 }
     listening_passages:
       - { id: "a-flat-tour", text: { "en": "A tour of a flat, room by room" } }
