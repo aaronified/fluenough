@@ -132,11 +132,8 @@ units:
     words: 20
   - decks: ["es-directions", "es-directions-sentences", "es-reading-directions", "*"]
     words: 18
-  - planned: { id: "es-body", theme: "body", words: 35 }
-    listening_passages:
-      - { id: "at-the-doctors", text: { "en": "Telling a doctor where it hurts" } }
-    reading_passages:
-      - { id: "stretching-chart", text: { "en": "A chart of simple morning stretches" } }
+  - decks: ["es-body", "es-body-sentences", "es-reading-body", "*"]
+    words: 21
   - planned: { id: "es-places", theme: "places", words: 45 }
     listening_passages:
       - { id: "walk-to-the-market", text: { "en": "A neighbour names the places you pass on the way to the market" } }

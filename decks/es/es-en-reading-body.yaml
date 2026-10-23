@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-body"
+name: "Reading: at the doctor's and a stretch chart"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about the body: a short talk at the doctor's and a chart of stretches. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-at-the-doctors"
+    title: "At the doctor's"
+    theme: "body"
+    sentences:
+      - text: "Me duele la garganta."
+      - text: "Tengo la nariz fría."
+      - text: "Me duele la espalda."
+      - text: "Respiro bien."
+    questions:
+      - id: "es-0763"
+        prompt: { en: "Which part hurts first?" }
+        options:
+          - { en: "The throat" }
+          - { en: "The knee" }
+          - { en: "The foot" }
+        answer: 0
+      - id: "es-0764"
+        prompt: { en: "What is cold?" }
+        options:
+          - { en: "The nose" }
+          - { en: "The ear" }
+          - { en: "The hand" }
+        answer: 0
+      - id: "es-0765"
+        prompt: { en: "How does the patient breathe now?" }
+        options:
+          - { en: "Well" }
+          - { en: "With difficulty" }
+          - { en: "Not at all" }
+        answer: 0
+  - id: "es-stretching-chart"
+    title: "Stretching chart"
+    theme: "body"
+    sentences:
+      - text: "Estiro el brazo."
+      - text: "Estiro las piernas."
+      - text: "Respiro con la nariz."
+      - text: "Tengo los ojos cansados."
+    questions:
+      - id: "es-0766"
+        prompt: { en: "What do you stretch first?" }
+        options:
+          - { en: "The arm" }
+          - { en: "The leg" }
+          - { en: "The eye" }
+        answer: 0
+      - id: "es-0767"
+        prompt: { en: "What are tired?" }
+        options:
+          - { en: "The eyes" }
+          - { en: "The legs" }
+          - { en: "The hands" }
+        answer: 0
+      - id: "es-0768"
+        prompt: { en: "How do you breathe?" }
+        options:
+          - { en: "Through the nose" }
+          - { en: "Through the ears" }
+          - { en: "Through the knees" }
+        answer: 0
