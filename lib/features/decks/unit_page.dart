@@ -39,10 +39,10 @@ import 'word_sheet.dart';
 /// unit teaches them, and its decks. "Continue" reviews what is due in it,
 /// or else teaches its next words.
 ///
-/// Rules and sentences are as far as today's decks give them: a rule is a
-/// grammar or rules deck's table, and a sentence opens when a lesson
-/// teaches it. The B1 format's rule cards and unlocking
-/// (`words-rules-sentences.md`) change what they count, not this screen.
+/// The phrasebook is listed first, never held back. A rule is a grammar or
+/// rules deck's table; a sentence is open once it was taught or every word
+/// and rule in it is known ([Unlocks.isOffered], ADR-0045), and until then it
+/// is greyed with what it waits for, and a tap says why.
 ///
 /// Review, at the top end, is for speakers who check decks: with "Review
 /// decks" on in Settings it opens the unit's review (`ReviewPage`), and
