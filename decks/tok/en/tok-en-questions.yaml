@@ -1,0 +1,44 @@
+schema: 1
+id: "tok-en-questions"
+kind: "layer"
+core: "tok-questions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Questions"
+description: "Four words to ask and answer with: seme (what), anu (or), lon (to be here or there, true, yes) and a (an exclamation of feeling). Not yet checked by a Toki Pona speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "tok-0044":
+    native: "what; which"
+    notes:
+      "question": "The question word. It stands where the answer would go, so a question keeps the order of a statement: sina wile e seme? is What do you want?"
+      "place": "Seme takes the place of the thing you do not know, so no other word is needed to ask."
+    examples:
+      "sina wile e seme?": "What do you want?"
+      "mi sona ala e seme.": "I don't know what."
+  "tok-0045":
+    native: "or"
+    notes:
+      "choice": "Between two words, it offers a choice: pan anu ko? is Bread or paste?"
+      "question": "After a word, anu ala asks whether it is so: sina pona anu ala? is Are you well, or not?"
+    examples:
+      "pan anu ko?": "Bread or paste?"
+      "sina pona anu ala?": "Are you well, or not?"
+  "tok-0046":
+    native: "to be at or in a place; to be true; yes"
+    notes:
+      "true": "ni li lon means This is true. As an answer on its own it means yes, and it can mean exists."
+      "place": "With ni (this), mi lon ni means I am here. With a place, it means being at or in that place."
+    antonyms:
+      "weka": "gone; away; not there"
+    examples:
+      "ni li lon.": "This is true."
+      "mi lon ni.": "I am here."
+  "tok-0047":
+    native: "ah!; oh!; how!"
+    notes:
+      "feeling": "An exclamation: it shows surprise, joy or strong feeling. It has no exact English word, so it is translated by the feeling in the sentence."
+      "after": "It comes after the word it stresses: pona a! is How good!"
+    examples:
+      "pona a!": "How good!"
+      "sina toki pona a!": "Wow, you speak Toki Pona!"
