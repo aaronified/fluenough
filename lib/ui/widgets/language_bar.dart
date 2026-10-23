@@ -82,11 +82,12 @@ class _LanguageBarFrameState extends State<LanguageBarFrame> {
 ///   one holds the All button, elsewhere it stays empty so that nothing
 ///   moves between the tabs; the bug report button is the right one.
 /// * The selection is a pill fixed at the centre and the languages' glyphs
-///   pass it, drawn as a wheel seen edge on: a glyph [detent] times its
-///   offset round a wheel of [radius] sits at the sine of that angle, and is
-///   smaller and fainter the further it is. Both ends fade out. There are
-///   no ends to the wheel: past the last language comes the first, and a
-///   few languages repeat round it.
+///   pass it, one every [detent] dp, each smaller and fainter the further
+///   it is from the centre, whether the wheel moves or rests. Both ends
+///   fade out, and nothing is drawn past the wheel's own width, so that
+///   nothing reaches the bug button. There are no ends to the wheel: past
+///   the last language comes the first, and a few languages repeat round
+///   it. At launch the pill is already grown to the name.
 /// * A finger moves the wheel 1:1, a long drag passes many languages. Each
 ///   language is a detent, with a tick (`HapticFeedback.selectionClick`),
 ///   in a drag and in a fling.
@@ -125,11 +126,15 @@ class LanguageBar extends StatefulWidget {
   /// The distance between two languages on the wheel, in dp.
   static const double detent = 44;
 
-  /// The wheel's radius, in dp (owner's mockup).
-  static const double radius = 150;
+  /// How far from the centre, in detents, a glyph has fallen to its
+  /// smallest and faintest (owner, 2026-10-23: "The further the glyphs are
+  /// the fader and smaller they should have been").
+  static const double falloff = 3;
 
-  /// How far from the centre a glyph is still drawn, in detents.
-  static const double visible = 4.9;
+  /// A glyph at [falloff] detents or more is this much of its size, and of
+  /// its opacity.
+  static const double farScale = 0.55;
+  static const double farOpacity = 0.2;
 
   /// The settle spring (owner, 2026-10-21).
   static const double dampingRatio = 0.4;
@@ -345,7 +350,7 @@ class _LanguageBarState extends State<LanguageBar>
   }
 
   /// Starts the pill growing to the name of the language at [i].
-  void _grownTo(List<LanguageInfo> choices, int i) {
+  void _grownTo(List<LanguageInfo> choices, int i, {bool animate = true}) {
     if (i >= choices.length) return;
     final theme = Theme.of(context);
     final scaler = MediaQuery.textScalerOf(context);
@@ -379,7 +384,7 @@ class _LanguageBarState extends State<LanguageBar>
     _push = (_fullWidth - LanguageBar.pillWidth) / 2;
     _expanded = true;
     _hideLabel();
-    if (_still) {
+    if (_still || !animate) {
       _grow.value = 1;
     } else {
       _grow.forward();
@@ -418,10 +423,16 @@ class _LanguageBarState extends State<LanguageBar>
   });
 
   /// The wheel is at rest, and its pill grows to the name again.
-  void _regrow() {
+  void _regrow({bool animate = true}) {
     if (_pos == null || _busy) return;
     final choices = AppScope.read(context).languageChoices;
-    _grownTo(choices, _mod(_pos!.round()));
+    _grownTo(choices, _mod(_pos!.round()), animate: animate);
+  }
+
+  /// At launch, and when the languages change, the pill is already grown.
+  void _growAtLaunch() {
+    if (!mounted || _busy || _expanded) return;
+    _regrow(animate: false);
   }
 
   void _dragStart(DragStartDetails _) {
@@ -548,21 +559,26 @@ class _LanguageBarState extends State<LanguageBar>
     List<DeckEntry> decks,
     ColorScheme scheme,
     TextTheme text,
+    double half,
   ) {
     final pos = _pos!;
     final centre = pos.round();
     final dir = _dir;
-    const step = LanguageBar.detent / LanguageBar.radius;
     final out = <Widget>[];
-    for (var k = centre - 5; k <= centre + 5; k++) {
+    for (var k = centre - 8; k <= centre + 8; k++) {
       final d = k - pos;
-      if (d.abs() > LanguageBar.visible) continue;
       if (_count == 1 && k != centre) continue;
       final language = choices[_mod(k)];
-      final theta = d * step;
-      final c = math.cos(theta);
       final pushed = d.abs() > 0.5 ? d.sign * _push * _growAmount : 0.0;
-      final x = (LanguageBar.radius * math.sin(theta) + pushed) * dir;
+      // An even grid: a detent apart, the pill's growth pushing both sides
+      // out alike.
+      final offset = d * LanguageBar.detent + pushed;
+      final t = math.min(1.0, d.abs() / LanguageBar.falloff);
+      final scale = 1 - (1 - LanguageBar.farScale) * t;
+      // Nothing is drawn past the wheel's own width.
+      if (offset.abs() + LanguageBar.detent / 2 * scale > half) continue;
+      final x = offset * dir;
+      final opacity = 1 - (1 - LanguageBar.farOpacity) * t;
       final hidden = _expanded && k == centre;
       out.add(
         Align(
@@ -570,10 +586,11 @@ class _LanguageBarState extends State<LanguageBar>
           child: Transform.translate(
             offset: Offset(x, 0),
             child: Transform.scale(
-              scale: 0.65 + 0.35 * c,
+              scale: scale,
               child: Opacity(
-                opacity: hidden ? 0 : 0.35 + 0.65 * c,
+                opacity: hidden ? 0 : opacity,
                 child: SizedBox(
+                  key: ValueKey<String>('language-bar-glyph-$k'),
                   width: LanguageBar.detent,
                   height: 32,
                   child: Center(
@@ -703,6 +720,7 @@ class _LanguageBarState extends State<LanguageBar>
         _caught = false;
         _expanded = false;
         _grow.value = 0;
+        WidgetsBinding.instance.addPostFrameCallback((_) => _growAtLaunch());
       } else if (!_busy && _mod(_pos!.round()) != at) {
         final count = _count;
         WidgetsBinding.instance.addPostFrameCallback((_) => _follow(at, count));
@@ -718,14 +736,24 @@ class _LanguageBarState extends State<LanguageBar>
       final previous = n > 1 ? choices[(at - 1 + n) % n] : null;
       final here = choices[_mod(_pos!.round())];
       final glyph = languageGlyph(here, state.decks);
-      Widget wheel = SizedBox(
-        height: 48,
-        child: Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
-            _pill(theme, here, glyph, allOn),
-            ..._glyphs(choices, state.decks, scheme, theme.textTheme),
-          ],
+      Widget wheel = LayoutBuilder(
+        builder: (context, box) => SizedBox(
+          height: 48,
+          child: ClipRect(
+            child: Stack(
+              alignment: Alignment.center,
+              children: <Widget>[
+                _pill(theme, here, glyph, allOn),
+                ..._glyphs(
+                  choices,
+                  state.decks,
+                  scheme,
+                  theme.textTheme,
+                  box.maxWidth / 2,
+                ),
+              ],
+            ),
+          ),
         ),
       );
       // Both ends fade out, as if the wheel turned away out of sight.
