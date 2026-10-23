@@ -322,11 +322,14 @@ units:
     words: 0
   - decks: ["bn-eating-out", "*"]
     words: 9
-  - planned: { id: "bn-cooking", theme: "cooking", words: 50 }
+  - decks: ["bn-cooking", "bn-cooking-sentences", "*"]
+    words: 50
     listening_passages:
       - { id: "fish-curry-aloud", text: { "en": "A grandmother says how she cooks a fish curry" } }
     reading_passages:
       - { id: "recipe-card", text: { "en": "A recipe card with its steps" } }
+  - decks: ["bn-reading-cooking"]
+    words: 0
   - planned: { id: "bn-grammar-comparison", grammar: "comparison" }
     listening_passages:
       - { id: "which-is-better", text: { "en": "Two friends compare two phones" } }

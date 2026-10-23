@@ -1,0 +1,99 @@
+"schema": 1
+"id": "bn-en-reading-cooking"
+"name": "Reading: cooking"
+"kind": "reading"
+"language":
+  "code": "bn"
+  "iso639_3": "ben"
+  "name": "Bengali"
+  "script": "bengali"
+  "tts": "bn-IN"
+  "icon": "বা"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for the Fluenough Bengali course"
+"description": "A grandmother's fish curry said aloud, and a recipe card, each with its questions. Not yet checked by a Bengali speaker: please report any mistake."
+"tags":
+- "reading"
+- "unreviewed"
+"passages":
+- "id": "bn-fish-curry-aloud"
+  "title": "A grandmother's fish curry"
+  "theme": "cooking"
+  "sentences":
+  - "text": "আজ আমি মাছ রাঁধব।"
+    "reading": "āj āmi māch rām̐dhob."
+    "ipa": "adʒ ami matʃʰ rãd̪ʱob"
+  - "text": "প্রথমে পেঁয়াজ আর রসুন কাটব।"
+    "reading": "prôthome pem̐yāj ār rosun kāṭob."
+    "ipa": "prɔt̪ʰome pẽjadʒ ar rosun kaʈob"
+  - "text": "তেলে ফোড়ন দিন।"
+    "reading": "tele phoṛon din."
+    "ipa": "t̪ele pʰoɽon d̪in"
+  - "text": "জল দিয়ে সেদ্ধ করুন।"
+    "reading": "jôl diye seddh korun."
+    "ipa": "dʒɔl d̪ije sed̪d̪ʱ korun"
+  "questions":
+  - "id": "bn-1873"
+    "prompt":
+      "en": "The speaker will cook fish today."
+    "answer": true
+  - "id": "bn-1874"
+    "prompt":
+      "en": "Which two things are chopped first?"
+    "options":
+    - "en": "Onion and garlic"
+    - "en": "Fish and rice"
+    - "en": "Coriander and salt"
+    "answer": 1
+  - "id": "bn-1875"
+    "prompt":
+      "en": "What goes into the oil?"
+    "options":
+    - "en": "The tempering"
+    - "en": "The lid"
+    - "en": "The strainer"
+    "answer": 1
+- "id": "bn-recipe-card"
+  "title": "A recipe card"
+  "theme": "cooking"
+  "sentences":
+  - "text": "উপকরণ: ডাল, পেঁয়াজ, রসুন, নুন, হলুদ।"
+    "reading": "upokoron: ḍāl, pem̐yāj, rosun, nun, holud."
+    "ipa": "upokoron ɖal pẽjadʒ rosun nun ɦolud̪"
+  - "text": "ডালটা ভালো করে ধুয়ে নিন।"
+    "reading": "ḍāloṭā bhālo kôre dhuye nin."
+    "ipa": "ɖaloʈa bʱalo kɔre d̪ʱuje nin"
+  - "text": "প্রথম ধাপে তেলে ফোড়ন দিন।"
+    "reading": "prôthom dhāpe tele phoṛon din."
+    "ipa": "prɔt̪ʰom d̪ʱape t̪ele pʰoɽon d̪in"
+  - "text": "তারপর ডাল দিয়ে ফোটান।"
+    "reading": "tāropor ḍāl diye phoṭān."
+    "ipa": "t̪aropor ɖal d̪ije pʰoʈan"
+  - "text": "শেষে ধনেপাতা ছড়িয়ে দিন।"
+    "reading": "śeśe dhônepātā choṛiye din."
+    "ipa": "ʃeʃe d̪ʱɔnepat̪a tʃʰoɽije d̪in"
+  "questions":
+  - "id": "bn-1876"
+    "prompt":
+      "en": "The dal is washed before it is cooked."
+    "answer": true
+  - "id": "bn-1877"
+    "prompt":
+      "en": "What is the first cooking step after the washing?"
+    "options":
+    - "en": "Add the tempering to the oil"
+    - "en": "Sprinkle the coriander"
+    - "en": "Strain the water"
+    "answer": 1
+  - "id": "bn-1878"
+    "prompt":
+      "en": "What is sprinkled at the end?"
+    "options":
+    - "en": "Coriander leaves"
+    - "en": "Salt"
+    - "en": "Turmeric"
+    "answer": 1
