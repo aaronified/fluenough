@@ -124,11 +124,8 @@ units:
     words: 17
   - decks: ["es-market", "es-market-sentences", "es-reading-market", "*"]
     words: 22
-  - planned: { id: "es-groceries", theme: "groceries", words: 45 }
-    listening_passages:
-      - { id: "shopping-list-aloud", text: { "en": "Two people go through a shopping list" } }
-    reading_passages:
-      - { id: "shopping-list", text: { "en": "A handwritten shopping list" } }
+  - decks: ["es-groceries", "es-groceries-sentences", "es-reading-groceries", "*"]
+    words: 24
   - planned: { id: "es-food", theme: "food", words: 60 }
     listening_passages:
       - { id: "ordering-a-meal", text: { "en": "Choosing dishes from a menu" } }

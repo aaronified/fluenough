@@ -1,0 +1,343 @@
+schema: 1
+id: "es-groceries"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "groceries"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-0601"
+    target: "el supermercado"
+    ipa: "el supeɾmeɾˈkado"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "supermercado", base: "supermercado" }]
+    examples:
+      - target: "El supermercado está en la calle grande."
+        ipa: "el supeɾmeɾˈkado esˈta en la ˈkaʝe ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "supermercado", base: "supermercado" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "calle", ref: "es-0017" }, { word: "grande", ref: "es-0031" }]
+      - target: "Compro leche en el supermercado."
+        ipa: "ˈkompɾo ˈletʃe en el supeɾmeɾˈkado"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "leche", ref: "es-0014" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "supermercado", base: "supermercado" }]
+  - id: "es-0602"
+    target: "la lista"
+    ipa: "la ˈlista"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "lista", base: "lista" }]
+    examples:
+      - target: "Tengo una lista."
+        ipa: "ˈtenɡo ˈuna ˈlista"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "lista", base: "lista" }]
+      - target: "La lista es larga."
+        ipa: "la ˈlista es ˈlaɾɡa"
+        bases: [{ word: "La", base: "la" }, { word: "lista", base: "lista" }, { word: "es", ref: "es-0022" }, { word: "larga", ref: "es-0429" }]
+  - id: "es-0603"
+    target: "el queso"
+    ipa: "el ˈkeso"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "queso", base: "queso" }]
+    examples:
+      - target: "Compro queso y leche."
+        ipa: "ˈkompɾo ˈkeso i ˈletʃe"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "queso", base: "queso" }, { word: "y", ref: "es-0048" }, { word: "leche", ref: "es-0014" }]
+      - target: "El queso es caro."
+        ipa: "el ˈkeso es ˈkaɾo"
+        bases: [{ word: "El", base: "el" }, { word: "queso", base: "queso" }, { word: "es", ref: "es-0022" }, { word: "caro", ref: "es-0412" }]
+  - id: "es-0604"
+    target: "el huevo"
+    ipa: "el ˈwebo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "huevo", base: "huevo" }]
+    examples:
+      - target: "Compro una docena de huevos."
+        ipa: "ˈkompɾo ˈuna doˈθena de ˈwebos"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "una", base: "una" }, { word: "docena", ref: "es-0374" }, { word: "de", base: "de" }, { word: "huevos", base: "huevo" }]
+      - target: "Los huevos son baratos."
+        ipa: "los ˈwebos son baˈɾatos"
+        bases: [{ word: "Los", base: "los" }, { word: "huevos", base: "huevo" }, { word: "son", ref: "es-0022" }, { word: "baratos", ref: "es-0411" }]
+  - id: "es-0605"
+    target: "el arroz"
+    ipa: "el aˈroθ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "arroz", base: "arroz" }]
+    examples:
+      - target: "Compro arroz."
+        ipa: "ˈkompɾo aˈroθ"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "arroz", base: "arroz" }]
+      - target: "El arroz es barato."
+        ipa: "el aˈroθ es baˈɾato"
+        bases: [{ word: "El", base: "el" }, { word: "arroz", base: "arroz" }, { word: "es", ref: "es-0022" }, { word: "barato", ref: "es-0411" }]
+  - id: "es-0606"
+    target: "el azúcar"
+    ipa: "el aˈθukaɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "azúcar", base: "azúcar" }]
+    examples:
+      - target: "Necesito azúcar."
+        ipa: "neθeˈsito aˈθukaɾ"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "azúcar", base: "azúcar" }]
+      - target: "El azúcar cuesta poco."
+        ipa: "el aˈθukaɾ ˈkwesta ˈpoko"
+        bases: [{ word: "El", base: "el" }, { word: "azúcar", base: "azúcar" }, { word: "cuesta", ref: "es-0587" }, { word: "poco", ref: "es-0358" }]
+  - id: "es-0607"
+    target: "la sal"
+    ipa: "la sal"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "sal", base: "sal" }]
+    examples:
+      - target: "Necesito sal y pan."
+        ipa: "neθeˈsito sal i pan"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "sal", base: "sal" }, { word: "y", ref: "es-0048" }, { word: "pan", ref: "es-0013" }]
+      - target: "La sal está en una mesa."
+        ipa: "la sal esˈta en ˈuna ˈmesa"
+        bases: [{ word: "La", base: "la" }, { word: "sal", base: "sal" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "mesa", ref: "es-0009" }]
+  - id: "es-0608"
+    target: "el aceite"
+    ipa: "el aˈθejte"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "aceite", base: "aceite" }]
+    examples:
+      - target: "Compro aceite."
+        ipa: "ˈkompɾo aˈθejte"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "aceite", base: "aceite" }]
+      - target: "El aceite está en la mesa."
+        ipa: "el aˈθejte esˈta en la ˈmesa"
+        bases: [{ word: "El", base: "el" }, { word: "aceite", base: "aceite" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }]
+  - id: "es-0609"
+    target: "la mantequilla"
+    ipa: "la manteˈkiʝa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "mantequilla", base: "mantequilla" }]
+    examples:
+      - target: "Compro mantequilla."
+        ipa: "ˈkompɾo manteˈkiʝa"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "mantequilla", base: "mantequilla" }]
+      - target: "La mantequilla es cara."
+        ipa: "la manteˈkiʝa es ˈkaɾa"
+        bases: [{ word: "La", base: "la" }, { word: "mantequilla", base: "mantequilla" }, { word: "es", ref: "es-0022" }, { word: "cara", ref: "es-0412" }]
+  - id: "es-0610"
+    target: "la galleta"
+    ipa: "la ɡaˈʝeta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "galleta", base: "galleta" }]
+    examples:
+      - target: "Compro galletas."
+        ipa: "ˈkompɾo ɡaˈʝetas"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "galletas", base: "galleta" }]
+      - target: "Las galletas son ricas."
+        ipa: "las ɡaˈʝetas son ˈrikas"
+        bases: [{ word: "Las", base: "las" }, { word: "galletas", base: "galleta" }, { word: "son", ref: "es-0022" }, { word: "ricas", ref: "es-0409" }]
+  - id: "es-0611"
+    target: "el café"
+    ipa: "el kaˈfe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "café", base: "café" }]
+    examples:
+      - target: "Bebo café cada día."
+        ipa: "ˈbebo kaˈfe ˈkada ˈdia"
+        bases: [{ word: "Bebo", ref: "es-0029" }, { word: "café", base: "café" }, { word: "cada", ref: "es-0366" }, { word: "día", ref: "es-0019" }]
+      - target: "El café está frío."
+        ipa: "el kaˈfe esˈta ˈfɾio"
+        bases: [{ word: "El", base: "el" }, { word: "café", base: "café" }, { word: "está", ref: "es-0023" }, { word: "frío", ref: "es-0408" }]
+  - id: "es-0612"
+    target: "el té"
+    ipa: "el te"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "té", base: "té" }]
+    examples:
+      - target: "Bebo té con leche."
+        ipa: "ˈbebo te kon ˈletʃe"
+        bases: [{ word: "Bebo", ref: "es-0029" }, { word: "té", base: "té" }, { word: "con", base: "con" }, { word: "leche", ref: "es-0014" }]
+      - target: "El té está caliente."
+        ipa: "el te esˈta kaˈljente"
+        bases: [{ word: "El", base: "el" }, { word: "té", base: "té" }, { word: "está", ref: "es-0023" }, { word: "caliente", ref: "es-0407" }]
+  - id: "es-0613"
+    target: "el zumo"
+    ipa: "el ˈθumo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "zumo", base: "zumo" }]
+    examples:
+      - target: "Compro zumo de naranja."
+        ipa: "ˈkompɾo ˈθumo de naˈɾanxa"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "zumo", base: "zumo" }, { word: "de", base: "de" }, { word: "naranja", ref: "es-0570" }]
+      - target: "El zumo es bueno."
+        ipa: "el ˈθumo es ˈbweno"
+        bases: [{ word: "El", base: "el" }, { word: "zumo", base: "zumo" }, { word: "es", ref: "es-0022" }, { word: "bueno", ref: "es-0033" }]
+  - id: "es-0614"
+    target: "la carne"
+    ipa: "la ˈkaɾne"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "carne", base: "carne" }]
+    examples:
+      - target: "Compro carne."
+        ipa: "ˈkompɾo ˈkaɾne"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "carne", base: "carne" }]
+      - target: "La carne es cara."
+        ipa: "la ˈkaɾne es ˈkaɾa"
+        bases: [{ word: "La", base: "la" }, { word: "carne", base: "carne" }, { word: "es", ref: "es-0022" }, { word: "cara", ref: "es-0412" }]
+  - id: "es-0615"
+    target: "el pollo"
+    ipa: "el ˈpoʝo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "pollo", base: "pollo" }]
+    examples:
+      - target: "Cocino pollo."
+        ipa: "koˈθino ˈpoʝo"
+        bases: [{ word: "Cocino", ref: "es-0284" }, { word: "pollo", base: "pollo" }]
+      - target: "El pollo está caliente."
+        ipa: "el ˈpoʝo esˈta kaˈljente"
+        bases: [{ word: "El", base: "el" }, { word: "pollo", base: "pollo" }, { word: "está", ref: "es-0023" }, { word: "caliente", ref: "es-0407" }]
+  - id: "es-0616"
+    target: "el pescado"
+    ipa: "el pesˈkado"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "pescado", base: "pescado" }]
+    examples:
+      - target: "Compro pescado."
+        ipa: "ˈkompɾo pesˈkado"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "pescado", base: "pescado" }]
+      - target: "El pescado es caro."
+        ipa: "el pesˈkado es ˈkaɾo"
+        bases: [{ word: "El", base: "el" }, { word: "pescado", base: "pescado" }, { word: "es", ref: "es-0022" }, { word: "caro", ref: "es-0412" }]
+  - id: "es-0617"
+    target: "el yogur"
+    ipa: "el ʝoˈɡuɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "yogur", base: "yogur" }]
+    examples:
+      - target: "Compro yogur."
+        ipa: "ˈkompɾo ʝoˈɡuɾ"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "yogur", base: "yogur" }]
+      - target: "El yogur es bueno."
+        ipa: "el ʝoˈɡuɾ es ˈbweno"
+        bases: [{ word: "El", base: "el" }, { word: "yogur", base: "yogur" }, { word: "es", ref: "es-0022" }, { word: "bueno", ref: "es-0033" }]
+  - id: "es-0618"
+    target: "la mermelada"
+    ipa: "la meɾmeˈlada"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "mermelada", base: "mermelada" }]
+    examples:
+      - target: "Compro mermelada."
+        ipa: "ˈkompɾo meɾmeˈlada"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "mermelada", base: "mermelada" }]
+      - target: "La mermelada es buena."
+        ipa: "la meɾmeˈlada es ˈbwena"
+        bases: [{ word: "La", base: "la" }, { word: "mermelada", base: "mermelada" }, { word: "es", ref: "es-0022" }, { word: "buena", ref: "es-0033" }]
+  - id: "es-0619"
+    target: "la harina"
+    ipa: "la aˈɾina"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "harina", base: "harina" }]
+    examples:
+      - target: "Necesito harina."
+        ipa: "neθeˈsito aˈɾina"
+        bases: [{ word: "Necesito", ref: "es-0288" }, { word: "harina", base: "harina" }]
+      - target: "La harina está en una mesa."
+        ipa: "la aˈɾina esˈta en ˈuna ˈmesa"
+        bases: [{ word: "La", base: "la" }, { word: "harina", base: "harina" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "mesa", ref: "es-0009" }]
+  - id: "es-0620"
+    target: "el vino"
+    ipa: "el ˈbino"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "vino", base: "vino" }]
+    examples:
+      - target: "Bebo vino."
+        ipa: "ˈbebo ˈbino"
+        bases: [{ word: "Bebo", ref: "es-0029" }, { word: "vino", base: "vino" }]
+      - target: "El vino es bueno."
+        ipa: "el ˈbino es ˈbweno"
+        bases: [{ word: "El", base: "el" }, { word: "vino", base: "vino" }, { word: "es", ref: "es-0022" }, { word: "bueno", ref: "es-0033" }]
+  - id: "es-0621"
+    target: "la cerveza"
+    ipa: "la θeɾˈbeθa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "cerveza", base: "cerveza" }]
+    examples:
+      - target: "Bebo cerveza."
+        ipa: "ˈbebo θeɾˈbeθa"
+        bases: [{ word: "Bebo", ref: "es-0029" }, { word: "cerveza", base: "cerveza" }]
+      - target: "La cerveza está fría."
+        ipa: "la θeɾˈbeθa esˈta ˈfɾia"
+        bases: [{ word: "La", base: "la" }, { word: "cerveza", base: "cerveza" }, { word: "está", ref: "es-0023" }, { word: "fría", ref: "es-0408" }]
+  - id: "es-0622"
+    target: "el chocolate"
+    ipa: "el tʃokoˈlate"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "chocolate", base: "chocolate" }]
+    examples:
+      - target: "Compro chocolate."
+        ipa: "ˈkompɾo tʃokoˈlate"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "chocolate", base: "chocolate" }]
+      - target: "El chocolate es rico."
+        ipa: "el tʃokoˈlate es ˈriko"
+        bases: [{ word: "El", base: "el" }, { word: "chocolate", base: "chocolate" }, { word: "es", ref: "es-0022" }, { word: "rico", ref: "es-0409" }]
+  - id: "es-0623"
+    target: "llevar"
+    ipa: "ʝeˈbaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Llevo la lista."
+        ipa: "ˈʝebo la ˈlista"
+        bases: [{ word: "Llevo", base: "llevar" }, { word: "la", base: "la" }, { word: "lista", ref: "es-0602" }]
+      - target: "¿Llevas dinero?"
+        ipa: "ˈʝebas diˈneɾo"
+        bases: [{ word: "Llevas", base: "llevar" }, { word: "dinero", ref: "es-0513" }]
+  - id: "es-0624"
+    target: "tomar"
+    ipa: "toˈmaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Tomo café cada día."
+        ipa: "ˈtomo kaˈfe ˈkada ˈdia"
+        bases: [{ word: "Tomo", base: "tomar" }, { word: "café", ref: "es-0611" }, { word: "cada", ref: "es-0366" }, { word: "día", ref: "es-0019" }]
+      - target: "Tomamos zumo en una mesa."
+        ipa: "toˈmamos ˈθumo en ˈuna ˈmesa"
+        bases: [{ word: "Tomamos", base: "tomar" }, { word: "zumo", ref: "es-0613" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "mesa", ref: "es-0009" }]
