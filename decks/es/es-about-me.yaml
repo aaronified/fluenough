@@ -94,7 +94,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: [{ word: "la", base: "la" }, { word: "dirección", base: "dirección" }]
     examples:
-      - { target: "La dirección de Ana es en Quito.", ipa: "la diɾekˈθjon de ˈana es en ˈkito", bases: [{ word: "La", base: "la" }, { word: "dirección", base: "dirección" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "en", base: "en" }, { word: "Quito", base: "Quito" }] }
+      - { target: "No sé la dirección de Ana.", ipa: "no se la diɾekˈθjon de ˈana", bases: [{ word: "No", ref: "es-0043" }, { word: "sé", base: "saber" }, { word: "la", base: "la" }, { word: "dirección", base: "dirección" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }] }
       - { target: "¿Cuál es la dirección de Luis?", ipa: "kwal es la diɾekˈθjon de lwis", bases: [{ word: "Cuál", ref: "es-0059" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "dirección", base: "dirección" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }] }
   - id: "es-0250"
     target: "el número"
@@ -127,7 +127,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Luis es soltero.", ipa: "lwis es solˈteɾo", bases: [{ word: "Luis", base: "Luis" }, { word: "es", ref: "es-0022" }, { word: "soltero", base: "soltero" }] }
-      - { target: "Pedro es soltero, pero Ana es casada.", ipa: "ˈpedɾo es solˈteɾo ˈpeɾo ˈana es kaˈsada", bases: [{ word: "Pedro", base: "Pedro" }, { word: "es", ref: "es-0022" }, { word: "soltero", base: "soltero" }, { word: "pero", ref: "es-0050" }, { word: "Ana", base: "Ana" }, { word: "casada", base: "casado" }] }
+      - { target: "Pedro es soltero, pero Ana está casada.", ipa: "ˈpedɾo es solˈteɾo ˈpeɾo ˈana esˈta kaˈsada", bases: [{ word: "Pedro", base: "Pedro" }, { word: "es", ref: "es-0022" }, { word: "soltero", base: "soltero" }, { word: "pero", ref: "es-0050" }, { word: "Ana", base: "Ana" }, { word: "está", ref: "es-0023" }, { word: "casada", base: "casado" }] }
   - id: "es-0253"
     target: "casado"
     ipa: "kaˈsado"
@@ -136,8 +136,8 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Mi padre es casado.", ipa: "mi ˈpadɾe es kaˈsado", bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", base: "padre" }, { word: "es", ref: "es-0022" }, { word: "casado", base: "casado" }] }
-      - { target: "Mi padre es casado y tiene dos hijos.", ipa: "mi ˈpadɾe es kaˈsado i ˈtjene dos ˈixos", bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", base: "padre" }, { word: "es", ref: "es-0022" }, { word: "casado", base: "casado" }, { word: "y", ref: "es-0048" }, { word: "tiene", ref: "es-0024" }, { word: "dos", ref: "es-0206" }, { word: "hijos", base: "hijo" }] }
+      - { target: "Mi padre está casado.", ipa: "mi ˈpadɾe esˈta kaˈsado", bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", base: "padre" }, { word: "está", ref: "es-0023" }, { word: "casado", base: "casado" }] }
+      - { target: "Mi padre está casado y tiene dos hijos.", ipa: "mi ˈpadɾe esˈta kaˈsado i ˈtjene dos ˈixos", bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", base: "padre" }, { word: "está", ref: "es-0023" }, { word: "casado", base: "casado" }, { word: "y", ref: "es-0048" }, { word: "tiene", ref: "es-0024" }, { word: "dos", ref: "es-0206" }, { word: "hijos", base: "hijo" }] }
   - id: "es-0254"
     target: "alto"
     ipa: "ˈalto"
