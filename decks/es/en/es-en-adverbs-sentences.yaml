@@ -1,0 +1,92 @@
+schema: 1
+id: "es-en-adverbs-sentences"
+kind: "layer"
+core: "es-adverbs-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: adverbs"
+license: "CC-BY-SA-4.0"
+description: "Ten sentences with adverbs of how often, how well and when, each with the adverb it is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+
+cards:
+  "es-0342":
+    native: "I always have breakfast at seven, but today I arrive late."
+    bases:
+      "a": "to"
+      "las": "the"
+      "tarde": "late"
+    confusables:
+      "never": { why: "Nunca is never, the opposite of always." }
+      "soon": { why: "Pronto is soon, not always." }
+  "es-0343":
+    native: "We usually have dinner at nine."
+    bases:
+      "a": "to"
+      "las": "the"
+    confusables:
+      "early": { why: "Temprano is early, not usually at nine." }
+      "always": { why: "Siempre is always: every time, not usually." }
+  "es-0344":
+    native: "Ana speaks English well, but writes badly."
+    bases:
+      "Ana": "Ana"
+      "el": "the"
+      "inglés": "English"
+    confusables:
+      "very": { why: "Muy is very, not well." }
+      "slowly": { why: "Despacio is slowly: a speed, not a quality." }
+  "es-0345":
+    native: "My brother eats quickly and walks slowly."
+    bases:
+      "hermano": "brother"
+    confusables:
+      "early": { why: "Temprano is early: a time, not a speed." }
+      "sometimes": { why: "A veces is sometimes: how often, not how fast." }
+  "es-0346":
+    native: "I still do not know the answer."
+    bases:
+      "sé": "I know"
+      "la": "the"
+      "respuesta": "answer"
+    confusables:
+      "already": { why: "Ya is already, the opposite of still." }
+      "now": { why: "Ahora is now, not yet." }
+  "es-0347":
+    native: "Yesterday I arrived early for class."
+    bases:
+      "llegué": "I arrived"
+      "a": "to"
+      "clase": "class"
+    confusables:
+      "today": { why: "Hoy is today, not yesterday." }
+      "now": { why: "Ahora is now, not yesterday." }
+  "es-0348":
+    native: "After dinner, I listen to music."
+    bases:
+      "de": "of"
+      "música": "music"
+    confusables:
+      "before": { why: "Antes is before, the opposite of after." }
+      "then": { why: "Luego is then, close to después but more casual." }
+  "es-0349":
+    native: "I almost never buy bread."
+    bases:
+      "pan": "bread"
+    confusables:
+      "always": { why: "Siempre is always, the opposite of never." }
+      "often": { why: "A menudo is often: it does not mean almost." }
+  "es-0350":
+    native: "This house is very big."
+    bases:
+      "casa": "house"
+    confusables:
+      "much": { why: "Mucho is much, a lot; with muy, the adverb of degree is muy." }
+      "well": { why: "Bien is well, not very." }
+  "es-0351":
+    native: "I drink coffee every day."
+    bases:
+      "los": "the"
+      "días": "days"
+      "café": "coffee"
+    confusables:
+      "always": { why: "Siempre is always: not every day, but at every moment." }
+      "often": { why: "A menudo is often, not every day." }

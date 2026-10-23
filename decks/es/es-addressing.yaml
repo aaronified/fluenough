@@ -1,0 +1,214 @@
+schema: 1
+id: "es-addressing"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "addressing"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-0086"
+    target: "tú"
+    ipa: "tu"
+    pos: "pronoun"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tú eres mi amigo.", ipa: "tu ˈeɾes mi aˈmiɡo", bases: [{ word: "Tú", base: "tú" }, { word: "eres", ref: "es-0022" }, { word: "mi", ref: "es-0129" }, { word: "amigo", ref: "es-0005" }] }
+      - { target: "¿Tú hablas inglés?", ipa: "tu ˈablas inˈɡles", bases: [{ word: "Tú", base: "tú" }, { word: "hablas", ref: "es-0027" }, { word: "inglés", base: "inglés" }] }
+  - id: "es-0087"
+    target: "usted"
+    ipa: "usˈted"
+    pos: "pronoun"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Usted es muy amable, señora.", ipa: "usˈted es mwi aˈmable seˈɲoɾa", bases: [{ word: "Usted", base: "usted" }, { word: "es", ref: "es-0022" }, { word: "muy", base: "muy" }, { word: "amable", base: "amable" }, { word: "señora", ref: "es-0089" }] }
+      - { target: "Perdone, ¿usted es el profesor?", ipa: "peɾˈdone usˈted es el pɾofeˈsoɾ", bases: [{ word: "Perdone", base: "perdonar" }, { word: "usted", base: "usted" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "profesor", ref: "es-0093" }] }
+  - id: "es-0088"
+    target: "el señor"
+    ipa: "el seˈɲoɾ"
+    pos: "noun"
+    gender: "m"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "el", base: "el" }
+      - { word: "señor", base: "señor" }
+    examples:
+      - { target: "El señor es médico.", ipa: "el seˈɲoɾ es ˈmediko", bases: [{ word: "El", base: "el" }, { word: "señor", base: "señor" }, { word: "es", ref: "es-0022" }, { word: "médico", base: "médico" }] }
+      - { target: "Buenos días, señor.", ipa: "ˈbwenos ˈdias seˈɲoɾ", bases: [{ word: "Buenos", ref: "es-0033" }, { word: "días", ref: "es-0019" }, { word: "señor", base: "señor" }] }
+  - id: "es-0089"
+    target: "la señora"
+    ipa: "la seˈɲoɾa"
+    pos: "noun"
+    gender: "f"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "la", base: "la" }
+      - { word: "señora", base: "señora" }
+    examples:
+      - { target: "La señora Ruiz vive aquí.", ipa: "la seˈɲoɾa rwiθ ˈbibe aˈki", bases: [{ word: "La", base: "la" }, { word: "señora", base: "señora" }, { word: "Ruiz", base: "Ruiz" }, { word: "vive", ref: "es-0030" }, { word: "aquí", ref: "es-0051" }] }
+      - { target: "Buenas tardes, señora.", ipa: "ˈbwenas ˈtaɾdes seˈɲoɾa", bases: [{ word: "Buenas", ref: "es-0033" }, { word: "tardes", base: "tarde" }, { word: "señora", base: "señora" }] }
+  - id: "es-0090"
+    target: "la señorita"
+    ipa: "la seɲoˈɾita"
+    pos: "noun"
+    gender: "f"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "la", base: "la" }
+      - { word: "señorita", base: "señorita" }
+    examples:
+      - { target: "La señorita Lee es nueva aquí.", ipa: "la seɲoˈɾita ˈlee es ˈnweba aˈki", bases: [{ word: "La", base: "la" }, { word: "señorita", base: "señorita" }, { word: "Lee", base: "Lee" }, { word: "es", ref: "es-0022" }, { word: "nueva", ref: "es-0035" }, { word: "aquí", ref: "es-0051" }] }
+      - { target: "Gracias, señorita.", ipa: "ˈɡɾaθjas seɲoˈɾita", bases: [{ word: "Gracias", ref: "es-0037" }, { word: "señorita", base: "señorita" }] }
+  - id: "es-0091"
+    target: "el nombre"
+    ipa: "el ˈnombɾe"
+    pos: "noun"
+    gender: "m"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "el", base: "el" }
+      - { word: "nombre", base: "nombre" }
+    examples:
+      - { target: "Mi nombre es Ana.", ipa: "mi ˈnombɾe es ˈana", bases: [{ word: "Mi", ref: "es-0129" }, { word: "nombre", base: "nombre" }, { word: "es", ref: "es-0022" }, { word: "Ana", base: "Ana" }] }
+      - { target: "Escribe tu nombre aquí.", ipa: "esˈkɾibe tu ˈnombɾe aˈki", bases: [{ word: "Escribe", base: "escribir" }, { word: "tu", ref: "es-0130" }, { word: "nombre", base: "nombre" }, { word: "aquí", ref: "es-0051" }] }
+  - id: "es-0092"
+    target: "el apellido"
+    ipa: "el apeˈʝido"
+    pos: "noun"
+    gender: "m"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "el", base: "el" }
+      - { word: "apellido", base: "apellido" }
+    examples:
+      - { target: "¿Cuál es tu apellido?", ipa: "kwal es tu apeˈʝido", bases: [{ word: "Cuál", ref: "es-0059" }, { word: "es", ref: "es-0022" }, { word: "tu", ref: "es-0130" }, { word: "apellido", base: "apellido" }] }
+      - { target: "Mi apellido es Martín.", ipa: "mi apeˈʝido es maɾˈtin", bases: [{ word: "Mi", ref: "es-0129" }, { word: "apellido", base: "apellido" }, { word: "es", ref: "es-0022" }, { word: "Martín", base: "Martín" }] }
+  - id: "es-0093"
+    target: "el profesor"
+    ipa: "el pɾofeˈsoɾ"
+    pos: "noun"
+    gender: "m"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "el", base: "el" }
+      - { word: "profesor", base: "profesor" }
+    examples:
+      - { target: "El profesor habla despacio.", ipa: "el pɾofeˈsoɾ ˈabla desˈpaθjo", bases: [{ word: "El", base: "el" }, { word: "profesor", base: "profesor" }, { word: "habla", ref: "es-0027" }, { word: "despacio", base: "despacio" }] }
+      - { target: "Hola, profesor.", ipa: "ˈola pɾofeˈsoɾ", bases: [{ word: "Hola", ref: "es-0036" }, { word: "profesor", base: "profesor" }] }
+  - id: "es-0094"
+    target: "la profesora"
+    ipa: "la pɾofeˈsoɾa"
+    pos: "noun"
+    gender: "f"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "la", base: "la" }
+      - { word: "profesora", base: "profesora" }
+    examples:
+      - { target: "La profesora es muy simpática.", ipa: "la pɾofeˈsoɾa es mwi simˈpatika", bases: [{ word: "La", base: "la" }, { word: "profesora", base: "profesora" }, { word: "es", ref: "es-0022" }, { word: "muy", base: "muy" }, { word: "simpática", base: "simpático" }] }
+      - { target: "Buenos días, profesora.", ipa: "ˈbwenos ˈdias pɾofeˈsoɾa", bases: [{ word: "Buenos", ref: "es-0033" }, { word: "días", ref: "es-0019" }, { word: "profesora", base: "profesora" }] }
+  - id: "es-0095"
+    target: "el compañero"
+    ipa: "el kompaˈɲeɾo"
+    pos: "noun"
+    gender: "m"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "el", base: "el" }
+      - { word: "compañero", base: "compañero" }
+    examples:
+      - { target: "Mi compañero de clase es alto.", ipa: "mi kompaˈɲeɾo de ˈklase es ˈalto", bases: [{ word: "Mi", ref: "es-0129" }, { word: "compañero", base: "compañero" }, { word: "de", base: "de" }, { word: "clase", base: "clase" }, { word: "es", ref: "es-0022" }, { word: "alto", base: "alto" }] }
+      - { target: "Ella es mi compañera de trabajo.", ipa: "ˈeʝa es mi kompaˈɲeɾa de tɾaˈbaxo", bases: [{ word: "Ella", ref: "es-0121" }, { word: "es", ref: "es-0022" }, { word: "mi", ref: "es-0129" }, { word: "compañera", base: "compañero" }, { word: "de", base: "de" }, { word: "trabajo", base: "trabajo" }] }
+  - id: "es-0096"
+    target: "me llamo"
+    ipa: "me ˈʝamo"
+    pos: "phrase"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "me", base: "me" }
+      - { word: "llamo", base: "llamar" }
+    examples:
+      - { target: "Me llamo Carmen.", ipa: "me ˈʝamo ˈkaɾmen", bases: [{ word: "Me", base: "me" }, { word: "llamo", base: "llamar" }, { word: "Carmen", base: "Carmen" }] }
+      - { target: "Hola, me llamo Javier.", ipa: "ˈola me ˈʝamo xaˈbjeɾ", bases: [{ word: "Hola", ref: "es-0036" }, { word: "me", base: "me" }, { word: "llamo", base: "llamar" }, { word: "Javier", base: "Javier" }] }
+  - id: "es-0097"
+    target: "¿cómo te llamas?"
+    ipa: "ˈkomo te ˈʝamas"
+    pos: "phrase"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "cómo", ref: "es-0058" }
+      - { word: "te", base: "te" }
+      - { word: "llamas", base: "llamar" }
+    examples:
+      - { target: "Hola, ¿cómo te llamas?", ipa: "ˈola ˈkomo te ˈʝamas", bases: [{ word: "Hola", ref: "es-0036" }, { word: "Cómo", ref: "es-0058" }, { word: "te", base: "te" }, { word: "llamas", base: "llamar" }] }
+      - { target: "Perdón, ¿cómo te llamas?", ipa: "peɾˈdon ˈkomo te ˈʝamas", bases: [{ word: "Perdón", ref: "es-0045" }, { word: "Cómo", ref: "es-0058" }, { word: "te", base: "te" }, { word: "llamas", base: "llamar" }] }
+  - id: "es-0098"
+    target: "mucho gusto"
+    ipa: "ˈmutʃo ˈɡusto"
+    pos: "phrase"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "mucho", ref: "es-0053" }
+      - { word: "gusto", base: "gusto" }
+    examples:
+      - { target: "Mucho gusto, señora.", ipa: "ˈmutʃo ˈɡusto seˈɲoɾa", bases: [{ word: "Mucho", ref: "es-0053" }, { word: "gusto", base: "gusto" }, { word: "señora", ref: "es-0089" }] }
+      - { target: "Mucho gusto en conocerte.", ipa: "ˈmutʃo ˈɡusto en konoˈθeɾte", bases: [{ word: "Mucho", ref: "es-0053" }, { word: "gusto", base: "gusto" }, { word: "en", base: "en" }, { word: "conocerte", base: "conocer" }] }
+  - id: "es-0099"
+    target: "encantado"
+    ipa: "enkanˈtado"
+    pos: "adj"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Encantado de conocerte.", ipa: "enkanˈtado de konoˈθeɾte", bases: [{ word: "Encantado", base: "encantado" }, { word: "de", base: "de" }, { word: "conocerte", base: "conocer" }] }
+      - { target: "Encantada, señora Ruiz.", ipa: "enkanˈtada seˈɲoɾa rwiθ", bases: [{ word: "Encantada", base: "encantado" }, { word: "señora", ref: "es-0089" }, { word: "Ruiz", base: "Ruiz" }] }
+  - id: "es-0100"
+    target: "buenas tardes"
+    ipa: "ˈbwenas ˈtaɾdes"
+    pos: "phrase"
+    tags: ["address"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "buenas", ref: "es-0033" }
+      - { word: "tardes", base: "tarde" }
+    examples:
+      - { target: "Buenas tardes, señor.", ipa: "ˈbwenas ˈtaɾdes seˈɲoɾ", bases: [{ word: "Buenas", ref: "es-0033" }, { word: "tardes", base: "tarde" }, { word: "señor", ref: "es-0088" }] }
+      - { target: "Buenas tardes, profesora.", ipa: "ˈbwenas ˈtaɾdes pɾofeˈsoɾa", bases: [{ word: "Buenas", ref: "es-0033" }, { word: "tardes", base: "tarde" }, { word: "profesora", ref: "es-0094" }] }
+  - id: "es-0101"
+    kind: "set"
+    members: [{ ref: "es-0086" }, { ref: "es-0087" }]
+  - id: "es-0102"
+    kind: "set"
+    members: [{ ref: "es-0088" }, { ref: "es-0089" }, { ref: "es-0090" }]

@@ -1,0 +1,79 @@
+schema: 1
+id: "es-about-me-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-0264"
+    target: "Mi nombre es Ana y soy de Lima."
+    ipa: "mi ˈnombɾe es ˈana i soj de ˈlima"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "nombre", base: "nombre" }, { word: "es", ref: "es-0022" }, { word: "Ana", base: "Ana" }, { word: "y", ref: "es-0048" }, { word: "soy", ref: "es-0022" }, { word: "de", base: "de" }, { word: "Lima", base: "Lima" }]
+    confusables: [{ id: "age", ref: "es-0242", kind: "word" }, { id: "nationality", ref: "es-0243", kind: "word" }]
+  - id: "es-0265"
+    target: "Tengo veinte años y soy estudiante."
+    ipa: "ˈtenɡo ˈbejnte ˈaɲos i soj estuˈdjante"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tengo", ref: "es-0024" }, { word: "veinte", ref: "es-0224" }, { word: "años", base: "año" }, { word: "y", ref: "es-0048" }, { word: "soy", ref: "es-0022" }, { word: "estudiante", base: "estudiante" }]
+    confusables: [{ id: "single", ref: "es-0252", kind: "word" }, { id: "young", ref: "es-0256", kind: "word" }]
+  - id: "es-0266"
+    target: "¿Cuál es tu profesión?"
+    ipa: "kwal es tu pɾofeˈsjon"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Cuál", ref: "es-0059" }, { word: "es", ref: "es-0022" }, { word: "tu", ref: "es-0130" }, { word: "profesión", base: "profesión" }]
+    confusables: [{ id: "language", ref: "es-0244", kind: "word" }, { id: "nationality", ref: "es-0243", kind: "word" }]
+  - id: "es-0267"
+    target: "Mi cumpleaños es en mayo."
+    ipa: "mi kumpleˈaɲos es en ˈmaʝo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "cumpleaños", base: "cumpleaños" }, { word: "es", ref: "es-0022" }, { word: "en", base: "en" }, { word: "mayo", base: "mayo" }]
+    confusables: [{ id: "age", ref: "es-0242", kind: "word" }, { id: "number", ref: "es-0250", kind: "word" }]
+  - id: "es-0268"
+    target: "¿Cuál es tu número de teléfono?"
+    ipa: "kwal es tu ˈnumeɾo de teˈlefono"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Cuál", ref: "es-0059" }, { word: "es", ref: "es-0022" }, { word: "tu", ref: "es-0130" }, { word: "número", base: "número" }, { word: "de", base: "de" }, { word: "teléfono", base: "teléfono" }]
+    confusables: [{ id: "address", ref: "es-0249", kind: "word" }, { id: "email", ref: "es-0248", kind: "word" }]
+  - id: "es-0269"
+    target: "Vivo en un barrio tranquilo."
+    ipa: "ˈbibo en un ˈbarjo tɾanˈkilo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Vivo", ref: "es-0030" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "barrio", base: "barrio" }, { word: "tranquilo", ref: "es-0257" }]
+    confusables: [{ id: "address", ref: "es-0249", kind: "word" }, { id: "city", ref: "es-0016", kind: "word" }]
+  - id: "es-0270"
+    target: "Pedro es alto, pero Luis es bajo."
+    ipa: "ˈpedɾo es ˈalto ˈpeɾo lwis es ˈbaxo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Pedro", base: "Pedro" }, { word: "es", ref: "es-0022" }, { word: "alto", ref: "es-0254" }, { word: "pero", ref: "es-0050" }, { word: "Luis", base: "Luis" }, { word: "bajo", ref: "es-0255" }]
+    confusables: [{ id: "young", ref: "es-0256", kind: "word" }, { id: "married", ref: "es-0253", kind: "word" }]
+  - id: "es-0271"
+    target: "Ana está casada y su marido es profesor."
+    ipa: "ˈana esˈta kaˈsada i su maˈɾido es pɾofeˈsoɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Ana", base: "Ana" }, { word: "está", ref: "es-0023" }, { word: "casada", base: "casado" }, { word: "y", ref: "es-0048" }, { word: "su", ref: "es-0131" }, { word: "marido", base: "marido" }, { word: "es", ref: "es-0022" }, { word: "profesor", base: "profesor" }]
+    confusables: [{ id: "single", ref: "es-0252", kind: "word" }, { id: "wife", ref: "es-0172", kind: "word" }]
+  - id: "es-0272"
+    target: "Quiero estudiar medicina y trabajar en un hospital."
+    ipa: "ˈkjeɾo estuˈdjaɾ mediˈθina i tɾabaˈxaɾ en un ospiˈtal"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Quiero", base: "querer" }, { word: "estudiar", ref: "es-0258" }, { word: "medicina", base: "medicina" }, { word: "y", ref: "es-0048" }, { word: "trabajar", ref: "es-0259" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "hospital", base: "hospital" }]
+    confusables: [{ id: "live", ref: "es-0030", kind: "word" }, { id: "speak", ref: "es-0027", kind: "word" }]
+  - id: "es-0273"
+    target: "¿Cuántos años tienes, Ana?"
+    ipa: "ˈkwantos ˈaɲos ˈtjenes ˈana"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Cuántos", base: "cuántos" }, { word: "años", base: "año" }, { word: "tienes", ref: "es-0024" }, { word: "Ana", base: "Ana" }]
+    confusables: [{ id: "age", ref: "es-0242", kind: "word" }, { id: "birthday", ref: "es-0246", kind: "word" }]

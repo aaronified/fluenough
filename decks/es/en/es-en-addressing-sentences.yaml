@@ -1,0 +1,83 @@
+schema: 1
+id: "es-en-addressing-sentences"
+kind: "layer"
+core: "es-addressing-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: addressing people"
+license: "CC-BY-SA-4.0"
+description: "Ten sentences that greet and name people with the words of Addressing people, each with the words it is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+
+cards:
+  "es-0103":
+    native: "What is your name? (to a stranger)"
+    bases:
+      "se": "yourself"
+      "llama": "are called"
+    confusables:
+      "informal-you": { why: "Tú is the informal you: this asks a stranger formally." }
+      "informal-your": { why: "Te is the informal form, used with a friend, not with a stranger." }
+  "es-0104":
+    native: "Good afternoon, Mr López."
+    bases:
+      "tardes": "afternoon"
+      "López": "López"
+    confusables:
+      "morning": { why: "Buenos días is said in the morning." }
+      "night": { why: "Buenas noches is said at night, and to say goodnight." }
+  "es-0105":
+    native: "Are you the teacher?"
+    bases:
+      "la": "the"
+    confusables:
+      "formal": { why: "Usted is the formal you, used with a stranger." }
+      "third": { why: "Es is 'she is'; eres is 'you are'." }
+  "es-0106":
+    native: "Pleased to meet you, madam."
+    bases:
+      "de": "to"
+      "conocerla": "meet"
+    confusables:
+      "sorry": { why: "Perdón asks pardon; it does not greet." }
+      "thanks": { why: "Gracias thanks someone; it does not greet." }
+  "es-0107":
+    native: "My classmate is called Pedro."
+    bases:
+      "se": "himself"
+      "llama": "is called"
+      "Pedro": "Pedro"
+    confusables:
+      "feminine": { why: "The feminine form: a female classmate." }
+      "i-am": { why: "Me llamo says your own name, not someone else's." }
+  "es-0108":
+    native: "What is your surname?"
+    confusables:
+      "first-name": { why: "Nombre is the first name; apellido is the surname." }
+      "what": { why: "Qué asks what, not which surname." }
+  "es-0109":
+    native: "Mrs Ruiz is the director."
+    bases:
+      "La": "the"
+      "Ruiz": "Ruiz"
+      "directora": "director"
+    confusables:
+      "man": { why: "Señor is for a man." }
+      "young": { why: "Señorita is for a young woman, in older usage." }
+  "es-0110":
+    native: "Hello, teacher, where is the book?"
+    bases:
+      "el": "the"
+    confusables:
+      "who": { why: "Quién asks who, not where." }
+      "when": { why: "Cuándo asks when, not where." }
+  "es-0111":
+    native: "Good morning, madam. How are you?"
+    confusables:
+      "informal": { why: "Tú is informal: this asks formally." }
+      "thanks": { why: "Gracias thanks someone; it is not a greeting." }
+  "es-0112":
+    native: "How's it going, classmate?"
+    bases:
+      "tal": "so"
+    confusables:
+      "hello": { why: "Hola says hello; qué tal asks how things are." }
+      "goodbye": { why: "Adiós says goodbye; it does not ask how things are." }
