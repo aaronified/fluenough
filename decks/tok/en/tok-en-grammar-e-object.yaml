@@ -1,0 +1,21 @@
+schema: 1
+id: "tok-en-grammar-e-object"
+kind: "layer"
+core: "tok-grammar-e-object"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "E marks the object"
+license: "CC-BY-SA-4.0"
+description: "The particle e comes before the thing a verb acts on. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "E marks the object"
+  slot_name: "object"
+  prompt: "{lemma} ({gloss}): {slot}"
+  slots: { "no object": "with no object", "with object": "with an object (e)" }
+  entries:
+    "moku": "to eat"
+    "pali": "to make; to work"
+    "lukin": "to look; to see"
+    "kute": "to hear; to listen"
+    "pana": "to give"
+  notes: "E comes after the verb and before its object: mi pali e pan is I make bread. A verb with no object takes no e: mi pali is I work. A phrase as the object takes one e before all of it: mi moku e moku pona is I eat good food. Some verbs, like pana (to give), nearly always have an object."

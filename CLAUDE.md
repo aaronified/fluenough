@@ -23,9 +23,14 @@ itself. Pick the model by the job:
 
 At most **three agents run at the same time, and never more than two
 Sonnet** (owner, 2026-10-22). This replaces the earlier Opus rules
-(2026-10-09, 2026-10-12, 2026-10-16, 2026-10-17). One Sonnet slot is kept
-for coding (owner, 2026-10-23); reviews and other Sonnet work share the
-other.
+(2026-10-09, 2026-10-12, 2026-10-16, 2026-10-17).
+
+**Slots** (owner, 2026-10-23: "1 haiku and 1 sonnet (reviews and associated
+bug fixes) keep on decks. 1 sonnet on the today chain."): one Haiku and one
+Sonnet keep on decks, and the Sonnet takes reviews and their associated bug
+fixes. One Sonnet runs the Today chain (#722, #723, #724; their mockups are
+done together on one page). This replaces the earlier slot rules (2 Haiku
+deck agents; reviews only in the coder's gaps).
 
 **Opus only when the owner explicitly asks**, reviews included (owner,
 2026-10-22). Nothing defaults to Opus.
@@ -120,6 +125,8 @@ contributor.
   by widening the current change or pushing a fix straight to main.
 - **Budget.** Tokens are limited: one review per change (see "Which model
   does what"), no extra verification passes, and no new work unless the owner asks for it.
+- **Never stop anything** unless the owner explicitly asks (owner, 2026-10-23:
+  "Never stop anything unless i explicitly ask to.").
 - **Deck index** (owner, 2026-10-23). `decks/index.json` is regenerated on
   main by a workflow after each merge (`.github/workflows/deck-index.yml`,
   PR #719). Never run `tools/deck_index.py` locally: it runs the full
@@ -161,13 +168,16 @@ again."). This replaces the 2026-10-17 rule that only Telugu and Bengali
 were built here; the other courses' decks (#420) and the new courses'
 paths are no longer left to contributors.
 
-**Deck priority** (owner, 2026-10-18). Decks are built to B1 in this order:
+**Deck priority** (owner, 2026-10-18). Decks are built in this order:
 1. Telugu, 2. Bengali, 3. Spanish, 4. Marathi, 5. Kannada, 6. Assamese,
 7. Chinese, 8. Hindustani, 9. Japanese, 10. Korean, 11. Toki Pona (owner,
-2026-10-20: "Make it high priority (11th language)"; built next week). "Once these decks are
-done till B1 and we have added the movies songs books parts, we can
-finally start advertising the app." Other languages' paths and decks
-follow.
+2026-10-20: "Make it high priority (11th language)"). Decks stop at A1
+(owner, 2026-10-23: "Stop the deck work after A1. You need to work on
+codes."): no new B1 units. B1 batches already open as PRs are merged. This
+replaces the 2026-10-18 target of B1. The owner's earlier "Once these decks
+are done till B1 and we have added the movies songs books parts, we can
+finally start advertising the app." is superseded for the B1 part. Other
+languages' paths and decks follow.
 
 **Hindustani** is one course (owner, 2026-10-18: "Hindi and Urdu should be
 combined as we should not care about socipolitics over linguistics"; chose

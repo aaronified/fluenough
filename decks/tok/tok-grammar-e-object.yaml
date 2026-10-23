@@ -1,0 +1,30 @@
+schema: 1
+id: "tok-grammar-e-object"
+part: "core"
+kind: "grammar"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["no object", "with object"]
+  entries:
+    - lemma: "moku"
+      forms:
+        "no object": "mi moku"
+        "with object": "mi moku e pan"
+    - lemma: "pali"
+      forms:
+        "no object": "mi pali"
+        "with object": "mi pali e moku"
+    - lemma: "lukin"
+      forms:
+        "no object": "mi lukin"
+        "with object": "mi lukin e ona"
+    - lemma: "kute"
+      forms:
+        "no object": "mi kute"
+        "with object": "mi kute e toki"
+    - lemma: "pana"
+      forms:
+        "no object": null
+        "with object": "mi pana e pan"

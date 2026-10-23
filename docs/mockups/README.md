@@ -12,6 +12,15 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
   #575's bars. Main state only, Hindi (Hindustani) in light and Bengali in
   dark, 1.4x (owner, 2026-10-21). The page marks its Proposed choices.
 
+- `today-chain.html`: every screen the Today chain needs on one page (owner,
+  2026-10-23: "Do all the mockups needed for the today chain together, in one
+  screen."): Today with one ring button, minutes and Catching up (#521, #680),
+  the minutes-a-day setting (#485), situation cheatsheets and their inspect view
+  (#724), the decks page's Learn only... chooser for every course (#723) and the
+  conversation screen (#722). Hindustani and Bengali, light and dark, 1.4x.
+  Open choices are tweak controls and are listed in `today-chain.md`, with the
+  self-check.
+
 ## Current and approved
 
 Each is the spec for its screen. Don't rewrite one without the owner's
