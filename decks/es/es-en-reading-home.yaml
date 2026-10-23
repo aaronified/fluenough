@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-home"
+name: "Reading: a flat tour and an advert"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about a home: a short tour of a flat, and a small advert for a flat to rent. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-a-flat-tour"
+    title: "A flat tour"
+    theme: "home"
+    sentences:
+      - text: "Este es el salón."
+      - text: "Aquí está la cocina."
+      - text: "El dormitorio es tranquilo."
+      - text: "La terraza es grande."
+    questions:
+      - id: "es-0832"
+        prompt: { en: "What is the first room?" }
+        options:
+          - { en: "The living room" }
+          - { en: "The kitchen" }
+          - { en: "The bathroom" }
+        answer: 0
+      - id: "es-0833"
+        prompt: { en: "Where is the kitchen?" }
+        options:
+          - { en: "Here" }
+          - { en: "Far away" }
+          - { en: "Upstairs" }
+        answer: 0
+      - id: "es-0834"
+        prompt: { en: "Which room is big?" }
+        options:
+          - { en: "The terrace" }
+          - { en: "The bedroom" }
+          - { en: "The hall" }
+        answer: 0
+  - id: "es-flat-advert"
+    title: "Flat advert"
+    theme: "home"
+    sentences:
+      - text: "Piso en alquiler: dos habitaciones."
+      - text: "Cocina y baño."
+      - text: "Alquiler: cien euros."
+      - text: "Piso cerca de la playa."
+    questions:
+      - id: "es-0835"
+        prompt: { en: "How many rooms does the flat have?" }
+        options:
+          - { en: "Two" }
+          - { en: "One" }
+          - { en: "Ten" }
+        answer: 0
+      - id: "es-0836"
+        prompt: { en: "How much is the rent?" }
+        options:
+          - { en: "One hundred euros" }
+          - { en: "Ten euros" }
+          - { en: "A million euros" }
+        answer: 0
+      - id: "es-0837"
+        prompt: { en: "What is near the flat?" }
+        options:
+          - { en: "The beach" }
+          - { en: "The school" }
+          - { en: "The station" }
+        answer: 0

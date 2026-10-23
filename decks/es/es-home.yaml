@@ -1,0 +1,344 @@
+schema: 1
+id: "es-home"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "home"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-0802"
+    target: "la habitación"
+    ipa: "la abitaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "habitación", base: "habitación" }]
+    examples:
+      - target: "La habitación es grande."
+        ipa: "la abitaˈθjon es ˈɡɾande"
+        bases: [{ word: "La", base: "la" }, { word: "habitación", base: "habitación" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+      - target: "Mi habitación está en el piso."
+        ipa: "mi abitaˈθjon esˈta en el ˈpiso"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "habitación", base: "habitación" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "piso", ref: "es-0803" }]
+  - id: "es-0803"
+    target: "el piso"
+    ipa: "el ˈpiso"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "piso", base: "piso" }]
+    examples:
+      - target: "El piso es nuevo."
+        ipa: "el ˈpiso es ˈnwebo"
+        bases: [{ word: "El", base: "el" }, { word: "piso", base: "piso" }, { word: "es", ref: "es-0022" }, { word: "nuevo", ref: "es-0035" }]
+      - target: "Vivo en un piso."
+        ipa: "ˈbibo en un ˈpiso"
+        bases: [{ word: "Vivo", ref: "es-0030" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "piso", base: "piso" }]
+  - id: "es-0804"
+    target: "el cuarto"
+    ipa: "el ˈkwaɾto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "cuarto", base: "cuarto" }]
+    examples:
+      - target: "Mi cuarto tiene una cama."
+        ipa: "mi ˈkwaɾto ˈtjene ˈuna ˈkama"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "cuarto", base: "cuarto" }, { word: "tiene", ref: "es-0024" }, { word: "una", base: "una" }, { word: "cama", ref: "es-0812" }]
+      - target: "Mi cuarto es pequeño."
+        ipa: "mi ˈkwaɾto es peˈkeɲo"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "cuarto", base: "cuarto" }, { word: "es", ref: "es-0022" }, { word: "pequeño", ref: "es-0032" }]
+  - id: "es-0805"
+    target: "el baño"
+    ipa: "el ˈbaɲo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "baño", base: "baño" }]
+    examples:
+      - target: "El baño es pequeño."
+        ipa: "el ˈbaɲo es peˈkeɲo"
+        bases: [{ word: "El", base: "el" }, { word: "baño", base: "baño" }, { word: "es", ref: "es-0022" }, { word: "pequeño", ref: "es-0032" }]
+      - target: "Hay un baño en el piso."
+        ipa: "aj un ˈbaɲo en el ˈpiso"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "baño", base: "baño" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "piso", ref: "es-0803" }]
+  - id: "es-0806"
+    target: "la cocina"
+    ipa: "la koˈθina"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "cocina", base: "cocina" }]
+    examples:
+      - target: "La cocina es grande."
+        ipa: "la koˈθina es ˈɡɾande"
+        bases: [{ word: "La", base: "la" }, { word: "cocina", base: "cocina" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+      - target: "Cocino en la cocina."
+        ipa: "koˈθino en la koˈθina"
+        bases: [{ word: "Cocino", ref: "es-0284" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cocina", base: "cocina" }]
+  - id: "es-0807"
+    target: "el salón"
+    ipa: "el saˈlon"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "salón", base: "salón" }]
+    examples:
+      - target: "El salón tiene un sofá."
+        ipa: "el saˈlon ˈtjene un soˈfa"
+        bases: [{ word: "El", base: "el" }, { word: "salón", base: "salón" }, { word: "tiene", ref: "es-0024" }, { word: "un", base: "un" }, { word: "sofá", ref: "es-0813" }]
+      - target: "El salón es grande."
+        ipa: "el saˈlon es ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "salón", base: "salón" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-0808"
+    target: "el dormitorio"
+    ipa: "el doɾmiˈtoɾjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "dormitorio", base: "dormitorio" }]
+    examples:
+      - target: "El dormitorio es tranquilo."
+        ipa: "el doɾmiˈtoɾjo es tɾanˈkilo"
+        bases: [{ word: "El", base: "el" }, { word: "dormitorio", base: "dormitorio" }, { word: "es", ref: "es-0022" }, { word: "tranquilo", ref: "es-0257" }]
+      - target: "Mi dormitorio es grande."
+        ipa: "mi doɾmiˈtoɾjo es ˈɡɾande"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "dormitorio", base: "dormitorio" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-0809"
+    target: "el pasillo"
+    ipa: "el paˈsiʝo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "pasillo", base: "pasillo" }]
+    examples:
+      - target: "El pasillo es largo."
+        ipa: "el paˈsiʝo es ˈlaɾɡo"
+        bases: [{ word: "El", base: "el" }, { word: "pasillo", base: "pasillo" }, { word: "es", ref: "es-0022" }, { word: "largo", ref: "es-0429" }]
+      - target: "El pasillo está en un piso."
+        ipa: "el paˈsiʝo esˈta en un ˈpiso"
+        bases: [{ word: "El", base: "el" }, { word: "pasillo", base: "pasillo" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "piso", ref: "es-0803" }]
+  - id: "es-0810"
+    target: "el jardín"
+    ipa: "el xaɾˈdin"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "jardín", base: "jardín" }]
+    examples:
+      - target: "El jardín es bonito."
+        ipa: "el xaɾˈdin es boˈnito"
+        bases: [{ word: "El", base: "el" }, { word: "jardín", base: "jardín" }, { word: "es", ref: "es-0022" }, { word: "bonito", ref: "es-0405" }]
+      - target: "Hay un jardín en la casa."
+        ipa: "aj un xaɾˈdin en la ˈkasa"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "jardín", base: "jardín" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "casa", ref: "es-0006" }]
+  - id: "es-0811"
+    target: "la terraza"
+    ipa: "la teˈraθa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "terraza", base: "terraza" }]
+    examples:
+      - target: "La terraza es grande."
+        ipa: "la teˈraθa es ˈɡɾande"
+        bases: [{ word: "La", base: "la" }, { word: "terraza", base: "terraza" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+      - target: "Tengo una terraza."
+        ipa: "ˈtenɡo ˈuna teˈraθa"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "terraza", base: "terraza" }]
+  - id: "es-0812"
+    target: "la cama"
+    ipa: "la ˈkama"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "cama", base: "cama" }]
+    examples:
+      - target: "La cama es cómoda."
+        ipa: "la ˈkama es ˈkomoda"
+        bases: [{ word: "La", base: "la" }, { word: "cama", base: "cama" }, { word: "es", ref: "es-0022" }, { word: "cómoda", ref: "es-0433" }]
+      - target: "Mi cama está en la habitación."
+        ipa: "mi ˈkama esˈta en la abitaˈθjon"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "cama", base: "cama" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "habitación", ref: "es-0802" }]
+  - id: "es-0813"
+    target: "el sofá"
+    ipa: "el soˈfa"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "sofá", base: "sofá" }]
+    examples:
+      - target: "El sofá es cómodo."
+        ipa: "el soˈfa es ˈkomodo"
+        bases: [{ word: "El", base: "el" }, { word: "sofá", base: "sofá" }, { word: "es", ref: "es-0022" }, { word: "cómodo", ref: "es-0433" }]
+      - target: "Un sofá está en el salón."
+        ipa: "un soˈfa esˈta en el saˈlon"
+        bases: [{ word: "Un", base: "un" }, { word: "sofá", base: "sofá" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "salón", ref: "es-0807" }]
+  - id: "es-0814"
+    target: "el armario"
+    ipa: "el aɾˈmaɾjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "armario", base: "armario" }]
+    examples:
+      - target: "El armario es grande."
+        ipa: "el aɾˈmaɾjo es ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "armario", base: "armario" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+      - target: "Mi libro está en el armario."
+        ipa: "mi ˈlibɾo esˈta en el aɾˈmaɾjo"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "libro", ref: "es-0011" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "armario", base: "armario" }]
+  - id: "es-0815"
+    target: "el frigorífico"
+    ipa: "el fɾiɡoˈɾifiko"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "frigorífico", base: "frigorífico" }]
+    examples:
+      - target: "El frigorífico tiene leche."
+        ipa: "el fɾiɡoˈɾifiko ˈtjene ˈletʃe"
+        bases: [{ word: "El", base: "el" }, { word: "frigorífico", base: "frigorífico" }, { word: "tiene", ref: "es-0024" }, { word: "leche", ref: "es-0014" }]
+      - target: "El frigorífico está en la cocina."
+        ipa: "el fɾiɡoˈɾifiko esˈta en la koˈθina"
+        bases: [{ word: "El", base: "el" }, { word: "frigorífico", base: "frigorífico" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cocina", ref: "es-0806" }]
+  - id: "es-0816"
+    target: "el horno"
+    ipa: "el ˈoɾno"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "horno", base: "horno" }]
+    examples:
+      - target: "El horno está caliente."
+        ipa: "el ˈoɾno esˈta kaˈljente"
+        bases: [{ word: "El", base: "el" }, { word: "horno", base: "horno" }, { word: "está", ref: "es-0023" }, { word: "caliente", ref: "es-0407" }]
+      - target: "El horno es nuevo."
+        ipa: "el ˈoɾno es ˈnwebo"
+        bases: [{ word: "El", base: "el" }, { word: "horno", base: "horno" }, { word: "es", ref: "es-0022" }, { word: "nuevo", ref: "es-0035" }]
+  - id: "es-0817"
+    target: "la ducha"
+    ipa: "la ˈdutʃa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "ducha", base: "ducha" }]
+    examples:
+      - target: "Tomo una ducha."
+        ipa: "ˈtomo ˈuna ˈdutʃa"
+        bases: [{ word: "Tomo", ref: "es-0624" }, { word: "una", base: "una" }, { word: "ducha", base: "ducha" }]
+      - target: "La ducha es buena."
+        ipa: "la ˈdutʃa es ˈbwena"
+        bases: [{ word: "La", base: "la" }, { word: "ducha", base: "ducha" }, { word: "es", ref: "es-0022" }, { word: "buena", ref: "es-0033" }]
+  - id: "es-0818"
+    target: "la pared"
+    ipa: "la paˈɾed"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "pared", base: "pared" }]
+    examples:
+      - target: "La pared es alta."
+        ipa: "la paˈɾed es ˈalta"
+        bases: [{ word: "La", base: "la" }, { word: "pared", base: "pared" }, { word: "es", ref: "es-0022" }, { word: "alta", ref: "es-0254" }]
+      - target: "La pared está sucia."
+        ipa: "la paˈɾed esˈta ˈsuθja"
+        bases: [{ word: "La", base: "la" }, { word: "pared", base: "pared" }, { word: "está", ref: "es-0023" }, { word: "sucia", ref: "es-0417" }]
+  - id: "es-0819"
+    target: "el suelo"
+    ipa: "el ˈswelo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "suelo", base: "suelo" }]
+    examples:
+      - target: "El suelo está limpio."
+        ipa: "el ˈswelo esˈta ˈlimpjo"
+        bases: [{ word: "El", base: "el" }, { word: "suelo", base: "suelo" }, { word: "está", ref: "es-0023" }, { word: "limpio", ref: "es-0416" }]
+      - target: "El suelo está sucio."
+        ipa: "el ˈswelo esˈta ˈsuθjo"
+        bases: [{ word: "El", base: "el" }, { word: "suelo", base: "suelo" }, { word: "está", ref: "es-0023" }, { word: "sucio", ref: "es-0417" }]
+  - id: "es-0820"
+    target: "el techo"
+    ipa: "el ˈtetʃo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "techo", base: "techo" }]
+    examples:
+      - target: "El techo es alto."
+        ipa: "el ˈtetʃo es ˈalto"
+        bases: [{ word: "El", base: "el" }, { word: "techo", base: "techo" }, { word: "es", ref: "es-0022" }, { word: "alto", ref: "es-0254" }]
+      - target: "El techo está sucio."
+        ipa: "el ˈtetʃo esˈta ˈsuθjo"
+        bases: [{ word: "El", base: "el" }, { word: "techo", base: "techo" }, { word: "está", ref: "es-0023" }, { word: "sucio", ref: "es-0417" }]
+  - id: "es-0821"
+    target: "la lámpara"
+    ipa: "la ˈlampaɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "lámpara", base: "lámpara" }]
+    examples:
+      - target: "La lámpara es nueva."
+        ipa: "la ˈlampaɾa es ˈnweba"
+        bases: [{ word: "La", base: "la" }, { word: "lámpara", base: "lámpara" }, { word: "es", ref: "es-0022" }, { word: "nueva", ref: "es-0035" }]
+      - target: "Una lámpara está en la mesa."
+        ipa: "ˈuna ˈlampaɾa esˈta en la ˈmesa"
+        bases: [{ word: "Una", base: "una" }, { word: "lámpara", base: "lámpara" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }]
+  - id: "es-0822"
+    target: "la alfombra"
+    ipa: "la alˈfombɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "alfombra", base: "alfombra" }]
+    examples:
+      - target: "La alfombra es bonita."
+        ipa: "la alˈfombɾa es boˈnita"
+        bases: [{ word: "La", base: "la" }, { word: "alfombra", base: "alfombra" }, { word: "es", ref: "es-0022" }, { word: "bonita", ref: "es-0405" }]
+      - target: "Hay una alfombra en el salón."
+        ipa: "aj ˈuna alˈfombɾa en el saˈlon"
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "alfombra", base: "alfombra" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "salón", ref: "es-0807" }]
+  - id: "es-0823"
+    target: "el espejo"
+    ipa: "el esˈpexo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "espejo", base: "espejo" }]
+    examples:
+      - target: "Un espejo está en el baño."
+        ipa: "un esˈpexo esˈta en el ˈbaɲo"
+        bases: [{ word: "Un", base: "un" }, { word: "espejo", base: "espejo" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "baño", ref: "es-0805" }]
+      - target: "El espejo es grande."
+        ipa: "el esˈpexo es ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "espejo", base: "espejo" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-0824"
+    target: "el alquiler"
+    ipa: "el alkiˈleɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "alquiler", base: "alquiler" }]
+    examples:
+      - target: "El alquiler es caro."
+        ipa: "el alkiˈleɾ es ˈkaɾo"
+        bases: [{ word: "El", base: "el" }, { word: "alquiler", base: "alquiler" }, { word: "es", ref: "es-0022" }, { word: "caro", ref: "es-0412" }]
+      - target: "Pago el alquiler."
+        ipa: "ˈpaɡo el alkiˈleɾ"
+        bases: [{ word: "Pago", ref: "es-0295" }, { word: "el", base: "el" }, { word: "alquiler", base: "alquiler" }]
+  - id: "es-0825"
+    target: "alquilar"
+    ipa: "alkiˈlaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Alquilo un piso."
+        ipa: "alˈkilo un ˈpiso"
+        bases: [{ word: "Alquilo", base: "alquilar" }, { word: "un", base: "un" }, { word: "piso", ref: "es-0803" }]
+      - target: "Alquilamos una casa."
+        ipa: "alkiˈlamos ˈuna ˈkasa"
+        bases: [{ word: "Alquilamos", base: "alquilar" }, { word: "una", base: "una" }, { word: "casa", ref: "es-0006" }]
