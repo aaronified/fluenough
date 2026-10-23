@@ -53,11 +53,12 @@ final Map<String, String> _diacriticFolding = _buildFolding({
   'y': 'ýÿŷẏ',
   'z': 'źżž',
   // Subscript digits, for the sign indices of cuneiform (du₃) and the
-  // laryngeals of Proto-Indo-European (h₂): typed as plain digits.
+  // laryngeals of Proto-Indo-European (h₂): typed as plain digits. The 3
+  // is also Egyptian ꜣ, as ASCII Egyptology types it.
   '0': '₀',
   '1': '₁',
   '2': '₂',
-  '3': '₃',
+  '3': '₃ꜣ',
   '4': '₄',
   '5': '₅',
   '6': '₆',
@@ -69,7 +70,6 @@ final Map<String, String> _diacriticFolding = _buildFolding({
   // for Rꜣ. ꜥ is typed a, ꜣ as the 3 of ASCII Egyptology, ḫ ṯ ḏ as kh th dh,
   // ẖ as ch and ḳ as q (the course writes q). ḥ still folds to h, as it does
   // for the Indic readings.
-  '3': 'ꜣ',
   'kh': 'ḫ',
   'ch': 'ẖ',
   'th': 'ṯ',
