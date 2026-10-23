@@ -41,7 +41,7 @@ import 'word_sheet.dart';
 ///
 /// The phrasebook is listed first, never held back. A rule is a grammar or
 /// rules deck's table; a sentence is open once it was taught or every word
-/// and rule in it is known ([Unlocks.isOffered], ADR-0045), and until then it
+/// and rule in it is known ([Unlocks.isOffered], ADR-0046), and until then it
 /// is greyed with what it waits for, and a tap says why.
 ///
 /// Review, at the top end, is for speakers who check decks: with "Review

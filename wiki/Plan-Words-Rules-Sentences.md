@@ -224,7 +224,7 @@ Converted as each language's B1 plan is written:
 
 ## Built
 
-- **Lessons without the quota, and the unlock gate** (#416, [ADR-0045](ADR-0045-Lessons-Take-The-Next-Eligible-Items)): the next eligible items in path order, fewer while words and rules in progress are below the bar; a sentence waits for its words and rules; a rules table's cell is taught only for a known word; the unit page greys a closed sentence and a tap opens "Why it is closed". Owner, 2026-10-23: "Greyed + why sheet; no plan", so a lesson starts straight away with no plan screen.
+- **Lessons without the quota, and the unlock gate** (#416, [ADR-0046](ADR-0046-Lessons-Take-The-Next-Eligible-Items)): the next eligible items in path order, fewer while words and rules in progress are below the bar; a sentence waits for its words and rules; a rules table's cell is taught only for a known word; the unit page greys a closed sentence and a tap opens "Why it is closed". Owner, 2026-10-23: "Greyed + why sheet; no plan", so a lesson starts straight away with no plan screen.
 
 ## Estimate
 

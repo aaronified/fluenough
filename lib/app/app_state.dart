@@ -217,8 +217,10 @@ class AppState extends ChangeNotifier {
   /// state (#461), as the catalog loading or the profile changing do.
   String? _lastShown;
   bool _lastProgressAll = false;
+  bool _lastAdult = false;
 
   void _rememberShown() {
+    _lastAdult = settings.adultContent;
     _lastShown = shownLanguage;
     _lastProgressAll = progressShowsAll;
   }
@@ -226,7 +228,11 @@ class AppState extends ChangeNotifier {
   void _languageShownChanged() {
     final shown = shownLanguage;
     final all = progressShowsAll;
-    if (shown == _lastShown && all == _lastProgressAll) return;
+    final adult = settings.adultContent;
+    if (shown == _lastShown && all == _lastProgressAll && adult == _lastAdult) {
+      return;
+    }
+    _lastAdult = adult;
     _lastShown = shown;
     _lastProgressAll = all;
     notifyListeners();
@@ -537,7 +543,29 @@ class AppState extends ChangeNotifier {
   Object? get loadError => _loadError;
 
   /// Every deck that parsed, in path order. Empty until loaded.
-  List<DeckEntry> get decks => _catalog.decks;
+  List<DeckEntry> get decks => _view.decks;
+
+  /// Every deck, adult decks and rude cards too, whatever "Adult content"
+  /// says. Only what names a rude word to warn of it reads this: the sound-
+  /// alike warning, which hides the word itself (#628).
+  List<DeckEntry> get allDecks => _catalog.decks;
+
+  /// The catalog as the learner has it: without the adult decks and the rude
+  /// cards while Adult content is off, so that the counts, lessons, finished
+  /// decks and the word sheet read one list (#628).
+  Catalog get _view {
+    final adult = settings.adultContent;
+    if (!identical(_adultOf, _catalog) || _adultOn != adult) {
+      _adultOf = _catalog;
+      _adultOn = adult;
+      _adultScoped = _catalog.forAdult(adult: adult);
+    }
+    return _adultScoped;
+  }
+
+  Catalog? _adultOf;
+  bool _adultOn = false;
+  Catalog _adultScoped = Catalog.empty;
 
   /// Every deck file that did not parse, for the "couldn't read" rows.
   List<BrokenDeck> get brokenDecks => _catalog.broken;
@@ -623,7 +651,7 @@ class AppState extends ChangeNotifier {
     return today;
   }
 
-  DeckEntry? deckById(String id) => _catalog.byId(id);
+  DeckEntry? deckById(String id) => _view.byId(id);
 
   /// The path of [entry]'s course (ADR-0013), or null if it has none.
   CoursePath? pathOf(DeckEntry entry) => _catalog.pathOf(entry);
@@ -635,7 +663,7 @@ class AppState extends ChangeNotifier {
       _catalog.languagePaths[language];
 
   /// The deck a card came from.
-  DeckEntry? deckOf(Card card) => _catalog.byId(card.deckId);
+  DeckEntry? deckOf(Card card) => _view.byId(card.deckId);
 
   /// The decks in the languages the current profile learns, and of those,
   /// only the [shownLanguage]'s while one is chosen (#461): what Today
@@ -674,7 +702,7 @@ class AppState extends ChangeNotifier {
   }
 
   /// Every language the catalog teaches, one per code.
-  List<LanguageInfo> get languages => _catalog.languages;
+  List<LanguageInfo> get languages => _view.languages;
 
   /// The languages the language bar at the top of Today, Decks and
   /// Progress offers (#461, #528): those the profile learns that have
@@ -2437,7 +2465,7 @@ class AppState extends ChangeNotifier {
   /// yet that can be drilled now, and with [tags] given, only those
   /// carrying one of them: a deck page's tag chips. A sentence waits until
   /// its words and rules are known, and a rules table's cell until its word
-  /// is ([Unlocks.isOpen], ADR-0045).
+  /// is ([Unlocks.isOpen], ADR-0046).
   List<Card> untaughtCards(
     String language, {
     String? deckId,
@@ -2501,7 +2529,7 @@ class AppState extends ChangeNotifier {
       ]);
     }
     final taught = cards.takeWhile((card) => card is! QuestionCard);
-    // As many new items as the mastery bar allows (ADR-0045): fewer while
+    // As many new items as the mastery bar allows (ADR-0046): fewer while
     // words and rules taught are not known yet.
     final room = lessonRoom(inProgressIn(request.language!));
     final picked = lessonItems(
@@ -2673,7 +2701,7 @@ class AppState extends ChangeNotifier {
   }.length;
 
   /// [notStudiedIn] without the cards a lesson may not teach yet: a closed
-  /// sentence, a cell of a word not known yet (ADR-0045). The path moves on
+  /// sentence, a cell of a word not known yet (ADR-0046). The path moves on
   /// from a unit when this is none, so that sentences waiting for their
   /// words do not hold the unit back.
   int notStudiedOpenIn(DeckEntry deck) {
