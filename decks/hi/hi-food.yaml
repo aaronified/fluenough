@@ -1,0 +1,1409 @@
+schema: 1
+id: "hi-food"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "food"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-0977"
+    target: "केला"
+    target_scripts: { perso_arabic: "کیلا" }
+    reading: "kēlā"
+    ipa: "keːlaː"
+    picture: "🍌"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "बच्चा केला खाता है।"
+        reading: "baccā kēlā khātā hai."
+        ipa: "bətʃtʃaː keːlaː kʰaːt̪aː ɦɛː"
+        bases:
+          - { word: "बच्चा", base: "बच्चा", reading: "baccā" }
+          - { word: "केला", base: "केला", reading: "kēlā" }
+          - { word: "खाता", base: "खाना", reading: "khātā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मुझे केला पसंद है।"
+        reading: "mujhē kēlā pasand hai."
+        ipa: "mʊdʒʱeː keːlaː pəsənd̪ ɦɛː"
+        bases:
+          - { word: "मुझे", ref: "hi-0745" }
+          - { word: "केला", base: "केला", reading: "kēlā" }
+          - { word: "पसंद", ref: "hi-0469" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-0978"
+    target: "सेब"
+    target_scripts: { perso_arabic: "سیب" }
+    reading: "sēb"
+    ipa: "seːb"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "मैं रोज़ एक सेब खाता हूँ।"
+        reading: "maim̐ rōz ēk sēb khātā hūm̐."
+        ipa: "mɛ̃ː roːz eːk seːb kʰaːt̪aː ɦũː"
+        bases:
+          - { word: "मैं", ref: "hi-0745" }
+          - { word: "रोज़", ref: "hi-0451" }
+          - { word: "एक", base: "एक", reading: "ēk" }
+          - { word: "सेब", base: "सेब", reading: "sēb" }
+          - { word: "खाता", base: "खाना", reading: "khātā" }
+          - { word: "हूँ", ref: "hi-0780" }
+      - target: "यह सेब मीठा है।"
+        reading: "yah sēb mīṭhā hai."
+        ipa: "jəɦ seːb miːʈʰaː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "सेब", base: "सेब", reading: "sēb" }
+          - { word: "मीठा", ref: "hi-0339" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-0979"
+    target: "आम"
+    target_scripts: { perso_arabic: "آم" }
+    reading: "ām"
+    ipa: "aːm"
+    picture: "🥭"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "मुझे आम बहुत पसंद है।"
+        reading: "mujhē ām bahut pasand hai."
+        ipa: "mʊdʒʱeː aːm bəɦʊt̪ pəsənd̪ ɦɛː"
+        bases:
+          - { word: "मुझे", ref: "hi-0745" }
+          - { word: "आम", base: "आम", reading: "ām" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "पसंद", ref: "hi-0469" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "वह आम काटता है।"
+        reading: "vah ām kāṭtā hai."
+        ipa: "ʋəɦ aːm kaːʈt̪aː ɦɛː"
+        bases:
+          - { word: "वह", ref: "hi-0749" }
+          - { word: "आम", base: "आम", reading: "ām" }
+          - { word: "काटता", base: "काटना", reading: "kāṭtā" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-0980"
+    target: "संतरा"
+    target_scripts: { perso_arabic: "سنترہ" }
+    reading: "santarā"
+    ipa: "sənt̪əraː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "संतरा खट्टा और मीठा होता है।"
+        reading: "santarā khaṭṭā aur mīṭhā hōtā hai."
+        ipa: "sənt̪əraː kʰəʈʈaː ɔːr miːʈʰaː ɦoːt̪aː ɦɛː"
+        bases:
+          - { word: "संतरा", base: "संतरा", reading: "santarā" }
+          - { word: "खट्टा", ref: "hi-1016" }
+          - { word: "और", ref: "hi-0337" }
+          - { word: "मीठा", ref: "hi-0339" }
+          - { word: "होता", base: "होना", reading: "hōtā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मुझे दो संतरे चाहिए।"
+        reading: "mujhē dō santarē cāhiē."
+        ipa: "mʊdʒʱeː d̪oː sənt̪əreː tʃaːɦɪeː"
+        bases:
+          - { word: "मुझे", ref: "hi-0745" }
+          - { word: "दो", base: "दो", reading: "dō" }
+          - { word: "संतरे", base: "संतरा", reading: "santarē" }
+          - { word: "चाहिए", ref: "hi-0460" }
+  - id: "hi-0981"
+    target: "अंगूर"
+    target_scripts: { perso_arabic: "انگور" }
+    reading: "aṅgūr"
+    ipa: "əŋɡuːr"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "बच्चे अंगूर खाते हैं।"
+        reading: "baccē aṅgūr khātē haim̐."
+        ipa: "bətʃtʃeː əŋɡuːr kʰaːt̪eː ɦɛ̃ː"
+        bases:
+          - { word: "बच्चे", base: "बच्चा", reading: "baccē" }
+          - { word: "अंगूर", base: "अंगूर", reading: "aṅgūr" }
+          - { word: "खाते", base: "खाना", reading: "khātē" }
+          - { word: "हैं", ref: "hi-0780" }
+      - target: "यह अंगूर बहुत ठंडा है।"
+        reading: "yah aṅgūr bahut ṭhaṇḍā hai."
+        ipa: "jəɦ əŋɡuːr bəɦʊt̪ ʈʰəɳɖaː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "अंगूर", base: "अंगूर", reading: "aṅgūr" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "ठंडा", ref: "hi-0911" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-0982"
+    target: "नींबू"
+    target_scripts: { perso_arabic: "لیموں" }
+    reading: "nīmbū"
+    ipa: "niːmbuː"
+    picture: "🍋"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "चाय में नींबू डालो।"
+        reading: "cāy mēm̐ nīmbū ḍālō."
+        ipa: "tʃaːj mẽː niːmbuː ɖaːloː"
+        bases:
+          - { word: "चाय", ref: "hi-0334" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "नींबू", base: "नींबू", reading: "nīmbū" }
+          - { word: "डालो", base: "डालना", reading: "ḍālō" }
+      - target: "नींबू पानी बहुत खट्टा है।"
+        reading: "nīmbū pānī bahut khaṭṭā hai."
+        ipa: "niːmbuː paːniː bəɦʊt̪ kʰəʈʈaː ɦɛː"
+        bases:
+          - { word: "नींबू", base: "नींबू", reading: "nīmbū" }
+          - { word: "पानी", ref: "hi-0333" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "खट्टा", ref: "hi-1016" }
+          - { word: "है", ref: "hi-0780" }
+    collocations:
+      - { id: "water", ref: "hi-0333" }
+  - id: "hi-0983"
+    target: "गाजर"
+    target_scripts: { perso_arabic: "گاجر" }
+    reading: "gājar"
+    ipa: "ɡaːdʒər"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "माँ गाजर काटती है।"
+        reading: "mām̐ gājar kāṭtī hai."
+        ipa: "mãː ɡaːdʒər kaːʈt̪iː ɦɛː"
+        bases:
+          - { word: "माँ", ref: "hi-0377" }
+          - { word: "गाजर", base: "गाजर", reading: "gājar" }
+          - { word: "काटती", base: "काटना", reading: "kāṭtī" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "गाजर मीठी है।"
+        reading: "gājar mīṭhī hai."
+        ipa: "ɡaːdʒər miːʈʰiː ɦɛː"
+        bases:
+          - { word: "गाजर", base: "गाजर", reading: "gājar" }
+          - { word: "मीठी", base: "मीठा", reading: "mīṭhī" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-0984"
+    target: "गोभी"
+    target_scripts: { perso_arabic: "گوبھی" }
+    reading: "gōbhī"
+    ipa: "ɡoːbʱiː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "माँ गोभी पकाती है।"
+        reading: "mām̐ gōbhī pakātī hai."
+        ipa: "mãː ɡoːbʱiː pəkaːt̪iː ɦɛː"
+        bases:
+          - { word: "माँ", ref: "hi-0377" }
+          - { word: "गोभी", base: "गोभी", reading: "gōbhī" }
+          - { word: "पकाती", base: "पकाना", reading: "pakātī" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "आज गोभी उबालो।"
+        reading: "āj gōbhī ubālō."
+        ipa: "aːdʒ ɡoːbʱiː ʊbaːloː"
+        bases:
+          - { word: "आज", ref: "hi-0299" }
+          - { word: "गोभी", base: "गोभी", reading: "gōbhī" }
+          - { word: "उबालो", base: "उबालना", reading: "ubālō" }
+  - id: "hi-0985"
+    target: "पालक"
+    target_scripts: { perso_arabic: "پالک" }
+    reading: "pālak"
+    ipa: "paːlək"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "पालक हरा है।"
+        reading: "pālak harā hai."
+        ipa: "paːlək ɦəraː ɦɛː"
+        bases:
+          - { word: "पालक", base: "पालक", reading: "pālak" }
+          - { word: "हरा", base: "हरा", reading: "harā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मुझे पालक पसंद नहीं।"
+        reading: "mujhē pālak pasand nahīm̐."
+        ipa: "mʊdʒʱeː paːlək pəsənd̪ nəɦĩː"
+        bases:
+          - { word: "मुझे", ref: "hi-0745" }
+          - { word: "पालक", base: "पालक", reading: "pālak" }
+          - { word: "पसंद", ref: "hi-0469" }
+          - { word: "नहीं", ref: "hi-0156" }
+  - id: "hi-0986"
+    target: "मटर"
+    target_scripts: { perso_arabic: "مٹر" }
+    reading: "maṭar"
+    ipa: "məʈər"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "मटर पनीर बहुत अच्छा है।"
+        reading: "maṭar panīr bahut acchā hai."
+        ipa: "məʈər pəniːr bəɦʊt̪ ətʃtʃʰaː ɦɛː"
+        bases:
+          - { word: "मटर", base: "मटर", reading: "maṭar" }
+          - { word: "पनीर", ref: "hi-0988" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "अच्छा", ref: "hi-0898" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "उसने मटर पकाए।"
+        reading: "usnē maṭar pakāē."
+        ipa: "ʊsneː məʈər pəkaːeː"
+        bases:
+          - { word: "उसने", ref: "hi-0749" }
+          - { word: "मटर", base: "मटर", reading: "maṭar" }
+          - { word: "पकाए", base: "पकाना", reading: "pakāē" }
+  - id: "hi-0987"
+    target: "धनिया"
+    target_scripts: { perso_arabic: "دھنیا" }
+    reading: "dhaniyā"
+    ipa: "d̪ʱənɪjaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "सब्ज़ी में धनिया डालो।"
+        reading: "sabzī mēm̐ dhaniyā ḍālō."
+        ipa: "səbziː mẽː d̪ʱənɪjaː ɖaːloː"
+        bases:
+          - { word: "सब्ज़ी", ref: "hi-0249" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "धनिया", base: "धनिया", reading: "dhaniyā" }
+          - { word: "डालो", base: "डालना", reading: "ḍālō" }
+      - target: "धनिया हरा है।"
+        reading: "dhaniyā harā hai."
+        ipa: "d̪ʱənɪjaː ɦəraː ɦɛː"
+        bases:
+          - { word: "धनिया", base: "धनिया", reading: "dhaniyā" }
+          - { word: "हरा", base: "हरा", reading: "harā" }
+          - { word: "है", ref: "hi-0780" }
+    collocations:
+      - { id: "vegetable", ref: "hi-0249" }
+  - id: "hi-0988"
+    target: "पनीर"
+    target_scripts: { perso_arabic: "پنیر" }
+    reading: "panīr"
+    ipa: "pəniːr"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "उसने पनीर खाया।"
+        reading: "usnē panīr khāyā."
+        ipa: "ʊsneː pəniːr kʰaːjaː"
+        bases:
+          - { word: "उसने", ref: "hi-0749" }
+          - { word: "पनीर", base: "पनीर", reading: "panīr" }
+          - { word: "खाया", base: "खाना", reading: "khāyā" }
+      - target: "मुझे पनीर चाहिए।"
+        reading: "mujhē panīr cāhiē."
+        ipa: "mʊdʒʱeː pəniːr tʃaːɦɪeː"
+        bases:
+          - { word: "मुझे", ref: "hi-0745" }
+          - { word: "पनीर", base: "पनीर", reading: "panīr" }
+          - { word: "चाहिए", ref: "hi-0460" }
+  - id: "hi-0989"
+    target: "दही"
+    target_scripts: { perso_arabic: "دہی" }
+    reading: "dahī"
+    ipa: "d̪əɦiː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "दही खट्टा होता है।"
+        reading: "dahī khaṭṭā hōtā hai."
+        ipa: "d̪əɦiː kʰəʈʈaː ɦoːt̪aː ɦɛː"
+        bases:
+          - { word: "दही", base: "दही", reading: "dahī" }
+          - { word: "खट्टा", ref: "hi-1016" }
+          - { word: "होता", base: "होना", reading: "hōtā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "माँ दही बनाती है।"
+        reading: "mām̐ dahī banātī hai."
+        ipa: "mãː d̪əɦiː bənaːt̪iː ɦɛː"
+        bases:
+          - { word: "माँ", ref: "hi-0377" }
+          - { word: "दही", base: "दही", reading: "dahī" }
+          - { word: "बनाती", base: "बनाना", reading: "banātī" }
+          - { word: "है", ref: "hi-0780" }
+    collocations:
+      - { id: "rice", ref: "hi-0260" }
+  - id: "hi-0990"
+    target: "मक्खन"
+    target_scripts: { perso_arabic: "مکھن" }
+    reading: "makkhan"
+    ipa: "məkkʰən"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "रोटी पर मक्खन लगाओ।"
+        reading: "rōṭī par makkhan lagāō."
+        ipa: "roːʈiː pər məkkʰən ləɡaːoː"
+        bases:
+          - { word: "रोटी", ref: "hi-0335" }
+          - { word: "पर", base: "पर", reading: "par" }
+          - { word: "मक्खन", base: "मक्खन", reading: "makkhan" }
+          - { word: "लगाओ", base: "लगाना", reading: "lagāō" }
+      - target: "यह मक्खन ताज़ा है।"
+        reading: "yah makkhan tāzā hai."
+        ipa: "jəɦ məkkʰən t̪aːzaː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "मक्खन", base: "मक्खन", reading: "makkhan" }
+          - { word: "ताज़ा", base: "ताज़ा", reading: "tāzā" }
+          - { word: "है", ref: "hi-0780" }
+    collocations:
+      - { id: "bread", ref: "hi-0335" }
+  - id: "hi-0991"
+    target: "घी"
+    target_scripts: { perso_arabic: "گھی" }
+    reading: "ghī"
+    ipa: "ɡʱiː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "माँ दाल में घी डालती है।"
+        reading: "mām̐ dāl mēm̐ ghī ḍāltī hai."
+        ipa: "mãː d̪aːl mẽː ɡʱiː ɖaːlt̪iː ɦɛː"
+        bases:
+          - { word: "माँ", ref: "hi-0377" }
+          - { word: "दाल", ref: "hi-0261" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "घी", base: "घी", reading: "ghī" }
+          - { word: "डालती", base: "डालना", reading: "ḍāltī" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "घी बहुत महँगा है।"
+        reading: "ghī bahut maham̐gā hai."
+        ipa: "ɡʱiː bəɦʊt̪ məɦə̃ɡaː ɦɛː"
+        bases:
+          - { word: "घी", base: "घी", reading: "ghī" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "महँगा", base: "महँगा", reading: "maham̐gā" }
+          - { word: "है", ref: "hi-0780" }
+    collocations:
+      - { id: "dal", ref: "hi-0261" }
+  - id: "hi-0992"
+    target: "चीनी"
+    target_scripts: { perso_arabic: "چینی" }
+    reading: "cīnī"
+    ipa: "tʃiːniː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "चाय में चीनी कम डालो।"
+        reading: "cāy mēm̐ cīnī kam ḍālō."
+        ipa: "tʃaːj mẽː tʃiːniː kəm ɖaːloː"
+        bases:
+          - { word: "चाय", ref: "hi-0334" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "चीनी", base: "चीनी", reading: "cīnī" }
+          - { word: "कम", base: "कम", reading: "kam" }
+          - { word: "डालो", base: "डालना", reading: "ḍālō" }
+      - target: "मुझे एक चम्मच चीनी चाहिए।"
+        reading: "mujhē ēk cammac cīnī cāhiē."
+        ipa: "mʊdʒʱeː eːk tʃəmmətʃ tʃiːniː tʃaːɦɪeː"
+        bases:
+          - { word: "मुझे", ref: "hi-0745" }
+          - { word: "एक", base: "एक", reading: "ēk" }
+          - { word: "चम्मच", ref: "hi-0876" }
+          - { word: "चीनी", base: "चीनी", reading: "cīnī" }
+          - { word: "चाहिए", ref: "hi-0460" }
+    collocations:
+      - { id: "tea", ref: "hi-0334" }
+  - id: "hi-0993"
+    target: "आटा"
+    target_scripts: { perso_arabic: "آٹا" }
+    reading: "āṭā"
+    ipa: "aːʈaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "माँ आटा गूँधती है।"
+        reading: "mām̐ āṭā gūm̐dhatī hai."
+        ipa: "mãː aːʈaː ɡũːd̪ʱət̪iː ɦɛː"
+        bases:
+          - { word: "माँ", ref: "hi-0377" }
+          - { word: "आटा", base: "आटा", reading: "āṭā" }
+          - { word: "गूँधती", base: "गूँधना", reading: "gūm̐dhatī" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "यह आटा ताज़ा है।"
+        reading: "yah āṭā tāzā hai."
+        ipa: "jəɦ aːʈaː t̪aːzaː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "आटा", base: "आटा", reading: "āṭā" }
+          - { word: "ताज़ा", base: "ताज़ा", reading: "tāzā" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-0994"
+    target: "तेल"
+    target_scripts: { perso_arabic: "تیل" }
+    reading: "tēl"
+    ipa: "t̪eːl"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "कड़ाही में तेल डालो।"
+        reading: "kaṛāhī mēm̐ tēl ḍālō."
+        ipa: "kəɽaːɦiː mẽː t̪eːl ɖaːloː"
+        bases:
+          - { word: "कड़ाही", base: "कड़ाही", reading: "kaṛāhī" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "तेल", base: "तेल", reading: "tēl" }
+          - { word: "डालो", base: "डालना", reading: "ḍālō" }
+      - target: "यह तेल अच्छा है।"
+        reading: "yah tēl acchā hai."
+        ipa: "jəɦ t̪eːl ətʃtʃʰaː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "तेल", base: "तेल", reading: "tēl" }
+          - { word: "अच्छा", ref: "hi-0898" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-0995"
+    target: "मसाला"
+    target_scripts: { perso_arabic: "مسالہ" }
+    reading: "masālā"
+    ipa: "məsaːlaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "माँ सब्ज़ी में मसाला डालती है।"
+        reading: "mām̐ sabzī mēm̐ masālā ḍāltī hai."
+        ipa: "mãː səbziː mẽː məsaːlaː ɖaːlt̪iː ɦɛː"
+        bases:
+          - { word: "माँ", ref: "hi-0377" }
+          - { word: "सब्ज़ी", ref: "hi-0249" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "मसाला", base: "मसाला", reading: "masālā" }
+          - { word: "डालती", base: "डालना", reading: "ḍāltī" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "यह मसाला तीखा है।"
+        reading: "yah masālā tīkhā hai."
+        ipa: "jəɦ məsaːlaː t̪iːkʰaː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "मसाला", base: "मसाला", reading: "masālā" }
+          - { word: "तीखा", ref: "hi-0338" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-0996"
+    target: "शहद"
+    target_scripts: { perso_arabic: "شہد" }
+    reading: "śahad"
+    ipa: "ʃəɦəd̪"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "बच्चे को शहद पसंद है।"
+        reading: "baccē kō śahad pasand hai."
+        ipa: "bətʃtʃeː koː ʃəɦəd̪ pəsənd̪ ɦɛː"
+        bases:
+          - { word: "बच्चे", base: "बच्चा", reading: "baccē" }
+          - { word: "को", ref: "hi-0277" }
+          - { word: "शहद", base: "शहद", reading: "śahad" }
+          - { word: "पसंद", ref: "hi-0469" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "यह शहद बहुत मीठा है।"
+        reading: "yah śahad bahut mīṭhā hai."
+        ipa: "jəɦ ʃəɦəd̪ bəɦʊt̪ miːʈʰaː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "शहद", base: "शहद", reading: "śahad" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "मीठा", ref: "hi-0339" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-0997"
+    target: "पूरी"
+    target_scripts: { perso_arabic: "پوری" }
+    reading: "pūrī"
+    ipa: "puːriː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "रविवार को पूरी बनती है।"
+        reading: "ravivār kō pūrī bantī hai."
+        ipa: "rəʋɪʋaːr koː puːriː bənt̪iː ɦɛː"
+        bases:
+          - { word: "रविवार", base: "रविवार", reading: "ravivār" }
+          - { word: "को", ref: "hi-0277" }
+          - { word: "पूरी", base: "पूरी", reading: "pūrī" }
+          - { word: "बनती", base: "बनना", reading: "bantī" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मुझे गरम पूरी पसंद है।"
+        reading: "mujhē garam pūrī pasand hai."
+        ipa: "mʊdʒʱeː ɡərəm puːriː pəsənd̪ ɦɛː"
+        bases:
+          - { word: "मुझे", ref: "hi-0745" }
+          - { word: "गरम", ref: "hi-0910" }
+          - { word: "पूरी", base: "पूरी", reading: "pūrī" }
+          - { word: "पसंद", ref: "hi-0469" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-0998"
+    target: "खिचड़ी"
+    target_scripts: { perso_arabic: "کھچڑی" }
+    reading: "khicṛī"
+    ipa: "kʰɪtʃɽiː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "आज रात खिचड़ी बनेगी।"
+        reading: "āj rāt khicṛī banēgī."
+        ipa: "aːdʒ raːt̪ kʰɪtʃɽiː bəneːɡiː"
+        bases:
+          - { word: "आज", ref: "hi-0299" }
+          - { word: "रात", base: "रात", reading: "rāt" }
+          - { word: "खिचड़ी", base: "खिचड़ी", reading: "khicṛī" }
+          - { word: "बनेगी", base: "बनना", reading: "banēgī" }
+      - target: "खिचड़ी हल्की होती है।"
+        reading: "khicṛī halkī hōtī hai."
+        ipa: "kʰɪtʃɽiː ɦəlkiː ɦoːt̪iː ɦɛː"
+        bases:
+          - { word: "खिचड़ी", base: "खिचड़ी", reading: "khicṛī" }
+          - { word: "हल्की", base: "हल्का", reading: "halkī" }
+          - { word: "होती", base: "होना", reading: "hōtī" }
+          - { word: "है", ref: "hi-0780" }
+    collocations:
+      - { id: "rice", ref: "hi-0260" }
+  - id: "hi-0999"
+    target: "पराठा"
+    target_scripts: { perso_arabic: "پراٹھا" }
+    reading: "parāṭhā"
+    ipa: "pəraːʈʰaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "मुझे दो पराठे चाहिए।"
+        reading: "mujhē dō parāṭhē cāhiē."
+        ipa: "mʊdʒʱeː d̪oː pəraːʈʰeː tʃaːɦɪeː"
+        bases:
+          - { word: "मुझे", ref: "hi-0745" }
+          - { word: "दो", base: "दो", reading: "dō" }
+          - { word: "पराठे", base: "पराठा", reading: "parāṭhē" }
+          - { word: "चाहिए", ref: "hi-0460" }
+      - target: "माँ नाश्ते में पराठे बनाती है।"
+        reading: "mām̐ nāśtē mēm̐ parāṭhē banātī hai."
+        ipa: "mãː naːʃt̪eː mẽː pəraːʈʰeː bənaːt̪iː ɦɛː"
+        bases:
+          - { word: "माँ", ref: "hi-0377" }
+          - { word: "नाश्ते", base: "नाश्ता", reading: "nāśtē" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "पराठे", base: "पराठा", reading: "parāṭhē" }
+          - { word: "बनाती", base: "बनाना", reading: "banātī" }
+          - { word: "है", ref: "hi-0780" }
+    collocations:
+      - { id: "breakfast", ref: "hi-0444" }
+  - id: "hi-1000"
+    target: "समोसा"
+    target_scripts: { perso_arabic: "سموسہ" }
+    reading: "samōsā"
+    ipa: "səmoːsaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "उसने समोसे खाए।"
+        reading: "usnē samōsē khāē."
+        ipa: "ʊsneː səmoːseː kʰaːeː"
+        bases:
+          - { word: "उसने", ref: "hi-0749" }
+          - { word: "समोसे", base: "समोसा", reading: "samōsē" }
+          - { word: "खाए", base: "खाना", reading: "khāē" }
+      - target: "बच्चा दो समोसे लेता है।"
+        reading: "baccā dō samōsē lētā hai."
+        ipa: "bətʃtʃaː d̪oː səmoːseː leːt̪aː ɦɛː"
+        bases:
+          - { word: "बच्चा", base: "बच्चा", reading: "baccā" }
+          - { word: "दो", base: "दो", reading: "dō" }
+          - { word: "समोसे", base: "समोसा", reading: "samōsē" }
+          - { word: "लेता", base: "लेना", reading: "lētā" }
+          - { word: "है", ref: "hi-0780" }
+    collocations:
+      - { id: "chutney", ref: "hi-1001" }
+  - id: "hi-1001"
+    target: "चटनी"
+    target_scripts: { perso_arabic: "چٹنی" }
+    reading: "caṭnī"
+    ipa: "tʃəʈniː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "समोसे पर चटनी डालो।"
+        reading: "samōsē par caṭnī ḍālō."
+        ipa: "səmoːseː pər tʃəʈniː ɖaːloː"
+        bases:
+          - { word: "समोसे", base: "समोसा", reading: "samōsē" }
+          - { word: "पर", base: "पर", reading: "par" }
+          - { word: "चटनी", base: "चटनी", reading: "caṭnī" }
+          - { word: "डालो", base: "डालना", reading: "ḍālō" }
+      - target: "यह हरी चटनी तीखी है।"
+        reading: "yah harī caṭnī tīkhī hai."
+        ipa: "jəɦ ɦəriː tʃəʈniː t̪iːkʰiː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "हरी", base: "हरा", reading: "harī" }
+          - { word: "चटनी", base: "चटनी", reading: "caṭnī" }
+          - { word: "तीखी", base: "तीखा", reading: "tīkhī" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-1002"
+    target: "अचार"
+    target_scripts: { perso_arabic: "اچار" }
+    reading: "acār"
+    ipa: "ətʃaːr"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "माँ अचार बनाती है।"
+        reading: "mām̐ acār banātī hai."
+        ipa: "mãː ətʃaːr bənaːt̪iː ɦɛː"
+        bases:
+          - { word: "माँ", ref: "hi-0377" }
+          - { word: "अचार", base: "अचार", reading: "acār" }
+          - { word: "बनाती", base: "बनाना", reading: "banātī" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "यह अचार बहुत तीखा है।"
+        reading: "yah acār bahut tīkhā hai."
+        ipa: "jəɦ ətʃaːr bəɦʊt̪ t̪iːkʰaː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "अचार", base: "अचार", reading: "acār" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "तीखा", ref: "hi-0338" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-1003"
+    target: "सूप"
+    target_scripts: { perso_arabic: "سوپ" }
+    reading: "sūp"
+    ipa: "suːp"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "सर्दी में गरम सूप अच्छा लगता है।"
+        reading: "sardī mēm̐ garam sūp acchā lagtā hai."
+        ipa: "sərd̪iː mẽː ɡərəm suːp ətʃtʃʰaː ləɡt̪aː ɦɛː"
+        bases:
+          - { word: "सर्दी", base: "सर्दी", reading: "sardī" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "गरम", ref: "hi-0910" }
+          - { word: "सूप", base: "सूप", reading: "sūp" }
+          - { word: "अच्छा", ref: "hi-0898" }
+          - { word: "लगता", base: "लगना", reading: "lagtā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "पहले सूप पीजिए, फिर खाना।"
+        reading: "pahlē sūp pījiē, phir khānā."
+        ipa: "pəɦleː suːp piːdʒɪeː pʰɪr kʰaːnaː"
+        bases:
+          - { word: "पहले", ref: "hi-0823" }
+          - { word: "सूप", base: "सूप", reading: "sūp" }
+          - { word: "पीजिए", base: "पीना", reading: "pījiē" }
+          - { word: "फिर", ref: "hi-0351" }
+          - { word: "खाना", ref: "hi-0332" }
+  - id: "hi-1004"
+    target: "सलाद"
+    target_scripts: { perso_arabic: "سلاد" }
+    reading: "salād"
+    ipa: "səlaːd̪"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "खाने से पहले सलाद खाओ।"
+        reading: "khānē sē pahlē salād khāō."
+        ipa: "kʰaːneː seː pəɦleː səlaːd̪ kʰaːoː"
+        bases:
+          - { word: "खाने", base: "खाना", reading: "khānē" }
+          - { word: "से", ref: "hi-0276" }
+          - { word: "पहले", ref: "hi-0823" }
+          - { word: "सलाद", base: "सलाद", reading: "salād" }
+          - { word: "खाओ", base: "खाना", reading: "khāō" }
+      - target: "सलाद में प्याज़ और टमाटर डालो।"
+        reading: "salād mēm̐ pyāz aur ṭamāṭar ḍālō."
+        ipa: "səlaːd̪ mẽː pjaːz ɔːr ʈəmaːʈər ɖaːloː"
+        bases:
+          - { word: "सलाद", base: "सलाद", reading: "salād" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "प्याज़", ref: "hi-0251" }
+          - { word: "और", ref: "hi-0337" }
+          - { word: "टमाटर", ref: "hi-0252" }
+          - { word: "डालो", base: "डालना", reading: "ḍālō" }
+    collocations:
+      - { id: "onion", ref: "hi-0251" }
+  - id: "hi-1005"
+    target: "मिठाई"
+    target_scripts: { perso_arabic: "مٹھائی" }
+    reading: "miṭhāī"
+    ipa: "mɪʈʰaːiː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "यह मिठाई बहुत मीठी है।"
+        reading: "yah miṭhāī bahut mīṭhī hai."
+        ipa: "jəɦ mɪʈʰaːiː bəɦʊt̪ miːʈʰiː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "मिठाई", base: "मिठाई", reading: "miṭhāī" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "मीठी", base: "मीठा", reading: "mīṭhī" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "दुकान से मिठाई लाओ।"
+        reading: "dukān sē miṭhāī lāō."
+        ipa: "d̪ʊkaːn seː mɪʈʰaːiː laːoː"
+        bases:
+          - { word: "दुकान", base: "दुकान", reading: "dukān" }
+          - { word: "से", ref: "hi-0276" }
+          - { word: "मिठाई", base: "मिठाई", reading: "miṭhāī" }
+          - { word: "लाओ", base: "लाना", reading: "lāō" }
+  - id: "hi-1006"
+    target: "बिस्कुट"
+    target_scripts: { perso_arabic: "بسکٹ" }
+    reading: "biskuṭ"
+    ipa: "bɪskʊʈ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "उसने एक बिस्कुट लिया।"
+        reading: "usnē ēk biskuṭ liyā."
+        ipa: "ʊsneː eːk bɪskʊʈ lɪjaː"
+        bases:
+          - { word: "उसने", ref: "hi-0749" }
+          - { word: "एक", base: "एक", reading: "ēk" }
+          - { word: "बिस्कुट", base: "बिस्कुट", reading: "biskuṭ" }
+          - { word: "लिया", base: "लेना", reading: "liyā" }
+      - target: "यह बिस्कुट मीठा है।"
+        reading: "yah biskuṭ mīṭhā hai."
+        ipa: "jəɦ bɪskʊʈ miːʈʰaː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "बिस्कुट", base: "बिस्कुट", reading: "biskuṭ" }
+          - { word: "मीठा", ref: "hi-0339" }
+          - { word: "है", ref: "hi-0780" }
+    collocations:
+      - { id: "tea", ref: "hi-0334" }
+  - id: "hi-1007"
+    target: "केक"
+    target_scripts: { perso_arabic: "کیک" }
+    reading: "kēk"
+    ipa: "keːk"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "आज मुझे केक चाहिए।"
+        reading: "āj mujhē kēk cāhiē."
+        ipa: "aːdʒ mʊdʒʱeː keːk tʃaːɦɪeː"
+        bases:
+          - { word: "आज", ref: "hi-0299" }
+          - { word: "मुझे", ref: "hi-0745" }
+          - { word: "केक", base: "केक", reading: "kēk" }
+          - { word: "चाहिए", ref: "hi-0460" }
+      - target: "यह केक बहुत मीठा है।"
+        reading: "yah kēk bahut mīṭhā hai."
+        ipa: "jəɦ keːk bəɦʊt̪ miːʈʰaː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "केक", base: "केक", reading: "kēk" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "मीठा", ref: "hi-0339" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-1008"
+    target: "चॉकलेट"
+    target_scripts: { perso_arabic: "چاکلیٹ" }
+    reading: "côklēṭ"
+    ipa: "tʃɔkleːʈ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "उसने चॉकलेट खाया।"
+        reading: "usnē côklēṭ khāyā."
+        ipa: "ʊsneː tʃɔkleːʈ kʰaːjaː"
+        bases:
+          - { word: "उसने", ref: "hi-0749" }
+          - { word: "चॉकलेट", base: "चॉकलेट", reading: "côklēṭ" }
+          - { word: "खाया", base: "खाना", reading: "khāyā" }
+      - target: "यह चॉकलेट बहुत मीठा है।"
+        reading: "yah côklēṭ bahut mīṭhā hai."
+        ipa: "jəɦ tʃɔkleːʈ bəɦʊt̪ miːʈʰaː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "चॉकलेट", base: "चॉकलेट", reading: "côklēṭ" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "मीठा", ref: "hi-0339" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-1009"
+    target: "आइसक्रीम"
+    target_scripts: { perso_arabic: "آئس کریم" }
+    reading: "āisakrīm"
+    ipa: "aːɪsəkriːm"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "गरमी में आइसक्रीम ठंडी होती है।"
+        reading: "garmī mēm̐ āisakrīm ṭhaṇḍī hōtī hai."
+        ipa: "ɡərmiː mẽː aːɪsəkriːm ʈʰəɳɖiː ɦoːt̪iː ɦɛː"
+        bases:
+          - { word: "गरमी", base: "गरमी", reading: "garmī" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "आइसक्रीम", base: "आइसक्रीम", reading: "āisakrīm" }
+          - { word: "ठंडी", base: "ठंडा", reading: "ṭhaṇḍī" }
+          - { word: "होती", base: "होना", reading: "hōtī" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "बच्चों को आइसक्रीम पसंद है।"
+        reading: "baccōm̐ kō āisakrīm pasand hai."
+        ipa: "bətʃtʃõː koː aːɪsəkriːm pəsənd̪ ɦɛː"
+        bases:
+          - { word: "बच्चों", base: "बच्चा", reading: "baccōm̐" }
+          - { word: "को", ref: "hi-0277" }
+          - { word: "आइसक्रीम", base: "आइसक्रीम", reading: "āisakrīm" }
+          - { word: "पसंद", ref: "hi-0469" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-1010"
+    target: "ब्रेड"
+    target_scripts: { perso_arabic: "بریڈ" }
+    reading: "brēḍ"
+    ipa: "breːɖ"
+    picture: "🍞"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "नाश्ते में ब्रेड और अंडा लो।"
+        reading: "nāśtē mēm̐ brēḍ aur aṇḍā lō."
+        ipa: "naːʃt̪eː mẽː breːɖ ɔːr əɳɖaː loː"
+        bases:
+          - { word: "नाश्ते", base: "नाश्ता", reading: "nāśtē" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "ब्रेड", base: "ब्रेड", reading: "brēḍ" }
+          - { word: "और", ref: "hi-0337" }
+          - { word: "अंडा", ref: "hi-0258" }
+          - { word: "लो", base: "लेना", reading: "lō" }
+      - target: "यह ब्रेड ताज़ा है।"
+        reading: "yah brēḍ tāzā hai."
+        ipa: "jəɦ breːɖ t̪aːzaː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "ब्रेड", base: "ब्रेड", reading: "brēḍ" }
+          - { word: "ताज़ा", base: "ताज़ा", reading: "tāzā" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-1011"
+    target: "जूस"
+    target_scripts: { perso_arabic: "جوس" }
+    reading: "jūs"
+    ipa: "dʒuːs"
+    picture: "🧃"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "यह जूस खट्टा है।"
+        reading: "yah jūs khaṭṭā hai."
+        ipa: "jəɦ dʒuːs kʰəʈʈaː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "जूस", base: "जूस", reading: "jūs" }
+          - { word: "खट्टा", ref: "hi-1016" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "माँ जूस बनाती है।"
+        reading: "mām̐ jūs banātī hai."
+        ipa: "mãː dʒuːs bənaːt̪iː ɦɛː"
+        bases:
+          - { word: "माँ", ref: "hi-0377" }
+          - { word: "जूस", base: "जूस", reading: "jūs" }
+          - { word: "बनाती", base: "बनाना", reading: "banātī" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-1012"
+    target: "कॉफ़ी"
+    target_scripts: { perso_arabic: "کافی" }
+    reading: "kôfī"
+    ipa: "kɔfiː"
+    alt_target: ["कॉफी"]
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "मैं सुबह एक कप कॉफ़ी पीता हूँ।"
+        reading: "maim̐ subah ēk kap kôfī pītā hūm̐."
+        ipa: "mɛ̃ː sʊbəɦ eːk kəp kɔfiː piːt̪aː ɦũː"
+        bases:
+          - { word: "मैं", ref: "hi-0745" }
+          - { word: "सुबह", ref: "hi-0302" }
+          - { word: "एक", base: "एक", reading: "ēk" }
+          - { word: "कप", ref: "hi-0877" }
+          - { word: "कॉफ़ी", base: "कॉफ़ी", reading: "kôfī" }
+          - { word: "पीता", base: "पीना", reading: "pītā" }
+          - { word: "हूँ", ref: "hi-0780" }
+      - target: "कॉफ़ी गरम है।"
+        reading: "kôfī garam hai."
+        ipa: "kɔfiː ɡərəm ɦɛː"
+        bases:
+          - { word: "कॉफ़ी", base: "कॉफ़ी", reading: "kôfī" }
+          - { word: "गरम", ref: "hi-0910" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-1013"
+    target: "स्वाद"
+    target_scripts: { perso_arabic: "ذائقہ" }
+    reading: "svād"
+    ipa: "sʋaːd̪"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "तुम्हें यह स्वाद पसंद है?"
+        reading: "tumhēm̐ yah svād pasand hai?"
+        ipa: "t̪ʊmɦẽː jəɦ sʋaːd̪ pəsənd̪ ɦɛː"
+        bases:
+          - { word: "तुम्हें", ref: "hi-0747" }
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "स्वाद", base: "स्वाद", reading: "svād" }
+          - { word: "पसंद", ref: "hi-0469" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "खाने में अच्छा स्वाद है।"
+        reading: "khānē mēm̐ acchā svād hai."
+        ipa: "kʰaːneː mẽː ətʃtʃʰaː sʋaːd̪ ɦɛː"
+        bases:
+          - { word: "खाने", base: "खाना", reading: "khānē" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "अच्छा", ref: "hi-0898" }
+          - { word: "स्वाद", base: "स्वाद", reading: "svād" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "zaikaa", word: "ज़ायका", reading: "zāykā", ipa: "zaːjkaː" }
+  - id: "hi-1014"
+    target: "भूख"
+    target_scripts: { perso_arabic: "بھوک" }
+    reading: "bhūkh"
+    ipa: "bʱuːkʰ"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "बच्चे को भूख लगी है।"
+        reading: "baccē kō bhūkh lagī hai."
+        ipa: "bətʃtʃeː koː bʱuːkʰ ləɡiː ɦɛː"
+        bases:
+          - { word: "बच्चे", base: "बच्चा", reading: "baccē" }
+          - { word: "को", ref: "hi-0277" }
+          - { word: "भूख", base: "भूख", reading: "bhūkh" }
+          - { word: "लगी", base: "लगना", reading: "lagī" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मुझे बहुत भूख लगती है।"
+        reading: "mujhē bahut bhūkh lagtī hai."
+        ipa: "mʊdʒʱeː bəɦʊt̪ bʱuːkʰ ləɡt̪iː ɦɛː"
+        bases:
+          - { word: "मुझे", ref: "hi-0745" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "भूख", base: "भूख", reading: "bhūkh" }
+          - { word: "लगती", base: "लगना", reading: "lagtī" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "kshudha", word: "क्षुधा", reading: "kśudhā", ipa: "kʃʊd̪ʱaː" }
+  - id: "hi-1015"
+    target: "प्यास"
+    target_scripts: { perso_arabic: "پیاس" }
+    reading: "pyās"
+    ipa: "pjaːs"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "गरमी में प्यास लगती है।"
+        reading: "garmī mēm̐ pyās lagtī hai."
+        ipa: "ɡərmiː mẽː pjaːs ləɡt̪iː ɦɛː"
+        bases:
+          - { word: "गरमी", base: "गरमी", reading: "garmī" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "प्यास", base: "प्यास", reading: "pyās" }
+          - { word: "लगती", base: "लगना", reading: "lagtī" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मुझे प्यास लगी है, पानी दीजिए।"
+        reading: "mujhē pyās lagī hai, pānī dījiē."
+        ipa: "mʊdʒʱeː pjaːs ləɡiː ɦɛː paːniː d̪iːdʒɪeː"
+        bases:
+          - { word: "मुझे", ref: "hi-0745" }
+          - { word: "प्यास", base: "प्यास", reading: "pyās" }
+          - { word: "लगी", base: "लगना", reading: "lagī" }
+          - { word: "है", ref: "hi-0780" }
+          - { word: "पानी", ref: "hi-0333" }
+          - { word: "दीजिए", base: "देना", reading: "dījiē" }
+    synonyms:
+      - { id: "trisha", word: "तृषा", reading: "triśā", ipa: "t̪rɪʃaː" }
+  - id: "hi-1016"
+    target: "खट्टा"
+    target_scripts: { perso_arabic: "کھٹا" }
+    reading: "khaṭṭā"
+    ipa: "kʰəʈʈaː"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "यह आम खट्टा है।"
+        reading: "yah ām khaṭṭā hai."
+        ipa: "jəɦ aːm kʰəʈʈaː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "आम", ref: "hi-0979" }
+          - { word: "खट्टा", base: "खट्टा", reading: "khaṭṭā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मुझे खट्टा दही पसंद है।"
+        reading: "mujhē khaṭṭā dahī pasand hai."
+        ipa: "mʊdʒʱeː kʰəʈʈaː d̪əɦiː pəsənd̪ ɦɛː"
+        bases:
+          - { word: "मुझे", ref: "hi-0745" }
+          - { word: "खट्टा", base: "खट्टा", reading: "khaṭṭā" }
+          - { word: "दही", ref: "hi-0989" }
+          - { word: "पसंद", ref: "hi-0469" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "sour-sanskrit", word: "अम्ल", reading: "aml", ipa: "əml" }
+    antonyms:
+      - { id: "sweet", ref: "hi-0339" }
+  - id: "hi-1017"
+    target: "नमकीन"
+    target_scripts: { perso_arabic: "نمکین" }
+    reading: "namkīn"
+    ipa: "nəmkiːn"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "दाल नमकीन है।"
+        reading: "dāl namkīn hai."
+        ipa: "d̪aːl nəmkiːn ɦɛː"
+        bases:
+          - { word: "दाल", ref: "hi-0261" }
+          - { word: "नमकीन", base: "नमकीन", reading: "namkīn" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मुझे नमकीन खाना पसंद है।"
+        reading: "mujhē namkīn khānā pasand hai."
+        ipa: "mʊdʒʱeː nəmkiːn kʰaːnaː pəsənd̪ ɦɛː"
+        bases:
+          - { word: "मुझे", ref: "hi-0745" }
+          - { word: "नमकीन", base: "नमकीन", reading: "namkīn" }
+          - { word: "खाना", ref: "hi-0332" }
+          - { word: "पसंद", ref: "hi-0469" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-1018"
+    target: "स्वादिष्ट"
+    target_scripts: { perso_arabic: "لذیذ" }
+    reading: "svādiśṭ"
+    ipa: "sʋaːd̪ɪʃʈ"
+    pos: "adj"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "यह सब्ज़ी बहुत स्वादिष्ट है।"
+        reading: "yah sabzī bahut svādiśṭ hai."
+        ipa: "jəɦ səbziː bəɦʊt̪ sʋaːd̪ɪʃʈ ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "सब्ज़ी", ref: "hi-0249" }
+          - { word: "बहुत", ref: "hi-0866" }
+          - { word: "स्वादिष्ट", base: "स्वादिष्ट", reading: "svādiśṭ" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "माँ खाना स्वादिष्ट बनाती है।"
+        reading: "mām̐ khānā svādiśṭ banātī hai."
+        ipa: "mãː kʰaːnaː sʋaːd̪ɪʃʈ bənaːt̪iː ɦɛː"
+        bases:
+          - { word: "माँ", ref: "hi-0377" }
+          - { word: "खाना", ref: "hi-0332" }
+          - { word: "स्वादिष्ट", base: "स्वादिष्ट", reading: "svādiśṭ" }
+          - { word: "बनाती", base: "बनाना", reading: "banātī" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "lazeez", word: "लज़ीज़", reading: "lazīz", ipa: "ləziːz" }
+  - id: "hi-1019"
+    target: "थाली"
+    target_scripts: { perso_arabic: "تھالی" }
+    reading: "thālī"
+    ipa: "t̪ʰaːliː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "थाली में चावल और दाल है।"
+        reading: "thālī mēm̐ cāval aur dāl hai."
+        ipa: "t̪ʰaːliː mẽː tʃaːʋəl ɔːr d̪aːl ɦɛː"
+        bases:
+          - { word: "थाली", base: "थाली", reading: "thālī" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "चावल", ref: "hi-0260" }
+          - { word: "और", ref: "hi-0337" }
+          - { word: "दाल", ref: "hi-0261" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मुझे एक थाली दीजिए।"
+        reading: "mujhē ēk thālī dījiē."
+        ipa: "mʊdʒʱeː eːk t̪ʰaːliː d̪iːdʒɪeː"
+        bases:
+          - { word: "मुझे", ref: "hi-0745" }
+          - { word: "एक", base: "एक", reading: "ēk" }
+          - { word: "थाली", base: "थाली", reading: "thālī" }
+          - { word: "दीजिए", base: "देना", reading: "dījiē" }
+  - id: "hi-1020"
+    target: "प्लेट"
+    target_scripts: { perso_arabic: "پلیٹ" }
+    reading: "plēṭ"
+    ipa: "pleːʈ"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "प्लेट में सलाद रखो।"
+        reading: "plēṭ mēm̐ salād rakhō."
+        ipa: "pleːʈ mẽː səlaːd̪ rəkʰoː"
+        bases:
+          - { word: "प्लेट", base: "प्लेट", reading: "plēṭ" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "सलाद", ref: "hi-1004" }
+          - { word: "रखो", base: "रखना", reading: "rakhō" }
+      - target: "यह प्लेट बड़ी है।"
+        reading: "yah plēṭ baṛī hai."
+        ipa: "jəɦ pleːʈ bəɽiː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "प्लेट", base: "प्लेट", reading: "plēṭ" }
+          - { word: "बड़ी", base: "बड़ा", reading: "baṛī" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-1021"
+    target: "कटोरी"
+    target_scripts: { perso_arabic: "کٹوری" }
+    reading: "kaṭōrī"
+    ipa: "kəʈoːriː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "कटोरी में दाल डालो।"
+        reading: "kaṭōrī mēm̐ dāl ḍālō."
+        ipa: "kəʈoːriː mẽː d̪aːl ɖaːloː"
+        bases:
+          - { word: "कटोरी", base: "कटोरी", reading: "kaṭōrī" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "दाल", ref: "hi-0261" }
+          - { word: "डालो", base: "डालना", reading: "ḍālō" }
+      - target: "यह कटोरी छोटी है।"
+        reading: "yah kaṭōrī chōṭī hai."
+        ipa: "jəɦ kəʈoːriː tʃʰoːʈiː ɦɛː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "कटोरी", base: "कटोरी", reading: "kaṭōrī" }
+          - { word: "छोटी", base: "छोटा", reading: "chōṭī" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-1022"
+    target: "चाकू"
+    target_scripts: { perso_arabic: "چاقو" }
+    reading: "cākū"
+    ipa: "tʃaːkuː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "चाकू तेज़ है।"
+        reading: "cākū tēz hai."
+        ipa: "tʃaːkuː t̪eːz ɦɛː"
+        bases:
+          - { word: "चाकू", base: "चाकू", reading: "cākū" }
+          - { word: "तेज़", base: "तेज़", reading: "tēz" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "माँ चाकू से प्याज़ काटती है।"
+        reading: "mām̐ cākū sē pyāz kāṭtī hai."
+        ipa: "mãː tʃaːkuː seː pjaːz kaːʈt̪iː ɦɛː"
+        bases:
+          - { word: "माँ", ref: "hi-0377" }
+          - { word: "चाकू", base: "चाकू", reading: "cākū" }
+          - { word: "से", ref: "hi-0276" }
+          - { word: "प्याज़", ref: "hi-0251" }
+          - { word: "काटती", base: "काटना", reading: "kāṭtī" }
+          - { word: "है", ref: "hi-0780" }
+    collocations:
+      - { id: "onion", ref: "hi-0251" }
+  - id: "hi-1023"
+    target: "चखना"
+    target_scripts: { perso_arabic: "چکھنا" }
+    reading: "cakhnā"
+    ipa: "tʃəkʰnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "माँ सब्ज़ी चखती है।"
+        reading: "mām̐ sabzī cakhtī hai."
+        ipa: "mãː səbziː tʃəkʰt̪iː ɦɛː"
+        bases:
+          - { word: "माँ", ref: "hi-0377" }
+          - { word: "सब्ज़ी", ref: "hi-0249" }
+          - { word: "चखती", base: "चखना", reading: "cakhtī" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "पहले दाल चखो, फिर नमक डालो।"
+        reading: "pahlē dāl cakhō, phir namak ḍālō."
+        ipa: "pəɦleː d̪aːl tʃəkʰoː pʰɪr nəmək ɖaːloː"
+        bases:
+          - { word: "पहले", ref: "hi-0823" }
+          - { word: "दाल", ref: "hi-0261" }
+          - { word: "चखो", base: "चखना", reading: "cakhō" }
+          - { word: "फिर", ref: "hi-0351" }
+          - { word: "नमक", ref: "hi-0051" }
+          - { word: "डालो", base: "डालना", reading: "ḍālō" }

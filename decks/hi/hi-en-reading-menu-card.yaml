@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-menu-card"
+name: "Reading: menu card"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A short menu card with drinks, savouries and sweets. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-menu-card"
+    title: "Menu card"
+    theme: "food"
+    sentences:
+      - { text: "चाय, कॉफ़ी और जूस।", reading: "cāy, kôfī aur jūs." }
+      - { text: "समोसा, पराठा और खिचड़ी।", reading: "samōsā, parāṭhā aur khicṛī." }
+      - { text: "सलाद और सूप पहले।", reading: "salād aur sūp pahlē." }
+      - { text: "मीठा: मिठाई, केक और आइसक्रीम।", reading: "mīṭhā: miṭhāī, kēk aur āisakrīm." }
+    questions:
+      - id: "hi-1037"
+        prompt: { en: "Which of these is a sweet?" }
+        options:
+          - { en: "Samosa" }
+          - { en: "Ice cream" }
+        answer: 2
+      - id: "hi-1038"
+        prompt: { en: "Which of these is a drink?" }
+        options:
+          - { en: "Coffee" }
+          - { en: "Paratha" }
+        answer: 1
+      - id: "hi-1039"
+        prompt: { en: "The menu lists salad and soup first." }
+        answer: true

@@ -1,0 +1,297 @@
+schema: 1
+id: "hi-en-food"
+kind: "layer"
+core: "hi-food"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Food and drink"
+license: "CC-BY-SA-4.0"
+description: "Fruit, vegetables, dairy, staples, sweets and drinks, the words of a meal, and how food tastes. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-0977":
+    native: "banana"
+    notes: { "n1": "The plural is केले (kēlē), bananas. A masculine noun ending in -ā takes -e in the plural." }
+    examples:
+      "बच्चा केला खाता है।": { native: "The child eats a banana.", bases: { "बच्चा": "child", "केला": "banana", "खाता": "to eat" } }
+      "मुझे केला पसंद है।": { native: "I like bananas.", bases: { "केला": "banana" } }
+  "hi-0978":
+    native: "apple"
+    notes: { "n1": "The plural is also सेब (sēb), apples. Before a postposition it becomes सेबों में (sēbōm̐ mēm̐), as in apples." }
+    examples:
+      "मैं रोज़ एक सेब खाता हूँ।": { native: "I eat an apple every day.", bases: { "एक": "one", "सेब": "apple", "खाता": "to eat" } }
+      "यह सेब मीठा है।": { native: "This apple is sweet.", bases: { "सेब": "apple" } }
+  "hi-0979":
+    native: "mango"
+    notes: { "n1": "A summer fruit, eaten fresh or cut in pieces. The fruit is also pickled, as अचार (acār) is." }
+    examples:
+      "मुझे आम बहुत पसंद है।": { native: "I like mangoes very much.", bases: { "आम": "mango" } }
+      "वह आम काटता है।": { native: "He cuts the mango.", bases: { "आम": "mango", "काटता": "to cut" } }
+  "hi-0980":
+    native: "orange"
+    notes: { "n1": "The plural is संतरे (santarē), oranges." }
+    examples:
+      "संतरा खट्टा और मीठा होता है।": { native: "An orange is sour and sweet.", bases: { "संतरा": "orange", "होता": "to be" } }
+      "मुझे दो संतरे चाहिए।": { native: "I want two oranges.", bases: { "दो": "two", "संतरे": "orange" } }
+  "hi-0981":
+    native: "grape (grapes)"
+    notes: { "n1": "Grapes are bought by the kilo, किलो (kilō), in a fruit shop." }
+    examples:
+      "बच्चे अंगूर खाते हैं।": { native: "Children eat grapes.", bases: { "बच्चे": "child", "अंगूर": "grape", "खाते": "to eat" } }
+      "यह अंगूर बहुत ठंडा है।": { native: "This grape is very cold.", bases: { "अंगूर": "grape" } }
+  "hi-0982":
+    native: "lemon; lime"
+    notes: { "n1": "Lemon in water is a common drink: नींबू पानी (nīmbū pānī)." }
+    examples:
+      "चाय में नींबू डालो।": { native: "Put lemon in the tea.", bases: { "नींबू": "lemon", "डालो": "to put in" } }
+      "नींबू पानी बहुत खट्टा है।": { native: "Lemon water is very sour.", bases: { "नींबू": "lemon" } }
+  "hi-0983":
+    native: "carrot"
+    notes: { "n1": "A feminine noun, so an adjective with it takes the feminine ending, as in मीठी गाजर (mīṭhī gājar)." }
+    examples:
+      "माँ गाजर काटती है।": { native: "Mother cuts the carrot.", bases: { "गाजर": "carrot", "काटती": "to cut" } }
+      "गाजर मीठी है।": { native: "The carrot is sweet.", bases: { "गाजर": "carrot", "मीठी": "sweet" } }
+  "hi-0984":
+    native: "cauliflower"
+    notes: { "n1": "The plural is गोभियाँ (gōbhiyām̐), cauliflowers." }
+    examples:
+      "माँ गोभी पकाती है।": { native: "Mother cooks cauliflower.", bases: { "गोभी": "cauliflower", "पकाती": "to cook" } }
+      "आज गोभी उबालो।": { native: "Boil the cauliflower today.", bases: { "गोभी": "cauliflower", "उबालो": "to boil" } }
+  "hi-0985":
+    native: "spinach"
+    notes: { "n1": "Spinach is cooked as a vegetable, as in पालक पनीर (pālak panīr)." }
+    examples:
+      "पालक हरा है।": { native: "Spinach is green.", bases: { "पालक": "spinach", "हरा": "green" } }
+      "मुझे पालक पसंद नहीं।": { native: "I don't like spinach.", bases: { "पालक": "spinach" } }
+  "hi-0986":
+    native: "peas"
+    notes: { "n1": "Green peas, cooked with paneer in मटर पनीर (maṭar panīr)." }
+    examples:
+      "मटर पनीर बहुत अच्छा है।": { native: "Peas with paneer is very good.", bases: { "मटर": "peas" } }
+      "उसने मटर पकाए।": { native: "He cooked the peas.", bases: { "मटर": "peas", "पकाए": "to cook" } }
+  "hi-0987":
+    native: "coriander"
+    notes: { "n1": "The leaves are used as a garnish, and the seeds as a spice." }
+    examples:
+      "सब्ज़ी में धनिया डालो।": { native: "Put coriander in the vegetable.", bases: { "धनिया": "coriander", "डालो": "to put in" } }
+      "धनिया हरा है।": { native: "Coriander is green.", bases: { "धनिया": "coriander", "हरा": "green" } }
+  "hi-0988":
+    native: "cottage cheese; paneer"
+    notes: { "n1": "A fresh cheese, cut in cubes and cooked in a gravy." }
+    examples:
+      "उसने पनीर खाया।": { native: "He ate paneer.", bases: { "पनीर": "paneer", "खाया": "to eat" } }
+      "मुझे पनीर चाहिए।": { native: "I need paneer.", bases: { "पनीर": "paneer" } }
+  "hi-0989":
+    native: "yogurt; curd"
+    notes: { "n1": "Yogurt is eaten with rice or dal, and its sour taste is normal." }
+    examples:
+      "दही खट्टा होता है।": { native: "Yogurt is sour.", bases: { "दही": "yogurt", "होता": "to be" } }
+      "माँ दही बनाती है।": { native: "Mother makes yogurt.", bases: { "दही": "yogurt", "बनाती": "to make" } }
+  "hi-0990":
+    native: "butter"
+    notes: { "n1": "Butter is spread on bread or added to dal, like घी (ghī)." }
+    examples:
+      "रोटी पर मक्खन लगाओ।": { native: "Put butter on the roti.", bases: { "पर": "on", "मक्खन": "butter", "लगाओ": "to apply" } }
+      "यह मक्खन ताज़ा है।": { native: "This butter is fresh.", bases: { "मक्खन": "butter", "ताज़ा": "fresh" } }
+  "hi-0991":
+    native: "ghee (clarified butter)"
+    notes: { "n1": "Clarified butter, used for frying and poured over dal and rice." }
+    examples:
+      "माँ दाल में घी डालती है।": { native: "Mother puts ghee in the dal.", bases: { "घी": "ghee", "डालती": "to put in" } }
+      "घी बहुत महँगा है।": { native: "Ghee is very expensive.", bases: { "घी": "ghee", "महँगा": "expensive" } }
+  "hi-0992":
+    native: "sugar"
+    notes: { "n1": "A feminine noun. In tea, the usual phrase is चाय में चीनी (cāy mēm̐ cīnī), sugar in the tea." }
+    examples:
+      "चाय में चीनी कम डालो।": { native: "Put less sugar in the tea.", bases: { "चीनी": "sugar", "कम": "less", "डालो": "to put in" } }
+      "मुझे एक चम्मच चीनी चाहिए।": { native: "I need a spoon of sugar.", bases: { "एक": "one", "चीनी": "sugar" } }
+  "hi-0993":
+    native: "flour (wheat flour)"
+    notes: { "n1": "Wheat flour, from which रोटी (rōṭī), पराठा (parāṭhā) and पूरी (pūrī) are made." }
+    examples:
+      "माँ आटा गूँधती है।": { native: "Mother kneads the flour.", bases: { "आटा": "flour", "गूँधती": "to knead" } }
+      "यह आटा ताज़ा है।": { native: "This flour is fresh.", bases: { "आटा": "flour", "ताज़ा": "fresh" } }
+  "hi-0994":
+    native: "oil"
+    notes: { "n1": "Oil for cooking, heated in a pan before frying." }
+    examples:
+      "कड़ाही में तेल डालो।": { native: "Put oil in the pan.", bases: { "कड़ाही": "pan", "तेल": "oil", "डालो": "to put in" } }
+      "यह तेल अच्छा है।": { native: "This oil is good.", bases: { "तेल": "oil" } }
+  "hi-0995":
+    native: "spice; spice mix"
+    notes: { "n1": "A spice mix. Each dish has its own, such as गरम मसाला (garam masālā)." }
+    examples:
+      "माँ सब्ज़ी में मसाला डालती है।": { native: "Mother puts spice mix in the vegetable.", bases: { "मसाला": "spice mix", "डालती": "to put in" } }
+      "यह मसाला तीखा है।": { native: "This spice mix is hot.", bases: { "मसाला": "spice mix" } }
+  "hi-0996":
+    native: "honey"
+    notes: { "n1": "Honey, which can be spooned from the jar or stirred into tea." }
+    examples:
+      "बच्चे को शहद पसंद है।": { native: "The child likes honey.", bases: { "बच्चे": "child", "शहद": "honey" } }
+      "यह शहद बहुत मीठा है।": { native: "This honey is very sweet.", bases: { "शहद": "honey" } }
+  "hi-0997":
+    native: "puri (fried bread)"
+    notes: { "n1": "A small bread puffed up in hot oil, usually eaten with a vegetable dish." }
+    examples:
+      "रविवार को पूरी बनती है।": { native: "Puri is made on Sundays.", bases: { "रविवार": "Sunday", "पूरी": "puri", "बनती": "to be made" } }
+      "मुझे गरम पूरी पसंद है।": { native: "I like hot puri.", bases: { "पूरी": "puri" } }
+  "hi-0998":
+    native: "khichdi (rice and lentils)"
+    notes: { "n1": "Rice and lentils cooked together, soft and easy to eat." }
+    examples:
+      "आज रात खिचड़ी बनेगी।": { native: "Khichdi will be made tonight.", bases: { "रात": "night", "खिचड़ी": "khichdi", "बनेगी": "to be made" } }
+      "खिचड़ी हल्की होती है।": { native: "Khichdi is light.", bases: { "खिचड़ी": "khichdi", "हल्की": "light", "होती": "to be" } }
+  "hi-0999":
+    native: "paratha (flatbread)"
+    notes: { "n1": "The plural is पराठे (parāṭhē), parathas." }
+    examples:
+      "मुझे दो पराठे चाहिए।": { native: "I want two parathas.", bases: { "दो": "two", "पराठे": "paratha" } }
+      "माँ नाश्ते में पराठे बनाती है।": { native: "Mother makes parathas for breakfast.", bases: { "नाश्ते": "breakfast", "पराठे": "paratha", "बनाती": "to make" } }
+  "hi-1000":
+    native: "samosa"
+    notes: { "n1": "The plural is समोसे (samōsē), samosas." }
+    examples:
+      "उसने समोसे खाए।": { native: "He ate samosas.", bases: { "समोसे": "samosa", "खाए": "to eat" } }
+      "बच्चा दो समोसे लेता है।": { native: "The child takes two samosas.", bases: { "बच्चा": "child", "दो": "two", "समोसे": "samosa", "लेता": "to take" } }
+  "hi-1001":
+    native: "chutney"
+    notes: { "n1": "A relish of herbs or fruit, such as हरी चटनी (harī caṭnī), green chutney." }
+    examples:
+      "समोसे पर चटनी डालो।": { native: "Put chutney on the samosas.", bases: { "समोसे": "samosa", "पर": "on", "चटनी": "chutney", "डालो": "to put in" } }
+      "यह हरी चटनी तीखी है।": { native: "This green chutney is hot.", bases: { "हरी": "green", "चटनी": "chutney", "तीखी": "hot" } }
+  "hi-1002":
+    native: "pickle"
+    notes: { "n1": "Pickle, often of mango or lemon, kept in oil and spices." }
+    examples:
+      "माँ अचार बनाती है।": { native: "Mother makes pickle.", bases: { "अचार": "pickle", "बनाती": "to make" } }
+      "यह अचार बहुत तीखा है।": { native: "This pickle is very hot.", bases: { "अचार": "pickle" } }
+  "hi-1003":
+    native: "soup"
+    notes: { "n1": "Soup, usually eaten at the start of a meal." }
+    examples:
+      "सर्दी में गरम सूप अच्छा लगता है।": { native: "Hot soup is good in winter.", bases: { "सर्दी": "winter; cold", "सूप": "soup", "लगता": "to seem" } }
+      "पहले सूप पीजिए, फिर खाना।": { native: "First have the soup, then the food.", bases: { "सूप": "soup", "पीजिए": "to drink" } }
+  "hi-1004":
+    native: "salad"
+    notes: { "n1": "Raw vegetables, cut and mixed, eaten with a meal." }
+    examples:
+      "खाने से पहले सलाद खाओ।": { native: "Eat the salad before the meal.", bases: { "खाने": "meal", "सलाद": "salad", "खाओ": "to eat" } }
+      "सलाद में प्याज़ और टमाटर डालो।": { native: "Put onion and tomato in the salad.", bases: { "सलाद": "salad", "डालो": "to put in" } }
+  "hi-1005":
+    native: "sweet; a sweet dish"
+    notes: { "n1": "The plural is मिठाइयाँ (miṭhāiyām̐), sweets." }
+    examples:
+      "यह मिठाई बहुत मीठी है।": { native: "This sweet is very sweet.", bases: { "मिठाई": "sweet", "मीठी": "sweet" } }
+      "दुकान से मिठाई लाओ।": { native: "Bring sweets from the shop.", bases: { "दुकान": "shop", "मिठाई": "sweet", "लाओ": "to bring" } }
+  "hi-1006":
+    native: "biscuit"
+    notes: { "n1": "Often eaten with tea." }
+    examples:
+      "उसने एक बिस्कुट लिया।": { native: "He took a biscuit.", bases: { "एक": "one", "बिस्कुट": "biscuit", "लिया": "to take" } }
+      "यह बिस्कुट मीठा है।": { native: "This biscuit is sweet.", bases: { "बिस्कुट": "biscuit" } }
+  "hi-1007":
+    native: "cake"
+    notes: { "n1": "A cake, often bought for a birthday." }
+    examples:
+      "आज मुझे केक चाहिए।": { native: "Today I want cake.", bases: { "केक": "cake" } }
+      "यह केक बहुत मीठा है।": { native: "This cake is very sweet.", bases: { "केक": "cake" } }
+  "hi-1008":
+    native: "chocolate"
+    notes: { "n1": "A sweet from a shop, often given as a gift." }
+    examples:
+      "उसने चॉकलेट खाया।": { native: "He ate a chocolate.", bases: { "चॉकलेट": "chocolate", "खाया": "to eat" } }
+      "यह चॉकलेट बहुत मीठा है।": { native: "This chocolate is very sweet.", bases: { "चॉकलेट": "chocolate" } }
+  "hi-1009":
+    native: "ice cream"
+    notes: { "n1": "A feminine noun, so an adjective takes the feminine ending, as in ठंडी आइसक्रीम (ṭhaṇḍī āisakrīm)." }
+    examples:
+      "गरमी में आइसक्रीम ठंडी होती है।": { native: "Ice cream is cold in summer.", bases: { "गरमी": "summer; heat", "आइसक्रीम": "ice cream", "ठंडी": "cold", "होती": "to be" } }
+      "बच्चों को आइसक्रीम पसंद है।": { native: "Children like ice cream.", bases: { "बच्चों": "child", "आइसक्रीम": "ice cream" } }
+  "hi-1010":
+    native: "bread"
+    notes: { "n1": "Bread bought as a loaf from a shop, and eaten for breakfast." }
+    examples:
+      "नाश्ते में ब्रेड और अंडा लो।": { native: "Have bread and an egg for breakfast.", bases: { "नाश्ते": "breakfast", "ब्रेड": "bread", "लो": "to take" } }
+      "यह ब्रेड ताज़ा है।": { native: "This bread is fresh.", bases: { "ब्रेड": "bread", "ताज़ा": "fresh" } }
+  "hi-1011":
+    native: "juice"
+    notes: { "n1": "Juice from fruit, often drunk cold." }
+    examples:
+      "यह जूस खट्टा है।": { native: "This juice is sour.", bases: { "जूस": "juice" } }
+      "माँ जूस बनाती है।": { native: "Mother makes juice.", bases: { "जूस": "juice", "बनाती": "to make" } }
+  "hi-1012":
+    native: "coffee"
+    notes: { "n1": "A feminine noun. A cup of coffee is एक कप कॉफ़ी (ēk kap kôfī)." }
+    examples:
+      "मैं सुबह एक कप कॉफ़ी पीता हूँ।": { native: "I drink a cup of coffee in the morning.", bases: { "एक": "one", "कॉफ़ी": "coffee", "पीता": "to drink" } }
+      "कॉफ़ी गरम है।": { native: "The coffee is hot.", bases: { "कॉफ़ी": "coffee" } }
+  "hi-1013":
+    native: "taste; flavour"
+    notes: { "n1": "The taste of food. The verb to taste is चखना (cakhnā)." }
+    examples:
+      "तुम्हें यह स्वाद पसंद है?": { native: "Do you like this taste?", bases: { "स्वाद": "taste" } }
+      "खाने में अच्छा स्वाद है।": { native: "The food tastes good.", bases: { "खाने": "food", "स्वाद": "taste" } }
+    synonyms: { "zaikaa": "taste, flavour (Persian-leaning)" }
+  "hi-1014":
+    native: "hunger"
+    notes: { "n1": "The phrase भूख लगना (bhūkh lagnā) means to feel hungry." }
+    examples:
+      "बच्चे को भूख लगी है।": { native: "The child is hungry.", bases: { "बच्चे": "child", "भूख": "hunger", "लगी": "to be felt" } }
+      "मुझे बहुत भूख लगती है।": { native: "I get very hungry.", bases: { "भूख": "hunger", "लगती": "to be felt" } }
+    synonyms: { "kshudha": "hunger (Sanskrit-leaning)" }
+  "hi-1015":
+    native: "thirst"
+    notes: { "n1": "The phrase प्यास लगना (pyās lagnā) means to feel thirsty, as hunger is felt." }
+    examples:
+      "गरमी में प्यास लगती है।": { native: "In summer you get thirsty.", bases: { "गरमी": "summer; heat", "प्यास": "thirst", "लगती": "to be felt" } }
+      "मुझे प्यास लगी है, पानी दीजिए।": { native: "I am thirsty, please give me water.", bases: { "प्यास": "thirst", "लगी": "to be felt", "दीजिए": "to give" } }
+    synonyms: { "trisha": "thirst (Sanskrit-leaning)" }
+  "hi-1016":
+    native: "sour"
+    notes: { "n1": "Lemon and tamarind are sour. The opposite is मीठा (mīṭhā)." }
+    examples:
+      "यह आम खट्टा है।": { native: "This mango is sour.", bases: { "खट्टा": "sour" } }
+      "मुझे खट्टा दही पसंद है।": { native: "I like sour yogurt.", bases: { "खट्टा": "sour" } }
+    synonyms: { "sour-sanskrit": "sour (Sanskrit-leaning)" }
+  "hi-1017":
+    native: "salty; savoury"
+    notes: { "n1": "A salty or savoury food. A savoury snack is also called नमकीन (namkīn)." }
+    examples:
+      "दाल नमकीन है।": { native: "The dal is salty.", bases: { "नमकीन": "salty" } }
+      "मुझे नमकीन खाना पसंद है।": { native: "I like savoury food.", bases: { "नमकीन": "salty" } }
+  "hi-1018":
+    native: "tasty"
+    notes: { "n1": "Tasty. A cook is praised with स्वादिष्ट (svādiśṭ)." }
+    examples:
+      "यह सब्ज़ी बहुत स्वादिष्ट है।": { native: "This vegetable is very tasty.", bases: { "स्वादिष्ट": "tasty" } }
+      "माँ खाना स्वादिष्ट बनाती है।": { native: "Mother makes the food tasty.", bases: { "स्वादिष्ट": "tasty", "बनाती": "to make" } }
+    synonyms: { "lazeez": "tasty (Persian-leaning)" }
+  "hi-1019":
+    native: "thali (a meal on a metal tray)"
+    notes: { "n1": "A metal tray with small bowls of food; a whole meal is served on a thali." }
+    examples:
+      "थाली में चावल और दाल है।": { native: "There is rice and dal on the thali.", bases: { "थाली": "thali" } }
+      "मुझे एक थाली दीजिए।": { native: "Please give me a thali.", bases: { "एक": "one", "थाली": "thali", "दीजिए": "to give" } }
+  "hi-1020":
+    native: "plate"
+    notes: { "n1": "A plate for food. The Hindi word is the English one, said the Hindi way." }
+    examples:
+      "प्लेट में सलाद रखो।": { native: "Put the salad on the plate.", bases: { "प्लेट": "plate", "रखो": "to put" } }
+      "यह प्लेट बड़ी है।": { native: "This plate is big.", bases: { "प्लेट": "plate", "बड़ी": "big" } }
+  "hi-1021":
+    native: "small bowl"
+    notes: { "n1": "A small bowl for dal, vegetables or chutney. The large bowl is कटोरा (kaṭōrā)." }
+    examples:
+      "कटोरी में दाल डालो।": { native: "Put dal in the small bowl.", bases: { "कटोरी": "small bowl", "डालो": "to put in" } }
+      "यह कटोरी छोटी है।": { native: "This bowl is small.", bases: { "कटोरी": "small bowl", "छोटी": "small" } }
+  "hi-1022":
+    native: "knife"
+    notes: { "n1": "A knife for cutting vegetables. A spoon is चम्मच (cammac)." }
+    examples:
+      "चाकू तेज़ है।": { native: "The knife is sharp.", bases: { "चाकू": "knife", "तेज़": "sharp" } }
+      "माँ चाकू से प्याज़ काटती है।": { native: "Mother cuts the onion with a knife.", bases: { "चाकू": "knife", "काटती": "to cut" } }
+  "hi-1023":
+    native: "to taste"
+    notes: { "n1": "To taste food to know its flavour, as a cook does." }
+    examples:
+      "माँ सब्ज़ी चखती है।": { native: "Mother tastes the vegetable.", bases: { "चखती": "to taste" } }
+      "पहले दाल चखो, फिर नमक डालो।": { native: "First taste the dal, then add salt.", bases: { "चखो": "to taste", "डालो": "to put in" } }
