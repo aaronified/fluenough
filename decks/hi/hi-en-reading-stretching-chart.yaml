@@ -1,0 +1,28 @@
+schema: 1
+id: "hi-en-reading-stretching-chart"
+name: "Reading: a stretching chart"
+kind: reading
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A chart of simple morning stretches, with the body and daily-life words of this unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-stretching-chart"
+    title: "Morning stretches"
+    theme: "body"
+    sentences:
+      - { text: "सुबह उठो और हाथ ऊपर करो।", reading: "subah uṭho aur hāth ūpar karō." }
+      - { text: "फिर धीरे-धीरे नीचे झुको और पंजे छुओ।", reading: "phir dhīrē-dhīrē nīchē jhuko aur panjē chuō." }
+      - { text: "फिर लेटो और गहरी साँस लो।", reading: "phir leṭō aur gahrī sām̐s lō." }
+    questions:
+      - id: "hi-1089"
+        prompt: { en: "What is the first stretch?" }
+        options:
+          - { en: "Raise the hands" }
+          - { en: "Lie down" }
+        answer: 1
+      - id: "hi-1090"
+        prompt: { en: "The chart ends with a deep breath." }
+        answer: true
