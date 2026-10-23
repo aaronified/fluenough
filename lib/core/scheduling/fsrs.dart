@@ -51,7 +51,7 @@ class FsrsState {
   /// The chance, from 0 to 1, that the pair was recalled at its last review,
   /// as FSRS predicted it from the state before that review: 0 for a first
   /// review. A review in the same day as the one before is no test of memory,
-  /// so it keeps the earlier value. It is what makes a pair known (#680).
+  /// so it keeps the earlier value, or 0 if that earlier answer was a miss. It is what makes a pair known (#680).
   ///
   /// Not stored in the `card_states` cache: the state is always rebuilt by
   /// replaying the log, which fills it.
@@ -184,7 +184,10 @@ abstract final class Fsrs {
     final recall = state == null
         ? 0.0
         : elapsedDays(state.lastReviewAt, now) < 1
-        ? state.recallAtReview
+        // A same-day repeat is no test of memory and keeps the earlier value,
+        // unless the earlier answer was a miss: a pair just forgotten is not
+        // known by being answered right later the same day.
+        ? (state.repetitions == 0 ? 0.0 : state.recallAtReview)
         : _retrievability(
             w,
             elapsedDays(state.lastReviewAt, now),
