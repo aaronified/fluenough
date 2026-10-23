@@ -2090,6 +2090,10 @@ class PathUnits(B1Case):
                          "such as zz-health, got 'yy-health'")
         self.assertUnits(lambda u: u[2]["planned"].update(grammar="if"),
                          "units[2].planned: names theme or grammar, not both")
+        # Nor may the unit's own grammar beside a planned theme (#622), as the app
+        # reads it.
+        self.assertUnits(lambda u: u[2].update(grammar="if"),
+                         "units[2].planned: names theme or grammar, not both")
         self.assertUnits(lambda u: u[2]["planned"].pop("theme"),
                          "units[2].planned: needs a theme or a grammar topic")
         self.assertUnits(lambda u: u[2]["planned"].update(theme="Health"),
