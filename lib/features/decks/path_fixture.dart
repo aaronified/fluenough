@@ -116,6 +116,7 @@ abstract final class PathFixtures {
     void answer(DeckEntry entry, int i, DateTime at, int grade) {
       final card = entry.cards[i];
       final modes = card.modesIn(ttsAvailable: true);
+      if (modes.isEmpty) return;
       final mode = modes.contains(DrillMode.recognition)
           ? DrillMode.recognition
           : modes.first;
