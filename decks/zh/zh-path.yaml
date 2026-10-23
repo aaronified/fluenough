@@ -235,7 +235,8 @@ units:
       - { id: "what-time-is-it", text: { "en": "Asking and telling the time" } }
     reading_passages:
       - { id: "shop-hours", text: { "en": "The opening hours on a shop door" } }
-  - planned: { id: "zh-location", theme: "location", words: 15 }
+  - decks: ["zh-location", "zh-location-sentences", "zh-reading-location", "*"]
+    words: 18
     listening_passages:
       - { id: "where-is-my-key", text: { "en": "Looking for a key: on, under, in, next to" } }
     reading_passages:
