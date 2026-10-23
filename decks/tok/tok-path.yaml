@@ -301,11 +301,8 @@ units:
   # chained contexts, and real community texts.
   #
   # misikeke and oko.
-  - planned: { id: "tok-health", theme: "health", words: 2 }
-    listening_passages:
-      - { id: "clinic-visit", text: { "en": "A visit to a clinic: what hurts, what to take and when" } }
-    reading_passages:
-      - { id: "medicine-label", text: { "en": "A medicine label explained in toki pona" } }
+  - decks: ["tok-health", "tok-health-sentences", "tok-reading-health", "*"]
+    words: 2
   # Composition: how a head and its modifiers make a meaning, and the
   # conventional compounds speakers share (jan pona, tomo tawa, ilo
   # toki, telo nasa), each a phrase built from known words.
