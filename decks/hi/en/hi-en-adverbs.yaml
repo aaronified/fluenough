@@ -1,0 +1,278 @@
+schema: 1
+id: "hi-en-adverbs"
+kind: "layer"
+core: "hi-adverbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Adverbs: how often, how well, when"
+license: "CC-BY-SA-4.0"
+description: "How often, how well and when things happen: always, often, sometimes, quickly, slowly, again. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-0812":
+    native: "often"
+    notes: { use: "Often, though not always. It is put before the verb it describes." }
+    examples:
+      "वह अक्सर स्कूल जाता है।": { native: "He often goes to school.", bases: { "स्कूल": "school", "जाता": "to go" } }
+      "मैं अक्सर चाय पीता हूँ।": { native: "I often drink tea.", bases: { "पीता": "to drink" } }
+    synonyms: { "often-sanskrit": "often (Sanskrit-leaning)" }
+  "hi-0813":
+    native: "maybe"
+    notes: { use: "Maybe, perhaps. It marks a guess, and comes first in its clause." }
+    examples:
+      "शायद कल बारिश होगी।": { native: "Maybe it will rain tomorrow.", bases: { "बारिश": "rain", "होगी": "to be, to become" } }
+      "शायद वह घर पर है।": { native: "Maybe he is at home." }
+    synonyms: { "perhaps-sanskrit": "perhaps (Sanskrit-leaning)" }
+  "hi-0814":
+    native: "never"
+    notes: { use: "Never. Its two parts sit together, before the verb." }
+    examples:
+      "वह कभी झूठ नहीं बोलता है।": { native: "He never tells lies.", bases: { "कभी": "ever, sometimes", "झूठ": "lie", "बोलता": "to speak" } }
+      "वह कभी नहीं आएगा।": { native: "He will never come.", bases: { "कभी": "ever, sometimes", "आएगा": "to come" } }
+  "hi-0815":
+    native: "completely"
+    notes: { use: "Completely, or not at all when a negative follows it." }
+    examples:
+      "यह बात बिल्कुल सच है।": { native: "This is absolutely true.", bases: { "बात": "matter, word", "सच": "truth; true" } }
+      "मुझे यह बिल्कुल पसंद नहीं है।": { native: "I do not like this at all." }
+  "hi-0816":
+    native: "more"
+    notes: { use: "More, or too much. Said before an adjective or a noun to mean very or too." }
+    examples:
+      "आज ज़्यादा ठंड है।": { native: "It is very cold today.", bases: { "ठंड": "cold" } }
+      "उसके पास ज़्यादा पैसे हैं।": { native: "He has more money." }
+    synonyms: { "more-sanskrit": "more, a larger amount (Sanskrit-leaning)" }
+    collocations: { money: "money" }
+  "hi-0817":
+    native: "mostly"
+    notes: { use: "Mostly: for most of the time, or in most cases." }
+    examples:
+      "हम ज़्यादातर घर पर रहते हैं।": { native: "We mostly stay at home.", bases: { "रहते": "to stay, to live" } }
+      "लोग ज़्यादातर सुबह काम करते हैं।": { native: "People mostly work in the morning.", bases: { "करते": "to do" } }
+    synonyms: { "mostly-sanskrit": "mostly (Sanskrit-leaning)" }
+    collocations: { morning: "morning" }
+  "hi-0818":
+    native: "well"
+    notes: { use: "Well, thoroughly, carefully. Here the words mean in a good way." }
+    examples:
+      "वह हिंदी अच्छी तरह बोलता है।": { native: "He speaks Hindi well.", bases: { "हिंदी": "Hindi", "अच्छी": "good", "तरह": "way, manner", "बोलता": "to speak" } }
+      "इसे अच्छी तरह पढ़िए।": { native: "Read it carefully.", bases: { "अच्छी": "good", "तरह": "way, manner", "पढ़िए": "to read" } }
+  "hi-0819":
+    native: "quickly"
+    notes: { use: "Quickly, or early in the day. Its opposite is slowly." }
+    examples:
+      "वह जल्दी सो जाता है।": { native: "He falls asleep early.", bases: { "सो": "to sleep", "जाता": "to go" } }
+      "जल्दी कीजिए!": { native: "Hurry up!", bases: { "कीजिए": "to do" } }
+    synonyms: { "quick-sanskrit": "quickly (Sanskrit-leaning)" }
+  "hi-0820":
+    native: "slowly"
+    notes: { use: "Slowly, or softly, as when speaking quietly." }
+    examples:
+      "धीरे चलिए।": { native: "Walk slowly." }
+      "बच्चे धीरे सीखते हैं।": { native: "Children learn slowly.", bases: { "सीखते": "to learn" } }
+  "hi-0821":
+    native: "gradually"
+    notes: { use: "Gradually, little by little. It is the repeated form of the word for slowly." }
+    examples:
+      "मौसम धीरे-धीरे बदल रहा है।": { native: "The weather is changing gradually.", bases: { "मौसम": "weather", "बदल": "to change" } }
+      "बच्चा धीरे-धीरे बोलना सीखता है।": { native: "The child is gradually learning to speak.", bases: { "सीखता": "to learn" } }
+  "hi-0822":
+    native: "correctly"
+    notes: { use: "Correctly, rightly. It is also an adjective: right, correct." }
+    examples:
+      "उसने सवाल सही किया।": { native: "He did the question correctly.", bases: { "सवाल": "question", "किया": "to do" } }
+      "आप सही पढ़ रहे हैं।": { native: "You are reading correctly.", bases: { "पढ़": "to read" } }
+    collocations: { answer: "answer" }
+  "hi-0823":
+    native: "first"
+    notes: { use: "First, or before. Its opposite is later." }
+    examples:
+      "पहले चाय पीजिए।": { native: "First, have some tea.", bases: { "पीजिए": "to drink" } }
+      "मैं पहले घर जाऊँगा।": { native: "I will go home first.", bases: { "जाऊँगा": "to go" } }
+  "hi-0824":
+    native: "later"
+    notes: { use: "Later, afterwards. Its opposite is first." }
+    examples:
+      "मैं बाद में फ़ोन करूँगा।": { native: "I will call later.", bases: { "बाद": "after", "फ़ोन": "phone", "करूँगा": "to do" } }
+      "हम बाद में मिलेंगे।": { native: "We will meet later.", bases: { "बाद": "after", "मिलेंगे": "to meet, to get" } }
+  "hi-0825":
+    native: "immediately"
+    notes: { use: "Immediately, at once, right away." }
+    examples:
+      "वह तुरंत आया।": { native: "He came at once.", bases: { "आया": "to come" } }
+      "तुरंत फ़ोन कीजिए।": { native: "Call right away.", bases: { "फ़ोन": "phone", "कीजिए": "to do" } }
+    synonyms: { "that-moment-sanskrit": "at that very moment (Sanskrit-leaning)" }
+    collocations: { call: "phone" }
+  "hi-0826":
+    native: "at once"
+    notes: { use: "At once. Used for quick action, often as a command." }
+    examples:
+      "उसने फ़ौरन जवाब दिया।": { native: "He replied at once.", bases: { "जवाब": "answer", "दिया": "to give" } }
+      "फ़ौरन आओ!": { native: "Come at once!", bases: { "आओ": "to come" } }
+  "hi-0827":
+    native: "suddenly"
+    notes: { use: "Suddenly, all of a sudden." }
+    examples:
+      "अचानक बारिश होने लगी।": { native: "Suddenly it began to rain.", bases: { "बारिश": "rain", "होने": "to be, to become", "लगी": "to begin; to seem" } }
+      "वह अचानक घर आया।": { native: "He suddenly came home.", bases: { "आया": "to come" } }
+    synonyms: { "suddenly-sanskrit": "suddenly (Sanskrit-leaning)" }
+    collocations: { rain: "rain" }
+  "hi-0828":
+    native: "again"
+    notes: { use: "Again, a second time." }
+    examples:
+      "दोबारा बताइए।": { native: "Please tell me again.", bases: { "बताइए": "to tell" } }
+      "उसने दोबारा कोशिश की।": { native: "He tried again.", bases: { "कोशिश": "attempt" } }
+    synonyms: { "again-sanskrit": "again (Sanskrit-leaning)" }
+  "hi-0829":
+    native: "again and again"
+    notes: { use: "Again and again, repeatedly." }
+    examples:
+      "वह बार-बार यही बात कहता है।": { native: "He says the same thing again and again.", bases: { "यही": "this very one", "बात": "matter, word", "कहता": "to say" } }
+      "मैं बार-बार फ़ोन करता हूँ।": { native: "I call again and again.", bases: { "फ़ोन": "phone", "करता": "to do" } }
+    collocations: { call: "phone" }
+  "hi-0830":
+    native: "really"
+    notes: { use: "Really, truly. It stresses a statement, or checks a question." }
+    examples:
+      "क्या सचमुच यह सच है?": { native: "Is this really true?", bases: { "सच": "truth; true" } }
+      "वह सचमुच अच्छा गाता है।": { native: "He really sings well.", bases: { "अच्छा": "good", "गाता": "to sing" } }
+  "hi-0831":
+    native: "about"
+    notes: { use: "About, nearly, roughly." }
+    examples:
+      "लगभग दस लोग आए।": { native: "About ten people came.", bases: { "आए": "to come" } }
+      "हम लगभग रोज़ घूमते हैं।": { native: "We go for a walk almost every day.", bases: { "घूमते": "to stroll" } }
+    synonyms: { "nearly-persian": "nearly, about (Persian-leaning)" }
+    collocations: { people: "people" }
+  "hi-0832":
+    native: "only"
+    notes: { use: "Only, just. It comes before the word it limits." }
+    examples:
+      "मुझे सिर्फ़ एक चाय चाहिए।": { native: "I only need one tea." }
+      "यह सिर्फ़ मेरी किताब है।": { native: "This is only my book.", bases: { "किताब": "book" } }
+    synonyms: { "only-sanskrit": "only (Sanskrit-leaning)" }
+  "hi-0833":
+    native: "a lot"
+    notes: { use: "A lot, very much, very well. It is stronger than a plain very." }
+    examples:
+      "उसने खूब पढ़ा।": { native: "He studied a lot.", bases: { "पढ़ा": "to read" } }
+      "हम खूब हँसे।": { native: "We laughed a lot.", bases: { "हँसे": "to laugh" } }
+  "hi-0834":
+    native: "above"
+    notes: { use: "Above, up, or upstairs." }
+    examples:
+      "बच्चे ऊपर खेलते हैं।": { native: "The children play upstairs.", bases: { "खेलते": "to play" } }
+      "वह ऊपर देखता है।": { native: "He looks up.", bases: { "देखता": "to see" } }
+  "hi-0835":
+    native: "below"
+    notes: { use: "Below, down, or downstairs." }
+    examples:
+      "वे नीचे बैठे हैं।": { native: "They are sitting downstairs.", bases: { "बैठे": "to sit" } }
+      "नीचे देखो।": { native: "Look down.", bases: { "देखो": "to see" } }
+  "hi-0836":
+    native: "inside"
+    notes: { use: "Inside, in." }
+    examples:
+      "बच्चे अंदर खेल रहे हैं।": { native: "The children are playing inside.", bases: { "खेल": "to play" } }
+      "कमरे के अंदर गर्मी है।": { native: "It is hot inside the room.", bases: { "कमरे": "room", "गर्मी": "heat" } }
+    collocations: { room: "room" }
+  "hi-0837":
+    native: "outside"
+    notes: { use: "Outside, out." }
+    examples:
+      "हम बाहर घूमने जाते हैं।": { native: "We go out for a walk.", bases: { "घूमने": "to stroll", "जाते": "to go" } }
+      "बिल्ली बाहर है।": { native: "The cat is outside.", bases: { "बिल्ली": "cat" } }
+  "hi-0838":
+    native: "together"
+    notes: { use: "Together, or with. With a person, it is said after the person or their pronoun." }
+    examples:
+      "हम साथ पढ़ते हैं।": { native: "We study together.", bases: { "पढ़ते": "to read" } }
+      "मेरी बहन मेरे साथ रहती है।": { native: "My sister lives with me.", bases: { "रहती": "to stay, to live" } }
+    collocations: { friend: "friend" }
+  "hi-0839":
+    native: "somewhere"
+    notes: { use: "Somewhere, or anywhere in a question or a negative." }
+    examples:
+      "मेरा फ़ोन कहीं है।": { native: "My phone is somewhere.", bases: { "फ़ोन": "phone" } }
+      "क्या तुमने चाबी कहीं देखी?": { native: "Did you see the key anywhere?", bases: { "देखी": "to see" } }
+  "hi-0840":
+    native: "several times"
+    notes: { use: "Several times, many times." }
+    examples:
+      "मैं कई बार वहाँ गया हूँ।": { native: "I have been there several times.", bases: { "कई": "several", "बार": "time, occasion", "गया": "to go" } }
+      "उसने कई बार फ़ोन किया।": { native: "He phoned several times.", bases: { "कई": "several", "बार": "time, occasion", "फ़ोन": "phone", "किया": "to do" } }
+  "hi-0841":
+    native: "every time"
+    notes: { use: "Every time." }
+    examples:
+      "हर बार वह देर करता है।": { native: "Every time, he is late.", bases: { "हर": "every", "बार": "time, occasion", "देर": "lateness", "करता": "to do" } }
+      "हर बार मुझे चाय मिलती है।": { native: "I get tea every time.", bases: { "हर": "every", "बार": "time, occasion", "मिलती": "to meet, to get" } }
+  "hi-0842":
+    native: "every week"
+    notes: { use: "Every week." }
+    examples:
+      "हम हर हफ़्ते फ़िल्म देखते हैं।": { native: "We watch a film every week.", bases: { "हर": "every", "हफ़्ते": "week", "फ़िल्म": "film", "देखते": "to see" } }
+      "वह हर हफ़्ते माँ को फ़ोन करता है।": { native: "He calls his mother every week.", bases: { "हर": "every", "हफ़्ते": "week", "फ़ोन": "phone", "करता": "to do" } }
+    collocations: { film: "film" }
+  "hi-0843":
+    native: "how many times"
+    notes: { use: "How many times, how often, in a question." }
+    examples:
+      "तुम कितनी बार आए?": { native: "How many times did you come?", bases: { "बार": "time, occasion", "आए": "to come" } }
+      "आप कितनी बार चाय पीते हैं?": { native: "How many times do you drink tea?", bases: { "बार": "time, occasion", "पीते": "to drink" } }
+  "hi-0844":
+    native: "easily"
+    notes: { use: "Easily, without trouble." }
+    examples:
+      "यह काम आसानी से होगा।": { native: "This work will be done easily.", bases: { "आसानी": "ease", "होगा": "to be, to become" } }
+      "वह हिंदी आसानी से समझता है।": { native: "He understands Hindi easily.", bases: { "हिंदी": "Hindi", "आसानी": "ease", "समझता": "to understand" } }
+  "hi-0845":
+    native: "completely"
+    notes: { use: "Completely, fully." }
+    examples:
+      "मैं पूरी तरह तैयार हूँ।": { native: "I am completely ready.", bases: { "पूरी": "whole, complete", "तरह": "way, manner", "तैयार": "ready" } }
+      "वह पूरी तरह थका है।": { native: "He is completely tired.", bases: { "पूरी": "whole, complete", "तरह": "way, manner", "थका": "tired" } }
+  "hi-0846":
+    native: "continuously"
+    notes: { use: "Continuously, in a row, without a break." }
+    examples:
+      "बारिश लगातार हो रही है।": { native: "It is raining continuously.", bases: { "बारिश": "rain" } }
+      "वह लगातार काम करता है।": { native: "He works continuously.", bases: { "करता": "to do" } }
+    collocations: { work: "work, a job" }
+  "hi-0847":
+    native: "alone"
+    notes: { use: "Alone, by oneself." }
+    examples:
+      "वह अकेले रहता है।": { native: "He lives alone.", bases: { "रहता": "to stay, to live" } }
+      "बच्चे अकेले स्कूल जाते हैं।": { native: "The children go to school alone.", bases: { "स्कूल": "school", "जाते": "to go" } }
+  "hi-0848":
+    native: "anyway"
+    notes: { use: "Anyway, by the way. It also means in another way, otherwise." }
+    examples:
+      "वैसे, मैं भी आऊँगा।": { native: "Anyway, I will come too.", bases: { "आऊँगा": "to come" } }
+      "वैसे तो यह ठीक है।": { native: "Actually, this is fine.", bases: { "तो": "then, so", "ठीक": "fine, right" } }
+  "hi-0849":
+    native: "like this"
+    notes: { use: "Like this, in this way, so." }
+    examples:
+      "ऐसे करो।": { native: "Do it like this.", bases: { "करो": "to do" } }
+      "वह ऐसे बोलता है।": { native: "He speaks like this.", bases: { "बोलता": "to speak" } }
+  "hi-0850":
+    native: "just now"
+    notes: { use: "Just now, a moment ago." }
+    examples:
+      "वह अभी-अभी घर आया।": { native: "He just came home.", bases: { "आया": "to come" } }
+      "मैंने अभी-अभी चाय पी।": { native: "I just drank tea.", bases: { "पी": "to drink" } }
+    collocations: { tea: "tea" }
+  "hi-0851":
+    native: "directly"
+    notes: { use: "Directly, straight, straight on." }
+    examples:
+      "सीधे घर जाओ।": { native: "Go straight home.", bases: { "जाओ": "to go" } }
+      "वह सीधे बाज़ार गया।": { native: "He went straight to the market.", bases: { "बाज़ार": "market", "गया": "to go" } }
+  "hi-0852":
+    native: "better"
+    notes: { use: "Better. It is also an adjective: better." }
+    examples:
+      "वह पहले से बेहतर बोलता है।": { native: "He speaks better than before.", bases: { "बोलता": "to speak" } }
+      "आज मौसम बेहतर है।": { native: "The weather is better today.", bases: { "मौसम": "weather" } }

@@ -1,0 +1,75 @@
+schema: 1
+id: "hi-pronouns-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-0767"
+    target: "मैं और तुम दोस्त हैं।"
+    target_scripts: { perso_arabic: "میں اور تم دوست ہیں۔" }
+    reading: "maim̐ aur tum dōst haim̐."
+    ipa: "mɛ̃ː ɔːr t̪ʊm d̪oːst̪ ɦɛ̃ː"
+    pos: "phrase"
+    confusables:
+      - { id: "w1", word: "वे", reading: "vē", kind: "word" }
+      - { id: "f1", word: "है", reading: "hai", kind: "form" }
+  - id: "hi-0768"
+    target: "वे हमारे पड़ोसी हैं।"
+    target_scripts: { perso_arabic: "وہ ہمارے پڑوسی ہیں۔" }
+    reading: "vē hamārē paṛōsī haim̐."
+    ipa: "ʋeː ɦəmaːreː pəɽoːsiː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "हमारे", base: "हमारा", reading: "hamārā" }
+    confusables:
+      - { id: "w1", word: "यह", reading: "yah", kind: "word" }
+      - { id: "f1", word: "है", reading: "hai", kind: "form" }
+      - { id: "w2", word: "आपके", reading: "āpkē", kind: "word" }
+  - id: "hi-0769"
+    target: "कोई नहीं जानता।"
+    target_scripts: { perso_arabic: "کوئی نہیں جانتا۔" }
+    reading: "kōī nahīm̐ jāntā."
+    ipa: "koːiː nəɦĩː dʒaːnt̪aː"
+    pos: "phrase"
+    bases:
+      - { word: "जानता", base: "जानना", reading: "jānnā" }
+    confusables:
+      - { id: "w1", word: "कुछ", reading: "kuch", kind: "word" }
+      - { id: "f1", word: "जानती", reading: "jāntī", kind: "form" }
+  - id: "hi-0770"
+    target: "तुम अपना काम करो।"
+    target_scripts: { perso_arabic: "تم اپنا کام کرو۔" }
+    reading: "tum apnā kām karō."
+    ipa: "t̪ʊm əpnaː kaːm kəroː"
+    pos: "phrase"
+    bases:
+      - { word: "करो", base: "करना", reading: "karnā" }
+    confusables:
+      - { id: "w1", word: "कहो", reading: "kahō", kind: "word" }
+      - { id: "f1", word: "अपनी", reading: "apnī", kind: "form" }
+  - id: "hi-0771"
+    target: "आप कहाँ से आए हैं?"
+    target_scripts: { perso_arabic: "آپ کہاں سے آئے ہیں؟" }
+    reading: "āp kahām̐ sē āē haim̐?"
+    ipa: "aːp kəɦãː seː aːeː ɦɛ̃ː"
+    pos: "phrase"
+    bases:
+      - { word: "आए", base: "आना", reading: "ānā" }
+    confusables:
+      - { id: "w1", word: "गए", reading: "gaē", kind: "word" }
+      - { id: "w2", word: "कब", reading: "kab", kind: "word" }
+      - { id: "f1", word: "आईं", reading: "āīm̐", kind: "form" }
+  - id: "hi-0772"
+    target: "हमारा परिवार बड़ा है।"
+    target_scripts: { perso_arabic: "ہمارا خاندان بڑا ہے۔" }
+    reading: "hamārā parivār baṛā hai."
+    ipa: "ɦəmaːraː pərɪʋaːr bəɽaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "बड़ा", base: "बड़ा", reading: "baṛā" }
+    confusables:
+      - { id: "w1", word: "छोटा", reading: "chōṭā", kind: "word" }
+      - { id: "f1", word: "बड़ी", reading: "baṛī", kind: "form" }
+      - { id: "f2", word: "हमारी", reading: "hamārī", kind: "form" }
