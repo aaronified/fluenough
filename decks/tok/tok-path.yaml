@@ -250,11 +250,8 @@ units:
   - decks: ["tok-location", "tok-location-sentences", "tok-reading-location", "*"]
     words: 5
   # nasin, tan and kepeken: the way, from or because, and using.
-  - planned: { id: "tok-directions", theme: "directions", words: 3 }
-    listening_passages:
-      - { id: "which-way", text: { "en": "Asking the way to a friend's house" } }
-    reading_passages:
-      - { id: "route-note", text: { "en": "A note giving the route from the station" } }
+  - decks: ["tok-directions", "tok-directions-sentences", "tok-reading-directions", "*"]
+    words: 3
   # The prepositions, which are also verbs: lon (at, in), tawa (to,
   # for), tan (from, because of), kepeken (using) and sama (like). After
   # li or after the object, never with e.
