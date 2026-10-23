@@ -1,0 +1,53 @@
+schema: 1
+id: "tok-en-reading-time"
+name: "Reading: time"
+kind: reading
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two passages from the time unit: someone says what they do by day, at night and now (heard), and a club's notice of when an event begins and ends (read). Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "tok-my-day"
+    title: "My day"
+    sentences:
+      - text: "tenpo suno, mi moku."
+      - text: "tenpo mun, mi lape."
+      - text: "tenpo ni, mi pali."
+      - text: "mi lukin e suno."
+    questions:
+      - id: "tok-0277"
+        prompt: { en: "When does the speaker eat?" }
+        options:
+          - { en: "By day" }
+          - { en: "At night" }
+        answer: 1
+      - id: "tok-0278"
+        prompt: { en: "The speaker sleeps by day." }
+        answer: false
+      - id: "tok-0279"
+        prompt: { en: "What does the speaker do now?" }
+        options:
+          - { en: "Works" }
+          - { en: "Sleeps" }
+        answer: 1
+  - id: "tok-event-times"
+    title: "Event times"
+    sentences:
+      - text: "tenpo open li tenpo mun."
+      - text: "tenpo pini li tenpo suno."
+      - text: "tenpo ni li open ala."
+    questions:
+      - id: "tok-0280"
+        prompt: { en: "When does the event begin?" }
+        options:
+          - { en: "At night" }
+          - { en: "By day" }
+        answer: 1
+      - id: "tok-0281"
+        prompt: { en: "The event ends by day." }
+        answer: true
+      - id: "tok-0282"
+        prompt: { en: "The event has begun now." }
+        answer: false
