@@ -310,7 +310,12 @@ class SessionQueue {
       // Each deck's pair states, to tell a deck already represented.
       final byDeck = <String, List<FsrsState>>{};
       for (final card in all) {
+        final allowed = card.modesIn(
+          ttsAvailable: hasVoice(card),
+          speechAvailable: canHear?.call(card) ?? false,
+        );
         for (final mode in DrillMode.drills) {
+          if (!allowed.contains(mode) || !modes.contains(mode)) continue;
           final state = stateOf(card, mode);
           if (state != null) (byDeck[card.deckId] ??= <FsrsState>[]).add(state);
         }
