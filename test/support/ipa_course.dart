@@ -1,7 +1,6 @@
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/settings.dart';
-import 'package:fluenough/core/decks/ipa_course.dart';
 import 'package:fluenough/core/tts/tts_engine.dart';
 
 /// A small IPA course, as single-file decks (ADR-0041): two decks, the
@@ -94,10 +93,9 @@ cards:
 ''',
 };
 
-/// An app learning [languages], with the IPA course at [scope].
+/// An app learning [languages].
 AppState ipaApp(
   List<String> languages, {
-  IpaScope? scope,
   TtsEngine tts = const NullTtsEngine(),
 }) {
   final settings = SettingsNotifier(
@@ -105,7 +103,6 @@ AppState ipaApp(
     learningLanguages: languages,
     learningChosen: true,
   );
-  if (scope != null) settings.ipaScope = scope;
   return AppState.test(
     decks: MemoryDeckSource(ipaFiles),
     settings: settings,
