@@ -16,9 +16,9 @@ cards:
       - { id: "third", kind: "usage" }
       - { id: "gender", kind: "behaviour" }
     examples:
-      - { target: "ona li toki.", ipa: "ˈona li ˈtoki", bases: [{ word: "ona", base: "ona" }, { word: "li", base: "li" }, { word: "toki", ref: "tok-0001" }] }
-      - { target: "mi sona e ona.", ipa: "mi ˈsona e ˈona", bases: [{ word: "mi", ref: "tok-0003" }, { word: "sona", ref: "tok-0007" }, { word: "e", base: "e" }, { word: "ona", base: "ona" }] }
-      - { target: "ona li pona.", ipa: "ˈona li ˈpona", bases: [{ word: "ona", base: "ona" }, { word: "li", base: "li" }, { word: "pona", ref: "tok-0002" }] }
+      - { target: "ona li toki.", ipa: "ˈona li ˈtoki", bases: [{ word: "ona", base: "ona" }, { word: "li", ref: "tok-0101" }, { word: "toki", ref: "tok-0001" }] }
+      - { target: "mi sona e ona.", ipa: "mi ˈsona e ˈona", bases: [{ word: "mi", ref: "tok-0003" }, { word: "sona", ref: "tok-0007" }, { word: "e", ref: "tok-0102" }, { word: "ona", base: "ona" }] }
+      - { target: "ona li pona.", ipa: "ˈona li ˈpona", bases: [{ word: "ona", base: "ona" }, { word: "li", ref: "tok-0101" }, { word: "pona", ref: "tok-0002" }] }
   - id: "tok-0063"
     target: "ni"
     ipa: "ni"
@@ -28,9 +28,9 @@ cards:
       - { id: "this", kind: "usage" }
       - { id: "after", kind: "behaviour" }
     examples:
-      - { target: "ni li pona.", ipa: "ni li ˈpona", bases: [{ word: "ni", base: "ni" }, { word: "li", base: "li" }, { word: "pona", ref: "tok-0002" }] }
-      - { target: "ni li seme?", ipa: "ni li ˈseme", bases: [{ word: "ni", base: "ni" }, { word: "li", base: "li" }, { word: "seme", ref: "tok-0044" }] }
-      - { target: "jan ni li toki.", ipa: "jan ni li ˈtoki", bases: [{ word: "jan", ref: "tok-0064" }, { word: "ni", base: "ni" }, { word: "li", base: "li" }, { word: "toki", ref: "tok-0001" }] }
+      - { target: "ni li pona.", ipa: "ni li ˈpona", bases: [{ word: "ni", base: "ni" }, { word: "li", ref: "tok-0101" }, { word: "pona", ref: "tok-0002" }] }
+      - { target: "ni li seme?", ipa: "ni li ˈseme", bases: [{ word: "ni", base: "ni" }, { word: "li", ref: "tok-0101" }, { word: "seme", ref: "tok-0044" }] }
+      - { target: "jan ni li toki.", ipa: "jan ni li ˈtoki", bases: [{ word: "jan", ref: "tok-0064" }, { word: "ni", base: "ni" }, { word: "li", ref: "tok-0101" }, { word: "toki", ref: "tok-0001" }] }
   - id: "tok-0064"
     target: "jan"
     ipa: "jan"
@@ -40,9 +40,9 @@ cards:
       - { id: "person", kind: "usage" }
       - { id: "modifier", kind: "behaviour" }
     examples:
-      - { target: "jan ni li pona.", ipa: "jan ni li ˈpona", bases: [{ word: "jan", base: "jan" }, { word: "ni", ref: "tok-0063" }, { word: "li", base: "li" }, { word: "pona", ref: "tok-0002" }] }
+      - { target: "jan ni li pona.", ipa: "jan ni li ˈpona", bases: [{ word: "jan", base: "jan" }, { word: "ni", ref: "tok-0063" }, { word: "li", ref: "tok-0101" }, { word: "pona", ref: "tok-0002" }] }
       - { target: "mi jan pona.", ipa: "mi jan ˈpona", bases: [{ word: "mi", ref: "tok-0003" }, { word: "jan", base: "jan" }, { word: "pona", ref: "tok-0002" }] }
-      - { target: "jan li toki.", ipa: "jan li ˈtoki", bases: [{ word: "jan", base: "jan" }, { word: "li", base: "li" }, { word: "toki", ref: "tok-0001" }] }
+      - { target: "jan li toki.", ipa: "jan li ˈtoki", bases: [{ word: "jan", base: "jan" }, { word: "li", ref: "tok-0101" }, { word: "toki", ref: "tok-0001" }] }
     collocations:
       - { id: "pona", ref: "tok-0002" }
   - id: "tok-0065"
@@ -54,9 +54,9 @@ cards:
       - { id: "thing", kind: "usage" }
       - { id: "nothing", kind: "behaviour" }
     examples:
-      - { target: "ijo ni li pona.", ipa: "ˈijo ni li ˈpona", bases: [{ word: "ijo", base: "ijo" }, { word: "ni", ref: "tok-0063" }, { word: "li", base: "li" }, { word: "pona", ref: "tok-0002" }] }
-      - { target: "sina sona e ijo ni?", ipa: "ˈsina ˈsona e ˈijo ni", bases: [{ word: "sina", ref: "tok-0004" }, { word: "sona", ref: "tok-0007" }, { word: "e", base: "e" }, { word: "ijo", base: "ijo" }, { word: "ni", ref: "tok-0063" }] }
-      - { target: "ijo ala li lon.", ipa: "ˈijo ˈala li lon", bases: [{ word: "ijo", base: "ijo" }, { word: "ala", ref: "tok-0005" }, { word: "li", base: "li" }, { word: "lon", ref: "tok-0046" }] }
+      - { target: "ijo ni li pona.", ipa: "ˈijo ni li ˈpona", bases: [{ word: "ijo", base: "ijo" }, { word: "ni", ref: "tok-0063" }, { word: "li", ref: "tok-0101" }, { word: "pona", ref: "tok-0002" }] }
+      - { target: "sina sona e ijo ni?", ipa: "ˈsina ˈsona e ˈijo ni", bases: [{ word: "sina", ref: "tok-0004" }, { word: "sona", ref: "tok-0007" }, { word: "e", ref: "tok-0102" }, { word: "ijo", base: "ijo" }, { word: "ni", ref: "tok-0063" }] }
+      - { target: "ijo ala li lon.", ipa: "ˈijo ˈala li lon", bases: [{ word: "ijo", base: "ijo" }, { word: "ala", ref: "tok-0005" }, { word: "li", ref: "tok-0101" }, { word: "lon", ref: "tok-0046" }] }
   - id: "tok-0066"
     kind: "set"
     members: [{ ref: "tok-0003" }, { ref: "tok-0004" }, { ref: "tok-0062" }, { ref: "tok-0063" }]

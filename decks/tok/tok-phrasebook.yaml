@@ -42,7 +42,7 @@ cards:
     bases:
       - { word: "nimi", ref: "tok-0006" }
       - { word: "mi", ref: "tok-0003" }
-      - { word: "li", base: "li" }
+      - { word: "li", ref: "tok-0101" }
       - { word: "Ana", base: "Ana" }
   - id: "tok-0012"
     target: "nimi sina li seme?"
@@ -53,7 +53,7 @@ cards:
     bases:
       - { word: "nimi", ref: "tok-0006" }
       - { word: "sina", ref: "tok-0004" }
-      - { word: "li", base: "li" }
+      - { word: "li", ref: "tok-0101" }
       - { word: "seme", base: "seme" }
   - id: "tok-0013"
     target: "mi toki pona."
@@ -74,7 +74,7 @@ cards:
     bases:
       - { word: "toki", ref: "tok-0001" }
       - { word: "pona", ref: "tok-0002" }
-      - { word: "li", base: "li" }
+      - { word: "li", ref: "tok-0101" }
   - id: "tok-0015"
     target: "mi sona."
     ipa: "mi ˈsona"
@@ -104,7 +104,7 @@ cards:
       - { word: "mi", ref: "tok-0003" }
       - { word: "sona", ref: "tok-0007" }
       - { word: "ala", ref: "tok-0005" }
-      - { word: "e", base: "e" }
+      - { word: "e", ref: "tok-0102" }
       - { word: "ni", ref: "tok-0063" }
   - id: "tok-0018"
     target: "ni li seme?"
@@ -114,7 +114,7 @@ cards:
     phrasebook: true
     bases:
       - { word: "ni", ref: "tok-0063" }
-      - { word: "li", base: "li" }
+      - { word: "li", ref: "tok-0101" }
       - { word: "seme", base: "seme" }
   - id: "tok-0019"
     target: "mi wile e telo."
@@ -125,7 +125,7 @@ cards:
     bases:
       - { word: "mi", ref: "tok-0003" }
       - { word: "wile", ref: "tok-0086" }
-      - { word: "e", base: "e" }
+      - { word: "e", ref: "tok-0102" }
       - { word: "telo", base: "telo" }
   - id: "tok-0020"
     target: "mi wile moku."

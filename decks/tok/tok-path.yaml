@@ -5,8 +5,8 @@
 # This is also Toki Pona's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"):
 # every unit from the first words to B1, with its size in words, its
 # grammar topics, the three milestones, and for each planned unit its
-# listening and reading passages. The first five units are written (their decks are
-# listed under units 1 to 5); every other unit is planned: the course teaches each
+# listening and reading passages. The first six units are written (their decks are
+# listed under units 1 to 6); every other unit is planned: the course teaches each
 # as "Coming" until its deck is written.
 #
 # Toki Pona is small on purpose. Sonja Lang's first book (pu, 2014) has
@@ -168,14 +168,19 @@ units:
   # eating and sleeping).
   - decks: ["tok-everyday-verbs", "tok-everyday-verbs-sentences", "tok-reading-everyday-verbs", "*"]
     words: 9
-  # The basic sentence: li before the predicate, no li after mi or sina
+  # 6. The basic sentence: li before the predicate, no li after mi or sina
   # alone, e before the object. Any word can be a noun, verb or modifier
-  # by its place: moku is food and to eat.
-  - planned: { id: "tok-grammar-sentence", grammar: ["li-predicate", "mi-sina-without-li", "e-object", "word-roles"] }
-    listening_passages:
-      - { id: "simple-statements", text: { "en": "Ten short statements about a cat, a person and some food" } }
-    reading_passages:
-      - { id: "three-lines", text: { "en": "A three-line story: someone sees food, wants it and eats it" } }
+  # by its place: moku is food and to eat. The particles li and e are
+  # cards here (tok-0101 and tok-0102), taught on words already known, so
+  # they count no word. Its sentences are tok-grammar-sentence-sentences,
+  # and its passages are in tok-en-reading-sentences: the listening passage
+  # simple-statements (ten short statements about a person and some food;
+  # a cat is left out, since soweli is taught in its own unit later) and the
+  # reading passage three-lines (a three-line story: someone sees food, wants
+  # it and eats it).
+  - decks: ["tok-grammar-sentence", "tok-grammar-sentence-sentences", "tok-reading-sentences"]
+    words: 0
+    grammar: ["li-predicate", "mi-sina-without-li", "e-object", "word-roles"]
   # suli, lili, ike, sin, wawa, mute, ante and sama.
   - planned: { id: "tok-describing", theme: "describing", words: 8 }
     listening_passages:
