@@ -27,7 +27,7 @@ cards:
     bases: "self"
     examples:
       - { target: "La casa es bonita.", ipa: "la ˈkasa es boˈnita", bases: [{ word: "La", base: "la" }, { word: "casa", ref: "es-0006" }, { word: "es", ref: "es-0022" }, { word: "bonita", base: "bonito" }] }
-      - { target: "Qué bonito es el parque.", ipa: "ke boˈnito es el ˈpaɾke", bases: [{ word: "Qué", ref: "es-0054" }, { word: "bonito", base: "bonito" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "parque", base: "parque" }] }
+      - { target: "¡Qué bonito es el parque!", ipa: "ke boˈnito es el ˈpaɾke", bases: [{ word: "Qué", ref: "es-0054" }, { word: "bonito", base: "bonito" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "parque", base: "parque" }] }
   - id: "es-0406"
     target: "guapo"
     ipa: "ˈɡwapo"
@@ -86,7 +86,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Este libro es barato.", ipa: "ˈeste ˈlibɾo es baˈɾato", bases: [{ word: "Este", base: "este" }, { word: "libro", ref: "es-0426" }, { word: "es", ref: "es-0022" }, { word: "barato", base: "barato" }] }
+      - { target: "Este libro es barato.", ipa: "ˈeste ˈlibɾo es baˈɾato", bases: [{ word: "Este", base: "este" }, { word: "libro", ref: "es-0011" }, { word: "es", ref: "es-0022" }, { word: "barato", base: "barato" }] }
       - { target: "La fruta está barata hoy.", ipa: "la ˈfɾuta esˈta baˈɾata oj", bases: [{ word: "La", base: "la" }, { word: "fruta", base: "fruta" }, { word: "está", ref: "es-0023" }, { word: "barata", base: "barato" }, { word: "hoy", ref: "es-0331" }] }
   - id: "es-0412"
     target: "caro"
@@ -136,7 +136,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "La cocina está limpia.", ipa: "la koˈθina esˈta ˈlimpja", bases: [{ word: "La", base: "la" }, { word: "cocina", ref: "es-0284" }, { word: "está", ref: "es-0023" }, { word: "limpia", base: "limpio" }] }
+      - { target: "La cocina está limpia.", ipa: "la koˈθina esˈta ˈlimpja", bases: [{ word: "La", base: "la" }, { word: "cocina", base: "cocina" }, { word: "está", ref: "es-0023" }, { word: "limpia", base: "limpio" }] }
       - { target: "Mi camisa está limpia.", ipa: "mi kaˈmisa esˈta ˈlimpja", bases: [{ word: "Mi", ref: "es-0129" }, { word: "camisa", base: "camisa" }, { word: "está", ref: "es-0023" }, { word: "limpia", base: "limpio" }] }
   - id: "es-0417"
     target: "sucio"
@@ -216,7 +216,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "El libro es muy interesante.", ipa: "el ˈlibɾo es mwi inteɾeˈsante", bases: [{ word: "El", base: "el" }, { word: "libro", ref: "es-0426" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "interesante", base: "interesante" }] }
+      - { target: "El libro es muy interesante.", ipa: "el ˈlibɾo es mwi inteɾeˈsante", bases: [{ word: "El", base: "el" }, { word: "libro", ref: "es-0011" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "interesante", base: "interesante" }] }
       - { target: "Ana tiene una idea interesante.", ipa: "ˈana ˈtjene ˈuna iˈdea inteɾeˈsante", bases: [{ word: "Ana", base: "Ana" }, { word: "tiene", ref: "es-0024" }, { word: "una", base: "una" }, { word: "idea", base: "idea" }, { word: "interesante", base: "interesante" }] }
   - id: "es-0425"
     target: "ocupado"
@@ -267,7 +267,7 @@ cards:
     bases: "self"
     examples:
       - { target: "El río es muy largo.", ipa: "el ˈrio es mwi ˈlaɾɡo", bases: [{ word: "El", base: "el" }, { word: "río", base: "río" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "largo", base: "largo" }] }
-      - { target: "La carta es larga.", ipa: "la ˈkaɾta es ˈlaɾɡa", bases: [{ word: "La", base: "la" }, { word: "carta", ref: "es-0412" }, { word: "es", ref: "es-0022" }, { word: "larga", base: "largo" }] }
+      - { target: "La carta es larga.", ipa: "la ˈkaɾta es ˈlaɾɡa", bases: [{ word: "La", base: "la" }, { word: "carta", base: "carta" }, { word: "es", ref: "es-0022" }, { word: "larga", base: "largo" }] }
   - id: "es-0430"
     target: "corto"
     ipa: "ˈkoɾto"
@@ -277,7 +277,7 @@ cards:
     bases: "self"
     examples:
       - { target: "El pelo de Ana es corto.", ipa: "el ˈpelo de ˈana es ˈkoɾto", bases: [{ word: "El", base: "el" }, { word: "pelo", base: "pelo" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "corto", base: "corto" }] }
-      - { target: "La falda es muy corta{corto}.", ipa: "la ˈfalda es mwi koɾtaˈkoɾto", bases: [{ word: "La", base: "la" }, { word: "falda", base: "falda" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "corta", base: "corto" }] }
+      - { target: "La falda es muy corta.", ipa: "la ˈfalda es mwi ˈkoɾta", bases: [{ word: "La", base: "la" }, { word: "falda", base: "falda" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "corta", base: "corto" }] }
   - id: "es-0431"
     target: "viejo"
     ipa: "ˈbjexo"
