@@ -1,0 +1,30 @@
+schema: 1
+id: "hi-en-reading-at-the-doctors"
+name: "Reading: at the doctor's"
+kind: reading
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A patient tells a doctor where it hurts, with the body words of this unit. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-at-the-doctors"
+    title: "At the doctor's"
+    theme: "body"
+    sentences:
+      - { text: "नमस्ते, डॉक्टर साहब।", reading: "namastē, ḍāktar sāhab." }
+      - { text: "मेरे पेट में दर्द है।", reading: "mērē pēṭ mēm̐ dard hai." }
+      - { text: "मुझे बुखार भी है।", reading: "mujhē bukhār bhī hai." }
+      - { text: "पेट पर हाथ रखिए।", reading: "pēṭ par hāth rakhiē." }
+      - { text: "मेरा पैर भी सूजा है।", reading: "merā pair bhī sūjā hai." }
+    questions:
+      - id: "hi-1087"
+        prompt: { en: "Where does the patient have pain?" }
+        options:
+          - { en: "In the stomach" }
+          - { en: "In the tooth" }
+        answer: 1
+      - id: "hi-1088"
+        prompt: { en: "The patient's foot is swollen too." }
+        answer: true

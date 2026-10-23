@@ -1,0 +1,191 @@
+schema: 1
+id: "hi-body-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-1075"
+    target: "मेरा सिर दुखता है।"
+    target_scripts: { perso_arabic: "میرا سر دکھتا ہے۔" }
+    reading: "merā sir dukhtā hai."
+    ipa: "meːraː sɪr d̪ʊkʰt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "सिर", base: "सिर", reading: "sir" }
+      - { word: "दुखता", base: "दुखना", reading: "dukhtā" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", word: "दुखती", reading: "dukhtī", kind: "form" }
+      - { id: "w1", word: "सोता", reading: "sōtā", kind: "word" }
+  - id: "hi-1076"
+    target: "मेरी पीठ और कमर में दर्द है।"
+    target_scripts: { perso_arabic: "میری پیٹھ اور کمر میں درد ہے۔" }
+    reading: "mērī pīṭh aur kamar mēm̐ dard hai."
+    ipa: "meːriː piːʈʰ ɔːr kəmər meːm d̪ərd̪ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरी", base: "मेरा", reading: "mērī" }
+      - { word: "पीठ", base: "पीठ", reading: "pīṭh" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "कमर", base: "कमर", reading: "kamar" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "दर्द", ref: "hi-0360" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", word: "मेरे", reading: "mērē", kind: "form" }
+      - { id: "w1", word: "सिर", reading: "sir", kind: "word" }
+  - id: "hi-1077"
+    target: "उसके दाँत सफ़ेद हैं।"
+    target_scripts: { perso_arabic: "اس کے دانت سفید ہیں۔" }
+    reading: "uskē dām̐t safēd haim̐."
+    ipa: "ʊskeː d̪ãːt̪ səfeːd̪ ɦɛːm"
+    pos: "phrase"
+    bases:
+      - { word: "उसके", base: "उसका", reading: "uskē" }
+      - { word: "दाँत", base: "दाँत", reading: "dām̐t" }
+      - { word: "सफ़ेद", base: "सफ़ेद", reading: "safēd" }
+      - { word: "हैं", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", word: "उसका", reading: "uskā", kind: "form" }
+      - { id: "w1", word: "काले", reading: "kālē", kind: "word" }
+  - id: "hi-1078"
+    target: "उसकी आँखें लाल हैं।"
+    target_scripts: { perso_arabic: "اس کی آنکھیں لال ہیں۔" }
+    reading: "uskī āṅkhēm̐ lāl haim̐."
+    ipa: "ʊskiː ãːkʰeːm laːl ɦɛːm"
+    pos: "phrase"
+    bases:
+      - { word: "उसकी", base: "उसका", reading: "uskī" }
+      - { word: "आँखें", base: "आँख", reading: "āṅkhēm̐" }
+      - { word: "लाल", base: "लाल", reading: "lāl" }
+      - { word: "हैं", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", word: "आँख", reading: "āṅkh", kind: "form" }
+      - { id: "w1", word: "नाक", reading: "nāk", kind: "word" }
+  - id: "hi-1079"
+    target: "मेरे हाथ में चोट है।"
+    target_scripts: { perso_arabic: "میرے ہاتھ میں چوٹ ہے۔" }
+    reading: "mērē hāth mēm̐ cōṭ hai."
+    ipa: "meːreː ɦaːt̪ʰ meːm tʃoːʈ ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "मेरे", base: "मेरा", reading: "mērē" }
+      - { word: "हाथ", base: "हाथ", reading: "hāth" }
+      - { word: "में", ref: "hi-0274" }
+      - { word: "चोट", base: "चोट", reading: "cōṭ" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", word: "हाथों", reading: "hāthōm̐", kind: "form" }
+      - { id: "w1", word: "पैर", reading: "pair", kind: "word" }
+  - id: "hi-1080"
+    target: "डॉक्टर को दिखाओ।"
+    target_scripts: { perso_arabic: "ڈاکٹر کو دکھاؤ۔" }
+    reading: "ḍāktar kō dikhāō."
+    ipa: "ɖɔkʈər koː d̪ɪkʰaːoː"
+    pos: "phrase"
+    bases:
+      - { word: "डॉक्टर", ref: "hi-0357" }
+      - { word: "को", ref: "hi-0277" }
+      - { word: "दिखाओ", base: "दिखाना", reading: "dikhāō" }
+    confusables:
+      - { id: "f1", word: "दिखाएँ", reading: "dikhāēm̐", kind: "form" }
+      - { id: "w1", word: "बुलाओ", reading: "bulāō", kind: "word" }
+  - id: "hi-1081"
+    target: "मुझे बुखार है, लेकिन मेरा सिर नहीं दुखता।"
+    target_scripts: { perso_arabic: "مجھے بخار ہے، لیکن میرا سر نہیں دکھتا۔" }
+    reading: "mujhē bukhār hai, lēkin merā sir nahīm̐ dukhtā."
+    ipa: "mʊdʒʱeː bʊkʰaːr ɦɛː leːkɪn meːraː sɪr nəɦiːm d̪ʊkʰt̪aː"
+    pos: "phrase"
+    bases:
+      - { word: "मुझे", ref: "hi-0745" }
+      - { word: "बुखार", base: "बुखार", reading: "bukhār" }
+      - { word: "है", ref: "hi-0780" }
+      - { word: "लेकिन", base: "लेकिन", reading: "lēkin" }
+      - { word: "मेरा", ref: "hi-0752" }
+      - { word: "सिर", base: "सिर", reading: "sir" }
+      - { word: "नहीं", ref: "hi-0156" }
+      - { word: "दुखता", base: "दुखना", reading: "dukhtā" }
+    confusables:
+      - { id: "f1", word: "हैं", reading: "haim̐", kind: "form" }
+      - { id: "w1", word: "बीमार", reading: "bīmār", kind: "word" }
+  - id: "hi-1082"
+    target: "उसका घुटना सूजा है।"
+    target_scripts: { perso_arabic: "اس کا گھٹنا سوجا ہے۔" }
+    reading: "uskā ghuṭnā sūjā hai."
+    ipa: "ʊskaː ɡʱʊʈnaː suːdʒaː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "उसका", ref: "hi-0757" }
+      - { word: "घुटना", base: "घुटना", reading: "ghuṭnā" }
+      - { word: "सूजा", base: "सूजना", reading: "sūjā" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", word: "सूजे", reading: "sūjē", kind: "form" }
+      - { id: "w1", word: "सूखा", reading: "sūkhā", kind: "word" }
+  - id: "hi-1083"
+    target: "गहरी साँस लो और आराम से लेटो।"
+    target_scripts: { perso_arabic: "گہری سانس لو اور آرام سے لیٹو۔" }
+    reading: "gahrī sām̐s lō aur ārām sē leṭō."
+    ipa: "ɡəɦriː sãːs loː ɔːr aːraːm seː leːʈoː"
+    pos: "phrase"
+    bases:
+      - { word: "गहरी", base: "गहरा", reading: "gahrī" }
+      - { word: "साँस", base: "साँस", reading: "sām̐s" }
+      - { word: "लो", base: "लेना", reading: "lō" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "आराम", base: "आराम", reading: "ārām" }
+      - { word: "से", ref: "hi-0276" }
+      - { word: "लेटो", base: "लेटना", reading: "leṭō" }
+    confusables:
+      - { id: "f1", word: "गहरा", reading: "gahrā", kind: "form" }
+      - { id: "w1", word: "छोड़ो", reading: "chōṛō", kind: "word" }
+  - id: "hi-1084"
+    target: "हर सुबह मैं अपना चेहरा धोता हूँ।"
+    target_scripts: { perso_arabic: "ہر صبح میں اپنا چہرہ دھوتا ہوں۔" }
+    reading: "har subah maim̐ apnā cehrā dhōtā hūm̐."
+    ipa: "ɦər sʊbəɦ mɛːm əpnaː tʃeːɦraː d̪ʱoːt̪aː ɦũː"
+    pos: "phrase"
+    bases:
+      - { word: "हर", base: "हर", reading: "har" }
+      - { word: "सुबह", ref: "hi-0302" }
+      - { word: "मैं", ref: "hi-0745" }
+      - { word: "अपना", base: "अपना", reading: "apnā" }
+      - { word: "चेहरा", base: "चेहरा", reading: "cehrā" }
+      - { word: "धोता", base: "धोना", reading: "dhōtā" }
+      - { word: "हूँ", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", word: "धोते", reading: "dhōtē", kind: "form" }
+      - { id: "w1", word: "पीता", reading: "pītā", kind: "word" }
+  - id: "hi-1085"
+    target: "यह दवाई रोज़ लो।"
+    target_scripts: { perso_arabic: "یہ دوائی روز لو۔" }
+    reading: "yah davāī rōz lō."
+    ipa: "jəɦ d̪əʋaːiː roːz loː"
+    pos: "phrase"
+    bases:
+      - { word: "यह", ref: "hi-0748" }
+      - { word: "दवाई", ref: "hi-0359" }
+      - { word: "रोज़", ref: "hi-0451" }
+      - { word: "लो", base: "लेना", reading: "lō" }
+    confusables:
+      - { id: "f1", word: "लीजिए", reading: "lījiē", kind: "form" }
+      - { id: "w1", word: "बेचो", reading: "bēcō", kind: "word" }
+  - id: "hi-1086"
+    target: "डॉक्टर सिर और गर्दन देखता है।"
+    target_scripts: { perso_arabic: "ڈاکٹر سر اور گردن دیکھتا ہے۔" }
+    reading: "ḍāktar sir aur gardan dēkhtā hai."
+    ipa: "ɖɔkʈər sɪr ɔːr ɡərd̪ən d̪eːkʰt̪aː ɦɛː"
+    pos: "phrase"
+    bases:
+      - { word: "डॉक्टर", ref: "hi-0357" }
+      - { word: "सिर", base: "सिर", reading: "sir" }
+      - { word: "और", ref: "hi-0337" }
+      - { word: "गर्दन", base: "गर्दन", reading: "gardan" }
+      - { word: "देखता", base: "देखना", reading: "dēkhtā" }
+      - { word: "है", ref: "hi-0780" }
+    confusables:
+      - { id: "f1", word: "देखते", reading: "dēkhtē", kind: "form" }
+      - { id: "w1", word: "सुनता", reading: "suntā", kind: "word" }

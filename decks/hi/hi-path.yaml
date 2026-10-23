@@ -199,11 +199,8 @@ units:
     grammar: ["continuous"]
   - decks: ["hi-transport", "*"]
     words: 8
-  - planned: { id: "hi-body", theme: "body", words: 35 }
-    listening_passages:
-      - { id: "at-the-doctors", text: { "en": "Telling a doctor where it hurts" } }
-    reading_passages:
-      - { id: "stretching-chart", text: { "en": "A chart of simple morning stretches" } }
+  - decks: ["hi-body", "hi-body-sentences", "hi-reading-at-the-doctors", "hi-reading-stretching-chart", "*"]
+    words: 35
   - planned: { id: "hi-places", theme: "places", words: 56 }
     listening_passages:
       - { id: "walk-to-the-market", text: { "en": "A neighbour names the places you pass on the way to the market" } }

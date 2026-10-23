@@ -1,0 +1,1052 @@
+schema: 1
+id: "hi-body"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "body"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-1040"
+    target: "शरीर"
+    target_scripts: { perso_arabic: "جسم" }
+    reading: "śarīr"
+    ipa: "ʃəriːr"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "मेरा शरीर ठीक है।"
+        reading: "merā śarīr ṭhīk hai."
+        ipa: "meːraː ʃəriːr ʈʰiːk ɦɛː"
+        bases:
+          - { word: "मेरा", ref: "hi-0752" }
+          - { word: "शरीर", base: "शरीर", reading: "śarīr" }
+          - { word: "ठीक", base: "ठीक", reading: "ṭhīk" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "डॉक्टर मेरा शरीर देखता है।"
+        reading: "ḍāktar merā śarīr dēkhtā hai."
+        ipa: "ɖɔkʈər meːraː ʃəriːr d̪eːkʰt̪aː ɦɛː"
+        bases:
+          - { word: "डॉक्टर", ref: "hi-0357" }
+          - { word: "मेरा", ref: "hi-0752" }
+          - { word: "शरीर", base: "शरीर", reading: "śarīr" }
+          - { word: "देखता", base: "देखना", reading: "dēkhtā" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-1041"
+    target: "सिर"
+    target_scripts: { perso_arabic: "سر" }
+    reading: "sir"
+    ipa: "sɪr"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "मेरे सिर में दर्द है।"
+        reading: "mērē sir mēm̐ dard hai."
+        ipa: "meːreː sɪr meːm d̪ərd̪ ɦɛː"
+        bases:
+          - { word: "मेरे", base: "मेरा", reading: "mērē" }
+          - { word: "सिर", base: "सिर", reading: "sir" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "दर्द", ref: "hi-0360" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "सिर पर हाथ रखो।"
+        reading: "sir par hāth rakhō."
+        ipa: "sɪr pər ɦaːt̪ʰ rəkʰoː"
+        bases:
+          - { word: "सिर", base: "सिर", reading: "sir" }
+          - { word: "पर", ref: "hi-0275" }
+          - { word: "हाथ", base: "हाथ", reading: "hāth" }
+          - { word: "रखो", base: "रखना", reading: "rakhō" }
+    collocations:
+      - { id: "pain", ref: "hi-0360" }
+  - id: "hi-1042"
+    target: "बाल"
+    target_scripts: { perso_arabic: "بال" }
+    reading: "bāl"
+    ipa: "baːl"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "उसके बाल काले हैं।"
+        reading: "uskē bāl kālē haim̐."
+        ipa: "ʊskeː baːl kaːleː ɦɛːm"
+        bases:
+          - { word: "उसके", base: "उसका", reading: "uskē" }
+          - { word: "बाल", base: "बाल", reading: "bāl" }
+          - { word: "काले", base: "काला", reading: "kālē" }
+          - { word: "हैं", ref: "hi-0780" }
+      - target: "मेरे बाल छोटे हैं।"
+        reading: "mērē bāl chōṭē haim̐."
+        ipa: "meːreː baːl tʃʰoːʈeː ɦɛːm"
+        bases:
+          - { word: "मेरे", base: "मेरा", reading: "mērē" }
+          - { word: "बाल", base: "बाल", reading: "bāl" }
+          - { word: "छोटे", base: "छोटा", reading: "chōṭē" }
+          - { word: "हैं", ref: "hi-0780" }
+    synonyms:
+      - { id: "kesh", word: "केश", reading: "kēś" }
+  - id: "hi-1043"
+    target: "चेहरा"
+    target_scripts: { perso_arabic: "چہرہ" }
+    reading: "cehrā"
+    ipa: "tʃeːɦraː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "उसका चेहरा खुश है।"
+        reading: "uskā cehrā khush hai."
+        ipa: "ʊskaː tʃeːɦraː kʰʊʃ ɦɛː"
+        bases:
+          - { word: "उसका", ref: "hi-0757" }
+          - { word: "चेहरा", base: "चेहरा", reading: "cehrā" }
+          - { word: "खुश", base: "खुश", reading: "khush" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "सुबह चेहरा धोओ।"
+        reading: "subah cehrā dhōō."
+        ipa: "sʊbəɦ tʃeːɦraː d̪ʱoːoː"
+        bases:
+          - { word: "सुबह", ref: "hi-0302" }
+          - { word: "चेहरा", base: "चेहरा", reading: "cehrā" }
+          - { word: "धोओ", base: "धोना", reading: "dhōō" }
+  - id: "hi-1044"
+    target: "आँख"
+    target_scripts: { perso_arabic: "آنکھ" }
+    reading: "āṅkh"
+    ipa: "ãːkʰ"
+    pos: "noun"
+    gender: "f"
+    picture: "👁"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "मेरी आँख में दर्द है।"
+        reading: "mērī āṅkh mēm̐ dard hai."
+        ipa: "meːriː ãːkʰ meːm d̪ərd̪ ɦɛː"
+        bases:
+          - { word: "मेरी", base: "मेरा", reading: "mērī" }
+          - { word: "आँख", base: "आँख", reading: "āṅkh" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "दर्द", ref: "hi-0360" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मेरी आँखें लाल हैं।"
+        reading: "mērī āṅkhēm̐ lāl haim̐."
+        ipa: "meːriː ãːkʰeːm laːl ɦɛːm"
+        bases:
+          - { word: "मेरी", base: "मेरा", reading: "mērī" }
+          - { word: "आँखें", base: "आँख", reading: "āṅkhēm̐" }
+          - { word: "लाल", base: "लाल", reading: "lāl" }
+          - { word: "हैं", ref: "hi-0780" }
+    synonyms:
+      - { id: "netr", word: "नेत्र", reading: "netr" }
+    forms:
+      - { id: "plural", kind: "plural", word: "आँखें", reading: "āṅkhēm̐" }
+  - id: "hi-1045"
+    target: "कान"
+    target_scripts: { perso_arabic: "کان" }
+    reading: "kān"
+    ipa: "kaːn"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "मेरा कान दुखता है।"
+        reading: "merā kān dukhtā hai."
+        ipa: "meːraː kaːn d̪ʊkʰt̪aː ɦɛː"
+        bases:
+          - { word: "मेरा", ref: "hi-0752" }
+          - { word: "कान", base: "कान", reading: "kān" }
+          - { word: "दुखता", base: "दुखना", reading: "dukhtā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "कान में पानी है।"
+        reading: "kān mēm̐ pānī hai."
+        ipa: "kaːn meːm paːniː ɦɛː"
+        bases:
+          - { word: "कान", base: "कान", reading: "kān" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "पानी", ref: "hi-0333" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "karn", word: "कर्ण", reading: "karṇ" }
+  - id: "hi-1046"
+    target: "नाक"
+    target_scripts: { perso_arabic: "ناک" }
+    reading: "nāk"
+    ipa: "naːk"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "उसकी नाक लंबी है।"
+        reading: "uskī nāk lambī hai."
+        ipa: "ʊskiː naːk ləmbiː ɦɛː"
+        bases:
+          - { word: "उसकी", base: "उसका", reading: "uskī" }
+          - { word: "नाक", base: "नाक", reading: "nāk" }
+          - { word: "लंबी", base: "लंबा", reading: "lambī" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "नाक से साँस लो।"
+        reading: "nāk sē sām̐s lō."
+        ipa: "naːk seː sãːs loː"
+        bases:
+          - { word: "नाक", base: "नाक", reading: "nāk" }
+          - { word: "से", ref: "hi-0276" }
+          - { word: "साँस", base: "साँस", reading: "sām̐s" }
+          - { word: "लो", base: "लेना", reading: "lō" }
+    synonyms:
+      - { id: "nasika", word: "नासिका", reading: "nāsikā" }
+  - id: "hi-1047"
+    target: "मुँह"
+    target_scripts: { perso_arabic: "منہ" }
+    reading: "mum̐h"
+    ipa: "mʊ̃ɦ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "मुँह खोलो।"
+        reading: "mum̐h kholō."
+        ipa: "mʊ̃ɦ kʰoːloː"
+        bases:
+          - { word: "मुँह", base: "मुँह", reading: "mum̐h" }
+          - { word: "खोलो", base: "खोलना", reading: "kholō" }
+      - target: "उसका मुँह बड़ा है।"
+        reading: "uskā mum̐h baṛā hai."
+        ipa: "ʊskaː mʊ̃ɦ bəɽaː ɦɛː"
+        bases:
+          - { word: "उसका", ref: "hi-0757" }
+          - { word: "मुँह", base: "मुँह", reading: "mum̐h" }
+          - { word: "बड़ा", base: "बड़ा", reading: "baṛā" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "mukh", word: "मुख", reading: "mukh" }
+  - id: "hi-1048"
+    target: "होंठ"
+    target_scripts: { perso_arabic: "ہونٹ" }
+    reading: "hōm̐ṭh"
+    ipa: "ɦoːɳʈʰ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "उसके होंठ सूखे हैं।"
+        reading: "uskē hōm̐ṭh sūkhē haim̐."
+        ipa: "ʊskeː ɦoːɳʈʰ suːkʰeː ɦɛːm"
+        bases:
+          - { word: "उसके", base: "उसका", reading: "uskē" }
+          - { word: "होंठ", base: "होंठ", reading: "hōm̐ṭh" }
+          - { word: "सूखे", base: "सूखा", reading: "sūkhē" }
+          - { word: "हैं", ref: "hi-0780" }
+      - target: "मेरे होंठ ठंडे हैं।"
+        reading: "mērē hōm̐ṭh ṭhaṇḍē haim̐."
+        ipa: "meːreː ɦoːɳʈʰ ʈʰəɳɖeː ɦɛːm"
+        bases:
+          - { word: "मेरे", base: "मेरा", reading: "mērē" }
+          - { word: "होंठ", base: "होंठ", reading: "hōm̐ṭh" }
+          - { word: "ठंडे", base: "ठंडा", reading: "ṭhaṇḍē" }
+          - { word: "हैं", ref: "hi-0780" }
+  - id: "hi-1049"
+    target: "दाँत"
+    target_scripts: { perso_arabic: "دانت" }
+    reading: "dām̐t"
+    ipa: "d̪ãːt̪"
+    pos: "noun"
+    gender: "m"
+    picture: "🦷"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "मेरे दाँत में दर्द है।"
+        reading: "mērē dām̐t mēm̐ dard hai."
+        ipa: "meːreː d̪ãːt̪ meːm d̪ərd̪ ɦɛː"
+        bases:
+          - { word: "मेरे", base: "मेरा", reading: "mērē" }
+          - { word: "दाँत", base: "दाँत", reading: "dām̐t" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "दर्द", ref: "hi-0360" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मेरे दाँत सफ़ेद हैं।"
+        reading: "mērē dām̐t safēd haim̐."
+        ipa: "meːreː d̪ãːt̪ səfeːd̪ ɦɛːm"
+        bases:
+          - { word: "मेरे", base: "मेरा", reading: "mērē" }
+          - { word: "दाँत", base: "दाँत", reading: "dām̐t" }
+          - { word: "सफ़ेद", base: "सफ़ेद", reading: "safēd" }
+          - { word: "हैं", ref: "hi-0780" }
+    synonyms:
+      - { id: "dant", word: "दंत", reading: "dant" }
+    collocations:
+      - { id: "pain", ref: "hi-0360" }
+  - id: "hi-1050"
+    target: "जीभ"
+    target_scripts: { perso_arabic: "زبان" }
+    reading: "jībh"
+    ipa: "dʒiːbʱ"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "उसकी जीभ लाल है।"
+        reading: "uskī jībh lāl hai."
+        ipa: "ʊskiː dʒiːbʱ laːl ɦɛː"
+        bases:
+          - { word: "उसकी", base: "उसका", reading: "uskī" }
+          - { word: "जीभ", base: "जीभ", reading: "jībh" }
+          - { word: "लाल", base: "लाल", reading: "lāl" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "जीभ बाहर निकालो।"
+        reading: "jībh bāhar nikālō."
+        ipa: "dʒiːbʱ baːɦər nɪkaːloː"
+        bases:
+          - { word: "जीभ", base: "जीभ", reading: "jībh" }
+          - { word: "बाहर", base: "बाहर", reading: "bāhar" }
+          - { word: "निकालो", base: "निकालना", reading: "nikālō" }
+  - id: "hi-1051"
+    target: "गला"
+    target_scripts: { perso_arabic: "گلا" }
+    reading: "galā"
+    ipa: "ɡəlaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "गले में दर्द है।"
+        reading: "galē mēm̐ dard hai."
+        ipa: "ɡəleː meːm d̪ərd̪ ɦɛː"
+        bases:
+          - { word: "गले", base: "गला", reading: "galē" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "दर्द", ref: "hi-0360" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "गला साफ़ करो।"
+        reading: "galā sāf karō."
+        ipa: "ɡəlaː saːf kəroː"
+        bases:
+          - { word: "गला", base: "गला", reading: "galā" }
+          - { word: "साफ़", base: "साफ़", reading: "sāf" }
+          - { word: "करो", base: "करना", reading: "karō" }
+    synonyms:
+      - { id: "kanth", word: "कंठ", reading: "kanṭh" }
+    collocations:
+      - { id: "pain", ref: "hi-0360" }
+    forms:
+      - { id: "oblique", kind: "oblique", word: "गले", reading: "galē" }
+  - id: "hi-1052"
+    target: "गर्दन"
+    target_scripts: { perso_arabic: "گردن" }
+    reading: "gardan"
+    ipa: "ɡərd̪ən"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "उसकी गर्दन लंबी है।"
+        reading: "uskī gardan lambī hai."
+        ipa: "ʊskiː ɡərd̪ən ləmbiː ɦɛː"
+        bases:
+          - { word: "उसकी", base: "उसका", reading: "uskī" }
+          - { word: "गर्दन", base: "गर्दन", reading: "gardan" }
+          - { word: "लंबी", base: "लंबा", reading: "lambī" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "गर्दन में दर्द है।"
+        reading: "gardan mēm̐ dard hai."
+        ipa: "ɡərd̪ən meːm d̪ərd̪ ɦɛː"
+        bases:
+          - { word: "गर्दन", base: "गर्दन", reading: "gardan" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "दर्द", ref: "hi-0360" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "griva", word: "ग्रीवा", reading: "grīvā" }
+    collocations:
+      - { id: "pain", ref: "hi-0360" }
+  - id: "hi-1053"
+    target: "कंधा"
+    target_scripts: { perso_arabic: "کندھا" }
+    reading: "kandhā"
+    ipa: "kənd̪ʱaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "मेरे कंधे में दर्द है।"
+        reading: "mērē kandhē mēm̐ dard hai."
+        ipa: "meːreː kənd̪ʱeː meːm d̪ərd̪ ɦɛː"
+        bases:
+          - { word: "मेरे", base: "मेरा", reading: "mērē" }
+          - { word: "कंधे", base: "कंधा", reading: "kandhē" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "दर्द", ref: "hi-0360" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "कंधे पर हाथ रखो।"
+        reading: "kandhē par hāth rakhō."
+        ipa: "kənd̪ʱeː pər ɦaːt̪ʰ rəkʰoː"
+        bases:
+          - { word: "कंधे", base: "कंधा", reading: "kandhē" }
+          - { word: "पर", ref: "hi-0275" }
+          - { word: "हाथ", base: "हाथ", reading: "hāth" }
+          - { word: "रखो", base: "रखना", reading: "rakhō" }
+    forms:
+      - { id: "oblique", kind: "oblique", word: "कंधे", reading: "kandhē" }
+  - id: "hi-1054"
+    target: "छाती"
+    target_scripts: { perso_arabic: "چھاتی" }
+    reading: "chātī"
+    ipa: "tʃʰaːt̪iː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "छाती में दर्द है।"
+        reading: "chātī mēm̐ dard hai."
+        ipa: "tʃʰaːt̪iː meːm d̪ərd̪ ɦɛː"
+        bases:
+          - { word: "छाती", base: "छाती", reading: "chātī" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "दर्द", ref: "hi-0360" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "उसकी छाती चौड़ी है।"
+        reading: "uskī chātī cauṛī hai."
+        ipa: "ʊskiː tʃʰaːt̪iː tʃɔːɽiː ɦɛː"
+        bases:
+          - { word: "उसकी", base: "उसका", reading: "uskī" }
+          - { word: "छाती", base: "छाती", reading: "chātī" }
+          - { word: "चौड़ी", base: "चौड़ा", reading: "cauṛī" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-1055"
+    target: "पेट"
+    target_scripts: { perso_arabic: "پیٹ" }
+    reading: "pēṭ"
+    ipa: "peːʈ"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "मेरे पेट में दर्द है।"
+        reading: "mērē pēṭ mēm̐ dard hai."
+        ipa: "meːreː peːʈ meːm d̪ərd̪ ɦɛː"
+        bases:
+          - { word: "मेरे", base: "मेरा", reading: "mērē" }
+          - { word: "पेट", base: "पेट", reading: "pēṭ" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "दर्द", ref: "hi-0360" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "पेट भरा है।"
+        reading: "pēṭ bharā hai."
+        ipa: "peːʈ bʱəraː ɦɛː"
+        bases:
+          - { word: "पेट", base: "पेट", reading: "pēṭ" }
+          - { word: "भरा", base: "भरा", reading: "bharā" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "udar", word: "उदर", reading: "udar" }
+  - id: "hi-1056"
+    target: "कमर"
+    target_scripts: { perso_arabic: "کمر" }
+    reading: "kamar"
+    ipa: "kəmər"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "मेरी कमर में दर्द है।"
+        reading: "mērī kamar mēm̐ dard hai."
+        ipa: "meːriː kəmər meːm d̪ərd̪ ɦɛː"
+        bases:
+          - { word: "मेरी", base: "मेरा", reading: "mērī" }
+          - { word: "कमर", base: "कमर", reading: "kamar" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "दर्द", ref: "hi-0360" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "उसकी कमर पतली है।"
+        reading: "uskī kamar patlī hai."
+        ipa: "ʊskiː kəmər pət̪liː ɦɛː"
+        bases:
+          - { word: "उसकी", base: "उसका", reading: "uskī" }
+          - { word: "कमर", base: "कमर", reading: "kamar" }
+          - { word: "पतली", base: "पतला", reading: "patlī" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-1057"
+    target: "पीठ"
+    target_scripts: { perso_arabic: "پیٹھ" }
+    reading: "pīṭh"
+    ipa: "piːʈʰ"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "पीठ सीधी रखो।"
+        reading: "pīṭh sīdhī rakhō."
+        ipa: "piːʈʰ siːd̪ʱiː rəkʰoː"
+        bases:
+          - { word: "पीठ", base: "पीठ", reading: "pīṭh" }
+          - { word: "सीधी", base: "सीधा", reading: "sīdhī" }
+          - { word: "रखो", base: "रखना", reading: "rakhō" }
+      - target: "मेरी पीठ में दर्द है।"
+        reading: "mērī pīṭh mēm̐ dard hai."
+        ipa: "meːriː piːʈʰ meːm d̪ərd̪ ɦɛː"
+        bases:
+          - { word: "मेरी", base: "मेरा", reading: "mērī" }
+          - { word: "पीठ", base: "पीठ", reading: "pīṭh" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "दर्द", ref: "hi-0360" }
+          - { word: "है", ref: "hi-0780" }
+    collocations:
+      - { id: "pain", ref: "hi-0360" }
+  - id: "hi-1058"
+    target: "हाथ"
+    target_scripts: { perso_arabic: "ہاتھ" }
+    reading: "hāth"
+    ipa: "ɦaːt̪ʰ"
+    pos: "noun"
+    gender: "m"
+    picture: "✋"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "मेरे हाथ में दर्द है।"
+        reading: "mērē hāth mēm̐ dard hai."
+        ipa: "meːreː ɦaːt̪ʰ meːm d̪ərd̪ ɦɛː"
+        bases:
+          - { word: "मेरे", base: "मेरा", reading: "mērē" }
+          - { word: "हाथ", base: "हाथ", reading: "hāth" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "दर्द", ref: "hi-0360" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "हाथ धोओ।"
+        reading: "hāth dhōō."
+        ipa: "ɦaːt̪ʰ d̪ʱoːoː"
+        bases:
+          - { word: "हाथ", base: "हाथ", reading: "hāth" }
+          - { word: "धोओ", base: "धोना", reading: "dhōō" }
+    synonyms:
+      - { id: "hast", word: "हस्त", reading: "hast" }
+    forms:
+      - { id: "oblique-plural", kind: "oblique-plural", word: "हाथों", reading: "hāthōm̐" }
+  - id: "hi-1059"
+    target: "उँगली"
+    target_scripts: { perso_arabic: "انگلی" }
+    reading: "um̐galī"
+    ipa: "ʊ̃ɡəliː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "मेरी उँगली में चोट है।"
+        reading: "mērī um̐galī mēm̐ cōṭ hai."
+        ipa: "meːriː ʊ̃ɡəliː meːm tʃoːʈ ɦɛː"
+        bases:
+          - { word: "मेरी", base: "मेरा", reading: "mērī" }
+          - { word: "उँगली", base: "उँगली", reading: "um̐galī" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "चोट", base: "चोट", reading: "cōṭ" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "उँगलियाँ मत छुओ।"
+        reading: "um̐galiyām̐ mat chuō."
+        ipa: "ʊ̃ɡəlɪjãː mət̪ tʃʰʊoː"
+        bases:
+          - { word: "उँगलियाँ", base: "उँगली", reading: "um̐galiyām̐" }
+          - { word: "मत", base: "मत", reading: "mat" }
+          - { word: "छुओ", base: "छूना", reading: "chuō" }
+    forms:
+      - { id: "plural", kind: "plural", word: "उँगलियाँ", reading: "um̐galiyām̐" }
+  - id: "hi-1060"
+    target: "पैर"
+    target_scripts: { perso_arabic: "پیر" }
+    reading: "pair"
+    ipa: "pɛːr"
+    pos: "noun"
+    gender: "m"
+    picture: "🦵"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "मेरे पैर में दर्द है।"
+        reading: "mērē pair mēm̐ dard hai."
+        ipa: "meːreː pɛːr meːm d̪ərd̪ ɦɛː"
+        bases:
+          - { word: "मेरे", base: "मेरा", reading: "mērē" }
+          - { word: "पैर", base: "पैर", reading: "pair" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "दर्द", ref: "hi-0360" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "उसके पैर लंबे हैं।"
+        reading: "uskē pair lambē haim̐."
+        ipa: "ʊskeː pɛːr ləmbeː ɦɛːm"
+        bases:
+          - { word: "उसके", base: "उसका", reading: "uskē" }
+          - { word: "पैर", base: "पैर", reading: "pair" }
+          - { word: "लंबे", base: "लंबा", reading: "lambē" }
+          - { word: "हैं", ref: "hi-0780" }
+    synonyms:
+      - { id: "pad", word: "पाद", reading: "pād" }
+    collocations:
+      - { id: "pain", ref: "hi-0360" }
+    forms:
+      - { id: "oblique-plural", kind: "oblique-plural", word: "पैरों", reading: "pairōm̐" }
+  - id: "hi-1061"
+    target: "घुटना"
+    target_scripts: { perso_arabic: "گھٹنا" }
+    reading: "ghuṭnā"
+    ipa: "ɡʱʊʈnaː"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "मेरा घुटना दुखता है।"
+        reading: "merā ghuṭnā dukhtā hai."
+        ipa: "meːraː ɡʱʊʈnaː d̪ʊkʰt̪aː ɦɛː"
+        bases:
+          - { word: "मेरा", ref: "hi-0752" }
+          - { word: "घुटना", base: "घुटना", reading: "ghuṭnā" }
+          - { word: "दुखता", base: "दुखना", reading: "dukhtā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "घुटने पर चोट है।"
+        reading: "ghuṭnē par cōṭ hai."
+        ipa: "ɡʱʊʈneː pər tʃoːʈ ɦɛː"
+        bases:
+          - { word: "घुटने", base: "घुटना", reading: "ghuṭnē" }
+          - { word: "पर", ref: "hi-0275" }
+          - { word: "चोट", base: "चोट", reading: "cōṭ" }
+          - { word: "है", ref: "hi-0780" }
+    forms:
+      - { id: "oblique", kind: "oblique", word: "घुटने", reading: "ghuṭnē" }
+  - id: "hi-1062"
+    target: "दिल"
+    target_scripts: { perso_arabic: "دل" }
+    reading: "dil"
+    ipa: "d̪ɪl"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "मेरा दिल ठीक है।"
+        reading: "merā dil ṭhīk hai."
+        ipa: "meːraː d̪ɪl ʈʰiːk ɦɛː"
+        bases:
+          - { word: "मेरा", ref: "hi-0752" }
+          - { word: "दिल", base: "दिल", reading: "dil" }
+          - { word: "ठीक", base: "ठीक", reading: "ṭhīk" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "यह बात दिल से कहो।"
+        reading: "yah bāt dil sē kahō."
+        ipa: "jəɦ baːt̪ d̪ɪl seː kəɦoː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "बात", base: "बात", reading: "bāt" }
+          - { word: "दिल", base: "दिल", reading: "dil" }
+          - { word: "से", ref: "hi-0276" }
+          - { word: "कहो", base: "कहना", reading: "kahō" }
+    synonyms:
+      - { id: "hridaya", word: "हृदय", reading: "hṛday" }
+  - id: "hi-1063"
+    target: "हड्डी"
+    target_scripts: { perso_arabic: "ہڈی" }
+    reading: "haḍḍī"
+    ipa: "ɦəɖɖiː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "मेरी हड्डी टूटी है।"
+        reading: "mērī haḍḍī ṭūṭī hai."
+        ipa: "meːriː ɦəɖɖiː ʈuːʈiː ɦɛː"
+        bases:
+          - { word: "मेरी", base: "मेरा", reading: "mērī" }
+          - { word: "हड्डी", base: "हड्डी", reading: "haḍḍī" }
+          - { word: "टूटी", base: "टूटना", reading: "ṭūṭī" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "हड्डियाँ मज़बूत हैं।"
+        reading: "haḍḍiyām̐ mazbūt haim̐."
+        ipa: "ɦəɖɖɪjãː məzbuːt̪ ɦɛːm"
+        bases:
+          - { word: "हड्डियाँ", base: "हड्डी", reading: "haḍḍiyām̐" }
+          - { word: "मज़बूत", base: "मज़बूत", reading: "mazbūt" }
+          - { word: "हैं", ref: "hi-0780" }
+    antonyms:
+      - { id: "strong", word: "मज़बूत", reading: "mazbūt" }
+    forms:
+      - { id: "plural", kind: "plural", word: "हड्डियाँ", reading: "haḍḍiyām̐" }
+  - id: "hi-1064"
+    target: "खून"
+    target_scripts: { perso_arabic: "خون" }
+    reading: "khūn"
+    ipa: "kʰuːn"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "उसके हाथ में खून है।"
+        reading: "uskē hāth mēm̐ khūn hai."
+        ipa: "ʊskeː ɦaːt̪ʰ meːm kʰuːn ɦɛː"
+        bases:
+          - { word: "उसके", base: "उसका", reading: "uskē" }
+          - { word: "हाथ", base: "हाथ", reading: "hāth" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "खून", base: "खून", reading: "khūn" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "चोट से खून निकला।"
+        reading: "cōṭ sē khūn nikalā."
+        ipa: "tʃoːʈ seː kʰuːn nɪkəlaː"
+        bases:
+          - { word: "चोट", base: "चोट", reading: "cōṭ" }
+          - { word: "से", ref: "hi-0276" }
+          - { word: "खून", base: "खून", reading: "khūn" }
+          - { word: "निकला", base: "निकलना", reading: "nikalā" }
+    synonyms:
+      - { id: "rakt", word: "रक्त", reading: "rakt" }
+  - id: "hi-1065"
+    target: "त्वचा"
+    target_scripts: { perso_arabic: "جلد" }
+    reading: "tvacā"
+    ipa: "t̪ʋətʃaː"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "उसकी त्वचा नरम है।"
+        reading: "uskī tvacā naram hai."
+        ipa: "ʊskiː t̪ʋətʃaː nərəm ɦɛː"
+        bases:
+          - { word: "उसकी", base: "उसका", reading: "uskī" }
+          - { word: "त्वचा", base: "त्वचा", reading: "tvacā" }
+          - { word: "नरम", base: "नरम", reading: "naram" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "त्वचा पर चोट है।"
+        reading: "tvacā par cōṭ hai."
+        ipa: "t̪ʋətʃaː pər tʃoːʈ ɦɛː"
+        bases:
+          - { word: "त्वचा", base: "त्वचा", reading: "tvacā" }
+          - { word: "पर", ref: "hi-0275" }
+          - { word: "चोट", base: "चोट", reading: "cōṭ" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-1066"
+    target: "साँस"
+    target_scripts: { perso_arabic: "سانس" }
+    reading: "sām̐s"
+    ipa: "sãːs"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "गहरी साँस लो।"
+        reading: "gahrī sām̐s lō."
+        ipa: "ɡəɦriː sãːs loː"
+        bases:
+          - { word: "गहरी", base: "गहरा", reading: "gahrī" }
+          - { word: "साँस", base: "साँस", reading: "sām̐s" }
+          - { word: "लो", base: "लेना", reading: "lō" }
+      - target: "साँस लेने में दर्द है।"
+        reading: "sām̐s lēnē mēm̐ dard hai."
+        ipa: "sãːs leːneː meːm d̪ərd̪ ɦɛː"
+        bases:
+          - { word: "साँस", base: "साँस", reading: "sām̐s" }
+          - { word: "लेने", base: "लेना", reading: "lēnē" }
+          - { word: "में", ref: "hi-0274" }
+          - { word: "दर्द", ref: "hi-0360" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "shvas", word: "श्वास", reading: "śvās" }
+    collocations:
+      - { id: "take", ref: "hi-0786" }
+  - id: "hi-1067"
+    target: "बुखार"
+    target_scripts: { perso_arabic: "بخار" }
+    reading: "bukhār"
+    ipa: "bʊkʰaːr"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "मुझे बुखार है।"
+        reading: "mujhē bukhār hai."
+        ipa: "mʊdʒʱeː bʊkʰaːr ɦɛː"
+        bases:
+          - { word: "मुझे", ref: "hi-0745" }
+          - { word: "बुखार", base: "बुखार", reading: "bukhār" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "उसे तेज़ बुखार है।"
+        reading: "use tēz bukhār hai."
+        ipa: "ʊseː t̪eːz bʊkʰaːr ɦɛː"
+        bases:
+          - { word: "उसे", base: "वह", reading: "use" }
+          - { word: "तेज़", base: "तेज़", reading: "tēz" }
+          - { word: "बुखार", base: "बुखार", reading: "bukhār" }
+          - { word: "है", ref: "hi-0780" }
+    synonyms:
+      - { id: "jvar", word: "ज्वर", reading: "jvar" }
+    collocations:
+      - { id: "have", ref: "hi-0780" }
+  - id: "hi-1068"
+    target: "चोट"
+    target_scripts: { perso_arabic: "چوٹ" }
+    reading: "cōṭ"
+    ipa: "tʃoːʈ"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "मेरे पैर पर चोट है।"
+        reading: "mērē pair par cōṭ hai."
+        ipa: "meːreː pɛːr pər tʃoːʈ ɦɛː"
+        bases:
+          - { word: "मेरे", base: "मेरा", reading: "mērē" }
+          - { word: "पैर", base: "पैर", reading: "pair" }
+          - { word: "पर", ref: "hi-0275" }
+          - { word: "चोट", base: "चोट", reading: "cōṭ" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "उसे चोट लगी है।"
+        reading: "use cōṭ lagī hai."
+        ipa: "ʊseː tʃoːʈ ləɡiː ɦɛː"
+        bases:
+          - { word: "उसे", base: "वह", reading: "use" }
+          - { word: "चोट", base: "चोट", reading: "cōṭ" }
+          - { word: "लगी", base: "लगना", reading: "lagī" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-1069"
+    target: "दुखना"
+    target_scripts: { perso_arabic: "دکھنا" }
+    reading: "dukhnā"
+    ipa: "d̪ʊkʰnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "सिर दुखता है।"
+        reading: "sir dukhtā hai."
+        ipa: "sɪr d̪ʊkʰt̪aː ɦɛː"
+        bases:
+          - { word: "सिर", base: "सिर", reading: "sir" }
+          - { word: "दुखता", base: "दुखना", reading: "dukhtā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मेरे पैर दुखते हैं।"
+        reading: "mērē pair dukhtē haim̐."
+        ipa: "meːreː pɛːr d̪ʊkʰt̪eː ɦɛːm"
+        bases:
+          - { word: "मेरे", base: "मेरा", reading: "mērē" }
+          - { word: "पैर", base: "पैर", reading: "pair" }
+          - { word: "दुखते", base: "दुखना", reading: "dukhtē" }
+          - { word: "हैं", ref: "hi-0780" }
+  - id: "hi-1070"
+    target: "सूजना"
+    target_scripts: { perso_arabic: "سوجنا" }
+    reading: "sūjnā"
+    ipa: "suːdʒnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "पैर सूजा है।"
+        reading: "pair sūjā hai."
+        ipa: "pɛːr suːdʒaː ɦɛː"
+        bases:
+          - { word: "पैर", base: "पैर", reading: "pair" }
+          - { word: "सूजा", base: "सूजना", reading: "sūjā" }
+          - { word: "है", ref: "hi-0780" }
+      - target: "मेरा हाथ सूजा है।"
+        reading: "merā hāth sūjā hai."
+        ipa: "meːraː ɦaːt̪ʰ suːdʒaː ɦɛː"
+        bases:
+          - { word: "मेरा", ref: "hi-0752" }
+          - { word: "हाथ", base: "हाथ", reading: "hāth" }
+          - { word: "सूजा", base: "सूजना", reading: "sūjā" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-1071"
+    target: "छूना"
+    target_scripts: { perso_arabic: "چھونا" }
+    reading: "chūnā"
+    ipa: "tʃʰuːnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "आँख मत छुओ।"
+        reading: "āṅkh mat chuō."
+        ipa: "ãːkʰ mət̪ tʃʰʊoː"
+        bases:
+          - { word: "आँख", base: "आँख", reading: "āṅkh" }
+          - { word: "मत", base: "मत", reading: "mat" }
+          - { word: "छुओ", base: "छूना", reading: "chuō" }
+      - target: "यह गरम है, मत छूइए।"
+        reading: "yah garam hai, mat chūiē."
+        ipa: "jəɦ ɡərəm ɦɛː mət̪ tʃʰuːɪeː"
+        bases:
+          - { word: "यह", ref: "hi-0748" }
+          - { word: "गरम", ref: "hi-0910" }
+          - { word: "है", ref: "hi-0780" }
+          - { word: "मत", base: "मत", reading: "mat" }
+          - { word: "छूइए", base: "छूना", reading: "chūiē" }
+  - id: "hi-1072"
+    target: "लेटना"
+    target_scripts: { perso_arabic: "لیٹنا" }
+    reading: "leṭnā"
+    ipa: "leːʈnaː"
+    pos: "verb"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - target: "आराम से लेटो।"
+        reading: "ārām sē leṭō."
+        ipa: "aːraːm seː leːʈoː"
+        bases:
+          - { word: "आराम", base: "आराम", reading: "ārām" }
+          - { word: "से", ref: "hi-0276" }
+          - { word: "लेटो", base: "लेटना", reading: "leṭō" }
+      - target: "वह बिस्तर पर लेटता है।"
+        reading: "vah bistar par leṭtā hai."
+        ipa: "ʋəɦ bɪst̪ər pər leːʈt̪aː ɦɛː"
+        bases:
+          - { word: "वह", ref: "hi-0749" }
+          - { word: "बिस्तर", base: "बिस्तर", reading: "bistar" }
+          - { word: "पर", ref: "hi-0275" }
+          - { word: "लेटता", base: "लेटना", reading: "leṭtā" }
+          - { word: "है", ref: "hi-0780" }
+  - id: "hi-1073"
+    target: "बीमार"
+    target_scripts: { perso_arabic: "بیمار" }
+    reading: "bīmār"
+    ipa: "biːmaːr"
+    pos: "adjective"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "मैं बीमार हूँ।"
+        reading: "maim̐ bīmār hūm̐."
+        ipa: "mɛːm biːmaːr ɦũː"
+        bases:
+          - { word: "मैं", ref: "hi-0745" }
+          - { word: "बीमार", base: "बीमार", reading: "bīmār" }
+          - { word: "हूँ", ref: "hi-0780" }
+      - target: "बच्चा बीमार है।"
+        reading: "baccā bīmār hai."
+        ipa: "bətʃtʃaː biːmaːr ɦɛː"
+        bases:
+          - { word: "बच्चा", base: "बच्चा", reading: "baccā" }
+          - { word: "बीमार", base: "बीमार", reading: "bīmār" }
+          - { word: "है", ref: "hi-0780" }
+    antonyms:
+      - { id: "well", word: "ठीक", reading: "ṭhīk" }
+  - id: "hi-1074"
+    target: "कमज़ोर"
+    target_scripts: { perso_arabic: "کمزور" }
+    reading: "kamzōr"
+    ipa: "kəmzoːr"
+    pos: "adjective"
+    bases: "self"
+    register: "neutral"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - target: "मैं कमज़ोर हूँ।"
+        reading: "maim̐ kamzōr hūm̐."
+        ipa: "mɛːm kəmzoːr ɦũː"
+        bases:
+          - { word: "मैं", ref: "hi-0745" }
+          - { word: "कमज़ोर", base: "कमज़ोर", reading: "kamzōr" }
+          - { word: "हूँ", ref: "hi-0780" }
+      - target: "उसके पैर कमज़ोर हैं।"
+        reading: "uskē pair kamzōr haim̐."
+        ipa: "ʊskeː pɛːr kəmzoːr ɦɛːm"
+        bases:
+          - { word: "उसके", base: "उसका", reading: "uskē" }
+          - { word: "पैर", base: "पैर", reading: "pair" }
+          - { word: "कमज़ोर", base: "कमज़ोर", reading: "kamzōr" }
+          - { word: "हैं", ref: "hi-0780" }
+    antonyms:
+      - { id: "strong", word: "मज़बूत", reading: "mazbūt" }

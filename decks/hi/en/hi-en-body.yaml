@@ -1,0 +1,238 @@
+schema: 1
+id: "hi-en-body"
+kind: "layer"
+core: "hi-body"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The body"
+license: "CC-BY-SA-4.0"
+description: "Parts of the body, the words for pain and illness, and how to say where something hurts. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "hi-1040":
+    native: "body"
+    notes: { "n1": "The whole body. Its parts are words of their own, such as हाथ (hāth), 'hand', and पैर (pair), 'foot'. The Urdu word for the body is جسم (jism)." }
+    examples:
+      "मेरा शरीर ठीक है।": { native: "My body is fine.", bases: { "शरीर": "body", "ठीक": "well; fine" } }
+      "डॉक्टर मेरा शरीर देखता है।": { native: "The doctor examines my body.", bases: { "शरीर": "body", "देखता": "to see; to look at" } }
+  "hi-1041":
+    native: "head"
+    notes: { "n1": "The head. A headache is सिरदर्द (sirdard), 'head pain', with दर्द (dard), 'pain', as its second part." }
+    examples:
+      "मेरे सिर में दर्द है।": { native: "My head aches.", bases: { "मेरे": "my", "सिर": "head" } }
+      "सिर पर हाथ रखो।": { native: "Put your hand on your head.", bases: { "सिर": "head", "हाथ": "hand", "रखो": "put; keep" } }
+  "hi-1042":
+    native: "hair"
+    notes: { "n1": "The hair of the head. A single hair is also बाल (bāl), as in एक बाल (ēk bāl), 'one hair'." }
+    examples:
+      "उसके बाल काले हैं।": { native: "His hair is black.", bases: { "उसके": "his; her", "बाल": "hair", "काले": "black" } }
+      "मेरे बाल छोटे हैं।": { native: "My hair is short.", bases: { "मेरे": "my", "बाल": "hair", "छोटे": "short; small" } }
+    synonyms: { "kesh": "hair (Sanskrit-leaning)" }
+  "hi-1043":
+    native: "face"
+    notes: { "n1": "The face, the front of the head. चेहरा धोओ (cehrā dhōō), 'wash your face', is a common instruction." }
+    examples:
+      "उसका चेहरा खुश है।": { native: "His face is happy.", bases: { "चेहरा": "face", "खुश": "happy" } }
+      "सुबह चेहरा धोओ।": { native: "Wash your face in the morning.", bases: { "चेहरा": "face", "धोओ": "to wash" } }
+  "hi-1044":
+    native: "eye"
+    notes: { "n1": "The eye. More than one eye is आँखें (āṅkhēm̐), 'eyes', given as a form of this card." }
+    examples:
+      "मेरी आँख में दर्द है।": { native: "My eye hurts.", bases: { "मेरी": "my", "आँख": "eye" } }
+      "मेरी आँखें लाल हैं।": { native: "My eyes are red.", bases: { "मेरी": "my", "आँखें": "eyes", "लाल": "red" } }
+    synonyms: { "netr": "eye (Sanskrit-leaning)" }
+  "hi-1045":
+    native: "ear"
+    notes: { "n1": "The ear. Both ears together are दोनों कान (dōnōm̐ kān), 'both ears'." }
+    examples:
+      "मेरा कान दुखता है।": { native: "My ear hurts.", bases: { "कान": "ear", "दुखता": "to hurt" } }
+      "कान में पानी है।": { native: "There is water in the ear.", bases: { "कान": "ear" } }
+    synonyms: { "karn": "ear (Sanskrit-leaning)" }
+  "hi-1046":
+    native: "nose"
+    notes: { "n1": "The nose. It is feminine: लंबी नाक (lambī nāk), 'a long nose'." }
+    examples:
+      "उसकी नाक लंबी है।": { native: "His nose is long.", bases: { "उसकी": "his; her", "नाक": "nose", "लंबी": "long" } }
+      "नाक से साँस लो।": { native: "Breathe through your nose.", bases: { "नाक": "nose", "साँस": "breath", "लो": "take" } }
+    synonyms: { "nasika": "nose (Sanskrit-leaning)" }
+  "hi-1047":
+    native: "mouth"
+    notes: { "n1": "The mouth, for eating and speaking. Open your mouth is मुँह खोलो (mum̐h kholō)." }
+    examples:
+      "मुँह खोलो।": { native: "Open your mouth.", bases: { "मुँह": "mouth", "खोलो": "to open" } }
+      "उसका मुँह बड़ा है।": { native: "His mouth is big.", bases: { "मुँह": "mouth", "बड़ा": "big" } }
+    synonyms: { "mukh": "mouth (Sanskrit-leaning)" }
+  "hi-1048":
+    native: "lip"
+    notes: { "n1": "The lip. It is a word of its own, not the mouth मुँह (mum̐h)." }
+    examples:
+      "उसके होंठ सूखे हैं।": { native: "His lips are dry.", bases: { "उसके": "his; her", "होंठ": "lip", "सूखे": "dry" } }
+      "मेरे होंठ ठंडे हैं।": { native: "My lips are cold.", bases: { "मेरे": "my", "होंठ": "lip", "ठंडे": "cold" } }
+  "hi-1049":
+    native: "tooth"
+    notes: { "n1": "The tooth. A toothache is दाँत में दर्द (dām̐t mēm̐ dard), 'pain in a tooth'." }
+    examples:
+      "मेरे दाँत में दर्द है।": { native: "My tooth aches.", bases: { "मेरे": "my", "दाँत": "tooth" } }
+      "मेरे दाँत सफ़ेद हैं।": { native: "My teeth are white.", bases: { "मेरे": "my", "दाँत": "teeth", "सफ़ेद": "white" } }
+    synonyms: { "dant": "tooth (Sanskrit-leaning)" }
+  "hi-1050":
+    native: "tongue"
+    notes: { "n1": "The tongue. It is feminine, like आँख (āṅkh), 'eye'." }
+    examples:
+      "उसकी जीभ लाल है।": { native: "His tongue is red.", bases: { "उसकी": "his; her", "जीभ": "tongue", "लाल": "red" } }
+      "जीभ बाहर निकालो।": { native: "Stick out your tongue.", bases: { "जीभ": "tongue", "बाहर": "out", "निकालो": "to take out" } }
+  "hi-1051":
+    native: "throat"
+    notes: { "n1": "The throat, the front of the neck. A sore throat is गले में दर्द (galē mēm̐ dard), 'pain in the throat'." }
+    examples:
+      "गले में दर्द है।": { native: "My throat hurts.", bases: { "गले": "throat" } }
+      "गला साफ़ करो।": { native: "Clear your throat.", bases: { "गला": "throat", "साफ़": "clean", "करो": "to clean; to do" } }
+    synonyms: { "kanth": "throat (Sanskrit-leaning)" }
+  "hi-1052":
+    native: "neck"
+    notes: { "n1": "The neck. It is feminine: छोटी गर्दन (chōṭī gardan), 'a short neck'." }
+    examples:
+      "उसकी गर्दन लंबी है।": { native: "Her neck is long.", bases: { "उसकी": "her; his", "गर्दन": "neck", "लंबी": "long" } }
+      "गर्दन में दर्द है।": { native: "My neck hurts.", bases: { "गर्दन": "neck" } }
+    synonyms: { "griva": "neck (Sanskrit-leaning)" }
+  "hi-1053":
+    native: "shoulder"
+    notes: { "n1": "The shoulder. Its oblique form is कंधे (kandhē), as in कंधे पर (kandhē par), 'on the shoulder'." }
+    examples:
+      "मेरे कंधे में दर्द है।": { native: "My shoulder hurts.", bases: { "मेरे": "my", "कंधे": "shoulder" } }
+      "कंधे पर हाथ रखो।": { native: "Put your hand on your shoulder.", bases: { "कंधे": "shoulder", "हाथ": "hand", "रखो": "put; keep" } }
+  "hi-1054":
+    native: "chest"
+    notes: { "n1": "The chest. Chest pain is छाती में दर्द (chātī mēm̐ dard), 'pain in the chest'." }
+    examples:
+      "छाती में दर्द है।": { native: "My chest hurts.", bases: { "छाती": "chest" } }
+      "उसकी छाती चौड़ी है।": { native: "His chest is broad.", bases: { "उसकी": "his; her", "छाती": "chest", "चौड़ी": "broad; wide" } }
+  "hi-1055":
+    native: "stomach"
+    notes: { "n1": "The stomach, the belly. A stomach ache is पेट में दर्द (pēṭ mēm̐ dard), 'pain in the stomach'." }
+    examples:
+      "मेरे पेट में दर्द है।": { native: "I have a stomach ache.", bases: { "मेरे": "my", "पेट": "stomach" } }
+      "पेट भरा है।": { native: "My stomach is full.", bases: { "पेट": "stomach", "भरा": "full" } }
+    synonyms: { "udar": "stomach; belly (Sanskrit-leaning)" }
+  "hi-1056":
+    native: "waist"
+    notes: { "n1": "The waist, the lower back. Lower back pain is कमर में दर्द (kamar mēm̐ dard), 'pain in the waist'." }
+    examples:
+      "मेरी कमर में दर्द है।": { native: "My back hurts.", bases: { "मेरी": "my", "कमर": "waist" } }
+      "उसकी कमर पतली है।": { native: "Her waist is thin.", bases: { "उसकी": "her; his", "कमर": "waist", "पतली": "thin" } }
+  "hi-1057":
+    native: "back"
+    notes: { "n1": "The back of the body. Back pain is पीठ में दर्द (pīṭh mēm̐ dard), 'pain in the back'." }
+    examples:
+      "पीठ सीधी रखो।": { native: "Keep your back straight.", bases: { "पीठ": "back", "सीधी": "straight", "रखो": "keep" } }
+      "मेरी पीठ में दर्द है।": { native: "My back hurts.", bases: { "मेरी": "my", "पीठ": "back" } }
+  "hi-1058":
+    native: "hand; arm"
+    notes: { "n1": "The hand, and the arm up to the shoulder. Its oblique plural is हाथों (hāthōm̐), 'hands', as in हाथों से (hāthōm̐ sē), 'with the hands'." }
+    examples:
+      "मेरे हाथ में दर्द है।": { native: "My hand hurts.", bases: { "मेरे": "my", "हाथ": "hand" } }
+      "हाथ धोओ।": { native: "Wash your hands.", bases: { "हाथ": "hand", "धोओ": "to wash" } }
+    synonyms: { "hast": "hand (Sanskrit-leaning)" }
+  "hi-1059":
+    native: "finger"
+    notes: { "n1": "The finger. The plural is उँगलियाँ (um̐galiyām̐), 'fingers'." }
+    examples:
+      "मेरी उँगली में चोट है।": { native: "My finger is injured.", bases: { "मेरी": "my", "उँगली": "finger", "चोट": "injury" } }
+      "उँगलियाँ मत छुओ।": { native: "Don't touch your fingers.", bases: { "उँगलियाँ": "fingers", "मत": "not (in an order)", "छुओ": "to touch" } }
+  "hi-1060":
+    native: "foot; leg"
+    notes: { "n1": "The foot, and the leg up to the knee. Its oblique plural is पैरों (pairōm̐), 'feet'." }
+    examples:
+      "मेरे पैर में दर्द है।": { native: "My foot hurts.", bases: { "मेरे": "my", "पैर": "foot" } }
+      "उसके पैर लंबे हैं।": { native: "His legs are long.", bases: { "उसके": "his; her", "पैर": "legs", "लंबे": "long" } }
+    synonyms: { "pad": "foot (Sanskrit-leaning)" }
+  "hi-1061":
+    native: "knee"
+    notes: { "n1": "The knee. It is masculine: दायाँ घुटना (dāyām̐ ghuṭnā), 'right knee'." }
+    examples:
+      "मेरा घुटना दुखता है।": { native: "My knee hurts.", bases: { "घुटना": "knee", "दुखता": "to hurt" } }
+      "घुटने पर चोट है।": { native: "There is an injury on the knee.", bases: { "घुटने": "knee", "चोट": "injury" } }
+  "hi-1062":
+    native: "heart"
+    notes: { "n1": "The heart, both the organ and the feelings. दिल से (dil sē), 'from the heart', means sincerely." }
+    examples:
+      "मेरा दिल ठीक है।": { native: "My heart is fine.", bases: { "दिल": "heart", "ठीक": "well; fine" } }
+      "यह बात दिल से कहो।": { native: "Say this from the heart.", bases: { "बात": "matter; thing said", "दिल": "heart", "कहो": "to say" } }
+    synonyms: { "hridaya": "heart (Sanskrit-leaning)" }
+  "hi-1063":
+    native: "bone"
+    notes: { "n1": "The bone. It is feminine; its plural is हड्डियाँ (haḍḍiyām̐), 'bones'." }
+    examples:
+      "मेरी हड्डी टूटी है।": { native: "My bone is broken.", bases: { "मेरी": "my", "हड्डी": "bone", "टूटी": "broken" } }
+      "हड्डियाँ मज़बूत हैं।": { native: "The bones are strong.", bases: { "हड्डियाँ": "bones", "मज़बूत": "strong" } }
+    antonyms: { "strong": "strong" }
+  "hi-1064":
+    native: "blood"
+    notes: { "n1": "Blood. To bleed is खून बहना (khūn bahnā), 'blood to flow'." }
+    examples:
+      "उसके हाथ में खून है।": { native: "There is blood on his hand.", bases: { "उसके": "his; her", "हाथ": "hand", "खून": "blood" } }
+      "चोट से खून निकला।": { native: "Blood came out from the injury.", bases: { "चोट": "injury", "खून": "blood", "निकला": "came out" } }
+    synonyms: { "rakt": "blood (Sanskrit-leaning)" }
+  "hi-1065":
+    native: "skin"
+    notes: { "n1": "The skin, the outer covering of the body. The Urdu word for it is جلد (jild), with the same meaning." }
+    examples:
+      "उसकी त्वचा नरम है।": { native: "Her skin is soft.", bases: { "उसकी": "her; his", "त्वचा": "skin", "नरम": "soft" } }
+      "त्वचा पर चोट है।": { native: "There is an injury on the skin.", bases: { "त्वचा": "skin", "चोट": "injury" } }
+  "hi-1066":
+    native: "breath"
+    notes: { "n1": "The breath. To breathe is साँस लेना (sām̐s lēnā), 'to take a breath'." }
+    examples:
+      "गहरी साँस लो।": { native: "Take a deep breath.", bases: { "गहरी": "deep", "साँस": "breath", "लो": "take" } }
+      "साँस लेने में दर्द है।": { native: "Breathing hurts.", bases: { "साँस": "breath", "लेने": "taking" } }
+    synonyms: { "shvas": "breath (Sanskrit-leaning)" }
+  "hi-1067":
+    native: "fever"
+    notes: { "n1": "Fever. To have a fever is बुखार होना (bukhār honā), 'to have a fever'." }
+    examples:
+      "मुझे बुखार है।": { native: "I have a fever.", bases: { "बुखार": "fever" } }
+      "उसे तेज़ बुखार है।": { native: "He has a high fever.", bases: { "उसे": "him; her", "तेज़": "high; strong", "बुखार": "fever" } }
+    synonyms: { "jvar": "fever (Sanskrit-leaning)" }
+  "hi-1068":
+    native: "injury; bruise"
+    notes: { "n1": "A wound, a bruise, an injury. To get hurt is चोट लगना (cōṭ lagnā), 'to be injured'." }
+    examples:
+      "मेरे पैर पर चोट है।": { native: "My foot is injured.", bases: { "मेरे": "my", "पैर": "foot", "चोट": "injury" } }
+      "उसे चोट लगी है।": { native: "He has been hurt.", bases: { "उसे": "him; her", "चोट": "injury", "लगी": "got" } }
+  "hi-1069":
+    native: "to hurt; to ache"
+    notes: { "n1": "To hurt, to ache. It agrees with its subject: सिर (sir), 'head', takes दुखता है (dukhtā hai), 'aches', and पैर (pair), 'feet', takes दुखते हैं (dukhtē haim̐), 'ache'." }
+    examples:
+      "सिर दुखता है।": { native: "My head aches.", bases: { "सिर": "head", "दुखता": "aches" } }
+      "मेरे पैर दुखते हैं।": { native: "My legs ache.", bases: { "मेरे": "my", "पैर": "legs", "दुखते": "ache" } }
+  "hi-1070":
+    native: "to swell"
+    notes: { "n1": "To swell. A swollen part is सूजा हुआ (sūjā huā), 'swollen'." }
+    examples:
+      "पैर सूजा है।": { native: "The foot is swollen.", bases: { "पैर": "foot", "सूजा": "swollen" } }
+      "मेरा हाथ सूजा है।": { native: "My hand is swollen.", bases: { "हाथ": "hand", "सूजा": "swollen" } }
+  "hi-1071":
+    native: "to touch"
+    notes: { "n1": "To touch. The imperative is छुओ (chuō), 'touch', to a friend, and छूइए (chūiē), to someone you respect." }
+    examples:
+      "आँख मत छुओ।": { native: "Don't touch your eyes.", bases: { "आँख": "eye", "मत": "not (in an order)", "छुओ": "touch" } }
+      "यह गरम है, मत छूइए।": { native: "It is hot; do not touch it.", bases: { "मत": "not (in an order)", "छूइए": "touch" } }
+  "hi-1072":
+    native: "to lie down"
+    notes: { "n1": "To lie down. The imperative is लेटो (leṭō), 'lie down', and लेटिए (leṭiē) for someone you respect." }
+    examples:
+      "आराम से लेटो।": { native: "Lie down comfortably.", bases: { "आराम": "rest; comfort", "लेटो": "lie down" } }
+      "वह बिस्तर पर लेटता है।": { native: "He lies down on the bed.", bases: { "बिस्तर": "bed", "लेटता": "lies down" } }
+  "hi-1073":
+    native: "ill; sick"
+    notes: { "n1": "Ill, sick. It does not change for gender or number: वह बीमार है (vah bīmār hai), 'he is ill'." }
+    examples:
+      "मैं बीमार हूँ।": { native: "I am ill.", bases: { "बीमार": "ill" } }
+      "बच्चा बीमार है।": { native: "The child is ill.", bases: { "बच्चा": "child", "बीमार": "ill" } }
+    antonyms: { "well": "well; fine" }
+  "hi-1074":
+    native: "weak"
+    notes: { "n1": "Weak. It does not change either: मेरे पैर कमज़ोर हैं (mērē pair kamzōr haim̐), 'my legs are weak'." }
+    examples:
+      "मैं कमज़ोर हूँ।": { native: "I am weak.", bases: { "कमज़ोर": "weak" } }
+      "उसके पैर कमज़ोर हैं।": { native: "His legs are weak.", bases: { "उसके": "his; her", "पैर": "legs", "कमज़ोर": "weak" } }
+    antonyms: { "strong": "strong" }
