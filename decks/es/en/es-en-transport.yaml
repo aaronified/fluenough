@@ -1,0 +1,225 @@
+schema: 1
+id: "es-en-transport"
+kind: "layer"
+core: "es-transport"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Transport"
+license: "CC-BY-SA-4.0"
+description: "Getting around: vehicles, the stop and the station, the ticket, the arrival and the departure, with the verbs to leave, to get on, to get off and to wait. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-0674":
+    native: "bus"
+    notes: { n1: "Autobús is a bus. Short form: el bus. Its plural is autobuses." }
+    bases: {"el": "the", "autobús": "bus"}
+    examples:
+      "El autobús llega a las ocho.":
+        native: "The bus arrives at eight."
+        bases: {"El": "the", "autobús": "bus", "a": "to", "las": "the"}
+      "Tomo el autobús a casa.":
+        native: "I take the bus home."
+        bases: {"el": "the", "autobús": "bus", "a": "to"}
+  "es-0675":
+    native: "metro; underground"
+    notes: { n1: "Metro is the underground train in a city." }
+    bases: {"el": "the", "metro": "metro"}
+    examples:
+      "Tomo el metro en la ciudad.":
+        native: "I take the metro in the city."
+        bases: {"el": "the", "metro": "metro", "en": "in", "la": "the"}
+      "El metro es rápido.":
+        native: "The metro is fast."
+        bases: {"El": "the", "metro": "metro"}
+  "es-0676":
+    native: "train"
+    notes: { n1: "Tren is a train. Its plural is trenes." }
+    bases: {"el": "the", "tren": "train"}
+    examples:
+      "El tren llega a las ocho.":
+        native: "The train arrives at eight."
+        bases: {"El": "the", "tren": "train", "a": "to", "las": "the"}
+      "El tren sale a las nueve.":
+        native: "The train leaves at nine."
+        bases: {"El": "the", "tren": "train", "a": "to", "las": "the"}
+  "es-0677":
+    native: "taxi"
+    notes: { n1: "Taxi is a taxi. The plural is taxis." }
+    bases: {"el": "the", "taxi": "taxi"}
+    examples:
+      "Tomo un taxi.":
+        native: "I take a taxi."
+        bases: {"un": "a", "taxi": "taxi"}
+      "El taxi es caro.":
+        native: "The taxi is expensive."
+        bases: {"El": "the", "taxi": "taxi"}
+  "es-0678":
+    native: "car"
+    notes: { n1: "Coche is a car. It is a common word in Spain; in Latin America it is often carro." }
+    bases: {"el": "the", "coche": "car"}
+    examples:
+      "El coche es nuevo.":
+        native: "The car is new."
+        bases: {"El": "the", "coche": "car"}
+      "Mi padre tiene un coche.":
+        native: "My father has a car."
+        bases: {"un": "a", "coche": "car"}
+  "es-0679":
+    native: "plane"
+    notes: { n1: "Avión is a plane. Its plural is aviones." }
+    bases: {"el": "the", "avión": "plane"}
+    examples:
+      "El avión llega hoy.":
+        native: "The plane arrives today."
+        bases: {"El": "the", "avión": "plane"}
+      "El avión es grande.":
+        native: "The plane is big."
+        bases: {"El": "the", "avión": "plane"}
+  "es-0680":
+    native: "bicycle"
+    notes: { n1: "Bicicleta is a bicycle. Short form: la bici." }
+    bases: {"la": "the", "bicicleta": "bicycle"}
+    examples:
+      "Tengo una bicicleta.":
+        native: "I have a bicycle."
+        bases: {"una": "a", "bicicleta": "bicycle"}
+      "La bicicleta es nueva.":
+        native: "The bicycle is new."
+        bases: {"La": "the", "bicicleta": "bicycle"}
+  "es-0681":
+    native: "motorbike"
+    notes: { n1: "Moto is a motorbike. Short for motocicleta." }
+    bases: {"la": "the", "moto": "motorbike"}
+    examples:
+      "Mi hermano tiene una moto.":
+        native: "My brother has a motorbike."
+        bases: {"una": "a", "moto": "motorbike"}
+      "La moto es pequeña.":
+        native: "The motorbike is small."
+        bases: {"La": "the", "moto": "motorbike"}
+  "es-0682":
+    native: "boat; ship"
+    notes: { n1: "Barco is a boat or a ship." }
+    bases: {"el": "the", "barco": "boat"}
+    examples:
+      "El barco es grande.":
+        native: "The boat is big."
+        bases: {"El": "the", "barco": "boat"}
+      "Tengo un barco.":
+        native: "I have a boat."
+        bases: {"un": "a", "barco": "boat"}
+  "es-0683":
+    native: "stop"
+    notes: { n1: "Parada is a stop, where a bus or a tram stops." }
+    bases: {"la": "the", "parada": "stop"}
+    examples:
+      "La parada está en una calle.":
+        native: "The stop is on the street."
+        bases: {"La": "the", "parada": "stop", "en": "in", "una": "a"}
+      "¿Dónde está la parada?":
+        native: "Where is the stop?"
+        bases: {"la": "the", "parada": "stop"}
+  "es-0684":
+    native: "station"
+    notes: { n1: "Estación is a station, for a train or the metro." }
+    bases: {"la": "the", "estación": "station"}
+    examples:
+      "La estación está lejos.":
+        native: "The station is far."
+        bases: {"La": "the", "estación": "station", "lejos": "far"}
+      "La estación es grande.":
+        native: "The station is big."
+        bases: {"La": "the", "estación": "station"}
+  "es-0685":
+    native: "ticket"
+    notes: { n1: "Billete is a ticket for a train, a bus or a plane." }
+    bases: {"el": "the", "billete": "ticket"}
+    examples:
+      "Compro un billete.":
+        native: "I buy a ticket."
+        bases: {"un": "a", "billete": "ticket"}
+      "El billete cuesta cinco euros.":
+        native: "The ticket costs five euros."
+        bases: {"El": "the", "billete": "ticket"}
+  "es-0686":
+    native: "airport"
+    notes: { n1: "Aeropuerto is an airport." }
+    bases: {"el": "the", "aeropuerto": "airport"}
+    examples:
+      "El aeropuerto está lejos.":
+        native: "The airport is far."
+        bases: {"El": "the", "aeropuerto": "airport", "lejos": "far"}
+      "El aeropuerto es grande.":
+        native: "The airport is big."
+        bases: {"El": "the", "aeropuerto": "airport"}
+  "es-0687":
+    native: "road"
+    notes: { n1: "Carretera is a road between towns." }
+    bases: {"la": "the", "carretera": "road"}
+    examples:
+      "La carretera es larga.":
+        native: "The road is long."
+        bases: {"La": "the", "carretera": "road"}
+      "La carretera es buena.":
+        native: "The road is good."
+        bases: {"La": "the", "carretera": "road"}
+  "es-0688":
+    native: "arrival"
+    notes: { n1: "Llegada is the arrival. The opposite is la salida." }
+    bases: {"la": "the", "llegada": "arrival"}
+    examples:
+      "La llegada es a las diez.":
+        native: "The arrival is at ten."
+        bases: {"La": "the", "llegada": "arrival", "a": "to", "las": "the"}
+      "Hay una llegada hoy.":
+        native: "There is an arrival today."
+        bases: {"Hay": "there is", "una": "a", "llegada": "arrival"}
+  "es-0689":
+    native: "departure; exit"
+    notes: { n1: "Salida is the departure, or the exit of a place." }
+    bases: {"la": "the", "salida": "departure"}
+    examples:
+      "La salida es a las nueve.":
+        native: "The departure is at nine."
+        bases: {"La": "the", "salida": "departure", "a": "to", "las": "the"}
+      "¿Cuál es la salida?":
+        native: "Which is the exit?"
+        bases: {"la": "the", "salida": "departure"}
+  "es-0690":
+    native: "to leave; to go out"
+    notes: { n1: "Salir is to leave or go out. Its first person is irregular: salgo." }
+    examples:
+      "Salgo a las ocho.":
+        native: "I leave at eight."
+        bases: {"Salgo": "leave", "a": "to", "las": "the"}
+      "El tren sale a las nueve.":
+        native: "The train leaves at nine."
+        bases: {"El": "the", "sale": "leave", "a": "to", "las": "the"}
+  "es-0691":
+    native: "to go up; to get on"
+    notes: { n1: "Subir is to go up, or to get on a bus or a train. It is a regular -ir verb." }
+    examples:
+      "Subo al autobús.":
+        native: "I get on the bus."
+        bases: {"Subo": "go up", "al": "to the"}
+      "Subimos al tren.":
+        native: "We get on the train."
+        bases: {"Subimos": "go up", "al": "to the"}
+  "es-0692":
+    native: "to go down; to get off"
+    notes: { n1: "Bajar is to go down, or to get off a bus or a train. It is a regular -ar verb." }
+    examples:
+      "Bajo en la parada.":
+        native: "I get off at the stop."
+        bases: {"en": "in", "la": "the"}
+      "Bajamos del tren.":
+        native: "We get off the train."
+        bases: {"Bajamos": "go down", "del": "of the"}
+  "es-0693":
+    native: "to wait (for)"
+    notes: { n1: "Esperar is to wait, or to hope. It is a regular -ar verb." }
+    examples:
+      "Espero el autobús.":
+        native: "I wait for the bus."
+        bases: {"Espero": "wait (for)", "el": "the"}
+      "Esperamos el tren.":
+        native: "We wait for the train."
+        bases: {"Esperamos": "wait (for)", "el": "the"}

@@ -128,11 +128,8 @@ units:
     words: 24
   - decks: ["es-food", "es-food-sentences", "es-reading-food", "*"]
     words: 25
-  - planned: { id: "es-transport", theme: "transport", words: 40 }
-    listening_passages:
-      - { id: "bus-stop", text: { "en": "Asking which bus goes to the centre" } }
-    reading_passages:
-      - { id: "timetable", text: { "en": "A bus and metro timetable" } }
+  - decks: ["es-transport", "es-transport-sentences", "es-reading-transport", "*"]
+    words: 20
   - planned: { id: "es-directions", theme: "directions", words: 35 }
     listening_passages:
       - { id: "asking-the-way", text: { "en": "Asking the way to the station and being told" } }
