@@ -2736,7 +2736,7 @@ void main() {
           await tester.tap(find.byType(PlayButton));
           await tester.pumpAndSettle();
           expect(tts.spoken.single.text, card.target);
-          final n = card.number;
+          final n = int.parse(card.native);
           await typeAndCheck(
             tester,
             '${n ~/ 1000},${(n % 1000).toString().padLeft(3, '0')}',
