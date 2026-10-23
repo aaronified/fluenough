@@ -3,7 +3,7 @@ import '../models/review_event.dart';
 import 'fsrs.dart';
 
 /// Hours spent learning a language, and about how many are left in its
-/// decks (#227, `docs/plans/hours-per-language.md`).
+/// decks (#227).
 ///
 /// Only time on cards counts: each answer's `elapsed`, which runs from the
 /// question showing to the answer. Pure functions over the review log and

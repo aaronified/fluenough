@@ -10497,6 +10497,74 @@
   "@teachDictionaryBody": {
     "description": "The line under the title of the dictionary popup the meaning on a teach card opens."
   },
+  "progressHoursSpentTitle": "Hours spent",
+  "@progressHoursSpentTitle": {
+    "description": "Title of the Progress tile with the hours spent answering cards (#227)."
+  },
+  "progressHoursLeftTitle": "Hours left",
+  "@progressHoursLeftTitle": {
+    "description": "Title of the Progress tile with the hours left."
+  },
+  "progressHoursAbout": "About",
+  "@progressHoursAbout": {
+    "description": "Small word before the hours left, which is an estimate."
+  },
+  "progressHoursToB1": "to the end of B1",
+  "@progressHoursToB1": {
+    "description": "Under the hours left on Progress: they count to the end of B1, the course's end."
+  },
+  "progressHoursNone": "–",
+  "@progressHoursNone": {
+    "description": "Shown in place of the hours left for a language with no decks to count them from."
+  },
+  "progressHoursSpentSemantics": "{hours} hours spent in all",
+  "@progressHoursSpentSemantics": {
+    "description": "Screen-reader label of the hours spent. One decimal place.",
+    "placeholders": {
+      "hours": {
+        "type": "double",
+        "example": "12.4",
+        "format": "decimalPatternDigits",
+        "optionalParameters": {
+          "decimalDigits": 1
+        }
+      }
+    }
+  },
+  "progressHoursLeftSemantics": "{hours, plural, =1{About 1 hour left to the end of B1} other{About {hours} hours left to the end of B1}}",
+  "@progressHoursLeftSemantics": {
+    "description": "Screen-reader label of the hours left, rounded up.",
+    "placeholders": {
+      "hours": {
+        "type": "int",
+        "example": "140"
+      }
+    }
+  },
+  "progressHoursNoneSemantics": "Hours left to the end of B1: not known yet",
+  "@progressHoursNoneSemantics": {
+    "description": "Screen-reader label of the hours left for a language with no decks."
+  },
+  "progressHoursPopupTitle": "Hours by language",
+  "@progressHoursPopupTitle": {
+    "description": "Title of the popup the hours tiles open, with a row for each language."
+  },
+  "progressHoursSpentCaption": "spent",
+  "@progressHoursSpentCaption": {
+    "description": "Small word under a language's hours spent in the popup."
+  },
+  "progressHoursLeftCaption": "left",
+  "@progressHoursLeftCaption": {
+    "description": "Small word under a language's hours left in the popup."
+  },
+  "progressHoursTotal": "All languages",
+  "@progressHoursTotal": {
+    "description": "Name of the last row of the hours popup, which adds the languages up."
+  },
+  "progressHoursPopupNote": "Each answer counts for at most 60 seconds. Hours left is about the time to the end of B1, at your own time per answer; it changes as decks are added.",
+  "@progressHoursPopupNote": {
+    "description": "Note under the rows of the hours popup."
+  },
   "progressWordsTitle": "Words mastered",
   "@progressWordsTitle": {
     "description": "Title of the Progress tile that counts the words learned."
