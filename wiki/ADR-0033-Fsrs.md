@@ -8,7 +8,8 @@ Source of truth: this wiki page.
 - **Supersedes:** ADR-0005's choice of SM-2. Its review log and per-pair
   scheduling stand.
 - **Amends:** ADR-0029 and ADR-0030: a revision from Today records every
-  answer, not only the misses.
+  answer, not only the misses. Amended again 2026-10-23 (#499): a finished
+  deck's Revise and a tag's practice record every answer too.
 
 ## Context
 
@@ -51,8 +52,17 @@ The owner's answers to #245:
   replay, as the owner chose.
 - **Quick revision records every answer.** FSRS models an early review: R
   is high, so a right answer adds little stability. ADR-0029 recorded only
-  misses because SM-2 had no rule for reviewing early. A deck's Revise
-  still records nothing.
+  misses because SM-2 had no rule for reviewing early.
+- **Every practice of cards is recorded** (owner, 2026-10-12, #499: "Yes,
+  record it"; decided 2026-10-12, built 2026-10-23). A finished deck's Revise
+  no longer records nothing: the reasoning that an early review would stretch
+  the interval is dropped for it too, as it was for quick revision.
+  `DrillRequest.recordsRevision` is now `revise`. Only number practice stays
+  unrecorded, since its numbers are generated and no card is scheduled.
+- **Tag practice** (Progress, All tags) is a capped, random set, like quick
+  revision: up to 20 taught words carrying the tag, due or not, in the
+  language chosen in the bar at the top (every language with its All button
+  on). Every answer is recorded.
 
 ## Consequences
 
