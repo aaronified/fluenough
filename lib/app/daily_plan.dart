@@ -48,8 +48,10 @@ class DailyPlan {
   int get minutes =>
       math.max(DailyBudget.minMinutes, goalMinutes + extraMinutes);
 
-  /// Whole minutes done, never more than [minutes], for "12 of 15 min".
-  int get minutesDone => math.min(minutes, (spent.inSeconds / 60).round());
+  /// Whole minutes done, rounded down and never more than [minutes], for
+  /// "12 of 15 min": it reads "15 of 15" only once the budget is spent and
+  /// the button reads Done for today.
+  int get minutesDone => math.min(minutes, spent.inSeconds ~/ 60);
 
   /// How much of today's budget is spent, from 0 to 1: the ring.
   double get fraction => math.min(1.0, spent.inSeconds / (minutes * 60));

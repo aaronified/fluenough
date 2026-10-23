@@ -382,7 +382,12 @@ class _CatchingUp extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 Semantics(
+                  container: true,
+                  button: true,
+                  label: l10n.todayDailyAddMinutes(step),
                   hint: l10n.todayDailyAddHint(step),
+                  onTap: () => add(step),
+                  excludeSemantics: true,
                   customSemanticsActions: <CustomSemanticsAction, VoidCallback>{
                     CustomSemanticsAction(
                       label: l10n.todayDailyTakeAway(step),
