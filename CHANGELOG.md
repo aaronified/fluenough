@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- The IPA course is one entry in the list of languages, the whole chart: "IPA: my languages" is gone, with its setting, and the card tags that picked the symbols of your languages stay for focusing. Progress is shared by card, so nothing is lost; "The sounds of this word" is unchanged (#735).
+
+## [0.6.0] - 2026-10-23
+
 ### Added
 
 - After placement, choose per course how the placed words are reviewed: Set in stone (kept out of Today and counted as known; from a deck page the words can still be revised or practised, without writing reviews), Spot-check (the default: sampled, a miss widens coverage) or Keep reviewing; changeable from a Placed words row in Languages I'm learning, and switching away from Set in stone returns the words to reviews. A placement taken before this release has no saved placement time, so the choice does not apply to it (#761).
@@ -26,7 +32,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- The IPA course is one entry in the list of languages, the whole chart: "IPA: my languages" is gone, with its setting, and the card tags that picked the symbols of your languages stay for focusing. Progress is shared by card, so nothing is lost; "The sounds of this word" is unchanged (#735).
 - Progress: Weakest tags and All tags rank by what you know now, not by the share of right answers all time: a tag's weakness is the share of its taught words and forms that are not known now (the star's rule), ties going to the lower recall now, then the name; the bars show the share known. The Over time page ends with a How you learn entry that opens that page (#678).
 - The language bar is a centred, looping wheel with the selection fixed at the centre (All moves to the left on Progress): it follows the finger 1:1, ticks at each language, coasts to a detent on a fling and settles on a spring, a touch stops it, and the pill then grows over 0.3 s to the language's name (#703, #682).
 - The four tabs slide: the pages follow the finger and settle on a tab with a spring (stiffness 400, damping ratio 0.75, no bounce on a slow release), a tap on the bar slides in 0.3 s, a touch catches the pages mid-way, and the pages rubber-band at Today and Settings (#683).
