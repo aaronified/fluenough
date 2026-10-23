@@ -1,0 +1,72 @@
+schema: 1
+id: "es-en-reading-adverbs"
+name: "Reading: how often and when"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about habits and about yesterday, with the adverbs of the Adverbs unit. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-how-often"
+    title: "How often"
+    theme: "adverbs"
+    sentences:
+      - text: "Siempre trabajo los lunes."
+      - text: "A veces hablo con mi abuela."
+      - text: "Nunca como carne."
+      - text: "Ayer llegué tarde."
+    questions:
+      - id: "es-0352"
+        prompt: { en: "How often does the speaker work on Mondays?" }
+        options:
+          - { en: "Always" }
+          - { en: "Never" }
+          - { en: "Sometimes" }
+        answer: 1
+      - id: "es-0353"
+        prompt: { en: "Who does the speaker talk to sometimes?" }
+        options:
+          - { en: "Grandmother" }
+          - { en: "Father" }
+          - { en: "A friend" }
+        answer: 1
+      - id: "es-0354"
+        prompt: { en: "What did the speaker do yesterday?" }
+        options:
+          - { en: "Arrived late" }
+          - { en: "Ate meat" }
+          - { en: "Worked" }
+        answer: 1
+  - id: "es-habit-survey"
+    title: "A habits survey"
+    theme: "adverbs"
+    sentences:
+      - text: "Yo casi siempre desayuno en casa."
+      - text: "Mi hermana nunca cena temprano."
+      - text: "Mis padres cenan normalmente a las nueve."
+      - text: "Yo leo mucho, pero escribo poco."
+      - text: "Todavía no hablo bien el inglés."
+    questions:
+      - id: "es-0355"
+        prompt: { en: "How often does the speaker have breakfast at home?" }
+        options:
+          - { en: "Never" }
+          - { en: "Almost always" }
+          - { en: "Sometimes" }
+        answer: 2
+      - id: "es-0356"
+        prompt: { en: "Does the sister have dinner early?" }
+        options:
+          - { en: "Yes, always" }
+          - { en: "No, never" }
+          - { en: "Sometimes" }
+        answer: 2
+      - id: "es-0357"
+        prompt: { en: "When do the parents usually have dinner?" }
+        options:
+          - { en: "At nine" }
+          - { en: "At seven" }
+          - { en: "At midnight" }
+        answer: 1
