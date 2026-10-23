@@ -143,6 +143,13 @@ every card in the shipped decks, then deletes the old.
 5. **Rearrange by data (#3).** `eligible` is "the target has three or more
    tokens", whatever `pos` is. A two-word phrase stays eligible so that the
    1,098 cards keep it (word-order-tiles.md).
+   **Built (#522):** `rearrangeType` is eligible by the card's data alone:
+   three or more words in the target (its `words`, else its spaces), whatever
+   its `pos`, or two where it is a phrase, as `Card.rearranges` already read
+   it before this step, so no shipped card changes its ask and the pin is
+   unchanged. The step adds the registry's guard that a reading question is
+   never rearranged, and `test/rearrange_types_test.dart` pins the rule by
+   behaviour. The two-word phrase still reads `pos`, as the plan keeps it.
 6. **`modes` as an opt-out (#4).** Read `modes` as "excluded from". The
    expanders stop writing it as a marker. A card with no `modes` is asked
    every skill its data allows. The validator reports any `modes` that
