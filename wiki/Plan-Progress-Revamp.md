@@ -17,7 +17,7 @@ Written 2026-10-20. Issue #678.
 ## What exists
 
 - **Progress** (`stats_page.dart`) shows test results per language, and
-  hours spent and left (`hours-per-language.md`).
+  hours spent and left ([Progress and Stats](Progress-and-Stats)).
 - **The review log** holds every answer, with its card, kind and skill.
   The scores below are computed from it.
 - **Read/Write credit per script** (#656, #677).
