@@ -16,6 +16,7 @@ import '../core/models/romanisation.dart';
 import '../core/models/script_guide.dart';
 import '../core/models/sound_contrasts.dart';
 import '../core/numbers/number_practice.dart';
+import '../core/scheduling/placed_review.dart';
 import '../core/scheduling/daily_budget.dart';
 import '../core/scheduling/skill_map.dart';
 import '../core/scheduling/session_queue.dart';
@@ -1613,6 +1614,12 @@ class AppState extends ChangeNotifier {
             !settings.isOffFor(Skill.speaking, entry.language.code),
     };
     final leeches = progress.leechEffects;
+    final fromToday =
+        ids == null &&
+        request.cardIds == null &&
+        !request.revise &&
+        !request.lesson &&
+        !request.numbers;
     SessionQueue queueOf(
       List<Card> cards, {
       required int newCardLimit,
@@ -1634,12 +1641,11 @@ class AppState extends ChangeNotifier {
       // Today and a language's review show a few of a deck's known cards
       // for the deck (#680); a deck's own review, a lesson and revising
       // show them all.
-      sampleKnown:
-          ids == null &&
-          request.cardIds == null &&
-          !request.revise &&
-          !request.lesson &&
-          !request.numbers,
+      sampleKnown: fromToday,
+      // What placement credited follows its course's choice (#761), but
+      // only in Today: from a deck page the learner can revise or practise
+      // placed words, whatever the choice.
+      placedOf: fromToday ? placedReviewOf : null,
       modes: modes,
       canIntroduce: canIntroduce,
       siblingsOf: siblingsOf,
@@ -1691,6 +1697,34 @@ class AppState extends ChangeNotifier {
   /// another course.
   bool isPlaced(DeckEntry entry) =>
       (_placed ??= _placedAcross()).contains(entry.id);
+
+  /// How the pair of [card] in [mode] is reviewed, if placement credited it
+  /// (#761): by its course's choice, [SettingsNotifier.placedReviewOf]. Null for a
+  /// word learned after placement, and for a course set to Keep reviewing,
+  /// whose placed words are reviewed as any are.
+  PlacedReview? placedReviewOf(Card card, DrillMode mode) {
+    final pairs = derived<Set<ProgressKey>>(
+      #placedPairs,
+      () => settings.hasPlacedCredit
+          ? placedPairs(
+              progress.log,
+              placedAt: (deckId) =>
+                  settings.placedAtOf(deckById(deckId)?.language.code ?? ''),
+            )
+          : const <ProgressKey>{},
+    );
+    if (!pairs.contains((cardId: card.id, mode: mode))) return null;
+    final code = deckById(card.deckId)?.language.code;
+    if (code == null) return null;
+    final choice = settings.placedReviewOf(code);
+    return choice == PlacedReview.keepReviewing ? null : choice;
+  }
+
+  /// Whether answering [item] writes no review (#761): a pair placement
+  /// credited in a course set to Set in stone, which the learner can still
+  /// revise or practise from a deck page, as it counts as learnt already.
+  bool keepsOutOfLog(SessionItem item) =>
+      placedReviewOf(item.card, item.mode) == PlacedReview.setInStone;
 
   Set<String> _placedAcross() {
     final placed = settings.placedDecks;
