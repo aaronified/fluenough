@@ -54,6 +54,20 @@ void main() {
       },
     );
 
+    test('is listed by the review only with Adult content on', () async {
+      final state = await reviewState(rudeRated: false, adult: false);
+      expect(state.reviewDeckById(rudeDeck), isNull);
+      expect(offensiveDecksIn(state, 'te'), isEmpty);
+      expect(state.reviewDecks.map((d) => d.id), isNot(contains(rudeDeck)));
+
+      state.settings.adultContent = true;
+      expect(state.reviewDeckById(rudeDeck), isNotNull);
+      expect(
+        offensiveDecksIn(state, 'te').map((d) => d.deck.id),
+        contains(rudeDeck),
+      );
+    });
+
     test(
       'still warns of the words that sound like its words, unnamed',
       () async {
