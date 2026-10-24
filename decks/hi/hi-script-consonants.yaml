@@ -1,3 +1,4 @@
+# modes: converted to an opt-out (#522, step 6)
 schema: 1
 id: "hi-script-consonants"
 part: "core"
@@ -10,225 +11,262 @@ cards:
     target: "क"
     reading: "ka"
     ipa: "kə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0013"
     target: "ख"
     reading: "kha"
     ipa: "kʰə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0014"
     target: "ग"
     reading: "ga"
     ipa: "ɡə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0015"
     target: "घ"
     reading: "gha"
     ipa: "ɡʱə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0016"
     target: "ङ"
     reading: "ṅa"
     ipa: "ŋə"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0017"
     target: "च"
     reading: "ca"
     ipa: "tʃə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0018"
     target: "छ"
     reading: "cha"
     ipa: "tʃʰə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0019"
     target: "ज"
     reading: "ja"
     ipa: "dʒə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0020"
     target: "झ"
     reading: "jha"
     ipa: "dʒʱə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0021"
     target: "ञ"
     reading: "ña"
     ipa: "ɲə"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0022"
     target: "ट"
     reading: "ṭa"
     ipa: "ʈə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0023"
     target: "ठ"
     reading: "ṭha"
     ipa: "ʈʰə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0024"
     target: "ड"
     reading: "ḍa"
     ipa: "ɖə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0025"
     target: "ढ"
     reading: "ḍha"
     ipa: "ɖʱə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0026"
     target: "ण"
     reading: "ṇa"
     ipa: "ɳə"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0027"
     target: "त"
     reading: "ta"
     ipa: "t̪ə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0028"
     target: "थ"
     reading: "tha"
     ipa: "t̪ʰə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0029"
     target: "द"
     reading: "da"
     ipa: "d̪ə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0030"
     target: "ध"
     reading: "dha"
     ipa: "d̪ʱə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0031"
     target: "न"
     reading: "na"
     ipa: "nə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0032"
     target: "प"
     reading: "pa"
     ipa: "pə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0033"
     target: "फ"
     reading: "pha"
     ipa: "pʰə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0034"
     target: "ब"
     reading: "ba"
     ipa: "bə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0035"
     target: "भ"
     reading: "bha"
     ipa: "bʱə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0036"
     target: "म"
     reading: "ma"
     ipa: "mə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0037"
     target: "य"
     reading: "ya"
     ipa: "jə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0038"
     target: "र"
     reading: "ra"
     ipa: "rə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0039"
     target: "ल"
     reading: "la"
     ipa: "lə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0040"
     target: "व"
     reading: "va"
     ipa: "ʋə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0041"
     target: "श"
     reading: "śa"
     ipa: "ʃə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0042"
     target: "ष"
     reading: "śa"
     ipa: "ʃə"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0043"
     target: "स"
     reading: "sa"
     ipa: "sə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0044"
     target: "ह"
     reading: "ha"
     ipa: "ɦə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0045"
     target: "ड़"
     reading: "ṛa"
     ipa: "ɽə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0046"
     target: "ढ़"
     reading: "ṛha"
     ipa: "ɽʱə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0047"
     target: "ज़"
     reading: "za"
     ipa: "zə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0048"
     target: "फ़"
     reading: "fa"
     ipa: "fə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
