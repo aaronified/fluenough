@@ -128,7 +128,7 @@ below is written from `decks/index.json` each time the decks change.
 <!-- languages:start -->
 | Language | Scripts | Level reached |
 |---|---|---|
-| Assamese | Eastern Nagari | in progress |
+| Assamese | Eastern Nagari | A1 |
 | Bengali | Eastern Nagari | A1 |
 | Gujarati | Gujarati | in progress |
 | Hindustani | Devanagari, Perso-Arabic | A1 |
