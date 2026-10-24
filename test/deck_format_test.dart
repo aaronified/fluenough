@@ -10,7 +10,6 @@ import 'dart:io';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/repository_decks.dart';
 import 'package:fluenough/core/data/course_path.dart';
-import 'package:fluenough/core/data/deck_layers.dart';
 import 'package:fluenough/core/data/deck_parser.dart';
 import 'package:fluenough/core/data/pattern_expander.dart';
 import 'package:fluenough/core/data/rule_expander.dart';
