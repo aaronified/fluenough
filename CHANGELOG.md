@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Settings has a "Support with a cup of tea" row, which opens a page saying that a tip is simply a show of support, brings no preferential treatment or access to anything extra, and that reviewing decks and sending bug reports help just as much, if not more. "Open my UPI app" opens a `upi://pay` link to das.arani@pingpay with no amount, and says so if no app can open it; "Copy UPI ID" copies the ID for a phone with no UPI app. The release's manifest gets a query for `upi` links.
+- A language's sheet, seen when the language is picked and on Languages I'm learning, can suggest up to three other ways to learn it, in a card above the course with a short line and a "Visit" button that opens the site in the browser; the learner can hide a suggestion for good on Languages I'm learning. A language's suggestions are its `decks/<lang>/<lang>-resources.yaml`, listed in the index apart from the decks so the released app is unaffected, and Japanese suggests the game Wagotabi (#832).
 
 ### Changed
 

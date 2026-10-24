@@ -184,6 +184,23 @@ class DeckIndex(unittest.TestCase):
                       text)
 
 
+    def _the_resources_file_is_listed_apart_from_files(self) -> None:
+        # #832: a language's resources file is no deck, under a key of its
+        # own that the released app ignores, and not in the language's size.
+        text = ('schema: 1\nkind: "resources"\nid: "es-resources"\n'
+                'language: "es"\nresources:\n  - id: "es-res-x"\n'
+                '    name: "X"\n    url: "https://example.org/"\n'
+                '    kind: "site"\n    why: "A site."\n')
+        (self.tmp / "decks" / "es" / "es-resources.yaml").write_text(
+            text, encoding="utf-8")
+        es = self.language(self.index(), "es")
+        self.assertEqual([r["path"] for r in es["resources"]],
+                         ["decks/es/es-resources.yaml"])
+        self.assertEqual(es["resources"][0]["kind"], "resources")
+        self.assertNotIn("decks/es/es-resources.yaml",
+                         [f["path"] for f in es["files"]])
+        self.assertEqual(es["size"], sum(f["size"] for f in es["files"]))
+
     def _the_fonts_folder_is_not_a_language(self) -> None:
         self.add_font("devanagari", "NotoSansDevanagari.ttf", b"deva-font")
         codes = [lang["code"] for lang in self.index()["languages"]]
@@ -350,6 +367,7 @@ class DeckIndex(unittest.TestCase):
             self._images_are_listed_under_media,
             self._a_guide_of_another_script_is_listed_apart,
             self._fonts_are_listed_per_language_apart_from_files,
+            self._the_resources_file_is_listed_apart_from_files,
             self._the_fonts_folder_is_not_a_language,
         )
         for case in cases:
