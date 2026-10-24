@@ -82,7 +82,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "जीभ नरम है।", reading: "jībh naram hai.", ipa: "dʒiːbʱ nərəm ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "जीभ नरम है।", reading: "jībh naram hai.", ipa: "dʒiːbʱ nərəm ɦɛː", bases: [{"word": "नरम", "base": "नरम", "reading": "naram"}, {"word": "है", "ref": "hi-0780"}] }
       - { target: "जीभ बड़ी है।", reading: "jībh baṛī hai.", ipa: "dʒiːbʱ bəɽiː ɦɛː", bases: [{"word": "बड़ी", "ref": "hi-0894"}, {"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1031"
     target: "होंठ"
@@ -93,7 +93,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "होंठ पतला है।", reading: "hōṇṭh patlā hai.", ipa: "ɦoːɳʈʰ pət̪laː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "होंठ पतला है।", reading: "hōṇṭh patlā hai.", ipa: "ɦoːɳʈʰ pət̪laː ɦɛː", bases: [{"word": "पतला", "base": "पतला", "reading": "patlā"}, {"word": "है", "ref": "hi-0780"}] }
       - { target: "होंठ लाल है।", reading: "hōṇṭh lāl hai.", ipa: "ɦoːɳʈʰ laːl ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1032"
     target: "बाल"
@@ -127,7 +127,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "कंधे में दर्द है।", reading: "kandhē mēm̐ dard hai.", ipa: "kənd̪ʱeː mẽː d̪ərd̪ ɦɛː", bases: [{"word": "कंधे", "base": "कंधा", "reading": "kandhā"}, {"word": "है", "ref": "hi-0780"}] }
-      - { target: "कंधा चौड़ा है।", reading: "kandhā cauṛā hai.", ipa: "kənd̪ʱaː tʃɔːɽaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "कंधा चौड़ा है।", reading: "kandhā cauṛā hai.", ipa: "kənd̪ʱaː tʃɔːɽaː ɦɛː", bases: [{"word": "चौड़ा", "base": "चौड़ा", "reading": "cauṛā"}, {"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1035"
     target: "छाती"
     reading: "chātī"
@@ -193,7 +193,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "घुटने में दर्द है।", reading: "ghuṭnē mēm̐ dard hai.", ipa: "ɡʱʊʈneː mẽː d̪ərd̪ ɦɛː", bases: [{"word": "घुटने", "base": "घुटना", "reading": "ghuṭnā"}, {"word": "है", "ref": "hi-0780"}] }
-      - { target: "घुटना मज़बूत है।", reading: "ghuṭnā mazbūt hai.", ipa: "ɡʱʊʈnaː məzbuːt̪ ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "घुटना मज़बूत है।", reading: "ghuṭnā mazbūt hai.", ipa: "ɡʱʊʈnaː məzbuːt̪ ɦɛː", bases: [{"word": "मज़बूत", "base": "मज़बूत", "reading": "mazbūt"}, {"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1041"
     target: "शरीर"
     reading: "śarīr"
@@ -204,7 +204,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "शरीर अच्छा है।", reading: "śarīr acchā hai.", ipa: "ʃəriːr ətʃtʃʰaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
-      - { target: "शरीर मज़बूत है।", reading: "śarīr mazbūt hai.", ipa: "ʃəriːr məzbuːt̪ ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "शरीर मज़बूत है।", reading: "śarīr mazbūt hai.", ipa: "ʃəriːr məzbuːt̪ ɦɛː", bases: [{"word": "मज़बूत", "base": "मज़बूत", "reading": "mazbūt"}, {"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1042"
     target: "हाथ"
     reading: "hāth"
@@ -248,7 +248,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "दिमाग अच्छा है।", reading: "dimāg acchā hai.", ipa: "d̪ɪmaːɡ ətʃtʃʰaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
-      - { target: "दिमाग तेज़ है।", reading: "dimāg tēz hai.", ipa: "d̪ɪmaːɡ t̪eːz ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "दिमाग तेज़ है।", reading: "dimāg tēz hai.", ipa: "d̪ɪmaːɡ t̪eːz ɦɛː", bases: [{"word": "तेज़", "base": "तेज़", "reading": "tēz"}, {"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1046"
     target: "खून"
     reading: "khūn"
@@ -269,7 +269,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "हड्डी मज़बूत है।", reading: "haḍḍī mazbūt hai.", ipa: "ɦəɖɖiː məzbuːt̪ ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "हड्डी मज़बूत है।", reading: "haḍḍī mazbūt hai.", ipa: "ɦəɖɖiː məzbuːt̪ ɦɛː", bases: [{"word": "मज़बूत", "base": "मज़बूत", "reading": "mazbūt"}, {"word": "है", "ref": "hi-0780"}] }
       - { target: "हड्डी छोटी है।", reading: "haḍḍī chōṭī hai.", ipa: "ɦəɖɖiː tʃʰoːʈiː ɦɛː", bases: [{"word": "छोटी", "ref": "hi-0895"}, {"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1048"
     target: "त्वचा"
@@ -280,7 +280,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "त्वचा नरम है।", reading: "tvacā naram hai.", ipa: "t̪ʋətʃaː nərəm ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "त्वचा नरम है।", reading: "tvacā naram hai.", ipa: "t̪ʋətʃaː nərəm ɦɛː", bases: [{"word": "नरम", "base": "नरम", "reading": "naram"}, {"word": "है", "ref": "hi-0780"}] }
       - { target: "त्वचा साफ़ है।", reading: "tvacā sāf hai.", ipa: "t̪ʋətʃaː saːf ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1049"
     target: "माथा"
@@ -303,7 +303,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "गाल लाल है।", reading: "gāl lāl hai.", ipa: "ɡaːl laːl ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
-      - { target: "गाल नरम है।", reading: "gāl naram hai.", ipa: "ɡaːl nərəm ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "गाल नरम है।", reading: "gāl naram hai.", ipa: "ɡaːl nərəm ɦɛː", bases: [{"word": "नरम", "base": "नरम", "reading": "naram"}, {"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1051"
     target: "ठोड़ी"
     reading: "ṭhōṛī"
@@ -347,7 +347,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "पसली में दर्द है।", reading: "paslī mēm̐ dard hai.", ipa: "pəsliː mẽː d̪ərd̪ ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
-      - { target: "पसली मज़बूत है।", reading: "paslī mazbūt hai.", ipa: "pəsliː məzbuːt̪ ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "पसली मज़बूत है।", reading: "paslī mazbūt hai.", ipa: "pəsliː məzbuːt̪ ɦɛː", bases: [{"word": "मज़बूत", "base": "मज़बूत", "reading": "mazbūt"}, {"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1055"
     target: "गला"
     reading: "galā"
@@ -357,6 +357,6 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "गला सूखा है।", reading: "galā sūkhā hai.", ipa: "ɡəlaː suːkʰaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
-      - { target: "गला नरम है।", reading: "galā naram hai.", ipa: "ɡəlaː nərəm ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "गला सूखा है।", reading: "galā sūkhā hai.", ipa: "ɡəlaː suːkʰaː ɦɛː", bases: [{"word": "सूखा", "base": "सूखा", "reading": "sūkhā"}, {"word": "है", "ref": "hi-0780"}] }
+      - { target: "गला नरम है।", reading: "galā naram hai.", ipa: "ɡəlaː nərəm ɦɛː", bases: [{"word": "नरम", "base": "नरम", "reading": "naram"}, {"word": "है", "ref": "hi-0780"}] }
   - ref: "hi-0360"
