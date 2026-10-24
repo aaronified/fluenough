@@ -67,6 +67,14 @@ contributor.
   to a branch frequently"). Long work is committed in small steps and pushed
   to a work branch (`wip/<topic>`) as it goes, so nothing is lost if a
   session ends. Only checked, approved work reaches main or `decks-next`.
+- **No stray branches** (owner, 2026-10-24). Merged pull requests delete
+  their head branch (repo setting). So: never push a branch again after its
+  pull request has merged; never push scratch, review or worktree branches;
+  and never merge one work branch into another and leave it pushed: open
+  its own pull request instead. Agents cannot delete remote branches (the
+  session's git proxy refuses it), so list any branch left over for the
+  owner to delete. Never ask to delete `decks-next` or an open pull
+  request's base.
 - **Releases** (owner, 2026-10-20: "Can the release workflow not
   automatically take care of the release commit? So that I can cut releases
   just from the UI?"). Each pull request adds its own CHANGELOG.md line under

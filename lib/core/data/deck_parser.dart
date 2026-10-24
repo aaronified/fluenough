@@ -2384,7 +2384,7 @@ class _Reader {
     return LayerPattern(
       name: fields.string('name'),
       slotName: fields.string('slot_name'),
-      prompt: fields.string('prompt'),
+      prompt: fields.optionalString('prompt'),
       slots: fields.has('slots')
           ? layerTexts(
               fields.require('slots'),
@@ -2638,7 +2638,7 @@ class _Reader {
     fields.allowOnly(_patternFields);
     final name = fields.string('name');
     final slotName = fields.string('slot_name');
-    final prompt = fields.string('prompt');
+    final prompt = fields.optionalString('prompt');
     final notes = fields.optionalString('notes');
     final slots = this.slots(fields.require('slots'));
 
@@ -2656,7 +2656,7 @@ class _Reader {
       name: name,
       slotName: slotName,
       slots: slots,
-      prompt: prompt,
+      prompt: prompt ?? kPatternPrompt,
       entries: List.unmodifiable(entries),
       notes: notes,
     );

@@ -450,7 +450,8 @@ pattern:
   notes: "The past adds -ఆ- (-ā-) before the person ending."
 ```
 
-`name`, `slot_name`, `prompt` and `entries` are required; `entries` maps each
+`name`, `slot_name` and `entries` are required, and `prompt` is retired (see
+[`pattern` fields](#pattern-fields)); `entries` maps each
 core entry's `key`, or its lemma where it has none, to its gloss, and
 **every core entry must have one**: the validator errors on an entry with
 no gloss (`gives no gloss for ...`), and on a key that is not an entry of
@@ -1799,7 +1800,7 @@ pattern:
 | `name` | yes | Describes the inflection. |
 | `slot_name` | yes | What the slots are: `person`, `case`, `tense`, `number`… |
 | `slots` | yes | Ordered list of slot labels. |
-| `prompt` | yes | Template. `{lemma}`, `{gloss}` and `{slot}` are substituted. |
+| `prompt` | no, retired | Template. `{lemma}`, `{gloss}` and `{slot}` are substituted. Without one, a cell is asked as `{lemma} ({gloss}) — {slot}` (ADR-0039). The app reads one where given and the validator warns of it. Released apps that need it are still in use, so leave a deck's as it is until they are not. |
 | `entries` | yes | List of `{lemma, gloss, forms}`, each with an optional `key`, and in a script that needs them `reading` and `readings`. Each may give `ipa`, the lemma in the IPA, and `ipas`, the form shown in each slot in the IPA, one per slot that has a form. |
 | `notes` | no | Shown after answering. |
 
@@ -1848,7 +1849,7 @@ Each `(entry, slot)` pair becomes one production card:
   the deck and orphans its history.** Append new slots at the end.
 - **target** — `forms[slot]`, the first form where a cell lists several, and
   **alt_target** the rest
-- **native** — `prompt` with substitutions applied
+- **native** — `prompt` with substitutions applied, or `{lemma} ({gloss}) — {slot}` where there is none
 - **modes** — the four vocabulary skills (recognition, production, listening, speaking), so a pattern's cell is only a grammar cell
 
 A grammar deck may also be written as [a core and its
