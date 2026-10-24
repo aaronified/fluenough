@@ -91,7 +91,7 @@ void main() {
     await tester.tap(waiting.first);
     await tester.pumpAndSettle();
     expect(find.text(l10n.whyClosedTitle), findsOneWidget);
-    expect(find.text(l10n.whyClosedIntro(9, 10)), findsOneWidget);
+    expect(find.text(l10n.whyClosedIntro(85)), findsOneWidget);
     expect(find.text(l10n.whyClosedReviewsNeverWait), findsOneWidget);
     expect(tester.takeException(), isNull);
   });

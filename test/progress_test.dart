@@ -137,6 +137,25 @@ void answer(
   }
 }
 
+/// [grades] for [card] in [mode], a minute apart, so that each right answer
+/// is at nearly full recall.
+void minutesApart(
+  MemoryProgress progress,
+  String card,
+  List<int> grades, {
+  DrillMode mode = DrillMode.recognition,
+}) {
+  for (final (i, grade) in grades.indexed) {
+    progress.record(
+      deckId: 'xx-deck',
+      cardId: card,
+      mode: mode,
+      grade: grade,
+      now: DateTime(2026, 9, 1).add(Duration(minutes: i)),
+    );
+  }
+}
+
 // From unit_page_test.dart.
 /// The design's Telugu learner, with Family under way.
 Future<AppState> teluguLearner({String upTo = PathFixtures.familyDeck}) async {
@@ -828,39 +847,43 @@ void main() {
   });
 
   group('Known, Learning and New', () {
-    test(
-      'known is right on 9 of the last ten answers; old misses fall out',
-      () {
-        final progress = MemoryProgress();
-        // Nine right of ten: 90%.
-        answer(progress, 'xx-0001', [4, 4, 4, 1, 4, 4, 4, 4, 4, 4]);
-        // Eight right of ten: 80%, still learning.
-        answer(progress, 'xx-0002', [4, 1, 4, 4, 1, 4, 4, 4, 4, 4]);
-        final answers = RecentAnswers(progress.log);
-        expect(answers.of('xx-0001').level, MasteryLevel.known);
-        expect(answers.of('xx-0001').share, closeTo(0.9, 1e-9));
-        expect(answers.of('xx-0002').level, MasteryLevel.learning);
-        expect(answers.of('xx-0002').share, closeTo(0.8, 1e-9));
-
-        {
-          final progress = MemoryProgress();
-          answer(progress, 'xx-0001', [
-            1, 1, 1, 1, 1, // five misses long ago
-            4, 4, 4, 4, 4, 4, 4, 4, 4, 4, // then ten right
-          ]);
-          final answers = RecentAnswers(progress.log);
-          expect(answers.of('xx-0001'), (
-            level: MasteryLevel.known,
-            share: 1.0,
-          ));
-          // The first right answer, not the first answer.
-          expect(
-            answers.firstPassed('xx-0001'),
-            DateTime(2026, 9, 1).add(const Duration(days: 5)),
-          );
-        }
-      },
-    );
+    test('known is the Progress star\'s known: the last review in every skill '
+        'was right and FSRS gave it 85% recall; a later miss makes it '
+        'learning again', () {
+      final progress = MemoryProgress();
+      // Right every time, a minute apart: recall is near certain.
+      minutesApart(progress, 'xx-0001', [1, 1, 1, 4, 4, 4]);
+      // Right in one skill, missed in the other: not known.
+      minutesApart(progress, 'xx-0002', [4, 4], mode: DrillMode.recognition);
+      minutesApart(progress, 'xx-0002', [4, 1], mode: DrillMode.production);
+      // Right, but 400 days after the last review: recall has gone.
+      progress.record(
+        deckId: 'xx-deck',
+        cardId: 'xx-0003',
+        mode: DrillMode.recognition,
+        grade: 4,
+        now: DateTime(2026, 9, 1),
+      );
+      progress.record(
+        deckId: 'xx-deck',
+        cardId: 'xx-0003',
+        mode: DrillMode.recognition,
+        grade: 4,
+        now: DateTime(2027, 10, 5),
+      );
+      // One review is no recall to measure yet.
+      minutesApart(progress, 'xx-0004', [4]);
+      final answers = RecentAnswers(progress.log);
+      expect(answers.of('xx-0001').level, MasteryLevel.known);
+      expect(answers.of('xx-0001').share, 1.0);
+      expect(answers.of('xx-0002').level, MasteryLevel.learning);
+      expect(answers.of('xx-0002').share, closeTo(0.5, 1e-9));
+      expect(answers.of('xx-0003').level, MasteryLevel.learning);
+      expect(answers.of('xx-0004').level, MasteryLevel.learning);
+      expect(answers.of('xx-0005').level, MasteryLevel.fresh);
+      // The first right answer, not the first answer.
+      expect(answers.firstPassed('xx-0001'), DateTime(2026, 9, 1, 0, 3));
+    });
   });
 
   group('a unit', () {
@@ -890,7 +913,7 @@ void main() {
         expect(find.text(l10n.unitWordsKnown), findsOneWidget);
         expect(find.text(l10n.unitRulesKnown), findsOneWidget);
         expect(find.text(l10n.unitSentencesOpen), findsOneWidget);
-        expect(find.text(l10n.unitKnownMeans(9, 10)), findsOneWidget);
+        expect(find.text(l10n.unitKnownMeans(85)), findsOneWidget);
 
         // The first six words, then all of them.
         final chips = find.byType(MasteryChip);
