@@ -305,7 +305,8 @@ void main() {
         final rule = item.card.rule!.ruleId;
         if (item.ask == Ask.teachRule) {
           expect(rules.add(rule), isTrue, reason: 'one rule card a rule');
-        } else {
+        } else if (!item.ask.onlyShows) {
+          // A set card shows its forms before, and records nothing.
           expect(rules, contains(rule), reason: 'the rule card comes first');
         }
       }
