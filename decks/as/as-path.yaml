@@ -147,7 +147,9 @@ units:
       - { id: "daily-habits-talk", text: { "en": "Two friends say what they do every day, and where they go" } }
     reading_passages:
       - { id: "day-timetable", text: { "en": "A timetable of a working day" } }
-  - planned: { id: "as-grammar-imperatives", grammar: "imperatives" }
+  - decks: ["as-grammar-imperatives"]
+    words: 0
+    grammar: ["imperatives"]
     listening_passages:
       - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
     reading_passages:
@@ -162,7 +164,8 @@ units:
   # themes, each its words, its rules, then its sentences.
   - decks: ["as-numbers-big", "*"]
     words: 24
-  - planned: { id: "as-food", theme: "food", words: 59 }
+  - decks: ["as-food", "*"]
+    words: 50
     listening_passages:
       - { id: "at-the-sweet-shop", text: { "en": "Choosing sweets and snacks at a sweet shop" } }
     reading_passages:
@@ -188,17 +191,20 @@ units:
     grammar: ["continuous"]
   - decks: ["as-transport", "*"]
     words: 12
-  - planned: { id: "as-body", theme: "body", words: 35 }
+  - decks: ["as-body", "*"]
+    words: 31
     listening_passages:
       - { id: "at-the-doctors", text: { "en": "Telling a doctor where it hurts" } }
     reading_passages:
       - { id: "stretching-chart", text: { "en": "A chart of simple morning stretches" } }
-  - planned: { id: "as-places", theme: "places", words: 56 }
+  - decks: ["as-places", "*"]
+    words: 27
     listening_passages:
       - { id: "walk-to-the-market", text: { "en": "A neighbour names the places you pass on the way to the market" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Signs along a street: pharmacy, school, bank, temple" } }
-  - planned: { id: "as-things", theme: "things", words: 32 }
+  - decks: ["as-things", "*"]
+    words: 21
     listening_passages:
       - { id: "packing-for-a-trip", text: { "en": "Two people pack a bag for a trip to the hills" } }
     reading_passages:
@@ -218,7 +224,8 @@ units:
   - decks: ["as-grammar-articles", "as-grammar-gender-number"]
     words: 5
     grammar: ["articles", "gender-number"]
-  - planned: { id: "as-clothes", theme: "clothes", words: 26 }
+  - decks: ["as-clothes", "*"]
+    words: 22
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
     reading_passages:
