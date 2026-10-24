@@ -18,35 +18,35 @@ schema: 1
     "notes":
       "n1": "零 (líng) is 'zero'. It is said as 'líng' in a number, as in 二零二六 (èr líng èr liù)."
     "examples":
-      "零很小。": "Zero is small."
+      "零是整数。": "Zero is a whole number."
       "这个数字是零。": "This number is zero."
   "zh-0694":
     "native": "a hundred million"
     "notes":
       "n1": "亿 (yì) is 'a hundred million'. Chinese counts large numbers in groups of ten thousand, 万 (wàn), so a hundred million comes after 万 (wàn)."
     "examples":
-      "一亿人很多。": "A hundred million people is a lot."
+      "这个数字是一亿吗？": "Is this number a hundred million?"
       "亿很大。": "A hundred million is big."
   "zh-0695":
     "native": "million"
     "notes":
       "n1": "百万 (bǎiwàn) is 'million', a hundred ten-thousands: 百 (bǎi) hundred and 万 (wàn) ten thousand."
     "examples":
-      "百万很多。": "A million is a lot."
+      "百万是整数吗？": "Is a million a whole number?"
       "这个数字是百万。": "This number is a million."
   "zh-0696":
     "native": "ten million"
     "notes":
       "n1": "千万 (qiānwàn) is 'ten million', a thousand ten-thousands: 千 (qiān) thousand and 万 (wàn) ten thousand."
     "examples":
-      "千万很大。": "Ten million is big."
-      "数字很大吗？": "Are the numbers big?"
+      "这个数字是千万。": "This number is ten million."
+      "千万是一千个一万。": "Ten million is a thousand ten-thousands."
   "zh-0697":
     "native": "a hundred thousand"
     "notes":
       "n1": "十万 (shíwàn) is 'a hundred thousand', ten ten-thousands: 十 (shí) ten and 万 (wàn) ten thousand."
     "examples":
-      "十万很大。": "A hundred thousand is big."
+      "十万是十个一万。": "A hundred thousand is ten ten-thousands."
       "这个数字是十万吗？": "Is this number a hundred thousand?"
   "zh-0698":
     "native": "one hundred"
@@ -61,27 +61,27 @@ schema: 1
       "n1": "两百 (liǎngbǎi) is 'two hundred'. Before 百 (bǎi), 千 (qiān) and 万 (wàn), two is said as 两 (liǎng), not 二 (èr)."
     "examples":
       "两百个人。": "Two hundred people."
-      "两百很多。": "Two hundred is a lot."
+      "两百加三百是五百。": "Two hundred plus three hundred is five hundred."
   "zh-0700":
     "native": "three hundred"
     "notes":
       "n1": "三百 (sānbǎi) is 'three hundred'. Its first word, 三 (sān), is three."
     "examples":
       "三百个人很多。": "Three hundred people is a lot."
-      "三百很大。": "Three hundred is big."
+      "三百减一百是两百。": "Three hundred minus one hundred is two hundred."
   "zh-0701":
     "native": "five hundred"
     "notes":
       "n1": "五百 (wǔbǎi) is 'five hundred'."
     "examples":
       "五百个人。": "Five hundred people."
-      "五百很大。": "Five hundred is big."
+      "五百加五百是一千。": "Five hundred plus five hundred is one thousand."
   "zh-0702":
     "native": "one thousand"
     "notes":
       "n1": "一千 (yìqiān) is 'one thousand'. 一 (yī) is said as yì before 千 (qiān), a first-tone syllable."
     "examples":
-      "一千很大。": "A thousand is big."
+      "一千减五百是五百。": "One thousand minus five hundred is five hundred."
       "你买一千吗？": "Are you buying a thousand?"
   "zh-0703":
     "native": "two thousand"
@@ -89,28 +89,28 @@ schema: 1
       "n1": "两千 (liǎngqiān) is 'two thousand'. Before 千 (qiān), two is said as 两 (liǎng)."
     "examples":
       "两千个人。": "Two thousand people."
-      "两千很多。": "Two thousand is a lot."
+      "一千加一千是两千。": "One thousand plus one thousand is two thousand."
   "zh-0704":
     "native": "ten thousand"
     "notes":
       "n1": "一万 (yíwàn) is 'ten thousand', one 万 (wàn). 一 (yī) is said as yí before 万 (wàn), a fourth-tone syllable."
     "examples":
       "一万个人很多。": "Ten thousand people is a lot."
-      "一万很大。": "Ten thousand is big."
+      "十个一千是一万。": "Ten lots of one thousand make ten thousand."
   "zh-0705":
     "native": "several hundred"
     "notes":
       "n1": "几百 (jǐbǎi) is 'several hundred'. 几 (jǐ) is 'a few' or 'how many'."
     "examples":
       "几百个人。": "Several hundred people."
-      "几百很多。": "Several hundred is a lot."
+      "几百个人在工厂。": "Several hundred people are at the factory."
   "zh-0706":
     "native": "several thousand"
     "notes":
       "n1": "几千 (jǐqiān) is 'several thousand', with 几 (jǐ) meaning 'a few'."
     "examples":
       "几千个人。": "Several thousand people."
-      "几千很多吗？": "Is several thousand a lot?"
+      "几千个人在工厂吗？": "Are several thousand people at the factory?"
   "zh-0707":
     "native": "thirty"
     "notes":
@@ -159,7 +159,7 @@ schema: 1
       "n1": "九十 (jiǔshí) is 'ninety', 九 (jiǔ) nine and 十 (shí) ten."
     "examples":
       "九十个人。": "Ninety people."
-      "我奶奶九十岁吗？": "Is my grandmother ninety years old?"
+      "你奶奶九十岁吗？": "Is your grandmother ninety years old?"
   "zh-0714":
     "native": "first"
     "notes":
@@ -194,14 +194,14 @@ schema: 1
       "n1": "一半 (yíbàn) is 'a half', as a noun. 半 (bàn) is 'half' before a measure word, as in 半杯 (bàn bēi), half a cup."
     "examples":
       "我吃一半。": "I eat half."
-      "一半很多吗？": "Is half a lot?"
+      "你吃一半吗？": "Do you eat half?"
   "zh-0719":
     "native": "times"
     "notes":
       "n1": "倍 (bèi) is 'times', as in 两倍 (liǎng bèi), twice, and 三倍 (sān bèi), three times."
     "examples":
-      "这个数字是两倍。": "This number is twice as much."
-      "三倍很大。": "Three times is big."
+      "我买两倍。": "I buy twice as much."
+      "你买三倍吗？": "Are you buying three times as much?"
   "zh-0720":
     "native": "about; roughly"
     "notes":
@@ -215,7 +215,7 @@ schema: 1
       "n1": "号 (hào) is the day of the month, as 十号 (shí hào) is the tenth. 号码 (hàomǎ) is a number, such as a phone number."
     "examples":
       "今天是几号？": "What date is it today?"
-      "十号很好。": "The tenth is good."
+      "十号开会。": "The meeting is on the tenth."
   "zh-0722":
     "native": "decimal"
     "notes":
@@ -256,5 +256,5 @@ schema: 1
     "notes":
       "n1": "算 (suàn) is 'to calculate' or 'to count'. It is used both for working out a sum and for counting things."
     "examples":
-      "你算钱吗？": "Are you calculating the money?"
+      "老板算钱。": "The boss counts the money."
       "我算十个人。": "I count ten people."
