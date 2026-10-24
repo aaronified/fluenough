@@ -10,7 +10,9 @@ tags: ["grammar", "unreviewed"]
 table:
   applies_to:
     pos: ["noun"]
-    except: ["te-0179", "te-0180", "te-0310", "te-0455", "te-0489", "te-0490", "te-0491", "te-0512", "te-0513", "te-0514", "te-0515", "te-0516", "te-0517", "te-0518", "te-0519", "te-0520", "te-0521", "te-0524", "te-0529", "te-0531"]
+    # te-6557 to te-6569 are the unrated offensive words (te-offensive): a rules
+    # cell carries no register, so a row would show them to every learner.
+    except: ["te-0179", "te-0180", "te-0310", "te-0455", "te-0489", "te-0490", "te-0491", "te-0512", "te-0513", "te-0514", "te-0515", "te-0516", "te-0517", "te-0518", "te-0519", "te-0520", "te-0521", "te-0524", "te-0529", "te-0531", "te-6557", "te-6558", "te-6559", "te-6560", "te-6561", "te-6562", "te-6564", "te-6565", "te-6566", "te-6567", "te-6568", "te-6569"]
   slots: ["plural", "lo", "ki", "to", "nunci", "ni"]
   rows:
     - word: "te-0181"
@@ -4220,43 +4222,6 @@ table:
     - word: "te-6475"
       forms: { "plural": "పాయలు", "lo": "పాయలో", "ki": "పాయకి", "to": "పాయతో", "nunci": "పాయ నుంచి", "ni": "పాయను" }
       readings: { "plural": "pāyalu", "lo": "pāyalō", "ki": "pāyaki", "to": "pāyatō", "nunci": "pāya nuñci", "ni": "pāyanu" }
-    - word: "te-6557"
-      forms: { "plural": "వెధవలు", "lo": "వెధవలో", "ki": "వెధవకి", "to": "వెధవతో", "nunci": "వెధవ నుంచి", "ni": "వెధవను" }
-      readings: { "plural": "vedhavalu", "lo": "vedhavalō", "ki": "vedhavaki", "to": "vedhavatō", "nunci": "vedhava nuñci", "ni": "vedhavanu" }
-    - word: "te-6558"
-      forms: { "plural": "దద్దమ్మలు", "lo": "దద్దమ్మలో", "ki": "దద్దమ్మకి", "to": "దద్దమ్మతో", "nunci": "దద్దమ్మ నుంచి", "ni": "దద్దమ్మను" }
-      readings: { "plural": "daddammalu", "lo": "daddammalō", "ki": "daddammaki", "to": "daddammatō", "nunci": "daddamma nuñci", "ni": "daddammanu" }
-    - word: "te-6559"
-      forms: { "plural": "గాడిదలు", "lo": "గాడిదలో", "ki": "గాడిదకి", "to": "గాడిదతో", "nunci": "గాడిద నుంచి", "ni": "గాడిదను" }
-      readings: { "plural": "gāḍidalu", "lo": "gāḍidalō", "ki": "gāḍidaki", "to": "gāḍidatō", "nunci": "gāḍida nuñci", "ni": "gāḍidanu" }
-    - word: "te-6560"
-      forms: { "plural": "పిచ్చోళ్ళు", "lo": "పిచ్చోడిలో", "ki": "పిచ్చోడికి", "to": "పిచ్చోడితో", "nunci": "పిచ్చోడి నుంచి", "ni": "పిచ్చోడిని" }
-      readings: { "plural": "piccōḷḷu", "lo": "piccōḍilō", "ki": "piccōḍiki", "to": "piccōḍitō", "nunci": "piccōḍi nuñci", "ni": "piccōḍini" }
-    - word: "te-6561"
-      forms: { "plural": "మొద్దులు", "lo": "మొద్దులో", "ki": "మొద్దుకి", "to": "మొద్దుతో", "nunci": "మొద్దు నుంచి", "ni": "మొద్దును" }
-      readings: { "plural": "moddulu", "lo": "moddulō", "ki": "modduki", "to": "moddutō", "nunci": "moddu nuñci", "ni": "moddunu" }
-    - word: "te-6562"
-      forms: { "plural": "దొంగలు", "lo": "దొంగలో", "ki": "దొంగకి", "to": "దొంగతో", "nunci": "దొంగ నుంచి", "ni": "దొంగను" }
-      readings: { "plural": "dongalu", "lo": "dongalō", "ki": "dongaki", "to": "dongatō", "nunci": "donga nuñci", "ni": "donganu" }
-    - word: "te-6564"
-      forms: { "plural": "లుచ్చాలు", "lo": "లుచ్చాలో", "ki": "లుచ్చాకి", "to": "లుచ్చాతో", "nunci": "లుచ్చా నుంచి", "ni": "లుచ్చాను" }
-      readings: { "plural": "luccālu", "lo": "luccālō", "ki": "luccāki", "to": "luccātō", "nunci": "luccā nuñci", "ni": "luccānu" }
-    - word: "te-6565"
-      forms: { "plural": "లంజలు", "lo": "లంజలో", "ki": "లంజకి", "to": "లంజతో", "nunci": "లంజ నుంచి", "ni": "లంజను" }
-      readings: { "plural": "lañjalu", "lo": "lañjalō", "ki": "lañjaki", "to": "lañjatō", "nunci": "lañja nuñci", "ni": "lañjanu" }
-    - word: "te-6566"
-      forms: { "plural": "ముండలు", "lo": "ముండలో", "ki": "ముండకి", "to": "ముండతో", "nunci": "ముండ నుంచి", "ni": "ముండను" }
-      readings: { "plural": "muṇḍalu", "lo": "muṇḍalō", "ki": "muṇḍaki", "to": "muṇḍatō", "nunci": "muṇḍa nuñci", "ni": "muṇḍanu" }
-    - word: "te-6567"
-      forms: { "plural": "లంజాకొడుకులు", "lo": "లంజాకొడుకులో", "ki": "లంజాకొడుకుకి", "to": "లంజాకొడుకుతో", "nunci": "లంజాకొడుకు నుంచి", "ni": "లంజాకొడుకును" }
-      readings: { "plural": "lañjākoḍukulu", "lo": "lañjākoḍukulō", "ki": "lañjākoḍukuki", "to": "lañjākoḍukutō", "nunci": "lañjākoḍuku nuñci", "ni": "lañjākoḍukunu" }
-    - word: "te-6568"
-      forms: { "plural": "చండాలులు", "lo": "చండాలుడిలో", "ki": "చండాలుడికి", "to": "చండాలుడితో", "nunci": "చండాలుడి నుంచి", "ni": "చండాలుడిని" }
-      readings: { "plural": "caṇḍālulu", "lo": "caṇḍāluḍilō", "ki": "caṇḍāluḍiki", "to": "caṇḍāluḍitō", "nunci": "caṇḍāluḍi nuñci", "ni": "caṇḍāluḍini" }
-    - word: "te-6569"
-      forms: { "plural": "హిజ్రాలు", "lo": "హిజ్రాలో", "ki": "హిజ్రాకి", "to": "హిజ్రాతో", "nunci": "హిజ్రా నుంచి", "ni": "హిజ్రాను" }
-      readings: { "plural": "hijrālu", "lo": "hijrālō", "ki": "hijrāki", "to": "hijrātō", "nunci": "hijrā nuñci", "ni": "hijrānu" }
-
 rules:
   - id: "te-rule-plural"
     slots: ["plural"]
