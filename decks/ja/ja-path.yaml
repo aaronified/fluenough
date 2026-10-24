@@ -126,12 +126,14 @@ units:
       - { id: "who-is-that", text: { "en": "Pointing out who is who in a group photo: I, you, he, she" } }
     reading_passages:
       - { id: "class-photo-caption", text: { "en": "A caption under a class photo naming each person" } }
-  - planned: { id: "ja-family", theme: "family", words: 35 }
+  - decks: ["ja-family", "ja-family-sentences", "ja-reading-family", "*"]
+    words: 35
     listening_passages:
       - { id: "my-family-your-family", text: { "en": "Talking about your own family and someone else's, with the two words for each relative" } }
     reading_passages:
       - { id: "family-introduction", text: { "en": "A short self-introduction naming the family" } }
-  - planned: { id: "ja-numbers-1-20", theme: "numbers-1-20", words: 25 }
+  - decks: ["ja-numbers-1-20", "ja-numbers-1-20-sentences", "ja-reading-numbers-1-20", "*"]
+    words: 25
     listening_passages:
       - { id: "two-ways-to-count", text: { "en": "Counting from one to ten twice: ichi, ni, san and hitotsu, futatsu, mittsu" } }
     reading_passages:

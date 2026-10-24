@@ -1,0 +1,57 @@
+schema: 1
+id: "zh-grammar-clock-time"
+part: "core"
+kind: "grammar"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+"pattern":
+  "slots":
+    - "点"
+    - "点半"
+  "entries":
+    - "lemma": "一"
+      "key": "yi"
+      "reading": "yī"
+      "forms":
+        "点": "一点"
+        "点半": "一点半"
+      "readings":
+        "点": "yì diǎn"
+        "点半": "yì diǎn bàn"
+    - "lemma": "两"
+      "key": "liang"
+      "reading": "liǎng"
+      "forms":
+        "点": "两点"
+        "点半": "两点半"
+      "readings":
+        "点": "liǎng diǎn"
+        "点半": "liǎng diǎn bàn"
+    - "lemma": "七"
+      "key": "qi"
+      "reading": "qī"
+      "forms":
+        "点": "七点"
+        "点半": "七点半"
+      "readings":
+        "点": "qī diǎn"
+        "点半": "qī diǎn bàn"
+    - "lemma": "十"
+      "key": "shi"
+      "reading": "shí"
+      "forms":
+        "点": "十点"
+        "点半": "十点半"
+      "readings":
+        "点": "shí diǎn"
+        "点半": "shí diǎn bàn"
+    - "lemma": "十一"
+      "key": "shiyi"
+      "reading": "shíyī"
+      "forms":
+        "点": "十一点"
+        "点半": "十一点半"
+      "readings":
+        "点": "shíyī diǎn"
+        "点半": "shíyī diǎn bàn"
