@@ -1683,18 +1683,11 @@ def check_pattern(r: Report, pattern: object, *, core: bool = False) -> None:
                 r.error(where, f"a core pattern's {key!r} is in each layer, under "
                                f"pattern")
     else:
-        for key in ("name", "slot_name", "prompt"):
+        for key in ("name", "slot_name"):
             if not _is_str(pattern.get(key)):
                 r.error(where, f"{key} is required")
         _check_optional_text(r, where, pattern, "notes")
-
-    prompt = pattern.get("prompt")
-    if _is_str(prompt) and not core:
-        for token in re.findall(r"\{(\w+)\}", prompt):
-            if token not in ("lemma", "gloss", "slot"):
-                r.error(where, f"prompt uses unknown placeholder {{{token}}}")
-        if "{slot}" not in prompt:
-            r.warn(where, "prompt has no {slot}; every cell will look identical")
+        _check_retired_prompt(r, where, pattern)
 
     slots = pattern.get("slots")
     if not isinstance(slots, list) or not slots:
@@ -3786,6 +3779,27 @@ def _check_layer_bases(r: Report, where: str, value: object,
     return given
 
 
+RETIRED_PROMPT = (
+    "prompt is retired (ADR-0039): the app builds a cell's question itself, "
+    "'{lemma} ({gloss}) — {slot}', and reads a prompt only for decks that still "
+    "have one. Released apps that need it are still in use, so leave it as it is "
+    "until they are not"
+)
+
+
+def _check_retired_prompt(r: Report, where: str, pattern: dict) -> None:
+    """A pattern's `prompt` is optional and retired: flagged where given, and
+    still checked, because the app reads it as written."""
+    if "prompt" not in pattern:
+        return
+    prompt = pattern["prompt"]
+    if not _is_str(prompt):
+        r.error(where, "prompt must be non-empty text or omitted")
+        return
+    r.warn(where, RETIRED_PROMPT)
+    _check_prompt(r, where, prompt)
+
+
 def _check_prompt(r: Report, where: str, prompt: object) -> None:
     if _is_str(prompt):
         for token in re.findall(r"\{(\w+)\}", prompt):
@@ -3800,15 +3814,15 @@ def _check_layer_pattern(r: Report, pattern: object, core_pattern: object) -> li
     the words the merged deck teaches."""
     if not isinstance(pattern, dict):
         r.error("pattern", "is required on a layer of a grammar core: its name, "
-                           "slot_name, prompt and glosses")
+                           "slot_name and glosses")
         return []
     for unknown in sorted(set(pattern) - LAYER_PATTERN_KEYS, key=str):
         r.error("pattern", f"unknown field {unknown!r}")
-    for key in ("name", "slot_name", "prompt"):
+    for key in ("name", "slot_name"):
         if not _is_str(pattern.get(key)):
             r.error("pattern", f"{key} is required")
     _check_optional_text(r, "pattern", pattern, "notes")
-    _check_prompt(r, "pattern", pattern.get("prompt"))
+    _check_retired_prompt(r, "pattern", pattern)
     core_pattern = core_pattern if isinstance(core_pattern, dict) else {}
     core_slots = core_pattern.get("slots")
     core_slots = [s for s in core_slots if isinstance(s, str)] \
