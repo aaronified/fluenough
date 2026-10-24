@@ -1,0 +1,19 @@
+schema: 1
+id: "te-en-grammar-perfect"
+kind: "layer"
+core: "te-grammar-perfect"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The perfect: I have done"
+description: "I have eaten, she has come: an action that is finished, with its result still here. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Perfect"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "cheeyadam": "to do"
+    "velladam": "to go"
+    "raavadam": "to come"
+    "tinadam": "to eat"
+  notes: "The perfect takes the -ి (-i) form of the verb, which says that one action is done, then the present of ఉండు (uṇḍu, to be): నేను తిని ఉన్నాను (nēnu tini unnānu), I have eaten. The ending of ఉండు agrees with the doer as in the present: ఉన్నాను (unnānu) for నేను (nēnu), ఉన్నావు (unnāvu) for నువ్వు (nuvvu), ఉన్నాడు (unnāḍu) for he, ఉంది (undi) for she and it, and ఉన్నారు (unnāru) for మీరు (mīru), plural or respectful, and for వాళ్ళు (vāḷḷu), they. The -ి form changes the stem of చేయడం (cēyaḍaṁ) to చేసి (cēsi) and of రావడం (rāvaḍaṁ) to వచ్చి (vacci); వెళ్ళడం (veḷḷaḍaṁ) keeps its stem in వెళ్ళి (veḷḷi), and తినడం (tinaḍaṁ) in తిని (tini). The past, చేశాను (cēśānu), I did it, says only that the action happened; the perfect says that its result is still here."
