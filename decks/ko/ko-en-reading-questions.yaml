@@ -1,0 +1,70 @@
+schema: 1
+id: "ko-en-reading-questions"
+name: "Korean reading: asking questions"
+kind: reading
+language: { code: ko, iso639_3: kor, name: Korean, script: hangul, tts: "ko-KR", icon: "한" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+"passages":
+  - "id": "ko-information-desk"
+    "title": "At the information desk"
+    "sentences":
+      - "text": "저기요, 선생님은 어디예요?"
+        "reading": "jeogiyo, seonsaengnimeun eodiyeyo?"
+      - "text": "그 사람은 누구예요?"
+        "reading": "geu sarameun nuguyeyo?"
+      - "text": "그 사람은 학생이에요."
+        "reading": "geu sarameun haksaengieyo."
+      - "text": "물은 얼마예요?"
+        "reading": "mureun eolmayeyo?"
+    "questions":
+      - "id": "ko-0082"
+        "prompt":
+          "en": "What does the first line ask?"
+        "options":
+          - "en": "Where the teacher is"
+          - "en": "Who the teacher is"
+        "answer": 1
+      - "id": "ko-0083"
+        "prompt":
+          "en": "The third line says that the person is a student."
+        "answer": true
+      - "id": "ko-0084"
+        "prompt":
+          "en": "Which line asks about a price?"
+        "options":
+          - "en": "The first line"
+          - "en": "The last line"
+        "answer": 2
+  - "id": "ko-visitor-faq"
+    "title": "A visitor's questions"
+    "sentences":
+      - "text": "언제 한국에 가요?"
+        "reading": "eonje hanguge gayo?"
+      - "text": "어떤 커피가 좋아요?"
+        "reading": "eotteon keopiga joayo?"
+      - "text": "이게 뭐예요?"
+        "reading": "ige mwoyeyo?"
+      - "text": "커피는 어때요?"
+        "reading": "keopineun eottaeyo?"
+    "questions":
+      - "id": "ko-0085"
+        "prompt":
+          "en": "What does the first line ask?"
+        "options":
+          - "en": "When you go to Korea"
+          - "en": "Why you go to Korea"
+        "answer": 1
+      - "id": "ko-0086"
+        "prompt":
+          "en": "The third line asks what something is."
+        "answer": true
+      - "id": "ko-0087"
+        "prompt":
+          "en": "Which line asks how the coffee is?"
+        "options":
+          - "en": "The second line"
+          - "en": "The last line"
+        "answer": 2

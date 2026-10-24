@@ -226,6 +226,8 @@ const _layerHeaderFields = {
 const _coreCardFields = {
   'hears',
   'warning',
+  'not_sounds_like',
+  'not_looks_like',
   'id',
   'target',
   'reading',
@@ -1627,6 +1629,8 @@ class _Reader {
       pos: fields.optionalString('pos', allowEmpty: false),
       hears: hears(fields, path),
       warning: fields.optionalString('warning', allowEmpty: false),
+      notSoundsLike: fields.strings('not_sounds_like'),
+      notLooksLike: fields.strings('not_looks_like'),
       gender: fields.optionalString('gender'),
       tags: fields.strings('tags'),
       audio: fields.optionalString('audio'),

@@ -123,12 +123,14 @@ units:
   - decks: ["ko-phrasebook", "ko-first-words", "*"]
     words: 12
   # 2. The first word units, read in the romanisation.
-  - planned: { id: "ko-sound-differences", theme: "sound-differences", words: 16 }
+  - decks: ["ko-sound-differences", "ko-sound-differences-sentences", "ko-reading-sound-differences", "*"]
+    words: 16
     listening_passages:
       - { id: "plain-tense-aspirated", text: { "en": "Words told apart by a plain, a tense or an aspirated consonant: dal, ttal and tal; bul, ppul and pul" } }
     reading_passages:
       - { id: "sound-pairs-list", text: { "en": "A list of word triples in the romanisation that differ by one consonant" } }
-  - planned: { id: "ko-questions", theme: "questions", words: 15 }
+  - decks: ["ko-questions", "ko-questions-sentences", "ko-reading-questions", "*"]
+    words: 15
     listening_passages:
       - { id: "at-the-information-desk", text: { "en": "Asking who, what, where and when at an information desk" } }
     reading_passages:

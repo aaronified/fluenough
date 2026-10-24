@@ -1,0 +1,70 @@
+schema: 1
+id: "ko-en-reading-sound-differences"
+name: "Korean reading: sounds English lacks"
+kind: reading
+language: { code: ko, iso639_3: kor, name: Korean, script: hangul, tts: "ko-KR", icon: "한" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+"passages":
+  - "id": "ko-plain-tense-aspirated"
+    "title": "Plain, tense and aspirated"
+    "sentences":
+      - "text": "달, 딸, 탈."
+        "reading": "dal, ttal, tal."
+      - "text": "불, 뿔, 풀."
+        "reading": "bul, ppul, pul."
+      - "text": "방, 빵."
+        "reading": "bang, ppang."
+      - "text": "자, 차."
+        "reading": "ja, cha."
+    "questions":
+      - "id": "ko-0054"
+        "prompt":
+          "en": "Which word in the first line means 'daughter'?"
+        "options":
+          - "en": "달 (dal)"
+          - "en": "딸 (ttal)"
+        "answer": 2
+      - "id": "ko-0055"
+        "prompt":
+          "en": "불 (bul) and 풀 (pul) differ by a puff of breath after the first sound."
+        "answer": true
+      - "id": "ko-0056"
+        "prompt":
+          "en": "Which word in the third line means 'bread'?"
+        "options":
+          - "en": "방 (bang)"
+          - "en": "빵 (ppang)"
+        "answer": 2
+  - "id": "ko-sound-pairs-list"
+    "title": "Pairs that differ by one consonant"
+    "sentences":
+      - "text": "발, 팔."
+        "reading": "bal, pal."
+      - "text": "도끼, 토끼."
+        "reading": "dokki, tokki."
+      - "text": "사요, 싸요."
+        "reading": "sayo, ssayo."
+      - "text": "뿔, 풀."
+        "reading": "ppul, pul."
+    "questions":
+      - "id": "ko-0057"
+        "prompt":
+          "en": "Which word in the first line means 'arm'?"
+        "options":
+          - "en": "발 (bal)"
+          - "en": "팔 (pal)"
+        "answer": 2
+      - "id": "ko-0058"
+        "prompt":
+          "en": "도끼 (dokki) is an axe and 토끼 (tokki) is a rabbit."
+        "answer": true
+      - "id": "ko-0059"
+        "prompt":
+          "en": "Which word in the third line means 'to be cheap'?"
+        "options":
+          - "en": "사요 (sayo)"
+          - "en": "싸요 (ssayo)"
+        "answer": 2
