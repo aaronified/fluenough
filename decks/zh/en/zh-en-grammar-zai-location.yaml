@@ -1,0 +1,21 @@
+schema: 1
+id: "zh-en-grammar-zai-location"
+kind: "layer"
+core: "zh-grammar-zai-location"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "在 (zài): where a thing is"
+license: "CC-BY-SA-4.0"
+description: "The keys are on the table; where are the keys? 在 (zài) puts a thing in a place. Not yet checked by a Mandarin speaker: please report any mistake."
+tags: ["unreviewed"]
+"pattern":
+  "name": "在 (zài): where a thing is"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "statement": "a statement: it is in or on a place"
+    "question": "a question: where is it?"
+  "entries":
+    "yaoshi": "keys"
+    "shu": "a book"
+    "yizi": "a chair"
+  "notes": "在 (zài) puts a thing in a place: 钥匙在桌子上 (yàoshi zài zhuōzi shàng), the keys are on the table. The place comes last, after 在 (zài): 上 (shàng), on; 下 (xià), under; 里 (lǐ), in. Ask where with 在哪里 (zài nǎlǐ): 钥匙在哪里 (yàoshi zài nǎlǐ), where are the keys? Do not add 吗 (ma) to a question with 哪里 (nǎlǐ)."

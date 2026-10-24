@@ -1,0 +1,23 @@
+schema: 1
+id: "zh-en-grammar-de-possessive"
+kind: "layer"
+core: "zh-grammar-de-possessive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "的 (de): my, your and his"
+license: "CC-BY-SA-4.0"
+description: "My book, your teacher, his room: 的 (de) joins the owner to the thing owned. Not yet checked by a Mandarin speaker: please report any mistake."
+tags: ["unreviewed"]
+"pattern":
+  "name": "的 (de): my, your and his"
+  "slot_name": "person"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "我": "my"
+    "你": "your"
+    "他": "his"
+  "entries":
+    "shu": "a book"
+    "laoshi": "a teacher"
+    "pengyou": "a friend"
+    "fangjian": "a room"
+  "notes": "的 (de) joins a person to the thing they own or are linked to: 我的书 (wǒ de shū), my book; 你的老师 (nǐ de lǎoshī), your teacher; 他的房间 (tā de fángjiān), his room. The noun after 的 (de) does not change, and English has no word for a or the here. 的 (de) is said in a neutral tone, so it has no tone mark. Do not confuse it with 是 (shì): 我是学生 (wǒ shì xuésheng) is I am a student, with no owner."
