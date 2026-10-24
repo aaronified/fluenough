@@ -1,0 +1,122 @@
+schema: 1
+id: "as-en-describing"
+kind: "layer"
+core: "as-describing"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Describing things and feelings"
+license: "CC-BY-SA-4.0"
+description: "How things are: tall, short, soft, dirty, full, and how you feel. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-2274":
+    native: "tall; high"
+    notes:
+      "n1": "ওখ (ukh) is used for people, trees and buildings."
+    examples:
+      "তেওঁ ওখ।": { native: "He is tall.", bases: { "তেওঁ": "he; she (polite)" } }
+      "গছজোপা ওখ।": { native: "The tree is tall.", bases: { "গছজোপা": "the tree" } }
+  "as-2275":
+    native: "short"
+    notes:
+      "n1": "চুটি (suti) is the opposite of দীঘল (dighôl), long."
+    examples:
+      "মোৰ চুলি চুটি।": { native: "My hair is short.", bases: { "মোৰ": "my", "চুলি": "hair" } }
+      "ৰাস্তাটো চুটি।": { native: "The road is short.", bases: { "ৰাস্তাটো": "the road" } }
+  "as-2276":
+    native: "long"
+    notes:
+      "n1": "দীঘল (dighôl) is the opposite of চুটি (suti), short."
+    examples:
+      "ৰাস্তাটো দীঘল।": { native: "The road is long.", bases: { "ৰাস্তাটো": "the road" } }
+      "তেওঁৰ চুলি দীঘল।": { native: "Her hair is long.", bases: { "তেওঁৰ": "her (polite)", "চুলি": "hair" } }
+  "as-2277":
+    native: "wide; broad"
+    notes:
+      "n1": "বহল (bôhôl) is used for a room, a road or a river."
+    examples:
+      "কোঠাটো বহল।": { native: "The room is wide.", bases: { "কোঠাটো": "the room" } }
+      "নৈখন বহল।": { native: "The river is wide.", bases: { "নৈখন": "the river" } }
+  "as-2278":
+    native: "bitter"
+    notes:
+      "n1": "তিতা (titā) is one of the tastes, with মিঠা (mithā), sweet."
+    examples:
+      "ঔষধ তিতা।": { native: "Medicine is bitter.", bases: { "ঔষধ": "medicine" } }
+      "কেৰেলা তিতা।": { native: "Bitter gourd is bitter.", bases: { "কেৰেলা": "bitter gourd" } }
+  "as-2279":
+    native: "salty"
+    notes:
+      "n1": "নোন (nun) is one of the tastes, with মিঠা (mithā), sweet, and টেঙা (teṅā), sour."
+    examples:
+      "চাহ নোন।": { native: "The tea is salty.", bases: { "চাহ": "tea" } }
+      "পিঠা নোন।": { native: "The cake is salty.", bases: { "পিঠা": "cake" } }
+  "as-2280":
+    native: "soft"
+    notes:
+      "n1": "নৰম (nôrôm) is the opposite of শক্ত (xôkt), hard."
+    examples:
+      "বিছনা নৰম।": { native: "The bed is soft.", bases: { "বিছনা": "bed" } }
+      "পিঠাটো নৰম।": { native: "The cake is soft.", bases: { "পিঠাটো": "the cake" } }
+  "as-2281":
+    native: "hard; strong"
+    notes:
+      "n1": "শক্ত (xôkt) is the opposite of নৰম (nôrôm), soft."
+    examples:
+      "পাথৰটো শক্ত।": { native: "The stone is hard.", bases: { "পাথৰটো": "the stone" } }
+      "মোৰ ভাই শক্ত।": { native: "My brother is strong.", bases: { "মোৰ": "my", "ভাই": "brother" } }
+  "as-2282":
+    native: "heavy"
+    notes:
+      "n1": "ভাৰী (bhāri) is the opposite of হাল্কা (hālkā), light."
+    examples:
+      "বেগটো ভাৰী।": { native: "The bag is heavy.", bases: { "বেগটো": "the bag" } }
+      "সেইটো ভাৰী।": { native: "That is heavy.", bases: { "সেইটো": "that" } }
+  "as-2283":
+    native: "light; not heavy"
+    notes:
+      "n1": "হাল্কা (hālkā) is the opposite of ভাৰী (bhāri), heavy."
+    examples:
+      "কিতাপটো হাল্কা।": { native: "The book is light.", bases: { "কিতাপটো": "the book" } }
+      "এইটো হাল্কা।": { native: "This is light.", bases: { "এইটো": "this" } }
+  "as-2284":
+    native: "dirty"
+    notes:
+      "n1": "ময়লা (môyôlā) is the opposite of পৰিষ্কাৰ (porixkār), clean."
+    examples:
+      "কাপোৰখন ময়লা।": { native: "The cloth is dirty.", bases: { "কাপোৰখন": "the cloth" } }
+      "ৰান্ধনীঘৰ ময়লা।": { native: "The kitchen is dirty.", bases: { "ৰান্ধনীঘৰ": "the kitchen" } }
+  "as-2285":
+    native: "clean"
+    notes:
+      "n1": "পৰিষ্কাৰ (porixkār) is the opposite of ময়লা (môyôlā), dirty."
+    examples:
+      "ঘৰটো পৰিষ্কাৰ।": { native: "The house is clean.", bases: { "ঘৰটো": "the house" } }
+      "কাপোৰ পৰিষ্কাৰ।": { native: "The clothes are clean.", bases: { "কাপোৰ": "clothes" } }
+  "as-2286":
+    native: "full"
+    notes:
+      "n1": "ভৰা (bhôrā) is the opposite of খালী (khāli), empty."
+    examples:
+      "গিলাচটো ভৰা।": { native: "The glass is full.", bases: { "গিলাচটো": "the glass" } }
+      "বেগ কিতাপেৰে ভৰা।": { native: "The bag is full of books.", bases: { "বেগ": "bag", "কিতাপেৰে": "with books" } }
+  "as-2287":
+    native: "happy; glad"
+    notes:
+      "n1": "খুচীয়া (khusiyā) is the opposite of দুখী (dukhi), sad."
+    examples:
+      "মই খুচীয়া।": { native: "I am happy.", bases: { "মই": "I" } }
+      "শিশুটো খুচীয়া।": { native: "The child is happy.", bases: { "শিশুটো": "the child" } }
+  "as-2288":
+    native: "sad; unhappy"
+    notes:
+      "n1": "দুখী (dukhi) is the opposite of খুচীয়া (khusiyā), happy."
+    examples:
+      "তেওঁ দুখী।": { native: "He is sad.", bases: { "তেওঁ": "he; she (polite)" } }
+      "মই আজি দুখী।": { native: "I am sad today.", bases: { "মই": "I" } }
+  "as-2289":
+    native: "tired"
+    notes:
+      "n1": "ক্লান্ত (klānt) is used after long work or walking."
+    examples:
+      "মই ক্লান্ত।": { native: "I am tired.", bases: { "মই": "I" } }
+      "সি ক্লান্ত।": { native: "He is tired.", bases: { "সি": "he; she" } }
