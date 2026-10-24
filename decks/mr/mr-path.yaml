@@ -158,7 +158,8 @@ units:
   # themes, each its words, its rules, then its sentences.
   - decks: ["mr-numbers-big", "*"]
     words: 97
-  - planned: { id: "mr-food", theme: "food", words: 59 }
+  - decks: ["mr-food", "*"]
+    words: 59
     listening_passages:
       - { id: "at-the-sweet-shop", text: { "en": "Choosing sweets and snacks at a sweet shop" } }
     reading_passages:
@@ -190,7 +191,8 @@ units:
       - { id: "at-the-doctors", text: { "en": "Telling a doctor where it hurts" } }
     reading_passages:
       - { id: "stretching-chart", text: { "en": "A chart of simple morning stretches" } }
-  - planned: { id: "mr-places", theme: "places", words: 56 }
+  - decks: ["mr-places", "*"]
+    words: 56
     listening_passages:
       - { id: "walk-to-the-market", text: { "en": "A neighbour names the places you pass on the way to the market" } }
     reading_passages:

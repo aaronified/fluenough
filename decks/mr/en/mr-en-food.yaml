@@ -1,0 +1,325 @@
+schema: 1
+id: "mr-en-food"
+kind: "layer"
+core: "mr-food"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Food and drink"
+license: "CC-BY-SA-4.0"
+description: "Dishes, sweets and drinks, and how to order them. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-0912":
+    native: "vegetarian"
+    notes:
+      "n1": "The opposite is मांसाहारी (māṁsāhāri), non-vegetarian."
+    examples:
+      "मला शाकाहारी जेवण हवे आहे.": { native: "I want a vegetarian meal.", bases: { "मला": "I", "आहे": "to be" } }
+      "हे हॉटेल शाकाहारी आहे.": { native: "This hotel is vegetarian.", bases: { "हे": "this", "आहे": "to be" } }
+  "mr-0913":
+    native: "non-vegetarian"
+    notes:
+      "n1": "Chicken and fish are non-vegetarian food: चिकन (cikan), मासा (māsā)."
+    examples:
+      "तो मांसाहारी आहे.": { native: "He is non-vegetarian.", bases: { "आहे": "to be" } }
+      "त्यांना मांसाहारी जेवण आवडते.": { native: "They like non-vegetarian food.", bases: { "त्यांना": "they" } }
+  "mr-0914":
+    native: "dosa (a thin crisp pancake)"
+    notes:
+      "n1": "A South Indian dish, often eaten at breakfast: नाश्त्याला (nāśtyālā), at breakfast."
+    examples:
+      "मला डोसा आवडतो.": { native: "I like dosa.", bases: { "मला": "I" } }
+      "तो सकाळी डोसा खातो.": { native: "He eats dosa in the morning.", bases: { "सकाळी": "morning", "खातो": "to eat" } }
+  "mr-0915":
+    native: "idli (a steamed rice cake)"
+    notes:
+      "n1": "A steamed rice cake, often with चटणी (caṭṇi), chutney."
+    examples:
+      "इडली गरम आहे.": { native: "The idli is hot.", bases: { "गरम": "hot", "आहे": "to be" } }
+      "मला दोन इडल्या द्या.": { native: "Give me two idlis.", bases: { "मला": "I", "इडल्या": "idlis", "द्या": "to give" } }
+  "mr-0916":
+    native: "vada (a fried savoury)"
+    notes:
+      "n1": "Also वडापाव (vaḍāpāv), a vada in a bread roll."
+    examples:
+      "हा वडा गरम आहे.": { native: "This vada is hot.", bases: { "हा": "this", "गरम": "hot", "आहे": "to be" } }
+      "तो वडा खातो.": { native: "He eats a vada.", bases: { "खातो": "to eat" } }
+  "mr-0917":
+    native: "bhaji (fried fritters)"
+    notes:
+      "n1": "Fried in gram flour: बेसन (besan), gram flour."
+    examples:
+      "पावसात भजी खा.": { native: "Eat fritters in the rain.", bases: { "पावसात": "in the rain", "खा": "to eat" } }
+      "भजी गरम आहेत.": { native: "The fritters are hot.", bases: { "गरम": "hot", "आहेत": "to be" } }
+  "mr-0918":
+    native: "samosa"
+    notes:
+      "n1": "A triangle of fried pastry with a filling of potato."
+    examples:
+      "एक समोसा द्या.": { native: "Give me a samosa.", bases: { "एक": "one", "द्या": "to give" } }
+      "समोसा तिखट आहे.": { native: "The samosa is spicy.", bases: { "आहे": "to be" } }
+  "mr-0919":
+    native: "puri (fried bread)"
+    notes:
+      "n1": "A round fried bread, often eaten with भाजी (bhāji), vegetables."
+    examples:
+      "पुरी भाजी खा.": { native: "Eat puri with vegetable curry.", bases: { "खा": "to eat" } }
+      "पुरी फुगली.": { native: "The puri puffed up.", bases: { "फुगली": "to puff up" } }
+  "mr-0920":
+    native: "upma (savoury semolina)"
+    notes:
+      "n1": "A breakfast dish of semolina with mustard seeds."
+    examples:
+      "मी सकाळी उपमा खाल्ला.": { native: "I ate upma in the morning.", bases: { "मी": "I", "सकाळी": "morning", "खाल्ला": "to eat" } }
+      "उपमा गरम आहे.": { native: "The upma is hot.", bases: { "गरम": "hot", "आहे": "to be" } }
+  "mr-0921":
+    native: "poha (flattened rice)"
+    notes:
+      "n1": "Flattened rice, cooked with onion: कांदा (kāndā)."
+    examples:
+      "आई पोहे बनवते.": { native: "Mother makes poha.", bases: { "बनवते": "to make" } }
+      "मला पोहे आवडतात.": { native: "I like poha.", bases: { "मला": "I" } }
+  "mr-0922":
+    native: "misal (a spicy bean curry)"
+    notes:
+      "n1": "A spicy curry of sprouted beans, often with पाव (pāv), a bread roll."
+    examples:
+      "मला मिसळ हवी आहे.": { native: "I want misal.", bases: { "मला": "I", "आहे": "to be" } }
+      "मिसळ तिखट आहे.": { native: "The misal is spicy.", bases: { "आहे": "to be" } }
+  "mr-0923":
+    native: "shira (semolina sweet)"
+    notes:
+      "n1": "A sweet of semolina, ghee and sugar."
+    examples:
+      "मला गोड शिरा आवडतो.": { native: "I like sweet shira.", bases: { "मला": "I" } }
+      "शिरा गरम आहे.": { native: "The shira is warm.", bases: { "गरम": "warm", "आहे": "to be" } }
+  "mr-0924":
+    native: "kheer (rice pudding)"
+    notes:
+      "n1": "A sweet rice pudding with milk."
+    examples:
+      "खीर गोड आहे.": { native: "The kheer is sweet.", bases: { "गोड": "sweet", "आहे": "to be" } }
+      "सणाला खीर बनवतात.": { native: "They make kheer for festivals.", bases: { "सणाला": "for festivals", "बनवतात": "to make" } }
+  "mr-0925":
+    native: "puran poli (sweet flatbread)"
+    notes:
+      "n1": "A sweet flatbread, made at festivals such as दिवाळी (divāḷi)."
+    examples:
+      "दिवाळीला पुरणपोळी करतात.": { native: "They make puran poli at Diwali.", bases: { "दिवाळीला": "at Diwali", "करतात": "to do" } }
+      "पुरणपोळी गोड आहे.": { native: "Puran poli is sweet.", bases: { "गोड": "sweet", "आहे": "to be" } }
+  "mr-0926":
+    native: "shrikhand (sweet yoghurt)"
+    notes:
+      "n1": "A thick sweet made of yoghurt and sugar."
+    examples:
+      "श्रीखंड पुरीबरोबर खातात.": { native: "They eat shrikhand with puri.", bases: { "पुरीबरोबर": "with puri", "खातात": "to eat" } }
+      "श्रीखंड गोड आहे.": { native: "Shrikhand is sweet.", bases: { "गोड": "sweet", "आहे": "to be" } }
+  "mr-0927":
+    native: "modak (sweet dumpling)"
+    notes:
+      "n1": "A sweet dumpling offered to गणपती (gaṇpti), Ganesha."
+    examples:
+      "गणपतीला मोदक असतात.": { native: "There are modaks for Ganesha.", bases: { "गणपतीला": "for Ganesha", "असतात": "to be" } }
+      "मला मोदक आवडतात.": { native: "I like modaks.", bases: { "मला": "I" } }
+  "mr-0928":
+    native: "laddoo (a round sweet)"
+    notes:
+      "n1": "A round sweet made of flour, sugar and ghee."
+    examples:
+      "आई रोज लाडू बनवते.": { native: "Mother makes laddoos every day.", bases: { "बनवते": "to make" } }
+      "एक लाडू घे.": { native: "Take a laddoo.", bases: { "एक": "one", "घे": "to take" } }
+  "mr-0929":
+    native: "barfi (milk fudge)"
+    notes:
+      "n1": "A sweet of milk and sugar, cut into pieces."
+    examples:
+      "बर्फी गोड आहे.": { native: "The barfi is sweet.", bases: { "गोड": "sweet", "आहे": "to be" } }
+      "मला एक बर्फी हवी आहे.": { native: "I want a barfi.", bases: { "मला": "I", "एक": "one", "आहे": "to be" } }
+  "mr-0930":
+    native: "jalebi (a syrup sweet)"
+    notes:
+      "n1": "A crisp sweet dipped in sugar syrup."
+    examples:
+      "जिलेबी गरम आहे.": { native: "The jalebi is hot.", bases: { "गरम": "hot", "आहे": "to be" } }
+      "मुले जिलेबी खातात.": { native: "The children eat jalebi.", bases: { "खातात": "to eat" } }
+  "mr-0931":
+    native: "gulab jamun (a sweet)"
+    notes:
+      "n1": "A soft sweet dumpling in sugar syrup."
+    examples:
+      "गुलाबजाम खूप गोड आहेत.": { native: "Gulab jamun are very sweet.", bases: { "गोड": "sweet", "आहेत": "to be" } }
+      "त्याने दोन गुलाबजाम खाल्ले.": { native: "He ate two gulab jamuns.", bases: { "खाल्ले": "to eat" } }
+  "mr-0932":
+    native: "ice cream"
+    notes:
+      "n1": "A cold sweet, eaten in summer: उन्हाळ्यात (unhāḷyāt), in summer."
+    examples:
+      "मुलांना आइस्क्रीम आवडते.": "The children like ice cream."
+      "आइस्क्रीम थंड आहे.": { native: "The ice cream is cold.", bases: { "थंड": "cold", "आहे": "to be" } }
+  "mr-0933":
+    native: "juice"
+    notes:
+      "n1": "A juice, as in संत्र्याचा रस (santryācā ras), orange juice."
+    examples:
+      "मला संत्र्याचा रस हवा आहे.": { native: "I want orange juice.", bases: { "मला": "I", "संत्र्याचा": "of orange", "आहे": "to be" } }
+      "ताजा रस प्या.": { native: "Drink fresh juice.", bases: { "ताजा": "fresh", "प्या": "to drink" } }
+  "mr-0934":
+    native: "sherbet (a cold drink)"
+    notes:
+      "n1": "A cold sweet drink made of fruit or lemon."
+    examples:
+      "उन्हाळ्यात सरबत प्या.": { native: "Drink sherbet in summer.", bases: { "उन्हाळ्यात": "in summer", "प्या": "to drink" } }
+      "सरबत थंड आहे.": { native: "The sherbet is cold.", bases: { "थंड": "cold", "आहे": "to be" } }
+  "mr-0935":
+    native: "buttermilk"
+    notes:
+      "n1": "Buttermilk is drunk after a meal."
+    examples:
+      "जेवणानंतर ताक प्या.": { native: "Drink buttermilk after the meal.", bases: { "जेवणानंतर": "after the meal", "प्या": "to drink" } }
+      "ताक आंबट आहे.": { native: "The buttermilk is sour.", bases: { "आंबट": "sour", "आहे": "to be" } }
+  "mr-0936":
+    native: "lassi (a yoghurt drink)"
+    notes:
+      "n1": "A drink of yoghurt, sweet or salted."
+    examples:
+      "गरम दिवसात लस्सी छान असते.": { native: "On a hot day lassi is nice.", bases: { "गरम": "hot", "दिवसात": "in the day", "असते": "to be" } }
+      "मला गोड लस्सी आवडते.": { native: "I like sweet lassi.", bases: { "मला": "I" } }
+  "mr-0937":
+    native: "curd; yoghurt"
+    notes:
+      "n1": "Curd is made by setting milk: दूध विरजवून (dudh virjvun), by setting the milk."
+    examples:
+      "दही आणि भात खा.": { native: "Eat curd and rice.", bases: { "खा": "to eat" } }
+      "दूध विरजवून दही करतात.": { native: "They set milk to make curd.", bases: { "विरजवून": "to set curd", "करतात": "to do" } }
+  "mr-0938":
+    native: "bhel (puffed rice snack)"
+    notes:
+      "n1": "A snack of puffed rice and chutney, sold at the beach."
+    examples:
+      "चौपाटीवर भेळ मिळते.": { native: "Bhel is sold at the beach.", bases: { "चौपाटीवर": "at the beach", "मिळते": "to get" } }
+      "भेळ तिखट आहे.": { native: "The bhel is spicy.", bases: { "आहे": "to be" } }
+  "mr-0939":
+    native: "pani puri"
+    notes:
+      "n1": "Crisp shells filled with spiced water: पाणी (pāṇi), water."
+    examples:
+      "मला पाणीपुरी खूप आवडते.": { native: "I like pani puri very much.", bases: { "मला": "I" } }
+      "पाणीपुरी तिखट आहे.": { native: "The pani puri is spicy.", bases: { "आहे": "to be" } }
+  "mr-0940":
+    native: "sandwich"
+    notes:
+      "n1": "A sandwich is made with bread."
+    examples:
+      "मुलांना सँडविच हवे आहे.": { native: "The children want a sandwich.", bases: { "आहे": "to be" } }
+      "सँडविच ताजे आहे.": { native: "The sandwich is fresh.", bases: { "ताजे": "fresh", "आहे": "to be" } }
+  "mr-0941":
+    native: "pizza"
+    notes:
+      "n1": "A flat bread with cheese and toppings."
+    examples:
+      "रविवारी पिझ्झा खातो.": { native: "He eats pizza on Sunday.", bases: { "रविवारी": "on Sunday", "खातो": "to eat" } }
+      "मला पिझ्झा आवडतो.": { native: "I like pizza.", bases: { "मला": "I" } }
+  "mr-0942":
+    native: "burger"
+    notes:
+      "n1": "A burger is a bread roll with a filling."
+    examples:
+      "मुलगा बर्गर खातो.": { native: "The boy eats a burger.", bases: { "खातो": "to eat" } }
+      "बर्गर मोठा आहे.": { native: "The burger is big.", bases: { "आहे": "to be" } }
+  "mr-0943":
+    native: "noodles"
+    notes:
+      "n1": "Noodles are a plural word in this use."
+    examples:
+      "नूडल्स गरम आहेत.": { native: "The noodles are hot.", bases: { "गरम": "hot", "आहेत": "to be" } }
+      "ती नूडल्स बनवते.": { native: "She makes noodles.", bases: { "बनवते": "to make" } }
+  "mr-0944":
+    native: "salad of raw or cooked vegetables"
+    notes:
+      "n1": "A salad of vegetables with yoghurt, served with a meal."
+    examples:
+      "जेवणासोबत कोशिंबीर घ्या.": { native: "Take a salad with the meal.", bases: { "जेवणासोबत": "with the meal", "घ्या": "to take" } }
+      "ही कोशिंबीर ताजी आहे.": { native: "This salad is fresh.", bases: { "ही": "this", "ताजी": "fresh", "आहे": "to be" } }
+  "mr-0945":
+    native: "chutney"
+    notes:
+      "n1": "A chutney of mint, coriander or tamarind, eaten with इडली (iḍli)."
+    examples:
+      "इडलीबरोबर चटणी द्या.": { native: "Give chutney with the idli.", bases: { "इडलीबरोबर": "with the idli", "द्या": "to give" } }
+      "चटणी तिखट आहे.": { native: "The chutney is spicy.", bases: { "आहे": "to be" } }
+  "mr-0946":
+    native: "pickle"
+    notes:
+      "n1": "A pickle of mango or lemon, eaten with a meal."
+    examples:
+      "मला लोणचे आवडते.": { native: "I like pickle.", bases: { "मला": "I" } }
+      "लोणचे तिखट आहे.": { native: "The pickle is spicy.", bases: { "आहे": "to be" } }
+  "mr-0947":
+    native: "papad (a thin crisp)"
+    notes:
+      "n1": "A thin crisp, eaten with a meal."
+    examples:
+      "जेवणात पापड आहे.": { native: "There is papad with the meal.", bases: { "जेवणात": "with the meal", "आहे": "to be" } }
+      "पापड कुरकुरीत आहे.": { native: "The papad is crisp.", bases: { "कुरकुरीत": "crisp", "आहे": "to be" } }
+  "mr-0948":
+    native: "dal (a lentil soup)"
+    notes:
+      "n1": "Dal is a thin soup of lentils, eaten with rice."
+    examples:
+      "वरण भात खा.": { native: "Eat dal and rice.", bases: { "खा": "to eat" } }
+      "वरण गरम आहे.": { native: "The dal is hot.", bases: { "गरम": "hot", "आहे": "to be" } }
+  "mr-0949":
+    native: "amti (a tangy lentil curry)"
+    notes:
+      "n1": "A tangy lentil curry, sour with tamarind."
+    examples:
+      "आमटी आंबट आहे.": { native: "The amti is sour.", bases: { "आंबट": "sour", "आहे": "to be" } }
+      "मला आमटी आवडते.": { native: "I like amti.", bases: { "मला": "I" } }
+  "mr-0950":
+    native: "brinjal; aubergine"
+    notes:
+      "n1": "Brinjal, a vegetable: वांगी (vāṅgi) is used in the plural."
+    examples:
+      "आई वांगी चिरते.": { native: "Mother chops brinjal.", bases: { "चिरते": "to chop" } }
+      "वांगी स्वस्त आहेत.": { native: "Brinjals are cheap.", bases: { "आहेत": "to be" } }
+  "mr-0951":
+    native: "cauliflower"
+    notes:
+      "n1": "Cauliflower, a vegetable, in a dish: फ्लॉवरची भाजी (phlôvrci bhāji), cauliflower curry."
+    examples:
+      "फ्लॉवरची भाजी छान आहे.": { native: "The cauliflower curry is nice.", bases: { "फ्लॉवरची": "of cauliflower", "आहे": "to be" } }
+      "फ्लॉवर पांढरा आहे.": { native: "Cauliflower is white.", bases: { "पांढरा": "white", "आहे": "to be" } }
+  "mr-0952":
+    native: "cabbage"
+    notes:
+      "n1": "Cabbage is a green vegetable: कोबीची भाजी (kobici bhāji), cabbage curry."
+    examples:
+      "कोबी हिरवी आहे.": { native: "The cabbage is green.", bases: { "हिरवी": "green", "आहे": "to be" } }
+      "कोबीची भाजी खा.": { native: "Eat the cabbage curry.", bases: { "कोबीची": "of cabbage", "खा": "to eat" } }
+  "mr-0953":
+    native: "carrot"
+    notes:
+      "n1": "A carrot is orange and eaten raw or cooked."
+    examples:
+      "गाजर लाल आहे.": { native: "The carrot is red.", bases: { "लाल": "red", "आहे": "to be" } }
+      "गाजर कापा.": { native: "Cut the carrot.", bases: { "कापा": "to cut" } }
+  "mr-0954":
+    native: "peas"
+    notes:
+      "n1": "Green peas, eaten as a vegetable."
+    examples:
+      "मटार हिरवे आहेत.": { native: "The peas are green.", bases: { "हिरवे": "green", "आहेत": "to be" } }
+      "मटार भाजीत घाला.": { native: "Put peas in the curry.", bases: { "भाजीत": "in the curry", "घाला": "to put in" } }
+  "mr-0955":
+    native: "spinach"
+    notes:
+      "n1": "Spinach, a leafy vegetable: पालक पराठा (pālak parāṭhā), spinach paratha."
+    examples:
+      "पालक भाजी आरोग्यासाठी चांगली आहे.": { native: "Spinach curry is good for health.", bases: { "पालक": "spinach", "आरोग्यासाठी": "for health", "चांगली": "good", "आहे": "to be" } }
+      "पालक पराठा खा.": { native: "Eat spinach paratha.", bases: { "पराठा": "paratha", "खा": "to eat" } }
+  "mr-0956":
+    native: "cucumber"
+    notes:
+      "n1": "A cucumber is eaten raw, often in a सॅलड (sêlaḍ), a salad."
+    examples:
+      "काकडी ताजी आहे.": { native: "The cucumber is fresh.", bases: { "ताजी": "fresh", "आहे": "to be" } }
+      "सॅलडमध्ये काकडी घाला.": { native: "Put cucumber in the salad.", bases: { "सॅलडमध्ये": "in the salad", "घाला": "to put in" } }
