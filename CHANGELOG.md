@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.1] - 2026-10-24
+
 ### Added
 
 - `tools/deck_similarity.py` lists, for a reviewer, the words of a language that sound alike (IPA one segment apart, only between very close sounds: short and long, unaspirated and aspirated, dental and retroflex), the same spelling with another sound, and spellings a nukta, or a chandrabindu and an anusvara, apart, marking each pair a `pair`, `homograph` or `lookalike` note already explains; it only warns and changes no deck (#692).
