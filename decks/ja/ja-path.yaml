@@ -114,12 +114,14 @@ units:
       - { id: "at-the-information-desk", text: { "en": "Asking who, what, where and when at an information desk" } }
     reading_passages:
       - { id: "visitor-faq", text: { "en": "A short visitor's sheet of questions and answers" } }
-  - planned: { id: "ja-addressing", theme: "addressing", words: 20 }
+  - decks: ["ja-addressing", "ja-addressing-sentences", "ja-reading-addressing", "*"]
+    words: 20
     listening_passages:
       - { id: "san-and-sensei", text: { "en": "Meeting a teacher and a classmate: names with san and sensei" } }
     reading_passages:
       - { id: "name-cards", text: { "en": "Business cards exchanged at a meeting, surname first" } }
-  - planned: { id: "ja-pronouns", theme: "pronouns", words: 20 }
+  - decks: ["ja-pronouns", "ja-pronouns-sentences", "ja-reading-pronouns", "*"]
+    words: 20
     listening_passages:
       - { id: "who-is-that", text: { "en": "Pointing out who is who in a group photo: I, you, he, she" } }
     reading_passages:
