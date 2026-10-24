@@ -74,7 +74,8 @@ units:
     words: 10
   - decks: ["as-addressing", "*"]
     words: 13
-  - planned: { id: "as-pronouns", theme: "pronouns", words: 24 }
+  - decks: ["as-pronouns", "*"]
+    words: 24
     listening_passages:
       - { id: "who-is-who", text: { "en": "Pointing out who is who at a family gathering: he, she, they" } }
     reading_passages:
@@ -92,12 +93,14 @@ units:
   # until the Wikipedia counts are written, #516).
   - decks: ["as-about-me", "*"]
     words: 10
-  - planned: { id: "as-verbs", theme: "everyday-verbs", words: 30 }
+  - decks: ["as-verbs", "*"]
+    words: 30
     listening_passages:
       - { id: "morning-routine", text: { "en": "A mother says what each person in the house does in the morning" } }
     reading_passages:
       - { id: "fridge-note", text: { "en": "A note on the fridge: what to eat, what to drink and where things are" } }
-  - planned: { id: "as-adverbs", theme: "adverbs", words: 45 }
+  - decks: ["as-adverbs", "*"]
+    words: 45
     listening_passages:
       - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
     reading_passages:
