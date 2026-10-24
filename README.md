@@ -126,10 +126,10 @@ below is written from `decks/index.json` each time the decks change.
 | Bengali | Eastern Nagari | A1 |
 | Gujarati | Gujarati | in progress |
 | Hindustani | Devanagari, Perso-Arabic | A1 |
-| Japanese | Kana, Han | in progress |
+| Japanese | Kana, Kanji | in progress |
 | Kannada | Kannada | A1 |
 | Korean | Hangul | in progress |
-| Mandarin Chinese | Simplified Han, Traditional Han | in progress |
+| Mandarin Chinese | Simplified Hanzi, Traditional Hanzi | in progress |
 | Marathi | Devanagari | A1 |
 | Spanish | Latin | A1 |
 | Telugu | Telugu | B1 |
