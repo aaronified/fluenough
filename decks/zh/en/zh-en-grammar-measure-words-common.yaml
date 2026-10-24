@@ -1,0 +1,33 @@
+schema: 1
+id: "zh-en-grammar-measure-words-common"
+kind: "layer"
+core: "zh-grammar-measure-words-common"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The common measure words: 本, 杯, 瓶, 双, 件, 位, 个 and 斤"
+license: "CC-BY-SA-4.0"
+description: "Two books, two cups of tea, two bottles of water, two pairs of shoes, two pieces of clothing, two polite teachers, two people and two jin of rice: each noun takes its own measure word. Not yet checked by a Mandarin speaker: please report any mistake."
+tags: ["unreviewed"]
+"pattern":
+  "name": "The common measure words: 本, 杯, 瓶, 双, 件, 位, 个 and 斤"
+  "slot_name": "measure word"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "本": "a bound thing, counted as a book"
+    "杯": "a cup of"
+    "瓶": "a bottle of"
+    "双": "a pair of"
+    "件": "a piece of"
+    "位": "a polite person, counted as a person"
+    "个": "a general item or a person"
+    "斤": "a jin (500 grams) of"
+  "entries":
+    "shu": "book"
+    "cha": "tea"
+    "shui": "water"
+    "xie": "shoes"
+    "yifu": "clothes"
+    "laoshi": "teacher"
+    "ren": "person"
+    "pingguo": "apple"
+    "mi": "rice"
+  "notes": "Each noun takes its own measure word between the number and the noun: 两本书 (liǎng běn shū), two books; 两杯茶 (liǎng bēi chá), two cups of tea; 两瓶水 (liǎng píng shuǐ), two bottles of water; 两双鞋 (liǎng shuāng xié), two pairs of shoes; 两件衣服 (liǎng jiàn yīfu), two pieces of clothing. 位 (wèi) is the polite measure for a person: 两位老师 (liǎng wèi lǎoshī). When no other measure fits, 个 (gè) is the general one: 两个人 (liǎng gè rén). 斤 (jīn) counts weight: 两斤米 (liǎng jīn mǐ), two jin of rice."
