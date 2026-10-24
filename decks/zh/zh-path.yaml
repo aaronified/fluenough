@@ -292,19 +292,23 @@ units:
       - { id: "a-quiet-town", text: { "en": "Describing a town with hen and no verb for is: quiet, busy, not expensive" } }
     reading_passages:
       - { id: "hotel-review", text: { "en": "A short hotel review: the room, the staff, the food" } }
-  - planned: { id: "zh-grammar-measure-words", grammar: ["measure-ge", "number-measure-noun", "zhe-na-measure"] }
+  - decks: ["zh-grammar-measure-ge", "zh-grammar-number-measure-noun", "zh-grammar-zhe-na-measure", "zh-grammar-measure-sentences"]
+    words: 0
+    grammar: ["measure-ge", "number-measure-noun", "zhe-na-measure"]
     listening_passages:
       - { id: "this-one-that-one", text: { "en": "Pointing at things in a shop with ge: this one, that one, which one, three of them" } }
     reading_passages:
       - { id: "shop-labels", text: { "en": "Labels in a shop window counting its goods" } }
   # 6. Sentences, each after its words and rules; then the other A1
   # themes, each its words, its rules, then its sentences.
-  - planned: { id: "zh-work", theme: "work", words: 35 }
+  - decks: ["zh-work", "zh-work-sentences", "zh-reading-work", "*"]
+    words: 35
     listening_passages:
       - { id: "what-is-your-job", text: { "en": "Two people ask each other what they do for a living" } }
     reading_passages:
       - { id: "job-card", text: { "en": "A business card and a short job description" } }
-  - planned: { id: "zh-numbers-big", theme: "numbers-big", words: 35 }
+  - decks: ["zh-numbers-big", "zh-numbers-big-sentences", "zh-reading-numbers-big", "*"]
+    words: 35
     listening_passages:
       - { id: "prices-and-years", text: { "en": "Hearing prices in yuan, years and phone numbers, with wan for ten thousand" } }
     reading_passages:
