@@ -468,6 +468,9 @@ void main() {
         state: state,
       );
       final l10n = l10nOf(tester);
+      expect(tester.takeException(), isNull);
+      expect(find.byType(SummaryPage), findsOneWidget);
+      expect(find.text(l10n.summaryLanguageDone('Bengali')), findsOneWidget);
       expect(find.text(l10n.summaryUnlockedTitle), findsOneWidget);
       expect(find.text(l10n.summaryUnlockedWords(1)), findsOneWidget);
       expect(find.text(l10n.summaryUnlockedRules(1)), findsNothing);
