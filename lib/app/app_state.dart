@@ -571,10 +571,7 @@ class AppState extends ChangeNotifier {
     };
     return <DeckEntry>[
       for (final entry in _catalog.decks)
-        if (isUnratedAdultDeck(entry.deck))
-          entry
-        else if (shown[entry.path] case final seen?)
-          seen,
+        if (isUnratedAdultDeck(entry.deck)) entry else ?shown[entry.path],
     ];
   }
 
