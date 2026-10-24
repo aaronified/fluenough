@@ -38,7 +38,7 @@ def dots_of(cell: str) -> str:
 class BrailleCourse(unittest.TestCase):
     def _ids_are_kept(self):
         ids = sorted(c["id"] for _, raw in cores() for c in raw["cards"])
-        self.assertEqual(ids, [f"qbe-{i:04d}" for i in range(1, 52)])
+        self.assertEqual(ids, [f"qbe-{i:04d}" for i in range(1, 74)])
 
     def _targets_are_braille_without_a_reading(self):
         for _, raw in cores():
