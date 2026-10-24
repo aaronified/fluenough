@@ -1,0 +1,21 @@
+schema: 1
+id: "zh-en-grammar-mei-you"
+kind: "layer"
+core: "zh-grammar-mei-you"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "没有 (méiyǒu): not to have"
+license: "CC-BY-SA-4.0"
+description: "I have a book, I do not have a book: the negative of 有 (yǒu) is 没有 (méiyǒu). Not yet checked by a Mandarin speaker: please report any mistake."
+tags: ["unreviewed"]
+"pattern":
+  "name": "没有 (méiyǒu): not to have"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "statement": "with 有 (yǒu), to have"
+    "negative": "with 没有 (méiyǒu), not to have"
+  "entries":
+    "shu": "a book"
+    "yaoshi": "keys"
+    "dianhua": "a phone"
+  "notes": "The negative of 有 (yǒu) is 没有 (méiyǒu), with 没 (méi), not 不 (bù): 我没有书 (wǒ méiyǒu shū), I do not have a book. Never 我不有书 (wǒ bù yǒu shū). 没有 (méiyǒu) does not change for the person: 他没有电话 (tā méiyǒu diànhuà), he does not have a phone."
