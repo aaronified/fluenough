@@ -473,6 +473,12 @@ void main() {
       expect(tester.takeException(), isNull);
       expect(find.byType(SummaryPage), findsOneWidget);
       expect(find.text(l10n.summaryLanguageDone('Bengali')), findsOneWidget);
+      // The summary is a lazy list: scroll until the card is built.
+      await tester.scrollUntilVisible(
+        find.text(l10n.summaryUnlockedTitle),
+        200,
+        scrollable: find.byType(Scrollable).first,
+      );
       expect(find.text(l10n.summaryUnlockedTitle), findsOneWidget);
       expect(find.text(l10n.summaryUnlockedWords(1)), findsOneWidget);
       expect(find.text(l10n.summaryUnlockedRules(1)), findsNothing);
