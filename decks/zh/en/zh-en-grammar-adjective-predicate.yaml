@@ -1,0 +1,22 @@
+schema: 1
+id: "zh-en-grammar-adjective-predicate"
+kind: "layer"
+core: "zh-grammar-adjective-predicate"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "A describing word as the verb, with no 是 (shì)"
+license: "CC-BY-SA-4.0"
+description: "He is busy, is he busy? A describing word is the verb of its sentence, so 是 (shì) does not come before it. Not yet checked by a Mandarin speaker: please report any mistake."
+tags: ["unreviewed"]
+"pattern":
+  "name": "A describing word as the verb, with no 是 (shì)"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "statement": "a statement, with 很 (hěn)"
+    "question": "a yes-or-no question, with 吗 (ma) at the end"
+  "entries":
+    "mang": "busy"
+    "anjing": "quiet"
+    "re": "hot"
+    "hao": "good, well"
+  "notes": "A describing word is the verb of its sentence, so 是 (shì) is not put before it: 我是忙 (wǒ shì máng) is wrong; say 我很忙 (wǒ hěn máng), I am busy. To ask a yes-or-no question, add 吗 (ma) at the end: 他忙吗 (tā máng ma), is he busy? and 房间安静吗 (fángjiān ānjìng ma), is the room quiet? 你好吗 (nǐ hǎo ma), how are you?, is the same pattern with 好 (hǎo) in a set phrase."
