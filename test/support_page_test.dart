@@ -163,6 +163,7 @@ void main() {
           textScale: 1.4,
           themeMode: mode,
         );
+        await scrollTo(tester, find.text(p.l10n.supportOpenUpi));
         await tester.tap(find.text(p.l10n.supportOpenUpi));
         await tester.pumpAndSettle();
         await scrollThrough(tester);
