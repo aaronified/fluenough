@@ -1,0 +1,25 @@
+schema: 1
+id: "zh-en-grammar-number-measure-noun"
+kind: "layer"
+core: "zh-grammar-number-measure-noun"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Number, measure word, noun: one, two and three"
+license: "CC-BY-SA-4.0"
+description: "A number, its measure word and a noun: one book, two cups of tea, three bottles of water. Not yet checked by a Mandarin speaker: please report any mistake."
+tags: ["unreviewed"]
+"pattern":
+  "name": "Number, measure word, noun: one, two and three"
+  "slot_name": "number"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "一": "one"
+    "两": "two"
+    "三": "three"
+  "entries":
+    "shu": "book"
+    "cha": "tea"
+    "shui": "water"
+    "xie": "shoes"
+    "yifu": "clothes"
+    "ren": "person"
+  "notes": "A number comes before its measure word, and the measure word before the noun: 一 (yì) 本 (běn) 书 (shū), one book; 两 (liǎng) 杯 (bēi) 茶 (chá), two cups of tea. Each noun has its own measure word, so learn them together: 本 (běn) for books, 杯 (bēi) for cups, 瓶 (píng) for bottles, 双 (shuāng) for pairs such as shoes, 件 (jiàn) for items of clothing, and 个 (ge) for people. 一 (yī) is said yì before 本 (běn), 杯 (bēi), 瓶 (píng) and 双 (shuāng), and yí before 件 (jiàn) and 个 (ge). Before a measure word, two is 两 (liǎng), not 二 (èr)."
