@@ -1,0 +1,25 @@
+schema: 1
+id: "zh-en-grammar-dates"
+kind: "layer"
+core: "zh-grammar-dates"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "月 (yuè), 号 (hào) and 星期 (xīngqī): months, dates and weekdays"
+license: "CC-BY-SA-4.0"
+description: "October, the tenth, Wednesday: 月 (yuè) follows a month, 号 (hào) a day of the month and 星期 (xīngqī) a day of the week. Not yet checked by a Mandarin speaker: please report any mistake."
+tags: ["unreviewed"]
+"pattern":
+  "name": "月 (yuè), 号 (hào) and 星期 (xīngqī): months, dates and weekdays"
+  "slot_name": "part of the date"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "月": "the month"
+    "号": "the day of the month"
+    "星期": "the day of the week"
+  "entries":
+    "er": "two"
+    "san": "three"
+    "wu": "five"
+    "shi": "ten"
+    "shiyi": "eleven"
+    "tian": "day"
+  "notes": "A month is the number and 月 (yuè): 十月 (shí yuè), October. A day of the month is the number and 号 (hào), as spoken: 十号 (shí hào), the tenth; in writing 日 (rì) is used. A day of the week is 星期 (xīngqī) and the number, from one to six: 星期三 (xīngqīsān), Wednesday. Sunday is 星期天 (xīngqītiān), not 星期七 (xīngqīqī). 二 (èr) is the number for a month, so February is 二月 (èr yuè)."
