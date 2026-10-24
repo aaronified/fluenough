@@ -474,6 +474,40 @@ class DeckIndex(unittest.TestCase):
                     fresh.doCleanups()
 
 
+class ScriptFonts(unittest.TestCase):
+    """The fonts the repository offers (ADR-0042, #611): every Chinese and
+    Japanese script has one, each with its licence and a sample line the
+    font check can show."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        sys.path.insert(0, str(TOOLS))
+        import deck_index
+        cls.fonts = deck_index.FONTS
+        cls.dart = (REPO / "lib" / "core" / "decks" / "font_check.dart"
+                    ).read_text(encoding="utf-8")
+
+    def test_every_chinese_and_japanese_script_has_a_font(self) -> None:
+        for script in ("han_simplified", "han_traditional", "han", "kana"):
+            self.assertIn(script, self.fonts)
+
+    def test_each_font_is_in_its_scripts_folder_with_its_licence(self) -> None:
+        for script, (_family, name) in self.fonts.items():
+            folder = REPO / "decks" / "fonts" / script
+            with self.subTest(script):
+                self.assertTrue((folder / name).is_file())
+                self.assertTrue((folder / "OFL.txt").is_file())
+
+    def test_each_font_has_a_sample_for_the_font_check(self) -> None:
+        for script in self.fonts:
+            with self.subTest(script):
+                self.assertIn(f"  '{script}': ScriptSample(", self.dart)
+
+    def test_japanese_kanji_use_noto_sans_jp(self) -> None:
+        self.assertEqual(self.fonts["han"][0], "Noto Sans JP")
+        self.assertEqual(self.fonts["han_traditional"][0], "Noto Sans TC")
+
+
 class ContentBytes(unittest.TestCase):
     """deck_index.content_bytes: a deck file as a learner sees it (#444)."""
 

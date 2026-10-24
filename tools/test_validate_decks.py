@@ -937,6 +937,13 @@ class Transliteration(Validated):
         text = '{ en: "হ্যাঁ (hêm̐) is yes.", hi: "बांग्ला में হ্যাঁ का अर्थ है हाँ।" }'
         self.assertRejected(facts_file(29, fact(30, text=text)), "'হ্যাঁ'")
 
+    def _an_apostrophe_inside_an_assamese_word_is_part_of_it(self) -> None:
+        self.assertValid(vocab_note("ক'লা (kôlā) is black, and ম’হ (môh) a buffalo."))
+        self.assertRejected(vocab_note("ক'লা is black."), "has no transliteration")
+
+    def _a_stray_quote_around_a_word_still_ends_it(self) -> None:
+        self.assertRejected(vocab_note("Say 'ক' (kô) now."), "'ক'")
+
     def _in_the_readers_own_script_is_enough(self) -> None:
         text = '{ en: "হ্যাঁ (hêm̐) is yes.", hi: "बांग्ला में হ্যাঁ (हैं) का अर्थ है हाँ।" }'
         self.assertValid(facts_file(29, fact(30, text=text)))
@@ -955,6 +962,8 @@ class Transliteration(Validated):
             self._a_fact_for_hindi_speakers_is_written_in_devanagari,
             self._another_script_in_it_still_needs_a_reading,
             self._in_the_readers_own_script_is_enough,
+            self._an_apostrophe_inside_an_assamese_word_is_part_of_it,
+            self._a_stray_quote_around_a_word_still_ends_it,
         )
         for case in cases:
             with self.subTest(case.__name__.lstrip("_")):

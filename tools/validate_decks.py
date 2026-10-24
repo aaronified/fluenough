@@ -2093,8 +2093,13 @@ def _check_fact_cards(r: Report, where: str, cards: object, lang: str) -> None:
 _SCRIPT = ("ऀ-෿Ͱ-ϿЀ-ӿ֐-׿؀-ۿ"
            "฀-๿぀-ヿ一-鿿가-힯")
 _SCRIPT_CHAR = re.compile(f"[{_SCRIPT}]")
+# An apostrophe inside a word is part of it in Eastern Nagari (Assamese ক'লা,
+# ম'হ): a run goes on over one between two letters of that block, and over no
+# other quote, so a stray one still ends the run.
+_NAGARI_APOSTROPHE = "(?<=[\u0980-\u09ff])['’](?=[\u0980-\u09ff])"
 _SCRIPT_RUN = re.compile(
-    rf"-?[{_SCRIPT}](?:[{_SCRIPT}‌‍]|[ -](?=[{_SCRIPT}]))*(?:-(?!\w))?")
+    rf"-?[{_SCRIPT}](?:[{_SCRIPT}‌‍]|{_NAGARI_APOSTROPHE}|[ -](?=[{_SCRIPT}]))*"
+    rf"(?:-(?!\w))?")
 _LATIN = "A-Za-zÀ-ɏḀ-ỿ"
 _DANDAS = "।॥"
 # Signs with no sound of their own: the virama and the nukta.
