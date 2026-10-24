@@ -132,7 +132,7 @@ below is written from `decks/index.json` each time the decks change.
 | Mandarin Chinese | Simplified Han, Traditional Han | in progress |
 | Marathi | Devanagari | A1 |
 | Spanish | Latin | A1 |
-| Telugu | Telugu | A1 |
+| Telugu | Telugu | B1 |
 | Toki Pona | Latin | B1 |
 <!-- languages:end -->
 
