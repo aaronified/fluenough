@@ -59,7 +59,7 @@ class ProgressHours {
   }
 }
 
-/// The row of two tiles under Words and Level: "Hours spent" and "Hours
+/// The row of two tiles under the mastery star: "Hours spent" and "Hours
 /// left", to the end of B1. A tap opens the hours of each language.
 class HoursTiles extends StatelessWidget {
   const HoursTiles({super.key, required this.hours});

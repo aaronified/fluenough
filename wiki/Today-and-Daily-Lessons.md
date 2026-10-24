@@ -29,7 +29,7 @@ Quick revision is for when nothing is due and you want more practice. Pick 5, 10
 
 ## At the end of a session
 
-A summary shows how many cards you did, how many you got right by skill, your streak and when the next cards are due. If you have another language to do today, it offers to start it.
+A summary shows how many cards you did, what the lesson unlocked (the words and rules that became known and the sentences that opened), how many you got right by skill, your streak and when the next cards are due. If you have another language to do today, it offers to start it.
 
 You can end a session early. Answers so far are already saved.
 

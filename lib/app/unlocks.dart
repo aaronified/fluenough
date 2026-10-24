@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import '../core/models/card.dart';
 import '../core/models/rule.dart';
 import '../core/progress/recent_answers.dart' show MasteryLevel;
@@ -42,6 +44,25 @@ extension UnlockState on AppState {
     log: progress.log.where((event) => event.at.isBefore(at)),
     cards: <Card>[for (final entry in decks) ...entry.cards],
   ).counts(_kindedCards(language));
+
+  /// What the lesson that began at [since] unlocked in [language]: the words
+  /// and rules that became known and the sentences that opened, or null when
+  /// it unlocked none (#418).
+  ({int words, int rules, int sentences})? unlockedSince(
+    String language,
+    DateTime since,
+  ) {
+    final before = unlockCountsBefore(language, since);
+    final after = unlockCountsFor(language);
+    final unlocked = (
+      words: max(0, after.wordsKnown - before.wordsKnown),
+      rules: max(0, after.rulesKnown - before.rulesKnown),
+      sentences: max(0, after.sentencesOpen - before.sentencesOpen),
+    );
+    return unlocked.words + unlocked.rules + unlocked.sentences == 0
+        ? null
+        : unlocked;
+  }
 
   /// The counts of every language the learner can choose, added up.
   UnlockCounts get unlockCountsAll => sumUnlockCounts(<UnlockCounts>[
