@@ -5,9 +5,11 @@
 # numbers, which are a to j after the numeric indicator, and the
 # punctuation.
 #
-# The contractions of grade 2 come later, as units after these (owner,
-# 2026-10-20: "Uncontracted now, contractions later"). Braille is taught to
-# no level, so the path has no B1 plan.
+# Then the contractions of grade 2 (Unified English Braille), as units after
+# the punctuation, one group at a time: the strong contractions and the
+# strong and lower groupsigns, shared where a cell is both a wordsign and a
+# groupsign (ADR-0043, owner, 2026-10-20: "Uncontracted now, contractions
+# later"). Braille is taught to no level, so the path has no B1 plan.
 #
 # Every qbe deck is listed, by its core id, exactly once. See ADR-0013 and
 # docs/DECK-FORMAT.md.
@@ -24,4 +26,7 @@ units:
   - ["qbe-capitals"]
   - ["qbe-digits"]
   - ["qbe-punctuation"]
+  - ["qbe-contractions-strong"]
+  - ["qbe-groupsigns-strong"]
+  - ["qbe-groupsigns-lower"]
   - ["*"]
