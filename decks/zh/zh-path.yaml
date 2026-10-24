@@ -250,17 +250,23 @@ units:
   # 5. Rules as forms, practised on the words known: shi and bu, the
   # questions, word order, de, you and zai, adjectives with hen, and the
   # first measure words.
-  - planned: { id: "zh-grammar-shi", grammar: ["shi", "bu-negation"] }
+  - decks: ["zh-grammar-shi", "zh-grammar-bu-negation", "zh-grammar-shi-sentences"]
+    words: 0
+    grammar: ["shi", "bu-negation"]
     listening_passages:
       - { id: "i-am-a-student", text: { "en": "Saying who and what you are, and are not: a student, not a teacher" } }
     reading_passages:
       - { id: "profile-card", text: { "en": "A profile card: what each person is and is not" } }
-  - planned: { id: "zh-grammar-questions", grammar: ["question-ma", "question-words", "a-not-a"] }
+  - decks: ["zh-grammar-question-ma", "zh-grammar-question-words", "zh-grammar-a-not-a", "zh-grammar-questions-sentences"]
+    words: 0
+    grammar: ["question-ma", "question-words", "a-not-a"]
     listening_passages:
       - { id: "is-it-yours", text: { "en": "Asking with ma, with a question word, and with the verb said twice: shi bu shi" } }
     reading_passages:
       - { id: "quiz-card", text: { "en": "A short quiz of questions and answers" } }
-  - planned: { id: "zh-grammar-word-order", grammar: ["svo", "time-place-order"] }
+  - decks: ["zh-grammar-svo", "zh-grammar-time-place-order", "zh-grammar-word-order-sentences"]
+    words: 0
+    grammar: ["svo", "time-place-order"]
     listening_passages:
       - { id: "when-and-where", text: { "en": "Saying when and where you do things, both before the verb: I eat at home at seven" } }
     reading_passages:
