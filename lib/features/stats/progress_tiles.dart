@@ -213,44 +213,56 @@ class LevelTile extends StatelessWidget {
       alignment: AlignmentDirectional.centerStart,
       child: child,
     );
+    // One slim row, the level big and its title and start date beside it, so
+    // that the three counts, this tile and the hours tiles leave the star in
+    // reach at 1.4x text (owner-approved screens keep it on screen).
+    final title = allLanguages
+        ? l10n.progressStartedTitle
+        : l10n.progressLevelTitle;
     return Semantics(
       container: true,
       excludeSemantics: true,
       label: label,
-      child: ProgressTile(
-        color: scheme.surfaceContainerLow,
-        gradient: badge?.gradient,
-        title: allLanguages
-            ? l10n.progressStartedTitle
-            : l10n.progressLevelTitle,
-        titleColor: soft,
-        child: allLanguages
-            ? fit(
+      child: Container(
+        padding: const EdgeInsetsDirectional.symmetric(
+          horizontal: 12,
+          vertical: 12,
+        ),
+        decoration: BoxDecoration(
+          color: scheme.surfaceContainerLow,
+          gradient: badge?.gradient,
+          borderRadius: BorderRadius.circular(AppRadii.group),
+        ),
+        child: Row(
+          spacing: 12,
+          children: <Widget>[
+            Flexible(
+              child: fit(
                 Text(
-                  date,
+                  allLanguages
+                      ? date
+                      : shown == null
+                      ? l10n.progressLevelNone
+                      : levelName(l10n, shown),
                   maxLines: 1,
-                  style: theme.textTheme.titleLarge!.copyWith(
+                  style: theme.textTheme.headlineMedium!.copyWith(
                     fontWeight: FontWeight.w800,
                     color: ink,
                   ),
                 ),
-              )
-            : Column(
+              ),
+            ),
+            Expanded(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  fit(
-                    Text(
-                      shown == null
-                          ? l10n.progressLevelNone
-                          : levelName(l10n, shown),
-                      maxLines: 1,
-                      style: theme.textTheme.headlineMedium!.copyWith(
-                        fontWeight: FontWeight.w800,
-                        color: ink,
-                      ),
-                    ),
+                  Text(
+                    title,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: theme.textTheme.labelLarge!.copyWith(color: soft),
                   ),
-                  if (started != null)
+                  if (!allLanguages && started != null)
                     fit(
                       Text(
                         l10n.progressLevelStarted(date),
@@ -262,6 +274,9 @@ class LevelTile extends StatelessWidget {
                     ),
                 ],
               ),
+            ),
+          ],
+        ),
       ),
     );
   }
