@@ -1,0 +1,48 @@
+schema: 1
+id: "zh-grammar-money-kuai-mao"
+part: "core"
+kind: "grammar"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+"pattern":
+  "slots":
+    - "块"
+    - "毛"
+  "entries":
+    - "lemma": "一"
+      "key": "yi"
+      "reading": "yī"
+      "forms":
+        "块": "一块钱"
+        "毛": "一毛钱"
+      "readings":
+        "块": "yí kuài qián"
+        "毛": "yì máo qián"
+    - "lemma": "两"
+      "key": "liang"
+      "reading": "liǎng"
+      "forms":
+        "块": "两块钱"
+        "毛": "两毛钱"
+      "readings":
+        "块": "liǎng kuài qián"
+        "毛": "liǎng máo qián"
+    - "lemma": "五"
+      "key": "wu"
+      "reading": "wǔ"
+      "forms":
+        "块": "五块钱"
+        "毛": "五毛钱"
+      "readings":
+        "块": "wǔ kuài qián"
+        "毛": "wǔ máo qián"
+    - "lemma": "十"
+      "key": "shi"
+      "reading": "shí"
+      "forms":
+        "块": "十块钱"
+        "毛": "十毛钱"
+      "readings":
+        "块": "shí kuài qián"
+        "毛": "shí máo qián"

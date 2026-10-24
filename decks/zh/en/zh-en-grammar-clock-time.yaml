@@ -1,0 +1,23 @@
+schema: 1
+id: "zh-en-grammar-clock-time"
+kind: "layer"
+core: "zh-grammar-clock-time"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "点 (diǎn) and 半 (bàn): the hour and half past"
+license: "CC-BY-SA-4.0"
+description: "Seven o'clock and half past seven: 点 (diǎn) gives the hour and 半 (bàn) the half. Not yet checked by a Mandarin speaker: please report any mistake."
+tags: ["unreviewed"]
+"pattern":
+  "name": "点 (diǎn) and 半 (bàn): the hour and half past"
+  "slot_name": "time"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "点": "o'clock"
+    "点半": "half past"
+  "entries":
+    "yi": "one"
+    "liang": "two"
+    "qi": "seven"
+    "shi": "ten"
+    "shiyi": "eleven"
+  "notes": "点 (diǎn) is 'o'clock', and 半 (bàn) after it is half past: 七点半 (qī diǎn bàn), half past seven. Two o'clock is 两点 (liǎng diǎn), with 两 (liǎng) and not 二 (èr), as 两 is said before 点 (diǎn). The hour comes first and the minutes after it: this table gives only the hour and the half."

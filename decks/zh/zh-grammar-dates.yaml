@@ -1,0 +1,75 @@
+schema: 1
+id: "zh-grammar-dates"
+part: "core"
+kind: "grammar"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+"pattern":
+  "slots":
+    - "月"
+    - "号"
+    - "星期"
+  "entries":
+    - "lemma": "二"
+      "key": "er"
+      "reading": "èr"
+      "forms":
+        "月": "二月"
+        "号": "二号"
+        "星期": "星期二"
+      "readings":
+        "月": "èr yuè"
+        "号": "èr hào"
+        "星期": "xīngqī'èr"
+    - "lemma": "三"
+      "key": "san"
+      "reading": "sān"
+      "forms":
+        "月": "三月"
+        "号": "三号"
+        "星期": "星期三"
+      "readings":
+        "月": "sān yuè"
+        "号": "sān hào"
+        "星期": "xīngqīsān"
+    - "lemma": "五"
+      "key": "wu"
+      "reading": "wǔ"
+      "forms":
+        "月": "五月"
+        "号": "五号"
+        "星期": "星期五"
+      "readings":
+        "月": "wǔ yuè"
+        "号": "wǔ hào"
+        "星期": "xīngqīwǔ"
+    - "lemma": "十"
+      "key": "shi"
+      "reading": "shí"
+      "forms":
+        "月": "十月"
+        "号": "十号"
+        "星期": null
+      "readings":
+        "月": "shí yuè"
+        "号": "shí hào"
+    - "lemma": "十一"
+      "key": "shiyi"
+      "reading": "shíyī"
+      "forms":
+        "月": "十一月"
+        "号": "十一号"
+        "星期": null
+      "readings":
+        "月": "shíyī yuè"
+        "号": "shíyī hào"
+    - "lemma": "天"
+      "key": "tian"
+      "reading": "tiān"
+      "forms":
+        "月": null
+        "号": null
+        "星期": "星期天"
+      "readings":
+        "星期": "xīngqītiān"
