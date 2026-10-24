@@ -102,12 +102,14 @@ units:
   - decks: ["ja-phrasebook", "ja-first-words", "*"]
     words: 12
   # 2. The first word units, read in romaji.
-  - planned: { id: "ja-sound-differences", theme: "sound-differences", words: 16 }
+  - decks: ["ja-sound-differences", "ja-sound-differences-sentences", "ja-reading-sound-differences", "*"]
+    words: 16
     listening_passages:
       - { id: "long-and-short", text: { "en": "Pairs of words told apart by a long vowel or a double consonant: obasan and obaasan, kite and kitte" } }
     reading_passages:
       - { id: "sound-pairs-list", text: { "en": "A list of word pairs in romaji that differ by one long sound" } }
-  - planned: { id: "ja-questions", theme: "questions", words: 15 }
+  - decks: ["ja-questions", "ja-questions-sentences", "ja-reading-questions", "*"]
+    words: 15
     listening_passages:
       - { id: "at-the-information-desk", text: { "en": "Asking who, what, where and when at an information desk" } }
     reading_passages:
