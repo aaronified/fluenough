@@ -10,7 +10,7 @@ card data plan, 2026-10-13, #506).
 **Status:** the owner answered the six open questions one by one on
 2026-10-13 (recorded under "Decisions") and approved the drafts the same
 day (#506): the ability rule as proposed, and reading passages moved to
-exams (see "Reading passages"). ADR-0039 is Accepted.
+exams (see "Reading passages"). ADR-0039 is Accepted in full (owner, 2026-10-24, #506: "Accept; build now"); the engine is built now, without waiting for the exam design (#509).
 
 ## Decisions (owner, 2026-10-13, #506)
 
