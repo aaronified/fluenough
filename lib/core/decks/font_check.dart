@@ -76,6 +76,8 @@ const Map<String, ScriptSample> scriptSamples = <String, ScriptSample>{
   'cuneiform': ScriptSample('𒀭', 'an, dingir', 'god'),
   'linear_b': ScriptSample('𐀀𐀁𐀂𐀃𐀄', 'a e i o u', 'vowels'),
   'han_simplified': ScriptSample('你好', 'nǐ hǎo', 'hello'),
+  'han_traditional': ScriptSample('謝謝', 'xièxie', 'thanks'),
+  'han': ScriptSample('今日は', 'konnichiwa', 'hello'),
   'kana': ScriptSample('ありがとう', 'arigatō', 'thanks'),
   'hangul': ScriptSample('감사합니다', 'gamsahamnida', 'thanks'),
 };

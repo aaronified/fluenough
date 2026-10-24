@@ -77,9 +77,11 @@ BUNDLED = {"decks/themes.yaml"}
 # The fonts the app downloads with a course (ADR-0042): for each script that
 # phones often draw wrongly or lack, one OFL-licensed Noto font in
 # `decks/fonts/<script>/`, with its OFL.txt. The Noto CJK fonts (simplified
-# Han, kana with the kanji, Hangul) are 10 to 18 MB each: they download
+# and traditional Han, kana, Hangul) are 10 to 18 MB each: they download
 # only when the learner says the phone's own font shows boxes (#611).
-# Traditional Han has none yet. The key is the script as
+# Japanese's `han` (kanji) is Noto Sans JP too, as `kana` is: the app keeps
+# a font by its path, which must sit in its script's folder, so the file is
+# there twice rather than shared. The key is the script as
 # `assets/languages.yaml` and the deck files name it; the value, the
 # font's family name and its file.
 FONTS = {
@@ -98,6 +100,8 @@ FONTS = {
     "cuneiform": ("Noto Sans Cuneiform", "NotoSansCuneiform.ttf"),
     "linear_b": ("Noto Sans Linear B", "NotoSansLinearB.ttf"),
     "han_simplified": ("Noto Sans SC", "NotoSansSC.ttf"),
+    "han_traditional": ("Noto Sans TC", "NotoSansTC.ttf"),
+    "han": ("Noto Sans JP", "NotoSansJP.ttf"),
     "kana": ("Noto Sans JP", "NotoSansJP.ttf"),
     "hangul": ("Noto Sans KR", "NotoSansKR.ttf"),
 }

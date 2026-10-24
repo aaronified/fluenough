@@ -40,7 +40,7 @@ Future<AppState> _state() async {
       ),
       'decks/es/$_adult.yaml': _deck(
         _adult,
-        'tags: ["offensive"]',
+        'tags: ["offensive", "rated"]',
         _cards('rude', 9200, 12),
       ),
     }),

@@ -97,7 +97,7 @@ class _DeckGroupState extends State<_DeckGroup> {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
     final review = widget.deck;
-    final entry = state.deckById(review.deckId);
+    final entry = state.reviewDeckById(review.deckId);
     final cards = <({String id, Card? card, CardReview review})>[
       for (final MapEntry(:key, :value) in review.unsentCards.entries)
         (
