@@ -1,0 +1,83 @@
+schema: 1
+"id": "zh-en-reading-work"
+"name": "Chinese reading: work"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-job-card"
+  "title": "A job card"
+  "theme": "work"
+  "sentences":
+  - "text": "我是律师。"
+    "reading": "wǒ shì lǜshī."
+  - "text": "我在公司工作。"
+    "reading": "wǒ zài gōngsī gōngzuò."
+  - "text": "老板很好。"
+    "reading": "lǎobǎn hěn hǎo."
+  - "text": "我很忙。"
+    "reading": "wǒ hěn máng."
+  "questions":
+  - "id": "zh-0687"
+    "prompt":
+      "en": "Which word means 'lawyer'?"
+    "options":
+    - "en": "护士 (hùshi)"
+    - "en": "律师 (lǜshī)"
+    "answer": 2
+  - "id": "zh-0688"
+    "prompt":
+      "en": "我在公司工作 (wǒ zài gōngsī gōngzuò) says that the speaker works at a company."
+    "answer": true
+  - "id": "zh-0689"
+    "prompt":
+      "en": "老板很好 (lǎobǎn hěn hǎo) says that the boss is busy."
+    "answer": false
+- "id": "zh-meeting-notice"
+  "title": "A meeting notice"
+  "theme": "work"
+  "sentences":
+  - "text": "今天开会。"
+    "reading": "jīntiān kāihuì."
+  - "text": "会议很长。"
+    "reading": "huìyì hěn cháng."
+  - "text": "请准时。"
+    "reading": "qǐng zhǔnshí."
+  - "text": "秘书在办公室。"
+    "reading": "mìshū zài bàngōngshì."
+  "questions":
+  - "id": "zh-0690"
+    "prompt":
+      "en": "Which word means 'secretary'?"
+    "options":
+    - "en": "老板 (lǎobǎn)"
+    - "en": "秘书 (mìshū)"
+    "answer": 2
+  - "id": "zh-0691"
+    "prompt":
+      "en": "请准时 (qǐng zhǔnshí) asks people to be on time."
+    "answer": true
+  - "id": "zh-0692"
+    "prompt":
+      "en": "今天开会 (jīntiān kāihuì) means:"
+    "options":
+    - "en": "We have a meeting today."
+    - "en": "We have a meeting tomorrow."
+    "answer": 1
