@@ -247,6 +247,10 @@
   "@skillRecognition": {
     "description": "Seeing a word in the target language and choosing or matching its meaning: a step of a lesson, not reviewed on its own (ADR-0034)."
   },
+  "skillScript": "Script",
+  "@skillScript": {
+    "description": "Name of Today's Script tile: reading and writing the letters of a script, the script decks' Recognition and Write together, apart from the word skills. A short noun, like Hear and Write."
+  },
   "skillProduction": "Write",
   "@skillProduction": {
     "description": "One of the three things the app schedules for every word (ADR-0034): seeing the meaning and giving the word in the target language, typed, chosen or put in order. A short verb, like Hear and Say."
@@ -5958,27 +5962,15 @@
   },
   "paceFewer": "Fewer reviews",
   "@paceFewer": {
-    "description": "Mark on a Today skill tile: the learner remembers this skill well, so it has fewer reviews. Shortened to paceFewerShort at large text sizes."
+    "description": "Screen-reader name of the arrow on a Today skill tile: the learner remembers this skill well, so it has fewer reviews."
   },
   "paceMore": "More reviews",
   "@paceMore": {
-    "description": "Mark on a Today skill tile: this skill slips faster, so it has more reviews. Never shown as an error."
+    "description": "Screen-reader name of the arrow on a Today skill tile: this skill slips faster, so it has more reviews. Never shown as an error."
   },
   "paceSame": "About the same",
   "@paceSame": {
-    "description": "Mark on a Today skill tile: this skill's reviews barely changed."
-  },
-  "paceFewerShort": "Fewer",
-  "@paceFewerShort": {
-    "description": "paceFewer at large text sizes."
-  },
-  "paceMoreShort": "More",
-  "@paceMoreShort": {
-    "description": "paceMore at large text sizes."
-  },
-  "paceSameShort": "Same",
-  "@paceSameShort": {
-    "description": "paceSame at large text sizes."
+    "description": "Screen-reader name of the arrow on a Today skill tile: this skill's reviews barely changed."
   },
   "todaySkillAdjustedSemantics": "{skill}: {count, plural, =0{none due} =1{1 due} other{{count} due}}. Adjusted to you: {direction, select, fewer{fewer reviews} more{more reviews} other{about the same}}.",
   "@todaySkillAdjustedSemantics": {
