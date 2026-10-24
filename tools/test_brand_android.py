@@ -159,9 +159,9 @@ class ApplyTest(unittest.TestCase):
             if [a.get(NAME) for a in intent.findall("action")]
             == ["android.intent.action.VIEW"]
         ]
-        self.assertEqual(len(views), 1)
         self.assertEqual(
-            [d.get(SCHEME) for d in views[0].findall("data")], ["https"]
+            sorted(d.get(SCHEME) for v in views for d in v.findall("data")),
+            ["https", "upi"],
         )
 
 
