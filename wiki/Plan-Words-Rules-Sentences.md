@@ -28,8 +28,10 @@ Decided with the owner:
   survival chunks per language.
 - **Any other sentence waits** until every word in it, by its base word, and
   every rule it uses are known.
-- **Known means mastered:** the learner recalls a word or rule right on
-  9 of their last 10 answers to it (90%, owner, 2026-10-16), as in mastery learning.
+- **Known means mastered:** the learner's last review of a word or rule, in
+  each skill asked, was right and FSRS gave at least 85% recall at that
+  review, the same known as Progress (owner, 2026-10-24: "Align 'known' with
+  FSRS"; it replaced 9 of the last 10 answers right, 2026-10-16).
 - **Grammar is taught as rules,** starting with word forms, endings and
   postpositions, and conjunctions, practised across the words the learner
   knows.
@@ -214,7 +216,11 @@ Converted as each language's B1 plan is written:
 ## Decided, 2026-10-16 (#414)
 
 - **The mastery bar:** "Make that 90% of 10". A word or rule is known when
-  9 of its last 10 answers are right.
+  9 of its last 10 answers are right. *Replaced 2026-10-24 ("Align 'known'
+  with FSRS", #416-#418): known is the Progress star's FSRS known, the last
+  review of each skill right with at least 85% recall at that review
+  (`kKnownRecall`, `leavesKnown`). A rule is known when every skill asked in
+  any cell of its table is.*
 - **How a rule makes its forms:** "Stem + exceptions, checked", replacing
   "every form listed per word" (2026-10-09; `b1-plans.md`).
 - **Cells of a growing table per lesson:** "3 per lesson".
