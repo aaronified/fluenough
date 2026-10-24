@@ -1,0 +1,160 @@
+schema: 1
+id: "as-en-pronouns"
+kind: "layer"
+core: "as-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns"
+license: "CC-BY-SA-4.0"
+description: "I, you, he or she, we and they, and my, your and their. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-2178":
+    native: "I"
+    notes:
+      "n1": "The first person: the set card groups the personal pronouns."
+    examples:
+      "মই আজি ঘৰলৈ যাওঁ।": { native: "I am going home today.", bases: { "ঘৰলৈ": "to home", "যাওঁ": "go", "মই": "I" } }
+      "মই ভাত খাওঁ।": { native: "I eat rice.", bases: { "ভাত": "rice; a meal", "খাওঁ": "eat", "মই": "I" } }
+  "as-2179":
+    native: "you (to a close friend or child)"
+    notes:
+      "n1": "Use তুমি (tumi) only with a friend, a child or someone younger; to an older or unknown person say আপুনি (āpuni)."
+    examples:
+      "তুমি কেনে আছা?": { native: "How are you?", bases: { "কেনে": "how", "আছা": "are", "তুমি": "you" } }
+      "তুমি ভাত খোৱা নে?": { native: "Are you eating rice?", bases: { "খোৱা": "eat", "নে": "question particle", "তুমি": "you" } }
+  "as-2180":
+    native: "he; she"
+    notes:
+      "n1": "The everyday word for he and she; তেওঁ (teum̐) is the polite word."
+    examples:
+      "সি আজি আহিছে।": { native: "He has come today.", bases: { "আহিছে": "has come", "সি": "he; she" } }
+      "সি ভাল ছাত্ৰ।": { native: "He is a good student.", bases: { "ভাল": "good", "ছাত্ৰ": "student", "সি": "he; she" } }
+  "as-2181":
+    native: "he; she (polite)"
+    notes:
+      "n1": "The polite word for he and she, for an older or respected person."
+    examples:
+      "তেওঁ আমাৰ শিক্ষক।": { native: "He is our teacher.", bases: { "শিক্ষক": "teacher", "তেওঁ": "he; she (polite)", "আমাৰ": "our" } }
+      "তেওঁ ইয়াত আছে।": { native: "He is here.", bases: { "আছে": "is", "তেওঁ": "he; she (polite)" } }
+  "as-2182":
+    native: "we"
+    notes:
+      "n1": "The word for we, for the speaker and others together."
+    examples:
+      "আমি এতিয়া যাওঁ।": { native: "We are going now.", bases: { "যাওঁ": "go", "আমি": "we" } }
+      "আমি বজাৰলৈ যাওঁ।": { native: "We are going to the market.", bases: { "বজাৰলৈ": "to the market", "যাওঁ": "go", "আমি": "we" } }
+  "as-2183":
+    native: "you (plural, informal)"
+    notes:
+      "n1": "The plural of তুমি (tumi), used for more than one friend or child."
+    examples:
+      "তোমালোক কি কৰিছা?": { native: "What are you doing?", bases: { "কৰিছা": "are doing", "তোমালোক": "you (plural)", "কি": "what" } }
+      "তোমালোক ইয়াতে থাকা।": { native: "You stay here.", bases: { "ইয়াতে": "here", "থাকা": "stay", "তোমালোক": "you (plural)" } }
+  "as-2184":
+    native: "you (plural, polite)"
+    notes:
+      "n1": "The plural of আপুনি (āpuni): polite, for more than one person."
+    examples:
+      "আপোনালোক কেনেকৈ আছে?": { native: "How are you all?", bases: { "আছে": "are", "আপোনালোক": "you (polite, plural)" } }
+      "আপোনালোকে ভাত খাব।": { native: "You will eat rice.", bases: { "আপোনালোকে": "you all", "খাব": "will eat" } }
+  "as-2185":
+    native: "they (polite)"
+    notes:
+      "n1": "The polite plural: তেওঁলোক (teum̐luk) is used for respected people."
+    examples:
+      "তেওঁলোক আহিছে।": { native: "They have come.", bases: { "আহিছে": "have come", "তেওঁলোক": "they (polite)" } }
+      "তেওঁলোক শিক্ষক।": { native: "They are teachers.", bases: { "শিক্ষক": "teacher", "তেওঁলোক": "they (polite)" } }
+  "as-2186":
+    native: "they"
+    notes:
+      "n1": "The plain plural of সি (si): they, for people you do not address politely."
+    examples:
+      "সিহঁত খেলিছে।": { native: "They are playing.", bases: { "খেলিছে": "are playing", "সিহঁত": "they" } }
+      "সিহঁতে ভাত খায়।": { native: "They eat rice.", bases: { "সিহঁতে": "they", "খায়": "eat" } }
+  "as-2187":
+    native: "my"
+    notes:
+      "n1": "মোৰ (mur) comes before a noun: মোৰ নাম (mur nām) is my name."
+    examples:
+      "মোৰ নাম ৰমেশ।": { native: "My name is Ramesh.", bases: { "নাম": "name", "ৰমেশ": "Ramesh", "মোৰ": "my" } }
+      "মোৰ ঘৰ ওচৰত।": { native: "My house is near.", bases: { "ঘৰ": "house", "মোৰ": "my" } }
+  "as-2188":
+    native: "your"
+    notes:
+      "n1": "Your, for a friend or child: it comes before a noun."
+    examples:
+      "তোমাৰ নাম কি?": { native: "What is your name?", bases: { "নাম": "name", "তোমাৰ": "your" } }
+      "তোমাৰ ভাই ইয়াত আছে।": { native: "Your brother is here.", bases: { "ভাই": "brother", "আছে": "is", "তোমাৰ": "your" } }
+  "as-2189":
+    native: "your (polite)"
+    notes:
+      "n1": "The polite word for your: আপোনাৰ (āpunār) comes before a noun."
+    examples:
+      "আপোনাৰ নাম কি?": { native: "What is your name?", bases: { "নাম": "name", "আপোনাৰ": "your (polite)", "কি": "what" } }
+      "আপোনাৰ কিতাপ ইয়াত।": { native: "Your book is here.", bases: { "কিতাপ": "book", "আপোনাৰ": "your (polite)" } }
+  "as-2190":
+    native: "his; her (polite)"
+    notes:
+      "n1": "The polite word for his or her: তেওঁৰ (teum̐r) comes before a noun."
+    examples:
+      "তেওঁৰ ভনী ইয়াত।": { native: "Her sister is here.", bases: { "ভনী": "sister", "তেওঁৰ": "his; her (polite)" } }
+      "তেওঁৰ নাম সীমা।": { native: "Her name is Seema.", bases: { "নাম": "name", "সীমা": "Seema", "তেওঁৰ": "his; her (polite)" } }
+  "as-2191":
+    native: "their"
+    notes:
+      "n1": "Their, for people you do not address politely."
+    examples:
+      "সিহঁতৰ ঘৰ ওচৰত।": { native: "Their house is near.", bases: { "ঘৰ": "house", "সিহঁতৰ": "their" } }
+      "সিহঁতৰ কিতাপ ইয়াত।": { native: "Their book is here.", bases: { "কিতাপ": "book", "সিহঁতৰ": "their" } }
+  "as-2192":
+    native: "our"
+    notes:
+      "n1": "Our: it comes before a noun."
+    examples:
+      "আমাৰ ঘৰ ইয়াত।": { native: "Our house is here.", bases: { "ঘৰ": "house", "আমাৰ": "our" } }
+      "আমাৰ নাম ৰমা।": { native: "Our name is Rama.", bases: { "নাম": "name", "ৰমা": "Rama", "আমাৰ": "our" } }
+  "as-2193":
+    native: "this"
+    notes:
+      "n1": "This, for a thing near you: এইটো (eitu) stands on its own."
+    examples:
+      "এইটো মোৰ কিতাপ।": { native: "This is my book.", bases: { "কিতাপ": "book", "এইটো": "this", "মোৰ": "my" } }
+      "এইটো ভাল।": { native: "This is good.", bases: { "ভাল": "good", "এইটো": "this" } }
+  "as-2194":
+    native: "that"
+    notes:
+      "n1": "That, for a thing away from you: সেইটো (seitu) stands on its own."
+    examples:
+      "সেইটো তোমাৰ কলম।": { native: "That is your pen.", bases: { "কলম": "pen", "সেইটো": "that", "তোমাৰ": "your" } }
+      "সেইটো ভাৰী।": { native: "That is heavy.", bases: { "ভাৰী": "heavy", "সেইটো": "that" } }
+  "as-2195":
+    native: "this person"
+    notes:
+      "n1": "This person, for someone near you."
+    examples:
+      "এইজন মোৰ ভাই।": { native: "This person is my brother.", bases: { "ভাই": "brother", "এইজন": "this person", "মোৰ": "my" } }
+      "এইজন শিক্ষক।": { native: "This person is a teacher.", bases: { "শিক্ষক": "teacher", "এইজন": "this person" } }
+  "as-2196":
+    native: "that person"
+    notes:
+      "n1": "That person, for someone away from you."
+    examples:
+      "সেইজন মোৰ বন্ধু।": { native: "That person is my friend.", bases: { "বন্ধু": "friend", "সেইজন": "that person", "মোৰ": "my" } }
+      "সেইজন ইয়াত নাই।": { native: "That person is not here.", bases: { "সেইজন": "that person" } }
+  "as-2197":
+    native: "whose"
+    notes:
+      "n1": "The question word for whose: it comes before a noun."
+    examples:
+      "কাৰ কিতাপ?": { native: "Whose book?", bases: { "কিতাপ": "book", "কাৰ": "whose" } }
+      "এইটো কাৰ?": { native: "Whose is this?", bases: { "এইটো": "this", "কাৰ": "whose" } }
+  "as-2198":
+    native: "me"
+    notes:
+      "n1": "মোক (muk) is the word for me, when someone else does something to me."
+    examples:
+      "মোক সহায় কৰক।": { native: "Help me.", bases: { "সহায়": "help", "কৰক": "please do", "মোক": "me" } }
+      "সি মোক দেখিলে।": { native: "He saw me.", bases: { "দেখিলে": "saw", "সি": "he; she", "মোক": "me" } }
+  "as-2199":
+    native: "Personal pronouns: ten words"
+    explanation: "Personal pronouns: মই (moi), I; তুমি (tumi), you, to a close friend; আপুনি (āpuni), you, polite; সি (si), he or she; তেওঁ (teum̐), he or she, polite; আমি (āmi), we; তোমালোক (tumāluk), you, plural, to friends; আপোনালোক (āpunāluk), you, plural, polite; তেওঁলোক (teum̐luk), they, polite; সিহঁত (sihôm̐t), they."
