@@ -20,6 +20,7 @@ import 'package:fluenough/features/decks/unit_page.dart';
 import 'package:fluenough/features/drill/choice_drill.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/rule_card.dart';
+import 'package:fluenough/features/drill/set_drill.dart';
 import 'package:fluenough/features/drill/teach_drill.dart';
 import 'package:fluenough/features/stats/progress_tiles.dart';
 import 'package:fluenough/features/stats/stats_page.dart';
@@ -323,6 +324,16 @@ void main() {
       await tester.pumpAndSettle();
       final l10n = l10nOf(tester);
 
+      // A set card, if the table has one, shows its forms first and records
+      // nothing.
+      for (
+        var i = 0;
+        i < 10 && find.byType(SetDrill).evaluate().isNotEmpty;
+        i++
+      ) {
+        tester.widget<SetDrill>(find.byType(SetDrill)).session.learnt();
+        await tester.pumpAndSettle();
+      }
       expect(find.byType(RuleCard), findsOneWidget);
       final session = tester
           .widget<TeachDrill>(find.byType(TeachDrill))
