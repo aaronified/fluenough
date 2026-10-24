@@ -38,7 +38,7 @@ class _SupportPageState extends State<SupportPage> {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final body = theme.textTheme.bodyLarge;
-    final buttonSize = Size.fromHeight(AppSizes.primaryButton);
+    const buttonSize = Size.fromHeight(AppSizes.primaryButton);
     return SettingsSectionPage(
       title: l10n.settingsRowSupport,
       builder: (context) => <Widget>[
