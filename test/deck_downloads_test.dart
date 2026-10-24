@@ -1011,6 +1011,14 @@ void main() {
       expect(fetched.failure, FetchFailure.badReply);
     });
 
+    test('downloads a CJK font of 18 MB, as the font check offers', () async {
+      final (fetched, _) = await fetch(
+        () async => (200, List<int>.filled(18 * 1000 * 1000, 1)),
+      );
+      expect(fetched.failure, isNull);
+      expect(fetched.bytes!.length, 18 * 1000 * 1000);
+    });
+
     test('tries a dropped connection again, up to four times, but not a '
         'file that is gone', () async {
       Future<(Fetched, int)> fetchWith(

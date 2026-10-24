@@ -10945,5 +10945,199 @@
         "example": "57%"
       }
     }
+  },
+  "fontCheckTitle": "Check how {script} looks",
+  "@fontCheckTitle": {
+    "description": "Title of the font check sheet (#611), shown when a course is added or from Settings, Script fonts. {script} is the script's own name, scriptName.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "fontCheckAsk": "Can you read this?",
+  "@fontCheckAsk": {
+    "description": "The font check's question, over a sample of the script drawn in the phone's own font."
+  },
+  "fontCheckMeaning": "{meaning, select, hello{means hello} thanks{means thank you} house{means house} name{means name} god{means god} vowels{the vowel signs} other{}}",
+  "@fontCheckMeaning": {
+    "description": "What the font check's sample means, after its reading. {meaning} is the sample's key.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "hello"
+      }
+    }
+  },
+  "fontCheckSampleLine": "{reading} · {meaning}",
+  "@fontCheckSampleLine": {
+    "description": "The font check's line under its sample: the reading, then what it means (fontCheckMeaning). A middle dot between them.",
+    "placeholders": {
+      "reading": {
+        "type": "String",
+        "example": "namastē"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "means hello"
+      }
+    }
+  },
+  "fontCheckYes": "Yes, I can read it",
+  "@fontCheckYes": {
+    "description": "Font check answer: the phone's own font draws the script."
+  },
+  "fontCheckNo": "No, it shows boxes",
+  "@fontCheckNo": {
+    "description": "Font check answer: the phone's own font does not draw the script, so its font is downloaded."
+  },
+  "fontCheckNoCost": "\"No\" downloads the {font} font, {size}, with your decks.",
+  "@fontCheckNoCost": {
+    "description": "Under the font check's answers: what saying No costs. {font} is the font's own name, such as Noto Sans SC; {size} a download size, such as 9.6 MB.",
+    "placeholders": {
+      "font": {
+        "type": "String",
+        "example": "Noto Sans SC"
+      },
+      "size": {
+        "type": "String",
+        "example": "9.6 MB"
+      }
+    }
+  },
+  "fontCheckLater": "Ask me later",
+  "@fontCheckLater": {
+    "description": "Font check: leaves the script unchecked; Settings, Script fonts, asks again."
+  },
+  "fontCheckDownloading": "Downloading the {script} font…",
+  "@fontCheckDownloading": {
+    "description": "Font check, while the font downloads. {script} is the script's own name, scriptName.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "fontCheckBackground": "Continue in the background",
+  "@fontCheckBackground": {
+    "description": "Font check, while the font downloads: closes the sheet and leaves the download going."
+  },
+  "fontCheckReadNow": "Can you read it now?",
+  "@fontCheckReadNow": {
+    "description": "Font check, after the font downloaded: the sample is drawn again, in the downloaded font."
+  },
+  "fontCheckStillBoxes": "No, it still shows boxes",
+  "@fontCheckStillBoxes": {
+    "description": "Font check answer after the download: even the downloaded font does not draw the script."
+  },
+  "fontCheckDoneDownloaded": "All set. {script} is drawn in the downloaded font. You can change this in Settings, Look and language, Script fonts.",
+  "@fontCheckDoneDownloaded": {
+    "description": "Font check, done after a download. {script} is the script's own name, scriptName.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "fontCheckDonePhone": "All set. {script} is drawn in your phone's font. You can change this in Settings, Look and language, Script fonts.",
+  "@fontCheckDonePhone": {
+    "description": "Font check, done after Yes (nothing downloaded). {script} is the script's own name, scriptName.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "fontCheckBoxesTitle": "Still boxes",
+  "@fontCheckBoxesTitle": {
+    "description": "Title of the font check's last state: even the downloaded font did not draw the script."
+  },
+  "fontCheckBoxesBody": "Not even the downloaded font draws {script} on this phone. The course still works with its readings.",
+  "@fontCheckBoxesBody": {
+    "description": "Font check, still boxes. {script} is the script's own name, scriptName.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "fontCheckReport": "Report this phone",
+  "@fontCheckReport": {
+    "description": "Font check, still boxes: opens a report."
+  },
+  "fontCheckReadingsOnly": "Continue with readings only",
+  "@fontCheckReadingsOnly": {
+    "description": "Font check, still boxes: closes the sheet; the course goes on with its readings."
+  },
+  "fontsRowTitle": "Script fonts",
+  "@fontsRowTitle": {
+    "description": "Settings row, in Look and language, and the title of its page (#611)."
+  },
+  "fontsRowLine": "Check how each script of your courses draws",
+  "@fontsRowLine": {
+    "description": "Settings, Look and language: the line under the Script fonts row."
+  },
+  "fontsPageHelp": "Some scripts show as boxes on some phones. Check each one: if your phone cannot draw it, the app downloads the script's font.",
+  "@fontsPageHelp": {
+    "description": "Help text at the top of the Script fonts page."
+  },
+  "fontsCheckAll": "Check all scripts",
+  "@fontsCheckAll": {
+    "description": "Script fonts page: asks about each script in turn."
+  },
+  "fontsEmpty": "None of your courses uses a script that needs a font check.",
+  "@fontsEmpty": {
+    "description": "Script fonts page with nothing to list."
+  },
+  "fontsState": "{state, select, notChecked{Not checked} phoneFont{Phone's font} downloaded{Downloaded} downloading{Downloading…} boxes{Shows boxes} other{}}",
+  "@fontsState": {
+    "description": "Script fonts page: where a script stands, under its name.",
+    "placeholders": {
+      "state": {
+        "type": "String",
+        "example": "notChecked"
+      }
+    }
+  },
+  "fontsCheck": "Check",
+  "@fontsCheck": {
+    "description": "Script fonts page: the action of a script not checked yet."
+  },
+  "fontsCheckAgain": "Check again",
+  "@fontsCheckAgain": {
+    "description": "Script fonts page: the action of a script already checked."
+  },
+  "fontsRemove": "Remove the downloaded font",
+  "@fontsRemove": {
+    "description": "Script fonts page, in a script's menu: deletes its downloaded font."
+  },
+  "fontsRemoved": "Removed the {script} font",
+  "@fontsRemoved": {
+    "description": "Snackbar after a downloaded font is removed. {script} is the script's own name, scriptName.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "fontsFontSize": "{font}, {size}",
+  "@fontsFontSize": {
+    "description": "Script fonts page: the font a download brings and its size. {font} is its family name, {size} a download size.",
+    "placeholders": {
+      "font": {
+        "type": "String",
+        "example": "Noto Sans SC"
+      },
+      "size": {
+        "type": "String",
+        "example": "9.6 MB"
+      }
+    }
   }
 }
