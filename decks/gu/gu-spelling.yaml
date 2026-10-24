@@ -1,3 +1,4 @@
+# modes: converted to an opt-out (#522, step 6)
 schema: 1
 id: "gu-spelling"
 part: "core"
@@ -11,7 +12,7 @@ cards:
     reading: "ben"
     ipa: "ben"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "gu-0660"
@@ -19,7 +20,7 @@ cards:
     reading: "ke'jo"
     ipa: "kedʒo"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "gu-0661"
@@ -27,7 +28,7 @@ cards:
     reading: "uṭhvum̐"
     ipa: "uʈʰʋũ"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "gu-0662"
@@ -35,7 +36,7 @@ cards:
     reading: "dikri"
     ipa: "d̪ikri"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "gu-0663"
@@ -43,7 +44,7 @@ cards:
     reading: "parikśā"
     ipa: "pərikʃa"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "gu-0664"
@@ -51,7 +52,7 @@ cards:
     reading: "hindi"
     ipa: "ɦind̪i"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "gu-0665"
@@ -60,7 +61,7 @@ cards:
     reading: "beṅk"
     ipa: "beŋk"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "gu-0666"
@@ -68,7 +69,7 @@ cards:
     reading: "mārum̐"
     ipa: "marũ"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "gu-0667"
@@ -76,6 +77,6 @@ cards:
     reading: "iśvar"
     ipa: "iʃʋər"
     pos: "other"
-    modes: ["recognition"]
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }

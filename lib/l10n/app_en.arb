@@ -9223,6 +9223,58 @@
   "@settingsRowUpdates": {
     "description": "A row of the Settings tab, and its page: checking for and installing a newer version."
   },
+  "settingsRowSupport": "Support with a cup of tea",
+  "@settingsRowSupport": {
+    "description": "A row of the Settings tab, and its page: an optional tip to the app's maker, by UPI."
+  },
+  "settingsSumSupport": "Entirely optional",
+  "@settingsSumSupport": {
+    "description": "Under the Support row of the Settings tab."
+  },
+  "supportIntro": "If you would like to, you can buy me a cup of tea. It is simply a show of support, and I am grateful for it.",
+  "@supportIntro": {
+    "description": "The Support page, first paragraph. The first person is the app's maker."
+  },
+  "supportNoPerks": "A donation does not bring preferential treatment, or access to anything extra.",
+  "@supportNoPerks": {
+    "description": "The Support page, second paragraph: donating gives no advantage."
+  },
+  "supportOtherWays": "Reviewing decks and sending bug reports help just as much, if not more.",
+  "@supportOtherWays": {
+    "description": "The Support page, third paragraph, above the two rows that open reviewing and the bug report."
+  },
+  "supportReviewDecks": "Review decks",
+  "@supportReviewDecks": {
+    "description": "A row of the Support page that opens Settings, Reviewing."
+  },
+  "supportSendBugReport": "Send a bug report",
+  "@supportSendBugReport": {
+    "description": "A row of the Support page that starts a bug report."
+  },
+  "supportPayee": "Pay to {name}, UPI ID {id}",
+  "@supportPayee": {
+    "description": "The Support page, above its buttons: who the tip goes to. UPI is India's payment system.",
+    "placeholders": {
+      "name": {"type": "String"},
+      "id": {"type": "String"}
+    }
+  },
+  "supportOpenUpi": "Open my UPI app",
+  "@supportOpenUpi": {
+    "description": "Button on the Support page: opens a UPI payment to the maker, with no amount."
+  },
+  "supportCopyId": "Copy UPI ID",
+  "@supportCopyId": {
+    "description": "Button on the Support page: copies the UPI ID, for a phone with no UPI app."
+  },
+  "supportIdCopied": "UPI ID copied",
+  "@supportIdCopied": {
+    "description": "Toast after Copy UPI ID."
+  },
+  "supportNoUpiApp": "No UPI app on this phone could open the link. You can copy the UPI ID and paste it into any payment app.",
+  "@supportNoUpiApp": {
+    "description": "Shown on the Support page when no app opened the UPI link; the Copy UPI ID button is under it."
+  },
   "settingsRowProfiles": "Profiles and privacy",
   "@settingsRowProfiles": {
     "description": "The title of the page the profile card opens: profiles, the PIN lock and deleting the profile."

@@ -23,7 +23,9 @@ in CI, in the release workflow and on a first checkout. It
 - declares the internet, for the update check (ADR-0017): flutter create
   grants it to debug and profile builds only, so a release build could not
   reach GitHub without it. And a query for apps that open https links,
-  which url_launcher needs on Android 11 and later to find the browser;
+  which url_launcher needs on Android 11 and later to find the browser. And
+  one for UPI apps (upi links), which Settings' Support page opens: without
+  it Android 11 and later tell the app that no UPI app is installed;
 - sets up ota_update, which installs updates (ADR-0017). Its own manifest
   asks to install packages but declares no FileProvider, which Android's
   installer needs to read the download, so this adds one, and the file
@@ -478,7 +480,7 @@ def query(text: str, *lines: str) -> str:
 def declare(text: str) -> str:
     """[text], a manifest, with the microphone and internet permissions, the
     queries for the speech recogniser, the text-to-speech engine, its
-    settings and its voice data, for opening https links and for mail apps,
+    settings and its voice data, for opening https links, for UPI apps and for mail apps,
     and the FileProviders, ota_update's and the app's own, each added if it
     is not there already, and external storage removed."""
     if len(MANIFEST_OPEN.findall(text)) != 1 or text.count("</manifest>") != 1:
@@ -504,6 +506,12 @@ def declare(text: str) -> str:
             text,
             f'<action android:name="{VIEW}"/>',
             '<data android:scheme="https"/>',
+        )
+    if not queries(text, VIEW, scheme="upi"):
+        text = query(
+            text,
+            f'<action android:name="{VIEW}"/>',
+            '<data android:scheme="upi"/>',
         )
     if not queries(text, SENDTO, scheme="mailto"):
         text = query(
@@ -571,7 +579,7 @@ def main() -> int:
         print(f"brand_android: {e}", file=sys.stderr)
         return 1
     print(f"Brand applied to {RES}; launcher label {name!r}; microphone, "
-          "internet, speech recogniser, text-to-speech settings, https links and "
+          "internet, speech recogniser, text-to-speech settings, https and upi links and "
           "mail apps declared; ota_update set up; MainActivity's channel and "
           "ShareFileProvider written.")
     return 0
