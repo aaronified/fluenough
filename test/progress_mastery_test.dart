@@ -487,10 +487,18 @@ void main() {
       await pumpScreen(tester, const StatsPage(), state: state);
       final l10n = l10nOf(tester);
       final tiles = find.byKey(const ValueKey<String>('hours-tiles'));
-      expect(tiles, findsOneWidget);
-      // Under the star, below the first screen.
-      await tester.ensureVisible(tiles);
+      // Under the star, below the first screen: scrolled to.
+      await tester.scrollUntilVisible(
+        tiles,
+        200,
+        scrollable: find
+            .byWidgetPredicate(
+              (w) => w is Scrollable && w.axis == Axis.vertical,
+            )
+            .first,
+      );
       await tester.pumpAndSettle();
+      expect(tiles, findsOneWidget);
       expect(find.text(l10n.progressHoursSpentTitle), findsOneWidget);
       expect(find.text(l10n.progressHoursLeftTitle), findsOneWidget);
       expect(find.text(l10n.progressHoursToB1), findsOneWidget);
