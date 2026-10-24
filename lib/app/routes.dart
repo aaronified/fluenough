@@ -20,6 +20,7 @@ import '../features/review/reviewed_not_sent_page.dart';
 import '../features/review/reviewed_sent_page.dart';
 import '../features/review/waiting_page.dart';
 import '../features/script/script_guide_page.dart';
+import '../features/fonts/script_fonts_page.dart';
 import '../features/settings/app_log_page.dart';
 import '../features/settings/activities_page.dart';
 import '../features/settings/appearance_page.dart';
@@ -99,6 +100,7 @@ abstract final class AppRoutes {
   static const String settingsReminders = '/settings/reminders';
   static const String settingsData = '/settings/data';
   static const String settingsUpdates = '/settings/updates';
+  static const String settingsFonts = '/settings/fonts';
 
   /// Profiles and privacy, opened from the profile card.
   static const String settingsProfiles = '/settings/profiles';
@@ -174,6 +176,7 @@ abstract final class AppRoutes {
       settingsReminders => const RemindersPage(),
       settingsData => const YourDataPage(),
       settingsUpdates => const UpdatesPage(),
+      settingsFonts => const ScriptFontsPage(),
       settingsProfiles => const ProfilesPrivacyPage(),
       spokenLanguages => const SpokenLanguagesPage(),
       learnLanguages => const LanguagePickerPage(),

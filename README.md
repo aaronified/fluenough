@@ -131,7 +131,7 @@ below is written from `decks/index.json` each time the decks change.
 | Assamese | Eastern Nagari | in progress |
 | Bengali | Eastern Nagari | A1 |
 | Gujarati | Gujarati | in progress |
-| Hindustani | Devanagari, Perso-Arabic | in progress |
+| Hindustani | Devanagari, Perso-Arabic | A1 |
 | Japanese | Kana, Han | in progress |
 | Kannada | Kannada | A1 |
 | Korean | Hangul | in progress |
