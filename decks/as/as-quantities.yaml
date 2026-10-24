@@ -1,0 +1,185 @@
+schema: 1
+id: "as-quantities"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "assamese", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+theme: "quantities"
+tags: ["beginner", "unreviewed"]
+cards:
+  - ref: "as-0064"
+  - ref: "as-2248"
+  - ref: "as-2249"
+  - ref: "as-2250"
+  - ref: "as-0262"
+  - ref: "as-0277"
+  - id: "as-2257"
+    target: "অনেক"
+    reading: "ônek"
+    ipa: "ɔnek"
+    pos: "adverb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "অনেক মানুহ আহিছে।", reading: "ônek mānuh āhise.", ipa: "ɔnek manuh ahise", bases: [{ word: "মানুহ", base: "মানুহ", reading: "mānuh" }, { word: "আহিছে", base: "আহা", reading: "āhā" }] }
+      - { target: "মোৰ অনেক কিতাপ আছে।", reading: "mur ônek kitāp āse.", ipa: "mʊɹ ɔnek kitap ase", bases: [{ word: "মোৰ", base: "মোৰ", reading: "mur" }, { word: "কিতাপ", base: "কিতাপ", reading: "kitāp" }, { word: "আছে", base: "আছ", reading: "ās" }] }
+  - id: "as-2258"
+    target: "এটা"
+    reading: "etā"
+    ipa: "eta"
+    pos: "classifier"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মোক এটা কলম দিয়ক।", reading: "muk etā kôlôm diyôk.", ipa: "mʊk eta kɔlɔm dijɔk", bases: [{ word: "কলম", base: "কলম", reading: "kôlôm" }, { word: "দিয়ক", base: "দিয়া", reading: "diyā" }, { word: "মোক", base: "মোক", reading: "muk" }] }
+      - { target: "ঘৰটোত এটা কোঠা আছে।", reading: "ghôrôtut etā kuthā āse.", ipa: "ɡʱɔɹɔtʊt eta kʊtʰa ase", bases: [{ word: "ঘৰটোত", base: "ঘৰ", reading: "ghôr" }, { word: "কোঠা", base: "কোঠা", reading: "kuthā" }, { word: "আছে", base: "আছ", reading: "ās" }] }
+  - id: "as-2259"
+    target: "দুটা"
+    reading: "dutā"
+    ipa: "duta"
+    pos: "classifier"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মোৰ দুটা ভাই আছে।", reading: "mur dutā bhāi āse.", ipa: "mʊɹ duta bʱai ase", bases: [{ word: "মোৰ", base: "মোৰ", reading: "mur" }, { word: "ভাই", base: "ভাই", reading: "bhāi" }, { word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "দুটা চাহ দিয়ক।", reading: "dutā sāh diyôk.", ipa: "duta sah dijɔk", bases: [{ word: "চাহ", base: "চাহ", reading: "sāh" }, { word: "দিয়ক", base: "দিয়া", reading: "diyā" }] }
+  - id: "as-2260"
+    target: "তিনিটা"
+    reading: "tinitā"
+    ipa: "tinita"
+    pos: "classifier"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "তিনিটা কলম ইয়াত।", reading: "tinitā kôlôm iyāt.", ipa: "tinita kɔlɔm ijat", bases: [{ word: "কলম", base: "কলম", reading: "kôlôm" }, { word: "ইয়াত", ref: "as-0323" }] }
+      - { target: "মই তিনিটা কিতাপ পঢ়িলোঁ।", reading: "moi tinitā kitāp porhilum̐.", ipa: "moi tinita kitap poɹilʊ̃", bases: [{ word: "কিতাপ", base: "কিতাপ", reading: "kitāp" }, { word: "পঢ়িলোঁ", base: "পঢ়া", reading: "pôrhā" }, { word: "মই", base: "মই", reading: "moi" }] }
+  - id: "as-2261"
+    target: "চাৰিটা"
+    reading: "sāritā"
+    ipa: "saɹita"
+    pos: "classifier"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "চাৰিটা আপেল আছে।", reading: "sāritā āpel āse.", ipa: "saɹita apel ase", bases: [{ word: "আপেল", base: "আপেল", reading: "āpel" }, { word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "মোক চাৰিটা কলা দিয়ক।", reading: "muk sāritā kôlā diyôk.", ipa: "mʊk saɹita kɔla dijɔk", bases: [{ word: "কলা", base: "কলা", reading: "kôlā" }, { word: "দিয়ক", base: "দিয়া", reading: "diyā" }, { word: "মোক", base: "মোক", reading: "muk" }] }
+  - id: "as-2262"
+    target: "পাঁচটা"
+    reading: "pām̐sôtā"
+    ipa: "pãsɔta"
+    pos: "classifier"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "পাঁচটা কিতাপ টেবুলত।", reading: "pām̐sôtā kitāp tebulôt.", ipa: "pãsɔta kitap tebulɔt", bases: [{ word: "কিতাপ", base: "কিতাপ", reading: "kitāp" }, { word: "টেবুলত", base: "টেবুল", reading: "tebul" }] }
+      - { target: "মই পাঁচটা বজাৰত কিনিলোঁ।", reading: "moi pām̐sôtā bôzārôt kinilum̐.", ipa: "moi pãsɔta bɔzaɹɔt kinilʊ̃", bases: [{ word: "বজাৰত", base: "বজাৰ", reading: "bôzār" }, { word: "কিনিলোঁ", base: "কিনা", reading: "kinā" }, { word: "মই", base: "মই", reading: "moi" }] }
+  - id: "as-2263"
+    target: "গোটেই"
+    reading: "gutei"
+    ipa: "ɡʊtei"
+    pos: "adjective"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "গোটেই দিন বৰষুণ পৰিছে।", reading: "gutei din bôroxun porise.", ipa: "ɡʊtei din bɔɹoxun poɹise", bases: [{ word: "দিন", base: "দিন", reading: "din" }, { word: "বৰষুণ", base: "বৰষুণ", reading: "bôroxun" }, { word: "পৰিছে", base: "পৰা", reading: "pôrā" }] }
+      - { target: "গোটেই ঘৰটো পৰিষ্কাৰ।", reading: "gutei ghôrôtu porixkār.", ipa: "ɡʊtei ɡʱɔɹɔtʊ poɹixkaɹ", bases: [{ word: "ঘৰটো", base: "ঘৰ", reading: "ghôr" }, { word: "পৰিষ্কাৰ", base: "পৰিষ্কাৰ", reading: "porixkār" }] }
+  - id: "as-2264"
+    target: "প্ৰত্যেক"
+    reading: "prôtyek"
+    ipa: "pɹɔtjek"
+    pos: "adjective"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "প্ৰত্যেক মানুহ আহিছে।", reading: "prôtyek mānuh āhise.", ipa: "pɹɔtjek manuh ahise", bases: [{ word: "মানুহ", base: "মানুহ", reading: "mānuh" }, { word: "আহিছে", base: "আহা", reading: "āhā" }] }
+      - { target: "প্ৰত্যেক দিনে মই যাওঁ।", reading: "prôtyek dine moi zāum̐.", ipa: "pɹɔtjek dine moi zaʊ̃", bases: [{ word: "দিনে", base: "দিন", reading: "din" }, { word: "যাওঁ", base: "যোৱা", reading: "zuwā" }, { word: "মই", base: "মই", reading: "moi" }] }
+  - id: "as-2265"
+    target: "এবাৰ"
+    reading: "ebār"
+    ipa: "ebaɹ"
+    pos: "adverb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই এবাৰ যাওঁ।", reading: "moi ebār zāum̐.", ipa: "moi ebaɹ zaʊ̃", bases: [{ word: "যাওঁ", base: "যোৱা", reading: "zuwā" }, { word: "মই", base: "মই", reading: "moi" }] }
+      - { target: "এবাৰ কওক।", reading: "ebār kôuk.", ipa: "ebaɹ kɔʊk", bases: [{ word: "কওক", base: "কোৱা", reading: "kuwā" }] }
+  - id: "as-2266"
+    target: "দুবাৰ"
+    reading: "dubār"
+    ipa: "dubaɹ"
+    pos: "adverb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মই দুবাৰ খালোঁ।", reading: "moi dubār khālum̐.", ipa: "moi dubaɹ kʰalʊ̃", bases: [{ word: "খালোঁ", base: "খোৱা", reading: "khuwā" }, { word: "মই", base: "মই", reading: "moi" }] }
+      - { target: "তেওঁ দুবাৰ আহিল।", reading: "teum̐ dubār āhil.", ipa: "teʊ̃ dubaɹ ahil", bases: [{ word: "আহিল", base: "আহা", reading: "āhā" }, { word: "তেওঁ", base: "তেওঁ", reading: "teum̐" }] }
+  - id: "as-2267"
+    target: "কেইটামান"
+    reading: "keitāmān"
+    ipa: "keitaman"
+    pos: "quantifier"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "কেইটামান কিতাপ ইয়াত।", reading: "keitāmān kitāp iyāt.", ipa: "keitaman kitap ijat", bases: [{ word: "কিতাপ", base: "কিতাপ", reading: "kitāp" }, { word: "ইয়াত", ref: "as-0323" }] }
+      - { target: "মোৰ কেইটামান বন্ধু আছে।", reading: "mur keitāmān bondhu āse.", ipa: "mʊɹ keitaman bondʱu ase", bases: [{ word: "মোৰ", base: "মোৰ", reading: "mur" }, { word: "বন্ধু", base: "বন্ধু", reading: "bondhu" }, { word: "আছে", base: "আছ", reading: "ās" }] }
+  - id: "as-2268"
+    target: "বহুতো"
+    reading: "bohutu"
+    ipa: "bohutʊ"
+    pos: "quantifier"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "বহুতো মানুহ ইয়াত আছে।", reading: "bohutu mānuh iyāt āse.", ipa: "bohutʊ manuh ijat ase", bases: [{ word: "মানুহ", base: "মানুহ", reading: "mānuh" }, { word: "ইয়াত", ref: "as-0323" }, { word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "বহুতো চাহ লাগে।", reading: "bohutu sāh lāge.", ipa: "bohutʊ sah laɡe", bases: [{ word: "চাহ", base: "চাহ", reading: "sāh" }, { word: "লাগে", base: "লগা", reading: "lôgā" }] }
+  - id: "as-2269"
+    target: "সামান্য"
+    reading: "sāmāny"
+    ipa: "samanj"
+    pos: "quantifier"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মোক সামান্য পানী দিয়ক।", reading: "muk sāmāny pāni diyôk.", ipa: "mʊk samanj pani dijɔk", bases: [{ word: "পানী", base: "পানী", reading: "pāni" }, { word: "দিয়ক", base: "দিয়া", reading: "diyā" }, { word: "মোক", base: "মোক", reading: "muk" }] }
+      - { target: "ইয়াত সামান্য ভিৰ আছে।", reading: "iyāt sāmāny bhir āse.", ipa: "ijat samanj bʱiɹ ase", bases: [{ word: "ইয়াত", ref: "as-0323" }, { word: "ভিৰ", base: "ভিৰ", reading: "bhir" }, { word: "আছে", base: "আছ", reading: "ās" }] }
+  - id: "as-2270"
+    target: "গ্ৰাম"
+    reading: "grām"
+    ipa: "ɡɹam"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "পাঁচশ গ্ৰাম চাউল।", reading: "pām̐sôx grām sāul.", ipa: "pãsɔx ɡɹam saul", bases: [{ word: "চাউল", base: "চাউল", reading: "sāul" }] }
+      - { target: "এক গ্ৰাম লবণ।", reading: "ek grām lôbôn.", ipa: "ek ɡɹam lɔbɔn", bases: [{ word: "এক", base: "এক", reading: "ek" }, { word: "লবণ", base: "লবণ", reading: "lôbôn" }] }
+  - id: "as-2271"
+    target: "লিটাৰ"
+    reading: "litār"
+    ipa: "litaɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "এক লিটাৰ পানী।", reading: "ek litār pāni.", ipa: "ek litaɹ pani", bases: [{ word: "এক", base: "এক", reading: "ek" }, { word: "পানী", base: "পানী", reading: "pāni" }] }
+      - { target: "দুধ এক লিটাৰ।", reading: "dudh ek litār.", ipa: "dudʱ ek litaɹ", bases: [{ word: "দুধ", base: "দুধ", reading: "dudh" }, { word: "এক", base: "এক", reading: "ek" }] }
+  - id: "as-2272"
+    target: "জোৰা"
+    reading: "zurā"
+    ipa: "zʊɹa"
+    pos: "classifier"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "মোৰ এজোৰ জোতা নতুন।", reading: "mur ezur zutā notun.", ipa: "mʊɹ ezʊɹ zʊta notun", bases: [{ word: "মোৰ", base: "মোৰ", reading: "mur" }, { word: "এজোৰ", base: "জোৰা", reading: "zurā" }, { word: "জোতা", base: "জোতা", reading: "zutā" }, { word: "নতুন", base: "নতুন", reading: "notun" }] }
+      - { target: "এজোৰ মোজা দিয়ক।", reading: "ezur muzā diyôk.", ipa: "ezʊɹ mʊza dijɔk", bases: [{ word: "এজোৰ", base: "জোৰা", reading: "zurā" }, { word: "মোজা", base: "মোজা", reading: "muzā" }, { word: "দিয়ক", base: "দিয়া", reading: "diyā" }] }
+  - id: "as-2273"
+    target: "টুকুৰা"
+    reading: "tukurā"
+    ipa: "tukuɹa"
+    pos: "classifier"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "এটা টুকুৰা পিঠা দিয়ক।", reading: "etā tukurā pithā diyôk.", ipa: "eta tukuɹa pitʰa dijɔk", bases: [{ word: "এটা", base: "এটা", reading: "etā" }, { word: "পিঠা", base: "পিঠা", reading: "pithā" }, { word: "দিয়ক", base: "দিয়া", reading: "diyā" }] }
+      - { target: "কাগজৰ টুকুৰা ইয়াত।", reading: "kāgôzôr tukurā iyāt.", ipa: "kaɡɔzɔɹ tukuɹa ijat", bases: [{ word: "কাগজৰ", base: "কাগজ", reading: "kāgôz" }, { word: "ইয়াত", ref: "as-0323" }] }
