@@ -40,6 +40,7 @@ import '../core/decks/deck_index.dart';
 import 'app_log.dart';
 import 'card_media.dart';
 import 'card_sets.dart';
+import 'unlocks.dart';
 import 'daily_plan.dart';
 import '../core/decks/ipa_course.dart';
 import 'deck_catalog.dart';
@@ -1745,6 +1746,12 @@ class AppState extends ChangeNotifier {
     return out;
   }
 
+  /// Whether nothing is left that a lesson may teach in [entry]: it is
+  /// placed, this version can drill nothing in it, or every card a lesson
+  /// may teach is taught. A closed sentence does not count.
+  bool _isTaughtOut(DeckEntry entry) =>
+      isPlaced(entry) || !canDrill(entry) || notStudiedOpenIn(entry) == 0;
+
   /// Whether the path is past [entry]: it is placed, this version can drill
   /// nothing in it, or every card in it is learned in the skills on.
   bool isFinished(DeckEntry entry) =>
@@ -1770,7 +1777,7 @@ class AppState extends ChangeNotifier {
     };
     return List<List<DeckEntry>>.unmodifiable(<List<DeckEntry>>[
       for (final code in languages)
-        ...courseUnits(code).where((unit) => !unit.every(isFinished)).take(2),
+        ...courseUnits(code).where((unit) => !unit.every(_isTaughtOut)).take(2),
     ]);
   }
 
@@ -2456,7 +2463,9 @@ class AppState extends ChangeNotifier {
   /// The cards a lesson in [language] can teach, in their order: from
   /// [deckId], or else from the pending units (ADR-0013). Those not taught
   /// yet that can be drilled now, and with [tags] given, only those
-  /// carrying one of them: a deck page's tag chips.
+  /// carrying one of them: a deck page's tag chips. A sentence waits until
+  /// its words and rules are known, and a rules table's cell until its word
+  /// is ([Unlocks.isOpen], ADR-0046).
   List<Card> untaughtCards(
     String language, {
     String? deckId,
@@ -2469,11 +2478,13 @@ class AppState extends ChangeNotifier {
               if (unit.first.language.code == language) unit,
           ]);
     final seen = <String>{};
+    final gate = unlocks;
     return <Card>[
       for (final card in cards)
         if ((tags.isEmpty || card.tags.any(tags.contains)) &&
             seen.add(card.id) &&
             !isTaught(card) &&
+            gate.isOpen(card) &&
             drillableModes(card).isNotEmpty)
           card,
     ];
@@ -2518,14 +2529,21 @@ class AppState extends ChangeNotifier {
       ]);
     }
     final taught = cards.takeWhile((card) => card is! QuestionCard);
-    final picked = words == null
-        ? lessonItems(taught)
-        : lessonItems(taught, each: (words / 3).ceil()).take(words).toList();
+    // As many new items as the mastery bar allows (ADR-0046): fewer while
+    // words and rules taught are not known yet.
+    final room = lessonRoom(inProgressIn(request.language!));
+    final picked = lessonItems(
+      taught,
+      room: words == null ? room : min(room, words),
+    );
     final modesOf = drillableModesNow();
     final lesson = lessonSets(
       picked,
       sets: _lessonSets(picked),
-      isNew: (card) => !isTaught(card) && modesOf(card).isNotEmpty,
+      // A set's members are taught whole, but none the gate holds back
+      // (ADR-0046).
+      isNew: (card) =>
+          !isTaught(card) && unlocks.isOpen(card) && modesOf(card).isNotEmpty,
       isKnown: isTaught,
     );
     return <SessionItem>[
@@ -2684,6 +2702,21 @@ class AppState extends ChangeNotifier {
     ).fresh)
       if (!isTaught(item.card)) item.card.id,
   }.length;
+
+  /// [notStudiedIn] without the cards a lesson may not teach yet: a closed
+  /// sentence, a cell of a word not known yet (ADR-0046). The path moves on
+  /// from a unit when this is none, so that sentences waiting for their
+  /// words do not hold the unit back.
+  int notStudiedOpenIn(DeckEntry deck) {
+    final gate = unlocks;
+    return <String>{
+      for (final item in buildSession(
+        DrillRequest.untaught(deck.id),
+        ignorePauses: true,
+      ).fresh)
+        if (!isTaught(item.card) && gate.isOpen(item.card)) item.card.id,
+    }.length;
+  }
 
   /// How numbers are spelled in [language], or null for a language with no
   /// number rules (#54).

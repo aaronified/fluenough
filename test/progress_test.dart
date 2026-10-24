@@ -829,7 +829,7 @@ void main() {
 
   group('Known, Learning and New', () {
     test(
-      'known is right on 85% of the last ten answers; old misses fall out',
+      'known is right on 9 of the last ten answers; old misses fall out',
       () {
         final progress = MemoryProgress();
         // Nine right of ten: 90%.
@@ -890,7 +890,7 @@ void main() {
         expect(find.text(l10n.unitWordsKnown), findsOneWidget);
         expect(find.text(l10n.unitRulesKnown), findsOneWidget);
         expect(find.text(l10n.unitSentencesOpen), findsOneWidget);
-        expect(find.text(l10n.unitKnownMeans(85)), findsOneWidget);
+        expect(find.text(l10n.unitKnownMeans(9, 10)), findsOneWidget);
 
         // The first six words, then all of them.
         final chips = find.byType(MasteryChip);
