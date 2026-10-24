@@ -249,10 +249,10 @@ class Catalog {
   static final Catalog empty = Catalog(decks: const [], broken: const []);
 
   /// This catalog as a learner with adult content [adult] has it: with it
-  /// off, the adult decks and the rude cards are gone (#628). The same
+  /// off, the adult decks and the rude cards are gone (#628), and with it on
+  /// or off, an adult deck no native speaker has rated (#630). The same
   /// catalog when nothing is left out, so that every screen reads one list.
   Catalog forAdult({required bool adult}) {
-    if (adult) return this;
     var changed = false;
     final shown = <DeckEntry>[];
     for (final entry in decks) {

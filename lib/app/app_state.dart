@@ -31,6 +31,7 @@ import '../core/updates/apk_install.dart';
 import '../core/updates/release_check.dart';
 import '../core/updates/release_notes.dart';
 import '../core/data/themes.dart';
+import '../core/decks/adult_gate.dart';
 import '../core/models/fact.dart';
 import '../core/scheduling/ability.dart';
 import '../core/scheduling/daily_fact.dart';
@@ -436,7 +437,7 @@ class AppState extends ChangeNotifier {
     random: _secureRandom ?? Random.secure(),
     share: _mailShare,
     address: AppLinks.feedbackEmail,
-    deckById: deckById,
+    deckById: reviewDeckById,
     log: log,
   );
   final MailShare _mailShare;
@@ -561,6 +562,19 @@ class AppState extends ChangeNotifier {
   /// alike warning, which hides the word itself (#628).
   List<DeckEntry> get allDecks => _catalog.decks;
 
+  /// The decks the Offensive words review lists: the learner's [decks] and
+  /// the adult decks no native speaker has rated yet (#630), which no learner
+  /// sees and only a reviewer reads, in the catalog's order.
+  List<DeckEntry> get reviewDecks {
+    final shown = <String, DeckEntry>{
+      for (final entry in decks) entry.path: entry,
+    };
+    return <DeckEntry>[
+      for (final entry in _catalog.decks)
+        if (isUnratedAdultDeck(entry.deck)) entry else ?shown[entry.path],
+    ];
+  }
+
   /// The catalog as the learner has it: without the adult decks and the rude
   /// cards while Adult content is off, so that the counts, lessons, finished
   /// decks and the word sheet read one list (#628).
@@ -663,6 +677,11 @@ class AppState extends ChangeNotifier {
   }
 
   DeckEntry? deckById(String id) => _view.byId(id);
+
+  /// [deckById], or a deck no native speaker has rated yet (#630): what a
+  /// review of it reads, sent from the review screens alone.
+  DeckEntry? reviewDeckById(String id) =>
+      reviewDecks.where((entry) => entry.id == id).firstOrNull;
 
   /// The path of [entry]'s course (ADR-0013), or null if it has none.
   CoursePath? pathOf(DeckEntry entry) => _catalog.pathOf(entry);

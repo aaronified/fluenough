@@ -1,0 +1,28 @@
+schema: 1
+id: "zh-en-grammar-time-place-order"
+kind: "layer"
+core: "zh-grammar-time-place-order"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "When and where come before the verb"
+license: "CC-BY-SA-4.0"
+description: "I eat at home at seven: Chinese says who, when, where, then what is done. Not yet checked by a Mandarin speaker: please report any mistake."
+tags: ["unreviewed"]
+"pattern":
+  "name": "When and where come before the verb"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "the plain sentence"
+    "time": "with the time"
+    "place": "with the place"
+    "both": "with the time and the place"
+  "entries":
+    "chifan": "I eat, at seven, at home"
+    "kanshu": "he reads, in the evening, at school"
+    "shuijiao": "my younger brother sleeps, at nine, at home"
+    "xuexi": "we study, tomorrow, at school"
+    "xiuxi": "he rests, on Sunday, at home"
+    "hecha": "I drink tea, in the morning, here"
+    "yundong": "she exercises, at the weekend, at school"
+    "zuofan": "mum cooks, in the afternoon, at home"
+  "notes": "Chinese says the time first, then the place, then the verb: who, when, where, what is done. 我七点在家吃饭 (wǒ qī diǎn zài jiā chīfàn) is I eat at seven at home, with both before the verb; English puts them after it. The time may also open the sentence: 七点我在家吃饭 (qī diǎn wǒ zài jiā chīfàn). The place is 在 (zài) and the place word: 在家 (zài jiā), at home. A clock time is the number and 点 (diǎn): 七点 (qī diǎn), seven o'clock. A word that says when something happens never follows the verb."
