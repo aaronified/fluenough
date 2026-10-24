@@ -718,6 +718,18 @@ class PatternKeys(Validated):
         self.assertRejected(GRAMMAR + entry("जाना", "jaanaa") + entry("jaanaa"),
                             "already names another row")
 
+    def _the_prompt_is_retired_optional_and_flagged_where_given(self) -> None:
+        given = self.assertValid(GRAMMAR + entry("jaanaa"))
+        self.assertTrue(any("prompt is retired" in w for w in given.warnings),
+                        given.warnings)
+        left_out = self.assertValid(
+            GRAMMAR.replace('  prompt: "{lemma} ({gloss}) — {slot}"\n', "")
+            + entry("jaanaa"))
+        self.assertEqual(left_out.warnings, [])
+        self.assertRejected(
+            GRAMMAR.replace("{lemma} ({gloss}) — {slot}", "{lemma} {nope}")
+            + entry("jaanaa"), "unknown placeholder")
+
     def test_a_lemma_that_cannot_go_into_an_id_needs_a_key(self) -> None:
         cases = (
             self._an_ascii_lemma_needs_no_key,
@@ -725,6 +737,7 @@ class PatternKeys(Validated):
             self._a_devanagari_lemma_needs_a_key,
             self._a_key_must_be_an_id,
             self._two_rows_cannot_share_an_id_part,
+            self._the_prompt_is_retired_optional_and_flagged_where_given,
         )
         for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
