@@ -1,0 +1,15 @@
+schema: 1
+id: "es-en-grammar-ser-estar"
+kind: "layer"
+core: "es-grammar-ser-estar"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Spanish to be: ser and estar"
+license: "CC-BY-SA-4.0"
+description: "Spanish has two verbs for to be. Ser says what someone or something is: who, what, where from, what it is like. Estar says where something is and how someone is now. Both have their own forms in each person. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "To be: ser and estar"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "ser": "to be: who or what, where from"
+    "estar": "to be: where, how now"

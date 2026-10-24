@@ -1,0 +1,75 @@
+"schema": 1
+"id": "tok-en-reading-cooking"
+"name": "Reading: a recipe"
+"kind": "reading"
+"language":
+  "code": "tok"
+  "iso639_3": "tok"
+  "name": "Toki Pona"
+  "script": "latin"
+  "icon": "Tp"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this deck"
+"description": "Two passages on cooking: a listening passage on how someone makes a mushroom soup, and a reading passage that is a short recipe. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "reading"
+- "unreviewed"
+"passages":
+- "id": "tok-cooking-making-soup"
+  "title": "Making soup"
+  "theme": "cooking"
+  "sentences":
+  - "text": "mi kipisi e soko."
+  - "text": "mi pana e telo tawa ilo."
+  - "text": "mi pana e namako lili."
+  - "text": "telo li seli la, mi moku."
+  "questions":
+  - "id": "tok-0660"
+    "prompt":
+      "en": "What does the speaker cut first?"
+    "options":
+    - "en": "Mushroom"
+    - "en": "Fruit"
+    "answer": 1
+  - "id": "tok-0661"
+    "prompt":
+      "en": "What does the speaker add to the soup?"
+    "options":
+    - "en": "Spice"
+    - "en": "Water only"
+    "answer": 1
+  - "id": "tok-0662"
+    "prompt":
+      "en": "The speaker eats when the water is hot. Is that true?"
+    "answer": true
+- "id": "tok-cooking-recipe"
+  "title": "A short recipe"
+  "theme": "cooking"
+  "sentences":
+  - "text": "o kipisi e kili."
+  - "text": "o pana e telo tawa ilo."
+  - "text": "o pana e soko tawa telo."
+  - "text": "o pana e namako."
+  "questions":
+  - "id": "tok-0663"
+    "prompt":
+      "en": "What is cut first?"
+    "options":
+    - "en": "Fruit"
+    - "en": "Mushroom"
+    "answer": 1
+  - "id": "tok-0664"
+    "prompt":
+      "en": "What goes into the water?"
+    "options":
+    - "en": "Mushroom"
+    - "en": "Spice"
+    "answer": 1
+  - "id": "tok-0665"
+    "prompt":
+      "en": "The last step adds spice. Is that true?"
+    "answer": true

@@ -1,0 +1,73 @@
+schema: 1
+id: "es-en-reading-everyday-verbs"
+name: "Reading: a day at home"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about a day at home: a family's morning, and a note on the fridge. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-morning-routine"
+    title: "A morning at home"
+    theme: "everyday-verbs"
+    sentences:
+      - text: "Mi madre desayuna a las siete."
+      - text: "Mi padre lee el periódico en la cocina."
+      - text: "Yo escucho la radio y preparo el café."
+      - text: "Mi hermana llega tarde al colegio."
+      - text: "Después, todos limpian la casa."
+    questions:
+      - id: "es-0314"
+        prompt: { en: "Who reads the newspaper?" }
+        options:
+          - { en: "The mother" }
+          - { en: "The father" }
+          - { en: "The sister" }
+        answer: 2
+      - id: "es-0315"
+        prompt: { en: "Who makes the coffee?" }
+        options:
+          - { en: "The speaker" }
+          - { en: "The mother" }
+          - { en: "The sister" }
+        answer: 1
+      - id: "es-0316"
+        prompt: { en: "Who arrives late?" }
+        options:
+          - { en: "The father" }
+          - { en: "The sister" }
+          - { en: "The speaker" }
+        answer: 2
+  - id: "es-fridge-note"
+    title: "A note on the fridge"
+    theme: "everyday-verbs"
+    sentences:
+      - text: "Hay que comprar leche, pan y huevos."
+      - text: "La comida está en el frigorífico."
+      - text: "Hay que lavar los platos antes de cenar."
+      - text: "Mamá cocina pollo esta noche."
+      - text: "Papá paga la cuenta."
+    questions:
+      - id: "es-0317"
+        prompt: { en: "What must be bought?" }
+        options:
+          - { en: "Milk, bread and eggs" }
+          - { en: "Soup and rice" }
+          - { en: "Coffee and tea" }
+        answer: 1
+      - id: "es-0318"
+        prompt: { en: "Where is the food?" }
+        options:
+          - { en: "In the fridge" }
+          - { en: "On the table" }
+          - { en: "In the bag" }
+        answer: 1
+      - id: "es-0319"
+        prompt: { en: "What must be done before dinner?" }
+        options:
+          - { en: "Wash the dishes" }
+          - { en: "Buy the bread" }
+          - { en: "Read the paper" }
+        answer: 1

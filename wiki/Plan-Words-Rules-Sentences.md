@@ -28,8 +28,10 @@ Decided with the owner:
   survival chunks per language.
 - **Any other sentence waits** until every word in it, by its base word, and
   every rule it uses are known.
-- **Known means mastered:** the learner recalls a word or rule right on
-  9 of their last 10 answers to it (90%, owner, 2026-10-16), as in mastery learning.
+- **Known means mastered:** the learner's last review of a word or rule, in
+  each skill asked, was right and FSRS gave at least 85% recall at that
+  review, the same known as Progress (owner, 2026-10-24: "Align 'known' with
+  FSRS"; it replaced 9 of the last 10 answers right, 2026-10-16).
 - **Grammar is taught as rules,** starting with word forms, endings and
   postpositions, and conjunctions, practised across the words the learner
   knows.
@@ -214,13 +216,23 @@ Converted as each language's B1 plan is written:
 ## Decided, 2026-10-16 (#414)
 
 - **The mastery bar:** "Make that 90% of 10". A word or rule is known when
-  9 of its last 10 answers are right.
+  9 of its last 10 answers are right. *Replaced 2026-10-24 ("Align 'known'
+  with FSRS", #416-#418): known is the Progress star's FSRS known, the last
+  review of each skill right with at least 85% recall at that review
+  (`kKnownRecall`, `leavesKnown`). A rule is known when every skill asked in
+  any cell of its table is.*
 - **How a rule makes its forms:** "Stem + exceptions, checked", replacing
   "every form listed per word" (2026-10-09; `b1-plans.md`).
 - **Cells of a growing table per lesson:** "3 per lesson".
 - **When:** still with the B1 plans ("Keep with B1 plans"), after the owner
   said "We need to fix the paths" and "First two weeks" for when Telugu felt
   lost.
+
+## Built
+
+- **Lessons without the quota, and the unlock gate** (#416, [ADR-0046](ADR-0046-Lessons-Take-The-Next-Eligible-Items)): the next eligible items in path order, fewer while words and rules in progress are below the bar; a sentence waits for its words and rules; a rules table's cell is taught only for a known word; the unit page greys a closed sentence and a tap opens "Why it is closed". Owner, 2026-10-23: "Greyed + why sheet; no plan", so a lesson starts straight away with no plan screen.
+- **The rule card and its drill** (#417): a rule is taught on its own card (name, explanation, its forms on known words) before the first question about its cells; a grammar question is chosen first, then typed, among forms of the same word; after an answer the word's forms in the rule are shown with the cell asked marked; a rule's table on the unit page shows only known or asked words, each cell known, learning or not asked yet.
+- **Progress in words, rules and sentences** (#418): the Progress tab's three tiles in place of Words, counted against what is taught so far with words by base word, then the Level tile alone, one slim row, the week and the star, with the hours tiles under the star so that it stays on the screen at 1.4x text; "Unlocked in this lesson" at the end of a lesson, counts only (owner, 2026-10-23: "the lesson end shows counts"); and the unit page's counts (#416).
 
 ## Estimate
 

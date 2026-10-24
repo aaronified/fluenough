@@ -4,10 +4,12 @@ import 'package:flutter/material.dart' show ThemeMode, TimeOfDay;
 import 'package:flutter/foundation.dart';
 
 import '../core/data/spoken_languages.dart';
-import '../core/decks/ipa_course.dart';
+import '../core/decks/font_check.dart';
 import '../core/review/deck_review.dart';
 import '../core/review/rater_code.dart';
 import '../core/review/review_pairs.dart';
+import '../core/scheduling/placed_review.dart';
+import '../core/scheduling/daily_budget.dart';
 import '../core/updates/release_check.dart';
 import 'language_choice.dart';
 import 'skill.dart';
@@ -114,14 +116,16 @@ class SettingsNotifier extends ChangeNotifier {
   bool _progressAll;
   Set<String> _placedDecks;
   bool _learningChosen;
-  IpaScope _ipaScope = IpaScope.mine;
   Set<String> _speechOnline;
   Set<String> _noAlphabet;
   Map<String, Set<String>> _scriptsLearned;
+  Map<String, FontChoice> _fontChoices = const <String, FontChoice>{};
   Set<String> _speechNotOnDevice = const <String>{};
   Set<String> _speechUnsupported = const <String>{};
   Set<String> _scriptGuidesSeen = const <String>{};
   Map<String, Set<String>> _collapsedLevels = const <String, Set<String>>{};
+  Map<String, PlacedReview> _placedReview = const <String, PlacedReview>{};
+  Map<String, Set<int>> _placedAt = const <String, Set<int>>{};
   Set<String> _waitingOpen = const <String>{};
   Map<Skill, DateTime> _pausedUntil = const <Skill, DateTime>{};
   Map<Skill, Set<String>> _offFor = const <Skill, Set<String>>{};
@@ -236,6 +240,49 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  Map<String, int> _dailyMinutes = const <String, int>{};
+
+  /// Minutes a day the learner gives [language] (#485): 15 until they
+  /// choose, from 5 to 60.
+  int dailyMinutesFor(String language) =>
+      _dailyMinutes[language] ?? DailyBudget.defaultMinutes;
+
+  Map<String, ({DateTime day, int minutes})> _dailyExtra =
+      const <String, ({DateTime day, int minutes})>{};
+
+  /// Minutes added to [language]'s day today with "+ 5 min" or "Keep going"
+  /// (#521), negative when taken off: 0 once the day has changed.
+  int dailyExtraFor(String language, DateTime now) {
+    final extra = _dailyExtra[language];
+    if (extra == null || !_sameDay(extra.day, now)) return 0;
+    return extra.minutes;
+  }
+
+  /// Sets what is added to [language]'s day today.
+  void setDailyExtra(String language, int minutes, DateTime now) {
+    _dailyExtra = Map<String, ({DateTime day, int minutes})>.unmodifiable(
+      <String, ({DateTime day, int minutes})>{
+        ..._dailyExtra,
+        language: (day: now, minutes: minutes),
+      },
+    );
+    notifyListeners();
+  }
+
+  static bool _sameDay(DateTime a, DateTime b) =>
+      a.year == b.year && a.month == b.month && a.day == b.day;
+
+  /// Sets [language]'s minutes a day, held between 5 and 60.
+  void setDailyMinutes(String language, int minutes) {
+    final next = DailyBudget.clampMinutes(minutes);
+    if (dailyMinutesFor(language) == next) return;
+    _dailyMinutes = Map<String, int>.unmodifiable(<String, int>{
+      ..._dailyMinutes,
+      language: next,
+    });
+    notifyListeners();
+  }
+
   /// When each daily fact was last shown (#48), by `<language>/<fact id>`.
   /// Not something the learner sets: kept here because it is small, per
   /// profile, and read synchronously, and the settings table stores it.
@@ -326,12 +373,6 @@ class SettingsNotifier extends ChangeNotifier {
   set learningChosen(bool value) =>
       _set(_learningChosen, value, (v) => _learningChosen = v);
 
-  /// Which of the IPA course the learner has: "IPA: my languages", the
-  /// symbols of the languages they learn, or "IPA: whole chart". One course
-  /// and one progress between them (ADR-0041).
-  IpaScope get ipaScope => _ipaScope;
-  set ipaScope(IpaScope value) => _set(_ipaScope, value, (v) => _ipaScope = v);
-
   /// The languages, by code, whose speech the learner allows to be
   /// recognised online, where the phone cannot recognise them itself
   /// (ADR-0014). Audio then leaves the phone, so it is asked per language.
@@ -418,6 +459,19 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// What the learner said in the font check of [script] (#611), or null
+  /// before they were asked.
+  FontChoice? fontChoice(String script) => _fontChoices[script];
+
+  /// Records the font check's answer for [script]; null forgets it.
+  void setFontChoice(String script, FontChoice? choice) {
+    if (_fontChoices[script] == choice) return;
+    final next = Map<String, FontChoice>.of(_fontChoices);
+    choice == null ? next.remove(script) : next[script] = choice;
+    _fontChoices = Map<String, FontChoice>.unmodifiable(next);
+    notifyListeners();
+  }
+
   /// The scripts the learner learns [code] in (#623), such as Devanagari
   /// and Perso-Arabic for Hindustani. What was chosen; before a choice, the
   /// [primary] script when [learnsAlphabet], else none, as the one
@@ -497,6 +551,40 @@ class SettingsNotifier extends ChangeNotifier {
         language: Set<String>.unmodifiable(next),
       }..removeWhere((_, levels) => levels.isEmpty),
     );
+    notifyListeners();
+  }
+
+  /// How [language]'s course reviews the words placement credited (#761),
+  /// [PlacedReview.fallback] until the learner chooses.
+  PlacedReview placedReviewOf(String language) =>
+      _placedReview[language] ?? PlacedReview.fallback;
+
+  void setPlacedReview(String language, PlacedReview choice) {
+    if (placedReviewOf(language) == choice &&
+        _placedReview.containsKey(language)) {
+      return;
+    }
+    _placedReview = Map<String, PlacedReview>.unmodifiable(
+      <String, PlacedReview>{..._placedReview, language: choice},
+    );
+    notifyListeners();
+  }
+
+  /// The moments, in whole seconds since the epoch, at which placement
+  /// credited [language]'s words: the reviews it wrote then are the placed
+  /// words (`placedPairs`).
+  Set<int> placedAtOf(String language) => _placedAt[language] ?? const <int>{};
+
+  /// Whether placement has credited any course's words.
+  bool get hasPlacedCredit => _placedAt.isNotEmpty;
+
+  void addPlacedAt(String language, int seconds) {
+    final was = _placedAt[language] ?? const <int>{};
+    if (was.contains(seconds)) return;
+    _placedAt = Map<String, Set<int>>.unmodifiable(<String, Set<int>>{
+      ..._placedAt,
+      language: Set<int>.unmodifiable(<int>{...was, seconds}),
+    });
     notifyListeners();
   }
 
@@ -623,7 +711,7 @@ class SettingsNotifier extends ChangeNotifier {
 
   /// Whether a word's IPA line, `/paːlu/`, shows where the deck gives one:
   /// on the teach card, under a word the question shows, with the answer
-  /// once it is in, in passages and in Inspect (ADR-0025, #533).
+  /// once it is in, in passages and on the word sheet (ADR-0025, #533).
   bool get showIpa => _showIpa;
   set showIpa(bool value) => _set(_showIpa, value, (v) => _showIpa = v);
 
@@ -784,9 +872,12 @@ class SettingsNotifier extends ChangeNotifier {
     'progress_all': '$_progressAll',
     'placed_decks': (_placedDecks.toList()..sort()).join(','),
     'learning_chosen': '$_learningChosen',
-    'ipa_scope': _ipaScope.name,
     'speech_online': (_speechOnline.toList()..sort()).join(','),
     'no_alphabet': (_noAlphabet.toList()..sort()).join(','),
+    'font_choices': jsonEncode(<String, String>{
+      for (final MapEntry(:key, :value) in _fontChoices.entries)
+        key: value.stored,
+    }),
     'scripts_learned': jsonEncode(<String, List<String>>{
       for (final MapEntry(:key, :value) in _scriptsLearned.entries)
         key: value.toList()..sort(),
@@ -794,6 +885,14 @@ class SettingsNotifier extends ChangeNotifier {
     'speech_not_on_device': (_speechNotOnDevice.toList()..sort()).join(','),
     'speech_unsupported': (_speechUnsupported.toList()..sort()).join(','),
     'script_guides_seen': (_scriptGuidesSeen.toList()..sort()).join(','),
+    'placed_review': jsonEncode(<String, String>{
+      for (final MapEntry(:key, :value) in _placedReview.entries)
+        key: value.name,
+    }),
+    'placed_at': jsonEncode(<String, List<int>>{
+      for (final MapEntry(:key, :value) in _placedAt.entries)
+        key: value.toList()..sort(),
+    }),
     'collapsed_levels': jsonEncode(<String, List<String>>{
       for (final MapEntry(:key, :value) in _collapsedLevels.entries)
         key: value.toList()..sort(),
@@ -814,6 +913,11 @@ class SettingsNotifier extends ChangeNotifier {
     'lessons_done': jsonEncode(<String, int>{
       for (final MapEntry(:key, :value) in _lessonsDone.entries)
         key: value.millisecondsSinceEpoch,
+    }),
+    'daily_minutes': jsonEncode(_dailyMinutes),
+    'daily_extra': jsonEncode(<String, List<int>>{
+      for (final MapEntry(:key, :value) in _dailyExtra.entries)
+        key: <int>[value.day.millisecondsSinceEpoch, value.minutes],
     }),
     'review_decks': '$_reviewDecks',
     'adult_content': '$_adultContent',
@@ -920,6 +1024,28 @@ class SettingsNotifier extends ChangeNotifier {
       _lessonsDone = Map<String, DateTime>.unmodifiable(v);
       notifyListeners();
     }
+    if (pick('daily_minutes', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (RegExp(r'^[a-z]{2,3}$').hasMatch(key) && value is int) {
+          setDailyMinutes(key, value);
+        }
+      }
+    }
+    if (pick('daily_extra', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (RegExp(r'^[a-z]{2,3}$').hasMatch(key) &&
+            value is List &&
+            value.length == 2 &&
+            value[0] is int &&
+            value[1] is int) {
+          setDailyExtra(
+            key,
+            value[1] as int,
+            DateTime.fromMillisecondsSinceEpoch(value[0] as int),
+          );
+        }
+      }
+    }
     if (pick('spoken_languages', (t) => t) case final v?) {
       spokenLanguages = <String>[
         for (final code in v.split(','))
@@ -953,7 +1079,6 @@ class SettingsNotifier extends ChangeNotifier {
       }
     }
     if (pick('learning_chosen', flag) case final v?) learningChosen = v;
-    if (pick('ipa_scope', IpaScope.tryParse) case final v?) ipaScope = v;
     if (pick('progress_all', flag) case final v?) progressAll = v;
     if (pick('paused_until', _parseJsonMap) case final v?) {
       for (final MapEntry(:key, :value) in v.entries) {
@@ -1001,6 +1126,14 @@ class SettingsNotifier extends ChangeNotifier {
         }
       }
     }
+    if (pick('font_choices', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        final choice = value is String ? FontChoice.parse(value) : null;
+        if (RegExp(r'^[a-z]+(?:_[a-z]+)*$').hasMatch(key) && choice != null) {
+          setFontChoice(key, choice);
+        }
+      }
+    }
     if (pick('script_guides_seen', (t) => t) case final v?) {
       for (final key in v.split(',')) {
         if (RegExp(r'^[a-z]{2,3}(?:-[a-z]+)*$').hasMatch(key)) {
@@ -1012,6 +1145,24 @@ class SettingsNotifier extends ChangeNotifier {
       for (final code in v.split(',')) {
         if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) {
           setWaitingLanguageOpen(code, true);
+        }
+      }
+    }
+    if (pick('placed_review', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! String) {
+          continue;
+        }
+        if (PlacedReview.parse(value) case final choice?) {
+          setPlacedReview(key, choice);
+        }
+      }
+    }
+    if (pick('placed_at', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! List) continue;
+        for (final seconds in value) {
+          if (seconds is int) addPlacedAt(key, seconds);
         }
       }
     }

@@ -30,7 +30,7 @@ Future<void> showSendReviews(BuildContext context) {
 /// The deck's name and language, or its id and language code once the deck
 /// is gone from the phone.
 (String, String) _named(AppState state, DeckReview deck) {
-  final entry = state.deckById(deck.deckId);
+  final entry = state.reviewDeckById(deck.deckId);
   return entry == null
       ? (deck.deckId, deck.language)
       : (entry.deck.name, entry.language.name);

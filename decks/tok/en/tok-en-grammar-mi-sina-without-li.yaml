@@ -1,0 +1,22 @@
+schema: 1
+id: "tok-en-grammar-mi-sina-without-li"
+kind: "layer"
+core: "tok-grammar-mi-sina-without-li"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "No li after mi or sina"
+license: "CC-BY-SA-4.0"
+description: "Mi and sina alone take no li; every other subject does. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "No li after mi or sina"
+  slot_name: "subject"
+  prompt: "{lemma} ({gloss}): {slot}"
+  slots: { "mi": "I (mi): no li", "sina": "you (sina): no li", "ona": "they (ona): with li" }
+  entries:
+    "moku": "to eat"
+    "lape": "to sleep"
+    "pali": "to make; to work"
+    "kama": "to come"
+    "tawa": "to go"
+    "toki": "to talk"
+  notes: "When the subject is mi or sina by itself, the predicate follows with no li: mi moku is I eat, and sina moku is you eat. Any other subject needs li: ona li moku. With more than one subject, as in mi en sina, li comes back, but that is taught later."

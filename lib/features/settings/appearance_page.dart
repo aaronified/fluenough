@@ -6,6 +6,7 @@ import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/features.dart';
+import '../../app/routes.dart';
 import '../../app/settings.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
@@ -221,6 +222,25 @@ class AppearancePage extends StatelessWidget {
                         AppLanguagePicker.ownName(locale),
                       ),
                     ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 24),
+              // Which scripts the phone draws and which need a downloaded
+              // font (#611).
+              _Block(
+                child: GroupedTile(
+                  leading: const Icon(Icons.font_download_outlined),
+                  title: l10n.fontsRowTitle,
+                  subtitle: l10n.fontsRowLine,
+                  trailing: const Icon(Icons.chevron_right),
+                  padding: const EdgeInsetsDirectional.symmetric(
+                    horizontal: 20,
+                    vertical: 12,
+                  ),
+                  onTap: () => AppNavigator.openSettingsPage(
+                    context,
+                    AppRoutes.settingsFonts,
                   ),
                 ),
               ),

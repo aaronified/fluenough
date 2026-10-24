@@ -1,0 +1,30 @@
+schema: 1
+id: "tok-grammar-head-first-modifiers"
+part: "core"
+kind: "grammar"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["one modifier", "two modifiers"]
+  entries:
+    - lemma: "jan"
+      forms:
+        "one modifier": "jan pona"
+        "two modifiers": "jan pona suli"
+    - lemma: "moku"
+      forms:
+        "one modifier": "moku suwi"
+        "two modifiers": "moku suwi lete"
+    - lemma: "telo"
+      forms:
+        "one modifier": "telo lete"
+        "two modifiers": "telo lete pona"
+    - lemma: "kili"
+      forms:
+        "one modifier": "kili suwi"
+        "two modifiers": "kili suwi pona"
+    - lemma: "ijo"
+      forms:
+        "one modifier": "ijo suli"
+        "two modifiers": "ijo suli pona"

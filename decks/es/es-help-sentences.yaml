@@ -1,0 +1,50 @@
+schema: 1
+id: "es-help-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-0881"
+    target: "Necesito ayuda, por favor."
+    ipa: "neθeˈsito aˈʝuda poɾ faˈboɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Necesito", ref: "es-0288" }, { word: "ayuda", ref: "es-0865" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+    confusables: [{ id: "policia", ref: "es-0868", kind: "word" }, { id: "emergencia", ref: "es-0869", kind: "word" }]
+  - id: "es-0882"
+    target: "Llamo a la policía."
+    ipa: "ˈʝamo a la poliˈθia"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Llamo", ref: "es-0302" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "policía", ref: "es-0868" }]
+    confusables: [{ id: "ambulancia", ref: "es-0870", kind: "word" }, { id: "bombero", ref: "es-0872", kind: "word" }]
+  - id: "es-0883"
+    target: "No entiendo, repite, por favor."
+    ipa: "no enˈtjendo reˈpite poɾ faˈboɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "No", ref: "es-0043" }, { word: "entiendo", ref: "es-0875" }, { word: "repite", ref: "es-0876" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+    confusables: [{ id: "perder", ref: "es-0874", kind: "word" }, { id: "pedir", ref: "es-0659", kind: "word" }]
+  - id: "es-0884"
+    target: "Hay un accidente cerca de la estación."
+    ipa: "aj un akθiˈdente ˈθeɾka de la estaˈθjon"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "accidente", ref: "es-0871" }, { word: "cerca", ref: "es-0717" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "estación", ref: "es-0684" }]
+    confusables: [{ id: "emergencia", ref: "es-0869", kind: "word" }, { id: "urgente", ref: "es-0867", kind: "word" }]
+  - id: "es-0885"
+    target: "Pierdo la llave y el pasaporte."
+    ipa: "ˈpjeɾdo la ˈʝabe i el pasaˈpoɾte"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Pierdo", ref: "es-0874" }, { word: "la", base: "la" }, { word: "llave", ref: "es-0877" }, { word: "y", ref: "es-0048" }, { word: "el", base: "el" }, { word: "pasaporte", ref: "es-0878" }]
+    confusables: [{ id: "tarjeta", ref: "es-0879", kind: "word" }, { id: "bolso", ref: "es-0880", kind: "word" }]
+  - id: "es-0886"
+    target: "Tengo dolor de cabeza."
+    ipa: "ˈtenɡo doˈloɾ de kaˈbeθa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Tengo", ref: "es-0024" }, { word: "dolor", ref: "es-0873" }, { word: "de", base: "de" }, { word: "cabeza", ref: "es-0736" }]
+    confusables: [{ id: "doler", ref: "es-0754", kind: "word" }, { id: "garganta", ref: "es-0751", kind: "word" }]

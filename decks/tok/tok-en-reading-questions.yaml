@@ -1,0 +1,66 @@
+schema: 1
+id: "tok-en-reading-questions"
+name: "Reading: questions"
+kind: reading
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two passages from the questions unit: a short exchange about what a thing is (heard), and a quiz card with four simple questions. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "tok-what-is-it"
+    title: "What is it?"
+    sentences:
+      - text: "ni li seme?"
+      - text: "pan anu ko?"
+      - text: "ni li pan."
+      - text: "mi pona a!"
+    questions:
+      - id: "tok-0055"
+        prompt: { en: "What does the first speaker ask?" }
+        options:
+          - { en: "What this is" }
+          - { en: "Where this is" }
+        answer: 1
+      - id: "tok-0056"
+        prompt: { en: "What choice does the first speaker offer?" }
+        options:
+          - { en: "Bread or paste" }
+          - { en: "Air or water" }
+        answer: 1
+      - id: "tok-0057"
+        prompt: { en: "The thing is paste." }
+        answer: false
+  - id: "tok-quiz-card"
+    title: "Quiz card"
+    sentences:
+      - text: "sina sona anu ala?"
+      - text: "toki pona a!"
+      - text: "mi sona ala."
+      - text: "pan anu ko?"
+    questions:
+      - id: "tok-0058"
+        prompt: { en: "What does the first line ask?" }
+        options:
+          - { en: "Whether you know" }
+          - { en: "Where you are" }
+        answer: 1
+      - id: "tok-0059"
+        prompt: { en: "Which word means or?" }
+        options:
+          - { en: "anu" }
+          - { en: "lon" }
+        answer: 1
+      - id: "tok-0060"
+        prompt: { en: "What does the third line say?" }
+        options:
+          - { en: "I do not know" }
+          - { en: "I know" }
+        answer: 1
+      - id: "tok-0061"
+        prompt: { en: "What does the last line offer?" }
+        options:
+          - { en: "Bread or paste" }
+          - { en: "Air or paste" }
+        answer: 1

@@ -40,6 +40,13 @@ class ScriptFonts extends ChangeNotifier {
   /// Whether [font], this very file, is loaded.
   bool isLoaded(IndexFont font) => _loaded[font.script] == font.sha256;
 
+  /// Stops drawing [script] in its downloaded font, after the learner said
+  /// the phone's own draws it (#611). Text drawn from now on uses the
+  /// phone's.
+  void unload(String script) {
+    if (_loaded.remove(script) != null) notifyListeners();
+  }
+
   /// Loads [font], whose file is [bytes]. Returns whether it is loaded: a
   /// font the engine cannot read leaves its script in the phone's font.
   Future<bool> load(IndexFont font, Uint8List bytes) async {

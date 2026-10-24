@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import '../core/feedback/report.dart';
 import '../features/decks/deck_detail_page.dart';
 import '../features/decks/import_page.dart';
-import '../features/decks/inspect_page.dart';
 import '../features/decks/unit_page.dart';
 import '../features/drill/drill_page.dart';
+import '../features/drill/walkthrough_page.dart';
 import '../features/gallery/gallery_page.dart';
 import '../features/placement/language_picker_page.dart';
 import '../features/profiles/new_profile_page.dart';
@@ -20,6 +20,7 @@ import '../features/review/reviewed_not_sent_page.dart';
 import '../features/review/reviewed_sent_page.dart';
 import '../features/review/waiting_page.dart';
 import '../features/script/script_guide_page.dart';
+import '../features/fonts/script_fonts_page.dart';
 import '../features/settings/app_log_page.dart';
 import '../features/settings/activities_page.dart';
 import '../features/settings/appearance_page.dart';
@@ -32,8 +33,10 @@ import '../features/settings/your_data_page.dart';
 import '../features/settings/your_decks_page.dart';
 import '../features/settings/release_notes_page.dart';
 import '../features/settings/sources_page.dart';
+import '../features/settings/support_page.dart';
 import '../features/settings/voices_page.dart';
 import '../features/stats/all_tags_page.dart';
+import '../features/stats/over_time_page.dart';
 import '../features/stats/how_you_learn_page.dart';
 import '../features/stats/leeches_page.dart';
 import '../features/stats/stats_numbers.dart';
@@ -63,6 +66,10 @@ abstract final class AppRoutes {
   /// A drill session. Argument: a [DrillRequest].
   static const String drill = '/drill';
 
+  /// A deck page's Relearn: its cards walked through on the teach card.
+  /// Argument: a [WalkthroughRequest].
+  static const String walkthrough = '/walkthrough';
+
   /// The session summary. Argument: a [SessionResult].
   static const String summary = '/summary';
 
@@ -73,6 +80,9 @@ abstract final class AppRoutes {
   /// Every tag with its bar and a Practise button. Argument: the
   /// [StatsRange] counted.
   static const String allTags = '/all-tags';
+
+  /// The charts over time that the Progress star opens.
+  static const String progressOverTime = '/progress-over-time';
 
   /// How you learn: each skill's pace beside how it started. Argument: a
   /// language code, a [String], for that language's only; none for every
@@ -91,6 +101,8 @@ abstract final class AppRoutes {
   static const String settingsReminders = '/settings/reminders';
   static const String settingsData = '/settings/data';
   static const String settingsUpdates = '/settings/updates';
+  static const String settingsSupport = '/settings/support';
+  static const String settingsFonts = '/settings/fonts';
 
   /// Profiles and privacy, opened from the profile card.
   static const String settingsProfiles = '/settings/profiles';
@@ -123,10 +135,6 @@ abstract final class AppRoutes {
   /// [ReportRequest].
   static const String report = '/report';
 
-  /// Every card of a deck in full, for reviewers. Argument: the deck id, a
-  /// [String].
-  static const String inspect = '/inspect';
-
   /// Reviewing a unit's cards (docs/plans/deck-browser.md). Argument: the
   /// id of a deck in the unit, a [String].
   static const String review = '/review';
@@ -154,9 +162,13 @@ abstract final class AppRoutes {
       unit when args is String => UnitPage(deckId: args),
       import => const ImportPage(),
       drill when args is DrillRequest => DrillPage(request: args),
+      walkthrough when args is WalkthroughRequest => WalkthroughPage(
+        request: args,
+      ),
       summary when args is SessionResult => SummaryPage(result: args),
       leeches => LeechesPage(language: args is String ? args : null),
       allTags when args is StatsRange => AllTagsPage(range: args),
+      progressOverTime => const OverTimePage(),
       howYouLearn => HowYouLearnPage(language: args is String ? args : null),
       appearance => const AppearancePage(),
       settingsLanguages => const LanguagesSettingsPage(),
@@ -166,6 +178,8 @@ abstract final class AppRoutes {
       settingsReminders => const RemindersPage(),
       settingsData => const YourDataPage(),
       settingsUpdates => const UpdatesPage(),
+      settingsSupport => const SupportPage(),
+      settingsFonts => const ScriptFontsPage(),
       settingsProfiles => const ProfilesPrivacyPage(),
       spokenLanguages => const SpokenLanguagesPage(),
       learnLanguages => const LanguagePickerPage(),
@@ -179,7 +193,6 @@ abstract final class AppRoutes {
       newProfile => const NewProfilePage(),
       gallery when kDebugMode => const GalleryPage(),
       report when args is ReportRequest => ReportPage(request: args),
-      inspect when args is String => InspectPage(deckId: args),
       review when args is String => ReviewPage(deckId: args),
       waitingForReview => const WaitingForReviewPage(),
       reviewedNotSent => const ReviewedNotSentPage(),
@@ -207,10 +220,6 @@ abstract final class AppNavigator {
   /// A report from the screen [request] was raised on.
   static Future<void> openReport(BuildContext context, ReportRequest request) =>
       Navigator.of(context).pushNamed(AppRoutes.report, arguments: request);
-
-  /// Every card of [deckId] in full, with its id.
-  static Future<void> openInspect(BuildContext context, String deckId) =>
-      Navigator.of(context).pushNamed(AppRoutes.inspect, arguments: deckId);
 
   /// Reviewing the unit of its course's path that [deckId] is in.
   static Future<void> openReview(BuildContext context, String deckId) =>
@@ -244,6 +253,17 @@ abstract final class AppNavigator {
   static Future<void> startDrill(BuildContext context, DrillRequest request) =>
       Navigator.of(context).pushNamed(AppRoutes.drill, arguments: request);
 
+  /// Relearn: walks through [deckId]'s cards, or with [tags] only those
+  /// carrying one of them, on the teach card. Records nothing.
+  static Future<void> openWalkthrough(
+    BuildContext context,
+    String deckId, {
+    Set<String> tags = const <String>{},
+  }) => Navigator.of(context).pushNamed(
+    AppRoutes.walkthrough,
+    arguments: WalkthroughRequest(deckId: deckId, tags: tags),
+  );
+
   /// Replaces the summary with another session: the next language's, which
   /// the summary offers, so finished summaries do not pile up behind it.
   static Future<void> nextDrill(BuildContext context, DrillRequest request) =>
@@ -263,6 +283,10 @@ abstract final class AppNavigator {
   /// The All tags page, counting [range].
   static Future<void> openAllTags(BuildContext context, StatsRange range) =>
       Navigator.of(context).pushNamed(AppRoutes.allTags, arguments: range);
+
+  /// The charts over time, opened from the Progress star.
+  static Future<void> openOverTime(BuildContext context) =>
+      Navigator.of(context).pushNamed(AppRoutes.progressOverTime);
 
   /// How you learn, in [language] only when given. With [replacing], in
   /// place of the route on top, such as the sheet that links to it.

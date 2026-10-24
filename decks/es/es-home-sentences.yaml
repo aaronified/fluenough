@@ -1,0 +1,50 @@
+schema: 1
+id: "es-home-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-0826"
+    target: "Mi cuarto tiene una cama."
+    ipa: "mi ˈkwaɾto ˈtjene ˈuna ˈkama"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "cuarto", ref: "es-0804" }, { word: "tiene", ref: "es-0024" }, { word: "una", base: "una" }, { word: "cama", ref: "es-0812" }]
+    confusables: [{ id: "sofa", ref: "es-0813", kind: "word" }, { id: "mesa", ref: "es-0009", kind: "word" }]
+  - id: "es-0827"
+    target: "El salón tiene un sofá."
+    ipa: "el saˈlon ˈtjene un soˈfa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "salón", ref: "es-0807" }, { word: "tiene", ref: "es-0024" }, { word: "un", base: "un" }, { word: "sofá", ref: "es-0813" }]
+    confusables: [{ id: "cocina", ref: "es-0806", kind: "word" }, { id: "bano", ref: "es-0805", kind: "word" }]
+  - id: "es-0828"
+    target: "El frigorífico está en la cocina."
+    ipa: "el fɾiɡoˈɾifiko esˈta en la koˈθina"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "frigorífico", ref: "es-0815" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cocina", ref: "es-0806" }]
+    confusables: [{ id: "horno", ref: "es-0816", kind: "word" }, { id: "armario", ref: "es-0814", kind: "word" }]
+  - id: "es-0829"
+    target: "La ducha está en el baño."
+    ipa: "la ˈdutʃa esˈta en el ˈbaɲo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "ducha", ref: "es-0817" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "baño", ref: "es-0805" }]
+    confusables: [{ id: "espejo", ref: "es-0823", kind: "word" }, { id: "cama", ref: "es-0812", kind: "word" }]
+  - id: "es-0830"
+    target: "El alquiler es caro."
+    ipa: "el alkiˈleɾ es ˈkaɾo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "alquiler", ref: "es-0824" }, { word: "es", ref: "es-0022" }, { word: "caro", ref: "es-0412" }]
+    confusables: [{ id: "precio", ref: "es-0580", kind: "word" }, { id: "pagar", ref: "es-0295", kind: "word" }]
+  - id: "es-0831"
+    target: "Alquilo un piso cerca de la playa."
+    ipa: "alˈkilo un ˈpiso ˈθeɾka de la ˈplaʝa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Alquilo", ref: "es-0825" }, { word: "un", base: "un" }, { word: "piso", ref: "es-0803" }, { word: "cerca", ref: "es-0717" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "playa", ref: "es-0784" }]
+    confusables: [{ id: "casa", ref: "es-0006", kind: "word" }, { id: "habitacion", ref: "es-0802", kind: "word" }]

@@ -26,12 +26,10 @@ import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/core/feedback/report.dart';
 import 'package:fluenough/core/models/deck.dart';
-import 'package:fluenough/core/numbers/number_practice.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart' show Ask;
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/decks/decks_page.dart';
-import 'package:fluenough/features/decks/inspect_page.dart';
 import 'package:fluenough/features/decks/path_fixture.dart';
 import 'package:fluenough/features/decks/unit_page.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
@@ -53,6 +51,7 @@ import 'package:fluenough/features/settings/activities_page.dart';
 import 'package:fluenough/features/settings/appearance_page.dart';
 import 'package:fluenough/features/settings/your_data_page.dart';
 import 'package:fluenough/features/stats/how_you_learn_page.dart';
+import 'package:fluenough/features/stats/over_time_page.dart';
 import 'package:fluenough/features/summary/summary_page.dart';
 import 'package:fluenough/ui/theme.dart';
 import 'package:fluenough/ui/widgets/braille_keyboard.dart';
@@ -474,7 +473,14 @@ void main() {
 
   group('Progress and settings', () {
     screen('Progress', tab(ShellTab.progress));
-    screen('Inspect', page(const InspectPage(deckId: 'hi-en-market')));
+    screen(
+      'Progress, over time',
+      page(
+        const OverTimePage(),
+        state: () =>
+            pacedLearner(Paced.fewer, also: <Paced>{Paced.more, Paced.same}),
+      ),
+    );
     screen(
       'How you learn',
       page(
@@ -710,9 +716,11 @@ void main() {
         settings: settings,
       ),
     );
-    final card =
-        tester.widget<TypedDrill>(find.byType(TypedDrill)).session.item.card
-            as NumberCard;
+    final card = tester
+        .widget<TypedDrill>(find.byType(TypedDrill))
+        .session
+        .item
+        .card;
     await tester.enterText(find.byType(TextField), '1');
     await tester.pump();
     await tester.tap(find.text(l10n.drillCheck));

@@ -32,6 +32,6 @@ In a typing question you can type in the script, or in Latin letters. If you hav
 
 ## Fonts
 
-Some scripts need a font. It is downloaded with the language, per course ([ADR-0042](ADR-0042-Script-Fonts-Download-Per-Course)).
+Some scripts need a font. The first time a course shows a script, the app asks whether a sample line reads. If it does, the phone's own font is used and nothing is downloaded. If it shows boxes, the app downloads the script's font with that course and shows the sample again in it. Settings, Look and language, Script fonts, lists each script and can check again ([#803](https://github.com/aaronified/fluenough/issues/803), [ADR-0042](ADR-0042-Script-Fonts-Download-Per-Course)).
 
 See also: [Learner guide](Learner-Guide), [Home](Home).

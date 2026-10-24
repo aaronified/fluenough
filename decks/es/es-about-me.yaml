@@ -1,0 +1,240 @@
+schema: 1
+id: "es-about-me"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "about-me"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-0242"
+    target: "la edad"
+    ipa: "la eˈdad"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "edad", base: "edad" }]
+    examples:
+      - { target: "La edad de Ana es dieciséis años.", ipa: "la eˈdad de ˈana es djeθiˈsejs ˈaɲos", bases: [{ word: "La", base: "la" }, { word: "edad", base: "edad" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "dieciséis", ref: "es-0220" }, { word: "años", base: "año" }] }
+      - { target: "No sé la edad de Luis.", ipa: "no se la eˈdad de lwis", bases: [{ word: "No", ref: "es-0043" }, { word: "sé", base: "saber" }, { word: "la", base: "la" }, { word: "edad", base: "edad" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }] }
+  - id: "es-0243"
+    target: "la nacionalidad"
+    ipa: "la naθjonaliˈdad"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "nacionalidad", base: "nacionalidad" }]
+    examples:
+      - { target: "La nacionalidad de Ana es peruana.", ipa: "la naθjonaliˈdad de ˈana es peˈɾwana", bases: [{ word: "La", base: "la" }, { word: "nacionalidad", base: "nacionalidad" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "peruana", base: "peruano" }] }
+      - { target: "¿Cuál es la nacionalidad de Luis?", ipa: "kwal es la naθjonaliˈdad de lwis", bases: [{ word: "Cuál", ref: "es-0059" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "nacionalidad", base: "nacionalidad" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }] }
+  - id: "es-0244"
+    target: "el idioma"
+    ipa: "el iˈdjoma"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "idioma", base: "idioma" }]
+    examples:
+      - { target: "El idioma de Ana es el español.", ipa: "el iˈdjoma de ˈana es el espaˈɲol", bases: [{ word: "El", base: "el" }, { word: "idioma", base: "idioma" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "español", base: "español" }] }
+      - { target: "¿Cuál es el idioma de Luis?", ipa: "kwal es el iˈdjoma de lwis", bases: [{ word: "Cuál", ref: "es-0059" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "idioma", base: "idioma" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }] }
+  - id: "es-0245"
+    target: "la profesión"
+    ipa: "la pɾofeˈsjon"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "profesión", base: "profesión" }]
+    examples:
+      - { target: "La profesión de Luis es arquitecto.", ipa: "la pɾofeˈsjon de lwis es aɾkiˈtekto", bases: [{ word: "La", base: "la" }, { word: "profesión", base: "profesión" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }, { word: "es", ref: "es-0022" }, { word: "arquitecto", base: "arquitecto" }] }
+      - { target: "Ana tiene la profesión de enfermera.", ipa: "ˈana ˈtjene la pɾofeˈsjon de enfeɾˈmeɾa", bases: [{ word: "Ana", base: "Ana" }, { word: "tiene", ref: "es-0024" }, { word: "la", base: "la" }, { word: "profesión", base: "profesión" }, { word: "de", base: "de" }, { word: "enfermera", base: "enfermera" }] }
+  - id: "es-0246"
+    target: "el cumpleaños"
+    ipa: "el kumpleˈaɲos"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "cumpleaños", base: "cumpleaños" }]
+    examples:
+      - { target: "El cumpleaños de Ana es en mayo.", ipa: "el kumpleˈaɲos de ˈana es en ˈmaʝo", bases: [{ word: "El", base: "el" }, { word: "cumpleaños", base: "cumpleaños" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "en", base: "en" }, { word: "mayo", base: "mayo" }] }
+      - { target: "¿Cuándo es el cumpleaños de Luis?", ipa: "ˈkwando es el kumpleˈaɲos de lwis", bases: [{ word: "Cuándo", ref: "es-0057" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "cumpleaños", base: "cumpleaños" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }] }
+  - id: "es-0247"
+    target: "el teléfono"
+    ipa: "el teˈlefono"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "teléfono", base: "teléfono" }]
+    examples:
+      - { target: "¿Me das el teléfono de Ana?", ipa: "me das el teˈlefono de ˈana", bases: [{ word: "Me", base: "me" }, { word: "das", base: "dar" }, { word: "el", base: "el" }, { word: "teléfono", base: "teléfono" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }] }
+      - { target: "¿Cuál es el teléfono de Ana?", ipa: "kwal es el teˈlefono de ˈana", bases: [{ word: "Cuál", ref: "es-0059" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "teléfono", base: "teléfono" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }] }
+  - id: "es-0248"
+    target: "el correo"
+    ipa: "el koˈreo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "correo", base: "correo" }]
+    examples:
+      - { target: "Dame el correo de Luis.", ipa: "ˈdame el koˈreo de lwis", bases: [{ word: "Dame", base: "dar" }, { word: "el", base: "el" }, { word: "correo", base: "correo" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }] }
+      - { target: "¿Cuál es el correo de Ana?", ipa: "kwal es el koˈreo de ˈana", bases: [{ word: "Cuál", ref: "es-0059" }, { word: "es", ref: "es-0022" }, { word: "el", base: "el" }, { word: "correo", base: "correo" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }] }
+  - id: "es-0249"
+    target: "la dirección"
+    ipa: "la diɾekˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "la", base: "la" }, { word: "dirección", base: "dirección" }]
+    examples:
+      - { target: "No sé la dirección de Ana.", ipa: "no se la diɾekˈθjon de ˈana", bases: [{ word: "No", ref: "es-0043" }, { word: "sé", base: "saber" }, { word: "la", base: "la" }, { word: "dirección", base: "dirección" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }] }
+      - { target: "¿Cuál es la dirección de Luis?", ipa: "kwal es la diɾekˈθjon de lwis", bases: [{ word: "Cuál", ref: "es-0059" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "dirección", base: "dirección" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }] }
+  - id: "es-0250"
+    target: "el número"
+    ipa: "el ˈnumeɾo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "número", base: "número" }]
+    examples:
+      - { target: "Dame el número de Ana.", ipa: "ˈdame el ˈnumeɾo de ˈana", bases: [{ word: "Dame", base: "dar" }, { word: "el", base: "el" }, { word: "número", base: "número" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }] }
+      - { target: "Ana tiene el número de Luis.", ipa: "ˈana ˈtjene el ˈnumeɾo de lwis", bases: [{ word: "Ana", base: "Ana" }, { word: "tiene", ref: "es-0024" }, { word: "el", base: "el" }, { word: "número", base: "número" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }] }
+  - id: "es-0251"
+    target: "el barrio"
+    ipa: "el ˈbarjo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "el", base: "el" }, { word: "barrio", base: "barrio" }]
+    examples:
+      - { target: "El barrio de Ana es tranquilo.", ipa: "el ˈbarjo de ˈana es tɾanˈkilo", bases: [{ word: "El", base: "el" }, { word: "barrio", base: "barrio" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "tranquilo", ref: "es-0257" }] }
+      - { target: "Me gusta el barrio donde vivo.", ipa: "me ˈɡusta el ˈbarjo ˈdonde ˈbibo", bases: [{ word: "Me", base: "me" }, { word: "gusta", base: "gustar" }, { word: "el", base: "el" }, { word: "barrio", base: "barrio" }, { word: "donde", base: "donde" }, { word: "vivo", ref: "es-0030" }] }
+  - id: "es-0252"
+    target: "soltero"
+    ipa: "solˈteɾo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Luis es soltero.", ipa: "lwis es solˈteɾo", bases: [{ word: "Luis", base: "Luis" }, { word: "es", ref: "es-0022" }, { word: "soltero", base: "soltero" }] }
+      - { target: "Pedro es soltero, pero Ana está casada.", ipa: "ˈpedɾo es solˈteɾo ˈpeɾo ˈana esˈta kaˈsada", bases: [{ word: "Pedro", base: "Pedro" }, { word: "es", ref: "es-0022" }, { word: "soltero", base: "soltero" }, { word: "pero", ref: "es-0050" }, { word: "Ana", base: "Ana" }, { word: "está", ref: "es-0023" }, { word: "casada", base: "casado" }] }
+  - id: "es-0253"
+    target: "casado"
+    ipa: "kaˈsado"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mi padre está casado.", ipa: "mi ˈpadɾe esˈta kaˈsado", bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", base: "padre" }, { word: "está", ref: "es-0023" }, { word: "casado", base: "casado" }] }
+      - { target: "Mi padre está casado y tiene dos hijos.", ipa: "mi ˈpadɾe esˈta kaˈsado i ˈtjene dos ˈixos", bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", base: "padre" }, { word: "está", ref: "es-0023" }, { word: "casado", base: "casado" }, { word: "y", ref: "es-0048" }, { word: "tiene", ref: "es-0024" }, { word: "dos", ref: "es-0206" }, { word: "hijos", base: "hijo" }] }
+  - id: "es-0254"
+    target: "alto"
+    ipa: "ˈalto"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Luis es muy alto.", ipa: "lwis es mwi ˈalto", bases: [{ word: "Luis", base: "Luis" }, { word: "es", ref: "es-0022" }, { word: "muy", base: "muy" }, { word: "alto", base: "alto" }] }
+      - { target: "Mi hermano es alto.", ipa: "mi eɾˈmano es ˈalto", bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermano", base: "hermano" }, { word: "es", ref: "es-0022" }, { word: "alto", base: "alto" }] }
+  - id: "es-0255"
+    target: "bajo"
+    ipa: "ˈbaxo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Pedro es bajo, pero muy fuerte.", ipa: "ˈpedɾo es ˈbaxo ˈpeɾo mwi ˈfweɾte", bases: [{ word: "Pedro", base: "Pedro" }, { word: "es", ref: "es-0022" }, { word: "bajo", base: "bajo" }, { word: "pero", ref: "es-0050" }, { word: "muy", base: "muy" }, { word: "fuerte", base: "fuerte" }] }
+      - { target: "Mi hijo es bajo para su edad.", ipa: "mi ˈixo es ˈbaxo ˈpaɾa su eˈdad", bases: [{ word: "Mi", ref: "es-0129" }, { word: "hijo", base: "hijo" }, { word: "es", ref: "es-0022" }, { word: "bajo", base: "bajo" }, { word: "para", base: "para" }, { word: "su", ref: "es-0131" }, { word: "edad", base: "edad" }] }
+  - id: "es-0256"
+    target: "joven"
+    ipa: "ˈxoben"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mi hermana es muy joven.", ipa: "mi eɾˈmana es mwi ˈxoben", bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", base: "hermana" }, { word: "es", ref: "es-0022" }, { word: "muy", base: "muy" }, { word: "joven", base: "joven" }] }
+      - { target: "Luis es joven.", ipa: "lwis es ˈxoben", bases: [{ word: "Luis", base: "Luis" }, { word: "es", ref: "es-0022" }, { word: "joven", base: "joven" }] }
+  - id: "es-0257"
+    target: "tranquilo"
+    ipa: "tɾanˈkilo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "El barrio es muy tranquilo.", ipa: "el ˈbarjo es mwi tɾanˈkilo", bases: [{ word: "El", base: "el" }, { word: "barrio", base: "barrio" }, { word: "es", ref: "es-0022" }, { word: "muy", base: "muy" }, { word: "tranquilo", base: "tranquilo" }] }
+      - { target: "Ana dice que el barrio es tranquilo.", ipa: "ˈana ˈdiθe ke el ˈbarjo es tɾanˈkilo", bases: [{ word: "Ana", base: "Ana" }, { word: "dice", base: "decir" }, { word: "que", base: "que" }, { word: "el", base: "el" }, { word: "barrio", base: "barrio" }, { word: "es", ref: "es-0022" }, { word: "tranquilo", base: "tranquilo" }] }
+  - id: "es-0258"
+    target: "estudiar"
+    ipa: "estuˈdjaɾ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quiero estudiar medicina.", ipa: "ˈkjeɾo estuˈdjaɾ mediˈθina", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "estudiar", base: "estudiar" }, { word: "medicina", base: "medicina" }] }
+      - { target: "Vamos a estudiar juntos.", ipa: "ˈbamos a estuˈdjaɾ ˈxuntos", bases: [{ word: "Vamos", ref: "es-0026" }, { word: "a", base: "a" }, { word: "estudiar", base: "estudiar" }, { word: "juntos", base: "juntos" }] }
+  - id: "es-0259"
+    target: "trabajar"
+    ipa: "tɾabaˈxaɾ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quiero trabajar en un hospital.", ipa: "ˈkjeɾo tɾabaˈxaɾ en un ospiˈtal", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "trabajar", base: "trabajar" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "hospital", ref: "es-0772" }] }
+      - { target: "Ana quiere trabajar con su padre.", ipa: "ˈana ˈkjeɾe tɾabaˈxaɾ kon su ˈpadɾe", bases: [{ word: "Ana", base: "Ana" }, { word: "quiere", ref: "es-0661" }, { word: "trabajar", base: "trabajar" }, { word: "con", base: "con" }, { word: "su", ref: "es-0131" }, { word: "padre", base: "padre" }] }
+  - id: "es-0260"
+    target: "soy de"
+    ipa: "soj de"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "soy", ref: "es-0022" }, { word: "de", base: "de" }]
+    examples:
+      - { target: "Soy de Lima.", ipa: "soj de ˈlima", bases: [{ word: "Soy", ref: "es-0022" }, { word: "de", base: "de" }, { word: "Lima", base: "Lima" }] }
+      - { target: "Yo soy de Quito y mi familia también.", ipa: "ʝo soj de ˈkito i mi faˈmilja tamˈbjen", bases: [{ word: "Yo", ref: "es-0119" }, { word: "soy", ref: "es-0022" }, { word: "de", base: "de" }, { word: "Quito", base: "Quito" }, { word: "y", ref: "es-0048" }, { word: "mi", ref: "es-0129" }, { word: "familia", base: "familia" }, { word: "también", ref: "es-0052" }] }
+  - id: "es-0261"
+    target: "vivo en"
+    ipa: "ˈbibo en"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "vivo", ref: "es-0030" }, { word: "en", base: "en" }]
+    examples:
+      - { target: "Vivo en Madrid con mi familia.", ipa: "ˈbibo en maˈdɾid kon mi faˈmilja", bases: [{ word: "Vivo", ref: "es-0030" }, { word: "en", base: "en" }, { word: "Madrid", base: "Madrid" }, { word: "con", base: "con" }, { word: "mi", ref: "es-0129" }, { word: "familia", base: "familia" }] }
+      - { target: "¿Dónde vives? Vivo en el centro.", ipa: "ˈdonde ˈbibes ˈbibo en el ˈθentɾo", bases: [{ word: "Dónde", ref: "es-0056" }, { word: "vives", ref: "es-0030" }, { word: "Vivo", ref: "es-0030" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "centro", base: "centro" }] }
+  - id: "es-0262"
+    target: "mi nombre es"
+    ipa: "mi ˈnombɾe es"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "mi", ref: "es-0129" }, { word: "nombre", base: "nombre" }, { word: "es", ref: "es-0022" }]
+    examples:
+      - { target: "Mi nombre es Luis.", ipa: "mi ˈnombɾe es lwis", bases: [{ word: "Mi", ref: "es-0129" }, { word: "nombre", base: "nombre" }, { word: "es", ref: "es-0022" }, { word: "Luis", base: "Luis" }] }
+      - { target: "Hola, mi nombre es Ana.", ipa: "ˈola mi ˈnombɾe es ˈana", bases: [{ word: "Hola", ref: "es-0036" }, { word: "mi", ref: "es-0129" }, { word: "nombre", base: "nombre" }, { word: "es", ref: "es-0022" }, { word: "Ana", base: "Ana" }] }
+  - id: "es-0263"
+    target: "¿cuántos años tienes?"
+    ipa: "ˈkwantos ˈaɲos ˈtjenes"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "cuántos", base: "cuántos" }, { word: "años", base: "año" }, { word: "tienes", ref: "es-0024" }]
+    examples:
+      - { target: "Ana, ¿cuántos años tienes?", ipa: "ˈana ˈkwantos ˈaɲos ˈtjenes", bases: [{ word: "Ana", base: "Ana" }, { word: "cuántos", base: "cuántos" }, { word: "años", base: "año" }, { word: "tienes", ref: "es-0024" }] }
+      - { target: "Oye, ¿cuántos años tienes? Tengo veinte.", ipa: "ˈoʝe ˈkwantos ˈaɲos ˈtjenes ˈtenɡo ˈbejnte", bases: [{ word: "Oye", base: "oye" }, { word: "cuántos", base: "cuántos" }, { word: "años", base: "año" }, { word: "tienes", ref: "es-0024" }, { word: "Tengo", ref: "es-0024" }, { word: "veinte", ref: "es-0224" }] }

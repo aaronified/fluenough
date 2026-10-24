@@ -89,7 +89,7 @@ KINDS = {"vocab", "grammar", "facts", "themes", "numbers", "path", "sounds", "sc
 THEMES_KEYS = {"schema", "kind", "description", "themes"}
 # A language's path (ADR-0013), one per language learnt (ADR-0036).
 PATH_KEYS = {"schema", "kind", "id", "language", "description", "units", "alphabet",
-             "regions", "genders"}
+             "regions", "genders", "levels"}
 # Ends a path's unit to take decks the path does not list (#22).
 WILDCARD = "*"
 SOUNDS_KEYS = {"schema", "kind", "id", "language", "description", "contrasts"}
@@ -147,7 +147,7 @@ HEADER_KEYS = {
 }
 CARD_KEYS = {
     "id", "target", "native", "reading", "ipa", "alt_target", "alt_native",
-    "pos", "gender", "tags", "notes", "audio", "examples", "modes", "pair",
+    "pos", "hears", "gender", "tags", "notes", "audio", "examples", "modes", "pair",
     "picture", "picture_ask", "phrasebook", "bases", "rules", "wiktionary",
     "register", "frequency",
     "audio_credit", "image", "image_credit", "target_scripts", "words",
@@ -182,13 +182,14 @@ LAYER_HEADER_KEYS = {"schema", "id", "kind", "core", "native", "name",
                      "description", "license", "authors", "source", "tags",
                      "cards", "pattern", "table", "rules"}
 CORE_KINDS = ("vocab", "grammar", "rules")
-CORE_CARD_KEYS = {"id", "target", "reading", "ipa", "alt_target", "pos",
+CORE_CARD_KEYS = {"id", "target", "reading", "ipa", "alt_target", "pos", "hears",
                   "gender", "tags", "audio", "examples", "modes", "picture",
                   "picture_ask",
                   "notes", "phrasebook", "bases", "rules", "register", "frequency",
                   "synonyms", "antonyms", "collocations", "confusables", "forms",
                   "senses", "audio_credit", "image", "image_credit",
-                  "target_scripts", "words"}
+                  "target_scripts", "words", "warning", "not_sounds_like",
+                  "not_looks_like"}
 CORE_REF_KEYS = {"ref", "reading", "ipa", "tags", "modes", "examples", "notes"}
 # A set card (DECK-FORMAT.md, Set cards; #506, #515): a closed group shown
 # together before its members are drilled. It is a card of a vocab core,
@@ -262,6 +263,8 @@ LAYER_RULE_KEYS = {"name", "explanation"}
 NOTE_KINDS = ("behaviour", "culture", "homograph", "lookalike", "note", "pair", "usage")
 # The kinds that name another card of the language by `ref`; a pair's partner
 # must also be taught, since the minimal-pair panel shows both words.
+# The keys that record a rejected sound-alike or look-alike pair (#808).
+REJECTED_ALIKE_KEYS = ("not_sounds_like", "not_looks_like")
 REF_NOTE_KINDS = ("homograph", "lookalike", "pair")
 NOTE_KEYS = {"kind", "text", "id", "ref", "source", "words", "region"}
 BASE_KEYS = {"word", "ref", "base", "reading", "ipa", "meaning", "wiktionary"}
@@ -289,6 +292,9 @@ MILESTONES = ("A1", "A2", "B1")
 # B1 1,200 more. A level outside half to one and a half times is warned of.
 LEVEL_WORDS = {"A1": 700, "A2": 900, "B1": 1200}
 B1_TOTAL = (2000, 3500)
+# A path may give its own sizes, `levels: { A1: 120, A2: 60, B1: 80 }` (#615,
+# ADR-0045); then they replace both constants for that path, and the B1 total
+# is held to half to one and a half times their sum.
 # A course's phrasebook (words-rules-sentences.md, section 1).
 PHRASEBOOK_SIZE = (15, 25)
 # Parts of speech whose several-word cards still count as one word.
@@ -493,6 +499,9 @@ class PathPlan:
     # Its gender classes (#512); [] for a language without gender, None when
     # the path does not list them.
     genders: list[str] | None = None
+    # Its own words per level (#615); None when the path gives none, and the
+    # defaults (LEVEL_WORDS, B1_TOTAL) apply.
+    levels: dict[str, int] | None = None
 
 
 @dataclass
@@ -547,6 +556,8 @@ class Report:
     # The same for homograph and lookalike notes: (ref, where, i, kind).
     like_refs: list[tuple[str, str, int, str]] = field(default_factory=list)
     base_refs: list[tuple[str, str, str]] = field(default_factory=list)
+    # The cards `not_sounds_like` and `not_looks_like` name: (ref, where, place).
+    rejected_refs: list[tuple[str, str, str]] = field(default_factory=list)
     # A confusable by ref on a sentence put in order: (ref, where, its place,
     # the tiles the answer needs), so that the card it names is no needed tile.
     tile_refs: list[tuple[str, str, str, list[str]]] = field(default_factory=list)
@@ -882,6 +893,17 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
     pos = card.get("pos")
     if pos is not None and pos not in POS | SCRIPT_POS:
         r.error(where, f"pos must be one of {sorted(POS | SCRIPT_POS)}, got {pos!r}")
+    # A word that is heard and typed as its form, as a letter or a digit is
+    # (#522, step 7). Only `form` is a value. Older apps reject the key, so
+    # the decks give it only a release after the app that reads it.
+    if "hears" in card and card["hears"] != "form":
+        r.error(where, f'hears must be "form", or left out; got {card["hears"]!r}')
+
+    if "warning" in card and core:
+        _check_warning(r, where, card["warning"], notes, card.get("senses"))
+    for key in REJECTED_ALIKE_KEYS:
+        if key in card:
+            _check_rejected_alikes(r, where, key, card[key], cid, lang)
 
     if "register" in card and card["register"] not in REGISTERS:
         r.error(where, f"register must be one of {', '.join(REGISTERS)}, got "
@@ -1054,6 +1076,52 @@ def check_note_words(r: Report, where: str, prefix: str, words: object,
         else:
             found.append(w["word"])
     return found
+
+
+def _check_rejected_alikes(r: Report, where: str, key: str, value: object,
+                           cid: str | None, lang: str) -> None:
+    """A core card's `not_sounds_like` or `not_looks_like` (#808): the
+    offensive words whose sound-alike or look-alike pair a reviewer rejected,
+    so that the pair is no longer warned of. Older apps reject the key, so
+    the decks give it only a release after the app that reads it: CI's
+    "Released app reads the decks" refuses it until then."""
+    if not isinstance(value, list) or not value:
+        r.error(where, f"{key} must be a non-empty list of card ids, got {value!r}")
+        return
+    id_re = card_id_re(lang)
+    seen: set[str] = set()
+    for i, ref in enumerate(value):
+        if not _is_str(ref) or not id_re.fullmatch(ref):
+            r.error(where, f"{key}[{i}] must be the id of another {lang} card, "
+                           f"got {ref!r}")
+        elif ref == cid:
+            r.error(where, f"{key}[{i}] names the card itself")
+        elif ref in seen:
+            r.error(where, f"{key}[{i}]: {ref} is listed twice")
+        else:
+            seen.add(ref)
+            r.rejected_refs.append((ref, where, f"{key}[{i}]"))
+
+
+def _check_warning(r: Report, where: str, value: object, notes: list[Note],
+                   senses: object) -> None:
+    """A core card's `warning` (#691): the one warning its teach card shows.
+    The id of a pair, homograph or lookalike note (its place, "1", "2", for a
+    note with no id), "senses" for the card's other meanings, or "none". Older
+    apps reject the key, so the decks give it only a release after the app
+    that reads it."""
+    named = sorted({n.nid for n in notes if n.kind in REF_NOTE_KINDS})
+    if not _is_str(value):
+        r.error(where, f"warning must be text naming a warning, got {value!r}")
+    elif value == "none":
+        pass
+    elif value == "senses":
+        if not (isinstance(senses, list) and senses):
+            r.error(where, 'warning "senses" needs the card to have senses')
+    elif value not in named:
+        r.error(where, f"warning {value!r} names no pair, homograph or lookalike "
+                       f"note of this card (its notes: {', '.join(named) or 'none'}); "
+                       f'use such a note\'s id, "senses" or "none"')
 
 
 def check_notes(r: Report, where: str, notes: object, cid: str | None,
@@ -1648,18 +1716,11 @@ def check_pattern(r: Report, pattern: object, *, core: bool = False) -> None:
                 r.error(where, f"a core pattern's {key!r} is in each layer, under "
                                f"pattern")
     else:
-        for key in ("name", "slot_name", "prompt"):
+        for key in ("name", "slot_name"):
             if not _is_str(pattern.get(key)):
                 r.error(where, f"{key} is required")
         _check_optional_text(r, where, pattern, "notes")
-
-    prompt = pattern.get("prompt")
-    if _is_str(prompt) and not core:
-        for token in re.findall(r"\{(\w+)\}", prompt):
-            if token not in ("lemma", "gloss", "slot"):
-                r.error(where, f"prompt uses unknown placeholder {{{token}}}")
-        if "{slot}" not in prompt:
-            r.warn(where, "prompt has no {slot}; every cell will look identical")
+        _check_retired_prompt(r, where, pattern)
 
     slots = pattern.get("slots")
     if not isinstance(slots, list) or not slots:
@@ -2065,8 +2126,13 @@ def _check_fact_cards(r: Report, where: str, cards: object, lang: str) -> None:
 _SCRIPT = ("ऀ-෿Ͱ-ϿЀ-ӿ֐-׿؀-ۿ"
            "฀-๿぀-ヿ一-鿿가-힯")
 _SCRIPT_CHAR = re.compile(f"[{_SCRIPT}]")
+# An apostrophe inside a word is part of it in Eastern Nagari (Assamese ক'লা,
+# ম'হ): a run goes on over one between two letters of that block, and over no
+# other quote, so a stray one still ends the run.
+_NAGARI_APOSTROPHE = "(?<=[\u0980-\u09ff])['’](?=[\u0980-\u09ff])"
 _SCRIPT_RUN = re.compile(
-    rf"-?[{_SCRIPT}](?:[{_SCRIPT}‌‍]|[ -](?=[{_SCRIPT}]))*(?:-(?!\w))?")
+    rf"-?[{_SCRIPT}](?:[{_SCRIPT}‌‍]|{_NAGARI_APOSTROPHE}|[ -](?=[{_SCRIPT}]))*"
+    rf"(?:-(?!\w))?")
 _LATIN = "A-Za-zÀ-ɏḀ-ỿ"
 _DANDAS = "।॥"
 # Signs with no sound of their own: the virama and the nukta.
@@ -2744,7 +2810,13 @@ def _check_common_header(r: Report, raw: dict) -> None:
 
 def _check_review_tags(r: Report, raw: dict) -> None:
     """A file that holds a culture note's claim is tagged "unreviewed" until
-    a speaker checks it, then "reviewed": exactly one of them (ADR-0036)."""
+    a speaker checks it, then "reviewed": exactly one of them (ADR-0036).
+    The tag "rated" marks a deck of offensive words whose words native
+    speakers have rated: only such a deck can carry it (#630)."""
+    if isinstance(raw.get("tags"), list) and "rated" in raw["tags"] \
+            and "offensive" not in raw["tags"]:
+        r.error("tags", '"rated" marks a deck of offensive words, which is '
+                        'tagged "offensive"; this deck is not')
     if not r.culture:
         return
     tags = raw.get("tags") if isinstance(raw.get("tags"), list) else []
@@ -3751,6 +3823,27 @@ def _check_layer_bases(r: Report, where: str, value: object,
     return given
 
 
+RETIRED_PROMPT = (
+    "prompt is retired (ADR-0039): the app builds a cell's question itself, "
+    "'{lemma} ({gloss}) — {slot}', and reads a prompt only for decks that still "
+    "have one. Released apps that need it are still in use, so leave it as it is "
+    "until they are not"
+)
+
+
+def _check_retired_prompt(r: Report, where: str, pattern: dict) -> None:
+    """A pattern's `prompt` is optional and retired: flagged where given, and
+    still checked, because the app reads it as written."""
+    if "prompt" not in pattern:
+        return
+    prompt = pattern["prompt"]
+    if not _is_str(prompt):
+        r.error(where, "prompt must be non-empty text or omitted")
+        return
+    r.warn(where, RETIRED_PROMPT)
+    _check_prompt(r, where, prompt)
+
+
 def _check_prompt(r: Report, where: str, prompt: object) -> None:
     if _is_str(prompt):
         for token in re.findall(r"\{(\w+)\}", prompt):
@@ -3765,15 +3858,15 @@ def _check_layer_pattern(r: Report, pattern: object, core_pattern: object) -> li
     the words the merged deck teaches."""
     if not isinstance(pattern, dict):
         r.error("pattern", "is required on a layer of a grammar core: its name, "
-                           "slot_name, prompt and glosses")
+                           "slot_name and glosses")
         return []
     for unknown in sorted(set(pattern) - LAYER_PATTERN_KEYS, key=str):
         r.error("pattern", f"unknown field {unknown!r}")
-    for key in ("name", "slot_name", "prompt"):
+    for key in ("name", "slot_name"):
         if not _is_str(pattern.get(key)):
             r.error("pattern", f"{key} is required")
     _check_optional_text(r, "pattern", pattern, "notes")
-    _check_prompt(r, "pattern", pattern.get("prompt"))
+    _check_retired_prompt(r, "pattern", pattern)
     core_pattern = core_pattern if isinstance(core_pattern, dict) else {}
     core_slots = core_pattern.get("slots")
     core_slots = [s for s in core_slots if isinstance(s, str)] \
@@ -4296,6 +4389,7 @@ def check_path_file(r: Report, raw: dict, path: Path) -> None:
     _check_optional_text(r, "root", raw, "description")
     regions = check_regions(r, raw)
     genders = check_genders(r, raw)
+    levels = check_levels(r, raw)
     if not isinstance(units, list) or not units:
         r.error("units", "must be a non-empty list")
         return
@@ -4372,7 +4466,7 @@ def check_path_file(r: Report, raw: dict, path: Path) -> None:
     if lang_ok:
         r.course_path = (lang, listed)
         r.plan = PathPlan(lang, parsed, [d for d in alphabet if isinstance(d, str)],
-                          has_plan, marks, end, regions, genders)
+                          has_plan, marks, end, regions, genders, levels)
 
 
 def check_regions(r: Report, raw: dict) -> list[str] | None:
@@ -4440,6 +4534,36 @@ def check_genders(r: Report, raw: dict) -> list[str] | None:
         else:
             classes.append(value)
     return classes
+
+
+def check_levels(r: Report, raw: dict) -> dict[str, int] | None:
+    """A path's own words per level (#615, ADR-0045), such as
+    { A1: 120, A2: 60, B1: 80 }: what the level checks hold the plan to,
+    instead of the fixed sizes. All three levels, each a whole number of 1 or
+    more. Returns them, or None when the path gives none or they are
+    malformed."""
+    if "levels" not in raw:
+        return None
+    levels = raw["levels"]
+    shape = 'must be a mapping of the words per level, such as { A1: 120, A2: 60, B1: 80 }'
+    if not isinstance(levels, dict):
+        r.error("levels", f"{shape}, got {levels!r}")
+        return None
+    ok = True
+    for key in sorted(set(levels) - set(MILESTONES), key=str):
+        r.error("levels", f"unknown level {key!r}; the levels are A1, A2 and B1")
+        ok = False
+    for level in MILESTONES:
+        if level not in levels:
+            r.error("levels", f"needs {level}; give the words for A1, A2 and B1")
+            ok = False
+            continue
+        value = levels[level]
+        if isinstance(value, bool) or not isinstance(value, int) or value < 1:
+            r.error(f"levels.{level}", f"must be a whole number of words, 1 or more, "
+                                       f"got {value!r}")
+            ok = False
+    return {level: levels[level] for level in MILESTONES} if ok else None
 
 
 def _check_passages(r: Report, where: str, i: int, key: str, value: object,
@@ -4518,13 +4642,16 @@ def _check_unit(r: Report, where: str, i: int, unit: dict, check_decks,
                                                f"{pid!r}")
             else:
                 u.planned["id"] = pid
-            if "theme" in planned and "grammar" in planned:
+            # The unit's own `grammar` counts as the planned one (#622), as the
+            # app reads it.
+            has_grammar = "grammar" in planned or "grammar" in unit
+            if "theme" in planned and has_grammar:
                 r.error(f"{where}.planned", "names theme or grammar, not both")
-            elif "theme" not in planned and "grammar" not in planned:
+            elif "theme" not in planned and not has_grammar:
                 r.error(f"{where}.planned", "needs a theme or a grammar topic")
             if "theme" in planned:
                 theme = planned["theme"]
-                theme_unit = "grammar" not in planned
+                theme_unit = not has_grammar
                 if not _is_str(theme) or not ID_RE.fullmatch(theme):
                     r.error(f"{where}.planned.theme", f"must be a theme id, got {theme!r}")
                 else:
@@ -4537,9 +4664,8 @@ def _check_unit(r: Report, where: str, i: int, unit: dict, check_decks,
     words_given = (inner and "words" in planned) or "words" in unit
     if words_given:
         value = planned["words"] if inner and "words" in planned else unit["words"]
-        least = 1 if theme_unit else 0
-        if isinstance(value, bool) or not isinstance(value, int) or value < least:
-            r.error(f"{where}.words", f"must be a whole number of words, {least} or "
+        if isinstance(value, bool) or not isinstance(value, int) or value < 0:
+            r.error(f"{where}.words", f"must be a whole number of words, 0 or "
                                       f"more, got {value!r}")
         else:
             u.words = value
@@ -5242,6 +5368,10 @@ def check_cards_across(reports: list[Report]) -> list[str]:
             if find(rep, ref) is None:
                 problems.append(f"{rep.path}: {where}: notes[{i}].ref names card "
                                 f"{ref}, which no deck writes ({kind} note)")
+        for ref, where, place in rep.rejected_refs:
+            if find(rep, ref) is None:
+                problems.append(f"{rep.path}: {where}: {place} names card {ref}, "
+                                f"which no deck writes")
         for ref, where, place in rep.base_refs:
             if find(rep, ref) is None:
                 problems.append(f"{rep.path}: {where}: {place} names card {ref}, "
@@ -5840,6 +5970,22 @@ def warn_forms_across(reports: list[Report]) -> None:
                                 f"rules table, the source of its forms")
 
 
+def warn_alikes_across(reports: list[Report]) -> None:
+    """Warns on a word that sounds or looks like an offensive word of its
+    language, when no note names the pair (#629): the tool compares each
+    word's IPA and spelling with the offensive words', and a reviewer keeps
+    the real pairs, each with a note."""
+    from offensive_alikes import load_words, unexplained, warning
+    by_path = {rep.path.resolve(): rep for rep in reports}
+    words = load_words(list(by_path))
+    if not any(w.rude for w in words):
+        return
+    for alike in unexplained(words):
+        rep = by_path.get(alike.word.path.resolve())
+        if rep is not None:
+            rep.warn(f"card {alike.word.id}", warning(alike))
+
+
 def check_phrasebook_across(reports: list[Report]) -> list[str]:
     """A course's phrasebook: 15 to 25 cards, counted per course, and, where
     its path has a B1 plan, taught in the path's first unit."""
@@ -6048,10 +6194,16 @@ def check_plans_across(reports: list[Report]) -> list[str]:
                         rep.warn(f"units[{u.i}].{passage.key}[{passage.j}]",
                                  f"no description in {name}, so learners from {name} "
                                  f"see none")
+        level_words = plan.levels or LEVEL_WORDS
+        if plan.levels:
+            whole = sum(plan.levels.values())
+            b1_total = (whole // 2, whole * 3 // 2)
+        else:
+            b1_total = B1_TOTAL
         total = sum(u.words or 0 for u in plan.units if u.i <= plan.end)
-        if not B1_TOTAL[0] <= total <= B1_TOTAL[1]:
-            rep.warn("units", f"plans {total} words up to B1, outside 2,000–3,500; "
-                              f"check the sizes")
+        if not b1_total[0] <= total <= b1_total[1]:
+            rep.warn("units", f"plans {total} words up to B1, outside "
+                              f"{b1_total[0]:,}–{b1_total[1]:,}; check the sizes")
         if known is not None:
             for u in plan.units:
                 theme = u.planned["theme"] if u.planned is not None else None
@@ -6067,12 +6219,13 @@ def check_plans_across(reports: list[Report]) -> list[str]:
                      "B1": words(marks["A2"], marks["B1"])}
             topics = {t for u in plan.units if u.i <= marks["B1"] for t in u.grammar}
             planned = sum(1 for u in plan.units if u.planned is not None)
-            rep.info("units", f"B1 plan: A1 {sizes['A1']} words (about 700), A2 "
-                              f"+{sizes['A2']} (about 900), B1 +{sizes['B1']} (about "
-                              f"1,200); {sum(sizes.values())} in all; {len(topics)} "
+            rep.info("units", f"B1 plan: A1 {sizes['A1']} words (about "
+                              f"{level_words['A1']:,}), A2 +{sizes['A2']} (about "
+                              f"{level_words['A2']:,}), B1 +{sizes['B1']} (about "
+                              f"{level_words['B1']:,}); {sum(sizes.values())} in all; {len(topics)} "
                               f"grammar topics; {planned} units planned")
             for level, n in sizes.items():
-                size = LEVEL_WORDS[level]
+                size = level_words[level]
                 lo, hi = size // 2, size * 3 // 2
                 if not lo <= n <= hi:
                     rep.warn("units", f"{level} plans {n} words, far from about "
@@ -6205,6 +6358,7 @@ def main(argv: list[str]) -> int:
         print(f"error: {problem}")
     warn_base_stems_across(reports)
     warn_forms_across(reports)
+    warn_alikes_across(reports)
 
     failed = 0
     warned = 0
@@ -6228,7 +6382,18 @@ def main(argv: list[str]) -> int:
     ok = len(reports) - failed
     print(f"\n{ok}/{len(reports)} decks valid"
           f"{f', {warned} with warnings' if warned else ''}.")
-    return 1 if failed or unbundled or across else 0
+    if failed or unbundled or across:
+        # CI logs run to thousands of lines and the cross-file errors print
+        # near the top, so repeat every error at the very end, where the
+        # log's tail shows it.
+        print("\nErrors:")
+        for problem in unbundled + across:
+            print(f"  error: {problem}")
+        for rep in reports:
+            for e in rep.errors:
+                print(f"  error: {rep.path}: {e}")
+        return 1
+    return 0
 
 
 if __name__ == "__main__":

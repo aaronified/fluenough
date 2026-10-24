@@ -16,10 +16,12 @@ from __future__ import annotations
 
 import contextlib
 import io
+import os
 import shutil
 import sys
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 import yaml
@@ -1226,6 +1228,13 @@ class RulesCore(B1Case):
         self.assertError(RULES, "table.applies_to.pos",
                          "must be a non-empty list of parts of speech from ['adj', 'adv', "
                          "'noun', 'other', 'particle', 'pronoun', 'verb'], got ['phrase']")
+        for pos in ("letter", "digit"):
+            # A letter or a digit is a card's pos, never a rules deck's row kind.
+            self.table(lambda t, pos=pos: t.update(applies_to={"pos": [pos]}))
+            self.assertError(RULES, "table.applies_to.pos",
+                             "must be a non-empty list of parts of speech from ['adj', "
+                             "'adv', 'noun', 'other', 'particle', 'pronoun', 'verb'], "
+                             f"got ['{pos}']")
         self.table(lambda t: t.update(applies_to={"pos": ["noun"], "tags": "x",
                                                   "except": ["foo"]}))
         self.assertError(RULES, "table.applies_to", "tags must be a list")
@@ -1940,6 +1949,58 @@ class BaseStems(B1Case):
                     fresh.doCleanups()
 
 
+class PathLevels(B1Case):
+    """A path's own words per level (#615, ADR-0045)."""
+
+    def levels(self, value) -> None:
+        self.edit(PATH, lambda d: d.__setitem__("levels", value))
+
+    def test_levels_replace_the_fixed_sizes_for_that_path(self) -> None:
+        # The fixture plans A1 4, A2 0, B1 60, 64 in all.
+        self.levels({"A1": 4, "A2": 1, "B1": 60})
+        lines = self.assertClean()
+        self.assertEqual(self.section(lines, PATH), [
+            "  info    units: B1 plan: A1 4 words (about 4), A2 +0 (about 1), B1 +60 "
+            "(about 60); 64 in all; 4 grammar topics; 1 units planned",
+        ])
+
+    def test_a_level_far_from_its_own_size_is_warned_of(self) -> None:
+        self.levels({"A1": 40, "A2": 1, "B1": 60})
+        self.assertWarned(PATH, "units", "A1 plans 4 words, far from about 40 (20–60)")
+        self.levels({"A1": 4, "A2": 1, "B1": 600})
+        self.assertWarned(PATH, "units", "plans 64 words up to B1, outside 302–907; "
+                                         "check the sizes")
+
+    def test_a_path_without_levels_keeps_the_defaults(self) -> None:
+        self.assertWarned(PATH, "units", "A1 plans 4 words, far from about 700 (350–1,050)")
+
+    def test_levels_are_checked(self) -> None:
+        cases = (
+            ({"A1": 4, "A2": 1}, "levels", "needs B1; give the words for A1, A2 and B1"),
+            ({"A1": 4, "A2": 1, "B1": 6, "C1": 2}, "levels",
+             "unknown level 'C1'; the levels are A1, A2 and B1"),
+            ({"A1": 0, "A2": 1, "B1": 6}, "levels.A1",
+             "must be a whole number of words, 1 or more, got 0"),
+            ({"A1": True, "A2": 1, "B1": 6}, "levels.A1",
+             "must be a whole number of words, 1 or more, got True"),
+            ([4, 1, 6], "levels", "must be a mapping of the words per level, such as "
+                                  "{ A1: 120, A2: 60, B1: 80 }, got [4, 1, 6]"),
+        )
+        for value, where, msg in cases:
+            with self.subTest(value=value):
+                self.setUp()
+                self.levels(value)
+                self.assertError(PATH, where, msg)
+
+    def test_a_phrase_is_not_a_word_of_a_level(self) -> None:
+        phrase = {"id": "zz-1", "target": "tomo tawa", "pos": "phrase"}
+        noun = {"id": "zz-2", "target": "tomo tawa", "pos": "noun"}
+        word = {"id": "zz-3", "target": "tomo", "pos": "noun"}
+        self.assertFalse(validate_decks.counts_as_word(phrase, "vocab"))
+        self.assertTrue(validate_decks.counts_as_word(noun, "vocab"))
+        self.assertTrue(validate_decks.counts_as_word(word, "vocab"))
+
+
 class PathUnits(B1Case):
     """Section 10.2: a path's units, list or mapping, and its B1 plan."""
 
@@ -1980,8 +2041,12 @@ class PathUnits(B1Case):
         self.put(PATH, text.replace("words: 4", "words: 1_000"))
         self.assertIn("units[0].words: must be a whole number of words, 0 or more, got "
                       "'1_000'", self.errors(PATH))
-        self.assertUnits(lambda u: u[2]["planned"].update(words=0),
-                         "units[2].words: must be a whole number of words, 1 or more, got 0")
+        # A planned theme unit with no new roots plans 0 words (#615).
+        self.setUp()
+        self.assertEqual(self.units(lambda u: u[2]["planned"].update(words=0)), [])
+        self.assertUnits(lambda u: u[2]["planned"].update(words=-1),
+                         "units[2].words: must be a whole number of words, 0 or more, "
+                         "got -1")
         self.setUp()
         self.assertNotIn("units[0].words", " ".join(self.units(
             lambda u: u[0].update(words=0))))
@@ -2024,6 +2089,10 @@ class PathUnits(B1Case):
                          "units[2].planned.id: must be a core id of zz, zz- and a name, "
                          "such as zz-health, got 'yy-health'")
         self.assertUnits(lambda u: u[2]["planned"].update(grammar="if"),
+                         "units[2].planned: names theme or grammar, not both")
+        # Nor may the unit's own grammar beside a planned theme (#622), as the app
+        # reads it.
+        self.assertUnits(lambda u: u[2].update(grammar="if"),
                          "units[2].planned: names theme or grammar, not both")
         self.assertUnits(lambda u: u[2]["planned"].pop("theme"),
                          "units[2].planned: needs a theme or a grammar topic")
@@ -2515,7 +2584,12 @@ class Compatibility(unittest.TestCase):
 
     def _todays_decks_get_no_info_and_no_b1_message(self) -> None:
         out = io.StringIO()
-        with contextlib.redirect_stdout(out):
+        # The committed index is regenerated on main after each merge, so a
+        # deck change is not checked against it here; this test is about the
+        # decks' own messages. The index check has tests of its own
+        # (test_validate_decks.py, test_deck_index.py).
+        with mock.patch.dict(os.environ, {"FLUENOUGH_SKIP_INDEX_CHECK": "1"}), \
+                contextlib.redirect_stdout(out):
             code = validate_decks.main(["validate_decks.py",
                                         str(validate_decks.ROOT / "decks")])
         lines = out.getvalue().splitlines()

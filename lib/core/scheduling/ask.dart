@@ -1,6 +1,6 @@
 import '../models/card.dart';
 import '../models/drill_mode.dart';
-import '../models/reading.dart';
+import 'question_type.dart';
 import 'session_queue.dart';
 
 /// How a session item is asked (ADR-0024). Whichever way, it records the
@@ -50,11 +50,16 @@ enum Ask {
   /// Shown a set card, or one part of it: a closed group's members
   /// together, before they are drilled (DECK-FORMAT.md, Set cards). Its
   /// item's [SessionItem.setPart] says which. Records nothing.
-  showSet;
+  showSet,
 
-  /// Whether it only shows something and records nothing: a word taught,
-  /// or a set shown.
-  bool get onlyShows => this == teach || this == showSet;
+  /// Shown a rule card: the rule's name, its explanation and its forms on
+  /// words the learner knows, before the first question about a cell of the
+  /// rule (#417). Its item's card is the first cell asked. Records nothing.
+  teachRule;
+
+  /// Whether it only shows something and records nothing: a word taught, a
+  /// set shown or a rule card.
+  bool get onlyShows => this == teach || this == showSet || this == teachRule;
 
   /// Whether the learner picks one of the options the session offers.
   bool get chooses =>
@@ -92,11 +97,18 @@ enum Ask {
 /// the cells of its own row, the same word, that its expansion lists as
 /// options, each showing something different from [card] and from the others.
 /// Never another word's form, nor a form of a rule its layer leaves out, since
-/// such a cell is not among the options. Empty for a card that is not a
-/// rules table's cell, or for another kind of question.
+/// such a cell is not among the options. For a card that is not a rules
+/// table's cell, its [formSiblings]. Empty for another kind of question.
 List<Card> formChoices(Card card, Ask ask, Iterable<Card> cells) {
+  if (!ask.choosesAmongForms) return const <Card>[];
   final rule = card.rule;
-  if (rule == null || !ask.choosesAmongForms) return const <Card>[];
+  if (rule == null) {
+    final shown = <String>{ask.optionOf(card)};
+    return <Card>[
+      for (final other in formSiblings(card, cells))
+        if (shown.add(ask.optionOf(other))) other,
+    ];
+  }
   final forms = <String>{for (final option in rule.options) option.form};
   final shown = <String>{ask.optionOf(card)};
   return <Card>[
@@ -109,6 +121,44 @@ List<Card> formChoices(Card card, Ask ask, Iterable<Card> cells) {
         other,
   ];
 }
+
+/// The other forms of [card]'s word that its `bases` name (#522, step 4;
+/// owner, 2026-10-23, "Sibling cards", narrowed the same day to "Same single
+/// base"): the cards of [cards], other than [card] itself, that are siblings
+/// of it, and whose target differs from [card]'s. Two cards are siblings only
+/// when each has exactly one base and that base is the same card, so a
+/// sentence of several words that shares one of them is no sibling. Empty for
+/// a rules table's cell, which has its row, and for a card with no sibling.
+List<Card> formSiblings(Card card, Iterable<Card> cards) =>
+    FormSiblings(cards).of(card);
+
+/// [formSiblings] for many cards of the same [cards], with the cards grouped
+/// by their single base once.
+class FormSiblings {
+  FormSiblings(Iterable<Card> cards) {
+    for (final card in cards) {
+      if (card.rule != null) continue;
+      final ref = _singleBaseRef(card);
+      if (ref != null) (_byBase[ref] ??= <Card>[]).add(card);
+    }
+  }
+
+  final Map<String, List<Card>> _byBase = <String, List<Card>>{};
+
+  /// The siblings of [card]: see [formSiblings].
+  List<Card> of(Card card) {
+    final ref = card.rule == null ? _singleBaseRef(card) : null;
+    if (ref == null) return const <Card>[];
+    return <Card>[
+      for (final other in _byBase[ref] ?? const <Card>[])
+        if (other.id != card.id && other.target != card.target) other,
+    ];
+  }
+}
+
+/// The card [card]'s only base refs, or null when it has none or several.
+String? _singleBaseRef(Card card) =>
+    card.bases.length == 1 ? card.bases.single.ref : null;
 
 /// How many items a match pairs question matches.
 const int matchSize = 4;
@@ -139,6 +189,7 @@ const int matchSize = 4;
 ///   among others ([Ask.chooseWord]), where [canChoose] finds enough to
 ///   choose from.
 ///
+/// Which type asks an item is the registry's to say ([questionTypes]).
 /// Reading questions and every other mode are asked their own way.
 List<SessionItem> reviewAsks(
   List<SessionItem> items, {
@@ -146,12 +197,19 @@ List<SessionItem> reviewAsks(
   bool Function(SessionItem item)? hearsForm,
   bool Function(SessionItem item)? recallsFirst,
   bool Function(SessionItem item)? typed,
+  List<Card> Function(Card card)? siblingsOf,
 }) {
+  final context = QuestionContext(
+    canChoose: canChoose,
+    hearsForm: hearsForm,
+    recallsFirst: recallsFirst,
+    typed: typed,
+    siblingsOf: siblingsOf,
+  );
   final recognised = <int>[
     for (final (i, item) in items.indexed)
       if (item.mode == DrillMode.recognition &&
-          item.card is! QuestionCard &&
-          canChoose(item))
+          chooseMeaningType.eligible(item, context))
         i,
   ];
   // By index: the item asked another way, or null where a match took it.
@@ -173,32 +231,9 @@ List<SessionItem> reviewAsks(
     }
   }
   for (final (i, item) in items.indexed) {
-    if (item.mode == DrillMode.production && item.card.rearranges) {
-      asked[i] = item.askedAs(Ask.rearrange);
-    } else if (item.mode == DrillMode.production &&
-        item.card is! QuestionCard &&
-        !(typed?.call(item) ?? true) &&
-        canChoose(item.askedAs(Ask.chooseWord))) {
-      asked[i] = item.askedAs(Ask.chooseWord);
-    }
-    if (item.mode == DrillMode.listening &&
-        item.card is! QuestionCard &&
-        !(hearsForm?.call(item) ?? false) &&
-        (item.state?.repetitions ?? 0) == 0 &&
-        !(item.state == null && (recallsFirst?.call(item) ?? false)) &&
-        canChoose(item.askedAs(Ask.hearMeaning))) {
-      asked[i] = item.askedAs(Ask.hearMeaning);
-    }
-    if (item.mode == DrillMode.grammarUnderstood) {
-      asked[i] = item.askedAs(Ask.chooseFormMeaning);
-    }
-    if (item.mode == DrillMode.grammar &&
-        item.card.choosesForm &&
-        (item.state?.repetitions ?? 0) == 0 &&
-        !(item.state == null && (recallsFirst?.call(item) ?? false)) &&
-        canChoose(item.askedAs(Ask.chooseForm))) {
-      asked[i] = item.askedAs(Ask.chooseForm);
-    }
+    if (item.mode == DrillMode.recognition) continue;
+    final type = questionTypeFor(item, context);
+    if (type != null) asked[i] = item.askedAs(type.ask);
   }
   return <SessionItem>[
     for (final (i, item) in items.indexed)

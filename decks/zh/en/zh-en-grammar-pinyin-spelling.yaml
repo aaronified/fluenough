@@ -1,0 +1,24 @@
+schema: 1
+id: "zh-en-grammar-pinyin-spelling"
+kind: "layer"
+core: "zh-grammar-pinyin-spelling"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pinyin spelling"
+license: "CC-BY-SA-4.0"
+description: "How pinyin is spelled: the two dots of ü, the short spellings, and where the tone mark goes. Not yet checked by a Mandarin speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Pinyin spelling"
+  slot_name: "spelling"
+  prompt: "{lemma} ({gloss}): {slot}"
+  slots: { "with tone marks": "in pinyin with tone marks", "typed": "typed on a keyboard (tone as a number, ü as v)" }
+  entries:
+    "qu": "to go"
+    "nv": "woman"
+    "lv": "green"
+    "yu": "fish"
+    "jiu": "nine"
+    "xie": "to write"
+    "xi": "west"
+    "lao": "old"
+  notes: "After j, q, x and y the sound ü is written u, with no dots: 去 (qù), 鱼 (yú). After n and l the dots stay: 女 (nǚ), 绿 (lǜ), typed with v (nv, lv). The endings iou, uei and uen are written short, iu, ui and un, so 九 (jiǔ) has the mark on the u. The tone mark goes on a, then e or o, and on the second letter of iu and ui: 写 (xiě), 九 (jiǔ). It is typed as a number after the syllable: qu4."

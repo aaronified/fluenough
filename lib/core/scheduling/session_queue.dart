@@ -2,6 +2,8 @@ import '../models/card.dart';
 import '../models/drill_mode.dart';
 import '../models/reading.dart';
 import 'ask.dart';
+import 'deck_sampling.dart';
+import 'placed_review.dart';
 import 'fsrs.dart';
 import 'lesson_sets.dart';
 
@@ -188,6 +190,15 @@ class SessionQueue {
   /// its date: revising a finished deck. One mode per card still holds, the
   /// one due soonest.
   ///
+  /// With [sampleKnown], a deck whose known cards are due shows only some of
+  /// them, as [sampleCount] says, the ones reviewed longest ago first; the
+  /// rest wait for another day's sample (#680).
+  ///
+  /// [placedOf] says how a pair placement credited is reviewed (#761): a
+  /// [PlacedReview.setInStone] pair is never offered, and with [sampleKnown]
+  /// a [PlacedReview.spotCheck] pair counts as known until the learner has
+  /// reviewed it.
+  ///
   /// A card gives either its most overdue pair or its first new one, unless
   /// [newEvenIfDue]: then its first new pair is offered as well, for a
   /// session of new cards only, which drops the due ones.
@@ -204,8 +215,11 @@ class SessionQueue {
     VoiceLookup? canHear,
     PairFilter? isSetAside,
     bool Function(Card card)? canIntroduce,
+    List<Card> Function(Card card)? siblingsOf,
     bool reviseAll = false,
     bool newEvenIfDue = false,
+    bool sampleKnown = false,
+    PlacedLookup? placedOf,
     Set<DrillMode> modes = const <DrillMode>{
       DrillMode.recognition,
       DrillMode.production,
@@ -226,12 +240,14 @@ class SessionQueue {
       final allowed = card.modesIn(
         ttsAvailable: hasVoice(card),
         speechAvailable: canHear?.call(card) ?? false,
+        siblings: siblingsOf?.call(card) ?? const <Card>[],
       );
       SessionItem? mostOverdue;
       SessionItem? firstNew;
       for (final mode in DrillMode.drills) {
         if (!allowed.contains(mode) || !modes.contains(mode)) continue;
         if (isSetAside?.call(card, mode) ?? false) continue;
+        if (placedOf?.call(card, mode) == PlacedReview.setInStone) continue;
         final state = stateOf(card, mode);
         if (state == null) {
           firstNew ??= SessionItem(card: card, mode: mode, state: null);
@@ -299,8 +315,52 @@ class SessionQueue {
       return byDue != 0 ? byDue : a.order.compareTo(b.order);
     });
 
+    var shown = due.map((d) => d.item).toList();
+    if (sampleKnown) {
+      // Each deck's pair states, to tell a deck already represented.
+      final byDeck = <String, List<FsrsState>>{};
+      for (final card in all) {
+        final allowed = card.modesIn(
+          ttsAvailable: hasVoice(card),
+          speechAvailable: canHear?.call(card) ?? false,
+        );
+        for (final mode in DrillMode.drills) {
+          if (!allowed.contains(mode) || !modes.contains(mode)) continue;
+          final state = stateOf(card, mode);
+          if (state != null) (byDeck[card.deckId] ??= <FsrsState>[]).add(state);
+        }
+      }
+      final knownDue = <String, List<SessionItem>>{};
+      for (final item in shown) {
+        final state = item.state!;
+        final spot =
+            placedOf?.call(item.card, item.mode) == PlacedReview.spotCheck;
+        if (spot ? isPlacedKnown(state) : isKnownState(state)) {
+          (knownDue[item.card.deckId] ??= <SessionItem>[]).add(item);
+        }
+      }
+      final held = <SessionItem>{};
+      for (final MapEntry(key: deck, value: items) in knownDue.entries) {
+        final count = sampleCount(
+          <FsrsState>[for (final i in items) i.state!],
+          byDeck[deck]!,
+          now: now,
+        );
+        // Longest since reviewed first; the due order breaks ties.
+        final ranked = List<SessionItem>.of(items)
+          ..sort(
+            (a, b) => a.state!.lastReviewAt.compareTo(b.state!.lastReviewAt),
+          );
+        held.addAll(ranked.skip(count));
+      }
+      shown = <SessionItem>[
+        for (final item in shown)
+          if (!held.contains(item)) item,
+      ];
+    }
+
     return SessionQueue._(
-      List<SessionItem>.unmodifiable(due.map((d) => d.item)),
+      List<SessionItem>.unmodifiable(shown),
       List<SessionItem>.unmodifiable(fresh),
     );
   }

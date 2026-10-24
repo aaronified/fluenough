@@ -1,0 +1,38 @@
+schema: 1
+id: "tok-grammar-first-syllable-stress"
+part: "core"
+kind: "grammar"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["stressed syllable", "unstressed syllable"]
+  entries:
+    - lemma: "toki"
+      forms:
+        "stressed syllable": "to"
+        "unstressed syllable": "ki"
+    - lemma: "pona"
+      forms:
+        "stressed syllable": "po"
+        "unstressed syllable": "na"
+    - lemma: "sina"
+      forms:
+        "stressed syllable": "si"
+        "unstressed syllable": "na"
+    - lemma: "nimi"
+      forms:
+        "stressed syllable": "ni"
+        "unstressed syllable": "mi"
+    - lemma: "ala"
+      forms:
+        "stressed syllable": "a"
+        "unstressed syllable": "la"
+    - lemma: "pana"
+      forms:
+        "stressed syllable": "pa"
+        "unstressed syllable": "na"
+    - lemma: "sona"
+      forms:
+        "stressed syllable": "so"
+        "unstressed syllable": "na"

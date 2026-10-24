@@ -1,0 +1,578 @@
+schema: 1
+id: "es-en-quantities"
+kind: "layer"
+core: "es-quantities"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Quantities: how much, how many, weights and containers"
+license: "CC-BY-SA-4.0"
+description: "Amounts, weights and containers, and the words for a little, a lot and each. Not yet checked by a Spanish speaker: please report any mistake."
+
+cards:
+  "es-0358":
+    native: "little; few"
+    notes:
+      "n1": "Poco means little or few. Un poco de means a little of something."
+    examples:
+      "Tengo poco tiempo hoy.":
+        native: "I have little time today."
+        bases:
+          "poco": "little"
+          "tiempo": "time"
+      "Hay poco pan en la mesa.":
+        native: "There is little bread on the table."
+        bases:
+          "Hay": "there is; there are"
+          "poco": "little"
+          "en": "in"
+          "la": "the"
+  "es-0359":
+    native: "something"
+    notes:
+      "n1": "Algo is something. Its opposite is nada (nothing)."
+    examples:
+      "¿Quieres algo de beber?":
+        native: "Do you want something to drink?"
+        bases:
+          "algo": "something"
+          "de": "of"
+      "Tengo algo para ti.":
+        native: "I have something for you."
+        bases:
+          "algo": "something"
+          "para": "for"
+          "ti": "you"
+  "es-0360":
+    native: "nothing"
+    notes:
+      "n1": "Nada is nothing. With no before the verb, nada goes after it: no tengo nada (I have nothing)."
+    examples:
+      "No tengo nada.":
+        native: "I have nothing."
+        bases:
+          "nada": "nothing"
+      "Ana no come nada.":
+        native: "Ana eats nothing."
+        bases:
+          "Ana": "Ana"
+          "nada": "nothing"
+  "es-0361":
+    native: "quite; enough"
+    notes:
+      "n1": "Bastante is quite before an adjective, and enough before a noun."
+    examples:
+      "La comida es bastante buena.":
+        native: "The food is quite good."
+        bases:
+          "La": "the"
+          "bastante": "quite"
+      "Hay bastante agua para todos.":
+        native: "There is enough water for everyone."
+        bases:
+          "Hay": "there is; there are"
+          "bastante": "quite"
+          "para": "for"
+  "es-0362":
+    native: "too much; too"
+    notes:
+      "n1": "Demasiado is too much or too many. It is the opposite of poco."
+    examples:
+      "Hablas demasiado rápido.":
+        native: "You speak too fast."
+        bases:
+          "demasiado": "too much"
+      "Comemos demasiado pan.":
+        native: "We eat too much bread."
+        bases:
+          "demasiado": "too much"
+  "es-0363":
+    native: "more"
+    notes:
+      "n1": "Más is more. It also means plus in sums, and the most with el or la."
+    examples:
+      "Quiero más agua.":
+        native: "I want more water."
+        bases:
+          "más": "more"
+      "Ana come más que yo.":
+        native: "Ana eats more than I do."
+        bases:
+          "Ana": "Ana"
+          "más": "more"
+          "que": "that"
+  "es-0364":
+    native: "less; fewer"
+    notes:
+      "n1": "Menos is less or fewer, the opposite of más."
+    examples:
+      "Trabajo menos los sábados.":
+        native: "I work less on Saturdays."
+        bases:
+          "menos": "less"
+          "los": "the"
+          "sábados": "Saturdays"
+      "Bebo menos café que antes.":
+        native: "I drink less coffee than before."
+        bases:
+          "menos": "less"
+          "que": "that"
+  "es-0365":
+    native: "enough; sufficient"
+    notes:
+      "n1": "Suficiente is enough. Its plural is suficientes."
+    examples:
+      "Tengo suficiente dinero para el viaje.":
+        native: "I have enough money for the trip."
+        bases:
+          "suficiente": "enough"
+          "dinero": "money"
+          "para": "for"
+          "el": "the"
+          "viaje": "trip"
+      "¿Es suficiente para cuatro?":
+        native: "Is it enough for four?"
+        bases:
+          "suficiente": "enough"
+          "para": "for"
+  "es-0366":
+    native: "each; every"
+    notes:
+      "n1": "Cada is each or every, and it takes a singular noun: cada día."
+    examples:
+      "Como pan cada día.":
+        native: "I eat bread every day."
+        bases:
+          "cada": "each"
+      "Cada persona tiene un nombre.":
+        native: "Each person has a name."
+        bases:
+          "Cada": "each"
+          "un": "a"
+  "es-0367":
+    native: "several"
+    notes:
+      "n1": "Varios is several, and it is always plural: varios libros, varias casas."
+    examples:
+      "Compré varios libros.":
+        native: "I bought several books."
+        bases:
+          "varios": "several"
+          "libros": "books"
+      "Hay varias personas en la calle.":
+        native: "There are several people in the street."
+        bases:
+          "Hay": "there is; there are"
+          "varias": "several"
+          "en": "in"
+          "la": "the"
+  "es-0368":
+    native: "half"
+    notes:
+      "n1": "Medio means half and agrees with its noun: medio kilo, media manzana."
+    examples:
+      "Quiero medio kilo de queso.":
+        native: "I want half a kilo of cheese."
+        bases:
+          "medio": "half"
+          "de": "of"
+      "Comí media manzana.":
+        native: "I ate half an apple."
+        bases:
+          "media": "half"
+  "es-0369":
+    native: "half (a noun)"
+    notes:
+      "n1": "La mitad is the half, a noun: la mitad de la pizza."
+    bases:
+      "la": "the"
+      "mitad": "half"
+    examples:
+      "Comí la mitad del pan.":
+        native: "I ate half of the bread."
+        bases:
+          "la": "the"
+          "mitad": "half"
+          "del": "of the"
+      "Ana bebe la mitad del agua.":
+        native: "Ana drinks half of the water."
+        bases:
+          "Ana": "Ana"
+          "la": "the"
+          "mitad": "half"
+          "del": "of the"
+  "es-0370":
+    native: "double"
+    notes:
+      "n1": "Doble means double, two times as much: el doble de."
+    examples:
+      "Un café cuesta el doble.":
+        native: "A coffee costs double."
+        bases:
+          "Un": "a"
+          "el": "the"
+          "doble": "double"
+      "Ahora gano el doble que antes.":
+        native: "Now I earn double what I earned before."
+        bases:
+          "gano": "earn"
+          "el": "the"
+          "doble": "double"
+          "que": "that"
+  "es-0371":
+    native: "whole; entire"
+    notes:
+      "n1": "Entero means whole: una manzana entera is a whole apple."
+    examples:
+      "Comí una manzana entera.":
+        native: "I ate a whole apple."
+        bases:
+          "una": "a"
+          "entera": "whole"
+      "Ana leyó el libro entero.":
+        native: "Ana read the whole book."
+        bases:
+          "Ana": "Ana"
+          "el": "the"
+          "entero": "whole"
+  "es-0372":
+    native: "amount; quantity"
+    notes:
+      "n1": "La cantidad is the amount or quantity of something."
+    bases:
+      "la": "the"
+      "cantidad": "amount"
+    examples:
+      "Hay una cantidad grande de arroz.":
+        native: "There is a large amount of rice."
+        bases:
+          "Hay": "there is; there are"
+          "una": "a"
+          "cantidad": "amount"
+          "de": "of"
+      "La cantidad de sal es pequeña.":
+        native: "The amount of salt is small."
+        bases:
+          "La": "the"
+          "cantidad": "amount"
+          "de": "of"
+  "es-0373":
+    native: "pair; couple"
+    notes:
+      "n1": "El par is a pair. Un par de means a couple of, two of something."
+    bases:
+      "el": "the"
+      "par": "pair"
+    examples:
+      "Necesito un par de huevos.":
+        native: "I need a couple of eggs."
+        bases:
+          "un": "a"
+          "par": "pair"
+          "de": "of"
+          "huevos": "eggs"
+      "Ana compró un par de zapatos.":
+        native: "Ana bought a pair of shoes."
+        bases:
+          "Ana": "Ana"
+          "un": "a"
+          "par": "pair"
+          "de": "of"
+          "zapatos": "shoes"
+  "es-0374":
+    native: "dozen"
+    notes:
+      "n1": "La docena is a dozen: una docena de huevos."
+    bases:
+      "la": "the"
+      "docena": "dozen"
+    examples:
+      "Compré una docena de huevos.":
+        native: "I bought a dozen eggs."
+        bases:
+          "una": "a"
+          "docena": "dozen"
+          "de": "of"
+          "huevos": "eggs"
+      "Hay una docena de rosas en el jarrón.":
+        native: "There is a dozen roses in the vase."
+        bases:
+          "Hay": "there is; there are"
+          "una": "a"
+          "docena": "dozen"
+          "de": "of"
+          "rosas": "roses"
+          "en": "in"
+          "el": "the"
+          "jarrón": "vase"
+  "es-0375":
+    native: "kilo; kilogram"
+    notes:
+      "n1": "El kilo is the kilo: un kilo de manzanas is a kilo of apples."
+    bases:
+      "el": "the"
+      "kilo": "kilo"
+    examples:
+      "Quiero un kilo de manzanas.":
+        native: "I want a kilo of apples."
+        bases:
+          "un": "a"
+          "kilo": "kilo"
+          "de": "of"
+          "manzanas": "apples"
+      "El kilo de pan cuesta dos euros.":
+        native: "A kilo of bread costs two euros."
+        bases:
+          "El": "the"
+          "kilo": "kilo"
+          "de": "of"
+          "euros": "euros"
+  "es-0376":
+    native: "gram"
+    notes:
+      "n1": "El gramo is the gram. A thousand gramos make a kilo."
+    bases:
+      "el": "the"
+      "gramo": "gram"
+    examples:
+      "Necesito cien gramos de queso.":
+        native: "I need a hundred grams of cheese."
+        bases:
+          "gramos": "gram"
+          "de": "of"
+      "Un gramo de sal es muy poco.":
+        native: "A gram of salt is very little."
+        bases:
+          "Un": "a"
+          "gramo": "gram"
+          "de": "of"
+  "es-0377":
+    native: "litre"
+    notes:
+      "n1": "El litro is the litre: un litro de leche is a litre of milk."
+    bases:
+      "el": "the"
+      "litro": "litre"
+    examples:
+      "Bebo dos litros de agua al día.":
+        native: "I drink two litres of water a day."
+        bases:
+          "litros": "litre"
+          "de": "of"
+          "al": "to the"
+      "Compro un litro de leche.":
+        native: "I buy a litre of milk."
+        bases:
+          "un": "a"
+          "litro": "litre"
+          "de": "of"
+  "es-0378":
+    native: "packet; parcel"
+    notes:
+      "n1": "El paquete is the packet or the parcel: un paquete de galletas."
+    bases:
+      "el": "the"
+      "paquete": "packet"
+    examples:
+      "Compré un paquete de galletas.":
+        native: "I bought a packet of biscuits."
+        bases:
+          "un": "a"
+          "paquete": "packet"
+          "de": "of"
+          "galletas": "biscuits"
+      "El paquete de arroz es grande.":
+        native: "The packet of rice is big."
+        bases:
+          "El": "the"
+          "paquete": "packet"
+          "de": "of"
+  "es-0379":
+    native: "bottle"
+    notes:
+      "n1": "La botella is the bottle: una botella de vino."
+    bases:
+      "la": "the"
+      "botella": "bottle"
+    examples:
+      "Hay una botella de vino en la mesa.":
+        native: "There is a bottle of wine on the table."
+        bases:
+          "Hay": "there is; there are"
+          "una": "a"
+          "botella": "bottle"
+          "de": "of"
+          "en": "in"
+          "la": "the"
+      "Ana abre la botella.":
+        native: "Ana opens the bottle."
+        bases:
+          "Ana": "Ana"
+          "la": "the"
+          "botella": "bottle"
+  "es-0380":
+    native: "bag"
+    notes:
+      "n1": "La bolsa is the bag, for shopping or for rubbish."
+    bases:
+      "la": "the"
+      "bolsa": "bag"
+    examples:
+      "Ana lleva una bolsa grande.":
+        native: "Ana carries a big bag."
+        bases:
+          "Ana": "Ana"
+          "una": "a"
+          "bolsa": "bag"
+      "Pongo la bolsa en el suelo.":
+        native: "I put the bag on the floor."
+        bases:
+          "Pongo": "put"
+          "la": "the"
+          "bolsa": "bag"
+          "en": "in"
+          "el": "the"
+  "es-0381":
+    native: "tin; can"
+    notes:
+      "n1": "La lata is a tin or a can: una lata de tomates."
+    bases:
+      "la": "the"
+      "lata": "tin"
+    examples:
+      "Compré una lata de tomates.":
+        native: "I bought a can of tomatoes."
+        bases:
+          "una": "a"
+          "lata": "tin"
+          "de": "of"
+          "tomates": "tomatoes"
+      "Esta lata está vacía.":
+        native: "This can is empty."
+        bases:
+          "Esta": "this"
+          "lata": "tin"
+          "vacía": "empty"
+  "es-0382":
+    native: "box; case"
+    notes:
+      "n1": "La caja is the box or the case."
+    bases:
+      "la": "the"
+      "caja": "box"
+    examples:
+      "Hay una caja de galletas en el armario.":
+        native: "There is a box of biscuits in the cupboard."
+        bases:
+          "Hay": "there is; there are"
+          "una": "a"
+          "caja": "box"
+          "de": "of"
+          "galletas": "biscuits"
+          "en": "in"
+          "el": "the"
+      "La caja está abierta.":
+        native: "The box is open."
+        bases:
+          "La": "the"
+          "caja": "box"
+  "es-0383":
+    native: "cup"
+    notes:
+      "n1": "La taza is the cup, the one for coffee or tea."
+    bases:
+      "la": "the"
+      "taza": "cup"
+    examples:
+      "Tomo una taza de café.":
+        native: "I have a cup of coffee."
+        bases:
+          "una": "a"
+          "taza": "cup"
+          "de": "of"
+      "Ana lava la taza.":
+        native: "Ana washes the cup."
+        bases:
+          "Ana": "Ana"
+          "la": "the"
+          "taza": "cup"
+  "es-0384":
+    native: "piece; slice"
+    notes:
+      "n1": "El trozo is a piece or a slice of something: un trozo de pan."
+    bases:
+      "el": "the"
+      "trozo": "piece"
+    examples:
+      "Como un trozo de pan.":
+        native: "I eat a piece of bread."
+        bases:
+          "un": "a"
+          "trozo": "piece"
+          "de": "of"
+      "Ana corta un trozo de queso.":
+        native: "Ana cuts a piece of cheese."
+        bases:
+          "Ana": "Ana"
+          "corta": "cut"
+          "un": "a"
+          "trozo": "piece"
+          "de": "of"
+  "es-0385":
+    native: "heap; lot"
+    notes:
+      "n1": "El montón is a heap. Un montón de means a lot of."
+    bases:
+      "el": "the"
+      "montón": "heap"
+    examples:
+      "Tengo un montón de trabajo.":
+        native: "I have a lot of work."
+        bases:
+          "un": "a"
+          "montón": "heap"
+          "de": "of"
+      "Hay un montón de gente en la calle.":
+        native: "There are a lot of people in the street."
+        bases:
+          "Hay": "there is; there are"
+          "un": "a"
+          "montón": "heap"
+          "de": "of"
+          "gente": "people"
+          "en": "in"
+          "la": "the"
+  "es-0386":
+    native: "rest; remainder"
+    notes:
+      "n1": "El resto is the rest, what is left over: el resto del día."
+    bases:
+      "el": "the"
+      "resto": "rest"
+    examples:
+      "Como el resto del pan.":
+        native: "I eat the rest of the bread."
+        bases:
+          "el": "the"
+          "resto": "rest"
+          "del": "of the"
+      "Ana lee el resto del libro.":
+        native: "Ana reads the rest of the book."
+        bases:
+          "Ana": "Ana"
+          "el": "the"
+          "resto": "rest"
+          "del": "of the"
+  "es-0387":
+    native: "to weigh"
+    notes:
+      "n1": "Pesar means to weigh. Its endings are regular: peso, pesas, pesa, pesamos, pesáis, pesan."
+    examples:
+      "Esta maleta pesa mucho.":
+        native: "This suitcase weighs a lot."
+        bases:
+          "Esta": "this"
+          "maleta": "suitcase"
+          "pesa": "weigh"
+      "¿Cuánto pesas?":
+        native: "How much do you weigh?"
+        bases:
+          "pesas": "weigh"

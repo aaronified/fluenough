@@ -251,32 +251,12 @@ class CatalogLanguage {
     this.scriptDecks = false,
     this.natives = const <CatalogNative>[],
     this.size = 0,
-    this.variant,
   });
 
   final String code;
 
-  /// Which of a language's entries in the list this is, when it has two:
-  /// the IPA is offered as "my languages" and "whole chart", one language
-  /// with one progress (ADR-0041). Null for a language with one entry.
-  final String? variant;
-
-  /// Names the entry in the list: its [code], and its [variant] where it
-  /// has one.
-  String get key => variant == null ? code : '$code:$variant';
-
-  /// This entry as the [variant] one of the language, under [name].
-  CatalogLanguage asVariant(String variant, String name) => CatalogLanguage(
-    code: code,
-    name: name,
-    ownName: ownName,
-    icon: icon,
-    script: script,
-    scriptDecks: scriptDecks,
-    natives: natives,
-    size: size,
-    variant: variant,
-  );
+  /// Names the entry in the list: its [code].
+  String get key => code;
 
   /// Its English name.
   final String name;

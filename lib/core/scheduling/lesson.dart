@@ -1,23 +1,23 @@
 import '../models/card.dart';
 import '../models/drill_mode.dart';
+import 'question_type.dart';
 import 'session_queue.dart';
 
 /// How hard a new item is to learn, by the item itself (ADR-0024). A lesson
-/// teaches some of each, easy first.
+/// teaches its items easy first; no quota of each (ADR-0046).
 enum Difficulty {
   easy,
   medium,
   hard;
 
-  /// Hard: a phrase, a sentence of three words or more, or a grammar cell.
+  /// Hard: a card that is rearranged ([Card.rearranges]: three words or
+  /// more, or a phrase of two), a phrase, or a grammar cell.
   /// Medium: two words, or one of seven letters or more, counted in its
   /// reading where it has one, so that scripts compare alike. Easy: the
   /// rest.
   static Difficulty of(Card card) {
     final words = card.wordCount;
-    if (card.pos == 'phrase' ||
-        words >= 3 ||
-        card.modes.contains(DrillMode.grammar)) {
+    if (card.rearranges || card.pos == 'phrase' || card.isGrammarCell) {
       return hard;
     }
     final letters = _letter.allMatches(card.reading ?? card.target).length;
@@ -25,96 +25,126 @@ enum Difficulty {
   }
 }
 
-/// The new items of one lesson, from [cards] in the order given: the first
-/// [each] of each [Difficulty], and, when a difficulty has fewer, the next
-/// cards of the others in order, up to `3 × each` in all. Easy ones first,
-/// then medium, then hard, each in the order given.
-///
-/// A card given twice, as in two decks of a unit, is taken once.
-List<Card> lessonItems(Iterable<Card> cards, {int each = 3}) {
+/// The most new items a lesson takes: nine, as a lesson always held at most.
+const int lessonMaxNew = 9;
+
+/// The fewest new items a lesson takes, however many are still in progress,
+/// so that a lesson is never only reviews.
+const int lessonMinNew = 2;
+
+/// The most new cells of a rules table a lesson takes (owner, 2026-10-16:
+/// "3 per lesson").
+const int ruleCellsPerLesson = 3;
+
+/// How many new items a lesson takes when [inProgress] words and rules have
+/// been taught and are not known yet (owner, 2026-10-18: "Fewer, by the
+/// mastery bar"): [lessonMaxNew] less those in progress, never fewer than
+/// [lessonMinNew]. There is no fixed quota of each difficulty.
+int lessonRoom(int inProgress) =>
+    (lessonMaxNew - inProgress).clamp(lessonMinNew, lessonMaxNew);
+
+/// The new items of one lesson, from [cards] in the order of the path: the
+/// next [room] of them, at most [ruleCells] of them cells of a rules table,
+/// each card once. [cards] are the ones a lesson may teach now, the closed
+/// sentences and the cells of unknown words already left out (`Unlocks`).
+/// They are taught easy first, then medium, then hard ([Difficulty]), each
+/// in the order given.
+List<Card> lessonItems(
+  Iterable<Card> cards, {
+  int room = lessonMaxNew,
+  int ruleCells = ruleCellsPerLesson,
+}) {
   final seen = <String>{};
-  final all = <Card>[
-    for (final card in cards)
-      if (seen.add(card.id)) card,
-  ];
-  final taken = <Card>{};
-  final counts = <Difficulty, int>{};
-  for (final card in all) {
-    final difficulty = Difficulty.of(card);
-    if ((counts[difficulty] ?? 0) < each) {
-      taken.add(card);
-      counts[difficulty] = (counts[difficulty] ?? 0) + 1;
+  final taken = <Card>[];
+  var cells = 0;
+  for (final card in cards) {
+    if (taken.length >= room) break;
+    if (!seen.add(card.id)) continue;
+    if (card.rule != null) {
+      if (cells >= ruleCells) continue;
+      cells++;
     }
-  }
-  final size = each * Difficulty.values.length;
-  for (final card in all) {
-    if (taken.length >= size) break;
     taken.add(card);
   }
   return <Card>[
     for (final difficulty in Difficulty.values)
-      ...all.where((c) => taken.contains(c) && Difficulty.of(c) == difficulty),
+      ...taken.where((c) => Difficulty.of(c) == difficulty),
   ];
 }
 
 /// One way to ask a card in a lesson: the mode it records, and how.
 typedef LessonQuestion = ({DrillMode mode, Ask ask});
 
+/// The skills a lesson asks of a card of each [Difficulty], best first: how
+/// hard it is decides the order, never what kind of card it is.
+const Map<Difficulty, List<DrillMode>> _lessonSkills =
+    <Difficulty, List<DrillMode>>{
+      Difficulty.easy: <DrillMode>[
+        DrillMode.recognition,
+        DrillMode.speaking,
+        DrillMode.listening,
+        DrillMode.production,
+      ],
+      Difficulty.medium: <DrillMode>[
+        DrillMode.listening,
+        DrillMode.recognition,
+        DrillMode.production,
+        DrillMode.speaking,
+      ],
+      Difficulty.hard: <DrillMode>[
+        DrillMode.production,
+        DrillMode.speaking,
+        DrillMode.listening,
+        DrillMode.recognition,
+      ],
+    };
+
 /// The questions a lesson can ask [card], best first (ADR-0024): the first
 /// it can is its check, straight after it is taught, and the next in
 /// another mode its question in the exercise.
 ///
-/// A rules table's cell (DECK-FORMAT.md, Rules decks) is understood before it
-/// is produced: its form's meaning chosen, then its form chosen among its
-/// word's, each where its row has the options; with none, it is typed. A
-/// pattern deck's grammar cell is typed.
+/// Each is the first type of the registry ([lessonTypeFor]) that the card's
+/// data makes eligible for the skill; a skill no type claims is asked its
+/// own way ([Ask.own]). A grammar cell (DECK-FORMAT.md, Rules decks) is
+/// understood before it is produced, each where its row, or its [siblings],
+/// have the options; with none, it is typed. A card with [siblings] is asked
+/// its grammar skills after the word's own.
 ///
 /// A card of a language that is not [typed], as the IPA's, is produced by
-/// choosing the word, whatever its difficulty: nothing is typed.
-List<LessonQuestion> lessonQuestions(Card card, {bool typed = true}) {
-  if (card.rule != null) {
-    return <LessonQuestion>[
-      if (card.choosesMeaning)
-        (mode: DrillMode.grammarUnderstood, ask: Ask.chooseFormMeaning),
-      (
-        mode: DrillMode.grammar,
-        ask: card.choosesForm ? Ask.chooseForm : Ask.own,
-      ),
-    ];
+/// choosing the word, whatever its difficulty: nothing is typed. In a typed
+/// language only a hard card is typed; an easier one is chosen first.
+List<LessonQuestion> lessonQuestions(
+  Card card, {
+  bool typed = true,
+  List<Card> siblings = const <Card>[],
+}) {
+  final forms = card.rule == null ? siblings : const <Card>[];
+  if (card.isGrammarCell) {
+    return grammarLessonQuestions(card, siblings: forms);
   }
-  if (card.modes.contains(DrillMode.grammar)) {
-    return const <LessonQuestion>[(mode: DrillMode.grammar, ask: Ask.own)];
+  final difficulty = Difficulty.of(card);
+  Ask askFor(DrillMode skill) {
+    // A medium card's recognition is matched with others, where it can be.
+    final grouped =
+        difficulty == Difficulty.medium && skill == DrillMode.recognition;
+    final type =
+        (grouped ? lessonTypeFor(card, skill, grouped: true) : null) ??
+        lessonTypeFor(
+          card,
+          skill,
+          typed: difficulty == Difficulty.hard && typed,
+        );
+    return type?.ask ?? Ask.own;
   }
-  return switch (Difficulty.of(card)) {
-    Difficulty.easy => const <LessonQuestion>[
-      (mode: DrillMode.recognition, ask: Ask.chooseMeaning),
-      (mode: DrillMode.speaking, ask: Ask.own),
-      (mode: DrillMode.listening, ask: Ask.hearMeaning),
-      (mode: DrillMode.production, ask: Ask.chooseWord),
-    ],
-    Difficulty.medium => const <LessonQuestion>[
-      (mode: DrillMode.listening, ask: Ask.hearMeaning),
-      (mode: DrillMode.recognition, ask: Ask.matchPairs),
-      (mode: DrillMode.production, ask: Ask.chooseWord),
-      (mode: DrillMode.speaking, ask: Ask.own),
-    ],
-    Difficulty.hard => <LessonQuestion>[
-      (
-        mode: DrillMode.production,
-        ask: card.rearranges
-            ? Ask.rearrange
-            : typed
-            ? Ask.own
-            : Ask.chooseWord,
-      ),
-      (mode: DrillMode.speaking, ask: Ask.own),
-      (mode: DrillMode.listening, ask: Ask.hearMeaning),
-      (mode: DrillMode.recognition, ask: Ask.chooseMeaning),
-    ],
-  };
+
+  return <LessonQuestion>[
+    for (final skill in _lessonSkills[difficulty]!)
+      (mode: skill, ask: askFor(skill)),
+    ...grammarLessonQuestions(card, siblings: forms, typedFallback: false),
+  ];
 }
 
-/// A lesson of [cards], as [lessonItems] picks them (ADR-0024): each card
+/// A lesson of [cards], as [lessonItems] picks them (ADR-0024, ADR-0046): each card
 /// taught, then checked at once; then the exercise, each card asked once
 /// more in another mode, in a mixed order, the ones to be matched together
 /// in pairs.
@@ -129,13 +159,15 @@ List<LessonQuestion> lessonQuestions(Card card, {bool typed = true}) {
 /// question"). It is checked at once all the same.
 ///
 /// A card [typed] says is not typed is never asked for a typed answer: its
-/// production is chosen.
+/// production is chosen. [siblingsOf] gives a card's other forms by its base
+/// ([formSiblings]), which a lesson asks as the review does.
 List<SessionItem> lessonPlan(
   List<Card> cards, {
   required Set<DrillMode> Function(Card card) modesOf,
   required bool Function(Card card, Ask ask) canChoose,
   bool Function(Card card)? straightToQuestion,
   bool Function(Card card)? typed,
+  List<Card> Function(Card card)? siblingsOf,
 }) {
   final taught = <SessionItem>[];
   final exercise = <Difficulty, List<SessionItem>>{
@@ -144,7 +176,11 @@ List<SessionItem> lessonPlan(
   for (final card in cards) {
     final modes = modesOf(card);
     final questions = <LessonQuestion>[
-      for (final q in lessonQuestions(card, typed: typed?.call(card) ?? true))
+      for (final q in lessonQuestions(
+        card,
+        typed: typed?.call(card) ?? true,
+        siblings: siblingsOf?.call(card) ?? const <Card>[],
+      ))
         if (modes.contains(q.mode)) q,
     ];
     if (questions.isEmpty) continue;
@@ -239,10 +275,14 @@ List<SessionItem> _matched(
 final RegExp _letter = RegExp(r'\p{L}', unicode: true);
 
 /// How many cards [items], a lesson, teaches: those it shows a teaching card
-/// for, and the members its set cards taught that go straight to their
-/// question (#515).
+/// for, the members its set cards taught that go straight to their question
+/// (#515), and the cells of a rules table, which a lesson asks straight away
+/// after the rule card (#417).
 int lessonCardCount(List<SessionItem> items) => <String>{
   for (final item in items)
     if (item.ask == Ask.teach) item.card.id,
   for (final item in items) ...?item.setPart?.newIds,
+  for (final item in items)
+    if (item.card.rule != null && item.state == null && !item.ask.onlyShows)
+      item.card.id,
 }.length;
