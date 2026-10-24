@@ -1,0 +1,39 @@
+schema: 1
+id: "zh-grammar-mei-you"
+part: "core"
+kind: "grammar"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+"pattern":
+  "slots":
+    - "statement"
+    - "negative"
+  "entries":
+    - "lemma": "书"
+      "key": "shu"
+      "reading": "shū"
+      "forms":
+        "statement": "我有书"
+        "negative": "我没有书"
+      "readings":
+        "statement": "wǒ yǒu shū"
+        "negative": "wǒ méiyǒu shū"
+    - "lemma": "钥匙"
+      "key": "yaoshi"
+      "reading": "yàoshi"
+      "forms":
+        "statement": "我有钥匙"
+        "negative": "我没有钥匙"
+      "readings":
+        "statement": "wǒ yǒu yàoshi"
+        "negative": "wǒ méiyǒu yàoshi"
+    - "lemma": "电话"
+      "key": "dianhua"
+      "reading": "diànhuà"
+      "forms":
+        "statement": "我有电话"
+        "negative": "我没有电话"
+      "readings":
+        "statement": "wǒ yǒu diànhuà"
+        "negative": "wǒ méiyǒu diànhuà"

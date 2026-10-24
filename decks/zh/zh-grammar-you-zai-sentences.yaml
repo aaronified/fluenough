@@ -1,0 +1,72 @@
+schema: 1
+id: "zh-grammar-you-zai-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+"cards":
+  - "id": "zh-0630"
+    "target": "我有钥匙。"
+    "words": ["我", "有", "钥匙"]
+    "reading": "wǒ yǒu yàoshi."
+    "pos": "phrase"
+    "bases":
+      - { "word": "有", "base": "有", "reading": "yǒu" }
+    "confusables":
+      - { "id": "w1", "ref": "zh-0022", "kind": "word" }
+      - { "id": "w2", "ref": "zh-0020", "kind": "word" }
+  - "id": "zh-0631"
+    "target": "我没有钥匙。"
+    "words": ["我", "没有", "钥匙"]
+    "reading": "wǒ méiyǒu yàoshi."
+    "pos": "phrase"
+    "bases":
+      - { "word": "没有", "base": "没有", "reading": "méiyǒu" }
+    "confusables":
+      - { "id": "w1", "ref": "zh-0023", "kind": "word" }
+      - { "id": "w2", "ref": "zh-0160", "kind": "word" }
+  - "id": "zh-0632"
+    "target": "你有书吗？"
+    "words": ["你", "有", "书", "吗"]
+    "reading": "nǐ yǒu shū ma?"
+    "pos": "phrase"
+    "bases":
+      - { "word": "有", "base": "有", "reading": "yǒu" }
+    "confusables":
+      - { "id": "w1", "ref": "zh-0019", "kind": "word" }
+      - { "id": "w2", "ref": "zh-0098", "kind": "word" }
+  - "id": "zh-0633"
+    "target": "钥匙在桌子上。"
+    "words": ["钥匙", "在", "桌子", "上"]
+    "reading": "yàoshi zài zhuōzi shàng."
+    "pos": "phrase"
+    "confusables":
+      - { "id": "w1", "ref": "zh-0522", "kind": "word" }
+      - { "id": "w2", "ref": "zh-0520", "kind": "word" }
+  - "id": "zh-0634"
+    "target": "书在哪里？"
+    "words": ["书", "在", "哪里"]
+    "reading": "shū zài nǎlǐ?"
+    "pos": "phrase"
+    "confusables":
+      - { "id": "w1", "ref": "zh-0091", "kind": "word" }
+      - { "id": "w2", "ref": "zh-0090", "kind": "word" }
+  - "id": "zh-0635"
+    "target": "椅子在房间里。"
+    "words": ["椅子", "在", "房间", "里"]
+    "reading": "yǐzi zài fángjiān lǐ."
+    "pos": "phrase"
+    "confusables":
+      - { "id": "w1", "ref": "zh-0521", "kind": "word" }
+      - { "id": "w2", "ref": "zh-0529", "kind": "word" }
+  - "id": "zh-0636"
+    "target": "他没有电话。"
+    "words": ["他", "没有", "电话"]
+    "reading": "tā méiyǒu diànhuà."
+    "pos": "phrase"
+    "bases":
+      - { "word": "没有", "base": "没有", "reading": "méiyǒu" }
+    "confusables":
+      - { "id": "w1", "ref": "zh-0160", "kind": "word" }
+      - { "id": "w2", "ref": "zh-0019", "kind": "word" }
