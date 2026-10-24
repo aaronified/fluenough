@@ -19,6 +19,7 @@ import '../core/numbers/number_practice.dart';
 import '../core/progress/recent_answers.dart' show MasteryLevel;
 import '../core/scheduling/placed_review.dart';
 import '../core/scheduling/daily_budget.dart';
+import '../core/scheduling/script_split.dart';
 import '../core/scheduling/skill_map.dart';
 import '../core/scheduling/session_queue.dart';
 import '../core/scheduling/study_hours.dart';
@@ -1611,19 +1612,29 @@ class AppState extends ChangeNotifier {
       for (final card in cards)
         if (tags.isEmpty || card.tags.any(tags.contains)) card,
     ];
-    final cards = tagged(<Card>[for (final entry in decks) ...entry.cards]);
+    // The script decks' Recognition and Write are the Script tile's, apart
+    // from the word skills' (owner, 2026-10-24).
+    final split = ScriptSplit(progress.skills.scriptDecks);
+    final scope = request.script;
+    final cards = split.cardsFor(
+      scope,
+      tagged(<Card>[for (final entry in decks) ...entry.cards]),
+    );
 
     // A named skill is drilled even if switched off in Settings, as the
     // deck page offers it, but not while it is paused.
     final named = request.named;
-    final modes = named == null
-        ? _modes(ignorePauses: ignorePauses)
-        : <DrillMode>{
-            for (final skill in named)
-              if (features.isAvailable(skill.feature) &&
-                  (ignorePauses || !settings.isPaused(skill, now())))
-                ...skill.modes,
-          };
+    final modes = split.modesFor(
+      scope,
+      named == null
+          ? _modes(ignorePauses: ignorePauses)
+          : <DrillMode>{
+              for (final skill in named)
+                if (features.isAvailable(skill.feature) &&
+                    (ignorePauses || !settings.isPaused(skill, now())))
+                  ...skill.modes,
+            },
+    );
 
     // A new pair is a new skill of a word already taught: a word is new
     // once, in its lesson (ADR-0024). Only an untaught request takes those
@@ -1663,7 +1674,8 @@ class AppState extends ChangeNotifier {
       now: now(),
       newCardLimit: newCardLimit,
       isSetAside: (card, mode) =>
-          leeches.isSetAside((cardId: card.id, mode: mode)),
+          leeches.isSetAside((cardId: card.id, mode: mode)) ||
+          split.leavesOut(scope, card, mode),
       reviseAll: request.revise,
       // A session of new cards only offers a card's new pair even while
       // another of its pairs is due, so a deck with reviews due is not
@@ -2465,12 +2477,15 @@ class AppState extends ChangeNotifier {
 
   /// How many words a revision of [skills] can pick from, or of every skill
   /// switched on when null.
-  int revisableIn(Set<Skill>? skills) => <String>{
-    for (final item in buildSession(
-      DrillRequest(revise: true, skills: skills),
-    ).items)
-      item.card.id,
-  }.length;
+  ///
+  /// With [script], the script decks' share of it (Today's tiles).
+  int revisableIn(Set<Skill>? skills, {ScriptScope script = ScriptScope.any}) =>
+      <String>{
+        for (final item in buildSession(
+          DrillRequest(revise: true, skills: skills, script: script),
+        ).items)
+          item.card.id,
+      }.length;
 
   // ---------------------------------------------------------------------------
   // Lessons (ADR-0024)
