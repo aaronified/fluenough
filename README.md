@@ -113,12 +113,6 @@ file, the card model is a superset that accommodates Latin, syllabic and
 logographic scripts alike, and grammar is described by pattern tables rather
 than hard-coded rules. Adding a language means adding files, never code.
 
-> **Status: early development.** The architecture, deck format, example
-> decks, deck parser and validator are in, and the app's screens are built
-> from the design. Progress is saved on the phone, one database per profile,
-> and features not built yet are shown disabled, marked "Feature incoming". See
-> [the roadmap](https://github.com/aaronified/fluenough/wiki/Roadmap).
-
 ## Courses
 
 Taught from English. Every course has a B1 plan in its path: the units up to
@@ -148,10 +142,10 @@ every unit up to that level's milestone is written. How the levels relate to
 CEFR and to national tests is in
 [Proficiency levels](https://github.com/aaronified/fluenough/blob/main/wiki/Proficiency-Levels.md).
 
-**Why the courses stop at B1.** The owner's scope is "a strong base, then
-real use": a course gives you the base, and past B1 you move on to native
-media, books and people. Upcoming (owner, 2026-10-24): learners who reach B1
-are pointed to movies, songs and books as resources
+**Why the courses stop at B1.** The aim is "a strong base, then real use": a
+course gives you the base, and past B1 you move on to native media, books and
+people. Upcoming: learners who reach B1 are pointed to movies, songs and books
+as resources
 ([#215](https://github.com/aaronified/fluenough/issues/215)).
 
 A course is tagged Alpha until its A1 units are written and Beta until its B1
