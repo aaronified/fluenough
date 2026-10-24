@@ -16,10 +16,12 @@ tags: ["beginner", "unreviewed"]
       "민수 씨는 학생이에요.":
         "native": "Mr. Minsu is a student."
         "bases":
+          "민수": "Minsu, a given name"
           "씨는": "Mr. or Ms., with the topic particle 는 (neun)"
       "박 씨는 선생님이에요.":
         "native": "Mr. Park is a teacher."
         "bases":
+          "박": "Park, a family name"
           "씨는": "Mr. or Ms., with the topic particle 는 (neun)"
   "ko-0089":
     "native": "professor"
@@ -32,6 +34,8 @@ tags: ["beginner", "unreviewed"]
           "교수님은": "professor, with the topic particle 은 (eun)"
       "교수님, 안녕하세요.":
         "native": "Professor, hello."
+        "bases":
+          "안녕하세요": "hello (polite)"
   "ko-0090":
     "native": "boss, head of a company"
     "notes":
@@ -68,7 +72,6 @@ tags: ["beginner", "unreviewed"]
         "native": "What is the family name?"
         "bases":
           "성이": "family name, with the subject particle 이 (i)"
-          "뭐예요": "what, with the polite 'is' 예요 (yeyo)"
       "성은 박이에요.":
         "native": "The family name is Park."
         "bases":
@@ -76,7 +79,6 @@ tags: ["beginner", "unreviewed"]
           "박이에요": "Park, with the polite 'is' 이에요 (ieyo)"
   "ko-0093":
     "native": "name (polite)"
-    "register": "formal"
     "notes":
       "n1": "성함 (seongham) is the polite word for someone else's name. For your own name, or in an everyday question, 이름 (ireum) is used. A teacher's name is asked for with 성함 (seongham)."
     "examples":
@@ -84,12 +86,10 @@ tags: ["beginner", "unreviewed"]
         "native": "What is the name (polite)?"
         "bases":
           "성함이": "name (polite), with the subject particle 이 (i)"
-          "뭐예요": "what, with the polite 'is' 예요 (yeyo)"
       "선생님 성함은 뭐예요?":
         "native": "What is the teacher's name (polite)?"
         "bases":
           "성함은": "name (polite), with the topic particle 은 (eun)"
-          "뭐예요": "what, with the polite 'is' 예요 (yeyo)"
   "ko-0094":
     "native": "man"
     "notes":
@@ -115,7 +115,7 @@ tags: ["beginner", "unreviewed"]
           "여자는": "woman, with the topic particle 는 (neun)"
           "회사원이에요": "office worker, with the polite 'is' 이에요 (ieyo)"
       "여자 선생님이에요.":
-        "native": "She is a female teacher."
+        "native": "(She) is a female teacher."
   "ko-0096":
     "native": "office worker"
     "notes":
@@ -154,7 +154,6 @@ tags: ["beginner", "unreviewed"]
         "native": "Where is the business card?"
         "bases":
           "명함이": "business card, with the subject particle 이 (i)"
-          "어디예요": "where, with the polite 'is' 예요 (yeyo)"
       "명함이 있어요.":
         "native": "There is a business card."
         "bases":
@@ -174,7 +173,6 @@ tags: ["beginner", "unreviewed"]
         "native": "What is an introduction?"
         "bases":
           "소개가": "introduction, with the subject particle 가 (ga)"
-          "뭐예요": "what, with the polite 'is' 예요 (yeyo)"
   "ko-0100":
     "native": "greeting"
     "notes":
@@ -184,7 +182,6 @@ tags: ["beginner", "unreviewed"]
         "native": "The greeting is good."
         "bases":
           "인사가": "greeting, with the subject particle 가 (ga)"
-          "좋아요": "good (polite)"
       "친구가 인사해요.":
         "native": "The friend greets."
         "bases":
@@ -199,7 +196,6 @@ tags: ["beginner", "unreviewed"]
         "native": "Who is the middle-aged man?"
         "bases":
           "아저씨는": "middle-aged man, with the topic particle 는 (neun)"
-          "누구예요": "who, with the polite 'is' 예요 (yeyo)"
       "아저씨, 물 주세요.":
         "native": "Sir, water please."
         "bases":
@@ -213,7 +209,6 @@ tags: ["beginner", "unreviewed"]
         "native": "Where is the middle-aged woman?"
         "bases":
           "아줌마는": "middle-aged woman, with the topic particle 는 (neun)"
-          "어디예요": "where, with the polite 'is' 예요 (yeyo)"
       "아줌마, 커피 주세요.":
         "native": "Madam, coffee please."
         "bases":
@@ -227,7 +222,6 @@ tags: ["beginner", "unreviewed"]
         "native": "Miss, how much is this?"
         "bases":
           "이거": "this, a short form of 이것 (igeot)"
-          "얼마예요": "how much, with the polite 'is' 예요 (yeyo)"
       "아가씨는 학생이에요?":
         "native": "Is the young woman a student?"
         "bases":
@@ -246,7 +240,6 @@ tags: ["beginner", "unreviewed"]
         "native": "Where is the adult?"
         "bases":
           "어른은": "adult, with the topic particle 은 (eun)"
-          "어디예요": "where, with the polite 'is' 예요 (yeyo)"
   "ko-0105":
     "native": "child"
     "notes":
@@ -256,12 +249,10 @@ tags: ["beginner", "unreviewed"]
         "native": "Is the child a student?"
         "bases":
           "어린이는": "child, with the topic particle 는 (neun)"
-          "학생이에요": "student, with the polite 'is' 이에요 (ieyo)"
       "어린이는 어디예요?":
         "native": "Where is the child?"
         "bases":
           "어린이는": "child, with the topic particle 는 (neun)"
-          "어디예요": "where, with the polite 'is' 예요 (yeyo)"
   "ko-0106":
     "native": "first, the first time"
     "notes":
@@ -283,11 +274,10 @@ tags: ["beginner", "unreviewed"]
       "저는 친구를 만나요.":
         "native": "I meet a friend."
         "bases":
-          "저는": "I, with the topic particle 는 (neun)"
           "친구를": "friend, with the object particle 를 (reul)"
           "만나요": "to meet (polite)"
       "교수님을 만나요?":
-        "native": "Do you meet the professor?"
+        "native": "(Do you) meet the professor?"
         "bases":
           "교수님을": "professor, with the object particle 을 (eul)"
           "만나요": "to meet (polite)"
