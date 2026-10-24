@@ -10,6 +10,7 @@ import '../../app/unlocks.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/reading.dart' show QuestionCard;
+import '../../core/progress/mastery.dart' show kKnownRecall;
 import '../../core/progress/unlocks.dart';
 import '../../core/scheduling/lesson.dart';
 import '../../l10n/app_localizations.dart';
@@ -169,7 +170,7 @@ class _UnitPageState extends State<UnitPage> {
       ]),
       builder: (context, _) {
         final content = UnitContent(decks);
-        final answers = RecentAnswers(state.progress.log);
+        final answers = state.recentAnswers;
         final gate = state.unlocks;
         final words = <Card>[
           for (final card in content.words)
@@ -295,7 +296,7 @@ class _UnitPageState extends State<UnitPage> {
                   title: content.isScript
                       ? l10n.unitSectionLetters(++section)
                       : l10n.unitSectionWords(++section),
-                  aside: l10n.unitKnownMeans(knownRight, recentAnswerCount),
+                  aside: l10n.unitKnownMeans((kKnownRecall * 100).round()),
                 ),
                 const SizedBox(height: 10),
                 GroupedList(

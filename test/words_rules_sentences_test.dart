@@ -80,8 +80,12 @@ void _answer(
   }
 }
 
-const List<int> _nineOfTen = <int>[4, 4, 4, 1, 4, 4, 4, 4, 4, 4];
-const List<int> _sevenOfTen = <int>[4, 1, 4, 1, 4, 4, 1, 4, 4, 4];
+/// Right every time, a minute apart: the last review is right with recall
+/// near certain, so the card is known.
+const List<int> _knownRun = <int>[4, 4, 4];
+
+/// The same, with the last answer missed: not known.
+const List<int> _missedRun = <int>[4, 4, 1];
 
 void main() {
   group('the unlock gate', () {
@@ -112,37 +116,35 @@ void main() {
         unorderedEquals(<String>['xx-0001', 'xx-0002', 'xx-rule-in']),
       );
 
-      _answer(progress, 'xx-0001', _nineOfTen);
-      _answer(progress, 'xx-0002', _nineOfTen);
-      _answer(progress, 'xx-r-1', _sevenOfTen);
+      _answer(progress, 'xx-0001', _knownRun);
+      _answer(progress, 'xx-0002', _knownRun);
+      _answer(progress, 'xx-r-1', _missedRun);
       expect(gate().waitingFor(sentence).map((n) => n.id), <String>[
         'xx-rule-in',
-      ], reason: 'the rule is answered right on 7 of its last 10: not known');
+      ], reason: 'the rule\'s last answer was a miss: not known');
       expect(gate().isClosed(sentence), isTrue);
 
       _answer(
         progress,
         'xx-r-1',
-        _nineOfTen,
-        from: _start.add(const Duration(days: 1)),
+        _knownRun,
+        from: _start.add(const Duration(hours: 1)),
       );
       expect(gate().isClosed(sentence), isFalse);
       expect(gate().isOpen(sentence), isTrue);
     });
 
-    test(
-      'a word is known on 9 of its last 10 answers; old misses fall out',
-      () {
-        final progress = MemoryProgress();
-        _answer(progress, 'xx-0001', <int>[1, 1, 1, ..._nineOfTen]);
-        _answer(progress, 'xx-0002', _sevenOfTen);
-        final answers = RecentAnswers(progress.log);
-        expect(answers.of('xx-0001').level, MasteryLevel.known);
-        expect(answers.rightOf('xx-0001'), 9);
-        expect(answers.of('xx-0002').level, MasteryLevel.learning);
-        expect(answers.rightOf('xx-0002'), 7);
-      },
-    );
+    test('a word is known when its last answers were right with FSRS recall '
+        'of 85% or better; a miss is not', () {
+      final progress = MemoryProgress();
+      _answer(progress, 'xx-0001', <int>[1, 1, 1, ..._knownRun]);
+      _answer(progress, 'xx-0002', _missedRun);
+      final answers = RecentAnswers(progress.log);
+      expect(answers.of('xx-0001').level, MasteryLevel.known);
+      expect(answers.countOf('xx-0001'), (known: 1, total: 1));
+      expect(answers.of('xx-0002').level, MasteryLevel.learning);
+      expect(answers.countOf('xx-0002'), (known: 0, total: 1));
+    });
 
     test('a rule that the learner\'s course does not teach is not waited '
         'for, and a word it does not have is not either', () {
@@ -162,7 +164,7 @@ void main() {
       Unlocks gate() => Unlocks(log: progress.log, cards: cards);
       expect(gate().isCellOpen(cards[2]), isFalse);
       expect(gate().isCellOpen(cards[3]), isFalse);
-      _answer(progress, 'xx-0001', _nineOfTen);
+      _answer(progress, 'xx-0001', _knownRun);
       expect(gate().isCellOpen(cards[2]), isTrue);
       expect(gate().isCellOpen(cards[3]), isFalse);
       expect(gate().isOpen(_word('xx-0003')), isTrue);
@@ -199,9 +201,9 @@ void main() {
       final progress = MemoryProgress();
       expect(count(progress), noUnlockCounts);
 
-      _answer(progress, 'xx-0001', _nineOfTen);
-      _answer(progress, 'xx-0002', _sevenOfTen);
-      _answer(progress, 'xx-r-1', _nineOfTen);
+      _answer(progress, 'xx-0001', _knownRun);
+      _answer(progress, 'xx-0002', _missedRun);
+      _answer(progress, 'xx-r-1', _knownRun);
       // Two words taught, one of them known; the rule is known; the
       // sentences of the deck the learner began count, one of them open.
       progress.record(
@@ -234,8 +236,8 @@ void main() {
         (card: form, kind: DeckKind.vocab),
       ];
       final progress = MemoryProgress();
-      _answer(progress, 'xx-0001', _nineOfTen);
-      _answer(progress, 'xx-0004', _nineOfTen);
+      _answer(progress, 'xx-0001', _knownRun);
+      _answer(progress, 'xx-0004', _knownRun);
       final counts = Unlocks(
         log: progress.log,
         cards: <Card>[for (final e in all) e.card],
