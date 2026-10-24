@@ -451,6 +451,8 @@ void main() {
       know(state, words[0], ago: const Duration(hours: 5));
       know(state, words[1]);
       final start = state.now().subtract(const Duration(hours: 1));
+      expect(state.unlockCountsBefore('bn', start).wordsKnown, 1);
+      expect(state.unlockCountsFor('bn').wordsKnown, 2);
       await pumpScreen(
         tester,
         SummaryPage(
