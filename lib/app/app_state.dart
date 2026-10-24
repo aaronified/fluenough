@@ -46,6 +46,7 @@ import 'daily_plan.dart';
 import '../core/decks/ipa_course.dart';
 import 'deck_catalog.dart';
 import 'deck_downloads.dart';
+import 'font_check.dart';
 import 'deck_import.dart';
 import 'features.dart';
 import 'language_choice.dart';
@@ -207,6 +208,9 @@ class AppState extends ChangeNotifier {
     shellTab.addListener(_logTab);
     shellTabMoving.addListener(_logTab);
     deckDownloads?.onFilesChanged = _filesDownloaded;
+    deckDownloads
+      ?..wantsFont = fontCheck.wants
+      ..usesFont = fontCheck.uses;
     this.settings.addListener(_reviewerToDownloads);
     _reviewerToDownloads();
     this.settings.addListener(_languageShownChanged);
@@ -360,6 +364,12 @@ class AppState extends ChangeNotifier {
 
   /// The learner's settings. Has its own notifier.
   final SettingsNotifier settings;
+
+  /// The font check (#611): what to ask the learner about the scripts of
+  /// their courses, and what their answers do.
+  FontCheck get fontCheck =>
+      _fontCheck ??= FontCheck(settings: settings, downloads: deckDownloads);
+  FontCheck? _fontCheck;
 
   /// Scheduling state and the review log. Has its own notifier.
   final ProgressStore progress;
@@ -914,8 +924,29 @@ class AppState extends ChangeNotifier {
 
   /// Downloads [language]'s first decks, and the rest behind them. Null
   /// once it can be learned, else why not.
-  Future<DeckDownloadFailure?> downloadLanguage(String language) =>
-      deckDownloads!.download(language, settings.spokenLanguages);
+  Future<DeckDownloadFailure?> downloadLanguage(String language) {
+    final downloads = deckDownloads!;
+    final started = downloads.download(language, settings.spokenLanguages);
+    // The font check asks about the scripts the course is read in, once
+    // the index says which they are (#611).
+    unawaited(
+      downloads.ensureIndex().then((known) {
+        if (known) _askAboutFonts(language);
+      }),
+    );
+    return started;
+  }
+
+  /// The font check: [language]'s scripts the learner reads that have a
+  /// font to download and no answer yet.
+  void _askAboutFonts(String language) {
+    final fonts = deckDownloads?.index?.language(language)?.fonts;
+    if (fonts == null || fonts.isEmpty) return;
+    // The language block's script comes first in the index's list.
+    final scripts = <String>[for (final font in fonts) font.script];
+    final learned = settings.scriptsLearned(language, primary: scripts.first);
+    fontCheck.request(scripts.where(learned.contains));
+  }
 
   /// Deletes [language]'s decks from the phone, and stops learning it. Its
   /// progress stays in the review log, by card id, and comes back with its
@@ -2859,6 +2890,7 @@ class AppState extends ChangeNotifier {
       ..removeListener(_logTab)
       ..dispose();
     updates.dispose();
+    _fontCheck?.dispose();
     deckDownloads?.onFilesChanged = null;
     tuner.dispose();
     pacing.dispose();
