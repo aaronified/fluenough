@@ -3,8 +3,8 @@
 Source of truth: this wiki page.
 
 
-- **Status:** Accepted (owner, 2026-10-13, #506). The owner approved, one by one: the principle that questions are derived from card data, whatever the card's kind; the answers to the open questions of `docs/plans/question-engine.md`; the ability rule ("This is approved as proposed"); the set card shape (kind `set`, members by card id, explanation in the layer, closed groups listed per language); and the exam answers on reading passages (#509), which replace the earlier "scheduled as a whole" decision. What the plan marks **Proposed** (the step order, the registry's names and the other card data fields) is not part of what was approved.
-- **Date:** 2026-10-13
+- **Status:** Accepted (owner, 2026-10-24, #506: "Accept; build now"). The whole ADR is accepted, and the question engine (#522) is built now, without waiting for the exam design (#509). Before that, it was accepted in part (owner, 2026-10-13, #506). The owner approved, one by one: the principle that questions are derived from card data, whatever the card's kind; the answers to the open questions of `docs/plans/question-engine.md`; the ability rule ("This is approved as proposed"); the set card shape (kind `set`, members by card id, explanation in the layer, closed groups listed per language); and the exam answers on reading passages (#509), which replace the earlier "scheduled as a whole" decision. What the plan marked **Proposed** then (the step order, the registry's names and the other card data fields) was approved later: the step order on 2026-10-18 ("approve the #522 step order") and the rest with this acceptance.
+- **Date:** 2026-10-13, accepted in full 2026-10-24
 - **Amends:** ADR-0024 (which question each skill is asked as), ADR-0034
   (Hear asks for the meaning; the skills stay as they are).
 - **Plan:** `docs/plans/question-engine.md`. The card data it relies on is
