@@ -1188,6 +1188,23 @@ cards:
       expect(withWarning(null).warning, isNull);
     });
 
+    test('a core card lists the offensive words it is not alike (#808)', () {
+      final card = DeckParser.parseCore(
+        coreWith(
+          '    pos: "noun"\n'
+          '    not_sounds_like: ["zz-0002"]\n'
+          '    not_looks_like: ["zz-0002", "zz-0003"]\n',
+        ),
+        source: 'zz.yaml',
+      ).cards.whereType<CoreWritten>().first;
+      expect(card.notSoundsLike, ['zz-0002']);
+      expect(card.notLooksLike, ['zz-0002', 'zz-0003']);
+      expect(
+        () => parseProbe(probeCard('    not_sounds_like: ["zz-0002"]\n')),
+        throwsA(isA<DeckParseException>()),
+      );
+    });
+
     test('an empty warning, or one on a card of a single file, is refused', () {
       expect(
         () => DeckParser.parseCore(
