@@ -1,0 +1,84 @@
+schema: 1
+id: "zh-grammar-a-not-a"
+part: "core"
+kind: "grammar"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+"pattern":
+  "slots":
+    - "statement"
+    - "question"
+  "entries":
+    - "lemma": "是"
+      "key": "shi"
+      "reading": "shì"
+      "forms":
+        "statement": "他是老师"
+        "question": "他是不是老师"
+      "readings":
+        "statement": "tā shì lǎoshī"
+        "question": "tā shì bu shì lǎoshī"
+    - "lemma": "去"
+      "key": "qu"
+      "reading": "qù"
+      "forms":
+        "statement": "你去学校"
+        "question": "你去不去学校"
+      "readings":
+        "statement": "nǐ qù xuéxiào"
+        "question": "nǐ qù bu qù xuéxiào"
+    - "lemma": "喝"
+      "key": "he"
+      "reading": "hē"
+      "forms":
+        "statement": "你喝茶"
+        "question": "你喝不喝茶"
+      "readings":
+        "statement": "nǐ hē chá"
+        "question": "nǐ hē bu hē chá"
+    - "lemma": "吃"
+      "key": "chi"
+      "reading": "chī"
+      "forms":
+        "statement": "你吃鱼"
+        "question": "你吃不吃鱼"
+      "readings":
+        "statement": "nǐ chī yú"
+        "question": "nǐ chī bu chī yú"
+    - "lemma": "喜欢"
+      "key": "xihuan"
+      "reading": "xǐhuan"
+      "forms":
+        "statement": "你喜欢茶"
+        "question": "你喜不喜欢茶"
+      "readings":
+        "statement": "nǐ xǐhuan chá"
+        "question": "nǐ xǐ bu xǐhuan chá"
+    - "lemma": "来"
+      "key": "lai"
+      "reading": "lái"
+      "forms":
+        "statement": "他明天来"
+        "question": "他明天来不来"
+      "readings":
+        "statement": "tā míngtiān lái"
+        "question": "tā míngtiān lái bu lái"
+    - "lemma": "忙"
+      "key": "mang"
+      "reading": "máng"
+      "forms":
+        "statement": "你很忙"
+        "question": "你忙不忙"
+      "readings":
+        "statement": "nǐ hěn máng"
+        "question": "nǐ máng bu máng"
+    - "lemma": "贵"
+      "key": "gui"
+      "reading": "guì"
+      "forms":
+        "statement": "这很贵"
+        "question": "这贵不贵"
+      "readings":
+        "statement": "zhè hěn guì"
+        "question": "zhè guì bu guì"

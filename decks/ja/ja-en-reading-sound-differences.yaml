@@ -1,0 +1,70 @@
+schema: 1
+id: "ja-en-reading-sound-differences"
+name: "Japanese reading: sounds English lacks"
+kind: reading
+language: { code: ja, iso639_3: jpn, name: Japanese, script: kana, tts: "ja-JP" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+"passages":
+  - "id": "ja-long-and-short"
+    "title": "Long and short"
+    "sentences":
+      - "text": "おばさん、おばあさん。"
+        "reading": "obasan, obaasan."
+      - "text": "おじさん、おじいさん。"
+        "reading": "ojisan, ojiisan."
+      - "text": "ゆき、ゆうき。"
+        "reading": "yuki, yuuki."
+      - "text": "きて、きって。"
+        "reading": "kite, kitte."
+    "questions":
+      - "id": "ja-0101"
+        "prompt":
+          "en": "Which word in the first line means 'grandmother'?"
+        "options":
+          - "en": "おばさん (obasan)"
+          - "en": "おばあさん (obaasan)"
+        "answer": 2
+      - "id": "ja-0102"
+        "prompt":
+          "en": "おじさん (ojisan) and おじいさん (ojiisan) differ only in the length of a vowel."
+        "answer": true
+      - "id": "ja-0103"
+        "prompt":
+          "en": "Which word in the third line means 'snow'?"
+        "options":
+          - "en": "ゆき (yuki)"
+          - "en": "ゆうき (yuuki)"
+        "answer": 1
+  - "id": "ja-sound-pairs-list"
+    "title": "Pairs that differ by one sound"
+    "sentences":
+      - "text": "おと、おっと。"
+        "reading": "oto, otto."
+      - "text": "さか、さっか。"
+        "reading": "saka, sakka."
+      - "text": "てんき、でんき。"
+        "reading": "tenki, denki."
+      - "text": "かぎ、かき。"
+        "reading": "kagi, kaki."
+    "questions":
+      - "id": "ja-0104"
+        "prompt":
+          "en": "Which word in the second line means 'writer'?"
+        "options":
+          - "en": "さか (saka)"
+          - "en": "さっか (sakka)"
+        "answer": 2
+      - "id": "ja-0105"
+        "prompt":
+          "en": "てんき (tenki) and でんき (denki) differ by the voiced mark, the two small dots."
+        "answer": true
+      - "id": "ja-0106"
+        "prompt":
+          "en": "Which word in the last line means 'key'?"
+        "options":
+          - "en": "かぎ (kagi)"
+          - "en": "かき (kaki)"
+        "answer": 1

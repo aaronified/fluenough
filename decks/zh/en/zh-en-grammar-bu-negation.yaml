@@ -1,0 +1,26 @@
+schema: 1
+id: "zh-en-grammar-bu-negation"
+kind: "layer"
+core: "zh-grammar-bu-negation"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "不 (bù): not"
+license: "CC-BY-SA-4.0"
+description: "Is not, does not, will not: 不 (bù) goes right before the verb or the adjective, and its tone changes before a fourth tone. Not yet checked by a Mandarin speaker: please report any mistake."
+tags: ["unreviewed"]
+"pattern":
+  "name": "不 (bù): not"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "statement": "the statement"
+    "negative": "the negative (not)"
+  "entries":
+    "shi": "to be: he is a teacher"
+    "qu": "to go: I go to school"
+    "he": "to drink: I drink tea"
+    "kan": "to look, to read: he reads"
+    "xihuan": "to like: I like tea"
+    "lai": "to come: he comes tomorrow"
+    "leng": "cold: it is cold today"
+    "gui": "expensive: this is expensive"
+  "notes": "不 (bù) goes right before the verb or the adjective, whoever the subject is: 我不去 (wǒ bú qù), I am not going; 他不是老师 (tā bú shì lǎoshī), he is not a teacher. Its tone changes: before a fourth tone 不 (bù) is said bú, as in 不是 (bú shì), 不去 (bú qù), 不看 (bú kàn) and 不贵 (bú guì); before a first, second or third tone it stays bù, as in 不喝 (bù hē), 不来 (bù lái) and 不冷 (bù lěng). The readings here show the tone as it is said. With an adjective the 很 (hěn) is dropped: 今天很冷 (jīntiān hěn lěng) becomes 今天不冷 (jīntiān bù lěng), not 不很冷 (bù hěn lěng). A time word stays before 不 (bù): 他明天不来 (tā míngtiān bù lái). Did not is another word, 没 (méi), which the course teaches later."
