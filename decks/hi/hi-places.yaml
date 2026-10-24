@@ -28,7 +28,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "लोग बैंक जाते हैं।", reading: "lōg baiṅk jātē haim̐.", ipa: "loːɡ bɛːŋk dʒaːt̪eː ɦɛ̃ː", bases: [{"word": "जाते", "ref": "hi-0777"}, {"word": "हैं", "ref": "hi-0780"}] }
-      - { target: "बैंक खुला है।", reading: "baiṅk khulā hai.", ipa: "bɛːŋk kʰʊlaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "बैंक खुला है।", reading: "baiṅk khulā hai.", ipa: "bɛːŋk kʰʊlaː ɦɛː", bases: [{"word": "खुला", "base": "खुला", "reading": "khulā"}, {"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1058"
     target: "मंदिर"
     reading: "mandir"
@@ -126,7 +126,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "जंगल में शेर है।", reading: "jaṅgal mēm̐ śēr hai.", ipa: "dʒəŋɡəl mẽː ʃeːr ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "जंगल में शेर है।", reading: "jaṅgal mēm̐ śēr hai.", ipa: "dʒəŋɡəl mẽː ʃeːr ɦɛː", bases: [{"word": "शेर", "base": "शेर", "reading": "śēr"}, {"word": "है", "ref": "hi-0780"}] }
       - { target: "जंगल बड़ा है।", reading: "jaṅgal baṛā hai.", ipa: "dʒəŋɡəl bəɽaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1067"
     target: "समुद्र"
@@ -170,7 +170,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "खेत में गेहूँ है।", reading: "khēt mēm̐ gēhūm̐ hai.", ipa: "kʰeːt̪ mẽː ɡeːɦũː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "खेत में गेहूँ है।", reading: "khēt mēm̐ gēhūm̐ hai.", ipa: "kʰeːt̪ mẽː ɡeːɦũː ɦɛː", bases: [{"word": "गेहूँ", "base": "गेहूँ", "reading": "gēhūm̐"}, {"word": "है", "ref": "hi-0780"}] }
       - { target: "खेत बड़ा है।", reading: "khēt baṛā hai.", ipa: "kʰeːt̪ bəɽaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1071"
     target: "बगीचा"
@@ -181,7 +181,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "लोग बगीचे जाते हैं।", reading: "lōg bagīcē jātē haim̐.", ipa: "loːɡ bəɡiːtʃeː dʒaːt̪eː ɦɛ̃ː", bases: [{"word": "जाते", "ref": "hi-0777"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "लोग बगीचे जाते हैं।", reading: "lōg bagīcē jātē haim̐.", ipa: "loːɡ bəɡiːtʃeː dʒaːt̪eː ɦɛ̃ː", bases: [{"word": "बगीचे", "base": "बगीचा", "reading": "bagīcā"}, {"word": "जाते", "ref": "hi-0777"}, {"word": "हैं", "ref": "hi-0780"}] }
       - { target: "बगीचा सुंदर है।", reading: "bagīcā sundar hai.", ipa: "bəɡiːtʃaː sʊnd̪ər ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1072"
     target: "मेला"
@@ -204,7 +204,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "लोग डाकघर जाते हैं।", reading: "lōg ḍākghar jātē haim̐.", ipa: "loːɡ ɖaːkɡʱər dʒaːt̪eː ɦɛ̃ː", bases: [{"word": "जाते", "ref": "hi-0777"}, {"word": "हैं", "ref": "hi-0780"}] }
-      - { target: "डाकघर बंद है।", reading: "ḍākghar band hai.", ipa: "ɖaːkɡʱər bənd̪ ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "डाकघर बंद है।", reading: "ḍākghar band hai.", ipa: "ɖaːkɡʱər bənd̪ ɦɛː", bases: [{"word": "बंद", "base": "बंद", "reading": "band"}, {"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1074"
     target: "थाना"
     reading: "thānā"
@@ -258,8 +258,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "लोग हवाई अड्डा जाते हैं।", reading: "lōg havāī aḍḍā jātē haim̐.", ipa: "loːɡ ɦəʋaːiː əɖɖaː dʒaːt̪eː ɦɛ̃ː", bases: [{"word": "जाते", "ref": "hi-0777"}, {"word": "हैं", "ref": "hi-0780"}] }
-      - { target: "हवाई अड्डा बड़ा है।", reading: "havāī aḍḍā baṛā hai.", ipa: "ɦəʋaːiː əɖɖaː bəɽaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "लोग हवाई अड्डा जाते हैं।", reading: "lōg havāī aḍḍā jātē haim̐.", ipa: "loːɡ ɦəʋaːiː əɖɖaː dʒaːt̪eː ɦɛ̃ː", bases: [{"word": "हवाई", "base": "हवाई", "reading": "havāī"}, {"word": "अड्डा", "base": "अड्डा", "reading": "aḍḍā"}, {"word": "जाते", "ref": "hi-0777"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "हवाई अड्डा बड़ा है।", reading: "havāī aḍḍā baṛā hai.", ipa: "ɦəʋaːiː əɖɖaː bəɽaː ɦɛː", bases: [{"word": "हवाई", "base": "हवाई", "reading": "havāī"}, {"word": "अड्डा", "base": "अड्डा", "reading": "aḍḍā"}, {"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1079"
     target: "पार्क"
     reading: "pārk"
