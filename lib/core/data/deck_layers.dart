@@ -82,6 +82,8 @@ class CoreWritten extends CoreCard {
     this.pos,
     this.hears,
     this.warning,
+    this.notSoundsLike = const <String>[],
+    this.notLooksLike = const <String>[],
     this.gender,
     this.tags = const <String>[],
     this.audio,
@@ -119,6 +121,12 @@ class CoreWritten extends CoreCard {
   /// Which warning the teach card shows (`warning`, #691): the id of a pair,
   /// homograph or lookalike note, "senses", or "none". Null: the fixed order.
   final String? warning;
+
+  /// The ids of the offensive words a reviewer found this card does not sound
+  /// like, or look like (`not_sounds_like`, `not_looks_like`, #808). The app
+  /// reads them so that a deck may use them; nothing shows them.
+  final List<String> notSoundsLike;
+  final List<String> notLooksLike;
   final String? gender;
   final List<String> tags;
   final String? audio;

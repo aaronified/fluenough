@@ -1,0 +1,26 @@
+schema: 1
+id: "zh-en-grammar-a-not-a"
+kind: "layer"
+core: "zh-grammar-a-not-a"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verb-not-verb questions"
+license: "CC-BY-SA-4.0"
+description: "Do you go or not go? Say the verb, then 不 (bu), then the verb again, and the question needs no 吗 (ma). Not yet checked by a Mandarin speaker: please report any mistake."
+tags: ["unreviewed"]
+"pattern":
+  "name": "Verb-not-verb questions"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "statement": "the statement"
+    "question": "the question with the verb said twice"
+  "entries":
+    "shi": "to be: is he a teacher?"
+    "qu": "to go: do you go to school?"
+    "he": "to drink: do you drink tea?"
+    "chi": "to eat: do you eat fish?"
+    "xihuan": "to like: do you like tea?"
+    "lai": "to come: does he come tomorrow?"
+    "mang": "busy: are you busy?"
+    "gui": "expensive: is this expensive?"
+  "notes": "A second way to ask a yes-or-no question: say the verb or the adjective, then 不 (bu), then the verb again. 你去 (nǐ qù), you go, becomes 你去不去 (nǐ qù bu qù), do you go or not? It is used instead of 吗 (ma), never with it. The 不 (bu) in the middle is said with a light tone, whatever follows. A verb of two syllables is often shortened in its first half: 喜不喜欢 (xǐ bu xǐhuan), and with 是 (shì) it is 是不是 (shì bu shì). With an adjective the linking 很 (hěn), which is not 'very' there, is normally absent: 你很忙 (nǐ hěn máng) becomes 你忙不忙 (nǐ máng bu máng). With 吗 (ma) the 很 (hěn) is kept: 你很忙吗 (nǐ hěn máng ma). The answer is the verb, 去 (qù), or 不去 (bú qù)."

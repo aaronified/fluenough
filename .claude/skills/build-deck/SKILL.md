@@ -347,7 +347,9 @@ units (#814, #815). Copy them: `decks/zh/zh-grammar-shi.yaml`,
   say a reading strictly follows one.
 - **Prose rule bites twice.** Every Han, kana or hangul word in a note, a
   `why`, a gloss or a question carries its reading, **including a wrong form
-  you quote** ("never 我是忙 (wǒ shì máng)"): CI errors on one without.
+  you quote** ("never 我是忙 (wǒ shì máng)"): CI errors on one without. The
+  reading in prose is the card's reading letter for letter: 무엇 (mueot),
+  never "mu-eot" (CI does not catch it; a reviewer did in #815).
 - **Words already taught, only.** Check a lemma, form or sentence word by
   its card id. A word that is not a card goes in `bases` written in full, with
   its base, reading and (in the layer) meaning. A word that has a card, once
@@ -365,7 +367,12 @@ units (#814, #815). Copy them: `decks/zh/zh-grammar-shi.yaml`,
   as `<lang>-reading-<name>`), 2 passages of 4 short lines and 3 questions
   each, question ids from `--next-id`. Word units also get the set card for
   a closed group (question words). A grammar unit keeps its planned
-  passages and writes no reading deck.
+  passages and writes no reading deck. A question that asks "which word
+  means 'X'" offers the **words** (hangul or kana, with the reading) as its
+  options, as `ko-en-reading-sound-differences.yaml` does, never the English
+  meanings: the prompt already names the meaning, so English options give
+  the answer away (found in #814; the zh reading decks written earlier
+  have the flaw).
 - **`warning`** goes on every word card with a `pair` note, naming the note's
   id; a card with two partners (a triple) takes the pick of
   `tools/pick_warning.py` (`pick_warning.pick(card, index)` gives it without
