@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- The deck validator reads an apostrophe inside an Assamese word in a note, as in ক'লা or ম'হ, as part of the word, so one reading beside it is enough; a quote around a word still ends it.
 - A typed answer no longer loses transliteration letters: pinyin's caron vowels (ǎ ǐ ǒ ǔ ǚ), Egyptian ꜣ ꜥ ḫ ẖ ṯ ḏ ḳ (typed 3, a, kh, ch, th, dh, q, so that ḫrw and hrw stay different words), Proto-Indo-European ḱ ǵ ḗ ṓ, subscript digits (du₃, h₂) and ʰ ʷ are folded to what a keyboard types, so `lu` is right for lǔ and `h2owis` for h₂ówis (#616). Arabic-script, Lojban and Mycenaean typing are not done.
 - The language bar is expanded at launch, not only after the first drag; its glyphs sit evenly a detent apart on both sides of the expanded name; the further a glyph is from the centre the smaller and fainter it is, at rest as well as while dragged; and nothing is drawn under the bug button (#774).
 
