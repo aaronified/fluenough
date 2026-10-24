@@ -1,0 +1,285 @@
+schema: 1
+id: "hi-animals"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "animals"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-1124"
+    target: "बाघ"
+    reading: "bāgh"
+    ipa: "baːɡʱ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "बाघ बड़ा है।", reading: "bāgh baṛā hai.", ipa: "baːɡʱ bəɽaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "बाघ ताक़तवर है।", reading: "bāgh tāqtvar hai.", ipa: "baːɡʱ t̪aːqt̪ʋər ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1125"
+    target: "हाथी"
+    reading: "hāthī"
+    ipa: "ɦaːt̪ʰiː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "हाथी बड़ा है।", reading: "hāthī baṛā hai.", ipa: "ɦaːt̪ʰiː bəɽaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "लोग हाथी देखते हैं।", reading: "lōg hāthī dēkhtē haim̐.", ipa: "loːɡ ɦaːt̪ʰiː d̪eːkʰt̪eː ɦɛ̃ː", bases: [{"word": "देखते", "ref": "hi-0784"}, {"word": "हैं", "ref": "hi-0780"}] }
+  - id: "hi-1126"
+    target: "बंदर"
+    reading: "bandar"
+    ipa: "bənd̪ər"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "बंदर चंचल है।", reading: "bandar cañcal hai.", ipa: "bənd̪ər tʃəɲtʃəl ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "बंदर पेड़ पर चढ़ता है।", reading: "bandar pēṛ par caṛhtā hai.", ipa: "bənd̪ər peːɽ pər tʃəɽʱt̪aː ɦɛː", bases: [{"word": "चढ़ता", "base": "चढ़ना", "reading": "caṛhnā"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1127"
+    target: "साँप"
+    reading: "sām̐p"
+    ipa: "sãːp"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "साँप लंबा है।", reading: "sām̐p lambā hai.", ipa: "sãːp ləmbaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "साँप से डर लगता है।", reading: "sām̐p sē ḍar lagtā hai.", ipa: "sãːp seː ɖər ləɡt̪aː ɦɛː", bases: [{"word": "लगता", "base": "लगना", "reading": "lagnā"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1128"
+    target: "गाय"
+    reading: "gāy"
+    ipa: "ɡaːj"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "गाय दूध देती है।", reading: "gāy dūdh dētī hai.", ipa: "ɡaːj d̪uːd̪ʱ d̪eːt̪iː ɦɛː", bases: [{"word": "देती", "ref": "hi-0785"}, {"word": "है", "ref": "hi-0780"}] }
+      - { target: "गाय बड़ी है।", reading: "gāy baṛī hai.", ipa: "ɡaːj bəɽiː ɦɛː", bases: [{"word": "बड़ी", "ref": "hi-0894"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1129"
+    target: "भैंस"
+    reading: "bhaiṁs"
+    ipa: "bʱɛ̃ːs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "भैंस बड़ी है।", reading: "bhaiṁs baṛī hai.", ipa: "bʱɛ̃ːs bəɽiː ɦɛː", bases: [{"word": "बड़ी", "ref": "hi-0894"}, {"word": "है", "ref": "hi-0780"}] }
+      - { target: "भैंस दूध देती है।", reading: "bhaiṁs dūdh dētī hai.", ipa: "bʱɛ̃ːs d̪uːd̪ʱ d̪eːt̪iː ɦɛː", bases: [{"word": "देती", "ref": "hi-0785"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1130"
+    target: "बकरी"
+    reading: "bakrī"
+    ipa: "bəkriː"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "बकरी छोटी है।", reading: "bakrī chōṭī hai.", ipa: "bəkriː tʃʰoːʈiː ɦɛː", bases: [{"word": "छोटी", "ref": "hi-0895"}, {"word": "है", "ref": "hi-0780"}] }
+      - { target: "बकरी दूध देती है।", reading: "bakrī dūdh dētī hai.", ipa: "bəkriː d̪uːd̪ʱ d̪eːt̪iː ɦɛː", bases: [{"word": "देती", "ref": "hi-0785"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1131"
+    target: "भेड़"
+    reading: "bhēṛ"
+    ipa: "bʱeːɽ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "भेड़ नरम है।", reading: "bhēṛ naram hai.", ipa: "bʱeːɽ nərəm ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "भेड़ सफ़ेद है।", reading: "bhēṛ safēd hai.", ipa: "bʱeːɽ səfeːd̪ ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1132"
+    target: "लोमड़ी"
+    reading: "lōmṛī"
+    ipa: "loːmɽiː"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोमड़ी चालाक है।", reading: "lōmṛī cālāk hai.", ipa: "loːmɽiː tʃaːlaːk ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "लोमड़ी छोटी है।", reading: "lōmṛī chōṭī hai.", ipa: "loːmɽiː tʃʰoːʈiː ɦɛː", bases: [{"word": "छोटी", "ref": "hi-0895"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1133"
+    target: "कुत्ता"
+    reading: "kuttā"
+    ipa: "kʊt̪t̪aː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "कुत्ता भौंकता है।", reading: "kuttā bhauṅkatā hai.", ipa: "kʊt̪t̪aː bʱɔːŋkət̪aː ɦɛː", bases: [{"word": "भौंकता", "base": "भौंकना", "reading": "bhauṅkanā"}, {"word": "है", "ref": "hi-0780"}] }
+      - { target: "कुत्ता बड़ा है।", reading: "kuttā baṛā hai.", ipa: "kʊt̪t̪aː bəɽaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1134"
+    target: "बिल्ली"
+    reading: "billī"
+    ipa: "bɪlliː"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "बिल्ली सोती है।", reading: "billī sōtī hai.", ipa: "bɪlliː soːt̪iː ɦɛː", bases: [{"word": "सोती", "ref": "hi-0450"}, {"word": "है", "ref": "hi-0780"}] }
+      - { target: "बिल्ली छोटी है।", reading: "billī chōṭī hai.", ipa: "bɪlliː tʃʰoːʈiː ɦɛː", bases: [{"word": "छोटी", "ref": "hi-0895"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1135"
+    target: "चिड़िया"
+    reading: "ciṛiyā"
+    ipa: "tʃɪɽɪjaː"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "चिड़िया उड़ती है।", reading: "ciṛiyā uṛtī hai.", ipa: "tʃɪɽɪjaː ʊɽt̪iː ɦɛː", bases: [{"word": "उड़ती", "base": "उड़ना", "reading": "uṛnā"}, {"word": "है", "ref": "hi-0780"}] }
+      - { target: "चिड़िया छोटी है।", reading: "ciṛiyā chōṭī hai.", ipa: "tʃɪɽɪjaː tʃʰoːʈiː ɦɛː", bases: [{"word": "छोटी", "ref": "hi-0895"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1136"
+    target: "घोड़ा"
+    reading: "ghōṛā"
+    ipa: "ɡʱoːɽaː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "घोड़ा दौड़ता है।", reading: "ghōṛā dauṛtā hai.", ipa: "ɡʱoːɽaː d̪ɔːɽt̪aː ɦɛː", bases: [{"word": "दौड़ता", "ref": "hi-0946"}, {"word": "है", "ref": "hi-0780"}] }
+      - { target: "घोड़ा तेज़ है।", reading: "ghōṛā tēz hai.", ipa: "ɡʱoːɽaː t̪eːz ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1137"
+    target: "बत्तख"
+    reading: "battakh"
+    ipa: "bət̪t̪əkʰ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "बत्तख पानी में तैरती है।", reading: "battakh pānī mēm̐ tairtī hai.", ipa: "bət̪t̪əkʰ paːniː mẽː t̪ɛːrt̪iː ɦɛː", bases: [{"word": "तैरती", "base": "तैरना", "reading": "tairnā"}, {"word": "है", "ref": "hi-0780"}] }
+      - { target: "बत्तख छोटी है।", reading: "battakh chōṭī hai.", ipa: "bət̪t̪əkʰ tʃʰoːʈiː ɦɛː", bases: [{"word": "छोटी", "ref": "hi-0895"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1138"
+    target: "शेर"
+    reading: "śēr"
+    ipa: "ʃeːr"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "शेर ताक़तवर है।", reading: "śēr tāqtvar hai.", ipa: "ʃeːr t̪aːqt̪ʋər ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "शेर बड़ा है।", reading: "śēr baṛā hai.", ipa: "ʃeːr bəɽaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1139"
+    target: "भालू"
+    reading: "bhālū"
+    ipa: "bʱaːluː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "भालू बड़ा है।", reading: "bhālū baṛā hai.", ipa: "bʱaːluː bəɽaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "भालू ताक़तवर है।", reading: "bhālū tāqtvar hai.", ipa: "bʱaːluː t̪aːqt̪ʋər ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1140"
+    target: "हिरन"
+    reading: "hiran"
+    ipa: "ɦɪrən"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "हिरन तेज़ है।", reading: "hiran tēz hai.", ipa: "ɦɪrən t̪eːz ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "हिरन सुंदर है।", reading: "hiran sundar hai.", ipa: "ɦɪrən sʊnd̪ər ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1141"
+    target: "खरगोश"
+    reading: "khargōś"
+    ipa: "kʰərɡoːʃ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "खरगोश छोटा है।", reading: "khargōś chōṭā hai.", ipa: "kʰərɡoːʃ tʃʰoːʈaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "खरगोश नरम है।", reading: "khargōś naram hai.", ipa: "kʰərɡoːʃ nərəm ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1142"
+    target: "तितली"
+    reading: "titlī"
+    ipa: "t̪ɪt̪liː"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "तितली उड़ती है।", reading: "titlī uṛtī hai.", ipa: "t̪ɪt̪liː ʊɽt̪iː ɦɛː", bases: [{"word": "उड़ती", "base": "उड़ना", "reading": "uṛnā"}, {"word": "है", "ref": "hi-0780"}] }
+      - { target: "तितली सुंदर है।", reading: "titlī sundar hai.", ipa: "t̪ɪt̪liː sʊnd̪ər ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1143"
+    target: "मक्खी"
+    reading: "makkhī"
+    ipa: "məkkʰiː"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "मक्खी उड़ती है।", reading: "makkhī uṛtī hai.", ipa: "məkkʰiː ʊɽt̪iː ɦɛː", bases: [{"word": "उड़ती", "base": "उड़ना", "reading": "uṛnā"}, {"word": "है", "ref": "hi-0780"}] }
+      - { target: "मक्खी छोटी है।", reading: "makkhī chōṭī hai.", ipa: "məkkʰiː tʃʰoːʈiː ɦɛː", bases: [{"word": "छोटी", "ref": "hi-0895"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1144"
+    target: "कीड़ा"
+    reading: "kīṛā"
+    ipa: "kiːɽaː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "कीड़ा छोटा है।", reading: "kīṛā chōṭā hai.", ipa: "kiːɽaː tʃʰoːʈaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "कीड़ा रेंगता है।", reading: "kīṛā rēṅgatā hai.", ipa: "kiːɽaː reːŋɡət̪aː ɦɛː", bases: [{"word": "रेंगता", "base": "रेंगना", "reading": "rēṅganā"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1145"
+    target: "बगुला"
+    reading: "bagulā"
+    ipa: "bəɡʊlaː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "बगुला उड़ता है।", reading: "bagulā uṛtā hai.", ipa: "bəɡʊlaː ʊɽt̪aː ɦɛː", bases: [{"word": "उड़ता", "base": "उड़ना", "reading": "uṛnā"}, {"word": "है", "ref": "hi-0780"}] }
+      - { target: "बगुला सफ़ेद है।", reading: "bagulā safēd hai.", ipa: "bəɡʊlaː səfeːd̪ ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1146"
+    target: "कौआ"
+    reading: "kauā"
+    ipa: "kɔːaː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "कौआ उड़ता है।", reading: "kauā uṛtā hai.", ipa: "kɔːaː ʊɽt̪aː ɦɛː", bases: [{"word": "उड़ता", "base": "उड़ना", "reading": "uṛnā"}, {"word": "है", "ref": "hi-0780"}] }
+      - { target: "कौआ काला है।", reading: "kauā kālā hai.", ipa: "kɔːaː kaːlaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1147"
+    target: "मुर्गी"
+    reading: "murgī"
+    ipa: "mʊrɡiː"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "मुर्गी अंडा देती है।", reading: "murgī aṇḍā dētī hai.", ipa: "mʊrɡiː əɳɖaː d̪eːt̪iː ɦɛː", bases: [{"word": "देती", "ref": "hi-0785"}, {"word": "है", "ref": "hi-0780"}] }
+      - { target: "मुर्गी छोटी है।", reading: "murgī chōṭī hai.", ipa: "mʊrɡiː tʃʰoːʈiː ɦɛː", bases: [{"word": "छोटी", "ref": "hi-0895"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1148"
+    target: "मुर्गा"
+    reading: "murgā"
+    ipa: "mʊrɡaː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "मुर्गा बोलता है।", reading: "murgā bōltā hai.", ipa: "mʊrɡaː boːlt̪aː ɦɛː", bases: [{"word": "बोलता", "ref": "hi-0782"}, {"word": "है", "ref": "hi-0780"}] }
+      - { target: "मुर्गा सुंदर है।", reading: "murgā sundar hai.", ipa: "mʊrɡaː sʊnd̪ər ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - ref: "hi-0255"
