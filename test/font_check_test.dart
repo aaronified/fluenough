@@ -6,6 +6,7 @@ import 'dart:convert';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_downloads.dart';
+import 'package:fluenough/app/downloaded_decks.dart';
 import 'package:fluenough/app/script_fonts.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/decks/deck_fetch.dart';
