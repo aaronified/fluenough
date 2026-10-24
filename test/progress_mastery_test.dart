@@ -421,7 +421,7 @@ void main() {
   });
 
   group('the Progress tab', () {
-    testWidgets('shows words, level, the week and the star; the star opens '
+    testWidgets('shows words, rules, sentences, level, the week and the star; the star opens '
         'the two charts over time; All languages shows the start date '
         'only', (tester) async {
       usePhone(tester, textScale: 1.4);
@@ -442,12 +442,13 @@ void main() {
       state.showLanguage('es', allOff: true);
       await tester.pumpAndSettle();
       expect(find.text(l10n.progressLevelTitle), findsOneWidget);
-      expect(find.byType(WordsTile), findsOneWidget);
+      expect(find.byType(UnlockTile), findsNWidgets(3));
       expect(find.byType(LevelTile), findsOneWidget);
       expect(find.byType(PracticeWeekCard), findsOneWidget);
       expect(find.byType(SkillStarCard), findsOneWidget);
       expect(tester.takeException(), isNull, reason: 'no overflow at 1.4x');
 
+      // The star is in reach without scrolling at 1.4x.
       await tester.tap(find.byType(SkillStarCard));
       await tester.pumpAndSettle();
       expect(find.byType(OverTimePage), findsOneWidget);
@@ -486,6 +487,17 @@ void main() {
       await pumpScreen(tester, const StatsPage(), state: state);
       final l10n = l10nOf(tester);
       final tiles = find.byKey(const ValueKey<String>('hours-tiles'));
+      // Under the star, below the first screen: scrolled to.
+      await tester.scrollUntilVisible(
+        tiles,
+        200,
+        scrollable: find
+            .byWidgetPredicate(
+              (w) => w is Scrollable && w.axis == Axis.vertical,
+            )
+            .first,
+      );
+      await tester.pumpAndSettle();
       expect(tiles, findsOneWidget);
       expect(find.text(l10n.progressHoursSpentTitle), findsOneWidget);
       expect(find.text(l10n.progressHoursLeftTitle), findsOneWidget);
@@ -662,7 +674,14 @@ void main() {
         tester,
         Scaffold(
           body: ProgressTiles(
-            words: (mastered: 312, taught: 540),
+            counts: (
+              wordsKnown: 312,
+              wordsTaught: 540,
+              rulesKnown: 14,
+              rulesTaught: 22,
+              sentencesOpen: 86,
+              sentencesTotal: 210,
+            ),
             level: Milestone.a2,
             started: DateTime(2026, 8, 3),
             allLanguages: false,
@@ -678,7 +697,7 @@ void main() {
         of: find.byType(ProgressTiles),
         matching: find.byType(FittedBox),
       );
-      expect(fitted, findsNWidgets(3));
+      expect(fitted, findsNWidgets(5), reason: 'three counts, the level');
       for (final box in fitted.evaluate()) {
         final render = box.renderObject! as RenderFittedBox;
         final child = render.child!.size;

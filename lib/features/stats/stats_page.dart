@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
+import '../../app/unlocks.dart';
 import '../../app/features.dart';
 import '../../app/routes.dart';
 import '../../core/progress/practice_week.dart';
@@ -123,6 +124,10 @@ class _StatsBody extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     final cardOf = cardLookupOf(state);
     final mastery = ProgressMastery.of(state, language);
+    final chosen = language;
+    final counts = chosen == null
+        ? state.unlockCountsAll
+        : state.unlockCountsFor(chosen);
     // The weakest tags are over all time: the star is not ranged.
     const range = StatsRange.all;
     final numbers = StatsNumbers.of(
@@ -154,13 +159,11 @@ class _StatsBody extends StatelessWidget {
       padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 24),
       children: <Widget>[
         ProgressTiles(
-          words: mastery.words,
+          counts: counts,
           level: mastery.level,
           started: mastery.started,
           allLanguages: language == null,
         ),
-        const SizedBox(height: 8),
-        HoursTiles(hours: ProgressHours.of(state, language)),
         const SizedBox(height: 8),
         PracticeWeekCard(week: mastery.week, quota: kDefaultDailyQuota),
         const SizedBox(height: 16),
@@ -168,6 +171,10 @@ class _StatsBody extends StatelessWidget {
           mastery: mastery.now,
           onTap: () => AppNavigator.openOverTime(context),
         ),
+        // Under the star, so that the three counts, the Level tile and the
+        // week leave the star on the screen at 1.4x text.
+        const SizedBox(height: 8),
+        HoursTiles(hours: ProgressHours.of(state, language)),
         if (numbers.weakestTags.isNotEmpty) ...<Widget>[
           const SizedBox(height: 16),
           StatsSection(

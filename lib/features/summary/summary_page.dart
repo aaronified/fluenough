@@ -6,6 +6,7 @@ import '../../app/memory_progress.dart';
 import '../../app/routes.dart';
 import '../../app/session.dart';
 import '../../app/shell_tab.dart';
+import '../../app/unlocks.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
@@ -57,6 +58,9 @@ class SummaryPage extends StatelessWidget {
         ? null
         : DrillRequest.lesson(language: finished.code);
     final offersLesson = lesson != null && state.lessonFor(lesson).isNotEmpty;
+    final unlocked = empty || finished == null
+        ? null
+        : state.unlockedSince(finished.code, result.startedAt);
 
     return Scaffold(
       body: SafeArea(
@@ -99,6 +103,10 @@ class SummaryPage extends StatelessWidget {
                         streak: state.progress.streakAt(now),
                       ),
                       const SizedBox(height: 24),
+                      if (unlocked != null) ...<Widget>[
+                        _Unlocked(unlocked: unlocked),
+                        const SizedBox(height: 24),
+                      ],
                       _BySkill(result: result),
                     ],
                     const SizedBox(height: 24),
@@ -180,6 +188,48 @@ class SummaryPage extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+/// "Unlocked in this lesson": how many words and rules became known and how
+/// many sentences opened (#418, owner, 2026-10-23: "the lesson end shows
+/// counts"), each line only where there is something.
+class _Unlocked extends StatelessWidget {
+  const _Unlocked({required this.unlocked});
+
+  final ({int words, int rules, int sentences}) unlocked;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    return Container(
+      padding: const EdgeInsetsDirectional.fromSTEB(16, 14, 16, 14),
+      decoration: BoxDecoration(
+        color: scheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(AppRadii.card),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        spacing: 4,
+        children: <Widget>[
+          Semantics(
+            header: true,
+            child: Text(
+              l10n.summaryUnlockedTitle,
+              style: theme.textTheme.titleMedium,
+            ),
+          ),
+          if (unlocked.words > 0)
+            Text(l10n.summaryUnlockedWords(unlocked.words)),
+          if (unlocked.rules > 0)
+            Text(l10n.summaryUnlockedRules(unlocked.rules)),
+          if (unlocked.sentences > 0)
+            Text(l10n.summaryUnlockedSentences(unlocked.sentences)),
+        ],
       ),
     );
   }
