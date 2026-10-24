@@ -345,7 +345,7 @@ units (#814, #815). Copy them: `decks/zh/zh-grammar-shi.yaml`,
   Pinyin), Hepburn without macrons (`ja-romanisation.yaml`: long vowels
   `ou`, `oo`, `uu`, `ii`, `aa`; を is `wo`), Revised Romanization. Never
   say a reading strictly follows one.
-- **Prose rule bites twice.** Every Han, kana or hangul word in a note, a
+- **Prose rule bites twice.** Every hanzi, kanji, kana or hangul word in a note, a
   `why`, a gloss or a question carries its reading, **including a wrong form
   you quote** ("never 我是忙 (wǒ shì máng)"): CI errors on one without. The
   reading in prose is the card's reading letter for letter: 무엇 (mueot),
