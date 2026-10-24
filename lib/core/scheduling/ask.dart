@@ -50,11 +50,16 @@ enum Ask {
   /// Shown a set card, or one part of it: a closed group's members
   /// together, before they are drilled (DECK-FORMAT.md, Set cards). Its
   /// item's [SessionItem.setPart] says which. Records nothing.
-  showSet;
+  showSet,
 
-  /// Whether it only shows something and records nothing: a word taught,
-  /// or a set shown.
-  bool get onlyShows => this == teach || this == showSet;
+  /// Shown a rule card: the rule's name, its explanation and its forms on
+  /// words the learner knows, before the first question about a cell of the
+  /// rule (#417). Its item's card is the first cell asked. Records nothing.
+  teachRule;
+
+  /// Whether it only shows something and records nothing: a word taught, a
+  /// set shown or a rule card.
+  bool get onlyShows => this == teach || this == showSet || this == teachRule;
 
   /// Whether the learner picks one of the options the session offers.
   bool get chooses =>

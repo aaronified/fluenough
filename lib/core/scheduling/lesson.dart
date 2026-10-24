@@ -275,10 +275,14 @@ List<SessionItem> _matched(
 final RegExp _letter = RegExp(r'\p{L}', unicode: true);
 
 /// How many cards [items], a lesson, teaches: those it shows a teaching card
-/// for, and the members its set cards taught that go straight to their question
-/// (#515).
+/// for, the members its set cards taught that go straight to their question
+/// (#515), and the cells of a rules table, which a lesson asks straight away
+/// after the rule card (#417).
 int lessonCardCount(List<SessionItem> items) => <String>{
   for (final item in items)
     if (item.ask == Ask.teach) item.card.id,
   for (final item in items) ...?item.setPart?.newIds,
+  for (final item in items)
+    if (item.card.rule != null && item.state == null && !item.ask.onlyShows)
+      item.card.id,
 }.length;
