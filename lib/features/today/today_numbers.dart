@@ -123,9 +123,7 @@ TodayPace? todayPaceOf(AppState state, {bool onScreen = true}) {
         ? null
         : (reviews: all.now.reviews, was: all.start.reviews),
     marks: <Skill, PaceDirection>{
-      for (final skill in todaySkills)
-        if (markOf(skill.modes.contains) case final direction?)
-          skill: direction,
+      for (final skill in todaySkills) skill: ?markOf(skill.modes.contains),
     },
     scriptMark: markOf(scriptModes.contains),
   );

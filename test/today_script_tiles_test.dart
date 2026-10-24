@@ -123,7 +123,18 @@ void main() {
     });
 
     test('a learner with no script deck has no Script tile', () async {
-      final state = AppState.test();
+      final course = twoScriptCourse();
+      final state = AppState.test(
+        decks: MemoryDeckSource(<String, String>{
+          'decks/hi/hi-en-words.yaml': course['decks/hi/hi-en-words.yaml']!,
+        }),
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: const <String>['hi'],
+          learningChosen: true,
+        ),
+      );
+      addTearDown(state.dispose);
       await state.load();
       expect(TodayNumbers.of(state).script, isNull);
     });
