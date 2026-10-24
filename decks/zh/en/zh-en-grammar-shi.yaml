@@ -1,0 +1,28 @@
+schema: 1
+id: "zh-en-grammar-shi"
+kind: "layer"
+core: "zh-grammar-shi"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "是 (shì): am, is and are"
+license: "CC-BY-SA-4.0"
+description: "I am, you are, he is, we are: 是 (shì) joins two nouns and is the same for every person. Not yet checked by a Mandarin speaker: please report any mistake."
+tags: ["unreviewed"]
+"pattern":
+  "name": "是 (shì): am, is and are"
+  "slot_name": "person"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "我": "I am"
+    "你": "you are"
+    "他": "he is"
+    "我们": "we are"
+  "entries":
+    "xuesheng": "a student"
+    "laoshi": "a teacher"
+    "yisheng": "a doctor"
+    "pengyou": "a friend"
+    "tongxue": "a classmate"
+    "jingli": "a manager"
+    "tongshi": "a colleague"
+    "haizi": "a child"
+  "notes": "是 (shì) is the same for every person: 我是 (wǒ shì), 你是 (nǐ shì), 他是 (tā shì), 我们是 (wǒmen shì). English changes between am, are and is; Chinese does not. It joins one noun to another: 我是学生 (wǒ shì xuésheng), I am a student. There is no word for a or an, and the noun does not change for a plural: 我们是学生 (wǒmen shì xuésheng), we are students. 是 (shì) is for nouns. Before an adjective it is left out and 很 (hěn) stands there instead: 我很忙 (wǒ hěn máng), I am busy, never 我是忙."
