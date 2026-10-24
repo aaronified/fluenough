@@ -1,0 +1,70 @@
+schema: 1
+id: "ja-en-reading-questions"
+name: "Japanese reading: asking questions"
+kind: reading
+language: { code: ja, iso639_3: jpn, name: Japanese, script: kana, tts: "ja-JP" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+"passages":
+  - "id": "ja-information-desk"
+    "title": "At the information desk"
+    "sentences":
+      - "text": "すみません、でんしゃはどちらですか。"
+        "reading": "sumimasen, densha wa dochira desu ka."
+      - "text": "あのひとはだれですか。"
+        "reading": "ano hito wa dare desu ka."
+      - "text": "あのひとはせんせいです。"
+        "reading": "ano hito wa sensei desu."
+      - "text": "みずはいくらですか。"
+        "reading": "mizu wa ikura desu ka."
+    "questions":
+      - "id": "ja-0129"
+        "prompt":
+          "en": "What does the first line ask?"
+        "options":
+          - "en": "Which way the train is"
+          - "en": "How much the train costs"
+        "answer": 1
+      - "id": "ja-0130"
+        "prompt":
+          "en": "The third line says that あのひと (ano hito) is a teacher."
+        "answer": true
+      - "id": "ja-0131"
+        "prompt":
+          "en": "Which line asks about a price?"
+        "options":
+          - "en": "The first line"
+          - "en": "The last line"
+        "answer": 2
+  - "id": "ja-visitor-faq"
+    "title": "A visitor's questions"
+    "sentences":
+      - "text": "いつにほんにきましたか。"
+        "reading": "itsu nihon ni kimashita ka."
+      - "text": "どんなでんしゃがすきですか。"
+        "reading": "donna densha ga suki desu ka."
+      - "text": "ごはんはいかがですか。"
+        "reading": "gohan wa ikaga desu ka."
+      - "text": "どれがあなたのいぬですか。"
+        "reading": "dore ga anata no inu desu ka."
+    "questions":
+      - "id": "ja-0132"
+        "prompt":
+          "en": "Which line offers some rice?"
+        "options":
+          - "en": "The third line"
+          - "en": "The first line"
+        "answer": 1
+      - "id": "ja-0133"
+        "prompt":
+          "en": "The second line asks what kind of train you like."
+        "answer": true
+      - "id": "ja-0134"
+        "prompt":
+          "en": "What does the first line ask?"
+        "options":
+          - "en": "When you came to Japan"
+          - "en": "Why you came to Japan"
+        "answer": 1
