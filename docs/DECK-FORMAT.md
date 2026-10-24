@@ -116,7 +116,7 @@ Common to every kind.
 | `authors` | no | List of `{name, url?}`. |
 | `source` | no | Where the content comes from: a URL, or for a book its title, author, year and licence, as in `"Sahaj Path, part 1, by Rabindranath Tagore (1930), in the public domain"`. The app shows it on the deck's page, and Settings lists it under Sources. |
 | `description` | no | One or two sentences. |
-| `tags` | no | Deck-level tags, e.g. `[beginner, core]`. The tag `unreviewed` marks a deck no native speaker has checked: the app says so on the deck's screen. `reviewed` marks one a speaker has checked; a deck is one or the other, never both. A file with a [culture note](#notes) must carry one of them. |
+| `tags` | no | Deck-level tags, e.g. `[beginner, core]`. The tag `unreviewed` marks a deck no native speaker has checked: the app says so on the deck's screen. `reviewed` marks one a speaker has checked; a deck is one or the other, never both. A file with a [culture note](#notes) must carry one of them. A deck of offensive words is tagged `offensive`; until native speakers have rated its words it is seen by the Offensive words review alone, and once rated it gains the tag `rated` and follows the adult gate (#630); `rated` on a deck not tagged `offensive` is an error. |
 | `theme` | no | On a vocab deck: the theme it teaches, by its id in [`decks/themes.yaml`](#themes). |
 
 ### `language`

@@ -39,7 +39,8 @@ class IndexCheck(unittest.TestCase):
         (self.tmp / "tools").mkdir()
         shutil.copy(VALIDATOR, self.tmp / "tools" / "validate_decks.py")
         shutil.copy(INDEXER, self.tmp / "tools" / "deck_index.py")
-        shutil.copy(REPO / "tools" / "rater_codes.py", self.tmp / "tools" / "rater_codes.py")
+        for name in ("rater_codes.py", "offensive_alikes.py", "pick_warning.py"):
+            shutil.copy(REPO / "tools" / name, self.tmp / "tools" / name)
 
         (self.tmp / "decks" / "es").mkdir(parents=True)
         shutil.copy(SAMPLE_DECK, self.tmp / "decks" / "es")
