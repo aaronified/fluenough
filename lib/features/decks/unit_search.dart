@@ -2,6 +2,7 @@ import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
+import '../../app/unlocks.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/routes.dart';
 import '../../app/session.dart';
@@ -18,7 +19,6 @@ import 'deck_content.dart';
 import 'path_model.dart';
 import 'path_parts.dart';
 import 'unit_page.dart' show CardRow;
-import 'word_mastery.dart';
 import 'word_sheet.dart';
 
 /// One thing a search on the Decks tab finds.
@@ -253,7 +253,7 @@ class SearchResults extends StatelessWidget {
             ? const <SearchHit>[]
             : searchCourses(state, l10n, query, languages, planOf: planOf);
         final q = query.trim().toLowerCase();
-        final answers = RecentAnswers(state.progress.log);
+        final answers = state.recentAnswers;
         final broken = <BrokenDeck>[
           if (q.isNotEmpty)
             for (final file in state.brokenDecks)

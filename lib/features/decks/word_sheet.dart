@@ -2,6 +2,7 @@ import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
+import '../../app/unlocks.dart';
 import '../../app/deck_catalog.dart';
 import '../../core/decks/adult_gate.dart';
 import '../../core/models/card.dart';
@@ -24,7 +25,6 @@ import 'checked_by_line.dart';
 import 'ipa_symbols.dart';
 import 'path_model.dart' show isSentence;
 import 'path_parts.dart' show joinParts, masteryName;
-import 'word_mastery.dart';
 
 /// Opens [card]'s card in a sheet over a unit's screen.
 Future<void> showWordSheet(
@@ -106,7 +106,7 @@ class WordSheet extends StatelessWidget {
     final named = showRude ?? adultContentOn(state);
     final status = masteryName(
       l10n,
-      RecentAnswers(state.progress.log).of(card.id),
+      state.recentAnswers.of(card.id),
       notOpen: isSentence(card) && !state.isTaught(card),
     );
     final line = joinParts(l10n, <String>[?card.pos, ?card.gender]);
