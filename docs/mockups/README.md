@@ -4,16 +4,6 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 ## Awaiting approval
 
-- `language-resources.html`: suggesting another way to learn a language we
-  do not think we can surpass, Wagotabi for Japanese first (#832; owner,
-  2026-10-24: "suggest the game Wagotabi (we are not affiliated, the
-  suggestion is out of respect for the game)"). Shown when Japanese is
-  picked and on Languages I learn, with two variants (a card in the
-  sheet, or a step before the scripts), light and dark, 1.4x. Hindustani
-  and Bengali have no resource yet and show nothing. Drafted wording and a
-  proposed per-language `decks/<lang>/<lang>-resources.yaml` are in
-  `language-resources.md`, with the self-check and open questions.
-
 - `all-tags.html`: the All tags page (#499), beautified (owner, 2026-10-24:
   "Beautify the all tags page. This needs a small mockup, as not much is
   happening here anyway."). Today's page beside a proposal: Practise as an

@@ -290,7 +290,8 @@ class CoreHeader(B1Case):
     def _the_names_of_the_files_beside_the_decks_are_reserved(self) -> None:
         names = {"facts": "facts file", "numbers": "number rules",
                  "romanisation": "romanisation file", "script": "script guide",
-                 "sounds": "sounds file", "path": "path"}
+                 "sounds": "sounds file", "path": "path",
+                 "resources": "resources file"}
         for name, what in names.items():
             with self.subTest(name):
                 rel = f"zz-{name}.yaml"
@@ -2485,6 +2486,65 @@ class PathUnits(B1Case):
                     getattr(fresh, case.__name__)()
                 finally:
                     fresh.doCleanups()
+
+
+class ResourcesFile(B1Case):
+    """A language's resources file (#832): where else to learn it."""
+
+    FILE = "zz-resources.yaml"
+
+    @staticmethod
+    def resource(**change: object) -> dict:
+        found = {"id": "zz-res-wagotabi", "name": "Wagotabi",
+                 "url": "https://www.wagotabi.com/", "kind": "game",
+                 "why": "A fun game. We are not linked to it. Try it too!"}
+        found.update(change)
+        return found
+
+    def file(self, *resources: dict, **change: object) -> None:
+        data = {"schema": 1, "kind": "resources", "id": "zz-resources",
+                "language": "zz", "resources": list(resources) or [self.resource()]}
+        data.update(change)
+        self.put(self.FILE, data)
+
+    def test_a_good_file_passes(self) -> None:
+        self.file()
+        self.assertEqual(self.errors(self.FILE), [])
+
+    def test_the_rules_of_the_file_and_each_resource(self) -> None:
+        bad = {
+            "an unknown key": (self.resource(level="A1"), "unknown field 'level'"),
+            "a url that is not https": (
+                self.resource(url="http://www.wagotabi.com/"),
+                "url must be an https address"),
+            "a kind not in the list": (
+                self.resource(kind="podcast"), "kind must be one of"),
+            "an id of another language": (
+                self.resource(id="ja-res-wagotabi"), "must start with zz-res-"),
+            "a why that is too long": (
+                self.resource(why="word " * 40), "keep it to 160"),
+        }
+        for name, (resource, message) in bad.items():
+            with self.subTest(name):
+                self.file(resource)
+                self.assertTrue(
+                    any(message in e for e in self.errors(self.FILE)),
+                    self.errors(self.FILE))
+
+    def test_at_most_three_and_no_id_twice(self) -> None:
+        many = [self.resource(id=f"zz-res-a{i}") for i in range(4)]
+        self.file(*many)
+        self.assertTrue(any("at most 3" in e for e in self.errors(self.FILE)))
+        self.file(self.resource(), self.resource())
+        self.assertTrue(any("used twice" in e for e in self.errors(self.FILE)))
+
+    def test_a_bare_boolean_for_a_kind_is_refused(self) -> None:
+        self.put(self.FILE, 'schema: 1\nkind: "resources"\nid: "zz-resources"\n'
+                            'language: "zz"\nresources:\n  - id: "zz-res-a"\n'
+                            '    name: "A"\n    url: "https://a.org/"\n'
+                            '    kind: no\n    why: "A."\n')
+        self.assertTrue(any("kind must be one of" in e
+                            for e in self.errors(self.FILE)))
 
 
 class ScriptInProse(B1Case):
