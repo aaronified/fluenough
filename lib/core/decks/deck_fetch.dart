@@ -83,8 +83,8 @@ class GitHubDeckFetcher implements DeckFetcher {
   GitHubDeckFetcher({
     required this.userAgent,
     Uri? base,
-    this.timeout = const Duration(seconds: 30),
-    this.maxBytes = 8 * 1024 * 1024,
+    this.timeout = const Duration(minutes: 2),
+    this.maxBytes = 32 * 1024 * 1024,
     this.retryDelays = const <Duration>[
       Duration(seconds: 1),
       Duration(seconds: 3),
@@ -107,8 +107,9 @@ class GitHubDeckFetcher implements DeckFetcher {
   /// How long one file may take, from connecting to the last byte.
   final Duration timeout;
 
-  /// The most a file may be. The largest deck is far under it; more is
-  /// not a deck.
+  /// The most a file may be. The largest deck is far under it, and the
+  /// largest font (Noto Sans SC, 17.8 MB, #611) is under it too; more is
+  /// neither.
   final int maxBytes;
 
   /// The waits before each retry of a file that failed as
