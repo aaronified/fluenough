@@ -1,0 +1,318 @@
+schema: 1
+id: "mr-en-places"
+kind: "layer"
+core: "mr-places"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Places"
+license: "CC-BY-SA-4.0"
+description: "Places in a town, in the country and by the sea: where you study, pray, bank, wait and walk. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-0957":
+    native: "school"
+    notes:
+      "n1": "शाळेत (śāḷet), at school, is the place word."
+    examples:
+      "मुले शाळेत जातात.": { native: "The children go to school.", bases: { "शाळेत": "at school", "जातात": "to go" } }
+      "माझी बहीण शाळेत शिकवते.": { native: "My sister teaches at school.", bases: { "माझी": "my", "शाळेत": "at school", "शिकवते": "to teach" } }
+  "mr-0958":
+    native: "college"
+    notes:
+      "n1": "A loan word. After school, the place is कॉलेज (kôlej)."
+    examples:
+      "ती कॉलेजला जाते.": { native: "She goes to college.", bases: { "कॉलेजला": "to college", "जाते": "to go" } }
+      "कॉलेज मोठे आहे.": { native: "The college is big.", bases: { "मोठे": "big", "आहे": "to be" } }
+  "mr-0959":
+    native: "bank"
+    notes:
+      "n1": "A bank is बँक (bam̐k), a loan word."
+    examples:
+      "बँक सकाळी उघडते.": { native: "The bank opens in the morning.", bases: { "सकाळी": "morning", "उघडते": "to open" } }
+      "मला बँकेत जायचे आहे.": { native: "I have to go to the bank.", bases: { "मला": "I", "बँकेत": "to the bank", "जायचे": "to go", "आहे": "to be" } }
+  "mr-0960":
+    native: "post; mail"
+    notes:
+      "n1": "The post office is टपाल कार्यालय (ṭapāl kāryālay), the post office."
+    examples:
+      "हे पत्र टपालाने पाठवा.": { native: "Send this letter by post.", bases: { "हे": "this", "पत्र": "letter", "टपालाने": "by post", "पाठवा": "to send" } }
+      "टपाल कुठे आहे?": { native: "Where is the post office?", bases: { "कुठे": "where", "आहे": "to be" } }
+  "mr-0961":
+    native: "temple"
+    notes:
+      "n1": "A temple is a place of worship, as in देवाचे मंदिर (devāce mandir), a god's temple."
+    examples:
+      "आई रोज मंदिरात जाते.": { native: "Mother goes to the temple every day.", bases: { "मंदिरात": "to the temple", "जाते": "to go" } }
+      "मंदिर जुने आहे.": { native: "The temple is old.", bases: { "जुने": "old", "आहे": "to be" } }
+  "mr-0962":
+    native: "mosque"
+    notes:
+      "n1": "A mosque is a place of prayer."
+    examples:
+      "मशीद जवळ आहे.": { native: "The mosque is near.", bases: { "आहे": "to be" } }
+      "मशिदीत शांतता आहे.": { native: "There is peace in the mosque.", bases: { "मशिदीत": "in the mosque", "शांतता": "peace", "आहे": "to be" } }
+  "mr-0963":
+    native: "church"
+    notes:
+      "n1": "A church is a loan word; the word is used for a building."
+    examples:
+      "चर्च मोठे आहे.": { native: "The church is big.", bases: { "मोठे": "big", "आहे": "to be" } }
+      "रविवारी चर्चमध्ये जातात.": { native: "They go to church on Sunday.", bases: { "रविवारी": "on Sunday", "चर्चमध्ये": "to church", "जातात": "to go" } }
+  "mr-0964":
+    native: "park; garden"
+    notes:
+      "n1": "A park, with trees and paths: उद्यानात (udyānāt), in the park."
+    examples:
+      "उद्यानात मुले खेळतात.": { native: "Children play in the park.", bases: { "उद्यानात": "in the park", "खेळतात": "to play" } }
+      "उद्यान सुंदर आहे.": { native: "The park is beautiful.", bases: { "सुंदर": "beautiful", "आहे": "to be" } }
+  "mr-0965":
+    native: "lake; pond"
+    notes:
+      "n1": "A lake is तलाव (talāv); a small one is also a pond."
+    examples:
+      "तलावात पाणी आहे.": { native: "There is water in the lake.", bases: { "तलावात": "in the lake", "आहे": "to be" } }
+      "तलाव मोठा आहे.": { native: "The lake is big.", bases: { "आहे": "to be" } }
+  "mr-0966":
+    native: "river"
+    notes:
+      "n1": "A river flows: नदी वाहते (nadi vāhte), the river flows."
+    examples:
+      "नदी वाहते.": { native: "The river flows.", bases: { "वाहते": "to flow" } }
+      "नदीत पोहतात.": { native: "They swim in the river.", bases: { "नदीत": "in the river", "पोहतात": "to swim" } }
+  "mr-0967":
+    native: "hill"
+    notes:
+      "n1": "A hill is smaller than पर्वत (parvat), a mountain."
+    examples:
+      "डोंगरावर झाडे आहेत.": { native: "There are trees on the hill.", bases: { "डोंगरावर": "on the hill", "झाडे": "trees", "आहेत": "to be" } }
+      "डोंगर उंच आहे.": { native: "The hill is high.", bases: { "उंच": "high", "आहे": "to be" } }
+  "mr-0968":
+    native: "forest"
+    notes:
+      "n1": "A forest is जंगल (jaṅgal); the adjective is दाट (dāṭ), dense."
+    examples:
+      "जंगलात वाघ आहे.": { native: "There is a tiger in the forest.", bases: { "जंगलात": "in the forest", "वाघ": "tiger", "आहे": "to be" } }
+      "जंगल दाट आहे.": { native: "The forest is dense.", bases: { "दाट": "dense", "आहे": "to be" } }
+  "mr-0969":
+    native: "field; farm"
+    notes:
+      "n1": "A field where crops grow: शेतकरी (śetkari), a farmer."
+    examples:
+      "शेतात काम आहे.": { native: "There is work in the field.", bases: { "शेतात": "in the field", "आहे": "to be" } }
+      "शेतकरी शेतात काम करतात.": { native: "Farmers work in the fields.", bases: { "शेतात": "in the fields", "करतात": "to do" } }
+  "mr-0970":
+    native: "city; town"
+    notes:
+      "n1": "A city is larger than a गाव (gāv), a village."
+    examples:
+      "शहर मोठे आहे.": { native: "The city is big.", bases: { "मोठे": "big", "आहे": "to be" } }
+      "मी शहरात राहतो.": { native: "I live in the city.", bases: { "मी": "I", "शहरात": "in the city", "राहतो": "to live" } }
+  "mr-0971":
+    native: "road; street"
+    notes:
+      "n1": "A road: रस्त्यावर (rastyāvar), on the road."
+    examples:
+      "रस्ता रुंद आहे.": { native: "The road is wide.", bases: { "रुंद": "wide", "आहे": "to be" } }
+      "रस्त्यावर गाडी आहे.": { native: "There is a car on the road.", bases: { "रस्त्यावर": "on the road", "आहे": "to be" } }
+  "mr-0972":
+    native: "pavement"
+    notes:
+      "n1": "A pavement is for walking: फुटपाथवर चाला (phuṭpāthvar cālā), walk on the pavement."
+    examples:
+      "फुटपाथवर चाला.": { native: "Walk on the pavement.", bases: { "फुटपाथवर": "on the pavement", "चाला": "to walk" } }
+      "फुटपाथ स्वच्छ आहे.": { native: "The pavement is clean.", bases: { "स्वच्छ": "clean", "आहे": "to be" } }
+  "mr-0973":
+    native: "petrol"
+    notes:
+      "n1": "Petrol for a car: गाडीत पेट्रोल (gāḍit peṭrol), petrol in the car."
+    examples:
+      "गाडीत पेट्रोल भरा.": { native: "Fill the car with petrol.", bases: { "भरा": "to fill" } }
+      "पेट्रोल संपले.": { native: "The petrol has run out.", bases: { "संपले": "to run out" } }
+  "mr-0974":
+    native: "cinema; film"
+    notes:
+      "n1": "A film is चित्रपट (citrapaṭ); the place for it is a cinema."
+    examples:
+      "रविवारी सिनेमा पाहतो.": { native: "He watches a film on Sunday.", bases: { "रविवारी": "on Sunday", "पाहतो": "to see" } }
+      "सिनेमा सुरू झाला.": { native: "The film has started.", bases: { "सुरू": "started", "झाला": "to become" } }
+  "mr-0975":
+    native: "theatre"
+    notes:
+      "n1": "A theatre is for plays and shows."
+    examples:
+      "थिएटर जवळ आहे.": { native: "The theatre is near.", bases: { "आहे": "to be" } }
+      "आम्ही थिएटरमध्ये जाऊ.": { native: "We will go to the theatre.", bases: { "आम्ही": "we", "थिएटरमध्ये": "to the theatre", "जाऊ": "to go" } }
+  "mr-0976":
+    native: "library"
+    notes:
+      "n1": "A library is a place to read: ग्रंथालयात (granthālyāt), in the library."
+    examples:
+      "ग्रंथालय शांत आहे.": { native: "The library is quiet.", bases: { "शांत": "quiet", "आहे": "to be" } }
+      "ती ग्रंथालयात वाचते.": { native: "She reads in the library.", bases: { "ग्रंथालयात": "in the library" } }
+  "mr-0977":
+    native: "museum"
+    notes:
+      "n1": "A museum keeps old things: जुन्या वस्तू (junyā vastu), old things."
+    examples:
+      "संग्रहालय उद्या बंद आहे.": { native: "The museum is closed tomorrow.", bases: { "बंद": "closed", "आहे": "to be" } }
+      "आम्ही संग्रहालय पाहिले.": { native: "We saw the museum.", bases: { "आम्ही": "we", "पाहिले": "to see" } }
+  "mr-0978":
+    native: "court of law"
+    notes:
+      "n1": "A court is न्यायालय (nyāyālay); the people in it are judges."
+    examples:
+      "न्यायालय कुठे आहे?": { native: "Where is the court?", bases: { "कुठे": "where", "आहे": "to be" } }
+      "तो न्यायालयात जातो.": { native: "He goes to court.", bases: { "न्यायालयात": "to court", "जातो": "to go" } }
+  "mr-0979":
+    native: "pharmacy"
+    notes:
+      "n1": "A pharmacy sells औषध (auṣadh), medicine."
+    examples:
+      "औषधालय सकाळी उघडते.": { native: "The pharmacy opens in the morning.", bases: { "सकाळी": "morning", "उघडते": "to open" } }
+      "औषध औषधालयात मिळते.": { native: "Medicine is available at the pharmacy.", bases: { "औषधालयात": "at the pharmacy", "मिळते": "to get" } }
+  "mr-0980":
+    native: "ground; playground"
+    notes:
+      "n1": "A playing field: खेळाचे मैदान (kheḷāce maidān), a sports ground."
+    examples:
+      "मुले मैदानात खेळतात.": { native: "The children play on the ground.", bases: { "मैदानात": "on the ground", "खेळतात": "to play" } }
+      "मैदान मोठे आहे.": { native: "The ground is big.", bases: { "मोठे": "big", "आहे": "to be" } }
+  "mr-0981":
+    native: "bus station"
+    notes:
+      "n1": "A bus station: बस (bas), a bus, stops there."
+    examples:
+      "बसस्थानक जवळ आहे.": { native: "The bus station is near.", bases: { "आहे": "to be" } }
+      "बसस्थानकावर गाडी थांबते.": { native: "The bus stops at the bus station.", bases: { "बसस्थानकावर": "at the bus station", "थांबते": "to stop" } }
+  "mr-0982":
+    native: "supermarket"
+    notes:
+      "n1": "A supermarket is a large shop: मोठे दुकान (moṭhe dukān), a big shop."
+    examples:
+      "सुपरमार्केट मोठे आहे.": { native: "The supermarket is big.", bases: { "मोठे": "big", "आहे": "to be" } }
+      "सुपरमार्केटमध्ये भाजी स्वस्त आहे.": { native: "Vegetables are cheap at the supermarket.", bases: { "सुपरमार्केटमध्ये": "at the supermarket", "आहे": "to be" } }
+  "mr-0983":
+    native: "mall"
+    notes:
+      "n1": "A mall is a large building of shops."
+    examples:
+      "मॉल खूप मोठा आहे.": { native: "The mall is very big.", bases: { "आहे": "to be" } }
+      "मॉलमध्ये जाऊ.": { native: "Let's go to the mall.", bases: { "मॉलमध्ये": "to the mall", "जाऊ": "to go" } }
+  "mr-0984":
+    native: "university"
+    notes:
+      "n1": "A university: विद्यापीठात (vidyāpiṭhāt), at the university."
+    examples:
+      "माझी बहीण विद्यापीठात शिकते.": { native: "My sister studies at the university.", bases: { "माझी": "my", "विद्यापीठात": "at the university", "शिकते": "to study" } }
+      "विद्यापीठ दूर आहे.": { native: "The university is far.", bases: { "दूर": "far", "आहे": "to be" } }
+  "mr-0985":
+    native: "hostel"
+    notes:
+      "n1": "A hostel for students: वसतिगृहात (vastigruhāt), in the hostel."
+    examples:
+      "तो वसतिगृहात राहतो.": { native: "He lives in the hostel.", bases: { "वसतिगृहात": "in the hostel", "राहतो": "to live" } }
+      "वसतिगृह स्वच्छ आहे.": { native: "The hostel is clean.", bases: { "स्वच्छ": "clean", "आहे": "to be" } }
+  "mr-0986":
+    native: "kindergarten"
+    notes:
+      "n1": "A kindergarten for small children: लहान मुले (lahān mule), small children."
+    examples:
+      "मुलगी बालवाडीत जाते.": { native: "The girl goes to kindergarten.", bases: { "बालवाडीत": "to kindergarten", "जाते": "to go" } }
+      "बालवाडी लहान आहे.": { native: "The kindergarten is small.", bases: { "आहे": "to be" } }
+  "mr-0987":
+    native: "hall"
+    notes:
+      "n1": "A hall for meetings: सभा (sabhā), a meeting."
+    examples:
+      "सभागृह मोठे आहे.": { native: "The hall is big.", bases: { "मोठे": "big", "आहे": "to be" } }
+      "सभागृहात लोक आहेत.": { native: "There are people in the hall.", bases: { "सभागृहात": "in the hall", "आहेत": "to be" } }
+  "mr-0988":
+    native: "fort"
+    notes:
+      "n1": "A fort is built on a hill: किल्ल्यावर (killyāvar), on the fort."
+    examples:
+      "किल्ला उंच आहे.": { native: "The fort is high.", bases: { "उंच": "high", "आहे": "to be" } }
+      "आम्ही किल्ल्यावर जातो.": { native: "We go to the fort.", bases: { "आम्ही": "we", "किल्ल्यावर": "to the fort", "जातो": "to go" } }
+  "mr-0989":
+    native: "sea"
+    notes:
+      "n1": "The sea: समुद्रात (samudrāt), in the sea."
+    examples:
+      "समुद्र निळा आहे.": { native: "The sea is blue.", bases: { "निळा": "blue", "आहे": "to be" } }
+      "समुद्रात पाणी खारट आहे.": { native: "The sea water is salty.", bases: { "समुद्रात": "in the sea", "खारट": "salty", "आहे": "to be" } }
+  "mr-0990":
+    native: "mountain"
+    notes:
+      "n1": "A mountain is bigger than a डोंगर (ḍoṅgar), a hill."
+    examples:
+      "पर्वत खूप उंच आहे.": { native: "The mountain is very high.", bases: { "उंच": "high", "आहे": "to be" } }
+      "पर्वतावर बर्फ आहे.": { native: "There is snow on the mountain.", bases: { "पर्वतावर": "on the mountain", "बर्फ": "snow", "आहे": "to be" } }
+  "mr-0991":
+    native: "waterfall"
+    notes:
+      "n1": "A waterfall falls from a height: धबधब्याचे पाणी (dhabdhabyāce pāṇi), the waterfall's water."
+    examples:
+      "धबधबा सुंदर आहे.": { native: "The waterfall is beautiful.", bases: { "सुंदर": "beautiful", "आहे": "to be" } }
+      "धबधब्याचे पाणी थंड आहे.": { native: "The waterfall's water is cold.", bases: { "धबधब्याचे": "of the waterfall", "थंड": "cold", "आहे": "to be" } }
+  "mr-0992":
+    native: "desert"
+    notes:
+      "n1": "A desert has little water: वाळवंटात (vāḷvaṇṭāt), in the desert."
+    examples:
+      "वाळवंट गरम आहे.": { native: "The desert is hot.", bases: { "गरम": "hot", "आहे": "to be" } }
+      "वाळवंटात पाणी कमी आहे.": { native: "There is little water in the desert.", bases: { "वाळवंटात": "in the desert", "कमी": "little", "आहे": "to be" } }
+  "mr-0993":
+    native: "statue"
+    notes:
+      "n1": "A statue stands in a town: शहरात पुतळा (śahrāt putḷā), a statue in the town."
+    examples:
+      "शहरात पुतळा आहे.": { native: "There is a statue in the town.", bases: { "शहरात": "in the town", "आहे": "to be" } }
+      "पुतळा उंच आहे.": { native: "The statue is tall.", bases: { "उंच": "tall", "आहे": "to be" } }
+  "mr-0994":
+    native: "market hall"
+    notes:
+      "n1": "A market hall where food is sold: मंडईत (maṇḍait), in the market hall."
+    examples:
+      "मंडई सकाळी भरते.": { native: "The market fills up in the morning.", bases: { "सकाळी": "morning", "भरते": "to fill" } }
+      "मंडईत भाजी आहे.": { native: "There are vegetables in the market hall.", bases: { "मंडईत": "in the market hall", "आहे": "to be" } }
+  "mr-0995":
+    native: "housing society"
+    notes:
+      "n1": "A housing society is a group of homes: सोसायटीत (sosāyṭit), in the society."
+    examples:
+      "आमची सोसायटी मोठी आहे.": { native: "Our housing society is big.", bases: { "आमची": "our", "मोठी": "big", "आहे": "to be" } }
+      "सोसायटीत उद्यान आहे.": { native: "There is a park in the society.", bases: { "सोसायटीत": "in the society", "उद्यान": "park", "आहे": "to be" } }
+  "mr-0996":
+    native: "railway; train"
+    notes:
+      "n1": "A train is रेल्वे (relve); the railway is also रेल्वे (relve)."
+    examples:
+      "रेल्वे वेळेवर येते.": { native: "The train comes on time.", bases: { "वेळेवर": "on time", "येते": "to come" } }
+      "रेल्वेने प्रवास करतो.": { native: "He travels by train.", bases: { "रेल्वेने": "by train", "प्रवास": "travel", "करतो": "to do" } }
+  "mr-0997":
+    native: "factory"
+    notes:
+      "n1": "A factory where goods are made: कारखान्यात (kārkhānyāt), in the factory."
+    examples:
+      "कारखाना शहराबाहेर आहे.": { native: "The factory is outside the city.", bases: { "शहराबाहेर": "outside the city", "आहे": "to be" } }
+      "कारखान्यात लोक काम करतात.": { native: "People work in the factory.", bases: { "कारखान्यात": "in the factory", "करतात": "to do" } }
+  "mr-0998":
+    native: "port; harbour"
+    notes:
+      "n1": "A port where ships come in: बंदरात (bandarāt), at the port."
+    examples:
+      "बंदर मोठे आहे.": { native: "The port is big.", bases: { "मोठे": "big", "आहे": "to be" } }
+      "जहाज बंदरात आहे.": { native: "The ship is in the port.", bases: { "जहाज": "ship", "बंदरात": "in the port", "आहे": "to be" } }
+  "mr-0999":
+    native: "stadium"
+    notes:
+      "n1": "A stadium is a large sports ground."
+    examples:
+      "स्टेडियम मोठे आहे.": { native: "The stadium is big.", bases: { "मोठे": "big", "आहे": "to be" } }
+      "स्टेडियममध्ये सामना आहे.": { native: "There is a match in the stadium.", bases: { "स्टेडियममध्ये": "in the stadium", "सामना": "match", "आहे": "to be" } }
+  "mr-1000":
+    native: "cinema hall"
+    notes:
+      "n1": "A cinema hall: चित्रपटगृहात (citrapṭgruhāt), in the cinema hall."
+    examples:
+      "चित्रपटगृह जवळ आहे.": { native: "The cinema hall is near.", bases: { "आहे": "to be" } }
+      "चित्रपटगृहात गर्दी आहे.": { native: "The cinema hall is crowded.", bases: { "चित्रपटगृहात": "in the cinema hall", "गर्दी": "crowd", "आहे": "to be" } }

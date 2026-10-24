@@ -1,0 +1,276 @@
+schema: 1
+id: "kn-en-adverbs"
+kind: "layer"
+core: "kn-adverbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Adverbs: how often, how well, when"
+license: "CC-BY-SA-4.0"
+description: "How often, how well and when things are done, and where. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "kn-0657":
+    native: "sometimes"
+    notes:
+      "n1": "The opposite is ಯಾವಾಗಲೂ (yāvāgalū), always."
+    examples:
+      "ನಾನು ಕೆಲವೊಮ್ಮೆ ಸಿನಿಮಾ ನೋಡುತ್ತೇನೆ.": { native: "I sometimes watch a film.", bases: { "ಸಿನಿಮಾ": "film", "ನೋಡುತ್ತೇನೆ": "to see" } }
+      "ಅವನು ಕೆಲವೊಮ್ಮೆ ತಡವಾಗಿ ಬರುತ್ತಾನೆ.": { native: "He sometimes comes late.", bases: { "ತಡವಾಗಿ": "late", "ಬರುತ್ತಾನೆ": "to come" } }
+  "kn-0658":
+    native: "ever; never (with a negative)"
+    notes:
+      "n1": "With a negative verb: ಎಂದೂ ಇಲ್ಲ (endū illa), never."
+    examples:
+      "ನಾನು ಎಂದೂ ಸುಳ್ಳು ಹೇಳುವುದಿಲ್ಲ.": { native: "I never tell lies.", bases: { "ಸುಳ್ಳು": "lie", "ಹೇಳುವುದಿಲ್ಲ": "to say" } }
+      "ಅವಳು ಎಂದೂ ತಡ ಮಾಡುವುದಿಲ್ಲ.": { native: "She is never late.", bases: { "ತಡ": "delay", "ಮಾಡುವುದಿಲ್ಲ": "to do" } }
+  "kn-0659":
+    native: "often; now and then"
+    notes:
+      "n1": "Repeated: ಆಗಾಗ (āgāga) comes before the verb."
+    examples:
+      "ಅವರು ಆಗಾಗ ಊರಿಗೆ ಹೋಗುತ್ತಾರೆ.": { native: "They often go to town.", bases: { "ಊರಿಗೆ": "to the town", "ಹೋಗುತ್ತಾರೆ": "to go" } }
+      "ನಾನು ಆಗಾಗ ಚಹಾ ಕುಡಿಯುತ್ತೇನೆ.": { native: "I drink tea often.", bases: { "ಚಹಾ": "tea", "ಕುಡಿಯುತ್ತೇನೆ": "to drink" } }
+  "kn-0660":
+    native: "rarely"
+    notes:
+      "n1": "The opposite is ಆಗಾಗ (āgāga), often."
+    examples:
+      "ಅವನು ಅಪರೂಪಕ್ಕೆ ಸಿನಿಮಾ ನೋಡುತ್ತಾನೆ.": { native: "He rarely watches films.", bases: { "ಸಿನಿಮಾ": "film", "ನೋಡುತ್ತಾನೆ": "to see" } }
+      "ಅವಳು ಅಪರೂಪಕ್ಕೆ ಹೊರಗೆ ಊಟ ಮಾಡುತ್ತಾಳೆ.": { native: "She rarely eats out.", bases: { "ಹೊರಗೆ": "outside", "ಊಟ": "meal", "ಮಾಡುತ್ತಾಳೆ": "to do" } }
+  "kn-0661":
+    native: "early; quickly"
+    notes:
+      "n1": "Early in the day, or quickly: ಬೇಗ ಏಳು (bēga ēḷu), get up early."
+    examples:
+      "ನಾನು ಬೇಗ ಏಳುತ್ತೇನೆ.": { native: "I get up early.", bases: { "ಏಳುತ್ತೇನೆ": "to get up" } }
+      "ಅವನು ಬೇಗ ಬಂದ.": { native: "He came early.", bases: { "ಬಂದ": "to come" } }
+  "kn-0662":
+    native: "late"
+    notes:
+      "n1": "The opposite is ಬೇಗ (bēga), early."
+    examples:
+      "ಅವರು ತಡವಾಗಿ ಮಲಗುತ್ತಾರೆ.": { native: "They sleep late.", bases: { "ಮಲಗುತ್ತಾರೆ": "to sleep" } }
+      "ರೈಲು ತಡವಾಗಿ ಬಂದಿತು.": { native: "The train came late.", bases: { "ರೈಲು": "train", "ಬಂದಿತು": "to come" } }
+  "kn-0663":
+    native: "slowly"
+    notes:
+      "n1": "From ನಿಧಾನ (nidhāna), slow."
+    examples:
+      "ದಯವಿಟ್ಟು ನಿಧಾನವಾಗಿ ಮಾತನಾಡಿ.": { native: "Please speak slowly.", bases: { "ದಯವಿಟ್ಟು": "please", "ಮಾತನಾಡಿ": "to speak" } }
+      "ಅವನು ನಿಧಾನವಾಗಿ ನಡೆಯುತ್ತಾನೆ.": { native: "He walks slowly.", bases: { "ನಡೆಯುತ್ತಾನೆ": "to walk" } }
+  "kn-0664":
+    native: "well"
+    notes:
+      "n1": "After a verb: ಚೆನ್ನಾಗಿ ಓದು (cennāgi ōdu), read well."
+    examples:
+      "ಅವಳು ಚೆನ್ನಾಗಿ ಹಾಡುತ್ತಾಳೆ.": { native: "She sings well.", bases: { "ಹಾಡುತ್ತಾಳೆ": "to sing" } }
+      "ನೀನು ಚೆನ್ನಾಗಿದ್ದೀಯ?": { native: "Are you well?", bases: { "ಚೆನ್ನಾಗಿದ್ದೀಯ": "to be well" } }
+  "kn-0665":
+    native: "badly"
+    notes:
+      "n1": "From ಕೆಟ್ಟ (keṭṭa), bad: after a verb it means badly."
+    examples:
+      "ಅವನು ಕೆಟ್ಟದಾಗಿ ಓದುತ್ತಾನೆ.": { native: "He reads badly.", bases: { "ಓದುತ್ತಾನೆ": "to read" } }
+      "ಈ ಕೆಲಸ ಕೆಟ್ಟದಾಗಿ ಆಯಿತು.": { native: "This work went badly.", bases: { "ಕೆಲಸ": "work", "ಆಯಿತು": "to happen" } }
+  "kn-0666":
+    native: "after; afterwards; later"
+    notes:
+      "n1": "After a noun: ಊಟದ ನಂತರ (ūṭada nantara), after the meal."
+    examples:
+      "ನಂತರ ಮಾತನಾಡೋಣ.": { native: "Let us talk later.", bases: { "ಮಾತನಾಡೋಣ": "to speak" } }
+      "ಊಟದ ನಂತರ ಕಾಫಿ ಕುಡಿಯುತ್ತೇನೆ.": { native: "I drink coffee after the meal.", bases: { "ಊಟದ": "of the meal", "ಕಾಫಿ": "coffee", "ಕುಡಿಯುತ್ತೇನೆ": "to drink" } }
+  "kn-0667":
+    native: "before; first; earlier"
+    notes:
+      "n1": "After a noun: ಊಟಕ್ಕೆ ಮೊದಲು (ūṭakke modalu), before the meal."
+    examples:
+      "ನೀನು ಮೊದಲು ಹೋಗು.": { native: "You go first.", bases: { "ಹೋಗು": "to go" } }
+      "ನಾನು ಮೊದಲು ಬಂದೆ.": { native: "I came first.", bases: { "ಬಂದೆ": "to come" } }
+  "kn-0668":
+    native: "very; a lot"
+    notes:
+      "n1": "Before an adjective or a verb: ತುಂಬಾ ದೊಡ್ಡದು (tumbā doḍḍadu), very big."
+    examples:
+      "ಈ ಮನೆ ತುಂಬಾ ದೊಡ್ಡದು.": { native: "This house is very big.", bases: { "ಈ": "this", "ಮನೆ": "house", "ದೊಡ್ಡದು": "big" } }
+      "ಅವನು ತುಂಬಾ ಊಟ ಮಾಡುತ್ತಾನೆ.": { native: "He eats a lot.", bases: { "ಊಟ": "meal", "ಮಾಡುತ್ತಾನೆ": "to do" } }
+  "kn-0669":
+    native: "again"
+    notes:
+      "n1": "The same verb again: ಮತ್ತೆ ಹೇಳು (matte hēḷu), say it again."
+    examples:
+      "ಮತ್ತೆ ಹೇಳು.": { native: "Say it again.", bases: { "ಹೇಳು": "to say" } }
+      "ನಾಳೆ ಮತ್ತೆ ಬರುತ್ತೇನೆ.": { native: "I will come again tomorrow.", bases: { "ಬರುತ್ತೇನೆ": "to come" } }
+  "kn-0670":
+    native: "still; yet"
+    notes:
+      "n1": "With a negative: ಇನ್ನೂ ಆಗಿಲ್ಲ (innū āgilla), not yet done."
+    examples:
+      "ಅವಳು ಇನ್ನೂ ಮಲಗಿದ್ದಾಳೆ.": { native: "She is still asleep.", bases: { "ಮಲಗಿದ್ದಾಳೆ": "to sleep" } }
+      "ಇನ್ನೂ ಊಟ ಆಗಿಲ್ಲ.": { native: "The meal is not yet done.", bases: { "ಊಟ": "meal", "ಆಗಿಲ್ಲ": "to happen" } }
+  "kn-0671":
+    native: "always; constantly"
+    notes:
+      "n1": "A word for something that is always the case: ಸದಾ (sadā)."
+    examples:
+      "ಅವರು ಸದಾ ನಗುತ್ತಾರೆ.": { native: "They always laugh.", bases: { "ನಗುತ್ತಾರೆ": "to laugh" } }
+      "ಅವನು ಸದಾ ಕೆಲಸ ಮಾಡುತ್ತಾನೆ.": { native: "He always works.", bases: { "ಕೆಲಸ": "work", "ಮಾಡುತ್ತಾನೆ": "to do" } }
+  "kn-0672":
+    native: "perhaps"
+    notes:
+      "n1": "A guess: ಬಹುಶಃ (bahuśaḥ), perhaps."
+    examples:
+      "ಬಹುಶಃ ಅವನು ಬರುತ್ತಾನೆ.": { native: "Perhaps he will come.", bases: { "ಬರುತ್ತಾನೆ": "to come" } }
+      "ಬಹುಶಃ ಮಳೆ ಬರುತ್ತದೆ.": { native: "Perhaps it will rain.", bases: { "ಮಳೆ": "rain", "ಬರುತ್ತದೆ": "to come" } }
+  "kn-0673":
+    native: "usually; in general"
+    notes:
+      "n1": "A habit: ಸಾಮಾನ್ಯವಾಗಿ (sāmānyavāgi), usually."
+    examples:
+      "ಅವಳು ಸಾಮಾನ್ಯವಾಗಿ ಬೆಳಿಗ್ಗೆ ಬೇಗ ಏಳುತ್ತಾಳೆ.": { native: "She usually gets up early in the morning.", bases: { "ಬೆಳಿಗ್ಗೆ": "in the morning", "ಏಳುತ್ತಾಳೆ": "to get up" } }
+      "ನಾನು ಸಾಮಾನ್ಯವಾಗಿ ಮನೆಯಲ್ಲಿ ಇರುತ್ತೇನೆ.": { native: "I usually stay at home.", bases: { "ಮನೆಯಲ್ಲಿ": "at home", "ಇರುತ್ತೇನೆ": "to be" } }
+  "kn-0674":
+    native: "correctly; properly"
+    notes:
+      "n1": "From ಸರಿ (sari), right or correct."
+    examples:
+      "ಅವನು ಸರಿಯಾಗಿ ಉತ್ತರಿಸಿದ.": { native: "He answered correctly.", bases: { "ಉತ್ತರಿಸಿದ": "to answer" } }
+      "ನಿನ್ನ ಉತ್ತರ ಸರಿಯಾಗಿದೆ.": { native: "Your answer is correct.", bases: { "ಉತ್ತರ": "answer", "ಸರಿಯಾಗಿದೆ": "correct" } }
+  "kn-0675":
+    native: "loudly"
+    notes:
+      "n1": "From ಜೋರು (jōru), loud."
+    examples:
+      "ಜೋರಾಗಿ ಮಾತನಾಡಬೇಡ.": { native: "Do not speak loudly.", bases: { "ಮಾತನಾಡಬೇಡ": "to speak" } }
+      "ಅವನು ಜೋರಾಗಿ ನಗುತ್ತಾನೆ.": { native: "He laughs loudly.", bases: { "ನಗುತ್ತಾನೆ": "to laugh" } }
+  "kn-0676":
+    native: "softly; quietly"
+    notes:
+      "n1": "Softly: ಮೆಲ್ಲಗೆ ಮಾತನಾಡು (mellage mātanāḍu), speak quietly."
+    examples:
+      "ಮೆಲ್ಲಗೆ ಮಾತನಾಡು.": { native: "Speak quietly.", bases: { "ಮಾತನಾಡು": "to speak" } }
+      "ಮಗು ಮೆಲ್ಲಗೆ ನಿದ್ದೆ ಮಾಡುತ್ತಿದೆ.": { native: "The baby is sleeping quietly.", bases: { "ಮಗು": "baby", "ನಿದ್ದೆ": "sleep", "ಮಾಡುತ್ತಿದೆ": "to do" } }
+  "kn-0677":
+    native: "very; a great deal"
+    notes:
+      "n1": "Before an adjective: ಬಹಳ ಚಿಕ್ಕದು (bahaḷa cikkadu), very small."
+    examples:
+      "ಈ ಊರು ಬಹಳ ಚಿಕ್ಕದು.": { native: "This town is very small.", bases: { "ಈ": "this", "ಊರು": "town", "ಚಿಕ್ಕದು": "small" } }
+      "ಅವರು ಬಹಳ ಕೆಲಸ ಮಾಡುತ್ತಾರೆ.": { native: "They work a lot.", bases: { "ಕೆಲಸ": "work", "ಮಾಡುತ್ತಾರೆ": "to do" } }
+  "kn-0678":
+    native: "to there"
+    notes:
+      "n1": "A direction: ಅಲ್ಲಿಗೆ (allige), to there; ಇಲ್ಲಿಗೆ (illige), to here."
+    examples:
+      "ನಾಳೆ ಅಲ್ಲಿಗೆ ಹೋಗುತ್ತೇನೆ.": { native: "I will go there tomorrow.", bases: { "ಹೋಗುತ್ತೇನೆ": "to go" } }
+      "ಅವನು ಅಲ್ಲಿಗೆ ಬಂದ.": { native: "He came there.", bases: { "ಬಂದ": "to come" } }
+  "kn-0679":
+    native: "to here"
+    notes:
+      "n1": "The opposite direction: ಅಲ್ಲಿಗೆ (allige), to there."
+    examples:
+      "ಇಲ್ಲಿಗೆ ಬಾ.": { native: "Come here.", bases: { "ಇಲ್ಲಿಗೆ": "to here" } }
+      "ಅವರು ಇಲ್ಲಿಗೆ ಬರುತ್ತಾರೆ.": { native: "They come here.", bases: { "ಬರುತ್ತಾರೆ": "to come" } }
+  "kn-0680":
+    native: "above; on top"
+    notes:
+      "n1": "The opposite is ಕೆಳಗೆ (keḷage), below."
+    examples:
+      "ಪುಸ್ತಕ ಮೇಲೆ ಇದೆ.": { native: "The book is on top.", bases: { "ಪುಸ್ತಕ": "book", "ಇದೆ": "to be" } }
+      "ಹಕ್ಕಿ ಮರದ ಮೇಲೆ ಕುಳಿತಿದೆ.": { native: "The bird is sitting on the tree.", bases: { "ಮರದ": "of the tree", "ಕುಳಿತಿದೆ": "to sit", "ಹಕ್ಕಿ": "bird" } }
+  "kn-0681":
+    native: "below; down"
+    notes:
+      "n1": "The opposite is ಮೇಲೆ (mēle), above."
+    examples:
+      "ಮೇಜಿನ ಕೆಳಗೆ ನಾಯಿ ಇದೆ.": { native: "There is a dog under the table.", bases: { "ಮೇಜಿನ": "of the table", "ನಾಯಿ": "dog", "ಇದೆ": "to be" } }
+      "ಅದು ಕೆಳಗೆ ಬಿತ್ತು.": { native: "It fell down.", bases: { "ಬಿತ್ತು": "to fall" } }
+  "kn-0682":
+    native: "inside"
+    notes:
+      "n1": "The opposite is ಹೊರಗೆ (horage), outside."
+    examples:
+      "ಮನೆ ಒಳಗೆ ಬಾ.": { native: "Come inside the house.", bases: { "ಮನೆ": "house" } }
+      "ಪೆಟ್ಟಿಗೆ ಒಳಗೆ ಏನೋ ಇದೆ.": { native: "There is something inside the box.", bases: { "ಪೆಟ್ಟಿಗೆ": "box", "ಇದೆ": "to be" } }
+  "kn-0683":
+    native: "outside"
+    notes:
+      "n1": "The opposite is ಒಳಗೆ (oḷage), inside."
+    examples:
+      "ಮಕ್ಕಳು ಹೊರಗೆ ಆಡುತ್ತಾರೆ.": { native: "The children play outside.", bases: { "ಮಕ್ಕಳು": "children", "ಆಡುತ್ತಾರೆ": "to play" } }
+      "ಅವಳು ಹೊರಗೆ ಹೋದಳು.": { native: "She went outside.", bases: { "ಹೋದಳು": "to go" } }
+  "kn-0684":
+    native: "in front; next"
+    notes:
+      "n1": "With a noun: ಮನೆಯ ಮುಂದೆ (maneya munde), in front of the house."
+    examples:
+      "ಮನೆಯ ಮುಂದೆ ಮರ ಇದೆ.": { native: "There is a tree in front of the house.", bases: { "ಮನೆಯ": "of the house", "ಮರ": "tree", "ಇದೆ": "to be" } }
+      "ನನ್ನ ಮುಂದೆ ಕುಳಿತುಕೊಳ್ಳಿ.": { native: "Sit in front of me.", bases: { "ನನ್ನ": "my", "ಕುಳಿತುಕೊಳ್ಳಿ": "to sit" } }
+  "kn-0685":
+    native: "behind; before (in time)"
+    notes:
+      "n1": "With a noun: ಮನೆಯ ಹಿಂದೆ (maneya hinde), behind the house."
+    examples:
+      "ಮನೆಯ ಹಿಂದೆ ತೋಟ ಇದೆ.": { native: "There is a garden behind the house.", bases: { "ಮನೆಯ": "of the house", "ತೋಟ": "garden", "ಇದೆ": "to be" } }
+      "ಅವನು ಹಿಂದೆ ಇಲ್ಲಿ ಇದ್ದ.": { native: "He was here before.", bases: { "ಇದ್ದ": "to be" } }
+  "kn-0686":
+    native: "opposite; in front of"
+    notes:
+      "n1": "With a noun: ಶಾಲೆಯ ಎದುರು (śāleya eduru), opposite the school."
+    examples:
+      "ಶಾಲೆಯ ಎದುರು ಮರ ಇದೆ.": { native: "There is a tree opposite the school.", bases: { "ಶಾಲೆಯ": "of the school", "ಮರ": "tree", "ಇದೆ": "to be" } }
+      "ಅವರು ನನ್ನ ಎದುರು ಕುಳಿತಿದ್ದಾರೆ.": { native: "They are sitting opposite me.", bases: { "ನನ್ನ": "my", "ಕುಳಿತಿದ್ದಾರೆ": "to sit" } }
+  "kn-0687":
+    native: "already"
+    notes:
+      "n1": "With a past verb: ಈಗಾಗಲೇ ಊಟ ಮಾಡಿದ (īgāgalē ūṭa māḍida), has already eaten."
+    examples:
+      "ಅವನು ಈಗಾಗಲೇ ಊಟ ಮಾಡಿದ.": { native: "He has already eaten.", bases: { "ಊಟ": "meal", "ಮಾಡಿದ": "to do" } }
+      "ಈಗಾಗಲೇ ಸಮಯ ಆಯಿತು.": { native: "The time has already come.", bases: { "ಸಮಯ": "time", "ಆಯಿತು": "to happen" } }
+  "kn-0688":
+    native: "recently"
+    notes:
+      "n1": "Of the recent past: ಇತ್ತೀಚೆಗೆ (ittīcege), recently."
+    examples:
+      "ಇತ್ತೀಚೆಗೆ ಮಳೆ ಬಂದಿದೆ.": { native: "It has rained recently.", bases: { "ಮಳೆ": "rain", "ಬಂದಿದೆ": "to come" } }
+      "ಇತ್ತೀಚೆಗೆ ಅವನು ಊರಿಗೆ ಬಂದ.": { native: "He came to town recently.", bases: { "ಊರಿಗೆ": "to the town", "ಬಂದ": "to come" } }
+  "kn-0689":
+    native: "at first"
+    notes:
+      "n1": "The order of things: ಮೊದಲಿಗೆ (modalige), first, then ಆಮೇಲೆ (āmēle), afterwards."
+    examples:
+      "ಮೊದಲಿಗೆ ಊಟ, ಆಮೇಲೆ ಕೆಲಸ.": { native: "First the meal, then the work.", bases: { "ಊಟ": "meal", "ಕೆಲಸ": "work", "ಆಮೇಲೆ": "then" } }
+      "ಮೊದಲಿಗೆ ಅವನು ಮಾತನಾಡಿದ.": { native: "At first he spoke.", bases: { "ಮಾತನಾಡಿದ": "to speak" } }
+  "kn-0690":
+    native: "at last; finally"
+    notes:
+      "n1": "At the end: ಕೊನೆಗೆ (konege), at last."
+    examples:
+      "ಕೊನೆಗೆ ಮಳೆ ನಿಂತಿತು.": { native: "At last the rain stopped.", bases: { "ಮಳೆ": "rain", "ನಿಂತಿತು": "to stop" } }
+      "ಅವನು ಕೊನೆಗೆ ಬಂದ.": { native: "He came at last.", bases: { "ಬಂದ": "to come" } }
+  "kn-0691":
+    native: "then; afterwards"
+    notes:
+      "n1": "The next thing: ಆಮೇಲೆ (āmēle), then."
+    examples:
+      "ಆಮೇಲೆ ಊಟ ಮಾಡುತ್ತೇನೆ.": { native: "I will eat afterwards.", bases: { "ಊಟ": "meal", "ಮಾಡುತ್ತೇನೆ": "to do" } }
+      "ಅವಳು ಆಮೇಲೆ ಹೋದಳು.": { native: "She went afterwards.", bases: { "ಹೋದಳು": "to go" } }
+  "kn-0692":
+    native: "mostly; more"
+    notes:
+      "n1": "A word for the greater part: ಹೆಚ್ಚಾಗಿ (heccāgi), mostly."
+    examples:
+      "ನಾವು ಹೆಚ್ಚಾಗಿ ಮನೆಯಲ್ಲಿ ಇರುತ್ತೇವೆ.": { native: "We mostly stay at home.", bases: { "ಮನೆಯಲ್ಲಿ": "at home", "ಇರುತ್ತೇವೆ": "to be" } }
+      "ಅವರು ಹೆಚ್ಚಾಗಿ ತರಕಾರಿ ತಿನ್ನುತ್ತಾರೆ.": { native: "They mostly eat vegetables.", bases: { "ತರಕಾರಿ": "vegetables", "ತಿನ್ನುತ್ತಾರೆ": "to eat" } }
+  "kn-0693":
+    native: "just; idly; for no reason"
+    notes:
+      "n1": "Without a purpose: ಸುಮ್ಮನೆ (summane), just."
+    examples:
+      "ಸುಮ್ಮನೆ ಕುಳಿತಿದ್ದೇನೆ.": { native: "I am just sitting.", bases: { "ಕುಳಿತಿದ್ದೇನೆ": "to sit" } }
+      "ಸುಮ್ಮನೆ ಹೇಳಿದೆ.": { native: "I just said it.", bases: { "ಹೇಳಿದೆ": "to say" } }
+  "kn-0694":
+    native: "less; little"
+    notes:
+      "n1": "The opposite is ಹೆಚ್ಚಾಗಿ (heccāgi), more."
+    examples:
+      "ಇಂದು ಕಡಿಮೆ ಮಳೆ ಬಂದಿತು.": { native: "Little rain fell today.", bases: { "ಮಳೆ": "rain", "ಬಂದಿತು": "to come" } }
+      "ಇದು ಕಡಿಮೆ ಬೆಲೆ.": { native: "This is a low price.", bases: { "ಬೆಲೆ": "price" } }
