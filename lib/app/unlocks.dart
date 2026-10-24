@@ -1,0 +1,114 @@
+import '../core/models/card.dart';
+import '../core/models/rule.dart';
+import '../core/progress/recent_answers.dart' show MasteryLevel;
+import '../core/progress/unlocks.dart';
+import 'app_state.dart';
+import 'deck_catalog.dart';
+import 'session.dart';
+
+/// A rule of a rules deck, and the deck that gives it.
+typedef RuleEntry = ({Rule rule, DeckEntry deck});
+
+/// The unlock gate and the counts of words, rules and sentences
+/// (docs/plans/words-rules-sentences.md), worked out from the learner's
+/// log once, and again only after progress, settings or the decks change
+/// ([AppState.derived]).
+extension UnlockState on AppState {
+  /// The gate over every card of the decks.
+  Unlocks get unlocks => derived<Unlocks>(
+    #unlocks,
+    () => Unlocks(
+      log: progress.log,
+      cards: <Card>[for (final entry in decks) ...entry.cards],
+    ),
+  );
+
+  List<KindedCard> _kindedCards(String language) => <KindedCard>[
+    for (final entry in decks)
+      if (entry.language.code == language)
+        for (final card in entry.cards) (card: card, kind: entry.deck.kind),
+  ];
+
+  /// [language]'s words known, rules known and sentences open, out of what
+  /// is taught so far.
+  UnlockCounts unlockCountsFor(String language) => derived<UnlockCounts>((
+    #unlockCounts,
+    language,
+  ), () => unlocks.counts(_kindedCards(language)));
+
+  /// [unlockCountsFor] as they stood before [at]: what a lesson started at
+  /// [at] unlocked is what changed since.
+  UnlockCounts unlockCountsBefore(String language, DateTime at) => Unlocks(
+    log: progress.log.where((event) => event.at.isBefore(at)),
+    cards: <Card>[for (final entry in decks) ...entry.cards],
+  ).counts(_kindedCards(language));
+
+  /// The counts of every language the learner can choose, added up.
+  UnlockCounts get unlockCountsAll => sumUnlockCounts(<UnlockCounts>[
+    for (final choice in languageChoices) unlockCountsFor(choice.code),
+  ]);
+
+  /// How many words and rules of [language] are taught and not known yet:
+  /// what a lesson's size waits on ([lessonRoom]).
+  int inProgressIn(String language) => derived<int>((
+    #inProgress,
+    language,
+  ), () => unlocks.inProgress(_kindedCards(language)));
+
+  /// The rule [id], with the deck that gives it, from the course taught from
+  /// the learner's language where it can; null if no deck has it.
+  RuleEntry? ruleOf(String id) {
+    final code = id.split('-').first;
+    final native = courseNative(code);
+    RuleEntry? found;
+    for (final entry in decks) {
+      for (final rule in entry.deck.rules) {
+        if (rule.id != id) continue;
+        if (entry.deck.native.code == native) return (rule: rule, deck: entry);
+        found ??= (rule: rule, deck: entry);
+      }
+    }
+    return found;
+  }
+
+  /// The card [id] from the decks, or null if none has it.
+  Card? cardById(String id) => derived<Map<String, Card>>(#cardsById, () {
+    final byId = <String, Card>{};
+    for (final entry in decks) {
+      for (final card in entry.cards) {
+        byId.putIfAbsent(card.id, () => card);
+      }
+    }
+    return byId;
+  })[id];
+
+  /// What [need] is called: a word as its card writes it, with its reading,
+  /// a rule by its name. The id where no deck has it.
+  String needName(Need need) {
+    if (need.kind == NeedKind.rule) {
+      return ruleOf(need.id)?.rule.name ?? need.id;
+    }
+    final card = cardById(need.id);
+    if (card == null) return need.id;
+    return card.reading == null
+        ? card.target
+        : '${card.target} (${card.reading})';
+  }
+
+  /// The session that practises the rule [id]: its cells taught so far
+  /// revised, or, before any was taught, a lesson on its deck; null where
+  /// there is nothing to practise or no deck gives the rule.
+  DrillRequest? practiseRule(String id) {
+    final found = ruleOf(id);
+    if (found == null) return null;
+    final deck = found.deck;
+    if (unlocks.ruleStanding(id).level != MasteryLevel.fresh) {
+      return DrillRequest.practice(deck.id);
+    }
+    final lesson = DrillRequest.lesson(
+      language: deck.language.code,
+      deckId: deck.id,
+    );
+    return lessonFor(lesson).isEmpty ? null : lesson;
+  }
+}
