@@ -327,11 +327,12 @@ class _DrillPageState extends State<DrillPage> {
         session: session,
         onClose: _close,
       ),
-      _ when session.ask == Ask.teach => TeachDrill(
-        key: ValueKey<int>(session.position),
-        session: session,
-        onClose: _close,
-      ),
+      _ when session.ask == Ask.teach || session.ask == Ask.teachRule =>
+        TeachDrill(
+          key: ValueKey<int>(session.position),
+          session: session,
+          onClose: _close,
+        ),
       _ when session.ask.chooses => ChoiceDrill(
         key: ValueKey<int>(session.position),
         session: session,

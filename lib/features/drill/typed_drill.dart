@@ -15,6 +15,7 @@ import '../../ui/widgets/speaker.dart';
 import 'answer_feedback.dart';
 import 'cant_now.dart';
 import 'drill_session.dart';
+import 'rule_forms.dart';
 import 'set_drill.dart';
 import 'input_mode_choice.dart';
 import 'keyboard_hint.dart';
@@ -112,6 +113,7 @@ class _TypedDrillState extends State<TypedDrill> {
             ? _listeningCard(context, card, language, typing: typing)
             : _productionCard(context, card, language, typing: typing),
         ...answeredSetList(context, session, answered: answer != null),
+        ...answeredRuleForms(context, session, answered: answer != null),
       ],
       belowCard: answer != null
           ? null

@@ -111,4 +111,41 @@ extension UnlockState on AppState {
     );
     return lessonFor(lesson).isEmpty ? null : lesson;
   }
+
+  /// Up to [count] forms of the rule [cell] belongs to, in its slot, on
+  /// words the learner knows, [cell] first: what the rule card shows the
+  /// rule making (#417).
+  List<Card> ruleExamples(Card cell, {int count = 3}) {
+    final rule = cell.rule;
+    final entry = deckOf(cell);
+    if (rule == null || entry == null) return <Card>[cell];
+    final gate = unlocks;
+    final words = <String>{rule.word};
+    final forms = <Card>[cell];
+    for (final other in entry.cards) {
+      if (forms.length >= count) break;
+      final made = other.rule;
+      if (made != null &&
+          made.ruleId == rule.ruleId &&
+          made.slot == rule.slot &&
+          gate.isWordKnown(made.word) &&
+          words.add(made.word)) {
+        forms.add(other);
+      }
+    }
+    return forms;
+  }
+
+  /// Every form of [cell]'s word in its rules table, in the table's order:
+  /// the cells its answer shows beside the one asked. A rule is often one
+  /// column, so the forms are the word's whole row.
+  List<Card> ruleFormsOf(Card cell) {
+    final rule = cell.rule;
+    final entry = deckOf(cell);
+    if (rule == null || entry == null) return <Card>[cell];
+    return <Card>[
+      for (final other in entry.cards)
+        if (other.rule?.word == rule.word) other,
+    ];
+  }
 }

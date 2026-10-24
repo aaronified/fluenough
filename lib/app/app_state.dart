@@ -16,6 +16,7 @@ import '../core/models/romanisation.dart';
 import '../core/models/script_guide.dart';
 import '../core/models/sound_contrasts.dart';
 import '../core/numbers/number_practice.dart';
+import '../core/progress/recent_answers.dart' show MasteryLevel;
 import '../core/scheduling/placed_review.dart';
 import '../core/scheduling/daily_budget.dart';
 import '../core/scheduling/skill_map.dart';
@@ -2546,6 +2547,8 @@ class AppState extends ChangeNotifier {
           !isTaught(card) && unlocks.isOpen(card) && modesOf(card).isNotEmpty,
       isKnown: isTaught,
     );
+    final gate = unlocks;
+    final introduced = <String>{};
     return <SessionItem>[
       for (final part in lesson.parts)
         SessionItem.set(part, DrillMode.recognition),
@@ -2556,14 +2559,27 @@ class AppState extends ChangeNotifier {
           card,
           ask == Ask.hearMeaning && hearsForm(card) ? Ask.hearAndChoose : ask,
         ),
-        straightToQuestion: (card) =>
-            card.rule != null && lesson.members.contains(card.id),
+        // A rule is taught by its rule card, then its cells are asked
+        // (#417).
+        straightToQuestion: (card) => card.rule != null,
         typed: isTyped,
         siblingsOf: siblingsOf,
-      ))
+      )) ...<SessionItem>[
+        // The rule card, before the first question of a rule none of whose
+        // cells was answered yet.
+        if (item.card.rule case final cell?
+            when gate.ruleStanding(cell.ruleId).level == MasteryLevel.fresh &&
+                introduced.add(cell.ruleId))
+          SessionItem(
+            card: item.card,
+            mode: DrillMode.grammar,
+            state: null,
+            ask: Ask.teachRule,
+          ),
         item.ask == Ask.hearMeaning && hearsForm(item.card)
             ? item.askedAs(Ask.hearAndChoose)
             : item,
+      ],
     ];
   }
 
