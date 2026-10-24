@@ -49,6 +49,11 @@ class PatternEntry {
   final Map<String, String> ipas;
 }
 
+/// The prompt of a pattern's cell when the deck gives none: the lemma, its
+/// meaning and the slot, "hablar (to speak) — nosotros". What most shipped
+/// decks wrote.
+const String kPatternPrompt = '{lemma} ({gloss}) \u2014 {slot}';
+
 /// A grammar deck's inflection table, before it is expanded into cards.
 ///
 /// Each `(entry, slot)` cell becomes one grammar card. Keeping the table
@@ -58,7 +63,7 @@ class GrammarPattern {
     required this.name,
     required this.slotName,
     required this.slots,
-    required this.prompt,
+    this.prompt = kPatternPrompt,
     required this.entries,
     this.notes,
     this.slotLabels = const <String, String>{},
@@ -78,7 +83,8 @@ class GrammarPattern {
   final List<String> slots;
 
   /// Template for the card prompt. `{lemma}`, `{gloss}` and `{slot}` are
-  /// substituted.
+  /// substituted. Retired (ADR-0039): a deck may still give one, and is read
+  /// as written; without one it is [kPatternPrompt].
   final String prompt;
 
   final List<PatternEntry> entries;
