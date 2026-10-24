@@ -425,6 +425,10 @@ units:
       - { id: "a-letter-to-a-friend", text: { "en": "A letter to a friend about worries and hopes" } }
   - decks: ["te-slang"]
     words: 10
+  # Offensive words: insults, swears and slurs, for adults. Unrated, so no
+  # learner sees the deck until native speakers have rated each word (#630).
+  - decks: ["te-offensive"]
+    words: 12
   - decks: ["te-grammar-relative-participle"]
     words: 0
     grammar: ["relative-past", "relative-nonpast"]
