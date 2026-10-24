@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- The font check (#611): a course asks, once for each script it is read in, whether you can read a sample line, and downloads the script's font only if you say it shows boxes, then shows the sample again in it; Settings, Look and language, Script fonts, lists each script with where it stands and checks again. Fonts a course brought before stay. Noto Sans SC (Chinese), JP (Japanese kana and kanji) and KR (Korean) join the fonts a course can download, 17.8, 9.6 and 10.4 MB.
 - The transcriber reads Japanese kana (Hepburn and IPA), Korean Hangul (Revised Romanization with its sound changes between syllables), Mandarin (Wiktionary's pinyin as the hint) and Toki Pona (IPA); the Wiktionary importer uses them, takes only a Mandarin IPA for Chinese, and leaves Maithili and the other Devanagari languages with their own rules unread instead of reading them by Hindi's (#612). Tamil, Malayalam, Odia, Gurmukhi, Urdu and the sign tables are not done.
 - The deck validator rejects a unit whose planned theme comes with a grammar list beside `planned`, as the app already does, and a planned grammar unit may give its grammar beside `planned` (#622).
 - A path may set its own words per level with `levels:` (for example `{ A1: 120, A2: 60, B1: 80 }`), which the deck validator and the app both read; a planned theme unit may plan 0 words, and phrases count toward no level's words (#615).
