@@ -280,8 +280,9 @@ Lists, for a reviewer, the words of a language that are close to each other
   only between very close sounds: short and long, unaspirated and aspirated,
   dental and retroflex.
 - **Looks like** (a `homograph` or `lookalike` note): the same spelling with
-  another sound, or spellings that differ only by a dot, a length mark or
-  another short mark.
+  another sound, or spellings that differ only by a mark that is easy to
+  miss: a nukta, or a chandrabindu against an anusvara. A different vowel
+  sign (कि and की) is not reported.
 
 A pair that a `pair`, `homograph` or `lookalike` note already names is marked
 explained.

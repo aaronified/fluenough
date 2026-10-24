@@ -10,8 +10,9 @@ Scans each language's cards for two kinds of neighbours and lists them:
   or a dental and a retroflex one (t̪/ʈ) (owner, 2026-10-22);
 - **looks like** (a `homograph` or `lookalike` note, the ear-off icon): the
   same spelling with a different sound (a homograph), or two spellings that
-  differ only by a dot, a length mark or another short mark, such as a
-  nukta (a lookalike).
+  differ only by a mark that is easy to miss: a nukta, or a chandrabindu
+  against an anusvara (a lookalike; owner, 2026-10-24). A vowel sign such
+  as the i and ii of कि and की is a different word, not a lookalike.
 
 A pair that either card already names, by `pair` or a `pair`, `homograph`
 or `lookalike` note with its `ref`, is marked explained. A reviewer keeps
@@ -137,10 +138,17 @@ def close_sounds(x: str, y: str) -> bool:
 
 
 def _strip_marks(text: str) -> str:
-    """The spelling without its marks: no dot, length mark or vowel sign."""
-    return "".join(ch for ch in unicodedata.normalize("NFD", text)
-                   if not unicodedata.category(ch).startswith("M")
-                   and not ch.isspace())
+    """The spelling as a reader may take it: no nukta, and a chandrabindu
+    read as an anusvara. Every other mark, a vowel sign above all, stays."""
+    out = []
+    for ch in unicodedata.normalize("NFD", text):
+        if ch.isspace():
+            continue
+        name = unicodedata.name(ch, "")
+        if "NUKTA" in name:
+            continue
+        out.append("\u0902" if "CANDRABINDU" in name else ch)
+    return "".join(out)
 
 
 def _one_apart(group: list[Word]) -> list[tuple[Word, Word, str]]:
