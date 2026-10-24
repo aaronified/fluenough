@@ -1,0 +1,527 @@
+schema: 1
+id: "hi-food"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "food"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "hi-0977"
+    target: "केला"
+    reading: "kēlā"
+    ipa: "keːlaː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग केला खाते हैं।", reading: "lōg kēlā khātē haim̐.", ipa: "loːɡ keːlaː kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "केला मीठा है।", reading: "kēlā mīṭhā hai.", ipa: "keːlaː miːʈʰaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-0978"
+    target: "सेब"
+    reading: "sēb"
+    ipa: "seːb"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग सेब खाते हैं।", reading: "lōg sēb khātē haim̐.", ipa: "loːɡ seːb kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "सेब मीठा है।", reading: "sēb mīṭhā hai.", ipa: "seːb miːʈʰaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-0979"
+    target: "संतरा"
+    reading: "santarā"
+    ipa: "sənt̪əraː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग संतरा खाते हैं।", reading: "lōg santarā khātē haim̐.", ipa: "loːɡ sənt̪əraː kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "संतरा खट्टा है।", reading: "santarā khaṭṭā hai.", ipa: "sənt̪əraː kʰəʈʈaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-0980"
+    target: "अनानास"
+    reading: "anānās"
+    ipa: "ənaːnaːs"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग अनानास खाते हैं।", reading: "lōg anānās khātē haim̐.", ipa: "loːɡ ənaːnaːs kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "अनानास मीठा है।", reading: "anānās mīṭhā hai.", ipa: "ənaːnaːs miːʈʰaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-0981"
+    target: "तरबूज़"
+    reading: "tarbūz"
+    ipa: "t̪ərbuːz"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग तरबूज़ खाते हैं।", reading: "lōg tarbūz khātē haim̐.", ipa: "loːɡ t̪ərbuːz kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "तरबूज़ ठंडा है।", reading: "tarbūz ṭhaṇḍā hai.", ipa: "t̪ərbuːz ʈʰəɳɖaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-0982"
+    target: "अंगूर"
+    reading: "aṅgūr"
+    ipa: "əŋɡuːr"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग अंगूर खाते हैं।", reading: "lōg aṅgūr khātē haim̐.", ipa: "loːɡ əŋɡuːr kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "अंगूर मीठे हैं।", reading: "aṅgūr mīṭhē haim̐.", ipa: "əŋɡuːr miːʈʰeː ɦɛ̃ː", bases: [{"word": "मीठे", "ref": "hi-0339"}, {"word": "हैं", "ref": "hi-0780"}] }
+  - id: "hi-0983"
+    target: "नारियल"
+    reading: "nāriyal"
+    ipa: "naːrɪjəl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग नारियल खाते हैं।", reading: "lōg nāriyal khātē haim̐.", ipa: "loːɡ naːrɪjəl kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "नारियल का पानी अच्छा है।", reading: "nāriyal kā pānī acchā hai.", ipa: "naːrɪjəl kaː paːniː ətʃtʃʰaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-0984"
+    target: "बादाम"
+    reading: "bādām"
+    ipa: "baːd̪aːm"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग बादाम खाते हैं।", reading: "lōg bādām khātē haim̐.", ipa: "loːɡ baːd̪aːm kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "बादाम अच्छा है।", reading: "bādām acchā hai.", ipa: "baːd̪aːm ətʃtʃʰaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-0985"
+    target: "पपीता"
+    reading: "papītā"
+    ipa: "pəpiːt̪aː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग पपीता खाते हैं।", reading: "lōg papītā khātē haim̐.", ipa: "loːɡ pəpiːt̪aː kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "पपीता मीठा है।", reading: "papītā mīṭhā hai.", ipa: "pəpiːt̪aː miːʈʰaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-0986"
+    target: "नींबू"
+    reading: "nīmbū"
+    ipa: "niːmbuː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग नींबू खाते हैं।", reading: "lōg nīmbū khātē haim̐.", ipa: "loːɡ niːmbuː kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "नींबू खट्टा है।", reading: "nīmbū khaṭṭā hai.", ipa: "niːmbuː kʰəʈʈaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-0987"
+    target: "कटहल"
+    reading: "kaṭhal"
+    ipa: "kəʈɦəl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग कटहल खाते हैं।", reading: "lōg kaṭhal khātē haim̐.", ipa: "loːɡ kəʈɦəl kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "कटहल मीठा है।", reading: "kaṭhal mīṭhā hai.", ipa: "kəʈɦəl miːʈʰaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-0988"
+    target: "मटर"
+    reading: "maṭar"
+    ipa: "məʈər"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग मटर खाते हैं।", reading: "lōg maṭar khātē haim̐.", ipa: "loːɡ məʈər kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "मटर अच्छे हैं।", reading: "maṭar acchē haim̐.", ipa: "məʈər ətʃtʃʰeː ɦɛ̃ː", bases: [{"word": "अच्छे", "ref": "hi-0898"}, {"word": "हैं", "ref": "hi-0780"}] }
+  - id: "hi-0989"
+    target: "फूलगोभी"
+    reading: "phūlgōbhī"
+    ipa: "pʰuːlɡoːbʱiː"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग फूलगोभी खाते हैं।", reading: "lōg phūlgōbhī khātē haim̐.", ipa: "loːɡ pʰuːlɡoːbʱiː kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "फूलगोभी ताज़ी है।", reading: "phūlgōbhī tāzī hai.", ipa: "pʰuːlɡoːbʱiː t̪aːziː ɦɛː", bases: [{"word": "ताज़ी", "ref": "hi-0903"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-0990"
+    target: "खीर"
+    reading: "khīr"
+    ipa: "kʰiːr"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग खीर खाते हैं।", reading: "lōg khīr khātē haim̐.", ipa: "loːɡ kʰiːr kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "खीर मीठी है।", reading: "khīr mīṭhī hai.", ipa: "kʰiːr miːʈʰiː ɦɛː", bases: [{"word": "मीठी", "ref": "hi-0339"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-0991"
+    target: "पूरी"
+    reading: "pūrī"
+    ipa: "puːriː"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग पूरी खाते हैं।", reading: "lōg pūrī khātē haim̐.", ipa: "loːɡ puːriː kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "पूरी गरम है।", reading: "pūrī garam hai.", ipa: "puːriː ɡərəm ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-0992"
+    target: "सूप"
+    reading: "sūp"
+    ipa: "suːp"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग सूप पीते हैं।", reading: "lōg sūp pītē haim̐.", ipa: "loːɡ suːp piːt̪eː ɦɛ̃ː", bases: [{"word": "पीते", "ref": "hi-0602"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "सूप गरम है।", reading: "sūp garam hai.", ipa: "suːp ɡərəm ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-0993"
+    target: "बिरयानी"
+    reading: "biryānī"
+    ipa: "bɪrjaːniː"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग बिरयानी खाते हैं।", reading: "lōg biryānī khātē haim̐.", ipa: "loːɡ bɪrjaːniː kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "बिरयानी अच्छी है।", reading: "biryānī acchī hai.", ipa: "bɪrjaːniː ətʃtʃʰiː ɦɛː", bases: [{"word": "अच्छी", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-0994"
+    target: "पनीर"
+    reading: "panīr"
+    ipa: "pəniːr"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग पनीर खाते हैं।", reading: "lōg panīr khātē haim̐.", ipa: "loːɡ pəniːr kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "पनीर नरम है।", reading: "panīr naram hai.", ipa: "pəniːr nərəm ɦɛː", bases: [{"word": "नरम", "base": "नरम", "reading": "naram"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-0995"
+    target: "आमलेट"
+    reading: "āmlēṭ"
+    ipa: "aːmleːʈ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग आमलेट खाते हैं।", reading: "lōg āmlēṭ khātē haim̐.", ipa: "loːɡ aːmleːʈ kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "आमलेट गरम है।", reading: "āmlēṭ garam hai.", ipa: "aːmleːʈ ɡərəm ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-0996"
+    target: "जूस"
+    reading: "jūs"
+    ipa: "dʒuːs"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग जूस पीते हैं।", reading: "lōg jūs pītē haim̐.", ipa: "loːɡ dʒuːs piːt̪eː ɦɛ̃ː", bases: [{"word": "पीते", "ref": "hi-0602"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "जूस ठंडा है।", reading: "jūs ṭhaṇḍā hai.", ipa: "dʒuːs ʈʰəɳɖaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-0997"
+    target: "साग"
+    reading: "sāg"
+    ipa: "saːɡ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग साग खाते हैं।", reading: "lōg sāg khātē haim̐.", ipa: "loːɡ saːɡ kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "साग अच्छा है।", reading: "sāg acchā hai.", ipa: "saːɡ ətʃtʃʰaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-0998"
+    target: "मिठाई"
+    reading: "miṭhāī"
+    ipa: "mɪʈʰaːiː"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग मिठाई खाते हैं।", reading: "lōg miṭhāī khātē haim̐.", ipa: "loːɡ mɪʈʰaːiː kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "मिठाई मीठी है।", reading: "miṭhāī mīṭhī hai.", ipa: "mɪʈʰaːiː miːʈʰiː ɦɛː", bases: [{"word": "मीठी", "ref": "hi-0339"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-0999"
+    target: "बिस्किट"
+    reading: "biskiṭ"
+    ipa: "bɪskɪʈ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग बिस्किट खाते हैं।", reading: "lōg biskiṭ khātē haim̐.", ipa: "loːɡ bɪskɪʈ kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "बिस्किट मीठा है।", reading: "biskiṭ mīṭhā hai.", ipa: "bɪskɪʈ miːʈʰaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1000"
+    target: "चॉकलेट"
+    reading: "côklēṭ"
+    ipa: "tʃɔkleːʈ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग चॉकलेट खाते हैं।", reading: "lōg côklēṭ khātē haim̐.", ipa: "loːɡ tʃɔkleːʈ kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "चॉकलेट मीठी है।", reading: "côklēṭ mīṭhī hai.", ipa: "tʃɔkleːʈ miːʈʰiː ɦɛː", bases: [{"word": "मीठी", "ref": "hi-0339"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1001"
+    target: "मुरमुरा"
+    reading: "murmurā"
+    ipa: "mʊrmʊraː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग मुरमुरा खाते हैं।", reading: "lōg murmurā khātē haim̐.", ipa: "loːɡ mʊrmʊraː kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "मुरमुरा हल्का है।", reading: "murmurā halkā hai.", ipa: "mʊrmʊraː ɦəlkaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1002"
+    target: "चिउड़ा"
+    reading: "ciuṛā"
+    ipa: "tʃɪʊɽaː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग चिउड़ा खाते हैं।", reading: "lōg ciuṛā khātē haim̐.", ipa: "loːɡ tʃɪʊɽaː kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "चिउड़ा सूखा है।", reading: "ciuṛā sūkhā hai.", ipa: "tʃɪʊɽaː suːkʰaː ɦɛː", bases: [{"word": "सूखा", "base": "सूखा", "reading": "sūkhā"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1003"
+    target: "मक्का"
+    reading: "makkā"
+    ipa: "məkkaː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग मक्का खाते हैं।", reading: "lōg makkā khātē haim̐.", ipa: "loːɡ məkkaː kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "मक्का मीठा है।", reading: "makkā mīṭhā hai.", ipa: "məkkaː miːʈʰaː ɦɛː", bases: [{"word": "मीठा", "ref": "hi-0339"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1004"
+    target: "पराठा"
+    reading: "parāṭhā"
+    ipa: "pəraːʈʰaː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग पराठा खाते हैं।", reading: "lōg parāṭhā khātē haim̐.", ipa: "loːɡ pəraːʈʰaː kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "पराठा गरम है।", reading: "parāṭhā garam hai.", ipa: "pəraːʈʰaː ɡərəm ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1005"
+    target: "केक"
+    reading: "kēk"
+    ipa: "keːk"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग केक खाते हैं।", reading: "lōg kēk khātē haim̐.", ipa: "loːɡ keːk kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "केक मीठा है।", reading: "kēk mīṭhā hai.", ipa: "keːk miːʈʰaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1006"
+    target: "चटनी"
+    reading: "caṭnī"
+    ipa: "tʃəʈniː"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग चटनी खाते हैं।", reading: "lōg caṭnī khātē haim̐.", ipa: "loːɡ tʃəʈniː kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "चटनी तीखी है।", reading: "caṭnī tīkhī hai.", ipa: "tʃəʈniː t̪iːkʰiː ɦɛː", bases: [{"word": "तीखी", "ref": "hi-0338"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1007"
+    target: "सलाद"
+    reading: "salād"
+    ipa: "səlaːd̪"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग सलाद खाते हैं।", reading: "lōg salād khātē haim̐.", ipa: "loːɡ səlaːd̪ kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "सलाद ताज़ा है।", reading: "salād tāzā hai.", ipa: "səlaːd̪ t̪aːzaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1008"
+    target: "रसगुल्ला"
+    reading: "rasgullā"
+    ipa: "rəsɡʊllaː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग रसगुल्ला खाते हैं।", reading: "lōg rasgullā khātē haim̐.", ipa: "loːɡ rəsɡʊllaː kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "रसगुल्ला मीठा है।", reading: "rasgullā mīṭhā hai.", ipa: "rəsɡʊllaː miːʈʰaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1009"
+    target: "लड्डू"
+    reading: "laḍḍū"
+    ipa: "ləɖɖuː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग लड्डू खाते हैं।", reading: "lōg laḍḍū khātē haim̐.", ipa: "loːɡ ləɖɖuː kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "लड्डू मीठा है।", reading: "laḍḍū mīṭhā hai.", ipa: "ləɖɖuː miːʈʰaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1010"
+    target: "समोसा"
+    reading: "samōsā"
+    ipa: "səmoːsaː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग समोसा खाते हैं।", reading: "lōg samōsā khātē haim̐.", ipa: "loːɡ səmoːsaː kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "समोसा गरम है।", reading: "samōsā garam hai.", ipa: "səmoːsaː ɡərəm ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1011"
+    target: "पकौड़ा"
+    reading: "pakauṛā"
+    ipa: "pəkɔːɽaː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग पकौड़ा खाते हैं।", reading: "lōg pakauṛā khātē haim̐.", ipa: "loːɡ pəkɔːɽaː kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "पकौड़ा गरम है।", reading: "pakauṛā garam hai.", ipa: "pəkɔːɽaː ɡərəm ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1012"
+    target: "दही"
+    reading: "dahī"
+    ipa: "d̪əɦiː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग दही खाते हैं।", reading: "lōg dahī khātē haim̐.", ipa: "loːɡ d̪əɦiː kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "दही ठंडा है।", reading: "dahī ṭhaṇḍā hai.", ipa: "d̪əɦiː ʈʰəɳɖaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1013"
+    target: "मक्खन"
+    reading: "makkhan"
+    ipa: "məkkʰən"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग मक्खन खाते हैं।", reading: "lōg makkhan khātē haim̐.", ipa: "loːɡ məkkʰən kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "मक्खन नरम है।", reading: "makkhan naram hai.", ipa: "məkkʰən nərəm ɦɛː", bases: [{"word": "नरम", "base": "नरम", "reading": "naram"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1014"
+    target: "घी"
+    reading: "ghī"
+    ipa: "ɡʱiː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग घी खाते हैं।", reading: "lōg ghī khātē haim̐.", ipa: "loːɡ ɡʱiː kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "घी अच्छा है।", reading: "ghī acchā hai.", ipa: "ɡʱiː ətʃtʃʰaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1015"
+    target: "चीनी"
+    reading: "cīnī"
+    ipa: "tʃiːniː"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग चीनी खाते हैं।", reading: "lōg cīnī khātē haim̐.", ipa: "loːɡ tʃiːniː kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "चीनी मीठी है।", reading: "cīnī mīṭhī hai.", ipa: "tʃiːniː miːʈʰiː ɦɛː", bases: [{"word": "मीठी", "ref": "hi-0339"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1016"
+    target: "शहद"
+    reading: "śahad"
+    ipa: "ʃəɦəd̪"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग शहद खाते हैं।", reading: "lōg śahad khātē haim̐.", ipa: "loːɡ ʃəɦəd̪ kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "शहद मीठा है।", reading: "śahad mīṭhā hai.", ipa: "ʃəɦəd̪ miːʈʰaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1017"
+    target: "गुड़"
+    reading: "guṛ"
+    ipa: "ɡʊɽ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग गुड़ खाते हैं।", reading: "lōg guṛ khātē haim̐.", ipa: "loːɡ ɡʊɽ kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "गुड़ मीठा है।", reading: "guṛ mīṭhā hai.", ipa: "ɡʊɽ miːʈʰaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1018"
+    target: "आम"
+    reading: "ām"
+    ipa: "aːm"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग आम खाते हैं।", reading: "lōg ām khātē haim̐.", ipa: "loːɡ aːm kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "आम मीठा है।", reading: "ām mīṭhā hai.", ipa: "aːm miːʈʰaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1019"
+    target: "गाजर"
+    reading: "gājar"
+    ipa: "ɡaːdʒər"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग गाजर खाते हैं।", reading: "lōg gājar khātē haim̐.", ipa: "loːɡ ɡaːdʒər kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "गाजर मीठी है।", reading: "gājar mīṭhī hai.", ipa: "ɡaːdʒər miːʈʰiː ɦɛː", bases: [{"word": "मीठी", "ref": "hi-0339"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1020"
+    target: "अदरक"
+    reading: "adrak"
+    ipa: "əd̪rək"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग अदरक खाते हैं।", reading: "lōg adrak khātē haim̐.", ipa: "loːɡ əd̪rək kʰaːt̪eː ɦɛ̃ː", bases: [{"word": "खाते", "ref": "hi-0332"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "अदरक तीखी है।", reading: "adrak tīkhī hai.", ipa: "əd̪rək t̪iːkʰiː ɦɛː", bases: [{"word": "तीखी", "ref": "hi-0338"}, {"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1021"
+    target: "तेल"
+    reading: "tēl"
+    ipa: "t̪eːl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "खाना तेल में बनता है।", reading: "khānā tēl mēm̐ bantā hai.", ipa: "kʰaːnaː t̪eːl mẽː bənt̪aː ɦɛː", bases: [{"word": "बनता", "base": "बनना", "reading": "bannā"}, {"word": "है", "ref": "hi-0780"}] }
+      - { target: "तेल गरम है।", reading: "tēl garam hai.", ipa: "t̪eːl ɡərəm ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1022"
+    target: "कॉफ़ी"
+    reading: "kôfī"
+    ipa: "kɔfiː"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "लोग कॉफ़ी पीते हैं।", reading: "lōg kôfī pītē haim̐.", ipa: "loːɡ kɔfiː piːt̪eː ɦɛ̃ː", bases: [{"word": "पीते", "ref": "hi-0602"}, {"word": "हैं", "ref": "hi-0780"}] }
+      - { target: "कॉफ़ी गरम है।", reading: "kôfī garam hai.", ipa: "kɔfiː ɡərəm ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - id: "hi-1023"
+    target: "खट्टा"
+    reading: "khaṭṭā"
+    ipa: "kʰəʈʈaː"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "नींबू खट्टा है।", reading: "nīmbū khaṭṭā hai.", ipa: "niːmbuː kʰəʈʈaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "संतरा खट्टा है।", reading: "santarā khaṭṭā hai.", ipa: "sənt̪əraː kʰəʈʈaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+  - ref: "hi-0335"
+  - ref: "hi-0251"
