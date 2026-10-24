@@ -1,0 +1,227 @@
+schema: 1
+id: "as-en-body"
+kind: "layer"
+core: "as-body"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The body"
+license: "CC-BY-SA-4.0"
+description: "Parts of the body, and the words for an ache. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-2366":
+    native: "head"
+    notes:
+      "n1": "মূৰ (mur) is the head. মূৰটো (murṭo) is the same word with the article -টো (-ṭo), the head."
+    examples:
+      "মূৰত ব্যথা লাগিছে।": { native: "My head hurts.", bases: { "মূৰত": "head", "লাগিছে": "feel; hurt" } }
+      "মূৰটো ডাঙৰ।": { native: "The head is big.", bases: { "মূৰটো": "head" } }
+  "as-2367":
+    native: "eye"
+    notes:
+      "n1": "চকু (sôku) is an eye."
+    examples:
+      "মোৰ চকু ডাঙৰ।": { native: "My eyes are big.", bases: {  } }
+      "তেওঁৰ চকু ডাঙৰ।": { native: "His eyes are big.", bases: {  } }
+  "as-2368":
+    native: "ear"
+    notes:
+      "n1": "কাণ (kān) is an ear."
+    examples:
+      "মোৰ কাণ ডাঙৰ।": { native: "My ears are big.", bases: {  } }
+      "কাণ দুটা সৰু।": { native: "The two ears are small.", bases: {  } }
+  "as-2369":
+    native: "nose"
+    notes:
+      "n1": "নাক (nāk) is a nose."
+    examples:
+      "মোৰ নাক ডাঙৰ।": { native: "My nose is big.", bases: {  } }
+      "নাকটো সৰু।": { native: "The nose is small.", bases: { "নাকটো": "nose" } }
+  "as-2370":
+    native: "mouth; face"
+    notes:
+      "n1": "মুখ (mukh) is a mouth, and also a face."
+    examples:
+      "মুখত ভাত আছে।": { native: "There is rice in the mouth.", bases: { "মুখত": "mouth", "আছে": "be; have" } }
+      "মুখটো ডাঙৰ।": { native: "The mouth is big.", bases: {  } }
+  "as-2371":
+    native: "tooth"
+    notes:
+      "n1": "দাঁত (dām̐t) is a tooth."
+    examples:
+      "মোৰ দাঁত ভাল।": { native: "My teeth are good.", bases: {  } }
+      "দাঁতটো সৰু।": { native: "The tooth is small.", bases: { "দাঁতটো": "tooth" } }
+  "as-2372":
+    native: "tongue"
+    notes:
+      "n1": "জিভা (zibhā) is a tongue, which tastes the food."
+    examples:
+      "মোৰ জিভা নৰম।": { native: "My tongue is soft.", bases: {  } }
+      "জিভাটো ডাঙৰ।": { native: "The tongue is big.", bases: { "জিভাটো": "tongue" } }
+  "as-2373":
+    native: "lip"
+    notes:
+      "n1": "ওঁঠ (ōṭh) is a lip."
+    examples:
+      "ওঁঠটো নৰম।": { native: "The lip is soft.", bases: { "ওঁঠটো": "lip" } }
+      "মোৰ ওঁঠ শুকান।": { native: "My lips are dry.", bases: {  } }
+  "as-2374":
+    native: "hair"
+    notes:
+      "n1": "চুলি (culi) is hair on the head."
+    examples:
+      "মোৰ চুলি ডাঙৰ।": { native: "My hair is long.", bases: {  } }
+      "তেওঁৰ চুলি সৰু।": { native: "Her hair is short.", bases: {  } }
+  "as-2375":
+    native: "neck"
+    notes:
+      "n1": "ডিঙি (diṅi) is the neck."
+    examples:
+      "ডিঙিটো ডাঙৰ।": { native: "The neck is long.", bases: { "ডিঙিটো": "neck" } }
+      "ডিঙিটো নৰম।": { native: "The neck is soft.", bases: { "ডিঙিটো": "neck" } }
+  "as-2376":
+    native: "shoulder"
+    notes:
+      "n1": "কান্ধ (kāndh) is a shoulder."
+    examples:
+      "মোৰ কান্ধত ব্যথা লাগিছে।": { native: "My shoulder hurts.", bases: { "কান্ধত": "shoulder", "লাগিছে": "feel; hurt" } }
+      "কান্ধটো বহল।": { native: "The shoulder is broad.", bases: { "কান্ধটো": "shoulder" } }
+  "as-2377":
+    native: "chest"
+    notes:
+      "n1": "বুকু (bukû) is the chest."
+    examples:
+      "মোৰ বুকু বহল।": { native: "My chest is broad.", bases: {  } }
+      "বুকুত ব্যথা লাগিছে।": { native: "My chest hurts.", bases: { "বুকুত": "chest", "লাগিছে": "feel; hurt" } }
+  "as-2378":
+    native: "stomach; belly"
+    notes:
+      "n1": "পেট (peṭ) is the stomach."
+    examples:
+      "মোৰ পেটত ব্যথা লাগিছে।": { native: "My stomach hurts.", bases: { "পেটত": "stomach", "লাগিছে": "feel; hurt" } }
+      "পেটটো ডাঙৰ।": { native: "The stomach is big.", bases: { "পেটটো": "stomach" } }
+  "as-2379":
+    native: "back"
+    notes:
+      "n1": "পিঠি (pithi) is the back of the body."
+    examples:
+      "পিঠিত ব্যথা লাগিছে।": { native: "My back hurts.", bases: { "পিঠিত": "back", "লাগিছে": "feel; hurt" } }
+      "পিঠিটো বহল।": { native: "The back is broad.", bases: { "পিঠিটো": "back" } }
+  "as-2380":
+    native: "finger"
+    notes:
+      "n1": "আঙুলি (āṅuli) is a finger."
+    examples:
+      "মোৰ আঙুলি ডাঙৰ।": { native: "My fingers are big.", bases: {  } }
+      "আঙুলিটো সৰু।": { native: "The finger is small.", bases: { "আঙুলিটো": "finger" } }
+  "as-2381":
+    native: "foot; leg"
+    notes:
+      "n1": "ভৰি (bhôri) is a foot or a leg."
+    examples:
+      "ভৰিত ব্যথা লাগিছে।": { native: "My foot hurts.", bases: { "ভৰিত": "foot; leg", "লাগিছে": "feel; hurt" } }
+      "মোৰ ভৰি ডাঙৰ।": { native: "My legs are big.", bases: {  } }
+  "as-2382":
+    native: "knee"
+    notes:
+      "n1": "হাঁঠু (hāṇṭhu) is the knee."
+    examples:
+      "হাঁঠুত ব্যথা লাগিছে।": { native: "My knee hurts.", bases: { "হাঁঠুত": "knee", "লাগিছে": "feel; hurt" } }
+      "হাঁঠুটো সৰু।": { native: "The knee is small.", bases: { "হাঁঠুটো": "knee" } }
+  "as-2383":
+    native: "body; skin"
+    notes:
+      "n1": "গা (gā) is the body, and the skin of it."
+    examples:
+      "মোৰ গা গৰম।": { native: "My body is hot.", bases: {  } }
+      "মোৰ গা ঠাণ্ডা।": { native: "My body is cold.", bases: {  } }
+  "as-2384":
+    native: "heart"
+    notes:
+      "n1": "হৃদয় (hridôy) is the heart."
+    examples:
+      "মোৰ হৃদয় ভাল।": { native: "My heart is good.", bases: {  } }
+      "হৃদয়টো ডাঙৰ।": { native: "The heart is big.", bases: {  } }
+  "as-2385":
+    native: "brain"
+    notes:
+      "n1": "মগজ (môgôz) is the brain."
+    examples:
+      "মোৰ মগজ ভাল।": { native: "My brain is good.", bases: {  } }
+      "মগজটো ডাঙৰ।": { native: "The brain is big.", bases: { "মগজটো": "brain" } }
+  "as-2386":
+    native: "blood"
+    notes:
+      "n1": "ৰক্ত (rôkto) is blood."
+    examples:
+      "ৰক্ত ৰঙা।": { native: "Blood is red.", bases: {  } }
+      "ৰক্ত গৰম।": { native: "Blood is warm.", bases: {  } }
+  "as-2387":
+    native: "bone"
+    notes:
+      "n1": "হাড় (hār) is a bone."
+    examples:
+      "হাড়টো শক্ত।": { native: "The bone is strong.", bases: { "হাড়টো": "bone" } }
+      "মোৰ হাড় শক্ত।": { native: "My bones are strong.", bases: {  } }
+  "as-2388":
+    native: "skin"
+    notes:
+      "n1": "চামৰ (sāmôr) is the skin."
+    examples:
+      "চামৰটো নৰম।": { native: "The skin is soft.", bases: { "চামৰটো": "skin" } }
+      "মোৰ চামৰ গৰম।": { native: "My skin is warm.", bases: {  } }
+  "as-2389":
+    native: "forehead"
+    notes:
+      "n1": "কপাল (kôpāl) is the forehead."
+    examples:
+      "কপালত ব্যথা লাগিছে।": { native: "My forehead hurts.", bases: { "কপালত": "forehead", "লাগিছে": "feel; hurt" } }
+      "মোৰ কপাল ডাঙৰ।": { native: "My forehead is big.", bases: {  } }
+  "as-2390":
+    native: "cheek"
+    notes:
+      "n1": "গাল (gāl) is a cheek."
+    examples:
+      "গালটো নৰম।": { native: "The cheek is soft.", bases: { "গালটো": "cheek" } }
+      "তেওঁৰ গাল ডাঙৰ।": { native: "His cheeks are big.", bases: {  } }
+  "as-2391":
+    native: "chin"
+    notes:
+      "n1": "চিবুক (sibuk) is the chin."
+    examples:
+      "চিবুকটো সৰু।": { native: "The chin is small.", bases: { "চিবুকটো": "chin" } }
+      "মোৰ চিবুক ডাঙৰ।": { native: "My chin is big.", bases: {  } }
+  "as-2392":
+    native: "waist; lower back"
+    notes:
+      "n1": "কোমৰ (komôr) is the waist."
+    examples:
+      "কোমৰত ব্যথা লাগিছে।": { native: "My waist hurts.", bases: { "কোমৰত": "waist", "লাগিছে": "feel; hurt" } }
+      "কোমৰটো সৰু।": { native: "The waist is small.", bases: { "কোমৰটো": "waist" } }
+  "as-2393":
+    native: "palm of the hand"
+    notes:
+      "n1": "তলুৱা (tôluwā) is the palm of the hand."
+    examples:
+      "মোৰ তলুৱা গৰম।": { native: "My palm is warm.", bases: {  } }
+      "তলুৱাটো নৰম।": { native: "The palm is soft.", bases: { "তলুৱাটো": "palm" } }
+  "as-2394":
+    native: "rib"
+    notes:
+      "n1": "পাঁজৰ (pāzôr) is a rib."
+    examples:
+      "পাঁজৰত ব্যথা লাগিছে।": { native: "My ribs hurt.", bases: { "পাঁজৰত": "rib", "লাগিছে": "feel; hurt" } }
+      "পাঁজৰটো শক্ত।": { native: "The rib is strong.", bases: { "পাঁজৰটো": "rib" } }
+  "as-2395":
+    native: "body"
+    notes:
+      "n1": "শৰীৰ (xôrīr) is the whole body."
+    examples:
+      "মোৰ শৰীৰ ভাল।": { native: "My body is well.", bases: {  } }
+      "শৰীৰটো ভাল নহয়।": { native: "The body is not well.", bases: { "শৰীৰটো": "body" } }
+  "as-2396":
+    native: "pain; ache"
+    notes:
+      "n1": "ব্যথা (byathā) is pain, the word used with লাগা (lāgā), to feel, for an ache."
+    examples:
+      "মোৰ ব্যথা লাগিছে।": { native: "I am in pain.", bases: { "লাগিছে": "feel; hurt" } }
+      "ব্যথা কম।": { native: "The pain is less.", bases: {  } }

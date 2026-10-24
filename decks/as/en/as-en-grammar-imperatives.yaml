@@ -1,0 +1,19 @@
+schema: 1
+id: "as-en-grammar-imperatives"
+kind: "layer"
+core: "as-grammar-imperatives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Imperatives"
+license: "CC-BY-SA-4.0"
+description: "Do it, come here: the command form of the verb, for each person you speak to. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Imperatives"
+  slot_name: "person and respect"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "kora": "to do"
+    "juwa": "to go"
+    "oha": "to come"
+    "khuwa": "to eat; to drink"
+  notes: "The command is the bare verb for তই (toi), the informal you: কৰ (kôr), do; যা (zā), go; আহ (āh), come; খা (khā), eat. For তুমি (tumi) it is the verb's -আ (-ā) form, কৰা (kôrā), and it is the same as the present for that person. For আপুনি (āpuni), the respectful you, the verb takes -ক (-ôk): কৰক (kôrôk), please do; যাওক (zāôk), please go. A request is softened the same way: দিয়ক (diyôk), please give. The verb changes for who is spoken to, never for gender or number."
