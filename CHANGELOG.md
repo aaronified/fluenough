@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Today's skill tiles are thinner, three to a row, each showing only the skill's icon, an arrow up or down when its pace is adjusted, and the number due, with the skill's name in small type under them; the words "More reviews" and "Fewer reviews" are gone, the arrow keeping them for a screen reader. A new Script tile, in a course with script decks, holds script reading and writing together (the script decks' Recognition and Write), and tapping it drills those; they no longer count in Recognition's and Write's tiles or pace.
+
 ## [0.6.1] - 2026-10-24
 
 ### Added

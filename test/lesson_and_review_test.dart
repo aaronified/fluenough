@@ -46,6 +46,7 @@ import 'package:fluenough/core/numbers/number_speller.dart';
 import 'package:fluenough/core/scheduling/daily_budget.dart';
 import 'package:fluenough/core/scheduling/deck_sampling.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
+import 'package:fluenough/core/scheduling/script_split.dart';
 import 'package:fluenough/core/scheduling/lesson.dart';
 import 'package:fluenough/core/scheduling/lesson_sets.dart';
 import 'package:fluenough/core/scheduling/replay.dart';
@@ -4520,7 +4521,9 @@ cards:
           );
         }
 
-        final byMode = queue.countByMode();
+        // The script decks' Recognition and Write are the Script tile's.
+        final byMode = ScriptSplit(state.progress.skills.scriptDecks)
+            .countByMode(queue);
         // Recognition is scheduled, so it has a tile (ADR-0034).
         expect(
           find.descendant(
