@@ -12,7 +12,13 @@ enum NeedKind { word, rule }
 
 /// One thing a sentence uses: a word, by the card that teaches its base, or
 /// a rule, with where the learner stands in it.
-typedef Need = ({NeedKind kind, String id, MasteryLevel level, int right});
+typedef Need = ({
+  NeedKind kind,
+  String id,
+  MasteryLevel level,
+  int known,
+  int total,
+});
 
 /// A card with the kind of its deck, as the counts read it.
 typedef KindedCard = ({Card card, DeckKind kind});
@@ -40,7 +46,8 @@ const UnlockCounts noUnlockCounts = (
 
 /// The unlock gate (docs/plans/words-rules-sentences.md, "Sentences"): a
 /// sentence opens once every word in it, by its base, and every rule it uses
-/// is known, at the mastery bar of 9 of the last 10 answers right ([knownShare]).
+/// is known, as Progress counts known: the last review of each skill was right
+/// and FSRS gave it at least `kKnownRecall` recall ([RecentAnswers]).
 /// A phrasebook chunk is never held back, and a sentence that names no
 /// word and no rule the learner's course teaches is not either.
 ///
@@ -49,8 +56,13 @@ const UnlockCounts noUnlockCounts = (
 /// stored.
 class Unlocks {
   /// The gate for [log], over [cards]: every card of the learner's decks.
-  Unlocks({required Iterable<ReviewEvent> log, required Iterable<Card> cards})
-    : answers = RecentAnswers(log) {
+  Unlocks({
+    required Iterable<ReviewEvent> log,
+    required Iterable<Card> cards,
+    ParametersOfReview? parametersOf,
+  }) : answers = parametersOf == null
+           ? RecentAnswers(log)
+           : RecentAnswers(log, parametersOf: parametersOf) {
     for (final card in cards) {
       _ids.add(card.id);
       final cell = card.rule;
@@ -70,7 +82,7 @@ class Unlocks {
   /// The ids of the cells of [ruleId]'s table the learner's course has.
   Set<String> cellsOf(String ruleId) => _cells[ruleId] ?? const <String>{};
 
-  /// Where the learner stands in [ruleId]: its last answers over every cell.
+  /// Where the learner stands in [ruleId]: its skills over every cell.
   Mastery ruleStanding(String ruleId) => answers.ofAll(cellsOf(ruleId));
 
   /// Whether [ruleId] is known.
@@ -98,14 +110,16 @@ class Unlocks {
           kind: NeedKind.word,
           id: id,
           level: answers.of(id).level,
-          right: answers.rightOf(id),
+          known: answers.countOf(id).known,
+          total: answers.countOf(id).total,
         ),
       for (final id in rules)
         (
           kind: NeedKind.rule,
           id: id,
           level: ruleStanding(id).level,
-          right: answers.rightOfAll(cellsOf(id)),
+          known: answers.countOfAll(cellsOf(id)).known,
+          total: answers.countOfAll(cellsOf(id)).total,
         ),
     ];
   }

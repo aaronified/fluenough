@@ -1673,17 +1673,13 @@
       }
     }
   },
-  "unitKnownMeans": "Known means {right} of the last {window} answers right",
+  "unitKnownMeans": "Known means your last answer was right and you were {percent}% likely to remember",
   "@unitKnownMeans": {
-    "description": "Beside the words heading: what \"Known\" means, the mastery bar.",
+    "description": "Beside the words heading: what \"Known\" means, the mastery bar: the last answer was right and FSRS gave at least this recall chance at that moment.",
     "placeholders": {
-      "right": {
+      "percent": {
         "type": "int",
-        "example": "9"
-      },
-      "window": {
-        "type": "int",
-        "example": "10"
+        "example": "85"
       }
     }
   },
@@ -1719,17 +1715,13 @@
   "@whyClosedTitle": {
     "description": "Title of the sheet a closed sentence opens."
   },
-  "whyClosedIntro": "It opens when everything in it is known: {right} of the last {window} answers right.",
+  "whyClosedIntro": "It opens when everything in it is known: your last answer right and you were {percent}% likely to remember.",
   "@whyClosedIntro": {
-    "description": "Under the sentence on the why-it-is-closed sheet: the bar.",
+    "description": "Under the sentence on the why-it-is-closed sheet: the bar, the same as Progress's known.",
     "placeholders": {
-      "right": {
+      "percent": {
         "type": "int",
-        "example": "9"
-      },
-      "window": {
-        "type": "int",
-        "example": "10"
+        "example": "85"
       }
     }
   },
@@ -1741,17 +1733,17 @@
   "@whyClosedRule": {
     "description": "Beside a rule's name on the why-it-is-closed sheet."
   },
-  "whyClosedRight": "{right} of {window}",
+  "whyClosedRight": "{known} of {total} known",
   "@whyClosedRight": {
-    "description": "Status of a word or rule being learned on the why-it-is-closed sheet: how many of its last answers were right.",
+    "description": "Status of a word or rule being learned on the why-it-is-closed sheet: how many of the skills it was asked in are known.",
     "placeholders": {
-      "right": {
+      "known": {
         "type": "int",
-        "example": "7"
+        "example": "1"
       },
-      "window": {
+      "total": {
         "type": "int",
-        "example": "10"
+        "example": "2"
       }
     }
   },
@@ -1765,11 +1757,11 @@
   },
   "unitKnown": "Known",
   "@unitKnown": {
-    "description": "Status of a word, rule or sentence answered right on most of its recent answers."
+    "description": "Status of a word, rule or sentence whose last answer in every skill was right with a good chance of recall."
   },
   "unitLearning": "Learning {percent}%",
   "@unitLearning": {
-    "description": "Status of a word, rule or sentence being learned: the share of its recent answers that were right.",
+    "description": "Status of a word, rule or sentence being learned: the share of its skills that are known.",
     "placeholders": {
       "percent": {
         "type": "int",

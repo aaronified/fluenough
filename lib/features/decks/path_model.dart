@@ -1,4 +1,5 @@
 import '../../app/app_state.dart';
+import '../../app/unlocks.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/session.dart';
 import '../../core/data/course_path.dart' show Milestone, PlanUnit;
@@ -465,7 +466,7 @@ CourseView? courseView(
   final units = state.courseUnits(language);
   if (units.isEmpty) return null;
   final thePlan = plan ?? coursePlanOf(state, language);
-  final recent = answers ?? RecentAnswers(state.progress.log);
+  final recent = answers ?? state.recentAnswers;
   final first = units.first.first;
 
   // Each unit's level: the first level whose end is at or after it.
