@@ -136,16 +136,16 @@ extension UnlockState on AppState {
     return forms;
   }
 
-  /// Every form of [cell]'s word in the rule, in the table's order: the
-  /// cells its answer shows beside the one asked.
+  /// Every form of [cell]'s word in its rules table, in the table's order:
+  /// the cells its answer shows beside the one asked. A rule is often one
+  /// column, so the forms are the word's whole row.
   List<Card> ruleFormsOf(Card cell) {
     final rule = cell.rule;
     final entry = deckOf(cell);
     if (rule == null || entry == null) return <Card>[cell];
     return <Card>[
       for (final other in entry.cards)
-        if (other.rule?.word == rule.word && other.rule?.ruleId == rule.ruleId)
-          other,
+        if (other.rule?.word == rule.word) other,
     ];
   }
 }
