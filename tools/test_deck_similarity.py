@@ -62,6 +62,14 @@ class SimilarityTests(unittest.TestCase):
         found = run(card("hi-1", "ज़ीना", "ziːnaː"), card("hi-2", "जीना", "dʒiːnaː"))
         self.assertIn("lookalike", [s.kind for s in found])
 
+    def test_a_different_vowel_sign_is_not_a_lookalike(self):
+        found = run(card("hi-1", "किला", "kɪlaː"), card("hi-2", "कीला", "kiːlaː"))
+        self.assertNotIn("lookalike", [s.kind for s in found])
+
+    def test_chandrabindu_against_anusvara_is_a_lookalike(self):
+        found = run(card("hi-1", "हँस", "ɦə̃s"), card("hi-2", "हंस", "ɦəns"))
+        self.assertIn("lookalike", [s.kind for s in found])
+
 
 if __name__ == "__main__":
     unittest.main()
