@@ -314,6 +314,7 @@ void main() {
       final state = await bengali();
       know(state, state.deckById(nounForms)!.cards.first.rule!.word);
       await pumpScreen(tester, DrillPage(request: lesson()), state: state);
+      await tester.pumpAndSettle();
       final l10n = l10nOf(tester);
 
       expect(find.byType(RuleCard), findsOneWidget);
