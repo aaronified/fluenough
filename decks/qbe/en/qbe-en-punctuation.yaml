@@ -4,35 +4,38 @@ kind: "layer"
 core: "qbe-punctuation"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Braille: punctuation"
-description: "The common punctuation of uncontracted braille: full stop, comma, question and exclamation marks, apostrophe, hyphen, quotation marks and brackets."
+description: "The common punctuation of uncontracted braille: full stop, comma, question and exclamation marks, apostrophe, hyphen, quotation marks and brackets. Some of the lower cells are also contractions: dis, ea, his, ff and to, was and by."
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed", "script"]
 cards:
   "qbe-0043":
-    native: "full stop (period)"
+    native: "full stop (period); dis at the start of a word"
     notes:
-      "n1": "Dots 2-5-6: ⠙ (d) moved down a row. Punctuation sits low in the cell, where no letter does. In a number it is the decimal point: ⠼⠉⠲⠑ is 3.5."
+      "n1": "Dots 2-5-6: ⠙ (d) moved down a row. Punctuation sits low in the cell, where no letter does. In a number it is the decimal point: ⠼⠉⠲⠑ is 3.5. At the start of a word it is the lower groupsign dis, as in dismiss."
     examples:
       "⠠⠛⠕⠲": "Go."
+      "⠲⠍⠊⠎⠎": "dismiss"
   "qbe-0044":
-    native: "comma"
+    native: "comma; ea inside a word"
     notes:
-      "n1": "Dot 2: ⠁ (a) moved down a row. In a number it groups the thousands: ⠼⠁⠂⠚⠚⠚ is 1,000."
+      "n1": "Dot 2: ⠁ (a) moved down a row. In a number it groups the thousands: ⠼⠁⠂⠚⠚⠚ is 1,000. Inside a word it is the lower groupsign ea, as in beat, but never at the start of a word."
     examples:
       "⠽⠑⠎⠂ ⠎⠊⠗": "yes, sir"
+      "⠃⠂⠞": "beat"
   "qbe-0045":
-    native: "question mark ?, or an opening quotation mark “"
+    native: "question mark ?, or an opening quotation mark “; his alone"
     notes:
-      "n1": "Dots 2-3-6: ⠓ (h) moved down a row. The same cell opens a quotation and ends a question: where it stands tells which."
+      "n1": "Dots 2-3-6: ⠓ (h) moved down a row. The same cell opens a quotation and ends a question: where it stands tells which. Standing alone as a word, it is also the lower wordsign his."
     examples:
       "⠠⠺⠓⠕⠦": "Who?"
       "⠦⠓⠊⠴": "“hi”"
   "qbe-0046":
-    native: "exclamation mark !"
+    native: "exclamation mark !; ff inside a word; to as a word"
     notes:
-      "n1": "Dots 2-3-5: ⠋ (f) moved down a row."
+      "n1": "Dots 2-3-5: ⠋ (f) moved down a row. Inside a word it is the lower groupsign ff, as in coffee, never at its start or end; as a whole word it is the lower wordsign to."
     examples:
       "⠠⠓⠊⠖": "Hi!"
+      "⠉⠕⠖⠑⠑": "coffee"
   "qbe-0047":
     native: "apostrophe '"
     notes:
@@ -47,9 +50,9 @@ cards:
     examples:
       "⠑⠤⠍⠁⠊⠇": "e-mail"
   "qbe-0049":
-    native: "closing quotation mark ”"
+    native: "closing quotation mark ”; was or by as a word"
     notes:
-      "n1": "Dots 3-5-6: the opening mark, ⠦, mirrored, so a quotation opens and closes like a pair of brackets."
+      "n1": "Dots 3-5-6: the opening mark, ⠦, mirrored, so a quotation opens and closes like a pair of brackets. As a whole word it is also the lower wordsign was, and the lower wordsign by."
     examples:
       "⠦⠓⠊⠴": "“hi”"
   "qbe-0050":
