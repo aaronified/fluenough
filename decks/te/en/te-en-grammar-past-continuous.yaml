@@ -1,0 +1,19 @@
+schema: 1
+id: "te-en-grammar-past-continuous"
+kind: "layer"
+core: "te-grammar-past-continuous"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Past continuous: I was doing"
+description: "I was eating, she was coming: what was going on at a time in the past. Not yet checked by a Telugu speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  name: "Past continuous"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "cheeyadam": "to do"
+    "velladam": "to go"
+    "raavadam": "to come"
+    "tinadam": "to eat"
+  notes: "The past continuous takes the -తూ (-tū) form of the verb, then ఉండు (uṇḍu, to be) in the same forms as the perfect: అప్పుడు నేను తింటూ ఉన్నాను (appuḍu nēnu tiṇṭū unnānu), I was eating then. The time word అప్పుడు (appuḍu), then, makes the sentence past; without a time word the same words can also read as the present, so a past sentence names its time. The present continuous uses -తున్నాను (-tunnānu) instead. The stem changes in చేస్తూ (cēstū) from చేయడం (cēyaḍaṁ), in వస్తూ (vastū) from రావడం (rāvaḍaṁ) and in తింటూ (tiṇṭū) from తినడం (tinaḍaṁ); వెళ్ళడం (veḷḷaḍaṁ) becomes వెళ్తూ (veḷtū)."

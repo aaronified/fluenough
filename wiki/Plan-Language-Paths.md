@@ -79,7 +79,7 @@ path.
 - **Scripts:**
   - the validator already knows Latin, Cyrillic, Greek, Arabic, Hebrew,
     Devanagari, Bengali, Gujarati, Gurmukhi, Odia, Telugu, Tamil, Kannada,
-    Malayalam, Sinhala, kana, Han, Hangul and Thai, and a language can be
+    Malayalam, Sinhala, kana, kanji, hanzi, Hangul and Thai, and a language can be
     right to left (`rtl`);
   - but the only scripts shipped are Devanagari, Bengali, Gujarati, Telugu,
     Kannada and Latin.
@@ -162,7 +162,7 @@ The scheme names 47 (Serbian/Croatian as one). Eight exist, so 39 are new.
 | Agglutinative | Turkish, Finnish, Hungarian, Basque | — |
 | Celtic | Irish | — |
 | Semitic | Arabic, Hebrew | Arabic and Hebrew (RTL) |
-| East Asian | Mandarin, Cantonese, Japanese, Korean | Han (simplified and traditional), kana and kanji, Hangul |
+| East Asian | Mandarin, Cantonese, Japanese, Korean | Hanzi (simplified and traditional), kana and kanji, Hangul |
 | Southeast Asian | Vietnamese, Thai, Filipino, Malay | Thai |
 | African | Swahili, Hausa, Somali | — |
 | Andean | Quechua | — |
@@ -179,7 +179,7 @@ Each new language needs what an existing one has:
 
 ## What the app needs for new scripts
 
-- **Fonts** for Nastaliq, Hebrew, Arabic, Thai, Han and Hangul, where
+- **Fonts** for Nastaliq, Hebrew, Arabic, Thai, hanzi, kanji and Hangul, where
   Android lacks them.
 - **Right to left** checked end to end for Urdu, Arabic, Hebrew and
   Yiddish.

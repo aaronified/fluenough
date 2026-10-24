@@ -313,17 +313,22 @@ units:
       - { id: "prices-and-years", text: { "en": "Hearing prices in yuan, years and phone numbers, with wan for ten thousand" } }
     reading_passages:
       - { id: "price-tags", text: { "en": "Price tags and a bus-route number board" } }
-  - planned: { id: "zh-grammar-money-dates", grammar: ["money-kuai-mao", "dates", "clock-time"] }
+  - decks: ["zh-grammar-money-kuai-mao", "zh-grammar-dates", "zh-grammar-clock-time", "zh-grammar-money-dates-sentences"]
+    words: 0
+    grammar: ["money-kuai-mao", "dates", "clock-time"]
     listening_passages:
       - { id: "how-much-is-it", text: { "en": "Paying at a stall: kuai and mao, and the date on the receipt" } }
     reading_passages:
       - { id: "bus-ticket", text: { "en": "A bus ticket with its date, time and fare" } }
-  - planned: { id: "zh-market", theme: "market", words: 40 }
+  - decks: ["zh-market", "zh-market-sentences", "zh-reading-market", "*"]
+    words: 40
     listening_passages:
       - { id: "at-the-wet-market", text: { "en": "Buying fruit and vegetables by the jin at a market stall" } }
     reading_passages:
       - { id: "market-price-board", text: { "en": "A price board at a market" } }
-  - planned: { id: "zh-grammar-measure-words-2", grammar: "measure-words-common" }
+  - decks: ["zh-grammar-measure-words-common", "zh-grammar-measure-common-sentences"]
+    words: 0
+    grammar: ["measure-words-common"]
     listening_passages:
       - { id: "two-books-three-cups", text: { "en": "Ordering and buying with the right measure word: a cup of tea, two books, a sheet of paper" } }
     reading_passages:
