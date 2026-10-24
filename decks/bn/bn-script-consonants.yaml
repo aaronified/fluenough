@@ -1,3 +1,4 @@
+# modes: converted to an opt-out (#522, step 6)
 schema: 1
 id: "bn-script-consonants"
 part: "core"
@@ -10,240 +11,279 @@ cards:
     target: "ক"
     reading: "kô"
     ipa: "kɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0013"
     target: "খ"
     reading: "khô"
     ipa: "kʰɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0014"
     target: "গ"
     reading: "gô"
     ipa: "ɡɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0015"
     target: "ঘ"
     reading: "ghô"
     ipa: "ɡʱɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0016"
     target: "ঙ"
     reading: "ṅô"
     ipa: "ŋɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0017"
     target: "চ"
     reading: "cô"
     ipa: "tʃɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0018"
     target: "ছ"
     reading: "chô"
     ipa: "tʃʰɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0019"
     target: "জ"
     reading: "jô"
     ipa: "dʒɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0020"
     target: "ঝ"
     reading: "jhô"
     ipa: "dʒʱɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0021"
     target: "ঞ"
     reading: "ñô"
     ipa: "ɲɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0022"
     target: "ট"
     reading: "ṭô"
     ipa: "ʈɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0023"
     target: "ঠ"
     reading: "ṭhô"
     ipa: "ʈʰɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0024"
     target: "ড"
     reading: "ḍô"
     ipa: "ɖɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0025"
     target: "ঢ"
     reading: "ḍhô"
     ipa: "ɖʱɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0026"
     target: "ণ"
     reading: "nô"
     ipa: "nɔ"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0027"
     target: "ত"
     reading: "tô"
     ipa: "t̪ɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0028"
     target: "থ"
     reading: "thô"
     ipa: "t̪ʰɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0029"
     target: "দ"
     reading: "dô"
     ipa: "d̪ɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0030"
     target: "ধ"
     reading: "dhô"
     ipa: "d̪ʱɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0031"
     target: "ন"
     reading: "nô"
     ipa: "nɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0032"
     target: "প"
     reading: "pô"
     ipa: "pɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0033"
     target: "ফ"
     reading: "phô"
     ipa: "pʰɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0034"
     target: "ব"
     reading: "bô"
     ipa: "bɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0035"
     target: "ভ"
     reading: "bhô"
     ipa: "bʱɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0036"
     target: "ম"
     reading: "mô"
     ipa: "mɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0037"
     target: "য"
     reading: "jô"
     ipa: "dʒɔ"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0038"
     target: "র"
     reading: "rô"
     ipa: "rɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0039"
     target: "ল"
     reading: "lô"
     ipa: "lɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0040"
     target: "শ"
     reading: "śô"
     ipa: "ʃɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0041"
     target: "ষ"
     reading: "śô"
     ipa: "ʃɔ"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0042"
     target: "স"
     reading: "śô"
     ipa: "ʃɔ"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0043"
     target: "হ"
     reading: "hô"
     ipa: "ɦɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0044"
     target: "ড়"
     reading: "ṛô"
     ipa: "ɽɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0045"
     target: "ঢ়"
     reading: "ṛô"
     ipa: "ɽɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0046"
     target: "য়"
     reading: "yô"
     ipa: "jɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0047"
     target: "ৎ"
     reading: "t"
     ipa: "t̪"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0048"
     target: "কং"
     reading: "kôṅ"
     ipa: "kɔŋ"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0049"
     target: "কঃ"
     reading: "kôḥ"
     ipa: "kɔh"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "bn-0050"
     target: "কাঁ"
     reading: "kām̐"
     ipa: "kã"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }

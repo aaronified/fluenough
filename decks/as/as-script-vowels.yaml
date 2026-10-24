@@ -1,3 +1,4 @@
+# modes: converted to an opt-out (#522, step 6)
 schema: 1
 id: "as-script-vowels"
 part: "core"
@@ -10,70 +11,81 @@ cards:
     target: "অ"
     reading: "ô"
     ipa: "ɔ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "as-0002"
     target: "আ"
     reading: "ā"
     ipa: "a"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "as-0003"
     target: "ই"
     reading: "i"
     ipa: "i"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "as-0004"
     target: "ঈ"
     reading: "i"
     ipa: "i"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "as-0005"
     target: "উ"
     reading: "u"
     ipa: "u"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "as-0006"
     target: "ঊ"
     reading: "u"
     ipa: "u"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "as-0007"
     target: "ঋ"
     reading: "ri"
     ipa: "ri"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "as-0008"
     target: "এ"
     reading: "e"
     ipa: "e"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "as-0009"
     target: "ঐ"
     reading: "ôi"
     ipa: "ɔi"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "as-0010"
     target: "ও"
     reading: "o"
     ipa: "o"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "as-0011"
     target: "ঔ"
     reading: "ôu"
     ipa: "ɔu"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }

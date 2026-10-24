@@ -1,3 +1,4 @@
+# modes: converted to an opt-out (#522, step 6)
 schema: 1
 id: "gu-script-vowels"
 part: "core"
@@ -10,82 +11,95 @@ cards:
     target: "અ"
     reading: "a"
     ipa: "ə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "gu-0002"
     target: "આ"
     reading: "ā"
     ipa: "a"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "gu-0003"
     target: "ઇ"
     reading: "i"
     ipa: "i"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "gu-0004"
     target: "ઈ"
     reading: "i"
     ipa: "i"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "gu-0005"
     target: "ઉ"
     reading: "u"
     ipa: "u"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "gu-0006"
     target: "ઊ"
     reading: "u"
     ipa: "u"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "gu-0007"
     target: "ઋ"
     reading: "ru"
     ipa: "ru"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "gu-0008"
     target: "એ"
     reading: "e"
     ipa: "e"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "gu-0009"
     target: "ઐ"
     reading: "ai"
     ipa: "əi"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "gu-0010"
     target: "ઓ"
     reading: "o"
     ipa: "o"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "gu-0011"
     target: "ઔ"
     reading: "au"
     ipa: "əu"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "gu-0012"
     target: "અં"
     reading: "am̐"
     ipa: "ə̃"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "gu-0013"
     target: "ઑ"
     reading: "ô"
     ipa: "ɔ"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }

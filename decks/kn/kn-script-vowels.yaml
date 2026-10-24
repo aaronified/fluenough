@@ -1,3 +1,4 @@
+# modes: converted to an opt-out (#522, step 6)
 schema: 1
 id: "kn-script-vowels"
 part: "core"
@@ -10,78 +11,91 @@ cards:
     target: "ಅ"
     reading: "a"
     ipa: "a"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "kn-0002"
     target: "ಆ"
     reading: "ā"
     ipa: "aː"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "kn-0003"
     target: "ಇ"
     reading: "i"
     ipa: "i"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "kn-0004"
     target: "ಈ"
     reading: "ī"
     ipa: "iː"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "kn-0005"
     target: "ಉ"
     reading: "u"
     ipa: "u"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "kn-0006"
     target: "ಊ"
     reading: "ū"
     ipa: "uː"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "kn-0007"
     target: "ಋ"
     reading: "ru"
     ipa: "ru"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "kn-0008"
     target: "ಎ"
     reading: "e"
     ipa: "e"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "kn-0009"
     target: "ಏ"
     reading: "ē"
     ipa: "eː"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "kn-0010"
     target: "ಐ"
     reading: "ai"
     ipa: "ai"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "kn-0011"
     target: "ಒ"
     reading: "o"
     ipa: "o"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "kn-0012"
     target: "ಓ"
     reading: "ō"
     ipa: "oː"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "kn-0013"
     target: "ಔ"
     reading: "au"
     ipa: "au"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
