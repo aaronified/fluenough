@@ -2856,6 +2856,10 @@ downloads is listed in `decks/index.json`:
   none, as phones have them. The `.ttf` files are marked binary in
   `.gitattributes`: the line-ending rule for `decks/` would change bytes
   and break the hash.
+- **`resources`**: the language's [resources file](#resources-files), if it
+  has one: `path`, `size`, `sha256`, `schema` and `kind`, `"resources"`. It
+  is listed apart from `files`, so that an app too old to read it passes it
+  by, and the language's `size` does not count it. The app fetches it alone.
 - **`bundled`**: `decks/themes.yaml`, which ships inside the app and is
   not downloaded.
 
@@ -3411,6 +3415,63 @@ fact carries its own text in every language it is written in. It has
   write it `"no":`.
 
 ---
+
+## Resources files
+
+Where else to learn the language: a game, an app, a site, and later films,
+books and music (#832, #215). The language's sheet, seen when the learner
+picks the language and on Languages I'm learning, shows a card with a line
+and a "Visit" button for each, up to three (owner, 2026-10-24). A language
+has at most one, `decks/<code>/<code>-resources.yaml`, beside its decks:
+
+```yaml
+schema: 1
+kind: "resources"
+id: "ja-resources"
+language: "ja"
+resources:
+  - id: "ja-res-wagotabi"
+    name: "Wagotabi"
+    url: "https://www.wagotabi.com/"
+    kind: "game"
+    why: "Wagotabi is a fun game for learning Japanese. We're not linked to it, but it may teach you more than we can. Try it too!"
+```
+
+| Field | Required | Meaning |
+|---|---|---|
+| `schema` | yes | `1`. |
+| `kind` | yes | `"resources"`. |
+| `id` | yes | `<code>-resources`, the file's name. |
+| `language` | yes | The language's code. |
+| `resources` | yes | One to three entries, shown in order. |
+
+Each entry has exactly these fields, every scalar quoted
+([rule 2 of AGENTS.md](https://github.com/aaronified/fluenough/blob/main/AGENTS.md)):
+
+| Field | Meaning |
+|---|---|
+| `id` | `<code>-res-<name>`, permanent like a card id and never reused: the learner's choice to hide the suggestion is kept by it. |
+| `name` | What it is called, as the "Visit Wagotabi" button says. |
+| `url` | An `https` address. The app opens it in the browser only when the learner taps the button, and sends nothing. |
+| `kind` | One of `app`, `game`, `site`, `book`, `film`, `music`. |
+| `why` | The card's line about it, in English, at most 160 characters (two or three short lines at 1.4x text), in simple, soft words. Say that we are not linked to it where that is true: the file holds no separate "affiliated" field, so this line is where it is said. |
+
+The card's title, the "Visit {name}" button and "Hide this" are interface
+text in `lib/l10n/app_en.arb`; only `why` comes from the file. A learner can
+hide a suggestion for good on Languages I'm learning; it stays hidden, by
+its `id`. A language without a file shows nothing new, with no empty section.
+
+The validator checks the file's shape, that every id starts with the
+language's code and is used once, that `kind` is in the list and `url` is
+`https`, and the length of `why`. Fields such as a level, where to show it,
+or a film's creator and year are left out until the app uses them.
+
+The file is not a deck: `tools/deck_index.py` lists it under the language's
+`resources`, apart from `files` and not counted in the language's size, and
+the app fetches that one file when a sheet first wants it, checks its hash,
+and keeps it. The released app does not know the key and passes it by, so
+adding or changing a file never touches what it reads. Suggestions show from
+the release that carries the reader. A deck cannot be named `<code>-resources`.
 
 ## Number rules
 

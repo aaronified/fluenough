@@ -123,6 +123,7 @@ class SettingsNotifier extends ChangeNotifier {
   Set<String> _speechNotOnDevice = const <String>{};
   Set<String> _speechUnsupported = const <String>{};
   Set<String> _scriptGuidesSeen = const <String>{};
+  Set<String> _resourcesHidden = const <String>{};
   Map<String, Set<String>> _collapsedLevels = const <String, Set<String>>{};
   Map<String, PlacedReview> _placedReview = const <String, PlacedReview>{};
   Map<String, Set<int>> _placedAt = const <String, Set<int>>{};
@@ -535,6 +536,19 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// The ids of the learning resources the learner hid for good, on
+  /// Languages I'm learning (#832).
+  Set<String> get hiddenResources => _resourcesHidden;
+
+  void hideResource(String id) {
+    if (_resourcesHidden.contains(id)) return;
+    _resourcesHidden = Set<String>.unmodifiable(<String>{
+      ..._resourcesHidden,
+      id,
+    });
+    notifyListeners();
+  }
+
   /// Whether the learner folded [level] (its label, such as "A1") on
   /// [language]'s path on Decks (#465). Remembered per language.
   bool isLevelCollapsed(String language, String level) =>
@@ -885,6 +899,7 @@ class SettingsNotifier extends ChangeNotifier {
     'speech_not_on_device': (_speechNotOnDevice.toList()..sort()).join(','),
     'speech_unsupported': (_speechUnsupported.toList()..sort()).join(','),
     'script_guides_seen': (_scriptGuidesSeen.toList()..sort()).join(','),
+    'resources_hidden': (_resourcesHidden.toList()..sort()).join(','),
     'placed_review': jsonEncode(<String, String>{
       for (final MapEntry(:key, :value) in _placedReview.entries)
         key: value.name,
@@ -1138,6 +1153,13 @@ class SettingsNotifier extends ChangeNotifier {
       for (final key in v.split(',')) {
         if (RegExp(r'^[a-z]{2,3}(?:-[a-z]+)*$').hasMatch(key)) {
           markScriptGuideSeen(key);
+        }
+      }
+    }
+    if (pick('resources_hidden', (t) => t) case final v?) {
+      for (final id in v.split(',')) {
+        if (RegExp(r'^[a-z]{2,3}-res-[a-z0-9]+(?:-[a-z0-9]+)*$').hasMatch(id)) {
+          hideResource(id);
         }
       }
     }
