@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
+import '../../app/unlocks.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/routes.dart';
 import '../../core/models/deck.dart';
@@ -19,7 +20,6 @@ import 'number_practice_tile.dart';
 import 'path_model.dart';
 import 'path_view.dart';
 import 'unit_search.dart';
-import 'word_mastery.dart';
 
 /// The Decks tab: under the language bar (#528), the course of the
 /// language it shows, its path (the owner's design) opening where the
@@ -256,7 +256,7 @@ class _DecksPageState extends State<DecksPage> {
                 state,
                 code,
                 plan: widget.planOf?.call(code),
-                answers: RecentAnswers(state.progress.log),
+                answers: state.recentAnswers,
               );
         _currentLevel = switch (view?.steps
             .whereType<LevelStep>()

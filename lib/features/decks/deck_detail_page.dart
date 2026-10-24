@@ -2,6 +2,7 @@ import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
+import '../../app/unlocks.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/routes.dart';
 import '../../app/session.dart';
@@ -148,7 +149,7 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
             for (final card in entry.cards)
               if (_tags.isEmpty || card.tags.any(_tags.contains)) card,
         ];
-        final answers = RecentAnswers(state.progress.log);
+        final answers = state.recentAnswers;
         final untaught = state
             .untaughtCards(entry.language.code, deckId: entry.id, tags: _tags)
             .length;

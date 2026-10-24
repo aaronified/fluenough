@@ -2,7 +2,8 @@ import 'dart:math';
 
 import '../core/models/card.dart';
 import '../core/models/rule.dart';
-import '../core/progress/recent_answers.dart' show MasteryLevel;
+import '../core/progress/recent_answers.dart'
+    show MasteryLevel, ParametersOfReview, RecentAnswers;
 import '../core/progress/unlocks.dart';
 import 'app_state.dart';
 import 'deck_catalog.dart';
@@ -16,12 +17,32 @@ typedef RuleEntry = ({Rule rule, DeckEntry deck});
 /// log once, and again only after progress, settings or the decks change
 /// ([AppState.derived]).
 extension UnlockState on AppState {
+  /// The parameters that schedule a review's pair, so that known here is
+  /// known on Progress.
+  ParametersOfReview get _parametersOf {
+    final byDeck = <String, String>{
+      for (final entry in decks) entry.id: entry.language.code,
+    };
+    return (event) => progress.parameters.of(
+      byDeck[event.deckId] ?? event.deckId.split('-').first,
+      event.mode,
+    );
+  }
+
+  /// How well each card is known: the log's last review in each skill, as
+  /// Progress counts known.
+  RecentAnswers get recentAnswers => derived<RecentAnswers>(
+    #recentAnswers,
+    () => RecentAnswers(progress.log, parametersOf: _parametersOf),
+  );
+
   /// The gate over every card of the decks.
   Unlocks get unlocks => derived<Unlocks>(
     #unlocks,
     () => Unlocks(
       log: progress.log,
       cards: <Card>[for (final entry in decks) ...entry.cards],
+      parametersOf: _parametersOf,
     ),
   );
 
@@ -43,6 +64,7 @@ extension UnlockState on AppState {
   UnlockCounts unlockCountsBefore(String language, DateTime at) => Unlocks(
     log: progress.log.where((event) => event.at.isBefore(at)),
     cards: <Card>[for (final entry in decks) ...entry.cards],
+    parametersOf: _parametersOf,
   ).counts(_kindedCards(language));
 
   /// What the lesson that began at [since] unlocked in [language]: the words

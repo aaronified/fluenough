@@ -7,6 +7,7 @@ import '../../app/unlocks.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/progress/recent_answers.dart';
+import '../../core/progress/mastery.dart' show kKnownRecall;
 import '../../core/progress/unlocks.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
@@ -78,7 +79,7 @@ class WhyClosedSheet extends StatelessWidget {
             Text(card.native, style: theme.textTheme.bodyLarge),
             const SizedBox(height: 12),
             Text(
-              l10n.whyClosedIntro(knownRight, recentAnswerCount),
+              l10n.whyClosedIntro((kKnownRecall * 100).round()),
               style: theme.textTheme.bodyMedium!.copyWith(
                 color: scheme.onSurfaceVariant,
               ),
@@ -126,10 +127,7 @@ class _NeedRow extends StatelessWidget {
     final known = need.level == MasteryLevel.known;
     final status = switch (need.level) {
       MasteryLevel.known => l10n.unitKnown,
-      MasteryLevel.learning => l10n.whyClosedRight(
-        need.right,
-        recentAnswerCount,
-      ),
+      MasteryLevel.learning => l10n.whyClosedRight(need.known, need.total),
       MasteryLevel.fresh => l10n.unitNew,
     };
     final name = state.needName(need);
@@ -173,7 +171,7 @@ class _NeedRow extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(4),
                 child: LinearProgressIndicator(
-                  value: need.right / recentAnswerCount,
+                  value: need.total == 0 ? 0 : need.known / need.total,
                   minHeight: 8,
                   backgroundColor: scheme.surfaceContainerHighest,
                 ),

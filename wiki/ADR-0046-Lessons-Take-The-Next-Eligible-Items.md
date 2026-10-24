@@ -15,7 +15,8 @@ Telugu, 0% of the words of the first six lessons' sentences were known
 ([Plan: Words, Rules, Sentences](Plan-Words-Rules-Sentences)). The owner
 decided (2026-10-16 to 2026-10-23, #414, #416):
 
-- a word or a rule is **known** when 9 of its last 10 answers are right;
+- a word or a rule is **known** when 9 of its last 10 answers are right
+  (changed 2026-10-24, "Align 'known' with FSRS": see Decision);
 - a sentence is offered once every word in it, by its base word, and every
   rule it uses are known; a phrasebook chunk is never held back;
 - a lesson adds **fewer new items until those in progress reach the bar**;
@@ -26,8 +27,12 @@ decided (2026-10-16 to 2026-10-23, #414, #416):
 ## Decision
 
 - **Known** is read from the review log (`RecentAnswers`), never stored:
-  9 of the last 10 answers right, over any skill of a word; a rule over all
-  the cells of its table.
+  as Progress counts known (owner, 2026-10-24, replacing 9 of the last 10
+  answers right): a word is known when its last review in every skill it was
+  asked in was right and FSRS gave at least 85% recall at that review
+  (`kKnownRecall`, `leavesKnown`); a rule when every skill asked in any
+  cell of its table is. A word reviewed once is not known yet: there is no
+  recall to measure.
 - **The gate** (`Unlocks`, `lib/core/progress/unlocks.dart`):
   - a sentence naming words (`bases` by card) and rules (`rules`) is closed
     while any of them is not known; a word or rule its course has no card
