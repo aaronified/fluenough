@@ -4,6 +4,7 @@ import 'package:flutter/material.dart' show ThemeMode, TimeOfDay;
 import 'package:flutter/foundation.dart';
 
 import '../core/data/spoken_languages.dart';
+import '../core/decks/font_check.dart';
 import '../core/review/deck_review.dart';
 import '../core/review/rater_code.dart';
 import '../core/review/review_pairs.dart';
@@ -118,6 +119,7 @@ class SettingsNotifier extends ChangeNotifier {
   Set<String> _speechOnline;
   Set<String> _noAlphabet;
   Map<String, Set<String>> _scriptsLearned;
+  Map<String, FontChoice> _fontChoices = const <String, FontChoice>{};
   Set<String> _speechNotOnDevice = const <String>{};
   Set<String> _speechUnsupported = const <String>{};
   Set<String> _scriptGuidesSeen = const <String>{};
@@ -454,6 +456,19 @@ class SettingsNotifier extends ChangeNotifier {
     }
     _noAlphabet = Set<String>.unmodifiable(next);
     _scriptsLearned = scripts;
+    notifyListeners();
+  }
+
+  /// What the learner said in the font check of [script] (#611), or null
+  /// before they were asked.
+  FontChoice? fontChoice(String script) => _fontChoices[script];
+
+  /// Records the font check's answer for [script]; null forgets it.
+  void setFontChoice(String script, FontChoice? choice) {
+    if (_fontChoices[script] == choice) return;
+    final next = Map<String, FontChoice>.of(_fontChoices);
+    choice == null ? next.remove(script) : next[script] = choice;
+    _fontChoices = Map<String, FontChoice>.unmodifiable(next);
     notifyListeners();
   }
 
@@ -859,6 +874,10 @@ class SettingsNotifier extends ChangeNotifier {
     'learning_chosen': '$_learningChosen',
     'speech_online': (_speechOnline.toList()..sort()).join(','),
     'no_alphabet': (_noAlphabet.toList()..sort()).join(','),
+    'font_choices': jsonEncode(<String, String>{
+      for (final MapEntry(:key, :value) in _fontChoices.entries)
+        key: value.stored,
+    }),
     'scripts_learned': jsonEncode(<String, List<String>>{
       for (final MapEntry(:key, :value) in _scriptsLearned.entries)
         key: value.toList()..sort(),
@@ -1104,6 +1123,14 @@ class SettingsNotifier extends ChangeNotifier {
               if (script is String && RegExp(r'^[a-z_]+$').hasMatch(script))
                 script,
           });
+        }
+      }
+    }
+    if (pick('font_choices', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        final choice = value is String ? FontChoice.parse(value) : null;
+        if (RegExp(r'^[a-z]+(?:_[a-z]+)*$').hasMatch(key) && choice != null) {
+          setFontChoice(key, choice);
         }
       }
     }
