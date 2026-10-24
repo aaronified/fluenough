@@ -1,0 +1,199 @@
+schema: 1
+id: "as-en-places"
+kind: "layer"
+core: "as-places"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Places"
+license: "CC-BY-SA-4.0"
+description: "Places in a town and the country: the shops, the public buildings and the landscape. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-2397":
+    native: "town; city"
+    notes:
+      "n1": "শহৰ (xôhôr) is a town, bigger than a গাঁও (gām̐o), village."
+    examples:
+      "মই শহৰলৈ যাওঁ।": { native: "I go to the town.", bases: { "শহৰলৈ": "town" } }
+      "শহৰটো ডাঙৰ।": { native: "The town is big.", bases: { "শহৰটো": "town" } }
+  "as-2398":
+    native: "school"
+    notes:
+      "n1": "স্কুল (skul) is a school for children. The formal word is বিদ্যালয় (bidyālôy)."
+    examples:
+      "মই স্কুললৈ যাওঁ।": { native: "I go to school.", bases: { "স্কুললৈ": "school" } }
+      "স্কুলটো নতুন।": { native: "The school is new.", bases: { "স্কুলটো": "school" } }
+  "as-2400":
+    native: "bank"
+    notes:
+      "n1": "বেংক (beṅk) is a bank, where money is kept."
+    examples:
+      "মই বেংকলৈ যাওঁ।": { native: "I go to the bank.", bases: { "বেংকলৈ": "bank" } }
+      "বেংক খোলা।": { native: "The bank is open.", bases: {  } }
+  "as-2401":
+    native: "temple"
+    notes:
+      "n1": "মন্দিৰ (mondir) is a Hindu temple."
+    examples:
+      "মই মন্দিৰলৈ যাওঁ।": { native: "I go to the temple.", bases: { "মন্দিৰলৈ": "temple" } }
+      "মন্দিৰটো পুৰণি।": { native: "The temple is old.", bases: { "মন্দিৰটো": "temple" } }
+  "as-2402":
+    native: "church"
+    notes:
+      "n1": "গীৰ্জা (girzā) is a Christian church."
+    examples:
+      "তেওঁ গীৰ্জালৈ যায়।": { native: "He goes to the church.", bases: { "গীৰ্জালৈ": "church" } }
+      "গীৰ্জাটো ডাঙৰ।": { native: "The church is big.", bases: { "গীৰ্জাটো": "church" } }
+  "as-2403":
+    native: "mosque"
+    notes:
+      "n1": "মছজিদ (môsozid) is a mosque."
+    examples:
+      "মছজিদটো ডাঙৰ।": { native: "The mosque is big.", bases: { "মছজিদটো": "mosque" } }
+      "মই মছজিদলৈ যাওঁ।": { native: "I go to the mosque.", bases: { "মছজিদলৈ": "mosque" } }
+  "as-2404":
+    native: "hotel"
+    notes:
+      "n1": "হোটেল (hutel) is a hotel, where a traveller stays."
+    examples:
+      "মই হোটেলত থাকোঁ।": { native: "I stay in a hotel.", bases: { "হোটেলত": "hotel", "থাকোঁ": "stay" } }
+      "হোটেল ভাল।": { native: "The hotel is good.", bases: {  } }
+  "as-2405":
+    native: "restaurant"
+    notes:
+      "n1": "ৰেষ্টুৰেণ্ট (rexturent) is a restaurant, where food is eaten out."
+    examples:
+      "মই ৰেষ্টুৰেণ্টলৈ যাওঁ।": { native: "I go to the restaurant.", bases: { "ৰেষ্টুৰেণ্টলৈ": "restaurant" } }
+      "ৰেষ্টুৰেণ্ট ভাল।": { native: "The restaurant is good.", bases: {  } }
+  "as-2406":
+    native: "pond"
+    notes:
+      "n1": "পুখুৰী (pukhuri) is a pond."
+    examples:
+      "পুখুৰীত মাছ আছে।": { native: "There are fish in the pond.", bases: { "পুখুৰীত": "pond", "আছে": "be; have" } }
+      "পুখুৰীটো ডাঙৰ।": { native: "The pond is big.", bases: { "পুখুৰীটো": "pond" } }
+  "as-2407":
+    native: "river"
+    notes:
+      "n1": "নদী (nodi) is a river."
+    examples:
+      "নদীখন ডাঙৰ।": { native: "The river is big.", bases: { "নদীখন": "river" } }
+      "মই নদীলৈ যাওঁ।": { native: "I go to the river.", bases: { "নদীলৈ": "river" } }
+  "as-2408":
+    native: "hill; mountain"
+    notes:
+      "n1": "পাহাৰ (pāhār) is a hill or a mountain."
+    examples:
+      "পাহাৰলৈ যায়।": { native: "He goes to the hills.", bases: { "পাহাৰলৈ": "hill" } }
+      "পাহাৰটো ওখ।": { native: "The hill is high.", bases: { "পাহাৰটো": "hill" } }
+  "as-2409":
+    native: "forest"
+    notes:
+      "n1": "বন (bôn) is a forest."
+    examples:
+      "বনত বাঘ আছে।": { native: "There are tigers in the forest.", bases: { "বনত": "forest", "বাঘ": "tiger", "আছে": "be; have" } }
+      "বনটো ডাঙৰ।": { native: "The forest is big.", bases: { "বনটো": "forest" } }
+  "as-2410":
+    native: "sea"
+    notes:
+      "n1": "সাগৰ (sāgôr) is the sea."
+    examples:
+      "সাগৰ ডাঙৰ।": { native: "The sea is big.", bases: {  } }
+      "মই সাগৰলৈ যাওঁ।": { native: "I go to the sea.", bases: { "সাগৰলৈ": "sea" } }
+  "as-2411":
+    native: "road"
+    notes:
+      "n1": "ৰাস্তা (rāstā) is a road."
+    examples:
+      "ৰাস্তাটো ডাঙৰ।": { native: "The road is big.", bases: { "ৰাস্তাটো": "road" } }
+      "ৰাস্তাত মানুহ আছে।": { native: "There are people on the road.", bases: { "ৰাস্তাত": "road", "মানুহ": "person; people", "আছে": "be; have" } }
+  "as-2412":
+    native: "bridge"
+    notes:
+      "n1": "সেতু (setu) is a bridge."
+    examples:
+      "সেতুখন নতুন।": { native: "The bridge is new.", bases: { "সেতুখন": "bridge" } }
+      "সেতুখন ডাঙৰ।": { native: "The bridge is big.", bases: { "সেতুখন": "bridge" } }
+  "as-2413":
+    native: "garden; park"
+    notes:
+      "n1": "উদ্যান (udyān) is a public garden or park."
+    examples:
+      "মই উদ্যানলৈ যাওঁ।": { native: "I go to the park.", bases: { "উদ্যানলৈ": "garden" } }
+      "উদ্যান সুন্দৰ।": { native: "The park is beautiful.", bases: { "সুন্দৰ": "beautiful" } }
+  "as-2414":
+    native: "field"
+    notes:
+      "n1": "পথাৰ (pôthār) is a flat open field, for growing rice."
+    examples:
+      "পথাৰত ধান আছে।": { native: "There is paddy in the field.", bases: { "পথাৰত": "field", "আছে": "be; have" } }
+      "পথাৰটো ডাঙৰ।": { native: "The field is big.", bases: { "পথাৰটো": "field" } }
+  "as-2415":
+    native: "garden; backyard"
+    notes:
+      "n1": "বাৰী (bāri) is a garden by the house, with fruit trees."
+    examples:
+      "বাৰীত ফল আছে।": { native: "There is fruit in the garden.", bases: { "বাৰীত": "garden", "আছে": "be; have" } }
+      "বাৰীটো সৰু।": { native: "The garden is small.", bases: { "বাৰীটো": "garden" } }
+  "as-2416":
+    native: "ghat; landing"
+    notes:
+      "n1": "ঘাট (ghāt) is a landing place by a river, where boats stop."
+    examples:
+      "মই ঘাটলৈ যাওঁ।": { native: "I go to the ghat.", bases: { "ঘাটলৈ": "ghat" } }
+      "ঘাটটো ডাঙৰ।": { native: "The ghat is big.", bases: { "ঘাটটো": "ghat" } }
+  "as-2417":
+    native: "fair"
+    notes:
+      "n1": "মেলা (melā) is a fair, with stalls and games."
+    examples:
+      "মই মেলালৈ যাওঁ।": { native: "I go to the fair.", bases: { "মেলালৈ": "fair" } }
+      "মেলাটো ডাঙৰ।": { native: "The fair is big.", bases: { "মেলাটো": "fair" } }
+  "as-2418":
+    native: "post office"
+    notes:
+      "n1": "ডাকঘৰ (dākôghôr) is a post office, where letters are sent."
+    examples:
+      "মই ডাকঘৰলৈ যাওঁ।": { native: "I go to the post office.", bases: { "ডাকঘৰলৈ": "post office" } }
+      "ডাকঘৰটো বন্ধ।": { native: "The post office is closed.", bases: { "ডাকঘৰটো": "post office", "বন্ধ": "closed; stopped" } }
+  "as-2419":
+    native: "police station"
+    notes:
+      "n1": "থানা (thānā) is a police station."
+    examples:
+      "থানালৈ যায়।": { native: "He goes to the police station.", bases: { "থানালৈ": "police station" } }
+      "থানাটো ডাঙৰ।": { native: "The police station is big.", bases: { "থানাটো": "police station" } }
+  "as-2420":
+    native: "college"
+    notes:
+      "n1": "কলেজ (kôlez) is a college."
+    examples:
+      "মই কলেজলৈ যাওঁ।": { native: "I go to college.", bases: { "কলেজলৈ": "college" } }
+      "কলেজটো নতুন।": { native: "The college is new.", bases: { "কলেজটো": "college" } }
+  "as-2421":
+    native: "clinic"
+    notes:
+      "n1": "ডাক্তৰখানা (dāktôrôkhānā) is a small clinic, with a doctor."
+    examples:
+      "মই ডাক্তৰখানালৈ যাওঁ।": { native: "I go to the clinic.", bases: { "ডাক্তৰখানালৈ": "clinic" } }
+      "ডাক্তৰখানাটো সৰু।": { native: "The clinic is small.", bases: { "ডাক্তৰখানাটো": "clinic" } }
+  "as-2422":
+    native: "capital city"
+    notes:
+      "n1": "ৰাজধানী (rāzôdhāni) is the capital city of a state."
+    examples:
+      "মই ৰাজধানীলৈ যাওঁ।": { native: "I go to the capital.", bases: { "ৰাজধানীলৈ": "capital city" } }
+      "ৰাজধানী ডাঙৰ।": { native: "The capital is big.", bases: {  } }
+  "as-2423":
+    native: "airport"
+    notes:
+      "n1": "বিমানবন্দৰ (bimānôbôndôr) is an airport."
+    examples:
+      "মই বিমানবন্দৰলৈ যাওঁ।": { native: "I go to the airport.", bases: { "বিমানবন্দৰলৈ": "airport" } }
+      "বিমানবন্দৰটো ডাঙৰ।": { native: "The airport is big.", bases: { "বিমানবন্দৰটো": "airport" } }
+  "as-2424":
+    native: "park"
+    notes:
+      "n1": "পাৰ্ক (pārk) is a park, a green place in a town."
+    examples:
+      "পাৰ্কত মানুহ আছে।": { native: "There are people in the park.", bases: { "পাৰ্কত": "park", "মানুহ": "person; people", "আছে": "be; have" } }
+      "পাৰ্কটো সুন্দৰ।": { native: "The park is beautiful.", bases: { "পাৰ্কটো": "park", "সুন্দৰ": "beautiful" } }
