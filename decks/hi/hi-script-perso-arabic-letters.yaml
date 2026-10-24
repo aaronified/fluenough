@@ -1,3 +1,4 @@
+# modes: converted to an opt-out (#522, step 6)
 schema: 1
 id: "hi-script-perso-arabic-letters"
 part: "core"
@@ -11,6 +12,7 @@ cards:
     target_scripts: { devanagari: "आ" }
     reading: "ā"
     ipa: "aː"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0647"
@@ -18,6 +20,7 @@ cards:
     target_scripts: { devanagari: "ब" }
     reading: "ba"
     ipa: "bə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0648"
@@ -25,6 +28,7 @@ cards:
     target_scripts: { devanagari: "प" }
     reading: "pa"
     ipa: "pə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0649"
@@ -32,6 +36,7 @@ cards:
     target_scripts: { devanagari: "त" }
     reading: "ta"
     ipa: "t̪ə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0650"
@@ -39,6 +44,7 @@ cards:
     target_scripts: { devanagari: "ट" }
     reading: "ṭa"
     ipa: "ʈə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0651"
@@ -46,6 +52,7 @@ cards:
     target_scripts: { devanagari: "स" }
     reading: "sa"
     ipa: "sə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0652"
@@ -53,6 +60,7 @@ cards:
     target_scripts: { devanagari: "ज" }
     reading: "ja"
     ipa: "dʒə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0653"
@@ -60,6 +68,7 @@ cards:
     target_scripts: { devanagari: "च" }
     reading: "ca"
     ipa: "tʃə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0654"
@@ -67,6 +76,7 @@ cards:
     target_scripts: { devanagari: "ह" }
     reading: "ha"
     ipa: "ɦə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0655"
@@ -74,6 +84,7 @@ cards:
     target_scripts: { devanagari: "ख़" }
     reading: "k͟ha"
     ipa: "xə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0656"
@@ -81,6 +92,7 @@ cards:
     target_scripts: { devanagari: "द" }
     reading: "da"
     ipa: "d̪ə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0657"
@@ -88,6 +100,7 @@ cards:
     target_scripts: { devanagari: "ड" }
     reading: "ḍa"
     ipa: "ɖə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0658"
@@ -95,6 +108,7 @@ cards:
     target_scripts: { devanagari: "ज़" }
     reading: "za"
     ipa: "zə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0659"
@@ -102,6 +116,7 @@ cards:
     target_scripts: { devanagari: "र" }
     reading: "ra"
     ipa: "rə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0660"
@@ -109,7 +124,8 @@ cards:
     target_scripts: { devanagari: "ड़" }
     reading: "ṛa"
     ipa: "ɽə"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0661"
@@ -117,6 +133,7 @@ cards:
     target_scripts: { devanagari: "ज़" }
     reading: "za"
     ipa: "zə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0662"
@@ -124,7 +141,8 @@ cards:
     target_scripts: { devanagari: "झ़" }
     reading: "z͟ha"
     ipa: "ʒə"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0663"
@@ -132,6 +150,7 @@ cards:
     target_scripts: { devanagari: "स" }
     reading: "sa"
     ipa: "sə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0664"
@@ -139,6 +158,7 @@ cards:
     target_scripts: { devanagari: "श" }
     reading: "śa"
     ipa: "ʃə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0665"
@@ -146,6 +166,7 @@ cards:
     target_scripts: { devanagari: "स" }
     reading: "sa"
     ipa: "sə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0666"
@@ -153,6 +174,7 @@ cards:
     target_scripts: { devanagari: "ज़" }
     reading: "za"
     ipa: "zə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0667"
@@ -160,6 +182,7 @@ cards:
     target_scripts: { devanagari: "त" }
     reading: "ta"
     ipa: "t̪ə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0668"
@@ -167,6 +190,7 @@ cards:
     target_scripts: { devanagari: "ज़" }
     reading: "za"
     ipa: "zə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0669"
@@ -174,6 +198,7 @@ cards:
     target_scripts: { devanagari: "ग़" }
     reading: "ġa"
     ipa: "ɣə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0670"
@@ -181,6 +206,7 @@ cards:
     target_scripts: { devanagari: "फ़" }
     reading: "fa"
     ipa: "fə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0671"
@@ -188,6 +214,7 @@ cards:
     target_scripts: { devanagari: "क़" }
     reading: "qa"
     ipa: "qə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0672"
@@ -195,6 +222,7 @@ cards:
     target_scripts: { devanagari: "क" }
     reading: "ka"
     ipa: "kə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0673"
@@ -202,6 +230,7 @@ cards:
     target_scripts: { devanagari: "ग" }
     reading: "ga"
     ipa: "ɡə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0674"
@@ -209,6 +238,7 @@ cards:
     target_scripts: { devanagari: "ल" }
     reading: "la"
     ipa: "lə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0675"
@@ -216,6 +246,7 @@ cards:
     target_scripts: { devanagari: "म" }
     reading: "ma"
     ipa: "mə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0676"
@@ -223,6 +254,7 @@ cards:
     target_scripts: { devanagari: "न" }
     reading: "na"
     ipa: "nə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0677"
@@ -230,6 +262,7 @@ cards:
     target_scripts: { devanagari: "व" }
     reading: "va"
     ipa: "ʋə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0678"
@@ -237,6 +270,7 @@ cards:
     target_scripts: { devanagari: "ह" }
     reading: "ha"
     ipa: "ɦə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0679"
@@ -244,6 +278,7 @@ cards:
     target_scripts: { devanagari: "य" }
     reading: "ya"
     ipa: "jə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0680"
@@ -251,5 +286,6 @@ cards:
     target_scripts: { devanagari: "ए" }
     reading: "ē"
     ipa: "eː"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }

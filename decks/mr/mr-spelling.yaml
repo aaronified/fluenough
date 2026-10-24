@@ -1,3 +1,4 @@
+# modes: converted to an opt-out (#522, step 6)
 schema: 1
 id: "mr-spelling"
 part: "core"
@@ -11,7 +12,8 @@ cards:
     reading: "nāhim̐"
     ipa: "naɦĩ"
     pos: "other"
-    modes: ["recognition"]
+    hears: "form"
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "mr-0648"
@@ -19,7 +21,8 @@ cards:
     reading: "tem̐"
     ipa: "t̪ẽ"
     pos: "other"
-    modes: ["recognition"]
+    hears: "form"
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "mr-0649"
@@ -27,25 +30,29 @@ cards:
     reading: "yethem̐"
     ipa: "jet̪ʰẽ"
     pos: "other"
-    modes: ["recognition"]
+    hears: "form"
+    modes: ["production", "listening", "speaking"]
   - id: "mr-0650"
     target: "कां"
     reading: "kām̐"
     ipa: "kã"
     pos: "other"
-    modes: ["recognition"]
+    hears: "form"
+    modes: ["production", "listening", "speaking"]
   - id: "mr-0651"
     target: "घरीं"
     reading: "gharim̐"
     ipa: "ɡʱərĩ"
     pos: "other"
-    modes: ["recognition"]
+    hears: "form"
+    modes: ["production", "listening", "speaking"]
   - id: "mr-0652"
     target: "करितों"
     reading: "karitom̐"
     ipa: "kərit̪õ"
     pos: "other"
-    modes: ["recognition"]
+    hears: "form"
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "mr-0653"
@@ -53,7 +60,8 @@ cards:
     reading: "āhem̐"
     ipa: "aɦẽ"
     pos: "other"
-    modes: ["recognition"]
+    hears: "form"
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "mr-0654"
@@ -61,7 +69,8 @@ cards:
     reading: "kavi"
     ipa: "kəʋi"
     pos: "other"
-    modes: ["recognition"]
+    hears: "form"
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "mr-0655"
@@ -70,6 +79,7 @@ cards:
     reading: "guru"
     ipa: "ɡuru"
     pos: "other"
-    modes: ["recognition"]
+    hears: "form"
+    modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }

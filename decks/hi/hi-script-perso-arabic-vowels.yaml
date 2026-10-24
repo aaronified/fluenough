@@ -1,3 +1,4 @@
+# modes: converted to an opt-out (#522, step 6)
 schema: 1
 id: "hi-script-perso-arabic-vowels"
 part: "core"
@@ -11,6 +12,7 @@ cards:
     target_scripts: { devanagari: "ब" }
     reading: "ba"
     ipa: "bə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0682"
@@ -18,6 +20,7 @@ cards:
     target_scripts: { devanagari: "बि" }
     reading: "bi"
     ipa: "bɪ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0683"
@@ -25,6 +28,7 @@ cards:
     target_scripts: { devanagari: "बु" }
     reading: "bu"
     ipa: "bʊ"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0684"
@@ -32,6 +36,7 @@ cards:
     target_scripts: { devanagari: "आ" }
     reading: "ā"
     ipa: "aː"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0685"
@@ -39,6 +44,7 @@ cards:
     target_scripts: { devanagari: "ई" }
     reading: "ī"
     ipa: "iː"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0686"
@@ -46,6 +52,7 @@ cards:
     target_scripts: { devanagari: "ओ" }
     reading: "ō"
     ipa: "oː"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0687"
@@ -53,12 +60,14 @@ cards:
     target_scripts: { devanagari: "ए" }
     reading: "ē"
     ipa: "eː"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0688"
     target: "ں"
     reading: "m̐"
     ipa: "ə̃"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0689"
@@ -66,13 +75,15 @@ cards:
     target_scripts: { devanagari: "भ" }
     reading: "bha"
     ipa: "bʱə"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0690"
     target: "ء"
     reading: "'"
     ipa: "ʔ"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0691"
@@ -80,7 +91,8 @@ cards:
     target_scripts: { devanagari: "अ" }
     reading: "a"
     ipa: "ə"
-    modes: ["recognition", "production"]
+    pos: "letter"
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0692"
@@ -88,6 +100,7 @@ cards:
     target_scripts: { devanagari: "ब्ब" }
     reading: "bb"
     ipa: "bː"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }
   - id: "hi-0693"
@@ -95,5 +108,6 @@ cards:
     target_scripts: { devanagari: "वज़ीर-ए-आज़म" }
     reading: "vazīr-e azam"
     ipa: "ʋəziːrɪ əzəm"
+    pos: "letter"
     notes:
       - { id: "n1", kind: "note" }

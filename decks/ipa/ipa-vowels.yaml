@@ -1,3 +1,4 @@
+# modes: converted to an opt-out (#522, step 6)
 schema: 1
 id: "ipa-vowels"
 part: "core"
@@ -26,7 +27,7 @@ cards:
       - { id: "c1", ref: "ipa-0100", kind: "sound" }
       - { id: "c2", ref: "ipa-0095", kind: "sound" }
       - { id: "c3", ref: "ipa-0096", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0100"
@@ -48,7 +49,7 @@ cards:
       - { id: "c1", ref: "ipa-0094", kind: "sound" }
       - { id: "c2", ref: "ipa-0101", kind: "sound" }
       - { id: "c3", ref: "ipa-0110", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0095"
@@ -65,7 +66,7 @@ cards:
       - { id: "c1", ref: "ipa-0094", kind: "sound" }
       - { id: "c2", ref: "ipa-0101", kind: "sound" }
       - { id: "c3", ref: "ipa-0097", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0101"
@@ -82,7 +83,7 @@ cards:
       - { id: "c1", ref: "ipa-0100", kind: "sound" }
       - { id: "c2", ref: "ipa-0095", kind: "sound" }
       - { id: "c3", ref: "ipa-0104", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0096"
@@ -99,7 +100,7 @@ cards:
       - { id: "c1", ref: "ipa-0094", kind: "sound" }
       - { id: "c2", ref: "ipa-0097", kind: "sound" }
       - { id: "c3", ref: "ipa-0098", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0097"
@@ -116,7 +117,7 @@ cards:
       - { id: "c1", ref: "ipa-0099", kind: "sound" }
       - { id: "c2", ref: "ipa-0096", kind: "sound" }
       - { id: "c3", ref: "ipa-0095", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0098"
@@ -134,7 +135,7 @@ cards:
       - { id: "c1", ref: "ipa-0099", kind: "sound" }
       - { id: "c2", ref: "ipa-0107", kind: "sound" }
       - { id: "c3", ref: "ipa-0096", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0099"
@@ -156,7 +157,7 @@ cards:
       - { id: "c1", ref: "ipa-0102", kind: "sound" }
       - { id: "c2", ref: "ipa-0097", kind: "sound" }
       - { id: "c3", ref: "ipa-0098", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0102"
@@ -178,7 +179,7 @@ cards:
       - { id: "c1", ref: "ipa-0099", kind: "sound" }
       - { id: "c2", ref: "ipa-0100", kind: "sound" }
       - { id: "c3", ref: "ipa-0114", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0103"
@@ -200,7 +201,7 @@ cards:
       - { id: "c1", ref: "ipa-0110", kind: "sound" }
       - { id: "c2", ref: "ipa-0094", kind: "sound" }
       - { id: "c3", ref: "ipa-0104", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0110"
@@ -222,7 +223,7 @@ cards:
       - { id: "c1", ref: "ipa-0103", kind: "sound" }
       - { id: "c2", ref: "ipa-0116", kind: "sound" }
       - { id: "c3", ref: "ipa-0112", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0104"
@@ -239,7 +240,7 @@ cards:
       - { id: "c1", ref: "ipa-0103", kind: "sound" }
       - { id: "c2", ref: "ipa-0111", kind: "sound" }
       - { id: "c3", ref: "ipa-0095", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0111"
@@ -256,7 +257,7 @@ cards:
       - { id: "c1", ref: "ipa-0104", kind: "sound" }
       - { id: "c2", ref: "ipa-0110", kind: "sound" }
       - { id: "c3", ref: "ipa-0119", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0105"
@@ -270,7 +271,7 @@ cards:
       - { id: "c1", ref: "ipa-0109", kind: "sound" }
       - { id: "c2", ref: "ipa-0103", kind: "sound" }
       - { id: "c3", ref: "ipa-0106", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
       - { id: "n2", kind: "note" }
@@ -288,7 +289,7 @@ cards:
       - { id: "c1", ref: "ipa-0104", kind: "sound" }
       - { id: "c2", ref: "ipa-0108", kind: "sound" }
       - { id: "c3", ref: "ipa-0105", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0107"
@@ -305,7 +306,7 @@ cards:
       - { id: "c1", ref: "ipa-0108", kind: "sound" }
       - { id: "c2", ref: "ipa-0098", kind: "sound" }
       - { id: "c3", ref: "ipa-0114", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0109"
@@ -327,7 +328,7 @@ cards:
       - { id: "c1", ref: "ipa-0105", kind: "sound" }
       - { id: "c2", ref: "ipa-0112", kind: "sound" }
       - { id: "c3", ref: "ipa-0114", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0112"
@@ -345,7 +346,7 @@ cards:
       - { id: "c1", ref: "ipa-0109", kind: "sound" }
       - { id: "c2", ref: "ipa-0110", kind: "sound" }
       - { id: "c3", ref: "ipa-0113", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0113"
@@ -359,7 +360,7 @@ cards:
       - { id: "c1", ref: "ipa-0112", kind: "sound" }
       - { id: "c2", ref: "ipa-0111", kind: "sound" }
       - { id: "c3", ref: "ipa-0115", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
       - { id: "n2", kind: "note" }
@@ -378,7 +379,7 @@ cards:
       - { id: "c1", ref: "ipa-0109", kind: "sound" }
       - { id: "c2", ref: "ipa-0117", kind: "sound" }
       - { id: "c3", ref: "ipa-0115", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0117"
@@ -395,7 +396,7 @@ cards:
       - { id: "c1", ref: "ipa-0118", kind: "sound" }
       - { id: "c2", ref: "ipa-0114", kind: "sound" }
       - { id: "c3", ref: "ipa-0109", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0116"
@@ -417,7 +418,7 @@ cards:
       - { id: "c1", ref: "ipa-0110", kind: "sound" }
       - { id: "c2", ref: "ipa-0118", kind: "sound" }
       - { id: "c3", ref: "ipa-0117", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0118"
@@ -439,7 +440,7 @@ cards:
       - { id: "c1", ref: "ipa-0120", kind: "sound" }
       - { id: "c2", ref: "ipa-0116", kind: "sound" }
       - { id: "c3", ref: "ipa-0117", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0119"
@@ -453,7 +454,7 @@ cards:
       - { id: "c1", ref: "ipa-0111", kind: "sound" }
       - { id: "c2", ref: "ipa-0118", kind: "sound" }
       - { id: "c3", ref: "ipa-0121", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
       - { id: "n2", kind: "note" }
@@ -476,7 +477,7 @@ cards:
       - { id: "c1", ref: "ipa-0115", kind: "sound" }
       - { id: "c2", ref: "ipa-0099", kind: "sound" }
       - { id: "c3", ref: "ipa-0107", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0115"
@@ -502,7 +503,7 @@ cards:
       - { id: "c1", ref: "ipa-0108", kind: "sound" }
       - { id: "c2", ref: "ipa-0121", kind: "sound" }
       - { id: "c3", ref: "ipa-0120", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0121"
@@ -523,7 +524,7 @@ cards:
       - { id: "c1", ref: "ipa-0120", kind: "sound" }
       - { id: "c2", ref: "ipa-0115", kind: "sound" }
       - { id: "c3", ref: "ipa-0118", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "ipa-0120"
@@ -544,6 +545,6 @@ cards:
       - { id: "c1", ref: "ipa-0121", kind: "sound" }
       - { id: "c2", ref: "ipa-0118", kind: "sound" }
       - { id: "c3", ref: "ipa-0114", kind: "sound" }
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
