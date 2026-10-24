@@ -445,7 +445,7 @@ void main() {
         for (final entry in state.decks)
           if (entry.language.code == 'bn' && entry.deck.kind == DeckKind.vocab)
             for (final card in entry.cards)
-              if (card.pos == 'noun') card.id,
+              if (card.pos == 'noun' && card.bases.isEmpty) card.id,
       }.take(2).toList();
       // One word known long before the lesson, one during it.
       know(state, words[0], ago: const Duration(hours: 5));
