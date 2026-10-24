@@ -2180,6 +2180,26 @@ class CjkReadings(unittest.TestCase):
                     fresh.doCleanups()
 
 
+class RejectedAlikes(Case):
+    """A core card's `not_sounds_like` and `not_looks_like` (#808): the
+    offensive words whose sound-alike or look-alike pair a reviewer rejected."""
+
+    def key_errors(self, key: str) -> list[str]:
+        return [e for e in self.errors(CORE) if key in e]
+
+    def test_a_list_of_ids_of_other_cards_is_accepted(self) -> None:
+        for key in ("not_sounds_like", "not_looks_like"):
+            with self.subTest(key):
+                self.core(HOUSE, **{key: ["zz-9006"]})
+                self.assertEqual(self.key_errors(key), [])
+
+    def test_a_value_that_is_no_list_of_other_cards_is_refused(self) -> None:
+        for value in ("zz-9006", [], [3], ["zz-9006", "zz-9006"], [HOUSE]):
+            with self.subTest(repr(value)):
+                self.core(HOUSE, not_sounds_like=value)
+                self.assertTrue(self.key_errors("not_sounds_like"))
+
+
 if __name__ == "__main__":
     unittest.main()
 

@@ -17,6 +17,11 @@ word by `ref`, for a sound-alike; a `lookalike` or `homograph` note for a
 look-alike. The deck validator warns about a close pair left unexplained
 (`warn_alikes_across` in tools/validate_decks.py, which uses this module).
 
+A reviewer who rejects a pair, because the two words are not alike enough to
+need care, records it on the card with `not_sounds_like` or `not_looks_like`,
+a list of the offensive words' ids (#808): the pair is then no longer
+listed as unexplained, and the validator does not warn of it.
+
 An offensive word is a card registered or tagged `offensive`, or any card of
 a deck tagged `offensive`. Two offensive words are never paired with each
 other, and a word shorter than three segments or letters is left out: a
@@ -46,6 +51,11 @@ RUDE = "offensive"
 SOUND_NOTES = ("pair",)
 LOOK_NOTES = ("lookalike", "homograph")
 
+# The card keys that record a rejected pair, by the kind of closeness: the
+# card lists the ids of the offensive words that only seemed close (#808).
+SOUND_REJECTED = "not_sounds_like"
+LOOK_REJECTED = "not_looks_like"
+
 # The most letters a care note may have (owner, 2026-10-09).
 CARE_LIMIT = 40
 
@@ -70,6 +80,9 @@ class Word:
     rude: bool = False
     # (kind, ref) of each note naming another card, and the card's `pair`.
     notes: list[tuple[str, str]] = field(default_factory=list)
+    # The ids this card says it is not like, by sound and by writing.
+    not_sounds_like: list[str] = field(default_factory=list)
+    not_looks_like: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -145,6 +158,11 @@ def load_words(paths: list[Path]) -> list[Word]:
                 rude=(card.get("register") == RUDE or RUDE in tags
                       or RUDE in deck_tags),
             )
+            for key, into in ((SOUND_REJECTED, word.not_sounds_like),
+                              (LOOK_REJECTED, word.not_looks_like)):
+                refs = card.get(key)
+                if isinstance(refs, list):
+                    into.extend(r for r in refs if isinstance(r, str))
             if isinstance(card.get("pair"), str):
                 word.notes.append(("pair", card["pair"]))
             notes = card.get("notes")
@@ -162,10 +180,15 @@ def _reading_letters(text: str) -> list[str]:
             if not ch.isspace() and ch not in "-'’"]
 
 
-def _explained(word: Word, rude: Word, kinds: tuple[str, ...]) -> bool:
-    """Whether either word has a note of one of [kinds] naming the other."""
+def _explained(word: Word, rude: Word, kinds: tuple[str, ...],
+               rejected: str) -> bool:
+    """Whether either word has a note of one of [kinds] naming the other, or
+    lists the other under the card key [rejected]: a reviewer kept the pair,
+    or rejected it."""
     return (any(k in kinds and ref == rude.id for k, ref in word.notes)
-            or any(k in kinds and ref == word.id for k, ref in rude.notes))
+            or any(k in kinds and ref == word.id for k, ref in rude.notes)
+            or rude.id in getattr(word, rejected)
+            or word.id in getattr(rude, rejected))
 
 
 def _close(a: list[str], b: list[str], limit: int) -> int | None:
@@ -192,7 +215,8 @@ def find_alikes(words: list[Word], limit: int = MAX_DISTANCE) -> list[Alike]:
                     d = _close(segments(word.ipa), segments(rude.ipa), limit)
                     if d is not None:
                         found.append(Alike("sound", word, rude, d, "ipa",
-                                           _explained(word, rude, SOUND_NOTES)))
+                                           _explained(word, rude, SOUND_NOTES,
+                                                   "not_sounds_like")))
                 looks = [("script", _close(letters(word.target),
                                            letters(rude.target), limit))]
                 if word.reading and rude.reading:
@@ -203,7 +227,8 @@ def find_alikes(words: list[Word], limit: int = MAX_DISTANCE) -> list[Alike]:
                 if near:
                     d, basis = min(near)
                     found.append(Alike("look", word, rude, d, basis,
-                                       _explained(word, rude, LOOK_NOTES)))
+                                       _explained(word, rude, LOOK_NOTES,
+                                                   "not_looks_like")))
     found.sort(key=lambda a: (a.word.language, a.distance, a.kind, a.word.id,
                               a.rude.id))
     return found
@@ -217,11 +242,13 @@ def unexplained(words: list[Word], limit: int = MAX_DISTANCE) -> list[Alike]:
 def warning(alike: Alike) -> str:
     """The validator's warning for an unexplained pair."""
     note = "pair" if alike.kind == "sound" else "lookalike"
+    rejected = SOUND_REJECTED if alike.kind == "sound" else LOOK_REJECTED
     how = ("IPA" if alike.basis == "ipa" else alike.basis)
     return (f"{alike.phrase} the offensive word {alike.rude.id} ({how} "
             f"{alike.distance} apart) and no {note} note names it; a reviewer "
-            f"keeps or rejects the pair, and a kept one gets a {note} note "
-            f"with a care note of at most {CARE_LIMIT} letters "
+            f"keeps or rejects the pair, a kept one gets a {note} note "
+            f"with a care note of at most {CARE_LIMIT} letters, and a "
+            f"rejected one is listed under {rejected} "
             f"(tools/offensive_alikes.py, #629)")
 
 

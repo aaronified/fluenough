@@ -188,7 +188,8 @@ CORE_CARD_KEYS = {"id", "target", "reading", "ipa", "alt_target", "pos", "hears"
                   "notes", "phrasebook", "bases", "rules", "register", "frequency",
                   "synonyms", "antonyms", "collocations", "confusables", "forms",
                   "senses", "audio_credit", "image", "image_credit",
-                  "target_scripts", "words", "warning"}
+                  "target_scripts", "words", "warning", "not_sounds_like",
+                  "not_looks_like"}
 CORE_REF_KEYS = {"ref", "reading", "ipa", "tags", "modes", "examples", "notes"}
 # A set card (DECK-FORMAT.md, Set cards; #506, #515): a closed group shown
 # together before its members are drilled. It is a card of a vocab core,
@@ -262,6 +263,8 @@ LAYER_RULE_KEYS = {"name", "explanation"}
 NOTE_KINDS = ("behaviour", "culture", "homograph", "lookalike", "note", "pair", "usage")
 # The kinds that name another card of the language by `ref`; a pair's partner
 # must also be taught, since the minimal-pair panel shows both words.
+# The keys that record a rejected sound-alike or look-alike pair (#808).
+REJECTED_ALIKE_KEYS = ("not_sounds_like", "not_looks_like")
 REF_NOTE_KINDS = ("homograph", "lookalike", "pair")
 NOTE_KEYS = {"kind", "text", "id", "ref", "source", "words", "region"}
 BASE_KEYS = {"word", "ref", "base", "reading", "ipa", "meaning", "wiktionary"}
@@ -553,6 +556,8 @@ class Report:
     # The same for homograph and lookalike notes: (ref, where, i, kind).
     like_refs: list[tuple[str, str, int, str]] = field(default_factory=list)
     base_refs: list[tuple[str, str, str]] = field(default_factory=list)
+    # The cards `not_sounds_like` and `not_looks_like` name: (ref, where, place).
+    rejected_refs: list[tuple[str, str, str]] = field(default_factory=list)
     # A confusable by ref on a sentence put in order: (ref, where, its place,
     # the tiles the answer needs), so that the card it names is no needed tile.
     tile_refs: list[tuple[str, str, str, list[str]]] = field(default_factory=list)
@@ -896,6 +901,9 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
 
     if "warning" in card and core:
         _check_warning(r, where, card["warning"], notes, card.get("senses"))
+    for key in REJECTED_ALIKE_KEYS:
+        if key in card:
+            _check_rejected_alikes(r, where, key, card[key], cid, lang)
 
     if "register" in card and card["register"] not in REGISTERS:
         r.error(where, f"register must be one of {', '.join(REGISTERS)}, got "
@@ -1068,6 +1076,31 @@ def check_note_words(r: Report, where: str, prefix: str, words: object,
         else:
             found.append(w["word"])
     return found
+
+
+def _check_rejected_alikes(r: Report, where: str, key: str, value: object,
+                           cid: str | None, lang: str) -> None:
+    """A core card's `not_sounds_like` or `not_looks_like` (#808): the
+    offensive words whose sound-alike or look-alike pair a reviewer rejected,
+    so that the pair is no longer warned of. Older apps reject the key, so
+    the decks give it only a release after the app that reads it: CI's
+    "Released app reads the decks" refuses it until then."""
+    if not isinstance(value, list) or not value:
+        r.error(where, f"{key} must be a non-empty list of card ids, got {value!r}")
+        return
+    id_re = card_id_re(lang)
+    seen: set[str] = set()
+    for i, ref in enumerate(value):
+        if not _is_str(ref) or not id_re.fullmatch(ref):
+            r.error(where, f"{key}[{i}] must be the id of another {lang} card, "
+                           f"got {ref!r}")
+        elif ref == cid:
+            r.error(where, f"{key}[{i}] names the card itself")
+        elif ref in seen:
+            r.error(where, f"{key}[{i}]: {ref} is listed twice")
+        else:
+            seen.add(ref)
+            r.rejected_refs.append((ref, where, f"{key}[{i}]"))
 
 
 def _check_warning(r: Report, where: str, value: object, notes: list[Note],
@@ -5335,6 +5368,10 @@ def check_cards_across(reports: list[Report]) -> list[str]:
             if find(rep, ref) is None:
                 problems.append(f"{rep.path}: {where}: notes[{i}].ref names card "
                                 f"{ref}, which no deck writes ({kind} note)")
+        for ref, where, place in rep.rejected_refs:
+            if find(rep, ref) is None:
+                problems.append(f"{rep.path}: {where}: {place} names card {ref}, "
+                                f"which no deck writes")
         for ref, where, place in rep.base_refs:
             if find(rep, ref) is None:
                 problems.append(f"{rep.path}: {where}: {place} names card {ref}, "
