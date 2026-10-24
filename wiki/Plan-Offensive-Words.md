@@ -74,7 +74,7 @@ The offensive decks are written and merged now. A deck tagged `offensive`
 whose words no native speaker has rated is **unrated**: no learner ever sees
 it, with Adult content on or off. It is not listed, taught, in Today,
 reviews, practice or search, and only the language's Offensive words review
-lists it, where the raters score each word 1 to 9. Once the median of the
+lists it, and only when the reviewer has Adult content on (owner, 2026-10-24: "Require Adult on"), where the raters score each word 1 to 9. Once the median of the
 raters has set each word's band, the deck gains the deck tag **`rated`** and
 follows the adult gate above.
 
