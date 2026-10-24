@@ -1,0 +1,26 @@
+schema: 1
+id: "mr-en-grammar-imperatives"
+kind: "layer"
+core: "mr-grammar-imperatives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Imperatives: telling someone to do it"
+license: "CC-BY-SA-4.0"
+description: "Do it, do it, let us do it: the command forms, to a friend, to more than one person or politely, and to let us. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Imperatives"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "तू (you, to a friend)": "you, to a friend (one)", "तुम्ही (you, polite or more than one)": "you, polite or more than one", "आपण (let us)": "let us, together" }
+  entries:
+    "jaane": "to go"
+    "karne": "to do"
+    "bolne": "to speak"
+    "khaane": "to eat"
+    "yene": "to come"
+    "lihine": "to write"
+    "vaachne": "to read"
+    "pine": "to drink"
+    "aikne": "to listen; to hear"
+    "thaambne": "to stop; to wait"
+  notes: "The friend form is the bare stem: बोल (bol), speak, and कर (kar), do. For more than one person, or a polite you, add -ा (-ā): करा (karā), do. The verbs ये (ye), come, and पी (pi), drink, change their stem: या (yā) and प्या (pyā). Let us is the stem with ऊ या (ū yā) added: करू या (karu yā), let us do."

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Today Chain</title>
-<meta name="description" content="Every screen the Today chain needs: Today with one button (#521), minutes a day (#485), situation cheatsheets and their inspect view (#724), the decks page focus options (#723) and the conversation screen (#722). Hindustani and Bengali, light and dark, 1.4x text.">
+<meta name="description" content="The Today chain's screens still to build: situation cheatsheets and their inspect view (#724), the decks page focus options (#723) and the conversation screen (#722). Hindustani and Bengali, light and dark, 1.4x text.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&display=swap">
@@ -65,26 +65,6 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .card{background:var(--sLow);border-radius:16px;padding:14px 16px;margin:0 0 12px;display:flex;gap:12px;align-items:center;width:100%;text-align:left;border:0}
 .card .tx{flex:1;min-width:0}
 .card .ic{flex:none;width:40px;height:40px;border-radius:20px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
-.banner{border-radius:16px;padding:14px 16px;margin:0 0 12px;display:flex;gap:12px;align-items:flex-start;background:var(--tC);color:var(--onTC)}
-.banner p{margin:0;font-size:calc(14px*var(--t));line-height:1.35}
-.banner b{font-weight:700}
-.banner .t-sm{color:var(--onTC)}
-.banner .btn{margin-top:10px;background:none;border:1px solid var(--onTC);color:var(--onTC)}
-/* today ring */
-.ringbox{display:flex;flex-direction:column;align-items:center;padding:6px 0 12px;gap:6px}
-.ring{position:relative;width:200px;height:200px}
-.ring svg.r{width:200px;height:200px;transform:rotate(-90deg)}
-.ring .trk{fill:none;stroke:var(--sc);stroke-width:12}
-.ring .fil{fill:none;stroke:var(--p);stroke-width:12;stroke-linecap:round}
-.ring .go{position:absolute;inset:24px;border-radius:50%;border:0;background:var(--p);color:var(--onP);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:calc(16px*var(--t));font-weight:600;line-height:1.1}
-.ring .go svg.i{width:32px;height:32px}
-.ring .go.done{background:var(--sc);color:var(--onSc)}
-.mins{font-size:calc(16px*var(--t));font-weight:500;line-height:1.2;text-align:center}
-.split{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
-.sbadge{display:inline-flex;align-items:center;gap:6px;border-radius:calc(9px*var(--t));height:calc(18px*var(--t));padding:0 10px;font-size:calc(11px*var(--t));font-weight:600;letter-spacing:.3px}
-.sb-rev{background:var(--sc);color:var(--onSc)}
-.sb-new{background:var(--p);color:var(--onP)}
-.sb-none{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
 /* bottom nav */
 .nav{flex:none;display:flex;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);padding:8px 4px 10px}
 .nav div{flex:1;text-align:center;font-size:calc(11px*var(--t));line-height:1.2;color:var(--onSv);display:flex;flex-direction:column;align-items:center;gap:2px}
@@ -92,21 +72,6 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .nav div.on{color:var(--onS);font-weight:600}
 .nav div.on .pl{background:var(--sc);color:var(--onSc)}
 /* settings rows */
-.lcard{background:var(--sLow);border-radius:16px;padding:16px;margin:0 0 12px}
-.lcard h3{margin:0;font-size:calc(18px*var(--t));font-weight:500;line-height:1.25;display:flex;align-items:center;gap:8px}
-.lrow{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;min-height:48px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0}
-.chip{border:1px solid var(--ol);background:none;border-radius:8px;min-height:40px;padding:0 12px;font-size:calc(14px*var(--t));line-height:1.3;font-weight:500;display:inline-flex;align-items:center;gap:6px;color:var(--onSv)}
-.chip[aria-pressed="true"]{background:var(--sc);color:var(--onSc);border-color:transparent}
-.chip svg.i{width:18px;height:18px}
-.chip:not([aria-pressed="true"]) svg.i.ck{display:none}
-.slider{position:relative;height:48px;margin:6px 0 0}
-.slider .rail{position:absolute;left:0;right:0;top:22px;height:4px;border-radius:2px;background:var(--sc)}
-.slider .rf{position:absolute;left:0;top:22px;height:4px;border-radius:2px;background:var(--p)}
-.slider .th{position:absolute;top:12px;width:24px;height:24px;margin-left:-12px;border-radius:12px;background:var(--p)}
-.stepper{display:flex;align-items:center;justify-content:center;gap:16px;margin:8px 0}
-.stepper .v{font-size:calc(32px*var(--t));font-weight:500;min-width:2.2em;text-align:center;line-height:1}
-.stepper .ib{border:1px solid var(--ol);color:var(--p)}
 /* sheet */
 .scrim{position:absolute;inset:0;background:rgba(0,0,0,.42);z-index:3}
 .sheet{position:absolute;z-index:4;left:0;right:0;bottom:0;background:var(--sLow);border-radius:28px 28px 0 0;display:flex;flex-direction:column;max-height:88%}
@@ -176,7 +141,7 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 <body>
 <div class="wrap" id="wrap">
 <h1>The Today chain</h1>
-<p class="cap1">One page for #521, #485, #680, #724, #723 and #722 (owner, 2026-10-23: "Do all the mockups needed for the today chain together, in one screen."). Phone 360 dp at 1.4x text, ColorScheme.fromSeed of the forest seed. Red dashed outlines mark what is new or changed against the app today. Where an issue leaves a choice open, it is a tweak control; none is decided here. The self-check, notes and open questions are in <code>today-chain.md</code>.</p>
+<p class="cap1">One page for #724, #723 and #722 (Today with one button, #521, #485 and #680, and Minutes a day are built, so their screens are gone) (owner, 2026-10-23: "Do all the mockups needed for the today chain together, in one screen."). Phone 360 dp at 1.4x text, ColorScheme.fromSeed of the forest seed. Red dashed outlines mark what is new or changed against the app today. Where an issue leaves a choice open, it is a tweak control; none is decided here. The self-check, notes and open questions are in <code>today-chain.md</code>.</p>
 <div class="sticky tw" id="g-tw">
  <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
  <div class="tg">Course <span class="seg" data-k="course"><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></span></div>
@@ -254,10 +219,6 @@ bn:{lang:'bn',name:'Bengali',native:'বাংলা',
 
 /* ===== state: every tweak control ===== */
 const S={theme:null,course:'hi',hl:'1',
- // Today
- tState:'start',ringMode:'done',splitLine:'show',backlogMsg:'short',sampleNote:'off',sitePlace:'card',
- // minutes setting
- minCtl:'chips',minutes:15,minOpen:false,
  // cheatsheet
  shUnl:'all',inspEntry:'row',
  // focus
@@ -276,70 +237,6 @@ function phone(inner,cap,extra=''){return `<div class="fcol"><div class="fcap">$
 function nav(on){const it=[['today','Today'],['decks','Decks'],['prog','Progress'],['gear','Settings']];
  return `<div class="nav">${it.map(([k,t])=>`<div class="${k===on?'on':''}"><span class="pl">${ic(k)}</span>${t}</div>`).join('')}</div>`}
 function lbar(c){return `<div class="lbar"><span class="pill on">${sc(c,c.native)} ${c.name} ${ic('drop','')}</span></div>`}
-
-/* ===== 1. Today ===== */
-function budgetCards(m){return Math.round(m*60/17.5)}
-function today(c){
- const B=15, st=S.tState;
- let done=st==='start'?0:st==='mid'?12:st==='done'?15:0, queued=st==='catch'?15:15;
- const catching=st==='catch';
- const shown=S.ringMode==='done'?done:(st==='catch'?15:12);
- const frac=Math.min(1,shown/B), R=88, circ=2*Math.PI*R;
- const label=st==='done'?'Done':st==='mid'?'Continue':'Start';
- const minsTxt=S.ringMode==='done'?`${shown} of ${B} min`:`${shown} of ${B} min queued`;
- const split=catching?`<span class="sbadge sb-rev">17 reviews</span><span class="sbadge sb-none">0 new</span>`:
-  st==='done'?'':`<span class="sbadge sb-rev">${st==='mid'?'8':'11'} reviews</span><span class="sbadge sb-new">${st==='mid'?'2':'3'} new</span>`;
- const msg=S.backlogMsg==='short'?`<p><b>Catching up: no new words today.</b></p>`:
-  `<p><b>Catching up: no new words today.</b></p><p class="t-sm" style="margin-top:4px">80 reviews, about 23 min. At 15 min a day you will catch up in 2 days.</p>`;
- const sit=`<button class="card"><span class="ic">${ic('car')}</span><span class="tx"><span class="t-h" style="display:block">Situations</span><span class="t-sm">Hailing a cab, groceries, the doctor and more: key phrases, offline</span></span>${ic('chev')}</button>`;
- const tagp=`<button class="card"><span class="ic">${ic('tag')}</span><span class="tx"><span class="t-h" style="display:block">Practise a theme</span><span class="t-sm">Pick a theme and drill its words</span></span>${ic('chev')}</button>`;
- const sample=S.sampleNote==='on'?`<p class="t-sm" style="text-align:center;margin:0 8px 12px">Known words come up a few at a time: 1 or 2 stand for each deck.</p>`:'';
- const old=`<div class="ghost" style="display:flex;gap:8px;margin:0 0 12px"><span class="btn tonal" style="flex:1">Start lesson</span><span class="btn tonal" style="flex:1">Review</span></div>`;
- const inner=`${''}<div class="appbar"><span class="ttl">Today</span><button class="ib" aria-label="Menu">${ic('more')}</button></div>
- ${lbar(c)}
- <div class="scroll">
-  ${S.hl==='1'?chg('gone',old):''}
-  ${chg('upd',`<div class="ringbox"><div class="ring"><svg class="r" viewBox="0 0 200 200"><circle class="trk" cx="100" cy="100" r="${R}"/><circle class="fil" cx="100" cy="100" r="${R}" stroke-dasharray="${(circ*frac).toFixed(1)} ${circ.toFixed(1)}" ${frac===0?'stroke-opacity="0"':''}/></svg>
-   <button class="go ${st==='done'?'done':''}">${ic(st==='done'?'check':'play')}<span>${label}</span></button></div>
-   <div class="mins">${minsTxt}</div>
-   ${S.splitLine==='show'?`<div class="split">${split}</div>`:''}</div>`)}
-  ${catching?chg('',`<div class="banner">${ic('info')}<div>${msg}</div></div>`):''}
-  ${sample}
-  ${S.sitePlace==='card'?chg('',sit):''}
-  ${tagp}
- </div>${nav('today')}`;
- const cap={start:'Nothing done yet',mid:'In progress',done:'Budget reached',catch:'Backlog over 3 days of budget'}[st];
- return phone(inner,`Today: ${cap}`);
-}
-
-/* ===== 2. Minutes a day ===== */
-function minCtl(c){
- const m=S.minutes,preset=[5,10,15,20,30];
- let ctl='';
- if(S.minCtl==='chips'){
-  ctl=`<div class="chips">${preset.map(v=>`<button class="chip" data-min="${v}" aria-pressed="${m===v}">${ic('check','ck')}${v}</button>`).join('')}<button class="chip" data-act="minOpen" aria-pressed="${!preset.includes(m)}">${ic('check','ck')}Custom${!preset.includes(m)?' '+m:''}</button></div>`;
- }else if(S.minCtl==='slider'){
-  const p=(m-5)/55*100;
-  ctl=`<div class="slider"><div class="rail"></div><div class="rf" style="width:${p}%"></div><div class="th" style="left:${p}%"></div></div><div class="t-sm" style="display:flex;justify-content:space-between"><span>5</span><span>60</span></div>`;
- }else{
-  ctl=`<div class="stepper"><button class="ib" data-minstep="-5" aria-label="Less">${ic('minus')}</button><span class="v">${m}</span><button class="ib" data-minstep="5" aria-label="More">${ic('plus')}</button></div>`;
- }
- const other=`<div class="lcard"><h3>${sc(C.bn,C.bn.native)} ${C.bn.name}</h3><div class="lrow"><span class="t-body">Minutes a day</span><b class="t-body">15 min</b></div></div>`;
- const main=`<div class="appbar"><button class="ib" aria-label="Back">${ic('back')}</button><span class="ttl">Languages I'm learning</span></div>
- <div class="scroll"><div class="t-lab" style="margin-top:4px">Your courses</div>
- ${chg('upd',`<div class="lcard"><h3>${sc(c,c.native)} ${c.name}</h3>
-  <div class="lrow"><span class="t-body">Minutes a day</span><b class="t-body">${m} min</b></div>
-  ${ctl}
-  <p class="t-sm" style="margin-top:10px">About ${budgetCards(m)} cards a day, at 17.5 seconds a card. Reviews come first; some new words always fit.</p></div>`)}
- ${other}
- <p class="t-sm">Existing learners start at 15 minutes for every course.</p></div>${nav('gear')}`;
- const sheet=`<div class="appbar"><button class="ib" aria-label="Back">${ic('back')}</button><span class="ttl">Languages I'm learning</span></div><div class="scroll"><div class="lcard"><h3>${sc(c,c.native)} ${c.name}</h3><div class="lrow"><span class="t-body">Minutes a day</span><b class="t-body">${m} min</b></div></div></div>${nav('gear')}
- <div class="scrim"></div><div class="sheet chg" style="outline-offset:-3px"><div class="grab"></div><div class="scroll"><h3>Custom minutes a day</h3><p class="t-sm">From 5 to 60 minutes.</p>
-  <div class="stepper"><button class="ib" aria-label="Less">${ic('minus')}</button><span class="v">${m}</span><button class="ib" aria-label="More">${ic('plus')}</button></div>
-  <p class="t-sm" style="text-align:center">About ${budgetCards(m)} cards a day</p>
-  <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px"><button class="btn text">Cancel</button><button class="btn fill">Save</button></div></div></div>`;
- return phone(main,'Languages I’m learning: the course card')+(S.minCtl==='chips'?phone(sheet,'Custom value (when a control has no free value)'):'');
-}
 
 /* ===== 3. Cheatsheets ===== */
 function situations(c){
@@ -450,14 +347,6 @@ function render(){
  root.className=S.hl==='1'?'hl-on':'';
  root.style.cssText=Object.entries(P).map(([k,v])=>`--${k}:${v}`).join(';');
  root.innerHTML=`
- <section class="opt" id="s1"><h2>1. Today: one button (#521), minutes (#485), sampling (#680)</h2>
-  <p class="note">The two starts become one ring that fills toward the daily budget (owner, 2026-10-21: "Ring progress"), with the button inside. The app decides the split of reviews and new words. Known cards come up a few at a time per deck (#680), so reviews stay short.</p>
-  <div class="tw">${seg('tState',[['start','Not started'],['mid','In progress'],['done','Done'],['catch','Catching up']],'State')}${seg('ringMode',[['done','Minutes done'],['queued','Minutes queued']],'Ring and "12 of 15 min" show')}${seg('splitLine',[['show','Show split'],['hide','Hide split']],'Split line')}${seg('backlogMsg',[['short','Short'],['long','With catch-up estimate']],'Catching-up text')}${seg('sampleNote',[['off','Off'],['on','On']],'Sampling note')}${seg('sitePlace',[['card','Situations card here'],['none','Not on Today']],'Situations')}</div>
-  <div class="frames">${today(c)}</div></section>
- <section class="opt" id="s2"><h2>2. Minutes a day, in Languages I'm learning (#485)</h2>
-  <p class="note">Settings part now (owner, 2026-10-23). Default 15 minutes. Cards a day is minutes x 60 / 17.5. The onboarding step waits for #474 and is not drawn.</p>
-  <div class="tw">${seg('minCtl',[['chips','Presets + custom'],['slider','Slider'],['stepper','Stepper']],'Control')}</div>
-  <div class="frames">${minCtl(c)}</div></section>
  <section class="opt" id="s3"><h2>3. Situation cheatsheets and inspect (#724)</h2>
   <p class="note">Sheets point to cards, so nothing is written twice. Each phrase shows script, reading, meaning and audio. Practise this sheet drills its cards. Inspect shows a card in full.</p>
   <div class="tw">${seg('shUnl',[['all','Everything, unlearned marked'],['learned','Learned only']],'Unlearned items')}${seg('inspEntry',[['row','Info icon per row'],['bar','Inspect in the app bar']],'Inspect opens from')}</div>
@@ -479,8 +368,6 @@ document.addEventListener('click',e=>{
  if(gb){S[gb.parentNode.dataset.k]=gb.dataset.v;render();return}
  const b=e.target.closest('[data-sk] button');
  if(b){let v=b.dataset.v;if(v==='true')v=true;if(v==='false')v=false;S[b.parentNode.dataset.sk]=v;if(b.parentNode.dataset.sk==='cShow'&&v!=='lookup')S.cSel=false;render();return}
- const m=e.target.closest('[data-min]');if(m){S.minutes=+m.dataset.min;render();return}
- const st=e.target.closest('[data-minstep]');if(st){S.minutes=Math.max(5,Math.min(60,S.minutes+ +st.dataset.minstep));render();return}
  const fc=e.target.closest('[data-focus]');if(fc){S.fsel.script=fc.dataset.focus;render();return}
  const vk=e.target.closest('[data-vk]');if(vk){S.fsel.layers[vk.dataset.vk]=!S.fsel.layers[vk.dataset.vk];render();return}
  const cw=e.target.closest('[data-act="cword"]');if(cw){S.cSel=!S.cSel;render();return}
@@ -490,7 +377,7 @@ render();
 /* ===== contrast self-check: console only ===== */
 function lum(h){const c=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]}
 function cr(a,b){const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
-const PAIRS=[['body text','onS','s',4.5],['captions, readings','onSv','s',4.5],['captions on cards','onSv','sLow',4.5],['text on cards','onS','sLow',4.5],['text on raised blocks','onS','sHigh',4.5],['captions on raised blocks','onSv','sHigh',4.5],['chip selected, tonal button, audio, Learning, ring button done','onSc','sc',4.5],['filled button, Known, New split, ring button','onP','p',4.5],['banner (Catching up)','onTC','tC',4.5],['text button and info icon on cards','p','sLow',4.5],['icon on raised block','p','sHigh',3],['outline against page','ol','s',3],['outline against card','ol','sLow',3],['ring fill against track','p','sc',3],['ring fill against page','p','s',3],['unselected chip text on page','onSv','s',4.5],['unselected chip text on card','onSv','sLow',4.5],['checkbox border on sheet','onSv','sLow',3],['change tag','onE','E',4.5],['change outline on page','E','s',3],['change outline on card','E','sLow',3],['live dot on card','E','s',3],['sheet title on sheet','onS','sLow',4.5],['own turn bubble','onSc','sc',4.5],['own turn bubble selected word','onP','p',4.5],['selected word against own bubble','p','sc',3]];
+const PAIRS=[['body text','onS','s',4.5],['captions, readings','onSv','s',4.5],['captions on cards','onSv','sLow',4.5],['text on cards','onS','sLow',4.5],['text on raised blocks','onS','sHigh',4.5],['captions on raised blocks','onSv','sHigh',4.5],['chip selected, tonal button, audio, Learning','onSc','sc',4.5],['filled button, Known','onP','p',4.5],['text button and info icon on cards','p','sLow',4.5],['icon on raised block','p','sHigh',3],['outline against page','ol','s',3],['outline against card','ol','sLow',3],['unselected chip text on page','onSv','s',4.5],['unselected chip text on card','onSv','sLow',4.5],['checkbox border on sheet','onSv','sLow',3],['change tag','onE','E',4.5],['change outline on page','E','s',3],['change outline on card','E','sLow',3],['live dot on card','E','s',3],['sheet title on sheet','onS','sLow',4.5],['own turn bubble','onSc','sc',4.5],['own turn bubble selected word','onP','p',4.5],['selected word against own bubble','p','sc',3]];
 window.__contrast=[];
 ['light','dark'].forEach(t=>PAIRS.forEach(([n,f,b,need])=>{const r=cr(PAL[t][f],PAL[t][b]);window.__contrast.push({theme:t,pair:n,fg:f,bg:b,ratio:+r.toFixed(2),need,pass:r>=need})}));
 console.log('contrast',JSON.stringify(window.__contrast));

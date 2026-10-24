@@ -1,0 +1,338 @@
+schema: 1
+id: "zh-tones"
+part: "core"
+kind: "vocab"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+theme: "tones"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "zh-0031"
+    target: "妈"
+    target_scripts: { han_traditional: "媽" }
+    words: ["妈"]
+    reading: "mā"
+    pos: "noun"
+    warning: "pair-ma"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-ma", kind: "pair", ref: "zh-0032" }
+    bases: "self"
+    examples:
+      - target: "妈，你来吗？"
+        reading: "mā, nǐ lái ma?"
+        words: ["妈", "你", "来", "吗"]
+      - target: "我妈妈是老师。"
+        reading: "wǒ māma shì lǎoshī."
+        words: ["我", "妈妈", "是", "老师"]
+        bases:
+          - { word: "妈妈", base: "妈妈", reading: "māma" }
+          - { word: "老师", base: "老师", reading: "lǎoshī" }
+  - id: "zh-0032"
+    target: "麻"
+    words: ["麻"]
+    reading: "má"
+    pos: "noun"
+    warning: "pair-ma"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-ma", kind: "pair", ref: "zh-0031" }
+    bases: "self"
+    examples:
+      - target: "这是麻，不是马。"
+        reading: "zhè shì má, bú shì mǎ."
+        words: ["这", "是", "麻", "不", "是", "马"]
+        bases:
+          - { word: "这", base: "这", reading: "zhè" }
+          - { word: "马", ref: "zh-0033" }
+      - target: "我不买麻。"
+        reading: "wǒ bù mǎi má."
+        words: ["我", "不", "买", "麻"]
+        bases:
+          - { word: "买", ref: "zh-0039" }
+  - id: "zh-0033"
+    target: "马"
+    target_scripts: { han_traditional: "馬" }
+    words: ["马"]
+    reading: "mǎ"
+    pos: "noun"
+    warning: "pair-scold"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-scold", kind: "pair", ref: "zh-0034" }
+    bases: "self"
+    examples:
+      - target: "这是马。"
+        reading: "zhè shì mǎ."
+        words: ["这", "是", "马"]
+        bases:
+          - { word: "这", base: "这", reading: "zhè" }
+      - target: "他不买马。"
+        reading: "tā bù mǎi mǎ."
+        words: ["他", "不", "买", "马"]
+        bases:
+          - { word: "买", ref: "zh-0039" }
+  - id: "zh-0034"
+    target: "骂"
+    target_scripts: { han_traditional: "罵" }
+    words: ["骂"]
+    reading: "mà"
+    pos: "verb"
+    warning: "pair-scold"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-scold", kind: "pair", ref: "zh-0033" }
+    bases: "self"
+    examples:
+      - target: "他骂我。"
+        reading: "tā mà wǒ."
+        words: ["他", "骂", "我"]
+      - target: "妈不骂我。"
+        reading: "mā bú mà wǒ."
+        words: ["妈", "不", "骂", "我"]
+  - id: "zh-0035"
+    target: "八"
+    words: ["八"]
+    reading: "bā"
+    pos: "other"
+    warning: "pair-dad"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-dad", kind: "pair", ref: "zh-0036" }
+    bases: "self"
+    examples:
+      - target: "我们有八个人。"
+        reading: "wǒmen yǒu bā ge rén."
+        words: ["我们", "有", "八", "个", "人"]
+        bases:
+          - { word: "我们", ref: "zh-0157" }
+          - { word: "有", base: "有", reading: "yǒu" }
+          - { word: "个", base: "个", reading: "ge" }
+      - target: "爸，八点来吗？"
+        reading: "bà, bā diǎn lái ma?"
+        words: ["爸", "八点", "来", "吗"]
+        bases:
+          - { word: "八点", base: "八点", reading: "bā diǎn" }
+  - id: "zh-0036"
+    target: "爸"
+    words: ["爸"]
+    reading: "bà"
+    pos: "noun"
+    warning: "pair-dad"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-dad", kind: "pair", ref: "zh-0035" }
+    bases: "self"
+    examples:
+      - target: "爸，你来吗？"
+        reading: "bà, nǐ lái ma?"
+        words: ["爸", "你", "来", "吗"]
+      - target: "爸爸不吃。"
+        reading: "bàba bù chī."
+        words: ["爸爸", "不", "吃"]
+        bases:
+          - { word: "爸爸", base: "爸爸", reading: "bàba" }
+  - id: "zh-0037"
+    target: "白"
+    words: ["白"]
+    reading: "bái"
+    pos: "adj"
+    warning: "pair-white"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-white", kind: "pair", ref: "zh-0038" }
+    antonyms:
+      - { id: "black", word: "黑", reading: "hēi" }
+    bases: "self"
+    examples:
+      - target: "这马很白。"
+        reading: "zhè mǎ hěn bái."
+        words: ["这", "马", "很", "白"]
+        bases:
+          - { word: "这", base: "这", reading: "zhè" }
+      - target: "我买白的。"
+        reading: "wǒ mǎi bái de."
+        words: ["我", "买", "白", "的"]
+        bases:
+          - { word: "买", ref: "zh-0039" }
+          - { word: "的", base: "的", reading: "de" }
+  - id: "zh-0038"
+    target: "百"
+    words: ["百"]
+    reading: "bǎi"
+    pos: "other"
+    warning: "pair-white"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-white", kind: "pair", ref: "zh-0037" }
+    bases: "self"
+    examples:
+      - target: "这里有八百人。"
+        reading: "zhèlǐ yǒu bābǎi rén."
+        words: ["这里", "有", "八百", "人"]
+        bases:
+          - { word: "这里", base: "这里", reading: "zhèlǐ" }
+          - { word: "有", base: "有", reading: "yǒu" }
+          - { word: "八百", base: "八百", reading: "bābǎi" }
+      - target: "我买一百个。"
+        reading: "wǒ mǎi yìbǎi ge."
+        words: ["我", "买", "一百", "个"]
+        bases:
+          - { word: "买", ref: "zh-0039" }
+          - { word: "一百", base: "一百", reading: "yìbǎi" }
+          - { word: "个", base: "个", reading: "ge" }
+  - id: "zh-0039"
+    target: "买"
+    target_scripts: { han_traditional: "買" }
+    words: ["买"]
+    reading: "mǎi"
+    pos: "verb"
+    warning: "pair-buy"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-buy", kind: "pair", ref: "zh-0040" }
+    antonyms:
+      - { id: "sell", ref: "zh-0040" }
+    bases: "self"
+    examples:
+      - target: "妈，我买书。"
+        reading: "mā, wǒ mǎi shū."
+        words: ["妈", "我", "买", "书"]
+        bases:
+          - { word: "书", base: "书", reading: "shū" }
+      - target: "你买吗？"
+        reading: "nǐ mǎi ma?"
+        words: ["你", "买", "吗"]
+  - id: "zh-0040"
+    target: "卖"
+    target_scripts: { han_traditional: "賣" }
+    words: ["卖"]
+    reading: "mài"
+    pos: "verb"
+    warning: "pair-buy"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "pair-buy", kind: "pair", ref: "zh-0039" }
+    bases: "self"
+    examples:
+      - target: "他卖马。"
+        reading: "tā mài mǎ."
+        words: ["他", "卖", "马"]
+      - target: "你卖书吗？"
+        reading: "nǐ mài shū ma?"
+        words: ["你", "卖", "书", "吗"]
+        bases:
+          - { word: "书", base: "书", reading: "shū" }
+  - id: "zh-0041"
+    target: "开"
+    target_scripts: { han_traditional: "開" }
+    words: ["开"]
+    reading: "kāi"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    antonyms:
+      - { id: "close", word: "关", reading: "guān" }
+    bases: "self"
+    examples:
+      - target: "我开门。"
+        reading: "wǒ kāi mén."
+        words: ["我", "开", "门"]
+        bases:
+          - { word: "门", base: "门", reading: "mén" }
+      - target: "店不开门。"
+        reading: "diàn bù kāi mén."
+        words: ["店", "不", "开", "门"]
+        bases:
+          - { word: "店", base: "店", reading: "diàn" }
+          - { word: "门", base: "门", reading: "mén" }
+  - id: "zh-0042"
+    target: "来"
+    target_scripts: { han_traditional: "來" }
+    words: ["来"]
+    reading: "lái"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "他来吗？"
+        reading: "tā lái ma?"
+        words: ["他", "来", "吗"]
+      - target: "我不来。"
+        reading: "wǒ bù lái."
+        words: ["我", "不", "来"]
+  - id: "zh-0043"
+    target: "十"
+    words: ["十"]
+    reading: "shí"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "这里有十个人。"
+        reading: "zhèlǐ yǒu shí ge rén."
+        words: ["这里", "有", "十", "个", "人"]
+        bases:
+          - { word: "这里", base: "这里", reading: "zhèlǐ" }
+          - { word: "有", base: "有", reading: "yǒu" }
+          - { word: "个", base: "个", reading: "ge" }
+      - target: "十点来吗？"
+        reading: "shí diǎn lái ma?"
+        words: ["十点", "来", "吗"]
+        bases:
+          - { word: "十点", base: "十点", reading: "shí diǎn" }
+  - id: "zh-0044"
+    target: "四"
+    words: ["四"]
+    reading: "sì"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "这里有四个人。"
+        reading: "zhèlǐ yǒu sì ge rén."
+        words: ["这里", "有", "四", "个", "人"]
+        bases:
+          - { word: "这里", base: "这里", reading: "zhèlǐ" }
+          - { word: "有", base: "有", reading: "yǒu" }
+          - { word: "个", base: "个", reading: "ge" }
+      - target: "我吃四个。"
+        reading: "wǒ chī sì ge."
+        words: ["我", "吃", "四", "个"]
+        bases:
+          - { word: "个", base: "个", reading: "ge" }
+  - id: "zh-0045"
+    target: "喝"
+    words: ["喝"]
+    reading: "hē"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "你喝吗？"
+        reading: "nǐ hē ma?"
+        words: ["你", "喝", "吗"]
+      - target: "我喝茶。"
+        reading: "wǒ hē chá."
+        words: ["我", "喝", "茶"]
+        bases:
+          - { word: "茶", base: "茶", reading: "chá" }
+  - id: "zh-0046"
+    target: "吃"
+    words: ["吃"]
+    reading: "chī"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "妈，我不吃。"
+        reading: "mā, wǒ bù chī."
+        words: ["妈", "我", "不", "吃"]
+      - target: "你吃吗？"
+        reading: "nǐ chī ma?"
+        words: ["你", "吃", "吗"]

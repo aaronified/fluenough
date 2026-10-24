@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-help-sentences"
+kind: "layer"
+core: "es-help-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: help"
+license: "CC-BY-SA-4.0"
+description: "Six sentences for asking for help and saying what has been lost, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-0881":
+    native: "I need help, please."
+    bases: {"por": "for", "favor": "please"}
+    confusables: {"policia": { why: "Policía is the police, a service, not help itself." }, "emergencia": { why: "Emergencia is an emergency, the situation." }}
+  "es-0882":
+    native: "I call the police."
+    bases: {"a": "to", "la": "the"}
+    confusables: {"ambulancia": { why: "Ambulancia is an ambulance, for a hurt person." }, "bombero": { why: "Bombero is a firefighter, not the police." }}
+  "es-0883":
+    native: "I do not understand, repeat, please."
+    bases: {"por": "for", "favor": "please"}
+    confusables: {"perder": { why: "Perder is to lose, not to repeat." }, "pedir": { why: "Pedir is to order or to ask for, not to repeat." }}
+  "es-0884":
+    native: "There is an accident near the station."
+    bases: {"Hay": "there is", "un": "a", "de": "of", "la": "the"}
+    confusables: {"emergencia": { why: "Emergencia is an emergency, the situation, not the event." }, "urgente": { why: "Urgente is urgent, a feeling, not an event." }}
+  "es-0885":
+    native: "I lose the key and the passport."
+    bases: {"la": "the", "el": "the"}
+    confusables: {"tarjeta": { why: "Tarjeta is a card, such as a bank card." }, "bolso": { why: "Bolso is a bag, where you keep things." }}
+  "es-0886":
+    native: "I have a headache."
+    bases: {"de": "of"}
+    confusables: {"doler": { why: "Doler is to hurt, a verb: me duele." }, "garganta": { why: "Garganta is the throat, a different part of the body." }}

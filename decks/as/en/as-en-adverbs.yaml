@@ -1,0 +1,227 @@
+schema: 1
+id: "as-en-adverbs"
+kind: "layer"
+core: "as-adverbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Adverbs"
+license: "CC-BY-SA-4.0"
+description: "How often, how well, where and when: words that tell how and where things are done. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-2226":
+    native: "very"
+    notes:
+      "n1": "অতি (ôti) means very; বহুত (bohut) and খুব (khub) are also used for very."
+    examples:
+      "ভাত অতি গৰম।": { native: "The rice is very hot.", bases: { "ভাত": "rice; a meal", "গৰম": "hot" } }
+      "সি অতি ভাল।": { native: "He is very good.", bases: { "ভাল": "good", "সি": "he; she" } }
+  "as-2227":
+    native: "much; many; very"
+    notes:
+      "n1": "বহুত (bohut) goes before a verb or an adjective, as in বহুত ভাল (bohut bhāl), very good."
+    examples:
+      "মই বহুত পানী খাওঁ।": { native: "I drink a lot of water.", bases: { "পানী": "water", "খাওঁ": "drink", "মই": "I" } }
+      "তেওঁলোকৰ বহুত বন্ধু আছে।": { native: "They have many friends.", bases: { "তেওঁলোকৰ": "their", "বন্ধু": "friend", "আছে": "have" } }
+  "as-2228":
+    native: "a little"
+    notes:
+      "n1": "অলপ (ôlôp) means a small amount, as in অলপ চাহ (ôlôp sāh), a little tea."
+    examples:
+      "মোক অলপ চাহ দিয়ক।": { native: "Give me a little tea.", bases: { "চাহ": "tea", "দিয়ক": "give, please", "মোক": "me" } }
+      "সি অলপ খায়।": { native: "He eats a little.", bases: { "খায়": "eats", "সি": "he; she" } }
+  "as-2229":
+    native: "well"
+    notes:
+      "n1": "ভালকৈ (bhālôkôi) tells how a thing is done: ভাল (bhāl) is good, and ভালকৈ (bhālôkôi) is well."
+    examples:
+      "সি ভালকৈ পঢ়ে।": { native: "He reads well.", bases: { "পঢ়ে": "reads", "সি": "he; she" } }
+      "তুমি ভালকৈ শুনা।": { native: "You listen well.", bases: { "শুনা": "listen", "তুমি": "you" } }
+  "as-2230":
+    native: "badly"
+    notes:
+      "n1": "বেয়াকৈ (beyākôi) is the opposite of ভালকৈ (bhālôkôi), well."
+    examples:
+      "শিশুটো বেয়াকৈ কান্দে।": { native: "The child cries badly.", bases: { "শিশুটো": "the child", "কান্দে": "cries" } }
+      "সি বেয়াকৈ খেলে।": { native: "He plays badly.", bases: { "খেলে": "plays", "সি": "he; she" } }
+  "as-2231":
+    native: "often"
+    notes:
+      "n1": "প্ৰায়ই (prāyoi) is used for things that happen again and again."
+    examples:
+      "মই প্ৰায়ই যাওঁ।": { native: "I often go.", bases: { "যাওঁ": "go", "মই": "I" } }
+      "তেওঁ প্ৰায়ই আহে।": { native: "He often comes.", bases: { "আহে": "comes", "তেওঁ": "he; she (polite)" } }
+  "as-2232":
+    native: "before; earlier"
+    notes:
+      "n1": "আগতে (āgôte) means earlier than now, in the past."
+    examples:
+      "মই আগতে ইয়াত আছিলোঁ।": { native: "I was here before.", bases: { "আছিলোঁ": "was", "মই": "I" } }
+      "এইটো আগতে আছিল।": { native: "This was before.", bases: { "আছিল": "was", "এইটো": "this" } }
+  "as-2233":
+    native: "later; after"
+    notes:
+      "n1": "পাছত (pāsôt) means at a time after now, as in পাছত যাম (pāsôt zām), I will go later."
+    examples:
+      "মই পাছত যাম।": { native: "I will go later.", bases: { "যাম": "will go", "মই": "I" } }
+      "তেওঁ পাছত আহিব।": { native: "He will come later.", bases: { "আহিব": "will come", "তেওঁ": "he; she (polite)" } }
+  "as-2234":
+    native: "far"
+    notes:
+      "n1": "দূৰত (durôt) is the opposite of ওচৰত (usôrôt), near."
+    examples:
+      "স্কুল দূৰত।": { native: "The school is far.", bases: { "স্কুল": "school" } }
+      "মোৰ ঘৰ দূৰত।": { native: "My house is far.", bases: { "ঘৰ": "house", "মোৰ": "my" } }
+  "as-2235":
+    native: "above; on top of"
+    notes:
+      "n1": "ওপৰত (upôrôt) is used with a noun before it, as in টেবুলৰ ওপৰত (tebulôr upôrôt), on the table."
+    examples:
+      "কিতাপ টেবুলৰ ওপৰত।": { native: "The book is on the table.", bases: { "কিতাপ": "book", "টেবুলৰ": "of the table" } }
+      "চন্দ্ৰ আকাশৰ ওপৰত।": { native: "The moon is above the sky.", bases: { "চন্দ্ৰ": "moon", "আকাশৰ": "of the sky" } }
+  "as-2236":
+    native: "below; under"
+    notes:
+      "n1": "তলত (tôlôt) is the opposite of ওপৰত (upôrôt), above."
+    examples:
+      "চকী তলত।": { native: "The chair is below.", bases: { "চকী": "chair" } }
+      "কলম তলত আছে।": { native: "The pen is below.", bases: { "কলম": "pen", "আছে": "is" } }
+  "as-2237":
+    native: "inside"
+    notes:
+      "n1": "ভিতৰত (bhitôrôt) is the opposite of বাহিৰত (bāhirôt), outside."
+    examples:
+      "ঘৰৰ ভিতৰত।": { native: "Inside the house.", bases: { "ঘৰৰ": "of the house" } }
+      "মোৰ কিতাপ বেগৰ ভিতৰত।": { native: "My book is inside the bag.", bases: { "কিতাপ": "book", "বেগৰ": "of the bag", "মোৰ": "my" } }
+  "as-2238":
+    native: "outside"
+    notes:
+      "n1": "বাহিৰত (bāhirôt) is the opposite of ভিতৰত (bhitôrôt), inside."
+    examples:
+      "ঘৰৰ বাহিৰত।": { native: "Outside the house.", bases: { "ঘৰৰ": "of the house" } }
+      "শিশুটো বাহিৰত খেলে।": { native: "The child plays outside.", bases: { "শিশুটো": "the child", "খেলে": "plays" } }
+  "as-2239":
+    native: "quickly; early"
+    notes:
+      "n1": "সোনকালে (sunôkāle) is used for doing something soon or fast."
+    examples:
+      "সোনকালে আহা।": { native: "Come quickly.", bases: { "আহা": "come" } }
+      "সি সোনকালে খায়।": { native: "He eats quickly.", bases: { "খায়": "eats", "সি": "he; she" } }
+  "as-2240":
+    native: "slowly"
+    notes:
+      "n1": "লাহে (lāhe) is used in লাহে লাহে (lāhe lāhe), slowly, slowly."
+    examples:
+      "লাহে লাহে কওক।": { native: "Please say it slowly.", bases: { "কওক": "say, please" } }
+      "তেওঁ লাহে চলে।": { native: "He walks slowly.", bases: { "চলে": "walks", "তেওঁ": "he; she (polite)" } }
+  "as-2241":
+    native: "completely"
+    notes:
+      "n1": "একেবাৰে (ekebāre) stresses that something is complete or total."
+    examples:
+      "ঘৰটো একেবাৰে পৰিষ্কাৰ।": { native: "The house is completely clean.", bases: { "ঘৰটো": "the house", "পৰিষ্কাৰ": "clean" } }
+      "সি একেবাৰে ভাল।": { native: "He is completely well.", bases: { "ভাল": "well", "সি": "he; she" } }
+  "as-2242":
+    native: "almost"
+    notes:
+      "n1": "প্ৰায় (prāy) means nearly, not quite."
+    examples:
+      "প্ৰায় দহ বাজিল।": { native: "It is almost ten o'clock.", bases: { "বাজিল": "struck" } }
+      "মই প্ৰায় খালোঁ।": { native: "I have almost eaten.", bases: { "খালোঁ": "ate", "মই": "I" } }
+  "as-2243":
+    native: "only"
+    notes:
+      "n1": "মাত্ৰ (mātr) means no more than the thing named."
+    examples:
+      "মাত্ৰ এটা কিতাপ।": { native: "Only one book.", bases: { "এটা": "one", "কিতাপ": "book" } }
+      "মই মাত্ৰ ইয়াত আছোঁ।": { native: "I am only here.", bases: { "আছোঁ": "am", "মই": "I" } }
+  "as-2244":
+    native: "already"
+    notes:
+      "n1": "ইতিমধ্যে (itimôdhye) says that something has happened before the time you mean."
+    examples:
+      "সি ইতিমধ্যে আহিছে।": { native: "He has already come.", bases: { "আহিছে": "has come", "সি": "he; she" } }
+      "মই ইতিমধ্যে খালোঁ।": { native: "I have already eaten.", bases: { "খালোঁ": "ate", "মই": "I" } }
+  "as-2245":
+    native: "surely; certainly"
+    notes:
+      "n1": "নিশ্চয় (nixsôy) says that you are sure of something."
+    examples:
+      "তেওঁ নিশ্চয় আহিব।": { native: "He will surely come.", bases: { "আহিব": "will come", "তেওঁ": "he; she (polite)" } }
+      "এইটো নিশ্চয় সঁচা।": { native: "This is surely true.", bases: { "সঁচা": "true", "এইটো": "this" } }
+  "as-2246":
+    native: "maybe; perhaps"
+    notes:
+      "n1": "হয়তো (hôyôtu) says that something may or may not be so."
+    examples:
+      "হয়তো তেওঁ আহিব।": { native: "Maybe he will come.", bases: { "আহিব": "will come", "তেওঁ": "he; she (polite)" } }
+      "হয়তো মই কালি যাম।": { native: "Maybe I will go tomorrow.", bases: { "যাম": "will go", "মই": "I" } }
+  "as-2247":
+    native: "again"
+    notes:
+      "n1": "আকৌ (ākôu) means one more time."
+    examples:
+      "মই আকৌ যাওঁ।": { native: "I go again.", bases: { "যাওঁ": "go", "মই": "I" } }
+      "তেওঁ আকৌ আহিল।": { native: "He came again.", bases: { "আহিল": "came", "তেওঁ": "he; she (polite)" } }
+  "as-2248":
+    native: "more"
+    notes:
+      "n1": "বেছি (besi) means a larger amount; its opposite is কম (kôm), less."
+    examples:
+      "মোক বেছি চাহ দিয়ক।": { native: "Give me more tea.", bases: { "চাহ": "tea", "দিয়ক": "give, please", "মোক": "me" } }
+      "সি বেছি খায়।": { native: "He eats more.", bases: { "খায়": "eats", "সি": "he; she" } }
+  "as-2249":
+    native: "all"
+    notes:
+      "n1": "সকলো (sôkôlu) means every one of a group, or the whole of a thing."
+    examples:
+      "সকলো লোক আহিছে।": { native: "All the people have come.", bases: { "লোক": "people", "আহিছে": "have come" } }
+      "সকলো কিতাপ ইয়াত।": { native: "All the books are here.", bases: { "কিতাপ": "book" } }
+  "as-2250":
+    native: "some; a little"
+    notes:
+      "n1": "কিছু (kisu) means some of a thing, not all of it."
+    examples:
+      "মোক কিছু চাহ দিয়ক।": { native: "Give me some tea.", bases: { "চাহ": "tea", "দিয়ক": "give, please", "মোক": "me" } }
+      "মই কিছু জানোঁ।": { native: "I know some.", bases: { "জানোঁ": "know", "মই": "I" } }
+  "as-2251":
+    native: "truly; really"
+    notes:
+      "n1": "সঁচাকৈ (sôm̐sākôi) says that a thing is true or real."
+    examples:
+      "সি সঁচাকৈ ভাল।": { native: "He is truly good.", bases: { "ভাল": "good", "সি": "he; she" } }
+      "মই সঁচাকৈ বুজোঁ।": { native: "I truly understand.", bases: { "বুজোঁ": "understand", "মই": "I" } }
+  "as-2252":
+    native: "so much; so"
+    notes:
+      "n1": "ইমান (imān) is used for an amount you can see or feel: ইমান গৰম (imān gôrôm), so hot."
+    examples:
+      "ইমান গৰম!": { native: "So hot!", bases: { "গৰম": "hot" } }
+      "ইমান বহুত!": { native: "So many!", bases: { "বহুত": "many" } }
+  "as-2253":
+    native: "that much; that"
+    notes:
+      "n1": "সিমান (simān) is used for an amount that is away from you: ইমান (imān) is near."
+    examples:
+      "সিমান ভাল।": { native: "That good.", bases: { "ভাল": "good" } }
+      "মোৰ সিমান টকা নাই।": { native: "I do not have that much money.", bases: { "টকা": "money", "নাই": "not", "মোৰ": "my" } }
+  "as-2254":
+    native: "ever; never"
+    notes:
+      "n1": "কেতিয়াও (ketiyāu) with a negative verb means never."
+    examples:
+      "মই কেতিয়াও নাখাওঁ।": { native: "I never eat.", bases: { "নাখাওঁ": "do not eat", "মই": "I" } }
+      "তেওঁ কেতিয়াও মিছা নকয়।": { native: "He never tells a lie.", bases: { "মিছা": "a lie", "নকয়": "does not say", "তেওঁ": "he; she (polite)" } }
+  "as-2255":
+    native: "still; yet"
+    notes:
+      "n1": "এতিয়াও (etiyāu) means up to now, the thing has not changed."
+    examples:
+      "মই এতিয়াও ইয়াতে আছোঁ।": { native: "I am still here.", bases: { "ইয়াতে": "here", "আছোঁ": "am", "মই": "I" } }
+      "সি এতিয়াও খায়।": { native: "He is still eating.", bases: { "খায়": "eats", "সি": "he; she" } }
+  "as-2256":
+    native: "very; quite"
+    notes:
+      "n1": "খুব (khub) is the everyday word for very."
+    examples:
+      "খুব ভাল।": { native: "Very good.", bases: { "ভাল": "good" } }
+      "খুব গৰম।": { native: "Very hot.", bases: { "গৰম": "hot" } }

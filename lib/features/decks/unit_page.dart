@@ -6,9 +6,12 @@ import '../../app/deck_catalog.dart';
 import '../../app/routes.dart';
 import '../../app/shell_tab.dart';
 import '../../app/session.dart';
+import '../../app/unlocks.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/reading.dart' show QuestionCard;
+import '../../core/progress/mastery.dart' show kKnownRecall;
+import '../../core/progress/unlocks.dart';
 import '../../core/scheduling/lesson.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
@@ -27,6 +30,7 @@ import 'path_model.dart';
 import 'path_parts.dart';
 import 'thanks_notice.dart';
 import 'unreviewed_notice.dart';
+import 'why_closed_sheet.dart';
 import 'word_mastery.dart';
 import 'word_sheet.dart';
 
@@ -36,10 +40,10 @@ import 'word_sheet.dart';
 /// unit teaches them, and its decks. "Continue" reviews what is due in it,
 /// or else teaches its next words.
 ///
-/// Rules and sentences are as far as today's decks give them: a rule is a
-/// grammar or rules deck's table, and a sentence opens when a lesson
-/// teaches it. The B1 format's rule cards and unlocking
-/// (`words-rules-sentences.md`) change what they count, not this screen.
+/// The phrasebook is listed first, never held back. A rule is a grammar or
+/// rules deck's table; a sentence is open once it was taught or every word
+/// and rule in it is known ([Unlocks.isOffered], ADR-0046), and until then it
+/// is greyed with what it waits for, and a tap says why.
 ///
 /// Review, at the top end, is for speakers who check decks: with "Review
 /// decks" on in Settings it opens the unit's review (`ReviewPage`), and
@@ -166,7 +170,16 @@ class _UnitPageState extends State<UnitPage> {
       ]),
       builder: (context, _) {
         final content = UnitContent(decks);
-        final answers = RecentAnswers(state.progress.log);
+        final answers = state.recentAnswers;
+        final gate = state.unlocks;
+        final words = <Card>[
+          for (final card in content.words)
+            if (!card.phrasebook) card,
+        ];
+        final sentences = <Card>[
+          for (final card in content.sentences)
+            if (!card.phrasebook) card,
+        ];
         final large = MediaQuery.textScalerOf(context).scale(1) > 1.5;
         final ids = <String>{for (final e in decks) e.id};
         final due = state.buildSession(DrillRequest(deckIds: ids)).due.length;
@@ -246,14 +259,44 @@ class _UnitPageState extends State<UnitPage> {
                 decks: decks,
               ),
               const SizedBox(height: 20),
-              _Tiles(content: content, answers: answers, state: state),
-              if (content.words.isNotEmpty) ...<Widget>[
+              _Tiles(
+                content: content,
+                words: words,
+                sentences: sentences,
+                answers: answers,
+                gate: gate,
+                state: state,
+              ),
+              if (content.phrasebook.isNotEmpty) ...<Widget>[
+                const SizedBox(height: 24),
+                _SectionHeading(title: l10n.unitSectionPhrasebook(++section)),
+                const SizedBox(height: 10),
+                GroupedList(
+                  outerRadius: AppRadii.card,
+                  gap: 4,
+                  children: <Widget>[
+                    for (final card in content.phrasebook)
+                      CardRow(
+                        card: card,
+                        language: language,
+                        mastery: answers.of(card.id),
+                        phrasebook: true,
+                        onTap: () => showWordSheet(
+                          context,
+                          card: card,
+                          language: language,
+                        ),
+                      ),
+                  ],
+                ),
+              ],
+              if (words.isNotEmpty) ...<Widget>[
                 const SizedBox(height: 24),
                 _SectionHeading(
                   title: content.isScript
                       ? l10n.unitSectionLetters(++section)
                       : l10n.unitSectionWords(++section),
-                  aside: l10n.unitKnownMeans((knownShare * 100).round()),
+                  aside: l10n.unitKnownMeans((kKnownRecall * 100).round()),
                 ),
                 const SizedBox(height: 10),
                 GroupedList(
@@ -261,9 +304,7 @@ class _UnitPageState extends State<UnitPage> {
                   gap: 4,
                   children: <Widget>[
                     for (final card
-                        in _allWords
-                            ? content.words
-                            : content.words.take(_firstWords))
+                        in _allWords ? words : words.take(_firstWords))
                       CardRow(
                         card: card,
                         language: language,
@@ -276,7 +317,7 @@ class _UnitPageState extends State<UnitPage> {
                       ),
                   ],
                 ),
-                if (content.words.length > _firstWords)
+                if (words.length > _firstWords)
                   Align(
                     alignment: AlignmentDirectional.centerStart,
                     child: TextButton(
@@ -284,7 +325,7 @@ class _UnitPageState extends State<UnitPage> {
                       child: Text(
                         _allWords
                             ? l10n.unitShowFewer
-                            : l10n.unitShowAll(content.words.length),
+                            : l10n.unitShowAll(words.length),
                       ),
                     ),
                   ),
@@ -296,6 +337,8 @@ class _UnitPageState extends State<UnitPage> {
                 for (final rule in content.rules) ...<Widget>[
                   _RuleCard(
                     entry: rule,
+                    answers: answers,
+                    gate: gate,
                     mastery: answers.ofAll(rule.cards.map((c) => c.id)),
                     open: _openTables.contains(rule.id),
                     onToggle: () => setState(() {
@@ -307,13 +350,13 @@ class _UnitPageState extends State<UnitPage> {
                   const SizedBox(height: 8),
                 ],
               ],
-              if (content.sentences.isNotEmpty) ...<Widget>[
+              if (sentences.isNotEmpty) ...<Widget>[
                 const SizedBox(height: 24),
                 _SectionHeading(
                   title: l10n.unitSectionSentences(++section),
                   aside: l10n.unitSentencesCount(
-                    content.sentences.where(state.isTaught).length,
-                    content.sentences.length,
+                    sentences.where(gate.isOffered).length,
+                    sentences.length,
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -321,18 +364,34 @@ class _UnitPageState extends State<UnitPage> {
                   outerRadius: AppRadii.card,
                   gap: 4,
                   children: <Widget>[
-                    for (final card in content.sentences)
-                      CardRow(
-                        card: card,
-                        language: language,
-                        mastery: answers.of(card.id),
-                        notOpen: !state.isTaught(card),
-                        onTap: () => showWordSheet(
-                          context,
+                    for (final card in sentences)
+                      if (gate.isOffered(card))
+                        CardRow(
                           card: card,
                           language: language,
+                          mastery: answers.of(card.id),
+                          notOpen: !state.isTaught(card),
+                          onTap: () => showWordSheet(
+                            context,
+                            card: card,
+                            language: language,
+                          ),
+                        )
+                      else
+                        CardRow(
+                          card: card,
+                          language: language,
+                          mastery: answers.of(card.id),
+                          waiting: <String>[
+                            for (final need in gate.waitingFor(card))
+                              state.needName(need),
+                          ],
+                          onTap: () => showWhyClosedSheet(
+                            context,
+                            card: card,
+                            language: language,
+                          ),
                         ),
-                      ),
                   ],
                 ),
                 const SizedBox(height: 8),
@@ -470,16 +529,24 @@ class _Header extends StatelessWidget {
 }
 
 /// Words known, rules known and sentences open, each where the unit has
-/// some, abreast.
+/// some, abreast. A rule of a rules deck counts by its own answers, a
+/// grammar deck's table as one; a sentence is open once taught or once its
+/// words and rules are known ([Unlocks.isOffered]).
 class _Tiles extends StatelessWidget {
   const _Tiles({
     required this.content,
+    required this.words,
+    required this.sentences,
     required this.answers,
+    required this.gate,
     required this.state,
   });
 
   final UnitContent content;
+  final List<Card> words;
+  final List<Card> sentences;
   final RecentAnswers answers;
+  final Unlocks gate;
   final AppState state;
 
   @override
@@ -489,31 +556,38 @@ class _Tiles extends StatelessWidget {
       formatCount(context, count),
       formatCount(context, total),
     );
-    final known = content.words
+    final known = words
         .where((c) => answers.of(c.id).level == MasteryLevel.known)
         .length;
-    final rules = content.rules
-        .where(
-          (r) =>
-              answers.ofAll(r.cards.map((c) => c.id)).level ==
-              MasteryLevel.known,
-        )
-        .length;
-    final open = content.sentences.where(state.isTaught).length;
+    var rulesTotal = 0;
+    var rulesKnown = 0;
+    for (final entry in content.rules) {
+      if (entry.deck.kind == DeckKind.rules && entry.deck.rules.isNotEmpty) {
+        for (final rule in entry.deck.rules) {
+          rulesTotal++;
+          if (gate.isRuleKnown(rule.id)) rulesKnown++;
+        }
+      } else {
+        rulesTotal++;
+        final standing = answers.ofAll(entry.cards.map((c) => c.id));
+        if (standing.level == MasteryLevel.known) rulesKnown++;
+      }
+    }
+    final open = sentences.where(gate.isOffered).length;
     final tiles = <Widget>[
-      if (content.words.isNotEmpty)
+      if (words.isNotEmpty)
         StatTile(
-          value: fraction(known, content.words.length),
+          value: fraction(known, words.length),
           label: content.isScript ? l10n.unitLettersKnown : l10n.unitWordsKnown,
         ),
-      if (content.rules.isNotEmpty)
+      if (rulesTotal > 0)
         StatTile(
-          value: fraction(rules, content.rules.length),
+          value: fraction(rulesKnown, rulesTotal),
           label: l10n.unitRulesKnown,
         ),
-      if (content.sentences.isNotEmpty)
+      if (sentences.isNotEmpty)
         StatTile(
-          value: fraction(open, content.sentences.length),
+          value: fraction(open, sentences.length),
           label: l10n.unitSentencesOpen,
         ),
     ];
@@ -569,7 +643,9 @@ class _SectionHeading extends StatelessWidget {
 }
 
 /// A word or a sentence: the target, its meaning and reading, and where it
-/// stands. Tapping it opens its card.
+/// stands. Tapping it opens its card. A phrasebook chunk is marked as one
+/// instead of where it stands. A sentence not open yet, with [waiting] what
+/// it waits for, is greyed with a lock, and tapping it says why.
 class CardRow extends StatelessWidget {
   const CardRow({
     super.key,
@@ -578,6 +654,8 @@ class CardRow extends StatelessWidget {
     required this.mastery,
     required this.onTap,
     this.notOpen = false,
+    this.phrasebook = false,
+    this.waiting,
   });
 
   final Card card;
@@ -586,6 +664,13 @@ class CardRow extends StatelessWidget {
   final VoidCallback onTap;
   final bool notOpen;
 
+  /// Whether it is a phrasebook chunk.
+  final bool phrasebook;
+
+  /// What a closed sentence waits for, a word or a rule each; null for any
+  /// other row.
+  final List<String>? waiting;
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -593,11 +678,14 @@ class CardRow extends StatelessWidget {
     final scheme = theme.colorScheme;
     final reading = card.reading;
     final sentence = isSentence(card);
+    final closed = waiting != null;
+    final muted = scheme.onSurfaceVariant;
     final target = TargetText(
       card.target,
       language: language,
       fontSize: sentence ? 17 : 20,
       textAlign: TextAlign.start,
+      color: closed ? muted : null,
       card: card,
     );
     final meaning = Column(
@@ -607,19 +695,39 @@ class CardRow extends StatelessWidget {
           card.native,
           style: theme.textTheme.bodyMedium!.copyWith(
             fontWeight: FontWeight.w700,
+            color: closed ? muted : null,
           ),
         ),
         if (reading != null)
           Text(
             reading,
-            style: theme.textTheme.bodySmall!.copyWith(
-              color: scheme.onSurfaceVariant,
+            style: theme.textTheme.bodySmall!.copyWith(color: muted),
+          ),
+        if (closed)
+          Padding(
+            padding: const EdgeInsetsDirectional.only(top: 2),
+            child: Text(
+              l10n.unitWaitingFor(waiting!.join(', ')),
+              style: theme.textTheme.bodySmall!.copyWith(color: muted),
             ),
           ),
       ],
     );
+    final Widget status = closed
+        ? Icon(
+            Icons.lock_outline,
+            color: muted,
+            semanticLabel: l10n.unitNotOpen,
+          )
+        : phrasebook
+        ? Pill(
+            text: l10n.unitPhrasebook,
+            background: scheme.tertiaryContainer,
+            foreground: scheme.onTertiaryContainer,
+          )
+        : MasteryChip(mastery: mastery, notOpen: notOpen);
     return Semantics(
-      hint: l10n.unitOpenWord,
+      hint: closed ? l10n.unitWhyClosedHint : l10n.unitOpenWord,
       child: MergeSemantics(
         child: InkWell(
           onTap: onTap,
@@ -643,7 +751,7 @@ class CardRow extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(width: 8),
-                        MasteryChip(mastery: mastery, notOpen: notOpen),
+                        status,
                       ],
                     )
                   : Row(
@@ -652,7 +760,7 @@ class CardRow extends StatelessWidget {
                         const SizedBox(width: 10),
                         Expanded(flex: 5, child: meaning),
                         const SizedBox(width: 8),
-                        MasteryChip(mastery: mastery),
+                        status,
                       ],
                     ),
             ),
@@ -668,12 +776,16 @@ class CardRow extends StatelessWidget {
 class _RuleCard extends StatelessWidget {
   const _RuleCard({
     required this.entry,
+    required this.answers,
+    required this.gate,
     required this.mastery,
     required this.open,
     required this.onToggle,
   });
 
   final DeckEntry entry;
+  final RecentAnswers answers;
+  final Unlocks gate;
   final Mastery mastery;
   final bool open;
   final VoidCallback onToggle;
@@ -726,10 +838,12 @@ class _RuleCard extends StatelessWidget {
           ),
           if (open) ...<Widget>[
             const SizedBox(height: 12),
-            _RuleTable(entry: entry),
+            _RuleTable(entry: entry, answers: answers, gate: gate),
             const SizedBox(height: 8),
             Text(
-              l10n.unitRuleCells,
+              entry.deck.kind == DeckKind.rules
+                  ? l10n.unitRuleGrows
+                  : l10n.unitRuleCells,
               style: theme.textTheme.bodySmall!.copyWith(
                 color: scheme.onSurfaceVariant,
               ),
@@ -754,11 +868,20 @@ class _RuleCard extends StatelessWidget {
 /// A rule's table: a row per word, a column per form, each cell its form
 /// and reading. Scrolls sideways when it is wider than the screen. A
 /// grammar deck's comes from its pattern; a rules deck's from its cells,
-/// so that it shows the rows its learners are taught (ADR-0036).
+/// so that it shows the rows its learners are taught (ADR-0036): only the
+/// words the learner knows or has been asked, each cell marked known,
+/// learning or not asked yet (#417, owner, 2026-10-23: "the rule table
+/// hides untaught words").
 class _RuleTable extends StatelessWidget {
-  const _RuleTable({required this.entry});
+  const _RuleTable({
+    required this.entry,
+    required this.answers,
+    required this.gate,
+  });
 
   final DeckEntry entry;
+  final RecentAnswers answers;
+  final Unlocks gate;
 
   @override
   Widget build(BuildContext context) {
@@ -766,7 +889,7 @@ class _RuleTable extends StatelessWidget {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final language = entry.language;
-    final (heads, rows) = _rows(entry);
+    final (heads, rows) = _rows(entry, gate, answers);
     Widget cell(Widget child, {bool head = false}) => Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(10, 8, 10, 8),
       child: DefaultTextStyle.merge(
@@ -779,24 +902,73 @@ class _RuleTable extends StatelessWidget {
         child: child,
       ),
     );
-    Widget form(String text, String? reading) => Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        TargetText(
-          text,
-          language: language,
-          fontSize: 16,
-          textAlign: TextAlign.start,
-        ),
-        if (reading != null)
-          Text(
-            reading,
-            style: theme.textTheme.bodySmall!.copyWith(
-              color: scheme.onSurfaceVariant,
-            ),
+    Widget form(String text, String? reading, {String? cardId}) {
+      final level = cardId == null ? null : answers.of(cardId).level;
+      final shown = Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          TargetText(
+            text,
+            language: language,
+            fontSize: 16,
+            textAlign: TextAlign.start,
+            color: switch (level) {
+              MasteryLevel.known => scheme.onPrimaryContainer,
+              MasteryLevel.learning => scheme.onSecondaryContainer,
+              _ => null,
+            },
           ),
-      ],
-    );
+          if (reading != null)
+            Text(
+              reading,
+              style: theme.textTheme.bodySmall!.copyWith(
+                color: switch (level) {
+                  MasteryLevel.known => scheme.onPrimaryContainer,
+                  MasteryLevel.learning => scheme.onSecondaryContainer,
+                  _ => scheme.onSurfaceVariant,
+                },
+              ),
+            ),
+          if (level != null)
+            Text(
+              switch (level) {
+                MasteryLevel.known => l10n.unitCellKnown,
+                MasteryLevel.learning => l10n.unitCellLearning,
+                MasteryLevel.fresh => l10n.unitCellNotAsked,
+              },
+              style: theme.textTheme.labelSmall!.copyWith(
+                color: switch (level) {
+                  MasteryLevel.known => scheme.onPrimaryContainer,
+                  MasteryLevel.learning => scheme.onSecondaryContainer,
+                  MasteryLevel.fresh => scheme.onSurfaceVariant,
+                },
+              ),
+            ),
+        ],
+      );
+      if (level == null) return shown;
+      return DecoratedBox(
+        decoration: BoxDecoration(
+          color: switch (level) {
+            MasteryLevel.known => scheme.primaryContainer,
+            MasteryLevel.learning => scheme.secondaryContainer,
+            MasteryLevel.fresh => null,
+          },
+          border: level == MasteryLevel.fresh
+              ? Border.all(color: scheme.outline)
+              : null,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Padding(
+          padding: const EdgeInsetsDirectional.symmetric(
+            horizontal: 8,
+            vertical: 4,
+          ),
+          child: shown,
+        ),
+      );
+    }
+
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Table(
@@ -816,7 +988,11 @@ class _RuleTable extends StatelessWidget {
               children: <Widget>[
                 cell(form(word.$1, word.$2)),
                 for (final f in forms)
-                  cell(f == null ? const SizedBox.shrink() : form(f.$1, f.$2)),
+                  cell(
+                    f == null
+                        ? const SizedBox.shrink()
+                        : form(f.$1, f.$2, cardId: f.$3),
+                  ),
               ],
             ),
         ],
@@ -826,7 +1002,11 @@ class _RuleTable extends StatelessWidget {
 
   /// [entry]'s column heads, and its rows: each word, and its form in each
   /// column, or null, each with its reading.
-  static (List<String>, List<(_Form, List<_Form?>)>) _rows(DeckEntry entry) {
+  static (List<String>, List<(_Form, List<_Form?>)>) _rows(
+    DeckEntry entry,
+    Unlocks gate,
+    RecentAnswers answers,
+  ) {
     final pattern = entry.deck.pattern;
     if (pattern != null) {
       return (
@@ -834,11 +1014,11 @@ class _RuleTable extends StatelessWidget {
         <(_Form, List<_Form?>)>[
           for (final row in pattern.entries)
             (
-              (row.lemma, row.reading),
+              (row.lemma, row.reading, null),
               <_Form?>[
                 for (final slot in pattern.slots)
                   if (row.forms[slot] case final f?)
-                    (f, row.readings[slot]?.first)
+                    (f, row.readings[slot]?.first, null)
                   else
                     null,
               ],
@@ -855,7 +1035,10 @@ class _RuleTable extends StatelessWidget {
     for (final card in entry.cards) {
       final rule = card.rule;
       if (rule == null) continue;
-      words.putIfAbsent(rule.word, () => (rule.wordTarget, rule.wordReading));
+      words.putIfAbsent(
+        rule.word,
+        () => (rule.wordTarget, rule.wordReading, null),
+      );
       (cells[rule.word] ??= <String, Card>{})[rule.slot] = card;
       used.add(rule.slot);
     }
@@ -867,16 +1050,21 @@ class _RuleTable extends StatelessWidget {
       <String>[for (final slot in slots) _head(table?.labels[slot] ?? slot)],
       <(_Form, List<_Form?>)>[
         for (final MapEntry(key: word, value: form) in words.entries)
-          (
-            form,
-            <_Form?>[
-              for (final slot in slots)
-                if (cells[word]![slot] case final card?)
-                  (card.target, card.reading)
-                else
-                  null,
-            ],
-          ),
+          // Only a word the learner knows, or has been asked a cell of.
+          if (gate.isWordKnown(word) ||
+              cells[word]!.values.any(
+                (c) => answers.of(c.id).level != MasteryLevel.fresh,
+              ))
+            (
+              form,
+              <_Form?>[
+                for (final slot in slots)
+                  if (cells[word]![slot] case final card?)
+                    (card.target, card.reading, card.id)
+                  else
+                    null,
+              ],
+            ),
       ],
     );
   }
@@ -894,8 +1082,8 @@ class _RuleTable extends StatelessWidget {
   }
 }
 
-/// A form and its reading, if it has one.
-typedef _Form = (String, String?);
+/// A form, its reading if it has one, and the card of a rules table's cell.
+typedef _Form = (String, String?, String?);
 
 /// "Continue · 5 new, 4 due", pinned under the scrolling content.
 class _ContinueBar extends StatelessWidget {

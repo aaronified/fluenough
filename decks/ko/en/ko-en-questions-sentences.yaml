@@ -1,0 +1,58 @@
+schema: 1
+id: "ko-en-questions-sentences"
+kind: "layer"
+core: "ko-questions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Questions in sentences"
+license: "CC-BY-SA-4.0"
+description: "Six questions built with the question words, to put in order, each in the polite -요 (-yo) style. Not yet checked by a Korean speaker: please report any mistake."
+tags: ["beginner", "unreviewed"]
+"cards":
+  "ko-0076":
+    "native": "Where is the teacher?"
+    "confusables":
+      "w1":
+        "why": "누구 (nugu) asks who, not where."
+      "w2":
+        "why": "언제 (eonje) asks when, not where."
+  "ko-0077":
+    "native": "How much is the water?"
+    "confusables":
+      "w1":
+        "why": "몇 (myeot) asks how many, not how much money."
+      "w2":
+        "why": "뭐 (mwo) asks what, not the price."
+  "ko-0078":
+    "native": "How is this coffee?"
+    "confusables":
+      "w1":
+        "why": "어떤 (eotteon) asks what kind and needs a noun after it."
+      "w2":
+        "why": "어떻게 (eotteoke) asks how something is done, not how it is."
+  "ko-0079":
+    "native": "Which student is the teacher?"
+    "confusables":
+      "w1":
+        "why": "누구 (nugu) asks who, not which one."
+      "w2":
+        "why": "무슨 (museun) asks what, not which one of a group."
+  "ko-0080":
+    "native": "Why don't you drink coffee?"
+    "bases":
+      "안": "not (before a verb)"
+      "마셔요": "to drink (polite)"
+    "confusables":
+      "w1":
+        "why": "어떻게 (eotteoke) asks how, not why."
+      "w2":
+        "why": "언제 (eonje) asks when, not why."
+  "ko-0081":
+    "native": "When do you go to Korea?"
+    "bases":
+      "한국에": "Korea, with 에 (e), 'to'"
+      "가요": "to go (polite)"
+    "confusables":
+      "w1":
+        "why": "어디 (eodi) asks where, not when."
+      "w2":
+        "why": "왜 (wae) asks why, not when."

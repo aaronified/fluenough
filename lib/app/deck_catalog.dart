@@ -18,7 +18,7 @@ import '../core/data/number_rules_parser.dart';
 import '../core/data/pattern_expander.dart';
 import '../core/data/rule_expander.dart';
 import '../core/data/themes.dart';
-import '../core/decks/ipa_course.dart';
+import '../core/decks/adult_gate.dart';
 import '../core/models/fact.dart';
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
@@ -248,37 +248,29 @@ class Catalog {
 
   static final Catalog empty = Catalog(decks: const [], broken: const []);
 
-  /// Whether a deck of the IPA course is in it.
-  late final bool hasIpa = decks.any((e) => e.language.isIpa);
-
-  /// This catalog as the learner has it: the decks of the IPA course (a
-  /// language with `script: ipa`) cut to the cards in [scope] when they
-  /// learn [learned], and one left with none gone (ADR-0041). The same
-  /// catalog when nothing changes, so that every screen reads one list.
-  Catalog forIpa(
-    IpaScope scope,
-    Set<String> learned, {
-    Set<String> kept = const <String>{},
-  }) {
-    if (scope == IpaScope.whole) return this;
+  /// This catalog as a learner with adult content [adult] has it: with it
+  /// off, the adult decks and the rude cards are gone (#628), and with it on
+  /// or off, an adult deck no native speaker has rated (#630). The same
+  /// catalog when nothing is left out, so that every screen reads one list.
+  Catalog forAdult({required bool adult}) {
     var changed = false;
-    final scoped = <DeckEntry>[];
+    final shown = <DeckEntry>[];
     for (final entry in decks) {
-      final deck = ipaDeckInScope(entry.deck, scope, learned, kept: kept);
+      final deck = deckForAdult(entry.deck, adult: adult);
       if (identical(deck, entry.deck)) {
-        scoped.add(entry);
+        shown.add(entry);
         continue;
       }
       changed = true;
       if (deck != null) {
-        scoped.add(
+        shown.add(
           DeckEntry(path: entry.path, deck: deck, bundled: entry.bundled),
         );
       }
     }
     if (!changed) return this;
     return Catalog(
-      decks: scoped,
+      decks: shown,
       broken: broken,
       themes: themes,
       facts: facts,

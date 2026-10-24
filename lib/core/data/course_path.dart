@@ -19,6 +19,7 @@ class LanguagePath with _B1Plan {
     this.alphabet = const <String>{},
     this.regions = const <Region>[],
     this.genders,
+    this.levels,
   });
 
   /// `<language>-path`, the file's name.
@@ -43,6 +44,13 @@ class LanguagePath with _B1Plan {
   /// Bengali; null when the path does not list them, and a card's gender is
   /// then taken as it is written.
   final List<String>? genders;
+
+  /// The words each level holds (#615, ADR-0045), such as
+  /// `{a1: 120, a2: 60, b1: 80}`: A1, then A2 and B1 each in addition. Null
+  /// when the path does not give them; the B1 total is then the sum of the
+  /// units' planned words.
+  @override
+  final Map<Milestone, int>? levels;
 
   /// The deck a learner from [native] is taught for [coreId]: `te-home`
   /// from `en` is `te-en-home`.
@@ -92,6 +100,7 @@ class LanguagePath with _B1Plan {
           if (deckFor(native, core) case final id when exists(id)) id,
       }),
       plan: List<PlanUnit>.unmodifiable(plan),
+      levels: levels,
     );
   }
 
@@ -121,6 +130,7 @@ class CoursePath with _B1Plan {
     this.open = const <int>{},
     this.alphabet = const <String>{},
     this.plan = const <PlanUnit>[],
+    this.levels,
   });
 
   /// The language's path's id, `<language>-path`.
@@ -151,6 +161,11 @@ class CoursePath with _B1Plan {
   /// coming one.
   @override
   final List<PlanUnit> plan;
+
+  /// The language's own words per level ([LanguagePath.levels]); null when
+  /// its path gives none.
+  @override
+  final Map<Milestone, int>? levels;
 
   /// How many of the language's written units this course teaches, a unit
   /// of `"*"` alone not counted: "30 of 34 units" ([writtenUnits]).
@@ -214,6 +229,7 @@ class CoursePath with _B1Plan {
       ]),
       alphabet: alphabet,
       plan: plan,
+      levels: levels,
     );
   }
 
@@ -225,6 +241,9 @@ class CoursePath with _B1Plan {
 /// course's view of it.
 mixin _B1Plan {
   List<PlanUnit> get plan;
+
+  /// The path's own words per level, or null for the units' sums.
+  Map<Milestone, int>? get levels;
 
   /// Whether the path has a B1 plan: some unit is a mapping that plans it,
   /// with a planned deck, a size, grammar topics or a milestone.
@@ -249,13 +268,19 @@ mixin _B1Plan {
   Iterable<PlanUnit> get _upToB1 =>
       plan.take((milestoneIndex(Milestone.b1) ?? plan.length - 1) + 1);
 
+  /// How many units up to B1 have no decks to teach yet: planned units, and
+  /// written ones with no deck in this course (#227).
+  int get unitsToWrite => _upToB1.where((unit) => unit.isComing).length;
+
   /// The grammar topics planned up to B1, in order, each once.
   List<String> get grammarTopics =>
       <String>{for (final unit in _upToB1) ...unit.grammar}.toList();
 
-  /// The words planned up to B1: the sum of each unit's size.
-  int get plannedWords =>
-      _upToB1.fold(0, (sum, unit) => sum + (unit.words ?? 0));
+  /// The words B1 holds: the sum of the path's [levels] when it gives them
+  /// (#615), else the sum of each unit's planned size up to B1.
+  int get plannedWords => levels != null
+      ? levels!.values.fold(0, (sum, words) => sum + words)
+      : _upToB1.fold(0, (sum, unit) => sum + (unit.words ?? 0));
 }
 
 /// The levels a B1 plan marks, written `A1`, `A2` and `B1` (ADR-0036).
@@ -330,9 +355,9 @@ class PlanUnit {
 
   final PlannedDeck? planned;
 
-  /// The unit's planned size in words: 0 or more on a written unit, 1 or
-  /// more on a planned theme unit; null where the plan gives none. One size
-  /// for every native language.
+  /// The unit's planned size in words, 0 or more (a theme unit with no new
+  /// roots plans 0, #615); null where the plan gives none. One size for
+  /// every native language.
   final int? words;
 
   /// The grammar topics it teaches, by topic id.
@@ -379,6 +404,7 @@ const _pathFields = {
   'alphabet',
   'regions',
   'genders',
+  'levels',
 };
 const _unitFields = {
   'decks',
@@ -462,6 +488,7 @@ LanguagePath parseLanguagePath(String text, {String source = 'path.yaml'}) {
 
   final regions = _regions(root.nodes['regions'], bad);
   final genders = _genders(root.nodes['genders'], bad);
+  final levels = _levels(root.nodes['levels'], bad);
   final list = root.nodes['units'];
   if (list is! YamlList || list.nodes.isEmpty) {
     throw bad('units must be a non-empty list', list ?? root);
@@ -601,11 +628,10 @@ LanguagePath parseLanguagePath(String text, {String source = 'path.yaml'}) {
     int? words;
     if (wordsNode != null) {
       final value = wordsNode.value;
-      final least = plannedDeck?.theme != null ? 1 : 0;
       // A whole number, written as one: not a boolean, and not 1_000.
-      if (value is! int || value < least) {
+      if (value is! int || value < 0) {
         throw bad(
-          'units[$u].words must be a whole number of words, $least or more, '
+          'units[$u].words must be a whole number of words, 0 or more, '
           'got "${wordsNode.span.text}"',
           wordsNode,
         );
@@ -728,8 +754,65 @@ LanguagePath parseLanguagePath(String text, {String source = 'path.yaml'}) {
     plan: List<PlanUnit>.unmodifiable(plan),
     regions: regions,
     genders: genders,
+    levels: levels,
   );
 }
+
+/// A path's words per level (#615, ADR-0045): `{ A1: 120, A2: 60, B1: 80 }`,
+/// all three, each a whole number of 1 or more. Null when the path gives
+/// none.
+Map<Milestone, int>? _levels(
+  YamlNode? node,
+  DeckParseException Function(String, [YamlNode?]) bad,
+) {
+  if (node == null) return null;
+  if (node is! YamlMap) {
+    throw bad(
+      'levels must be a mapping of the words per level, such as '
+      '{ A1: 120, A2: 60, B1: 80 }',
+      node,
+    );
+  }
+  final levels = <Milestone, int>{};
+  for (final entry in node.nodes.entries) {
+    final milestone = _milestoneOf(entry.key.value);
+    if (milestone == null) {
+      throw bad(
+        'levels: unknown level "${entry.key.value}"; the levels are A1, A2 '
+        'and B1',
+        entry.key as YamlNode,
+      );
+    }
+    final value = entry.value.value;
+    if (value is! int || value < 1) {
+      throw bad(
+        'levels.${entry.key.value} must be a whole number of words, 1 or '
+        'more, got "${entry.value.span.text}"',
+        entry.value,
+      );
+    }
+    levels[milestone] = value;
+  }
+  for (final milestone in Milestone.values) {
+    if (!levels.containsKey(milestone)) {
+      throw bad(
+        'levels needs ${_milestoneName(milestone)}; give the words for A1, '
+        'A2 and B1',
+        node,
+      );
+    }
+  }
+  return Map<Milestone, int>.unmodifiable(<Milestone, int>{
+    for (final m in Milestone.values) m: levels[m]!,
+  });
+}
+
+Milestone? _milestoneOf(Object? name) => switch (name) {
+  'A1' => Milestone.a1,
+  'A2' => Milestone.a2,
+  'B1' => Milestone.b1,
+  _ => null,
+};
 
 /// A path's gender classes (#512): a list of distinct class names, empty
 /// for a language without gender. Null when the path lists none.

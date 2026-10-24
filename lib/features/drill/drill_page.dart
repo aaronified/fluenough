@@ -61,10 +61,6 @@ class DrillPage extends StatefulWidget {
 class _DrillPageState extends State<DrillPage> {
   DrillSession? _session;
 
-  /// The app, kept from initState: a sounds session's IPA cards are let go
-  /// of in [dispose], where the tree can no longer be read.
-  late final AppState _app;
-
   /// The script guides to show before the session (#30, ADR-0016), in
   /// turn: one for each language with script cards in it whose guide is
   /// unseen, in the order the session reaches them.
@@ -81,7 +77,7 @@ class _DrillPageState extends State<DrillPage> {
   @override
   void initState() {
     super.initState();
-    final state = _app = AppScope.read(context);
+    final state = AppScope.read(context);
     // `load` also waits for the voice check, which decides whether
     // listening cards are in the queue. It is safe to call again.
     _await(state, state.load());
@@ -132,7 +128,9 @@ class _DrillPageState extends State<DrillPage> {
       return;
     }
     // A preset keeps each item asked its own way, but for its first.
-    var items = request.lesson
+    var items = request.daily
+        ? state.dailyItems(request)
+        : request.lesson
         ? state.lessonFor(request)
         : preset == null
         ? state.sessionItems(request)
@@ -199,7 +197,7 @@ class _DrillPageState extends State<DrillPage> {
     if (session.finished && !_summaryShown) {
       _summaryShown = true;
       final request = widget.request;
-      if (request.lesson) {
+      if (request.lesson || request.daily) {
         final state = AppScope.read(context);
         state.settings.markLessonDone(request.language!, state.now());
       }
@@ -212,7 +210,6 @@ class _DrillPageState extends State<DrillPage> {
 
   @override
   void dispose() {
-    if (widget.request.cardIds != null) _app.unpinIpaCards();
     _session
       ?..removeListener(_onSession)
       ..dispose();
@@ -330,11 +327,12 @@ class _DrillPageState extends State<DrillPage> {
         session: session,
         onClose: _close,
       ),
-      _ when session.ask == Ask.teach => TeachDrill(
-        key: ValueKey<int>(session.position),
-        session: session,
-        onClose: _close,
-      ),
+      _ when session.ask == Ask.teach || session.ask == Ask.teachRule =>
+        TeachDrill(
+          key: ValueKey<int>(session.position),
+          session: session,
+          onClose: _close,
+        ),
       _ when session.ask.chooses => ChoiceDrill(
         key: ValueKey<int>(session.position),
         session: session,
@@ -355,10 +353,12 @@ class _DrillPageState extends State<DrillPage> {
         session: session,
         onClose: _close,
       ),
-      // A pattern deck's cell, with its table; a rules table's cell
-      // typed is a typed word, its word and meaning the prompt (spec
-      // 4.6).
-      DrillMode.grammar when session.item.card.rule == null =>
+      // A pattern deck's cell, with its table; a rules table's cell, or a
+      // word asked its form by its siblings, typed is a typed word, its
+      // word and meaning the prompt (spec 4.6).
+      DrillMode.grammar
+          when session.item.card.rule == null &&
+              session.deck.deck.pattern != null =>
         GrammarDrill.live(
           key: ValueKey<int>(session.position),
           session: session,

@@ -1,0 +1,82 @@
+schema: 1
+id: "zh-grammar-pinyin-spelling"
+part: "core"
+kind: "grammar"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["with tone marks", "typed"]
+  entries:
+    - lemma: "去"
+      key: "qu"
+      reading: "qù"
+      forms:
+        "with tone marks": "去"
+        "typed": "去"
+      readings:
+        "with tone marks": "qù"
+        "typed": "qu4"
+    - lemma: "女"
+      key: "nv"
+      reading: "nǚ"
+      forms:
+        "with tone marks": "女"
+        "typed": "女"
+      readings:
+        "with tone marks": "nǚ"
+        "typed": "nv3"
+    - lemma: "绿"
+      key: "lv"
+      reading: "lǜ"
+      forms:
+        "with tone marks": "绿"
+        "typed": "绿"
+      readings:
+        "with tone marks": "lǜ"
+        "typed": "lv4"
+    - lemma: "鱼"
+      key: "yu"
+      reading: "yú"
+      forms:
+        "with tone marks": "鱼"
+        "typed": "鱼"
+      readings:
+        "with tone marks": "yú"
+        "typed": "yu2"
+    - lemma: "九"
+      key: "jiu"
+      reading: "jiǔ"
+      forms:
+        "with tone marks": "九"
+        "typed": "九"
+      readings:
+        "with tone marks": "jiǔ"
+        "typed": "jiu3"
+    - lemma: "写"
+      key: "xie"
+      reading: "xiě"
+      forms:
+        "with tone marks": "写"
+        "typed": "写"
+      readings:
+        "with tone marks": "xiě"
+        "typed": "xie3"
+    - lemma: "西"
+      key: "xi"
+      reading: "xī"
+      forms:
+        "with tone marks": "西"
+        "typed": "西"
+      readings:
+        "with tone marks": "xī"
+        "typed": "xi1"
+    - lemma: "老"
+      key: "lao"
+      reading: "lǎo"
+      forms:
+        "with tone marks": "老"
+        "typed": "老"
+      readings:
+        "with tone marks": "lǎo"
+        "typed": "lao3"

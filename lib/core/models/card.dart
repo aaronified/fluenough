@@ -207,6 +207,26 @@ class CardSense {
   final List<CardExample> examples;
 }
 
+/// A short dictionary entry for a card, imported from Wiktionary into a
+/// deck's layer (DECK-FORMAT.md, A layer): the word's meanings, its
+/// etymology and the page it came from, for the CC BY-SA credit.
+class CardDictionary {
+  const CardDictionary({
+    required this.senses,
+    required this.source,
+    this.etymology,
+  });
+
+  /// The word's meanings, in the learner's language, one per line.
+  final List<String> senses;
+
+  /// Where the word comes from, or null when the entry gives none.
+  final String? etymology;
+
+  /// The Wiktionary page the entry was taken from.
+  final String source;
+}
+
 /// Where a card's own recording or image came from (#518, #523): the file
 /// it was made from, its licence and whom to credit. Shown on the deck
 /// screen and the Sources screen.
@@ -310,6 +330,8 @@ class CardRef {
       altNative:
           altNative ?? (sameNative ? written.altNative : const <String>[]),
       pos: written.pos,
+      hears: written.hears,
+      warning: written.warning,
       gender: written.gender,
       tags: tags ?? (sameNative ? written.tags : const <String>[]),
       notes: notes ?? (sameNative ? written.notes : const <CardNote>[]),
@@ -329,6 +351,8 @@ class CardRef {
       wiktionary: wiktionary ?? (sameNative && written.wiktionary),
       rule: written.rule,
       ownRoot: written.ownRoot,
+      practiceOnly: written.practiceOnly,
+      heardAs: written.heardAs,
       register: written.register,
       frequency: written.frequency,
       synonyms: sameNative ? written.synonyms : const <CardItem>[],
@@ -337,6 +361,7 @@ class CardRef {
       confusables: sameNative ? written.confusables : const <CardItem>[],
       forms: sameNative ? written.forms : const <CardItem>[],
       senses: sameNative ? written.senses : const <CardSense>[],
+      dictionary: sameNative ? written.dictionary : null,
     );
   }
 }
@@ -363,6 +388,8 @@ class Card {
     this.words,
     this.altNative = const <String>[],
     this.pos,
+    this.hears,
+    this.warning,
     this.gender,
     this.tags = const <String>[],
     this.notes = const <CardNote>[],
@@ -381,6 +408,8 @@ class Card {
     this.wiktionary = false,
     this.rule,
     this.ownRoot = false,
+    this.practiceOnly = false,
+    this.heardAs,
     this.register,
     this.frequency,
     this.synonyms = const <CardItem>[],
@@ -389,6 +418,7 @@ class Card {
     this.confusables = const <CardItem>[],
     this.forms = const <CardItem>[],
     this.senses = const <CardSense>[],
+    this.dictionary,
   });
 
   /// Stable for the life of the card. This is the key the user's entire review
@@ -471,6 +501,19 @@ class Card {
   final List<String> altNative;
 
   final String? pos;
+
+  /// `form` (`hears: "form"`, #522 step 7): hearing the card asks for what
+  /// was heard, typed as its form, though it is a word with a part of speech,
+  /// as the spelling decks' and the script reading decks' words are. A letter
+  /// or a digit does so by its `pos` ([isLetterOrDigit]). Null otherwise.
+  final String? hears;
+
+  /// The one warning the teach card shows (`warning`, #691): the id of one of
+  /// the card's pair, homograph or lookalike notes, `senses` for its other
+  /// meanings, or `none` for no warning. Null when the deck does not say, and
+  /// the card then shows the first warning in the fixed order. The word sheet
+  /// shows every warning either way.
+  final String? warning;
   final String? gender;
   final List<String> tags;
 
@@ -488,8 +531,10 @@ class Card {
 
   final List<CardExample> examples;
 
-  /// Which drills this card takes part in. Empty means "all applicable",
-  /// resolved against the deck by [modesIn].
+  /// The skills this card is excluded from (#522, step 6, ADR-0039). Empty
+  /// means every skill its data allows, resolved by [modesIn]. Excluding
+  /// [DrillMode.grammar] excludes both grammar skills; a card that excludes
+  /// all four [DrillMode.vocabulary] skills is a grammar cell.
   final Set<DrillMode> modes;
 
   /// The id of a word that sounds almost the same, its minimal-pair partner,
@@ -543,6 +588,18 @@ class Card {
   /// Whether the word is its own root, `bases: self` (#513).
   final bool ownRoot;
 
+  /// Whether the card is generated practice (a number, #54, #522 step 9a):
+  /// it is drilled but nothing drilled from it is recorded, it is not a unit's
+  /// word, and it is never a wrong option for another card. Set only by code
+  /// that generates cards; it is not a deck key, so no deck file carries it
+  /// and released apps are unaffected.
+  final bool practiceOnly;
+
+  /// What is typed when this card is heard, where that is not its [target]: a
+  /// generated number is heard and typed as its digits. Null for every other
+  /// card. Like [practiceOnly], it is never read from a deck.
+  final String? heardAs;
+
   /// How formal or rude the word is (#517): `formal`, `neutral`,
   /// `informal`, `slang` or `offensive`.
   final String? register;
@@ -565,42 +622,70 @@ class Card {
   /// Its separate meanings (#517), each the layer gives a meaning.
   final List<CardSense> senses;
 
+  /// Its Wiktionary entry, when the deck's layer gives one: what the word
+  /// sheet and the teach card's dictionary show.
+  final CardDictionary? dictionary;
+
   /// The drills this card can actually be used for, given whether the device
   /// has a voice for the language, and whether it can recognise speech in it.
   ///
-  /// A card that declares no modes gets recognition, production, listening
-  /// and speaking, except that a phrase (`pos: phrase`) is not typed: a
-  /// whole sentence is too hard to grade fairly (ADR-0010). A phrase of two
-  /// words or more is produced by putting its words in order instead
-  /// ([rearranges], ADR-0024). A phrase can be spoken, since the recogniser
-  /// does the writing (ADR-0014).
+  /// Every skill the card's data allows, less those [modes] excludes. A card
+  /// is recognised, produced, heard and spoken, except that a phrase
+  /// (`pos: phrase`) is not typed: a whole sentence is too hard to grade
+  /// fairly (ADR-0010). A phrase of two words or more is produced by putting
+  /// its words in order instead ([rearranges], ADR-0024). A phrase can be
+  /// spoken, since the recogniser does the writing (ADR-0014).
   ///
-  /// A rules table's cell is understood ([DrillMode.grammarUnderstood]) only
-  /// where its form can be told from the row's others by what it means
-  /// ([choosesMeaning]); otherwise it is only produced (DECK-FORMAT.md, Rules
-  /// decks).
+  /// The grammar skills come from the card's forms: a rules table's cell
+  /// (produced always, and understood only where its form can be told from
+  /// the row's others by what it means, [choosesMeaning]), a card with
+  /// [siblings] (cards each with the same single base, `formSiblings`; those
+  /// give it other forms, and understood where one means something else), and
+  /// a card that excludes all four vocabulary skills, a pattern's cell, which
+  /// is produced.
   Set<DrillMode> modesIn({
     required bool ttsAvailable,
     bool speechAvailable = false,
+    List<Card> siblings = const <Card>[],
   }) {
-    final declared = modes.isNotEmpty
-        ? modes
-        : pos == 'phrase' && !rearranges
-        ? const {DrillMode.recognition, DrillMode.listening, DrillMode.speaking}
-        : const {
-            DrillMode.recognition,
-            DrillMode.production,
-            DrillMode.listening,
-            DrillMode.speaking,
-          };
+    final forms = rule == null ? siblings : const <Card>[];
+    final allowed = <DrillMode>{
+      if (pos == 'phrase' && !rearranges) ...const <DrillMode>{
+        DrillMode.recognition,
+        DrillMode.listening,
+        DrillMode.speaking,
+      } else
+        ...DrillMode.vocabulary,
+      if (isGrammarCell || forms.isNotEmpty) DrillMode.grammar,
+      if (choosesMeaning || forms.any((s) => s.native != native))
+        DrillMode.grammarUnderstood,
+    };
+    final noGrammar = modes.contains(DrillMode.grammar);
     return <DrillMode>{
-      for (final mode in declared)
-        if ((ttsAvailable || mode != DrillMode.listening) &&
+      for (final mode in allowed)
+        if (!modes.contains(mode) &&
+            (ttsAvailable || mode != DrillMode.listening) &&
             (speechAvailable || mode != DrillMode.speaking) &&
-            (mode != DrillMode.grammarUnderstood || choosesMeaning))
+            !(noGrammar && mode == DrillMode.grammarUnderstood))
           mode,
     };
   }
+
+  /// Whether the card is one letter or digit of a script (`pos: letter` or
+  /// `pos: digit`, #522 step 7): what is heard of it is its form, so Hear
+  /// types the form, and a card of the script decks is found by this, not by
+  /// where its deck stands on the path.
+  bool get isLetterOrDigit => pos == 'letter' || pos == 'digit';
+
+  /// Whether hearing this card asks for what was heard: a letter or a digit,
+  /// or a card marked `hears: form` ([hears]), as a generated number is.
+  bool get hearsForm => isLetterOrDigit || hears == 'form';
+
+  /// Whether this is a grammar cell: a rules table's cell, or a card that
+  /// excludes all four vocabulary skills, as a pattern's cell does. It is
+  /// drilled in grammar alone, not as a word.
+  bool get isGrammarCell =>
+      rule != null || modes.containsAll(DrillMode.vocabulary);
 
   /// Whether this rules table's cell can be asked what its form means
   /// (`Ask.chooseFormMeaning`, DECK-FORMAT.md, Rules decks): another form of
@@ -608,10 +693,11 @@ class Card {
   bool get choosesMeaning =>
       rule?.options.any((option) => option.prompt != native) ?? false;
 
-  /// Whether this rules table's cell can be asked to choose its form among
-  /// its row's (`Ask.chooseForm`, DECK-FORMAT.md, Rules decks): the row has
-  /// another form. False for any other card.
-  bool get choosesForm => rule?.options.isNotEmpty ?? false;
+  /// Whether the card's word has other forms to choose among
+  /// (`Ask.chooseForm`, DECK-FORMAT.md, Rules decks): for a rules table's
+  /// cell, its row has another form. False for any other card, until a card
+  /// can name the forms of its word's family another way (#522, step 4).
+  bool get hasOtherForms => rule?.options.isNotEmpty ?? false;
 
   /// Whether producing this card is asked by putting its words in order
   /// rather than typing it (ADR-0024): a sentence of three words or more,
@@ -664,6 +750,7 @@ class Card {
     DrillMode.reading ||
     DrillMode.readScript => <String>[native, ...altNative],
     DrillMode.grammarUnderstood => <String>[native],
+    DrillMode.listening when heardAs != null => <String>[heardAs!],
     DrillMode.production ||
     DrillMode.listening ||
     DrillMode.grammar ||

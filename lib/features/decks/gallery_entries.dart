@@ -7,7 +7,6 @@ import 'deck_detail_page.dart';
 import 'import_fixture.dart';
 import 'import_page.dart';
 import 'decks_page.dart';
-import 'inspect_page.dart';
 import 'path_fixture.dart';
 import 'unit_page.dart';
 
@@ -115,38 +114,25 @@ final List<GalleryEntry> decksGalleryEntries = <GalleryEntry>[
     id: 'deck',
     section: GallerySection.learn,
     label: 'Deck detail', // ui-literal-ok: debug-only gallery
-    note: 'Start one skill or all due', // ui-literal-ok: debug-only gallery
+    note:
+        'Every word, Practice and + Learn', // ui-literal-ok: debug-only gallery
     builder: (_) => const DeckDetailPage(deckId: 'es-en-core-100'),
   ),
   GalleryEntry(
     id: 'deck-novoice',
     section: GallerySection.learn,
     label: 'Deck, no voice', // ui-literal-ok: debug-only gallery
-    note: 'Listening disabled, with a way to fix it', // ui-literal-ok: debug-only gallery
+    note: 'A script deck with no voice', // ui-literal-ok: debug-only gallery
     builder: (_) => const DeckDetailPage(deckId: 'mr-en-script-consonants'),
     state: (app) => GalleryFixtures.state(app, currentProfileId: 'mira'),
   ),
   GalleryEntry(
-    id: 'inspect',
+    id: 'deck-grammar',
     section: GallerySection.learn,
-    label: 'Inspect a deck', // ui-literal-ok: debug-only gallery
+    label: 'Deck, grammar', // ui-literal-ok: debug-only gallery
     note:
-        'Every card in full, with its id', // ui-literal-ok: debug-only gallery
-    builder: (_) => const InspectPage(deckId: 'hi-en-market'),
-  ),
-  GalleryEntry(
-    id: 'inspect-grammar',
-    section: GallerySection.learn,
-    label: 'Inspect a grammar deck', // ui-literal-ok: debug-only gallery
-    note: 'Each table whole, a cell id per form', // ui-literal-ok: debug-only gallery
-    builder: (_) => const InspectPage(deckId: 'hi-en-grammar-present'),
-  ),
-  GalleryEntry(
-    id: 'inspect-reading',
-    section: GallerySection.learn,
-    label: 'Inspect a reading deck', // ui-literal-ok: debug-only gallery
-    note: 'Passages, questions with answers, glossary', // ui-literal-ok: debug-only gallery
-    builder: (_) => const InspectPage(deckId: 'bn-en-reading-sahaj-path-1'),
+        'Every cell of the table as a row', // ui-literal-ok: debug-only gallery
+    builder: (_) => const DeckDetailPage(deckId: 'hi-en-grammar-present'),
   ),
   GalleryEntry(
     id: 'import',

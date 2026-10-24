@@ -278,6 +278,9 @@ $units''';
 CoursePath fromEnglish(String text) =>
     parseLanguagePath(text).forNative('en', exists: (_) => true);
 
+CoursePath fromEnglishPath(LanguagePath language) =>
+    language.forNative('en', exists: (_) => true);
+
 Matcher refusing(String why) => throwsA(
   isA<DeckParseException>().having((e) => e.message, 'message', contains(why)),
 );
@@ -1063,10 +1066,7 @@ cards:
         expect(withMother.target, 'అమ్మతో');
         expect(withMother.reading, 'ammatō');
         expect(withMother.deckId, 'zz-en-grammar-case-endings');
-        expect(withMother.modes, {
-          DrillMode.grammarUnderstood,
-          DrillMode.grammar,
-        });
+        expect(withMother.modes, DrillMode.vocabulary);
         expect(withMother.notes, isEmpty);
       });
     });
@@ -1174,6 +1174,52 @@ cards:
       expect(house.senses.single.examples.single.native, 'The house is big.');
       expect(house.native, 'home; house');
     });
+
+    test('a core card says which warning its teach card shows (#691)', () {
+      Card withWarning(String? value) => merged(
+        value == null
+            ? '    pos: "noun"\n'
+            : '    pos: "noun"\n    warning: "$value"\n',
+        '',
+      );
+      expect(withWarning('stem').warning, 'stem');
+      expect(withWarning('senses').warning, 'senses');
+      expect(withWarning('none').warning, 'none');
+      expect(withWarning(null).warning, isNull);
+    });
+
+    test('a core card lists the offensive words it is not alike (#808)', () {
+      final card = DeckParser.parseCore(
+        coreWith(
+          '    pos: "noun"\n'
+          '    not_sounds_like: ["zz-0002"]\n'
+          '    not_looks_like: ["zz-0002", "zz-0003"]\n',
+        ),
+        source: 'zz.yaml',
+      ).cards.whereType<CoreWritten>().first;
+      expect(card.notSoundsLike, ['zz-0002']);
+      expect(card.notLooksLike, ['zz-0002', 'zz-0003']);
+      expect(
+        () => parseProbe(probeCard('    not_sounds_like: ["zz-0002"]\n')),
+        throwsA(isA<DeckParseException>()),
+      );
+    });
+
+    test('an empty warning, or one on a card of a single file, is refused', () {
+      expect(
+        () => DeckParser.parseCore(
+          coreWith('    pos: "noun"\n    warning: ""\n'),
+          source: 'zz.yaml',
+        ),
+        throwsA(isA<DeckParseException>()),
+      );
+      // The key belongs to the core's language side, not to a single-file
+      // deck's card.
+      expect(
+        () => parseProbe(probeCard('    warning: "none"\n')),
+        throwsA(isA<DeckParseException>()),
+      );
+    });
   });
 
   group('refs', () {
@@ -1213,6 +1259,43 @@ cards:
 
   group('grammar patterns', () {
     final bundled = spanish('grammar-present-ar');
+
+    test('a pattern without a prompt asks the lemma, its meaning and the '
+        'slot; one that gives a prompt is asked as written', () {
+      String deck(String prompt) =>
+          '''
+schema: 1
+id: es-en-grammar-probe
+name: Probe
+kind: grammar
+language: { code: es, iso639_3: spa, name: Spanish, script: latin }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+pattern:
+  name: P
+  slot_name: person
+  slots: [yo]
+$prompt  entries:
+    - lemma: soler
+      gloss: to tend to
+      forms: { yo: suelo }
+''';
+      expect(
+        expandPattern(DeckParser.parse(deck(''), source: 'probe'))
+            .single
+            .native,
+        'soler (to tend to) \u2014 yo',
+      );
+      expect(
+        expandPattern(
+          DeckParser.parse(
+            deck('  prompt: "{slot}: {lemma}"\n'),
+            source: 'probe',
+          ),
+        ).single.native,
+        'yo: soler',
+      );
+    });
 
     test('cell ids follow the documented scheme and are stable; a null form '
         'is skipped, its slot keeping its index', () {
@@ -1298,6 +1381,51 @@ pattern:
       }
     });
 
+    test('a path may give its own words per level, which are the B1 total; '
+        'without them the units\' sizes are', () {
+      const units =
+          '  - decks: [hi-first-words]\n    words: 40\n    milestone: A1\n'
+          '  - decks: [hi-market]\n    words: 30\n    milestone: A2\n'
+          '  - decks: [hi-home]\n    words: 20\n    milestone: B1\n';
+      expect(parseLanguagePath(pathFile(units)).plannedWords, 90);
+      final own = parseLanguagePath(
+        '${pathFile(units)}levels: { A1: 120, A2: 60, B1: 80 }\n',
+      );
+      expect(own.levels, {
+        Milestone.a1: 120,
+        Milestone.a2: 60,
+        Milestone.b1: 80,
+      });
+      expect(own.plannedWords, 260);
+      expect(fromEnglishPath(own).plannedWords, 260);
+
+      for (final (levels, why) in <(String, String)>[
+        ('levels: { A1: 120, A2: 60 }', 'levels needs B1'),
+        ('levels: { A1: 120, A2: 60, B1: 80, C1: 5 }', 'unknown level "C1"'),
+        ('levels: { A1: 0, A2: 60, B1: 80 }', 'levels.A1 must be a whole'),
+        ('levels: { A1: "9", A2: 60, B1: 80 }', 'levels.A1 must be a whole'),
+        ('levels: [120, 60, 80]', 'levels must be a mapping'),
+      ]) {
+        expect(
+          () => parseLanguagePath('${pathFile(units)}$levels\n'),
+          refusing(why),
+          reason: levels,
+        );
+      }
+    });
+
+    test('a planned theme unit may plan no new roots: words 0', () {
+      String theme(int words) => pathFile(
+        '  - planned: { id: hi-colours, theme: colours, words: $words }\n'
+        '    listening_passages:\n'
+        '      - { id: heard, text: { en: "Heard" } }\n'
+        '    reading_passages:\n'
+        '      - { id: read, text: { en: "Read" } }\n',
+      );
+      expect(parseLanguagePath(theme(0)).plan.single.words, 0);
+      expect(() => parseLanguagePath(theme(-1)), refusing('0 or more'));
+    });
+
     group('one path, every native language', () {
       final language = parseLanguagePath(
         pathFile(
@@ -1352,7 +1480,10 @@ pattern:
         expect(first.passage.title, 'At the shop');
         expect(first.target, 'নমস্কার। কত দাম?');
         expect(first.native, 'What does the buyer ask first?');
-        expect(first.modes, {DrillMode.reading, DrillMode.listening});
+        expect(first.modesIn(ttsAvailable: true), {
+          DrillMode.reading,
+          DrillMode.listening,
+        });
         expect(first.source, readingFixtureSource);
         expect(first.passage.theme, 'market');
         // The second passage names no source, so its deck's is used.
