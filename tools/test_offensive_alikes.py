@@ -134,6 +134,23 @@ class Alikes(unittest.TestCase):
         found = offensive_alikes.find_alikes(self.words(rude, both))
         self.assertTrue(found and all(a.explained for a in found))
 
+    def test_a_rejected_pair_is_not_warned_of_and_only_for_the_kind_named(
+            self) -> None:
+        rude = self.write("rude", [RUDE], 'tags: ["offensive"]')
+        plain = self.write("plain", [card(
+            "te-9901", "విధవ", "vidhava", "ʋid̪ʱaʋa",
+            ', not_sounds_like: ["te-9951"]')])
+        found = offensive_alikes.find_alikes(self.words(rude, plain))
+        self.assertTrue(all(a.explained for a in found if a.kind == "sound"))
+        # Rejecting the sound says nothing of the writing.
+        self.assertTrue(any(not a.explained for a in found if a.kind == "look"))
+
+        both = self.write("both", [card(
+            "te-9901", "విధవ", "vidhava", "ʋid̪ʱaʋa",
+            ', not_sounds_like: ["te-9951"], not_looks_like: ["te-9951"]')])
+        found = offensive_alikes.find_alikes(self.words(rude, both))
+        self.assertTrue(found and all(a.explained for a in found))
+
     def test_a_note_on_the_offensive_word_explains_it_too(self) -> None:
         rude = self.write("rude", [card(
             "te-9951", "వెధవ", "vedhava", "ʋed̪ʱaʋa",

@@ -562,16 +562,21 @@ class AppState extends ChangeNotifier {
   /// alike warning, which hides the word itself (#628).
   List<DeckEntry> get allDecks => _catalog.decks;
 
-  /// The decks the Offensive words review lists: the learner's [decks] and
-  /// the adult decks no native speaker has rated yet (#630), which no learner
+  /// The decks the Offensive words review lists: the learner's [decks] and,
+  /// only with Adult content on (owner, 2026-10-24, #630: "Require Adult
+  /// on"), the adult decks no native speaker has rated yet, which no learner
   /// sees and only a reviewer reads, in the catalog's order.
   List<DeckEntry> get reviewDecks {
     final shown = <String, DeckEntry>{
       for (final entry in decks) entry.path: entry,
     };
+    final adult = settings.adultContent;
     return <DeckEntry>[
       for (final entry in _catalog.decks)
-        if (isUnratedAdultDeck(entry.deck)) entry else ?shown[entry.path],
+        if (isUnratedAdultDeck(entry.deck))
+          ?(adult ? entry : null)
+        else
+          ?shown[entry.path],
     ];
   }
 
