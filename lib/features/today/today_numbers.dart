@@ -4,11 +4,14 @@ import '../../app/memory_progress.dart';
 import '../../app/session.dart';
 import '../../app/skill.dart';
 import '../../core/models/deck.dart';
+import '../../core/models/drill_mode.dart';
+import '../../core/scheduling/script_split.dart';
 import '../../core/scheduling/skill_fit.dart';
 import '../../ui/widgets/pace_parts.dart';
 
 /// The skills Today draws a tile for: Recognition, Hear, Say, Write and
-/// Grammar (ADR-0034). Minimal pairs have none: they are drilled from their
+/// Grammar (ADR-0034), and after them the Script tile ([TodayScript]), which
+/// is not a [Skill]. Minimal pairs have none: they are drilled from their
 /// own decks (#31). Speaking has one only while it is switched on
 /// (ADR-0030).
 const List<Skill> todaySkills = <Skill>[
@@ -18,6 +21,26 @@ const List<Skill> todaySkills = <Skill>[
   Skill.production,
   Skill.grammar,
 ];
+
+/// What Today's Script tile shows (owner, 2026-10-24): script reading and
+/// script writing together, the script decks' Recognition and Write. They
+/// are left out of Recognition's and Write's tiles.
+typedef TodayScript = ({
+  /// Today's session items in the script decks' Recognition and Write.
+  int count,
+
+  /// Cards a review of them holds, which tapping starts.
+  int due,
+
+  /// With nothing [due], the words it can revise.
+  int revisable,
+});
+
+/// The script skills' modes: what the Script tile counts and paces.
+const Set<DrillMode> scriptModes = <DrillMode>{
+  DrillMode.readScript,
+  DrillMode.writeScript,
+};
 
 /// One day in Today's week row.
 enum WeekDayStatus {
@@ -45,6 +68,10 @@ typedef TodayPace = ({
   /// Which way each adjusted skill moved, in the languages learned
   /// together. A skill not adjusted has none.
   Map<Skill, PaceDirection> marks,
+
+  /// Which way the Script tile moved, from Read script and Write script
+  /// together, as a skill's does; null if neither is adjusted.
+  PaceDirection? scriptMark,
 });
 
 /// [state]'s [TodayPace], or null before any skill is adjusted, which is
@@ -58,39 +85,47 @@ TodayPace? todayPaceOf(AppState state, {bool onScreen = true}) {
   if (!pacing.adjusted) return null;
   final paces = onScreen ? pacing.paces : pacing.latest;
   if (paces == null) {
-    return (totals: null, marks: const <Skill, PaceDirection>{});
+    return (
+      totals: null,
+      marks: const <Skill, PaceDirection>{},
+      scriptMark: null,
+    );
   }
   // Only the language shown, while one is chosen in the menu (#461).
   final profile = state.currentProfile;
   final language = state.shownLanguage;
+  // Totals are of the word skills, as before: the script skills are
+  // paced on their own tile.
   final learned = <SkillPace>[
     for (final p in paces.values)
-      // The script skills are not drilled, so Today does not count them.
-      if (!p.key.mode.isScript &&
-          profile.learns(p.key.language) &&
+      if (profile.learns(p.key.language) &&
           (language == null || p.key.language == language))
         p,
   ];
   final shown = learned.isEmpty && language == null
-      ? <SkillPace>[
-          for (final p in paces.values)
-            if (!p.key.mode.isScript) p,
-        ]
+      ? <SkillPace>[...paces.values]
       : learned;
-  final all = SkillFit.together(shown);
+  final words = <SkillPace>[
+    for (final p in shown)
+      if (!p.key.mode.isScript) p,
+  ];
+  final all = SkillFit.together(words);
+  PaceDirection? markOf(bool Function(DrillMode mode) of) =>
+      switch (SkillFit.together(<SkillPace>[
+        for (final p in shown)
+          if (p.adjusted && of(p.key.mode)) p,
+      ])) {
+        final moved? => PaceDirection.of(moved.start, moved.now),
+        _ => null,
+      };
   return (
     totals: all == null
         ? null
         : (reviews: all.now.reviews, was: all.start.reviews),
     marks: <Skill, PaceDirection>{
-      for (final skill in todaySkills)
-        if (SkillFit.together(<SkillPace>[
-              for (final p in shown)
-                if (p.adjusted && skill.modes.contains(p.key.mode)) p,
-            ])
-            case final moved?)
-          skill: PaceDirection.of(moved.start, moved.now),
+      for (final skill in todaySkills) skill: ?markOf(skill.modes.contains),
     },
+    scriptMark: markOf(scriptModes.contains),
   );
 }
 
@@ -115,6 +150,7 @@ class TodayNumbers {
     this.dueIn = const <Skill, int>{},
     this.revisable = const <Skill, int>{},
     this.pace,
+    this.script,
   });
 
   /// [onScreen]: whether Today is on view, so that the pace may be worked
@@ -124,7 +160,9 @@ class TodayNumbers {
     final progress = state.progress;
     final decks = state.profileDecks;
     final queue = state.buildSession(const DrillRequest.today());
-    final byMode = queue.countByMode();
+    // The script decks' Recognition and Write are the Script tile's.
+    final split = ScriptSplit(progress.skills.scriptDecks);
+    final byMode = split.countByMode(queue);
 
     // "No voice" only once every language has been asked about and none can
     // be spoken, so the tile does not flash it while the check runs.
@@ -185,9 +223,17 @@ class TodayNumbers {
     final dueIn = <Skill, int>{
       for (final skill in bySkill.keys)
         skill: state.settings.isEnabled(skill)
-            ? state.buildSession(DrillRequest(skill: skill)).length
+            ? state
+                  .buildSession(
+                    DrillRequest(skill: skill, script: ScriptScope.without),
+                  )
+                  .length
             : 0,
     };
+    final hasScript = decks.any((d) => split.scriptDecks.contains(d.id));
+    final scriptDue = hasScript
+        ? state.buildSession(const DrillRequest.script()).length
+        : 0;
     return TodayNumbers(
       hasDecks: decks.isNotEmpty,
       due: queue.length,
@@ -197,8 +243,19 @@ class TodayNumbers {
       revisable: <Skill, int>{
         for (final MapEntry(key: skill, value: due) in dueIn.entries)
           if (due == 0 && state.settings.isEnabled(skill))
-            skill: state.revisableIn(<Skill>{skill}),
+            skill: state.revisableIn(<Skill>{
+              skill,
+            }, script: ScriptScope.without),
       },
+      script: !hasScript
+          ? null
+          : (
+              count: scriptModes.fold(0, (a, mode) => a + (byMode[mode] ?? 0)),
+              due: scriptDue,
+              revisable: scriptDue == 0
+                  ? state.revisableIn(null, script: ScriptScope.only)
+                  : 0,
+            ),
       noVoice: noVoice,
       streak: progress.streakAt(now),
       newWords: newWords,
@@ -231,6 +288,11 @@ class TodayNumbers {
   /// For a tile whose skill has nothing due: how many words it can revise
   /// (ADR-0030). A skill not listed has none.
   final Map<Skill, int> revisable;
+
+  /// The Script tile: script reading and writing together.
+  /// Null when no deck the profile learns is a script deck: there is
+  /// nothing for it to hold.
+  final TodayScript? script;
 
   /// Listening is on, but no language the profile learns has a voice on
   /// this phone.

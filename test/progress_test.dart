@@ -2391,13 +2391,9 @@ cards:
             findsOneWidget,
           );
           expect(pace.marks, {Skill.listening: PaceDirection.fewer});
-          expect(
-            find.descendant(
-              of: markOn(tester, Skill.listening),
-              matching: find.text(l10n.paceFewer),
-            ),
-            findsOneWidget,
-          );
+          // An arrow with no words; the tile's label below names it.
+          expect(markOn(tester, Skill.listening), findsOneWidget);
+          expect(find.text(l10n.paceFewer), findsNothing);
           expect(markOn(tester, Skill.recognition), findsNothing);
           expect(markOn(tester, Skill.production), findsNothing);
           // The screen reader hears it too.

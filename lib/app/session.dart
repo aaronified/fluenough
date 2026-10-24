@@ -1,4 +1,5 @@
 import '../core/scheduling/fsrs.dart';
+import '../core/scheduling/script_split.dart';
 import '../core/scheduling/study_hours.dart';
 import 'skill.dart';
 
@@ -19,6 +20,7 @@ class DrillRequest {
     this.language,
     this.limit,
     this.cardIds,
+    this.script = ScriptScope.any,
   });
 
   /// Today's review: every deck the current profile learns, in every skill
@@ -100,8 +102,19 @@ class DrillRequest {
   /// Every word known in [skill], from every language learned, due or not:
   /// a skill's tile on Today with nothing due. Like a quick revision, every
   /// answer is recorded (ADR-0030, ADR-0033).
-  const DrillRequest.reviseSkill(Skill skill)
-    : this(revise: true, skill: skill);
+  ///
+  /// With [script], the script decks' share: [ScriptScope.without] for a
+  /// word skill's tile, [ScriptScope.only] for the Script tile.
+  const DrillRequest.reviseSkill(
+    Skill skill, {
+    ScriptScope script = ScriptScope.any,
+  }) : this(revise: true, skill: skill, script: script);
+
+  /// Today's Script tile: the script decks' due Recognition and Write, script
+  /// reading and writing together (owner, 2026-10-24). With [revise], every
+  /// one already learned, due or not.
+  const DrillRequest.script({bool revise = false})
+    : this(script: ScriptScope.only, revise: revise);
 
   /// Practice of one [tag] from Progress's All tags page: up to [count]
   /// words the learner has been taught that carry it, picked at random, due
@@ -133,6 +146,10 @@ class DrillRequest {
   /// The skills named by [skill] or [skills], or null for every skill the
   /// learner has switched on.
   Set<Skill>? get named => skills ?? (skill == null ? null : <Skill>{skill!});
+
+  /// Which part of the script decks the session takes: all of it, only the
+  /// script decks' Recognition and Write, or everything else.
+  final ScriptScope script;
 
   /// Only cards carrying at least one of these tags; empty means every card.
   final Set<String> tags;
@@ -176,7 +193,8 @@ class DrillRequest {
       'skills: ${skills?.map((s) => s.name)}, '
       'tags: $tags, newOnly: $newOnly, numbers: $numbers, '
       'untaught: $untaught, revise: $revise, lesson: $lesson, daily: $daily, '
-      'language: $language, limit: $limit, cards: $cardIds)';
+      'language: $language, limit: $limit, cards: $cardIds, '
+      'script: ${script.name})';
 }
 
 /// One answer in a finished session, for the summary.
