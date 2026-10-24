@@ -165,14 +165,16 @@ class _StatsBody extends StatelessWidget {
           allLanguages: language == null,
         ),
         const SizedBox(height: 8),
-        HoursTiles(hours: ProgressHours.of(state, language)),
-        const SizedBox(height: 8),
         PracticeWeekCard(week: mastery.week, quota: kDefaultDailyQuota),
         const SizedBox(height: 16),
         SkillStarCard(
           mastery: mastery.now,
           onTap: () => AppNavigator.openOverTime(context),
         ),
+        // Under the star, so that the three counts, the Level tile and the
+        // week leave the star on the screen at 1.4x text.
+        const SizedBox(height: 8),
+        HoursTiles(hours: ProgressHours.of(state, language)),
         if (numbers.weakestTags.isNotEmpty) ...<Widget>[
           const SizedBox(height: 16),
           StatsSection(

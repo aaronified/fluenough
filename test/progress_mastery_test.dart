@@ -488,6 +488,9 @@ void main() {
       final l10n = l10nOf(tester);
       final tiles = find.byKey(const ValueKey<String>('hours-tiles'));
       expect(tiles, findsOneWidget);
+      // Under the star, below the first screen.
+      await tester.ensureVisible(tiles);
+      await tester.pumpAndSettle();
       expect(find.text(l10n.progressHoursSpentTitle), findsOneWidget);
       expect(find.text(l10n.progressHoursLeftTitle), findsOneWidget);
       expect(find.text(l10n.progressHoursToB1), findsOneWidget);
