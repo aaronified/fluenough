@@ -1,0 +1,124 @@
+schema: 1
+id: "mr-en-quantities"
+kind: "layer"
+core: "mr-quantities"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "How much and how many"
+license: "CC-BY-SA-4.0"
+description: "Amounts and measures: a little, plenty, a dozen, a kilo, a spoonful. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "mr-0742":
+    native: "very; a lot; much"
+    notes:
+      "n1": "Before an adjective it means very: खूप छान (khup chān), very nice (mr-0569)."
+    examples:
+      "मला खूप भूक लागली आहे.": { native: "I am very hungry.", bases: { "मला": "I", "भूक": "hunger", "लागली": "to come, of a feeling", "आहे": "to be" } }
+      "तिला खूप काम आहे.": { native: "She has a lot of work.", bases: { "आहे": "to be" } }
+  "mr-0743":
+    native: "a little; a few"
+    notes:
+      "n1": "With a noun: थोडे पाणी (thoḍe pāṇi), a little water."
+    examples:
+      "मला थोडे पाणी हवे आहे.": { native: "I want a little water.", bases: { "मला": "I", "आहे": "to be" } }
+      "तिने थोडे दूध घेतले.": { native: "She took a little milk.", bases: { "घेतले": "to take" } }
+  "mr-0744":
+    native: "plenty; a lot of"
+    notes:
+      "n1": "Like खूप (khup), it goes before a noun: भरपूर वेळ (bharpur veḷ), plenty of time (mr-0122: वेळ (veḷ))."
+    examples:
+      "इथे भरपूर जागा आहे.": { native: "There is plenty of space here.", bases: { "जागा": "space; place", "आहे": "to be" } }
+      "भरपूर भाजी आहे.": { native: "There are plenty of vegetables.", bases: { "आहे": "to be" } }
+  "mr-0745":
+    native: "all; every; the whole"
+    notes:
+      "n1": "Before a noun: सर्व लोक (sarv lok), all people (mr-0687: लोक (lok))."
+    examples:
+      "सर्व मुले शाळेत जातात.": { native: "All the children go to school.", bases: { "शाळेत": "school", "जातात": "to go" } }
+      "सर्व लोक आले.": { native: "All the people came.", bases: { "आले": "to come" } }
+  "mr-0746":
+    native: "some; a few"
+    notes:
+      "n1": "काहीतरी (kāhitari), something, is a different word (mr-0389)."
+    examples:
+      "मला काही पुस्तके हवी आहेत.": { native: "I need some books.", bases: { "मला": "I", "आहेत": "to be" } }
+      "त्याला काही पैसे दे.": { native: "Give him some money.", bases: { "दे": "to give" } }
+  "mr-0747":
+    native: "each; every"
+    notes:
+      "n1": "It takes a singular noun: प्रत्येक माणूस (pratyek mānus), every person (mr-0686: माणूस (mānus))."
+    examples:
+      "प्रत्येक मूल शाळेत जाते.": { native: "Each child goes to school.", bases: { "शाळेत": "school", "जाते": "to go" } }
+      "प्रत्येक माणूस आनंदी आहे.": { native: "Each person is happy.", bases: { "आनंदी": "happy", "आहे": "to be" } }
+  "mr-0748":
+    native: "both"
+    notes:
+      "n1": "For two things: दोन्ही हात (donhi hāt), both hands."
+    examples:
+      "दोन्ही मुले शाळेत जातात.": { native: "Both children go to school.", bases: { "शाळेत": "school", "जातात": "to go" } }
+      "मला दोन्ही पुस्तके आवडतात.": { native: "I like both books.", bases: { "मला": "I" } }
+  "mr-0749":
+    native: "half"
+    notes:
+      "n1": "The feminine is अर्धी (ardhi); अर्धा किलो (ardhā kilo) is half a kilo."
+    examples:
+      "मला अर्धा किलो तांदूळ हवा आहे.": { native: "I want half a kilo of rice.", bases: { "मला": "I", "आहे": "to be" } }
+      "तिला अर्धी भाकरी हवी आहे.": { native: "She wants half a flatbread.", bases: { "अर्धी": "half", "आहे": "to be" } }
+  "mr-0750":
+    native: "a quarter (of a kilo or a litre)"
+    notes:
+      "n1": "पाव किलो (pāv kilo), a quarter kilo, and पाव लिटर (pāv liṭar), a quarter litre."
+    examples:
+      "मला पाव किलो साखर हवी आहे.": { native: "I want a quarter kilo of sugar.", bases: { "मला": "I", "आहे": "to be" } }
+      "मला पाव लिटर दूध द्या.": { native: "Give me a quarter litre of milk.", bases: { "मला": "I", "द्या": "to give" } }
+    senses:
+      "roll": { native: "bread roll: a soft small loaf, as in वडापाव (vaḍāpāv)" }
+  "mr-0751":
+    native: "dozen"
+    notes:
+      "n1": "With fruit or eggs: एक डझन केळी (ek ḍajhan keḷi), a dozen bananas (mr-0405: केळे (keḷe))."
+    examples:
+      "मला एक डझन अंडी हवी आहेत.": { native: "I want a dozen eggs.", bases: { "मला": "I", "आहेत": "to be" } }
+      "एक डझन केळी घ्या.": { native: "Take a dozen bananas.", bases: { "घ्या": "to take" } }
+  "mr-0752":
+    native: "gram"
+    notes:
+      "n1": "The number comes first: पाचशे ग्रॅम (pācśe grêm), five hundred grams (mr-0284: पाचशे (pācśe))."
+    examples:
+      "पाचशे ग्रॅम साखर द्या.": { native: "Give me five hundred grams of sugar.", bases: { "द्या": "to give" } }
+      "शंभर ग्रॅम चिकन घ्या.": { native: "Take a hundred grams of chicken.", bases: { "घ्या": "to take" } }
+  "mr-0753":
+    native: "litre"
+    notes:
+      "n1": "The number comes first: दोन लिटर दूध (do liṭar dudh), two litres of milk."
+    examples:
+      "दोन लिटर तेल आणा.": { native: "Bring two litres of oil.", bases: { "आणा": "to bring" } }
+      "मला एक लिटर दूध हवे आहे.": { native: "I want one litre of milk.", bases: { "मला": "I", "आहे": "to be" } }
+  "mr-0754":
+    native: "piece; slice; bit"
+    notes:
+      "n1": "A piece of something: केकचा तुकडा (kekcā tukḍā), a piece of cake."
+    examples:
+      "त्याने पोळीचा एक तुकडा खाल्ला.": { native: "He ate a piece of the flatbread.", bases: { "खाल्ला": "to eat" } }
+      "मला कांद्याचा एक तुकडा द्या.": { native: "Give me a piece of onion.", bases: { "मला": "I", "द्या": "to give" } }
+  "mr-0755":
+    native: "bowl; a bowlful of"
+    notes:
+      "n1": "A measure: एक वाटी डाळ (ek vāṭi ḍāḷ), a bowl of lentils (mr-0399: डाळ (ḍāḷ))."
+    examples:
+      "एक वाटी भात द्या.": { native: "Give me a bowl of rice.", bases: { "द्या": "to give" } }
+      "त्याने एक वाटी दही खाल्ले.": { native: "He ate a bowl of curd.", bases: { "दही": "curd", "खाल्ले": "to eat" } }
+  "mr-0756":
+    native: "spoon; a spoonful"
+    notes:
+      "n1": "A measure: एक चमचा साखर (ek camcā sākhar), a spoonful of sugar."
+    examples:
+      "एक चमचा साखर द्या.": { native: "Give me a spoonful of sugar.", bases: { "द्या": "to give" } }
+      "चहात दोन चमचे साखर घाला.": { native: "Put two spoonfuls of sugar in the tea.", bases: { "चमचे": "spoon", "घाला": "to put in" } }
+  "mr-0757":
+    native: "packet; pack"
+    notes:
+      "n1": "A packet of something: एक पाकीट बिस्कीट (ek pākiṭ biskiṭ), a packet of biscuits."
+    examples:
+      "एक पाकीट चहा घ्या.": { native: "Take a packet of tea.", bases: { "घ्या": "to take" } }
+      "मला एक पाकीट मीठ हवे आहे.": { native: "I want a packet of salt.", bases: { "मला": "I", "आहे": "to be" } }
