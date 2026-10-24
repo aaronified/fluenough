@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All Tags</title>
+<meta name="description" content="The All tags page: today's rows against a one-line and a two-line proposal, with grouping by kind and sorting. Hindustani and Bengali, light and dark, 1.4x text.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&display=swap">
+<style>
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;font-weight:700}
+.cap1{margin:0 0 16px;color:var(--page-muted);font-size:14px}
+.tw{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 14px}
+.tg{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--page-muted);flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--page-line);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:inherit;font-size:14px;min-height:40px;padding:0 14px;border:0;background:var(--page-card);color:var(--page-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg);font-weight:600}
+section.opt{margin:0 0 52px;padding-top:20px;border-top:1px solid var(--page-line)}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:6px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+.sticky{position:sticky;top:0;z-index:20;background:var(--page-bg);padding:10px 0 4px;margin-bottom:12px;border-bottom:1px solid var(--page-line)}
+/* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed) =====
+   Every size is calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. */
+.ph{--t:1.4;width:360px;max-width:100%;height:740px;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph button{font-family:inherit;color:inherit;cursor:pointer}
+.appbar{flex:none;min-height:56px;display:flex;align-items:center;padding:0 4px 0 8px;color:var(--onSv);gap:2px}
+.appbar .ttl{flex:1;min-width:0;font-size:calc(20px*var(--t));line-height:1.2;font-weight:500;color:var(--onS);padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ib{width:48px;height:48px;border:0;background:none;display:flex;align-items:center;justify-content:center;border-radius:24px;padding:0;color:var(--onSv);flex:none}
+svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
+.sp{flex:1}
+.scroll{flex:1;min-height:0;overflow-y:auto;padding:0 16px 16px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.t-body{font-size:calc(14px*var(--t));line-height:1.4;margin:0}
+.t-sm{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv);margin:0}
+.t-lab{font-size:calc(12px*var(--t));line-height:1.3;font-weight:600;letter-spacing:.4px;color:var(--onSv);text-transform:uppercase;margin:14px 0 6px}
+.t-h{font-size:calc(16px*var(--t));line-height:1.3;font-weight:500;margin:0}
+.script{font-family:"Noto Sans Devanagari","Noto Sans Bengali",Roboto,sans-serif}
+.nowrap{white-space:nowrap}
+/* language bar */
+.lbar{display:flex;gap:8px;padding:0 16px 10px;flex:none}
+.pill{border:1px solid var(--ol);border-radius:8px;min-height:32px;padding:0 12px;font-size:calc(14px*var(--t));font-weight:500;display:inline-flex;align-items:center;gap:6px;background:none;color:var(--onSv)}
+.pill.on{background:var(--sc);color:var(--onSc);border-color:transparent}
+/* buttons */
+.btn{min-height:calc(40px*var(--t));border-radius:calc(20px*var(--t));border:0;font-size:calc(14px*var(--t));line-height:1.2;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 16px}
+.btn.fill{background:var(--p);color:var(--onP)}
+.btn.tonal{background:var(--sc);color:var(--onSc)}
+.btn.out{background:none;border:1px solid var(--ol);color:var(--p)}
+.btn.text{background:none;color:var(--p);padding:6px 12px}
+.btn.full{width:100%}
+.btn.sm{min-height:48px;border-radius:24px}
+/* cards */
+.card{background:var(--sLow);border-radius:16px;padding:14px 16px;margin:0 0 12px;display:flex;gap:12px;align-items:center;width:100%;text-align:left;border:0}
+.card .tx{flex:1;min-width:0}
+.card .ic{flex:none;width:40px;height:40px;border-radius:20px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
+/* bottom nav */
+.nav{flex:none;display:flex;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);padding:8px 4px 10px}
+.nav div{flex:1;text-align:center;font-size:calc(11px*var(--t));line-height:1.2;color:var(--onSv);display:flex;flex-direction:column;align-items:center;gap:2px}
+.nav div .pl{width:56px;height:28px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+.nav div.on{color:var(--onS);font-weight:600}
+.nav div.on .pl{background:var(--sc);color:var(--onSc)}
+/* settings rows */
+/* sheet */
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.42);z-index:3}
+.sheet{position:absolute;z-index:4;left:0;right:0;bottom:0;background:var(--sLow);border-radius:28px 28px 0 0;display:flex;flex-direction:column;max-height:88%}
+.sheet .grab{flex:none;width:32px;height:4px;border-radius:2px;background:var(--onSv);opacity:.4;margin:10px auto 6px}
+.sheet .scroll{padding:6px 20px 20px}
+.sheet h3{margin:0 0 4px;font-size:calc(20px*var(--t));font-weight:500;line-height:1.2}
+.opt-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;border:0;padding:6px 0;min-height:48px;font-size:calc(14px*var(--t));line-height:1.3}
+.opt-row .tx{flex:1;min-width:0}
+.opt-row .tx small{display:block;font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.3}
+.box{flex:none;width:20px;height:20px;border-radius:3px;border:2px solid var(--onSv);display:flex;align-items:center;justify-content:center}
+.box.rd{border-radius:50%}
+.opt-row[aria-checked="true"] .box{background:var(--p);border-color:var(--p)}
+.box svg{width:16px;height:16px;fill:var(--onP);opacity:0}
+.opt-row[aria-checked="true"] .box svg{opacity:1}
+.sep{border-top:1px solid var(--olv);margin:6px 0}
+/* word rows */
+.wrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;align-items:center;border-top:1px solid var(--olv);padding:10px 0;width:100%;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0}
+.wrow .w{font-size:calc(20px*var(--t));line-height:1.25;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .rd{font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .mn{font-size:calc(14px*var(--t));line-height:1.3;grid-column:1}
+.wrow .act{grid-column:2;grid-row:1/4;display:flex;align-items:center;gap:0}
+.wrow.unl .w,.wrow.unl .rd,.wrow.unl .mn{opacity:.78}
+.mastery{display:inline-flex;align-items:center;height:calc(18px*var(--t));padding:0 8px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));line-height:1;font-weight:600;letter-spacing:.3px}
+.m-new{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.m-learning{background:var(--sc);color:var(--onSc)}
+.m-known{background:var(--p);color:var(--onP)}
+.audio{width:48px;height:48px;border-radius:24px;border:0;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;flex:none}
+.audio.sm{width:40px;height:40px}
+.bottom{flex:none;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv)}
+/* key-value (inspect) */
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;margin:0}
+.kv dt{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.5}
+.kv dd{margin:0;font-size:calc(14px*var(--t));line-height:1.4;min-width:0;overflow-wrap:anywhere}
+.mono{font-family:ui-monospace,"Roboto Mono",monospace;font-size:calc(12px*var(--t))}
+.blk{display:flex;gap:12px;align-items:flex-start;border-radius:16px;padding:12px 14px;background:var(--sHigh);margin:8px 0}
+.blk p{margin:0;font-size:calc(14px*var(--t));line-height:1.35}
+.blk .tt{font-size:calc(12px*var(--t));font-weight:700;letter-spacing:.3px;text-transform:uppercase;margin:0 0 2px;color:var(--onSv)}
+/* conversation */
+.turns{display:flex;flex-direction:column;gap:12px;padding:4px 0}
+.turn{max-width:92%;border-radius:20px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.turn.a{align-self:flex-start;background:var(--sLow);border-bottom-left-radius:6px}
+.turn.b{align-self:flex-end;background:var(--sc);color:var(--onSc);border-bottom-right-radius:6px}
+.turn .who{font-size:calc(11px*var(--t));font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+.turn.a .who{color:var(--onSv)}
+.turn .tl{font-size:calc(20px*var(--t));line-height:1.45;font-weight:500}
+.turn .tl button{background:none;border:0;padding:0 1px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dotted currentColor}
+.turn .tl button.sel{background:var(--p);color:var(--onP);border-radius:6px;border-bottom-color:transparent}
+.turn .rdg{font-size:calc(13px*var(--t));line-height:1.3;opacity:.95}
+.turn .ml{font-size:calc(14px*var(--t));line-height:1.3;opacity:.95}
+.turn.live .tl{opacity:.85}
+.live-dot{display:inline-block;width:8px;height:8px;border-radius:4px;background:var(--E);margin-right:6px}
+.mic{display:flex;gap:12px;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);align-items:stretch}
+.mic .btn{flex:1;min-height:calc(48px*var(--t));flex-direction:column;gap:2px;border-radius:24px;font-size:calc(13px*var(--t))}
+.mic .btn svg.i{width:28px;height:28px}
+.mic .btn.on{outline:3px solid var(--onS);outline-offset:2px}
+.status{display:flex;align-items:center;gap:8px;padding:0 16px 8px;flex:none}
+/* highlight of what changed */
+.hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;position:relative;border-radius:14px}
+.hl-on .chg::after{content:"new";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:2;letter-spacing:.3px}
+.hl-on .chg.upd::after{content:"changed"}
+.hl-on .chg.gone::after{content:"removed"}
+.ghost{opacity:.55;text-decoration:line-through;pointer-events:none}
+.hide{display:none!important}
+.note{font-size:13px;color:var(--page-muted);margin:6px 0 14px;max-width:760px}
+
+/* All tags */
+.tg-row{display:flex;align-items:center;gap:8px;padding:6px 0;min-height:48px}
+.tg-row .nm{flex:none;width:calc(86px*var(--t));font-size:calc(14px*var(--t));line-height:1.25;min-width:0;overflow-wrap:anywhere}
+.bar{flex:1;min-width:0;background:var(--sc);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--tt);border-radius:6px}
+.pc{flex:none;min-width:40px;text-align:right;font-size:calc(14px*var(--t));font-weight:700;font-variant-numeric:tabular-nums}
+.pbtn{flex:none;width:48px;height:48px;border:0;background:none;display:flex;align-items:center;justify-content:center;padding:0}
+.pbtn span{width:36px;height:36px;border-radius:18px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
+.pbtn:disabled{cursor:default}.pbtn:disabled span{background:none;box-shadow:inset 0 0 0 1px var(--olv);color:var(--onSv);opacity:.7}
+.tbtn{border:0;background:none;color:var(--p);font-size:calc(14px*var(--t));font-weight:600;min-height:48px;padding:0 12px;align-self:flex-end}
+.tbtn:disabled{color:var(--onSv);opacity:.7}
+.two{padding:8px 0;border-top:1px solid var(--olv)}
+.two:first-child{border-top:0}
+.two .top{display:flex;align-items:center;gap:8px}
+.two .nm2{flex:1;min-width:0}
+.two .nm2 b{display:block;font-weight:500;font-size:calc(16px*var(--t));line-height:1.25;overflow-wrap:anywhere}
+.two .nm2 small{display:block;font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv)}
+.two .bar{height:6px;margin:0 0 2px}
+.ex{font-size:calc(12px*var(--t));color:var(--onSv)}
+.grp{font-size:calc(12px*var(--t));line-height:1.3;font-weight:600;letter-spacing:.4px;color:var(--onSv);text-transform:uppercase;margin:14px 0 2px;display:flex;justify-content:space-between}
+.old{padding:0 0 8px}
+.old .r1{display:flex;align-items:center;gap:12px;min-height:calc(24px*var(--t))}
+.old .r1 .nm{width:calc(100px*var(--t) - 40px)}
+.toast{position:absolute;left:16px;right:16px;bottom:16px;background:var(--onS);color:var(--s);border-radius:8px;padding:12px 16px;font-size:calc(14px*var(--t));line-height:1.3;z-index:5}
+.chg2{outline:2px dashed var(--E);outline-offset:2px;border-radius:8px}
+</style></head>
+<body>
+<div class="wrap" id="wrap">
+<h1>All tags</h1>
+<p class="cap1">The All tags page from Progress, Weakest tags, All tags (#499) (owner, 2026-10-24: "Beautify the all tags page. This needs a small mockup, as not much is happening here anyway."). Phone 360 dp at 1.4x text, ColorScheme.fromSeed of the forest seed. Left: the page as built today. Right: the proposal, with red dashed outlines on what changed. Tags, percentages and the Practise rule are the real ones (the share of taught pairs known; "–" when no card with the tag was answered; Practise off when no word with the tag is taught). Choices are tweak controls; none is decided.</p>
+<div class="sticky tw" id="g-tw">
+ <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
+ <div class="tg">Course <span class="seg" data-k="course"><button data-v="hi">Hindustani</button><button data-v="bn">Bengali</button></span></div>
+ <div class="tg">Highlight changes <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
+</div>
+<div id="root"></div>
+</div>
+<script>
+/* ===== palette: ColorScheme.fromSeed(forest); tt = tertiary, the colour of the tag bars (Weakest tags) ===== */
+const PAL={
+dark:{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sHigh":"#262b27","ol":"#8a938b","olv":"#404942","E":"#ffb4ab","onE":"#690005","tt":"#a4cddd"},
+light:{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sHigh":"#e4eae3","ol":"#717972","olv":"#c0c9c0","E":"#ba1a1a","onE":"#ffffff","tt":"#3b6470"}};
+const IC={
+ back:'M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z',
+ play:'M8 5v14l11-7z',
+ bug:'M20 8h-2.81a5.985 5.985 0 0 0-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6.002 6.002 0 0 0-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z',
+ tag:'M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58s1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z'};
+const svg=p=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="${IC[p]}"/></svg>`;
+/* Kinds are NOT in the deck data today (a card's tags are plain strings); the grouping infers them. */
+const KINDS=['Level','Part of speech','Politeness','Theme'];
+/* t: tag, k: kind, r: share of taught pairs known (null = not answered), n: words taught, ex/rd: an example word and its reading */
+const C={
+ hi:{lang:'Hindustani',tags:[
+  {t:'beginner',k:0,r:.9,n:64,ex:'नमस्ते',rd:'namaste'},
+  {t:'noun',k:1,r:.74,n:212,ex:'घर',rd:'ghar'},
+  {t:'verb',k:1,r:.66,n:96,ex:'करना',rd:'karnā'},
+  {t:'adjective',k:1,r:.28,n:41,ex:'अच्छा',rd:'acchā'},
+  {t:'honorific',k:2,r:.82,n:18,ex:'आप',rd:'āp'},
+  {t:'polite',k:2,r:.58,n:23,ex:'कृपया',rd:'kr̥payā'},
+  {t:'family',k:3,r:.51,n:37,ex:'परिवार',rd:'parivār'},
+  {t:'transport',k:3,r:.4,n:29,ex:'बस',rd:'bas'},
+  {t:'food',k:3,r:.33,n:52,ex:'खाना',rd:'khānā'},
+  {t:'numbers-big',k:3,r:null,n:0,ex:'सौ',rd:'sau'}]},
+ bn:{lang:'Bengali',tags:[
+  {t:'beginner',k:0,r:.86,n:58,ex:'নমস্কার',rd:'nomoskār'},
+  {t:'noun',k:1,r:.7,n:187,ex:'বাড়ি',rd:'bāṛi'},
+  {t:'verb',k:1,r:.61,n:84,ex:'করা',rd:'kora'},
+  {t:'adjective',k:1,r:.31,n:36,ex:'ভালো',rd:'bhālo'},
+  {t:'honorific',k:2,r:.77,n:15,ex:'আপনি',rd:'āpni'},
+  {t:'polite',k:2,r:.55,n:21,ex:'ধন্যবাদ',rd:'dhonnobād'},
+  {t:'family',k:3,r:.47,n:33,ex:'পরিবার',rd:'poribār'},
+  {t:'transport',k:3,r:.36,n:26,ex:'বাস',rd:'bās'},
+  {t:'food',k:3,r:.3,n:47,ex:'খাবার',rd:'khābār'},
+  {t:'numbers-big',k:3,r:null,n:0,ex:'একশো',rd:'ekśo'}]}};
+const S={theme:'light',course:'hi',hl:'1',layout:'two',group:'none',sort:'weak',eg:'on',toast:null};
+const root=document.getElementById('root');
+const pct=r=>Math.round(r*100)+'%';
+/* the page's order today: answered tags weakest first, then the tags not answered, A-Z */
+function order(tags,sort){
+ const a=tags.filter(x=>x.r!=null),u=tags.filter(x=>x.r==null).sort((x,y)=>x.t.localeCompare(y.t));
+ if(sort==='az')return tags.slice().sort((x,y)=>x.t.localeCompare(y.t));
+ if(sort==='words')return tags.slice().sort((x,y)=>y.n-x.n||x.t.localeCompare(y.t));
+ return a.sort((x,y)=>x.r-y.r||x.t.localeCompare(y.t)).concat(u);
+}
+const dis=x=>x.n===0;
+function bar(x,h){return `<div class="bar" style="height:${h}px" role="img" aria-label="${x.r==null?'not answered':pct(x.r)}"><i style="width:${x.r==null?0:x.r*100}%"></i></div>`}
+function oldRow(x){return `<div class="old"><div class="r1"><span class="nm" style="width:100px;flex:none;font-size:calc(14px*var(--t));line-height:1.25">${x.t}</span><div class="bar" style="height:12px">${x.r==null?'':`<i style="width:${x.r*100}%"></i>`}</div><span class="pc">${x.r==null?'–':pct(x.r)}</span></div><div style="display:flex;justify-content:flex-end"><button class="tbtn" ${dis(x)?'disabled':''} data-t="${x.t}">Practise</button></div></div>`}
+function oneRow(x){return `<div class="tg-row"><span class="nm">${x.t}</span>${bar(x,6)}<span class="pc">${x.r==null?'–':pct(x.r)}</span><button class="pbtn" aria-label="Practise ${x.t}" ${dis(x)?'disabled':''} data-t="${x.t}"><span>${svg('play')}</span></button></div>`}
+function twoRow(x){
+ const sub=dis(x)?'No word taught yet':`${x.n} words taught`+(S.eg==='on'?` · <span class="script">${x.ex}</span> ${x.rd}`:'');
+ return `<div class="two"><div class="top"><div class="nm2"><b>${x.t}</b><small>${sub}</small></div><span class="pc">${x.r==null?'–':pct(x.r)}</span><button class="pbtn" aria-label="Practise ${x.t}" ${dis(x)?'disabled':''} data-t="${x.t}"><span>${svg('play')}</span></button></div>${bar(x,6)}</div>`}
+function list(c,mode){
+ const rowf=mode==='old'?oldRow:mode==='one'?oneRow:twoRow;
+ const sort=mode==='old'?'weak':S.sort;
+ if(mode==='old'||S.group==='none')return order(c.tags,sort).map(rowf).join('');
+ return KINDS.map((k,i)=>{const g=order(c.tags.filter(x=>x.k===i),sort);if(!g.length)return '';
+  const ans=g.filter(x=>x.r!=null);const avg=ans.length?pct(ans.reduce((s,x)=>s+x.r,0)/ans.length):'–';
+  return `<div class="grp"><span>${k}</span><span>${avg}</span></div>`+g.map(rowf).join('')}).join('');
+}
+function phone(c,mode,cap){
+ const body=`<div class="appbar"><span class="ib">${svg('back')}</span><span class="ttl">All tags</span><span class="ib">${svg('bug')}</span></div>
+  <div class="scroll" style="padding-top:8px">${list(c,mode)}</div>`;
+ const t=S.toast&&S.toast.m===mode?`<div class="toast" role="status">${S.toast.x}</div>`:'';
+ const chg=mode==='old'?'':'chg upd';
+ return `<div class="fcol"><div class="fcap">${cap}</div><div class="${chg}" style="border-radius:20px"><div class="ph">${body}${t}</div></div></div>`;
+}
+function seg(k,opts,label){return `<div class="tg">${label}<span class="seg" data-sk="${k}">${opts.map(([v,l])=>`<button data-v="${v}" aria-pressed="${S[k]===v}">${l}</button>`).join('')}</span></div>`}
+function render(){
+ const c=C[S.course],d=document.documentElement;d.setAttribute('data-theme',S.theme);
+ root.className=S.hl==='1'?'hl-on':'';
+ root.style.cssText=Object.entries(PAL[S.theme]).map(([k,v])=>`--${k}:${v}`).join(';');
+ root.innerHTML=`<section class="opt"><h2>All tags, ${c.lang}</h2>
+ <p class="note">Today's rows stand 2 lines tall: a 12 dp bar with the tag at 100 dp, the percentage, then a Practise text button on its own line. The proposal drops the second line: the Practise button moves inline as a round play icon (still a 48 dp target, labelled "Practise honorific" for screen readers), the bar thins to 6 dp, and (Two lines) each row gets a line of facts. A tag with nothing taught says so in the row, rather than in a tooltip a finger cannot show.</p>
+ <div class="tw">${seg('layout',[['one','One line'],['two','Two lines']],'Row')}${seg('group',[['none','No groups'],['kind','By kind']],'Grouping')}${seg('sort',[['weak','Weakest first'],['az','A to Z'],['words','Most words']],'Sort')}${seg('eg',[['on','Example word shown'],['off','Hidden']],'Two lines: example word')}</div>
+ <div class="frames">${phone(c,'old','Today (as built)')}${phone(c,S.layout,'Proposed: '+(S.layout==='one'?'one line':'two lines')+(S.group==='kind'?', by kind':'')+', '+({weak:'weakest first',az:'A to Z',words:'most words'})[S.sort])}</div></section>`;
+ document.querySelectorAll('#g-tw .seg').forEach(s=>{const k=s.dataset.k;s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(S[k])===b.dataset.v))});
+ document.title='All Tags';
+}
+let tm;
+document.addEventListener('click',e=>{
+ const gb=e.target.closest('#g-tw .seg button');
+ if(gb){S[gb.parentNode.dataset.k]=gb.dataset.v;render();return}
+ const b=e.target.closest('[data-sk] button');
+ if(b){S[b.parentNode.dataset.sk]=b.dataset.v;render();return}
+ const p=e.target.closest('[data-t]');
+ if(p&&!p.disabled){const m=p.closest('.fcol').querySelector('.fcap').textContent.startsWith('Today')?'old':S.layout;S.toast={m,x:`Starts 20 words tagged "${p.dataset.t}"`};render();clearTimeout(tm);tm=setTimeout(()=>{S.toast=null;render()},1800)}
+});
+render();
+/* ===== contrast self-check: console only ===== */
+function lum(h){const c=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]}
+function cr(a,b){const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
+const PAIRS=[['body text','onS','s',4.5],['tag name, percentage','onS','s',4.5],['facts line, group heading, disabled Practise','onSv','s',4.5],['Practise text button','p','s',4.5],['play icon on its circle','onSc','sc',4.5],['bar fill on its track','tt','sc',3],['bar fill on page','tt','s',3],['disabled play ring','onSv','s',3],['change outline on page','E','s',3],['change tag text','onE','E',4.5],['toast text','s','onS',4.5]];
+window.__contrast=[];
+['light','dark'].forEach(t=>PAIRS.forEach(([n,f,b,need])=>{const r=cr(PAL[t][f],PAL[t][b]);window.__contrast.push({theme:t,pair:n,fg:f,bg:b,ratio:+r.toFixed(2),need,pass:r>=need})}));
+console.log('contrast',JSON.stringify(window.__contrast));
+</script>
+</body>
+</html>
