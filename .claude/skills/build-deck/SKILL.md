@@ -330,3 +330,88 @@ is `te-grammar-conditional` and its layer, with the topic `conditional`.
   every slot key.
 - Warnings to clear or explain: a row with one form only; a unit with more
   words than `words`; a word in a text covered by no card or base.
+
+## Chinese, Japanese and Korean
+
+Pattern decisions from the first batches (owner, 2026-10-24: "Sonnet writes
+the first batch per language, Haiku follows"): zh grammar units shi,
+questions and word order (#813), ja and ko sound-differences and questions
+units (#814, #815). Copy them: `decks/zh/zh-grammar-shi.yaml`,
+`decks/ja/ja-sound-differences.yaml`, `decks/ko/ko-questions.yaml`.
+
+**All three**
+
+- **Readings are "based on" a standard**: pinyin with tone marks (Hanyu
+  Pinyin), Hepburn without macrons (`ja-romanisation.yaml`: long vowels
+  `ou`, `oo`, `uu`, `ii`, `aa`; を is `wo`), Revised Romanization. Never
+  say a reading strictly follows one.
+- **Prose rule bites twice.** Every Han, kana or hangul word in a note, a
+  `why`, a gloss or a question carries its reading, **including a wrong form
+  you quote** ("never 我是忙 (wǒ shì máng)"): CI errors on one without.
+- **Words already taught, only.** Check a lemma, form or sentence word by
+  its card id. A word that is not a card goes in `bases` written in full, with
+  its base, reading and (in the layer) meaning. A word that has a card, once
+  you write it later, becomes a `ref`: when a unit writes どこ, いくら,
+  얼마예요 or 뭐예요, change the earlier phrasebook and first-words bases to
+  `{ word, ref }` in the same PR and delete their meaning lines in the layer.
+- **A card cannot `ref` itself.** In its own examples, a particle form
+  (달이, 물が) names its base in full. Give a repeated word's base once per text.
+- **Sentences decks** (`<lang>-<theme>-sentences`, `pos: "phrase"`) give 2 to 3
+  `confusables` each, `kind: "word"` or `"sound"`, none a word of the
+  sentence, each with a `why` in the layer; a confusable that is no card is a
+  `word` with its `reading`.
+- **Reading decks stay single-file** (`<lang>-en-reading-<name>.yaml`, listed
+  as `<lang>-reading-<name>`), 2 passages of 4 short lines and 3 questions
+  each, question ids from `--next-id`. Word units also get the set card for
+  a closed group (question words). A grammar unit keeps its planned
+  passages and writes no reading deck.
+- **`warning`** goes on every word card with a `pair` note, naming the note's
+  id; a card with two partners (a triple) takes the pick of
+  `tools/pick_warning.py` (`pick_warning.pick(card, index)` gives it without
+  writing files).
+- No pictures: a picture needs its emoji in `assets/pictures/`, and the
+  question words' `picture_ask` waits for the owner (open question).
+
+**Chinese** (script `han_simplified`, `scripts` also traditional)
+
+- Written without spaces: `words` on every card, sentence and example, joined
+  they equal the target without punctuation; compounds the course has no card
+  for are one word with a `base` (听不懂, 喜不喜欢 as one word with `ref`).
+- Readings show the tone **as said**: 不 is `bú` before a fourth tone, `bù`
+  before the others; the 不 in 是不是 or 去不去 is neutral (`shì bu shì`).
+  Third-tone sandhi is not written, as in the existing decks.
+- Measure words come with their own unit (planned); do not use one in a grammar
+  unit before it.
+- A grammar unit has **one deck per topic** (`zh-grammar-shi` and
+  `zh-grammar-bu-negation` for `["shi", "bu-negation"]`), each a `kind:
+  "grammar"` table: lemma = the verb, noun or question word, one slot per
+  form; for sentence tables put the whole sentence in each `forms` cell and
+  say in the layer's gloss which sentence it is ("to go: I go to school").
+  Add a sentences deck with confusables.
+
+**Japanese** (script `kana`)
+
+- Targets are in **hiragana** until the kanji units; katakana only where the
+  phrasebook already has it. Particles are words of their own: `["わたし",
+  "は", "せんせい", "です"]`; set phrases stay whole. The hiragana letters
+  are not word cards: は, の, に still get a `base` entry (`は` reading `wa`).
+- `ipa` from `tools/transcribe.py ja`, word by word, joined by spaces.
+- Long vowels, double consonants and the voiced mark are the A1 contrasts:
+  `ja-sounds.yaml` lists them as kana pairs (an empty side for a vowel or っ
+  added). Tag each card with its contrast; a te-form (きて) names its base
+  (くる) and says in a note that the stem changes.
+- Particles and polite forms are taught by their own planned units; examples
+  may use です, か, は, の, に, が, を, と and ください as bases only.
+
+**Korean** (script `hangul`)
+
+- Words are separated by spaces, with the particle joined (물이): each such
+  word names its base (`ref` on another card, `base` in full on its own).
+  The first verb forms are polite `-요`. Avoid, for now, stems that change
+  their first letter (크다, 커요), which the validator warns of.
+- No `ipa` in the existing Korean cards: do not add one by hand.
+  `tools/transcribe.py ko` gives the reading of a whole sentence.
+- Sound contrasts (plain, tense, aspirated) are listed in `ko-sounds.yaml` as
+  syllable pairs of the deck's words, since a recogniser returns syllables.
+- Honorifics (선생님, 저, 요 and 세요) are taught in the first words and the
+  addressing unit; keep examples in the polite style.
