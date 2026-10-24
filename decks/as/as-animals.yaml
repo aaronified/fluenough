@@ -16,7 +16,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "বাঘ ডাঙৰ।", reading: "bāgh dāṅôr.", ipa: "baɡʱ daŋɔɹ", bases: [] }
-      - { target: "বাঘটো শক্তিশালী।", reading: "bāghôtu xoktixāli.", ipa: "baɡʱɔtʊ xoktixali", bases: [{"word": "বাঘটো", "base": "বাঘ", "reading": "bāgh"}] }
+      - { target: "বাঘটো শক্তিশালী।", reading: "bāghôtu xoktixāli.", ipa: "baɡʱɔtʊ xoktixali", bases: [{"word": "বাঘটো", "base": "বাঘ", "reading": "bāgh"}, {"word": "শক্তিশালী", "base": "শক্তিশালী", "reading": "xoktixāli"}] }
   - id: "as-2471"
     target: "হাতী"
     reading: "hāti"
@@ -35,7 +35,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "বান্দৰ চঞ্চল।", reading: "bāndôr sônsôl.", ipa: "bandɔɹ sɔnsɔl", bases: [] }
+      - { target: "বান্দৰ চঞ্চল।", reading: "bāndôr sônsôl.", ipa: "bandɔɹ sɔnsɔl", bases: [{"word": "চঞ্চল", "base": "চঞ্চল", "reading": "sônsôl"}] }
       - { target: "মই বান্দৰ দেখোঁ।", reading: "moi bāndôr dekhum̐.", ipa: "moi bandɔɹ dekʰʊ̃", bases: [{"word": "দেখোঁ", "ref": "as-2206"}] }
   - id: "as-2473"
     target: "সাপ"
@@ -55,7 +55,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "গৰু দুধ দিয়ে।", reading: "goru dudh diye.", ipa: "ɡoɹu dudʱ dije", bases: [{"word": "দিয়ে", "ref": "as-2218"}] }
+      - { target: "গৰু দুধ দিয়ে।", reading: "goru dudh diye.", ipa: "ɡoɹu dudʱ dije", bases: [{"word": "দুধ", "base": "দুধ", "reading": "dudh"}, {"word": "দিয়ে", "ref": "as-2218"}] }
       - { target: "গৰু ডাঙৰ।", reading: "goru dāṅôr.", ipa: "ɡoɹu daŋɔɹ", bases: [] }
   - id: "as-2475"
     target: "ম'হ"
@@ -76,7 +76,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "ছাগলী সৰু।", reading: "sāgoli soru.", ipa: "saɡoli soɹu", bases: [] }
-      - { target: "ছাগলী দুধ দিয়ে।", reading: "sāgoli dudh diye.", ipa: "saɡoli dudʱ dije", bases: [{"word": "দিয়ে", "ref": "as-2218"}] }
+      - { target: "ছাগলী দুধ দিয়ে।", reading: "sāgoli dudh diye.", ipa: "saɡoli dudʱ dije", bases: [{"word": "দুধ", "base": "দুধ", "reading": "dudh"}, {"word": "দিয়ে", "ref": "as-2218"}] }
   - id: "as-2477"
     target: "ভেডা"
     reading: "bhedā"
@@ -95,7 +95,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "শিয়াল ধূৰ্ত।", reading: "xiyāl dhurt.", ipa: "xijal dʱuɹt", bases: [] }
+      - { target: "শিয়াল ধূৰ্ত।", reading: "xiyāl dhurt.", ipa: "xijal dʱuɹt", bases: [{"word": "ধূৰ্ত", "base": "ধূৰ্ত", "reading": "dhurt"}] }
       - { target: "মই শিয়াল দেখোঁ।", reading: "moi xiyāl dekhum̐.", ipa: "moi xijal dekʰʊ̃", bases: [{"word": "দেখোঁ", "ref": "as-2206"}] }
   - id: "as-2479"
     target: "কুকুৰ"
@@ -135,7 +135,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "ঘোঁৰা দ্ৰুত।", reading: "ghum̐rā drut.", ipa: "ɡʱʊ̃ɹa dɹut", bases: [] }
+      - { target: "ঘোঁৰা দ্ৰুত।", reading: "ghum̐rā drut.", ipa: "ɡʱʊ̃ɹa dɹut", bases: [{"word": "দ্ৰুত", "base": "দ্ৰুত", "reading": "drut"}] }
       - { target: "মই ঘোঁৰা দেখোঁ।", reading: "moi ghum̐rā dekhum̐.", ipa: "moi ɡʱʊ̃ɹa dekʰʊ̃", bases: [{"word": "দেখোঁ", "ref": "as-2206"}] }
   - id: "as-2483"
     target: "হাঁহ"
@@ -155,7 +155,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "সিংহ শক্তিশালী।", reading: "siṅh xoktixāli.", ipa: "siŋh xoktixali", bases: [] }
+      - { target: "সিংহ শক্তিশালী।", reading: "siṅh xoktixāli.", ipa: "siŋh xoktixali", bases: [{"word": "শক্তিশালী", "base": "শক্তিশালী", "reading": "xoktixāli"}] }
       - { target: "মই সিংহ দেখোঁ।", reading: "moi siṅh dekhum̐.", ipa: "moi siŋh dekʰʊ̃", bases: [{"word": "দেখোঁ", "ref": "as-2206"}] }
   - id: "as-2485"
     target: "ভালুক"
@@ -175,7 +175,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "হৰিণ দ্ৰুত।", reading: "horin drut.", ipa: "hoɹin dɹut", bases: [] }
+      - { target: "হৰিণ দ্ৰুত।", reading: "horin drut.", ipa: "hoɹin dɹut", bases: [{"word": "দ্ৰুত", "base": "দ্ৰুত", "reading": "drut"}] }
       - { target: "মই হৰিণ দেখোঁ।", reading: "moi horin dekhum̐.", ipa: "moi hoɹin dekʰʊ̃", bases: [{"word": "দেখোঁ", "ref": "as-2206"}] }
   - id: "as-2487"
     target: "খৰগোছ"
@@ -195,7 +195,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "পখিলা সুন্দৰ।", reading: "pokhilā sundôr.", ipa: "pokʰila sundɔɹ", bases: [] }
+      - { target: "পখিলা সুন্দৰ।", reading: "pokhilā sundôr.", ipa: "pokʰila sundɔɹ", bases: [{"word": "সুন্দৰ", "base": "সুন্দৰ", "reading": "sundôr"}] }
       - { target: "পখিলা উৰে।", reading: "pokhilā ure.", ipa: "pokʰila uɹe", bases: [{"word": "উৰে", "base": "উৰা", "reading": "urā"}] }
   - id: "as-2489"
     target: "মাছি"
@@ -236,6 +236,6 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "কাউৰী উৰে।", reading: "kāuri ure.", ipa: "kauɹi uɹe", bases: [{"word": "উৰে", "base": "উৰা", "reading": "urā"}] }
-      - { target: "কাউৰী ক'লা।", reading: "kāuri kolā.", ipa: "kauɹi kola", bases: [] }
+      - { target: "কাউৰী ক'লা।", reading: "kāuri kolā.", ipa: "kauɹi kola", bases: [{"word": "ক'লা", "base": "ক'লা", "reading": "kolā"}] }
   - ref: "as-0290"
   - ref: "as-0287"
