@@ -89,17 +89,20 @@ units:
   # until the Wikipedia counts are written, #516).
   - decks: ["mr-about-me", "*"]
     words: 9
-  - planned: { id: "mr-verbs", theme: "everyday-verbs", words: 30 }
+  - decks: ["mr-verbs", "*"]
+    words: 23
     listening_passages:
       - { id: "morning-routine", text: { "en": "A mother says what each person in the house does in the morning" } }
     reading_passages:
       - { id: "fridge-note", text: { "en": "A note on the fridge: what to eat, what to drink and where things are" } }
-  - planned: { id: "mr-adverbs", theme: "adverbs", words: 45 }
+  - decks: ["mr-adverbs", "*"]
+    words: 23
     listening_passages:
       - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
     reading_passages:
       - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
-  - planned: { id: "mr-quantities", theme: "quantities", words: 23 }
+  - decks: ["mr-quantities", "*"]
+    words: 18
     listening_passages:
       - { id: "at-the-grocers", text: { "en": "Asking how much and how many at a grocer's" } }
     reading_passages:

@@ -1,0 +1,194 @@
+schema: 1
+id: "mr-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+theme: "everyday-verbs"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-0708"
+    target: "खाणे"
+    reading: "khāṇe"
+    ipa: "kʰaɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - { target: "तो भात खातो.", reading: "to bhāt khāto.", ipa: "t̪o bʱat̪ kʰat̪o", bases: [{ word: "खातो", base: "खाणे", reading: "khāṇe" }] }
+      - { target: "मुले आंबे खातात.", reading: "mule āmbe khātāt.", ipa: "mule ambe kʰat̪at̪", bases: [{ word: "खातात", base: "खाणे", reading: "khāṇe" }, { word: "आंबे", ref: "mr-0404" }] }
+  - id: "mr-0709"
+    target: "पिणे"
+    reading: "piṇe"
+    ipa: "piɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - { target: "ती दूध पिते.", reading: "ti dudh pite.", ipa: "t̪i d̪ud̪ʱ pit̪e", bases: [{ word: "पिते", base: "पिणे", reading: "piṇe" }] }
+      - { target: "तो रोज चहा पितो.", reading: "to roj cahā pito.", ipa: "t̪o rodz tsəɦa pit̪o", bases: [{ word: "पितो", base: "पिणे", reading: "piṇe" }] }
+  - id: "mr-0710"
+    target: "जाणे"
+    reading: "jāṇe"
+    ipa: "dzaɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - { target: "तो शाळेत जातो.", reading: "to śāḷet jāto.", ipa: "t̪o ʃaɭet̪ dzat̪o", bases: [{ word: "शाळेत", base: "शाळा", reading: "śāḷā" }, { word: "जातो", base: "जाणे", reading: "jāṇe" }] }
+      - { target: "ती बाजारात जाते.", reading: "ti bājārāt jāte.", ipa: "t̪i badzarat̪ dzat̪e", bases: [{ word: "बाजारात", ref: "mr-0383" }, { word: "जाते", base: "जाणे", reading: "jāṇe" }] }
+  - id: "mr-0711"
+    target: "येणे"
+    reading: "yeṇe"
+    ipa: "jeɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - { target: "तो उद्या येईल.", reading: "to udyā yeil.", ipa: "t̪o ud̪ja jeil", bases: [{ word: "येईल", base: "येणे", reading: "yeṇe" }] }
+      - { target: "ती लवकर घरी येते.", reading: "ti lavkar ghari yete.", ipa: "t̪i ləʋkər ɡʱəri jet̪e", bases: [{ word: "येते", base: "येणे", reading: "yeṇe" }] }
+  - id: "mr-0712"
+    target: "करणे"
+    reading: "karṇe"
+    ipa: "kərɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "तो रोज काम करतो.", reading: "to roj kām karto.", ipa: "t̪o rodz kam kərt̪o", bases: [{ word: "करतो", base: "करणे", reading: "karṇe" }] }
+      - { target: "ती उद्या काम करणार आहे.", reading: "ti udyā kām karṇār āhe.", ipa: "t̪i ud̪ja kam kərɳar aɦe", bases: [{ word: "करणार", base: "करणे", reading: "karṇe" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-0713"
+    target: "बोलणे"
+    reading: "bolṇe"
+    ipa: "bolɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ती फोनवर बोलते.", reading: "ti phonvar bolte.", ipa: "t̪i pʰonʋər bolt̪e", bases: [{ word: "फोनवर", base: "फोन", reading: "phon" }, { word: "बोलते", base: "बोलणे", reading: "bolṇe" }] }
+      - { target: "तो माझ्याशी बोलतो.", reading: "to mājhyāśi bolto.", ipa: "t̪o madʒʱjaʃi bolt̪o", bases: [{ word: "माझ्याशी", base: "मी", reading: "mi" }, { word: "बोलतो", base: "बोलणे", reading: "bolṇe" }] }
+  - id: "mr-0714"
+    target: "पाहणे"
+    reading: "pāhṇe"
+    ipa: "paɦɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "तो चित्र पाहतो.", reading: "to citr pāhto.", ipa: "t̪o tʃit̪r paɦt̪o", bases: [{ word: "चित्र", base: "चित्र", reading: "citr" }, { word: "पाहतो", base: "पाहणे", reading: "pāhṇe" }] }
+      - { target: "मुले टीव्ही पाहतात.", reading: "mule ṭivhi pāhtāt.", ipa: "mule ʈiʋɦi paɦt̪at̪", bases: [{ word: "टीव्ही", base: "टीव्ही", reading: "ṭivhi" }, { word: "पाहतात", base: "पाहणे", reading: "pāhṇe" }] }
+  - id: "mr-0715"
+    target: "ऐकणे"
+    reading: "aikṇe"
+    ipa: "əikɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - { target: "ती संगीत ऐकते.", reading: "ti saṅgit aikte.", ipa: "t̪i səŋɡit̪ əikt̪e", bases: [{ word: "संगीत", base: "संगीत", reading: "saṅgit" }, { word: "ऐकते", base: "ऐकणे", reading: "aikṇe" }] }
+      - { target: "तो रेडिओ ऐकतो.", reading: "to reḍio aikto.", ipa: "t̪o reɖio əikt̪o", bases: [{ word: "रेडिओ", base: "रेडिओ", reading: "reḍio" }, { word: "ऐकतो", base: "ऐकणे", reading: "aikṇe" }] }
+  - id: "mr-0716"
+    target: "लिहिणे"
+    reading: "lihiṇe"
+    ipa: "liɦiɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ती पत्र लिहिते.", reading: "ti patr lihite.", ipa: "t̪i pət̪r liɦit̪e", bases: [{ word: "पत्र", base: "पत्र", reading: "patr" }, { word: "लिहिते", base: "लिहिणे", reading: "lihiṇe" }] }
+      - { target: "तो रोज डायरी लिहितो.", reading: "to roj ḍāyri lihito.", ipa: "t̪o rodz ɖajri liɦit̪o", bases: [{ word: "डायरी", base: "डायरी", reading: "ḍāyri" }, { word: "लिहितो", base: "लिहिणे", reading: "lihiṇe" }] }
+  - id: "mr-0717"
+    target: "शिकणे"
+    reading: "śikṇe"
+    ipa: "ʃikɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ती मराठी शिकते.", reading: "ti marāṭhi śikte.", ipa: "t̪i məraʈʰi ʃikt̪e", bases: [{ word: "मराठी", base: "मराठी", reading: "marāṭhi" }, { word: "शिकते", base: "शिकणे", reading: "śikṇe" }] }
+      - { target: "मुले शाळेत शिकतात.", reading: "mule śāḷet śiktāt.", ipa: "mule ʃaɭet̪ ʃikt̪at̪", bases: [{ word: "शाळेत", base: "शाळा", reading: "śāḷā" }, { word: "शिकतात", base: "शिकणे", reading: "śikṇe" }] }
+  - id: "mr-0718"
+    target: "शिकवणे"
+    reading: "śikvṇe"
+    ipa: "ʃikʋɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ती शाळेत शिकवते.", reading: "ti śāḷet śikvte.", ipa: "t̪i ʃaɭet̪ ʃikʋt̪e", bases: [{ word: "शाळेत", base: "शाळा", reading: "śāḷā" }, { word: "शिकवते", base: "शिकवणे", reading: "śikvṇe" }] }
+      - { target: "ते मुलांना गणित शिकवतात.", reading: "te mulānnā gaṇit śikvtāt.", ipa: "t̪e mulanna ɡəɳit̪ ʃikʋt̪at̪", bases: [{ word: "मुलांना", ref: "mr-0224" }, { word: "गणित", base: "गणित", reading: "gaṇit" }, { word: "शिकवतात", base: "शिकवणे", reading: "śikvṇe" }] }
+  - id: "mr-0719"
+    target: "समजणे"
+    reading: "samjṇe"
+    ipa: "səmdzɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - { target: "मला समजले.", reading: "malā samjle.", ipa: "məla səmdzle", bases: [{ word: "मला", base: "मी", reading: "mi" }, { word: "समजले", base: "समजणे", reading: "samjṇe" }] }
+      - { target: "तू मराठी समजतोस का?", reading: "tu marāṭhi samjtos kā?", ipa: "t̪u məraʈʰi səmdzt̪os ka", bases: [{ word: "मराठी", base: "मराठी", reading: "marāṭhi" }, { word: "समजतोस", base: "समजणे", reading: "samjṇe" }, { word: "का", base: "का", reading: "kā" }] }
+  - id: "mr-0720"
+    target: "सांगणे"
+    reading: "sāṅgaṇe"
+    ipa: "saŋɡəɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "आई मुलांना गोष्ट सांगते.", reading: "āi mulānnā goṣṭ sāṅgate.", ipa: "ai mulanna ɡoʂʈ saŋɡət̪e", bases: [{ word: "मुलांना", ref: "mr-0224" }, { word: "गोष्ट", base: "गोष्ट", reading: "goṣṭ" }, { word: "सांगते", base: "सांगणे", reading: "sāṅgaṇe" }] }
+      - { target: "कृपया मला पत्ता सांगा.", reading: "krupyā malā pattā sāṅgā.", ipa: "krupja məla pət̪t̪a saŋɡa", bases: [{ word: "मला", base: "मी", reading: "mi" }, { word: "पत्ता", base: "पत्ता", reading: "pattā" }, { word: "सांगा", base: "सांगणे", reading: "sāṅgaṇe" }] }
+  - id: "mr-0721"
+    target: "देणे"
+    reading: "deṇe"
+    ipa: "d̪eɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - { target: "मी तुला पुस्तक देतो.", reading: "mi tulā pustak deto.", ipa: "mi t̪ula pust̪ək d̪et̪o", bases: [{ word: "मी", base: "मी", reading: "mi" }, { word: "तुला", ref: "mr-0675" }, { word: "देतो", base: "देणे", reading: "deṇe" }] }
+      - { target: "ती मुलाला चॉकलेट देते.", reading: "ti mulālā côkleṭ dete.", ipa: "t̪i mulala tsɔkleʈ d̪et̪e", bases: [{ word: "मुलाला", ref: "mr-0222" }, { word: "चॉकलेट", base: "चॉकलेट", reading: "côkleṭ" }, { word: "देते", base: "देणे", reading: "deṇe" }] }
+  - id: "mr-0722"
+    target: "घेणे"
+    reading: "gheṇe"
+    ipa: "ɡʱeɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+    examples:
+      - { target: "मी चहा घेतो.", reading: "mi cahā gheto.", ipa: "mi tsəɦa ɡʱet̪o", bases: [{ word: "मी", base: "मी", reading: "mi" }, { word: "घेतो", base: "घेणे", reading: "gheṇe" }] }
+      - { target: "ती छत्री घेते.", reading: "ti chatri ghete.", ipa: "t̪i tʃʰət̪ri ɡʱet̪e", bases: [{ word: "छत्री", base: "छत्री", reading: "chatri" }, { word: "घेते", base: "घेणे", reading: "gheṇe" }] }
+  - id: "mr-0723"
+    target: "ठेवणे"
+    reading: "ṭhevṇe"
+    ipa: "ʈʰeʋɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "दूध फ्रिजमध्ये ठेवा.", reading: "dudh phrijmadhye ṭhevā.", ipa: "d̪ud̪ʱ pʰridzməd̪ʱje ʈʰeʋa", bases: [{ word: "फ्रिजमध्ये", base: "फ्रिज", reading: "phrij" }, { word: "ठेवा", base: "ठेवणे", reading: "ṭhevṇe" }] }
+      - { target: "त्याने पैसे कपाटात ठेवले.", reading: "tyāne paise kapāṭāt ṭhevle.", ipa: "t̪jane pəise kəpaʈat̪ ʈʰeʋle", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "कपाटात", base: "कपाट", reading: "kapāṭ" }, { word: "ठेवले", base: "ठेवणे", reading: "ṭhevṇe" }] }
+  - id: "mr-0724"
+    target: "उघडणे"
+    reading: "ughḍṇe"
+    ipa: "uɡʱɖɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "दुकान सकाळी उघडते.", reading: "dukān sakāḷi ughḍte.", ipa: "d̪ukan səkaɭi uɡʱɖt̪e", bases: [{ word: "सकाळी", base: "सकाळ", reading: "sakāḷ" }, { word: "उघडते", base: "उघडणे", reading: "ughḍṇe" }] }
+      - { target: "त्याने दार उघडले.", reading: "tyāne dār ughḍle.", ipa: "t̪jane d̪ar uɡʱɖle", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "उघडले", base: "उघडणे", reading: "ughḍṇe" }] }
+  - id: "mr-0725"
+    target: "खेळणे"
+    reading: "kheḷṇe"
+    ipa: "kʰeɭɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "मुले अंगणात खेळतात.", reading: "mule aṅgaṇāt kheḷtāt.", ipa: "mule əŋɡəɳat̪ kʰeɭt̪at̪", bases: [{ word: "अंगणात", base: "अंगण", reading: "aṅgaṇ" }, { word: "खेळतात", base: "खेळणे", reading: "kheḷṇe" }] }
+      - { target: "ती रोज संध्याकाळी खेळते.", reading: "ti roj sandhyākāḷi kheḷte.", ipa: "t̪i rodz sənd̪ʱjakaɭi kʰeɭt̪e", bases: [{ word: "संध्याकाळी", base: "संध्याकाळ", reading: "sandhyākāḷ" }, { word: "खेळते", base: "खेळणे", reading: "kheḷṇe" }] }
+  - ref: "mr-0494"
+  - ref: "mr-0499"
+  - ref: "mr-0500"
+  - ref: "mr-0512"
+  - ref: "mr-0513"
