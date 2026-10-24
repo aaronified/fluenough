@@ -38,7 +38,10 @@ def dots_of(cell: str) -> str:
 class BrailleCourse(unittest.TestCase):
     def _ids_are_kept(self):
         ids = sorted(c["id"] for _, raw in cores() for c in raw["cards"])
-        self.assertEqual(ids, [f"qbe-{i:04d}" for i in range(1, 52)])
+        # 193 cards: qbe-0001 to qbe-0195, less qbe-0074 and qbe-0161, which
+        # UEB has no contraction for (into, immediately), and none reused.
+        want = [f"qbe-{i:04d}" for i in range(1, 196) if i not in (74, 161)]
+        self.assertEqual(ids, want)
 
     def _targets_are_braille_without_a_reading(self):
         for _, raw in cores():
@@ -62,7 +65,7 @@ class BrailleCourse(unittest.TestCase):
 
     def _every_letter_cell_in_prose_has_its_letter(self):
         letters = {
-            c["target"]: layer_cards()[c["id"]]["native"]
+            c["target"]: layer_cards()[c["id"]]["native"].split(";")[0]
             for stem, raw in cores() if stem.startswith("qbe-letters")
             for c in raw["cards"]
         }

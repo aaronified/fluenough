@@ -2354,8 +2354,12 @@ language: { code: "qbe", iso639_3: "eng", name: "English Braille", script: "brai
 - **The path** has no B1 plan, as the IPA's has none: its units are the
   letters a to j, k to t (a to j with dot 3), u to z with w, the capital
   indicators, the numbers with the grade 1 indicator, and the punctuation.
-  The contractions of grade 2 come as later units (owner, 2026-10-20:
-  "Uncontracted now, contractions later"). It is learned only when chosen,
+  Grade 2's contractions follow as units (owner, 2026-10-20:
+  "Uncontracted now, contractions later"; 2026-10-24: "Fold into the existing
+  card"): the strong and lower groupsigns, the initial- and final-letter
+  contractions and the 75 shortforms. A contraction that shares a cell with a
+  letter or a punctuation mark is folded into that card's meaning. UEB has no
+  contraction for to, into, by, com, dd, ble or o'clock, so none has a card. It is learned only when chosen,
   placed by nothing, and Complete once its path is written.
 - **Its script guide**, `qbe-script.yaml` and its layers, shows the
   patterns: the numbered dots, the top row, dot 3, dots 3 and 6, mirror
