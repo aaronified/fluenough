@@ -105,19 +105,22 @@ units:
       - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
     reading_passages:
       - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
-  - planned: { id: "as-quantities", theme: "quantities", words: 23 }
+  - decks: ["as-quantities", "*"]
+    words: 23
     listening_passages:
       - { id: "at-the-grocers", text: { "en": "Asking how much and how many at a grocer's" } }
     reading_passages:
       - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
-  - planned: { id: "as-describing", theme: "describing", words: 28 }
+  - decks: ["as-describing", "*"]
+    words: 28
     listening_passages:
       - { id: "how-are-you-feeling", text: { "en": "A friend asks how you feel today, and you answer" } }
     reading_passages:
       - { id: "postcard-from-the-hills", text: { "en": "A short postcard: the weather and the food" } }
   - decks: ["as-time", "*"]
     words: 18
-  - planned: { id: "as-more-verbs", theme: "more-verbs", words: 25 }
+  - decks: ["as-more-verbs", "*"]
+    words: 25
     listening_passages:
       - { id: "kitchen-help", text: { "en": "Someone tells a helper what to do in the kitchen" } }
     reading_passages:
