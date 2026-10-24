@@ -1,0 +1,48 @@
+schema: 1
+id: "zh-grammar-adjective-predicate"
+part: "core"
+kind: "grammar"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+"pattern":
+  "slots":
+    - "statement"
+    - "question"
+  "entries":
+    - "lemma": "忙"
+      "key": "mang"
+      "reading": "máng"
+      "forms":
+        "statement": "他很忙"
+        "question": "他忙吗"
+      "readings":
+        "statement": "tā hěn máng"
+        "question": "tā máng ma"
+    - "lemma": "安静"
+      "key": "anjing"
+      "reading": "ānjìng"
+      "forms":
+        "statement": "房间很安静"
+        "question": "房间安静吗"
+      "readings":
+        "statement": "fángjiān hěn ānjìng"
+        "question": "fángjiān ānjìng ma"
+    - "lemma": "热"
+      "key": "re"
+      "reading": "rè"
+      "forms":
+        "statement": "房间很热"
+        "question": "房间热吗"
+      "readings":
+        "statement": "fángjiān hěn rè"
+        "question": "fángjiān rè ma"
+    - "lemma": "好"
+      "key": "hao"
+      "reading": "hǎo"
+      "forms":
+        "statement": "他很好"
+        "question": "他好吗"
+      "readings":
+        "statement": "tā hěn hǎo"
+        "question": "tā hǎo ma"
