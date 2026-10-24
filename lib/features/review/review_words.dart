@@ -95,11 +95,12 @@ List<Card> rudeCardsOf(DeckEntry deck) => <Card>[
 typedef OffensiveDeck = ({DeckEntry deck, List<Card> words});
 
 /// [language]'s decks with offensive words, in the catalog's order, each
-/// with its offensive words: what its Offensive words review lists. Empty
-/// for a language with none.
+/// with its offensive words: what its Offensive words review lists. A deck no
+/// native speaker has rated is listed here alone (#630). Empty for a
+/// language with none.
 List<OffensiveDeck> offensiveDecksIn(AppState state, String language) =>
     <OffensiveDeck>[
-      for (final deck in state.decks)
+      for (final deck in state.reviewDecks)
         if (deck.language.code == language)
           if (rudeCardsOf(deck) case final words when words.isNotEmpty)
             (deck: deck, words: words),

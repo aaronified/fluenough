@@ -2772,7 +2772,13 @@ def _check_common_header(r: Report, raw: dict) -> None:
 
 def _check_review_tags(r: Report, raw: dict) -> None:
     """A file that holds a culture note's claim is tagged "unreviewed" until
-    a speaker checks it, then "reviewed": exactly one of them (ADR-0036)."""
+    a speaker checks it, then "reviewed": exactly one of them (ADR-0036).
+    The tag "rated" marks a deck of offensive words whose words native
+    speakers have rated: only such a deck can carry it (#630)."""
+    if isinstance(raw.get("tags"), list) and "rated" in raw["tags"] \
+            and "offensive" not in raw["tags"]:
+        r.error("tags", '"rated" marks a deck of offensive words, which is '
+                        'tagged "offensive"; this deck is not')
     if not r.culture:
         return
     tags = raw.get("tags") if isinstance(raw.get("tags"), list) else []
@@ -5922,6 +5928,22 @@ def warn_forms_across(reports: list[Report]) -> None:
                                 f"rules table, the source of its forms")
 
 
+def warn_alikes_across(reports: list[Report]) -> None:
+    """Warns on a word that sounds or looks like an offensive word of its
+    language, when no note names the pair (#629): the tool compares each
+    word's IPA and spelling with the offensive words', and a reviewer keeps
+    the real pairs, each with a note."""
+    from offensive_alikes import load_words, unexplained, warning
+    by_path = {rep.path.resolve(): rep for rep in reports}
+    words = load_words(list(by_path))
+    if not any(w.rude for w in words):
+        return
+    for alike in unexplained(words):
+        rep = by_path.get(alike.word.path.resolve())
+        if rep is not None:
+            rep.warn(f"card {alike.word.id}", warning(alike))
+
+
 def check_phrasebook_across(reports: list[Report]) -> list[str]:
     """A course's phrasebook: 15 to 25 cards, counted per course, and, where
     its path has a B1 plan, taught in the path's first unit."""
@@ -6294,6 +6316,7 @@ def main(argv: list[str]) -> int:
         print(f"error: {problem}")
     warn_base_stems_across(reports)
     warn_forms_across(reports)
+    warn_alikes_across(reports)
 
     failed = 0
     warned = 0
