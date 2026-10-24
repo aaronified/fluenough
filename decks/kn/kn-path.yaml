@@ -155,7 +155,8 @@ units:
   # themes, each its words, its rules, then its sentences.
   - decks: ["kn-numbers-big", "*"]
     words: 23
-  - planned: { id: "kn-food", theme: "food", words: 59 }
+  - decks: ["kn-food", "*"]
+    words: 59
     listening_passages:
       - { id: "at-the-sweet-shop", text: { "en": "Choosing sweets and snacks at a sweet shop" } }
     reading_passages:
@@ -181,12 +182,14 @@ units:
     grammar: ["continuous"]
   - decks: ["kn-transport", "*"]
     words: 9
-  - planned: { id: "kn-body", theme: "body", words: 35 }
+  - decks: ["kn-body", "*"]
+    words: 35
     listening_passages:
       - { id: "at-the-doctors", text: { "en": "Telling a doctor where it hurts" } }
     reading_passages:
       - { id: "stretching-chart", text: { "en": "A chart of simple morning stretches" } }
-  - planned: { id: "kn-places", theme: "places", words: 56 }
+  - decks: ["kn-places", "*"]
+    words: 56
     listening_passages:
       - { id: "walk-to-the-market", text: { "en": "A neighbour names the places you pass on the way to the market" } }
     reading_passages:
