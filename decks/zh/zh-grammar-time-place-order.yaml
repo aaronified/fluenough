@@ -1,0 +1,118 @@
+schema: 1
+id: "zh-grammar-time-place-order"
+part: "core"
+kind: "grammar"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+"pattern":
+  "slots":
+    - "plain"
+    - "time"
+    - "place"
+    - "both"
+  "entries":
+    - "lemma": "吃饭"
+      "key": "chifan"
+      "reading": "chīfàn"
+      "forms":
+        "plain": "我吃饭"
+        "time": "我七点吃饭"
+        "place": "我在家吃饭"
+        "both": "我七点在家吃饭"
+      "readings":
+        "plain": "wǒ chīfàn"
+        "time": "wǒ qī diǎn chīfàn"
+        "place": "wǒ zài jiā chīfàn"
+        "both": "wǒ qī diǎn zài jiā chīfàn"
+    - "lemma": "看书"
+      "key": "kanshu"
+      "reading": "kàn shū"
+      "forms":
+        "plain": "他看书"
+        "time": "他晚上看书"
+        "place": "他在学校看书"
+        "both": "他晚上在学校看书"
+      "readings":
+        "plain": "tā kàn shū"
+        "time": "tā wǎnshang kàn shū"
+        "place": "tā zài xuéxiào kàn shū"
+        "both": "tā wǎnshang zài xuéxiào kàn shū"
+    - "lemma": "睡觉"
+      "key": "shuijiao"
+      "reading": "shuìjiào"
+      "forms":
+        "plain": "弟弟睡觉"
+        "time": "弟弟九点睡觉"
+        "place": "弟弟在家睡觉"
+        "both": "弟弟九点在家睡觉"
+      "readings":
+        "plain": "dìdi shuìjiào"
+        "time": "dìdi jiǔ diǎn shuìjiào"
+        "place": "dìdi zài jiā shuìjiào"
+        "both": "dìdi jiǔ diǎn zài jiā shuìjiào"
+    - "lemma": "学习"
+      "key": "xuexi"
+      "reading": "xuéxí"
+      "forms":
+        "plain": "我们学习"
+        "time": "我们明天学习"
+        "place": "我们在学校学习"
+        "both": "我们明天在学校学习"
+      "readings":
+        "plain": "wǒmen xuéxí"
+        "time": "wǒmen míngtiān xuéxí"
+        "place": "wǒmen zài xuéxiào xuéxí"
+        "both": "wǒmen míngtiān zài xuéxiào xuéxí"
+    - "lemma": "休息"
+      "key": "xiuxi"
+      "reading": "xiūxi"
+      "forms":
+        "plain": "他休息"
+        "time": "他星期天休息"
+        "place": "他在家休息"
+        "both": "他星期天在家休息"
+      "readings":
+        "plain": "tā xiūxi"
+        "time": "tā xīngqītiān xiūxi"
+        "place": "tā zài jiā xiūxi"
+        "both": "tā xīngqītiān zài jiā xiūxi"
+    - "lemma": "喝茶"
+      "key": "hecha"
+      "reading": "hē chá"
+      "forms":
+        "plain": "我喝茶"
+        "time": "我早上喝茶"
+        "place": "我在这儿喝茶"
+        "both": "我早上在这儿喝茶"
+      "readings":
+        "plain": "wǒ hē chá"
+        "time": "wǒ zǎoshang hē chá"
+        "place": "wǒ zài zhèr hē chá"
+        "both": "wǒ zǎoshang zài zhèr hē chá"
+    - "lemma": "运动"
+      "key": "yundong"
+      "reading": "yùndòng"
+      "forms":
+        "plain": "她运动"
+        "time": "她周末运动"
+        "place": "她在学校运动"
+        "both": "她周末在学校运动"
+      "readings":
+        "plain": "tā yùndòng"
+        "time": "tā zhōumò yùndòng"
+        "place": "tā zài xuéxiào yùndòng"
+        "both": "tā zhōumò zài xuéxiào yùndòng"
+    - "lemma": "做饭"
+      "key": "zuofan"
+      "reading": "zuòfàn"
+      "forms":
+        "plain": "妈妈做饭"
+        "time": "妈妈下午做饭"
+        "place": "妈妈在家做饭"
+        "both": "妈妈下午在家做饭"
+      "readings":
+        "plain": "māma zuòfàn"
+        "time": "māma xiàwǔ zuòfàn"
+        "place": "māma zài jiā zuòfàn"
+        "both": "māma xiàwǔ zài jiā zuòfàn"

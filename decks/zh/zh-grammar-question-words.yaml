@@ -1,0 +1,66 @@
+schema: 1
+id: "zh-grammar-question-words"
+part: "core"
+kind: "grammar"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+"pattern":
+  "slots":
+    - "statement"
+    - "question"
+  "entries":
+    - "lemma": "谁"
+      "key": "shei"
+      "reading": "shéi"
+      "forms":
+        "statement": "他是老师"
+        "question": "他是谁"
+      "readings":
+        "statement": "tā shì lǎoshī"
+        "question": "tā shì shéi"
+    - "lemma": "什么"
+      "key": "shenme"
+      "reading": "shénme"
+      "forms":
+        "statement": "你喝茶"
+        "question": "你喝什么"
+      "readings":
+        "statement": "nǐ hē chá"
+        "question": "nǐ hē shénme"
+    - "lemma": "哪里"
+      "key": "nali"
+      "reading": "nǎlǐ"
+      "forms":
+        "statement": "他去学校"
+        "question": "他去哪里"
+      "readings":
+        "statement": "tā qù xuéxiào"
+        "question": "tā qù nǎlǐ"
+    - "lemma": "几"
+      "key": "ji"
+      "reading": "jǐ"
+      "forms":
+        "statement": "你五岁"
+        "question": "你几岁"
+      "readings":
+        "statement": "nǐ wǔ suì"
+        "question": "nǐ jǐ suì"
+    - "lemma": "什么时候"
+      "key": "shenmeshihou"
+      "reading": "shénme shíhou"
+      "forms":
+        "statement": "他明天来"
+        "question": "他什么时候来"
+      "readings":
+        "statement": "tā míngtiān lái"
+        "question": "tā shénme shíhou lái"
+    - "lemma": "为什么"
+      "key": "weishenme"
+      "reading": "wèishénme"
+      "forms":
+        "statement": "他不来"
+        "question": "他为什么不来"
+      "readings":
+        "statement": "tā bù lái"
+        "question": "tā wèishénme bù lái"
