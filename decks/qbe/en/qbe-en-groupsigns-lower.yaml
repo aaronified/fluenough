@@ -4,22 +4,24 @@ kind: "layer"
 core: "qbe-groupsigns-lower"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Braille: lower groupsigns"
-description: "The lower groupsigns bb, cc, en, gg and in, which use the lower dots, and the lower wordsigns be, enough, were and in that share their cells."
+description: "The lower groupsigns bb, cc, en and in, which use the lower dots, and the lower wordsigns be, enough, were, in and into that share their cells; con and be at the start of a word share the cells of cc and bb."
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed", "script"]
 cards:
   "qbe-0069":
-    native: "bb inside a word; be alone"
+    native: "bb inside a word; be alone or at the start of a word"
     notes:
-      "n1": "Dots 2-3: the lower groupsign bb, used inside a word, as in rubber. Alone, the same cell is the lower wordsign be."
+      "n1": "Dots 2-3: the lower groupsign bb, used inside a word, as in rubber. Alone, the same cell is the lower wordsign be, and at the start of a word it is the lower groupsign be, as in begin."
     examples:
       "⠗⠥⠆⠑⠗": "rubber"
+      "⠆⠛⠔": "begin"
   "qbe-0070":
-    native: "cc"
+    native: "cc inside a word; con at the start of a word"
     notes:
-      "n1": "Dots 2-5: the lower groupsign cc, used inside a word, as in occur."
+      "n1": "Dots 2-5: the lower groupsign cc, used inside a word, as in occur. At the start of a word the same cell is the lower groupsign con, as in connect."
     examples:
       "⠕⠒⠥⠗": "occur"
+      "⠒⠝⠑⠉⠞": "connect"
   "qbe-0071":
     native: "en inside a word; enough alone"
     notes:
@@ -38,3 +40,7 @@ cards:
       "n1": "Dots 3-5: the lower groupsign in, used inside a word, as in pin. Alone, the same cell is the lower wordsign in."
     examples:
       "⠏⠔": "pin"
+  "qbe-0074":
+    native: "into"
+    notes:
+      "n1": "Two cells: dots 3-5, then dots 2-3-5, so ⠔ (in) followed by the lower cell for to. The lower wordsign for the word into, which stands for the whole word."

@@ -4,17 +4,18 @@ kind: "layer"
 core: "qbe-digits"
 native: { code: "en", iso639_3: "eng", name: "English" }
 name: "Braille: numbers"
-description: "The numeric indicator and the digits 1 to 0, which are the letters a to j after it; and the grade 1 indicator, for a letter after a number."
+description: "The numeric indicator and the digits 1 to 0, which are the letters a to j after it, whose cell is also the groupsign ble; and the grade 1 indicator, for a letter after a number."
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed", "script"]
 cards:
   "qbe-0031":
-    native: "numeric indicator: the letters a to j after it are digits"
+    native: "numeric indicator: the letters a to j after it are digits; ble inside a word"
     notes:
-      "n1": "Dots 3-4-5-6. After it, ⠁ (a) to ⠚ (j) are the digits 1 to 9 and 0, until a space or a letter from k on. It comes once before a number, not before each digit: ⠼⠁⠃ is 12."
+      "n1": "Dots 3-4-5-6. After it, ⠁ (a) to ⠚ (j) are the digits 1 to 9 and 0, until a space or a letter from k on. It comes once before a number, not before each digit: ⠼⠁⠃ is 12. Inside or at the end of a word the same cell is the groupsign ble, as in table, never at the start of a word."
     examples:
       "⠼⠁⠃": "12"
       "⠼⠁⠚⠚": "100"
+      "⠞⠁⠼": "table"
   "qbe-0032":
     native: "1"
     notes:
