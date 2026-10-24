@@ -1,0 +1,12 @@
+schema: 1
+kind: "sounds"
+part: "core"
+id: "ko-sounds"
+language: "ko"
+contrasts:
+  - id: "plain-tense"
+    pairs: [["달", "딸"], ["불", "뿔"], ["사", "싸"], ["방", "빵"]]
+  - id: "plain-aspirated"
+    pairs: [["달", "탈"], ["불", "풀"], ["자", "차"], ["발", "팔"], ["도", "토"]]
+  - id: "tense-aspirated"
+    pairs: [["딸", "탈"], ["뿔", "풀"]]
