@@ -37,6 +37,7 @@ Future<void> _pumpSheet(
   AppState state, {
   required List<LanguageResource> resources,
   bool learned = false,
+  bool hasPlacement = true,
   double textScale = 1.0,
   ThemeMode themeMode = ThemeMode.light,
 }) async {
@@ -53,6 +54,7 @@ Future<void> _pumpSheet(
         language: _japanese,
         spoken: const <String>['en'],
         learned: learned,
+        hasPlacement: hasPlacement,
         chosen: false,
         knows: false,
         scripts: const <SheetScript>[],
@@ -156,6 +158,9 @@ void main() {
           state,
           resources: parseLanguageResources(_file(3)),
           learned: true,
+          // The card is what is measured: the Find my level row above it
+          // is the sheet's own, and is drawn in the test's wide font.
+          hasPlacement: false,
           textScale: 1.4,
           themeMode: mode,
         );

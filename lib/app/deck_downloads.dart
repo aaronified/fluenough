@@ -223,10 +223,12 @@ class DeckDownloads extends ChangeNotifier {
     if (known != null && known.sha256 == file.sha256) {
       return Future<List<LanguageResource>>.value(known.found);
     }
-    return _resourceJobs[language] ??= _readResources(
-      language,
-      file,
-    ).whenComplete(() => _resourceJobs.remove(language));
+    return _resourceJobs[language] ??= _readResources(language, file)
+        .whenComplete(() {
+          // A block, not an arrow: `remove` returns this very future, which
+          // `whenComplete` would then wait on for ever.
+          _resourceJobs.remove(language);
+        });
   }
 
   Future<List<LanguageResource>> _readResources(
