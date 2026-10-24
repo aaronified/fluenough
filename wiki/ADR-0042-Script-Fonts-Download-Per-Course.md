@@ -86,8 +86,8 @@ sample. Otherwise download. Same for everything." The font check, approved
   `decks/fonts` as before, and shows the sample again in it. Fonts already on
   a phone from before stay and are drawn with; Settings, Look and language,
   Script fonts, checks again, or removes a downloaded font.
-- Han (simplified), kana (with the kanji) and Hangul now have fonts: Noto
+- Simplified Hanzi, kana (with the kanji) and Hangul now have fonts: Noto
   Sans SC, JP and KR, 10 to 18 MB each, downloaded only on "No". Traditional
-  Han has none yet.
+  Hanzi has none yet.
 
 See also: [Contributing](Contributing) · [ADR-Index](ADR-Index) · [Home](Home)
