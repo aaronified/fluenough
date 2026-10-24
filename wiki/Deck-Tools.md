@@ -271,6 +271,26 @@ The source is `"<lang>.wikipedia.org, <month>"`, the month taken from the
 dump's name or given with `--month YYYY-MM`. `test_wikipedia_frequency.py`
 tests it on a dump of four pages in `fixtures/wikipedia`.
 
+## `deck_similarity.py`
+
+Lists, for a reviewer, the words of a language that are close to each other
+(#692). It only warns: it changes no deck and the validator does not read it.
+
+- **Sounds like** (a `pair` note): the IPA differs by exactly one segment, and
+  only between very close sounds: short and long, unaspirated and aspirated,
+  dental and retroflex.
+- **Looks like** (a `homograph` or `lookalike` note): the same spelling with
+  another sound, or spellings that differ only by a dot, a length mark or
+  another short mark.
+
+A pair that a `pair`, `homograph` or `lookalike` note already names is marked
+explained.
+
+```sh
+python3 tools/deck_similarity.py decks/
+python3 tools/deck_similarity.py decks/ --language hi --unexplained
+```
+
 ## `brand_android.py`
 
 Run after every `flutter create`. It copies `fluenough-brand/android/` into
