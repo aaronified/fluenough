@@ -1,6 +1,6 @@
 ---
 name: build-deck
-description: Use when building or extending a Fluenough deck, including writing the next planned unit of a language's B1 plan (a core in decks/<lang>/ plus its English layer in decks/<lang>/en/). Not for app code.
+description: Use when building or extending a Fluenough deck, including writing the next planned unit of a language's B1 plan, a word unit or a grammar unit (a core in decks/<lang>/ plus its English layer in decks/<lang>/en/). Not for app code.
 ---
 
 The wiki is the source of truth for documentation: https://github.com/aaronified/fluenough/wiki
@@ -58,7 +58,8 @@ Before you start:
 
 1. **Pick the unit.** In `decks/<lang>/<lang>-path.yaml`, take the first
    `planned` unit in teaching order (list order), or the one you were asked
-   for. Read its planned `id`, `theme` or `grammar`, `words`, and its
+   for. A unit with `grammar` and no `theme` is a grammar unit: follow
+   "Grammar units" below in place of steps 3 to 6 for words. Read its planned `id`, `theme` or `grammar`, `words`, and its
    `listening_passages` and `reading_passages` ("Paths", "The B1 plan"). The
    planned size is one number for every native language.
 2. **Get ids.** `python3 tools/validate_decks.py --next-id <lang>` gives the
@@ -103,6 +104,18 @@ Before you start:
      word shares its spelling with another, or differs only by a dot or mark,
      and a layer's `dictionary` (senses, etymology, `source`) for an entry
      imported from Wiktionary.
+   - Set `warning` on a core card that has more than one warning (owner,
+     2026-10-23: "Newly written decks will choose the order when building").
+     It names the one warning the teach card shows: the `id` of a `pair`,
+     `homograph` or `lookalike` note, `"senses"` for its other meanings, or
+     `"none"`. Choose the one that matters most to the learner: a rude
+     sound-alike only when it is very close (one IPA segment apart) and very
+     rude, else a close sound-alike, a homograph or a one-mark look-alike,
+     then further ones, then two or more other meanings, then a single one
+     ("Which warning the teach card shows" in the Deck-Format wiki page;
+     `tools/pick_warning.py` applies the same order). A card with none leaves
+     it out. Released apps reject a card key they do not know, so a deck that
+     sets `warning` waits for the release whose app reads it.
    - Every word card gets at least 2 examples ("Card data", "Examples"):
      natural sentences that use the word, each with its `reading` and `ipa`
      in the core and its translation in each layer, keyed by the target.
@@ -179,3 +192,234 @@ Before you start:
    before finishing (CLAUDE.md, "Which model does what"); no extra passes.
    Do not run the validator locally: push and read CI's result, ignoring
    checks irrelevant to a deck. Say what you verified.
+
+## Grammar units
+
+A planned unit such as `{ id: "mr-grammar-imperatives", grammar: "imperatives" }`
+has no theme and no new words (`words` 0 or left out). It teaches a pattern
+over words the course already teaches (owner, 2026-10-24: "Extend the
+skill"). Steps 1, 2, 4, 5 (the path) and 7 to 8 apply as they are; steps 3 and
+6 change as below. The forms are in DECK-FORMAT: "Grammar decks", "A
+grammar core", "Rules decks", "Sentences and their rules", "Paths".
+
+1. **Name.** The id is `<lang>-grammar-<topic>` and the topic is the
+   `grammar` text: `mr-grammar-imperatives` teaches topic `imperatives`. Files:
+   core `decks/<lang>/<lang>-grammar-<topic>.yaml`, layer
+   `decks/<lang>/en/<lang>-en-grammar-<topic>.yaml` (`kind: "layer"`,
+   `core:` the core's id). The planned id must not exist yet.
+2. **Pick the kind.**
+   - **`kind: "grammar"`**: a few chosen rows, each a lemma with its forms.
+     Use it for a pattern over a small, fixed set (`tok-grammar-o-commands`,
+     `mr-grammar-present`). Its path topic is the deck's name: `imperatives`.
+   - **`kind: "rules"`**: the rows are every word of one `pos` the course
+     teaches, with a rule id, name and explanation (`te-grammar-conditional`).
+     Use it when the form is made for a whole class of words. Its path topics
+     are its rule ids' names (`te-rule-conditional` is topic `conditional`),
+     never the deck's own name once it has rules of another name. When the
+     plan says nothing, take `grammar`; the plan's topic text decides which.
+3. **Grammar core.** Header as a word core, `kind: "grammar"`, `tags:
+   ["grammar", "unreviewed"]`, then `pattern` with `slots` (the columns,
+   permanent in order) and `entries`. Each entry has a `lemma`, a `key` where the
+   lemma is not `[a-z0-9-]+` (permanent), `reading`, `ipa`, and `forms` with a
+   form for every slot (`null` for none), with `readings` (and `ipas`)
+   for a script that needs them. A cell with two right forms lists both.
+   Cell ids come from the core's id, the key and the slot's place, so never
+   reorder slots. No `gloss`, `name`, `slot_name` or `prompt` in the core.
+4. **Rules core.** `kind: "rules"`, `table` with `applies_to` (`pos`, `except`
+   for words the rule does not cover), `slots`, and `rows` (`word` the card id
+   of the vocab card, `forms`, `readings`); and `rules`, each with `id`
+   `<lang>-rule-<name>`, the `slots` it makes (every slot in exactly one
+   rule), and `words` its explanation quotes, `{ word, reading }`. **Every
+   word of that `pos` that a B1 deck teaches gets a row**, or goes in
+   `except`: the words of this unit and of every earlier one. A word of a
+   later unit adds its row in the same change. A rule id is permanent.
+5. **Words already taught only.** Every lemma, row `word`, form and example
+   uses words a deck earlier on the path teaches. Look each up by its
+   card id (`rg '"target": "<word>"' decks/<lang>`), take `ref` for it, and
+   add a `bases` entry for any inflected form. Write no new word card:
+   a word that is missing means the unit is planned too early; stop and say so.
+6. **Layer.** For a grammar core: `pattern` with `name`, `slot_name`, `prompt`
+   (`"{lemma} ({gloss}), {slot}"`), `slots` (a label for each slot, optional),
+   `entries` (a gloss for **every** entry, by `key` or lemma) and `notes`, the one
+   text shown after the answer: say what changes and when the base word changes
+   its stem. For a rules core: `table` with `slot_name` and a label for
+   **every** slot (the only placeholder is `{meaning}`; the word is never
+   written into it), and `rules`, each id with a `name` and `explanation`
+   (quote the rule's `words` as `{1}`, `{2}`; a non-Latin word is followed by
+   its reading). A rule the layer leaves out is not taught. Both:
+   `name`, `description` (ending "Not yet checked by a <Language> speaker:
+   please report any mistake."), `tags`, `license`, `native`.
+7. **Sentences.** Where the unit has sentences, write a vocab core
+   `<lang>-grammar-<topic>-sentences` and its layer: `pos: "phrase"`, `bases`
+   (by `ref`) for every word, `confusables`, and on a sentence that uses a
+   rule `rules: ["<lang>-rule-<name>"]`. Ids from `--next-id`.
+8. **The path.** Turn `planned` into `decks` in the same change, keeping
+   `grammar` and any `milestone`, and keep `listening_passages` and
+   `reading_passages`. List the core ids only: `decks: ["mr-grammar-imperatives",
+   "mr-grammar-imperatives-sentences"]`, then `words: 0` and
+   `grammar: ["imperatives"]`. The core is listed once on the path.
+
+**Worked example,** `tok-grammar-o-commands` (the real deck, shortened).
+Path (`decks/tok/tok-path.yaml`):
+
+```yaml
+  - decks: ["tok-grammar-o", "tok-grammar-o-commands", "tok-grammar-o-address", "tok-grammar-o-sentences", "tok-reading-o"]
+    words: 1
+    grammar: ["o-commands", "o-address"]
+```
+
+Core `decks/tok/tok-grammar-o-commands.yaml`:
+
+```yaml
+schema: 1
+id: "tok-grammar-o-commands"
+part: "core"
+kind: "grammar"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["statement", "command"]
+  entries:
+    - lemma: "pali"
+      forms:
+        "statement": "sina pali"
+        "command": "o pali!"
+```
+
+Layer `decks/tok/en/tok-en-grammar-o-commands.yaml`:
+
+```yaml
+schema: 1
+id: "tok-en-grammar-o-commands"
+kind: "layer"
+core: "tok-grammar-o-commands"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Commands with o"
+pattern:
+  name: "Commands with o"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "statement": "a statement (you do it)", "command": "a command (do it!)" }
+  entries:
+    "pali": "to make; to work"
+  notes: "Sina pali is you work. O pali! is Work! The command drops the subject and puts o first."
+```
+
+The core id is `tok-grammar-o-commands`, so the topic is `o-commands`; the
+cell ids are `tok-grammar-o-commands-pali-0` and `-1`. A rules example
+is `te-grammar-conditional` and its layer, with the topic `conditional`.
+
+**Validator errors to expect** (CI reads them; do not run it):
+
+- Topic: `'x' is taught by none of the unit's decks` (the `grammar` text is
+  neither a rule's name nor a listed `<lang>-grammar-x`); `names the rules
+  deck ...; its topics are its rules` (use a rule name).
+- Planned: `planned.id: ... already exists` (list it under `decks`);
+  `lists ..., a deck of the <lang>-<native> course` (list the core id).
+- Rules core: `no vocab deck writes card <id>`; `<id> is a <pos>, not one of
+  ...`; `<id> has no reading` (script needs one); `<id> ... has no row; add
+  its forms, or list it in applies_to.except`; `<slot> belongs to no rule`;
+  `is also in rule` (slot in two rules); `rules names <id>, which no rules
+  deck of <lang> defines` (a sentence's `rules`); a rule id not
+  `<lang>-rule-<name>`.
+- Grammar layer: `gives no gloss for <key>`; a slot label for a key that is
+  not a slot; a rules layer with a label for every slot missing, or a
+  placeholder other than `{meaning}`.
+- Quoting: an unquoted key such as `yes`, `no` or `on` is a boolean; quote
+  every slot key.
+- Warnings to clear or explain: a row with one form only; a unit with more
+  words than `words`; a word in a text covered by no card or base.
+
+## Chinese, Japanese and Korean
+
+Pattern decisions from the first batches (owner, 2026-10-24: "Sonnet writes
+the first batch per language, Haiku follows"): zh grammar units shi,
+questions and word order (#813), ja and ko sound-differences and questions
+units (#814, #815). Copy them: `decks/zh/zh-grammar-shi.yaml`,
+`decks/ja/ja-sound-differences.yaml`, `decks/ko/ko-questions.yaml`.
+
+**All three**
+
+- **Readings are "based on" a standard**: pinyin with tone marks (Hanyu
+  Pinyin), Hepburn without macrons (`ja-romanisation.yaml`: long vowels
+  `ou`, `oo`, `uu`, `ii`, `aa`; を is `wo`), Revised Romanization. Never
+  say a reading strictly follows one.
+- **Prose rule bites twice.** Every Han, kana or hangul word in a note, a
+  `why`, a gloss or a question carries its reading, **including a wrong form
+  you quote** ("never 我是忙 (wǒ shì máng)"): CI errors on one without. The
+  reading in prose is the card's reading letter for letter: 무엇 (mueot),
+  never "mu-eot" (CI does not catch it; a reviewer did in #815).
+- **Words already taught, only.** Check a lemma, form or sentence word by
+  its card id. A word that is not a card goes in `bases` written in full, with
+  its base, reading and (in the layer) meaning. A word that has a card, once
+  you write it later, becomes a `ref`: when a unit writes どこ, いくら,
+  얼마예요 or 뭐예요, change the earlier phrasebook and first-words bases to
+  `{ word, ref }` in the same PR and delete their meaning lines in the layer.
+- **A card cannot `ref` itself.** In its own examples, a form of it (달이,
+  なん on なに's card) names its base in full (CI: "ref names the card itself").
+  A bare kana or letter in prose needs its reading too ("the て (te)-form"). Give a repeated word's base once per text.
+- **Sentences decks** (`<lang>-<theme>-sentences`, `pos: "phrase"`) give 2 to 3
+  `confusables` each, `kind: "word"` or `"sound"`, none a word of the
+  sentence, each with a `why` in the layer; a confusable that is no card is a
+  `word` with its `reading`.
+- **Reading decks stay single-file** (`<lang>-en-reading-<name>.yaml`, listed
+  as `<lang>-reading-<name>`), 2 passages of 4 short lines and 3 questions
+  each, question ids from `--next-id`. Word units also get the set card for
+  a closed group (question words). A grammar unit keeps its planned
+  passages and writes no reading deck. A question that asks "which word
+  means 'X'" offers the **words** (hangul or kana, with the reading) as its
+  options, as `ko-en-reading-sound-differences.yaml` does, never the English
+  meanings: the prompt already names the meaning, so English options give
+  the answer away (found in #814; the zh reading decks written earlier
+  have the flaw).
+- **`warning`** goes on every word card with a `pair` note, naming the note's
+  id; a card with two partners (a triple) takes the pick of
+  `tools/pick_warning.py` (`pick_warning.pick(card, index)` gives it without
+  writing files).
+- No pictures: a picture needs its emoji in `assets/pictures/`, and the
+  question words' `picture_ask` waits for the owner (open question).
+
+**Chinese** (script `han_simplified`, `scripts` also traditional)
+
+- Written without spaces: `words` on every card, sentence and example, joined
+  they equal the target without punctuation; compounds the course has no card
+  for are one word with a `base` (听不懂, 喜不喜欢 as one word with `ref`).
+- Readings show the tone **as said**: 不 is `bú` before a fourth tone, `bù`
+  before the others; the 不 in 是不是 or 去不去 is neutral (`shì bu shì`).
+  Third-tone sandhi is not written, as in the existing decks.
+- Measure words come with their own unit (planned); do not use one in a grammar
+  unit before it.
+- A grammar unit has **one deck per topic** (`zh-grammar-shi` and
+  `zh-grammar-bu-negation` for `["shi", "bu-negation"]`), each a `kind:
+  "grammar"` table: lemma = the verb, noun or question word, one slot per
+  form; for sentence tables put the whole sentence in each `forms` cell and
+  say in the layer's gloss which sentence it is ("to go: I go to school").
+  Add a sentences deck with confusables.
+
+**Japanese** (script `kana`)
+
+- Targets are in **hiragana** until the kanji units; katakana only where the
+  phrasebook already has it. Particles are words of their own: `["わたし",
+  "は", "せんせい", "です"]`; set phrases stay whole. The hiragana letters
+  are not word cards: は, の, に still get a `base` entry (`は` reading `wa`).
+- `ipa` from `tools/transcribe.py ja`, word by word, joined by spaces.
+- Long vowels, double consonants and the voiced mark are the A1 contrasts:
+  `ja-sounds.yaml` lists them as kana pairs (an empty side for a vowel or っ
+  added). Tag each card with its contrast; a te-form (きて) names its base
+  (くる) and says in a note that the stem changes.
+- Particles and polite forms are taught by their own planned units; examples
+  may use です, か, は, の, に, が, を, と and ください as bases only.
+
+**Korean** (script `hangul`)
+
+- Words are separated by spaces, with the particle joined (물이): each such
+  word names its base (`ref` on another card, `base` in full on its own).
+  The first verb forms are polite `-요`. Avoid, for now, stems that change
+  their first letter (크다, 커요), which the validator warns of.
+- No `ipa` in the existing Korean cards: do not add one by hand.
+  `tools/transcribe.py ko` gives the reading of a whole sentence.
+- Sound contrasts (plain, tense, aspirated) are listed in `ko-sounds.yaml` as
+  syllable pairs of the deck's words, since a recogniser returns syllables.
+- Honorifics (선생님, 저, 요 and 세요) are taught in the first words and the
+  addressing unit; keep examples in the polite style.

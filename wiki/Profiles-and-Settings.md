@@ -30,13 +30,23 @@ Settings is a list of pages.
 - **Card text size:** makes card text larger, for scripts with small marks, like matras and dots. Menus follow your phone's font size. The app goes up to 1.4 times the normal size, and no further ([#505](https://github.com/aaronified/fluenough/issues/505)). If your phone is already at that size, cards cannot be made bigger.
 - **App language:** the app's menus are in English only for now.
 
+## Placed words
+
+In Languages I'm learning, a course you have been placed in has a "Placed words" row under Find my level. It opens a sheet with the three choices: Set in stone, Spot-check (the default) and Keep reviewing. Tapping one applies it at once.
+
+- **Set in stone:** the words placement found you know stay out of Today and count as known. You can still revise or practise them from the deck's page; those answers are not logged as reviews, and the deck shows the words as learnt.
+- **Spot-check:** a few of them are tested each day, and a miss brings more of that deck back, then all of it.
+- **Keep reviewing:** they are reviewed like any other word.
+
+Switching away from Set in stone returns the placed words to reviews. Words you learn after placement are always reviewed as usual. The choice is kept for each course. A placement taken before this release has no saved placement time, so the choice does not apply to it.
+
 ## Readings, IPA and adult content
 
 These three switches are on the Your languages page.
 
 - **Latin-letter readings:** a reading under words in other scripts. See [Scripts and readings](Scripts-and-Readings).
 - **IPA:** how each word is pronounced, under the word.
-- **Adult content (18+):** rude and offensive words are shown, so you know one when you hear it. It asks if you are 18 or over. A word that sounds almost like a rude word always carries a "Careful when speaking" warning. With Adult content off, the warning does not name the rude word. With it on, the word is named. Rude words are never said in a speaking test.
+- **Adult content (18+):** off by default. Off, a deck of offensive words, and any rude card in another deck, is hidden everywhere: not listed, not taught, and not in Today, reviews or practice. On, they come back, so you know one when you hear it. It asks if you are 18 or over. A word that sounds almost like a rude word always carries a "Careful when speaking" warning. With Adult content off, the warning does not name the rude word. With it on, the word is named. Rude words are never said in a speaking test.
 
 The app's menus are in English only. Translation is explained in the [Translation guide](Translation-Guide).
 

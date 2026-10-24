@@ -114,7 +114,7 @@ from by interest: `books-films-songs.md`.
 | Decks tab | Planned units show greyed, with "Coming", in their place; they cannot be started |
 | Lessons and Today | Planned units are skipped |
 | Achievements (`achievements.md`) | The A1, A2 and B1 badges come from the milestones |
-| Hours per language (`hours-per-language.md`) | "Hours left" counts down to the end of the B1 plan |
+| Hours per language (built, #227) | "Hours left" counts down to the end of the B1 plan |
 | Pacing (`language-paths.md`) | The scheme's phases line up with the milestones |
 | Deck downloads ([ADR-0037](ADR-0037-Decks-Download-From-Main)) | The index carries each plan and the counted words, so the picker shows completeness before a download |
 

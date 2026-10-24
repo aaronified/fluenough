@@ -1,7 +1,6 @@
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/settings.dart';
-import 'package:fluenough/core/decks/ipa_course.dart';
 import 'package:fluenough/core/tts/tts_engine.dart';
 
 /// A small IPA course, as single-file decks (ADR-0041): two decks, the
@@ -35,7 +34,7 @@ String ipaCard(
     target: "$target"
     native: "the sound $target"
     tags: [${tags.join(', ')}]
-    modes: [recognition, production]
+    modes: [listening, speaking]
 ${examples ?? ''}''';
 
 const String ipaExamples = '''
@@ -88,16 +87,15 @@ language: { code: hi, iso639_3: hin, name: Hindi, script: devanagari }
 native: { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 cards:
-  - { id: hi-0001, target: "पत्ता", native: "leaf", reading: "pattā", ipa: "pʰəɳ", modes: [recognition] }
-  - { id: hi-0002, target: "कल", native: "tomorrow", reading: "kal", ipa: "kəl", modes: [recognition] }
-  - { id: hi-0003, target: "कली", native: "bud", reading: "kalī", ipa: "kaʎi", modes: [recognition] }
+  - { id: hi-0001, target: "पत्ता", native: "leaf", reading: "pattā", ipa: "pʰəɳ", modes: [production, listening, speaking] }
+  - { id: hi-0002, target: "कल", native: "tomorrow", reading: "kal", ipa: "kəl", modes: [production, listening, speaking] }
+  - { id: hi-0003, target: "कली", native: "bud", reading: "kalī", ipa: "kaʎi", modes: [production, listening, speaking] }
 ''',
 };
 
-/// An app learning [languages], with the IPA course at [scope].
+/// An app learning [languages].
 AppState ipaApp(
   List<String> languages, {
-  IpaScope? scope,
   TtsEngine tts = const NullTtsEngine(),
 }) {
   final settings = SettingsNotifier(
@@ -105,7 +103,6 @@ AppState ipaApp(
     learningLanguages: languages,
     learningChosen: true,
   );
-  if (scope != null) settings.ipaScope = scope;
   return AppState.test(
     decks: MemoryDeckSource(ipaFiles),
     settings: settings,

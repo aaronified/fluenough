@@ -10,7 +10,7 @@ card data plan, 2026-10-13, #506).
 **Status:** the owner answered the six open questions one by one on
 2026-10-13 (recorded under "Decisions") and approved the drafts the same
 day (#506): the ability rule as proposed, and reading passages moved to
-exams (see "Reading passages"). ADR-0039 is Accepted.
+exams (see "Reading passages"). ADR-0039 is Accepted in full (owner, 2026-10-24, #506: "Accept; build now"); the engine is built now, without waiting for the exam design (#509).
 
 ## Decisions (owner, 2026-10-13, #506)
 
@@ -103,17 +103,57 @@ every card in the shipped decks, then deletes the old.
    `chooseMeaning`, `chooseWord`, `hearAndChoose`, `matchPairs`, typed
    production and listening, and speaking into it. `reviewAsks` (#9) asks
    the registry. Same output as step 1.
+   **Built (#522):** `lib/core/scheduling/question_type.dart` holds `QuestionType`,
+   `QuestionContext` and the ordered `questionTypes`; `reviewAsks` asks
+   `questionTypeFor`. The two grammar types moved in with their current
+   eligibility, which step 4 changes. Typed production and listening, and
+   speaking, are what no type claims, so they stay `Ask.own`.
 3. **Distractor sources by data (#8).** Replace the pool by kind and class
    with sources named by data: same `pos`, same theme or tags, `pair`,
    `bases`. Where a pool is too small, fall back as today. The test checks
    no pool gets smaller for a shipped card.
+   **Built (#522):** `lib/core/scheduling/distractors.dart` ranks a pool by
+   what its cards share with the answer, read from data: its word family
+   (`bases`), `pos`, then tags. A choice question takes its wrong options
+   from the best rank first, at random within a rank (`DrillSession`). The
+   pool's membership is unchanged (it is still the deck's cards, then the
+   course's, as `choicePool` builds it), so no pool gets smaller and every
+   ask stays as pinned; the ranking only changes which of the pool is shown.
+   `pair` still leads in Hear, and the card's own `confusables` still come
+   before the pool.
 4. **Grammar by data (#1, #2).** `chooseForm` and `chooseFormMeaning` become
    types whose `eligible` is "the card has other forms of its word"
    (`bases` or the rule row), not `rule != null`. `lessonQuestions` for a
    rules cell comes from the registry.
+   **Built (#522):** `chooseFormMeaning` is eligible when another form of
+   the word means something else (`Card.choosesMeaning`) and `chooseForm`
+   when the word has other forms (`Card.hasOtherForms`), not when the card
+   is a rules cell; `lessonQuestions` asks the registry
+   (`grammarLessonQuestions`) for a rules cell. Same questions as pinned.
+   **Forms named by `bases`** (owner, 2026-10-23, asked what a base-word
+   card's other forms are: "Sibling cards"): the other cards whose `bases`
+   ref the same base card, with a different target (`formSiblings`), supply
+   the wrong options (`formChoices`) and make the types eligible; a card
+   with no sibling stays ineligible. The review gets them through
+   `reviewAsks(siblingsOf:)`. A card still reaches a grammar skill only by
+   its `modes` (step 6 changes that), and `grammarUnderstood` is still
+   refused by the parser on a card that is not a rules cell, so no shipped
+   card gains a form question yet. A lesson reads them in step 8.
+   **Narrowed to "Same single base"** (owner, 2026-10-23: "Two cards are
+   siblings only when each has exactly one base and that base is the same
+   card."): measured on the shipped decks, the literal rule caught about 600
+   multi-word sentences that share any word. `formSiblings` now requires
+   exactly one base on each card, the same card.
 5. **Rearrange by data (#3).** `eligible` is "the target has three or more
    tokens", whatever `pos` is. A two-word phrase stays eligible so that the
    1,098 cards keep it (word-order-tiles.md).
+   **Built (#522):** `rearrangeType` is eligible by the card's data alone:
+   three or more words in the target (its `words`, else its spaces), whatever
+   its `pos`, or two where it is a phrase, as `Card.rearranges` already read
+   it before this step, so no shipped card changes its ask and the pin is
+   unchanged. The step adds the registry's guard that a reading question is
+   never rearranged, and `test/rearrange_types_test.dart` pins the rule by
+   behaviour. The two-word phrase still reads `pos`, as the plan keeps it.
 6. **`modes` as an opt-out (#4).** Read `modes` as "excluded from". The
    expanders stop writing it as a marker. A card with no `modes` is asked
    every skill its data allows. The validator reports any `modes` that
@@ -122,19 +162,85 @@ every card in the shipped decks, then deletes the old.
    the script lists every deck it changed and each card whose `modes`
    changed meaning, and a reviewer checks that list. Card ids and meanings
    do not change.
+   **Built (#522):** `Card.modes` is read as "excluded from" and
+   `Card.modesIn` returns every skill the data allows less those: the
+   vocabulary skills (`DrillMode.vocabulary`), grammar for a rules cell, a
+   card with siblings (`FormSiblings`, "Same single base") or a card that
+   excludes all four vocabulary skills, and grammar understood where a form
+   means something else. The expanders write the four vocabulary skills on
+   rules and pattern cells. `modesIn` takes the card's siblings, passed at
+   its call sites (`AppState.siblingsOf`, `SessionQueue.build(siblingsOf:)`).
+   The drill's fallback to `chooseFormMeaning` is gated on that type's
+   eligibility. **Convert at release** (owner, 2026-10-23: "Convert at
+   release"): the code lands on main first; `tools/convert_modes.py`
+   rewrites every shipped list to its complement over the four vocabulary
+   skills, with no grammar names, on `decks-next`, merged when the release
+   that reads the new meaning ships, so installed apps never read converted
+   lists. The validator's "excludes every skill" check is not built.
 7. **Hear form or meaning by the card (#7).** Whether the heard form is
    typed is a property of the card's data (a letter, a digit, a number),
    not of the deck's presence on the path. Script practice stays as it
    is, found by the card.
+   **Built (#522)** (owner, 2026-10-23: "New pos letter/digit", then
+   "Letters only", then "Key, two releases"): `letter` (a letter or sign)
+   and `digit` are valid `pos` values on a card, and a card may carry
+   `hears: "form"`, for the spelling and script reading words, which keep
+   their real `pos`. `Card.hearsForm` is `pos` letter or digit, or `hears:
+   form`; `AppState.hearsForm` adds a generated `NumberCard`, and
+   `SkillMap.formHeardCards`, built from the same rule, says which cards'
+   right Hear answers imply Write. `needsAlphabet` is no longer read for
+   either; it still drives the path, placement and the script skills. The
+   validator accepts `letter` and `digit` on a card only, and `hears: form`.
+   **Two releases:** an app without the `hears` key rejects the card, so
+   release N carries the code and `pos` on the letters and digits, and the
+   decks' `hears` follows in a pull request that merges one release later,
+   once N is installed. Until then those words are heard for their meaning.
+   `tools/set_script_pos.py` sets both (`--set pos`, `--set hears`).
 8. **Lessons from the registry (#2).** `lessonQuestions` and `Difficulty`
    read the registry and the card's data; the switch on kind is deleted.
+   **Built (#522):** `lessonQuestions` no longer switches on difficulty to
+   name asks. Difficulty only orders the skills (`_lessonSkills`); each ask is
+   the first registry type the card's data makes eligible for the skill
+   (`lessonTypeFor`), or `Ask.own`, so a grammar cell and a rules cell come
+   from `grammarLessonQuestions` the same way. A lesson reads siblings
+   (`lessonPlan(siblingsOf:)`, "Same single base"): a card with siblings is
+   asked its grammar skills after its word's own, so they are reached when
+   its `modes` leave no other skill for the exercise. `Difficulty.of` reads
+   `Card.rearranges`; it still counts a one-word `pos: phrase` as hard, as
+   before. Same questions as before for every card without siblings. A
+   pattern cell that has siblings now gets form questions too, which it did
+   not before.
 9. **Numbers as cards, reading as exam items (#5, #6).** `NumberCard`
    becomes a card with data, asked through the registry. Reading questions
    leave review: they are exam items, drawn by the exam screen (see
    Reading passages). The reading page stays, for exams.
+
+   **Built (#522), 9a, numbers (owner, 2026-10-23: "Split it").** A
+   generated number is now an ordinary `Card` made by `numberCard`; the class
+   `NumberCard` is gone. "Practice only, never logged" is the card's
+   `practiceOnly`, and what is typed when it is heard is its `heardAs` (the
+   digits); both are set only by the generator, are not deck keys, and so no
+   deck file or released app is affected. Hearing goes through step 7's rule
+   (`hears: form`, `Card.hearsForm`). The `is NumberCard` checks in
+   `app_state.dart`, `drill_session.dart`, `unit_search.dart`,
+   `path_model.dart` and `speech_test_sheet.dart` read the data instead.
+   **9b, reading questions as exam items, is not built:** it waits for
+   #509's exam screen, and passages stay in lessons and review until then.
 10. **Retire `pattern.prompt` (#10).** A pattern's cards are asked by the
     types their data allows. The field is read for old decks and flagged
     by the validator, and removed from DECK-FORMAT.md in the same step.
+    **Built (#522):** `prompt` is optional on a pattern and on a grammar
+    layer's pattern. Without one a cell is asked as `{lemma} ({gloss}) —
+    {slot}` (`kPatternPrompt`, what 91 of the 108 shipped decks wrote), and a
+    deck that gives one is read as written. The validator accepts a pattern
+    without one and warns of one given (an unknown placeholder is still an
+    error); DECK-FORMAT marks the field retired. **Released apps still need
+    the key**, since they read it as required, so no shipped deck drops it
+    yet: that is a deck change for a release after the one that ships this,
+    on `decks-next`, and the validator's warning stays until then. The
+    default's wording is mine, taken from the most common shipped prompt;
+    the cells of the 17 decks that wrote another would read differently
+    once their `prompt` is removed.
 
 ## Build order: fields first
 

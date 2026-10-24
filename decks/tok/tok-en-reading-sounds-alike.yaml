@@ -1,0 +1,36 @@
+schema: 1
+id: "tok-en-reading-sounds-alike"
+name: "Reading: sounds to tell apart"
+kind: reading
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+native:   { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Three pairs of words said one after the other, to hear the sound that tells each pair apart. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "tok-sounds-alike"
+    title: "Sounds alike"
+    sentences:
+      - text: "sina. sona."
+      - text: "pan. pana."
+      - text: "kon. ko."
+    questions:
+      - id: "tok-0038"
+        prompt: { en: "Which word of the first pair has the vowel o?" }
+        options:
+          - { en: "sina" }
+          - { en: "sona" }
+        answer: 2
+      - id: "tok-0039"
+        prompt: { en: "Which word of the second pair has a final a?" }
+        options:
+          - { en: "pan" }
+          - { en: "pana" }
+        answer: 2
+      - id: "tok-0040"
+        prompt: { en: "Which word of the third pair ends in n?" }
+        options:
+          - { en: "kon" }
+          - { en: "ko" }
+        answer: 1

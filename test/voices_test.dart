@@ -990,7 +990,7 @@ void main() {
 
     group('a rude word is never offered to say or played', () {
       test('a rude word is never offered to say, nor played', () async {
-        final state = await reviewState();
+        final state = await reviewState(adult: false);
         addTearDown(state.dispose);
         final telugu = _language(state, 'te');
         final words = speechTestWords(state, telugu).map((c) => c.id);
@@ -1007,6 +1007,7 @@ void main() {
           );
           addTearDown(state.dispose);
           await state.load();
+          state.settings.adultContent = true;
           final telugu = _language(state, 'te');
           expect(
             state.decks.where((d) => d.language.code == 'te').first.id,

@@ -142,6 +142,15 @@ about two weeks.
 - Known cards then come back by deck sampling (#680): 1-2 of a deck's due
   known cards stand for the deck, with 3-5 more if they fail. This covers
   all known cards, not just placed ones.
+- **How placed cards are reviewed (#761, owner, 2026-10-23):** one choice
+  per course, asked on the placement result and changeable in Languages I'm
+  learning: **Set in stone** (no reviews, counted as known), **Spot-check**
+  (the default: placed cards count as known for sampling until the learner
+  has reviewed them, and a miss widens coverage) or **Keep reviewing**
+  (normal). Script decks follow the choice. Cards learned after placement are
+  always normal. The placed pairs are those whose first review was written
+  by placement (the moment is kept per course in settings), so no database
+  change was needed.
 
 ## The placement section in every deck (part of the B1 route)
 

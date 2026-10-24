@@ -1,0 +1,66 @@
+schema: 1
+id: "ko-en-reading-addressing"
+name: "Korean reading: addressing people"
+kind: reading
+language: { code: ko, iso639_3: kor, name: Korean, script: hangul, tts: "ko-KR", icon: "한" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+"passages":
+  - "id": "ko-meeting-a-teacher"
+    "title": "Meeting a teacher"
+    "sentences":
+      - "text": "박 씨는 교수님이에요."
+        "reading": "bak ssineun gyosunimieyo."
+      - "text": "저는 학생이에요."
+        "reading": "jeoneun haksaengieyo."
+      - "text": "교수님, 안녕하세요."
+        "reading": "gyosunim, annyeonghaseyo."
+    "questions":
+      - "id": "ko-0114"
+        "prompt":
+          "en": "Which word in the first line means 'professor'?"
+        "options":
+          - "en": "박 (bak)"
+          - "en": "교수님 (gyosunim)"
+        "answer": 2
+      - "id": "ko-0115"
+        "prompt":
+          "en": "The second line says that the speaker is a student."
+        "answer": true
+      - "id": "ko-0116"
+        "prompt":
+          "en": "Which word in the third line means 'hello'?"
+        "options":
+          - "en": "교수님 (gyosunim)"
+          - "en": "안녕하세요 (annyeonghaseyo)"
+        "answer": 2
+  - "id": "ko-name-cards"
+    "title": "On a name card"
+    "sentences":
+      - "text": "명함이 있어요."
+        "reading": "myeonghami isseoyo."
+      - "text": "성은 박이에요."
+        "reading": "seongeun bagieyo."
+      - "text": "민수 씨는 회사원이에요."
+        "reading": "minsu ssineun hoesawonieyo."
+    "questions":
+      - "id": "ko-0117"
+        "prompt":
+          "en": "Which word in the second line means 'family name'?"
+        "options":
+          - "en": "성 (seong)"
+          - "en": "이에요 (ieyo)"
+        "answer": 1
+      - "id": "ko-0118"
+        "prompt":
+          "en": "The first line says that there is a business card."
+        "answer": true
+      - "id": "ko-0119"
+        "prompt":
+          "en": "Which word in the third line means 'company employee'?"
+        "options":
+          - "en": "민수 (minsu)"
+          - "en": "회사원 (hoesawon)"
+        "answer": 2

@@ -55,6 +55,55 @@ speaker reviews every card before it ships, Telugu included.
   offensive decks and the warnings as part of their courses, shipping
   only once a speaker has reviewed them.
 
+## Built: the adult gate (#628, owner, 2026-10-23)
+
+With Adult content off, an adult deck is "Hidden everywhere": not listed,
+not taught, and not in Today, reviews or practice; it comes back when the
+setting is turned on. The setting is off by default. An adult deck is one
+tagged `offensive`; a rude card is one tagged or registered `offensive`, and
+one inside an ordinary deck follows the same rule. The sound-alike warning
+still shows with the setting off, with the rude word hidden. The
+`audience: adult` deck field, the per-profile 18+ confirmation, the
+disclaimer and the child-profile rule are not built yet.
+
+## Built: reviewer-only until rated (#630, owner, 2026-10-24)
+
+> Merge, reviewer-only until rated
+
+The offensive decks are written and merged now. A deck tagged `offensive`
+whose words no native speaker has rated is **unrated**: no learner ever sees
+it, with Adult content on or off. It is not listed, taught, in Today,
+reviews, practice or search, and only the language's Offensive words review
+lists it, and only when the reviewer has Adult content on (owner, 2026-10-24: "Require Adult on"), where the raters score each word 1 to 9. Once the median of the
+raters has set each word's band, the deck gains the deck tag **`rated`** and
+follows the adult gate above.
+
+How "rated" is written: as the deck tag `rated`, beside `offensive`
+(`ratedTag` in `lib/core/decks/adult_gate.dart`). It is an ordinary tag, so no
+new deck key and no new release is needed: an app that does not know it reads
+the deck as before, and the validator rejects `rated` on a deck not tagged
+`offensive`. The ratings themselves stay in the reviewers' files, sent by
+mail; the tag is added by hand when they are in. The planned per-card `level`
+(mild to strongest) is still not a card key: it is a new key, which released
+apps reject, so the app must read it a release before decks use it
+(`tools/pick_warning.py` waits for it as well). A released app that has the
+adult gate but not this rule shows an unrated deck to a learner with Adult
+content on; a deck should not be merged before the release that has the rule.
+
+## Built: the sound-alike and look-alike tool (#629)
+
+`tools/offensive_alikes.py <decks> [--language te] [--unexplained]` compares
+each word of a language with its offensive words (a card registered or
+tagged `offensive`, or in a deck tagged so), by IPA (at most one segment
+apart) and by writing (the script, or the ISO 15919-based reading, at most
+one letter or mark apart; a length mark or a dot is one), and prints the
+close pairs for a reviewer. Words of fewer than three segments or letters
+and pairs of two offensive words are left out. A kept pair is explained by a
+`pair` note naming the offensive word by `ref` (sound), or a `lookalike` or
+`homograph` note (writing), either on the word or on the offensive word. The
+validator warns of a pair no note explains (a warning, never an error); a
+pair a reviewer rejects has no way to be marked yet, so it keeps warning.
+
 ## Register rules deferred here (owner, 2026-10-15, #517)
 
 > Defer both to the offensive-words work

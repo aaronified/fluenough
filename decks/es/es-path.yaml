@@ -26,12 +26,16 @@
 #    each its words, then its rules, then its sentences.
 # Spanish's grammar keeps the Romance order of
 # docs/plans/language-paths-scheme.md within each level: articles and
-# gender, prepositions, the two verbs "to be", the regular present,
-# the irregular present, object pronouns, reflexives, the past
-# (perfective and imperfective), the future and the conditional, the
-# subjunctive, and the compound tenses. Spanish has four decks today,
-# the phrasebook, the core vocabulary, articles and gender, and the
-# regular -ar present; the rest is planned. Which Spanish to teach
+# gender, the plural, adjective agreement (the tense, number and gender
+# audit of 2026-10-23: it is needed from the first lessons), prepositions,
+# the two verbs "to be", the regular present, the irregular present, the
+# imperatives (right after the present), object pronouns, reflexives, the
+# past (perfective and imperfective, and the contrast between them), the
+# future and the conditional, the subjunctive, and the compound tenses.
+# Spanish has these decks today: the phrasebook, the first words, the core
+# vocabulary, articles and gender, the regular -ar present, and the first three
+# themes with their sentences and readings (questions, addressing, pronouns);
+# the rest is planned. Which Spanish to teach
 # (Latin American or Spain) is still open (docs/plans/language-paths.md);
 # the plan names nothing that differs between them.
 #
@@ -58,156 +62,89 @@ units:
   - decks: ["es-phrasebook", "es-first-words", "*"]
     words: 10
   # 2. The first word units.
-  - planned: { id: "es-questions", theme: "questions", words: 15 }
-    listening_passages:
-      - { id: "asking-around", text: { "en": "Asking who, what, where and when at a station" } }
-    reading_passages:
-      - { id: "tourist-leaflet", text: { "en": "A leaflet answering the questions a visitor asks" } }
-  - planned: { id: "es-addressing", theme: "addressing", words: 15 }
-    listening_passages:
-      - { id: "meeting-a-neighbour", text: { "en": "Greeting a neighbour and an older stranger, tú and usted" } }
-    reading_passages:
-      - { id: "name-badges", text: { "en": "Name badges at a meeting with titles and surnames" } }
-  - planned: { id: "es-pronouns", theme: "pronouns", words: 20 }
-    listening_passages:
-      - { id: "who-is-who", text: { "en": "Pointing out who is who at a family gathering: he, she, they" } }
-    reading_passages:
-      - { id: "seating-chart", text: { "en": "A seating chart for a party, with names and who sits where" } }
-  - planned: { id: "es-family", theme: "family", words: 30 }
-    listening_passages:
-      - { id: "my-family", text: { "en": "Someone describes the people in a family photo" } }
-    reading_passages:
-      - { id: "family-tree", text: { "en": "A small family tree with names and relations" } }
-  - planned: { id: "es-numbers-1-20", theme: "numbers-1-20", words: 20 }
-    listening_passages:
-      - { id: "counting-aloud", text: { "en": "Counting objects aloud, from one to twenty" } }
-    reading_passages:
-      - { id: "room-numbers", text: { "en": "Room numbers on a row of doors" } }
+  - decks: ["es-questions", "es-questions-sentences", "es-reading-questions", "*"]
+    words: 15
+  - decks: ["es-addressing", "es-addressing-sentences", "es-reading-addressing", "*"]
+    words: 15
+  - decks: ["es-pronouns", "es-pronouns-sentences", "es-reading-pronouns", "*"]
+    words: 20
+  - decks: ["es-family", "es-family-sentences", "es-reading-family", "*"]
+    words: 30
+  - decks: ["es-numbers-1-20", "es-numbers-1-20-sentences", "es-reading-numbers-1-20", "*"]
+    words: 21
   # 3. No script units: Spanish is written in Latin letters.
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
-  - planned: { id: "es-about-me", theme: "about-me", words: 25 }
-    listening_passages:
-      - { id: "introducing-yourself", text: { "en": "Introducing yourself to a new classmate" } }
-    reading_passages:
-      - { id: "registration-form", text: { "en": "A simple registration form: name, age, country, language" } }
+  - decks: ["es-about-me", "es-about-me-sentences", "es-reading-about-me", "*"]
+    words: 22
   - decks: ["es-core-100"]
     words: 26
-  - planned: { id: "es-everyday-verbs", theme: "everyday-verbs", words: 40 }
-    listening_passages:
-      - { id: "morning-routine", text: { "en": "A mother says what each person in the house does in the morning" } }
-    reading_passages:
-      - { id: "fridge-note", text: { "en": "A note on the fridge: what to eat, what to drink and where things are" } }
-  - planned: { id: "es-adverbs", theme: "adverbs", words: 35 }
-    listening_passages:
-      - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
-    reading_passages:
-      - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
-  - planned: { id: "es-quantities", theme: "quantities", words: 30 }
-    listening_passages:
-      - { id: "at-the-grocers", text: { "en": "Asking how much and how many at a grocer's" } }
-    reading_passages:
-      - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
-  - planned: { id: "es-describing", theme: "describing", words: 40 }
-    listening_passages:
-      - { id: "how-are-you-feeling", text: { "en": "A friend asks how you feel today, and you answer" } }
-    reading_passages:
-      - { id: "postcard-from-the-coast", text: { "en": "A short postcard: the weather and the food" } }
+  - decks: ["es-everyday-verbs", "es-everyday-verbs-sentences", "es-reading-everyday-verbs", "*"]
+    words: 24
+  - decks: ["es-adverbs", "es-adverbs-sentences", "es-reading-adverbs", "*"]
+    words: 22
+  - decks: ["es-quantities", "es-quantities-sentences", "es-reading-quantities", "*"]
+    words: 30
+  - decks: ["es-describing", "es-describing-sentences", "es-reading-describing", "*"]
+    words: 40
   # 5. Rules as forms, practised on the words known: articles and gender
   # and prepositions first, then the verb forms.
   - decks: ["es-grammar-articles-gender"]
     words: 0
     grammar: ["articles-gender"]
-  - planned: { id: "es-grammar-prepositions", grammar: "prepositions" }
-    listening_passages:
-      - { id: "where-is-it", text: { "en": "Saying where things are: in, on, under, next to" } }
-    reading_passages:
-      - { id: "room-description", text: { "en": "A short description of a room and where its furniture is" } }
-  - planned: { id: "es-grammar-ser-estar", grammar: "ser-estar" }
-    listening_passages:
-      - { id: "who-and-how", text: { "en": "Saying who someone is and how they are today" } }
-    reading_passages:
-      - { id: "introduction-card", text: { "en": "A short card introducing a person: who they are, where they are from, how they feel" } }
+  - decks: ["es-grammar-plural", "es-reading-plural"]
+    words: 0
+    grammar: ["plural"]
+  - decks: ["es-grammar-adjective-agreement", "es-reading-adjective-agreement"]
+    words: 0
+    grammar: ["adjective-agreement"]
+  - decks: ["es-grammar-prepositions", "es-reading-prepositions"]
+    words: 0
+    grammar: ["prepositions"]
+  - decks: ["es-grammar-ser-estar", "es-reading-ser-estar"]
+    words: 0
+    grammar: ["ser-estar"]
   - decks: ["es-grammar-present-ar"]
     words: 0
     grammar: ["present-ar"]
-  - planned: { id: "es-grammar-present-er-ir", grammar: "present-er-ir" }
-    listening_passages:
-      - { id: "what-we-eat", text: { "en": "Friends say what they eat, drink and where they live" } }
-    reading_passages:
-      - { id: "lunch-notes", text: { "en": "Short notes about who eats, drinks and lives where" } }
-  - planned: { id: "es-grammar-present-irregular", grammar: "present-irregular" }
-    listening_passages:
-      - { id: "what-do-you-have", text: { "en": "Saying what you have, what you do and where you go" } }
-    reading_passages:
-      - { id: "weekly-plan", text: { "en": "A weekly plan for a household: who goes where and does what" } }
+  - decks: ["es-grammar-present-er-ir", "es-reading-present-er-ir"]
+    words: 0
+    grammar: ["present-er-ir"]
+  - decks: ["es-grammar-present-irregular", "es-reading-present-irregular"]
+    words: 0
+    grammar: ["present-irregular"]
+  - decks: ["es-grammar-imperatives", "es-reading-imperatives"]
+    words: 0
+    grammar: ["imperatives"]
   # 6. Then the other A1 themes, each its words, its rules, then its
   # sentences.
-  - planned: { id: "es-work", theme: "work", words: 40 }
-    listening_passages:
-      - { id: "what-do-you-do", text: { "en": "Two people ask each other what they do for a living" } }
-    reading_passages:
-      - { id: "business-card", text: { "en": "A business card and a short job description" } }
-  - planned: { id: "es-numbers-big", theme: "numbers-big", words: 40 }
-    listening_passages:
-      - { id: "big-numbers", text: { "en": "Hearing prices, years and phone numbers" } }
-    reading_passages:
-      - { id: "price-tags", text: { "en": "Price tags and a bus-route number board" } }
-  - planned: { id: "es-market", theme: "market", words: 45 }
-    listening_passages:
-      - { id: "at-the-market", text: { "en": "Buying fruit and vegetables at a market stall" } }
-    reading_passages:
-      - { id: "market-price-board", text: { "en": "A price board at a market" } }
-  - planned: { id: "es-groceries", theme: "groceries", words: 45 }
-    listening_passages:
-      - { id: "shopping-list-aloud", text: { "en": "Two people go through a shopping list" } }
-    reading_passages:
-      - { id: "shopping-list", text: { "en": "A handwritten shopping list" } }
-  - planned: { id: "es-food", theme: "food", words: 60 }
-    listening_passages:
-      - { id: "ordering-a-meal", text: { "en": "Choosing dishes from a menu" } }
-    reading_passages:
-      - { id: "menu-card", text: { "en": "A restaurant menu card with dishes and prices" } }
-  - planned: { id: "es-transport", theme: "transport", words: 40 }
-    listening_passages:
-      - { id: "bus-stop", text: { "en": "Asking which bus goes to the centre" } }
-    reading_passages:
-      - { id: "timetable", text: { "en": "A bus and metro timetable" } }
-  - planned: { id: "es-directions", theme: "directions", words: 35 }
-    listening_passages:
-      - { id: "asking-the-way", text: { "en": "Asking the way to the station and being told" } }
-    reading_passages:
-      - { id: "simple-map", text: { "en": "A simple map with a route in words" } }
-  - planned: { id: "es-body", theme: "body", words: 35 }
-    listening_passages:
-      - { id: "at-the-doctors", text: { "en": "Telling a doctor where it hurts" } }
-    reading_passages:
-      - { id: "stretching-chart", text: { "en": "A chart of simple morning stretches" } }
-  - planned: { id: "es-places", theme: "places", words: 45 }
-    listening_passages:
-      - { id: "walk-to-the-market", text: { "en": "A neighbour names the places you pass on the way to the market" } }
-    reading_passages:
-      - { id: "street-signs", text: { "en": "Signs along a street: pharmacy, school, bank, church" } }
-  - planned: { id: "es-home", theme: "home", words: 45 }
-    listening_passages:
-      - { id: "a-flat-tour", text: { "en": "A tour of a flat, room by room" } }
-    reading_passages:
-      - { id: "flat-advert", text: { "en": "A short advert for a flat to rent" } }
-  - planned: { id: "es-time", theme: "time", words: 35 }
-    listening_passages:
-      - { id: "what-time-is-it", text: { "en": "Asking and telling the time" } }
-    reading_passages:
-      - { id: "opening-hours", text: { "en": "The opening hours on a shop door" } }
-  - planned: { id: "es-grammar-ir-a", grammar: "ir-a" }
-    listening_passages:
-      - { id: "plans-for-the-weekend", text: { "en": "Saying what you are going to do this weekend" } }
-    reading_passages:
-      - { id: "invitation-note", text: { "en": "A note inviting a friend, with plans for the day" } }
-  - planned: { id: "es-help", theme: "help", words: 20 }
-    listening_passages:
-      - { id: "lost-in-the-city", text: { "en": "Asking for help when lost" } }
-    reading_passages:
-      - { id: "emergency-numbers", text: { "en": "A card of emergency numbers and what to say" } }
+  - decks: ["es-work", "es-work-sentences", "es-reading-work", "*"]
+    words: 22
+  - decks: ["es-numbers-big", "es-numbers-big-sentences", "es-reading-numbers-big", "*"]
+    words: 17
+  - decks: ["es-market", "es-market-sentences", "es-reading-market", "*"]
+    words: 22
+  - decks: ["es-groceries", "es-groceries-sentences", "es-reading-groceries", "*"]
+    words: 24
+  - decks: ["es-food", "es-food-sentences", "es-reading-food", "*"]
+    words: 25
+  - decks: ["es-transport", "es-transport-sentences", "es-reading-transport", "*"]
+    words: 20
+  - decks: ["es-directions", "es-directions-sentences", "es-reading-directions", "*"]
+    words: 18
+  - decks: ["es-body", "es-body-sentences", "es-reading-body", "*"]
+    words: 21
+  - decks: ["es-places", "es-places-sentences", "es-reading-places", "*"]
+    words: 21
+  - decks: ["es-home", "es-home-sentences", "es-reading-home", "*"]
+    words: 24
+  - decks: ["es-time", "es-time-sentences", "es-reading-time", "*"]
+    words: 15
+  - decks: ["es-grammar-ir-a", "es-reading-ir-a"]
+    words: 0
+    grammar: ["ir-a"]
+  - decks: ["es-help", "es-help-sentences", "es-reading-help", "*"]
+    words: 16
     milestone: "A1"
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
   # then its sentences.
@@ -231,11 +168,6 @@ units:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
     reading_passages:
       - { id: "shop-offer-sign", text: { "en": "A clothes shop's sign with its offers" } }
-  - planned: { id: "es-grammar-adjective-agreement", grammar: "adjective-agreement" }
-    listening_passages:
-      - { id: "a-big-red-house", text: { "en": "Describing a house and the people in it" } }
-    reading_passages:
-      - { id: "holiday-flat-ad", text: { "en": "An advert describing a flat for the holidays" } }
   - planned: { id: "es-animals", theme: "animals", words: 35 }
     listening_passages:
       - { id: "a-farm-visit", text: { "en": "A child names the animals seen on a visit to a farm" } }
@@ -301,11 +233,6 @@ units:
       - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
     reading_passages:
       - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
-  - planned: { id: "es-grammar-imperatives", grammar: "imperatives" }
-    listening_passages:
-      - { id: "class-instructions", text: { "en": "A teacher gives short instructions in class" } }
-    reading_passages:
-      - { id: "signs-and-rules", text: { "en": "Signs saying what to do and what not to do" } }
   - planned: { id: "es-chores", theme: "chores", words: 35 }
     listening_passages:
       - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
@@ -341,6 +268,11 @@ units:
       - { id: "when-i-was-small", text: { "en": "Telling what you used to do when you were small" } }
     reading_passages:
       - { id: "childhood-note", text: { "en": "A short note remembering a childhood summer" } }
+  - planned: { id: "es-grammar-preterite-imperfect", grammar: "preterite-imperfect" }
+    listening_passages:
+      - { id: "was-doing-then-did", text: { "en": "Telling what was going on when something happened" } }
+    reading_passages:
+      - { id: "story-of-the-trip", text: { "en": "A short story of a trip, with what happened and what was usual" } }
   - planned: { id: "es-nature", theme: "nature", words: 40 }
     listening_passages:
       - { id: "walk-by-the-river", text: { "en": "Two people describe a walk by the river at dusk" } }

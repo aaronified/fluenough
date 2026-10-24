@@ -24,10 +24,11 @@ not offer it yet, and the owner's later asks are not in it.
 
 Decided with the owner:
 
-- The course covers the whole IPA chart (2020). It is offered twice in the
-  languages to learn: **"IPA: my languages"**, only the symbols the
-  languages being learned use, and **"IPA: whole chart"**. They share
-  progress.
+- The course covers the whole IPA chart (2020). It was first offered twice
+  in the languages to learn, **"IPA: my languages"** and **"IPA: whole
+  chart"**, sharing progress; the first was dropped on 2026-10-23 (owner:
+  "drop the only your languages IPA course. Doesn't matter. We anyway have
+  the tags.", #735), so it is offered once, as the whole chart.
 - Each symbol is heard in an example word, in one of the app's languages,
   in that language's phone voice.
 

@@ -1,0 +1,50 @@
+schema: 1
+id: "es-directions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-0724"
+    target: "Giro a la derecha en el cruce."
+    ipa: "ˈxiɾo a la deˈɾetʃa en el ˈkɾuθe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Giro", ref: "es-0720" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "derecha", ref: "es-0714" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "cruce", ref: "es-0709" }]
+    confusables: [{ id: "izquierda", ref: "es-0715", kind: "word" }, { id: "recto", ref: "es-0716", kind: "word" }]
+  - id: "es-0725"
+    target: "Cruzamos el puente y seguimos recto."
+    ipa: "kɾuˈθamos el ˈpwente i seˈɡimos ˈrekto"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Cruzamos", ref: "es-0721" }, { word: "el", base: "el" }, { word: "puente", ref: "es-0708" }, { word: "y", ref: "es-0048" }, { word: "seguimos", ref: "es-0722" }, { word: "recto", ref: "es-0716" }]
+    confusables: [{ id: "esquina", ref: "es-0706", kind: "word" }, { id: "girar", ref: "es-0720", kind: "word" }]
+  - id: "es-0726"
+    target: "El semáforo está cerca de la esquina."
+    ipa: "el seˈmafoɾo esˈta ˈθeɾka de la esˈkina"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "semáforo", ref: "es-0707" }, { word: "está", ref: "es-0023" }, { word: "cerca", ref: "es-0717" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "esquina", ref: "es-0706" }]
+    confusables: [{ id: "lejos", ref: "es-0718", kind: "word" }, { id: "entre", ref: "es-0719", kind: "word" }]
+  - id: "es-0727"
+    target: "El mercado está entre dos calles."
+    ipa: "el meɾˈkado esˈta ˈentɾe dos ˈkaʝes"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "mercado", ref: "es-0567" }, { word: "está", ref: "es-0023" }, { word: "entre", ref: "es-0719" }, { word: "dos", ref: "es-0206" }, { word: "calles", ref: "es-0017" }]
+    confusables: [{ id: "norte", ref: "es-0711", kind: "word" }, { id: "oeste", ref: "es-0713", kind: "word" }]
+  - id: "es-0728"
+    target: "Encuentro el mapa en la mesa."
+    ipa: "enˈkwentɾo el ˈmapa en la ˈmesa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Encuentro", ref: "es-0723" }, { word: "el", base: "el" }, { word: "mapa", ref: "es-0710" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mesa", ref: "es-0009" }]
+    confusables: [{ id: "cruce", ref: "es-0709", kind: "word" }, { id: "esquina", ref: "es-0706", kind: "word" }]
+  - id: "es-0729"
+    target: "El puente está a la izquierda."
+    ipa: "el ˈpwente esˈta a la iθˈkjeɾda"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "puente", ref: "es-0708" }, { word: "está", ref: "es-0023" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "izquierda", ref: "es-0715" }]
+    confusables: [{ id: "derecha", ref: "es-0714", kind: "word" }, { id: "sur", ref: "es-0712", kind: "word" }]

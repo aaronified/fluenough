@@ -1,0 +1,230 @@
+schema: 1
+id: "es-adverbs"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "adverbs"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-0320"
+    target: "siempre"
+    ipa: "ˈsjempɾe"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Siempre desayuno a las siete.", ipa: "ˈsjempɾe desaˈʝuno a las ˈsjete", bases: [{ word: "Siempre", base: "siempre" }, { word: "desayuno", ref: "es-0282" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "siete", ref: "es-0211" }] }
+      - { target: "Ana siempre llega temprano.", ipa: "ˈana ˈsjempɾe ˈʝeɡa temˈpɾano", bases: [{ word: "Ana", base: "Ana" }, { word: "siempre", base: "siempre" }, { word: "llega", ref: "es-0290" }, { word: "temprano", ref: "es-0338" }] }
+  - id: "es-0321"
+    target: "nunca"
+    ipa: "ˈnunka"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nunca como carne.", ipa: "ˈnunka ˈkomo ˈkaɾne", bases: [{ word: "Nunca", base: "nunca" }, { word: "como", ref: "es-0028" }, { word: "carne", ref: "es-0614" }] }
+      - { target: "Mi padre nunca llega tarde.", ipa: "mi ˈpadɾe ˈnunka ˈʝeɡa ˈtaɾde", bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", base: "padre" }, { word: "nunca", base: "nunca" }, { word: "llega", ref: "es-0290" }, { word: "tarde", base: "tarde" }] }
+  - id: "es-0322"
+    target: "a veces"
+    ipa: "a ˈbeθes"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "a", base: "a" }, { word: "veces", base: "vez" }]
+    examples:
+      - { target: "A veces cocino con mi madre.", ipa: "a ˈbeθes koˈθino kon mi ˈmadɾe", bases: [{ word: "A", base: "a" }, { word: "veces", base: "vez" }, { word: "cocino", ref: "es-0284" }, { word: "con", base: "con" }, { word: "mi", ref: "es-0129" }, { word: "madre", base: "madre" }] }
+      - { target: "Ana y yo estudiamos juntos a veces.", ipa: "ˈana i ʝo estuˈdjamos ˈxuntos a ˈbeθes", bases: [{ word: "Ana", base: "Ana" }, { word: "y", ref: "es-0048" }, { word: "yo", ref: "es-0119" }, { word: "estudiamos", ref: "es-0258" }, { word: "juntos", base: "juntos" }, { word: "a", base: "a" }, { word: "veces", base: "vez" }] }
+  - id: "es-0323"
+    target: "normalmente"
+    ipa: "noɾmalˈmente"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Normalmente ceno a las nueve.", ipa: "noɾmalˈmente ˈθeno a las ˈnwebe", bases: [{ word: "Normalmente", base: "normalmente" }, { word: "ceno", ref: "es-0283" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "nueve", ref: "es-0213" }] }
+      - { target: "Normalmente hablo con mi madre.", ipa: "noɾmalˈmente ˈablo kon mi ˈmadɾe", bases: [{ word: "Normalmente", base: "normalmente" }, { word: "hablo", ref: "es-0027" }, { word: "con", base: "con" }, { word: "mi", ref: "es-0129" }, { word: "madre", base: "madre" }] }
+  - id: "es-0324"
+    target: "a menudo"
+    ipa: "a meˈnudo"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "a", base: "a" }, { word: "menudo", base: "menudo" }]
+    examples:
+      - { target: "Mi hermana escribe a menudo.", ipa: "mi eɾˈmana esˈkɾibe a meˈnudo", bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", base: "hermana" }, { word: "escribe", ref: "es-0297" }, { word: "a", base: "a" }, { word: "menudo", base: "menudo" }] }
+      - { target: "Visitamos a menudo a la abuela.", ipa: "bisiˈtamos a meˈnudo a la aˈbwela", bases: [{ word: "Visitamos", ref: "es-0787" }, { word: "a", base: "a" }, { word: "menudo", base: "menudo" }, { word: "la", base: "la" }, { word: "abuela", base: "abuela" }] }
+  - id: "es-0325"
+    target: "casi"
+    ipa: "ˈkasi"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Casi nunca llego tarde.", ipa: "ˈkasi ˈnunka ˈʝeɡo ˈtaɾde", bases: [{ word: "Casi", base: "casi" }, { word: "nunca", ref: "es-0321" }, { word: "llego", ref: "es-0290" }, { word: "tarde", base: "tarde" }] }
+      - { target: "Casi siempre compro pan.", ipa: "ˈkasi ˈsjempɾe ˈkompɾo pan", bases: [{ word: "Casi", base: "casi" }, { word: "siempre", ref: "es-0320" }, { word: "compro", ref: "es-0280" }, { word: "pan", base: "pan" }] }
+  - id: "es-0326"
+    target: "bien"
+    ipa: "bjen"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ana habla bien el español.", ipa: "ˈana ˈabla bjen el espaˈɲol", bases: [{ word: "Ana", base: "Ana" }, { word: "habla", ref: "es-0027" }, { word: "bien", base: "bien" }, { word: "el", base: "el" }, { word: "español", base: "español" }] }
+      - { target: "Cocino bien.", ipa: "koˈθino bjen", bases: [{ word: "Cocino", ref: "es-0284" }, { word: "bien", base: "bien" }] }
+  - id: "es-0327"
+    target: "mal"
+    ipa: "mal"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hablo mal el inglés.", ipa: "ˈablo mal el inˈɡles", bases: [{ word: "Hablo", ref: "es-0027" }, { word: "mal", base: "mal" }, { word: "el", base: "el" }, { word: "inglés", base: "inglés" }] }
+      - { target: "Ana come mal cuando está triste.", ipa: "ˈana ˈkome mal ˈkwando esˈta ˈtɾiste", bases: [{ word: "Ana", base: "Ana" }, { word: "come", ref: "es-0028" }, { word: "mal", base: "mal" }, { word: "cuando", base: "cuando" }, { word: "está", ref: "es-0023" }, { word: "triste", base: "triste" }] }
+  - id: "es-0328"
+    target: "despacio"
+    ipa: "desˈpaθjo"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ana camina despacio.", ipa: "ˈana kaˈmina desˈpaθjo", bases: [{ word: "Ana", base: "Ana" }, { word: "camina", ref: "es-0281" }, { word: "despacio", base: "despacio" }] }
+      - { target: "Habla despacio, por favor.", ipa: "ˈabla desˈpaθjo poɾ faˈboɾ", bases: [{ word: "Habla", ref: "es-0027" }, { word: "despacio", base: "despacio" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }] }
+  - id: "es-0329"
+    target: "rápido"
+    ipa: "ˈrapido"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mi hermano come rápido.", ipa: "mi eɾˈmano ˈkome ˈrapido", bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermano", base: "hermano" }, { word: "come", ref: "es-0028" }, { word: "rápido", base: "rápido" }] }
+      - { target: "Escribo rápido en el teclado.", ipa: "esˈkɾibo ˈrapido en el teˈklado", bases: [{ word: "Escribo", ref: "es-0297" }, { word: "rápido", base: "rápido" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "teclado", base: "teclado" }] }
+  - id: "es-0330"
+    target: "muy"
+    ipa: "mwi"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Esta casa es muy grande.", ipa: "ˈesta ˈkasa es mwi ˈɡɾande", bases: [{ word: "Esta", ref: "es-0023" }, { word: "casa", base: "casa" }, { word: "es", ref: "es-0022" }, { word: "muy", base: "muy" }, { word: "grande", ref: "es-0031" }] }
+      - { target: "Ana es muy simpática.", ipa: "ˈana es mwi simˈpatika", bases: [{ word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "muy", base: "muy" }, { word: "simpática", base: "simpático" }] }
+  - id: "es-0331"
+    target: "hoy"
+    ipa: "oj"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hoy hablo con mi madre.", ipa: "oj ˈablo kon mi ˈmadɾe", bases: [{ word: "Hoy", base: "hoy" }, { word: "hablo", ref: "es-0027" }, { word: "con", base: "con" }, { word: "mi", ref: "es-0129" }, { word: "madre", base: "madre" }] }
+      - { target: "Hoy es lunes.", ipa: "oj es ˈlunes", bases: [{ word: "Hoy", base: "hoy" }, { word: "es", ref: "es-0022" }, { word: "lunes", base: "lunes" }] }
+  - id: "es-0332"
+    target: "ayer"
+    ipa: "aˈʝeɾ"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ayer llegué tarde a casa.", ipa: "aˈʝeɾ ʝeˈɡe ˈtaɾde a ˈkasa", bases: [{ word: "Ayer", base: "ayer" }, { word: "llegué", base: "llegar" }, { word: "tarde", base: "tarde" }, { word: "a", base: "a" }, { word: "casa", base: "casa" }] }
+      - { target: "Ayer compré pan.", ipa: "aˈʝeɾ komˈpɾe pan", bases: [{ word: "Ayer", base: "ayer" }, { word: "compré", base: "comprar" }, { word: "pan", base: "pan" }] }
+  - id: "es-0333"
+    target: "ahora"
+    ipa: "aˈoɾa"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ahora trabajo en Lima.", ipa: "aˈoɾa tɾaˈbaxo en ˈlima", bases: [{ word: "Ahora", base: "ahora" }, { word: "trabajo", ref: "es-0259" }, { word: "en", base: "en" }, { word: "Lima", base: "Lima" }] }
+      - { target: "Ahora estudio español.", ipa: "aˈoɾa esˈtudjo espaˈɲol", bases: [{ word: "Ahora", base: "ahora" }, { word: "estudio", ref: "es-0258" }, { word: "español", base: "español" }] }
+  - id: "es-0334"
+    target: "luego"
+    ipa: "ˈlweɡo"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Luego trabajo en el jardín.", ipa: "ˈlweɡo tɾaˈbaxo en el xaɾˈdin", bases: [{ word: "Luego", base: "luego" }, { word: "trabajo", ref: "es-0259" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "jardín", ref: "es-0810" }] }
+      - { target: "Comemos y luego estudiamos.", ipa: "koˈmemos i ˈlweɡo estuˈdjamos", bases: [{ word: "Comemos", ref: "es-0028" }, { word: "y", ref: "es-0048" }, { word: "luego", base: "luego" }, { word: "estudiamos", ref: "es-0258" }] }
+  - id: "es-0335"
+    target: "antes"
+    ipa: "ˈantes"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Antes desayuno en casa.", ipa: "ˈantes desaˈʝuno en ˈkasa", bases: [{ word: "Antes", base: "antes" }, { word: "desayuno", ref: "es-0282" }, { word: "en", base: "en" }, { word: "casa", base: "casa" }] }
+      - { target: "Antes de salir, cenamos.", ipa: "ˈantes de saˈliɾ θeˈnamos", bases: [{ word: "Antes", base: "antes" }, { word: "de", base: "de" }, { word: "salir", ref: "es-0690" }, { word: "cenamos", ref: "es-0283" }] }
+  - id: "es-0336"
+    target: "después"
+    ipa: "desˈpwes"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Después limpio la casa.", ipa: "desˈpwes ˈlimpjo la ˈkasa", bases: [{ word: "Después", base: "después" }, { word: "limpio", ref: "es-0285" }, { word: "la", base: "la" }, { word: "casa", base: "casa" }] }
+      - { target: "Después de cenar, escucho música.", ipa: "desˈpwes de θeˈnaɾ esˈkutʃo ˈmusika", bases: [{ word: "Después", base: "después" }, { word: "de", base: "de" }, { word: "cenar", ref: "es-0283" }, { word: "escucho", ref: "es-0291" }, { word: "música", base: "música" }] }
+  - id: "es-0337"
+    target: "pronto"
+    ipa: "ˈpɾonto"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Pronto llega el tren.", ipa: "ˈpɾonto ˈʝeɡa el tɾen", bases: [{ word: "Pronto", base: "pronto" }, { word: "llega", ref: "es-0290" }, { word: "el", base: "el" }, { word: "tren", ref: "es-0676" }] }
+      - { target: "Llego pronto a clase.", ipa: "ˈʝeɡo ˈpɾonto a ˈklase", bases: [{ word: "Llego", ref: "es-0290" }, { word: "pronto", base: "pronto" }, { word: "a", base: "a" }, { word: "clase", base: "clase" }] }
+  - id: "es-0338"
+    target: "temprano"
+    ipa: "temˈpɾano"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ana llega temprano.", ipa: "ˈana ˈʝeɡa temˈpɾano", bases: [{ word: "Ana", base: "Ana" }, { word: "llega", ref: "es-0290" }, { word: "temprano", base: "temprano" }] }
+      - { target: "Me levanto temprano.", ipa: "me leˈbanto temˈpɾano", bases: [{ word: "Me", base: "me" }, { word: "levanto", base: "levantar" }, { word: "temprano", base: "temprano" }] }
+  - id: "es-0339"
+    target: "todavía"
+    ipa: "todaˈbia"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Todavía no sé la respuesta.", ipa: "todaˈbia no se la resˈpwesta", bases: [{ word: "Todavía", base: "todavía" }, { word: "no", ref: "es-0043" }, { word: "sé", base: "saber" }, { word: "la", base: "la" }, { word: "respuesta", base: "respuesta" }] }
+      - { target: "¿Todavía trabajas aquí?", ipa: "todaˈbia tɾaˈbaxas aˈki", bases: [{ word: "Todavía", base: "todavía" }, { word: "trabajas", ref: "es-0259" }, { word: "aquí", ref: "es-0051" }] }
+  - id: "es-0340"
+    target: "ya"
+    ipa: "ʝa"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ya sé la respuesta.", ipa: "ʝa se la resˈpwesta", bases: [{ word: "Ya", base: "ya" }, { word: "sé", base: "saber" }, { word: "la", base: "la" }, { word: "respuesta", base: "respuesta" }] }
+      - { target: "Ya es tarde.", ipa: "ʝa es ˈtaɾde", bases: [{ word: "Ya", base: "ya" }, { word: "es", ref: "es-0022" }, { word: "tarde", base: "tarde" }] }
+  - id: "es-0341"
+    target: "todos los días"
+    ipa: "ˈtodos los ˈdias"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "todos", ref: "es-0134" }, { word: "los", base: "los" }, { word: "días", base: "día" }]
+    examples:
+      - { target: "Todos los días bebo café.", ipa: "ˈtodos los ˈdias ˈbebo kaˈfe", bases: [{ word: "Todos", ref: "es-0134" }, { word: "los", base: "los" }, { word: "días", base: "día" }, { word: "bebo", ref: "es-0029" }, { word: "café", ref: "es-0611" }] }
+      - { target: "Hago ejercicio todos los días.", ipa: "ˈaɡo exeɾˈθiθjo ˈtodos los ˈdias", bases: [{ word: "Hago", ref: "es-0025" }, { word: "ejercicio", base: "ejercicio" }, { word: "todos", ref: "es-0134" }, { word: "los", base: "los" }, { word: "días", base: "día" }] }

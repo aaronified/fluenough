@@ -1,6 +1,6 @@
 name: Deck index
 
-# Regenerates decks/index.json (and the README's languages badge) on main
+# Regenerates decks/index.json (and the README's languages badge and list) on main
 # after a merge that touched decks/ (owner, 2026-10-23). Pull requests are
 # not failed for a stale index and builders do not run tools/deck_index.py.
 #
@@ -40,6 +40,8 @@ jobs:
           python-version: "3.12"
       - run: pip install pyyaml
       - run: python3 tools/deck_index.py
+      # The README's languages list (between its languages: markers).
+      - run: python3 tools/readme_languages.py
       - name: Commit and push
         run: |
           if git diff --quiet -- decks/index.json README.md; then

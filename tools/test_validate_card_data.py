@@ -65,6 +65,13 @@ class ScriptPos(Case):
         self.core(HOUSE, pos="noun", senses=[{"id": "a", "pos": "letter"}])
         self.assertIn("senses[0].pos must be one of", "\n".join(self.errors(CORE)))
 
+    def test_hears_is_form_or_left_out(self) -> None:
+        self.core(HOUSE, hears="form")
+        self.assertNoError(CORE)
+        self.core(HOUSE, hears="meaning")
+        self.assertError(CORE, f"card {HOUSE}", 'hears must be "form", or left out; '
+                         "got 'meaning'")
+
 
 class OwnRoot(Case):
 
@@ -2173,5 +2180,81 @@ class CjkReadings(unittest.TestCase):
                     fresh.doCleanups()
 
 
+class RejectedAlikes(Case):
+    """A core card's `not_sounds_like` and `not_looks_like` (#808): the
+    offensive words whose sound-alike or look-alike pair a reviewer rejected."""
+
+    def key_errors(self, key: str) -> list[str]:
+        return [e for e in self.errors(CORE) if key in e]
+
+    def test_a_list_of_ids_of_other_cards_is_accepted(self) -> None:
+        for key in ("not_sounds_like", "not_looks_like"):
+            with self.subTest(key):
+                self.core(HOUSE, **{key: ["zz-9006"]})
+                self.assertEqual(self.key_errors(key), [])
+
+    def test_a_value_that_is_no_list_of_other_cards_is_refused(self) -> None:
+        for value in ("zz-9006", [], [3], ["zz-9006", "zz-9006"], [HOUSE]):
+            with self.subTest(repr(value)):
+                self.core(HOUSE, not_sounds_like=value)
+                self.assertTrue(self.key_errors("not_sounds_like"))
+
+
 if __name__ == "__main__":
     unittest.main()
+
+
+class TeachWarning(Case):
+    """A core card's `warning` (#691): the one warning its teach card shows."""
+
+    NOTES = [{"kind": "usage", "id": "polite"},
+             {"kind": "homograph", "id": "other-house", "ref": "zz-9006"},
+             {"kind": "lookalike", "id": "looks", "ref": "zz-9006"}]
+
+    def warning_errors(self) -> list[str]:
+        return [e for e in self.errors(CORE) if "warning" in e]
+
+    def test_a_note_of_the_card_that_warns_is_named_by_its_id(self) -> None:
+        for name in ("other-house", "looks"):
+            with self.subTest(name):
+                self.core(HOUSE, notes=self.NOTES, warning=name)
+                self.assertEqual(self.warning_errors(), [])
+
+    def test_a_note_with_no_id_is_named_by_its_place(self) -> None:
+        # A core note needs an id; the place names it where a card has none.
+        r = validate_decks.Report(Path("x.yaml"))
+        validate_decks._check_warning(
+            r, "card zz-1", "2", [validate_decks.Note(0, "1", "note", None),
+                                  validate_decks.Note(1, "2", "homograph", "zz-2")], None)
+        self.assertEqual(r.errors, [])
+
+    def test_senses_and_none_are_values(self) -> None:
+        self.core(HOUSE, senses=Senses.SENSES, warning="senses")
+        self.assertEqual(self.warning_errors(), [])
+        self.core(HOUSE, warning="none")
+        self.assertEqual(self.warning_errors(), [])
+
+    def test_senses_needs_the_card_to_have_senses(self) -> None:
+        self.core(HOUSE, warning="senses")
+        self.assertIn(f'card {HOUSE}: warning "senses" needs the card to have senses',
+                      self.errors(CORE))
+
+    def test_a_note_that_is_no_warning_or_is_missing_is_refused(self) -> None:
+        # A usage note is not a pair, homograph or lookalike note.
+        for name in ("polite", "nowhere"):
+            with self.subTest(name):
+                self.core(HOUSE, notes=self.NOTES, warning=name)
+                errors = self.warning_errors()
+                self.assertEqual(len(errors), 1, errors)
+                self.assertIn(f"card {HOUSE}: warning {name!r} names no pair, "
+                              f"homograph or lookalike note", errors[0])
+
+    def test_it_must_be_text(self) -> None:
+        for value in (3, True, ["senses"]):
+            with self.subTest(repr(value)):
+                self.core(HOUSE, warning=value)
+                self.assertIn(f"card {HOUSE}: warning must be text naming a warning, "
+                              f"got {value!r}", self.errors(CORE))
+
+    def test_it_is_left_out_without_error(self) -> None:
+        self.assertEqual(self.warning_errors(), [])

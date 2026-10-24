@@ -38,14 +38,15 @@ enum TaughtReading {
       session.readsFirst ? first : bySetting;
 }
 
-/// What a word's lesson showed of it (ADR-0024), laid out as the teach card
-/// does: the word, its reading and its IPA while IPA pronunciations is on, its meaning, its notes, its base words
+/// What a word's lesson showed of it (ADR-0024), shown again in a review once
+/// the question is answered, as the lesson's teach card showed it before the
+/// one-screen `TeachCard` (#691) replaced that: the word, its reading and its IPA while IPA pronunciations is on, its meaning, its notes, its base words
 /// on one line ([BaseLine], #410) and its first example, 12 apart and
 /// centred. Its notes are every one but a pair note
 /// ([shownNotes]), whose text is the care note of the warning below.
 ///
-/// The teach card shows all of it. A review shows it again once the
-/// question is answered, never before, so that it gives nothing away:
+/// A review shows it once the question is answered, never before, so that it
+/// gives nothing away:
 /// leave out the [word] where the question showed it all along, and the
 /// [meaning] where it asked for it. A card with no note and no example has
 /// neither. With nothing at all to show, this is empty, so keep it off the
