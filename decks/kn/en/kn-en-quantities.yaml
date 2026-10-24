@@ -1,0 +1,143 @@
+schema: 1
+id: "kn-en-quantities"
+kind: "layer"
+core: "kn-quantities"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "How much and how many"
+license: "CC-BY-SA-4.0"
+description: "Amounts and measures: some, many, a kilo, a litre, a spoonful, a dozen. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "kn-0696":
+    native: "some"
+    notes:
+      "n1": "Before a noun: ಕೆಲವು ಮಕ್ಕಳು (kelavu makkaḷu), some children."
+    examples:
+      "ಕೆಲವು ಮಕ್ಕಳು ಆಟ ಆಡುತ್ತಾರೆ.": { native: "Some children play a game.", bases: { "ಮಕ್ಕಳು": "children", "ಆಟ": "game", "ಆಡುತ್ತಾರೆ": "to play" } }
+      "ನನಗೆ ಕೆಲವು ಪುಸ್ತಕ ಬೇಕು.": { native: "I need some books.", bases: { "ನನಗೆ": "to me", "ಪುಸ್ತಕ": "book", "ಬೇಕು": "to need" } }
+  "kn-0697":
+    native: "more; too much"
+    notes:
+      "n1": "The opposite is ಕಡಿಮೆ (kaḍime), less."
+    examples:
+      "ಇಂದು ಜಾಸ್ತಿ ಕೆಲಸ ಇದೆ.": { native: "There is more work today.", bases: { "ಇಂದು": "today", "ಕೆಲಸ": "work", "ಇದೆ": "to be" } }
+      "ಈ ಚಹಾ ಜಾಸ್ತಿ ಸಿಹಿ.": { native: "This tea is too sweet.", bases: { "ಈ": "this", "ಚಹಾ": "tea", "ಸಿಹಿ": "sweet" } }
+  "kn-0698":
+    native: "dozen"
+    notes:
+      "n1": "A dozen eggs: ಒಂದು ಡಜನ್ ಮೊಟ್ಟೆ (ondu ḍajan moṭṭe), one dozen eggs."
+    examples:
+      "ನನಗೆ ಒಂದು ಡಜನ್ ಮೊಟ್ಟೆ ಬೇಕು.": { native: "I need a dozen eggs.", bases: { "ನನಗೆ": "to me", "ಒಂದು": "one", "ಮೊಟ್ಟೆ": "egg", "ಬೇಕು": "to need" } }
+      "ಡಜನ್ ಬಾಳೆಹಣ್ಣು ತೆಗೆದುಕೊಳ್ಳಿ.": { native: "Take a dozen bananas.", bases: { "ಬಾಳೆಹಣ್ಣು": "banana", "ತೆಗೆದುಕೊಳ್ಳಿ": "to take" } }
+  "kn-0699":
+    native: "kilo"
+    notes:
+      "n1": "Two kilos: ಎರಡು ಕಿಲೋ ಅಕ್ಕಿ (eraḍu kilō akki), two kilos of rice."
+    examples:
+      "ಎರಡು ಕಿಲೋ ಅಕ್ಕಿ ಕೊಡಿ.": { native: "Give me two kilos of rice.", bases: { "ಅಕ್ಕಿ": "rice", "ಕೊಡಿ": "to give" } }
+      "ಅರ್ಧ ಕಿಲೋ ಸಕ್ಕರೆ ಬೇಕು.": { native: "I need half a kilo of sugar.", bases: { "ಸಕ್ಕರೆ": "sugar", "ಬೇಕು": "to need" } }
+  "kn-0700":
+    native: "gram"
+    notes:
+      "n1": "The number comes first: ನೂರು ಗ್ರಾಂ (nūru grām), a hundred grams."
+    examples:
+      "ನೂರು ಗ್ರಾಂ ಚಿಕನ್ ಕೊಡಿ.": { native: "Give me a hundred grams of chicken.", bases: { "ನೂರು": "hundred", "ಚಿಕನ್": "chicken", "ಕೊಡಿ": "to give" } }
+      "ಐವತ್ತು ಗ್ರಾಂ ಉಪ್ಪು ಹಾಕಿ.": { native: "Add fifty grams of salt.", bases: { "ಐವತ್ತು": "fifty", "ಉಪ್ಪು": "salt", "ಹಾಕಿ": "to add" } }
+  "kn-0701":
+    native: "litre"
+    notes:
+      "n1": "The number comes first: ಎರಡು ಲೀಟರ್ ಹಾಲು (eraḍu līṭar hālu), two litres of milk."
+    examples:
+      "ಎರಡು ಲೀಟರ್ ಹಾಲು ತನ್ನಿ.": { native: "Bring two litres of milk.", bases: { "ಹಾಲು": "milk", "ತನ್ನಿ": "to bring" } }
+      "ಒಂದು ಲೀಟರ್ ನೀರು ಬೇಕು.": { native: "I need a litre of water.", bases: { "ನೀರು": "water", "ಬೇಕು": "to need" } }
+  "kn-0702":
+    native: "piece; slice"
+    notes:
+      "n1": "A piece of something: ಕೇಕಿನ ತುಂಡು (kēkina tuṇḍu), a piece of cake."
+    examples:
+      "ಒಂದು ತುಂಡು ಕೇಕ್ ಕೊಡಿ.": { native: "Give me a piece of cake.", bases: { "ಕೇಕ್": "cake", "ಕೊಡಿ": "to give" } }
+      "ಅವನು ರೊಟ್ಟಿಯ ತುಂಡು ತಿಂದ.": { native: "He ate a piece of bread.", bases: { "ರೊಟ್ಟಿಯ": "of bread", "ತಿಂದ": "to eat", "ಅವನು": "he" } }
+  "kn-0703":
+    native: "glass (as a measure)"
+    notes:
+      "n1": "A glassful: ಒಂದು ಲೋಟ ನೀರು (ondu lōṭa nīru), a glass of water."
+    examples:
+      "ಒಂದು ಲೋಟ ನೀರು ಕೊಡಿ.": { native: "Give me a glass of water.", bases: { "ನೀರು": "water", "ಕೊಡಿ": "to give" } }
+      "ಅವಳು ಒಂದು ಲೋಟ ಹಾಲು ಕುಡಿದಳು.": { native: "She drank a glass of milk.", bases: { "ಹಾಲು": "milk", "ಕುಡಿದಳು": "to drink", "ಅವಳು": "she" } }
+  "kn-0704":
+    native: "spoon; a spoonful"
+    notes:
+      "n1": "A spoonful: ಒಂದು ಚಮಚ ಸಕ್ಕರೆ (ondu camaca sakkare), a spoonful of sugar."
+    examples:
+      "ಒಂದು ಚಮಚ ಸಕ್ಕರೆ ಹಾಕಿ.": { native: "Put in a spoonful of sugar.", bases: { "ಸಕ್ಕರೆ": "sugar", "ಹಾಕಿ": "to add" } }
+      "ಚಹಾದಲ್ಲಿ ಎರಡು ಚಮಚ ಸಕ್ಕರೆ ಇದೆ.": { native: "There are two spoonfuls of sugar in the tea.", bases: { "ಚಹಾದಲ್ಲಿ": "in the tea", "ಸಕ್ಕರೆ": "sugar", "ಇದೆ": "to be" } }
+  "kn-0705":
+    native: "bowl (as a measure)"
+    notes:
+      "n1": "A bowlful: ಒಂದು ಬಟ್ಟಲು ಅನ್ನ (ondu baṭṭalu anna), a bowl of rice."
+    examples:
+      "ಒಂದು ಬಟ್ಟಲು ಅನ್ನ ಕೊಡಿ.": { native: "Give me a bowl of rice.", bases: { "ಅನ್ನ": "rice", "ಕೊಡಿ": "to give" } }
+      "ಅವನು ಒಂದು ಬಟ್ಟಲು ಸಾರು ಕುಡಿದ.": { native: "He drank a bowl of soup.", bases: { "ಸಾರು": "soup", "ಕುಡಿದ": "to drink", "ಅವನು": "he" } }
+  "kn-0706":
+    native: "packet"
+    notes:
+      "n1": "A packet of something: ಒಂದು ಪೊಟ್ಟಣ ಬಿಸ್ಕೆಟ್ (ondu poṭṭaṇa biskeṭ), a packet of biscuits."
+    examples:
+      "ಒಂದು ಪೊಟ್ಟಣ ಬಿಸ್ಕೆಟ್ ಕೊಡಿ.": { native: "Give me a packet of biscuits.", bases: { "ಬಿಸ್ಕೆಟ್": "biscuits", "ಕೊಡಿ": "to give" } }
+      "ಪೊಟ್ಟಣದಲ್ಲಿ ಉಪ್ಪು ಇದೆ.": { native: "There is salt in the packet.", bases: { "ಪೊಟ್ಟಣದಲ್ಲಿ": "in the packet", "ಉಪ್ಪು": "salt", "ಇದೆ": "to be" } }
+  "kn-0707":
+    native: "bottle"
+    notes:
+      "n1": "A bottle of water: ಒಂದು ಬಾಟಲಿ ನೀರು (ondu bāṭali nīru), a bottle of water."
+    examples:
+      "ಒಂದು ಬಾಟಲಿ ನೀರು ತೆಗೆದುಕೊಳ್ಳಿ.": { native: "Take a bottle of water.", bases: { "ನೀರು": "water", "ತೆಗೆದುಕೊಳ್ಳಿ": "to take" } }
+      "ಬಾಟಲಿ ಖಾಲಿ ಇದೆ.": { native: "The bottle is empty.", bases: { "ಖಾಲಿ": "empty", "ಇದೆ": "to be" } }
+  "kn-0708":
+    native: "each; per"
+    notes:
+      "n1": "Before a noun: ಪ್ರತಿ ದಿನ (prati dina), every day."
+    examples:
+      "ಪ್ರತಿ ಮಗುವಿಗೆ ಒಂದು ಪುಸ್ತಕ.": { native: "One book for each child.", bases: { "ಮಗುವಿಗೆ": "for the child", "ಒಂದು": "one", "ಪುಸ್ತಕ": "book" } }
+      "ಪ್ರತಿ ದಿನ ಓದು.": { native: "Read every day.", bases: { "ದಿನ": "day", "ಓದು": "to read" } }
+  "kn-0709":
+    native: "all"
+    notes:
+      "n1": "Before a noun: ಎಲ್ಲಾ ಮಕ್ಕಳು (ellā makkaḷu), all the children."
+    examples:
+      "ಎಲ್ಲಾ ಮಕ್ಕಳು ಶಾಲೆಗೆ ಹೋಗುತ್ತಾರೆ.": { native: "All the children go to school.", bases: { "ಮಕ್ಕಳು": "children", "ಶಾಲೆಗೆ": "to school", "ಹೋಗುತ್ತಾರೆ": "to go" } }
+      "ಎಲ್ಲಾ ಹಣ್ಣು ಚೆನ್ನಾಗಿದೆ.": { native: "All the fruit is good.", bases: { "ಹಣ್ಣು": "fruit", "ಚೆನ್ನಾಗಿದೆ": "to be good" } }
+  "kn-0710":
+    native: "several; many"
+    notes:
+      "n1": "Before a noun: ಹಲವು ಜನ (halavu jana), several people."
+    examples:
+      "ಹಲವು ಜನ ಬಂದರು.": { native: "Several people came.", bases: { "ಜನ": "people", "ಬಂದರು": "to come" } }
+      "ಹಲವು ಕಾರಣ ಇದೆ.": { native: "There are several reasons.", bases: { "ಕಾರಣ": "reason", "ಇದೆ": "to be" } }
+  "kn-0711":
+    native: "many"
+    notes:
+      "n1": "Before a noun: ಅನೇಕ ಮರ (anēka mara), many trees."
+    examples:
+      "ಅನೇಕ ಮರಗಳು ಇಲ್ಲಿ ಇವೆ.": { native: "Many trees are here.", bases: { "ಮರಗಳು": "trees", "ಇವೆ": "to be" } }
+      "ಅನೇಕ ಜನರು ಬಂದರು.": { native: "Many people came.", bases: { "ಜನರು": "people", "ಬಂದರು": "to come" } }
+  "kn-0712":
+    native: "this much"
+    notes:
+      "n1": "The word for a quantity near you: ಇಷ್ಟು (iṣṭu), this much."
+    examples:
+      "ಇಷ್ಟು ಸಾಕು.": "This much is enough."
+      "ಇಷ್ಟು ಹಣ ಸಾಕಾ?": { native: "Is this much money enough?", bases: { "ಹಣ": "money", "ಸಾಕಾ": "enough" } }
+  "kn-0713":
+    native: "that much"
+    notes:
+      "n1": "The word for a quantity further away: ಅಷ್ಟು (aṣṭu), that much."
+    examples:
+      "ಅಷ್ಟು ಬೇಡ.": { native: "Not that much.", bases: { "ಬೇಡ": "do not want" } }
+      "ಅಷ್ಟು ದೂರ ನಡೆಯಬೇಡ.": { native: "Do not walk that far.", bases: { "ದೂರ": "far", "ನಡೆಯಬೇಡ": "to walk" } }
+  "kn-0714":
+    native: "plenty"
+    notes:
+      "n1": "Before a noun: ಭರಪೂರ ನೀರು (bharapūra nīru), plenty of water."
+    examples:
+      "ಇಲ್ಲಿ ಭರಪೂರ ನೀರು ಇದೆ.": { native: "There is plenty of water here.", bases: { "ನೀರು": "water", "ಇದೆ": "to be" } }
+      "ಈ ಊರಿನಲ್ಲಿ ಭರಪೂರ ಹಣ್ಣು.": { native: "This town has plenty of fruit.", bases: { "ಈ": "this", "ಊರಿನಲ್ಲಿ": "in the town", "ಹಣ್ಣು": "fruit" } }
