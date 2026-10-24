@@ -107,14 +107,16 @@ units:
       - { id: "at-the-grocers", text: { "en": "Asking how much and how many at a grocer's" } }
     reading_passages:
       - { id: "recipe-amounts", text: { "en": "A recipe card with amounts" } }
-  - planned: { id: "mr-describing", theme: "describing", words: 28 }
+  - decks: ["mr-describing", "*"]
+    words: 28
     listening_passages:
       - { id: "how-are-you-feeling", text: { "en": "A friend asks how you feel today, and you answer" } }
     reading_passages:
       - { id: "postcard-from-the-hills", text: { "en": "A short postcard: the weather and the food" } }
   - decks: ["mr-time", "*"]
     words: 22
-  - planned: { id: "mr-more-verbs", theme: "more-verbs", words: 25 }
+  - decks: ["mr-more-verbs", "*"]
+    words: 25
     listening_passages:
       - { id: "kitchen-help", text: { "en": "Someone tells a helper what to do in the kitchen" } }
     reading_passages:
@@ -182,7 +184,8 @@ units:
     grammar: ["continuous"]
   - decks: ["mr-transport", "*"]
     words: 9
-  - planned: { id: "mr-body", theme: "body", words: 35 }
+  - decks: ["mr-body", "*"]
+    words: 35
     listening_passages:
       - { id: "at-the-doctors", text: { "en": "Telling a doctor where it hurts" } }
     reading_passages:
