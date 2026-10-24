@@ -1,0 +1,84 @@
+schema: 1
+id: "zh-grammar-bu-negation"
+part: "core"
+kind: "grammar"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+"pattern":
+  "slots":
+    - "statement"
+    - "negative"
+  "entries":
+    - "lemma": "是"
+      "key": "shi"
+      "reading": "shì"
+      "forms":
+        "statement": "他是老师"
+        "negative": "他不是老师"
+      "readings":
+        "statement": "tā shì lǎoshī"
+        "negative": "tā bú shì lǎoshī"
+    - "lemma": "去"
+      "key": "qu"
+      "reading": "qù"
+      "forms":
+        "statement": "我去学校"
+        "negative": "我不去学校"
+      "readings":
+        "statement": "wǒ qù xuéxiào"
+        "negative": "wǒ bú qù xuéxiào"
+    - "lemma": "喝"
+      "key": "he"
+      "reading": "hē"
+      "forms":
+        "statement": "我喝茶"
+        "negative": "我不喝茶"
+      "readings":
+        "statement": "wǒ hē chá"
+        "negative": "wǒ bù hē chá"
+    - "lemma": "看"
+      "key": "kan"
+      "reading": "kàn"
+      "forms":
+        "statement": "他看书"
+        "negative": "他不看书"
+      "readings":
+        "statement": "tā kàn shū"
+        "negative": "tā bú kàn shū"
+    - "lemma": "喜欢"
+      "key": "xihuan"
+      "reading": "xǐhuan"
+      "forms":
+        "statement": "我喜欢茶"
+        "negative": "我不喜欢茶"
+      "readings":
+        "statement": "wǒ xǐhuan chá"
+        "negative": "wǒ bù xǐhuan chá"
+    - "lemma": "来"
+      "key": "lai"
+      "reading": "lái"
+      "forms":
+        "statement": "他明天来"
+        "negative": "他明天不来"
+      "readings":
+        "statement": "tā míngtiān lái"
+        "negative": "tā míngtiān bù lái"
+    - "lemma": "冷"
+      "key": "leng"
+      "reading": "lěng"
+      "forms":
+        "statement": "今天很冷"
+        "negative": "今天不冷"
+      "readings":
+        "statement": "jīntiān hěn lěng"
+        "negative": "jīntiān bù lěng"
+    - "lemma": "贵"
+      "key": "gui"
+      "reading": "guì"
+      "forms":
+        "statement": "这很贵"
+        "negative": "这不贵"
+      "readings":
+        "statement": "zhè hěn guì"
+        "negative": "zhè bú guì"
