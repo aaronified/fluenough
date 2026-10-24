@@ -1,0 +1,48 @@
+schema: 1
+id: "zh-grammar-hen-adjective"
+part: "core"
+kind: "grammar"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+"pattern":
+  "slots":
+    - "statement"
+    - "negative"
+  "entries":
+    - "lemma": "忙"
+      "key": "mang"
+      "reading": "máng"
+      "forms":
+        "statement": "我很忙"
+        "negative": "我不忙"
+      "readings":
+        "statement": "wǒ hěn máng"
+        "negative": "wǒ bù máng"
+    - "lemma": "安静"
+      "key": "anjing"
+      "reading": "ānjìng"
+      "forms":
+        "statement": "房间很安静"
+        "negative": "房间不安静"
+      "readings":
+        "statement": "fángjiān hěn ānjìng"
+        "negative": "fángjiān bù ānjìng"
+    - "lemma": "热"
+      "key": "re"
+      "reading": "rè"
+      "forms":
+        "statement": "房间很热"
+        "negative": "房间不热"
+      "readings":
+        "statement": "fángjiān hěn rè"
+        "negative": "fángjiān bú rè"
+    - "lemma": "好"
+      "key": "hao"
+      "reading": "hǎo"
+      "forms":
+        "statement": "他很好"
+        "negative": "他不好"
+      "readings":
+        "statement": "tā hěn hǎo"
+        "negative": "tā bù hǎo"

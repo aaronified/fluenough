@@ -1,0 +1,24 @@
+schema: 1
+id: "zh-en-grammar-you"
+kind: "layer"
+core: "zh-grammar-you"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "有 (yǒu): to have"
+license: "CC-BY-SA-4.0"
+description: "I have a book, you have keys: 有 (yǒu) means to have, and it is the same for every person. Not yet checked by a Mandarin speaker: please report any mistake."
+tags: ["unreviewed"]
+"pattern":
+  "name": "有 (yǒu): to have"
+  "slot_name": "person"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "我": "I have"
+    "你": "you have"
+    "他": "he has"
+    "我们": "we have"
+  "entries":
+    "shu": "a book"
+    "yaoshi": "keys"
+    "dianhua": "a phone"
+    "haizi": "a child"
+  "notes": "有 (yǒu) is to have, and it is the same for every person: 我有 (wǒ yǒu), 你有 (nǐ yǒu), 他有 (tā yǒu), 我们有 (wǒmen yǒu). The noun does not change for a plural: 我们有书 (wǒmen yǒu shū), we have books. 有 (yǒu) takes the thing had after it, and no 是 (shì) is needed. A number or a measure word goes between 有 (yǒu) and its noun; those come with the measure words, later in the course."
