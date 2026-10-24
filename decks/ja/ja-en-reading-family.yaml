@@ -1,0 +1,76 @@
+"schema": 1
+"id": "ja-en-reading-family"
+"name": "Japanese reading: family"
+"kind": "reading"
+"language":
+  "code": "ja"
+  "iso639_3": "jpn"
+  "name": "Japanese"
+  "script": "kana"
+  "tts": "ja-JP"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+  - "beginner"
+  - "unreviewed"
+"passages":
+  - "id": "ja-family-own"
+    "title": "My family"
+    "sentences":
+      - "text": "わたしのちちはせんせいです。"
+        "reading": "watashi no chichi wa sensei desu."
+      - "text": "わたしのははとおとうとはにほんにいます。"
+        "reading": "watashi no haha to otouto wa nihon ni imasu."
+      - "text": "わたしのいもうとはちいさいです。"
+        "reading": "watashi no imouto wa chiisai desu."
+    "questions":
+      - "id": "ja-0268"
+        "prompt":
+          "en": "Which word in the first line means 'father'?"
+        "options":
+          - "en": "ちち (chichi)"
+          - "en": "せんせい (sensei)"
+        "answer": 1
+      - "id": "ja-0269"
+        "prompt":
+          "en": "The second line says that the speaker's mother and younger brother are in Japan."
+        "answer": true
+      - "id": "ja-0270"
+        "prompt":
+          "en": "Which line says that the speaker's younger sister is small?"
+        "options":
+          - "en": "The second line"
+          - "en": "The third line"
+        "answer": 2
+  - "id": "ja-family-others"
+    "title": "Someone else's family"
+    "sentences":
+      - "text": "あなたのおとうさんはせんせいですか。"
+        "reading": "anata no otousan wa sensei desu ka?"
+      - "text": "たなかさんのおかあさんはげんきです。"
+        "reading": "tanaka-san no okaasan wa genki desu."
+      - "text": "あなたのむすこさんはがくせいですか。"
+        "reading": "anata no musukosan wa gakusei desu ka?"
+    "questions":
+      - "id": "ja-0271"
+        "prompt":
+          "en": "Which word in the second line means 'mother', as someone else says it?"
+        "options":
+          - "en": "おかあさん (okaasan)"
+          - "en": "はは (haha)"
+        "answer": 1
+      - "id": "ja-0272"
+        "prompt":
+          "en": "The first line asks whether your father is a teacher."
+        "answer": true
+      - "id": "ja-0273"
+        "prompt":
+          "en": "Which line asks whether your son is a student?"
+        "options":
+          - "en": "The first line"
+          - "en": "The third line"
+        "answer": 2
