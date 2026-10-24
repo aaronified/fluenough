@@ -163,7 +163,8 @@ void main() {
 
   testWidgets('Script fonts lists the scripts of the courses with where '
       'each stands', (tester) async {
-    await tester.runAsync(() => state.downloadLanguage('hi'));
+    // Learning it, with nothing on the phone: no download starts at load.
+    state.setLearningLanguages(<String>['hi']);
     await pumpScreen(tester, const ScriptFontsPage(), state: state);
     final l10n = l10nOf(tester);
     expect(find.text(l10n.scriptName('devanagari')), findsOneWidget);
