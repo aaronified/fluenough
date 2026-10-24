@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- A grammar pattern's `prompt` is optional and retired: without one, the app asks a cell as the lemma, its meaning and the slot, "hablar (to speak) — nosotros", and a deck that gives one is read as written; the deck validator accepts a pattern or a layer without one and warns of one given. Shipped decks keep theirs until the apps that require it are out of use (#522, ADR-0039).
 - A word or rule is known as Progress counts known, in the unit page and the unlock gate too: your last review in each skill was right and the app gave you at least 85% recall then, in place of 9 of your last 10 answers right; a word reviewed once is not known yet (#416).
 - Progress shows three tiles, Words, Rules and Sentences, in place of the Words tile, counted against what is taught so far with words counted by base word; the Level tile sits alone below them. The end of a lesson says how many words and rules it made known and how many sentences it opened (#418).
 - A rule is taught on its own card before its first question: its name, what it means and its forms on words you know. A grammar question asks you to choose among the forms of one word first, then to type; after an answer the word's forms in the rule are shown with the one asked marked. A rule's table on the unit page shows only words you know or have been asked, each form marked known, learning or not asked yet (#417).
