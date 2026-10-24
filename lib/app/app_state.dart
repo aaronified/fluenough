@@ -367,10 +367,9 @@ class AppState extends ChangeNotifier {
 
   /// The font check (#611): what to ask the learner about the scripts of
   /// their courses, and what their answers do.
-  late final FontCheck fontCheck = FontCheck(
-    settings: settings,
-    downloads: deckDownloads,
-  );
+  FontCheck get fontCheck =>
+      _fontCheck ??= FontCheck(settings: settings, downloads: deckDownloads);
+  FontCheck? _fontCheck;
 
   /// Scheduling state and the review log. Has its own notifier.
   final ProgressStore progress;
@@ -2891,7 +2890,7 @@ class AppState extends ChangeNotifier {
       ..removeListener(_logTab)
       ..dispose();
     updates.dispose();
-    fontCheck.dispose();
+    _fontCheck?.dispose();
     deckDownloads?.onFilesChanged = null;
     tuner.dispose();
     pacing.dispose();
