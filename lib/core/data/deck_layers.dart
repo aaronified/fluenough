@@ -466,7 +466,7 @@ class LayerPattern {
   const LayerPattern({
     required this.name,
     required this.slotName,
-    required this.prompt,
+    this.prompt,
     required this.entries,
     this.slots = const <String, LayerText>{},
     this.notes,
@@ -474,7 +474,9 @@ class LayerPattern {
 
   final String name;
   final String slotName;
-  final String prompt;
+
+  /// Retired (ADR-0039): the layer may still give one.
+  final String? prompt;
 
   /// Slot labels, by slot.
   final Map<String, LayerText> slots;
@@ -1079,7 +1081,7 @@ class _Merge {
       name: words.name,
       slotName: words.slotName,
       slots: forms.slots,
-      prompt: words.prompt,
+      prompt: words.prompt ?? kPatternPrompt,
       notes: words.notes,
       slotLabels: Map<String, String>.unmodifiable(<String, String>{
         for (final MapEntry(key: slot, value: label) in words.slots.entries)
