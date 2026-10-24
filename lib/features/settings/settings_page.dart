@@ -17,6 +17,7 @@ import '../../ui/widgets/profile_avatar.dart';
 import '../gallery/gallery_link.dart';
 import 'appearance_page.dart';
 import 'settings_controls.dart';
+import 'support_page.dart';
 import 'your_decks_page.dart';
 
 /// The Settings tab: the profile card, then one row per section, each with
@@ -25,11 +26,11 @@ import 'your_decks_page.dart';
 ///
 /// The first group is Your languages, Activities and memory, Look and
 /// language, Reviewing and Your decks; the second Reminders, Your data, App
-/// log and Updates. Each row opens a page that holds what the section held
-/// on this tab: [LanguagesSettingsPage], [ActivitiesPage], [AppearancePage]
-/// (with the app language), `ReviewSection`, `YourDecksPage`,
-/// [RemindersPage], [YourDataPage], [AppLogPage] and [UpdatesPage]. The
-/// profile card is one target that opens [ProfilesPrivacyPage].
+/// log, Updates and Support with a cup of tea. Each row opens a page that
+/// holds what the section held on this tab: [LanguagesSettingsPage],
+/// [ActivitiesPage], [AppearancePage] (with the app language),
+/// `ReviewSection`, `YourDecksPage`, [RemindersPage], [YourDataPage],
+/// [AppLogPage], [UpdatesPage] and [SupportPage]. The profile card is one target that opens [ProfilesPrivacyPage].
 ///
 /// Reminders is incoming until #90 (`Feature.reminder`), so its row shows
 /// the badge and does not open its page yet.
@@ -221,6 +222,13 @@ class SettingsPage extends StatelessWidget {
         title: l10n.settingsRowUpdates,
         line: l10n.settingsUpdateCurrent(AppInfo.version),
         route: AppRoutes.settingsUpdates,
+      ),
+      _row(
+        context,
+        icon: Icons.local_cafe_outlined,
+        title: l10n.settingsRowSupport,
+        line: l10n.settingsSumSupport,
+        route: AppRoutes.settingsSupport,
       ),
     ];
   }
