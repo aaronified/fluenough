@@ -110,7 +110,8 @@ FONTS_DIR = DECKS / "fonts"
 # Kinds of file that hold no deck: one of each per language at most. A
 # language whose files are all of these has no written deck, and is left
 # out of the index.
-NOT_DECKS = {"path", "facts", "numbers", "romanisation", "sounds", "script"}
+NOT_DECKS = {"path", "facts", "numbers", "romanisation", "sounds", "script",
+             "resources"}
 
 
 # The core a layer names when it is the layer of a script guide for one of a
@@ -348,6 +349,10 @@ def build(reports: list[vd.Report] | None = None) -> dict:
         lang = ctx.lang(code)
         block = _language_block(files)
         entries = [_file_entry(p, by_path.get(p.resolve())) for p in files]
+        # The resources file (#832) is no deck: listed apart, below.
+        resources = [e for e in entries if e["kind"] == "resources"]
+        files = [p for p, e in zip(files, entries) if e["kind"] != "resources"]
+        entries = [e for e in entries if e["kind"] != "resources"]
         guides = [e for p, e in zip(files, entries) if _other_script_guide(p, e)]
         entries = [e for e in entries if e not in guides]
         # A course with a path but no written deck is not offered: the
@@ -403,6 +408,11 @@ def build(reports: list[vd.Report] | None = None) -> dict:
         fonts = _font_entries(_scripts_of(code, block, own_scripts))
         if fonts:
             language["fonts"] = fonts
+        # Apart from `files` and from the size too: the released app passes
+        # an unknown key by, and the app that knows it fetches the file
+        # alone, when a sheet wants it (#832).
+        if resources:
+            language["resources"] = resources
         out.append(language)
     return {
         "version": INDEX_VERSION,
@@ -426,7 +436,7 @@ def render(index: dict) -> str:
     lines.append('  "languages": [')
     for i, language in enumerate(index["languages"]):
         lines.append("    {")
-        lists = ("files", "script_guides", "media", "fonts")
+        lists = ("files", "script_guides", "media", "fonts", "resources")
         keys = [k for k in language if k not in ("units", *lists)]
         for k in keys:
             lines.append(f'      "{k}": {dump(language[k])},')

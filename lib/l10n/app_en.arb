@@ -9943,6 +9943,32 @@
   "@pickerSectionScripts": {
     "description": "Language sheet: heading above a learned language’s scripts."
   },
+  "resourceTitle": "Another good way to learn {language}",
+  "@resourceTitle": {
+    "description": "Language sheet: title of the card that suggests another resource (a game, an app) for learning the language, which the course's file names.",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "resourceVisit": "Visit {name}",
+  "@resourceVisit": {
+    "description": "Language sheet: button that opens a suggested resource's website in the browser.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "resourceHide": "Hide this",
+  "@resourceHide": {
+    "description": "Language sheet of a learned language: hides a suggested resource for good."
+  },
+  "resourceLinkCopied": "Link copied. Paste it in your browser.",
+  "@resourceLinkCopied": {
+    "description": "Toast when no app on the phone could open a suggested resource's link, so it was copied."
+  },
   "pickerSectionCourse": "Course",
   "@pickerSectionCourse": {
     "description": "Language sheet: heading above the course’s details."
