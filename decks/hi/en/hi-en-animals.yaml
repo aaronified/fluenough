@@ -14,7 +14,7 @@ cards:
       "n1": "बाघ (bāgh) is a tiger."
     examples:
       "बाघ बड़ा है।": { native: "The tiger is big.", bases: {  } }
-      "बाघ ताक़तवर है।": { native: "The tiger is strong.", bases: {  } }
+      "बाघ ताक़तवर है।": { native: "The tiger is strong.", bases: { "ताक़तवर": "strong" } }
   "hi-1125":
     native: "elephant"
     notes:
@@ -27,15 +27,15 @@ cards:
     notes:
       "n1": "बंदर (bandar) is a monkey."
     examples:
-      "बंदर चंचल है।": { native: "The monkey is restless.", bases: {  } }
-      "बंदर पेड़ पर चढ़ता है।": { native: "The monkey climbs the tree.", bases: { "चढ़ता": "climb" } }
+      "बंदर चंचल है।": { native: "The monkey is restless.", bases: { "चंचल": "restless" } }
+      "बंदर पेड़ पर चढ़ता है।": { native: "The monkey climbs the tree.", bases: { "पेड़": "tree", "चढ़ता": "climb" } }
   "hi-1127":
     native: "snake"
     notes:
       "n1": "साँप (sām̐p) is a snake."
     examples:
       "साँप लंबा है।": { native: "The snake is long.", bases: {  } }
-      "साँप से डर लगता है।": { native: "I am afraid of snakes.", bases: { "लगता": "feel; seem" } }
+      "साँप से डर लगता है।": { native: "I am afraid of snakes.", bases: { "डर": "fear", "लगता": "feel; seem" } }
   "hi-1128":
     native: "cow"
     notes:
@@ -62,14 +62,14 @@ cards:
     notes:
       "n1": "भेड़ (bheṛ) is a sheep."
     examples:
-      "भेड़ नरम है।": { native: "The sheep is soft.", bases: {  } }
+      "भेड़ नरम है।": { native: "The sheep is soft.", bases: { "नरम": "soft" } }
       "भेड़ सफ़ेद है।": { native: "The sheep is white.", bases: {  } }
   "hi-1132":
     native: "fox"
     notes:
       "n1": "लोमड़ी (lomṛī) is a fox."
     examples:
-      "लोमड़ी चालाक है।": { native: "The fox is cunning.", bases: {  } }
+      "लोमड़ी चालाक है।": { native: "The fox is cunning.", bases: { "चालाक": "cunning" } }
       "लोमड़ी छोटी है।": { native: "The fox is small.", bases: {  } }
   "hi-1133":
     native: "dog"
@@ -98,7 +98,7 @@ cards:
       "n1": "घोड़ा (ghoṛā) is a horse."
     examples:
       "घोड़ा दौड़ता है।": { native: "The horse runs.", bases: {  } }
-      "घोड़ा तेज़ है।": { native: "The horse is fast.", bases: {  } }
+      "घोड़ा तेज़ है।": { native: "The horse is fast.", bases: { "तेज़": "sharp; fast" } }
   "hi-1137":
     native: "duck"
     notes:
@@ -111,7 +111,7 @@ cards:
     notes:
       "n1": "शेर (śer) is a lion."
     examples:
-      "शेर ताक़तवर है।": { native: "The lion is strong.", bases: {  } }
+      "शेर ताक़तवर है।": { native: "The lion is strong.", bases: { "ताक़तवर": "strong" } }
       "शेर बड़ा है।": { native: "The lion is big.", bases: {  } }
   "hi-1139":
     native: "bear"
@@ -119,13 +119,13 @@ cards:
       "n1": "भालू (bhālū) is a bear."
     examples:
       "भालू बड़ा है।": { native: "The bear is big.", bases: {  } }
-      "भालू ताक़तवर है।": { native: "The bear is strong.", bases: {  } }
+      "भालू ताक़तवर है।": { native: "The bear is strong.", bases: { "ताक़तवर": "strong" } }
   "hi-1140":
     native: "deer"
     notes:
       "n1": "हिरन (hiran) is a deer."
     examples:
-      "हिरन तेज़ है।": { native: "The deer is fast.", bases: {  } }
+      "हिरन तेज़ है।": { native: "The deer is fast.", bases: { "तेज़": "sharp; fast" } }
       "हिरन सुंदर है।": { native: "The deer is beautiful.", bases: {  } }
   "hi-1141":
     native: "rabbit"
@@ -133,7 +133,7 @@ cards:
       "n1": "खरगोश (kharagoś) is a rabbit."
     examples:
       "खरगोश छोटा है।": { native: "The rabbit is small.", bases: {  } }
-      "खरगोश नरम है।": { native: "The rabbit is soft.", bases: {  } }
+      "खरगोश नरम है।": { native: "The rabbit is soft.", bases: { "नरम": "soft" } }
   "hi-1142":
     native: "butterfly"
     notes:

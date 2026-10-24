@@ -17,7 +17,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "बाघ बड़ा है।", reading: "bāgh baṛā hai.", ipa: "baːɡʱ bəɽaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
-      - { target: "बाघ ताक़तवर है।", reading: "bāgh tāqtvar hai.", ipa: "baːɡʱ t̪aːqt̪ʋər ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "बाघ ताक़तवर है।", reading: "bāgh tāqtvar hai.", ipa: "baːɡʱ t̪aːqt̪ʋər ɦɛː", bases: [{"word": "ताक़तवर", "base": "ताक़तवर", "reading": "tāqtvar"}, {"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1125"
     target: "हाथी"
     reading: "hāthī"
@@ -38,8 +38,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "बंदर चंचल है।", reading: "bandar cañcal hai.", ipa: "bənd̪ər tʃəɲtʃəl ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
-      - { target: "बंदर पेड़ पर चढ़ता है।", reading: "bandar pēṛ par caṛhtā hai.", ipa: "bənd̪ər peːɽ pər tʃəɽʱt̪aː ɦɛː", bases: [{"word": "चढ़ता", "base": "चढ़ना", "reading": "caṛhnā"}, {"word": "है", "ref": "hi-0780"}] }
+      - { target: "बंदर चंचल है।", reading: "bandar cañcal hai.", ipa: "bənd̪ər tʃəɲtʃəl ɦɛː", bases: [{"word": "चंचल", "base": "चंचल", "reading": "cañcal"}, {"word": "है", "ref": "hi-0780"}] }
+      - { target: "बंदर पेड़ पर चढ़ता है।", reading: "bandar pēṛ par caṛhtā hai.", ipa: "bənd̪ər peːɽ pər tʃəɽʱt̪aː ɦɛː", bases: [{"word": "पेड़", "base": "पेड़", "reading": "pēṛ"}, {"word": "चढ़ता", "base": "चढ़ना", "reading": "caṛhnā"}, {"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1127"
     target: "साँप"
     reading: "sām̐p"
@@ -50,7 +50,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "साँप लंबा है।", reading: "sām̐p lambā hai.", ipa: "sãːp ləmbaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
-      - { target: "साँप से डर लगता है।", reading: "sām̐p sē ḍar lagtā hai.", ipa: "sãːp seː ɖər ləɡt̪aː ɦɛː", bases: [{"word": "लगता", "base": "लगना", "reading": "lagnā"}, {"word": "है", "ref": "hi-0780"}] }
+      - { target: "साँप से डर लगता है।", reading: "sām̐p sē ḍar lagtā hai.", ipa: "sãːp seː ɖər ləɡt̪aː ɦɛː", bases: [{"word": "डर", "base": "डर", "reading": "ḍar"}, {"word": "लगता", "base": "लगना", "reading": "lagnā"}, {"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1128"
     target: "गाय"
     reading: "gāy"
@@ -93,7 +93,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "भेड़ नरम है।", reading: "bhēṛ naram hai.", ipa: "bʱeːɽ nərəm ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "भेड़ नरम है।", reading: "bhēṛ naram hai.", ipa: "bʱeːɽ nərəm ɦɛː", bases: [{"word": "नरम", "base": "नरम", "reading": "naram"}, {"word": "है", "ref": "hi-0780"}] }
       - { target: "भेड़ सफ़ेद है।", reading: "bhēṛ safēd hai.", ipa: "bʱeːɽ səfeːd̪ ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1132"
     target: "लोमड़ी"
@@ -104,7 +104,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "लोमड़ी चालाक है।", reading: "lōmṛī cālāk hai.", ipa: "loːmɽiː tʃaːlaːk ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "लोमड़ी चालाक है।", reading: "lōmṛī cālāk hai.", ipa: "loːmɽiː tʃaːlaːk ɦɛː", bases: [{"word": "चालाक", "base": "चालाक", "reading": "cālāk"}, {"word": "है", "ref": "hi-0780"}] }
       - { target: "लोमड़ी छोटी है।", reading: "lōmṛī chōṭī hai.", ipa: "loːmɽiː tʃʰoːʈiː ɦɛː", bases: [{"word": "छोटी", "ref": "hi-0895"}, {"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1133"
     target: "कुत्ता"
@@ -149,7 +149,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "घोड़ा दौड़ता है।", reading: "ghōṛā dauṛtā hai.", ipa: "ɡʱoːɽaː d̪ɔːɽt̪aː ɦɛː", bases: [{"word": "दौड़ता", "ref": "hi-0946"}, {"word": "है", "ref": "hi-0780"}] }
-      - { target: "घोड़ा तेज़ है।", reading: "ghōṛā tēz hai.", ipa: "ɡʱoːɽaː t̪eːz ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "घोड़ा तेज़ है।", reading: "ghōṛā tēz hai.", ipa: "ɡʱoːɽaː t̪eːz ɦɛː", bases: [{"word": "तेज़", "base": "तेज़", "reading": "tēz"}, {"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1137"
     target: "बत्तख"
     reading: "battakh"
@@ -170,7 +170,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "शेर ताक़तवर है।", reading: "śēr tāqtvar hai.", ipa: "ʃeːr t̪aːqt̪ʋər ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "शेर ताक़तवर है।", reading: "śēr tāqtvar hai.", ipa: "ʃeːr t̪aːqt̪ʋər ɦɛː", bases: [{"word": "ताक़तवर", "base": "ताक़तवर", "reading": "tāqtvar"}, {"word": "है", "ref": "hi-0780"}] }
       - { target: "शेर बड़ा है।", reading: "śēr baṛā hai.", ipa: "ʃeːr bəɽaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1139"
     target: "भालू"
@@ -182,7 +182,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "भालू बड़ा है।", reading: "bhālū baṛā hai.", ipa: "bʱaːluː bəɽaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
-      - { target: "भालू ताक़तवर है।", reading: "bhālū tāqtvar hai.", ipa: "bʱaːluː t̪aːqt̪ʋər ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "भालू ताक़तवर है।", reading: "bhālū tāqtvar hai.", ipa: "bʱaːluː t̪aːqt̪ʋər ɦɛː", bases: [{"word": "ताक़तवर", "base": "ताक़तवर", "reading": "tāqtvar"}, {"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1140"
     target: "हिरन"
     reading: "hiran"
@@ -192,7 +192,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "हिरन तेज़ है।", reading: "hiran tēz hai.", ipa: "ɦɪrən t̪eːz ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "हिरन तेज़ है।", reading: "hiran tēz hai.", ipa: "ɦɪrən t̪eːz ɦɛː", bases: [{"word": "तेज़", "base": "तेज़", "reading": "tēz"}, {"word": "है", "ref": "hi-0780"}] }
       - { target: "हिरन सुंदर है।", reading: "hiran sundar hai.", ipa: "ɦɪrən sʊnd̪ər ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1141"
     target: "खरगोश"
@@ -204,7 +204,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "खरगोश छोटा है।", reading: "khargōś chōṭā hai.", ipa: "kʰərɡoːʃ tʃʰoːʈaː ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
-      - { target: "खरगोश नरम है।", reading: "khargōś naram hai.", ipa: "kʰərɡoːʃ nərəm ɦɛː", bases: [{"word": "है", "ref": "hi-0780"}] }
+      - { target: "खरगोश नरम है।", reading: "khargōś naram hai.", ipa: "kʰərɡoːʃ nərəm ɦɛː", bases: [{"word": "नरम", "base": "नरम", "reading": "naram"}, {"word": "है", "ref": "hi-0780"}] }
   - id: "hi-1142"
     target: "तितली"
     reading: "titlī"
