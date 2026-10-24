@@ -11,14 +11,14 @@ cards:
   "as-2314":
     native: "bread"
     notes:
-      "n1": "ৰুটি (ruti) is a flat bread cooked on a griddle. পাউৰুটি (pāurôṭi) is sliced bread, a different word."
+      "n1": "ৰুটি (ruti) is a flat bread cooked on a griddle. পাউৰুটি (pāuruti) is sliced bread, a different word."
     examples:
       "মই ৰুটি খাওঁ।": { native: "I eat bread.", bases: {  } }
-      "সি বিহানা ৰুটি খায়।": { native: "He eats bread in the morning.", bases: {  } }
+      "সি বিহানা ৰুটি খায়।": { native: "He eats bread in the morning.", bases: { "বিহানা": "morning" } }
   "as-2315":
     native: "curd; yoghurt"
     notes:
-      "n1": "দৈ (doi) is milk set into curd. It is eaten plain or with rice."
+      "n1": "দৈ (dôi) is milk set into curd. It is eaten plain or with rice."
     examples:
       "মই দৈ খাওঁ।": { native: "I eat curd.", bases: {  } }
       "দৈ ঠাণ্ডা।": { native: "The curd is cold.", bases: {  } }
@@ -39,14 +39,14 @@ cards:
   "as-2318":
     native: "sugar"
     notes:
-      "n1": "চিনি (sini) is sugar. মিঠা (miṭhā), sweet, is the word for how it tastes."
+      "n1": "চিনি (sini) is sugar. মিঠা (mithā), sweet, is the word for how it tastes."
     examples:
       "চাহত চিনি দিয়ক।": { native: "Please put sugar in the tea.", bases: {  } }
       "মোক চিনি লাগে।": { native: "I need sugar.", bases: { "লাগে": "need; feel" } }
   "as-2319":
     native: "honey"
     notes:
-      "n1": "মধু (môdhu) is honey, made by bees."
+      "n1": "মধু (modhu) is honey, made by bees."
     examples:
       "মই মধু খাওঁ।": { native: "I eat honey.", bases: {  } }
       "মধু বৰ মিঠা।": { native: "Honey is very sweet.", bases: {  } }
@@ -60,35 +60,35 @@ cards:
   "as-2321":
     native: "mango"
     notes:
-      "n1": "আম (ām) is a mango. A ripe one is পকা (pōkā), a green one is কাঁচা (kāncā)."
+      "n1": "আম (ām) is a mango. A ripe one is পকা (pôkā), a green one is কাঁচা (kām̐sā)."
     examples:
       "মই আম খাওঁ।": { native: "I eat a mango.", bases: {  } }
       "আমটো পকা।": { native: "The mango is ripe.", bases: { "আমটো": "mango" } }
   "as-2322":
     native: "apple"
     notes:
-      "n1": "আপেল (āphel) is an apple."
+      "n1": "আপেল (āpel) is an apple."
     examples:
       "মই আপেল খাওঁ।": { native: "I eat an apple.", bases: {  } }
       "আপেল মিঠা।": { native: "Apples are sweet.", bases: {  } }
   "as-2323":
     native: "orange"
     notes:
-      "n1": "কমলা (kômlā) is an orange, which is sour as well as sweet."
+      "n1": "কমলা (kômôlā) is an orange, which is sour as well as sweet."
     examples:
       "মই কমলা খাওঁ।": { native: "I eat an orange.", bases: {  } }
       "কমলা টেঙা।": { native: "The orange is sour.", bases: {  } }
   "as-2324":
     native: "pineapple"
     notes:
-      "n1": "আনাৰস (ānārôx) is a pineapple."
+      "n1": "আনাৰস (ānārôs) is a pineapple."
     examples:
       "মই আনাৰস খাওঁ।": { native: "I eat pineapple.", bases: {  } }
       "আনাৰস মিঠা।": { native: "Pineapple is sweet.", bases: {  } }
   "as-2325":
     native: "watermelon"
     notes:
-      "n1": "তৰমুজ (tôrômuz) is a watermelon."
+      "n1": "তৰমুজ (tôromuz) is a watermelon."
     examples:
       "মই তৰমুজ খাওঁ।": { native: "I eat watermelon.", bases: {  } }
       "তৰমুজ ঠাণ্ডা।": { native: "Watermelon is cold.", bases: {  } }
@@ -106,13 +106,6 @@ cards:
     examples:
       "মই নাৰিকল খাওঁ।": { native: "I eat coconut.", bases: {  } }
       "নাৰিকলৰ পানী ভাল।": { native: "Coconut water is good.", bases: { "নাৰিকলৰ": "coconut" } }
-  "as-2328":
-    native: "egg"
-    notes:
-      "n1": "ডিম (dim) is an egg."
-    examples:
-      "মই ডিম খাওঁ।": { native: "I eat eggs.", bases: {  } }
-      "সি ডিম খায়।": { native: "He eats eggs.", bases: {  } }
   "as-2329":
     native: "brinjal; aubergine"
     notes:
@@ -123,49 +116,42 @@ cards:
   "as-2330":
     native: "tomato"
     notes:
-      "n1": "টমেটো (tômeṭo) is a tomato."
+      "n1": "টমেটো (tômetu) is a tomato."
     examples:
       "মই টমেটো খাওঁ।": { native: "I eat tomatoes.", bases: {  } }
       "টমেটো টেঙা।": { native: "Tomatoes are sour.", bases: {  } }
   "as-2331":
     native: "carrot"
     notes:
-      "n1": "গাজৰ (gājôr) is a carrot."
+      "n1": "গাজৰ (gāzôr) is a carrot."
     examples:
       "মই গাজৰ খাওঁ।": { native: "I eat carrots.", bases: {  } }
       "গাজৰ মিঠা।": { native: "Carrots are sweet.", bases: {  } }
-  "as-2332":
-    native: "onion"
-    notes:
-      "n1": "পিয়াজ (piyāz) is an onion."
-    examples:
-      "মই পিয়াজ খাওঁ।": { native: "I eat onion.", bases: {  } }
-      "পিয়াজ ঝাল।": { native: "Onion is spicy.", bases: {  } }
   "as-2333":
     native: "garlic"
     notes:
-      "n1": "ৰসুন (rôsun) is garlic."
+      "n1": "ৰসুন (rosun) is garlic."
     examples:
       "মই ৰসুন খাওঁ।": { native: "I eat garlic.", bases: {  } }
-      "ৰসুন ঝাল।": { native: "Garlic is spicy.", bases: {  } }
+      "ৰসুন ঝাল।": { native: "Garlic is spicy.", bases: { "ঝাল": "spicy" } }
   "as-2334":
     native: "turmeric"
     notes:
-      "n1": "হালধি (hāldhi) is turmeric, a yellow spice."
+      "n1": "হালধি (hālodhi) is turmeric, a yellow spice."
     examples:
       "ভাতত হালধি দিয়ক।": { native: "Please put turmeric on the rice.", bases: {  } }
       "হালধি তিতা।": { native: "Turmeric is bitter.", bases: {  } }
   "as-2335":
     native: "chilli"
     notes:
-      "n1": "মৰিচ (môrôc) is a chilli, the word for the spice that makes food ঝাল (jhāl), spicy."
+      "n1": "মৰিচ (moris) is a chilli, the word for the spice that makes food ঝাল (zāl), spicy."
     examples:
       "মই মৰিচ খাওঁ।": { native: "I eat chilli.", bases: {  } }
-      "মৰিচ বৰ ঝাল।": { native: "Chilli is very spicy.", bases: {  } }
+      "মৰিচ বৰ ঝাল।": { native: "Chilli is very spicy.", bases: { "ঝাল": "spicy" } }
   "as-2336":
     native: "maize; corn"
     notes:
-      "n1": "ভুটা (bhuṭā) is maize, eaten roasted or boiled."
+      "n1": "ভুটা (bhutā) is maize, eaten roasted or boiled."
     examples:
       "মই ভুটা খাওঁ।": { native: "I eat maize.", bases: {  } }
       "ভুটা মিঠা।": { native: "Maize is sweet.", bases: {  } }
@@ -179,14 +165,14 @@ cards:
   "as-2338":
     native: "chocolate"
     notes:
-      "n1": "চকলেট (sôkoleṭ) is chocolate."
+      "n1": "চকলেট (sôkôlet) is chocolate."
     examples:
       "মই চকলেট খাওঁ।": { native: "I eat chocolate.", bases: {  } }
       "চকলেট বৰ মিঠা।": { native: "Chocolate is very sweet.", bases: {  } }
   "as-2339":
     native: "sweet; sweetmeat"
     notes:
-      "n1": "মিঠাই (miṭāi) is a sweet made of milk or sugar, eaten after a meal."
+      "n1": "মিঠাই (mithāi) is a sweet made of milk or sugar, eaten after a meal."
     examples:
       "মই মিঠাই খাওঁ।": { native: "I eat a sweet.", bases: {  } }
       "মিঠাই বৰ মিঠা।": { native: "Sweets are very sweet.", bases: {  } }
@@ -203,14 +189,14 @@ cards:
       "n1": "মুৰি (muri) is puffed rice, eaten as a snack."
     examples:
       "মই মুৰি খাওঁ।": { native: "I eat puffed rice.", bases: {  } }
-      "মুৰি হালকা।": { native: "Puffed rice is light.", bases: {  } }
+      "মুৰি হালকা।": { native: "Puffed rice is light.", bases: { "হালকা": "light" } }
   "as-2342":
     native: "flattened rice"
     notes:
       "n1": "চিৰা (sirā) is rice flattened and dried, eaten with curd or sugar."
     examples:
       "মই চিৰা খাওঁ।": { native: "I eat flattened rice.", bases: {  } }
-      "চিৰা শুকান।": { native: "Flattened rice is dry.", bases: {  } }
+      "চিৰা শুকান।": { native: "Flattened rice is dry.", bases: { "শুকান": "dry" } }
   "as-2343":
     native: "fried vegetables"
     notes:
@@ -221,7 +207,7 @@ cards:
   "as-2344":
     native: "curry; gravy"
     notes:
-      "n1": "ঝোল (jhol) is a thin curry or gravy, eaten with rice."
+      "n1": "ঝোল (zul) is a thin curry or gravy, eaten with rice."
     examples:
       "মই ঝোল খাওঁ।": { native: "I eat the curry.", bases: {  } }
       "ঝোল গৰম।": { native: "The curry is hot.", bases: {  } }
@@ -235,7 +221,7 @@ cards:
   "as-2346":
     native: "khichdi"
     notes:
-      "n1": "খিচডী (khicuṛi) is rice and lentils cooked together."
+      "n1": "খিচডী (khisodi) is rice and lentils cooked together."
     examples:
       "মই খিচডী খাওঁ।": { native: "I eat khichdi.", bases: {  } }
       "খিচডী ভাল।": { native: "Khichdi is good.", bases: {  } }
@@ -256,7 +242,7 @@ cards:
   "as-2349":
     native: "omelette"
     notes:
-      "n1": "ওমলেট (omoleṭ) is an omelette, made with eggs."
+      "n1": "ওমলেট (umôlet) is an omelette, made with eggs."
     examples:
       "মই ওমলেট খাওঁ।": { native: "I eat an omelette.", bases: {  } }
       "ওমলেট গৰম।": { native: "The omelette is hot.", bases: {  } }
@@ -270,7 +256,7 @@ cards:
   "as-2351":
     native: "luchi; fried bread"
     notes:
-      "n1": "লুচি (luci) is a fried bread made with flour."
+      "n1": "লুচি (lusi) is a fried bread made with flour."
     examples:
       "মই লুচি খাওঁ।": { native: "I eat luchi.", bases: {  } }
       "লুচি ভাল।": { native: "Luchi is good.", bases: {  } }
@@ -284,7 +270,7 @@ cards:
   "as-2353":
     native: "sliced bread"
     notes:
-      "n1": "পাউৰুটি (pāurôṭi) is sliced bread, from a shop. ৰুটি (ruti) is the flat bread."
+      "n1": "পাউৰুটি (pāuruti) is sliced bread, from a shop. ৰুটি (ruti) is the flat bread."
     examples:
       "মই পাউৰুটি খাওঁ।": { native: "I eat sliced bread.", bases: {  } }
       "পাউৰুটি নৰম।": { native: "Sliced bread is soft.", bases: {  } }
@@ -305,7 +291,7 @@ cards:
   "as-2356":
     native: "papaya"
     notes:
-      "n1": "পপিতা (popita) is a papaya."
+      "n1": "পপিতা (popitā) is a papaya."
     examples:
       "মই পপিতা খাওঁ।": { native: "I eat papaya.", bases: {  } }
       "পপিতা মিঠা।": { native: "Papaya is sweet.", bases: {  } }
@@ -326,7 +312,7 @@ cards:
   "as-2359":
     native: "jackfruit"
     notes:
-      "n1": "কাঁঠাল (kāṇṭhāl) is a jackfruit."
+      "n1": "কাঁঠাল (kām̐thāl) is a jackfruit."
     examples:
       "মই কাঁঠাল খাওঁ।": { native: "I eat jackfruit.", bases: {  } }
       "কাঁঠাল মিঠা।": { native: "Jackfruit is sweet.", bases: {  } }
@@ -340,35 +326,35 @@ cards:
   "as-2361":
     native: "cauliflower"
     notes:
-      "n1": "ফুলকবি (phulkobi) is cauliflower."
+      "n1": "ফুলকবি (phulôkobi) is cauliflower."
     examples:
       "মই ফুলকবি খাওঁ।": { native: "I eat cauliflower.", bases: {  } }
       "ফুলকবি ভাল।": { native: "Cauliflower is good.", bases: {  } }
   "as-2362":
     native: "food"
     notes:
-      "n1": "খাদ্য (khādyô) is food in general."
+      "n1": "খাদ্য (khādy) is food in general."
     examples:
       "এইটো খাদ্য।": { native: "This is food.", bases: {  } }
       "খাদ্য ভাল।": { native: "Food is good.", bases: {  } }
   "as-2363":
     native: "drink; beverage"
     notes:
-      "n1": "পানীয় (pānīẏô) is any drink."
+      "n1": "পানীয় (pāniy) is any drink."
     examples:
       "এইটো পানীয়।": { native: "This is a drink.", bases: {  } }
       "মই পানীয় খাওঁ।": { native: "I drink a beverage.", bases: {  } }
   "as-2364":
     native: "raw; unripe"
     notes:
-      "n1": "কাঁচা (kāncā) describes food that is not yet cooked or ripe. The opposite is পকা (pōkā), ripe."
+      "n1": "কাঁচা (kām̐sā) describes food that is not yet cooked or ripe. The opposite is পকা (pôkā), ripe."
     examples:
       "আমটো এতিয়াও কাঁচা।": { native: "The mango is still unripe.", bases: {  } }
       "নেবু কাঁচা।": { native: "The lemon is unripe.", bases: {  } }
   "as-2365":
     native: "ripe; cooked"
     notes:
-      "n1": "পকা (pōkā) describes fruit that is ripe. The opposite is কাঁচা (kāncā), unripe."
+      "n1": "পকা (pôkā) describes fruit that is ripe. The opposite is কাঁচা (kām̐sā), unripe."
     examples:
       "আমটো পকা।": { native: "The mango is ripe.", bases: {  } }
       "কলটো পকা।": { native: "The banana is ripe.", bases: {  } }
