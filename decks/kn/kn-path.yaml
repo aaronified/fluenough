@@ -73,7 +73,8 @@ units:
     words: 9
   - decks: ["kn-addressing", "*"]
     words: 12
-  - planned: { id: "kn-pronouns", theme: "pronouns", words: 24 }
+  - decks: ["kn-pronouns", "*"]
+    words: 24
     listening_passages:
       - { id: "who-is-who", text: { "en": "Pointing out who is who at a family gathering: he, she, they" } }
     reading_passages:
@@ -91,12 +92,14 @@ units:
   # until the Wikipedia counts are written, #516).
   - decks: ["kn-about-me", "*"]
     words: 7
-  - planned: { id: "kn-verbs", theme: "everyday-verbs", words: 30 }
+  - decks: ["kn-verbs", "*"]
+    words: 30
     listening_passages:
       - { id: "morning-routine", text: { "en": "A mother says what each person in the house does in the morning" } }
     reading_passages:
       - { id: "fridge-note", text: { "en": "A note on the fridge: what to eat, what to drink and where things are" } }
-  - planned: { id: "kn-adverbs", theme: "adverbs", words: 45 }
+  - decks: ["kn-adverbs", "*"]
+    words: 45
     listening_passages:
       - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
     reading_passages:
