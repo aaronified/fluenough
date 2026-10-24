@@ -4,6 +4,14 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 ## Awaiting approval
 
+- `all-tags.html`: the All tags page (#499), beautified (owner, 2026-10-24:
+  "Beautify the all tags page. This needs a small mockup, as not much is
+  happening here anyway."). Today's page beside a proposal: Practise as an
+  inline play icon, a thin bar, and tweak controls for one-line or two-line
+  rows, grouping by kind and sorting. Hindustani and Bengali, light and
+  dark, 1.4x. Open choices are listed in `all-tags.md`, with the
+  self-check.
+
 - `today-chain.html`: the Today chain's screens still to build (owner,
   2026-10-23: "Do all the mockups needed for the today chain together, in one
   screen."): situation cheatsheets and their inspect view (#724), the decks
