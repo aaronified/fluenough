@@ -1,0 +1,25 @@
+schema: 1
+id: "kn-en-grammar-present"
+kind: "layer"
+core: "kn-grammar-present"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Present: what you usually do"
+license: "CC-BY-SA-4.0"
+description: "I go, she eats, we read: the present tense by person, for habits and for what happens now. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Present tense"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "ನಾನು (I)": "I", "ನೀನು (you, to a friend)": "you, to a friend", "ಅವನು (he)": "he", "ಅವಳು (she)": "she", "ನಾವು (we)": "we", "ನೀವು (you, polite or more than one)": "you, polite or more than one", "ಅವರು (they, polite)": "they, polite" }
+  entries:
+    "hogu": "to go"
+    "tinnu": "to eat"
+    "maadu": "to do"
+    "bare": "to write"
+    "odu": "to read"
+    "kudi": "to drink"
+    "baa": "to come"
+    "nodu": "to see; to look"
+    "kelu": "to hear; to ask"
+  notes: "The stem, then -ುತ್ತ- (-utta-), then an ending that agrees with the doer: -ೇನೆ (-ēne) for I, -ೀಯ (-īya) for you to a friend, -ಾನೆ (-āne) for he, -ಾಳೆ (-āḷe) for she, -ೇವೆ (-ēve) for we, -ೀರಿ (-īri) for you polite or plural, and -ಾರೆ (-āre) for they. Verbs that end in a vowel change the stem first: ಬರೆ (bare) becomes ಬರೆಯು- (bareyu-), and ಕುಡಿ (kudi) becomes ಕುಡಿಯು- (kuḍiyu-). ಬಾ (bā), come, is irregular: its stem is ಬರು (baru)."

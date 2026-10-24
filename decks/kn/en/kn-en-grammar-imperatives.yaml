@@ -1,0 +1,25 @@
+schema: 1
+id: "kn-en-grammar-imperatives"
+kind: "layer"
+core: "kn-grammar-imperatives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Imperatives: telling someone to do it"
+license: "CC-BY-SA-4.0"
+description: "Do it, do it, let us do it: the command forms, to a friend, polite or to more than one person, and to let us. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Imperatives"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "ನೀನು (you, to a friend)": "to a friend (one)", "ನೀವು (you, polite or more than one)": "polite or more than one", "ನಾವು (let us)": "let us, together" }
+  entries:
+    "hogu": "to go"
+    "tinnu": "to eat"
+    "maadu": "to do"
+    "bare": "to write"
+    "odu": "to read"
+    "kudi": "to drink"
+    "baa": "to come"
+    "nodu": "to see; to look"
+    "kelu": "to hear; to ask"
+  notes: "To a friend, the verb stem is the command: ಹೋಗು (hōgu), go; ತಿನ್ನು (tinnu), eat. For a polite you or more than one person, the ending -ಿ (-i) or -ಿರಿ (-iri) is added: ಹೋಗಿ (hōgi), go; ಬರೆಯಿರಿ (bareyiri), write. Let us adds -ೋಣ (-ōṇa): ಹೋಗೋಣ (hōgōṇa), let us go. ಬಾ (bā), come, has ಬನ್ನಿ (bannī) for the polite form."
