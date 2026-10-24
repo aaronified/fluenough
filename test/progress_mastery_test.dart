@@ -448,6 +448,10 @@ void main() {
       expect(find.byType(SkillStarCard), findsOneWidget);
       expect(tester.takeException(), isNull, reason: 'no overflow at 1.4x');
 
+      // The three tiles take a row more than the Words tile did: the star is
+      // below the fold at 1.4x.
+      await tester.ensureVisible(find.byType(SkillStarCard));
+      await tester.pumpAndSettle();
       await tester.tap(find.byType(SkillStarCard));
       await tester.pumpAndSettle();
       expect(find.byType(OverTimePage), findsOneWidget);
