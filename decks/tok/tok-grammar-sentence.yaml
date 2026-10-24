@@ -1,0 +1,30 @@
+schema: 1
+id: "tok-grammar-sentence"
+part: "core"
+kind: "vocab"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "tok-0101"
+    target: "li"
+    ipa: "li"
+    pos: "particle"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "usage" }
+    examples:
+      - { target: "ona li lukin.", ipa: "ˈona li ˈlukin", bases: [{ word: "ona", ref: "tok-0062" }, { word: "li", base: "li" }, { word: "lukin", ref: "tok-0083" }] }
+      - { target: "ijo li pona.", ipa: "ˈijo li ˈpona", bases: [{ word: "ijo", ref: "tok-0065" }, { word: "li", base: "li" }, { word: "pona", ref: "tok-0002" }] }
+  - id: "tok-0102"
+    target: "e"
+    ipa: "e"
+    pos: "particle"
+    bases: "self"
+    notes:
+      - { id: "n1", kind: "behaviour" }
+      - { id: "n2", kind: "usage" }
+    examples:
+      - { target: "mi pali e pan.", ipa: "mi ˈpali e pan", bases: [{ word: "mi", ref: "tok-0003" }, { word: "pali", ref: "tok-0082" }, { word: "e", base: "e" }, { word: "pan", ref: "tok-0034" }] }
+      - { target: "sina pana e ijo.", ipa: "ˈsina ˈpana e ˈijo", bases: [{ word: "sina", ref: "tok-0004" }, { word: "pana", ref: "tok-0035" }, { word: "e", base: "e" }, { word: "ijo", ref: "tok-0065" }] }

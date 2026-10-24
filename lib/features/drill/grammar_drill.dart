@@ -574,7 +574,9 @@ class _GrammarTable extends StatelessWidget {
     return Padding(
       padding: const EdgeInsetsDirectional.symmetric(horizontal: 39),
       child: Directionality(
-        textDirection: language.rtl ? TextDirection.rtl : TextDirection.ltr,
+        textDirection: language.rightToLeft
+            ? TextDirection.rtl
+            : TextDirection.ltr,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[

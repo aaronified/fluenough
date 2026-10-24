@@ -1,0 +1,459 @@
+schema: 1
+id: "es-en-about-me"
+kind: "layer"
+core: "es-about-me"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "About me"
+license: "CC-BY-SA-4.0"
+description: "Words for talking about yourself: your age, nationality, language, job, birthday, phone, email and address, plus adjectives for how tall you are and whether you are married, and phrases to introduce yourself. Not yet checked by a Spanish speaker: please report any mistake."
+
+cards:
+  "es-0242":
+    native: "age"
+    notes:
+      "n1": "Edad is age. Ask someone's age with ¿Cuántos años tienes? (How old are you?), not with edad."
+    bases:
+      "la": "the"
+      "edad": "age"
+    examples:
+      "La edad de Ana es dieciséis años.":
+        native: "Ana's age is sixteen years."
+        bases:
+          "La": "the"
+          "edad": "age"
+          "de": "of"
+          "Ana": "Ana"
+          "años": "years"
+      "No sé la edad de Luis.":
+        native: "I do not know Luis's age."
+        bases:
+          "sé": "I know"
+          "la": "the"
+          "edad": "age"
+          "de": "of"
+          "Luis": "Luis"
+  "es-0243":
+    native: "nationality"
+    notes:
+      "n1": "Nacionalidad is nationality. The adjective for it changes: peruano (m), peruana (f)."
+    bases:
+      "la": "the"
+      "nacionalidad": "nationality"
+    examples:
+      "La nacionalidad de Ana es peruana.":
+        native: "Ana's nationality is Peruvian."
+        bases:
+          "La": "the"
+          "nacionalidad": "nationality"
+          "de": "of"
+          "Ana": "Ana"
+          "peruana": "Peruvian"
+      "¿Cuál es la nacionalidad de Luis?":
+        native: "What is Luis's nationality?"
+        bases:
+          "la": "the"
+          "nacionalidad": "nationality"
+          "de": "of"
+          "Luis": "Luis"
+  "es-0244":
+    native: "language"
+    notes:
+      "n1": "Idioma is a language, as a language you speak or learn. Lengua means the same, and also the tongue in the mouth."
+    bases:
+      "el": "the"
+      "idioma": "language"
+    examples:
+      "El idioma de Ana es el español.":
+        native: "Ana's language is Spanish."
+        bases:
+          "El": "the"
+          "idioma": "language"
+          "de": "of"
+          "Ana": "Ana"
+          "español": "Spanish"
+      "¿Cuál es el idioma de Luis?":
+        native: "What is Luis's language?"
+        bases:
+          "el": "the"
+          "idioma": "language"
+          "de": "of"
+          "Luis": "Luis"
+  "es-0245":
+    native: "job; profession"
+    notes:
+      "n1": "Profesión is the job someone trained for. Trabajo is the everyday word for work."
+    bases:
+      "la": "the"
+      "profesión": "job"
+    examples:
+      "La profesión de Luis es arquitecto.":
+        native: "Luis's profession is architect."
+        bases:
+          "La": "the"
+          "profesión": "job"
+          "de": "of"
+          "Luis": "Luis"
+          "arquitecto": "architect"
+      "Ana tiene la profesión de enfermera.":
+        native: "Ana's job is nurse."
+        bases:
+          "Ana": "Ana"
+          "la": "the"
+          "profesión": "job"
+          "de": "of"
+          "enfermera": "nurse"
+  "es-0246":
+    native: "birthday"
+    notes:
+      "n1": "Cumpleaños is birthday, and it does not change in the plural. Feliz cumpleaños is 'happy birthday'."
+    bases:
+      "el": "the"
+      "cumpleaños": "birthdays"
+    examples:
+      "El cumpleaños de Ana es en mayo.":
+        native: "Ana's birthday is in May."
+        bases:
+          "El": "the"
+          "cumpleaños": "birthdays"
+          "de": "of"
+          "Ana": "Ana"
+          "en": "in"
+          "mayo": "May"
+      "¿Cuándo es el cumpleaños de Luis?":
+        native: "When is Luis's birthday?"
+        bases:
+          "el": "the"
+          "cumpleaños": "birthdays"
+          "de": "of"
+          "Luis": "Luis"
+  "es-0247":
+    native: "telephone; phone number"
+    notes:
+      "n1": "Teléfono is a phone, and also the number you call. Móvil is a mobile phone in Spain."
+    bases:
+      "el": "the"
+      "teléfono": "telephone; phone number"
+    examples:
+      "¿Me das el teléfono de Ana?":
+        native: "Can you give me Ana's phone number?"
+        bases:
+          "Me": "me"
+          "das": "you give"
+          "el": "the"
+          "teléfono": "telephone; phone number"
+          "de": "of"
+          "Ana": "Ana"
+      "¿Cuál es el teléfono de Ana?":
+        native: "What is Ana's phone number?"
+        bases:
+          "el": "the"
+          "teléfono": "telephone; phone number"
+          "de": "of"
+          "Ana": "Ana"
+  "es-0248":
+    native: "email; post"
+    notes:
+      "n1": "Correo is email as well as post: el correo electrónico is email in full."
+    bases:
+      "el": "the"
+      "correo": "email; post"
+    examples:
+      "Dame el correo de Luis.":
+        native: "Give me Luis's email address."
+        bases:
+          "Dame": "give me"
+          "el": "the"
+          "correo": "email; post"
+          "de": "of"
+          "Luis": "Luis"
+      "¿Cuál es el correo de Ana?":
+        native: "What is Ana's email address?"
+        bases:
+          "el": "the"
+          "correo": "email; post"
+          "de": "of"
+          "Ana": "Ana"
+  "es-0249":
+    native: "address"
+    notes:
+      "n1": "Dirección is an address, the place where someone lives or a business is."
+    bases:
+      "la": "the"
+      "dirección": "address"
+    examples:
+      "No sé la dirección de Ana.":
+        native: "I do not know Ana's address."
+        bases:
+          "sé": "I know"
+          "la": "the"
+          "dirección": "address"
+          "de": "of"
+          "Ana": "Ana"
+      "¿Cuál es la dirección de Luis?":
+        native: "What is Luis's address?"
+        bases:
+          "la": "the"
+          "dirección": "address"
+          "de": "of"
+          "Luis": "Luis"
+  "es-0250":
+    native: "number"
+    notes:
+      "n1": "Número is a number, and it is also the number of a house or a phone."
+    bases:
+      "el": "the"
+      "número": "number"
+    examples:
+      "Dame el número de Ana.":
+        native: "Give me Ana's number."
+        bases:
+          "Dame": "give me"
+          "el": "the"
+          "número": "number"
+          "de": "of"
+          "Ana": "Ana"
+      "Ana tiene el número de Luis.":
+        native: "Ana has Luis's number."
+        bases:
+          "Ana": "Ana"
+          "el": "the"
+          "número": "number"
+          "de": "of"
+          "Luis": "Luis"
+  "es-0251":
+    native: "neighbourhood"
+    notes:
+      "n1": "Barrio is the part of a town where people live, a neighbourhood."
+    bases:
+      "el": "the"
+      "barrio": "neighbourhood"
+    examples:
+      "El barrio de Ana es tranquilo.":
+        native: "Ana's neighbourhood is quiet."
+        bases:
+          "El": "the"
+          "barrio": "neighbourhood"
+          "de": "of"
+          "Ana": "Ana"
+      "Me gusta el barrio donde vivo.":
+        native: "I like the neighbourhood where I live."
+        bases:
+          "Me": "me"
+          "gusta": "likes"
+          "el": "the"
+          "barrio": "neighbourhood"
+          "donde": "where"
+  "es-0252":
+    native: "single (man)"
+    notes:
+      "n1": "Soltero is unmarried, for a man. Soltera is the form for a woman."
+    examples:
+      "Luis es soltero.":
+        native: "Luis is single."
+        bases:
+          "Luis": "Luis"
+          "soltero": "single (man)"
+      "Pedro es soltero, pero Ana está casada.":
+        native: "Pedro is single, but Ana is married."
+        bases:
+          "Pedro": "Pedro"
+          "soltero": "single (man)"
+          "Ana": "Ana"
+          "casada": "married (woman)"
+  "es-0253":
+    native: "married (man)"
+    notes:
+      "n1": "Casado is married, for a man. Casada is the form for a woman."
+    examples:
+      "Mi padre está casado.":
+        native: "My father is married."
+        bases:
+          "padre": "father"
+          "casado": "married (man)"
+      "Mi padre está casado y tiene dos hijos.":
+        native: "My father is married and has two children."
+        bases:
+          "padre": "father"
+          "casado": "married (man)"
+          "hijos": "children"
+  "es-0254":
+    native: "tall"
+    notes:
+      "n1": "Alto is tall, for a man or a thing. It is also high."
+    examples:
+      "Luis es muy alto.":
+        native: "Luis is very tall."
+        bases:
+          "Luis": "Luis"
+          "muy": "very"
+          "alto": "tall"
+      "Mi hermano es alto.":
+        native: "My brother is tall."
+        bases:
+          "hermano": "brother"
+          "alto": "tall"
+  "es-0255":
+    native: "short (height)"
+    notes:
+      "n1": "Bajo is short, for a person's height. It also means low; as a preposition, bajo means under."
+    examples:
+      "Pedro es bajo, pero muy fuerte.":
+        native: "Pedro is short, but very strong."
+        bases:
+          "Pedro": "Pedro"
+          "bajo": "short (height)"
+          "muy": "very"
+          "fuerte": "strong"
+      "Mi hijo es bajo para su edad.":
+        native: "My son is short for his age."
+        bases:
+          "hijo": "son"
+          "bajo": "short (height)"
+          "para": "for"
+          "edad": "age"
+  "es-0256":
+    native: "young"
+    notes:
+      "n1": "Joven is young. It is the same word for a man and a woman."
+    examples:
+      "Mi hermana es muy joven.":
+        native: "My sister is very young."
+        bases:
+          "hermana": "sister"
+          "muy": "very"
+          "joven": "young"
+      "Luis es joven.":
+        native: "Luis is young."
+        bases:
+          "Luis": "Luis"
+          "joven": "young"
+  "es-0257":
+    native: "quiet; calm"
+    notes:
+      "n1": "Tranquilo is calm and quiet."
+    examples:
+      "El barrio es muy tranquilo.":
+        native: "The neighbourhood is very quiet."
+        bases:
+          "El": "the"
+          "barrio": "neighbourhood"
+          "muy": "very"
+          "tranquilo": "quiet"
+      "Ana dice que el barrio es tranquilo.":
+        native: "Ana says the neighbourhood is quiet."
+        bases:
+          "Ana": "Ana"
+          "dice": "says"
+          "que": "that"
+          "el": "the"
+          "barrio": "neighbourhood"
+          "tranquilo": "quiet"
+  "es-0258":
+    native: "to study"
+    notes:
+      "n1": "Estudiar is to study. It is a regular -ar verb: estudio, estudias, estudia."
+    examples:
+      "Quiero estudiar medicina.":
+        native: "I want to study medicine."
+        bases:
+          "estudiar": "to study"
+          "medicina": "medicine"
+      "Vamos a estudiar juntos.":
+        native: "We are going to study together."
+        bases:
+          "a": "to"
+          "estudiar": "to study"
+          "juntos": "together"
+  "es-0259":
+    native: "to work"
+    notes:
+      "n1": "Trabajar is to work. It is a regular -ar verb: trabajo, trabajas, trabaja."
+    examples:
+      "Quiero trabajar en un hospital.":
+        native: "I want to work in a hospital."
+        bases:
+          "trabajar": "to work"
+          "en": "in"
+          "un": "a"
+      "Ana quiere trabajar con su padre.":
+        native: "Ana wants to work with her father."
+        bases:
+          "Ana": "Ana"
+          "trabajar": "to work"
+          "con": "with"
+          "padre": "father"
+  "es-0260":
+    native: "I am from"
+    notes:
+      "n1": "Soy de means I am from a place. Use de with a place: soy de Lima (I am from Lima)."
+    bases:
+      "de": "of"
+    examples:
+      "Soy de Lima.":
+        native: "I am from Lima."
+        bases:
+          "de": "of"
+          "Lima": "Lima"
+      "Yo soy de Quito y mi familia también.":
+        native: "I am from Quito, and my family is too."
+        bases:
+          "de": "of"
+          "Quito": "Quito"
+          "familia": "family"
+  "es-0261":
+    native: "I live in"
+    notes:
+      "n1": "Vivo en means I live in a place: vivo en Madrid (I live in Madrid)."
+    bases:
+      "en": "in"
+    examples:
+      "Vivo en Madrid con mi familia.":
+        native: "I live in Madrid with my family."
+        bases:
+          "en": "in"
+          "Madrid": "Madrid"
+          "con": "with"
+          "familia": "family"
+      "¿Dónde vives? Vivo en el centro.":
+        native: "Where do you live? I live in the centre."
+        bases:
+          "en": "in"
+          "el": "the"
+          "centro": "centre"
+  "es-0262":
+    native: "my name is"
+    notes:
+      "n1": "Mi nombre es introduces your name: Mi nombre es Ana (My name is Ana)."
+    bases:
+      "nombre": "name"
+    examples:
+      "Mi nombre es Luis.":
+        native: "My name is Luis."
+        bases:
+          "nombre": "name"
+          "Luis": "Luis"
+      "Hola, mi nombre es Ana.":
+        native: "Hello, my name is Ana."
+        bases:
+          "nombre": "name"
+          "Ana": "Ana"
+  "es-0263":
+    native: "how old are you?"
+    notes:
+      "n1": "A friendly question about someone's age. For a stranger, say ¿Cuántos años tiene usted?"
+    bases:
+      "cuántos": "how many"
+      "años": "years"
+    examples:
+      "Ana, ¿cuántos años tienes?":
+        native: "Ana, how old are you?"
+        bases:
+          "Ana": "Ana"
+          "cuántos": "how many"
+          "años": "years"
+      "Oye, ¿cuántos años tienes? Tengo veinte.":
+        native: "Hey, how old are you? I am twenty."
+        bases:
+          "Oye": "hey"
+          "cuántos": "how many"
+          "años": "years"

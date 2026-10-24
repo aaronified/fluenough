@@ -1,0 +1,24 @@
+schema: 1
+id: "zh-en-grammar-question-words"
+kind: "layer"
+core: "zh-grammar-question-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Question words"
+license: "CC-BY-SA-4.0"
+description: "Who, what, where, how many, when and why: the question word stands where the answer will stand. Not yet checked by a Mandarin speaker: please report any mistake."
+tags: ["unreviewed"]
+"pattern":
+  "name": "Question words"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "statement": "the statement"
+    "question": "the question with the question word"
+  "entries":
+    "shei": "who: he is a teacher, so who is he?"
+    "shenme": "what: you drink tea, so what do you drink?"
+    "nali": "where: he goes to school, so where does he go?"
+    "ji": "how many: you are five years old, so how old are you?"
+    "shenmeshihou": "when: he comes tomorrow, so when does he come?"
+    "weishenme": "why: he is not coming, so why is he not coming?"
+  "notes": "A question word does not move to the front, as in English: it stands where the answer will stand, and the word order stays as in the statement. 他是老师 (tā shì lǎoshī), he is a teacher, becomes 他是谁 (tā shì shéi), who is he?: 谁 (shéi) takes the place of the person, 什么 (shénme) of the thing, 哪里 (nǎlǐ) of the place, 几 (jǐ) of the number and 什么时候 (shénme shíhou) of the time. A time word goes before the verb, so 什么时候 (shénme shíhou) does too: 他什么时候来 (tā shénme shíhou lái). 为什么 (wèishénme), why, also goes before the verb: 他为什么不来 (tā wèishénme bù lái). A question with a question word takes no 吗 (ma)."

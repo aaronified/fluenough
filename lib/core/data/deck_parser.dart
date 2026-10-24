@@ -132,6 +132,7 @@ const _headerFields = {
 final _scriptId = RegExp(r'^[a-z]+(?:_[a-z]+)*$');
 
 const _cardFields = {
+  'hears',
   'id',
   'target',
   'native',
@@ -223,6 +224,10 @@ const _layerHeaderFields = {
   'rules',
 };
 const _coreCardFields = {
+  'hears',
+  'warning',
+  'not_sounds_like',
+  'not_looks_like',
   'id',
   'target',
   'reading',
@@ -853,6 +858,7 @@ class _Reader {
       words: words(fields, path),
       altNative: fields.strings('alt_native'),
       pos: fields.optionalString('pos', allowEmpty: false),
+      hears: hears(fields, path),
       gender: fields.optionalString('gender'),
       tags: fields.strings('tags'),
       notes: notes,
@@ -971,6 +977,15 @@ class _Reader {
   /// An example's `sounds`: a boolean, true when left out.
   bool exampleSounds(_Fields fields, String path) =>
       fields.optionalBool('sounds') ?? true;
+
+  /// A card's `hears`: only `form`, or left out (#522, step 7).
+  String? hears(_Fields fields, String path) {
+    final value = fields.optionalString('hears', allowEmpty: false);
+    if (value != null && value != 'form') {
+      fail(fields.node('hears')!, '$path.hears must be "form", got "$value"');
+    }
+    return value;
+  }
 
   /// Empty, meaning every applicable mode, when the card names none.
   Set<DrillMode> modes(YamlNode? node, String path) {
@@ -1612,6 +1627,10 @@ class _Reader {
       ),
       words: words(fields, path),
       pos: fields.optionalString('pos', allowEmpty: false),
+      hears: hears(fields, path),
+      warning: fields.optionalString('warning', allowEmpty: false),
+      notSoundsLike: fields.strings('not_sounds_like'),
+      notLooksLike: fields.strings('not_looks_like'),
       gender: fields.optionalString('gender'),
       tags: fields.strings('tags'),
       audio: fields.optionalString('audio'),
@@ -2369,7 +2388,7 @@ class _Reader {
     return LayerPattern(
       name: fields.string('name'),
       slotName: fields.string('slot_name'),
-      prompt: fields.string('prompt'),
+      prompt: fields.optionalString('prompt'),
       slots: fields.has('slots')
           ? layerTexts(
               fields.require('slots'),
@@ -2623,7 +2642,7 @@ class _Reader {
     fields.allowOnly(_patternFields);
     final name = fields.string('name');
     final slotName = fields.string('slot_name');
-    final prompt = fields.string('prompt');
+    final prompt = fields.optionalString('prompt');
     final notes = fields.optionalString('notes');
     final slots = this.slots(fields.require('slots'));
 
@@ -2641,7 +2660,7 @@ class _Reader {
       name: name,
       slotName: slotName,
       slots: slots,
-      prompt: prompt,
+      prompt: prompt ?? kPatternPrompt,
       entries: List.unmodifiable(entries),
       notes: notes,
     );

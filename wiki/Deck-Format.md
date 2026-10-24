@@ -38,6 +38,12 @@ python3 tools/validate_decks.py decks/
   never changes the exit code or the `N/M decks valid` line: it reports
   coverage, such as how much of a core a layer teaches. Each is printed
   under its file, `error`, `warning` or `info`, with where in the file it is.
+- **Errors again at the end.** When a run fails, it ends with an `Errors:`
+  section, after the `N/M decks valid` line, repeating every error: each
+  cross-file error as `error: {message}` and each file's errors as
+  `error: {file}: {where}: {message}`. CI's log is thousands of lines long
+  and the cross-file errors print near the top, so the end of the log is
+  where to read them. A passing run has no such section.
 - **Checks across files** (card ids, refs, the path, phrasebook sizes, rows,
   bases coverage) print an error as `error: {file}: {where}: {message}`, and
   attach a warning or an info line to the file it is about. They report only
@@ -117,7 +123,7 @@ Common to every kind.
 | `authors` | no | List of `{name, url?}`. |
 | `source` | no | Where the content comes from: a URL, or for a book its title, author, year and licence, as in `"Sahaj Path, part 1, by Rabindranath Tagore (1930), in the public domain"`. The app shows it on the deck's page, and Settings lists it under Sources. |
 | `description` | no | One or two sentences. |
-| `tags` | no | Deck-level tags, e.g. `[beginner, core]`. The tag `unreviewed` marks a deck no native speaker has checked: the app says so on the deck's screen. `reviewed` marks one a speaker has checked; a deck is one or the other, never both. A file with a [culture note](#notes) must carry one of them. |
+| `tags` | no | Deck-level tags, e.g. `[beginner, core]`. The tag `unreviewed` marks a deck no native speaker has checked: the app says so on the deck's screen. `reviewed` marks one a speaker has checked; a deck is one or the other, never both. A file with a [culture note](#notes) must carry one of them. A deck of offensive words is tagged `offensive`; until native speakers have rated its words it is seen by the Offensive words review alone, and once rated it gains the tag `rated` and follows the adult gate (#630); `rated` on a deck not tagged `offensive` is an error. |
 | `theme` | no | On a vocab deck: the theme it teaches, by its id in [`decks/themes.yaml`](#themes). |
 
 ### `language`
@@ -130,7 +136,7 @@ Common to every kind.
 | `script` | yes | A lowercase script name. The validator knows `latin`, `cyrillic`, `greek`, `arabic`, `hebrew`, `devanagari`, `bengali`, `gujarati`, `gurmukhi`, `odia`, `telugu`, `tamil`, `kannada`, `malayalam`, `sinhala`, `kana`, `han`, `hangul`, `thai`, `ipa`, `braille` and `other`. Any other name is accepted with a warning ([ADR-0009](ADR-0009-Scripts-Are-Open)). Every script but `latin`, `cyrillic`, `greek`, `ipa` and `braille` expects a `reading` on each card. `ipa` is for [the IPA course](#the-ipa-course) alone, and `braille` for [the English Braille course](#the-english-braille-course), whose answers are typed on the app's own braille keyboard. |
 | `scripts` | no | For a language written in more than one script, every script it is taught in, `script` first: `["devanagari", "perso_arabic"]` for Hindustani, `["han", "han_traditional"]` for Chinese. Two or more names, none twice. A card's other spellings are written under [`target_scripts`](#a-cards-other-scripts-target_scripts). A script id is lowercase words joined by an underscore (`perso_arabic`, `ol_chiki`), as the app's own list of scripts has it; the validator accepts a hyphen too. |
 | `tts` | no | BCP-47 tag handed to the TTS engine, e.g. `es-ES`, `pt-BR`. Defaults to `code`. Omitting it on a language with major regional variation is a mistake. |
-| `rtl` | no | `true` for right-to-left scripts. Defaults to `false`. |
+| `rtl` | no | `true` for right-to-left scripts. Defaults to `false`. A deck's text is drawn in its own direction, not the interface's: a card's target, the tiles of the word-order drill (built from the right, the words in Latin letters excepted), and where the interface quotes it, as in "Answer: …", the quote is isolated from the words around it so that neither reorders the other. |
 | `typed` | no | `false` for a language whose answers cannot be typed: its production is asked by choosing the word among others, in reviews, in lessons and in the check of a hard word, never by typing. Defaults to `true`. Only [the IPA course](#the-ipa-course) is `false`. [English Braille](#the-english-braille-course) is typed, on the app's own keyboard, which its script names. |
 | `icon` | no | What the language's chip shows: the first letter of its own name, as `"हि"` for Hindi or `"Es"` for Spanish ([ADR-0027](ADR-0027-Language-Icons)). Give the same one on every deck of the language; the validator checks that they agree. Without one, a chip shows the first letter of the language's first card. |
 
@@ -451,7 +457,8 @@ pattern:
   notes: "The past adds -ఆ- (-ā-) before the person ending."
 ```
 
-`name`, `slot_name`, `prompt` and `entries` are required; `entries` maps each
+`name`, `slot_name` and `entries` are required, and `prompt` is retired (see
+[`pattern` fields](#pattern-fields)); `entries` maps each
 core entry's `key`, or its lemma where it has none, to its gloss, and
 **every core entry must have one**: the validator errors on an entry with
 no gloss (`gives no gloss for ...`), and on a key that is not an entry of
@@ -576,7 +583,10 @@ cards:
 | `target_scripts` | no | For a language whose block lists several `scripts`: the word spelled in each script but the first, `{ perso_arabic: "کتاب" }`. See [below](#a-cards-other-scripts-target_scripts). |
 | `words` | in a B1 deck in a script without spaces | The target's words, in order, `["我", "听不懂"]` for 我听不懂 (wǒ tīng bu dǒng): for Chinese, Japanese and Thai, written without spaces. Allowed on any card. See [Base words](#base-words-bases). |
 | `alt_native` | no | Additional meanings accepted when the meaning is typed, in Hear (ADR-0034). |
-| `pos` | no | Part of speech: `noun`, `verb`, `adj`, `adv`, `pronoun`, `phrase`, `particle`, `other`. A [rules deck](#rules-decks) picks its rows by it, so give every word its own: a pronoun is `pronoun`, not `other`. |
+| `pos` | no | Part of speech: `noun`, `verb`, `adj`, `adv`, `pronoun`, `phrase`, `particle`, `other`; a script's letter or sign is `letter` and its digit `digit` (#522 step 7), and Hear asks for what was heard of it, typing its form. A [rules deck](#rules-decks) picks its rows by it, so give every word its own: a pronoun is `pronoun`, not `other`. |
+| `hears` | no | `form`: a word that is heard and typed as its form, as a letter or digit is, though it keeps its part of speech: a script reading or spelling word. Only `form` is a value. An app older than the release that added it rejects the card, so decks give it a release after the app that reads it (#522 step 7). |
+| `warning` | no | The one warning the card's teach card shows ([Which warning the teach card shows](#which-warning-the-teach-card-shows-warning)): the `id` of one of its `pair`, `homograph` or `lookalike` notes, `"senses"`, or `"none"`. A core card only. An app older than the release that added it rejects the card, so decks give it a release after the app that reads it (#691). |
+| `not_sounds_like`, `not_looks_like` | no | A reviewer's rejection of a [sound-alike or look-alike pair](#a-rejected-pair-not_sounds_like-and-not_looks_like): a list of the ids of the offensive words of the language that the card was found to sound like (`not_sounds_like`) or look like (`not_looks_like`), and does not. A core card only. An app older than the release that added them rejects the card, so decks give them a release after the app that reads them (#808). |
 | `gender` | no | Grammatical gender, as text. On a noun it is one of its language's classes, which the language's path lists (`genders`): see [Gender](#gender). |
 | `tags` | no | Card-level tags. Drills can be filtered by tag. In a script deck, `own-letter` marks a letter the language adds to, or writes differently from, a script it shares with other languages: Assamese ৰ (rô) and ৱ (wô) in Eastern Nagari. The app's script test, which lets a learner who reads the shared script skip the course's script lessons, always asks these (#554). |
 | `notes` | no | Text, or a list of typed notes: see [Notes](#notes). Shown when the word is taught and after answering. |
@@ -592,7 +602,7 @@ cards:
 | `synonyms`, `antonyms`, `collocations`, `confusables`, `forms`, `senses` | no | A core card's [card data](#card-data), its text in each layer by id. Not on a single-file card or a layer's own card. |
 | `rules` | no | On a sentence: the ids of the rules it uses, `["te-rule-ki"]`. See [Sentences and their rules](#sentences-and-their-rules-rules). |
 | `wiktionary` | no | `true` where the learner's language's Wiktionary has an entry for the target: see [The Wiktionary link](#the-wiktionary-link). |
-| `modes` | no | Which drills this card participates in. Defaults to all applicable, except that a `pos: phrase` card is not typed: it defaults to recognition, listening and speaking, and production by rearranging its words when it has two or more (ADR-0024). |
+| `modes` | no | The skills this card is excluded from (an opt-out, #522 step 6: `recognition`, `production`, `listening`, `speaking`, or `grammar` for both grammar skills). Defaults to every skill the card's data allows, except that a `pos: phrase` card is not typed: it defaults to recognition, listening and speaking, and production by rearranging its words when it has two or more (ADR-0024). |
 | `pair` | no | The id of a word of the language that sounds almost the same, its minimal-pair partner: `te-0111`, కాలం (kālam), time, on కలం (kalam), pen. Hear offers the partner's meaning among its options, to catch a learner who confuses the two ([ADR-0034](ADR-0034-Hear-Say-Write)). It belongs to the word, so a ref cannot give it. A [pair note](#notes) gives it too: a card without `pair` takes its first pair note's partner, and a core card has no `pair` at all, only pair notes. |
 | `picture` | no | One emoji, quoted, showing what a concrete word means: `"🏠"` on house. Its picture, from [Noto Emoji](https://github.com/googlefonts/noto-emoji) (Apache-2.0), is a cue beside the meaning in Write and beside each meaning Hear offers ([ADR-0034](ADR-0034-Hear-Say-Write)). Only for a picture that means exactly the word: not for abstract words, kinship, or near misses; the one exception is a question word that sets [`picture_ask`](#a-question-words-picture-picture_ask). Run `python3 tools/pictures.py path/to/noto-emoji` to bundle its image; the validator checks it is there. It belongs to the word, so a ref cannot give it. |
 | `picture_ask` | no | `true` on a question word whose `picture` asks rather than shows: the app draws the emoji with a small "?" badge on its corner. Unquoted `true` or left out, never `false`. It requires `picture`, and belongs to the word, so a ref cannot give it. See [A question word's picture](#a-question-words-picture-picture_ask). A release that reads it must be out before a deck uses it: the released parser rejects unknown fields. |
@@ -1026,6 +1036,82 @@ its reading.
   that holds the claim: the core for a core card's culture note, the layer
   for a layer's own card. A layer may carry `unreviewed` for its own texts
   too.
+
+### Which warning the teach card shows: `warning`
+
+A word can warn of several things: a word it sounds like (`pair`), a word it
+looks like (`homograph`, `lookalike`) and its other meanings (`senses`). The
+teach card has room for one, so a core card says which with `warning`
+(owner, 2026-10-23: "Deck field picks it"). The [word sheet](#notes) still
+shows every one of them, titled.
+
+```yaml
+  - id: "te-0110"
+    target: "కలం"
+    warning: "pen-sound"     # the id of one of this card's notes
+    notes:
+      - { id: "pen-sound", kind: "pair", ref: "te-0111" }
+      - { id: "same", kind: "homograph", ref: "te-9008" }
+```
+
+| Value | The teach card shows |
+|---|---|
+| The `id` of a `pair`, `homograph` or `lookalike` note | That note's warning. A note written without an `id` is named by its place in the list, `"1"`, `"2"`. |
+| `"senses"` | The word's other meanings. The card must have `senses`. |
+| `"none"` | No warning, for a word whose only warning is a rude word that is not close and rude enough to show. |
+
+- **Without the key** the card keeps the fixed order: a rude word it is like,
+  else the word it sounds like, the word it looks like, then its other
+  meanings.
+- **A rude word** is picked only when it is very close (its IPA differs by at
+  most one segment) and very rude (the partner's `level` is `strong` or
+  `strongest`). Otherwise another warning, or `"none"`.
+- **Errors:** a value that is not text; one that names no `pair`, `homograph`
+  or `lookalike` note of the card; `"senses"` on a card with no `senses`;
+  `warning` on a card that is not a core card's.
+- **A new deck sets `warning` when it is written** (owner, 2026-10-23: "Newly
+  written decks will choose the order when building"), choosing the warning
+  that matters most to the learner. A reviewer can change it. For decks
+  already written, `tools/pick_warning.py` fills the field: the most
+  important warning wins, equals are drawn at random seeded by the card id,
+  and a card that already has a `warning` is left alone.
+- **Two releases.** Released apps reject a card key they do not know, so the
+  app and the validator learn `warning` first and the decks set it one
+  release later, as for `hears`.
+
+### A rejected pair: `not_sounds_like` and `not_looks_like`
+
+`tools/offensive_alikes.py` lists the words that sound (IPA, one segment
+apart) or look (one letter or mark apart) like an offensive word of their
+language, and the validator warns of each pair that no note explains
+([Plan: offensive words](Plan-Offensive-Words)). A reviewer keeps a real pair
+with a `pair` note (sound) or a `lookalike` or `homograph` note (writing). A
+pair the reviewer rejects, because the two words are not alike enough to need
+care, is recorded on the card instead (owner, 2026-10-24, #808), by the kind
+of closeness rejected:
+
+```yaml
+  - id: "te-9901"
+    target: "విధవ"
+    not_sounds_like: ["te-9951"]   # the offensive word's id
+    not_looks_like: ["te-9951"]
+```
+
+Each is a list of the ids of other cards of the language. A pair is rejected
+for the kind named only: a card that rejects the sound still has its
+look-alike warning until a note or `not_looks_like` explains it. Either word
+of the pair may carry the key, the offensive word or the other. The tool
+lists the pair as explained, and the validator does not warn of it.
+
+- **Errors:** a value that is not a non-empty list of card ids of the
+  language; an id twice; the card's own id; an id no deck writes; the key on a
+  card that is not a core card's.
+- **Two releases.** Released apps reject a card key they do not know, so the
+  app and the validator learn these keys first and the decks use them one
+  release later, as for `warning`. Until a release that reads them is out,
+  the check "Released app reads the decks" in CI fails on any deck that uses
+  one; do not work around it. Rejected pairs are recorded once that release
+  is out.
 
 ### A dictionary entry: `dictionary`
 
@@ -1755,7 +1841,7 @@ pattern:
 | `name` | yes | Describes the inflection. |
 | `slot_name` | yes | What the slots are: `person`, `case`, `tense`, `number`… |
 | `slots` | yes | Ordered list of slot labels. |
-| `prompt` | yes | Template. `{lemma}`, `{gloss}` and `{slot}` are substituted. |
+| `prompt` | no, retired | Template. `{lemma}`, `{gloss}` and `{slot}` are substituted. Without one, a cell is asked as `{lemma} ({gloss}) — {slot}` (ADR-0039). The app reads one where given and the validator warns of it. Released apps that need it are still in use, so leave a deck's as it is until they are not. |
 | `entries` | yes | List of `{lemma, gloss, forms}`, each with an optional `key`, and in a script that needs them `reading` and `readings`. Each may give `ipa`, the lemma in the IPA, and `ipas`, the form shown in each slot in the IPA, one per slot that has a form. |
 | `notes` | no | Shown after answering. |
 
@@ -1804,8 +1890,8 @@ Each `(entry, slot)` pair becomes one production card:
   the deck and orphans its history.** Append new slots at the end.
 - **target** — `forms[slot]`, the first form where a cell lists several, and
   **alt_target** the rest
-- **native** — `prompt` with substitutions applied
-- **modes** — `grammar` only
+- **native** — `prompt` with substitutions applied, or `{lemma} ({gloss}) — {slot}` where there is none
+- **modes** — the four vocabulary skills (recognition, production, listening, speaking), so a pattern's cell is only a grammar cell
 
 A grammar deck may also be written as [a core and its
 layers](#a-grammar-core). Split, it keeps every cell id, as long as the
@@ -2004,7 +2090,7 @@ with a form whose rule the layer explains, the deck has one card:
 - **native:** the layer's `prompts` for the cell, or else the slot's label
   with `{meaning}` filled. The meaning is the first meaning of the word's
   card in this language, up to its first `/`, `;` or `,`: "with mother".
-- **modes:** `grammarUnderstood` and `grammar` (below).
+- **modes:** the four vocabulary skills, so a cell is only a grammar cell (below).
 
 A rule itself is not a card. It is taught before its cells, with its name
 and explanation, and it counts as known once its cells are.
@@ -2217,10 +2303,11 @@ language: { code: "ipa", iso639_3: "zxx", name: "IPA", script: "ipa", typed: fal
   which. The sound is optional: an example in a language the phone has no
   voice for is shown without a speaker.
 - **Tags.** Each card's tags are the languages that use the sound, by code,
-  and `core` for the symbols every learner needs. They decide the
-  learner's **"IPA: my languages"** course, the symbols of the languages
-  they learn; **"IPA: whole chart"** has every card. The two are one
-  course and share progress.
+  and `core` for the symbols every learner needs. The course is the whole
+  chart, one entry in the list of languages; the tags are there for a learner
+  to focus on the symbols of their languages. (A second course, "IPA: my
+  languages", cut by these tags, was dropped on 2026-10-23, #735: its
+  learners keep their progress, which is keyed by card.)
 - **Order.** Symbols learners mix up are adjacent in a deck: ɒ and ɔ, ʈ and
   t̪, ɪ and i, ɾ and r.
 - **Answers.** A card's production is chosen, never typed (`typed: false`).
@@ -2304,6 +2391,7 @@ units:
 | `alphabet` | no | The core ids of the decks that need the alphabet: the script, spelling and reading decks. Each must be on the path. A learner who learns the language without its alphabet is not taught them. |
 | `regions` | no | The language's regions ([Regions](#regions)). |
 | `genders` | no | The language's gender classes, such as `["m", "f"]`, or `[]` for a language without gender: what a noun's `gender` may be ([Gender](#gender)). |
+| `levels` | no | The words per level, such as `{ A1: 120, A2: 60, B1: 80 }`, in place of the default sizes ([The sizes](#the-b1-plan), [ADR-0045](ADR-0045-Path-Level-Sizes)). |
 | `description` | no | Free text. |
 
 **A deck's core id** is `<lang>-<name>`: a core's own id, a layer's core
@@ -2441,7 +2529,7 @@ A unit is a list of core ids, as before, or a mapping:
 |---|---|
 | `decks` | A written unit's core ids, as the list form, wildcard and all. |
 | `planned` | A unit not written yet: `{ id, theme, words }` for a theme unit, `{ id, grammar, words? }` for a grammar unit. `id` is the core id its decks will have (`te-health`; each course's deck for it is then `te-en-health`, `te-bn-health`, …), which must not exist yet: no core of that id, and no deck `te-<native>-health` in any course. When the first of them is written, the unit turns into `decks` in the same change; the courses still without a deck for it see it as "Coming". |
-| `words` | The unit's planned size in words, a whole number: 0 or more on a written unit (a unit of grammar or reading decks gives 0), 1 or more on a planned theme unit. One size for every native language. On a planned unit, inside `planned` or beside it, not both. |
+| `words` | The unit's planned size in words, a whole number, 0 or more: a unit of grammar or reading decks gives 0, and so does a planned theme unit with no new roots. One size for every native language. On a planned unit, inside `planned` or beside it, not both. |
 | `grammar` | The grammar topics it teaches, below: a list, or one as text. On a planned unit, inside `planned` or beside it, not both. |
 | `milestone` | `"A1"`, `"A2"` or `"B1"`, on the unit where that level ends. A unit of `"*"` alone carries none. |
 | `listening_passages`, `reading_passages` | The unit's listening and reading passages, each `{ id, text }`. **Both are required on every planned unit.** A written unit's passages are its [reading decks](#reading-decks), and it need not list them. |
@@ -2513,6 +2601,17 @@ milestones are already there.
   its size, of planned words up to B1 outside 2,000–3,500, of a written unit
   with more words than it plans for learners from some native language
   (raise `words`), and of a planned theme not yet in `decks/themes.yaml`.
+- **A path's own sizes:** `levels: { A1: 120, A2: 60, B1: 80 }` gives the
+  words per level, A1 and then A2 and B1 each in addition, and replaces the
+  sizes above for that path
+  ([ADR-0045](ADR-0045-Path-Level-Sizes)). All three levels are given, each
+  a whole number of 1 or more. The level warnings and the info line use
+  them, and the planned words up to B1 are held to half to one and a half
+  times their sum. The app counts toward that sum. A path without `levels`
+  keeps the defaults. **Roots only:** a compound of several words is written
+  `pos: "phrase"` and counts toward no level. A released app refuses a path
+  with an unknown key, so a path first sets `levels` one release after the
+  app that reads it.
 
 ### Regions
 
@@ -2779,7 +2878,7 @@ downloads is listed in `decks/index.json`:
 **You do not write the index.** A workflow (`deck-index.yml`) runs
 `python3 tools/deck_index.py` on main after each merge that touches `decks/`
 and commits the result (owner, 2026-10-23), so a pull request is not failed
-for a stale index. The validator still checks it when run locally. A phone
+for a stale index: the validate job and the tools' test that validates the real decks set `FLUENOUGH_SKIP_INDEX_CHECK`. The validator still checks it when run locally. A phone
 checks each file against its hash and refuses one that does not match.
 
 What a learner downloads for a language: its own files (path, facts,

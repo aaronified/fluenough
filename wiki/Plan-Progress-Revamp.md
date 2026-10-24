@@ -17,7 +17,7 @@ Written 2026-10-20. Issue #678.
 ## What exists
 
 - **Progress** (`stats_page.dart`) shows test results per language, and
-  hours spent and left (`hours-per-language.md`).
+  hours spent and left ([Progress and Stats](Progress-and-Stats)).
 - **The review log** holds every answer, with its card, kind and skill.
   The scores below are computed from it.
 - **Read/Write credit per script** (#656, #677).
@@ -63,6 +63,10 @@ Decided in #575 (owner, 2026-10-18), reused here:
 - **Line chart score**: known ÷ taught.
 - **Mockup first, by Sonnet** ("Sonnet mockup"), following
   `docs/mockups/README.md`.
+
+## Built (2026-10-23)
+
+Built as the approved mockup (#678): see [Progress and stats](Progress-and-Stats). Known is as #680 decides (the last review right and FSRS recall at least 85% at that review), not the 90% of #575. The star's outline (known ÷ taught) and the charts behind it replace the single line chart; there is no separate area chart.
 
 ## Order
 

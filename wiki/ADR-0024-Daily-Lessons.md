@@ -6,7 +6,10 @@ Source of truth: this wiki page.
 - **Status:** Accepted. Amends ADR-0010 (phrases are produced, by
   rearranging), ADR-0013 (the pending units feed lessons) and ADR-0019 (no
   daily cap for a passage to pass). Amended by ADR-0034: how listening is
-  asked, and what a right choice records.
+  asked, and what a right choice records. Amended by
+  [ADR-0046](ADR-0046-Lessons-Take-The-Next-Eligible-Items): a lesson has no
+  fixed quota of each difficulty, and a sentence waits for its words and
+  rules.
 - **Date:** 2026-10-04
 
 ## Context
@@ -47,8 +50,9 @@ speaking. Phrases were never produced (ADR-0010).
   - **Difficulty by the word:** hard is a phrase, a sentence of three or more
     words, or a grammar cell; medium is two words, or one of seven letters
     or more, counted in the reading where there is one; easy is the rest.
-  - **Difficulty by the exercise:** each item is taught (word, reading,
-    meaning, played aloud), then checked at once: an easy one by choosing
+  - **Difficulty by the exercise:** each item is taught on the one-screen
+    teach card (#691: word, reading, IPA, meaning, played aloud; a swipe or
+    a chevron goes on), then checked at once: an easy one by choosing
     its meaning; a medium one by hearing it and choosing it, or without a
     voice by choosing the word; a hard one by typing it, or by rearranging
     it when it has three words or more, or is a phrase of two.

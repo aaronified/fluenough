@@ -1,0 +1,72 @@
+schema: 1
+id: "es-en-reading-numbers-1-20"
+name: "Reading: room numbers"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts with numbers from zero to twenty: a counting exercise and a row of hotel rooms. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-counting-aloud"
+    title: "Counting aloud"
+    theme: "numbers-1-20"
+    sentences:
+      - text: "Uno, dos, tres, cuatro, cinco."
+      - text: "Seis, siete, ocho, nueve, diez."
+      - text: "Once, doce, trece, catorce, quince."
+      - text: "Dieciséis, diecisiete, dieciocho, diecinueve, veinte."
+    questions:
+      - id: "es-0235"
+        prompt: { en: "Which number comes after nine?" }
+        options:
+          - { en: "Eight" }
+          - { en: "Ten" }
+          - { en: "Eleven" }
+        answer: 2
+      - id: "es-0236"
+        prompt: { en: "Which number is between twelve and fourteen?" }
+        options:
+          - { en: "Eleven" }
+          - { en: "Thirteen" }
+          - { en: "Fifteen" }
+        answer: 2
+      - id: "es-0237"
+        prompt: { en: "What is the last number the speaker counts?" }
+        options:
+          - { en: "Twenty" }
+          - { en: "Ten" }
+          - { en: "Fifteen" }
+        answer: 1
+  - id: "es-room-numbers"
+    title: "Room numbers"
+    theme: "numbers-1-20"
+    sentences:
+      - text: "La habitación uno es la cocina."
+      - text: "La habitación dos es mi cuarto."
+      - text: "La habitación tres es el baño."
+      - text: "La habitación doce está al final del pasillo."
+      - text: "La habitación catorce no tiene ventana."
+    questions:
+      - id: "es-0238"
+        prompt: { en: "Which room is the kitchen?" }
+        options:
+          - { en: "Room one" }
+          - { en: "Room two" }
+          - { en: "Room three" }
+        answer: 1
+      - id: "es-0239"
+        prompt: { en: "Which room is at the end of the hall?" }
+        options:
+          - { en: "Room twelve" }
+          - { en: "Room fourteen" }
+          - { en: "Room twenty" }
+        answer: 1
+      - id: "es-0240"
+        prompt: { en: "Which room has no window?" }
+        options:
+          - { en: "Room two" }
+          - { en: "Room fourteen" }
+          - { en: "Room one" }
+        answer: 2

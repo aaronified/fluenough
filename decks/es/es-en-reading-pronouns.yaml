@@ -1,0 +1,73 @@
+schema: 1
+id: "es-en-reading-pronouns"
+name: "Reading: who is who"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about who is who, with the pronouns of the Pronouns and people words unit. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-who-is-who"
+    title: "Who is who"
+    theme: "pronouns"
+    sentences:
+      - text: "Él es mi tío."
+      - text: "Ella es mi prima."
+      - text: "Ellas son mis hermanas."
+      - text: "Ellos son los amigos de mi padre."
+      - text: "Nosotros vivimos aquí."
+    questions:
+      - id: "es-0152"
+        prompt: { en: "Who is the speaker's cousin?" }
+        options:
+          - { en: "He" }
+          - { en: "She" }
+          - { en: "They" }
+        answer: 2
+      - id: "es-0153"
+        prompt: { en: "Who are the speaker's sisters?" }
+        options:
+          - { en: "He" }
+          - { en: "She" }
+          - { en: "They (all women)" }
+        answer: 3
+      - id: "es-0154"
+        prompt: { en: "Who does 'nosotros' refer to?" }
+        options:
+          - { en: "The speaker and others" }
+          - { en: "Only the speaker" }
+          - { en: "One other person" }
+        answer: 1
+  - id: "es-seating-chart"
+    title: "Seating chart"
+    theme: "pronouns"
+    sentences:
+      - text: "Ana está al lado de Pedro."
+      - text: "Ellos están en la mesa dos."
+      - text: "Luis y yo estamos en la mesa tres."
+      - text: "La chica de la ventana es Sara."
+      - text: "Nadie está en la mesa cinco."
+    questions:
+      - id: "es-0155"
+        prompt: { en: "Who is next to Pedro?" }
+        options:
+          - { en: "Ana" }
+          - { en: "Luis" }
+          - { en: "Sara" }
+        answer: 1
+      - id: "es-0156"
+        prompt: { en: "Which table is the speaker at?" }
+        options:
+          - { en: "Table two" }
+          - { en: "Table three" }
+          - { en: "Table five" }
+        answer: 2
+      - id: "es-0157"
+        prompt: { en: "Who is at table five?" }
+        options:
+          - { en: "Nobody" }
+          - { en: "Sara" }
+          - { en: "Pedro" }
+        answer: 1

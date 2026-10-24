@@ -1,11 +1,12 @@
 import '../../app/app_state.dart';
+import '../../app/unlocks.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/session.dart';
 import '../../core/data/course_path.dart' show Milestone, PlanUnit;
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/reading.dart' show QuestionCard;
-import '../../core/numbers/number_practice.dart' show NumberCard;
+import '../../core/progress/unlocks.dart' show isSentenceCard;
 import 'word_mastery.dart';
 
 /// What the Decks tab and a unit's screen read out of a course's path, kept
@@ -198,7 +199,7 @@ enum UnitStatus {
 
 /// Whether [card] is a sentence or a phrase rather than a single word: a
 /// phrase, or anything put in order to produce it (ADR-0024).
-bool isSentence(Card card) => card.pos == 'phrase' || card.rearranges;
+bool isSentence(Card card) => isSentenceCard(card);
 
 /// What a unit teaches, as its screen lists it.
 class UnitContent {
@@ -216,9 +217,10 @@ class UnitContent {
         continue;
       }
       for (final card in entry.cards) {
-        if (card is QuestionCard || card is NumberCard) continue;
+        if (card is QuestionCard || card.practiceOnly) continue;
         if (!seen.add(card.id)) continue;
         (isSentence(card) ? sentences : words).add(card);
+        if (card.phrasebook) phrasebook.add(card);
       }
     }
   }
@@ -231,6 +233,10 @@ class UnitContent {
 
   /// Its sentences and phrases, each once, in order.
   final List<Card> sentences = <Card>[];
+
+  /// Its phrasebook chunks, each once, in order: taught whole and never held
+  /// back. They are also in [words] or [sentences], by their size.
+  final List<Card> phrasebook = <Card>[];
 
   /// Its rules: the grammar and rules decks, each one table (ADR-0010,
   /// ADR-0036).
@@ -460,7 +466,7 @@ CourseView? courseView(
   final units = state.courseUnits(language);
   if (units.isEmpty) return null;
   final thePlan = plan ?? coursePlanOf(state, language);
-  final recent = answers ?? RecentAnswers(state.progress.log);
+  final recent = answers ?? state.recentAnswers;
   final first = units.first.first;
 
   // Each unit's level: the first level whose end is at or after it.

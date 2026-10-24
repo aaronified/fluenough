@@ -1,0 +1,49 @@
+schema: 1
+id: "zh-en-reading-tones"
+name: "Chinese reading: the tones"
+kind: reading
+language: { code: zh, iso639_3: cmn, name: "Mandarin Chinese", script: han_simplified, scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "zh-four-tones"
+    title: "Four tones"
+    theme: "tones"
+    sentences:
+      - text: "妈，麻，马，骂。"
+        reading: "mā, má, mǎ, mà."
+    questions:
+      - id: "zh-0054"
+        prompt: { en: "Which word means 'horse'?" }
+        options:
+          - { en: "妈 (mā)" }
+          - { en: "麻 (má)" }
+          - { en: "马 (mǎ)" }
+          - { en: "骂 (mà)" }
+        answer: 3
+      - id: "zh-0055"
+        prompt: { en: "The word for 'to scold' has the fourth tone." }
+        answer: true
+  - id: "zh-tone-pairs-list"
+    title: "Tone pairs"
+    theme: "tones"
+    sentences:
+      - text: "买，卖。"
+        reading: "mǎi, mài."
+      - text: "八，爸。"
+        reading: "bā, bà."
+      - text: "白，百。"
+        reading: "bái, bǎi."
+    questions:
+      - id: "zh-0056"
+        prompt: { en: "Which word means 'to sell'?" }
+        options:
+          - { en: "买 (mǎi)" }
+          - { en: "卖 (mài)" }
+          - { en: "八 (bā)" }
+        answer: 2
+      - id: "zh-0057"
+        prompt: { en: "买 (mǎi) and 卖 (mài) differ only in their tone." }
+        answer: true

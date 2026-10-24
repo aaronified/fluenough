@@ -39,7 +39,8 @@ class IndexCheck(unittest.TestCase):
         (self.tmp / "tools").mkdir()
         shutil.copy(VALIDATOR, self.tmp / "tools" / "validate_decks.py")
         shutil.copy(INDEXER, self.tmp / "tools" / "deck_index.py")
-        shutil.copy(REPO / "tools" / "rater_codes.py", self.tmp / "tools" / "rater_codes.py")
+        for name in ("rater_codes.py", "offensive_alikes.py", "pick_warning.py"):
+            shutil.copy(REPO / "tools" / name, self.tmp / "tools" / name)
 
         (self.tmp / "decks" / "es").mkdir(parents=True)
         shutil.copy(SAMPLE_DECK, self.tmp / "decks" / "es")
@@ -182,6 +183,41 @@ class IndexCheck(unittest.TestCase):
     def _one_deck_validates_alone_when_its_path_is_on_disk(self) -> None:
         result = self.run_validator("decks/es/es-en-core-100.yaml", self.tmp)
         self.assertEqual(result.returncode, 0, result.stdout)
+
+    def test_a_failing_run_ends_with_every_error_and_a_passing_one_has_none(self) -> None:
+        """CI's log is long and the tail is what can be read, so a failing
+        run repeats each error, cross-file and per-file, in a closing
+        "Errors:" section; a passing run has no such section."""
+        passing = self.run_validator("decks/", self.tmp)
+        self.assertEqual(passing.returncode, 0, passing.stdout + passing.stderr)
+        self.assertNotIn("Errors:", passing.stdout)
+
+        (self.tmp / "decks" / "index.json").unlink()
+        deck = self.tmp / "decks" / "es" / "es-en-core-100.yaml"
+        deck.write_text(
+            deck.read_text(encoding="utf-8").replace("schema: 1", "schema: 9"),
+            encoding="utf-8",
+        )
+        failing = self.run_validator("decks/", self.tmp)
+        self.assertEqual(failing.returncode, 1, failing.stdout)
+        out = failing.stdout
+        head, sep, tail = out.rpartition("\nErrors:\n")
+        self.assertTrue(sep, out)
+        self.assertEqual(out.count("\nErrors:\n"), 1)
+        # The section is the last thing printed and holds only error lines.
+        lines = tail.splitlines()
+        self.assertTrue(lines and all(x.startswith("  error: ") for x in lines), tail)
+        # The cross-file error, as printed above, is repeated.
+        self.assertIn("error: decks/index.json is missing", head)
+        self.assertTrue(any("decks/index.json is missing" in x for x in lines), tail)
+        # Every per-file error is repeated with its file.
+        per_file = [x.strip().removeprefix("error   ") for x in head.splitlines()
+                    if x.startswith("  error   ")]
+        self.assertTrue(per_file, head)
+        for e in per_file:
+            self.assertIn(f"  error: decks/es/es-en-core-100.yaml: {e}", lines)
+        # The deck summary stays where it was, before the section.
+        self.assertIn("decks valid", head)
 
     def test_the_index_check_passes_only_while_the_index_is_current(self) -> None:
         cases = (
@@ -683,6 +719,18 @@ class PatternKeys(Validated):
         self.assertRejected(GRAMMAR + entry("जाना", "jaanaa") + entry("jaanaa"),
                             "already names another row")
 
+    def _the_prompt_is_retired_optional_and_flagged_where_given(self) -> None:
+        given = self.assertValid(GRAMMAR + entry("jaanaa"))
+        self.assertTrue(any("prompt is retired" in w for w in given.warnings),
+                        given.warnings)
+        left_out = self.assertValid(
+            GRAMMAR.replace('  prompt: "{lemma} ({gloss}) — {slot}"\n', "")
+            + entry("jaanaa"))
+        self.assertEqual(left_out.warnings, [])
+        self.assertRejected(
+            GRAMMAR.replace("{lemma} ({gloss}) — {slot}", "{lemma} {nope}")
+            + entry("jaanaa"), "unknown placeholder")
+
     def test_a_lemma_that_cannot_go_into_an_id_needs_a_key(self) -> None:
         cases = (
             self._an_ascii_lemma_needs_no_key,
@@ -690,6 +738,7 @@ class PatternKeys(Validated):
             self._a_devanagari_lemma_needs_a_key,
             self._a_key_must_be_an_id,
             self._two_rows_cannot_share_an_id_part,
+            self._the_prompt_is_retired_optional_and_flagged_where_given,
         )
         for case in cases:
             with self.subTest(case.__name__.lstrip("_")):
@@ -888,6 +937,13 @@ class Transliteration(Validated):
         text = '{ en: "হ্যাঁ (hêm̐) is yes.", hi: "बांग्ला में হ্যাঁ का अर्थ है हाँ।" }'
         self.assertRejected(facts_file(29, fact(30, text=text)), "'হ্যাঁ'")
 
+    def _an_apostrophe_inside_an_assamese_word_is_part_of_it(self) -> None:
+        self.assertValid(vocab_note("ক'লা (kôlā) is black, and ম’হ (môh) a buffalo."))
+        self.assertRejected(vocab_note("ক'লা is black."), "has no transliteration")
+
+    def _a_stray_quote_around_a_word_still_ends_it(self) -> None:
+        self.assertRejected(vocab_note("Say 'ক' (kô) now."), "'ক'")
+
     def _in_the_readers_own_script_is_enough(self) -> None:
         text = '{ en: "হ্যাঁ (hêm̐) is yes.", hi: "बांग्ला में হ্যাঁ (हैं) का अर्थ है हाँ।" }'
         self.assertValid(facts_file(29, fact(30, text=text)))
@@ -906,6 +962,8 @@ class Transliteration(Validated):
             self._a_fact_for_hindi_speakers_is_written_in_devanagari,
             self._another_script_in_it_still_needs_a_reading,
             self._in_the_readers_own_script_is_enough,
+            self._an_apostrophe_inside_an_assamese_word_is_part_of_it,
+            self._a_stray_quote_around_a_word_still_ends_it,
         )
         for case in cases:
             with self.subTest(case.__name__.lstrip("_")):

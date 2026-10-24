@@ -1,0 +1,28 @@
+schema: 1
+id: "zh-en-grammar-svo"
+kind: "layer"
+core: "zh-grammar-svo"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Subject, verb, object"
+license: "CC-BY-SA-4.0"
+description: "I eat fish: the order is as in English, and words like also and often go between the subject and the verb. Not yet checked by a Mandarin speaker: please report any mistake."
+tags: ["unreviewed"]
+"pattern":
+  "name": "Subject, verb, object"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "the plain sentence: subject, verb, object"
+    "also": "with 也 (yě), also"
+    "often": "with 常常 (chángcháng), often"
+    "always": "with 总是 (zǒngshì), always"
+  "entries":
+    "chiyu": "I eat fish"
+    "hecha": "he drinks tea"
+    "kanshu": "she reads"
+    "maishu": "they buy books"
+    "zhaoyaoshi": "I look for my key"
+    "jiaoxuesheng": "the teacher teaches students"
+    "zuofan": "mum cooks"
+    "xiezi": "he writes characters"
+  "notes": "The order is as in English: subject, verb, object. 我吃鱼 (wǒ chī yú) is I eat fish, word for word. The verb never changes for the person or the number. Small words that say how, how often or whether go between the subject and the verb, never at the end: 也 (yě), also; 不 (bù), not; 都 (dōu), all; 常常 (chángcháng), often; 总是 (zǒngshì), always. 我也吃鱼 (wǒ yě chī yú) is I eat fish too, and 我吃鱼也 (wǒ chī yú yě) would be wrong. A word for when or where does not go there: it comes before the verb as well (see the next deck)."

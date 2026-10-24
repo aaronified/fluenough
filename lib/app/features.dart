@@ -24,6 +24,8 @@ enum Feature {
 
   // Today.
   dailyFacts(48),
+  // The Situations card: cheatsheets of key phrases for everyday moments.
+  situations(724),
 
   // The Decks tab's path: newer decks downloaded, hours left in the decks
   // written so far and hours spent, and

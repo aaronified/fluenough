@@ -1,0 +1,79 @@
+schema: 1
+id: "es-everyday-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-0304"
+    target: "Ana desayuna a las siete y luego trabaja."
+    ipa: "ˈana desaˈʝuna a las ˈsjete i ˈlweɡo tɾaˈbaxa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Ana", base: "Ana" }, { word: "desayuna", ref: "es-0282" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "siete", ref: "es-0211" }, { word: "y", ref: "es-0048" }, { word: "luego", base: "luego" }, { word: "trabaja", ref: "es-0259" }]
+    confusables: [{ id: "eat", ref: "es-0028", kind: "word" }, { id: "drink", ref: "es-0029", kind: "word" }]
+  - id: "es-0305"
+    target: "Yo como en casa y bebo agua."
+    ipa: "ʝo ˈkomo en ˈkasa i ˈbebo ˈaɡwa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Yo", ref: "es-0119" }, { word: "como", ref: "es-0028" }, { word: "en", base: "en" }, { word: "casa", base: "casa" }, { word: "y", ref: "es-0048" }, { word: "bebo", ref: "es-0029" }, { word: "agua", base: "agua" }]
+    confusables: [{ id: "have-dinner", ref: "es-0283", kind: "word" }, { id: "cook", ref: "es-0284", kind: "word" }]
+  - id: "es-0306"
+    target: "Los niños leen un libro por la noche."
+    ipa: "los ˈniɲos ˈleen un ˈlibɾo poɾ la ˈnotʃe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Los", base: "los" }, { word: "niños", base: "niño" }, { word: "leen", ref: "es-0296" }, { word: "un", base: "un" }, { word: "libro", base: "libro" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "noche", base: "noche" }]
+    confusables: [{ id: "write", ref: "es-0297", kind: "word" }, { id: "learn", ref: "es-0299", kind: "word" }]
+  - id: "es-0307"
+    target: "Mi hermana escribe cartas a sus amigos."
+    ipa: "mi eɾˈmana esˈkɾibe ˈkaɾtas a sus aˈmiɡos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", base: "hermana" }, { word: "escribe", ref: "es-0297" }, { word: "cartas", base: "carta" }, { word: "a", base: "a" }, { word: "sus", base: "su" }, { word: "amigos", base: "amigo" }]
+    confusables: [{ id: "read", ref: "es-0296", kind: "word" }, { id: "receive", ref: "es-0301", kind: "word" }]
+  - id: "es-0308"
+    target: "¿Puedo usar tu teléfono?"
+    ipa: "ˈpwedo uˈsaɾ tu teˈlefono"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Puedo", base: "poder" }, { word: "usar", ref: "es-0287" }, { word: "tu", ref: "es-0130" }, { word: "teléfono", base: "teléfono" }]
+    confusables: [{ id: "call", ref: "es-0302", kind: "word" }, { id: "arrive", ref: "es-0290", kind: "word" }]
+  - id: "es-0309"
+    target: "Necesito ayuda para limpiar la casa."
+    ipa: "neθeˈsito aˈʝuda ˈpaɾa limˈpjaɾ la ˈkasa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Necesito", ref: "es-0288" }, { word: "ayuda", ref: "es-0303" }, { word: "para", base: "para" }, { word: "limpiar", ref: "es-0285" }, { word: "la", base: "la" }, { word: "casa", base: "casa" }]
+    confusables: [{ id: "wash", ref: "es-0286", kind: "word" }, { id: "buy", ref: "es-0280", kind: "word" }]
+  - id: "es-0310"
+    target: "Mi madre compra pan cada mañana."
+    ipa: "mi ˈmadɾe ˈkompɾa pan ˈkada maˈɲana"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "madre", base: "madre" }, { word: "compra", ref: "es-0280" }, { word: "pan", base: "pan" }, { word: "cada", base: "cada" }, { word: "mañana", ref: "es-0841" }]
+    confusables: [{ id: "pay", ref: "es-0295", kind: "word" }, { id: "look-for", ref: "es-0289", kind: "word" }]
+  - id: "es-0311"
+    target: "Mi tío cocina los domingos."
+    ipa: "mi ˈtio koˈθina los doˈminɡos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "tío", base: "tío" }, { word: "cocina", ref: "es-0284" }, { word: "los", base: "los" }, { word: "domingos", base: "domingo" }]
+    confusables: [{ id: "have-dinner", ref: "es-0283", kind: "word" }, { id: "prepare", ref: "es-0293", kind: "word" }]
+  - id: "es-0312"
+    target: "Voy a llegar tarde a clase."
+    ipa: "boj a ʝeˈɡaɾ ˈtaɾde a ˈklase"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Voy", ref: "es-0026" }, { word: "a", base: "a" }, { word: "llegar", ref: "es-0290" }, { word: "tarde", base: "tarde" }, { word: "clase", base: "clase" }]
+    confusables: [{ id: "look-at", ref: "es-0292", kind: "word" }, { id: "listen", ref: "es-0291", kind: "word" }]
+  - id: "es-0313"
+    target: "Me gusta bailar y cantar con mis amigos."
+    ipa: "me ˈɡusta bajˈlaɾ i kanˈtaɾ kon mis aˈmiɡos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Me", base: "me" }, { word: "gusta", base: "gustar" }, { word: "bailar", ref: "es-0294" }, { word: "y", ref: "es-0048" }, { word: "cantar", base: "cantar" }, { word: "con", base: "con" }, { word: "mis", base: "mi" }, { word: "amigos", base: "amigo" }]
+    confusables: [{ id: "learn", ref: "es-0299", kind: "word" }, { id: "pay", ref: "es-0295", kind: "word" }]
