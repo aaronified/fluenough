@@ -1,10 +1,14 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../../core/decks/language_catalog.dart';
+import '../../core/decks/language_resources.dart';
 import '../../core/scheduling/placed_review.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/snack.dart' show openLink;
 import '../profiles/spoken_languages_picker.dart' show PickerHeading;
 import 'course_line.dart';
 import 'language_card.dart' show NativeChoiceField;
@@ -133,6 +137,9 @@ class LanguageSheet extends StatefulWidget {
     this.scriptPassed = false,
     this.placedReview,
     this.onPlacedReview,
+    this.resources,
+    this.hiddenResources = const <String>{},
+    this.onHideResource,
   });
 
   final CatalogLanguage language;
@@ -205,6 +212,18 @@ class LanguageSheet extends StatefulWidget {
   /// Called at once with a choice made in the Placed words sheet.
   final ValueChanged<PlacedReview>? onPlacedReview;
 
+  /// Where else to learn the language (#832), when they arrive: up to three,
+  /// shown in a card above the course. Null, or none, shows nothing.
+  final Future<List<LanguageResource>>? resources;
+
+  /// The ids of the resources the learner hid for good.
+  final Set<String> hiddenResources;
+
+  /// Called with the id of a resource the learner hides. Only a language
+  /// already learned offers the button, as only Languages I'm learning
+  /// does (owner, 2026-10-24).
+  final ValueChanged<String>? onHideResource;
+
   @override
   State<LanguageSheet> createState() => _LanguageSheetState();
 }
@@ -222,6 +241,20 @@ class _LanguageSheetState extends State<LanguageSheet> {
   late String? _native = widget.native;
   late bool _passed = widget.scriptPassed;
   late PlacedReview? _placedReview = widget.placedReview;
+  List<LanguageResource> _resources = const <LanguageResource>[];
+  late final Set<String> _hidden = <String>{...widget.hiddenResources};
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.resources case final found?) {
+      unawaited(
+        found.then((resources) {
+          if (mounted) setState(() => _resources = resources);
+        }),
+      );
+    }
+  }
 
   bool get _hasScripts => widget.scripts.isNotEmpty;
 
@@ -405,6 +438,7 @@ class _LanguageSheetState extends State<LanguageSheet> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
+        _resourcesCard(context),
         if (widget.learned && widget.hasPlacement) ...<Widget>[
           PickerHeading(l10n.pickerSectionLevel),
           _Block(
@@ -515,6 +549,75 @@ class _LanguageSheetState extends State<LanguageSheet> {
             ),
           ),
       ],
+    );
+  }
+
+  /// Where else to learn the language (#832): one card above the course,
+  /// with a line and a button for each resource, up to three. The learner
+  /// of a language already learned can hide one for good.
+  Widget _resourcesCard(BuildContext context) {
+    final shown = <LanguageResource>[
+      for (final r in _resources)
+        if (!_hidden.contains(r.id)) r,
+    ];
+    if (shown.isEmpty) return const SizedBox.shrink();
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    return _Block(
+      key: const ValueKey<String>('sheet-resources'),
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: scheme.surfaceContainerHigh,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: scheme.outlineVariant),
+        ),
+        child: Padding(
+          padding: const EdgeInsetsDirectional.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Semantics(
+                header: true,
+                child: Text(
+                  l10n.resourceTitle(widget.language.name),
+                  style: theme.textTheme.titleMedium,
+                ),
+              ),
+              for (final r in shown) ...<Widget>[
+                const SizedBox(height: 8),
+                Text(r.why, style: theme.textTheme.bodyMedium),
+                const SizedBox(height: 8),
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 4,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: <Widget>[
+                    FilledButton.tonal(
+                      key: ValueKey<String>('sheet-resource-${r.id}'),
+                      onPressed: () => openLink(
+                        context,
+                        r.url,
+                        copied: l10n.resourceLinkCopied,
+                      ),
+                      child: Text(l10n.resourceVisit(r.name)),
+                    ),
+                    if (widget.learned && widget.onHideResource != null)
+                      TextButton(
+                        key: ValueKey<String>('sheet-resource-hide-${r.id}'),
+                        onPressed: () {
+                          setState(() => _hidden.add(r.id));
+                          widget.onHideResource!(r.id);
+                        },
+                        child: Text(l10n.resourceHide),
+                      ),
+                  ],
+                ),
+              ],
+            ],
+          ),
+        ),
+      ),
     );
   }
 

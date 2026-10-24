@@ -22,6 +22,7 @@ import hashlib
 import json
 from dataclasses import dataclass, field
 from pathlib import Path
+from urllib.parse import urlparse
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -85,7 +86,7 @@ SCRIPT_BLOCKS = {
     "latin": ((0x0041, 0x024F), (0x1E00, 0x1EFF)),
 }
 KINDS = {"vocab", "grammar", "facts", "themes", "numbers", "path", "sounds", "script",
-         "reading", "rules", "layer"}
+         "reading", "rules", "layer", "resources"}
 THEMES_KEYS = {"schema", "kind", "description", "themes"}
 # A language's path (ADR-0013), one per language learnt (ADR-0036).
 PATH_KEYS = {"schema", "kind", "id", "language", "description", "units", "alphabet",
@@ -124,7 +125,15 @@ FEATURE_KEYS = {"id", "name", "term", "reading", "ipa", "example", "text",
 # the text a learner reads.
 GUIDE_KINDS = ("script", "sounds")
 # Kinds of file that are not a written deck (as tools/deck_index.py NOT_DECKS).
-NOT_DECK_KINDS = {"path", "facts", "numbers", "romanisation", "sounds", "script"}
+NOT_DECK_KINDS = {"path", "facts", "numbers", "romanisation", "sounds", "script",
+                  "resources"}
+# A language's resources file (#832): where else to learn it. At most this
+# many suggestions, a line of at most this many characters each.
+RESOURCES_KEYS = {"schema", "kind", "id", "language", "resources"}
+RESOURCE_KEYS = {"id", "name", "url", "kind", "why"}
+RESOURCE_KINDS = {"app", "game", "site", "book", "film", "music"}
+MAX_RESOURCES = 3
+MAX_RESOURCE_WHY = 160
 GUIDE_LAYER_KEYS = {
     "script": {"schema", "id", "kind", "core", "native", "name", "intro", "features"},
     "sounds": {"schema", "id", "kind", "core", "native", "description", "contrasts"},
@@ -279,7 +288,8 @@ NUMBERED_RE = re.compile(r"\{([0-9]+)\}")
 # The files beside the decks, whose names a core cannot take.
 RESERVED_CORES = {"facts": "facts file", "numbers": "number rules",
                   "romanisation": "romanisation file", "script": "script guide",
-                  "sounds": "sounds file", "path": "path"}
+                  "sounds": "sounds file", "path": "path",
+                  "resources": "resources file"}
 UNIT_KEYS = {"decks", "planned", "words", "grammar", "milestone",
              "listening_passages", "reading_passages"}
 PLANNED_KEYS = {"id", "theme", "grammar", "words"}
@@ -2017,6 +2027,64 @@ def check_romanisation_file(r: Report, raw: dict, path: Path) -> None:
                 seen[spelling] = i
 
 
+def check_resources_file(r: Report, raw: dict, path: Path) -> None:
+    """decks/<lang>/<lang>-resources.yaml: where else to learn the language,
+    up to three suggestions the app shows in the language's sheet (#832)."""
+    for unknown in sorted(set(raw) - RESOURCES_KEYS, key=str):
+        r.error("root", f"unknown field {unknown!r}")
+    schema = raw.get("schema")
+    if isinstance(schema, bool) or schema != SCHEMA:
+        r.error("schema", f"must be {SCHEMA}, got {schema!r}")
+    lang = raw.get("language")
+    if not _is_str(lang) or not CODE_RE.fullmatch(lang):
+        r.error("language", f"must be a language code, {_code_error(lang)}")
+        lang = None
+    elif path.stem != f"{lang}-resources" or raw.get("id") != path.stem:
+        r.error("id", f"a resources file is {lang}-resources.yaml with id "
+                      f"{lang}-resources")
+    items = raw.get("resources")
+    if not isinstance(items, list) or not items:
+        r.error("resources", "must be a non-empty list")
+        return
+    if len(items) > MAX_RESOURCES:
+        r.error("resources", f"at most {MAX_RESOURCES} resources a language, "
+                             f"got {len(items)}")
+    seen: set[str] = set()
+    for i, item in enumerate(items):
+        where = f"resources[{i}]"
+        if not isinstance(item, dict):
+            r.error(where, "must be a mapping")
+            continue
+        for unknown in sorted(set(item) - RESOURCE_KEYS, key=str):
+            r.error(where, f"unknown field {unknown!r}")
+        rid = item.get("id")
+        if not _is_str(rid) or not re.fullmatch(
+                r"[a-z]{2,3}-res-[a-z0-9]+(?:-[a-z0-9]+)*", rid):
+            r.error(where, f"id must be the language, -res- and a name, as "
+                           f"{lang or 'xx'}-res-wagotabi, got {rid!r}")
+        elif lang is not None and not rid.startswith(f"{lang}-res-"):
+            r.error(where, f"id {rid!r} must start with {lang}-res-")
+        elif rid in seen:
+            r.error(where, f"id {rid!r} is used twice")
+        else:
+            seen.add(rid)
+        for key in ("name", "why"):
+            if not _is_str(item.get(key)) or not item[key].strip():
+                r.error(where, f"{key} is required text, got {item.get(key)!r}")
+        why = item.get("why")
+        if _is_str(why) and len(why) > MAX_RESOURCE_WHY:
+            r.error(where, f"why is {len(why)} characters; keep it to "
+                           f"{MAX_RESOURCE_WHY}, two or three short lines")
+        kind = item.get("kind")
+        if kind not in RESOURCE_KINDS:
+            r.error(where, f"kind must be one of {sorted(RESOURCE_KINDS)}, "
+                           f"got {kind!r}")
+        url = item.get("url")
+        parsed = urlparse(url) if _is_str(url) else None
+        if parsed is None or parsed.scheme != "https" or not parsed.netloc:
+            r.error(where, f"url must be an https address, got {url!r}")
+
+
 def _code_error(value: object) -> str:
     if isinstance(value, bool):
         return (f"got the boolean {value!r} -- YAML read a bare true or false "
@@ -2340,6 +2408,9 @@ def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
         return r
     if raw.get("kind") == "romanisation":
         check_romanisation_file(r, raw, path)
+        return r
+    if raw.get("kind") == "resources":
+        check_resources_file(r, raw, path)
         return r
     check_romanised(r, raw, path)
     check_ipa(r, raw)

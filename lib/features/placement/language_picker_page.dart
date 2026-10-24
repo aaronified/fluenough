@@ -329,6 +329,9 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
             : null,
         onPlacedReview: (choice) =>
             state.settings.setPlacedReview(code, choice),
+        resources: downloads?.resourcesFor(code),
+        hiddenResources: state.settings.hiddenResources,
+        onHideResource: state.settings.hideResource,
         scripts: scripts,
         initialScripts: _scriptsFor(state, language),
         storage: size == null
