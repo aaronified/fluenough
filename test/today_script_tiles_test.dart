@@ -95,25 +95,22 @@ void main() {
         script.items.every((i) => ScriptSplit.modes.contains(i.mode)),
         isTrue,
       );
+      // A word skill's review holds the words, never the script decks'.
+      for (final skill in <Skill>[Skill.recognition, Skill.production]) {
+        final ids = idsOf(
+          state,
+          DrillRequest(skill: skill, script: ScriptScope.without),
+        );
+        expect(ids, isNotEmpty, reason: skill.name);
+        expect(ids.every((id) => id.startsWith('hi-en-words-')), isTrue);
+      }
       expect(
         idsOf(
           state,
-          const DrillRequest(
-            skill: Skill.recognition,
-            script: ScriptScope.without,
-          ),
+          const DrillRequest(skill: Skill.recognition, script: ScriptScope.any),
         ),
-        <String>{'hi-en-words-0001'},
-      );
-      expect(
-        idsOf(
-          state,
-          const DrillRequest(
-            skill: Skill.production,
-            script: ScriptScope.without,
-          ),
-        ),
-        <String>{'hi-en-words-0002'},
+        contains('hi-en-letters-0001'),
+        reason: 'without the split the script deck is in Recognition',
       );
       expect(
         TodayNumbers.of(state).script!.due,
