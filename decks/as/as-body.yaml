@@ -56,7 +56,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "মুখত ভাত আছে।", reading: "mukhôt bhāt āse.", ipa: "mukʰɔt bʱat ase", bases: [{"word": "মুখত", "base": "মুখ", "reading": "mukh"}, {"word": "আছে", "base": "আছ", "reading": "ās"}] }
-      - { target: "মুখটো ডাঙৰ।", reading: "mukhôtu dāṅôr.", ipa: "mukʰɔtʊ daŋɔɹ", bases: [] }
+      - { target: "মুখটো ডাঙৰ।", reading: "mukhôtu dāṅôr.", ipa: "mukʰɔtʊ daŋɔɹ", bases: [{"word": "মুখটো", "base": "মুখ", "reading": "mukh"}] }
   - id: "as-2371"
     target: "দাঁত"
     reading: "dām̐t"
@@ -86,7 +86,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "ওঁঠটো নৰম।", reading: "um̐thôtu nôrôm.", ipa: "ʊ̃tʰɔtʊ nɔɹɔm", bases: [{"word": "ওঁঠটো", "base": "ওঁঠ", "reading": "um̐th"}] }
-      - { target: "মোৰ ওঁঠ শুকান।", reading: "mur um̐th xukān.", ipa: "mʊɹ ʊ̃tʰ xukan", bases: [] }
+      - { target: "মোৰ ওঁঠ শুকান।", reading: "mur um̐th xukān.", ipa: "mʊɹ ʊ̃tʰ xukan", bases: [{"word": "শুকান", "base": "শুকান", "reading": "xukān"}] }
   - id: "as-2374"
     target: "চুলি"
     reading: "suli"
@@ -95,8 +95,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "মোৰ চুলি ডাঙৰ।", reading: "mur suli dāṅôr.", ipa: "mʊɹ suli daŋɔɹ", bases: [] }
-      - { target: "তেওঁৰ চুলি সৰু।", reading: "teum̐r suli soru.", ipa: "teʊ̃ɹ suli soɹu", bases: [{"word": "তেওঁৰ", "ref": "as-2181"}] }
+      - { target: "মোৰ চুলি নৰম।", reading: "mur suli nôrôm.", ipa: "mʊɹ suli nɔɹɔm", bases: [] }
+      - { target: "তেওঁৰ চুলি ভাল।", reading: "teum̐r suli bhāl.", ipa: "teʊ̃ɹ suli bʱal", bases: [{"word": "তেওঁৰ", "ref": "as-2181"}] }
   - id: "as-2375"
     target: "ডিঙি"
     reading: "diṅi"
@@ -105,7 +105,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "ডিঙিটো ডাঙৰ।", reading: "diṅitu dāṅôr.", ipa: "diŋitʊ daŋɔɹ", bases: [{"word": "ডিঙিটো", "base": "ডিঙি", "reading": "diṅi"}] }
+      - { target: "ডিঙিটো সৰু।", reading: "diṅitu soru.", ipa: "diŋitʊ soɹu", bases: [{"word": "ডিঙিটো", "base": "ডিঙি", "reading": "diṅi"}] }
       - { target: "ডিঙিটো নৰম।", reading: "diṅitu nôrôm.", ipa: "diŋitʊ nɔɹɔm", bases: [{"word": "ডিঙিটো", "base": "ডিঙি", "reading": "diṅi"}] }
   - id: "as-2376"
     target: "কান্ধ"
@@ -196,7 +196,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "মোৰ হৃদয় ভাল।", reading: "mur hridôy bhāl.", ipa: "mʊɹ hridɔj bʱal", bases: [] }
-      - { target: "হৃদয়টো ডাঙৰ।", reading: "hridôyôtu dāṅôr.", ipa: "hridɔjɔtʊ daŋɔɹ", bases: [] }
+      - { target: "হৃদয়টো ডাঙৰ।", reading: "hridôyôtu dāṅôr.", ipa: "hridɔjɔtʊ daŋɔɹ", bases: [{"word": "হৃদয়টো", "base": "হৃদয়", "reading": "hridôy"}] }
   - id: "as-2385"
     target: "মগজ"
     reading: "môgôz"
@@ -215,7 +215,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
     examples:
-      - { target: "ৰক্ত ৰঙা।", reading: "rôkt rôṅā.", ipa: "ɹɔkt ɹɔŋa", bases: [] }
+      - { target: "ৰক্ত ৰঙা।", reading: "rôkt rôṅā.", ipa: "ɹɔkt ɹɔŋa", bases: [{"word": "ৰঙা", "base": "ৰঙা", "reading": "rôṅā"}] }
       - { target: "ৰক্ত গৰম।", reading: "rôkt gôrôm.", ipa: "ɹɔkt ɡɔɹɔm", bases: [] }
   - id: "as-2387"
     target: "হাড়"

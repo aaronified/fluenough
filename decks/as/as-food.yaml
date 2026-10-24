@@ -16,7 +16,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "মই ৰুটি খাওঁ।", reading: "moi ruti khāum̐.", ipa: "moi ɹuti kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
-      - { target: "সি বিহানা ৰুটি খায়।", reading: "si bihānā ruti khāy.", ipa: "si bihana ɹuti kʰaj", bases: [{"word": "খায়", "ref": "as-0109"}] }
+      - { target: "সি বিহানা ৰুটি খায়।", reading: "si bihānā ruti khāy.", ipa: "si bihana ɹuti kʰaj", bases: [{"word": "বিহানা", "base": "বিহানা", "reading": "bihānā"}, {"word": "খায়", "ref": "as-0109"}] }
   - id: "as-2315"
     target: "দৈ"
     reading: "dôi"
@@ -147,16 +147,7 @@ cards:
     examples:
       - { target: "মই নাৰিকল খাওঁ।", reading: "moi nārikôl khāum̐.", ipa: "moi naɹikɔl kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
       - { target: "নাৰিকলৰ পানী ভাল।", reading: "nārikôlôr pāni bhāl.", ipa: "naɹikɔlɔɹ pani bʱal", bases: [{"word": "নাৰিকলৰ", "base": "নাৰিকল", "reading": "nārikôl"}] }
-  - id: "as-2328"
-    target: "ডিম"
-    reading: "dim"
-    ipa: "dim"
-    pos: "noun"
-    notes:
-      - { id: "n1", kind: "usage" }
-    examples:
-      - { target: "মই ডিম খাওঁ।", reading: "moi dim khāum̐.", ipa: "moi dim kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
-      - { target: "সি ডিম খায়।", reading: "si dim khāy.", ipa: "si dim kʰaj", bases: [{"word": "খায়", "ref": "as-0109"}] }
+  - ref: "as-0291"
   - id: "as-2329"
     target: "বেঙেনা"
     reading: "beṅenā"
@@ -187,16 +178,7 @@ cards:
     examples:
       - { target: "মই গাজৰ খাওঁ।", reading: "moi gāzôr khāum̐.", ipa: "moi ɡazɔɹ kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
       - { target: "গাজৰ মিঠা।", reading: "gāzôr mithā.", ipa: "ɡazɔɹ mitʰa", bases: [] }
-  - id: "as-2332"
-    target: "পিয়াজ"
-    reading: "piyāz"
-    ipa: "pijaz"
-    pos: "noun"
-    notes:
-      - { id: "n1", kind: "usage" }
-    examples:
-      - { target: "মই পিয়াজ খাওঁ।", reading: "moi piyāz khāum̐.", ipa: "moi pijaz kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
-      - { target: "পিয়াজ ঝাল।", reading: "piyāz zāl.", ipa: "pijaz zal", bases: [] }
+  - ref: "as-0282"
   - id: "as-2333"
     target: "ৰসুন"
     reading: "rosun"
@@ -206,7 +188,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "মই ৰসুন খাওঁ।", reading: "moi rosun khāum̐.", ipa: "moi ɹosun kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
-      - { target: "ৰসুন ঝাল।", reading: "rosun zāl.", ipa: "ɹosun zal", bases: [] }
+      - { target: "ৰসুন ঝাল।", reading: "rosun zāl.", ipa: "ɹosun zal", bases: [{"word": "ঝাল", "base": "ঝাল", "reading": "zāl"}] }
   - id: "as-2334"
     target: "হালধি"
     reading: "hālodhi"
@@ -226,7 +208,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "মই মৰিচ খাওঁ।", reading: "moi moris khāum̐.", ipa: "moi moɹis kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
-      - { target: "মৰিচ বৰ ঝাল।", reading: "moris bôr zāl.", ipa: "moɹis bɔɹ zal", bases: [] }
+      - { target: "মৰিচ বৰ ঝাল।", reading: "moris bôr zāl.", ipa: "moɹis bɔɹ zal", bases: [{"word": "ঝাল", "base": "ঝাল", "reading": "zāl"}] }
   - id: "as-2336"
     target: "ভুটা"
     reading: "bhutā"
@@ -286,7 +268,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "মই মুৰি খাওঁ।", reading: "moi muri khāum̐.", ipa: "moi muɹi kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
-      - { target: "মুৰি হালকা।", reading: "muri hālôkā.", ipa: "muɹi halɔka", bases: [] }
+      - { target: "মুৰি হালকা।", reading: "muri hālôkā.", ipa: "muɹi halɔka", bases: [{"word": "হালকা", "base": "হালকা", "reading": "hālôkā"}] }
   - id: "as-2342"
     target: "চিৰা"
     reading: "sirā"
@@ -296,7 +278,7 @@ cards:
       - { id: "n1", kind: "usage" }
     examples:
       - { target: "মই চিৰা খাওঁ।", reading: "moi sirā khāum̐.", ipa: "moi siɹa kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
-      - { target: "চিৰা শুকান।", reading: "sirā xukān.", ipa: "siɹa xukan", bases: [] }
+      - { target: "চিৰা শুকান।", reading: "sirā xukān.", ipa: "siɹa xukan", bases: [{"word": "শুকান", "base": "শুকান", "reading": "xukān"}] }
   - id: "as-2343"
     target: "ভাজি"
     reading: "bhāzi"
