@@ -1,0 +1,30 @@
+schema: 1
+id: "tok-grammar-number-after-noun"
+part: "core"
+kind: "grammar"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["one", "two", "many"]
+  entries:
+    - lemma: "jan"
+      forms:
+        "one": "jan wan"
+        "two": "jan tu"
+        "many": "jan mute"
+    - lemma: "kili"
+      forms:
+        "one": "kili wan"
+        "two": "kili tu"
+        "many": "kili mute"
+    - lemma: "pan"
+      forms:
+        "one": "pan wan"
+        "two": "pan tu"
+        "many": "pan mute"
+    - lemma: "ijo"
+      forms:
+        "one": "ijo wan"
+        "two": "ijo tu"
+        "many": "ijo mute"

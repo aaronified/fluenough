@@ -1,0 +1,83 @@
+"schema": 1
+"id": "zh-en-reading-quantities"
+"name": "Chinese reading: quantities"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-how-many-do-you-want"
+  "title": "How many do you want?"
+  "theme": "quantities"
+  "sentences":
+  - "text": "你买几个？"
+    "reading": "nǐ mǎi jǐ ge?"
+  - "text": "我买一本书。"
+    "reading": "wǒ mǎi yì běn shū."
+  - "text": "我们一共十个人。"
+    "reading": "wǒmen yígòng shí ge rén."
+  - "text": "这双鞋多少钱？"
+    "reading": "zhè shuāng xié duōshao qián?"
+  "questions":
+  - "id": "zh-0422"
+    "prompt":
+      "en": "你买几个 (nǐ mǎi jǐ ge?) asks:"
+    "options":
+    - "en": "how many you will buy"
+    - "en": "how much you have"
+    "answer": 1
+  - "id": "zh-0423"
+    "prompt":
+      "en": "我买一本书 (wǒ mǎi yì běn shū) says that the speaker buys one book."
+    "answer": true
+  - "id": "zh-0424"
+    "prompt":
+      "en": "这双鞋多少钱 (zhè shuāng xié duōshao qián?) means:"
+    "options":
+    - "en": "How much are these shoes?"
+    - "en": "How many shoes are there?"
+    "answer": 1
+- "id": "zh-recipe-amounts"
+  "title": "A recipe card"
+  "theme": "quantities"
+  "sentences":
+  - "text": "两公斤米。"
+    "reading": "liǎng gōngjīn mǐ."
+  - "text": "茶一杯，水一瓶。"
+    "reading": "chá yì bēi, shuǐ yì píng."
+  - "text": "每个人吃一些鱼。"
+    "reading": "měi ge rén chī yìxiē yú."
+  - "text": "书很多，纸很少。"
+    "reading": "shū hěn duō, zhǐ hěn shǎo."
+  "questions":
+  - "id": "zh-0425"
+    "prompt":
+      "en": "两公斤米 (liǎng gōngjīn mǐ) means:"
+    "options":
+    - "en": "two kilograms of rice"
+    - "en": "two rice bowls"
+    "answer": 1
+  - "id": "zh-0426"
+    "prompt":
+      "en": "茶一杯 (chá yì bēi), and 水一瓶 (shuǐ yì píng), says that there is one cup of tea and one bottle of water."
+    "answer": true
+  - "id": "zh-0427"
+    "prompt":
+      "en": "每个人吃一些鱼 (měi ge rén chī yìxiē yú) says that each person eats a lot of fish."
+    "answer": false

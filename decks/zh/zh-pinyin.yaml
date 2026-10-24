@@ -1,0 +1,155 @@
+schema: 1
+id: "zh-pinyin"
+part: "core"
+kind: "vocab"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "zh-0058"
+    target: "女"
+    words: ["女"]
+    reading: "nǚ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "我是女人。"
+        reading: "wǒ shì nǚrén."
+        words: ["我", "是", "女人"]
+        bases:
+          - { word: "女人", base: "女人", reading: "nǚrén" }
+      - target: "女人很好。"
+        reading: "nǚrén hěn hǎo."
+        words: ["女人", "很", "好"]
+        bases:
+          - { word: "女人", base: "女人", reading: "nǚrén" }
+  - id: "zh-0059"
+    target: "去"
+    words: ["去"]
+    reading: "qù"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "我去店里。"
+        reading: "wǒ qù diànlǐ."
+        words: ["我", "去", "店里"]
+        bases:
+          - { word: "店里", base: "店里", reading: "diànlǐ" }
+      - target: "你去吗？"
+        reading: "nǐ qù ma?"
+        words: ["你", "去", "吗"]
+  - id: "zh-0060"
+    target: "鱼"
+    words: ["鱼"]
+    reading: "yú"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "我买鱼。"
+        reading: "wǒ mǎi yú."
+        words: ["我", "买", "鱼"]
+      - target: "你吃鱼吗？"
+        reading: "nǐ chī yú ma?"
+        words: ["你", "吃", "鱼", "吗"]
+  - id: "zh-0061"
+    target: "西"
+    words: ["西"]
+    reading: "xī"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "他去西边。"
+        reading: "tā qù xībian."
+        words: ["他", "去", "西边"]
+        bases:
+          - { word: "西边", base: "西边", reading: "xībian" }
+      - target: "我买西瓜。"
+        reading: "wǒ mǎi xīguā."
+        words: ["我", "买", "西瓜"]
+        bases:
+          - { word: "西瓜", base: "西瓜", reading: "xīguā" }
+  - id: "zh-0062"
+    target: "绿"
+    words: ["绿"]
+    reading: "lǜ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "我喝绿茶。"
+        reading: "wǒ hē lǜchá."
+        words: ["我", "喝", "绿茶"]
+        bases:
+          - { word: "绿茶", base: "绿茶", reading: "lǜchá" }
+      - target: "这是绿的。"
+        reading: "zhè shì lǜ de."
+        words: ["这", "是", "绿", "的"]
+        bases:
+          - { word: "这", base: "这", reading: "zhè" }
+          - { word: "的", base: "的", reading: "de" }
+  - id: "zh-0063"
+    target: "九"
+    words: ["九"]
+    reading: "jiǔ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "这里有九个人。"
+        reading: "zhèlǐ yǒu jiǔ ge rén."
+        words: ["这里", "有", "九", "个", "人"]
+        bases:
+          - { word: "这里", base: "这里", reading: "zhèlǐ" }
+          - { word: "有", base: "有", reading: "yǒu" }
+          - { word: "个", base: "个", reading: "ge" }
+      - target: "九点来吗？"
+        reading: "jiǔ diǎn lái ma?"
+        words: ["九点", "来", "吗"]
+        bases:
+          - { word: "九点", base: "九点", reading: "jiǔ diǎn" }
+  - id: "zh-0064"
+    target: "老"
+    words: ["老"]
+    reading: "lǎo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "这马很老。"
+        reading: "zhè mǎ hěn lǎo."
+        words: ["这", "马", "很", "老"]
+        bases:
+          - { word: "这", base: "这", reading: "zhè" }
+      - target: "老师很好。"
+        reading: "lǎoshī hěn hǎo."
+        words: ["老师", "很", "好"]
+        bases:
+          - { word: "老师", base: "老师", reading: "lǎoshī" }
+  - id: "zh-0065"
+    target: "写"
+    words: ["写"]
+    reading: "xiě"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - target: "我写字。"
+        reading: "wǒ xiě zì."
+        words: ["我", "写", "字"]
+        bases:
+          - { word: "字", base: "字", reading: "zì" }
+      - target: "妈写吗？"
+        reading: "mā xiě ma?"
+        words: ["妈", "写", "吗"]

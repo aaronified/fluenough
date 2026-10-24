@@ -4,6 +4,7 @@ import '../../app/skill.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
+import '../../core/progress/tag_strength.dart';
 
 /// Finds a card by its id, as [deckId] lists it if that deck still does,
 /// or else as the first deck listing it does; null if no deck does. Retired
@@ -84,7 +85,8 @@ enum StatsRange {
   final int? days;
 }
 
-/// Correct answers out of those given, for one skill or one tag.
+/// Correct answers out of those given, for one skill; or, for a tag, the
+/// pairs known out of those taught.
 class Tally {
   const Tally(this.correct, this.total);
 
@@ -131,6 +133,7 @@ class StatsNumbers {
     required CardLookup cardOf,
     bool Function(String deckId)? deckFilter,
     int tagCount = 3,
+    List<double> Function(ReviewEvent review)? parametersOf,
   }) {
     final log = deckFilter == null
         ? progress.log
@@ -172,7 +175,6 @@ class StatsNumbers {
     }
 
     final skills = <Skill, List<int>>{};
-    final tags = <String, List<int>>{};
     var passed = 0;
     for (final e in inside) {
       final ok = e.passed ? 1 : 0;
@@ -180,12 +182,6 @@ class StatsNumbers {
       final s = skills.putIfAbsent(Skill.of(e.mode), () => <int>[0, 0]);
       s[0] += ok;
       s[1]++;
-      for (final tag
-          in cardOf(e.cardId, deckId: e.deckId)?.tags ?? const <String>[]) {
-        final t = tags.putIfAbsent(tag, () => <int>[0, 0]);
-        t[0] += ok;
-        t[1]++;
-      }
     }
 
     // A card is learned on its first remembered review, in any mode and in
@@ -195,13 +191,15 @@ class StatsNumbers {
       firstPass.putIfAbsent(e.cardId, () => e.at);
     }
 
-    final weakest = tags.entries.toList()
-      ..sort((a, b) {
-        final byRatio = (a.value[0] / a.value[1]).compareTo(
-          b.value[0] / b.value[1],
-        );
-        return byRatio != 0 ? byRatio : a.key.compareTo(b.key);
-      });
+    // The weakest tags are of how well their pairs are known now, whatever
+    // the range (#678).
+    final weakest = tagStrengths(
+      log,
+      tagsOf: (e) =>
+          cardOf(e.cardId, deckId: e.deckId)?.tags ?? const <String>[],
+      now: now,
+      parametersOf: parametersOf,
+    );
 
     final firstDay = addDays(today, 1 - kHeatmapDays);
     final heatmap = List<int>.filled(kHeatmapDays, 0);
@@ -232,7 +230,7 @@ class StatsNumbers {
       },
       weakestTags: <String, Tally>{
         for (final entry in weakest.take(tagCount))
-          entry.key: Tally(entry.value[0], entry.value[1]),
+          entry.tag: Tally(entry.known, entry.taught),
       },
       heatmap: List<int>.unmodifiable(heatmap),
     );
@@ -267,8 +265,10 @@ class StatsNumbers {
   /// script, or a learner who reads the script already, shows neither.
   final Map<ScriptSkill, Tally> scriptSkills;
 
-  /// The tags with the lowest share remembered in the range, weakest first.
-  /// Tags come from the cards' decks.
+  /// The tags with the lowest share of their taught pairs known now,
+  /// weakest first, of every review whatever the range ([tagStrengths]):
+  /// each tally is the pairs known out of those taught. Tags come from the
+  /// cards' decks.
   final Map<String, Tally> weakestTags;
 
   /// Reviews per day for the last [kHeatmapDays] days, oldest first, ending

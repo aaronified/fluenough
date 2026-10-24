@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-places-sentences"
+kind: "layer"
+core: "es-places-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: places in town"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about places in a town, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-0790":
+    native: "The pharmacy is near the bank."
+    bases: {"La": "the", "del": "of the"}
+    confusables: {"hospital": { why: "Hospital is a larger place for medical care." }, "colegio": { why: "Colegio is a school, not a pharmacy." }}
+  "es-0791":
+    native: "We visit the museum and the cathedral."
+    bases: {"el": "the", "la": "the"}
+    confusables: {"teatro": { why: "Teatro is a theatre, for plays." }, "iglesia": { why: "Iglesia is a church, a smaller building." }}
+  "es-0792":
+    native: "I go to the cinema with my friend."
+    bases: {"al": "to the", "con": "with"}
+    confusables: {"teatro": { why: "Teatro is a theatre, for plays, not films." }, "restaurante": { why: "Restaurante is a restaurant, for meals." }}
+  "es-0793":
+    native: "The library closes at six."
+    bases: {"La": "the", "a": "to", "las": "the"}
+    confusables: {"abrir": { why: "Abrir is to open, the opposite of cerrar." }, "entrar": { why: "Entrar is to go in, not to close." }}
+  "es-0794":
+    native: "My sister works at the hospital."
+    bases: {"en": "in", "el": "the"}
+    confusables: {"farmacia": { why: "Farmacia is a pharmacy, not a hospital." }, "colegio": { why: "Colegio is a school, where children study." }}
+  "es-0795":
+    native: "The village is far from the beach."
+    bases: {"El": "the", "de": "of", "la": "the"}
+    confusables: {"cerca": { why: "Cerca is near, the opposite of lejos." }, "ciudad": { why: "Ciudad is a city, bigger than a village." }}

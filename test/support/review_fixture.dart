@@ -45,7 +45,9 @@ const String teluguRegions = '''
 /// [rudeNotes], a deck's `notes:` list, if given, and the plain word
 /// [proposed], a card's `proposed:` list (ADR-0038), if given,
 /// [bases], a card's `bases:` list (#410), if given, and the rater codes
-/// [checkedBy] in its `checked_by` (#449).
+/// [checkedBy] in its `checked_by` (#449). The rude deck carries the `rated`
+/// tag unless [rudeRated] is false: a deck no native speaker has rated is
+/// seen by the Offensive words review alone (#630).
 Map<String, String> reviewCourse({
   List<String> authors = const <String>[],
   bool more = false,
@@ -54,6 +56,7 @@ Map<String, String> reviewCourse({
   String? proposed,
   String? bases,
   List<String> checkedBy = const <String>[],
+  bool rudeRated = true,
 }) {
   const header = '''
 language: { code: te, iso639_3: tel, name: Telugu, script: telugu }
@@ -81,9 +84,9 @@ schema: 1
 id: $rudeDeck
 name: "Rude words"
 $header
-tags: [offensive, unreviewed]
+tags: [offensive, ${rudeRated ? 'rated, ' : ''}unreviewed]
 cards:
-  - { id: $rudeCard, target: "వెధవ", native: "idiot, good-for-nothing", reading: "vedhava", modes: [recognition]${rudeNotes == null ? '' : ', notes: $rudeNotes'} }
+  - { id: $rudeCard, target: "వెధవ", native: "idiot, good-for-nothing", reading: "vedhava", modes: [production, listening, speaking]${rudeNotes == null ? '' : ', notes: $rudeNotes'} }
 ''',
     if (more)
       'decks/te/$moreDeck.yaml':
@@ -121,9 +124,11 @@ Future<AppState> reviewState({
   String? proposed,
   String? bases,
   List<String> checkedBy = const <String>[],
+  bool rudeRated = true,
   TtsEngine tts = const NullTtsEngine(),
   MailShare share = const NullMailShare(),
   bool reviewing = false,
+  bool adult = true,
   SettingsNotifier? settings,
 }) async {
   final state = AppState.test(
@@ -136,6 +141,7 @@ Future<AppState> reviewState({
         proposed: proposed,
         bases: bases,
         checkedBy: checkedBy,
+        rudeRated: rudeRated,
       ),
     ),
     tts: tts,
@@ -149,6 +155,8 @@ Future<AppState> reviewState({
         ),
   );
   await state.load();
+  // A reviewer reads the offensive words with adult content on (#628).
+  state.settings.adultContent = adult;
   if (reviewing) state.reviewing.turnOn();
   return state;
 }

@@ -113,7 +113,8 @@ regions:
     name: { "en": "North Korea (Pyongyang, Hamhung, Chongjin)" }
 # The decks that need the alphabet: a learner who learns without it
 # skips them. The planned script units join it as each is written.
-alphabet: []
+alphabet:
+  - "ko-hangul-vowels"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
@@ -123,17 +124,20 @@ units:
   - decks: ["ko-phrasebook", "ko-first-words", "*"]
     words: 12
   # 2. The first word units, read in the romanisation.
-  - planned: { id: "ko-sound-differences", theme: "sound-differences", words: 16 }
+  - decks: ["ko-sound-differences", "ko-sound-differences-sentences", "ko-reading-sound-differences", "*"]
+    words: 16
     listening_passages:
       - { id: "plain-tense-aspirated", text: { "en": "Words told apart by a plain, a tense or an aspirated consonant: dal, ttal and tal; bul, ppul and pul" } }
     reading_passages:
       - { id: "sound-pairs-list", text: { "en": "A list of word triples in the romanisation that differ by one consonant" } }
-  - planned: { id: "ko-questions", theme: "questions", words: 15 }
+  - decks: ["ko-questions", "ko-questions-sentences", "ko-reading-questions", "*"]
+    words: 15
     listening_passages:
       - { id: "at-the-information-desk", text: { "en": "Asking who, what, where and when at an information desk" } }
     reading_passages:
       - { id: "visitor-faq", text: { "en": "A short visitor's sheet of questions and answers" } }
-  - planned: { id: "ko-addressing", theme: "addressing", words: 20 }
+  - decks: ["ko-addressing", "ko-addressing-sentences", "ko-reading-addressing", "*"]
+    words: 20
     listening_passages:
       - { id: "ssi-and-seonsaengnim", text: { "en": "Meeting a teacher and a classmate: names with ssi and seonsaengnim, and no 'you'" } }
     reading_passages:
@@ -142,7 +146,8 @@ units:
   # by a learner who learns without it): the basic vowels, the consonants
   # with their tense and aspirated sets, the compound vowels, then the
   # final consonants and how they link into the next syllable.
-  - planned: { id: "ko-hangul-vowels", grammar: "script-hangul-vowels", words: 0 }
+  - decks: ["ko-hangul-vowels"]
+    words: 0
     listening_passages:
       - { id: "ten-vowels", text: { "en": "The ten basic vowels said slowly, each on its silent ieung: a, ya, eo, yeo, o, yo, u, yu, eu, i" } }
     reading_passages:

@@ -1,0 +1,25 @@
+"schema": 1
+"id": "tok-en-grammar-names"
+"kind": "layer"
+"core": "tok-grammar-names"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "Proper names after their head"
+"license": "CC-BY-SA-4.0"
+"description": "A name that is not Toki Pona is an unofficial word used after its head: jan Ali is a person called Ali, ma Inli a country called Inli, and toki Inli a language called Inli. The name has a capital, and it is adapted to Toki Pona's sounds and syllables. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "Proper names after their head"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}): {slot}"
+  "slots":
+    "name": "the name, after its head, with a capital"
+    "in a sentence": "the name in a sentence"
+  "entries":
+    "jan": "person"
+    "ma": "land"
+    "toki": "language"
+  "notes": "Names are the only capitals in Toki Pona. Head first, then the name: jan Ali li lon is Ali is here. A foreign name is changed to fit Toki Pona's sounds, so no name has a sound outside its syllables."

@@ -41,6 +41,11 @@ class LanguageInfo {
 
   final bool rtl;
 
+  /// Whether this text runs right to left: the deck says so ([rtl]), or its
+  /// [script] does, as Hindustani's Perso-Arabic does though its deck is
+  /// not marked right to left (it is first a Devanagari course).
+  bool get rightToLeft => rtl || rtlScripts.contains(script);
+
   /// BCP-47 voice tag from the deck, if it declared one.
   final String? tts;
 

@@ -1,0 +1,48 @@
+schema: 1
+id: "zh-en-reading-addressing"
+name: "Chinese reading: addressing people"
+kind: reading
+language: { code: zh, iso639_3: cmn, name: "Mandarin Chinese", script: han_simplified, scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "zh-teacher-and-classmate"
+    title: "A teacher and a classmate"
+    theme: "addressing"
+    sentences:
+      - text: "老师，您好。"
+        reading: "lǎoshī, nín hǎo."
+      - text: "同学，你好。"
+        reading: "tóngxué, nǐ hǎo."
+    questions:
+      - id: "zh-0143"
+        prompt: { en: "您 (nín) is the word to use for:" }
+        options:
+          - { en: "a teacher or a stranger" }
+          - { en: "a classmate" }
+          - { en: "a close friend" }
+        answer: 1
+      - id: "zh-0144"
+        prompt: { en: "同学 (tóngxué) means 'classmate'." }
+        answer: true
+  - id: "zh-name-cards"
+    title: "Name cards"
+    theme: "addressing"
+    sentences:
+      - text: "李经理，张先生。"
+        reading: "Lǐ jīnglǐ, Zhāng xiānsheng."
+      - text: "我姓王。"
+        reading: "wǒ xìng Wáng."
+    questions:
+      - id: "zh-0145"
+        prompt: { en: "In 李经理 (Lǐ jīnglǐ), 李 (Lǐ) is the surname." }
+        answer: true
+      - id: "zh-0146"
+        prompt: { en: "姓 (xìng) means:" }
+        options:
+          - { en: "surname; to have as a surname" }
+          - { en: "name" }
+          - { en: "to call" }
+        answer: 1

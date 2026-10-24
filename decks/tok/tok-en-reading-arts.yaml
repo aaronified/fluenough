@@ -1,0 +1,72 @@
+"schema": 1
+"id": "tok-en-reading-arts"
+"name": "Reading: a museum and a poem"
+"kind": "reading"
+"language":
+  "code": "tok"
+  "iso639_3": "tok"
+  "name": "Toki Pona"
+  "script": "latin"
+  "icon": "Tp"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this deck"
+"description": "Two passages on the arts: a listening guide describing a painting and a statue, and a reading passage that is a short poem with a mirror in it. Not yet checked by a Toki Pona speaker: please report any mistake."
+"tags":
+- "reading"
+- "unreviewed"
+"passages":
+- "id": "tok-arts-museum-talk"
+  "title": "The museum"
+  "sentences":
+  - "text": "sitelen suli li musi."
+  - "text": "leko suli li lon."
+  - "text": "leko ni li loje."
+  - "text": "sitelen ni li tawa ala."
+  "questions":
+  - "id": "tok-0691"
+    "prompt":
+      "en": "What is the painting?"
+    "options":
+    - "en": "A picture"
+    - "en": "A block"
+    "answer": 1
+  - "id": "tok-0692"
+    "prompt":
+      "en": "What is the statue?"
+    "options":
+    - "en": "A block"
+    - "en": "A mirror"
+    "answer": 1
+  - "id": "tok-0693"
+    "prompt":
+      "en": "The big picture is fun. Is that true?"
+    "answer": true
+- "id": "tok-arts-poem"
+  "title": "A short poem"
+  "sentences":
+  - "text": "jasima li pona."
+  - "text": "mi lukin e jasima pona."
+  - "text": "jasima li lukin e mi."
+  "questions":
+  - "id": "tok-0694"
+    "prompt":
+      "en": "What does the poem say the mirror is?"
+    "options":
+    - "en": "Good"
+    - "en": "Big"
+    "answer": 1
+  - "id": "tok-0695"
+    "prompt":
+      "en": "What does the mirror look at?"
+    "options":
+    - "en": "The poet"
+    - "en": "The box"
+    "answer": 1
+  - "id": "tok-0696"
+    "prompt":
+      "en": "The poem says the mirror is epic. Is that true?"
+    "answer": false

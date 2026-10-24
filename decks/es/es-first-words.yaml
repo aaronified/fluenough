@@ -51,7 +51,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Perdón, ¿dónde está el baño?", ipa: "peɾˈdon ˈdonde esˈta el ˈbaɲo", bases: [{ word: "Perdón", base: "perdón" }, { word: "dónde", base: "dónde" }, { word: "está", base: "estar" }, { word: "el", base: "el" }, { word: "baño", base: "baño" }] }
+      - { target: "Perdón, ¿dónde está el baño?", ipa: "peɾˈdon ˈdonde esˈta el ˈbaɲo", bases: [{ word: "Perdón", base: "perdón" }, { word: "dónde", base: "dónde" }, { word: "está", base: "estar" }, { word: "el", base: "el" }, { word: "baño", ref: "es-0805" }] }
       - { target: "Perdón por llegar tarde.", ipa: "peɾˈdon poɾ ʝeˈɣaɾ ˈtaɾde", bases: [{ word: "Perdón", base: "perdón" }, { word: "por", base: "por" }, { word: "llegar", base: "llegar" }, { word: "tarde", base: "tarde" }] }
   - id: "es-0046"
     target: "adiós"
@@ -97,7 +97,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "¿Café o té?", ipa: "kaˈfe o ˈte", bases: [{ word: "Café", base: "café" }, { word: "o", base: "o" }, { word: "té", base: "té" }] }
+      - { target: "¿Café o té?", ipa: "kaˈfe o ˈte", bases: [{ word: "Café", ref: "es-0611" }, { word: "o", base: "o" }, { word: "té", ref: "es-0612" }] }
       - { target: "¿Hoy o mañana?", ipa: "ˈoj o maˈɲana", bases: [{ word: "Hoy", base: "hoy" }, { word: "o", base: "o" }, { word: "mañana", base: "mañana" }] }
   - id: "es-0050"
     target: "pero"
@@ -108,7 +108,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Quiero ir, pero no puedo.", ipa: "ˈkjeɾo iɾ ˈpeɾo no ˈpweðo", bases: [{ word: "Quiero", base: "querer" }, { word: "ir", base: "ir" }, { word: "pero", base: "pero" }, { word: "no", base: "no" }, { word: "puedo", base: "poder" }] }
+      - { target: "Quiero ir, pero no puedo.", ipa: "ˈkjeɾo iɾ ˈpeɾo no ˈpweðo", bases: [{ word: "Quiero", ref: "es-0661" }, { word: "ir", base: "ir" }, { word: "pero", base: "pero" }, { word: "no", base: "no" }, { word: "puedo", base: "poder" }] }
       - { target: "Es caro, pero bueno.", ipa: "es ˈkaɾo ˈpeɾo ˈbweno", bases: [{ word: "Es", base: "ser" }, { word: "caro", base: "caro" }, { word: "pero", base: "pero" }, { word: "bueno", base: "bueno" }] }
   - id: "es-0051"
     target: "aquí"
@@ -142,4 +142,4 @@ cards:
     bases: "self"
     examples:
       - { target: "Hace mucho calor.", ipa: "ˈase ˈmutʃo kaˈloɾ", bases: [{ word: "Hace", base: "hacer" }, { word: "mucho", base: "mucho" }, { word: "calor", base: "calor" }] }
-      - { target: "Me gusta mucho el café.", ipa: "me ˈɡusta ˈmutʃo el kaˈfe", bases: [{ word: "Me", base: "me" }, { word: "gusta", base: "gustar" }, { word: "mucho", base: "mucho" }, { word: "el", base: "el" }, { word: "café", base: "café" }] }
+      - { target: "Me gusta mucho el café.", ipa: "me ˈɡusta ˈmutʃo el kaˈfe", bases: [{ word: "Me", base: "me" }, { word: "gusta", base: "gustar" }, { word: "mucho", base: "mucho" }, { word: "el", base: "el" }, { word: "café", ref: "es-0611" }] }

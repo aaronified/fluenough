@@ -67,6 +67,14 @@ contributor.
   to a branch frequently"). Long work is committed in small steps and pushed
   to a work branch (`wip/<topic>`) as it goes, so nothing is lost if a
   session ends. Only checked, approved work reaches main or `decks-next`.
+- **No stray branches** (owner, 2026-10-24). Merged pull requests delete
+  their head branch (repo setting). So: never push a branch again after its
+  pull request has merged; never push scratch, review or worktree branches;
+  and never merge one work branch into another and leave it pushed: open
+  its own pull request instead. Agents cannot delete remote branches (the
+  session's git proxy refuses it), so list any branch left over for the
+  owner to delete. Never ask to delete `decks-next` or an open pull
+  request's base.
 - **Releases** (owner, 2026-10-20: "Can the release workflow not
   automatically take care of the release commit? So that I can cut releases
   just from the UI?"). Each pull request adds its own CHANGELOG.md line under
@@ -137,6 +145,11 @@ contributor.
 The 2026-10-18 hold on 0.6.0 is lifted (owner, 2026-10-23: "We are working on
 0.6.0 anyway"). Deck work and 0.6.0 work go on side by side.
 
+Milestones by week (owner, 2026-10-23: "This week is 0.6.x, next week is
+0.7.x"). This week's work, and deck content for existing courses, goes in
+0.6.0; next week's (focus tracks #723, cheatsheets #724, the reviewer-mode
+overhaul with its onboarding) goes in 0.7.0.
+
 ## Repositories off limits (owner, 2026-10-12)
 
 `homelab-stacks` is not part of this work. Never clone or download it, never
@@ -178,6 +191,13 @@ replaces the 2026-10-18 target of B1. The owner's earlier "Once these decks
 are done till B1 and we have added the movies songs books parts, we can
 finally start advertising the app." is superseded for the B1 part. Other
 languages' paths and decks follow.
+
+**Toki Pona to B1, then stop** (owner, 2026-10-23: "once the current one is
+done fully complete toki pona to B1. then stop the deck work"; "1 PR").
+Toki Pona is the one exception to the A1 stop: its units 18 to the B1
+milestone are written in a single PR. After that no new deck work starts;
+open deck PRs are still reviewed and merged. Conversations (#722) are a
+long-horizon ask (owner, 2026-10-23).
 
 **Hindustani** is one course (owner, 2026-10-18: "Hindi and Urdu should be
 combined as we should not care about socipolitics over linguistics"; chose

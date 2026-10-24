@@ -1,0 +1,21 @@
+schema: 1
+id: "tok-en-grammar-head-first-modifiers"
+kind: "layer"
+core: "tok-grammar-head-first-modifiers"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Modifiers come after the head"
+license: "CC-BY-SA-4.0"
+description: "A describing word comes after the word it describes, and each one after the first describes the whole phrase before it. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Modifiers come after the head"
+  slot_name: "modifiers"
+  prompt: "{lemma} ({gloss}): {slot}"
+  slots: { "one modifier": "one describing word after it", "two modifiers": "two describing words, one after the other" }
+  entries:
+    "jan": "person"
+    "moku": "food"
+    "telo": "water; a drink"
+    "kili": "fruit"
+    "ijo": "thing"
+  notes: "The head comes first and the describing words follow it: jan pona is a good person, and telo lete is cold water. In a row, each word after the first describes everything before it, so jan pona suli is a big, good person: suli describes jan pona, not jan alone. Nouns never change their form."

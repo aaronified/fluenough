@@ -1,0 +1,204 @@
+schema: 1
+id: "ko-en-questions"
+kind: "layer"
+core: "ko-questions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Question words"
+license: "CC-BY-SA-4.0"
+description: "Fifteen question words: who, what, where, when, how, why, which, what kind of, how many and how much. Each stands where the answer will stand. Not yet checked by a Korean speaker: please report any mistake."
+tags: ["beginner", "unreviewed"]
+"cards":
+  "ko-0060":
+    "native": "who"
+    "notes":
+      "n1": "누구 (nugu) is 'who'. As the subject it becomes 누가 (nuga): 누가 와요 (nuga wayo), who is coming? 누구 (nugu) is the same word. It stands where the answer will stand."
+    "examples":
+      "그 사람은 누구예요?":
+        "native": "Who is that person?"
+        "bases":
+          "사람은": "person, with the topic particle 은 (eun)"
+          "누구예요": "who, with the polite 'is' 예요 (yeyo)"
+      "누가 선생님이에요?":
+        "native": "Who is the teacher?"
+        "bases":
+          "누가": "who, with the subject particle 가 (ga)"
+  "ko-0061":
+    "native": "what"
+    "notes":
+      "n1": "뭐 (mwo) is the everyday 'what', short for 무엇 (mueot). It is polite enough with 요 (yo) or 예요 (yeyo). In writing and formal speech, 무엇 (mueot) is used."
+    "examples":
+      "이게 뭐예요?":
+        "native": "What is this?"
+        "bases":
+          "이게": "this, with the subject particle 이 (i)"
+          "뭐예요": "what, with the polite 'is' 예요 (yeyo)"
+      "뭐 해요?":
+        "native": "What are you doing?"
+        "bases":
+          "해요": "to do (polite)"
+  "ko-0062":
+    "native": "what (formal)"
+    "notes":
+      "n1": "무엇 (mueot) is the full form of 뭐 (mwo), 'what'. It is used in writing, in speeches and with care in speech; people say 뭐 (mwo) in conversation."
+    "examples":
+      "이것은 무엇이에요?":
+        "native": "What is this?"
+        "bases":
+          "이것은": "this, with the topic particle 은 (eun)"
+          "무엇이에요": "what, with the polite 'is' 이에요 (ieyo)"
+      "무엇을 먹어요?":
+        "native": "What do you eat?"
+        "bases":
+          "무엇을": "what, with the object particle 을 (eul)"
+          "먹어요": "to eat (polite)"
+  "ko-0063":
+    "native": "where"
+    "notes":
+      "n1": "어디 (eodi) is 'where'. 어디예요 (eodiyeyo) asks where something is, and 어디 가요 (eodi gayo) asks where someone is going. It is also in the phrasebook."
+    "examples":
+      "학교는 어디예요?":
+        "native": "Where is the school?"
+        "bases":
+          "학교는": "school, with the topic particle 는 (neun)"
+          "어디예요": "where, with the polite 'is' 예요 (yeyo)"
+      "어디 가요?":
+        "native": "Where are you going?"
+        "bases":
+          "가요": "to go (polite)"
+  "ko-0064":
+    "native": "when"
+    "notes":
+      "n1": "언제 (eonje) is 'when'. It needs no particle: 언제 가요 (eonje gayo), when do you go? 언제예요 (eonjeyeyo) asks when an event is."
+    "examples":
+      "생일이 언제예요?":
+        "native": "When is your birthday?"
+        "bases":
+          "생일이": "birthday, with the subject particle 이 (i)"
+          "언제예요": "when, with the polite 'is' 예요 (yeyo)"
+      "언제 가요?":
+        "native": "When are you going?"
+        "bases":
+          "가요": "to go (polite)"
+  "ko-0065":
+    "native": "how (in what way)"
+    "notes":
+      "n1": "어떻게 (eotteoke) asks in what way something is done: 어떻게 가요 (eotteoke gayo), how do you go? To ask how something is, use 어때요 (eottaeyo)."
+    "examples":
+      "어떻게 가요?":
+        "native": "How do you get there?"
+        "bases":
+          "가요": "to go (polite)"
+      "이거 어떻게 해요?":
+        "native": "How do I do this?"
+        "bases":
+          "이거": "this one"
+          "해요": "to do (polite)"
+  "ko-0066":
+    "native": "how is it; how about it"
+    "notes":
+      "n1": "어때요 (eottaeyo) is the polite form of 어떻다 (eotteota), 'to be how'. It asks what something is like, and it offers: 커피는 어때요 (keopineun eottaeyo), how about coffee? 어떻다 (eotteota) changes its stem in speech: 어떻- (eotteo-) becomes 어때 (eottae)."
+    "bases":
+      "어때요": "to be how; to be like what (polite)"
+    "examples":
+      "커피는 어때요?": "How about the coffee?"
+      "한국은 어때요?":
+        "native": "How is Korea?"
+        "bases":
+          "한국은": "Korea, with the topic particle 은 (eun)"
+  "ko-0067":
+    "native": "why"
+    "notes":
+      "n1": "왜 (wae) is 'why', and the everyday word for it. It goes before the verb: 왜 가요 (wae gayo), why do you go? 어째서 (eojjaeseo) is a more formal 'why'."
+    "examples":
+      "왜 가요?":
+        "native": "Why are you going?"
+        "bases":
+          "가요": "to go (polite)"
+      "왜 안 가요?":
+        "native": "Why aren't you going?"
+        "bases":
+          "안": "not (before a verb)"
+          "가요": "to go (polite)"
+  "ko-0068":
+    "native": "why (formal)"
+    "notes":
+      "n1": "어째서 (eojjaeseo) is a formal or written 'why', more insistent than 왜 (wae). In ordinary talk, 왜 (wae) is used."
+    "examples":
+      "어째서 안 가요?":
+        "native": "Why aren't you going?"
+        "bases":
+          "안": "not (before a verb)"
+          "가요": "to go (polite)"
+      "어째서 그래요?":
+        "native": "Why is it like that?"
+        "bases":
+          "그래요": "to be so (polite)"
+  "ko-0069":
+    "native": "which"
+    "notes":
+      "n1": "어느 (eoneu) is 'which', and goes before a noun: 어느 학생 (eoneu haksaeng), which student? It picks one from a known group."
+    "examples":
+      "어느 학생이에요?": "Which student is it?"
+      "어느 커피가 좋아요?": "Which coffee is good?"
+  "ko-0070":
+    "native": "what kind of; which"
+    "notes":
+      "n1": "어떤 (eotteon) asks what something is like, and goes before a noun: 어떤 커피 (eotteon keopi), what kind of coffee? 어느 (eoneu) picks one; 어떤 (eotteon) asks for the kind."
+    "examples":
+      "어떤 커피예요?": "What kind of coffee is it?"
+      "어떤 선생님이에요?": "What kind of teacher is he or she?"
+  "ko-0071":
+    "native": "what (kind of)"
+    "notes":
+      "n1": "무슨 (museun) asks 'what' before a noun: 무슨 책 (museun chaek), what book? 무슨 일이에요 (museun irieyo) is 'what is the matter?'. It is close to 어떤 (eotteon), which asks for the kind."
+    "examples":
+      "무슨 일이에요?":
+        "native": "What is the matter?"
+        "bases":
+          "일이에요": "matter, with the polite 'is' 이에요 (ieyo)"
+      "무슨 책이에요?":
+        "native": "What book is it?"
+        "bases":
+          "책이에요": "book, with the polite 'is' 이에요 (ieyo)"
+  "ko-0072":
+    "native": "how many"
+    "notes":
+      "n1": "몇 (myeot) is 'how many', before a counting word: 몇 명 (myeot myeong), how many people? 몇 시 (myeot si), what time? It asks for a small number; for a price use 얼마 (eolma)."
+    "examples":
+      "몇 명이에요?":
+        "native": "How many people is it?"
+        "bases":
+          "명이에요": "person (counter), with the polite 'is' 이에요 (ieyo)"
+      "몇 시예요?":
+        "native": "What time is it?"
+        "bases":
+          "시예요": "o'clock, with the polite 'is' 예요 (yeyo)"
+  "ko-0073":
+    "native": "how much"
+    "notes":
+      "n1": "얼마 (eolma) is 'how much', for a price: 얼마예요 (eolmayeyo), how much is it? It is also in the phrasebook."
+    "examples":
+      "커피는 얼마예요?":
+        "native": "How much is the coffee?"
+        "bases":
+          "얼마예요": "how much, with the polite 'is' 예요 (yeyo)"
+      "물이 얼마예요?":
+        "native": "How much is the water?"
+        "bases":
+          "얼마예요": "how much, with the polite 'is' 예요 (yeyo)"
+  "ko-0074":
+    "native": "how (long, much or many)"
+    "notes":
+      "n1": "얼마나 (eolmana) asks 'to what extent': 얼마나 걸려요 (eolmana geollyeoyo), how long does it take? It is 얼마 (eolma) with 나 (na). For a price, 얼마 (eolma) alone."
+    "examples":
+      "얼마나 걸려요?":
+        "native": "How long does it take?"
+        "bases":
+          "걸려요": "to take (time); to hang (polite)"
+      "얼마나 많아요?":
+        "native": "How many are there?"
+        "bases":
+          "많아요": "to be many; to be a lot (polite)"
+  "ko-0075":
+    "native": "question words"
+    "explanation": "A Korean question word stands where the answer will stand, and 요 (yo) or 예요 (yeyo) makes it polite: 누구 (nugu) who, 뭐 (mwo) and 무엇 (mueot) what, 어디 (eodi) where, 언제 (eonje) when, 어떻게 (eotteoke) how, 어때요 (eottaeyo) how is it, 왜 (wae) and 어째서 (eojjaeseo) why, 어느 (eoneu) which, 어떤 (eotteon) and 무슨 (museun) what kind of, 몇 (myeot) how many, 얼마 (eolma) how much and 얼마나 (eolmana) how much or how long."

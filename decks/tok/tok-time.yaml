@@ -1,0 +1,64 @@
+schema: 1
+id: "tok-time"
+part: "core"
+kind: "vocab"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+theme: "time"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "tok-0264"
+    target: "tenpo"
+    ipa: "ˈtenpo"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "time", kind: "usage" }
+      - { id: "now", kind: "behaviour" }
+    examples:
+      - { target: "tenpo ni li pona.", ipa: "ˈtenpo ni li ˈpona", bases: [{ word: "tenpo", base: "tenpo" }, { word: "ni", ref: "tok-0063" }, { word: "li", ref: "tok-0101" }, { word: "pona", ref: "tok-0002" }] }
+      - { target: "mi lon tenpo ni.", ipa: "mi lon ˈtenpo ni", bases: [{ word: "mi", ref: "tok-0003" }, { word: "lon", ref: "tok-0046" }, { word: "tenpo", base: "tenpo" }, { word: "ni", ref: "tok-0063" }] }
+  - id: "tok-0265"
+    target: "suno"
+    ipa: "ˈsuno"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "sun", kind: "usage" }
+      - { id: "day", kind: "behaviour" }
+    examples:
+      - { target: "suno li suli.", ipa: "ˈsuno li ˈsuli", bases: [{ word: "suno", base: "suno" }, { word: "li", ref: "tok-0101" }, { word: "suli", ref: "tok-0119" }] }
+      - { target: "mi lukin e suno.", ipa: "mi ˈlukin e ˈsuno", bases: [{ word: "mi", ref: "tok-0003" }, { word: "lukin", ref: "tok-0083" }, { word: "e", ref: "tok-0102" }, { word: "suno", base: "suno" }] }
+  - id: "tok-0266"
+    target: "mun"
+    ipa: "mun"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "moon", kind: "usage" }
+      - { id: "star", kind: "behaviour" }
+    examples:
+      - { target: "mun li lon.", ipa: "mun li lon", bases: [{ word: "mun", base: "mun" }, { word: "li", ref: "tok-0101" }, { word: "lon", ref: "tok-0046" }] }
+      - { target: "mi lukin e mun.", ipa: "mi ˈlukin e mun", bases: [{ word: "mi", ref: "tok-0003" }, { word: "lukin", ref: "tok-0083" }, { word: "e", ref: "tok-0102" }, { word: "mun", base: "mun" }] }
+  - id: "tok-0267"
+    target: "open"
+    ipa: "ˈopen"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "begin", kind: "usage" }
+      - { id: "object", kind: "behaviour" }
+    examples:
+      - { target: "tenpo ni li open.", ipa: "ˈtenpo ni li ˈopen", bases: [{ word: "tenpo", ref: "tok-0264" }, { word: "ni", ref: "tok-0063" }, { word: "li", ref: "tok-0101" }, { word: "open", base: "open" }] }
+      - { target: "mi open e lupa.", ipa: "mi ˈopen e ˈlupa", bases: [{ word: "mi", ref: "tok-0003" }, { word: "open", base: "open" }, { word: "e", ref: "tok-0102" }, { word: "lupa", ref: "tok-0248" }] }
+  - id: "tok-0268"
+    target: "pini"
+    ipa: "ˈpini"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - { id: "end", kind: "usage" }
+      - { id: "past", kind: "behaviour" }
+    examples:
+      - { target: "tenpo li pini.", ipa: "ˈtenpo li ˈpini", bases: [{ word: "tenpo", ref: "tok-0264" }, { word: "li", ref: "tok-0101" }, { word: "pini", base: "pini" }] }
+      - { target: "moku li pini.", ipa: "ˈmoku li ˈpini", bases: [{ word: "moku", ref: "tok-0080" }, { word: "li", ref: "tok-0101" }, { word: "pini", base: "pini" }] }
