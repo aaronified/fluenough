@@ -586,6 +586,7 @@ cards:
 | `pos` | no | Part of speech: `noun`, `verb`, `adj`, `adv`, `pronoun`, `phrase`, `particle`, `other`; a script's letter or sign is `letter` and its digit `digit` (#522 step 7), and Hear asks for what was heard of it, typing its form. A [rules deck](#rules-decks) picks its rows by it, so give every word its own: a pronoun is `pronoun`, not `other`. |
 | `hears` | no | `form`: a word that is heard and typed as its form, as a letter or digit is, though it keeps its part of speech: a script reading or spelling word. Only `form` is a value. An app older than the release that added it rejects the card, so decks give it a release after the app that reads it (#522 step 7). |
 | `warning` | no | The one warning the card's teach card shows ([Which warning the teach card shows](#which-warning-the-teach-card-shows-warning)): the `id` of one of its `pair`, `homograph` or `lookalike` notes, `"senses"`, or `"none"`. A core card only. An app older than the release that added it rejects the card, so decks give it a release after the app that reads it (#691). |
+| `not_sounds_like`, `not_looks_like` | no | A reviewer's rejection of a [sound-alike or look-alike pair](#a-rejected-pair-not_sounds_like-and-not_looks_like): a list of the ids of the offensive words of the language that the card was found to sound like (`not_sounds_like`) or look like (`not_looks_like`), and does not. A core card only. An app older than the release that added them rejects the card, so decks give them a release after the app that reads them (#808). |
 | `gender` | no | Grammatical gender, as text. On a noun it is one of its language's classes, which the language's path lists (`genders`): see [Gender](#gender). |
 | `tags` | no | Card-level tags. Drills can be filtered by tag. In a script deck, `own-letter` marks a letter the language adds to, or writes differently from, a script it shares with other languages: Assamese ৰ (rô) and ৱ (wô) in Eastern Nagari. The app's script test, which lets a learner who reads the shared script skip the course's script lessons, always asks these (#554). |
 | `notes` | no | Text, or a list of typed notes: see [Notes](#notes). Shown when the word is taught and after answering. |
@@ -1077,6 +1078,40 @@ shows every one of them, titled.
 - **Two releases.** Released apps reject a card key they do not know, so the
   app and the validator learn `warning` first and the decks set it one
   release later, as for `hears`.
+
+### A rejected pair: `not_sounds_like` and `not_looks_like`
+
+`tools/offensive_alikes.py` lists the words that sound (IPA, one segment
+apart) or look (one letter or mark apart) like an offensive word of their
+language, and the validator warns of each pair that no note explains
+([Plan: offensive words](Plan-Offensive-Words)). A reviewer keeps a real pair
+with a `pair` note (sound) or a `lookalike` or `homograph` note (writing). A
+pair the reviewer rejects, because the two words are not alike enough to need
+care, is recorded on the card instead (owner, 2026-10-24, #808), by the kind
+of closeness rejected:
+
+```yaml
+  - id: "te-9901"
+    target: "విధవ"
+    not_sounds_like: ["te-9951"]   # the offensive word's id
+    not_looks_like: ["te-9951"]
+```
+
+Each is a list of the ids of other cards of the language. A pair is rejected
+for the kind named only: a card that rejects the sound still has its
+look-alike warning until a note or `not_looks_like` explains it. Either word
+of the pair may carry the key, the offensive word or the other. The tool
+lists the pair as explained, and the validator does not warn of it.
+
+- **Errors:** a value that is not a non-empty list of card ids of the
+  language; an id twice; the card's own id; an id no deck writes; the key on a
+  card that is not a core card's.
+- **Two releases.** Released apps reject a card key they do not know, so the
+  app and the validator learn these keys first and the decks use them one
+  release later, as for `warning`. Until a release that reads them is out,
+  the check "Released app reads the decks" in CI fails on any deck that uses
+  one; do not work around it. Rejected pairs are recorded once that release
+  is out.
 
 ### A dictionary entry: `dictionary`
 
