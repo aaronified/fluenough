@@ -1,3 +1,4 @@
+# modes: converted to an opt-out (#522, step 6)
 schema: 1
 id: "mr-script-vowels"
 part: "core"
@@ -46,7 +47,7 @@ cards:
     target: "ऋ"
     reading: "ru"
     ipa: "ru"
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "mr-0008"
@@ -77,7 +78,7 @@ cards:
     target: "ॲ"
     reading: "ê"
     ipa: "æ"
-    modes: ["recognition", "production"]
+    modes: ["listening", "speaking"]
     notes:
       - { id: "n1", kind: "note" }
   - id: "mr-0013"
