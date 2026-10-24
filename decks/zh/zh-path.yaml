@@ -271,17 +271,23 @@ units:
       - { id: "when-and-where", text: { "en": "Saying when and where you do things, both before the verb: I eat at home at seven" } }
     reading_passages:
       - { id: "week-plan", text: { "en": "A week's plan: who does what, when and where" } }
-  - planned: { id: "zh-grammar-de", grammar: ["de-possessive", "de-attributive"] }
+  - decks: ["zh-grammar-de-possessive", "zh-grammar-de-attributive", "zh-grammar-de-sentences"]
+    words: 0
+    grammar: ["de-possessive", "de-attributive"]
     listening_passages:
       - { id: "whose-bag", text: { "en": "Asking whose things these are: my book, the teacher's bag, the red one" } }
     reading_passages:
       - { id: "lost-and-found", text: { "en": "A lost-and-found board naming whose each thing is" } }
-  - planned: { id: "zh-grammar-you-zai", grammar: ["you", "mei-you", "zai-location"] }
+  - decks: ["zh-grammar-you", "zh-grammar-mei-you", "zh-grammar-zai-location", "zh-grammar-you-zai-sentences"]
+    words: 0
+    grammar: ["you", "mei-you", "zai-location"]
     listening_passages:
       - { id: "is-there-a-bank", text: { "en": "Asking whether there is a bank nearby, and where it is" } }
     reading_passages:
       - { id: "floor-guide", text: { "en": "A floor guide in a department store: what is on each floor" } }
-  - planned: { id: "zh-grammar-adjectives", grammar: ["hen-adjective", "adjective-predicate"] }
+  - decks: ["zh-grammar-hen-adjective", "zh-grammar-adjective-predicate", "zh-grammar-adjectives-sentences"]
+    words: 0
+    grammar: ["hen-adjective", "adjective-predicate"]
     listening_passages:
       - { id: "a-quiet-town", text: { "en": "Describing a town with hen and no verb for is: quiet, busy, not expensive" } }
     reading_passages:
