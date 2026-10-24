@@ -197,7 +197,8 @@ units:
       - { id: "walk-to-the-market", text: { "en": "A neighbour names the places you pass on the way to the market" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Signs along a street: pharmacy, school, bank, temple" } }
-  - planned: { id: "mr-things", theme: "things", words: 32 }
+  - decks: ["mr-things", "*"]
+    words: 32
     listening_passages:
       - { id: "packing-for-a-trip", text: { "en": "Two people pack a bag for a trip to the hills" } }
     reading_passages:
@@ -210,12 +211,14 @@ units:
   - decks: ["mr-grammar-articles", "mr-grammar-gender-number"]
     words: 10
     grammar: ["articles", "gender-number"]
-  - planned: { id: "mr-clothes", theme: "clothes", words: 26 }
+  - decks: ["mr-clothes", "*"]
+    words: 26
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
     reading_passages:
       - { id: "shop-offer-sign", text: { "en": "A clothes shop's sign with its offers" } }
-  - planned: { id: "mr-animals", theme: "animals", words: 26 }
+  - decks: ["mr-animals", "*"]
+    words: 26
     listening_passages:
       - { id: "village-visit", text: { "en": "A child names the animals seen on a visit to a village" } }
     reading_passages:
