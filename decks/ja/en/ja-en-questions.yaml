@@ -1,0 +1,372 @@
+schema: 1
+id: "ja-en-questions"
+kind: "layer"
+core: "ja-questions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Question words"
+license: "CC-BY-SA-4.0"
+description: "Fifteen question words: who, what, where, when, how, why, which, what kind of, how many and how much, with the polite forms. Each stands where the answer will stand, and か (ka) ends the question. Not yet checked by a Japanese speaker: please report any mistake."
+tags: ["beginner", "unreviewed"]
+"cards":
+  "ja-0107":
+    "native": "who"
+    "notes":
+      "n1": "だれ (dare) is 'who'. It stands where the answer will stand, and か (ka) at the end asks the question: だれですか (dare desu ka), who is it? The polite word is どなた (donata)."
+    "examples":
+      "あのひとはだれですか。":
+        "native": "Who is that person?"
+        "bases":
+          "あの":
+            "meaning": "that (over there)"
+          "ひと":
+            "meaning": "person"
+          "は":
+            "meaning": "(marks the topic)"
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+      "だれがせんせいですか。":
+        "native": "Who is the teacher?"
+        "bases":
+          "が":
+            "meaning": "(marks the subject)"
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+  "ja-0108":
+    "native": "who (polite)"
+    "notes":
+      "n1": "どなた (donata) is the polite 'who', for a guest, a customer or someone you respect, and on the phone: どなたですか (donata desu ka), who is calling? To a friend, say だれ (dare)."
+    "examples":
+      "どなたですか。":
+        "native": "Who is it, please?"
+        "bases":
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+      "あのかたはどなたですか。":
+        "native": "Who is that person, please?"
+        "bases":
+          "あの":
+            "meaning": "that (over there)"
+          "かた":
+            "meaning": "person (polite)"
+          "は":
+            "meaning": "(marks the topic)"
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+  "ja-0109":
+    "native": "what"
+    "alt_native":
+      - "what?"
+    "notes":
+      "n1": "なに (nani) is 'what'. Before です (desu) and a few other sounds it is said なん (nan): なんですか (nan desu ka), what is it? That なん (nan) is the same word."
+    "examples":
+      "これはなんですか。":
+        "native": "What is this?"
+        "bases":
+          "これ":
+            "meaning": "this"
+          "は":
+            "meaning": "(marks the topic)"
+          "なん":
+            "meaning": "what (before です (desu) and a few other sounds)"
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+      "なにをたべますか。":
+        "native": "What will you eat?"
+        "bases":
+          "を":
+            "meaning": "(marks the object)"
+          "たべます":
+            "meaning": "to eat"
+          "か":
+            "meaning": "(marks a question)"
+  "ja-0110":
+    "native": "where"
+    "notes":
+      "n1": "どこ (doko) is 'where'. どこですか (doko desu ka) asks where something is; どこにいますか (doko ni imasu ka) asks where a person is."
+    "examples":
+      "でんしゃはどこですか。":
+        "native": "Where is the train?"
+        "bases":
+          "は":
+            "meaning": "(marks the topic)"
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+      "あなたはどこにいますか。":
+        "native": "Where are you?"
+        "bases":
+          "は":
+            "meaning": "(marks the topic)"
+          "に":
+            "meaning": "in; at; to"
+          "います":
+            "meaning": "to be (of people and animals)"
+          "か":
+            "meaning": "(marks a question)"
+  "ja-0111":
+    "native": "when"
+    "notes":
+      "n1": "いつ (itsu) is 'when'. Unlike a time word such as あした (ashita), tomorrow, it needs no particle: いついきますか (itsu ikimasu ka), when will you go?"
+    "examples":
+      "たんじょうびはいつですか。":
+        "native": "When is your birthday?"
+        "bases":
+          "たんじょうび":
+            "meaning": "birthday"
+          "は":
+            "meaning": "(marks the topic)"
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+      "いつにほんにいきますか。":
+        "native": "When will you go to Japan?"
+        "bases":
+          "に":
+            "meaning": "in; at; to"
+          "いきます":
+            "meaning": "to go"
+          "か":
+            "meaning": "(marks a question)"
+  "ja-0112":
+    "native": "how; how is it"
+    "notes":
+      "n1": "どう (dou) asks how something is, or what someone thinks of it: どうですか (dou desu ka), how is it? It is the plain form of いかが (ikaga)."
+    "examples":
+      "これはどうですか。":
+        "native": "How is this?"
+        "bases":
+          "これ":
+            "meaning": "this"
+          "は":
+            "meaning": "(marks the topic)"
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+      "にほんはどうですか。":
+        "native": "How is Japan?"
+        "bases":
+          "は":
+            "meaning": "(marks the topic)"
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+  "ja-0113":
+    "native": "how (polite); would you like"
+    "notes":
+      "n1": "いかが (ikaga) is the polite どう (dou). It is how a host or a shop offers something: みずはいかがですか (mizu wa ikaga desu ka), would you like some water?"
+    "examples":
+      "みずはいかがですか。":
+        "native": "Would you like some water?"
+        "bases":
+          "は":
+            "meaning": "(marks the topic)"
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+      "ごはんはいかがですか。":
+        "native": "Would you like some rice?"
+        "bases":
+          "は":
+            "meaning": "(marks the topic)"
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+  "ja-0114":
+    "native": "why"
+    "notes":
+      "n1": "なぜ (naze) is 'why', and a little formal or direct. In everyday talk どうして (doushite) is softer and more common."
+    "examples":
+      "なぜにほんにいますか。":
+        "native": "Why are you in Japan?"
+        "bases":
+          "に":
+            "meaning": "in; at; to"
+          "います":
+            "meaning": "to be (of people and animals)"
+          "か":
+            "meaning": "(marks a question)"
+      "なぜにほんにきましたか。":
+        "native": "Why did you come to Japan?"
+        "bases":
+          "に":
+            "meaning": "in; at; to"
+          "きました":
+            "meaning": "to come"
+          "か":
+            "meaning": "(marks a question)"
+  "ja-0115":
+    "native": "why; how come"
+    "notes":
+      "n1": "どうして (doushite) is 'why' or 'how come'. Alone, どうしてですか (doushite desu ka) means 'why is that?'. It is softer than なぜ (naze)."
+    "examples":
+      "どうしてですか。":
+        "native": "Why is that?"
+        "bases":
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+      "どうしてにほんにいきますか。":
+        "native": "Why are you going to Japan?"
+        "bases":
+          "に":
+            "meaning": "in; at; to"
+          "いきます":
+            "meaning": "to go"
+          "か":
+            "meaning": "(marks a question)"
+  "ja-0116":
+    "native": "which one (of three or more)"
+    "notes":
+      "n1": "どれ (dore) is 'which one' out of three or more things. For two things use どちら (dochira). It stands alone; before a noun use どの (dono)."
+    "examples":
+      "わたしのみずはどれですか。":
+        "native": "Which one is my water?"
+        "bases":
+          "の":
+            "meaning": "(links two nouns: of, 's)"
+          "は":
+            "meaning": "(marks the topic)"
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+      "どれがあなたのいぬですか。":
+        "native": "Which one is your dog?"
+        "bases":
+          "が":
+            "meaning": "(marks the subject)"
+          "の":
+            "meaning": "(links two nouns: of, 's)"
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+  "ja-0117":
+    "native": "which (before a noun)"
+    "notes":
+      "n1": "どの (dono) is 'which', and always goes before a noun: どのでんしゃ (dono densha), which train? It cannot stand alone: say どれ (dore)."
+    "examples":
+      "どのでんしゃですか。":
+        "native": "Which train is it?"
+        "bases":
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+      "どのいぬがおおきいですか。":
+        "native": "Which dog is big?"
+        "bases":
+          "が":
+            "meaning": "(marks the subject)"
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+  "ja-0118":
+    "native": "what kind of"
+    "notes":
+      "n1": "どんな (donna) asks what something is like, and goes before a noun, like どの (dono): どんないぬ (donna inu), what kind of dog? どの (dono) picks one; どんな (donna) asks for its kind."
+    "examples":
+      "どんないぬですか。":
+        "native": "What kind of dog is it?"
+        "bases":
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+      "どんなせんせいですか。":
+        "native": "What kind of teacher is he or she?"
+        "bases":
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+  "ja-0119":
+    "native": "how many; how old"
+    "notes":
+      "n1": "いくつ (ikutsu) is 'how many' for things counted one by one, and 'how old' in the polite おいくつ (oikutsu). For a price use いくら (ikura)."
+    "examples":
+      "いくつですか。":
+        "native": "How many is it?"
+        "bases":
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+      "でんしゃはいくつありますか。":
+        "native": "How many trains are there?"
+        "bases":
+          "は":
+            "meaning": "(marks the topic)"
+          "あります":
+            "meaning": "to be (of things); to have"
+          "か":
+            "meaning": "(marks a question)"
+  "ja-0120":
+    "native": "how much"
+    "notes":
+      "n1": "いくら (ikura) is 'how much', for a price: これはいくらですか (kore wa ikura desu ka), how much is this? It is also in the phrasebook."
+    "examples":
+      "これはいくらですか。":
+        "native": "How much is this?"
+        "bases":
+          "これ":
+            "meaning": "this"
+          "は":
+            "meaning": "(marks the topic)"
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+      "みずはいくらですか。":
+        "native": "How much is the water?"
+        "bases":
+          "は":
+            "meaning": "(marks the topic)"
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+  "ja-0121":
+    "native": "which of two; where (polite)"
+    "notes":
+      "n1": "どちら (dochira) is 'which of two', and also the polite 'where' or 'which way': でんしゃはどちらですか (densha wa dochira desu ka), which way is the train? For three or more things use どれ (dore)."
+    "examples":
+      "どちらがおおきいですか。":
+        "native": "Which of the two is bigger?"
+        "bases":
+          "が":
+            "meaning": "(marks the subject)"
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+      "でんしゃはどちらですか。":
+        "native": "Which way is the train?"
+        "bases":
+          "は":
+            "meaning": "(marks the topic)"
+          "です":
+            "meaning": "is (polite)"
+          "か":
+            "meaning": "(marks a question)"
+  "ja-0122":
+    "native": "question words"
+    "explanation": "A Japanese question word stands where the answer will stand, and か (ka) at the end asks the question: だれ (dare) who, どなた (donata) who (polite), なに (nani) what, どこ (doko) where, いつ (itsu) when, どう (dou) how, いかが (ikaga) how (polite), なぜ (naze) and どうして (doushite) why, どれ (dore) which one, どの (dono) which, どんな (donna) what kind of, いくつ (ikutsu) how many, いくら (ikura) how much and どちら (dochira) which of two."
