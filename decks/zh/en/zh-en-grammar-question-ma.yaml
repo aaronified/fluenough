@@ -1,0 +1,26 @@
+schema: 1
+id: "zh-en-grammar-question-ma"
+kind: "layer"
+core: "zh-grammar-question-ma"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "吗 (ma): yes-or-no questions"
+license: "CC-BY-SA-4.0"
+description: "Is he a teacher? Do you go? Put 吗 (ma) at the end of a statement and leave the word order as it is. Not yet checked by a Mandarin speaker: please report any mistake."
+tags: ["unreviewed"]
+"pattern":
+  "name": "吗 (ma): yes-or-no questions"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "statement": "the statement"
+    "question": "the yes-or-no question (with 吗 (ma))"
+  "entries":
+    "shi": "to be: he is a teacher"
+    "qu": "to go: you go to school"
+    "he": "to drink: you drink tea"
+    "chi": "to eat: you eat fish"
+    "xihuan": "to like: you like fish"
+    "lai": "to come: he comes tomorrow"
+    "mang": "busy: you are busy"
+    "gui": "expensive: this is expensive"
+  "notes": "A yes-or-no question is the statement with 吗 (ma) added at the end. Nothing else changes: 你去学校 (nǐ qù xuéxiào), you go to school, becomes 你去学校吗 (nǐ qù xuéxiào ma), do you go to school? A 很 (hěn) before an adjective stays: 你很忙吗 (nǐ hěn máng ma). The answer repeats the verb: 去 (qù), yes, or 不去 (bú qù), no; there is no word for yes or no. 吗 (ma) is not used with a question word: 你喝什么 (nǐ hē shénme), what do you drink?, never 你喝什么吗. 吗 (ma) is a light syllable with no tone of its own."
