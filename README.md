@@ -64,6 +64,47 @@ in reviewer mode.
   </tr>
 </table>
 
+## Features
+
+- **FSRS scheduling.** Every word is scheduled with FSRS-6, aiming at 90%
+  recall, in place of the older SM-2. The app fits FSRS's parameters to your
+  own answers, separately for each language and skill, so words you find easy
+  come back less often. Every answer goes to an append-only review log, and
+  everything else is worked out from it.
+  ([ADR-0033](https://github.com/aaronified/fluenough/wiki/ADR-0033-Fsrs),
+  [ADR-0035](https://github.com/aaronified/fluenough/wiki/ADR-0035-Fsrs-Fitted-Per-Skill))
+- **Indian languages first.** Courses for Telugu, Bengali, Marathi, Kannada,
+  Assamese, Hindustani and Gujarati, each starting with script decks (digits
+  included) and a script guide. Every word has a Latin-letter reading, based
+  on ISO 15919, and you can switch it off to see only the script.
+  ([Scripts and readings](https://github.com/aaronified/fluenough/wiki/Scripts-and-Readings))
+- **Detailed stats on your learning habits.** The Progress tab shows the words,
+  rules and sentences you know against what you have been taught; your level
+  (A1, A2 or B1) from the path's milestones; a 7-day calendar with your
+  streak; a six-point mastery star (grammar, script, read, write, hear, say);
+  the hours you have spent and the hours left to the end of B1; your weakest
+  topics; and the cards you keep missing.
+  ([Progress and stats](https://github.com/aaronified/fluenough/wiki/Progress-and-Stats))
+- **Several scripts.** Hindustani is one course in Devanagari or Perso-Arabic
+  (Urdu), and Chinese in simplified or traditional characters; you choose, or
+  learn both. Punjabi is set up for Gurmukhi or Shahmukhi, its decks still to
+  come. Each Indic course teaches its script first, or lets you learn in Latin
+  letters and come back to the script later. A font is downloaded only where
+  a phone needs one: the app shows a sample line, asks whether you can read
+  it, and fetches the script's font only if it shows boxes.
+- **Hear, Say, Read, Write.** The app's own skill model: each word has a
+  separate schedule for each of the four, because you can recognise a word
+  long before you can write it, and grammar is scheduled on its own. It is
+  how Fluenough organises practice, not an exam or an official standard.
+  ([Drills and skills](https://github.com/aaronified/fluenough/wiki/Drills-and-Skills))
+- **Community reviews.** Many decks were written without a native speaker. In
+  reviewer mode, a reader who knows both languages marks cards right or wrong,
+  proposes a fix and says how rude a word sounds; a review bot turns the
+  reviews into proposed changes to the decks, which reach learners once enough
+  other reviewers accept them.
+  ([Reviewing guide](https://github.com/aaronified/fluenough/wiki/Reviewing-Guide),
+  [ADR-0038](https://github.com/aaronified/fluenough/wiki/ADR-0038-Review-Proposals))
+
 ## Why Fluenough is different
 
 Most drilling apps are built around one language and then stretched to fit
@@ -80,21 +121,44 @@ than hard-coded rules. Adding a language means adding files, never code.
 
 ## Courses
 
-Taught from English: Telugu, Bengali, Spanish, Marathi, Kannada, Assamese,
-Chinese (Mandarin), Hindustani, Japanese, Korean and Gujarati. Every course
-has a B1 plan in its path: the units up to B1, in teaching order, those not
-yet written shown as "Coming". Telugu is written to B1; Bengali has all but one of its A1
-units; the others have their first units, or more. Each Indic course
-starts with its script decks, digits included, and a script guide. Hindustani
-is one course in two scripts, Devanagari and Perso-Arabic, and Chinese in
-two, simplified and traditional: the learner chooses which to learn. A course
-is tagged Alpha until its A1 units are written and Beta until its B1 units
-are.
+Taught from English. Every course has a B1 plan in its path: the units up to
+B1, in teaching order, those not yet written shown as "Coming". The list
+below is written from `decks/index.json` each time the decks change.
 
-Two courses teach a notation rather than a language: the International
-Phonetic Alphabet, and English Braille (uncontracted UEB, typed on the app's
-own six-dot keyboard). Each is tagged Complete once its path is written. See
-[docs/ROADMAP.md](docs/ROADMAP.md).
+<!-- languages:start -->
+| Language | Scripts | Level reached |
+|---|---|---|
+| Assamese | Eastern Nagari | A1 |
+| Bengali | Eastern Nagari | A1 |
+| Gujarati | Gujarati | in progress |
+| Hindustani | Devanagari, Perso-Arabic | A1 |
+| Japanese | Kana, Han | in progress |
+| Kannada | Kannada | A1 |
+| Korean | Hangul | in progress |
+| Mandarin Chinese | Simplified Han, Traditional Han | in progress |
+| Marathi | Devanagari | A1 |
+| Spanish | Latin | A1 |
+| Telugu | Telugu | A1 |
+| Toki Pona | Latin | B1 |
+<!-- languages:end -->
+
+**Levels are approximate.** They come from the vocabulary sizes and the units
+of each course's path, and no exam stands behind them: "Level reached" means
+every unit up to that level's milestone is written. How the levels relate to
+CEFR and to national tests is in
+[Proficiency levels](https://github.com/aaronified/fluenough/blob/main/wiki/Proficiency-Levels.md).
+
+**Why the courses stop at B1.** The owner's scope is "a strong base, then
+real use": a course gives you the base, and past B1 you move on to native
+media, books and people. Upcoming (owner, 2026-10-24): learners who reach B1
+are pointed to movies, songs and books as resources
+([#215](https://github.com/aaronified/fluenough/issues/215)).
+
+A course is tagged Alpha until its A1 units are written and Beta until its B1
+units are. Two courses teach a notation rather than a language: the
+International Phonetic Alphabet, and English Braille (uncontracted UEB, typed
+on the app's own six-dot keyboard). Each is tagged Complete once its path is
+written. See [docs/ROADMAP.md](docs/ROADMAP.md).
 
 The app comes with no decks. It downloads a language's decks from this
 repository's `main` branch when you choose it, and you can start once its
