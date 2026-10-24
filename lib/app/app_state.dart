@@ -2541,7 +2541,10 @@ class AppState extends ChangeNotifier {
     final lesson = lessonSets(
       picked,
       sets: _lessonSets(picked),
-      isNew: (card) => !isTaught(card) && modesOf(card).isNotEmpty,
+      // A set's members are taught whole, but none the gate holds back
+      // (ADR-0046).
+      isNew: (card) =>
+          !isTaught(card) && unlocks.isOpen(card) && modesOf(card).isNotEmpty,
       isKnown: isTaught,
     );
     final gate = unlocks;
