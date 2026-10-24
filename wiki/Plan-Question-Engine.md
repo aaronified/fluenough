@@ -229,6 +229,18 @@ every card in the shipped decks, then deletes the old.
 10. **Retire `pattern.prompt` (#10).** A pattern's cards are asked by the
     types their data allows. The field is read for old decks and flagged
     by the validator, and removed from DECK-FORMAT.md in the same step.
+    **Built (#522):** `prompt` is optional on a pattern and on a grammar
+    layer's pattern. Without one a cell is asked as `{lemma} ({gloss}) —
+    {slot}` (`kPatternPrompt`, what 91 of the 108 shipped decks wrote), and a
+    deck that gives one is read as written. The validator accepts a pattern
+    without one and warns of one given (an unknown placeholder is still an
+    error); DECK-FORMAT marks the field retired. **Released apps still need
+    the key**, since they read it as required, so no shipped deck drops it
+    yet: that is a deck change for a release after the one that ships this,
+    on `decks-next`, and the validator's warning stays until then. The
+    default's wording is mine, taken from the most common shipped prompt;
+    the cells of the 17 decks that wrote another would read differently
+    once their `prompt` is removed.
 
 ## Build order: fields first
 
