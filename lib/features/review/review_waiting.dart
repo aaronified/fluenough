@@ -222,7 +222,7 @@ WaitingLanguage waitingIn(AppState state, LanguageInfo language) {
   final unconfirmed = <WaitingCard>[];
   var offensive = 0;
   var pairs = 0;
-  for (final deck in state.decks) {
+  for (final deck in state.reviewDecks) {
     if (deck.language.code != code) continue;
     final waiting = awaitsReview(state, deck);
     for (final card in deck.cards) {
@@ -287,7 +287,7 @@ List<SentSuggestion> sentSuggestionsOf(AppState state) {
   final out = <SentSuggestion>[];
   for (final review in state.reviewing.reviews.decks.values) {
     if (review.sent == null) continue;
-    final deck = state.deckById(review.deckId);
+    final deck = state.reviewDeckById(review.deckId);
     for (final MapEntry(key: cardId, value: cardReview)
         in review.sentCards.entries) {
       final card = deck?.cards.where((c) => c.id == cardId).firstOrNull;
