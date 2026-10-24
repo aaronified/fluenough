@@ -2,22 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../core/data/course_path.dart';
-import '../../core/progress/mastery.dart';
+import '../../core/progress/unlocks.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import 'level_badge.dart';
 
-/// The top row of Progress: the Words tile and the Level tile.
+/// The top of Progress (#418, owner, 2026-10-23: "3 tiles of taught"): a row
+/// of three tiles, words, rules and sentences, counted against what is taught
+/// so far, then the Level tile alone below.
 class ProgressTiles extends StatelessWidget {
   const ProgressTiles({
     super.key,
-    required this.words,
+    required this.counts,
     required this.level,
     required this.started,
     required this.allLanguages,
   });
 
-  final WordCounts words;
+  final UnlockCounts counts;
 
   /// The level the course has reached, or null before A1.
   final Milestone? level;
@@ -30,73 +32,132 @@ class ProgressTiles extends StatelessWidget {
   final bool allLanguages;
 
   @override
-  Widget build(BuildContext context) => IntrinsicHeight(
-    child: Row(
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final count = NumberFormat.decimalPattern(l10n.localeName);
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
+      spacing: 8,
       children: <Widget>[
-        Expanded(flex: 8, child: WordsTile(words: words)),
-        const SizedBox(width: 8),
-        Expanded(
-          flex: 7,
-          child: LevelTile(
-            level: level,
-            started: started,
-            allLanguages: allLanguages,
+        IntrinsicHeight(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            spacing: 8,
+            children: <Widget>[
+              Expanded(
+                child: UnlockTile(
+                  title: l10n.progressWordsTitle,
+                  figure: count.format(counts.wordsKnown),
+                  known: l10n.progressKnown,
+                  outOf: l10n.progressOfTaught(
+                    count.format(counts.wordsTaught),
+                  ),
+                  semantics: l10n.progressWordsSemantics(
+                    count.format(counts.wordsKnown),
+                    count.format(counts.wordsTaught),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: UnlockTile(
+                  title: l10n.progressRulesTitle,
+                  figure: count.format(counts.rulesKnown),
+                  known: l10n.progressKnown,
+                  outOf: l10n.progressOfTaught(
+                    count.format(counts.rulesTaught),
+                  ),
+                  semantics: l10n.progressRulesSemantics(
+                    count.format(counts.rulesKnown),
+                    count.format(counts.rulesTaught),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: UnlockTile(
+                  title: l10n.progressSentencesTitle,
+                  figure: count.format(counts.sentencesOpen),
+                  known: l10n.progressOpen,
+                  outOf: l10n.progressOfTaught(
+                    count.format(counts.sentencesTotal),
+                  ),
+                  semantics: l10n.progressSentencesSemantics(
+                    count.format(counts.sentencesOpen),
+                    count.format(counts.sentencesTotal),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
+        LevelTile(level: level, started: started, allLanguages: allLanguages),
       ],
-    ),
-  );
+    );
+  }
 }
 
-/// "Words mastered", with **312** in bold and "/ 540 taught" lighter, on one
-/// line at any text size: the line shrinks to fit rather than wrap.
-class WordsTile extends StatelessWidget {
-  const WordsTile({super.key, required this.words});
+/// A tile of the three counts: its title, **312** on one line at any text
+/// size (it shrinks to fit rather than wrap), and under it what is counted,
+/// "known", and "of 540 taught", which may take two lines.
+class UnlockTile extends StatelessWidget {
+  const UnlockTile({
+    super.key,
+    required this.title,
+    required this.figure,
+    required this.known,
+    required this.outOf,
+    required this.semantics,
+  });
 
-  final WordCounts words;
+  final String title;
+  final String figure;
+
+  /// What the figure counts: known, or open.
+  final String known;
+
+  /// What it is out of: "of 540 taught".
+  final String outOf;
+  final String semantics;
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final count = NumberFormat.decimalPattern(l10n.localeName);
     return Semantics(
       container: true,
       excludeSemantics: true,
-      label: l10n.progressWordsSemantics(
-        count.format(words.mastered),
-        count.format(words.taught),
-      ),
+      label: semantics,
       child: ProgressTile(
         color: scheme.surfaceContainerLow,
-        title: l10n.progressWordsTitle,
+        title: title,
         titleColor: scheme.onSurfaceVariant,
-        child: FittedBox(
-          fit: BoxFit.scaleDown,
-          alignment: AlignmentDirectional.centerStart,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.baseline,
-            textBaseline: TextBaseline.alphabetic,
-            children: <Widget>[
-              Text(
-                count.format(words.mastered),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              alignment: AlignmentDirectional.centerStart,
+              child: Text(
+                figure,
+                maxLines: 1,
                 style: theme.textTheme.headlineMedium!.copyWith(
                   fontWeight: FontWeight.w800,
                   color: scheme.onSurface,
                 ),
               ),
-              const SizedBox(width: 4),
-              Text(
-                l10n.progressWordsTaught(count.format(words.taught)),
-                style: theme.textTheme.bodyMedium!.copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
+            ),
+            Text(
+              known,
+              style: theme.textTheme.bodyMedium!.copyWith(
+                color: scheme.onSurfaceVariant,
               ),
-            ],
-          ),
+            ),
+            Text(
+              outOf,
+              style: theme.textTheme.bodySmall!.copyWith(
+                color: scheme.onSurfaceVariant,
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -152,44 +213,56 @@ class LevelTile extends StatelessWidget {
       alignment: AlignmentDirectional.centerStart,
       child: child,
     );
+    // One slim row, the level big and its title and start date beside it, so
+    // that the three counts, this tile and the hours tiles leave the star in
+    // reach at 1.4x text (owner-approved screens keep it on screen).
+    final title = allLanguages
+        ? l10n.progressStartedTitle
+        : l10n.progressLevelTitle;
     return Semantics(
       container: true,
       excludeSemantics: true,
       label: label,
-      child: ProgressTile(
-        color: scheme.surfaceContainerLow,
-        gradient: badge?.gradient,
-        title: allLanguages
-            ? l10n.progressStartedTitle
-            : l10n.progressLevelTitle,
-        titleColor: soft,
-        child: allLanguages
-            ? fit(
+      child: Container(
+        padding: const EdgeInsetsDirectional.symmetric(
+          horizontal: 12,
+          vertical: 12,
+        ),
+        decoration: BoxDecoration(
+          color: scheme.surfaceContainerLow,
+          gradient: badge?.gradient,
+          borderRadius: BorderRadius.circular(AppRadii.group),
+        ),
+        child: Row(
+          spacing: 12,
+          children: <Widget>[
+            Flexible(
+              child: fit(
                 Text(
-                  date,
+                  allLanguages
+                      ? date
+                      : shown == null
+                      ? l10n.progressLevelNone
+                      : levelName(l10n, shown),
                   maxLines: 1,
-                  style: theme.textTheme.titleLarge!.copyWith(
+                  style: theme.textTheme.headlineMedium!.copyWith(
                     fontWeight: FontWeight.w800,
                     color: ink,
                   ),
                 ),
-              )
-            : Column(
+              ),
+            ),
+            Expanded(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  fit(
-                    Text(
-                      shown == null
-                          ? l10n.progressLevelNone
-                          : levelName(l10n, shown),
-                      maxLines: 1,
-                      style: theme.textTheme.headlineMedium!.copyWith(
-                        fontWeight: FontWeight.w800,
-                        color: ink,
-                      ),
-                    ),
+                  Text(
+                    title,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: theme.textTheme.labelLarge!.copyWith(color: soft),
                   ),
-                  if (started != null)
+                  if (!allLanguages && started != null)
                     fit(
                       Text(
                         l10n.progressLevelStarted(date),
@@ -201,6 +274,9 @@ class LevelTile extends StatelessWidget {
                     ),
                 ],
               ),
+            ),
+          ],
+        ),
       ),
     );
   }

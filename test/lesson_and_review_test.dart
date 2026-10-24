@@ -2417,6 +2417,13 @@ cards:
       expect(state.lessonDoneToday('es'), isTrue);
 
       // The summary offers another; back on Today, the day goes on.
+      // The summary's list is lazy, and what the lesson unlocked sits above
+      // the buttons: scroll to them.
+      await tester.scrollUntilVisible(
+        find.text(l10n.summaryAnotherLesson),
+        200,
+        scrollable: find.byType(Scrollable).first,
+      );
       expect(find.text(l10n.summaryAnotherLesson), findsOneWidget);
       Navigator.of(tester.element(find.byType(SummaryPage)))
           .popUntil((route) => route.isFirst);
