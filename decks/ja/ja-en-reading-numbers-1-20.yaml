@@ -1,0 +1,76 @@
+"schema": 1
+"id": "ja-en-reading-numbers-1-20"
+"name": "Japanese reading: numbers one to twenty"
+"kind": "reading"
+"language":
+  "code": "ja"
+  "iso639_3": "jpn"
+  "name": "Japanese"
+  "script": "kana"
+  "tts": "ja-JP"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+  - "beginner"
+  - "unreviewed"
+"passages":
+  - "id": "ja-numbers-dogs"
+    "title": "Counting the dogs"
+    "sentences":
+      - "text": "いぬがふたついます。"
+        "reading": "inu ga futatsu imasu."
+      - "text": "いぬはいくついますか。"
+        "reading": "inu wa ikutsu imasu ka?"
+      - "text": "いちはちいさいです。"
+        "reading": "ichi wa chiisai desu."
+    "questions":
+      - "id": "ja-0274"
+        "prompt":
+          "en": "Which word in the first line means 'two things'?"
+        "options":
+          - "en": "ふたつ (futatsu)"
+          - "en": "いぬ (inu)"
+        "answer": 1
+      - "id": "ja-0275"
+        "prompt":
+          "en": "The second line asks how many dogs there are."
+        "answer": true
+      - "id": "ja-0276"
+        "prompt":
+          "en": "Which line says that one is small?"
+        "options":
+          - "en": "The first line"
+          - "en": "The third line"
+        "answer": 2
+  - "id": "ja-numbers-sums"
+    "title": "Sums"
+    "sentences":
+      - "text": "じゅうはおおきいです。"
+        "reading": "juu wa ookii desu."
+      - "text": "どれがじゅうですか。"
+        "reading": "dore ga juu desu ka?"
+      - "text": "ごとろくはじゅういちです。"
+        "reading": "go to roku wa juuichi desu."
+    "questions":
+      - "id": "ja-0277"
+        "prompt":
+          "en": "Which word in the second line means 'which one'?"
+        "options":
+          - "en": "どれ (dore)"
+          - "en": "じゅう (juu)"
+        "answer": 1
+      - "id": "ja-0278"
+        "prompt":
+          "en": "The third line says that five and six are twelve."
+        "answer": false
+      - "id": "ja-0279"
+        "prompt":
+          "en": "Which line says that ten is big?"
+        "options":
+          - "en": "The first line"
+          - "en": "The third line"
+        "answer": 1
