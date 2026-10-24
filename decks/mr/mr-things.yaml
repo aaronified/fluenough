@@ -1,0 +1,340 @@
+schema: 1
+id: "mr-things"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+theme: "things"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-0835"
+    target: "पेन"
+    reading: "pen"
+    ipa: "pen"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "हे पेन माझे आहे.", reading: "he pen mājhe āhe.", ipa: "ɦe pen madʒʱe aɦe", bases: [{ word: "माझे", base: "माझा", reading: "mājhā" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "माझ्याकडे एक पेन आहे.", reading: "mājhyākḍe ek pen āhe.", ipa: "madʒʱjakɖe ek pen aɦe", bases: [{ word: "माझ्याकडे", base: "मी", reading: "mi" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-0836"
+    target: "पेन्सिल"
+    reading: "pensil"
+    ipa: "pensil"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ही पेन्सिल तुझी आहे.", reading: "hi pensil tujhi āhe.", ipa: "ɦi pensil t̪udʒʱi aɦe", bases: [{ word: "तुझी", base: "तुझा", reading: "tujhā" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "मला एक पेन्सिल हवी आहे.", reading: "malā ek pensil havi āhe.", ipa: "məla ek pensil ɦəʋi aɦe", bases: [{ word: "मला", base: "मी", reading: "mi" }, { word: "हवी", ref: "mr-0411" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-0837"
+    target: "वही"
+    reading: "vahi"
+    ipa: "ʋəɦi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ही वही नवीन आहे.", reading: "hi vahi navin āhe.", ipa: "ɦi ʋəɦi nəʋin aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "तो रोज वही उघडतो.", reading: "to roj vahi ughḍto.", ipa: "t̪o rodz ʋəɦi uɡʱɖt̪o", bases: [{ word: "तो", ref: "mr-0676" }, { word: "रोज", ref: "mr-0505" }, { word: "उघडतो", base: "उघडणे", reading: "ughḍṇe" }] }
+  - id: "mr-0838"
+    target: "कागद"
+    reading: "kāgad"
+    ipa: "kaɡəd̪"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "मला कागद द्या.", reading: "malā kāgad dyā.", ipa: "məla kaɡəd̪ d̪ja", bases: [{ word: "मला", base: "मी", reading: "mi" }, { word: "द्या", base: "देणे", reading: "deṇe" }] }
+      - { target: "तिने कागदावर लिहिले.", reading: "tine kāgdāvar lihile.", ipa: "t̪ine kaɡd̪aʋər liɦile", bases: [{ word: "तिने", ref: "mr-0677" }, { word: "कागदावर", base: "कागद", reading: "kāgad" }, { word: "लिहिले", base: "लिहिणे", reading: "lihiṇe" }] }
+  - id: "mr-0839"
+    target: "फाईल"
+    reading: "phāil"
+    ipa: "pʰail"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ही फाईल कुठे आहे?", reading: "hi phāil kuṭhe āhe?", ipa: "ɦi pʰail kuʈʰe aɦe", bases: [{ word: "कुठे", base: "कुठे", reading: "kuṭhe" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "ती फाईल टेबलावर ठेवते.", reading: "ti phāil ṭeblāvar ṭhevte.", ipa: "t̪i pʰail ʈeblaʋər ʈʰeʋt̪e", bases: [{ word: "ती", ref: "mr-0677" }, { word: "टेबलावर", base: "टेबल", reading: "ṭebal" }, { word: "ठेवते", base: "ठेवणे", reading: "ṭhevṇe" }] }
+  - id: "mr-0840"
+    target: "घड्याळ"
+    reading: "ghaḍyāḷ"
+    ipa: "ɡʱəɖjaɭ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "माझे घड्याळ बंद आहे.", reading: "mājhe ghaḍyāḷ band āhe.", ipa: "madʒʱe ɡʱəɖjaɭ bənd̪ aɦe", bases: [{ word: "माझे", base: "माझा", reading: "mājhā" }, { word: "बंद", base: "बंद", reading: "band" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "घड्याळात आठ वाजले.", reading: "ghaḍyāḷāt āṭh vājle.", ipa: "ɡʱəɖjaɭat̪ aʈʰ ʋadzle", bases: [{ word: "घड्याळात", base: "घड्याळ", reading: "ghaḍyāḷ" }, { word: "आठ", ref: "mr-0260" }, { word: "वाजले", base: "वाजणे", reading: "vājṇe" }] }
+  - id: "mr-0841"
+    target: "छत्री"
+    reading: "chatri"
+    ipa: "tʃʰət̪ri"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "पाऊस आहे, छत्री घे.", reading: "pāus āhe, chatri ghe.", ipa: "paus aɦe tʃʰət̪ri ɡʱe", bases: [{ word: "पाऊस", base: "पाऊस", reading: "pāus" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "घे", base: "घेणे", reading: "gheṇe" }] }
+      - { target: "तो छत्री विसरला.", reading: "to chatri visrlā.", ipa: "t̪o tʃʰət̪ri ʋisrla", bases: [{ word: "तो", ref: "mr-0676" }, { word: "विसरला", base: "विसरणे", reading: "visrṇe" }] }
+  - id: "mr-0842"
+    target: "बॅग"
+    reading: "bêg"
+    ipa: "bæɡ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "माझी बॅग जड आहे.", reading: "mājhi bêg jaḍ āhe.", ipa: "madʒʱi bæɡ dzəɖ aɦe", bases: [{ word: "माझी", base: "माझा", reading: "mājhā" }, { word: "जड", base: "जड", reading: "jaḍ" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "बॅगेत पुस्तक आहे.", reading: "bêget pustak āhe.", ipa: "bæɡet̪ pust̪ək aɦe", bases: [{ word: "बॅगेत", base: "बॅग", reading: "bêg" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-0843"
+    target: "चष्मा"
+    reading: "caṣmā"
+    ipa: "tsəʂma"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "माझा चष्मा कुठे आहे?", reading: "mājhā caṣmā kuṭhe āhe?", ipa: "madzʱa tsəʂma kuʈʰe aɦe", bases: [{ word: "माझा", base: "माझा", reading: "mājhā" }, { word: "कुठे", base: "कुठे", reading: "kuṭhe" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "आजी चष्मा घालते.", reading: "āji caṣmā ghālte.", ipa: "adʒi tsəʂma ɡʱalt̪e", bases: [{ word: "आजी", ref: "mr-0197" }, { word: "घालते", base: "घालणे", reading: "ghālṇe" }] }
+  - id: "mr-0844"
+    target: "आरसा"
+    reading: "ārsā"
+    ipa: "arsa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "आरसा भिंतीवर आहे.", reading: "ārsā bhintivar āhe.", ipa: "arsa bʱint̪iʋər aɦe", bases: [{ word: "भिंतीवर", base: "भिंत", reading: "bhint" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "ती आरशात बघते.", reading: "ti ārśāt baghte.", ipa: "t̪i arʃat̪ bəɡʱt̪e", bases: [{ word: "ती", ref: "mr-0677" }, { word: "आरशात", base: "आरसा", reading: "ārsā" }, { word: "बघते", base: "बघणे", reading: "baghṇe" }] }
+  - id: "mr-0845"
+    target: "कंगवा"
+    reading: "kaṅgavā"
+    ipa: "kəŋɡəʋa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "माझा कंगवा कुठे आहे?", reading: "mājhā kaṅgavā kuṭhe āhe?", ipa: "madzʱa kəŋɡəʋa kuʈʰe aɦe", bases: [{ word: "माझा", base: "माझा", reading: "mājhā" }, { word: "कुठे", base: "कुठे", reading: "kuṭhe" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "तिने कंगवा घेतला.", reading: "tine kaṅgavā ghetlā.", ipa: "t̪ine kəŋɡəʋa ɡʱet̪la", bases: [{ word: "तिने", ref: "mr-0677" }, { word: "घेतला", base: "घेणे", reading: "gheṇe" }] }
+  - id: "mr-0846"
+    target: "साबण"
+    reading: "sābaṇ"
+    ipa: "sabəɳ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "हात साबणाने धुवा.", reading: "hāt sābṇāne dhuvā.", ipa: "ɦat̪ sabɳane d̪ʱuʋa", bases: [{ word: "हात", base: "हात", reading: "hāt" }, { word: "साबणाने", base: "साबण", reading: "sābaṇ" }, { word: "धुवा", base: "धुणे", reading: "dhuṇe" }] }
+      - { target: "साबण कुठे आहे?", reading: "sābaṇ kuṭhe āhe?", ipa: "sabəɳ kuʈʰe aɦe", bases: [{ word: "कुठे", base: "कुठे", reading: "kuṭhe" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-0847"
+    target: "टॉवेल"
+    reading: "ṭôvel"
+    ipa: "ʈɔʋel"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "टॉवेल स्वच्छ आहे.", reading: "ṭôvel svacch āhe.", ipa: "ʈɔʋel sʋətstʃʰ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "त्याने टॉवेल घेतला.", reading: "tyāne ṭôvel ghetlā.", ipa: "t̪jane ʈɔʋel ɡʱet̪la", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "घेतला", base: "घेणे", reading: "gheṇe" }] }
+  - id: "mr-0848"
+    target: "चादर"
+    reading: "cādar"
+    ipa: "tsad̪ər"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "चादर पांढरी आहे.", reading: "cādar pāṇḍhari āhe.", ipa: "tsad̪ər paɳɖʱəri aɦe", bases: [{ word: "पांढरी", base: "पांढरा", reading: "pāṇḍharā" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "पलंगावर चादर आहे.", reading: "palaṅgāvar cādar āhe.", ipa: "pələŋɡaʋər tsad̪ər aɦe", bases: [{ word: "पलंगावर", base: "पलंग", reading: "palaṅg" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-0849"
+    target: "उशी"
+    reading: "uśi"
+    ipa: "uʃi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "उशी मऊ आहे.", reading: "uśi mau āhe.", ipa: "uʃi məu aɦe", bases: [{ word: "मऊ", base: "मऊ", reading: "mau" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "झोपताना उशी वापरा.", reading: "jhoptānā uśi vāprā.", ipa: "dzʱopt̪ana uʃi ʋapra", bases: [{ word: "झोपताना", base: "झोपणे", reading: "jhopṇe" }, { word: "वापरा", base: "वापरणे", reading: "vāprṇe" }] }
+  - id: "mr-0850"
+    target: "ब्लँकेट"
+    reading: "blam̐keṭ"
+    ipa: "blə̃keʈ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "हे ब्लँकेट उबदार आहे.", reading: "he blam̐keṭ ubdār āhe.", ipa: "ɦe blə̃keʈ ubd̪ar aɦe", bases: [{ word: "उबदार", base: "उबदार", reading: "ubdār" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "मला ब्लँकेट हवे आहे.", reading: "malā blam̐keṭ have āhe.", ipa: "məla blə̃keʈ ɦəʋe aɦe", bases: [{ word: "मला", base: "मी", reading: "mi" }, { word: "हवे", ref: "mr-0411" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-0851"
+    target: "ताट"
+    reading: "tāṭ"
+    ipa: "t̪aʈ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ताट टेबलावर आहे.", reading: "tāṭ ṭeblāvar āhe.", ipa: "t̪aʈ ʈeblaʋər aɦe", bases: [{ word: "टेबलावर", base: "टेबल", reading: "ṭebal" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "ताट स्वच्छ करा.", reading: "tāṭ svacch karā.", ipa: "t̪aʈ sʋətstʃʰ kəra", bases: [{ word: "स्वच्छ", base: "स्वच्छ", reading: "svacch" }, { word: "करा", base: "करणे", reading: "karṇe" }] }
+  - id: "mr-0852"
+    target: "ग्लास"
+    reading: "glās"
+    ipa: "ɡlas"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "एक ग्लास पाणी द्या.", reading: "ek glās pāṇi dyā.", ipa: "ek ɡlas paɳi d̪ja", bases: [{ word: "द्या", base: "देणे", reading: "deṇe" }] }
+      - { target: "ग्लास फुटला.", reading: "glās phuṭlā.", ipa: "ɡlas pʰuʈla", bases: [{ word: "फुटला", base: "फुटणे", reading: "phuṭṇe" }] }
+  - id: "mr-0853"
+    target: "काटा"
+    reading: "kāṭā"
+    ipa: "kaʈa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "काटा आणि चमचा ठेवा.", reading: "kāṭā āṇi camcā ṭhevā.", ipa: "kaʈa aɳi tsəmtsa ʈʰeʋa", bases: [{ word: "आणि", ref: "mr-0575" }, { word: "ठेवा", base: "ठेवणे", reading: "ṭhevṇe" }] }
+      - { target: "तो काट्याने खातो.", reading: "to kāṭyāne khāto.", ipa: "t̪o kaʈjane kʰat̪o", bases: [{ word: "तो", ref: "mr-0676" }, { word: "काट्याने", base: "काटा", reading: "kāṭā" }, { word: "खातो", base: "खाणे", reading: "khāṇe" }] }
+  - id: "mr-0854"
+    target: "सुरी"
+    reading: "suri"
+    ipa: "suri"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "सुरी धारदार आहे.", reading: "suri dhārdār āhe.", ipa: "suri d̪ʱard̪ar aɦe", bases: [{ word: "धारदार", base: "धारदार", reading: "dhārdār" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "सुरीने भाजी कापा.", reading: "surine bhāji kāpā.", ipa: "surine bʱadʒi kapa", bases: [{ word: "सुरीने", base: "सुरी", reading: "suri" }, { word: "कापा", base: "कापणे", reading: "kāpṇe" }] }
+  - id: "mr-0855"
+    target: "पातेले"
+    reading: "pātele"
+    ipa: "pat̪ele"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "पातेले गरम आहे.", reading: "pātele garam āhe.", ipa: "pat̪ele ɡərəm aɦe", bases: [{ word: "गरम", base: "गरम", reading: "garam" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "पातेल्यात दूध उकळते.", reading: "pātelyāt dudh ukḷte.", ipa: "pat̪eljat̪ d̪ud̪ʱ ukɭt̪e", bases: [{ word: "पातेल्यात", base: "पातेले", reading: "pātele" }, { word: "उकळते", base: "उकळणे", reading: "ukḷṇe" }] }
+  - id: "mr-0856"
+    target: "कढई"
+    reading: "kaḍhai"
+    ipa: "kəɖʱəi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "कढई मोठी आहे.", reading: "kaḍhai moṭhi āhe.", ipa: "kəɖʱəi moʈʰi aɦe", bases: [{ word: "मोठी", base: "मोठा", reading: "moṭhā" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "कढईत तेल घाला.", reading: "kaḍhait tel ghālā.", ipa: "kəɖʱəit̪ t̪el ɡʱala", bases: [{ word: "कढईत", base: "कढई", reading: "kaḍhai" }, { word: "घाला", base: "घालणे", reading: "ghālṇe" }] }
+  - id: "mr-0857"
+    target: "तवा"
+    reading: "tavā"
+    ipa: "t̪əʋa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "तवा गरम झाला.", reading: "tavā garam jhālā.", ipa: "t̪əʋa ɡərəm dzʱala", bases: [{ word: "गरम", base: "गरम", reading: "garam" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
+      - { target: "तव्यावर पोळी भाजा.", reading: "tavyāvar poḷi bhājā.", ipa: "t̪əʋjaʋər poɭi bʱadza", bases: [{ word: "तव्यावर", base: "तवा", reading: "tavā" }, { word: "पोळी", ref: "mr-0570" }, { word: "भाजा", base: "भाजणे", reading: "bhājṇe" }] }
+  - id: "mr-0858"
+    target: "फोन"
+    reading: "phon"
+    ipa: "pʰon"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "माझा फोन बंद आहे.", reading: "mājhā phon band āhe.", ipa: "madzʱa pʰon bənd̪ aɦe", bases: [{ word: "माझा", base: "माझा", reading: "mājhā" }, { word: "बंद", base: "बंद", reading: "band" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "फोन कुठे आहे?", reading: "phon kuṭhe āhe?", ipa: "pʰon kuʈʰe aɦe", bases: [{ word: "कुठे", base: "कुठे", reading: "kuṭhe" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-0859"
+    target: "कुलूप"
+    reading: "kulup"
+    ipa: "kulup"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "कुलूप बंद आहे.", reading: "kulup band āhe.", ipa: "kulup bənd̪ aɦe", bases: [{ word: "बंद", base: "बंद", reading: "band" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "दाराला कुलूप आहे.", reading: "dārālā kulup āhe.", ipa: "d̪arala kulup aɦe", bases: [{ word: "दाराला", base: "दार", reading: "dār" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-0860"
+    target: "बाटली"
+    reading: "bāṭli"
+    ipa: "baʈli"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "बाटली रिकामी आहे.", reading: "bāṭli rikāmi āhe.", ipa: "baʈli rikami aɦe", bases: [{ word: "रिकामी", base: "रिकामा", reading: "rikāmā" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "बाटलीत पाणी भरा.", reading: "bāṭlit pāṇi bharā.", ipa: "baʈlit̪ paɳi bʱəra", bases: [{ word: "बाटलीत", base: "बाटली", reading: "bāṭli" }, { word: "पाणी", ref: "mr-0558" }, { word: "भरा", base: "भरणे", reading: "bharṇe" }] }
+  - id: "mr-0861"
+    target: "टोपी"
+    reading: "ṭopi"
+    ipa: "ʈopi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "टोपी डोक्यावर आहे.", reading: "ṭopi ḍokyāvar āhe.", ipa: "ʈopi ɖokjaʋər aɦe", bases: [{ word: "डोक्यावर", base: "डोके", reading: "ḍoke" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "तो लाल टोपी घालतो.", reading: "to lāl ṭopi ghālto.", ipa: "t̪o lal ʈopi ɡʱalt̪o", bases: [{ word: "तो", ref: "mr-0676" }, { word: "लाल", base: "लाल", reading: "lāl" }, { word: "घालतो", base: "घालणे", reading: "ghālṇe" }] }
+  - id: "mr-0862"
+    target: "कार्ड"
+    reading: "kārḍ"
+    ipa: "karɖ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "हे कार्ड तुझे आहे का?", reading: "he kārḍ tujhe āhe kā?", ipa: "ɦe karɖ t̪udʒʱe aɦe ka", bases: [{ word: "तुझे", base: "तुझा", reading: "tujhā" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "का", base: "का", reading: "kā" }] }
+  - id: "mr-0863"
+    target: "डबा"
+    reading: "ḍabā"
+    ipa: "ɖəba"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "डब्यात बिस्किटे आहेत.", reading: "ḍabyāt biskiṭe āhet.", ipa: "ɖəbjat̪ biskiʈe aɦet̪", bases: [{ word: "डब्यात", base: "डबा", reading: "ḍabā" }, { word: "बिस्किटे", base: "बिस्कीट", reading: "biskiṭ" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+      - { target: "डबा उघडा.", reading: "ḍabā ughḍā.", ipa: "ɖəba uɡʱɖa", bases: [{ word: "उघडा", base: "उघडणे", reading: "ughḍṇe" }] }
+  - id: "mr-0864"
+    target: "पेटी"
+    reading: "peṭi"
+    ipa: "peʈi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ही पेटी जड आहे.", reading: "hi peṭi jaḍ āhe.", ipa: "ɦi peʈi dzəɖ aɦe", bases: [{ word: "जड", base: "जड", reading: "jaḍ" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "पेटी उघडा.", reading: "peṭi ughḍā.", ipa: "peʈi uɡʱɖa", bases: [{ word: "उघडा", base: "उघडणे", reading: "ughḍṇe" }] }
+  - ref: "mr-0382"
+  - ref: "mr-0372"
