@@ -163,7 +163,7 @@ void main() {
 
   testWidgets('Script fonts lists the scripts of the courses with where '
       'each stands', (tester) async {
-    await state.downloadLanguage('hi');
+    await tester.runAsync(() => state.downloadLanguage('hi'));
     await pumpScreen(tester, const ScriptFontsPage(), state: state);
     final l10n = l10nOf(tester);
     expect(find.text(l10n.scriptName('devanagari')), findsOneWidget);
