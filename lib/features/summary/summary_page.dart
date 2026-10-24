@@ -1,10 +1,7 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../app/app_scope.dart';
-import '../../app/app_state.dart';
 import '../../app/memory_progress.dart';
 import '../../app/routes.dart';
 import '../../app/session.dart';
@@ -63,7 +60,7 @@ class SummaryPage extends StatelessWidget {
     final offersLesson = lesson != null && state.lessonFor(lesson).isNotEmpty;
     final unlocked = empty || finished == null
         ? null
-        : _unlockedSince(state, finished.code, result.startedAt);
+        : state.unlockedSince(finished.code, result.startedAt);
 
     return Scaffold(
       body: SafeArea(
@@ -194,26 +191,6 @@ class SummaryPage extends StatelessWidget {
       ),
     );
   }
-}
-
-/// What the lesson that began at [since] unlocked in [language]: the words
-/// and rules that became known and the sentences that opened, or null when
-/// it unlocked none (#418).
-({int words, int rules, int sentences})? _unlockedSince(
-  AppState state,
-  String language,
-  DateTime since,
-) {
-  final before = state.unlockCountsBefore(language, since);
-  final after = state.unlockCountsFor(language);
-  final unlocked = (
-    words: max(0, after.wordsKnown - before.wordsKnown),
-    rules: max(0, after.rulesKnown - before.rulesKnown),
-    sentences: max(0, after.sentencesOpen - before.sentencesOpen),
-  );
-  return unlocked.words + unlocked.rules + unlocked.sentences == 0
-      ? null
-      : unlocked;
 }
 
 /// "Unlocked in this lesson": how many words and rules became known and how
