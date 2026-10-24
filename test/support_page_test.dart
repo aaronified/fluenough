@@ -117,6 +117,7 @@ void main() {
       tester,
     ) async {
       final p = await _pump(tester);
+      await scrollTo(tester, find.text(p.l10n.supportOpenUpi));
       await tester.tap(find.text(p.l10n.supportOpenUpi));
       await tester.pumpAndSettle();
       expect(
@@ -134,9 +135,11 @@ void main() {
     testWidgets('with no app to open it, the page says so and Copy still '
         'works', (tester) async {
       final p = await _pump(tester, opens: false);
+      await scrollTo(tester, find.text(p.l10n.supportOpenUpi));
       await tester.tap(find.text(p.l10n.supportOpenUpi));
       await tester.pumpAndSettle();
       expect(find.text(p.l10n.supportNoUpiApp), findsOneWidget);
+      await scrollTo(tester, find.text(p.l10n.supportCopyId));
       await tester.tap(find.text(p.l10n.supportCopyId));
       await tester.pumpAndSettle();
       expect(_clipboard, 'das.arani@pingpay');
@@ -146,6 +149,7 @@ void main() {
       tester,
     ) async {
       final p = await _pump(tester);
+      await scrollTo(tester, find.text(p.l10n.supportCopyId));
       await tester.tap(find.text(p.l10n.supportCopyId));
       await tester.pumpAndSettle();
       expect(_clipboard, 'das.arani@pingpay');
