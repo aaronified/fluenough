@@ -31,13 +31,6 @@ enum PaceDirection {
     PaceDirection.same => l10n.paceSame,
   };
 
-  /// [mark] in one word, for large text.
-  String shortMark(AppLocalizations l10n) => switch (this) {
-    PaceDirection.fewer => l10n.paceFewerShort,
-    PaceDirection.more => l10n.paceMoreShort,
-    PaceDirection.same => l10n.paceSameShort,
-  };
-
   /// The plan's sentence for the skill [mode]: "You remember heard words
   /// well: fewer reviews", "Written words slip faster: more reviews".
   String verdict(AppLocalizations l10n, String mode) => switch (this) {
@@ -157,35 +150,24 @@ class PaceStrip extends StatelessWidget {
   }
 }
 
-/// A skill tile's mark: the arrow, and "Fewer reviews", or in one word
-/// when [short]. In `onSurfaceVariant`, whichever way it points.
+/// A skill tile's mark: the arrow alone, in `onSurfaceVariant` whichever way
+/// it points, named for a screen reader by [PaceDirection.mark] ("Fewer
+/// reviews", "More reviews", "About the same").
 class PaceMark extends StatelessWidget {
-  const PaceMark({super.key, required this.direction, this.short = false});
+  const PaceMark({super.key, required this.direction});
 
   final PaceDirection direction;
-  final bool short;
+
+  /// The arrow's size, and the room a tile keeps for it.
+  static const double size = 16;
 
   @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    final colour = theme.colorScheme.onSurfaceVariant;
-    return Row(
-      children: <Widget>[
-        Icon(direction.icon, size: 14, color: colour),
-        const SizedBox(width: 4),
-        Flexible(
-          child: Text(
-            short ? direction.shortMark(l10n) : direction.mark(l10n),
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: theme.textTheme.bodySmall!.copyWith(
-              fontWeight: FontWeight.w600,
-              color: colour,
-            ),
-          ),
-        ),
-      ],
-    );
-  }
+  Widget build(BuildContext context) => Semantics(
+    label: direction.mark(AppLocalizations.of(context)!),
+    child: Icon(
+      direction.icon,
+      size: size,
+      color: Theme.of(context).colorScheme.onSurfaceVariant,
+    ),
+  );
 }

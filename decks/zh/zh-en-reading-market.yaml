@@ -1,0 +1,86 @@
+schema: 1
+"id": "zh-en-reading-market"
+"name": "Chinese reading: the market"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-market-stall"
+  "title": "A market stall"
+  "theme": "market"
+  "sentences":
+  - "text": "早市很热闹。"
+    "reading": "zǎoshì hěn rènao."
+  - "text": "摊子上有很多水果。"
+    "reading": "tānzi shàng yǒu hěn duō shuǐguǒ."
+  - "text": "苹果很甜，西瓜很大。"
+    "reading": "píngguǒ hěn tián, xīguā hěn dà."
+  - "text": "老板称两斤苹果。"
+    "reading": "lǎobǎn chēng liǎng jīn píngguǒ."
+  "questions":
+  - "id": "zh-0808"
+    "prompt":
+      "en": "Which word means 'fruit'?"
+    "options":
+    - "en": "水果 (shuǐguǒ)"
+    - "en": "蔬菜 (shūcài)"
+    "answer": 1
+  - "id": "zh-0809"
+    "prompt":
+      "en": "西瓜很小 (xīguā hěn xiǎo) says that the watermelon is small."
+    "answer": false
+  - "id": "zh-0810"
+    "prompt":
+      "en": "Which word means 'to weigh'?"
+    "options":
+    - "en": "称 (chēng)"
+    - "en": "秤 (chèng)"
+    "answer": 1
+- "id": "zh-paying-at-market"
+  "title": "Paying at a market"
+  "theme": "market"
+  "sentences":
+  - "text": "老板，西红柿多少钱一斤？"
+    "reading": "lǎobǎn, xīhóngshì duōshao qián yì jīn?"
+  - "text": "请称两斤，老板收现金吗？"
+    "reading": "qǐng chēng liǎng jīn, lǎobǎn shōu xiànjīn ma?"
+  - "text": "我付钱，你有零钱吗？"
+    "reading": "wǒ fù qián, nǐ yǒu língqián ma?"
+  - "text": "大家排队，很热闹。"
+    "reading": "dàjiā páiduì, hěn rènao."
+  "questions":
+  - "id": "zh-0811"
+    "prompt":
+      "en": "Which word means 'to pay'?"
+    "options":
+    - "en": "付 (fù)"
+    - "en": "收 (shōu)"
+    "answer": 1
+  - "id": "zh-0812"
+    "prompt":
+      "en": "大家排队 (dàjiā páiduì) says that everyone is queuing."
+    "answer": true
+  - "id": "zh-0813"
+    "prompt":
+      "en": "Which word means 'small change'?"
+    "options":
+    - "en": "零钱 (língqián)"
+    - "en": "现金 (xiànjīn)"
+    "answer": 1

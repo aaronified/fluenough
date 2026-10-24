@@ -115,6 +115,8 @@ regions:
 # skips them. The planned script units join it as each is written.
 alphabet:
   - "ko-hangul-vowels"
+  - "ko-hangul-consonants"
+  - "ko-hangul-compound-vowels"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
@@ -152,12 +154,14 @@ units:
       - { id: "ten-vowels", text: { "en": "The ten basic vowels said slowly, each on its silent ieung: a, ya, eo, yeo, o, yo, u, yu, eu, i" } }
     reading_passages:
       - { id: "vowel-chart", text: { "en": "A chart of the basic vowels, built from a dot, a short line and a long line" } }
-  - planned: { id: "ko-hangul-consonants", grammar: "script-hangul-consonants", words: 0 }
+  - decks: ["ko-hangul-consonants"]
+    words: 0
     listening_passages:
       - { id: "ga-kka-ka", text: { "en": "Each consonant with the vowel a, in its plain, tense and aspirated forms: ga, kka, ka; da, tta, ta" } }
     reading_passages:
       - { id: "first-syllable-blocks", text: { "en": "Simple syllable blocks on signs: a cafe, a bus, a bank" } }
-  - planned: { id: "ko-hangul-compound-vowels", grammar: "script-hangul-compound-vowels", words: 0 }
+  - decks: ["ko-hangul-compound-vowels"]
+    words: 0
     listening_passages:
       - { id: "ae-and-e", text: { "en": "The compound vowels, and the pairs most speakers no longer tell apart: ae and e, oe and we" } }
     reading_passages:
