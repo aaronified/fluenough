@@ -453,6 +453,7 @@ void main() {
       final start = state.now().subtract(const Duration(hours: 1));
       expect(state.unlockCountsBefore('bn', start).wordsKnown, 1);
       expect(state.unlockCountsFor('bn').wordsKnown, 2);
+      expect(state.unlockedSince('bn', start)?.words, 1);
       await pumpScreen(
         tester,
         SummaryPage(
@@ -468,6 +469,7 @@ void main() {
         state: state,
       );
       final l10n = l10nOf(tester);
+      expect(state.unlockedSince('bn', start)?.words, 1, reason: 'after load');
       expect(tester.takeException(), isNull);
       expect(find.byType(SummaryPage), findsOneWidget);
       expect(find.text(l10n.summaryLanguageDone('Bengali')), findsOneWidget);
