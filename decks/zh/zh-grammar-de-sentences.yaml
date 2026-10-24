@@ -1,0 +1,68 @@
+schema: 1
+id: "zh-grammar-de-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+"cards":
+  - "id": "zh-0624"
+    "target": "这是我的书。"
+    "words": ["这", "是", "我", "的", "书"]
+    "reading": "zhè shì wǒ de shū."
+    "pos": "phrase"
+    "bases":
+      - { "word": "的", "base": "的", "reading": "de" }
+    "confusables":
+      - { "id": "w1", "ref": "zh-0166", "kind": "word" }
+      - { "id": "w2", "ref": "zh-0020", "kind": "word" }
+  - "id": "zh-0625"
+    "target": "这是老师的书。"
+    "words": ["这", "是", "老师", "的", "书"]
+    "reading": "zhè shì lǎoshī de shū."
+    "pos": "phrase"
+    "bases":
+      - { "word": "的", "base": "的", "reading": "de" }
+    "confusables":
+      - { "id": "w1", "ref": "zh-0166", "kind": "word" }
+      - { "id": "w2", "ref": "zh-0124", "kind": "word" }
+  - "id": "zh-0626"
+    "target": "我的朋友是老师。"
+    "words": ["我", "的", "朋友", "是", "老师"]
+    "reading": "wǒ de péngyou shì lǎoshī."
+    "pos": "phrase"
+    "bases":
+      - { "word": "的", "base": "的", "reading": "de" }
+    "confusables":
+      - { "id": "w1", "ref": "zh-0020", "kind": "word" }
+      - { "id": "w2", "ref": "zh-0124", "kind": "word" }
+  - "id": "zh-0627"
+    "target": "我们的房间很大。"
+    "words": ["我们", "的", "房间", "很", "大"]
+    "reading": "wǒmen de fángjiān hěn dà."
+    "pos": "phrase"
+    "bases":
+      - { "word": "的", "base": "的", "reading": "de" }
+    "confusables":
+      - { "id": "w1", "ref": "zh-0021", "kind": "word" }
+      - { "id": "w2", "ref": "zh-0244", "kind": "word" }
+  - "id": "zh-0628"
+    "target": "这是很好的书。"
+    "words": ["这", "是", "很", "好", "的", "书"]
+    "reading": "zhè shì hěn hǎo de shū."
+    "pos": "phrase"
+    "bases":
+      - { "word": "的", "base": "的", "reading": "de" }
+    "confusables":
+      - { "id": "w1", "ref": "zh-0166", "kind": "word" }
+      - { "id": "w2", "ref": "zh-0243", "kind": "word" }
+  - "id": "zh-0629"
+    "target": "你的房间很安静。"
+    "words": ["你", "的", "房间", "很", "安静"]
+    "reading": "nǐ de fángjiān hěn ānjìng."
+    "pos": "phrase"
+    "bases":
+      - { "word": "的", "base": "的", "reading": "de" }
+    "confusables":
+      - { "id": "w1", "ref": "zh-0019", "kind": "word" }
+      - { "id": "w2", "ref": "zh-0433", "kind": "word" }

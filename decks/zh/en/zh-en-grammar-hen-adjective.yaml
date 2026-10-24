@@ -1,0 +1,22 @@
+schema: 1
+id: "zh-en-grammar-hen-adjective"
+kind: "layer"
+core: "zh-grammar-hen-adjective"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "很 (hěn) and 不 (bù) with an adjective"
+license: "CC-BY-SA-4.0"
+description: "I am busy, the room is quiet, I am not busy: a describing word takes 很 (hěn) in a plain statement and 不 (bù) for not. Not yet checked by a Mandarin speaker: please report any mistake."
+tags: ["unreviewed"]
+"pattern":
+  "name": "很 (hěn) and 不 (bù) with an adjective"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "statement": "a statement, with 很 (hěn) before the describing word"
+    "negative": "not, with 不 (bù) before the describing word"
+  "entries":
+    "mang": "busy"
+    "anjing": "quiet"
+    "re": "hot"
+    "hao": "good, well"
+  "notes": "A describing word needs 很 (hěn) in front of it in a plain statement: 我很忙 (wǒ hěn máng), I am busy. 很 (hěn) can mean very, but in a plain sentence it is often only the word that comes before the describing word. Without it, a bare describing word after its subject often sounds like a contrast: 我忙 (wǒ máng) suggests that someone else is not. The negative puts 不 (bù) in front: 我不忙 (wǒ bù máng), I am not busy. 不 (bù) is said bú before a fourth tone, as in 不热 (bú rè), not hot."
