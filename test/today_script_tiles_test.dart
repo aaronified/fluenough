@@ -22,7 +22,7 @@ import 'support/harness.dart';
 import 'support/two_script_course.dart';
 
 /// Hindustani with a Devanagari letter, an Urdu letter and two words, each
-/// reviewed three days ago: the Devanagari letter in Recognition, the Urdu
+/// reviewed long ago: the Devanagari letter in Recognition, the Urdu
 /// letter in Write, the first word in Recognition and the second in Write.
 /// So two script reviews and two word reviews are due. With [speaking],
 /// Say is on too, so that Today draws six tiles.
@@ -34,7 +34,7 @@ Future<AppState> twoScriptsDue({bool speaking = false}) async {
     cardId: card,
     mode: mode,
     grade: 4,
-    now: base.subtract(const Duration(days: 3)),
+    now: base.subtract(const Duration(days: 60)),
   );
   review('hi-en-letters', 'hi-en-letters-0001', DrillMode.recognition);
   review('hi-en-urdu-letters', 'hi-en-urdu-letters-0001', DrillMode.production);
@@ -165,14 +165,20 @@ void main() {
           l10n.skillGrammar,
           l10n.skillScript,
         ];
+        // One scroll position for every measure.
+        await tester.ensureVisible(
+          find.descendant(
+            of: find.byType(DueCard),
+            matching: find.text(l10n.skillScript),
+          ),
+        );
+        await tester.pumpAndSettle();
         final rects = <Rect>[];
         for (final name in names) {
           final label = find.descendant(
             of: find.byType(DueCard),
             matching: find.text(name),
           );
-          await tester.ensureVisible(label);
-          await tester.pumpAndSettle();
           expect(label, findsOneWidget, reason: name);
           rects.add(
             tester.getRect(
