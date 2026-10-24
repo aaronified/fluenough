@@ -128,7 +128,14 @@ void main() {
     expect(find.text('नमस्ते'), findsOneWidget);
 
     await tester.tap(find.text(l10n.fontCheckNo));
-    await tester.pumpAndSettle();
+    // The progress bar animates until the download is in, so no settling.
+    for (var i = 0; i < 50; i++) {
+      if (find.text(l10n.fontCheckReadNow).evaluate().isNotEmpty) break;
+      await tester.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 10)),
+      );
+      await tester.pump(const Duration(milliseconds: 100));
+    }
     expect(find.text(l10n.fontCheckReadNow), findsOneWidget);
     expect(phone.fontFiles.keys, <String>[_devanagari]);
     expect(
