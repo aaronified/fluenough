@@ -435,6 +435,64 @@ void main() {
     });
   });
 
+  group('transliteration letters', () {
+    final plain = RomanisedSpelling(null);
+    AnswerOutcome grade(String typed, String reading) =>
+        plain.grade(typed, <String>[reading]).outcome;
+
+    test('pinyin with caron tones is typed without them', () {
+      expect(grade('lu', 'lǔ'), AnswerOutcome.exact);
+      expect(grade('nihao', 'nǐ hǎo'), AnswerOutcome.exact);
+      expect(grade('nu', 'nǚ'), AnswerOutcome.exact);
+    });
+
+    test('Egyptian letters are typed as their own spellings, and none '
+        'empties a word', () {
+      expect(grade('ankh', 'ꜥnḫ'), AnswerOutcome.exact);
+      expect(grade('dhd', 'ḏd'), AnswerOutcome.exact);
+      expect(grade('thz', 'ṯz'), AnswerOutcome.exact);
+      expect(grade('3st', 'Ꜣst'), AnswerOutcome.exact);
+      expect(plain.key('ꜥꜣ'), isNotEmpty);
+    });
+
+    test('a different Egyptian word is not marked right', () {
+      // ꜣ and ꜥ, ḫ and h, ṯ and t, ḏ and d are different letters.
+      expect(grade('ra', 'Rꜥ'), AnswerOutcome.exact);
+      expect(grade('r3', 'Rꜥ'), isNot(AnswerOutcome.exact));
+      expect(grade('hrw', 'ḫrw'), isNot(AnswerOutcome.exact));
+      expect(grade('khrw', 'hrw'), isNot(AnswerOutcome.exact));
+      expect(grade('ntr', 'nṯr'), isNot(AnswerOutcome.exact));
+      expect(grade('dt', 'ḏt'), isNot(AnswerOutcome.exact));
+    });
+
+    test('Proto-Indo-European palatovelars and long accented vowels are '
+        'typed plain', () {
+      expect(grade('kmtom', 'ḱm̥tóm'), AnswerOutcome.exact);
+      expect(grade('gneh3', 'ǵneh₃'), AnswerOutcome.exact);
+      expect(grade('pH2ter', 'ph₂tḗr'), AnswerOutcome.exact);
+    });
+
+    test('sign indices and laryngeal subscripts are typed as digits', () {
+      expect(grade('du3', 'du₃'), AnswerOutcome.exact);
+      expect(grade('h2owis', 'h₂ówis'), AnswerOutcome.exact);
+      expect(grade('kwetwores', 'kʷetwóres'), AnswerOutcome.exact);
+      expect(grade('bhreh2ter', 'bʰréh₂ter'), AnswerOutcome.exact);
+    });
+
+    test('a mark typed apart from its letter folds away like a composed '
+        'one', () {
+      expect(grade('ksatriya', 'k\u1E63atriya'), AnswerOutcome.exact);
+      expect(grade('ma', 'ma\u0304'), AnswerOutcome.exact);
+      expect(grade('lu', 'lu\u030C'), AnswerOutcome.exact);
+    });
+
+    test('the half-ring letters and the apostrophe are not typed', () {
+      expect(grade('ayn', 'ʿayn'), AnswerOutcome.exact);
+      expect(grade('quran', 'qurʾān'), AnswerOutcome.exact);
+      expect(grade('mana', 'maʻnā'), AnswerOutcome.exact);
+    });
+  });
+
   group('romanised answers', () {
     final spelling = RomanisedSpelling(hindi);
 
