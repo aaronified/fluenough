@@ -1,0 +1,25 @@
+schema: 1
+id: "zh-en-grammar-measure-ge"
+kind: "layer"
+core: "zh-grammar-measure-ge"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "个 (ge): this, that and which person"
+license: "CC-BY-SA-4.0"
+description: "This person, that friend, which teacher: 个 (ge) is the measure word for people and for things with no measure word of their own. Not yet checked by a Mandarin speaker: please report any mistake."
+tags: ["unreviewed"]
+"pattern":
+  "name": "个 (ge): this, that and which person"
+  "slot_name": "word"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "这": "this"
+    "那": "that"
+    "哪": "which"
+  "entries":
+    "ren": "person"
+    "pengyou": "friend"
+    "laoshi": "teacher"
+    "xuesheng": "student"
+    "yisheng": "doctor"
+    "haizi": "child"
+  "notes": "个 (ge) is the measure word for a person, and it is the one to use when no other measure word fits. Put it between 这 (zhè), 那 (nà) or 哪 (nǎ) and the noun: 这个人 (zhè ge rén), this person; 那个老师 (nà ge lǎoshī), that teacher; 哪个学生 (nǎ ge xuésheng), which student. 个 (ge) is said in a neutral tone, so it has no tone mark."
