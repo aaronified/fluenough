@@ -33,6 +33,7 @@ import '../features/settings/your_data_page.dart';
 import '../features/settings/your_decks_page.dart';
 import '../features/settings/release_notes_page.dart';
 import '../features/settings/sources_page.dart';
+import '../features/settings/support_page.dart';
 import '../features/settings/voices_page.dart';
 import '../features/stats/all_tags_page.dart';
 import '../features/stats/over_time_page.dart';
@@ -100,6 +101,7 @@ abstract final class AppRoutes {
   static const String settingsReminders = '/settings/reminders';
   static const String settingsData = '/settings/data';
   static const String settingsUpdates = '/settings/updates';
+  static const String settingsSupport = '/settings/support';
   static const String settingsFonts = '/settings/fonts';
 
   /// Profiles and privacy, opened from the profile card.
@@ -176,6 +178,7 @@ abstract final class AppRoutes {
       settingsReminders => const RemindersPage(),
       settingsData => const YourDataPage(),
       settingsUpdates => const UpdatesPage(),
+      settingsSupport => const SupportPage(),
       settingsFonts => const ScriptFontsPage(),
       settingsProfiles => const ProfilesPrivacyPage(),
       spokenLanguages => const SpokenLanguagesPage(),

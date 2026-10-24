@@ -24,6 +24,17 @@ abstract final class AppLinks {
     <String, String>{'body': body},
   );
 
+  /// Where tips go, as a UPI ID, and the name it is registered to. UPI is
+  /// India's payment system; the ID is the same in every UPI app.
+  static const String supportUpiId = 'das.arani@pingpay';
+  static const String supportName = 'Arani Das';
+
+  /// A UPI payment to [supportUpiId], with no amount: the learner chooses it
+  /// in their UPI app. Built by hand because [Uri] would write the `@` as
+  /// `%40` and the space as `+`, which some UPI apps do not read.
+  static final String supportUpi =
+      'upi://pay?pa=$supportUpiId&pn=${Uri.encodeComponent(supportName)}';
+
   /// The newest release's APK (ADR-0017). GitHub redirects this to the file
   /// of that name on the newest release, which the release workflow builds.
   static const String latestApk =

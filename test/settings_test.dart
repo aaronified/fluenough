@@ -34,6 +34,7 @@ import 'package:fluenough/features/settings/languages_page.dart';
 import 'package:fluenough/features/settings/reviewing_page.dart';
 import 'package:fluenough/features/settings/settings_controls.dart';
 import 'package:fluenough/features/settings/settings_page.dart';
+import 'package:fluenough/features/settings/support_page.dart';
 import 'package:fluenough/features/settings/updates_page.dart';
 import 'package:fluenough/features/settings/your_data_page.dart';
 import 'package:fluenough/features/settings/your_decks_page.dart';
@@ -349,6 +350,7 @@ void main() {
             l10n.settingsRowData: YourDataPage,
             l10n.settingsRowLog: AppLogPage,
             l10n.settingsRowUpdates: UpdatesPage,
+            l10n.settingsRowSupport: SupportPage,
           };
           for (final MapEntry(key: title, value: page) in pages.entries) {
             final row = find.text(title);
