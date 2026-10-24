@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 
 import '../core/decks/deck_fetch.dart';
 import '../core/decks/deck_index.dart';
+import '../core/decks/language_resources.dart';
 import '../core/decks/sha256.dart';
 import 'app_log.dart';
 import 'deck_catalog.dart';
@@ -197,6 +198,59 @@ class DeckDownloads extends ChangeNotifier {
   Future<void> _lock = Future<void>.value();
   late final FairSlots _slots = FairSlots(maxConcurrentFetches);
   bool _disposed = false;
+
+  // ---------------------------------------------------------------------------
+  // Resources
+
+  final Map<String, ({String sha256, List<LanguageResource> found})>
+  _resources = <String, ({String sha256, List<LanguageResource> found})>{};
+  final Map<String, Future<List<LanguageResource>>> _resourceJobs =
+      <String, Future<List<LanguageResource>>>{};
+
+  /// Where else to learn [language] (#832): the suggestions of its resources
+  /// file, at most three, or none when the index lists no file, the file
+  /// cannot be had, or it is not whole. The file is not a deck: it is
+  /// fetched when first wanted, checked against the index's hash, kept as
+  /// a note, and read from there until the index lists another. Never
+  /// throws, and never waits on anything but its one small file.
+  Future<List<LanguageResource>> resourcesFor(String language) {
+    final listed = _index?.language(language)?.resources;
+    if (listed == null || listed.isEmpty) {
+      return Future<List<LanguageResource>>.value(const <LanguageResource>[]);
+    }
+    final file = listed.first;
+    final known = _resources[language];
+    if (known != null && known.sha256 == file.sha256) {
+      return Future<List<LanguageResource>>.value(known.found);
+    }
+    return _resourceJobs[language] ??= _readResources(
+      language,
+      file,
+    ).whenComplete(() => _resourceJobs.remove(language));
+  }
+
+  Future<List<LanguageResource>> _readResources(
+    String language,
+    IndexFile file,
+  ) async {
+    final note = 'resources-$language.yaml';
+    try {
+      var text = await files.readNote(note);
+      if (text == null || sha256Hex(utf8.encode(text)) != file.sha256) {
+        final fetched = await _fetchChecked(file);
+        final bytes = fetched.bytes;
+        if (bytes == null) return const <LanguageResource>[];
+        text = utf8.decode(bytes);
+        await files.writeNote(note, text);
+      }
+      final found = parseLanguageResources(text);
+      _resources[language] = (sha256: file.sha256, found: found);
+      return found;
+    } on Object catch (e) {
+      _log?.warning('Resources of $language could not be read: $e');
+      return const <LanguageResource>[];
+    }
+  }
 
   // ---------------------------------------------------------------------------
   // The index

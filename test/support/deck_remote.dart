@@ -84,6 +84,7 @@ String indexFor(Map<String, String> files, {int version = 1}) {
   final natives = <String, Set<String>>{};
   final alphabets = <String>{};
   final media = <String, List<Map<String, Object?>>>{};
+  final resources = <String, List<Map<String, Object?>>>{};
   for (final path in files.keys.toList()..sort()) {
     final parts = path.split('/');
     if (parts.length < 3 || parts[0] != 'decks') continue;
@@ -104,6 +105,18 @@ String indexFor(Map<String, String> files, {int version = 1}) {
     final header = yaml is YamlMap ? yaml : YamlMap();
     final kind = header['kind'] as String? ?? 'vocab';
     final id = header['id'] as String? ?? '';
+    // A language's resources file (#832): listed under `resources`.
+    if (kind == 'resources') {
+      languages.putIfAbsent(code, () => <Map<String, Object?>>[]);
+      (resources[code] ??= <Map<String, Object?>>[]).add(<String, Object?>{
+        'path': path,
+        'size': bytes.length,
+        'sha256': sha256Hex(bytes),
+        'schema': 1,
+        'kind': kind,
+      });
+      continue;
+    }
     final core = header['part'] == 'core';
     if (header['language'] case final YamlMap language) {
       names[code] = language['name'] as String? ?? code;
@@ -175,6 +188,7 @@ String indexFor(Map<String, String> files, {int version = 1}) {
           'path': paths[code] ?? const <String>[],
           'files': languages[code],
           'media': ?media[code],
+          'resources': ?resources[code],
         },
     ],
   });
