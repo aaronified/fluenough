@@ -1243,6 +1243,43 @@ cards:
   group('grammar patterns', () {
     final bundled = spanish('grammar-present-ar');
 
+    test('a pattern without a prompt asks the lemma, its meaning and the '
+        'slot; one that gives a prompt is asked as written', () {
+      String deck(String prompt) =>
+          '''
+schema: 1
+id: es-en-grammar-probe
+name: Probe
+kind: grammar
+language: { code: es, iso639_3: spa, name: Spanish, script: latin }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+pattern:
+  name: P
+  slot_name: person
+  slots: [yo]
+$prompt  entries:
+    - lemma: soler
+      gloss: to tend to
+      forms: { yo: suelo }
+''';
+      expect(
+        expandPattern(DeckParser.parse(deck(''), source: 'probe'))
+            .single
+            .native,
+        'soler (to tend to) \u2014 yo',
+      );
+      expect(
+        expandPattern(
+          DeckParser.parse(
+            deck('  prompt: "{slot}: {lemma}"\n'),
+            source: 'probe',
+          ),
+        ).single.native,
+        'yo: soler',
+      );
+    });
+
     test('cell ids follow the documented scheme and are stable; a null form '
         'is skipped, its slot keeping its index', () {
       final first = [for (final c in expandPattern(bundled)) c.id];
