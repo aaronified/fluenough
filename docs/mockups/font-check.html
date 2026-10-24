@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Font Check</title>
+<meta name="description" content="The font check (#611): a script sample and 'Can you read this?' when a course is added, and Script fonts in Settings to check again or download later. Hindustani (Perso-Arabic), Bengali, Chinese and Korean, light and dark, 1.4x.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Nastaliq+Urdu:wght@400;600&family=Noto+Sans+SC:wght@400;600&family=Noto+Sans+KR:wght@400;600&display=swap">
+<style>
+/* ===== The page around the phones (not the app) ===== */
+:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
+:root[data-theme="dark"]{--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--page-bg);color:var(--page-fg);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 16px 72px}
+h1{font-size:28px;line-height:36px;margin:0 0 8px;font-weight:700}
+h2{font-size:20px;line-height:28px;margin:0 0 4px;font-weight:700}
+.cap1{margin:0 0 16px;color:var(--page-muted);font-size:14px}
+.tw{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 14px}
+.tg{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--page-muted);flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--page-line);border-radius:10px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:inherit;font-size:14px;min-height:40px;padding:0 14px;border:0;background:var(--page-card);color:var(--page-fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--page-acc);color:var(--page-bg);font-weight:600}
+section.opt{margin:0 0 52px;padding-top:20px;border-top:1px solid var(--page-line)}
+.frames{display:flex;flex-wrap:wrap;gap:20px 24px;align-items:flex-start}
+.fcol{display:flex;flex-direction:column;gap:6px;width:360px;max-width:100%}
+.fcap{font-size:13px;line-height:18px;font-weight:600;color:var(--page-muted)}
+.sticky{position:sticky;top:0;z-index:20;background:var(--page-bg);padding:10px 0 4px;margin-bottom:12px;border-bottom:1px solid var(--page-line)}
+/* ===== The app: lib/ui/theme.dart (M3, Roboto; ColorScheme.fromSeed of the forest seed) =====
+   Every size is calc(N px * var(--t)), t = 1.4, the app's text cap (#505). Icons do not scale. */
+.ph{--t:1.4;width:360px;max-width:100%;height:740px;border-radius:20px;overflow:hidden;position:relative;display:flex;flex-direction:column;
+ background:var(--s);color:var(--onS);font-family:Roboto,"Noto Sans Devanagari","Noto Sans Bengali",sans-serif;
+ box-shadow:0 0 0 1px var(--page-line);-webkit-font-smoothing:antialiased}
+.ph button{font-family:inherit;color:inherit;cursor:pointer}
+.appbar{flex:none;min-height:56px;display:flex;align-items:center;padding:0 4px 0 8px;color:var(--onSv);gap:2px}
+.appbar .ttl{flex:1;min-width:0;font-size:calc(20px*var(--t));line-height:1.2;font-weight:500;color:var(--onS);padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ib{width:48px;height:48px;border:0;background:none;display:flex;align-items:center;justify-content:center;border-radius:24px;padding:0;color:var(--onSv);flex:none}
+svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
+.sp{flex:1}
+.scroll{flex:1;min-height:0;overflow-y:auto;padding:0 16px 16px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.t-body{font-size:calc(14px*var(--t));line-height:1.4;margin:0}
+.t-sm{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv);margin:0}
+.t-lab{font-size:calc(12px*var(--t));line-height:1.3;font-weight:600;letter-spacing:.4px;color:var(--onSv);text-transform:uppercase;margin:14px 0 6px}
+.t-h{font-size:calc(16px*var(--t));line-height:1.3;font-weight:500;margin:0}
+.script{font-family:"Noto Sans Devanagari","Noto Sans Bengali",Roboto,sans-serif}
+.nowrap{white-space:nowrap}
+/* language bar */
+.lbar{display:flex;gap:8px;padding:0 16px 10px;flex:none}
+.pill{border:1px solid var(--ol);border-radius:8px;min-height:32px;padding:0 12px;font-size:calc(14px*var(--t));font-weight:500;display:inline-flex;align-items:center;gap:6px;background:none;color:var(--onSv)}
+.pill.on{background:var(--sc);color:var(--onSc);border-color:transparent}
+/* buttons */
+.btn{min-height:calc(40px*var(--t));border-radius:calc(20px*var(--t));border:0;font-size:calc(14px*var(--t));line-height:1.2;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 16px}
+.btn.fill{background:var(--p);color:var(--onP)}
+.btn.tonal{background:var(--sc);color:var(--onSc)}
+.btn.out{background:none;border:1px solid var(--ol);color:var(--p)}
+.btn.text{background:none;color:var(--p);padding:6px 12px}
+.btn.full{width:100%}
+.btn.sm{min-height:48px;border-radius:24px}
+/* cards */
+.card{background:var(--sLow);border-radius:16px;padding:14px 16px;margin:0 0 12px;display:flex;gap:12px;align-items:center;width:100%;text-align:left;border:0}
+.card .tx{flex:1;min-width:0}
+.card .ic{flex:none;width:40px;height:40px;border-radius:20px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
+/* bottom nav */
+.nav{flex:none;display:flex;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);padding:8px 4px 10px}
+.nav div{flex:1;text-align:center;font-size:calc(11px*var(--t));line-height:1.2;color:var(--onSv);display:flex;flex-direction:column;align-items:center;gap:2px}
+.nav div .pl{width:56px;height:28px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+.nav div.on{color:var(--onS);font-weight:600}
+.nav div.on .pl{background:var(--sc);color:var(--onSc)}
+/* settings rows */
+/* sheet */
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.42);z-index:3}
+.sheet{position:absolute;z-index:4;left:0;right:0;bottom:0;background:var(--sLow);border-radius:28px 28px 0 0;display:flex;flex-direction:column;max-height:88%}
+.sheet .grab{flex:none;width:32px;height:4px;border-radius:2px;background:var(--onSv);opacity:.4;margin:10px auto 6px}
+.sheet .scroll{padding:6px 20px 20px}
+.sheet h3{margin:0 0 4px;font-size:calc(20px*var(--t));font-weight:500;line-height:1.2}
+.opt-row{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;border:0;padding:6px 0;min-height:48px;font-size:calc(14px*var(--t));line-height:1.3}
+.opt-row .tx{flex:1;min-width:0}
+.opt-row .tx small{display:block;font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.3}
+.box{flex:none;width:20px;height:20px;border-radius:3px;border:2px solid var(--onSv);display:flex;align-items:center;justify-content:center}
+.box.rd{border-radius:50%}
+.opt-row[aria-checked="true"] .box{background:var(--p);border-color:var(--p)}
+.box svg{width:16px;height:16px;fill:var(--onP);opacity:0}
+.opt-row[aria-checked="true"] .box svg{opacity:1}
+.sep{border-top:1px solid var(--olv);margin:6px 0}
+/* word rows */
+.wrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;align-items:center;border-top:1px solid var(--olv);padding:10px 0;width:100%;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0}
+.wrow .w{font-size:calc(20px*var(--t));line-height:1.25;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .rd{font-size:calc(12px*var(--t));line-height:1.3;color:var(--onSv);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrow .mn{font-size:calc(14px*var(--t));line-height:1.3;grid-column:1}
+.wrow .act{grid-column:2;grid-row:1/4;display:flex;align-items:center;gap:0}
+.wrow.unl .w,.wrow.unl .rd,.wrow.unl .mn{opacity:.78}
+.mastery{display:inline-flex;align-items:center;height:calc(18px*var(--t));padding:0 8px;border-radius:calc(9px*var(--t));font-size:calc(11px*var(--t));line-height:1;font-weight:600;letter-spacing:.3px}
+.m-new{box-shadow:inset 0 0 0 1px var(--ol);color:var(--onSv)}
+.m-learning{background:var(--sc);color:var(--onSc)}
+.m-known{background:var(--p);color:var(--onP)}
+.audio{width:48px;height:48px;border-radius:24px;border:0;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center;flex:none}
+.audio.sm{width:40px;height:40px}
+.bottom{flex:none;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv)}
+/* key-value (inspect) */
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;margin:0}
+.kv dt{font-size:calc(12px*var(--t));color:var(--onSv);line-height:1.5}
+.kv dd{margin:0;font-size:calc(14px*var(--t));line-height:1.4;min-width:0;overflow-wrap:anywhere}
+.mono{font-family:ui-monospace,"Roboto Mono",monospace;font-size:calc(12px*var(--t))}
+.blk{display:flex;gap:12px;align-items:flex-start;border-radius:16px;padding:12px 14px;background:var(--sHigh);margin:8px 0}
+.blk p{margin:0;font-size:calc(14px*var(--t));line-height:1.35}
+.blk .tt{font-size:calc(12px*var(--t));font-weight:700;letter-spacing:.3px;text-transform:uppercase;margin:0 0 2px;color:var(--onSv)}
+/* conversation */
+.turns{display:flex;flex-direction:column;gap:12px;padding:4px 0}
+.turn{max-width:92%;border-radius:20px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.turn.a{align-self:flex-start;background:var(--sLow);border-bottom-left-radius:6px}
+.turn.b{align-self:flex-end;background:var(--sc);color:var(--onSc);border-bottom-right-radius:6px}
+.turn .who{font-size:calc(11px*var(--t));font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+.turn.a .who{color:var(--onSv)}
+.turn .tl{font-size:calc(20px*var(--t));line-height:1.45;font-weight:500}
+.turn .tl button{background:none;border:0;padding:0 1px;font:inherit;color:inherit;cursor:pointer;border-bottom:2px dotted currentColor}
+.turn .tl button.sel{background:var(--p);color:var(--onP);border-radius:6px;border-bottom-color:transparent}
+.turn .rdg{font-size:calc(13px*var(--t));line-height:1.3;opacity:.95}
+.turn .ml{font-size:calc(14px*var(--t));line-height:1.3;opacity:.95}
+.turn.live .tl{opacity:.85}
+.live-dot{display:inline-block;width:8px;height:8px;border-radius:4px;background:var(--E);margin-right:6px}
+.mic{display:flex;gap:12px;padding:12px 16px 16px;background:var(--sLow);box-shadow:0 -1px 0 var(--olv);align-items:stretch}
+.mic .btn{flex:1;min-height:calc(48px*var(--t));flex-direction:column;gap:2px;border-radius:24px;font-size:calc(13px*var(--t))}
+.mic .btn svg.i{width:28px;height:28px}
+.mic .btn.on{outline:3px solid var(--onS);outline-offset:2px}
+.status{display:flex;align-items:center;gap:8px;padding:0 16px 8px;flex:none}
+/* highlight of what changed */
+.hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;position:relative;border-radius:14px}
+.hl-on .chg::after{content:"new";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:6px;z-index:2;letter-spacing:.3px}
+.hl-on .chg.upd::after{content:"changed"}
+.hl-on .chg.gone::after{content:"removed"}
+.ghost{opacity:.55;text-decoration:line-through;pointer-events:none}
+.hide{display:none!important}
+.note{font-size:13px;color:var(--page-muted);margin:6px 0 14px;max-width:760px}
+
+/* font check */
+.sheet{max-height:94%}
+.hl-on .sheet.chg{position:absolute}
+.f-nast{font-family:"Noto Nastaliq Urdu","Noto Naskh Arabic",serif;line-height:2.1}
+.f-deva{font-family:"Noto Sans Devanagari",sans-serif}
+.f-beng{font-family:"Noto Sans Bengali",sans-serif}
+.f-han{font-family:"Noto Sans SC",sans-serif}
+.f-hang{font-family:"Noto Sans KR",sans-serif}
+.smp.tofu{font-family:Roboto,sans-serif;letter-spacing:.12em}
+.sample{background:var(--sHigh);border-radius:16px;padding:14px 16px}
+.sample .big{font-size:calc(24px*var(--t));line-height:1.5;font-weight:500;overflow-wrap:anywhere}
+.sample .big .f-nast{line-height:2.1}
+.stepper{display:inline-block;margin-left:4px;font-weight:600;color:var(--onS)}
+.prog .prow{display:flex;justify-content:space-between;gap:8px;font-size:calc(14px*var(--t));line-height:1.3;margin-bottom:6px}
+.track{height:8px;border-radius:4px;background:var(--sc);overflow:hidden}
+.track i{display:block;height:100%;background:var(--p);border-radius:4px}
+.doneic{width:56px;height:56px;border-radius:28px;background:var(--p);color:var(--onP);display:flex;align-items:center;justify-content:center;margin:4px auto 8px}
+.doneic svg.i{width:32px;height:32px}
+.srow{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;border:0;padding:12px 4px;min-height:56px}
+.srow .tx{flex:1;min-width:0}
+.srow .ic{flex:none;width:40px;height:40px;border-radius:20px;background:var(--sc);color:var(--onSc);display:flex;align-items:center;justify-content:center}
+.frow{display:flex;gap:10px;align-items:flex-start;background:var(--sLow);border-radius:16px;padding:12px 14px;margin:0 0 8px}
+.frow .tx{flex:1;min-width:0}
+.frow .nm{font-size:calc(16px*var(--t));line-height:1.3;font-weight:500}
+.frow .fs{font-size:calc(18px*var(--t));line-height:1.6;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.frow .side{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex:none}
+.sm2{min-height:48px;padding:0 6px;font-size:calc(14px*var(--t));font-weight:600;background:none;border:0;color:var(--p)}
+.m-known2{background:var(--sHigh);color:var(--onS);box-shadow:inset 0 0 0 1px var(--ol)}
+.m-err{background:var(--E);color:var(--onE)}
+.btn.err{color:var(--E)}
+.btn svg.i{width:20px;height:20px}
+.hl-on .frow.chg,.hl-on .chg>.frow{margin:0}
+</style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+<h1>The font check</h1>
+<p class="cap1">For #611 (owner, 2026-10-23: "Offer to download the fonts, ask user if they can read a sample. Otherwise download. Same for everything."; 2026-10-24: "Mockup first"). Where and how the check appears: when a course is added, and in Settings. Phone 360 dp at 1.4x text, light and dark. The self-checks, notes and open questions are in <code>font-check.md</code>. What is new is outlined in red.</p>
+<div class="sticky tw" id="g-tw">
+ <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
+ <div class="tg">Course <span class="seg" data-k="course"><button data-v="hi">Hindustani (Perso-Arabic)</button><button data-v="bn">Bengali</button><button data-v="zh">Chinese</button><button data-v="ko">Korean</button></span></div>
+ <div class="tg">Highlight changes <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
+</div>
+<div id="root"></div>
+</div>
+<script>
+const PAL={
+dark:{"p":"#92d5ab","onP":"#003920","sc":"#374b3e","onSc":"#d1e8d6","s":"#0f1511","onS":"#dfe4dd","onSv":"#c0c9c0","sLow":"#171d19","sHigh":"#262b27","ol":"#8a938b","olv":"#404942","E":"#ffb4ab","onE":"#690005","tC":"#224c58","onTC":"#bfe9f8"},
+light:{"p":"#296a48","onP":"#ffffff","sc":"#d1e8d6","onSc":"#374b3e","s":"#f6fbf4","onS":"#171d19","onSv":"#404942","sLow":"#f0f5ee","sHigh":"#e4eae3","ol":"#717972","olv":"#c0c9c0","E":"#ba1a1a","onE":"#ffffff","tC":"#bfe9f8","onTC":"#224c58"}};
+/* ===== state: every tweak control ===== */
+const S={theme:null,course:'hi',hl:'1',
+ phone:'boxes',scripts:'one',later:'on',
+ home:'decks'};
+try{S.theme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}catch(e){S.theme='light'}
+const root=document.getElementById('root');
+
+/* ===== course content: one sample per script; sizes from decks/fonts, CJK to be confirmed ===== */
+const C={
+hi:{name:'Hindustani',native:'हिन्दुस्तानी',lang:'ur',dir:'rtl',
+ script:'Perso-Arabic',other:'Devanagari',family:'Noto Nastaliq Urdu',size:'0.7 MB',fam:'nast',
+ text:'میں ٹھیک ہوں۔',reading:'maiṁ ṭhīk hūṁ.',mean:'I am fine.',
+ otherText:'मैं ठीक हूँ।',otherReading:'maiṁ ṭhīk hūṁ.',otherFamily:'Noto Sans Devanagari',otherSize:'0.6 MB',otherFam:'deva',step:'2 of 2'},
+bn:{name:'Bengali',native:'বাংলা',lang:'bn',dir:'ltr',
+ script:'Bengali',family:'Noto Sans Bengali',size:'0.5 MB',fam:'beng',
+ text:'আমি বাংলা শিখছি।',reading:'āmi bāṁlā śikhachi.',mean:'I am learning Bengali.'},
+zh:{name:'Chinese',native:'中文',lang:'zh-Hans',dir:'ltr',
+ script:'Han (simplified)',family:'Noto Sans SC',size:'about 10 MB',fam:'han',
+ text:'你好，我在学中文。',reading:'Nǐ hǎo, wǒ zài xué zhōngwén.',mean:'Hello, I am learning Chinese.'},
+ko:{name:'Korean',native:'한국어',lang:'ko',dir:'ltr',
+ script:'Hangul',family:'Noto Sans KR',size:'about 6 MB',fam:'hang',
+ text:'안녕하세요, 한국어를 배워요.',reading:'annyeonghaseyo, hangugeoreul baewoyo.',mean:'Hello, I am learning Korean.'}
+};
+const IC={
+ back:'M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z',
+ chev:'M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z',
+ check:'M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z',
+ close:'M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
+ dl:'M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z',
+ refresh:'M17.65 6.35A7.958 7.958 0 0 0 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0 1 12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z',
+ fonts:'M9.93 13.5h4.14L12 7.98zM20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-4.05 16.5-1.14-3H9.17l-1.12 3H5.96l5.11-13h1.86l5.11 13h-2.09z',
+ del:'M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z',
+ today:'M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 16H5V8h14v11z',
+ decks:'M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z',
+ prog:'M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z',
+ gear:'M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.48.48 0 0 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z'
+};
+const ic=(k,cls='')=>`<svg class="i ${cls}" viewBox="0 0 24 24" aria-hidden="true"><path d="${IC[k]}"/></svg>`;
+
+/* ===== helpers ===== */
+const seg=(k,opts,label)=>`<div class="tg">${label}<span class="seg" data-sk="${k}">${opts.map(([v,t])=>`<button data-v="${v}" aria-pressed="${String(S[k])===String(v)}">${t}</button>`).join('')}</span></div>`;
+const chg=(c,x,style='')=>`<div class="chg ${c||''}" style="${style}">${x}</div>`;
+const boxify=t=>[...t].map(ch=>/[\s,.!?。，！？।۔]/.test(ch)?ch:'□').join('');
+/* the sample as this phone draws it: letters, or boxes where it has no font; the downloaded font always draws letters */
+function smp(text,fam,lang,dir,opts={}){
+ const showBoxes=S.phone==='boxes'&&!opts.font;
+ const t=showBoxes?boxify(text):text;
+ return `<span class="smp f-${fam} ${showBoxes?'tofu':''}" lang="${lang}" dir="${dir}">${t}</span>`;
+}
+function phone(inner,cap,extra=''){return `<div class="fcol"><div class="fcap">${cap}</div><div class="ph" ${extra}>${inner}</div></div>`}
+function nav(on){const it=[['today','Today'],['decks','Decks'],['prog','Progress'],['gear','Settings']];
+ return `<div class="nav">${it.map(([k,t])=>`<div class="${k===on?'on':''}"><span class="pl">${ic(k)}</span>${t}</div>`).join('')}</div>`}
+const bar=t=>`<div class="appbar"><button class="ib" aria-label="Back">${ic('back')}</button><span class="ttl">${t}</span></div>`;
+const sc=(c,t)=>`<span class="script f-${c.fam}" lang="${c.lang}" dir="${c.dir}">${t}</span>`;
+
+/* what is behind a sheet: the Decks tab right after a course was added */
+function behind(c){
+ return `${'<div class="appbar"><span class="ttl">Decks</span></div>'}
+ <div class="lbar"><span class="pill on">${c.native} ${c.name}</span></div>
+ <div class="scroll"><div class="card"><span class="ic">1</span><span class="tx"><span class="t-h" style="display:block">Unit 1</span><span class="t-sm">Hello and goodbye</span></span></div>
+ <div class="card"><span class="ic">2</span><span class="tx"><span class="t-h" style="display:block">Unit 2</span><span class="t-sm">About me</span></span></div></div>${nav('decks')}`;
+}
+const dim=x=>`<div class="scrim"></div>${x}`;
+
+/* the sample card, shared by every sheet that asks "can you read this?" */
+function sampleCard(c,kind,opts={}){
+ const lines=kind==='other'
+  ?[c.otherText,c.otherFam,c.otherReading,c.mean,c.other]
+  :[c.text,c.fam,c.reading,c.mean,c.script];
+ return `<div class="sample"><div class="t-lab" style="margin:0 0 6px">Sample · ${lines[4]} script${opts.font?` · in ${opts.font}`:''}</div>
+  <div class="big">${smp(lines[0],lines[1],c.lang==='ur'&&kind==='other'?'hi':c.lang,kind==='other'?'ltr':c.dir,{font:!!opts.font})}</div>
+  <div class="t-sm" style="margin-top:6px">${lines[2]}</div><div class="t-body" style="margin-top:2px">${lines[3]}</div></div>`;
+}
+const scriptsLine=c=>c.other&&S.scripts==='every'?`<span class="stepper">Script ${c.step}</span>`:'';
+
+/* ===== 1. at course start ===== */
+function sheetAsk(c){
+ const every=c.other&&S.scripts==='every';
+ return phone(behind(c)+dim(`<div class="sheet chg" style="outline-offset:-3px"><div class="grab"></div><div class="scroll">
+  <h3>Check how ${c.name} looks</h3>
+  <p class="t-sm" style="margin:2px 0 10px">${every?`${c.name} is written in two scripts. Check each one you may read. `:''}Phones draw some scripts badly, or not at all. Can you read this? ${scriptsLine(c)}</p>
+  ${sampleCard(c,'main')}
+  <button class="btn fill full" style="margin-top:14px">${ic('check')} Yes, I can read it</button>
+  <button class="btn tonal full" style="margin-top:8px">No, it shows boxes</button>
+  <p class="t-sm" style="margin:10px 0 0">If it does, we download the ${c.family} font, ${c.size}, with the course. Nothing else is downloaded for it.</p>
+  ${S.later==='on'?`<button class="btn text full" style="margin-top:2px">Ask me later</button>`:''}
+  </div></div>`),'1. Course added: before its decks download');
+}
+function sheetDownloading(c){
+ return phone(behind(c)+dim(`<div class="sheet chg" style="outline-offset:-3px"><div class="grab"></div><div class="scroll">
+  <h3>Downloading ${c.name}</h3>
+  <p class="t-sm" style="margin:2px 0 12px">Downloading decks and the ${c.name} font…</p>
+  <div class="prog"><div class="prow"><span>${c.family}</span><span class="t-sm">${c.size}</span></div><div class="track"><i style="width:62%"></i></div></div>
+  <div class="prog" style="margin-top:10px"><div class="prow"><span>${c.name} decks</span><span class="t-sm">1.1 MB</span></div><div class="track"><i style="width:30%"></i></div></div>
+  <p class="t-sm" style="margin:12px 0 0">You can leave this screen; it carries on. If the font does not arrive, the course still works with your phone's font.</p>
+  <button class="btn text full" style="margin-top:6px">Cancel the font</button>
+  </div></div>`),'2. After "No, it shows boxes"');
+}
+function sheetRecheck(c){
+ return phone(behind(c)+dim(`<div class="sheet chg" style="outline-offset:-3px"><div class="grab"></div><div class="scroll">
+  <h3>Can you read it now?</h3>
+  <p class="t-sm" style="margin:2px 0 10px">The sample again, drawn in the ${c.family} font that just downloaded.</p>
+  ${sampleCard(c,'main',{font:c.family})}
+  <button class="btn fill full" style="margin-top:14px">${ic('check')} Yes, I can read it</button>
+  <button class="btn tonal full" style="margin-top:8px">No, it still shows boxes</button>
+  </div></div>`),'3. Download finished: check once more');
+}
+function sheetDone(c,kind){
+ const font=kind==='font';
+ return phone(behind(c)+dim(`<div class="sheet chg" style="outline-offset:-3px"><div class="grab"></div><div class="scroll">
+  <div class="doneic">${ic('check')}</div>
+  <h3 style="text-align:center">${c.name} is ready</h3>
+  <p class="t-body" style="text-align:center;margin:6px 0 4px">${font?`Drawn in the ${c.family} font, ${c.size}, downloaded with the course.`:`Drawn in your phone's own font. Nothing to download.`}</p>
+  ${S.scripts==='every'&&c.other?`<p class="t-sm" style="text-align:center;margin:0">${c.other}: your phone's font</p>`:''}
+  <p class="t-sm" style="text-align:center;margin:8px 0 0">Change it later in Settings, ${S.home==='decks'?'Your decks':'Look'}, Script fonts.</p>
+  <button class="btn fill full" style="margin-top:14px">Done</button>
+  </div></div>`),font?'4. Done, with the downloaded font':'5. Done, after "Yes, I can read it"');
+}
+function sheetStill(c){
+ return phone(behind(c)+dim(`<div class="sheet chg" style="outline-offset:-3px"><div class="grab"></div><div class="scroll">
+  <h3>Still boxes</h3>
+  <p class="t-body" style="margin:4px 0 8px">The font did not draw ${c.script} on this phone. The course still works: you will see boxes where the script is, and every card still shows its reading and meaning.</p>
+  <button class="btn tonal full" style="margin-top:8px">Report this phone</button>
+  <button class="btn text full" style="margin-top:4px">Continue with readings only</button>
+  </div></div>`),'6. Boxes even after the download');
+}
+
+/* ===== 2. in Settings ===== */
+function settingsRow(){
+ const row=`<button class="srow"><span class="ic">${ic('fonts')}</span><span class="tx"><span class="t-h" style="display:block">Script fonts</span><span class="t-sm">Check how scripts look, or download a font</span></span>${ic('chev')}</button>`;
+ if(S.home==='decks'){
+  return phone(`${bar('Your decks')}<div class="scroll">
+  <button class="srow"><span class="tx"><span class="t-h" style="display:block">Upload a deck</span><span class="t-sm">Pick a file; it is checked before it is added</span></span>${ic('chev')}</button>
+  <button class="srow"><span class="tx"><span class="t-h" style="display:block">Get a template</span><span class="t-sm">A single deck, or a full language: a deck and its path</span></span>${ic('chev')}</button>
+  ${chg('',row)}
+  <div class="t-lab">Hindustani › from English</div><p class="t-sm">The decks are listed here, as today.</p></div>${nav('gear')}`,'Settings, Your decks: one new row');
+ }
+ return phone(`${bar('Look')}<div class="scroll">
+  <button class="srow"><span class="tx"><span class="t-h" style="display:block">Theme</span><span class="t-sm">Follow the phone</span></span>${ic('chev')}</button>
+  <button class="srow"><span class="tx"><span class="t-h" style="display:block">App language</span><span class="t-sm">English</span></span>${ic('chev')}</button>
+  ${chg('',row)}</div>${nav('gear')}`,'Settings, Look: one new row');
+}
+const chip=(k)=>({
+ phone:`<span class="mastery m-known2">Phone's font</span>`,
+ down:`<span class="mastery m-known">Downloaded</span>`,
+ none:`<span class="mastery m-new">Not checked</span>`,
+ busy:`<span class="mastery m-learning">62%</span>`,
+ box:`<span class="mastery m-err">Shows boxes</span>`})[k];
+function fontRow(c,st,statusText,action){
+ const font=st==='down'||st==='busy';
+ return `<div class="frow"><div class="tx"><div class="nm">${c.script}</div>
+  <div class="fs">${smp(c.text.split(/[，,।۔。]/)[0].replace(/\s+$/,''),c.fam,c.lang,c.dir,{font})}</div>
+  <div class="t-sm">${statusText}</div></div><div class="side">${chip(st)}${action?`<button class="btn text sm2">${action}</button>`:''}</div></div>`;
+}
+function fontsPage(){
+ return phone(`${bar('Script fonts')}<div class="scroll">
+  <p class="t-sm" style="margin:0 0 10px">Phones draw some scripts badly, or not at all. Check each script of your courses, and download a font where it shows boxes.</p>
+  ${chg('',`<button class="btn tonal full">${ic('refresh')} Check all scripts</button>`)}
+  <div class="t-lab">${C.hi.name}</div>
+  ${chg('',fontRow(C.hi,'down','Noto Nastaliq Urdu · 0.7 MB · downloaded 24 Oct','Check again'))}
+  ${chg('',fontRow({...C.hi,script:'Devanagari',text:C.hi.otherText,fam:'deva',lang:'hi',dir:'ltr'},'phone','Your phone\'s font · checked 24 Oct','Check again'))}
+  <div class="t-lab">${C.bn.name}</div>
+  ${chg('',fontRow(C.bn,'none','Not checked yet','Check'))}
+  <div class="t-lab">${C.zh.name}</div>
+  ${chg('',fontRow(C.zh,'busy','Noto Sans SC · about 10 MB · downloading…',''))}
+  <div class="t-lab">${C.ko.name}</div>
+  ${chg('',fontRow(C.ko,'box','Shows boxes: Noto Sans KR, about 6 MB, is not downloaded','Download'))}
+  </div>${nav('gear')}`,'Settings, Script fonts: one row per script, every state');
+}
+function recheckSheet(c,downloaded){
+ const font=downloaded;
+ return phone(`<div class="appbar"><button class="ib" aria-label="Back">${ic('back')}</button><span class="ttl">Script fonts</span></div><div class="scroll"><div class="t-lab">${c.name}</div></div>${nav('gear')}`+dim(`<div class="sheet chg" style="outline-offset:-3px"><div class="grab"></div><div class="scroll">
+  <h3>${c.script}: check again</h3>
+  <p class="t-sm" style="margin:2px 0 10px">Now: ${font?`${c.family}, ${c.size}, downloaded with ${c.name}`:`your phone's font`}.</p>
+  ${sampleCard(c,'main',font?{font:c.family}:{})}
+  <button class="btn fill full" style="margin-top:14px">${ic('check')} Yes, I can read it</button>
+  <button class="btn tonal full" style="margin-top:8px">${font?`No, it shows boxes`:`No, it shows boxes: download the font`}</button>
+  ${font?`<button class="btn text full err" style="margin-top:4px">${ic('del')} Remove the downloaded font</button><p class="t-sm" style="margin:2px 0 0">Removing keeps the course. The font stays while another course uses it.</p>`:`<p class="t-sm" style="margin:10px 0 0">If it shows boxes: ${c.family}, ${c.size}, downloads and is kept with your decks.</p>`}
+  </div></div>`),font?'Tap a downloaded script: check again or remove':'Tap a script: check again');
+}
+function settings(c){
+ return settingsRow()+fontsPage()+recheckSheet(c,false)+recheckSheet(c,true);
+}
+
+/* ===== page ===== */
+function render(){
+ const c=C[S.course];
+ document.documentElement.setAttribute('data-theme',S.theme);
+ const P=PAL[S.theme];
+ root.className=S.hl==='1'?'hl-on':'';
+ root.style.cssText=Object.entries(P).map(([k,v])=>`--${k}:${v}`).join(';');
+ root.innerHTML=`
+ <section class="opt" id="s1"><h2>1. At course start, or the first download of a course (#611)</h2>
+  <p class="note">When a course is added, before its decks download, the app shows a sample in the phone's own font and asks whether the learner can read it. "Yes" uses the phone's font; "No" downloads the script's font with the course (ADR-0042), then shows the sample again. Everything in the sheet is new; the Decks tab behind it is as built. Pick the phone to see boxes or letters in the sample.</p>
+  <div class="tw">${seg('phone','boxes,readable'.split(',').map(v=>[v,v==='boxes'?'Shows boxes':'Draws it fine']),'This phone')}${seg('scripts',[['one','Only the script I read'],['every','Every script of the course']],'Scripts checked')}${seg('later',[['on','Ask me later shown'],['off','Not shown']],'Ask me later')}</div>
+  <div class="frames">${sheetAsk(c)}${sheetDownloading(c)}${sheetRecheck(c)}${sheetDone(c,'font')}${sheetDone(c,'phone')}${sheetStill(c)}</div></section>
+ <section class="opt" id="s2"><h2>2. In Settings, to check again or download later</h2>
+  <p class="note">One row, Script fonts, opens a page listing every script of the learner's courses with its state: not checked, the phone's font, downloaded, downloading, or showing boxes. Tapping a row opens the same sample sheet as at course start. Hindustani's two scripts are two rows. The course choice above sets the script in the two sheets.</p>
+  <div class="tw">${seg('home',[['decks','Your decks'],['look','Look']],'The row lives in')}</div>
+  <div class="frames">${settings(c)}</div></section>`;
+ document.querySelectorAll('#g-tw .seg').forEach(s=>{const k=s.dataset.k;s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(S[k])===b.dataset.v))});
+ document.title='Font Check';
+}
+document.addEventListener('click',e=>{
+ const gb=e.target.closest('#g-tw .seg button');
+ if(gb){S[gb.parentNode.dataset.k]=gb.dataset.v;render();return}
+ const b=e.target.closest('[data-sk] button');
+ if(b){S[b.parentNode.dataset.sk]=b.dataset.v;render();return}
+});
+render();
+
+/* ===== contrast self-check: console only ===== */
+function lum(h){const c=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]}
+function cr(a,b){const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
+const PAIRS=[['body text','onS','s',4.5],['captions, readings','onSv','s',4.5],['captions on cards','onSv','sLow',4.5],['text on cards','onS','sLow',4.5],['text on raised blocks','onS','sHigh',4.5],['captions on raised blocks','onSv','sHigh',4.5],['sample text on raised block','onS','sHigh',4.5],['chip selected, tonal button, Learning chip','onSc','sc',4.5],['filled button, Known chip','onP','p',4.5],['text button and icon on sheet','p','sLow',4.5],['text button on page','p','s',4.5],['icon on raised block','p','sHigh',3],['outline against page','ol','s',3],['outline against card','ol','sLow',3],['unselected chip text on page','onSv','s',4.5],['unselected chip text on card','onSv','sLow',4.5],['change tag','onE','E',4.5],['change outline on page','E','s',3],['change outline on card','E','sLow',3],['sheet title on sheet','onS','sLow',4.5],['error text button on sheet','E','sLow',4.5],['Shows boxes chip','onE','E',4.5],['progress fill on its track','p','sc',3]];
+window.__contrast=[];
+['light','dark'].forEach(t=>PAIRS.forEach(([n,f,b,need])=>{const r=cr(PAL[t][f],PAL[t][b]);window.__contrast.push({theme:t,pair:n,fg:f,bg:b,ratio:+r.toFixed(2),need,pass:r>=need})}));
+console.log('contrast',JSON.stringify(window.__contrast));
+</script>
+</body>
+</html>

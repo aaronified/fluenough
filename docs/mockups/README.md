@@ -4,6 +4,16 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 ## Awaiting approval
 
+- `font-check.html`: the font check (#611): where and how the app asks, when a
+  course is added, whether the learner can read a script sample ("Yes, I can
+  read it" / "No, it shows boxes"), downloads the script's font with the
+  course (ADR-0042) on "No" and shows the sample again; and Script fonts in
+  Settings to check again or download later. Hindustani (Perso-Arabic),
+  Bengali, Chinese and Korean, light and dark, 1.4x (owner, 2026-10-23:
+  "Offer to download the fonts, ask user if they can read a sample.
+  Otherwise download. Same for everything."; 2026-10-24: "Mockup first").
+  The self-check, notes and open questions are in `font-check.md`.
+
 - `today-chain.html`: the Today chain's screens still to build (owner,
   2026-10-23: "Do all the mockups needed for the today chain together, in one
   screen."): situation cheatsheets and their inspect view (#724), the decks
