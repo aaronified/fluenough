@@ -1,0 +1,22 @@
+schema: 1
+id: "zh-en-grammar-money-kuai-mao"
+kind: "layer"
+core: "zh-grammar-money-kuai-mao"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "块 (kuài) and 毛 (máo): yuan and mao"
+license: "CC-BY-SA-4.0"
+description: "One yuan, two mao, five kuai: 块 (kuài) counts the yuan and 毛 (máo) counts the mao, a tenth of a yuan. Not yet checked by a Mandarin speaker: please report any mistake."
+tags: ["unreviewed"]
+"pattern":
+  "name": "块 (kuài) and 毛 (máo): yuan and mao"
+  "slot_name": "unit"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "块": "a kuai (a yuan)"
+    "毛": "a mao (a tenth of a kuai)"
+  "entries":
+    "yi": "one"
+    "liang": "two"
+    "wu": "five"
+    "shi": "ten"
+  "notes": "块 (kuài) counts yuan, the whole unit of money, and 毛 (máo) counts mao, a tenth of a yuan: ten 毛 (máo) make one 块 (kuài), so 十毛钱 (shí máo qián) and 一块钱 (yí kuài qián) are the same sum. 钱 (qián) is money. In writing the units are 元 (yuán) and 角 (jiǎo); here the spoken words are taught. 一 (yī) is said yí before 块 (kuài), and yì before 毛 (máo), as in 一本书 (yì běn shū)."
