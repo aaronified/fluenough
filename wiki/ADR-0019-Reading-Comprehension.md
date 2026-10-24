@@ -144,7 +144,7 @@ the drill and the sources, on 2 and 3 October 2026.
   pause and voice check, all of which listening has.
 - **The question data as fields on `Card`.** `card.dart` is the most shared
   model in the repository; a subclass leaves it alone, as `NumberCard`
-  does.
+  did (it is now a plain card with data, #522 step 9a).
 - **The glossary under the passage, after its questions.** Shown too late
   to help with reading.
 

@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-transport-sentences"
+kind: "layer"
+core: "es-transport-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: getting around"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about travel by bus, train and plane, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-0694":
+    native: "I wait for the bus at the stop."
+    bases: {"el": "the", "en": "in", "la": "the"}
+    confusables: {"tomar": { why: "Tomar is to take or to have, not to wait." }, "llegar": { why: "Llegar is to arrive, the bus's action, not yours." }}
+  "es-0695":
+    native: "The train leaves at nine."
+    bases: {"El": "the", "a": "to", "las": "the"}
+    confusables: {"llegar": { why: "Llegar is to arrive, not to leave." }, "llegada": { why: "Llegada is the arrival, the opposite of the departure." }}
+  "es-0696":
+    native: "I take the metro in the city."
+    bases: {"el": "the", "en": "in", "la": "the"}
+    confusables: {"coche": { why: "Coche is a car, a private vehicle." }, "bicicleta": { why: "Bicicleta is a bicycle, pedalled, not underground." }}
+  "es-0697":
+    native: "We get on the train and get off at the station."
+    bases: {"al": "to the", "en": "in", "la": "the"}
+    confusables: {"salir": { why: "Salir is to leave, not to get on." }, "esperar": { why: "Esperar is to wait, before you get on." }}
+  "es-0698":
+    native: "The ticket costs five euros."
+    bases: {"El": "the"}
+    confusables: {"precio": { why: "Precio is the price, a noun; here cuesta is the verb." }, "cambio": { why: "Cambio is change, the money given back." }}
+  "es-0699":
+    native: "The road is good and the airport is far."
+    bases: {"La": "the", "el": "the"}
+    confusables: {"calle": { why: "Calle is a street, in a town." }, "barco": { why: "Barco is a boat, not a road." }}

@@ -25,10 +25,11 @@ A right answer also counts in part for the skills it implies ([ADR-0034](ADR-003
 - **Type.** Type the word in its script, or in Latin letters. The screen shows an example of the Latin spelling. If you have no keyboard for the script, a hint suggests one.
 - **Put in order.** Build a sentence from word tiles.
 - **Say.** Say the word. See [Speaking and listening](Speaking-and-Listening).
-- **Grammar.** Pick or type the right form of a word.
+- **Grammar.** Pick or type the right form of a word. You pick first, then type once you have it right. The options are forms of the same word, never another word. After you answer, the word's forms in the rule are shown with the one asked marked.
+- **Rule.** A rule shown once before its first question: its name, what it means, and its forms on words you know. Nothing is recorded; swipe the card to go on ([ADR-0046](ADR-0046-Lessons-Take-The-Next-Eligible-Items)).
 - **Read.** A passage with questions.
 - **Set.** A group of related words shown together in a lesson. Nothing is recorded; Continue goes on.
-- **Teach.** A new word shown before you are asked about it.
+- **Teach.** A new word shown before you are asked about it, on one screen with no scrolling: the word large, with its reading, a speaker and its IPA; the picture beside it; the meaning; a note; and one warning. Tap the IPA for each sound of the word, from the IPA course, with its practice. Tap the meaning for the dictionary: the senses, the etymology and the examples. There is no Continue button: swipe the card, or tap the chevron that shows while you touch the screen, to go on.
 
 ## How answers are marked
 
@@ -60,6 +61,6 @@ A card you miss again and again is a leech. Drilling it harder rarely helps. Pro
 
 ## Cards and their bases
 
-A word built on another shows its base on the card, such as "Base: जाना (jānā) · to go". Inspect, on a deck, shows each card as the deck file writes it, and how hard you have found it in each skill.
+A word built on another shows its base on the card, such as "Base: जाना (jānā) · to go". A word's sheet, opened from its row on a deck's or a unit's page, shows everything the card has, unfolded: how it is said symbol by symbol, its meanings, notes, warnings, dictionary entry and examples, its tags and id, and how hard you have found it in each skill. A deck's page lists every word with its meaning and where you stand with it; its tag chips filter the words as you tap them; Practice drills the words in view in the skills you choose, and + Learn teaches the ones not taught yet.
 
 See also: [Learner guide](Learner-Guide), [Home](Home).

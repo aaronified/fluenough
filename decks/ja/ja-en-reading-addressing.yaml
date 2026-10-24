@@ -1,0 +1,80 @@
+"schema": 1
+"id": "ja-en-reading-addressing"
+"name": "Japanese reading: titles and names"
+"kind": "reading"
+"language":
+  "code": "ja"
+  "iso639_3": "jpn"
+  "name": "Japanese"
+  "script": "kana"
+  "tts": "ja-JP"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "ja-addressing-names"
+  "title": "Names with a suffix"
+  "sentences":
+  - "text": "たけしくん、ようこちゃん。"
+    "reading": "takeshi-kun, youko-chan."
+  - "text": "たけしくんはがくせいです。"
+    "reading": "takeshi-kun wa gakusei desu."
+  - "text": "ようこちゃんはちいさいです。"
+    "reading": "youko-chan wa chiisai desu."
+  - "text": "ようこちゃんはおじょうちゃんです。"
+    "reading": "youko-chan wa ojouchan desu."
+  "questions":
+  - "id": "ja-0161"
+    "prompt":
+      "en": "Which name in the first line is a boy's?"
+    "options":
+    - "en": "たけしくん (takeshi-kun)"
+    - "en": "ようこちゃん (youko-chan)"
+    "answer": 1
+  - "id": "ja-0162"
+    "prompt":
+      "en": "ちゃん (chan) is added to the name of a small girl or a close friend."
+    "answer": true
+  - "id": "ja-0163"
+    "prompt":
+      "en": "Which word means 'little girl'?"
+    "options":
+    - "en": "ようこちゃん (youko-chan)"
+    - "en": "おじょうちゃん (ojouchan)"
+    "answer": 2
+- "id": "ja-addressing-titles"
+  "title": "Titles at work"
+  "sentences":
+  - "text": "かちょうはたなかさんです。"
+    "reading": "kachou wa tanaka-san desu."
+  - "text": "たなかさんはせんぱいです。"
+    "reading": "tanaka-san wa senpai desu."
+  - "text": "わたしはこうはいです。"
+    "reading": "watashi wa kouhai desu."
+  - "text": "みなさん、こんにちは。"
+    "reading": "minasan, konnichiwa."
+  "questions":
+  - "id": "ja-0164"
+    "prompt":
+      "en": "Which word in the first line means 'section chief'?"
+    "options":
+    - "en": "しゃちょう (shachou)"
+    - "en": "かちょう (kachou)"
+    "answer": 2
+  - "id": "ja-0165"
+    "prompt":
+      "en": "せんぱい (senpai) is a senior, and こうはい (kouhai) is a junior."
+    "answer": true
+  - "id": "ja-0166"
+    "prompt":
+      "en": "Which word in the second line means 'senior'?"
+    "options":
+    - "en": "こうはい (kouhai)"
+    - "en": "せんぱい (senpai)"
+    "answer": 2

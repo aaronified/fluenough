@@ -1,0 +1,42 @@
+schema: 1
+id: "zh-en-reading-characters-1"
+name: "Chinese reading: first characters"
+kind: reading
+language: { code: zh, iso639_3: cmn, name: "Mandarin Chinese", script: han_simplified, scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed", "script"]
+passages:
+  - id: "zh-one-two-three"
+    title: "One, two, three"
+    sentences:
+      - text: "一，二，三，人，大，小。"
+        reading: "yī, èr, sān, rén, dà, xiǎo."
+    questions:
+      - id: "zh-0257"
+        prompt: { en: "Which word means big?" }
+        options:
+          - { en: "小 (xiǎo), small" }
+          - { en: "大 (dà), big" }
+          - { en: "人 (rén), person" }
+        answer: 2
+      - id: "zh-0258"
+        prompt: { en: "小 (xiǎo) and 大 (dà) are opposites." }
+        answer: true
+  - id: "zh-number-signs"
+    title: "Number signs"
+    sentences:
+      - text: "一万，十万，五千。"
+        reading: "yīwàn, shíwàn, wǔqiān."
+    questions:
+      - id: "zh-0259"
+        prompt: { en: "Which amount on the sign is the largest?" }
+        options:
+          - { en: "五千 (wǔqiān), five thousand" }
+          - { en: "一万 (yīwàn), ten thousand" }
+          - { en: "十万 (shíwàn), a hundred thousand" }
+        answer: 3
+      - id: "zh-0260"
+        prompt: { en: "The sign says 一万 (yīwàn) for a hundred thousand." }
+        answer: false

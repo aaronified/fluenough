@@ -1,0 +1,86 @@
+schema: 1
+"id": "zh-en-reading-numbers-big"
+"name": "Chinese reading: tens and big numbers"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-factory-notice"
+  "title": "A factory notice"
+  "theme": "numbers-big"
+  "sentences":
+  - "text": "工厂有两千个人。"
+    "reading": "gōngchǎng yǒu liǎngqiān ge rén."
+  - "text": "一百个人在办公室。"
+    "reading": "yìbǎi ge rén zài bàngōngshì."
+  - "text": "大约一千人加班。"
+    "reading": "dàyuē yìqiān rén jiābān."
+  - "text": "会议五号开始。"
+    "reading": "huìyì wǔ hào kāishǐ."
+  "questions":
+  - "id": "zh-0736"
+    "prompt":
+      "en": "Which word means 'about'?"
+    "options":
+    - "en": "大约 (dàyuē)"
+    - "en": "一半 (yíbàn)"
+    "answer": 1
+  - "id": "zh-0737"
+    "prompt":
+      "en": "工厂有两千个人 (gōngchǎng yǒu liǎngqiān ge rén) says that the factory has two thousand people."
+    "answer": true
+  - "id": "zh-0738"
+    "prompt":
+      "en": "会议五号开始 (huìyì wǔ hào kāishǐ) means:"
+    "options":
+    - "en": "The meeting starts on the fifth."
+    - "en": "The meeting starts on the fifteenth."
+    "answer": 1
+- "id": "zh-sums-quiz"
+  "title": "A sums quiz"
+  "theme": "numbers-big"
+  "sentences":
+  - "text": "二加三是五。"
+    "reading": "èr jiā sān shì wǔ."
+  - "text": "十减一是九。"
+    "reading": "shí jiǎn yī shì jiǔ."
+  - "text": "三十是整数。"
+    "reading": "sānshí shì zhěngshù."
+  - "text": "小数很难吗？"
+    "reading": "xiǎoshù hěn nán ma?"
+  "questions":
+  - "id": "zh-0739"
+    "prompt":
+      "en": "Which word means 'to multiply'?"
+    "options":
+    - "en": "乘 (chéng)"
+    - "en": "加 (jiā)"
+    "answer": 1
+  - "id": "zh-0740"
+    "prompt":
+      "en": "十减一是九 (shí jiǎn yī shì jiǔ) says that ten minus one is nine."
+    "answer": true
+  - "id": "zh-0741"
+    "prompt":
+      "en": "小数 (xiǎoshù) means:"
+    "options":
+    - "en": "whole number"
+    - "en": "decimal"
+    "answer": 2

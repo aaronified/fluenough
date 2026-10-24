@@ -1,0 +1,79 @@
+schema: 1
+id: "es-family-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-0188"
+    target: "Mi madre y mi padre son médicos."
+    ipa: "mi ˈmadɾe i mi ˈpadɾe son ˈmedikos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "madre", base: "madre" }, { word: "y", ref: "es-0048" }, { word: "padre", base: "padre" }, { word: "son", ref: "es-0022" }, { word: "médicos", base: "médico" }]
+    confusables: [{ id: "sister", ref: "es-0162", kind: "word" }, { id: "son", ref: "es-0163", kind: "word" }]
+  - id: "es-0189"
+    target: "La hija de Ana tiene siete años."
+    ipa: "la ˈixa de ˈana ˈtjene ˈsjete ˈaɲos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "hija", base: "hija" }, { word: "de", base: "de" }, { word: "Ana", base: "Ana" }, { word: "tiene", ref: "es-0024" }, { word: "siete", base: "siete" }, { word: "años", base: "año" }]
+    confusables: [{ id: "granddaughter", ref: "es-0177", kind: "word" }, { id: "sister", ref: "es-0162", kind: "word" }]
+  - id: "es-0190"
+    target: "El abuelo de Luis es muy simpático."
+    ipa: "el aˈbwelo de lwis es mwi simˈpatiko"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "abuelo", base: "abuelo" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }, { word: "es", ref: "es-0022" }, { word: "muy", base: "muy" }, { word: "simpático", base: "simpático" }]
+    confusables: [{ id: "father", ref: "es-0159", kind: "word" }, { id: "uncle", ref: "es-0167", kind: "word" }]
+  - id: "es-0191"
+    target: "Ana es la novia de Luis."
+    ipa: "ˈana es la ˈnobja de lwis"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Ana", base: "Ana" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "novia", base: "novia" }, { word: "de", base: "de" }, { word: "Luis", base: "Luis" }]
+    confusables: [{ id: "wife", ref: "es-0172", kind: "word" }, { id: "cousin", ref: "es-0170", kind: "word" }]
+  - id: "es-0192"
+    target: "Los hermanos de Rosa son gemelos."
+    ipa: "los eɾˈmanos de ˈrosa son xeˈmelos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Los", base: "los" }, { word: "hermanos", base: "hermano" }, { word: "de", base: "de" }, { word: "Rosa", base: "Rosa" }, { word: "son", ref: "es-0022" }, { word: "gemelos", base: "gemelo" }]
+    confusables: [{ id: "sister", ref: "es-0162", kind: "word" }, { id: "brother-in-law", ref: "es-0182", kind: "word" }]
+  - id: "es-0193"
+    target: "Mi suegra vive cerca de nosotros."
+    ipa: "mi ˈsweɡɾa ˈbibe ˈθeɾka de noˈsotɾos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "suegra", base: "suegra" }, { word: "vive", ref: "es-0030" }, { word: "cerca", ref: "es-0717" }, { word: "de", base: "de" }, { word: "nosotros", ref: "es-0122" }]
+    confusables: [{ id: "wife", ref: "es-0172", kind: "word" }, { id: "aunt", ref: "es-0168", kind: "word" }]
+  - id: "es-0194"
+    target: "El marido de Rosa es ingeniero."
+    ipa: "el maˈɾido de ˈrosa es inxeˈnjeɾo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "marido", base: "marido" }, { word: "de", base: "de" }, { word: "Rosa", base: "Rosa" }, { word: "es", ref: "es-0022" }, { word: "ingeniero", base: "ingeniero" }]
+    confusables: [{ id: "boyfriend", ref: "es-0174", kind: "word" }, { id: "father-in-law", ref: "es-0180", kind: "word" }]
+  - id: "es-0195"
+    target: "Mis sobrinos juegan en el parque."
+    ipa: "mis soˈbɾinos ˈxweɡan en el ˈpaɾke"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mis", base: "mi" }, { word: "sobrinos", base: "sobrino" }, { word: "juegan", base: "jugar" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "parque", ref: "es-0777" }]
+    confusables: [{ id: "cousin", ref: "es-0169", kind: "word" }, { id: "godson", ref: "es-0186", kind: "word" }]
+  - id: "es-0196"
+    target: "Mi ahijada vive con su madre."
+    ipa: "mi aiˈxada ˈbibe kon su ˈmadɾe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "ahijada", base: "ahijada" }, { word: "vive", ref: "es-0030" }, { word: "con", base: "con" }, { word: "su", ref: "es-0131" }, { word: "madre", base: "madre" }]
+    confusables: [{ id: "daughter", ref: "es-0164", kind: "word" }, { id: "grandmother", ref: "es-0166", kind: "word" }]
+  - id: "es-0197"
+    target: "Mi cuñada es la hermana de mi esposo."
+    ipa: "mi kuˈɲada es la eɾˈmana de mi esˈposo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Mi", ref: "es-0129" }, { word: "cuñada", base: "cuñada" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "hermana", base: "hermana" }, { word: "de", base: "de" }, { word: "esposo", base: "esposo" }]
+    confusables: [{ id: "brother-in-law", ref: "es-0182", kind: "word" }, { id: "mother-in-law", ref: "es-0181", kind: "word" }]

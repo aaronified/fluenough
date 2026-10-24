@@ -1,0 +1,75 @@
+schema: 1
+id: "es-en-reading-family"
+name: "Reading: family"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about a family, with the words of the Family unit. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-my-family"
+    title: "My family"
+    theme: "family"
+    sentences:
+      - text: "Esta es mi familia."
+      - text: "Mi padre es médico."
+      - text: "Mi madre es profesora."
+      - text: "Tengo un hermano y una hermana."
+      - text: "Mi abuela vive con nosotros."
+      - text: "Mi tío vive en Quito."
+    questions:
+      - id: "es-0198"
+        prompt: { en: "Who is a doctor?" }
+        options:
+          - { en: "The father" }
+          - { en: "The mother" }
+          - { en: "The uncle" }
+        answer: 1
+      - id: "es-0199"
+        prompt: { en: "Who lives in Quito?" }
+        options:
+          - { en: "The grandmother" }
+          - { en: "The uncle" }
+          - { en: "The sister" }
+        answer: 2
+      - id: "es-0200"
+        prompt: { en: "How many brothers and sisters does the speaker have?" }
+        options:
+          - { en: "One" }
+          - { en: "Two" }
+          - { en: "Three" }
+        answer: 2
+  - id: "es-family-tree"
+    title: "A family tree"
+    theme: "family"
+    sentences:
+      - text: "Rosa es la abuela de Ana."
+      - text: "El abuelo de Ana es Luis."
+      - text: "Pedro es el hijo de Rosa y Luis."
+      - text: "Ana es la hija de Pedro."
+      - text: "Marta es la esposa de Pedro."
+      - text: "Ana tiene un hermano: Tomás."
+    questions:
+      - id: "es-0201"
+        prompt: { en: "Who is Ana's grandmother?" }
+        options:
+          - { en: "Rosa" }
+          - { en: "Marta" }
+          - { en: "Laura" }
+        answer: 1
+      - id: "es-0202"
+        prompt: { en: "Who is Ana's father?" }
+        options:
+          - { en: "Pedro" }
+          - { en: "Luis" }
+          - { en: "Tomás" }
+        answer: 1
+      - id: "es-0203"
+        prompt: { en: "Who is Ana's brother?" }
+        options:
+          - { en: "Tomás" }
+          - { en: "Pedro" }
+          - { en: "Luis" }
+        answer: 1

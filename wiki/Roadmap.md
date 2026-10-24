@@ -122,7 +122,7 @@ Each can start once what it waits for is done.
 
 | Tracker | Plan | Waits for |
 |---|---|---|
-| #208 | Difficulty by skill and by word (done in #455: Inspect shows it; #252 left to close) | |
+| #208 | Difficulty by skill and by word (done in #455: the word sheet, once Inspect, shows it; #252 left to close) | |
 | #214 | A Research and standards page | #209 |
 | #215 | Books, films and songs you bring | #209, #210 |
 | #222 | Building sentences, and cloze | |

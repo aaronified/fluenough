@@ -1,0 +1,70 @@
+schema: 1
+id: "es-en-reading-plural"
+name: "Reading: one and more than one"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts with plural nouns: a room with several things, and shelf labels for one item and for several. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-more-than-one"
+    title: "More than one"
+    sentences:
+      - text: "Hay una mesa y cuatro sillas."
+      - text: "En casa hay tres libros."
+      - text: "En la calle hay dos casas."
+      - text: "Hay una flor y muchas flores."
+    questions:
+      - id: "es-0460"
+        prompt: { en: "How many chairs are there?" }
+        options:
+          - { en: "One" }
+          - { en: "Two" }
+          - { en: "Four" }
+        answer: 3
+      - id: "es-0461"
+        prompt: { en: "How many books are there at home?" }
+        options:
+          - { en: "Two" }
+          - { en: "Three" }
+          - { en: "Ten" }
+        answer: 2
+      - id: "es-0462"
+        prompt: { en: "How many houses are on the street?" }
+        options:
+          - { en: "One" }
+          - { en: "Two" }
+          - { en: "Ten" }
+        answer: 2
+  - id: "es-shelf-labels"
+    title: "Shelf labels"
+    sentences:
+      - text: "Huevos: una docena."
+      - text: "Leche: un litro."
+      - text: "Manzanas: un kilo."
+      - text: "Botellas de agua: seis."
+      - text: "Latas de tomate: tres."
+    questions:
+      - id: "es-0463"
+        prompt: { en: "How many eggs does the label say?" }
+        options:
+          - { en: "One dozen" }
+          - { en: "One kilo" }
+          - { en: "Two litres" }
+        answer: 1
+      - id: "es-0464"
+        prompt: { en: "How many bottles of water are on the shelf?" }
+        options:
+          - { en: "Two" }
+          - { en: "Six" }
+          - { en: "Ten" }
+        answer: 2
+      - id: "es-0465"
+        prompt: { en: "How much milk does the label say?" }
+        options:
+          - { en: "One litre" }
+          - { en: "One kilo" }
+          - { en: "Half a kilo" }
+        answer: 1

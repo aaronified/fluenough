@@ -1,0 +1,163 @@
+schema: 1
+id: "es-pronouns-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "es-0142"
+    target: "Yo soy de Lima y ella es de Quito."
+    ipa: "ʝo soj de ˈlima i ˈeʝa es de ˈkito"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Yo", ref: "es-0119" }
+      - { word: "soy", ref: "es-0022" }
+      - { word: "de", base: "de" }
+      - { word: "Lima", base: "Lima" }
+      - { word: "y", ref: "es-0048" }
+      - { word: "ella", ref: "es-0121" }
+      - { word: "es", ref: "es-0022" }
+      - { word: "Quito", base: "Quito" }
+    confusables:
+      - { id: "we", ref: "es-0122", kind: "word" }
+      - { id: "usted", ref: "es-0087", kind: "word" }
+  - id: "es-0143"
+    target: "Él es alto y ella es baja."
+    ipa: "el es ˈalto i ˈeʝa es ˈbaxa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Él", ref: "es-0120" }
+      - { word: "es", ref: "es-0022" }
+      - { word: "alto", base: "alto" }
+      - { word: "y", ref: "es-0048" }
+      - { word: "ella", ref: "es-0121" }
+      - { word: "baja", base: "bajo" }
+    confusables:
+      - { id: "they", ref: "es-0124", kind: "word" }
+      - { id: "i", ref: "es-0119", kind: "word" }
+  - id: "es-0144"
+    target: "Ellas son mis hermanas."
+    ipa: "ˈeʝas son mis eɾˈmanas"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ellas", ref: "es-0125" }
+      - { word: "son", ref: "es-0022" }
+      - { word: "mis", ref: "es-0129" }
+      - { word: "hermanas", base: "hermana" }
+    confusables:
+      - { id: "men", ref: "es-0124", kind: "word" }
+      - { id: "we", ref: "es-0123", kind: "word" }
+  - id: "es-0145"
+    target: "Ellos son los amigos de mi padre."
+    ipa: "ˈeʝos son los aˈmiɡos de mi ˈpadɾe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ellos", ref: "es-0124" }
+      - { word: "son", ref: "es-0022" }
+      - { word: "los", base: "el" }
+      - { word: "amigos", ref: "es-0005" }
+      - { word: "de", base: "de" }
+      - { word: "mi", ref: "es-0129" }
+      - { word: "padre", base: "padre" }
+    confusables:
+      - { id: "she", ref: "es-0125", kind: "word" }
+      - { id: "he", ref: "es-0120", kind: "word" }
+  - id: "es-0146"
+    target: "Nosotros vivimos en la misma casa."
+    ipa: "noˈsotɾos biˈbimos en la ˈmisma ˈkasa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nosotros", ref: "es-0122" }
+      - { word: "vivimos", ref: "es-0030" }
+      - { word: "en", base: "en" }
+      - { word: "la", base: "la" }
+      - { word: "misma", base: "mismo" }
+      - { word: "casa", ref: "es-0006" }
+    confusables:
+      - { id: "i", ref: "es-0119", kind: "word" }
+      - { id: "you-all", ref: "es-0126", kind: "word" }
+  - id: "es-0147"
+    target: "Todos están en la mesa."
+    ipa: "ˈtodos esˈtan en la ˈmesa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Todos", ref: "es-0134" }
+      - { word: "están", ref: "es-0023" }
+      - { word: "en", base: "en" }
+      - { word: "la", base: "la" }
+      - { word: "mesa", ref: "es-0009" }
+    confusables:
+      - { id: "nobody", ref: "es-0133", kind: "word" }
+      - { id: "someone", ref: "es-0132", kind: "word" }
+  - id: "es-0148"
+    target: "Alguien llama a la puerta."
+    ipa: "ˈalɡjen ˈʝama a la ˈpweɾta"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Alguien", ref: "es-0132" }
+      - { word: "llama", base: "llamar" }
+      - { word: "a", base: "a" }
+      - { word: "la", base: "la" }
+      - { word: "puerta", ref: "es-0007" }
+    confusables:
+      - { id: "nobody", ref: "es-0133", kind: "word" }
+      - { id: "everyone", ref: "es-0134", kind: "word" }
+  - id: "es-0149"
+    target: "Esto es mi libro y eso es tu pan."
+    ipa: "ˈesto es mi ˈlibɾo i ˈeso es tu pan"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Esto", ref: "es-0127" }
+      - { word: "es", ref: "es-0022" }
+      - { word: "mi", ref: "es-0129" }
+      - { word: "libro", ref: "es-0011" }
+      - { word: "y", ref: "es-0048" }
+      - { word: "eso", ref: "es-0128" }
+      - { word: "tu", ref: "es-0130" }
+      - { word: "pan", ref: "es-0013" }
+    confusables:
+      - { id: "his", ref: "es-0131", kind: "word" }
+      - { id: "informal", ref: "es-0086", kind: "word" }
+  - id: "es-0150"
+    target: "El chico es el hijo de la señora Ruiz."
+    ipa: "el ˈtʃiko es el ˈixo de la seˈɲoɾa rwiθ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "El", base: "el" }
+      - { word: "chico", ref: "es-0136" }
+      - { word: "es", ref: "es-0022" }
+      - { word: "hijo", base: "hijo" }
+      - { word: "de", base: "de" }
+      - { word: "la", base: "la" }
+      - { word: "señora", ref: "es-0089" }
+      - { word: "Ruiz", base: "Ruiz" }
+    confusables:
+      - { id: "she", ref: "es-0121", kind: "word" }
+      - { id: "nobody", ref: "es-0133", kind: "word" }
+  - id: "es-0151"
+    target: "La persona en la puerta es mi amiga."
+    ipa: "la peɾˈsona en la ˈpweɾta es mi aˈmiɡa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", base: "la" }
+      - { word: "persona", ref: "es-0135" }
+      - { word: "en", base: "en" }
+      - { word: "puerta", ref: "es-0007" }
+      - { word: "es", ref: "es-0022" }
+      - { word: "mi", ref: "es-0129" }
+      - { word: "amiga", ref: "es-0005" }
+    confusables:
+      - { id: "girl", ref: "es-0137", kind: "word" }
+      - { id: "boy", ref: "es-0136", kind: "word" }

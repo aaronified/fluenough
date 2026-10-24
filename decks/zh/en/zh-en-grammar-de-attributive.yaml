@@ -1,0 +1,22 @@
+schema: 1
+id: "zh-en-grammar-de-attributive"
+kind: "layer"
+core: "zh-grammar-de-attributive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "的 (de) before a noun: a good teacher"
+license: "CC-BY-SA-4.0"
+description: "A good teacher, a very good book: a describing word before a noun, with 的 (de) between them. Not yet checked by a Mandarin speaker: please report any mistake."
+tags: ["unreviewed"]
+"pattern":
+  "name": "的 (de) before a noun: a good teacher"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "好的": "good, with 的 (de) before the noun"
+    "很好的": "very good, with 很 (hěn) and 的 (de) before the noun"
+  "entries":
+    "laoshi": "a teacher"
+    "shu": "a book"
+    "fangjian": "a room"
+    "pengyou": "a friend"
+  "notes": "A describing word before a noun takes 的 (de) when it is more than one word, as in 很好的老师 (hěn hǎo de lǎoshī), a very good teacher, and also after one word, as in 好的老师 (hǎo de lǎoshī), a good teacher. A one-syllable word such as 大 (dà), big, often goes straight in front of its noun without 的 (de): 大房间 (dà fángjiān), a big room. Both are right; a learner may always use 的 (de) at first. The 的 (de) is said in a neutral tone."

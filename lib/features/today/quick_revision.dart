@@ -5,6 +5,7 @@ import '../../app/app_state.dart';
 import '../../app/routes.dart';
 import '../../app/session.dart';
 import '../../app/skill.dart';
+import '../../core/scheduling/daily_budget.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/theme.dart';
@@ -14,17 +15,18 @@ import 'today_numbers.dart';
 /// "Spoken" (ADR-0030).
 const Set<Skill> spokenSkills = <Skill>{Skill.listening, Skill.speaking};
 
-/// Quick revision on Today (ADR-0029): 5, 10, 15 or 20 words the learner
-/// has been taught, picked at random, due or not. Every answer is recorded
-/// (ADR-0029, as ADR-0033 amends it).
+/// Quick revision on Today (ADR-0029): words the learner has been taught,
+/// picked at random, due or not, for as many minutes as they choose: a
+/// minus, the start button and a plus, from 5 minutes in steps of 5 (owner,
+/// 2026-10-23: "the centre button will default to 5 mins, there will be two
+/// buttons on either side to add / subtract 5 mins"). The session revises
+/// only: no new word. Every answer is recorded (ADR-0029, as ADR-0033
+/// amends it).
 ///
 /// A row of choices above the sizes narrows it to some skills (ADR-0030):
 /// all of them, the spoken ones, or one skill switched on.
 class QuickRevision extends StatefulWidget {
   const QuickRevision({super.key});
-
-  /// The sizes offered, in words.
-  static const List<int> sizes = <int>[5, 10, 15, 20];
 
   @override
   State<QuickRevision> createState() => _QuickRevisionState();
@@ -35,6 +37,9 @@ typedef _Choice = ({String key, String label, Set<Skill>? skills});
 
 class _QuickRevisionState extends State<QuickRevision> {
   String _chosen = 'all';
+
+  /// How long the session lasts, in minutes: 5 until changed.
+  int _minutes = DailyBudget.stepMinutes;
 
   /// All, Spoken while listening and speaking are both on, then each skill
   /// with a tile on Today that is switched on.
@@ -117,25 +122,44 @@ class _QuickRevisionState extends State<QuickRevision> {
         const SizedBox(height: 12),
         Row(
           children: <Widget>[
-            for (final (i, size) in QuickRevision.sizes.indexed) ...<Widget>[
-              if (i > 0) const SizedBox(width: 8),
-              Expanded(
-                child: FilledButton.tonal(
-                  style: AppButtonStyles.tall(context),
-                  onPressed: known == 0
-                      ? null
-                      : () => AppNavigator.startDrill(
-                          context,
-                          DrillRequest.revision(size, skills: choice.skills),
+            IconButton.outlined(
+              tooltip: l10n.todayRevisionLess(DailyBudget.stepMinutes),
+              onPressed: _minutes > DailyBudget.stepMinutes
+                  ? () => setState(() => _minutes -= DailyBudget.stepMinutes)
+                  : null,
+              icon: const Icon(Icons.remove),
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: FilledButton.tonal(
+                style: AppButtonStyles.tall(context),
+                onPressed: known == 0
+                    ? null
+                    : () => AppNavigator.startDrill(
+                        context,
+                        DrillRequest.revision(
+                          DailyBudget.cardsFor(
+                            _minutes,
+                            secondsPerCard: state.secondsPerCardIn(null),
+                          ),
+                          skills: choice.skills,
                         ),
-                  child: Semantics(
-                    label: l10n.todayRevisionCards(size),
-                    excludeSemantics: true,
-                    child: Text('$size'),
-                  ),
+                      ),
+                child: Semantics(
+                  label: l10n.todayRevisionMinutes(_minutes),
+                  excludeSemantics: true,
+                  child: Text(l10n.todayRevisionStart(_minutes)),
                 ),
               ),
-            ],
+            ),
+            const SizedBox(width: 8),
+            IconButton.outlined(
+              tooltip: l10n.todayRevisionMore(DailyBudget.stepMinutes),
+              onPressed: _minutes < DailyBudget.maxMinutes
+                  ? () => setState(() => _minutes += DailyBudget.stepMinutes)
+                  : null,
+              icon: const Icon(Icons.add),
+            ),
           ],
         ),
       ],

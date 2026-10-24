@@ -21,10 +21,10 @@ native: { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 tags: [script]
 cards:
-  - { id: qbe-0001, target: "⠁", native: "a", modes: [recognition, production] }
-  - { id: qbe-0002, target: "⠃", native: "b", modes: [recognition, production] }
-  - { id: qbe-0003, target: "⠉", native: "c", modes: [recognition, production] }
-  - { id: qbe-0004, target: "⠙", native: "d", modes: [recognition, production] }
+  - { id: qbe-0001, target: "⠁", native: "a", modes: [listening, speaking] }
+  - { id: qbe-0002, target: "⠃", native: "b", modes: [listening, speaking] }
+  - { id: qbe-0003, target: "⠉", native: "c", modes: [listening, speaking] }
+  - { id: qbe-0004, target: "⠙", native: "d", modes: [listening, speaking] }
 ''',
   'decks/qbe/qbe-path.yaml': '''
 schema: 1

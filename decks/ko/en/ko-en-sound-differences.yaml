@@ -1,0 +1,265 @@
+schema: 1
+id: "ko-en-sound-differences"
+kind: "layer"
+core: "ko-sound-differences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sounds English lacks: word triples and pairs"
+license: "CC-BY-SA-4.0"
+description: "Sixteen words that Korean tells apart by a plain, a tense or an aspirated consonant, where English hears one sound: two triples such as 달 (dal), 딸 (ttal) and 탈 (tal), and five pairs. Not yet checked by a Korean speaker: please report any mistake."
+tags: ["beginner", "unreviewed"]
+"cards":
+  "ko-0032":
+    "native": "moon; month"
+    "alt_native":
+      - "month"
+    "notes":
+      "n1": "달 (dal) is the moon, and also a month: 한 달 (han dal), one month."
+      "pair-daughter": "Only the first consonant differs from 딸 (ttal), daughter: 달 (dal) has a plain d, 딸 (ttal) a tense tt, said tight and with no breath."
+      "pair-mask": "Only the first consonant differs from 탈 (tal), mask: 달 (dal) has a plain d, 탈 (tal) an aspirated t, said with a puff of breath."
+    "examples":
+      "달이 작아요.":
+        "native": "The moon is small."
+        "bases":
+          "달이": "moon, with the subject particle 이 (i)"
+          "작아요": "to be small (polite)"
+      "저는 달이 좋아요.":
+        "native": "I like the moon."
+        "bases":
+          "달이": "moon, with the subject particle 이 (i)"
+  "ko-0033":
+    "native": "daughter"
+    "notes":
+      "n1": "딸 (ttal) is a daughter, your own or someone else's. A son is 아들 (adeul)."
+      "pair-moon": "Only the first consonant differs from 달 (dal), moon: 딸 (ttal) has a tense tt, said tight and with no breath, 달 (dal) a plain d."
+      "pair-mask": "Only the first consonant differs from 탈 (tal), mask: 딸 (ttal) has a tense tt with no breath, 탈 (tal) an aspirated t with a puff of breath."
+    "examples":
+      "저는 딸이 있어요.":
+        "native": "I have a daughter."
+        "bases":
+          "딸이": "daughter, with the subject particle 이 (i)"
+          "있어요": "to be; to have (polite)"
+      "딸이 학생이에요.":
+        "native": "My daughter is a student."
+        "bases":
+          "딸이": "daughter, with the subject particle 이 (i)"
+  "ko-0034":
+    "native": "mask"
+    "notes":
+      "n1": "탈 (tal) is a mask, such as the ones worn in the traditional mask dance, 탈춤 (talchum)."
+      "pair-moon": "Only the first consonant differs from 달 (dal), moon: 탈 (tal) has an aspirated t, said with a puff of breath, 달 (dal) a plain d."
+      "pair-daughter": "Only the first consonant differs from 딸 (ttal), daughter: 탈 (tal) has an aspirated t with a puff of breath, 딸 (ttal) a tense tt with none."
+    "examples":
+      "탈이 많아요.":
+        "native": "There are many masks."
+        "bases":
+          "탈이": "mask, with the subject particle 이 (i)"
+          "많아요": "to be many; to be a lot (polite)"
+      "저는 탈이 좋아요.":
+        "native": "I like the mask."
+        "bases":
+          "탈이": "mask, with the subject particle 이 (i)"
+  "ko-0035":
+    "native": "fire; light"
+    "alt_native":
+      - "light"
+    "notes":
+      "n1": "불 (bul) is fire, and also a light: 불을 켜요 (bureul kyeoyo) is 'turn on the light'."
+      "pair-horn": "Only the first consonant differs from 뿔 (ppul), horn: 불 (bul) has a plain b, 뿔 (ppul) a tense pp, said tight and with no breath."
+      "pair-grass": "Only the first consonant differs from 풀 (pul), grass: 불 (bul) has a plain b, 풀 (pul) an aspirated p, said with a puff of breath."
+    "examples":
+      "불이 작아요.":
+        "native": "The fire is small."
+        "bases":
+          "불이": "fire, with the subject particle 이 (i)"
+          "작아요": "to be small (polite)"
+      "불을 켜 주세요.":
+        "native": "Please turn on the light."
+        "bases":
+          "불을": "fire, with the object particle 을 (eul)"
+          "켜": "to turn on; to light"
+          "주세요": "to give (polite request)"
+  "ko-0036":
+    "native": "horn"
+    "notes":
+      "n1": "뿔 (ppul) is a horn, as of a cow or a deer."
+      "pair-fire": "Only the first consonant differs from 불 (bul), fire: 뿔 (ppul) has a tense pp, said tight and with no breath, 불 (bul) a plain b."
+      "pair-grass": "Only the first consonant differs from 풀 (pul), grass: 뿔 (ppul) has a tense pp with no breath, 풀 (pul) an aspirated p with a puff of breath."
+    "examples":
+      "소는 뿔이 있어요.":
+        "native": "A cow has horns."
+        "bases":
+          "소는": "cow, with the topic particle 는 (neun)"
+          "뿔이": "horn, with the subject particle 이 (i)"
+          "있어요": "to be; to have (polite)"
+      "이 뿔이 길어요.":
+        "native": "This horn is long."
+        "bases":
+          "뿔이": "horn, with the subject particle 이 (i)"
+          "길어요": "to be long (polite)"
+  "ko-0037":
+    "native": "grass; glue"
+    "alt_native":
+      - "glue"
+    "notes":
+      "n1": "풀 (pul) is grass, and also glue: two words that are written and said the same, so the sentence tells them apart."
+      "pair-fire": "Only the first consonant differs from 불 (bul), fire: 풀 (pul) has an aspirated p, said with a puff of breath, 불 (bul) a plain b."
+      "pair-horn": "Only the first consonant differs from 뿔 (ppul), horn: 풀 (pul) has an aspirated p with a puff of breath, 뿔 (ppul) a tense pp with none."
+    "examples":
+      "풀이 많아요.":
+        "native": "There is a lot of grass."
+        "bases":
+          "풀이": "grass, with the subject particle 이 (i)"
+          "많아요": "to be many; to be a lot (polite)"
+      "소는 풀을 먹어요.":
+        "native": "Cows eat grass."
+        "bases":
+          "소는": "cow, with the topic particle 는 (neun)"
+          "풀을": "grass, with the object particle 을 (eul)"
+          "먹어요": "to eat (polite)"
+  "ko-0038":
+    "native": "to buy (polite)"
+    "notes":
+      "n1": "사요 (sayo) is the polite form of 사다 (sada), to buy: 커피를 사요 (keopireul sayo), I buy coffee."
+      "pair-cheap": "Only the first consonant differs from 싸요 (ssayo), is cheap: 사요 (sayo) has a plain s, 싸요 (ssayo) a tense ss, said tight and with no breath."
+    "bases":
+      "사요": "to buy (polite)"
+    "examples":
+      "커피를 사요.": "I buy coffee."
+      "물을 사요.": "I buy water."
+  "ko-0039":
+    "native": "to be cheap (polite)"
+    "notes":
+      "n1": "싸요 (ssayo) is the polite form of 싸다 (ssada), to be cheap: 커피가 싸요 (keopiga ssayo), coffee is cheap."
+      "pair-buy": "Only the first consonant differs from 사요 (sayo), buy: 싸요 (ssayo) has a tense ss, said tight and with no breath, 사요 (sayo) a plain s."
+    "bases":
+      "싸요": "to be cheap (polite)"
+    "examples":
+      "커피가 싸요.": "Coffee is cheap."
+      "이 물이 싸요.": "This water is cheap."
+  "ko-0040":
+    "native": "room"
+    "notes":
+      "n1": "방 (bang) is a room, usually one to sleep or study in."
+      "pair-bread": "Only the first consonant differs from 빵 (ppang), bread: 방 (bang) has a plain b, 빵 (ppang) a tense pp, said tight and with no breath."
+    "examples":
+      "방이 작아요.":
+        "native": "The room is small."
+        "bases":
+          "방이": "room, with the subject particle 이 (i)"
+          "작아요": "to be small (polite)"
+      "이 방이 좋아요.":
+        "native": "This room is nice."
+        "bases":
+          "방이": "room, with the subject particle 이 (i)"
+  "ko-0041":
+    "native": "bread"
+    "notes":
+      "n1": "빵 (ppang) is bread, and pastries in general."
+      "pair-room": "Only the first consonant differs from 방 (bang), room: 빵 (ppang) has a tense pp, said tight and with no breath, 방 (bang) a plain b."
+    "examples":
+      "저는 빵이 좋아요.":
+        "native": "I like bread."
+        "bases":
+          "빵이": "bread, with the subject particle 이 (i)"
+      "커피하고 빵을 먹어요.":
+        "native": "I have coffee and bread."
+        "bases":
+          "빵을": "bread, with the object particle 을 (eul)"
+          "먹어요": "to eat (polite)"
+  "ko-0042":
+    "native": "ruler"
+    "notes":
+      "n1": "자 (ja) is a ruler for measuring. At the start of a sentence, 자 (ja) is also 'well then' or 'here we go'."
+      "pair-tea": "Only the first consonant differs from 차 (cha), tea or car: 자 (ja) has a plain j, 차 (cha) an aspirated ch, said with a puff of breath."
+    "examples":
+      "이 자가 길어요.":
+        "native": "This ruler is long."
+        "bases":
+          "자가": "ruler, with the subject particle 가 (ga)"
+          "길어요": "to be long (polite)"
+      "저는 자가 있어요.":
+        "native": "I have a ruler."
+        "bases":
+          "자가": "ruler, with the subject particle 가 (ga)"
+          "있어요": "to be; to have (polite)"
+  "ko-0043":
+    "native": "tea; car"
+    "notes":
+      "n1": "차 (cha) means both tea and car: two words written and said the same, which the situation tells apart. Green tea is 녹차 (nokcha), a car is also 자동차 (jadongcha)."
+      "pair-ruler": "Only the first consonant differs from 자 (ja), ruler: 차 (cha) has an aspirated ch, said with a puff of breath, 자 (ja) a plain j."
+    "examples":
+      "차 주세요.":
+        "native": "Tea, please."
+        "bases":
+          "주세요": "to give (polite request)"
+      "저는 차가 있어요.":
+        "native": "I have a car."
+        "bases":
+          "차가": "tea or car, with the subject particle 가 (ga)"
+          "있어요": "to be; to have (polite)"
+  "ko-0044":
+    "native": "foot"
+    "notes":
+      "n1": "발 (bal) is the foot, below the ankle. The leg is 다리 (dari)."
+      "pair-arm": "Only the first consonant differs from 팔 (pal), arm: 발 (bal) has a plain b, 팔 (pal) an aspirated p, said with a puff of breath."
+    "examples":
+      "발이 작아요.":
+        "native": "My feet are small."
+        "bases":
+          "발이": "foot, with the subject particle 이 (i)"
+          "작아요": "to be small (polite)"
+      "발이 아파요.":
+        "native": "My foot hurts."
+        "bases":
+          "발이": "foot, with the subject particle 이 (i)"
+          "아파요": "to hurt; to be sick (polite)"
+  "ko-0045":
+    "native": "arm; eight"
+    "alt_native":
+      - "eight"
+    "notes":
+      "n1": "팔 (pal) is the arm, and also the number eight in the Chinese-based numbers: two words written and said the same."
+      "pair-foot": "Only the first consonant differs from 발 (bal), foot: 팔 (pal) has an aspirated p, said with a puff of breath, 발 (bal) a plain b."
+    "examples":
+      "팔이 길어요.":
+        "native": "My arms are long."
+        "bases":
+          "팔이": "arm, with the subject particle 이 (i)"
+          "길어요": "to be long (polite)"
+      "팔이 아파요.":
+        "native": "My arm hurts."
+        "bases":
+          "팔이": "arm, with the subject particle 이 (i)"
+          "아파요": "to hurt; to be sick (polite)"
+  "ko-0046":
+    "native": "axe"
+    "notes":
+      "n1": "도끼 (dokki) is an axe."
+      "pair-rabbit": "Only the first consonant differs from 토끼 (tokki), rabbit: 도끼 (dokki) has a plain d, 토끼 (tokki) an aspirated t, said with a puff of breath."
+    "examples":
+      "저는 도끼가 있어요.":
+        "native": "I have an axe."
+        "bases":
+          "도끼가": "axe, with the subject particle 가 (ga)"
+          "있어요": "to be; to have (polite)"
+      "도끼가 작아요.":
+        "native": "The axe is small."
+        "bases":
+          "도끼가": "axe, with the subject particle 가 (ga)"
+          "작아요": "to be small (polite)"
+  "ko-0047":
+    "native": "rabbit"
+    "notes":
+      "n1": "토끼 (tokki) is a rabbit."
+      "pair-axe": "Only the first consonant differs from 도끼 (dokki), axe: 토끼 (tokki) has an aspirated t, said with a puff of breath, 도끼 (dokki) a plain d."
+    "examples":
+      "토끼가 작아요.":
+        "native": "The rabbit is small."
+        "bases":
+          "토끼가": "rabbit, with the subject particle 가 (ga)"
+          "작아요": "to be small (polite)"
+      "토끼는 풀을 먹어요.":
+        "native": "Rabbits eat grass."
+        "bases":
+          "토끼는": "rabbit, with the topic particle 는 (neun)"
+          "먹어요": "to eat (polite)"

@@ -1,0 +1,18 @@
+schema: 1
+id: "es-en-grammar-prepositions"
+kind: "layer"
+core: "es-grammar-prepositions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Spanish prepositions of place"
+license: "CC-BY-SA-4.0"
+description: "Where a thing is: en (in, on), encima de (on top of), debajo de (under), delante de (in front of), al lado de (next to). The article after a preposition changes with the noun, and de and el join as del, a and el as al. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "Prepositions of place"
+  slot_name: "preposition"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "casa": "house"
+    "mesa": "table"
+    "cama": "bed"
+    "libro": "book"
+    "puerta": "door"

@@ -1,0 +1,101 @@
+schema: 1
+id: "tok-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "tok", iso639_3: "tok", name: "Toki Pona", script: "latin", icon: "Tp" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "tok-0001"
+    target: "toki"
+    ipa: "ˈtoki"
+    pos: "noun"
+    bases: "self"
+    warning: "senses"
+    notes:
+      - { id: "verb", kind: "usage" }
+      - { id: "greet", kind: "usage" }
+    examples:
+      - { target: "mi toki pona.", ipa: "mi ˈtoki ˈpona", bases: [{ word: "mi", ref: "tok-0003" }, { word: "pona", ref: "tok-0002" }] }
+      - { target: "sina toki.", ipa: "ˈsina ˈtoki", bases: [{ word: "sina", ref: "tok-0004" }] }
+    senses:
+      - { id: "talk", pos: "verb" }
+    collocations:
+      - { id: "pona", ref: "tok-0002" }
+  - id: "tok-0002"
+    target: "pona"
+    ipa: "ˈpona"
+    pos: "adj"
+    bases: "self"
+    warning: "senses"
+    notes:
+      - { id: "use", kind: "usage" }
+      - { id: "after", kind: "behaviour" }
+    examples:
+      - { target: "mi pona.", ipa: "mi ˈpona", bases: [{ word: "mi", ref: "tok-0003" }] }
+      - { target: "nimi pona.", ipa: "ˈnimi ˈpona", bases: [{ word: "nimi", ref: "tok-0006" }] }
+    senses:
+      - { id: "simple", pos: "adj" }
+    antonyms:
+      - { id: "ike", ref: "tok-0121" }
+  - id: "tok-0003"
+    target: "mi"
+    ipa: "mi"
+    pos: "pronoun"
+    bases: "self"
+    notes:
+      - { id: "we", kind: "usage" }
+    examples:
+      - { target: "mi sona.", ipa: "mi ˈsona", bases: [{ word: "sona", ref: "tok-0007" }] }
+      - { target: "mi pona.", ipa: "mi ˈpona", bases: [{ word: "pona", ref: "tok-0002" }] }
+    antonyms:
+      - { id: "sina", ref: "tok-0004" }
+  - id: "tok-0004"
+    target: "sina"
+    ipa: "ˈsina"
+    pos: "pronoun"
+    bases: "self"
+    warning: "sound"
+    notes:
+      - { id: "plural", kind: "usage" }
+      - { id: "sound", kind: "pair", ref: "tok-0007" }
+    examples:
+      - { target: "sina toki.", ipa: "ˈsina ˈtoki", bases: [{ word: "toki", ref: "tok-0001" }] }
+      - { target: "sina sona.", ipa: "ˈsina ˈsona", bases: [{ word: "sona", ref: "tok-0007" }] }
+    antonyms:
+      - { id: "mi", ref: "tok-0003" }
+  - id: "tok-0005"
+    target: "ala"
+    ipa: "ˈala"
+    pos: "other"
+    bases: "self"
+    notes:
+      - { id: "after", kind: "behaviour" }
+    examples:
+      - { target: "sina pona ala.", ipa: "ˈsina ˈpona ˈala", bases: [{ word: "sina", ref: "tok-0004" }, { word: "pona", ref: "tok-0002" }] }
+      - { target: "mi sona ala.", ipa: "mi ˈsona ˈala", bases: [{ word: "mi", ref: "tok-0003" }, { word: "sona", ref: "tok-0007" }] }
+  - id: "tok-0006"
+    target: "nimi"
+    ipa: "ˈnimi"
+    pos: "noun"
+    bases: "self"
+    notes:
+      - { id: "name", kind: "usage" }
+    examples:
+      - { target: "nimi pona.", ipa: "ˈnimi ˈpona", bases: [{ word: "pona", ref: "tok-0002" }] }
+      - { target: "nimi sina.", ipa: "ˈnimi ˈsina", bases: [{ word: "sina", ref: "tok-0004" }] }
+  - id: "tok-0007"
+    target: "sona"
+    ipa: "ˈsona"
+    pos: "verb"
+    bases: "self"
+    warning: "sound"
+    notes:
+      - { id: "noun", kind: "usage" }
+      - { id: "sound", kind: "pair", ref: "tok-0004" }
+    examples:
+      - { target: "sina sona.", ipa: "ˈsina ˈsona", bases: [{ word: "sina", ref: "tok-0004" }] }
+      - { target: "mi sona toki pona.", ipa: "mi ˈsona ˈtoki ˈpona", bases: [{ word: "mi", ref: "tok-0003" }, { word: "toki", ref: "tok-0001" }, { word: "pona", ref: "tok-0002" }] }
+    senses:
+      - { id: "knowledge", pos: "noun" }

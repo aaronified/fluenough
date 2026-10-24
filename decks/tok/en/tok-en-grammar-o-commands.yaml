@@ -1,0 +1,20 @@
+schema: 1
+id: "tok-en-grammar-o-commands"
+kind: "layer"
+core: "tok-grammar-o-commands"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Commands with o"
+license: "CC-BY-SA-4.0"
+description: "A command is the verb after o, with no subject: a statement says you do it, and the command tells you to. Not yet checked by a Toki Pona speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Commands with o"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "statement": "a statement (you do it)", "command": "a command (do it!)" }
+  entries:
+    "pali": "to make; to work"
+    "toki": "to talk"
+    "kute": "to hear"
+    "lukin": "to see"
+  notes: "Sina pali is you work. O pali! is Work! The command drops the subject and puts o first. The verb keeps its form: there is no tense or ending to change, and the ! only shows that it is an order."

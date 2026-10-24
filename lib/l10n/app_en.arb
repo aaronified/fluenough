@@ -677,26 +677,6 @@
   "@todayDueSection": {
     "description": "Screen-reader name of the card showing what is due."
   },
-  "todayWordsDue": "{count, plural, =1{word due} other{words due}}",
-  "@todayWordsDue": {
-    "description": "Beside the large number of words due today, which is shown separately. A word counts once, however many of its skills are due: today's review asks it in one. The count only picks the form.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "23"
-      }
-    }
-  },
-  "todayMinutes": "{count, plural, =1{about 1 min} other{about {count} min}}",
-  "@todayMinutes": {
-    "description": "Estimated time for today's review.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "8"
-      }
-    }
-  },
   "todaySkillSemantics": "{skill}: {count, plural, =0{none due} =1{1 due} other{{count} due}}",
   "@todaySkillSemantics": {
     "description": "Screen-reader label of one skill tile on Today.",
@@ -753,60 +733,6 @@
       }
     }
   },
-  "todayLessonSection": "Lessons",
-  "@todayLessonSection": {
-    "description": "Screen-reader label of Today's card of lessons (ADR-0024), above the reviews."
-  },
-  "todayLessonTitle": "Today’s lesson",
-  "@todayLessonTitle": {
-    "description": "Title of Today's lesson card, while the day's lesson is not done."
-  },
-  "todayLessonTitleIn": "Today’s {language} lesson",
-  "@todayLessonTitleIn": {
-    "description": "Title of a lesson card on Today when more than one language is learned.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Hindi"
-      }
-    }
-  },
-  "todayLessonDoneTitle": "Today’s lesson is done",
-  "@todayLessonDoneTitle": {
-    "description": "Title of Today's lesson card once the day's lesson is finished; Another lesson is offered under it."
-  },
-  "todayLessonDoneTitleIn": "Today’s {language} lesson is done",
-  "@todayLessonDoneTitleIn": {
-    "description": "As todayLessonDoneTitle, when more than one language is learned.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Hindi"
-      }
-    }
-  },
-  "todayLessonWords": "{count, plural, =1{1 new word, taught then practised} other{{count} new words, easy to hard, taught then practised}}",
-  "@todayLessonWords": {
-    "description": "Under a lesson card's title: how many new words the lesson teaches.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "9"
-      }
-    }
-  },
-  "todayLessonReading": "A passage to hear and read, with questions",
-  "@todayLessonReading": {
-    "description": "Under a lesson card's title when the next lesson is a reading passage."
-  },
-  "todayLessonStart": "Start lesson",
-  "@todayLessonStart": {
-    "description": "Button on a lesson card that starts the day's lesson."
-  },
-  "todayAnotherLesson": "Another lesson",
-  "@todayAnotherLesson": {
-    "description": "Button on a lesson card once the day's lesson is done: one more, optional."
-  },
   "todayNewWords": "{count, plural, =0{No new words yet today} =1{1 new word today} other{{count} new words today}}",
   "@todayNewWords": {
     "description": "Under the streak: the words taught today in lessons.",
@@ -816,28 +742,6 @@
         "example": "9"
       }
     }
-  },
-  "todayStartReview": "Start review",
-  "@todayStartReview": {
-    "description": "The main button on Today, which starts a session of everything due."
-  },
-  "todayStartLanguage": "Start with {language}",
-  "@todayStartLanguage": {
-    "description": "The main button on Today when more than one language has something due: it starts that language's part of the day, and the others follow one at a time.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Hindi"
-      }
-    }
-  },
-  "todayAllDoneTitle": "All done for now",
-  "@todayAllDoneTitle": {
-    "description": "Shown on Today when nothing is due."
-  },
-  "todayAllDoneBody": "No reviews are due. New words come in lessons.",
-  "@todayAllDoneBody": {
-    "description": "Under todayAllDoneTitle."
   },
   "todayStreakSection": "Streak",
   "@todayStreakSection": {
@@ -871,7 +775,7 @@
   "@todayRevisionTitle": {
     "description": "Today: the heading of the quick revision buttons, which revise words already learned."
   },
-  "todayRevisionBody": "Words you know, picked at random. A miss brings a word back sooner.",
+  "todayRevisionBody": "Words you know, picked at random, for as long as you choose. A miss brings a word back sooner.",
   "@todayRevisionBody": {
     "description": "Under Quick revision: what it does. Every answer is recorded (ADR-0033)."
   },
@@ -901,14 +805,241 @@
       }
     }
   },
-  "todayRevisionCards": "{count, plural, =1{Revise 1 word} other{Revise {count} words}}",
-  "@todayRevisionCards": {
-    "description": "Screen-reader label of a quick revision button, which shows only the number.",
+  "todayRevisionStart": "{minutes} min",
+  "@todayRevisionStart": {
+    "description": "Quick revision's start button on Today: how many minutes it lasts, between the minus and plus buttons.",
     "placeholders": {
-      "count": {
-        "type": "int"
+      "minutes": {
+        "type": "int",
+        "example": "5"
       }
     }
+  },
+  "todayRevisionMinutes": "{count, plural, =1{Revise for 1 minute} other{Revise for {count} minutes}}",
+  "@todayRevisionMinutes": {
+    "description": "Screen-reader label of quick revision's start button, which shows the minutes.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "todayRevisionLess": "{minutes, plural, =1{1 minute less} other{{minutes} minutes less}}",
+  "@todayRevisionLess": {
+    "description": "Screen-reader label and tooltip of quick revision's minus button.",
+    "placeholders": {
+      "minutes": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "todayRevisionMore": "{minutes, plural, =1{1 minute more} other{{minutes} minutes more}}",
+  "@todayRevisionMore": {
+    "description": "Screen-reader label and tooltip of quick revision's plus button.",
+    "placeholders": {
+      "minutes": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "todayDailyStart": "Start",
+  "@todayDailyStart": {
+    "description": "The button inside Today's ring, before anything is done today (#521)."
+  },
+  "todayDailyContinue": "Continue",
+  "@todayDailyContinue": {
+    "description": "The button inside Today's ring once some of today's minutes are spent."
+  },
+  "todayDailyDone": "Done for today",
+  "@todayDailyDone": {
+    "description": "The button inside Today's ring when today's minutes are spent or nothing is left (#521)."
+  },
+  "todayDailyKeepGoing": "Keep going",
+  "@todayDailyKeepGoing": {
+    "description": "Under the ring, once today's minutes are done: starts another five minutes."
+  },
+  "todayDailyProgress": "{done} of {goal} min",
+  "@todayDailyProgress": {
+    "description": "Under Today's ring: the minutes done against the day's minutes, as in 12 of 15 min.",
+    "placeholders": {
+      "done": {
+        "type": "int",
+        "example": "12"
+      },
+      "goal": {
+        "type": "int",
+        "example": "15"
+      }
+    }
+  },
+  "todayDailyReviews": "{count, plural, =1{1 review} other{{count} reviews}}",
+  "@todayDailyReviews": {
+    "description": "Today's split: how many reviews the day's session holds.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "8"
+      }
+    }
+  },
+  "todayDailyNew": "{count} new",
+  "@todayDailyNew": {
+    "description": "Today's split: how many new words the day's session teaches.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "6"
+      }
+    }
+  },
+  "todayDailyCatchingUp": "Catching up: no new words today",
+  "@todayDailyCatchingUp": {
+    "description": "Today's banner when reviews have piled up over three days of the daily minutes (#485)."
+  },
+  "todayDailyCatchingUpPlan": "{reviews, plural, =1{1 review} other{{reviews} reviews}}, about {minutes} min. At {goal} min a day you will catch up in {days, plural, =1{1 day} other{{days} days}}.",
+  "@todayDailyCatchingUpPlan": {
+    "description": "Under Catching up: how long the waiting reviews take and how soon the daily minutes clear them.",
+    "placeholders": {
+      "reviews": {
+        "type": "int",
+        "example": "80"
+      },
+      "minutes": {
+        "type": "int",
+        "example": "23"
+      },
+      "goal": {
+        "type": "int",
+        "example": "15"
+      },
+      "days": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "todayDailyAddMinutes": "+ {minutes} min",
+  "@todayDailyAddMinutes": {
+    "description": "The catching-up button: each tap adds these minutes to today's session.",
+    "placeholders": {
+      "minutes": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "todayDailyAddHint": "Adds {minutes} minutes to today. Press and hold to take {minutes} away.",
+  "@todayDailyAddHint": {
+    "description": "The hint of the catching-up button for screen readers.",
+    "placeholders": {
+      "minutes": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "todayDailyTakeAway": "Take {minutes} minutes away",
+  "@todayDailyTakeAway": {
+    "description": "The screen-reader action that does what a long press on the catching-up button does.",
+    "placeholders": {
+      "minutes": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "todaySituationsTitle": "Situations",
+  "@todaySituationsTitle": {
+    "description": "The Situations card on Today, under the buttons (#724)."
+  },
+  "todaySituationsBody": "Hailing a cab, groceries, the doctor and more: key phrases, offline",
+  "@todaySituationsBody": {
+    "description": "Under Situations on Today: what the cheatsheets hold."
+  },
+  "minutesTitle": "Minutes a day",
+  "@minutesTitle": {
+    "description": "Languages I'm learning: the row on a course's card that sets how long a day the learner gives it (#485)."
+  },
+  "minutesValue": "{count} min",
+  "@minutesValue": {
+    "description": "A number of minutes, as in 15 min.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "15"
+      }
+    }
+  },
+  "minutesCustom": "Custom",
+  "@minutesCustom": {
+    "description": "The chip that opens the sheet for a number of minutes of the learner's own, when none of the presets is chosen."
+  },
+  "minutesCustomValue": "Custom {count}",
+  "@minutesCustomValue": {
+    "description": "The custom chip once a custom number of minutes is chosen.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "25"
+      }
+    }
+  },
+  "minutesCards": "About {cards} cards a day, at {seconds} seconds a card. Reviews come first; some new words always fit.",
+  "@minutesCards": {
+    "description": "Under the minutes a day: what they buy.",
+    "placeholders": {
+      "cards": {
+        "type": "int",
+        "example": "51"
+      },
+      "seconds": {
+        "type": "String",
+        "example": "17.5"
+      }
+    }
+  },
+  "minutesCustomTitle": "Custom minutes a day",
+  "@minutesCustomTitle": {
+    "description": "Title of the sheet for a custom number of minutes a day."
+  },
+  "minutesCustomHint": "From {min} to {max} minutes.",
+  "@minutesCustomHint": {
+    "description": "Under the sheet's title: the range allowed.",
+    "placeholders": {
+      "min": {
+        "type": "int",
+        "example": "5"
+      },
+      "max": {
+        "type": "int",
+        "example": "60"
+      }
+    }
+  },
+  "minutesCustomCards": "About {cards} cards a day",
+  "@minutesCustomCards": {
+    "description": "In the custom minutes sheet: what the number buys.",
+    "placeholders": {
+      "cards": {
+        "type": "int",
+        "example": "51"
+      }
+    }
+  },
+  "minutesLess": "One minute less",
+  "@minutesLess": {
+    "description": "Screen-reader label of the custom minutes sheet's minus button."
+  },
+  "minutesMore": "One minute more",
+  "@minutesMore": {
+    "description": "Screen-reader label of the custom minutes sheet's plus button."
+  },
+  "minutesSave": "Save",
+  "@minutesSave": {
+    "description": "The custom minutes sheet's button that keeps the number."
   },
   "todayNoDecks": "No decks for your languages yet.",
   "@todayNoDecks": {
@@ -1486,7 +1617,7 @@
   },
   "unitSentencesOpen": "sentences open",
   "@unitSentencesOpen": {
-    "description": "Under a number on a unit's screen: how many of its sentences are open, that is, taught."
+    "description": "Under a number on a unit's screen: how many of its sentences are open, that is, taught or with every word and rule in them known."
   },
   "unitFraction": "{count}/{total}",
   "@unitFraction": {
@@ -1542,9 +1673,9 @@
       }
     }
   },
-  "unitKnownMeans": "Known means right on {percent}% of recent answers",
+  "unitKnownMeans": "Known means your last answer was right and you were {percent}% likely to remember",
   "@unitKnownMeans": {
-    "description": "Beside the words heading: what \"Known\" means.",
+    "description": "Beside the words heading: what \"Known\" means, the mastery bar: the last answer was right and FSRS gave at least this recall chance at that moment.",
     "placeholders": {
       "percent": {
         "type": "int",
@@ -1552,13 +1683,85 @@
       }
     }
   },
+  "unitSectionPhrasebook": "{number} · Phrasebook",
+  "@unitSectionPhrasebook": {
+    "description": "Heading of a unit's phrasebook chunks: short phrases taught whole, never held back.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "unitPhrasebook": "Phrasebook",
+  "@unitPhrasebook": {
+    "description": "Label on a phrasebook chunk's row, in place of its status."
+  },
+  "unitWaitingFor": "Waiting for {things}",
+  "@unitWaitingFor": {
+    "description": "Under a sentence that is not open yet: the words and rules in it that are not known yet, separated by commas.",
+    "placeholders": {
+      "things": {
+        "type": "String",
+        "example": "ghar, में, पर, से"
+      }
+    }
+  },
+  "unitWhyClosedHint": "Says why it is closed",
+  "@unitWhyClosedHint": {
+    "description": "What a screen reader hears after a closed sentence's row: tapping it says what it waits for."
+  },
+  "whyClosedTitle": "Why it is closed",
+  "@whyClosedTitle": {
+    "description": "Title of the sheet a closed sentence opens."
+  },
+  "whyClosedIntro": "It opens when everything in it is known: your last answer right and you were {percent}% likely to remember.",
+  "@whyClosedIntro": {
+    "description": "Under the sentence on the why-it-is-closed sheet: the bar, the same as Progress's known.",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "85"
+      }
+    }
+  },
+  "whyClosedWord": "word",
+  "@whyClosedWord": {
+    "description": "Beside a word's name on the why-it-is-closed sheet."
+  },
+  "whyClosedRule": "rule",
+  "@whyClosedRule": {
+    "description": "Beside a rule's name on the why-it-is-closed sheet."
+  },
+  "whyClosedRight": "{known} of {total} known",
+  "@whyClosedRight": {
+    "description": "Status of a word or rule being learned on the why-it-is-closed sheet: how many of the skills it was asked in are known.",
+    "placeholders": {
+      "known": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "whyClosedPractise": "Practise the rule",
+  "@whyClosedPractise": {
+    "description": "Button on the why-it-is-closed sheet: starts a session on the rule the sentence waits for."
+  },
+  "whyClosedReviewsNeverWait": "Reviews never wait: only new sentences do.",
+  "@whyClosedReviewsNeverWait": {
+    "description": "Last line of the why-it-is-closed sheet."
+  },
   "unitKnown": "Known",
   "@unitKnown": {
-    "description": "Status of a word, rule or sentence answered right on most of its recent answers."
+    "description": "Status of a word, rule or sentence whose last answer in every skill was right with a good chance of recall."
   },
   "unitLearning": "Learning {percent}%",
   "@unitLearning": {
-    "description": "Status of a word, rule or sentence being learned: the share of its recent answers that were right.",
+    "description": "Status of a word, rule or sentence being learned: the share of its skills that are known.",
     "placeholders": {
       "percent": {
         "type": "int",
@@ -1604,6 +1807,40 @@
   "@unitRuleCells": {
     "description": "Under a rule's table: each form in it is asked in grammar drills."
   },
+  "unitRuleGrows": "A row appears when you know a word of this kind. Each lesson asks 3 new cells.",
+  "@unitRuleGrows": {
+    "description": "Under a rules table on a unit's screen: the table grows with the learner's words."
+  },
+  "unitCellKnown": "known",
+  "@unitCellKnown": {
+    "description": "Under a form in a rules table: the learner knows this form."
+  },
+  "unitCellLearning": "learning",
+  "@unitCellLearning": {
+    "description": "Under a form in a rules table: the learner is being asked this form."
+  },
+  "unitCellNotAsked": "not asked yet",
+  "@unitCellNotAsked": {
+    "description": "Under a form in a rules table: no lesson has asked this form yet."
+  },
+  "ruleCardKind": "Rule",
+  "@ruleCardKind": {
+    "description": "Label on the rule card, shown once before the first question about a rule."
+  },
+  "ruleCardWords": "Words you know",
+  "@ruleCardWords": {
+    "description": "Heading on the rule card above the rule's forms on words the learner knows."
+  },
+  "ruleFormsTitle": "Forms of {word}",
+  "@ruleFormsTitle": {
+    "description": "Above a word's forms in its rules table, shown under the answer to a question about one of them.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "घर (ghar)"
+      }
+    }
+  },
   "unitSentencesCount": "{open} of {total} open",
   "@unitSentencesCount": {
     "description": "Beside the sentences heading: how many of the unit's sentences are open.",
@@ -1618,7 +1855,7 @@
       }
     }
   },
-  "unitSentencesNote": "A sentence opens when a lesson teaches it. Reviews never wait.",
+  "unitSentencesNote": "A sentence opens when its words and rules are known. Reviews never wait.",
   "@unitSentencesNote": {
     "description": "Under a unit's sentences."
   },
@@ -1756,56 +1993,6 @@
       }
     }
   },
-  "wordSheetLinePos": "{id} · {pos} · {state}",
-  "@wordSheetLinePos": {
-    "description": "Top line of a word's card on a unit's screen: its id, its part of speech as the deck gives it, and where the learner stands with it.",
-    "placeholders": {
-      "id": {
-        "type": "String",
-        "example": "te-0384"
-      },
-      "pos": {
-        "type": "String",
-        "example": "noun"
-      },
-      "state": {
-        "type": "String",
-        "example": "Learning 58%"
-      }
-    }
-  },
-  "wordSheetSoundsLike": "Sounds almost like {word} ({reading}), {meaning}. Take care when you say it.",
-  "@wordSheetSoundsLike": {
-    "description": "Warning on a word's card: another word sounds almost the same.",
-    "placeholders": {
-      "word": {
-        "type": "String",
-        "example": "కలం"
-      },
-      "reading": {
-        "type": "String",
-        "example": "kalam"
-      },
-      "meaning": {
-        "type": "String",
-        "example": "pen"
-      }
-    }
-  },
-  "wordSheetSoundsLikeNoReading": "Sounds almost like {word}, {meaning}. Take care when you say it.",
-  "@wordSheetSoundsLikeNoReading": {
-    "description": "Warning on a word's card: another word, with no reading, sounds almost the same.",
-    "placeholders": {
-      "word": {
-        "type": "String",
-        "example": "pero"
-      },
-      "meaning": {
-        "type": "String",
-        "example": "but"
-      }
-    }
-  },
   "wordSheetFacts": "Facts",
   "@wordSheetFacts": {
     "description": "Heading of the section at the end of a word's card that lists the facts naming it (#546). Only shown when a fact names the card."
@@ -1844,146 +2031,6 @@
       }
     }
   },
-  "deckDue": "Due",
-  "@deckDue": {
-    "description": "Label under the number of reviews due in this deck."
-  },
-  "deckNewToday": "New today",
-  "@deckNewToday": {
-    "description": "Label under the number of new cards this deck can introduce today."
-  },
-  "deckLearned": "Learned",
-  "@deckLearned": {
-    "description": "Label under the number of cards in this deck remembered at least once."
-  },
-  "deckPractiseOne": "Practise one skill",
-  "@deckPractiseOne": {
-    "description": "Heading above the skill rows on a deck's screen."
-  },
-  "deckNoVoice": "No {language} voice on this phone. You can download one.",
-  "@deckNoVoice": {
-    "description": "Under Listening when the phone cannot speak the deck's language. Says a voice can be downloaded: Set up beside it opens the Voices page, which lists the apps that add one (#641).",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Japanese"
-      }
-    }
-  },
-  "deckSkillOffFor": "Off for {language}",
-  "@deckSkillOffFor": {
-    "description": "Under Listening or Speaking on a deck's page, when the learner switched that skill off for the deck's language (#89). Turn on beside it switches it back on.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Spanish"
-      }
-    }
-  },
-  "deckTurnOn": "Turn on",
-  "@deckTurnOn": {
-    "description": "Button beside a skill switched off for the deck's language: switches it back on for that language."
-  },
-  "deckSoundOff": "Sound is off in Settings",
-  "@deckSoundOff": {
-    "description": "Under Listening on a deck's screen while sound is off for the whole app: listening is not drilled. Beside a button that turns sound on."
-  },
-  "deckInspect": "Inspect all cards",
-  "@deckInspect": {
-    "description": "Button under a deck's header that opens every card in full, for reviewers."
-  },
-  "inspectTitle": "{deck}: every card",
-  "@inspectTitle": {
-    "description": "Title of the Inspect screen.",
-    "placeholders": {
-      "deck": {
-        "type": "String",
-        "example": "Market"
-      }
-    }
-  },
-  "inspectIntro": "Every card as the deck file {file} writes it, with its id. Select any text to copy it.",
-  "@inspectIntro": {
-    "description": "Line at the top of the Inspect screen. file is the deck's id.",
-    "placeholders": {
-      "file": {
-        "type": "String",
-        "example": "hi-en-market"
-      }
-    }
-  },
-  "inspectId": "id {id}",
-  "@inspectId": {
-    "description": "A card's, passage's or question's id on the Inspect screen.",
-    "placeholders": {
-      "id": {
-        "type": "String",
-        "example": "hi-0231"
-      }
-    }
-  },
-  "inspectAlsoAccepted": "Also accepted",
-  "@inspectAlsoAccepted": {
-    "description": "Inspect: other forms accepted as the answer."
-  },
-  "inspectAlsoMeans": "Also means",
-  "@inspectAlsoMeans": {
-    "description": "Inspect: other meanings accepted."
-  },
-  "inspectPartOfSpeech": "Part of speech",
-  "@inspectPartOfSpeech": {
-    "description": "Inspect: the card's part of speech, as the deck file writes it."
-  },
-  "inspectGender": "Gender",
-  "@inspectGender": {
-    "description": "Inspect: the card's grammatical gender, as the deck file writes it."
-  },
-  "inspectTags": "Tags",
-  "@inspectTags": {
-    "description": "Inspect: the card's tags."
-  },
-  "inspectOnlyIn": "Only drilled in",
-  "@inspectOnlyIn": {
-    "description": "Inspect: the skills a card is limited to, when it is."
-  },
-  "inspectNotes": "Notes",
-  "@inspectNotes": {
-    "description": "Inspect: the card's notes."
-  },
-  "inspectExamples": "Examples",
-  "@inspectExamples": {
-    "description": "Inspect: the card's example sentences."
-  },
-  "inspectReport": "Report this card",
-  "@inspectReport": {
-    "description": "Button beside each card's id on the Inspect screen: reports that card."
-  },
-  "inspectQuestions": "Questions",
-  "@inspectQuestions": {
-    "description": "Inspect: a passage's questions, the right answer marked."
-  },
-  "inspectDifficulty": "How hard, for you",
-  "@inspectDifficulty": {
-    "description": "Inspect: heading over a card's difficulty in each skill it has been answered in, learned from the learner's own answers. Shown only when some skill has been answered."
-  },
-  "inspectDifficultyIn": "{mode, select, recognition{Recognition} production{Write} listening{Hear} speaking{Say} grammarUnderstood{Grammar understood} grammar{Grammar produced} reading{Reading} other{Other}}: {value} of 10, {lean, select, easier{easier} harder{harder} other{middling}}",
-  "@inspectDifficultyIn": {
-    "description": "Inspect: a card's difficulty in one skill, 1 the easiest and 10 the hardest, from the learner's own answers. mode is the skill (recognition, production, listening, speaking, grammarUnderstood, grammar or reading): production is Write, listening is Hear, speaking is Say, as the skills are named elsewhere; grammarUnderstood is choosing what a form means, grammar is giving the form. lean says which way the value leans: easier (1 to 4), harder (7 to 10), or other (5 or 6).",
-    "placeholders": {
-      "mode": {
-        "type": "String",
-        "example": "listening"
-      },
-      "value": {
-        "type": "int",
-        "example": "7"
-      },
-      "lean": {
-        "type": "String",
-        "example": "harder"
-      }
-    }
-  },
   "deckScriptTips": "Tips: {guide}",
   "@deckScriptTips": {
     "description": "Button on a script deck's page (#30): opens the guide to the script's recurring features, such as Bengali's headline. The placeholder is the guide's own title, from its file.",
@@ -1998,26 +2045,6 @@
   "@scriptGuideStart": {
     "description": "Button at the foot of a script's guide when it is shown before the first script card: goes on to the drill.",
     "placeholders": {}
-  },
-  "deckNoSpeech": "This phone can’t recognise {language} speech yet",
-  "@deckNoSpeech": {
-    "description": "Under Speaking when the phone's speech recogniser cannot hear the deck's language, or speaking has not been set up since launch. Set up opens Voices.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Telugu"
-      }
-    }
-  },
-  "deckSpeechOnlineOnly": "{language} speech can be recognised only online",
-  "@deckSpeechOnlineOnly": {
-    "description": "Under Speaking when the deck's language can be recognised only online and the learner has not allowed it. Set up opens Voices, where it can be allowed.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Telugu"
-      }
-    }
   },
   "deckUnreviewed": "No {language} speaker has checked this deck yet. If you speak {language}, please report any mistake you find.",
   "@deckUnreviewed": {
@@ -2036,28 +2063,6 @@
   "deckSetUpVoice": "Set up",
   "@deckSetUpVoice": {
     "description": "Button that opens Voices, beside a skill that needs one."
-  },
-  "deckStartSkill": "Start {skill}, {count, plural, =1{1 due} other{{count} due}}",
-  "@deckStartSkill": {
-    "description": "Screen-reader label of the button that starts one skill.",
-    "placeholders": {
-      "skill": {
-        "type": "String",
-        "example": "Recognition"
-      },
-      "count": {
-        "type": "int",
-        "example": "5"
-      }
-    }
-  },
-  "deckOnlyTags": "Only these tags",
-  "@deckOnlyTags": {
-    "description": "Heading above the tag chips that narrow a session."
-  },
-  "deckCards": "Cards",
-  "@deckCards": {
-    "description": "Heading above the card preview."
   },
   "deckLicence": "Content licence",
   "@deckLicence": {
@@ -2138,62 +2143,6 @@
   "deckId": "Deck id",
   "@deckId": {
     "description": "Label for the deck's permanent id."
-  },
-  "deckReviewAll": "{count, plural, =0{Nothing due} other{Review all due · {count}}}",
-  "@deckReviewAll": {
-    "description": "The button at the foot of a deck's screen.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "9"
-      }
-    }
-  },
-  "deckLesson": "{count, plural, =1{Learn 1 new word} other{Learn {count} new words}}",
-  "@deckLesson": {
-    "description": "The button at the foot of a deck's screen when nothing is due and the deck has words not taught yet: a lesson from this deck. The count is how many the lesson teaches.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "9"
-      }
-    }
-  },
-  "deckLessonReading": "Read the next passage",
-  "@deckLessonReading": {
-    "description": "The button at the foot of a reading deck's screen when nothing is due and a passage is left: a lesson of its next passage and questions."
-  },
-  "deckLessonNote": "Nothing is due here. A lesson teaches this deck’s next words.",
-  "@deckLessonNote": {
-    "description": "Above the deck lesson button."
-  },
-  "deckRevise": "Revise · {count}",
-  "@deckRevise": {
-    "description": "The button at the foot of a finished deck's screen, when nothing is due: practise every learned card again. The count is how many cards.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "13"
-      }
-    }
-  },
-  "deckReviseNote": "You’ve learned every card here. Revise them whenever you like — your answers count, like any review.",
-  "@deckReviseNote": {
-    "description": "Above Revise on a finished deck's screen: revising is recorded, like any review (ADR-0033)."
-  },
-  "deckGrammarCell": "{lemma} — {slot}",
-  "@deckGrammarCell": {
-    "description": "A grammar card in the preview: the dictionary form and the slot, like \"hablar — nosotros\".",
-    "placeholders": {
-      "lemma": {
-        "type": "String",
-        "example": "hablar"
-      },
-      "slot": {
-        "type": "String",
-        "example": "nosotros"
-      }
-    }
   },
   "deckNotFound": "This deck isn’t loaded.",
   "@deckNotFound": {
@@ -2893,10 +2842,6 @@
   "@skillReadingSettingsOff": {
     "description": "Under a skill’s switch in Settings, while it is off. The skill is reading: short passages with questions. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
-  "skillListeningReadingDeckDesc": "Hear a passage, answer questions",
-  "@skillListeningReadingDeckDesc": {
-    "description": "Under Listening on a reading deck's screen, where listening means hearing the passage read aloud."
-  },
   "readingIntro": "{count, plural, =1{Read it, then answer a question} other{Read it, then answer {count} questions}}",
   "@readingIntro": {
     "description": "Above a passage, before its questions.",
@@ -3287,10 +3232,6 @@
         "format": "decimalPattern"
       }
     }
-  },
-  "drillTeachTitle": "New",
-  "@drillTeachTitle": {
-    "description": "A lesson teaching a word (ADR-0024): above the word, its reading and meaning, before it is asked."
   },
   "setTitle": "The set",
   "@setTitle": {
@@ -3959,93 +3900,6 @@
   "@summaryEmpty": {
     "description": "Summary line when a session ended before any answer."
   },
-  "statsRangeGroup": "Time range",
-  "@statsRangeGroup": {
-    "description": "Screen-reader name of the range choice."
-  },
-  "statsRangeDays": "{count, plural, =1{1 day} other{{count} days}}",
-  "@statsRangeDays": {
-    "description": "A time range choice.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "30"
-      }
-    }
-  },
-  "statsRangeAll": "All time",
-  "@statsRangeAll": {
-    "description": "The time range covering every review."
-  },
-  "statsReviews": "Reviews",
-  "@statsReviews": {
-    "description": "Stat: reviews given in the range."
-  },
-  "statsRemembered": "Remembered",
-  "@statsRemembered": {
-    "description": "Stat: share of reviews remembered."
-  },
-  "statsDayStreak": "Day streak",
-  "@statsDayStreak": {
-    "description": "Stat: the current streak."
-  },
-  "statsLongestStreak": "Longest streak",
-  "@statsLongestStreak": {
-    "description": "Stat: the longest streak ever, for All time."
-  },
-  "statsNewCardsLearned": "New cards learned",
-  "@statsNewCardsLearned": {
-    "description": "Stat: new cards learned in the range."
-  },
-  "statsCardsLearned": "Cards learned",
-  "@statsCardsLearned": {
-    "description": "Stat: every card learned, for All time."
-  },
-  "statsHeatmapTitle": "{weeks, plural, =1{Reviews, last week} other{Reviews, last {weeks} weeks}}",
-  "@statsHeatmapTitle": {
-    "description": "Title of the activity grid.",
-    "placeholders": {
-      "weeks": {
-        "type": "int",
-        "example": "12"
-      }
-    }
-  },
-  "statsHeatmapLabel": "Daily review activity",
-  "@statsHeatmapLabel": {
-    "description": "Screen-reader name of the activity grid."
-  },
-  "statsHeatmapSummary": "Reviewed on {active} of {days} days, {reviews, plural, =0{no reviews} =1{1 review} other{{reviews} reviews}} in all",
-  "@statsHeatmapSummary": {
-    "description": "Screen-reader summary of the activity grid, which is otherwise colour only.",
-    "placeholders": {
-      "active": {
-        "type": "int",
-        "example": "71"
-      },
-      "days": {
-        "type": "int",
-        "example": "84"
-      },
-      "reviews": {
-        "type": "int",
-        "example": "412",
-        "format": "decimalPattern"
-      }
-    }
-  },
-  "statsFewer": "Fewer",
-  "@statsFewer": {
-    "description": "Legend of the activity grid: the lightest colour."
-  },
-  "statsMore": "More",
-  "@statsMore": {
-    "description": "Legend of the activity grid: the strongest colour."
-  },
-  "statsBySkill": "Correct, by skill",
-  "@statsBySkill": {
-    "description": "Heading of the per-skill bars."
-  },
   "statsWeakestTags": "Weakest tags",
   "@statsWeakestTags": {
     "description": "Heading of the per-tag bars. The tags come from the decks."
@@ -4056,7 +3910,7 @@
   },
   "statsAllTagsTitle": "All tags",
   "@statsAllTagsTitle": {
-    "description": "Title of the page listing every tag with the share remembered."
+    "description": "Title of the page listing every tag with the share of its taught pairs known now."
   },
   "statsAllTagsEmpty": "No tags in the languages you learn yet.",
   "@statsAllTagsEmpty": {
@@ -4064,11 +3918,11 @@
   },
   "statsTagUnansweredValue": "–",
   "@statsTagUnansweredValue": {
-    "description": "Where a tag's share remembered would be, for a tag with no answer in the chosen range."
+    "description": "Where a tag's share known would be, for a tag with nothing taught yet."
   },
   "statsTagUnansweredLabel": "{tag}: not answered",
   "@statsTagUnansweredLabel": {
-    "description": "Screen-reader label of a tag's bar when it has no answer in the chosen range.",
+    "description": "Screen-reader label of a tag's bar when it has nothing taught yet.",
     "placeholders": {
       "tag": {
         "type": "String",
@@ -4122,10 +3976,6 @@
   "statsLeechesSubtitle": "Cards you keep missing",
   "@statsLeechesSubtitle": {
     "description": "Under statsLeeches."
-  },
-  "statsFootnote": "Recomputed from your review log, so nothing here is ever lost.",
-  "@statsFootnote": {
-    "description": "Note at the foot of Progress."
   },
   "statsIncomingTitle": "Progress is on its way",
   "@statsIncomingTitle": {
@@ -4623,9 +4473,9 @@
   "@onboardingSpokenNeedOne": {
     "description": "First-launch question, just above the button while it is disabled: why it is."
   },
-  "scriptName": "{script, select, bengali{Eastern Nagari} devanagari{Devanagari} gurmukhi{Gurmukhi} shahmukhi{Shahmukhi} gujarati{Gujarati} odia{Odia} kannada{Kannada} telugu{Telugu} tamil{Tamil} malayalam{Malayalam} ol_chiki{Ol Chiki} arabic{Perso-Arabic} perso_arabic{Perso-Arabic} meitei_mayek{Meitei Mayek} egyptian_hieroglyphs{Egyptian hieroglyphs} cuneiform{Cuneiform} linear_b{Linear B} latin{Latin} kana{Kana} other{}}",
+  "scriptName": "{script, select, bengali{Eastern Nagari} devanagari{Devanagari} gurmukhi{Gurmukhi} shahmukhi{Shahmukhi} gujarati{Gujarati} odia{Odia} kannada{Kannada} telugu{Telugu} tamil{Tamil} malayalam{Malayalam} ol_chiki{Ol Chiki} arabic{Perso-Arabic} perso_arabic{Perso-Arabic} meitei_mayek{Meitei Mayek} egyptian_hieroglyphs{Egyptian hieroglyphs} cuneiform{Cuneiform} linear_b{Linear B} latin{Latin} cyrillic{Cyrillic} han{Han} han_simplified{Simplified Han} han_traditional{Traditional Han} kana{Kana} hangul{Hangul} other{}}",
   "@scriptName": {
-    "description": "A script's own name, never a language's (owner, 2026-10-17, #551: \"All scripts should have their own names, not just inherit the language\"). {script} is the code in assets/languages.yaml and the deck files: bengali is Eastern Nagari, the script of Bengali, Assamese and Manipuri; arabic is Perso-Arabic; perso_arabic is the Perso-Arabic script as Hindustani and Urdu write it, in Nastaliq (#623); shahmukhi is the Perso-Arabic alphabet as Punjabi writes it. A code with no name here gives nothing, and the app then names the script after its language. Every sentence that names a script takes this.",
+    "description": "A script's own name, never a language's (owner, 2026-10-17, #551: \"All scripts should have their own names, not just inherit the language\"). {script} is the code in assets/languages.yaml and the deck files: bengali is Eastern Nagari, the script of Bengali, Assamese and Manipuri; arabic is Perso-Arabic; perso_arabic is the Perso-Arabic script as Hindustani and Urdu write it, in Nastaliq (#623); shahmukhi is the Perso-Arabic alphabet as Punjabi writes it. han_simplified and han_traditional are the two forms of Chinese characters Mandarin is written in, and han the same characters as Japanese kanji; kana is Japanese's hiragana and katakana, hangul Korean's alphabet, and cyrillic Interslavic's second script (#613). A code with no name here gives nothing, and the app then names the script after its language. Every sentence that names a script takes this.",
     "placeholders": {
       "script": {
         "type": "String",
@@ -4689,9 +4539,9 @@
   "@knownByFamily": {
     "description": "Languages you know: beside that heading."
   },
-  "knownFamily": "{family, select, indo_aryan{Indo-Aryan} dravidian{Dravidian} tibeto_burman{Tibeto-Burman} austroasiatic{Austroasiatic} germanic{Germanic} other{Other languages}}",
+  "knownFamily": "{family, select, indo_aryan{Indo-Aryan} dravidian{Dravidian} tibeto_burman{Tibeto-Burman} austroasiatic{Austroasiatic} germanic{Germanic} romance{Romance} sinitic{Sinitic} koreanic{Koreanic} japonic{Japonic} constructed{Constructed} other{Other languages}}",
   "@knownFamily": {
-    "description": "Languages you know: a language family's name. {family} is the id in assets/languages.yaml.",
+    "description": "Languages you know: a language family's name. {family} is the id in assets/languages.yaml; constructed groups the languages made on purpose (Esperanto, Toki Pona, Lojban, Interslavic) (#613).",
     "placeholders": {
       "family": {
         "type": "String",
@@ -5406,6 +5256,74 @@
   "placementDone": "Start here",
   "@placementDone": {
     "description": "Button on the last placement result: start where placement placed the learner, and go on to the app."
+  },
+  "placedReviewQuestion": "Do you want to keep reviewing what you already know?",
+  "@placedReviewQuestion": {
+    "description": "Question on the end-of-placement screen and heading of the Placed words sheet: how the words placement found the learner knows are reviewed from now on."
+  },
+  "placedReviewSetInStone": "Set in stone",
+  "@placedReviewSetInStone": {
+    "description": "Choice: the words placement found known are never reviewed and count as known."
+  },
+  "placedReviewSetInStoneBody": "Never reviewed. Counted as known on Progress.",
+  "@placedReviewSetInStoneBody": {
+    "description": "Explanation of the Set in stone choice."
+  },
+  "placedReviewSpotCheck": "Spot-check",
+  "@placedReviewSpotCheck": {
+    "description": "Choice: a few of the placed words are tested now and then; a miss brings more of them back to review."
+  },
+  "placedReviewSpotCheckBody": "A few tested now and then. A miss brings more back.",
+  "@placedReviewSpotCheckBody": {
+    "description": "Explanation of the Spot-check choice."
+  },
+  "placedReviewKeep": "Keep reviewing",
+  "@placedReviewKeep": {
+    "description": "Choice: the placed words are reviewed like any other word."
+  },
+  "placedReviewKeepBody": "Review them like any other word.",
+  "@placedReviewKeepBody": {
+    "description": "Explanation of the Keep reviewing choice."
+  },
+  "placedReviewDefault": "Default",
+  "@placedReviewDefault": {
+    "description": "Small tag on the choice that is preselected."
+  },
+  "placedReviewFoot": "You can change this later in Languages I’m learning.",
+  "@placedReviewFoot": {
+    "description": "Under the placed-words question at the end of placement."
+  },
+  "placedReviewRow": "Placed words",
+  "@placedReviewRow": {
+    "description": "Row in a learned language's sheet in Languages I'm learning: opens the choice of how the words placement found known are reviewed. Its line under it names the current choice."
+  },
+  "placedReviewSheetTitle": "Placed words in {language}",
+  "@placedReviewSheetTitle": {
+    "description": "Heading of the sheet that changes how a course reviews its placed words.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "placedReviewSheetNote": "Switching from Set in stone back to Spot-check or Keep reviewing returns the placed words to reviews. Words you learn from now on are always reviewed as usual.",
+  "@placedReviewSheetNote": {
+    "description": "Under the choices in the Placed words sheet."
+  },
+  "placedReviewSummary": "{words, plural, =1{{words} word} other{{words} words}} placed, in {decks, plural, =1{{decks} deck} other{{decks} decks}}",
+  "@placedReviewSummary": {
+    "description": "Summary on the end-of-placement screen: how many words and decks placement found known.",
+    "placeholders": {
+      "words": {
+        "type": "int",
+        "example": "412"
+      },
+      "decks": {
+        "type": "int",
+        "example": "14"
+      }
+    }
   },
   "placementQuestionNumber": "Question {number}",
   "@placementQuestionNumber": {
@@ -8697,14 +8615,6 @@
       }
     }
   },
-  "pickerIpaMine": "IPA: my languages",
-  "@pickerIpaMine": {
-    "description": "The language picker's first entry for the IPA course: only the symbols the languages being learned use. It shares progress with the whole chart."
-  },
-  "pickerIpaWhole": "IPA: whole chart",
-  "@pickerIpaWhole": {
-    "description": "The language picker's second entry for the IPA course: the whole of the International Phonetic Alphabet chart. It shares progress with the entry for the learner's own languages."
-  },
   "ipaExampleSounds": "Has this sound",
   "@ipaExampleSounds": {
     "description": "Line on an IPA card's example: the letter in this word is said with the card's sound."
@@ -10231,16 +10141,6 @@
       }
     }
   },
-  "deckListenBackup": "Backup voice in use: {backup}, reading the card’s other spelling",
-  "@deckListenBackup": {
-    "description": "Under Listening on a deck's page when the deck's own voice is not on the phone and the course's other voice says its cards instead, from each card's spelling in that voice's script (#641). backup is that voice's BCP-47 tag.",
-    "placeholders": {
-      "backup": {
-        "type": "String",
-        "example": "hi-IN"
-      }
-    }
-  },
   "voicesInUseChosen": "In use: {name}",
   "@voicesInUseChosen": {
     "description": "On a language's card on the Voices page: the voice the learner chose for it. name is the phone's name for the voice.",
@@ -10326,5 +10226,918 @@
   "voiceAppLinkCopied": "Couldn’t open the link, so it’s copied.",
   "@voiceAppLinkCopied": {
     "description": "SnackBar when nothing on the phone could open a voice app's store link, so its address was copied instead."
+  },
+  "cardNoteTitle": "Note",
+  "@cardNoteTitle": {
+    "description": "Title of a card's note on the word sheet, over the note. The teach card shows the note without a title."
+  },
+  "cardLooksLikeTitle": "Looks like another word",
+  "@cardLooksLikeTitle": {
+    "description": "Title of the warning on the word sheet for a word that looks the same as, or almost the same as, another word of the language, with another sound or meaning: a homograph, or a word that differs by a dot or a short mark. The teach card shows it without a title."
+  },
+  "cardOtherMeaningsTitle": "Other meanings",
+  "@cardOtherMeaningsTitle": {
+    "description": "Title of the warning on the word sheet that the card's word has other meanings. The teach card shows it without a title."
+  },
+  "cardOtherMeaningsText": "It also means {meanings}.",
+  "@cardOtherMeaningsText": {
+    "description": "The warning that a word has other meanings, on its card and sheet. {meanings} is the other meanings, joined by the list separator.",
+    "placeholders": {
+      "meanings": {
+        "type": "String",
+        "example": "“machine” and “ease”"
+      }
+    }
+  },
+  "cardPartner": "{word} ({reading}), {meaning}",
+  "@cardPartner": {
+    "description": "A word that sounds or looks like the card's, in a warning: the word in its script, its reading and its meaning.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "काल"
+      },
+      "reading": {
+        "type": "String",
+        "example": "kāl"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "time"
+      }
+    }
+  },
+  "cardPartnerNoReading": "{word}, {meaning}",
+  "@cardPartnerNoReading": {
+    "description": "A word that sounds or looks like the card's, in a warning, for a word with no reading: the word and its meaning.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "el niño"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "the boy"
+      }
+    }
+  },
+  "cardAlsoMeans": "Also means: {meanings}",
+  "@cardAlsoMeans": {
+    "description": "A line on the word sheet under the meaning: the word's other meanings, joined by the list separator.",
+    "placeholders": {
+      "meanings": {
+        "type": "String",
+        "example": "time, era"
+      }
+    }
+  },
+  "cardAlsoAccepted": "Also accepted: {forms}",
+  "@cardAlsoAccepted": {
+    "description": "A line on the word sheet under the meaning: other spellings of the word that are accepted as the answer, joined by the list separator.",
+    "placeholders": {
+      "forms": {
+        "type": "String",
+        "example": "कल, काल"
+      }
+    }
+  },
+  "cardIpaHeading": "Pronunciation · IPA course",
+  "@cardIpaHeading": {
+    "description": "Heading over a word's sounds on its sheet, one row for each symbol of its IPA, taken from the IPA course."
+  },
+  "cardDictionaryHeading": "Dictionary · Wiktionary",
+  "@cardDictionaryHeading": {
+    "description": "Heading over a word's dictionary entry on its sheet, which comes from Wiktionary."
+  },
+  "cardDictionaryEtymology": "Etymology: {text}",
+  "@cardDictionaryEtymology": {
+    "description": "A dictionary entry's line on where the word comes from.",
+    "placeholders": {
+      "text": {
+        "type": "String",
+        "example": "From Sanskrit कल्य (kalya), “tomorrow”."
+      }
+    }
+  },
+  "cardDictionaryCredit": "Wiktionary, {source}. CC BY-SA 4.0.",
+  "@cardDictionaryCredit": {
+    "description": "The credit under a dictionary entry: the Wiktionary page it was taken from and its licence.",
+    "placeholders": {
+      "source": {
+        "type": "String",
+        "example": "wiktionary.org/wiki/कल"
+      }
+    }
+  },
+  "cardExamples": "Examples",
+  "@cardExamples": {
+    "description": "Heading over a word's example sentences on its sheet."
+  },
+  "cardTags": "Tags",
+  "@cardTags": {
+    "description": "Heading over a word's tags on its sheet."
+  },
+  "cardReport": "Report",
+  "@cardReport": {
+    "description": "The button at the foot of a word's sheet that reports a mistake in the card."
+  },
+  "cardDifficulty": "How hard, for you",
+  "@cardDifficulty": {
+    "description": "Heading over how hard a word has been for the learner in each skill, on its sheet."
+  },
+  "cardDifficultyIn": "{mode, select, recognition{Recognition} production{Write} listening{Hear} speaking{Say} grammarUnderstood{Grammar understood} grammar{Grammar produced} reading{Reading} other{Other}}: {value} of 10, {lean, select, easier{easier} harder{harder} other{middling}}",
+  "@cardDifficultyIn": {
+    "description": "One line under \"How hard, for you\": a skill, how hard the word has been in it from 1 to 10, and whether that is easier or harder than for most words.",
+    "placeholders": {
+      "mode": {
+        "type": "String",
+        "example": "listening"
+      },
+      "value": {
+        "type": "int",
+        "example": "7"
+      },
+      "lean": {
+        "type": "String",
+        "example": "harder"
+      }
+    }
+  },
+  "ipaSymbolsNone": "Add the IPA course to see, hear and practise each sound of this word.",
+  "@ipaSymbolsNone": {
+    "description": "On a word's sheet or pronunciation popup, where the IPA course is not on the phone: what adding it gives."
+  },
+  "ipaSymbolsAdd": "Add the IPA course",
+  "@ipaSymbolsAdd": {
+    "description": "The button under ipaSymbolsNone that offers to add the IPA course."
+  },
+  "ipaSymbolExample": "Example: {word}, {meaning}",
+  "@ipaSymbolExample": {
+    "description": "Under a sound of a word's IPA: a word that has the sound, and its meaning.",
+    "placeholders": {
+      "word": {
+        "type": "String",
+        "example": "sit"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "sit"
+      }
+    }
+  },
+  "ipaSymbolPractise": "Practise",
+  "@ipaSymbolPractise": {
+    "description": "The button on a sound of a word's IPA that opens the practice of that one sound in the IPA course."
+  },
+  "deckWordCount": "{shown} of {total, plural, =1{1 word} other{{total} words}}",
+  "@deckWordCount": {
+    "description": "On a deck's page, above its words: how many the tag chips leave in view, of how many it has.",
+    "placeholders": {
+      "shown": {
+        "type": "int",
+        "example": "12"
+      },
+      "total": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "deckNoWordsWithTags": "No words have these tags.",
+  "@deckNoWordsWithTags": {
+    "description": "On a deck's page, where the chosen tag chips leave no word in view."
+  },
+  "deckTagsLabel": "Filter by tag",
+  "@deckTagsLabel": {
+    "description": "Screen reader name of the group of tag chips on a deck's page."
+  },
+  "deckPractice": "Practice",
+  "@deckPractice": {
+    "description": "The button at the foot of a deck's page, left of Learn: it asks which skills, then drills every word taught in them, due or not."
+  },
+  "deckLearn": "Learn",
+  "@deckLearn": {
+    "description": "The button at the foot of a deck's page, beside Practice, with a plus icon and a badge counting the words in view not taught yet: it teaches them."
+  },
+  "deckLearnBadge": "{count, plural, =1{1 new word} other{{count} new words}}",
+  "@deckLearnBadge": {
+    "description": "Screen reader text of the count badge on a deck page's Learn button.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "deckRelearn": "Relearn",
+  "@deckRelearn": {
+    "description": "The button at the foot of a deck's page once every word of the deck is taught: it walks through the words in view, card by card, and writes nothing."
+  },
+  "deckPracticeTitle": "Practice",
+  "@deckPracticeTitle": {
+    "description": "Title of the popup a deck page's Practice opens."
+  },
+  "deckPracticeBody": "Choose skills. Every word you have been taught in them is drilled, due or not.",
+  "@deckPracticeBody": {
+    "description": "The line under the title of Practice's popup."
+  },
+  "deckPracticeAll": "All",
+  "@deckPracticeAll": {
+    "description": "The first option of Practice's popup: every skill the deck offers."
+  },
+  "deckPracticeStart": "Start",
+  "@deckPracticeStart": {
+    "description": "The button of Practice's popup that starts the practice."
+  },
+  "drillNextCard": "Next card",
+  "@drillNextCard": {
+    "description": "Screen-reader label and tooltip of the chevron on the end edge of a teach card, which goes on to the next card. Swiping the card does the same."
+  },
+  "drillPreviousCard": "Previous card",
+  "@drillPreviousCard": {
+    "description": "Screen-reader label and tooltip of the chevron on the start edge of a teach card, which goes back to the previous card."
+  },
+  "teachDictionaryLabel": "Dictionary: {meaning}",
+  "@teachDictionaryLabel": {
+    "description": "Screen-reader label of the meaning on a teach card, which is a button that opens the word's dictionary.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "yesterday; tomorrow"
+      }
+    }
+  },
+  "teachPronunciationLabel": "Pronunciation: {ipa}",
+  "@teachPronunciationLabel": {
+    "description": "Screen-reader label of the IPA on a teach card, which is a button that opens the pronunciation popup.",
+    "placeholders": {
+      "ipa": {
+        "type": "String",
+        "example": "kəl"
+      }
+    }
+  },
+  "teachPronunciationTitle": "Pronunciation",
+  "@teachPronunciationTitle": {
+    "description": "Title of the popup the IPA on a teach card opens."
+  },
+  "teachPronunciationBody": "From the IPA course. Practise each sound on its own.",
+  "@teachPronunciationBody": {
+    "description": "The line under the title of the pronunciation popup, which lists each symbol of the word."
+  },
+  "teachDictionaryBody": "Meanings, etymology and examples.",
+  "@teachDictionaryBody": {
+    "description": "The line under the title of the dictionary popup the meaning on a teach card opens."
+  },
+  "progressHoursSpentTitle": "Hours spent",
+  "@progressHoursSpentTitle": {
+    "description": "Title of the Progress tile with the hours spent answering cards (#227)."
+  },
+  "progressHoursLeftTitle": "Hours left",
+  "@progressHoursLeftTitle": {
+    "description": "Title of the Progress tile with the hours left."
+  },
+  "progressHoursAbout": "About",
+  "@progressHoursAbout": {
+    "description": "Small word before the hours left, which is an estimate."
+  },
+  "progressHoursToB1": "to the end of B1",
+  "@progressHoursToB1": {
+    "description": "Under the hours left on Progress: they count to the end of B1, the course's end."
+  },
+  "progressHoursNone": "–",
+  "@progressHoursNone": {
+    "description": "Shown in place of the hours left for a language with no decks to count them from."
+  },
+  "progressHoursSpentSemantics": "{hours} hours spent in all",
+  "@progressHoursSpentSemantics": {
+    "description": "Screen-reader label of the hours spent. One decimal place.",
+    "placeholders": {
+      "hours": {
+        "type": "double",
+        "example": "12.4",
+        "format": "decimalPatternDigits",
+        "optionalParameters": {
+          "decimalDigits": 1
+        }
+      }
+    }
+  },
+  "progressHoursLeftSemantics": "{hours, plural, =1{About 1 hour left to the end of B1} other{About {hours} hours left to the end of B1}}",
+  "@progressHoursLeftSemantics": {
+    "description": "Screen-reader label of the hours left, rounded up.",
+    "placeholders": {
+      "hours": {
+        "type": "int",
+        "example": "140"
+      }
+    }
+  },
+  "progressHoursNoneSemantics": "Hours left to the end of B1: not known yet",
+  "@progressHoursNoneSemantics": {
+    "description": "Screen-reader label of the hours left for a language with no decks."
+  },
+  "progressHoursPopupTitle": "Hours by language",
+  "@progressHoursPopupTitle": {
+    "description": "Title of the popup the hours tiles open, with a row for each language."
+  },
+  "progressHoursSpentCaption": "spent",
+  "@progressHoursSpentCaption": {
+    "description": "Small word under a language's hours spent in the popup."
+  },
+  "progressHoursLeftCaption": "left",
+  "@progressHoursLeftCaption": {
+    "description": "Small word under a language's hours left in the popup."
+  },
+  "progressHoursTotal": "All languages",
+  "@progressHoursTotal": {
+    "description": "Name of the last row of the hours popup, which adds the languages up."
+  },
+  "progressHoursPopupNote": "Each answer counts for at most 60 seconds. Hours left is about the time to the end of B1, at your own time per answer; it changes as decks are added.",
+  "@progressHoursPopupNote": {
+    "description": "Note under the rows of the hours popup."
+  },
+  "summaryUnlockedTitle": "Unlocked in this lesson",
+  "@summaryUnlockedTitle": {
+    "description": "Heading of the card at the end of a lesson that counts the words and rules that became known and the sentences that opened."
+  },
+  "summaryUnlockedWords": "{count, plural, =1{1 word known} other{{count} words known}}",
+  "@summaryUnlockedWords": {
+    "description": "A line of the unlocked card: how many words became known in the lesson.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "summaryUnlockedRules": "{count, plural, =1{1 rule known} other{{count} rules known}}",
+  "@summaryUnlockedRules": {
+    "description": "A line of the unlocked card: how many rules became known in the lesson.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "summaryUnlockedSentences": "{count, plural, =1{1 sentence open} other{{count} sentences open}}",
+  "@summaryUnlockedSentences": {
+    "description": "A line of the unlocked card: how many sentences opened in the lesson.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "progressWordsTitle": "Words",
+  "@progressWordsTitle": {
+    "description": "Title of the Progress tile that counts the words known, by base word."
+  },
+  "progressRulesTitle": "Rules",
+  "@progressRulesTitle": {
+    "description": "Title of the Progress tile that counts the rules known."
+  },
+  "progressSentencesTitle": "Sentences",
+  "@progressSentencesTitle": {
+    "description": "Title of the Progress tile that counts the sentences open."
+  },
+  "progressKnown": "known",
+  "@progressKnown": {
+    "description": "Under the figure of the Words and Rules tiles: what is counted."
+  },
+  "progressOpen": "open",
+  "@progressOpen": {
+    "description": "Under the figure of the Sentences tile: what is counted. A sentence is open once its words and rules are known."
+  },
+  "progressOfTaught": "of {count} taught",
+  "@progressOfTaught": {
+    "description": "Under a Progress tile's count: what it is out of, what is taught so far. May wrap to two lines.",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "540"
+      }
+    }
+  },
+  "progressWordsSemantics": "Words: {known} known of {taught} taught",
+  "@progressWordsSemantics": {
+    "description": "Screen-reader label of the Words tile.",
+    "placeholders": {
+      "known": {
+        "type": "String",
+        "example": "312"
+      },
+      "taught": {
+        "type": "String",
+        "example": "540"
+      }
+    }
+  },
+  "progressRulesSemantics": "Rules: {known} known of {taught} taught",
+  "@progressRulesSemantics": {
+    "description": "Screen-reader label of the Rules tile.",
+    "placeholders": {
+      "known": {
+        "type": "String",
+        "example": "14"
+      },
+      "taught": {
+        "type": "String",
+        "example": "22"
+      }
+    }
+  },
+  "progressSentencesSemantics": "Sentences: {open} open of {taught} taught",
+  "@progressSentencesSemantics": {
+    "description": "Screen-reader label of the Sentences tile.",
+    "placeholders": {
+      "open": {
+        "type": "String",
+        "example": "86"
+      },
+      "taught": {
+        "type": "String",
+        "example": "210"
+      }
+    }
+  },
+  "progressLevelTitle": "Level",
+  "@progressLevelTitle": {
+    "description": "Title of the Progress tile that shows the course's level."
+  },
+  "progressStartedTitle": "Started",
+  "@progressStartedTitle": {
+    "description": "Title of the Progress tile on All languages, which shows only the day the first course was started."
+  },
+  "progressLevelStarted": "Started {date}",
+  "@progressLevelStarted": {
+    "description": "Under the level on Progress: the day of the first answer.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "3 Aug 2026"
+      }
+    }
+  },
+  "progressLevelA1": "A1",
+  "@progressLevelA1": {
+    "description": "The first level a course's path reaches. Same in every language."
+  },
+  "progressLevelA2": "A2",
+  "@progressLevelA2": {
+    "description": "The second level a course's path reaches."
+  },
+  "progressLevelB1": "B1",
+  "@progressLevelB1": {
+    "description": "The third level a course's path reaches."
+  },
+  "progressLevelNone": "Not yet",
+  "@progressLevelNone": {
+    "description": "The Level tile before the first level, A1, is reached."
+  },
+  "progressLevelSemantics": "Level {level}, started {date}",
+  "@progressLevelSemantics": {
+    "description": "Screen-reader label of the Level tile.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A2"
+      },
+      "date": {
+        "type": "String",
+        "example": "3 Aug 2026"
+      }
+    }
+  },
+  "progressLevelNoneSemantics": "No level reached yet, started {date}",
+  "@progressLevelNoneSemantics": {
+    "description": "Screen-reader label of the Level tile before A1.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "3 Aug 2026"
+      }
+    }
+  },
+  "progressStartedSemantics": "Started {date}",
+  "@progressStartedSemantics": {
+    "description": "Screen-reader label of the Level tile on All languages.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "3 Aug 2026"
+      }
+    }
+  },
+  "progressWeekLabel": "Practice in the last 7 days, daily quota {minutes} minutes",
+  "@progressWeekLabel": {
+    "description": "Screen-reader label of the 7-day calendar.",
+    "placeholders": {
+      "minutes": {
+        "type": "int",
+        "example": "15"
+      }
+    }
+  },
+  "progressDayNone": "no practice",
+  "@progressDayNone": {
+    "description": "One calendar day's state, for screen readers."
+  },
+  "progressDaySome": "some practice, under the quota",
+  "@progressDaySome": {
+    "description": "One calendar day's state, for screen readers."
+  },
+  "progressDayMet": "quota met",
+  "@progressDayMet": {
+    "description": "One calendar day's state, for screen readers."
+  },
+  "progressDayTwice": "twice the quota or more",
+  "@progressDayTwice": {
+    "description": "One calendar day's state, for screen readers."
+  },
+  "progressDayLabel": "{day}: {state}, {minutes} of {quota} minutes",
+  "@progressDayLabel": {
+    "description": "Screen-reader label of one calendar day.",
+    "placeholders": {
+      "day": {
+        "type": "String",
+        "example": "Tuesday"
+      },
+      "state": {
+        "type": "String",
+        "example": "quota met"
+      },
+      "minutes": {
+        "type": "int",
+        "example": "15"
+      },
+      "quota": {
+        "type": "int",
+        "example": "15"
+      }
+    }
+  },
+  "progressDayLabelToday": "{day}, today: {state}, {minutes} of {quota} minutes",
+  "@progressDayLabelToday": {
+    "description": "Screen-reader label of today on the calendar.",
+    "placeholders": {
+      "day": {
+        "type": "String",
+        "example": "Friday"
+      },
+      "state": {
+        "type": "String",
+        "example": "quota met"
+      },
+      "minutes": {
+        "type": "int",
+        "example": "15"
+      },
+      "quota": {
+        "type": "int",
+        "example": "15"
+      }
+    }
+  },
+  "progressStarTitle": "Mastery by skill",
+  "@progressStarTitle": {
+    "description": "Title of the six-skill star on Progress."
+  },
+  "progressStarOverall": "Overall mastery {percent}",
+  "@progressStarOverall": {
+    "description": "Under the star's title: how much of the star is filled.",
+    "placeholders": {
+      "percent": {
+        "type": "double",
+        "example": "0.22",
+        "format": "percentPattern"
+      }
+    }
+  },
+  "progressOverTime": "Over time",
+  "@progressOverTime": {
+    "description": "Button at the end of the star's title, which opens the charts over time."
+  },
+  "progressSkillScript": "Script",
+  "@progressSkillScript": {
+    "description": "One of the star's six skills: reading and writing the writing system."
+  },
+  "progressSkillRead": "Read",
+  "@progressSkillRead": {
+    "description": "One of the star's six skills: recognising words."
+  },
+  "progressNothingTaught": "nothing taught yet",
+  "@progressNothingTaught": {
+    "description": "A skill on the star with nothing taught, for screen readers."
+  },
+  "progressStarSemantics": "{title}, overall {overall}. Opens mastery over time. {details}",
+  "@progressStarSemantics": {
+    "description": "Screen-reader label of the star.",
+    "placeholders": {
+      "title": {
+        "type": "String",
+        "example": "Mastery by skill"
+      },
+      "overall": {
+        "type": "double",
+        "example": "0.22",
+        "format": "percentPattern"
+      },
+      "details": {
+        "type": "String",
+        "example": "Grammar 34%"
+      }
+    }
+  },
+  "progressStarSkill": "{skill} {fill}, {outline}",
+  "@progressStarSkill": {
+    "description": "One skill's values in the star's screen-reader label: known of the B1 total, then known of what is taught.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Grammar"
+      },
+      "fill": {
+        "type": "double",
+        "example": "0.34",
+        "format": "percentPattern"
+      },
+      "outline": {
+        "type": "String",
+        "example": "57%"
+      }
+    }
+  },
+  "progressOverTimeTitle": "Over time",
+  "@progressOverTimeTitle": {
+    "description": "Title of the screen the star opens."
+  },
+  "progressMasteryChart": "Mastery over time",
+  "@progressMasteryChart": {
+    "description": "Title of the chart of known words, by skill, against the whole B1 plan."
+  },
+  "progressMasteryChartSub": "Known ÷ B1 total, last 12 weeks",
+  "@progressMasteryChartSub": {
+    "description": "Under the mastery chart's title."
+  },
+  "progressTaughtChart": "Taught over time",
+  "@progressTaughtChart": {
+    "description": "Title of the chart of known words, by skill, against what has been taught."
+  },
+  "progressTaughtChartSub": "Known ÷ taught, last 12 weeks",
+  "@progressTaughtChartSub": {
+    "description": "Under the taught chart's title."
+  },
+  "progressChartSemantics": "{title}, last 12 weeks, now: {values}",
+  "@progressChartSemantics": {
+    "description": "Screen-reader label of a chart over time.",
+    "placeholders": {
+      "title": {
+        "type": "String",
+        "example": "Mastery over time"
+      },
+      "values": {
+        "type": "String",
+        "example": "Grammar 34%, Script 71%"
+      }
+    }
+  },
+  "progressChartSkillValue": "{skill} {value}",
+  "@progressChartSkillValue": {
+    "description": "One skill's current value in a chart's label and legend.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Grammar"
+      },
+      "value": {
+        "type": "String",
+        "example": "34%"
+      }
+    }
+  },
+  "progressWeeksAgo": "{weeks} wk",
+  "@progressWeeksAgo": {
+    "description": "A chart's time axis: that many weeks ago.",
+    "placeholders": {
+      "weeks": {
+        "type": "int",
+        "example": "8"
+      }
+    }
+  },
+  "progressNow": "Now",
+  "@progressNow": {
+    "description": "A chart's time axis: the latest point."
+  },
+  "progressStarAxis": "{fill} · {outline}",
+  "@progressStarAxis": {
+    "description": "Under a skill's name on the star: the share of the B1 plan known, then the share of what is taught known. The second is a dash while nothing is taught.",
+    "placeholders": {
+      "fill": {
+        "type": "String",
+        "example": "34%"
+      },
+      "outline": {
+        "type": "String",
+        "example": "57%"
+      }
+    }
+  },
+  "fontCheckTitle": "Check how {script} looks",
+  "@fontCheckTitle": {
+    "description": "Title of the font check sheet (#611), shown when a course is added or from Settings, Script fonts. {script} is the script's own name, scriptName.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "fontCheckAsk": "Can you read this?",
+  "@fontCheckAsk": {
+    "description": "The font check's question, over a sample of the script drawn in the phone's own font."
+  },
+  "fontCheckMeaning": "{meaning, select, hello{means hello} thanks{means thank you} house{means house} name{means name} god{means god} vowels{the vowel signs} other{}}",
+  "@fontCheckMeaning": {
+    "description": "What the font check's sample means, after its reading. {meaning} is the sample's key.",
+    "placeholders": {
+      "meaning": {
+        "type": "String",
+        "example": "hello"
+      }
+    }
+  },
+  "fontCheckSampleLine": "{reading} · {meaning}",
+  "@fontCheckSampleLine": {
+    "description": "The font check's line under its sample: the reading, then what it means (fontCheckMeaning). A middle dot between them.",
+    "placeholders": {
+      "reading": {
+        "type": "String",
+        "example": "namastē"
+      },
+      "meaning": {
+        "type": "String",
+        "example": "means hello"
+      }
+    }
+  },
+  "fontCheckYes": "Yes, I can read it",
+  "@fontCheckYes": {
+    "description": "Font check answer: the phone's own font draws the script."
+  },
+  "fontCheckNo": "No, it shows boxes",
+  "@fontCheckNo": {
+    "description": "Font check answer: the phone's own font does not draw the script, so its font is downloaded."
+  },
+  "fontCheckNoCost": "\"No\" downloads the {font} font, {size}, with your decks.",
+  "@fontCheckNoCost": {
+    "description": "Under the font check's answers: what saying No costs. {font} is the font's own name, such as Noto Sans SC; {size} a download size, such as 9.6 MB.",
+    "placeholders": {
+      "font": {
+        "type": "String",
+        "example": "Noto Sans SC"
+      },
+      "size": {
+        "type": "String",
+        "example": "9.6 MB"
+      }
+    }
+  },
+  "fontCheckLater": "Ask me later",
+  "@fontCheckLater": {
+    "description": "Font check: leaves the script unchecked; Settings, Script fonts, asks again."
+  },
+  "fontCheckDownloading": "Downloading the {script} font…",
+  "@fontCheckDownloading": {
+    "description": "Font check, while the font downloads. {script} is the script's own name, scriptName.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "fontCheckBackground": "Continue in the background",
+  "@fontCheckBackground": {
+    "description": "Font check, while the font downloads: closes the sheet and leaves the download going."
+  },
+  "fontCheckReadNow": "Can you read it now?",
+  "@fontCheckReadNow": {
+    "description": "Font check, after the font downloaded: the sample is drawn again, in the downloaded font."
+  },
+  "fontCheckStillBoxes": "No, it still shows boxes",
+  "@fontCheckStillBoxes": {
+    "description": "Font check answer after the download: even the downloaded font does not draw the script."
+  },
+  "fontCheckDoneDownloaded": "All set. {script} is drawn in the downloaded font. You can change this in Settings, Look and language, Script fonts.",
+  "@fontCheckDoneDownloaded": {
+    "description": "Font check, done after a download. {script} is the script's own name, scriptName.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "fontCheckDonePhone": "All set. {script} is drawn in your phone's font. You can change this in Settings, Look and language, Script fonts.",
+  "@fontCheckDonePhone": {
+    "description": "Font check, done after Yes (nothing downloaded). {script} is the script's own name, scriptName.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "fontCheckBoxesTitle": "Still boxes",
+  "@fontCheckBoxesTitle": {
+    "description": "Title of the font check's last state: even the downloaded font did not draw the script."
+  },
+  "fontCheckBoxesBody": "Not even the downloaded font draws {script} on this phone. The course still works with its readings.",
+  "@fontCheckBoxesBody": {
+    "description": "Font check, still boxes. {script} is the script's own name, scriptName.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "fontCheckReport": "Report this phone",
+  "@fontCheckReport": {
+    "description": "Font check, still boxes: opens a report."
+  },
+  "fontCheckReadingsOnly": "Continue with readings only",
+  "@fontCheckReadingsOnly": {
+    "description": "Font check, still boxes: closes the sheet; the course goes on with its readings."
+  },
+  "fontsRowTitle": "Script fonts",
+  "@fontsRowTitle": {
+    "description": "Settings row, in Look and language, and the title of its page (#611)."
+  },
+  "fontsRowLine": "Check how each script of your courses draws",
+  "@fontsRowLine": {
+    "description": "Settings, Look and language: the line under the Script fonts row."
+  },
+  "fontsPageHelp": "Some scripts show as boxes on some phones. Check each one: if your phone cannot draw it, the app downloads the script's font.",
+  "@fontsPageHelp": {
+    "description": "Help text at the top of the Script fonts page."
+  },
+  "fontsCheckAll": "Check all scripts",
+  "@fontsCheckAll": {
+    "description": "Script fonts page: asks about each script in turn."
+  },
+  "fontsEmpty": "None of your courses uses a script that needs a font check.",
+  "@fontsEmpty": {
+    "description": "Script fonts page with nothing to list."
+  },
+  "fontsState": "{state, select, notChecked{Not checked} phoneFont{Phone's font} downloaded{Downloaded} downloading{Downloading…} boxes{Shows boxes} other{}}",
+  "@fontsState": {
+    "description": "Script fonts page: where a script stands, under its name.",
+    "placeholders": {
+      "state": {
+        "type": "String",
+        "example": "notChecked"
+      }
+    }
+  },
+  "fontsCheck": "Check",
+  "@fontsCheck": {
+    "description": "Script fonts page: the action of a script not checked yet."
+  },
+  "fontsCheckAgain": "Check again",
+  "@fontsCheckAgain": {
+    "description": "Script fonts page: the action of a script already checked."
+  },
+  "fontsRemove": "Remove the downloaded font",
+  "@fontsRemove": {
+    "description": "Script fonts page, in a script's menu: deletes its downloaded font."
+  },
+  "fontsRemoved": "Removed the {script} font",
+  "@fontsRemoved": {
+    "description": "Snackbar after a downloaded font is removed. {script} is the script's own name, scriptName.",
+    "placeholders": {
+      "script": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "fontsFontSize": "{font}, {size}",
+  "@fontsFontSize": {
+    "description": "Script fonts page: the font a download brings and its size. {font} is its family name, {size} a download size.",
+    "placeholders": {
+      "font": {
+        "type": "String",
+        "example": "Noto Sans SC"
+      },
+      "size": {
+        "type": "String",
+        "example": "9.6 MB"
+      }
+    }
   }
 }

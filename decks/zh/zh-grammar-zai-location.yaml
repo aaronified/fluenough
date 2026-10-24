@@ -1,0 +1,39 @@
+schema: 1
+id: "zh-grammar-zai-location"
+part: "core"
+kind: "grammar"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+"pattern":
+  "slots":
+    - "statement"
+    - "question"
+  "entries":
+    - "lemma": "钥匙"
+      "key": "yaoshi"
+      "reading": "yàoshi"
+      "forms":
+        "statement": "钥匙在桌子上"
+        "question": "钥匙在哪里"
+      "readings":
+        "statement": "yàoshi zài zhuōzi shàng"
+        "question": "yàoshi zài nǎlǐ"
+    - "lemma": "书"
+      "key": "shu"
+      "reading": "shū"
+      "forms":
+        "statement": "书在桌子上"
+        "question": "书在哪里"
+      "readings":
+        "statement": "shū zài zhuōzi shàng"
+        "question": "shū zài nǎlǐ"
+    - "lemma": "椅子"
+      "key": "yizi"
+      "reading": "yǐzi"
+      "forms":
+        "statement": "椅子在房间里"
+        "question": "椅子在哪里"
+      "readings":
+        "statement": "yǐzi zài fángjiān lǐ"
+        "question": "yǐzi zài nǎlǐ"

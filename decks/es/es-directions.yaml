@@ -1,0 +1,253 @@
+schema: 1
+id: "es-directions"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "directions"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-0706"
+    target: "la esquina"
+    ipa: "la esˈkina"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "esquina", base: "esquina" }]
+    examples:
+      - target: "Hay una tienda en la esquina."
+        ipa: "aj ˈuna ˈtjenda en la esˈkina"
+        bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "tienda", ref: "es-0584" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "esquina", base: "esquina" }]
+      - target: "La esquina está aquí."
+        ipa: "la esˈkina esˈta aˈki"
+        bases: [{ word: "La", base: "la" }, { word: "esquina", base: "esquina" }, { word: "está", ref: "es-0023" }, { word: "aquí", ref: "es-0051" }]
+  - id: "es-0707"
+    target: "el semáforo"
+    ipa: "el seˈmafoɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "semáforo", base: "semáforo" }]
+    examples:
+      - target: "El semáforo está lejos."
+        ipa: "el seˈmafoɾo esˈta ˈlexos"
+        bases: [{ word: "El", base: "el" }, { word: "semáforo", base: "semáforo" }, { word: "está", ref: "es-0023" }, { word: "lejos", ref: "es-0718" }]
+      - target: "El semáforo está cerca."
+        ipa: "el seˈmafoɾo esˈta ˈθeɾka"
+        bases: [{ word: "El", base: "el" }, { word: "semáforo", base: "semáforo" }, { word: "está", ref: "es-0023" }, { word: "cerca", ref: "es-0717" }]
+  - id: "es-0708"
+    target: "el puente"
+    ipa: "el ˈpwente"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "puente", base: "puente" }]
+    examples:
+      - target: "El puente es grande."
+        ipa: "el ˈpwente es ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "puente", base: "puente" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+      - target: "Cruzamos el puente."
+        ipa: "kɾuˈθamos el ˈpwente"
+        bases: [{ word: "Cruzamos", ref: "es-0721" }, { word: "el", base: "el" }, { word: "puente", base: "puente" }]
+  - id: "es-0709"
+    target: "el cruce"
+    ipa: "el ˈkɾuθe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "cruce", base: "cruce" }]
+    examples:
+      - target: "Hay un cruce aquí."
+        ipa: "aj un ˈkɾuθe aˈki"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "cruce", base: "cruce" }, { word: "aquí", ref: "es-0051" }]
+      - target: "El cruce está en la calle grande."
+        ipa: "el ˈkɾuθe esˈta en la ˈkaʝe ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "cruce", base: "cruce" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "calle", ref: "es-0017" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-0710"
+    target: "el mapa"
+    ipa: "el ˈmapa"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "mapa", base: "mapa" }]
+    examples:
+      - target: "Tengo un mapa."
+        ipa: "ˈtenɡo un ˈmapa"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "un", base: "un" }, { word: "mapa", base: "mapa" }]
+      - target: "El mapa es grande."
+        ipa: "el ˈmapa es ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "mapa", base: "mapa" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-0711"
+    target: "el norte"
+    ipa: "el ˈnoɾte"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "norte", base: "norte" }]
+    examples:
+      - target: "El norte está lejos."
+        ipa: "el ˈnoɾte esˈta ˈlexos"
+        bases: [{ word: "El", base: "el" }, { word: "norte", base: "norte" }, { word: "está", ref: "es-0023" }, { word: "lejos", ref: "es-0718" }]
+      - target: "Vivo en el norte de la ciudad."
+        ipa: "ˈbibo en el ˈnoɾte de la θjuˈdad"
+        bases: [{ word: "Vivo", ref: "es-0030" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "norte", base: "norte" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "ciudad", ref: "es-0016" }]
+  - id: "es-0712"
+    target: "el sur"
+    ipa: "el suɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "sur", base: "sur" }]
+    examples:
+      - target: "El sur está cerca."
+        ipa: "el suɾ esˈta ˈθeɾka"
+        bases: [{ word: "El", base: "el" }, { word: "sur", base: "sur" }, { word: "está", ref: "es-0023" }, { word: "cerca", ref: "es-0717" }]
+      - target: "Vivo en el sur."
+        ipa: "ˈbibo en el suɾ"
+        bases: [{ word: "Vivo", ref: "es-0030" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "sur", base: "sur" }]
+  - id: "es-0713"
+    target: "el oeste"
+    ipa: "el oˈeste"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "oeste", base: "oeste" }]
+    examples:
+      - target: "El oeste está lejos."
+        ipa: "el oˈeste esˈta ˈlexos"
+        bases: [{ word: "El", base: "el" }, { word: "oeste", base: "oeste" }, { word: "está", ref: "es-0023" }, { word: "lejos", ref: "es-0718" }]
+      - target: "Vivo en el oeste."
+        ipa: "ˈbibo en el oˈeste"
+        bases: [{ word: "Vivo", ref: "es-0030" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "oeste", base: "oeste" }]
+  - id: "es-0714"
+    target: "la derecha"
+    ipa: "la deˈɾetʃa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "derecha", base: "derecha" }]
+    examples:
+      - target: "El puente está a la derecha."
+        ipa: "el ˈpwente esˈta a la deˈɾetʃa"
+        bases: [{ word: "El", base: "el" }, { word: "puente", ref: "es-0708" }, { word: "está", ref: "es-0023" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "derecha", base: "derecha" }]
+      - target: "Giro a la derecha."
+        ipa: "ˈxiɾo a la deˈɾetʃa"
+        bases: [{ word: "Giro", ref: "es-0720" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "derecha", base: "derecha" }]
+  - id: "es-0715"
+    target: "la izquierda"
+    ipa: "la iθˈkjeɾda"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "izquierda", base: "izquierda" }]
+    examples:
+      - target: "El mercado está a la izquierda."
+        ipa: "el meɾˈkado esˈta a la iθˈkjeɾda"
+        bases: [{ word: "El", base: "el" }, { word: "mercado", ref: "es-0567" }, { word: "está", ref: "es-0023" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "izquierda", base: "izquierda" }]
+      - target: "Giramos a la izquierda."
+        ipa: "xiˈɾamos a la iθˈkjeɾda"
+        bases: [{ word: "Giramos", ref: "es-0720" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "izquierda", base: "izquierda" }]
+  - id: "es-0716"
+    target: "recto"
+    ipa: "ˈrekto"
+    pos: "adv"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Sigo recto."
+        ipa: "ˈsiɡo ˈrekto"
+        bases: [{ word: "Sigo", ref: "es-0722" }, { word: "recto", base: "recto" }]
+      - target: "Vamos recto."
+        ipa: "ˈbamos ˈrekto"
+        bases: [{ word: "Vamos", ref: "es-0026" }, { word: "recto", base: "recto" }]
+  - id: "es-0717"
+    target: "cerca"
+    ipa: "ˈθeɾka"
+    pos: "adv"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "El semáforo está cerca de la esquina."
+        ipa: "el seˈmafoɾo esˈta ˈθeɾka de la esˈkina"
+        bases: [{ word: "El", base: "el" }, { word: "semáforo", ref: "es-0707" }, { word: "está", ref: "es-0023" }, { word: "cerca", base: "cerca" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "esquina", ref: "es-0706" }]
+      - target: "La estación está cerca."
+        ipa: "la estaˈθjon esˈta ˈθeɾka"
+        bases: [{ word: "La", base: "la" }, { word: "estación", ref: "es-0684" }, { word: "está", ref: "es-0023" }, { word: "cerca", base: "cerca" }]
+  - id: "es-0718"
+    target: "lejos"
+    ipa: "ˈlexos"
+    pos: "adv"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "El puente está lejos."
+        ipa: "el ˈpwente esˈta ˈlexos"
+        bases: [{ word: "El", base: "el" }, { word: "puente", ref: "es-0708" }, { word: "está", ref: "es-0023" }, { word: "lejos", base: "lejos" }]
+      - target: "El aeropuerto está lejos."
+        ipa: "el aeɾoˈpweɾto esˈta ˈlexos"
+        bases: [{ word: "El", base: "el" }, { word: "aeropuerto", ref: "es-0686" }, { word: "está", ref: "es-0023" }, { word: "lejos", base: "lejos" }]
+  - id: "es-0719"
+    target: "entre"
+    ipa: "ˈentɾe"
+    pos: "other"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "El mercado está entre dos calles."
+        ipa: "el meɾˈkado esˈta ˈentɾe dos ˈkaʝes"
+        bases: [{ word: "El", base: "el" }, { word: "mercado", ref: "es-0567" }, { word: "está", ref: "es-0023" }, { word: "entre", base: "entre" }, { word: "dos", ref: "es-0206" }, { word: "calles", ref: "es-0017" }]
+      - target: "La esquina está entre dos calles."
+        ipa: "la esˈkina esˈta ˈentɾe dos ˈkaʝes"
+        bases: [{ word: "La", base: "la" }, { word: "esquina", ref: "es-0706" }, { word: "está", ref: "es-0023" }, { word: "entre", base: "entre" }, { word: "dos", ref: "es-0206" }, { word: "calles", ref: "es-0017" }]
+  - id: "es-0720"
+    target: "girar"
+    ipa: "xiˈɾaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Giro a la derecha en el cruce."
+        ipa: "ˈxiɾo a la deˈɾetʃa en el ˈkɾuθe"
+        bases: [{ word: "Giro", base: "girar" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "derecha", ref: "es-0714" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "cruce", ref: "es-0709" }]
+      - target: "Giramos a la izquierda."
+        ipa: "xiˈɾamos a la iθˈkjeɾda"
+        bases: [{ word: "Giramos", base: "girar" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "izquierda", ref: "es-0715" }]
+  - id: "es-0721"
+    target: "cruzar"
+    ipa: "kɾuˈθaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Cruzo la calle."
+        ipa: "ˈkɾuθo la ˈkaʝe"
+        bases: [{ word: "Cruzo", base: "cruzar" }, { word: "la", base: "la" }, { word: "calle", ref: "es-0017" }]
+      - target: "Cruzamos el puente."
+        ipa: "kɾuˈθamos el ˈpwente"
+        bases: [{ word: "Cruzamos", base: "cruzar" }, { word: "el", base: "el" }, { word: "puente", ref: "es-0708" }]
+  - id: "es-0722"
+    target: "seguir"
+    ipa: "seˈɡiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Sigo recto."
+        ipa: "ˈsiɡo ˈrekto"
+        bases: [{ word: "Sigo", base: "seguir" }, { word: "recto", ref: "es-0716" }]
+      - target: "Seguimos la calle."
+        ipa: "seˈɡimos la ˈkaʝe"
+        bases: [{ word: "Seguimos", base: "seguir" }, { word: "la", base: "la" }, { word: "calle", ref: "es-0017" }]
+  - id: "es-0723"
+    target: "encontrar"
+    ipa: "enkonˈtɾaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: "self"
+    examples:
+      - target: "Encuentro el mapa."
+        ipa: "enˈkwentɾo el ˈmapa"
+        bases: [{ word: "Encuentro", base: "encontrar" }, { word: "el", base: "el" }, { word: "mapa", ref: "es-0710" }]
+      - target: "¿Encuentras la estación?"
+        ipa: "enˈkwentɾas la estaˈθjon"
+        bases: [{ word: "Encuentras", base: "encontrar" }, { word: "la", base: "la" }, { word: "estación", ref: "es-0684" }]

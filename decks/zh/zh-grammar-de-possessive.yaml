@@ -1,0 +1,57 @@
+schema: 1
+id: "zh-grammar-de-possessive"
+part: "core"
+kind: "grammar"
+language: { code: "zh", iso639_3: "cmn", name: "Mandarin Chinese", script: "han_simplified", scripts: ["han_simplified", "han_traditional"], tts: "zh-CN", icon: "中" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+"pattern":
+  "slots":
+    - "我"
+    - "你"
+    - "他"
+  "entries":
+    - "lemma": "书"
+      "key": "shu"
+      "reading": "shū"
+      "forms":
+        "我": "我的书"
+        "你": "你的书"
+        "他": "他的书"
+      "readings":
+        "我": "wǒ de shū"
+        "你": "nǐ de shū"
+        "他": "tā de shū"
+    - "lemma": "老师"
+      "key": "laoshi"
+      "reading": "lǎoshī"
+      "forms":
+        "我": "我的老师"
+        "你": "你的老师"
+        "他": "他的老师"
+      "readings":
+        "我": "wǒ de lǎoshī"
+        "你": "nǐ de lǎoshī"
+        "他": "tā de lǎoshī"
+    - "lemma": "朋友"
+      "key": "pengyou"
+      "reading": "péngyou"
+      "forms":
+        "我": "我的朋友"
+        "你": "你的朋友"
+        "他": "他的朋友"
+      "readings":
+        "我": "wǒ de péngyou"
+        "你": "nǐ de péngyou"
+        "他": "tā de péngyou"
+    - "lemma": "房间"
+      "key": "fangjian"
+      "reading": "fángjiān"
+      "forms":
+        "我": "我的房间"
+        "你": "你的房间"
+        "他": "他的房间"
+      "readings":
+        "我": "wǒ de fángjiān"
+        "你": "nǐ de fángjiān"
+        "他": "tā de fángjiān"
