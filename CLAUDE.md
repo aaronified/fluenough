@@ -70,9 +70,11 @@ contributor.
 - **No stray branches** (owner, 2026-10-24). Merged pull requests delete
   their head branch (repo setting). So: never push a branch again after its
   pull request has merged; never push scratch, review or worktree branches;
-  and delete any branch you pushed that did not become a pull request, or
-  was merged into another branch instead of main, once its work is in.
-  Never delete `decks-next` or a branch that is an open pull request's base.
+  and never merge one work branch into another and leave it pushed: open
+  its own pull request instead. Agents cannot delete remote branches (the
+  session's git proxy refuses it), so list any branch left over for the
+  owner to delete. Never ask to delete `decks-next` or an open pull
+  request's base.
 - **Releases** (owner, 2026-10-20: "Can the release workflow not
   automatically take care of the release commit? So that I can cut releases
   just from the UI?"). Each pull request adds its own CHANGELOG.md line under
