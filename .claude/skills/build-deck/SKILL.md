@@ -354,8 +354,9 @@ units (#814, #815). Copy them: `decks/zh/zh-grammar-shi.yaml`,
   you write it later, becomes a `ref`: when a unit writes どこ, いくら,
   얼마예요 or 뭐예요, change the earlier phrasebook and first-words bases to
   `{ word, ref }` in the same PR and delete their meaning lines in the layer.
-- **A card cannot `ref` itself.** In its own examples, a particle form
-  (달이, 물が) names its base in full. Give a repeated word's base once per text.
+- **A card cannot `ref` itself.** In its own examples, a form of it (달이,
+  なん on なに's card) names its base in full (CI: "ref names the card itself").
+  A bare kana or letter in prose needs its reading too ("the て (te)-form"). Give a repeated word's base once per text.
 - **Sentences decks** (`<lang>-<theme>-sentences`, `pos: "phrase"`) give 2 to 3
   `confusables` each, `kind: "word"` or `"sound"`, none a word of the
   sentence, each with a `why` in the layer; a confusable that is no card is a
