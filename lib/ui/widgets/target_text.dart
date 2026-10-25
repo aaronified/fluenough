@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
+import '../../core/decks/script_fonts.dart';
 import '../../core/models/aksharas.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
@@ -156,6 +157,9 @@ class TargetText extends StatelessWidget {
     // script fonts notify on their own.
     final scope = context.getInheritedWidgetOfExactType<AppScope>();
     final fonts = scope?.notifier?.deckDownloads?.fonts;
+    // Braille is always drawn in its own shadow-dot font, which ships with
+    // the app (#835): never the phone's.
+    if (language.isBraille) return _sized(context, brailleFontFamily);
     if (fonts == null) return _sized(context, null);
     return ListenableBuilder(
       listenable: fonts,

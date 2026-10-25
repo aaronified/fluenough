@@ -98,4 +98,33 @@ the IPA, it is typed.
 - **A real ISO 639 code.** `brl` and the like are, or may become, real
   languages' codes; `bra` is Braj. The local-use range cannot clash.
 
+## Update (2026-10-25, #835): braille is drawn with shadow dots
+
+Owner, 2026-10-25: "get a font with the shadow dot. The UEB manual uses one
+too. Otherwise it is impossible to read on a phone." Every cell
+(U+2800 to U+28FF) is drawn with all its dot positions: raised dots solid,
+unraised ones as thin rings, so that a lone dot's column and row can be read.
+
+- **The font** is `assets/fonts/BrailleShadow.ttf` (about 75 KB, family
+  `FluenoughBraille`), built by `tools/make_braille_font.py` (tested by
+  `tools/test_braille_font.py`) under the SIL Open Font License
+  (`assets/fonts/OFL.txt`). No openly licensed font drawing shadow dots for
+  the whole block was found, so it is generated: standard cell proportions
+  (dots 2.5 mm apart, cells 6 mm), six positions for a six-dot cell and eight
+  for a cell using dot 7 or 8. The rings are outlines, so they show in light
+  and dark text alike.
+- **It is bundled in the app, not downloaded** as ADR-0042 does for the
+  other scripts. It is tiny, braille can appear in any deck's notes, not only
+  in the braille course's, and a font the learner must opt into does not suit
+  a script that is unreadable without it. The ADR-0042 path would also not
+  have shipped without a release: the released app draws only a course's own
+  text in a downloaded font, and has no sample for braille. So there is no
+  `FONTS` entry, no `decks/fonts/braille/`, and no font check for braille:
+  the shadow font always applies.
+- **Where it is used:** `TargetText` draws braille text in it, as do the
+  typed answer and the braille keyboard's cell; it is also the fallback
+  family of the app's theme, so cells in notes and any other text use it
+  rather than the phone's font.
+- **Cost:** about 75 KB in every install.
+
 See also: [Contributing](Contributing) · [ADR-Index](ADR-Index) · [Home](Home)
