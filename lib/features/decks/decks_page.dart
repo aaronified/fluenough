@@ -13,6 +13,7 @@ import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/language_bar.dart';
 import '../../ui/widgets/language_glyph.dart';
 import '../../ui/widgets/page_parts.dart';
+import '../../ui/widgets/visible_listenable_builder.dart';
 import 'broken_deck_tile.dart';
 import 'course_card.dart';
 import 'course_hours.dart';
@@ -244,7 +245,7 @@ class _DecksPageState extends State<DecksPage> {
         ],
       );
     }
-    return ListenableBuilder(
+    return VisibleListenableBuilder(
       listenable: Listenable.merge(<Listenable>[
         state.progress,
         state.settings,

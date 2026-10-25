@@ -12,6 +12,7 @@ import '../../ui/widgets/bar_row.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/language_bar.dart';
 import '../../ui/widgets/page_parts.dart';
+import '../../ui/widgets/visible_listenable_builder.dart';
 import 'hours_tiles.dart';
 import 'leeches.dart';
 import 'practice_week_card.dart';
@@ -52,7 +53,7 @@ class StatsPage extends StatelessWidget {
     }
 
     final actions = LeechActions.of(state.progress);
-    return ListenableBuilder(
+    return VisibleListenableBuilder(
       listenable: Listenable.merge(<Listenable>[state.progress, actions]),
       builder: (context, _) {
         final languageOf = languageLookupOf(state);
