@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../app/settings.dart';
+import '../core/decks/script_fonts.dart';
 import '../app/skill.dart';
 
 /// The app's Material 3 themes, built from the learner's colour seed.
@@ -49,7 +50,13 @@ abstract final class AppTheme {
 
   /// A theme for [scheme], with the design's component shapes.
   static ThemeData fromScheme(ColorScheme scheme, {required ModeColors modes}) {
-    final base = ThemeData(colorScheme: scheme, useMaterial3: true);
+    // The braille font is the fallback of all text: a braille cell in a note
+    // or a deck's prose is drawn with its shadow dots too (#835).
+    final base = ThemeData(
+      colorScheme: scheme,
+      useMaterial3: true,
+      fontFamilyFallback: const <String>[brailleFontFamily],
+    );
     final text = _textTheme(base.textTheme);
     const stadium = StadiumBorder();
 

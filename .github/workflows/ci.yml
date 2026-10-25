@@ -56,7 +56,7 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
-      - run: pip install pyyaml pytest pytest-xdist
+      - run: pip install pyyaml pytest pytest-xdist fonttools
       - run: python3 -m pytest -n auto -q -p no:cacheprovider --rootdir tools tools
 
   # The required check "Validate decks": passes only if both jobs above did.
