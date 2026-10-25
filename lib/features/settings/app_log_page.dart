@@ -8,6 +8,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
+import '../../ui/card_text_scale.dart';
 
 /// The app's own log (#162), a line an entry, oldest at the top and the
 /// newest at the foot, where it opens. The text can be selected. Opened
@@ -108,7 +109,7 @@ class _ActionBar extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.read(context);
     final scheme = Theme.of(context).colorScheme;
-    final iconsOnly = MediaQuery.textScalerOf(context).scale(1) >= 1.4;
+    final iconsOnly = isLargeText(context);
     Widget action({
       required IconData icon,
       required String word,

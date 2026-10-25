@@ -8,6 +8,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/snack.dart';
+import '../../ui/theme.dart';
 import 'settings_controls.dart';
 import 'settings_section_page.dart';
 
@@ -63,7 +64,9 @@ class YourDecksPage extends StatelessWidget {
         ),
         if (groups.isEmpty)
           Padding(
-            padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
+            padding: const EdgeInsetsDirectional.symmetric(
+              horizontal: AppSizes.textInset,
+            ),
             child: Text(
               l10n.settingsDecksNone,
               style: settingsHelpStyle(Theme.of(context)),
@@ -79,7 +82,9 @@ class YourDecksPage extends StatelessWidget {
               ],
             ),
         Padding(
-          padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
+          padding: const EdgeInsetsDirectional.symmetric(
+            horizontal: AppSizes.textInset,
+          ),
           child: Text(
             l10n.settingsDecksAbout,
             style: settingsHelpStyle(Theme.of(context)),

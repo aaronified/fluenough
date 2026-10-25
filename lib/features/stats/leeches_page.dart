@@ -200,7 +200,8 @@ class LeechCard extends StatelessWidget {
             MergeSemantics(
               child: Row(
                 children: <Widget>[
-                  Flexible(
+                  Expanded(
+                    flex: 2,
                     child: ConstrainedBox(
                       constraints: const BoxConstraints(minWidth: 64),
                       child: TargetText(
@@ -213,6 +214,7 @@ class LeechCard extends StatelessWidget {
                   ),
                   const SizedBox(width: 16),
                   Expanded(
+                    flex: 3,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[

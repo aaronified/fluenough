@@ -307,7 +307,12 @@ class _ProfileCard extends StatelessWidget {
           // The card's own node, above, carries the name and the tap.
           excludeFromSemantics: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.all(16),
+            // 20 at the sides, like the rows below, so the avatar and the
+            // chevron line up with their icons.
+            padding: const EdgeInsetsDirectional.symmetric(
+              horizontal: 20,
+              vertical: 16,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[

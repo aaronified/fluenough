@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/grading/self_grade.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/card_text_scale.dart';
 
 /// Recognition's four self-rating buttons: Again, Hard, Good, Easy, each
 /// with when the card would next be due.
@@ -30,7 +31,7 @@ class RatingButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final large = MediaQuery.textScalerOf(context).scale(16) >= 24;
+    final large = isLargeText(context);
 
     Widget button(SelfGrade grade, BorderRadiusDirectional radius) => Expanded(
       child: _RatingButton(

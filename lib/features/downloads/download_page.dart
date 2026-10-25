@@ -105,6 +105,8 @@ class _DownloadPageState extends State<DownloadPage> {
       appBar: AppBar(
         title: Text(l10n.downloadsTitle),
         automaticallyImplyLeading: widget.onReady != null,
+        // The theme's 4 px assumes a 56 px back button before the title.
+        titleSpacing: widget.onReady != null ? null : AppSizes.gutter,
         actions: const <Widget>[ReportButton()],
       ),
       body: downloads == null
@@ -119,10 +121,15 @@ class _DownloadPageState extends State<DownloadPage> {
                   AppSizes.gutter,
                 ).clearingSystemBar(context),
                 children: <Widget>[
-                  Text(
-                    l10n.downloadsBody,
-                    style: theme.textTheme.bodyLarge!.copyWith(
-                      color: theme.colorScheme.onSurfaceVariant,
+                  Padding(
+                    padding: const EdgeInsetsDirectional.symmetric(
+                      horizontal: AppSizes.textInset,
+                    ),
+                    child: Text(
+                      l10n.downloadsBody,
+                      style: theme.textTheme.bodyLarge!.copyWith(
+                        color: theme.colorScheme.onSurfaceVariant,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 24),

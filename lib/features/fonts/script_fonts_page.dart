@@ -9,6 +9,7 @@ import '../../ui/script_name.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../downloads/download_text.dart';
 import '../settings/settings_section_page.dart';
+import '../../ui/theme.dart';
 import 'font_check_sheet.dart';
 
 /// Settings, Look and language, Script fonts (#611, docs/mockups/
@@ -61,14 +62,24 @@ class ScriptFontsPage extends StatelessWidget {
         final scripts = scriptsOf(state);
         final theme = Theme.of(context);
         return <Widget>[
-          Text(
-            l10n.fontsPageHelp,
-            style: theme.textTheme.bodyMedium?.copyWith(
-              color: theme.colorScheme.onSurfaceVariant,
+          Padding(
+            padding: const EdgeInsetsDirectional.symmetric(
+              horizontal: AppSizes.textInset,
+            ),
+            child: Text(
+              l10n.fontsPageHelp,
+              style: theme.textTheme.bodyMedium?.copyWith(
+                color: theme.colorScheme.onSurfaceVariant,
+              ),
             ),
           ),
           if (scripts.isEmpty)
-            Text(l10n.fontsEmpty, style: theme.textTheme.bodyLarge)
+            Padding(
+              padding: const EdgeInsetsDirectional.symmetric(
+                horizontal: AppSizes.textInset,
+              ),
+              child: Text(l10n.fontsEmpty, style: theme.textTheme.bodyLarge),
+            )
           else ...<Widget>[
             OutlinedButton(
               onPressed: () {

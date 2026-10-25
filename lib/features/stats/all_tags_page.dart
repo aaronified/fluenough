@@ -8,6 +8,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/bar_row.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
+import '../../ui/theme.dart';
 import 'stats_numbers.dart';
 
 /// How many words a tag's practice asks about at most, as a quick revision's
@@ -110,7 +111,11 @@ class _AllTagsPageState extends State<AllTagsPage> {
             Widget withReason(bool enabled, String reason, Widget button) =>
                 enabled ? button : Tooltip(message: reason, child: button);
             Widget row(String tag, Tally? tally) => Padding(
-              padding: const EdgeInsetsDirectional.only(bottom: 8),
+              padding: const EdgeInsetsDirectional.only(
+                bottom: 8,
+                start: AppSizes.textInset,
+                end: AppSizes.textInset,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[

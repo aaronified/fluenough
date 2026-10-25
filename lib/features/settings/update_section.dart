@@ -10,6 +10,8 @@ import '../../core/updates/release_check.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/snack.dart';
+import '../../ui/card_text_scale.dart';
+import '../../ui/theme.dart';
 
 /// Settings' Updates group, above the version line (ADR-0017): "Check for
 /// updates", which says what the check found, downloads it with its
@@ -306,10 +308,7 @@ class _ActionRow extends StatelessWidget {
     final scheme = theme.colorScheme;
     // Beside the text at normal sizes; under it when the text is large, as
     // the profile card's Switch button goes.
-    final stacked =
-        below ||
-        actions.length > 1 ||
-        MediaQuery.textScalerOf(context).scale(1) > 1.3;
+    final stacked = below || actions.length > 1 || isLargeText(context);
     final bar = progress;
     final text = MergeSemantics(
       child: Semantics(
@@ -332,7 +331,18 @@ class _ActionRow extends StatelessWidget {
         ),
       ),
     );
-    final buttons = Wrap(spacing: 8, runSpacing: 4, children: actions);
+    final wrapped = Wrap(spacing: 8, runSpacing: 4, children: actions);
+    // Under the text the first label starts where the text does.
+    final buttons = stacked
+        ? TextButtonTheme(
+            data: TextButtonThemeData(
+              style: theme.textButtonTheme.style?.merge(
+                AppButtonStyles.inline(context),
+              ),
+            ),
+            child: wrapped,
+          )
+        : wrapped;
     return Padding(
       padding: GroupedTile.defaultPadding,
       child: Row(

@@ -333,7 +333,7 @@ class _TypedDrillState extends State<TypedDrill> {
         ],
         Row(
           children: <Widget>[
-            Flexible(
+            Expanded(
               child: OutlinedButton(
                 onPressed: session.dontKnow,
                 style: outlined,

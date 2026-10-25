@@ -77,7 +77,9 @@ class _QuickRevisionState extends State<QuickRevision> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsetsDirectional.only(start: 4),
+          padding: const EdgeInsetsDirectional.symmetric(
+            horizontal: AppSizes.textInset,
+          ),
           child: Semantics(
             header: true,
             child: Text(
@@ -88,7 +90,9 @@ class _QuickRevisionState extends State<QuickRevision> {
         ),
         const SizedBox(height: 4),
         Padding(
-          padding: const EdgeInsetsDirectional.only(start: 4),
+          padding: const EdgeInsetsDirectional.symmetric(
+            horizontal: AppSizes.textInset,
+          ),
           child: Text(
             knownAtAll == 0
                 ? l10n.todayRevisionNone
@@ -107,7 +111,8 @@ class _QuickRevisionState extends State<QuickRevision> {
             label: l10n.todayRevisionSkillsLabel,
             child: Wrap(
               spacing: 8,
-              runSpacing: 8,
+              // The chips' 48 px tap targets already put 12 px between rows.
+              runSpacing: 0,
               children: <Widget>[
                 for (final c in choices)
                   ChoiceChip(

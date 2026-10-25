@@ -180,6 +180,7 @@ class _StatsBody extends StatelessWidget {
           StatsSection(
             title: l10n.statsWeakestTags,
             trailing: TextButton(
+              style: AppButtonStyles.trailing(context),
               onPressed: () => AppNavigator.openAllTags(context, range),
               child: Text(l10n.statsAllTags),
             ),

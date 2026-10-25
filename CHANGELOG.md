@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Speaking Hindustani on a Samsung phone always said "Didn't catch that": the recogniser's final result came after Android's done signal, and the app had already given up. The app now waits a moment for the final result and uses the last partial one if none comes, and the app log says whether the listen ended with done before a result or with an empty result.
+- Fixed alignment and spacing across the app at large text: one large-text check (the old checks read a 1 px probe or thresholds above the 1.4x cap), one text inset, even chip rows, cards of one width on deck and unit pages, and steady columns in unit, leech and review rows.
+- The placement match question centres its labels, fits three-line labels in a rounded box, and lines the two columns up row by row.
+
+### Added
+
+- The script test's read-aloud question has "Can't speak now": it skips the question without counting it as a miss, and asks a word to write in Latin letters instead.
+
 ## [0.6.2] - 2026-10-25
 
 ### Added

@@ -337,13 +337,11 @@ class _ImportPageState extends State<ImportPage> {
         return <Widget>[
           help(l10n.importFileHelp),
           const SizedBox(height: 12),
-          Align(
-            alignment: AlignmentDirectional.centerStart,
-            child: OutlinedButton.icon(
-              onPressed: _saveTemplate,
-              icon: const Icon(Icons.description_outlined),
-              label: Text(l10n.importTemplate),
-            ),
+          // As wide as the Choose file button under it.
+          OutlinedButton.icon(
+            onPressed: _saveTemplate,
+            icon: const Icon(Icons.description_outlined),
+            label: Text(l10n.importTemplate),
           ),
         ];
     }

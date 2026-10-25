@@ -13,6 +13,7 @@ import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import 'language_glyph.dart';
 import 'report_button.dart';
+import '../card_text_scale.dart';
 
 /// The three screens the language bar is on (#528).
 enum LanguageBarScreen { today, decks, progress }
@@ -634,7 +635,7 @@ class _LanguageBarState extends State<LanguageBar>
     bool allOn,
   ) {
     final scheme = theme.colorScheme;
-    final scale = MediaQuery.textScalerOf(context).scale(1);
+    final scale = phoneTextScaleOf(context);
     final grow = _growAmount;
     final width =
         LanguageBar.pillWidth + (_fullWidth - LanguageBar.pillWidth) * grow;
@@ -973,7 +974,7 @@ class LanguageBarChip extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final scale = MediaQuery.textScalerOf(context).scale(1);
+    final scale = phoneTextScaleOf(context);
     final foreground = selected
         ? scheme.onSecondaryContainer
         : scheme.onSurfaceVariant;
