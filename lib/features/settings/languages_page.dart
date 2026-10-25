@@ -55,6 +55,7 @@ class LanguagesSettingsPage extends StatelessWidget {
           onTap: () => AppNavigator.openLearnLanguages(context),
         ),
         GroupedTile.toggle(
+          leading: GroupedTile.noIcon,
           title: l10n.settingsRomanisation,
           subtitleOn: l10n.settingsRomanisationOn,
           subtitleOff: l10n.settingsRomanisationOff,
@@ -62,6 +63,7 @@ class LanguagesSettingsPage extends StatelessWidget {
           onChanged: (on) => settings.showRomanisation = on,
         ),
         GroupedTile.toggle(
+          leading: GroupedTile.noIcon,
           title: l10n.settingsIpa,
           subtitleOn: l10n.settingsIpaOn,
           subtitleOff: l10n.settingsIpaOff,
@@ -69,6 +71,7 @@ class LanguagesSettingsPage extends StatelessWidget {
           onChanged: (on) => settings.showIpa = on,
         ),
         GroupedTile.toggle(
+          leading: GroupedTile.noIcon,
           title: l10n.settingsAdult,
           subtitleOn: l10n.settingsAdultOn,
           subtitleOff: l10n.settingsAdultOff,

@@ -62,6 +62,7 @@ class ActivitiesPage extends StatelessWidget {
             // From the old Sound section: governs every word the app says,
             // so it stays whatever Heard words is set to.
             GroupedTile.toggle(
+              leading: GroupedTile.noIcon,
               title: l10n.settingsAutoplay,
               subtitleOn: l10n.settingsAutoplayOn,
               subtitleOff: l10n.settingsAutoplayOff,
@@ -86,6 +87,7 @@ class ActivitiesPage extends StatelessWidget {
               onChanged: (v) => settings.speechRate = step(v),
             ),
             GroupedTile(
+              leading: GroupedTile.noIcon,
               title: l10n.settingsVoices,
               subtitle: l10n.settingsVoicesSummary(voiced, languages.length),
               trailing: const Icon(Icons.chevron_right),
@@ -114,6 +116,7 @@ class ActivitiesPage extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final settings = state.settings;
     return GroupedTile.toggle(
+      leading: GroupedTile.noIcon,
       title: skill.settingsLabel(l10n),
       subtitleOn: _skillLine(l10n, state, skill, on: true),
       subtitleOff: _skillLine(l10n, state, skill, on: false),
