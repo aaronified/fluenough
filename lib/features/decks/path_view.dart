@@ -12,15 +12,14 @@ import 'path_model.dart';
 import 'path_parts.dart';
 import '../../ui/card_text_scale.dart';
 
-/// A course's path, winding down the screen (the owner's design):
+/// Builds a course's path, winding down the screen (the owner's design):
 /// each unit a slightly rounded rectangle, playfully off-centre, joined by a
 /// line that is solid up to the unit the learner is on and dotted after it;
 /// milestones and level achievements between them.
 ///
 /// [upNextKey] marks the unit up next, so that the page can scroll to it.
-class CoursePathView extends StatelessWidget {
-  const CoursePathView({
-    super.key,
+class _PathBuilder {
+  const _PathBuilder({
     required this.view,
     required this.state,
     required this.onOpen,
@@ -35,26 +34,6 @@ class CoursePathView extends StatelessWidget {
   /// Where each node sits across the path, from its start (0) to its end
   /// (1), in turn: a gentle zigzag.
   static const List<double> _sway = <double>[0.1, 0.35, 0.65, 0.9, 0.65, 0.35];
-
-  /// The step the path is on, or -1 once every unit is done.
-  int get upNextIndex => view.steps.indexWhere(
-    (s) => s is UnitStep && s.status == UnitStatus.upNext,
-  );
-
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final rows = _rowsFor(context, constraints.maxWidth);
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            for (var n = 0; n < rows.count; n++) rows.at(n),
-          ],
-        );
-      },
-    );
-  }
 
   /// The path's rows for a path [width] wide: one for each step shown, with
   /// the line that joins it to the one before. A long path is built a row at
@@ -175,7 +154,7 @@ class _PathRows {
   final int upNextRow;
 }
 
-/// The same path as [CoursePathView], as a sliver that builds only the rows
+/// A course's path as a sliver that builds only the rows
 /// on screen (#853): a course has hundreds of steps and each is a card with
 /// its counts, so the page drawing them all made every change a stall.
 /// [onUpNextRow] is told which row is up next, for the page to scroll to
@@ -204,7 +183,7 @@ class CoursePathSliver extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverLayoutBuilder(
       builder: (context, constraints) {
-        final path = CoursePathView(
+        final path = _PathBuilder(
           view: view,
           state: state,
           onOpen: onOpen,
